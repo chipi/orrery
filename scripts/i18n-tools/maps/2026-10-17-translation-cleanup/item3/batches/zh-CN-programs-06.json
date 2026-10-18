@@ -1,0 +1,674 @@
+[
+ {
+  "rel": "programs/starlink.json",
+  "at": "outcome.1.caption",
+  "en": "A 'train' of freshly-deployed Starlinks crossing the sky before they raise to their operational orbits. Beautiful to some, an intrusion to astronomers whose long exposures the bright satellites streak straight through.",
+  "cur": "一列刚刚部署的 Starlink 卫星在升至运行轨道之前穿越天空。对某些人来说很美，但对天文学家而言却是一种入侵——明亮的卫星直接划过他们的长曝光照片。"
+ },
+ {
+  "rel": "programs/starlink.json",
+  "at": "outcome.2.md",
+  "en": "But the outcome has a second face. Astronomers watched their images fill with satellite streaks and their radio bands crowd with downlink noise; the sheer number of objects sharpened every worry about collisions and orbital debris; and the concentration of so much capability in one private company's hands unsettled governments used to controlling their own communications. Starlink solved a real problem and created new ones the world is still working out how to manage.",
+  "cur": "但这一结果也有另一面。天文学家眼看着他们的图像充满卫星划痕，他们的无线电波段被下行链路噪声挤占；卫星数量之庞大加剧了人们对碰撞和轨道碎片的每一分担忧；如此多的能力集中在一家私营公司手中，令习惯于掌控自身通信的各国政府感到不安。Starlink解决了一个真实存在的问题，同时也制造了新的问题，而世界仍在摸索如何应对。"
+ },
+ {
+  "rel": "programs/starlink.json",
+  "at": "narrative.0.md",
+  "en": "Starlink is what reusability was for. Falcon 9's cheap, frequent, recoverable launches are the only reason a constellation of this size is affordable to build and continually replace — and Starlink, in turn, is the payload that keeps those Falcons flying at a cadence no one else can match. The two are a closed loop: the rocket makes the constellation possible, and the constellation gives the rocket something to launch, over and over, paying for itself each time.",
+  "cur": "Starlink 正是可重复使用技术的用武之地。Falcon 9 低成本、高频次、可回收的发射方式是建造如此规模星座并持续更新换代的唯一经济可行途径——而 Starlink 反过来又成为让这些 Falcon 火箭保持无人能及发射节奏的有效载荷。两者形成了闭环:火箭使星座成为可能,星座为火箭提供源源不断的发射任务,每次都自我回本。"
+ },
+ {
+  "rel": "programs/starlink.json",
+  "at": "narrative.1.md",
+  "en": "It is also the moment low Earth orbit stopped being empty. For the whole space age, orbit was vast and sparsely occupied; a few thousand satellites had room to spare. Starlink, with tens of thousands planned and rivals racing to match it, turns near-Earth space into a shared, crowded, actively-managed commons — one where satellites must constantly dodge each other, where a single collision could cascade, and where the rules for who may fly what, and how many, are being written after the fact.",
+  "cur": "这也是低地球轨道不再空旷的时刻。在整个太空时代，轨道一直广阔而稀疏；几千颗卫星有充足的空间。Starlink 计划发射数万颗卫星，竞争对手也在竞相效仿，这使近地空间变成了一个共享的、拥挤的、需要主动管理的公共区域——在这里卫星必须不断躲避彼此，一次碰撞就可能引发连锁反应，而关于谁可以发射什么、发射多少的规则，都是在事后才制定的。"
+ },
+ {
+  "rel": "programs/starlink.json",
+  "at": "narrative.2.md",
+  "en": "And it is a case study in a private actor moving faster than the institutions meant to govern it. Starlink deployed thousands of satellites before regulators, astronomers, or competitors had fully reckoned with the consequences — brightness, debris, spectrum, geopolitics. The constellation is a genuine public good and an unaccountable concentration of power at the same time, and both things are true because it was built by one company at a speed the old system was not designed to check.",
+  "cur": "这也是一个私营主体行动速度超过监管机构的典型案例。Starlink在监管机构、天文学家或竞争对手充分认识到其后果——亮度、碎片、频谱、地缘政治——之前,就已部署了数千颗卫星。这个星座网络既是真正的公共福祉,同时也是不受制约的权力集中,两者同时成立,因为它是由一家公司以旧体系无力制约的速度建成的。"
+ },
+ {
+  "rel": "programs/starlink.json",
+  "at": "legacy.0.md",
+  "en": "Starlink's first legacy is proof that satellite internet, long a graveyard of bankrupt ventures, can actually work at planetary scale — which is why a crowd of rivals, from Amazon's Kuiper to national and European constellations, is now racing to build their own. The megaconstellation is no longer a gamble; it is the new shape of the communications industry in orbit.",
+  "cur": "Starlink 的首要遗产是证明了卫星互联网——长期以来破产企业的坟场——实际上可以在行星规模上运作,这也是为什么从 Amazon 的 Kuiper 到各国及欧洲星座在内的一众竞争对手,如今正竞相建造自己的系统。巨型星座不再是一场赌博,它已成为轨道通信行业的新形态。"
+ },
+ {
+  "rel": "programs/starlink.json",
+  "at": "legacy.1.md",
+  "en": "Its second legacy is the crowding of low orbit itself — a permanent change to the environment of near-Earth space. The debates Starlink forced open, about brightness, debris, spectrum, and who governs a shared orbit, will define the next decades of spaceflight far beyond any one company's satellites.",
+  "cur": "它的第二个遗产是低轨道本身的拥挤——对近地空间环境的永久性改变。Starlink 迫使人们展开的关于亮度、碎片、频谱以及谁来治理共享轨道的辩论,将在远超任何一家公司卫星范围之外定义未来数十年的航天活动。"
+ },
+ {
+  "rel": "programs/starlink.json",
+  "at": "legacy.2.md",
+  "en": "And its third is financial: a working revenue engine that funds deep-space ambition. Starlink is the model for how a launch company pays for the missions that will never pay for themselves — the internet business underwriting the road to Mars.",
+  "cur": "第三个是财务层面：一个能够为深空雄心提供资金的有效收入引擎。Starlink 就是发射公司如何为那些永远无法自负盈亏的任务买单的典范——互联网业务为通往火星之路提供资金支持。"
+ },
+ {
+  "rel": "programs/starlink.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of Starlink is that scale changes the nature of a thing. A hundred satellites is a communications network; ten thousand is an alteration of the sky and a new commons to be governed. Quantity, past a threshold, becomes a qualitative change — and the megaconstellation crossed that threshold before anyone had agreed on the rules for what lies on the other side.",
+  "cur": "Starlink的教训在于，规模会改变事物的本质。一百颗卫星是一个通信网络；一万颗则是对天空的改变，是一个需要治理的新公地。数量超过某个阈值后，就会产生质的变化——而巨型星座在任何人就另一侧的规则达成共识之前，就已经跨越了这个阈值。"
+ },
+ {
+  "rel": "programs/starlink.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is that infrastructure built faster than it can be governed delivers real good and real risk at once. Starlink genuinely connected the unconnected — and simultaneously concentrated critical capability in private hands, crowded a shared orbit, and streaked the astronomers' sky. The task it leaves is not to undo it but to catch up to it: to build the governance a technology this powerful should have had before it flew.",
+  "cur": "更深层的教训在于,建设速度超过治理能力的基础设施会同时带来真实的益处和真实的风险。Starlink确实连接了那些未曾联网的地方——同时也将关键能力集中在私人手中,挤占了共享轨道,并在天文学家的天空中划出条条光痕。它留下的任务不是去撤销它,而是去追赶它:为如此强大的技术建立起本应在其升空之前就具备的治理体系。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "tagline",
+  "en": "The biggest rocket ever built, designed to be fully and rapidly reusable — the vehicle SpaceX means to carry people to Mars.",
+  "cur": "有史以来建造的最大火箭,设计为完全且快速可重复使用——这是SpaceX打算将人类送往火星的运载工具。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "the_land.0.md",
+  "en": "Every rocket that has ever launched people has thrown most of itself away. Even Falcon 9, which recovers its first stage, discards the upper stage on every flight. Starship is an attempt to end that entirely — a launch system where both stages fly back, land, and are refuelled and reflown, like an aircraft rather than an artillery shell. It is also simply enormous: taller than the Saturn V, with more thrust than any rocket in history, built not to fly a mission or two but to fly constantly, cheaply, for decades.",
+  "cur": "每一枚曾经发射过人类的火箭都抛弃了自身的大部分。即使是回收第一级的Falcon 9,也在每次飞行中丢弃上面级。Starship是彻底终结这种做法的一次尝试——一个两级都能飞回、着陆、加注燃料并重飞的发射系统,更像飞机而非炮弹。它也确实巨大无比:比Saturn V更高,推力超过历史上任何火箭,其建造目的不是执行一两次任务,而是持续、低成本地飞行数十年。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "the_land.1.md",
+  "en": "The reason for the size and the reuse is a single destination. SpaceX's stated purpose since its founding has been to make humanity multiplanetary, and the arithmetic of Mars is brutal: sending enough people and cargo to build a settlement there requires lifting more mass, more often, and far more cheaply than any expendable rocket could ever manage. Starship is the answer worked backwards from that goal — the vehicle you would need if you were serious about not just visiting Mars but living there.",
+  "cur": "如此巨大的尺寸和可重复使用性都源于一个单一目的地。SpaceX自创立以来明确的目标就是使人类成为多行星物种,而火星的算术是残酷的:向那里运送足够建立定居点的人员和货物,需要比任何一次性火箭所能承受的更多质量、更高频次、更低成本的发射能力。Starship是从这个目标倒推出的答案——如果你真的认真考虑不仅是访问火星,而是在那里生活,你就需要这样的运载工具。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "goals.0.md",
+  "en": "The immediate goal is full and rapid reusability: a booster and a ship that both return, land, and fly again with minimal refurbishment, driving the cost per kilogram to orbit down by another order of magnitude beyond what Falcon 9 achieved. Reuse of the first stage made space cheaper; reuse of everything, flown often, is meant to make it cheap enough to change what is possible.",
+  "cur": "眼前的目标是完全且快速的可重复使用性:助推器和飞船都能返回、着陆并以最少翻新再次飞行,将每公斤送入轨道的成本在Falcon 9已实现的基础上再降低一个数量级。第一级的重复使用让太空变得更便宜;所有部件的重复使用并高频飞行,旨在让成本低到足以改变可能性的边界。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "goals.1.caption",
+  "en": "Starship atop its Super Heavy booster — the full stack. Both stages are designed to return and land; the booster is now caught out of the air by the launch tower itself, a recovery method no one had attempted before.",
+  "cur": "Starship位于其Super Heavy助推器顶部——完整堆叠状态。两级都设计为返回并着陆;助推器现在由发射塔本身从空中直接抓取,这是此前无人尝试过的回收方法。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "goals.2.md",
+  "en": "The nearer-term goals are concrete missions that need it. NASA has selected Starship as one of two Human Landing Systems that will put Artemis astronauts on the Moon — the other being Blue Origin's Blue Moon — the first crewed lunar landers since Apollo. Starship is also meant to launch the larger next-generation Starlink satellites, and eventually to carry cargo and crews to Mars. The Moon is the proving ground; Mars is the point.",
+  "cur": "较近期的目标是需要它的具体任务。NASA已选择Starship作为将Artemis宇航员送上月球的两个Human Landing Systems之一——另一个是Blue Origin的Blue Moon——这将是自Apollo以来首批载人月球着陆器。Starship还计划发射更大的下一代Starlink卫星,并最终将货物和乘员送往火星。月球是试验场;火星才是目的。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "goals.3.md",
+  "en": "And there is a goal that underpins all of it: refuelling in orbit. A Starship bound for the Moon or Mars launches nearly empty of the propellant it needs for the journey, and is filled up by a series of tanker Starships rendezvousing with it in Earth orbit. This orbital-refuelling architecture is unproven at scale and is the single hardest thing the program must demonstrate — the linchpin the whole deep-space plan hangs on.",
+  "cur": "而有一个目标支撑着所有这一切:在轨加注。前往月球或火星的Starship发射时几乎不携带旅程所需的推进剂,而是由一系列油罐Starship在地球轨道上与其会合并将其加满。这种在轨加注架构在大规模上尚未得到验证,是该项目必须证明的最难的单一事项——整个深空计划所依赖的关键环节。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "outcome.0.md",
+  "en": "As of the mid-2020s, Starship is a program in the middle of its story, not the end. It has flown: a single-engine test article hopped and landed in 2019, an upper stage flew high and landed intact in 2021, the full stack has launched repeatedly since 2023, and in 2024 the Super Heavy booster was caught out of the air by the launch tower's arms — a genuinely new achievement. But it has not yet flown people, reached orbit with a payload routinely, or demonstrated orbital refuelling. The hardest milestones are still ahead.",
+  "cur": "截至2020年代中期,Starship是一个处于故事中段而非结尾的项目。它已经飞过:2019年单引擎测试样机完成跳跃并着陆,2021年上面级高空飞行并完整着陆,完整堆叠自2023年以来多次发射,2024年Super Heavy助推器被发射塔臂从空中抓住——一项真正崭新的成就。但它尚未载人飞行,未能常规地将有效载荷送入轨道,也未演示在轨加注。最艰难的里程碑仍在前方。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "outcome.1.caption",
+  "en": "A Starship test flight. The program's method is visible failure at scale: fly, watch it break, learn, fly again — the same iteration that made Falcon cheap, applied to the largest rocket ever built.",
+  "cur": "一次Starship试飞。该项目的方法是大规模可见失败:飞行、观察破坏、学习、再飞——这种让Falcon变得廉价的迭代方法,被应用于有史以来建造的最大火箭。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "outcome.2.md",
+  "en": "The development style is deliberately, spectacularly public. Where traditional programs test on the ground for years to avoid a single failure, Starship flies early prototypes expecting them to explode, treating each loss as data bought cheaply. That approach has produced dramatic footage and rapid progress — and also real friction, over environmental impact around the launch site, over debris, and over whether move-fast iteration is appropriate for a vehicle meant to eventually carry humans.",
+  "cur": "开发风格是刻意地、引人注目地公开。传统项目在地面测试多年以避免单次失败,而Starship则早期飞行原型机并预期它们会爆炸,将每次损失视为廉价获得的数据。这种方法产生了戏剧性的影像和快速的进展——也产生了真实的摩擦,涉及发射场周围的环境影响、碎片问题,以及快速迭代方法是否适用于最终要载人的运载工具。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "narrative.0.md",
+  "en": "Starship is Falcon 9's method scaled to its logical extreme. The company that learned to land a booster by crashing dozens is now learning to fly a fully-reusable super-heavy rocket the same way — building prototypes fast, flying them before they are perfect, and improving on a cadence no traditional program attempts. The explosions are not setbacks in this framing; they are the cost of information, and the willingness to pay that cost in public is the whole competitive advantage.",
+  "cur": "Starship是Falcon 9方法论的逻辑极致扩展。这家通过坠毁数十次学会着陆助推器的公司,现在正以同样方式学习飞行完全可重复使用的超重型火箭——快速建造原型机,在它们完美之前就飞行,并以传统项目不会尝试的节奏改进。在这种框架下,爆炸不是挫折;它们是信息的成本,而愿意公开支付这种成本正是整个竞争优势所在。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "narrative.1.md",
+  "en": "It is also the most ambitious single machine in spaceflight, and the most uncertain. Nothing about it is guaranteed: orbital refuelling has never been done at scale, rapid reuse of a heat-shielded upper stage is unproven, and the leap from landing test articles to safely flying crews to another planet is vast. Starship might compress the timeline to the Moon and Mars dramatically, or it might spend a decade proving harder than expected. Both outcomes are live, and the program is honest that the hardest parts remain unproven.",
+  "cur": "它也是航天领域最雄心勃勃的单一机器,也是最不确定的。它没有任何保证:大规模在轨加注从未完成,带隔热罩的上面级快速重复使用尚未验证,从着陆测试样机到安全地将乘员送往另一颗行星的跨越是巨大的。Starship可能会大幅压缩前往月球和火星的时间表,也可能花费十年时间证明比预期更难。两种结果都有可能,而该项目坦诚地承认最困难的部分仍未得到验证。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "narrative.2.md",
+  "en": "Underneath the engineering is a wager about purpose. Apollo went to the Moon to win a race and then stopped, because the goal was the arrival, not the staying. Starship is built on the opposite premise — that the point is not to plant a flag but to move enough mass, often enough, to build something permanent off Earth. Whether or not it succeeds, it represents a different reason to go: not to prove a nation's superiority, but to make the human presence in space large enough to last.",
+  "cur": "工程之下是一个关于目的的赌注。Apollo前往月球是为了赢得竞赛然后停止,因为目标是抵达,而非停留。Starship建立在相反的前提上——重点不是插旗,而是以足够高的频次运送足够多的质量,在地球之外建造持久的东西。无论成功与否,它代表着一个不同的前往理由:不是为了证明一个国家的优越性,而是让人类在太空中的存在足够庞大以持续存在。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "legacy.0.md",
+  "en": "Starship's legacy is still being written, but its influence is already real. By making full reusability and orbital refuelling the assumed architecture of the future, it has reset what a serious deep-space program is expected to look like — and its selection as one of the Artemis lunar landers ties America's return to the Moon directly to whether this vehicle works.",
+  "cur": "Starship的遗产仍在书写,但其影响已经真实存在。通过将完全可重复使用性和在轨加注作为未来的假定架构,它重置了对严肃深空项目的预期面貌——而它被选为Artemis月球着陆器之一,直接将美国重返月球与这个运载工具是否成功联系在一起。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "legacy.1.md",
+  "en": "If it succeeds, the legacy is a step-change in access to deep space: cheap, high-cadence lift measured in hundreds of tonnes, enough to make lunar bases and Mars missions logistically possible rather than merely conceivable. If it struggles, the legacy is still a demonstration of how far the fly-fail-fix method can be pushed — and where it meets its limits.",
+  "cur": "如果成功,其遗产将是深空准入的阶跃变化:以数百吨计量的廉价、高频次运载能力,足以使月球基地和火星任务在后勤上成为可能而非仅仅可以设想。如果遇到困难,其遗产仍将是对飞行-失败-修复方法能推进多远的演示——以及它在哪里遇到极限。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "legacy.2.md",
+  "en": "Either way, Starship has already changed the conversation. The question in human spaceflight is no longer whether reusability works — Falcon settled that — but how far it scales, and whether it can carry people beyond Earth. Starship is the biggest bet anyone has placed on the answer being 'all the way'.",
+  "cur": "无论如何,Starship已经改变了对话。载人航天的问题不再是可重复使用性是否有效——Falcon解决了这个问题——而是它能扩展多远,以及它能否将人类送往地球之外。Starship是任何人对答案是'一路到底'所下的最大赌注。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "lessons.0.md",
+  "en": "The lesson Starship is testing is whether the method that made small rockets cheap can make enormous ones cheap too. Iteration through visible failure worked for Falcon; Starship is the experiment in whether it scales to the largest, most complex vehicle ever built — and whether it can cross the line into human spaceflight, where failure is far less acceptable. The answer is not yet in.",
+  "cur": "Starship正在测试的教训是,让小型火箭变得廉价的方法是否也能让巨型火箭变得廉价。通过可见失败的迭代对Falcon有效;Starship是验证它是否能扩展到有史以来建造的最大、最复杂运载工具的实验——以及它能否跨越到载人航天领域,在那里失败的可接受度要低得多。答案尚未揭晓。"
+ },
+ {
+  "rel": "programs/starship.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is about designing backwards from a goal. Starship makes no sense as an incremental improvement to existing rockets; it only makes sense if the real objective is settling another planet, and every strange choice — the size, the full reuse, the orbital refuelling — follows from that. Whether or not Mars is reached, the vehicle is a lesson in what it looks like to engineer for an end state most of the industry considers a fantasy.",
+  "cur": "更深层的教训是关于从目标倒推设计。Starship作为现有火箭的渐进式改进毫无意义;只有当真正目标是在另一颗行星上定居时它才有意义,而每一个奇特的选择——尺寸、完全重复使用、在轨加注——都源于此。无论火星是否抵达,这个运载工具都是一堂课,展示了为大多数行业认为是幻想的终极状态进行工程设计是什么样子。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "tagline",
+  "en": "Locked out of the world's space station, China built its own — on schedule, and now runs the only other permanently-crewed outpost in orbit.",
+  "cur": "被拒于世界空间站之外,中国建造了自己的空间站——按计划完成,如今运营着轨道上唯一另一个永久载人前哨站。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "the_land.0.md",
+  "en": "By 2011 there was one place humans lived in space, and China was not welcome there. The International Space Station was a partnership of the United States, Russia, Europe, Japan and Canada — and that same year the US Congress passed the Wolf Amendment, which barred NASA from bilateral cooperation with China without explicit approval. The message was blunt: the club was closed. China's answer was not to protest. It was to build its own station, on its own rocket, with its own crew capsule, on a timeline it published in advance and then met.",
+  "cur": "到2011年,人类在太空中生活的地方只有一个,而中国不受欢迎。国际空间站是美国、俄罗斯、欧洲、日本和加拿大的合作项目——同年,美国国会通过了Wolf Amendment,禁止NASA在未经明确批准的情况下与中国进行双边合作。信息很直白:俱乐部大门紧闭。中国的回应不是抗议,而是用自己的火箭、自己的载人舱,按照事先公布的时间表建造自己的空间站,并且如期完成。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "the_land.1.md",
+  "en": "What makes Tiangong — \"Heavenly Palace\" — different from every station before it is how unhurried and deliberate it was. The Soviets improvised Salyut in a hurry; the ISS grew out of a cancelled American station rescued by a post-Soviet Russia. China did the opposite: it flew a single small test lab, learned from it, flew a second, learned again, and only then launched the permanent station — each step a rehearsal for the next. It is China's first long-term space station, and the second one crewed without interruption today.",
+  "cur": "天宫—\"Heavenly Palace\"—与之前所有空间站的不同之处在于它的从容不迫和深思熟虑。苏联人仓促即兴建造了Salyut;国际空间站则是从一个被取消的美国空间站发展而来,后由苏联解体后的俄罗斯拯救。中国采取了相反的做法:先发射一个小型试验舱,从中学习,再发射第二个,再次学习,然后才发射永久性空间站——每一步都是为下一步做排练。这是中国第一个长期空间站,也是当今第二个持续有人驻留的空间站。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "goals.0.md",
+  "en": "The near-term goal was mastery, not size. Before committing to a permanent outpost, China needed to prove it could do the hard things a station demands: launch a target vehicle, rendezvous and dock with it automatically and then by hand, keep astronauts alive aboard it for weeks, and resupply it. Each of those was flown and checked off deliberately, one at a time, on the two small Tiangong test labs before the real station was ever launched.",
+  "cur": "近期目标是掌握技术，而非规模。在建造永久空间站之前，中国需要证明自己能够完成空间站所要求的各项艰巨任务：发射目标飞行器，与其进行自动和手动交会对接，让航天员在其中生活数周，以及进行补给。在真正的空间站发射之前，这些任务都在两个小型的天宫试验舱上逐一进行了飞行验证和确认。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "goals.1.caption",
+  "en": "Tiangong-1, launched September 2011 — an 8-tonne test lab, not a station. Its job was to be a target: something for Shenzhou crews to find, chase, and dock with, proving China could do orbital rendezvous before betting on a permanent outpost.",
+  "cur": "天宫一号于2011年9月发射——一个8吨重的测试实验室，而非空间站。它的任务是充当目标：供神舟乘组寻找、追逐并对接，以此证明中国能够完成轨道交会对接，然后再押注于永久前哨站。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "goals.2.md",
+  "en": "The long-term goal was strategic independence. A permanently-crewed station of its own would make China the third space power to operate one — and, as the ISS aged toward retirement, potentially the only one left flying. That is not a small ambition dressed up as a science program; it is a science program built to serve a very deliberate ambition: to be a first-rank spacefaring nation on its own terms, dependent on no one's launch vehicle, no one's docking port, and no one's permission.",
+  "cur": "长期目标是战略独立。一座自主运营的永久载人空间站将使中国成为第三个运营此类设施的航天强国——而且随着国际空间站逐渐老化走向退役,中国可能成为唯一仍在运行空间站的国家。这不是一个披着科学计划外衣的小小野心;这是一个为服务于深思熟虑的雄心而建立的科学计划:依靠自己的条件成为一流航天国家,不依赖任何国家的运载火箭、任何国家的对接口,也不依赖任何国家的许可。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "outcome.0.md",
+  "en": "It worked, and it worked on schedule. Tiangong-1 (2011) proved rendezvous and docking; Tiangong-2 (2016) proved crews could live and work aboard for a month and be resupplied by the new Tianzhou freighter. Then, between April 2021 and late 2022, the three modules of the permanent station — the Tianhe core and the Wentian and Mengtian laboratories — were launched and assembled into the T-shaped Chinese Space Station, which has been continuously crewed since June 2022, when the Shenzhou-14 crew began permanent residency.",
+  "cur": "它成功了,而且按计划成功了。天宫一号(2011年)验证了交会对接;天宫二号(2016年)证明航天员可以在轨生活工作一个月,并由新型天舟货运飞船进行补给。随后,在2021年4月至2022年底期间,永久空间站的三个舱段——天和核心舱以及问天和梦天实验舱——相继发射并组装成T字构型的中国空间站,自2022年6月神舟十四号乘组开始常驻以来,该站一直保持有人驻留。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "outcome.1.caption",
+  "en": "The completed Chinese Space Station — three modules in a T, roughly a sixth the mass of the ISS but fully modern: robotic arm, twin labs, and its own airlock. Smaller by design, and entirely China's.",
+  "cur": "建成的中国空间站——三个舱段呈T字形布局,质量约为国际空间站的六分之一,但完全现代化:配备机械臂、双实验舱和自带气闸舱。设计上更小巧,且完全属于中国。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "outcome.2.md",
+  "en": "The station is deliberately modest next to the ISS — roughly 66–70 tonnes against the ISS's 420, three modules against sixteen. But it is complete, modern, and permanently occupied, with a robotic arm, external science platforms, and room for three astronauts (six during handovers). China did in about eighteen months of assembly what the ISS took more than a decade to build, because it had watched everyone else do it first and skipped the mistakes.",
+  "cur": "该空间站相比国际空间站刻意保持适度规模——大约66–70吨，而国际空间站为420吨，三个舱段对比十六个。但它是完整的、现代化的、持续有人驻守的，配备机械臂、舱外科学平台，可容纳三名航天员（交接期间为六名）。中国用大约十八个月的组装时间完成了国际空间站花费十多年才建成的工作，因为它观察了其他所有人的做法，并跳过了那些错误。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "narrative.0.md",
+  "en": "The through-line of Tiangong is patience as a strategy. Where the space race was defined by rushing — Voskhod's reckless firsts, Apollo's brutal sprint — China treated human spaceflight as an engineering problem to be retired risk by risk. Shenzhou 5 put the first Chinese astronaut in orbit in 2003, forty-two years after Gagarin, and China was in no hurry to look like it was catching up. It looked, instead, like it was building something that would still be standing when the racing stopped.",
+  "cur": "天宫的主线是将耐心作为一种策略。太空竞赛的特点是仓促——Voskhod鲁莽的\"第一次\"、Apollo残酷的冲刺——而中国将载人航天视为一个需要逐个消除风险的工程问题。神舟五号在2003年将第一位中国航天员送入轨道，距加加林已过去四十二年，中国并不急于表现出正在追赶的样子。相反，它看起来像是在建造某种当竞赛停止时依然屹立的东西。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "narrative.1.caption",
+  "en": "Shenzhou — China's crew capsule. Superficially Soyuz-like in layout, it is larger, entirely Chinese-built, and the vehicle that has carried every Tiangong crew. Its reliability is the quiet foundation the whole program stands on.",
+  "cur": "神舟——中国的载人飞船。从布局上看表面类似Soyuz，但它更大，完全由中国制造，是运送每一批天宫乘组的飞行器。它的可靠性是整个项目赖以建立的坚实基础。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "narrative.2.md",
+  "en": "There is also a hard edge to the story. The Wolf Amendment did not just exclude China from the ISS; it made independence the only path available. In that light Tiangong is a case study in what exclusion produces: not collapse, but a parallel capability answerable to no one else. China now flies its own crews, on its own rocket, to its own station, and has begun inviting other nations to fly experiments — and eventually astronauts — aboard it. The station that was built because China was shut out has become a door China controls.",
+  "cur": "这个故事也有其严峻的一面。Wolf Amendment 不仅将中国排除在国际空间站之外，它还使独立发展成为唯一可行的道路。从这个角度看，天宫是一个关于排斥会产生什么结果的案例研究：不是崩溃，而是一种不对任何其他方负责的平行能力。中国现在用自己的火箭将自己的航天员送往自己的空间站，并已开始邀请其他国家在站上开展实验——以及最终搭载航天员。这个因中国被拒之门外而建造的空间站，已经成为一扇由中国掌控的大门。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "legacy.0.md",
+  "en": "Tiangong's first legacy is simply that it exists and is finished. For the first time since the Cold War there are two permanently-crewed stations in orbit at once, run by rival powers — and when the ISS is retired around 2030, Tiangong is positioned to be the only one left. A capability the United States helped pioneer could, within a decade, be one that only China continuously operates.",
+  "cur": "天宫的首要遗产在于它的存在本身以及它的完工。自冷战以来,轨道上首次同时存在两座由竞争大国运营的长期载人空间站——而当国际空间站在2030年左右退役时,天宫将成为唯一留存的一座。美国曾帮助开创的能力,可能在十年内成为只有中国持续运营的能力。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "legacy.1.md",
+  "en": "Its second legacy is a template for how a determined newcomer builds a space program: incrementally, publicly, and without shortcuts. China's step-by-step method — test lab, then bigger test lab, then permanent station — is the same disciplined ladder it is now applying to its robotic lunar program and its plans for crewed lunar landings. Tiangong is the proof of method as much as the proof of capability.",
+  "cur": "它的第二项遗产是一个模板，展示了一个坚定的新来者如何建立航天计划：渐进式、公开化、不走捷径。中国的循序渐进方法——测试实验室，然后更大的测试实验室，然后永久空间站——正是它现在应用于机器人月球计划和载人登月计划的同样严谨的阶梯。天宫既是方法的证明，也是能力的证明。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "legacy.2.md",
+  "en": "And it is a second front door to orbit. With the ISS partnership historically closed to China, Tiangong gives the rest of the world an alternative host for human spaceflight — one that comes with its own geopolitics, but that materially widens who gets to fly people and experiments to a station at all.",
+  "cur": "而且它是通往轨道的第二扇前门。由于国际空间站合作伙伴关系历来对中国关闭,天宫为世界其他地区提供了载人航天的另一个东道主——虽然它自带地缘政治因素,但实质上拓宽了哪些国家能够将人员和实验送往空间站。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of Tiangong is that exclusion can manufacture exactly the rival it was meant to prevent. Denied a seat on the ISS, China did not fall behind; it built the capability itself and now holds a card the excluders cannot take back. Shutting a competitor out of a shared project is a bet that they cannot build their own — and it is a bet that, against a patient and well-funded state, tends to lose.",
+  "cur": "天宫的教训在于,排斥恰恰可能制造出它本想阻止的对手。中国被拒于国际空间站之外后,并未因此落后;相反,它自主建立了相关能力,如今手握一张排斥者无法收回的牌。将竞争对手拒之于共享项目之外,是在赌他们无法自行建造——而面对一个有耐心、资金充足的国家,这种赌注往往会输。"
+ },
+ {
+  "rel": "programs/tiangong.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is about tempo. Tiangong shows that in spaceflight the fastest-looking program is rarely the strongest one. China arrived late to every first and cared about none of them, optimizing instead for a station that would be finished, reliable, and permanent. When the goal is to still be flying in 2035, patience is not caution — it is the strategy.",
+  "cur": "更深层的教训关乎节奏。天宫表明,在航天领域,看起来最快的计划很少是最强大的。中国在每一个\"首次\"上都姗姗来迟,也不在意这些,而是优化打造一座建成的、可靠的、永久性的空间站。当目标是在2035年仍在运行时,耐心不是谨慎——而是战略。"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "tagline",
+  "en": "In 1976 two American landers set down on Mars, sent back the first clear photographs from its surface — and ran an experiment to answer the oldest question about the planet: is anything alive there?",
+  "cur": "1976年,两个美国着陆器降落在火星上,传回了第一批清晰的火星表面照片——并进行了一项实验来回答关于这颗行星最古老的问题:那里有生命存在吗?"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "the_land.0.md",
+  "en": "By the mid-1970s Mars had been glimpsed but never touched. Mariner flybys and one orbiter had replaced the old dream of canals and civilisations with a colder picture — a cratered, apparently dead desert — but the surface itself remained unknown, and the question that had haunted Mars for a century was still open. Was there life? A photograph from orbit could not answer it. Someone had to land, look, and test the soil.",
+  "cur": "到1970年代中期,火星曾被远远瞥见但从未被触及。Mariner飞掠任务和一个轨道器已经用更冷酷的图景——一个布满陨石坑、显然死寂的荒漠——取代了旧日关于运河和文明的梦想,但火星表面本身仍然未知,而那个困扰火星一个世纪的问题依然悬而未决。有生命存在吗?轨道上的照片无法回答这个问题。必须有人着陆、观察并检测土壤。"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "the_land.1.md",
+  "en": "Viking was the most ambitious interplanetary mission the United States had yet attempted: two identical spacecraft, each an orbiter carrying a lander, sent to reach Mars, choose a safe spot from above, and set a robot down gently on a world whose surface no one had seen from the ground. Nothing had ever landed on Mars and worked; the Soviet attempts had failed within seconds. Viking had to succeed twice.",
+  "cur": "Viking是美国迄今为止尝试的最雄心勃勃的行星际任务:两艘相同的航天器,每艘都是携带着陆器的轨道器,被送往火星,从上方选择安全地点,并将机器人轻柔地放置在一个从未有人从地面看过其表面的世界上。此前从未有任何东西在火星上着陆并运行成功;苏联的尝试在几秒钟内就失败了。Viking必须成功两次。"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "goals.0.md",
+  "en": "The goal had two halves. The orbiters would map Mars from above in detail no flyby could — enough to choose landing sites and to study the planet as a whole. And the landers would do what nothing had done before: operate on the Martian surface, photograph it, measure its weather and soil, and run a suite of experiments built to detect the chemistry of life.",
+  "cur": "这个目标分为两部分。轨道器将以飞掠任务无法企及的细节从上方绘制火星地图——足以选择着陆地点并研究整个行星。而着陆器将完成此前从未有过的任务:在火星表面运行,拍摄照片,测量其天气和土壤,并运行一套为检测生命化学特征而设计的实验。"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "goals.1.caption",
+  "en": "Each Viking was two spacecraft in one: an orbiter to survey and relay, and a lander that separated, fired its engines, and set down on three legs. The landers carried cameras, a weather station, a soil scoop, and a miniature biology laboratory.",
+  "cur": "每个Viking都是二合一的航天器:一个用于勘测和中继的轨道器,以及一个分离后点火引擎并用三条腿着陆的着陆器。着陆器携带摄像机、气象站、土壤铲和一个微型生物学实验室。"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "goals.2.md",
+  "en": "The life question was the one the public cared about, and Viking took it seriously. Each lander carried three separate biology experiments, designed to feed the Martian soil and watch for the signs of metabolism — the most direct search for extraterrestrial life ever attempted, then or since.",
+  "cur": "生命问题是公众关心的问题,Viking认真对待它。每个着陆器都携带三个独立的生物学实验,设计用于给火星土壤提供养分并观察代谢迹象——这是有史以来最直接的地外生命搜寻,无论当时还是之后。"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "outcome.0.md",
+  "en": "It worked, twice. The Viking 1 lander touched down in Chryse Planitia on 20 July 1976 and returned the first clear photograph from the surface of Mars — a rock-strewn orange plain under a pale sky. Viking 2 set down in Utopia Planitia six weeks later. Between them the two landers operated for years, sending back panoramas, seasons of weather data, and the first detailed chemistry of the Martian soil.",
+  "cur": "它成功了,两次。Viking 1着陆器于1976年7月20日降落在克律塞平原,传回了第一张清晰的火星表面照片——苍白天空下布满岩石的橙色平原。Viking 2六周后降落在乌托邦平原。两个着陆器运行了数年,传回全景照片、多个季节的天气数据以及火星土壤的首次详细化学分析。"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "outcome.1.md",
+  "en": "The biology results were the mission's great ambiguity. One of the three experiments returned a signal that, on Earth, would have suggested life; the others did not, and the lander's chemistry instrument found no organic molecules in the soil at all. The scientific consensus settled on an unusual, life-mimicking chemistry in the Martian dirt rather than biology — but the result was close enough, and strange enough, that it is still argued over decades later. Viking did not find life; neither did it entirely close the case.",
+  "cur": "生物学实验结果是这次任务最大的不确定性。三个实验中有一个返回了一个信号,如果在地球上,这个信号会暗示生命的存在;其他实验没有,而且着陆器的化学仪器在土壤中完全没有发现有机分子。科学共识倾向于认为这是火星土壤中一种不寻常的、模拟生命的化学反应,而非生物学现象——但结果足够接近、足够奇特,以至于几十年后仍在争论。Viking没有发现生命;但也没有完全结案。"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "outcome.2.md",
+  "en": "What Viking did settle was that Mars could be reached, landed on, and worked — not once but twice, for years. The orbiters mapped almost the entire planet, revealing the great volcanoes and canyons in full, and the landers proved that a robot could survive and function on the Martian surface across seasons. Every rover that has since crossed Mars rests on that proof.",
+  "cur": "Viking确实解决的是火星可以被到达、着陆并运行——不是一次而是两次,持续数年。轨道器绘制了几乎整个行星的地图,完整展现了巨大的火山和峡谷,而着陆器证明了机器人可以在火星表面跨越季节生存和运作。此后每一个穿越火星的火星车都建立在这个证明之上。"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "narrative.0.md",
+  "en": "The story of Viking is a mission that answered every question but the one it was most remembered for asking. It was a triumph of engineering — two successful Mars landings at a time when no one had managed even one — and a trove of science, and yet it is inseparable from the biology experiments and their maddening, unresolved result. Viking is the rare case where the headline goal came back not as yes or no but as maybe, and the maybe has outlasted everything else.",
+  "cur": "Viking的故事是一个任务回答了每个问题,除了它最被记住的那个问题。它是工程学的胜利——在没有人成功过哪怕一次的时候实现了两次火星着陆——也是科学的宝库,然而它与生物学实验及其令人抓狂的未解结果密不可分。Viking是罕见的案例,标志性目标的答案不是是或否,而是也许,而这个也许比其他一切都更持久。"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "narrative.1.md",
+  "en": "That ambiguity was, in its way, honest. Viking's designers had built the most careful life-detection experiment they could, and when the data came back contradictory they reported it as contradictory rather than forcing it into a clean answer. The lesson the community drew — that detecting life is far harder than it looks, and that a single clever experiment can fool you — reshaped how the search for life has been pursued ever since, toward habitability and evidence built up slowly rather than one decisive test.",
+  "cur": "这种不确定性以其方式体现了诚实。Viking的设计者建造了他们所能建造的最谨慎的生命探测实验,当数据返回矛盾时,他们如实报告了矛盾,而不是强行将其塞入一个干净的答案。科学界得出的教训——探测生命远比看起来困难,单一的巧妙实验可能会欺骗你——重塑了此后生命搜寻的方式,转向宜居性和缓慢积累的证据,而非一次决定性的测试。"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "narrative.2.md",
+  "en": "And beneath the biology drama, Viking quietly did the foundational work. It turned Mars from a place seen from a distance into a place with ground truth — real soil chemistry, real weather, real pictures from the surface — and it proved the whole difficult chain of reaching Mars and landing intact. The rovers that now roam the planet are Viking's direct descendants; they walk on the proof it left.",
+  "cur": "在生物学戏剧的表象下,Viking悄悄完成了基础性工作。它将火星从一个远距离观察的地方变成了一个有地面实况的地方——真实的土壤化学、真实的天气、真实的表面照片——并且证明了到达火星并完整着陆的整个困难链条。现在漫游这颗行星的火星车是Viking的直系后代;它们行走在Viking留下的证明之上。"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "legacy.0.md",
+  "en": "Viking's first legacy is the landing itself: the first successful arrival on the surface of Mars, and the proof that a spacecraft could reach the planet, set down safely, and operate for years. Every Mars lander and rover since — Pathfinder, the twin geologists, Curiosity, Perseverance — inherits the path Viking opened.",
+  "cur": "Viking的第一项遗产是着陆本身:火星表面的首次成功抵达,以及航天器可以到达这颗行星、安全着陆并运行数年的证明。此后每一个火星着陆器和火星车——Pathfinder、双子地质学家、Curiosity、Perseverance——都继承了Viking开辟的道路。"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "legacy.1.md",
+  "en": "Its second is the ground truth. Viking's soil chemistry, weather records, and surface panoramas gave planetary science its first real data from the Martian ground, and its global orbital maps framed the geology that later missions went to investigate. The modern picture of Mars begins here.",
+  "cur": "第二项是地面实况。Viking的土壤化学、天气记录和表面全景照片为行星科学提供了来自火星地面的第一批真实数据,其全球轨道地图勾勒出了后续任务前去调查的地质结构。现代的火星图景从这里开始。"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "legacy.2.md",
+  "en": "Its third is the life question, left open in a productive way. Viking's ambiguous biology result — and the humility it forced — reshaped the entire search for life beyond Earth, steering it away from single decisive tests toward the patient accumulation of evidence that guides the hunt on Mars, Enceladus, and Europa today.",
+  "cur": "第三项是以一种富有成效的方式留下的生命问题。Viking模糊的生物学结果——以及它所强加的谦逊——重塑了整个地球之外的生命搜寻,将其从单一决定性测试引向耐心积累证据的方向,这正是今天在火星、土卫二和木卫二上进行搜寻的指导方针。"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of Viking is that the most important questions rarely resolve in a single experiment. Viking asked whether Mars held life with the best instrument its era could build, and got back an answer that was neither yes nor no — and the honest response was to report the ambiguity, not to manufacture certainty. Hard questions are usually answered by the slow weight of evidence, not one clean result, and mistaking a clever test for a final one is how you fool yourself.",
+  "cur": "Viking的教训是,最重要的问题很少在单一实验中解决。Viking用其时代所能建造的最好仪器询问火星是否存在生命,得到的答案既不是是也不是否——而诚实的回应是报告这种不确定性,而不是制造确定性。困难的问题通常由证据的缓慢积累来回答,而非一个干净的结果,将巧妙的测试误认为最终测试是你欺骗自己的方式。"
+ },
+ {
+  "rel": "programs/viking.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is the value of proving the whole chain. Viking's lasting gift was not any single measurement but the demonstration that reaching Mars and landing intact was possible and repeatable. Once a hard thing has been done — and done twice — it stops being a gamble and becomes a foundation others can build on. Sometimes the greatest result a mission returns is simply that it can be done.",
+  "cur": "更深层的教训是证明整个链条的价值。Viking持久的馈赠不是任何单一的测量,而是证明了到达火星并完整着陆是可能的且可重复的。一旦一件困难的事情被完成——而且完成了两次——它就不再是赌博,而成为他人可以建立其上的基础。有时一个任务返回的最伟大结果就是简单地证明它可以被完成。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "tagline",
+  "en": "The rushed stopgap that squeezed two more firsts — a crew and a spacewalk — out of maxed-out hardware, and nearly killed people doing it.",
+  "cur": "这个仓促的权宜之计从已用到极限的硬件中榨取了两项新纪录——载人和太空行走——并且差点在此过程中害死人。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "the_land.0.md",
+  "en": "By 1964 the easy part was over. Vostok had scored its firsts, but the Americans were building Gemini — a two-seat spacecraft that could actually maneuver, rendezvous, and dock — and once it flew, the Soviet lead would evaporate. Nikita Khrushchev wanted more headlines before that happened, and he leaned on Sergei Korolev to produce them. There was no new Soviet spacecraft ready. So Korolev's team did the only thing the schedule allowed: they took the one-seat Vostok and modified it to do things it was never designed for.",
+  "cur": "到1964年，容易的部分已经结束。Vostok已经拿下了它的多项第一，但美国人正在建造Gemini——一艘真正能够机动、交会和对接的双座飞船——一旦它升空，苏联的领先优势就会化为乌有。尼基塔·赫鲁晓夫希望在那之前制造更多头条，于是向谢尔盖·科罗廖夫施压要求他拿出成果。当时苏联没有新飞船准备就绪。所以科罗廖夫的团队做了进度允许的唯一选择：他们把单座的Vostok进行改装，让它去做那些它从未被设计来做的事情。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "the_land.1.md",
+  "en": "The result was Voskhod, and it existed for a single purpose — to keep scoring firsts a little longer, on borrowed hardware and borrowed margin. It was less a program than a pair of stunts pulled off before the competition could catch up: a multi-person crew, and a human stepping outside into vacuum. Both would be genuine milestones. Both were far more dangerous than the calm Soviet announcements let on.",
+  "cur": "其结果就是Voskhod，它的存在只有一个目的——用借来的硬件和借来的余地，再多保持一段时间的领先记录。与其说它是一个计划，不如说是在竞争对手赶上之前完成的两次特技表演：多人乘组，以及人类踏出舱外进入真空。两者都是真正的里程碑。但两者的危险程度都远超苏联那些平静的公告所透露的信息。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "goals.0.caption",
+  "en": "Voskhod — a Vostok stripped of its ejection seat and repacked to carry more crew. The room for three came at the cost of the escape system and, on the first flight, of pressure suits.",
+  "cur": "Voskhod——一艘拆除了弹射座椅并重新改装以搭载更多乘员的Vostok。三人空间的代价是逃生系统，而在首次飞行中，还包括压力服。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "goals.1.md",
+  "en": "Voskhod had exactly two goals, both defined by what would beat Gemini to the punch: fly more than one person at once, and put a human outside the spacecraft. To fit three cosmonauts into a capsule built for one, the engineers ripped out the ejection seat that had saved every Vostok pilot — which meant that if anything went wrong on launch or landing, the crew had no way out. On the first flight there wasn't even room for pressure suits. It was a calculated gamble that nothing would go wrong, taken to hold a lead.",
+  "cur": "Voskhod恰好有两个目标,都由抢在Gemini之前完成什么来定义:一次搭载多人飞行,以及让人类走出航天器。为了将三名宇航员塞进一个为单人设计的舱室,工程师们拆除了曾拯救过每一位Vostok飞行员的弹射座椅——这意味着如果在发射或着陆时出现任何问题,乘组将无路可逃。在第一次飞行中甚至没有空间容纳压力服。这是一场精心计算的赌博,赌不会出任何差错,目的是保持领先。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "outcome.0.caption",
+  "en": "Voskhod 1's crew of three — Komarov, Feoktistov, Yegorov — the first multi-person spaceflight, flown in shirtsleeves with no suits and no escape system.",
+  "cur": "Voskhod 1的三人乘组——科马罗夫、费奥科迪斯托夫、Yegorov——首次多人航天飞行,穿着衬衫没有航天服也没有逃生系统。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "outcome.1.md",
+  "en": "The gambles paid off, barely. In October 1964 Voskhod 1 carried the first three-person crew — in shirtsleeves, no suits, no ejection seats — around the Earth for a day and came home safely. Five months later Voskhod 2 did the harder thing: Alexei Leonov opened a hatch and floated into vacuum on the first spacewalk in history. Then it nearly went wrong in every possible way. Leonov's suit ballooned so rigidly in vacuum that he couldn't get back through the airlock, and had to bleed his own air pressure — risking the bends — to squeeze in. The automatic reentry system failed; the crew flew it down by hand and came down hundreds of kilometres off target, in deep Siberian forest, where they spent two freezing nights in deep forest — wolves in the taiga around them — before skiing out to a helicopter that couldn't land in the trees.",
+  "cur": "这些赌注勉强成功了。1964年10月，Voskhod 1搭载了首个三人乘组——身穿衬衫，没有太空服，没有弹射座椅——绕地球飞行一天后安全返回。五个月后，Voskhod 2完成了更艰难的任务：阿列克谢·列昂诺夫打开舱门，飘入真空，完成了历史上第一次太空行走。然后几乎在所有可能的方面都出了问题。列昂诺夫的太空服在真空中膨胀得过于僵硬，以至于他无法穿过气闸返回，不得不放掉自己的气压——冒着减压病的风险——才挤了进去。自动再入系统失灵；乘组手动驾驶飞船下降，落点偏离目标数百公里，降落在西伯利亚深林中，他们在深林里度过了两个冰冷的夜晚——周围针叶林中有狼群出没——然后滑雪前往一架无法在树林中降落的直升机。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "outcome.2.md",
+  "en": "Two flights, two more firsts, and two brushes with disaster the world wasn't told about for decades. Korolev looked at how close Voskhod 2 had come and cancelled the rest of the program. The hardware was out of margin, and there were no more firsts worth the risk — the next real capability, like everything Apollo would need, would have to come from a spacecraft that didn't yet exist.",
+  "cur": "两次飞行,两项新的第一,以及两次与灾难擦肩而过的经历——世界在几十年后才被告知。科罗廖夫审视了 Voskhod 2 有多接近灾难,随后取消了该计划的其余部分。硬件已经没有余量,再也没有值得冒险的第一了——下一个真正的能力,就像 Apollo 所需要的一切,都必须来自一艘尚不存在的飞船。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "narrative.0.md",
+  "en": "Voskhod is what a program looks like when the headlines are running the schedule. Every decision — no suits, no ejection seats, an inflatable airlock bolted onto a one-seat capsule — was a corner cut to score a first before Gemini, and each one moved risk from the drawing board onto the crew. It worked twice, which is exactly the problem: success on thin margins teaches the wrong lesson, that the margins weren't needed.",
+  "cur": "Voskhod 就是一个被新闻头条主导进度的项目的样子。每一个决定——不穿宇航服、没有弹射座椅、在单座太空舱上焊接一个充气式气闸舱——都是为了抢在 Gemini 之前获得某项第一而走的捷径,每一项都把风险从设计图纸转移到了机组人员身上。它成功了两次,而这恰恰就是问题所在:在极窄的安全边际上取得成功会教给人错误的教训,让人以为那些安全边际本来就不需要。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "narrative.1.md",
+  "en": "The Leonov spacewalk is the whole program in miniature — a genuine, courageous first that the public saw as effortless and that came within a hair of killing its cosmonaut, quietly, off camera. That gap between the triumphant announcement and the near-catastrophe underneath is the truest thing about Voskhod, and about the way the early Soviet program raced: brilliantly, publicly, and with far less room to spare than anyone was allowed to know.",
+  "cur": "列昂诺夫的太空行走是整个计划的缩影——一次真正勇敢的创举,公众看到的是毫不费力的表演,而实际上它几乎在镜头之外悄无声息地夺走了宇航员的生命。胜利宣告与背后的险象环生之间的鸿沟,才是关于Voskhod最真实的写照,也是苏联早期航天计划竞赛方式的真实写照:辉煌夺目、万众瞩目,却远比任何人被允许知道的更加凶险。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "narrative.2.md",
+  "en": "After Voskhod 2 the Soviet program stopped stretching Vostok and turned to Soyuz — a real second-generation spacecraft that could maneuver and dock — and to a secret bid for the Moon. The era of easy firsts was over; from here the race would be run on capability, and that was ground the Americans, with Gemini, were about to seize.",
+  "cur": "Voskhod 2之后,苏联计划停止了对Vostok的改进,转向Soyuz——一种能够机动和对接的真正第二代航天器——以及一项秘密的登月竞标。轻松夺得第一的时代已经结束;从此以后,竞赛将基于能力展开,而这正是美国人凭借Gemini即将占据的领域。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "legacy.0.caption",
+  "en": "Alexei Leonov's spacewalk, March 1965 — the first human in open space, and one of the closest brushes with disaster the era produced.",
+  "cur": "阿列克谢·列昂诺夫的太空行走，1965年3月——首位进入开放空间的人类，也是那个时代最接近灾难的经历之一。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "legacy.1.md",
+  "en": "Voskhod's legacy is two permanent firsts — the first crew and the first spacewalk — and a cautionary tale that sits right beside them. The firsts are real and can't be taken away; every multi-person crew and every spacewalk since traces back to these two flights. But Voskhod is also the moment the Soviet strategy of firsts hit its limit: it had run out of new things a modified Vostok could do, and had nearly killed people doing the last of them.",
+  "cur": "Voskhod的遗产是两个永久性的第一——第一次多人乘组和第一次太空行走——以及紧随其后的一个警示故事。这些第一是真实的,无法被抹去;此后的每一次多人乘组任务和每一次太空行走都可以追溯到这两次飞行。但Voskhod也标志着苏联\"第一战略\"触及极限的时刻:改进型Vostok已经无法实现新的突破,而在完成最后这些突破时几乎造成人员伤亡。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "legacy.2.md",
+  "en": "Historically it marks a handover. Voskhod 2 flew in March 1965; Gemini's own program began weeks later and, over the next twenty months, methodically took the lead the Soviets had held since Sputnik — rendezvous, docking, endurance, EVA made routine. Voskhod is the last time the Soviet Union was clearly ahead. What came after, on both sides, would be decided not by who was first, but by who had built the deeper capability.",
+  "cur": "从历史角度看,这标志着一次交接。Voskhod 2号于1965年3月飞行;Gemini计划本身在数周后开始,并在接下来的二十个月里,有条不紊地夺取了苏联自Sputnik以来一直保持的领先地位——交会、对接、长航时、常规化的EVA。Voskhod是苏联最后一次明显领先。此后双方的较量,将不再由谁是第一来决定,而是由谁建立了更深厚的能力来决定。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "lessons.0.md",
+  "en": "Voskhod's lesson is the danger of racing on borrowed margin. Cutting the ejection seats and the pressure suits, bolting an airlock onto a capsule that wasn't built for one — each corner bought a headline and moved a real risk onto real people, and the program got away with it twice. But getting away with it is not the same as being safe, and success on thin margins is a trap: it quietly teaches an organization that the safety it discarded was never necessary, right up until the flight where it is.",
+  "cur": "Voskhod的教训在于靠透支余量竞赛的危险。取消弹射座椅和压力服，在一个本不为此设计的舱体上强行安装气闸舱——每一次偷工减料都换来了头条新闻，也将真实的风险转嫁给了真实的人，而该项目侥幸成功了两次。但侥幸成功并不等同于安全，在微弱余量上的成功是一个陷阱：它悄无声息地让一个组织相信，自己当初抛弃的安全措施其实从来都不必要，直到需要它的那次飞行到来。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "lessons.1.md",
+  "en": "The second lesson is what a stopgap is for, and what it isn't. Voskhod did exactly one thing well — it bought time and two more firsts while the real next-generation spacecraft was being built. That's a legitimate use of improvised hardware. The mistake would have been to keep flying it, chasing headlines past the point where the margin ran out — and to Korolev's credit, he read the near-disaster correctly and stopped. Knowing when a stopgap has done its job is as important as building one.",
+  "cur": "第二个教训是权宜之计的用途是什么，以及它不是什么。Voskhod只做好了一件事——它在真正的下一代航天器建造期间争取了时间和另外两个第一。这是即兴硬件的合理用途。错误的做法是继续飞行它，在安全余量耗尽之后仍追逐头条新闻——值得称赞的是，科罗廖夫正确解读了这次险些酿成的灾难并及时停止。知道权宜之计何时完成了它的任务，与建造一个权宜之计同样重要。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "tagline",
+  "en": "The program that put the first human in orbit — and kept scoring firsts while America scrambled to catch up.",
+  "cur": "将第一位人类送入轨道的计划——并在美国奋力追赶时不断创下第一。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "the_land.0.md",
+  "en": "By 1960 the Soviet Union had already stunned the world with Sputnik and meant to keep the lead. Behind it was a man the West didn't know existed: Sergei Korolev, the \"Chief Designer,\" his very name a state secret, running the program that had turned his R-7 — the world's first intercontinental missile — into a rocket that could carry a person. The Americans were building Mercury and talking about it openly. The Soviets said almost nothing, and moved faster.",
+  "cur": "到1960年，苏联已经凭借Sputnik震惊了世界，并决心保持领先地位。在这背后是一个西方不知其存在的人：谢尔盖·科罗廖夫，\"总设计师\"，他的名字本身就是国家机密，领导着一个项目，将他的R-7——世界上第一枚洲际导弹——改造成了能够搭载人员的火箭。美国人在公开谈论中建造Mercury。而苏联几乎什么都不说，却行动得更快。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "the_land.1.md",
+  "en": "The prize was the first human in space, and it was worth almost any risk, because in the Cold War a Soviet cosmonaut orbiting overhead was an argument no speech could match — proof, broadcast worldwide, that the system could out-build the West at the edge of the possible. Vostok was built to win that argument. It did not need to do much once in orbit; it needed to get a person up, around, and safely down, and to be first.",
+  "cur": "奖赏是让第一个人类进入太空,这几乎值得冒任何风险,因为在冷战中,一名苏联宇航员在头顶轨道飞行本身就是任何演说都无法比拟的论据——这是向全世界广播的证明,证明该体制能够在可能性的边缘超越西方的建设能力。Vostok正是为赢得这场论战而建造的。它进入轨道后不需要做太多事情;它需要做的是把人送上去、绕行、再安全返回,并且要成为第一个。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "goals.0.caption",
+  "en": "The Vostok descent module — a simple sphere, the one shape that survives reentry from any angle without steering. The cosmonaut rode it to a few kilometres, then ejected and parachuted down separately.",
+  "cur": "Vostok下降舱——一个简单的球体,唯一能在不进行姿态控制的情况下从任何角度存活再入的形状。宇航员乘坐它下降到几公里高度,然后弹射出舱,单独降落伞着陆。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "goals.1.md",
+  "en": "Vostok's goal was as narrow as Mercury's and pursued with less caution: prove a human could survive launch, orbit, and reentry — and do it before the Americans. The spacecraft reflected that focus. It was a sphere, the shape that reenters safely from any orientation so the automatic systems needn't hold a precise attitude, with a separate equipment module that fell away before the fire of reentry.",
+  "cur": "Vostok的目标与Mercury一样狭窄，但执行时更加冒进：证明人类能够在发射、入轨和再入大气层中存活——并且要赶在美国人之前完成。飞船的设计反映了这一重点。它是一个球体，这种形状无论以何种姿态再入大气层都能安全返回，因此自动系统无需保持精确的姿态控制，此外还有一个独立的设备舱，在再入大气层的火焰来临之前脱离。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "goals.2.md",
+  "en": "One detail was kept quiet for years. The sphere hit the ground too hard for a person to survive the impact, so the cosmonaut ejected at about seven kilometres and came down under a separate parachute. Under the international rules of the day a flight only counted if the pilot landed *with* the craft — so the Soviets simply didn't mention it, and claimed the records anyway. A small thing, but a telling one: the program was built to win, and the truth was managed to match.",
+  "cur": "有一个细节被隐瞒了多年。返回舱着陆时的冲击力过大，人体无法承受，因此宇航员在大约七公里高度弹射出舱，依靠单独的降落伞着陆。按照当时的国际规则，只有飞行员*随*飞行器着陆，飞行才算数——所以苏联人干脆对此只字不提，照样宣布创造了纪录。这是一件小事，但很能说明问题：这个项目的建立就是为了取胜，而真相则被操控以符合需要。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "outcome.0.caption",
+  "en": "Valentina Tereshkova before Vostok 6, June 1963 — the first woman in space, twenty years before the United States would fly one.",
+  "cur": "瓦莲京娜·捷列什科娃在 Vostok 6 号任务前,1963年6月——第一位进入太空的女性,比美国早了二十年。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "outcome.1.md",
+  "en": "In just over two years Vostok scored a run of firsts the United States could only watch. On 12 April 1961 Yuri Gagarin became the first human in space — a single orbit that made him, overnight, the most famous person on Earth. Gherman Titov followed with the first full day in orbit. Vostoks 3 and 4 flew together, the first time two crewed craft shared the sky. Valery Bykovsky flew nearly five days, still the longest solo spaceflight ever. And Valentina Tereshkova became the first woman in space — a milestone the Americans would not match until 1983.",
+  "cur": "在短短两年多的时间里，Vostok取得了一连串美国只能旁观的\"第一\"。1961年4月12日，尤里·加加林成为第一个进入太空的人类——单次轨道飞行使他一夜之间成为地球上最著名的人物。戈尔曼·季托夫紧随其后，完成了首次全天轨道飞行。Vostok 3和4一起飞行，这是首次有两艘载人飞船共享天空。瓦列里·贝科夫斯基飞行了近五天，至今仍是最长的单人太空飞行纪录。而瓦莲京娜·捷列什科娃成为第一位进入太空的女性——这一里程碑直到1983年美国人才追平。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "outcome.2.md",
+  "en": "Six flights, six successes, six firsts. By the measure that counted most in 1963 — who got there first — the Soviet Union was winning decisively, and doing it in a spacecraft that couldn't even change its own orbit. But the run also marked a ceiling: Vostok had done everything a one-seat sphere could do, and the next rounds — spacewalks, rendezvous, docking, the Moon — would demand machines it didn't have.",
+  "cur": "六次飞行,六次成功,六个第一。按照1963年最重要的衡量标准——谁先到达——苏联正在决定性地获胜,而且是用一艘甚至无法改变自身轨道的航天器做到的。但这一连串成就也标志着一个上限:Vostok已经完成了单座球形舱能做的一切,而接下来的任务——太空行走、交会、对接、登月——将需要它所不具备的机器。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "narrative.0.md",
+  "en": "Vostok is a story told in two registers at once — the public triumph and the hidden reality. In public, each flight was presented as flawless — proof, the state insisted, of Soviet superiority, announced only once it had already succeeded. Out of sight were the things that didn't fit: Korolev's name, the ejection landings, the dogs lost on failed test shots, the near-misses. The program never flew a mission it expected to fail, because a public failure was politically unaffordable — and that shaped what it attempted, and when.",
+  "cur": "Vostok 的故事同时以两种层面展开——公开的胜利和隐藏的现实。在公开场合,每次飞行都被呈现为完美无瑕——国家坚称这是苏联优越性的证明,并且只在任务已经成功后才予以宣布。公众视线之外则是那些不符合叙事的事实:科罗廖夫的名字、弹射着陆、在失败测试中丧生的狗、那些险些出事的时刻。该计划从未执行过预期会失败的任务,因为公开失败在政治上是无法承受的——这塑造了它尝试什么,以及何时尝试。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "narrative.1.md",
+  "en": "At its centre was one man turned into a symbol. Gagarin's 108 minutes made him a global icon overnight — sent on world tours, put on stamps and statues, more useful to the state on the ground than in the air, and never allowed to fly in space again. He died in a jet crash in 1968, at thirty-four. The first human to leave the planet spent the rest of his short life as the smiling face of a system that would not risk him twice.",
+  "cur": "其核心是一个被塑造成符号的人。加加林的108分钟使他一夜之间成为全球偶像——被派往世界各地巡回访问，出现在邮票和雕像上，对国家而言在地面上比在空中更有用，再也不被允许飞入太空。1968年，他在一次喷气式飞机坠毁事故中丧生，年仅三十四岁。第一个离开地球的人类，用他短暂余生的时光充当了一个不愿让他再冒险的体制的微笑面孔。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "narrative.2.md",
+  "en": "By mid-1963 Vostok had run its course. Its successor, Voskhod, would stretch the same basic hardware to squeeze out two more firsts — a multi-person crew and the first spacewalk — before the Soviet program moved on to Soyuz and set its sights, in secret, on the Moon.",
+  "cur": "到1963年中期，Vostok已经完成了它的使命。它的后继者Voskhod将在同样的基础硬件上继续挖掘潜力，又实现了两个第一——多人乘组和首次太空行走——之后苏联的太空计划转向Soyuz，并秘密地将目光投向月球。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "legacy.0.caption",
+  "en": "Yuri Gagarin — the first human in space, and for the rest of his short life the face of the Soviet space program.",
+  "cur": "尤里·加加林——第一位进入太空的人类,在他短暂余生中一直是苏联航天计划的代表人物。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "legacy.1.md",
+  "en": "Vostok's legacy is partly a set of firsts that can never be taken back, and partly a machine that never really retired. The R-7 rocket that launched Gagarin is, in direct descent, the Soyuz rocket still carrying crews to orbit today — more than sixty years and eighteen hundred launches on, the most-used launch vehicle in history. The spherical-capsule-plus-service-module layout became the template for Soyuz, which is still flying.",
+  "cur": "Vostok的遗产一部分是那些永远无法被改写的“第一次”，另一部分则是一台从未真正退役的机器。当年发射加加林的R-7火箭，直系传承下来就是今天仍在把乘组送入轨道的Soyuz火箭——六十多年、一千八百次发射之后，它仍是历史上使用次数最多的运载火箭。球形返回舱加服务舱的布局成为了Soyuz的模板，而Soyuz至今仍在飞行。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "legacy.2.md",
+  "en": "Strategically it did something larger than any single flight: it convinced the United States it could not win the space race on the terms the Soviets were setting, and pushed Kennedy to change the game to the Moon — a target far enough away that American industrial depth could tell. In that sense Apollo is partly Vostok's doing. And for the wider world, the sight of a human circling the planet — whatever flag was on the rocket — permanently changed the sense of what people could do.",
+  "cur": "从战略上讲,它所实现的意义远超任何单次飞行:它让美国确信自己无法在苏联制定的规则下赢得太空竞赛,并推动Kennedy改变游戏规则,将目标转向月球——一个足够遥远的目标,能让美国的工业深度发挥作用。从这个意义上说,Apollo计划在某种程度上是Vostok促成的。而对更广阔的世界而言,看到一个人环绕地球飞行——无论火箭上印着什么旗帜——永久性地改变了人们对自身能力的认知。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "lessons.0.md",
+  "en": "Vostok's lesson is the double edge of a strategy built on being first. The Soviets won nearly every early round by pushing a limited spacecraft to its edge and moving before the competition could react — and it worked, brilliantly, for a while. But a run of firsts is not the same as a deep capability, and Vostok's focus on the next headline left it without the maneuvering, docking, and endurance the real destination would require. Winning the sprint can quietly cost you the race, if the sprint burns the runway you needed for the marathon.",
+  "cur": "Vostok的教训在于\"争第一\"战略的双刃剑本质。苏联几乎赢得了每一个早期回合,方法是将一艘能力有限的飞船推向极限,并在竞争对手反应之前抢先行动——这在一段时间内确实奏效,而且效果辉煌。但一连串的\"第一\"并不等同于深厚的能力,Vostok对下一个头条新闻的专注使其缺少了真正目标所需的机动、对接和耐久能力。如果短跑烧毁了你马拉松所需的跑道,那么赢得短跑可能会悄然让你输掉整场比赛。"
+ },
+ {
+  "rel": "programs/vostok.json",
+  "at": "lessons.1.md",
+  "en": "The second lesson is what secrecy buys, and what it costs. Hiding the failures and managing the truth let the program look invincible, which had real Cold War value. But it also meant the program could never be seen to fail — which made it cautious in the wrong places, unable to take the visible risks that learning hard things requires. An organization that can't afford to fail in public eventually can't afford to *learn* in public either.",
+  "cur": "第二个教训是保密能换来什么,又要付出什么代价。隐瞒失败和操控真相让这个项目看起来无懈可击,这在冷战时期确实有价值。但这也意味着该项目永远不能被看到失败——这使它在错误的地方变得谨慎,无法承担学习困难事物所需的那种公开风险。一个不能在公众面前失败的组织,最终也不能在公众面前*学习*。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "tagline",
+  "en": "Two probes launched in 1977 to tour the outer planets — and never came back. Half a century on, they are still flying, and still calling home from between the stars.",
+  "cur": "1977年发射的两枚探测器,目标是巡游外行星——一去不返。半个世纪过去,它们仍在飞行,仍在从星际之间向家呼唤。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "the_land.0.md",
+  "en": "Once every 176 years, the four giant planets line up on the same side of the Sun. In the mid-1960s a young engineer at NASA's Jet Propulsion Laboratory, Gary Flandro, worked out what that alignment made possible: a single spacecraft could swing past Jupiter, use the planet's gravity to fling itself on to Saturn, then Uranus, then Neptune — visiting all four in one flight that would otherwise take decades of separate missions. The catch was the calendar. The window opened in the late 1970s. Miss it, and the next chance would come in the 2150s.",
+  "cur": "每隔176年,四颗巨行星会排列在太阳的同一侧。1960年代中期,NASA喷气推进实验室的年轻工程师加里·弗兰德罗算出了这种排列带来的可能性:单个航天器可以飞掠木星,利用行星引力将自己甩向土星,再到天王星,再到海王星——在一次飞行中访问全部四颗行星,否则需要数十年的单独任务才能完成。问题在于时间窗口。窗口在1970年代末打开。错过它,下一次机会要等到2150年代。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "the_land.1.md",
+  "en": "The outer solar system was, at that point, almost entirely unexplored. The Pioneers were only just reaching Jupiter; Uranus and Neptune had never been anything but points of light in a telescope. NASA seized the alignment and built two nearly identical robots to fly the tour — rugged, nuclear-powered, and carrying the best cameras and instruments of the day, aimed at worlds no one had ever seen up close.",
+  "cur": "当时,外太阳系几乎完全未被探索。Pioneer探测器刚刚抵达木星;天王星和海王星从来只是望远镜中的光点。NASA抓住了这次排列,建造了两个几乎相同的机器人来完成这次巡游——坚固、核动力,搭载当时最好的相机和仪器,瞄准从未有人近距离见过的世界。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "goals.0.md",
+  "en": "The goal was reconnaissance on a scale never attempted: a first close look at Jupiter and Saturn, and — if the machines survived long enough — the only close look anyone was likely to get at Uranus and Neptune for generations. Two spacecraft flew so that a failure of one would not lose the whole tour, and so that between them they could cover trajectories no single probe could fly.",
+  "cur": "目标是前所未有规模的侦察:首次近距离观察木星和土星,如果机器能撑得足够久,还能获得任何人在几代人内可能得到的唯一近距离观察天王星和海王星的机会。发射两个航天器是为了避免一个失败导致整个巡游失败,也是为了让它们能够覆盖单个探测器无法飞行的轨道。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "goals.1.caption",
+  "en": "Each Voyager carried its instruments on a boom, a big dish always turned toward a shrinking Earth, and a nuclear generator to run on where sunlight is too weak for solar panels. They were built to last a few years and reach Saturn. They are still working.",
+  "cur": "每艘Voyager都把仪器装在伸杆上，带有一面始终对准渐行渐远的地球的大型碟形天线，以及一台核发电机，使其能在阳光弱得无法使用太阳能板的地方运行。它们被设计为运行几年并抵达土星。它们至今仍在工作。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "goals.2.md",
+  "en": "There was a second, stranger goal, added by a committee led by the astronomer Carl Sagan: each craft would carry a message. Bolted to its side was a gold-plated phonograph record holding the sounds of Earth — music, greetings in dozens of languages, a baby's cry, birdsong — sealed for whoever, or whatever, might find it in the deep future. It was a scientific mission that also, deliberately, reached toward eternity.",
+  "cur": "还有第二个更奇特的目标,由天文学家卡尔·萨根领导的委员会添加:每个航天器都会携带一条信息。固定在侧面的是一张镀金留声机唱片,记录着地球的声音——音乐、数十种语言的问候、婴儿的啼哭、鸟鸣——密封起来,等待在遥远未来可能找到它的任何人或任何事物。这是一项科学任务,同时也是刻意面向永恒的尝试。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "outcome.0.md",
+  "en": "The tour delivered beyond its brief. At Jupiter in 1979 the Voyagers found active volcanoes on the moon Io — the first ever seen beyond Earth — and the smooth ice of Europa hiding what looked like an ocean. At Saturn they resolved the rings into thousands of intricate strands and swept close past the haze-wrapped moon Titan. That Titan flyby bent Voyager 1's path up and out of the plane of the planets, sending it climbing toward the edge of the solar system.",
+  "cur": "这次巡游超越了预期。1979年在木星,Voyager发现了木卫一木卫一上的活火山——首次在地球之外发现——以及木卫二光滑的冰层下似乎隐藏着海洋。在土星,它们将光环分解为数千条复杂的细线,并近距离掠过雾霾笼罩的卫星土卫六。那次土卫六飞掠使Voyager 1的轨道向上弯曲,脱离行星平面,向太阳系边缘爬升。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "outcome.1.md",
+  "en": "Voyager 2 flew the full Grand Tour. It reached Uranus in 1986 and Neptune in 1989 — the only spacecraft ever to visit either world — finding a planet tipped on its side, a deep-blue giant with the fastest winds in the solar system, and a moon, Triton, with geysers of nitrogen erupting into space. To this day, everything humanity knows from close range about the ice giants was gathered in those two brief flybys.",
+  "cur": "Voyager 2完成了完整的大巡游。它在1986年抵达天王星,1989年抵达海王星——这是唯一访问过这两个世界的航天器——发现了一颗侧翻的行星,一颗拥有太阳系最快风速的深蓝色巨星,以及一颗卫星海卫一,其氮气间歇泉喷发到太空中。直到今天,人类从近距离了解的关于冰巨星的一切知识都是在那两次短暂飞掠中收集的。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "outcome.2.md",
+  "en": "Then the mission simply kept going. In 1990, from beyond Neptune, Voyager 1 turned its camera back and photographed the Earth as a single point of light. In 2012 it crossed the heliopause — the boundary where the Sun's wind gives way to the gas between the stars — and Voyager 2 followed in 2018. Nearly fifty years after launch, both are still transmitting, their power fading, their instruments switched off one by one to stretch the signal a little longer.",
+  "cur": "然后任务就这样继续下去了。1990年,Voyager 1从海王星之外转动相机,将地球拍摄成一个光点。2012年它穿越了日球层顶——太阳风让位于恒星间气体的边界——Voyager 2在2018年紧随其后。发射近五十年后,两者仍在传输信号,它们的能量在衰减,仪器一个接一个被关闭以延长信号时间。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "narrative.0.md",
+  "en": "The story of Voyager is of machines that outlived their makers' every expectation. They were designed for a four-year flight to Saturn on 1970s electronics — computers with less memory than a modern key fob — and they have run for nearly half a century, reprogrammed across billions of kilometres by engineers patching code into a spacecraft so distant that a command takes almost a day to arrive. The mission's defining quality is endurance: a bet on ruggedness and margin that paid off far past anyone's plan.",
+  "cur": "Voyager的故事是关于超越制造者一切预期的机器。它们是为1970年代电子设备上的四年土星飞行而设计的——计算机内存还不如现代钥匙扣——却运行了近半个世纪,由工程师跨越数十亿公里重新编程,向如此遥远的航天器打补丁,以至于一条指令需要近一天才能到达。这项任务的决定性品质是耐久性:对坚固性和冗余度的押注,回报远超任何人的计划。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "narrative.1.md",
+  "en": "Its most remembered moment carried no science at all. As Voyager 1 left the planets behind, Carl Sagan argued that it should turn around and photograph the Earth one last time — not for data, but for perspective. The image it returned showed home as a pale blue dot, a mote of dust in a sunbeam, and Sagan's words about it — that everyone who ever lived did so on that speck — became one of the most quoted passages in the literature of space. A reconnaissance probe had, almost by accident, taken the definitive portrait of human smallness.",
+  "cur": "它最被铭记的时刻没有任何科学价值。当Voyager 1离开行星区域时,卡尔·萨根主张它应该转身最后一次拍摄地球——不是为了数据,而是为了视角。它返回的图像显示家园是一个暗淡蓝点,阳光中的一粒尘埃,而萨根关于它的话语——所有曾经活过的人都生活在那个斑点上——成为太空文学中被引用最多的段落之一。一个侦察探测器几乎意外地拍摄了人类渺小的决定性肖像。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "narrative.2.md",
+  "en": "And there is the record. Each Voyager carries a message with no realistic hope of ever being found — the odds of either craft passing close to another star in any meaningful timeframe are vanishingly small. But the point was never really the aliens. The Golden Record was a mirror: an attempt to say who we are, addressed to the future and to ourselves, sent out on the only two craft yet to cross into interstellar space.",
+  "cur": "还有那张唱片。每个Voyager都携带着一条几乎没有现实希望被发现的信息——任何一个航天器在任何有意义的时间框架内接近另一颗恒星的几率都微乎其微。但重点从来不是外星人。Golden Record是一面镜子:试图说出我们是谁,面向未来和我们自己,在仅有的两个穿越进入星际空间的航天器上发出。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "legacy.0.md",
+  "en": "Voyager's first legacy is the map itself. Its flybys turned Jupiter, Saturn, Uranus and Neptune and their moons from points of light into places, and the Uranus and Neptune encounters remain — decades later — the only close data humanity has ever gathered on the ice giants. Every proposal to return to those worlds is still built on what two 1977 spacecraft saw in a few hours.",
+  "cur": "Voyager的第一个遗产是地图本身。它的飞掠将木星、土星、天王星和海王星及其卫星从光点变成了地方,而天王星和海王星的遭遇——几十年后——仍然是人类在冰巨星上收集的唯一近距离数据。每一个返回那些世界的提案仍然建立在两个1977年航天器在几小时内看到的东西上。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "legacy.1.md",
+  "en": "Its second is the frontier it reached. By crossing into interstellar space, the Voyagers became the first instruments to measure the boundary of the Sun's influence from the outside — data no other mission has ever returned, and none will for decades. They are, right now, the most distant human-made objects in existence, and still reporting.",
+  "cur": "第二个遗产是它抵达的前沿。通过穿越进入星际空间,Voyager成为首批从外部测量太阳影响边界的仪器——没有其他任务曾返回过这样的数据,几十年内也不会有。它们现在是存在的最遥远的人造物体,并且仍在报告。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "legacy.2.md",
+  "en": "Its third legacy is cultural. The Pale Blue Dot and the Golden Record gave the space age two of its most durable images of what Earth is and what it is worth — a reframing of the planet as a single, small, shared thing that has outlived every specific discovery the mission made.",
+  "cur": "第三个遗产是文化上的。Pale Blue Dot和Golden Record为太空时代提供了两个最持久的形象,关于地球是什么以及它的价值——将行星重新定义为一个单一、渺小、共享的事物,这种重新定义超越了任务做出的每一项具体发现。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of Voyager is to seize the window when it opens. The planetary alignment that made the Grand Tour possible would not wait, and would not come again for 176 years; the program's success began with the decision to be ready to launch in 1977, on that specific tide, rather than a decade later when it would have been easier. Some opportunities are set by the sky, not the schedule — and they are taken or lost.",
+  "cur": "Voyager的教训是在窗口打开时抓住机会。使大巡游成为可能的行星排列不会等待,176年内不会再来;该计划的成功始于决定在1977年准备好发射的决定,在那个特定的潮汐上,而不是十年后当它会更容易的时候。有些机会是由天空设定的,而非时间表——它们要么被抓住,要么失去。"
+ },
+ {
+  "rel": "programs/voyager.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is to build with far more margin than the plan requires. The Voyagers were designed for a mission a tenth as long as the one they have flown, and they endured because their makers over-built them — redundant systems, reprogrammable computers, power to spare. Ambition that plans only for the expected mission ends with the expected mission; the ones that keep going are the ones built for more than they were asked to do.",
+  "cur": "更深层的教训是以远超计划要求的冗余度来建造。Voyager是为十分之一长度的任务设计的,它们之所以能坚持下来,是因为制造者过度建造了它们——冗余系统、可重新编程的计算机、充足的能源。只为预期任务规划的雄心以预期任务结束;那些持续下去的是那些为超出要求而建造的。"
+ }
+]

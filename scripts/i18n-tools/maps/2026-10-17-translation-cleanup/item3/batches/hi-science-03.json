@@ -1,0 +1,548 @@
+[
+ {
+  "rel": "science/life-in-space/food-production-off-world.json",
+  "at": "body_paragraphs.1",
+  "en": "The architecture for a Mars or lunar greenhouse is much bigger. NASA's reference Mars greenhouse module: 50-150 m² growing area, hydroponic or aeroponic, LED-lit (sunlight on Mars is ~43% of Earth's surface insolation, insufficient for high-density agriculture especially during dust storms), running on closed-loop water + nutrient + CO₂ recycling. Target: provide ~50% of crew calories + 100% of fresh produce, with the other 50% shipped from Earth as shelf-stable rations. The 50% threshold is significant — below it the greenhouse is a supplement; above it the crew is committed to it for survival, which changes the redundancy + maintainability + crew-time-cost calculus dramatically. CHAPEA, NASA's year-long Mars-analogue mission running at JSC (first 378-day mission completed July 2024, second mission underway), is actively measuring this trade.",
+  "cur": "मंगल या चंद्र ग्रीनहाउस के लिए आर्किटेक्चर बहुत बड़ा है। NASA का संदर्भ मंगल ग्रीनहाउस मॉड्यूल: 50-150 m² उगाने का क्षेत्र, हाइड्रोपोनिक या एयरोपोनिक, LED-प्रकाशित (मंगल पर सूर्य प्रकाश पृथ्वी की सतह सूर्यतापन का ~43% है, उच्च घनत्व कृषि के लिए अपर्याप्त विशेष रूप से धूल भरे तूफानों के दौरान), बंद-लूप पानी + पोषक तत्व + CO₂ पुनर्चक्रण पर चलता है। लक्ष्य: ~50% चालक दल कैलोरी + 100% ताजा उत्पाद प्रदान करना, अन्य 50% पृथ्वी से शेल्फ-स्थिर राशन के रूप में भेजा जाता है। 50% सीमा महत्वपूर्ण है — इसके नीचे ग्रीनहाउस एक पूरक है; इसके ऊपर चालक दल इसे जीवित रहने के लिए प्रतिबद्ध है, जो अतिरेक + अनुरक्षणीयता + चालक दल समय लागत गणनाओं को नाटकीय रूप से बदल देता है। CHAPEA, JSC में चल रहा NASA का साल भर का मंगल-एनालॉग मिशन (पहला 378-दिन का मिशन जुलाई 2024 में पूरा हुआ, दूसरा मिशन चल रहा है), इस ट्रेड-ऑफ को सक्रिय रूप से माप रहा है।"
+ },
+ {
+  "rel": "science/life-in-space/food-production-off-world.json",
+  "at": "body_paragraphs.2",
+  "en": "The deeper architecture is bioregenerative life support: instead of physico-chemical ECLSS (Sabatier reactors, CDRA zeolites), use a biological loop where crew CO₂ feeds plants that produce O₂, plant waste feeds composters that produce fertilizer that feeds plants, and so on. ESA's MELiSSA project (Micro-Ecological Life Support System Alternative, started 1989, multiple breadboards operational at Universitat Autònoma de Barcelona) is the canonical research programme — five interlinked bioreactor compartments simulating a closed-loop human + plant + microbe ecosystem. MELiSSA has demonstrated stable closed loops of months in duration at sub-scale; the technology readiness for a flight mission is moderate (~TRL 4-5), with mass and reliability the open issues. Russian Bios-3 (Krasnoyarsk, 1972-1984) demonstrated ground-based closed-loop food + atmosphere for 4 humans for up to 5 months; their data still informs current designs.",
+  "cur": "गहरा आर्किटेक्चर बायोरीजनरेटिव लाइफ सपोर्ट है: भौतिक-रासायनिक ECLSS (Sabatier रिएक्टर, CDRA ज़ीओलाइट्स) के बजाय, एक जैविक लूप का उपयोग करें जहाँ चालक दल CO₂ पौधों को खिलाता है जो O₂ का उत्पादन करते हैं, पौधों का अपशिष्ट कम्पोस्टर को खिलाता है जो उर्वरक का उत्पादन करते हैं जो पौधों को खिलाता है, इत्यादि। ESA की MELiSSA परियोजना (Micro-Ecological Life Support System Alternative, 1989 में शुरू, Universitat Autònoma de Barcelona में कई ब्रेडबोर्ड चालू) कैनोनिकल अनुसंधान कार्यक्रम है — पांच परस्पर जुड़े बायोरिएक्टर डिब्बे जो बंद-लूप मानव + पौधा + सूक्ष्म जीव पारिस्थितिकी तंत्र का अनुकरण करते हैं। MELiSSA ने उप-स्केल पर महीनों की अवधि के स्थिर बंद लूप का प्रदर्शन किया है; उड़ान मिशन के लिए तकनीकी तत्परता मध्यम है (~TRL 4-5), द्रव्यमान और विश्वसनीयता खुले मुद्दे हैं। रूसी Bios-3 (Krasnoyarsk, 1972-1984) ने 4 मनुष्यों के लिए जमीन-आधारित बंद-लूप भोजन + वातावरण 5 महीने तक प्रदर्शित किया; उनका डेटा अभी भी वर्तमान डिज़ाइनों को सूचित करता है।"
+ },
+ {
+  "rel": "science/life-in-space/food-production-off-world.json",
+  "at": "body_paragraphs.3",
+  "en": "Mars adds a regolith problem. Direct planting in Mars soil is ruled out for the same reason direct breathing is — perchlorates. Mars regolith is laced with 0.5-1% ClO₄⁻ which is a thyroid toxin and likely root-system inhibitor. Mitigations under research: perchlorate-reducing bacteria (some Earth species naturally consume perchlorate as electron acceptor), pre-treatment with electrochemical reduction (using ISRU-electrolysed H₂), or simply hydroponics that doesn't touch regolith at all. The simplest path is the third — keep food production decoupled from regolith and use it only for habitat shielding + construction. Lunar regolith doesn't have the perchlorate problem but is metabolically inert and physically abrasive — most plant species fail to thrive in lunar simulant unless heavily amended with composted organics.",
+  "cur": "मंगल एक रेगोलिथ समस्या जोड़ता है। मंगल मिट्टी में सीधे रोपण उसी कारण से अस्वीकृत है जैसे सीधी सांस — परक्लोरेट्स। मंगल रेगोलिथ 0.5-1% ClO₄⁻ से युक्त है जो थायरॉयड विष और संभावित रूट सिस्टम अवरोधक है। अनुसंधान के तहत शमन: परक्लोरेट कम करने वाले बैक्टीरिया (कुछ पृथ्वी प्रजातियाँ स्वाभाविक रूप से परक्लोरेट को इलेक्ट्रॉन स्वीकर्ता के रूप में उपभोग करती हैं), इलेक्ट्रोकैमिकल कमी के साथ पूर्व-उपचार (ISRU-इलेक्ट्रोलाइज्ड H₂ का उपयोग करके), या केवल हाइड्रोपोनिक्स जो रेगोलिथ को बिल्कुल नहीं छूता। सबसे सरल मार्ग तीसरा है — खाद्य उत्पादन को रेगोलिथ से अलग रखें और इसका उपयोग केवल आवास परिरक्षण + निर्माण के लिए करें। चंद्र रेगोलिथ में परक्लोरेट की समस्या नहीं है लेकिन यह चयापचय रूप से निष्क्रिय और भौतिक रूप से अपघर्षक है — अधिकांश पौधों की प्रजातियाँ चंद्र सिमुलेंट में नहीं पनपती जब तक कि कम्पोस्ट किए गए जैविक से भारी रूप से संशोधित न हों।"
+ },
+ {
+  "rel": "science/life-in-space/food-production-off-world.json",
+  "at": "diagram_caption",
+  "en": "ISS today: ~1 m² growing area (Veggie + APH) producing supplemental greens — psychological win, nutritional small. Mars target: 50-150 m² LED-lit hydroponic, ~50% caloric self-sufficiency, dust-storm + perchlorate aware. Long-term: MELiSSA-style bioregenerative closed loop, ground-tested in 5-month durations (Bios-3 since 1970s).",
+  "cur": "आईएसएस आज: ~1 m² उगाने का क्षेत्र (Veggie + APH) पूरक हरियाली उत्पन्न करता है — मनोवैज्ञानिक जीत, पोषण लाभ छोटा। मंगल लक्ष्य: 50-150 m² LED-प्रकाशित हाइड्रोपोनिक, ~50% कैलोरी आत्मनिर्भरता, धूल तूफान + परक्लोरेट जागरूक। दीर्घकालिक: MELiSSA-शैली बायोरीजनरेटिव बंद लूप, 5-महीने अवधि में जमीन-परीक्षित (Bios-3 1970 के दशक से)।"
+ },
+ {
+  "rel": "science/life-in-space/isru-resource-utilization.json",
+  "at": "title",
+  "en": "ISRU — making oxygen, water, and fuel on the Moon and Mars",
+  "cur": "ISRU — चंद्रमा और मंगल पर ऑक्सीजन, पानी और ईंधन बनाना"
+ },
+ {
+  "rel": "science/life-in-space/isru-resource-utilization.json",
+  "at": "intro_sentence",
+  "en": "Hauling oxygen and propellant from Earth scales badly. ISRU — extracting them from local regolith, ice, and atmosphere — is the technology that turns surface stays from 30-day flag-planting into year-long living.",
+  "cur": "पृथ्वी से ऑक्सीजन और प्रणोदक ले जाना खराब रूप से स्केल करता है। ISRU — उन्हें स्थानीय रेगोलिथ, बर्फ और वायुमंडल से निकालना — वह तकनीक है जो सतह प्रवास को 30-दिन के झंडा लगाने से वर्ष भर के जीवन में बदल देती है।"
+ },
+ {
+  "rel": "science/life-in-space/isru-resource-utilization.json",
+  "at": "body_paragraphs.0",
+  "en": "MOXIE was the proof-of-concept. Bolted to the Perseverance rover, the toaster-sized solid-oxide electrolysis unit ran 16 times between 2021 and 2023, pulling CO₂ from the 6 mbar Martian atmosphere, splitting it electrochemically at ~800 °C, venting CO, and producing pure O₂. Total yield: 122 g of oxygen, peak rate 12 g/hour. The point was not the quantity but the proof: that solid-oxide electrolysis works through dust storms, through Martian temperature swings, through the 6 mbar pressure regime. Scale-up factor for a crewed mission: ~200× by mass — a 1-tonne MOXIE-class plant running for 18-26 months pre-deployed before crew arrival produces ~25 tonnes of O₂, enough for ascent-vehicle oxidiser plus crew breathing margin. The architecture has matured enough that NASA's planning documents now treat Mars O₂ ISRU as committed baseline rather than research goal.",
+  "cur": "MOXIE अवधारणा का प्रमाण था। Perseverance रोवर पर बोल्ट किया गया, टोस्टर के आकार की सॉलिड-ऑक्साइड इलेक्ट्रोलिसिस इकाई 2021 और 2023 के बीच 16 बार चली, 6 mbar मंगल वायुमंडल से CO₂ खींची, इसे ~800 °C पर इलेक्ट्रोकैमिकल रूप से विभाजित किया, CO बाहर निकाला और शुद्ध O₂ उत्पन्न किया। कुल उपज: 122 g ऑक्सीजन, पीक दर 12 g/घंटा। मुद्दा मात्रा नहीं बल्कि प्रमाण था: कि सॉलिड-ऑक्साइड इलेक्ट्रोलिसिस धूल भरे तूफानों, मंगल तापमान झूलों, 6 mbar दबाव शासन के माध्यम से काम करता है। मानवयुक्त मिशन के लिए स्केल-अप कारक: द्रव्यमान के अनुसार ~200× — चालक दल के आगमन से पहले 18-26 महीने पूर्व-तैनात चल रहा 1 टन MOXIE-श्रेणी संयंत्र ~25 टन O₂ उत्पन्न करता है, आरोहण वाहन ऑक्सीडाइज़र प्लस चालक दल श्वास मार्जिन के लिए पर्याप्त। आर्किटेक्चर इतना परिपक्व हो गया है कि NASA के नियोजन दस्तावेज़ अब मंगल O₂ ISRU को अनुसंधान लक्ष्य के बजाय प्रतिबद्ध आधार रेखा के रूप में मानते हैं।"
+ },
+ {
+  "rel": "science/life-in-space/isru-resource-utilization.json",
+  "at": "body_paragraphs.1",
+  "en": "Lunar ISRU is centred on water-ice mining. The water exists — LCROSS impacted Cabeus crater in 2009 and detected H₂O/OH directly in the ejecta plume; Chandrayaan-1's Moon Mineralogy Mapper saw the spectral signature across the south polar PSRs in the same year; LRO/LAMP saw it in scattering UV; SOFIA confirmed it in non-polar latitudes in 2020. Quantity estimates vary widely (5-12% by weight in the highest-grade deposits), but enough that a 10-tonne capacity ice-mining excavator delivering to a 100-kg/day electrolyser produces ~50 kg/day of O₂ + 6 kg/day of H₂ — both useful for surface ops, both convertible to LH₂/LOX propellant for ascent. The engineering hard part is not the chemistry but the operating environment: PSR bottoms sit at 30-50 K (colder than Pluto), requiring excavator hardware that can survive without ever seeing the sun, and that ships and operates without thermal management systems sized for those temperatures.",
+  "cur": "चंद्र ISRU जल-बर्फ खनन पर केंद्रित है। पानी मौजूद है — LCROSS ने 2009 में कैबियस से टक्कर मारी और इजेक्टा प्लूम में सीधे H₂O/OH का पता लगाया; चंद्रयान-1 के Moon Mineralogy Mapper ने उसी वर्ष दक्षिणी ध्रुवीय PSRs में स्पेक्ट्रल सिग्नेचर देखा; LRO/LAMP ने इसे प्रकीर्णन UV में देखा; SOFIA ने 2020 में गैर-ध्रुवीय अक्षांशों पर इसकी पुष्टि की। मात्रा अनुमान व्यापक रूप से भिन्न होते हैं (उच्चतम-ग्रेड निक्षेपों में वजन के अनुसार 5-12%), लेकिन इतना पर्याप्त कि 10 टन क्षमता का बर्फ-खनन उत्खनन 100 किग्रा/दिन इलेक्ट्रोलाइज़र को डिलीवर करते हुए ~50 किग्रा/दिन O₂ + 6 किग्रा/दिन H₂ उत्पन्न करता है — दोनों सतह संचालन के लिए उपयोगी, दोनों आरोहण के लिए LH₂/LOX प्रणोदक में परिवर्तनीय। इंजीनियरिंग रूप से कठिन हिस्सा रसायन विज्ञान नहीं बल्कि संचालन वातावरण है: PSR तल 30-50 K (यम से ठंडे) पर हैं, ऐसे उत्खनन हार्डवेयर की आवश्यकता होती है जो कभी सूर्य देखे बिना जीवित रह सके, और जो उन तापमानों के लिए आकार वाले थर्मल प्रबंधन सिस्टम के बिना भेजा जाता और संचालित होता है।"
+ },
+ {
+  "rel": "science/life-in-space/isru-resource-utilization.json",
+  "at": "body_paragraphs.2",
+  "en": "On Mars, ISRU goes beyond oxygen. Water from subsurface ice (detected at high northern latitudes by Phoenix lander, mapped by MRO SHARAD radar, and now confirmed at lower latitudes by SWIM consortium analyses) is mined, melted, electrolysed to give H₂ and O₂. The H₂ feeds the Sabatier reaction (CO₂ + 4 H₂ → CH₄ + 2 H₂O) which produces methane for the methalox ascent vehicle, plus more water for recycling. The closed-loop chemistry: 25 tonnes of CH₄/LOX propellant + 5 tonnes of crew oxygen + 30 tonnes of recycled water, all from 60 tonnes of mined water-ice + pulled atmospheric CO₂, over 18 months of pre-deployment ops. The whole chain is testable on the surface before crew arrival — if the plant fails, the mission re-scopes to a flyby rather than risking a no-return situation.",
+  "cur": "मंगल पर, ISRU ऑक्सीजन से परे जाता है। उपसतह बर्फ से पानी (Phoenix लैंडर द्वारा उच्च उत्तरी अक्षांशों पर पता लगाया गया, MRO SHARAD रडार द्वारा मैप किया गया, और अब SWIM कंसोर्टियम विश्लेषण द्वारा निचले अक्षांशों पर पुष्टि की गई) खनन किया जाता है, पिघलाया जाता है, H₂ और O₂ देने के लिए इलेक्ट्रोलाइज़ किया जाता है। H₂ Sabatier प्रतिक्रिया (CO₂ + 4 H₂ → CH₄ + 2 H₂O) को फीड करता है जो मेथालॉक्स आरोहण वाहन के लिए मीथेन उत्पन्न करती है, साथ ही पुनर्चक्रण के लिए अधिक पानी। बंद-लूप रसायन विज्ञान: 25 टन CH₄/LOX प्रणोदक + 5 टन चालक दल ऑक्सीजन + 30 टन पुनर्चक्रित पानी, सब 60 टन खनन जल-बर्फ + खींची गई वायुमंडलीय CO₂ से, 18 महीने की पूर्व-तैनाती संचालन में। पूरी श्रृंखला चालक दल आगमन से पहले सतह पर परीक्षण योग्य है — यदि संयंत्र विफल होता है, तो मिशन एक नो-रिटर्न स्थिति को जोखिम में डालने के बजाय फ्लाईबाई के लिए पुनः-स्कोप करता है।"
+ },
+ {
+  "rel": "science/life-in-space/isru-resource-utilization.json",
+  "at": "body_paragraphs.3",
+  "en": "ISRU also extends to construction materials. Lunar regolith — silicate-rich, with 40-50% by mass of bound oxygen — is being prototyped as 3D-printing feedstock for sintered structural blocks (ESA's Lunar Habitat project + NASA's 3D-Printed Habitat Challenge developed the techniques in lunar regolith simulants). Heating regolith to 1100 °C in vacuum produces a hard, low-porosity glassy material; with microwave sintering this can be done with a few kW of solar-electric energy. Mars regolith additionally supports brick-style architectures and concrete-like binders using Martian sulfur as the binding agent (sulfur is abundant on the surface). The point of all these material-ISRU paths is the same as for the propellant ISRU: avoid hauling mass from Earth where local resources can substitute, because the propellant cost of every imported kilogram dominates mission cost above all other terms.",
+  "cur": "ISRU निर्माण सामग्री तक भी विस्तारित होता है। चंद्र रेगोलिथ — सिलिकेट-समृद्ध, द्रव्यमान के अनुसार 40-50% बंधी हुई ऑक्सीजन के साथ — सिंटर्ड संरचनात्मक ब्लॉकों के लिए 3D-प्रिंटिंग फीडस्टॉक के रूप में प्रोटोटाइप किया जा रहा है (ESA की Lunar Habitat परियोजना + NASA की 3D-Printed Habitat Challenge ने चंद्र रेगोलिथ सिमुलेंट्स में तकनीकें विकसित कीं)। वैक्यूम में रेगोलिथ को 1100 °C तक गर्म करने से कठोर, कम-छिद्र वाला कांच जैसा पदार्थ उत्पन्न होता है; माइक्रोवेव सिंटरिंग के साथ यह कुछ kW सौर-विद्युत ऊर्जा के साथ किया जा सकता है। मंगल रेगोलिथ अतिरिक्त रूप से ईंट-शैली आर्किटेक्चर और कंक्रीट-जैसे बाइंडर्स का समर्थन करता है जो मंगलियन सल्फर को बाइंडिंग एजेंट के रूप में उपयोग करते हैं (सतह पर सल्फर प्रचुर है)। इन सभी सामग्री-ISRU पथों का मुद्दा प्रणोदक ISRU जैसा ही है: जहाँ स्थानीय संसाधन प्रतिस्थापित कर सकते हैं वहाँ पृथ्वी से द्रव्यमान ले जाने से बचें, क्योंकि हर आयातित किलोग्राम की प्रणोदक लागत अन्य सभी शर्तों पर मिशन लागत पर हावी होती है।"
+ },
+ {
+  "rel": "science/life-in-space/isru-resource-utilization.json",
+  "at": "diagram_caption",
+  "en": "Mars ISRU: atmospheric CO₂ → MOXIE-class electrolyser → O₂ (breathing + ascent oxidiser); subsurface ice + atmospheric CO₂ → Sabatier → CH₄ (ascent fuel) + recycled H₂O. Moon ISRU: PSR water-ice mining → electrolysis → O₂ + H₂; lunar regolith sintering → construction blocks. All pre-deployed and crew-verified before mission commitment.",
+  "cur": "मंगल ISRU: वायुमंडलीय CO₂ → MOXIE-श्रेणी इलेक्ट्रोलाइज़र → O₂ (सांस + आरोहण ऑक्सीडाइज़र); उपसतह बर्फ + वायुमंडलीय CO₂ → Sabatier → CH₄ (आरोहण ईंधन) + पुनर्चक्रित H₂O। चंद्र ISRU: PSR जल-बर्फ खनन → इलेक्ट्रोलिसिस → O₂ + H₂; चंद्र रेगोलिथ सिंटरिंग → निर्माण ब्लॉक। सब पूर्व-तैनात और मिशन प्रतिबद्धता से पहले चालक दल-सत्यापित।"
+ },
+ {
+  "rel": "science/life-in-space/iva-suits.json",
+  "at": "intro_sentence",
+  "en": "The flight suit — worn inside the spacecraft during the high-risk minutes of launch, ascent abort, re-entry, and landing — is a pressure container with arms that buys the crew enough time to land if cabin pressure fails.",
+  "cur": "फ्लाइट सूट - लॉन्च के उच्च जोखिम वाले मिनट के दौरान अंतरिक्ष यान के अंदर पहना जाता है, आसन्न गर्भपात, फिर से प्रवेश करता है, और लैंडिंग - हथियारों के साथ एक दबाव कंटेनर है जो केबिन दबाव विफल होने पर पर्याप्त समय तक चालक दल खरीदता है।"
+ },
+ {
+  "rel": "science/life-in-space/iva-suits.json",
+  "at": "body_paragraphs.0",
+  "en": "IVA (intra-vehicular activity) suits exist because of one accident. On 30 June 1971, Soyuz 11 returned from the world's first space-station mission with its three cosmonauts dead in their seats — a depressurisation valve had opened at 168 km altitude during separation, and the crew were in shirtsleeves with no suits to save them. The Soviet response was the Sokol KV-2: a soft pressure suit donned inside the descent module and worn for every Soyuz launch and return since 1973. The US followed a similar path after the Challenger and Columbia losses: shirtsleeve ascents on the Shuttle became unacceptable, and the Advanced Crew Escape Suit (ACES) was made mandatory. Every crewed spacecraft flying today has its own IVA suit.",
+  "cur": "IVA (अंतः-वाहन गतिविधि) सूट एक दुर्घटना के कारण अस्तित्व में आए हैं। 30 जून 1971 को, Soyuz 11 विश्व के पहले अंतरिक्ष-स्टेशन मिशन से अपने तीन अंतरिक्ष यात्रियों के साथ लौटा — उनके सीटों पर मृत अवस्था में — अलगकरण के समय एक विमुक्तिकरण वाल्व 168 किमी ऊँचाई पर खुल गया था, और चालक दल बिना किसी सूट के शर्टस्लीव्स में थे जो उन्हें बचा सकते। सोवियत प्रतिक्रिया Sokol KV-2 थी: एक मृदु दाब सूट जिसे अवतरण मॉड्यूल के अंदर पहना जाता था और 1973 के बाद से हर Soyuz प्रक्षेपण और वापसी के समय पहना जाता था। अमेरिका ने Challenger और Columbia की हानि के बाद एक समान मार्ग का अनुसरण किया: Shuttle पर शर्टस्लीव उड़ान अस्वीकार्य बन गई, और Advanced Crew Escape Suit (ACES) को अनिवार्य बना दिया गया। आज उड़ान भरने वाले हर क्रूड अंतरिक्षयान के पास अपना अपना IVA सूट है।"
+ },
+ {
+  "rel": "science/life-in-space/iva-suits.json",
+  "at": "body_paragraphs.1",
+  "en": "An IVA suit is fundamentally a pressure container with arms. It is **not** designed for spacewalking — there is no life-support backpack, no thermal control to dump metabolic heat to space, no real mobility. The umbilical that snakes from the suit to the seat carries oxygen, communications, and biomedical telemetry; without that umbilical the suit has perhaps 30 minutes of survival air in a small chest reservoir. Cabin pressure is the primary life support; the suit is the **backup** that keeps the crew alive long enough to land if cabin pressure fails. In a depress event the suit inflates to 0.4 atm of pure oxygen — enough to breathe, enough to keep blood from boiling — while the spacecraft descends to where the parachutes can deploy and the crew can be recovered.",
+  "cur": "IVA सूट मूल रूप से हथियारों के साथ एक दबाव कंटेनर है। यह ** not** स्पेसवॉकिंग के लिए डिज़ाइन किया गया है - कोई जीवन-समर्थन बैकपैक नहीं है, अंतरिक्ष में चयापचय गर्मी को डंप करने के लिए कोई थर्मल नियंत्रण नहीं है, कोई वास्तविक गतिशीलता नहीं है। umbilical कि सूट से सीट तक सांप ऑक्सीजन, संचार और बायोमेडिकल टेलीमेट्री रखता है; उस umbilical के बिना सूट शायद एक छोटे से छाती जलाशय में 30 मिनट जीवित रहने की हवा है। केबिन दबाव प्राथमिक जीवन समर्थन है; सूट ** बैकअप ** है जो चालक दल को लंबे समय तक रहने के लिए पर्याप्त रहता है यदि केबिन दबाव विफल हो जाता है। एक अवसाद घटना में सूट शुद्ध ऑक्सीजन के 0.4 एटीएम तक फैल जाता है - सांस लेने के लिए पर्याप्त, उबलते से रक्त रखने के लिए पर्याप्त - जबकि अंतरिक्ष यान वहां उतरता है जहां पैराशूट तैनात कर सकते हैं और चालक दल को ठीक किया जा सकता है।"
+ },
+ {
+  "rel": "science/life-in-space/iva-suits.json",
+  "at": "body_paragraphs.2",
+  "en": "Each IVA suit follows the same envelope: pure O₂ at ~0.4 atm in depress, umbilical-fed during nominal flight, ~30 min survival reserve, no thermal control. Differences across programs are cosmetic and ergonomic — Sokol uses a back-entry seam; ACES and SpaceX use front entry; Crew Dragon and Starliner add touchscreen-compatible gloves. See /fleet for the family catalog: Sokol KV-2 (Russia), ACES (US Shuttle), SpaceX IVA Suit (Crew Dragon), Boeing Blue (Starliner), Shenzhou IVA Suit (China), and the next-generation Sokol-M.",
+  "cur": "प्रत्येक IVA सूट एक ही संरचना का अनुसरण करता है: विमुक्तिकरण में शुद्ध O₂ ~0.4 atm पर, नाभिक के माध्यम से सामान्य उड़ान के दौरान आपूर्ति की जाती है, ~30 मिनट का जीवन रक्षा भंडार, कोई तापीय नियंत्रण नहीं। कार्यक्रमों के बीच अंतर सौंदर्यात्मक और ergonomic हैं — Sokol पीठ-प्रवेश सीम का उपयोग करता है; ACES और SpaceX अग्र प्रवेश का उपयोग करते हैं; Crew Dragon और Starliner टचस्क्रीन-संगत दस्ताने जोड़ते हैं। /fleet देखें पारिवारिक कैटलॉग के लिए: Sokol KV-2 (Russia), ACES (US Shuttle), SpaceX IVA Suit (Crew Dragon), Boeing Blue (Starliner), Shenzhou IVA Suit (China), और अगली पीढ़ी Sokol-M।"
+ },
+ {
+  "rel": "science/life-in-space/iva-suits.json",
+  "at": "diagram_caption",
+  "en": "An IVA suit is a pressure container with arms — back-entry zipper (Sokol) or front-entry (ACES/SpaceX), umbilical for O₂ + comms + cooling water, helmet visor that locks down on depress, gloves that work in shirtsleeves. No PLSS backpack, no sublimator, no spacewalking.",
+  "cur": "एक IVA सूट हथियारों के साथ एक दबाव कंटेनर है - बैक-एंट्री ज़िपर (Sokol) या फ्रंट-एंट्री (ACES/SpaceX), O2 + कॉम + कूलिंग वाटर के लिए umbilical, हेल्मेट विस्कोर जो शर्टस्ली में काम करने वाले अवसाद, दस्ताने पर बंद कर देता है। नहीं PLSS बैग, कोई उदात्त, कोई अंतरिक्ष यान नहीं।"
+ },
+ {
+  "rel": "science/life-in-space/long-duration-effects.json",
+  "at": "intro_sentence",
+  "en": "Six months is the standard ISS rotation; one year has been done twice; Mars is three years. Each step extends the dose of every other effect — and adds new ones we can't yet fully reverse.",
+  "cur": "छह महीने आईएसएस का मानक रोटेशन है; एक साल दो बार किया गया है; मंगल तीन साल है। प्रत्येक चरण हर दूसरे प्रभाव की खुराक को बढ़ाता है — और नए प्रभाव जोड़ता है जिन्हें हम अभी तक पूरी तरह से उलट नहीं सकते।"
+ },
+ {
+  "rel": "science/life-in-space/long-duration-effects.json",
+  "at": "body_paragraphs.0",
+  "en": "Roughly 70% of long-duration crew develop **SANS** — Space-Associated Neuro-ocular Syndrome — a constellation of optic-disc swelling, posterior eyeball flattening, choroidal folds, and increased optic-nerve-sheath diameter. The leading hypothesis is fluid shift to the head increasing intracranial pressure; the changes don't fully reverse within a year of return for some crew. SANS is the single most concerning physiologic finding from long-duration spaceflight.",
+  "cur": "लगभग 70% लंबी अवधि के क्रू में **SANS** — Space-Associated Neuro-ocular Syndrome — विकसित होता है, जो ऑप्टिक-डिस्क सूजन, पश्च नेत्रगोलक समतलन, कोरॉइडल सिलवटों और ऑप्टिक-नर्व-शीथ व्यास वृद्धि का एक समूह है। प्रमुख परिकल्पना यह है कि सिर की ओर तरल पदार्थ का स्थानांतरण इंट्राक्रेनियल दबाव को बढ़ाता है; लौटने के एक साल के भीतर कुछ क्रू सदस्यों के लिए ये परिवर्तन पूरी तरह से उलट नहीं जाते। SANS दीर्घ अवधि की अंतरिक्ष उड़ान से सबसे अधिक चिंताजनक शारीरिक खोज है।"
+ },
+ {
+  "rel": "science/life-in-space/long-duration-effects.json",
+  "at": "body_paragraphs.1",
+  "en": "**Cognition + sleep** drift in measurable but subtle ways. The Twins Study (Scott Kelly's 340-day mission vs his ground-based twin Mark) found slower reaction time and reduced cognitive accuracy that persisted six months post-flight. Sleep on the ISS averages 6 hours per night (vs ~7.5 on the ground) because there's no real day/night, 16 sunrises happen per 24 h orbit, and noise + caffeine + workload all conspire. ISS crew use sleep-aids more than the general population.",
+  "cur": "**संज्ञान + नींद** मापने योग्य लेकिन सूक्ष्म तरीकों से बदलते हैं। Twins Study (स्कॉट केली के 340-दिन के मिशन बनाम उनके ग्राउंड-आधारित जुड़वां Mark) ने धीमी प्रतिक्रिया समय और कम संज्ञानात्मक सटीकता पाई जो उड़ान के छह महीने बाद भी बनी रही। आईएसएस पर नींद प्रति रात औसतन 6 घंटे है (जमीन पर ~7.5 के बजाय) क्योंकि कोई वास्तविक दिन/रात नहीं है, 24 घंटे की कक्षा में 16 सूर्योदय होते हैं, और शोर + कैफीन + कार्यभार सभी मिलकर काम करते हैं। आईएसएस चालक दल आम जनता की तुलना में अधिक नींद-सहायक का उपयोग करते हैं।"
+ },
+ {
+  "rel": "science/life-in-space/long-duration-effects.json",
+  "at": "body_paragraphs.2",
+  "en": "**Immune dysregulation** shows up as latent-virus reactivation — Epstein-Barr, varicella-zoster (shingles), cytomegalovirus — in a substantial fraction of crew during flight. Most are asymptomatic but it's a window onto stress + microgravity + radiation combining on the immune system in ways we don't fully understand.",
+  "cur": "**प्रतिरक्षा नियमन में खराबी** गुप्त-वायरस पुनः सक्रियण के रूप में दिखाई देती है — Epstein-Barr, varicella-zoster (दाद), cytomegalovirus — उड़ान के दौरान क्रू के एक बड़े हिस्से में। अधिकांश स्पर्शोन्मुख होते हैं लेकिन यह प्रतिरक्षा प्रणाली पर तनाव + माइक्रोग्रेविटी + विकिरण के संयोजन की एक झलक है जिन तरीकों से हम पूरी तरह समझते नहीं हैं।"
+ },
+ {
+  "rel": "science/life-in-space/long-duration-effects.json",
+  "at": "body_paragraphs.3",
+  "en": "**Cardiovascular deconditioning** stacks: the heart shrinks slightly (less afterload to pump against), arterial stiffness increases (radiation + inflammation), and orthostatic intolerance post-flight extends from days to weeks for longer crew. The longer the mission, the more these effects compound — and Mars-class missions stretch them into ranges we've never measured on humans. The Inspiration4 and Polaris private flights are very short by comparison; the actuarial long-duration crew is still small (about a hundred people across the entire history of spaceflight).",
+  "cur": "**कार्डियोवैस्कुलर डिकंडीशनिंग** ढेर हो जाता है: दिल थोड़ा सिकुड़ता है (पंप करने के लिए कम आफ्टरलोड), धमनी की कठोरता बढ़ जाती है (विकिरण + सूजन), और उड़ान के बाद ऑर्थोस्टेटिक असहिष्णुता लंबे चालक दल के लिए दिनों से सप्ताह तक विस्तारित होती है। मिशन जितना लंबा होता है, ये प्रभाव उतने अधिक बढ़ते हैं — और Inspiration4 और Polaris निजी उड़ानें तुलना के लिए बहुत कम हैं; वास्तविक दीर्घकालीन चालक दल अभी भी छोटा है (अंतरिक्ष उड़ान के पूरे इतिहास में लगभग सौ लोग)।"
+ },
+ {
+  "rel": "science/life-in-space/long-duration-effects.json",
+  "at": "diagram_caption",
+  "en": "SANS (vision) + cognition + sleep + immune + cardiovascular: every effect from the rest of this tab grows worse with mission duration — and a Mars trip is the next frontier with no prior data.",
+  "cur": "SANS (दृष्टि) + संज्ञान + नींद + प्रतिरक्षा + कार्डियोवैस्कुलर: इस टैब के बाकी हिस्सों से हर प्रभाव मिशन अवधि के साथ बदतर हो जाता है — और एक मंगल यात्रा अगली सीमांत है जहां पूर्व डेटा नहीं है।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-habitat-design.json",
+  "at": "title",
+  "en": "Lunar habitat design — Artemis Base Camp, ILRS, sustained surface stays",
+  "cur": "चंद्र आवास डिज़ाइन — Artemis Base Camp, ILRS, सतत सतह प्रवास"
+ },
+ {
+  "rel": "science/life-in-space/lunar-habitat-design.json",
+  "at": "intro_sentence",
+  "en": "Two parallel architectures are now committed: NASA's Artemis Base Camp + the Chinese-Russian ILRS. Both target the lunar south pole, both stake their water-ice strategy on the same dozen craters.",
+  "cur": "दो समानांतर आर्किटेक्चर अब प्रतिबद्ध हैं: NASA का Artemis Base Camp और चीन-रूस ILRS। दोनों चंद्र दक्षिण ध्रुव को लक्षित करते हैं, दोनों अपनी जल-बर्फ रणनीति को ही दर्जनों क्रेटरों पर आधारित करते हैं।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-habitat-design.json",
+  "at": "body_paragraphs.0",
+  "en": "The site choice is no longer open. Both NASA's Artemis programme and the Chinese-Russian International Lunar Research Station (ILRS) have selected the lunar south pole, specifically the rims and inner walls of permanently-shadowed craters near 89°S: Shackleton, de Gerlache, Haworth, Faustini, Shoemaker. Three things make this region uniquely valuable. First, the permanently-shadowed regions (PSRs) at the crater bottoms hold water-ice deposits — confirmed by LCROSS (2009) impacting Cabeus crater and detecting OH/H₂O in the ejecta plume, and by Chandrayaan-1's M3 instrument seeing the spectral signature directly. Second, peaks-of-eternal-light along the crater rims see the sun for >85% of every year, giving near-continuous solar power without lunar-night batteries. Third, the south pole is the only region where both prerequisites — water and sunlight — coexist within ~10 km of each other, making short surface-traverse logistics possible.",
+  "cur": "साइट की पसंद अब खुली नहीं है। NASA के Artemis कार्यक्रम और चीन-रूस अंतर्राष्ट्रीय चंद्र अनुसंधान स्टेशन (ILRS) दोनों ने चंद्र दक्षिण ध्रुव को चुना है, विशेषकर 89°S के पास स्थायी रूप से छायांकित क्रेटरों के किनारे और आंतरिक दीवारें: शैकलटन, Gerlache, Haworth, Faustini, Shoemaker। तीन चीज़ें इस क्षेत्र को अद्वितीय रूप से मूल्यवान बनाती हैं। पहला, क्रेटर तल पर स्थायी रूप से छायांकित क्षेत्र (PSRs) जल-बर्फ निक्षेप धारण करते हैं — LCROSS (2009) द्वारा कैबियस क्रेटर में प्रभाव से और निष्कासन बादल में OH/H₂O का पता लगाकर, और चंद्रयान-1 के M3 उपकरण द्वारा वर्णक्रमीय हस्ताक्षर को सीधे देखकर पुष्टि की गई। दूसरा, क्रेटर रिम के साथ शाश्वत प्रकाश की चोटियाँ हर साल 85% से अधिक समय सूर्य देखती हैं, जो चंद्र रात की बैटरी के बिना निकट-निरंतर सौर शक्ति देती हैं। तीसरा, दक्षिण ध्रुव एकमात्र क्षेत्र है जहाँ दोनों पूर्वशर्तें — जल और सूर्यप्रकाश — ~10 किमी के भीतर एक-दूसरे के साथ सह-अस्तित्व में हैं, जो छोटे सतह-ट्रैवर्स लॉजिस्टिक्स को संभव बनाता है।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-habitat-design.json",
+  "at": "body_paragraphs.1",
+  "en": "Artemis Base Camp is the consolidated NASA + partner architecture for sustained Moon presence after 2028. Three elements: (1) a Foundational Surface Habitat — a fixed pressurised structure, ~50 m³ habitable volume, supporting two crew for ~30 days; (2) the Lunar Terrain Vehicle (LTV) — unpressurised buggy descended from the Apollo Lunar Roving Vehicle, contracted to Intuitive Machines / Lunar Outpost / Astrolab for 2030 delivery; (3) the Pressurised Rover — a Toyota / JAXA-built tracked vehicle the size of a small bus, with 30-day endurance and on-board ECLSS, allowing multi-week traverses without returning to base. The total mass on the surface at IOC is around 12 tonnes, delivered by Starship-HLS, SpaceX Cargo, and Chinese-equivalent commercial-cargo landers being matured in parallel.",
+  "cur": "Artemis Base Camp 2028 के बाद चंद्रमा पर दीर्घकालीन उपस्थिति के लिए NASA और भागीदार संस्थाओं की समेकित संरचना है। इसके तीन तत्व हैं: (1) एक मौलिक सतह आवास — एक निश्चित दबाव वाली संरचना, ~50 m³ रहने योग्य आयतन, लगभग 30 दिनों के लिए दो चालक दल को सहायता प्रदान करता है; (2) चंद्र भू-वाहन (LTV) — Apollo Lunar Roving Vehicle से विकसित एक अदबावी बगी, जिसे Intuitive Machines / Lunar Outpost / Astrolab द्वारा 2030 तक वितरण के लिए अनुबंधित किया गया है; (3) दबाव वाली रोवर — एक Toyota / JAXA द्वारा निर्मित ट्रैक वाली वाहन जो एक छोटी बस के आकार की है, जिसमें 30 दिन की सहनशीलता और ऑन-बोर्ड ECLSS है, जो आधार पर लौटे बिना बहु-सप्ताह की यात्रा की अनुमति देता है। IOC पर सतह पर कुल द्रव्यमान लगभग 12 टन है, जिसे Starship-HLS, SpaceX Cargo, और समानांतर में परिपक्व किए जा रहे चीनी-समतुल्य वाणिज्यिक-कार्गो लैंडर द्वारा वितरित किया जाएगा।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-habitat-design.json",
+  "at": "body_paragraphs.2",
+  "en": "ILRS is the Chinese-Russian counterpart, announced 2021 with a coalition that now includes Pakistan, Belarus, South Africa, Egypt, Thailand, Venezuela, and more. The architecture is similar but the timeline is more aggressive: Chang'e-7 (2026 scheduled) + Chang'e-8 (2028) precursors, robotic outpost build-up 2030-2035, crewed landings before 2030 (mostly aspirational), full base 2035-2045. The base design centres on a Tianhe-derived pressurised module landed via Chang'e Mission Module variants, supplemented by inflatable BEAM-style habitats. The differences from Base Camp are doctrinal: ILRS plans for nuclear-fission surface power (Russian-supplied 10 kWe reactor) where Artemis stays solar; ILRS sites cluster closer to potential mining sites where Artemis spreads more for redundancy.",
+  "cur": "ILRS चीन-रूस समकक्ष है, 2021 में घोषित एक गठबंधन के साथ जिसमें अब पाकिस्तान, बेलारूस, दक्षिण अफ्रीका, मिस्र, थाईलैंड, वेनेजुएला, और अधिक शामिल हैं। आर्किटेक्चर समान है लेकिन समयसीमा अधिक आक्रामक है: Chang'e-7 (2026 निर्धारित) + Chang'e-8 (2028) अग्रदूत, रोबोटिक आउटपोस्ट निर्माण 2030-2035, 2030 से पहले चालकदल लैंडिंग (अधिकांशत: आकांक्षी), पूर्ण आधार 2035-2045। आधार डिज़ाइन Tianhe-व्युत्पन्न दबावयुक्त मॉड्यूल पर केंद्रित है जो Chang'e Mission Module वेरिएंट के माध्यम से उतरा है, inflatable BEAM-शैली आवासों द्वारा पूरक। Artemis Base Camp से अंतर सिद्धांतवादी हैं: ILRS जहां Artemis सौर रहता है वहाँ परमाणु-विखंडन सतह शक्ति (रूसी-आपूर्ति 10 kWe रिएक्टर) की योजना बनाता है; ILRS साइटें संभावित खनन साइटों के करीब क्लस्टर करते हैं जहाँ Artemis अधिक निरर्धकता के लिए फैलता है।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-habitat-design.json",
+  "at": "body_paragraphs.3",
+  "en": "Two structural problems dominate habitat design — both Moon and Mars share them, but the Moon hits them first. Radiation: galactic cosmic rays + episodic solar particle events deliver about 1.4 mSv/day on the lunar surface (measured by Chang'e-4's LND instrument), vs ~0.5–0.7 mSv/day on the ISS inside Earth's partial magnetospheric shielding — roughly 2–2.5× higher dose. The mitigation strategies under design: regolith berms bulldozed around fixed habitats (1-2 m of regolith blocks ~80% of dose), lava tube interiors (~80-100 m below surface, in tubes detected by Selene / LRO from collapsed skylights — Marius Hills and Mare Tranquillitatis pits are the canonical sites), or pre-positioned water-wall shields. Dust: Apollo crews reported that lunar dust degraded EVA suits within ~10 EVAs, jammed airlocks, abraded seals, smelled like gunpowder, and triggered allergic responses inside the LM. Surface habitat designs all incorporate suitlock dust airlocks (suits stored on the outside, crew climbs in from inside without bringing dust into the pressurised volume) — the same architecture used on Artemis EVA suits and the ILRS plan.",
+  "cur": "आवास डिजाइन के दो मुख्य संरचनात्मक समस्याएं हैं — चंद्रमा और मंगल दोनों इनका सामना करते हैं, लेकिन चंद्रमा पहले इनका सामना करता है। विकिरण: आकाशगंगीय ब्रह्मांडीय किरणें + अभिप्राय सौर कण घटनाएं चंद्र सतह पर लगभग 1.4 mSv/दिन की मात्रा देती हैं (Chang'e-4 के LND उपकरण द्वारा मापी गई), आईएसएस पर पृथ्वी की आंशिक चुंबकमंडलीय ढाल के अंदर ~0.5–0.7 mSv/दिन की तुलना में — लगभग 2–2.5× अधिक खुराक। डिजाइन के तहत शमन रणनीतियां: निश्चित आवासों के चारों ओर बुलडोजर से ढेले किए गए रेगोलिथ बर्म (रेगोलिथ के 1-2 मीटर खुराक का ~80% अवरुद्ध करते हैं), लावा ट्यूब के आंतरिक भाग (~80-100 मीटर सतह के नीचे, Selene / LRO द्वारा ढहे हुए छतों से पाई गई ट्यूबों में — मारियस पहाड़ियाँ और शांति सागर गड्ढे विहित स्थल हैं), या पूर्व-स्थापित जल-दीवार ढाल। धूल: Apollo के चालक दलों ने बताया कि चंद्र धूल ~10 EVAs के भीतर EVA सूट को ख़राब कर गई, एयरलॉक को जाम कर दिया, सील को घर्षण से नुकसान पहुंचाया, बारूद जैसी गंध आई, और LM के अंदर एलर्जी प्रतिक्रियाओं को ट्रिगर किया। सतह आवास डिजाइन सभी suitlock धूल एयरलॉक को शामिल करते हैं (सूट बाहर संग्रहीत होते हैं, चालक दल अंदर से दबाव वाली मात्रा में धूल लाए बिना भीतर जाता है) — Artemis EVA सूट और ILRS योजना पर उपयोग की जाने वाली समान संरचना।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-habitat-design.json",
+  "at": "diagram_caption",
+  "en": "Both architectures: lunar south pole crater rim sites (Shackleton, de Gerlache, etc.) for water-ice + sunlight co-location. Base Camp = Foundational Habitat + LTV + Pressurised Rover, solar power, 2028-2035 build. ILRS = Tianhe-derived module + inflatables + Russian-supplied 10 kWe fission, 2030-2045. Both fight the same dust + radiation problems.",
+  "cur": "दोनों आर्किटेक्चर: चंद्र दक्षिणी ध्रुव क्रेटर रिम स्थलों (Shackleton, de Gerlache, आदि) पर जल-बर्फ + सूर्य का प्रकाश सह-स्थिति के लिए। Base Camp = मौलिक आवास + LTV + दबाव वाली रोवर, सौर शक्ति, 2028-2035 निर्माण। ILRS = Tianhe-व्युत्पन्न मॉड्यूल + फुलाये जाने योग्य संरचनाएं + रूस द्वारा आपूर्ति की गई 10 kWe विखंडन, 2030-2045। दोनों ही समान धूल + विकिरण समस्याओं से जूझते हैं।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-suits.json",
+  "at": "intro_sentence",
+  "en": "A lunar suit has to do everything an orbital EVA suit does, plus walk for 7 hours on a dusty regolith floor at temperatures that swing from −170 °C in shadow to +120 °C in sunlight — and survive the dust.",
+  "cur": "चंद्र सूट को कक्षीय EVA सूट की सभी कार्यक्षमता करनी होती है, साथ ही 7 घंटे तक धूल भरे regolith फर्श पर चलना होता है जहाँ तापमान छाया में −170 °C से धूप में +120 °C तक झूलता है — और धूल को सहना होता है।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-suits.json",
+  "at": "body_paragraphs.0",
+  "en": "Twelve people have walked on the Moon, and they did it in eight suits of the same family: the **Apollo A7L** (Apollo 11, 12, 14) and its successor the **A7LB** (Apollo 15, 16, 17). A7L was a one-piece pressure garment with a Hard Upper Torso, soft fabric arms and legs, integrated lunar-overboots, an over-the-shoulder PLSS backpack, and an Oxygen Purge System (OPS) as emergency reserve mounted above the PLSS. Operating pressure was 3.7 psi (0.26 atm) of pure oxygen — the lowest of any flown spacesuit, traded against maximum mobility for walking. The A7LB added a waist-joint convolution that let astronauts sit in the Lunar Roving Vehicle without fighting the suit; without that joint the J-mission EVAs would not have been possible.",
+  "cur": "चंद्रमा पर बारह लोग चले हैं, और उन्होंने ऐसा एक ही परिवार के आठ सूटों में किया: **Apollo A7L** (Apollo 11, 12, 14) और इसका उत्तराधिकारी **A7LB** (Apollo 15, 16, 17)। A7L एक-टुकड़ा दबाव परिधान था जिसमें कठोर ऊपरी धड़, नरम कपड़े की बाहें और पैर, एकीकृत चंद्र-अधिजूते, कंधे के ऊपर से लगा PLSS बैकपैक, और OPS (Oxygen Purge System) आपातकालीन रिजर्व PLSS के ऊपर लगा था। संचालन दबाव 3.7 psi (0.26 atm) शुद्ध ऑक्सीजन था — किसी भी उड़े हुए अंतरिक्ष सूट में सबसे कम, जिसे चलने के लिए अधिकतम गतिशीलता के विरुद्ध ट्रेड किया गया था। A7LB ने एक कमर-जोड़ संवलन जोड़ा जो अंतरिक्ष यात्रियों को सूट से लड़े बिना Lunar Roving Vehicle में बैठने देता था; उस जोड़ के बिना J-mission EVAs संभव नहीं होते।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-suits.json",
+  "at": "body_paragraphs.1",
+  "en": "The lunar environment imposes constraints that orbital suits don't face. **Regolith dust** is abrasive, electrostatically clingy, and gets into everything: Apollo crews returned with lunar dust in their teeth, their hair, their lungs, and worst — in their suit bearings. The PLSS bearings on Apollo 17 were so degraded by the end of the mission that engineers later concluded another EVA would have risked seizure. Modern lunar suits put dust-rejecting bayonet seals on every joint and a dust-tolerant rear-entry system to keep abrasive grains out of pressurised volumes. **Thermal extremes** are wider than LEO: the unfiltered solar flux on the day side is ~1370 W/m², and the night-side surface in shadow can drop below 100 K. The A7L's silver outer layer was an aluminised mylar IR reflector; the inner garments were roughly 25 layers of aluminized Mylar/Kapton, Dacron, neoprene-coated nylon, and reinforced Beta cloth.",
+  "cur": "चंद्र वातावरण उन बाधाओं को लागू करता है जिनका कक्षीय सूटों को सामना नहीं करना पड़ता। **Regolith धूल** घर्षक है, स्थिरविद्युत रूप से चिपचिपी है, और सब कुछ में घुस जाती है: Apollo दलों ने चंद्र धूल अपने दांतों में, बालों में, फेफड़ों में, और सबसे बुरा — अपने सूट के बीयरिंग्स में लेकर लौटे। Apollo 17 के PLSS बीयरिंग्स मिशन के अंत तक इतने क्षतिग्रस्त हो गए थे कि इंजीनियरों ने बाद में निष्कर्ष निकाला कि एक और EVA जब्ती का जोखिम होता। आधुनिक चंद्र सूट हर जोड़ पर धूल-अस्वीकार बायोनेट सील लगाते हैं और दबाव वाले खंडों से घर्षक अनाज को दूर रखने के लिए धूल-सहनशील पिछली-प्रवेश प्रणाली लगाते हैं। **थर्मल चरम** LEO से अधिक व्यापक हैं: दिन की ओर अनफ़िल्टर्ड सौर प्रवाह ~1370 W/m² है, और छाया में रात की ओर की सतह 100 K से नीचे जा सकती है। A7L की चाँदी की बाहरी परत एक एल्युमीनीकृत mylar IR परावर्तक था; आंतरिक परिधान लगभग 25 परतों के एल्युमीनीकृत Mylar/Kapton, Dacron, नियोप्रिन-कोटेड नायलॉन, और प्रबलित Beta कपड़े थे।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-suits.json",
+  "at": "body_paragraphs.2",
+  "en": "**One detail that matters.** A lunar suit's biggest difference from an orbital suit isn't pressure or thermal load — it's **walking**. The boots have to articulate enough for natural gait; the knee joints have to flex with low torque; the soft-suit waist joint has to support a forward lean against the PLSS mass. The Apollo lessons-learned are still the design baseline: Aldrin and Armstrong reported the soft-fabric Apollo 11 suit was \"easy to walk in\" because the joints were sized for 1/6 g, not 1 g. Test on Earth in the suit and it feels heavy and stiff; on the Moon the mass is the same but the weight is 1/6, and the geometry works. Designing for 1/6 g instead of 1 g is one of the quiet reasons every operational lunar suit has been built fresh rather than carried over from orbital EVA service.",
+  "cur": "**एक विवरण जो महत्वपूर्ण है।** एक चंद्र सूट का कक्षीय सूट से सबसे बड़ा अंतर दबाव या थर्मल भार नहीं है — यह **चलना** है। जूतों को प्राकृतिक चाल के लिए पर्याप्त रूप से व्यक्त करना पड़ता है; घुटने के जोड़ों को कम टॉर्क के साथ झुकना पड़ता है; नरम-सूट कमर जोड़ को PLSS द्रव्यमान के विरुद्ध आगे झुकाव का समर्थन करना पड़ता है। Apollo सीखे गए पाठ अभी भी डिजाइन आधार हैं: एल्ड्रिन और आर्मस्ट्रांग ने बताया कि नरम-कपड़े Apollo 11 सूट \"चलने में आसान\" था क्योंकि जोड़ों को 1 g के लिए नहीं 1/6 g के लिए आकार दिया गया था। पृथ्वी पर सूट में परीक्षण करें और यह भारी और कठोर महसूस होता है; चंद्रमा पर द्रव्यमान समान है लेकिन वजन 1/6 है, और ज्यामिति काम करती है। 1 g के बजाय 1/6 g के लिए डिजाइन करना एक शांत कारण है कि हर परिचालनीय चंद्र सूट कक्षीय EVA सेवा से नहीं ले जाया गया है बल्कि नया बनाया गया है।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-suits.json",
+  "at": "body_paragraphs.3",
+  "en": "See /fleet for the operational and developmental lunar-suit catalog: Apollo A7L (1968–1971, the suit on Apollo 11 through 14), Apollo A7LB (1971–1972, the J-mission suit with the waist joint), Krechet-94 (Soviet, never flew — but its rear-entry architecture became the DNA of Orlan and Feitian), and the upcoming AxEMU (Axiom, qualifying for Artemis III in the late 2020s).",
+  "cur": "चंद्र-सूट कैटलॉग के लिए /fleet देखें: Apollo A7L (1968–1972, Apollo 11 से 14 पर सूट), Apollo A7LB (1971–1972, कमर जोड़ वाला J-mission सूट), Krechet-94 (सोवियत, कभी नहीं उड़ा — लेकिन इसकी पिछली-प्रवेश आर्किटेक्चर Orlan और Feitian का DNA बन गई), और आने वाली AxEMU (Axiom, देर 2020s में Artemis III के लिए योग्यता प्राप्त कर रही है)।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-suits.json",
+  "at": "diagram_caption",
+  "en": "A7L-class lunar suit: hard-upper-torso pressure shell · soft articulating arm/leg joints · over-the-shoulder PLSS backpack · OPS emergency O₂ cylinder on top · aluminised IR-reflective outer layer · dust-sealed lunar overboot · 3.7 psi operating pressure for maximum mobility.",
+  "cur": "A7L-class चंद्र सूट: कठोर-ऊपरी-धड़ दबाव खोल · नरम व्यक्त भुजा/पैर जोड़ · कंधे-ऊपर से PLSS बैकपैक · शीर्ष पर OPS आपातकालीन O₂ सिलिंडर · एल्युमीनीकृत IR-परावर्तक बाहरी परत · धूल-सील किया गया चंद्र अधिजूता · अधिकतम गतिशीलता के लिए 3.7 psi संचालन दबाव।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-surface-ops.json",
+  "at": "title",
+  "en": "Lunar surface operations — 1/6 g, regolith, day/night",
+  "cur": "चंद्र सतह संचालन — 1/6 g, रेगोलिथ, दिन/रात"
+ },
+ {
+  "rel": "science/life-in-space/lunar-surface-ops.json",
+  "at": "intro_sentence",
+  "en": "Apollo gave humanity 12 lunar walkers, 22 EVAs, ~80 surface-hours, 382 kg of samples. Every crew came back wishing for different things. Artemis is rebuilding the lunar EVA playbook against what those 12 learned.",
+  "cur": "Apollo ने मानवता को 12 चंद्र-पदयात्री, 22 EVA, ~80 सतह-घंटे, 382 किग्रा नमूने दिए। हर दल वापसी पर अलग-अलग चीजें चाहते थे। Artemis उन 12 ने सीखे गए पाठों के विरुद्ध चंद्र EVA खेलपुस्तिका को फिर से बना रहा है।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-surface-ops.json",
+  "at": "body_paragraphs.0",
+  "en": "Locomotion in 1/6 g is the first surprise. Apollo crews trained at the Langley 9.5° simulator + KC-135 parabolas, and everyone still landed expecting a clumsy walk. Reality was the opposite: walking at 1/6 g is *over*-stable in some axes (the body's mass-times-1/6g restoring force is small, so you settle slowly), and *under*-stable in others (forward momentum from a step persists much longer than on Earth, and there's no atmosphere to slow you). The Apollo crews converged on three locomotion modes: walking (good for slow + careful), the loping-jog (good for medium-distance, both feet off the ground for an extended period), and the kangaroo-hop (Aldrin's discovery on Apollo 11 — push off with both feet, glide). The Apollo 17 EVA-3 transcript has Cernan and Schmitt openly negotiating which mode to use for each segment of the traverse; the answer is mostly loping.",
+  "cur": "1/6 g में गतिविधि पहली अचरज की बात है। Apollo दलों ने Langley 9.5° सिम्युलेटर और KC-135 parabolas पर प्रशिक्षण प्राप्त किया था, और फिर भी हर कोई एक भद्दी चाल की उम्मीद करते हुए उतरा। वास्तविकता इसके विपरीत थी: 1/6 g पर चलना कुछ दिशाओं में *अत्यधिक*-स्थिर है (शरीर का द्रव्यमान-गुणा-1/6g पुनर्स्थापन बल छोटा है, इसलिए आप धीरे-धीरे बसते हैं), और अन्य दिशाओं में *अपर्याप्त*-स्थिर है (एक कदम से आने वाली संवेग पृथ्वी की तुलना में बहुत अधिक समय तक बना रहता है, और वायुमंडल नहीं है जो आपको धीमा करे)। Apollo दलों ने तीन गतिविधि के तरीके अपनाए: चलना (धीमी और सावधानीपूर्ण गति के लिए अच्छा), loping-jog (माध्यम-दूरी के लिए अच्छा, दोनों पैर विस्तारित अवधि के लिए जमीन से ऊपर रहते हैं), और kangaroo-hop (Apollo 11 पर एल्ड्रिन की खोज — दोनों पैरों से धक्का दें, फिसलें)। Apollo 17 EVA-3 transcript में सर्नन और श्मिट स्पष्ट रूप से यात्रा के प्रत्येक खंड के लिए कौन सा तरीका इस्तेमाल करना है, इस पर बातचीत कर रहे हैं; उत्तर अधिकतर loping है।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-surface-ops.json",
+  "at": "body_paragraphs.1",
+  "en": "Lunar dust is the second surprise and the worst-engineered problem of every Apollo mission. Apollo regolith is razor-sharp on the micron scale (no atmospheric weathering, no liquid water to round the grain edges; the grains are essentially shattered volcanic glass), electrostatically charged from solar-UV photoionisation (the dust *flies* toward charged surfaces), and pervasive — by the end of Apollo 17, EVA suits, cabin interiors, sample bags, and even the crew's bodies (after un-suiting) were uniformly grey-brown. Schmitt, the only geologist who walked on the Moon, developed 'lunar hay fever' inside the LM after Apollo 17's third EVA — measurable respiratory irritation from inhaled regolith. The medical analog on Earth is silicosis. Modern projections of long-duration lunar habitation place dust mitigation at #1 in the engineering problem list above radiation, thermal, ISRU, or psychological factors; the Artemis-era response is electrostatic dust mitigation (active charge-neutralisation surfaces), redesigned suit gaskets, and inside-the-airlock dust-removal systems (the Apollo crews could only brush).",
+  "cur": "चंद्र धूल दूसरी अचरज की बात है और हर Apollo मिशन की सबसे खराब-इंजीनियर की गई समस्या है। Apollo रेगोलिथ माइक्रॉन पैमाने पर रेज़र-तीव्र है (कोई वायुमंडलीय अपक्षय नहीं, अनाज के किनारों को गोल करने के लिए कोई तरल पानी नहीं; अनाज अनिवार्य रूप से टूटे हुए ज्वालामुखीय कांच हैं), सौर-पराबैंगनी प्रकाशआयनीकरण से विद्युतस्थैतिक रूप से आवेशित (धूल *आवेशित सतहों की ओर उड़ती* है), और सर्वव्यापी — Apollo 17 के अंत तक, EVA सूट, केबिन के आंतरिक भाग, नमूना बैग, और यहां तक कि दल के शरीर (कपड़े उतारने के बाद) समान रूप से भूरे-धूसर थे। श्मिट, चंद्रमा पर चलने वाले एकमात्र भू-वैज्ञानिक, ने Apollo 17 के तीसरे EVA के बाद LM के अंदर 'चंद्र हे फीवर' विकसित किया — अंतःश्वसित रेगोलिथ से मापनीय श्वसन जलन। पृथ्वी पर चिकित्सीय सादृश्य सिलिकोसिस है। दीर्घकालिक चंद्र आवास के आधुनिक अनुमान धूल निशमन को विकिरण, तापीय, ISRU, या मनोवैज्ञानिक कारकों के ऊपर इंजीनियरिंग समस्या सूची में #1 पर रखते हैं; Artemis-युग की प्रतिक्रिया विद्युतस्थैतिक धूल निशमन (सक्रिय आवेश-तटस्थता सतहें), पुनः-डिज़ाइन किए गए सूट गैसकेट, और एयरलॉक के अंदर धूल-हटाने की प्रणालियां हैं (Apollo दलों के पास केवल ब्रश करने का विकल्प था)।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-surface-ops.json",
+  "at": "body_paragraphs.2",
+  "en": "Day/night thermal cycles are the third constraint. The lunar day is 14 Earth-days of continuous sunlight; the lunar night is 14 Earth-days of darkness. Surface temperatures swing from ~+120 °C in daytime to -180 °C in the unlit areas — wider than any environment humans operate in. Apollo missions all landed within ±5° of the morning terminator, where the sun was low enough that thermal stress on the suits was tolerable for the planned ~3-day stay (Apollo 11 was 22 h, Apollo 17 was 75 h). Artemis III's planned ~6.5-day stay near the south pole avoids this problem differently — the South Pole has near-permanent illumination at the rim of certain craters (Shackleton, Cabeus) plus near-permanent shadow in the crater floors (where the water-ice ISRU targets are). The new EVA architecture is fundamentally cold-shadow + warm-rim + repeated airlock cycling, which has no Apollo analog.",
+  "cur": "दिन/रात तापीय चक्र तीसरी बाधा हैं। चंद्र दिन 14 पृथ्वी-दिनों का निरंतर सूर्यप्रकाश है; चंद्र रात 14 पृथ्वी-दिनों का अंधकार है। सतह के तापमान दिनमें ~+120 °C से लेकर अप्रकाशित क्षेत्रों में -180 °C तक swing करते हैं — मनुष्य जो किसी भी environment में संचालित करते हैं, उससे व्यापक। Apollo मिशन सभी morning terminator के ±5° के भीतर उतरे, जहां सूर्य काफी कम था कि सूट पर तापीय stress योजनाबद्ध ~3-दिन के stay के लिए सहनीय था (Apollo 11 22 h था, Apollo 17 75 h था)। Artemis III का योजनाबद्ध ~6.5-दिन का stay दक्षिण pole के निकट इस समस्या को अलग तरीके से हल करता है — दक्षिण pole के कुछ craters (शैकलटन, कैबियस) के rim पर near-permanent illumination होता है साथ ही crater floors (जहां water-ice ISRU targets हैं) में near-permanent shadow होता है। नया EVA architecture मौलिक रूप से cold-shadow + warm-rim + repeated airlock cycling है, जिसका Apollo analog नहीं है।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-surface-ops.json",
+  "at": "body_paragraphs.3",
+  "en": "The Apollo Lunar Roving Vehicle (Apollo 15-17) was the single most-cited improvement requested by every Apollo crew that didn't have one. The LRV had 4 in-wheel motors (each 0.25 hp), a design top speed of ~13 km/h (Cernan hit ~18 km/h on Apollo 17, the downhill speed record), and a walk-back radius of roughly 5–7.6 km from the LM depending on mission and consumables (the EVA-walkback constraint — if the rover failed, the crew had to be able to walk back inside their consumables budget). The Artemis programme's analog is the LTV (Lunar Terrain Vehicle, three commercial designs under contract from 2024). A pressurised lunar rover ('lunar Winnebago' was the early NASA branding) is planned for later Artemis flights — Toyota + JAXA have a joint design called Lunar Cruiser; China's CMSA is building Tansuo, an unpressurised two-seat rover, for its first crewed landing, targeted for 2030. Pressurised mobility extends the operational range to ~200 km from the lander, transforming what 'surface operations' means.",
+  "cur": "Apollo Lunar Roving Vehicle (Apollo 15-17) वह एकमात्र सबसे अधिक अनुरोधित सुधार था जिसकी हर Apollo दल ने माँग की जिसके पास एक नहीं था। LRV में 4 in-wheel मोटर थे (प्रत्येक 0.25 hp), ~13 किमी/घंटा की डिज़ाइन अधिकतम गति, (सर्नन ने Apollo 17 पर ~18 किमी/घंटा मारा, अवरोही गति रिकॉर्ड), और मिशन और उपभोग्य वस्तुओं के आधार पर LM से मोटे तौर पर 5–7.6 किमी की walk-back त्रिज्या (EVA-walkback बाधा — यदि rover विफल हो गया, तो दल को अपने उपभोग्य वस्तुओं के बजट के अंदर चलकर वापस आने में सक्षम होना था)। Artemis कार्यक्रम का अनुरूप LTV (Lunar Terrain Vehicle, 2024 से अनुबंध के तहत तीन वाणिज्यिक डिज़ाइन) है। एक दबावयुक्त चंद्र rover ('lunar Winnebago' प्रारंभिक NASA ब्रांडिंग थी) बाद की Artemis उड़ानों के लिए योजनाबद्ध है — Toyota + JAXA के पास Lunar Cruiser नामक एक संयुक्त डिज़ाइन है; चीन की CMSA अपनी पहली मानव-सहित चंद्र लैंडिंग (लक्ष्य 2030) के लिए Tansuo नामक दबावरहित दो-सीट वाला rover बना रही है। दबावयुक्त गतिविधि संचालन की सीमा को lander से ~200 किमी तक विस्तारित करती है, जो 'surface operations' का अर्थ बदलती है।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-surface-ops.json",
+  "at": "body_paragraphs.4",
+  "en": "ISRU — In-Situ Resource Utilisation — is the architecture-defining problem for any lunar stay beyond about a week. Apollo brought everything from Earth; the LM had ~12 hours of consumables margin past the planned EVAs. Artemis III plans a similar Earth-only architecture for the first surface mission, but Artemis IV+ and any future Moon-permanence design has to use lunar resources. The two big ones are water-ice (in the south polar permanently shadowed craters — Chang'e 5 sampled regolith with detectable water; the planned NASA VIPER rover would have prospected directly; Polaris Dawn-class commercial missions may carry their own prospectors) and lunar regolith for shielding (radiation + thermal — the same regolith that's a respiratory hazard inside is a useful shield outside). Tiangong-derived Chinese lunar plans, ESA's Moon Village concept, and NASA's Artemis Base Camp all assume ISRU water + ISRU shielding as enablers — without them, lunar permanence is unaffordable.",
+  "cur": "ISRU — In-Situ Resource Utilisation — किसी भी एक सप्ताह से अधिक लंबे चंद्रमा प्रवास के लिए आर्किटेक्चर को परिभाषित करने वाली समस्या है। Apollo ने पृथ्वी से सब कुछ लाया; LM में नियोजित EVAs के बाद लगभग 12 घंटे की खपत मार्जिन थी। Artemis III पहले सतह मिशन के लिए समान केवल-पृथ्वी आर्किटेक्चर की योजना बनाता है, लेकिन Artemis IV+ और किसी भी भविष्य के चंद्र-स्थायित्व डिज़ाइन को चंद्र संसाधनों का उपयोग करना होगा। दो बड़े संसाधन हैं — जल-बर्फ (दक्षिण ध्रुवीय स्थायी रूप से छायांकित क्रेटरों में — Chang'e 5 ने पहचानने योग्य जल के साथ रेगोलिथ का नमूना लिया; नियोजित NASA VIPER रोवर सीधे अन्वेषण करता; Polaris Dawn-वर्गीय वाणिज्यिक मिशन अपने स्वयं के अन्वेषक ले जा सकते हैं) और ढाल के लिए चंद्र रेगोलिथ (विकिरण + तापीय — वही रेगोलिथ जो अंदर श्वसन खतरा है बाहर एक उपयोगी ढाल है)। Tiangong-व्युत्पन्न चीनी चंद्र योजनाएँ, ESA की Moon Village अवधारणा, और NASA के Artemis Base Camp सभी ISRU जल + ISRU ढाल को सक्षम कर्ता मानते हैं — उनके बिना, चंद्र स्थायित्व सामर्थ्य में नहीं है।"
+ },
+ {
+  "rel": "science/life-in-space/lunar-surface-ops.json",
+  "at": "diagram_caption",
+  "en": "Three locomotion modes (walk / lope / kangaroo-hop), three EVA-defining hazards (dust / day-night thermal / radiation), three Apollo-vs-Artemis architecture deltas (location at terminator → south pole; walk-back radius ~5–7.6 km → 200 km via pressurised rover; everything-from-Earth → ISRU water + regolith shielding).",
+  "cur": "तीन गतिविधि मोड (चलना / lope / kangaroo-hop), तीन EVA-defining hazards (धूल / दिन-रात तापीय / विकिरण), तीन Apollo-vs-Artemis architecture deltas (terminator पर स्थान → दक्षिण pole; walk-back radius ~5–7.6 km → pressurised rover के माध्यम से 200 km; everything-from-पृथ्वी → ISRU जल + regolith shielding)।"
+ },
+ {
+  "rel": "science/life-in-space/mars-habitat-design.json",
+  "at": "title",
+  "en": "Mars habitat design — pre-deployed, ISRU-fed, perchlorate-aware",
+  "cur": "मंगल आवास डिज़ाइन — पूर्व-तैनात, ISRU-पोषित, परक्लोरेट-जागरूक"
+ },
+ {
+  "rel": "science/life-in-space/mars-habitat-design.json",
+  "at": "intro_sentence",
+  "en": "Mars adds three problems the Moon doesn't have: a 25-month round-trip with no abort, dust storms that can blanket the planet, and a regolith laced with chlorinated salts that poison anyone who breathes it.",
+  "cur": "मंगल तीन समस्याएं जोड़ता है जो चंद्रमा के पास नहीं हैं: बिना निरस्तीकरण के 25 महीने की वापसी यात्रा, धूल भरे तूफान जो ग्रह को ढक सकते हैं, और क्लोरिनयुक्त लवणों से युक्त रेगोलिथ जो किसी को भी जो इसे सांस लेता है, जहर देता है।"
+ },
+ {
+  "rel": "science/life-in-space/mars-habitat-design.json",
+  "at": "body_paragraphs.0",
+  "en": "Every credible Mars human architecture since the early 1990s has been built around the same observation: you cannot fly the habitat and the crew on the same launch window. The trip is too long (6-9 months one-way) and the surface stay too long (typically 500 days, dictated by orbital mechanics — the next Mars-to-Earth Hohmann window is 500 days after arrival) for the architecture to fit on a single launch. Solution: the habitat lands first, on a launch window 26 months before the crew, fully autonomous. By the time the crew arrives, the habitat has been operating for 26 months, the ISRU plant has been making oxygen and methane from the atmosphere and from subsurface ice for 18 months, the return vehicle is fully fuelled and pre-tested. NASA's Design Reference Architecture 5.0 (2009) codified this; SpaceX's Starship Mars architecture inherits it; every Mars architecture variation since then has retained the pre-deployment pattern.",
+  "cur": "1990 के दशक की शुरुआत से हर विश्वसनीय मानवीय मंगल आर्किटेक्चर एक ही अवलोकन के चारों ओर बनाया गया है: आप एक ही लॉन्च विंडो में आवास और चालक दल को नहीं उड़ा सकते। यात्रा बहुत लंबी है (एक तरफ 6-9 महीने) और सतह प्रवास बहुत लंबा है (आमतौर पर 500 दिन, कक्षीय यांत्रिकी द्वारा निर्धारित — अगली Hohmann मंगल-पृथ्वी विंडो आगमन के 500 दिन बाद होती है) कि आर्किटेक्चर एकल लॉन्च में फिट हो जाए। समाधान: आवास पहले उतरता है, चालक दल से 26 महीने पहले की लॉन्च विंडो पर, पूरी तरह स्वायत्त। जब तक चालक दल पहुँचता है, आवास 26 महीने से चल रहा होता है, ISRU संयंत्र 18 महीनों से वायुमंडल और उपसतह बर्फ से ऑक्सीजन और मीथेन बना रहा होता है, वापसी वाहन पूरी तरह से ईंधन भरा और पूर्व-परीक्षित होता है। NASA के Design Reference Architecture 5.0 (2009) ने इसे संहिताबद्ध किया; SpaceX का Starship मंगल आर्किटेक्चर इसे विरासत में लेता है; तब से हर मंगल आर्किटेक्चर भिन्नता ने पूर्व-तैनाती पैटर्न बनाए रखा है।"
+ },
+ {
+  "rel": "science/life-in-space/mars-habitat-design.json",
+  "at": "body_paragraphs.1",
+  "en": "Radiation shielding is harder than on the Moon. Mars has a thin (6 mbar) atmosphere that absorbs some galactic cosmic ray secondary cascades but no magnetic field. Surface dose: ~0.6 mSv/day, very similar to the Moon. Mitigations are the same family: regolith piled around or over the habitat (1-2 m of regolith blocks the bulk of the dose), or burial — Mars Design Reference Architecture 5.0 baselines pre-deployed habitat modules with 30-50 cm of regolith hand-piled by crew + robotic excavator. Subsurface lava tubes (detected at Pavonis Mons, Hadriacus Mons, and other volcanic provinces) are the long-term shielding target, similar to the lunar plan. Water-ice walls also feature in some architectures — water is roughly as effective per kilogram as regolith for shielding, with the bonus that you'd be hauling water anyway.",
+  "cur": "विकिरण परिरक्षण चंद्रमा की तुलना में कठिन है। मंगल का एक पतला (6 mbar) वायुमंडल है जो कुछ गैलेक्टिक कॉस्मिक किरण द्वितीयक झरने को अवशोषित करता है लेकिन कोई चुंबकीय क्षेत्र नहीं। सतह खुराक: ~0.6 mSv/दिन, चंद्रमा के समान। शमन एक ही परिवार से हैं: आवास के चारों ओर या ऊपर ढेर किया गया रेगोलिथ (1-2 m खुराक के बड़े हिस्से को रोकता है), या दफन — Mars Design Reference Architecture 5.0 पूर्व-तैनात आवास मॉड्यूल को चालक दल + रोबोटिक उत्खनन द्वारा हाथ से ढेर किए गए 30-50 cm रेगोलिथ के साथ बेसलाइन करता है। उपसतह लावा ट्यूब (पावोनिस पर्वत, हैड्रिएकस पर्वत और अन्य ज्वालामुखी प्रांतों पर पता लगाया गया) चंद्र योजना के समान दीर्घकालिक परिरक्षण लक्ष्य हैं। कुछ आर्किटेक्चर में जल-बर्फ की दीवारें भी आती हैं — परिरक्षण के लिए पानी प्रति किलोग्राम रेगोलिथ की तरह लगभग प्रभावी है, इस बोनस के साथ कि आप वैसे भी पानी ले जाएंगे।"
+ },
+ {
+  "rel": "science/life-in-space/mars-habitat-design.json",
+  "at": "body_paragraphs.2",
+  "en": "Dust on Mars is fundamentally different from lunar dust. Lunar dust is mechanical — micrometeorite-fragmented, electrostatically charged, glass-sharp. Mars dust is chemical: regolith samples returned by the Phoenix lander (2008) and confirmed by Curiosity and Perseverance contain 0.5-1% by mass of perchlorate (ClO₄⁻) salts. Perchlorates are thyroid toxins; at the surface concentration of ~0.5%, breathing Mars dust unfiltered would deliver a daily dose orders of magnitude above the recommended human limit within minutes. Architectures plan for HEPA-class filtration on every airlock, regolith-contact protocols requiring decontamination shower before re-entering pressurised volume, and ECLSS designed to detect perchlorate ingress in trace amounts. Mars dust also causes the dust storms — global storms (occurring ~every 3 Mars years, the most recent in 2018, which ended the Opportunity rover) blanket the planet in suspended dust for weeks, dropping solar panel output to ~10%. Crewed missions cannot run on solar alone through a global dust storm; baseline architectures include a 10-40 kWe fission reactor (Kilopower-derived, KRUSTY ground-tested in 2017-2018).",
+  "cur": "मंगल पर धूल चंद्र धूल से मौलिक रूप से भिन्न है। चंद्र धूल यांत्रिक है — माइक्रोमीटियराइट-खंडित, इलेक्ट्रोस्टैटिक रूप से आवेशित, कांच जैसी तेज। मंगल धूल रासायनिक है: Phoenix लैंडर (2008) द्वारा वापस किए गए और Curiosity और Perseverance द्वारा पुष्ट रेगोलिथ नमूनों में द्रव्यमान के अनुसार 0.5-1% परक्लोरेट (ClO₄⁻) लवण होते हैं। परक्लोरेट थायरॉयड विषाक्त पदार्थ हैं; ~0.5% की सतह सांद्रता पर, बिना फिल्टर के मंगल धूल को सांस लेने से मिनटों के भीतर अनुशंसित मानव सीमा से कई परिमाण ऊपर दैनिक खुराक मिलेगी। आर्किटेक्चर हर एयरलॉक पर HEPA-श्रेणी निस्पंदन, दबावयुक्त आयतन में पुनः प्रवेश से पहले परिशोधन शॉवर की आवश्यकता वाले रेगोलिथ-संपर्क प्रोटोकॉल, और ट्रेस मात्रा में परक्लोरेट प्रवेश का पता लगाने के लिए डिज़ाइन किए गए ECLSS की योजना बनाते हैं। मंगल धूल धूल भरे तूफान भी पैदा करती है — वैश्विक तूफान (~हर 3 मंगल वर्ष में, सबसे हाल का 2018 में, जिसने Opportunity रोवर को समाप्त किया) ग्रह को निलंबित धूल से हफ्तों के लिए ढकते हैं, सौर पैनल आउटपुट को ~10% तक गिराते हैं। मानवयुक्त मिशन वैश्विक धूल भरे तूफान के माध्यम से केवल सौर पर नहीं चल सकते; बेसलाइन आर्किटेक्चर में 10-40 kWe विखंडन रिएक्टर शामिल है (Kilopower-व्युत्पन्न, KRUSTY 2017-2018 में जमीनी-परीक्षण)।"
+ },
+ {
+  "rel": "science/life-in-space/mars-habitat-design.json",
+  "at": "body_paragraphs.3",
+  "en": "ISRU is non-negotiable for Mars. The mass ratio for return-to-Earth makes it impossible to ship return fuel from Earth; you must make it on-site. MOXIE (Mars OXygen In-situ resource utilization Experiment) flew on Perseverance and demonstrated O₂ production from Martian atmospheric CO₂ at small scale (5-12 g/hour, totalling 122 g across 16 runs from 2021-2023). Scale-up factor for a crewed mission: ~200×, producing 2-3 kg/hour for 18 months, total 25-30 tonnes of O₂ — enough for ascent vehicle oxidiser + crew breathing margin. Methane for ascent vehicle fuel comes from the Sabatier reaction: CO₂ + 4 H₂ → CH₄ + 2 H₂O, with H₂ sourced from electrolysed water mined from subsurface ice deposits (detected widely by MRO SHARAD radar). The whole ISRU plant is part of the pre-deployed payload, runs autonomously for 18-26 months before crew arrival, and produces test propellant samples that crewed mission can verify upon arrival before committing to the ascent burn.",
+  "cur": "मंगल के लिए ISRU गैर-परक्राम्य है। पृथ्वी-वापसी के लिए द्रव्यमान अनुपात पृथ्वी से वापसी ईंधन भेजना असंभव बनाता है; इसे साइट पर बनाना होगा। MOXIE (Mars OXygen In-situ resource utilization Experiment) Perseverance पर उड़ा और मंगल वायुमंडलीय CO₂ से छोटे पैमाने पर O₂ उत्पादन का प्रदर्शन किया (5-12 g/घंटा, 2021-2023 से 16 रन में कुल 122 g)। मानवयुक्त मिशन के लिए स्केल-अप कारक: ~200×, 18 महीनों के लिए 2-3 kg/घंटा का उत्पादन, कुल 25-30 टन O₂ — आरोहण वाहन ऑक्सीडाइज़र + चालक दल श्वास मार्जिन के लिए पर्याप्त। आरोहण वाहन ईंधन के लिए मीथेन Sabatier प्रतिक्रिया से आता है: CO₂ + 4 H₂ → CH₄ + 2 H₂O, H₂ उपसतह बर्फ निक्षेपों (MRO SHARAD रडार द्वारा व्यापक रूप से पता लगाया गया) से खनन किए गए विद्युतविश्लेषित पानी से आता है। पूरा ISRU संयंत्र पूर्व-तैनात पेलोड का हिस्सा है, चालक दल आगमन से 18-26 महीने पहले स्वायत्त रूप से चलता है, और परीक्षण प्रणोदक नमूने तैयार करता है जिन्हें मानवयुक्त मिशन आरोहण बर्न के लिए प्रतिबद्ध होने से पहले आगमन पर सत्यापित कर सकता है।"
+ },
+ {
+  "rel": "science/life-in-space/mars-habitat-design.json",
+  "at": "diagram_caption",
+  "en": "Mars architecture: habitat + ISRU plant + ascent vehicle pre-deployed 26 months before crew; ISRU makes O₂ from atmospheric CO₂ (MOXIE-derived) + methane from atmospheric CO₂ + electrolysed H₂O from subsurface ice. Crew arrival ~6-9 months transit. Surface stay 500+ days dictated by next Mars-Earth Hohmann window. Radiation: regolith burial. Dust: HEPA filtration for perchlorates.",
+  "cur": "मंगल आर्किटेक्चर: आवास + ISRU संयंत्र + आरोहण वाहन चालक दल से 26 महीने पहले पूर्व-तैनात; ISRU वायुमंडलीय CO₂ से O₂ (MOXIE-व्युत्पन्न) + वायुमंडलीय CO₂ और उपसतह बर्फ के विद्युतविश्लेषित H₂O से मीथेन बनाता है। चालक दल आगमन ~6-9 महीने पारगमन। सतह प्रवास 500+ दिन अगली Hohmann मंगल-पृथ्वी विंडो द्वारा निर्धारित। विकिरण: रेगोलिथ दफन। धूल: परक्लोरेट के लिए HEPA निस्पंदन।"
+ },
+ {
+  "rel": "science/life-in-space/mars-human-architecture.json",
+  "at": "title",
+  "en": "Mars human architecture — what crewed Mars actually requires",
+  "cur": "मंगल मानव आर्किटेक्चर — दल सहित मंगल वास्तव में क्या चाहता है"
+ },
+ {
+  "rel": "science/life-in-space/mars-human-architecture.json",
+  "at": "intro_sentence",
+  "en": "Apollo went to the Moon and came home in 8 days. Crewed Mars is a 2-3 year mission with 6-9 month transits each way, conjunction blackouts, and a self-sufficient surface stay. None of the technology is fully ready.",
+  "cur": "Apollo 8 दिनों में चंद्रमा पर गया और वापस आया। दल सहित मंगल 2-3 साल का मिशन है जिसमें प्रत्येक ओर 6-9 महीने की यात्रा, संयोजन ब्लैकआउट और आत्मनिर्भर सतह प्रवास शामिल है। कोई भी तकनीक पूरी तरह तैयार नहीं है।"
+ },
+ {
+  "rel": "science/life-in-space/mars-human-architecture.json",
+  "at": "body_paragraphs.0",
+  "en": "The transit problem dominates the architecture. Earth-Mars transfer windows open every 26 months; the cheapest (lowest-ΔV) Hohmann-class transfers take ~7-9 months one-way, with a forced surface stay of 18-20 months until the next launch window aligns. Faster transits exist but cost much more ΔV — NASA's DRA 5.0 baseline assumes a 6-month transit using nuclear thermal propulsion (NTP) that doesn't yet exist at flight scale. SpaceX's Starship architecture relies on aerocapture + propulsive landing using methane/oxygen propellant (the ISRU portion is provided in-situ from the Mars CO₂ atmosphere); the Starship approach plausibly enables ~3-4 month transits at higher ΔV. The crewed-Mars plan that CALT, China’s main rocket maker, presented in 2021, with first crews from 2033, is in the same conceptual family, with a different ISRU profile. Russia's IKI Mars proposals predate the modern engineering studies. India's ISRO Gaganyaan-derived crewed-Mars studies are conceptual.",
+  "cur": "आर्किटेक्चर पर यात्रा समस्या हावी है। पृथ्वी-मंगल स्थानांतरण विंडो हर 26 महीने में खुलती हैं; सबसे सस्ती (सबसे कम-ΔV) होहमैन-वर्ग की स्थानान्तरण ~7-9 महीने एक तरफा लेती हैं, जिसके साथ अगली लॉन्च विंडो तक 18-20 महीने की जबरदस्त सतह प्रवास होती है। तेजी से यात्रा मौजूद है लेकिन बहुत अधिक ΔV खर्च करती है — NASA का DRA 5.0 बेसलाइन 6-महीने की यात्रा मानता है जो परमाणु तापीय प्रणोदन (NTP) का उपयोग करती है जो अभी भी उड़ान पैमाने पर मौजूद नहीं है। SpaceX की Starship आर्किटेक्चर एरोकैप्चर + मेथेन/ऑक्सीजन प्रणोदक का उपयोग करके प्रोपल्सिव लैंडिंग पर निर्भर करती है (ISRU भाग मंगल CO₂ वायुमंडल से सीटू में प्रदान किया जाता है); Starship दृष्टिकोण समान रूप से उच्च ΔV पर ~3-4 महीने की यात्रा को सक्षम बनाता है। चीन की प्रमुख रॉकेट निर्माता CALT ने 2021 में जो मानव-सहित मंगल योजना प्रस्तुत की, जिसमें पहले दल 2033 से जाएँगे, वह समान वैचारिक परिवार में है, अलग ISRU प्रोफाइल के साथ। रूस की IKI मंगल प्रस्तावें आधुनिक इंजीनियरिंग अध्ययन से पहले की हैं। भारत का इसरो गगनयान-व्युत्पन्न दल-मंगल अध्ययन वैचारिक हैं।"
+ },
+ {
+  "rel": "science/life-in-space/mars-human-architecture.json",
+  "at": "body_paragraphs.1",
+  "en": "Radiation is the unsolved physiological problem. The Earth-Mars transit is outside Earth's magnetosphere; crew radiation dose from Galactic Cosmic Rays (GCRs) accumulates at ~1.8 mSv/day during transit (vs ~0.3–0.5 mSv/day on ISS, per MSL/RAD measurements). A 6-month transit each way + 18-month surface stay (with Mars's thin atmosphere providing partial GCR shielding but no magnetic-field shielding) totals roughly 1 Sv of GCR exposure — which maps to an estimated few-percent increase in lifetime cancer risk for a Mars crew member — a figure with large uncertainty (roughly a factor of 2–4), since the risk models extrapolate from very different radiation types. Solar Particle Events (SPEs) add irregular acute-dose spikes; the Carrington-class SPE of 1859 would have been fatal to unsheltered Mars-transit crew. The countermeasure stack is partly passive (water-based or polyethylene-based radiation shielding around the crew sleeping quarters), partly active (active shielding via electromagnetic deflection — researched but not flight-proven), and partly architectural (Mars regolith berms over the surface habitat, ~3 m of regolith provides equivalent shielding to Earth's atmosphere).",
+  "cur": "विकिरण अनसुलझी शारीरिक समस्या है। पृथ्वी-मंगल यात्रा पृथ्वी के चुंबकमंडल के बाहर है; गैलैक्टिक कॉस्मिक किरणों (GCRs) से चालक दल की विकिरण खुराक यात्रा के दौरान ~1.8 mSv/दिन जमा होती है (आईएसएस पर ~0.3–0.5 mSv/दिन बनाम, MSL/RAD मापन के अनुसार)। प्रत्येक तरफ 6 महीने की यात्रा + 18 महीने की सतह पर रहना (मंगल के पतले वातावरण के साथ आंशिक GCR ढाल प्रदान करता है लेकिन कोई चुंबकीय-क्षेत्र ढाल नहीं) कुल मिलाकर लगभग 1 Sv की GCR एक्सपोजर — जो मंगल चालक दल सदस्य के लिए आजीवन कैंसर जोखिम में अनुमानित कुछ-प्रतिशत वृद्धि से संबंधित है — एक आंकड़ा बड़ी अनिश्चितता के साथ (लगभग 2–4 का कारक), क्योंकि जोखिम मॉडल बहुत अलग विकिरण प्रकारों से एक्सट्रपोलेट करते हैं। सौर कण घटनाएं (SPEs) अनियमित तीव्र-खुराक स्पाइक जोड़ती हैं; 1859 की Carrington-वर्ग SPE आश्रय रहित मंगल-यात्रा चालक दल के लिए घातक होती। प्रतिनिरोध स्टैक आंशिक रूप से निष्क्रिय है (चालक दल के सोने के क्वार्टर के चारों ओर जल-आधारित या पॉलीइथिलीन-आधारित विकिरण ढाल), आंशिक रूप से सक्रिय (विद्युत चुंबकीय विक्षेपण के माध्यम से सक्रिय ढाल — शोधित लेकिन उड़ान-सिद्ध नहीं), और आंशिक रूप से वास्तुकला (सतह आवास के ऊपर मंगल रेगोलिथ बर्म, ~3 मीटर रेगोलिथ पृथ्वी के वातावरण के समान ढाल प्रदान करता है)।"
+ },
+ {
+  "rel": "science/life-in-space/mars-human-architecture.json",
+  "at": "body_paragraphs.2",
+  "en": "Mars surface ops at 1/3 g add their own set of unknowns. Apollo crews stayed 22-75 hours; ISS crews stay 6 months but at 0 g; nobody has ever stayed at a fractional gravity for 18 months. The bone-density-loss and muscle-atrophy curves at 1/3 g aren't measured — extrapolations suggest they're better than 0 g but worse than Earth, with the unknown being whether the body re-adapts to a steady-state at 1/3 g or continues a slower atrophy curve. Vestibular adaptation is another open question — Earth-Moon-Mars sequencing for a single mission may produce a different end-state than Earth-Mars direct. The ISS Twins Study (Mark + Scott Kelly, 2015-16) provided the first identical-twin Earth-vs-space dataset; Mars-class analog studies (Antarctica winter-over, HI-SEAS, Mars Society MDRS, Roscosmos SIRIUS) provide isolation + psychology data but not the gravitational variable.",
+  "cur": "1/3 g पर मंगल सतह ऑप्स अपने स्वयं के अनजान सेट जोड़ते हैं। Apollo दल 22-75 घंटे रहे; आईएसएस दल 6 महीने रहते हैं लेकिन 0 g पर; कोई भी 18 महीने के लिए आंशिक गुरुत्व पर नहीं रहा है। 1/3 g पर अस्थि-घनत्व-नुकसान और पेशी-शोष वक्र नहीं मापे जाते हैं — एक्सट्रापोलेशन सुझाते हैं कि वे 0 g से बेहतर हैं लेकिन पृथ्वी से भी बदतर हैं, अज्ञात यह है कि शरीर 1/3 g पर एक स्थिर-राज्य को फिर से अनुकूलित करता है या एक धीमा शोष वक्र जारी रखता है। वेस्टिबुलर अनुकूलन एक और खुला प्रश्न है — पृथ्वी-चंद्रमा-मंगल क्रमिक एक एकल मिशन के लिए पृथ्वी-मंगल प्रत्यक्ष की तुलना में एक अलग अंत-राज्य का उत्पादन कर सकता है। आईएसएस Twins Study (Mark + स्कॉट केली, 2015-16) पहली समान-जुड़वां पृथ्वी-बनाम-अंतरिक्ष डेटासेट प्रदान की; मंगल-वर्ग एनालॉग अध्ययन (Antarctica winter-over, HI-SEAS, Mars Society MDRS, Roscosmos SIRIUS) अलगाव + मनोविज्ञान डेटा प्रदान करते हैं लेकिन गुरुत्वाकर्षण चर नहीं।"
+ },
+ {
+  "rel": "science/life-in-space/mars-human-architecture.json",
+  "at": "body_paragraphs.3",
+  "en": "ISRU — In-Situ Resource Utilisation — is the architecture enabler. Mars's atmosphere is 95% CO₂ at ~0.6% Earth's pressure; the MOXIE experiment on Perseverance demonstrated electrolysis of atmospheric CO₂ to produce O₂ at ~10 g/hour scale (a flight-rated 200x larger unit could supply a crew). Mars subsurface water-ice exists in mid-to-high-latitude permafrost (verified by Phoenix, Mars Reconnaissance Orbiter, Mars Express); the SHARAD radar found subsurface ice bodies and reachable at depths of ~1 m in some sites. Combined CO₂ + water-ice ISRU produces methane + oxygen, the propellant pair used by Starship — closing the propulsion loop and reducing Earth-launched mass by a factor of ~3 for a chemical-rocket Mars architecture. The deployed ISRU plant has to operate autonomously for ~26 months before the crew arrives (the cargo-pre-deploy architecture). No spacecraft has yet survived 26 months of unattended Mars surface operation; the longest-lived was Opportunity at 14 years, but with continuous Earth oversight.",
+  "cur": "ISRU — In-Situ Resource Utilisation — आर्किटेक्चर enabler है। मंगल का वायुमंडल ~0.6% पृथ्वी के दबाव में 95% CO₂ है; Perseverance पर MOXIE प्रयोग ~10 g/घंटे पैमाने पर O₂ उत्पादन करने के लिए वायुमंडलीय CO₂ का इलेक्ट्रोलिसिस प्रदर्शित किया (एक उड़ान-मूल्यांकन 200x बड़ी इकाई एक दल को आपूर्ति कर सकती है)। मंगल पदार्थ पानी की बर्फ मध्य-से-उच्च-अक्षांश स्थायी रूप से मौजूद है (Phoenix, Mars Reconnaissance Orbiter, Mars Express द्वारा सत्यापित); SHARAD राडार ने ~1 मीटर की गहराई में कुछ साइटों पर सतह के भीतर बर्फ निकायों और पहुंचने योग्य पाया। संयुक्त CO₂ + पानी-बर्फ ISRU मेथेन + ऑक्सीजन का उत्पादन करता है, Starship द्वारा उपयोग की जाने वाली प्रणोदक जोड़ी — प्रणोदन लूप को बंद करना और रासायनिक-रॉकेट मंगल आर्किटेक्चर के लिए ~3 के एक कारक द्वारा पृथ्वी-लॉन्च द्रव्यमान को कम करना। तैनात ISRU संयंत्र को दल के आने से पहले ~26 महीने के लिए स्वायत्त रूप से संचालित करना है (कार्गो-पूर्व-तैनाती आर्किटेक्चर)। कोई भी अंतरिक्ष यान अभी तक 26 महीने की मंगल सतह ऑपरेशन को अनुपस्थित रखने से बचा नहीं है; सबसे लंबा-रहने वाला Opportunity था 14 साल पर, लेकिन निरंतर पृथ्वी निरीक्षण के साथ।"
+ },
+ {
+  "rel": "science/life-in-space/mars-human-architecture.json",
+  "at": "body_paragraphs.4",
+  "en": "EDL — Entry, Descent, Landing — is the bottleneck nobody has solved at human scale. The Mars atmosphere is thick enough to require heat-shield protection on entry (~3-5 km/s entry velocity) but too thin to slow a vehicle to landing speeds aerodynamically. Every Mars lander to date — Viking through Perseverance — has been ~1 tonne or less. A crewed Mars lander has to deliver ~20-30 tonnes to the surface. The available techniques are supersonic retropropulsion (SpaceX-pioneered, used at Earth landing, scalable in principle), supersonic inflatable aerodynamic decelerators (NASA HIAD demonstrators are flight-tested), and propulsive descent throughout (Starship architecture). None has been demonstrated at human-class Mars scale. The first uncrewed mass-class Mars EDL demonstration is at the front of every architecture's critical-path list, alongside the ISRU plant and the deep-space life-support stack.",
+  "cur": "EDL — Entry, Descent, Landing — 병 यह बोतलभरी है जिसे किसी ने मानव पैमाने पर हल नहीं किया है। मंगल वायुमंडल प्रवेश पर गर्मी-ढाल सुरक्षा (~3-5 किमी/सेकंड प्रवेश वेग) की आवश्यकता के लिए काफी मोटा है लेकिन एक वाहन को लैंडिंग गति तक वायुगतिकी को धीमा करने के लिए बहुत पतला है। पृथ्वी-भर में प्रत्येक मंगल लैंडर — Viking माध्यम से Perseverance — ~1 टन या उससे कम रहा है। एक दल-सहित मंगल लैंडर को सतह पर ~20-30 टन वितरित करना है। उपलब्ध तकनीकें हैं अतिध्वनिक retropropulsion (SpaceX-pioneered, पृथ्वी लैंडिंग पर उपयोग किया जाता है, सिद्धांत में स्केलेबल), अतिध्वनिक inflatable aerodynamic decelerators (NASA HIAD demonstrators उड़ान-परीक्षण किए गए हैं), और संपूर्ण propulsive descent (Starship आर्किटेक्चर)। कोई भी मानव-वर्ग मंगल पैमाने पर प्रदर्शित नहीं किया गया है। पहला uncrewed mass-class मंगल EDL प्रदर्शन प्रत्येक आर्किटेक्चर की महत्वपूर्ण-पथ सूची के सामने है, ISRU संयंत्र और गहरे-अंतरिक्ष जीवन-समर्थन स्टैक के साथ।"
+ },
+ {
+  "rel": "science/life-in-space/mars-human-architecture.json",
+  "at": "diagram_caption",
+  "en": "Five unsolved-in-flight problems: transit duration vs ΔV (NTP / Starship), radiation (passive + active shielding), 1/3 g long-term physiology (unmeasured), ISRU (methane + O₂ from CO₂ + water-ice), and human-scale Mars EDL (supersonic retropropulsion at 20 t).",
+  "cur": "पांच unsolved-in-flight समस्याएं: यात्रा अवधि बनाम ΔV (NTP / Starship), विकिरण (निष्क्रिय + सक्रिय ढाल), 1/3 g दीर्घमेयादी शरीर विज्ञान (unmeasured), ISRU (CO₂ + पानी-बर्फ से मेथेन + O₂), और मानव-पैमाने मंगल EDL (20 t पर अतिध्वनिक retropropulsion)।"
+ },
+ {
+  "rel": "science/life-in-space/microgravity-physiology.json",
+  "at": "title",
+  "en": "Microgravity physiology",
+  "cur": "सूक्ष्म गुरुत्व शरीर विज्ञान"
+ },
+ {
+  "rel": "science/life-in-space/microgravity-physiology.json",
+  "at": "intro_sentence",
+  "en": "What happens when gravity stops pulling on the human body — fluids redistribute, bones thin, muscles fade, and the inner ear loses its compass.",
+  "cur": "जब गुरुत्व मानव शरीर को खींचना बंद कर दे — तरल पदार्थ पुनः वितरित हो जाते हैं, हड्डियाँ पतली हो जाती हैं, मांसपेशियाँ कमजोर हो जाती हैं, और आंतरिक कान अपनी दिशा-बोध खो देता है।"
+ },
+ {
+  "rel": "science/life-in-space/microgravity-physiology.json",
+  "at": "narrative_101.0",
+  "en": "Spend a day in orbit and your face puffs up. Spend a week and your spine stretches by a few centimetres. Spend six months and roughly 1–2% of your bone calcium is gone per month — around 10% in total. Microgravity isn't \"weightlessness\" in any cellular sense — the cells are still there, in a fluid, evolved for one gravity. Take gravity away and that fluid pools differently, the bones stop being loaded, the muscles stop fighting anything, and the body starts dismantling what it no longer needs.",
+  "cur": "कक्षा में एक दिन बिताएँ और आपका चेहरा फूल जाता है। एक सप्ताह बिताएँ और आपकी रीढ़ की हड्डी कुछ सेंटीमीटर बढ़ जाती है। छह महीने बिताएँ और लगभग 1–2% हड्डी का कैल्शियम हर महीने चला जाता है — कुल मिलाकर लगभग 10%। सूक्ष्म गुरुत्व किसी भी कोशिकीय अर्थ में \"भारहीनता\" नहीं है — कोशिकाएँ अभी भी वहाँ हैं, एक द्रव में, एक गुरुत्व के लिए विकसित। गुरुत्व हटा दें और वह द्रव अलग तरीके से जमा हो जाता है, हड्डियाँ लोड होना बंद कर देती हैं, मांसपेशियाँ किसी चीज़ के विरुद्ध लड़ना बंद कर देती हैं, और शरीर जो अब आवश्यक नहीं है उसे नष्ट करना शुरू कर देता है।"
+ },
+ {
+  "rel": "science/life-in-space/microgravity-physiology.json",
+  "at": "narrative_101.1",
+  "en": "Every other section in this tab traces back to microgravity. Bone loss, muscle atrophy, vestibular confusion, SANS vision changes — all of it. The good news: the body adapts. The bad news: the adaptations are not toward Earth. Coming home is its own physiological event.",
+  "cur": "इस टैब में हर अन्य खंड सूक्ष्म गुरुत्व की ओर वापस जाता है। हड्डी का नुकसान, मांसपेशियों का क्षय, वेस्टिबुलर भ्रम, SANS दृष्टि परिवर्तन — सब कुछ। अच्छी खबर: शरीर अनुकूल हो जाता है। बुरी खबर: ये अनुकूलन पृथ्वी की ओर नहीं हैं। घर लौटना अपने आप में एक शारीरिक घटना है।"
+ },
+ {
+  "rel": "science/life-in-space/microgravity-physiology.json",
+  "at": "body_paragraphs.0",
+  "en": "The first thing that happens in orbit is fluid shift. On Earth, gravity pulls about a litre of blood and lymph downward into your legs; in microgravity, that fluid redistributes upward toward the chest and head. Astronauts get the puffy \"moon face\" within hours. The body responds by shedding the now-excess plasma volume — over the first few days, total body water drops by ~2 litres. Returning to Earth, that fluid hasn't been remade yet, so post-flight orthostatic intolerance (light-headedness on standing) is the norm for a week or more.",
+  "cur": "कक्षा में पहली चीज़ जो होती है वह द्रव स्थानांतरण है। पृथ्वी पर, गुरुत्व लगभग एक लीटर रक्त और लसीका को आपके पैरों में नीचे की ओर खींचता है; सूक्ष्म गुरुत्व में, वह द्रव छाती और सिर की ओर ऊपर की ओर पुनः वितरित हो जाता है। अंतरिक्ष यात्रियों को कुछ घंटों के भीतर पफ्फड़ \"चाँद चेहरा\" मिल जाता है। शरीर अब-अतिरिक्त प्लाज़्मा वॉल्यूम को बहाकर प्रतिक्रिया करता है — पहले कुछ दिनों में, कुल शरीर का पानी ~2 लीटर से कम हो जाता है। पृथ्वी पर लौटने पर, वह द्रव अभी तक फिर से नहीं बना है, इसलिए उड़ान-पश्चात ऑर्थोस्टेटिक असहिष्णुता (खड़े होने पर हल्कापन) एक सप्ताह या उससे अधिक के लिए सामान्य है।"
+ },
+ {
+  "rel": "science/life-in-space/microgravity-physiology.json",
+  "at": "body_paragraphs.1",
+  "en": "Bones and muscles lose mass because they're unused. Weight-bearing bones — femur, vertebrae, pelvis — lose 1–2% of their calcium **per month** without countermeasures. Postural muscles (calf, back, paraspinal) atrophy because nothing is asking them to fight gravity. Resistance and aerobic exercise on the ISS (ARED, treadmill T2, cycle ergometer) is the only proven counter; astronauts spend 2+ hours a day on it, and even then come back smaller and lighter than they left.",
+  "cur": "हड्डियाँ और मांसपेशियाँ द्रव्यमान खो देती हैं क्योंकि वे अप्रयुक्त हैं। भार-सहन करने वाली हड्डियाँ — फीमर, कशेरुकाएँ, श्रोणि — बिना प्रतिउपायों के **प्रति माह** 1–2% कैल्शियम खो देती हैं। मुद्रा मांसपेशियाँ (बछड़ा, पीठ, पेराविन्सपिनल) क्षय हो जाती हैं क्योंकि कुछ भी उनसे गुरुत्व से लड़ने के लिए नहीं कह रहा है। आईएसएस पर प्रतिरोध और एरोबिक व्यायाम (ARED, ट्रेडमिल T2, साइकिल एर्गोमीटर) एकमात्र सिद्ध प्रतिरोध है; अंतरिक्ष यात्री इस पर प्रतिदिन 2+ घंटे खर्च करते हैं, और फिर भी वापस आते हैं छोटे और हल्के होकर।"
+ },
+ {
+  "rel": "science/life-in-space/microgravity-physiology.json",
+  "at": "body_paragraphs.2",
+  "en": "The vestibular system — the inner ear's gravity sensor — gets profoundly confused. Astronauts report \"space adaptation syndrome\" (motion sickness) for 2–4 days as the brain re-weights vestibular vs visual cues. Long-duration spaceflight produces measurable changes in eye-tracking, posture, and gait that take weeks to months to fully reverse on return.",
+  "cur": "वेस्टिबुलर सिस्टम — आंतरिक कान का गुरुत्व सेंसर — गहराई से भ्रमित हो जाता है। अंतरिक्ष यात्रियों ने \"अंतरिक्ष अनुकूलन सिंड्रोम\" (गति बीमारी) 2–4 दिनों के लिए रिपोर्ट किया है क्योंकि मस्तिष्क वेस्टिबुलर बनाम दृश्य संकेतों को फिर से वजन देता है। दीर्घकालिक अंतरिक्ष उड़ान आँख ट्रैकिंग, मुद्रा, और चाल में मापने योग्य परिवर्तन पैदा करती है जो वापसी पर पूरी तरह से उलट होने में सप्ताह से महीने तक लगते हैं।"
+ },
+ {
+  "rel": "science/life-in-space/microgravity-physiology.json",
+  "at": "body_paragraphs.3",
+  "en": "And then there's everything we still don't fully understand: the immune system shifts toward latent-virus reactivation (shingles, EBV), the gut microbiome changes composition, sleep architecture flattens (no day/night, 16 sunrises per 24 h aboard ISS), and a portion of long-duration crew develop SANS — Space-Associated Neuro-ocular Syndrome — with flattened eyeballs and optic-nerve sheath changes that don't fully reverse. A Mars-class mission is the next big experiment.",
+  "cur": "और फिर ऐसी हर चीज़ है जिसे हम अभी तक पूरी तरह से नहीं समझते हैं: प्रतिरक्षा तंत्र सुप्त-वायरस पुनः सक्रिय करण की ओर बढ़ता है (दाद, EBV), आंत माइक्रोबायोम संरचना बदलता है, नींद की आर्किटेक्चर समतल हो जाती है (कोई दिन/रात नहीं, आईएसएस पर 24 घंटे में 16 सूर्योदय), और दीर्घकालिक चालक दल का एक हिस्सा SANS विकसित करता है — Space-Associated Neuro-ocular Syndrome — समतल आँखों और ऑप्टिक-नर्व शीथ परिवर्तनों के साथ जो पूरी तरह से उलट नहीं होते हैं। एक मंगल-श्रेणी मिशन अगला बड़ा प्रयोग है।"
+ },
+ {
+  "rel": "science/life-in-space/microgravity-physiology.json",
+  "at": "diagram_caption",
+  "en": "Fluid shifts headward, bones and muscles unload, the inner ear gets confused — and ARED + treadmill + cycle workouts are the closest thing we have to a fix.",
+  "cur": "द्रव सिरों की ओर स्थानांतरित होता है, हड्डियाँ और मांसपेशियाँ भार रहित हो जाती हैं, आंतरिक कान भ्रमित हो जाता है — और ARED + ट्रेडमिल + साइकिल व्यायाम वह सबसे निकट चीज़ हैं जो हमारे पास एक समाधान है।"
+ },
+ {
+  "rel": "science/life-in-space/muscle-atrophy.json",
+  "at": "intro_sentence",
+  "en": "Postural muscles fade first — the calf and back muscles you didn't realise you were using until they stop working in 1 g again.",
+  "cur": "मुद्रात्मक मांसपेशियाँ पहले फीकी पड़ जाती हैं — बछड़े और पीठ की मांसपेशियाँ जिन्हें आपने तब तक नहीं माना जब तक 1 g में फिर से काम करना बंद नहीं कर देती हैं।"
+ },
+ {
+  "rel": "science/life-in-space/muscle-atrophy.json",
+  "at": "body_paragraphs.0",
+  "en": "Skeletal muscle is a use-it-or-lose-it tissue. The body is constantly weighing the metabolic cost of maintaining a muscle against the demand on it. In microgravity, the demand on the postural muscle groups — calf (soleus, gastrocnemius), back (paraspinals, erector spinae), and quadriceps — collapses overnight. The body stops maintaining them. Within two weeks, type-I (slow-twitch, postural) fibres are visibly smaller; by around six months without countermeasures, cross-sectional area in the calves drops 15–20%.",
+  "cur": "कंकाल की मांसपेशी एक उपयोग-इसे-या-खो-इसे ऊतक है। शरीर लगातार एक मांसपेशी को बनाए रखने की चयापचय लागत को उस पर मांग के विरुद्ध तौल रहा है। सूक्ष्मगुरुत्व में, मुद्रात्मक मांसपेशी समूहों पर मांग — बछड़े (soleus, gastrocnemius), पीठ (paraspinals, erector spinae), और quadriceps — रातोंरात ढह जाती है। शरीर उन्हें बनाए रखना बंद कर देता है। दो सप्ताह के भीतर, टाइप-I (धीमी-twitch, मुद्रात्मक) फाइबर स्पष्ट रूप से छोटे हो जाते हैं; लगभग छह महीने बिना प्रतिउपायों के, बछड़ों में क्रॉस-सेक्शनल क्षेत्र 15–20% गिरता है।"
+ },
+ {
+  "rel": "science/life-in-space/muscle-atrophy.json",
+  "at": "body_paragraphs.1",
+  "en": "Type-II (fast-twitch, locomotor) fibres in the arms and shoulders fare somewhat better because astronauts use them constantly to translate around the station. But even those decondition. The Skylab and early Mir data showed astronauts so weak after long missions that they couldn't lift their own legs against gravity for the first hour back.",
+  "cur": "टाइप-II (तेज़-twitch, locomotor) भुजाओं और कंधों में फाइबर कुछ बेहतर करते हैं क्योंकि अंतरिक्ष यात्री स्टेशन के चारों ओर अनुवाद करने के लिए लगातार उनका उपयोग करते हैं। लेकिन वे भी खराब हो जाते हैं। Skylab और प्रारंभिक Mir डेटा ने दिखाया कि अंतरिक्ष यात्री लंबे मिशन के बाद इतने कमजोर थे कि वे पहली घंटे के लिए गुरुत्वाकर्षण के विरुद्ध अपने पैरों को उठा नहीं सकते थे।"
+ },
+ {
+  "rel": "science/life-in-space/muscle-atrophy.json",
+  "at": "body_paragraphs.2",
+  "en": "Modern ISS countermeasures push back with two hours of resistance + cardio per day: ARED for legs, back, and core (squats, deadlifts, calf raises at up to 1100 N of resistance); the T2 treadmill for cardiovascular conditioning (with a harness providing about 70% bodyweight loading); and the cycle ergometer as backup. Even with all that, 6-month crew return with measurable strength deficits in the postural groups. A Mars trip — multi-year, with periods of reduced exercise during cruise — implies meaningfully greater deconditioning than anything ISS has yet measured.",
+  "cur": "आधुनिक आईएसएस प्रतिउपाय प्रतिदिन दो घंटे प्रतिरोध + कार्डियो के साथ वापस धकेलते हैं: ARED पैरों, पीठ और कोर के लिए (स्क्वाट, deadlifts, बछड़ा उठता है 1100 N तक के प्रतिरोध पर); हृदय संबंधी कंडीशनिंग के लिए T2 ट्रेडमिल (लगभग 70% bodyweight लोडिंग प्रदान करने वाली कमर के साथ); और साइकिल ergometer बैकअप के रूप में। इस सब के साथ भी, 6-महीने के चालक दल मुद्रात्मक समूहों में मापने योग्य शक्ति घाटे के साथ लौटते हैं। एक मंगल यात्रा — बहु-वर्षीय, परिभ्रमण के दौरान व्यायाम की कम अवधि के साथ — आईएसएस ने अब तक मापी गई किसी भी चीज़ की तुलना में अर्थपूर्ण रूप से अधिक deconditioning का तात्पर्य है।"
+ },
+ {
+  "rel": "science/life-in-space/muscle-atrophy.json",
+  "at": "body_paragraphs.3",
+  "en": "Open questions: whether artificial gravity in transit (a slowly rotating habitat) would defeat this, and how partial gravity (Moon at 0.17 g, Mars at 0.38 g) compares to microgravity. We have ISS data for 0 g and Earth data for 1 g — the surface-physiology gap in between is one of the loudest unknowns for human Mars planning.",
+  "cur": "खुले प्रश्न: क्या ट्रांजिट में कृत्रिम गुरुत्व (एक धीरे-धीरे घूमने वाला निवास स्थान) इसे हराएगा, और आंशिक गुरुत्व (चंद्रमा 0.17 g पर, मंगल 0.38 g पर) सूक्ष्मगुरुत्व की तुलना कैसे करता है। हमारे पास 0 g के लिए आईएसएस डेटा और 1 g के लिए पृथ्वी डेटा है — उनके बीच सतह-शरीर विज्ञान अंतराल मानव मंगल योजना के लिए सबसे जोर से अज्ञात में से एक है।"
+ },
+ {
+  "rel": "science/life-in-space/muscle-atrophy.json",
+  "at": "diagram_caption",
+  "en": "Postural muscles (calf, paraspinal) atrophy fastest because microgravity removes their daily load — even with 2 h/day of ARED + treadmill, 6-month crew lose ~15% calf CSA.",
+  "cur": "मुद्रात्मक मांसपेशियाँ (बछड़े, paraspinal) सबसे तेजी से सिकुड़ती हैं क्योंकि सूक्ष्मगुरुत्व उनके दैनिक भार को हटा देता है — भले ही 2 h/day ARED + ट्रेडमिल के साथ, 6-महीने के चालक दल ~15% बछड़े CSA खो देते हैं।"
+ },
+ {
+  "rel": "science/life-in-space/pre-flight-training.json",
+  "at": "title",
+  "en": "Pre-flight training — the years before launch",
+  "cur": "प्री-फ्लाइट प्रशिक्षण — लॉन्च से पहले के वर्ष"
+ },
+ {
+  "rel": "science/life-in-space/pre-flight-training.json",
+  "at": "intro_sentence",
+  "en": "Modern astronauts train 18-24 months basic + 2-3 years mission-specific before flying. Apollo crews trained 5 years for a 10-day mission. Ground-to-flight ratio is the highest of any operational profession.",
+  "cur": "आधुनिक अंतरिक्ष यात्री लॉन्च से पहले 18-24 महीने की बुनियादी + 2-3 साल की मिशन-विशिष्ट प्रशिक्षण लेते हैं। Apollo क्रू ने 10-दिवसीय मिशन के लिए 5 साल प्रशिक्षण लिया।"
+ },
+ {
+  "rel": "science/life-in-space/pre-flight-training.json",
+  "at": "body_paragraphs.0",
+  "en": "Basic training is roughly the same across NASA, Roscosmos, ESA, JAXA, CSA, and China’s CMSA: scuba certification (for the neutral-buoyancy pool work that will later teach EVA), aircraft flight time (T-38 jets at JSC, L-39s at Star City), parabolic flight (~30s zero-g exposure in a converted aircraft — the 'vomit comet' name is accurate the first 10 flights), centrifuge to 8g (off-nominal Soyuz ballistic re-entry; nominal is ~4g), altitude chamber to 30,000 ft, sea + desert + arctic survival training (in case of off-nominal landing). NASA's basic-training cohort runs Houston-Cologne-Tsukuba-Tsukuba for 18-24 months; Roscosmos's GCTC programme is similar but longer (24-30 months) and includes more centrifuge time. The basic phase isn't about specific missions — it's about producing a body of qualified astronauts who could be assigned to any future flight.",
+  "cur": "बुनियादी प्रशिक्षण NASA, Roscosmos, ESA, JAXA, CSA और चीन की CMSA में लगभग समान है: स्कूबा प्रमाणन (तटस्थ-उछाल पूल कार्य जो बाद में EVA सिखाता है), विमान उड़ान का समय (JSC में T-38 जेट, Star City में L-39), परवलयिक उड़ान (~30 सेकंड शून्य-g जोखिम परिवर्तित विमान में — 'vomit comet' नाम पहली 10 उड़ानों में सटीक है), 8g तक सेंट्रीफ्यूज (ऑफ-नॉमिनल Soyuz बैलिस्टिक रीएंट्री; नॉमिनल ~4g है), 30,000 फीट तक ऊंचाई कक्ष, समुद्र + रेगिस्तान + आर्कटिक अस्तित्व प्रशिक्षण (ऑफ-नॉमिनल लैंडिंग की स्थिति में)। NASA की बुनियादी-प्रशिक्षण कोहोर्ट ह्यूस्टन-Cologne-Tsukuba-Tsukuba 18-24 महीने के लिए चलती है; Roscosmos का GCTC कार्यक्रम समान है लेकिन लंबा (24-30 महीने) और अधिक सेंट्रीफ्यूज समय शामिल करता है। बुनियादी चरण विशिष्ट मिशनों के बारे में नहीं है — यह योग्य अंतरिक्ष यात्रियों का एक निकाय तैयार करने के बारे में है जिन्हें किसी भी भविष्य की उड़ान के लिए असाइन किया जा सकता है।"
+ },
+ {
+  "rel": "science/life-in-space/pre-flight-training.json",
+  "at": "body_paragraphs.1",
+  "en": "Mission-specific training begins ~2.5 years before launch for an ISS expedition and ~5 years before launch for an Apollo-class deep-space mission. The crew is assigned, the science programme is locked, and training shifts from 'what is space' to 'what specifically will I be doing on this mission'. ISS expedition training cycles through Houston (US-segment operations, Crew Dragon / Soyuz), Star City (Soyuz, Russian-segment operations), Cologne (Columbus module + EVA Lab), and Tsukuba (Kibo). A crew member touching every module on station has roughly 12,000 hours of mission-specific training by launch — the equivalent of six years of full-time work on top of the basic-training pipeline.",
+  "cur": "मिशन-विशिष्ट प्रशिक्षण आईएसएस अभियान के लिए लॉन्च से ~2.5 साल पहले और Apollo-वर्ग deep-space मिशन के लिए लॉन्च से ~5 साल पहले शुरू होती है। क्रू असाइन किया गया है, विज्ञान कार्यक्रम बंद किया गया है, और प्रशिक्षण 'space क्या है' से 'मैं इस मिशन पर विशेष रूप से क्या कर रहा हूँ' में बदल जाता है। आईएसएस अभियान प्रशिक्षण ह्यूस्टन (US-segment संचालन, Crew Dragon / Soyuz), Star City (Soyuz, Russian-segment संचालन), Cologne (Columbus module + EVA Lab), और Tsukuba (Kibo) के माध्यम से चक्र करती है। एक क्रू सदस्य स्टेशन पर हर मॉड्यूल को छूता है जिसके पास लॉन्च तक लगभग 12,000 घंटे की मिशन-विशिष्ट प्रशिक्षण होती है — बुनियादी-प्रशिक्षण पाइपलाइन के शीर्ष पर छह साल की पूर्णकालिक कार्य के बराबर।"
+ },
+ {
+  "rel": "science/life-in-space/pre-flight-training.json",
+  "at": "body_paragraphs.2",
+  "en": "EVA training happens in the Neutral Buoyancy Laboratory (NBL) in Houston — a 40m × 25m × 12m pool with a full-scale ISS mockup at the bottom. The astronaut wears a pressurised suit (the EMU, modified for water) and is weighted to neutral buoyancy so they can practice the exact tasks they'll do on orbit. The training ratio is severe: roughly 10 hours of NBL training per 1 hour of planned flight EVA. The Russian counterpart is the Hydrolab at Star City, configured for Orlan suits + Russian-segment mockups. China runs an equivalent at the Astronaut Center of China outside Beijing. Apollo lunar EVAs trained at a 9.5° suspension rig (pictured) plus 1/6-g KC-135 parabolic profiles plus rock-collection field trips in lunar-analog terrain — Iceland for Apollo 17, the Grand Canyon for earlier missions.",
+  "cur": "EVA प्रशिक्षण ह्यूस्टन में Neutral Buoyancy Laboratory (NBL) में होती है — एक 40m × 25m × 12m पूल जिसके तल पर पूर्ण-पैमाने आईएसएस मॉकअप है। अंतरिक्ष यात्री एक दबाव वाला सूट (EMU, पानी के लिए संशोधित) पहनता है और तटस्थ उछाल के लिए भारित होता है ताकि वे कक्षा में जो सटीक कार्य करेंगे उसका अभ्यास कर सकें। प्रशिक्षण अनुपात गंभीर है: योजनाबद्ध उड़ान EVA के 1 घंटे के लिए लगभग 10 घंटे NBL प्रशिक्षण। रूसी समकक्ष Star City में Hydrolab है, Orlan सूट + Russian-segment मॉकअप के लिए कॉन्फ़िगर किया गया है। चीन Beijing के बाहर Astronaut Center of China में एक समकक्ष चलाता है। Apollo चंद्र EVA को 9.5° निलंबन रिग (दिखाया गया) प्लस 1/6-g KC-135 परवलयिक प्रोफाइल प्लस चंद्र-अनुरूप इलाके में rock-collection क्षेत्र यात्राओं में प्रशिक्षित किया गया — Apollo 17 के लिए Iceland, पहली मिशनों के लिए Grand Canyon।"
+ },
+ {
+  "rel": "science/life-in-space/pre-flight-training.json",
+  "at": "body_paragraphs.3",
+  "en": "Vehicle-specific simulator time dominates the final 6 months. Soyuz crews log ~250 hours in the Star City Soyuz simulator, including dozens of off-nominal scenarios (one re-entry engine fails, attitude-control thruster sticks, parachute deploys late). Crew Dragon and Starliner crews use SpaceX's Hawthorne and Boeing's Houston simulators respectively. Shenzhou crews train at ACC's Shenzhou simulator. Every simulator session ends with a debrief covering what went right + what went wrong, and the same scenarios get re-run weeks later to confirm the lessons stuck. The cumulative simulator time across all spacecraft a modern ISS commander has flown — Soyuz + Crew Dragon + perhaps Starliner — runs ~1,500 hours. That's a year of full-time work just on getting the vehicles right.",
+  "cur": "वाहन-विशिष्ट सिम्युलेटर समय अंतिम 6 महीने पर हावी है। Soyuz क्रू Star City Soyuz सिम्युलेटर में ~250 घंटे दर्ज करते हैं, जिसमें दर्जनों ऑफ-नॉमिनल परिदृश्य शामिल हैं (एक रीएंट्री इंजन विफल हो जाता है, attitude-control thruster फंस जाता है, पैराशूट देरी से तैनात होता है)। Crew Dragon और Starliner क्रू क्रमशः SpaceX के Hawthorne और Boeing के ह्यूस्टन सिम्युलेटर का उपयोग करते हैं। Shenzhou क्रू ACC के Shenzhou सिम्युलेटर में प्रशिक्षण लेते हैं। हर सिम्युलेटर सत्र क्या सही गया + क्या गलत गया इसके बारे में एक debrief के साथ समाप्त होता है, और समान परिदृश्य हफ्तों बाद फिर से चलाए जाते हैं ताकि सबक पकड़े गए सुनिश्चित किए जा सकें। सभी अंतरिक्ष यान सिम्युलेटर समय का संचयी जो एक आधुनिक आईएसएस कमांडर ने उड़ाया है — Soyuz + Crew Dragon + शायद Starliner — ~1,500 घंटे चलता है। यह वाहनों को सही करने के लिए बस पूर्णकालिक कार्य का एक साल है।"
+ },
+ {
+  "rel": "science/life-in-space/pre-flight-training.json",
+  "at": "body_paragraphs.4",
+  "en": "Quarantine + the final two weeks are the strictest part. Soyuz crews enter pre-launch quarantine 14 days before liftoff at Star City + Baikonur — closed dormitory, controlled diet, daily medical, no outside visitors except family at a glass barrier. Crew Dragon uses a shorter 7-day quarantine at Kennedy Space Center. Shenzhou uses a similar 14-day window in Beijing then transfers to Jiuquan. The purpose is partly infection control (a head cold in microgravity is debilitating + can't be effectively treated) and partly psychological — the quarantine ritual marks the transition from training to operational status. By launch morning the crew has been awake roughly 6 hours, eaten a calibrated low-residue meal, suited up in 3 hours of choreographed pre-egress, and walked the 100m from suit-up to the bus to the launch pad. The Soyuz tradition of urinating on the rear-right tire of the bus (a Gagarin original) and the Shenzhou tradition of three formal handshakes before boarding both date to the same impulse: rituals close the training era and open the flight.",
+  "cur": "संगरोध + अंतिम दो सप्ताह सबसे कठोर भाग हैं। Soyuz क्रू लॉन्च से 14 दिन पहले Star City + बायकोनूर में pre-launch संगरोध में प्रवेश करते हैं — बंद छात्रावास, नियंत्रित आहार, दैनिक चिकित्सा, बाहरी आगंतुक नहीं सिवाय परिवार के कांच की बाधा पर। Crew Dragon कैनेडी स्पेस सेंटर में एक छोटी 7-दिन की संगरोध का उपयोग करता है। Shenzhou Beijing में एक समान 14-दिन की खिड़की का उपयोग करता है फिर जिउकुआन में स्थानांतरित होता है। उद्देश्य आंशिक रूप से संक्रमण नियंत्रण है (microgravity में एक सिर ठंड निर्बल है + प्रभावी ढंग से इलाज नहीं किया जा सकता है) और आंशिक रूप से मनोवैज्ञानिक है — संगरोध अनुष्ठान प्रशिक्षण से परिचालन स्थिति में संक्रमण को चिह्नित करता है। लॉन्च की सुबह तक क्रू लगभग 6 घंटे जागा हुआ है, एक अंशांकित low-residue भोजन खा चुका है, 3 घंटे के choreographed pre-egress में सूट किया है, और suit-up से बस से लॉन्च पैड तक 100m चला गया है। बस के rear-right टायर पर पेशाब करने की Soyuz परंपरा (एक गगारिन मूल) और बोर्डिंग से पहले तीन औपचारिक handshakes की Shenzhou परंपरा दोनों एक ही आवेग के लिए तारीख: अनुष्ठान प्रशिक्षण युग को बंद करते हैं और उड़ान को खोलते हैं।"
+ },
+ {
+  "rel": "science/life-in-space/pre-flight-training.json",
+  "at": "diagram_caption",
+  "en": "18-24 month basic training (Houston / Star City / Cologne / Tsukuba) → 2.5-5 year mission-specific training (NBL or Hydrolab + module simulators + vehicle simulators) → 6 months final sims + medicals → 14-day quarantine → launch. ~12,000 hours total for an ISS expedition.",
+  "cur": "18-24 महीने की बुनियादी प्रशिक्षण (ह्यूस्टन / Star City / Cologne / Tsukuba) → 2.5-5 साल की मिशन-विशिष्ट प्रशिक्षण (NBL या Hydrolab + मॉड्यूल सिम्युलेटर + वाहन सिम्युलेटर) → 6 महीने अंतिम sims + चिकित्सा → 14-दिन संगरोध → लॉन्च। आईएसएस अभियान के लिए कुल ~12,000 घंटे।"
+ },
+ {
+  "rel": "science/life-in-space/radiation-exposure.json",
+  "at": "intro_sentence",
+  "en": "Galactic cosmic rays + solar particle events + Earth's trapped belts — the radiation environment outside the magnetosphere is the biggest unsolved problem for a human Mars mission.",
+  "cur": "गैलेक्टिक कॉस्मिक किरणें + सौर कण घटनाएं + पृथ्वी के फंसे हुए बेल्ट - चुंबकमंडल के बाहर विकिरण वातावरण एक मानव मंगल मिशन के लिए सबसे बड़ी अनसुलझ समस्या है।"
+ },
+ {
+  "rel": "science/life-in-space/radiation-exposure.json",
+  "at": "body_paragraphs.0",
+  "en": "Earth's surface gets about 3 mSv (millisieverts) of background radiation per year — radon, rocks, food, cosmic rays attenuated by 100 km of atmosphere. The ISS, in low Earth orbit and still partially shielded by the magnetosphere, gets about **150 mSv per year**. Deep space, outside the magnetosphere, gets about **600 mSv per year** — and that's with no solar storms.",
+  "cur": "पृथ्वी की सतह को प्रति वर्ष लगभग 3 mSv (मिलीसीवर्ट) पृष्ठभूमि विकिरण मिलता है — रेडॉन, चट्टानें, भोजन, और वायुमंडल के 100 किमी द्वारा क्षीण किए गए ब्रह्मांडीय किरणें। आईएसएस, निम्न पृथ्वी कक्षा में और अभी भी चुंबकमंडल द्वारा आंशिक रूप से परिरक्षित, को प्रति वर्ष लगभग **150 mSv** मिलता है। गहरा अंतरिक्ष, चुंबकमंडल के बाहर, को प्रति वर्ष लगभग **600 mSv** मिलता है — और यह सौर तूफानों के बिना भी है।"
+ },
+ {
+  "rel": "science/life-in-space/radiation-exposure.json",
+  "at": "body_paragraphs.1",
+  "en": "Three sources matter. **Galactic cosmic rays (GCR)** are high-energy nuclei from outside the solar system, mostly hydrogen and helium but with a small tail of heavy ions (iron, mostly) that punch through aluminium hulls and shred DNA along the way. They're the steady background. **Solar particle events (SPE)** are bursts of mostly-proton radiation from coronal mass ejections; one bad one in deep space could deliver a lethal dose in hours. **Trapped radiation** (Van Allen belts) is a Low Earth Orbit problem — ISS is below the inner belt, but transiting through it (e.g. Apollo translunar injection) builds up dose quickly.",
+  "cur": "तीन स्रोत मायने रखते हैं। **गैलेक्टिक कॉस्मिक किरणें (GCR)** सौर मंडल के बाहर से उच्च-ऊर्जा वाले नाभिक हैं, ज्यादातर हाइड्रोजन और हीलियम लेकिन भारी आयनों (ज्यादातर लोहा) की एक छोटी पूँछ के साथ जो एल्यूमिनियम के खोल को छेद देते हैं और रास्ते भर में DNA को क्षतिग्रस्त करते हैं। ये स्थिर पृष्ठभूमि हैं। **सौर कण घटनाएँ (SPE)** कोरोनल द्रव्यमान निष्कासन से ज्यादातर प्रोटॉन विकिरण के फटने हैं; गहरे अंतरिक्ष में एक बुरी घटना घंटों में घातक खुराक दे सकती है। **फंसा हुआ विकिरण** (Van Allen belts) एक निम्न पृथ्वी कक्षा समस्या है — आईएसएस आंतरिक पेटी से नीचे है, लेकिन इसे पार करते समय (जैसे Apollo translunar injection) खुराक जल्दी जमा हो जाती है।"
+ },
+ {
+  "rel": "science/life-in-space/radiation-exposure.json",
+  "at": "body_paragraphs.2",
+  "en": "Shielding is hard. Aluminium (the natural hull material) is actually worse against GCR than nothing in some regimes — high-Z secondary particles from spallation can be more biologically damaging than the primaries. Hydrogen-rich materials (polyethylene, water) are better; some hab designs use water tanks as a passive shadow shield. Active magnetic shielding is theoretical only. The most cost-effective \"shielding\" is shorter trip time, which is why fast-transit chemical + nuclear-thermal Mars concepts get serious attention.",
+  "cur": "ढाल बनाना कठिन है। एल्यूमिनियम (प्राकृतिक पतवार सामग्री) वास्तव में कुछ परिस्थितियों में GCR के विरुद्ध कुछ नहीं होने से भी बदतर है — स्पॉलेशन से उच्च-Z द्वितीयक कणों प्राथमिक कणों की तुलना में जैविक रूप से अधिक हानिकारक हो सकते हैं। हाइड्रोजन से समृद्ध सामग्रियां (पॉलीइथिलीन, जल) बेहतर हैं; कुछ निवास डिजाइन जल टैंक को निष्क्रिय छाया ढाल के रूप में उपयोग करते हैं। सक्रिय चुंबकीय ढाल केवल सैद्धांतिक है। सबसे लागत-प्रभावी \"ढाल\" छोटा यात्रा समय है, जिसके कारण तेज़-यात्रा रासायनिक + परमाणु-तापीय मंगल अवधारणाओं को गंभीर ध्यान मिलता है।"
+ },
+ {
+  "rel": "science/life-in-space/radiation-exposure.json",
+  "at": "body_paragraphs.3",
+  "en": "Career limits at NASA are not absolute mSv numbers but excess-cancer-risk percentages — about 3% added lifetime cancer risk used to be the cap. ESA, JAXA, and Roscosmos use different conventions. A 1000-day Mars mission with current shielding would put a crew member at roughly the career limit in a single trip. This is the single biggest unsolved physiological problem for sending humans beyond low Earth orbit.",
+  "cur": "NASA में कैरियर की सीमा पूर्ण mSv संख्या नहीं है लेकिन अतिरिक्त कैंसर जोखिम प्रतिशत - लगभग 3% अतिरिक्त जीवनकाल कैंसर जोखिम टोपी के लिए इस्तेमाल किया। ESA, JAXA और Roscosmos विभिन्न सम्मेलनों का उपयोग करते हैं। वर्तमान परिरक्षण के साथ 1000-day मंगल मिशन ने एक ही यात्रा में कैरियर की सीमा को मोटे तौर पर एक दल के सदस्य को रखा। यह कम पृथ्वी कक्षा से परे मनुष्यों को भेजने के लिए एकल सबसे बड़ी अनसुलझ शारीरिक समस्या है।"
+ },
+ {
+  "rel": "science/life-in-space/radiation-exposure.json",
+  "at": "diagram_caption",
+  "en": "Three radiation sources: GCR (steady background, hardest to shield), SPE (rare bursts that need a storm shelter), and trapped belts (ISS skirts under, Apollo transited through).",
+  "cur": "तीन विकिरण स्रोत: GCR (स्थिर पृष्ठभूमि, ढाल के लिए सबसे कठिन), SPE (दुर्लभ में एक तूफान आश्रय की आवश्यकता वाले दुर्लभ विस्फोट), और फंसे हुए बेल्ट (आईएसएस स्कर्ट नीचे, Apollo के माध्यम से स्थानांतरित)।"
+ },
+ {
+  "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+  "at": "title",
+  "en": "Sleep, nutrition & circadian rhythms",
+  "cur": "नींद, पोषण और सर्केडियन लय"
+ },
+ {
+  "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+  "at": "intro_sentence",
+  "en": "ISS sees 16 sunrises a day. The crew is on Greenwich Mean Time anyway, eats food engineered to not float, and routinely sleeps worse than they would on Earth. Long-duration missions live or die by how well this stack works.",
+  "cur": "आईएसएस एक दिन में 16 सूर्योदय देखता है। चालक दल फिर भी Greenwich Mean Time पर रहता है, ऐसा भोजन खाता है जो तैरने के लिए नहीं बनाया गया है, और नियमित रूप से पृथ्वी से बदतर सोता है। लंबी अवधि के मिशन इस स्टैक से जीते या मरते हैं।"
+ },
+ {
+  "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+  "at": "body_paragraphs.0",
+  "en": "Circadian rhythm is the hardest invariant in low-Earth orbit. The ISS orbits Earth every 92 minutes, which means the crew sees a sunrise (or a sunset) every 46 minutes — about 16 of each per 24-hour day. The human circadian system is built around a single sunrise / sunset cycle, so a steady stream of 'is it morning?' light cues overrides every other signal. The countermeasure is a rigid schedule (Greenwich Mean Time, fixed wake at 06:00 GMT, fixed sleep at 21:30 GMT), heavy blackout curtains in each sleep station, and active circadian-aligned lighting throughout the cabin — daytime light is bluish-white at ~5500K, evening light shifts to amber ~2700K, matching what would be expected on Earth. Even with all that, ISS crew sleep about 6 hours/night vs ~7-8 on Earth, and use sleep aids more often than ground controls. The data from ISS expedition sleep studies (now ~30 years of records) is one of the better-characterised sleep-disruption datasets in any operational environment.",
+  "cur": "निचली पृथ्वी कक्षा में सर्कैडियन लय सबसे कठोर स्थिरांक है। आईएसएस हर 92 मिनट में पृथ्वी की परिक्रमा करता है, यानी दल हर 46 मिनट में एक सूर्योदय (या सूर्यास्त) देखता है — 24 घंटे में हर एक के लगभग 16। मानव सर्कैडियन प्रणाली एक ही सूर्योदय/सूर्यास्त चक्र के आसपास बनी है, इसलिए 'क्या सुबह हो गई?' जैसे प्रकाश-संकेतों की लगातार धारा हर दूसरे संकेत को दबा देती है। इसका उपाय है कठोर दिनचर्या (ग्रीनविच समय, 06:00 GMT पर तय जागना, 21:30 GMT पर तय सोना), हर सोने के कक्ष में मोटे अँधेरा करने वाले पर्दे, और पूरे केबिन में सक्रिय, सर्कैडियन-अनुरूप प्रकाश — दिन का प्रकाश ~5500K पर नीलापन लिए सफ़ेद, और शाम का प्रकाश ~2700K पर एम्बर की ओर खिसकता है, जैसा पृथ्वी पर अपेक्षित होता। इतना सब होने पर भी आईएसएस दल रात में लगभग 6 घंटे सोता है जबकि पृथ्वी पर ~7-8, और ज़मीनी नियंत्रण-समूहों की तुलना में नींद की दवाएँ अधिक लेता है। आईएसएस अभियानों के नींद-अध्ययनों का डेटा (अब ~30 वर्षों का रिकॉर्ड) किसी भी परिचालन वातावरण में नींद-व्यवधान के सबसे अच्छी तरह वर्णित डेटासेट में से एक है।"
+ },
+ {
+  "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+  "at": "body_paragraphs.1",
+  "en": "Sleep stations look like padded telephone booths. On the US segment they're 0.9 × 0.9 × 2 m, with a wall-anchored sleeping bag, personal ventilation (ISS atmosphere is mixed enough that CO₂ doesn't pool near a sleeping crew member in microgravity — but only just; the fan is non-negotiable), reading lights, and a laptop nook for personal time. Russian-segment sleep is in similar booth-modules attached to Zvezda + Nauka. Tiangong's Tianhe module has comparable booths along the inside wall of the workshop. The booth design is the result of 30 years of iteration — Skylab's original sleep restraints were just zero-g hammocks; Mir's were thin wall-bunks with no privacy; ISS Expedition 1 (2000) had quasi-camping configurations that the second crew immediately complained about. The sealed-booth design with proper light + ventilation + personal stowage has been the standard since 2007.",
+  "cur": "सोने के कक्ष गद्दीदार टेलीफ़ोन बूथ जैसे दिखते हैं। अमेरिकी खंड में वे 0.9 × 0.9 × 2 m के हैं, दीवार से बँधे स्लीपिंग बैग, निजी वेंटिलेशन (आईएसएस का वातावरण इतना मिश्रित है कि सूक्ष्म-गुरुत्व में सोते दल-सदस्य के पास CO₂ जमा नहीं होती — पर बस मुश्किल से; पंखा अनिवार्य है), पढ़ने की बत्तियों और निजी समय के लिए लैपटॉप के खाँचे के साथ। रूसी खंड में Zvezda और Nauka से जुड़े ऐसे ही बूथ-मॉड्यूल में सोया जाता है। Tiangong के Tianhe मॉड्यूल में कार्यशाला की भीतरी दीवार के साथ तुलनीय बूथ हैं। बूथ का डिज़ाइन 30 वर्षों के सुधारों का परिणाम है — Skylab के मूल नींद-बंधन बस शून्य-गुरुत्व झूले थे; Mir के बिना निजता वाली पतली दीवार-बर्थ; आईएसएस Expedition 1 (2000) में लगभग कैंपिंग जैसी व्यवस्थाएँ थीं जिनकी दूसरे दल ने तुरंत शिकायत की। उचित प्रकाश, वेंटिलेशन और निजी भंडारण वाला बंद बूथ 2007 से मानक है।"
+ }
+]

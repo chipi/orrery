@@ -1,0 +1,686 @@
+[
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "body_paragraphs.0",
+  "en": "Andromeda — catalogued as M31 (Messier 31) and NGC 224 — is a spiral galaxy (formally classified SA(s)b — unbarred, though kinematic evidence points to a weak inner bar) slightly larger than the Milky Way. Mass estimates from Gaia DR3 stellar dynamics put it at about 1.5 × 10¹² solar masses, comparable to or slightly more massive than the Milky Way. It hosts an estimated trillion stars, has a structurally similar central bar and disc, two prominent spiral arms, and a quiescent supermassive black hole at its centre (M31's nucleus is a 1.4 × 10⁸ solar-mass black hole; the Milky Way's Sagittarius A* is 'only' 4.3 × 10⁶ solar masses). To the naked eye from a dark site, Andromeda is a small smudge in the constellation that gives it its name — one of the most distant objects the human eye can perceive without instruments, at about 2.5 million light-years. The light arriving on Earth tonight left Andromeda when Homo habilis was first making stone tools.",
+  "cur": "Andromeda — каталогизована као M31 (Messier 31) и NGC 224 — спирална је галаксија (формално класификована као SA(s)b — без пречке, мада кинематички докази указују на слабу унутрашњу пречку) нешто већа од Млечног пута. Процене масе добијене из звездане динамике према подацима Gaia DR3 дају јој око 1,5 × 10¹² соларних маса, што је упоредиво са масом Млечног пута или нешто веће од ње. Процењује се да има трилион звезда, структурно сличну централну пречку и диск, два истакнута спирална крака и мирну супермасивну црну рупу у центру (језгро галаксије M31 је црна рупа масе 1,4 × 10⁸ соларних маса; Sagittarius A* у Млечном путу има „само“ 4,3 × 10⁶ соларних маса). Голим оком, са тамне локације, Andromeda је мала мрља у сазвежђу које јој даје име — један од најудаљенијих објеката које људско око може да уочи без инструмената, на удаљености од око 2,5 милиона светлосних година. Светлост која вечерас стиже на Земљу напустила је галаксију Andromeda у време када је Homo habilis тек почињао да прави камене алатке."
+ },
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "body_paragraphs.1",
+  "en": "Andromeda is approaching the Milky Way at 110 km/s in the radial direction. This was known from Doppler-shift measurements since Vesto Slipher's 1912 work at Lowell Observatory — Andromeda was the first galaxy ever measured to have a blueshift (most galaxies are receding due to cosmic expansion; Andromeda's mutual gravitation with the Milky Way overrides the Hubble flow at our distance). Until Hubble Space Telescope's high-precision proper-motion measurements in 2012, it was unclear whether Andromeda's transverse velocity would steer it past us or into us. HST measurements (2012) and Gaia DR2/DR3 (2019) suggested a near-head-on trajectory. However, a 2024 analysis by Sawala et al. (Nature Astronomy, 2025) — one of the first to include M33 and the LMC in the orbit integration — found only roughly even odds of a merger within the next 10 Gyr, with less than a 2% chance within the originally predicted ~4–5 Gyr window. If the merger does happen, tidal disruption would begin around 4.5 billion years from now, with the central coalescence taking another ~2 billion years to settle into an elliptical remnant nicknamed 'Milkomeda'.",
+  "cur": "Andromeda се Млечном путу приближава брзином од 110 km/s у радијалном правцу. То се зна из мерења Доплеровог помака још од рада Веста Слајфера из 1912. године у Lowell Observatory — Andromeda је била прва галаксија за коју је икада измерен плави помак (већина галаксија се удаљава услед космичког ширења; међусобна гравитација галаксије Andromeda и Млечног пута на нашој удаљености надјачава Hubble-ов проток). Све до високопрецизних мерења сопственог кретања помоћу Hubble Space Telescope 2012. године, било је неизвесно да ли ће попречна брзина галаксије Andromeda усмерити поред нас или право на нас. Мерења HST-а (2012) и Gaia DR2/DR3 (2019) указивала су на путању готово чеоног судара. Међутим, анализа из 2024. коју су спровели Sawala и сарадници (Nature Astronomy, 2025) — једна од првих која је у интеграцију орбите укључила M33 и LMC — показала је само отприлике изједначене изгледе за спајање у наредних 10 Gyr, са мање од 2% шансе да се оно догоди у првобитно предвиђеном прозору од ~4–5 Gyr. Ако до спајања заиста дође, плимно разарање почело би за око 4,5 милијарде година, а централном стапању требало би још ~2 милијарде година да се умири у елиптичан остатак надимка „Milkomeda“."
+ },
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "body_paragraphs.2",
+  "en": "Andromeda has its own satellite system. The most prominent members are M32 (a compact elliptical companion, possibly the stripped core of a once-larger galaxy disrupted by tidal interaction with M31), M110 (a dwarf elliptical companion), and a population of about 20 known dwarf spheroidals and irregulars (M31's group). M32's high central stellar density and the existence of stellar streams in Andromeda's halo are evidence of past accretion events — Andromeda has eaten dwarfs in the past, the same way the Milky Way is eating Sagittarius today. The two great spirals plus M33 plus their dwarf retinues are the heart of the Local Group.",
+  "cur": "Andromeda има сопствени систем сателита. Најистакнутији чланови су M32 (компактна елиптична пратилља, вероватно оголело језгро некада веће галаксије разорене плимском интеракцијом са M31), M110 (патуљаста елиптична пратилља) и популација од око 20 познатих патуљастих сфероидних и неправилних галаксија (група M31). Велика централна густина звезда у M32 и постојање звезданих токова у халоу Андромеде сведоче о прошлим догађајима акреције — Andromeda је у прошлости прогутала патуљасте галаксије, на исти начин на који Млечни пут данас гута Sagittarius. Две велике спиралне галаксије, заједно са M33 и њиховим патуљастим пратиоцима, срце су Локалне групе."
+ },
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "body_paragraphs.3",
+  "en": "Observing Andromeda. Bortle-class-3 or darker skies make Andromeda visible to the naked eye as a smudge slightly elongated north-northeast. The standard pointing trick: find the Great Square of Pegasus, then trace the chain of stars eastward (β-And, μ-And, ν-And) and look just south-west of ν-And. Binoculars show the bright nuclear bulge clearly; a 4-inch telescope at low power shows the elongated disc and the brightest companion M32 as a small fuzzy patch. The dust lanes that show so clearly in long-exposure photography are visible to the eye only in larger telescopes (>8 inch). Andromeda is best observed in autumn (September-December) in the northern hemisphere, when it climbs nearly overhead at mid-northern latitudes.",
+  "cur": "Посматрање галаксије Andromeda. Под небом класе 3 по Bortle-овој скали или тамнијим, Andromeda се голим оком види као мрља благо издужена у правцу север-североисток. Стандардан трик за налажење: пронађите Велики квадрат Пегаза, затим пратите низ звезда ка истоку (β Андромеде, μ Андромеде, ν Андромеде) и погледајте одмах југозападно од ν Андромеде. Двоглед јасно показује светло централно језгро; телескоп од 4 инча при малом увећању показује издужени диск и најсјајнију пратиоцу M32 као малу мутну мрљицу. Прашњаве траке које се тако јасно виде на фотографијама дугог експонирања оку су видљиве само у већим телескопима (>8 инча). Andromeda се најбоље посматра у јесен (септембар–децембар) на северној хемисфери, када се на средњим северним географским ширинама пење готово до зенита."
+ },
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "diagram_caption",
+  "en": "M31 / Andromeda: 2.5 Mly distant, ~1.5 × 10¹² M☉, trillion stars, spiral (formal type SA(s)b; weak bar debated). Approaching Milky Way at 110 km/s. A merger is possible but not certain — Sawala et al. (2025) put odds at ~50/50; if it occurs, tidal disruption begins ~4.5 Gyr from now. Naked-eye visible from dark sites. Satellites: M32, M110, ~20 dwarf companions.",
+  "cur": "M31 / Andromeda: удаљена 2,5 Mly, ~1,5 × 10¹² M☉, билион звезда, спирална (формални тип SA(s)b; слаба пречка је предмет расправе). Приближава се Млечном путу брзином од 110 km/s. Спајање је могуће, али не и сигурно — Sawala et al. (2025) процењују шансе на ~50/50; ако до њега дође, плимско разарање почиње за ~4,5 Gyr. Голим оком се види са тамних места. Сателити: M32, M110, ~20 патуљастих пратилаца."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "intro_sentence",
+  "en": "A region of spacetime where mass is so compressed that even light can't climb out — and we've now imaged the shadows of two of them.",
+  "cur": "Област простор-времена у којој је маса толико сабијена да ни светлост не може да се извуче — а сада смо снимили сенке две такве области."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "body_paragraphs.0",
+  "en": "A black hole forms when a sufficient mass collapses to inside its Schwarzschild radius — the size at which the escape velocity equals the speed of light. The formula on the right says it directly: for any mass M, there's a radius r_s = 2GM/c² inside which nothing escapes. The Sun's Schwarzschild radius is 3 km. The Earth's is 9 mm. Compress either to that size and you've made one.",
+  "cur": "Црна рупа настаје када се довољна маса сурва до унутар свог Schwarzschild-овог радијуса — величине при којој је брзина бекства једнака брзини светлости. Формула са десне стране то говори директно: за сваку масу M постоји радијус r_s = 2GM/c² унутар кога ништа не може да побегне. Schwarzschild-ов радијус Сунца износи 3 km. Земљин износи 9 mm. Сабијте било које од та два тела до те величине и добили сте црну рупу."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "body_paragraphs.1",
+  "en": "Real black holes form by stellar collapse (a massive star running out of fusion fuel; the core falls inside its own Schwarzschild radius) or by accretion of mass onto seed black holes in the early universe (the supermassive black holes at galaxy centres, 10⁶ to 10¹⁰ solar masses). They aren't holes — they're points with a one-way membrane. Outside the event horizon spacetime is well-behaved and orbits work normally. Inside, all timelike paths point toward the singularity.",
+  "cur": "Стварне црне рупе настају звезданим колапсом (масивној звезди понестане горива за фузију; језгро пада унутар сопственог Schwarzschild-овог радијуса) или акрецијом масе на семенске црне рупе у раном свемиру (супермасивне црне рупе у центрима галаксија, од 10⁶ до 10¹⁰ маса Сунца). То нису рупе — то су тачке са једносмерном мембраном. Изван хоризонта догађаја простор-време се понаша уредно и орбите функционишу нормално. Унутар њега сви временски путеви воде ка сингуларности."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "body_paragraphs.2",
+  "en": "We detect them three ways. **Stellar dynamics**: stars orbiting an invisible mass concentration imply a black hole — that's how Sgr A* (4 × 10⁶ M☉ at the centre of the Milky Way) was confirmed, by tracking stars whipping around the central darkness for 30 years (Nobel 2020). **X-ray emission from accretion discs**: gas spiralling in heats to 10⁶ K and glows in X-rays — Chandra's specialty. **Direct shadow imaging**: the Event Horizon Telescope ([interferometry](observation/interferometry) across 8 sub-mm observatories) imaged the shadow of M87's black hole in 2019 and Sgr A* in 2022. Two black holes, photographed.",
+  "cur": "Откривамо их на три начина. **Звездана динамика**: звезде које круже око невидљиве концентрације масе указују на црну рупу — тако је Sgr A* (4 × 10⁶ M☉ у центру Млечног пута) потврђена, праћењем звезда које јуре око централне таме током 30 година (Нобелова награда 2020). **Рендгенско зрачење акреционих дискова**: гас који се спирално креће ка унутра загрева се до 10⁶ K и сија у рендгенском домену — специјалност опсерваторије Chandra. **Директно снимање сенке**: Event Horizon Telescope ([интерферометрија](observation/interferometry) преко 8 суб-милиметарских опсерваторија) снимио је сенку црне рупе у галаксији M87 2019. године, а Sgr A* 2022. Две црне рупе, фотографисане."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "body_paragraphs.3",
+  "en": "What black holes do NOT do: lead anywhere useful for spaceflight. They're the most extreme energy regimes in the universe and we observe them with great enthusiasm; they're also the worst places to fly a spacecraft. Tidal forces near a stellar-mass black hole would shred a vehicle long before any \"event horizon crossing\" became a question. Supermassive black holes are calmer (lower curvature at the horizon) but tens of thousands of light-years away. They are a thing to look at, not a thing to visit.",
+  "cur": "Оно што црне рупе НЕ раде: не воде никуда где би то било корисно за свемирске летове. То су најекстремнији енергетски режими у свемиру и посматрамо их с великим одушевљењем; истовремено, то су и најгора места за лет свемирске летелице. Плимске силе у близини црне рупе звездане масе раскомадале би летелицу много пре него што би „прелазак хоризонта догађаја\" уопште постао питање. Супермасивне црне рупе су мирније (мања закривљеност на хоризонту), али су удаљене десетинама хиљада светлосних година. То су ствари које се посматрају, а не посећују."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "formula_caption",
+  "en": "Schwarzschild radius — the size at which any mass becomes a black hole. G = 6.674×10⁻¹¹ N·m²/kg². For the Sun: 3.0 km. For 1 kg: 1.5 × 10⁻²⁷ m, smaller than a proton.",
+  "cur": "Schwarzschild-ов радијус — величина при којој свака маса постаје црна рупа. G = 6,674×10⁻¹¹ N·m²/kg². За Сунце: 3,0 km. За 1 kg: 1,5 × 10⁻²⁷ m, мање од протона."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "diagram_caption",
+  "en": "Event horizon (one-way membrane) + accretion disc (10⁶ K, X-ray glow) + photon sphere (light orbits at r = 1.5 r_s) + shadow (what EHT imaged). Real, mapped, weighed.",
+  "cur": "Хоризонт догађаја (једносмерна мембрана) + акрециони диск (10⁶ K, рендгенски сјај) + фотонска сфера (светлост кружи на r = 1,5 r_s) + сенка (оно што је снимио EHT). Стварно, мапирано, измерено."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "intro_sentence",
+  "en": "An occulting disc inside the telescope blocks the host star so the planet next to it — a billion times fainter — becomes visible.",
+  "cur": "Заклањајући диск унутар телескопа блокира матичну звезду, па планета поред ње — милијарду пута слабијег сјаја — постаје видљива."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "body_paragraphs.0",
+  "en": "A Sun-like star outshines its planets by a factor of about 10⁹ at visible wavelengths and 10⁶ in the infrared. The planet's photons aren't missing — they're drowning in the diffraction wings of the star's point-spread function. Direct imaging of an exoplanet is only possible if you can suppress that PSF by many orders of magnitude. A coronagraph does exactly that.",
+  "cur": "Звезда налик Сунцу засењује своје планете за фактор од око 10⁹ на видљивим таласним дужинама и 10⁶ у инфрацрвеном делу спектра. Фотони планете нису нестали — они тону у дифракционим крилима функције размазивања тачке (PSF) те звезде. Директно снимање егзопланете могуће је само ако се та PSF успије потиснути за много редова величине. Коронограф ради управо то."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "body_paragraphs.1",
+  "en": "The classical Lyot coronagraph (1930, invented by Bernard Lyot for solar photography) places an opaque disc at the telescope's focal plane to block the star, then a second mask further down to block the diffracted light from the first mask's edge. Modern apodised pupil coronagraphs and vortex coronagraphs use intricate phase patterns to push the suppression to 10⁻⁹ or better in narrow regions of the image.",
+  "cur": "Класични Lyot коронограф (1930, проналазач Bernard Lyot, замишљен за фотографисање Сунца) поставља непрозиран диск у жижну раван телескопа како би блокирао звезду, а затим другу маску даље низ оптичку путању како би зауставио светлост дифрактовану на ивици прве маске. Савремени коронографи са аподизованом пупилом и вортекс коронографи користе замршене фазне узорке како би потискивање светлости довели до 10⁻⁹ или боље у уским областима слике."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "body_paragraphs.2",
+  "en": "JWST carries coronagraphs on both NIRCam and MIRI; they've directly imaged several gas giant exoplanets around nearby stars. The Nancy Grace Roman telescope (launching mid-2020s) carries a coronagraph instrument designed to image gas giants around bright stars at unprecedented contrast — and to demonstrate the technology for the larger Habitable Worlds Observatory, which will aim at Earth-mass planets.",
+  "cur": "JWST носи коронографе и на инструменту NIRCam и на инструменту MIRI; њима је директно снимљено неколико егзопланета гасовитих дивова око оближњих звезда. Телескоп Nancy Grace Roman (лансирање средином 2020-их) носи коронографски инструмент намењен снимању гасовитих дивова око сјајних звезда при досад невиђеном контрасту — као и да демонстрира технологију за већу опсерваторију Habitable Worlds Observatory, која ће циљати на планете масе налик Земљиној."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "body_paragraphs.3",
+  "en": "An alternative architecture is the **starshade**: a 30+ metre opaque shape flown thousands of km in front of the telescope, blocking the star without any optics inside the instrument. Starshades are mechanically harder (the formation-flying alignment is brutal) but reach higher contrast. None has flown yet; concept studies for direct Earth-twin imaging always include a starshade in the mix.",
+  "cur": "Алтернативна архитектура је **starshade**: непрозирна форма од преко 30 метара, која лети хиљадама km испред телескопа и блокира звезду без икакве оптике унутар инструмента. Starshade-ови су механички захтевнији (поравнање при лету у формацији је брутално), али достижу већи контраст. Ниједан још није полетео; студије концепта за директно снимање близанаца Земље увек укључују и starshade."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "diagram_caption",
+  "en": "Block the star at the focal plane → diffraction wings sneak around → second mask kills those → 10⁻⁹ suppression, planet emerges. Vortex coronagraphs replace the disc with a phase pattern.",
+  "cur": "Блокирати звезду у жижној равни → дифракциона крила се провлаче около → друга маска их гаси → пригушење од 10⁻⁹, планета излази на видело. Вртложни коронографи замењују диск фазним узорком."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "title",
+  "en": "Dwarf spheroidals — small, faint, and almost entirely dark matter",
+  "cur": "Патуљасте сфероидне галаксије — мале, слабо сјајне и готово у потпуности од тамне материје"
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "intro_sentence",
+  "en": "Dwarf spheroidal galaxies are the most numerous galaxies in the Local Group and the most dark-matter-dominated objects we have ever measured — mass-to-light ratios of 100, 500, even 1000 — far higher than any spiral.",
+  "cur": "Патуљасте сфероидне галаксије су најбројније галаксије у Локалној групи и објекти с највећим уделом тамне материје које смо икад измерили — односи масе и сјаја 100, 500, чак 1000 — далеко изнад било које спиралне галаксије."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "body_paragraphs.0",
+  "en": "Dwarf spheroidals (often abbreviated dSph) are small, faint, gas-poor, roughly elliptical satellites of larger galaxies. Around the Milky Way, the brighter members are Sagittarius, Sculptor, Fornax, Draco, Ursa Minor, Leo I, Leo II, Sextans, Carina, Canes Venatici I, plus a long tail of ultra-faint dwarfs discovered by SDSS, DES, Pan-STARRS, and now the Vera C. Rubin Observatory's LSST. The total count of known Milky Way dSph satellites is now over 60 and rising. Each typically has only millions to tens of millions of stars — compared to the Milky Way's hundreds of billions — and was for decades dismissed as boring stragglers. The picture changed in the 1980s when stellar-velocity-dispersion measurements showed they were anything but boring.",
+  "cur": "Патуљасте сфероидне галаксије (често скраћено dSph) јесу мали, слабо сјајни, гасом сиромашни, приближно елиптични сателити већих галаксија. Око Млечног пута светлији чланови су Sagittarius, Sculptor, Fornax, Draco, Ursa Minor, Leo I, Leo II, Sextans, Carina, Canes Venatici I, уз дугачак низ ултраслабих патуљастих галаксија које су открили SDSS, DES, Pan-STARRS, а сада и LSST опсерваторије Vera C. Rubin. Укупан број познатих dSph сателита Млечног пута данас премашује 60 и стално расте. Свака од њих обично има тек милионе до десетине милиона звезда — у поређењу са стотинама милијарди звезда у Млечном путу — и деценијама је одбацивана као досадна залутала појава. Слика се променила 1980-их, када су мерења дисперзије брзина звезда показала да оне нису ни приближно досадне."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "body_paragraphs.1",
+  "en": "The story of dwarf-spheroidal dark matter starts with Marc Aaronson at the Lowell Observatory in 1983. He measured the velocity dispersion of red giants in Draco and Ursa Minor and found they moved much faster than the visible stellar mass could gravitationally bind. To hold the stars together, each system needed mass roughly 100× greater than the visible stellar mass. Subsequent decades of measurement (Walker, Mateo, Kleyna, McConnachie, Battaglia, and many others) confirmed and extended this: the brightest dSphs have mass-to-light ratios around 30, the dimmer ones around 100-300, and the ultra-faint dwarfs (Segue 1, Boötes II, Reticulum II) have mass-to-light ratios of 500-3000. These objects are essentially balls of dark matter with a sprinkling of stars trapped at the bottom of the potential well.",
+  "cur": "Прича о тамној материји у патуљастим сфероидним галаксијама започиње с Марком Аронсоном на Lowell Observatory 1983. године. Он је измерио дисперзију брзина црвених дивова у галаксијама Draco и Ursa Minor и открио да се крећу много брже него што би видљива звездана маса могла гравитационо да веже. Да би звезде остале на окупу, сваком систему била је потребна маса отприлике 100× већа од видљиве звездане масе. Деценије мерења које су уследиле (Walker, Mateo, Kleyna, McConnachie, Battaglia и многи други) потврдиле су и проширириле овај налаз: најсјајније dSph галаксије имају односе масе и сјаја око 30, оне слабије око 100–300, а ултраслабе патуљасте галаксије (Segue 1, Boötes II, Reticulum II) имају односе масе и сјаја од 500 до 3000. Ти објекти су у суштини кугле тамне материје са шачицом звезда заробљених на дну потенцијалне јаме."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "body_paragraphs.2",
+  "en": "Why this matters cosmologically. Standard ΛCDM cosmology predicts that galaxy formation proceeds hierarchically: small dark-matter halos form first, then merge into larger ones. The Milky Way's halo formed by accreting hundreds of smaller dark-matter clumps over its lifetime. Most of those clumps had little or no baryonic mass attached and remain dark and undetectable. But the ones that did acquire and retain some stars are exactly the dwarf spheroidals we see today — sub-halo remnants that the Milky Way has eaten but not fully digested. The dwarfs are direct evidence for the existence of dark matter at sub-galactic scales, AND they are the empirical test for whether dark matter behaves as cold and collisionless as ΛCDM assumes. Several dSph properties (the 'core-cusp problem', the 'too-big-to-fail problem') still don't fit ΛCDM neatly — they are at the centre of every alternative-dark-matter discussion today (warm DM, self-interacting DM, fuzzy DM, primordial-black-hole DM).",
+  "cur": "Зашто је ово важно за космологију. Стандардна ΛCDM космологија предвиђа да формирање галаксија тече хијерархијски: прво настају мала халоа тамне материје, а потом се спајају у већа. Халоу Млечног пута настао је акрецијом стотина мањих накупина тамне материје током његовог века. Већина тих накупина имала је мало или нимало барионске масе и остала је тамна и неприметна. Али оне које су ипак добиле и задржале нешто звезда управо су патуљасте сфероидне галаксије које данас посматрамо — остаци подхалоа које је Млечни пут прогутао, али не и потпуно сварио. Патуљасте галаксије су непосредан доказ постојања тамне материје на подгалактичким размерама, И оне су емпиријски тест да ли се тамна материја понаша хладно и без судара, како ΛCDM претпоставља. Неколико својстава dSph галаксија („core-cusp проблем“, „too-big-to-fail проблем“) и даље се не уклапа уредно у ΛCDM — оне су у средишту сваке данашње расправе о алтернативним моделима тамне материје (топла тамна материја, самоинтерагујућа тамна материја, „fuzzy“ тамна материја, тамна материја од примордијалних црних рупа)."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "body_paragraphs.3",
+  "en": "Some dSphs are actively being torn apart by Milky Way tides. The Sagittarius Dwarf Galaxy at 22 kpc is the canonical example: its stellar stream wraps around the Milky Way more than once, mapped star by star using SDSS + 2MASS + Gaia data. The Sagittarius stream is the strongest single piece of evidence we have for the Milky Way's potential shape (you can fit the stream's 3D path against models of Milky Way mass distribution and constrain whether the dark halo is spherical, oblate, or triaxial). The disrupted galaxy is being slowly digested over the next ~1 Gyr; the Milky Way has done this to dozens of dwarfs over cosmic time, and the Andromeda Stream and other tidal features in M31's halo show Andromeda has done the same. Galactic cannibalism is how spirals grow.",
+  "cur": "Неке dSph галаксије Млечни пут управо цепа својим плимским силама. Sagittarius Dwarf Galaxy на удаљености од 22 kpc класичан је пример: њен звездани ток обавија Млечни пут више од једном, а мапиран је звезду по звезду помоћу података SDSS + 2MASS + Gaia. Sagittarius ток најснажнији је појединачни доказ који имамо о облику потенцијала Млечног пута (тродимензионалну путању тока можете упоредити с моделима расподеле масе Млечног пута и тако ограничити то да ли је тамни хало сферан, сплоштен или троосан). Растурена галаксија биће полако пробављена током наредних ~1 Gyr; Млечни пут је то током космичког времена учинио с десетинама патуљастих галаксија, а Andromeda Stream и друге плимске структуре у халоу галаксије M31 показују да је и Andromeda урадила исто. Галактички канибализам начин је на који спиралне галаксије расту."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "diagram_caption",
+  "en": "Dwarf spheroidals: small (millions of stars), gas-poor, ~roughly elliptical satellites. Mass-to-light ratios 30-1000 (highest among galaxies). Direct evidence for dark matter at sub-galactic scales. Sagittarius dSph is being torn apart by Milky Way tides — its stream is the strongest probe of Milky Way halo shape. ΛCDM open problems (core-cusp, too-big-to-fail) live here.",
+  "cur": "Патуљасте сфероидне галаксије: мали (милиони звезда), гасом сиромашни, приближно елиптични сателити. Односи масе и сјаја износе 30–1000 (највише међу галаксијама). Директан доказ о постојању тамне материје на подгалактичким размерама. Sagittarius dSph цепају плимске силе Млечног пута — њен звездани ток најснажнија је сонда облика халоа Млечног пута. Ту се налазе и отворени проблеми ΛCDM модела (core-cusp, too-big-to-fail)."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "title",
+  "en": "Galaxy types — spirals, ellipticals, irregulars, dwarfs",
+  "cur": "Типови галаксија — спирале, елиптичне, неправилне, патуљасте"
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "intro_sentence",
+  "en": "Galaxies fall into a handful of structural families: spirals (Milky Way, Andromeda), ellipticals (M87, NGC 4889), irregulars (Magellanic Clouds), and dwarfs of several sub-classes. The taxonomy is Hubble's 1936 framework, refined.",
+  "cur": "Галаксије чини неколико структурних породица: спиралне (Млечни пут, Andromeda), елиптичне (M87, NGC 4889), неправилне (Magellanic Clouds) и патуљасте, са неколико подкласа. Основа је Hubble-ова подела из 1936, дорађена."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.0",
+  "en": "Spiral galaxies are flat rotating discs of stars and gas surrounding a central bulge, with one or more prominent spiral arms wrapping outward. The arms are not rigid structures — they are density waves where star formation is currently elevated, plus young blue stars and pink HII regions that make the arms look brighter than the inter-arm disc. About two-thirds of bright nearby galaxies are spirals. The Milky Way is a barred spiral (SBbc — its central bulge is elongated into a bar 'cigar' shape that funnels gas inward, fuelling central star formation and feeding the supermassive black hole). Andromeda's bar status is unsettled: the formal RC3 classification is SA(s)b (unbarred), though kinematic and photometric studies point to a weak inner non-axisymmetry. The Triangulum Galaxy M33 in the Local Group is an unbarred spiral. The third Hubble category — Sc / SBc — has loose, well-separated spiral arms; the Milky Way is type SBbc or SBc.",
+  "cur": "Спиралне галаксије су равни ротирајући дискови звезда и гаса који окружују централно испупчење, са једним или више истакнутих спиралних кракова који се увијају ка споља. Краци нису круте структуре — они су таласи густине у којима је стварање звезда тренутно појачано, уз младе плаве звезде и ружичасте HII области које чине да краци изгледају светлије од диска између њих. Око две трећине сјајних оближњих галаксија су спирале. Млечни пут је спирала са пречком (SBbc — њено централно испупчење издужено је у облик „цигаре“, пречку која усмерава гас ка средишту, подстичући стварање звезда у центру и хранећи супермасивну црну рупу). Статус пречке галаксије Andromeda није разјашњен: формална RC3 класификација је SA(s)b (без пречке), мада кинематичке и фотометријске студије указују на слабо унутрашње одступање од аксијалне симетрије. Галаксија Троугао M33 у Локалној групи је спирала без пречке. Трећа Hubble-ова категорија — Sc / SBc — има растресите, добро раздвојене спиралне краке; Млечни пут је типа SBbc или SBc."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.1",
+  "en": "Elliptical galaxies are dispersion-supported balls of mostly old stars with little gas, little dust, and almost no ongoing star formation. They range from small (M32, the compact dwarf elliptical companion to Andromeda) to enormous (M87 at the heart of the Virgo Cluster, the host of the first imaged supermassive black hole; cD-class brightest cluster galaxies like NGC 4889 in Coma which contain trillions of stars). Most ellipticals are the products of past major mergers — when two spirals collide, the disc structure is disrupted, gas is consumed in a starburst, and the merged remnant settles into an elliptical. The Milky Way is destined to become an elliptical once it merges with Andromeda. There are essentially no ellipticals in the Local Group except M32, M110, NGC 147, and NGC 185 — small companions to M31. The big ellipticals all live in dense cluster environments.",
+  "cur": "Елиптичне галаксије су лоптасте творевине подржане дисперзијом брзина, у којима су углавном старе звезде, уз мало гаса, мало прашине и готово без текућег стварања звезда. Крећу се од малих (M32, компактна патуљаста елиптична пратилља галаксије Andromeda) до огромних (M87 у срцу Virgo Cluster, домаћин првог снимљеног супермасивног црног рупа; cD-класа најсјајнијих галаксија јата попут NGC 4889 у Coma, које садрже билионе звезда). Већина елиптичних галаксија производ је ранијих великих спајања — када се две спирале сударе, дискна структура се поремети, гас се потроши у налету звездообразовања, а спојени остатак се смири као елиптична галаксија. Млечни пут је предодређена да постане елиптична када се споји са галаксијом Andromeda. У Локалној групи практично нема елиптичних галаксија осим M32, M110, NGC 147 и NGC 185 — малих пратилаца галаксије M31. Све велике елиптичне галаксије живе у густим окружењима јата."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.2",
+  "en": "Irregulars are everything that doesn't fit. The Magellanic Clouds are the prototypes — gas-rich, actively star-forming, no clear spiral arms or central bulge, often elongated or distorted by tidal interactions with larger neighbours. Most low-mass star-forming galaxies are irregular. Many were once classified as spiral-like but have been so tidally disrupted that the structure is no longer recognisable; others are too small to have ever developed a self-supporting disc. Irregulars dominate the count of galaxies at the low-mass end of the galactic mass function — there are far more dwarf irregulars than spirals, but they are individually faint so spirals dominate the night sky and the historical record.",
+  "cur": "Неправилне галаксије су све оно што се не уклапа у остале класе. Magellanic Clouds су њихови прототипови — богате гасом, активно формирају звезде, немају јасне спиралне краке ни централно испупчење, а често су издужене или деформисане плимским интеракцијама са већим суседима. Већина галаксија мале масе које формирају звезде јесте неправилна. Многе су некада биле сврстане међу спирални тип, али су плимским силама толико разорене да се структура више не препознаје; друге су премале да би икада развиле диск који сам себе држи. Неправилне галаксије преовлађују по броју на малом крају галактичке функције маса — патуљастих неправилних има далеко више него спирала, али су појединачно слабог сјаја, па спирале доминирају ноћним небом и историјским записима."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.3",
+  "en": "Dwarf galaxies subdivide further. Dwarf spheroidals (Sagittarius, Fornax, Sculptor) — gas-poor, ~elliptical, dark-matter-dominated, see the separate /science article. Dwarf irregulars (NGC 6822, IC 1613, WLM in the Local Group) — gas-rich, star-forming, no defined morphology. Dwarf ellipticals (M32 is the type example) — small versions of large ellipticals, often companions to large galaxies. Ultra-faint dwarfs — discovered only since 2005 via deep SDSS / DES / LSST surveys, with luminosities below 10⁵ solar luminosities and stellar masses comparable to a single globular cluster but with mass-to-light ratios in the hundreds (i.e., still dominated by dark matter, not by stars). These ultra-faints are probably the dimmest galaxies in existence — at lower masses, no galaxy is detectable because there are no stars at all, only dark-matter halos.",
+  "cur": "Патуљасте галаксије се даље деле на поткласе. Патуљасте сфероидне галаксије (Sagittarius, Fornax, Sculptor) — сиромашне гасом, приближно елиптичне, са доминантном тамном материјом; погледајте посебан чланак у одељку /science. Патуљасте неправилне галаксије (NGC 6822, IC 1613, WLM у Локалној групи) — богате гасом, у њима се формирају звезде, без одређене морфологије. Патуљасте елиптичне галаксије (M32 је типичан пример) — умањене верзије великих елиптичних галаксија, често пратиоци великих галаксија. Ултраслабе патуљасте галаксије — откривене тек од 2005. године дубоким прегледима неба SDSS / DES / LSST, са сјајем испод 10⁵ сјаја Сунца и звезданим масама упоредивим са масом једног кугластог јата, али са односом масе и сјаја у стотинама (то јест, у њима и даље доминира тамна материја, а не звезде). Ове ултраслабе галаксије су вероватно најтамније галаксије које постоје — при још мањим масама ниједна галаксија се не може открити јер уопште нема звезда, већ само ореола тамне материје."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.4",
+  "en": "Beyond the Hubble framework. Modern surveys have added several galaxy types that didn't fit Hubble's 1936 scheme: starburst galaxies (M82) where star formation is many times higher than normal due to a recent merger or tidal interaction; AGN-hosting galaxies (Seyferts, quasars, radio galaxies) where the central black hole is actively accreting and dominating the light output; ring galaxies (Hoag's Object) formed by head-on bullet-collisions; and the ultra-diffuse galaxies (NGC 1052-DF2, Dragonfly 44) discovered in the 2010s, with sizes of full-sized galaxies but stellar densities so low you can almost see through them. The classification scheme keeps being extended as observations improve; Hubble's tuning fork remains the backbone of how astronomers talk about morphology, even when individual galaxies refuse to fit.",
+  "cur": "Изван Hubble-ове шеме. Савремени прегледи неба додали су неколико типова галаксија који се нису уклапали у Hubble-ову шему из 1936. године: галаксије са праскозвезданим избијањем (M82), у којима је стварање звезда многоструко веће од уобичајеног због недавног спајања или плимске интеракције; галаксије које садрже активно галактичко језгро (AGN) — Seyfert-ове галаксије, квазаре, радио-галаксије — у којима централна црна рупа активно акрецира и доминира светлосним излазом; прстенасте галаксије (Hoag's Object), настале чеоним сударом налик на судар метка са метом; и ултрадифузне галаксије (NGC 1052-DF2, Dragonfly 44), откривене 2010-их, чије су димензије једнаке димензијама галаксија пуне величине, али је густина звезда у њима толико мала да кроз њих можете скоро да видите. Класификациона шема се и даље проширује како се посматрања побољшавају; Hubble-ова виљушка и даље је окосница начина на који астрономи говоре о морфологији, чак и када се поједине галаксије упорно не уклапају."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "diagram_caption",
+  "en": "Hubble tuning fork: ellipticals (E0-E7) on the left, spirals (S/SB, types a/b/c) on the right, irregulars off to the side. Plus dwarf sub-classes (dSph / dE / dIrr / ultra-faint) and modern additions (starburst, AGN, ring, ultra-diffuse). Local Group spans almost all categories — useful pedagogical microcosm.",
+  "cur": "Hubble-ова виљушка: елиптичне галаксије (E0–E7) лево, спирале (S/SB, типови a/b/c) десно, неправилне са стране. Уз то поткласе патуљастих галаксија (dSph / dE / dIrr / ултраслабе) и савремени додаци (са праскозвезданим избијањем, AGN, прстенасте, ултрадифузне). Локална група обухвата готово све категорије — користан педагошки микрокосмос."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "title",
+  "en": "Stars — colour, class, and the H–R diagram",
+  "cur": "Звезде — боја, класа и H–R дијаграм"
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "intro_sentence",
+  "en": "A star's colour is a thermometer, and its brightness is a life story. Plot the two against each other and almost every star falls onto a single diagonal band — the Hertzsprung–Russell diagram, the most important graph in stellar astronomy.",
+  "cur": "Боја звезде је термометар, а њен сјај животна прича. Прикажите их једно наспрам другог и готово свака звезда пада на један дијагонални појас — дијаграм Hertzsprung–Russell, најважнији графикон звездане астрономије."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.0",
+  "en": "Colour comes first. A star radiates as a near-perfect blackbody, so its colour is set almost entirely by its surface temperature: hot stars glow blue-white (~30,000 K), the Sun is yellow-white (~5,800 K), and cool stars burn deep red (~3,000 K). Astronomers measure that colour as the B–V index — the difference between a star's brightness through a blue and a visual filter — and it maps cleanly onto temperature. Sort stars left-to-right by colour and you have the spectral sequence O, B, A, F, G, K, M, hottest to coolest (mnemonic: “Oh Be A Fine Girl/Guy, Kiss Me”).",
+  "cur": "Прво је боја. Звезда зрачи као готово савршено црно тело, па њену боју скоро у потпуности одређује температура површине: вруће звезде сјаје плавобело (~30.000 K), Сунце је жућкастобело (~5.800 K), а хладне звезде горе тамноцрвено (~3.000 K). Астрономи ту боју мере као B–V индекс — разлику у сјају звезде кроз плави и визуелни филтер — и он се јасно пресликава на температуру. Ако звезде поређате с лева на десно према боји, добијате спектрални низ O, B, A, F, G, K, M, од најтоплије до најхладније (мнемоничка реченица: „Oh Be A Fine Girl/Guy, Kiss Me“)."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.1",
+  "en": "Brightness is the second axis — but you have to be careful which brightness. A star can look bright because it is genuinely luminous or merely because it is close. To compare stars fairly you convert apparent magnitude m to absolute magnitude M, the brightness it would have at a standard 10 parsecs, using the distance: M = m − 5(log₁₀ d − 1). Only then does luminosity mean intrinsic power output, and only then does the diagram work.",
+  "cur": "Сјај је друга оса — али треба пазити о ком сјају је реч. Звезда може изгледати сјајно зато што је заиста веома сјајна или зато што је једноставно близу. Да бисте звезде поштено упоредили, привидну магнитуду m претварате у апсолутну магнитуду M, то јест у сјај који би звезда имала на стандардној удаљености од 10 парсека, користећи удаљеност: M = m − 5(log₁₀ d − 1). Тек тада луминозност значи стварну снагу зрачења и тек тада дијаграм функционише."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.2",
+  "en": "Now plot temperature (hot on the left, by convention) against luminosity (bright at the top). The stars do not scatter randomly. Roughly 90% of them land on a single sweeping diagonal — the main sequence — running from hot, luminous, massive O and B stars at the top-left down to cool, faint red dwarfs at the bottom-right. A star sits on the main sequence for as long as it fuses hydrogen in its core, which is most of its life. The Sun is a G-type main-sequence star, sitting unremarkably near the middle.",
+  "cur": "Сада прикажите температуру (по договору, вруће лево) наспрам сјаја (најсјајније при врху). Звезде се не распоређују насумично. Отприлике 90% њих налази се на једној широкој дијагонали — главном низу — која се протеже од врућих, веома сјајних и масивних O и B звезда у горњем левом углу до хладних, слабо сјајних црвених патуљака у доњем десном. Звезда остаје на главном низу све док у свом језгру претвара водоник у хелијум нуклеарном фузијом, а то је већи део њеног живота. Сунце је звезда главног низа спектралне класе G и налази се неупадљиво негде при средини."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.3",
+  "en": "The interesting stars are the ones off the main sequence. Top-right: the red giants and supergiants — cool but enormous and hugely luminous, stars that have exhausted their core hydrogen and swollen up (Betelgeuse, Aldebaran, Arcturus live here). Bottom-left: the white dwarfs — hot but tiny and faint, the exposed cores left when a Sun-like star dies. Where a star lands, and how it moves across the diagram over time, is the whole narrative of stellar evolution written in two coordinates.",
+  "cur": "Најзанимљивије су звезде ван главног низа. Горе десно налазе се црвени дивови и супердивови — хладни, али огромни и изузетно сјајни, звезде које су исцрпле водоник у језгру и надуле се (овде живе Бетелгез, Алдебаран и Арктурус). Доле лево су бели патуљци — врући, али сићушни и слабог сјаја, откривена језгра која остану када умре звезда налик Сунцу. Место на које звезда западне и начин на који се током времена креће дијаграмом чине целокупну причу о еволуцији звезда, записану у две координате."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.4",
+  "en": "The H–R diagram is also a distance ladder and a clock. Because a star's position fixes its true luminosity, comparing that to how bright it appears gives its distance (“spectroscopic parallax”). And because more massive stars burn out faster, the point where a star cluster's main sequence bends toward the giants — the “turn-off” — tells you the cluster's age. One graph, and you can read a star's temperature, size, power, distance, and remaining lifetime.",
+  "cur": "H–R дијаграм је уједно и мердевине удаљености и сат. Пошто положај звезде одређује њен прави сјај, поређењем тог сјаја с тим колико звезда изгледа сјајно добија се њена удаљеност („спектроскопска паралакса“). А пошто масивније звезде брже сагоревају, тачка у којој се главни низ звезданог јата савија ка дивовима — „тачка скретања“ — открива старост јата. Један график, а из њега можете прочитати температуру, величину, снагу, удаљеност и преостали животни век звезде."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "diagram_caption",
+  "en": "The Hertzsprung–Russell diagram: temperature (hot O-stars left, cool M-stars right) against luminosity (bright top, faint bottom). The main sequence runs corner to corner; red giants sit top-right, white dwarfs bottom-left. The Sun is a G-type main-sequence star, marked near the centre — the same axes the /explore HR-lens re-plots the real neighbourhood stars onto.",
+  "cur": "Hertzsprung–Russell дијаграм: температура (вруће O звезде лево, хладне M звезде десно) наспрам сјаја (сјајније при врху, слабије при дну). Главни низ се протеже из угла у угао; црвени дивови налазе се горе десно, бели патуљци доле лево. Сунце је звезда главног низа спектралне класе G, означено близу центра — исте осе на које HR-сочиво на /explore поново исцртава праве оближње звезде."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "intro_sentence",
+  "en": "Stitch separate telescopes into one virtual aperture larger than any of them — the Event Horizon Telescope is an Earth-sized radio interferometer built from antennas on four continents.",
+  "cur": "Спојите одвојене телескопе у један виртуелни отвор већи од сваког појединачног — Event Horizon Telescope је радио-интерферометар величине Земље, састављен од антена на четири континента."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "body_paragraphs.0",
+  "en": "A single telescope's resolving power depends on its aperture (diameter / wavelength). A radio antenna 30 m across imaging at 1 mm wavelength has an angular resolution of about 7 arcseconds — too coarse to see most things. But two antennas 1000 km apart, observing the same source simultaneously and combining their signals, behave like a single telescope **1000 km across** at that resolution — milliarcseconds.",
+  "cur": "Моћ разлагања једног телескопа зависи од његовог отвора (пречник / таласна дужина). Радио-антена пречника 30 m која снима на таласној дужини од 1 mm има угаону резолуцију од око 7 лучних секунди — сувише грубу да би се видело већину ствари. Али две антене удаљене 1000 km, које истовремено посматрају исти извор и комбинују своје сигнале, понашају се као један телескоп пречника **1000 km** при тој резолуцији — милилучне секунде."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "body_paragraphs.1",
+  "en": "The trick is correlation: the radio waves arriving at antenna A and antenna B differ by a tiny phase delay that depends on the source direction and the antenna baseline. Cross-correlate the two signals over time, and you measure that phase delay. Do it with N antennas in different positions and the combined signal samples N×(N-1)/2 baselines simultaneously, filling in the Fourier components of the source brightness distribution. An iterative deconvolution then recovers the image.",
+  "cur": "Трик је у корелацији: радио-таласи који стижу до антене A и антене B разликују се за мало фазно кашњење које зависи од смера извора и од базне линије између антена. Унакрсном корелацијом два сигнала током времена мери се то фазно кашњење. Ако се исто уради са N антена на различитим положајима, комбиновани сигнал истовремено узоркује N×(N-1)/2 базних линија и попуњава Fourier-ове компоненте расподеле сјаја извора. Итеративна деконволуција затим враћа слику."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "body_paragraphs.2",
+  "en": "**VLA** (27 antennas in New Mexico) does this at radio wavelengths. **ALMA** (66 antennas in Chile) does it at sub-mm wavelengths, where atmospheric water absorption is brutal but the dust-thermal-continuum lights up. **Event Horizon Telescope** linked 8 sub-mm observatories across 4 continents to image M87's black hole at 1.3 mm — Earth-diameter aperture, 20 microarcsecond resolution, the shadow of an event horizon.",
+  "cur": "**VLA** (27 антена у Новом Мексику) ово ради на радио-таласним дужинама. **ALMA** (66 антена у Чилеу) то ради на суб-милиметарским таласним дужинама, где је апсорпција водене паре у атмосфери немилосрдна, али зато засветли топлотни континуум прашине. **Event Horizon Telescope** је повезао 8 суб-милиметарских опсерваторија на 4 континента да би снимио црну рупу у галаксији M87 на 1,3 mm — отвор величине пречника Земље, резолуција од 20 микролучних секунди, сенка хоризонта догађаја."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "body_paragraphs.3",
+  "en": "Optical/IR interferometry exists but is much harder because optical wavelengths are 6+ orders of magnitude shorter than radio, requiring laser-stabilised path matching to nanometre accuracy. CHARA, NPOI, and the VLTI are the survivors. Space interferometers like LISA (gravitational-wave detection via laser arms between three free-flying spacecraft) are the future architecture — both for gravity-wave astronomy and for the long-term goal of imaging Earth-twin exoplanets at high contrast.",
+  "cur": "Оптичка/инфрацрвена интерферометрија постоји, али је знатно тежа, јер су оптичке таласне дужине за више од 6 редова величине краће од радио-таласних, па је потребно усклађивање путања стабилизовано ласером са тачношћу од једног нанометра. CHARA, NPOI и VLTI су они који су опстали. Свемирски интерферометри попут LISA (откривање гравитационих таласа помоћу ласерских кракова између три слободно летећа свемирска летелице) јесу архитектура будућности — како за астрономију гравитационих таласа, тако и за дугорочни циљ снимања егзопланета близанаца Земље при високом контрасту."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "diagram_caption",
+  "en": "Two antennas + cross-correlation → effective aperture = the baseline between them. Earth-sized → EHT M87 black hole. Space-sized → LISA gravitational waves.",
+  "cur": "Две антене + унакрсна корелација → ефективни отвор = базна линија између њих. Величине Земље → EHT, црна рупа M87. Величине свемира → LISA, гравитациони таласи."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "title",
+  "en": "The Local Group — our gravitationally bound neighbourhood",
+  "cur": "Локална група — наше гравитационо везано суседство"
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "intro_sentence",
+  "en": "The Local Group is the small cluster of ~80 known galaxies bound to the Milky Way and Andromeda by mutual gravity. It is about 3 megaparsecs across and contains essentially every galaxy close enough to study individual stars in.",
+  "cur": "Месна група је мало јато од ~80 познатих галаксија које узајамна гравитација веже за Млечни пут и Andromeda. Широка је око 3 мегапарсека и обухвата практично сваку галаксију довољно близу за проучавање појединачних звезда."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "body_paragraphs.0",
+  "en": "The Local Group is dominated by three spiral galaxies — the Milky Way, Andromeda (M31), and the Triangulum Galaxy (M33). Around the Milky Way and Andromeda are clouds of satellite galaxies, mostly small and faint — the Magellanic Clouds, Sagittarius Dwarf, Sculptor, Fornax, Draco, the Leo dwarfs, and many more. Total members known today: about 80, and the count keeps rising as deep imaging surveys (DES, LSST, Euclid) find ultra-faint dwarfs missed by earlier searches. The whole structure is gravitationally bound — it is not expanding with the Hubble flow, and the Milky Way and Andromeda are actually approaching each other at about 110 km/s.",
+  "cur": "Локалном групом доминирају три спиралне галаксије — Млечни пут, Andromeda (M31) и Галаксија Троугао (M33). Око Млечног пута и Andromeda налазе се облаци галаксија-сателита, углавном малих и слабих — Magellanic Clouds, Sagittarius Dwarf, Sculptor, Fornax, Draco, патуљасте галаксије у сазвежђу Leo и многе друге. Укупан број познатих чланова данас износи око 80, а тај број и даље расте пошто дубоки прегледи неба снимањем (DES, LSST, Euclid) откривају ултраслабе патуљасте галаксије које су ранијим потрагама промакле. Цела структура је гравитационо везана — не шири се заједно са Hubble-овим током, а Млечни пут и Andromeda се заправо приближавају једна другој брзином од око 110 km/s."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "body_paragraphs.1",
+  "en": "The boundary of the Local Group is not sharp. The conventional outer edge is the zero-velocity surface, the imaginary surface at which a test galaxy would have just enough kinetic energy to escape the group's gravity but no more — roughly 1.5 Mpc from the Milky Way / Andromeda barycentre. Inside that radius, members are bound; outside it, galaxies belong to the broader Local Sheet and feel the Hubble expansion. The Sculptor Group, the Maffei Group, the M81 Group, and the Centaurus A Group are all within 4 Mpc of the Milky Way — close neighbours, but not Local Group members.",
+  "cur": "Граница Локалне групе није оштра. Уобичајено спољашње обележје је површина нулте брзине — имагинарна површина на којој би пробна галаксија имала тачно довољно кинетичке енергије да побегне из гравитационог поља групе, али ни мало више — отприлике 1,5 Mpc од барицентра Млечног пута / Andromeda. Унутар тог полупречника чланице су гравитационо везане; изван њега галаксије припадају широј Local Sheet и подлежу Hubble ширењу. Sculptor Group, Maffei Group, M81 Group и Centaurus A Group налазе се у оквиру 4 Mpc од Млечног пута — блиске су суседе, али нису чланице Локалне групе."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "body_paragraphs.2",
+  "en": "The Local Group matters out of proportion to its size. Because everything in it is within a few million light-years, individual stars in Local Group members can be resolved with HST, JWST, and the largest ground-based telescopes. This is where almost all stellar-population science gets done: variable-star distance calibration (the Hubble constant ladder starts with Cepheids in M31, M33, and the LMC), dwarf-galaxy dark-matter measurements (Draco, Fornax, the Leo dwarfs have stellar velocity dispersions consistent with mass-to-light ratios of 100+ — meaning they are dominated by dark matter), and galactic archaeology (the stellar streams of Sagittarius being torn apart by the Milky Way tide are mapped star-by-star). Galaxies further out have to be studied as ensembles; Local Group galaxies are studied star by star.",
+  "cur": "Локална група је важнија него што њена величина наговештава. Пошто се све у њој налази у распону од неколико милиона светлосних година, појединачне звезде у члановима Локалне групе могу се разложити помоћу HST, JWST и највећих земаљских телескопа. Управо ту се обавља готово сва наука о звезданим популацијама: калибрација удаљености помоћу променљивих звезда (лествица за одређивање Hubble-ове константе почиње цефеидама у M31, M33 и LMC), мерења тамне материје у патуљастим галаксијама (за Draco, Fornax и патуљасте галаксије у сазвежђу Leo дисперзије брзина звезда одговарају односима масе и сјаја од 100+ — што значи да у њима доминира тамна материја) и галактичка археологија (звездани токови галаксије Sagittarius, коју плима галаксије Млечни пут раскида, мапирају се звезду по звезду). Галаксије које су даље морају се проучавати као ансамбли; галаксије Локалне групе проучавају се звезду по звезду."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "body_paragraphs.3",
+  "en": "Long-term trajectory: gravity has the last word. The so-called 'Milkomeda' collision — first predicted in detail by Cox & Loeb (2008) and supported by van der Marel et al. (2019) using Gaia DR3 proper motions — was long considered a near-certainty. However, Sawala et al. (Nature Astronomy, 2025), incorporating M33 and the LMC into the orbit integration, found only roughly even odds of a merger within the next 10 Gyr. If a close pass does occur, tidal disruption might begin around 4.5 billion years from now, with the merger taking perhaps 2 billion years to complete and settling into a single elliptical galaxy. By the time it finishes, the Sun (still a main-sequence star, only ~6 Gyr old at the merger) will likely be ejected to a much larger orbit or remain in a thick disc remnant. The remaining Local Group galaxies will continue merging into the new central elliptical over the next ~100 Gyr, leaving 'Milkomeda' as the only galaxy visible from Earth's eventual successor planet, the cosmic-web filaments having long since carried other groups away in the accelerating Hubble flow.",
+  "cur": "Дугорочна путања: гравитација има последњу реч. Такозвани судар „Milkomeda“ — који су први детаљно предвидели Cox & Loeb (2008), а подржали van der Marel et al. (2019) користећи сопствена кретања из Gaia DR3 — дуго се сматрао готово извесним. Међутим, Sawala et al. (Nature Astronomy, 2025), укључивши M33 и LMC у интеграцију орбита, закључили су да су изгледи за спајање у наредних 10 Gyr тек отприлике једнаки (50 : 50). Ако до блиског проласка ипак дође, плимно разарање могло би да почне за око 4,5 милијарди година, при чему би спајање трајало можда две милијарде година, а завршило би се једном елиптичном галаксијом. Када се оно оконча, Сунце (још увек звезда главног низа, старо тек ~6 Gyr у тренутку спајања) вероватно ће бити избачено на знатно већу орбиту или ће остати у остатку дебелог диска. Преостале галаксије Локалне групе наставиће да се спајају у нову централну елиптичну галаксију током наредних ~100 Gyr, а „Milkomeda“ ће остати једина галаксија видљива са планете која ће једном наследити Земљу, пошто су нити космичке мреже одавно однеле остале групе у убрзаном Hubble-овом току."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "diagram_caption",
+  "en": "Local Group: ~80 galaxies, ~3 Mpc across, gravitationally bound. Dominated by Milky Way + Andromeda spirals plus M33 third. Most members are dwarf satellites of one of the two large spirals. Boundary at zero-velocity surface (~1.5 Mpc). Future: Milkomeda merger possible (~50/50 per Sawala et al. 2025) if it occurs, ~4.5 Gyr hence.",
+  "cur": "Локална група: ~80 галаксија, пречника ~3 Mpc, гравитационо везаних. Доминирају спирале Млечни пут и Andromeda, а као трећа им се придружује M33. Већина чланова су патуљасти сателити једне од две велике спирале. Граница је на површини нулте брзине (~1,5 Mpc). Будућност: могуће је спајање „Milkomeda“ (~50/50 према Sawala et al. 2025); ако до њега дође, збиће се за ~4,5 Gyr."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "title",
+  "en": "The Magellanic Clouds — LMC and SMC, our nearest galactic neighbours",
+  "cur": "Magellan-ови облаци — LMC и SMC, наше најближе галактичке комшије"
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "intro_sentence",
+  "en": "The Large and Small Magellanic Clouds are the closest galaxies large enough to see with the naked eye — irregular dwarf galaxies trailing the Milky Way's south-galactic pole, ~50 and ~62 kpc away.",
+  "cur": "Велики Магеланов облак и Мали Магеланов облак су најближе галаксије довољно велике да се виде голим оком — неправилне патуљасте галаксије које прате јужни галактички пол галаксије Млечни пут, на удаљености од ~50 и ~62 kpc."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "body_paragraphs.0",
+  "en": "The Magellanic Clouds dominate the southern hemisphere sky from any reasonably dark site below about +20° latitude. They look exactly as they sound — two detached fuzzy patches in the night sky, the LMC about 5° across and the SMC about 3°. They are catalogued under several names, but Magellanic comes from Ferdinand Magellan's 1519-1522 circumnavigation, during which the clouds were the most reliable navigation reference his crew had in the South Atlantic. The clouds have been continuously observed by humanity for as long as humans have lived in the southern hemisphere; rock art and oral traditions from Aboriginal Australia, the Khoisan, and Andean cultures reference them by name in ways that long predate European contact.",
+  "cur": "Magellanic Clouds доминирају небом јужне хемисфере са сваког разумно тамног места јужно од око +20° географске ширине. Изгледају управо онако како им име звучи — две одвојене мутне мрље на ноћном небу, при чему је LMC широк око 5°, а SMC око 3°. Каталогизоване су под неколико назива, али име Magellanic потиче од пловидбе око света Фернанда Магелана 1519–1522, током које су облаци били најпоузданија навигациона оријентација његове посаде у јужном Атлантику. Човечанство непрекидно посматра ове облаке откако људи живе на јужној хемисфери; камена уметност и усмена предања аустралијских Абориџина, народа Khoisan и андских култура помињу их по имену на начин који далеко претходи европском контакту."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "body_paragraphs.1",
+  "en": "Both are irregular galaxies rather than spirals — chaotic, dust-rich, actively forming stars. The LMC has about 10 billion solar masses (about 1% of the Milky Way), the SMC about a tenth of that. The LMC hosts the Tarantula Nebula (30 Doradus), one of the most prolific star-formation regions in the Local Group and the site of supernova 1987A — the brightest supernova since Kepler's in 1604 and the first visible to the naked eye since SN 1885A in Andromeda, and the first supernova whose neutrinos were detected (Kamiokande, IMB, Baksan detectors caught about 25 neutrinos within seconds of each other, hours before the optical light arrived). The Tarantula's central star cluster R136 contains some of the most massive known stars (R136a1 is around 200 solar masses).",
+  "cur": "Обе су неправилне, а не спиралне галаксије — хаотичне, богате прашином и са активним стварањем звезда. LMC има око 10 милијарди Сунчевих маса (око 1% масе галаксије Млечни пут), а SMC око десетину тога. У LMC се налази Маглина Тарантула (30 Doradus), једно од најплодније звезданих расадника у Локалној групи и место супернове 1987A — најсјајније супернове од Kepler-ове из 1604. године, прве видљиве голим оком још од SN 1885A у галаксији Andromeda и прве супернове чији су неутрини детектовани (детектори Kamiokande, IMB и Baksan ухватили су око 25 неутрина у размаку од неколико секунди, сатима пре него што је стигла оптичка светлост). Централни звездани скуп маглине Tarantula, R136, садржи неке од најмасивнијих познатих звезда (R136a1 има око 200 Сунчевих маса)."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "body_paragraphs.2",
+  "en": "Until recently it was assumed the Clouds were long-term gravitationally-bound satellites of the Milky Way, on bound orbits that had taken them around our galaxy multiple times. Hubble Space Telescope proper-motion measurements (Kallivayalil et al. 2013, refined with Gaia DR2/DR3) overturned this picture: the Clouds are moving too fast to be bound on a long-term orbit, suggesting they are on first-passage — falling in toward the Milky Way for the first time from the Local Group's outer regions, having only recently arrived in the last ~1-2 Gyr. This re-frames a great deal of Magellanic Cloud research: their star-formation histories, their gas content (the Magellanic Stream — a vast hydrogen tail trailing behind them — was being torn out by Milky Way tides during the recent close passage), and their long-term fate (probably eventual merger with the Milky Way, but on Gyr timescales).",
+  "cur": "До недавно се претпостављало да су Облаци дугорочно гравитационо везани сателити галаксије Млечни пут, на везаним орбитама које су их више пута водиле око наше галаксије. Мерења сопствених кретања помоћу Hubble Space Telescope (Kallivayalil et al. 2013, прецизирана помоћу Gaia DR2/DR3) оборила су ту слику: Облаци се крећу пребрзо да би били на дугорочној орбити, што указује да су на првом пролазу — да по први пут падају ка галаксији Млечни пут из спољашњих области Локална група, те да су стигли тек пре ~1–2 Gyr. Ово заправо преобликује велики део истраживања Magellanic Clouds: историју стварања звезда у њима, њихов садржај гаса (Magellanic Stream — огроман водонични реп који се протеже за њима — тргнут је из њих плимским силама галаксије Млечни пут током недавног блиског проласка), као и њихову дугорочну судбину (вероватно коначно спајање са галаксијом Млечни пут, али на временским скалама од више Gyr)."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "body_paragraphs.3",
+  "en": "Observing the Clouds requires being in or visiting the southern hemisphere. From mid-southern latitudes (Sydney, Cape Town, Santiago, Auckland) they are circumpolar — never set, visible every clear night. From the equator they rise low in the south during southern summer. From the northern hemisphere they are invisible: even from Hawaii at 19°N latitude, the SMC barely clears the horizon. Astronomers historically had to travel south to study them — the major southern observatories at Cerro Pachón, Paranal, La Silla, Sutherland, and Siding Spring were sited specifically to give continuous access to the Magellanic Clouds plus the galactic centre. The Vera C. Rubin Observatory at Cerro Pachón, which started science operations in 2025, will image the LMC and SMC every few nights for the duration of its decade-long LSST survey.",
+  "cur": "Посматрање Облака захтева боравак на јужној хемисфери или путовање на њу. Са средњих јужних географских ширина (Sydney, Cape Town, Santiago, Auckland) они су циркумполарни — никада не залазе и видљиви су сваке ведре ноћи. Са екватора се током јужног лета ниско издижу на југу. Са северне хемисфере су невидљиви: чак и са Хаваја на 19° северне географске ширине SMC једва да се издигне изнад хоризонта. Астрономи су у прошлости морали да путују на југ да би их проучавали — велике јужне опсерваторије на Cerro Pachón, Paranal, La Silla, Sutherland и Siding Spring подигнуте су управо зато да би омогућиле непрекидан приступ Magellanic Clouds, као и центру галаксије. Vera C. Rubin Observatory на Cerro Pachón, која је научни рад започела 2025. године, снимаће LMC и SMC на сваких неколико ноћи током читавог трајања свог деценију дугог прегледа неба LSST."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "diagram_caption",
+  "en": "LMC: 49.97 kpc distant, ~10¹⁰ M☉, irregular, southern naked-eye visible. SMC: 62.1 kpc, ~10⁹ M☉, irregular. Both on first-passage orbits (Gaia DR3, Kallivayalil et al.), not long-term-bound. Magellanic Stream: hydrogen tail trailing their recent close pass through the Milky Way's tides. SN 1987A in LMC: brightest supernova since Kepler 1604; first naked-eye supernova since SN 1885A (Andromeda).",
+  "cur": "LMC: удаљен 49,97 kpc, ~10¹⁰ M☉, неправилан, са јужне хемисфере видљив голим оком. SMC: 62,1 kpc, ~10⁹ M☉, неправилан. Оба се налазе на орбитама првог проласка (Gaia DR3, Kallivayalil et al.), а не на дугорочно везаним орбитама. Magellanic Stream: водонични реп који вуку за собом након недавног блиског проласка кроз плимско поље галаксије Млечни пут. SN 1987A у LMC: најсјајнија супернова од Kepler-ове из 1604; прва супернова видљива голим оком од SN 1885A (Andromeda)."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "title",
+  "en": "Our galaxy — the Milky Way from the inside",
+  "cur": "Наша галаксија — Млечни пут изнутра"
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "intro_sentence",
+  "en": "We live inside a barred spiral galaxy of a few hundred billion stars, and we have never seen it from the outside. Everything we know about the Milky Way's shape is reconstructed from within the disc, looking through it.",
+  "cur": "Живимо унутар спиралне галаксије са пречком, која броји неколико стотина милијарди звезда, и никада је нисмо видели споља. Све што знамо о облику галаксије Млечни пут реконструисано је изнутра, из равни диска, гледајући кроз њега."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.0",
+  "en": "The Milky Way is a flat, rotating disc about 100,000 light-years across but only ~1,000 light-years thick — a cosmic vinyl record. Its stars, gas, and dust are wound into spiral arms (Perseus, Sagittarius, Scutum-Centaurus, Norma, plus our own minor Orion Spur), trailing from a central bar of older stars. Wrapping all of it is a spherical halo of ancient globular clusters and the invisible dark-matter that dominates the galaxy's mass. Estimates of the star count run from 100 to 400 billion.",
+  "cur": "Млечни пут је раван диск који се окреће, широк око 100.000 светлосних година, а дебео тек ~1.000 светлосних година — космичка винилна плоча. Његове звезде, гас и прашина умотани су у спиралне кракове (Perseus, Sagittarius, Штит-Centaurus, Norma, плус наш сопствени мањи Orion Spur), који се шире од централне пречке начињене од старијих звезда. Све то обавија сферно хало древних кугластих јата и невидљиве тамне материје, која доминира масом галаксије. Процене броја звезда крећу се од 100 до 400 милијарди."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.1",
+  "en": "The Sun is not special and not central. It sits about 26,000 light-years — roughly halfway — out from the core, on the inner edge of the Orion Spur, orbiting the galactic centre at about 230 km/s. Even at that speed one lap — a “galactic year” — takes ~230 million years; the Sun has completed only about 20 orbits in its entire existence. The last time it was here, dinosaurs were just beginning.",
+  "cur": "Сунце није ни посебно ни централно. Налази се на око 26.000 светлосних година — отприлике на пола пута — од језгра, на унутрашњој ивици Orion Spur, и кружи око центра галаксије брзином од око 230 km/s. Чак и при тој брзини један круг — „галактичка година“ — траје ~230 милиона година; Сунце је за цело своје постојање обишло само око 20 кругова. Када је последњи пут било на овом месту, диносауруси су тек почињали."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.2",
+  "en": "At the very centre, 26,000 light-years away in the direction of Sagittarius, lies Sagittarius A* — a supermassive black hole of about 4.3 million solar masses. We know its mass precisely because we have watched individual stars whip around it on decades-long orbits, and in 2022 the Event Horizon Telescope imaged its shadow directly. Every star in the galaxy, the Sun included, orbits this one point.",
+  "cur": "У самом средишту, на 26.000 светлосних година у правцу сазвежђа Sagittarius, налази се Sagittarius A* — супермасивна црна рупа масе од око 4,3 милиона маса Сунца. Њену масу знамо прецизно зато што смо посматрали како поједине звезде јуре око ње на орбитама које трају деценијама, а 2022. године Event Horizon Telescope директно је снимио њену сенку. Свака звезда у галаксији, укључујући и Сунце, кружи око ове једне тачке."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.3",
+  "en": "Seeing the whole thing from inside is hard: interstellar dust blocks visible light toward the centre, so the disc's structure is mapped in infrared and radio, which pass through. The band of light we call “the Milky Way” in a dark sky is simply the combined glow of the disc's billions of stars, viewed edge-on from our seat within it — the plane of our own galaxy, seen the long way.",
+  "cur": "Сагледати целину изнутра је тешко: међузвездана прашина блокира видљиву светлост према центру, па се структура диска мапира у инфрацрвеном и радио-подручју, које кроз њу пролазе. Појас светлости који на тамном небу зовемо „Млечни пут“ једноставно је збирни сјај милијарди звезда диска, посматран с боковне стране са нашег места у њему — раван наше сопствене галаксије, виђена по дужини."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.4",
+  "en": "Mapping it is the great project of modern astrometry. ESA's Gaia mission has measured precise distances and motions for nearly two billion stars, turning a fuzzy impression of spiral arms into a moving three-dimensional model — and revealing that the Milky Way is still digesting smaller galaxies it has swallowed, its disc gently warped and rippling from the collisions.",
+  "cur": "Њено мапирање је велики пројекат савремене астрометрије. Мисија Gaia агенције ESA измерила је прецизне удаљености и кретања за скоро две милијарде звезда, претворивши магловит утисак о спиралним краковима у покретни тродимензионални модел — и открила да Млечни пут и даље вари мање галаксије које је прогутао, а да су његов диск благо повијен и таласаст од тих судара."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "diagram_caption",
+  "en": "The Milky Way face-on (a schematic — we cannot photograph it from outside): a central bar, four major spiral arms plus the Orion Spur, and the Sun ~26,000 light-years out, about halfway to the edge. Sagittarius A*, the 4-million-solar-mass central black hole, sits at the core — the same layout the /explore Milky Way view renders.",
+  "cur": "Млечни пут гледан одозго (шематски приказ — не можемо је фотографисати споља): централни прачка-облик језгра, четири главна спирална крака плус Orion Spur, и Сунце на ~26.000 светлосних година од центра, отприлике на пола пута до ивице. Sagittarius A*, централна црна рупа масе од око 4 милиона маса Сунца, налази се у језгру — исти распоред који приказује поглед на Млечном путу у /explore."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "title",
+  "en": "Space photography",
+  "cur": "Свемирска фотографија"
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "intro_sentence",
+  "en": "Every famous \"telescope picture\" is a stack of long exposures through narrow-band filters, calibrated, registered, false-colour mapped — the image is what humans make of the count.",
+  "cur": "Свака позната „слика телескопа“ јесте гомила дугих експозиција снимљених кроз узаночасовне филтере, калибрисаних, поравнатих и мапираних лажним бојама — слика је оно што људи начине од пребројаних фотона."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "narrative_101.0",
+  "en": "Hubble didn't take a photo of the Pillars of Creation. Hubble took a few dozen photos — each through a different filter, each minutes long — and a team of imaging scientists stacked them, aligned them sub-pixel, calibrated out the bad pixels and cosmic-ray hits, then assigned colours by what physics the filter captured. The thing you see on the poster is real data and real interpretation, in equal parts. Telescope imagery isn't dishonest — it's just not what your phone camera does.",
+  "cur": "Hubble није снимио фотографију Pillars of Creation. Hubble је снимио неколико десетина фотографија — сваку кроз другачији филтер, сваку дугу по неколико минута — а тим стручњака за обраду слика их је сложио једну на другу, поравнао са тачношћу испод једног пиксела, уклонио неисправне пикселе и трагове удара космичких зрака, а затим доделио боје према томе коју физику је филтер бележио. Оно што видите на постеру јесу стварни подаци и стварно тумачење, у једнаким деловима. Слике телескопа нису непоштене — само нису оно што ради камера вашег телефона."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "narrative_101.1",
+  "en": "Below this section the Observatory Showcase strip pulls one signature image from each of the twelve observatories in Orrery's fleet — Hubble, JWST, Chandra, Spitzer, Kepler, TESS, Gaia, Euclid, XMM-Newton, Spektr-RG, Compton GRO, and Hitomi. Click any of them to drop into that observatory's full gallery + technical panel.",
+  "cur": "Испод овог одељка трака Observatory Showcase издваја по једну репрезентативну слику из сваке од дванаест опсерваторија у флоти апликације Orrery — Hubble, JWST, Chandra, Spitzer, Kepler, TESS, Gaia, Euclid, XMM-Newton, Spektr-RG, Compton GRO и Hitomi. Кликните на било коју од њих да бисте ушли у целу галерију те опсерваторије и њен технички панел."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "body_paragraphs.0",
+  "en": "A space telescope's image sensor is a CCD or CMOS chip — a grid of photon-counters. Each pixel sits on the focal plane for an exposure (anywhere from milliseconds to multiple hours), accumulating electron counts. The output is a number per pixel: how many photons of which narrow-band filter hit there. Multiple exposures are stacked to beat down read noise, registered to sub-pixel alignment, and median-combined to reject cosmic-ray hits.",
+  "cur": "Сензор слике свемирског телескопа је CCD или CMOS чип — мрежа бројача фотона. Сваки пиксел остаје на фокалној равни током једне експозиције (од неколико милисекунди до више сати) и сакупља број електрона. Резултат је један број по пикселу: колико је фотона кроз који узаночасовни филтер ту стигло. Више експозиција слаже се једна на другу да би се смањио шум очитавања, поравнава се са тачношћу испод једног пиксела и комбинује медијаном како би се одбацили погоци космичких зрака."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "body_paragraphs.1",
+  "en": "Colour is the most-misunderstood part. Telescope filters are narrow-band — they pass a specific 10–100 nm slice of the spectrum: hydrogen-alpha at 656.3 nm, doubly-ionised oxygen at 500.7 nm, infrared bands at 2 µm or 12 µm. The Hubble Palette assigns those filters to RGB channels in non-physical ways (S-II red, H-α green, O-III blue) to maximise contrast between physical processes. JWST's mid-infrared images map 21 µm, 11 µm, and 7 µm to RGB — colours your eye couldn't see if you were there.",
+  "cur": "Боја је најпогрешније схваћен део. Филтери телескопа су узаночасовни — пропуштају тачно одређен исечак спектра од 10–100 nm: водоник-алфа на 656,3 nm, двоструко јонизовани кисеоник на 500,7 nm, инфрацрвене опсеге на 2 µm или 12 µm. Hubble Palette додељује те филтере RGB каналима на нефизички начин (S-II црвено, H-α зелено, O-III плаво) како би се максимизовао контраст између физичких процеса. JWST-ове слике у средњем инфрацрвеном подручју мапирају 21 µm, 11 µm и 7 µm на RGB — боје које ваше око не би могло да види чак ни да сте тамо."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "body_paragraphs.2",
+  "en": "The processing pipeline is open-source for most NASA / ESA observatories. Raw exposures land in MAST (Mikulski Archive for Space Telescopes) or ESA Datalabs the moment they hit the ground; image-pipeline tutorials show exactly how a final composite is assembled. The pictures aren't manufactured — they're documented to the byte.",
+  "cur": "Процес обраде је отвореног кода за већину NASA / ESA опсерваторија. Сирове експозиције стижу у MAST (Mikulski Archive for Space Telescopes) или ESA Datalabs чим стигну на тло; туторијали о обради слика показују тачно како се склапа коначни композит. Слике нису произведене — документоване су до последњег бајта."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "body_paragraphs.3",
+  "en": "For ground-based imaging the additional challenge is the atmosphere. [Adaptive optics](observation/adaptive-optics) corrects it in real time by sensing the turbulence with a laser guide star and counter-bending a deformable mirror. JWST and Hubble are in space partly to skip this problem entirely; the atmosphere is also opaque at most infrared and UV bands, which is the other reason.",
+  "cur": "За снимање са тла додатни изазов је атмосфера. [Адаптивна оптика](observation/adaptive-optics) исправља је у реалном времену: региструје турбуленцију помоћу ласерске водиље звезде и супротним савијањем деформабилног огледала поништава њене ефекте. JWST и Hubble налазе се у свемиру делимично зато да би овај проблем у потпуности заобишли; атмосфера је уз то непрозирна у већини инфрацрвених и UV опсега, што је други разлог."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "diagram_caption",
+  "en": "Filter → CCD → stack → register → calibrate → composite → colour-map. Six steps, hours of compute, real data the whole way through.",
+  "cur": "Филтер → CCD → слагање → поравнање → калибрација → композит → мапирање боја. Шест корака, сати рачунања, а подаци су стварни од почетка до краја."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "intro_sentence",
+  "en": "Pass starlight through a prism or diffraction grating and the spectrum tells you what the star is made of — every element prints a unique fingerprint of absorption lines.",
+  "cur": "Пропустите светлост звезде кроз призму или дифракциону решетку и спектар ће вам открити од чега је звезда направљена — сваки елемент оставља јединствен отисак у виду апсорпционих линија."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "body_paragraphs.0",
+  "en": "Each chemical element absorbs light at a unique set of wavelengths corresponding to its electronic transitions. Pass starlight through a prism and you see a rainbow with thin dark lines at exactly those wavelengths — Joseph Fraunhofer mapped 574 of them across the solar spectrum in 1814. Each line is an element in the star's atmosphere stealing photons.",
+  "cur": "Сваки хемијски елемент апсорбује светлост на јединственом скупу таласних дужина које одговарају његовим електронским прелазима. Пропустите светлост звезде кроз призму и видећете дугу са танким тамним линијама тачно на тим таласним дужинама — Јозеф Фраунхофер је 1814. године пописао 574 такве линије у сунчевом спектру. Свака линија је један елемент у атмосфери звезде који краде фотоне."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "body_paragraphs.1",
+  "en": "Astronomy reverses Fraunhofer's process: catalogue the lines, match them to elements, and you know what the star is made of. The Sun is 73% hydrogen, 25% helium, 2% heavier elements — that came from spectroscopy, no sample needed. The same technique applied to galaxies gave us the redshift-distance relation and ultimately the expanding universe; applied to molecular clouds it gave us interstellar organic chemistry; applied to exoplanet atmospheres (via transit transmission spectroscopy) it now gives us oxygen / methane / water signatures from worlds we'll never visit.",
+  "cur": "Астрономија окреће Fraunhofer-ов поступак: сврстајте линије у каталог, упарите их са елементима и знате од чега је звезда направљена. Сунце чини 73% водоник, 25% хелијум и 2% тежи елементи — до тога се дошло спектроскопијом, без иједног узорка. Иста техника примењена на галаксије дала нам је однос црвеног помака и удаљености, а на крају и свемир који се шири; примењена на молекулске облаке открила нам је међузвездану органску хемију; примењена на атмосфере егзопланета (преко трансмисионе спектроскопије при транзиту) она нам сада открива трагове кисеоника, метана и воде са светова које никада нећемо походити."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "body_paragraphs.2",
+  "en": "Modern spectrographs split light with a diffraction grating (a finely-ruled reflective surface, often with thousands of lines per millimetre) and feed the dispersed spectrum onto a CCD. Resolution is measured by R = λ/Δλ; consumer kit hits R~1000, JWST NIRSpec hits R~2700, the ESPRESSO spectrograph on the VLT hits R~140,000 — enough to detect a planet's reflex velocity of just centimetres per second.",
+  "cur": "Савремени спектрографи цепају светлост помоћу дифракционе решетке (фино урезане рефлектујуће површине, често са хиљадама линија по милиметру) и разложени спектар усмеравају на CCD. Резолуција се изражава као R = λ/Δλ; аматерска опрема достиже R~1000, NIRSpec на JWST-у достиже R~2700, а спектрограф ESPRESSO на VLT-у достиже R~140.000 — довољно да се открије рефлексна брзина планете од свега неколико центиметара у секунди."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "body_paragraphs.3",
+  "en": "Spectroscopy is the **most informative** astronomical observation. A single image tells you what's there; a single spectrum tells you what it's made of, how fast it's moving toward or away from you (Doppler shift), how hot it is (continuum shape), how strong its magnetic field is (Zeeman splitting), and how dense its source region is (line profile shape). Most major facilities — Hubble, JWST, VLT, Keck, ALMA — spend the majority of their time taking spectra, not pictures.",
+  "cur": "Спектроскопија је **најинформативнија** астрономска опсервација. Једна слика говори шта се ту налази; један спектар говори од чега је то направљено, колико брзо се креће ка вама или од вас (Doppler-ов помак), колико је вруће (облик континуума), колико је јако његово магнетно поље (Zeeman-ово цепање) и колико је густа област из које зрачење потиче (облик профила линија). Већина великих опсерваторија — Hubble, JWST, VLT, Keck, ALMA — већину свог времена троши на снимање спектара, а не слика."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "diagram_caption",
+  "en": "Starlight → grating → spectrum → dark lines at element-specific wavelengths → composition + velocity + temperature + magnetic field. The most-informative observation in astronomy.",
+  "cur": "Светлост звезде → решетка → спектар → тамне линије на таласним дужинама специфичним за сваки елемент → састав + брзина + температура + магнетно поље. Најинформативнија опсервација у астрономији."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "intro_sentence",
+  "en": "Mathematical solutions to general relativity that connect distant regions of spacetime. None has ever been observed. Included for completeness — they are NOT used for spaceflight.",
+  "cur": "Математичка решења опште релативности која повезују удаљене области простор-времена. Ниједна никада није посматрана. Наведене су ради потпуности — НЕ користе се за свемирске летове."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "body_paragraphs.0",
+  "en": "A wormhole — formally an Einstein-Rosen bridge — is a topological feature of spacetime that the equations of general relativity permit but the universe has never been observed to actually instantiate. The mathematics is real (Einstein and Rosen worked it out in 1935); the physics is uncertain (no candidate has been seen); the engineering does not exist (and may be physically impossible). Treat them the way you'd treat tachyons or time-travel paradoxes: interesting puzzles in the equations, not flight hardware.",
+  "cur": "Црвоточина — формално Einstein-Rosen мост — јесте тополошка одлика простор-времена коју једначине опште релативности допуштају, али за коју никада није посматрано да је свемир заиста остварује. Математика је стварна (Einstein и Rosen су је разрадили 1935. године); физика је неизвесна (ниједан кандидат није виђен); инжењерство не постоји (и можда је физички немогуће). Према њима се односите као према тахионима или парадоксима путовања кроз време: занимљиве загонетке у једначинама, а не летећа опрема."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "body_paragraphs.1",
+  "en": "The original Schwarzschild solution to Einstein's equations describes a non-rotating black hole, and inside the geometry there's a second \"universe\" connected by a tube of spacetime. The catch: the tube isn't traversable. To cross it you'd have to move faster than light. Kip Thorne and others worked out in the 1980s that adding \"exotic matter\" — material with negative energy density, of which we have no examples — could in principle hold a wormhole open long enough to cross. Stephen Hawking pushed back: quantum effects probably destroy any traversable wormhole as soon as you try to use one.",
+  "cur": "Првобитно Schwarzschild-ово решење Einstein-ових једначина описује црну рупу која се не окреће, а унутар те геометрије постоји други „свемир“ повезан цеви простор-времена. Квака је у томе што та цев није проходна. Да бисте је прешли, морали бисте да се крећете брже од светлости. Кип Торн и други су осамдесетих година 20. века показали да би додавање „егзотичне материје“ — материјала с негативном густином енергије, за који немамо ниједан пример — у принципу могло да одржи црвоточину отвореном довољно дуго да се она пређе. Стивен Хокинг се томе супротставио: квантни ефекти вероватно униште сваку проходну црвоточину чим покушате да је употребите."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "body_paragraphs.2",
+  "en": "Observationally, we have no candidates. No gravitational-lensing signature, no astrophysical source has yet been identified that requires a wormhole interpretation. If they exist in nature, they're either very small (sub-atomic, quantum gravity domain) or very far away. The popular-culture wormhole — a stable, traversable, instant-shortcut between solar systems — would require physics we have no example of, and would carry the same causality-violation paradoxes that make time travel philosophically uncomfortable.",
+  "cur": "Посматрањима нисмо открили ниједног кандидата. Није идентификован ниједан траг гравитационог сочива нити астрофизички извор који би захтевао тумачење помоћу црвоточине. Ако оне у природи постоје, или су веома мале (субатомске, у домену квантне гравитације) или веома далеке. Црвоточина из популарне културе — стабилна, проходна пречица између планетарних система која делује тренутно — захтевала би физику за коју немамо ниједан пример и носила би исте парадоксе кршења узрочности због којих је путовање кроз време филозофски непријатно."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "body_paragraphs.3",
+  "en": "So why include them in a science encyclopedia at all? Because they're a beautiful illustration of the limits of general relativity: the equations admit solutions that the universe doesn't seem to use, and figuring out *why* is one of the live frontiers of theoretical physics. Quantum gravity, AdS/CFT correspondence, the ER=EPR conjecture — all of it touches wormhole geometry. They are real mathematics. They are not real spacecraft.",
+  "cur": "Зашто их онда уопште уврстити у научну енциклопедију? Зато што су лепа илустрација граница опште релативности: једначине допуштају решења која свемир као да не користи, а откривање *зашто* је једна од живих граница теоријске физике. Квантна гравитација, AdS/CFT кореспонденција, ER=EPR претпоставка — све то дотиче геометрију црвоточина. То је стварна математика. То нису стварне летелице."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "diagram_caption",
+  "en": "Einstein-Rosen bridge — a topological tube connecting distant regions of spacetime. Requires negative-energy \"exotic matter\" to be traversable. None observed; none flyable.",
+  "cur": "Einstein-Rosen мост — тополошка цев која повезује удаљене области простор-времена. Да би била проходна, потребна је „егзотична материја“ негативне енергије. Ниједна није посматрана; кроз ниједну се не може летети."
+ },
+ {
+  "rel": "science/orbits/_intro.json",
+  "at": "headline",
+  "en": "Orbits — gravity is the only physics that matters.",
+  "cur": "Орбите — гравитација је једина физика која је битна."
+ },
+ {
+  "rel": "science/orbits/_intro.json",
+  "at": "paragraphs.0",
+  "en": "An orbit is what happens when you fall toward something but keep missing it. Throw a ball off a tower hard enough and the ground curves away faster than the ball drops — the ball never lands. Every spacecraft, every moon, every planet is doing exactly that trick around something heavier.",
+  "cur": "Орбита је оно што се догађа када падате ка нечему, а стално га промашујете. Баците лопту с торња довољно снажно и тло се одмиче брже него што лопта пада — лопта никада не слети. Свака свемирска летелица, сваки месец, свака планета изводи управо тај трик око нечега тежег."
+ },
+ {
+  "rel": "science/orbits/_intro.json",
+  "at": "paragraphs.1",
+  "en": "All orbits are ellipses, every single one. The Sun (or Earth, or whatever you're orbiting) sits at one focal point of the ellipse, never the centre. Six numbers — size, shape, three angles, and a clock position — describe any orbit perfectly. The eight sections in this tab unpack each of those numbers, and the master equation (vis-viva) that ties them all together.",
+  "cur": "Све орбите су елипсе, баш свака. Сунце (или Земља, или шта год да орбитирате) налази се у једној жижи елипсе, никада у центру. Шест бројева — величина, облик, три угла и положај на сату — савршено описује сваку орбиту. Осам одељака у овој картици разјашњава сваки од тих бројева, као и главну једначину (vis-viva) која их све повезује."
+ },
+ {
+  "rel": "science/orbits/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Pick where you want to start. If physics is new to you, start with the Keplerian orbit — that's the whole concept in one section. If you want the workhorse equation, jump to vis-viva. If you want the historical drama, go to Kepler's three laws — a German astronomer in 1609 figured all this out from raw eyeball data.",
+  "cur": "Изаберите одакле желите да почнете. Ако вам је физика нова, почните с Кеплеровом орбитом — то је цео појам у једном одељку. Ако желите главну радну једначину, пређите на vis-viva. Ако волите историјску драму, идите на Kepler-ова три закона — један немачки астроном је 1609. године све ово открио на основу голих посматрања голим оком."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "title",
+  "en": "Apsides — Perihelion, Aphelion, Perigee, Apogee",
+  "cur": "Апсиде — перихел, афел, перигеј, апогеј"
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "intro_sentence",
+  "en": "The two extreme points on every elliptical orbit: closest approach, and farthest.",
+  "cur": "Две крајње тачке сваке елиптичне орбите: најмање и највеће растојање."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "narrative_101.0",
+  "en": "Every elliptical orbit has a high point and a low point. That's all an apsis is — one of those two extremes. The closest approach to whatever you're orbiting; or the farthest. Spacecraft people obsess over these two spots because almost every important burn happens at one of them.",
+  "cur": "Свака елиптична орбита има највишу и најнижу тачку. То је све што апсида јесте — једна од те две крајности. Најмање растојање од тела око кога кружите или највеће. Људи који раде са свемирским летелицама опседнути су овим двема тачкама јер се скоро свако важно паљење мотора догађа у једној од њих."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "narrative_101.1",
+  "en": "Why? Two reasons. First, your speed is at its extremes there too — fastest at the close end, slowest at the far end. The Oberth effect (which we'll get to in propulsion) says you get the most bang for your fuel when you burn fast — so departure burns happen near the close end. Second, raising or lowering the OPPOSITE side of an orbit is cheapest when you push at the extreme — so to raise your orbit you fire at the low point.",
+  "cur": "Зашто? Из два разлога. Прво, и брзина је ту у својим крајњим вредностима — највећа у најближој тачки, а најмања у најудаљенијој. Oberth-ов ефекат (до њега ћемо стићи у делу о погону) каже да за своје гориво добијате највише када палите мотор при великој брзини — зато се паљења за одлазак изводе близу најближе тачке. Друго, подизање или спуштање СУПРОТНЕ стране орбите најјефтиније је када потисак дајете у крајњој тачки — зато орбиту подижете паљењем мотора у најнижој тачки."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "narrative_101.2",
+  "en": "Annoying naming convention warning: every planet gets its own pair of words. Around the Sun: perihelion / aphelion. Around the Earth: perigee / apogee. Around the Moon: perilune / apolune. Same physics, just Greek roots glued to whichever body you're circling. Don't let it intimidate you — it's just one word for 'low' and one for 'high'.",
+  "cur": "Упозорење о досадној конвенцији именовања: свако небеско тело добија свој пар речи. Око Сунца: перихел / афел. Око Земље: перигеј / апогеј. Око Месеца: перилуна / аполуна. Иста физика, само су грчки корени залепљени уз оно тело које орбитирате. Нека вас то не плаши — то је једноставно једна реч за „ниско“ и једна за „високо“."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "body_paragraphs.0",
+  "en": "An apsis is one of the two points on an elliptical orbit where the body is at minimum or maximum distance from its focus. The line connecting them — passing through both foci — is the line of apsides. Every Keplerian orbit has exactly two: closest, and farthest.",
+  "cur": "Апсида је једна од две тачке на елиптичној орбити у којима се тело налази на најмањем или највећем растојању од своје жиже. Права која их спаја — и пролази кроз обе жиже — јесте линија апсида. Свака кеплеровска орбита има тачно две: најближу и најудаљенију."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "body_paragraphs.1",
+  "en": "The names depend on what you're orbiting. Around the Sun: perihelion (closest) and aphelion (farthest), from Greek `peri` (near) and `apo` (far) plus `helios` (Sun). Around Earth: perigee and apogee. Around the Moon: periselene and aposelene, or perilune and apolune. Around any star: periastron and apastron. The ground truth is identical; only the suffix changes.",
+  "cur": "Називи зависе од тела око кога кружите. Око Сунца: перихел (најближа тачка) и афел (најудаљенија), од грчких речи `peri` (близу) и `apo` (далеко) плус `helios` (Сунце). Око Земље: перигеј и апогеј. Око Месеца: периселенијум и апоселенијум, или перилуна и аполуна. Око било које звезде: периастрон и апастрон. Суштина је иста; мења се само наставак."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "body_paragraphs.2",
+  "en": "Apsides anchor mission timelines. The Voyager flybys were timed at closest approach (periapsis) to each target planet — peri-jove for Jupiter, peri-saturnium for Saturn. ISS reboost burns add energy to fight atmospheric drag, consistent with the rule of firing at the low point to raise the orbit. Rendezvous and docking phasing burns are placed for phasing efficiency, often near perigee (Oberth effect). The Sun's perihelion passage by Parker Solar Probe is the closest a human-made object has ever been to a star.",
+  "cur": "Апсиде одређују временски распоред мисија. Прелети Voyager-а темпирани су према тренутку најмањег растојања (перицентра) од сваке циљне планете — перијов за Јупитер, перисатурнијум за Сатурн. Паљења мотора за подизање орбите МСС-а додају енергију да би се савладао атмосферски отпор, у складу са правилом да се мотор пали у најнижој тачки како би се орбита подигла. Паљења за фазно прилагођавање при сусрету у орбити и спајању постављају се ради ефикасности тог прилагођавања, често у близини перигеја (Oberth-ов ефекат). Пролаз кроз перихел Parker Solar Probe-а најближа је тачка до које се неки предмет људске израде икада приближио некој звезди."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "diagram_caption",
+  "en": "Line of apsides through both foci, connecting perihelion (closest) and aphelion (farthest).",
+  "cur": "Линија апсида кроз обе жиже, која спаја перихел (најближа тачка) и афел (најудаљенија тачка)."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "title",
+  "en": "Cislunar orbits — DRO, NRHO, halo, lunar frozen",
+  "cur": "Цислунарне орбите — DRO, NRHO, хало, замрзнуте орбите око Месеца"
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "intro_sentence",
+  "en": "Between Earth and the Moon's surface lies a zoo of carefully-engineered orbits — none of them obvious from two-body physics, all of them exploited by the modern lunar architecture from Gateway to robotic probes.",
+  "cur": "Између Земље и површине Месеца простире се прави зоолошки врт пажљиво осмишљених орбита — ниједна од њих није очигледна из физике два тела, а све их користи савремена лунарна архитектура, од Gateway-а до роботских сонди."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.0",
+  "en": "Near-Rectilinear Halo Orbit (NRHO) is the orbit class NASA chose for the Lunar Gateway. Geometrically: a six-day-period halo orbit around the Earth-Moon L2 Lagrange point, with perilune ≈1,500 km altitude (perilune radius ~3,200 km) over the lunar north pole and apolune ≈70,000 km over the lunar south pole. The 'near-rectilinear' name comes from the orbit's shape in the Earth-Moon rotating frame — it sweeps a long, narrow loop perpendicular to the Earth-Moon line, almost like a rectangle. Three properties made it the winning choice for Gateway. First, station-keeping ΔV is extraordinarily low (~5 m/s/year) compared to lunar low orbits (>100 m/s/year). Second, Earth communication is unobstructed because the orbit stays out of the Moon's radio shadow. Third, the long dwell near apolune over the south pole gives near-continuous coverage of the Artemis south-polar sites at Shackleton crater rim. The trade is that descent from NRHO to lunar surface is harder than from a low circular lunar orbit (~2.5 km/s vs ~1.8 km/s) — but for a programme that needs an enduring staging point, the trade is worth it.",
+  "cur": "Хало орбита блиска правој линији (Near-Rectilinear Halo Orbit, NRHO) јесте класа орбите коју је NASA изабрала за Lunar Gateway. Геометријски гледано, то је хало орбита са периодом од шест дана око Лагранжове тачке Земља-Месец L2, са перицинтионом на висини од ≈1.500 km (полупречник перицинтиона ~3.200 km) изнад северног пола Месеца и апоцинтионом од ≈70.000 km изнад јужног пола Месеца. Назив „близу праволинијска“ потиче од облика орбите у ротирајућем систему Земља–Месец: она описује дугу, уску петљу управну на линију Земља–Месец, готово као правоугаоник. Три својства учинила су је победничким избором за Gateway. Прво, ΔV за одржавање положаја изузетно је мала (~5 m/s годишње) у поређењу са ниским лунарним орбитама (>100 m/s годишње). Друго, веза са Земљом није ометена, јер орбита остаје изван радио-сенке Месеца. Треће, дуг боравак у близини апоцинтиона изнад јужног пола пружа готово непрекидну покривеност јужнополарних локација програма Artemis на ободу кратера Shackleton. Цена тога је да је спуштање са NRHO на површину Месеца теже него са ниске кружне лунарне орбите (~2,5 km/s наспрам ~1,8 km/s) — али за програм коме је потребна трајна полазна тачка, та цена је оправдана."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.1",
+  "en": "Distant Retrograde Orbit (DRO). A large, circular-leaning orbit around the Moon in retrograde direction relative to the Moon's orbit around Earth. Distance: typically 60,000-80,000 km from the Moon. The retrograde motion plus the large radius makes DROs unusually stable — there's no station-keeping ΔV required (essentially zero, on multi-year timescales), because the orbit exploits a quirk of the three-body problem where the Earth's gravity acts as a restoring force when the spacecraft tries to drift. The Artemis-1 Orion (uncrewed flight test, November 2022) inserted into a DRO around the Moon for a 6-day stay before returning to Earth, demonstrating both the manoeuvre stack and the orbit's stability. DROs are the long-term-storage parking orbit of choice for cislunar architecture — you can park a propellant depot or a backup vehicle there and not worry about it drifting for years.",
+  "cur": "Далека ретроградна орбита (Distant Retrograde Orbit, DRO). Велика орбита око Месеца, блиска кружној, у ретроградном смеру у односу на кретање Месеца око Земље. Удаљеност: обично 60.000–80.000 km од Месеца. Ретроградно кретање у комбинацији са великим полупречником чини DRO орбите изузетно стабилним — није потребан никакав ΔV за одржавање положаја (практично нула, на временској скали од више година), јер орбита користи једну особеност проблема три тела: Земљина гравитација делује као сила повратка кад летелица покуша да одлута. Orion у мисији Artemis-1 (испитни лет без посаде, новембар 2022) ушао је у DRO око Месеца и ту боравио шест дана пре повратка на Земљу, чиме су потврђени и низ маневара и стабилност саме орбите. DRO орбите су омиљена паркинг-орбита за дугорочно складиштење у цислунарној архитектури — тамо можете паркирати складиште погонског горива или резервну летелицу и годинама не бринути да ће одлутати."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.2",
+  "en": "Halo orbits at EML1 and EML2. Halo orbits are periodic 3-D families around the collinear Lagrange points (L1, L2, L3) — and around the Sun-Earth collinear points too (JWST, Gaia, Euclid all sit in Sun-Earth L2 halos). EML1 halos (between Earth and Moon) are useful for lunar gateway concepts that need continuous Earth visibility from the front side. EML2 halos (beyond the Moon from Earth's perspective) are useful for far-side observation; the proposed Lunar Crater Radio Telescope and the Chinese Queqiao relay satellite (supporting Chang'e-4 farside landing) both used variations on EML2 halo orbits. Compared to NRHO, traditional halos require more station-keeping ΔV but offer geometrically simpler orbits.",
+  "cur": "Хало орбите у EML1 и EML2. Хало орбите су периодичне тродимензионалне породице орбита око колинеарних Лагранжових тачака (L1, L2, L3) — а и око колинеарних тачака система Сунце–Земља (JWST, Gaia и Euclid налазе се у хало орбитама око тачке L2 система Сунце–Земља). Хало орбите у EML1 (између Земље и Месеца) корисне су за концепте лунарне свемирске капије којима је потребна непрекидна видљивост Земље са предње стране. Хало орбите у EML2 (иза Месеца гледано са Земље) корисне су за посматрања са друге стране Месеца; предложени Lunar Crater Radio Telescope и кинески релејни сателит Queqiao (који је подржавао слетање Chang'e-4 на другу страну Месеца) користили су варијације хало орбита у EML2. У поређењу са NRHO, традиционалне хало орбите захтевају више ΔV за одржавање положаја, али нуде геометријски једноставније орбите."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.3",
+  "en": "Lunar frozen orbits. The Moon's gravity field is highly non-spherical because its crust is uneven (mascons — mass concentrations under the maria) and the Moon has no atmosphere to damp orbital perturbations. A satellite in a circular low lunar orbit at most inclinations will see its orbit get progressively more eccentric over months until it crashes into the surface. Lunar Prospector (1999) was deliberately deorbited at end of mission because mission planners couldn't keep it stable. The 'frozen' lunar inclinations — 27°, 50°, 76°, and 86° — are the ones where the various perturbations cancel and a satellite can stay in approximate circular orbit for years without station-keeping. The Lunar Reconnaissance Orbiter (LRO, 2009-) uses a near-frozen polar orbit at ~50 km altitude that requires only modest station-keeping. The Chinese Queqiao-2 relay satellite (2024) uses a frozen elliptical orbit at L2.",
+  "cur": "Замрзнуте орбите око Месеца. Месечево гравитационо поље је веома несферно, јер му је кора неравномерна (маскони — концентрације масе испод мора) и Месец нема атмосферу која би пригушила поремећаје орбите. Сателит у кружној ниској орбити око Месеца, при већини инклинација, видеће како му орбита током месеци постаје све ексцентричнија, док не удари у површину. Lunar Prospector (1999) је на крају мисије намерно спуштен из орбите, јер планери мисије нису могли да га одрже стабилним. „Замрзнуте\" инклинације око Месеца — 27°, 50°, 76° и 86° — јесу оне при којима се различити поремећаји међусобно поништавају, па сателит годинама може да остане у приближно кружној орбити без одржавања положаја. Lunar Reconnaissance Orbiter (LRO, од 2009) користи готово замрзнуту поларну орбиту на висини од ~50 km, која захтева само скромно одржавање положаја. Кинески релејни сателит Queqiao-2 (2024) користи замрзнуту елиптичну орбиту у L2."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.4",
+  "en": "Why this matters operationally. The 1960s-style 'circular lunar orbit at 100 km' approach used by Apollo Command Modules was acceptable because crews were only there for days and re-entry was guaranteed. Modern multi-mission cislunar architecture (Artemis, ILRS, multiple crewed and robotic missions over decades) demands orbits that are cheap to maintain and don't require constant attention. NRHO + DRO + frozen lunar are the carefully-engineered solutions to that constraint. The 'cislunar economy' (DARPA's term for the projected commercial activity in Earth-Moon space) lives or dies by these orbital choices — and 5 m/s/year station-keeping vs 100 m/s/year is the difference between a viable commercial venture and a money pit.",
+  "cur": "**Зашто је ово важно у пракси.** Приступ из 1960-их, „кружна лунарна орбита на 100 km“, какав су користили командни модули програма Apollo, био је прихватљив јер су посаде тамо боравиле тек неколико дана, а повратак у атмосферу био је загарантован. Савремена вишемисијска цислунарна архитектура (Artemis, ILRS, бројне мисије са посадом и роботске мисије током деценија) захтева орбите које је јефтино одржавати и које не траже сталну пажњу. NRHO, DRO и замрзнуте орбите око Месеца пажљиво су осмишљена решења управо за то ограничење. „Цислунарна економија“ (термин агенције DARPA за пројектовану комерцијалну активност у простору Земља–Месец) стоји или пада на овим избором орбита — а разлика између одржавања орбите од 5 m/s годишње и 100 m/s годишње јесте разлика између исплативог комерцијалног подухвата и бунара без дна за новац."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "diagram_caption",
+  "en": "NRHO: halo around Earth-Moon L2, 6-day period, perilune (~1,500 km) over lunar north pole, apolune (~70,000 km) over south pole for south-polar coverage, 5 m/s/yr station-keeping. DRO: large retrograde lunar orbit, essentially zero station-keeping. Halo orbits at EML1/EML2: continuous Earth/farside comms. Frozen lunar orbits: 27°/50°/76°/86° inclinations where mascon-driven perturbations cancel.",
+  "cur": "NRHO: хало орбита око тачке Земља-Месец L2, период од 6 дана, перицинтион (~1.500 km) изнад северног пола Месеца, апоцинтион (~70.000 km) изнад јужног пола ради покривања јужног поларног подручја, одржавање орбите 5 m/s годишње. DRO: велика ретроградна орбита око Месеца, у суштини без потребе за одржавањем орбите. Хало орбите у EML1/EML2: непрекидна веза са Земљом и са невидљивом страном Месеца. Замрзнуте орбите око Месеца: нагиби од 27°/50°/76°/86°, при којима се поремећаји изазвани масконима међусобно поништавају."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "title",
+  "en": "End-of-life disposal — graveyard orbits, controlled deorbit, the 25-year rule",
+  "cur": "Збрињавање на крају века трајања — орбите гробља, контролисано спуштање из орбите, правило од 25 година"
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "intro_sentence",
+  "en": "Every satellite must have an end-of-life disposal plan to launch — either deorbit into the atmosphere, or boost to a stable graveyard orbit. Mismanaged disposal is what produces the orbital-debris problem covered in the next article.",
+  "cur": "Сваки сателит пре лансирања мора имати план одлагања на крају века — повратак из орбите у атмосферу или подизање у стабилну орбиту гробља. Лоше одлагање рађа проблем орбиталног отпада из следећег чланка."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.0",
+  "en": "LEO disposal: deorbit. Spacecraft in LEO are dragged down by residual atmospheric density (negligible per orbit, accumulative over years). A satellite at 400 km decays naturally within a year if propulsion fails; at 800 km the natural decay time is ~50 years; at 1500 km it's centuries. The international standard codified by the IADC (Inter-Agency Space Debris Coordination Committee) in 2002 and adopted by every spacefaring nation: LEO objects must be deorbited within 25 years of end of mission. The FCC tightened this for US-licensed satellites to 5 years in 2022. Mechanism: at end of life, the spacecraft uses its remaining propellant to lower perigee into the upper atmosphere (typically 200-300 km perigee), guaranteeing rapid drag-driven decay within months. Large objects (ISS modules, Hubble, retired LEO comsats) are targeted at SPOUA — the South Pacific Ocean Uninhabited Area, a remote stretch of open ocean centred near Point Nemo, the official 'spacecraft cemetery' since the Soviet Salyut deorbits in the 1970s. Mir was deorbited there in 2001 (130 tonnes); the ISS is scheduled for controlled deorbit there in 2031.",
+  "cur": "Збрињавање у ниској Земљиној орбити (LEO): спуштање из орбите. Летелице у LEO повлачи надоле заостала густина атмосфере (занемарљива током једног обилазака, али кумулативна током година). Сателит на 400 km природно се спусти у року од годину дана ако погон откаже; на 800 km природно време распада је ~50 година; на 1500 km то су столећа. Међународни стандард који је 2002. кодификовао IADC (Inter-Agency Space Debris Coordination Committee), а усвојила свака свемирска нација, гласи: објекти у LEO морају бити спуштени из орбите у року од 25 година од краја мисије. FCC је ово 2022. пооштрила на 5 година за сателите са америчком лиценцом. Механизам: на крају века трајања летелица користи преостали погонски материјал да спусти перигеј у горњу атмосферу (обично перигеј од 200 до 300 km), чиме се гарантује брз распад изазван отпором, у року од неколико месеци. Велики објекти (модули МСС, Hubble, повучени комуникациони сателити у LEO) усмеравају се на SPOUA — South Pacific Ocean Uninhabited Area, то јест ненасељено подручје Јужног Пацифика, удаљени појас отвореног океана са средиштем близу Point Nemo, званог „гробље летелица“ још од совјетских спуштања станица Salyut из орбите седамдесетих година 20. века. Mir је ту спуштена из орбите 2001. (130 тона); МСС је за контролисано спуштање из орбите на том месту предвиђена за 2031."
+ }
+]

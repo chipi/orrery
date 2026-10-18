@@ -1,0 +1,1028 @@
+[
+ {
+  "rel": "fleet/orbiter/pioneer-11.json",
+  "at": "description",
+  "en": "Spin-stabilised RTG-powered probe (~259 kg), sibling of Pioneer 10 with the same bus and Pioneer Plaque message-to-the-stars. Launched 1973-04-06 on an Atlas SLV-3D Centaur D-1A + Star-37E from Cape Canaveral. Jupiter flyby 1974-12-03 at 43 000 km — the closest of any Pioneer encounter, returned the first polar-region images and the gravity assist needed to reach Saturn. Saturn encounter 1979-09-01 at 21 000 km from the cloud tops — first detailed images of the ring system, discovery of a new ring (F-ring) and a new moon, confirmation of Saturn's nearly-aligned magnetic field. Continued outbound observations until last contact 1995-11-24. Now ~93 AU from the Sun, headed toward Aquila.",
+  "cur": "Сонда стабилизована ротацијом, напајана из RTG-а (~259 kg), близанац сонде Pioneer 10 са истом платформом и истом поруком звездама — Pioneer Plaque. Лансирана 1973-04-06 ракетом Atlas SLV-3D Centaur D-1A + Star-37E са Кејп Канаверала. Прелет Јупитера 1974-12-03 на 43.000 km — најближи од свих сусрета у програму Pioneer — донео је прве снимке поларних области и гравитационо убрзање потребно за долазак до Сатурна. Сусрет са Сатурном 1979-09-01 на 21.000 km изнад врхова облака — први детаљни снимци система прстенова, откриће новог прстена (прстен F) и новог месеца, као и потврда да је магнетно поље Сатурна готово поравнато са осом ротације. Посматрања на путу ка спољашњости Сунчевог система настављена су до последњег контакта 1995-11-24. Сада је на ~93 АЈ од Сунца и креће се ка сазвежђу Орла."
+ },
+ {
+  "rel": "fleet/orbiter/pioneer-11.json",
+  "at": "best_known_for",
+  "en": "First spacecraft to encounter Saturn — 1979-09-01 flyby, sibling to Pioneer 10",
+  "cur": "Прва свемирска летелица која је стигла до Сатурна — прелет 1979-09-01, близанац сонде Pioneer 10"
+ },
+ {
+  "rel": "fleet/orbiter/psyche-spacecraft.json",
+  "at": "tagline",
+  "en": "First mission to a metal-rich M-class asteroid",
+  "cur": "Прва мисија ка астероиду М-класе богатом металима"
+ },
+ {
+  "rel": "fleet/orbiter/psyche-spacecraft.json",
+  "at": "description",
+  "en": "NASA's mission to a ~230-km M-type asteroid believed to be the exposed metal core of a differentiated proto-planet. Launched 2023-10-13 on a Falcon Heavy from Kennedy LC-39A; uses four SPT-140 Hall-effect ion thrusters as the primary cruise propulsion and a 2026 Mars gravity assist en route to a 2029 Psyche rendezvous. Carries a magnetometer, multispectral imager, and gamma-ray + neutron spectrometer.",
+  "cur": "NASA-ина мисија ка астероиду М-типа пречника ~230 km, за који се верује да је откривено метално језгро диференциране протопланете. Лансиран 13. октобра 2023. (2023-10-13) ракетом Falcon Heavy са комплекса Kennedy LC-39A; као основни погон за крстарење користи четири јонска потисника Холовог ефекта SPT-140, а на путу ка сусрету са астероидом Psyche 2029. године користи гравитациону assist-маневру поред Марса 2026. Носи магнетометар, мултиспектрални камерни систем и гама-спектрометар + неутронски спектрометар."
+ },
+ {
+  "rel": "fleet/orbiter/psyche-spacecraft.json",
+  "at": "best_known_for",
+  "en": "First mission to a metal-rich M-class asteroid",
+  "cur": "Прва мисија ка астероиду М-класе богатом металима"
+ },
+ {
+  "rel": "fleet/orbiter/rosetta.json",
+  "at": "tagline",
+  "en": "First spacecraft to orbit a comet (67P)",
+  "cur": "Прва свемирска летелица која је ушла у орбиту око комете (67P)"
+ },
+ {
+  "rel": "fleet/orbiter/rosetta.json",
+  "at": "description",
+  "en": "ESA’s comet rendezvous mission. Caught up to Comet 67P/Churyumov–Gerasimenko in August 2014, deployed the Philae lander (which bounced and fell into a crevasse), and accompanied the comet through its 2015 perihelion before crash-landing on the surface itself in September 2016.",
+  "cur": "ESA-ина мисија сусрета са кометом. У августу 2014. сустигла је Comet 67P/Churyumov–Gerasimenko, испустила лендер Philae (који је одскочио и пао у процеп), а затим пратила комету кроз њен перихел 2015. године, да би у септембру 2016. и сама принудно слетела на њену површину."
+ },
+ {
+  "rel": "fleet/orbiter/rosetta.json",
+  "at": "best_known_for",
+  "en": "First spacecraft to orbit a comet (67P)",
+  "cur": "Прва свемирска летелица која је ушла у орбиту око комете (67P)"
+ },
+ {
+  "rel": "fleet/orbiter/smart-1.json",
+  "at": "tagline",
+  "en": "First European Moon mission — solar-electric ion drive. Spiralled to the Moon over 13 months; deliberate impact 2006-09-03",
+  "cur": "Прва европска мисија на Месец — соларно-електрични јонски погон. До Месеца се спирално приближавала 13 месеци; намерни удар 2006-09-03"
+ },
+ {
+  "rel": "fleet/orbiter/smart-1.json",
+  "at": "description",
+  "en": "ESA's first lunar mission and the first European spacecraft to reach the Moon. SMART = Small Missions for Advanced Research in Technology — and the technology that mattered was a Hall-effect solar-electric ion thruster (PPS-1350, the largest such thruster flown at the time). Launched 2003-09-27 as a shared payload on an Ariane 5 from Kourou, the 367-kg spacecraft used its 1.2-kW xenon ion drive over 13 months to slowly raise its Earth orbit, eventually captured by lunar gravity 2004-11-15. Operated for 16 months in a polar lunar orbit, returning high-resolution AMIE camera imagery, the first X-ray fluorescence elemental maps of the Moon (D-CIXS), and infrared mineral spectroscopy (SIR). Deliberately impacted Lacus Excellentiae (34.4° S, 46.2° W) on 2006-09-03 02:42 UTC — the impact flash was observed from the Canada-France-Hawaii Telescope.",
+  "cur": "ESA-ина прва мисија на Месец и прва европска летелица која је стигла до Месеца. SMART = Small Missions for Advanced Research in Technology — а технологија која је била од значаја био је соларно-електрични јонски потисник на принципу Холовог ефекта (PPS-1350, највећи такав потисник који је до тада летео). Лансирана 2003-09-27 као заједнички терет на ракети Ariane 5 из Куру, летелица од 367 kg користила је свој ксенонски јонски погон снаге 1,2 kW током 13 месеци да би полако подизала своју орбиту око Земље, а гравитација Месеца ју је напослетку заробила 2004-11-15. Током 16 месеци деловала је у поларној орбити око Месеца, снимајући слике високе резолуције камером AMIE, израдила прве мапе елемената Месеца добијене рендгенском флуоресценцијом (D-CIXS) и вршила инфрацрвену спектроскопију минерала (SIR). Намерно је ударила у Језеро изврсности (34,4° S, 46,2° W) 2006-09-03 у 02:42 UTC — бљесак удара посматран је са телескопа Canada-France-Hawaii Telescope."
+ },
+ {
+  "rel": "fleet/orbiter/smart-1.json",
+  "at": "best_known_for",
+  "en": "First European Moon mission — solar-electric ion drive. Spiralled to the Moon over 13 months; deliberate impact 2006-09-03",
+  "cur": "Прва европска мисија на Месец — соларно-електрични јонски погон. До Месеца се спирално приближавала 13 месеци; намерни удар 2006-09-03"
+ },
+ {
+  "rel": "fleet/orbiter/solar-orbiter.json",
+  "at": "tagline",
+  "en": "First detailed imaging of the Sun's polar regions",
+  "cur": "Прво детаљно снимање поларних области Сунца"
+ },
+ {
+  "rel": "fleet/orbiter/solar-orbiter.json",
+  "at": "description",
+  "en": "ESA-led Solar Orbiter is the first spacecraft designed to image the Sun's polar regions in close detail — using repeated Venus gravity assists over a decade to climb out of the ecliptic toward ~33° heliographic inclination. Carries ten instruments combining remote sensing (PHI magnetograph, EUI extreme-UV imager, SPICE spectrometer, STIX X-ray imager, METIS coronagraph, SoloHI heliospheric imager) with in-situ measurement (magnetometer, energetic particles, solar-wind plasma, radio + plasma waves). Launched 2020-02-10 from Cape Canaveral on a NASA Atlas V 411. First perihelion 2020-06-15 at 0.51 AU. Working perihelion 0.28 AU (~62 R☉), inside Mercury's perihelion distance.",
+  "cur": "Solar Orbiter, мисија коју предводи ESA, прва је летелица намењена детаљном снимању поларних области Сунца — уз поновљене гравитационе маневре поред Венере током једне деценије пење се из еклиптике ка хелиографској инклинацији од ~33°. Носи десет инструмената који спајају даљинску детекцију (магнетограф PHI, снимач у екстремном ултраљубичастом подручју EUI, спектрометар SPICE, рендгенски снимач STIX, коронограф METIS, хелиосферски снимач SoloHI) са мерењима на лицу места (магнетометар, енергетске честице, плазма Сунчевог ветра, радио и плазма таласи). Лансирана је 2020-02-10 са Кејп Канаверала на NASA-иној ракети Atlas V 411. Први перихел достигла је 2020-06-15 на 0,51 AU. Радни перихел износи 0,28 AU (~62 R☉), унутар Меркуровог перихелског растојања."
+ },
+ {
+  "rel": "fleet/orbiter/solar-orbiter.json",
+  "at": "best_known_for",
+  "en": "First detailed Sun-polar imaging",
+  "cur": "Прво детаљно снимање полова Сунца"
+ },
+ {
+  "rel": "fleet/orbiter/tianwen-1.json",
+  "at": "tagline",
+  "en": "First Chinese Mars mission; delivered Zhurong",
+  "cur": "Прва кинеска мисија на Марс; испоручила је Zhurong"
+ },
+ {
+  "rel": "fleet/orbiter/tianwen-1.json",
+  "at": "description",
+  "en": "CNSA's first Mars mission — an orbiter that carried the Zhurong rover to the Martian surface in May 2021. After releasing Zhurong, the orbiter continued solo science operations including high-resolution imaging and surface mapping.",
+  "cur": "Прва CNSA-ина мисија на Марс — орбитер који је у мају 2021. однео ровер Zhurong на површину Марса. Након отпуштања ровера Zhurong, орбитер је самостално наставио научна опажања, укључујући снимање у високој резолуцији и картографисање површине."
+ },
+ {
+  "rel": "fleet/orbiter/tianwen-1.json",
+  "at": "best_known_for",
+  "en": "First Chinese Mars mission; orbiter delivered the Zhurong rover in May 2021",
+  "cur": "Прва кинеска мисија на Марс; орбитер је у мају 2021. испоручио ровер Zhurong"
+ },
+ {
+  "rel": "fleet/orbiter/ulysses.json",
+  "at": "tagline",
+  "en": "First spacecraft to observe the Sun's poles from above + below the ecliptic — Jupiter gravity assist 1992",
+  "cur": "Прва свемирска летелица која је посматрала полове Сунца одозго и одоздо, изван еклиптике — гравитациони маневар код Јупитера 1992."
+ },
+ {
+  "rel": "fleet/orbiter/ulysses.json",
+  "at": "description",
+  "en": "Joint ESA + NASA solar / heliospheric mission, built by Dornier with US scientific contribution. Launched 1990-10-06 from STS-41 Discovery on a high-energy trajectory direct to Jupiter — the only way to fling a spacecraft out of the ecliptic plane without prohibitive delta-v. Jupiter flyby 1992-02-08 deflected the spacecraft into an 80°-inclination heliocentric orbit (1.3 × 5.4 AU, 6.2-year period) — the first and still only spacecraft to fly over the Sun's poles. Three complete polar orbits gave us the heliospheric current sheet 3D structure, the faster polar / slower equatorial solar wind, and the only multi-decade record of polar coronal hole behaviour over a complete solar cycle. Mission ended 2009.",
+  "cur": "Заједничка мисија ESA и NASA за проучавање Сунца и хелиосфере, коју је изградио Dornier уз научни допринос из САД. Лансирана је 1990-10-06 из свемирског шатла Discovery (STS-41) на високоенергетску путању право ка Јупитеру — једини начин да се летелица избаци из равни еклиптике без превисоког delta-v. Прелет Јупитера 1992-02-08 скренуо је летелицу на хелиоцентричну орбиту нагнуту 80° (1,3 × 5,4 AU, период 6,2 године) — прва и до данас једина летелица која је прелетела полове Сунца. Три потпуне поларне орбите открила су нам тродимензионалну структуру хелиосферског струјног листа, бржи поларни и спорији екваторијални соларни ветар, као и једини вишедеценијски запис о понашању поларних коронарних рупа током читавог сунчевог циклуса. Мисија је окончана 2009."
+ },
+ {
+  "rel": "fleet/orbiter/ulysses.json",
+  "at": "best_known_for",
+  "en": "Only spacecraft to fly over the Sun's poles — joint ESA / NASA, 1990-2009",
+  "cur": "Једина свемирска летелица која је прелетела полове Сунца — заједничка мисија ESA и NASA, 1990–2009."
+ },
+ {
+  "rel": "fleet/orbiter/vega-1.json",
+  "at": "tagline",
+  "en": "Soviet Venus + Halley's Comet double mission — Venera lander, first interplanetary balloon, then Halley flyby",
+  "cur": "Совјетска двојна мисија ка Венери и Халејевој комети — слетач Venera, први међупланетарни балон, а затим прелет поред Халејеве комете"
+ },
+ {
+  "rel": "fleet/orbiter/vega-1.json",
+  "at": "description",
+  "en": "First spacecraft of the international Halley armada. Launched 1984-12-15 on a Proton-K / D-1. The 4920 kg flyby bus carried a ~1500 kg descent module that separated for Venus arrival 1985-06-11 — the lander touched down at 7.5°N, 177.8°E for 56 minutes of surface science, while a first-of-kind helium-filled balloon aerostat floated in the cloud deck at 54 km altitude for 46 hours tracking wind speeds and atmospheric structure. The flyby bus continued on its 9-month cruise and encountered comet 1P/Halley 1986-03-06 at 8889 km — the first Halley encounter of the armada, providing the targeting data ESA's Giotto used 8 days later for its much closer 596 km approach.",
+  "cur": "Прва летелица међународне армаде за Халејеву комету. Лансирана 15. 12. 1984. ракетом Proton-K / D-1. Прелетна платформа масе 4920 kg носила је спусни модул од око 1500 kg, који се одвојио ради доласка до Венере 11. 6. 1985. — лендер је слетео на 7,5° северне ширине и 177,8° источне дужине и 56 минута обављао истраживања на површини, док је први такве врсте аеростат-балон напуњен хелијумом лебдео у слоју облака на висини од 54 km током 46 сати, пратећи брзине ветра и структуру атмосфере. Прелетна платформа је наставила деветомесечни лет и 6. 3. 1986. срела комету 1P/Халеј на удаљености од 8889 km — први сусрет армаде с Халејевом кометом — и тако пружила податке за навођење које је ESA-ина летелица Giotto искористила осам дана касније за свој много ближи прилаз од 596 km."
+ },
+ {
+  "rel": "fleet/orbiter/vega-1.json",
+  "at": "best_known_for",
+  "en": "Soviet Venus + Halley double mission — first interplanetary balloon, first Halley flyby",
+  "cur": "Совјетска двојна мисија ка Венери и Халејевој комети — први међупланетарни балон, први прелет поред Халејеве комете"
+ },
+ {
+  "rel": "fleet/orbiter/vega-2.json",
+  "at": "tagline",
+  "en": "Sibling of Vega 1 — second Soviet Venus + Halley double mission, lander + balloon then Halley flyby",
+  "cur": "Близанац Vega 1 — друга совјетска двострука мисија ка Венери и Халејевој комети: десантни модул и балон, затим прелет поред комете"
+ },
+ {
+  "rel": "fleet/orbiter/vega-2.json",
+  "at": "description",
+  "en": "Identical twin of Vega 1, launched 1984-12-21 (6 days after Vega 1). 4920 kg flyby bus + ~1500 kg descent module with second Venera-style lander + helium aerostat. Venus arrival 1985-06-15: lander touched down at 8.5°S, 164.5°E (Aphrodite Terra), returned 57 minutes of surface science; balloon floated in the cloud deck for 46 hours alongside Vega 1's. The flyby bus continued and encountered comet 1P/Halley 1986-03-09 at 8030 km — the second Halley encounter of the armada, 3 days after Vega 1 and 5 days before Giotto. Vega 1 + Vega 2 tracking refined the Halley nucleus position to within 50 km for Giotto's much closer approach.",
+  "cur": "Идентични близанац летелице Vega 1, лансиран 21. 12. 1984. (6 дана после Vega 1). Прелетни модул масе 4920 kg + десантни модул масе ~1500 kg са другим десантним модулом у стилу програма Venera и аеростатом пуњеним хелијумом. Долазак до Венере 15. 6. 1985: десантни модул се спустио на 8,5° јужне ширине, 164,5° источне дужине (Афродитина земља) и 57 минута слао научне податке са површине; балон је 46 сати лебдео у слоју облака, раме уз раме са балоном летелице Vega 1. Прелетни модул је наставио пут и 9. 3. 1986. срео комету 1P/Халеј на удаљености од 8030 km — други сусрет армаде са Халејевом кометом, 3 дана после Vega 1 и 5 дана пре Giotto. Праћење летелица Vega 1 и Vega 2 прецизирало је положај језгра Халејеве комете на 50 km, за много ближи прилаз летелице Giotto."
+ },
+ {
+  "rel": "fleet/orbiter/vega-2.json",
+  "at": "best_known_for",
+  "en": "Sibling of Vega 1 — second Soviet Venus + Halley double mission, 1986-03-09 Halley flyby",
+  "cur": "Близанац Vega 1 — друга совјетска двострука мисија ка Венери и Халејевој комети, прелет поред Халејеве комете 9. 3. 1986."
+ },
+ {
+  "rel": "fleet/orbiter/viking1-orbiter.json",
+  "at": "tagline",
+  "en": "Companion orbiter to Viking-1 lander — relay + 50000 surface images at 150-300 m/pixel, the first global Mars map. Operated 1976-1980",
+  "cur": "Пратећи орбитер лендера Viking-1 — релеј + 50.000 снимака површине резолуције 150-300 m/пикселу, прва глобална мапа Марса. У раду 1976-1980."
+ },
+ {
+  "rel": "fleet/orbiter/viking1-orbiter.json",
+  "at": "description",
+  "en": "The orbital half of NASA's Viking 1 mission — the first US Mars orbiter and one of two near-identical Viking orbiters that returned ~50,000 surface images at 150-300 m/pixel between 1976 and 1980. Launched 1975-08-20 from Cape Canaveral on a Titan IIIE-Centaur, Viking 1 entered Mars orbit 1976-06-19; the orbiter spent a month surveying candidate landing sites before releasing the Viking 1 lander 1976-07-20 to the first successful US Mars landing at Chryse Planitia. The orbiter then continued as a science platform for nearly four more years, building the first global topographic + thermal map of Mars, surveying Phobos + Deimos, and acting as a UHF relay for the lander. Out of attitude-control gas 1980-08-07. Deliberately raised to a 357 × 33614 km park orbit that's expected to remain stable through ~2024 (decayed ~2025 per Aerospace Corp re-entry forecast).",
+  "cur": "Орбитални део мисије Viking 1 агенције NASA — први амерички орбитер Марса и један од два готово идентична орбитера Viking који су између 1976. и 1980. послали ~50.000 снимака површине резолуције 150-300 m/пикселу. Лансиран 1975-08-20 са Кејп Канаверала на ракети Titan IIIE-Centaur, Viking 1 је ушао у орбиту око Марса 1976-06-19; орбитер је месец дана истраживао кандидатске локације за слетање, а затим је 1976-07-20 отпустио лендер Viking 1 ка првом успешном америчком слетању на Марс, на равници Хрисе. Потом је орбитер готово четири године наставио рад као научна платформа: сачинио је прву глобалну топографску + термалну мапу Марса, истраживао Фобос + Дејмос и служио као UHF релеј за лендер. Остао је без гаса за контролу положаја 1980-08-07. Намерно је подигнут у паркирну орбиту 357 × 33.614 km, за коју се очекивало да ће остати стабилна до ~2024. (распала се ~2025. према прогнози Aerospace Corp о поновном уласку у атмосферу)."
+ },
+ {
+  "rel": "fleet/orbiter/viking1-orbiter.json",
+  "at": "best_known_for",
+  "en": "Companion orbiter to Viking-1 lander — relay + 50000 surface images at 150-300 m/pixel, the first global Mars map. Operated 1976-1980",
+  "cur": "Пратећи орбитер лендера Viking-1 — релеј + 50.000 снимака површине резолуције 150-300 m/пикселу, прва глобална мапа Марса. У раду 1976-1980."
+ },
+ {
+  "rel": "fleet/orbiter/voyager-1.json",
+  "at": "tagline",
+  "en": "Most distant human-made object",
+  "cur": "Најудаљенији објекат који је направио човек"
+ },
+ {
+  "rel": "fleet/orbiter/voyager-1.json",
+  "at": "description",
+  "en": "The most distant human-made object — over 25 billion kilometers from the Sun and growing. Crossed the heliopause into interstellar space on August 25, 2012. Carries the Golden Record. Still transmitting on its 470 W RTG.",
+  "cur": "Најудаљенији објекат који је направио човек — више од 25 милијарди километара од Сунца, и све даље. Прешао је хелиопаузу и ушао у међузвездани простор 25. августа 2012. Носи Golden Record. И даље емитује сигнале захваљујући свом RTG-у снаге 470 W."
+ },
+ {
+  "rel": "fleet/orbiter/voyager-1.json",
+  "at": "best_known_for",
+  "en": "Most distant human-made object",
+  "cur": "Најудаљенији објекат који је направио човек"
+ },
+ {
+  "rel": "fleet/orbiter/voyager-2.json",
+  "at": "tagline",
+  "en": "Only spacecraft to visit all four giant planets",
+  "cur": "Једина свемирска летелица која је посетила сву четири џиновске планете"
+ },
+ {
+  "rel": "fleet/orbiter/voyager-2.json",
+  "at": "description",
+  "en": "The only spacecraft to visit all four giant planets — Jupiter (1979), Saturn (1981), Uranus (1986), Neptune (1989). Followed its twin Voyager 1 into interstellar space in November 2018. Carries an identical Golden Record.",
+  "cur": "Једина свемирска летелица која је посетила сву четири џиновске планете — Јупитер (1979), Сатурн (1981), Уран (1986) и Нептун (1989). Своју близанку Voyager 1 следила је у међузвездани простор у новембру 2018. Носи идентичну Златну плочу."
+ },
+ {
+  "rel": "fleet/orbiter/voyager-2.json",
+  "at": "best_known_for",
+  "en": "Only spacecraft to visit all four giant planets",
+  "cur": "Једина свемирска летелица која је посетила све четири џиновске планете"
+ },
+ {
+  "rel": "fleet/rover/curiosity.json",
+  "at": "tagline",
+  "en": "Nuclear-powered Mars Science Laboratory rover",
+  "cur": "Ровер мисије Mars Science Laboratory на нуклеарни погон"
+ },
+ {
+  "rel": "fleet/rover/curiosity.json",
+  "at": "description",
+  "en": "NASA’s nuclear-powered Mars Science Laboratory rover, on Mars since August 2012. Discovered organic molecules, ancient stream-bed environments, and evidence that Mars’ Gale Crater was habitable in the past. Still operational over a decade later.",
+  "cur": "NASA-in ровер мисије Mars Science Laboratory на нуклеарни погон, на Марсу од августа 2012. Открио је органске молекуле, средине древних речних корита и доказе да је кратер Gale на Марсу у прошлости био погодан за живот. И након више од деценије и даље је у функцији."
+ },
+ {
+  "rel": "fleet/rover/curiosity.json",
+  "at": "best_known_for",
+  "en": "Nuclear-powered Mars Science Laboratory rover",
+  "cur": "Ровер мисије Mars Science Laboratory на нуклеарни погон"
+ },
+ {
+  "rel": "fleet/rover/exomars-rosalind-franklin.json",
+  "at": "tagline",
+  "en": "ESA's 2028 Mars rover — 2-m drill to search for biosignatures at Oxia Planum. Paused by Roscosmos pull-out 2022, retargeted to NASA launch",
+  "cur": "ESA-ин ровер за Марс 2028: бургија од 2 m тражи биосигнатуре на платоу Оксија. Застој због одласка Roscosmos-а 2022, лансира га NASA"
+ },
+ {
+  "rel": "fleet/rover/exomars-rosalind-franklin.json",
+  "at": "description",
+  "en": "ESA's first Mars rover, named after the DNA pioneer Rosalind Franklin. Designed to land at Oxia Planum (an ancient clay-bearing Mars region selected for high biosignature-preservation potential) and use a 2-metre subsurface drill — deeper than any prior Mars mission — to acquire samples from depths protected from the cosmic-ray and UV radiation that destroys surface organics. The Analytical Laboratory Drawer holds three life-detection instruments: MOMA (Mars Organic Molecule Analyser, a gas chromatograph + dual-source mass spectrometer), MicrOmega (infrared imaging spectroscopy), and the Raman Laser Spectrometer. Originally targeted for 2022 launch on a Russian Proton with a Russian-built landing platform (Kazachok); after Russia invaded Ukraine in 2022, ESA suspended cooperation, and Rosalind Franklin's launch was deferred. Currently scheduled for 2028 on a NASA-provided launch vehicle with an ESA / Airbus-rebuilt landing platform.",
+  "cur": "Први ESA-ин ровер за Марс, назван по пионирки ДНК Rosalind Franklin. Намењен је слетању на платоу Оксија (древни регион Марса богат глином, изабран због високог потенцијала за очување биопотписа) и употреби подповршинске бургије дугачке 2 метра — дубље него на било којој претходној мисији на Марс — како би узимао узорке са дубина заштићених од космичког и УВ зрачења које уништава органске молекуле на површини. Аналитичка лабораторијска фиока садржи три инструмента за откривање живота: MOMA (Mars Organic Molecule Analyser, гасни хроматограф + масени спектрометар са два извора), MicrOmega (инфрацрвена снимајућа спектроскопија) и Raman Laser Spectrometer. Првобитно је лансирање било планирано за 2022. на руској ракети Proton, са слетном платформом руске производње (Kazachok); пошто је Русија 2022. извршила инвазију на Украјину, ESA је обуставила сарадњу, а лансирање мисије Rosalind Franklin је одложено. Тренутно је заказано за 2028. на ракети-носачу коју обезбеђује NASA, са слетном платформом коју је поново направила ESA / Airbus."
+ },
+ {
+  "rel": "fleet/rover/exomars-rosalind-franklin.json",
+  "at": "best_known_for",
+  "en": "ESA's 2028 Mars rover — 2-m drill to search for biosignatures at Oxia Planum. Paused by Roscosmos pull-out 2022, retargeted to NASA launch",
+  "cur": "ESA-ин ровер за Марс за 2028. — бургија дугачка 2 m за потрагу за биопотписима на платоу Оксија. Заустављен повлачењем Roscosmos-а 2022, преусмерен на лансирање уз NASA"
+ },
+ {
+  "rel": "fleet/rover/lrv-apollo.json",
+  "at": "name",
+  "en": "Lunar Roving Vehicle",
+  "cur": "Месечево теренско возило"
+ },
+ {
+  "rel": "fleet/rover/lrv-apollo.json",
+  "at": "tagline",
+  "en": "First crewed rover; Apollo 15, 16, 17",
+  "cur": "Прво возило за посаде на Месецу; Apollo 15, 16, 17"
+ },
+ {
+  "rel": "fleet/rover/lrv-apollo.json",
+  "at": "dispatch",
+  "en": "The Lunar Rover was the first car on another world, and its entire reason to exist was reach. On foot, an astronaut can't stray far from the lander — walk too far out and you can't walk back if the suit starts to fail. Wheels rewrote that math: Apollo 15 through 17 ranged kilometres from home, turning a single landing spot into a proper field area and letting geologists actually choose where to look. Building it was its own puzzle — it had to fold flat into a wedge on the side of the Lunar Module, unfold on the surface, then drive through abrasive dust and hundreds of degrees of temperature swing on wire-mesh wheels and battery power. It never went fast. It went far, and that was the whole point.",
+  "cur": "Lunar Rover је био први аутомобил на другом свету, а цео његов разлог постојања био је домет. Пешице се астронаут не може удаљити далеко од лендера — ако одеш предалеко, не можеш се вратити пешке ако скафандер почне да откаже. Точкови су преписали тај рачун: Apollo 15 до 17 одлазили су километрима од куће, претварајући једно место слетања у право терестичко истраживачко подручје и дозвољавајући геолозима да заиста бирају где ће тражити. Његова изградња била је посебна загонетка — морао је да се сложи у равну клин-форму са стране Lunar Module-а, да се на површини расклопи, а затим вози кроз абразивну прашину и температурне разлике од стотина степени, на точковима од жичане мреже и на батерије. Никада није ишао брзо. Ишао је далеко, и то је била цела поента."
+ },
+ {
+  "rel": "fleet/rover/lrv-apollo.json",
+  "at": "description",
+  "en": "The Lunar Roving Vehicle — the first crewed rover. Three Apollos (15, 16, 17) used it to extend their surface exploration, covering up to 35.9 km per mission (Apollo 17 record). Built by Boeing and Delco; folded into the LM’s descent stage.",
+  "cur": "Lunar Roving Vehicle — прво теренско возило за посаде. Три мисије програма Apollo (15, 16, 17) користиле су га да прошире истраживање површине, прелазећи до 35,9 km по мисији (рекорд мисије Apollo 17). Направили су га Boeing и Delco; био је склопљен у степену за спуштање лунарног модула LM."
+ },
+ {
+  "rel": "fleet/rover/lrv-apollo.json",
+  "at": "best_known_for",
+  "en": "First crewed rover; Apollo 15, 16, 17",
+  "cur": "Прво возило за посаде на Месецу; Apollo 15, 16, 17"
+ },
+ {
+  "rel": "fleet/rover/lunokhod-1.json",
+  "at": "tagline",
+  "en": "First wheeled vehicle to roam another world",
+  "cur": "Прво возило на точковима које је прокрстарило другим светом"
+ },
+ {
+  "rel": "fleet/rover/lunokhod-1.json",
+  "at": "description",
+  "en": "The first wheeled vehicle to roam another world. Operated for ten months on the Moon’s Mare Imbrium between November 1970 and September 1971, driven via radio link by a five-person team in Crimea. A pressurised \"tub\" warmed by a polonium heater overnight.",
+  "cur": "Прво возило на точковима које је прокрстарило другим светом. Радило је десет месеци на Месечевом Мору кише између новембра 1970. и септембра 1971, а возила га је, преко радио-везе, петочлана екипа на Криму. Под притиском затворен „лавор“ загреван је током ноћи полонијумским грејачем."
+ },
+ {
+  "rel": "fleet/rover/lunokhod-1.json",
+  "at": "best_known_for",
+  "en": "First wheeled vehicle to roam another world",
+  "cur": "Прво возило на точковима које је прокрстарило другим светом"
+ },
+ {
+  "rel": "fleet/rover/lunokhod-2.json",
+  "at": "tagline",
+  "en": "Roamed 39 km on the Moon — record till 2014",
+  "cur": "Прешао 39 км на Месецу — рекорд до 2014"
+ },
+ {
+  "rel": "fleet/rover/lunokhod-2.json",
+  "at": "description",
+  "en": "Lunokhod 2 is a planetary rover built by NPO Lavochkin in USSR. Roamed 39 km on the Moon — record till 2014. Retired after first flight in 1973.",
+  "cur": "Lunokhod 2 је планетарно возило које је направио NPO Lavochkin у СССР-у. На Месецу је прешао 39 km — рекорд до 2014. Повучен је после првог лета 1973."
+ },
+ {
+  "rel": "fleet/rover/lunokhod-2.json",
+  "at": "best_known_for",
+  "en": "Roamed 39 km on the Moon — record till 2014",
+  "cur": "Прешао 39 км на Месецу — рекорд до 2014"
+ },
+ {
+  "rel": "fleet/rover/opportunity.json",
+  "at": "tagline",
+  "en": "Twin to Spirit; 14-year Mars operation",
+  "cur": "Близанац ровера Spirit; 14 година рада на Марсу"
+ },
+ {
+  "rel": "fleet/rover/opportunity.json",
+  "at": "description",
+  "en": "Opportunity (MER-B) is a planetary rover built by NASA JPL in USA. Twin to Spirit; operated for nearly 15 years on Mars. Set the off-world driving record at 45.16 km and discovered hematite 'blueberries' indicating past water. Retired 2019.",
+  "cur": "Opportunity (MER-B) је планетарни ровер који је направио NASA JPL у САД. Близанац ровера Spirit; радио је на Марсу готово 15 година. Поставио је рекорд у вожњи ван Земље од 45,16 km и открио хематитне „боровнице“ које указују на присуство воде у прошлости. Повучен 2019."
+ },
+ {
+  "rel": "fleet/rover/opportunity.json",
+  "at": "best_known_for",
+  "en": "Twin to Spirit; ~15-year, 45 km Mars operation",
+  "cur": "Близанац ровера Spirit; ~15 година рада на Марсу и 45 km пређеног пута"
+ },
+ {
+  "rel": "fleet/rover/perseverance.json",
+  "at": "name",
+  "en": "Perseverance (Mars 2020)",
+  "cur": "Perseverance (Mars 2020)"
+ },
+ {
+  "rel": "fleet/rover/perseverance.json",
+  "at": "tagline",
+  "en": "Carried Ingenuity; Mars sample caching",
+  "cur": "Носио Ingenuity; прикупљање узорака са Марса"
+ },
+ {
+  "rel": "fleet/rover/perseverance.json",
+  "at": "description",
+  "en": "NASA’s sample-caching rover, on Mars since February 2021. Carried Ingenuity, the first off-Earth helicopter; has collected 33 of 43 sample tubes for eventual return to Earth. Looking for biosignatures in Jezero Crater’s ancient delta.",
+  "cur": "NASA-ин ровер за прикупљање узорака, на Марсу од фебруара 2021. Носио је Ingenuity, први хеликоптер ван Земље; прикупио је 33 од 43 епрувете са узорцима за евентуални повратак на Земљу. Трага за биосигнатурама у древној делти кратера Jezero."
+ },
+ {
+  "rel": "fleet/rover/perseverance.json",
+  "at": "best_known_for",
+  "en": "Carried Ingenuity; Mars sample caching",
+  "cur": "Носио Ingenuity; прикупљање узорака са Марса"
+ },
+ {
+  "rel": "fleet/rover/pragyan.json",
+  "at": "tagline",
+  "en": "First lunar south-pole rover; Chandrayaan-3",
+  "cur": "Први ровер на јужном полу Месеца; Chandrayaan-3"
+ },
+ {
+  "rel": "fleet/rover/pragyan.json",
+  "at": "description",
+  "en": "Pragyan is a planetary rover built by ISRO in India. First lunar south-pole rover; Chandrayaan-3. Retired after first flight in 2023.",
+  "cur": "Pragyan је планетарни ровер који је направио ISRO у Индији. Први ровер на јужном полу Месеца; Chandrayaan-3. Повучен после првог лета 2023. године."
+ },
+ {
+  "rel": "fleet/rover/pragyan.json",
+  "at": "best_known_for",
+  "en": "First lunar south-pole rover; Chandrayaan-3",
+  "cur": "Први ровер на јужном полу Месеца; Chandrayaan-3"
+ },
+ {
+  "rel": "fleet/rover/sojourner.json",
+  "at": "tagline",
+  "en": "First Mars rover; Pathfinder mission",
+  "cur": "Први ровер на Марсу; мисија Pathfinder"
+ },
+ {
+  "rel": "fleet/rover/sojourner.json",
+  "at": "description",
+  "en": "Sojourner is a planetary rover built by NASA JPL in USA. First Mars rover; Pathfinder mission. Retired after first flight in 1997.",
+  "cur": "Sojourner је планетарни ровер који је направио NASA JPL у САД. Први ровер на Марсу; мисија Pathfinder. Повучен је после првог лета 1997. године."
+ },
+ {
+  "rel": "fleet/rover/sojourner.json",
+  "at": "best_known_for",
+  "en": "First Mars rover; Pathfinder mission",
+  "cur": "Први ровер на Марсу; мисија Pathfinder"
+ },
+ {
+  "rel": "fleet/rover/spirit.json",
+  "at": "tagline",
+  "en": "Mars Exploration Rover; 6-year operation",
+  "cur": "Mars Exploration Rover; 6 година рада"
+ },
+ {
+  "rel": "fleet/rover/spirit.json",
+  "at": "description",
+  "en": "Spirit (MER-A) is a planetary rover built by NASA JPL in USA. Mars Exploration Rover; 6-year operation. Retired after first flight in 2004.",
+  "cur": "Spirit (MER-A) је планетарни ровер који је направио NASA JPL у САД. Mars Exploration Rover; 6 година рада. Повучен после првог лета 2004. године."
+ },
+ {
+  "rel": "fleet/rover/spirit.json",
+  "at": "best_known_for",
+  "en": "Mars Exploration Rover; 6-year operation",
+  "cur": "Mars Exploration Rover; 6 година рада"
+ },
+ {
+  "rel": "fleet/rover/yutu-2.json",
+  "at": "tagline",
+  "en": "First rover on the lunar far side; Chang'e-4",
+  "cur": "Први ровер на другој страни Месеца; Chang'e-4"
+ },
+ {
+  "rel": "fleet/rover/yutu-2.json",
+  "at": "description",
+  "en": "China’s Chang’e-4 rover, the first rover to operate on the lunar far side. Landed in Von Kármán crater in January 2019 and operated for over six years, far exceeding its three-month design lifetime; largely stationary since early 2024.",
+  "cur": "Кинески ровер мисије Chang’e-4, први ровер који је радио на другој страни Месеца. Слетео је у кратер Von Kármán у јануару 2019. и радио више од шест година, што далеко премашује његов пројектовани век трајања од три месеца; од почетка 2024. углавном мирује."
+ },
+ {
+  "rel": "fleet/rover/yutu-2.json",
+  "at": "best_known_for",
+  "en": "First rover on the lunar far side; Chang'e-4",
+  "cur": "Први ровер на другој страни Месеца; Chang'e-4"
+ },
+ {
+  "rel": "fleet/rover/yutu.json",
+  "at": "tagline",
+  "en": "First Chinese lunar rover; Chang'e-3",
+  "cur": "Први кинески лунарни ровер; Chang'e-3"
+ },
+ {
+  "rel": "fleet/rover/yutu.json",
+  "at": "description",
+  "en": "Yutu is a planetary rover built by CAST in China. First Chinese lunar rover; Chang'e-3. Retired after first flight in 2013.",
+  "cur": "Yutu је планетарни ровер који је направио CAST у Кини. Први кинески лунарни ровер; Chang'e-3. Повучен је након првог лета 2013. године."
+ },
+ {
+  "rel": "fleet/rover/yutu.json",
+  "at": "best_known_for",
+  "en": "First Chinese lunar rover; Chang'e-3",
+  "cur": "Први кинески лунарни ровер; Chang'e-3"
+ },
+ {
+  "rel": "fleet/rover/zhurong.json",
+  "at": "tagline",
+  "en": "First Chinese Mars rover; Tianwen-1",
+  "cur": "Први кинески ровер на Марсу; Tianwen-1"
+ },
+ {
+  "rel": "fleet/rover/zhurong.json",
+  "at": "description",
+  "en": "Zhurong is a planetary rover built by CAST in China. First Chinese Mars rover; Tianwen-1. Retired after first flight in 2021.",
+  "cur": "Zhurong је планетарни ровер који је направио CAST у Кини. Први кинески ровер на Марсу; Tianwen-1. Повучен после првог лета 2021. године."
+ },
+ {
+  "rel": "fleet/rover/zhurong.json",
+  "at": "best_known_for",
+  "en": "First Chinese Mars rover; Tianwen-1",
+  "cur": "Први кинески ровер на Марсу; Tianwen-1"
+ },
+ {
+  "rel": "fleet/space-suit/a7l.json",
+  "at": "tagline",
+  "en": "The first operational lunar surface suit — Apollo 11 through 14",
+  "cur": "Прво оперативно одело за површину Месеца — од мисије Apollo 11 до мисије Apollo 14"
+ },
+ {
+  "rel": "fleet/space-suit/a7l.json",
+  "at": "dispatch",
+  "en": "A pressure suit on the Moon is really a spacecraft you wear — the smallest crewed vehicle Apollo built, sized for one. The A7L had to do everything a capsule does — hold pressure, supply oxygen, carry away heat and exhaled carbon dioxide, shield against a temperature swing of hundreds of degrees between sunlight and shadow — while still letting a person kneel, walk, and pick up a rock. Those two demands fight each other, because anything holding pressure wants to go stiff as a balloon. Its answer was twenty-one layers built around a rubber-coated bladder, with the backpack making the whole thing self-contained for hours. It was the first suit rated to walk on another world, and for its missions it was the only thing between a human being and vacuum.",
+  "cur": "Скафандер под притиском на Месецу заправо је свемирски брод који се носи на себи — најмање возило са посадом које је Apollo направио, скројено за једну особу. A7L је морао да ради све што ради и капсула — да држи притисак, снабдева кисеоником, одводи топлоту и издахнути угљен-диоксид, штити од температурне разлике од стотина степени између сунчеве светлости и сенке — а да при том и даље омогућава човеку да клекне, хода и подигне камен. Та два захтева се сукобљавају, јер све што држи притисак тежи да постане круто као балон. Одговор је било двадесет и један слој, изграђен око мехура превученог гумом, док је ранац чинио целину самосталном током неколико сати. Било је то прво одело предвиђено за ходање по другом свету и, током својих мисија, једино што је стајало између човека и вакуума."
+ },
+ {
+  "rel": "fleet/space-suit/a7l.json",
+  "at": "description",
+  "en": "First operational lunar surface suit. Hard upper torso, soft-fabric arms and legs, integrated lunar overboots, PLSS backpack with sublimator cooling and LiOH CO₂ scrubber, OPS emergency O₂ cylinder above the PLSS. Operating pressure 3.7 psi pure O₂ — lowest of any flown suit, to maximise mobility for walking in 1/6 g. Flew on Apollo 11 (the first Moonwalk), Apollo 12, and Apollo 13–14. Worn by Buzz Aldrin in the iconic gold-visor lunar surface photo.",
+  "cur": "Прво оперативно одело за површину Месеца. Крути горњи део торза, меки текстилни рукави и ногавице, интегрисане месечеве надчизме, ранац PLSS са сублимационим хлађењем и LiOH пречистачем CO₂, OPS резервни боца са кисеоником (O₂) изнад PLSS-а. Радни притисак од 3,7 psi чистог O₂ — најнижи међу свим оделима која су летела, да би се омогућила највећа покретљивост при ходању у условима 1/6 g. Летело је на мисијама Apollo 11 (прва шетња по Месецу), Apollo 12 и Apollo 13–14. Носио га је Баз Олдрин на чувеној фотографији са површине Месеца са златним визиром."
+ },
+ {
+  "rel": "fleet/space-suit/a7l.json",
+  "at": "best_known_for",
+  "en": "The suit worn on Apollo 11–14 — the first to support EVA on another world",
+  "cur": "Одело које се носило на мисијама Apollo 11–14 — прво које је омогућило ванвозну активност на другом свету"
+ },
+ {
+  "rel": "fleet/space-suit/a7lb.json",
+  "at": "tagline",
+  "en": "The J-mission suit — added a waist joint so astronauts could sit in the Lunar Rover",
+  "cur": "Одело за J-мисије — са додатим зглобом у струку како би астронаути могли да седе у Lunar Rover-у"
+ },
+ {
+  "rel": "fleet/space-suit/a7lb.json",
+  "at": "dispatch",
+  "en": "Sometimes a whole era of exploration turns on one joint. The A7LB was the A7L with a flexible convolution added at the waist — a small-sounding change that let an astronaut bend at the middle and sit down. That is the difference between walking a couple of kilometres from the lander and driving a rover across tens of them; between a two-hour moonwalk and a three-day field campaign. The last three Apollo landings — the long-stay science missions with the rover and, finally, a trained geologist — were only possible because the suit at last let people sit, reach, and work for hours at a stretch. The engineering headline is a waist joint; the result was the most productive science of the entire program.",
+  "cur": "Понекад цела ера истраживања зависи од једног зглоба. A7LB је био A7L са додатим флексибилним набором у струку — промена која звучи ситно, а омогућила је астронауту да се савије у средини тела и седне. То је разлика између ходања неколико километара од лендера и вожње ровером преко десетина њих; између двочасовне шетње по Месецу и тродневне теренске кампање. Последња три слетања у програму Apollo — научне мисије дугог боравка са ровером и, напокон, са обученим геологом — била су могућа само зато што је одело коначно омогућило људима да седе, посежу и раде сатима без прекида. Инжењерски наслов је зглоб у струку; резултат је била најпродуктивнија наука целог програма."
+ },
+ {
+  "rel": "fleet/space-suit/a7lb.json",
+  "at": "description",
+  "en": "A7L derivative for the extended J-class lunar missions. The signature change was a waist-joint convolution that allowed astronauts to bend forward and sit in the Lunar Roving Vehicle — without it, the J-mission EVAs of Apollo 15, 16, and 17 would not have been possible. Same PLSS, OPS, and 3.7 psi pressure as A7L; same gold visor. Also used on Skylab 2, 3, and 4 (1973–1974) in a modified configuration, with final EVA on February 3, 1974.",
+  "cur": "Дериват одела A7L за проширене лунарне мисије J-класе. Кључна измена био је набор у струку који је астронаутима омогућавао да се нагну напред и седну у Lunar Roving Vehicle — без њега излети ван летелице (EVA) током J-мисија Apollo 15, 16 и 17 не би били могући. Исти PLSS, OPS и притисак од 3,7 psi као код A7L; исти златни визир. Користио се и на мисијама Skylab 2, 3 и 4 (1973–1974) у измењеној конфигурацији, а последњи EVA обављен је 3. фебруара 1974."
+ },
+ {
+  "rel": "fleet/space-suit/a7lb.json",
+  "at": "best_known_for",
+  "en": "The J-mission suit (Apollo 15, 16, 17) — added a waist convolution that let astronauts sit in the Lunar Roving Vehicle",
+  "cur": "Одело за J-мисије (Apollo 15, 16, 17) — са додатим набором у струку који је астронаутима омогућио да седе у Lunar Roving Vehicle"
+ },
+ {
+  "rel": "fleet/space-suit/aces.json",
+  "at": "tagline",
+  "en": "The orange Shuttle pressure suit worn after Challenger made shirtsleeve ascent unacceptable",
+  "cur": "Наранџасто одело под притиском за Shuttle, које се носило после несреће Challenger-а, учинило је неприхватљивим успон у обичној одећи"
+ },
+ {
+  "rel": "fleet/space-suit/aces.json",
+  "at": "description",
+  "en": "Full-pressure launch-entry suit developed by David Clark Company. Replaced the earlier Launch Entry Suit (LES) starting in 1994. Detachable gloves, parachute harness integrated, distinctive international-orange colour for water-recovery visibility. Worn on every Space Shuttle ascent and re-entry through STS-135 in 2011.",
+  "cur": "Одело под пуним притиском за лансирање и улазак у атмосферу, које је развила компанија David Clark Company. Почев од 1994. заменило је раније Launch Entry Suit (LES). Има одвојиве рукавице, уграђен падобрански појас и препознатљиву међународну наранџасту боју ради боље уочљивости при спасавању из воде. Носило се при сваком узлетању и повратку свемирског авиона Space Shuttle све до мисије STS-135 2011. године."
+ },
+ {
+  "rel": "fleet/space-suit/aces.json",
+  "at": "best_known_for",
+  "en": "The orange \"pumpkin\" suit worn for every Space Shuttle launch and re-entry after Challenger",
+  "cur": "Наранџасто одело „бундева“ које се носило при сваком лансирању и повратку у атмосферу летелица Space Shuttle после несреће Challenger-а"
+ },
+ {
+  "rel": "fleet/space-suit/axemu.json",
+  "at": "tagline",
+  "en": "Next-gen US EVA suit, qualifying for Artemis III",
+  "cur": "Одело за ванвозилске активности (EVA) америчке нове генерације, у фази квалификације за Artemis III"
+ },
+ {
+  "rel": "fleet/space-suit/axemu.json",
+  "at": "description",
+  "en": "Axiom Space's contracted EVA suit for NASA's Artemis lunar return. Heritage from the EMU but with mobility joints comparable to Apollo's A7LB, a regenerable amine CO₂ scrubber, HD video in the helmet, and dust-resistant joints for lunar surface use. Outer-layer styling by Prada. Currently in qualification testing for Artemis III in the late 2020s.",
+  "cur": "Одело за ванвозилске активности (EVA) компаније Axiom Space, набављено уговором за повратак NASA-е на Месец у оквиру програма Artemis. Наслеђе је преузето од одела EMU, али има зглобове покретљивости упоредиве са онима на оделу A7LB из програма Apollo, регенеративни аминско-хемијски апсорбер CO₂, HD видео у кациги и зглобове отпорне на прашину за употребу на лунарној површини. За стилско обликовање спољашњег слоја одговара Prada. Тренутно је у фази квалификационих испитивања за Artemis III крајем 2020-их."
+ },
+ {
+  "rel": "fleet/space-suit/axemu.json",
+  "at": "best_known_for",
+  "en": "Next-generation US EVA suit being qualified for the Artemis III lunar landing",
+  "cur": "Одело за ванвозилске активности (EVA) америчке нове генерације, које се квалификује за слетање на Месец у оквиру мисије Artemis III"
+ },
+ {
+  "rel": "fleet/space-suit/crew-dragon-iva.json",
+  "at": "name",
+  "en": "SpaceX IVA Suit",
+  "cur": "Скафандер SpaceX IVA"
+ },
+ {
+  "rel": "fleet/space-suit/crew-dragon-iva.json",
+  "at": "tagline",
+  "en": "The white slim-fit Crew Dragon IVA suit, flown since Demo-2",
+  "cur": "Бело приљубљено IVA одело за Crew Dragon, у употреби од мисије Demo-2"
+ },
+ {
+  "rel": "fleet/space-suit/crew-dragon-iva.json",
+  "at": "description",
+  "en": "SpaceX-designed launch-entry pressure suit. Single-piece front-entry, touchscreen-capable gloves to operate Crew Dragon's tablet console, custom-3D-printed helmets fitted to each crew member. Worn for ascent and re-entry on Crew Dragon. Distinctive minimalist white-and-black aesthetic.",
+  "cur": "Скафандер под притиском за лансирање и улазак у атмосферу, који је дизајнирао SpaceX. Једноделно одело са отвором за улаз на предњој страни, рукавице прилагођене додиру екрана за управљање таблет-конзолом на летелици Crew Dragon и шлемови направљени 3D штампом по мери сваког члана посаде. Носи се при узлетању и повратку у атмосферу у летелици Crew Dragon. Препознатљив минималистички изглед у белој и црној боји."
+ },
+ {
+  "rel": "fleet/space-suit/crew-dragon-iva.json",
+  "at": "best_known_for",
+  "en": "The white slim-fit IVA suit worn on every NASA ISS Crew Dragon flight since Demo-2",
+  "cur": "Бело приљубљено IVA одело које се носи на сваком лету летелице Crew Dragon до МСС за NASA од мисије Demo-2"
+ },
+ {
+  "rel": "fleet/space-suit/emu.json",
+  "at": "tagline",
+  "en": "The white US spacewalk suit — every American EVA from the Shuttle to the ISS",
+  "cur": "Бело америчко одело за излазак у свемир — сваки амерички EVA од Спејс-шатла до МСС-а"
+ },
+ {
+  "rel": "fleet/space-suit/emu.json",
+  "at": "description",
+  "en": "Extravehicular Mobility Unit — modular EVA suit with a hard upper torso, soft fabric arms and legs, and a Primary Life Support System backpack. Operates at 4.3 psi pure O₂. First EVA flown on STS-6 (April 1983) and still in service on the ISS more than 40 years later. SAFER mini-thruster pack added in 1994 for tether-loss rescue (1.4 kg N₂, ~3 m/s Δv).",
+  "cur": "Extravehicular Mobility Unit — модуларно EVA одело с крутим горњим делом трупа, меким рукавима и нога­вицама од тканине и ранцем примарног система за одржавање живота. Ради при притиску од 4,3 psi чистог O₂. Први EVA у њему изведен је на мисији STS-6 (април 1983), а на МСС-у је у употреби и више од 40 година касније. Ранац са мини-потисницима SAFER додат је 1994. за спасавање у случају губитка ужета (1,4 kg N₂, ~3 m/s Δv)."
+ },
+ {
+  "rel": "fleet/space-suit/emu.json",
+  "at": "best_known_for",
+  "en": "The white US spacewalk suit that has flown every American EVA from the Shuttle through the ISS",
+  "cur": "Бело америчко одело за излазак у свемир у којем је изведен сваки амерички EVA, од Спејс-шатла до МСС-а"
+ },
+ {
+  "rel": "fleet/space-suit/feitian.json",
+  "at": "tagline",
+  "en": "China's EVA suit — derived from the Orlan, first flown on Shenzhou 7 in 2008",
+  "cur": "Кинеско одело за ванвозилне активности (EVA) — изведено из одела Orlan, први пут коришћено на мисији Shenzhou 7 2008. године"
+ },
+ {
+  "rel": "fleet/space-suit/feitian.json",
+  "at": "description",
+  "en": "Chinese rear-entry EVA suit with architectural similarities to the Soviet Orlan design. First flown on Shenzhou 7 in 2008 when Zhai Zhigang became the first Chinese taikonaut to spacewalk. Now in operational use on the Tiangong space station's Wentian airlock. The name means \"flying heaven\" — a reference to the celestial flying spirits (feitian) from Buddhist cave art at Dunhuang, depicted on the suit's arm badge.",
+  "cur": "Кинеско EVA одело са уласком кроз леђа, архитектонски слично совјетском решењу Orlan. Први пут је коришћено на мисији Shenzhou 7 2008. године, када је Zhai Zhigang постао први кинески тајконаут који је изашао у свемирску шетњу. Данас је у оперативној употреби на преклопној комори Wentian свемирске станице Tiangong. Назив значи „летеће небо“ — алузија на небеске летеће духове (feitian) из будистичке пећинске уметности у Dunhuang-у, приказане на амблему на рукаву одела."
+ },
+ {
+  "rel": "fleet/space-suit/feitian.json",
+  "at": "best_known_for",
+  "en": "China's EVA suit — used by Zhai Zhigang on the country's first spacewalk during Shenzhou 7",
+  "cur": "Кинеско EVA одело — у њему је Zhai Zhigang изашао у прву свемирску шетњу своје земље током мисије Shenzhou 7"
+ },
+ {
+  "rel": "fleet/space-suit/krechet-94.json",
+  "at": "tagline",
+  "en": "The Soviet lunar suit that never flew — its DNA lives in every Orlan and Feitian",
+  "cur": "Совјетско лунарно одело које никада није полетело — његов ДНК живи у сваком оделу Orlan и Feitian"
+ },
+ {
+  "rel": "fleet/space-suit/krechet-94.json",
+  "at": "description",
+  "en": "Soviet lunar surface suit developed for the cancelled N1/L3 crewed lunar program. Single-piece rear-entry design with the PLSS built into the back hatch — the architectural pattern shared with the Orlan (both developed concurrently in 1967–1969) and later adopted by the Feitian. Krechet hardware survived the program's cancellation and lives in museum collections (notably the Memorial Museum of Cosmonautics, Moscow). Name means \"gyrfalcon\" — the largest of the Falcon birds.",
+  "cur": "Совјетско одело за површину Месеца, развијено за отказани лунарни програм с људском посадом N1/L3. Једноделна конструкција с улазом са леђа и системом PLSS уграђеним у задњи отвор — архитектонски образац који дели с оделом Orlan (оба су развијана упоредо, 1967–1969) и који је касније преузело одело Feitian. Опрема Krechet-а преживела је укидање програма и данас се чува у музејским збиркама (нарочито у Memorial Museum of Cosmonautics, Moscow). Назив значи „кречет“ — највећа међу соколовима."
+ },
+ {
+  "rel": "fleet/space-suit/krechet-94.json",
+  "at": "best_known_for",
+  "en": "The Soviet lunar suit that never reached the Moon — its rear-entry architecture became the DNA of every Russian and Chinese EVA suit since",
+  "cur": "Совјетско лунарно одело које никада није стигло до Месеца — његова конструкција с улазом са леђа постала је ДНК сваког руског и кинеског одела за излазак у свемир од тада"
+ },
+ {
+  "rel": "fleet/space-suit/orlan-mks.json",
+  "at": "tagline",
+  "en": "The latest of a 50-year line of Russian rear-entry EVA suits",
+  "cur": "Најновији у педесетогодишњем низу руских скафандера за ванбродске активности са уласком кроз леђа"
+ },
+ {
+  "rel": "fleet/space-suit/orlan-mks.json",
+  "at": "description",
+  "en": "Latest variant of the Orlan family — Russian rear-entry EVA suit that has flown continuously since Salyut 6 in 1977. The cosmonaut steps in through a backpack-mounted hatch that locks shut in one motion, eliminating the airlock pre-breathe required by lower-pressure US suits. Operating pressure 5.8 psi (400 hPa) pure O₂. Used on the ISS Russian segment. Earlier Orlan variants served on Salyut and Mir stations.",
+  "cur": "Најновија варијанта породице Orlan — руски скафандер за ванбродске активности са уласком кроз леђа, који непрекидно лети још од станице Salyut 6 1977. године. Космонаут улази кроз отвор на ранцу, који се закључава једним покретом, чиме се избегава удисање чистог кисеоника ради испирања азота из организма пре изласка у свемир у преткомори, какво захтевају амерички скафандери нижег притиска. Радни притисак износи 5,8 psi (400 hPa) чистог O₂. Користи се на руском сегменту МСС. Раније варијанте Orlan служиле су на станицама Salyut и Mir."
+ },
+ {
+  "rel": "fleet/space-suit/orlan-mks.json",
+  "at": "best_known_for",
+  "en": "The latest variant of the Orlan family — Russian rear-entry EVA suit, in service since the 1977 Salyut program",
+  "cur": "Најновија варијанта породице Orlan — руски скафандер за ванбродске активности са уласком кроз леђа, у употреби још од програма Salyut из 1977. године"
+ },
+ {
+  "rel": "fleet/space-suit/shenzhou-iva.json",
+  "at": "name",
+  "en": "Shenzhou IVA Suit",
+  "cur": "Скафандер Shenzhou IVA"
+ },
+ {
+  "rel": "fleet/space-suit/shenzhou-iva.json",
+  "at": "tagline",
+  "en": "China's launch-entry suit, worn on every Shenzhou flight since 2003",
+  "cur": "Кинеско одело за лансирање и улазак у атмосферу, које се носи на сваком лету летелице Shenzhou од 2003. године"
+ },
+ {
+  "rel": "fleet/space-suit/shenzhou-iva.json",
+  "at": "description",
+  "en": "Chinese launch-entry pressure suit derived from the Soviet Sokol family. Used on Shenzhou 5 in 2003 when Yang Liwei became China's first taikonaut, and on every subsequent Shenzhou mission. Back-entry seam, fixed helmet, umbilical-fed; the architectural similarity to Sokol reflects China's early space-program technology transfer from Russia.",
+  "cur": "Кинеско скафандер-одело под притиском за лансирање и улазак у атмосферу, изведено из совјетске породице Sokol. Коришћено је на летелици Shenzhou 5 2003. године, када је Јанг Ливеј постао први кинески тајконаут, као и на свакој потоњој мисији Shenzhou. Има шав за улазак на леђима, фиксни шлем и снабдева се преко пупчане цеви; архитектонска сличност са оделом Sokol одражава пренос технологије из Русије током раних година кинеског свемирског програма."
+ },
+ {
+  "rel": "fleet/space-suit/shenzhou-iva.json",
+  "at": "best_known_for",
+  "en": "Worn by every Chinese taikonaut on every Shenzhou flight since 2003",
+  "cur": "Носио га је сваки кинески тајконаут на сваком лету летелице Shenzhou од 2003. године"
+ },
+ {
+  "rel": "fleet/space-suit/sokol-kv-2.json",
+  "at": "tagline",
+  "en": "The Soyuz launch-entry suit, mandatory since the 1971 Soyuz 11 decompression deaths",
+  "cur": "Одело за лансирање и улазак у атмосферу на летелицама Soyuz, обавезно од 1971. и смрти посаде Soyuz 11 услед декомпресије"
+ },
+ {
+  "rel": "fleet/space-suit/sokol-kv-2.json",
+  "at": "description",
+  "en": "Soft pressure suit worn inside the Soyuz descent module on every launch and re-entry since Soyuz T-2 in 1980, replacing the original Sokol-K. Back-entry seam (laced shut), fixed helmet with flip-up visor, umbilical for O₂ + comms + cooling water. Not designed for spacewalking — it is the backup that keeps the crew alive long enough to land if cabin pressure fails.",
+  "cur": "Меко одело под притиском које се носи унутар спусног модула летелице Soyuz при сваком лансирању и повратку у атмосферу од мисије Soyuz T-2 1980. године, а заменило је првобитно одело Sokol-K. Има леђни шав за облачење (затвара се везивањем), причвршћен шлем са подижућим визиром и пупчану цев за O₂, везу и воду за хлађење. Није предвиђено за излазак у свемир — оно је резервна заштита која посаду држи у животу довољно дуго да слети ако притисак у кабини откаже."
+ },
+ {
+  "rel": "fleet/space-suit/sokol-kv-2.json",
+  "at": "best_known_for",
+  "en": "The only suit worn on Soyuz — created after the Soyuz 11 decompression deaths in 1971",
+  "cur": "Једино одело које се носи на летелицама Soyuz — створено после смрти посаде Soyuz 11 услед декомпресије 1971. године"
+ },
+ {
+  "rel": "fleet/space-suit/sokol-m.json",
+  "at": "tagline",
+  "en": "Russia's next-generation Soyuz/PTK launch-entry suit",
+  "cur": "Руско одело нове генерације за лансирање и улазак у атмосферу за Soyuz/PTK"
+ },
+ {
+  "rel": "fleet/space-suit/sokol-m.json",
+  "at": "description",
+  "en": "Replacement for Sokol KV-2 — incorporates lessons learned over 50 years of Soyuz launch-entry operations. Slated for Russia's PTK / Orel crewed spacecraft. Same general architecture (back-entry, umbilical-fed) with modernised materials and ergonomics.",
+  "cur": "Замена за Sokol KV-2 — обухвата искуства стечена током 50 година операција лансирања и уласка у атмосферу са летелицама Soyuz. Предвиђено је за руску посадну свемирску летелицу PTK / Orel. Општа архитектура је иста (улаз кроз леђа, напајање преко пупчане цеви), уз осавремењене материјале и ергономију."
+ },
+ {
+  "rel": "fleet/space-suit/sokol-m.json",
+  "at": "best_known_for",
+  "en": "Russia's next-generation Soyuz/PTK launch-entry suit",
+  "cur": "Руско одело нове генерације за лансирање и улазак у атмосферу за Soyuz/PTK"
+ },
+ {
+  "rel": "fleet/space-suit/starliner-suit.json",
+  "at": "name",
+  "en": "Boeing Blue (Starliner IVA)",
+  "cur": "Boeing Blue (Starliner IVA)"
+ },
+ {
+  "rel": "fleet/space-suit/starliner-suit.json",
+  "at": "tagline",
+  "en": "Boeing's blue Starliner launch-entry suit",
+  "cur": "Boeing-ово плаво одело за лансирање и улазак у атмосферу у летелици Starliner"
+ },
+ {
+  "rel": "fleet/space-suit/starliner-suit.json",
+  "at": "description",
+  "en": "Lightweight launch-entry pressure suit built by David Clark Company for Boeing's CST-100 Starliner commercial-crew vehicle. Touch-screen-compatible gloves, integrated communications cap, vented helmet. Debuted on the Crew Flight Test mission (June 2024) flown by Butch Wilmore and Suni Williams, who returned via Crew-9 in February 2025 after Starliner returned uncrewed.",
+  "cur": "Лагано скафандер-одело под притиском за лансирање и улазак у атмосферу, које је за Boeing-ову комерцијалну летелицу за посаде CST-100 Starliner направила компанија David Clark Company. Рукавице компатибилне са екраном осетљивим на додир, интегрисана комуникациона капа, вентилирани шлем. Дебитовало је на мисији Crew Flight Test (јун 2024), којом су летели Буч Вилмор и Суни Вилијамс, а они су се вратили летом Crew-9 у фебруару 2025, пошто се Starliner вратио без посаде."
+ },
+ {
+  "rel": "fleet/space-suit/starliner-suit.json",
+  "at": "best_known_for",
+  "en": "Boeing's blue IVA suit for the CST-100 Starliner, debuted on the Crew Flight Test 2024",
+  "cur": "Boeing-ово плаво IVA одело за летелицу CST-100 Starliner, које је дебитовало на Crew Flight Test 2024."
+ },
+ {
+  "rel": "fleet/station/iss.json",
+  "at": "name",
+  "en": "International Space Station",
+  "cur": "Међународна свемирска станица"
+ },
+ {
+  "rel": "fleet/station/iss.json",
+  "at": "tagline",
+  "en": "Continuously crewed since November 2000",
+  "cur": "Непрекидно настањена посадом од новембра 2000."
+ },
+ {
+  "rel": "fleet/station/iss.json",
+  "at": "dispatch",
+  "en": "The International Space Station is the largest structure humanity has ever built in space and the place every thread of the space age converges. Its Russian core descends directly from Salyut and Mir; its American segment from Skylab; it was assembled by the Space Shuttle, is crewed by Soyuz, resupplied by the descendants of the Progress freighter, and carries laboratories built by Europe and Japan — nearly every earlier program present in it as heritage. Assembled from 1998 and continuously crewed since November 2000, it is the longest unbroken human presence off Earth in history, and the clearest proof of a single idea: that the greatest things in space are built not by winning a race but by former rivals choosing, decade after decade, to build them together.",
+  "cur": "Међународна свемирска станица највећа је конструкција коју је човечанство икада изградило у свемиру и место у коме се сустичу све нити свемирског доба. Њено руско језгро води порекло директно од станица Salyut и Mir, а амерички сегмент од станице Skylab; састављена је уз помоћ Space Shuttle-а, посаду јој довозе Soyuz-и, залихе јој допремају потомци теретног брода Progress, а носи и лабораторије које су саздале Европа и Јапан — готово сваки ранији програм присутан је у њој као наслеђе. Састављана од 1998. и непрекидно настањена посадом од новембра 2000, она је најдуже непрекинуто присуство људи изван Земље у историји и најјаснији доказ једне једине идеје: да највеће подухвате у свемиру не граде победници у трци, већ некадашњи ривали који деценију за деценијом бирају да их граде заједно."
+ },
+ {
+  "rel": "fleet/station/iss.json",
+  "at": "description",
+  "en": "The International Space Station — humanity’s longest continuously crewed habitat, occupied since November 2000. Assembled across more than 40 launches by NASA, Roscosmos, ESA, JAXA, and CSA. Currently scheduled for deorbit around 2031.",
+  "cur": "Међународна свемирска станица — најдуже непрекидно настањено станиште човечанства, у којем посада борави од новембра 2000. Састављена је током више од 40 лансирања од стране агенција NASA, Roscosmos, ESA, JAXA и CSA. Тренутно је планирано да буде склоњена с орбите око 2031."
+ },
+ {
+  "rel": "fleet/station/iss.json",
+  "at": "best_known_for",
+  "en": "Continuously crewed since November 2000",
+  "cur": "Непрекидно настањена посадом од новембра 2000."
+ },
+ {
+  "rel": "fleet/station/mir.json",
+  "at": "tagline",
+  "en": "First modular space station; 15-year service",
+  "cur": "Прва модуларна свемирска станица; 15 година у служби"
+ },
+ {
+  "rel": "fleet/station/mir.json",
+  "at": "dispatch",
+  "en": "Mir was the first modular space station — and the bridge between two eras of spaceflight. Where every station before it was launched whole, Mir was assembled in orbit over a decade, module by module, growing into a sprawling complex that stayed aloft for fifteen years. It set the endurance record that still stands (Valeri Polyakov's 437 unbroken days, proof a crew could survive a Mars-length flight), outlived the Soviet Union that built it by a decade, and survived a fire and a depressurising collision in 1997 that its crew fought off by hand. In its final years American Shuttles docked with it and US astronauts lived aboard — the rehearsal, in hardware and in trust, for the International Space Station that inherited nearly everything Mir worked out.",
+  "cur": "Mir је била прва модуларна свемирска станица — и мост између две ере свемирских летова. Док је свака станица пре ње лансирана као целина, Mir је током једне деценије склапана у орбити, модул по модул, и израсла у разуђен комплекс који је остао у висини петнаест година. Поставила је рекорд у издржљивости који и данас стоји (Валериј Пољаков 437 непрекидних дана, доказ да посада може да преживи лет дужине путовања до Марса), надживела је Совјетски Савез који ју је изградио за читаву деценију и преживела пожар и судар са губитком притиска 1997. године, са којима се посада изборила голим рукама. У њеним последњим годинама амерички свемирски шатлови спајали су се с њом, а амерички астронаути живели су на њој — вежба, у опреми и у поверењу, за Међународну свемирску станицу, која је наследила готово све што је Mir испробала."
+ },
+ {
+  "rel": "fleet/station/mir.json",
+  "at": "description",
+  "en": "The first modular space station, assembled in orbit between 1986 and 1996 and continuously occupied for almost 10 years (1989–1999), with a final crew visit in April–June 2000. Hosted American astronauts during the Shuttle-Mir program (1995–1998) — the partnership that made ISS possible.",
+  "cur": "Прва модуларна свемирска станица, склопљена у орбити између 1986. и 1996. године и непрекидно настањена скоро 10 година (1989–1999), са последујом посетом посаде у периоду април–јун 2000. Угостила је америчке астронауте током програма Shuttle-Mir (1995–1998) — партнерства које је омогућило МСС."
+ },
+ {
+  "rel": "fleet/station/mir.json",
+  "at": "best_known_for",
+  "en": "First modular space station; 15-year service",
+  "cur": "Прва модуларна свемирска станица; 15 година у служби"
+ },
+ {
+  "rel": "fleet/station/salyut-1.json",
+  "at": "tagline",
+  "en": "World's first space station",
+  "cur": "Прва свемирска станица на свету"
+ },
+ {
+  "rel": "fleet/station/salyut-1.json",
+  "at": "dispatch",
+  "en": "Salyut 1 was the first space station in history — launched in April 1971, two years ahead of America's Skylab, and the moment the Soviet Union turned its lead in endurance into a permanent presence in orbit. Its triumph was also its tragedy: the first crew to live aboard it, Soyuz 11, died during their return when a valve vented their cabin to vacuum, and the station was never occupied again. It proved a station could be built and reached — and, at the highest cost, taught the lesson that reshaped every crewed spacecraft after it.",
+  "cur": "Salyut 1 била је прва свемирска станица у историји — лансирана у априлу 1971, две године пре америчке станице Skylab, и тренутак у којем је Совјетски Савез своју предност у издржљивости претворио у стално присуство у орбити. Њен триумф био је уједно и њена трагедија: прва посада која је живела на њој, Soyuz 11, погинула је током повратка када је вентил испустио ваздух из кабине у вакуум, а станица након тога више никада није била настањена. Доказала је да се станица може изградити и до ње стићи — и, по највишу цену, научила лекцију која је преобликовала сваку летелицу с посадом после ње."
+ },
+ {
+  "rel": "fleet/station/salyut-1.json",
+  "at": "description",
+  "en": "The world’s first space station — launched 1971, occupied for 23 days by the Soyuz 11 crew (Dobrovolski, Volkov, Patsayev), all of whom died on return when their capsule depressurised. Salyut 1 was deorbited later that year.",
+  "cur": "Прва свемирска станица на свету — лансирана 1971, у њој је 23 дана боравила посада летелице Soyuz 11 (Dobrovolski, Volkov, Patsayev), која је читава погинула при повратку када је њихова капсула изгубила притисак. Salyut 1 је касније те исте године намерно сведена с орбите и уништена при уласку у атмосферу."
+ },
+ {
+  "rel": "fleet/station/salyut-1.json",
+  "at": "best_known_for",
+  "en": "World's first space station",
+  "cur": "Прва свемирска станица на свету"
+ },
+ {
+  "rel": "fleet/station/salyut-2.json",
+  "at": "tagline",
+  "en": "First Almaz military station — depressurised on orbit before any crew arrived; reentered 1973-05-28 after 54 days",
+  "cur": "Прва војна станица Almaz — изгубила је притисак у орбити пре доласка било које посаде; поново је ушла у атмосферу 1973-05-28, после 54 дана"
+ },
+ {
+  "rel": "fleet/station/salyut-2.json",
+  "at": "dispatch",
+  "en": "Salyut 2 was not really a Salyut at all — it was the first Almaz, a secret military reconnaissance station flown under the civilian name to hide its purpose. It never carried a crew. Days after reaching orbit it lost pressure and began to tumble, its systems failing, and it re-entered without ever being occupied. A rough, hidden start to the military half of the programme, and a reminder of how unforgiving the early station-building years were.",
+  "cur": "Salyut 2 заправо уопште није био Salyut — био је то први Almaz, тајна војна извиђачка станица лансирана под цивилним именом да би се сакрила њена сврха. Никада није имао посаду. Неколико дана након доласка у орбиту изгубио је притисак и почео да се врти ван контроле, док су му системи један за другим отказивали, а затим је поново ушао у атмосферу, а да га нико никада није населио. Тежак и прикривен почетак војне половине програма, као и подсетник на то колико су безобзирне биле прве године градње станица."
+ },
+ {
+  "rel": "fleet/station/salyut-2.json",
+  "at": "description",
+  "en": "The first of the three Soviet military Almaz space stations — publicly called Salyut 2 to disguise its real purpose (DoD-style reconnaissance, with a 6.4-m focal-length panoramic camera and a film-return capsule). Launched 1973-04-03 on a Proton-K from Baikonur, Salyut 2 reached orbit successfully but debris from the Proton's spent third stage — which exploded three days after launch — struck the station ~10 days later, tearing off both solar panels and puncturing the hull. The resulting power loss caused depressurisation on the 13th day (1973-04-14), rendering the station unusable before any crew could be sent. The planned crew (Pavel Popovich + Yury Artyukhin) instead flew on Salyut 3 the following year. Salyut 2 reentered the atmosphere 1973-05-28 — the shortest-lived station program in history at that point. Its existence as a military station was only declassified after the Soviet Union's collapse.",
+  "cur": "Први од три совјетске војне свемирске станице Almaz — јавно названа Salyut 2 да би се прикрила њена права сврха (извиђање у стилу DoD-а, са панорамском камером жижне даљине 6,4 m и капсулом за повратак филма). Лансирана 1973-04-03 ракетом Proton-K са космодрома Бајконур, Salyut 2 је успешно стигла у орбиту, али су крхотине истрошеног трећег степена ракете Proton — који је експлодирао три дана после лансирања — око десет дана касније погодиле станицу, откинувши обе соларне плоче и пробивши труп. Настали губитак напајања проузроковао је губитак притиска 13. дана (1973-04-14), чиме је станица постала неупотребљива пре него што је икаква посада могла бити послата. Планирана посада (Pavel Popovich + Yury Artyukhin) уместо тога је следеће године летела на станици Salyut 3. Salyut 2 је поново ушла у атмосферу 1973-05-28 — као програм станице с најкраћим веком трајања у историји до тада. Њено постојање као војне станице скинуто је с тајности тек након распада Совјетског Савеза."
+ },
+ {
+  "rel": "fleet/station/salyut-2.json",
+  "at": "best_known_for",
+  "en": "First Almaz military station — depressurised on orbit before any crew arrived; reentered 1973-05-28 after 54 days",
+  "cur": "Прва војна станица Almaz — изгубила је притисак у орбити пре доласка било које посаде; поново је ушла у атмосферу 1973-05-28, после 54 дана"
+ },
+ {
+  "rel": "fleet/station/salyut-3.json",
+  "at": "tagline",
+  "en": "Second Almaz military station — Soyuz 14 crew Jul 1974; Soyuz 15 failed automatic docking; reportedly tested an onboard cannon 1975-01-24",
+  "cur": "Друга војна станица Almaz — посада Soyuz 14 јула 1974; Soyuz 15 није успео аутоматско спајање; наводно тестиран бордски топ 24. 1. 1975."
+ },
+ {
+  "rel": "fleet/station/salyut-3.json",
+  "at": "dispatch",
+  "en": "Salyut 3 was Almaz — a crewed military reconnaissance station, its true purpose buried under the civilian name. Its single crew, Soyuz 14, spent about two weeks aboard operating long-focus cameras to photograph targets below, in the era before automated spy satellites made human eyes unnecessary. Most famously, before it was deorbited, Salyut 3 test-fired a rapid-fire cannon in orbit — the only known instance of a weapon being fired from a crewed spacecraft.",
+  "cur": "Salyut 3 био је Almaz — војна извиђачка станица са људском посадом, чија је права намена била скривена иза цивилног имена. Њена једина посада, Soyuz 14, провела је на станици око две недеље, рукујући камерама дугог фокуса да би фотографисала циљеве испод себе, у доба пре него што су аутоматски шпијунски сателити учинили људско око непотребним. Најпознатије је то што је Salyut 3, пре него што је спуштен из орбите, у орбити испробао брзометни топ — једини познати случај да је оружје опаљено са летелице с људском посадом."
+ },
+ {
+  "rel": "fleet/station/salyut-3.json",
+  "at": "description",
+  "en": "The second Soviet military Almaz station — again publicly called Salyut 3 to mask its surveillance role. Launched 1974-06-25 on a Proton-K, Salyut 3 hosted one short crew mission (Soyuz 14, Popovich + Artyukhin, 15 days, 1974-07-03 to 1974-07-19) which exercised the station's 6.4-m Agat camera + film-return capsule. A second crew attempt (Soyuz 15, Sarafanov + Demin, 1974-08-26) failed the automatic Igla rendezvous and returned the same day. Just before deorbit on 1975-01-24, Salyut 3 reportedly test-fired its onboard Nudelman cannon (sources cite either 23-mm or 30-mm calibre) — the only known instance of a weapon firing in space (recoil was absorbed by the station's attitude-control thrusters; the round disintegrated in the atmosphere). Reentered the atmosphere 1975-01-24.",
+  "cur": "Друга совјетска војна станица програма Almaz — поново јавно названа Salyut 3 да би се прикрила њена надзорна улога. Лансирана 25. 6. 1974. ракетом Proton-K, Salyut 3 угостила је једну кратку мисију са посадом (Soyuz 14, Popovich + Artyukhin, 15 дана, од 3. 7. 1974. до 19. 7. 1974), која је испробала камеру Agat од 6,4 m и капсулу за повратак филма на Земљу. Други покушај са посадом (Soyuz 15, Sarafanov + Demin, 26. 8. 1974) није успео у аутоматском сусрету у орбити помоћу система Igla и вратио се истог дана. Непосредно пре силаска из орбите, 24. 1. 1975, Salyut 3 је наводно пробно опалио свој топ Nudelman (извори наводе калибар од 23 mm или 30 mm) — једини познати случај опаљења оружја у свемиру (трзај су апсорбовали потисници за контролу положаја станице; пројектил се распао у атмосфери). Ушла је у атмосферу 24. 1. 1975."
+ },
+ {
+  "rel": "fleet/station/salyut-3.json",
+  "at": "best_known_for",
+  "en": "Second Almaz military station — Soyuz 14 crew Jul 1974; Soyuz 15 failed automatic docking; reportedly tested an onboard cannon 1975-01-24",
+  "cur": "Друга војна станица програма Almaz — посада Soyuz 14 у јулу 1974; Soyuz 15 није успео аутоматско спајање; наводно је 24. 1. 1975. испробан топ на станици"
+ },
+ {
+  "rel": "fleet/station/salyut-4.json",
+  "at": "tagline",
+  "en": "Civilian DOS-4 station — hosted Soyuz 17 (29 days) + Soyuz 18 (63 days, then-longest spaceflight) crews; deorbited 1977-02-03",
+  "cur": "Цивилна станица DOS-4 — угостила је посаде Soyuz 17 (29 дана) и Soyuz 18 (63 дана, тада најдужи свемирски лет); уклоњена с орбите 1977-02-03"
+ },
+ {
+  "rel": "fleet/station/salyut-4.json",
+  "at": "dispatch",
+  "en": "Salyut 4 was where the civilian station line finally found its feet. A DOS science station, it worked reliably where earlier stations had failed — hosting two crews, one for 29 days and one for 63, and carrying a solar telescope and a full science program. After the deadly start of Salyut 1 and the on-orbit failures that followed, Salyut 4 was the quiet proof that the Soviet Union could now keep a station and its crews healthy and productive for weeks at a time.",
+  "cur": "Salyut 4 је био станица на којој је цивилна линија станица коначно стала на чврсте ноге. Као DOS научна станица, радила је поуздано тамо где су претходне подбациле — угостила је две посаде, једну 29 дана, а другу 63, и носила соларни телескоп и пун научни програм. После кобног почетка Salyut 1 и кварова у орбити који су уследили, Salyut 4 био је тих доказ да Совјетски Савез сада може да одржи станицу и њене посаде здравим и продуктивним по неколико недеља узастопно."
+ },
+ {
+  "rel": "fleet/station/salyut-4.json",
+  "at": "description",
+  "en": "The fourth civilian Salyut (DOS-4), built by the Korolev bureau and operated by the Soviet civilian space programme rather than the military Almaz line. Launched 1974-12-26 on a Proton-K, Salyut 4 carried a 25-cm OST-1 solar telescope, an X-ray telescope, and a complement of life-sciences experiments. Hosted two long-duration crews: Soyuz 17 (Gubarev + Grechko, 29 days, 1975-01-11 to 1975-02-09) and Soyuz 18 (Klimuk + Sevastyanov, 63 days, 1975-05-24 to 1975-07-26, then the longest crewed spaceflight in history). A third attempt — Soyuz 18a (Lazarev + Makarov, 1975-04-05) — suffered a 21-g booster failure during launch, returning the crew safely after the highest-ever landing g-load survived by humans. Salyut 4 hosted Soyuz 20, an automated dog/biological-experiment 3-month visit, before re-entering on 1977-02-03 after 26 months.",
+  "cur": "Четврти цивилни Salyut (DOS-4), који је направио биро Корољова, а којим је управљао совјетски цивилни свемирски програм, а не војна линија Almaz. Лансиран 1974-12-26 ракетом Proton-K, Salyut 4 је носио соларни телескоп OST-1 од 25 cm, рендгенски телескоп и збирку експеримената из наука о животу. Угостио је две посаде дугог боравка: Soyuz 17 (Gubarev + Grechko, 29 дана, од 1975-01-11 до 1975-02-09) и Soyuz 18 (Klimuk + Sevastyanov, 63 дана, од 1975-05-24 до 1975-07-26, тада најдужи свемирски лет са посадом у историји). Трећи покушај — Soyuz 18a (Lazarev + Makarov, 1975-04-05) — претрпео је квар ракете-носача при лансирању уз преоптерећење од 21 g, а посада је безбедно враћена на Земљу, после највећег преоптерећења при слетању које је човек икада преживео. Salyut 4 је угостио и Soyuz 20, аутоматизовану тромесечну посету са псима и биолошким експериментима, пре него што је 1977-02-03, после 26 месеци, поново ушао у атмосферу."
+ },
+ {
+  "rel": "fleet/station/salyut-4.json",
+  "at": "best_known_for",
+  "en": "Civilian DOS-4 station — hosted Soyuz 17 (29 days) + Soyuz 18 (63 days, then-longest spaceflight) crews; deorbited 1977-02-03",
+  "cur": "Цивилна станица DOS-4 — угостила је посаде Soyuz 17 (29 дана) и Soyuz 18 (63 дана, тада најдужи свемирски лет); уклоњена с орбите 1977-02-03"
+ },
+ {
+  "rel": "fleet/station/salyut-5.json",
+  "at": "tagline",
+  "en": "Last Almaz military station — Soyuz 21 + Soyuz 24 crews; Soyuz 23 failed approach; reentered 1977-08-08 after 412 days",
+  "cur": "Последња војна станица Almaz — посаде Soyuz 21 и Soyuz 24; неуспели прилаз Soyuz 23; поново ушла у атмосферу 1977-08-08 након 412 дана"
+ },
+ {
+  "rel": "fleet/station/salyut-5.json",
+  "at": "dispatch",
+  "en": "Salyut 5 was the last of the Almaz military stations, flown in 1976 under the usual civilian disguise. Two crews were sent: the first, Soyuz 21, was evacuated early amid reports of a foul odour and a stressed crew; the second, Soyuz 24, completed a normal stay. Soon after, automated reconnaissance satellites had improved to the point that cosmonauts with cameras were no longer worth the risk, and the military Almaz line was quietly retired — leaving the future to the civilian stations.",
+  "cur": "Salyut 5 била је последња од војних станица Almaz, лансирана 1976. под уобичајеном цивилном маском. Послате су две посаде: прва, Soyuz 21, рано је евакуисана усред извештаја о непријатном мирису и исцрпљеној посади; друга, Soyuz 24, провела је на станици уобичајено време без проблема. Убрзо потом аутоматски извиђачки сателити толико су се усавршили да космонаути са камерама више нису били вредни ризика, па је војна линија Almaz тихо повучена из употребе — а будућност је препуштена цивилним станицама."
+ },
+ {
+  "rel": "fleet/station/salyut-5.json",
+  "at": "description",
+  "en": "The third and last Soviet military Almaz station. Launched 1976-06-22 on a Proton-K, Salyut 5 hosted two crews: Soyuz 21 (Volynov + Zholobov, 49 days, 1976-07-06 to 1976-08-24 — cut short by acrid odours the crew traced to a corroded film-return capsule seal) and Soyuz 24 (Gorbatko + Glazkov, 17 days, 1977-02-07 to 1977-02-25 — first cosmonauts to swap a station's atmosphere through vent + recharge). Soyuz 23 (Zudov + Rozhdestvensky, 1976-10-14) failed to dock after the Igla rendezvous system malfunctioned; the crew survived a high-water splashdown in Lake Tengiz, the only Soviet water landing. Salyut 5 was the last Almaz mission flown — the program was cancelled after the station deorbited on 1977-08-08.",
+  "cur": "Трећа и последња совјетска војна станица Almaz. Salyut 5, лансиран 22. 6. 1976. ракетом Proton-K, угостио је две посаде: Soyuz 21 (Volynov + Zholobov, 49 дана, од 1976-07-06 до 1976-08-24 — прекинуто због опорих мириса за које је посада утврдила да потичу од кородираног заптивача капсуле за враћање филма) и Soyuz 24 (Gorbatko + Glazkov, 17 дана, од 1977-02-07 до 1977-02-25 — први космонаути који су заменили атмосферу на станици испуштањем и поновним пуњењем). Soyuz 23 (Zudov + Rozhdestvensky, 1976-10-14) није успео да се споји са станицом након квара система за сусрет у орбити Igla; посада је преживела спуштање у високе таласе језера Tengiz, једино совјетско спуштање на воду. Salyut 5 био је последња летелица програма Almaz — програм је отказан након што је станица 1977-08-08 напустила орбиту."
+ },
+ {
+  "rel": "fleet/station/salyut-5.json",
+  "at": "best_known_for",
+  "en": "Last Almaz military station — Soyuz 21 + Soyuz 24 crews; Soyuz 23 failed approach; reentered 1977-08-08 after 412 days",
+  "cur": "Последња војна станица Almaz — посаде Soyuz 21 и Soyuz 24; неуспели прилаз Soyuz 23; поново ушла у атмосферу 1977-08-08 након 412 дана"
+ },
+ {
+  "rel": "fleet/station/salyut-6.json",
+  "at": "tagline",
+  "en": "First long-duration multi-port Soviet station",
+  "cur": "Прва совјетска станица за дуге боравке са више пристаништа"
+ },
+ {
+  "rel": "fleet/station/salyut-6.json",
+  "at": "dispatch",
+  "en": "Salyut 6 was the breakthrough — the station where the Soviet programme cracked permanence. Its second docking port meant an uncrewed Progress freighter could dock and pump in propellant, air, water, and supplies while a crewed Soyuz stayed attached at the other end, so the station no longer had an expiry date. It hosted crew after crew in continuous relay, set endurance records past half a year, and welcomed the first Interkosmos guests — the first people in space who were neither American nor Soviet. Every operational pattern of Mir and the ISS was rehearsed here.",
+  "cur": "Salyut 6 био је прекретница — станица на којој је совјетски програм пронашао решење за трајно присуство у свемиру. Њено друго пристаниште значило је да теретни брод Progress без посаде може да пристане и препумпа погонско гориво, ваздух, воду и залихе, док је на другом крају остајао прикачен Soyuz са посадом, па станица више није имала рок трајања. Угошћивала је посаду за посадом у непрекидној смени, поставила рекорде у издржљивости дуже од пола године и дочекала прве госте програма Interkosmos — прве људе у свемиру који нису били ни Американци ни Совјети. Сваки оперативни образац станица Mir и МСС увежбан је управо овде."
+ },
+ {
+  "rel": "fleet/station/salyut-6.json",
+  "at": "description",
+  "en": "The first multi-port Salyut, capable of receiving Progress resupply ships and rotating long-duration crews. Continuously occupied (with breaks) for nearly five years between 1977 and 1982 — the model for every modular station that followed.",
+  "cur": "Први Salyut са више пристаништа, способан да прима бродове за снабдевање Progress и да омогући смену посада за дуге боравке. Стално настањена (уз прекиде) готово пет година, између 1977. и 1982. — узор за сваку модуларну станицу која је уследила."
+ },
+ {
+  "rel": "fleet/station/salyut-6.json",
+  "at": "best_known_for",
+  "en": "First long-duration multi-port Soviet station",
+  "cur": "Прва совјетска станица за дуге боравке са више пристаништа"
+ },
+ {
+  "rel": "fleet/station/salyut-7.json",
+  "at": "tagline",
+  "en": "Last Salyut; bridge to Mir",
+  "cur": "Последњи Salyut; мост ка станици Mir"
+ },
+ {
+  "rel": "fleet/station/salyut-7.json",
+  "at": "dispatch",
+  "en": "Salyut 7 was the last Salyut and the bridge to Mir — and the setting for the hardest repair job ever attempted in orbit. In 1985, after the abandoned station fell silent, frozen, and slowly tumbling, two cosmonauts flew up, manually docked with the dead and unpowered hulk, and brought it back to life by hand, thawing it out and restarting its systems one by one. Salyut 7 carried the two-port, Progress-resupplied architecture to full maturity and handed it, essentially complete, to the modular station that would replace it.",
+  "cur": "Salyut 7 била је последња станица из серије Salyut и мост ка станици Mir — а уједно и поприште најтеже поправке која је икада покушана у орбити. Године 1985, након што је напуштена станица занемела, залеђена и почела полако да се котрља, двојица космонаута полетела су ка њој, ручно пристала уз мртву олупину без напајања и вратила је у живот властитим рукама: одмрзнули су је и један по један поново покренули њене системе. Salyut 7 довела је архитектуру са два пристана, снабдевану бродовима Progress, до пуне зрелости и предала је, у суштини заокружену, модуларној станици која ће је заменити."
+ },
+ {
+  "rel": "fleet/station/salyut-7.json",
+  "at": "description",
+  "en": "The last Salyut, in service 1982–1991. Famously revived by Vladimir Dzhanibekov and Viktor Savinykh in 1985 after losing power and tumbling — the first orbital salvage mission. Reentered uncontrolled in 1991 over Argentina.",
+  "cur": "Последња станица из серије Salyut, у служби од 1982. до 1991. Чувена по томе што су је 1985. оживели Vladimir Dzhanibekov и Viktor Savinykh након што је остала без струје и почела да се котрља — прва спасилачка мисија у орбити. Неконтролисано је ушла у атмосферу 1991. изнад Аргентине."
+ },
+ {
+  "rel": "fleet/station/salyut-7.json",
+  "at": "best_known_for",
+  "en": "Last Salyut; bridge to Mir",
+  "cur": "Последњи Salyut; мост ка станици Mir"
+ },
+ {
+  "rel": "fleet/station/skylab.json",
+  "at": "tagline",
+  "en": "First U.S. space station",
+  "cur": "Прва америчка свемирска станица"
+ },
+ {
+  "rel": "fleet/station/skylab.json",
+  "at": "dispatch",
+  "en": "Skylab was America's first space station, and one of history's great acts of improvisation — an entire orbital workshop built inside the empty hydrogen tank of a spent Saturn V upper stage. Rather than design a station from scratch, NASA converted the hardware the cancelled Moon landings had left over into a house-sized laboratory with crew quarters, a shower, and a crewed solar observatory. Nearly destroyed at launch when its sun shield tore away, it was saved by the first crew's improvised repairs and went on to prove the thing every later station assumed: that people can live and work in orbit for months, and fix their spacecraft when it breaks.",
+  "cur": "Skylab је била прва америчка свемирска станица и један од великих примера импровизације у историји — читава орбитална радионица изграђена унутар празног резервоара за водоник истрошеног горњег степена ракете Saturn V. Уместо да пројектује станицу од нуле, NASA је претворила опрему коју су отказана спуштања на Месец оставила неискоришћену у лабораторију величине куће, са просторијама за посаду, тушем и соларном опсерваторијом са посадом. Скоро уништена при лансирању када јој се откинуо штит од Сунца, спасена је импровизованим поправкама прве посаде, а затим је доказала оно што је свака каснија станица узимала здраво за готово: да људи могу месецима да живе и раде у орбити и да поправе свој летелицу када се поквари."
+ },
+ {
+  "rel": "fleet/station/skylab.json",
+  "at": "description",
+  "en": "America’s first space station, built from a Saturn V S-IVB upper stage. Three crews of three each lived aboard between 1973 and 1974, conducting solar observations and zero-g experiments. Reentered uncontrolled over Australia in 1979.",
+  "cur": "Прва америчка свемирска станица, изграђена од горњег степена S-IVB ракете Saturn V. Три посаде од по три члана живеле су на њој између 1973. и 1974. године, спроводећи осматрања Сунца и експерименте у условима нулте гравитације. Неконтролисано је поново ушла у атмосферу изнад Аустралије 1979. године."
+ },
+ {
+  "rel": "fleet/station/skylab.json",
+  "at": "best_known_for",
+  "en": "First U.S. space station",
+  "cur": "Прва америчка свемирска станица"
+ },
+ {
+  "rel": "fleet/station/tiangong-1.json",
+  "at": "tagline",
+  "en": "First Chinese space station; single-module testbed",
+  "cur": "Прва кинеска свемирска станица; једномодулно испитно возило"
+ },
+ {
+  "rel": "fleet/station/tiangong-1.json",
+  "at": "description",
+  "en": "Tiangong-1 is a space station built by CAST in China. First Chinese space station; single-module testbed. Launched in 2011, hosted two crewed visits (Shenzhou 9 in 2012 and Shenzhou 10 in 2013); contact lost March 2016 and reentered uncontrolled April 2, 2018.",
+  "cur": "Tiangong-1 је свемирска станица коју је у Кини изградио CAST. Прва кинеска свемирска станица; једномодулно испитно возило. Лансиран 2011. године, угостио је две посаде (Shenzhou 9 2012. и Shenzhou 10 2013); веза је изгубљена у марту 2016, а 2. априла 2018. неконтролисано је поново ушао у атмосферу."
+ },
+ {
+  "rel": "fleet/station/tiangong-1.json",
+  "at": "best_known_for",
+  "en": "First Chinese space station; single-module testbed",
+  "cur": "Прва кинеска свемирска станица; једномодулно испитно возило"
+ },
+ {
+  "rel": "fleet/station/tiangong-2.json",
+  "at": "tagline",
+  "en": "Second Chinese station testbed",
+  "cur": "Друга кинеска пробна свемирска станица"
+ },
+ {
+  "rel": "fleet/station/tiangong-2.json",
+  "at": "description",
+  "en": "Tiangong-2 is a space station built by CAST in China. Second Chinese station testbed. Launched in September 2016, hosted Shenzhou 11 (30-day mission, October–November 2016, China's longest crewed mission at the time) and Tianzhou-1 cargo ship (2017); deorbited July 19, 2019.",
+  "cur": "Tiangong-2 је свемирска станица коју је изградио CAST у Кини. Друга кинеска пробна свемирска станица. Лансирана је у септембру 2016. године, а угостила је Shenzhou 11 (мисија од 30 дана, октобар–новембар 2016, најдужа кинеска мисија са посадом у то време) и теретни брод Tianzhou-1 (2017); намерно је спуштена из орбите 19. јула 2019."
+ },
+ {
+  "rel": "fleet/station/tiangong-2.json",
+  "at": "best_known_for",
+  "en": "Second Chinese station testbed",
+  "cur": "Друга кинеска пробна свемирска станица"
+ },
+ {
+  "rel": "fleet/station/tiangong.json",
+  "at": "tagline",
+  "en": "China's modular space station",
+  "cur": "Кинеска модуларна свемирска станица"
+ },
+ {
+  "rel": "fleet/station/tiangong.json",
+  "at": "description",
+  "en": "China’s modular space station — Tianhe core plus Wentian and Mengtian science labs, fully assembled in October 2022 and continuously crewed since June 2022. With a mass of ~66 t and pressurised volume of ~110 m³, Tiangong is smaller than Mir (130 t) but represents China’s permanent station capability; the only currently-operational space station outside ISS.",
+  "cur": "Кинеска модуларна свемирска станица — главни модул Tianhe плус научне лабораторије Wentian и Mengtian, у потпуности склопљена у октобру 2022. и непрекидно настањена посадом од јуна 2022. Са масом од ~66 t и под притиском запремином од ~110 m³, Tiangong је мања од станице Mir (130 t), али представља кинеску способност одржавања стални свемирске станице; једина је свемирска станица у раду ван МСС-а."
+ },
+ {
+  "rel": "fleet/station/tiangong.json",
+  "at": "best_known_for",
+  "en": "China's modular space station",
+  "cur": "Кинеска модуларна свемирска станица"
+ }
+]

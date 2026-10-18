@@ -1,0 +1,1460 @@
+[
+ {
+  "rel": "fleet/engine/rs-25.json",
+  "at": "description",
+  "en": "The RS-25 was the engine the Space Shuttle Main Engine program spent a decade perfecting: a staged-combustion cycle on LOX and LH2 that could throttle, restart, and be refurbished for the next flight. Over 135 Shuttle missions from April 1981 it accumulated a near-perfect operational record. The engines were recovered, inspected, and reflown — an ambition that no earlier rocket engine had achieved at this power level. After the Shuttle retired, the inventory was requalified and repurposed for NASA's Space Launch System, where RS-25s now power SLS's core stage.",
+  "cur": "O RS-25 foi o motor que o programa Space Shuttle Main Engine levou uma década para aperfeiçoar: um ciclo de combustão em estágios com LOX e LH2 que podia variar a potência, reiniciar e ser recondicionado para o próximo voo. Em mais de 135 missões do Shuttle, a partir de abril de 1981, acumulou um histórico operacional quase perfeito. Os motores foram recuperados, inspecionados e reflorados — uma conquista que nenhum motor de foguete anterior havia alcançado neste nível de potência. Após a aposentadoria do Shuttle, o inventário foi requalificado e repurposado para o Space Launch System da NASA, onde os RS-25s agora impulsionam o estágio central do SLS."
+ },
+ {
+  "rel": "fleet/engine/rs-25.json",
+  "at": "best_known_for",
+  "en": "Reusable staged-combustion engine — 135 Shuttle flights, now flies on SLS",
+  "cur": "Motor de combustão em estágios reutilizável — 135 voos do Shuttle, agora voa no SLS"
+ },
+ {
+  "rel": "fleet/engine/vikas.json",
+  "at": "tagline",
+  "en": "India's licensed Viking — three decades powering PSLV and GSLV",
+  "cur": "Foguete Viking licenciado pela Índia — três décadas impulsionando PSLV e GSLV"
+ },
+ {
+  "rel": "fleet/engine/vikas.json",
+  "at": "description",
+  "en": "The Vikas traces directly to the French Viking engine: ISRO licensed the design in the 1970s and indigenised it at the Liquid Propulsion Systems Centre, adapting it for Indian manufacturing and progressively increasing performance through successive marks. Running a gas-generator cycle on nitrogen tetroxide and UDMH, Vikas first flew in September 1993 on PSLV and has since become the core liquid stage for PSLV, GSLV, and LVM3. It is the engine that powered Chandrayaan-1 to lunar orbit, Mangalyaan to Mars, and the Chandrayaan-3 mission that put Vikram on the Moon's south polar region.",
+  "cur": "O Vikas descende diretamente do motor francês Viking: a ISRO licenciou o projeto nos anos 1970 e o nacionalizou no Liquid Propulsion Systems Centre, adaptando-o à fabricação indiana e aumentando progressivamente o desempenho através de sucessivas versões. Operando em ciclo de gerador de gás com tetróxido de nitrogênio e UDMH, o Vikas fez seu primeiro voo em setembro de 1993 no PSLV e desde então tornou-se o motor do estágio líquido central do PSLV, GSLV e LVM3. É o motor que impulsionou Chandrayaan-1 até a órbita lunar, Mangalyaan até Marte, e a missão Chandrayaan-3 que colocou Vikram na região polar sul da Lua."
+ },
+ {
+  "rel": "fleet/engine/vikas.json",
+  "at": "best_known_for",
+  "en": "India's workhorse — powers PSLV, GSLV and LVM3 to this day",
+  "cur": "Cavalo de batalha da Índia — impulsiona PSLV, GSLV e LVM3 até hoje"
+ },
+ {
+  "rel": "fleet/engine/viking.json",
+  "at": "tagline",
+  "en": "The French engine that became India's workhorse",
+  "cur": "O motor francês que se tornou a espinha dorsal da Índia"
+ },
+ {
+  "rel": "fleet/engine/viking.json",
+  "at": "description",
+  "en": "The Viking engine, developed by SEP in France for CNES and ESA, powered the first through fourth generations of the Ariane family from Ariane 1's inaugural launch on 24 December 1979. It burns nitrogen tetroxide and UH25 — a nitrogen-hydrazine blend — in a gas-generator cycle, a hypergolic propellant combination that trades efficiency for room-temperature storability and ignition simplicity. The Viking's most consequential second act came when ISRO licensed the design from France in the 1970s and developed it into the Vikas engine, which still flies on Indian launch vehicles today. One French engine design seeded two nations' access to space.",
+  "cur": "O motor Viking, desenvolvido pela SEP na França para a CNES e a ESA, alimentou a primeira até a quarta geração da família Ariane, começando com o lançamento inaugural da Ariane 1 em 24 de dezembro de 1979. Queima tetróxido de nitrogênio e UH25 — uma mistura de nitrogênio e hidrazina — em um ciclo de gerador de gás, uma combinação de propelente hipergólica que troca eficiência por armazenamento em temperatura ambiente e simplicidade de ignição. O segundo ato mais consequente do Viking ocorreu quando a ISRO licenciou o projeto da França na década de 1970 e o desenvolveu no motor Vikas, que ainda voa em veículos lançadores indianos atualmente. Um projeto de motor francês abriu o caminho para o acesso ao espaço de duas nações."
+ },
+ {
+  "rel": "fleet/engine/viking.json",
+  "at": "best_known_for",
+  "en": "The French engine later licensed to India as Vikas — powered Ariane 1–4",
+  "cur": "O motor francês posteriormente licenciado à Índia como Vikas — alimentou Ariane 1–4"
+ },
+ {
+  "rel": "fleet/engine/vulcain-2.json",
+  "at": "tagline",
+  "en": "Europe's hydrogen core engine — every Ariane 5 depended on it",
+  "cur": "O motor de núcleo de hidrogênio europeu — todo Ariane 5 dependia dele"
+ },
+ {
+  "rel": "fleet/engine/vulcain-2.json",
+  "at": "description",
+  "en": "Vulcain 2 was the engine Europe built to achieve independent access to geostationary orbit. Developed by Snecma under ESA's Ariane 5 program, it runs a gas-generator cycle on LOX and LH2, powering the cryogenic main stage from liftoff through main-engine cutoff while the solid boosters do the heavy lifting of the first minutes. Its December 2002 debut was lost to a nozzle-cooling failure that destroyed the vehicle; after redesign it flew successfully from 2005 and became the reliable heart of Ariane 5 through the rocket's final flight in July 2023, placing satellites and interplanetary probes — including JWST — on their trajectories.",
+  "cur": "Vulcain 2 era o motor que a Europa construiu para alcançar acesso independente à órbita geoestacionária. Desenvolvido pela Snecma sob o programa Ariane 5 da ESA, ele opera em ciclo de gerador de gás com LOX e LH2, alimentando o estágio principal criogênico desde o lançamento até o corte de motor principal enquanto os impulsores sólidos fazem o trabalho pesado dos primeiros minutos. Seu estreia em dezembro de 2002 foi perdida por uma falha de resfriamento do bocal que destruiu o veículo; após redesenho, voou com sucesso a partir de 2005 e tornou-se o coração confiável do Ariane 5 durante o voo final do foguete em julho de 2023, colocando satélites e sondas interplanetárias — incluindo JWST — em suas trajetórias."
+ },
+ {
+  "rel": "fleet/engine/vulcain-2.json",
+  "at": "best_known_for",
+  "en": "Europe's hydrogen core engine — powered every Ariane 5",
+  "cur": "O motor de núcleo de hidrogênio europeu — alimentou todo Ariane 5"
+ },
+ {
+  "rel": "fleet/engine/yf-100.json",
+  "at": "tagline",
+  "en": "China's staged-combustion kerolox engine, powering the new generation",
+  "cur": "Motor kerolox de combustão em estágios da China, impulsionando a nova geração"
+ },
+ {
+  "rel": "fleet/engine/yf-100.json",
+  "at": "description",
+  "en": "The YF-100 is the engine that moved China's launch capability into the performance tier that Russia and the United States had occupied for decades. Developed by AALPT in Xi'an, it applies oxygen-rich staged combustion to LOX and RP-1 — the thermodynamic cycle that extracts the most energy from kerosene propellants — and first flew on 20 September 2015. Two YF-100s power the core stage of Long March 5, China's heaviest operational rocket, and clustered variants fly on Long March 6 and Long March 7. The YF-100 underpins China's lunar program, its space station resupply, and its growing commercial launch cadence.",
+  "cur": "O YF-100 é o motor que elevou a capacidade de lançamento da China ao nível de desempenho que Rússia e Estados Unidos ocupavam há décadas. Desenvolvido pela AALPT em Xi'an, ele aplica combustão em estágios enriquecida em oxigênio ao LOX e RP-1 — o ciclo termodinâmico que extrai a máxima energia dos propelentes de querosene — e voou pela primeira vez em 20 de setembro de 2015. Dois YF-100s impulsionam o estágio central do Long March 5, o foguete operacional mais pesado da China, e variantes agrupadas voam no Long March 6 e Long March 7. O YF-100 sustenta o programa lunar da China, seu abastecimento de estação espacial e seu crescente cadência de lançamentos comerciais."
+ },
+ {
+  "rel": "fleet/engine/yf-100.json",
+  "at": "best_known_for",
+  "en": "China's modern staged-combustion kerolox engine — Long March 5/6/7",
+  "cur": "Motor kerolox moderno de combustão em estágios da China — Long March 5/6/7"
+ },
+ {
+  "rel": "fleet/engine/yf-77.json",
+  "at": "tagline",
+  "en": "China's first large hydrogen engine — Long March 5's foundation",
+  "cur": "Primeiro grande motor de hidrogênio da China — a base do Long March 5"
+ },
+ {
+  "rel": "fleet/engine/yf-77.json",
+  "at": "description",
+  "en": "The YF-77 is China's first large-scale cryogenic engine burning LOX and LH2, ending a multi-decade dependence on storable hypergolic propellants for core stages. Developed by AALPT and running a gas-generator cycle, two YF-77s power Long March 5's central core, providing the efficiency boost that made lunar-return and space-station-module missions achievable without a prohibitively large rocket. It first flew on 3 November 2016, and the early flights were not without difficulty — a YF-77 anomaly grounded Long March 5 for nearly three years before engineers identified and resolved the failure mode.",
+  "cur": "O YF-77 é o primeiro motor criogênico de grande escala da China que queima LOX e LH2, encerrando uma dependência de múltiplas décadas de propelentes hipergólicos estocáveis para estágios centrais. Desenvolvido pela AALPT e operando em ciclo de gerador de gás, dois YF-77s alimentam o núcleo central do Long March 5, fornecendo o aumento de eficiência que tornou possíveis missões de retorno lunar e módulos de estação espacial sem um foguete proibitivamente grande. Ele voou pela primeira vez em 3 de novembro de 2016, e os primeiros voos não ocorreram sem dificuldades — uma anomalia do YF-77 imobilizou o Long March 5 por quase três anos antes que os engenheiros identificassem e resolvessem o modo de falha."
+ },
+ {
+  "rel": "fleet/engine/yf-77.json",
+  "at": "best_known_for",
+  "en": "China's first large hydrogen engine — the Long March 5 core",
+  "cur": "Primeiro grande motor de hidrogênio da China — o núcleo do Long March 5"
+ },
+ {
+  "rel": "fleet/lander/beagle2.json",
+  "at": "tagline",
+  "en": "UK/ESA Mars lander from Mars Express (2003). Silent on arrival; HiRISE found it intact in 2015 — a solar panel had failed to deploy",
+  "cur": "Sonda marciana UK/ESA de Mars Express (2003). Silenciosa na chegada; HiRISE a encontrou intacta em 2015 — um painel solar não se abriu"
+ },
+ {
+  "rel": "fleet/lander/beagle2.json",
+  "at": "description",
+  "en": "A 33-kg UK-led Mars lander released from ESA's Mars Express on 2003-12-19, six days before its planned 2003-12-25 landing at Isidis Planitia. Beagle 2 (named after HMS Beagle which carried Darwin) carried a clamshell payload of a Gas Analysis Package mass spectrometer for atmospheric + sub-surface volatiles, a stereo camera, a microscope, a Mössbauer + APX spectrometer pair, and a mole drill. It went silent at separation and was presumed crashed for 12 years — until 2015-01, when high-resolution HiRISE imagery from Mars Reconnaissance Orbiter clearly showed Beagle 2 sitting on the Martian surface (~5 km from its target), with one of four solar panels (petals) failing to fully deploy, preventing the antenna from clearing the housing and collecting enough power. So: a successful landing, an unsuccessful deployment, and a 12-year mystery solved by the same kind of imagery that LRO uses for the Moon.",
+  "cur": "Uma sonda marciana de 33 kg liderada pelo UK, liberada da Mars Express da ESA em 2003-12-19, seis dias antes do seu pouso planejado em 2003-12-25 em Isidis Planitia. Beagle 2 (nomeada após HMS Beagle que transportava Darwin) carregava um conjunto de instrumentos em concha com um espectrômetro de massa do Gas Analysis Package para voláteis atmosféricos e subsuperficiais, câmera estéreo, microscópio, um par de espectrômetro Mössbauer + APX, e uma broca tipo toupeira. Ficou silenciosa na separação e foi presumida acidentada por 12 anos — até 2015-01, quando imagens de alta resolução da HiRISE do Mars Reconnaissance Orbiter mostraram claramente Beagle 2 sobre a superfície marciana (~5 km de seu alvo), com um de quatro painéis solares (pétalas) falhando em se abrir completamente, impedindo a antena de sair do compartimento e coletar energia suficiente. Assim: um pouso bem-sucedido, um desdobramento malsucedido, e um mistério de 12 anos resolvido pelo mesmo tipo de imagem que LRO usa para a Lua."
+ },
+ {
+  "rel": "fleet/lander/beagle2.json",
+  "at": "best_known_for",
+  "en": "UK/ESA Mars lander — landed 2003, silent for 12 years, found by HiRISE 2015",
+  "cur": "Sonda marciana UK/ESA — pousou em 2003, silenciosa por 12 anos, encontrada por HiRISE em 2015"
+ },
+ {
+  "rel": "fleet/lander/beresheet.json",
+  "at": "tagline",
+  "en": "First private lunar landing attempt",
+  "cur": "Primeira tentativa privada de pouso lunar"
+ },
+ {
+  "rel": "fleet/lander/beresheet.json",
+  "at": "description",
+  "en": "The first private lunar landing attempt, by Israel’s SpaceIL nonprofit. Crashed in April 2019 when an IMU gyroscope failure triggered repeated computer reboots, each shutting the engine down; by the time control was recovered, the lander was too low and fast to survive. Demonstrated that landing on the Moon is much harder than reaching it.",
+  "cur": "A primeira tentativa privada de pouso lunar, pela organização sem fins lucrativos israelense SpaceIL. Colidiu em abril de 2019 quando uma falha no giroscópio do IMU desencadeou reinicializações repetidas do computador, cada uma desligando o motor; no momento em que o controle foi recuperado, o módulo de pouso estava muito baixo e rápido para sobreviver. Demonstrou que pousar na Lua é muito mais difícil do que chegar lá."
+ },
+ {
+  "rel": "fleet/lander/beresheet.json",
+  "at": "best_known_for",
+  "en": "First private lunar landing attempt",
+  "cur": "Primeira tentativa privada de pouso lunar"
+ },
+ {
+  "rel": "fleet/lander/blue-moon-mk1.json",
+  "at": "tagline",
+  "en": "Blue Origin's first-generation lunar cargo lander — single-stage hydrogen / oxygen vehicle, ~3 t to the surface",
+  "cur": "Primeiro pouso lunar da Blue Origin — veículo de estágio único com hidrogênio/oxigênio, ~3 t até a superfície"
+ },
+ {
+  "rel": "fleet/lander/blue-moon-mk1.json",
+  "at": "description",
+  "en": "Single-stage cryogenic lander built around the LH₂ / LOX BE-7 engine. Mk1 is the cargo-only precursor to the much larger Mk2 crewed Artemis HLS variant; both share the BE-7 propulsion and hydrogen-based reusability architecture. The first crewed lunar flight to carry Blue Moon Mk1 has not yet launched, with first landing currently planned no earlier than 2026. Cargo Mk1 will deliver up to ~3000 kg to the lunar surface; the crewed Mk2 derivative anchored Blue Origin's HLS contract awarded by NASA in 2023 as the second Artemis-era human lander alongside SpaceX Starship HLS.",
+  "cur": "Pouso lunar criogênico de estágio único construído em torno do motor BE-7 (LH₂/LOX). O Mk1 é o precursor apenas para carga da variante Artemis HLS Mk2 muito maior com tripulação; ambos compartilham a propulsão BE-7 e a arquitetura de reusabilidade baseada em hidrogênio. O primeiro voo lunar com tripulação para transportar o Blue Moon Mk1 ainda não foi lançado, com o primeiro pouso atualmente planejado para não antes de 2026. O Mk1 de carga entregará até ~3000 kg na superfície lunar; a derivação Mk2 com tripulação ancoroucontrato HLS da Blue Origin concedido pela NASA em 2023 como o segundo pouso humano na era Artemis ao lado do SpaceX Starship HLS."
+ },
+ {
+  "rel": "fleet/lander/blue-moon-mk1.json",
+  "at": "best_known_for",
+  "en": "Blue Origin cargo lunar lander — BE-7 hydrogen propulsion, ~3 t to the surface, NASA CLPS",
+  "cur": "Pouso lunar de carga da Blue Origin — propulsão de hidrogênio BE-7, ~3 t até a superfície, NASA CLPS"
+ },
+ {
+  "rel": "fleet/lander/change-3.json",
+  "at": "tagline",
+  "en": "First Chinese lunar lander",
+  "cur": "Primeiro módulo lunar chinês"
+ },
+ {
+  "rel": "fleet/lander/change-3.json",
+  "at": "description",
+  "en": "China’s first lunar lander (December 2013), carrying the Yutu rover. Mare Imbrium touchdown — the first soft landing on the Moon since Luna 24 in 1976.",
+  "cur": "O primeiro módulo lunar da China (dezembro de 2013), transportando o veículo Yutu. Mare Imbrium touchdown — o primeiro pouso suave na Lua desde Luna 24 em 1976."
+ },
+ {
+  "rel": "fleet/lander/change-3.json",
+  "at": "best_known_for",
+  "en": "First Chinese lunar lander",
+  "cur": "Primeiro módulo lunar chinês"
+ },
+ {
+  "rel": "fleet/lander/change-4.json",
+  "at": "tagline",
+  "en": "First soft landing on lunar far side",
+  "cur": "Primeiro pouso suave no lado lunar distante"
+ },
+ {
+  "rel": "fleet/lander/change-4.json",
+  "at": "description",
+  "en": "The first soft landing on the lunar far side (January 2019). Required a relay satellite (Queqiao) at Earth-Moon L2 to maintain communications. Yutu-2 has since roamed the Von Kármán crater terrain for years.",
+  "cur": "O primeiro pouso suave na face oculta da Lua (janeiro de 2019). Necessitou de um satélite retransmissor (Queqiao) no ponto Terra-Lua L2 para manter comunicações. Yutu-2 desde então explorou o terreno da cratera Von Kármán por anos."
+ },
+ {
+  "rel": "fleet/lander/change-4.json",
+  "at": "best_known_for",
+  "en": "First soft landing on lunar far side",
+  "cur": "Primeiro pouso suave no lado lunar distante"
+ },
+ {
+  "rel": "fleet/lander/change-5.json",
+  "at": "tagline",
+  "en": "First lunar sample return since 1976",
+  "cur": "Primeiro retorno de amostras lunares desde 1976"
+ },
+ {
+  "rel": "fleet/lander/change-5.json",
+  "at": "description",
+  "en": "The first lunar sample return since Luna 24 in 1976. Returned 1.731 kg of basalt from a region 1.2 billion years younger than the Apollo and Luna samples — extending the timeline of recent lunar volcanism.",
+  "cur": "O primeiro retorno de amostras lunares desde Luna 24 em 1976. Retornou 1.731 kg de basalto de uma região 1.2 bilhões de anos mais jovem que as amostras do Apollo e Luna — estendendo a linha do tempo do vulcanismo lunar recente."
+ },
+ {
+  "rel": "fleet/lander/change-5.json",
+  "at": "best_known_for",
+  "en": "First lunar sample return since 1976",
+  "cur": "Primeiro retorno de amostras lunares desde 1976"
+ },
+ {
+  "rel": "fleet/lander/change6.json",
+  "at": "tagline",
+  "en": "First-ever lunar far-side sample return. Apollo basin landing 2024-06-01 (UTC); 1935 g returned to Inner Mongolia 2024-06-25",
+  "cur": "Primeira coleta de amostras do lado oculto da Lua. Pouso na bacia de Apollo em 2024-06-01; 1935 g retornados em 2024-06-25"
+ },
+ {
+  "rel": "fleet/lander/change6.json",
+  "at": "description",
+  "en": "The first-ever sample-return mission from the lunar far side — a 53-year-after-Apollo landmark that no other space agency has yet attempted. Launched 2024-05-03 on a Long March 5 from Wenchang, Chang'e 6 used the Queqiao-2 relay satellite (positioned in a halo orbit around Earth-Moon L2 since March 2024) to communicate with Earth across the lunar limb. The lander touched down in the Apollo basin within the giant South Pole-Aitken impact basin (-153.99° W, -41.64° S) on 2024-06-01 (UTC, 2024-06-02 Beijing time). Its drill + scoop collected ~1935 g of regolith from a region that has remained largely undisturbed since the basin-forming impact ~4.3 billion years ago — material from the lunar mantle excavated by SPA. The ascender lifted off 2024-06-03, rendezvoused with the orbiter in lunar orbit, and the return capsule landed in Siziwang Banner, Inner Mongolia, on 2024-06-25 14:07 local time. France, Italy, Sweden, and Pakistan contributed instruments — the first international science payloads on a Chinese sample-return mission.",
+  "cur": "A primeira missão de retorno de amostras do lado oculto da Lua — um marco 53 anos após o Apollo que nenhuma outra agência espacial ainda tentou. Lançada em 2024-05-03 em um Long March 5 de Wenchang, a Chang'e 6 utilizou o satélite relê Queqiao-2 (posicionado em uma órbita de halo ao redor do L2 Terra-Lua desde março de 2024) para se comunicar com a Terra através do limbo lunar. O módulo de pouso desceu na bacia de Apollo dentro da gigantesca bacia de impacto do Pólo Sul-Aitken (-153,99° W, -41,64° S) em 2024-06-01 (UTC, 2024-06-02 horário de Pequim). Sua broca + colher coletaram ≈1935 g de regolito de uma região que permaneceu amplamente intacta desde o impacto formador da bacia ~4,3 bilhões de anos atrás — material do manto lunar escavado pela SPA. O ascensor decolou em 2024-06-03, realizou rendezvous com o orbitador em órbita lunar, e a cápsula de retorno pousou em Siziwang Banner, Mongólia Interior, em 2024-06-25 14:07 hora local. França, Itália, Suécia e Paquistão contribuíram com instrumentos — os primeiros cargas úteis científicas internacionais em uma missão chinesa de retorno de amostras."
+ },
+ {
+  "rel": "fleet/lander/change6.json",
+  "at": "best_known_for",
+  "en": "First-ever lunar far-side sample return. Apollo basin landing 2024-06-02; 1935 g returned to Inner Mongolia 2024-06-25",
+  "cur": "Primeira coleta de amostras do lado oculto da Lua. Pouso na bacia de Apollo em 2024-06-02; 1935 g retornados em 2024-06-25"
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "tagline",
+  "en": "First private Japanese lunar lander; M1 + M2 both crashed",
+  "cur": "Primeiro módulo lunar japonês privado; M1 + M2 ambos caíram"
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "description",
+  "en": "Hakuto-R program is a planetary lander built by ispace in Japan. First private Japanese lunar lander; M1 + M2 both crashed. Flew in 2023 but failed; informs the redemption-arc layer of the commercial era epoch.",
+  "cur": "O programa Hakuto-R é um módulo planetário construído pelo ispace no Japão. Primeiro módulo lunar japonês privado; M1 + M2 ambos caíram. Voou em 2023, mas falhou; informa a camada de resgate-arco da época comercial."
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "best_known_for",
+  "en": "First private Japanese lunar lander; M1 + M2 both crashed",
+  "cur": "Primeiro módulo lunar japonês privado; M1 + M2 ambos caíram"
+ },
+ {
+  "rel": "fleet/lander/im-1-odysseus.json",
+  "at": "tagline",
+  "en": "First U.S. lunar landing since Apollo; sideways",
+  "cur": "Primeiro pouso lunar dos EUA desde o Apollo; de lado"
+ },
+ {
+  "rel": "fleet/lander/im-1-odysseus.json",
+  "at": "description",
+  "en": "The first US lunar landing since Apollo 17 in 1972. Touched down sideways near the lunar south pole on 2024-02-22 (the primary laser rangefinder had been left inactive — safety switch not armed pre-launch); operated briefly before sunset.",
+  "cur": "O primeiro pouso lunar dos EUA desde o Apollo 17 em 1972. Pousou de lado perto do pólo sul lunar em 2024-02-22 (o telêmetro a laser principal havia sido deixado inativo — a chave de segurança não foi ativada antes do lançamento); operou brevemente antes do anoitecer."
+ },
+ {
+  "rel": "fleet/lander/im-1-odysseus.json",
+  "at": "best_known_for",
+  "en": "First U.S. lunar landing since Apollo; sideways",
+  "cur": "Primeiro pouso lunar dos EUA desde o Apollo; de lado"
+ },
+ {
+  "rel": "fleet/lander/insight.json",
+  "at": "tagline",
+  "en": "Mars seismometer; 1300+ marsquakes detected",
+  "cur": "Sismómetro de Marte; mais de 1300 marsismos detectados"
+ },
+ {
+  "rel": "fleet/lander/insight.json",
+  "at": "description",
+  "en": "NASA’s 2018–2022 Mars seismometer mission. Detected over 1,300 marsquakes, mapped the planet’s internal structure for the first time, and confirmed the existence of a large molten core. Ended when dust accumulation on its solar panels finally starved its power.",
+  "cur": "Missão de sismômetro Marte 2018-2022 da NASA. Detectaram mais de 1.300 marsquakes, mapearam a estrutura interna do planeta pela primeira vez, e confirmaram a existência de um grande núcleo fundido. Terminou quando a acumulação de poeira nos seus painéis solares finalmente passou fome."
+ },
+ {
+  "rel": "fleet/lander/insight.json",
+  "at": "best_known_for",
+  "en": "Mars seismometer; 1300+ marsquakes detected",
+  "cur": "Sismómetro de Marte; mais de 1300 marsismos detectados"
+ },
+ {
+  "rel": "fleet/lander/luna-16.json",
+  "at": "tagline",
+  "en": "First robotic lunar sample return",
+  "cur": "Primeiro retorno da amostra lunar robótica"
+ },
+ {
+  "rel": "fleet/lander/luna-16.json",
+  "at": "description",
+  "en": "Built by NPO Lavochkin, Luna 16 achieved the first fully robotic lunar sample return, bringing 101 g of soil back to Earth in September 1970.",
+  "cur": "Construída pela NPO Lavochkin, a Luna 16 realizou o primeiro retorno totalmente robótico de amostra lunar, trazendo 101 g de solo de volta à Terra em setembro de 1970."
+ },
+ {
+  "rel": "fleet/lander/luna-16.json",
+  "at": "best_known_for",
+  "en": "First robotic lunar sample return",
+  "cur": "Primeiro retorno da amostra lunar robótica"
+ },
+ {
+  "rel": "fleet/lander/luna-9.json",
+  "at": "tagline",
+  "en": "First soft landing on another world",
+  "cur": "Primeiro pouso suave em outro mundo"
+ },
+ {
+  "rel": "fleet/lander/luna-9.json",
+  "at": "description",
+  "en": "The first soft landing on another world. Touched down on Oceanus Procellarum in February 1966, returning the first photographs from the lunar surface — a panorama of the cratered landscape just centimeters from the lander’s eye.",
+  "cur": "O primeiro pouso suave em outro mundo. Atingido em Oceanus Procellarum em fevereiro de 1966, retornando as primeiras fotografias da superfície lunar — um panorama da paisagem craterada a apenas centímetros do olho do módulo."
+ },
+ {
+  "rel": "fleet/lander/luna-9.json",
+  "at": "best_known_for",
+  "en": "First soft landing on another world",
+  "cur": "Primeiro pouso suave em outro mundo"
+ },
+ {
+  "rel": "fleet/lander/luna24.json",
+  "at": "tagline",
+  "en": "Last successful Soviet Moon mission — returned 170 g of Mare Crisium regolith 1976-08-22; last lunar sample return until Chang'e 5",
+  "cur": "Última missão soviética bem-sucedida na Lua — retornou 170 g de regolito de Mare Crisium em 1976-08-22; último retorno até Chang'e 5"
+ },
+ {
+  "rel": "fleet/lander/luna24.json",
+  "at": "best_known_for",
+  "en": "Last successful Soviet Moon mission — returned 170 g of Mare Crisium regolith 1976-08-22; last lunar sample return until Chang'e 5",
+  "cur": "Última missão lunar soviética bem-sucedida — retornou 170 g de regolito de Mare Crisium em 1976-08-22; último retorno de amostra lunar até Chang'e 5"
+ },
+ {
+  "rel": "fleet/lander/luna24.json",
+  "at": "description",
+  "en": "The last successful Soviet Moon mission and the last sample-return lunar lander until Chang'e 5 in 2020 — a 44-year gap. Launched 1976-08-09 from Baikonur on a Proton-K, Luna 24 soft-landed in Mare Crisium (12.7° N, 62.2° E) on 1976-08-18, drilled to a depth of 2.25 m using its rotary-percussive drill, retrieved a 1.6 m core sample, and lifted off the ascent stage which returned 170.1 g of lunar regolith to western Siberia (~200 km southeast of Surgut) on 1976-08-22. Soviet scientists at the Vernadsky Institute confirmed the presence of water (~0.1 % by mass) in the samples in a 1978 paper that was largely ignored in the West until LCROSS and Chandrayaan-1 (2008-09) re-confirmed lunar water.",
+  "cur": "A última missão lunar soviética bem-sucedida e o último pouso com retorno de amostra lunar até Chang'e 5 em 2020 — uma lacuna de 44 anos. Lançado em 1976-08-09 de Baikonur em um Proton-K, Luna 24 pousou suavemente em Mare Crisium (12,7° N, 62,2° L) em 1976-08-18, perfurou a uma profundidade de 2,25 m usando sua broca rotatória percussiva, recuperou uma amostra de núcleo de 1,6 m, e o estágio de ascensão decolou retornando 170,1 g de regolito lunar para a Sibéria ocidental (~200 km sudeste de Surgut) em 1976-08-22. Cientistas soviéticos do Instituto Vernadsky confirmaram a presença de água (~0,1 % em massa) nas amostras em um artigo de 1978 que foi amplamente ignorado no Ocidente até LCROSS e Chandrayaan-1 (2008-09) reconfirmarem a água lunar."
+ },
+ {
+  "rel": "fleet/lander/mars-2.json",
+  "at": "tagline",
+  "en": "First human-made object to reach Mars surface; lander crashed (1971)",
+  "cur": "Primeiro objeto feito pelo homem a atingir a superfície de Marte; módulo de pouso colidiu (1971)"
+ },
+ {
+  "rel": "fleet/lander/mars-2.json",
+  "at": "description",
+  "en": "The first human-made object to reach the Martian surface — by hard impact. The descent module crashed during the 1971 dust storm that obscured every other Mars probe in orbit at the time. Companion Mars 3 made the first soft landing two days later.",
+  "cur": "O primeiro objeto feito pelo homem a atingir a superfície marciana — por impacto direto. O módulo de descida colidiu durante a tempestade de poeira de 1971 que obscureceu todas as outras sondas de Marte em órbita na época. A sonda companheira Mars 3 realizou o primeiro pouso suave dois dias depois."
+ },
+ {
+  "rel": "fleet/lander/mars-2.json",
+  "at": "best_known_for",
+  "en": "First human-made object to reach the Martian surface; lander crashed on impact (1971)",
+  "cur": "Primeiro objeto feito pelo homem a atingir a superfície marciana; módulo de pouso colidiu no impacto (1971)"
+ },
+ {
+  "rel": "fleet/lander/mars-3.json",
+  "at": "tagline",
+  "en": "First soft landing on Mars; ~20 s of surface transmission",
+  "cur": "Primeiro pouso suave em Marte; ~20 s de transmissão de superfície"
+ },
+ {
+  "rel": "fleet/lander/mars-3.json",
+  "at": "description",
+  "en": "The first soft landing on Mars (December 1971). Began transmitting what would have been a surface image, but contact was lost after ~20 seconds leaving only a featureless grey frame. The global dust storm raging across the planet may have contributed to the early transmission loss.",
+  "cur": "O primeiro pouso suave em Marte (dezembro de 1971). Começou a transmitir o que teria sido uma imagem de superfície, mas o contato foi perdido após ~20 segundos deixando apenas um quadro cinzento featureless. A tempestade de poeira global que assolava o planeta pode ter contribuído para a perda precoce de transmissão."
+ },
+ {
+  "rel": "fleet/lander/mars-3.json",
+  "at": "best_known_for",
+  "en": "First soft landing on Mars; ~20 s of surface transmission",
+  "cur": "Primeiro pouso suave em Marte; ~20 s de transmissão de superfície"
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "tagline",
+  "en": "Lost on landing; drove faster-better-cheaper review",
+  "cur": "Perdido no desembarque; dirigiu mais rápido-melhor-revisão"
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "description",
+  "en": "Mars Polar Lander is a planetary lander built by Lockheed Martin in USA. Lost on landing; drove faster-better-cheaper review. Flew in 1999 but failed; informs the redemption-arc layer of the Shuttle and Mir epoch.",
+  "cur": "Mars Polar Lander é um módulo planetário construído pela Lockheed Martin nos EUA. Perdido na aterrissagem; dirigiu mais rápido-melhor-revisão barato. Voou em 1999, mas falhou; informa a camada do arco de redenção do vaivém e da época da Mir."
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "best_known_for",
+  "en": "Lost on landing; drove faster-better-cheaper review",
+  "cur": "Perdido no desembarque; dirigiu mais rápido-melhor-revisão"
+ },
+ {
+  "rel": "fleet/lander/mars6.json",
+  "at": "tagline",
+  "en": "Soviet 1973 Mars lander — first descent telemetry from Mars atmosphere (224 s, mostly corrupted)",
+  "cur": "Módulo de pouso soviético de Marte, 1973 — primeira telemetria de descida na atmosfera de Marte (224 s, em sua maior parte corrompida)"
+ },
+ {
+  "rel": "fleet/lander/mars6.json",
+  "at": "description",
+  "en": "Part of the Soviet four-spacecraft Mars wave of 1973 (Mars 4, 5, 6, 7) — and the only one to return useful science from a descent through Mars' atmosphere. Launched 1973-08-05 from Baikonur on a Proton-K, arrived 1974-03-12. The descent module separated from the flyby bus, entered the Martian atmosphere over Margaritifer Terra (23.90° S, 19.42° W), and returned 224 seconds of direct atmospheric telemetry — the first in-situ measurements of Mars' atmospheric temperature, pressure, and composition profile. However, due to a design flaw in the mass spectrometer's data system, a large amount of the data was corrupted and only partially recoverable. Signal was lost just before landing, during retrorocket firing; whether the lander crashed or survived to the surface is unknown. The flyby bus continued past Mars and acted as a relay station.",
+  "cur": "Parte da onda de quatro sondas soviéticas para Marte em 1973 (Mars 4, 5, 6, 7) — e a única a retornar ciência útil de uma descida pela atmosfera marciana. Lançada em 1973-08-05 de Baikonur em um Proton-K, chegou em 1974-03-12. O módulo de descida se separou do ônibus de sobrevoo, entrou na atmosfera marciana sobre Margaritifer Terra (23,90° S, 19,42° O), e retornou 224 segundos de telemetria atmosférica direta — as primeiras medições in situ do perfil de temperatura, pressão e composição da atmosfera de Marte. No entanto, devido a um defeito de design no sistema de dados do espectrômetro de massa, uma grande quantidade de dados foi corrompida e apenas parcialmente recuperável. O sinal foi perdido pouco antes do pouso, durante o disparo do foguete de retropropulsão; desconhece-se se o lander colidiu ou sobreviveu à superfície. O ônibus de sobrevoo continuou além de Marte e funcionou como uma estação de retransmissão."
+ },
+ {
+  "rel": "fleet/lander/mars6.json",
+  "at": "best_known_for",
+  "en": "Soviet 1973 Mars lander — first descent telemetry from Mars atmosphere (224 s, mostly corrupted)",
+  "cur": "Lander soviético de Marte 1973 — primeira telemetria de descida da atmosfera de Marte (224 s, em sua maioria corrompida)"
+ },
+ {
+  "rel": "fleet/lander/phoenix.json",
+  "at": "tagline",
+  "en": "Confirmed water ice in Martian soil",
+  "cur": "Confirmado gelo de água em solo marciano"
+ },
+ {
+  "rel": "fleet/lander/phoenix.json",
+  "at": "description",
+  "en": "Phoenix is a planetary lander built by Lockheed Martin in USA. Confirmed water ice in Martian soil. Retired after first flight in 2008.",
+  "cur": "Phoenix é um módulo planetário construído pela Lockheed Martin nos EUA. Confirmado gelo de água em solo marciano. Aposentado após o primeiro voo em 2008."
+ },
+ {
+  "rel": "fleet/lander/phoenix.json",
+  "at": "best_known_for",
+  "en": "Confirmed water ice in Martian soil",
+  "cur": "Confirmado gelo de água em solo marciano"
+ },
+ {
+  "rel": "fleet/lander/schiaparelli.json",
+  "at": "tagline",
+  "en": "ExoMars precursor; lessons fed Rosalind Franklin",
+  "cur": "Precursora do ExoMars; lições incorporadas ao Rosalind Franklin"
+ },
+ {
+  "rel": "fleet/lander/schiaparelli.json",
+  "at": "description",
+  "en": "ESA’s 2016 ExoMars demonstrator that crashed during landing — the IMU saturated during parachute descent, causing the flight computer to believe it was below ground level; it released the parachute and fired the retrorockets for only 3 seconds instead of 30, then went silent and impacted at ~300 km/h from 3.7 km altitude. Lessons fed directly into the Rosalind Franklin lander design.",
+  "cur": "Demonstrador do ExoMars da ESA de 2016 que caiu durante o pouso — a IMU saturou durante a descida do paraquedas, fazendo o computador de voo acreditar que estava abaixo do nível do solo; liberou o paraquedas e acionou os retrofogos por apenas 3 segundos em vez de 30, então perdeu o sinal e impactou a ~300 km/h de uma altitude de 3,7 km. As lições foram incorporadas diretamente no projeto do pouso Rosalind Franklin."
+ },
+ {
+  "rel": "fleet/lander/schiaparelli.json",
+  "at": "best_known_for",
+  "en": "ExoMars precursor; lessons fed Rosalind Franklin",
+  "cur": "Precursora do ExoMars; lições incorporadas ao Rosalind Franklin"
+ },
+ {
+  "rel": "fleet/lander/slim.json",
+  "at": "tagline",
+  "en": "Pinpoint lunar landing; toppled but operational",
+  "cur": "Pouso lunar preciso; capotado mas operacional"
+ },
+ {
+  "rel": "fleet/lander/slim.json",
+  "at": "description",
+  "en": "JAXA’s 2024 lunar lander. Touched down within 100 m of its target — pinpoint accuracy unprecedented for a lunar lander — but landed on its nose at roughly 90 degrees, with solar panels facing away from the Sun. Still operated and survived four lunar nights without radioisotope heating — a record for passively-heated lunar surface missions.",
+  "cur": "Sonda lunar da JAXA de 2024. Pousou a menos de 100 m do seu alvo — precisão pinpoint sem precedentes para uma sonda lunar — mas aterrizou sobre o nariz em aproximadamente 90 graus, com painéis solares apontando para longe do Sol. Ainda operacional e sobreviveu a quatro noites lunares sem aquecimento radioisotópico — um recorde para missões de superfície lunar com aquecimento passivo."
+ },
+ {
+  "rel": "fleet/lander/slim.json",
+  "at": "best_known_for",
+  "en": "Pinpoint lunar landing; toppled but operational",
+  "cur": "Pouso lunar preciso; capotado mas operacional"
+ },
+ {
+  "rel": "fleet/lander/surveyor-3.json",
+  "at": "tagline",
+  "en": "Apollo 12 visited it 2.5 years later",
+  "cur": "Apollo 12 visitou-a 2,5 anos depois."
+ },
+ {
+  "rel": "fleet/lander/surveyor-3.json",
+  "at": "description",
+  "en": "Surveyor 3 is a planetary lander built by Hughes Aircraft in USA. Apollo 12 visited it 2.5 years later. Retired after first flight in 1967.",
+  "cur": "Surveyor 3 é um módulo planetário construído pela Hughes Aircraft nos EUA. A Apollo 12 visitou-a 2,5 anos depois. Aposentado após o primeiro voo em 1967."
+ },
+ {
+  "rel": "fleet/lander/surveyor-3.json",
+  "at": "best_known_for",
+  "en": "Apollo 12 visited it 2.5 years later",
+  "cur": "A Apollo 12 a visitou 2,5 anos depois"
+ },
+ {
+  "rel": "fleet/lander/venera-13.json",
+  "at": "tagline",
+  "en": "First colour images of the Venusian surface — survived 127 minutes in 457 °C / 89-atm conditions",
+  "cur": "Primeiras imagens coloridas da superfície venusiana — sobreviveu 127 minutos em condições de 457 °C / 89-atm"
+ },
+ {
+  "rel": "fleet/lander/venera-13.json",
+  "at": "description",
+  "en": "Soviet Venus lander pair (with Venera 14). Launched 1981-10-30 on a Proton-K / D-1. Venus arrival 1982-03-01: the 1645 kg titanium descent capsule entered the atmosphere at 11.2 km/s, deployed a parachute through the upper haze, then jettisoned it at 47 km and free-fell through the lower atmosphere with a disc-brake for terminal descent. Surface touchdown at 7.5°S, 303°E (Phoebe Regio volcanic flank). First panoramic colour images of the Venusian surface; first X-ray fluorescence soil-composition analysis (basaltic, like terrestrial ocean floor); first acoustic recordings from another planet. Operated 127 minutes — far beyond the 32-minute design life — before silicon-electronic failure in the 457 °C / 89-atmosphere CO₂ environment.",
+  "cur": "Par de sondas soviéticas em Vênus (com Venera 14). Lançadas em 1981-10-30 em um Proton-K / D-1. Chegada a Vênus em 1982-03-01: a cápsula de descida de 1645 kg em titânio entrou na atmosfera a 11,2 km/s, implantou um paraquedas através da neblina superior, depois o jettisou a 47 km e caiu livremente através da atmosfera inferior com um freio de disco para descida terminal. Pouso na superfície em 7,5°S, 303°L (flanco vulcânico de Phoebe Regio). Primeiras imagens panorâmicas coloridas da superfície venusiana; primeira análise de composição do solo por fluorescência de raios X (basáltica, como o assoalho oceânico terrestre); primeiras gravações acústicas de outro planeta. Operou 127 minutos — muito além da vida útil de projeto de 32 minutos — antes da falha de eletrônica de silício no ambiente de 457 °C / 89-atmosfera de CO₂."
+ },
+ {
+  "rel": "fleet/lander/venera-13.json",
+  "at": "best_known_for",
+  "en": "First colour images of Venus surface — 127-minute survival in 457 °C / 89-atm conditions",
+  "cur": "Primeiras imagens coloridas da superfície de Vênus — sobrevivência de 127 minutos em condições de 457 °C / 89-atm"
+ },
+ {
+  "rel": "fleet/lander/venera-7.json",
+  "at": "tagline",
+  "en": "First soft landing on another planet and first to transmit data from another planet's surface (Venus, 1970)",
+  "cur": "Primeiro pouso suave em outro planeta e primeira a transmitir dados da superfície de outro planeta (Vênus, 1970)"
+ },
+ {
+  "rel": "fleet/lander/venera-7.json",
+  "at": "description",
+  "en": "Venera 7-class is a planetary lander built by NPO Lavochkin in USSR. First soft landing on another planet and first to transmit data from another planet's surface (Venus, 1970). Retired after first flight in 1970.",
+  "cur": "A Venera 7-class é uma sonda planetária construída pela NPO Lavochkin na URSS. Primeiro pouso suave em outro planeta e primeira a transmitir dados da superfície de outro planeta (Vênus, 1970). Desativada após seu primeiro voo em 1970."
+ },
+ {
+  "rel": "fleet/lander/venera-7.json",
+  "at": "best_known_for",
+  "en": "First soft landing on another planet and first to transmit data from another planet's surface (Venus, 1970)",
+  "cur": "Primeiro pouso suave em outro planeta e primeira a transmitir dados da superfície de outro planeta (Vênus, 1970)"
+ },
+ {
+  "rel": "fleet/lander/viking-1.json",
+  "at": "tagline",
+  "en": "First successful Mars lander; biology experiments",
+  "cur": "Primeiro pouso bem-sucedido em Marte; experimentos de biologia"
+ },
+ {
+  "rel": "fleet/lander/viking-1.json",
+  "at": "dispatch",
+  "en": "Viking 1 solved the problem nothing had solved: how to land on Mars and live. The Soviet landers before it had died within about twenty seconds of touchdown, returning only a featureless grey frame; Viking had to descend through an atmosphere too thin to rely on and too thick to ignore, and it did it with a first-of-its-kind sequence — an aeroshell to survive entry, a parachute for the middle of the fall, and throttled rocket engines to set its three legs down softly at the end. It was two machines in one, an orbiter to survey and relay and a lander to work the ground, and it carried the first laboratory ever sent to test another planet’s soil for life. Every Mars landing since has flown some version of the descent Viking proved.",
+  "cur": "Viking 1 resolveu o problema que ninguém tinha conseguido resolver: como pousar em Marte e sobreviver. Os pousadores soviéticos anteriores haviam morrido cerca de vinte segundos após o toque, retornando apenas uma imagem cinzenta sem traços marcantes; Viking teve que descer por uma atmosfera tão fina que não dava para confiar nela e tão densa que não dava para ignorá-la, e conseguiu fazer isso com uma sequência inédita — um escudo aerodinâmico para sobreviver à entrada, um paraquedas para o meio da queda, e motores de foguete com empuxo regulável para pousar suas três pernas suavemente no final. Era duas máquinas em uma, um orbitador para fazer levantamentos e retransmitir dados e um pouso para trabalhar no solo, e carregava o primeiro laboratório jamais enviado para testar o solo de outro planeta em busca de vida. Todo pouso em Marte desde então tem voado alguma versão da descida que Viking provou."
+ },
+ {
+  "rel": "fleet/lander/viking-1.json",
+  "at": "description",
+  "en": "The first successful Mars lander mission, on the surface from July 1976 through November 1982. Carried four biology experiments and returned high-resolution images of the Chryse Planitia plains. The Viking 1 / Viking 2 pair set the template for every Mars lander that followed.",
+  "cur": "A primeira missão de pouso bem-sucedida em Marte, na superfície de julho de 1976 até novembro de 1982. Carregava quatro experimentos de biologia e retornou imagens de alta resolução das planícies de Chryse Planitia. O par Viking 1 / Viking 2 estabeleceu o modelo para todos os pousos em Marte que se seguiram."
+ },
+ {
+  "rel": "fleet/lander/viking-1.json",
+  "at": "best_known_for",
+  "en": "First successful Mars lander; biology experiments",
+  "cur": "Primeiro pouso bem-sucedido em Marte; experimentos de biologia"
+ },
+ {
+  "rel": "fleet/lander/viking2-lander.json",
+  "at": "tagline",
+  "en": "Second US Mars surface lander (Utopia Planitia 1976-09-03). Twin of Viking 1 lander; ran biology, soil chemistry + meteorology until 1980",
+  "cur": "Segundo pousador US em Marte (Utopia Planitia 1976-09-03). Gêmeo do Viking 1; realizou biologia, química do solo e meteorologia até 1980"
+ },
+ {
+  "rel": "fleet/lander/viking2-lander.json",
+  "at": "description",
+  "en": "The surface half of NASA's Viking 2 mission and the second successful US Mars lander, 47 days after Viking 1. Launched 1975-09-09 on a Titan IIIE-Centaur, touched down at Utopia Planitia (47.97° N, 134.04° E) on 1976-09-03 — much further north than Viking 1, in a different plains type to broaden the science return. Ran the same instrument suite as Viking 1: a biology package (Pyrolytic Release / Labeled Release / Gas Exchange experiments looking for microbial metabolism — the famously ambiguous Labeled Release positive that remains debated), GC-MS for soil organics (none detected), facsimile cameras returning > 1,400 images, X-ray fluorescence soil chemistry, meteorology, and seismometer (one of two ever flown on Mars — unable to detect quakes through cabin noise). Operated until 1980-04-11 when batteries failed.",
+  "cur": "A metade de superfície da missão Viking 2 da NASA e o segundo módulo americano bem-sucedido em Marte, 47 dias após o Viking 1. Lançado em 09/09/1975 em um Titan IIIE-Centaur, pousou em Utopia Planitia (47,97° N, 134,04° L) em 03/09/1976 — muito mais ao norte que o Viking 1, em um tipo de planície diferente para ampliar o retorno científico. Executou o mesmo conjunto de instrumentos do Viking 1: pacote de biologia (experimentos Pyrolytic Release / Labeled Release / Gas Exchange — a famosa positividade ambígua do Labeled Release segue em debate), GC-MS para orgânicos do solo (nada detectado), câmeras fac-símile que retornaram > 1.400 imagens, química do solo por fluorescência de raios X, meteorologia e sismômetro. Operou até 11/04/1980."
+ },
+ {
+  "rel": "fleet/lander/viking2-lander.json",
+  "at": "best_known_for",
+  "en": "Second US Mars surface lander (Utopia Planitia 1976-09-03). Twin of Viking 1 lander; ran biology, soil chemistry + meteorology until 1980",
+  "cur": "Segundo lander de superfície marciana dos EUA (Utopia Planitia 1976-09-03). Gêmeo do Viking 1 lander; realizou experimentos de biologia, química do solo e meteorologia até 1980"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "name",
+  "en": "Vikram (Chandrayaan-2)",
+  "cur": "Vikram (Chandrayaan-2)"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "tagline",
+  "en": "Chandrayaan-2 lander; crashed; orbiter lives on",
+  "cur": "Lander Chandrayaan-2; caiu; orbital vive em"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "description",
+  "en": "Vikram (Chandrayaan-2) is a planetary lander built by ISRO in India. Chandrayaan-2 lander; crashed; orbiter lives on. Flew in 2019 but failed; informs the redemption-arc layer of the commercial era epoch.",
+  "cur": "Vikram (Chandrayaan-2) é um módulo planetário construído pela ISRO na Índia. Chandrayaan-2 lander; caiu; orbital vive. Voou em 2019, mas falhou; informa a camada de resgate-arco da época comercial."
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "best_known_for",
+  "en": "Chandrayaan-2 lander; crashed; orbiter lives on",
+  "cur": "Lander Chandrayaan-2; caiu; orbital vive em"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy3.json",
+  "at": "name",
+  "en": "Vikram (Chandrayaan-3)",
+  "cur": "Vikram (Chandrayaan-3)"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy3.json",
+  "at": "tagline",
+  "en": "First landing near the lunar south pole",
+  "cur": "Primeiro pouso próximo ao polo sul lunar"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy3.json",
+  "at": "description",
+  "en": "India’s first successful lunar lander (August 2023), the first spacecraft to land near the lunar south pole. Two years after Vikram CY-2 crashed in the same region — the redemption arc India and ISRO needed.",
+  "cur": "Primeiro módulo lunar de pouso bem-sucedido da Índia (agosto de 2023), a primeira espaçonave a pousar próximo ao polo sul lunar. Dois anos após o Vikram CY-2 se desintegrar na mesma região — o arco de redenção que a Índia e a ISRO precisavam."
+ },
+ {
+  "rel": "fleet/lander/vikram-cy3.json",
+  "at": "best_known_for",
+  "en": "First landing near the lunar south pole",
+  "cur": "Primeiro pouso próximo ao polo sul lunar"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-1-5.json",
+  "at": "name",
+  "en": "Baikonur Site 1/5 (Gagarin's Start)",
+  "cur": "Baikonur, sítio 1/5 (plataforma Gagarin)"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-1-5.json",
+  "at": "tagline",
+  "en": "Sputnik 1 (1957). Vostok 1 — Gagarin (1961). Five hundred and forty Soyuz launches from a single pad.",
+  "cur": "Sputnik 1 (1957). Vostok 1 — Gagarin (1961). Quinhentos e quarenta lançamentos Soyuz de uma única plataforma."
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-1-5.json",
+  "at": "description",
+  "en": "The single most historically significant orbital launch pad in the world. R-7 ICBM test stand from 1957; immediately repurposed for Sputnik 1 on October 4, 1957 — the start of the Space Age. Yuri Gagarin lifted from here on April 12, 1961. Every Vostok crew, every Voskhod, the bulk of all Soyuz manifests through to MS-15 in September 2019. Five hundred and forty launches from one pad over sixty-two years. Preserved as a museum monument; the 2019-era refurbishment plan was abandoned when the site was transferred to Kazakhstan in 2025.",
+  "cur": "A plataforma de lançamento orbital mais historicamente significativa do mundo. Banco de testes do míssel balístico intercontinental R-7 desde 1957; imediatamente reutilizado para o Sputnik 1 em 4 de outubro de 1957 — o início da Era Espacial. Iuri Gagarin decolou daqui em 12 de abril de 1961. Todas as missões tripuladas Vostok, todas as Voskhod, a maioria dos manifestes Soyuz até MS-15 em setembro de 2019. Quinhentos e quarenta lançamentos de uma única plataforma ao longo de sessenta e dois anos. Preservado como monumento-museu; o plano de modernização da era 2019 foi abandonado quando o sítio foi transferido para o Cazaquistão em 2025."
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-1-5.json",
+  "at": "best_known_for",
+  "en": "Sputnik 1 (1957). Vostok 1 — Gagarin (1961). Five hundred and forty Soyuz launches from a single pad.",
+  "cur": "Sputnik 1 (1957). Vostok 1 — Gagarin (1961). Quinhentos e quarenta lançamentos Soyuz de uma única plataforma."
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-200.json",
+  "at": "tagline",
+  "en": "Proton-M heavy-lift pad — Mir modules, ISS Zvezda/Zarya, GLONASS, Luna 25",
+  "cur": "Plataforma pesada Proton-M — módulos Mir, EEI Zvezda/Zarya, GLONASS, Luna 25"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-200.json",
+  "at": "description",
+  "en": "Baikonur Site 200 hosts pads PU-1 (LC200/39) and PU-2 (LC200/40) for the Proton-K and Proton-M heavy-lift rockets. From here Roscosmos has launched almost every Mir module, the ISS modules Zarya and Zvezda, GEO communications satellites, GLONASS navigation constellation, and Luna 25 (2023). Site 200 remains active alongside Site 81 for Proton's final operational years.",
+  "cur": "Baikonur, sítio 200 hospeda as plataformas PU-1 (LC200/39) e PU-2 (LC200/40) para os foguetes pesados Proton-K e Proton-M. A partir daqui, a Roscosmos lançou quase todos os módulos Mir, os módulos EEI Zarya e Zvezda, satélites de comunicações GEO, a constelação de navegação GLONASS e Luna 25 (2023). Site 200 permanece ativo ao lado de Site 81 para os últimos anos operacionais do Proton."
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-200.json",
+  "at": "best_known_for",
+  "en": "Proton-M heavy-lift pad",
+  "cur": "Plataforma pesada Proton-M"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-31-6.json",
+  "at": "name",
+  "en": "Baikonur Site 31/6",
+  "cur": "Baikonur, sítio 31/6"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-31-6.json",
+  "at": "tagline",
+  "en": "Active Soyuz crewed pad — every ISS Soyuz crew rotation since 2020 has lifted from Site 31",
+  "cur": "Plataforma Soyuz tripulada ativa — toda rotação de tripulação Soyuz à EEI desde 2020 decolou do Site 31"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-31-6.json",
+  "at": "description",
+  "en": "The other half of the Baikonur Soyuz operation. Originally an R-7 ICBM pad from 1961; modernised for Soyuz-2.1a in 2014. When Site 1/5 went down for refurbishment in 2019, Site 31 picked up the entire Soyuz crew programme — every Soyuz MS rotation to the ISS since MS-16 in April 2020 has lifted from here. Continuous human spaceflight cadence: roughly two crews per year, with no interruption.",
+  "cur": "A outra metade da operação Soyuz em Baikonur. Originalmente uma plataforma ICBM R-7 a partir de 1961; modernizada para Soyuz-2.1a em 2014. Quando o Site 1/5 entrou em manutenção em 2019, o Site 31 assumiu todo o programa de tripulação Soyuz — toda rotação Soyuz MS à EEI desde a MS-16 em abril de 2020 decolou daqui. Cadência contínua de voo tripulado: cerca de duas tripulações por ano, sem interrupção."
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-31-6.json",
+  "at": "best_known_for",
+  "en": "Active Soyuz crewed pad — every ISS Soyuz crew rotation since 2020 has lifted from Site 31",
+  "cur": "Plataforma Soyuz tripulada ativa — toda rotação de tripulação Soyuz à EEI desde 2020 decolou do Site 31"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-lc-36b.json",
+  "at": "tagline",
+  "en": "USAF Atlas-Centaur pad — Mariner 10, Pioneer 11 (1973), Pioneer Venus (1978); now Blue Origin New Glenn (leased 2015, flew 2025)",
+  "cur": "Plataforma USAF Atlas-Centaur — Mariner 10, Pioneer 11 (1973), Pioneer Venus (1978); agora Blue Origin New Glenn (desde 2015)"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-lc-36b.json",
+  "at": "best_known_for",
+  "en": "USAF Atlas-Centaur pad — Mariner 10 + Pioneer 11 (1973), Pioneer Venus (1978), Intelsat — now Blue Origin New Glenn (since 2015)",
+  "cur": "Plataforma USAF Atlas-Centaur — Mariner 10 + Pioneer 11 (1973), Pioneer Venus (1978), Intelsat — agora Blue Origin New Glenn (desde 2015)"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-lc-36b.json",
+  "at": "description",
+  "en": "Cape Canaveral Launch Complex 36B was the second of two Atlas-Centaur pads at Cape Canaveral (alongside LC-36A, built first). LC-36B first flew 1965-08-11 with Atlas-Centaur AC-6 and became the workhorse pad for the high-energy Atlas-Centaur stack — flying Mariner 10 (1973-11-03, first Mercury flyby), Pioneer 11 (1973-04-06, first Saturn flyby), Pioneer Venus 1 + 2 (1978), and many Intelsat / Inmarsat / Hot Bird commercial GEO comsats through the 1990s and early 2000s. Final flight 2005-02-03 — Atlas IIIB AC-208 — the last Atlas IIIB launch and last LC-36B flight under USAF auspices. The complex was leased to Blue Origin in 2015 and demolished + rebuilt as the Blue Origin New Glenn pad (LC-36 unified), with first New Glenn flight 2025-01-16. The original LC-36B mobile service tower was felled 2007-06-16.",
+  "cur": "O Complexo de Lançamento 36B de Cabo Canaveral foi a segunda de duas plataformas Atlas-Centaur em Cabo Canaveral (ao lado da LC-36A, construída primeiro). O LC-36B voou pela primeira vez em 1965-08-11 com o Atlas-Centaur AC-6 e se tornou a plataforma de trabalho para o potente foguete Atlas-Centaur — lançando Mariner 10 (1973-11-03, primeiro sobrevoo de Mercúrio), Pioneer 11 (1973-04-06, primeiro sobrevoo de Saturno), Pioneer Venus 1 + 2 (1978), e muitos satélites comerciais de comunicação Intelsat / Inmarsat / Hot Bird em órbita GEO durante os anos 1990 e início dos anos 2000. Último voo em 2005-02-03 — Atlas IIIB AC-208 — o último lançamento Atlas IIIB e o último voo do LC-36B sob jurisdição USAF. O complexo foi arrendado à Blue Origin em 2015 e demolido + reconstruído como a plataforma Blue Origin New Glenn (LC-36 unificada), com o primeiro voo New Glenn em 2025-01-16. A torre móvel de serviço original do LC-36B foi derrubada em 2007-06-16."
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+  "at": "name",
+  "en": "Cape Canaveral SLC-40",
+  "cur": "Cabo Canaveral SLC-40"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+  "at": "tagline",
+  "en": "Highest-cadence Falcon 9 pad on the planet — workhorse for ISS resupply + Starlink + national-security",
+  "cur": "Plataforma Falcon 9 de maior cadência do planeta — cavalo de batalha para reabastecimento da EEI + Starlink + segurança nacional"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+  "at": "description",
+  "en": "Originally a Titan III / Titan IV pad from 1965 through 2005, refit by SpaceX in 2008 for Falcon 9. Today SLC-40 is the highest-cadence orbital pad ever operated, flying Starlink batches, commercial sats, ISS resupply via Cargo Dragon, and US national-security payloads. Rebuilt after the AMOS-6 explosion in September 2016 with an upgraded propellant system; the pad still does most of the SpaceX manifest the world sees.",
+  "cur": "Originalmente uma plataforma Titan III / Titan IV de 1965 a 2005, modernizada pela SpaceX em 2008 para o Falcon 9. Hoje a SLC-40 é a plataforma orbital de maior cadência já operada, lançando lotes Starlink, satélites comerciais, reabastecimento à EEI via Cargo Dragon e cargas de segurança nacional dos EUA. Reconstruída após a explosão do AMOS-6 em setembro de 2016 com um sistema de propelente aprimorado; a plataforma ainda cumpre a maior parte do manifesto SpaceX que o mundo vê."
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+  "at": "best_known_for",
+  "en": "Highest-cadence Falcon 9 pad on the planet — workhorse for ISS resupply + Starlink + national-security",
+  "cur": "Plataforma Falcon 9 de maior cadência do planeta — cavalo de batalha para reabastecimento da EEI + Starlink + segurança nacional"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-41.json",
+  "at": "name",
+  "en": "Cape Canaveral SLC-41",
+  "cur": "Cabo Canaveral SLC-41"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-41.json",
+  "at": "tagline",
+  "en": "Atlas V's main pad — flew every Atlas V mission including Mars Perseverance + Lucy + Starliner CFT",
+  "cur": "Plataforma principal do Atlas V — lançou todas as missões Atlas V incluindo Marte Perseverance + Lucy + Starliner CFT"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-41.json",
+  "at": "description",
+  "en": "United Launch Alliance's primary Atlas V pad at Cape Canaveral, originally built for Titan III in the 1960s, entirely demolished in 1999 and rebuilt as the Atlas V pad; first Atlas V flight 2002-08-21. Every Atlas V flight has launched from here — Mars Reconnaissance Orbiter, Curiosity, Perseverance, Lucy, Juno, the Boeing Starliner Crew Flight Test, and dozens of NSSL national-security missions. Also hosts Vulcan Centaur, which began flying from SLC-41 in January 2024.",
+  "cur": "Plataforma principal do Atlas V da United Launch Alliance em Cabo Canaveral, originalmente construída para o Titan III nos anos 1960, completamente demolida em 1999 e reconstruída como plataforma Atlas V; primeiro voo do Atlas V em 2002-08-21. Todos os voos do Atlas V lançaram daqui — Mars Reconnaissance Orbiter, Curiosity, Perseverance, Lucy, Juno, o Boeing Starliner Crew Flight Test, e dezenas de missões de segurança nacional do NSSL. Também abriga o Vulcan Centaur, que começou a voar da SLC-41 em janeiro de 2024."
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-41.json",
+  "at": "best_known_for",
+  "en": "Atlas V's main pad",
+  "cur": "Plataforma principal do Atlas V"
+ },
+ {
+  "rel": "fleet/launch-site/gagarins-start.json",
+  "at": "tagline",
+  "en": "Baikonur Site 1 — Sputnik 1 (1957-10-04), Gagarin's Vostok 1 (1961-04-12), every crewed Soyuz through MS-15 (2019). Retired 2019",
+  "cur": "Baikonur, sítio 1 — Sputnik 1 (1957-10-04), Vostok 1 de Gagarin (1961-04-12), todos os Soyuz tripulados até MS-15 (2019). Desativado 2019"
+ },
+ {
+  "rel": "fleet/launch-site/gagarins-start.json",
+  "at": "dispatch",
+  "en": "Launch Complex 1 at Baikonur is, by a wide margin, the most consequential patch of ground in the history of spaceflight. From this single pad the Soviet Union launched Sputnik in 1957, opening the space age; Gagarin in 1961, opening it to human beings; and then, for the next sixty years, nearly every crewed flight the program flew, right up to the Soyuz crews of 2019. Cosmonauts nicknamed it Gagarin's Start. It was a working R-7 missile stand pressed into history, and for six decades the phrase \"a crew launched today\" almost always meant they launched from here.",
+  "cur": "O Complexo de Lançamento 1 em Baikonur é, por uma margem considerável, o pedaço de terra mais consequente na história da astronáutica. Deste único pad a União Soviética lançou o Sputnik em 1957, abrindo a era espacial; Gagarin em 1961, abrindo-a para seres humanos; e então, pelos próximos sessenta anos, quase todos os voos tripulados que o programa realizou, até as tripulações do Soyuz de 2019. Os cosmonautas o apelidaram de Plataforma Gagarin. Era um posto de lançamento de míssil R-7 em operação que entrou para a história, e por seis décadas a frase \"uma tripulação lançada hoje\" quase sempre significava que ela havia sido lançada daqui."
+ },
+ {
+  "rel": "fleet/launch-site/gagarins-start.json",
+  "at": "description",
+  "en": "Baikonur Cosmodrome Site 1 (designation 5 in Soviet docs; nicknamed \"Gagarin's Start\" after Vostok 1) was the original R-7 ICBM launch pad and the most-flown crewed launch site in history. First launch 1957-05-15 (R-7 test); Sputnik 1 (1957-10-04 — first artificial satellite); Vostok 1 (1961-04-12 — first crewed spaceflight); every crewed Soyuz from Soyuz 1 (1967) through Soyuz MS-15 (2019) launched from Site 1. After 2019 the pad was decommissioned for an upgrade to support Soyuz-2 (the Vostok-derived Soyuz-FG was retired); subsequent ISS crews (from Soyuz MS-16 onward in April 2020) launched from Baikonur Site 31 instead. Site 1 is preserved as a historical monument. Visited by every Russian crew during pre-flight ceremonies.",
+  "cur": "O Sítio 1 do Cosmódromo de Baikonur (designação 5 nos documentos soviéticos; apelidado de \"Plataforma Gagarin\" após o Vostok 1) foi o pad de lançamento original do ICBM R-7 e o local de lançamento tripulado mais utilizado na história. Primeiro lançamento 1957-05-15 (teste de R-7); Sputnik 1 (1957-10-04 — primeiro satélite artificial); Vostok 1 (1961-04-12 — primeiro voo espacial tripulado); todos os Soyuz tripulados de Soyuz 1 (1967) até Soyuz MS-15 (2019) foram lançados do Sítio 1. Após 2019 o pad foi desativado para uma atualização para suportar o Soyuz-2 (o Soyuz-FG derivado do Vostok foi aposentado); as tripulações subsequentes da EEI (a partir do Soyuz MS-16 em abril de 2020) foram lançadas do Sítio 31 de Baikonur. O Sítio 1 é preservado como um monumento histórico. Visitado por todas as tripulações russas durante cerimônias de pré-voo."
+ },
+ {
+  "rel": "fleet/launch-site/gagarins-start.json",
+  "at": "best_known_for",
+  "en": "Baikonur Site 1 — Sputnik 1 (1957-10-04), Gagarin's Vostok 1 (1961-04-12), every crewed Soyuz through MS-15 (2019). Retired 2019",
+  "cur": "Baikonur, sítio 1 — Sputnik 1 (1957-10-04), Vostok 1 de Gagarin (1961-04-12), todos os Soyuz tripulados até MS-15 (2019). Desativado 2019"
+ },
+ {
+  "rel": "fleet/launch-site/jiuquan-slc-43.json",
+  "at": "tagline",
+  "en": "China's crewed-spaceflight pad — every Shenzhou crew",
+  "cur": "Plataforma de lançamento tripulado chinesa — todas as missões Shenzhou"
+ },
+ {
+  "rel": "fleet/launch-site/jiuquan-slc-43.json",
+  "at": "description",
+  "en": "The first Chinese space launch site (1958), operational orbital launches since 1970, and from 1999 onward the dedicated home of human spaceflight: every Shenzhou crew (1 through 19 as of 2025) has lifted from SLC-43 Pad 91 on Long March 2F rockets. Jiuquan is inland in the Gobi desert at 40.96°N — too far north for the equatorial geometry that Wenchang handles. Tianzhou cargo missions to Tiangong fly from Wenchang Space Launch Site instead.",
+  "cur": "O primeiro centro espacial chinês de lançamento (1958), com lançamentos orbitais operacionais desde 1970, e a partir de 1999 a base dedicada do voo espacial tripulado: todas as missões Shenzhou (1 a 19 até 2025) foram lançadas da Plataforma 91 SLC-43 em foguetes Long March 2F. Jiuquan fica no interior do deserto de Gobi a 40,96°N — demasiado ao norte para a geometria equatorial que Wenchang oferece. As missões de carga Tianzhou para Tiangong são lançadas do Centro de Lançamento Espacial de Wenchang em seu lugar."
+ },
+ {
+  "rel": "fleet/launch-site/jiuquan-slc-43.json",
+  "at": "best_known_for",
+  "en": "China's crewed-spaceflight pad — every Shenzhou crew",
+  "cur": "Plataforma de lançamento tripulado chinesa — todas as missões Shenzhou"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-2.json",
+  "at": "tagline",
+  "en": "Early Ariane pad — 1 Ariane 2, 2 Ariane 3, 116 Ariane 4 (1986-2003)",
+  "cur": "Rampa Ariane inicial — 1 Ariane 2, 2 Ariane 3, 116 Ariane 4 (1986-2003)"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-2.json",
+  "at": "description",
+  "en": "ELA-2 (Ensemble de Lancement Ariane 2) at Kourou's Centre Spatial Guyanais hosted 119 Ariane launches: one Ariane 2 (1986-03-28), two Ariane 3, and all 116 launches of the Ariane 4 rocket (1988-2003). Its near-equatorial position gave Ariane 4 a substantial GTO performance advantage over launch sites at higher latitudes, anchoring Arianespace's commercial dominance in the 1990s. Decommissioned after Ariane 4 retired; ELA-3 (Ariane 5) and ELA-4 (Ariane 6) are its successors.",
+  "cur": "ELA-2 (Ensemble de Lancement Ariane 2) no Centre Spatial Guyanais de Kourou hospedou 119 lançamentos Ariane: um Ariane 2 (28 de março de 1986), dois Ariane 3 e todos os 116 lançamentos do foguete Ariane 4 (1988-2003). Sua posição próxima ao equador deu ao Ariane 4 uma vantagem substancial de desempenho em GTO em relação aos sites de lançamento em latitudes mais altas, consolidando a dominância comercial da Arianespace na década de 1990. Descomissionada após o Ariane 4 ser aposentado; ELA-3 (Ariane 5) e ELA-4 (Ariane 6) são suas sucessoras."
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-2.json",
+  "at": "best_known_for",
+  "en": "Primary Ariane 4 pad",
+  "cur": "Rampa primária do Ariane 4"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-3.json",
+  "at": "tagline",
+  "en": "Ariane 5's home pad — JWST + Galileo + a quarter of geostationary commercial sats over a decade",
+  "cur": "Pad de lançamento da Ariane 5 — JWST + Galileo + um quarto dos satélites comerciais geoestacionários ao longo de uma década"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-3.json",
+  "at": "description",
+  "en": "Europe chose French Guiana in the 1960s because 5.2°N is just five degrees off the equator — the geometry adds about 460 m/s of free eastward velocity for geostationary launches, and the Atlantic to the east is empty. ELA-3 hosted Ariane 5 from its maiden flight in June 1996 — which failed 37 seconds after launch due to a software error — through the successful final mission in July 2023: James Webb, the Galileo navigation system, BepiColombo, Rosetta, Herschel + Planck, JUICE, and the bulk of Western commercial GEO traffic for two decades. ELA-4 next door is now active with Ariane 6.",
+  "cur": "A Europa escolheu a Guiana Francesa nos anos 1960 porque 5,2°N fica a apenas cinco graus do equador — a geometria adiciona cerca de 460 m/s de velocidade leste livre para lançamentos geoestacionários, e o Atlântico a leste está vazio. ELA-3 hospedou a Ariane 5 desde seu voo inaugural em junho de 1996 — que falhou 37 segundos após o lançamento devido a um erro de software — através da bem-sucedida missão final em julho de 2023: James Webb, o sistema de navegação Galileo, BepiColombo, Rosetta, Herschel + Planck, JUICE, e a maior parte do tráfego GEO comercial ocidental por duas décadas. ELA-4 ao lado agora está ativo com a Ariane 6."
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-3.json",
+  "at": "best_known_for",
+  "en": "Ariane 5's home pad — JWST + Galileo + a quarter of geostationary commercial sats over a decade",
+  "cur": "Pad de lançamento da Ariane 5 — JWST + Galileo + um quarto dos satélites comerciais geoestacionários ao longo de uma década"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-4.json",
+  "at": "tagline",
+  "en": "Ariane 6's home pad — Europe's geostationary access after Ariane 5",
+  "cur": "Plataforma do Ariane 6 — o acesso geoestacionário europeu depois do Ariane 5"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-4.json",
+  "at": "description",
+  "en": "The sister pad to ELA-3 at the Centre Spatial Guyanais. Construction started in 2015; Ariane 6's maiden flight VA262 lifted from here on July 9, 2024. ELA-4 inherits the same 5.2°N equatorial advantage that made Ariane 5 the most successful Western geostationary launcher of its era, with a redesigned ground-segment for higher cadence: horizontal-integration assembly building, sliding mobile gantry, full integration of the new ESC-B upper stage. Europe's strategic-autonomy launcher for institutional payloads (Galileo upgrade, Copernicus, ESA science missions) plus commercial GEO traffic.",
+  "cur": "A plataforma irmã do ELA-3 no Centre Spatial Guyanais. Construção iniciada em 2015; voo inaugural do Ariane 6 VA262 decolou daqui em 9 de julho de 2024. ELA-4 herda a mesma vantagem equatorial de 5,2°N que tornou o Ariane 5 o lançador geoestacionário ocidental de maior sucesso de sua época, com um segmento terrestre redesenhado para maior cadência: edifício de integração horizontal, pórtico móvel deslizante, integração completa do novo estágio superior ESC-B. O lançador de autonomia estratégica europeia para cargas institucionais (atualização do Galileo, Copernicus, missões científicas da ESA) mais tráfego GEO comercial."
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-4.json",
+  "at": "best_known_for",
+  "en": "Ariane 6's home pad — Europe's geostationary access after Ariane 5",
+  "cur": "Plataforma do Ariane 6 — o acesso geoestacionário europeu depois do Ariane 5"
+ },
+ {
+  "rel": "fleet/launch-site/lc-14.json",
+  "at": "tagline",
+  "en": "Cape Canaveral Mercury-Atlas pad — launched all 4 orbital Mercury flights (Glenn / Carpenter / Schirra / Cooper, 1962-1963)",
+  "cur": "Plataforma Mercury-Atlas do Cabo Canaveral — lançou todos os 4 voos orbitais de Mercury (Glenn / Carpenter / Schirra / Cooper, 1962-1963)"
+ },
+ {
+  "rel": "fleet/launch-site/lc-14.json",
+  "at": "dispatch",
+  "en": "If Complex 5 is where Americans first touched space, Complex 14 is where they first stayed. This was the Atlas pad, and all four orbital Mercury flights left from it — Glenn, Carpenter, Schirra, Cooper — the flights that put an American in orbit rather than on an arc. It later launched the Gemini-Atlas target vehicles that taught crews to rendezvous, so the same patch of ground bridges the first orbits and the docking skills Apollo would need. Where 5 holds the starting line, 14 holds the moment the United States became a genuinely orbital nation.",
+  "cur": "Se o Complexo 5 é onde os americanos tocaram o espaço pela primeira vez, o Complexo 14 é onde eles ficaram pela primeira vez. Esta era a plataforma Atlas, e todos os quatro voos orbitais de Mercury saíram dela — Glenn, Carpenter, Schirra, Cooper — os voos que colocaram um americano em órbita em vez de em um arco. Posteriormente, lançou os veículos-alvo Gemini-Atlas não tripulados que ensinaram as tripulações a fazer rendezvous, então o mesmo trecho de terreno une as primeiras órbitas e as habilidades de acoplamento que Apollo precisaria. Onde o Complexo 5 marca a linha de largada, o 14 marca o momento em que os Estados Unidos se tornaram uma nação genuinamente orbital."
+ },
+ {
+  "rel": "fleet/launch-site/lc-14.json",
+  "at": "description",
+  "en": "Cape Canaveral Launch Complex 14 hosted Atlas missile tests then the four orbital Mercury-Atlas crewed missions: Friendship 7 (1962-02-20, Glenn — first American in orbit), Aurora 7 (1962-05-24, Carpenter), Sigma 7 (1962-10-03, Schirra), and Faith 7 (1963-05-15, Cooper). After Mercury, LC-14 hosted four Atlas-Agena uncrewed missions before being deactivated in 1967. A steel Mercury 7 monument was dedicated on November 10, 1964 at the pad. The launch ring + service tower base remain visible.",
+  "cur": "O Complexo 14 de Lançamento do Cabo Canaveral hospedou testes de mísseis Atlas e depois as quatro missões tripuladas de Mercury-Atlas em órbita: Friendship 7 (1962-02-20, Glenn — primeiro americano em órbita), Aurora 7 (1962-05-24, Carpenter), Sigma 7 (1962-10-03, Schirra) e Faith 7 (1963-05-15, Cooper). Após Mercury, o LC-14 hospedou quatro missões não tripuladas Atlas-Agena antes de ser desativado em 1967. Um monumento em aço Mercury 7 foi dedicado em 10 de novembro de 1964 na plataforma. O anel de lançamento e a base da torre de serviço permanecem visíveis."
+ },
+ {
+  "rel": "fleet/launch-site/lc-14.json",
+  "at": "best_known_for",
+  "en": "Cape Canaveral Mercury-Atlas pad — launched all 4 orbital Mercury flights (Glenn / Carpenter / Schirra / Cooper, 1962-1963)",
+  "cur": "Plataforma Mercury-Atlas do Cabo Canaveral — lançou todos os 4 voos orbitais de Mercury (Glenn / Carpenter / Schirra / Cooper, 1962-1963)"
+ },
+ {
+  "rel": "fleet/launch-site/lc-34.json",
+  "at": "tagline",
+  "en": "NASA pad at Cape Canaveral (1961-68) — first Saturn I; Apollo 1 fire site 1967-01-27; Apollo 7 first crewed launch 1968-10-11",
+  "cur": "Rampa da NASA em Cabo Canaveral (1961-68) — primeiro Saturn I; Apollo 1 incêndio 1967-01-27; Apollo 7 1968-10-11"
+ },
+ {
+  "rel": "fleet/launch-site/lc-34.json",
+  "at": "dispatch",
+  "en": "Launch Complex 34 is where the Saturn era began — and where it almost ended. The first Saturn rocket lifted off from this single-towered pad in 1961, proving von Braun's outsized boosters could fly at all. It is also the place where, on 27 January 1967, the Apollo 1 fire killed Gus Grissom, Ed White, and Roger Chaffee during a ground test — the program's darkest day, on the pad, before anything had left the ground. And it is where Apollo came back twenty-one months later: Apollo 7, the first crewed flight, launched from LC-34 and proved the redesigned spacecraft was sound. One small pad held the whole arc — the beginning, the catastrophe, and the recovery. A memorial stands there now.",
+  "cur": "O Complexo de Lançamento 34 foi o berço da era Saturn — e quase seu túmulo. O primeiro foguete Saturn decolou deste pad de única torre em 1961, provando que os megafoguetes de von Braun realmente podiam voar. Foi também o local onde, em 27 de janeiro de 1967, o incêndio Apollo 1 matou Gus Grissom, Ed White e Roger Chaffee durante um teste no solo — o dia mais sombrio do programa, ainda no pad, antes de qualquer coisa deixar o chão. E foi de lá que Apollo voltou vinte e um meses depois: Apollo 7, o primeiro voo tripulado, decolou do LC-34 e provou que a espaçonave redesenhada era segura. Um pequeno pad continha todo o arco — o começo, a catástrofe e a recuperação. Um memorial se ergue lá agora."
+ },
+ {
+  "rel": "fleet/launch-site/lc-34.json",
+  "at": "description",
+  "en": "Cape Canaveral Launch Complex 34 served NASA from 1961-10-27 (first Saturn I, SA-1) through 1968-10-11 (Apollo 7, the first crewed Apollo flight). LC-34's single steel umbilical tower hosted four uncrewed Saturn I flights (SA-1 through SA-4, 1961-1963), was then reconstructed for Saturn IB, and flew two uncrewed Saturn IB flights (AS-201 in 1966, AS-202 in 1966) before the Apollo 1 test. On 1967-01-27 during a Plugs-Out test of Apollo 1 — the planned first crewed Block I CSM flight — a flash fire in the pure-O₂ cabin killed Gus Grissom, Ed White, and Roger Chaffee in seconds. The pad was rebuilt for Apollo 7 (1968-10-11) which launched the first crewed Apollo flight, then deactivated 1968-11. The pad's concrete deluge ring + main flame trench still stand; a memorial plaque on site reads \"They gave their lives in service to their country in the ongoing exploration of humankind's final frontier.\"",
+  "cur": "O Complexo de Lançamento 34 de Cabo Canaveral serviu à NASA de 1961-10-27 (primeiro Saturn I, SA-1) até 1968-10-11 (Apollo 7, o primeiro voo tripulado da Apollo). A única torre de guarda-chuva de aço de LC-34 hospedou quatro voos não tripulados de Saturn I (SA-1 até SA-4, 1961-1963), foi então reconstruída para Saturn IB e voou dois voos não tripulados de Saturn IB (AS-201 em 1966, AS-202 em 1966) antes do teste Apollo 1. Em 1967-01-27 durante um teste Plugs-Out do Apollo 1 — o primeiro voo previsto tripulado do CSM Block I — um incêndio relámpago na cabine de oxigênio puro matou Gus Grissom, Ed White e Roger Chaffee em segundos. A plataforma foi reconstruída para Apollo 7 (1968-10-11) que lançou o primeiro voo tripulado da Apollo, então desativada em 1968-11. O anel de dilúvio de concreto da plataforma + o canal de chamas principal ainda estão de pé; uma placa comemorativa no local lê \"Eles deram suas vidas em serviço a seu país na exploração contínua da fronteira final da humanidade.\""
+ },
+ {
+  "rel": "fleet/launch-site/lc-34.json",
+  "at": "best_known_for",
+  "en": "NASA pad at Cape Canaveral (1961-68) — first Saturn I; Apollo 1 fire site 1967-01-27; Apollo 7 first crewed launch 1968-10-11",
+  "cur": "Plataforma da NASA em Cabo Canaveral (1961-68) — primeiro Saturn I; local do incêndio Apollo 1 em 1967-01-27; primeiro lançamento tripulado Apollo 7 em 1968-10-11"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "name",
+  "en": "Launch Complex 39A",
+  "cur": "Complexo de Lançamento 39A"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "tagline",
+  "en": "Launched Apollo 8, 9, 11-17 (all crewed lunar missions to the Moon); today flies Falcon 9, Falcon Heavy, and Crew Dragon",
+  "cur": "Lançou Apollo 8, 9, 11-17 (todas as missões tripuladas à Lua); hoje lança Falcon 9, Falcon Heavy e Crew Dragon"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "dispatch",
+  "en": "Launch Complex 39A was built around an idea nearly as radical as the rocket it served: don't build the rocket at the pad. Instead, stack the Saturn V inside the cavernous Vehicle Assembly Building, then carry the whole ~3,000-tonne stack out to the pad — standing upright — on a crawler-transporter creeping along at walking pace. That \"clean pad\" approach let one site turn around the largest rocket ever flown far faster than assembling it in place ever could. The design outlived Apollo by half a century: the same pad launched most of the Space Shuttle fleet and, leased to SpaceX in 2014, now flies Falcon Heavy and astronauts on Crew Dragon. Good infrastructure, it turns out, is the quietest kind of moonshot — build it once and it keeps paying off.",
+  "cur": "O Complexo de Lançamento 39A foi construído em torno de uma ideia quase tão radical quanto o foguete que servia: não construa o foguete na plataforma. Em vez disso, empilhe o Saturn V dentro do cavernoso Vehicle Assembly Building e, em seguida, transporte toda a pilha de ~3.000 toneladas até a plataforma — em pé — em um transportador de esteiras que se move no passo de uma caminhada. Essa abordagem de \"plataforma limpa\" permitiu que um único local girasse o maior foguete já lançado muito mais rápido do que montá-lo no local jamais permitiria. O design sobreviveu a Apollo por meio século: a mesma plataforma lançou a maioria da frota do Space Shuttle e, arrendada à SpaceX em 2014, agora lança Falcon Heavy e astronautas em Crew Dragon. Boa infraestrutura, descobriu-se, é o tipo mais silencioso de sonho lunar — construa uma vez e continue pagando dividendos."
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "description",
+  "en": "Built for Saturn V, kept for the Shuttle, leased to SpaceX in 2014. From Pad A: Apollo 4 (the first Saturn V), Apollo 11 (the first lunar landing), Apollo 13, Apollo 17 (the last lunar landing), Skylab, eighty-two Space Shuttle flights including the first STS-1, and since 2017 every Falcon Heavy and every Crew Dragon to the ISS. The same flame trench, the same crawlerway, three eras of US human spaceflight.",
+  "cur": "Construído para Saturn V, mantido para Shuttle, arrendado à SpaceX em 2014. Da Plataforma A: Apollo 4 (o primeiro Saturn V), Apollo 11 (o primeiro pouso lunar), Apollo 13, Apollo 17 (o último pouso lunar), Skylab, oitenta e dois voos de Space Shuttle incluindo o primeiro STS-1, e desde 2017 cada Falcon Heavy e cada Crew Dragon para EEI. A mesma trincheira de chama, o mesmo caminho do transportador, três eras da exploração espacial tripulada dos EUA."
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "best_known_for",
+  "en": "Launched Apollo 8, 9, 11-17 (all crewed lunar missions to the Moon); today flies Falcon 9, Falcon Heavy, and Crew Dragon",
+  "cur": "Lançou Apollo 8, 9, 11-17 (todas as missões tripuladas à Lua); hoje lança Falcon 9, Falcon Heavy e Crew Dragon"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39b.json",
+  "at": "name",
+  "en": "Launch Complex 39B",
+  "cur": "Complexo de Lançamento 39B"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39b.json",
+  "at": "tagline",
+  "en": "Apollo 10 + Skylab + 53 Shuttle flights; now NASA's SLS / Artemis pad",
+  "cur": "Apollo 10 + Skylab + 53 voos do Shuttle; agora plataforma NASA SLS / Artemis"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39b.json",
+  "at": "description",
+  "en": "Pad 39B carried Apollo 10 (the lunar dress rehearsal), Skylab 2/3/4 crew launches, and fifty-three Space Shuttle flights — the first of which was the ill-fated STS-51-L Challenger in January 1986. Rebuilt as a clean pad in the late 2000s — no permanent service tower, mobile launcher platform per mission — to host the next generation of vehicles. Artemis I lifted from 39B in November 2022; Artemis II and III will follow.",
+  "cur": "A Plataforma 39B lançou o Apollo 10 (o ensaio lunar), os lançamentos de tripulação do Skylab 2/3/4, e cinquenta e três voos do Space Shuttle — o primeiro dos quais foi o malfadado STS-51-L Challenger em janeiro de 1986. Reconstruída como uma plataforma limpa no final dos anos 2000 — sem torre de serviço permanente, plataforma lançadora móvel por missão — para receber a próxima geração de veículos. Artemis I decolou de 39B em novembro de 2022; Artemis II e III virão em seguida."
+ },
+ {
+  "rel": "fleet/launch-site/lc-39b.json",
+  "at": "best_known_for",
+  "en": "Apollo 10 + Skylab + 53 Shuttle flights; now NASA's SLS / Artemis pad",
+  "cur": "Apollo 10 + Skylab + 53 voos do Shuttle; agora plataforma NASA SLS / Artemis"
+ },
+ {
+  "rel": "fleet/launch-site/lc-5.json",
+  "at": "tagline",
+  "en": "Cape Canaveral Mercury-Redstone pad — launched Freedom 7 (Shepard, 1961-05-05) and Liberty Bell 7 (Grissom, 1961-07-21)",
+  "cur": "Plataforma Mercury-Redstone de Cabo Canaveral — lançou Freedom 7 (Shepard, 1961-05-05) e Liberty Bell 7 (Grissom, 1961-07-21)"
+ },
+ {
+  "rel": "fleet/launch-site/lc-5.json",
+  "at": "dispatch",
+  "en": "Launch Complex 5 is a modest concrete pad with an outsized claim: it is where American human spaceflight physically began. It had been a Redstone missile test stand before NASA adapted it, and from it, on 5 May 1961, Alan Shepard became the first American to leave the planet. It launched only the two suborbital Mercury hops before the program moved to the more powerful Atlas pads down the Cape — a short career, but it holds the starting line. The first American flight of everything that followed traces back to this spot.",
+  "cur": "O Launch Complex 5 é uma modesta plataforma de concreto com uma reivindicação desproporcional: é onde o voo espacial humano americano fisicamente começou. Havia sido uma base de testes de mísseis Redstone antes da NASA adaptá-la, e dela, em 5 de maio de 1961, Alan Shepard tornou-se o primeiro americano a deixar o planeta. Lançou apenas os dois saltos suborbitais do Mercury antes do programa mudar para as plataformas Atlas mais potentes ao longo do Cabo — uma carreira curta, mas que detém a linha de partida. O primeiro voo americano de tudo que se seguiu remonta a este local."
+ },
+ {
+  "rel": "fleet/launch-site/lc-5.json",
+  "at": "description",
+  "en": "Cape Canaveral Launch Complex 5 hosted Redstone IRBM tests (1956-1961) before being modified for NASA's Mercury-Redstone programme. Freedom 7 (1961-05-05, Shepard, first American in space) and Liberty Bell 7 (1961-07-21, Grissom) both launched from LC-5. The pad's blockhouse — heavy reinforced concrete with thick blast-resistant glass — survives intact and is part of the Cape Canaveral Air Force Station Museum, used as a Mercury programme exhibit space. The blockhouse interior preserves the period instrument panels, including the consoles where launch teams worked through the Cuban missile crisis. Final launch 1961-07-21 — LC-5 was retired after Liberty Bell 7 when NASA shifted to LC-14 for the Atlas-Mercury flights.",
+  "cur": "O Complexo de Lançamento 5 de Cabo Canaveral abrigou testes de mísseis balísticos Redstone (1956-1961) antes de ser modificado para o programa Mercury-Redstone da NASA. Freedom 7 (1961-05-05, Shepard, primeiro americano no espaço) e Liberty Bell 7 (1961-07-21, Grissom) foram ambos lançados a partir do LC-5. A casa de controle da plataforma — concreto pesado e reforçado com vidro espesso resistente a explosões — permanece intacta e faz parte do Museu da Estação Aérea de Cabo Canaveral, sendo utilizada como espaço de exposição do programa Mercury. O interior da casa de controle preserva os painéis de instrumentos da época, incluindo os painéis de controle onde as equipes de lançamento trabalharam durante a crise dos mísseis de Cuba. Último lançamento 1961-07-21 — o LC-5 foi desativado após Liberty Bell 7, quando a NASA mudou para o LC-14 para os voos Atlas-Mercury."
+ },
+ {
+  "rel": "fleet/launch-site/lc-5.json",
+  "at": "best_known_for",
+  "en": "Cape Canaveral Mercury-Redstone pad — launched Freedom 7 (Shepard, 1961-05-05) and Liberty Bell 7 (Grissom, 1961-07-21)",
+  "cur": "Plataforma Mercury-Redstone de Cabo Canaveral — lançou Freedom 7 (Shepard, 1961-05-05) e Liberty Bell 7 (Grissom, 1961-07-21)"
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-41-1.json",
+  "at": "tagline",
+  "en": "R-7-family pad (Vostok-2 / Soyuz-class) — 308 launches, 1966-1981",
+  "cur": "Rampa da família R-7 (Vostok-2 / classe Soyuz) — 308 lançamentos, 1966-1981"
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-41-1.json",
+  "at": "description",
+  "en": "Plesetsk's LC-41/1 pad (also called Lesobaza or SK-1) operated R-7-derived rockets from 1966 to 1981, supporting a vast catalogue of military reconnaissance, navigation, and communications satellites. The pad hosted the first orbital launch from LC-41/1: Kosmos 112 on March 17, 1966 (Vostok-2 booster). Over ~15 years of operation, approximately 308 successful orbital launches were achieved. Located at NIIP-53 in Russia's far north, the pad was disassembled after its operational period ended.",
+  "cur": "A rampa LC-41/1 de Plesetsk (também chamada de Lesobaza ou SK-1) operou foguetes derivados da R-7 de 1966 a 1981, apoiando um vasto catálogo de satélites de reconhecimento militar, navegação e comunicações. A rampa foi palco do primeiro lançamento orbital da LC-41/1: Kosmos 112 em 17 de março de 1966 (foguete Vostok-2). Ao longo de ~15 anos de operação, foram alcançados aproximadamente 308 lançamentos orbitais bem-sucedidos. Localizada em NIIP-53 no extremo norte da Rússia, a rampa foi desmontada após o término de seu período operacional."
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-41-1.json",
+  "at": "best_known_for",
+  "en": "R-7-family pad (Vostok-2 / Soyuz-class)",
+  "cur": "Rampa da família R-7 (Vostok-2 / classe Soyuz)"
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-43.json",
+  "at": "tagline",
+  "en": "Plesetsk's workhorse Soyuz pad at 62.9°N — the world's highest-latitude active orbital launch complex",
+  "cur": "Plataforma Soyuz de trabalho do Plesetsk a 62,9°N — o complexo de lançamento orbital ativo em maior latitude do mundo"
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-43.json",
+  "at": "description",
+  "en": "Plesetsk Cosmodrome sits at 62.9°N — the world's highest-latitude active orbital launch complex. Site 43 is one of several pads at Plesetsk and operates Soyuz-2 today for Russian polar / Molniya / GLONASS payloads. Originally an R-7 ICBM base in the late 1950s, repurposed for space launches in 1966, and for several decades Plesetsk held the record for most orbital launches from any single site on Earth. The high latitude limits how much the Earth's rotation contributes (less than at Baikonur or Wenchang), but it's perfect for high-inclination missions that Baikonur can't easily reach without dogleg manoeuvres.",
+  "cur": "O Cosmódromo de Plesetsk situa-se a 62,9°N — o complexo de lançamento orbital ativo em maior latitude do mundo. O Site 43 é uma de várias plataformas do Plesetsk e opera o Soyuz-2 atualmente para cargas úteis polares / Molniya / GLONASS russos. Originalmente uma base de ICBM R-7 no final dos anos 1950, reutilizada para lançamentos espaciais em 1966, e por várias décadas Plesetsk manteve o recorde de mais lançamentos orbitais de um único local na Terra. A alta latitude limita quanto a rotação terrestre contribui (menos que em Baikonur ou Wenchang), mas é perfeita para missões de alta inclinação que Baikonur não consegue alcançar facilmente sem manobras de desvio."
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-43.json",
+  "at": "best_known_for",
+  "en": "World's most northerly orbital launch site — Russia's polar / Molniya military + GLONASS pad",
+  "cur": "Plataforma de lançamento orbital mais setentrional do mundo — plataforma militar polar / Molniya + GLONASS da Rússia"
+ },
+ {
+  "rel": "fleet/launch-site/sriharikota-slp.json",
+  "at": "tagline",
+  "en": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3, Mangalyaan, and the upcoming Gaganyaan crew programme",
+  "cur": "Rampa de lançamento pesada da Índia — GSLV Mk III / LVM3 para Chandrayaan-3, Mangalyaan e o próximo programa de tripulação Gaganyaan"
+ },
+ {
+  "rel": "fleet/launch-site/sriharikota-slp.json",
+  "at": "description",
+  "en": "Sriharikota Island on India's east coast, 13.7°N — closer to the equator than Cape Canaveral, with the Bay of Bengal corridor empty downrange. The Second Launch Pad (SLP) handles ISRO's heavy-lift programme: PSLV manifests, LVM3 (formerly GSLV Mk III), Chandrayaan-1 (October 2008, lunar orbiter/impactor), Chandrayaan-2 (July 2019, lost on landing), Chandrayaan-3 (July 2023, successful soft landing near the south pole), and the planned Gaganyaan crewed missions. The First Launch Pad next door handles smaller PSLV / SSLV manifests and hosted the Mangalyaan Mars launch (November 2013).",
+  "cur": "Ilha de Sriharikota na costa leste da Índia, 13,7°N — mais próxima do equador que Cabo Canaveral, com o corredor da Baía de Bengala livre em alcance. A Segunda Rampa de Lançamento (SLP) opera o programa de lançamentos pesados da ISRO: manifestes do PSLV, LVM3 (anteriormente GSLV Mk III), Chandrayaan-1 (outubro de 2008, orbitador/impactador lunar), Chandrayaan-2 (julho de 2019, perdido no pouso), Chandrayaan-3 (julho de 2023, pouso suave bem-sucedido próximo ao pólo sul) e as missões tripuladas Gaganyaan planejadas. A Primeira Rampa de Lançamento ao lado opera manifestes menores do PSLV / SSLV e sediou o lançamento Mangalyaan para Marte (novembro de 2013)."
+ },
+ {
+  "rel": "fleet/launch-site/sriharikota-slp.json",
+  "at": "best_known_for",
+  "en": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3, Mangalyaan, and the upcoming Gaganyaan crew programme",
+  "cur": "Rampa de lançamento pesada da Índia — GSLV Mk III / LVM3 para Chandrayaan-3, Mangalyaan e o próximo programa de tripulação Gaganyaan"
+ },
+ {
+  "rel": "fleet/launch-site/starbase-orbital-a.json",
+  "at": "name",
+  "en": "Starbase Orbital Pad A",
+  "cur": "Starbase, plataforma orbital A"
+ },
+ {
+  "rel": "fleet/launch-site/starbase-orbital-a.json",
+  "at": "tagline",
+  "en": "First Starship orbital flight test; designed for the full reusable Mars-bound stack",
+  "cur": "Primeiro teste de voo orbital do Starship; projetado para a pilha completa reutilizável com destino a Marte"
+ },
+ {
+  "rel": "fleet/launch-site/starbase-orbital-a.json",
+  "at": "description",
+  "en": "SpaceX's Starship pad at Boca Chica, Texas — built from scratch starting in 2019 for the fully reusable Starship + Super Heavy. First integrated flight test (IFT-1) lifted off April 20, 2023; vehicle lost ~4 minutes post-liftoff after engine failures caused loss of control, but the pad survived. Subsequent IFTs through 2024-25 demonstrated booster catch via the Mechazilla tower arms, successful sea splashdowns, and increasing payload-class capability. The water deluge system at this pad is the largest ever built for an orbital launch — the over-pressure footprint from 33 Raptor-class engines is unlike anything else flying.",
+  "cur": "Plataforma de lançamento Starship da SpaceX em Boca Chica, Texas — construída do zero a partir de 2019 para o Starship + Super Heavy totalmente reutilizável. Primeiro teste de voo integrado (IFT-1) decolou em 20 de abril de 2023; a nave foi perdida ~4 minutos após o lançamento após falhas de motor causarem perda de controle, mas a plataforma sobreviveu. IFTs subsequentes em 2024-25 demonstraram captura do propulsor via os braços da torre Mechazilla, amerissagens bem-sucedidas no mar e capacidade de classe de carga crescente. O sistema de deflexão de água nesta plataforma é o maior jamais construído para um lançamento orbital — a pegada de sobrepressão de 33 motores classe Raptor é algo sem precedentes em operação."
+ },
+ {
+  "rel": "fleet/launch-site/starbase-orbital-a.json",
+  "at": "best_known_for",
+  "en": "First Starship orbital flight test; designed for the full reusable Mars-bound stack",
+  "cur": "Primeiro teste de voo orbital do Starship; projetado para a pilha completa reutilizável com destino a Marte"
+ },
+ {
+  "rel": "fleet/launch-site/taiyuan-lc-9.json",
+  "at": "tagline",
+  "en": "Long March 2D / 4B / 4C polar-orbit workhorse — Yaogan, Gaofen, weather sats",
+  "cur": "Plataforma polar Longa Marcha 2D/4B/4C — Yaogan, Gaofen, meteorológicos"
+ },
+ {
+  "rel": "fleet/launch-site/taiyuan-lc-9.json",
+  "at": "description",
+  "en": "Taiyuan Satellite Launch Center's LC-9 (also known as Pad 9) handles most of TYSC's polar and sun-synchronous orbit launches with the Long March 2D, 4B, 4C, and 6A. Typical payloads include the Yaogan reconnaissance series, the Gaofen Earth-observation constellation, and the Fengyun meteorological satellites. Active since 2008.",
+  "cur": "O LC-9 (também Pad 9) do Centro de Lançamento de Satélites de Taiyuan gerencia a maioria dos lançamentos polares e helossíncronos do TYSC com Longa Marcha 2D, 4B, 4C e 6A. Cargas típicas incluem a série de reconhecimento Yaogan, a constelação de observação terrestre Gaofen e os satélites meteorológicos Fengyun. Ativo desde 2008."
+ },
+ {
+  "rel": "fleet/launch-site/taiyuan-lc-9.json",
+  "at": "best_known_for",
+  "en": "Polar-orbit workhorse for Yaogan + Gaofen + Fengyun",
+  "cur": "Plataforma polar Yaogan/Gaofen/Fengyun"
+ },
+ {
+  "rel": "fleet/launch-site/tanegashima-yoshinobu.json",
+  "at": "name",
+  "en": "Tanegashima Yoshinobu LP-1",
+  "cur": "Tanegashima Yoshinobu LP-1"
+ },
+ {
+  "rel": "fleet/launch-site/tanegashima-yoshinobu.json",
+  "at": "tagline",
+  "en": "Japan's heavy-lift gateway — H-IIA + H3, HTV / HTV-X cargo to the ISS",
+  "cur": "Gateway de lançamento pesado do Japão — H-IIA + H3, carga HTV / HTV-X para a EEI"
+ },
+ {
+  "rel": "fleet/launch-site/tanegashima-yoshinobu.json",
+  "at": "description",
+  "en": "On Tanegashima, the southern Japanese island that's been home to JAXA's orbital programme since 1969. LP-1 hosted the H-II maiden flight in 1996; the H-IIA from 2001 (49 successes in 50 flights; retired June 2025 after its final mission); the seven HTV cargo flights to the ISS between 2009 and 2020; and from 2023 the new H3 rocket. Tanegashima's 30°N geometry is workable for geostationary launches — the south Pacific is empty downrange — and the fishing fleet stand-down windows are famously short, giving Japan some of the tightest launch-window protocols in the world.",
+  "cur": "Em Tanegashima, a ilha japonesa meridional que abriga o programa orbital da JAXA desde 1969. LP-1 recebeu o voo inaugural do H-II em 1996; o H-IIA a partir de 2001 (49 sucessos em 50 voos; aposentado em junho de 2025 após sua missão final); os sete voos de carga HTV para a EEI entre 2009 e 2020; e a partir de 2023 o novo foguete H3. A geometria de 30°N de Tanegashima é viável para lançamentos geoestacionários — o Pacífico sul está vazio na trajetória de queda — e as janelas de paralisação da frota pesqueira são notoriamente curtas, dando ao Japão alguns dos protocolos de janela de lançamento mais rigorosos do mundo."
+ },
+ {
+  "rel": "fleet/launch-site/tanegashima-yoshinobu.json",
+  "at": "best_known_for",
+  "en": "Japan's heavy-lift gateway — H-IIA + H3, HTV / HTV-X cargo to the ISS",
+  "cur": "Gateway de lançamento pesado do Japão — H-IIA + H3, carga HTV / HTV-X para a EEI"
+ },
+ {
+  "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+  "at": "tagline",
+  "en": "Polar / sun-synchronous gateway — Falcon 9 to Starlink + national-security + earth-observation",
+  "cur": "Portal polar / heliossíncrono — Falcon 9 para Starlink + segurança nacional + observação da Terra"
+ },
+ {
+  "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+  "at": "description",
+  "en": "The US west-coast orbital gateway. Built for Atlas-Agena in 1963; Titan III/IV through to 2005; refit by SpaceX in 2011. Vandenberg's geographic advantage is the corridor due south over the Pacific — that's how US payloads reach polar and sun-synchronous orbits without overflying populated land. Today SLC-4E flies Falcon 9 to Starlink polar shells, NRO classified payloads, USSF + commercial earth-observation satellites. SLC-4W next door is the booster recovery zone.",
+  "cur": "O portal orbital da costa oeste dos EUA. Construído para Atlas-Agena em 1963; Titan III/IV até 2005; modernizado pela SpaceX em 2011. A vantagem geográfica de Vandenberg é o corredor direto ao sul sobre o Pacífico — é assim que as cargas dos EUA alcançam órbitas polares e heliossíncronas sem sobrevoar terras povoadas. Hoje a SLC-4E voa Falcon 9 para as conchas polares Starlink, cargas classificadas da NRO, satélites de observação da Terra USSF + comerciais. A SLC-4W ao lado é a zona de recuperação dos foguetes propulsores."
+ },
+ {
+  "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+  "at": "best_known_for",
+  "en": "Polar / sun-synchronous gateway — Falcon 9 to Starlink + national-security + earth-observation",
+  "cur": "Portal polar / heliossíncrono — Falcon 9 para Starlink + segurança nacional + observação da Terra"
+ },
+ {
+  "rel": "fleet/launch-site/wenchang-lc-101.json",
+  "at": "tagline",
+  "en": "China's heavy-lift pad — Long March 5 to Tianhe, Chang'e 5/6, Tianwen-1, and the lunar return programme",
+  "cur": "Plataforma de lançamento pesado da China — Long March 5 para Tianhe, Chang'e 5/6, Tianwen-1 e o programa de retorno lunar"
+ },
+ {
+  "rel": "fleet/launch-site/wenchang-lc-101.json",
+  "at": "description",
+  "en": "Built in 2014, operational from 2016, on Hainan Island at 19.6°N — the southernmost CNSA launch site. The low latitude adds about 460 m/s of free eastward velocity vs Jiuquan or Xichang, which is how Long March 5B can reach the 25-tonne LEO class needed to put the Tianhe core module into orbit in a single launch. Wenchang LC-101 is dedicated to Long March 5 / 5B; maiden flight November 3, 2016. It also flew Chang'e 5 (lunar sample return, 2020), Chang'e 6 (the farside sample return, 2024), and Tianwen-1 (Mars orbiter + Zhurong rover, 2020). Sister pad LC-201 next door handles Long March 7/8 manifests and achieved its first launch in June 2016.",
+  "cur": "Construída em 2014, operacional a partir de 2016, na Ilha de Hainan a 19,6°N — o local de lançamento mais ao sul da CNSA. A baixa latitude adiciona aproximadamente 460 m/s de velocidade livre em direção ao leste em comparação com Jiuquan ou Xichang, o que permite que a Long March 5B alcance a classe de 25 toneladas em LEO necessária para colocar o módulo núcleo Tianhe em órbita em um único lançamento. Wenchang LC-101 é dedicado à Long March 5 / 5B; voo inaugural em 3 de novembro de 2016. Também lançou Chang'e 5 (retorno de amostra lunar, 2020), Chang'e 6 (retorno de amostra do lado oposto, 2024) e Tianwen-1 (orbitador de Marte + rover Zhurong, 2020). A plataforma irmã LC-201 ao lado trata dos manifestos de Long March 7/8 e realizou seu primeiro lançamento em junho de 2016."
+ },
+ {
+  "rel": "fleet/launch-site/wenchang-lc-101.json",
+  "at": "best_known_for",
+  "en": "China's heavy-lift pad — Long March 5 to Tianhe, Chang'e 5/6, Tianwen-1, and the lunar return programme",
+  "cur": "Plataforma de lançamento pesado da China — Long March 5 para Tianhe, Chang'e 5/6, Tianwen-1 e o programa de retorno lunar"
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-2.json",
+  "at": "tagline",
+  "en": "Long March 3A/3B family — most Chinese GTO commercial launches and Beidou GNSS deployments",
+  "cur": "Família Long March 3A/3B — a maioria dos lançamentos comerciais chineses para GTO e implantações do sistema Beidou GNSS"
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-2.json",
+  "at": "description",
+  "en": "Xichang Satellite Launch Center's LC-2 has handled the majority of China's commercial geostationary launches, the Beidou/Compass navigation constellation, and the Chang'e lunar program through the Long March 3A, 3B, and 3C variants. Located in the mountainous Sichuan province, the site combines a low-latitude advantage for GTO performance with year-round operational availability.",
+  "cur": "O LC-2 do Centro de Lançamento de Satélites de Xichang realizou a maioria dos lançamentos chineses para órbita geoestacionária, a constelação de navegação Beidou/Compass e o programa lunar Chang'e por meio das variantes Long March 3A, 3B e 3C. Situado na província montanhosa de Sichuan, o local combina a vantagem da baixa latitude para o desempenho em GTO com disponibilidade operacional o ano todo."
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-2.json",
+  "at": "best_known_for",
+  "en": "Long March 3A/3B GTO + Beidou GNSS",
+  "cur": "Long March 3A/3B para GTO + Beidou GNSS"
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-3.json",
+  "at": "tagline",
+  "en": "First CZ-3 operational successes — DFH-2 first GTO success, Apstar / Asiasat / Sinosat era",
+  "cur": "Primeiros sucessos operacionais do CZ-3 — primeiro sucesso GTO do DFH-2, era Apstar / Asiasat / Sinosat"
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-3.json",
+  "at": "description",
+  "en": "Xichang LC-3 hosted the first Long March 3 launch attempt on January 29, 1984 (DFH-2-01), which partially failed on third-stage re-ignition. The first successful Long March 3 flight occurred on April 8, 1984 (DFH-2-02), which placed the DFH-2 'Dong Fang Hong-2' communications satellite into geostationary transfer orbit — China's first GTO success. Both CZ-3 flights were from LC-3. Through the 1990s it supported many Apstar, Asiasat, and Sinosat commercial communications launches. Today it remains in active use alongside LC-2 for Long March 3B operations.",
+  "cur": "Xichang LC-3 abrigou a primeira tentativa de lançamento do Long March 3 em 29 de janeiro de 1984 (DFH-2-01), que falhou parcialmente no re-ignição do terceiro estágio. O primeiro voo bem-sucedido do Long March 3 ocorreu em 8 de abril de 1984 (DFH-2-02), que colocou o satélite de comunicações DFH-2 'Dong Fang Hong-2' em órbita de transferência geoestacionária — o primeiro sucesso GTO da China. Ambos os voos do CZ-3 foram de LC-3. Durante a década de 1990, apoiou muitos lançamentos comerciais de comunicações Apstar, Asiasat e Sinosat. Hoje permanece em uso ativo ao lado de LC-2 para operações do Long March 3B."
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-3.json",
+  "at": "best_known_for",
+  "en": "First Chinese GTO success (1984) + comsat workhorse",
+  "cur": "Primeiro sucesso GTO chinês (1984) + cavalo de batalha comsat"
+ },
+ {
+  "rel": "fleet/launcher/antares.json",
+  "at": "tagline",
+  "en": "Workhorse for Cygnus ISS resupply through NG-19",
+  "cur": "Cavalo de trabalho para reabastecimento Cygnus na EEI até NG-19"
+ },
+ {
+  "rel": "fleet/launcher/antares.json",
+  "at": "description",
+  "en": "Northrop Grumman's medium-lift launcher, originally built around the Aerojet AJ26 and later RD-181 first stages with a Castor solid second stage. Carried Cygnus to the ISS from 2013 through NG-19 in 2023. The Antares 330 successor (jointly developed with Firefly Aerospace) replaces the Russian first stage with seven Miranda engines.",
+  "cur": "Foguete de médio porte da Northrop Grumman, originalmente construído em torno do primeiro estágio Aerojet AJ26 e posteriormente RD-181, com um segundo estágio sólido Castor. Transportou Cygnus para a EEI de 2013 até NG-19 em 2023. O sucessor Antares 330 (desenvolvido em colaboração com Firefly Aerospace) substitui o primeiro estágio russo por sete motores Miranda."
+ },
+ {
+  "rel": "fleet/launcher/antares.json",
+  "at": "best_known_for",
+  "en": "Workhorse for Cygnus ISS resupply through NG-19",
+  "cur": "Cavalo de trabalho para reabastecimento Cygnus na EEI até NG-19"
+ },
+ {
+  "rel": "fleet/launcher/ariane-1.json",
+  "at": "tagline",
+  "en": "Europe's first independent orbital launcher — opened the commercial-comsat era for ESA, flew Giotto to Halley",
+  "cur": "O primeiro lançador orbital independente da Europa — abriu a era dos comsats comerciais para a ESA e levou a Giotto ao cometa Halley"
+ },
+ {
+  "rel": "fleet/launcher/ariane-1.json",
+  "at": "dispatch",
+  "en": "Ariane 1 was where Europe won its independence in space. Built after the United States made clear it would launch European satellites only on its own terms, Ariane 1 flew from Kourou in 1979 and gave Europe, for the first time, a launcher it fully controlled — answerable to no other power. It was a modest rocket by later standards, but the principle it established was not modest at all: that a continent's access to orbit should belong to that continent. Every Ariane since has flown that principle.",
+  "cur": "Ariane 1 foi onde a Europa conquistou sua independência no espaço. Construído depois que os Estados Unidos deixaram claro que lançariam satélites europeus apenas em seus próprios termos, o Ariane 1 voou de Kourou em 1979 e deu à Europa, pela primeira vez, um lançador que ela controlava totalmente — sem responder a nenhuma outra potência. Era um foguete modesto para os padrões posteriores, mas o princípio que estabeleceu não era nada modesto: que o acesso de um continente à órbita deveria pertencer a esse continente. Cada Ariane desde então voou esse princípio."
+ },
+ {
+  "rel": "fleet/launcher/ariane-1.json",
+  "at": "description",
+  "en": "Three-stage rocket built by CNES at ESA's request after the cancelled Europa programme — hypergolic UH-25 / N2O4 first + second stages topped with the LH₂ / LOX HM7 third stage. 11 launches from Kourou between 1979-12-24 and 1986-02-22 carried 27 European telecom and science satellites including ECS-1, Marecs A/B, Spacenet, Telecom 1A/1B, and ESA's Giotto Halley flyby probe. Retired in favour of the bigger Ariane 2/3/4; the HM7 cryogenic upper-stage line lived on through Ariane 4 and into Ariane 5's ESC-A.",
+  "cur": "Foguete de três estágios construído pela CNES a pedido da ESA após o cancelamento do programa Europa — primeiros e segundos estágios hipergólicos UH-25 / N2O4, coroados pelo terceiro estágio criogênico HM7 (LH₂ / LOX). 11 lançamentos a partir de Kourou entre 24-12-1979 e 22-02-1986 levaram 27 satélites europeus de telecomunicações e ciência, incluindo ECS-1, Marecs A/B, Spacenet, Telecom 1A/1B e a sonda Giotto da ESA ao cometa Halley. Aposentado em favor dos Ariane 2/3/4 maiores; a tecnologia criogênica HM7 continuou via Ariane 4 e desembocou no estágio ESC-A do Ariane 5."
+ },
+ {
+  "rel": "fleet/launcher/ariane-1.json",
+  "at": "best_known_for",
+  "en": "Europe's first independent orbital launcher — 11 flights 1979-1986, opened commercial comsats + Giotto to Halley",
+  "cur": "Primeiro lançador orbital independente da Europa — 11 voos 1979-1986, abriu os comsats comerciais e levou Giotto ao Halley"
+ },
+ {
+  "rel": "fleet/launcher/ariane-5.json",
+  "at": "tagline",
+  "en": "Launched Rosetta, JWST, Galileo satnav (ESA)",
+  "cur": "Lançados Rosetta, JWST, Galileo satnav (ESA)"
+ },
+ {
+  "rel": "fleet/launcher/ariane-5.json",
+  "at": "dispatch",
+  "en": "Ariane 5 was the heavy-lift workhorse that carried European spaceflight to its peak — after one of the most famous failures in the field. Its 1996 maiden flight self-destructed 37 seconds up when guidance software inherited from Ariane 4 overflowed at the new rocket's higher speed, a software-engineering cautionary tale now taught worldwide. It recovered to become one of the most reliable heavy launchers ever built, lofting Rosetta, Galileo (navigation constellation), BepiColombo, the ATV freighters to the ISS, and finally the James Webb Space Telescope — placed so precisely it saved years of the observatory's fuel.",
+  "cur": "O Ariane 5 foi o foguete pesado de trabalho que levou o voo espacial europeu ao seu auge — após um dos fracassos mais famosos da história. Seu primeiro voo em 1996 se autodestruiu 37 segundos após o lançamento quando o software de orientação herdado do Ariane 4 transbordou na velocidade mais alta do novo foguete, uma lição de engenharia de software agora ensinada em todo o mundo. Ele se recuperou e se tornou um dos lançadores pesados mais confiáveis já construídos, colocando em órbita Rosetta, Galileo (constelação de navegação), BepiColombo, os cargueiros ATV na EEI e, por fim, o James Webb Space Telescope — posicionado com precisão tal que economizou anos de combustível do observatório."
+ },
+ {
+  "rel": "fleet/launcher/ariane-5.json",
+  "at": "description",
+  "en": "ESA’s long-running heavy lifter, retired in 2023 after 117 launches. Carried Rosetta to comet 67P, JWST to L2, and dual-manifested geostationary commercial payloads for two decades.",
+  "cur": "Lançador pesado de longa duração da ESA, aposentado em 2023 após 117 lançamentos. Transportou Rosetta até o cometa 67P, JWST até L2 e cargas úteis comerciais geoestacionárias em manifesto duplo durante duas décadas."
+ },
+ {
+  "rel": "fleet/launcher/ariane-5.json",
+  "at": "best_known_for",
+  "en": "Launched Rosetta, JWST, Galileo (ESA)",
+  "cur": "Lançou Rosetta, JWST, Galileo (ESA)"
+ },
+ {
+  "rel": "fleet/launcher/ariane-6.json",
+  "at": "tagline",
+  "en": "Successor to Ariane 5",
+  "cur": "Sucessor de Ariane 5"
+ },
+ {
+  "rel": "fleet/launcher/ariane-6.json",
+  "at": "dispatch",
+  "en": "Ariane 6 is Europe's answer to a market it no longer dominates. For two decades Ariane owned commercial launch; then reusable rockets undercut its prices and ended that reign. Ariane 6, flying from 2024, is the established power's response to the disruptive one — cheaper and more flexible than Ariane 5, built to keep Europe's independent access to space alive as the economics of launch are rewritten around it. Whether an expendable rocket can hold its ground against reusable rivals is the open question it now carries.",
+  "cur": "Ariane 6 é a resposta da Europa a um mercado que ela não domina mais. Por duas décadas Ariane dominou lançamentos comerciais; então foguetes reutilizáveis reduziram seus preços e encerraram esse reinado. Ariane 6, voando a partir de 2024, é a resposta do poder estabelecido ao disruptivo — mais barato e flexível que Ariane 5, construído para manter o acesso independente da Europa ao espaço vivo enquanto a economia dos lançamentos é reescrita ao seu redor. Se um foguete descartável pode manter sua posição contra rivais reutilizáveis é a questão em aberto que ele agora carrega."
+ },
+ {
+  "rel": "fleet/launcher/ariane-6.json",
+  "at": "description",
+  "en": "Ariane 6 is a orbital launcher built by ArianeGroup in Multi (Europe). Successor to Ariane 5. In service since 2024.",
+  "cur": "Ariane 6 é um lançador orbital construído por ArianeGroup em Multi (Europa). Sucessor de Ariane 5. Em serviço desde 2024."
+ },
+ {
+  "rel": "fleet/launcher/ariane-6.json",
+  "at": "best_known_for",
+  "en": "Successor to Ariane 5",
+  "cur": "Sucessor de Ariane 5"
+ },
+ {
+  "rel": "fleet/launcher/atlas-lv-3b.json",
+  "at": "tagline",
+  "en": "Lifted Mercury astronauts to orbit",
+  "cur": "Levou astronautas do Mercury à órbita"
+ },
+ {
+  "rel": "fleet/launcher/atlas-lv-3b.json",
+  "at": "dispatch",
+  "en": "If the Redstone was the cautious step, the Atlas was the leap. It was America's first intercontinental missile, and it reached orbital speed by being audaciously, almost alarmingly light: its skin was so thin that the rocket had to be kept pressurised like a balloon just to stand up without crumpling. Man-rating that — trusting a person to a missile that would collapse if you let the pressure drop — was the hard call that separated Mercury's suborbital half from its orbital one. Every American orbital flight of the program rode this thin steel balloon, and it is why Glenn, Carpenter, Schirra, and Cooper circled the Earth while Shepard and Grissom only touched the edge of it.",
+  "cur": "Se o Redstone foi o passo cauteloso, o Atlas foi o salto. Era o primeiro míssil intercontinental da América, e atingiu a velocidade orbital sendo audaciosamente, quase assustadoramente leve: sua casca era tão fina que o foguete tinha de ser mantido pressurizado como um balão apenas para se manter em pé sem amassar. Certificar o voo humano nele — confiar uma pessoa a um míssil que entraria em colapso se deixasse a pressão cair — foi a decisão difícil que separou a metade suborbitadora da órbita do Mercury. Cada voo orbital da América do programa montou neste balão de aço fino, e é por isso que Glenn, Carpenter, Schirra e Cooper circundaram a Terra enquanto Shepard e Grissom apenas tocaram sua borda."
+ },
+ {
+  "rel": "fleet/launcher/atlas-lv-3b.json",
+  "at": "description",
+  "en": "Atlas LV-3B was Convair's orbital launcher that lifted Mercury astronauts to orbit on six flights (Mercury-Atlas 6 through 10) between February and May 1963. The thin-skinned booster — so light it required pressurization to stand upright — proved that a ballistic missile could be man-rated. Retired after the Mercury program.",
+  "cur": "O Atlas LV-3B foi o foguete orbital da Convair que levou astronautas do Mercury à órbita em seis voos (Mercury-Atlas 6 a 10) entre fevereiro e maio de 1963. O propulsor de casca fina — tão leve que exigia pressurização para ficar em pé — provou que um míssil balístico poderia ser certificado para voo humano. Desativado após o programa Mercury."
+ },
+ {
+  "rel": "fleet/launcher/atlas-lv-3b.json",
+  "at": "best_known_for",
+  "en": "Lifted Mercury astronauts to orbit",
+  "cur": "Levou astronautas do Mercury à órbita"
+ },
+ {
+  "rel": "fleet/launcher/atlas-slv-3d.json",
+  "at": "tagline",
+  "en": "1970s NASA outer-planet workhorse — Pioneer 10/11, Helios 1/2, Mariner 9/10, Pioneer Venus",
+  "cur": "Cavalo de batalha da NASA para planetas exteriores nos anos 70 — Pioneer 10/11, Helios 1/2, Mariner 9/10, Pioneer Venus"
+ },
+ {
+  "rel": "fleet/launcher/atlas-slv-3d.json",
+  "at": "description",
+  "en": "Stretched Atlas SLV-3D first stage with the world's first hydrogen-fuelled upper stage (Centaur D-1A, LOX/LH₂) — the combination that enabled every American Jupiter, Saturn, Mariner, and Helios mission of the 1970s. A Star-37E or Star-48 solid-kick stage was added on top for the very-high-energy trajectories (Pioneer 11 past Jupiter to Saturn). Served 1973-1983; superseded by the Atlas G/H/I family that fed into the Atlas II of the 1990s.",
+  "cur": "Primeiro estágio Atlas SLV-3D alongado com o primeiro estágio superior a hidrogênio do mundo (Centaur D-1A, LOX/LH₂) — a combinação que viabilizou todas as missões americanas a Júpiter, Saturno, Mariner e Helios nos anos 70. Um estágio sólido Star-37E ou Star-48 era acoplado no topo para as trajetórias de altíssima energia (Pioneer 11 passando por Júpiter rumo a Saturno). Serviu de 1973 a 1983; foi sucedido pela família Atlas G/H/I, que evoluiu para o Atlas II dos anos 90."
+ },
+ {
+  "rel": "fleet/launcher/atlas-slv-3d.json",
+  "at": "best_known_for",
+  "en": "1970s NASA outer-planet workhorse — Centaur D-1A's first H₂ upper stage opened the gas giants",
+  "cur": "Cavalo de batalha da NASA para planetas exteriores nos 70 — o primeiro estágio H₂ Centaur D-1A abriu os gigantes gasosos"
+ },
+ {
+  "rel": "fleet/launcher/atlas-v.json",
+  "at": "tagline",
+  "en": "United Launch Alliance's evolved Atlas",
+  "cur": "Atlas evoluído da United Launch Alliance"
+ },
+ {
+  "rel": "fleet/launcher/atlas-v.json",
+  "at": "description",
+  "en": "The reliable workhorse of United Launch Alliance, with over 100 successful launches since 2002. Carried Curiosity, Perseverance, MAVEN, MRO, New Horizons, and many of the most consequential US planetary missions of the 21st century.",
+  "cur": "O confiável cavalo de trabalho da United Launch Alliance, com mais de 100 lançamentos bem-sucedidos desde 2002. Transportou Curiosity, Perseverance, MAVEN, MRO, New Horizons e muitas das missões planetárias dos EUA mais consequentes do século XXI."
+ },
+ {
+  "rel": "fleet/launcher/atlas-v.json",
+  "at": "best_known_for",
+  "en": "United Launch Alliance's evolved Atlas",
+  "cur": "Atlas evoluído da United Launch Alliance"
+ },
+ {
+  "rel": "fleet/launcher/delta-ii.json",
+  "at": "tagline",
+  "en": "NASA's medium-lift planetary-science workhorse — 155 flights 1989-2018",
+  "cur": "Cavalo de trabalho de levantamento médio da NASA para ciência planetária — 155 voos 1989-2018"
+ },
+ {
+  "rel": "fleet/launcher/delta-ii.json",
+  "at": "description",
+  "en": "Two- or three-stage Delta variant with an RS-27A LOX/RP-1 first stage, up to nine GEM strap-on solid boosters, and an optional Star-48B kick stage for high-energy escape trajectories. 155 launches over 29 years with a 98.7% success rate; carried Dawn, Messenger, MRO, Phoenix, Kepler, Spitzer, GRAIL, and the original GPS Block II constellation. The 'Delta II Heavy' (7920H + Star-48B) was the configuration that delivered enough C3 for direct-to-Ceres + Mercury orbital insertion. Retired after the medium-lift market shifted to Atlas V and Falcon 9.",
+  "cur": "Variante Delta de dois ou três estágios com primeiro estágio LOX/RP-1 RS-27A, até nove propulsores sólidos GEM acoplados, e um estágio de curvatura Star-48B opcional para trajetórias de escape de alta energia. 155 lançamentos ao longo de 29 anos com taxa de sucesso de 98,7%; transportou Dawn, Messenger, MRO, Phoenix, Kepler, Spitzer, GRAIL e a constelação original GPS Block II. O 'Delta II Heavy' (7920H + Star-48B) foi a configuração que forneceu energia C3 suficiente para inserção orbital direta em Ceres + Mercúrio. Aposentado após o mercado de levantamento médio deslocar-se para Atlas V e Falcon 9."
+ },
+ {
+  "rel": "fleet/launcher/delta-ii.json",
+  "at": "best_known_for",
+  "en": "NASA's medium-lift planetary-science workhorse 1989-2018 — Dawn, Messenger, MRO, Phoenix, Kepler",
+  "cur": "Cavalo de trabalho de levantamento médio da NASA para ciência planetária 1989-2018 — Dawn, Messenger, MRO, Phoenix, Kepler"
+ },
+ {
+  "rel": "fleet/launcher/energia.json",
+  "at": "tagline",
+  "en": "Soviet super-heavy; two flights (Polyus 1987, Buran 1988)",
+  "cur": "Superpesado soviético; dois voos (Polyus 1987, Buran 1988)"
+ },
+ {
+  "rel": "fleet/launcher/energia.json",
+  "at": "dispatch",
+  "en": "Energia was the rocket that redeemed the N1 — the super-heavy launcher the Soviet Union finally got right. Where the N1 exploded on all four attempts, Energia worked, lifting the Polyus payload in 1987 and the Buran orbiter in 1988. Crucially, it was a launcher in its own right, not a shuttle stack: because Buran had no main engines, Energia did the whole job of reaching orbit and could just as well have lifted other heavy payloads with no orbiter at all. It was the most powerful rocket the Soviet Union ever flew successfully — and, like Buran, it was cancelled for want of anything left to launch.",
+  "cur": "Energia foi o foguete que redimiu o N1 — o lançador superpesado que a União Soviética finalmente acertou. Onde o N1 explodiu em todas as quatro tentativas, Energia funcionou, levando a carga Polyus em 1987 e o ônibus espacial Buran em 1988. Crucialmente, era um lançador por direito próprio, não um conjunto de ônibus espacial: porque Buran não tinha motores principais, Energia fez todo o trabalho de atingir órbita e poderia muito bem ter levado outras cargas pesadas sem nenhum ônibus espacial. Era o foguete mais poderoso que a União Soviética jamais voou com sucesso — e, como Buran, foi cancelado por falta de nada mais para lançar."
+ },
+ {
+  "rel": "fleet/launcher/energia.json",
+  "at": "description",
+  "en": "The only Soviet super-heavy launcher to fly successfully. Designed to carry the Buran orbiter or stand-alone payloads up to 100 t to LEO. Two flights: Polyus payload test (1987) and Buran orbiter (1988), both successful. Program shelved at the end of the Cold War.",
+  "cur": "O único lançador superpesado soviético a voar com sucesso. Projetado para carregar o ônibus espacial Buran ou cargas autônomas de até 100 t para LEO. Dois voos: teste de carga Polyus (1987) e ônibus espacial Buran (1988), ambos bem-sucedidos. Programa descontinuado no final da Guerra Fria."
+ },
+ {
+  "rel": "fleet/launcher/energia.json",
+  "at": "best_known_for",
+  "en": "Soviet super-heavy; flew twice (Polyus 1987, Buran 1988)",
+  "cur": "Super-pesado soviético; voou duas vezes (Polyus 1987, Buran 1988)"
+ },
+ {
+  "rel": "fleet/launcher/falcon-9.json",
+  "at": "tagline",
+  "en": "Reusable booster reshaped commercial launch",
+  "cur": "Reutilizável booster remodelado lançamento comercial"
+ },
+ {
+  "rel": "fleet/launcher/falcon-9.json",
+  "at": "description",
+  "en": "SpaceX’s Block 5 booster, designed for ten flights without refurbishment. The first orbital-class rocket to land and re-fly itself, fundamentally reshaping the commercial-launch market and dropping the cost-to-orbit by roughly an order of magnitude.",
+  "cur": "Booster Block 5 da SpaceX, projetado para dez voos sem renovação. O primeiro foguete de classe orbital a pousar e a voltar a voar, fundamentalmente remodelando o mercado de lançamento comercial e reduzindo o custo-orbitário em aproximadamente uma ordem de magnitude."
+ },
+ {
+  "rel": "fleet/launcher/falcon-9.json",
+  "at": "best_known_for",
+  "en": "Reusable booster reshaped commercial launch",
+  "cur": "Reutilizável booster remodelado lançamento comercial"
+ },
+ {
+  "rel": "fleet/launcher/falcon-heavy.json",
+  "at": "tagline",
+  "en": "Three-core super-heavy reusable booster",
+  "cur": "Foguete reutilizável super-pesado com três núcleos"
+ },
+ {
+  "rel": "fleet/launcher/falcon-heavy.json",
+  "at": "description",
+  "en": "Three Falcon 9 first-stage cores strapped together, with the two side boosters returning to land while the center core lands downrange on a drone ship. Presently among the most-powerful operational heavy-lift rockets, with payload capacity rivalling Saturn V on a cost-per-kg basis far below it. (As of mid-2026, Starship has demonstrated increasingly operational capability.)",
+  "cur": "Três núcleos de primeiro estágio do Falcon 9 acoplados juntos, com os dois propulsores laterais retornando para pouso enquanto o núcleo central pousa em uma barca de pouso não tripulada. Atualmente entre os foguetes de lançamento pesado mais poderosos em operação, com capacidade de carga útil que rivaliza a Saturn V em base custo-por-kg bem abaixo dela. (A partir de meados de 2026, a Starship demonstrou capacidade operacional cada vez maior.)"
+ },
+ {
+  "rel": "fleet/launcher/falcon-heavy.json",
+  "at": "best_known_for",
+  "en": "Three-core super-heavy reusable booster",
+  "cur": "Foguete reutilizável super-pesado com três núcleos"
+ },
+ {
+  "rel": "fleet/launcher/h-iia.json",
+  "at": "tagline",
+  "en": "Workhorse for JAXA's flagship missions",
+  "cur": "Veículo de trabalho para as missões emblemáticas da JAXA"
+ },
+ {
+  "rel": "fleet/launcher/h-iia.json",
+  "at": "description",
+  "en": "Japan's H-IIA launched 50 successful missions between 2001 and June 2025 for JAXA's flagship missions including Hayabusa, Hayabusa2, Himawari, and SLIM. Dependable liquid-propellant workhorse that became one of the most reliable launchers ever built.",
+  "cur": "O H-IIA japonês lançou 50 missões bem-sucedidas entre 2001 e junho de 2025 para as missões emblemáticas da JAXA, incluindo Hayabusa, Hayabusa2, Himawari e SLIM. Veículo de trabalho confiável com propelente líquido que se tornou um dos lançadores mais confiáveis jamais construídos."
+ },
+ {
+  "rel": "fleet/launcher/h-iia.json",
+  "at": "best_known_for",
+  "en": "Workhorse for JAXA's flagship missions",
+  "cur": "Veículo de trabalho para as missões emblemáticas da JAXA"
+ },
+ {
+  "rel": "fleet/launcher/h3.json",
+  "at": "tagline",
+  "en": "Replaces H-IIA / H-IIB at lower cost",
+  "cur": "Substitui H-IIA / H-IIB a um custo mais baixo"
+ },
+ {
+  "rel": "fleet/launcher/h3.json",
+  "at": "description",
+  "en": "H3 is a orbital launcher built by Mitsubishi Heavy Industries in Japan. Replaces H-IIA / H-IIB at lower cost. In service since 2024.",
+  "cur": "H3 é um lançador orbital construído pela Mitsubishi Heavy Industries no Japão. Substitui H-IIA / H-IIB com menor custo. Em serviço desde 2024."
+ },
+ {
+  "rel": "fleet/launcher/h3.json",
+  "at": "best_known_for",
+  "en": "Replaces H-IIA / H-IIB at lower cost",
+  "cur": "Substitui H-IIA / H-IIB a um custo mais baixo"
+ },
+ {
+  "rel": "fleet/launcher/long-march-2f.json",
+  "at": "tagline",
+  "en": "Crew-rated for all Shenzhou flights",
+  "cur": "Tripulação para todos os voos de Shenzhou"
+ },
+ {
+  "rel": "fleet/launcher/long-march-2f.json",
+  "at": "description",
+  "en": "Long March 2F is a orbital launcher built by CALT in China. Crew-rated for all Shenzhou flights. In service since 1999.",
+  "cur": "Long March 2F é um lançador orbital construído pela CALT na China. Classificação de tripulação para todos os voos de Shenzhou. Em serviço desde 1999."
+ },
+ {
+  "rel": "fleet/launcher/long-march-2f.json",
+  "at": "best_known_for",
+  "en": "Crew-rated for all Shenzhou flights",
+  "cur": "Tripulação para todos os voos de Shenzhou"
+ },
+ {
+  "rel": "fleet/launcher/long-march-3b.json",
+  "at": "tagline",
+  "en": "China's GTO workhorse — Chang'e lunar landers + most Chinese comsats",
+  "cur": "Cavalo de tração chinês para GTO — Sondas lunares Chang'e + Maioria dos satélites de comunicação chineses"
+ },
+ {
+  "rel": "fleet/launcher/long-march-3b.json",
+  "at": "description",
+  "en": "Three-stage liquid-hypergolic launcher (UDMH/N2O4 on the lower stages, LH2/LOX on the third) with four side-mounted strap-on boosters. Lifts ~11 t to LEO / ~5.1 t to GTO from Xichang Satellite Launch Centre. The maiden flight (1996-02-15, Intelsat 708) failed catastrophically due to a guidance-loop fault and killed villagers downrange; the redesigned vehicle has since flown well over 100 successful missions and is the standard launcher for Chang'e lunar exploration.",
+  "cur": "Foguete líquido hipergólico de três estágios (UDMH/N2O4 nos estágios inferiores, LH2/LOX no terceiro) com quatro impulsores auxiliares montados nas laterais. Transporta ~11 t para LEO / ~5,1 t para GTO a partir do Centro de Lançamento de Satélites de Xichang. O voo inaugural (1996-02-15, Intelsat 708) falhou de forma catastrófica devido a uma falha no circuito de orientação e matou villagers a jusante; o veículo redesenhado desde então realizou bem mais de 100 missões bem-sucedidas e é o lançador padrão para a exploração lunar Chang'e."
+ },
+ {
+  "rel": "fleet/launcher/long-march-3b.json",
+  "at": "best_known_for",
+  "en": "China's GTO workhorse — Chang'e 3 / 4 lunar landers + most commercial comsats from Xichang",
+  "cur": "Cavalo de tração chinês para GTO — Sondas lunares Chang'e 3 / 4 + Maioria dos satélites comerciais de comunicação de Xichang"
+ },
+ {
+  "rel": "fleet/launcher/long-march-5.json",
+  "at": "tagline",
+  "en": "Heavy-lift backbone of the Chinese space program",
+  "cur": "A espinha dorsal pesada do programa espacial chinês"
+ }
+]

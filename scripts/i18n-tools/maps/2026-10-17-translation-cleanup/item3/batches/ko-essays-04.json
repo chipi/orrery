@@ -1,0 +1,500 @@
+[
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.8.caption",
+  "en": "A chemical rocket spends its whole life in a few minutes of fury, then coasts. An ion engine pushes with the weight of a coin — but never stops. Given enough time it quietly overtakes the rocket that shoved hardest, and keeps climbing.",
+  "cur": "화학 로켓은 몇 분간의 맹렬함에 생을 다 쏟은 후 관성으로 움직입니다. 이온 엔진은 동전의 무게로 밀어붙이지만 절대 멈추지 않습니다. 충분한 시간이 주어지면 가장 강하게 밀어붙인 로켓을 조용히 추월하고, 계속 올라갑니다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.9.caption",
+  "en": "Dawn ran on a xenon-ion engine whose thrust you could have balanced on your palm — and rode that whisper for years, becoming the only craft ever to orbit two separate worlds beyond Earth: first Vesta, then Ceres.",
+  "cur": "Dawn은 당신의 손바닥 위에 균형을 잡을 수 있는 추력을 가진 xenon-ion engine에서 실행했다—그리고 몇 년간 그 whisper를 탔으며, 지구를 넘어 두 개의 별도 세계를 orbit한 유일한 기체가 되었다: 첫 번째 베스타, 그 다음 세레스."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.11.md",
+  "en": "Ion and Hall drives still carry propellant. They carry much less of it, and they use it far more efficiently, but the rocket equation still applies: the xenon runs out, and when it does, the thrust stops. The most radical escape from the equation is to carry no propellant at all — to push against something outside the spacecraft.",
+  "cur": "Ion과 Hall drives는 여전히 추진제를 운반한다. 그들은 훨씬 적게 운반하고, 훨씬 더 효율적으로 사용하지만, rocket equation은 여전히 적용된다: xenon이 떨어지고, 그럴 때, thrust가 멈춘다. 방정식으로부터 가장 급진적인 탈출은 추진제를 전혀 운반하지 않는 것이다—우주선 외부의 어떤 것에 대해 밀어붙이는 것."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.12.md",
+  "en": "Photons carry momentum. Light pushes. The pressure is tiny — at Earth's distance from the Sun, sunlight exerts about nine micronewtons per square metre of illuminated surface — but it is free, inexhaustible, and it never runs out. A sail large enough and light enough will accelerate indefinitely as long as it faces the Sun, trading thrust for patience the way an ion engine does, but without a propellant budget at all.",
+  "cur": "Photons는 momentum을 운반한다. 빛이 밀어붙인다. 압력은 작다—태양으로부터 지구의 거리에서, 햇빛은 조명된 표면의 제곱 미터당 약 9 micronewtons를 exerts한다—하지만 그것은 free, inexhaustible이고, 절대 떨어지지 않는다. 충분히 크고 충분히 가벼운 sail은 태양을 향하는 동안 무한정 가속할 것이며, ion engine이 하는 방식처럼 추력을 patience와 거래하지만, 추진제 budget 없이."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.13.md",
+  "en": "The idea is older than spaceflight by a century: Johannes Kepler noted in 1619 that comet tails always point away from the Sun and attributed it, correctly, to solar pressure. The mathematics were fully worked out by the 1920s. What was missing was a material: a sail light enough to matter, tough enough to survive the radiation environment of space, deployable from a rocket fairing. For most of the twentieth century it remained an idea.",
+  "cur": "아이디어는 우주 비행보다 백 년 더 오래되었다: 요하네스 케플러는 1619년에 comet tails가 항상 태양에서 떨어져 있다고 주목했고, 정확하게 이를 solar pressure로 귀속시켰다. 수학은 1920년대에 완전히 계산되었다. 부족했던 것은 재료였다: 중요할 만큼 가벼운 sail, 우주의 radiation environment를 견디기에 충분히 단단한, 로켓 fairing에서 배포 가능한. 20세기 대부분 동안 그것은 아이디어로 남았다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.14.md",
+  "en": "JAXA flew the first one. On 21 May 2010, the Japanese spacecraft IKAROS — *Interplanetary Kite-craft Accelerating Radiation Of the Sun* — deployed a 200-square-metre polyimide sail en route to Venus and became the first spacecraft to achieve meaningful propulsion from sunlight alone in deep space. It measured the acceleration. It worked. The Planetary Society's LightSail 2, launched in 2019, went further: a small, shoebox-stacked CubeSat that deployed a 32-square-metre sail and became the first spacecraft to measurably raise its orbit using only the pressure of light. Both missions were small, low-budget, and largely ignored by the wider press. Between them they established that solar sailing is not a thought experiment.",
+  "cur": "JAXA가 첫 번째 것을 비행했다. 2010년 5월 21일에, 일본 우주선 IKAROS—*Interplanetary Kite-craft Accelerating Radiation Of the 태양*—200제곱미터 polyimide sail을 금성으로 가는 길에 배포했고 deep space에서 sunlight alone으로부터 의미 있는 propulsion을 달성한 첫 번째 우주선이 되었다. 그것은 가속도를 측정했다. 그것은 작동했다. Planetary Society의 LightSail 2는 2019년에 발사되었고, 더 멀리 나갔다: shoebox-stacked CubeSat을 배포한 32제곱미터 sail을 배포했고 light의 압력만을 사용하여 measurably하게 그것의 orbit을 raise한 첫 번째 우주선이 되었다. 두 미션 모두 작고, 저예산이었으며, 더 넓은 언론에 의해 대체로 무시되었다. 그들 사이에 그들은 solar sailing이 thought experiment가 아니라는 것을 확립했다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.15.md",
+  "en": "NASA's Advanced Composite Solar Sail System — ACS3 — launched in April 2024, carrying an 80-square-metre sail on composite boom arms stiffer and lighter than any previous design, demonstrating the structural technology needed to scale up. NEA Scout, which would have been the first solar sail to visit a near-Earth asteroid, launched aboard Artemis I in November 2022 and was lost — its radio never made contact after deployment, a reminder that small missions fly small margins. The setback did not cancel the program. The reason sails are worth pursuing is not the acceleration they give today but the acceleration they give tomorrow: a solar sail ten kilometres across, launched toward the inner solar system where sunlight is stronger, would reach speeds unattainable by any propellant-limited system. Sails are the only architecture for which *making the sail larger* makes the physics better, without adding propellant mass.",
+  "cur": "NASA의 첨단 복합재료 태양돛 시스템, ACS3는 2024년 4월에 발사되었으며, 이전 어떤 설계보다 더 뻣뻣하고 가벼운 복합재료 붐 암에 80제곱미터의 돛을 탑재했고, 규모를 확대하는 데 필요한 구조 기술을 입증했습니다. 근지구 소행성을 방문하는 첫 번째 태양돛이 될 예정이었던 NEA Scout는 2022년 11월에 Artemis I에 탑재되어 발사되었으나 손실되었습니다. 전개 후 그 무선 신호가 한 번도 연락을 취하지 못했으며, 이는 소규모 미션이 작은 여유로 비행한다는 것을 상기시켜줍니다. 이 좌절은 프로그램을 취소하지 않았습니다. 돛을 추구할 가치가 있는 이유는 오늘날 제공하는 가속이 아니라 내일 제공할 가속입니다. 태양계 내부 쪽을 향해 발사된 10킬로미터 너비의 태양돛은 햇빛이 더 강하고, 추진제로 제한된 어떤 시스템도 달성할 수 없는 속도에 도달할 것입니다. 돛은 추진제 질량을 더하지 않고도 *돛을 더 크게 만드는 것*이 물리학을 더 나아지게 하는 유일한 구조입니다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.17.md",
+  "en": "There is a third exit, and it is the one that, in the 1960s, seemed most likely to be first. A nuclear reactor running at high temperature can heat a propellant — hydrogen is the best choice, being the lightest gas and therefore fastest when expelled — and exhaust it through a nozzle. No combustion. No bond energies. The heat source is fission, and the temperatures a reactor can sustain are limited not by chemistry but by metallurgy: how hot can the fuel elements and the nozzle throat be made before they fail? The answer, in the engines tested at the Nevada Test Site from 1959 to 1969 under the program called NERVA, was hot enough to achieve specific impulses around 825 seconds — nearly twice the best chemical engine, at thrust levels measured in tens of kilonewtons, useful for a crewed Mars mission.",
+  "cur": "세 번째 출구가 있으며, 1960년대에 가장 먼저 실현될 가능성이 높아 보였던 것이 바로 그것이다. 고온에서 작동하는 원자로는 추진제(가장 가벼운 기체이면서 분사 시 가장 빠른 수소가 최선의 선택)를 가열하여 노즐을 통해 배출할 수 있다. 연소가 없다. 결합 에너지가 없다. 열의 원천은 핵분열이며, 원자로가 견딜 수 있는 온도는 화학이 아닌 금속공학으로 제한된다: 연료 요소와 노즐 목구멍이 파괴되기 전에 얼마나 뜨거워질 수 있는가? 1959년부터 1969년까지 네바다 시험장에서 NERVA라는 프로그램 하에 시험된 엔진들의 답변은 약 825초의 비추력을 달성할 수 있을 정도로 충분히 뜨거웠으며, 이는 최고의 화학 엔진의 거의 두 배이면서 수십 킬로뉴턴으로 측정되는 추력 수준에서 달성되었으며, 유인 화성 임무에 유용했다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.18.md",
+  "en": "The Phoebus 2A reactor, tested in 1968, was the most powerful nuclear rocket engine ever fired: 4,100 megawatts of thermal power, the equivalent of four large commercial nuclear power plants running simultaneously, all compressed into a structure the size of a car. The XE Prime engine, tested in 1969 in a configuration designed to simulate altitude firing, demonstrated restart capability and throttling — exactly the operational flexibility a crewed mission would need. The program accumulated more than two hours of total run time, including 28 minutes at full power. By every technical measure, it worked.",
+  "cur": "1968년에 시험된 Phoebus 2A 원자로는 지금까지 발사된 가장 강력한 핵 로켓 엔진이었다: 4,100메가와트의 열 전력으로, 동시에 가동하는 대규모 상용 원자력 발전소 4개와 같은 전력량을 자동차 크기의 구조로 압축한 것이었다. 1969년에 고도 발사를 모의하도록 설계된 구성으로 시험된 XE Prime 엔진은 재시동 능력과 추력 조절을 실증했으며, 이는 유인 임무에 필요한 정확한 운영 유연성이었다. 이 프로그램은 최대 출력에서 28분을 포함하여 총 2시간 이상의 운전 시간을 축적했다. 모든 기술적 척도로 볼 때, 성공했다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.19.md",
+  "en": "And then it stopped. In 1973, with the Moon program over and budgets collapsing and no Mars mission forthcoming, NERVA was cancelled. The engines sat in Nevada. The knowledge spread into reports that aged in archives. For fifty years, no nuclear thermal rocket engine flew, or was seriously scheduled to fly. The [gravity assists](/science/transfers/gravity-assist) of [Voyager 2](/missions?id=voyager-2) made the outer planets reachable without nuclear propulsion. The outer planets were enough.",
+  "cur": "그 후 중단되었다. 1973년, 달 프로그램이 끝나고 예산이 붕괴되었으며 화성 임무가 나타나지 않자 NERVA는 취소되었다. 엔진들은 네바다에 남겨졌다. 지식은 아카이브에서 노후화된 보고서로 퍼져나갔다. 50년 동안 핵열 로켓 엔진은 비행하지 않았거나 심각하게 예정되지 않았다. Voyager 2의 [중력 보조](/science/transfers/gravity-assist)는 핵 추진 없이도 외행성에 도달할 수 있게 만들었다. 외행성으로 충분했다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.20.md",
+  "en": "The idea came back slowly in the 2010s, and more urgently in the 2020s: a crewed mission to Mars, with a flight time measured in months rather than years, almost demands nuclear-thermal propulsion. DARPA's DRACO program — *Demonstration Rocket for Agile Cislunar Operations* — was the most concrete recent attempt to close the fifty-year gap, aiming to demonstrate a nuclear thermal engine in orbit. In June 2025, DARPA cancelled it. The official reasoning cited decreasing launch costs that diminished the economic case and infrastructure barriers around ground testing a nuclear reactor that had been underestimated at program start. The decision was not a technical verdict: no one tested the engine and found it wanting. The gap simply widened again.",
+  "cur": "그 생각은 2010년대에 천천히 돌아왔고 2020년대에는 더욱 긴급해졌다: 화성으로의 유인 임무는 수년이 아닌 수개월로 측정되는 비행 시간을 원하며, 거의 핵열 추진을 요구한다. DARPA의 DRACO 프로그램 — *민첩한 근지구 궤도 운영 실증 로켓* — 은 50년의 공백을 좁히기 위한 가장 구체적인 최근 시도였으며, 궤도상에서 핵열 엔진을 실증하는 것을 목표로 했다. 2025년 6월에 DARPA는 이를 취소했다. 공식 이유는 경제적 근거를 약화시킨 발사 비용 감소와 프로그램 시작 시 과소평가되었던 핵 원자로의 지상 시험을 둘러싼 기반시설 장벽을 인용했다. 그 결정은 기술적 판결이 아니었다: 아무도 엔진을 시험하고 부족함을 발견하지 못했다. 공백은 단순히 다시 넓어졌을 뿐이다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.21.caption",
+  "en": "There is no flame here at all. A reactor heats hydrogen past any temperature a chemical fire can reach and throws it from the nozzle at roughly twice the speed — the same fuel, worth twice the push, and a shorter, less-irradiated road to Mars.",
+  "cur": "여기에는 불꽃이 전혀 없다. 원자로는 수소를 화학 불이 도달할 수 있는 어떤 온도보다도 높은 온도로 가열하고 노즐에서 거의 두 배의 속도로 분사한다 — 같은 연료, 두 배의 추력의 가치, 그리고 화성으로의 더 짧고 덜 방사선에 노출된 여정."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.23.md",
+  "en": "The history of advanced propulsion is not, mostly, a history of technical failure. Ion drives work; every deep-space spacecraft that has carried one has performed as predicted. Solar sails work; IKAROS measured the thrust, LightSail 2 changed its orbit. Nuclear-thermal engines worked; NERVA demonstrated it in six decades of un-revisited ground tests. The failures are almost entirely in the space between a working technology and a funded mission.",
+  "cur": "첨단 추진의 역사는 대부분 기술적 실패의 역사가 아니다. 이온 추진기는 작동한다; 이를 탑재했던 모든 심우주 우주선은 예측대로 작동했다. 태양돛은 작동한다; IKAROS는 추력을 측정했고, LightSail 2는 궤도를 변경했다. 핵열 엔진은 작동했다; NERVA는 6년 동안의 재검토되지 않은 지상 시험에서 이를 실증했다. 실패는 거의 전적으로 작동하는 기술과 자금 지원을 받은 임무 사이의 공간에 있다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.24.md",
+  "en": "Part of it is the nature of these drives. Chemical rockets are violent and obvious — they shake the ground and light the sky and deliver their result in minutes. Ion and Hall thrusters produce a force you cannot feel, run for years before the result becomes visible, and require patience from funders who face budget cycles measured in months. Solar sails require large, delicate structures that complicate launch packaging. Nuclear-thermal engines require a reactor, and a reactor in space has a regulatory complexity that adds years and uncertainty to any program before the first component is machined. None of these are fundamental barriers. They are, in the language of systems engineering, *not-yet-solved integration problems* — and integration problems get solved when there is enough pressure behind them.",
+  "cur": "그것의 일부는 이러한 추진 시스템의 특성에서 비롯된다. 화학 로켓은 폭력적이고 명백하다 — 땅을 흔들고 하늘을 밝히며 수분 안에 결과를 전달한다. 이온 및 홀 스러스터는 느낄 수 없는 힘을 생성하고, 결과가 가시화되기 전에 수년 동안 작동하며, 월 단위로 측정되는 예산 주기에 직면한 자금 제공자로부터의 인내를 요구한다. 태양돛은 발사 포장을 복잡하게 하는 크고 섬세한 구조를 필요로 한다. 핵열 엔진은 원자로를 필요로 하며, 우주의 원자로는 첫 부품이 가공되기 전에 프로그램에 수년과 불확실성을 추가하는 규제적 복잡성을 가지고 있다. 이들은 근본적인 장벽이 아니다. 시스템 공학의 언어로, 이들은 *아직 해결되지 않은 통합 문제*이다 — 그리고 통합 문제는 뒤에서 충분한 압력이 있을 때 해결된다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.25.md",
+  "en": "The pressure is building. The [Tsiolkovsky rocket equation](/science/propulsion/tsiolkovsky) has not changed. A crewed Mars round-trip at chemical Isp is not impossible — it is just enormously expensive in propellant, and therefore in launch mass, and therefore in launch cost, and therefore in political will. As the cost per kilogram to orbit drops and the ambition of missions rises, the gap between what chemistry can do and what the mission demands grows wider. Every new target — the ice giants, an asteroid on a short timeline, Mars on a crewed flight that does not require pre-positioning years of propellant — presses against the ceiling a little harder.",
+  "cur": "압력이 구축되고 있다. [치올콥스키 로켓 방정식](/science/propulsion/tsiolkovsky)은 변하지 않았다. 화학 비추력에서의 유인 화성 왕복은 불가능하지 않다 — 단지 추진제 측면에서 엄청나게 비싸고, 따라서 발사 질량 측면에서 비싸고, 따라서 발사 비용 측면에서 비싸고, 따라서 정치적 의지 측면에서 비싸다. 궤도당 비용이 감소하고 임무의 야망이 증가함에 따라, 화학이 할 수 있는 것과 임무가 요구하는 것 사이의 격차는 더욱 넓어진다. 모든 새로운 목표 — 얼음 행성, 단기 일정의 소행성, 수년간의 추진제 사전 위치 지정을 요구하지 않는 유인 화성 비행 — 천장을 조금씩 더 강하게 누른다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.27.md",
+  "en": "What is strange, surveying this history, is not that the alternatives haven't flown — it is that they have been ready, in principle, for so long. The specific impulse limits of nuclear-thermal propulsion were calculated before Sputnik. The physics of solar sailing were understood before the Second World War. The concept of ion propulsion appeared in an Esther Goddard memoir describing a conversation with Robert Goddard in 1906, four years before he flew anything. The ideas are old. The flying is new.",
+  "cur": "이 역사를 살펴볼 때 이상한 것은 대안들이 비행하지 않았다는 것이 아니라, 원칙적으로 그토록 오래 준비되어 있었다는 것이다. 핵열 추진의 비추력 한계는 Sputnik 이전에 계산되었다. 태양돛의 물리학은 제2차 세계 대전 이전에 이해되었다. 이온 추진의 개념은 로버트 고다드가 어떤 것이든 비행시키기 4년 전인 1906년 로버트 고다드와의 대화를 설명하는 Esther Goddard의 회고록에 나타났다. 아이디어는 오래된 것이다. 비행은 새로운 것이다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.28.md",
+  "en": "What [Dawn](/missions?id=dawn) established is the practical benchmark: ion propulsion is not exotic. It is the correct choice for any mission that requires multiple destinations, large velocity changes, or flight times long enough for continuous thrust to accumulate. The missions that come after Psyche — robotic science probes to the ice giants, fast-transit cargo to a lunar Gateway, prospectors at the inner asteroid belt — are the natural clients. Hall thrusters at [Psyche's](/missions?id=psyche) scale will be routine within a decade because the economics already work.",
+  "cur": "Dawn가 확립한 것은 실질적인 벤치마크입니다. 이온 추진은 이국적인 것이 아닙니다. 여러 목적지, 큰 속도 변화, 또는 지속적인 추력이 누적될 수 있을 만큼 긴 비행 시간이 필요한 모든 임무에 적합한 선택입니다. Psyche 이후에 오는 임무들—얼음 거인들을 향한 로봇 과학 탐사선, 달의 Gateway로 향하는 고속 수송 화물, 내측 소행성대의 채굴자들—은 자연스러운 고객입니다. Psyche의 규모에서의 홀 추진기는 경제학이 이미 작동하고 있기 때문에 10년 안에 일상적이 될 것입니다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.29.md",
+  "en": "Solar sailing is further from routine, but the trajectory is clear: each generation of sail is larger, the booms lighter, the control systems more sophisticated. The physics reward scale in a way no other propulsion mode does. A sail the size of a sports stadium, with a spacecraft bus the mass of a desk, accelerated by a laser from the inner solar system rather than by ambient sunlight — this is the architecture proposed for interstellar precursor missions, reaching speeds of hundreds of kilometres per second. The sail does not care about the rocket equation. It has no propellant to run out of.",
+  "cur": "태양돛은 일상적 운용보다 더 멀지만, 궤적은 명확하다: 돛의 각 세대는 더 크고, 붐은 더 가볍고, 제어 시스템은 더 정교하다. 물리학 보상은 다른 추진 방식이 할 수 없는 방식으로 확장된다. 스포츠 경기장 크기의 돛, 책상 질량의 우주선 버스, 주변 햇빛이 아닌 내태양계의 레이저에 의해 가속되는 것 — 이것이 성간 선구 임무를 위해 제안된 아키텍처이며, 초당 수백 킬로미터의 속도에 도달한다. 돛은 로켓 방정식을 신경 쓰지 않는다. 그것은 떨어질 추진제가 없다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.30.md",
+  "en": "Nuclear-thermal propulsion is the hardest call. DRACO's cancellation in 2025 closed the most concrete near-term path. But the technical case — 825 seconds of specific impulse at high thrust, the only combination of efficiency and power that opens a fast crewed Mars transit — has not weakened. The knowledge from NERVA was not lost; it was archived. What is missing is not the engineering. It is a program with enough longevity to navigate the regulatory and infrastructure work that the 1960s began but never finished. If a crewed Mars mission becomes a fixed political objective rather than a recurring aspiration, nuclear-thermal propulsion will almost certainly be part of how it is done. The engines work. They are waiting.",
+  "cur": "핵열 추진은 가장 어려운 선택이다. 2025년 DRACO의 취소는 가장 구체적인 단기 경로를 닫았다. 하지만 기술적 근거 — 고추력에서 825초의 비추력, 효율성과 힘의 유일한 조합으로 빠른 유인 화성 통과를 열어주는 — 는 약해지지 않았다. NERVA로부터의 지식은 손실되지 않았다; 그것은 보관되었다. 무엇이 빠져 있는가는 공학이 아니다. 그것은 1960년대가 시작했지만 결코 마치지 못한 규제 및 기반시설 작업을 탐색할 수 있을 만큼 충분한 수명의 프로그램이다. 유인 화성 임무가 반복적 열망이 아닌 고정된 정치적 목표가 되면, 핵열 추진은 거의 확실히 그것이 수행되는 방식의 일부가 될 것이다. 엔진은 작동한다. 그들은 기다리고 있다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.31.md",
+  "en": "The chemical rocket did extraordinary things. It carried twelve people to the surface of the Moon. It landed a car-sized rover on Mars at the end of seven minutes of automated terror. It put the James Webb Space Telescope in its L2 halo orbit with so little error that the fuel margin for station-keeping, originally budgeted for ten years, now projects to last twenty. For getting mass off Earth's surface against gravity — the hardest part of any space mission — it will remain the tool for the foreseeable future. The Tsiolkovsky equation punishes propellant mass in orbit less than it does on the ground, and no ion thruster will lift anything from a launch pad.",
+  "cur": "화학 로켓은 놀라운 일들을 해냈다. 그것은 12명을 달의 표면으로 실어 날랐다. 그것은 자동화된 공포의 7분이 끝난 화성에 자동차 크기의 로버를 착륙시켰다. 그것은 James Webb Space Telescope을 L2 할로 궤도에 배치했으며, 오차가 너무 작아서 정거장 유지를 위해 원래 10년으로 예산 책정된 연료 여유분이 이제 20년 지속될 것으로 예상된다. 중력에 대항하여 지구 표면에서 질량을 제거하는 것 — 모든 우주 임무의 가장 어려운 부분 — 에는 예측 가능한 미래에 남아 있는 도구가 될 것이다. Tsiolkovsky 방정식은 궤도상의 추진제 질량을 지표면보다 덜 벌칙하며, 어떤 이온 스러스터도 발사대에서 어떤 것도 들어올리지 못할 것이다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.32.md",
+  "en": "But the ceiling above low Earth orbit is chemistry's ceiling, and the solar system above it is chemistry's trap. The exits have been drawn on the map for a hundred years. Ion drives are already flying. Sails have already changed orbits. The nuclear option is on hold, not on the shelf. We have known how to leave the chemical era since before the chemical era's greatest triumphs. We are, slowly, learning to mean it.",
+  "cur": "하지만 저궤도 위의 천장은 화학의 천장이며, 그 위의 태양계는 화학의 덫이다. 출구들은 100년 동안 지도에 그려져 있다. 이온 추진기는 이미 비행하고 있다. 돛은 이미 궤도를 변경했다. 핵 옵션은 보류 중이며, 선반에 있지 않다. 우리는 화학 시대의 가장 위대한 성취 이전부터 화학 시대를 떠나는 방법을 알고 있었다. 우리는 천천히 이를 의미하는 것을 배우고 있다."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.33.caption",
+  "en": "Line the exits up by efficiency and the pattern is plain: every road out of the chemical era trades brute thrust for the patience to keep pushing. All of them were sketched on paper before the first satellite ever flew.",
+  "cur": "효율성별로 출구들을 정렬하면 패턴은 명확하다: 화학 시대를 벗어나는 모든 경로는 무감각한 추력을 밀기 위한 인내로 교환한다. 모두 첫 번째 위성이 비행하기 전에 종이 위에 그려졌다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "dek",
+  "en": "For sixty years we built the most expensive machine in human history, flew it once, and dropped it in the ocean. The people who decided to stop doing that have quietly pulled off the biggest shift in spaceflight since Apollo.",
+  "cur": "60년 동안 우리는 인류 역사상 가장 비싼 기계를 만들었고, 한 번 날렸다가, 바다에 떨어뜨렸다. 이것을 멈추기로 결정한 사람들은 Apollo 이후 우주비행에서 가장 큰 전환을 조용히 이루어냈다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.0.md",
+  "en": "On the night of 21 December 2015, a [Falcon 9](/fleet?id=falcon-9) first stage stood vertically on a concrete pad at Cape Canaveral, engines cold, surrounded by a cloud of residual vapour, intact. It had just come back from space. About eight minutes after lifting off to deliver a batch of satellites to orbit, the booster had flipped itself around, relit three of its nine Merlin engines, braked through the upper atmosphere, deployed four landing legs, and set itself down upright on the pad it had left. The whole manoeuvre took the kind of precision usually reserved for a Swiss watch. The crowd watching erupted, and the sound — a roar of people who had just watched something genuinely new — is still in the video.",
+  "cur": "2015년 12월 21일 밤, [Falcon 9](/fleet?id=falcon-9) 1단이 케이프 커내버럴의 콘크리트 발사대 위에 수직으로 서 있었다. 엔진은 식었고, 잔존하는 수증기가 주변을 감싸고 있었으며, 기체는 온전했다. 방금 우주에서 돌아온 것이었다. 발사 약 8분 후, 위성을 궤도에 전달하기 위해 상승한 부스터는 몸을 돌려, 9개의 Merlin 엔진 중 3개에 다시 점화했으며, 상층 대기를 통과하며 감속했고, 4개의 착륙다리를 펼쳤으며, 출발했던 발사대 위에 똑바로 착지했다. 전체 기동은 보통 스위스 시계에만 필요한 정밀성을 요구했다. 이를 지켜본 군중은 환성을 질렀고, 그 소리—진정 새로운 무언가를 목격한 사람들의 포효—는 여전히 영상 속에 남아 있다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.1.md",
+  "en": "What happened that night was a demonstration, but what it demonstrated was not primarily a technical trick. It was an economic argument. Every rocket ever flown before it — the [Saturn V](/fleet?id=saturn-v) that sent twelve people to the Moon, the Soviet N1 that never made it to orbit, the workhorse Soyuz and Atlas and Proton and Long March families that between them account for most of the launches in this atlas — was built to be used once. You flew it. It fell apart in the atmosphere or sank in the sea. You built another one. The industry had been structured around this fact for sixty years: rockets were ammunition, not aircraft. The moment that Falcon 9 landed, that assumption was on the table for the first time.",
+  "cur": "그 밤에 일어난 일은 시연이었지만, 그것이 보여준 것은 주로 기술적 속임수가 아니었습니다. 그것은 경제적 주장이었습니다. 그것 이전에 날았던 모든 로켓들 — 열두 명을 달에 보낸 [Saturn V](/fleet?id=saturn-v), 궤도에 도달하지 못했던 소비에트의 N1, 이 항성도에서 대부분의 발사를 차지하는 Soyuz와 Atlas와 Proton, Long March 계열의 주력 로켓들 — 은 모두 한 번만 사용되도록 지어졌습니다. 당신이 발사했습니다. 대기에서 분해되었거나 바다에 가라앉았습니다. 다른 하나를 지었습니다. 이 사실을 중심으로 산업이 60년 동안 구조화되어 있었습니다: 로켓은 탄약이었지, 항공기가 아니었습니다. Falcon 9가 착륙하는 순간, 그 가정은 처음으로 논의의 대상이 되었습니다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.2.md",
+  "en": "Why it had taken sixty years to get there is a more interesting question than it looks.",
+  "cur": "60년을 거쳐 그곳에 도달하게 된 이유는 보기보다 훨씬 더 흥미로운 질문이다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.4.md",
+  "en": "The expendable rocket is wasteful in a way that is almost comical when you describe it plainly. A [Saturn V](/fleet?id=saturn-v) cost something in the range of $185 million in late-1960s dollars — roughly $1.5 billion at today's prices — and each one flew for about twelve minutes before being discarded. The five F-1 engines in its first stage, each one a staggering piece of machinery that burned roughly 2,600 kilograms of propellant per second, ended their lives rusting on the floor of the Atlantic. A private expedition funded by Jeff Bezos recovered two sets of Saturn V F-1 engines from the seafloor in 2013, nearly half a century after they were dropped there, and found them largely intact. They went to museums, not back to flight. Throwing them away the first time was the plan.",
+  "cur": "소비 로켓의 낭비는 순수하게 설명할 때 거의 희극적일 정도로 낭비적입니다. [Saturn V](/fleet?id=saturn-v)는 1960년대 후반 달러로 약 1억 8,500만 달러, 오늘날 가격으로는 약 15억 달러의 비용이 들었고, 각각은 약 12분 동안 비행한 후 폐기되었습니다. 1단계의 5개의 F-1 엔진들은 각각 초당 약 2,600킬로그램의 추진제를 태우는 놀라운 기계였으며, 대서양의 바닥에서 녹슬어 그들의 생을 마감했습니다. 제프 베이조스가 자금을 지원한 민간 탐험대는 2013년에 그들이 떨어진 지 거의 반세기가 지난 후 해저에서 Saturn V F-1 엔진 2세트를 회수했으며, 대부분 온전한 상태로 발견되었습니다. 그들은 박물관으로 갔으며, 다시 비행으로 돌아가지 않았습니다. 처음에 그들을 버리는 것이 계획이었습니다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.5.md",
+  "en": "The logic behind this plan was not stupidity. It was the logic of the 1960s Space Race: get there first, at whatever cost. Building a reusable rocket is harder than building an expendable one. Reusability adds weight — heat shields, landing legs, propellant reserved for the return burn — and weight is the enemy, because every kilogram you add to the structure is a kilogram you cannot deliver to orbit. Early designers ran the numbers and concluded that the penalty was too steep. Better, they decided, to build cheap and throw away. That calculation was right for its moment, and it locked in a set of assumptions that lasted two generations.",
+  "cur": "이 계획 뒤의 논리는 어리석음이 아니었다. 그것은 1960년대 우주경쟁의 논리였다: 어떤 대가를 치르든 먼저 도달하라. 재사용 가능한 로켓을 만드는 것은 소비형 로켓을 만드는 것보다 어렵다. 재사용성은 무게를 더한다—단열 방패, 착륙다리, 귀환 연소를 위해 예비된 추진제—그리고 무게는 적이다. 왜냐하면 구조에 더하는 모든 킬로그램은 궤도에 전달할 수 없는 킬로그램이기 때문이다. 초기 설계자들은 수를 계산했고 그 대가가 너무 가파르다고 결론지었다. 따라서 저렴하게 만들어 버리는 것이 낫다고 결정했다. 그 계산은 그 시대에는 올바랐으며, 2세대를 지속시킬 일련의 가정을 고착시켰다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.6.md",
+  "en": "The [Space Shuttle](/fleet?id=space-shuttle-stack) was supposed to break the logic. It was the first genuine attempt by the United States — or anyone — to build an operationally reusable launch system, and the argument for it was economic: by flying the orbiter repeatedly, the program would drive the cost of reaching orbit down toward $600 per kilogram, low enough to make spaceflight almost routine. The shuttle flew 135 missions between 1981 and 2011. It failed the economic test completely. The real cost per flight averaged around $1.5 billion when total program expenses were spread across all missions — more expensive per kilogram to low Earth orbit than the Saturn V it replaced. Refurbishing the orbiter's 24,000 heat-shield tiles after each flight was not a quick job; it ate thousands of person-hours. Reuse turned out to be extraordinarily expensive when every subsystem had to be torn down and rebuilt to the standards of an aircraft that might carry crew. The shuttle proved that reusability *could* work mechanically — the orbiter flew dozens of times — but it also proved that reusability by itself does not reduce costs. The economics only work if you can turn the vehicle around *fast* and *cheaply*.",
+  "cur": "[Space Shuttle](/fleet?id=space-shuttle-stack)는 이 논리를 깨뜨려야 했습니다. 미국이 — 그리고 누군가가 — 운영상 재사용 가능한 발사 시스템을 만들려는 첫 번째 진정한 시도였으며, 그것에 대한 주장은 경제적이었습니다: 궤도선을 반복적으로 비행시킴으로써, 이 계획은 궤도에 도달하는 비용을 킬로그램당 약 600달러로 낮추어, 우주 비행을 거의 일상적으로 만들 충분할 정도로 낮출 수 있을 것이었습니다. 셔틀은 1981년과 2011년 사이에 135개의 미션을 비행했습니다. 경제적 시험에서 완전히 실패했습니다. 전체 계획 비용이 모든 미션에 걸쳐 분산되었을 때 비행당 실제 비용은 평균 약 15억 달러였습니다 — 그것이 대체한 Saturn V보다 저지구 궤도로의 킬로그램당 더 비쌌습니다. 각 비행 후 궤도선의 24,000개의 heat-shield 타일을 정비하는 것은 빠른 작업이 아니었습니다; 그것은 수천 시간의 인력을 소비했습니다. 재사용은 모든 부시스템이 승무원을 탈 수 있는 항공기의 기준으로 분해되고 재건되어야 할 때 이상할 정도로 비용이 많이 들었습니다. 셔틀은 재사용 가능성이 *기계적으로* 작동할 수 있음을 증명했습니다 — 궤도선은 수십 번 비행했습니다 — 하지만 그것은 또한 재사용 가능성만으로는 비용을 감소시키지 않는다는 것을 증명했습니다. 경제학은 당신이 차량을 *빠르게* 그리고 *싸게* 회전시킬 수 있을 때만 작동합니다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.8.md",
+  "en": "SpaceX approached the problem differently. Rather than trying to reuse the whole vehicle — the choice that made the Shuttle so complex — the company focused on the most expensive single component: the first-stage booster. In a typical rocket, the first stage does the heaviest lifting, burning the most propellant, carrying the most engine mass, and costing the most to manufacture. It is also the component that, on an expendable rocket, you lose every time. Save the first stage, and you have recovered the majority of the vehicle's value.",
+  "cur": "SpaceX는 문제에 다르게 접근했다. 전체 차량을 재사용하려고 하기보다—왕복선을 그렇게 복잡하게 만든 선택—회사는 가장 비싼 단일 구성 요소에 집중했다: 1단 부스터. 전형적인 로켓에서 1단은 가장 무거운 작업을 수행하고, 가장 많은 추진제를 연소하며, 가장 많은 엔진 질량을 실으며, 제조하는 데 가장 많은 비용이 든다. 그것은 또한 소비형 로켓에서 매번 잃는 구성 요소이다. 1단을 저장하면, 당신은 차량 가치의 대부분을 회수했다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.9.md",
+  "en": "The technical requirement for saving it is brutal: the stage has to survive reentry through an atmosphere it spent the first few minutes punching through at Mach 7, reverse direction, slow from hypersonic to landing speed, and set down vertically on a target the size of a football field — either back at the launch site or on a drone ship hundreds of kilometres downrange in the Atlantic or Pacific. To accomplish all of this, the booster has to retain enough propellant for a series of precisely timed engine relights, which means it arrives in orbit with less fuel for the main job. That weight penalty is real: a Falcon 9 flying with a new booster delivers about 22,800 kilograms to low Earth orbit; a flight that recovers the booster delivers less. This is the fundamental trade at the heart of reusable launch, and SpaceX accepted it because the economics work regardless: the booster that lands can fly again, and again, and again.",
+  "cur": "그것을 저장하기 위한 기술적 요구사항은 끔찍하다: 그 단계는 처음 몇 분 동안 마하 7 속도로 뚫고 들어간 대기권을 통해 재진입을 견뎌내야 하고, 방향을 바꾸고, 초음속에서 착륙 속도로 느려져야 하며, 수백 킬로미터 떨어진 대서양이나 태평양의 드론선 또는 발사 지점으로 다시 돌아가 수직으로 착지해야 한다. 이 모든 것을 달성하기 위해, 부스터는 일련의 정밀하게 시간이 맞춰진 엔진 재점화를 위해 충분한 추진제를 유지해야 하며, 이는 그것이 궤도에 도달할 때 주 작업을 위해 덜 많은 연료를 가지고 있다는 뜻이다. 그 무게 대가는 현실이다: 새로운 부스터를 가지고 날아가는 Falcon 9는 저궤도에 약 22,800킬로그램을 전달한다. 부스터를 회수하는 비행은 덜 전달한다. 이것은 재사용 가능한 발사의 핵심에 있는 근본적인 트레이드오프이며, SpaceX는 경제가 관계없이 작동하기 때문에 그것을 받아들였다: 착지하는 부스터는 다시, 그리고 또 다시 날 수 있다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.10.md",
+  "en": "After the December 2015 landing came a second, and a third, and then the reflight: in March 2017, SpaceX launched a Falcon 9 on a booster that had already flown, the first time in history that an orbital-class rocket stage flew to space twice. By mid-2026, the most-flown Falcon 9 first stage has completed 33 missions on the same hardware — more than most expendable rockets fly in total across an entire fleet. The marginal cost of a reused launch, with propellant and refurbishment, sits around $15 to $20 million against a list price of $74 million. The difference, roughly, is the cost of the booster itself, recovered by recovery.",
+  "cur": "2015년 12월 착륙 이후 두 번째, 세 번째 착륙이 이어졌고, 그 다음이 재비행이었다. 2017년 3월, SpaceX는 이미 한 번 비행한 부스터를 탑재한 Falcon 9를 발사했으며, 이것이 궤도급 로켓 단계가 우주를 두 번 비행한 역사상 첫 사례였다. 2026년 중반까지, 가장 자주 비행한 Falcon 9 1단은 동일한 하드웨어로 33번의 임무를 완료했으며, 이는 대부분의 일회용 로켓이 전체 함대에서 총비행하는 횟수보다 많다. 재사용 발사의 한계 비용은 추진제와 정비를 포함하여 약 1,500만~2,000만 달러로, 정가인 7,400만 달러에 비하면 회수로 인한 부스터 비용, 즉 회수의 비용이 대략 그 차이가 된다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.11.caption",
+  "en": "The trick is almost insultingly simple to state and brutal to fly: hold back enough propellant, flip the booster around, and burn three times on the way down — boostback, entry, landing — until it settles onto its legs. The same stage is then inspected, refuelled, and flown again.",
+  "cur": "그 기교는 설명하기에는 거의 모욕적으로 간단하고 날기에는 끔찍하다: 충분한 추진제를 유지하고, 부스터를 돌리고, 내려오는 길에 세 번 연소—부스트백, 진입, 착륙—그것이 다리 위에 정착할 때까지. 같은 단계는 그 다음 검사되고, 다시 연료가 채워지고, 다시 날아간다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.13.md",
+  "en": "The [Falcon Heavy](/fleet?id=falcon-heavy) extended the same logic sideways: three Falcon 9 cores strapped together, two of them peeling off after the first two minutes and flying back to land simultaneously, side by side, at Cape Canaveral. The videos of the twin landings — two pillars of fire descending in mirror symmetry, touching down at the exact same instant — look like something from a film. They are not. They are the economics made visible.",
+  "cur": "[Falcon Heavy](/fleet?id=falcon-heavy)는 같은 논리를 옆으로 확장했습니다: 세 개의 Falcon 9 코어가 함께 묶여 있고, 그 중 두 개는 처음 2분 후에 떨어져 나가 동시에 케이프 커내버럴에서 나란히 착륙하기 위해 돌아날아갑니다. 쌍둥이 착륙의 영상 — 거울 대칭으로 내려오는 두 개의 불의 기둥이 정확히 같은 순간에 접촉 — 은 영화에서 나온 것처럼 보입니다. 그들은 아닙니다. 그들은 경제학이 가시화된 것입니다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.14.md",
+  "en": "[Starship](/fleet?id=starship) takes the argument to its logical end. Where Falcon 9 recovers its first stage and disposes of its upper stage, Starship is designed to recover *both*. The Super Heavy booster — 71 metres tall, powered by 33 Raptor engines burning liquid methane and liquid oxygen, producing roughly twice the thrust of a Saturn V — returns to the launch site and is caught in mid-air by a pair of mechanical arms on the launch tower itself. The system is called Mechazilla by the engineers who built it. SpaceX first caught the booster this way on 13 October 2024, Flight 5 of the Starship test programme, and has repeated the manoeuvre on subsequent flights. The idea that you would not land your rocket but simply *catch it as it fell* would have sounded like fiction a decade ago. It is a Monday-morning procedure now.",
+  "cur": "[Starship](/fleet?id=starship)는 이 주장을 논리적 종착점으로 끌어갑니다. Falcon 9가 1단계를 회수하고 상단부를 폐기하는 반면, Starship은 *둘 다* 회수하도록 설계되었습니다. Super Heavy 부스터 — 높이 71미터, 33개의 Raptor 엔진으로 구동되며 액체 메탄과 액체 산소를 연소시키고 Saturn V의 약 2배의 추력을 생산 — 은 발사 지점으로 돌아가 발사 타워 자체의 한 쌍의 기계식 팔에 의해 공중에서 포착됩니다. 이 시스템은 그것을 만든 엔지니어들에 의해 Mechazilla라고 불립니다. SpaceX는 2024년 10월 13일에 Starship 시험 프로그램의 Flight 5에서 이러한 방식으로 부스터를 처음 포착했으며, 이후의 비행에서 이 기동을 반복했습니다. 당신의 로켓을 착륙시키지 않고 단순히 *그것이 떨어질 때 포착한다*는 생각은 10년 전만 해도 소설처럼 들렸을 것입니다. 이제 월요일 아침 절차입니다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.15.md",
+  "en": "The Starship upper stage — the largest spacecraft ever built, tall as a fifteen-storey building — is intended to follow the same path, returning and being caught above the pad. Once both halves are on the ground, the system can theoretically be refuelled and relaunched within hours. No expendable rocket even attempts this comparison. An expendable rocket is a logistics chain: manufacture, transport, integrate, launch, repeat from the start. A fully reusable system is an *aircraft* with a very long route. The economics of the two are not in the same galaxy.",
+  "cur": "Starship 상단—역사상 가장 큰 우주선으로, 15층 건물만큼 높다—같은 경로를 따르기로 의도되었으며, 돌아와 발사대 위에 잡힌다. 두 부분이 땅에 있으면, 이론상 그 시스템은 몇 시간 내에 다시 연료를 채우고 재발사할 수 있다. 소비형 로켓은 이 비교를 시도하지도 않는다. 소비형 로켓은 물류 체인이다: 제조, 수송, 통합, 발사, 처음부터 반복. 완전히 재사용 가능한 시스템은 매우 긴 노선을 가진 *비행기*이다. 둘의 경제는 같은 은하에 있지 않다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.16.caption",
+  "en": "Then a stranger idea: don’t give the booster legs at all. Let the launch tower catch it — two arms closing on a seventy-metre stage as it hovers, so the mass that would have been landing gear becomes payload instead. The first clean catch came in October 2024.",
+  "cur": "그 다음 더 낯선 생각: 부스터에 다리를 주지 마라. 발사탑이 그것을 잡도록 하라—두 팔이 70미터 단계가 떠 있을 때 그것을 닫아서, 착지 장치였을 질량이 탑재 대신 된다. 첫 번째 깔끔한 포착은 2024년 10월에 왔다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.18.md",
+  "en": "Blue Origin's [New Glenn](/fleet?id=new-glenn) landed its first stage at sea for the first time on 13 November 2025 — ten years after the December 2015 Falcon 9 landing, which gives a sense of how fast the industry moves when SpaceX is setting the pace. New Glenn is a large rocket by any previous standard, carrying up to 45,000 kilograms to low Earth orbit in expendable configuration; its first stage returns to a drone ship in the Atlantic on every mission. The first reuse of a New Glenn stage followed in April 2026. Blue Origin's approach mirrors SpaceX's in architecture: save the first stage, fly it again, cut the marginal cost with each reuse.",
+  "cur": "Blue Origin의 [New Glenn](/fleet?id=new-glenn)은 2025년 11월 13일에 처음으로 1단계를 바다에 착륙시켰습니다 — December 2015년 Falcon 9 착륙으로부터 10년 뒤의 일이며, 이는 SpaceX가 속도를 설정할 때 산업이 얼마나 빨리 움직이는지 보여줍니다. New Glenn은 이전의 어떤 기준으로도 큰 로켓이며, 소비 형태로 저궤도에 최대 45,000킬로그램을 운반할 수 있습니다. 1단계는 모든 미션에서 대서양의 드론선으로 돌아옵니다. New Glenn 단계의 첫 번째 재사용은 2026년 4월에 이어졌습니다. Blue Origin의 접근 방식은 건축에서 SpaceX의 방식을 반영합니다: 1단계를 보관하고, 다시 비행시키고, 각 재사용마다 한계 비용을 절감합니다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.19.md",
+  "en": "What the emergence of [New Glenn](/fleet?id=new-glenn) adds to the picture is competitive pressure. For most of the decade between 2015 and 2025, SpaceX was essentially alone in the reusable-launch market. A market with one supplier is not a market; it's a monopoly. The entry of a second credible reusable launcher changes the pricing dynamics for everyone who buys a ride to orbit. Satellite operators, space agencies, and commercial customers who once had no choice but to take whatever SpaceX offered now have alternatives — and more are coming.",
+  "cur": "[New Glenn](/fleet?id=new-glenn)의 출현이 그림에 더해주는 것은 경쟁 압력입니다. 2015년과 2025년 사이의 10년 대부분에서 SpaceX는 재사용 가능한 발사 시장에서 본질적으로 혼자였습니다. 공급자가 하나인 시장은 시장이 아니며, 그것은 독점입니다. 두 번째 신뢰할 수 있는 재사용 가능 발사체의 진출은 궤도까지의 탑승권을 구매하는 모든 사람들에게 가격 책정 역학을 변화시킵니다. 위성 운영자, 우주 기관, SpaceX가 제공하는 것을 받을 수 없었던 선택지가 없었던 상용 고객들은 이제 대안을 가지고 있습니다 — 그리고 더 많은 것들이 오고 있습니다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.20.md",
+  "en": "China has moved with unusual seriousness. LandSpace's Zhuque-3, a methane-fuelled rocket broadly analogous to Falcon 9, attempted its first recovery in December 2025; the upper stage reached orbit but the booster crashed on its landing approach. A second recovery attempt is planned for mid-2026. iSpace has its Hyperbola-3 in hardware qualification, with a dedicated drone ship already launched, and is targeting its first flight from Wenchang. Several other Chinese commercial companies are in active development. The Chinese government has made reusable access to orbit an explicit national priority. That the country that built the Great Wall has decided to stop throwing its rockets away is a data point worth sitting with.",
+  "cur": "중국이 비상한 진지함으로 움직이고 있습니다. LandSpace의 Zhuque-3은 Falcon 9와 광범위하게 유사한 메탄 연료 로켓으로, 2025년 12월에 첫 회수를 시도했습니다; 상단부는 궤도에 도달했지만 부스터는 착륙 접근 중에 충돌했습니다. 두 번째 회수 시도는 2026년 중반을 목표로 계획되고 있습니다. iSpace는 Hyperbola-3을 하드웨어 검증 중이며, 이미 발사된 전용 드론선을 보유하고 있고, 원창에서의 첫 비행을 목표로 하고 있습니다. 여러 다른 중국 민간 회사들이 활발히 개발 중입니다. 중국 정부는 궤도에 대한 재사용 가능한 접근을 명시적인 국가 우선순위로 삼았습니다. 만리장성을 지은 국가가 자신의 로켓을 던져버리기를 멈추기로 결정했다는 것은 함께 앉아서 숙고할 가치가 있는 데이터 포인트입니다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.21.caption",
+  "en": "A Falcon 9 first stage stands back on its legs after delivering a payload to orbit — the moment a sixty-year assumption quietly collapsed. Once one company proved a booster could be flown again, everyone else had to learn to keep theirs too.",
+  "cur": "팰콘 9 1단이 궤도에 탑재량을 전달한 후 다리 위에 다시 서 있다—60년 가정이 조용히 붕괴된 순간. 한 회사가 부스터를 다시 날릴 수 있음을 증명했으면, 다른 모든 사람은 자신들의 것도 유지하는 법을 배워야 했다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.23.md",
+  "en": "The surface story is cost reduction, and the cost reduction is real: launch prices that once sat at $200 million or more for a large expendable have fallen toward $60–$80 million for a reusable medium-lift mission, and the marginal economics of a well-worn Falcon 9 booster are lower still. But the deeper change is in launch *cadence*. SpaceX launched 132 Falcon 9 missions in 2024 — almost three per week, sustained across a full calendar year, with the same pool of boosters cycling through the pad and back again. No expendable architecture could approach that tempo; you would need an industrial supply chain operating at wartime pace to match it. Reusability, it turns out, is not just about cost. It is about rate. And rate is about what becomes possible.",
+  "cur": "표면 이야기는 비용 감소이고, 비용 감소는 실제이다: 한 때 큰 소비형 2억 달러 이상에 앉아 있던 발사 가격은 재사용 가능한 중형 승강기 임무에 약 6천만에서 8천만 달러로 떨어졌으며, 잘 닳은 Falcon 9 부스터의 한계 경제는 더 낮다. 하지만 더 깊은 변화는 발사 *빈도*에 있다. SpaceX는 2024년에 132개의 Falcon 9 임무를 발사했다—거의 주당 3개로, 전 캘린더 연도에 걸쳐 지속되었으며, 같은 부스터 풀이 발사대와 다시 순환했다. 소비형 건축은 그 속도에 접근할 수 없다. 당신은 전시 속도로 작동하는 산업 공급 체인이 필요할 것이다 그것을 맞추기 위해. 재사용성은, 그것이 밝혀진 것처럼, 단지 비용에 관한 것이 아니다. 그것은 속도에 관한 것이다. 그리고 속도는 가능해지는 것에 관한 것이다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.24.md",
+  "en": "What becomes possible is Starlink: a constellation that required more than 6,000 launches to populate, impossible to build under any expendable pricing structure that has ever existed. What becomes possible are low-cost commercial science missions that previously could not afford the ride. What becomes possible, eventually, is crewed transport to Mars at a frequency that makes it a programme rather than a stunt — because the [delta-v budget](/science/propulsion/dv-budget) of an Earth-to-Mars mission demands a vehicle that can be refuelled on orbit and reused, or the mass fractions simply don't close. Reusability is not just an economic preference. For the ambitions that [Starship](/fleet?id=starship) is being designed to support, it is a physical requirement.",
+  "cur": "가능해지는 것은 Starlink입니다: 6,000회 이상의 발사가 필요했던 성좌로, 지금까지 존재해왔던 어떤 소비 로켓 가격 구조 하에서도 불가능했을 정도로 대규모였습니다. 가능해지는 것은 이전에 승차비를 감당할 수 없었던 저비용 상용 과학 미션입니다. 가능해지는 것은 결국 화성까지의 유인 수송을 그 정도의 빈도로 만드는 것입니다 — 스턴트가 아니라 계획으로 만드는 — 왜냐하면 지구에서 화성까지의 미션의 [델타-v 예산](/science/propulsion/dv-budget)은 궤도 상에서 재급유될 수 있고 재사용될 수 있는 우주선, 또는 질량 분율이 단순히 닫히지 않는 우주선을 요구하기 때문입니다. 재사용성은 단순한 경제적 선호입니다. [Starship](/fleet?id=starship)이 지원하도록 설계된 야심 찬 계획을 위해서는, 그것은 물리적 필수 조건입니다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.25.md",
+  "en": "The weight penalty that made early engineers dismiss reuse is still real; it has not been engineered away. A fully expendable Starship would deliver more to orbit than a reusable one. But the question is no longer whether you can afford the mass penalty. It's whether you can afford to throw the whole thing away — whether you can afford, as the rocket industry did for six decades, to treat the most complex machine ever built as a single-use item.",
+  "cur": "초기 엔지니어들이 재사용을 무시하게 만든 무게 대가는 여전히 현실이다. 그것은 공학으로 없어지지 않았다. 완전히 소비형 Starship은 재사용 가능한 것보다 궤도에 더 많이 전달할 것이다. 하지만 질문은 더 이상 당신이 질량 대가를 감당할 수 있는지 아닌지가 아니다. 그것은 전체 것을 버리는 것을 감당할 수 있는지이다—당신이 감당할 수 있는지—6십년간, 로켓 산업이 가장 복잡한 기계를 만든 것을 단일 사용 항목으로 취급하기 위해."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.26.caption",
+  "en": "The number that gates everything is the price of a kilogram to orbit. The Shuttle promised to lower it and never did; reusable Falcon 9 cut it roughly twenty-fold. Drop it far enough and missions that were once unthinkable become merely scheduled.",
+  "cur": "모든 것을 제어하는 수는 궤도에 킬로그램의 가격이다. 왕복선은 그것을 낮추겠다고 약속했고 절대 그렇지 않았다. 재사용 가능한 Falcon 9은 대략 20배를 자른다. 그것을 충분히 낮추고 한 때 생각할 수 없었던 임무는 단순히 예정된다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.28.md",
+  "en": "The rocket industry's original argument against reuse was engineering: the vehicle is too complex to refurbish cheaply, too fragile to fly again without dismantling, too weight-constrained to carry the hardware needed to land. The Space Shuttle's experience seemed to confirm all three. Those concerns were legitimate, and for thirty years they held.",
+  "cur": "로켓 산업의 재사용에 대한 원래 논의는 공학이었다: 차량은 저렴하게 점검하기에는 너무 복잡하고, 분해 없이 다시 날기에는 너무 부서지기 쉽고, 착지하는 데 필요한 하드웨어를 운반하기에는 너무 무게가 제약된다. Space Shuttle의 경험은 3가지 모두를 확인하는 것처럼 보였다. 그 우려는 정당했으며, 30년 동안 그것들이 열려 있었다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.29.md",
+  "en": "What changed was not the physics. What changed was the manufacturing base, the propellant choice — methane burns cleaner than kerosene, leaves less residue, makes refurbishment faster — and, more than anything, the willingness to design for reuse from the start rather than retrofitting it onto a vehicle optimised for expendability. The Shuttle was an expendable rocket that had been told to come home. The Falcon 9 booster was designed from the beginning around the question of how to land. That difference in design intent accounts for most of the difference in outcome.",
+  "cur": "물리가 바뀌지 않은 것은 무엇인가. 바뀐 것은 제조 기반, 추진제 선택이었다—메탄은 등유보다 더 깨끗하게 연소하고, 더 적은 잔류물을 남기고, 점검을 더 빠르게 만든다—그리고, 무엇보다, 소비성을 위해 최적화된 차량에 그것을 개조하기보다는 처음부터 재사용을 위해 설계할 의지. 왕복선은 집에 오도록 말해진 소비형 로켓이었다. Falcon 9 부스터는 착지하는 방법에 대한 질문 주위에서 처음부터 설계되었다. 설계 의도의 그 차이는 결과의 차이의 대부분을 설명한다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.30.md",
+  "en": "In the decade since that December night at Cape Canaveral, landing a booster has gone from impossible to ordinary. A Falcon 9 first stage that fails to return to its drone ship is now the unusual event, worth noting in the anomaly log. Super Heavy has been caught from the air. A second company has landed a heavy-lift stage at sea and flown it again. China is running to catch up. The assumption that has governed the entire launch industry since Sputnik — that a rocket is an expendable — has been broken, and the breaking of it is already reshaping which missions are possible, which businesses are viable, and what it will cost the next generation to go further.",
+  "cur": "케이프 커내버럴에서 그 12월 밤 이후의 십년 동안, 부스터를 착지시키는 것은 불가능한 것에서 평범한 것으로 갔다. 드론선으로 돌아가지 못하는 Falcon 9 1단은 이제 비정상 기록에 주목할 가치가 있는 비일상적 사건이다. Super Heavy는 공중에서 잡혔다. 두 번째 회사는 해상에서 무거운 승강기 단계를 착지시켰고 다시 날았다. 중국은 따라잡기 위해 달리고 있다. Sputnik 이후 전체 발사 산업을 다스린 가정—로켓은 소비형이다—이 깨졌으며, 그것의 깨짐은 이미 어떤 임무가 가능한지, 어떤 비즈니스가 실행 가능한지, 그리고 다음 세대가 더 멀리 가기 위해 비용이 얼마나 될지를 재형성하고 있다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.31.md",
+  "en": "None of the [rocket stages](/science/propulsion/rocket-stages) that ever took humans or spacecraft to orbit in the first sixty years of spaceflight survived. They are on the ocean floor, or in the upper atmosphere as dispersed molecules, or in museums where engineers who built them can walk past and recognise things they once touched. The ones flying now come back. That one change — quiet, technical, brutally difficult to make work — is the thing that separates the first era of spaceflight from whatever comes next.",
+  "cur": "우주비행의 첫 60년 동안 인간이나 우주선을 궤도에 가져간 어떤 [로켓 단계](/science/propulsion/rocket-stages)도 생존하지 않았다. 그것들은 대양의 바닥에 있거나, 분산된 분자로서 상층 대기에 있거나, 그것을 만든 엔지니어들이 걷고 지나가 그들이 한 때 만진 것을 인식할 수 있는 박물관에 있다. 지금 날고 있는 것들은 돌아온다. 그 하나의 변화—조용한, 기술적인, 작동하게 만들기에 끔찍하게 어려운—은 우주비행의 첫 번째 시대를 다음이 무엇이든 분리하는 것이다."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.32.caption",
+  "en": "Starship is the larger wager: that the whole vehicle — booster and ship alike — comes home and flies again within days. If it holds, the cost of reaching orbit stops being the thing that decides what humanity is allowed to attempt.",
+  "cur": "Starship은 더 큰 내기이다: 전체 차량—부스터와 선박 같이—집에 오고 며칠 내에 다시 날아간다. 그것이 유지되면, 궤도에 도달하는 비용은 인류가 시도하도록 허락되는 것을 결정하는 것을 멈춘다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "dek",
+  "en": "The cruise is easy. You spend months doing almost nothing — coasting on physics, nudging a trajectory, waiting. Arriving is where missions die. Landing is the hardest thing in spaceflight, and we have never solved it the same way twice.",
+  "cur": "순항은 쉽다. 몇 달 동안 거의 아무것도 하지 않고 — 물리 법칙에 몸을 맡긴 채 나아가며, 궤적을 살짝 조정하고, 기다린다. 임무가 죽는 것은 도착할 때다. 착륙은 우주비행에서 가장 어려운 일이며, 우리는 같은 방식으로 두 번 해결해 본 적이 없다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.0.md",
+  "en": "Consider what the number means. Seven minutes: from the first bite of atmosphere at roughly 20,000 kilometres per hour to wheels-down, stationary, on another planet. Seven minutes in which a spacecraft that cost a billion dollars and took a decade to build must autonomously execute a sequence of events — heat shield deployment, parachute inflation, rocket ignition, cable deployment, touchdown — each one timed to the second, each one dependent on every step before it going exactly right. Miss any single step, or hit it five seconds too late, and the whole thing becomes a crater.",
+  "cur": "그 숫자의 의미를 생각해보자. 7분: 대기권의 최상층에서의 첫 접촉(대략 시속 20,000킬로미터)부터 바퀴가 땅에 닿아 정지될 때까지, 다른 행성 위에서 말이다. 7분 동안, 10억 달러가 들었고 10년의 건설 기간이 필요했던 우주선이 자동으로 일련의 사건들을 실행해야 한다 — 열차폐막 분리, 낙하산 팽창, 로켓 점화, 케이블 전개, 착지 — 각각 초 단위로 정확히 시간이 맞춰지고, 각각은 그 앞의 모든 단계가 정확히 진행되어야 한다. 단 하나의 단계를 놓치거나 5초 늦으면, 전체가 충돌 분화구가 된다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.1.md",
+  "en": "And here is the detail that makes it genuinely terrifying: by the time Earth hears that the craft has touched the top of the Martian atmosphere, it has been on the ground — or part of the ground — for more than eleven minutes. The speed of light is not slow, but Mars is far enough that the round-trip lag runs anywhere from six to forty-four minutes depending on where the two planets are in their orbits. No one lands a Mars rover. No one on Earth can. The craft lands itself, in the dark, on the other side of the sun, and the people who built it can only sit in a room and wait to find out if it worked.",
+  "cur": "그리고 이것을 정말로 무서워하게 만드는 세부사항이 있다: 지구가 우주선이 화성 대기권의 맨 위에 닿았다는 신호를 받을 때쯤, 그것은 이미 땅 위에 있거나 — 혹은 땅의 일부가 되어 — 11분 이상이 지난 상태다. 빛의 속도가 느린 것은 아니지만, 화성은 충분히 멀어서 왕복 지연은 두 행성이 궤도에 있는 위치에 따라 6분에서 44분 사이를 간다. 아무도 화성 탐사로봇을 착륙시키지 못한다. 지구의 누구도 할 수 없다. 우주선은 어두운 곳에서, 태양의 반대편에서, 혼자서 착륙하며, 그것을 만든 사람들은 한 방에 앉아 그것이 작동했는지 알아내기만을 기다릴 수 있을 뿐이다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.2.md",
+  "en": "This is not a problem that gets easier with experience. Every world presents a different physics, a different atmosphere, a different set of constraints — and the solutions that worked on one body are useless, or dangerous, on another. The history of [entry, descent, and landing](/science/mission-phases/edl) is not a single story of improving technique. It is a collection of entirely different stories, each one a bespoke answer to the same brutal question: how do you slow down fast enough, without being crushed, in time, before you hit the ground?",
+  "cur": "이것은 경험으로 더 쉬워지는 문제가 아니다. 모든 세계는 다른 물리학, 다른 대기, 다른 제약들을 제시한다 — 그리고 한 천체에서 작동했던 해결책은 다른 천체에서는 쓸모없거나 위험하다. [대기권 진입, 강하 및 착륙](/science/mission-phases/edl)의 역사는 기술 개선의 하나의 이야기가 아니다. 그것은 완전히 다른 이야기들의 모음이며, 각각은 같은 가혹한 질문에 대한 맞춤형 답변이다: 부서지지 않으면서, 시간 안에, 땅에 부딪히기 전에, 당신은 어떻게 충분히 빠르게 속도를 낮추는가?"
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.4.md",
+  "en": "Start with the easy case, which is not the Moon. The Moon has no atmosphere at all — which sounds like a gift, until you realize what an atmosphere is actually for. It is free deceleration. A spacecraft hitting the top of Earth's atmosphere at orbital velocity arrives with an enormous kinetic energy budget, and the air slowly burns it off: the heat shield glows, drag builds up, and a craft that was moving at kilometres per second bleeds off enough speed, over enough minutes, that a parachute can catch it. Take away the atmosphere and you take away all of that. On the Moon, you arrive fast and you have only rockets to slow you, so you must carry every kilogram of the propellant you need to kill that speed from the moment you leave Earth. The Apollo Lunar Module had a dedicated descent engine that burned for twelve minutes to bring two men down from orbit. Every kilogram of lander had to be earned in fuel on the launch pad. There is nothing free about landing on an airless world.",
+  "cur": "쉬운 경우부터 시작하자. 그것은 달이 아니다. 달은 대기가 전혀 없다. 이는 선물처럼 들리지만, 대기가 실제로 무엇을 하는지 깨닫는 순간 변한다. 대기는 자유로운 감속이다. 지구 대기의 상층부에 궤도 속도로 충돌하는 우주선은 막대한 운동에너지를 가지고 도착하며, 공기는 천천히 그것을 태워 없앤다. 열차폐막이 빛나고, 항력이 쌓이며, 초당 수 킬로미터로 움직이던 우주선이 충분한 시간에 걸쳐 충분한 속도를 줄여서 낙하산이 그것을 잡을 수 있게 된다. 대기를 없애면 모든 것을 없애는 것이다. 달에서는 빠르게 도착하며 로켓으로만 속도를 늦출 수 있으므로, 지구를 떠나는 그 순간부터 그 속도를 죽이는 데 필요한 모든 추진제의 모든 킬로그램을 가지고 가야 한다. Apollo 달 착륙선은 두 명의 우주인을 궤도에서 내려오게 하기 위해 12분 동안 연소하는 전용 하강 엔진을 가지고 있었다. 착륙선의 모든 킬로그램은 발사대에서 연료로 얻어야 했다. 대기 없는 세계에 착륙하는 것에는 자유로운 것이 없다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.5.md",
+  "en": "Mars is the cruel middle case, and it is the one that has killed the most missions. The Martian atmosphere exists — it is real carbon dioxide, roughly a hundred kilometres deep — but it is about one percent as dense as Earth's. Thick enough to matter, thin enough to be almost useless. A parachute that would stop a probe cold in Earth's air barely makes a dent in Mars; you need it, but you cannot rely on it. Every Mars lander to date has used an aeroshell — a blunt heat shield that creates drag while absorbing the thermal fury of entry — plus a supersonic parachute to pull the speed down further, and then something else on top of that, because the parachute alone never gets you all the way to safe.",
+  "cur": "화성은 가혹한 중간 경우이며, 그것이 대부분의 미션을 죽인 것이다. 화성 대기권은 존재한다 — 그것은 실제 이산화탄소이며, 대략 100킬로미터 깊이다 — 하지만 그것은 지구의 것의 약 1퍼센트만큼 밀도가 있다. 중요할 만큼 두껍지만, 거의 쓸모없을 만큼 얇다. 지구의 공기에서 탐사선을 냉동 정지시킬 낙하산은 화성에서 거의 자국을 내지 못하며; 당신은 그것을 필요로 하지만, 당신은 그것에 의존할 수 없다. 지금까지의 모든 화성 착륙선은 에어로셸을 사용했다 — 진입 중에 항력을 만들면서 열적 분노를 흡수하는 둔탁한 열차폐막 — 그리고 속도를 더 낮추기 위해 초음속 낙하산을 더했으며, 그 위에 또 다른 것을 더했다. 왜냐하면 낙하산 혼자서는 절대로 당신을 안전한 상태까지 데려가지 못하기 때문이다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.6.md",
+  "en": "That \"something else\" is the design problem. It is what makes every Mars landing different, and it is what every engineering team has had to solve from scratch. [Viking 1](/missions?id=viking1) solved it in 1976 the obvious way: retrorockets, fired during the final descent, slowing the lander to a gentle touchdown on Chryse Planitia — the first spacecraft ever to work on the Martian surface, and it ran for more than six years. The retrorocket approach is conservative and heavy; it works, but it demands fuel and it limits your mass budget for science. Twenty years later, [Mars Pathfinder](/missions?id=mars-pathfinder) tried something that sounds like a joke: wrap the entire lander in airbags, cut it loose at altitude, let the rockets fire upward to kill the last of the vertical speed, and then let it bounce. On July 4, 1997, the Pathfinder lander hit the surface of Mars at about 50 kilometres per hour and bounced at least fifteen times before rolling to a stop, whereupon the petals opened and [Sojourner](/missions?id=mars-pathfinder) — the first Mars rover — trundled out onto the rocks of Ares Vallis.",
+  "cur": "그 \"다른 무언가\"는 설계 문제다. 이는 모든 화성 착륙을 다르게 만드는 것이며, 모든 엔지니어링 팀이 처음부터 풀어야 했던 것이다. [Viking 1](/missions?id=viking1)은 1976년에 명백한 방식으로 풀었다: 최종 강하 중에 발사되는 역추진 로켓, 착륙선을 크리세 평원에 부드럽게 착륙시킨다. 이는 화성 표면에서 작동한 첫 우주선이었으며 6년 이상 운영되었다. 역추진 로켓 방식은 보수적이고 무겁다. 작동하지만 연료를 요구하고 과학을 위한 질량 예산을 제한한다. 20년 뒤, [Mars Pathfinder](/missions?id=mars-pathfinder)는 농담처럼 들리는 무언가를 시도했다: 착륙선 전체를 에어백으로 감싸고, 고도에서 방출하고, 로켓을 위쪽으로 발사하여 마지막 수직 속도를 제거한 후, 튕기도록 놔두는 것이다. 1997년 7월 4일, Pathfinder 착륙선은 시속 약 50킬로미터로 화성 표면에 충돌했으며 멈출 때까지 최소 15번 튕겨 나갔다. 그러면 꽃잎이 열렸고 [Sojourner](/missions?id=mars-pathfinder) — 첫 화성 로버 — 가 아레스 계곡의 바위 위로 나갔다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.7.text",
+  "en": "Why the same answer never works twice",
+  "cur": "같은 답변이 두 번 작동하지 않는 이유"
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.8.md",
+  "en": "Airbags work for small, light craft. Sojourner massed about 10 kilograms. By 2012, [Curiosity](/missions?id=curiosity) massed nearly 900. Airbags that could absorb that landing would weigh more than the rocket could afford to launch, so the team at JPL had to invent something new: the sky crane. The descent stage — a rocket-powered flying platform — carried the rover down on cables, matching the pace of the ground, and when the wheels touched the Martian surface the cables were cut and the descent stage flew off to crash-land at a safe distance. It is the most audacious landing sequence ever flown, and it worked perfectly on the first attempt, setting Curiosity down in Gale Crater at 2:32 in the morning, California time, on August 6, 2012.",
+  "cur": "에어백은 작고 가벼운 우주선에는 작동한다. Sojourner는 약 10킬로그램의 질량을 가졌다. 2012년까지, [Curiosity](/missions?id=curiosity)는 거의 900이었다. 그 착륙을 흡수할 수 있는 에어백은 로켓이 발사할 여유가 있는 것보다 더 많이 무게가 나갔으므로, JPL의 팀은 뭔가 새로운 것을 발명해야 했다: 스카이 크레인. 강하 단계 — 로켓 동력 날아다니는 플랫폼 — 은 케이블 위의 탐사로봇을 땅의 속도와 맞추며 내려놓았으며, 바퀴가 화성 표면에 닿았을 때 케이블이 절단되고 강하 단계는 안전한 거리에 있는 충돌 착지를 하러 날아갔다. 그것은 지금까지 날아다닌 가장 대담한 착륙 배열이며, 그것은 첫 시도에서 완벽하게 작동했으며, 2012년 8월 6일 캘리포니아 시간으로 아침 2시 32분에 Curiosity를 게일 분화구에 착지시켰다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.9.md",
+  "en": "The sky crane was not just an engineering novelty. It was a philosophical shift: instead of designing the lander to survive contact with the ground, the engineers separated the problem entirely — descent, then release, then ground contact — so that each piece could be optimized independently. [Perseverance](/missions?id=perseverance) used the same architecture on February 18, 2021, landing on the floor of [Jezero Crater](/mars) and then driving, over the following months, toward the ancient river delta on its northern rim. But Perseverance added one piece the sky crane had not carried: a system that looked at the ground and thought.",
+  "cur": "스카이 크레인은 단지 엔지니어링 신기함이 아니었다. 그것은 철학적 변화였다: 착륙선이 땅과의 접촉을 견디도록 설계하는 대신, 엔지니어들은 문제를 완전히 분리했다 — 강하, 그 다음 방출, 그 다음 지면 접촉 — 따라서 각 조각을 독립적으로 최적화할 수 있었다. [Perseverance](/missions?id=perseverance)는 2021년 2월 18일에 같은 건축을 사용했으며, [제제로 분화구](/mars)의 바닥에 착지했고, 그 다음 달 동안, 북쪽 테두리의 고대 강 삼각주 쪽으로 운전했다. 하지만 Perseverance는 스카이 크레인이 운반하지 않은 한 조각을 더했다: 땅을 봤고 생각한 시스템."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.10.md",
+  "en": "Jezero is not a flat plain. It has steep cliffs, sand dunes, boulder fields, and smaller impact craters nested inside the rim — terrain that would have been considered unlanding-able under older rules. The reason Perseverance could target it was Terrain-Relative Navigation: a camera mounted on the belly of the descent stage photographed the surface rushing up, matched the image in real time against an onboard map of the crater, located itself to within metres, and then steered the vehicle away from hazards that the camera could see and the ground team could not respond to in time. The craft chose its own landing spot. The people who built it had given it the map and the authority; the decision, in those seven minutes, was entirely the machine's. The navigation essay's phrase for this comes from the landing side now, not the cruise: the craft learned to see — and then it used that sight to save itself.",
+  "cur": "Jezero는 평탄한 평원이 아니다. 그것은 가파른 절벽, 모래 언덕, 바위 지역, 그리고 테두리 안에 중첩된 더 작은 충돌 분화구를 가지고 있다 — 더 오래된 규칙 아래에서는 착륙할 수 없다고 고려되었을 지형이다. Perseverance가 그것을 목표로 할 수 있었던 이유는 지형-상대 항법이었다: 강하 단계의 배 모양 부분에 장착된 카메라는 표면이 솟아오르는 것을 사진으로 찍었으며, 이미지를 분화구의 온보드 지도에 대해 실시간으로 맞추었으며, 자신을 수 미터 내에 위치시켰으며, 그 다음 카메라가 볼 수 있었고 지상팀이 시간 안에 반응할 수 없었던 위험으로부터 차량을 조종했다. 우주선은 자신의 착륙 지점을 선택했다. 그것을 만든 사람들은 그것에 지도와 권한을 주었다; 그 7분 동안의 결정은 완전히 기계의 것이었다. 항법 에세이의 구절이 이제 착륙 쪽에서 나온다, 항해가 아니라: 우주선은 보기를 배웠다 — 그리고 그 다음 그것은 그 시각을 사용하여 자신을 구했다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.11.caption",
+  "en": "Every world hands you a different problem. The Moon has no air, so you fall on rockets alone; Mars has just enough to cook you but not enough to catch you; Earth and Titan have enough that a parachute does most of the work. No arrival is ever quite the arrival before it.",
+  "cur": "모든 세계는 당신에게 다른 문제를 건넨다. 달은 공기가 없으므로 로켓 혼자에 떨어지며; 화성은 당신을 익히기에는 충분하지만 잡기에는 불충분한 정도를 가지고 있다; 지구와 타이탄은 낙하산이 대부분의 일을 할 수 있을 정도로 충분하다. 어떤 도착도 그것 이전의 도착과 정확히 같지는 않다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.13.md",
+  "en": "Mars at least gives you seven minutes. Venus gives you less time than that to do anything useful, and it will kill you no matter how well you land. The Soviet [Venera program](/missions?id=venera-13) is the story of engineers deliberately designing spacecraft to die gracefully — to survive long enough to return something before the planet destroyed them. When Venera 13 touched down on March 1, 1982, it had entered a 457-degree Celsius atmosphere pressing down at 89 times Earth's standard pressure — the equivalent of a kilometre of ocean water on every surface — and its engineers had expected it to operate for perhaps thirty-two minutes before the heat cooked the electronics. It lasted 127 minutes. In that time it drilled a soil sample, analysed it chemically, and transmitted two color panoramas of flat basaltic rock under an orange sky. Those images remain, today, the best photographs ever taken from the surface of Venus. No spacecraft has been back since.",
+  "cur": "화성은 적어도 7분을 준다. 금성은 뭔가 유용한 것을 하기에 그보다 적은 시간을 주며, 그것은 당신을 얼마나 잘 착지하든 죽일 것이다. 소비에트 [Venera 프로그램](/missions?id=venera-13)은 엔지니어들이 의도적으로 우주선을 우아하게 죽도록 설계한 이야기다 — 행성이 그들을 파괴하기 전에 뭔가를 반환할 시간 동안 생존한다. Venera 13이 1982년 3월 1일에 터치다운했을 때, 그것은 지구의 표준 압력의 89배를 누르며 화씨 457도의 대기권에 진입했었다 — 모든 표면 위에 바다 1킬로미터의 동등한 것 — 그리고 그것의 엔지니어들은 그것이 열이 전자를 요리하기 전에 아마도 32분 동안 작동할 것으로 예상했다. 그것은 127분 동안 지속되었다. 그 시간 동안 그것은 토양 샘플을 뚫었으며, 그것을 화학적으로 분석했으며, 주황색 하늘 아래의 평평한 현무암 바위의 두 색 전경을 전송했다. 그 이미지들은 오늘날도 금성의 표면에서 찍은 가장 좋은 사진으로 남아 있다. 우주선이 이후로 돌아온 적이 없다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.14.md",
+  "en": "Descent through Venus's atmosphere is, at least, partly atmospheric: the thick CO₂ slows you. But there is no parachute phase that matters — the air is dense enough that even a relatively small drogue suffices to get you to terminal velocity, and after that the crushing pressure takes over. The engineering problem on Venus is not slowing down. It is surviving long enough to do anything after you stop.",
+  "cur": "금성의 대기권을 통한 강하는, 적어도 부분적으로, 대기권이다: 두꺼운 CO₂가 당신을 느리게 한다. 하지만 중요한 낙하산 단계가 없다 — 공기는 상대적으로 작은 드로그가 당신을 최종 속도에 도달하기에 충분할 정도로 밀도가 있으며, 그 다음 부숴진 압력이 인수한다. 금성에서의 엔지니어링 문제는 속도를 늦추는 것이 아니다. 그것은 당신이 멈춘 후에 뭔가를 할 만큼 오래 생존하는 것이다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.15.md",
+  "en": "Titan, Saturn's largest moon, is the strangest case of all. [Huygens](/missions?id=cassini) — an ESA probe carried to the Saturn system aboard [Cassini](/missions?id=cassini) — was released on Christmas Day 2004 and fell for twenty-two days before hitting Titan's atmosphere on January 14, 2005. Titan's air is mostly nitrogen, denser than Earth's at the surface, and colder than minus 170 degrees Celsius — a thick, orange, hydrocarbon haze that scatters sunlight into permanent amber dusk. Huygens deployed its main parachute within four minutes of atmospheric contact, then switched to a smaller drogue about fifteen minutes into the descent to prevent the batteries from dying before it reached the surface. It fell for two hours and twenty-seven minutes — not seven minutes, but nearly two and a half hours — and when it finally touched a plain scattered with ice pebbles it was moving at about 4.5 metres per second, a pace a brisk walk would match. Then it sat on the surface and transmitted for another seventy-two minutes before Cassini carried out of view. Huygens remains the only spacecraft humanity has ever landed anywhere in the outer solar system. Nothing has gone back.",
+  "cur": "토성의 최대 위성인 타이탄은 모든 경우 중 가장 기이한 경우다. [Huygens](/missions?id=cassini) — [Cassini](/missions?id=cassini)를 타고 토성계에 실려 간 ESA 탐사선 — 은 2004년 크리스마스에 방출되었고, 2005년 1월 14일 타이탄의 대기에 충돌하기 전에 22일간 떨어졌다. 타이탄의 공기는 대부분 질소이며, 지구 표면보다 더 조밀하고, 섭씨 영하 170도보다 낮으며 — 두껍고 주황색인 탄화수소 안개가 햇빛을 영구적인 호박색 황혼으로 산란시킨다. Huygens는 대기 접촉 후 4분 이내에 주 낙하산을 펼쳤다가, 배터리가 표면에 도달하기 전에 방전되는 것을 막기 위해 강하 약 15분 뒤에 더 작은 드로그 낙하산으로 전환했다. 2시간 27분 동안 떨어졌다 — 7분이 아니라, 거의 2시간 반 동안 — 그리고 결국 얼음 자갈이 흩어져 있는 평지에 닿았을 때 초당 약 4.5미터의 속도로 움직이고 있었으며, 이는 빠른 걸음에 맞먹는 속도였다. 그 후 표면에 앉아서 Cassini가 시야에서 벗어나기 전에 72분을 더 송신했다. Huygens는 인류가 외태양계 어디든 착륙시킨 유일한 우주선이다. 아무것도 돌아가지 않았다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.16.caption",
+  "en": "Mars is the cruel middle case — too thin an atmosphere to parachute down, too thick to ignore. It all happens in about seven minutes: entry, peak heating, a supersonic parachute, heat-shield separation, powered descent, and a sky crane lowering the rover on cables. Every step must fire on its own, on time, or the mission ends in a crater.",
+  "cur": "화성은 무정한 중간 사례다. 낙하산으로 내려가기에는 대기가 너무 얇고, 무시하기에는 너무 두껍다. 모든 일이 약 7분 안에 일어난다. 진입, 최대 가열, 초음속 낙하산, 열차단막 분리, 동력 하강, 그리고 스카이 크레인이 케이블로 로버를 내려놓는다. 모든 단계가 제때 정확히 작동해야 하지 않으면 임무는 분화구에 끝난다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.17.caption",
+  "en": "Perseverance hangs beneath its descent stage in the final seconds over Jezero Crater, moments before the sky crane pays out its cables — a manoeuvre flown entirely by the spacecraft itself, with Earth a spectator eleven minutes behind.",
+  "cur": "Perseverance는 예제로 분화구 위의 최종 초에 강하 단계 아래에 매달려 있으며, 스카이 크레인이 케이블을 풀기 직전이다 — 이는 우주선 자체가 완전히 날린 조작으로, 지구는 11분 뒤처진 관찰자다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.19.md",
+  "en": "Across the history of Mars missions specifically, the landing problem has a body count. Mars 2, in 1971, became the first object from Earth to touch the Martian surface — and crashed, killing itself on impact, the descent system having failed before the parachute sequence was complete. Mars Polar Lander, in December 1999, almost certainly shut down its descent engines prematurely when vibrations from the legs deploying were misread as a touchdown signal, and it fell the last forty metres at full speed. Beagle 2, on Christmas Day 2003, made it through entry — the EDL sequence appears to have worked — but the solar panels failed to fully deploy on landing and it could never communicate, silent on the Martian plains. The European Space Agency's Schiaparelli lander, in October 2016, had its inertial measurement unit saturate during the violent parachute descent — the readings briefly ran off the top of their scale — corrupting the navigation solution so the onboard computer believed it was already below the surface; it cut the parachute and fired the retrorockets for just three seconds instead of thirty, and hit the ground at roughly 540 kilometres per hour.",
+  "cur": "화성 임무의 역사만 놓고 보면, 착륙 문제에는 희생이 따랐다. 1971년의 Mars 2는 지구에서 온 물체로는 처음으로 화성 표면에 닿았지만 — 충돌하여 스스로 파괴되었다. 낙하산 전개 순서가 끝나기 전에 강하 시스템이 고장 났기 때문이다. 1999년 12월의 Mars Polar Lander는 착륙 다리가 펼쳐질 때의 진동을 착지 신호로 잘못 읽어 강하 엔진을 너무 일찍 끈 것이 거의 확실하며, 마지막 40미터를 전속력으로 떨어졌다. 2003년 크리스마스의 Beagle 2는 진입에는 성공했고 — EDL 순서는 제대로 작동한 것으로 보인다 — 하지만 착륙 때 태양 전지판이 완전히 펼쳐지지 못해 끝내 교신하지 못한 채 화성 평원에서 침묵했다. European Space Agency의 Schiaparelli 착륙선은 2016년 10월, 격렬한 낙하산 강하 중에 관성 측정 장치가 포화되었다 — 판독값이 잠시 측정 범위의 상한을 넘어섰다 — 그 때문에 항법 해가 오염되어 탑재 컴퓨터는 이미 지표면 아래에 있다고 믿었고, 낙하산을 분리한 뒤 역추진 로켓을 30초가 아니라 단 3초만 분사하여 시속 약 540킬로미터로 지면에 충돌했다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.20.md",
+  "en": "Each failure is a different failure. That is the pattern. There is no single thing that kills Mars landers; there is a long list of single things, each one a different link in a sequence that has to hold. Every mission that has survived landing on Mars has done so by getting every step right, in order, autonomously, without a second chance. The sequence that [Curiosity](/missions?id=curiosity) and [Perseverance](/missions?id=perseverance) flew successfully is not simpler than the ones that killed their predecessors. It is, if anything, longer and more elaborate. What is different is the margin — the care with which each potential failure mode was identified, tested, and either fixed or designed around. The seven minutes that looked like terror from the outside were, from the inside, the seven minutes that the engineers had spent years making boring.",
+  "cur": "각 실패는 다른 실패다. 그것이 패턴이다. 화성 랜더를 죽이는 단 하나의 원인은 없다. 있는 것은 긴 목록 뿐이며, 각각은 유지되어야 하는 연쇄 고리에서 다른 고리다. 화성 착륙에 생존한 모든 임무는 순서대로, 자율적으로, 두 번째 기회 없이 모든 단계를 올바르게 수행함으로써 생존했다. [Curiosity](/missions?id=curiosity)와 [Perseverance](/missions?id=perseverance)가 성공적으로 비행한 시퀀스는 그들의 선임자들을 죽인 시퀀스보다 더 간단하지 않다. 사실 더 길고 복잡하다. 다른 점은 여유다. 가능한 모든 실패 모드가 얼마나 신중하게 식별되고, 테스트되었으며, 수정되었거나 우회 설계되었는지다. 밖에서는 공포처럼 보이던 7분은, 내부에서는 엔지니어들이 몇 년에 걸쳐 지루하게 만든 7분이었다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.21.caption",
+  "en": "Schiaparelli was meant to prove Europe could land on Mars. In 2016 its computer, briefly confused by its own sensors, decided it had already touched down — let go of its parachute, cut its thrusters, and fell the last kilometres. The record of arrivals is written as much in craters as in triumphs.",
+  "cur": "Schiaparelli는 유럽이 화성에 착륙할 수 있음을 증명하기 위해 의도되었다. 2016년 컴퓨터는 자신의 센서에 잠시 혼동되어 이미 착륙했다고 결정했다. 낙하산을 놓아주었고, 스러스터를 끊었으며, 마지막 수 킬로미터를 떨어졌다. 도착의 기록은 승리만큼이나 분화구에도 써진다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.23.md",
+  "en": "Here is what makes this different from almost every other engineering problem: you cannot test it. You can test the parachute in a wind tunnel, the sky crane on a cable rig, the heat shield in an arc-jet facility — but you cannot test the full sequence, at full scale, in the actual atmosphere of Mars. Every Mars landing is a first flight of the complete system. Every EDL team in history has sent their machine off with a set of simulations, a set of engineering tests, a model of the atmosphere they are about to enter, and then waited. The Martian atmosphere is not uniform; its density varies with season and dust loading in ways that the models approximate but do not perfectly capture. A parachute deploying into slightly thinner air than expected needs to open a few seconds sooner; a lander touching down on a slope rather than a flat plain needs a slightly different retrorocket sequence. The software bakes in these contingencies, but the atmosphere gets a vote.",
+  "cur": "이것을 거의 다른 모든 공학 문제와 다르게 만드는 것은 테스트할 수 없다는 것이다. 풍동에서 낙하산을 테스트할 수 있고, 케이블 장치에서 스카이 크레인을 테스트할 수 있으며, 아크젯 장치에서 열차단막을 테스트할 수 있다. 하지만 완전한 시퀀스를 전체 규모로 화성의 실제 대기에서 테스트할 수 없다. 모든 화성 착륙은 완전한 시스템의 초여행이다. 역사상 모든 EDL 팀은 시뮬레이션 세트, 공학 테스트 세트, 진입할 대기 모델을 가지고 기계를 보내고 기다렸다. 화성 대기는 균일하지 않다. 밀도는 계절과 먼지 부하에 따라 변하며, 모델이 근사하지만 완벽하게 포착하지는 못한다. 예상보다 약간 더 얇은 공기로 펼쳐지는 낙하산은 몇 초 더 일찍 펼쳐져야 한다. 평탄한 평원이 아니라 경사지에 착륙하는 랜더는 약간 다른 역추진 로켓 시퀀스가 필요하다. 소프트웨어는 이러한 우발 상황을 포함하지만, 대기도 영향을 미친다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.24.md",
+  "en": "This is, in a specific sense, the thing navigation never has to face. [Navigation](/essays/navigation) is an iterative business — you aim, check, correct, aim again, for months or years, each correction building on the last. EDL is a one-shot event. The trajectory corrections have been made; the orbit has been shaped; the approach has been dialled in with millimetric care. Then the aeroshell hits the atmosphere and the countdown begins, and every decision from that moment is made by the machine, running code written years earlier by engineers who are now sitting in a room in Pasadena, watching a number on a screen that tells them only whether the signal is still there.",
+  "cur": "이것은 특정한 의미에서 항법이 직면할 필요가 없는 것이다. [항법](/essays/navigation)은 반복적인 업무다. 목표를 정하고, 확인하고, 수정하고, 다시 목표를 정하고, 몇 개월 또는 몇 년에 걸쳐 각 수정이 마지막을 바탕으로 한다. EDL은 일회성 사건이다. 궤적 수정이 이루어졌다. 궤도가 형성되었다. 접근이 밀리미터 정도의 정확성으로 조정되었다. 그 후 에어로셸이 대기에 진입하고 카운트다운이 시작되며, 그 순간부터의 모든 결정은 기계에 의해 수년 전에 엔지니어들이 작성한 코드를 실행하면서 이루어진다. 이 엔지니어들은 이제 파사데나의 방에 앉아 화면의 숫자를 보고 있으며, 그 숫자는 신호가 여전히 있는지 여부만을 말해준다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.25.md",
+  "en": "When that signal disappears — as it always does, for those long minutes while the aeroshell is a fireball — the room goes quiet. Not because they don't know what's happening. They have the timeline memorized. They know, to the second, when parachute deployment should occur, when the heat shield should separate, when the sky crane should ignite. They count through it, together, in silence, watching a clock. And when the signal comes back and says *I am on the ground*, what you hear from that room is not a sentence. It is a sound that has no words in it, because there are no words adequate for a machine the size of a car landing itself safely on another planet, alone, while the people who built it were standing eleven light-minutes away, unable to help.",
+  "cur": "그 신호가 사라질 때 — 에어로셸이 불덩어리인 동안 그 긴 시간 동안 항상 그렇게 된다 — 방은 조용해진다. 일어나는 일을 모르기 때문이 아니라, 타이밍을 외웠기 때문이다. 낙하산 전개가 일어나야 할 시간, 열차단막이 분리되어야 할 시간, 스카이 크레인이 점화되어야 할 시간을 초 단위로 안다. 함께 침묵 속에서 센다. 시계를 본다. 신호가 돌아와 *나는 지표면에 있다*고 말할 때, 그 방에서 나오는 것은 문장이 아니다. 그것은 말로 표현할 수 없는 소리다. 자동차 크기의 기계가 다른 행성에 안전하게 스스로 착륙할 때, 그것을 만든 사람들이 11광분 떨어진 곳에 서 있어 도움을 줄 수 없을 때, 말로 표현할 수 있는 것이 없기 때문이다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.26.caption",
+  "en": "And you cannot help it through any of it. Mars is light-minutes away — the whole descent fits inside the radio lag. By the time the first word of entry reaches Earth, the craft is already down, safe or dead, the outcome decided minutes before anyone here knew it had begun.",
+  "cur": "그리고 당신은 어떤 단계에서도 도움을 줄 수 없다. 화성은 빛-분 떨어져 있다. 전체 강하가 라디오 지연 내에 맞는다. 첫 번째 진입 신호가 지구에 도달할 때, 우주선은 이미 착륙했고, 안전하거나 죽었으며, 여기 누구든 시작한 것을 알기 몇 분 전에 결과가 결정되었다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.28.md",
+  "en": "Every world is different. The Moon demands rocket fuel for every metre per second of descent. Mars demands aerodynamics, parachutes, rockets, and then — because the parachute gets you only partway — invention. Venus demands thermal armor and a ticking clock. Titan offered the unexpected gift of a thick atmosphere and used it to give Huygens two and a half hours of descent data from the outer solar system, the most distant landing in history, still unmatched. Each solution is shaped by the planet that forced it into existence, and none of them transfers cleanly to the next body down the list.",
+  "cur": "모든 세계는 다르다. 달은 강하의 초속 미터마다 로켓 연료를 요구한다. 화성은 공기역학, 낙하산, 로켓, 그리고 — 낙하산은 당신을 중간까지만 데려가기 때문에 — 발명을 요구한다. 금성은 열 방어막과 시간 제약을 요구한다. 타이탄은 두꺼운 대기의 예상치 못한 선물을 제공했고, Huygens에 외태양계에서 2시간 반의 강하 데이터를 주었으며, 역사상 가장 먼 착륙이며 여전히 비길 데 없다. 각 해결책은 그것을 존재하게 만든 행성에 의해 형성되며, 어느 것도 목록 아래의 다음 천체로 깔끔하게 옮겨지지 않는다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.29.md",
+  "en": "What they share is this: the moment of landing is the moment when everything that cannot be undone happens. The months of cruise, the years of trajectory refinement, the decades of engineering — all of it has been moving toward a window of a few minutes during which the machine either does the thing or it doesn't, and there is no one close enough to intervene. The [navigation problem](/essays/navigation) has been solved, in pieces, over seventy years, by iterating: aim, correct, aim, correct. The landing problem must be solved in advance, completely, and then trusted. You cannot correct a Mars landing in progress. You can only watch the clock and count the beats of a sequence you no longer control, and wait for the signal that tells you the machine did what you asked.",
+  "cur": "공유하는 것은 이것이다. 착륙의 순간은 취소할 수 없는 모든 일이 일어나는 순간이다. 몇 개월의 항해, 몇 년의 궤적 정밀화, 수십 년의 엔지니어링 — 모두 기계가 그 일을 하거나 하지 않는 몇 분 창에 향하고 있으며, 개입할 충분히 가까운 사람은 아무도 없다. [항법 문제](/essays/navigation)는 70년에 걸쳐, 조각조각 반복하여 해결되었다. 목표를 정하고, 수정하고, 목표를 정하고, 수정한다. 착륙 문제는 미리, 완전히 해결되어야 하며, 그 후 신뢰되어야 한다. 진행 중인 화성 착륙을 수정할 수 없다. 시계를 보고, 더 이상 제어하지 않는 시퀀스의 박동을 세고, 기계가 당신이 요청한 일을 했다고 말하는 신호를 기다릴 수만 있다."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.30.md",
+  "en": "Perseverance is on the floor of [Jezero Crater](/mars) right now, picking its way toward ancient geology that may or may not hold what we sent it there to find. Viking 1's bones are still on Chryse Planitia. Huygens sits on a plain of ice pebbles more than a billion kilometres away. [Venera 13](/missions?id=venera-13) lasted 127 minutes and went silent. Each of them got down by solving a different problem, with a different answer, in a different set of minutes that could not be re-run. The cruise is easy. The physics carry you. Arriving is where the work is — and every world makes you invent the work from scratch.",
+  "cur": "Perseverance는 지금 [예제로 분화구](/mars)의 바닥에 있으며, 우리가 그것을 찾도록 보낸 것을 가지고 있을 수도 있고 없을 수도 있는 고대 지질학을 향해 나아가고 있다. Viking 1의 뼈는 여전히 크리세 평원에 있다. Huygens는 10억 킬로미터 이상 떨어진 얼음 자갈 평원에 앉아 있다. [Venera 13](/missions?id=venera-13)은 127분을 견뎠고 침묵으로 빠져들었다. 각각은 다른 문제를 풀고, 다른 답변으로, 다시 실행될 수 없는 다른 시간 세트에서 내려갔다. 순항은 쉽다. 물리학이 당신을 실어 나른다. 도착이 일의 자리인데 — 그리고 모든 세계는 당신에게 그 일을 처음부터 발명하도록 강요한다."
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "dek",
+  "en": "The Deep Space Network was built for a handful of probes. It is about to face the traffic of a solar-system civilisation. The fixes — antenna arrays, laser links, a store-and-forward internet — are real, and they are already being built. None of them beats the speed of light.",
+  "cur": "Deep Space Network는 소수의 탐사선을 위해 건설되었다. 이제 태양계 문명의 교통량을 맞닥뜨리려 한다. 그 해결책들 — 안테나 배열, 레이저 링크, 저장-후-전송 인터넷 — 은 모두 실제이며, 이미 건설되고 있다. 그 어떤 것도 빛의 속도를 이기지 못한다."
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.0.md",
+  "en": "The [comms essay](/essays/comms) ended on a quiet note: three patches of desert, roughly forty antennas, a 22-watt whisper crossing billions of kilometres, and the recognition that this threadbare infrastructure carries everything humanity has ever learned about the outer solar system. The miracle, that essay argued, wasn't how much the Deep Space Network had lost — it was how little. Three sites, one frequency band per mission, a schedule overbooked by forty percent, an upgrade programme running five years late. By any engineering standard, the [DSN](/science/mission-phases/dsn) should have broken under the load years ago. It hasn't, mainly because the load has grown slowly enough, and the engineers patient enough, that the cracks could be papered over one antenna track at a time.",
+  "cur": "[통신 에세이](/essays/comms)는 조용한 음조로 끝났다: 세 곳의 사막 지역, 대략 40개의 안테나, 수십억 킬로미터를 가로지르는 22와트의 속삭임, 그리고 이 띠 같은 기반시설이 인류가 외부 태양계에 대해 학습한 모든 것을 운반한다는 인식. 그 에세이가 주장한 기적은 Deep Space Network가 얼마나 많이 잃었는가가 아니라, 얼마나 적게 잃었는가 하는 것이었다. 세 곳의 지역, 임무당 한 주파수 대역, 40퍼센트로 초과예약된 일정, 5년 늦어진 업그레이드 프로그램. 어떤 공학 기준으로도 [DSN](/science/mission-phases/dsn)은 수년 전에 부하로 인해 붕괴했어야 한다. 그러나 그렇지 않았다. 주로 부하가 천천히 증가했고, 엔지니어들이 충분히 인내심 있어서, 균열들을 한 번에 한 안테나 트랙씩 봉인할 수 있었기 때문이다."
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.1.md",
+  "en": "That arithmetic is about to stop working. The 2020s and 2030s are set to deliver a wave of missions — crewed Artemis flights with their appetite for continuous high-rate data, science probes to the ice giants, commercial operators who have been promised DSN time without anyone fully accounting for where it will come from, and eventually a sustained human presence on the Moon that will require something closer to a broadband connection than a telex line. NASA's own projections, published in successive DSN strategic reviews, show demand growing by a factor of ten before 2035. The current infrastructure was not designed to absorb a factor of ten. The bottleneck, it turns out, has never been the spacecraft. It has always been the ground.",
+  "cur": "그 산술은 곧 작동을 멈출 예정이다. 2020년대와 2030년대는 한 파도의 임무들을 전달하도록 예정되어 있다 — 지속적인 고속 데이터 흐름에 대한 욕구를 가진 승무원이 탑승한 Artemis 비행, 얼음 거대 행성에 대한 과학 탐사선, DSN 시간을 약속받았지만 그것이 어디서 나올지 완전히 설명하지 못한 상업 운영자, 그리고 결국 텔렉스 라인이 아니라 광대역 연결에 더 가까운 것을 필요로 하는 달의 지속적인 인간 존재. NASA의 자체 예측, 연속적인 DSN 전략 검토에 발표된 것, 2035년 이전에 수요가 10배 증가하는 것을 보여준다. 현재 기반시설은 10배를 흡수하도록 설계되지 않았다. 병목 현상은, 결국, 우주선이 아니었다. 항상 지상이었다."
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.2.md",
+  "en": "Three approaches are being built in parallel. Stop building bigger dishes and instead combine many smaller ones in software — arraying. Replace radio with laser light for the high-rate downlinks, which concentrates orders of magnitude more data into the same transmitted power. And accept that the solar system will never have a real-time network, building instead an architecture designed for that fact: a store-and-forward internet whose packets spend hours in transit and arrive anyway. Each has been demonstrated. None of them changes the one thing that cannot be changed.",
+  "cur": "세 가지 접근 방식이 병렬로 건설되고 있다. 더 큰 접시를 짓는 것을 멈추고, 대신 소프트웨어에서 많은 작은 접시들을 결합하라 — 배열화. 고속 다운링크를 위해 라디오를 레이저 빛으로 교체하라. 이는 동일한 전송 전력으로 훨씬 더 많은 데이터를 집중시킨다. 그리고 태양계가 실시간 네트워크를 절대 가질 수 없다는 것을 인정하고, 그 사실을 위해 설계된 아키텍처를 대신 구축하라: 패킷들이 전송 중에 수 시간을 보내고 어쨌든 도착하는 저장-후-전송 인터넷. 각각은 입증되었다. 그 어느 것도 변할 수 없는 한 가지를 변경하지 못한다."
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.4.md",
+  "en": "The [comms essay](/essays/comms) worked through the link budget: [Voyager 1](/missions?id=voyager-1)'s 22.4-watt transmitter, the inverse-square loss across tens of light-hours, the femtowatt signal arriving at a 70-metre dish after more than twenty-three light-hours of travel. That loss is real, and it is why data rates from the outer planets are measured in bits per second. But it is not the binding constraint for the missions launching right now. At the Moon and Mars, spacecraft can transmit faster than the ground can schedule time to receive. The DSN allocates antenna time in blocks called tracks — typically eight to ten hours per mission per day — fought over by a queue of dozens of active spacecraft. [MAVEN](/missions?id=maven), the Mars atmospheric orbiter that relays data for surface missions, can generate and forward data faster than the DSN can absorb it on any given day. The spacecraft is not the problem. The three sites, with their fixed number of dishes and finite receiver chains, are the problem. The traditional answer was to build a bigger dish: the 70-metre giants at each complex were expanded from 64 metres specifically to support [Voyager 2](/missions?id=voyager-2)'s Neptune encounter in 1989 — a civilisational upgrade to the global network, for one flyby, of one planet. That kind of expenditure is not repeatable, and a 70-metre dish is near the practical limit of what can be steered as a single structure anyway. The era of the bigger dish is over.",
+  "cur": "[통신 에세이](/essays/comms)는 링크 예산을 통해 작업했다: [Voyager 1](/missions?id=voyager-1)의 22.4와트 송신기, 수십 광시간에 걸친 역제곱 손실, 23광시간 이상의 여행 후 70미터 접시에 도착하는 펨토와트 신호. 그 손실은 실제이며, 이것이 외부 행성의 데이터율이 초당 비트로 측정되는 이유이다. 그러나 지금 발사되는 임무들에 대한 구속 조건이 아니다. 달과 화성에서, 우주선은 지상이 수신할 시간을 예약하는 것보다 더 빠르게 전송할 수 있다. DSN은 트랙이라고 불리는 블록 단위로 안테나 시간을 할당한다 — 전형적으로 임무당 하루에 8~10시간 — 수십 개의 활성 우주선 대기열로 싸운다. [MAVEN](/missions?id=maven), 표면 임무의 데이터를 중계하는 화성 대기 궤도선은 DSN이 어떤 주어진 날에 흡수할 수 있는 것보다 더 빠르게 데이터를 생성하고 전송할 수 있다. 우주선은 문제가 아니다. 고정된 수의 접시와 유한한 수신기 체인을 가진 세 곳의 사이트가 문제이다. 전통적인 답은 더 큰 접시를 짓는 것이었다: 각 복합시설의 70미터 거인들은 1989년 [Voyager 2](/missions?id=voyager-2)의 해왕성 근접통과를 지원하기 위해 64미터에서 확대되었다 — 한 번의 근접통과, 한 행성의 글로벌 네트워크에 대한 문명적 업그레이드. 그런 종류의 지출은 반복할 수 없으며, 70미터 접시는 어쨌든 단일 구조로 조종할 수 있는 것의 실질적 한계에 가깝다. 더 큰 접시의 시대는 끝났다."
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.6.md",
+  "en": "The principle behind [antenna arraying](/science/mission-phases/antenna-arrays) is straightforward, though the engineering is not. Take a signal arriving simultaneously at multiple separate antennas. Combine their outputs — accounting precisely for the tiny difference in arrival time at each dish, caused by their different positions on the ground — and the combined system behaves like a single dish whose collecting area is the sum of all the individual dishes. Eight 34-metre antennas combined coherently produce roughly the sensitivity of a single 96-metre dish, which is larger than anything the DSN has ever built. The signal-to-noise ratio improves as the square root of the number of antennas; the cost of each additional dish is a fraction of the cost of upgrading the primary to match the same gain.",
+  "cur": "[안테나 배열화](/science/mission-phases/antenna-arrays) 뒤의 원리는 간단하지만, 공학은 그렇지 않다. 동시에 여러 개의 별개 안테나에 도착하는 신호를 생각해보라. 그들의 출력을 결합하라 — 지상의 서로 다른 위치로 인한 각 접시의 도착 시간의 미세한 차이를 정확하게 고려하여 — 그리고 결합된 시스템은 수집 영역이 모든 개별 접시의 합인 단일 접시처럼 행동한다. 일관성 있게 결합된 8개의 34미터 안테나는 대략 96미터 단일 접시의 감도를 생성하며, 이는 DSN이 지금까지 만든 어떤 것보다 더 크다. 신호 대 잡음비는 안테나의 개수의 제곱근으로 증가한다; 각 추가 접시의 비용은 같은 이득을 맞추기 위해 주(主) 안테나를 업그레이드하는 비용의 일부이다."
+ }
+]

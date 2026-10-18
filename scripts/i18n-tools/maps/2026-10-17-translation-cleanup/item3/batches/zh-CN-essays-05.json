@@ -1,0 +1,248 @@
+[
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.7.md",
+  "en": "The DSN demonstrated arraying as early as the 1980s, combining Goldstone with the Very Large Array in New Mexico during Voyager 2's Neptune encounter. What is new is the intent to make it the default rather than an emergency measure. NASA's aperture enhancement programme is building additional 34-metre dishes at each complex specifically to be arrayed — adding capacity incrementally, with the resilience that a single dish going dark for maintenance no longer silences the site. And arraying is not only an American concern. ESA operates deep-space antennas at New Norcia, Cebreros, and Malargüe; JAXA runs the Usuda and Uchinoura networks; ISRO has a deep-space station at Byalalu near Bengaluru. The emerging picture is not a three-site American monopoly but a global patchwork of national assets — a commons that missions from any agency will negotiate across.",
+  "cur": "DSN 早在 1980 年代就展示了阵列技术，在 Voyager 2 的海王星近距离接近过程中，将 Goldstone 与新墨西哥州的 Very Large Array 结合在一起。新的地方在于将其作为默认做法，而非紧急措施的意图。NASA 的孔径增强计划正在每个观测站建造额外的 34 米口径天线，专门用于阵列化——逐步增加容量，具有韧性使得单个天线因维护而停用不再会导致该站点失声。阵列化并非仅是美国关心的问题。ESA 在 New Norcia、Cebreros 和 Malargüe 运营深空天线；JAXA 运营 Usuda 和 Uchinoura 网络；ISRO 在班加罗尔附近的 Byalalu 拥有一个深空站。浮现的图景并非美国三站垄断，而是各国资产的全球拼图——任何机构的任务将在其中协商的共同资源。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.8.caption",
+  "en": "Rather than build ever-larger single dishes, the future is to array many smaller ones so their signals combine into one enormous virtual aperture — cheaper to grow, redundant, degrading gracefully. It was arraying, across four continents, that pulled Voyager 2’s whisper out of the noise at Neptune in 1989.",
+  "cur": "不再构建不断更大的单个天线盘，未来是阵列化许多较小的天线盘，使它们的信号联合成一个巨大的虚拟孔径——增长成本更低、冗余性强、优雅降级。正是通过阵列化，跨越四个大陆，在1989年的海王星将Voyager 2的耳语从噪声中拉出来。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.9.caption",
+  "en": "Voyager 2 at Neptune, 1989 — by then so faint that catching its full data rate meant combining dishes on four continents at once. It was the case that proved arraying works.",
+  "cur": "1989年海王星的Voyager 2——当时已经如此微弱，要捕捉其完整数据速率需要同时联合四个大陆上的天线盘。这是证明阵列化有效的案例。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.11.md",
+  "en": "The comms essay described the first demonstration of [deep-space optical communications](/science/mission-phases/optical-comms): the DSOC experiment riding aboard the [Psyche](/missions?id=psyche-mission) spacecraft, which launched in October 2023 and achieved something radio cannot match on equivalent power. By April 2024, DSOC had transmitted at 25 megabits per second from 140 million miles — faster than most household broadband, from a distance greater than the Earth-Sun separation. By December 2024, it had set a distance record: downlinking at useful rates from 307 million miles, 494 million kilometres out. In both cases, the comparison to the radio link on the same spacecraft is bracing: DSOC achieved ten to a hundred times the throughput for the same electrical power and roughly the same mass.",
+  "cur": "通信论文描述了[深空光学通信](/science/mission-phases/optical-comms)的首次演示：搭载[Psyche](/missions?id=psyche-mission)航天器的DSOC实验，该航天器于2023年10月发射，实现了射频在等效功率下无法匹配的成就。到2024年4月，DSOC已从1.4亿英里处以25兆比特每秒的速率传输——比大多数家用宽带更快，距离超过地日距离。到2024年12月，它创下了距离纪录：从3.07亿英里、4.94亿公里外的有用速率下链。在这两种情况下，与同一航天器上无线电链路的对比都令人印象深刻：DSOC以相同的电功率和大约相同的质量实现了十到一百倍的吞吐量。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.12.md",
+  "en": "The physics behind the advantage is geometry. Radio waves spread in a cone; the cone widens with distance, and most of the transmitted power misses the target. A laser beam is a pencil. The same power that radio sprays across millions of square kilometres at Mars distances can be concentrated, with optical comms, into a spot just tens of metres across at the ground station. More power per square metre arriving at the receiver means more signal; more signal means higher data rates for the same transmitter power, or the same data rate from a smaller, lighter transmitter. For a spacecraft where every kilogram of mass costs thousands of dollars to launch, that trade is attractive.",
+  "cur": "这种优势背后的物理是几何学。无线电波以圆锥形扩散；圆锥随距离扩大，大部分传输功率都错过了目标。激光束是一支铅笔。相同的功率在火星距离处可能被射频散播在数百万平方公里的范围内，可以通过光学通信浓聚成地面站仅数十米宽的光斑。每平方米到达接收器的更多功率意味着更强的信号；更强的信号意味着在相同发射机功率下更高的数据速率，或来自更小、更轻发射机的相同数据速率。对于一个质量中每一公斤都花费数千美元发射成本的航天器，那种权衡是有吸引力的。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.13.md",
+  "en": "The catch — and there is always a catch — is pointing. A beam narrow enough to land in a spot tens of metres wide at a target millions of kilometres away requires the transmitting telescope to be pointed with an accuracy measured in nanoradians. A spacecraft vibrating slightly from reaction wheel noise, thermal expansion, or the micro-impulse of cosmic ray hits must track a target on Earth that is itself moving, as the planet rotates and orbits the Sun, to a precision that strains the best attitude-control systems ever built. DSOC solved this with a fast-steering mirror and a feedback loop that tracks a beacon laser sent up from the ground — the spacecraft hunts the uplink beam and points its downlink accordingly. It works. The complexity is real.",
+  "cur": "捕获——总是有捕获——是指向。一个足够狭窄的光束能在距离数百万公里的目标处的地面站着陆一个数十米宽的光斑，需要发射望远镜以纳弧度计的精度指向。一个由反应轮噪声、热膨胀或宇宙射线撞击的微脉冲轻微振动的航天器必须跟踪地球上移动的目标，当行星自转和绕太阳公转时，精度之高足以让最好的姿态控制系统承受压力。DSOC用一面快速转向镜和一个从地面发送的信标激光来跟踪反馈环解决了这个问题——航天器猎捕上行链路光束并相应地指向下行链路。它有效。复杂性是真实的。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.14.md",
+  "en": "The second catch is weather. Radio waves pass through clouds. Laser light does not. A ground station receiving an optical downlink from Mars goes blind whenever clouds pass overhead — which at any given site on Earth happens roughly a third to half the time. The architecture for a reliable operational optical deep-space network therefore requires geographically distributed ground terminals: the Optical to Orion (O2O) facility at White Sands in New Mexico, the Haleakala telescope in Hawaii, planned sites in the Canary Islands and in the Asia-Pacific. If one site is clouded out, another takes the downlink. The same strategy the DSN already uses for radio — three sites, 120 degrees apart — applied to optical, but with finer geographical texture and a stronger dependence on local meteorology. NASA's follow-on to DSOC, the Deep Space Optical Relay, is intended to demonstrate exactly this multi-site handoff for operational missions in the late 2020s.",
+  "cur": "第二个障碍是天气。无线电波可以穿过云层。激光则不能。从火星接收光学下行链路的地面站一旦有云层经过上空就会失明——在地球上任何给定地点，这大约每时每刻都会发生三分之一到一半的时间。因此，可靠运作的光学深空网络架构需要地理上分散的地面终端：新墨西哥州White Sands的光学到Orion（O2O）设施、夏威夷的Haleakala望远镜，以及计划在加那利群岛和亚太地区的站点。如果一个站点被云遮挡，另一个站点就接替接收下行链路。这正是DSN已经用于无线电的策略——三个站点，相隔120度——应用于光学通信，但具有更精细的地理分布和对本地气象的更强依赖。NASA在DSOC之后的后续项目Deep Space Optical Relay，旨在在2020年代后期为运行任务演示这种多站点切换。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.15.md",
+  "en": "The longer-term vision is a network that uses optical links for the high-rate downlinks — science data, imagery, video — while retaining radio for the low-rate, all-weather uplink and for emergency commanding. The [scales-of-distance lesson](/science/scales-time/light-minute) still applies: DSOC is not a communications revolution in the sense of making distances irrelevant. From Psyche's location during the December 2024 record, the one-way [light travel time](/science/scales-time/light-minute) was about 27 minutes. The laser arrived 27 minutes after it left. No amount of bandwidth engineering changes that number.",
+  "cur": "长期愿景是一个网络，它使用光学链路进行高速率下行链路——科学数据、图像、视频——同时保留无线电用于低速率、全天候上行链路和应急指挥。[距离尺度的教训](/science/scales-time/light-minute)仍然适用：DSOC不是一场通信革命，意义上不是使距离变得无关紧要。从Psyche在2024年12月记录期间的位置，单向[光传播时间](/science/scales-time/light-minute)约为27分钟。激光到达用时27分钟。再多的带宽工程也改变不了这个数字。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.16.caption",
+  "en": "NASA’s Psyche carried the Deep Space Optical Communications demonstrator, which in 2023–24 streamed high-definition video home from tens of millions of kilometres on a beam of laser light — ten to a hundred times the data a radio link could carry.",
+  "cur": "NASA的Psyche搭载了深空光学通信演示器，它在2023—24年期间通过激光束从数千万公里外的地方向家乡传输高清视频——是无线电链路能承载数据量的十到一百倍。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.18.md",
+  "en": "Radio and optical communications both solve the same problem: how to move bits faster. Neither solves the structural problem the solar system imposes on any network: links go up and down as planets rotate, nodes are separated by light-minutes to light-hours, and the latency between any two endpoints is not milliseconds but tens of minutes. The internet protocol that carries all of Earth's network traffic — TCP/IP — was designed for a world where a packet gets an acknowledgement in under a second. TCP's core mechanism is a handshake: send, receive acknowledgement, send the next. At Mars distances, a sender would transmit a packet, wait forty minutes for an acknowledgement, transmit the next, and so on. Throughput: approximately zero. TCP was built for a planet.",
+  "cur": "无线电和光学通信都解决同样的问题：如何更快地传输比特。但都没有解决太阳系对任何网络强加的结构性问题：随着行星自转，链路时断时续；节点之间相隔光分钟到光小时；任何两个端点之间的延迟不是毫秒而是数十分钟。承载地球所有网络流量的互联网协议——TCP/IP——设计用于一个数据包在一秒内就能获得确认的世界。TCP的核心机制是握手：发送、接收确认、发送下一个。在火星距离下，发送者会传输一个数据包，等待四十分钟的确认，传输下一个，如此反复。吞吐量：基本为零。TCP是为一个星球设计的。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.19.md",
+  "en": "The answer, developed in the late 1990s by a working group that included Vint Cerf — one of the original architects of the internet — is called [Delay/Disruption-Tolerant Networking](/science/mission-phases/interplanetary-internet), or DTN. Its governing idea is store-and-forward: a DTN node receives a bundle of data, holds it locally, and forwards it when the next link in the chain becomes available. A bundle from a Martian rover travels first to a Mars orbiter — [MAVEN](/missions?id=maven) already relays surface-mission data this way — which stores it and forwards it to Earth during its next ground contact. The bundle takes hours to traverse the chain. It arrives complete, without requiring simultaneous connectivity at any point along the route. DTN has been running as an operational experiment aboard the International Space Station since 2008. The Mars Relay Network — the informal coordination between Mars orbiters ensuring surface missions always have a relay overhead — is DTN's architectural premise made practical. The remaining work is standardising the Bundle Protocol across all agencies, so that a rover, an orbiter, and a ground station from three different nations can hand a packet between them the way any two devices on Earth exchange an email.",
+  "cur": "这个答案由一个工作小组在1990年代后期开发，其中包括文顿·瑟夫——互联网最初的建筑师之一——被称为[延迟/中断容错网络](/science/mission-phases/interplanetary-internet)，即DTN。其核心理念是存储转发：DTN节点接收一束数据，本地保存，当链中下一个链接可用时再转发。来自火星探测车的一束数据首先传到火星轨道器——[MAVEN](/missions?id=maven)已经以这种方式中继地表任务数据——该轨道器存储后在下次与地面接触时转发到地球。这束数据花费数小时来遍历链条。它完整到达，无需在沿途任何一点同时保持连通。自2008年以来，DTN一直在国际空间站上作为运行实验进行。火星中继网络——火星轨道器之间的非正式协调确保地表任务总是有一个中继器在头顶——是DTN架构前提付诸实践的体现。剩余工作是在所有机构间标准化捆绑协议，以便来自三个不同国家的探测车、轨道器和地面站可以像地球上任何两台设备交换电子邮件一样相互传递数据包。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.20.caption",
+  "en": "The other half of the answer is software. Delay/Disruption-Tolerant Networking drops the ordinary internet’s assumption of a live end-to-end link: each node holds a data “bundle” and forwards it only when the next hop is reachable. Mars orbiters already relay for rovers this way — a real, standardised interplanetary internet, not a metaphor.",
+  "cur": "答案的另一半是软件。延迟/中断容错网络放弃了普通互联网对实时端到端链接的假设：每个节点保存一束数据，仅在下一跳可达时转发。火星轨道器已经以这种方式为探测车提供中继——一个真实的、标准化的行星际互联网，而不是一个比喻。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.22.md",
+  "en": "There is a temptation, reading the capabilities above, to hear them as solutions to the deep problem — the isolation, the distance, the silence. They are not. They are improvements to the plumbing. The structure of the solar system is not a plumbing problem; it is a geometry problem, and the geometry is fixed. Mars is between three and twenty-two [light-minutes](/science/scales-time/light-minute) from Earth depending on orbital position. No technology changes that number. A laser beam and a radio wave both travel at the speed of light, which is the speed of causality in this universe and which has nothing to say about bandwidth or encoding. More bandwidth means more data crosses the gap per minute. It does not mean the gap shrinks. You cannot have a real-time conversation with a crew on Mars — not a voice call, not a video link, not a command-and-acknowledge loop. A crew member facing a medical emergency cannot wait twenty-four minutes for a reply, nor six minutes at closest approach. They decide with the knowledge they have, in the time they have. The arrays, the lasers, the DTN internet all make it easier to send more information in advance and receive more in debrief. None of them puts a flight surgeon's hand on a patient's shoulder across thirty million kilometres.",
+  "cur": "阅读上述能力时，有一种诱惑，会将其听作是对深层问题的解决方案——孤立、距离、寂静。它们不是。它们是管道的改进。太阳系的结构不是一个管道问题；它是一个几何问题，而几何是固定的。火星距地球三到二十二[光分钟](/science/scales-time/light-minute)，取决于轨道位置。没有任何技术能改变这个数字。激光束和无线电波都以光速传播，光速是这个宇宙中因果关系的速度，对带宽或编码没有任何影响。更多的带宽意味着更多数据每分钟穿过间隙。它不意味着间隙缩小。你不能与火星上的船员进行实时对话——不是语音通话、不是视频链接、不是命令确认循环。面对医疗紧急情况的船员不能等待二十四分钟的答复，最接近时也不能等六分钟。他们用他们拥有的知识、他们拥有的时间做决定。这些阵列、激光、DTN互联网都使得提前发送更多信息和事后接收更多信息变得更容易。但都不能在三千万公里外把航空医学医生的手放在患者肩上。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.23.md",
+  "en": "The outer solar system is quieter still. [New Horizons](/missions?id=new-horizons) during its Pluto encounter was four and a half light-hours from Earth. [Voyager 1](/missions?id=voyager-1), now more than twenty-three light-hours out, receives a command on Tuesday that was sent on Sunday. These numbers will not improve. The relevant trajectory for the [interstellar-exploration problem](/essays/interstellar-exploration) is an order of magnitude beyond even that: the nearest star system, Alpha Centauri, is four and a third light-years away — a signal sent today would arrive in 4.3 years. The bandwidth innovations described in this essay are necessary and useful for everything within the solar system. For anything beyond it, they are irrelevant. At interstellar distances, the delay is not a communications engineering problem. It is a civilisational one.",
+  "cur": "外太阳系更加寂静。[New Horizons](/missions?id=new-horizons)在冥王星遭遇期间距地球四个半光小时。[Voyager 1](/missions?id=voyager-1)现在超过二十三光小时外，在周日发送的命令周二才被接收。这些数字不会改善。[星际探索问题](/essays/interstellar-exploration)的相关轨迹大得多：最近的恒星系统半人马座α距离四又三分之一光年——今天发送的信号需要4.3年才能到达。本文描述的带宽创新对太阳系内的一切都是必需和有用的。对于超越它的任何东西，它们都是无关紧要的。在星际距离上，延迟不是通信工程问题。它是一个文明问题。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.24.caption",
+  "en": "None of it beats the speed of light. Optical links and arrays carry more of the story, and delay-tolerant networking keeps it from being lost — but a signal to Mars is still three to twenty-two minutes each way. There is no bandwidth, anywhere, that buys a real-time conversation with another planet.",
+  "cur": "没有什么能超过光速。光学链路和阵列传输更多的故事，延迟容错网络防止它丢失——但发送到火星的信号仍然每方向三到二十二分钟。没有任何带宽可以换来与另一个行星的实时对话。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.26.md",
+  "en": "Step back from the engineering and consider what is actually being built. The [Deep Space Network](/science/mission-phases/dsn) was designed in 1963 for a solar system that contained, at any given time, perhaps a dozen active spacecraft. It has been stretched, upgraded incrementally, and kept running through a combination of engineering ingenuity and institutional stubbornness. What replaces it — the arrays, the optical links, the interplanetary internet, the globally distributed ground stations — is something qualitatively different: a permanent communications infrastructure for a species that intends to be somewhere other than Earth.",
+  "cur": "从工程角度后退，考虑实际上正在建造什么。[Deep Space Network](/science/mission-phases/dsn)在1963年为一个太阳系设计，该系统在任何给定时间包含大约十几个活跃航天器。它经过拉伸、逐步升级，并通过工程天才和制度坚韧的结合保持运行。取而代之的是——阵列、光学链路、行星际互联网、全球分散的地面站——是本质上不同的东西：为一个打算在地球以外某处存在的物种的永久通信基础设施。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.27.md",
+  "en": "For the first time since the 1970s, the intent to be somewhere other than Earth is backed by hardware being built and launched. The Artemis programme has committed to a lunar communications architecture supplemented by commercial relay satellites in lunar orbit. The Mars Relay Network is a functioning multi-agency infrastructure. DSOC proved optical links work at planetary distances. The Bundle Protocol is running on operational spacecraft today. These are not research programmes awaiting maturation. They are the first version of an infrastructure that will be running, in some form, for the rest of this century.",
+  "cur": "自1970年代以来，打算在地球以外存在的意图第一次得到正在建造和发射的硬件支持。Artemis计划致力于月球通信架构，由月球轨道上的商业中继卫星补充。火星中继网络是一个运行的多机构基础设施。DSOC证明了光学链路在行星距离上有效。捆绑协议正在运行航天器上运行。这些不是等待成熟的研究计划。它们是一个基础设施的第一版本，将在本世纪余下的时间里以某种形式运行。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.28.md",
+  "en": "The historical analogy that sits most naturally here is not the telephone network or the internet, though those are the structural parallels. It is the switchboard. Before long-distance telephony, every town that wanted to communicate with the next town negotiated its own arrangement — a telegraph line, a mail route, a courier. The switchboard, and the exchanges it connected, transformed those bilateral arrangements into a network: every node that joined could reach every other node, through a shared and standardised infrastructure, without needing to build its own private link to each destination. What is being assembled now — slowly, expensively, internationally — is the switchboard for a solar system. Not a metaphor for it. The literal thing, in the domain where it has not previously existed.",
+  "cur": "最自然地位于这里的历史类比不是电话网络或互联网，尽管这些是结构上的对应。它是交换机。在长距离电话传输之前，每个想与下一个城镇通信的城镇都协商自己的安排——一条电报线、一条邮递路线、一个信使。交换机及其连接的交换所将这些双边安排转变为一个网络：加入的每个节点都可以通过共享和标准化的基础设施到达其他每个节点，无需为每个目的地建造自己的私人链接。现在正在组建的——缓慢地、昂贵地、国际地——是太阳系的交换机。不是对它的比喻。在它之前不存在的领域中的字面意义上的东西。"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.29.md",
+  "en": "The analogy also clarifies what the switchboard cannot do. The early telephone network did not collapse the distance between continents — it made the connection routine rather than exceptional, a regular feature of how business and family and governance worked, rather than a rare and expensive interruption. That is what the interplanetary network is working toward: not the elimination of the distance but the routinisation of talking across it. Not the conversation in real time, but the expectation that messages sent will arrive, that queries will be answered, that the nodes out there in the dark are nodes in the same network as the ones down here. The [comms essay](/essays/comms) closed with an image of letters sent between people who have both moved on by the time any answer arrives. That will remain true at Mars, at the moons of Jupiter, everywhere the species spreads. The nervous system being built is one that works with that physics rather than pretending otherwise — a network that stores and forwards, routes around weather and the slow rotation of a planet, holds every packet in custody until the next link opens. It is the right architecture for a solar system. The whisper was never going to be enough. The arrays and the lasers and the interplanetary protocols are how it gets louder. What they cannot do — what nothing can do — is make it faster. The light still takes the time it takes.",
+  "cur": "这个类比也阐明了交换机不能做什么。早期电话网络没有消除洲际之间的距离——它使连接从例外变成常规，从商业和家庭和治理运作方式的常规特征变成罕见和昂贵的中断。这正是行星际网络的工作目标：不是距离的消除而是跨越距离对话的常规化。不是实时对话，而是对发送的消息将到达、查询将被回答、那些在黑暗中的节点是与这里的节点在同一网络中的节点的预期。[通信文章](/essays/comms)以一个人们发送给在任何答复到达之前已经继续前进的人的信件的图像结束。这在火星、木星的卫星、物种传播的任何地方都将保持真实。正在建造的神经系统是一个能与该物理学一起工作而不是假装相反的系统——一个存储转发的网络、绕过天气和星球的缓慢自转、将每个数据包保管到下一个链接打开的网络。它是太阳系的正确架构。低声说话永远不够。这些阵列、激光和行星际协议是它如何变得更大声的方式。它们不能做什么——没有什么能做——是让它更快。光仍然花费它所需的时间。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "dek",
+  "en": "Everything else in this collection is engineering — navigation, propulsion, landing, talking across the void. This is the one problem no engine solves: the traveller is biology that degrades, and the human body is the fragile cargo the whole enterprise exists to protect.",
+  "cur": "这个合集中的其他一切都是工程学——导航、推进、着陆、跨越虚空的通信。但这是一个引擎解决不了的问题：旅行者是会衰退的生物，人体是整个事业存在于要保护的脆弱货物。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.0.md",
+  "en": "The spacecraft is, in almost every meaningful sense, a marvel. Its [navigation system](/essays/navigation) can place it within a hundred kilometres of a target across five billion kilometres of nothing. Its engines can produce thrust for years on a trickle of xenon. Its radios can whisper across the outer solar system and still be heard. Every subsystem is specified, tested, certified against failure, and if something goes wrong mid-journey a team on the ground can send a fix — a software patch across hundreds of millions of kilometres. The spacecraft is engineering at its most refined. It is also, in the one case that matters here, in serious trouble, because the thing it is carrying cannot be patched, cannot be re-specced, and degrades from the moment the hatch closes.",
+  "cur": "从几乎所有有意义的角度看，这艘航天器都是一个奇迹。它的[导航系统](/essays/navigation)可以在五十亿公里的虚无中将其定位到目标周围一百公里范围内。它的引擎可以用一点点氙气持续喷气多年。它的无线电可以在外太阳系中轻声低语，依然能被听到。每个子系统都经过指标设定、测试和认证以防止故障，如果旅途中出了问题，地面的团队可以发送修复——一个跨越数亿公里的软件补丁。这艘航天器是工程学发展到最精细的体现。但在这里有意义的那个方面，它陷入了严重的麻烦，因为它所携带的东西无法修补、无法重新指标设定，从舱门关闭的那一刻起就开始衰退。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.1.md",
+  "en": "The human body was not designed for space. The temptation — in press releases, in popular accounts, in the visual vocabulary of every mission poster — is to show the astronaut as triumphant, suited, armoured against the void. That image is not wrong. It is, however, incomplete. Remove the suit and you have a primate whose immune responses were shaped by a pathogen-rich African savanna, whose skeleton evolved to hold itself up against one standard Earth gravity, whose cardiovascular system expects a fluid column that fights gravity from the feet up, and whose brain runs on a magnetosphere-shielded radiation budget that has almost nothing to do with what waits beyond low Earth orbit. The suit is an interface. The human is the constraint. Every [system aboard the spacecraft](/science/life-in-space/crewed-station-design), every redundancy in the life-support loops, exists to keep that constraint alive long enough to do useful work and come home.",
+  "cur": "人体不是为太空设计的。在新闻稿、通俗叙述、每一份任务海报的视觉词汇中，诱惑在于将宇航员展现为胜利者的形象，穿着宇航服、全身武装对抗虚空。这种形象并非错误，但它是不完整的。脱掉宇航服，你看到的是一个灵长类动物，其免疫反应由病原体丰富的非洲草原塑造而成，其骨骼进化为在一个标准地球重力下支撑自身，其心血管系统期望一根液体柱从下往上对抗重力，其大脑运作的辐射预算由磁层屏蔽，与近地轨道外等待的东西几乎没有任何关系。宇航服是一个界面。人类是制约因素。[航天器上的每个系统](/science/life-in-space/crewed-station-design)、生命保障回路中的每一层冗余，都存在于为了让那个制约因素存活得足够长来完成有用的工作并返回家园。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.2.md",
+  "en": "This is the problem [going to Mars](/essays/going-to-mars) asks that no propulsion advance can dissolve. [Faster engines](/essays/new-propulsion) shorten the transit and reduce exposure time — but they do not remove it. The body remains what it is: a system under sustained attack from four directions at once. Radiation that penetrates every shield we can afford to carry. The disappearance of the gravity signal the entire musculoskeletal system depends on. An immune system that drifts in ways we are still cataloguing. A mind increasingly alone in a way no evolution prepared it for. None of these is fully solved. Each is a real constraint on how far, and how long, human beings can travel.",
+  "cur": "这是[前往火星](/essays/going-to-mars)提出的问题，是没有任何推进力的进步能够化解的。[更快的引擎](/essays/new-propulsion)缩短了运输时间并减少了暴露时间——但并不能消除暴露。身体依然是它本来的样子：一个同时受到四个方向持续攻击的系统。穿透我们能承载的每一道盾牌的辐射。整个肌肉骨骼系统所依赖的重力信号的消失。以我们仍在编目的方式漂移的免疫系统。一个日益孤独的头脑，以至于进化从未为此做过准备的程度。这些都没有被完全解决。每一个都是对人类能够旅行多远、多长时间的真正制约。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.4.md",
+  "en": "Space is not empty. It is full of [radiation](/science/life-in-space/radiation-exposure) — and not the localised, predictable radiation of an X-ray machine, which delivers a known dose in a known geometry and stops. Space radiation comes in two distinct and dangerous flavours. The first is solar particle events: storms of protons accelerated by solar flares and coronal mass ejections, capable of delivering a lethal dose in hours if caught without shielding. The second is galactic cosmic rays: high-energy atomic nuclei that have been accelerating through the galaxy for millions of years and arrive from all directions, continuously, at energies so extreme that the practical amount of metal or water that would stop them is measured in hundreds of tonnes — far beyond what any foreseeable rocket can lift. Earth's magnetic field and atmosphere handle both. Beyond low Earth orbit, neither is there.",
+  "cur": "太空并非空洞。它充满了[辐射](/science/life-in-space/radiation-exposure)——而不是X射线机器那种局部的、可预测的辐射，后者以已知的剂量在已知的几何形状中传递然后停止。太空辐射有两种截然不同且危险的形式。首先是太阳粒子事件：由太阳耀斑和日冕物质抛出加速的质子风暴，如果没有屏蔽，能在数小时内传递致命剂量。其次是银河宇宙射线：已在银河系加速数百万年的高能原子核，从各个方向连续到达，能量极端到足以阻挡它们的实用金属或水量以数百吨计——远超任何可预见火箭能够运载的。地球磁场和大气处理两者。在低地球轨道以外，两者都不存在。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.5.md",
+  "en": "Career dose limits for astronauts are set to cap the lifetime excess cancer risk at roughly three percent above the background rate. NASA's limits, expressed in sieverts, vary by age and sex because radiation sensitivity does — a 35-year-old woman faces a stricter ceiling than a 55-year-old man. A six-month stay aboard the [ISS](/programs/iss) — still inside the partial shelter of the magnetosphere — delivers roughly 150 millisieverts. A Mars transit of six to nine months each way, plus a surface stay, would likely deliver 500 to 1,200 millisieverts round-trip depending on solar cycle phase. That figure sits at or beyond what current career limits allow for a single mission.",
+  "cur": "航天员职业剂量限值的设定目标是将终身超额癌症风险限制在背景发生率之上大约3%。NASA的限值以西弗特表示，因性别和年龄而异，这是因为辐射敏感性因人而异——35岁的女性面临的限值比55岁的男性更严格。在[国际空间站](/programs/iss)上停留六个月——仍处于磁层的部分保护范围内——大约会受到150毫西弗特的辐射。火星航程往返各需6至9个月，加上表面停留期间，整个往返任务的辐射剂量可能为500至1,200毫西弗特，具体取决于太阳活动周期阶段。该数值已经达到或超过了现行职业限值对单次任务所允许的水平。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.6.md",
+  "en": "The cancer risk is the one most discussed in planning documents. The central nervous system risk is the one that unnerves researchers more. High-energy galactic cosmic rays deposit energy in dense, localised tracks through neurons in ways that differ from ordinary radiation injury and may not heal the same way. Animal studies at the NASA Space Radiation Laboratory at Brookhaven have shown measurable cognitive and behavioural changes in rodents exposed to simulated GCR doses equivalent to a Mars mission: degraded spatial memory, impaired executive function, accelerated neurodegeneration. The human data to contradict or confirm this does not yet exist, because no human has ever received a GCR dose that high. We will not know the human CNS answer until the first crew goes. That is a genuine scientific and ethical frontier — treated as such by researchers who study it, even when treated as a background assumption by mission planners who need the trip to happen.",
+  "cur": "癌症风险是在规划文件中最常讨论的。中枢神经系统风险是让研究人员更加不安的。高能银河宇宙射线以密集、局部化的轨迹在神经元中沉积能量，其方式不同于普通辐射伤害，愈合方式可能也不同。位于Brookhaven的NASA Space Radiation Laboratory的动物研究显示，暴露于模拟火星任务等当量银河宇宙射线剂量的啮齿动物出现了可测量的认知和行为改变：空间记忆退化、执行功能受损、神经退行性变加速。人类数据尚不存在以反驳或确认这一点，因为没有任何人类曾经接受过如此高的银河宇宙射线剂量。我们在第一支船员出发之前不会知道人类中枢神经系统的答案。这是一个真正的科学和伦理前沿——被研究它的研究人员视为这样的前沿，即使被需要这次旅行发生的任务规划者视为背景假设。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.7.caption",
+  "en": "The hardest problem is the one you cannot see. Beyond Earth’s magnetic field there is no shelter from galactic cosmic rays, and a solar storm can deliver an acute dose in hours. Shielding heavy enough to stop them is far too heavy to fly — so on a long voyage, the crew simply absorbs the weather.",
+  "cur": "最难的问题是你看不见的那一个。在地球磁场之外，银河宇宙射线无处可躲，而一次太阳风暴可在数小时内造成急性剂量。足以挡住它们的屏蔽层重得根本无法飞行——所以在长途航行中，船员只能直接承受这种“天气”。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.9.md",
+  "en": "Gravity is not merely an inconvenience the body works against. It is a signal the body reads continuously, and to which nearly every major physiological system is calibrated. Remove it and the calibration fails, progressively, in ways that two hours of daily exercise can slow but not stop. [Bone mineral density](/science/life-in-space/bone-density-loss) falls at roughly one to one and a half percent per month in the load-bearing bones — the hip, the spine, the femur — in the absence of the mechanical stimulus that normally triggers bone remodelling. That is a rate comparable to the most severe cases of osteoporosis on Earth, compressed into months rather than decades. After a standard six-month ISS increment, crew members can show bone density losses that take a year or more of recovery to reverse, and the evidence that complete recovery always occurs for all crew members is not airtight.",
+  "cur": "重力不仅仅是身体对抗的一个不便。它是身体持续读取的信号，几乎每个主要生理系统都以此为基准。移除它，基准就会失效，逐步地，以每天两小时的运动只能减缓而非阻止的方式。[骨矿物密度](/science/life-in-space/bone-density-loss)在负重骨——臀部、脊椎、股骨——缺乏通常触发骨重塑的机械刺激的情况下，以大约每月百分之一到百分之一点五的速率下降。这是一个与地球上最严重骨质疏松病例相当的速率，但压缩到几个月而非几十年。在标准的六个月国际空间站任期后，船员成员可能表现出骨密度损失，需要一年或更多的恢复时间来逆转，且完整恢复总是对所有船员成员发生的证据并不确凿。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.10.md",
+  "en": "[Muscle mass follows a parallel curve](/science/life-in-space/muscle-atrophy), particularly in the postural muscles — the ones whose primary Earthside function is holding the skeleton upright. Without the constant low-level work of fighting gravity, they atrophy faster than voluntary exercise can fully offset. The [vestibular system](/science/life-in-space/vestibular-adaptation), which expects a gravity vector to orient itself against, initially misreads the microgravity environment and produces space motion sickness in roughly half of all astronauts during the first few days; adaptation eventually occurs, but the system then has to re-adapt to gravity on return, and the re-adaptation is not always smooth or fast. Cardiovascular deconditioning follows its own arc: with no hydrostatic pressure gradient to work against, the heart atrophies like any underloaded muscle, cardiac output drops, and the plasma volume that normally fills the lower body redistributes upward. Returning crew members who have been in orbit for six months sometimes cannot stand without a blood pressure drop that would floor a healthy adult on the ground.",
+  "cur": "[肌肉质量遵循平行曲线](/science/life-in-space/muscle-atrophy)，特别是在姿态肌肉——其在地球侧的主要功能是保持骨骼直立的肌肉。在没有持续的低水平对抗重力工作的情况下，它们萎缩的速度比自愿运动能完全抵消的要快。[前庭系统](/science/life-in-space/vestibular-adaptation)期望一个重力矢量来相对自身定向，初始时误读微重力环境，在头几天内对大约一半的宇航员造成太空晕动病；适应最终会发生，但系统随后必须在返回时重新适应重力，而重新适应并非总是平稳或迅速的。心血管失调遵循其自身的弧线：由于没有静压梯度需要对抗，心脏像任何负荷不足的肌肉一样萎缩，心输出量下降，通常填充下身的血浆体积向上重新分布。在轨道上停留六个月的返回船员有时无法站立而不出现血压下降，这种下降在地面上的健康成人身上会造成严重影响。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.11.md",
+  "en": "The most surprising complication to have emerged from long-duration spaceflight in the last decade is one no one anticipated clearly before the ISS programme accumulated enough crew-hours to make it visible: [spaceflight-associated neuro-ocular syndrome](/science/life-in-space/microgravity-physiology), or SANS. In microgravity, the fluid shift that drives blood and plasma toward the head also affects intracranial pressure in ways that are still being characterised. The result, in a significant fraction of long-duration crew members — some studies now put it at two-thirds or more of long-duration crew — is a flattening of the back of the eyeball, a change in the shape of the optic nerve head, and measurable degradation of visual acuity. Some astronauts have returned from the ISS needing reading glasses for the first time in their lives. The mechanism is not fully understood. The treatment does not yet exist. SANS is currently one of the three or four problems on the list of showstoppers for a crewed Mars mission, in the assessment of researchers who write those lists.",
+  "cur": "过去十年中从长期太空飞行中出现的最令人惊讶的并发症是在没有人在国际空间站计划积累足够的船员小时之前清晰预期的东西：[航天飞行相关神经眼学综合征](/science/life-in-space/microgravity-physiology)，或称SANS。在微重力中，驱动血液和血浆向头部移动的流体转移也以仍在表征的方式影响颅内压。结果是，在大量长期船员中——一些研究现在将其设定为三分之二或更多的长期船员——眼球后部变平，视神经头形状改变，可测量的视觉敏锐度退化。一些宇航员在返回国际空间站后第一次需要配老花镜。机制尚不完全理解。治疗尚不存在。在对于载人火星任务的妨碍因素清单评估中，SANS目前是三到四个问题之一，根据撰写这些清单的研究人员。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.12.caption",
+  "en": "A body optimised for one gravity quietly comes apart in free fall: bone drains at around one percent a month, muscle wastes, fluid pools in the head and flattens the back of the eye. Two hours of exercise a day only slows the losses — no one has made them stop.",
+  "cur": "为一个重力优化的身体在自由落体中静静地瓦解：骨以大约每月百分之一的速率流失，肌肉萎缩，流体汇集在头部并压平眼球后部。每天两小时的运动只能减缓损失——没有人使其停止。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.14.md",
+  "en": "Everything we know about long-duration spaceflight physiology was measured — on real people, who lived in space for real durations, came home, and were studied. The record for a single continuous flight is held by Valeri Polyakov, a Russian physician-cosmonaut who boarded [Mir](/programs/mir) in January 1994 and returned to Earth in March 1995, having spent 437 consecutive days in orbit — still unbroken, three decades later. Polyakov's goal was explicitly medical: to determine whether a human being could survive, functionally, a Mars mission duration. When he landed, he insisted on walking away from the Soyuz capsule under his own power. His bone and muscle recovery took months. He walked. The [Salyut](/programs/salyut) and [Mir](/programs/mir) programmes built a Soviet and then Russian body of physiological data that remains irreplaceable — the [ISS](/programs/iss) extended it and globalised it. Peggy Whitson's cumulative 665 days across three missions gave researchers a longitudinal dataset on a single individual impossible to replicate otherwise. The NASA Twin Study — Scott Kelly's 340-day mission compared against his Earthbound identical twin Mark — found measurable changes in gene expression, telomere dynamics, gut microbiome composition, and cognitive performance, most of which reversed on return, but not all. China's [Tiangong](/programs/tiangong) programme is now adding to the record: crews on 90- and 180-day rotations since 2021, a taikonauts population previously absent from the dataset. Any honest account of what humanity knows about the long-duration human body in space has to include what Russia learned on Mir, what the 15-nation ISS partnership has measured since 2000, and what China is accumulating now.",
+  "cur": "我们所知的关于长期太空飞行生理学的一切都是测量得来的——在真实的人身上，他们在太空中真实地停留过，返回家园，并被研究过。单次连续飞行的记录由俄罗斯医生-宇航员瓦列里·波利亚科夫保持，他在1994年1月登上[Mir](/programs/mir)，在1995年3月返回地球，已在轨道上连续停留了437天——三十年后仍未被打破。波利亚科夫的目标明确是医学性的：确定人类是否能生存、有功能地度过火星任务期间。当他着陆时，他坚持要在自己的力量下走离Soyuz太空舱。他的骨和肌肉恢复花了数月。他走了。[Salyut](/programs/salyut)和[Mir](/programs/mir)计划建立了一个苏联随后是俄罗斯的生理数据体，仍然是无可替代的——[国际空间站](/programs/iss)扩展了它并将其全球化。佩吉·惠特森在三次任务中积累的665天给了研究人员一个在单个个体上不可能复制的纵向数据集。NASA Twin Study——斯科特·凯利的340天任务与其在地球上的同卵双胞胎兄弟Mark相比——发现了基因表达、端粒动力学、肠道微生物群落组成和认知表现中的可测量变化，其中大部分在返回时逆转，但并非全部。中国的[天宫](/programs/tiangong)计划现在也在增加记录：自2021年以来，船员以90天和180天的轮换，一个以前不在数据集中的中国航天员群体。任何诚实的关于人类在太空中长期人体所知的叙述都必须包括俄罗斯在Mir上学到的东西、15国国际空间站伙伴关系自2000年以来所测量的东西，以及中国现在积累的东西。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.15.caption",
+  "en": "Almost everything we know about the body in space we know because particular people stayed up there long enough to measure it — and the record is global. Valeri Polyakov’s 437 days aboard Mir still stands; the ISS and now Tiangong add crew-years to the dataset one rotation at a time.",
+  "cur": "几乎我们在太空中关于身体所知的一切都是因为特定的人停留在那里足够长的时间来测量它——而且记录是全球性的。瓦列里·波利亚科夫在Mir上的437天仍然保持着记录；国际空间站以及现在的天宫以一次轮换一个船员年的方式增加数据集。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.16.caption",
+  "en": "The International Space Station — for a quarter-century the single laboratory where the long-term effects of weightlessness have been studied, on a rotating international crew who are, unavoidably, the experiment.",
+  "cur": "国际空间站——四分之一世纪以来，唯一系统地研究失重长期影响的实验室，对轮换的国际船员进行研究，他们不可避免地成为了实验。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.18.md",
+  "en": "The body's physical degradation is measurable and at least partially addressable. The psychological dimension is harder to study, because it depends on variables — personality, crew composition, the texture of confinement, the relationship between crew and ground — that resist controlled experimentation. What the analogue studies suggest is not comforting. [Isolation and confinement psychology](/science/life-in-space/crew-dynamics-psychology) has been studied most systematically in Antarctic winter-over stations: small groups in genuine darkness and cold, unable to leave. The patterns are consistent across studies — a mid-winter syndrome of degraded mood and cognition, interpersonal friction that compounds in confined spaces, a psychological distancing from the outside world that can persist after return. Antarctic crews can at least breathe outside air and see a landscape. A Mars crew cannot. The Mars-500 experiment in Moscow (2010–2011) simulated a 520-day mission in a sealed habitat; six volunteers completed the full duration without leaving. Sedentary behaviour worsened across the run. One subject spent the majority of the final months asleep. One showed symptoms consistent with clinical depression. As communication delay climbed toward the simulated 20 minutes, the crews reported it felt not just slower but fundamentally lonelier — decisions that would have been delegated to the ground had to be made aboard, and the sense that someone could always be reached slowly eroded. A crew member on the [ISS](/programs/iss) has, at all times, a Soyuz docked to the station. On a Mars transit, the emergency exit does not exist. From the moment of trans-Mars injection, no decision by any controller on Earth can bring the crew home on a useful timescale. The crew knows this. What sustained knowledge of your own unrescuability does to a human mind over 18 months is a question the analogue studies have approached but cannot answer. We will not know until the first crew leaves.",
+  "cur": "身体的物理退化是可以衡量的，至少在某种程度上可以解决。心理维度更难研究，因为它取决于多个变量——性格、船员组成、禁闭的具体感受、船员与地面的关系——这些变量抵抗对照实验。类似研究所暗示的情况并不令人欣慰。[隔离和禁闭心理学](/science/life-in-space/crew-dynamics-psychology)在南极越冬站中得到了最系统的研究：小规模团队在真正的黑暗和严寒中，无法离开。各项研究的模式是一致的——冬季中期综合征导致情绪和认知能力下降，人际摩擦在禁闭空间中加剧，对外界的心理疏离可以在返回后持续存在。南极船员至少可以在外面呼吸空气并看到风景。火星船员则不能。莫斯科的Mars-500实验（2010–2011年）在密闭栖息地内模拟了520天的任务；六名志愿者完成了全程而未离开。久坐不动的行为在整个过程中恶化。一名受试者在最后几个月的大部分时间都在睡眠中度过。另一名受试者表现出与临床抑郁症一致的症状。随着通信延迟增加至模拟的20分钟，船员报告称这不仅感觉更慢，而且从根本上更加孤独——那些原本会委托给地面的决定必须在船上做出，而随时都能联系到某人的感觉慢慢消退。[国际空间站](/programs/iss)上的船员始终有一艘Soyuz停靠在空间站。在火星运输途中，紧急出口不存在。从火星转移注入的那一刻起，地球上任何控制人员的任何决定都无法在有用的时间尺度内将船员带回家。船员知道这一点。持续18个月了解自己无法被救援会对人类心灵造成什么影响，是类似研究已经接近但无法回答的问题。直到第一支船员出发，我们才会知道。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.19.caption",
+  "en": "A private astronaut in the open hatch of a Crew Dragon during Polaris Dawn, 2024 — a human being with only a suit between them and the vacuum. The engineering can be made reliable; the mind that has to endure the confinement, the risk, and the years cannot be re-specced.",
+  "cur": "Polaris Dawn (2024) 中一位私人宇航员在 Crew Dragon 开启的舱口处——一个人类，仅靠一套宇航服隔离真空。工程设计可以变得可靠；但必须忍受禁闭、风险和漫长岁月的心灵无法被重新配置。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.21.md",
+  "en": "None of what precedes this section is a reason not to go. It is an honest accounting of what going means, and what it will cost the people who go. These are different things, and the difference is worth being precise about.",
+  "cur": "在这个部分之前的任何内容都不是不去的理由。这是对去意味着什么、对去的人的成本的诚实计算。这些是不同的事物，值得精确区分。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.22.md",
+  "en": "Better propulsion matters. The [new engine technologies](/essays/new-propulsion) under development — nuclear thermal, nuclear electric, solar sails, the further-future concepts — would cut transit time, and cutting transit time cuts cumulative radiation exposure and cumulative physiological degradation. A transit of 90 days instead of 270 is not three times easier on the body; the relationship between dose and effect is more complex than linear, and some systems — the psychological, the bone, the cardiovascular — are sensitive to duration in ways that even a shorter exposure does not fully rescue. But shorter is better. Faster engines are real medicine. They do not, however, change the fundamental nature of the problem. A 90-day transit still crosses interplanetary space with no magnetosphere, no gravity, and no rescue. The body is still the payload. It still degrades. It still returns home diminished in ways that take months or years to reverse, if they reverse at all.",
+  "cur": "更好的推进很重要。正在开发的[新型发动机技术](/essays/new-propulsion)——核热、核电、太阳帆以及更遥远未来的构想——将缩短转移时间，而缩短转移时间就会减少累积的辐射暴露和累积的生理退化。90天的航程而不是270天，对身体来说并不是轻松三倍；剂量与效应之间的关系比线性复杂得多，有些系统——心理、骨骼、心血管——对时长很敏感，即便暴露时间更短，也无法完全挽回。但越短越好。更快的发动机就是真正的医学。然而，它们并没有改变问题的根本性质。90天的航程依然要穿越没有磁层、没有重力、没有救援的星际空间。身体依然是有效载荷。它依然会退化。它依然会带着需要数月甚至数年才能恢复的损伤回到家——如果还能恢复的话。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.23.md",
+  "en": "The countermeasures that exist are real but partial. Advanced resistive exercise devices — the kind aboard the [ISS](/programs/iss), meaningfully better than what flew on early [Skylab](/programs/skylab) missions — can slow bone and muscle loss substantially, not eliminate it. Nutritional interventions, pharmacological bone-loss treatments, and sleep management protocols each contribute something. Artificial gravity, achieved by rotating the spacecraft or a module within it, would address the largest single category — microgravity physiology — but no crewed spacecraft with artificial gravity has ever been built or flown, and the engineering cost in mass and launch volume is substantial. The [Skylab](/programs/skylab) programme's three crews — 28, 59, and 84 days in 1973 and 1974 — gave the first systematic American evidence that exercise could meaningfully offset deconditioning, a finding that has shaped crew health protocols on every subsequent long-duration programme.",
+  "cur": "存在的对抗措施是真实但不完整的。先进的阻力运动设备——[国际空间站](/programs/iss)上那种，比早期[Skylab](/programs/skylab)任务上的飞行设备有意义上更好——可以大幅减缓骨和肌肉损失，不能消除它。营养干预、药理学骨损失治疗和睡眠管理协议各贡献一些东西。人造重力，通过旋转航天器或其中的一个模块实现，会解决最大的单一类别——微重力生理学——但没有配备人造重力的载人航天器曾被建造或飞行过，工程成本在质量和发射体积中是实质性的。[Skylab](/programs/skylab)计划的三个船员——在1973和1974年的28、59和84天——给了第一个系统性美国证据，表明运动可以有意义地抵消失调，一个已塑造了每个随后长期计划上的船员健康协议的发现。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.24.md",
+  "en": "What this reveals is that the challenge of human deep-space travel has two separate categories of difficulty. The first — engineering — is hard but tractable: rockets, [navigation](/essays/navigation), [communications](/essays/comms), landing, life support all have definable solution spaces where more knowledge and investment move the answer forward. The second is biological, and it is harder in a different way. Not because the biology is incomprehensible — the mechanisms are largely understood, and the countermeasures are improving — but because the biology cannot be negotiated with. You cannot write a software patch for a spine that has lost bone mineral over eight months. You cannot reprogram the immune system's response to isolation with a firmware update. The body has its own constraints, built over millions of years for a single world, and those constraints are the ultimate ceiling on how far any individual can travel. [The people aboard a generational starship](/essays/generational-starships) are not individuals managing their health across a career — they are a lineage, across whom the physiological consequences of the environment accumulate across generations.",
+  "cur": "这揭示了人类深空旅行的挑战有两个独立的困难类别。第一个——工程学——是困难但可处理的：火箭、[导航](/essays/navigation)、[通信](/essays/comms)、着陆、生命保障都有可定义的解决方案空间，其中更多的知识和投资将答案向前推进。第二个是生物学的，以不同的方式更困难。不是因为生物学不可理解——机制在很大程度上是理解的，对抗措施正在改进——而是因为生物学无法被协商。你无法为在八个月内损失了骨矿物的脊椎写一个软件补丁。你无法用固件更新重新编程免疫系统对隔离的反应。身体有自己的制约，在数百万年间为单个世界建立的，而这些制约是对任何个人能够旅行多远的最终上限。[一艘世代际星际飞船上的人](/essays/generational-starships)不是在职业生涯中管理其健康的个体——他们是一个血脉，其中环境的生理后果在几代人中累积。"
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.25.md",
+  "en": "The [Polaris Dawn mission](/explore) in 2024 — a private crewed flight through the outer Van Allen belts — provided the first private-sector radiation data at altitudes where belt flux is genuinely dangerous. The duration was short, the altitude still inside the Earth-Moon system. But it marks a phase in which the population of people for whom these questions are practical, not theoretical, is expanding beyond national programmes. The body's constraints do not change when the employer does. In every other essay in this collection, the engineering eventually catches up to the ambition — propulsion, [navigation](/essays/navigation), landing, [communications](/essays/comms) each closed toward their targets over decades. The gap between what human physiology is and what deep-space transit demands is closing too, through countermeasure research and the accumulating datasets of the [ISS](/programs/iss) and [Tiangong](/programs/tiangong) and what came before them. But it is not closing fast, and it may never close completely. The body is the oldest system on the spacecraft, and it is the one that cannot be upgraded.",
+  "cur": "2024年的[Polaris Dawn任务](/explore)——一次通过外层Van Allen带的私人载人飞行——提供了在带通量真正危险的高度处的第一个私营部门辐射数据。期间很短，高度仍在地球月球系统内。但它标志着对其中这些问题是实际的而非理论的人口正在国家计划之外扩大的一个阶段。身体的制约在雇主改变时不改变。在这个合集中的每一篇其他论文中，工程最终追上了野心——推进、[导航](/essays/navigation)、着陆、[通信](/essays/comms)每个在几十年内朝着其目标关闭。人类生理学所是与深空运输所需之间的差距也在通过对抗措施研究和[国际空间站](/programs/iss)和[天宫](/programs/tiangong)以及在它们之前的东西的累积数据集而缩小。但它不是快速缩小的，它可能永远不会完全缩小。身体是航天器上最古老的系统，它是无法升级的。"
+ }
+]

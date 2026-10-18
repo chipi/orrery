@@ -1,0 +1,680 @@
+[
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "body_paragraphs.0",
+  "en": "Andromeda — catalogued as M31 (Messier 31) and NGC 224 — is a spiral galaxy (formally classified SA(s)b — unbarred, though kinematic evidence points to a weak inner bar) slightly larger than the Milky Way. Mass estimates from Gaia DR3 stellar dynamics put it at about 1.5 × 10¹² solar masses, comparable to or slightly more massive than the Milky Way. It hosts an estimated trillion stars, has a structurally similar central bar and disc, two prominent spiral arms, and a quiescent supermassive black hole at its centre (M31's nucleus is a 1.4 × 10⁸ solar-mass black hole; the Milky Way's Sagittarius A* is 'only' 4.3 × 10⁶ solar masses). To the naked eye from a dark site, Andromeda is a small smudge in the constellation that gives it its name — one of the most distant objects the human eye can perceive without instruments, at about 2.5 million light-years. The light arriving on Earth tonight left Andromeda when Homo habilis was first making stone tools.",
+  "cur": "Andromeda —catalogada como M31 (Messier 31) y NGC 224— es una galaxia espiral (clasificada formalmente como SA(s)b —sin barra, aunque pruebas cinemáticas apuntan a una barra interior débil) ligeramente más grande que la Vía Láctea. Las estimaciones de masa a partir de la dinámica estelar del Gaia DR3 la sitúan en aproximadamente 1,5 × 10¹² masas solares, comparable o ligeramente más masiva que la Vía Láctea. Alberga aproximadamente un billón de estrellas, tiene una barra central y un disco estructuralmente similares, dos brazos espirales prominentes, y un agujero negro supermasivo quiescente en su centro (el núcleo de M31 es un agujero negro de 1,4 × 10⁸ masas solares; Sagittarius A* de la Vía Láctea es «solo» 4,3 × 10⁶ masas solares). A simple vista desde un lugar oscuro, Andromeda es una mancha pequeña en la constelación que le da nombre —uno de los objetos más lejanos que el ojo humano puede percibir sin instrumentos, a aproximadamente 2,5 millones de años luz. La luz que llega a la Tierra esta noche salió de Andromeda cuando Homo habilis estaba haciendo sus primeras herramientas de piedra."
+ },
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "body_paragraphs.1",
+  "en": "Andromeda is approaching the Milky Way at 110 km/s in the radial direction. This was known from Doppler-shift measurements since Vesto Slipher's 1912 work at Lowell Observatory — Andromeda was the first galaxy ever measured to have a blueshift (most galaxies are receding due to cosmic expansion; Andromeda's mutual gravitation with the Milky Way overrides the Hubble flow at our distance). Until Hubble Space Telescope's high-precision proper-motion measurements in 2012, it was unclear whether Andromeda's transverse velocity would steer it past us or into us. HST measurements (2012) and Gaia DR2/DR3 (2019) suggested a near-head-on trajectory. However, a 2024 analysis by Sawala et al. (Nature Astronomy, 2025) — one of the first to include M33 and the LMC in the orbit integration — found only roughly even odds of a merger within the next 10 Gyr, with less than a 2% chance within the originally predicted ~4–5 Gyr window. If the merger does happen, tidal disruption would begin around 4.5 billion years from now, with the central coalescence taking another ~2 billion years to settle into an elliptical remnant nicknamed 'Milkomeda'.",
+  "cur": "Andromeda se aproxima a la Vía Láctea a 110 km/s en la dirección radial. Esto se conocía desde las mediciones del desplazamiento Doppler del trabajo de Vesto Slipher en 1912 en el Observatorio Lowell —Andromeda fue la primera galaxia medida que presentaba un desplazamiento al azul (la mayoría de las galaxias se alejan debido a la expansión cósmica; la gravitación mutua entre Andromeda y la Vía Láctea anula el flujo de Hubble a nuestra distancia). Hasta las mediciones de movimiento propio de alta precisión de Hubble Space Telescope en 2012, era incierto si la velocidad transversal de Andromeda la haría pasar de largo o colisionar con nosotros. Las mediciones de HST (2012) y Gaia DR2/DR3 (2019) sugirieron una trayectoria casi de frente. Sin embargo, un análisis de 2024 de Sawala et al. (Nature Astronomy, 2025) —uno de los primeros en incluir M33 y la LMC en la integración orbital— encontró solo aproximadamente probabilidades iguales de una fusión en los próximos 10 Gyr, con menos de un 2 % de probabilidad en la ventana predicha originalmente de ~4–5 Gyr. Si la fusión ocurre, la disrupción por mareas comenzaría hace aproximadamente 4,5 mil millones de años, con la coalescencia central tardando otros ~2 mil millones de años en convertirse en un remanente elíptico apodado «Milkomeda»."
+ },
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "body_paragraphs.2",
+  "en": "Andromeda has its own satellite system. The most prominent members are M32 (a compact elliptical companion, possibly the stripped core of a once-larger galaxy disrupted by tidal interaction with M31), M110 (a dwarf elliptical companion), and a population of about 20 known dwarf spheroidals and irregulars (M31's group). M32's high central stellar density and the existence of stellar streams in Andromeda's halo are evidence of past accretion events — Andromeda has eaten dwarfs in the past, the same way the Milky Way is eating Sagittarius today. The two great spirals plus M33 plus their dwarf retinues are the heart of the Local Group.",
+  "cur": "Andromeda tiene su propio sistema de satélites. Los miembros más prominentes son M32 (una acompañante elíptica compacta, posiblemente el núcleo desnudado de una galaxia una vez más grande disrupta por interacción de mareas con M31), M110 (una acompañante elíptica enana), y una población de aproximadamente 20 esferoidales enanas e irregulares conocidas (el grupo de M31). La alta densidad estelar central de M32 y la existencia de corrientes estelares en el halo de Andromeda son pruebas de eventos de acreción pasados —Andromeda ha devorado enanas en el pasado, de la misma manera que la Vía Láctea está devorando Sagittarius hoy. Las dos grandes espirales más M33 más sus grupos de enanas son el corazón del Grupo Local."
+ },
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "body_paragraphs.3",
+  "en": "Observing Andromeda. Bortle-class-3 or darker skies make Andromeda visible to the naked eye as a smudge slightly elongated north-northeast. The standard pointing trick: find the Great Square of Pegasus, then trace the chain of stars eastward (β-And, μ-And, ν-And) and look just south-west of ν-And. Binoculars show the bright nuclear bulge clearly; a 4-inch telescope at low power shows the elongated disc and the brightest companion M32 as a small fuzzy patch. The dust lanes that show so clearly in long-exposure photography are visible to the eye only in larger telescopes (>8 inch). Andromeda is best observed in autumn (September-December) in the northern hemisphere, when it climbs nearly overhead at mid-northern latitudes.",
+  "cur": "Observación de Andrómeda. Los cielos de clase Bortle 3 o más oscuros hacen que Andrómeda sea visible a simple vista como una mancha ligeramente elongada hacia el norte-noreste. El truco de apuntamiento estándar: encuentra el Gran Cuadrado de Pegaso, luego traza la cadena de estrellas hacia el este (β-And, μ-And, ν-And) y mira justo al suroeste de ν-And. Los binoculares muestran claramente el abultamiento nuclear brillante; un telescopio de 4 pulgadas a baja potencia muestra el disco elongado y la acompañante más brillante M32 como una pequeña mancha difusa. Las bandas de polvo que se ven tan claramente en la fotografía de exposición larga solo son visibles al ojo en telescopios más grandes (>8 pulgadas). Andrómeda se observa mejor en otoño (septiembre-diciembre) en el hemisferio norte, cuando sube casi al cenit en latitudes del norte medio."
+ },
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "diagram_caption",
+  "en": "M31 / Andromeda: 2.5 Mly distant, ~1.5 × 10¹² M☉, trillion stars, spiral (formal type SA(s)b; weak bar debated). Approaching Milky Way at 110 km/s. A merger is possible but not certain — Sawala et al. (2025) put odds at ~50/50; if it occurs, tidal disruption begins ~4.5 Gyr from now. Naked-eye visible from dark sites. Satellites: M32, M110, ~20 dwarf companions.",
+  "cur": "M31 / Andrómeda: a 2,5 Mly de distancia, ~1,5 × 10¹² M☉, un billón de estrellas, espiral (tipo formal SA(s)b; barra débil debatida). Se aproxima a la Vía Láctea a 110 km/s. Una fusión es posible pero no segura —Sawala et al. (2025) dan probabilidades de ~50/50; si ocurre, la disrupción por mareas comienza ~4,5 Gyr a partir de ahora. Visible a simple vista desde lugares oscuros. Satélites: M32, M110, ~20 acompañantes enanas."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "intro_sentence",
+  "en": "A region of spacetime where mass is so compressed that even light can't climb out — and we've now imaged the shadows of two of them.",
+  "cur": "Una región de tiempo espacial donde la masa es tan comprimida que incluso la luz no puede salir — y ahora hemos imaginado las sombras de dos de ellos."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "body_paragraphs.0",
+  "en": "A black hole forms when a sufficient mass collapses to inside its Schwarzschild radius — the size at which the escape velocity equals the speed of light. The formula on the right says it directly: for any mass M, there's a radius r_s = 2GM/c² inside which nothing escapes. The Sun's Schwarzschild radius is 3 km. The Earth's is 9 mm. Compress either to that size and you've made one.",
+  "cur": "Un agujero negro se forma cuando una masa suficiente colapsa dentro de su radio Schwarzschild — el tamaño a que la velocidad de escape equivale a la velocidad de la luz. La fórmula a la derecha lo dice directamente: para cualquier masa M, hay un radio r s = 2GM/c2 dentro del cual nada escapa. El radio Schwarzschild del Sol es de 3 km. La Tierra es de 9 mm. Comprime bien a ese tamaño y has hecho uno."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "body_paragraphs.1",
+  "en": "Real black holes form by stellar collapse (a massive star running out of fusion fuel; the core falls inside its own Schwarzschild radius) or by accretion of mass onto seed black holes in the early universe (the supermassive black holes at galaxy centres, 10⁶ to 10¹⁰ solar masses). They aren't holes — they're points with a one-way membrane. Outside the event horizon spacetime is well-behaved and orbits work normally. Inside, all timelike paths point toward the singularity.",
+  "cur": "Los agujeros negros reales se forman por el colapso estelar (una estrella masiva que se agota de combustible de fusión; el núcleo cae dentro de su propio radio Schwarzschild) o por la acreción de masa sobre agujeros negros de semillas en el universo temprano (los agujeros negros supermasivos en los centros de galaxias, 106 a 1010 masas solares). No son agujeros, son puntos con una membrana de un solo sentido. Fuera del horizonte del evento la hora espacial está bien adaptada y las órbitas funcionan normalmente. Dentro, todos los caminos del tiempo apuntan hacia la singularidad."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "body_paragraphs.2",
+  "en": "We detect them three ways. **Stellar dynamics**: stars orbiting an invisible mass concentration imply a black hole — that's how Sgr A* (4 × 10⁶ M☉ at the centre of the Milky Way) was confirmed, by tracking stars whipping around the central darkness for 30 years (Nobel 2020). **X-ray emission from accretion discs**: gas spiralling in heats to 10⁶ K and glows in X-rays — Chandra's specialty. **Direct shadow imaging**: the Event Horizon Telescope ([interferometry](observation/interferometry) across 8 sub-mm observatories) imaged the shadow of M87's black hole in 2019 and Sgr A* in 2022. Two black holes, photographed.",
+  "cur": "Las detectamos de tres formas. **Dinámica estelar**: las estrellas que orbitan una concentración de masa invisible implican la presencia de un agujero negro — así se confirmó Sgr A* (4 × 10⁶ M☉ en el centro de la Vía Láctea), rastreando estrellas que giran alrededor de la oscuridad central durante 30 años (Premio Nobel 2020). **Emisión de rayos X desde discos de acreción**: el gas que cae en espiral se calienta a 10⁶ K y brilla en rayos X — la especialidad de Chandra. **Imagen directa de la sombra**: el Event Horizon Telescope ([interferometría](observation/interferometry) a través de 8 observatorios en submilímetros) fotografió la sombra del agujero negro de M87 en 2019 y la de Sgr A* en 2022. Dos agujeros negros, fotografiados."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "body_paragraphs.3",
+  "en": "What black holes do NOT do: lead anywhere useful for spaceflight. They're the most extreme energy regimes in the universe and we observe them with great enthusiasm; they're also the worst places to fly a spacecraft. Tidal forces near a stellar-mass black hole would shred a vehicle long before any \"event horizon crossing\" became a question. Supermassive black holes are calmer (lower curvature at the horizon) but tens of thousands of light-years away. They are a thing to look at, not a thing to visit.",
+  "cur": "Lo que los agujeros negros NO hacen: conducir a ningún lugar útil para los vuelos espaciales. Son los regímenes energéticos más extremos del universo y los observamos con gran entusiasmo; también son los peores lugares para pilotar una nave espacial. Las fuerzas de marea cerca de un agujero negro de masa estelar desgarrarían un vehículo mucho antes de que «el cruce del horizonte de sucesos» fuera una cuestión. Los agujeros negros supermasivos son más tranquilos (menor curvatura en el horizonte) pero están a decenas de miles de años luz de distancia. Son algo para observar, no algo para visitar."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "formula_caption",
+  "en": "Schwarzschild radius — the size at which any mass becomes a black hole. G = 6.674×10⁻¹¹ N·m²/kg². For the Sun: 3.0 km. For 1 kg: 1.5 × 10⁻²⁷ m, smaller than a proton.",
+  "cur": "Radio Schwarzschild — el tamaño en el que cualquier masa se convierte en un agujero negro. G = 6.674×10-11 N·m2/kg2. Para el Sol: 3.0 km. Para 1 kg: 1,5 × 10−27 m, menor que un protón."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "diagram_caption",
+  "en": "Event horizon (one-way membrane) + accretion disc (10⁶ K, X-ray glow) + photon sphere (light orbits at r = 1.5 r_s) + shadow (what EHT imaged). Real, mapped, weighed.",
+  "cur": "Horizonte de evento (membrana de un solo sentido) + disco de acreción (106 K, rayos X) + esfera de fotones ( órbitas de luz en r = 1,5 r s) + sombra (lo que EHT imaginó). Real, mapeado, pesado."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "intro_sentence",
+  "en": "An occulting disc inside the telescope blocks the host star so the planet next to it — a billion times fainter — becomes visible.",
+  "cur": "Un disco ocultor dentro del telescopio bloquea la estrella anfitriona para que el planeta junto a ella —un billón de veces más débil— sea visible."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "body_paragraphs.0",
+  "en": "A Sun-like star outshines its planets by a factor of about 10⁹ at visible wavelengths and 10⁶ in the infrared. The planet's photons aren't missing — they're drowning in the diffraction wings of the star's point-spread function. Direct imaging of an exoplanet is only possible if you can suppress that PSF by many orders of magnitude. A coronagraph does exactly that.",
+  "cur": "Una estrella similar al Sol supera sus planetas por un factor de alrededor de 109 en longitudes de onda visibles y 106 en el infrarrojo. Los fotones del planeta no se pierden, se ahogan en las alas de difusión de la función de punta de la estrella. La imagen directa de un exoplanet sólo es posible si usted puede suprimir ese PSF por muchas órdenes de magnitud. Un coronaógrafo hace exactamente eso."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "body_paragraphs.1",
+  "en": "The classical Lyot coronagraph (1930, invented by Bernard Lyot for solar photography) places an opaque disc at the telescope's focal plane to block the star, then a second mask further down to block the diffracted light from the first mask's edge. Modern apodised pupil coronagraphs and vortex coronagraphs use intricate phase patterns to push the suppression to 10⁻⁹ or better in narrow regions of the image.",
+  "cur": "El cronógrafo clásico de Lyot (1930, inventado por Bernard Lyot para la fotografía solar) coloca un disco opaco en el plano focal del telescopio para bloquear la estrella, luego una segunda máscara más abajo para bloquear la luz difusa desde el borde de la primera máscara. Los coronagrafos de pupilo apodidos modernos y los coronagrafos de vórtice utilizan patrones de fase intrincados para empujar la supresión a 10−9 o mejor en regiones estrechas de la imagen."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "body_paragraphs.2",
+  "en": "JWST carries coronagraphs on both NIRCam and MIRI; they've directly imaged several gas giant exoplanets around nearby stars. The Nancy Grace Roman telescope (launching mid-2020s) carries a coronagraph instrument designed to image gas giants around bright stars at unprecedented contrast — and to demonstrate the technology for the larger Habitable Worlds Observatory, which will aim at Earth-mass planets.",
+  "cur": "El JWST lleva coronógrafos en NIRCam y MIRI; han captado directamente imágenes de varios exoplanetas gigantes gaseosos alrededor de estrellas cercanas. El telescopio Nancy Grace Roman (lanzamiento a mediados de los años 2020) lleva un instrumento coronográfico diseñado para captar imágenes de gigantes gaseosos alrededor de estrellas brillantes con un contraste sin precedentes —y para demostrar la tecnología del mayor Observatorio de Mundos Habitables, que apuntará a planetas de masa terrestre."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "body_paragraphs.3",
+  "en": "An alternative architecture is the **starshade**: a 30+ metre opaque shape flown thousands of km in front of the telescope, blocking the star without any optics inside the instrument. Starshades are mechanically harder (the formation-flying alignment is brutal) but reach higher contrast. None has flown yet; concept studies for direct Earth-twin imaging always include a starshade in the mix.",
+  "cur": "Una arquitectura alternativa es el **starshade**: una forma opaca de 30+ metros fluyó miles de km delante del telescopio, bloqueando la estrella sin ninguna óptica dentro del instrumento. Las estrellashades son mecánicamente más difíciles (la alineación de la formación es brutal) pero alcanzan mayor contraste. Ninguno ha volado todavía; los estudios de concepto para la imagen directa de la Tierra-twin siempre incluyen un Starhade en la mezcla."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "diagram_caption",
+  "en": "Block the star at the focal plane → diffraction wings sneak around → second mask kills those → 10⁻⁹ suppression, planet emerges. Vortex coronagraphs replace the disc with a phase pattern.",
+  "cur": "Bloquear la estrella en el plano focal → las alas de difracción se deslizan alrededor → segunda máscara mata a los → 10−9 supresión, el planeta emerge. Las coronagrafías Vortex reemplazan el disco con un patrón de fase."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "title",
+  "en": "Dwarf spheroidals — small, faint, and almost entirely dark matter",
+  "cur": "Esferoidales enanas — pequeñas, débiles y casi enteramente materia oscura"
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "intro_sentence",
+  "en": "Dwarf spheroidal galaxies are the most numerous galaxies in the Local Group and the most dark-matter-dominated objects we have ever measured — mass-to-light ratios of 100, 500, even 1000 — far higher than any spiral.",
+  "cur": "Las galaxias enanas esferoidales son las más numerosas del Grupo Local y los objetos dominados por materia oscura más extremos que hemos medido: cocientes masa-luz de 100, 500, incluso 1000."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "body_paragraphs.0",
+  "en": "Dwarf spheroidals (often abbreviated dSph) are small, faint, gas-poor, roughly elliptical satellites of larger galaxies. Around the Milky Way, the brighter members are Sagittarius, Sculptor, Fornax, Draco, Ursa Minor, Leo I, Leo II, Sextans, Carina, Canes Venatici I, plus a long tail of ultra-faint dwarfs discovered by SDSS, DES, Pan-STARRS, and now the Vera C. Rubin Observatory's LSST. The total count of known Milky Way dSph satellites is now over 60 and rising. Each typically has only millions to tens of millions of stars — compared to the Milky Way's hundreds of billions — and was for decades dismissed as boring stragglers. The picture changed in the 1980s when stellar-velocity-dispersion measurements showed they were anything but boring.",
+  "cur": "Las esferoidales enanas (a menudo abreviadas dSph) son satélites pequeños, débiles, pobres en gas, aproximadamente elípticos, de galaxias mayores. En torno a la Vía Láctea, los miembros más brillantes son Sagittarius, Sculptor, Fornax, Draco, Ursa Minor, Leo I, Leo II, Sextans, Carina, Canes Venatici I, además de una larga cola de enanas ultradébiles descubiertas por SDSS, DES, Pan-STARRS, y ahora el LSST del Vera C. Rubin Observatory. La cuenta total conocida de satélites dSph de la Vía Láctea supera ahora los 60 y subiendo. Cada una tiene típicamente solo millones a decenas de millones de estrellas — comparado con los cientos de miles de millones de la Vía Láctea — y fueron descartadas durante décadas como rezagadas aburridas. El panorama cambió en los años 80 cuando las mediciones de dispersión de velocidades estelares mostraron que eran todo menos aburridas."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "body_paragraphs.1",
+  "en": "The story of dwarf-spheroidal dark matter starts with Marc Aaronson at the Lowell Observatory in 1983. He measured the velocity dispersion of red giants in Draco and Ursa Minor and found they moved much faster than the visible stellar mass could gravitationally bind. To hold the stars together, each system needed mass roughly 100× greater than the visible stellar mass. Subsequent decades of measurement (Walker, Mateo, Kleyna, McConnachie, Battaglia, and many others) confirmed and extended this: the brightest dSphs have mass-to-light ratios around 30, the dimmer ones around 100-300, and the ultra-faint dwarfs (Segue 1, Boötes II, Reticulum II) have mass-to-light ratios of 500-3000. These objects are essentially balls of dark matter with a sprinkling of stars trapped at the bottom of the potential well.",
+  "cur": "La historia de la materia oscura en las esferoidales enanas empieza con Marc Aaronson en el Lowell Observatory en 1983. Midió la dispersión de velocidad de las gigantes rojas en Draco y Ursa Minor y descubrió que se movían mucho más rápido de lo que la masa estelar visible podía ligar gravitacionalmente. Para mantener las estrellas unidas, cada sistema necesitaba una masa unas 100× la masa estelar visible. Las décadas siguientes de mediciones (Walker, Mateo, Kleyna, McConnachie, Battaglia y muchos otros) confirmaron y extendieron esto: las dSph más brillantes tienen cocientes masa-luminosidad de unos 30, las más débiles de unos 100-300, y las enanas ultradébiles (Segue 1, Boötes II, Reticulum II) tienen cocientes masa-luminosidad de 500-3000. Estos objetos son esencialmente bolas de materia oscura con un puñado de estrellas atrapadas al fondo del pozo de potencial."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "body_paragraphs.2",
+  "en": "Why this matters cosmologically. Standard ΛCDM cosmology predicts that galaxy formation proceeds hierarchically: small dark-matter halos form first, then merge into larger ones. The Milky Way's halo formed by accreting hundreds of smaller dark-matter clumps over its lifetime. Most of those clumps had little or no baryonic mass attached and remain dark and undetectable. But the ones that did acquire and retain some stars are exactly the dwarf spheroidals we see today — sub-halo remnants that the Milky Way has eaten but not fully digested. The dwarfs are direct evidence for the existence of dark matter at sub-galactic scales, AND they are the empirical test for whether dark matter behaves as cold and collisionless as ΛCDM assumes. Several dSph properties (the 'core-cusp problem', the 'too-big-to-fail problem') still don't fit ΛCDM neatly — they are at the centre of every alternative-dark-matter discussion today (warm DM, self-interacting DM, fuzzy DM, primordial-black-hole DM).",
+  "cur": "Por qué importa cosmológicamente. La cosmología estándar ΛCDM predice que la formación de galaxias procede jerárquicamente: los halos de materia oscura pequeños se forman primero, luego se fusionan en mayores. El halo de la Vía Láctea se formó acumulando cientos de grumos de materia oscura menores a lo largo de su vida. La mayoría de esos grumos tenían poca o ninguna masa bariónica y permanecen oscuros e indetectables. Pero los que adquirieron y retuvieron algunas estrellas son exactamente las esferoidales enanas que vemos hoy — restos de sub-halos que la Vía Láctea ha comido pero no digerido del todo. Las enanas son evidencia directa de la existencia de materia oscura a escalas sub-galácticas Y son la prueba empírica de si la materia oscura se comporta tan fría y sin colisiones como supone ΛCDM. Varias propiedades de dSph (el 'problema core-cusp', el 'problema too-big-to-fail') aún no encajan limpiamente en ΛCDM — están en el centro de toda discusión alternativa sobre materia oscura hoy (DM tibia, DM autointeractuante, DM difusa, DM de agujeros negros primordiales)."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "body_paragraphs.3",
+  "en": "Some dSphs are actively being torn apart by Milky Way tides. The Sagittarius Dwarf Galaxy at 22 kpc is the canonical example: its stellar stream wraps around the Milky Way more than once, mapped star by star using SDSS + 2MASS + Gaia data. The Sagittarius stream is the strongest single piece of evidence we have for the Milky Way's potential shape (you can fit the stream's 3D path against models of Milky Way mass distribution and constrain whether the dark halo is spherical, oblate, or triaxial). The disrupted galaxy is being slowly digested over the next ~1 Gyr; the Milky Way has done this to dozens of dwarfs over cosmic time, and the Andromeda Stream and other tidal features in M31's halo show Andromeda has done the same. Galactic cannibalism is how spirals grow.",
+  "cur": "Algunas dSph están siendo despedazadas activamente por las mareas de la Vía Láctea. La Galaxia Enana de Sagitario a 22 kpc es el ejemplo canónico: su corriente estelar envuelve la Vía Láctea más de una vez, cartografiada estrella a estrella con datos SDSS + 2MASS + Gaia. La corriente de Sagitario es la pieza individual de evidencia más fuerte que tenemos sobre la forma del potencial de la Vía Láctea (se puede ajustar el trayecto 3D de la corriente contra modelos de distribución de masa de la Vía Láctea y restringir si el halo oscuro es esférico, oblato o triaxial). La galaxia despedazada se va digiriendo lentamente durante el próximo ~1 Gyr; la Vía Láctea le ha hecho lo mismo a docenas de enanas en el tiempo cósmico, y la Andromeda Stream y otras características de marea en el halo de M31 muestran que Andromeda hizo lo mismo. El canibalismo galáctico es cómo crecen las espirales."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "diagram_caption",
+  "en": "Dwarf spheroidals: small (millions of stars), gas-poor, ~roughly elliptical satellites. Mass-to-light ratios 30-1000 (highest among galaxies). Direct evidence for dark matter at sub-galactic scales. Sagittarius dSph is being torn apart by Milky Way tides — its stream is the strongest probe of Milky Way halo shape. ΛCDM open problems (core-cusp, too-big-to-fail) live here.",
+  "cur": "Esferoidales enanas: pequeñas (millones de estrellas), pobres en gas, satélites ~aproximadamente elípticos. Cocientes masa-luminosidad 30-1000 (los más altos entre galaxias). Evidencia directa de materia oscura a escalas sub-galácticas. La Sagittarius dSph se despedaza por las mareas de la Vía Láctea — su corriente es la sonda más fuerte de la forma del halo. Problemas abiertos de ΛCDM (core-cusp, too-big-to-fail) viven aquí."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "title",
+  "en": "Galaxy types — spirals, ellipticals, irregulars, dwarfs",
+  "cur": "Tipos de galaxias — espirales, elípticas, irregulares, enanas"
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "intro_sentence",
+  "en": "Galaxies fall into a handful of structural families: spirals (Milky Way, Andromeda), ellipticals (M87, NGC 4889), irregulars (Magellanic Clouds), and dwarfs of several sub-classes. The taxonomy is Hubble's 1936 framework, refined.",
+  "cur": "Las galaxias se agrupan en familias estructurales: espirales (Vía Láctea, Andromeda), elípticas (M87, NGC 4889), irregulares (Nubes de Magallanes) y enanas. Taxonomía de Hubble, 1936."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.0",
+  "en": "Spiral galaxies are flat rotating discs of stars and gas surrounding a central bulge, with one or more prominent spiral arms wrapping outward. The arms are not rigid structures — they are density waves where star formation is currently elevated, plus young blue stars and pink HII regions that make the arms look brighter than the inter-arm disc. About two-thirds of bright nearby galaxies are spirals. The Milky Way is a barred spiral (SBbc — its central bulge is elongated into a bar 'cigar' shape that funnels gas inward, fuelling central star formation and feeding the supermassive black hole). Andromeda's bar status is unsettled: the formal RC3 classification is SA(s)b (unbarred), though kinematic and photometric studies point to a weak inner non-axisymmetry. The Triangulum Galaxy M33 in the Local Group is an unbarred spiral. The third Hubble category — Sc / SBc — has loose, well-separated spiral arms; the Milky Way is type SBbc or SBc.",
+  "cur": "Las galaxias espirales son discos planos que rotan, compuestos de estrellas y gas que rodean un abultamiento central, con uno o más brazos espirales prominentes que se extienden hacia el exterior. Los brazos no son estructuras rígidas, sino ondas de densidad donde la formación de estrellas es actualmente más intensa, además de estrellas jóvenes azules y regiones HII rosadas que hacen que los brazos parezcan más brillantes que el disco entre los brazos. Aproximadamente dos tercios de las galaxias espirales brillantes cercanas son espirales. La Vía Láctea es una espiral barrada (SBbc — su abultamiento central está alargado en forma de barra o cigarro que canaliza el gas hacia adentro, alimentando la formación estelar central y nutriendo el agujero negro supermasivo). El estado de barra de Andromeda está sin resolver: la clasificación formal RC3 es SA(s)b (sin barra), aunque los estudios cinemáticos y fotométricos señalan una asimetría interna débil no axisimétrica. La galaxia del Triángulo M33 en el Grupo Local es una espiral sin barra. La tercera categoría de Hubble — Sc / SBc — tiene brazos espirales laxos y bien separados; la Vía Láctea es de tipo SBbc o SBc."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.1",
+  "en": "Elliptical galaxies are dispersion-supported balls of mostly old stars with little gas, little dust, and almost no ongoing star formation. They range from small (M32, the compact dwarf elliptical companion to Andromeda) to enormous (M87 at the heart of the Virgo Cluster, the host of the first imaged supermassive black hole; cD-class brightest cluster galaxies like NGC 4889 in Coma which contain trillions of stars). Most ellipticals are the products of past major mergers — when two spirals collide, the disc structure is disrupted, gas is consumed in a starburst, and the merged remnant settles into an elliptical. The Milky Way is destined to become an elliptical once it merges with Andromeda. There are essentially no ellipticals in the Local Group except M32, M110, NGC 147, and NGC 185 — small companions to M31. The big ellipticals all live in dense cluster environments.",
+  "cur": "Las galaxias elípticas son esferas mantenidas por dispersión dinámica, compuestas mayormente de estrellas antiguas con poco gas, poco polvo y casi ninguna formación de estrellas en curso. Su tamaño varía desde el pequeño (M32, la enana elíptica compacta acompañante de Andromeda) hasta el enorme (M87 en el corazón del Cúmulo de Virgo, anfitrión del primer agujero negro supermasivo fotografiado; galaxias cD de máximo brillo en cúmulos como NGC 4889 en Coma que contienen billones de estrellas). La mayoría de elípticas son productos de fusiones galácticas importantes en el pasado: cuando dos galaxias espirales colisionan, la estructura del disco se desintegra, el gas se consume en un estallido estelar, y el remanente fusionado se asienta en una elíptica. La Vía Láctea está destinada a convertirse en una elíptica cuando se fusione con Andromeda. Esencialmente no hay elípticas en el Grupo Local excepto M32, M110, NGC 147 y NGC 185, pequeños acompañantes de M31. Las grandes elípticas viven todas en densos entornos de cúmulos."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.2",
+  "en": "Irregulars are everything that doesn't fit. The Magellanic Clouds are the prototypes — gas-rich, actively star-forming, no clear spiral arms or central bulge, often elongated or distorted by tidal interactions with larger neighbours. Most low-mass star-forming galaxies are irregular. Many were once classified as spiral-like but have been so tidally disrupted that the structure is no longer recognisable; others are too small to have ever developed a self-supporting disc. Irregulars dominate the count of galaxies at the low-mass end of the galactic mass function — there are far more dwarf irregulars than spirals, but they are individually faint so spirals dominate the night sky and the historical record.",
+  "cur": "Las irregulares son todo lo que no encaja. Las Nubes de Magallanes son los prototipos — ricas en gas, formación estelar activa, sin brazos espirales claros o abultamiento central, a menudo alargadas o distorsionadas por interacciones de marea con vecinos más grandes. La mayoría de las galaxias de formación estelar de baja masa son irregulares. Muchas fueron clasificadas una vez como tipo espiral pero han sido tan perturbadas por la marea que la estructura ya no es reconocible; otras son demasiado pequeñas para haber desarrollado nunca un disco autosoportado. Las irregulares dominan el recuento de galaxias en el extremo de baja masa de la función de masa galáctica — hay muchas más irregulares enanas que espirales, pero son individualmente débiles así que las espirales dominan el cielo nocturno y el registro histórico."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.3",
+  "en": "Dwarf galaxies subdivide further. Dwarf spheroidals (Sagittarius, Fornax, Sculptor) — gas-poor, ~elliptical, dark-matter-dominated, see the separate /science article. Dwarf irregulars (NGC 6822, IC 1613, WLM in the Local Group) — gas-rich, star-forming, no defined morphology. Dwarf ellipticals (M32 is the type example) — small versions of large ellipticals, often companions to large galaxies. Ultra-faint dwarfs — discovered only since 2005 via deep SDSS / DES / LSST surveys, with luminosities below 10⁵ solar luminosities and stellar masses comparable to a single globular cluster but with mass-to-light ratios in the hundreds (i.e., still dominated by dark matter, not by stars). These ultra-faints are probably the dimmest galaxies in existence — at lower masses, no galaxy is detectable because there are no stars at all, only dark-matter halos.",
+  "cur": "Las galaxias enanas se subdividen más. Galaxias esferoidales enanas (Sagittarius, Fornax, Sculptor) — pobres en gas, ~elípticas, dominadas por materia oscura, véase el artículo separado /science. Irregulares enanas (NGC 6822, IC 1613, WLM en el Grupo Local) — ricas en gas, formación estelar, sin morfología definida. Elípticas enanas (M32 es el ejemplo típico) — versiones pequeñas de elípticas grandes, a menudo acompañantes de galaxias grandes. Enanas ultradébiles — descubiertas solo desde 2005 mediante encuestas profundas SDSS / DES / LSST, con luminosidades por debajo de 10⁵ luminosidades solares y masas estelares comparables a un único cúmulo globular pero con relaciones masa-luminosidad en los cientos (es decir, aún dominadas por materia oscura, no por estrellas). Estas ultradébiles son probablemente las galaxias más débiles en existencia — a masas menores, ninguna galaxia es detectable porque no hay estrellas en absoluto, solo halos de materia oscura."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.4",
+  "en": "Beyond the Hubble framework. Modern surveys have added several galaxy types that didn't fit Hubble's 1936 scheme: starburst galaxies (M82) where star formation is many times higher than normal due to a recent merger or tidal interaction; AGN-hosting galaxies (Seyferts, quasars, radio galaxies) where the central black hole is actively accreting and dominating the light output; ring galaxies (Hoag's Object) formed by head-on bullet-collisions; and the ultra-diffuse galaxies (NGC 1052-DF2, Dragonfly 44) discovered in the 2010s, with sizes of full-sized galaxies but stellar densities so low you can almost see through them. The classification scheme keeps being extended as observations improve; Hubble's tuning fork remains the backbone of how astronomers talk about morphology, even when individual galaxies refuse to fit.",
+  "cur": "Más allá del esquema de Hubble. Los estudios modernos han añadido varios tipos de galaxias que no encajaban en el esquema de Hubble de 1936: galaxias de estallido de formación estelar (M82) donde la formación de estrellas es muchas veces superior a la normal debido a una fusión reciente o a una interacción de marea; galaxias anfitrionas de núcleos activos (Seyferts, cuásares, galaxias de radio) donde el agujero negro central está acumulando materia activamente y dominando la producción de luz; galaxias anulares (Objeto de Hoag) formadas por colisiones frontales tipo bala; y las galaxias ultra difusas (NGC 1052-DF2, Dragonfly 44) descubiertas en los años 2010, con tamaños de galaxias de tamaño completo pero densidades estelares tan bajas que casi se puede ver a través de ellas. El esquema de clasificación sigue extendiéndose a medida que las observaciones mejoran; el diagrama de diapasón de Hubble sigue siendo la base de cómo los astrónomos hablan de la morfología, incluso cuando las galaxias individuales se niegan a encajar."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "diagram_caption",
+  "en": "Hubble tuning fork: ellipticals (E0-E7) on the left, spirals (S/SB, types a/b/c) on the right, irregulars off to the side. Plus dwarf sub-classes (dSph / dE / dIrr / ultra-faint) and modern additions (starburst, AGN, ring, ultra-diffuse). Local Group spans almost all categories — useful pedagogical microcosm.",
+  "cur": "Tenedor de sintonización de Hubble: elípticas (E0-E7) a la izquierda, espirales (S/SB, tipos a/b/c) a la derecha, irregulares fuera del costado. Más subclases enanas (dSph / dE / dIrr / ultradébiles) y adiciones modernas (estallido, AGN, anillo, ultradifusas). El Grupo Local abarca casi todas las categorías — microcosmos pedagógico útil."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "title",
+  "en": "Stars — colour, class, and the H–R diagram",
+  "cur": "Estrellas — color, clase y el diagrama de Hertzsprung–Russell"
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "intro_sentence",
+  "en": "A star's colour is a thermometer, and its brightness is a life story. Plot the two against each other and almost every star falls onto a single diagonal band — the Hertzsprung–Russell diagram, the most important graph in stellar astronomy.",
+  "cur": "El color de una estrella es un termómetro, y su brillo es una historia de vida. Casi todas las estrellas caen en una banda diagonal única — el diagrama de Hertzsprung–Russell, el gráfico más importante de la astronomía estelar."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.0",
+  "en": "Colour comes first. A star radiates as a near-perfect blackbody, so its colour is set almost entirely by its surface temperature: hot stars glow blue-white (~30,000 K), the Sun is yellow-white (~5,800 K), and cool stars burn deep red (~3,000 K). Astronomers measure that colour as the B–V index — the difference between a star's brightness through a blue and a visual filter — and it maps cleanly onto temperature. Sort stars left-to-right by colour and you have the spectral sequence O, B, A, F, G, K, M, hottest to coolest (mnemonic: “Oh Be A Fine Girl/Guy, Kiss Me”).",
+  "cur": "El color es lo primero. Una estrella irradia como un cuerpo negro casi perfecto, así que su color está determinado casi en su totalidad por su temperatura superficial: las estrellas calientes brillan de azul-blanco (~30 000 K), el Sol es amarillo-blanco (~5800 K), y las estrellas frías brillan en rojo profundo (~3000 K). Los astrónomos miden ese color como el índice B–V — la diferencia entre el brillo de una estrella a través de un filtro azul y un filtro visual — y se corresponde claramente con la temperatura. Si ordenas las estrellas de izquierda a derecha por color obtienes la secuencia espectral O, B, A, F, G, K, M, de más caliente a más frío (regla mnemotécnica: \"Oh Be A Fine Girl/Guy, Kiss Me\")."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.1",
+  "en": "Brightness is the second axis — but you have to be careful which brightness. A star can look bright because it is genuinely luminous or merely because it is close. To compare stars fairly you convert apparent magnitude m to absolute magnitude M, the brightness it would have at a standard 10 parsecs, using the distance: M = m − 5(log₁₀ d − 1). Only then does luminosity mean intrinsic power output, and only then does the diagram work.",
+  "cur": "El brillo es el segundo eje — pero tienes que tener cuidado con qué brillo. Una estrella puede parecer brillante porque es genuinamente luminosa o simplemente porque está cerca. Para comparar estrellas justamente, conviertes la magnitud aparente m en magnitud absoluta M, el brillo que tendría a una distancia estándar de 10 pársecs, usando la fórmula: M = m − 5(log₁₀ d − 1). Solo entonces la luminosidad significa potencia de salida intrínseca, y solo entonces el diagrama funciona."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.2",
+  "en": "Now plot temperature (hot on the left, by convention) against luminosity (bright at the top). The stars do not scatter randomly. Roughly 90% of them land on a single sweeping diagonal — the main sequence — running from hot, luminous, massive O and B stars at the top-left down to cool, faint red dwarfs at the bottom-right. A star sits on the main sequence for as long as it fuses hydrogen in its core, which is most of its life. The Sun is a G-type main-sequence star, sitting unremarkably near the middle.",
+  "cur": "Ahora representa la temperatura (caliente a la izquierda, por convención) frente a la luminosidad (brillo en la parte superior). Las estrellas no se dispersan aleatoriamente. Aproximadamente el 90 % de ellas caen en una única diagonal que barre — la secuencia principal — que va desde las estrellas O y B calientes, luminosas y masivas en la parte superior izquierda hasta las enanas rojas frías y débiles en la parte inferior derecha. Una estrella permanece en la secuencia principal mientras fusiona hidrógeno en su núcleo, que es la mayor parte de su vida. El Sol es una estrella de la secuencia principal de tipo G, situada sin destacar cerca del centro."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.3",
+  "en": "The interesting stars are the ones off the main sequence. Top-right: the red giants and supergiants — cool but enormous and hugely luminous, stars that have exhausted their core hydrogen and swollen up (Betelgeuse, Aldebaran, Arcturus live here). Bottom-left: the white dwarfs — hot but tiny and faint, the exposed cores left when a Sun-like star dies. Where a star lands, and how it moves across the diagram over time, is the whole narrative of stellar evolution written in two coordinates.",
+  "cur": "Las estrellas interesantes son las que están fuera de la secuencia principal. Arriba-derecha: los gigantes rojos y supergigantes — fríos pero enormes y enormemente luminosos, estrellas que han agotado el hidrógeno de su núcleo e hinchado (Betelgeuse, Aldebarán, Arturo viven aquí). Abajo-izquierda: las enanas blancas — calientes pero diminutas y débiles, los núcleos expuestos que quedan cuando muere una estrella como el Sol. Dónde cae una estrella, y cómo se mueve a través del diagrama con el tiempo, es toda la narrativa de la evolución estelar escrita en dos coordenadas."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.4",
+  "en": "The H–R diagram is also a distance ladder and a clock. Because a star's position fixes its true luminosity, comparing that to how bright it appears gives its distance (“spectroscopic parallax”). And because more massive stars burn out faster, the point where a star cluster's main sequence bends toward the giants — the “turn-off” — tells you the cluster's age. One graph, and you can read a star's temperature, size, power, distance, and remaining lifetime.",
+  "cur": "El diagrama H–R es también una escala de distancias y un reloj. Porque la posición de una estrella fija su luminosidad verdadera, comparar eso con lo brillante que parece da su distancia (\"paralaje espectroscópico\"). Y porque las estrellas más masivas se agotan más rápidamente, el punto donde la secuencia principal de un cúmulo de estrellas se dobla hacia los gigantes — el \"turn-off\" — te dice la edad del cúmulo. Un gráfico, y puedes leer la temperatura, tamaño, potencia, distancia y tiempo de vida restante de una estrella."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "diagram_caption",
+  "en": "The Hertzsprung–Russell diagram: temperature (hot O-stars left, cool M-stars right) against luminosity (bright top, faint bottom). The main sequence runs corner to corner; red giants sit top-right, white dwarfs bottom-left. The Sun is a G-type main-sequence star, marked near the centre — the same axes the /explore HR-lens re-plots the real neighbourhood stars onto.",
+  "cur": "El diagrama de Hertzsprung–Russell: temperatura (estrellas O calientes a la izquierda, estrellas M frías a la derecha) frente a luminosidad (brillo arriba, débil abajo). La secuencia principal corre de esquina a esquina; los gigantes rojos están arriba-derecha, las enanas blancas abajo-izquierda. El Sol es una estrella de la secuencia principal de tipo G, marcada cerca del centro — los mismos ejes que el /explore HR-lens representa de nuevo en el vecindario de estrellas reales."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "intro_sentence",
+  "en": "Stitch separate telescopes into one virtual aperture larger than any of them — the Event Horizon Telescope is an Earth-sized radio interferometer built from antennas on four continents.",
+  "cur": "Unir telescopios separados en una abertura virtual única más grande que cualquiera de ellos — el Event Horizon Telescope es un interferómetro de radio del tamaño de la Tierra construido a partir de antenas en cuatro continentes."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "body_paragraphs.0",
+  "en": "A single telescope's resolving power depends on its aperture (diameter / wavelength). A radio antenna 30 m across imaging at 1 mm wavelength has an angular resolution of about 7 arcseconds — too coarse to see most things. But two antennas 1000 km apart, observing the same source simultaneously and combining their signals, behave like a single telescope **1000 km across** at that resolution — milliarcseconds.",
+  "cur": "El poder de resolución de un solo telescopio depende de su abertura (diámetro / longitud de onda). Una antena de radio de 30 m a través de la imagen a 1 mm de longitud de onda tiene una resolución angular de unos 7 segundos — demasiado gruesa para ver la mayoría de las cosas. Pero dos antenas a 1000 km de distancia, observando la misma fuente simultáneamente y combinando sus señales, se comportan como un solo telescopio **1000 km de distancia** en esa resolución — milliarcseconds."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "body_paragraphs.1",
+  "en": "The trick is correlation: the radio waves arriving at antenna A and antenna B differ by a tiny phase delay that depends on the source direction and the antenna baseline. Cross-correlate the two signals over time, and you measure that phase delay. Do it with N antennas in different positions and the combined signal samples N×(N-1)/2 baselines simultaneously, filling in the Fourier components of the source brightness distribution. An iterative deconvolution then recovers the image.",
+  "cur": "El truco es correlación: las ondas de radio que llegan a la antena A y la antena B difieren por un diminuto retraso de fase que depende de la dirección de origen y de la base de la antena. Cruza las dos señales con el tiempo, y mide ese retraso de fase. Hágalo con antenas N en diferentes posiciones y las muestras de señal combinadas N×(N-1)/2 de referencia simultáneamente, llenando los componentes Fourier de la distribución de brillo fuente. Una deconvolución iterativa entonces recupera la imagen."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "body_paragraphs.2",
+  "en": "**VLA** (27 antennas in New Mexico) does this at radio wavelengths. **ALMA** (66 antennas in Chile) does it at sub-mm wavelengths, where atmospheric water absorption is brutal but the dust-thermal-continuum lights up. **Event Horizon Telescope** linked 8 sub-mm observatories across 4 continents to image M87's black hole at 1.3 mm — Earth-diameter aperture, 20 microarcsecond resolution, the shadow of an event horizon.",
+  "cur": "**VLA** (27 antenas en Nuevo México) lo hace en longitudes de onda de radio. **ALMA** (66 antenas en Chile) lo hace en longitudes de onda submilimétricas, donde la absorción atmosférica de agua es brutal pero el continuo térmico del polvo se ilumina. **Event Horizon Telescope** vinculó 8 observatorios submilimétricos a través de 4 continentes para obtener una imagen del agujero negro de M87 a 1,3 mm — apertura del diámetro de la Tierra, resolución de 20 microsegundos de arco, la sombra de un horizonte de sucesos."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "body_paragraphs.3",
+  "en": "Optical/IR interferometry exists but is much harder because optical wavelengths are 6+ orders of magnitude shorter than radio, requiring laser-stabilised path matching to nanometre accuracy. CHARA, NPOI, and the VLTI are the survivors. Space interferometers like LISA (gravitational-wave detection via laser arms between three free-flying spacecraft) are the future architecture — both for gravity-wave astronomy and for the long-term goal of imaging Earth-twin exoplanets at high contrast.",
+  "cur": "La interferometría óptica/IR existe pero es mucho más difícil porque las longitudes ópticas de onda son 6+ órdenes de magnitud más cortas que la radio, lo que requiere un camino estabilizado por láser que coincida con la precisión de los nanometros. CHARA, NPOI y el VLTI son los sobrevivientes. Los interferómetros espaciales como LISA (detección de ondas gravitacionales a través de los brazos láser entre tres naves espaciales libres) son la arquitectura futura, tanto para la astronomía de onda gravitatoria como para el objetivo a largo plazo de imaginar exoplanetas entrelazadas por la Tierra en alto contraste."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "diagram_caption",
+  "en": "Two antennas + cross-correlation → effective aperture = the baseline between them. Earth-sized → EHT M87 black hole. Space-sized → LISA gravitational waves.",
+  "cur": "Dos antenas + cruza-correlación → apertura efectiva = la base entre ellas. Earth-sized → EHT M87 agujero negro. Tamaño espacial → ondas gravitacionales LISA."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "title",
+  "en": "The Local Group — our gravitationally bound neighbourhood",
+  "cur": "El Grupo Local — nuestro vecindario ligado gravitatoriamente"
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "intro_sentence",
+  "en": "The Local Group is the small cluster of ~80 known galaxies bound to the Milky Way and Andromeda by mutual gravity. It is about 3 megaparsecs across and contains essentially every galaxy close enough to study individual stars in.",
+  "cur": "El Grupo Local es un pequeño cúmulo de ~80 galaxias conocidas ligadas a la Vía Láctea y Andromeda por gravedad mutua, abarca unos 3 megaparsecs y contiene todas las galaxias lo suficientemente cercanas para estudiar estrellas individuales."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "body_paragraphs.0",
+  "en": "The Local Group is dominated by three spiral galaxies — the Milky Way, Andromeda (M31), and the Triangulum Galaxy (M33). Around the Milky Way and Andromeda are clouds of satellite galaxies, mostly small and faint — the Magellanic Clouds, Sagittarius Dwarf, Sculptor, Fornax, Draco, the Leo dwarfs, and many more. Total members known today: about 80, and the count keeps rising as deep imaging surveys (DES, LSST, Euclid) find ultra-faint dwarfs missed by earlier searches. The whole structure is gravitationally bound — it is not expanding with the Hubble flow, and the Milky Way and Andromeda are actually approaching each other at about 110 km/s.",
+  "cur": "El Grupo Local está dominado por tres galaxias espirales: la Vía Láctea, Andromeda (M31) y la Galaxia del Triángulo (M33). Alrededor de la Vía Láctea y Andromeda hay nubes de galaxias satélites, mayormente pequeñas y tenues: las Nubes de Magallanes, la Enana de Sagitario, Sculptor, Fornax, Draco, las Enanas de Leo, y muchas más. Miembros conocidos hoy: aproximadamente 80, y la cifra sigue aumentando conforme los sondeos de imagen profunda (DES, LSST, Euclid) encuentran enanas ultra-débiles que los estudios anteriores pasaron por alto. Toda la estructura está ligada gravitatoriamente: no se expande con el flujo de Hubble, y la Vía Láctea y Andromeda se aproximan entre sí a unos 110 km/s."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "body_paragraphs.1",
+  "en": "The boundary of the Local Group is not sharp. The conventional outer edge is the zero-velocity surface, the imaginary surface at which a test galaxy would have just enough kinetic energy to escape the group's gravity but no more — roughly 1.5 Mpc from the Milky Way / Andromeda barycentre. Inside that radius, members are bound; outside it, galaxies belong to the broader Local Sheet and feel the Hubble expansion. The Sculptor Group, the Maffei Group, the M81 Group, and the Centaurus A Group are all within 4 Mpc of the Milky Way — close neighbours, but not Local Group members.",
+  "cur": "El límite del Grupo Local no es nítido. El borde exterior convencional es la superficie de velocidad cero, la superficie imaginaria en la que una galaxia de prueba tendría precisamente la energía cinética suficiente para escapar de la gravedad del grupo pero no más —aproximadamente 1,5 Mpc del baricentro de la Vía Láctea / Andromeda. Dentro de ese radio, los miembros están ligados; fuera de él, las galaxias pertenecen a la más amplia Lámina Local y sienten la expansión de Hubble. El Grupo Escultor, el Grupo Maffei, el Grupo M81 y el Grupo Centaurus A se encuentran todos dentro de 4 Mpc de la Vía Láctea —vecinos cercanos, pero no miembros del Grupo Local."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "body_paragraphs.2",
+  "en": "The Local Group matters out of proportion to its size. Because everything in it is within a few million light-years, individual stars in Local Group members can be resolved with HST, JWST, and the largest ground-based telescopes. This is where almost all stellar-population science gets done: variable-star distance calibration (the Hubble constant ladder starts with Cepheids in M31, M33, and the LMC), dwarf-galaxy dark-matter measurements (Draco, Fornax, the Leo dwarfs have stellar velocity dispersions consistent with mass-to-light ratios of 100+ — meaning they are dominated by dark matter), and galactic archaeology (the stellar streams of Sagittarius being torn apart by the Milky Way tide are mapped star-by-star). Galaxies further out have to be studied as ensembles; Local Group galaxies are studied star by star.",
+  "cur": "El Grupo Local es importante desproporcionadamente a su tamaño. Como todo en él está a pocos millones de años luz de distancia, las estrellas individuales en los miembros del Grupo Local pueden resolverse con HST, JWST y los mayores telescopios terrestres. Aquí es donde se realiza casi toda la ciencia de poblaciones estelares: calibración de distancias de estrellas variables (la escala de la constante de Hubble comienza con variables Cefeidas en M31, M33 y la LMC), mediciones de materia oscura en galaxias enanas (Draco, Fornax y las Enanas de Leo tienen dispersiones de velocidades estelares consistentes con cocientes masa-luminosidad de 100+ —lo que significa que están dominadas por materia oscura), y arqueología galáctica (los flujos estelares de Sagitario siendo desgarrados por la marea de la Vía Láctea se mapean estrella por estrella). Las galaxias más lejanas deben estudiarse como conjuntos; las galaxias del Grupo Local se estudian estrella por estrella."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "body_paragraphs.3",
+  "en": "Long-term trajectory: gravity has the last word. The so-called 'Milkomeda' collision — first predicted in detail by Cox & Loeb (2008) and supported by van der Marel et al. (2019) using Gaia DR3 proper motions — was long considered a near-certainty. However, Sawala et al. (Nature Astronomy, 2025), incorporating M33 and the LMC into the orbit integration, found only roughly even odds of a merger within the next 10 Gyr. If a close pass does occur, tidal disruption might begin around 4.5 billion years from now, with the merger taking perhaps 2 billion years to complete and settling into a single elliptical galaxy. By the time it finishes, the Sun (still a main-sequence star, only ~6 Gyr old at the merger) will likely be ejected to a much larger orbit or remain in a thick disc remnant. The remaining Local Group galaxies will continue merging into the new central elliptical over the next ~100 Gyr, leaving 'Milkomeda' as the only galaxy visible from Earth's eventual successor planet, the cosmic-web filaments having long since carried other groups away in the accelerating Hubble flow.",
+  "cur": "Trayectoria a largo plazo: la gravedad tiene la última palabra. La llamada colisión 'Milkomeda' —predicha en detalle por primera vez por Cox & Loeb (2008) y apoyada por van der Marel et al. (2019) usando movimientos propios de Gaia DR3— se consideraba una casi-certidumbre. Sin embargo, Sawala et al. (Nature Astronomy, 2025), incorporando M33 y la LMC en la integración orbital, encontraron solo aproximadamente probabilidades iguales de una fusión dentro de los próximos 10 Gyr. Si ocurre un paso cercano, la disrupción por marea podría comenzar alrededor de hace 4,5 mil millones de años, con la fusión tomando quizás 2 mil millones de años para completarse y asentarse en una única galaxia elíptica. Para entonces, el Sol (aún una estrella de secuencia principal, solo ~6 Gyr de edad en la fusión) probablemente será expulsado a una órbita mucho mayor o permanecerá en un remanente de disco espeso. Las restantes galaxias del Grupo Local continuarán fusionándose en la nueva elíptica central durante los próximos ~100 Gyr, dejando 'Milkomeda' como la única galaxia visible desde el planeta sucesor eventual de la Tierra, habiendo los filamentos de la trama cósmica llevado mucho tiempo hace otros grupos en el flujo de Hubble acelerador."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "diagram_caption",
+  "en": "Local Group: ~80 galaxies, ~3 Mpc across, gravitationally bound. Dominated by Milky Way + Andromeda spirals plus M33 third. Most members are dwarf satellites of one of the two large spirals. Boundary at zero-velocity surface (~1.5 Mpc). Future: Milkomeda merger possible (~50/50 per Sawala et al. 2025) if it occurs, ~4.5 Gyr hence.",
+  "cur": "Grupo Local: ~80 galaxias, ~3 Mpc de diámetro, ligadas gravitatoriamente. Dominado por espirales Vía Láctea + Andromeda más M33 como tercera. La mayoría de miembros son satélites enanas de una de las dos espirales grandes. Límite en la superficie de velocidad cero (~1,5 Mpc). Futuro: posible fusión Milkomeda (~50/50 según Sawala et al. 2025) si ocurre, ~4,5 Gyr en el futuro."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "title",
+  "en": "The Magellanic Clouds — LMC and SMC, our nearest galactic neighbours",
+  "cur": "Las Nubes de Magallanes — LMC y SMC, nuestras galaxias vecinas más cercanas"
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "intro_sentence",
+  "en": "The Large and Small Magellanic Clouds are the closest galaxies large enough to see with the naked eye — irregular dwarf galaxies trailing the Milky Way's south-galactic pole, ~50 and ~62 kpc away.",
+  "cur": "Las Nubes de Magallánes Mayor y Menor son las galaxias más cercanas lo suficientemente grandes para ser observadas a simple vista — galaxias enanas irregulares que siguen el polo sur galáctico de la Vía Láctea, a ~50 y ~62 kpc de distancia."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "body_paragraphs.0",
+  "en": "The Magellanic Clouds dominate the southern hemisphere sky from any reasonably dark site below about +20° latitude. They look exactly as they sound — two detached fuzzy patches in the night sky, the LMC about 5° across and the SMC about 3°. They are catalogued under several names, but Magellanic comes from Ferdinand Magellan's 1519-1522 circumnavigation, during which the clouds were the most reliable navigation reference his crew had in the South Atlantic. The clouds have been continuously observed by humanity for as long as humans have lived in the southern hemisphere; rock art and oral traditions from Aboriginal Australia, the Khoisan, and Andean cultures reference them by name in ways that long predate European contact.",
+  "cur": "Las Nubes de Magallanes dominan el cielo del hemisferio sur desde cualquier ubicación razonablemente oscura por debajo de aproximadamente +20° de latitud. Se ven exactamente como suenan — dos manchas borrosas separadas en el cielo nocturno, la LMC con unos 5° de diámetro y la SMC unos 3°. Se catalogan bajo varios nombres, pero Magellanic proviene de la circunnavegación de Fernando Magallanes entre 1519-1522, durante la cual las nubes fueron la referencia de navegación más fiable que su tripulación tenía en el Atlántico Sur. Las nubes han sido observadas continuamente por la humanidad durante todo el tiempo que los humanos han vivido en el hemisferio sur; el arte rupestre y las tradiciones orales de los aborígenes australianos, los khoisan y las culturas andinas las mencionan por su nombre de formas que preceden mucho al contacto europeo."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "body_paragraphs.1",
+  "en": "Both are irregular galaxies rather than spirals — chaotic, dust-rich, actively forming stars. The LMC has about 10 billion solar masses (about 1% of the Milky Way), the SMC about a tenth of that. The LMC hosts the Tarantula Nebula (30 Doradus), one of the most prolific star-formation regions in the Local Group and the site of supernova 1987A — the brightest supernova since Kepler's in 1604 and the first visible to the naked eye since SN 1885A in Andromeda, and the first supernova whose neutrinos were detected (Kamiokande, IMB, Baksan detectors caught about 25 neutrinos within seconds of each other, hours before the optical light arrived). The Tarantula's central star cluster R136 contains some of the most massive known stars (R136a1 is around 200 solar masses).",
+  "cur": "Ambas son galaxias irregulares en lugar de espirales — caóticas, ricas en polvo, formando estrellas activamente. La LMC tiene aproximadamente 10 mil millones de masas solares (cerca del 1% de la Vía Láctea), la SMC aproximadamente una décima parte de eso. La LMC alberga la Nebulosa de la Tarántula (30 Doradus), una de las regiones de formación estelar más prolíficas del Grupo Local y el sitio de la supernova 1987A — la supernova más brillante desde la de Kepler en 1604 y la primera visible a simple vista desde SN 1885A en Andromeda, y la primera supernova cuyos neutrinos fueron detectados (los detectores de Kamiokande, IMB y Baksan capturaron unos 25 neutrinos en cuestión de segundos unos de otros, horas antes de la llegada de la luz óptica). El cúmulo estelar central de la Tarantula R136 contiene algunas de las estrellas más masivas conocidas (R136a1 tiene alrededor de 200 masas solares)."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "body_paragraphs.2",
+  "en": "Until recently it was assumed the Clouds were long-term gravitationally-bound satellites of the Milky Way, on bound orbits that had taken them around our galaxy multiple times. Hubble Space Telescope proper-motion measurements (Kallivayalil et al. 2013, refined with Gaia DR2/DR3) overturned this picture: the Clouds are moving too fast to be bound on a long-term orbit, suggesting they are on first-passage — falling in toward the Milky Way for the first time from the Local Group's outer regions, having only recently arrived in the last ~1-2 Gyr. This re-frames a great deal of Magellanic Cloud research: their star-formation histories, their gas content (the Magellanic Stream — a vast hydrogen tail trailing behind them — was being torn out by Milky Way tides during the recent close passage), and their long-term fate (probably eventual merger with the Milky Way, but on Gyr timescales).",
+  "cur": "Hasta hace poco se asumía que las Nubes eran satélites ligados gravitatoriamente a largo plazo de la Vía Láctea, en órbitas ligadas que las habían llevado alrededor de nuestra galaxia múltiples veces. Las mediciones de movimiento propio del Hubble Space Telescope (Kallivayalil et al. 2013, refinadas con Gaia DR2/DR3) invirtieron esta visión: las Nubes se mueven demasiado rápido para estar ligadas en una órbita a largo plazo, lo que sugiere que están en primer paso — cayendo hacia la Vía Láctea por primera vez desde las regiones exteriores del Grupo Local, habiendo llegado solo recientemente en los últimos ~1-2 Gyr. Esto reenmarca una gran cantidad de investigación sobre las Nubes de Magallanes: sus historias de formación estelar, su contenido de gas (la Magellanic Stream — una cola de hidrógeno masiva que los sigue — se fue desprendiendo por las mareas de la Vía Láctea durante el paso cercano reciente), y su destino a largo plazo (probable fusión eventual con la Vía Láctea, pero en escalas de tiempo de Gyr)."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "body_paragraphs.3",
+  "en": "Observing the Clouds requires being in or visiting the southern hemisphere. From mid-southern latitudes (Sydney, Cape Town, Santiago, Auckland) they are circumpolar — never set, visible every clear night. From the equator they rise low in the south during southern summer. From the northern hemisphere they are invisible: even from Hawaii at 19°N latitude, the SMC barely clears the horizon. Astronomers historically had to travel south to study them — the major southern observatories at Cerro Pachón, Paranal, La Silla, Sutherland, and Siding Spring were sited specifically to give continuous access to the Magellanic Clouds plus the galactic centre. The Vera C. Rubin Observatory at Cerro Pachón, which started science operations in 2025, will image the LMC and SMC every few nights for the duration of its decade-long LSST survey.",
+  "cur": "Observar las Nubes requiere estar en el hemisferio sur o visitarlo. Desde latitudes del sur medio (Sydney, Ciudad del Cabo, Santiago, Auckland) son circumpolares — nunca se ponen, visibles todas las noches despejadas. Desde el ecuador se elevan bajas hacia el sur durante el verano austral. Desde el hemisferio norte son invisibles: incluso desde Hawái a 19°N de latitud, la Nube de Magallánes Menor apenas se despeja del horizonte. Los astrónomos históricamente tuvieron que viajar hacia el sur para estudiarlas — los grandes observatorios del sur en Cerro Pachón, Paranal, La Silla, Sutherland y Siding Spring fueron emplazados específicamente para dar acceso continuo a las Nubes de Magallánes más el centro galáctico. El Observatorio Vera C. Rubin en Cerro Pachón, que comenzó operaciones científicas en 2025, fotografiará la Nube de Magallánes Mayor y Menor cada pocos noches durante la década que durará su estudio LSST."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "diagram_caption",
+  "en": "LMC: 49.97 kpc distant, ~10¹⁰ M☉, irregular, southern naked-eye visible. SMC: 62.1 kpc, ~10⁹ M☉, irregular. Both on first-passage orbits (Gaia DR3, Kallivayalil et al.), not long-term-bound. Magellanic Stream: hydrogen tail trailing their recent close pass through the Milky Way's tides. SN 1987A in LMC: brightest supernova since Kepler 1604; first naked-eye supernova since SN 1885A (Andromeda).",
+  "cur": "LMC: 49,97 kpc de distancia, ~10¹⁰ M☉, irregular, visible a simple vista en el sur. SMC: 62,1 kpc, ~10⁹ M☉, irregular. Ambas en órbitas de primer paso (Gaia DR3, Kallivayalil et al.), no ligadas a largo plazo. Magellanic Stream: cola de hidrógeno que sigue su paso cercano reciente a través de las mareas de la Vía Láctea. SN 1987A en LMC: supernova más brillante desde Kepler 1604; primera supernova a simple vista desde SN 1885A (Andromeda)."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "title",
+  "en": "Our galaxy — the Milky Way from the inside",
+  "cur": "Nuestra galaxia: la Vía Láctea desde adentro"
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "intro_sentence",
+  "en": "We live inside a barred spiral galaxy of a few hundred billion stars, and we have never seen it from the outside. Everything we know about the Milky Way's shape is reconstructed from within the disc, looking through it.",
+  "cur": "Vivimos dentro de una galaxia espiral barrada de algunos cientos de miles de millones de estrellas, y nunca la hemos visto desde fuera. Todo lo que sabemos sobre su forma está reconstruido desde dentro del disco."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.0",
+  "en": "The Milky Way is a flat, rotating disc about 100,000 light-years across but only ~1,000 light-years thick — a cosmic vinyl record. Its stars, gas, and dust are wound into spiral arms (Perseus, Sagittarius, Scutum-Centaurus, Norma, plus our own minor Orion Spur), trailing from a central bar of older stars. Wrapping all of it is a spherical halo of ancient globular clusters and the invisible dark-matter that dominates the galaxy's mass. Estimates of the star count run from 100 to 400 billion.",
+  "cur": "La Vía Láctea es un disco plano y rotatorio de unos 100 000 años luz de diámetro pero solo ~1000 años luz de grosor — un disco de vinilo cósmico. Sus estrellas, gas y polvo se enrollan en brazos espirales (Perseus, Sagittarius, Scutum-Centaurus, Norma, además de nuestro pequeño Orion Spur), que se extienden desde una barra central de estrellas antiguas. Envolviendo todo hay un halo esférico de cúmulos globulares antiguos y la materia oscura invisible que domina la masa de la galaxia. Las estimaciones del número de estrellas van de 100 a 400 mil millones."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.1",
+  "en": "The Sun is not special and not central. It sits about 26,000 light-years — roughly halfway — out from the core, on the inner edge of the Orion Spur, orbiting the galactic centre at about 230 km/s. Even at that speed one lap — a “galactic year” — takes ~230 million years; the Sun has completed only about 20 orbits in its entire existence. The last time it was here, dinosaurs were just beginning.",
+  "cur": "El Sol no es especial ni central. Se encuentra a unos 26 000 años luz —aproximadamente a mitad de distancia— del núcleo, en el borde interior del Orion Spur, orbitando el centro galáctico a unos 230 km/s. Incluso a esa velocidad, una vuelta —un \"año galáctico\"— tarda ~230 millones de años; el Sol ha completado solo unas 20 órbitas en toda su existencia. La última vez que estuvo aquí, los dinosaurios estaban apenas comenzando."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.2",
+  "en": "At the very centre, 26,000 light-years away in the direction of Sagittarius, lies Sagittarius A* — a supermassive black hole of about 4.3 million solar masses. We know its mass precisely because we have watched individual stars whip around it on decades-long orbits, and in 2022 the Event Horizon Telescope imaged its shadow directly. Every star in the galaxy, the Sun included, orbits this one point.",
+  "cur": "En el mismo centro, a 26 000 años luz en dirección a Sagittarius, se encuentra Sagittarius A* — un agujero negro supermasivo de aproximadamente 4,3 millones de masas solares. Conocemos su masa con precisión porque hemos observado estrellas individuales dando vueltas alrededor de él en órbitas que duran décadas, y en 2022 el Event Horizon Telescope capturó directamente la imagen de su sombra. Cada estrella de la galaxia, incluyendo el Sol, orbita este único punto."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.3",
+  "en": "Seeing the whole thing from inside is hard: interstellar dust blocks visible light toward the centre, so the disc's structure is mapped in infrared and radio, which pass through. The band of light we call “the Milky Way” in a dark sky is simply the combined glow of the disc's billions of stars, viewed edge-on from our seat within it — the plane of our own galaxy, seen the long way.",
+  "cur": "Ver el conjunto completo desde adentro es difícil: el polvo interestelar bloquea la luz visible hacia el centro, por lo que la estructura del disco se mapea en infrarrojo y radio, que sí pasan. La banda de luz que llamamos «la Vía Láctea» en un cielo oscuro es simplemente el brillo combinado de los miles de millones de estrellas del disco, visto de canto desde nuestro lugar dentro de él — el plano de nuestra propia galaxia, visto a lo largo."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.4",
+  "en": "Mapping it is the great project of modern astrometry. ESA's Gaia mission has measured precise distances and motions for nearly two billion stars, turning a fuzzy impression of spiral arms into a moving three-dimensional model — and revealing that the Milky Way is still digesting smaller galaxies it has swallowed, its disc gently warped and rippling from the collisions.",
+  "cur": "Mapearla es el gran proyecto de la astrometría moderna. La misión Gaia de la ESA ha medido distancias precisas y movimientos para casi dos mil millones de estrellas, transformando una impresión borrosa de brazos espirales en un modelo tridimensional dinámico — y revelando que la Vía Láctea aún está digiriendo galaxias más pequeñas que ha engullido, su disco suavemente deformado y ondulante por las colisiones."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "diagram_caption",
+  "en": "The Milky Way face-on (a schematic — we cannot photograph it from outside): a central bar, four major spiral arms plus the Orion Spur, and the Sun ~26,000 light-years out, about halfway to the edge. Sagittarius A*, the 4-million-solar-mass central black hole, sits at the core — the same layout the /explore Milky Way view renders.",
+  "cur": "La Vía Láctea de frente (esquemático — no podemos fotografiarla desde fuera): una barra central, cuatro brazos espirales principales más el Orion Spur, y el Sol a ~26 000 años luz, aproximadamente a mitad de camino del borde. Sagittarius A*, el agujero negro central de 4 millones de masas solares, se encuentra en el núcleo — la misma disposición que la vista de la Vía Láctea en /explore."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "intro_sentence",
+  "en": "Every famous \"telescope picture\" is a stack of long exposures through narrow-band filters, calibrated, registered, false-colour mapped — the image is what humans make of the count.",
+  "cur": "Cada famosa \"imagen del telescopio\" es una pila de exposiciones largas a través de filtros de banda angosta, calibrados, registrados, de color falso mapeado, la imagen es lo que los humanos hacen de la cuenta."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "narrative_101.0",
+  "en": "Hubble didn't take a photo of the Pillars of Creation. Hubble took a few dozen photos — each through a different filter, each minutes long — and a team of imaging scientists stacked them, aligned them sub-pixel, calibrated out the bad pixels and cosmic-ray hits, then assigned colours by what physics the filter captured. The thing you see on the poster is real data and real interpretation, in equal parts. Telescope imagery isn't dishonest — it's just not what your phone camera does.",
+  "cur": "Hubble no tomó una foto de los Pilares de la Creación. Hubble tomó unas cuantas docenas de fotos, cada una a través de un filtro diferente, cada minuto de largo, y un equipo de científicos de imágenes los apiló, alinearon los subpixel, calibraron los malos píxeles y los golpes de rayos cósmicos, luego asignaron colores por lo que la física del filtro captó. Lo que ves en el cartel es datos reales e interpretación real, en partes iguales. La imagen del telescopio no es deshonesta, pero no es lo que hace su cámara telefónica."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "narrative_101.1",
+  "en": "Below this section the Observatory Showcase strip pulls one signature image from each of the twelve observatories in Orrery's fleet — Hubble, JWST, Chandra, Spitzer, Kepler, TESS, Gaia, Euclid, XMM-Newton, Spektr-RG, Compton GRO, and Hitomi. Click any of them to drop into that observatory's full gallery + technical panel.",
+  "cur": "Debajo de esta sección el Observatorio Showcase tira una imagen de firma de cada uno de los doce observatorios de la flota de Orrery — Hubble, JWST, Chandra, Spitzer, Kepler, TESS, Gaia, Euclid, XMM-Newton, Spektr-RG, Compton GRO e Hitomi. Haga clic en cualquiera de ellos para entrar en la galería completa del observatorio + panel técnico."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "body_paragraphs.0",
+  "en": "A space telescope's image sensor is a CCD or CMOS chip — a grid of photon-counters. Each pixel sits on the focal plane for an exposure (anywhere from milliseconds to multiple hours), accumulating electron counts. The output is a number per pixel: how many photons of which narrow-band filter hit there. Multiple exposures are stacked to beat down read noise, registered to sub-pixel alignment, and median-combined to reject cosmic-ray hits.",
+  "cur": "El sensor de imagen de un telescopio espacial es un chip CCD o CMOS, una cuadrícula de contadores de fotones. Cada píxel se sienta en el plano focal para una exposición (en cualquier lugar de milisegundos a múltiples horas), acumulando conteos de electrones. La salida es un número por píxel: cuántos fotones de los cuales el filtro de banda estrecha golpeó allí. Múltiples exposiciones se apilan para reducir el ruido de lectura, se registran para la alineación subpixel y se combinan medianamente para rechazar los golpes de rayos cósmicos."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "body_paragraphs.1",
+  "en": "Colour is the most-misunderstood part. Telescope filters are narrow-band — they pass a specific 10–100 nm slice of the spectrum: hydrogen-alpha at 656.3 nm, doubly-ionised oxygen at 500.7 nm, infrared bands at 2 µm or 12 µm. The Hubble Palette assigns those filters to RGB channels in non-physical ways (S-II red, H-α green, O-III blue) to maximise contrast between physical processes. JWST's mid-infrared images map 21 µm, 11 µm, and 7 µm to RGB — colours your eye couldn't see if you were there.",
+  "cur": "El color es la parte más malentendida. Los filtros de Telescopio son de banda estrecha: pasan una rodaja específica de 10–100 nm del espectro: hidrógeno-alfa a 656.3 nm, oxígeno doblemente ionizado a 500,7 nm, bandas infrarrojas a 2 μm o 12 μm. La paleta Hubble asigna esos filtros a los canales RGB de maneras no físicas (S-II rojo, H-α verde, O-III azul) para maximizar el contraste entre los procesos físicos. Las imágenes de infrarrojo medio de JWST mapa 21 μm, 11 μm y 7 μm a RGB, colores que tu ojo no podía ver si estabas allí."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "body_paragraphs.2",
+  "en": "The processing pipeline is open-source for most NASA / ESA observatories. Raw exposures land in MAST (Mikulski Archive for Space Telescopes) or ESA Datalabs the moment they hit the ground; image-pipeline tutorials show exactly how a final composite is assembled. The pictures aren't manufactured — they're documented to the byte.",
+  "cur": "El gasoducto de procesamiento es de código abierto para la mayoría de los observatorios de la NASA / ESA. Las exposiciones crudas aterrizan en MAST (Mikulski Archive for Space Telescopes) o ESA Datalabs el momento en que golpean el suelo; tutoriales de imagen-pipeline muestran exactamente cómo se monta un composite final. Las fotos no se fabrican; están documentadas al byte."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "body_paragraphs.3",
+  "en": "For ground-based imaging the additional challenge is the atmosphere. [Adaptive optics](observation/adaptive-optics) corrects it in real time by sensing the turbulence with a laser guide star and counter-bending a deformable mirror. JWST and Hubble are in space partly to skip this problem entirely; the atmosphere is also opaque at most infrared and UV bands, which is the other reason.",
+  "cur": "Para las imágenes terrestres, el desafío adicional es la atmósfera. [Opticos adaptivos](observación/adaptive-optics) lo corrige en tiempo real al detectar la turbulencia con una estrella guía láser y contrarrestar un espejo deformable. JWST y Hubble están en el espacio en parte para saltar este problema completamente; la atmósfera también es opaca en la mayoría de las bandas infrarrojas y UV, que es la otra razón."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "diagram_caption",
+  "en": "Filter → CCD → stack → register → calibrate → composite → colour-map. Six steps, hours of compute, real data the whole way through.",
+  "cur": "Filtro → CCD → apilar → registro → calibrar → composite → color-mapa. Seis pasos, horas de computación, datos reales todo el camino."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "intro_sentence",
+  "en": "Pass starlight through a prism or diffraction grating and the spectrum tells you what the star is made of — every element prints a unique fingerprint of absorption lines.",
+  "cur": "Pase la luz estelar a través de un prisma o de la difusión y el espectro le dice de qué está hecha la estrella — cada elemento imprime una huella única de las líneas de absorción."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "body_paragraphs.0",
+  "en": "Each chemical element absorbs light at a unique set of wavelengths corresponding to its electronic transitions. Pass starlight through a prism and you see a rainbow with thin dark lines at exactly those wavelengths — Joseph Fraunhofer mapped 574 of them across the solar spectrum in 1814. Each line is an element in the star's atmosphere stealing photons.",
+  "cur": "Cada elemento químico absorbe la luz en un conjunto único de longitudes de onda correspondientes a sus transiciones electrónicas. Pasa la luz estelar a través de un prisma y ves un arco iris con líneas oscuras delgadas exactamente esas longitudes de onda — Joseph Fraunhofer mapeó 574 de ellos a través del espectro solar en 1814. Cada línea es un elemento en el ambiente de la estrella robando fotones."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "body_paragraphs.1",
+  "en": "Astronomy reverses Fraunhofer's process: catalogue the lines, match them to elements, and you know what the star is made of. The Sun is 73% hydrogen, 25% helium, 2% heavier elements — that came from spectroscopy, no sample needed. The same technique applied to galaxies gave us the redshift-distance relation and ultimately the expanding universe; applied to molecular clouds it gave us interstellar organic chemistry; applied to exoplanet atmospheres (via transit transmission spectroscopy) it now gives us oxygen / methane / water signatures from worlds we'll never visit.",
+  "cur": "La astronomía revierte el proceso de Fraunhofer: catalogar las líneas, igualarlas a elementos, y sabes de qué está hecha la estrella. El Sol es 73% de hidrógeno, 25% de helio, 2% de elementos más pesados, que provenían de la espectroscopia, ninguna muestra necesaria. La misma técnica aplicada a las galaxias nos dio la relación redshift-distance y, en última instancia, el universo en expansión; aplicada a las nubes moleculares nos dio química orgánica interestelar; aplicada a atmósferas exoplanet (a través de la espectroscopia de transmisión de tránsito) ahora nos da oxígeno / metano / firmas de agua de mundos que nunca visitaremos."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "body_paragraphs.2",
+  "en": "Modern spectrographs split light with a diffraction grating (a finely-ruled reflective surface, often with thousands of lines per millimetre) and feed the dispersed spectrum onto a CCD. Resolution is measured by R = λ/Δλ; consumer kit hits R~1000, JWST NIRSpec hits R~2700, the ESPRESSO spectrograph on the VLT hits R~140,000 — enough to detect a planet's reflex velocity of just centimetres per second.",
+  "cur": "Los espectrógrafos modernos dividen la luz con un grapado de difracción (una superficie reflectante finamente dominada, a menudo con miles de líneas por milímetro) y alimentan el espectro disperso sobre una CCD. La resolución se mide por R = λ/Δλ; kit de consumo golpea R~1000, JWST NIRSpec golpea R~2700, el espectrógrafo ESPRESSO en el VLT golpea R~140,000 — suficiente para detectar la velocidad de reflexión de un planeta de sólo centímetros por segundo."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "body_paragraphs.3",
+  "en": "Spectroscopy is the **most informative** astronomical observation. A single image tells you what's there; a single spectrum tells you what it's made of, how fast it's moving toward or away from you (Doppler shift), how hot it is (continuum shape), how strong its magnetic field is (Zeeman splitting), and how dense its source region is (line profile shape). Most major facilities — Hubble, JWST, VLT, Keck, ALMA — spend the majority of their time taking spectra, not pictures.",
+  "cur": "La espectroscopia es la observación astronómica ** más informativa**. Una sola imagen te dice lo que hay; un solo espectro te dice lo que está hecho, lo rápido que se mueve hacia o lejos de ti (Doppler shift), lo caliente que es (forma continua), lo fuerte que es su campo magnético (Zeeman splitting), y lo densa que es su región de origen (forma de perfil de línea). La mayoría de las instalaciones principales — Hubble, JWST, VLT, Keck, ALMA— pasan la mayor parte de su tiempo tomando espectros, no imágenes."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "diagram_caption",
+  "en": "Starlight → grating → spectrum → dark lines at element-specific wavelengths → composition + velocity + temperature + magnetic field. The most-informative observation in astronomy.",
+  "cur": "Iluminación de estrellas → grises → líneas oscuras a longitudes de onda específicas de elementos → composición + velocidad + temperatura + campo magnético. La observación más informativa en la astronomía."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "intro_sentence",
+  "en": "Mathematical solutions to general relativity that connect distant regions of spacetime. None has ever been observed. Included for completeness — they are NOT used for spaceflight.",
+  "cur": "Soluciones matemáticas de la relatividad general que conectan regiones distantes del espacio-tiempo. Ninguna ha sido observada jamás. Se incluyen por completitud — NO se utilizan para viajes espaciales."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "body_paragraphs.0",
+  "en": "A wormhole — formally an Einstein-Rosen bridge — is a topological feature of spacetime that the equations of general relativity permit but the universe has never been observed to actually instantiate. The mathematics is real (Einstein and Rosen worked it out in 1935); the physics is uncertain (no candidate has been seen); the engineering does not exist (and may be physically impossible). Treat them the way you'd treat tachyons or time-travel paradoxes: interesting puzzles in the equations, not flight hardware.",
+  "cur": "Un agujero de gusano — formalmente un puente Einstein-Rosen— es una característica topológica de tiempo espacial que las ecuaciones de la relatividad general permiten pero el universo nunca se ha observado para realmente instantánea. La matemática es real (Einstein y Rosen lo trabajaron en 1935); la física es incierta (no se ha visto ningún candidato); la ingeniería no existe (y puede ser físicamente imposible). Trate de ellos la forma en que trataría taquiones o paradojas de recorrido temporal: rompecabezas interesantes en las ecuaciones, no hardware de vuelo."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "body_paragraphs.1",
+  "en": "The original Schwarzschild solution to Einstein's equations describes a non-rotating black hole, and inside the geometry there's a second \"universe\" connected by a tube of spacetime. The catch: the tube isn't traversable. To cross it you'd have to move faster than light. Kip Thorne and others worked out in the 1980s that adding \"exotic matter\" — material with negative energy density, of which we have no examples — could in principle hold a wormhole open long enough to cross. Stephen Hawking pushed back: quantum effects probably destroy any traversable wormhole as soon as you try to use one.",
+  "cur": "La solución original de Schwarzschild a las ecuaciones de Einstein describe un agujero negro no roto, y dentro de la geometría hay un segundo \"universo\" conectado por un tubo de tiempo espacial. La captura: el tubo no es transitable. Para cruzarlo tendrías que moverte más rápido que la luz. Kip Thorne y otros trabajaron en los años 80 que agregar \"materia exótica\" — material con densidad de energía negativa, de la cual no tenemos ejemplos— podría en principio mantener un agujero de gusano abierto lo suficiente para cruzar. Stephen Hawking retrocedió: los efectos cuánticos probablemente destruirán cualquier agujero de gusano traversable tan pronto como intentes usar uno."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "body_paragraphs.2",
+  "en": "Observationally, we have no candidates. No gravitational-lensing signature, no astrophysical source has yet been identified that requires a wormhole interpretation. If they exist in nature, they're either very small (sub-atomic, quantum gravity domain) or very far away. The popular-culture wormhole — a stable, traversable, instant-shortcut between solar systems — would require physics we have no example of, and would carry the same causality-violation paradoxes that make time travel philosophically uncomfortable.",
+  "cur": "No tenemos candidatos. No hay firma de lente gravitacional, ninguna fuente astrofísica todavía ha sido identificada que requiere una interpretación de agujeros de gusano. Si existen en la naturaleza, son muy pequeños (dominio de gravedad subatómica, cuántica) o muy lejos. El agujero de gusano de la cultura popular —un corte estable, traversable, instantáneo entre los sistemas solares— requeriría la física de la que no tenemos ejemplo, y llevaría las mismas paradojas de causalidad-violación que hacen que el tiempo viaje incómoda filosóficamente."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "body_paragraphs.3",
+  "en": "So why include them in a science encyclopedia at all? Because they're a beautiful illustration of the limits of general relativity: the equations admit solutions that the universe doesn't seem to use, and figuring out *why* is one of the live frontiers of theoretical physics. Quantum gravity, AdS/CFT correspondence, the ER=EPR conjecture — all of it touches wormhole geometry. They are real mathematics. They are not real spacecraft.",
+  "cur": "¿Por qué incluirlos en una enciclopedia científica? Debido a que son una hermosa ilustración de los límites de la relatividad general: las ecuaciones admiten soluciones que el universo no parece usar, y averiguar *por qué* es una de las fronteras vivas de la física teórica. La gravedad cuántica, la correspondencia AdS/CFT, la conjetura ER=EPR, todo ello toca la geometría de los agujeros de gusano. Son matemáticas reales. No son naves espaciales reales."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "diagram_caption",
+  "en": "Einstein-Rosen bridge — a topological tube connecting distant regions of spacetime. Requires negative-energy \"exotic matter\" to be traversable. None observed; none flyable.",
+  "cur": "Puente Einstein-Rosen — un tubo topológico que conecta regiones distantes de tiempo espacial. Requiere la \"materia exótica\" negativa-energía para ser traversable. Ninguno observado; ninguno volable."
+ },
+ {
+  "rel": "science/orbits/_intro.json",
+  "at": "headline",
+  "en": "Orbits — gravity is the only physics that matters.",
+  "cur": "Órbitas — la gravedad es la única física que importa."
+ },
+ {
+  "rel": "science/orbits/_intro.json",
+  "at": "paragraphs.0",
+  "en": "An orbit is what happens when you fall toward something but keep missing it. Throw a ball off a tower hard enough and the ground curves away faster than the ball drops — the ball never lands. Every spacecraft, every moon, every planet is doing exactly that trick around something heavier.",
+  "cur": "Una órbita es lo que ocurre cuando caes hacia algo pero sigues fallando. Lanza una pelota desde una torre alta con suficiente fuerza y el suelo se curva alejándose más rápido de lo que la pelota cae — la pelota nunca aterriza. Cada nave, cada luna, cada planeta está haciendo exactamente ese truco alrededor de algo más pesado."
+ },
+ {
+  "rel": "science/orbits/_intro.json",
+  "at": "paragraphs.1",
+  "en": "All orbits are ellipses, every single one. The Sun (or Earth, or whatever you're orbiting) sits at one focal point of the ellipse, never the centre. Six numbers — size, shape, three angles, and a clock position — describe any orbit perfectly. The eight sections in this tab unpack each of those numbers, and the master equation (vis-viva) that ties them all together.",
+  "cur": "Todas las órbitas son elipses, todas y cada una. El Sol (o la Tierra, o lo que orbites) está en uno de los puntos focales de la elipse, nunca en el centro. Seis números — tamaño, forma, tres ángulos y una posición de reloj — describen cualquier órbita perfectamente. Las nueve secciones de esta pestaña desglosan cada uno de esos números, y la ecuación maestra (vis-viva) que los une."
+ },
+ {
+  "rel": "science/orbits/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Pick where you want to start. If physics is new to you, start with the Keplerian orbit — that's the whole concept in one section. If you want the workhorse equation, jump to vis-viva. If you want the historical drama, go to Kepler's three laws — a German astronomer in 1609 figured all this out from raw eyeball data.",
+  "cur": "Empieza por donde quieras. Si la física es nueva para ti, empieza por la órbita de Kepler — ese es todo el concepto en una sección. Si quieres la ecuación de trabajo, salta a vis-viva. Si quieres el drama histórico, ve a las leyes de Kepler — un astrónomo alemán en 1609 dedujo todo esto a partir de datos crudos a ojo."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "title",
+  "en": "Apsides — Perihelion, Aphelion, Perigee, Apogee",
+  "cur": "Ápsides — Perihelio, Afelio, Perigeo, Apogeo"
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "intro_sentence",
+  "en": "The two extreme points on every elliptical orbit: closest approach, and farthest.",
+  "cur": "Los dos puntos extremos de toda órbita elíptica: el acercamiento máximo y el alejamiento máximo."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "narrative_101.0",
+  "en": "Every elliptical orbit has a high point and a low point. That's all an apsis is — one of those two extremes. The closest approach to whatever you're orbiting; or the farthest. Spacecraft people obsess over these two spots because almost every important burn happens at one of them.",
+  "cur": "Toda órbita elíptica tiene un punto alto y un punto bajo. Eso es todo lo que es una apsis: uno de esos dos extremos. El acercamiento más próximo al cuerpo que órbitas, o el más lejano. Los especialistas en naves espaciales se obsesionan con estos dos puntos porque casi cada maniobra importante ocurre en uno de ellos."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "narrative_101.1",
+  "en": "Why? Two reasons. First, your speed is at its extremes there too — fastest at the close end, slowest at the far end. The Oberth effect (which we'll get to in propulsion) says you get the most bang for your fuel when you burn fast — so departure burns happen near the close end. Second, raising or lowering the OPPOSITE side of an orbit is cheapest when you push at the extreme — so to raise your orbit you fire at the low point.",
+  "cur": "¿Por qué? Dos razones. Primero, tu velocidad también está en sus extremos allí: más rápido en el extremo cercano, más lento en el lejano. El efecto Oberth (al que llegaremos en propulsión) dice que obtienes el máximo rendimiento de tu combustible cuando aceleras rápido, así que los encendidos de salida ocurren cerca del extremo cercano. Segundo, elevar o bajar el lado OPUESTO de una órbita es más barato cuando empujas en el extremo, así que para elevar tu órbita dispara en el punto bajo."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "narrative_101.2",
+  "en": "Annoying naming convention warning: every planet gets its own pair of words. Around the Sun: perihelion / aphelion. Around the Earth: perigee / apogee. Around the Moon: perilune / apolune. Same physics, just Greek roots glued to whichever body you're circling. Don't let it intimidate you — it's just one word for 'low' and one for 'high'.",
+  "cur": "Advertencia de convención de nomenclatura molesta: cada planeta tiene su propio par de palabras. Alrededor del Sol: perihelio / afelio. Alrededor de la Tierra: perigeo / apogeo. Alrededor de la Luna: perilunio / apolunio. La misma física, solo raíces griegas pegadas al cuerpo que rodeas. No dejes que te intimide: es solo una palabra para «bajo» y otra para «alto»."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "body_paragraphs.0",
+  "en": "An apsis is one of the two points on an elliptical orbit where the body is at minimum or maximum distance from its focus. The line connecting them — passing through both foci — is the line of apsides. Every Keplerian orbit has exactly two: closest, and farthest.",
+  "cur": "Una apsis es uno de los dos puntos en una órbita elíptica donde el cuerpo está a distancia mínima o máxima de su foco. La línea que los conecta, pasando a través de ambos focos, es la línea de ápsides. Toda órbita kepleriana tiene exactamente dos: el más cercano y el más lejano."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "body_paragraphs.1",
+  "en": "The names depend on what you're orbiting. Around the Sun: perihelion (closest) and aphelion (farthest), from Greek `peri` (near) and `apo` (far) plus `helios` (Sun). Around Earth: perigee and apogee. Around the Moon: periselene and aposelene, or perilune and apolune. Around any star: periastron and apastron. The ground truth is identical; only the suffix changes.",
+  "cur": "Los nombres dependen de lo que orbites. Alrededor del Sol: perihelio (más cercano) y afelio (más lejano), del griego `peri` (cerca) y `apo` (lejos) más `helios` (Sol). Alrededor de la Tierra: perigeo y apogeo. Alrededor de la Luna: periselene y aposelene, o perilunio y apolunio. Alrededor de cualquier estrella: periastro y apastro. La realidad física es idéntica; solo cambia el sufijo."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "body_paragraphs.2",
+  "en": "Apsides anchor mission timelines. The Voyager flybys were timed at closest approach (periapsis) to each target planet — peri-jove for Jupiter, peri-saturnium for Saturn. ISS reboost burns add energy to fight atmospheric drag, consistent with the rule of firing at the low point to raise the orbit. Rendezvous and docking phasing burns are placed for phasing efficiency, often near perigee (Oberth effect). The Sun's perihelion passage by Parker Solar Probe is the closest a human-made object has ever been to a star.",
+  "cur": "Los ápsides anclan cronogramas de misiones. Los sobrevuelos de Voyager fueron cronometrados en el acercamiento más próximo (periapsis) a cada planeta objetivo: peri-jove para Júpiter, peri-saturnio para Saturno. Los encendidos de reactivación de EEI añaden energía para combatir el arrastre atmosférico, consistente con la regla de disparar en el punto bajo para elevar la órbita. Los encendidos de faseado para encuentro y acoplamiento se colocan para eficiencia de faseado, a menudo cerca del perigeo (efecto Oberth). El paso de perihelio del Parker Solar Probe cerca del Sol es el acercamiento más próximo que un objeto hecho por humanos ha tenido a una estrella."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "diagram_caption",
+  "en": "Line of apsides through both foci, connecting perihelion (closest) and aphelion (farthest).",
+  "cur": "Línea de ápsides a través de ambos focos, conectando perihelio (más cercano) y afelio (más lejano)."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "title",
+  "en": "Cislunar orbits — DRO, NRHO, halo, lunar frozen",
+  "cur": "Órbitas cislunaresi — DRO, NRHO, halo, órbitas congeladas lunar"
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "intro_sentence",
+  "en": "Between Earth and the Moon's surface lies a zoo of carefully-engineered orbits — none of them obvious from two-body physics, all of them exploited by the modern lunar architecture from Gateway to robotic probes.",
+  "cur": "Entre la Tierra y la superficie lunar hay un conjunto de órbitas cuidadosamente diseñadas —ninguna obvia en la física de dos cuerpos, todas explotadas por la arquitectura lunar moderna, desde Gateway hasta sondas robóticas."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.0",
+  "en": "Near-Rectilinear Halo Orbit (NRHO) is the orbit class NASA chose for the Lunar Gateway. Geometrically: a six-day-period halo orbit around the Earth-Moon L2 Lagrange point, with perilune ≈1,500 km altitude (perilune radius ~3,200 km) over the lunar north pole and apolune ≈70,000 km over the lunar south pole. The 'near-rectilinear' name comes from the orbit's shape in the Earth-Moon rotating frame — it sweeps a long, narrow loop perpendicular to the Earth-Moon line, almost like a rectangle. Three properties made it the winning choice for Gateway. First, station-keeping ΔV is extraordinarily low (~5 m/s/year) compared to lunar low orbits (>100 m/s/year). Second, Earth communication is unobstructed because the orbit stays out of the Moon's radio shadow. Third, the long dwell near apolune over the south pole gives near-continuous coverage of the Artemis south-polar sites at Shackleton crater rim. The trade is that descent from NRHO to lunar surface is harder than from a low circular lunar orbit (~2.5 km/s vs ~1.8 km/s) — but for a programme that needs an enduring staging point, the trade is worth it.",
+  "cur": "La Órbita Halo Cercana Rectilínea (NRHO) es la clase de órbita que la NASA eligió para Gateway lunar. Geométricamente: una órbita halo de período de seis días alrededor del punto de Lagrange Tierra-Luna L2, con perilunar ≈ 1.500 km de altitud (radio perilunar ~3.200 km) sobre el polo norte lunar y apolustre ≈ 70.000 km sobre el polo sur lunar. El nombre «cercana-rectilínea» procede de la forma de la órbita en el marco giratorio Tierra-Luna — describe un bucle largo y estrecho perpendicular a la línea Tierra-Luna, casi como un rectángulo. Tres propiedades la convirtieron en la opción ganadora para Gateway. Primero, el ΔV de mantenimiento de estación es extraordinariamente bajo (~5 m/s/año) comparado con órbitas lunares bajas (>100 m/s/año). Segundo, la comunicación con la Tierra no tiene obstrucciones porque la órbita se mantiene fuera de la sombra de radio de la Luna. Tercero, la permanencia prolongada cerca del apolustre sobre el polo sur proporciona cobertura casi continua de los sitios polares sur Artemis en el borde del cráter Shackleton. El compromiso es que el descenso desde la NRHO a la superficie lunar es más difícil que desde una órbita lunar circular baja (~2,5 km/s frente a ~1,8 km/s) — pero para un programa que necesita un punto de almacenamiento duradero, el compromiso vale la pena."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.1",
+  "en": "Distant Retrograde Orbit (DRO). A large, circular-leaning orbit around the Moon in retrograde direction relative to the Moon's orbit around Earth. Distance: typically 60,000-80,000 km from the Moon. The retrograde motion plus the large radius makes DROs unusually stable — there's no station-keeping ΔV required (essentially zero, on multi-year timescales), because the orbit exploits a quirk of the three-body problem where the Earth's gravity acts as a restoring force when the spacecraft tries to drift. The Artemis-1 Orion (uncrewed flight test, November 2022) inserted into a DRO around the Moon for a 6-day stay before returning to Earth, demonstrating both the manoeuvre stack and the orbit's stability. DROs are the long-term-storage parking orbit of choice for cislunar architecture — you can park a propellant depot or a backup vehicle there and not worry about it drifting for years.",
+  "cur": "Órbita retrógrada distante (DRO). Una órbita grande que gira alrededor de la Luna en dirección retrógrada respecto a la órbita lunar alrededor de la Tierra. Distancia: típicamente 60.000-80.000 km desde la Luna. El movimiento retrógrado más el radio grande hacen las DRO extraordinariamente estables — no se requiere ΔV de mantenimiento de la estación (esencialmente cero, en escalas de múltiples años), porque la órbita aprovecha una particularidad del problema de tres cuerpos donde la gravedad de la Tierra actúa como fuerza restauradora cuando la nave espacial intenta desviarse. El Orion Artemis-1 (vuelo de prueba no tripulado, noviembre de 2022) se insertó en una DRO alrededor de la Luna para una estancia de 6 días antes de regresar a la Tierra, demostrando tanto la pila de maniobras como la estabilidad de la órbita. Las DRO son la órbita de aparcamiento de almacenamiento a largo plazo de elección para la arquitectura cislunar — puedes estacionar un depósito de propulsor o un vehículo de respaldo allí sin preocuparte de que se desvíe durante años."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.2",
+  "en": "Halo orbits at EML1 and EML2. Halo orbits are periodic 3-D families around the collinear Lagrange points (L1, L2, L3) — and around the Sun-Earth collinear points too (JWST, Gaia, Euclid all sit in Sun-Earth L2 halos). EML1 halos (between Earth and Moon) are useful for lunar gateway concepts that need continuous Earth visibility from the front side. EML2 halos (beyond the Moon from Earth's perspective) are useful for far-side observation; the proposed Lunar Crater Radio Telescope and the Chinese Queqiao relay satellite (supporting Chang'e-4 farside landing) both used variations on EML2 halo orbits. Compared to NRHO, traditional halos require more station-keeping ΔV but offer geometrically simpler orbits.",
+  "cur": "Órbitas halo en EML1 y EML2. Las órbitas halo son familias periódicas tridimensionales alrededor de los puntos de Lagrange colineales (L1, L2, L3) — y también alrededor de los puntos colineales Sol-Tierra (JWST, Gaia, Euclid todos se sitúan en halos Sol-Tierra L2). Las órbitas halo EML1 (entre la Tierra y la Luna) son útiles para conceptos de pasarela lunar que requieren visibilidad continua de la Tierra desde el lado cercano. Las órbitas halo EML2 (más allá de la Luna desde la perspectiva de la Tierra) son útiles para la observación del lado lejano; el propuesto Telescopio de Radio de Cráter Lunar y el satélite relé chino Queqiao (que apoya el aterrizaje en el lado lejano de Chang'e-4) utilizaron variaciones sobre órbitas halo EML2. En comparación con la NRHO, las órbitas halo tradicionales requieren más ΔV de mantenimiento de estación pero ofrecen órbitas geométricamente más simples."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.3",
+  "en": "Lunar frozen orbits. The Moon's gravity field is highly non-spherical because its crust is uneven (mascons — mass concentrations under the maria) and the Moon has no atmosphere to damp orbital perturbations. A satellite in a circular low lunar orbit at most inclinations will see its orbit get progressively more eccentric over months until it crashes into the surface. Lunar Prospector (1999) was deliberately deorbited at end of mission because mission planners couldn't keep it stable. The 'frozen' lunar inclinations — 27°, 50°, 76°, and 86° — are the ones where the various perturbations cancel and a satellite can stay in approximate circular orbit for years without station-keeping. The Lunar Reconnaissance Orbiter (LRO, 2009-) uses a near-frozen polar orbit at ~50 km altitude that requires only modest station-keeping. The Chinese Queqiao-2 relay satellite (2024) uses a frozen elliptical orbit at L2.",
+  "cur": "Órbitas congeladas lunares. El campo gravitatorio lunar es altamente no esférico porque su corteza es desigual (mascons — concentraciones de masa bajo los mares) y la Luna no tiene atmósfera para amortiguar perturbaciones orbitales. Un satélite en órbita lunar circular baja en la mayoría de inclinaciones verá su órbita volverse progresivamente más excéntrica durante meses hasta que se estrelle contra la superficie. El Lunar Prospector (1999) fue deliberadamente desorbitado al final de la misión porque los planificadores de la misión no podían mantenerlo estable. Las inclinaciones lunares «congeladas» — 27°, 50°, 76° y 86° — son aquellas donde las diversas perturbaciones se cancelan y un satélite puede permanecer en órbita circular aproximada durante años sin mantenimiento de la estación. El Lunar Reconnaissance Orbiter (LRO, 2009-) utiliza una órbita polar casi congelada a ~50 km de altitud que requiere solo mantenimiento modesto. El satélite retransmisora Queqiao-2 chino (2024) utiliza una órbita elíptica congelada en L2."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.4",
+  "en": "Why this matters operationally. The 1960s-style 'circular lunar orbit at 100 km' approach used by Apollo Command Modules was acceptable because crews were only there for days and re-entry was guaranteed. Modern multi-mission cislunar architecture (Artemis, ILRS, multiple crewed and robotic missions over decades) demands orbits that are cheap to maintain and don't require constant attention. NRHO + DRO + frozen lunar are the carefully-engineered solutions to that constraint. The 'cislunar economy' (DARPA's term for the projected commercial activity in Earth-Moon space) lives or dies by these orbital choices — and 5 m/s/year station-keeping vs 100 m/s/year is the difference between a viable commercial venture and a money pit.",
+  "cur": "Por qué importa operacionalmente. El enfoque «órbita lunar circular a 100 km» de estilo años 60 utilizado por los Módulos de Comando Apollo era aceptable porque las tripulaciones solo estaban allí durante días y el regreso era garantizado. La arquitectura cislunar moderna de múltiples misiones (Artemis, ILRS, múltiples misiones tripuladas y robóticas durante décadas) requiere órbitas que sean baratas de mantener y no requieran atención constante. NRHO + DRO + lunar congelada son las soluciones cuidadosamente diseñadas a esa restricción. La «economía cislunar» (término de DARPA para la actividad comercial proyectada en el espacio Tierra-Luna) vive o muere por estas decisiones orbitales — y 5 m/s/año de mantenimiento de la estación frente a 100 m/s/año es la diferencia entre un emprendimiento comercial viable y un pozo de dinero."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "diagram_caption",
+  "en": "NRHO: halo around Earth-Moon L2, 6-day period, perilune (~1,500 km) over lunar north pole, apolune (~70,000 km) over south pole for south-polar coverage, 5 m/s/yr station-keeping. DRO: large retrograde lunar orbit, essentially zero station-keeping. Halo orbits at EML1/EML2: continuous Earth/farside comms. Frozen lunar orbits: 27°/50°/76°/86° inclinations where mascon-driven perturbations cancel.",
+  "cur": "NRHO: órbita halo alrededor de Tierra-Luna L2, período de 6 días, perilunar (~1.500 km) sobre el polo norte lunar, apolunar (~70.000 km) sobre el polo sur para cobertura polar sur, mantenimiento de estación de 5 m/s/año. DRO: gran órbita lunar retrógrada, esencialmente sin mantenimiento de estación. Órbitas halo en EML1/EML2: comunicaciones continuas con la Tierra/lado lejano. Órbitas lunares congeladas: inclinaciones de 27°/50°/76°/86° donde las perturbaciones impulsadas por mascons se anulan."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "title",
+  "en": "End-of-life disposal — graveyard orbits, controlled deorbit, the 25-year rule",
+  "cur": "Eliminación al final de vida — órbitas cementerio, desorbitación controlada, la regla de 25 años"
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "intro_sentence",
+  "en": "Every satellite must have an end-of-life disposal plan to launch — either deorbit into the atmosphere, or boost to a stable graveyard orbit. Mismanaged disposal is what produces the orbital-debris problem covered in the next article.",
+  "cur": "Cada satélite debe tener un plan de eliminación al final de vida al lanzar — o desorbitar a la atmósfera, o impulsar a órbita cementerio estable. La eliminación mal hecha produce el problema de basura orbital del próximo artículo."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.0",
+  "en": "LEO disposal: deorbit. Spacecraft in LEO are dragged down by residual atmospheric density (negligible per orbit, accumulative over years). A satellite at 400 km decays naturally within a year if propulsion fails; at 800 km the natural decay time is ~50 years; at 1500 km it's centuries. The international standard codified by the IADC (Inter-Agency Space Debris Coordination Committee) in 2002 and adopted by every spacefaring nation: LEO objects must be deorbited within 25 years of end of mission. The FCC tightened this for US-licensed satellites to 5 years in 2022. Mechanism: at end of life, the spacecraft uses its remaining propellant to lower perigee into the upper atmosphere (typically 200-300 km perigee), guaranteeing rapid drag-driven decay within months. Large objects (ISS modules, Hubble, retired LEO comsats) are targeted at SPOUA — the South Pacific Ocean Uninhabited Area, a remote stretch of open ocean centred near Point Nemo, the official 'spacecraft cemetery' since the Soviet Salyut deorbits in the 1970s. Mir was deorbited there in 2001 (130 tonnes); the ISS is scheduled for controlled deorbit there in 2031.",
+  "cur": "Eliminación LEO: desorbitación. Las sondas en LEO son arrastradas por densidad atmosférica residual (despreciable por órbita, acumulativa sobre años). Un satélite a 400 km decae naturalmente en un año si la propulsión falla; a 800 km el tiempo natural es ~50 años; a 1500 km es siglos. El estándar internacional codificado por IADC (Inter-Agency Space Debris Coordination Committee) en 2002 y adoptado por toda nación espacial: los objetos LEO deben desorbitarse en 25 años tras fin de misión. La FCC apretó esto en 2022 para satélites con licencia US a 5 años. Mecanismo: al final de vida, la sonda usa propergol restante para bajar el perigeo a la atmósfera alta (típicamente 200-300 km), garantizando decaimiento rápido por fricción en meses. Objetos grandes (módulos EEI, Hubble, comsats LEO retirados) son apuntados a SPOUA — la South Pacific Ocean Uninhabited Area, extensión oceánica abierta centrada cerca de Point Nemo, el 'cementerio espacial' oficial desde las desorbitaciones soviéticas Salyut de los 70. Mir fue desorbitado allí en 2001 (130 toneladas); EEI está programado para desorbitación controlada allí en 2031."
+ }
+]

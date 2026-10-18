@@ -1,0 +1,1460 @@
+[
+ {
+  "rel": "fleet/cargo-spacecraft/atv.json",
+  "at": "name",
+  "en": "ATV (Automated Transfer Vehicle)",
+  "cur": "ATV (аутоматски брод за снабдевање)"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/atv.json",
+  "at": "tagline",
+  "en": "ESA's flagship ISS cargo carrier; 5 flights",
+  "cur": "ESA-ин водећи теретни брод за МСС; 5 летова"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/atv.json",
+  "at": "dispatch",
+  "en": "The Automated Transfer Vehicle was Europe's ISS freighter and the most sophisticated cargo craft of its time — a twenty-tonne spacecraft that navigated itself to a fully automatic docking with the Station, delivered cargo, water, air and propellant, and used its own engines to reboost the entire ISS in orbit. Five flew between 2008 and 2015, each named for a European thinker from Jules Verne to Georges Lemaître. More than a supply truck, the ATV was how Europe earned its place as a full ISS partner — and the technology it proved lives on as the European Service Module that now powers NASA's Orion on its way to the Moon.",
+  "cur": "Automated Transfer Vehicle био је европски теретњак за МСС и најсофистициранија теретна летелица свог времена — свемирски брод од двадесет тона који је сам навигирао до потпуно аутоматског спајања са Станицом, допремао терет, воду, ваздух и погонско гориво и користио сопствене моторе да подигне орбиту целе МСС. Пет их је полетело између 2008. и 2015, а сваки је понео име по једном европском мислиоцу, од Жила Верна до Жоржа Леметра. Више од обичног возила за снабдевање, ATV је био начин на који је Европа стекла своје место пуноправног партнера на МСС — а технологија коју је доказао живи даље у Европском сервисном модулу који сада покреће NASA-ин Orion на путу ка Месецу."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/atv.json",
+  "at": "description",
+  "en": "ATV (Automated Transfer Vehicle) is a robotic cargo spacecraft built by Astrium / Airbus in Multi (Europe). ESA's flagship ISS cargo carrier that flew five missions to the ISS from 2008 to 2015, delivering cargo, water, air and propellant while using its engines to reboost the Station.",
+  "cur": "ATV (Automated Transfer Vehicle) је роботски теретни свемирски брод који су направили Astrium / Airbus у месту Multi (Европа). ESA-ин водећи теретни брод за МСС полетео је на пет мисија ка МСС од 2008. до 2015. године, допремајући терет, воду, ваздух и погонско гориво, а својим моторима подизао је орбиту Станице."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/atv.json",
+  "at": "best_known_for",
+  "en": "ESA's flagship ISS cargo carrier; 5 flights",
+  "cur": "ESA-ин водећи теретни брод за МСС; 5 летова"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
+  "at": "tagline",
+  "en": "Successor to Cargo Dragon v1; trunk-mounted PV",
+  "cur": "Наследник летелице Cargo Dragon v1; соларни панели постављени на пртљажном делу"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
+  "at": "description",
+  "en": "The crewless variant of Crew Dragon, with the same body-mounted solar cells on the trunk. Differs visibly from Cygnus (round arrays) and Soyuz/Progress (rectangular wings). Returns intact with downmass — unique among ISS cargo carriers.",
+  "cur": "Верзија летелице Crew Dragon без посаде, са истим соларним ћелијама постављеним на пртљажном делу. Видљиво се разликује од летелице Cygnus (кружни панели) и летелица Soyuz/Progress (правоугаона крила). Враћа се на Земљу неоштећена, са теретом за повратак — јединствена међу теретним летелицама за МСС."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
+  "at": "best_known_for",
+  "en": "Successor to Cargo Dragon v1; trunk-mounted PV",
+  "cur": "Наследник летелице Cargo Dragon v1; соларни панели постављени на пртљажном делу"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cargo-dragon-v1.json",
+  "at": "tagline",
+  "en": "First commercial spacecraft to ISS",
+  "cur": "Прва комерцијална свемирска летелица до МСС"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cargo-dragon-v1.json",
+  "at": "description",
+  "en": "The first commercial spacecraft to berth with the ISS (COTS-2, May 2012); first contracted ISS resupply (CRS-1, October 2012). Twenty-one CRS missions plus two COTS demonstrations flew between 2010 and 2020 before the upgraded Dragon 2 took over.",
+  "cur": "Прва комерцијална свемирска летелица која се привезала за МСС (COTS-2, мај 2012); прва уговорена мисија снабдевања МСС-а (CRS-1, октобар 2012). Између 2010. и 2020. полетело је двадесет и једна мисија CRS и два демонстрациона лета COTS, пре него што је надограђени Dragon 2 преузео њихову улогу."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cargo-dragon-v1.json",
+  "at": "best_known_for",
+  "en": "First commercial spacecraft to ISS",
+  "cur": "Прва комерцијална свемирска летелица до МСС"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+  "at": "tagline",
+  "en": "Stretched Cygnus; UltraFlex round arrays",
+  "cur": "Продужени Cygnus; кружни соларни панели UltraFlex"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+  "at": "description",
+  "en": "Northrop Grumman’s pressurised-cargo carrier, recognisable by its round UltraFlex solar arrays — a fan-fold accordion pattern shared with no other ISS visitor. Burns up on reentry; no downmass.",
+  "cur": "Теретни брод компаније Northrop Grumman за превоз терета под притиском, препознатљив по кружним соларним панелима UltraFlex — склопивим у облику хармонике, какве нема ниједан други посетилац МСС-а. Сагорева при поновном уласку у атмосферу; не може да врати терет на Земљу."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+  "at": "best_known_for",
+  "en": "Stretched Cygnus; UltraFlex round arrays",
+  "cur": "Продужени Cygnus; кружни соларни панели UltraFlex"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+  "at": "tagline",
+  "en": "Pressurised-only ISS cargo carrier",
+  "cur": "Теретни брод за МСС само са херметизованим теретним простором"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+  "at": "description",
+  "en": "Cygnus Standard is a robotic cargo spacecraft built by Orbital ATK in USA. Pressurised-only ISS cargo carrier. Retired after first flight in 2013.",
+  "cur": "Cygnus Standard је роботизовани теретни свемирски брод који је направила компанија Orbital ATK у САД. Теретни брод за МСС само са херметизованим теретним простором. Повучен је после првог лета 2013. године."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+  "at": "best_known_for",
+  "en": "Pressurised-only ISS cargo carrier",
+  "cur": "Теретни брод за МСС само са херметизованим теретним простором"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/htv-x.json",
+  "at": "tagline",
+  "en": "Successor to HTV; expanded payload",
+  "cur": "Наследник свемирске летелице HTV; повећана корисна носивост"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/htv-x.json",
+  "at": "description",
+  "en": "HTV-X (Kounotori-X) is JAXA's second-generation cargo spacecraft, successor to the original HTV. The first vehicle (HTV-X1) launched October 26, 2025, berthed with the ISS on October 29, and re-entered May 27, 2026. HTV-X2 is planned.",
+  "cur": "HTV-X (Kounotori-X) је JAXA-ина теретна свемирска летелица друге генерације, наследник првобитне летелице HTV. Прва летелица (HTV-X1) лансирана је 26. октобра 2025, привезана за МСС 29. октобра, а поново је ушла у атмосферу 27. маја 2026. Планиран је и HTV-X2."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/htv-x.json",
+  "at": "best_known_for",
+  "en": "Successor to HTV; expanded payload",
+  "cur": "Наследник свемирске летелице HTV; повећана корисна носивост"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/htv.json",
+  "at": "tagline",
+  "en": "Japan's H-II Transfer Vehicle to ISS",
+  "cur": "Јапанско теретно возило H-II Transfer Vehicle за МСС"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/htv.json",
+  "at": "description",
+  "en": "HTV (Kounotori) is a robotic cargo spacecraft built by Mitsubishi Heavy Industries in Japan. Japan's H-II Transfer Vehicle flew nine missions to the ISS from 2009 to 2020, with HTV-9 (the final flight) departing in May 2020.",
+  "cur": "HTV (Kounotori) је роботизовани теретни свемирски брод који је у Јапану направила компанија Mitsubishi Heavy Industries. Јапанско теретно возило H-II Transfer Vehicle летело је на девет мисија ка МСС од 2009. до 2020. године, а HTV-9 (последњи лет) отишао је у мају 2020."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/htv.json",
+  "at": "best_known_for",
+  "en": "Japan's H-II Transfer Vehicle to ISS",
+  "cur": "Јапанско теретно возило H-II Transfer Vehicle за МСС"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-7k-tg.json",
+  "at": "tagline",
+  "en": "First robotic cargo spacecraft",
+  "cur": "Прва роботска теретна свемирска летелица"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-7k-tg.json",
+  "at": "description",
+  "en": "The first robotic cargo spacecraft, derived from Soyuz. Forty-three Progress flights to Salyut and early Mir between 1978 and 1990 established the architecture every subsequent ISS resupply has followed.",
+  "cur": "Прва роботска теретна свемирска летелица, изведена из летелице Soyuz. Четрдесет три лета летелице Progress ка станицама Salyut и ка станици Mir у њеним раним годинама, између 1978. и 1990, поставила су архитектуру коју је пратило свако потоње снабдевање МСС-а."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-7k-tg.json",
+  "at": "best_known_for",
+  "en": "First robotic cargo spacecraft",
+  "cur": "Прва роботска теретна свемирска летелица"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-m.json",
+  "at": "tagline",
+  "en": "Mir-era Progress; modernised systems",
+  "cur": "Progress из ере станице Mir; модернизовани системи"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-m.json",
+  "at": "description",
+  "en": "Progress M is a robotic cargo spacecraft built by RKK Energia in Russia. The modernised Progress-M served Mir and the ISS across 97 missions from 1989 to 2021, before being superseded by Progress-MS.",
+  "cur": "Progress M је роботски теретни свемирски брод који је направила компанија RKK Energia у Русији. Модернизовани Progress-M служио је станици Mir и МСС-у током 97 мисија, од 1989. до 2021. године, пре него што га је заменио Progress-MS."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-m.json",
+  "at": "best_known_for",
+  "en": "Mir-era Progress; modernised systems",
+  "cur": "Progress из ере станице Mir; модернизовани системи"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-ms.json",
+  "at": "tagline",
+  "en": "Current Progress generation; ISS resupply",
+  "cur": "Актуелна генерација летелице Progress; снабдевање МСС-а"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-ms.json",
+  "at": "description",
+  "en": "Progress MS is a robotic cargo spacecraft built by RKK Energia in Russia. Current Progress generation; ISS resupply. In service since 2015.",
+  "cur": "Progress MS је роботска теретна летелица коју је направио RKK Energia у Русији. Актуелна генерација летелице Progress; снабдевање МСС-а. У употреби од 2015. године."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-ms.json",
+  "at": "best_known_for",
+  "en": "Current Progress generation; ISS resupply",
+  "cur": "Актуелна генерација летелице Progress; снабдевање МСС-а"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/tianzhou.json",
+  "at": "tagline",
+  "en": "Chinese cargo spacecraft for Tiangong",
+  "cur": "Кинески теретни свемирски брод за Tiangong"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/tianzhou.json",
+  "at": "description",
+  "en": "China’s cargo spacecraft for the Tiangong space station, sharing spacecraft bus heritage with Tiangong-1. Refuels Tiangong’s propellant tanks and delivers experiment racks; first flight in 2017.",
+  "cur": "Кинески теретни свемирски брод за свемирску станицу Tiangong, који дели наслеђе свемирске платформе са Tiangong-1. Допуњава резервоаре погонског горива станице Tiangong и доставља носаче за експерименте; први лет изведен је 2017. године."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/tianzhou.json",
+  "at": "best_known_for",
+  "en": "Chinese cargo spacecraft for Tiangong",
+  "cur": "Кинески теретни свемирски брод за Tiangong"
+ },
+ {
+  "rel": "fleet/constellation/beidou.json",
+  "at": "tagline",
+  "en": "China's GNSS — global ops since 2020; unique MEO + IGSO + GEO hybrid",
+  "cur": "Кинески GNSS — глобални рад од 2020; јединствени хибрид MEO + IGSO + GEO"
+ },
+ {
+  "rel": "fleet/constellation/beidou.json",
+  "at": "description",
+  "en": "China's GNSS, formally BeiDou-3 in current form. Unique hybrid architecture mixing MEO (24 satellites at 21,500 km, 55°), inclined geosynchronous (IGSO, 3 satellites), and GEO (3 satellites). Full global coverage declared July 2020. The only GNSS with short-message satellite communication capability built into the signal — users can send short text messages directly through the constellation, useful in remote-area emergency comms.",
+  "cur": "Кинески GNSS, у садашњем облику формално BeiDou-3. Јединствена хибридна архитектура која комбинује MEO (24 сателита на 21.500 km, 55°), нагнуту геосинхрону орбиту (IGSO, 3 сателита) и GEO (3 сателита). Пуна глобална покривеност проглашена је у јулу 2020. Једини GNSS са могућношћу сателитске комуникације кратким порукама уграђеном у сам сигнал — корисници могу слати кратке текстуалне поруке директно преко констелације, што је корисно за хитну комуникацију у удаљеним областима."
+ },
+ {
+  "rel": "fleet/constellation/beidou.json",
+  "at": "best_known_for",
+  "en": "China's GNSS — global ops since 2020; unique MEO + IGSO + GEO hybrid",
+  "cur": "Кинески GNSS — глобални рад од 2020; јединствени хибрид MEO + IGSO + GEO"
+ },
+ {
+  "rel": "fleet/constellation/galileo-gnss.json",
+  "at": "tagline",
+  "en": "Europe's civilian GNSS — ~30 sats, sub-metre positioning",
+  "cur": "Европски цивилни GNSS — ~30 сателита, позиционирање са тачношћу испод метра"
+ },
+ {
+  "rel": "fleet/constellation/galileo-gnss.json",
+  "at": "description",
+  "en": "Europe's civilian GNSS — 34 satellites have been launched (4 IOV + 30 FOC); 27 operational + 1 commissioning as of May 2026; constellation target is 30 at 23,222 km MEO in 3 orbital planes inclined 56°. First operational service 2016; full operational capability declaration pending ESA/EUSPA official announcement. Unlike GPS (military operator) and GLONASS (military operator), Galileo is managed by EUSPA, an EU civilian agency. Designed for sub-metre positioning with open + commercial + Public Regulated Service tiers. Search and Rescue payload integrated for emergency-beacon detection.",
+  "cur": "Европски цивилни GNSS — лансирано је 34 сателита (4 IOV + 30 FOC); од маја 2026. 27 је у оперативном раду, а 1 у фази пуштања у рад; циљна величина констелације је 30 сателита на висини од 23.222 km у средњој Земљиној орбити (MEO), у 3 орбиталне равни нагнуте за 56°. Прва оперативна услуга почела је 2016. године; објава пуне оперативне способности чека службено саопштење ESA/EUSPA. За разлику од система GPS (војни оператер) и GLONASS (војни оператер), Galileo води EUSPA, цивилна агенција Европске уније. Намењен је позиционирању са тачношћу испод метра, са отвореним и комерцијалним нивоом услуге, као и јавном регулисаном услугом (Public Regulated Service). Уграђен је и терет за потрагу и спасавање, који служи за откривање сигнала из радио-маркера за узбуњивање."
+ },
+ {
+  "rel": "fleet/constellation/galileo-gnss.json",
+  "at": "best_known_for",
+  "en": "Europe's civilian GNSS — ~30 sats, sub-metre positioning",
+  "cur": "Европски цивилни GNSS — ~30 сателита, позиционирање са тачношћу испод метра"
+ },
+ {
+  "rel": "fleet/constellation/glonass.json",
+  "at": "tagline",
+  "en": "Russia's GNSS — 24 sats, restored to full coverage in 2011",
+  "cur": "Руски GNSS — 24 сателита, потпуна покривеност обновљена 2011."
+ },
+ {
+  "rel": "fleet/constellation/glonass.json",
+  "at": "description",
+  "en": "Russia's GNSS — 24 active satellites at 19,130 km MEO in 3 planes inclined 64.8° (the high inclination is deliberate for better high-latitude coverage relative to GPS). First launched 1982; reached full constellation in 1995, then collapsed in the late 1990s / early 2000s after Soviet funding ended; restored to full 24-satellite operational status around 2010-2011 with funding revival. Continues operational in 2026. Operated by Roscosmos in coordination with the Russian Ministry of Defence.",
+  "cur": "Руски GNSS — 24 активна сателита на висини од 19.130 km у средњој земљиној орбити (MEO), у 3 равни нагнуте за 64,8° (велики нагиб је намеран, ради боље покривености високих географских ширина у односу на GPS). Први пут лансиран 1982; пуни састав сазвежђа достигнут је 1995, а затим је крајем 1990-их и почетком 2000-их дошло до распада система након престанка совјетског финансирања; пуни оперативни статус од 24 сателита обновљен је око 2010–2011, оживљавањем финансирања. Остаје у оперативној употреби и 2026. Њиме управља Roscosmos у координацији са руским Министарством одбране."
+ },
+ {
+  "rel": "fleet/constellation/glonass.json",
+  "at": "best_known_for",
+  "en": "Russia's GNSS — 24 sats, restored to full coverage in 2011",
+  "cur": "Руски GNSS — 24 сателита, потпуна покривеност обновљена 2011."
+ },
+ {
+  "rel": "fleet/constellation/goes-noaa.json",
+  "at": "name",
+  "en": "GOES (NOAA Weather)",
+  "cur": "GOES (NOAA метеоролошки сателити)"
+ },
+ {
+  "rel": "fleet/constellation/goes-noaa.json",
+  "at": "tagline",
+  "en": "NOAA geostationary weather pair — Americas continuous coverage",
+  "cur": "NOAA-ин геостационарни метеоролошки пар — непрекидна покривеност обе Америке"
+ },
+ {
+  "rel": "fleet/constellation/goes-noaa.json",
+  "at": "description",
+  "en": "Geostationary Operational Environmental Satellite — NOAA's geostationary weather pair. GOES-19 (GOES-East at 75.2° W) and GOES-18 (GOES-West at 137.0° W) are the operational pair as of April 2025, providing continuous coverage of the Americas. GOES-16 is stored as backup; GOES-17 was decommissioned in January 2023. The GOES-R series carries the Advanced Baseline Imager capable of 30-second mesoscale scans for hurricane cores and severe-storm tracking. Built by Lockheed Martin; data products freely available.",
+  "cur": "Geostationary Operational Environmental Satellite — NOAA-ин геостационарни метеоролошки пар. GOES-19 (GOES-East на 75,2° W) и GOES-18 (GOES-West на 137,0° W) су оперативни пар од априла 2025. године и обезбеђују непрекидну покривеност обе Америке. GOES-16 се чува као резерва, а GOES-17 је стављен ван погона у јануару 2023. године. Серија GOES-R носи Advanced Baseline Imager, који може да изводи мезоскална снимања на сваких 30 секунди, намењена праћењу језгра урагана и жестоких олуја. Направио га је Lockheed Martin; подаци су слободно доступни."
+ },
+ {
+  "rel": "fleet/constellation/goes-noaa.json",
+  "at": "best_known_for",
+  "en": "NOAA geostationary weather pair — Americas continuous coverage",
+  "cur": "NOAA-ин геостационарни метеоролошки пар — непрекидна покривеност обе Америке"
+ },
+ {
+  "rel": "fleet/constellation/gps-gnss.json",
+  "at": "name",
+  "en": "GPS (Global Positioning System)",
+  "cur": "GPS (Глобални позициони систем)"
+ },
+ {
+  "rel": "fleet/constellation/gps-gnss.json",
+  "at": "tagline",
+  "en": "The original GNSS — 31 satellites, free public service since 2000",
+  "cur": "Изворни GNSS — 31 сателит, бесплатна јавна услуга од 2000. године"
+ },
+ {
+  "rel": "fleet/constellation/gps-gnss.json",
+  "at": "description",
+  "en": "Global Positioning System — the original GNSS and still the most widely used. 31 active satellites at 20,180 km in 6 orbital planes inclined 55°. Operated by US Space Force; originally Department of Defense. President Reagan's 1983 directive promised future civilian GPS access after the Korean Air Lines 007 shootdown, but civilian unencrypted L1 C/A signal access was not available until Selective Availability was turned off in May 2000, dramatically improving civilian accuracy. Modernised L1C, L2C, L5 signals on Block IIF and III satellites.",
+  "cur": "Глобални позициони систем — изворни GNSS и још увек најшире коришћен. 31 активан сателит на висини од 20.180 km у 6 орбиталних равни нагнутих 55°. Њиме управља US Space Force; првобитно Department of Defense. Директива председника Регана из 1983. обећала је будући цивилни приступ GPS-у након обарања авиона Korean Air Lines 007, али цивилни приступ нешифрованом L1 C/A сигналу није био могућ све док Selective Availability није искључена у мају 2000. године, чиме је цивилна тачност драматично побољшана. Модернизовани сигнали L1C, L2C и L5 налазе се на сателитима Block IIF и III."
+ },
+ {
+  "rel": "fleet/constellation/gps-gnss.json",
+  "at": "best_known_for",
+  "en": "The original GNSS — 31 satellites, free public service since 2000",
+  "cur": "Изворни GNSS — 31 сателит, бесплатна јавна услуга од 2000. године"
+ },
+ {
+  "rel": "fleet/constellation/inmarsat.json",
+  "at": "tagline",
+  "en": "GEO mobile comms — maritime, aviation, GMDSS backbone",
+  "cur": "Мобилне комуникације преко GEO сателита — поморство, ваздухопловство, окосница система GMDSS"
+ },
+ {
+  "rel": "fleet/constellation/inmarsat.json",
+  "at": "description",
+  "en": "Geostationary mobile-satellite communications — 14+ satellites in GEO providing maritime, aviation, and remote-area voice + data services. Originally founded 1979 as the International Maritime Satellite Organization, an intergovernmental treaty body for ship-to-shore comms (the predecessor of GMDSS). Privatised 1999. Acquired by Viasat in 2023 to combine with Viasat's Ka-band fleet.",
+  "cur": "Геостационарне мобилне сателитске комуникације — више од 14 сателита у GEO који пружају гласовне услуге и услуге преноса података за поморство, ваздухопловство и удаљена подручја. Првобитно основана 1979. као International Maritime Satellite Organization, међувладино тело утемељено уговором, за комуникацију између бродова и обале (претходница система GMDSS). Приватизована 1999. године. Купио ју је Viasat 2023. године ради спајања са Viasat-овом флотом у Ka-опсегу."
+ },
+ {
+  "rel": "fleet/constellation/inmarsat.json",
+  "at": "best_known_for",
+  "en": "GEO mobile comms — maritime, aviation, GMDSS backbone",
+  "cur": "Мобилне комуникације преко GEO сателита — поморство, ваздухопловство, окосница система GMDSS"
+ },
+ {
+  "rel": "fleet/constellation/iridium-next.json",
+  "at": "tagline",
+  "en": "Polar LEO comms — 66 operational sats +9 spares, GMDSS partner, global voice/data",
+  "cur": "Комуникације у поларној LEO орбити — 66 оперативних сателита и 9 резервних, партнер GMDSS-а, глобални глас и подаци"
+ },
+ {
+  "rel": "fleet/constellation/iridium-next.json",
+  "at": "description",
+  "en": "Second-generation Iridium constellation — 66 operational satellites at 780 km in 6 polar planes (11 per plane), with 9 on-orbit spares, deployed 2017-2019 to replace the original 1998 Iridium fleet. Total of 75 satellites were launched; 5 additional ground spares were launched in May 2023. Carries voice + data + machine-to-machine + sat-phone services. One of two GMDSS (Global Maritime Distress and Safety System) satellite providers (alongside Inmarsat) — ocean-going vessels can fulfill GMDSS requirements via Iridium OR Inmarsat. The collision of the original Iridium 33 with derelict Cosmos 2251 in 2009 was the first known satellite-to-satellite collision in history.",
+  "cur": "Друга генерација констелације Iridium — 66 оперативних сателита на 780 km у 6 поларних равни (по 11 у свакој), са 9 резервних сателита у орбити, постављена од 2017. до 2019. како би заменила првобитну флоту Iridium из 1998. Лансирано је укупно 75 сателита, а још 5 додатних резервних сателита за тло лансирано је у мају 2023. Пружа услуге гласа, података, комуникације између машина и сателитске телефоније. Један је од два сателитска провајдера система GMDSS (Глобални поморски систем за случај нужде и безбедност), уз Inmarsat — прекоокеански бродови могу испунити захтеве GMDSS-а преко система Iridium ИЛИ Inmarsat. Судар првобитног сателита Iridium 33 са напуштеним сателитом Cosmos 2251 2009. године био је први познати судар два сателита у историји."
+ },
+ {
+  "rel": "fleet/constellation/iridium-next.json",
+  "at": "best_known_for",
+  "en": "Polar LEO comms — 66 operational sats +9 spares, GMDSS partner, global voice/data",
+  "cur": "Комуникације у поларној LEO орбити — 66 оперативних сателита и 9 резервних, партнер GMDSS-а, глобални глас и подаци"
+ },
+ {
+  "rel": "fleet/constellation/kuiper.json",
+  "at": "name",
+  "en": "Amazon Leo (formerly Project Kuiper)",
+  "cur": "Amazon Leo (раније Project Kuiper)"
+ },
+ {
+  "rel": "fleet/constellation/kuiper.json",
+  "at": "tagline",
+  "en": "Amazon LEO broadband — 3,236 sats planned, commercial beta 2026",
+  "cur": "Amazon LEO широкопојасни интернет — планирано 3.236 сателита, комерцијална бета верзија 2026."
+ },
+ {
+  "rel": "fleet/constellation/kuiper.json",
+  "at": "description",
+  "en": "Amazon's answer to Starlink — 3,236 satellites at 590-630 km in 98 orbital planes. First prototype launch in October 2023 (KuiperSat-1 and -2 test launch); first 27 production satellites launched April 2025 atop Atlas V. As of mid-2026, ~230+ production satellites are operational. FCC license requires 50% deployment (1,618 sats) by July 2026 and 100% by July 2029; Amazon has requested a two-year extension due to the current shortfall. The constellation is expected to roughly double the LEO active-satellite population if fully deployed.",
+  "cur": "Одговор компаније Amazon на Starlink — 3.236 сателита на висинама од 590 до 630 km у 98 орбиталних равни. Прво лансирање прототипова било је у октобру 2023. (пробно лансирање KuiperSat-1 и KuiperSat-2); првих 27 серијских сателита лансирано је у априлу 2025. помоћу ракете Atlas V. Од средине 2026. године ради ~230+ серијских сателита. Лиценца FCC-а захтева да до јула 2026. буде постављено 50% (1.618 сателита), а до јула 2029. свих 100%; Amazon је због тренутног заостатка затражио продужење рока од две године. Очекује се да ће констелација, ако буде потпуно постављена, отприлике удвостручити број активних сателита у ниској орбити Земље (LEO)."
+ },
+ {
+  "rel": "fleet/constellation/kuiper.json",
+  "at": "best_known_for",
+  "en": "Amazon Leo broadband — 3,236 sats planned, commercial beta 2026",
+  "cur": "Amazon Leo широкопојасни интернет — планирано 3.236 сателита, комерцијална бета верзија 2026."
+ },
+ {
+  "rel": "fleet/constellation/landsat.json",
+  "at": "tagline",
+  "en": "50+ years of continuous Earth imaging — Landsat 1 to 9",
+  "cur": "Више од 50 година непрекидног снимања Земље — од Landsat 1 до Landsat 9"
+ },
+ {
+  "rel": "fleet/constellation/landsat.json",
+  "at": "description",
+  "en": "The longest continuous record of Earth imaging in history — Landsat 1 launched 1972 (originally as ERTS-1), continuing through Landsat 9 (2021). Currently operational pair Landsat 8 (2013) + Landsat 9 (2021) at 705 km sun-synchronous orbit, 98.2° inclination. 30 m multispectral resolution. NASA builds + launches; USGS operates and distributes data. Free public access since 2008 turned Landsat into the global reference dataset for climate change, deforestation, and urban growth.",
+  "cur": "Најдужи непрекидни запис снимања Земље у историји — Landsat 1 лансиран је 1972. (првобитно као ERTS-1), а програм се наставља до Landsat 9 (2021). Тренутно су у раду пар Landsat 8 (2013) и Landsat 9 (2021) у сунчево-синхроној орбити на 705 km, са нагибом од 98,2°. Мултиспектрална резолуција од 30 m. NASA гради и лансира, а USGS управља сателитима и дистрибуира податке. Бесплатан јавни приступ од 2008. претворио је Landsat у глобални референтни скуп података о климатским променама, крчењу шума и расту градова."
+ },
+ {
+  "rel": "fleet/constellation/landsat.json",
+  "at": "best_known_for",
+  "en": "50+ years of continuous Earth imaging — Landsat 1 to 9",
+  "cur": "Више од 50 година непрекидног снимања Земље — од Landsat 1 до Landsat 9"
+ },
+ {
+  "rel": "fleet/constellation/molniya.json",
+  "at": "tagline",
+  "en": "Russian 12-hour HEO comms — 63.4° critical inclination locks apogee over the north",
+  "cur": "Russian 12-часовне комуникације преко веома елиптичне орбите — критични нагиб од 63,4° задржава апогеј изнад севера"
+ },
+ {
+  "rel": "fleet/constellation/molniya.json",
+  "at": "description",
+  "en": "Russian highly-eccentric orbit constellation. The 12-hour Molniya orbit (~600 × 40,000 km) at the 63.4° critical inclination exploits Earth's J2 perturbation to lock the line of apsides — apogee stays parked over the Northern Hemisphere, giving high-latitude users elevation angles a geostationary satellite can never deliver. Molniya-1 launched in 1965; the line continued through Molniya-1/2/3, the Oko early-warning satellites, and the Meridian comms successor in service today.",
+  "cur": "Руска констелација сателита на веома елиптичним орбитама. The 12-часовна орбита Molniya (~600 × 40.000 km) са критичним нагибом од 63,4° користи Земљину J2 пертурбацију да закључа линију апсида — апогеј остаје „паркиран“ изнад Северне хемисфере и корисницима на високим географским ширинама пружа елевационе углове које геостационарни сателит никада не може да пружи. Molniya-1 лансиран је 1965. године; серија се наставила кроз Molniya-1/2/3, сателите за рано упозоравање Oko и наследника за комуникације Meridian, који је у служби и данас."
+ },
+ {
+  "rel": "fleet/constellation/molniya.json",
+  "at": "best_known_for",
+  "en": "12-hour HEO at 63.4° critical inclination — apogee parked over Russia",
+  "cur": "12-часовна веома елиптична орбита са критичним нагибом од 63,4° — апогеј „паркиран“ изнад Русије"
+ },
+ {
+  "rel": "fleet/constellation/o3b-mpower.json",
+  "at": "name",
+  "en": "O3b / O3b mPOWER (MEO comms)",
+  "cur": "O3b / O3b mPOWER (комуникације у средњој орбити)"
+ },
+ {
+  "rel": "fleet/constellation/o3b-mpower.json",
+  "at": "tagline",
+  "en": "Only operational MEO commercial broadband — 20+ sats",
+  "cur": "Једини оперативни комерцијални широкопојасни систем у средњој орбити (MEO) — преко 20 сателита"
+ },
+ {
+  "rel": "fleet/constellation/o3b-mpower.json",
+  "at": "description",
+  "en": "The only operational commercial MEO broadband constellation — original O3b deployed 2013-2019, second-generation O3b mPOWER from 2022 onwards. 20+ satellites at 8,063 km equatorial orbit. Latency between GEO and LEO, customer base focused on telecom backhaul, maritime, and remote enterprise. Operated by SES (Luxembourg). Named for the 'other 3 billion' — the original mission was bringing connectivity to areas not served by terrestrial broadband.",
+  "cur": "Једина оперативна комерцијална широкопојасна констелација у средњој орбити (MEO) — првобитни O3b постављен је од 2013. до 2019. године, а друга генерација, O3b mPOWER, од 2022. надаље. Преко 20 сателита налази се у екваторијалној орбити на 8.063 km. Кашњење сигнала је између оног у GEO и LEO орбити, а корисничку базу чине пре свега пружаоци телекомуникационе везе између базних станица и језгра мреже, поморски саобраћај и удаљена предузећа. Системом управља SES (Луксембург). Назив потиче од „осталих 3 милијарде“ — првобитна мисија била је да обезбеди повезаност подручјима која нису покривена земаљским широкопојасним мрежама."
+ },
+ {
+  "rel": "fleet/constellation/o3b-mpower.json",
+  "at": "best_known_for",
+  "en": "Only operational MEO commercial broadband — 20+ sats",
+  "cur": "Једини оперативни комерцијални широкопојасни систем у средњој орбити (MEO) — преко 20 сателита"
+ },
+ {
+  "rel": "fleet/constellation/oneweb.json",
+  "at": "tagline",
+  "en": "First-gen LEO broadband — 648 sats in 12 polar planes",
+  "cur": "Широкопојасни интернет из LEO прве генерације — 648 сателита у 12 поларних равни"
+ },
+ {
+  "rel": "fleet/constellation/oneweb.json",
+  "at": "description",
+  "en": "First-generation LEO broadband constellation, 648 satellites at 1,200 km in 12 polar planes. Polar orbits give full pole-to-pole coverage that mid-inclination Starlink shells cannot reach. Acquired by Eutelsat in 2023 to form Eutelsat OneWeb; commercial service now bundled with Eutelsat GEO assets. Higher altitude than Starlink means slightly higher latency but fewer satellites needed.",
+  "cur": "Констелација широкопојасног интернета у LEO прве генерације, 648 сателита на висини од 1.200 km у 12 поларних равни. Поларне орбите омогућавају потпуну покривеност од пола до пола, до које Starlink-ове љуске средњег нагиба не допиру. Eutelsat је 2023. преузео ову констелацију и основао Eutelsat OneWeb; комерцијална услуга сада се нуди заједно са Eutelsat-овим GEO капацитетима. Већа висина него код система Starlink доноси нешто већу латенцију, али је потребно мање сателита."
+ },
+ {
+  "rel": "fleet/constellation/oneweb.json",
+  "at": "best_known_for",
+  "en": "First-gen LEO broadband — 648 sats in 12 polar planes",
+  "cur": "Широкопојасни интернет из LEO прве генерације — 648 сателита у 12 поларних равни"
+ },
+ {
+  "rel": "fleet/constellation/planet-labs.json",
+  "at": "name",
+  "en": "Planet Labs (PlanetScope + SkySat)",
+  "cur": "Planet Labs (PlanetScope + SkySat)"
+ },
+ {
+  "rel": "fleet/constellation/planet-labs.json",
+  "at": "tagline",
+  "en": "Daily Earth imaging — ~150 CubeSats + 21 SkySats",
+  "cur": "Свакодневно снимање Земље — ~150 CubeSats + 21 SkySats"
+ },
+ {
+  "rel": "fleet/constellation/planet-labs.json",
+  "at": "description",
+  "en": "Daily-revisit Earth imaging from two fleets — ~150 PlanetScope 3U CubeSats (3-5 m resolution global daily imagery) and ~21 SkySats (50 cm tasked high-resolution). All at ~475 km sun-synchronous orbit. The 'Doves' philosophy was 'launch hundreds of cheap small satellites, accept a few failures, get every patch of land imaged every day' — and it works. Planet's image archive is consulted by NGOs, governments, and journalists.",
+  "cur": "Снимање Земље са свакодневним поновним проласком помоћу две флоте — ~150 PlanetScope 3U CubeSats (глобални снимци свакодневне резолуције од 3 до 5 m) и ~21 SkySats (снимци високе резолуције од 50 cm на захтев). Сви се налазе у сунчево-синхроној орбити на ~475 km. Филозофија „Doves\" гласила је: „лансирати стотине јефтиних малих сателита, прихватити неколико кварова, и снимити сваки комад копна сваког дана\" — и функционише. Архиву снимака компаније Planet користе невладине организације, владе и новинари."
+ },
+ {
+  "rel": "fleet/constellation/planet-labs.json",
+  "at": "best_known_for",
+  "en": "Daily Earth imaging — ~150 CubeSats + 21 SkySats",
+  "cur": "Свакодневно снимање Земље — ~150 CubeSats + 21 SkySats"
+ },
+ {
+  "rel": "fleet/constellation/sbirs-heo.json",
+  "at": "tagline",
+  "en": "US early-warning IR sensors hosted on classified Tundra-orbit platforms",
+  "cur": "Амерички инфрацрвени сензори за рано упозоравање на поверљивим платформама у орбити типа Tundra"
+ },
+ {
+  "rel": "fleet/constellation/sbirs-heo.json",
+  "at": "description",
+  "en": "The HEO segment of the US Space-Based Infrared System (SBIRS) — infrared missile-warning sensors hosted on classified host satellites in the 24-hour Tundra orbit at the 63.4° critical inclination. By dwelling at apogee over high latitudes, SBIRS-HEO covers the polar regions where geostationary DSP / SBIRS-GEO sensors look at too low an angle. SBIRS HEO-1 launched in 2006 as a hosted payload on USA-184.",
+  "cur": "HEO сегмент америчког свемирског инфрацрвеног система Space-Based Infrared System (SBIRS) — инфрацрвени сензори за упозоравање на лансирање пројектила, смештени на поверљивим сателитима домаћинима у 24-часовној орбити типа Tundra са критичним нагибом од 63,4°. Задржавајући се у апогеју изнад високих географских ширина, SBIRS-HEO покрива поларна подручја у која геостационарни сензори DSP / SBIRS-GEO гледају под превише малим углом. SBIRS HEO-1 лансиран је 2006. године као корисни терет на сателиту USA-184."
+ },
+ {
+  "rel": "fleet/constellation/sbirs-heo.json",
+  "at": "best_known_for",
+  "en": "HEO-segment IR early warning — covers polar latitudes the GEO sensors can't",
+  "cur": "Инфрацрвено рано упозоравање из HEO сегмента — покрива поларне географске ширине које GEO сензори не могу да обухвате"
+ },
+ {
+  "rel": "fleet/constellation/sentinel-copernicus.json",
+  "at": "name",
+  "en": "Sentinel (Copernicus)",
+  "cur": "Sentinel (Copernicus)"
+ },
+ {
+  "rel": "fleet/constellation/sentinel-copernicus.json",
+  "at": "tagline",
+  "en": "Europe's Earth-obs flagship — Sentinel-1/2/3/5P/6",
+  "cur": "Европска водећа флота за осматрање Земље — Sentinel-1/2/3/5P/6"
+ },
+ {
+  "rel": "fleet/constellation/sentinel-copernicus.json",
+  "at": "description",
+  "en": "Europe's flagship Earth-observation programme, operated by ESA on behalf of the European Commission's Copernicus environmental-monitoring service. Sentinel-1 (C-band SAR radar imaging), Sentinel-2 (multispectral optical at 10-60 m), Sentinel-3 (ocean + land), Sentinel-5P (atmospheric chemistry), Sentinel-6 (altimetry). All in sun-synchronous LEO. Free + open data policy — every Sentinel image is downloadable without licensing fees.",
+  "cur": "Водећи европски програм за осматрање Земље, којим у име службе за праћење животне средине Copernicus Европске комисије управља ESA. Sentinel-1 (радарско снимање C-опсега помоћу SAR-а), Sentinel-2 (мултиспектрално оптичко снимање с резолуцијом од 10 до 60 m), Sentinel-3 (океани и копно), Sentinel-5P (хемија атмосфере), Sentinel-6 (алтиметрија). Сви се налазе у сунчево-синхроној ниској орбити око Земље (LEO). Политика бесплатних и отворених података — сваки снимак програма Sentinel може се преузети без накнаде за лиценцирање."
+ },
+ {
+  "rel": "fleet/constellation/sentinel-copernicus.json",
+  "at": "best_known_for",
+  "en": "Europe's Earth-obs flagship — Sentinel-1/2/3/5P/6",
+  "cur": "Водећи европски програм за осматрање Земље — Sentinel-1/2/3/5P/6"
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "tagline",
+  "en": "Largest LEO broadband constellation — over 10,800 active satellites",
+  "cur": "Највећа широкопојасна констелација у ниској орбити Земље — преко 10.800 активних сателита"
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "description",
+  "en": "SpaceX's broadband LEO constellation — over 10,800 active satellites at 550 km altitude split across multiple shells (53°, 70°, 97.6° inclinations). First operational service 2019; achieved global coverage 2023. Each Gen-2 satellite carries laser inter-satellite links, allowing the constellation to route packets between satellites without ground station hops. Autonomous collision-avoidance system performs tens of thousands of manoeuvres per year — more than every other LEO operator combined.",
+  "cur": "SpaceX-ова широкопојасна констелација у ниској орбити Земље — преко 10.800 активних сателита на висини од 550 km, распоређених у више љуски (нагиба 53°, 70° и 97,6°). Прва оперативна услуга почела је 2019, а глобална покривеност остварена је 2023. Сваки сателит друге генерације (Gen-2) има ласерске међусателитске везе, па констелација може да усмерава пакете података између сателита без прескока преко земаљских станица. Аутономни систем за избегавање судара изводи десетине хиљада маневара годишње — више него сви остали оператери у ниској орбити Земље заједно."
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "best_known_for",
+  "en": "Largest LEO broadband constellation — ~6,500–7,000 active satellites",
+  "cur": "Највећа широкопојасна констелација у ниској орбити Земље — око 6.500–7.000 активних сателита"
+ },
+ {
+  "rel": "fleet/constellation/tundra-sirius.json",
+  "at": "name",
+  "en": "Sirius Satellite Radio (Tundra) — Historical (2000-2016)",
+  "cur": "Sirius Satellite Radio (Tundra) — историјски (2000–2016)"
+ },
+ {
+  "rel": "fleet/constellation/tundra-sirius.json",
+  "at": "tagline",
+  "en": "Historic commercial Tundra-orbit constellation — decommissioned 2016",
+  "cur": "Историјска комерцијална констелација у Tundra орбити — повучена из употребе 2016."
+ },
+ {
+  "rel": "fleet/constellation/tundra-sirius.json",
+  "at": "description",
+  "en": "Historic satellite-radio constellation in the 24-hour Tundra orbit (~25,000 × 35,786 km) at the 63.4° critical inclination. The three original Sirius FM satellites (FM-1, FM-2, FM-3) each dwelt over CONUS for roughly two-thirds of every orbit, giving urban-canyon receivers elevation angles a geostationary signal couldn't match. Sirius FM-1 launched from Baikonur in 2000 on a Proton-K; FM-2 and FM-3 followed. The company merged with XM Radio in 2008 to form Sirius XM. The Tundra-orbit constellation was decommissioned in 2016, and Sirius XM now operates a fleet of ~7 geostationary satellites.",
+  "cur": "Историјска констелација сателитског радија у 24-часовној Tundra орбити (~25.000 × 35.786 km) са критичним нагибом од 63,4°. Три изворна сателита Sirius FM (FM-1, FM-2, FM-3) боравила су изнад CONUS-а отприлике две трећине сваке орбите, па су пријемницима у урбаним кањонима обезбеђивала углове елевације које геостационарни сигнал није могао да постигне. Sirius FM-1 лансиран је са Бајконура 2000. године ракетом Proton-K; FM-2 и FM-3 су уследили. Компанија се 2008. спојила са XM Radio и тако настао је Sirius XM. Констелација у Tundra орбити повучена је из употребе 2016. године, а Sirius XM данас управља флотом од ~7 геостационарних сателита."
+ },
+ {
+  "rel": "fleet/constellation/tundra-sirius.json",
+  "at": "best_known_for",
+  "en": "Historic 24-hour Tundra-orbit constellation (2000-2016)",
+  "cur": "Историјска 24-часовна Tundra-орбитална констелација (2000-2016)"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+  "at": "tagline",
+  "en": "Original Apollo CSM design — never flew crewed; killed Apollo 1 crew on the pad 1967-01-27. Redesign produced the Block II flown 1968-1975",
+  "cur": "Првобитни Apollo CSM — никад није летео с посадом; 1967-01-27 на рампи усмртио посаду Apollo 1. Редизајн дао Block II (1968-1975)"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+  "at": "dispatch",
+  "en": "Block I is the Apollo hardware that never flew a crew, and part of the reason the rest of the program survived. It was the first cut at the Command Module — meant only for uncrewed and early Earth-orbit tests — and it carried a set of assumptions that looked reasonable in 1966: a cabin of pure oxygen held above sea-level pressure, a hatch that opened inward, and interior materials chosen without much thought to fire. On 27 January 1967 a spark on the launch pad turned those assumptions lethal in seconds, and the Apollo 1 crew died in a test everyone had treated as routine. Block I was retired into that lesson; the Block II that reached the Moon was, in large part, the list of everything Block I got wrong.",
+  "cur": "Block I је Apollo хардвер који никада није летео са посадом, и део је разлога зашто је остатак програма преживео. То је била прва верзија Command Module — намењена само неконтролисаним и раним тестовима на орбити Земље — и носила је скуп претпоставки које су изгледале разумне 1966. године: кабина са чистим кисеоником под притиском изнад морског нивоа, лук који се отворио према унутра, и материјали унутрашњости одабрани без много размишљања о пожару. На 27. јануара 1967. искра на лансирној платформи учинила је те претпоставке смртоносним за секунде, и посада Apollo 1 умрла је у тесту који су сви третирали као рутинан. Block I је пензионисан у ту лекцију; Block II који је достигао Месец био је, у великој мери, листа свега што је Block I направио погрешно."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+  "at": "description",
+  "en": "Block I was the first design iteration of the Apollo Command and Service Module — intended as a pure Earth-orbit shakedown vehicle before the lunar-capable Block II. Pure-O₂ pressurised cabin at 16.7 psi pre-launch (5 psi in flight); inward-opening hatch sealed by atmospheric differential. CSM-009 + CSM-011 flew uncrewed suborbital tests (AS-201 1966-02-26 + AS-202 1966-08-25). CSM-017 and CSM-020 flew uncrewed on Apollo 4 (1967-11-09) and Apollo 6 (1968-04-04) respectively — Block I command modules on the first two Saturn V flights. CSM-012 — the Apollo 1 ship — was sealed for a Plugs-Out test 1967-01-27 when a flash fire ignited in the lower-equipment bay, killing the crew in seconds; the cabin couldn't be vented because the hatch opened inward against the spike to 29 psi. The Apollo 204 Accident Review Board led to the Block II redesign: outward-opening unified hatch, non-flammable cabin materials, pre-launch nitrogen-rich atmosphere, redesigned wire bundles. No Block I CSM ever flew crewed; Block II flew Apollo 7 (1968) through ASTP (1975).",
+  "cur": "Block I је била прва дизајнерска итерација командно-сервисног модула Apollo — замишљена као чисто пробно возило за орбиту око Земље, пре верзије Block II способне за лет ка Месецу. Кабина под притиском са чистим O₂ при 16,7 psi пре лансирања (5 psi у лету); отвор који се отвара ка унутра заптивен је разликом атмосферских притисака. CSM-009 и CSM-011 летели су у беспосадним суборбиталним тестовима (AS-201 1966-02-26 и AS-202 1966-08-25). CSM-017 и CSM-020 летели су без посаде на мисијама Apollo 4 (1967-11-09), односно Apollo 6 (1968-04-04) — командни модули Block I на прва два лета ракете Saturn V. CSM-012 — летелица мисије Apollo 1 — био је запечаћен за тест Plugs-Out 1967-01-27, када је у доњем одељку за опрему букнуо пожар који је за неколико секунди усмртио посаду; кабина није могла да се растерети јер се отвор отварао ка унутра, насупрот скоку притиска до 29 psi. Одбор за истрагу несреће Apollo 204 довео је до редизајна Block II: јединствени отвор који се отвара ка споља, незапаљиви материјали у кабини, атмосфера богата азотом пре лансирања и редизајнирани снопови каблова. Ниједан CSM Block I никада није летео с посадом; Block II је летео од мисије Apollo 7 (1968) до ASTP (1975)."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+  "at": "best_known_for",
+  "en": "Original Apollo CSM design — never flew crewed; killed Apollo 1 crew on the pad 1967-01-27. Redesign produced the Block II flown 1968-1975",
+  "cur": "Првобитни дизајн CSM-а програма Apollo — никада није летео с посадом; усмртио је посаду мисије Apollo 1 на лансирној рампи 1967-01-27. Редизајн је дао верзију Block II, која је летела од 1968. до 1975."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+  "at": "tagline",
+  "en": "Lunar-capable Command + Service Module",
+  "cur": "Командно-сервисни модул способан за мисије до Месеца"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+  "at": "dispatch",
+  "en": "The Command Module was the only piece of Apollo that came home — everything else was spent and thrown away along the route. That made it the part that could not fail on reentry, and reentry from the Moon was the hardest version of the problem: the capsule met the atmosphere at nearly eleven kilometres a second, half again as fast as anything returning from Earth orbit, wrapped in a fireball hot enough to boil steel. Its answer was an ablative heat shield engineered to char and peel away in a controlled way, carrying the heat off with it. Block II was the version that flew crews — the ground-up redesign forced by the Apollo 1 fire — and it brought every astronaut who set out for the Moon back alive.",
+  "cur": "Командни модул био је једини део система Apollo који се вратио кући — све остало је утрошено и одбачено успут. Зато је то био део који није смео да закаже при поновном уласку у атмосферу, а повратак са Месеца био је најтежа верзија тог проблема: капсула је сретала атмосферу при брзини од скоро једанаест километара у секунди, за половину већој него код било чега што се враћа из орбите око Земље, обавијена ватреном куглом довољно врелом да растопи челик. Њен одговор био је аблативни топлотни штит, конструисан да се контролисано угљенише и љуспа, односећи топлоту са собом. Block II био је верзија која је возила посаде — потпуно нова конструкција на коју је приморао пожар на Apollo 1 — и вратио је живе све астронауте који су кренули ка Месецу."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+  "at": "description",
+  "en": "The lunar-capable Command and Service Module that carried Apollo astronauts to lunar orbit between 1968 and 1972. Fifteen crewed flights in total: Apollo 7–17 (eleven Moon-targeted missions), three Skylab crew rotations (1973–1974), and the 1975 Apollo-Soyuz Test Project — including Apollo 13’s improvised lifeboat configuration.",
+  "cur": "Командно-сервисни модул способан за мисије до Месеца, који је од 1968. до 1972. носио астронауте програма Apollo до лунарне орбите. Укупно петнаест летова с посадом: Apollo 7–17 (једанаест мисија усмерених ка Месецу), три смене посаде на станици Skylab (1973–1974) и програм Apollo-Soyuz Test Project из 1975. — укључујући импровизовану конфигурацију чамца за спасавање на мисији Apollo 13."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+  "at": "best_known_for",
+  "en": "Lunar-capable Command + Service Module",
+  "cur": "Командно-сервисни модул способан за мисије до Месеца"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+  "at": "name",
+  "en": "Apollo Lunar Module",
+  "cur": "Месечев модул Apollo"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+  "at": "tagline",
+  "en": "First crewed lunar lander; Eagle, Antares, Falcon...",
+  "cur": "Први лендер са посадом за слетање на Месец; Eagle, Antares, Falcon..."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+  "at": "dispatch",
+  "en": "The Lunar Module was the first true spacecraft — the first crewed vehicle built to fly only in vacuum, never through an atmosphere, so it could throw away streamlining and heat shielding and become exactly what it was: a machine for one job. Grumman split it in two — a descent stage that carried the crew down and then served as the launch pad for a separate ascent stage that carried them back up — because that staging was the only way to close the mass budget for a Moon landing. It flew on spidery legs, its skin in places as thin as a few sheets of foil. Nothing before it had set people on another world, and its ungainly, purpose-built shape is simply what a spacecraft looks like when it never has to survive coming home.",
+  "cur": "Месечев модул био је први прави свемирски брод — прва летелица са посадом саграђена да лети искључиво у вакууму, никада кроз атмосферу, па је могла да одбаци аеродинамички облик и топлотну заштиту и постане управо оно што јесте: машина за један једини посао. Grumman га је поделио на два дела — спуштајући степен, који је посаду носио наниже, а потом служио као лансирна рампа за посебан узлетни степен који ју је враћао увис — јер је то степеновање био једини начин да се затвори масени биланс за слетање на Месец. Летео је на паучинастим ногама, а његова оплата је местимично била танка као неколико листова фолије. Ништа пре њега није спустило људе на неки други свет, а његов неугледни, наменски обликован лик једноставно је оно како изгледа свемирска летелица која никада не мора да преживи повратак кући."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+  "at": "description",
+  "en": "The only crewed lunar lander ever built. Six successful landings between 1969 and 1972 — Eagle, Intrepid, Antares, Falcon, Orion, Challenger — plus Aquarius, which served as Apollo 13’s lifeboat. Descent stage stays on the Moon; ascent stage rejoined the CSM in lunar orbit.",
+  "cur": "Једини лендер са посадом за слетање на Месец који је икада саграђен. Шест успешних слетања између 1969. и 1972. — Eagle, Intrepid, Antares, Falcon, Orion, Challenger — и Aquarius, који је послужио као чамац за спасавање мисије Apollo 13. Спусни степен остаје на Месецу; узлетни степен се поново спојио са CSM-ом у лунарној орбити."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+  "at": "best_known_for",
+  "en": "First crewed lunar lander; Eagle, Antares, Falcon...",
+  "cur": "Први лендер са посадом за слетање на Месец; Eagle, Antares, Falcon..."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/atlantis.json",
+  "at": "tagline",
+  "en": "OV-104 — fourth Shuttle. Flew final mission STS-135 (2011), final Hubble servicing STS-125 (2009), deployed Galileo + Magellan",
+  "cur": "OV-104 — четврти Shuttle. Последња мисија STS-135 (2011), последње сервисирање Hubble-а STS-125 (2009), лансирао Galileo + Magellan"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/atlantis.json",
+  "at": "dispatch",
+  "en": "Atlantis, OV-104, flew the bookends of the Shuttle's greatest partnerships. It made the most dockings with the Russian station Mir, opening the era of US-Russian cooperation, and it flew STS-125, the final, daring servicing mission that left the Hubble Space Telescope good for another decade. In July 2011 Atlantis flew STS-135, the 135th and last Shuttle mission — the flight that closed thirty years of reusable American spaceflight and left the Space Station it had helped build in orbit above.",
+  "cur": "Atlantis, OV-104, одлетела је мисије које су уоквириле највећа партнерства програма Shuttle. Остварила је највише пристајања уз руску станицу Mir, чиме је отворила еру америчко-руске сарадње, а извела је и STS-125, последњу, смелу сервисну мисију због које је Hubble Space Telescope могао да ради још једну деценију. У јулу 2011. Atlantis је извела STS-135, 135. и последњу мисију програма Shuttle — лет којим је окончано тридесет година америчких вишекратних свемирских летова и који је свемирску станицу, коју је помогла да се изгради, оставио да кружи у орбити изнад Земље."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/atlantis.json",
+  "at": "description",
+  "en": "Fourth operational orbiter; first flight STS-51-J (1985-10-03) was a classified DoD mission. Highlights: deployed Magellan (STS-30, 1989) and Galileo (STS-34, 1989) — the two planetary probes that opened Venus and Jupiter to long-duration observation; flew 7 of the 9 Shuttle-Mir docking missions between 1995-1997; flew the final Hubble servicing mission STS-125 (2009-05) — the only post-Columbia non-ISS-rendezvous mission approved; flew STS-135 (2011-07) — the final Shuttle flight ever. On display at Kennedy Space Center Visitor Complex since 2013.",
+  "cur": "Четврти оперативни орбитер; први лет STS-51-J (3. 10. 1985) био је поверљива мисија DoD-а. Најважније одлике: лансирао је Magellan (STS-30, 1989) и Galileo (STS-34, 1989) — две планетарне сонде које су омогућиле дуготрајна посматрања Венере и Јупитера; извела је 7 од 9 мисија пристајања Shuttle-а уз Mir између 1995. и 1997; извела је последњу сервисну мисију на Hubble-у STS-125 (мај 2009) — једину мисију после Columbia-е која није била сусрет у орбити са МСС-ом, а добила је одобрење; извела је STS-135 (јул 2011) — последњи лет Shuttle-а икада. Од 2013. изложена је у центру за посетиоце Свемирског центра Кенеди."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/atlantis.json",
+  "at": "best_known_for",
+  "en": "Flew final Shuttle mission STS-135 (2011); deployed Galileo + Magellan; final Hubble servicing STS-125",
+  "cur": "Извела је последњу мисију програма Shuttle STS-135 (2011); лансирала је Galileo + Magellan; последња сервисна мисија на Hubble-у STS-125"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+  "at": "tagline",
+  "en": "Buran's atmospheric analog — equivalent of NASA's Enterprise. Four jet engines, 24 atmospheric tests 1985-88, never to orbit",
+  "cur": "Атмосферски аналог Buran-а — пандан NASA-иног Enterprise-а. Четири млазна мотора, 24 атмосферска теста 1985–88, никад у орбити"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+  "at": "dispatch",
+  "en": "OK-GLI was Buran's atmospheric test orbiter — the equivalent of NASA's Enterprise, built to prove the spaceplane could glide and land before anything flew to orbit. Fitted with four jet engines, it made its own runway approaches and landings in the atmosphere, validating Buran's aerodynamics and its automated landing systems. It never went to space and was never meant to, and it outlived the orbiter that did: while the flown Buran was destroyed in 2002, OK-GLI survives as a museum exhibit in Germany, one of the few tangible remains of the largest space program the Soviet Union ever attempted.",
+  "cur": "OK-GLI је био атмосферски пробни орбитер летелице Buran — еквивалент NASA-иног Enterprise-а, саграђен да докаже да свемирски авион може да клизи и слети пре него што било шта полети у орбиту. Опремљен са четири млазна мотора, самостално је изводио прилазе писти и слетања у атмосфери, потврђујући аеродинамику летелице Buran и њене аутоматизоване системе за слетање. Никада није отишао у свемир и никада није ни требало да оде, а надживео је орбитер који јесте полетео: док је летелица Buran која је летела уништена 2002. године, OK-GLI је сачуван као музејски експонат у Немачкој, један од ретких опипљивих остатака највећег свемирског програма који је Совјетски Савез икада покушао да оствари."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+  "at": "description",
+  "en": "Officially BTS-002, nicknamed OK-GLI. Full-scale atmospheric test article for the Buran orbital programme — same outer mold-line as the flight vehicle Buran 1.01 but fitted with four AL-31 turbojet engines so it could take off under its own power from a conventional runway. 24 atmospheric flights between 1985-11-10 and 1988-04-15 at the Zhukovsky Flight Research Institute airfield validated Buran's automated landing system + flight-control software for the 1988-11-15 orbital flight. After the Buran programme cancellation OK-GLI sat at LII for years; sold to an Australian museum in 1999, then Bahrain, finally to the Technik Museum Speyer / Sinsheim in Germany where it is on display today — Buran's equivalent of NASA's Enterprise.",
+  "cur": "Званично BTS-002, надимак OK-GLI. Атмосферски пробни примерак у пуној размери за орбитални програм Buran — са истом спољном аеродинамичком обликом као летна летелица Buran 1.01, али опремљен са четири турбомлазна мотора AL-31, како би могао самостално да узлети са конвенционалне писте. Током 24 атмосферска лета између 10. новембра 1985. и 15. априла 1988. на аеродрому Истраживачког института за летна испитивања Zhukovsky потврђени су Buran-ов аутоматски систем за слетање и софтвер за управљање летом пред орбитални лет 15. новембра 1988. Након обустављања програма Buran, OK-GLI је годинама стајао у институту LII; 1999. продат је једном аустралијском музеју, затим је доспео у Бахреин, а на крају у Technik Museum Speyer / Sinsheim у Немачкој, где је данас изложен — Buran-ов еквивалент NASA-иног Enterprise-а."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+  "at": "best_known_for",
+  "en": "Buran's atmospheric analog; 24 jet-powered flights 1985-88 at Zhukovsky; never to orbit",
+  "cur": "Атмосферски аналог летелице Buran; 24 лета на млазни погон 1985–88 у Zhukovsky-ју; никада у орбити"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/buran.json",
+  "at": "tagline",
+  "en": "Soviet shuttle; one unmanned flight, never crewed",
+  "cur": "Совјетски спејс-шатл; један лет без посаде, никада са људском посадом"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/buran.json",
+  "at": "dispatch",
+  "en": "Buran was the Soviet Union's answer to the Space Shuttle — outwardly almost identical, but with two decisions that arguably bettered the original: it carried no main engines (all the lift came from the separate Energia rocket), and it could fly with no one aboard. On 15 November 1988 it proved the second, flying a complete uncrewed orbital mission and landing itself on a runway in a crosswind, something no winged spacecraft had ever done. It was a flawless flight and its only one. The Soviet Union collapsed, the money and the mission vanished, and Buran was cancelled — the flown orbiter later crushed when its hangar roof fell in 2002. One of the most impressive and most pointless achievements in spaceflight.",
+  "cur": "Buran је био одговор Совјетског Савеза на Space Shuttle — споља готово идентичан, али са две одлуке које су вероватно надмашиле оригинал: није носио главне моторе (сав потисак је долазио од посебне ракете Energia), и могао је да лети без посаде. 15. новембра 1988. доказао је ово друго, извршивши потпуну беспилотну орбиталну мисију и слетевши сам на писту при бочном ветру, нешто што ниједан крилати свемирски брод никада није урадио. То је био беспрекоран лет и његов једини. Совјетски Савез се распао, новац и мисија су нестали, а Buran је укинут — летела летелица је касније уништена када је кров њеног хангара пао 2002. Једно од најимпресивнијих и најбеспотребнијих достигнућа у свемирским летовима."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/buran.json",
+  "at": "description",
+  "en": "The Soviet shuttle, externally similar to the American orbiter but with no main engines (Energia carried it). Flew exactly once, in 1988, fully autonomous and unmanned — the only Soviet shuttle to ever reach orbit before the program ended.",
+  "cur": "Совјетски спејс-шатл, споља сличан америчком орбитеру, али без главних мотора (носила га је ракета-носач Energia). Полетео је тачно једном, 1988. године, потпуно аутономно и без посаде — једини совјетски спејс-шатл који је икада стигао у орбиту пре него што је програм окончан."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/buran.json",
+  "at": "best_known_for",
+  "en": "Soviet shuttle; one unmanned flight, never crewed",
+  "cur": "Совјетски спејс-шатл; један лет без посаде, никада са људском посадом"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/challenger.json",
+  "at": "tagline",
+  "en": "OV-099 — second operational Shuttle. Lost 73s after launch on STS-51-L (1986-01-28) with all seven crew including teacher Christa McAuliffe",
+  "cur": "OV-099 — други оперативни шатл. Изгубљен 73 s по лансирању (STS-51-L, 1986-01-28); погинуло седморо, међу њима учитељица Криста Маколиф"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/challenger.json",
+  "at": "dispatch",
+  "en": "Challenger, OV-099, was the fleet's early workhorse and the site of its first catastrophe. It flew the program's first spacewalk and carried the first American woman, Sally Ride, to orbit. On 28 January 1986, launching in unusually cold weather, a rubber seal in one of its solid boosters — stiffened by the cold, a failure mode engineers had warned of — gave way, and the vehicle broke apart 73 seconds after liftoff. All seven aboard died. The disaster grounded the fleet for nearly three years and exposed a management culture that had flown past a known, flagged risk.",
+  "cur": "Challenger, OV-099, био је раниј радни коњ флоте и место њене прве катастрофе. Полетео је са првом амерички женском астронауткињом, Сали Рајд. Дана 28. јануара 1986. године, при лансирању у необично хладном времену, гумени печат у једном од чврстих појачивача — укрућен хладноћом, режим отказа за који су инжењери упозорили — је отказао, и возило се распало 73 секунде после полетања. Сви седмица астронаута су умрли. Несрећа је уземљила флоту за готово три године и открила управљачку културу која је прошла поред познатог, означеног ризика."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/challenger.json",
+  "at": "description",
+  "en": "Built from a structural test article (STA-099) converted to flight after Enterprise was deemed too expensive to upgrade. First flew STS-6 (1983-04-04) carrying out the first Shuttle EVA. Flew 10 missions in total: STS-6, STS-7, STS-8, STS-41-B, STS-41-C, STS-41-G, STS-51-B, STS-51-F, STS-61-A, and final flight STS-51-L. On 1986-01-28, STS-51-L launched at unprecedented cold (−1 °C) — the right SRB's O-rings failed to seal, hot gas burned through the strut attaching the SRB to the external tank, and the orbiter broke apart at Max-Q (T+73s) at 14 km altitude. All seven crew perished, including teacher Christa McAuliffe. The Rogers Commission grounded the Shuttle for 32 months and rewrote NASA's safety culture.",
+  "cur": "Изграђен од структурног испитног модела (STA-099) који је преправљен за лет пошто је надоградња летелице Enterprise оцењена као прескупа. Први пут је полетео на мисији STS-6 (1983-04-04), када је обављена прва ванвозилна активност (EVA) у програму Shuttle. Flew 10 мисија укупно: STS-6, STS-7, STS-8, STS-41-B, STS-41-C, STS-41-G, STS-51-B, STS-51-F, STS-61-A и последњи лет STS-51-L. Дана 1986-01-28, STS-51-L је лансиран на дотад невиђеној хладноћи (−1 °C) — заптивни прстенови (O-rings) десног SRB-а нису успели да запечате спој, врели гас прогорео је ослонац којим је SRB причвршћен за спољни резервоар, а орбитер се распао у тренутку Max-Q (T+73s) на висини од 14 km. Свих седам чланова посаде је погинуло, укључујући учитељицу Кристу Маколиф. Rogers Commission је обуставила летове Shuttle-а на 32 месеца и преобликовала NASA-ину културу безбедности."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/challenger.json",
+  "at": "best_known_for",
+  "en": "Second Shuttle; lost 73s after launch on STS-51-L 1986-01-28 with 7 crew",
+  "cur": "Други шатл; изгубљен 73 секунде након лансирања на мисији STS-51-L 1986-01-28, са 7 чланова посаде"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/columbia.json",
+  "at": "tagline",
+  "en": "OV-102 — the first Shuttle orbiter to fly to space (STS-1, 1981-04-12); lost on re-entry STS-107 2003-02-01",
+  "cur": "OV-102 — први орбитер Shuttle-а који је полетео у свемир (STS-1, 1981-04-12); изгубљен при поновном уласку у атмосферу STS-107 2003-02-01"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/columbia.json",
+  "at": "dispatch",
+  "en": "Columbia was the first — OV-102, the orbiter that opened the Shuttle era. On STS-1 in April 1981 it did something no crewed spacecraft had done before or has since: flew to orbit on its maiden launch, with two astronauts aboard an untested reusable vehicle, and glided home on a runway. It was the heaviest of the fleet and flew much of the program's science, including the Spacelab laboratories. In 2003, on STS-107, a hole punched in its wing by launch debris let the heat of reentry into the structure, and Columbia broke apart over Texas minutes from home — the loss that ended the program's complacency about debris strikes.",
+  "cur": "Columbia је био први — OV-102, орбитер који је отворио еру Shuttle-а. На мисији STS-1, априла 1981, учинио је оно што ниједна летелица с посадом није учинила пре њега нити после њега: у орбиту је полетео већ при свом првом лансирању, са два астронаута у необјављеном, неиспитаном поновно употребљивом возилу, а кући се вратио једрећи и слетевши на писту. Био је најтежи у флоти и носио је велики део научног програма, укључујући лабораторије Spacelab. Године 2003, на мисији STS-107, рупа коју су у његовом крилу пробили остаци при лансирању пропустила је топлоту поновног уласка у атмосферу у конструкцију, па се Columbia распао изнад Тексаса, свега неколико минута од куће — губитак који је окончао самозадовољство програма према ударима крхотина."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/columbia.json",
+  "at": "description",
+  "en": "The first operational Space Shuttle orbiter. Flew 28 missions over 22 years including STS-1 (the first and only US crewed spacecraft to fly its maiden voyage with crew aboard), the 1990 Astro-1 UV-astronomy mission, the 1993 SLS-2 life-sciences flight, and Senator John Glenn's STS-95 return-to-space in 1998. Lost on re-entry during STS-107 (2003-02-01) — a foam strike during launch breached the left wing's RCC leading edge and the vehicle disintegrated over Texas at Mach 18 with the loss of all seven crew. The accident grounded the Shuttle fleet for 29 months and triggered the Vision for Space Exploration.",
+  "cur": "Први оперативни орбитер програма Space Shuttle. Извршио је 28 мисија током 22 године, међу којима су STS-1 (прва и једина америчка летелица са посадом која је на свој први лет кренула с људима на броду), мисија Astro-1 из 1990. посвећена астрономији у ултраљубичастом подручју, лет SLS-2 из 1993. посвећен наукама о животу и повратак сенатора Џона Глена у свемир на мисији STS-95 1998. године. Изгубљен је приликом уласка у атмосферу током мисије STS-107 (1. 2. 2003): комад пене који се одвојио током лансирања пробио је RCC предњу ивицу левог крила, а летелица се распала изнад Тексаса при брзини од 18 Маха, при чему је погинуло свих седморо чланова посаде. Несрећа је приземљила флоту Shuttle-ова на 29 месеци и покренула Vision for Space Exploration."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/columbia.json",
+  "at": "best_known_for",
+  "en": "First Shuttle orbiter to fly to space (STS-1, 1981); lost on STS-107 re-entry 2003",
+  "cur": "Први орбитер Shuttle-а који је полетео у свемир (STS-1, 1981); изгубљен при поновном уласку у атмосферу током мисије STS-107 2003."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+  "at": "tagline",
+  "en": "First commercial human-rated orbital spacecraft",
+  "cur": "Први комерцијални орбитални свемирски брод сертификован за превоз људи"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+  "at": "description",
+  "en": "SpaceX’s human-rated spacecraft, the first privately developed and operated spacecraft to carry humans to orbit (Demo-2, 2020-05-30). The trunk features two solar array panels that deploy after fairing separation for power during orbital operations.",
+  "cur": "SpaceX-ов свемирски брод сертификован за превоз људи, први приватно развијен и управљан свемирски брод који је однео људе у орбиту (Demo-2, 30. 5. 2020). Теретни одељак (trunk) има два соларна панела који се развијају након одвајања аеродинамичке заштитне капе и обезбеђују напајање током операција у орбити."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+  "at": "best_known_for",
+  "en": "First commercial human-rated orbital spacecraft",
+  "cur": "Први комерцијални орбитални свемирски брод сертификован за превоз људи"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/discovery.json",
+  "at": "tagline",
+  "en": "OV-103 — third Shuttle. Deployed Hubble (STS-31, 1990); flew both return-to-flight missions. 39 missions — most of any orbiter",
+  "cur": "OV-103 — трећи Shuttle. Лансирао је Hubble (STS-31, 1990); летео је на обе мисије повратка у лет. 39 мисија — највише од свих орбитера"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/discovery.json",
+  "at": "dispatch",
+  "en": "Discovery, OV-103, was the fleet's most-flown and most-trusted orbiter, logging 39 missions across 27 years. It was NASA's choice to return the Shuttle to flight after both disasters — the vehicle sent up first when the program most needed to prove itself safe again. Among its flights was the one that may matter most: STS-31, which carried the Hubble Space Telescope to orbit and released it, beginning the most productive chapter in the history of astronomy.",
+  "cur": "Discovery, OV-103, био је орбитер флоте са највише летова и највећим поверењем, са 39 мисија током 27 година. NASA је управо њега изабрала да врати Shuttle у лет након обе катастрофе — летелица која је прва послата када је програм највише требало да поново докаже да је безбедан. Међу његовим летовима налази се и онај који је можда најважнији: STS-31, који је Hubble Space Telescope однео у орбиту и ослободио га, чиме је започело најплодније поглавље у историји астрономије."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/discovery.json",
+  "at": "description",
+  "en": "Third operational orbiter; first flight STS-41-D (1984-08-30). The most-flown Shuttle — 39 missions over 27 years. Career highlights: STS-31 (1990-04-24) deployed the Hubble Space Telescope; STS-26 (1988-09-29) was the post-Challenger return-to-flight; STS-114 (2005-07-26) was the post-Columbia return-to-flight; STS-95 (1998) returned John Glenn to orbit at age 77; multiple ISS-assembly flights (STS-92, 120, 124, 128, 131, 133). Final flight STS-133 (2011-02-24) delivered the Leonardo Permanent Multipurpose Module. On display at Udvar-Hazy since 2012.",
+  "cur": "Трећи оперативни орбитер; први лет STS-41-D (1984-08-30). Shuttle са највише летова — 39 мисија током 27 година. Најважнији тренуци каријере: STS-31 (1990-04-24) лансирао је свемирски телескоп Hubble; STS-26 (1988-09-29) био је повратак у лет после несреће Challenger-а; STS-114 (2005-07-26) био је повратак у лет после несреће Columbia-е; STS-95 (1998) вратио је Џона Глена у орбиту са 77 година; више летова за изградњу МСС (STS-92, 120, 124, 128, 131, 133). Последњи лет STS-133 (2011-02-24) допремио је стални вишенаменски модул Leonardo. Изложен је у центру Udvar-Hazy од 2012."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/discovery.json",
+  "at": "best_known_for",
+  "en": "Most-flown Shuttle (39 missions); deployed Hubble + flew both return-to-flight missions",
+  "cur": "Shuttle са највише летова (39 мисија); лансирао је Hubble и летео на обе мисије повратка у лет"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/endeavour.json",
+  "at": "tagline",
+  "en": "OV-105 — fifth Shuttle, built from spares to replace Challenger. First Hubble servicing STS-61 (1993); delivered Unity + Canadarm2",
+  "cur": "OV-105 — пети Shuttle, саграђен од резервних делова уместо Challenger-а. Прво сервисирање Hubble-а STS-61 (1993); однео Unity + Canadarm2"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/endeavour.json",
+  "at": "dispatch",
+  "en": "Endeavour, OV-105, was the last orbiter built — assembled from structural spares to replace Challenger, so that even the fleet's newest member carried the memory of its worst day. It flew the first Hubble servicing mission, STS-61, the flight that corrected the telescope's flawed mirror and rescued the observatory's reputation, and it did heavy lifting in the assembly of the International Space Station. It was the youngest of the fleet and among the busiest, flying until the program's final years.",
+  "cur": "Endeavour, OV-105, био је последњи изграђени орбитер — састављен од резервних структурних делова да замени Challenger, тако да је чак и најмлађи члан флоте носио сећање на свој најгори дан. Летео је на првој сервисној мисији на Hubble-у, STS-61, лету којим је исправљено неисправно огледало телескопа и спасен углед опсерваторије, а имао је и тежак задатак у склапању Међународне свемирске станице. Био је најмлађи у флоти и један од најоптерећенијих, а летео је све до последњих година програма."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/endeavour.json",
+  "at": "description",
+  "en": "Fifth and last operational orbiter, built from structural spares after Challenger left NASA with only three flight-rated orbiters. Named via a national schools competition after Captain Cook's HMS Endeavour. First flight STS-49 (1992-05-07) included the first three-person EVA (to capture the stranded Intelsat VI satellite). Highlights: STS-61 (1993-12) first Hubble servicing restored Hubble's optics; STS-88 (1998-12-04) first ISS assembly flight delivering Node 1 Unity; STS-100 (2001-04) installed Canadarm2; STS-130 (2010-02) installed Tranquility + Cupola; STS-134 (2011-05) installed the AMS-02 cosmic-ray detector — final EVA crew of the Shuttle programme. On display at the California Science Center, Los Angeles.",
+  "cur": "Пети и последњи оперативни орбитер, изграђен од резервних структурних делова пошто је након Challenger-а NASA остала са само три орбитера оспособљена за лет. Име је добио путем националног такмичења међу школама, по броду HMS Endeavour капетана Кука. Први лет, STS-49 (07. 05. 1992), укључивао је прво излазак у свемир са тројицом астронаута (ради хватања заглављеног сателита Intelsat VI). Најважнији тренуци: STS-61 (децембар 1993) — прва сервисна мисија на Hubble-у вратила је оптици Hubble-а оштрину; STS-88 (04. 12. 1998) — први лет за монтажу МСС, којим је испоручен Node 1 Unity; STS-100 (април 2001) — уграђен Canadarm2; STS-130 (фебруар 2010) — уграђени Tranquility и Cupola; STS-134 (мај 2011) — уграђен AMS-02, детектор космичких зрака, а то је била и последња посада са изласком у свемир у програму Спејс-шатл. Изложен је у California Science Center у Лос Анђелесу."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/endeavour.json",
+  "at": "best_known_for",
+  "en": "Youngest Shuttle; first Hubble servicing (STS-61); delivered Unity + Canadarm2 + Tranquility / Cupola",
+  "cur": "Најмлађи спејс-шатл; прва сервисна мисија на Hubble-у (STS-61); испоручио Unity, Canadarm2, Tranquility и Cupola"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/enterprise.json",
+  "at": "tagline",
+  "en": "OV-101 — prototype Shuttle. Renamed from Constitution after Star Trek fan campaign. Flew 1977 atmospheric tests; never reached orbit",
+  "cur": "OV-101 — прототип Shuttle-а. Име Constitution замењено после кампање фанова Star Trek-а. Атмосферски тестови 1977; орбиту није достигао"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/enterprise.json",
+  "at": "description",
+  "en": "Originally called Constitution, renamed Enterprise after a fan-letter campaign organized by Star Trek fans in 1976 when the shuttle was being named. Built as a prototype for the Approach and Landing Tests (ALT) — eight captive flights and five free flights from the Shuttle Carrier Aircraft over Edwards Air Force Base in 1977. First free flight 1977-08-12 piloted by Fred Haise + Gordon Fullerton proved the orbiter could glide and land. Did NOT contain propulsion or active TPS tiles; converting Enterprise to flight-rated was estimated heavier than building a new orbiter from structural spares, so Challenger was built instead. Now on display at the Intrepid Sea, Air & Space Museum in NYC.",
+  "cur": "Првобитно названа Constitution, преименована је у Enterprise након кампање писама обожавалаца коју су 1976. организовали љубитељи серијала Star Trek, док се за шатл одабирало име. Саграђена је као прототип за Approach and Landing Tests (ALT) — осам летова у спрези и пет слободних летова са авиона Shuttle Carrier Aircraft изнад Edwards Air Force Base 1977. године. Први слободан лет, 12. 8. 1977, којим су пилотирали Фред Хејз и Гордон Фулертон, доказао је да орбитер може да клизи и слети. Није имао погонски систем ни активне плочице TPS; претварање Enterprise у летелицу спремну за свемирски лет процењено је као теже него изградња новог орбитера од структурних резерви, па је уместо тога саграђен Challenger. Данас је изложена у музеју Intrepid Sea, Air & Space Museum у Њујорку."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/enterprise.json",
+  "at": "best_known_for",
+  "en": "Prototype Shuttle; 1977 atmospheric drop tests; never flew to orbit",
+  "cur": "Прототип шатла Shuttle; атмосферске пробе спуштањем 1977; никада није стигао у орбиту"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/gaganyaan.json",
+  "at": "tagline",
+  "en": "First crewed Indian spacecraft",
+  "cur": "Прва индијска свемирска летелица с посадом"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/gaganyaan.json",
+  "at": "description",
+  "en": "India’s first crewed spacecraft, targeting a 2027 crewed flight on the LVM3 (formerly GSLV Mk III). Three astronauts on a roughly seven-day low-Earth-orbit mission — the start of an Indian human-spaceflight programme. ISRO has completed crew module qualification tests and trained astronaut candidates.",
+  "cur": "Прва индијска свемирска летелица с посадом, чији је први лет с посадом на ракети LVM3 (раније GSLV Mk III) планиран за 2027. годину. Три астронаута на мисији у ниској Земљиној орбити која траје отприлике седам дана — почетак индијског програма летова људи у свемир. ISRO је завршио квалификационе тестове командног модула за посаду и обучио кандидате за астронауте."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/gaganyaan.json",
+  "at": "best_known_for",
+  "en": "First crewed Indian spacecraft",
+  "cur": "Прва индијска свемирска летелица с посадом"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/gemini.json",
+  "at": "tagline",
+  "en": "Two-person crew; rendezvous and EVA practice",
+  "cur": "Двочлана посада; вежбе сусрета у орбити и изласка у свемир"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/gemini.json",
+  "at": "dispatch",
+  "en": "The Gemini spacecraft was the first one Americans could actually fly. Mercury's astronaut mostly rode a capsule the ground controlled; Gemini's two-person crew got thrusters, a flight computer, and the ability to change their own orbit — to chase down another craft and dock with it. That was its entire reason to exist: not to go anywhere new, but to be a machine for practicing the maneuvers Apollo would need. Roomier than Mercury but still cramped, split into a crew module and an equipment section like Apollo after it, across ten flights it turned rendezvous, docking, and two-week endurance from open questions into things a crew could simply do.",
+  "cur": "Свемирска летелица Gemini била је прва коју су Американци заиста могли да пилотирају. Астронаут у програму Mercury углавном се возио у капсули којом је управљала контрола са тла; посада од двоје људи у летелици Gemini добила је потисника, летачки рачунар и могућност да сама мења своју орбиту — да сустигне другу летелицу и споји се с њом. То је био цео њен разлог постојања: не да оде негде ново, већ да буде машина за увежбавање маневара који ће бити потребни програму Apollo. Пространија од летелице Mercury, али и даље тескобна, подељена на посадни модул и модул с опремом, као и Apollo после ње, кроз десет летова претворила је сусрет у орбити, спајање и двонедељну издржљивост из отворених питања у ствари које посада једноставно може да изведе."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/gemini.json",
+  "at": "description",
+  "en": "The two-person spacecraft that taught NASA how to rendezvous, dock, and walk in space — the techniques that made Apollo possible. Two uncrewed test flights (Gemini 1 and 2) in 1964–1965 preceded ten crewed missions (Gemini 3–12) in 1965–1966, every one a step toward the Moon.",
+  "cur": "Двочлана свемирска летелица која је агенцију NASA научила како се изводи сусрет у орбити, како се пристаје уз другу летелицу и како се хода у свемиру — технике које су омогућиле програм Apollo. Пре десет мисија са посадом (Gemini 3–12) 1965–1966. обављена су два пробна лета без посаде (Gemini 1 и 2) 1964–1965, а свака мисија била је корак ка Месецу."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/gemini.json",
+  "at": "best_known_for",
+  "en": "Two-person crew; rendezvous and EVA practice",
+  "cur": "Двочлана посада; вежбе сусрета у орбити и изласка у свемир"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+  "at": "tagline",
+  "en": "First U.S. crewed spaceflight (Shepard)",
+  "cur": "Први амерички свемирски лет са људском посадом (Шепард)"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+  "at": "dispatch",
+  "en": "The Mercury capsule was designed to be the smallest thing that could keep a person alive in space — and it shows. There was no room to do much but sit; the astronaut wore the spacecraft as much as rode it. But its shape solved the era's hardest unsolved problem — how to come back. The blunt end, coated in a shield built to char and carry the heat away, turned reentry from a fatal certainty into something survivable, and its cone was the first American answer to the question of what a crewed spacecraft even looks like. Every capsule since — Gemini, Apollo, Dragon — is a descendant of this cramped little cone.",
+  "cur": "Капсула Mercury била је замишљена као најмања могућа ствар у којој човек може да остане жив у свемиру — и то се види. Једва да је било места за нешто више од седења; астронаут је свемирску летелицу пре носио на себи него што се у њој возио. Али њен облик решио је најтежи нерешени проблем тог доба — како се вратити. Тупи крај, прекривен штитом направљеним тако да се угљениши и однесе топлоту, претворио је поновни улазак у атмосферу из кобне извесности у нешто што се може преживети, а њен конус био је први амерички одговор на питање како уопште изгледа свемирска летелица са људском посадом. Свака капсула од тада — Gemini, Apollo, Dragon — потомак је овог скученог малог конуса."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+  "at": "description",
+  "en": "The cone-shaped capsule that carried six American astronauts on Project Mercury between 1961 and 1963. Tiny enough that John Glenn famously described being \"spam in a can\" — but it proved orbital flight was achievable for the United States.",
+  "cur": "Капсула конусног облика која је између 1961. и 1963. носила шест америчких астронаута у оквиру Project Mercury. Толико тесна да је Џон Глен чувено рекао да се осећа као „конзервирано месо у лименци“ — али је доказала да је орбитални лет за Сједињене Државе достижан."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+  "at": "best_known_for",
+  "en": "First U.S. crewed spaceflight (Shepard)",
+  "cur": "Први амерички свемирски лет са људском посадом (Шепард)"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/new-shepard.json",
+  "at": "tagline",
+  "en": "First commercial suborbital crewed vehicle",
+  "cur": "Прво комерцијално суборбитално летелица са посадом"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/new-shepard.json",
+  "at": "description",
+  "en": "Blue Origin’s suborbital crewed spacecraft, named for Alan Shepard. Reusable booster + capsule architecture, with the capsule landing under parachutes. Crewed since 2021; carried Jeff Bezos, William Shatner, and others on brief suborbital flights.",
+  "cur": "Суборбитална летелица компаније Blue Origin са посадом, названа по Алану Шепарду. Вишекратна архитектура коју чине ракетни појачивач и капсула, при чему капсула слеће уз падобране. Са посадом лети од 2021. године; на кратким суборбиталним летовима превозила је Џефа Безоса, Вилијама Шатнера и друге."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/new-shepard.json",
+  "at": "best_known_for",
+  "en": "First commercial suborbital crewed vehicle",
+  "cur": "Прва комерцијална суборбитална летелица са посадом"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/orion.json",
+  "at": "tagline",
+  "en": "Crew vehicle for the Artemis lunar program",
+  "cur": "Посадно возило за лунарни програм Artemis"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/orion.json",
+  "at": "description",
+  "en": "The crew vehicle for NASA’s Artemis program, built jointly with ESA (the European Service Module is provided by Airbus). Designed to support up to four astronauts on multi-week missions to lunar orbit. Flew uncrewed on Artemis I in 2022. Flew its first crewed mission (Artemis II) in April 2026 with a four-person crew on a lunar flyby trajectory.",
+  "cur": "Посадно возило за програм Artemis агенције NASA, изграђено заједно са агенцијом ESA (Европски сервисни модул обезбеђује компанија Airbus). Намењено је подршци до четири астронаута на мисијама до лунарне орбите које трају по неколико недеља. Без посаде је летело на мисији Artemis I 2022. године. Свој први лет са посадом (Artemis II) обавило је у априлу 2026. са четворочланом посадом, на путањи прелета поред Месеца."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/orion.json",
+  "at": "best_known_for",
+  "en": "Crew vehicle for the Artemis lunar program",
+  "cur": "Посадно возило за лунарни програм Artemis"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/shenzhou.json",
+  "at": "tagline",
+  "en": "First Chinese crewed spacecraft",
+  "cur": "Прва кинеска летелица са посадом"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/shenzhou.json",
+  "at": "description",
+  "en": "China’s crewed spacecraft, externally Soyuz-derived but enlarged. First crewed flight in 2003 (Shenzhou 5, Yang Liwei); now the standard ferry to Tiangong, with crew rotations every six months.",
+  "cur": "Кинеска летелица са посадом, споља изведена из летелице Soyuz, али увећана. Први лет с посадом обављен је 2003. године (Shenzhou 5, Јанг Ливеј); данас је стандардни превозник до станице Tiangong, са променом посаде сваких шест месеци."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/shenzhou.json",
+  "at": "best_known_for",
+  "en": "First Chinese crewed spacecraft",
+  "cur": "Прва кинеска летелица са посадом"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+  "at": "tagline",
+  "en": "First Soyuz generation; Komarov's fatal flight",
+  "cur": "Прва генерација Soyuz-а; кобни лет Комарова"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+  "at": "dispatch",
+  "en": "The Soyuz 7K-OK was the first of the line — the original version of the spacecraft that would outlive them all. It introduced the three-module layout every Soyuz since has kept: a spherical orbital module to live and work in, a compact descent module to ride home in, and a service module for power and propulsion. It was also the version that killed Vladimir Komarov on its first crewed flight and, in an improved form, the three cosmonauts of Soyuz 11 — the hard early schooling that turned a rushed design into a reliable one. Crude and dangerous at the start, its basic architecture proved so sound that, refined over decades, it is still carrying crews to orbit today.",
+  "cur": "Soyuz 7K-OK био је први у низу — оригинална верзија летелице која ће надживети све остале. Увео је распоред од три модула који је задржао сваки Soyuz од тада: сферни орбитални модул за живот и рад, компактан модул за спуштање за повратак кући и сервисни модул за напајање и погон. Била је то и верзија која је однела живот Владимира Комарова на његовом првом лету са посадом и, у побољшаном облику, живот тројице космонаута са Soyuz 11 — тешка рана школа која је од пожурене конструкције направила поуздану. Груба и опасна на почетку, њена основна архитектура показала се толико исправном да и данас, усавршавана деценијама, још увек носи посаде у орбиту."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+  "at": "description",
+  "en": "The first generation of Soyuz, with all the architectural choices that have endured for sixty years: orbital module sphere, descent module, service module with deployable solar arrays. Tragically introduced by Soyuz 1 (Komarov’s fatal flight, 1967).",
+  "cur": "Прва генерација летелице Soyuz, са свим архитектонским решењима која трају већ шездесет година: сфера орбиталног модула, модул за спуштање и сервисни модул са расклопивим соларним панелима. Трагично је уведена летом Soyuz 1 (кобни лет Комарова, 1967)."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+  "at": "best_known_for",
+  "en": "First Soyuz generation; Komarov's fatal flight",
+  "cur": "Прва генерација Soyuz-а; кобни лет Комарова"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+  "at": "tagline",
+  "en": "Current Soyuz generation; ISS lifeboat",
+  "cur": "Актуелна генерација летелица Soyuz; спасилачка капсула за МСС"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+  "at": "description",
+  "en": "The current Soyuz generation, in service since 2016. New software and GLONASS/GPS-aided rendezvous makes ISS docking possible in as little as 3 hours. Part of the Soyuz family — the most-flown crewed spacecraft lineage in history.",
+  "cur": "Актуелна генерација летелица Soyuz, у употреби од 2016. године. Нов софтвер и сусрет у орбити уз помоћ система GLONASS/GPS омогућавају спајање са МСС за свега 3 сата. Део је породице Soyuz — најчешће летеле лозе свемирских летелица са посадом у историји."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+  "at": "best_known_for",
+  "en": "Current Soyuz generation; ISS lifeboat",
+  "cur": "Актуелна генерација летелица Soyuz; спасилачка капсула за МСС"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-t.json",
+  "at": "tagline",
+  "en": "Three-cosmonaut Salyut-era variant",
+  "cur": "Варијанта за тројицу космонаута из доба станице Salyut"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-t.json",
+  "at": "description",
+  "en": "The 1979–1986 Salyut-era Soyuz with three-cosmonaut capacity restored after the Soyuz 11 fatal decompression. Modernised avionics and hypergolic propulsion; the bridge between the original 7K-OK and the long-running TM/TMA/MS lineage.",
+  "cur": "Soyuz из доба станице Salyut, коришћен од 1979. до 1986. године, са поново успостављеним капацитетом за тројицу космонаута после фаталне декомпресије на Soyuz 11. Модернизована авионика и хиперголни погон; веза између изворног 7K-OK и дугогодишње лозе TM/TMA/MS."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-t.json",
+  "at": "best_known_for",
+  "en": "Three-cosmonaut Salyut-era variant",
+  "cur": "Варијанта за тројицу космонаута из доба станице Salyut"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
+  "at": "tagline",
+  "en": "Mir-era Soyuz; modernised avionics",
+  "cur": "Soyuz из ере станице Mir; модернизована авионика"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
+  "at": "description",
+  "en": "The Mir-era Soyuz (1986–2002), with redesigned avionics and the new Kurs automated docking system. Flew Soviet, Russian, and partner-country cosmonauts to Mir for 15 years.",
+  "cur": "Soyuz из ере станице Mir (1986–2002), с прерађеном авиоником и новим аутоматским системом за спајање Kurs. Током 15 година превозио је совјетске, руске и космонауте из земаља партнера до станице Mir."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
+  "at": "best_known_for",
+  "en": "Mir-era Soyuz; modernised avionics",
+  "cur": "Soyuz из ере станице Mir; модернизована авионика"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+  "at": "tagline",
+  "en": "ISS-era Soyuz; expanded crew height envelope",
+  "cur": "Soyuz из ере МСС-а; проширен распон висине чланова посаде"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+  "at": "description",
+  "en": "The ISS-era Soyuz (2002–2012), with a digital flight computer and a wider crew-height envelope to accommodate the international partner astronaut corps. Carried the first space tourists alongside professional crews.",
+  "cur": "Soyuz из ере МСС-а (2002–2012), са дигиталним рачунаром за управљање летом и ширим распоном висине чланова посаде, прилагођен корпусу астронаута међународних партнера. Превозио је прве свемирске туристе заједно са професионалним посадама."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+  "at": "best_known_for",
+  "en": "ISS-era Soyuz; expanded crew height envelope",
+  "cur": "Soyuz из ере МСС-а; проширен распон висине чланова посаде"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+  "at": "name",
+  "en": "Space Shuttle Orbiter",
+  "cur": "Орбитер Space Shuttle"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+  "at": "tagline",
+  "en": "Reusable winged orbital crew vehicle",
+  "cur": "Вишекратно употребљив орбитални свемирски летелица са крилима за посаду"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+  "at": "description",
+  "en": "The reusable winged spacecraft that flew 135 missions between 1981 and 2011 — the only crewed vehicle ever to land like a glider. Five flight orbiters were built (Columbia, Challenger, Discovery, Atlantis, Endeavour); Columbia and Challenger were lost with their crews.",
+  "cur": "Вишекратно употребљива свемирска летелица са крилима која је извела 135 мисија између 1981. и 2011. године — једино возило са посадом које је икада слетело као једрилица. Саграђено је пет летних орбитера (Columbia, Challenger, Discovery, Atlantis, Endeavour); Columbia и Challenger изгубљени су заједно са својим посадама."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+  "at": "best_known_for",
+  "en": "Reusable winged orbital crew vehicle",
+  "cur": "Вишекратно употребљива орбитална летелица са крилима за посаду"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/starliner.json",
+  "at": "tagline",
+  "en": "Boeing's commercial crew vehicle",
+  "cur": "Boeing-ова комерцијална свемирска летелица за посаду"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/starliner.json",
+  "at": "description",
+  "en": "Boeing’s Commercial Crew vehicle, with a pusher launch-abort system using its own service-module thrusters. Crew Flight Test (June 2024) suffered thruster failures and helium leaks; NASA returned the capsule uncrewed (September 2024). Wilmore and Williams returned via SpaceX Crew-9 (February 2025). Crewed flights suspended pending recertification.",
+  "cur": "Boeing-ова свемирска летелица за посаду у оквиру програма Commercial Crew, са потисним системом за прекид лансирања који користи сопствене потиснике сервисног модула. Током Crew Flight Test-а (јун 2024) дошло је до отказа потисника и цурења хелијума; NASA је капсулу вратила без посаде (септембар 2024). Вилмор и Вилијамс вратили су се летелицом SpaceX Crew-9 (фебруар 2025). Летови са посадом обустављени су до поновне сертификације."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/starliner.json",
+  "at": "best_known_for",
+  "en": "Boeing's commercial crew vehicle",
+  "cur": "Boeing-ова комерцијална свемирска летелица за посаду"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/voskhod.json",
+  "at": "tagline",
+  "en": "First multi-crew flight; first spacewalk",
+  "cur": "Први лет са више чланова посаде; прва шетња свемиром"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/voskhod.json",
+  "at": "dispatch",
+  "en": "The Voskhod spacecraft was a Vostok pushed past its design, and it shows exactly what improvisation under deadline looks like. To make the one-seat capsule carry more, engineers pulled out the ejection seat — the crew's only escape — and for the first flight left out the pressure suits too; for the second they bolted on an inflatable airlock so a cosmonaut could go outside. It scored the first multi-person crew and the first spacewalk, the last two firsts the Soviet program would claim. But it had no margin left, and after the near-disaster of its second flight it was retired — a stopgap that did its narrow job and was wisely not asked to do more.",
+  "cur": "Летелица Voskhod била је Vostok гурнут преко својих пројектних граница и тачно показује како изгледа импровизација под притиском рока. Да би једносед способан да понесе више, инжењери су уклонили катапултно седиште — једини излаз за спас посаде — а за први лет изоставили су и скафандере; за други су дозидали на надувавање припремљену ваздушну комору како би космонаут могао да изађе напоље. Тиме је остварена прва вишечлана посада и прва шетња свемиром, последња два „прва“ места која је совјетски програм успео да освоји. Али није остало никакве резерве, и после замало катастрофе на другом лету повучена је — привремено решење које је обавило свој уски задатак и од којег, мудро, није тражено више."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/voskhod.json",
+  "at": "description",
+  "en": "A modified Vostok refitted to carry up to three cosmonauts. Two crewed flights — Voskhod 1 (first multi-crew) and Voskhod 2 (Alexei Leonov’s first spacewalk in 1965). Pushed beyond the design margin and was retired in favour of Soyuz.",
+  "cur": "Измењени Vostok дограђен тако да понесе до три космонаута. Два лета с посадом — Voskhod 1 (први са више чланова посаде) и Voskhod 2 (први излазак Алексеја Леонова у свемир 1965). Гурнут преко пројектне границе безбедности, повучен је из употребе у корист летелице Soyuz."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/voskhod.json",
+  "at": "best_known_for",
+  "en": "First multi-crew flight; first spacewalk",
+  "cur": "Први лет са више чланова посаде; прва шетња свемиром"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/vostok.json",
+  "at": "tagline",
+  "en": "First crewed spacecraft (Gagarin, 1961)",
+  "cur": "Прва посадом управљана свемирска летелица (Гагарин, 1961)"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/vostok.json",
+  "at": "dispatch",
+  "en": "The Vostok spacecraft was the first machine to carry a human into space and bring one back, and its design is a study in doing the minimum that works. Reentry is the hardest part of coming home, so Vostok used the one shape that survives it from any angle — a sphere — which meant the automatic systems never had to point the craft precisely; it would tumble in and still come down heat-shield-heavy. The catch was that the sphere landed too hard for a person, so the cosmonaut ejected near the ground and parachuted separately, a fact hidden for years to protect the records. Crude, secretive, and completely effective, it flew six people to orbit and lost none — and its capsule-plus-service-module layout became the pattern for Soyuz, still flying today.",
+  "cur": "Свемирска летелица Vostok била је прва машина која је човека однела у свемир и вратила га назад, а њен дизајн је студија о томе како урадити минимум који функционише. Повратак у атмосферу најтежи је део пута кући, па је Vostok користио једини облик који га преживљава из било ког угла — лопту — због чега аутоматски системи никада нису морали прецизно да усмеравају летелицу; она би се котрљала кроз атмосферу и ипак се спустила са тежом страном, оном са топлотним штитом, окренутом надоле. Мана је била то што је лопта слетала претврдо за човека, па би се космонаут катапултирао близу тла и засебно падобраном спустио, а то је годинама скривано како би се заштитили рекорди. Груба, тајновита и потпуно ефикасна, однела је шест људи у орбиту и није изгубила ниједног — а њен распоред капсуле и сервисног модула постао је образац за Soyuz, који лети и данас."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/vostok.json",
+  "at": "description",
+  "en": "The spherical descent module that returned Yuri Gagarin from orbit on 1961-04-12 — the first human spaceflight. Six crewed flights between 1961 and 1963, including Valentina Tereshkova’s solo orbital mission as the first woman in space.",
+  "cur": "Сферни спусни модул који је Јурија Гагарина вратио из орбите 1961-04-12 — први свемирски лет човека. Шест летова с посадом између 1961. и 1963. године, укључујући самосталну орбиталну мисију Валентине Терешкове као прве жене у свемиру."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/vostok.json",
+  "at": "best_known_for",
+  "en": "First crewed spacecraft (Gagarin, 1961)",
+  "cur": "Прва посадом управљана свемирска летелица (Гагарин, 1961)"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/x37b.json",
+  "at": "tagline",
+  "en": "USSF reusable robotic spaceplane — multi-year classified orbital missions, the only US spaceplane operational after the Shuttle's retirement",
+  "cur": "Вишекратни роботски свемирски авион USSF — вишегодишње тајне орбиталне мисије, једини амерички свемирски авион у раду после Shuttle-а"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/x37b.json",
+  "at": "description",
+  "en": "Robotic mini-spaceplane (8.9 m long, ~5 t) built by Boeing Phantom Works for the USAF, transferred to the USSF in 2019. Launches vertically (Atlas V 501 originally; SpaceX Falcon 9 from OTV-5; Falcon Heavy from OTV-7) and lands horizontally on Kennedy's former Shuttle runway. Most payloads and orbital parameters are classified — known mission durations stretch from 224 days (OTV-1, 2010) to a record 908 days (OTV-6, 2020-2022). Declassified experiments include Hall-effect thruster tech demo, an AFRL radio-frequency communication test, and a 1 W solar-power-to-microwave-beaming experiment (PRAM, OTV-6). As of 2026 has flown seven missions.",
+  "cur": "Роботски мини свемирски авион (дужине 8,9 m, масе ~5 t) који је за USAF направио Boeing Phantom Works, а 2019. године предат је USSF. Лансира се вертикално (првобитно ракетом Atlas V 501; од OTV-5 ракетом SpaceX Falcon 9; од OTV-7 ракетом Falcon Heavy), а слеће хоризонтално на некадашњу писту за Shuttle у Kennedy-ју. Већина корисних терета и орбиталних параметара је поверљива — познато трајање мисија креће се од 224 дана (OTV-1, 2010) до рекордних 908 дана (OTV-6, 2020–2022). Међу декласификованим експериментима су демонстрација технологије Холовог потисника, AFRL-ов тест радиофреквентне комуникације и експеримент преноса соларне енергије микроталасним зрачењем снаге 1 W (PRAM, OTV-6). До 2026. године извео је седам мисија."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/x37b.json",
+  "at": "best_known_for",
+  "en": "USSF reusable robotic spaceplane — classified multi-year orbital missions, post-Shuttle US spaceplane",
+  "cur": "Вишекратни роботски свемирски авион USSF — поверљиве вишегодишње орбиталне мисије, амерички свемирски авион из доба после Shuttle-а"
+ },
+ {
+  "rel": "fleet/engine/ce-20.json",
+  "at": "tagline",
+  "en": "India's first home-grown cryogenic engine, born from necessity",
+  "cur": "Први индијски криогени мотор домаће производње, рођен из нужде"
+ },
+ {
+  "rel": "fleet/engine/ce-20.json",
+  "at": "description",
+  "en": "When technology-transfer restrictions blocked India from acquiring cryogenic engine technology in the early 1990s, ISRO's Liquid Propulsion Systems Centre developed one from the ground up. The CE-20 is the result: a gas-generator cycle burning LOX and LH2 that powers the upper stage of LVM3, India's heaviest operational rocket. It first flew on 5 June 2017 on the GSLV Mk III D1 developmental flight, capping a two-decade development program that turned a geopolitical barrier into independent capability. The CE-20 is the engine that will carry Gaganyaan — India's first crewed mission — to orbit.",
+  "cur": "Када су ограничења у преносу технологије почетком деведесетих година прошлог века онемогућила Индији да набави технологију криогених мотора, Liquid Propulsion Systems Centre организације ISRO развио је такав мотор од нуле. CE-20 је његов резултат: мотор са циклусом гасног генератора који сагорева LOX и LH2 и покреће горњи степен ракете LVM3, најтеже оперативне индијске ракете. Први пут је полетео 5. јуна 2017. на развојном лету GSLV Mk III D1, чиме је окончан двадесетогодишњи развојни програм који је геополитичку препреку претворио у самосталну способност. CE-20 је мотор који ће однети Gaganyaan — прву индијску мисију са посадом — у орбиту."
+ },
+ {
+  "rel": "fleet/engine/ce-20.json",
+  "at": "best_known_for",
+  "en": "India's first home-grown cryogenic engine — the LVM3 upper stage",
+  "cur": "Први индијски криогени мотор домаће производње — горњи степен ракете LVM3"
+ },
+ {
+  "rel": "fleet/engine/f-1.json",
+  "at": "tagline",
+  "en": "The most powerful single-chamber engine ever flown",
+  "cur": "Најмоћнији мотор са једном комором који је икада полетео"
+ },
+ {
+  "rel": "fleet/engine/f-1.json",
+  "at": "description",
+  "en": "Five F-1s on Saturn V's first stage produced combined thrust that no single rocket before or since has matched at sea level. Rocketdyne's gas-generator cycle burned LOX and RP-1 at a rate that demanded turbopumps the size of car engines and a combustion chamber that engineers had to solve combustion instability in by trial, explosion, and redesign. It first flew on 9 November 1967 and put Apollo on its way to the Moon six times before the program ended.",
+  "cur": "Пет F-1s на првом степену ракете Saturn V давало је укупни потисак који ниједна појединачна ракета ни пре ни после није достигла на нивоу мора. Rocketdyne-ов циклус са генератором гаса сагоревао је LOX и RP-1 таквом брзином да су биле потребне турбопумпе величине аутомобилских мотора и комора за сагоревање у којој су инжењери нестабилност сагоревања морали да савладају покушајима, експлозијама и поновним пројектовањем. Први пут је полетео 9. новембра 1967. и шест пута је упутио Apollo ка Месецу пре него што је програм окончан."
+ },
+ {
+  "rel": "fleet/engine/f-1.json",
+  "at": "best_known_for",
+  "en": "Most powerful single-chamber liquid engine ever flown — five lifted Saturn V",
+  "cur": "Најмоћнији течни мотор са једном комором који је икада полетео — пет њих подигло је ракету Saturn V"
+ },
+ {
+  "rel": "fleet/engine/h-1.json",
+  "at": "tagline",
+  "en": "Eight engines, eight missions — the Saturn I workhorse",
+  "cur": "Осам мотора, осам мисија — радни коњ ракете Saturn I"
+ },
+ {
+  "rel": "fleet/engine/h-1.json",
+  "at": "description",
+  "en": "The H-1 was the engine Rocketdyne built to bridge the gap between early ballistic-missile powerplants and the F-1 that would follow. Running a gas-generator cycle on LOX and RP-1, eight H-1s clustered together formed Saturn I's first stage — and later Saturn IB's — flying every unmanned Apollo hardware test and crewed Apollo 7. Its first flight was 27 October 1961; it ran continuously through the end of the Saturn IB program in 1975.",
+  "cur": "H-1 је био мотор који је Rocketdyne направио да премости јаз између раних погонских склопова балистичких пројектила и мотора F-1, који ће уследити. Радећи по циклусу са генератором гаса на LOX и RP-1, осам мотора H-1s груписаних заједно чинило је први степен ракете Saturn I — а касније и ракете Saturn IB — која је летела при сваком тестирању беспилотне опреме програма Apollo, као и при лету посаде Apollo 7. Његов први лет био је 27. октобра 1961; радио је непрекидно све до краја програма Saturn IB 1975. године."
+ },
+ {
+  "rel": "fleet/engine/h-1.json",
+  "at": "best_known_for",
+  "en": "Eight-cluster Saturn I/IB booster engine — the F-1 rehearsal",
+  "cur": "Мотор за први степен ракета Saturn I/IB у склопу од осам — проба пред F-1"
+ },
+ {
+  "rel": "fleet/engine/hm7b.json",
+  "at": "tagline",
+  "en": "Ariane's cryogenic upper stage, three decades of service",
+  "cur": "Криогени горњи степен ракете Ariane, три деценије службе"
+ },
+ {
+  "rel": "fleet/engine/hm7b.json",
+  "at": "description",
+  "en": "The HM7B is the hydrogen-fuelled upper-stage engine that gave Ariane rockets a high-energy kick after the core stage shut down. Running a gas-generator cycle on LOX and LH2, it first flew on Ariane 2 in May 1986 and continued through the end of Ariane 5's operational life in July 2023. Its small size belies a high specific impulse that made it the workhorse for geostationary transfer injections, carrying commercial satellites and scientific payloads — including Rosetta, Mars Express, and Venus Express — to their departure trajectories over more than three decades.",
+  "cur": "HM7B је мотор горњег степена на водонично гориво, који је ракетама Ariane давао снажан последњи потисак након гашења главног степена. Радећи по циклусу са гасним генератором на LOX и LH2, први пут је полетео на ракети Ariane 2 у мају 1986. и остао у употреби до краја оперативног века ракете Ariane 5 у јулу 2023. Његове мале димензије заваравају: висок специфични импулс учинио га је главним радним коњем за убацивање у геостационарну трансферну путању, а током више од три деценије носио је комерцијалне сателите и научне терете — укључујући Rosetta, Mars Express и Venus Express — на њихове полазне путање."
+ },
+ {
+  "rel": "fleet/engine/hm7b.json",
+  "at": "best_known_for",
+  "en": "Europe's cryogenic upper-stage engine — Ariane's translunar workhorse",
+  "cur": "Европски криогени мотор горњег степена — главни радни коњ ракете Ariane за слање ка Месецу"
+ },
+ {
+  "rel": "fleet/engine/j-2.json",
+  "at": "tagline",
+  "en": "The engine that sent Apollo to the Moon — twice",
+  "cur": "Мотор који је послао Apollo на Месец — двапут"
+ },
+ {
+  "rel": "fleet/engine/j-2.json",
+  "at": "description",
+  "en": "The J-2 burned hydrogen and oxygen, and it could restart in the vacuum of space — a capability that made Saturn V's trans-lunar injection burn possible. Rocketdyne's gas-generator design flew on Saturn V's second and third stages and on Saturn IB, combining performance with the in-space restarts that turned a launch vehicle into a true departure stage. It first flew in February 1966 and last flew on the Apollo-Soyuz Test Project in July 1975.",
+  "cur": "J-2 је сагоревао водоник и кисеоник и могао је да се поново упали у вакууму свемира — способност која је омогућила сагоревање Saturn V-а за убацивање на путању ка Месецу. Рокетдајново решење са генератором гаса летело је на другом и трећем степену ракете Saturn V и на ракети Saturn IB, спајајући перформансе са поновним паљењима у свемиру, која су ракету-носач претворила у прави степен за полазак. Први пут је полетео у фебруару 1966, а последњи пут у програму Apollo-Soyuz Test Project у јулу 1975."
+ },
+ {
+  "rel": "fleet/engine/j-2.json",
+  "at": "best_known_for",
+  "en": "Restartable hydrogen upper-stage engine that sent Apollo translunar",
+  "cur": "Водонични мотор горњег степена са могућношћу поновног паљења, који је послао Apollo ка Месецу"
+ },
+ {
+  "rel": "fleet/engine/le-5b.json",
+  "at": "tagline",
+  "en": "Japan's restartable upper stage, flying from H-IIA through H3",
+  "cur": "Јапански горњи степен са могућношћу поновног паљења, који лети од ракете H-IIA до H3"
+ },
+ {
+  "rel": "fleet/engine/le-5b.json",
+  "at": "description",
+  "en": "The LE-5B is the cryogenic upper-stage engine that has bridged two generations of Japanese launch vehicles. Running an expander-bleed cycle on LOX and LH2, it can be restarted in flight — a requirement for placing payloads in precise orbits after a coast phase. It first flew on H-IIA in August 2001 and has since been uprated as the LE-5B-3 for continued service on H3, giving Japan unbroken upper-stage continuity from the ISS assembly era into the present. Its combination of restartability and the clean simplicity of the expander-bleed cycle made it the natural upper-stage complement to both the LE-7A and the LE-9.",
+  "cur": "LE-5B је криогени мотор горњег степена који премошћује две генерације јапанских ракета-носача. Ради по циклусу експандер-бликд на LOX и LH2 и може се поново упалити у лету — што је услов за постављање корисног терета у прецизне орбите након лета по инерцији. Први пут је полетео на ракети H-IIA у августу 2001. године, а потом је унапређен као LE-5B-3 за наставак службе на ракети H3, чиме Јапану обезбеђује непрекинути континуитет горњег степена од доба склапања МСС до данас. Захваљујући споју могућности поновног паљења и чисте једноставности циклуса експандер-бликд, природан је пар горњем степену како за мотор LE-7A, тако и за LE-9."
+ },
+ {
+  "rel": "fleet/engine/le-5b.json",
+  "at": "best_known_for",
+  "en": "Japan's restartable cryogenic upper stage — H-IIA through H3",
+  "cur": "Јапански криогени горњи степен са могућношћу поновног паљења — од ракете H-IIA до H3"
+ },
+ {
+  "rel": "fleet/engine/le-7a.json",
+  "at": "tagline",
+  "en": "Japan's staged-combustion hydrogen core, two decades of H-II service",
+  "cur": "Јапанов водонични мотор језгра са степенастим сагоревањем, две деценије у служби ракета H-II"
+ },
+ {
+  "rel": "fleet/engine/le-7a.json",
+  "at": "description",
+  "en": "The LE-7A is the engine that gave Japan a fully indigenous heavy-lift capability. Developed by Mitsubishi Heavy Industries for JAXA, it runs a staged-combustion cycle on LOX and LH2 — the thermodynamic approach that extracts maximum efficiency from hydrogen propellant — and first flew on H-IIA in August 2001 as a refined successor to the original LE-7. The redesign addressed turbopump issues that had caused early H-II failures, and the LE-7A went on to anchor H-IIA and H-IIB's operational careers through 2024, launching Japan's HTV cargo ships to the International Space Station and the JAXA-ISRO radar satellite ALOS series.",
+  "cur": "LE-7A је мотор који је Јапану омогућио потпуно самосталну способност лансирања тешких терета. Развила га је компанија Mitsubishi Heavy Industries за JAXA, а ради по циклусу са степенастим сагоревањем на LOX и LH2 — термодинамичком приступу који из водоничног погонског горива извлачи највећу могућу ефикасност — и први пут је полетео на ракети H-IIA у августу 2001. као усавршени наследник првобитног мотора LE-7. Редизајн је решио проблеме са турбопумпама који су изазвали ране неуспехе ракете H-II, а LE-7A је потом постао ослонац оперативне каријере ракета H-IIA и H-IIB све до 2024, лансирајући јапанске теретне бродове HTV ка Међународној свемирској станици и радарске сателите серије ALOS, које су заједнички развиле агенције JAXA и ISRO."
+ },
+ {
+  "rel": "fleet/engine/le-7a.json",
+  "at": "best_known_for",
+  "en": "Japan's staged-combustion hydrogen core — powered H-IIA/H-IIB",
+  "cur": "Јапанов водонични мотор језгра са степенастим сагоревањем — погонио је ракете H-IIA/H-IIB"
+ },
+ {
+  "rel": "fleet/engine/le-9.json",
+  "at": "tagline",
+  "en": "The largest expander-bleed engine ever built — powering H3",
+  "cur": "Највећи мотор са експандерским циклусом отпуста гаса икада направљен — покреће H3"
+ },
+ {
+  "rel": "fleet/engine/le-9.json",
+  "at": "description",
+  "en": "The LE-9 is a deliberate choice of elegance over complexity. Rather than the turbopump-preburner arrangement of staged combustion, it uses an expander-bleed cycle: hydrogen is heated by the chamber and nozzle walls, and a portion of that gas is bled off to drive the turbopumps before being dumped overboard. The cycle has inherently lower chamber pressures and a simpler hot-section design, trading some performance for a reduction in the mechanical failure modes that plagued earlier Japanese engines. Developed by Mitsubishi for JAXA's H3 rocket, the LE-9 first flew in March 2023 and is the largest engine of its type to reach operational service.",
+  "cur": "LE-9 је намеран избор елеганције испред сложености. Уместо распореда са турбопумпом и предкомором какав има степенасто сагоревање, он користи експандерски циклус отпуста гаса: водоник се загрева преко зидова коморе и млазнице, а део тог гаса се одваја да би покретао турбопумпе, након чега се испушта у околину. Овај циклус има инхерентно ниже притиске у комори и једноставнију конструкцију врућег дела, па се жртвује део перформанси зарад смањења механичких кварова који су мучили раније јапанске моторе. Мотор LE-9, који је за JAXA-ину ракету H3 развио Mitsubishi, први пут је полетео у марту 2023. и највећи је мотор те врсте који је ушао у оперативну употребу."
+ },
+ {
+  "rel": "fleet/engine/le-9.json",
+  "at": "best_known_for",
+  "en": "The largest expander-bleed engine ever flown — the H3 core",
+  "cur": "Највећи мотор са експандерским циклусом отпуста гаса који је икада летео — главни степен ракете H3"
+ },
+ {
+  "rel": "fleet/engine/lr87.json",
+  "at": "tagline",
+  "en": "Twin-chamber hypergolic first stage that flew every Gemini crew",
+  "cur": "Хиперголични први степен са двоструком комором сагоревања који је лансирао сваку посаду програма Gemini"
+ },
+ {
+  "rel": "fleet/engine/lr87.json",
+  "at": "description",
+  "en": "The LR87 is the engine that launched all ten crewed Gemini missions on Titan II. Aerojet's design places two combustion chambers on a single turbopump assembly, burning Aerozine-50 and nitrogen tetroxide in a gas-generator cycle — a hypergolic combination that was standard equipment in American ICBMs of the era. The propellant choice had a direct consequence for crew safety: unlike RP-1 or hydrogen, Aerozine-50 and N2O4 ignite on contact, giving a hypergolic reliability that let Gemini fly with ejection seats rather than a launch-escape tower across all ten crewed missions. The LR87 was later developed into larger variants that flew on Titan III and Titan IV commercial and military missions through October 2005.",
+  "cur": "LR87 је мотор који је лансирао свих десет мисија програма Gemini са посадом на ракети Titan II. Aerojet-ов дизајн смешта две коморе сагоревања на један склоп турбопумпе, сагоревајући Aerozine-50 и азот-тетроксид у циклусу са генератором гаса — хиперголична комбинација која је била стандардна опрема америчких интерконтиненталних балистичких ракета тог доба. Избор погонског горива имао је директну последицу по безбедност посаде: за разлику од RP-1 или водоника, Aerozine-50 и N2O4 се запале при додиру, а та хиперголична поузданост омогућила је да Gemini током свих десет мисија са посадом лети са катапултним седиштима, а не са торњем за спасавање при лансирању. LR87 је касније развијен у веће варијанте које су летеле на ракетама Titan III и Titan IV у комерцијалним и војним мисијама до октобра 2005. године."
+ },
+ {
+  "rel": "fleet/engine/lr87.json",
+  "at": "best_known_for",
+  "en": "The twin-chamber first stage that launched Gemini crews on Titan II",
+  "cur": "Први степен са двоструком комором сагоревања који је лансирао посаде програма Gemini на ракети Titan II"
+ },
+ {
+  "rel": "fleet/engine/merlin-1d.json",
+  "at": "tagline",
+  "en": "Nine engines, one booster, flown and re-flown dozens of times",
+  "cur": "Девет мотора, један бустер, лансирани и поново лансирани десетине пута"
+ },
+ {
+  "rel": "fleet/engine/merlin-1d.json",
+  "at": "description",
+  "en": "SpaceX's Merlin 1D is the engine that made the reusable Falcon 9 possible. Nine of them cluster on Falcon 9's first stage, running a gas-generator cycle on LOX and RP-1, with the center engine also used for entry and landing burns. First flown in September 2013, the Merlin 1D matured into a high-cadence workhorse: individual engines have accumulated more than twenty flights apiece, a reuse record that changed what the industry believed was economically achievable. The vacuum variant, Merlin 1D Vacuum, powers Falcon 9's upper stage with a larger nozzle optimised for the near-vacuum environment.",
+  "cur": "Merlin 1D компаније SpaceX мотор је који је омогућио вишекратно употребљиву ракету Falcon 9. Девет таквих мотора збијено је на првом степену ракете Falcon 9 и раде по циклусу са гасним генератором, на LOX и RP-1, а средишњи мотор користи се и за паљења при повратку и слетању. Први пут је полетео у септембру 2013, а Merlin 1D је сазрео у радног коња високе учесталости лансирања: поједини мотори прикупили су више од двадесет летова по примерку, а тај рекорд у поновној употреби променио је оно што је индустрија сматрала економски оствариво. Вакуумска верзија, Merlin 1D Vacuum, покреће горњи степен ракете Falcon 9 и има већу млазницу прилагођену готово вакуумском окружењу."
+ },
+ {
+  "rel": "fleet/engine/merlin-1d.json",
+  "at": "best_known_for",
+  "en": "The reusable workhorse — nine lift Falcon 9, flown and re-flown dozens of times",
+  "cur": "Вишекратни покретач — девет мотора подиже Falcon 9, који лети изнова и изнова десетине пута"
+ },
+ {
+  "rel": "fleet/engine/raptor.json",
+  "at": "tagline",
+  "en": "Full-flow staged combustion — the hardest cycle, finally flying",
+  "cur": "Поступак са потпуним протоком и степенастим сагоревањем — најтежи циклус, који напокон лети"
+ },
+ {
+  "rel": "fleet/engine/raptor.json",
+  "at": "description",
+  "en": "The Raptor is the first full-flow staged-combustion engine to reach operational flight. In this thermodynamic cycle, both propellants — LOX and liquid methane — pass through preburners before entering the main combustion chamber, extracting maximum energy and leaving virtually no unburned propellant. Engineers had studied the concept for decades and concluded it was prohibitively complex; SpaceX built it anyway. Thirty-three Raptors ignite simultaneously on Super Heavy's first stage, and a vacuum-optimised variant powers Starship's upper stage. The first integrated Starship flight carrying Raptors lifted off on 20 April 2023.",
+  "cur": "Raptor је први мотор са потпуним протоком и степенастим сагоревањем који је достигао оперативни лет. У овом термодинамичком циклусу оба погонска горива — LOX и течни метан — пролазе кроз претпаљаче пре уласка у главну комору за сагоревање, чиме се извлачи максимум енергије, а практично не остаје несагорелог горива. Инжењери су деценијама проучавали овај концепт и закључили да је недопустиво сложен; SpaceX га је ипак направио. Тридесет три мотора Raptor пале се истовремено на првом степену ракете Super Heavy, а варијанта оптимизована за вакуум покреће горњи степен ракете Starship. Први интегрисани лет ракете Starship с моторима Raptor одигао се 20. априла 2023."
+ },
+ {
+  "rel": "fleet/engine/raptor.json",
+  "at": "best_known_for",
+  "en": "First full-flow staged-combustion engine to fly — 33 lift Super Heavy",
+  "cur": "Први мотор са потпуним протоком и степенастим сагоревањем који је полетео — 33 мотора подижу Super Heavy"
+ },
+ {
+  "rel": "fleet/engine/rd-107-108.json",
+  "at": "tagline",
+  "en": "Sputnik's engine — still flying humans 65 years later",
+  "cur": "Мотор ракете Sputnik — и после 65 година још носи људе у свемир"
+ },
+ {
+  "rel": "fleet/engine/rd-107-108.json",
+  "at": "description",
+  "en": "The RD-107 and RD-108 are the engines of the R-7, the world's first intercontinental ballistic missile, which Sergei Korolev's team repurposed as a launch vehicle. The RD-107 powers the R-7's four strap-on boosters; the RD-108 drives the sustainer core. Both run a gas-generator cycle on LOX and kerosene, and both first flew on 21 August 1957 — months before Sputnik. Upgraded as the RD-107A and RD-108A, they continue to power Soyuz rockets carrying crews to the International Space Station, making them the longest-operating human-rated propulsion system in history.",
+  "cur": "RD-107 и RD-108 су мотори ракете R-7, прве светске интерконтиненталне балистичке ракете, коју је тим на чијем је челу био Сергеј Корољов преуредио у ракету-носач. RD-107 покреће четири бочна појачивача ракете R-7, а RD-108 покреће централни степен. Оба раде по циклусу са гасним генератором на течни кисеоник и керозин, и оба су први пут полетела 21. августа 1957. — месецима пре Sputnik-а. Унапређени као RD-107A и RD-108A, и даље покрећу ракете Soyuz које носе посаде до Међународне свемирске станице, због чега су најдуже коришћен погонски систем у историји сертификован за лет људи."
+ },
+ {
+  "rel": "fleet/engine/rd-107-108.json",
+  "at": "best_known_for",
+  "en": "The R-7 engines — still flying humans on Soyuz after 65+ years",
+  "cur": "Мотори ракете R-7 — и после више од 65 година још носе људе у свемир на ракетама Soyuz"
+ },
+ {
+  "rel": "fleet/engine/rd-180.json",
+  "at": "tagline",
+  "en": "Russian ox-rich staged combustion the US could not replicate",
+  "cur": "Руско поступно сагоревање са вишком оксидатора, које САД нису могле да опонашају"
+ },
+ {
+  "rel": "fleet/engine/rd-180.json",
+  "at": "description",
+  "en": "The RD-180 represents a branch of propulsion technology the United States effectively ceded to the Soviet Union during the Cold War. Oxygen-rich staged combustion — burning excess oxidiser through the preburner to drive the turbopump — demands materials and manufacturing tolerances that American industry had not mastered. NPO Energomash's two-chamber, single-turbopump design flew on Atlas V from May 2000, providing the first stage with a combination of thrust and efficiency that no American-made kerolox engine of the era could match. It was retired with Atlas V in 2023.",
+  "cur": "RD-180 представља грану погонске технологије коју су Сједињене Државе током Хладног рата практично препустиле Совјетском Савезу. Поступно сагоревање са вишком кисеоника — при коме се вишак оксидатора спаљује кроз претпаљач како би покретао турбопумпу — захтева материјале и производне толеранције које америчка индустрија није била савладала. Дизајн компаније NPO Energomash са две коморе и једном турбопумпом летео је на ракети Atlas V од маја 2000. године и пружао је првом степену комбинацију потиска и ефикасности са којом се није могао мерити ниједан амерички мотор на керосин и течни кисеоник тог доба. Повучен је из употребе заједно са ракетом Atlas V 2023. године."
+ },
+ {
+  "rel": "fleet/engine/rd-180.json",
+  "at": "best_known_for",
+  "en": "Oxygen-rich staged combustion the US could not match — flew on Atlas V",
+  "cur": "Поступно сагоревање са вишком кисеоника, које САД нису могле да достигну — летео на ракети Atlas V"
+ },
+ {
+  "rel": "fleet/engine/rd-253.json",
+  "at": "tagline",
+  "en": "Six hypergolic engines built every Proton mission",
+  "cur": "Шест хиперголичних мотора изградило је сваку мисију Proton"
+ },
+ {
+  "rel": "fleet/engine/rd-253.json",
+  "at": "description",
+  "en": "The RD-253 is the engine that made Proton one of the most capable heavy lifters of the Soviet era. Six of them ring Proton's first stage, each running oxygen-rich staged combustion on nitrogen tetroxide and unsymmetrical dimethylhydrazine — a hypergolic pair that ignites on contact and requires no ignition system. The propellant choice is toxic and corrosive, but it stores at room temperature and delivers reliability that Proton sustained across decades of commercial and planetary missions. The RD-253 first flew on 16 July 1965 and powered every Proton first stage through the rocket's retirement.",
+  "cur": "RD-253 је мотор који је ракету Proton учинио једном од најсналажљивијих тешких ракета-носача совјетске ере. Шест таквих мотора распоређено је у прстен око првог степена ракете Proton, а сваки ради по принципу поступног сагоревања са вишком кисеоника, на азот-тетроксид и несиметрични диметилхидразин — хиперголични пар који се пали при додиру и не захтева систем за паљење. Избор погонског горива је токсичан и корозиван, али се оно чува на собној температури и обезбеђује поузданост коју је Proton одржавао деценијама у комерцијалним и планетарним мисијама. RD-253 је први пут полетео 16. јула 1965. и покретао је сваки први степен ракете Proton све до њеног повлачења из употребе."
+ },
+ {
+  "rel": "fleet/engine/rd-253.json",
+  "at": "best_known_for",
+  "en": "Proton's hypergolic workhorse — six lifted every Proton first stage",
+  "cur": "Хиперголични радни коњ ракете Proton — шест њих покретало је сваки први степен ракете Proton"
+ },
+ {
+  "rel": "fleet/engine/rl10.json",
+  "at": "tagline",
+  "en": "Hydrogen upper stage, six decades and counting",
+  "cur": "Водонични горњи степен, шест деценија и даље у раду"
+ },
+ {
+  "rel": "fleet/engine/rl10.json",
+  "at": "description",
+  "en": "The RL10 introduced the expander cycle to spaceflight: propellant flows through the nozzle and chamber walls, picks up heat, and drives the turbopump before it ever reaches the combustion chamber — no separate gas generator required. First flown in November 1963 on the Centaur upper stage, the RL10 family has since powered upper stages for Atlas, Delta, and Vulcan missions. Its longevity is the record; no other rocket engine family has remained in continuous production and flight for as long, evolving through block upgrades while the core thermodynamic concept stays intact.",
+  "cur": "RL10 је увео експандерски циклус у свемирске летове: погонско гориво струји кроз зидове млазника и коморе, преузима топлоту и покреће турбопумпу пре него што уопште стигне до коморе за сагоревање — без потребе за посебним генератором гаса. Први пут је полетео у новембру 1963. на горњем степену Centaur, а породица RL10 од тада покреће горње степене за мисије Atlas, Delta и Vulcan. Њена дуговечност је њен рекорд: ниједна друга породица ракетних мотора није тако дуго остала у непрекидној производњи и употреби, развијајући се кроз узастопна унапређења блокова, док основни термодинамички концепт остаје нетакнут."
+ },
+ {
+  "rel": "fleet/engine/rl10.json",
+  "at": "best_known_for",
+  "en": "Longest-serving engine in spaceflight — the first hydrogen upper stage",
+  "cur": "Мотор с најдужим стажом у свемирским летовима — први водонични горњи степен"
+ },
+ {
+  "rel": "fleet/engine/rocketdyne-a7.json",
+  "at": "tagline",
+  "en": "The engine that launched the first American into space",
+  "cur": "Мотор који је први пут одвео једног Американца у свемир"
+ },
+ {
+  "rel": "fleet/engine/rocketdyne-a7.json",
+  "at": "description",
+  "en": "On 5 May 1961, Alan Shepard rode a Mercury-Redstone rocket to an altitude of 187 kilometres and back — making him the first American in space — and the engine that lifted him was the Rocketdyne A-7. Derived from the A-6 that powered the Redstone ballistic missile, the A-7 ran a gas-generator cycle on LOX and ethyl alcohol: the same propellant pairing that traced back through Redstone to the German V-2. Shepard's Freedom 7 flight lasted fifteen minutes and changed the political calculus of the Space Race. The A-7 flew only on Mercury-Redstone missions, retiring in May 1963.",
+  "cur": "5. маја 1961. године, Алан Шепард је јахао Меркур-Редстон ракету до висине од 187 километара и назад — чинећи га првим Американцем у свемиру — а мотор који га је подигао био је Rocketdyne A-7. Изведен из A-6 који је погонио Редстон балистичку ракету, A-7 је радио на циклусу газног генератора на LOX и етилном алкохолу: иста комбинација горива која се повлачи кроз Редстон до немачког V-2. Shepard-ов Freedom 7 лет је трајао петнаест минута и променио је политичку логику Свемирског рата. A-7 је летео само на Меркур-Редстон мисијама, повлачећи се у мају 1963."
+ },
+ {
+  "rel": "fleet/engine/rocketdyne-a7.json",
+  "at": "best_known_for",
+  "en": "The engine that launched the first American — Freedom 7",
+  "cur": "Мотор који је лансирао првог Американца — Freedom 7"
+ },
+ {
+  "rel": "fleet/engine/rs-25.json",
+  "at": "tagline",
+  "en": "Reusable, hydrogen-fuelled, and still flying on SLS",
+  "cur": "Вишекратан, на водоник и још увек у лету на SLS-у"
+ }
+]

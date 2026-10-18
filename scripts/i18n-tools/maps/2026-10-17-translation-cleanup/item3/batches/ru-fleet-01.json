@@ -1,0 +1,1460 @@
+[
+ {
+  "rel": "fleet/cargo-spacecraft/atv.json",
+  "at": "name",
+  "en": "ATV (Automated Transfer Vehicle)",
+  "cur": "ATV (автоматический грузовой корабль)"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/atv.json",
+  "at": "tagline",
+  "en": "ESA's flagship ISS cargo carrier; 5 flights",
+  "cur": "Флагманский грузовой корабль ESA для МКС; 5 полётов"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/atv.json",
+  "at": "dispatch",
+  "en": "The Automated Transfer Vehicle was Europe's ISS freighter and the most sophisticated cargo craft of its time — a twenty-tonne spacecraft that navigated itself to a fully automatic docking with the Station, delivered cargo, water, air and propellant, and used its own engines to reboost the entire ISS in orbit. Five flew between 2008 and 2015, each named for a European thinker from Jules Verne to Georges Lemaître. More than a supply truck, the ATV was how Europe earned its place as a full ISS partner — and the technology it proved lives on as the European Service Module that now powers NASA's Orion on its way to the Moon.",
+  "cur": "Automated Transfer Vehicle был европейским грузовиком МКС и самым совершённым транспортным кораблём своего времени — космическим аппаратом массой двадцать тонн, который самостоятельно маневрировал для полностью автоматической стыковки со станцией, доставлял грузы, воду, воздух и топливо, а также использовал собственные двигатели для переведения всей МКС на более высокую орбиту. Пять аппаратов летали между 2008 и 2015 годами, каждый назван в честь европейского мыслителя — от Жюля Верна до Жоржа Леметра. ATV был не просто грузовиком снабжения, а средством, благодаря которому Европа завоевала статус полноправного партнёра МКС — и технология, которую он доказал, продолжает жить в Европейском служебном модуле, который теперь обеспечивает питанием космический корабль NASA Orion на пути к Луне."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/atv.json",
+  "at": "description",
+  "en": "ATV (Automated Transfer Vehicle) is a robotic cargo spacecraft built by Astrium / Airbus in Multi (Europe). ESA's flagship ISS cargo carrier that flew five missions to the ISS from 2008 to 2015, delivering cargo, water, air and propellant while using its engines to reboost the Station.",
+  "cur": "ATV (Automated Transfer Vehicle) — это робототизированный грузовой космический корабль, созданный компанией Astrium / Airbus в Европе. Флагманский грузовой корабль ESA для МКС, который совершил пять полётов на МКС с 2008 по 2015 год, доставляя грузы, воду, воздух и топливо, а также использовал свои двигатели для увеличения орбиты Станции."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/atv.json",
+  "at": "best_known_for",
+  "en": "ESA's flagship ISS cargo carrier; 5 flights",
+  "cur": "Флагманский грузовой корабль ESA для МКС; 5 полётов"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
+  "at": "tagline",
+  "en": "Successor to Cargo Dragon v1; trunk-mounted PV",
+  "cur": "Преемник Cargo Dragon v1; установленный на багажнике PV"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
+  "at": "description",
+  "en": "The crewless variant of Crew Dragon, with the same body-mounted solar cells on the trunk. Differs visibly from Cygnus (round arrays) and Soyuz/Progress (rectangular wings). Returns intact with downmass — unique among ISS cargo carriers.",
+  "cur": "Безэкипажный вариант Crew Dragon, с теми же установленными на теле солнечными батареями на багажнике. Отличается заметно от Cygnus (круглые массивы) и «Прогресс» (прямоугольные крылья). Возвращается неповрежденным с малой массой — уникальным среди грузовых перевозчиков МКС."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
+  "at": "best_known_for",
+  "en": "Successor to Cargo Dragon v1; trunk-mounted PV",
+  "cur": "Преемник Cargo Dragon v1; установленный на багажнике PV"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cargo-dragon-v1.json",
+  "at": "tagline",
+  "en": "First commercial spacecraft to ISS",
+  "cur": "Первый коммерческий космический аппарат на МКС"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cargo-dragon-v1.json",
+  "at": "description",
+  "en": "The first commercial spacecraft to berth with the ISS (COTS-2, May 2012); first contracted ISS resupply (CRS-1, October 2012). Twenty-one CRS missions plus two COTS demonstrations flew between 2010 and 2020 before the upgraded Dragon 2 took over.",
+  "cur": "Первый коммерческий космический аппарат, состыковавшийся с МКС (COTS-2, май 2012 г.); первая контрактная доставка грузов на МКС (CRS-1, октябрь 2012 г.). Двадцать одна миссия CRS и две демонстрационные миссии COTS летали с 2010 по 2020 год, прежде чем модернизированный Dragon 2 их заменил."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cargo-dragon-v1.json",
+  "at": "best_known_for",
+  "en": "First commercial spacecraft to ISS",
+  "cur": "Первый коммерческий космический аппарат на МКС"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+  "at": "tagline",
+  "en": "Stretched Cygnus; UltraFlex round arrays",
+  "cur": "Растянутый Cygnus; UltraFlex круглые массивы"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+  "at": "description",
+  "en": "Northrop Grumman’s pressurised-cargo carrier, recognisable by its round UltraFlex solar arrays — a fan-fold accordion pattern shared with no other ISS visitor. Burns up on reentry; no downmass.",
+  "cur": "Грузоноситель Northrop Grumman под давлением, узнаваемый своими круглыми солнечными батареями UltraFlex — шаблон аккордеона с вентилятором, которым не поделился ни один другой посетитель МКС. Сгорает на входе; нет массы."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+  "at": "best_known_for",
+  "en": "Stretched Cygnus; UltraFlex round arrays",
+  "cur": "Растянутый Cygnus; UltraFlex круглые массивы"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+  "at": "tagline",
+  "en": "Pressurised-only ISS cargo carrier",
+  "cur": "Грузовой перевозчик МКС только под давлением"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+  "at": "description",
+  "en": "Cygnus Standard is a robotic cargo spacecraft built by Orbital ATK in USA. Pressurised-only ISS cargo carrier. Retired after first flight in 2013.",
+  "cur": "Cygnus Standard — роботизированный грузовой космический корабль, построенный Orbital ATK в США. Грузовой перевозчик МКС только под давлением. Вышел на пенсию после первого полета в 2013 году."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+  "at": "best_known_for",
+  "en": "Pressurised-only ISS cargo carrier",
+  "cur": "Грузовой перевозчик МКС только под давлением"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/htv-x.json",
+  "at": "tagline",
+  "en": "Successor to HTV; expanded payload",
+  "cur": "Преемник HTV; расширенная грузоподъёмность"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/htv-x.json",
+  "at": "description",
+  "en": "HTV-X (Kounotori-X) is JAXA's second-generation cargo spacecraft, successor to the original HTV. The first vehicle (HTV-X1) launched October 26, 2025, berthed with the ISS on October 29, and re-entered May 27, 2026. HTV-X2 is planned.",
+  "cur": "HTV-X (Kounotori-X) — космический грузовой корабль второго поколения агентства JAXA, преемник оригинального HTV. Первый аппарат (HTV-X1) запущен 26 октября 2025 г., пристыкован к МКС 29 октября и совершил спуск 27 мая 2026 г. Планируется HTV-X2."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/htv-x.json",
+  "at": "best_known_for",
+  "en": "Successor to HTV; expanded payload",
+  "cur": "Преемник HTV; расширенная грузоподъёмность"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/htv.json",
+  "at": "tagline",
+  "en": "Japan's H-II Transfer Vehicle to ISS",
+  "cur": "Японский транспортный корабль H-II Transfer Vehicle для МКС"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/htv.json",
+  "at": "description",
+  "en": "HTV (Kounotori) is a robotic cargo spacecraft built by Mitsubishi Heavy Industries in Japan. Japan's H-II Transfer Vehicle flew nine missions to the ISS from 2009 to 2020, with HTV-9 (the final flight) departing in May 2020.",
+  "cur": "HTV (Kounotori) — это робототехнический грузовой космический аппарат, разработанный компанией Mitsubishi Heavy Industries в Японии. H-II Transfer Vehicle совершил девять полётов на МКС с 2009 по 2020 год, последний из них, HTV-9, отбыл в мае 2020 года."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/htv.json",
+  "at": "best_known_for",
+  "en": "Japan's H-II Transfer Vehicle to ISS",
+  "cur": "Японский транспортный корабль H-II Transfer Vehicle к МКС"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-7k-tg.json",
+  "at": "tagline",
+  "en": "First robotic cargo spacecraft",
+  "cur": "Первый роботизированный грузовой корабль"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-7k-tg.json",
+  "at": "description",
+  "en": "The first robotic cargo spacecraft, derived from Soyuz. Forty-three Progress flights to Salyut and early Mir between 1978 and 1990 established the architecture every subsequent ISS resupply has followed.",
+  "cur": "Первый робототехнический грузовой корабль, производный от «Союз». Сорок три полёта «Прогресс» к «Салют» и ранней «Мир» между 1978 и 1990 годами установили архитектуру, которой следовал каждый последующий рейс по снабжению МКС."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-7k-tg.json",
+  "at": "best_known_for",
+  "en": "First robotic cargo spacecraft",
+  "cur": "Первый роботизированный грузовой корабль"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-m.json",
+  "at": "tagline",
+  "en": "Mir-era Progress; modernised systems",
+  "cur": "Прогресс эпохи Мир; модернизированные системы"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-m.json",
+  "at": "description",
+  "en": "Progress M is a robotic cargo spacecraft built by RKK Energia in Russia. The modernised Progress-M served Mir and the ISS across 97 missions from 1989 to 2021, before being superseded by Progress-MS.",
+  "cur": "«Прогресс М» — робот-грузовой корабль, разработанный RKK «Энергия» в России. Модернизированный «Прогресс-М» обслуживал станции «Мир» и МКС на протяжении 97 миссий с 1989 по 2021 год, прежде чем был заменён на «Прогресс-МС»."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-m.json",
+  "at": "best_known_for",
+  "en": "Mir-era Progress; modernised systems",
+  "cur": "«Прогресс» эпохи «Мир»; модернизированные системы"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-ms.json",
+  "at": "tagline",
+  "en": "Current Progress generation; ISS resupply",
+  "cur": "Текущее поколение Прогресс; пополнение запасов МКС"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-ms.json",
+  "at": "description",
+  "en": "Progress MS is a robotic cargo spacecraft built by RKK Energia in Russia. Current Progress generation; ISS resupply. In service since 2015.",
+  "cur": "«Прогресс МС» — роботизированный грузовой космический корабль, построенный RKK «Энергия» в России. Текущее поколение «Прогресс»; пополнение запасов МКС. На службе с 2015 года."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/progress-ms.json",
+  "at": "best_known_for",
+  "en": "Current Progress generation; ISS resupply",
+  "cur": "Текущее поколение «Прогресс»; пополнение запасов МКС"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/tianzhou.json",
+  "at": "tagline",
+  "en": "Chinese cargo spacecraft for Tiangong",
+  "cur": "Китайский грузовой космический корабль для Tiangong"
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/tianzhou.json",
+  "at": "description",
+  "en": "China’s cargo spacecraft for the Tiangong space station, sharing spacecraft bus heritage with Tiangong-1. Refuels Tiangong’s propellant tanks and delivers experiment racks; first flight in 2017.",
+  "cur": "Грузовой космический корабль Китая для орбитальной станции Tiangong, использующий шасси от Tiangong-1. Пополняет топливные баки Tiangong и доставляет экспериментальные модули; первый полёт в 2017 году."
+ },
+ {
+  "rel": "fleet/cargo-spacecraft/tianzhou.json",
+  "at": "best_known_for",
+  "en": "Chinese cargo spacecraft for Tiangong",
+  "cur": "Китайский грузовой космический корабль для Tiangong"
+ },
+ {
+  "rel": "fleet/constellation/beidou.json",
+  "at": "tagline",
+  "en": "China's GNSS — global ops since 2020; unique MEO + IGSO + GEO hybrid",
+  "cur": "GNSS Китая — глобальные операции с 2020; уникальная гибридная архитектура MEO + IGSO + GEO"
+ },
+ {
+  "rel": "fleet/constellation/beidou.json",
+  "at": "description",
+  "en": "China's GNSS, formally BeiDou-3 in current form. Unique hybrid architecture mixing MEO (24 satellites at 21,500 km, 55°), inclined geosynchronous (IGSO, 3 satellites), and GEO (3 satellites). Full global coverage declared July 2020. The only GNSS with short-message satellite communication capability built into the signal — users can send short text messages directly through the constellation, useful in remote-area emergency comms.",
+  "cur": "GNSS Китая, формально BeiDou-3 в текущей конфигурации. Уникальная гибридная архитектура, сочетающая MEO (24 спутника на высоте 21 500 km, 55°), наклонные геосинхронные орбиты (IGSO, 3 спутника) и GEO (3 спутника). Полное глобальное покрытие объявлено в июле 2020. Единственная GNSS с встроенной возможностью передачи коротких сообщений через спутник — пользователи могут отправлять короткие текстовые сообщения напрямую через созвездие, что полезно для экстренной связи в удалённых районах."
+ },
+ {
+  "rel": "fleet/constellation/beidou.json",
+  "at": "best_known_for",
+  "en": "China's GNSS — global ops since 2020; unique MEO + IGSO + GEO hybrid",
+  "cur": "GNSS Китая — глобальные операции с 2020; уникальная гибридная архитектура MEO + IGSO + GEO"
+ },
+ {
+  "rel": "fleet/constellation/galileo-gnss.json",
+  "at": "tagline",
+  "en": "Europe's civilian GNSS — ~30 sats, sub-metre positioning",
+  "cur": "Европейская гражданская система GNSS — ~30 спутников, позиционирование с точностью менее метра"
+ },
+ {
+  "rel": "fleet/constellation/galileo-gnss.json",
+  "at": "description",
+  "en": "Europe's civilian GNSS — 34 satellites have been launched (4 IOV + 30 FOC); 27 operational + 1 commissioning as of May 2026; constellation target is 30 at 23,222 km MEO in 3 orbital planes inclined 56°. First operational service 2016; full operational capability declaration pending ESA/EUSPA official announcement. Unlike GPS (military operator) and GLONASS (military operator), Galileo is managed by EUSPA, an EU civilian agency. Designed for sub-metre positioning with open + commercial + Public Regulated Service tiers. Search and Rescue payload integrated for emergency-beacon detection.",
+  "cur": "Европейская гражданская система Galileo — запущено 34 спутника (4 IOV + 30 FOC); 27 в строю + 1 на этапе ввода в эксплуатацию по состоянию на май 2026 г.; целевое количество группировки — 30 спутников на орбите MEO высотой 23 222 км в 3 орбитальных плоскостях с наклонением 56°. Первое оперативное применение — 2016 г.; объявление о достижении полной оперативной готовности ожидается официального уведомления от ESA/EUSPA. В отличие от GPS (военный оператор) и ГЛОНАСС (военный оператор), Galileo управляется агентством EUSPA, гражданским органом ЕС. Предназначена для позиционирования с точностью менее метра с открытым доступом, коммерческим и режимом Public Regulated Service. Интегрирована полезная нагрузка поиска и спасания для обнаружения аварийных маячков."
+ },
+ {
+  "rel": "fleet/constellation/galileo-gnss.json",
+  "at": "best_known_for",
+  "en": "Europe's civilian GNSS — ~30 sats, sub-metre positioning",
+  "cur": "Европейская гражданская система GNSS — ~30 спутников, позиционирование с точностью менее метра"
+ },
+ {
+  "rel": "fleet/constellation/glonass.json",
+  "at": "tagline",
+  "en": "Russia's GNSS — 24 sats, restored to full coverage in 2011",
+  "cur": "Российская GNSS — 24 спутника, восстановлена до полного покрытия в 2011 году"
+ },
+ {
+  "rel": "fleet/constellation/glonass.json",
+  "at": "description",
+  "en": "Russia's GNSS — 24 active satellites at 19,130 km MEO in 3 planes inclined 64.8° (the high inclination is deliberate for better high-latitude coverage relative to GPS). First launched 1982; reached full constellation in 1995, then collapsed in the late 1990s / early 2000s after Soviet funding ended; restored to full 24-satellite operational status around 2010-2011 with funding revival. Continues operational in 2026. Operated by Roscosmos in coordination with the Russian Ministry of Defence.",
+  "cur": "Российская GNSS — 24 активных спутника на орбите MEO высотой 19 130 км в 3 плоскостях с наклонением 64,8° (высокое наклонение намеренное для лучшего покрытия высоких широт относительно GPS). Первый запуск в 1982 году; достигла полного созвездия в 1995 году, затем разрушилась в конце 1990-х / начале 2000-х годов после прекращения советского финансирования; восстановлена до полного оперативного статуса из 24 спутников около 2010—2011 годов благодаря возобновлению финансирования. Продолжает работать в 2026 году. Управляется Роскосмос в координации с Министерством обороны России."
+ },
+ {
+  "rel": "fleet/constellation/glonass.json",
+  "at": "best_known_for",
+  "en": "Russia's GNSS — 24 sats, restored to full coverage in 2011",
+  "cur": "Российская GNSS — 24 спутника, восстановлена до полного покрытия в 2011 году"
+ },
+ {
+  "rel": "fleet/constellation/goes-noaa.json",
+  "at": "name",
+  "en": "GOES (NOAA Weather)",
+  "cur": "GOES (метеоспутники NOAA)"
+ },
+ {
+  "rel": "fleet/constellation/goes-noaa.json",
+  "at": "tagline",
+  "en": "NOAA geostationary weather pair — Americas continuous coverage",
+  "cur": "Геостационарная метеорологическая пара NOAA — непрерывное покрытие Америк"
+ },
+ {
+  "rel": "fleet/constellation/goes-noaa.json",
+  "at": "description",
+  "en": "Geostationary Operational Environmental Satellite — NOAA's geostationary weather pair. GOES-19 (GOES-East at 75.2° W) and GOES-18 (GOES-West at 137.0° W) are the operational pair as of April 2025, providing continuous coverage of the Americas. GOES-16 is stored as backup; GOES-17 was decommissioned in January 2023. The GOES-R series carries the Advanced Baseline Imager capable of 30-second mesoscale scans for hurricane cores and severe-storm tracking. Built by Lockheed Martin; data products freely available.",
+  "cur": "Geostationary Operational Environmental Satellite — геостационарная метеорологическая пара NOAA. GOES-19 (GOES-East на 75,2° W) и GOES-18 (GOES-West на 137,0° W) — операционная пара по состоянию на апрель 2025 года, обеспечивающая непрерывное покрытие Америк. GOES-16 хранится в качестве резервного спутника; GOES-17 был выведен из эксплуатации в январе 2023 года. Серия GOES-R оснащена Advanced Baseline Imager, способным выполнять мезомасштабные сканы за 30 секунд для отслеживания ядер ураганов и сильных штормов. Изготовлен компанией Lockheed Martin; продукты данных доступны свободно."
+ },
+ {
+  "rel": "fleet/constellation/goes-noaa.json",
+  "at": "best_known_for",
+  "en": "NOAA geostationary weather pair — Americas continuous coverage",
+  "cur": "Геостационарная метеорологическая пара NOAA — непрерывное покрытие Америк"
+ },
+ {
+  "rel": "fleet/constellation/gps-gnss.json",
+  "at": "name",
+  "en": "GPS (Global Positioning System)",
+  "cur": "GPS (глобальная система позиционирования)"
+ },
+ {
+  "rel": "fleet/constellation/gps-gnss.json",
+  "at": "tagline",
+  "en": "The original GNSS — 31 satellites, free public service since 2000",
+  "cur": "Первая GNSS — 31 спутник, бесплатное общедоступное обслуживание с 2000 года"
+ },
+ {
+  "rel": "fleet/constellation/gps-gnss.json",
+  "at": "description",
+  "en": "Global Positioning System — the original GNSS and still the most widely used. 31 active satellites at 20,180 km in 6 orbital planes inclined 55°. Operated by US Space Force; originally Department of Defense. President Reagan's 1983 directive promised future civilian GPS access after the Korean Air Lines 007 shootdown, but civilian unencrypted L1 C/A signal access was not available until Selective Availability was turned off in May 2000, dramatically improving civilian accuracy. Modernised L1C, L2C, L5 signals on Block IIF and III satellites.",
+  "cur": "Global Positioning System — первая GNSS и наиболее широко используемая по сей день. 31 активный спутник на орбите высотой 20 180 км в 6 орбитальных плоскостях с наклонением 55°. Управляется Космическими силами США; первоначально — Департаментом обороны. Директива президента Рейгана 1983 года обещала будущий доступ граждан к GPS после катастрофы Korean Air Lines 007, однако доступ граждан к незашифрованному сигналу L1 C/A стал доступен только после отключения Selective Availability в мае 2000 года, что значительно улучшило точность для граждан. Модернизированные сигналы L1C, L2C, L5 на спутниках Block IIF и III."
+ },
+ {
+  "rel": "fleet/constellation/gps-gnss.json",
+  "at": "best_known_for",
+  "en": "The original GNSS — 31 satellites, free public service since 2000",
+  "cur": "Первая GNSS — 31 спутник, бесплатное общедоступное обслуживание с 2000 года"
+ },
+ {
+  "rel": "fleet/constellation/inmarsat.json",
+  "at": "tagline",
+  "en": "GEO mobile comms — maritime, aviation, GMDSS backbone",
+  "cur": "Мобильная связь в GEO — основа морской, авиационной связи и GMDSS"
+ },
+ {
+  "rel": "fleet/constellation/inmarsat.json",
+  "at": "description",
+  "en": "Geostationary mobile-satellite communications — 14+ satellites in GEO providing maritime, aviation, and remote-area voice + data services. Originally founded 1979 as the International Maritime Satellite Organization, an intergovernmental treaty body for ship-to-shore comms (the predecessor of GMDSS). Privatised 1999. Acquired by Viasat in 2023 to combine with Viasat's Ka-band fleet.",
+  "cur": "Геостационарная мобильная спутниковая связь — более 14 спутников в GEO, обеспечивающих голосовую связь и передачу данных для морского, авиационного и удалённых районов. Первоначально основана в 1979 году как Международная организация морской спутниковой связи — межправительственный договорной орган для связи судов с берегом (предшественник GMDSS). Приватизирована в 1999 году. Приобретена компанией Viasat в 2023 году для объединения с флотом Ka-диапазона Viasat."
+ },
+ {
+  "rel": "fleet/constellation/inmarsat.json",
+  "at": "best_known_for",
+  "en": "GEO mobile comms — maritime, aviation, GMDSS backbone",
+  "cur": "Мобильная связь в GEO — основа морской, авиационной связи и GMDSS"
+ },
+ {
+  "rel": "fleet/constellation/iridium-next.json",
+  "at": "tagline",
+  "en": "Polar LEO comms — 66 operational sats +9 spares, GMDSS partner, global voice/data",
+  "cur": "Полярная БНО коммуникация — 66 оперативных спутников + 9 резервных, партнёр GMDSS, глобальная голосовая связь/передача данных"
+ },
+ {
+  "rel": "fleet/constellation/iridium-next.json",
+  "at": "description",
+  "en": "Second-generation Iridium constellation — 66 operational satellites at 780 km in 6 polar planes (11 per plane), with 9 on-orbit spares, deployed 2017-2019 to replace the original 1998 Iridium fleet. Total of 75 satellites were launched; 5 additional ground spares were launched in May 2023. Carries voice + data + machine-to-machine + sat-phone services. One of two GMDSS (Global Maritime Distress and Safety System) satellite providers (alongside Inmarsat) — ocean-going vessels can fulfill GMDSS requirements via Iridium OR Inmarsat. The collision of the original Iridium 33 with derelict Cosmos 2251 in 2009 was the first known satellite-to-satellite collision in history.",
+  "cur": "Созвездие второго поколения Iridium — 66 функционирующих спутников на высоте 780 км в 6 полярных плоскостях (11 на плоскость), с 9 резервными спутниками на орбите, развёрнуто в 2017–2019 годах на смену первоначальному флоту Iridium 1998 года. Всего запущено 75 спутников; 5 дополнительных наземных резервных спутников были запущены в мае 2023 года. Предоставляет услуги голосовой связи + данные + машина-машина + спутниковые телефоны. Один из двух поставщиков GMDSS (Global Maritime Distress and Safety System) (наряду с Inmarsat) — океанские суда могут выполнять требования GMDSS через Iridium ИЛИ Inmarsat. Столкновение первоначального спутника Iridium 33 с неработающим Cosmos 2251 в 2009 году было первым известным в истории спутниковым столкновением."
+ },
+ {
+  "rel": "fleet/constellation/iridium-next.json",
+  "at": "best_known_for",
+  "en": "Polar LEO comms — 66 operational sats +9 spares, GMDSS partner, global voice/data",
+  "cur": "Полярная спутниковая связь LEO — 66 функционирующих аппаратов + 9 резервных, партнёр GMDSS, глобальная голосовая связь и передача данных"
+ },
+ {
+  "rel": "fleet/constellation/kuiper.json",
+  "at": "name",
+  "en": "Amazon Leo (formerly Project Kuiper)",
+  "cur": "Amazon Leo (ранее Project Kuiper)"
+ },
+ {
+  "rel": "fleet/constellation/kuiper.json",
+  "at": "tagline",
+  "en": "Amazon LEO broadband — 3,236 sats planned, commercial beta 2026",
+  "cur": "Широкополосная сеть Amazon LEO — 3236 спутников запланировано, коммерческая бета в 2026 году"
+ },
+ {
+  "rel": "fleet/constellation/kuiper.json",
+  "at": "description",
+  "en": "Amazon's answer to Starlink — 3,236 satellites at 590-630 km in 98 orbital planes. First prototype launch in October 2023 (KuiperSat-1 and -2 test launch); first 27 production satellites launched April 2025 atop Atlas V. As of mid-2026, ~230+ production satellites are operational. FCC license requires 50% deployment (1,618 sats) by July 2026 and 100% by July 2029; Amazon has requested a two-year extension due to the current shortfall. The constellation is expected to roughly double the LEO active-satellite population if fully deployed.",
+  "cur": "Ответ Amazon на Starlink — 3236 спутников на высоте 590–630 км в 98 орбитальных плоскостях. Первый прототип запущен в октябре 2023 года (тестовые запуски KuiperSat-1 и -2); первые 27 производственных спутников запущены в апреле 2025 года на ракете Atlas V. По состоянию на середину 2026 года примерно 230+ производственных спутников находятся в эксплуатации. Лицензия FCC требует развёртывания 50 % (1618 спутников) к июлю 2026 года и 100 % к июлю 2029 года; Amazon запросила продление на два года из-за текущего дефицита. При полном развёртывании группировка примерно удвоит активное население спутников LEO."
+ },
+ {
+  "rel": "fleet/constellation/kuiper.json",
+  "at": "best_known_for",
+  "en": "Amazon Leo broadband — 3,236 sats planned, commercial beta 2026",
+  "cur": "Широкополосная сеть Amazon Leo — 3236 спутников запланировано, коммерческая бета в 2026 году"
+ },
+ {
+  "rel": "fleet/constellation/landsat.json",
+  "at": "tagline",
+  "en": "50+ years of continuous Earth imaging — Landsat 1 to 9",
+  "cur": "Более 50 лет непрерывной съемки Земли — с Landsat 1 по 9"
+ },
+ {
+  "rel": "fleet/constellation/landsat.json",
+  "at": "description",
+  "en": "The longest continuous record of Earth imaging in history — Landsat 1 launched 1972 (originally as ERTS-1), continuing through Landsat 9 (2021). Currently operational pair Landsat 8 (2013) + Landsat 9 (2021) at 705 km sun-synchronous orbit, 98.2° inclination. 30 m multispectral resolution. NASA builds + launches; USGS operates and distributes data. Free public access since 2008 turned Landsat into the global reference dataset for climate change, deforestation, and urban growth.",
+  "cur": "Самая длинная непрерывная запись изображений Земли в истории — Landsat 1 запущен в 1972 году (первоначально как ERTS-1), продолжается через Landsat 9 (2021). Действующая пара Landsat 8 (2013) + Landsat 9 (2021) на солнечно-синхронной орбите 705 км, наклонение 98,2°. Мультиспектральное разрешение 30 м. NASA строит и запускает; USGS эксплуатирует и распространяет данные. Свободный публичный доступ с 2008 года превратил Landsat в глобальный эталонный набор данных для изменения климата, обезлесения и роста городов."
+ },
+ {
+  "rel": "fleet/constellation/landsat.json",
+  "at": "best_known_for",
+  "en": "50+ years of continuous Earth imaging — Landsat 1 to 9",
+  "cur": "Более 50 лет непрерывной съемки Земли — с Landsat 1 по 9"
+ },
+ {
+  "rel": "fleet/constellation/molniya.json",
+  "at": "tagline",
+  "en": "Russian 12-hour HEO comms — 63.4° critical inclination locks apogee over the north",
+  "cur": "Российская связь на 12-часовой HEO — критическое наклонение 63,4° фиксирует апогей над севером"
+ },
+ {
+  "rel": "fleet/constellation/molniya.json",
+  "at": "description",
+  "en": "Russian highly-eccentric orbit constellation. The 12-hour Molniya orbit (~600 × 40,000 km) at the 63.4° critical inclination exploits Earth's J2 perturbation to lock the line of apsides — apogee stays parked over the Northern Hemisphere, giving high-latitude users elevation angles a geostationary satellite can never deliver. Molniya-1 launched in 1965; the line continued through Molniya-1/2/3, the Oko early-warning satellites, and the Meridian comms successor in service today.",
+  "cur": "Российская группировка на высокоэллиптической орбите. 12-часовая орбита «Молния» (~600 × 40 000 км) с критическим наклонением 63,4° использует возмущение J2 Земли для фиксации линии апсид — апогей остаётся закреплённым над Северным полушарием, обеспечивая пользователям в высоких широтах углы возвышения, недостижимые для геостационарных спутников. «Молния-1» запущена в 1965 году; линия продолжилась через «Молния-1»/2/3, спутники раннего предупреждения Oko и сменивший их спутник связи Meridian, находящийся в эксплуатации сегодня."
+ },
+ {
+  "rel": "fleet/constellation/molniya.json",
+  "at": "best_known_for",
+  "en": "12-hour HEO at 63.4° critical inclination — apogee parked over Russia",
+  "cur": "12-часовая HEO с критическим наклонением 63,4° — апогей закреплён над Россией"
+ },
+ {
+  "rel": "fleet/constellation/o3b-mpower.json",
+  "at": "name",
+  "en": "O3b / O3b mPOWER (MEO comms)",
+  "cur": "O3b / O3b mPOWER (спутниковая связь на средней орбите)"
+ },
+ {
+  "rel": "fleet/constellation/o3b-mpower.json",
+  "at": "tagline",
+  "en": "Only operational MEO commercial broadband — 20+ sats",
+  "cur": "Единственная действующая коммерческая широкополосная группировка MEO — 20+ спутников"
+ },
+ {
+  "rel": "fleet/constellation/o3b-mpower.json",
+  "at": "description",
+  "en": "The only operational commercial MEO broadband constellation — original O3b deployed 2013-2019, second-generation O3b mPOWER from 2022 onwards. 20+ satellites at 8,063 km equatorial orbit. Latency between GEO and LEO, customer base focused on telecom backhaul, maritime, and remote enterprise. Operated by SES (Luxembourg). Named for the 'other 3 billion' — the original mission was bringing connectivity to areas not served by terrestrial broadband.",
+  "cur": "Единственная действующая коммерческая широкополосная группировка MEO — оригинальная O3b развёрнута в 2013–2019 гг., второе поколение O3b mPOWER с 2022 г. 20+ спутников на экваториальной орбите 8 063 км. Задержка между GEO и LEO, клиентская база сосредоточена на транзитных каналах связи, морском секторе и удалённых предприятиях. Эксплуатируется SES (Люксембург). Названа в честь «других 3 миллиардов» — изначальная миссия заключалась в обеспечении связью районов, не охваченных наземным широкополосным доступом."
+ },
+ {
+  "rel": "fleet/constellation/o3b-mpower.json",
+  "at": "best_known_for",
+  "en": "Only operational MEO commercial broadband — 20+ sats",
+  "cur": "Единственная действующая коммерческая широкополосная группировка MEO — 20+ спутников"
+ },
+ {
+  "rel": "fleet/constellation/oneweb.json",
+  "at": "tagline",
+  "en": "First-gen LEO broadband — 648 sats in 12 polar planes",
+  "cur": "Широкополосный интернет первого поколения на LEO — 648 спутников в 12 полярных плоскостях"
+ },
+ {
+  "rel": "fleet/constellation/oneweb.json",
+  "at": "description",
+  "en": "First-generation LEO broadband constellation, 648 satellites at 1,200 km in 12 polar planes. Polar orbits give full pole-to-pole coverage that mid-inclination Starlink shells cannot reach. Acquired by Eutelsat in 2023 to form Eutelsat OneWeb; commercial service now bundled with Eutelsat GEO assets. Higher altitude than Starlink means slightly higher latency but fewer satellites needed.",
+  "cur": "Широкополосная группировка первого поколения на LEO, 648 спутников на высоте 1 200 km в 12 полярных плоскостях. Полярные орбиты обеспечивают полное покрытие от полюса до полюса, недоступное для оболочек Starlink со средним наклонением. Приобретена Eutelsat в 2023 году с образованием Eutelsat OneWeb; коммерческий сервис теперь объединён с активами Eutelsat на GEO. Более высокая высота по сравнению со Starlink означает несколько большую задержку, но требует меньше спутников."
+ },
+ {
+  "rel": "fleet/constellation/oneweb.json",
+  "at": "best_known_for",
+  "en": "First-gen LEO broadband — 648 sats in 12 polar planes",
+  "cur": "Широкополосный интернет первого поколения на LEO — 648 спутников в 12 полярных плоскостях"
+ },
+ {
+  "rel": "fleet/constellation/planet-labs.json",
+  "at": "name",
+  "en": "Planet Labs (PlanetScope + SkySat)",
+  "cur": "Planet Labs (PlanetScope + SkySat)"
+ },
+ {
+  "rel": "fleet/constellation/planet-labs.json",
+  "at": "tagline",
+  "en": "Daily Earth imaging — ~150 CubeSats + 21 SkySats",
+  "cur": "Ежедневная съёмка Земли — ~150 CubeSats + 21 SkySats"
+ },
+ {
+  "rel": "fleet/constellation/planet-labs.json",
+  "at": "description",
+  "en": "Daily-revisit Earth imaging from two fleets — ~150 PlanetScope 3U CubeSats (3-5 m resolution global daily imagery) and ~21 SkySats (50 cm tasked high-resolution). All at ~475 km sun-synchronous orbit. The 'Doves' philosophy was 'launch hundreds of cheap small satellites, accept a few failures, get every patch of land imaged every day' — and it works. Planet's image archive is consulted by NGOs, governments, and journalists.",
+  "cur": "Ежедневная съёмка Земли двумя группировками — ~150 PlanetScope 3U CubeSats (глобальная съёмка с разрешением 3–5 м ежедневно) и ~21 SkySats (целевая высокодетальная съёмка с разрешением 50 см). Все на солнечно-синхронной орбите ~475 км. Философия Doves — «запустить сотни дешёвых малых спутников, смириться с несколькими отказами, получать снимки каждого участка суши каждый день» — и это работает. Архив снимков Planet используется НПО, правительствами и журналистами."
+ },
+ {
+  "rel": "fleet/constellation/planet-labs.json",
+  "at": "best_known_for",
+  "en": "Daily Earth imaging — ~150 CubeSats + 21 SkySats",
+  "cur": "Ежедневная съёмка Земли — ~150 CubeSats + 21 SkySats"
+ },
+ {
+  "rel": "fleet/constellation/sbirs-heo.json",
+  "at": "tagline",
+  "en": "US early-warning IR sensors hosted on classified Tundra-orbit platforms",
+  "cur": "Американские ИК-сенсоры раннего предупреждения, размещённые на секретных платформах на орбите Tundra"
+ },
+ {
+  "rel": "fleet/constellation/sbirs-heo.json",
+  "at": "description",
+  "en": "The HEO segment of the US Space-Based Infrared System (SBIRS) — infrared missile-warning sensors hosted on classified host satellites in the 24-hour Tundra orbit at the 63.4° critical inclination. By dwelling at apogee over high latitudes, SBIRS-HEO covers the polar regions where geostationary DSP / SBIRS-GEO sensors look at too low an angle. SBIRS HEO-1 launched in 2006 as a hosted payload on USA-184.",
+  "cur": "HEO-сегмент американской космической инфракрасной системы SBIRS — инфракрасные датчики ракетного предупреждения, размещённые на секретных спутниках-носителях на 24-часовой орбите Tundra с критическим наклонением 63,4°. Находясь в апогее над высокими широтами, SBIRS-HEO покрывает полярные регионы, на которые геостационарные датчики DSP / SBIRS-GEO смотрят под слишком малым углом. SBIRS HEO-1 запущен в 2006 году в качестве совмещённой полезной нагрузки на спутнике USA-184."
+ },
+ {
+  "rel": "fleet/constellation/sbirs-heo.json",
+  "at": "best_known_for",
+  "en": "HEO-segment IR early warning — covers polar latitudes the GEO sensors can't",
+  "cur": "ИК-раннее предупреждение на HEO — покрывает полярные широты, недоступные для GEO-сенсоров"
+ },
+ {
+  "rel": "fleet/constellation/sentinel-copernicus.json",
+  "at": "name",
+  "en": "Sentinel (Copernicus)",
+  "cur": "Sentinel (Copernicus)"
+ },
+ {
+  "rel": "fleet/constellation/sentinel-copernicus.json",
+  "at": "tagline",
+  "en": "Europe's Earth-obs flagship — Sentinel-1/2/3/5P/6",
+  "cur": "Флагманская программа наблюдения Земли Европы — Sentinel-1/2/3/5P/6"
+ },
+ {
+  "rel": "fleet/constellation/sentinel-copernicus.json",
+  "at": "description",
+  "en": "Europe's flagship Earth-observation programme, operated by ESA on behalf of the European Commission's Copernicus environmental-monitoring service. Sentinel-1 (C-band SAR radar imaging), Sentinel-2 (multispectral optical at 10-60 m), Sentinel-3 (ocean + land), Sentinel-5P (atmospheric chemistry), Sentinel-6 (altimetry). All in sun-synchronous LEO. Free + open data policy — every Sentinel image is downloadable without licensing fees.",
+  "cur": "Флагманская европейская программа наблюдения Земли, управляемая ESA от имени службы экологического мониторинга Copernicus Европейской комиссии. Sentinel-1 (радарная съёмка SAR в C-диапазоне), Sentinel-2 (мультиспектральная оптика 10-60 м), Sentinel-3 (океан + суша), Sentinel-5P (химия атмосферы), Sentinel-6 (альтиметрия). Все на солнечно-синхронных орбитах LEO. Политика свободных и открытых данных — каждое изображение Sentinel доступно для скачивания без лицензионных сборов."
+ },
+ {
+  "rel": "fleet/constellation/sentinel-copernicus.json",
+  "at": "best_known_for",
+  "en": "Europe's Earth-obs flagship — Sentinel-1/2/3/5P/6",
+  "cur": "Флагманская программа наблюдения Земли Европы — Sentinel-1/2/3/5P/6"
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "tagline",
+  "en": "Largest LEO broadband constellation — over 10,800 active satellites",
+  "cur": "Крупнейшая группировка широкополосных спутников на ОНО — свыше 10 800 активных спутников"
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "description",
+  "en": "SpaceX's broadband LEO constellation — over 10,800 active satellites at 550 km altitude split across multiple shells (53°, 70°, 97.6° inclinations). First operational service 2019; achieved global coverage 2023. Each Gen-2 satellite carries laser inter-satellite links, allowing the constellation to route packets between satellites without ground station hops. Autonomous collision-avoidance system performs tens of thousands of manoeuvres per year — more than every other LEO operator combined.",
+  "cur": "Широкополосное созвездие LEO компании SpaceX — более 10 800 активных спутников на высоте 550 км, распределённых по нескольким орбитальным оболочкам (наклонения 53°, 70°, 97,6°). Первое оперативное обслуживание началось в 2019 году; глобальное покрытие достигнуто в 2023 году. Каждый спутник поколения Gen-2 оснащён лазерными межспутниковыми линиями связи, позволяющими созвездию маршрутизировать пакеты данных между спутниками без промежуточных наземных станций. Автономная система предотвращения столкновений выполняет десятки тысяч манёвров в год — больше, чем все остальные операторы LEO вместе взятые."
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "best_known_for",
+  "en": "Largest LEO broadband constellation — ~6,500–7,000 active satellites",
+  "cur": "Крупнейшее созвездие низкоорбитальных спутников для широкополосной связи — ~6 500–7 000 активных спутников"
+ },
+ {
+  "rel": "fleet/constellation/tundra-sirius.json",
+  "at": "name",
+  "en": "Sirius Satellite Radio (Tundra) — Historical (2000-2016)",
+  "cur": "Sirius Satellite Radio (орбита «Тундра») — в прошлом (2000–2016)"
+ },
+ {
+  "rel": "fleet/constellation/tundra-sirius.json",
+  "at": "tagline",
+  "en": "Historic commercial Tundra-orbit constellation — decommissioned 2016",
+  "cur": "Историческая коммерческая Tundra-орбитальная группировка — выведена из эксплуатации в 2016 г."
+ },
+ {
+  "rel": "fleet/constellation/tundra-sirius.json",
+  "at": "description",
+  "en": "Historic satellite-radio constellation in the 24-hour Tundra orbit (~25,000 × 35,786 km) at the 63.4° critical inclination. The three original Sirius FM satellites (FM-1, FM-2, FM-3) each dwelt over CONUS for roughly two-thirds of every orbit, giving urban-canyon receivers elevation angles a geostationary signal couldn't match. Sirius FM-1 launched from Baikonur in 2000 on a Proton-K; FM-2 and FM-3 followed. The company merged with XM Radio in 2008 to form Sirius XM. The Tundra-orbit constellation was decommissioned in 2016, and Sirius XM now operates a fleet of ~7 geostationary satellites.",
+  "cur": "Историческое спутниковое радиовещательное созвездие на 24-часовой Tundra орбите (~25 000 × 35 786 км) с критическим углом наклонения 63,4°. Три первоначальных спутника Sirius FM (FM-1, FM-2, FM-3) каждый находились над CONUS примерно две трети каждого витка, обеспечивая приёмникам в городских условиях углы возвышения, недостижимые для геостационарного сигнала. Sirius FM-1 запущен с Байконура в 2000 году на «Протон-К»; FM-2 и FM-3 последовали за ним. Компания слилась с XM Radio в 2008 году, образовав Sirius XM. Тундровое созвездие было выведено из эксплуатации в 2016 году, и в настоящее время Sirius XM эксплуатирует флот из примерно 7 геостационарных спутников."
+ },
+ {
+  "rel": "fleet/constellation/tundra-sirius.json",
+  "at": "best_known_for",
+  "en": "Historic 24-hour Tundra-orbit constellation (2000-2016)",
+  "cur": "Историческая Tundra-орбитальная группировка с периодом обращения 24 часа (2000–2016)"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+  "at": "tagline",
+  "en": "Original Apollo CSM design — never flew crewed; killed Apollo 1 crew on the pad 1967-01-27. Redesign produced the Block II flown 1968-1975",
+  "cur": "Первоначальный проект Apollo CSM, никогда не летал с экипажем; погиб экипаж Apollo 1 на стартовой площадке 1967-01-27"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+  "at": "dispatch",
+  "en": "Block I is the Apollo hardware that never flew a crew, and part of the reason the rest of the program survived. It was the first cut at the Command Module — meant only for uncrewed and early Earth-orbit tests — and it carried a set of assumptions that looked reasonable in 1966: a cabin of pure oxygen held above sea-level pressure, a hatch that opened inward, and interior materials chosen without much thought to fire. On 27 January 1967 a spark on the launch pad turned those assumptions lethal in seconds, and the Apollo 1 crew died in a test everyone had treated as routine. Block I was retired into that lesson; the Block II that reached the Moon was, in large part, the list of everything Block I got wrong.",
+  "cur": "Block I — это аппаратура Apollo, которая никогда не летала с экипажем, и отчасти именно поэтому остальная часть программы выжила. Это была первая версия Command Module — предназначенная только для беспилотных и ранних околоземных испытаний — и она несла в себе набор допущений, которые выглядели разумными в 1966 году: кабина с чистым кислородом под давлением выше атмосферного, люк, открывающийся внутрь, и внутренние материалы, выбранные почти без оглядки на пожарную опасность. 27 января 1967 года искра на стартовой площадке превратила эти допущения в смертельную ловушку за считанные секунды, и экипаж Apollo 1 погиб в испытании, которое все считали рутинным. Block I был списан в этот урок; Block II, который достиг Луны, был, по большому счёту, списком всего, что Block I сделал неправильно."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+  "at": "description",
+  "en": "Block I was the first design iteration of the Apollo Command and Service Module — intended as a pure Earth-orbit shakedown vehicle before the lunar-capable Block II. Pure-O₂ pressurised cabin at 16.7 psi pre-launch (5 psi in flight); inward-opening hatch sealed by atmospheric differential. CSM-009 + CSM-011 flew uncrewed suborbital tests (AS-201 1966-02-26 + AS-202 1966-08-25). CSM-017 and CSM-020 flew uncrewed on Apollo 4 (1967-11-09) and Apollo 6 (1968-04-04) respectively — Block I command modules on the first two Saturn V flights. CSM-012 — the Apollo 1 ship — was sealed for a Plugs-Out test 1967-01-27 when a flash fire ignited in the lower-equipment bay, killing the crew in seconds; the cabin couldn't be vented because the hatch opened inward against the spike to 29 psi. The Apollo 204 Accident Review Board led to the Block II redesign: outward-opening unified hatch, non-flammable cabin materials, pre-launch nitrogen-rich atmosphere, redesigned wire bundles. No Block I CSM ever flew crewed; Block II flew Apollo 7 (1968) through ASTP (1975).",
+  "cur": "Block I был первой проектной итерацией Apollo Command and Service Module — задуманной как чисто околоземный испытательный аппарат перед лунным Block II. Кабина с чистым O₂ под давлением 16,7 psi перед стартом (5 psi в полёте); люк, открывающийся внутрь, герметизированный атмосферным перепадом. CSM-009 + CSM-011 совершили беспилотные суборбитальные испытания (AS-201 26.02.1966 + AS-202 25.08.1966). CSM-017 и CSM-020 летали беспилотными на Apollo 4 (09.11.1967) и Apollo 6 (04.04.1968) соответственно — командные модули Block I на первых двух полётах Saturn V. CSM-012 — корабль Apollo 1 — был загерметизирован для испытания Plugs-Out 27.01.1967, когда вспыхнул огонь в нижнем приборном отсеке, убив экипаж за секунды; кабину невозможно было разгерметизировать, потому что люк открывался внутрь против скачка до 29 psi. Комиссия по расследованию катастрофы Apollo 204 привела к редизайну Block II: открывающийся наружу унифицированный люк, негорючие материалы кабины, предстартовая азотно-кислородная атмосфера, переработанные жгуты проводов. Ни один Block I CSM никогда не летал с экипажем; Block II летал с Apollo 7 (1968) по ASTP (1975)."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+  "at": "best_known_for",
+  "en": "Original Apollo CSM design — never flew crewed; killed Apollo 1 crew on the pad 1967-01-27. Redesign produced the Block II flown 1968-1975",
+  "cur": "Оригинальный проект Apollo CSM — никогда не летал с экипажем; стал причиной гибели экипажа Apollo 1 на стартовой площадке 1967-01-27. Переработанный вариант Block II летал в 1968–1975"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+  "at": "tagline",
+  "en": "Lunar-capable Command + Service Module",
+  "cur": "Лунный командный и служебный модуль"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+  "at": "dispatch",
+  "en": "The Command Module was the only piece of Apollo that came home — everything else was spent and thrown away along the route. That made it the part that could not fail on reentry, and reentry from the Moon was the hardest version of the problem: the capsule met the atmosphere at nearly eleven kilometres a second, half again as fast as anything returning from Earth orbit, wrapped in a fireball hot enough to boil steel. Its answer was an ablative heat shield engineered to char and peel away in a controlled way, carrying the heat off with it. Block II was the version that flew crews — the ground-up redesign forced by the Apollo 1 fire — and it brought every astronaut who set out for the Moon back alive.",
+  "cur": "Командный модуль был единственной частью Apollo, которая вернулась домой — всё остальное было потрачено и выброшено в пути. Это делало его той частью, которая не могла отказать при входе в атмосферу, а вход в атмосферу с Луны был самым сложным вариантом задачи: капсула встречала атмосферу почти на одиннадцать километров в секунду, в полтора раза быстрее, чем что-либо возвращалось с земной орбиты, обёрнутая огненным шаром, достаточно горячим, чтобы кипятить сталь. Ответом был абляционный теплозащитный экран, спроектированный так, чтобы контролируемо обугливаться и отслаиваться, унося тепло с собой. Block II был версией, на которой летали экипажи — переделка с нуля, вынужденная пожаром Apollo 1 — и она вернула живыми каждого астронавта, который отправился на Луну."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+  "at": "description",
+  "en": "The lunar-capable Command and Service Module that carried Apollo astronauts to lunar orbit between 1968 and 1972. Fifteen crewed flights in total: Apollo 7–17 (eleven Moon-targeted missions), three Skylab crew rotations (1973–1974), and the 1975 Apollo-Soyuz Test Project — including Apollo 13’s improvised lifeboat configuration.",
+  "cur": "Лунный командно-сервисный модуль, доставлявший астронавтов Apollo на лунную орбиту с 1968 по 1972 год. Всего пятнадцать пилотируемых полётов: Apollo 7–17 (одиннадцать лунных миссий), три ротации экипажей Skylab (1973–1974) и совместный проект Apollo-«Союз» 1975 года — включая импровизированную конфигурацию «спасательной шлюпки» Apollo 13."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+  "at": "best_known_for",
+  "en": "Lunar-capable Command + Service Module",
+  "cur": "Лунный командный и служебный модуль"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+  "at": "name",
+  "en": "Apollo Lunar Module",
+  "cur": "Лунный модуль Apollo"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+  "at": "tagline",
+  "en": "First crewed lunar lander; Eagle, Antares, Falcon...",
+  "cur": "Первый пилотируемый лунный посадочный модуль; Eagle, Antares, Falcon..."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+  "at": "dispatch",
+  "en": "The Lunar Module was the first true spacecraft — the first crewed vehicle built to fly only in vacuum, never through an atmosphere, so it could throw away streamlining and heat shielding and become exactly what it was: a machine for one job. Grumman split it in two — a descent stage that carried the crew down and then served as the launch pad for a separate ascent stage that carried them back up — because that staging was the only way to close the mass budget for a Moon landing. It flew on spidery legs, its skin in places as thin as a few sheets of foil. Nothing before it had set people on another world, and its ungainly, purpose-built shape is simply what a spacecraft looks like when it never has to survive coming home.",
+  "cur": "Lunar Module был первым настоящим космическим кораблём — первым пилотируемым аппаратом, созданным для полёта только в вакууме, никогда не в атмосфере, поэтому он мог отказаться от обтекаемых форм и теплозащиты и стать именно тем, чем он был: машиной для одной задачи. Grumman разделил его на две части — посадочную ступень, которая доставляла экипаж вниз, а затем служила стартовой площадкой для отдельной взлётной ступени, которая поднимала их обратно — потому что такое ступенчатое деление было единственным способом уложиться в массовый бюджет для посадки на Луну. Он летал на паукообразных опорах, его обшивка местами была тонкой, как несколько листов фольги. Ничто до него не доставляло людей на другой мир, и его неуклюжая, целенаправленно спроектированная форма — это просто то, как выглядит космический корабль, когда ему никогда не нужно переживать возвращение домой."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+  "at": "description",
+  "en": "The only crewed lunar lander ever built. Six successful landings between 1969 and 1972 — Eagle, Intrepid, Antares, Falcon, Orion, Challenger — plus Aquarius, which served as Apollo 13’s lifeboat. Descent stage stays on the Moon; ascent stage rejoined the CSM in lunar orbit.",
+  "cur": "Единственный пилотируемый лунный спускаемый аппарат, когда-либо построенный. Шесть успешных посадок между 1969 и 1972 годами — Eagle, Intrepid, Antares, Falcon, Orion, Challenger — плюс Aquarius, который служил спасательной шлюпкой Apollo 13. Стадия спуска остается на Луне; ступень восхождения вновь присоединилась к CSM на лунной орбите."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+  "at": "best_known_for",
+  "en": "First crewed lunar lander; Eagle, Antares, Falcon...",
+  "cur": "Первый пилотируемый лунный посадочный модуль; Eagle, Antares, Falcon..."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/atlantis.json",
+  "at": "tagline",
+  "en": "OV-104 — fourth Shuttle. Flew final mission STS-135 (2011), final Hubble servicing STS-125 (2009), deployed Galileo + Magellan",
+  "cur": "OV-104 — четвёртый шаттл. Летал в последней миссии STS-135 (2011), последнее обслуживание Hubble STS-125 (2009), вывел Galileo + Magellan"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/atlantis.json",
+  "at": "dispatch",
+  "en": "Atlantis, OV-104, flew the bookends of the Shuttle's greatest partnerships. It made the most dockings with the Russian station Mir, opening the era of US-Russian cooperation, and it flew STS-125, the final, daring servicing mission that left the Hubble Space Telescope good for another decade. In July 2011 Atlantis flew STS-135, the 135th and last Shuttle mission — the flight that closed thirty years of reusable American spaceflight and left the Space Station it had helped build in orbit above.",
+  "cur": "Atlantis, OV-104, пилотировала миссии на книжных концах величайшего наследия Shuttle. Она совершила наибольшее число стыковок с российской станцией «Мир», открыв эру сотрудничества между США и Россией, и выполнила STS-125 — финальную, дерзкую миссию технического обслуживания, которая дала Hubble Space Telescope ещё одно десятилетие жизни. В июле 2011 года Atlantis выполнила STS-135 — 135-ю и последнюю миссию Shuttle, полёт, закрывший тридцать лет эпохи многоразовых американских космических кораблей и оставивший на орбите Space Station, которую она помогла создать."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/atlantis.json",
+  "at": "description",
+  "en": "Fourth operational orbiter; first flight STS-51-J (1985-10-03) was a classified DoD mission. Highlights: deployed Magellan (STS-30, 1989) and Galileo (STS-34, 1989) — the two planetary probes that opened Venus and Jupiter to long-duration observation; flew 7 of the 9 Shuttle-Mir docking missions between 1995-1997; flew the final Hubble servicing mission STS-125 (2009-05) — the only post-Columbia non-ISS-rendezvous mission approved; flew STS-135 (2011-07) — the final Shuttle flight ever. On display at Kennedy Space Center Visitor Complex since 2013.",
+  "cur": "Четвёртый эксплуатируемый орбитальный аппарат; первый полёт STS-51-J (1985-10-03) был засекреченной миссией DoD. Основные вехи: развёртывание Magellan (STS-30, 1989) и Galileo (STS-34, 1989) — двух межпланетных зондов, открывших Венеру и Юпитер для длительного наблюдения; выполнила 7 из 9 миссий стыковки Shuttle-«Мир» между 1995–1997 гг.; совершила финальную миссию технического обслуживания Hubble STS-125 (2009-05) — единственную одобренную миссию без стыковки с МКС после Columbia; выполнила STS-135 (2011-07) — последний в истории полёт Shuttle. Выставлена в Космическом центре Кеннеди Visitor Complex с 2013 г."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/atlantis.json",
+  "at": "best_known_for",
+  "en": "Flew final Shuttle mission STS-135 (2011); deployed Galileo + Magellan; final Hubble servicing STS-125",
+  "cur": "Летал в последней миссии шаттла STS-135 (2011); вывел Galileo + Magellan; последнее обслуживание Hubble STS-125"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+  "at": "tagline",
+  "en": "Buran's atmospheric analog — equivalent of NASA's Enterprise. Four jet engines, 24 atmospheric tests 1985-88, never to orbit",
+  "cur": "Атмосферный аналог Буран — эквивалент Enterprise от NASA. Четыре реактивных двигателя, 24 испытания 1985-88"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+  "at": "dispatch",
+  "en": "OK-GLI was Buran's atmospheric test orbiter — the equivalent of NASA's Enterprise, built to prove the spaceplane could glide and land before anything flew to orbit. Fitted with four jet engines, it made its own runway approaches and landings in the atmosphere, validating Buran's aerodynamics and its automated landing systems. It never went to space and was never meant to, and it outlived the orbiter that did: while the flown Buran was destroyed in 2002, OK-GLI survives as a museum exhibit in Germany, one of the few tangible remains of the largest space program the Soviet Union ever attempted.",
+  "cur": "OK-GLI был атмосферным испытательным орбитальным кораблём «Буран» — эквивалентом Enterprise NASA, построенным для доказательства того, что космоплан способен планировать и совершать посадку до того, как что-либо полетит на орбиту. Оснащённый четырьмя реактивными двигателями, он самостоятельно выполнял заходы на посадку и посадки в атмосфере, подтверждая аэродинамику «Буран» и его автоматизированные системы посадки. Он никогда не летал в космос и никогда не предназначался для этого, и он пережил орбитальный корабль, который летал: в то время как совершивший полёт «Буран» был уничтожен в 2002 году, OK-GLI существует как музейный экспонат в Германии — одно из немногих материальных свидетельств крупнейшей космической программы, которую когда-либо предпринимал Советский Союз."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+  "at": "description",
+  "en": "Officially BTS-002, nicknamed OK-GLI. Full-scale atmospheric test article for the Buran orbital programme — same outer mold-line as the flight vehicle Buran 1.01 but fitted with four AL-31 turbojet engines so it could take off under its own power from a conventional runway. 24 atmospheric flights between 1985-11-10 and 1988-04-15 at the Zhukovsky Flight Research Institute airfield validated Buran's automated landing system + flight-control software for the 1988-11-15 orbital flight. After the Buran programme cancellation OK-GLI sat at LII for years; sold to an Australian museum in 1999, then Bahrain, finally to the Technik Museum Speyer / Sinsheim in Germany where it is on display today — Buran's equivalent of NASA's Enterprise.",
+  "cur": "Официально BTS-002, имел прозвище OK-GLI. Полнораскрытная атмосферная экспериментальная модель орбитальной программы «Буран» — с той же внешней геометрией, что и летный аппарат «Буран-1».01, но оснащённая четырьмя турбореактивными двигателями AL-31, что позволило ей взлетать под собственной силой с обычной взлётно-посадочной полосы. 24 атмосферных полёта между 1985-11-10 и 1988-04-15 на аэродроме Научно-исследовательского института летных испытаний имени Н. М. Жуковского отработана автоматическая система посадки «Буран» и программное обеспечение управления полётом для орбитального полёта 1988-11-15. После отмены программы «Буран» OK-GLI годами находился в LII; продан музею в Австралии в 1999 году, затем в Бахрейн, и наконец в музей техники Technik Museum Speyer / Sinsheim в Германии, где выставлена в экспозиции по сей день — эквивалент «Буран» для NASA Enterprise."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+  "at": "best_known_for",
+  "en": "Buran's atmospheric analog; 24 jet-powered flights 1985-88 at Zhukovsky; never to orbit",
+  "cur": "Атмосферный аналог «Буран»; 24 реактивных полёта 1985-88 в Жуковском; в орбиту не выходил"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/buran.json",
+  "at": "tagline",
+  "en": "Soviet shuttle; one unmanned flight, never crewed",
+  "cur": "Советский шаттл; один беспилотный полет, никогда не пилотируемый"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/buran.json",
+  "at": "dispatch",
+  "en": "Buran was the Soviet Union's answer to the Space Shuttle — outwardly almost identical, but with two decisions that arguably bettered the original: it carried no main engines (all the lift came from the separate Energia rocket), and it could fly with no one aboard. On 15 November 1988 it proved the second, flying a complete uncrewed orbital mission and landing itself on a runway in a crosswind, something no winged spacecraft had ever done. It was a flawless flight and its only one. The Soviet Union collapsed, the money and the mission vanished, and Buran was cancelled — the flown orbiter later crushed when its hangar roof fell in 2002. One of the most impressive and most pointless achievements in spaceflight.",
+  "cur": "«Буран» был советским ответом на Space Shuttle — внешне почти идентичный, но с двумя решениями, которые, возможно, превосходили оригинал: он не нес маршевых двигателей (весь подъем обеспечивала отдельная ракета «Энергия»), и он мог летать без экипажа на борту. 15 ноября 1988 года он доказал второе, выполнив полный беспилотный орбитальный полет и посадку на взлетно-посадочную полосу при боковом ветре — то, что не делал ни один крылатый космический аппарат до этого. Это был безупречный полет, и единственный. Советский Союз распался, деньги и миссия исчезли, и «Буран» был отменен — летавший орбитальный корабль позже был раздавлен, когда крыша его ангара обрушилась в 2002 году. Одно из самых впечатляющих и самых бессмысленных достижений в космонавтике."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/buran.json",
+  "at": "description",
+  "en": "The Soviet shuttle, externally similar to the American orbiter but with no main engines (Energia carried it). Flew exactly once, in 1988, fully autonomous and unmanned — the only Soviet shuttle to ever reach orbit before the program ended.",
+  "cur": "Советский челнок, внешне похожий на американский орбитальный аппарат, но без маршевых двигателей (его выводила «Энергия»). В 1988 году он пролетел ровно один раз, полностью автономный и беспилотный — единственный советский шаттл, который когда-либо достигал орбиты до окончания программы."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/buran.json",
+  "at": "best_known_for",
+  "en": "Soviet shuttle; one unmanned flight, never crewed",
+  "cur": "Советский шаттл; один беспилотный полет, никогда не пилотируемый"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/challenger.json",
+  "at": "tagline",
+  "en": "OV-099 — second operational Shuttle. Lost 73s after launch on STS-51-L (1986-01-28) with all seven crew including teacher Christa McAuliffe",
+  "cur": "OV-099 — второй операционный Shuttle. Потеряна через 73s после STS-51-L (1986-01-28) с Кристой Маколифф и экипажем"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/challenger.json",
+  "at": "dispatch",
+  "en": "Challenger, OV-099, was the fleet's early workhorse and the site of its first catastrophe. It flew the program's first spacewalk and carried the first American woman, Sally Ride, to orbit. On 28 January 1986, launching in unusually cold weather, a rubber seal in one of its solid boosters — stiffened by the cold, a failure mode engineers had warned of — gave way, and the vehicle broke apart 73 seconds after liftoff. All seven aboard died. The disaster grounded the fleet for nearly three years and exposed a management culture that had flown past a known, flagged risk.",
+  "cur": "Challenger, OV-099, была ранней рабочей лошадкой флота и местом его первой катастрофы. На ней совершён первый космический полёт программы и доставлена на орбиту первая американка Салли Райд. 28 января 1986 года, при старте в необычно холодную погоду, резиновое уплотнение в одном из твёрдотопливных ускорителей — затвёрдевшее от холода, отказ, о котором инженеры предупреждали, — разрушилось, и аппарат развалился через 73 секунды после старта. Все семеро на борту погибли. Катастрофа остановила работу флота на почти три года и обнажила культуру управления, которая пролетела мимо известного, отмеченного риска."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/challenger.json",
+  "at": "description",
+  "en": "Built from a structural test article (STA-099) converted to flight after Enterprise was deemed too expensive to upgrade. First flew STS-6 (1983-04-04) carrying out the first Shuttle EVA. Flew 10 missions in total: STS-6, STS-7, STS-8, STS-41-B, STS-41-C, STS-41-G, STS-51-B, STS-51-F, STS-61-A, and final flight STS-51-L. On 1986-01-28, STS-51-L launched at unprecedented cold (−1 °C) — the right SRB's O-rings failed to seal, hot gas burned through the strut attaching the SRB to the external tank, and the orbiter broke apart at Max-Q (T+73s) at 14 km altitude. All seven crew perished, including teacher Christa McAuliffe. The Rogers Commission grounded the Shuttle for 32 months and rewrote NASA's safety culture.",
+  "cur": "Построен из конструкции для испытаний (STA-099), переоборудованной в лётный вариант после того, как Enterprise признали слишком дорогим для модернизации. Впервые полетел на STS-6 (1983-04-04), выполнив первый выход Shuttle в открытый космос. Совершил 10 миссий: STS-6, STS-7, STS-8, STS-41-B, STS-41-C, STS-41-G, STS-51-B, STS-51-F, STS-61-A и последний полёт STS-51-L. 1986-01-28 STS-51-L стартовал при беспрецедентно низкой температуре (−1 °C) — уплотнительные кольца правого SRB не загерметизировали стык, горячий газ прожёг стойку крепления SRB к внешнему баку, и орбитальный корабль разрушился в момент максимального скоростного напора (T+73 с) на высоте 14 км. Погибли все семеро членов экипажа, включая учительницу Кристу Маколифф. Комиссия Роджерса остановила полёты Shuttle на 32 месяца и переписала культуру безопасности NASA."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/challenger.json",
+  "at": "best_known_for",
+  "en": "Second Shuttle; lost 73s after launch on STS-51-L 1986-01-28 with 7 crew",
+  "cur": "Второй Shuttle; потерян через 73 с после старта STS-51-L 1986-01-28 с 7 членами экипажа"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/columbia.json",
+  "at": "tagline",
+  "en": "OV-102 — the first Shuttle orbiter to fly to space (STS-1, 1981-04-12); lost on re-entry STS-107 2003-02-01",
+  "cur": "OV-102 — первый орбитальный аппарат Shuttle, летавший в космос (STS-1, 1981-04-12); потерян при входе в атмосферу STS-107 2003-02-01"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/columbia.json",
+  "at": "dispatch",
+  "en": "Columbia was the first — OV-102, the orbiter that opened the Shuttle era. On STS-1 in April 1981 it did something no crewed spacecraft had done before or has since: flew to orbit on its maiden launch, with two astronauts aboard an untested reusable vehicle, and glided home on a runway. It was the heaviest of the fleet and flew much of the program's science, including the Spacelab laboratories. In 2003, on STS-107, a hole punched in its wing by launch debris let the heat of reentry into the structure, and Columbia broke apart over Texas minutes from home — the loss that ended the program's complacency about debris strikes.",
+  "cur": "Columbia была первой — OV-102, орбитальный аппарат, открывший эпоху Shuttle. На STS-1 в апреле 1981 года она сделала то, что до этого не делал и не делает с тех пор ни один пилотируемый космический аппарат: достигла орбиты при своём первом полёте, с двумя астронавтами на борту экспериментального многоразового аппарата, и приземлилась на взлётно-посадочную полосу. Это был самый тяжёлый аппарат в составе флота, и он выполнил значительную часть научных миссий программы, включая лаборатории Spacelab. В 2003 году на STS-107 отверстие в крыле, пробитое обломками при запуске, позволило теплу входа в атмосферу проникнуть в конструкцию, и Columbia развалилась над Техасом за несколько минут до приземления — катастрофа, которая положила конец самоуверенности программы в отношении удара обломков."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/columbia.json",
+  "at": "description",
+  "en": "The first operational Space Shuttle orbiter. Flew 28 missions over 22 years including STS-1 (the first and only US crewed spacecraft to fly its maiden voyage with crew aboard), the 1990 Astro-1 UV-astronomy mission, the 1993 SLS-2 life-sciences flight, and Senator John Glenn's STS-95 return-to-space in 1998. Lost on re-entry during STS-107 (2003-02-01) — a foam strike during launch breached the left wing's RCC leading edge and the vehicle disintegrated over Texas at Mach 18 with the loss of all seven crew. The accident grounded the Shuttle fleet for 29 months and triggered the Vision for Space Exploration.",
+  "cur": "Первый операционный орбитальный аппарат Space Shuttle. Выполнил 28 миссий за 22 года, включая STS-1 (первый и единственный пилотируемый космический аппарат США, совершивший свой первый полёт с экипажем на борту), миссию Astro-1 по УФ-астрономии в 1990 году, полёт SLS-2 по изучению жизни в космосе в 1993 году и возвращение в космос сенатора Джона Гленна на STS-95 в 1998 году. Потеран при входе в атмосферу во время STS-107 (2003-02-01) — удар куска пены при запуске повредил передний край из RCC левого крыла, и аппарат развалился над Техасом на скорости Mach 18, погибло семь членов экипажа. Авария вывела флот Shuttle из строя на 29 месяцев и послужила толчком к Vision for Space Exploration."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/columbia.json",
+  "at": "best_known_for",
+  "en": "First Shuttle orbiter to fly to space (STS-1, 1981); lost on STS-107 re-entry 2003",
+  "cur": "Первый орбитальный аппарат Shuttle, летавший в космос (STS-1, 1981); потеран при входе в атмосферу STS-107 в 2003 году"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+  "at": "tagline",
+  "en": "First commercial human-rated orbital spacecraft",
+  "cur": "Первый коммерческий пилотируемый космический аппарат орбитального класса"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+  "at": "description",
+  "en": "SpaceX’s human-rated spacecraft, the first privately developed and operated spacecraft to carry humans to orbit (Demo-2, 2020-05-30). The trunk features two solar array panels that deploy after fairing separation for power during orbital operations.",
+  "cur": "Пилотируемый космический аппарат компании SpaceX, первый частный космический аппарат, разработанный и управляемый в частном порядке, доставивший людей на орбиту (Demo-2, 2020-05-30). Модуль транспорта оснащён двумя панелями солнечных батарей, которые развёртываются после отделения головного обтекателя для обеспечения питания во время орбитальных операций."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+  "at": "best_known_for",
+  "en": "First commercial human-rated orbital spacecraft",
+  "cur": "Первый коммерческий пилотируемый космический аппарат орбитального класса"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/discovery.json",
+  "at": "tagline",
+  "en": "OV-103 — third Shuttle. Deployed Hubble (STS-31, 1990); flew both return-to-flight missions. 39 missions — most of any orbiter",
+  "cur": "OV-103 — третий шаттл. Вывел Hubble (STS-31, 1990); летал в обеих миссиях возвращения к полётам. 39 миссий — больше всех"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/discovery.json",
+  "at": "dispatch",
+  "en": "Discovery, OV-103, was the fleet's most-flown and most-trusted orbiter, logging 39 missions across 27 years. It was NASA's choice to return the Shuttle to flight after both disasters — the vehicle sent up first when the program most needed to prove itself safe again. Among its flights was the one that may matter most: STS-31, which carried the Hubble Space Telescope to orbit and released it, beginning the most productive chapter in the history of astronomy.",
+  "cur": "Discovery, OV-103, был самым часто летавшим и самым надёжным орбитальным кораблём флота, выполнив 39 миссий за 27 лет. Именно его NASA выбирало для возобновления полётов Shuttle после обеих катастроф — это был аппарат, отправлявшийся первым, когда программе особенно необходимо было вновь доказать свою безопасность. Среди его полётов был тот, который, возможно, важнее всех остальных: STS-31, доставившая Hubble Space Telescope на орбиту и выпустившая его, положив начало самому продуктивному этапу в истории астрономии."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/discovery.json",
+  "at": "description",
+  "en": "Third operational orbiter; first flight STS-41-D (1984-08-30). The most-flown Shuttle — 39 missions over 27 years. Career highlights: STS-31 (1990-04-24) deployed the Hubble Space Telescope; STS-26 (1988-09-29) was the post-Challenger return-to-flight; STS-114 (2005-07-26) was the post-Columbia return-to-flight; STS-95 (1998) returned John Glenn to orbit at age 77; multiple ISS-assembly flights (STS-92, 120, 124, 128, 131, 133). Final flight STS-133 (2011-02-24) delivered the Leonardo Permanent Multipurpose Module. On display at Udvar-Hazy since 2012.",
+  "cur": "Третий операционный орбитальный корабль; первый полёт STS-41-D (1984-08-30). Наиболее часто летавший Shuttle — 39 миссий за 27 лет. Основные вехи карьеры: STS-31 (1990-04-24) развернул космический телескоп Hubble; STS-26 (1988-09-29) был возвращением в полёт после катастрофы Challenger; STS-114 (2005-07-26) был возвращением в полёт после катастрофы Columbia; STS-95 (1998) вернул Джона Гленна на орбиту в возрасте 77 лет; множество полётов по сборке МКС (STS-92, STS-120, STS-124, STS-128, STS-131, STS-133). Последний полёт STS-133 (2011-02-24) доставил Leonardo Permanent Multipurpose Module. На выставке в Udvar-Hazy с 2012 года."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/discovery.json",
+  "at": "best_known_for",
+  "en": "Most-flown Shuttle (39 missions); deployed Hubble + flew both return-to-flight missions",
+  "cur": "Самый летающий шаттл (39 миссий); вывел Hubble + обе миссии возвращения к полётам"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/endeavour.json",
+  "at": "tagline",
+  "en": "OV-105 — fifth Shuttle, built from spares to replace Challenger. First Hubble servicing STS-61 (1993); delivered Unity + Canadarm2",
+  "cur": "OV-105 — пятый шаттл, собранный из запасных деталей на замену Challenger. Первый сервис Hubble STS-61 (1993); доставил Unity и Canadarm2"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/endeavour.json",
+  "at": "dispatch",
+  "en": "Endeavour, OV-105, was the last orbiter built — assembled from structural spares to replace Challenger, so that even the fleet's newest member carried the memory of its worst day. It flew the first Hubble servicing mission, STS-61, the flight that corrected the telescope's flawed mirror and rescued the observatory's reputation, and it did heavy lifting in the assembly of the International Space Station. It was the youngest of the fleet and among the busiest, flying until the program's final years.",
+  "cur": "Endeavour, OV-105, был последним построенным орбитальным кораблём — собранным из структурных запчастей для замены Challenger, так что даже самый новый член флота нёс память о его худшем дне. Он выполнил первую миссию по обслуживанию Hubble, STS-61, полёт, который исправил дефектное зеркало телескопа и спас репутацию обсерватории, и он выполнял тяжёлую работу по сборке Международной космической станции. Он был самым молодым во флоте и одним из самых загруженных, летая до последних лет программы."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/endeavour.json",
+  "at": "description",
+  "en": "Fifth and last operational orbiter, built from structural spares after Challenger left NASA with only three flight-rated orbiters. Named via a national schools competition after Captain Cook's HMS Endeavour. First flight STS-49 (1992-05-07) included the first three-person EVA (to capture the stranded Intelsat VI satellite). Highlights: STS-61 (1993-12) first Hubble servicing restored Hubble's optics; STS-88 (1998-12-04) first ISS assembly flight delivering Node 1 Unity; STS-100 (2001-04) installed Canadarm2; STS-130 (2010-02) installed Tranquility + Cupola; STS-134 (2011-05) installed the AMS-02 cosmic-ray detector — final EVA crew of the Shuttle programme. On display at the California Science Center, Los Angeles.",
+  "cur": "Пятый и последний действующий орбитальный корабль, собранный из конструкционных запасных деталей после того, как Challenger оставил NASA всего с тремя полётными орбитальными кораблями. Назван в результате общенародного конкурса школьников в честь HMS Endeavour капитана Кука. Первый полёт STS-49 (1992-05-07) включал первый трёхчасовой выход в открытый космос (для захвата неисправного спутника Intelsat VI). Значительные полёты: STS-61 (1993-12) — первый сервис Hubble восстановил оптику Hubble; STS-88 (1998-12-04) — первый полёт по сборке МКС, доставивший узел 1 Unity; STS-100 (2001-04) — установка Canadarm2; STS-130 (2010-02) — установка Tranquility и Cupola; STS-134 (2011-05) — установка детектора космических лучей AMS-02 — последний выход экипажа программы Shuttle. Выставлен в Калифорнийском научном центре в Лос-Анджелесе."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/endeavour.json",
+  "at": "best_known_for",
+  "en": "Youngest Shuttle; first Hubble servicing (STS-61); delivered Unity + Canadarm2 + Tranquility / Cupola",
+  "cur": "Самый молодой шаттл; первое обслуживание Hubble (STS-61); доставил Unity + Canadarm2 + Tranquility/Cupola"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/enterprise.json",
+  "at": "tagline",
+  "en": "OV-101 — prototype Shuttle. Renamed from Constitution after Star Trek fan campaign. Flew 1977 atmospheric tests; never reached orbit",
+  "cur": "OV-101 — опытный Шаттл. Переименован с Constitution после кампании фанов Star Trek. Полёты 1977, атмосферные тесты; орбиты не достиг"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/enterprise.json",
+  "at": "description",
+  "en": "Originally called Constitution, renamed Enterprise after a fan-letter campaign organized by Star Trek fans in 1976 when the shuttle was being named. Built as a prototype for the Approach and Landing Tests (ALT) — eight captive flights and five free flights from the Shuttle Carrier Aircraft over Edwards Air Force Base in 1977. First free flight 1977-08-12 piloted by Fred Haise + Gordon Fullerton proved the orbiter could glide and land. Did NOT contain propulsion or active TPS tiles; converting Enterprise to flight-rated was estimated heavier than building a new orbiter from structural spares, so Challenger was built instead. Now on display at the Intrepid Sea, Air & Space Museum in NYC.",
+  "cur": "Изначально назван Constitution, переименован в Enterprise после кампании писем от фанатов Star Trek в 1976 году, когда шаттлу давали имя. Построен как прототип для программы Approach and Landing Tests (ALT) — восемь полётов в захвате и пять свободных полётов с самолёта-носителя Shuttle Carrier Aircraft над Edwards Air Force Base в 1977 году. Первый свободный полёт 1977-08-12 под управлением пилотов Фреда Хейза и Гордона Фуллертона доказал, что орбитер может планировать и совершать посадку. НЕ содержал двигательных установок и активных тепловых плиток; переделка Enterprise в лётный статус оценивалась как более трудозатратная, чем строительство нового орбитера из запасных конструкций, поэтому вместо этого был построен Challenger. В настоящее время выставлен в музее Intrepid Sea, Air & Space Museum в Нью-Йорке."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/enterprise.json",
+  "at": "best_known_for",
+  "en": "Prototype Shuttle; 1977 atmospheric drop tests; never flew to orbit",
+  "cur": "Прототип Shuttle; атмосферные испытания 1977 г.; никогда не летал на орбиту"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/gaganyaan.json",
+  "at": "tagline",
+  "en": "First crewed Indian spacecraft",
+  "cur": "Первый пилотируемый индийский космический аппарат"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/gaganyaan.json",
+  "at": "description",
+  "en": "India’s first crewed spacecraft, targeting a 2027 crewed flight on the LVM3 (formerly GSLV Mk III). Three astronauts on a roughly seven-day low-Earth-orbit mission — the start of an Indian human-spaceflight programme. ISRO has completed crew module qualification tests and trained astronaut candidates.",
+  "cur": "Первый пилотируемый космический аппарат Индии, рассчитанный на полет с экипажем в 2027 году на ракете LVM3 (ранее GSLV Mk III). Три космонавта в рамках примерно семидневной миссии на низкой околоземной орбите — начало индийской программы пилотируемых полетов. ISRO завершила квалификационные испытания командного модуля и подготовила кандидатов в космонавты."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/gaganyaan.json",
+  "at": "best_known_for",
+  "en": "First crewed Indian spacecraft",
+  "cur": "Первый пилотируемый индийский космический аппарат"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/gemini.json",
+  "at": "tagline",
+  "en": "Two-person crew; rendezvous and EVA practice",
+  "cur": "Двухместный экипаж; практика сближения и выхода в открытый космос"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/gemini.json",
+  "at": "dispatch",
+  "en": "The Gemini spacecraft was the first one Americans could actually fly. Mercury's astronaut mostly rode a capsule the ground controlled; Gemini's two-person crew got thrusters, a flight computer, and the ability to change their own orbit — to chase down another craft and dock with it. That was its entire reason to exist: not to go anywhere new, but to be a machine for practicing the maneuvers Apollo would need. Roomier than Mercury but still cramped, split into a crew module and an equipment section like Apollo after it, across ten flights it turned rendezvous, docking, and two-week endurance from open questions into things a crew could simply do.",
+  "cur": "Космический корабль Gemini стал первым, которым американцы могли действительно управлять. Астронавты Mercury в основном находились в капсуле, управляемой с Земли; двухместный экипаж Gemini получил реактивные двигатели, бортовой компьютер и возможность менять собственную орбиту — преследовать другой аппарат и стыковаться с ним. В этом была вся его цель: не открывать новые места, а быть машиной для тренировки маневров, которые потребуются Apollo. Просторнее, чем Mercury, но всё ещё тесный, разделённый на модуль экипажа и отсек оборудования, как Apollo после него, за десять полётов он превратил сближение, стыковку и двухнедельную выносливость из открытых вопросов в навыки, которые экипаж просто мог выполнять."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/gemini.json",
+  "at": "description",
+  "en": "The two-person spacecraft that taught NASA how to rendezvous, dock, and walk in space — the techniques that made Apollo possible. Two uncrewed test flights (Gemini 1 and 2) in 1964–1965 preceded ten crewed missions (Gemini 3–12) in 1965–1966, every one a step toward the Moon.",
+  "cur": "Двухместный космический корабль, который научил NASA проводить сближение, стыковку и выходы в открытый космос — техникам, которые сделали возможным Apollo. Два беспилотных испытательных полёта (Gemini 1 и 2) в 1964–1965 годах предшествовали десяти пилотируемым миссиям (Gemini 3–12) в 1965–1966 годах, каждая из которых была шагом к Луне."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/gemini.json",
+  "at": "best_known_for",
+  "en": "Two-person crew; rendezvous and EVA practice",
+  "cur": "Двухместный экипаж; практика сближения и выхода в открытый космос"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+  "at": "tagline",
+  "en": "First U.S. crewed spaceflight (Shepard)",
+  "cur": "Первый пилотируемый космический полёт США (Шепард)"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+  "at": "dispatch",
+  "en": "The Mercury capsule was designed to be the smallest thing that could keep a person alive in space — and it shows. There was no room to do much but sit; the astronaut wore the spacecraft as much as rode it. But its shape solved the era's hardest unsolved problem — how to come back. The blunt end, coated in a shield built to char and carry the heat away, turned reentry from a fatal certainty into something survivable, and its cone was the first American answer to the question of what a crewed spacecraft even looks like. Every capsule since — Gemini, Apollo, Dragon — is a descendant of this cramped little cone.",
+  "cur": "Капсула Mercury была разработана как самый маленький объект, способный сохранить жизнь человеку в космосе — и это очень заметно. Там было место только для того, чтобы сидеть; астронавт носил космический корабль не менее, чем управлял им. Но его форма решила самую трудную проблему той эпохи — как вернуться. Тупой конец, покрытый экраном, созданным для обугливания и отвода тепла, превратил возвращение из смертельной неизбежности в нечто пережившаемое, а его конус стал первым американским ответом на вопрос о том, как вообще должен выглядеть пилотируемый космический корабль. Каждая капсула с тех пор — Gemini, Apollo, Dragon — является потомком этого тесного маленького конуса."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+  "at": "description",
+  "en": "The cone-shaped capsule that carried six American astronauts on Project Mercury between 1961 and 1963. Tiny enough that John Glenn famously described being \"spam in a can\" — but it proved orbital flight was achievable for the United States.",
+  "cur": "Конусообразная капсула, доставившая шестерых американских астронавтов в ходе проекта Mercury между 1961 и 1963 годами. Настолько маленькая, что Джон Гленн знаменито назвал пребывание в ней «консервированным мясом» — но она доказала, что орбитальный полёт был достижимым для Соединённых Штатов."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+  "at": "best_known_for",
+  "en": "First U.S. crewed spaceflight (Shepard)",
+  "cur": "Первый пилотируемый космический полёт США (Шепард)"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/new-shepard.json",
+  "at": "tagline",
+  "en": "First commercial suborbital crewed vehicle",
+  "cur": "Первый коммерческий суборбитальный экипаж"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/new-shepard.json",
+  "at": "description",
+  "en": "Blue Origin’s suborbital crewed spacecraft, named for Alan Shepard. Reusable booster + capsule architecture, with the capsule landing under parachutes. Crewed since 2021; carried Jeff Bezos, William Shatner, and others on brief suborbital flights.",
+  "cur": "Суборбитальный пилотируемый космический корабль Blue Origin, названный в честь Алана Шепарда. Архитектура с многоразовым ускорителем и капсулой, причём капсула приземляется на парашютах. Пилотируемые полёты с 2021 года; перевёз Джефф Безос, Уильям Шетнер и других в кратких суборбитальных полётах."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/new-shepard.json",
+  "at": "best_known_for",
+  "en": "First commercial suborbital crewed vehicle",
+  "cur": "Первый коммерческий суборбитальный экипаж"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/orion.json",
+  "at": "tagline",
+  "en": "Crew vehicle for the Artemis lunar program",
+  "cur": "Пилотируемый корабль программы Artemis по исследованию Луны"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/orion.json",
+  "at": "description",
+  "en": "The crew vehicle for NASA’s Artemis program, built jointly with ESA (the European Service Module is provided by Airbus). Designed to support up to four astronauts on multi-week missions to lunar orbit. Flew uncrewed on Artemis I in 2022. Flew its first crewed mission (Artemis II) in April 2026 with a four-person crew on a lunar flyby trajectory.",
+  "cur": "Пилотируемый корабль программы Artemis агентства NASA, созданный совместно с ESA (европейский служебный модуль поставляет компания Airbus). Рассчитан на экипаж до четырёх астронавтов в многонедельных полётах к окололунной орбите. Совершил беспилотный полёт Artemis I в 2022 году. Первую пилотируемую миссию (Artemis II) выполнил в апреле 2026 года: экипаж из четырёх человек на траектории облёта Луны."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/orion.json",
+  "at": "best_known_for",
+  "en": "Crew vehicle for the Artemis lunar program",
+  "cur": "Пилотируемый корабль программы Artemis по исследованию Луны"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/shenzhou.json",
+  "at": "tagline",
+  "en": "First Chinese crewed spacecraft",
+  "cur": "Первый китайский космический корабль"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/shenzhou.json",
+  "at": "description",
+  "en": "China’s crewed spacecraft, externally Soyuz-derived but enlarged. First crewed flight in 2003 (Shenzhou 5, Yang Liwei); now the standard ferry to Tiangong, with crew rotations every six months.",
+  "cur": "Китайский космический корабль с экипажем, внешне производный от «Союз», но увеличенный. Первый полет экипажа в 2003 году (Shenzhou 5, Ян Ливэй); теперь стандартный паром до Tiangong, с ротацией экипажа каждые шесть месяцев."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/shenzhou.json",
+  "at": "best_known_for",
+  "en": "First Chinese crewed spacecraft",
+  "cur": "Первый китайский космический корабль"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+  "at": "tagline",
+  "en": "First Soyuz generation; Komarov's fatal flight",
+  "cur": "Первое поколение «Союза»: роковой полёт Комарова"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+  "at": "dispatch",
+  "en": "The Soyuz 7K-OK was the first of the line — the original version of the spacecraft that would outlive them all. It introduced the three-module layout every Soyuz since has kept: a spherical orbital module to live and work in, a compact descent module to ride home in, and a service module for power and propulsion. It was also the version that killed Vladimir Komarov on its first crewed flight and, in an improved form, the three cosmonauts of Soyuz 11 — the hard early schooling that turned a rushed design into a reliable one. Crude and dangerous at the start, its basic architecture proved so sound that, refined over decades, it is still carrying crews to orbit today.",
+  "cur": "«Союз 7К-ОК» был первым в линейке — оригинальной версией космического корабля, который пережил все остальные. Он ввёл компоновку из трёх модулей, которую сохранил каждый «Союз» с тех пор: сферический орбитальный модуль для жизни и работы, компактный спускаемый аппарат для возвращения домой и приборно-агрегатный отсек для энергоснабжения и двигательной установки. Это также была версия, которая убила Владимира Комарова в своём первом пилотируемом полёте и, в улучшенной форме, троих космонавтов «Союз-11» — суровая ранняя школа, которая превратила поспешную конструкцию в надёжную. Грубая и опасная в начале, её базовая архитектура оказалась настолько прочной, что, усовершенствованная за десятилетия, она до сих пор доставляет экипажи на орбиту."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+  "at": "description",
+  "en": "The first generation of Soyuz, with all the architectural choices that have endured for sixty years: orbital module sphere, descent module, service module with deployable solar arrays. Tragically introduced by Soyuz 1 (Komarov’s fatal flight, 1967).",
+  "cur": "Первое поколение «Союз», со всеми архитектурными решениями, которые выдержали шестьдесят лет: орбитальный модуль сферы, спускаемый модуль, сервисный модуль с развертываемыми солнечными батареями. Трагически введенный «Союз-1» (роковой полёт Комарова, 1967)."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+  "at": "best_known_for",
+  "en": "First Soyuz generation; Komarov's fatal flight",
+  "cur": "Первое поколение «Союза»: роковой полёт Комарова"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+  "at": "tagline",
+  "en": "Current Soyuz generation; ISS lifeboat",
+  "cur": "Текущее поколение Союз; спасательная шлюпка МКС"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+  "at": "description",
+  "en": "The current Soyuz generation, in service since 2016. New software and GLONASS/GPS-aided rendezvous makes ISS docking possible in as little as 3 hours. Part of the Soyuz family — the most-flown crewed spacecraft lineage in history.",
+  "cur": "Текущее поколение «Союз», находящееся в эксплуатации с 2016 года. Новое программное обеспечение и навигация с поддержкой ГЛОНАСС/GPS делают возможной стыковку с МКС менее чем за 3 часа. Часть семейства «Союз» — самого часто летавшего пилотируемого космического аппарата в истории."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+  "at": "best_known_for",
+  "en": "Current Soyuz generation; ISS lifeboat",
+  "cur": "Текущее поколение «Союз»; спасательная шлюпка МКС"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-t.json",
+  "at": "tagline",
+  "en": "Three-cosmonaut Salyut-era variant",
+  "cur": "Трехкосмонавтный вариант эпохи Салют"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-t.json",
+  "at": "description",
+  "en": "The 1979–1986 Salyut-era Soyuz with three-cosmonaut capacity restored after the Soyuz 11 fatal decompression. Modernised avionics and hypergolic propulsion; the bridge between the original 7K-OK and the long-running TM/TMA/MS lineage.",
+  "cur": "«Союз» с тремя космонавтами 1979–1986 годов, восстановленный после роковой декомпрессии «Союз-11». Модернизированная авионика и гипергольная двигательная установка; мост между оригинальной линией 7K-OK и длинной линией TM/TMA/MS."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-t.json",
+  "at": "best_known_for",
+  "en": "Three-cosmonaut Salyut-era variant",
+  "cur": "Трехкосмонавтный вариант эпохи «Салют»"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
+  "at": "tagline",
+  "en": "Mir-era Soyuz; modernised avionics",
+  "cur": "Союз эпохи Мир; модернизированная авионика"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
+  "at": "description",
+  "en": "The Mir-era Soyuz (1986–2002), with redesigned avionics and the new Kurs automated docking system. Flew Soviet, Russian, and partner-country cosmonauts to Mir for 15 years.",
+  "cur": "Корабль эпохи Мира (1986–2002) с переработанной авионикой и новой автоматической системой стыковки «Курс». В течение 15 лет доставлял советских, российских и космонавтов дружественных стран на станцию «Мир»."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
+  "at": "best_known_for",
+  "en": "Mir-era Soyuz; modernised avionics",
+  "cur": "«Союз» эпохи «Мир»; модернизированная авионика"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+  "at": "tagline",
+  "en": "ISS-era Soyuz; expanded crew height envelope",
+  "cur": "Союз эпохи МКС; расширенный конверт высоты экипажа"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+  "at": "description",
+  "en": "The ISS-era Soyuz (2002–2012), with a digital flight computer and a wider crew-height envelope to accommodate the international partner astronaut corps. Carried the first space tourists alongside professional crews.",
+  "cur": "«Союз» эпохи МКС (2002–2012) с цифровым летным компьютером и более широким конвертом высоты экипажа для размещения международного корпуса астронавтов-партнеров. Первые космические туристы сопровождали профессиональные экипажи."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+  "at": "best_known_for",
+  "en": "ISS-era Soyuz; expanded crew height envelope",
+  "cur": "«Союз» эпохи МКС; расширенный конверт высоты экипажа"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+  "at": "name",
+  "en": "Space Shuttle Orbiter",
+  "cur": "Орбитальный корабль Space Shuttle"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+  "at": "tagline",
+  "en": "Reusable winged orbital crew vehicle",
+  "cur": "Многоразовый крылатый орбитальный экипаж"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+  "at": "description",
+  "en": "The reusable winged spacecraft that flew 135 missions between 1981 and 2011 — the only crewed vehicle ever to land like a glider. Five flight orbiters were built (Columbia, Challenger, Discovery, Atlantis, Endeavour); Columbia and Challenger were lost with their crews.",
+  "cur": "Многоразовый крылатый космический корабль, который совершил 135 полетов в период с 1981 по 2011 год — единственный пилотируемый корабль, когда-либо приземлявшийся как планер. Были построены пять орбитальных аппаратов (Columbia, Challenger, Discovery, Atlantis, Endeavour); Columbia и Challenger были потеряны вместе со своими экипажами."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+  "at": "best_known_for",
+  "en": "Reusable winged orbital crew vehicle",
+  "cur": "Многоразовый крылатый орбитальный экипаж"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/starliner.json",
+  "at": "tagline",
+  "en": "Boeing's commercial crew vehicle",
+  "cur": "Коммерческий пилотируемый аппарат от Boeing"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/starliner.json",
+  "at": "description",
+  "en": "Boeing’s Commercial Crew vehicle, with a pusher launch-abort system using its own service-module thrusters. Crew Flight Test (June 2024) suffered thruster failures and helium leaks; NASA returned the capsule uncrewed (September 2024). Wilmore and Williams returned via SpaceX Crew-9 (February 2025). Crewed flights suspended pending recertification.",
+  "cur": "Коммерческий пилотируемый аппарат от Boeing, оснащённый системой аварийного спасения на базе собственных двигателей служебного модуля. Crew Flight Test (июнь 2024) сопровождался отказами двигателей и утечками гелия; NASA вернуло капсулу без экипажа (сентябрь 2024). Уилмор и Уильямс вернулись на борту SpaceX Crew-9 (февраль 2025). Пилотируемые полёты приостановлены в ожидании переаттестации."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/starliner.json",
+  "at": "best_known_for",
+  "en": "Boeing's commercial crew vehicle",
+  "cur": "Коммерческий пилотируемый аппарат от Boeing"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/voskhod.json",
+  "at": "tagline",
+  "en": "First multi-crew flight; first spacewalk",
+  "cur": "Первый полет с несколькими экипажами; первый выход в открытый космос"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/voskhod.json",
+  "at": "dispatch",
+  "en": "The Voskhod spacecraft was a Vostok pushed past its design, and it shows exactly what improvisation under deadline looks like. To make the one-seat capsule carry more, engineers pulled out the ejection seat — the crew's only escape — and for the first flight left out the pressure suits too; for the second they bolted on an inflatable airlock so a cosmonaut could go outside. It scored the first multi-person crew and the first spacewalk, the last two firsts the Soviet program would claim. But it had no margin left, and after the near-disaster of its second flight it was retired — a stopgap that did its narrow job and was wisely not asked to do more.",
+  "cur": "Космический корабль «Восход» был доведённым до предела «Восток», и он показывает, как именно выглядит импровизация под давлением сроков. Чтобы одноместная капсула могла вместить больше людей, инженеры удалили катапультируемое кресло — единственное средство спасения экипажа — а для первого полёта отказались и от скафандров; для второго они прикрепили надувной шлюз, чтобы космонавт мог выйти наружу. Корабль обеспечил первый многоместный экипаж и первый выход в открытый космос — последние два первенства, которые удалось заявить советской программе. Но у него не осталось запаса прочности, и после почти катастрофы второго полёта его сняли с эксплуатации — временная мера, которая выполнила свою узкую задачу и, к счастью, от неё не потребовали большего."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/voskhod.json",
+  "at": "description",
+  "en": "A modified Vostok refitted to carry up to three cosmonauts. Two crewed flights — Voskhod 1 (first multi-crew) and Voskhod 2 (Alexei Leonov’s first spacewalk in 1965). Pushed beyond the design margin and was retired in favour of Soyuz.",
+  "cur": "Модифицированный «Восток», переоборудованный для доставки до трёх космонавтов. Два пилотируемых полёта — «Восход-1» (первый многоместный) и «Восход-2» (первый выход в открытый космос Алексея Леонова в 1965 году). Эксплуатировался за пределами расчётных параметров и был снят с вооружения в пользу «Союз»."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/voskhod.json",
+  "at": "best_known_for",
+  "en": "First multi-crew flight; first spacewalk",
+  "cur": "Первый полет с несколькими экипажами; первый выход в открытый космос"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/vostok.json",
+  "at": "tagline",
+  "en": "First crewed spacecraft (Gagarin, 1961)",
+  "cur": "Первый космический корабль с экипажем (Гагарин, 1961)"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/vostok.json",
+  "at": "dispatch",
+  "en": "The Vostok spacecraft was the first machine to carry a human into space and bring one back, and its design is a study in doing the minimum that works. Reentry is the hardest part of coming home, so Vostok used the one shape that survives it from any angle — a sphere — which meant the automatic systems never had to point the craft precisely; it would tumble in and still come down heat-shield-heavy. The catch was that the sphere landed too hard for a person, so the cosmonaut ejected near the ground and parachuted separately, a fact hidden for years to protect the records. Crude, secretive, and completely effective, it flew six people to orbit and lost none — and its capsule-plus-service-module layout became the pattern for Soyuz, still flying today.",
+  "cur": "Космический корабль «Восток» стал первым аппаратом, который доставил человека в космос и вернул его обратно, и его конструкция — это пример того, как делать минимум, который работает. Вход в атмосферу — самая сложная часть возвращения домой, поэтому «Восток» использовал единственную форму, которая переносит его под любым углом — сферу, — что означало, что автоматическим системам никогда не нужно было точно ориентировать корабль; он мог кувыркаться и всё равно снижался теплозащитным экраном вниз. Загвоздка была в том, что сфера приземлялась слишком жёстко для человека, поэтому космонавт катапультировался у земли и спускался на парашюте отдельно — факт, скрывавшийся годами для защиты рекордов. Грубый, секретный и полностью эффективный, он доставил на орбиту шестерых человек и не потерял ни одного — а его компоновка из капсулы и служебного модуля стала образцом для «Союз», который летает и сегодня."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/vostok.json",
+  "at": "description",
+  "en": "The spherical descent module that returned Yuri Gagarin from orbit on 1961-04-12 — the first human spaceflight. Six crewed flights between 1961 and 1963, including Valentina Tereshkova’s solo orbital mission as the first woman in space.",
+  "cur": "Сферический спусковой модуль, вернувший Юрия Гагарина с орбиты в 1961-04-12 — первый космический полет человека. В период с 1961 по 1963 год было совершено шесть полетов с экипажем, в том числе одиночная орбитальная миссия Валентины Терешковой в качестве первой женщины в космосе."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/vostok.json",
+  "at": "best_known_for",
+  "en": "First crewed spacecraft (Gagarin, 1961)",
+  "cur": "Первый космический корабль с экипажем (Гагарин, 1961)"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/x37b.json",
+  "at": "tagline",
+  "en": "USSF reusable robotic spaceplane — multi-year classified orbital missions, the only US spaceplane operational after the Shuttle's retirement",
+  "cur": "Многоразовый робот USSF — секретные орбитальные миссии, единственный американский космоплан после снятия Shuttle"
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/x37b.json",
+  "at": "description",
+  "en": "Robotic mini-spaceplane (8.9 m long, ~5 t) built by Boeing Phantom Works for the USAF, transferred to the USSF in 2019. Launches vertically (Atlas V 501 originally; SpaceX Falcon 9 from OTV-5; Falcon Heavy from OTV-7) and lands horizontally on Kennedy's former Shuttle runway. Most payloads and orbital parameters are classified — known mission durations stretch from 224 days (OTV-1, 2010) to a record 908 days (OTV-6, 2020-2022). Declassified experiments include Hall-effect thruster tech demo, an AFRL radio-frequency communication test, and a 1 W solar-power-to-microwave-beaming experiment (PRAM, OTV-6). As of 2026 has flown seven missions.",
+  "cur": "Роботизированный мини-космоплан (8,9 м, ~5 т) — Boeing Phantom Works построил два лётных аппарата для USAF (переданы USSF в 2019 году). Запускается вертикально (изначально Atlas V 501; SpaceX Falcon 9 с OTV-5; Falcon Heavy с OTV-7) и приземляется горизонтально на бывшей шаттловой полосе на мысе Кеннеди. Большинство полезных нагрузок и орбитальных параметров засекречены — типичные продолжительности миссий варьируются от 224 дней (OTV-1, 2010) до рекордных 908 дней (OTV-6, 2020-2022). Известные рассекреченные эксперименты включают демонстратор технологии холловского двигателя, эксперимент радиочастотной связи AFRL и эксперимент по передаче 1 Вт солнечной энергии в микроволновое излучение (PRAM, OTV-6). По состоянию на 2026 год выполнил семь миссий."
+ },
+ {
+  "rel": "fleet/crewed-spacecraft/x37b.json",
+  "at": "best_known_for",
+  "en": "USSF reusable robotic spaceplane — classified multi-year orbital missions, post-Shuttle US spaceplane",
+  "cur": "Многоразовый роботизированный космоплан USSF — секретные многолетние орбитальные миссии, пост-шаттловый американский космоплан"
+ },
+ {
+  "rel": "fleet/engine/ce-20.json",
+  "at": "tagline",
+  "en": "India's first home-grown cryogenic engine, born from necessity",
+  "cur": "Первый отечественный криогенный двигатель Индии, рождённый из необходимости"
+ },
+ {
+  "rel": "fleet/engine/ce-20.json",
+  "at": "description",
+  "en": "When technology-transfer restrictions blocked India from acquiring cryogenic engine technology in the early 1990s, ISRO's Liquid Propulsion Systems Centre developed one from the ground up. The CE-20 is the result: a gas-generator cycle burning LOX and LH2 that powers the upper stage of LVM3, India's heaviest operational rocket. It first flew on 5 June 2017 on the GSLV Mk III D1 developmental flight, capping a two-decade development program that turned a geopolitical barrier into independent capability. The CE-20 is the engine that will carry Gaganyaan — India's first crewed mission — to orbit.",
+  "cur": "Когда ограничения на передачу технологий заблокировали Индию от доступа к криогенной технологии двигателей в начале 1990-х годов, Центр жидких движительных систем ISRO разработал её с нуля. CE-20 — результат этого: двигатель цикла газогенератора, работающий на LOX и LH2, который приводит в движение верхнюю ступень LVM3, самой тяжёлой операционной ракеты Индии. Он впервые полетел 5 июня 2017 года на экспериментальном полёте GSLV Mk III D1, завершив двадцатилетнюю программу разработки, которая превратила геополитический барьер в независимую возможность. CE-20 — двигатель, который доставит Gaganyaan — первую пилотируемую миссию Индии — на орбиту."
+ },
+ {
+  "rel": "fleet/engine/ce-20.json",
+  "at": "best_known_for",
+  "en": "India's first home-grown cryogenic engine — the LVM3 upper stage",
+  "cur": "Первый отечественный криогенный двигатель Индии — верхняя ступень LVM3"
+ },
+ {
+  "rel": "fleet/engine/f-1.json",
+  "at": "tagline",
+  "en": "The most powerful single-chamber engine ever flown",
+  "cur": "Самый мощный однокамерный двигатель из когда-либо летавших"
+ },
+ {
+  "rel": "fleet/engine/f-1.json",
+  "at": "description",
+  "en": "Five F-1s on Saturn V's first stage produced combined thrust that no single rocket before or since has matched at sea level. Rocketdyne's gas-generator cycle burned LOX and RP-1 at a rate that demanded turbopumps the size of car engines and a combustion chamber that engineers had to solve combustion instability in by trial, explosion, and redesign. It first flew on 9 November 1967 and put Apollo on its way to the Moon six times before the program ended.",
+  "cur": "Пять F-1 на первой ступени Saturn V создавали суммарную тягу, которую ни одна ракета до или после них не смогла развить на уровне моря. Газогенераторный цикл Rocketdyne сжигал LOX и RP-1 с такой скоростью, что требовал турбонасосы размером с автомобильные двигатели и камеру сгорания, в которой инженерам пришлось решать проблему нестабильности горения методом проб, взрывов и переделок. Первый полёт состоялся 9 ноября 1967 года, и пять двигателей отправили Apollo на Луну шесть раз, прежде чем программа завершилась."
+ },
+ {
+  "rel": "fleet/engine/f-1.json",
+  "at": "best_known_for",
+  "en": "Most powerful single-chamber liquid engine ever flown — five lifted Saturn V",
+  "cur": "Самый мощный однокамерный жидкостный двигатель из когда-либо летавших — пять подняли Saturn V"
+ },
+ {
+  "rel": "fleet/engine/h-1.json",
+  "at": "tagline",
+  "en": "Eight engines, eight missions — the Saturn I workhorse",
+  "cur": "Восемь двигателей, восемь миссий — боевая лошадка Saturn I"
+ },
+ {
+  "rel": "fleet/engine/h-1.json",
+  "at": "description",
+  "en": "The H-1 was the engine Rocketdyne built to bridge the gap between early ballistic-missile powerplants and the F-1 that would follow. Running a gas-generator cycle on LOX and RP-1, eight H-1s clustered together formed Saturn I's first stage — and later Saturn IB's — flying every unmanned Apollo hardware test and crewed Apollo 7. Its first flight was 27 October 1961; it ran continuously through the end of the Saturn IB program in 1975.",
+  "cur": "H-1 был двигателем, разработанным Rocketdyne для заполнения пропасти между ранними баллистическими ракетными установками и F-1, который последует за ним. Работая на газогенераторном цикле на LOX и RP-1, восемь H-1, собранные в кластер, образовали первую ступень Saturn I — а позже Saturn IB — выполняя все испытания оборудования Apollo без экипажа и пилотируемый Apollo 7. Его первый полёт состоялся 27 октября 1961 года; он работал непрерывно до конца программы Saturn IB в 1975 году."
+ },
+ {
+  "rel": "fleet/engine/h-1.json",
+  "at": "best_known_for",
+  "en": "Eight-cluster Saturn I/IB booster engine — the F-1 rehearsal",
+  "cur": "Двигатель восьмигроздевого ускорителя Saturn I/IB — репетиция F-1"
+ },
+ {
+  "rel": "fleet/engine/hm7b.json",
+  "at": "tagline",
+  "en": "Ariane's cryogenic upper stage, three decades of service",
+  "cur": "Криогенный верхний блок Ariane, три десятилетия эксплуатации"
+ },
+ {
+  "rel": "fleet/engine/hm7b.json",
+  "at": "description",
+  "en": "The HM7B is the hydrogen-fuelled upper-stage engine that gave Ariane rockets a high-energy kick after the core stage shut down. Running a gas-generator cycle on LOX and LH2, it first flew on Ariane 2 in May 1986 and continued through the end of Ariane 5's operational life in July 2023. Its small size belies a high specific impulse that made it the workhorse for geostationary transfer injections, carrying commercial satellites and scientific payloads — including Rosetta, Mars Express, and Venus Express — to their departure trajectories over more than three decades.",
+  "cur": "HM7B — это водородный двигатель верхнего блока, который придавал ракетам Ariane мощный энергетический толчок после отключения основного блока. Работая на цикле газогенератора с использованием LOX и LH2, он впервые летал на Ariane 2 в мае 1986 года и продолжал эксплуатироваться до конца жизненного цикла Ariane 5 в июле 2023 года. Несмотря на компактные размеры, он обладал высоким удельным импульсом, что сделало его основной силовой установкой для выведения на геостационарные орбиты передачи энергии, доставляя коммерческие спутники и научные полезные грузы — включая Rosetta, Mars Express и Venus Express — на их траектории полёта более чем за три десятилетия."
+ },
+ {
+  "rel": "fleet/engine/hm7b.json",
+  "at": "best_known_for",
+  "en": "Europe's cryogenic upper-stage engine — Ariane's translunar workhorse",
+  "cur": "Европейский криогенный двигатель верхнего блока — рабочая лошадка трансселенной программы Ariane"
+ },
+ {
+  "rel": "fleet/engine/j-2.json",
+  "at": "tagline",
+  "en": "The engine that sent Apollo to the Moon — twice",
+  "cur": "Двигатель, доставивший Apollo на Луну — дважды"
+ },
+ {
+  "rel": "fleet/engine/j-2.json",
+  "at": "description",
+  "en": "The J-2 burned hydrogen and oxygen, and it could restart in the vacuum of space — a capability that made Saturn V's trans-lunar injection burn possible. Rocketdyne's gas-generator design flew on Saturn V's second and third stages and on Saturn IB, combining performance with the in-space restarts that turned a launch vehicle into a true departure stage. It first flew in February 1966 and last flew on the Apollo-Soyuz Test Project in July 1975.",
+  "cur": "Двигатель J-2 работал на водороде и кислороде и мог перезапускаться в вакууме космоса — способность, которая сделала возможным разгонным манёвром трансселенной траектории Saturn V. Конструкция газогенератора Rocketdyne устанавливалась на втором и третьем ступенях Saturn V и на Saturn IB, сочетая высокую производительность с перезапусками в космосе, которые превращали ракету-носитель в истинный разгонный блок. Впервые летал в феврале 1966 года и в последний раз летал в составе проекта Apollo-«Союз» Test Project в июле 1975 года."
+ },
+ {
+  "rel": "fleet/engine/j-2.json",
+  "at": "best_known_for",
+  "en": "Restartable hydrogen upper-stage engine that sent Apollo translunar",
+  "cur": "Перезапускаемый водородный двигатель верхней ступени, доставивший Apollo на трансселенную траекторию"
+ },
+ {
+  "rel": "fleet/engine/le-5b.json",
+  "at": "tagline",
+  "en": "Japan's restartable upper stage, flying from H-IIA through H3",
+  "cur": "Перезапускаемая верхняя ступень Японии, применяемая от H-IIA к H3"
+ },
+ {
+  "rel": "fleet/engine/le-5b.json",
+  "at": "description",
+  "en": "The LE-5B is the cryogenic upper-stage engine that has bridged two generations of Japanese launch vehicles. Running an expander-bleed cycle on LOX and LH2, it can be restarted in flight — a requirement for placing payloads in precise orbits after a coast phase. It first flew on H-IIA in August 2001 and has since been uprated as the LE-5B-3 for continued service on H3, giving Japan unbroken upper-stage continuity from the ISS assembly era into the present. Its combination of restartability and the clean simplicity of the expander-bleed cycle made it the natural upper-stage complement to both the LE-7A and the LE-9.",
+  "cur": "LE-5B — криогенный двигатель верхней ступени, обеспечивший преемственность между двумя поколениями японских ракет-носителей. Работая по циклу расширительного слива на LOX и LH2, он может перезапускаться в полёте — требование для доставки грузов на точные орбиты после фазы пассивного полёта. Впервые он летал на H-IIA в августе 2001 года и с тех пор был модернизирован как LE-5B-3 для продолжения работы на H3, обеспечивая Японии непрерывность верхней ступени от эпохи сборки МКС в настоящее время. Сочетание перезапускаемости и изящной простоты цикла расширительного слива сделало его естественным дополнением верхней ступени как для LE-7A, так и для LE-9."
+ },
+ {
+  "rel": "fleet/engine/le-5b.json",
+  "at": "best_known_for",
+  "en": "Japan's restartable cryogenic upper stage — H-IIA through H3",
+  "cur": "Перезапускаемая криогенная верхняя ступень Японии — H-IIA через H3"
+ },
+ {
+  "rel": "fleet/engine/le-7a.json",
+  "at": "tagline",
+  "en": "Japan's staged-combustion hydrogen core, two decades of H-II service",
+  "cur": "Японский водородный кор с ступенчатым сгоранием, два десятилетия эксплуатации H-II"
+ },
+ {
+  "rel": "fleet/engine/le-7a.json",
+  "at": "description",
+  "en": "The LE-7A is the engine that gave Japan a fully indigenous heavy-lift capability. Developed by Mitsubishi Heavy Industries for JAXA, it runs a staged-combustion cycle on LOX and LH2 — the thermodynamic approach that extracts maximum efficiency from hydrogen propellant — and first flew on H-IIA in August 2001 as a refined successor to the original LE-7. The redesign addressed turbopump issues that had caused early H-II failures, and the LE-7A went on to anchor H-IIA and H-IIB's operational careers through 2024, launching Japan's HTV cargo ships to the International Space Station and the JAXA-ISRO radar satellite ALOS series.",
+  "cur": "Двигатель LE-7A обеспечил Японии полностью независимую тяжелую грузоподъемность. Разработанный компанией Mitsubishi Heavy Industries для JAXA, он использует цикл ступенчатого сгорания на LOX и LH2 — термодинамический подход, позволяющий максимально извлечь эффективность из водородного топлива — и впервые летал на H-IIA в августе 2001 года в качестве усовершенствованного преемника оригинального LE-7. Переработка решила проблемы турбонасоса, вызвавшие ранние отказы H-II, и LE-7A продолжал быть основой операционных карьер H-IIA и H-IIB вплоть до 2024 года, запуская японские грузовые корабли HTV на Международную космическую станцию и спутники серии ALOS для совместного проекта JAXA-ISRO по радиолокационному зондированию."
+ },
+ {
+  "rel": "fleet/engine/le-7a.json",
+  "at": "best_known_for",
+  "en": "Japan's staged-combustion hydrogen core — powered H-IIA/H-IIB",
+  "cur": "Японский водородный кор ступенчатого сгорания — сердце H-IIA/H-IIB"
+ },
+ {
+  "rel": "fleet/engine/le-9.json",
+  "at": "tagline",
+  "en": "The largest expander-bleed engine ever built — powering H3",
+  "cur": "Самый крупный двигатель с расширительным циклом из когда-либо созданных — силовая установка H3"
+ },
+ {
+  "rel": "fleet/engine/le-9.json",
+  "at": "description",
+  "en": "The LE-9 is a deliberate choice of elegance over complexity. Rather than the turbopump-preburner arrangement of staged combustion, it uses an expander-bleed cycle: hydrogen is heated by the chamber and nozzle walls, and a portion of that gas is bled off to drive the turbopumps before being dumped overboard. The cycle has inherently lower chamber pressures and a simpler hot-section design, trading some performance for a reduction in the mechanical failure modes that plagued earlier Japanese engines. Developed by Mitsubishi for JAXA's H3 rocket, the LE-9 first flew in March 2023 and is the largest engine of its type to reach operational service.",
+  "cur": "LE-9 — это сознательный выбор элегантности над сложностью. Вместо турбонасосно-предварительной камеры с ступенчатым сгоранием он использует цикл с расширением и отводом: водород нагревается стенками камеры и сопла, а часть этого газа отводится для привода турбонасосов, прежде чем выбросить за борт. Цикл имеет изначально более низкие давления в камере и более простую конструкцию горячего тракта, в ущерб некоторой производительности для снижения механических отказов, которые были характерны для более ранних японских двигателей. Разработанный компанией Mitsubishi для ракеты H3 агентства JAXA, LE-9 совершил первый полёт в марте 2023 года и является самым крупным двигателем своего типа, достигшим эксплуатационного обслуживания."
+ },
+ {
+  "rel": "fleet/engine/le-9.json",
+  "at": "best_known_for",
+  "en": "The largest expander-bleed engine ever flown — the H3 core",
+  "cur": "Самый крупный двигатель с расширительным циклом, когда-либо летавший — ядро H3"
+ },
+ {
+  "rel": "fleet/engine/lr87.json",
+  "at": "tagline",
+  "en": "Twin-chamber hypergolic first stage that flew every Gemini crew",
+  "cur": "Двухкамерный гиперголический первый уступок, летавший на каждой пилотируемой миссии Gemini"
+ },
+ {
+  "rel": "fleet/engine/lr87.json",
+  "at": "description",
+  "en": "The LR87 is the engine that launched all ten crewed Gemini missions on Titan II. Aerojet's design places two combustion chambers on a single turbopump assembly, burning Aerozine-50 and nitrogen tetroxide in a gas-generator cycle — a hypergolic combination that was standard equipment in American ICBMs of the era. The propellant choice had a direct consequence for crew safety: unlike RP-1 or hydrogen, Aerozine-50 and N2O4 ignite on contact, giving a hypergolic reliability that let Gemini fly with ejection seats rather than a launch-escape tower across all ten crewed missions. The LR87 was later developed into larger variants that flew on Titan III and Titan IV commercial and military missions through October 2005.",
+  "cur": "LR87 — это двигатель, который запустил все десять пилотируемых миссий программы Gemini на ракете Titan II. Конструкция компании Aerojet предусматривает две камеры сгорания на одном турбонасосном агрегате, использующие Aerozine-50 и четырёхокись азота в цикле газогенератора — гиперголическую комбинацию, которая была стандартным оборудованием американских МБР того времени. Выбор топлива имел прямое влияние на безопасность экипажа: в отличие от RP-1 или водорода, Aerozine-50 и N2O4 самовоспламеняются при контакте, обеспечивая гиперголическую надёжность, которая позволила программе Gemini летать с катапультируемыми креслами вместо башни спасения при запуске на всех десяти пилотируемых миссиях. Позже LR87 был развит в более крупные варианты, летавшие на Titan III и Titan IV при выполнении коммерческих и военных миссий до октября 2005 года."
+ },
+ {
+  "rel": "fleet/engine/lr87.json",
+  "at": "best_known_for",
+  "en": "The twin-chamber first stage that launched Gemini crews on Titan II",
+  "cur": "Двухкамерный первый уступок, который запустил экипажи Gemini на Titan II"
+ },
+ {
+  "rel": "fleet/engine/merlin-1d.json",
+  "at": "tagline",
+  "en": "Nine engines, one booster, flown and re-flown dozens of times",
+  "cur": "Девять двигателей, один ускоритель, выполнивший десятки полётов"
+ },
+ {
+  "rel": "fleet/engine/merlin-1d.json",
+  "at": "description",
+  "en": "SpaceX's Merlin 1D is the engine that made the reusable Falcon 9 possible. Nine of them cluster on Falcon 9's first stage, running a gas-generator cycle on LOX and RP-1, with the center engine also used for entry and landing burns. First flown in September 2013, the Merlin 1D matured into a high-cadence workhorse: individual engines have accumulated more than twenty flights apiece, a reuse record that changed what the industry believed was economically achievable. The vacuum variant, Merlin 1D Vacuum, powers Falcon 9's upper stage with a larger nozzle optimised for the near-vacuum environment.",
+  "cur": "Merlin 1D от SpaceX — двигатель, который сделал возможным многоразовый Falcon 9. Девять таких двигателей установлены на первой ступени Falcon 9, работают по циклу газогенератора на LOX и RP-1, при этом центральный двигатель также используется для торможения при входе в атмосферу и посадке. Впервые запущен в сентябре 2013 года, Merlin 1D развился в надёжный рабочий двигатель высокой повторяемости: отдельные двигатели совершили более двадцати полётов каждый — рекорд многократного использования, который переосмыслил представления индустрии об экономической целесообразности. Вакуумный вариант, Merlin 1D Vacuum, обеспечивает верхнюю ступень Falcon 9 с большим соплом, оптимизированным для среды с почти полным вакуумом."
+ },
+ {
+  "rel": "fleet/engine/merlin-1d.json",
+  "at": "best_known_for",
+  "en": "The reusable workhorse — nine lift Falcon 9, flown and re-flown dozens of times",
+  "cur": "Многоразовый рабочий двигатель — девять поднимают Falcon 9, выполнивший десятки полётов"
+ },
+ {
+  "rel": "fleet/engine/raptor.json",
+  "at": "tagline",
+  "en": "Full-flow staged combustion — the hardest cycle, finally flying",
+  "cur": "Полнопроточное ступенчатое сгорание — самый сложный цикл, наконец в полёте"
+ },
+ {
+  "rel": "fleet/engine/raptor.json",
+  "at": "description",
+  "en": "The Raptor is the first full-flow staged-combustion engine to reach operational flight. In this thermodynamic cycle, both propellants — LOX and liquid methane — pass through preburners before entering the main combustion chamber, extracting maximum energy and leaving virtually no unburned propellant. Engineers had studied the concept for decades and concluded it was prohibitively complex; SpaceX built it anyway. Thirty-three Raptors ignite simultaneously on Super Heavy's first stage, and a vacuum-optimised variant powers Starship's upper stage. The first integrated Starship flight carrying Raptors lifted off on 20 April 2023.",
+  "cur": "Raptor — первый двигатель с полнопроточным ступенчатым сгоранием, достигший оперативного полёта. В этом термодинамическом цикле оба топлива — LOX и жидкий метан — проходят через предварительные камеры сгорания перед входом в основную камеру сгорания, извлекая максимальную энергию и оставляя практически неиспользованное топливо. Инженеры изучали эту концепцию десятилетиями и пришли к выводу, что она была недопустимо сложной; SpaceX построила его в любом случае. Тридцать три Raptor одновременно зажигаются на первой ступени Super Heavy, а оптимизированный для вакуума вариант питает верхнюю ступень Starship. Первый интегрированный полёт Starship с двигателями Raptor стартовал 20 апреля 2023 года."
+ },
+ {
+  "rel": "fleet/engine/raptor.json",
+  "at": "best_known_for",
+  "en": "First full-flow staged-combustion engine to fly — 33 lift Super Heavy",
+  "cur": "Первый двигатель с полнопроточным ступенчатым сгоранием в полёте — 33 поднимают Super Heavy"
+ },
+ {
+  "rel": "fleet/engine/rd-107-108.json",
+  "at": "tagline",
+  "en": "Sputnik's engine — still flying humans 65 years later",
+  "cur": "Двигатель «Спутника» — отправляет людей на орбиту уже 65 лет спустя"
+ },
+ {
+  "rel": "fleet/engine/rd-107-108.json",
+  "at": "description",
+  "en": "The RD-107 and RD-108 are the engines of the R-7, the world's first intercontinental ballistic missile, which Sergei Korolev's team repurposed as a launch vehicle. The RD-107 powers the R-7's four strap-on boosters; the RD-108 drives the sustainer core. Both run a gas-generator cycle on LOX and kerosene, and both first flew on 21 August 1957 — months before Sputnik. Upgraded as the RD-107A and RD-108A, they continue to power Soyuz rockets carrying crews to the International Space Station, making them the longest-operating human-rated propulsion system in history.",
+  "cur": "РД-107 и РД-108 — двигатели Р-7, первой в мире межконтинентальной баллистической ракеты, которую команда Сергея Королёва переоборудовала в средство выведения полезного груза. РД-107 приводит в действие четыре боковые ускорители Р-7; РД-108 работает на боевом блоке. Оба двигателя работают по газогенераторному циклу на жидком кислороде и керосине, и оба впервые поднялись в воздух 21 августа 1957 года — за несколько месяцев до Спутника. Модернизированные как RD-107A и RD-108A, они продолжают обеспечивать тягу ракет «Союз», доставляющих экипажи на Международную космическую станцию, что делает их самой долгоработающей системой двигателей для полётов человека в истории."
+ },
+ {
+  "rel": "fleet/engine/rd-107-108.json",
+  "at": "best_known_for",
+  "en": "The R-7 engines — still flying humans on Soyuz after 65+ years",
+  "cur": "Двигатели Р-7 — отправляют людей на «Союз» уже более 65 лет"
+ },
+ {
+  "rel": "fleet/engine/rd-180.json",
+  "at": "tagline",
+  "en": "Russian ox-rich staged combustion the US could not replicate",
+  "cur": "Русский двигатель с окислителем в избытке и разворотным сгоранием, который США не смогли повторить"
+ },
+ {
+  "rel": "fleet/engine/rd-180.json",
+  "at": "description",
+  "en": "The RD-180 represents a branch of propulsion technology the United States effectively ceded to the Soviet Union during the Cold War. Oxygen-rich staged combustion — burning excess oxidiser through the preburner to drive the turbopump — demands materials and manufacturing tolerances that American industry had not mastered. NPO Energomash's two-chamber, single-turbopump design flew on Atlas V from May 2000, providing the first stage with a combination of thrust and efficiency that no American-made kerolox engine of the era could match. It was retired with Atlas V in 2023.",
+  "cur": "РД-180 представляет собой ветвь технологии силовых установок, которую Соединённые Штаты фактически уступили Советскому Союзу во время холодной войны. Окислительно-богатое разворотное сгорание — сжигание избытка окислителя в предварительном сгорании для привода турбонасоса — требует материалов и допусков производства, которыми американская промышленность не овладела. Двухкамерный однотурбонасосный двигатель конструкции НПО «Энергомаш» летал на Atlas V с мая 2000 года, обеспечивая первую ступень сочетанием тяги и эффективности, которые не могли сравниться ни с одним американским керосино-кислородным двигателем того времени. Он был снят с эксплуатации вместе с Atlas V в 2023 году."
+ },
+ {
+  "rel": "fleet/engine/rd-180.json",
+  "at": "best_known_for",
+  "en": "Oxygen-rich staged combustion the US could not match — flew on Atlas V",
+  "cur": "Окислительно-богатым разворотным сгоранием, которое США не смогли повторить — летал на Atlas V"
+ },
+ {
+  "rel": "fleet/engine/rd-253.json",
+  "at": "tagline",
+  "en": "Six hypergolic engines built every Proton mission",
+  "cur": "Шесть гиперголических двигателей на каждом полёте Протон"
+ },
+ {
+  "rel": "fleet/engine/rd-253.json",
+  "at": "description",
+  "en": "The RD-253 is the engine that made Proton one of the most capable heavy lifters of the Soviet era. Six of them ring Proton's first stage, each running oxygen-rich staged combustion on nitrogen tetroxide and unsymmetrical dimethylhydrazine — a hypergolic pair that ignites on contact and requires no ignition system. The propellant choice is toxic and corrosive, but it stores at room temperature and delivers reliability that Proton sustained across decades of commercial and planetary missions. The RD-253 first flew on 16 July 1965 and powered every Proton first stage through the rocket's retirement.",
+  "cur": "РД-253 — двигатель, сделавший «Протон» одной из самых мощных тяжёлых ракет советской эпохи. Шесть из них окружают первую ступень «Протон», каждый работает на богатой кислородом ступенчатой системе сгорания с использованием четырёхокиси азота и несимметричного диметилгидразина — гиперголической пары, воспламеняющейся при контакте и не требующей системы зажигания. Выбор топлива токсичен и коррозивен, но хранится при комнатной температуре и обеспечивает надёжность, которую «Протон» демонстрировал на протяжении десятилетий коммерческих и планетных миссий. РД-253 впервые совершил полёт 16 июля 1965 года и питал каждую первую ступень «Протон» до снятия ракеты с вооружения."
+ },
+ {
+  "rel": "fleet/engine/rd-253.json",
+  "at": "best_known_for",
+  "en": "Proton's hypergolic workhorse — six lifted every Proton first stage",
+  "cur": "Гиперголический помощник «Протон» — шесть поднимали каждую первую ступень «Протон»"
+ },
+ {
+  "rel": "fleet/engine/rl10.json",
+  "at": "tagline",
+  "en": "Hydrogen upper stage, six decades and counting",
+  "cur": "Водородный разгонный блок, шесть десятилетий и не счесть"
+ },
+ {
+  "rel": "fleet/engine/rl10.json",
+  "at": "description",
+  "en": "The RL10 introduced the expander cycle to spaceflight: propellant flows through the nozzle and chamber walls, picks up heat, and drives the turbopump before it ever reaches the combustion chamber — no separate gas generator required. First flown in November 1963 on the Centaur upper stage, the RL10 family has since powered upper stages for Atlas, Delta, and Vulcan missions. Its longevity is the record; no other rocket engine family has remained in continuous production and flight for as long, evolving through block upgrades while the core thermodynamic concept stays intact.",
+  "cur": "RL10 ввёл цикл расширения в космонавтику: топливо проходит через сопло и стенки камеры, набирает тепло и приводит турбонасос ещё до поступления в камеру сгорания — отдельный газогенератор не требуется. Впервые запущен в ноябре 1963 года на разгонном блоке Centaur, семейство RL10 с тех пор питает разгонные блоки для миссий Atlas, Delta и Vulcan. Его долговечность — рекордная; ни одно другое семейство ракетных двигателей не остаётся в непрерывном производстве и полётах так долго, эволюционируя через модификации блоков, в то время как основная термодинамическая концепция сохраняется."
+ },
+ {
+  "rel": "fleet/engine/rl10.json",
+  "at": "best_known_for",
+  "en": "Longest-serving engine in spaceflight — the first hydrogen upper stage",
+  "cur": "Самый долгослужащий двигатель в космонавтике — первый водородный разгонный блок"
+ },
+ {
+  "rel": "fleet/engine/rocketdyne-a7.json",
+  "at": "tagline",
+  "en": "The engine that launched the first American into space",
+  "cur": "Двигатель, который вывел первого американца в космос"
+ },
+ {
+  "rel": "fleet/engine/rocketdyne-a7.json",
+  "at": "description",
+  "en": "On 5 May 1961, Alan Shepard rode a Mercury-Redstone rocket to an altitude of 187 kilometres and back — making him the first American in space — and the engine that lifted him was the Rocketdyne A-7. Derived from the A-6 that powered the Redstone ballistic missile, the A-7 ran a gas-generator cycle on LOX and ethyl alcohol: the same propellant pairing that traced back through Redstone to the German V-2. Shepard's Freedom 7 flight lasted fifteen minutes and changed the political calculus of the Space Race. The A-7 flew only on Mercury-Redstone missions, retiring in May 1963.",
+  "cur": "5 мая 1961 года Алан Шепард на ракете Mercury-Redstone поднялся на высоту 187 километров и вернулся обратно — став первым американцем в космосе — а двигателем, который его поднял, был Rocketdyne A-7. Разработанный на базе A-6, который приводил в движение баллистическую ракету Redstone, A-7 работал по газогенераторному циклу на LOX и этиловом спирте — той же паре топлива, которая восходит корнями через Redstone к немецкой V-2. Полёт Freedom 7 Шепарда длился пятнадцать минут и изменил политический расклад в Космической гонке. A-7 летал только на миссиях Mercury-Redstone, завершив работу в мае 1963 года."
+ },
+ {
+  "rel": "fleet/engine/rocketdyne-a7.json",
+  "at": "best_known_for",
+  "en": "The engine that launched the first American — Freedom 7",
+  "cur": "Двигатель, который вывел первого американца — Freedom 7"
+ },
+ {
+  "rel": "fleet/engine/rs-25.json",
+  "at": "tagline",
+  "en": "Reusable, hydrogen-fuelled, and still flying on SLS",
+  "cur": "Многоразовый, работающий на водороде и по-прежнему применяемый на SLS"
+ }
+]

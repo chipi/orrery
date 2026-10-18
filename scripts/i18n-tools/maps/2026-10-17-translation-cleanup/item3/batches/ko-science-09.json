@@ -1,0 +1,668 @@
+[
+ {
+  "rel": "science/propulsion/_intro.json",
+  "at": "paragraphs.1",
+  "en": "The cruel constraint is the rocket equation, written down by Konstantin Tsiolkovsky in 1903. It says ∆v scales LOGARITHMICALLY with how much of your rocket is fuel. Want twice the ∆v? You need exponentially more fuel. This is why a Saturn V is 90% propellant. It's why landing on Mars and coming back is so much harder than landing on the Moon. Every gram of mass that isn't fuel gets fought over.",
+  "cur": "잔인한 제약은 1903년 콘스탄틴 치올콥스키가 정리한 로켓 방정식입니다. 이 방정식은 ∆v가 로켓에서 연료가 차지하는 비율에 따라 로그적으로 증가한다고 말합니다. ∆v를 두 배로 만들고 싶으신가요? 기하급수적으로 더 많은 연료가 필요합니다. 이것이 Saturn V가 90% 추진제인 이유입니다. 이것이 화성에 착륙했다가 돌아오는 것이 달 착륙보다 훨씬 더 어려운 이유입니다. 연료가 아닌 모든 1그램의 질량이 치열한 싸움의 대상이 됩니다."
+ },
+ {
+  "rel": "science/propulsion/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Six sections here. Start with ∆v as mission budget — that's the framing for everything. Then Tsiolkovsky to see why the math is so unforgiving. Specific impulse explains the engine side; C3 and V∞ are the launch-energy and arrival-energy numbers you'll see all over the FLIGHT tab in /missions. The Oberth effect at the end is a rare piece of free magic — burn deep in a gravity well and your fuel does more work.",
+  "cur": "여기 여섯 개의 섹션이 있습니다. ∆v를 미션 예산으로 시작하세요 — 이것이 모든 것을 위한 틀입니다. 그런 다음 Tsiolkovsky를 통해 수학이 왜 그토록 가혹한지 확인하세요. 비추력은 엔진 측면을 설명합니다; C3와 V∞는 /missions의 FLIGHT 탭 전반에서 볼 수 있는 발사 에너지와 도착 에너지 수치입니다. 마지막의 Oberth 효과는 드문 무료 마법입니다 — 중력우물 깊은 곳에서 연소하면 연료가 더 많은 일을 합니다."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "title",
+  "en": "Antimatter — the perfect fuel we cannot make",
+  "cur": "반물질 — 만들 수 없는 완벽한 연료"
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "intro_sentence",
+  "en": "Matter meeting antimatter annihilates completely, releasing energy no other reaction matches — a few milligrams could in principle drive an interstellar probe, yet humanity has made less than a nanogram of it in total.",
+  "cur": "물질이 반물질과 만나면 완전히 소멸하며 다른 어떤 반응도 따라올 수 없는 에너지를 방출한다. 원칙적으로 불과 몇 밀리그램이면 성간 탐사선을 추진할 수 있지만, 인류가 지금까지 만든 반물질의 총량은 나노그램 미만이다."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "body_paragraphs.0",
+  "en": "The energy case is exact, not approximate. When a proton meets an antiproton they convert entirely into pions, gamma rays, and lighter particles — E = mc² applied in full, with no chemical or nuclear residue. The energy density is roughly 10 billion times that of the best chemical propellant and roughly 1,000 times that of fission or fusion. A matter-antimatter annihilation drive with a magnetic nozzle to direct the charged pion exhaust could, in theory, reach specific impulse values in the millions of seconds and accelerate a spacecraft to a significant fraction of the speed of light.",
+  "cur": "에너지 효율성은 정확한 것이지 근사치가 아니다. 양성자가 반양성자와 만나면 중간자, 감마선, 그리고 더 가벼운 입자로 완전히 변환된다 — E = mc²을 완전히 적용한 것으로, 화학적이거나 핵적 잔여물이 없다. 에너지 밀도는 최고 수준의 화학 추진제보다 약 100억 배 크고, 핵분열이나 핵융합보다 약 1,000배 크다. 자기 노즐을 이용해 대전된 중간자 배기를 제어하는 물질-반물질 소멸 엔진은 이론상 수백만 초대의 비추력을 달성할 수 있으며, 우주선을 빛의 속도의 상당한 비율로 가속할 수 있다."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "body_paragraphs.1",
+  "en": "Two problems make this theoretical perfection effectively unreachable with foreseeable technology. The first is production. Antimatter does not exist in useful quantities anywhere accessible — the observable universe appears overwhelmingly matter-dominated, and the reason for that asymmetry is one of the open questions in physics. Antimatter must be manufactured, atom by atom, in particle accelerators. CERN's Antiproton Decelerator produces roughly 10 to 15 nanograms of antiprotons per year at full operation. Scaling current production to the milligrams a probe would need, at current energy costs, yields estimates in the range of tens to hundreds of trillions of dollars per gram — and that assumes the energy is available, not that it is affordable.",
+  "cur": "두 가지 문제가 이론적 완벽성을 현실적으로 도달 불가능하게 만든다. 첫 번째는 생산이다. 반물질은 접근 가능한 어느 곳에도 쓸모 있는 양으로 존재하지 않는다 — 관측 가능한 우주는 압도적으로 물질 우위인 것으로 보이며, 그 비대칭의 이유는 물리학의 미해결 질문 중 하나다. 반물질은 입자 가속기에서 원자 하나씩 제조되어야 한다. CERN의 Antiproton Decelerator는 완전 운영 상태에서 연간 약 10~15 나노그램의 반양성자를 생산한다. 현재 생산을 탐사선이 필요로 하는 밀리그램 규모로 확대하면, 현재 에너지 비용 기준으로 그램당 수십조~수백조 달러 범위의 추정치가 나온다 — 이것도 에너지를 이용 가능하다고 가정한 것이지, 경제적으로 감당 가능하다는 뜻은 아니다."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "body_paragraphs.2",
+  "en": "The second problem is storage. Antimatter annihilates on contact with ordinary matter, which means it cannot touch any wall, any container, any trace of residual gas. The only known approach is magnetic or electromagnetic trapping — holding antiprotons in a Penning trap or antihydrogen in a magnetic bottle. The record for stored antihydrogen is measured in minutes to hours for small numbers of atoms. Storing milligrams for years-long transit, aboard a spacecraft that must survive launch vibration and radiation, is not a solved problem in any engineering sense.",
+  "cur": "두 번째 문제는 저장이다. 반물질은 일반 물질과의 접촉 시 소멸하기 때문에 어떤 벽면, 어떤 용기, 어떤 잔류 기체의 흔적과도 접촉할 수 없다. 유일하게 알려진 방법은 자기 또는 전자기 가둠이다 — 반양성자를 페닝 덫에, 반수소를 자기 병에 가두는 것이다. 저장된 반수소의 기록은 소량의 원자의 경우 몇 분에서 몇 시간 수준이다. 밀리그램 규모의 반물질을 우주선이 발사 진동과 방사선을 견딜 수 있어야 하는 우주 여행 동안 몇 년간 저장하는 것은 공학적 의미에서 해결된 문제가 아니다."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "body_paragraphs.3",
+  "en": "Partial antimatter schemes — using antiprotons to catalyse fission or fusion reactions rather than fully annihilate — reduce the quantity required, but those concepts still need nanograms or micrograms and still face the same storage constraints. They have been studied on paper at NASA's Marshall Space Flight Center and elsewhere; none has progressed to hardware.",
+  "cur": "부분 반물질 방식 — 반양성자를 완전히 소멸시키지 않고 핵분열이나 핵융합 반응을 촉발하기 위해 사용하는 방식 — 필요한 양을 줄이지만, 이러한 개념들도 여전히 나노그램 또는 마이크로그램이 필요하며 동일한 저장 제약에 직면한다. NASA의 Marshall Space Flight Center 등에서 종이 위의 연구가 진행되었지만, 어느 것도 실제 하드웨어로 진행되지 않았다."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "body_paragraphs.4",
+  "en": "Antimatter propulsion is the limiting case of what physics permits. It sets the ceiling on how efficiently mass can be converted to thrust. It is worth understanding for exactly that reason — it tells you the best that thermodynamics will ever allow. But it is not a technology on any credible roadmap. The production problem alone puts it in a category closer to 'requires a different civilisation' than 'requires more funding'.",
+  "cur": "반물질 추진은 물리학이 허용하는 극한적 경우다. 질량을 추진력으로 변환할 수 있는 효율성의 상한선을 정한다. 그것을 이해할 가치가 있는 이유는 정확히 그것 때문이다 — 열역학이 절대로 허용할 수 있는 최선을 알려준다. 하지만 그것은 어떤 신뢰할 만한 로드맵에도 없는 기술이다. 생산 문제만 해도 그것을 '더 많은 자금이 필요하다'보다는 '다른 문명이 필요하다'에 더 가깝게 분류한다."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "diagram_caption",
+  "en": "Energy density comparison: chemical propellant (kerosene/LOX) at roughly 10 MJ/kg, nuclear fission at ~80,000 MJ/kg, fusion at ~300,000 MJ/kg, and matter-antimatter annihilation at ~90,000,000 MJ/kg — each step up is not incremental but a change of kind.",
+  "cur": "에너지 밀도 비교: 화학 추진제(등유/LOX) 약 10 MJ/kg, 핵분열 약 80,000 MJ/kg, 핵융합 약 300,000 MJ/kg, 물질-반물질 소멸 약 90,000,000 MJ/kg — 각 단계의 상승은 점진적이 아닌 종류의 변화다."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "intro_sentence",
+  "en": "How much energy per unit mass a rocket needs to leave Earth's gravity well with leftover speed — the standard launch-energy metric.",
+  "cur": "로켓이 지구의 중력장을 벗어나 남은 속도를 가지는 데 필요한 단위 질량당 에너지 — 표준 발사 에너지 지표."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "narrative_101.0",
+  "en": "C3 is mission-engineer slang for one specific question: how hard does the rocket have to throw the spacecraft? It's the energy that's left over once you've climbed out of Earth's gravity well. C3 = 0 means you exactly escape Earth, arriving at infinity with zero speed left. C3 above zero means you got out with extra speed to spare — and that extra speed is what carries you toward Mars or Jupiter or wherever.",
+  "cur": "C3는 미션 엔지니어들이 하나의 특정한 질문을 가리키는 용어입니다: 로켓이 우주선을 얼마나 세게 던져야 하는가? 이것은 지구의 중력장을 벗어난 후 남아있는 에너지입니다. C3 = 0은 지구를 정확히 탈출하여 무한대 지점에 속도가 0으로 도달한다는 의미입니다. C3가 0보다 크다는 것은 여분의 속도를 가지고 탈출했다는 뜻이며 — 그 여분의 속도가 화성이나 목성 또는 어디든 목표 지점으로 여러분을 운반합니다."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "narrative_101.1",
+  "en": "It's measured in km²/s² (which looks weird but is just velocity squared) so the numbers stay manageable. Mars typically wants C3 = 8 to 12. Direct flights to Jupiter need C3 around 80. New Horizons launched with C3 = 158 — the highest ever — to reach Pluto in nine and a half years instead of decades.",
+  "cur": "단위는 km²/s²로 측정됩니다 (이상하게 보이지만 단순히 속도의 제곱입니다). 그래서 숫자를 다루기 쉽게 유지할 수 있습니다. 화성은 일반적으로 C3 = 8에서 12를 요구합니다. 목성으로의 직접 비행은 C3가 약 80 정도 필요합니다. New Horizons는 C3 = 158로 발사되었습니다 — 역대 최고치 — 수십 년 대신 9년 반 만에 명왕성에 도달하기 위해서였습니다."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "narrative_101.2",
+  "en": "Why does this number matter so much? Because every rocket has a published C3-vs-payload curve. As C3 climbs, the rocket can deliver less mass. Falcon Heavy can throw 16 tonnes at C3 = 10, but only 5 tonnes at C3 = 80. The very first decision in mission design is matching the destination's C3 requirement to a rocket that can lift your spacecraft at that energy. Get this wrong and the mission can't fly.",
+  "cur": "왜 이 숫자가 그렇게 중요할까요? 모든 로켓에는 공개된 C3 대 페이로드 곡선이 있기 때문입니다. C3가 증가하면 로켓이 운반할 수 있는 질량은 감소합니다. Falcon Heavy는 C3 = 10에서 16톤을 던질 수 있지만, C3 = 80에서는 5톤만 가능합니다. 미션 설계의 가장 첫 번째 결정은 목적지의 C3 요구사항을 그 에너지에서 우주선을 들어 올릴 수 있는 로켓과 매칭하는 것입니다. 이것을 틀리면 미션은 실행될 수 없습니다."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "body_paragraphs.0",
+  "en": "C3 is the square of the hyperbolic excess velocity. Units: km²/s². It tells you how much energy beyond escape your launch vehicle has to deliver. C3 = 0 means you barely escape Earth's gravity, arriving at infinity with zero speed. C3 = 25 km²/s² means you arrive with V∞ = 5 km/s of leftover heliocentric velocity.",
+  "cur": "C3는 쌍곡선 초과 속도의 제곱입니다. 단위: km²/s². 이것은 발사체가 탈출 속도를 넘어서 얼마나 많은 에너지를 전달해야 하는지 알려줍니다. C3 = 0은 지구의 중력을 간신히 탈출하여 무한대 지점에 속도 0으로 도달한다는 의미입니다. C3 = 25 km²/s²는 V∞ = 5 km/s의 남은 태양중심 속도로 도달한다는 의미입니다."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "body_paragraphs.1",
+  "en": "Launch vehicles are characterised by their C3-vs-payload curve. Falcon Heavy can throw ~16 tonnes to C3=10, but only ~5 tonnes to C3=80. Mars typically wants C3 around 8-12. Jupiter direct: C3 around 80. New Horizons launched with C3 = 158 km²/s² — the highest of any mission ever — to make the trip to Pluto in just 9.5 years.",
+  "cur": "발사체는 C3 대 페이로드 곡선으로 특징지어집니다. Falcon Heavy는 C3=10에서 약 16톤을 던질 수 있지만, C3=80에서는 약 5톤만 가능합니다. 화성은 일반적으로 C3가 약 8-12를 요구합니다. 목성 직접 비행: C3 약 80. New Horizons는 C3 = 158 km²/s²로 발사되었습니다 — 역대 모든 미션 중 최고치 — 단 9.5년 만에 명왕성까지의 여정을 완수하기 위해서였습니다."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "body_paragraphs.2",
+  "en": "On Orrery's `/missions` FLIGHT tab the C3 of each interplanetary mission is the canonical first-row data point. It's the single number that captures 'how hard was it to launch.'",
+  "cur": "Orrery의 `/missions` FLIGHT 탭에서 각 행성 간 미션의 C3는 표준 첫 번째 행 데이터 포인트입니다. 이것은 '발사가 얼마나 어려웠는가'를 포착하는 단일 숫자입니다."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "formula_caption",
+  "en": "C3 is just V∞ squared. Same physics, different units.",
+  "cur": "C3는 단순히 V∞의 제곱입니다. 같은 물리학, 다른 단위."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "intro_sentence",
+  "en": "The single number that says whether a mission is possible — total velocity change you need to spend, summed over every burn.",
+  "cur": "미션이 가능한지를 판단하는 단 하나의 숫자 — 모든 연소 엔진을 합산한 필요한 총 속도 변화량."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "narrative_101.0",
+  "en": "Money for spaceflight isn't dollars. It's ∆v — pronounced \"delta-v\" — and it's measured in kilometres per second. Every burn your rocket does costs some ∆v. Every move you make on a trajectory has a price tag in km/s. The mission's ∆v budget is just the running total: launch + injection + course corrections + arrival + landing. Add it up, that's your bill.",
+  "cur": "우주비행의 돈은 달러가 아니다. 그것은 ∆v — \"델타-브이\"로 발음 — 이며 초당 킬로미터로 측정된다. 로켓이 수행하는 모든 연소는 어느 정도의 ∆v를 소비한다. 궤도상에서 하는 모든 움직임은 km/s 단위의 가격표를 갖는다. 미션의 ∆v 예산은 단순히 누적 합계다: 발사 + 주입 + 궤도 수정 + 도착 + 착륙. 모두 더하면, 그게 당신의 청구액이다."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "narrative_101.1",
+  "en": "Now here's the killer twist. Your rocket doesn't have unlimited ∆v. It has a hard ceiling, set by the Tsiolkovsky equation, dictated entirely by how much of your rocket is fuel and how good your engines are. If your bill exceeds the ceiling, the mission is impossible. Throwing more money at it doesn't fix it. The math wins.",
+  "cur": "이제 여기 기가 막힌 반전이 있다. 당신의 로켓은 무한한 ∆v를 갖지 못한다. 로켓의 얼마나 많은 부분이 연료인지, 그리고 엔진이 얼마나 좋은지에 의해 결정되는 Tsiolkovsky 방정식에 의해 정해진 견고한 상한선이 있다. 당신의 청구액이 상한선을 초과하면, 미션은 불가능하다. 더 많은 돈을 투입한다고 해결되지 않는다. 수학이 이긴다."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "narrative_101.2",
+  "en": "Quick reference numbers to internalise: getting off Earth into orbit takes ~9.4 km/s. From orbit to a Hohmann to Mars adds ~3.6. Insertion at Mars adds another ~2. That’s around 15 km/s to reach the Mars system and brake into orbit — Mars’s thin atmosphere then does most of the landing. This is why landing on Mars is so much harder than landing on the Moon, and why every gram of mass on a Mars lander gets fought over.",
+  "cur": "빠르게 참고할 수 있는 숫자들을 기억해 두자: 지구에서 궤도에 도달하는 데 ~9.4 km/s가 필요하다. 궤도에서 Hohmann 전이를 통해 화성까지 가는 데 ~3.6을 더한다. 화성 궤도 진입에 또 다른 ~2를 더한다. 화성 시스템에 도달하여 궤도에서 감속하는 데 총 약 15 km/s가 필요하다 — 화성의 희박한 대기가 착륙의 대부분을 처리한다. 이것이 화성 착륙이 달 착륙보다 훨씬 어려운 이유이며, 화성 착륙선의 모든 그램의 질량이 치열하게 쟁취되는 이유다."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "body_paragraphs.0",
+  "en": "∆v (delta-v) is the bookkeeping currency of spaceflight. Every engine burn — getting off Earth, leaving orbit, correcting course, slowing down at the destination — costs you some change in velocity. Add them all up and you have the mission's ∆v budget.",
+  "cur": "∆v(델타-브이)는 우주비행의 회계 통화다. 모든 엔진 연소 — 지구를 떠나기, 궤도를 벗어나기, 궤도 수정, 목적지에서 감속 — 이 모두 속도 변화량의 대가를 치른다. 모두 더하면 미션의 ∆v 예산을 얻는다."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "body_paragraphs.1",
+  "en": "On the supply side: your rocket's ∆v capability comes from the Tsiolkovsky equation — engine `Isp` and propellant fraction set the ceiling. On the demand side: trajectory design picks the path with the cheapest summed cost. A mission flies if budget supply ≥ demand. It doesn't if it doesn't, no matter how much money you throw at the problem.",
+  "cur": "공급 측면에서: 당신의 로켓의 ∆v 능력은 Tsiolkovsky 방정식에서 나온다 — 엔진의 `Isp`와 추진제 비율이 상한선을 정한다. 수요 측면에서: 궤도 설계는 가장 저렴한 누적 비용의 경로를 선택한다. 예산 공급 ≥ 수요이면 미션은 비행한다. 그렇지 않으면 비행하지 못한다. 아무리 많은 돈을 문제에 투입해도 소용없다."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "body_paragraphs.2",
+  "en": "Some reference numbers: Earth surface to LEO costs ~9.4 km/s of ∆v (most of it fighting gravity and atmosphere). LEO to a Hohmann transfer to Mars adds ~3.6 km/s. Mars orbit insertion adds another ~2 km/s. That’s around 15 km/s to reach the Mars system and capture into orbit — Mars’s thin atmosphere handles the descent, not additional propulsion.",
+  "cur": "참고할 수 있는 숫자들: 지표면에서 LEO까지의 비용은 약 9.4 km/s의 ∆v가 든다(대부분 중력과 대기에 저항하는 데 사용됨). LEO에서 Hohmann 전이를 통해 화성까지는 약 3.6 km/s를 더한다. 화성 궤도 진입에는 약 2 km/s를 더한다. 화성 시스템에 도달하여 궤도에 포획되는 데 약 15 km/s가 든다 — 화성의 희박한 대기가 하강을 처리하며, 추가 추진은 필요 없다."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "diagram_caption",
+  "en": "Stacked bars: launch ∆v + injection + cruise corrections + arrival = total mission budget.",
+  "cur": "스택 막대: 발사 ∆v + 주입 + 항행 수정 + 도착 = 총 미션 예산."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "title",
+  "en": "Engine clustering — Saturn V's 5 vs Starship's 33",
+  "cur": "엔진 클러스터링 — Saturn V의 5기 vs Starship의 33기"
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "intro_sentence",
+  "en": "Two opposite philosophies for getting megaton-class thrust: build one giant engine and use a few of them (F-1, RS-25), or build a medium engine and use a lot of them (Merlin, Raptor). The second won.",
+  "cur": "메가톤급 추력을 얻는 두 가지 대립적 철학: 거대 엔진 한 대를 만들어 몇 기 사용(F-1, RS-25), 또는 중형 엔진을 만들어 다수 사용(Merlin, Raptor). 후자가 이겼다."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "body_paragraphs.0",
+  "en": "Saturn V's first stage clustered five F-1 engines. Each F-1 produced 6.77 MN of thrust at sea level — at the time and for fifty years afterwards, the largest liquid engine ever flown. The development arc was long and painful: combustion instability nearly killed the programme through the early 1960s; Rocketdyne ultimately solved it by tuning the injector plate to interrupt resonant modes. The Apollo programme's bet was that fewer, larger engines meant fewer points of failure during a 165-second first-stage burn. The Soviet response was the opposite: the N1's first stage clustered *thirty* NK-15 engines. Without an F-1-class engine in their inventory and with NK-15s small and cheap to produce, the Soviets chose engine count over engine size. All four N1 flights failed — though the failures were as much about plumbing and KORD shutdown-controller software as the cluster itself.",
+  "cur": "Saturn V 1단은 다섯 기의 F-1 엔진을 클러스터링했다. 각 F-1은 해면에서 6.77 MN 추력 — 당시와 이후 50년간 비행한 액체엔진 중 최대. 개발 과정은 길고 고통스러웠다: 1960년대 초 연소 불안정성이 프로그램을 거의 죽였다; Rocketdyne은 결국 인젝터 플레이트를 공진 모드 차단하도록 튜닝하여 해결. Apollo의 베팅: 더 적고 더 큰 엔진은 165초 1단 연소 동안 고장점이 더 적다는 뜻. 소련의 답은 반대였다: N1 1단은 *30기*의 NK-15를 클러스터링. 재고에 F-1급 엔진이 없고, NK-15는 작고 저렴하게 생산 가능했기에, 소련은 크기보다 수를 택했다. N1의 네 번 비행 모두 실패 — 다만 실패는 클러스터 자체만큼 배관 + KORD 셧다운 컨트롤러 소프트웨어 탓도 있었다."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "body_paragraphs.1",
+  "en": "The modern verdict is the opposite of Saturn V's. Falcon 9 clusters nine Merlin 1Ds in a 3-3-3 grid (later an 'octaweb' — 8 around the perimeter, 1 centre) for ~7.6 MN at lift-off. Falcon Heavy stacks three Falcon 9 first stages side by side: 27 Merlins, 22.8 MN. Super Heavy carries 33 Raptor 2 engines (13 in a central cluster, 20 around the outer ring) for ~76 MN at lift-off, double Saturn V's stage thrust. Three things changed since 1969 that swung the argument toward many-small. First, modern thrust-vector and engine-shutdown control can compensate for an engine failure mid-flight: Falcon 9 has lost engines on ascent (CRS-1, October 2012) and still inserted payload. Second, mass production of one engine across hundreds of vehicles drives unit cost down — economics that Saturn V's nine-flight career could never achieve. Third, computational fluid dynamics now lets you predict and damp the acoustic and base-heating interactions that historically made clusters fragile.",
+  "cur": "현대의 평가는 Saturn V와 정반대입니다. Falcon 9는 Merlin 1D 9개를 3-3-3 격자로 배치하고(나중에는 '옥타웹' — 둘레 8개, 중심 1개), 이착륙 시 약 7.6 MN의 추력을 냅니다. Falcon Heavy는 Falcon 9 1단 3개를 나란히 쌓아 Merlin 27개, 22.8 MN을 갖춥니다. Super Heavy는 Raptor 2 엔진 33개(중앙 클러스터 13개, 외부 고리 20개)를 장착하여 이착륙 시 약 76 MN을 생성하며, 이는 Saturn V의 단 추력의 2배입니다. 1969년 이후 세 가지가 변하면서 많은 소형 엔진 방식의 주장으로 기울어졌습니다. 첫째, 현대의 추력 벡터 제어와 엔진 종료 제어는 비행 중 엔진 고장을 보상할 수 있습니다. Falcon 9는 상승 중에 엔진을 잃었지만(CRS-1, 2012년 10월) 여전히 페이로드를 투입했습니다. 둘째, 수백 대의 차량에 걸친 한 엔진의 대량 생산은 단위 비용을 낮춥니다. 이는 Saturn V의 9회 비행 경력이 결코 달성할 수 없는 경제학입니다. 셋째, 전산 유체 역학은 이제 과거에 클러스터를 취약하게 만들었던 음향 및 베이스 가열 상호작용을 예측하고 감쇠할 수 있게 해줍니다."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "body_paragraphs.2",
+  "en": "Engine clusters fail differently from single engines. With five F-1s, losing one means you cannot finish the mission — Apollo 6 lost two J-2s on its S-II stage and limped to a degraded orbit, ultimately a non-mission. With 33 Raptors, losing one (or three, or six) on Super Heavy is designed-for: the avionics shut down the failed engine plus its symmetric partner to keep the thrust vector through the centre of mass, then redistributes throttle across the survivors. Falcon 9 can lose up to two of nine engines after a critical altitude and still complete the primary mission. The cluster-vs-monolith trade has shifted: clustering used to mean fragility because one engine's plumbing rupture could cascade; modern compartmentalisation (Raptor's individual shields, fast-acting isolation valves) means a single engine RUD is contained, not catastrophic.",
+  "cur": "엔진 클러스터는 단일 엔진과 다르게 고장난다. 5기의 F-1으로 한 기를 잃으면 임무를 마칠 수 없다 — Apollo 6는 S-II 단에서 두 기의 J-2를 잃고 퇴화된 궤도로 간신히 진입, 결국 비임무. Super Heavy의 33기 Raptor에서 한 기(혹은 세 기, 여섯 기)를 잃는 것은 설계 범위 내: 항전이 고장 엔진 + 대칭 짝을 차단하여 추력 벡터를 질량 중심으로 유지, 생존 엔진에 스로틀을 재분배. Falcon 9는 임계 고도 이후 9기 중 최대 2기를 잃어도 주임무를 완수 가능. 클러스터 대 모놀리스의 트레이드는 이동했다: 클러스터링은 한때 취약성을 의미(배관 파열이 연쇄)했지만, 현대 구획화(Raptor 개별 차폐, 고속 차단 밸브)는 단일 엔진 RUD를 격리 — 재앙적이지 않게."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "body_paragraphs.3",
+  "en": "There is a remaining argument for the monolithic approach. Hydrolox upper stages and core stages still prefer a few large engines: SLS uses 4 RS-25s, Ariane 6 uses 1 Vulcain 2.1, Long March 5 uses 2 YF-77. Hydrogen plumbing is so volumetrically large and so cold that multiplying engine count multiplies tank-bottom complexity. The all-staged-combustion Russian RD-170 generation (and its descendant the RD-180 / RD-191) also stayed at one to four big chambers. The pattern: kerolox and methalox have gone many-small; hydrolox has stayed few-large. The Raptor's full-flow staged combustion at engine-cluster scale is what made Super Heavy possible — that combination of cycle, propellant, and clustering had not previously been attempted.",
+  "cur": "단일화 구조의 설득력 있는 논거는 여전히 존재한다. 수소-산소 상단 단계와 코어 단계는 여전히 소수의 대형 엔진을 선호한다: SLS는 RS-25s를 4개 사용하고, Ariane 6은 Vulcain 2.1을 1개 사용하며, Long March 5는 YF-77을 2개 사용한다. 수소 배관은 부피상 매우 크고 극도로 추우므로, 엔진 개수를 늘릴수록 탱크 하부의 복잡성도 함께 증가한다. 전단계 연소식 러시아 RD-170 세대(및 그 후손인 RD-180 / RD-191)도 1개에서 4개의 큰 연소실에 머물렀다. 패턴은 이렇다: 케로신-산소와 메탄-산소 조합은 다수의 소형 엔진으로 나아갔고, 수소-산소는 소수의 대형 엔진으로 머물렀다. 엔진 집단 규모에서의 Raptor의 완전 유동식 전단계 연소 방식이 Super Heavy를 가능하게 만들었다 — 이 사이클, 추진제, 그리고 엔진 집단화의 결합은 이전에 시도된 적이 없었던 것이다."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "diagram_caption",
+  "en": "Saturn V S-IC: 5 × F-1 = 33.9 MN. Soviet N1: 30 × NK-15 = 45 MN (4 failures). Falcon 9: 9 × Merlin = 7.6 MN. Falcon Heavy: 27 × Merlin = 22.8 MN. Super Heavy: 33 × Raptor = 76 MN. The historical trend: more engines, smaller each, with modern avionics absorbing single-engine failures.",
+  "cur": "Saturn V S-IC: 5 × F-1 = 33.9 MN. 소련 N1: 30 × NK-15 = 45 MN (4회 실패). Falcon 9: 9 × Merlin = 7.6 MN. Falcon Heavy: 27 × Merlin = 22.8 MN. Super Heavy: 33 × Raptor = 76 MN. 역사적 추세: 더 많은 엔진, 각각 더 작게, 현대 항전이 단일 엔진 고장을 흡수."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "intro_sentence",
+  "en": "There are three families of rocket engine that have ever flown: chemical (everything that gets things off Earth), electric (everything that does long deep-space cruise), and nuclear thermal (NERVA tested, none yet operational).",
+  "cur": "비행에 성공한 로켓 엔진은 세 계열로 나뉜다: 화학(지구 이탈에 필요), 전기(장거리 우주 항행), 핵열(NERVA 시험, 아직 운용 중인 것 없음)."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "body_paragraphs.0",
+  "en": "Chemical engines are the only family with enough thrust to lift their own weight against Earth's gravity, so every launcher in history has been chemical. They split into three sub-families. Solid motors are basically a steel tube filled with rubbery propellant cast around a hollow core — you light one end, it burns at a controlled rate, and you cannot turn it off. Cheap, simple, reliable, but no throttling and no shut-down: the Space Shuttle SRBs, Ariane 5 / Ariane 6 boosters, SLS boosters, Indian PSLV stages, every ICBM, and most military missiles are solid. Liquid bipropellant engines pump a fuel and an oxidiser separately into a combustion chamber — far more flexible (throttling, restart, shutdown, throttling deep) but mechanically intricate: the Saturn V F-1, Falcon 9 Merlin, RS-25, Vulcain, Raptor, YF-100. Hybrid engines (solid fuel + liquid or gaseous oxidiser) are a quiet third path used by SpaceShipTwo and a handful of sounding rockets — they trade liquid's complexity for solid's lack of shutdown.",
+  "cur": "화학 엔진은 자신의 무게를 지구의 중력에 저항해서 들어올릴 수 있는 유일한 계열이므로 역사상 모든 발사체는 화학 엔진을 사용했다. 이들은 세 개의 소계열로 나뉜다. 고체 모터는 기본적으로 속이 빈 코어 주위에 탄성 고무 추진제가 주입된 강철 튜브다 — 한 끝에 불을 붙이면 일정한 속도로 연소되고 끌 수 없다. 저렴하고 단순하며 신뢰할 수 있지만 추진력 조절과 정지가 불가능하다: Space Shuttle SRBs, Ariane 5 / Ariane 6 부스터, SLS 부스터, 인도의 PSLV 스테이지, 모든 ICBM, 그리고 대부분의 군용 미사일이 고체 모터를 사용한다. 액체 쌍추진제 엔진은 연료와 산화제를 별도로 연소실에 펌프질한다 — 훨씬 더 유연하다(추진력 조절, 재시작, 정지, 깊은 스로틀링 가능) 하지만 기계적으로 복잡하다: Saturn V F-1, Falcon 9 Merlin, RS-25, Vulcain, Raptor, YF-100. 혼합형 엔진(고체 연료 + 액체 또는 기체 산화제)은 SpaceShipTwo와 소수의 대기권측정 로켓이 사용하는 조용한 제3의 경로다 — 액체의 복잡성을 고체의 정지 불가능함으로 거래한다."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "body_paragraphs.1",
+  "en": "Inside the liquid family, the engine *cycle* matters as much as the propellants. Gas-generator (Merlin, F-1): a small fraction of propellant burns in a side chamber to drive the turbopump, then dumps overboard — wasteful but simple. Expander (RL10): the cryogenic fuel cools the nozzle, vaporises, and the resulting gas drives the turbopump — elegant but limited to small engines. Staged combustion (RS-25, NK-33, Raptor): all the propellant goes through the preburner-then-main-chamber path, capturing all the energy. Full-flow staged combustion (Raptor, the first ever flown): two preburners, one oxidiser-rich and one fuel-rich, driving two turbopumps — the highest-performance arrangement ever attempted. Each step up the cycle ladder buys you 20-40 seconds of specific impulse but adds plumbing, mass, and development cost.",
+  "cur": "액체 계열 내에서 엔진의 *사이클*은 추진제만큼 중요하다. 가스 발생기(Merlin, F-1): 추진제의 작은 부분이 측면 챔버에서 연소되어 터보펌프를 구동한 후 배출된다 — 낭비적이지만 단순하다. 팽창형(RL10): 극저온 연료가 노즐을 냉각하고 기화되며 생성된 가스가 터보펌프를 구동한다 — 우아하지만 소형 엔진에만 제한된다. 단계연소(RS-25, NK-33, Raptor): 모든 추진제가 예연소실-주연소실 경로를 통과하여 모든 에너지를 포집한다. 전이중 단계연소(Raptor, 최초 비행): 두 개의 예연소실(산화제 과잉과 연료 과잉), 두 개의 터보펌프를 구동 — 지금까지 시도된 최고 성능 배치. 사이클 사다리를 올라갈 때마다 비추진력(specific impulse)을 20~40초씩 얻지만 배관, 질량, 개발비가 증가한다."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "body_paragraphs.2",
+  "en": "Electric propulsion (ion drives, Hall-effect thrusters) does not lift anything off a planet, but once you are in space its specific impulse is 10-30× higher than any chemical engine. The trade is thrust: a chemical first stage produces millions of newtons; a state-of-the-art Hall thruster (NASA Glenn AEPS, 12 kW) produces about 0.6 N — less than the weight of an apple. You make it up in time: BepiColombo's four T6 gridded-ion thrusters have been firing nearly continuously for years to brake into Mercury orbit, where a chemical-only mission would need an impossibly large fuel load. Dawn used the same approach to orbit two asteroids on one launch. The power source is solar in inner solar system, RTG-driven for outer-planet concepts.",
+  "cur": "전기 추진(이온 드라이브, Hall 효과 스러스터)은 행성에서 아무것도 들어올릴 수 없지만 우주에 있으면 비추진력이 어떤 화학 엔진보다 10~30배 높다. 대가는 추력이다: 화학 1단은 수백만 뉴턴을 생성하지만 최신 Hall 스러스터(NASA Glenn AEPS, 12 kW)는 약 0.6 N을 생성한다 — 사과 무게보다 작다. 시간으로 보충한다: BepiColombo의 네 개 T6 격자 이온 스러스터는 수년 동안 거의 연속으로 발화하여 수성 궤도로 감속하고 있다 — 화학만으로 하면 불가능할 정도로 큰 연료를 필요로 한다. Dawn은 같은 방식으로 한 번의 발사에 두 소행성 궤도에 진입했다. 전력원은 내부 태양계에서는 태양, 외부 행성 개념은 RTG로 구동된다."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "body_paragraphs.3",
+  "en": "Nuclear thermal propulsion (NTP) is the family that has been almost-ready since 1965. The principle: hydrogen flows past a hot nuclear reactor, heats to 2500-3000 K, and expands through a nozzle. Isp is 800-1000 seconds — double a hydrolox engine — with thrust in the 50-250 kN range (lower than chemical but vastly higher than electric). NASA's NERVA programme test-fired full-scale engines through the 1960s; the more recent DRACO demonstrator (NASA + DARPA) targeted a ~2027 in-orbit test but was cancelled in the 2026 budget. As of 2026 no NTP engine has flown. The blocker has always been political and regulatory rather than technical: launching a nuclear reactor, even an unfuelled one designed to go critical only in orbit, sits in a category of public-acceptance and treaty constraint that has historically killed the programme every decade or so.",
+  "cur": "핵열 추진(NTP)은 1965년 이후 거의 준비된 계열이다. 원리: 수소가 뜨거운 원자로를 통과하여 2500~3000 K로 가열되고 노즐을 통해 팽창한다. Isp는 800~1000초 — 하이드로록스 엔진의 두 배 — 추력은 50~250 kN 범위(화학보다 낮지만 전기보다 훨씬 높음). NASA의 NERVA 프로그램은 1960년대에 전규모 엔진을 시험 발화했다; 최근 DRACO 시연기(NASA + DARPA)는 ~2027 궤도상 시험을 목표했으나 2026 예산에서 취소되었다. 2026년 현재 비행한 NTP 엔진은 없다. 장애물은 항상 기술적이기보다는 정치적이고 규제적이었다: 원자로(연료 미장전 상태에서도 궤도에서만 임계에 도달하도록 설계됨)를 발사하는 것은 역사적으로 매 10년마다 프로그램을 끝장내는 대중 수용과 조약 제약 범주에 해당한다."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "diagram_caption",
+  "en": "Chemical (solid / liquid gas-generator / liquid staged / full-flow staged) for lift-off and ascent. Electric (Hall / gridded ion) for long deep-space cruise. Nuclear thermal (NERVA tested 1960s; no NTP engine has flown) for high-thrust + high-Isp transit.",
+  "cur": "화학(고체 / 액체 가스발생기 / 액체 단계연소 / 전이중 단계연소)은 이륙과 상승용. 전기(Hall / 격자 이온)는 장거리 우주 항행용. 핵열(NERVA 1960년대 시험; 비행한 NTP 엔진 없음)은 고추력 + 고Isp 통행용."
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "title",
+  "en": "Expander cycle — powered by heat, not fire",
+  "cur": "확장 순환 — 열로 구동되고 불로 구동되지 않음"
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "intro_sentence",
+  "en": "Let the cryogenic fuel soak up heat off the engine's own nozzle, flash to gas, and spin the turbopump with it. No gas generator, no preburner — the engine's waste heat is the power source. Clean and reliable, but it cannot scale up.",
+  "cur": "극저온 연료가 엔진 노즐에서 쏟아지는 열을 흡수하고 고압 가스로 기화하며, 그 가스를 사용하여 터보펌프를 회전시킨다. 가스 발생기도 없고 예연소기도 없다 — 엔진의 폐기 열이 전력원이다. 가장 깨끗한 순환이며, 확장할 수 없다."
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "body_paragraphs.0",
+  "en": "A rocket chamber and nozzle are ferociously hot, and a cryogenic engine already pumps its freezing fuel through channels in the chamber walls to keep them from melting — regenerative cooling. The expander cycle turns that cooling job into the engine's power plant. Liquid hydrogen (or methane) enters the wall channels near the nozzle, absorbs a huge amount of heat, and flashes into a hot, high-pressure gas. That gas is expanded through the turbine to drive the turbopump, and only then is it delivered to the main chamber to burn. No propellant is set on fire just to run the pumps, so the turbine gas is benign, soot-free, and gentle on the hardware — which is why expander engines are famously reliable and restartable.",
+  "cur": "로켓 연소실과 노즐은 극도로 뜨겁고, 극저온 엔진은 이미 얼어붙은 연료를 연소실 벽의 채널을 통해 펌프질하여 녹는 것을 방지한다 — 재생 냉각. 확장 순환은 그 냉각 작업을 엔진의 발전소로 변환한다. 액체 수소(또는 메탄)는 노즐 근처의 벽 채널에 들어가 엄청난 양의 열을 흡수하고 뜨겁고 고압의 가스로 섬광한다. 그 가스는 터빈을 통해 확장하여 터보펌프를 구동하고, 그 다음에야 주 연소실에 전달되어 연소한다. 펌프를 구동하기 위해 추진제가 불타지 않으므로, 터빈 가스는 양성이고, 그을음이 없으며, 하드웨어에 순하다 — 확장 엔진이 신뢰성과 재시동 능력으로 유명한 이유다."
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "body_paragraphs.1",
+  "en": "The catch is a hard physical ceiling. The power you can extract depends on how much heat the walls can hand to the fuel, and that scales with the *surface area* of the chamber and nozzle. But the thrust — and therefore the propellant flow the pumps must move — scales with chamber *volume*. As you make the engine bigger, volume grows faster than surface area, so at some point the walls simply cannot heat enough gas to drive pumps large enough for the flow. In practice a closed expander tops out around a few hundred kilonewtons of thrust. That makes it perfect for upper stages and impossible for a big first stage.",
+  "cur": "문제는 어려운 물리적 한계다. 추출할 수 있는 전력은 벽이 연료에 전달할 수 있는 열의 양에 달려 있고, 이는 연소실과 노즐의 *표면적*에 따라 조정된다. 그러나 추력 — 따라서 펌프가 이동해야 하는 추진제 흐름 — 은 연소실 *부피*에 따라 조정된다. 엔진을 크게 만들수록 부피는 표면적보다 빠르게 증가하므로, 어느 시점에서 벽은 단순히 흐름을 위해 충분히 큰 펌프를 구동할 충분한 가스를 가열할 수 없다. 실제로 완전히 폐쇄된 확장 순환은 약 수백 킬로뉴턴의 추력에서 정점에 도달한다. 이는 상단 단계에 완벽하지만 큰 첫 번째 단계에는 불가능하다."
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "body_paragraphs.2",
+  "en": "The classic is the RL10, which first flew on Centaur in 1962 and is still in production — one of the longest careers of any engine. That thrust ceiling applies to the fully closed cycle; switching to the expander-bleed variant breaks it. Bleed taps off a portion of the heated gas to drive the turbine and then dumps it overboard rather than routing all of it to the chamber — giving up a little Isp in exchange for far more power. Japan's LE-9 shows how far it can go: an expander-bleed engine producing 1,471 kN, it powers the first stage of the H3, something a closed expander could never do. Its sibling the LE-5B and Europe's Vinci on Ariane 6 use the same bleed approach for upper stages. Where staged combustion chases raw performance, the expander cycle chases reliability and restartability for the quiet, precise work of putting a payload exactly where it belongs.",
+  "cur": "고전적인 사례는 RL10로, 1962년 Centaur에 처음 비행했으며 지금도 생산 중입니다 — 어떤 엔진보다도 가장 긴 경력 중 하나입니다. 그 추력 상한선은 완전히 폐쇄된 사이클에 적용되며, 확장-블리드 변형으로 전환하면 그 한계를 깹니다. 블리드는 가열된 가스의 일부를 끌어내어 터빈을 구동한 후 모두 연소실로 보내지 않고 외부로 배출합니다 — 약간의 비입자속도를 포기하는 대신 훨씬 더 큰 동력을 얻습니다. 일본의 LE-9는 얼마나 멀리 나아갈 수 있는지를 보여줍니다: 1,471 kN을 생산하는 확장-블리드 엔진으로, H3의 1단을 구동하는데, 이는 폐쇄된 확장 사이클 엔진으로는 절대 불가능한 일입니다. 그 형제 엔진인 LE-5B와 Ariane 6의 유럽 Vinci는 상단계를 위해 같은 블리드 방식을 사용합니다. 단계 연소식이 순수한 성능을 추구하는 반면, 확장 사이클은 페이로드를 정확히 원하는 위치에 배치하는 조용하고 정밀한 작업을 위해 신뢰성과 재점화성을 추구합니다."
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "diagram_caption",
+  "en": "The cryogenic fuel is heated to gas in the nozzle's cooling channels, drives the turbopump, then burns in the chamber. Closed (RL10) keeps all the gas; expander-bleed (LE-5B, LE-9) dumps a fraction to lift the thrust ceiling.",
+  "cur": "극저온 연료는 노즐의 냉각 채널에서 가스로 가열되고, 터보펌프를 구동한 다음, 연소실에서 연소한다. 폐쇄형(RL10)은 모든 가스를 유지하고, 확장-블리드형(LE-5B, LE-9)은 추력 한계를 올리기 위해 일부를 버린다."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "title",
+  "en": "Fuels and oxidisers — kerolox, hydrolox, methalox, hypergolics, solids",
+  "cur": "연료와 산화제 — 케로록스, 하이드로록스, 메탈록스, 하이퍼골릭, 고체"
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "intro_sentence",
+  "en": "Five propellant combinations cover almost every orbital flight ever flown. Each one is a trade between specific impulse, density, storability, handling, and what you can make on Mars.",
+  "cur": "다섯 가지 추진제 조합이 거의 모든 궤도 비행을 담당합니다. 각각은 비추력, 밀도, 보관성, 취급 용이성, 그리고 화성에서 만들 수 있는 것 사이의 절충입니다."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "body_paragraphs.0",
+  "en": "Kerolox (kerosene + liquid oxygen) is the workhorse of orbital launch. The kerosene is a tightly specified grade called RP-1 (Rocket Propellant 1) — ordinary jet fuel, refined to remove the wax and sulphur that would coke a rocket engine and stripped of the alkenes that polymerise under heat. LOX is loaded chilled. The combination gives moderate Isp (~300 s sea level, ~340 vacuum), high density (so the tanks stay small), and clean ground handling. Saturn V first stage, Falcon 9, Atlas V, Soyuz, Long March 2/3/4, India's PSLV upper stages are all kerolox. The downside is soot: kerosene burns dirty, coking the engine internally and limiting reusability — Merlin works around this with sea-level chamber pressures kept well below the staged-combustion sweet spot.",
+  "cur": "케로록스(케로신 + 액체산소)는 궤도발사의 주력. 케로신은 RP-1(Rocket Propellant 1)이라는 엄격 규격품 — 일반 항공 케로신을 엔진 코킹 원인이 되는 왁스 + 황 제거, 가열 시 중합하는 알켄 제거. LOX는 과냉각으로 충전. 조합은 중간 Isp(해면 ~300초, 진공 ~340), 높은 밀도(탱크 소형 유지), 깨끗한 지상 취급을 제공. Saturn V 1단, Falcon 9, Atlas V, Soyuz, Long March 2/3/4, 인도 PSLV 상단 모두 케로록스. 단점은 그을음: 케로신은 더럽게 연소, 엔진 내부를 코킹하고 재사용성을 제한. Merlin은 다단연소 스위트스팟보다 훨씬 낮은 챔버압을 유지해 이를 회피."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "body_paragraphs.1",
+  "en": "Hydrolox (liquid hydrogen + liquid oxygen) is the highest-Isp chemical pair humanity flies (~450 s vacuum on RS-25). Hydrogen burns to water, no soot. The penalty is density: liquid H₂ is about 70 kg/m³ versus kerosene's 800 kg/m³, so the fuel tank is enormous and most of the rocket becomes insulation. Hydrolox is therefore an *upper-stage* propellant for almost all launchers (Centaur, DCSS, ICPS, the upper stages of Ariane 5/6, Long March 5, H-IIA) and only used at booster scale where extreme Isp is paid for in vehicle size — Saturn V S-II + S-IVB, Space Shuttle external tank + RS-25, SLS core stage, Ariane 5 Vulcain core. Boil-off is the operational headache: liquid H₂ at 20 K cannot sit on the pad for long.",
+  "cur": "하이드롤록스(액체 수소 + 액체 산소)는 인류가 비행하는 최고 비추력 화학 연료 쌍입니다(RS-25에서 진공 기준 약 450초). 수소는 물로 연소되며 그을음이 없습니다. 단점은 밀도입니다. 액체 H₂는 약 70 kg/m³인 반면 등유는 800 kg/m³이므로, 연료 탱크가 거대해지고 로켓의 대부분이 단열재가 됩니다. 따라서 하이드롤록스는 거의 모든 발사체(Centaur, DCSS, ICPS, Ariane 5/6의 상단 단계, Long March 5, H-IIA)의 *상단 단계* 추진제이며, 극한의 비추력이 차량 크기로 대가를 치르는 부스터 규모에서만 사용됩니다(Saturn V S-II + S-IVB, Space Shuttle 외부 탱크 + RS-25, SLS 코어 단계, Ariane 5 Vulcain 코어). 끓어오름은 운용상의 골치 거리입니다. 20 K의 액체 H₂는 발사대에 오래 있을 수 없습니다."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "body_paragraphs.2",
+  "en": "Methalox (liquid methane + LOX) is the new arrival, operational with Raptor on Starship (2023) and Zhuque-2 (2023, first to orbit), and coming on Vulcan (BE-4), Neutron, and Terran R. Three properties make it interesting. First, methane density is ~420 kg/m³ — about 6× hydrogen, so the tank is sane. Second, it burns clean enough to be reusable (no coking like RP-1). Third, methane and oxygen can both be made on Mars from atmospheric CO₂ and ice via the Sabatier reaction — the entire SpaceX Mars architecture rests on this. Isp is between kerolox and hydrolox (~330 s sea level, ~380 vacuum), which is a sweet-spot value for a single-stage-to-orbit-class vehicle.",
+  "cur": "메탈록스(액체메탄 + LOX)는 신참, Raptor로 Starship(2023)과 Zhuque-2(2023 최초 궤도 진입)에서 운용 중, Vulcan(BE-4), Neutron, Terran R에 채택 예정. 세 특성이 매력. 하나: 메탄 밀도 ~420 kg/m³ — 수소의 약 6배, 탱크가 합리적. 둘: 재사용 가능할 만큼 깨끗하게 연소(RP-1 같은 코킹 없음). 셋: 메탄과 산소 모두 화성에서 대기 CO₂ + 얼음으로부터 Sabatier 반응을 통해 제조 가능 — 전체 SpaceX 화성 아키텍처가 여기에 기반. Isp는 케로록스와 하이드로록스 사이(해면 ~330초, 진공 ~380), single-stage-to-orbit급 기체에 최적 값."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "body_paragraphs.3",
+  "en": "Hypergolic propellants (the storable family) ignite spontaneously on contact — no spark, no preburner. The canonical pair is UDMH (unsymmetrical dimethylhydrazine) or MMH (monomethylhydrazine) as fuel with N₂O₄ (dinitrogen tetroxide) as oxidiser. They are filthy: UDMH is a carcinogen, N₂O₄ is acutely toxic, both can sit in a sealed tank for years. The combination ran every Apollo Service Module, every Apollo LM ascent + descent engine, every Space Shuttle OMS burn, Soyuz / Progress orbital manoeuvring, and almost every Chinese / Russian / Indian deep-space probe's main engine. The reason: instant ignition every time, decade-long shelf life, no cryogenic plumbing. Modern Western missions have tried to phase them out (Dragon's Draco runs on safer monopropellant blends, JWST cold-gas thrusters use hydrazine alone) but the bulk of deep-space propulsion is still hypergolic.",
+  "cur": "하이퍼골릭 추진제(저장성 계열)는 접촉 시 자발 점화 — 점화 플러그 불필요, 예연소기 불필요. 표준 쌍은 UDMH(비대칭 디메틸하이드라진) 또는 MMH(모노메틸하이드라진)을 연료로, N₂O₄(사산화이질소)를 산화제로. 그것들은 더럽다: UDMH 발암성, N₂O₄ 급성 독성, 둘 다 밀봉 탱크에서 수년간 유지 가능. 이 조합은 모든 Apollo 서비스 모듈, 모든 Apollo LM 상승 + 하강 엔진, 모든 Space Shuttle OMS 점화, Soyuz / Progress 궤도 기동, 그리고 거의 모든 중국 / 러시아 / 인도 심우주 탐사선의 주엔진을 구동했다. 이유: 매번 즉시 점화, 수십 년 저장 수명, 극저온 배관 불필요. 현대 서방 미션은 단계적 폐지 시도(Dragon의 Draco는 더 안전한 단일추진제 혼합물, JWST 냉가스 추진기는 순수 하이드라진), 그러나 심우주 추진의 대다수는 여전히 하이퍼골릭."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "body_paragraphs.4",
+  "en": "Solid propellants are a single cast slug of rubbery binder (HTPB, polybutadiene-based) loaded with ammonium perchlorate (the oxidiser) and aluminium powder (a high-energy fuel additive). The grain is cast around a hollow core whose cross-section sets the burn-rate profile — a star-shaped core gives a long even thrust, a cylindrical core gives a regressive (declining) profile. Once lit, you cannot stop or throttle it; you can only choose how the grain was originally cast. Isp is low (~250 s) but thrust is enormous and the hardware is simple: SLS boosters produce 16 MN each, more than four Merlin Vacuums. The Space Shuttle SRBs, Ariane 6 P120C, every ICBM, India's PSLV first stage, every air-to-air missile, and most CubeSat kick stages are solid.",
+  "cur": "고체 추진제는 고무 같은 결합제(HTPB, 폴리부타디엔 기반)에 과염소산암모늄(산화제) + 알루미늄 분말(고에너지 연료 첨가제)을 충전한 단일 주조 블록. 그레인은 중공 코어 주위에 주조되며, 코어 단면이 연소율 프로파일을 결정 — 별 모양 코어는 길고 균일한 추력, 원통 코어는 회귀(감소) 프로파일. 일단 점화하면 정지나 스로틀 불가능; 그레인을 원래 어떻게 주조했는지만 선택. Isp 낮음(~250초)이지만 추력 막대하고 하드웨어 단순: SLS 부스터는 각 16 MN, Merlin Vacuum 4기 이상. Space Shuttle SRB, Ariane 6 P120C, 모든 ICBM, 인도 PSLV 1단, 모든 공대공 미사일, 대부분의 CubeSat 킥스테이지는 고체."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "diagram_caption",
+  "en": "Five families: kerolox (workhorse first stages), hydrolox (high-Isp upper stages + heavy-lift cores), methalox (reusable + Mars-makeable), hypergolics (long-shelf-life deep-space + manoeuvring), solids (cheap simple boosters with no throttle).",
+  "cur": "다섯 계열: 케로록스(1단 주력), 하이드로록스(고 Isp 상단 + 중하중 코어), 메탈록스(재사용 + 화성 제조 가능), 하이퍼골릭(심우주 장기 + 기동), 고체(저렴하고 단순한 무스로틀 부스터)."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "title",
+  "en": "Fusion Propulsion — the star we cannot yet light",
+  "cur": "핵융합 추진 — 아직 점화할 수 없는 별"
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "intro_sentence",
+  "en": "Fusing light atomic nuclei releases far more energy per kilogram than any chemical reaction, making fusion propulsion the most credible path to high-speed interstellar transit — if anyone can build a working fusion engine, which no one has.",
+  "cur": "가벼운 원자핵의 핵융합은 화학반응보다 킬로그램당 훨씬 더 많은 에너지를 방출하므로, 핵융합 추진은 고속 성간 운송의 가장 현실적인 경로이다. 다만 아무도 아직 작동하는 핵융합 엔진을 만들지 못했다."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "body_paragraphs.0",
+  "en": "The physics is straightforward. Fusing deuterium and tritium (or deuterium and helium-3) converts a small fraction of their mass directly into energy. The yield per kilogram is roughly ten million times that of the best chemical propellant. Translated into specific impulse, a fusion drive could reach tens of thousands to hundreds of thousands of seconds — compare the best chemical engine at 450 s and the best ion drive at 9,000 s. That gap is the difference between a centuries-long interstellar trip and one measured in decades.",
+  "cur": "물리학은 직관적이다. 중수소와 삼중수소(또는 중수소와 헬륨-3)를 융합하면 그들의 질량 중 작은 부분이 직접 에너지로 변환된다. 킬로그램당 수율은 최고의 화학 추진제의 약 1천만 배이다. 비추력으로 환산하면 핵융합 엔진은 수만에서 수십만 초에 도달할 수 있다. 최고의 화학 엔진은 450초, 최고의 이온 엔진은 9,000초와 비교해보라. 이 차이는 백년 규모의 성간 여행과 수십 년 규모 여행의 차이이다."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "body_paragraphs.1",
+  "en": "The most detailed engineering study to date is Project Daedalus, carried out by the British Interplanetary Society in the 1970s. The design used inertial-confinement fusion: pellets of deuterium and helium-3 ignited by electron beams, roughly 250 times per second, in a magnetic reaction chamber. The resulting spacecraft would have massed about 54,000 tonnes at launch — nearly all propellant — and reached approximately 12% of the speed of light, arriving at Barnard's Star (5.9 light-years away) in about 50 years, as an undecelerated flyby. Project Icarus, a follow-on study begun in 2009, revisited the design with the constraint of allowing deceleration on arrival; it found the mass requirements still harder to close.",
+  "cur": "지금까지 가장 상세한 공학 연구는 1970년대 영국 행성 협회(British Interplanetary Society)가 수행한 Project Daedalus이다. 설계는 관성 제한 핵융합을 사용했다. 중수소와 헬륨-3 펠릿을 전자 빔으로 점화하여 자기 반응실에서 초당 약 250회 반복한다. 그 결과 우주선의 발사 질량은 약 54,000톤(거의 모두 추진제)이었으며 광속의 약 12%에 도달하여 약 50년 만에 바너드별(5.9 광년 거리)에 감속 없이 근접 통과한다. 2009년에 시작된 후속 연구인 Project Icarus는 도착 시 감속을 허용한다는 제약 조건으로 설계를 재검토했으나, 질량 요구사항은 여전히 더 어렵다."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "body_paragraphs.2",
+  "en": "The wall is fundamental, not incremental. No fusion reactor anywhere on Earth has yet produced more energy than it consumed — the long-sought 'ignition' threshold was crossed at the National Ignition Facility in December 2022 for laser-driven inertial confinement, but sustained net-positive output at useful scale remains unsolved. Scaling that to a flight-weight engine that fires hundreds of times per second is a different problem again. The helium-3 fuel Daedalus required does not exist in useful quantities on Earth and would need to be mined from the outer planets — itself a civilisation-scale project.",
+  "cur": "장벽은 근본적이며 점진적이지 않다. 지구상의 어떤 핵융합 반응로도 소비한 에너지보다 더 많은 에너지를 생산하지 못했다. 오랫동안 추구해온 '점화' 임계값은 2022년 12월 National Ignition Facility에서 레이저 구동 관성 제한 핵융합으로 달성되었지만, 유용한 규모에서 지속적인 순양의 에너지 출력은 여전히 해결되지 않았다. 이를 초당 수백 회 발사하는 비행 중량 엔진으로 확장하는 것은 또 다른 문제이다. Daedalus가 필요로 한 헬륨-3 연료는 지구에 유용한 양이 존재하지 않으며 외행성에서 채굴해야 한다. 이것 자체가 문명 규모의 프로젝트이다."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "body_paragraphs.3",
+  "en": "The two main confinement approaches each have their difficulties. Magnetic confinement (tokamaks, stellarators) requires superconducting magnets and sustained plasma control; ITER, the international tokamak under construction in France, is designed to demonstrate net energy but will not produce electricity. Inertial confinement requires drivers — lasers or particle beams — powerful enough to compress the fuel to stellar conditions; the ignition achieved at NIF required a precisely engineered capsule and is nowhere near the repetition rate a propulsion system needs. Neither approach has a clear engineering path to a propulsion application.",
+  "cur": "두 가지 주요 제한 방식(자기 제한 방식(tokamaks, stellarators)과 관성 제한 방식)은 각각 어려움을 가지고 있다. 자기 제한은 초전도 자석과 지속적인 플라즈마 제어가 필요하며, 프랑스에서 건설 중인 국제 tokamak인 ITER는 순에너지를 입증하도록 설계되었지만 전기를 생성하지는 못한다. 관성 제한은 레이저나 입자 빔과 같은 동력원이 필요하며, 연료를 항성 조건으로 압축할 수 있을 만큼 강력해야 한다. NIF에서 달성한 점화는 정밀하게 설계된 캡슐을 필요로 하며 추진 시스템이 필요로 하는 반복 속도에는 미치지 못한다. 어느 방식도 추진 응용으로 가는 명확한 공학 경로를 가지고 있지 않다."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "body_paragraphs.4",
+  "en": "Fusion propulsion is physically sound and mathematically attractive. It is not engineering fiction — the numbers work on paper — but it has no working hardware, no demonstrated net-energy source to draw from, and no timeline. Any mission concept that relies on it is, honestly, a study of what becomes possible if the fusion problem is ever solved.",
+  "cur": "핵융합 추진은 물리학적으로 타당하고 수학적으로 매력적이다. 공학 소설이 아니며, 수치는 종이 위에서는 맞다. 그러나 작동하는 하드웨어도 없고, 사용할 수 있는 입증된 순에너지 원도 없으며, 타임라인도 없다. 이에 의존하는 모든 임무 개념은 솔직히 핵융합 문제가 해결될 경우 가능해지는 것에 대한 연구일 뿐이다."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "diagram_caption",
+  "en": "Specific impulse ladder from solid rockets (250 s) to chemical LH2/LOX (450 s) to ion drives (9,000 s) to projected fusion drives (tens of thousands to hundreds of thousands of seconds) — each rung a qualitative jump in what interplanetary and interstellar distances cost in propellant mass.",
+  "cur": "고체 로켓(250초)부터 화학 LH2/LOX(450초), 이온 드라이브(9,000초), 예상되는 핵융합 드라이브(수만에서 수십만 초)까지의 비추력 단계 — 각 단계는 행성간 거리와 성간 거리가 추진제 질량에 얼마나 비용이 드는지에 대한 질적 도약이다."
+ },
+ {
+  "rel": "science/propulsion/gas-generator.json",
+  "at": "intro_sentence",
+  "en": "Burn a sliver of the propellant in a small side chamber, use the hot gas to spin the turbopumps, then throw it overboard. It costs a little performance, but it is simple, robust, and the most widely flown way to build a rocket engine.",
+  "cur": "추진제의 작은 일부를 별도의 소형 챔버에서 연소시켜 생성된 고온 가스로 터보펌프를 회전시킨 후, 그 가스를 외부로 배출한다. 성능 손실은 작지만, 구조가 간단하고 견고하며 가장 광범위하게 사용되는 로켓 엔진 방식이다."
+ },
+ {
+  "rel": "science/propulsion/gas-generator.json",
+  "at": "body_paragraphs.0",
+  "en": "Every pump-fed engine has the same problem: to force propellant into a combustion chamber at hundreds of atmospheres, you need turbopumps, and to spin those pumps you need a power source. The gas-generator cycle solves it the blunt way. A few percent of the fuel and oxidiser are tapped off and burned in a separate small chamber — the gas generator — producing a stream of hot gas that drives a turbine on the pump shaft. Because that gas has done its job before it ever reaches the main chamber, it is simply dumped overboard, usually through a separate exhaust duct or fed into the nozzle skirt where the pressure is already low. This makes it an *open* cycle: some propellant leaves the engine without passing through the main combustion chamber.",
+  "cur": "모든 펌프식 엔진은 동일한 문제를 안고 있다: 추진제를 수백 기압의 연소실로 밀어 넣으려면 터보펌프가 필요하고, 펌프를 회전시키려면 전력 공급원이 필요하다는 것이다. 가스제너레이터 사이클은 이를 직접적인 방식으로 해결한다. 연료와 산화제의 일정 비율을 분기시켜 별도의 소형 챔버인 가스제너레이터에서 연소시켜 고온 가스 흐름을 생성하고, 이것이 펌프 축의 터빈을 구동한다. 이 가스는 주 연소실에 도달하기 전에 이미 역할을 다했으므로, 보통 별도의 배기 덕트를 통해 또는 이미 압력이 낮은 노즐 스커트로 단순히 배출된다. 이것이 '개방' 사이클인 이유는 일부 추진제가 주 연소실을 거치지 않고 엔진을 빠져나가기 때문이다."
+ },
+ {
+  "rel": "science/propulsion/gas-generator.json",
+  "at": "body_paragraphs.1",
+  "en": "Most gas generators run deliberately fuel-rich, because a stoichiometric flame would melt the turbine blades; a few early Soviet engines, including the RD-107 and RD-108, instead spin their turbines on steam from catalytically decomposed hydrogen peroxide. Either way, turbine-inlet temperature is the limiting design number — it caps how hard you can drive the pumps, and therefore the chamber pressure the engine can reach. The overboard dump costs a few seconds of specific impulse versus a closed cycle, since that propellant produces little useful thrust. For a first stage, where raw thrust and low cost matter more than the last few seconds of Isp, that trade is almost always worth it.",
+  "cur": "대부분의 가스제너레이터는 의도적으로 연료가 과잉 상태로 운영되는데, 이는 화학양론적 화염이 터빈 블레이드를 녹일 수 있기 때문이다. 초기 소련 엔진 중 RD-107과 RD-108을 포함한 몇몇은 촉매 분해된 과산화수소에서 생성된 수증기로 터빈을 구동한다. 어느 쪽이든, 터빈 입구 온도가 설계의 제한 요소이다. 이것은 펌프를 얼마나 강하게 구동할 수 있는지, 그리고 따라서 엔진이 도달할 수 있는 연소실 압력을 결정한다. 외부로 배출되는 것은 폐쇄 사이클에 비해 수 초의 비추력을 잃게 한다. 왜냐하면 그 추진제가 거의 유용한 추력을 생성하지 않기 때문이다. 마지막 수 초의 비추력보다 순추력과 저비용이 중요한 1단 엔진의 경우, 이 교환은 거의 항상 가치가 있다."
+ },
+ {
+  "rel": "science/propulsion/gas-generator.json",
+  "at": "body_paragraphs.2",
+  "en": "The result is the cycle that has flown more hardware than any other: the Saturn V's F-1, the Falcon 9's Merlin 1D, the R-7 / Soyuz family's RD-107 and RD-108, India's Vikas, Europe's Viking, and NASA's RS-68 are all gas-generator engines. Its virtues are exactly the ones a launch operator cares about — fewer failure modes, lower development cost, gentle turbine conditions, and easy restart and throttling. When engineers want maximum performance instead they close the cycle, which is the story of staged combustion and the expander cycle.",
+  "cur": "그 결과는 어떤 다른 사이클보다 더 많은 발사체에 사용된 사이클이다: Saturn V의 F-1, Falcon 9의 Merlin 1D, R-7/Soyuz 계열의 RD-107과 RD-108, 인도의 Vikas, 유럽의 Viking, NASA의 RS-68은 모두 가스제너레이터 엔진이다. 그 장점은 발사 운영자가 관심 있는 것과 정확히 일치한다 — 더 적은 고장 모드, 낮은 개발 비용, 온화한 터빈 운영 조건, 그리고 쉬운 재시작과 추력 조절. 엔지니어들이 최대 성능을 원할 때는 사이클을 폐쇄하는데, 이것이 단계 연소와 확장기 사이클의 이야기이다."
+ },
+ {
+  "rel": "science/propulsion/gas-generator.json",
+  "at": "diagram_caption",
+  "en": "Open cycle: a fuel-rich gas generator (GG) drives the turbopump, then its exhaust is dumped overboard — that dumped propellant is the small Isp price paid for a simple, robust engine.",
+  "cur": "개방 사이클: 연료가 과잉인 가스제너레이터(GG)가 터보펌프를 구동하고, 그 배기는 외부로 배출된다 — 배출되는 추진제가 간단하고 견고한 엔진을 위해 치르는 작은 비추력 대가이다."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "title",
+  "en": "Ion Drives — the slow push that never stops",
+  "cur": "이온 엔진 — 멈추지 않는 완만한 추력"
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "intro_sentence",
+  "en": "Ion drives achieve specific impulses 10–30 times higher than chemical rockets by accelerating ionised gas electrically rather than burning it — at the cost of very low thrust that is measured in millinewtons, not meganewtons.",
+  "cur": "이온 추진은 이온화된 기체를 태우는 대신 전기적으로 가속하여 화학 로켓보다 10~30배 높은 비추력을 달성하지만, 메가뉴턴이 아닌 밀리뉴턴 단위로 측정되는 매우 낮은 추력이 단점입니다."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "body_paragraphs.0",
+  "en": "All rocket engines exchange propellant mass for velocity. The faster the exhaust leaves the nozzle, the less propellant you need for a given velocity change — which is what specific impulse (Isp) measures. Chemical engines are limited by flame temperature: the hottest practical propellant combination, liquid hydrogen and oxygen, reaches around 450 seconds of Isp. Ion drives sidestep that limit entirely. They ionise a propellant — typically xenon, chosen for its heavy atomic mass and chemical inertness — and accelerate the ions electrically or magnetically to exhaust velocities of 20–100 km/s, giving Isp values of roughly 3,000 to 10,000 seconds.",
+  "cur": "모든 로켓 엔진은 추진제 질량을 속도로 교환합니다. 배기가 노즐을 떠나는 속도가 빠를수록, 주어진 속도 변화에 필요한 추진제가 적어집니다. 이를 비추력(Isp)이라고 합니다. 화학 엔진은 화염 온도로 제한됩니다. 가장 실용적인 추진제 조합인 액체 수소와 산소로도 약 450초의 Isp에 불과합니다. 이온 추진은 이런 제한을 완전히 우회합니다. 추진제(일반적으로 높은 원자질량과 화학적 불활성으로 선택된 크세논)를 이온화한 후 전기 또는 자기력으로 가속하여 초당 20~100 km의 배기 속도에 도달하므로 대략 3,000~10,000초의 Isp 값을 얻습니다."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "body_paragraphs.1",
+  "en": "Two designs dominate flight use. Gridded ion engines (such as NASA's NSTAR) use a pair of charged metal grids to accelerate ions in a beam; the beam is neutralised by an electron gun to prevent the spacecraft from accumulating charge. Hall-effect thrusters confine electrons in a magnetic ring near the exit, and those electrons ionise and accelerate the propellant — a simpler arrangement with no grids to erode, which is why Hall thrusters have become the standard for commercial satellite station-keeping. NSTAR flew on Deep Space 1 and on Dawn; NASA's NEXT-C, a larger gridded engine, flew on the DART mission in 2021.",
+  "cur": "비행에 사용되는 두 가지 설계가 지배적입니다. 격자형 이온 엔진(예: NASA의 NSTAR)은 한 쌍의 대전된 금속 격자로 이온 빔을 가속합니다. 빔은 전자 총으로 중성화되어 우주선의 전하 축적을 방지합니다. 홀 효과 추진기는 자기장 고리 내에 전자를 가두고, 그 전자들이 추진제를 이온화 및 가속합니다. 격자가 없어 마모될 염려가 없으므로 홀 추진기는 상용 위성의 궤도 유지 표준이 되었습니다. NSTAR는 Deep Space 1과 Dawn에 탑재되었으며, NASA의 NEXT-C는 더 큰 격자형 엔진으로 2021년 DART 미션에 탑재되었습니다."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "body_paragraphs.2",
+  "en": "The thrust numbers are sobering. A state-of-the-art 12 kW Hall thruster produces about 0.6 newtons — roughly the weight of a small apple. You cannot lift a pencil off a desk with an ion engine. What you can do is run it continuously for months or years, because the propellant load is small and the power comes from solar arrays. Dawn's three NSTAR engines ran for a total of 2,009 days in flight, accumulating a velocity change of roughly 11.5 km/s — more than any previous spacecraft by propellant fraction alone. That was enough to brake into orbit around Vesta, escape it, and then brake into orbit around Ceres: a feat chemically possible only with a prohibitively large propellant load.",
+  "cur": "추력 수치는 놀랍습니다. 최첨단 12 kW 홀 추진기는 약 0.6 뉴턴을 생성합니다. 이는 대략 작은 사과의 무게입니다. 이온 추진으로 연필 하나를 책상에서 들어올 수 없습니다. 하지만 수개월 또는 수년간 지속적으로 가동할 수 있습니다. 추진제 탑재량이 적고 전력이 태양광 배열에서 공급되기 때문입니다. Dawn의 세 개 NSTAR 엔진은 비행 중 총 2,009일 동안 가동하여 약 11.5 km/s의 속도 변화를 축적했습니다. 이는 추진제 분율만으로도 이전의 어떤 우주선보다 큽니다. 이는 베스타 궤도에 진입했다가 탈출한 후 세레스 궤도에 진입하기에 충분했습니다. 이는 화학적으로만 금지될 정도로 큰 추진제 탑재량으로만 가능한 위업입니다."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "body_paragraphs.3",
+  "en": "The constraint is power. In the inner solar system, large solar arrays can feed tens of kilowatts to a thruster. Beyond Jupiter, sunlight is too weak for solar-powered ion propulsion at useful thrust levels; the alternative is a nuclear reactor, which no electric-propulsion mission has yet used in deep space. At high thrust levels, ion drives are also slower to respond than chemical thrusters, which limits their use for attitude control or abort manoeuvres. They are a cruise engine, not a launch engine — every ion-propelled spacecraft in history rode a chemical rocket to orbit or escape velocity first. See also: /science/propulsion/specific-impulse for the numbers in context, and /science/propulsion/tsiolkovsky for why high exhaust velocity reduces propellant mass so dramatically.",
+  "cur": "제약은 전력입니다. 태양계 내부에서는 큰 태양광 배열이 추진기에 수십 킬로와트를 공급할 수 있습니다. 목성 너머에서는 햇빛이 너무 약해 유용한 추력 수준의 태양광 기반 이온 추진이 불가능합니다. 대안은 핵반응로이지만 아직 심우주에서 전기 추진 미션으로 사용된 적이 없습니다. 높은 추력 수준에서는 이온 추진이 화학 추진기보다 반응이 느려 자세 제어 또는 비상 조작에 사용이 제한됩니다. 이는 발사 엔진이 아닌 항해 엔진입니다. 역사상 모든 이온 추진 우주선은 먼저 화학 로켓으로 궤도 또는 탈출 속도에 도달했습니다. 더보기: /science/propulsion/specific-impulse는 수치를 맥락으로 설명하고, /science/propulsion/tsiolkovsky는 높은 배기 속도가 추진제 질량을 극적으로 감소시키는 이유를 설명합니다."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "diagram_caption",
+  "en": "Gridded ion engine schematic: xenon ionised in a discharge chamber, accelerated through charged grids, beam neutralised by an electron gun — thrust in millinewtons, Isp 3,000–10,000 s.",
+  "cur": "격자형 이온 엔진 개략도: 방전 챔버에서 이온화된 크세논, 대전된 격자를 통해 가속, 전자 총으로 중성화된 빔 — 추력 밀리뉴턴 단위, Isp 3,000~10,000 s."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "title",
+  "en": "Laser Sails — pushing a probe with a beam from home",
+  "cur": "레이저 돛 — 지구에서의 빔으로 탐사선을 추진하기"
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "intro_sentence",
+  "en": "Beamed propulsion inverts the usual logic: instead of carrying fuel, the spacecraft carries only a reflective sail, and all the energy is supplied by a laser or microwave array left behind on Earth or in orbit.",
+  "cur": "빔 추진은 기존 논리를 뒤집습니다. 연료를 탑재하는 대신 우주선은 반사 돛만 탑재하고, 모든 에너지는 지구나 궤도에 남겨진 레이저 또는 마이크로파 배열에서 공급됩니다."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "body_paragraphs.0",
+  "en": "The core idea is momentum transfer. Light carries momentum, and when it reflects off a surface it transfers twice that momentum to the sail. A powerful enough beam can accelerate a lightweight sail to high speed without the spacecraft carrying any propellant at all. The Tsiolkovsky rocket equation — which punishes every gram of fuel you must first lift and then accelerate — does not apply; there is no exhaust, no fuel tank, no mass fraction problem. The energy bill stays at home.",
+  "cur": "핵심 원리는 운동량 전달입니다. 빛은 운동량을 가지고 있으며, 표면에서 반사될 때 그 운동량의 두 배를 돛으로 전달합니다. 충분히 강력한 빔이라면 우주선이 추진제를 전혀 탑재하지 않고도 가벼운 돛을 높은 속도로 가속할 수 있습니다. 들어올려야 하고 그 다음 가속해야 하는 모든 연료 그램을 처벌하는 Tsiolkovsky 로켓 방정식이 적용되지 않습니다. 배기 가스도, 연료 탱크도, 질량 분율 문제도 없습니다. 에너지 비용은 지구에 남습니다."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "body_paragraphs.1",
+  "en": "Robert Forward worked out the mathematics in detail in the 1980s, proposing laser-driven sails for interstellar probes and the 'Starwisp' concept — a microwave-driven mesh sail carrying gram-scale electronics to the nearest stars. The best-known current version is Breakthrough Starshot, announced in 2016 by Yuri Milner and backed by Stephen Hawking among others. The design calls for 'StarChip' probes of about a gram on sails roughly four metres across, accelerated by a ground-based laser array of approximately 100 gigawatts to about 20% of the speed of light over a few minutes. At that speed, Proxima Centauri — 4.24 light-years away — would be reached in roughly 20 years.",
+  "cur": "로버트 포워드(Robert Forward)는 1980년대에 수학적 상세 계산을 수행했으며, 성간 탐사선을 위한 레이저 구동 돛과 '스타위스프'(Starwisp) 개념—가장 가까운 별들로 그램 규모의 전자장치를 운반하는 마이크로파 구동 메시 돛—을 제안했다. 가장 잘 알려진 현재 버전은 2016년 유리 밀너(Yuri Milner)에 의해 발표되고 스티븐 호킹 등이 지원하는 브레이크스루 스타샷(Breakthrough Starshot)이다. 그 설계는 약 4미터 크기의 돛 위에 약 1그램의 '스타칩'(StarChip) 탐사선을 실으며, 약 100기가와트의 지표 레이저 배열에 의해 수 분에 걸쳐 광속의 약 20% 정도까지 가속된다. 이 속도로라면, 4.24광년 떨어진 프록시마 켄타우리(센타우루스자리 프록시마)에 대략 20년 안에 도달할 수 있다."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "body_paragraphs.2",
+  "en": "The constraints are severe and honest. First, deceleration: a laser sail accelerated to 20% of light speed has no way to slow down at the destination. Breakthrough Starshot is designed explicitly as a flyby mission — a few hours of data collection at Proxima, no orbit insertion, no return. Forward's own proposals for decelerating used a second, larger sail left behind to reflect the beam forward onto a smaller braking sail; the engineering mass scales unfavourably. Second, communication: a gram-scale transmitter at 4 light-years must send a signal detectable by Earth's largest receivers. The link budget is marginal and requires the full 4-metre sail to double as a phased-array antenna. Third, survival: the sail must survive the acceleration phase (thousands of g over minutes), interstellar dust impacts at relativistic speed, and radiation over a 20-year cruise.",
+  "cur": "제약은 심각하고 명확합니다. 첫째, 감속입니다. 광속의 20%로 가속된 레이저 돛은 목적지에 도착해서 속도를 낮출 방법이 없습니다. Breakthrough Starshot은 명시적으로 플라이바이 임무로 설계되었습니다. 즉, Proxima에서 몇 시간의 데이터 수집만 하고 궤도 진입도 없고 귀환도 없습니다. Forward가 제안한 감속 방법은 뒤에 남겨진 더 큰 돛으로 빔을 반사시켜 더 작은 감속용 돛으로 향하게 하는 것이었습니다만, 공학적으로 질량 비율이 좋지 않습니다. 둘째, 통신입니다. 4광년 거리의 그램 규모 송신기가 지구의 가장 큰 수신기로 감지될 수 있는 신호를 보내야 합니다. 링크 예산은 여유가 거의 없으며 4미터 돛 전체가 위상배열 안테나로 이중 역할을 해야 합니다. 셋째, 생존입니다. 돛은 가속 단계(몇 분 동안 수천 g), 상대론적 속도의 성간 먼지 충돌, 그리고 20년 항행 동안의 방사선을 견뎌내야 합니다."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "body_paragraphs.3",
+  "en": "The laser array itself is the most immediate engineering challenge. 100 gigawatts is roughly the output of 100 large nuclear power plants, focused to diffraction-limited precision over a distance of millions of kilometres and held there for minutes without thermal distortion of the optics. No existing or funded facility approaches this. Breakthrough Starshot has produced detailed technical studies and funded relevant research (laser coherence, sail materials, chip design), but the programme is explicitly described as a 30-year technology development effort, not a near-term mission.",
+  "cur": "레이저 배열 자체가 가장 즉각적인 공학 과제입니다. 100기가와트는 약 100개의 대규모 원자력 발전소의 출력에 해당하며, 수백만 킬로미터의 거리에 걸쳐 회절 한계 정밀도로 집속하고 광학 열 왜곡 없이 수 분 동안 그 상태를 유지해야 합니다. 기존의 또는 자금이 지원되는 시설 중 이에 접근하는 것이 없습니다. Breakthrough Starshot은 상세한 기술 연구를 수행했고 관련 연구(레이저 간섭성, 돛 재료, 칩 설계)에 자금을 제공했으나, 이 프로그램은 명시적으로 근시일 임무가 아닌 30년 기술 개발 노력으로 설명됩니다."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "body_paragraphs.4",
+  "en": "Of the three far-horizon propulsion concepts covered in this atlas, laser sails are the most studied, the least dependent on unsolved physics, and the closest to having a credible (if enormously ambitious) engineering path. The physics requires nothing beyond what is understood. The engineering requires a laser array, sail materials, and chip technology that do not yet exist at the required scale. It is the most honest candidate for 'hardest thing humanity might actually build someday' rather than 'requires a miracle'.",
+  "cur": "이 아틀라스에서 다루는 세 가지 먼 미래 추진 개념 중에서 레이저 돛은 가장 연구가 많이 된 개념이고, 해결되지 않은 물리학에 가장 적게 의존하며, 신뢰할 수 있는(매우 야심적이지만) 공학적 경로를 갖춘 가장 가까운 개념입니다. 물리학은 이해하는 것 이상의 것을 요구하지 않습니다. 공학은 아직 필요한 규모에서 존재하지 않는 레이저 배열, 돛 재료, 칩 기술을 요구합니다. 이는 '기적을 요구한다'기보다는 '인류가 언젠가 실제로 구축할 수 있는 가장 어려운 일'을 위한 가장 정직한 후보입니다."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "diagram_caption",
+  "en": "Sail acceleration profile: a 100 GW laser pushes a 4 g sail from rest to 0.2c over roughly 10 minutes across ~2 million km — after that the beam diverges past useful intensity and the probe coasts for 20 years to Proxima Centauri, arriving with no way to slow down.",
+  "cur": "돛 가속 프로필: 100 GW 레이저가 4 g 돛을 약 2백만 킬로미터에 걸쳐 수 분에 걸쳐 정지 상태에서 0.2c까지 밀어냅니다. 그 후 빔이 유용한 강도 범위를 벗어나 분산되고 탐사선은 20년 동안 센타우루스자리 프록시마로 향해 해류하며, 도달 후 속도를 낮출 방법이 없습니다."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "intro_sentence",
+  "en": "A nuclear-thermal rocket swaps the combustion chamber for a fission reactor: hydrogen heats in the core past any chemical flame and expands through a nozzle — roughly twice the specific impulse of the best chemical engines, at real thrust.",
+  "cur": "핵열 로켓은 연소실을 핵분열로(fission reactor)로 교체합니다. 수소는 화학 반응의 어떤 불꽃보다도 높은 온도로 노심에서 가열되고 노즐을 통해 팽창하며, 최고의 화학 엔진 대비 약 2배의 비추력을 제공하면서도 실질적인 추력을 유지합니다."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "body_paragraphs.0",
+  "en": "Chemical rocket engines are limited by how hot their propellants can burn. The hydrogen-oxygen reaction peaks around 3,500 K in the combustion chamber — already close to the melting point of most materials — producing a specific impulse of roughly 450 seconds in a vacuum. A nuclear-thermal rocket (NTR) is not limited by a chemical reaction. Liquid hydrogen flows through channels in a solid nuclear reactor core operating at 2,500–3,000 K, absorbs heat, and exits through a nozzle as a very hot, very light gas. Because hydrogen is the lightest element, its heated molecules move fast and produce high exhaust velocity. The resulting Isp is 800–1,000 seconds — more than double chemical — while thrust remains in the 50–250 kN range, far above any electric propulsion system.",
+  "cur": "화학 로켓 엔진은 추진제가 연소할 수 있는 온도에 의해 제한됩니다. 수소-산소 반응은 연소실에서 약 3,500 K에서 최고조에 달하며 — 이미 대부분의 물질의 융점에 가까운 온도 — 진공에서 약 450초의 비추력을 생성합니다. 핵열 로켓(NTR)은 화학 반응에 의해 제한되지 않습니다. 액체 수소는 2,500–3,000 K에서 작동하는 고체 핵분열로의 채널을 통해 흘러 열을 흡수하고 노즐을 통해 매우 뜨겁고 매우 가벼운 기체로 배출됩니다. 수소는 가장 가벼운 원소이기 때문에, 가열된 분자들은 빠르게 움직이며 높은 배기 속도를 생성합니다. 결과적으로 비추력은 800–1,000초 — 화학의 2배 이상 — 이며, 추력은 50–250 kN 범위로 유지되어 모든 전기 추진 시스템을 훨씬 능가합니다."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "body_paragraphs.1",
+  "en": "That combination — high Isp with high thrust — is the gap NTR fills. Ion drives offer higher Isp but thrust measured in millinewtons; chemical engines offer high thrust but half the Isp. For missions requiring large velocity changes quickly — particularly a crewed transit to Mars — NTR's combination means a substantially smaller propellant load, a shorter trip, or both. A shorter Mars transit matters medically: less time in deep space means less accumulated radiation dose, which is one of the harder constraints on a crewed Mars architecture (see /essays/going-to-mars).",
+  "cur": "높은 비추력과 높은 추력의 조합 — 이것이 NTR이 채우는 격차입니다. 이온 드라이브는 더 높은 비추력을 제공하지만 추력은 밀리뉴턴 단위로 측정됩니다; 화학 엔진은 높은 추력을 제공하지만 비추력은 절반입니다. 특히 유인 화성 운송과 같이 빠르게 큰 속도 변화가 필요한 미션의 경우, NTR의 조합은 상당히 더 작은 추진제 질량, 더 짧은 운송 시간, 또는 둘 다를 의미합니다. 더 짧은 화성 운송은 의료적으로 중요합니다: 우주 심화 지역에 있는 시간이 적을수록 축적된 방사선량이 적으며, 이는 유인 화성 아키텍처 제약 중 하나입니다."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "body_paragraphs.2",
+  "en": "The engineering history is unusually complete for a technology that has never flown. The US NERVA/Rover programme (1955–1973) built and ground-tested 22 reactor configurations at Jackass Flats, Nevada. The Phoebus-2A engine in 1968 ran at 4,100 MW thermal for over 12 minutes — enough to lift the engine off the stand under its own thrust. NERVA XE-Prime demonstrated a flight-weight engine configuration. Programme management estimated that a flight-ready engine was within two years of the programme's 1973 cancellation. The Soviet Union ran a parallel programme (RD-0410, also called IRGIT) that similarly produced working test hardware without flying.",
+  "cur": "공학적 역사는 비행한 적이 없는 기술치고는 유례없이 완전합니다. 미국의 NERVA/Rover 프로그램(1955–1973)은 네바다 주 Jackass Flats에서 22개의 로켓 구성을 제작하고 지상 시험했습니다. 1968년의 Phoebus-2A 엔진은 4,100 MW 열로 12분 이상 운전되었습니다 — 자체 추력으로 엔진을 스탠드에서 들어올릴 수 있을 정도로 충분했습니다. NERVA XE-Prime은 비행 중량 엔진 구성을 입증했습니다. 프로그램 관리자들은 비행 준비 엔진이 프로그램의 1973년 취소 이후 2년 이내에 완성될 것으로 예상했습니다. 소비에트 연방은 병렬 프로그램(RD-0410, IRGIT라고도 함)을 운영했으며, 마찬가지로 비행하지 않고도 작동하는 테스트 하드웨어를 생산했습니다."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "body_paragraphs.3",
+  "en": "DARPA and NASA's DRACO (Demonstration Rocket for Agile Cislunar Operations) programme aimed to demonstrate an NTR engine in orbit by the late 2020s, using a Low-Enriched Uranium (LEU) design to sidestep some of the regulatory constraints that surrounded the highly enriched uranium in NERVA. The programme was cancelled in the 2026 US federal budget. As of 2026, no nuclear-thermal engine has flown. The technical obstacles are real but manageable: reactor mass, hydrogen storage and handling, nozzle erosion at high temperature. The persistent blocker has been political — public acceptance of launching a nuclear reactor, treaty obligations under the Outer Space Treaty, and the cost of testing that cannot be done on a standard engine stand.",
+  "cur": "DARPA와 NASA의 DRACO(Demonstration Rocket for Agile Cislunar Operations) 프로그램은 2020년대 후반까지 궤도상에서 NTR 엔진을 입증하는 것을 목표로 했으며, NERVA의 고도로 농축된 우라늄을 둘러싼 규제적 제약의 일부를 피하기 위해 저농축 우라늄(LEU) 설계를 사용했습니다. 프로그램은 2026년 미국 연방 예산에서 취소되었습니다. 2026년 현재 비행한 핵열 엔진은 없습니다. 기술적 장애물은 실제로 존재하지만 관리 가능합니다: 로켓 질량, 수소 저장 및 취급, 고온에서의 노즐 침식. 지속적인 차단 요인은 정치적입니다 — 핵로켓 발사에 대한 공중 수용, Outer Space Treaty에 따른 조약 의무, 그리고 표준 엔진 스탠드에서 수행할 수 없는 테스트 비용입니다."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "body_paragraphs.4",
+  "en": "For uncrewed deep-space missions, NTR competes with increasingly capable ion drives, which are cheaper to develop and carry no nuclear regulatory burden. The niche where NTR is hardest to replace is a crewed Mars mission with a tight launch window and a crew that cannot spend three years in transit. Whether that mission ever happens, and whether NTR is chosen for it over other options, remains open. See also: /science/propulsion/specific-impulse for how 800 s compares across engine types, and /science/propulsion/tsiolkovsky for why doubling Isp has such a dramatic effect on the required propellant fraction.",
+  "cur": "무인 우주 심화 미션의 경우, NTR은 개발이 저렴하고 핵 규제 부담이 없는 점점 더 강력해지는 이온 드라이브와 경쟁합니다. NTR이 대체하기 가장 어려운 틈새는 엄격한 발사 윈도우와 3년의 운송 시간을 보낼 수 없는 승무원을 가진 유인 화성 미션입니다. 그 미션이 일어날지, 그리고 NTR이 다른 옵션보다 그것을 위해 선택될지는 여전히 열려 있습니다."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "diagram_caption",
+  "en": "NTR schematic: liquid hydrogen pumped through solid-core fission reactor at 2,500–3,000 K, expelled through nozzle — Isp ~800–1,000 s, thrust 50–250 kN, no combustion.",
+  "cur": "NTR 개략도: 액체 수소를 2,500–3,000 K의 고체핵 핵분열로를 통해 펌프질하여 노즐을 통해 배출 — 비추력 ~800–1,000 s, 추력 50–250 kN, 연소 없음."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "intro_sentence",
+  "en": "Burn deep in a gravity well and your fuel does more work — physically the same engine produces more orbital energy when it's moving fast.",
+  "cur": "중력 우물 깊은 곳에서 연소하면 연료가 더 많은 일을 합니다 — 물리적으로 같은 엔진이 빠르게 움직일 때 더 많은 궤도 에너지를 생성합니다."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "narrative_101.0",
+  "en": "Here's a free magic trick from physics. Imagine you have one specific amount of fuel to burn. You can light it whenever you want. Where should you do it? Common sense says it shouldn't matter — same fuel, same engine, same push. Common sense is wrong.",
+  "cur": "여기 물리학이 제공하는 무료 마술이 있습니다. 연소할 특정량의 연료가 있다고 상상해 보세요. 원할 때 언제든지 점화할 수 있습니다. 어디서 해야 할까요? 상식적으로는 차이가 없어야 합니다 — 같은 연료, 같은 엔진, 같은 추력. 하지만 상식은 틀렸습니다."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "narrative_101.1",
+  "en": "Burn it when you're going FAST and the same fuel gives you way more useful energy than the same burn when you're going slow. The reason hides in the fact that kinetic energy goes as v² — when you're already moving, a small ∆v on top adds proportionally more energy than when you're standing still. So a 1 km/s burn at perigee (going 11 km/s) gives you more orbital boost than the same 1 km/s burn at apogee (going 1 km/s).",
+  "cur": "빠르게 움직일 때 연소하면 같은 연료가 천천히 움직일 때 같은 연소를 할 때보다 훨씬 더 많은 유용한 에너지를 제공합니다. 그 이유는 운동 에너지가 v²에 비례한다는 사실에 숨어 있습니다 — 이미 움직이고 있을 때, 그 위에 작은 ∆v를 추가하면 정지해 있을 때보다 비례적으로 더 많은 에너지가 추가됩니다. 따라서 근지점에서의 1 km/s 연소(11 km/s로 이동 중)는 원지점에서의 같은 1 km/s 연소(1 km/s로 이동 중)보다 더 많은 궤도 부스트를 제공합니다."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "narrative_101.2",
+  "en": "Hermann Oberth pointed this out in 1929 and mission designers have been exploiting it ever since. Apollo's trans-lunar injection happened at perigee, hugging Earth, going as fast as possible. Parker Solar Probe burns at the closest pass to the Sun on every loop to dive deeper next time. It's not free energy — the planet you're hugging is doing the donation — but it's the closest thing to a free lunch you'll ever find in spaceflight.",
+  "cur": "헤르만 오베르트는 1929년에 이것을 지적했고 임무 설계자들은 그 이후로 계속 이것을 활용해 왔습니다. Apollo의 달 전이 분사는 지구에 가까이 붙어서 가능한 한 빠르게 이동하며 근지점에서 발생했습니다. Parker Solar Probe는 매 궤도마다 태양에 가장 가까이 접근할 때 연소하여 다음번에 더 깊이 잠수합니다. 이것은 무료 에너지가 아닙니다 — 당신이 붙어있는 행성이 기부를 하고 있는 것입니다 — 하지만 우주 비행에서 찾을 수 있는 무료 점심에 가장 가까운 것입니다."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "body_paragraphs.0",
+  "en": "The kinetic energy of a moving body goes as `½ m v²`. A small ∆v at high speed produces a much larger change in kinetic energy than the same ∆v at low speed. Apply this to a rocket burn: do the burn at periapsis (where you're moving fastest) and the same propellant produces more orbital-energy gain than it would at apoapsis.",
+  "cur": "움직이는 물체의 운동 에너지는 `½ m v²`에 비례합니다. 고속에서의 작은 ∆v는 저속에서의 같은 ∆v보다 운동 에너지에서 훨씬 더 큰 변화를 생성합니다. 이것을 로켓 연소에 적용하면: 근점(가장 빠르게 움직이는 곳)에서 연소를 수행하면 같은 추진제가 원점에서보다 더 많은 궤도 에너지 증가를 생성합니다."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "body_paragraphs.1",
+  "en": "Hermann Oberth pointed this out in 1929. The implication for mission design: schedule your big ∆v burns where you're already moving fast — at perihelion of the cruise ellipse, at periapsis of a flyby. Parker Solar Probe burns at perihelion of each Sun-passing arc to drop deeper toward the Sun on the next loop. Juno fires at jovian periapsis to control its science orbit.",
+  "cur": "헤르만 오베르트는 1929년에 이것을 지적했습니다. 임무 설계에 대한 시사점: 이미 빠르게 움직이고 있는 곳에서 큰 ∆v 연소를 계획하세요 — 순항 타원의 근일점에서, 플라이바이의 근점에서. Parker Solar Probe는 각 태양 통과 궤도의 근일점에서 연소하여 다음 루프에서 태양을 향해 더 깊이 떨어집니다. Juno는 목성 근점에서 발사하여 과학 궤도를 제어합니다."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "body_paragraphs.2",
+  "en": "The trade-off: deep-well burns are short and intense; the spacecraft has to be ready to handle the heat, the dynamic pressure, and the precision timing. There's no free lunch — but Oberth shows you which lunches are cheaper.",
+  "cur": "절충안: 깊은 우물 연소는 짧고 강렬합니다; 우주선은 열, 동압, 정밀한 타이밍을 처리할 준비가 되어 있어야 합니다. 무료 점심은 없습니다 — 하지만 Oberth는 어떤 점심이 더 저렴한지 보여줍니다."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "diagram_caption",
+  "en": "Same ∆v at periapsis (high v) yields more energy gain than at apoapsis (low v).",
+  "cur": "근점(높은 v)에서의 같은 ∆v는 원점(낮은 v)에서보다 더 많은 에너지 증가를 산출합니다."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "title",
+  "en": "Stages — why no rocket has ever flown single-stage to orbit",
+  "cur": "단 — 왜 어떤 로켓도 단일단으로 궤도에 진입한 적이 없는가"
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "intro_sentence",
+  "en": "Tsiolkovsky's equation makes single-stage-to-orbit possible only with impossibly light dry mass. Every orbital launcher in history has dropped at least one stage. Most drop two or three.",
+  "cur": "치올콥스키 방정식에 따르면 단일 단계로의 궤도 진입은 불가능할 정도로 가벼운 건조 질량이 필요합니다. 역사상 모든 궤도 발사체는 최소한 하나의 단계를 분리했습니다. 대부분은 둘 또는 셋을 분리합니다."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "body_paragraphs.0",
+  "en": "The mass ratio for orbit (~9.4 km/s of ∆v from a coastal launch site) is roughly 12-15 with the best chemical engines. That means 92-93% of a notional single-stage-to-orbit (SSTO) vehicle is propellant; the dry mass — tanks, engines, avionics, payload, recovery hardware — must fit inside the remaining 7-8%. No one has ever built one. The X-33 / VentureStar SSTO programme of the 1990s shut down when the composite hydrogen tank failed pressure-test. Skylon (UK, SABRE-based) is still on paper. Starship is sometimes described as SSTO-capable but flies as a two-stage vehicle for very good reasons: dropping the booster saves dry mass and lets the upper stage continue with much higher TWR-fed acceleration. Staging is the trick that turns the logarithmic rocket equation from impossible to merely difficult.",
+  "cur": "궤도용 질량비(연안 발사 사이트에서 ~9.4 km/s의 ∆v)는 최상의 화학 엔진으로 약 12~15. 즉 가상의 SSTO 기체의 92~93%는 추진제이며, 건조 질량 — 탱크, 엔진, 항전, 페이로드, 회수 하드웨어 — 은 남은 7~8% 안에 들어가야 한다. 누구도 만든 적 없다. 1990년대의 X-33 / VentureStar SSTO 프로그램은 복합재 수소 탱크가 압력 시험에 실패하면서 종료. Skylon(영국, SABRE 기반)은 여전히 종이 위에. Starship은 때때로 SSTO 가능으로 묘사되지만 매우 좋은 이유로 2단 기체로 비행한다: 부스터를 떨어뜨리면 건조 질량을 절약하고 상단은 훨씬 더 높은 TWR로 가속 지속 가능. 단 분리는 로그 로켓 방정식을 불가능에서 단지 어려움으로 바꾸는 묘책."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "body_paragraphs.1",
+  "en": "Two-stage architecture is the modern minimum. Falcon 9 (booster + second stage), Falcon Heavy (three-core booster + second stage), Starship (Super Heavy + Starship), Electron (kerolox first + kerolox second + sometimes a Curie kick stage), Neutron (planned), Terran R (planned). The booster does the heavy lifting through the dense lower atmosphere where high thrust matters more than Isp; the upper stage runs at lower TWR in vacuum where high Isp pays off. Why not three stages? Because each staging event is a discrete failure mode (separation pyrotechnics, hot-staging plume management, interstage debris) and modern engines are good enough to do the upper-stage burn in one go. The exceptions are usually GTO or interplanetary missions where a kick stage (Star 48, Briz-M, Fregat, YZ-1/2, Centaur as a third stage) gives a final precise burn — Voyager, New Horizons, Solar Orbiter, JUICE, every Mars rover.",
+  "cur": "2단 아키텍처는 현대 최소. Falcon 9(부스터 + 2단), Falcon Heavy(3코어 부스터 + 2단), Starship(Super Heavy + Starship), Electron(케로록스 1단 + 케로록스 2단 + 때때로 Curie 킥스테이지), Neutron(계획), Terran R(계획). 부스터는 추력이 Isp보다 더 중요한 밀도 높은 하부 대기에서 무거운 짐을 들고, 상단은 진공에서 더 낮은 TWR로 작동 — 그곳에선 높은 Isp가 보상된다. 왜 3단이 아닌가? 각 단 분리는 별개의 고장 모드(분리 폭약, 핫스테이징 플룸 관리, 단간부 파편)이며 현대 엔진이 상단 연소를 한 번에 처리할 만큼 좋기 때문. 예외는 보통 GTO 또는 행성간 임무로, 킥스테이지(Star 48, Briz-M, Fregat, YZ-1/2, 3단 Centaur)가 최종 정밀 연소를 제공 — Voyager, New Horizons, Solar Orbiter, JUICE, 모든 화성 로버."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "body_paragraphs.2",
+  "en": "Three-stage architecture was standard for the Apollo era because the engines of the day could not produce enough Isp or thrust to drop straight to two. Saturn V: S-IC kerolox booster (5 × F-1, ~2.5 minutes), S-II hydrolox sustainer (5 × J-2, ~6 minutes), S-IVB hydrolox upper (1 × J-2, two burns — one to circularise, one for trans-lunar injection). Soyuz still flies three stages plus four strap-on first-stage boosters in a 1957 architecture that is older than human spaceflight itself. China's Long March 3B/E and Long March 5 are 2.5-stage (core + strap-ons + upper) with a separate kick stage for GEO/escape. India's PSLV is uniquely four-stage with alternating solid and liquid — heritage from a 1970s programme that lacked any single propellant family capable of doing the whole job.",
+  "cur": "3단 아키텍처는 Apollo 시대 표준이었다 — 당시 엔진은 직접 둘로 내려갈 만큼의 Isp나 추력을 내지 못했기에. Saturn V: S-IC 케로록스 부스터(5기 F-1, ~2.5분), S-II 하이드로록스 유지단(5기 J-2, ~6분), S-IVB 하이드로록스 상단(1기 J-2, 두 차례 연소 — 원궤도화 1회, 달궤도 진입 1회). Soyuz는 1957년 아키텍처 — 유인 우주비행 그 자체보다 오래된 — 로 여전히 3단에 4개의 1단 스트랩온 부스터를 단 채 비행한다. 중국의 Long March 3B/E와 Long March 5는 2.5단(코어 + 스트랩온 + 상단)에 별도 GEO/이탈용 킥스테이지. 인도의 PSLV는 독특하게 4단으로 고체와 액체 교대 — 1970년대 프로그램의 유산, 단일 추진제 계열로 전부를 해낼 능력이 없었기 때문."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "body_paragraphs.3",
+  "en": "Staging happens in one of three ways. Pyro-bolt separation: explosive bolts fire, springs push the spent stage clear, then the upper stage ignites in the resulting gap. Used by almost everyone (Soyuz, Atlas, Ariane, Long March). Fire-in-the-hole / hot staging: the upper stage ignites *before* separation, blowing the booster away with its exhaust. Soviet (Soyuz, Proton) and now SpaceX (Starship) — it loses 1-2% Isp from the upper stage exhausting against the interstage but eliminates the dead-time during separation where gravity drag eats velocity. Pushed staging: the lower stage gives a small retro-burn to back out before the upper stage ignites — Falcon 9 between MECO and second-stage ignition is essentially this, plus a boost-back manoeuvre if the booster is being recovered. Each is a different trade between mechanical risk, gravity losses, and operational simplicity.",
+  "cur": "단 분리는 세 방식 중 하나로 일어난다. 파이로 볼트 분리: 폭약 볼트가 발사되고 스프링이 소모된 단을 밀어내며, 그런 다음 상단이 생긴 틈에서 점화. 거의 모두가 사용(Soyuz, Atlas, Ariane, Long March). Fire-in-the-hole / 핫스테이징: 상단이 분리 *전에* 점화하여 자체 배기로 부스터를 날려 보낸다. 소련(Soyuz, Proton)과 이제 SpaceX(Starship) — 상단 배기가 단간부에 부딪쳐 1~2%의 Isp를 잃지만 분리 중 중력 항력이 속도를 먹는 데드 타임을 제거. 푸시드 스테이징: 하단이 작은 역연소를 통해 후진한 후 상단이 점화 — Falcon 9의 MECO와 2단 점화 사이가 본질적으로 이것, 그리고 부스터 회수 시 boost-back 기동 추가. 각각은 기계적 위험, 중력 손실, 운용 단순성 사이의 다른 트레이드."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "diagram_caption",
+  "en": "Two stages: modern minimum (Falcon 9, Starship, Electron). Three stages: Apollo-era + Soyuz heritage (Saturn V, Soyuz, Long March 3B). 2.5 stages: core + strap-on boosters (Long March 5, Ariane 5/6, Delta IV Heavy, SLS). Plus optional kick stage for precise final orbits (Star 48, Centaur, Fregat, Briz-M, YZ-1).",
+  "cur": "2단: 현대 최소(Falcon 9, Starship, Electron). 3단: Apollo 시대 + Soyuz 유산(Saturn V, Soyuz, Long March 3B). 2.5단: 코어 + 스트랩온 부스터(Long March 5, Ariane 5/6, Delta IV Heavy, SLS). 정밀 최종 궤도용 옵션 킥스테이지(Star 48, Centaur, Fregat, Briz-M, YZ-1) 추가."
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "intro_sentence",
+  "en": "A solar sail carries no propellant: it is pushed by the momentum of photons, making it the only propulsion system with an effectively unbounded specific impulse — and the only one that gets cheaper to run the longer it flies.",
+  "cur": "솔라 세일은 추진제를 탑재하지 않습니다. 광자의 운동량으로 밀려나므로 사실상 무한의 비추력을 갖는 유일한 추진 시스템이며, 비행 시간이 길수록 운영 비용이 낮아지는 유일한 시스템입니다."
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "body_paragraphs.0",
+  "en": "Light carries momentum. When a photon reflects off a mirror, it imparts twice its momentum to the mirror — a pressure called radiation pressure. In everyday life that force is negligible, but in space, where there is no air resistance, even a tiny continuous force accumulates into a real velocity change. A perfectly reflective 800 m² sail at 1 AU (Earth's distance from the Sun) receives about 5 millinewtons of force — the weight of a small grape. That is less than any ion engine produces, but it requires no propellant, no power system beyond basic housekeeping, and it never stops as long as the Sun shines.",
+  "cur": "빛은 운동량을 지니고 있습니다. 광자가 거울에 반사될 때, 거울에 자신의 운동량의 2배를 전달합니다. 이를 복사압이라 부릅니다. 일상생활에서는 이 힘이 무시할 수 있을 정도로 작지만, 공기 저항이 없는 우주에서는 작은 지속적 힘도 실질적인 속도 변화를 축적합니다. 1 AU(지구와 태양 사이의 거리)에서 완전히 반사하는 800 m² 세일은 약 5밀리뉴턴의 힘을 받습니다. 이는 작은 포도의 무게 정도입니다. 이는 어떤 이온 엔진보다 적은 힘이지만, 추진제가 필요 없고 기본적인 유지보수를 넘는 전력 시스템이 필요 없으며, 태양이 빛나는 한 절대 멈추지 않습니다."
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "body_paragraphs.1",
+  "en": "Because the craft carries no propellant, the concept of specific impulse becomes mathematically infinite: there is no propellant mass-flow rate to divide the thrust by. A more useful figure is the sail's characteristic acceleration — thrust divided by total spacecraft mass. Current demonstration missions achieve fractions of a millimetre per second squared; scaling to large, lightweight sails could reach values competitive with ion drives for certain trajectory types. A solar sail can also tack: by tilting the sail at an angle, the component of thrust perpendicular to the Sun-spacecraft line can raise or lower the orbit, or spiral the spacecraft inward toward the Sun for a close solar flyby before heading outward on a hyperbolic trajectory.",
+  "cur": "우주선이 추진제를 탑재하지 않기 때문에, 비추력이라는 개념은 수학적으로 무한이 됩니다. 추력을 나눌 추진제 질량 유량이 없기 때문입니다. 더 유용한 수치는 세일의 특성 가속도입니다. 즉, 추력을 우주선의 총 질량으로 나눈 값입니다. 현재 시연 미션들은 초당 밀리미터의 분수 값을 달성하고 있습니다. 대형 경량 세일로 확장하면 특정 궤적 유형에 대해 이온 드라이브와 경쟁력 있는 값에 도달할 수 있습니다. 솔라 세일은 또한 택킹할 수 있습니다. 세일을 각도로 기울이면, 태양-우주선 선에 수직인 추력 성분이 궤도를 상승 또는 하강시키거나, 우주선을 태양 쪽으로 나선형으로 이동시켜 가까운 태양 플라이바이 후 쌍곡선 궤적으로 외향하게 할 수 있습니다."
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "body_paragraphs.2",
+  "en": "The first spacecraft to fly by solar-sail propulsion in interplanetary space was JAXA's IKAROS, launched in May 2010 as a secondary payload on the Akatsuki Venus mission. IKAROS deployed a 196 m² polyimide sail just 7.5 micrometres thick — thinner than a human hair — and demonstrated measurable acceleration and attitude control by liquid-crystal panels embedded in the sail's edges. The Planetary Society's LightSail 2 (2019) became the first spacecraft to raise its orbit using only solar-sail thrust, demonstrating sustained propulsion in low Earth orbit. NASA's NEA Scout CubeSat (launched 2022 on Artemis I) was the first American interplanetary solar sail mission, though contact was not established after deployment. NASA's ACS3 mission (2024) demonstrated a larger composite boom structure for future scaling.",
+  "cur": "우주공간에서 솔라 세일 추진력으로 비행한 첫 번째 우주선은 JAXA의 IKAROS로, 2010년 5월 Akatsuki 금성 미션의 부탑재물로 발사되었습니다. IKAROS는 196 m²의 폴리이미드 세일을 배치했는데, 두께가 7.5마이크로미터로 인간의 머리카락보다 얇았으며, 세일 가장자리에 내장된 액정 패널로 측정 가능한 가속도와 자세 제어를 시연했습니다. Planetary Society의 LightSail 2(2019)는 솔라 세일 추진력만을 사용하여 궤도를 상승시킨 첫 번째 우주선이 되었으며, 저지구궤도에서 지속 추진을 시연했습니다. NASA의 NEA Scout CubeSat(2022년 Artemis I에서 발사)은 첫 번째 미국 행성간 솔라 세일 미션이었으나, 배치 후 통신이 이루어지지 않았습니다. NASA의 ACS3 미션(2024)은 향후 확장을 위한 더 큰 복합 붐 구조를 시연했습니다."
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "body_paragraphs.3",
+  "en": "The fundamental limit is distance. Radiation pressure falls as the inverse square of distance from the Sun: at Jupiter (5.2 AU), it is 27 times weaker than at Earth. For trajectories beyond the asteroid belt, a sail needs to be very large or very light — or use a different power source. The natural successor concept is laser propulsion (sometimes called a laser sail or Breakthrough Starshot approach), where a ground- or space-based laser array illuminates the sail at far higher intensity than the Sun provides, enabling interstellar-class velocities. That remains speculative engineering; solar sails are flying hardware today. See also: /science/propulsion/specific-impulse and /essays/new-propulsion for where these ideas lead.",
+  "cur": "근본적인 한계는 거리입니다. 복사압은 태양으로부터의 거리의 역제곱에 따라 감소합니다. 목성(5.2 AU)에서는 지구에서보다 27배 약합니다. 소행성대 너머의 궤적의 경우, 세일은 매우 크거나 매우 가벼워야 합니다. 또는 다른 전력원을 사용해야 합니다. 자연스러운 후속 개념은 레이저 추진(때때로 레이저 세일 또는 Breakthrough Starshot 접근이라 불림)입니다. 여기서 지상 또는 우주 기반 레이저 배열이 태양이 제공하는 것보다 훨씬 높은 강도로 세일을 조명하여 성간 속도를 가능하게 합니다. 이는 여전히 추측적 공학입니다. 솔라 세일은 오늘날 비행 중인 하드웨어입니다. 참고: /science/propulsion/specific-impulse 및 /essays/new-propulsion는 이 아이디어가 어디로 향하는지 참조하세요."
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "diagram_caption",
+  "en": "Photon momentum transfer: reflected photon imparts 2p to sail; force = 2 × (solar flux / c) × area × cos²θ — independent of propellant, falls as 1/r² from Sun.",
+  "cur": "광자 운동량 전달: 반사된 광자는 세일에 2p를 전달합니다. 힘 = 2 × (태양 복사 유속 / c) × 면적 × cos²θ — 추진제와 무관하며, 태양으로부터 1/r² 범위 내에서 감소합니다."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "intro_sentence",
+  "en": "How efficient an engine is — how many seconds a kilogram of propellant produces a kilogram of thrust.",
+  "cur": "엔진이 얼마나 효율적인지 측정하는 방법 — 1킬로그램의 추진제가 1킬로그램의 추력을 발생시키는 시간(초)."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "narrative_101.0",
+  "en": "If you've ever cared about miles-per-gallon for a car, specific impulse is the same idea for rockets. It tells you how efficiently the engine converts fuel into push. Higher Isp = better mileage = more ∆v from the same propellant load.",
+  "cur": "자동차의 연비(마일/갤런)에 관심이 있었다면, 특정 충동은 로켓의 같은 개념입니다. 엔진이 연료를 얼마나 효율적으로 추력으로 변환하는지 알려줍니다. Isp가 높을수록 = 연비가 좋을수록 = 같은 추진제로 더 많은 ∆v를 얻을 수 있습니다."
+ }
+]

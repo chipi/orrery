@@ -1,0 +1,950 @@
+[
+ {
+  "rel": "missions/earth/vostok-5.json",
+  "at": "description",
+  "en": "Valery Bykovsky's 81-orbit, 4-day-23-hour flight — still the longest solo Earth-orbital mission in history. Launched 1963-06-14 11:59 UTC; flew the second half of his mission alongside Vostok 6 (Tereshkova, launched 2 days later). Bykovsky's planned 8-day duration was shortened due to solar-flare radiation concerns and a slow orbital decay. Landed 1963-06-19 11:06 UTC near Karaganda after parachute separation.",
+  "cur": "رحلة فاليري بيكوفسكي التي امتدت 81 مدارًا و4 أيام و23 ساعة — لا تزال أطول مهمة مدارية فردية حول الأرض في التاريخ. أُطلق في 1963-06-14 الساعة 11:59 ت.ع؛ وقضى النصف الثاني من مهمته إلى جانب Vostok 6 (تريشكوفا، أُطلقت بعد يومين). جرى تقصير المدة المخططة وقدرها 8 أيام بسبب مخاوف من إشعاع الانفجار الشمسي وتدهور مداري بطيء. هبط في 1963-06-19 الساعة 11:06 ت.ع قرب Karaganda بعد انفصال المظلة."
+ },
+ {
+  "rel": "missions/earth/vostok-6.json",
+  "at": "first",
+  "en": "First woman in space — Valentina Tereshkova, 48 orbits",
+  "cur": "أول امرأة في الفضاء — فالنتينا تريشكوفا، 48 مدارًا"
+ },
+ {
+  "rel": "missions/earth/vostok-6.json",
+  "at": "dispatch",
+  "en": "Vostok 6 carried Valentina Tereshkova, and made her the first woman in space — a fact that stood alone for nineteen years and went unmatched by the United States until 1983. She was not a pilot but a textile worker and amateur parachutist, chosen in part for exactly that symbolism: proof, the Soviet program said, that in the workers' state even the frontier of space was open to anyone. Whatever the motive, forty-eight orbits later the milestone was real and permanent, and it would be two decades before any other nation could say it had done the same.",
+  "cur": "حملت Vostok 6 فالنتينا تريشكوفا، وجعلتها أول امرأة في الفضاء — حقيقة ظلت فريدة لمدة تسعة عشر عامًا ولم تحققها الولايات المتحدة حتى عام 1983. لم تكن طيّارة بل عاملة نسيج وقافزة مظلات هاوية، اختيرت جزئيًا تحديدًا لهذا الرمز: برهان، كما قالت البرنامج السوفييتي، على أنه في دولة العمال حتى حدود الفضاء مفتوحة للجميع. بغض النظر عن الدوافع، بعد ثمانية وأربعين مدارًا أصبحت هذه النقطة المحطة حقيقية وأبدية، ولم يمضِ سوى عقدين قبل أن تتمكن أي دولة أخرى من القول بأنها حققت الشيء ذاته."
+ },
+ {
+  "rel": "missions/earth/vostok-6.json",
+  "at": "description",
+  "en": "Valentina Tereshkova's 48-orbit, 2-day-23-hour flight — the first woman in space, and still the only woman ever to have flown a solo space mission. Selected from a group of five female cosmonaut candidates assembled in 1962, Tereshkova launched 1963-06-16 09:30 UTC, only 2 years after Gagarin's first orbital flight. Her capsule programmed for an upward-rather-than-downward orbit-correction burn — she manually identified the error and ground controllers re-uploaded corrected attitude software the next day. Landed 1963-06-19 08:20 UTC near Bayevo, Altai Krai. Tereshkova later became a senior figure in Soviet politics and remains the youngest woman ever flown to orbit at 26 years.",
+  "cur": "رحلة فالنتينا تريشكوفا البالغة 48 مدارًا وتستغرق يومين و23 ساعة — أول امرأة في الفضاء، وتظل الوحيدة التي طارت مهمة فضائية منفردة. اختيرت من مجموعة من خمس مرشحات رائدات فضاء تم تجميعهن عام 1962، أطلقت تريشكوفا في 1963-06-16 09:30 UTC، بعد سنتين فقط من رحلة جاجارين المدارية الأولى. تم برمجة كبسولتها لحرق تصحيح مداري موجه للأعلى بدلاً من الأسفل — حددت هي الخطأ يدويًا وأعاد مراقبو الأرض تحميل برنامج الاتجاه المصحح في اليوم التالي. هبطت في 1963-06-19 08:20 UTC بالقرب من Bayevo، كراي ألتاي. أصبحت تريشكوفا لاحقًا شخصية بارزة في السياسة السوفييتية وتبقى الأصغر امرأة أطلقت إلى مدار بعمر 26 سنة."
+ },
+ {
+  "rel": "missions/eurybates/lucy.json",
+  "at": "first",
+  "en": "First mission to the Jupiter Trojans; visits 11 bodies across 8 asteroids and their satellites in a single 12-year trajectory — a record number of objects on separate solar orbits",
+  "cur": "أول مهمة إلى كويكبات المشتري الطروادية؛ تزور 11 جسماً عبر 8 كويكبات وأقمارها في مسار واحد مدته 12 سنة — عدد قياسي من الأجسام على مدارات شمسية منفصلة"
+ },
+ {
+  "rel": "missions/eurybates/lucy.json",
+  "at": "description",
+  "en": "Lucy reaches for the L4 and L5 Lagrange clouds — populations of primordial asteroids leading and trailing Jupiter by 60°, believed to preserve material from the outer protoplanetary disc. Three Earth gravity assists (2022, 2024, 2030) shape a single trajectory that visits seven Trojan asteroids plus bonus main-belt targets. First asteroid encounter: 152830 Dinkinesh (2023-11-01, ~790 m), at which imaging revealed the contact-binary satellite Selam. Bonus main-belt: Donaldjohanson 2025-04. L4 swarm: Eurybates + moon Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). After EGA-3 (2030-12), the trailing L5 swarm: Patroclus-Menoetius binary (2033-03) — the largest Trojan binary known, a fitting climax for the mission's namesake (Lucy the hominid fossil; Patroclus-Menoetius the two characters that fell together in the Iliad).",
+  "cur": "تصل Lucy إلى سحب L4 و L5 لاغرانج — تجمعات كويكبات بدائية تسبق المشتري وتتخلفه بمقدار 60°، يُعتقد أنها تحافظ على مادة من القرص الكوكبي الأولي الخارجي. ثلاث مساعدات جاذبية أرضية (2022، 2024، 2030) تشكل مسارًا واحدًا يزور سبعة كويكبات طروادية بالإضافة إلى أهداف من الحزام الرئيسي. أول التقاء بكويكب: 152830 Dinkinesh (2023-11-01، ~790 م)، حيث كشفت التصوير عن القمر الثنائي التماس Selam. من الحزام الرئيسي إضافة: دونالدجوهانسون 2025-04. سرب L4: يوربات والقمر Queta (2027-08)، بوليميلي (2027-09)، ليوكوس (2028-04)، أوروس (2028-11). بعد EGA-3 (2030-12)، سرب L5 التابع: الثنائي باتروكلس-مينيتوس (2033-03) — أكبر ثنائي طروادي معروف، ختام مناسب لاسم المهمة (Lucy حفرية الإنسان الأول؛ باتروكلس-مينيتوس الشخصيتان اللتان سقطتا معًا في الإلياذة)."
+ },
+ {
+  "rel": "missions/itokawa/hayabusa1.json",
+  "at": "first",
+  "en": "First asteroid sample ever returned to Earth (~1,500 grains of Itokawa dust, sub-milligram total)",
+  "cur": "أول عينة من كويكب يتم إرجاعها إلى الأرض (~1,500 حبة من غبار إيتوكاوا، إجمالي دون الملليغرام)"
+ },
+ {
+  "rel": "missions/itokawa/hayabusa1.json",
+  "at": "description",
+  "en": "JAXA's Hayabusa (Japanese for 'falcon') flew the most heroic mission-save in spaceflight history. Launched 2003-05-09 on an M-V-5 with four μ10 ion thrusters — the most powerful ion-propulsion subsystem flown to that point. Arrived at 25143 Itokawa 2005-09-12 — a 540×270×210-m rubble-pile near-Earth asteroid. Two touchdowns (2005-11-20 + 25), both with sample-collection projectile failures, though regolith was kicked into the collection horn anyway. Then a hydrazine leak crippled attitude control, two of its three reaction wheels failed, communications lost for seven weeks, the Earth-return window slipped by three years. Engineers assembled a single working ion engine from the surviving halves of two damaged engines and nursed Hayabusa back to Earth. Sample capsule recovered at Woomera AUS 2010-06-13 returned ~1,500 grains of Itokawa dust (sub-milligram total) — confirming the asteroid's S-type composition and rubble-pile structure, and proving that asteroid sample return was possible.",
+  "cur": "قامت وكالة JAXA بإطلاق مركبة Hayabusa (كلمة يابانية تعني 'صقر') في أبطولية مهمة الإنقاذ في تاريخ الرحلات الفضائية. انطلقت في 2003-05-09 على حامل M-V-5 مزود بأربع محركات أيونية μ10 — الأنظمة الدفع الأيونية الأقوى التي طارت في تلك النقطة الزمنية. وصلت إلى الكويكب القريب من الأرض 25143 إيتوكاوا في 2005-09-12 — كويكب كومة الحطام بأبعاد 540×270×210 متر. قامت بهبوطين (2005-11-20 و 25)، وكلاهما واجه فشل في آليات جمع العينات بالمقذوفات، لكن التربة السطحية دخلت قرن الجمع على أي حال. بعدها، تسرب الهيدرازين شل التحكم في الاتجاه، وفشلت اثنتان من ثلاث عجلات رد فعل، وفُقدت الاتصالات لمدة سبعة أسابيع، وتأخر نافذة العودة إلى الأرض بثلاث سنوات. قام المهندسون بتجميع محرك أيوني واحد عاملاً من الأنصاف الباقية لمحركين تالفين وأعادوا Hayabusa إلى الأرض. تم استرجاع كبسولة العينة في ووميرا بأستراليا في 2010-06-13 وأرجعت ~1,500 حبة من غبار إيتوكاوا (إجمالي دون الملليغرام) — مؤكدة التركيب من النوع S للكويكب وهيكل كومة الحطام، وأثبتت أن إعادة عينات الكويكبات ممكنة."
+ },
+ {
+  "rel": "missions/itokawa/hayabusa1.json",
+  "at": "events.1.label",
+  "en": "EARTH GRAVITY ASSIST",
+  "cur": "مساعدة الجاذبية الأرضية"
+ },
+ {
+  "rel": "missions/itokawa/hayabusa1.json",
+  "at": "events.5.label",
+  "en": "ION ENGINE FRANKENSTEIN",
+  "cur": "محرك أيوني فرانكنشتاين"
+ },
+ {
+  "rel": "missions/jupiter/europa-clipper.json",
+  "at": "first",
+  "en": "First mission dedicated to characterising the habitability of an icy moon; largest planetary mission spacecraft ever launched (6065 kg, 100-m² solar arrays)",
+  "cur": "أول مهمة مخصصة لتوصيف قابلية العيش على قمر جليدي؛ أكبر مركبة فضائية في مهمة كوكبية تم إطلاقها على الإطلاق (6065 كجم، مصفوفات شمسية بمساحة 100 م²)"
+ },
+ {
+  "rel": "missions/jupiter/europa-clipper.json",
+  "at": "description",
+  "en": "Europa Clipper goes to Jupiter to study Europa — a 3,121-km icy moon believed to harbour a global liquid-water ocean beneath a 15-25 km ice shell, the most accessible potentially-habitable environment in the solar system. Launched 2024-10-14 on a Falcon Heavy at C3 41.7. A Mars gravity assist in March 2025 bent the trajectory toward Earth; an Earth gravity assist 2026-12 delivers the final push outward; arrives Jupiter 2030-04-11 for orbit insertion. The orbital tour executes 49 close Europa flybys over four years — passing within 25 km of Europa's surface on the closest passes, designed to map the entire moon while limiting the spacecraft's dose in Jupiter's brutal radiation belts. Instruments: REASON ice-penetrating radar, MASPEX mass spectrometer (samples plume material if any), E-THEMIS thermal imager (finds active geysers), magnetometer + plasma instruments confirm ocean depth from induced magnetic response.",
+  "cur": "تتوجه Europa Clipper إلى المشتري لدراسة أوروبا — قمر جليدي يبلغ قطره 3,121 كم يُعتقد أنه يحتضن محيطاً عالمياً من الماء السائل تحت طبقة جليدية سمكها 15-25 كم، وهي الأكثر إمكانية للوصول إليها بيئة قابلة للعيش في النظام الشمسي. تم إطلاقها في 2024-10-14 على صاروخ Falcon Heavy عند C3 41.7. ساعد جاذبية المريخ في مارس 2025 على الانحناء نحو الأرض؛ مساعد جاذبية الأرض في 2026-12 يوفر الدفع النهائي للخارج؛ تصل إلى المشتري في 2030-04-11 لإدراج المدار. تنفذ الرحلة المدارية 49 رحلة تحليق قريبة حول أوروبا على مدار أربع سنوات — تمر ضمن 25 كم من سطح أوروبا في الرحلات الأقرب، صُممت لرسم خريطة للقمر بأكمله مع تحديد جرعة المركبة الفضائية في أحزمة الإشعاع الشديدة بالمشتري. الأجهزة: رادار REASON الذي يخترق الجليد، مطياف MASPEX الكتلي (يأخذ عينات من مادة الريح إن وجدت)، محرار E-THEMIS الحراري (يجد النوافير النشطة)، مقياس المغناطيسية + أجهزة البلازما تؤكد عمق المحيط من الاستجابة المغناطيسية المستحثة."
+ },
+ {
+  "rel": "missions/jupiter/galileo.json",
+  "at": "first",
+  "en": "First spacecraft to orbit Jupiter; atmospheric probe into Jupiter clouds",
+  "cur": "أول مركبة فضائية تدور حول المشتري؛ مسبار جوي إلى سحب المشتري"
+ },
+ {
+  "rel": "missions/jupiter/galileo.json",
+  "at": "dispatch",
+  "en": "Galileo should have been crippled before it even arrived. Its main antenna stuck half-open on the way to Jupiter, cutting its data rate to a trickle — and the mission succeeded anyway, because engineers rewrote its software from Earth to squeeze the science through a tiny backup antenna. It became the first spacecraft to orbit Jupiter, dropped a probe into the giant planet’s clouds, and spent eight years touring the moons. Its greatest find emerged slowly from that persistence: the way Jupiter’s magnetic field wrapped around Europa could only be explained by a salty ocean beneath the ice — the strongest case yet that a moon of Jupiter might hold liquid water, and life. At the end it was flown into Jupiter on purpose, so it could never fall onto Europa and contaminate it.",
+  "cur": "كان يُفترض أن يصاب Galileo بالشلل قبل وصوله أصلاً. ظل هوائيه الرئيسي نصف مفتوح في الطريق إلى المشتري، مما قلل معدل نقل البيانات إلى خيط رفيع — لكن المهمة نجحت على أي حال، لأن المهندسين أعادوا كتابة برنامجه من الأرض لتمرير العلم عبر هوائي احتياطي صغير. أصبح أول مركبة فضائية تدور حول المشتري، وأسقط مسباراً في سحب الكوكب العملاق، وقضى ثماني سنوات في جولة بين الأقمار. وظهر أعظم اكتشافاته ببطء من هذا الإصرار: الطريقة التي التف بها المجال المغناطيسي للمشتري حول أوروبا لا يمكن تفسيرها إلا بوجود محيط مالح تحت الجليد — أقوى دليل حتى الآن على أن قمراً من أقمار المشتري قد يحتوي على ماء سائل، وحياة. وفي النهاية وُجّه إلى المشتري عن قصد، حتى لا يسقط أبداً على أوروبا ويلوّثها."
+ },
+ {
+  "rel": "missions/jupiter/galileo.json",
+  "at": "description",
+  "en": "Launched from Space Shuttle Atlantis after the long post-Challenger pause, Galileo braved the inner asteroid belt and conducted the first long-term study of Jupiter and its moons from orbit. It discovered Europa's induced magnetic field — strong evidence of a subsurface ocean — and watched Shoemaker-Levy 9 slam into Jupiter. The mission ended with a controlled plunge into Jupiter in 2003 to avoid contaminating icy moons that might harbour conditions for life.",
+  "cur": "أطلقت من Space Shuttle Atlantis بعد فترة الانتظار الطويلة بعد Challenger، واجهت Galileo حزام الكويكبات الداخلي وأجرت أول دراسة طويلة الأمد للمشتري وأقماره من المدار. اكتشفت المجال المغناطيسي المستحث حول أوروبا — دليل قوي على وجود محيط تحت السطح — وشهدت شوميكار-ليفي 9 تصطدم بالمشتري. انتهت المهمة بغطسة مضبوطة إلى المشتري في 2003 لتجنب تلويث الأقمار الجليدية التي قد تحتوي على ظروف صالحة للحياة."
+ },
+ {
+  "rel": "missions/jupiter/juice.json",
+  "at": "first",
+  "en": "Largest interplanetary spacecraft built in Europe; first spacecraft ever to orbit a moon of another planet (Ganymede, 2034)",
+  "cur": "أكبر مركبة فضائية بين الكواكب بنيت في أوروبا؛ أول مركبة فضائية تدور حول قمر في كوكب آخر (غانيميد، 2034)"
+ },
+ {
+  "rel": "missions/jupiter/juice.json",
+  "at": "description",
+  "en": "JUpiter ICy moons Explorer — ESA's L-class flagship, launched 2023-04-14. The 8-year cruise uses one of the most complex gravity-assist sequences ever flown: a first-of-kind Lunar-Earth Gravity Assist on 2024-08-19, Venus 2025-08-31, then two more Earth passes in 2026 and 2029. Jupiter orbit insertion is set for 2031-07-21. After 35 close flybys of Europa, Ganymede, and Callisto over 3.5 years, JUICE will manoeuvre into a dedicated Ganymede orbit on 2034-12-31 — the first spacecraft ever to orbit a moon of another planet. Mission ends 2035 by impact on Ganymede. Primary science: existence + properties of subsurface oceans across the icy Galilean moons, ice-shell composition + tidal heating, and Jovian magnetospheric structure.",
+  "cur": "مستكشف أقمار المشتري الجليدية — JUpiter ICy moons Explorer — وهي مهمة من فئة إل التابعة لـ ESA، أُطلقت في 2023-04-14. تستخدم رحلة الثماني سنوات واحدة من أكثر تسلسلات المساعدة الثقالية تعقيداً التي تحققت على الإطلاق: مساعدة جاذبية قمر-أرض للمرة الأولى في 2024-08-19، ثم الزهرة في 2025-08-31، ثم ممرّان إضافيان حول الأرض في 2026 و 2029. يُعيّن إدراج مدار المشتري لـ 2031-07-21. بعد 35 تحليقاً قريباً لأوروبا وغانيميد وكاليستو على مدى 3.5 سنوات، ستنمّ JUICE نفسها إلى مدار غانيميد مخصص في 2034-12-31 — أول مركبة فضائية توضع في مدار حول قمر في كوكب آخر. تنتهي المهمة في 2035 بالارتطام بغانيميد. العلوم الأساسية: وجود وخصائص المحيطات تحت السطحية عبر أقمار Galilean الجليدية، تكوين القشرة الجليدية وتسخين المد والجزر، وبنية المغناطيس الحراري للمشتري."
+ },
+ {
+  "rel": "missions/jupiter/juice.json",
+  "at": "events.1.label",
+  "en": "LUNAR-EARTH FLYBY",
+  "cur": "التحليق القمري-الأرضي"
+ },
+ {
+  "rel": "missions/jupiter/juno.json",
+  "at": "first",
+  "en": "First polar orbiter of Jupiter; solar-powered beyond the asteroid belt for the first time",
+  "cur": "أول مركبة قطبية حول المشتري؛ أول استخدام للطاقة الشمسية وراء حزام الكويكبات"
+ },
+ {
+  "rel": "missions/jupiter/juno.json",
+  "at": "description",
+  "en": "Juno entered Jupiter orbit 2016-07-05 on a highly elliptical 53-day polar trajectory that takes it from inside the radiation belts (perijove ~4200 km above cloud tops) out past Callisto. Solar-powered — its ~50 m² triple-junction arrays deliver 14 kW at Earth but only ~500 W at Jupiter, the first time solar power has been used at that distance. Confirmed Jupiter has a diluted rocky core (not a sharp boundary), measured the polar cyclone arrangement (eight circumpolar storms around each pole), and imaged Io’s volcanism at unprecedented detail in 2023. Extended mission includes flybys of all four Galilean moons through 2025.",
+  "cur": "دخلت Juno مدار المشتري في 2016-07-05 على مسار قطبي إهليلجي شديد الاستطالة دورته 53 يوماً، يأخذها من داخل أحزمة الإشعاع (حضيض مشتري ~4200 كم فوق قمم الغيوم) وصولاً إلى ما وراء كاليستو. تعتمد على الطاقة الشمسية — فصفائحها ثلاثية الوصلة بمساحة ~50 م² تُوَلِّد 14 كيلووات عند الأرض لكن فقط ~500 واط عند المشتري، وهي المرة الأولى التي تُستخدم فيها الطاقة الشمسية على هذه المسافة. أكّدت أن المشتري يمتلك نواة صخرية مخففة (لا توجد حدود حادة)، وقاست ترتيب العواصف الحلقية القطبية (ثماني عواصم تدور حول كل قطب)، وصوّرت البراكين على آيو بتفاصيل لم تُشهد من قبل في 2023. تشمل المهمة الموسّعة تحليقات بجانب جميع أقمار Galilean الأربعة حتى 2025."
+ },
+ {
+  "rel": "missions/jupiter/pioneer-10.json",
+  "at": "first",
+  "en": "First spacecraft through the asteroid belt and the first to fly past Jupiter (1973-12-04)",
+  "cur": "أول مركبة تعبر حزام الكويكبات وأول من حلَّق فوق المشتري (04-12-1973)"
+ },
+ {
+  "rel": "missions/jupiter/pioneer-10.json",
+  "at": "dispatch",
+  "en": "Pioneer 10 went first, into two dangers nobody had measured. No spacecraft had crossed the asteroid belt — thought to be a shooting gallery of debris — or survived Jupiter’s radiation, believed lethal to electronics. Pioneer 10 did both: it crossed the belt unharmed (the belt, it turned out, is mostly empty), reached Jupiter in December 1973 as the first spacecraft ever to do so, and returned the first close images of the giant planet. Then it became the first human-made object aimed out of the solar system for good. Its value was proof — it turned the unknown hazards on the road to the outer planets into known ones, so the Voyagers could be built to face them.",
+  "cur": "Pioneer 10 ذهبت أولاً، إلى خطرين لم يقسهما أحد. لم تعبر أي مركبة فضائية حزام الكويكبات — الذي كان يُعتقد أنه ساحة رماية من الحطام — أو نجت من إشعاع المشتري، الذي كان يُعتقد أنه مميت للإلكترونيات. Pioneer 10 فعلت كليهما: عبرت الحزام سالمة (تبيّن أن الحزام فارغ في معظمه)، ووصلت المشتري في ديسمبر 1973 كأول مركبة فضائية تفعل ذلك على الإطلاق، وأعادت أول صور قريبة للكوكب العملاق. ثم أصبحت أول جسم من صنع الإنسان يُوجَّه خارج النظام الشمسي نهائياً. كانت قيمتها في الإثبات — حوّلت المخاطر المجهولة على الطريق إلى الكواكب الخارجية إلى مخاطر معلومة، حتى يمكن بناء Voyagers لمواجهتها."
+ },
+ {
+  "rel": "missions/jupiter/pioneer-10.json",
+  "at": "description",
+  "en": "Pioneer 10 was the trail-blazer — first to cross the asteroid belt (which we then learned was much less hazardous than predicted), first to image Jupiter at close range, first to reach a heliocentric distance greater than Pluto’s perihelion (1983). It carries the Pioneer plaque designed by Carl Sagan, Frank Drake, and Linda Salzman Sagan — humanity’s first deliberate interstellar message. Final successful contact 2003-01-23 from ~82 AU; the spacecraft now drifts toward the constellation Taurus, with an encounter near Aldebaran in roughly two million years.",
+  "cur": "كانت Pioneer 10 رائدة الطريق — أول مسبار يعبر حزام الكويكبات (الذي تبيَّن أنه أقل خطورة بكثير مما كان يُخشى)، وأول من صوَّر المشتري عن قرب، وأول من تجاوز مسافة الحضيض لبلوتو (1983). تحمل لوحة Pioneer التي صمَّمها كارل ساغان وفرانك دريك وليندا سالزمان ساغان — أول رسالة بين-نجمية متعمَّدة من البشرية. آخر اتصال ناجح في 23-01-2003 من نحو 82 وحدة فلكية؛ والمسبار يتجه الآن نحو كوكبة Taurus، حيث يقترب من النجم الدبران بعد نحو مليوني سنة."
+ },
+ {
+  "rel": "missions/jupiter/pioneer-10.json",
+  "at": "events.1.label",
+  "en": "JUPITER CLOSEST APPROACH",
+  "cur": "أقرب اقتراب من المشتري"
+ },
+ {
+  "rel": "missions/mars/curiosity.json",
+  "at": "first",
+  "en": "First nuclear-powered Mars rover; first sky-crane landing",
+  "cur": "أول مستكشف جوال يعمل بالطاقة النووية على المريخ؛ أول هبوط بكرافة السماء"
+ },
+ {
+  "rel": "missions/mars/curiosity.json",
+  "at": "dispatch",
+  "en": "Curiosity is a nuclear-powered laboratory the size of a small car, and getting it down was the hard part. Too heavy for airbags, it was lowered onto Mars in 2012 by a rocket-powered sky crane in a sequence so risky its planners called it seven minutes of terror — and it worked on the first try. Since then it has drilled its way across Gale Crater and answered the question it was sent to ask: the crater once held a lake, with the chemistry a living thing could have used. Mars had been habitable. Curiosity is still driving, climbing a mountain of layered rock that reads like the planet’s own history book.",
+  "cur": "Curiosity هو مختبر يعمل بالطاقة النووية بحجم سيارة صغيرة، وكان الجزء الصعب هو إنزاله على المريخ. كان ثقيلاً جداً لاستخدام الوسائد الهوائية، لذا تم إنزاله على سطح المريخ في عام 2012 بواسطة كرافة سماء مدفوعة بالصواريخ في تسلسل محفوف بالمخاطر لدرجة أن مخطِّطوه أطلقوا عليه اسم \"سبع دقائق من الرعب\" — وقد نجح من المحاولة الأولى. منذ ذلك الحين، عمل على حفر طريقه عبر فوهة غيل وأجاب على السؤال الذي أُرسل للإجابة عليه: احتوت الحفرة ذات مرة على بحيرة بكيمياء يمكن لكائن حي أن يستخدمها. كان المريخ صالحاً للعيش. Curiosity لا يزال يتحرك، يتسلق جبل من الصخور الطبقية التي تُقرأ مثل كتاب التاريخ الخاص بالكوكب."
+ },
+ {
+  "rel": "missions/mars/curiosity.json",
+  "at": "description",
+  "en": "The flagship mission that defined modern Mars exploration. Curiosity is car-sized, plutonium-powered, and has driven 36+ km across Gale Crater since landing in 2012. Its instruments confirmed Mars once had habitable conditions — flowing water, complex organics, the chemistry life would need. The 'seven minutes of terror' EDL sequence, ending with a sky-crane lowering the rover on cables, is now NASA's standard for delivering large payloads to Mars surface.",
+  "cur": "المهمة الرائدة التي عرّفت الاستكشاف الحديث للمريخ. Curiosity بحجم سيارة، تعمل بالبلوتونيوم، وقد قطعت أكثر من 36 كم عبر فوهة غيل منذ هبوطها في عام 2012. أكدت أجهزتها أن المريخ كان يمتلك ذات مرة ظروفاً صالحة للعيش — مياه جارية، مواد عضوية معقدة، والكيمياء التي تحتاجها الحياة. تسلسل الدخول والنزول والهبوط \"سبع دقائق من الرعب\"، والذي ينتهي بكرافة السماء تنزل المستكشف على كابلات، أصبح الآن معيار NASA لإيصال الحمولات الكبيرة إلى سطح المريخ."
+ },
+ {
+  "rel": "missions/mars/curiosity.json",
+  "at": "events.1.label",
+  "en": "TMI BURN",
+  "cur": "حرق الانتقال إلى المريخ"
+ },
+ {
+  "rel": "missions/mars/curiosity.json",
+  "at": "events.4.label",
+  "en": "EDL — SEVEN MINUTES OF TERROR",
+  "cur": "الدخول والنزول والهبوط — سبع دقائق من الرعب"
+ },
+ {
+  "rel": "missions/mars/hope-probe.json",
+  "at": "first",
+  "en": "First Arab interplanetary mission",
+  "cur": "أول مهمة عربية بين كوكبية"
+ },
+ {
+  "rel": "missions/mars/hope-probe.json",
+  "at": "description",
+  "en": "The Emirates Mars Mission — Al Amal, 'Hope' — was conceived in 2014 to mark the 50th anniversary of UAE federation in 2021. The MBRSC team partnered with the University of Colorado, Arizona State, and UC Berkeley to design and integrate the spacecraft, but built it themselves. The science orbit (55-hour period, ~20,000 km × 43,000 km) covers all longitudes and times of day, capturing weather patterns no other Mars orbiter can resolve. The mission succeeded on the first attempt, making the UAE the fifth agency at Mars.",
+  "cur": "بعثة الإمارات لاستكشاف المريخ — «مسبار الأمل» — تم تصورها في عام 2014 للاحتفال بالذكرى الخمسين لتأسيس اتحاد الإمارات في عام 2021. عاونت فريق مركز محمد بن راشد للفضاء جامعة Colorado وجامعة Arizona State وجامعة UC Berkeley لتصميم المركبة الفضائية وتكاملها، لكنهم بنوها بأنفسهم. يغطي المدار العلمي (فترة 55 ساعة، ~20,000 كم × 43,000 كم) جميع خطوط الطول وأوقات اليوم، ويلتقط أنماط الطقس التي لا يستطيع أي مدار آخر حول المريخ حلها. نجحت المهمة في المحاولة الأولى، مما جعل الإمارات الوكالة الخامسة على المريخ."
+ },
+ {
+  "rel": "missions/mars/hope-probe.json",
+  "at": "events.2.label",
+  "en": "MARS ORBIT INSERTION",
+  "cur": "الدخول إلى مدار المريخ"
+ },
+ {
+  "rel": "missions/mars/insight.json",
+  "at": "first",
+  "en": "First seismometer on Mars; first interplanetary launch from US West Coast",
+  "cur": "أول مقياس زلزالي على المريخ؛ أول إطلاق بينكوكبي من الساحل الغربي الأمريكي"
+ },
+ {
+  "rel": "missions/mars/insight.json",
+  "at": "description",
+  "en": "InSight gave Mars its first stethoscope. Its seismometer, deployed by a robotic arm onto the regolith, recorded over 1,300 marsquakes — including a magnitude-5 in 2022, the largest ever detected on another planet. The data revealed Mars's interior structure: a 1,800-km-radius molten core, a thick crust, and surprising mantle layering. The mole heat-flow experiment failed when the regolith proved too cohesive for its self-hammering design. The mission ended when dust accumulation on solar panels reduced power below operational threshold.",
+  "cur": "منحت InSight المريخ أول سماعة طبية. المقياس الزلزالي، الذي نشرته ذراع آلية على الريغوليث، سجل أكثر من 1300 هزة بما فيها هزة قياس 5 في 2022، الأكبر على عالم آخر. البيانات كشفت بنية باطن المريخ: لب منصهر نصف قطره 1800 كم، قشرة سميكة، طبقات وشاح غير متوقعة. فشل تجربة تدفق الحرارة «الخلة» حين ثبت الريغوليث شديد التماسك. انتهت المهمة بتراكم الغبار على الألواح الشمسية."
+ },
+ {
+  "rel": "missions/mars/insight.json",
+  "at": "events.4.label",
+  "en": "SEISMOMETER DEPLOYED",
+  "cur": "نشر المقياس الزلزالي"
+ },
+ {
+  "rel": "missions/mars/mangalyaan.json",
+  "at": "first",
+  "en": "First Asian Mars mission; first Mars success on first attempt",
+  "cur": "أول مهمة آسيوية إلى المريخ؛ أول نجاح للمريخ في المحاولة الأولى"
+ },
+ {
+  "rel": "missions/mars/mangalyaan.json",
+  "at": "description",
+  "en": "ISRO's Mars Orbiter Mission cost $74 million — less than the budget of the film Gravity ($100M), and a fraction of NASA's MAVEN ($671M) which arrived two days earlier. Built in 18 months as a technology demonstrator, Mangalyaan succeeded at every objective: trans-Mars injection, deep-space navigation, Mars orbit insertion, and 8 years of science return. India became the fourth space agency at Mars and the first to succeed on its first try.",
+  "cur": "بلغت تكلفة مهمة مدار المريخ التابعة لـ ISRO 74 مليون دولار — أقل من ميزانية فيلم Gravity (100 مليون دولار)، وجزء صغير من تكلفة MAVEN التابع لـ NASA (671 مليون دولار) الذي وصل قبل يومين. بُنيت Mangalyaan في 18 شهراً كمشروع لإثبات التقنية، وحققت جميع أهدافها: الحقن نحو المريخ، والملاحة في الفضاء العميق، والدخول في مدار المريخ، و8 سنوات من العائد العلمي. وأصبحت الهند الوكالة الفضائية الرابعة التي تبلغ المريخ والأولى التي تنجح في محاولتها الأولى."
+ },
+ {
+  "rel": "missions/mars/mariner4.json",
+  "at": "first",
+  "en": "First spacecraft to reach Mars and return close-up images of another planet",
+  "cur": "أول مركبة تصل المريخ وتعيد صورًا مقربة لكوكب آخر"
+ },
+ {
+  "rel": "missions/mars/mariner4.json",
+  "at": "description",
+  "en": "The mission that ended dreams of a habitable Mars. Mariner 4's 22 grainy images, taken during a 25-minute closest approach at 9,846 km altitude, showed a cratered surface resembling the Moon — no canals, no vegetation, no obvious life. The atmosphere was 100× thinner than expected. The discovery reshaped Mars in the public imagination from sister-Earth to dead world. Tracking the spacecraft also produced the first measurement of the solar wind's structure between planets.",
+  "cur": "المهمة أنهت أحلام مريخ صالح للحياة. Mariner 4 ، التُقطت خلال اقتراب 25 دقيقة على ارتفاع 9846 كم، أظهرت سطحًا فوهيًا يشبه القمر — بلا قنوات، بلا نبات، بلا حياة واضحة. الغلاف كان أنحف مئة مرة مما توقع. الاكتشاف أعاد تشكيل المريخ في الخيال العام من أخت للأرض إلى عالم ميت. تتبع المركبة أعطى أيضًا أول قياس لبنية الرياح الشمسية بين الكواكب."
+ },
+ {
+  "rel": "missions/mars/mariner9.json",
+  "at": "first",
+  "en": "First spacecraft to orbit another planet",
+  "cur": "أول مركبة فضائية تدور حول كوكب آخر"
+ },
+ {
+  "rel": "missions/mars/mariner9.json",
+  "at": "description",
+  "en": "Mariner 9 made every orbiter that followed possible. After a 15-minute MOI burn placed it into Mars orbit on 1971-11-14, the planet below was unrecognisable — a global dust storm had hidden everything except the four Tharsis volcano summits. JPL waited it out. Through January 1972 the dust settled and Mariner 9 returned 7,329 images covering ~85% of the Martian surface, revealing Olympus Mons (the largest volcano in the solar system), Valles Marineris (the canyon system that bears its name), dried river channels suggesting an ancient liquid era, and the first close-ups of Phobos and Deimos. The mission ended 1972-10-27 when attitude-control gas ran out; the spacecraft remains in orbit, slowly decaying.",
+  "cur": "جعلت Mariner 9 كل مداري يليها ممكناً. بعد حرق MOI الذي استغرق 15 دقيقة وضعها في مدار المريخ في 1971-11-14، كان الكوكب تحتها غير معروف — عاصفة غبار عالمية كانت قد أخفت كل شيء ما عدا قمم أربعة براكين ثارسيس. انتظرت JPL الأمور. عبر يناير 1972 استقر الغبار وأرسلت Mariner 9 7,329 صورة تغطي ~85% من سطح المريخ، كاشفة جبل أوليمبوس (أكبر بركان في النظام الشمسي)، ووادي مارينر (نظام الأخدود الذي يحمل اسمها)، وقنوات نهرية جافة توحي بعصر سائل قديم، والصور الأولى عن قرب من فوبوس وديموس. انتهت المهمة في 1972-10-27 عندما نفد غاز التحكم في الاتجاه؛ المركبة الفضائية تبقى في المدار، تتحلل ببطء."
+ },
+ {
+  "rel": "missions/mars/mars-express.json",
+  "at": "first",
+  "en": "Europe's first interplanetary mission; longest-running non-NASA Mars orbiter",
+  "cur": "أول مهمة أوروبية بينكوكبية؛ أطول مدار مريخ غير NASA"
+ },
+ {
+  "rel": "missions/mars/mars-express.json",
+  "at": "description",
+  "en": "ESA's first mission to a planet other than Earth. The orbiter has produced the longest continuous record of Mars's atmosphere, mapping water ice deposits, methane plumes, and the planet's three-dimensional weather. Beagle 2, the British-built lander it carried, reached the surface but never deployed solar panels fully — declared lost in 2004, found intact by NASA's Mars Reconnaissance Orbiter in 2015. The orbiter is in its third decade of operation.",
+  "cur": "أول مهمة للـ ESA إلى كوكب غير الأرض. أنتجت المركبة الفضائية أطول سجل مستمر لغلاف المريخ الجوي، حيث رسمت خريطة لرواسب الجليد المائي، وألسنة الميثان، والطقس ثلاثي الأبعاد للكوكب. وصلت مركبة Beagle 2 التابعة للصناعة البريطانية، التي كانت تحملها، إلى السطح لكنها لم تنشر الألواح الشمسية بالكامل — أعلن عن فقدانها في عام 2004، وتم العثور عليها سليمة بواسطة Mars Reconnaissance Orbiter التابعة لـ NASA في عام 2015. تعمل المركبة الفضائية في عقدها الثالث من الخدمة."
+ },
+ {
+  "rel": "missions/mars/mars-pathfinder.json",
+  "at": "first",
+  "en": "First wheels on Mars; demonstrated airbag landing",
+  "cur": "أول عجلات على المريخ؛ أثبتت نظام الهبوط بالوسائد الهوائية"
+ },
+ {
+  "rel": "missions/mars/mars-pathfinder.json",
+  "at": "dispatch",
+  "en": "Mars Pathfinder was NASA’s proof that landing on Mars did not have to cost a fortune. Instead of the retrorocket hover the Vikings used, it hit the atmosphere behind a heat shield, popped a parachute, inflated a cocoon of airbags, and bounced dozens of times across the surface before rolling to a stop and opening like a flower. Out drove Sojourner — a rover the size of a microwave, the first wheels ever to turn on another planet. The science was modest; the point was the method. The airbag landing and the faster-cheaper-better approach it proved became the template for the far more ambitious rovers — Spirit, Opportunity, Curiosity — that followed.",
+  "cur": "كانت Mars Pathfinder إثباتاً من NASA بأن الهبوط على المريخ لا يتطلب إنفاق ثروة. فبدلاً من التحويم بالصواريخ الكابحة كما فعلت مركبتا Viking، اخترقت الغلاف الجوي خلف درع حراري، ثم فتحت مظلة، ونفخت شرنقة من الوسائد الهوائية، وارتدت عشرات المرات على السطح قبل أن تتوقف وتنفتح كزهرة. ومنها خرجت Sojourner — مركبة جوالة بحجم فرن ميكروويف، وأول عجلات تدور على كوكب آخر. كانت النتائج العلمية متواضعة؛ لكن المهم كان الطريقة. فقد أصبح الهبوط بالوسائد الهوائية ونهج «الأسرع والأرخص والأفضل» الذي أثبتته النموذج الذي احتذته المركبات الجوالة الأكثر طموحاً بكثير — Spirit وOpportunity وCuriosity — التي جاءت بعدها."
+ },
+ {
+  "rel": "missions/mars/mars-pathfinder.json",
+  "at": "description",
+  "en": "The mission that proved cheap interplanetary missions could work. Pathfinder used a novel airbag landing system — bouncing dozens of times across the surface before coming to rest — and delivered Sojourner, the first rover to operate on another planet. Sojourner traversed 100 m, examined a dozen rocks, and worked far past its 8-sol design lifetime. Pathfinder operated for 2 months 27 days; the mission's success revived NASA's interplanetary programme after the failures of the 1990s.",
+  "cur": "المهمة التي أثبتت أن المهام البيئية الرخيصة يمكن أن تنجح. استخدم Pathfinder نظام هبوط بالوسائد الهوائية مبتكرًا — يرتد عشرات المرات عبر السطح قبل التوقف — وألحق Sojourner، أول مستكشف يعمل على كوكب آخر. قطع Sojourner مسافة 100 م، وفحص حوالي عشرة صخور، وعمل بفترة أطول بكثير من عمره المخطط البالغ 8 أيام. عمل Pathfinder لمدة شهرين و27 يومًا؛ نجاح المهمة أعاد إحياء برنامج NASA للاستكشاف الكوكبي بعد فشل التسعينيات."
+ },
+ {
+  "rel": "missions/mars/mars3.json",
+  "at": "first",
+  "en": "First spacecraft to soft-land on Mars",
+  "cur": "أول مركبة فضائية تهبط بنعومة على المريخ"
+ },
+ {
+  "rel": "missions/mars/mars3.json",
+  "at": "description",
+  "en": "The Soviet Union's audacious double-mission to Mars in 1971 — Mars 2 and Mars 3 launched 9 days apart. Mars 2's lander crashed; Mars 3's lander achieved the first soft-landing on Mars but went silent ~110 seconds after touchdown — the actual transmission lasted only ~14.5 seconds — possibly due to the global dust storm raging at the time. The orbiter operated for 8 months, returning dozens of images and atmospheric measurements. Despite the brief surface mission, Mars 3 demonstrated that the descent and landing problem on Mars was solvable.",
+  "cur": "مهمة مزدوجة جريئة من الاتحاد السوفياتي إلى المريخ في عام 1971 — أُطلقت مركبتا Mars 2 و Mars 3 بفاصل 9 أيام. تحطم هابط Mars 2؛ بينما حقق هابط Mars 3 أول هبوط ناعم على المريخ لكنه توقف عن الإرسال بعد ~110 ثوانٍ من الهبوط — والإرسال الفعلي استمر فقط ~14.5 ثانية — يُحتمل أن يكون ذلك بسبب العاصفة الغبارية العالمية التي كانت تحتدم في ذلك الوقت. عمل المدار لمدة 8 أشهر، حيث أعاد عشرات الصور والقياسات الجوية. وعلى الرغم من قِصَر المهمة السطحية، أثبتت Mars 3 أن مشكلة الهبوط والنزول على المريخ كانت قابلة للحل."
+ },
+ {
+  "rel": "missions/mars/mars3.json",
+  "at": "events.1.label",
+  "en": "ORBITER MOI",
+  "cur": "دخول المدار حول المريخ"
+ },
+ {
+  "rel": "missions/mars/maven.json",
+  "at": "first",
+  "en": "First mission dedicated to studying how Mars lost its atmosphere",
+  "cur": "أول مهمة مخصصة لدراسة كيف فقد المريخ غلافه"
+ },
+ {
+  "rel": "missions/mars/maven.json",
+  "at": "description",
+  "en": "MAVEN — Mars Atmosphere and Volatile Evolution — answers the question 'where did Mars's air go?' Its elliptical orbit dips into the upper atmosphere, sampling ions and neutrals as the solar wind strips them away. Findings: Mars loses about 100 g of atmosphere per second to space — over billions of years that's enough to explain the missing climate. The spacecraft also serves as a critical relay for surface assets, including Curiosity and Perseverance.",
+  "cur": "MAVEN — Mars Atmosphere and Volatile Evolution — يجيب على السؤال \"أين ذهب الهواء على المريخ؟\" تغوص مداره البيضاوي في الغلاف الجوي العلوي، حيث يأخذ عينات من الأيونات والجزيئات المحايدة بينما تجردها الرياح الشمسية. النتائج: يفقد المريخ حوالي 100 غرام من غلافه الجوي كل ثانية نحو الفضاء — وعلى مليارات السنين، هذا كافٍ لتفسير المناخ المفقود. تعمل المركبة الفضائية أيضاً كمرحّل حرج لمراقبة السطح، بما فيها Curiosity و Perseverance."
+ },
+ {
+  "rel": "missions/mars/mmx.json",
+  "at": "first",
+  "en": "First sample return from a Martian moon",
+  "cur": "أول إعادة عينات من قمر مريخي"
+ },
+ {
+  "rel": "missions/mars/mmx.json",
+  "at": "description",
+  "en": "Martian Moons eXploration is JAXA's plan to land on Phobos, scoop ~10 g of regolith, and bring it home. The samples may settle a long-debated question: are Phobos and Deimos captured asteroids, or fragments from an ancient impact on Mars itself? The mission also includes a German-French rover for Phobos surface mobility — a wholly different operations model from anything the Hayabusa missions did at Itokawa or Ryugu. Launch was planned for 2024 but slipped to 2026 due to delays in JAXA's H3 launch vehicle.",
+  "cur": "Martian Moons eXploration هي خطة JAXA للهبوط على فوبوس، وجمع حوالي 10 غرامات من التربة السطحية، وإعادتها إلى الأرض. قد تحسم العيّنات نقاشاً طويل الأمد: هل فوبوس وديموس كويكبان أسيران، أم أنهما شظايا من اصطدام قديم على المريخ ذاته؟ تتضمن المهمة أيضاً مركبة جوالة ألمانية-فرنسية للتنقل على سطح فوبوس — وهو نموذج عمليات مختلف تماماً عما فعلته بعثات Hayabusa على إيتوكاوا أو ريوغو. كان من المخطط إطلاق المهمة في 2024 لكنها تأجلت إلى 2026 بسبب تأخيرات في مركبة الإطلاق H3 التابعة لـ JAXA."
+ },
+ {
+  "rel": "missions/mars/opportunity.json",
+  "at": "first",
+  "en": "Longest-driving Mars rover (45.16 km); 14-year surface lifetime against a 90-sol design",
+  "cur": "أطول مركبة جوالة على المريخ قطعت مسافة (45.16 كم)؛ عمر سطحي مدته 14 سنة ضد تصميم لمدة 90 يوم"
+ },
+ {
+  "rel": "missions/mars/opportunity.json",
+  "at": "dispatch",
+  "en": "Opportunity drove a marathon across another planet. Spirit’s twin, landed in 2004 for a ninety-day mission, it worked for fourteen years and crossed more than forty-five kilometres — the longest distance any vehicle has travelled on any world. It came down, by luck, in a small crater whose walls exposed exactly the water-laid rock it was sent to find, and then it just kept going, crater to crater, reading the ancient water story of Mars mile after mile. A planet-wide dust storm finally silenced it in 2018.",
+  "cur": "قطعت Opportunity مسافة ماراثون عبر كوكب آخر. التوأم الأول لـ Spirit، التي هبطت في عام 2004 في مهمة مدتها تسعون يوماً، عملت لمدة أربع عشرة سنة وقطعت أكثر من خمسة وأربعين كيلومتراً — أطول مسافة سافرت بها أي مركبة على أي عالم. هبطت، من حسن الحظ، في فوهة صغيرة تكشفت جدرانها عن الصخور المترسبة بالماء بالضبط التي أرسلت لاكتشافها، ثم استمرت في التحرك، من فوهة إلى فوهة أخرى، تقرأ قصة المياه القديمة لكوكب المريخ ميلاً تلو الميل. عاصفة غبار كوكبية أخيراً أسكتتها في عام 2018."
+ },
+ {
+  "rel": "missions/mars/opportunity.json",
+  "at": "description",
+  "en": "Opportunity (MER-B) hit a planetary jackpot — its airbag-cocooned lander bounced 26 times across Meridiani Planum and rolled into a 22-m crater (Eagle) by sheer luck, surrounded by exposed bedrock a rover could read without driving. First images showed jarosite + \"blueberry\" hematite concretions, the strongest mineral evidence to that point of standing liquid water on early Mars. Over 14 years 138 days (5,111 sols) Opportunity traversed 45.16 km — the Mars rover marathon record — visiting Endurance, Victoria, and Endeavour craters. A planet-wide dust storm in June 2018 blocked sunlight from its solar panels; final transmission was 2018-06-10, and NASA declared end-of-mission 2019-02-13.",
+  "cur": "حققت Opportunity (MER-B) حظاً وفيراً — هبطت داخل أكياس الهواء المغطية وارتدت 26 مرة عبر هضبة ميريدياني ودخلت فوهة بقطر 22 متر (Eagle) من خالص الحظ، محاطة بصخور ظاهرة يمكن لمركبة جوالة أن تدرسها دون الحاجة للتحرك. أظهرت الصور الأولى تجمعات جاروسيت + هيماتيت \"زرقاء\"، أقوى دليل معدني حتى تلك النقطة على وجود مياه سائلة دائمة على المريخ القديم. على مدى 14 سنة و138 يوماً (5,111 يوم مريخي) قطعت Opportunity مسافة 45.16 كم — رقم قياسي ماراثون مركبات المريخ الجوالة — زارت فيها Endurance و Victoria و Endeavour craters. عاصفة غبار كوكبية في يونيو 2018 حجبت أشعة الشمس عن ألواحها الشمسية؛ آخر إرسال كان في 2018-06-10، وأعلنت NASA عن نهاية المهمة في 2019-02-13."
+ },
+ {
+  "rel": "missions/mars/opportunity.json",
+  "at": "events.1.label",
+  "en": "TCM-1",
+  "cur": "تصحيح المسار الأول — TCM-1"
+ },
+ {
+  "rel": "missions/mars/opportunity.json",
+  "at": "events.2.label",
+  "en": "TCM-4",
+  "cur": "تصحيح نهائي قبل الهبوط — TCM-4"
+ },
+ {
+  "rel": "missions/mars/opportunity.json",
+  "at": "events.3.label",
+  "en": "EDL",
+  "cur": "الدخول والهبوط والإنزال"
+ },
+ {
+  "rel": "missions/mars/opportunity.json",
+  "at": "events.4.label",
+  "en": "TOUCHDOWN — INTO EAGLE CRATER",
+  "cur": "الهبوط — داخل فوهة EAGLE"
+ },
+ {
+  "rel": "missions/mars/perseverance.json",
+  "at": "first",
+  "en": "First helicopter on another planet (Ingenuity); first sample caching for Mars Sample Return",
+  "cur": "أول طائرة هليكوبتر على كوكب آخر (Ingenuity)؛ أول تجميع عينات لمهمة العودة بعينات من المريخ"
+ },
+ {
+  "rel": "missions/mars/perseverance.json",
+  "at": "dispatch",
+  "en": "Perseverance went to Mars to look for the dead. Landed in 2021 on the floor of Jezero Crater — a basin holding the delta of a river that fed a lake billions of years ago, exactly the kind of place life would have left traces — it is the first rover built specifically to search for signs of ancient life, and to do something no mission had done: seal Martian rock into tubes and set them aside for a future spacecraft to carry home. It also delivered Ingenuity, the small helicopter that made the first powered flight on another planet. If the samples it is caching are ever returned, they will be the first pieces of another planet’s surface brought back to Earth.",
+  "cur": "ذهب Perseverance إلى المريخ للبحث عن الموتى. هبط عام 2021 على قاع فوهة جيزيرو — حوضٍ يحتوي على دلتا نهرٍ كان يغذي بحيرة منذ مليارات السنين، وهو بالضبط النوع من الأماكن التي كانت الحياة ستترك فيها آثاراً — وهو أول مستكشف تم بناؤه بشكل خاص للبحث عن علامات الحياة القديمة، وللقيام بشيء لم تقم به أي مهمة من قبل: حفظ الصخور المريخية في أنابيب وتخزينها لمركبة فضائية مستقبلية تنقلها إلى الوطن. كما أنه نقل Ingenuity، الطائرة الهليكوبتر الصغيرة التي حققت أول رحلة بقوة محركات على كوكب آخر. إن كانت العينات التي يجمعها ويخزنها ستعود يوماً ما، فستكون أول قطع من سطح كوكب آخر تُحضر إلى الأرض."
+ },
+ {
+  "rel": "missions/mars/perseverance.json",
+  "at": "description",
+  "en": "Perseverance is the most ambitious Mars surface mission ever flown. Mars Sample Return depends on it — the rover is collecting and caching samples in tubes that a future mission will retrieve and bring to Earth. Ingenuity, the first helicopter on another planet, flew 72 missions before retiring with damaged rotors in January 2024 — proving controlled flight is possible in Mars's thin atmosphere. MOXIE, an oxygen-from-CO2 demonstrator, produced the first locally-made oxygen on another planet, a rehearsal for crewed Mars missions.",
+  "cur": "Perseverance هي الأكثر طموحاً من بين جميع مهام سطح المريخ التي تم إطلاقها حتى الآن. مهمة جلب عينات المريخ تعتمد عليها — فالمسبار يجمع العينات وتخزينها في أنابيب ستسترجعها مهمة مستقبلية وتحضرها إلى الأرض. Ingenuity، أول مروحية على كوكب آخر، نفذت 72 مهمة قبل أن تتوقف عن العمل بسبب تضرر أجنحتها في يناير 2024 — مما أثبت أن الطيران المحكوم ممكن في الغلاف الجوي الرقيق للمريخ. MOXIE، جهاز توليد الأكسجين من CO2، أنتجت أول أكسجين محلي الصنع على كوكب آخر، وهي بمثابة بروفة استعداداً لمهام المريخ التي سيقودها الإنسان."
+ },
+ {
+  "rel": "missions/mars/perseverance.json",
+  "at": "events.1.label",
+  "en": "TMI BURN",
+  "cur": "حرق نقل المسار للمريخ"
+ },
+ {
+  "rel": "missions/mars/perseverance.json",
+  "at": "events.3.label",
+  "en": "EDL",
+  "cur": "الهبوط والإنزال والهبوط"
+ },
+ {
+  "rel": "missions/mars/phoenix.json",
+  "at": "first",
+  "en": "First confirmation of water ice in the Martian arctic regolith; first soft propulsive Mars landing since Viking 2",
+  "cur": "أول تأكيد لوجود جليد مائي في التربة السطحية القطبية الشمالية للمريخ؛ أول هبوط ناعم بالدفع على المريخ منذ Viking 2"
+ },
+ {
+  "rel": "missions/mars/phoenix.json",
+  "at": "description",
+  "en": "Phoenix was salvaged from the cancelled Mars Surveyor 2001 program — flight hardware in storage for six years, reassembled and retargeted to the Martian north polar plains. The name was chosen literally. Landed 2008-05-25 at 68.22°N, 234.25°E on Vastitas Borealis, further north than any prior surface mission. Within days the robotic arm scraped through topsoil and exposed bright white ice that visibly sublimated on camera over four sols — direct confirmation of subsurface water ice in the Martian arctic. Detected perchlorates in the regolith and observed snow falling from clouds. Mission ended 2008-11-02 as solar power fell below operational threshold at the onset of Mars winter; the lander was never expected to survive the polar night.",
+  "cur": "تم إنقاذ Phoenix من برنامج Mars Surveyor 2001 الملغي — معدات طيران مخزنة لمدة ست سنوات، أعيد تجميعها وإعادة توجيهها إلى السهول القطبية الشمالية للمريخ. تم اختيار الاسم حرفياً. هبطت في 2008-05-25 عند 68.22° شمالاً، 234.25° شرقاً على فاستيتاس بورياليس، أبعد شمالاً من أي مهمة سطحية سابقة. في غضون أيام، كشطت الذراع الآلية التربة السطحية وكشفت عن جليد أبيض لامع تصاعد بشكل مرئي أمام الكاميرا على مدار أربعة أيام مريخية — تأكيد مباشر لوجود جليد مائي تحت السطح في القطب الشمالي للمريخ. اكتشفت البيركلورات في التربة السطحية ورصدت تساقط الثلوج من السحب. انتهت المهمة في 2008-11-02 عندما انخفضت الطاقة الشمسية إلى ما دون عتبة التشغيل مع بداية شتاء المريخ؛ لم يكن من المتوقع أبداً أن ينجو المسبار من الليل القطبي."
+ },
+ {
+  "rel": "missions/mars/schiaparelli.json",
+  "at": "first",
+  "en": "ESA's first Mars surface attempt; intended to demonstrate EDL ahead of ExoMars Rosalind Franklin",
+  "cur": "محاولة ESA الأولى للهبوط على سطح المريخ؛ الهدف منها إثبات تقنيات الهبوط والإقلاع الديناميكية في التحضير لمهمة ExoMars Rosalind Franklin"
+ },
+ {
+  "rel": "missions/mars/schiaparelli.json",
+  "at": "description",
+  "en": "Schiaparelli was the entry-descent-landing demonstrator carried piggyback on the ExoMars Trace Gas Orbiter (TGO). Named for the Italian astronomer Giovanni Schiaparelli, the craft was built to prove the EDL stack ESA intended to scale up for the Rosalind Franklin rover. Schiaparelli separated from TGO on 16 October 2016 and entered the Martian atmosphere three days later. The descent profile collapsed: a saturated inertial measurement unit caused the navigation software to think the craft had already landed at altitude — the parachute jettisoned early and the braking thrusters cut off after firing for only 3 seconds. Schiaparelli struck the surface at ~150 m/s. TGO itself completed orbit insertion successfully and continues operating.",
+  "cur": "كان Schiaparelli هو جهاز الهبوط والنزول والدخول الذي كان محمولاً بشكل إضافي على مسبار ExoMars Trace Gas Orbiter (TGO). سُمّي المركبة على اسم عالم الفلك الإيطالي جيوفاني سكيابارلي، وقد تم بناؤها لإثبات منظومة تقنيات الهبوط والإقلاع الديناميكية التي تعتزم ESA توسيع نطاقها لتطبيقها على مسيّر Rosalind Franklin. انفصل Schiaparelli عن TGO في 16 أكتوبر 2016 ودخل الغلاف الجوي للمريخ بعد ثلاثة أيام. انهار ملف النزول: تسبب مقياس وحدة قياس القصور الذاتي المشبّع في جعل برامج التصيد تعتقد أن المركبة قد هبطت بالفعل على ارتفاع — تم فصل المظلة مبكراً وتوقفت الدفاعات الكابحة عن العمل بعد الاشتغال لمدة 3 ثوان فقط. اصطدم Schiaparelli بالسطح بسرعة ~150 م/ث. أكمل TGO نفسه إدراج المدار بنجاح ولا يزال يعمل."
+ },
+ {
+  "rel": "missions/mars/spirit.json",
+  "at": "first",
+  "en": "First of the Mars Exploration Rover twins; longest-lived rover until passed by Curiosity",
+  "cur": "الأولى من توأم مركبات استكشاف المريخ؛ أطول مركبة جوّالة عمراً حتى تجاوزتها Curiosity"
+ },
+ {
+  "rel": "missions/mars/spirit.json",
+  "at": "dispatch",
+  "en": "Spirit was built for ninety days and worked for six years. One of a pair of golf-cart-sized geologists landed in 2004, it was sent to read the rocks for evidence of a wetter Martian past — and it found it, uncovering minerals that only form in water and, in one place, silica deposits like those left by hot springs on Earth. It climbed hills no one had planned for it to reach and survived winters it was never designed to see, until a wheel failed and it bogged down in soft sand. It kept transmitting from where it was stuck until the Martian cold finally took it.",
+  "cur": "بُنيت مركبة Spirit للعمل تسعين يوماً فعملت ست سنوات. واحدة من زوج من الجيولوجيين بحجم عربة الجولف هبطت عام 2004، أُرسلت لقراءة الصخور بحثاً عن أدلة على ماضٍ مريخي أرطب — ووجدتها، كاشفة عن معادن لا تتشكل إلا في الماء وفي مكان واحد ترسبات سيليكا مثل تلك المتروكة من الينابيع الساخنة على الأرض. تسلقت تلالاً لم يكن أحد قد خطط لها للوصول إليها وبقيت على قيد الحياة في فصول شتاء لم تُصمم لتحملها، حتى فشلت إحدى عجلاتها وانغرقت في الرمال الناعمة. استمرت بالإرسال من مكان انحشارها حتى استحوذ عليها البرد المريخي أخيراً."
+ },
+ {
+  "rel": "missions/mars/spirit.json",
+  "at": "description",
+  "en": "Spirit (MER-A) bounced 28 times across the floor of Gusev Crater on 2004-01-04 and rolled to a stop 250 m from its first impact. Designed for a 90-sol primary mission, it would survive 2,208 sols. Drove 7.7 km across Gusev's plains, climbed the Columbia Hills, and uncovered hematite-bearing rocks that signalled persistent ancient water. In 2009-04 a wheel broke through a sulphate crust at \"Troy\" and Spirit ground to a halt in soft soil; the team converted it to a stationary platform. Final transmission 2010-03-22; mission declared ended 2011-05-25. Twinned with Opportunity, which landed three weeks later on the opposite side of Mars.",
+  "cur": "Spirit (MER-A) ارتد 28 مرة عبر قاع حفرة Gusev في 2004-01-04 وتدحرج إلى التوقف على بعد 250 م من موقع تأثيره الأول. صُممت لمهمة أولية مدتها 90 يوماً شمسياً، لكنها استمرت لمدة 2,208 أيام شمسية. قادت المركبة 7.7 كم عبر سهول Gusev، وتسلقت تلال كولومبيا، وكشفت عن صخور تحتوي على الهيماتيت التي أشارت إلى وجود مياه قديمة مستمرة. في 2009-04 كسرت عجلة ما قشرة كبريتية في \"Troy\" وتوقفت Spirit عن الحركة في التربة الناعمة؛ حول الفريق المركبة إلى منصة ثابتة. آخر إرسال في 2010-03-22؛ تم إعلان انتهاء المهمة في 2011-05-25. عملت جنباً إلى جنب مع Opportunity، التي هبطت بعد ثلاثة أسابيع على الجانب الآخر من المريخ."
+ },
+ {
+  "rel": "missions/mars/starship-demo.json",
+  "at": "first",
+  "en": "First fully reusable launch system to attempt Mars landing",
+  "cur": "أول نظام إطلاق قابل لإعادة الاستخدام بالكامل يحاول الهبوط على المريخ"
+ },
+ {
+  "rel": "missions/mars/starship-demo.json",
+  "at": "description",
+  "en": "An uncrewed demonstration of the Starship Mars architecture: launch on Super Heavy, refill in LEO from a tanker variant, then trans-Mars injection of a fully-fuelled Starship and powered descent to the Martian surface. SpaceX's stated target is a 2026-2027 launch window; engineering reality (Starship still working through orbital flight reliability and on-orbit refilling has not been demonstrated) makes 2028 or later more likely. If it succeeds, it inverts the Mars payload economics — from thousands of kg to one hundred tonnes per landing.",
+  "cur": "عرض توضيحي بدون طاقم لعمارة Starship موجهة إلى المريخ: إطلاق على Super Heavy، وإعادة تعبئة في المدار الأرضي المنخفض من متغيّر الناقلة، ثم حقن العبور نحو المريخ لـ Starship مملوءة بالوقود بالكامل والهبوط المدفوع إلى سطح المريخ. الهدف المعلن من قبل SpaceX هو نافذة إطلاق في الفترة 2026–2027؛ الواقع الهندسي (Starship لا تزال تمر بمراحل اختبار موثوقية الرحلة المدارية، ولم يتم إثبات إعادة التعبئة في المدار) يجعل 2028 أو ما بعده أكثر احتمالاً. في حال نجاحها، ستقلب اقتصاديات الحمولة للمريخ — من آلاف الكيلوجرامات إلى مئة طن لكل هبوط."
+ },
+ {
+  "rel": "missions/mars/starship-demo.json",
+  "at": "events.1.label",
+  "en": "ORBITAL REFILLING",
+  "cur": "إعادة التعبئة المدارية"
+ },
+ {
+  "rel": "missions/mars/starship-mars-crew.json",
+  "at": "name",
+  "en": "Starship Mars Crew",
+  "cur": "Starship طاقم المريخ"
+ },
+ {
+  "rel": "missions/mars/starship-mars-crew.json",
+  "at": "first",
+  "en": "First proposed crewed return mission to Mars (SpaceX architecture)",
+  "cur": "أول مهمة عودة بشرية مقترحة إلى المريخ (بنية SpaceX)"
+ },
+ {
+  "rel": "missions/mars/starship-mars-crew.json",
+  "at": "description",
+  "en": "SpaceX's long-term crewed Mars architecture as outlined in Elon Musk's 2016, 2017, and 2024 IAC presentations. A Starship lifts off from Earth fully fuelled in low-Earth orbit via a fleet of refilling tanker flights, performs trans-Mars injection, and lands a crew of roughly 10 with cargo and ISRU equipment on the Martian surface. Return-leg propellant (methane + liquid oxygen) is manufactured on Mars from atmospheric CO₂ and subsurface water ice via the Sabatier process, enabling the same Starship to lift off again, perform trans-Earth injection, and return the crew. Round-trip duration depends on the launch window and surface stay; the illustrative timeline shown here is ~2.5 years door-to-door (213 days outbound, ~500-day surface stay, return on the next favourable window). The architecture is conceptual — date and parameters subject to substantial revision pending Starship maturation and ISRU validation.",
+  "cur": "بنية SpaceX طويلة الأمد لمهام المريخ بأطقم كما حددها إيلون ماسك في عروض IAC 2016 و2017 و2024. ستارشيب تنطلق من الأرض ممتلئة الوقود في المدار المنخفض عبر أسطول رحلات إعادة تعبئة ناقلة، تنفذ حقنًا نحو المريخ، تهبط بطاقم نحو 10 مع حمولة وعتاد استخدام موارد محلية. وقود العودة (ميثان + أكسجين سائل) يُصنع على المريخ من CO₂ الغلاف وجليد الماء تحت السطح بعملية Sabatier، فتقلع Starship مجددًا وتنفذ حقنًا نحو الأرض وتعيد الطاقم. مدة الرحلة الكاملة تعتمد على النافذة والبقاء السطحي؛ الخط الزمني التوضيحي هنا ~2.5 سنة ذهابًا وإيابًا (213 يوم ذهابًا، ~500 يوم بقاء، عودة في النافذة التالية). البنية مفاهيمية — التاريخ والمعاملات قابلة لتغيير كبير حتى يكتمل نضج Starship والتحقق من استخدام الموارد المحلية."
+ },
+ {
+  "rel": "missions/mars/starship-mars-crew.json",
+  "at": "events.1.label",
+  "en": "ORBITAL REFILLING",
+  "cur": "إعادة التعبئة المدارية"
+ },
+ {
+  "rel": "missions/mars/tianwen1.json",
+  "at": "first",
+  "en": "First mission to deliver orbiter, lander, and rover to Mars in a single launch",
+  "cur": "أول مهمة تُوصِل مدارًا وهابطًا وعربة في إطلاق واحد"
+ },
+ {
+  "rel": "missions/mars/tianwen1.json",
+  "at": "description",
+  "en": "China's first Mars mission accomplished what no agency had ever attempted in one launch: orbital insertion, atmospheric entry, soft landing, and rover deployment. The Zhurong rover operated 358 sols at Utopia Planitia, traversing 1.9 km, before entering planned hibernation in May 2022; it has not woken since (likely due to dust accumulation on solar panels). The orbiter remains active, mapping the planet at high resolution and serving as relay for ground assets.",
+  "cur": "أول مهمة مريخ صينية حققت ما لم تحاول وكالة في إطلاق واحد: إدخال مداري، دخول غلاف جوي، هبوط ناعم، ونشر عربة. عربة Zhurong عملت 358 يومًا مريخيًا في سهل يوتوبيا، قطعت 1.9 كم، قبل سبات مخطط مايو 2022؛ لم تستيقظ منذئذ (غالبًا غبار على الألواح الشمسية). المدار لا يزال نشطًا، يرسم الكوكب بدقة عالية ومرحّلًا للأصول الأرضية."
+ },
+ {
+  "rel": "missions/mars/viking1.json",
+  "at": "first",
+  "en": "First fully successful Mars landing; first long-duration surface science",
+  "cur": "أول هبوط ناجح بالكامل على المريخ؛ أول علم سطحي طويل الأمد"
+ },
+ {
+  "rel": "missions/mars/viking1.json",
+  "at": "description",
+  "en": "The mission that gave us our first sustained look at the Martian surface. Viking 1's lander operated for 6 years 4 months at Chryse Planitia — running biology experiments designed to detect life (results ambiguous; one experiment produced a positive signal still debated decades later), measuring weather, returning panoramic images, and analysing soil composition. The Viking orbiters together mapped 97% of Mars at ~300 m resolution and helped scout landing sites for missions still decades away.",
+  "cur": "البعثة التي منحتنا أول نظرة مستدامة على سطح المريخ. عمل هابط Viking 1 لمدة 6 سنوات و4 أشهر في منطقة سهل كريس — حيث أجرى تجارب بيولوجية صُممت للكشف عن الحياة (النتائج غامضة؛ أنتجت إحدى التجارب إشارة إيجابية لا تزال محل نقاش بعد عقود)، وقاس الطقس، وأعاد صوراً بانورامية، وحلّل تكوين التربة. قام مسباراا Viking معاً برسم خرائط لـ 97% من المريخ بدقة ~300 م وساعدا في الكشف عن مواقع الهبوط لبعثات تبعد عقوداً."
+ },
+ {
+  "rel": "missions/mars/viking1.json",
+  "at": "events.1.label",
+  "en": "TCM-1",
+  "cur": "تصحيح المسار الأول (TCM-1)"
+ },
+ {
+  "rel": "missions/mars/viking1.json",
+  "at": "events.2.label",
+  "en": "MARS ORBIT INSERTION",
+  "cur": "الدخول في مدار المريخ"
+ },
+ {
+  "rel": "missions/mercury/bepicolombo.json",
+  "at": "first",
+  "en": "First Europe + Japan joint planetary mission; second-ever spacecraft to orbit Mercury (after Messenger)",
+  "cur": "أول مهمة كوكبية مشتركة بين أوروبا واليابان؛ ثاني مركبة فضائية تدور حول عطارد (بعد Messenger)"
+ },
+ {
+  "rel": "missions/mercury/bepicolombo.json",
+  "at": "description",
+  "en": "Joint ESA / JAXA mission to Mercury, launched 2018-10-20 — named after Italian mathematician Giuseppe (Bepi) Colombo, who designed Mariner 10's multi-flyby trajectory. The 8-year cruise uses 9 gravity assists (Earth 2020, Venus 2020, Venus 2021, then six Mercury flybys 2021–2025) plus continuous ion-electric thrust from the Mercury Transfer Module to bleed off the enormous solar-gravity gradient between Earth and Mercury orbits. Mercury orbit insertion 2026-11-21; science operations begin early 2027 after MTM jettison and separation of the two orbiters — ESA's MPO (planetary surface + composition) and JAXA's Mio (magnetosphere). Tests of general relativity via radio-science range tracking through Mercury's strong solar-gravity environment are also planned.",
+  "cur": "مهمة مشتركة بين ESA و JAXA إلى عطارد، أُطلقت في 2018-10-20 — سُميت على اسم عالم الرياضيات الإيطالي جوزيبه (بيبي) كولومبو، الذي صمّم مسار التحليق المتعدد لـ Mariner 10. تستخدم رحلة السفر التي تستغرق 8 سنوات 9 عمليات مساعدة جاذبية (الأرض 2020، والزهرة 2020، والزهرة 2021، ثم ستة تحليقات حول عطارد 2021–2025) بالإضافة إلى دفع أيوني كهربائي مستمر من وحدة نقل عطارد للتخلص من تدرج الجاذبية الشمسية الهائل بين مدارات الأرض وعطارد. إدراج المسار حول عطارد 2026-11-21؛ تبدأ العمليات العلمية في أوائل 2027 بعد رمي وحدة نقل عطارد والفصل بين المداريين — MPO التابعة لـ ESA (سطح الكوكب والتركيب) و Mio التابعة لـ JAXA (الغلاف المغناطيسي). كما يُخطط إجراء اختبارات للنسبية العامة من خلال تتبع النطاق بالراديو العلمي عبر بيئة جاذبية شمسية قوية حول عطارد."
+ },
+ {
+  "rel": "missions/mercury/bepicolombo.json",
+  "at": "events.5.label",
+  "en": "MERCURY ORBIT INSERTION",
+  "cur": "إدراج المدار حول عطارد"
+ },
+ {
+  "rel": "missions/mercury/mariner10.json",
+  "at": "first",
+  "en": "First Mercury flyby; first dual-planet flyby; first gravity-assist mission",
+  "cur": "أول تحليق بعطارد؛ أول مهمة تحليق بكوكبين؛ أول مهمة بمساعدة جاذبية"
+ },
+ {
+  "rel": "missions/mercury/mariner10.json",
+  "at": "description",
+  "en": "First spacecraft to visit Mercury, first to fly past two planets, and first to use a gravity assist to reach its destination. Launched 1973-11-03 05:45 UTC from Cape Canaveral LC-36B on Atlas SLV-3D Centaur AC-34. Mariner 10 swung past Venus on 1974-02-05 (5768 km closest approach, first UV cloud-belt imaging of Venus) using the encounter to drop its perihelion into Mercury's orbital realm — the first deliberate gravity-assist trajectory in space history. Made three Mercury flybys: 1974-03-29 (703 km), 1974-09-21 (48069 km), and 1975-03-16 (327 km). Imaged ~45% of Mercury's surface — the only resolved imagery available until MESSENGER (2008-2015). Discovered Mercury's intrinsic magnetic field and thin sodium-helium exosphere. Solar-array temperature management was an open mission engineering problem: project scientists tilted the panels and rolled the spacecraft to keep them under 115°C. Mission ended 1975-03-24 when attitude-control nitrogen propellant was depleted; spacecraft is presumed to be in heliocentric orbit, periodically passing Mercury.",
+  "cur": "أول مركبة فضائية تزور عطارد، أول من حلّق بكوكبين، وأول من استخدم المساعدة الجاذبية للوصول إلى وجهته. أُطلقت في 1973-11-03 الساعة 05:45 بالتوقيت العالمي من رأس كانافيرال LC-36B على صاروخ Atlas SLV-3D Centaur AC-34. مرت Mariner 10 بجوار الزهرة في 1974-02-05 (5768 كم في أقرب نقطة، أول تصوير بالأشعة فوق البنفسجية لحزام السحب على الزهرة) مستفيدة من اللقاء لخفض حضيضها إلى مدار عطارد — أول مسار متعمد بمساعدة جاذبية في تاريخ الفضاء. أجرت ثلاث رحلات تحليق حول عطارد: 1974-03-29 (703 كم)، 1974-09-21 (48069 كم)، و1975-03-16 (327 كم). صوّرت نحو 45% من سطح عطارد — وهي الصور الوحيدة المتاحة بدقة جيدة حتى MESSENGER (2008-2015). اكتشفت المجال المغناطيسي الذاتي لعطارد وغلافه الخارجي الرقيق من الصوديوم والهيليوم. كانت إدارة درجة حرارة الألواح الشمسية مشكلة هندسية مفتوحة: قام علماء المشروع بإمالة الألواح ولف المركبة لإبقائها تحت 115°م. انتهت المهمة في 1975-03-24 عند نفاد وقود النيتروجين للتحكم في الوضعية؛ يُفترض أن المركبة في مدار حول الشمس، تمر بعطارد بشكل دوري."
+ },
+ {
+  "rel": "missions/mercury/messenger.json",
+  "at": "first",
+  "en": "First spacecraft to orbit Mercury; first complete surface map of the innermost planet",
+  "cur": "أول مركبة فضائية تدور حول عطارد؛ أول خريطة سطح شاملة للكوكب الأقرب إلى الشمس"
+ },
+ {
+  "rel": "missions/mercury/messenger.json",
+  "at": "description",
+  "en": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) used six gravity assists across seven years — Earth, Venus twice, Mercury three times — to slow into Mercury orbit on 2011-03-18. Sunshade-protected with one side at 370 °C and the other at -45 °C. Discoveries included water ice in permanently shadowed polar craters, previously unknown “hollows” geological features, and confirmation that Mercury's iron core occupies ~85 % of the planet's radius (the largest core-to-radius ratio of any planet in the solar system). Mission ended with a controlled impact onto Mercury’s surface 2015-04-30 after fuel ran out.",
+  "cur": "استخدم MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) ستة مساعدات جاذبية على مدى سبع سنوات — من الأرض والزهرة مرتين وعطارد ثلاث مرات — للتبطؤ والدخول في مدار عطارد في 2011-03-18. محمي بغطاء شمسي حيث يبلغ درجة حرارة أحد جانبيه 370 °C والجانب الآخر -45 °C. شملت الاكتشافات الجليد المائي في الفوهات القطبية المظللة بشكل دائم، وميزات جيولوجية غير معروفة سابقاً تسمى \"الفجوات\"، وتأكيد أن اللب الحديدي لعطارد يشغل حوالي 85 % من نصف قطر الكوكب (أكبر نسبة لب إلى نصف قطر من أي كوكب في النظام الشمسي). انتهت المهمة برصد تصادمي مسيطر عليه على سطح عطارد في 2015-04-30 بعد نفاد الوقود."
+ },
+ {
+  "rel": "missions/mercury/messenger.json",
+  "at": "events.1.label",
+  "en": "EARTH GRAVITY ASSIST",
+  "cur": "مساعدة جاذبية من الأرض"
+ },
+ {
+  "rel": "missions/mercury/messenger.json",
+  "at": "events.2.label",
+  "en": "MERCURY ORBIT INSERTION",
+  "cur": "الدخول إلى مدار عطارد"
+ },
+ {
+  "rel": "missions/moon/apollo10.json",
+  "at": "dispatch",
+  "en": "Apollo 10 flew the entire landing — right up to the last fifteen kilometres — and then, by design, turned around. Stafford and Cernan took the Lunar Module down to within a stone's throw of the surface at Tranquility, ran every step of the descent, and climbed back to orbit without touching down. NASA even left the ascent tanks half-empty, so that however tempting it got, going for it was never an option. It is the least-celebrated flight of the program and one of the most disciplined: a full-speed rehearsal by two men who flew a quarter-million miles knowing the landing belonged to someone else.",
+  "cur": "طارت Apollo 10 بعملية الهبوط بأكملها — وصولاً إلى الخمسة عشر كيلومتراً الأخيرة — ثم استدارت بحسب التصميم. أخذ ستافورد وسيرنان الوحدة القمرية إلى مسافة قريبة جداً من السطح عند Tranquility، ونفّذا كل خطوة من خطوات الهبوط، ثم عادا إلى المدار دون الهبوط. بل إن NASA تركت خزانات الصعود نصف فارغة، بحيث مهما كان الإغراء شديداً، لم يكن المضي قدماً خياراً متاحاً. إنها الرحلة الأقل احتفاءً في البرنامج وواحدة من أكثرها انضباطاً: بروفة بسرعة كاملة قام بها رجلان طارا ربع مليون ميل وهما يعلمان أن الهبوط من نصيب شخص آخر."
+ },
+ {
+  "rel": "missions/moon/apollo10.json",
+  "at": "first",
+  "en": "Full lunar-landing dress rehearsal — LM descended to ~15.6 km altitude",
+  "cur": "بروفة الهبوط القمري الكاملة — هبط LM إلى ارتفاع ~15.6 كم"
+ },
+ {
+  "rel": "missions/moon/apollo10.json",
+  "at": "description",
+  "en": "The full dress rehearsal for the first lunar landing. Stafford and Cernan flew LM Snoopy down to ~15.6 km altitude above the planned Apollo 11 landing site at Mare Tranquillitatis — every step of a landing approach except the actual landing itself. They confirmed the descent profile, the landing radar, the ascent trajectory, and the rendezvous procedure that Apollo 11 would use two months later. The LM's ascent-stage propellant tanks were deliberately underfueled (~50 % of nominal) to prevent any temptation to attempt a landing. Snoopy's ascent stage was the only one to leave lunar orbit with positive ∆v — jettisoned into a heliocentric orbit where it remains today, intermittently re-detected by amateur astronomers (most recently confirmed by Nick Howes / Faulkes Telescope, 2019).",
+  "cur": "البروفة الكاملة لأول هبوط قمري. حلّق ستافورد وسيرنان بـ Snoopy إلى ارتفاع ~15.6 كم فوق موقع هبوط Apollo 11 المخطط في بحر السكون — كل خطوة من نهج الهبوط باستثناء الهبوط الفعلي. أكدوا الملف الشخصي للنزول، رادار الهبوط، مسار الصعود، وإجراء الالتقاء الذي سيستخدمه Apollo 11 بعد شهرين. خزانات وقود الصعود لـ Snoopy كانت معبأة عمداً بأقل من المعتاد (~50%) لمنع أي إغراء بمحاولة الهبوط. مرحلة صعود Snoopy كانت الوحيدة التي غادرت المدار القمري مع ∆v إيجابية — أُلقيت في مدار شمسي حيث تبقى اليوم."
+ },
+ {
+  "rel": "missions/moon/apollo11.json",
+  "at": "dispatch",
+  "en": "Apollo 11 was the flight the whole program was built to make — the one that had to work. For eight years and $25 billion, everything NASA did came down, in the end, to getting two people onto this particular patch of grey dust and back off it alive. When Armstrong called \"the Eagle has landed,\" the Cold-War race that opened with a beeping sphere over American cities was effectively over. What's easy to forget now is how little margin there was: the crew came down with seconds of fuel to spare, past a boulder field the maps hadn't shown, riding a guidance computer that was throwing alarms the whole way. It worked anyway — and for one night, a fifth of the species watched the same thing at the same time.",
+  "cur": "كانت رحلة Apollo 11 هي الرحلة التي بُني البرنامج بأكمله من أجلها — تلك التي كان يجب أن تنجح. لمدة ثماني سنوات وبتكلفة 25 مليار دولار، كل ما فعلته NASA تلخّص في النهاية في إيصال شخصين إلى هذه الرقعة بالذات من الغبار الرمادي وإعادتهما منها على قيد الحياة. عندما أعلن آرمسترونغ \"هبط Eagle\"، كان السباق في الحرب الباردة الذي بدأ بكرة صافرة فوق المدن الأمريكية قد انتهى فعلياً. ما يسهل نسيانه الآن هو مدى ضيق الهامش: هبطت الطاقم بثوانٍ من الوقود المتبقي، متجاوزة حقل صخور لم تُظهره الخرائط، على متن حاسوب توجيه كان يُطلق إنذارات طوال الطريق. نجحت المهمة على أي حال — وفي ليلة واحدة، شاهد خُمس البشرية الشيء نفسه في الوقت نفسه."
+ },
+ {
+  "rel": "missions/moon/apollo11.json",
+  "at": "first",
+  "en": "First humans on another celestial body",
+  "cur": "أول بشر على جرم سماوي آخر"
+ },
+ {
+  "rel": "missions/moon/apollo11.json",
+  "at": "description",
+  "en": "The mission that fulfilled Kennedy's 1961 commitment to put a man on the Moon by the end of the decade. Armstrong and Aldrin spent 21 hours 36 minutes on the lunar surface — 2.5 hours of EVA, 21.55 kg of samples, and a single commemorative plaque. The laser retroreflector they installed at Mare Tranquillitatis still receives pulses today, measuring the Earth-Moon distance to millimetre precision. The mission was watched live by ~600 million people, one fifth of humanity at the time.",
+  "cur": "المهمة التي حققت تعهد Kennedy 1961 بوضع إنسان على القمر قبل نهاية العقد. أمضى آرمسترونغ وألدرن 21 ساعة و36 دقيقة على السطح — نشاط خارج المركبة 2.5 ساعة، عينات 21.55 كغ، لوحة تذكارية واحدة. العاكس الليزري في بحر السكون لا يزال يستقبل نبضات اليوم. شاهدها حيًا نحو 600 مليون شخص، خُمس البشرية آنذاك."
+ },
+ {
+  "rel": "missions/moon/apollo12.json",
+  "at": "first",
+  "en": "Second crewed Moon landing — pinpoint touchdown 163 m from Surveyor 3",
+  "cur": "ثاني هبوط مأهول على القمر — هبوط دقيق على بعد 163 م من Surveyor 3"
+ },
+ {
+  "rel": "missions/moon/apollo12.json",
+  "at": "dispatch",
+  "en": "If Apollo 11 proved you could reach the Moon, Apollo 12 proved you could reach a particular spot on it. Thirty-six seconds after launch, lightning struck the rocket and knocked the spacecraft's instruments offline; a twenty-four-year-old controller named John Aaron pulled an obscure fix — \"SCE to AUX\" — from memory, and the flight went on. Then Conrad and Bean set their Lunar Module down on the Ocean of Storms a few hundred feet from a probe that had been sitting there for two years, walked over, and brought pieces of it home. That precision was the real result: the Moon had stopped being a destination and become an address.",
+  "cur": "إذا أثبت Apollo 11 أنه يمكنك الوصول إلى القمر، فقد أثبت Apollo 12 أنه يمكنك الوصول إلى موقع معين عليه. بعد 36 ثانية من الإطلاق، أصاب البرق الصاروخ وأطفأ أجهزة المركبة الفضائية؛ قام متحكم يبلغ من العمر أربعة وعشرين سنة يُدعى جون آرون بسحب إصلاح غامض من ذاكرته — \"SCE to AUX\" — واستمرت الرحلة. بعد ذلك، هبط كونراد وبين بوحدة الهبوط القمري على محيط العواصف على بعد مئات الأقدام من مسبار ظل يجلس هناك لمدة سنتين، وذهبوا إليه وأحضروا قطعا منه إلى الوطن. كانت هذه الدقة هي النتيجة الحقيقية: توقف القمر عن كونه وجهة وأصبح عنوانا."
+ },
+ {
+  "rel": "missions/moon/apollo12.json",
+  "at": "description",
+  "en": "The second crewed Moon landing. Saturn V was struck by lightning twice during ascent (T+36 s and T+52 s) — Bean restored the spacecraft via the famous \"SCE to AUX\" call from EECOM John Aaron, then the crew re-aligned the inertial measurement unit in lunar orbit. Conrad and Bean executed a pinpoint landing on the Ocean of Storms within 163 m of Surveyor 3 (which had soft-landed in April 1967), then walked to Surveyor 3 and removed its camera + sample of its surface — pieces that came home to Earth for analysis of long-term lunar-surface exposure. They deployed ALSEP (the full Apollo Lunar Surface Experiments Package — the first ALSEP, vs Apollo 11's simpler EASEP) which transmitted data for 8 years. The mission returned 34 kg of samples including dark mare basalts.",
+  "cur": "الهبوط الثاني المأهول بالبشر على القمر. تعرض الصاروخ Saturn V للضربة برقية مرتين خلال الصعود (T+36 ث و T+52 ث) — استعاد بين الفضاء الجوي من خلال المكالمة الشهيرة «SCE to AUX» من عضو فريق المراقبة جون آرون، ثم قام الطاقم بإعادة محاذاة وحدة القياس بالقصور الذاتي في المدار القمري. نفذ كونراد وبين هبوطاً دقيقاً على محيط العواصف على بعد 163 م من المسبار Surveyor 3 (الذي هبط بهدوء في إبريل 1967)، ثم توجها إلى Surveyor 3 وأزالا كاميراته وعينة من سطحه — قطع عادت إلى الأرض للتحليل والتحقق من التعرض طويل الأمد لسطح القمر. نشروا ALSEP (مجموعة تجارب سطح القمر الكاملة من Apollo — أول ALSEP، مقابل EASEP الأبسط من Apollo 11) الذي أرسل البيانات لمدة 8 سنوات. أعادت البعثة 34 كغ من العينات بما فيها البازلت البحري الداكن."
+ },
+ {
+  "rel": "missions/moon/apollo13.json",
+  "at": "first",
+  "en": "The mission that turned a near-disaster into NASA's most celebrated rescue",
+  "cur": "المهمة التي حولت الكارثة المتوشكة إلى أعظم عملية إنقاذ في NASA"
+ },
+ {
+  "rel": "missions/moon/apollo13.json",
+  "at": "dispatch",
+  "en": "Apollo 13 never landed, and it is the mission everyone remembers. Two days out, an oxygen tank tore itself apart and turned a routine flight to the Fra Mauro highlands into a four-day problem of keeping three men alive in a dying spacecraft a quarter-million miles from home. What saved them was not heroics; it was preparation and a roomful of people working the problem in real time, improvising a way to breathe and a way home out of whatever was already bolted to the vehicle. NASA called it a successful failure. It is closer to the truth to say it is the flight that proved the agency was as good as it claimed to be.",
+  "cur": "لم تهبط Apollo 13 على الإطلاق، وهي المهمة التي يتذكرها الجميع. بعد يومين من الإطلاق، انفجر خزان أكسجين وحوّل رحلة روتينية إلى هضاب فرا ماورو إلى مشكلة استمرت أربعة أيام لإبقاء ثلاثة رجال أحياء في مركبة فضائية محتضرة على بُعد ربع مليون ميل من الوطن. ما أنقذهم لم يكن البطولات؛ بل كان الإعداد المسبق وقاعة مليئة بأناس يعالجون المشكلة في الوقت الفعلي، ويرتجلون طريقة للتنفس وطريقة للعودة من كل ما كان مثبتاً أصلاً على المركبة. سمّتها NASA فشلاً ناجحاً. والأقرب إلى الحقيقة القول إنها الرحلة التي أثبتت أن الوكالة بالجودة التي ادّعتها."
+ },
+ {
+  "rel": "missions/moon/apollo13.json",
+  "at": "description",
+  "en": "Apollo 13 was meant to be the third crewed lunar landing, targeted at the Fra Mauro highlands. At 55 hours 54 minutes into the flight an oxygen tank in the Service Module ruptured, crippling the Command-Service Module's electrical and life-support systems. With landing scrubbed, the crew — James Lovell, Jack Swigert, and Fred Haise — powered down the CSM, moved into the Lunar Module Aquarius as a lifeboat, and used the LM's descent engine for a Pericynthion+2-hour burn that placed them on a fast free-return trajectory. They swung past the Moon at 254 km altitude on 1970-04-15 and splashed down safely in the South Pacific on 1970-04-17. The mission is studied today as a model of disciplined real-time engineering improvisation.",
+  "cur": "كان Apollo 13 مخصصاً ليكون الهبوط القمري المأهول بالبشر الثالث، موجهاً نحو مرتفعات فرا ماورو. بعد 55 ساعة و 54 دقيقة من الرحلة، انفجر خزان أكسجين في وحدة الخدمة Service Module، مما عطّل الأنظمة الكهربائية ودعم الحياة في وحدة القيادة والخدمة Command-Service Module. مع إلغاء الهبوط، قام الطاقم — جيمس لوفل وجاك سويغيرت وفريد هايس — بإطفاء وحدة القيادة والخدمة، وانتقلوا إلى وحدة الهبوط القمري Aquarius كقارب نجاة، واستخدموا محرك النزول في الـ LM لحرق Pericynthion+2 ساعة وضعهم على مسار عودة حر سريع. مرّوا بجانب القمر على ارتفاع 254 كم في 1970-04-15 وهبطوا بأمان في المحيط الهادئ الجنوبي في 1970-04-17. تُدرَّس المهمة اليوم كنموذج للارتجال الهندسي الحقيقي المنضبط والمتزامن."
+ },
+ {
+  "rel": "missions/moon/apollo13.json",
+  "at": "events.3.label",
+  "en": "OXYGEN TANK #2 RUPTURE",
+  "cur": "انفجار خزان الأكسجين رقم 2"
+ },
+ {
+  "rel": "missions/moon/apollo13.json",
+  "at": "events.4.label",
+  "en": "FREE-RETURN BURN",
+  "cur": "عملية الحرق للعودة الحرة"
+ },
+ {
+  "rel": "missions/moon/apollo14.json",
+  "at": "dispatch",
+  "en": "Apollo 14 had to prove the program could still land. It flew nine months after Apollo 13 nearly killed its crew, took over the target Apollo 13 never reached, and put Alan Shepard back in space a decade after he became the first American to leave the planet — grounded in between for years by an inner-ear disorder, and now, at forty-seven, the oldest person to walk on the Moon. He and Mitchell came up about thirty metres short of Cone Crater's rim, unable to tell in the confusing terrain how close they had actually gotten. Then, in the last minutes on the surface, Shepard swung a makeshift six-iron at two golf balls — a stunt, and also a quiet signal that the crisis was behind them and Apollo was flying again.",
+  "cur": "كان على Apollo 14 أن تثبت أن البرنامج لا يزال قادراً على الهبوط. حلّقت بعد تسعة أشهر من مهمة Apollo 13 التي كادت أن تقتل طاقمها، واستولت على الهدف الذي لم تصل إليه Apollo 13 مطلقاً، وأعادت ألان شيبارد إلى الفضاء بعد عقد من أن أصبح أول أمريكي يغادر الكوكب — بقي على الأرض خلال تلك الفترة لسنوات بسبب اضطراب في الأذن الداخلية، والآن، في السابعة والأربعين من عمره، أصبح أكبر شخص يمشي على القمر. هو وميتشيل اقتربا حوالي ثلاثين متراً من حافة فوهة كون، غير قادرَين على تحديد مدى قربهما الفعلي في التضاريس المربكة. ثم، في الدقائق الأخيرة على السطح، أرجح شيبارد مضرب غولف مرتجل من نوع six-iron على كرتَي غولف — حركة استعراضية، وأيضاً إشارة هادئة بأن الأزمة أصبحت خلفهم وأن Apollo عادت للتحليق مجدداً."
+ },
+ {
+  "rel": "missions/moon/apollo14.json",
+  "at": "first",
+  "en": "Third lunar landing — Apollo 13's lost target reached; Shepard's golf shots",
+  "cur": "الهبوط القمري الثالث — تم الوصول إلى هدف Apollo 13 المفقود؛ ضربات غولف شيبارد"
+ },
+ {
+  "rel": "missions/moon/apollo14.json",
+  "at": "description",
+  "en": "The third crewed Moon landing and Alan Shepard's second flight — making him both the first American in space (Freedom 7, 1961) and the fifth man on the Moon, at age 47 the oldest Moonwalker. Apollo 14 was the recovery mission after Apollo 13's aborted landing, taking over Apollo 13's intended Fra Mauro Highlands target. Shepard and Mitchell deployed ALSEP, completed two EVAs totalling 9 h 23 m, and pulled the modular equipment transporter (MET, a rickshaw-style cart — the LRV was still one mission away) toward Cone Crater, though they came up ~30 m short of the rim due to navigation uncertainty in the cratered terrain. In the final minutes of EVA-2, Shepard improvised a six-iron golf-club head onto a sample-collection handle and hit two golf balls \"miles and miles and miles\" (one was later analysed from imagery at ~24 m and ~37 m). Stuart Roosa carried tree seeds in Kitty Hawk that became the \"Moon Trees\" planted across the US. 42 kg of samples returned.",
+  "cur": "الهبوط الثالث برمّة على سطح القمر، وثاني رحلة لألان شيبارد — ما جعله الأمريكي الأول في الفضاء (Freedom 7، 1961) وخامس إنسان على سطح القمر، وكان في سنّ السابعة والأربعين أكبر عمراً بين سالكي القمر جميعاً. كانت Apollo 14 مهمة الاستعادة بعد الهبوط الفاشل في Apollo 13، وتسلّمت الهدف المقصود الذي لم تحققه Apollo 13 في منطقة فرا ماورو. نشر شيبارد وميتشل جهاز ALSEP، وأتمّا نشاطين خارج المركبة (EVA) بمدة إجمالية قدرها 9 ساعات و23 دقيقة، وسحبا ناقل المعدات المعياري (MET، عربة بنمط الريكشا — لم تكن المركبة الجوّالة القمرية LRV متاحة بعد)، نحو فوهة Cone، لكنهما لم يصلا إلى حافتها سوى بفارق ~30 متراً بسبب عدم التأكد من التموضع في التضاريس الحفرية. في الدقائق الأخيرة من نشاط EVA-2، ارتجل شيبارد رأس عصا جولف من نوع (six-iron) وألصقها بمقبض جهاز جمع العينات، وضرب كرتي جولف تحوّم \\\"الأميال والأميال والأميال\\\" (حُللت إحداهما لاحقاً من الصور بمسافات تقدّر بـ ~24 متراً و~37 متراً). كان ستوارت روزا يحمل بذور أشجار على متن Kitty Hawk، وأصبحت فيما بعد \\\"أشجار القمر\\\" التي غُرست في جميع أنحاء الولايات المتحدة. عادت 42 كيلوجراماً من العينات."
+ },
+ {
+  "rel": "missions/moon/apollo14.json",
+  "at": "events.6.label",
+  "en": "CONE CRATER + GOLF",
+  "cur": "CONE CRATER + الغولف"
+ },
+ {
+  "rel": "missions/moon/apollo15.json",
+  "at": "first",
+  "en": "First J-mission — extended stay, first Lunar Roving Vehicle, \"Genesis Rock\"",
+  "cur": "أول بعثة من نوع J — إقامة ممتدة، وأول مركبة قمرية جوالة، و«Genesis Rock»"
+ },
+ {
+  "rel": "missions/moon/apollo15.json",
+  "at": "dispatch",
+  "en": "By Apollo 15 the race was long over, and the science took the wheel — literally. This was the first flight to carry the Lunar Rover, which turned a two-mile walking radius into a proper eighteen-mile field expedition, and it set down not on a safe flat plain but in a valley between a mountain range and a winding canyon. Scott and Irwin came home with the \"Genesis Rock,\" a four-billion-year-old shard of the Moon's original crust that confirmed how it had formed. Apollo had stopped visiting the Moon and started studying it — and it kept getting better at that right up until it was cancelled.",
+  "cur": "مع Apollo 15، كانت السباق قد انتهت منذ زمن بعيد، وتولت العلوم زمام الأمور — حرفيًا. كانت هذه أول رحلة تقل مركبة القمر الجوالة، التي حولت نطاق المشي لمسافة ميلين إلى حملة استكشافية حقيقية تبلغ ثمانية عشر ميلاً، وهبطت ليس على سهل آمن بسيط بل في وادٍ بين سلسلة جبال وكانيون متعرج. عاد سكوت وإروين بـ \"صخرة Genesis Rock\"، وهي جزء من القشرة الأصلية للقمر يعود تاريخه إلى أربعة مليارات سنة، وأكدت كيف تشكل القمر. توقف Apollo عن زيارة القمر وبدأ في دراسته — واستمر في التحسن في ذلك حتى تم إلغاؤه."
+ },
+ {
+  "rel": "missions/moon/apollo15.json",
+  "at": "description",
+  "en": "The first \"J-mission\" — extended-stay scientific Apollo with the new Lunar Roving Vehicle. The LRV gave Scott + Irwin a 27.9 km traverse range (vs the 3.5 km of walking-only Apollo 14), opening the dramatic Hadley-Apennine site at the foot of a 4.5-km mountain range and the edge of the sinuous Hadley Rille. Three EVAs totalling 18 h 35 m, 77 kg of samples returned, including the famous \"Genesis Rock\" (sample 15415) — a 4.1-billion-year-old anorthosite confirming the magma-ocean origin of the lunar highlands crust. Scott's televised \"hammer-feather drop\" verified Galileo's law of gravitation live. Worden in lunar orbit operated a SIM-bay full of remote-sensing instruments (mapping cameras, gamma-ray, X-ray, alpha-particle spectrometers) and performed the first deep-space EVA on the way home (~39-minute EVA at ~317 000 km from Earth to retrieve the film canisters). Apollo 15's recovery was marred by one of three parachutes failing to deploy — CM splashed down hard but crew was safe.",
+  "cur": "أول \"بعثة من نوع J\" — بعثة Apollo علمية موسعة الإقامة مع مركبة القمر الجوالة الجديدة. منحت المركبة الجوالة سكوت وإروين نطاق عبور بقدر 27.9 كم (مقابل 3.5 كم للمشي فقط في Apollo 14)، فتحت موقع Hadley-Apennine الدرامي عند سفح سلسلة جبال يبلغ ارتفاعها 4.5 كم وعلى حافة أخدود هادلي المتعرجة. ثلاث نزهات خارج المركبة بإجمالي 18 ساعة 35 دقيقة، أعيد 77 كج من العينات، بما فيها \"Genesis Rock\" الشهيرة (عينة 15415) — أنورثوسايت يعود تاريخها إلى 4.1 مليار سنة، تؤكد الأصل من محيط من الماغما للقشرة القمرية للمرتفعات. أكدت النقرة الكلاسيكية \"المطرقة-الريشة\" التي تلفزها سكوت قانون الجاذبية لغاليليو مباشرة. عمل Worden في المدار القمري بخليج SIM مليء بأدوات الاستشعار من بعيد (كاميرات الخرائط، مطيافات أشعة جاما وأشعة إكس وجزيئات ألفا) وأجرى أول نزهة خارج المركبة في الفضاء العميق في الطريق للعودة (نزهة حوالي 39 دقيقة على بُعد حوالي 317 000 كم من الأرض لاسترجاع علب الأفلام). تم تشويه استعادة Apollo 15 بفشل أحد المظلات الرئيسية الثلاث في الانتشار بالكامل — هبط وحدة القيادة بقوة لكن طاقم العمل كان آمنًا."
+ },
+ {
+  "rel": "missions/moon/apollo15.json",
+  "at": "events.4.label",
+  "en": "FIRST LRV TRAVERSE",
+  "cur": "أول عبور بالمركبة الجوالة"
+ },
+ {
+  "rel": "missions/moon/apollo15.json",
+  "at": "events.6.label",
+  "en": "HAMMER-FEATHER DROP",
+  "cur": "إسقاط المطرقة والريشة"
+ },
+ {
+  "rel": "missions/moon/apollo15.json",
+  "at": "events.9.label",
+  "en": "DEEP-SPACE EVA",
+  "cur": "نزهة في الفضاء العميق"
+ },
+ {
+  "rel": "missions/moon/apollo16.json",
+  "at": "dispatch",
+  "en": "Apollo 16 went to the lunar highlands to sample ancient volcanoes and found there had never been any. Geologists were sure the pale, rugged Descartes region was volcanic; every rock Young and Duke brought back was breccia — rubble welded together by impacts. Being wrong was the payoff: the Moon's bright highlands turned out to be a record of a young solar system under relentless bombardment, not eruption. It is a clean example of how exploration actually earns its keep — you go to confirm what you already think you know, and the place tells you something better.",
+  "cur": "ذهبت Apollo 16 إلى المرتفعات القمرية لأخذ عينات من البراكين القديمة واكتشفت أنه لم يكن هناك أي براكين قط. كان الجيولوجيون متأكدين من أن منطقة Descartes الشاحبة الوعرة كانت بركانية؛ لكن كل صخرة أحضرها يونغ وديوك كانت بريشيا — حطام ملحوم معًا بفعل الاصطدامات. كان الخطأ هو المكسب: اتضح أن المرتفعات المضيئة للقمر كانت سجلاً لنظام شمسي فتي تحت قصف متواصل، وليس ثورانًا بركانيًا. إنه مثال واضح على كيف أن الاستكشاف يستحق قيمته فعليًا — تذهب لتؤكد ما تعتقد أنك تعرفه بالفعل، فيخبرك المكان بشيء أفضل."
+ },
+ {
+  "rel": "missions/moon/apollo16.json",
+  "at": "first",
+  "en": "First Moon landing in the lunar highlands — Descartes; John Young's \"lunar Grand Prix\"",
+  "cur": "أول هبوط قمري في المرتفعات القمرية — Descartes؛ \"جائزة جون يونغ القمرية الكبرى\""
+ },
+ {
+  "rel": "missions/moon/apollo16.json",
+  "at": "description",
+  "en": "The fifth crewed Moon landing and the first to a non-mare highland site. Geologists had expected Descartes to be volcanic; Apollo 16 disproved this — every rock returned was breccia (impact-shattered debris), reshaping understanding of the lunar highlands as products of catastrophic impacts rather than ancient volcanism. Young and Duke completed three LRV-supported EVAs totalling 20 h 14 m, traversed 26.7 km, and returned 95.7 kg of samples (the heaviest Apollo haul to that date). Young's \"lunar Grand Prix\" — a televised speed test of the LRV — peaked at ~17 km/h. Duke's 11-second hop attempt during a long-jump record attempt put him at risk of damaging his PLSS backpack and was called off. Charlie Duke's family photo + the \"Far-UV Camera/Spectrograph\" — the first astronomical observatory operated from the surface of another world — both ended up at the landing site. Mattingly, originally on Apollo 13 (replaced before launch over German measles concerns), finally got to fly to the Moon.",
+  "cur": "الهبوط البشري الخامس على القمر والأول على موقع هضبة بعيدة عن البحار. كان الجيولوجيون يتوقعون أن تكون ديكارت بركانية؛ لكن Apollo 16 دحض هذا التوقع — فكل صخرة تم إحضارها كانت بريشيا (حطاماً محطماً بالتأثير)، مما أعاد تشكيل فهمنا للمرتفعات القمرية باعتبارها نتاجات تصادمات كارثية وليس بركانية قديمة. أكمل يونغ وديوك ثلاث نشاطات سير خارجي مدعومة بـ LRV بإجمالي 20 ساعة 14 دقيقة، وقطعا مسافة 26.7 كم، وأحضرا 95.7 كغ من العينات (أثقل حمولة Apollo حتى ذلك التاريخ). «سباق القمر الأكبر» ليونغ — اختبار سرعة مباشر على التلفاز لـ LRV — بلغ ذروته بحوالي 17 كم/س. محاولة الارتفاع التي مدتها 11 ثانية من ديوك أثناء محاولة تسجيل رقم قياسي في الوثب الطويل عرضته لخطر إتلاف حقيبة PLSS الخاصة به وتم إيقافها. صورة الأسرة لتشارلي ديوك وكاميرا Far-UV Camera/Spectrograph التصويرية — أول مرصد فلكي يعمل من سطح عالم آخر — انتهى بهما الحال معاً في موقع الهبوط. Mattingly، الذي كان في الأصل مقرراً للـ Apollo 13 (تم استبداله قبل الإقلاع بسبب مخاوف من الحصبة الألمانية)، تمكن أخيراً من الإقلاع إلى القمر."
+ },
+ {
+  "rel": "missions/moon/apollo16.json",
+  "at": "events.5.label",
+  "en": "FIRST HIGHLANDS EVA",
+  "cur": "أول نشاط خارجي في المرتفعات"
+ },
+ {
+  "rel": "missions/moon/apollo16.json",
+  "at": "events.6.label",
+  "en": "LUNAR GRAND PRIX",
+  "cur": "سباق الجائزة الكبرى القمري"
+ },
+ {
+  "rel": "missions/moon/apollo16.json",
+  "at": "events.7.label",
+  "en": "FAR-UV CAMERA",
+  "cur": "كاميرا الأشعة فوق البنفسجية البعيدة"
+ },
+ {
+  "rel": "missions/moon/apollo17.json",
+  "at": "dispatch",
+  "en": "Apollo 17 was the end, though almost no one watching in December 1972 believed it would be. It was also, belatedly, the flight that put a real scientist on the Moon — the geologist Harrison Schmitt, whose eye caught the orange volcanic glass at Shorty Crater that rewrote what the Moon is made of. Cernan and Schmitt stayed three days, drove twenty-two miles, and then Cernan climbed the ladder for the last time anyone has, saying they left \"as we came, and God willing, we shall return.\" More than half a century later no one has — and every serious argument for going back still begins with the fact that we once could.",
+  "cur": "كانت Apollo 17 النهاية، رغم أن أحداً ممن شاهدوا في ديسمبر 1972 لم يصدق أنها ستكون كذلك. كانت أيضاً، متأخراً، الرحلة التي وضعت عالماً حقيقياً على القمر — الجيولوجي هاريسون شميت، الذي التقطت عينه الزجاج البركاني البرتقالي في فوهة شورتي والذي أعاد كتابة ما يتكون منه القمر. مكث سيرنان وشميت ثلاثة أيام، وقطعا اثنين وعشرين ميلاً، ثم صعد سيرنان السلم للمرة الأخيرة التي صعده فيها أحد، قائلاً إنهم غادروا \"كما أتينا، وبمشيئة الله، سنعود\". بعد أكثر من نصف قرن لم يعد أحد — وكل حجة جدية للعودة لا تزال تبدأ بحقيقة أننا استطعنا ذلك ذات مرة."
+ },
+ {
+  "rel": "missions/moon/apollo17.json",
+  "at": "first",
+  "en": "Last crewed mission to the Moon (and the only Apollo with a trained geologist)",
+  "cur": "آخر بعثة مأهولة بالرواد إلى القمر (والبعثة Apollo الوحيدة التي كانت برقيب جيولوجي مُدرَّب)"
+ },
+ {
+  "rel": "missions/moon/apollo17.json",
+  "at": "description",
+  "en": "The last time humans visited another world — over half a century ago. Cernan and Schmitt spent 75 hours on the surface, drove the LRV 35.7 km, and brought back 110.5 kg of samples. Schmitt was the only trained scientist (geologist) ever to walk on the Moon, and his findings — particularly the orange volcanic glass at Shorty Crater — reshaped lunar geology. Cernan's last words before climbing the ladder for the final time: 'We leave as we came, and God willing, we shall return.' Artemis III is supposed to make good on that promise.",
+  "cur": "آخر مرة زار فيها الإنسان عالماً آخر — قبل أكثر من نصف قرن. قضى سيرنان وشميت 75 ساعة على السطح، وقادا مركبة LRV مسافة 35.7 كم، وأحضرا 110.5 كغ من العينات. كان شميت العالم المُدرَّب الوحيد (جيولوجياً) الذي مشى على القمر، وقد أعادت نتائجه — خاصة الزجاج البركاني البرتقالي في فوهة شورتي — تشكيل علم جيولوجيا القمر. كانت كلمات سيرنان الأخيرة قبل تسلقه السلم للمرة الأخيرة: «نغادر كما جئنا، وبإذن الله، سنعود.» من المفترض أن تحقق بعثة Artemis III هذا الوعد."
+ },
+ {
+  "rel": "missions/moon/apollo17.json",
+  "at": "events.4.label",
+  "en": "FIRST EVA",
+  "cur": "أول نشاط خارج المركبة"
+ },
+ {
+  "rel": "missions/moon/apollo8.json",
+  "at": "dispatch",
+  "en": "Apollo 8 was a bet placed in a hurry. Intelligence suggested the Soviets might loop a crew around the Moon first, so in the summer of 1968 NASA tore up the flight plan and sent three men to lunar orbit on only the third launch of a rocket that had never carried a crew. It should have been reckless. Instead it became the year's one piece of good news — 1968 had been assassinations, Vietnam, cities on fire — and on Christmas Eve a billion people heard Genesis read from lunar orbit and, in Bill Anders' photograph, watched their whole world rise over a dead horizon for the first time. Apollo 11 is remembered for the Moon. Apollo 8 is the one that showed us the Earth.",
+  "cur": "كانت Apollo 8 رهانًا وُضع على عجل. أشارت المعلومات الاستخبارية إلى أن السوفييت قد يرسلون طاقمًا للدوران حول القمر أولاً، لذلك في صيف 1968 مزقت NASA خطة الرحلة وأرسلت ثلاثة رجال إلى مدار القمر في الإطلاق الثالث فقط لصاروخ لم يحمل طاقمًا من قبل. كان يجب أن يكون ذلك تهورًا. لكنه أصبح بدلاً من ذلك الخبر السار الوحيد لذلك العام — فقد شهد عام 1968 اغتيالات، وفيتنام، ومدنًا تحترق — وفي ليلة عيد الميلاد سمع مليار شخص سفر التكوين يُقرأ من مدار القمر، وفي صورة بيل أندرس، شاهدوا عالمهم بأكمله يشرق فوق أفق ميت لأول مرة. يُذكر Apollo 11 بسبب القمر. أما Apollo 8 فهو الذي أرانا الأرض."
+ },
+ {
+  "rel": "missions/moon/apollo8.json",
+  "at": "first",
+  "en": "First humans to leave low Earth orbit + orbit the Moon",
+  "cur": "أول البشر يغادرون المدار الأرضي المنخفض + يدورون حول القمر"
+ },
+ {
+  "rel": "missions/moon/apollo8.json",
+  "at": "description",
+  "en": "The first crewed mission to leave low Earth orbit, the first to escape Earth gravity, and the first to orbit the Moon. Launched 1968-12-21 on the first crewed flight of the Saturn V (AS-503), Apollo 8 entered lunar orbit on Christmas Eve 1968. Anders' \"Earthrise\" photograph during the fourth orbit became one of the most influential images in history. The crew read from Genesis on live television to ~1 billion viewers — the largest TV audience to that date. 10 orbits later they fired the SPS engine for TEI on the far side of the Moon, returning to Pacific splashdown 1968-12-27. NASA had decided in August 1968 to swap Apollo 8's payload from a high-Earth-orbit LM test to a lunar-orbit CSM-only mission after CIA intelligence suggested the USSR might attempt a circumlunar flight first.",
+  "cur": "أول مهمة مأهولة تترك المدار الأرضي المنخفض، وأول من تفلت من جاذبية الأرض، وأول من يدور حول القمر. أُطلقت في 1968-12-21 في أول رحلة مأهولة لصاروخ Saturn V (AS-503)، دخلت Apollo 8 مدار القمر في عشية عيد الميلاد 1968. أصبحت صورة «Earthrise» للطاقم أندرس أثناء المدار الرابع إحدى أكثر الصور تأثيراً في التاريخ. قرأ الطاقم من سفر التكوين على الهواء مباشرة لحوالي 1 مليار متفرج — وهي أكبر جماهير تليفزيونية حتى ذلك التاريخ. بعد 10 مدارات أطلقوا محرك SPS لـ TEI على الجانب البعيد من القمر، عائدين إلى هبوط في المحيط الهادئ في 1968-12-27. كانت NASA قد قررت في أغسطس 1968 تبديل حمولة Apollo 8 من اختبار المركبة القمرية في المدار الأرضي العالي إلى مهمة حول المدار القمري بمركبة الخدمة فقط بعد أن اقترحت المعلومات الاستخباراتية من وكالة CIA أن الاتحاد السوفياتي قد يحاول رحلة حول القمر أولاً."
+ },
+ {
+  "rel": "missions/moon/apollo8.json",
+  "at": "events.4.label",
+  "en": "GENESIS READING",
+  "cur": "قراءة من سفر التكوين"
+ },
+ {
+  "rel": "missions/moon/artemis2.json",
+  "at": "first",
+  "en": "First crewed flight beyond low-Earth orbit since Apollo 17 (1972) — and the mission that inspired this project",
+  "cur": "أول رحلة بأطقم خارج المدار الأرضي المنخفض منذ Apollo 17 (1972) — والمهمة التي ألهمت هذا المشروع"
+ },
+ {
+  "rel": "missions/moon/artemis2.json",
+  "at": "description",
+  "en": "The Artemis program's first crewed flight, and the spark that became Orrery. NASA's SLS Block 1 launched an Orion spacecraft with four astronauts — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS), and CSA's Jeremy Hansen (MS) — onto a hybrid free-return trajectory that swung them around the Moon's far side at roughly 9,200 km altitude and returned them to Earth without any lunar-orbit insertion burn. A 10-day mission ending with Pacific splashdown. Qualified Orion's life-support, navigation, and re-entry systems for crewed flight ahead of the Artemis III surface landing.",
+  "cur": "أول رحلة مأهولة في برنامج Artemis وهي الشرارة التي تطورت إلى Orrery. أطلقت NASA صاروخ SLS Block 1 مركبة فضائية Orion تقل أربعة رواد فضاء — ريد وايزمان (CDR) وفكتور غلوفر (PLT) وكريستينا كوش (MS) وجيريمي هانسن من CSA (MS) — على مسار هجين للعودة الحرة انحنى بهم حول الجانب البعيد من القمر على ارتفاع يبلغ تقريبًا 9,200 كم وأعادهم إلى الأرض دون حرق إدراج في مدار القمر. مهمة مدتها 10 أيام انتهت بهبوط في المحيط الهادئ. أثبتت صلاحية أنظمة دعم الحياة والملاحة وإعادة الدخول لمركبة Orion للرحلات المأهولة تمهيدًا لهبوط سطح Artemis III."
+ },
+ {
+  "rel": "missions/moon/artemis3.json",
+  "at": "first",
+  "en": "First crewed lunar landing since Apollo 17 (1972)",
+  "cur": "أول هبوط بأطقم على القمر منذ Apollo 17 (1972)"
+ },
+ {
+  "rel": "missions/moon/artemis3.json",
+  "at": "description",
+  "en": "The first crewed lunar landing in over half a century. Architecture: NASA's SLS Block 1 launches Orion with 4 crew to a Near-Rectilinear Halo Orbit (NRHO) around the Moon. Pre-positioned at NRHO is a SpaceX Starship Human Landing System (HLS), refilled in low-Earth orbit by tankers before its trans-lunar injection. The Orion crew transfers to HLS; 2 astronauts descend to the lunar south pole region for ~6.5 days of surface ops while 2 remain in NRHO. After surface operations, HLS launches back to NRHO for transfer to Orion and Earth return. Will land the first woman and first person of colour on the Moon.",
+  "cur": "أول هبوط بأطقم منذ أكثر من نصف قرن. البنية: SLS Block 1 التابعة لـ NASA تطلق Orion بأربعة رواد إلى مدار هالة شبه مستطيل قريب حول القمر. يُوضع مسبقًا في NRHO نظام الهبوط البشري Starship HLS من SpaceX، معاد تعبئته في المدار المنخفض عبر ناقلات قبل حقنه القمري. ينتقل طاقم Orion إلى HLS؛ يهبط رائدان في القطب الجنوبي ~6.5 يوم عمل سطحي بينما يبقى اثنان في NRHO. بعد العمليات تصعد HLS إلى NRHO للانتقال إلى Orion والعودة إلى الأرض. ستَهبط أول امرأة وأول شخص ملوّن على القمر."
+ },
+ {
+  "rel": "missions/moon/artemis4.json",
+  "at": "first",
+  "en": "First crewed mission to the Lunar Gateway; second crewed lunar landing",
+  "cur": "أول مهمة مأهولة إلى Lunar Gateway؛ ثاني هبوط قمري مأهول"
+ },
+ {
+  "rel": "missions/moon/artemis4.json",
+  "at": "description",
+  "en": "Artemis IV is planned as the first crewed mission to visit the Lunar Gateway, NASA's small space station in Near-Rectilinear Halo Orbit (NRHO) around the Moon. It debuts the more powerful SLS Block 1B, whose new Exploration Upper Stage (EUS) lets a single launch carry both Orion with 4 crew and the co-manifested I-HAB (International Habitation) module — built by ESA and JAXA — for delivery to Gateway. After docking Orion and I-HAB to the station, two crew descend to the lunar south pole aboard a SpaceX Starship Human Landing System for the program's second crewed landing, while the others tend the growing Gateway. Planned for ~2028; crew and landing site remain to be assigned.",
+  "cur": "Artemis IV مخطط لها كأول مهمة مأهولة لزيارة Lunar Gateway، محطة الفضاء الصغيرة التابعة لـ NASA في المدار الهالي شبه المستقيمي (NRHO) حول القمر. تشهد المهمة ظهور النسخة الأقوى SLS Block 1B، التي تتيح Exploration Upper Stage (EUS) الجديدة إطلاقاً واحداً يحمل كلاً من Orion مع 4 من أفراد الطاقم ووحدة I-HAB (International Habitation) المشتركة في الإطلاق — المبنية من قبل ESA و JAXA — للتسليم إلى Gateway. بعد إرساء Orion و I-HAB بالمحطة، ينزل اثنان من أفراد الطاقم إلى القطب الجنوبي القمري على متن نظام الهبوط البشري SpaceX Starship للهبوط المأهول الثاني للبرنامج، بينما يعتني الآخرون بـ Gateway المتنامية. مخطط لها في ~2028؛ الطاقم وموقع الهبوط لم يتم تحديدهما بعد."
+ },
+ {
+  "rel": "missions/moon/beresheet.json",
+  "at": "first",
+  "en": "First privately-funded mission to reach the Moon; first Israeli lunar mission",
+  "cur": "أول بعثة ممولة من القطاع الخاص للوصول إلى القمر؛ أول بعثة إسرائيلية قمرية"
+ },
+ {
+  "rel": "missions/moon/beresheet.json",
+  "at": "description",
+  "en": "SpaceIL's Beresheet (Hebrew: 'In the beginning') launched as a shared-ride passenger on a Falcon 9 in February 2019. Instead of a direct trans-lunar injection, the small lander performed weeks of perigee-raising phasing burns to climb from a parking orbit out to the Moon — a fuel-saving trajectory pioneered for low-budget missions. After successful lunar orbit insertion on 4 April 2019, an inertial measurement unit reset during descent caused the main engine to shut down. Beresheet crashed in Mare Serenitatis. SpaceIL committed to a successor (Beresheet 2) within days.",
+  "cur": "أطلقت SpaceIL مركبة Beresheet (العبرية: 'في البداية') كركاب مشارك في رحلة مشتركة على متن Falcon 9 في فبراير 2019. بدلاً من حقن عابرة مباشرة نحو القمر، قامت المركبة الصغيرة بإجراء عمليات حرق رفع الحضيض لأسابيع لتسلق مدار انتظار وصولاً إلى القمر — وهي مسار يوفر الوقود ابتكرت للبعثات ذات الميزانية المنخفضة. بعد إدراج المدار القمري الناجح في 4 أبريل 2019، أدى إعادة تعيين وحدة القياس بالقصور الذاتي أثناء الهبوط إلى إيقاف المحرك الرئيسي. تحطمت Beresheet في بحر الصفاء. التزمت SpaceIL بخليفة (Beresheet 2) في غضون أيام."
+ },
+ {
+  "rel": "missions/moon/blue-moon-mk1.json",
+  "at": "first",
+  "en": "First flight of Blue Origin's Blue Moon lunar lander architecture",
+  "cur": "أول طيران لهابط القمر بلو مون من Blue Origin"
+ },
+ {
+  "rel": "missions/moon/blue-moon-mk1.json",
+  "at": "description",
+  "en": "Blue Origin's first cargo Blue Moon lander, contracted under NASA's Commercial Lunar Payload Services (CLPS) program. A single-stage descent vehicle powered by the BE-7 cryogenic engine, designed to deliver up to ~3 tonnes of payload to the lunar surface. Launches on Blue Origin's New Glenn from Cape Canaveral, performs trans-lunar injection on the New Glenn second stage, then executes lunar orbit insertion and powered descent. The Mark 1 cargo flight precedes the human-rated Mark 2, which is contracted to support NASA's Artemis V crewed lunar landing.",
+  "cur": "مركبة الهبوط Blue Moon لأول شحنة من Blue Origin، والمتعاقد عليها بموجب برنامج خدمات الحمولات القمرية التجارية (CLPS) التابع لNASA. مركبة هبوط من مرحلة واحدة تعمل بمحرك BE-7 القابل للتسييل، مصممة لإيصال ما يصل إلى ~3 أطنان من الحمولة إلى سطح القمر. تنطلق على صاروخ New Glenn من Blue Origin من رأس كانافيرال، وتنفذ حقن عبر القمر على المرحلة الثانية من New Glenn، ثم تنفذ إدراج المدار القمري والهبوط المدفوع. تسبق رحلة الشحنة Mark 1 المركبة Mark 2 المصنفة للأفراد، والمتعاقد عليها لدعم هبوط Artemis V المأهول بالبشر على القمر."
+ },
+ {
+  "rel": "missions/moon/chandrayaan1.json",
+  "at": "first",
+  "en": "India's first lunar mission; confirmed widespread water on the Moon",
+  "cur": "أول مهمة قمرية هندية؛ أكدت ماءً واسع الانتشار على القمر"
+ },
+ {
+  "rel": "missions/moon/chandrayaan1.json",
+  "at": "description",
+  "en": "ISRO's first interplanetary spacecraft. The orbiter delivered the Moon Impact Probe to the lunar surface — the first Indian object on another world — and carried 11 instruments from 6 countries. NASA's Moon Mineralogy Mapper (M3) instrument, hosted on Chandrayaan-1, made the discovery that rewrote textbooks: water molecules are widespread across the lunar surface, not just locked in polar shadowed craters. The mission ended abruptly in August 2009 when ISRO lost communication with the spacecraft.",
+  "cur": "أول مركبة فضائية كوكبية من الهند. وضعت المركبة المدارية جهاز Moon Impact Probe على سطح القمر — أول جسم هندي على عالم آخر — وحملت 11 جهازاً من 6 دول. اكتشف جهاز NASA's Moon Mineralogy Mapper (M3) المثبت على Chandrayaan-1 حقيقة أعادت كتابة المقررات الدراسية: جزيئات الماء منتشرة على نطاق واسع عبر سطح القمر، وليست محصورة فقط في فوهات مظللة قطبية. انتهت المهمة فجأة في أغسطس 2009 عندما فقدت وكالة ISRO التواصل مع المركبة."
+ },
+ {
+  "rel": "missions/moon/chandrayaan3.json",
+  "at": "first",
+  "en": "First soft-landing near the lunar south pole",
+  "cur": "أول هبوط ناعم بالقرب من القطب الجنوبي للقمر"
+ },
+ {
+  "rel": "missions/moon/chandrayaan3.json",
+  "at": "description",
+  "en": "Following the loss of Chandrayaan-2's Vikram lander in 2019, ISRO's third lunar mission was deliberately conservative — focused on the lander rather than carrying an orbiter. Vikram touched down at 69.4° S latitude, the closest any spacecraft has come to a lunar pole. The Pragyan rover detected sulfur on the lunar surface for the first time and made in-situ thermal measurements. India became the fourth nation to soft-land on the Moon, landing closer to a lunar pole than any spacecraft before it — a region where future water-ice mining may become possible.",
+  "cur": "بعد فقدان هابط Vikram من Chandrayaan-2 في عام 2019، كانت مهمة ISRO الهندية الثالثة إلى القمر متحفظة عن قصد — تركزت على الهابط بدلاً من حمل مدار. لمست Vikram السطح عند دائرة عرض 69.4° جنوباً، وهو الأقرب الذي وصلت إليه أي مركبة فضائية من قطب قمري. كشفت ماربة Pragyan عن الكبريت على سطح القمر للمرة الأولى وأجرت قياسات حرارية في الموقع. أصبحت الهند الدولة الرابعة التي تحقق هبوطاً ناعماً على القمر، حيث هبطت أقرب من أي قطب قمري من أي مركبة فضائية من قبل — وهي منطقة قد يصبح فيها التعدين المستقبلي للجليد المائي ممكناً."
+ },
+ {
+  "rel": "missions/moon/change1.json",
+  "at": "first",
+  "en": "China's first lunar mission and first Chinese spacecraft to reach the Moon",
+  "cur": "أول مهمة صينية للقمر وأول مركبة فضائية صينية تصل إلى القمر"
+ },
+ {
+  "rel": "missions/moon/change1.json",
+  "at": "description",
+  "en": "The first phase of China's Lunar Exploration Program (CLEP) and CNSA's first mission beyond Earth. Launched 2007-10-24 from Xichang Satellite Launch Center on a Long March 3A, Chang'e 1 (named after the Moon goddess of Chinese folklore) entered a 200-km circular polar lunar orbit on 2007-11-07. Carried 8 instruments — a CCD stereo camera, a laser altimeter, an imaging spectrometer, gamma-ray and X-ray spectrometers, a microwave radiometer, a solar wind detector, and a high-energy particle detector. Produced China's first full lunar global topographic map at 120-200 m resolution and elemental abundance maps of Th, K, U, O, Si, Mg, Al, Ca, Ti, Fe. Mission deliberately ended 2009-03-01 with a controlled impact at 1.50° S, 52.36° E in Mare Fecunditatis — China's first object on the lunar surface, paving the way for Chang'e 3 (2013 surface landing) and Chang'e 5 (2020 sample return). Operated 16 months — 4 months past nominal.",
+  "cur": "المرحلة الأولى من برنامج الاستكشاف القمري الصيني (CLEP) وأول بعثة للإدارة الوطنية للفضاء (CNSA) تتجاوز الأرض. أُطلقت في 2007-10-24 من مركز شيتشانغ لإطلاق الأقمار الصناعية على صاروخ Long March 3A، دخلت Chang'e 1 (المسماة باسم إلهة القمر في الفولكلور الصيني) مدارًا قطبيًا دائريًا حول القمر بارتفاع 200 كم في 2007-11-07. حملت 8 أدوات — كاميرا CCD استريو، وجهاز قياس ارتفاع بالليزر، وجهاز تصوير طيفي، ومطيافات أشعة جاما والأشعة السينية، ومجس موجات دقيقة، وكاشف الرياح الشمسية، وكاشف الجسيمات عالية الطاقة. أنتجت أول خريطة طبوغرافية قمرية عالمية كاملة للصين بدقة تتراوح بين 120-200 متر وخرائط وفرة العناصر من Th وK وU وO وSi وMg وAl وCa وTi وFe. انتهت البعثة المقصودة في 2009-03-01 بتصادم مراقب عند 1.50° S، 52.36° E في بحر الخصوبة — أول جسم صيني على السطح القمري، مما مهّد الطريق لـ Chang'e 3 (الهبوط على السطح عام 2013) و Chang'e 5 (إرجاع العينات عام 2020). عملت لمدة 16 شهرًا — أي أربعة أشهر تجاوزت المدة الاسمية."
+ },
+ {
+  "rel": "missions/moon/change1.json",
+  "at": "events.3.label",
+  "en": "GLOBAL TOPO MAP",
+  "cur": "الخريطة الطوبوغرافية العالمية"
+ },
+ {
+  "rel": "missions/moon/change3.json",
+  "at": "first",
+  "en": "First Chinese soft landing on the Moon; deployed Yutu, China's first lunar rover",
+  "cur": "أول هبوط ناعم صيني على القمر؛ ونشرت Yutu، أول مسيار قمري صيني"
+ },
+ {
+  "rel": "missions/moon/change3.json",
+  "at": "description",
+  "en": "Chang'e 3 was the third lander in CNSA's Chang'e programme and the first successful soft landing on the Moon since the Soviet Luna 24 in 1976 — a 37-year gap. The Long March 3B launched on a direct lunar trajectory in December 2013, with a single mid-course correction before lunar orbit insertion. The lander touched down in Mare Imbrium on 14 December and deployed the Yutu (Jade Rabbit) rover, which operated for 31 months despite a mobility failure ending its drive on lunar day 2. Chang'e 3's lander continued imaging for years afterward.",
+  "cur": "كانت Chang'e 3 ثالث مسبار هبوط في برنامج Chang'e التابع لـ CNSA وأول هبوط ناعم ناجح على القمر منذ Luna 24 السوفييتية عام 1976 — فجوة زمنية مدتها 37 سنة. أطلقت Long March 3B في مسار مباشر نحو القمر في ديسمبر 2013، مع تصحيح مسار وحيد في منتصف الطريق قبل الدخول إلى مدار القمر. هبط المسبار في بحر الأمطار في 14 ديسمبر ونشرت مسيار Yutu (Jade Rabbit)، الذي عمل لمدة 31 شهراً رغم عطل في القدرة على التحرك أنهى حركته في اليوم القمري الثاني. استمرت كاميرات مسبار Chang'e 3 في التصوير لسنوات بعد ذلك."
+ },
+ {
+  "rel": "missions/moon/change4.json",
+  "at": "first",
+  "en": "First soft-landing on the lunar far side",
+  "cur": "أول هبوط ناعم على الجانب البعيد من القمر"
+ },
+ {
+  "rel": "missions/moon/change4.json",
+  "at": "description",
+  "en": "The lunar far side has no direct radio line of sight to Earth. To land a spacecraft there, China first launched the Queqiao relay satellite to a halo orbit around Earth-Moon Lagrange point L2 — a vantage point that sees both the far side and Earth simultaneously. With that infrastructure in place, Chang'e 4 became the first spacecraft to soft-land on the far side. The Yutu-2 rover has been operating since January 2019 and has driven ~1.6 km as of 2024, making it the longest-operating lunar rover in history.",
+  "cur": "الجانب البعيد من القمر ليس لديه خط اتصال راديوي مباشر مع الأرض. لإنزال مركبة هناك، أطلقت الصين أولاً القمر الصناعي الموصل Queqiao إلى مدار هالة حول نقطة لاغرانج الأرض-القمر L2 — وهي نقطة مراقبة ترى الجانب البعيد والأرض في نفس الوقت. مع وجود هذه البنية التحتية في المكان، أصبحت Chang'e 4 أول مركبة فضائية تهبط بنعومة على الجانب البعيد. يعمل روفر Yutu-2 منذ يناير 2019 وقد قطع حوالي ~1.6 كم حتى عام 2024، مما يجعله أطول روفر قمري تشغيلياً في التاريخ."
+ },
+ {
+  "rel": "missions/moon/change5.json",
+  "at": "first",
+  "en": "First lunar sample return in 44 years (since Luna 24, 1976)",
+  "cur": "أول إعادة عينات قمرية منذ 44 سنة (منذ Luna 24، 1976)"
+ },
+ {
+  "rel": "missions/moon/change5.json",
+  "at": "description",
+  "en": "Chang'e 5 was the first sample return from the Moon since the Soviet Union's Luna 24 in 1976 — a 44-year gap. The architecture: orbiter + lander + ascent vehicle + sample-return capsule, all in one launch. The lander touched down at Mons Rümker, drilled and scooped 1.731 kg of regolith, lifted off, rendezvoused and docked with the orbiter (the first robotic lunar rendezvous), and the capsule returned to Earth. The samples are from a region only 2 billion years old — much younger than any Apollo or Luna sample, rewriting models of lunar volcanism.",
+  "cur": "كانت Chang'e 5 أول عملية إعادة عينات من القمر منذ مهمة Luna 24 السوفييتية عام 1976 — فجوة زمنية قدرها 44 سنة. المعمارية: مدار + هابط + مركبة صعود + كبسولة إعادة العينات، جميعها في إطلاق واحد. هبط الهابط في جبل رومكر، وحفر وجرف 1.731 كغ من التربة السطحية، ثم انطلق والتقى بالمدار والتحم به (أول التقاء وتحام قمري روبوتي)، وعادت الكبسولة إلى الأرض. العينات من منطقة يبلغ عمرها سوى ملياري سنة فقط — أصغر بكثير من أي عينة من Apollo أو Luna، مما أعاد صياغة نماذج البراكين القمرية."
+ },
+ {
+  "rel": "missions/moon/change6.json",
+  "at": "first",
+  "en": "First sample return from the lunar far side",
+  "cur": "أول إعادة عينات من الوجه البعيد للقمر"
+ },
+ {
+  "rel": "missions/moon/change6.json",
+  "at": "description",
+  "en": "Combines the architectures of Chang'e 4 (far-side communications) and Chang'e 5 (sample return). The Queqiao-2 relay satellite was launched first (March 2024) to support the mission. Chang'e 6 then collected 1.935 kg from Apollo Crater on the far side — material with very different composition from any lunar sample previously returned. The Moon's two hemispheres are radically different (the far side has thicker crust, fewer mare); these samples may finally explain why.",
+  "cur": "يجمع بين معمارية Chang'e 4 (الاتصالات على الجانب البعيد) و Chang'e 5 (العودة بالعينات). تم إطلاق القمر الصناعي الذي يعيد توجيه البث Queqiao-2 أولاً (مارس 2024) لدعم المهمة. ثم جمعت Chang'e 6 1,935 كغ من فوهة Apollo على الجانب البعيد — مادة ذات تركيب مختلف جداً عن أي عينة قمرية تم إعادتها مسبقاً. نصفا القمر الكرويان مختلفان بشكل جذري (الجانب البعيد له قشرة أسمك وعدد أقل من البحار); قد توضح هذه العينات أخيراً السبب."
+ },
+ {
+  "rel": "missions/moon/clementine.json",
+  "at": "first",
+  "en": "Joint NASA-DoD lunar mission; first hints of water ice at lunar poles",
+  "cur": "مهمة قمرية مشتركة NASA–DoD؛ أول إشارات لجليد مائي قطبي"
+ }
+]

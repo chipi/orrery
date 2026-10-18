@@ -1,0 +1,890 @@
+[
+ {
+  "rel": "missions/asteroid/hayabusa2.json",
+  "at": "first",
+  "en": "Second asteroid sample return (Ryugu, 2020); first artificial impact crater on an asteroid; first subsurface asteroid material returned to Earth",
+  "cur": "ثاني عملية إعادة عينات من كويكب (ريوغو، 2020)؛ أول حفرة اصطدام اصطناعية على كويكب؛ أول مادة من تحت سطح كويكب أعيدت إلى الأرض"
+ },
+ {
+  "rel": "missions/asteroid/hayabusa2.json",
+  "at": "description",
+  "en": "JAXA's follow-on to the original Hayabusa. Launched 2014-12-03, Hayabusa2 reached carbonaceous near-Earth asteroid (162173) Ryugu on 2018-06-27 after a 3.5-year low-thrust ion cruise + Earth gravity assist. Surface operations 2018–2019: two touchdown-and-go sample collections bracketing a Small Carry-on Impactor experiment (2019-04-05) that excavated a 14 m crater for the second sample. Three MINERVA-II rovers returned the first surface images from an asteroid; the DLR/CNES MASCOT lander operated for 17 hours. Sample return capsule reentry over Woomera on 2020-12-05 (UTC; recovered 2020-12-06 local/JST) delivered 5.4 g of pristine Ryugu material — the first asteroid sample with subsurface stratigraphy. Extended mission: flyby of 98943 Torifune (2001 CC21) in 2026-07; rendezvous with fast-rotating (1998 KY26) targeted for 2031-07.",
+  "cur": "مهمة متابعة من JAXA للمسبار Hayabusa الأصلي. أُطلقت في 2014-12-03، وصلت Hayabusa2 إلى الكويكب القريب من الأرض الكربوني (162173) ريوغو في 2018-06-27 بعد رحلة دفع منخفضة بمحركات أيونية لمدة 3.5 سنوات مع مساعدة جاذبية الأرض. العمليات السطحية 2018–2019: جمع عينتين من خلال الهبوط اللمسي والانطلاق يحيطان بتجربة Small Carry-on Impactor (2019-04-05) التي حفرت فوهة بقطر 14 م لأخذ العينة الثانية. ثلاث مسابرات MINERVA-II أعادت أول الصور من السطح لكويكب؛ هبطت MASCOT من DLR/CNES وعملت لمدة 17 ساعة. كبسولة العودة بالعينات دخلت الغلاف الجوي فوق ووميرا في 2020-12-05 (بتوقيت UTC؛ تم استرجاعها في 2020-12-06 بالتوقيت المحلي/JST) وسلّمت 5.4 غرام من مادة ريوغو النقية — أول عينة كويكب تحتوي على طبقات تحت السطحية. المهمة الممتدة: تحليق بجوار 98943 Torifune (2001 CC21) في 2026-07؛ والتقاء مع (1998 KY26) سريع الدوران والمجدول في 2031-07."
+ },
+ {
+  "rel": "missions/asteroid/hayabusa2.json",
+  "at": "events.1.label",
+  "en": "EARTH FLYBY",
+  "cur": "الحلول القريب من الأرض"
+ },
+ {
+  "rel": "missions/asteroid/hayabusa2.json",
+  "at": "events.4.label",
+  "en": "TORIFUNE FLYBY",
+  "cur": "الحلول القريب من توريفوني"
+ },
+ {
+  "rel": "missions/asteroid/hayabusa2.json",
+  "at": "events.5.label",
+  "en": "1998 KY26 RENDEZVOUS",
+  "cur": "موعد الالتقاء مع 1998 KY26"
+ },
+ {
+  "rel": "missions/asteroid/near-shoemaker.json",
+  "at": "first",
+  "en": "First spacecraft to orbit an asteroid (433 Eros, 2000) and first soft landing on any small body (2001-02-12)",
+  "cur": "أول مركبة فضائية تدور حول كويكب (433 إيروس، 2000) وأول هبوط سلس على أي جسم صغير (12-02-2001)"
+ },
+ {
+  "rel": "missions/asteroid/near-shoemaker.json",
+  "at": "dispatch",
+  "en": "NEAR Shoemaker went to Eros because nobody knew what an asteroid really looked like up close. It arrived to find a world pocked with craters, stretched into a saddle shape by its own slow rotation, covered in fine regolith that had nowhere to go in near-zero gravity. For a year it mapped every ridge and boulder from orbit, then in February 2001 the controllers pressed their luck: they lowered the spacecraft's orbit five times in two weeks, slowed it to walking pace, and set it down on the surface. It survived. For sixteen more days it transmitted from Eros — the first emissary from Earth to rest on a small body.",
+  "cur": "ذهب NEAR Shoemaker إلى إروس لأن أحداً لم يكن يعرف حقاً كيف يبدو الكويكب عن قرب. وصل ليجد عالماً مليئاً بالفوهات، تم تمديده إلى شكل سرج من دورانه البطيء الخاص، مغطى برجوليث ناعم ليس له مكان يذهب إليه في الجاذبية الدقيقة القريبة من الصفر. لمدة سنة قام بتخطيط كل حافة وصخرة من المدار، ثم في فبراير 2001 أرسل المتحكمون حظهم: خفضوا مدار المركبة خمس مرات في أسبوعين، وأبطأوه إلى سرعة المشي، وضعوه على السطح. لقد نجا. لمدة ستة عشر يوماً آخر أرسل من إروس — أول مبعوث من الأرض يستريح على جسم صغير."
+ },
+ {
+  "rel": "missions/asteroid/near-shoemaker.json",
+  "at": "description",
+  "en": "NASA Discovery-program mission, led by Johns Hopkins University APL. Launched 1996-02-17, NEAR Shoemaker flew past asteroid 253 Mathilde (1997-06-27) before an Earth gravity assist (1998-01-23) phased its orbit to match Eros. Orbital insertion around 433 Eros on 2000-02-14 began a 12-month survey that returned 160,000 images and complete spectral, compositional, and gravitational maps of the 34 × 11 × 11 km S-type body. On 2001-02-12, five orbit-lowering burns brought the spacecraft to 5 km altitude; controlled descent at ~1.7 m/s ended with a soft landing near the Himeros saddle (35°N, 280°W), returning images to within 125 m of the surface. The spacecraft survived and transmitted from the surface for ~16 days.",
+  "cur": "بعثة من برنامج NASA Discovery، يقودها مختبر الفيزياء التطبيقية بجامعة Johns Hopkins. انطلقت في 1996-02-17، حيث حلّقت NEAR Shoemaker بالقرب من الكويكب 253 ماتيلد (1997-06-27) قبل مساعدة جاذبية أرضية (1998-01-23) حددت مدارها لمطابقة إروس. أدى الدخول المداري حول 433 إروس في 2000-02-14 إلى بدء مسح استمر 12 شهراً وأعاد 160,000 صورة وخرائط طيفية وتركيبية وجاذبية كاملة للجسم من نوع S بحجم 34 × 11 × 11 كم. في 2001-02-12، أحضرت حروق خفض المدار الخمس المركبة الفضائية إلى ارتفاع 5 كم؛ انتهى الهبوط المنضبط بسرعة ~1.7 م/ث بهبوط ناعم بالقرب من سرج Himeros (35°N, 280°W)، مع إعادة صور من سطح قريبة إلى 125 م. نجت المركبة الفضائية وأرسلت من السطح لمدة ~16 يوماً."
+ },
+ {
+  "rel": "missions/asteroid/near-shoemaker.json",
+  "at": "events.1.label",
+  "en": "253 MATHILDE FLYBY",
+  "cur": "الطيران بجوار 253 ماثيلد"
+ },
+ {
+  "rel": "missions/asteroid/near-shoemaker.json",
+  "at": "events.3.label",
+  "en": "EROS ORBIT INSERTION",
+  "cur": "إدراج المدار حول إيروس"
+ },
+ {
+  "rel": "missions/asteroid/near-shoemaker.json",
+  "at": "events.4.label",
+  "en": "EROS LANDING — EDL",
+  "cur": "الهبوط على إيروس — EDL"
+ },
+ {
+  "rel": "missions/bennu/osiris-rex.json",
+  "at": "first",
+  "en": "Largest asteroid sample ever returned (121.6 g of Bennu, delivered to Earth 2023-09-24)",
+  "cur": "أكبر عينة كويكب تمت إعادتها على الإطلاق (121.6 جم من بينو، تسليمها إلى الأرض 2023-09-24)"
+ },
+ {
+  "rel": "missions/bennu/osiris-rex.json",
+  "at": "description",
+  "en": "OSIRIS-REx carried out one of the most exacting asteroid-proximity operations ever attempted. Launched 2016-09-08 from Cape Canaveral on an Atlas V 411, used a 2017 Earth gravity assist to rotate its orbital plane onto Bennu's 6° inclination, and rendezvoused with the 492-m carbonaceous near-Earth asteroid 2018-12-03. After stationkeeping at ~19 km, it later entered a record ~1.4 km orbit — the closest spacecraft orbit ever around any celestial body. Spent two years mapping Bennu's boulder-strewn surface and discovering active particle ejections. 2020-10-20 the Touch-and-Go sample arm descended to the Nightingale site, fired N₂ gas into the surface, and grabbed a plume — sinking 50 cm into a 'rubble-pile fluid' surface. Sample Return Capsule delivered 121.6 g of Bennu material to Utah 2023-09-24. The spacecraft itself was immediately redesignated OSIRIS-APEX, en route to a 2029 Apophis rendezvous.",
+  "cur": "نفذت OSIRIS-REx واحدة من أدق عمليات القرب من الكويكبات التي تمت محاولتها على الإطلاق. أطلقت في 2016-09-08 من رأس كانافيرال على صاروخ Atlas V 411، واستخدمت مساعدة جاذبية أرضية عام 2017 لتدوير مستوى مدارها إلى ميل بينو البالغ 6°، والتقت بالكويكب الكربوني القريب من الأرض 2018-12-03 الذي يبلغ قطره 492 م. بعد الثبات عند حوالي 19 كم، دخلت لاحقاً مدار قياسي حول ~1.4 كم — أقرب مدار فضائي حول أي جسم سماوي. أمضت سنتين في رسم خريطة سطح بينو المليء بالصخور واكتشفت عمليات إخراج جزيئات نشطة. في 2020-10-20 هبطت ذراع العينات ذات الاتصال اللحظي إلى موقع Nightingale، وأطلقت غاز النيتروجين N₂ إلى السطح، والتقطت سحابة — غاطسة 50 سم في سطح \"سائل كومة حطام\". Sample Return Capsule سلمت 121.6 جم من مادة بينو إلى Utah في 2023-09-24. أعيدت تسمية المركبة الفضائية نفسها فوراً إلى OSIRIS-APEX، في طريقها إلى لقاء أبوفيس عام 2029."
+ },
+ {
+  "rel": "missions/bennu/osiris-rex.json",
+  "at": "events.3.label",
+  "en": "TAG SAMPLE COLLECTION",
+  "cur": "جمع عينات اللمس والانطلاق"
+ },
+ {
+  "rel": "missions/ceres/dawn.json",
+  "at": "first",
+  "en": "First mission to orbit two extraterrestrial bodies — Vesta, then Ceres",
+  "cur": "أول مهمة تدور حول جرمين خارج الأرض — فيستا ثم سيريس"
+ },
+ {
+  "rel": "missions/ceres/dawn.json",
+  "at": "description",
+  "en": "Dawn proved ion propulsion at planetary scale: it matched orbits with massive Vesta, left, and spiralled down onto dwarf planet Ceres — the largest object in the asteroid belt. Bright spots in Occator crater became one of the mission's iconic mysteries, later tied to briny eruptions from a deep reservoir. This catalogue entry uses Ceres as the primary destination; Vesta is covered in the narrative above.",
+  "cur": "أثبتت المركبة Dawn فعالية الدفع الأيوني على مستوى كوكبي: فقد وازنت مداراتها مع الكويكب الضخم فيستا، الموضح على اليسار، ثم حلّقت بخطوط حلزونية نحو كوكب القزم سيريس — أكبر جرم في حزام الكويكبات. أصبحت البقع الساطعة في فوهة Occator إحدى الألغاز الحميمة للمهمة، وتبين لاحقاً أنها مرتبطة بانفجارات ملحية من خزان عميق. يستخدم هذا الملخص سيريس كوجهة أساسية؛ أما فيستا فتُغطّى في السرد أعلاه."
+ },
+ {
+  "rel": "missions/comet/giotto.json",
+  "at": "first",
+  "en": "ESA's first deep-space mission; closest comet flyby ever attempted (Halley, 596 km, 1986); first close-up imaging of a cometary nucleus",
+  "cur": "أول مهمة استكشافية عميقة للفضاء من ESA؛ أقرب نهج لمذنب تم محاولته على الإطلاق (مذنب هالي، 596 كم، 1986)؛ أول صور مقربة لنواة مذنب"
+ },
+ {
+  "rel": "missions/comet/giotto.json",
+  "at": "description",
+  "en": "Giotto was Europe's pillar of the Halley armada — a spin-stabilised 960 kg probe wrapped in a layered Whipple-Kevlar dust shield. Launched 1985-07-02, it flew through Halley's coma at 68 km/s relative velocity on 1986-03-14 with closest approach 596 km, returning the first close-up images of any cometary nucleus (an irregular 15 × 7.2 × 7.2 km elongated body with concentrated dust jets). A dust impact ~7.6 seconds before closest approach destabilised the spin axis and killed the camera, but the other instruments kept transmitting through the coma. After hibernating in heliocentric orbit, Giotto reactivated 1990 + used Earth gravity assist to retarget to comet 26P/Grigg-Skjellerup, flying past it at 200 km on 1992-07-10 — the closest cometary flyby ever performed.",
+  "cur": "كان Giotto عماد أوروبا في أسطول مذنب هالي — مسبار بكتلة 960 كيلوغراماً مستقر الدوران، مغلّف بدرع Whipple-Kevlar متعدد الطبقات لحماية من الغبار. أطلق في 1985-07-02، وحلّق عبر غلاف彗مذنب هالي بسرعة نسبية قدرها 68 كيلومتراً/ثانية في 1986-03-14 مع أقرب اقتراب يبلغ 596 كيلومتراً، حاملاً أول صور قريبة لأي نواة مذنب (جسم ممدود غير منتظم أبعاده 15 × 7.2 × 7.2 كيلومتراً مع نفاثات غبار مركزة). ارتطمت قطعة غبار قبل ~7.6 ثوان من أقرب اقتراب فأزعزعت محور الدوران وعطّلت الكاميرا، لكن الأجهزة الأخرى ظلّت تُرسل بيانات عبر الغلاف المذنب. بعد سبات في مدار حول الشمس، أعيد تفعيل Giotto في 1990 واستخدم مساعدة جاذبية الأرض لإعادة توجيهه نحو المذنب 26P/غريغ-سكيليروب، حيث حلّق بجانبه على مسافة 200 كيلومتر في 1992-07-10 — وهو أقرب حلول بمذنب أُجري على الإطلاق."
+ },
+ {
+  "rel": "missions/comet/rosetta.json",
+  "at": "first",
+  "en": "First spacecraft to orbit a comet — and to land on one (Philae, 2014-11-12)",
+  "cur": "أول مركبة فضائية تدور حول مذنب — وتهبط على واحد (فيلة، 2014-11-12)"
+ },
+ {
+  "rel": "missions/comet/rosetta.json",
+  "at": "description",
+  "en": "ESA's flagship comet-rendezvous mission. After a 10-year cruise that wove three Earth assists, a Mars assist, two asteroid flybys, and 957 days of deep-space hibernation, Rosetta caught up with comet 67P/Churyumov–Gerasimenko in August 2014 and orbited it for over two years through perihelion and out the back side. The Philae lander reached 67P's surface 2014-11-12 — the first soft landing on a comet — and returned ~64 hours of science after a harpoon failure left it in the shadow of a cliff. Rosetta itself ended the mission with a controlled descent to 67P's surface on 2016-09-30. Key results: organic molecules and glycine in the coma; 67P's initially-measured D/H ratio (≈3× terrestrial) argued against Jupiter-family comets as Earth's water source — a result a 2024 re-analysis has since called into question after finding a measurement error; the first detailed maps of comet outgassing geometry.",
+  "cur": "بعثة ESA الرائدة للالتقاء بالمذنب. بعد رحلة استكشافية لمدة 10 سنوات تضمنت ثلاث مساعدات جاذبية من الأرض ومساعدة جاذبية من المريخ وتحليقين قرب كويكبين و957 يوماً من السبات العميق في الفضاء، التقطت Rosetta المذنب 67P/Churyumov–Gerasimenko في أغسطس 2014 ودارت حوله لمدة أكثر من سنتين عبر الحضيض وخارج الجانب الآخر. وصل هابط Philae إلى سطح 67P في 2014-11-12 — أول هبوط ناعم على مذنب — وأرجع حوالي 64 ساعة من البيانات العلمية بعد فشل الرمح تركه في ظل جرف. انتهت Rosetta نفسها المهمة بنزول محكوم إلى سطح 67P في 2016-09-30. النتائج الرئيسية: جزيئات عضوية وجليسين في الهالة؛ نسبة D/H المقاسة أولاً لـ 67P (≈3× أرضية) حجبت ضد المذنبات من عائلة المشتري كمصدر لمياه الأرض — وهي نتيجة أعادت تحليل عام 2024 طرحها موضع الشك بعد اكتشاف خطأ في القياس؛ أول خرائط مفصلة لهندسة إطلاق الغاز من المذنب."
+ },
+ {
+  "rel": "missions/comet/rosetta.json",
+  "at": "events.1.label",
+  "en": "EARTH FLYBY #1",
+  "cur": "التحليق بجانب الأرض #1"
+ },
+ {
+  "rel": "missions/comet/rosetta.json",
+  "at": "events.2.label",
+  "en": "MARS FLYBY",
+  "cur": "التحليق بجانب المريخ"
+ },
+ {
+  "rel": "missions/didymos/hera.json",
+  "at": "first",
+  "en": "ESA's follow-up to DART — surveying the deflected Didymos asteroid",
+  "cur": "مهمة متابعة من ESA لـ DART — مسح كويكب ديديموس المنحرف"
+ },
+ {
+  "rel": "missions/didymos/hera.json",
+  "at": "description",
+  "en": "Hera is the European Space Agency's contribution to humanity's first planetary-defence experiment. In 2022 NASA's DART spacecraft deliberately crashed into Dimorphos — the small moon of the asteroid Didymos — and measurably shortened its orbit. Hera, launched in October 2024 on a Falcon 9, is flying to the same binary asteroid (with a 2025 Mars gravity assist en route) to conduct the detailed post-impact survey DART couldn't: the size of the crater, Dimorphos's mass and internal structure, and precisely how much momentum the impact transferred. Together, DART and Hera turn a one-off demonstration into a repeatable, well-characterised deflection technique. Hera carries two CubeSats, Juventas and Milani, for close-up radar sounding and mineralogy.",
+  "cur": "Hera هي مساهمة وكالة الفضاء الأوروبية في أول تجربة للدفاع الكوكبي للبشرية. في عام 2022 اصطدمت مركبة DART الفضائية التابعة لـ NASA عمداً بديمورفوس — القمر الصغير للكويكب ديديموس — وقصّرت مداره بشكل قابل للقياس. انطلقت Hera في أكتوبر 2024 على صاروخ Falcon 9، وهي تتجه إلى نفس الكويكب الثنائي (مع مساعدة جاذبية المريخ في عام 2025 في الطريق) لإجراء المسح التفصيلي لما بعد الاصطدام الذي لم تستطع DART القيام به: حجم الحفرة، وكتلة ديمورفوس وبنيته الداخلية، وبالضبط كمية الزخم التي نقلها الاصطدام. معاً، تحوّل DART وHera عرضاً توضيحياً لمرة واحدة إلى تقنية انحراف قابلة للتكرار ومحددة بشكل جيد. تحمل Hera قمرين صناعيين صغيرين من نوع CubeSats هما Juventas وMilani، للسبر الراداري عن قرب ودراسة علم المعادن."
+ },
+ {
+  "rel": "missions/dimorphos/dart.json",
+  "at": "first",
+  "en": "First demonstration of kinetic-impactor planetary defense; first time humans moved an asteroid",
+  "cur": "أول عرض توضيحي لمصادم حركي لحماية الكواكب؛ المرة الأولى التي يقوم فيها البشر بتحريك كويكب"
+ },
+ {
+  "rel": "missions/dimorphos/dart.json",
+  "at": "description",
+  "en": "DART (Double Asteroid Redirection Test) was the first planetary-defense mission ever flown — a 611-kg spacecraft sent to hit a 160-m asteroid hard enough to change its orbit. The target was Dimorphos, a moonlet of the 780-m asteroid Didymos. Launched 2021-11-24 on a Falcon 9; the SMART Nav autonomous navigation system took over 4 hours before impact to distinguish Dimorphos from its parent and target the smaller body. Impact 2022-09-26 at 23:14 UTC at ~6.6 km/s. Measured orbital-period change: 33 minutes (4.2%), exceeding the 73-second success threshold by ~25×. Momentum-transfer enhancement factor β ≈ 3.6 indicated significant carry from ejected surface material. The CubeSat LICIACube observed the plume; HST and JWST imaged the resulting ejecta tail for weeks. First demonstration that humans can move an asteroid.",
+  "cur": "DART (Double Asteroid Redirection Test) كان أول مهمة دفاع كوكبي تم تنفيذها على الإطلاق — مركبة فضائية بوزن 611 كجم أرسلت للاصطدام بكويكب يبلغ قطره 160 م بقوة كافية لتغيير مداره. كان الهدف ديمورفوس، وهو قمر صغير للكويكب ديديموس الذي يبلغ قطره 780 م. تم إطلاقها في 2021-11-24 على صاروخ Falcon 9؛ نظام الملاحة المستقل SMART Nav تولى السيطرة قبل 4 ساعات من التأثير لتمييز ديمورفوس عن كويكبه الأم واستهداف الجسم الأصغر. التأثير في 2022-09-26 الساعة 23:14 بتوقيت UTC بسرعة ≈6.6 كم/ث. التغيير المقاس في الفترة المدارية: 33 دقيقة (4.2%)، متجاوزاً عتبة النجاح البالغة 73 ثانية بحوالي 25×. عامل تحسين نقل الزخم β ≈ 3.6 أشار إلى حمل كبير من المادة السطحية المرفوعة. قمر CubeSat LICIACube لاحظ الدخان؛ لاحظت HST و JWST ذيل الحطام الناتج لعدة أسابيع. أول عرض توضيحي على أن البشر يمكنهم تحريك كويكب."
+ },
+ {
+  "rel": "missions/earth/apollo-1.json",
+  "at": "first",
+  "en": "Fatal pre-launch pad fire 1967-01-27 killed Grissom + White + Chaffee",
+  "cur": "حريق منصة قاتل قبل الإطلاق في 27 يناير 1967 أودى بحياة غريسوم ووايت وشافي"
+ },
+ {
+  "rel": "missions/earth/apollo-1.json",
+  "at": "description",
+  "en": "Apollo 1 was the planned first crewed flight of the Apollo Block I CSM, originally designated AS-204 and scheduled to launch 1967-02-21 from LC-34. During a routine \"plugs-out\" test on 1967-01-27 17:31 EST, with the crew sealed inside the pressurised pure-oxygen cabin, a flash fire ignited in the lower-equipment bay — likely a Teflon-insulated wire arc through silver-plated copper that had been damaged during installation. Cabin pressure spiked to 29 psi within 15 seconds; the inward-opening hatch couldn't be unsealed against the pressure differential. Gus Grissom, Ed White, and Roger Chaffee died from asphyxiation within seconds. The investigation led to a complete Block I → Block II redesign + the safer outward-opening unified hatch + non-flammable cabin materials + pre-launch nitrogen-rich cabin atmosphere. Apollo 1's official designation was assigned posthumously to honour the crew. Subsequent Apollo missions (CSM-101 through CSM-114) flew the Block II hardware that this redesign produced.",
+  "cur": "كانت Apollo 1 الرحلة المأهولة الأولى المخطط لها لوحدة CSM من فئة Block I، وقد سُميت في الأصل AS-204 وكان من المقرر إطلاقها في 21 فبراير 1967 من LC-34. خلال اختبار 'فصل القوابس' الروتيني في 27 يناير 1967 الساعة 17:31 بالتوقيت الشرقي، وبينما كان الطاقم محتجزًا داخل مقصورة مضغوطة بأكسجين نقي، اندلع حريق وميضي في حجرة المعدات السفلية — على الأرجح بفعل قوس كهربائي في سلك معزول بالتفلون عبر نحاس مطلي بالفضة تضرر أثناء التركيب. ارتفع ضغط المقصورة إلى 29 رطل/بوصة² خلال 15 ثانية؛ ولم يمكن فك ختم الفتحة المفتوحة للداخل في مواجهة فارق الضغط. مات غوس غريسوم وإد وايت وروجر شافي اختناقًا خلال ثوانٍ. أدى التحقيق إلى إعادة تصميم شاملة من Block I إلى Block II + الفتحة الموحدة الأكثر أمانًا التي تفتح للخارج + مواد مقصورة غير قابلة للاشتعال + جو مقصورة غني بالنيتروجين قبل الإطلاق. مُنحت تسمية Apollo 1 الرسمية بعد وفاة الطاقم تكريمًا لهم. حلّقت بعثات أبولو اللاحقة (CSM-101 حتى CSM-114) بأجهزة Block II التي أنتجتها إعادة التصميم هذه."
+ },
+ {
+  "rel": "missions/earth/apollo-1.json",
+  "at": "events.0.label",
+  "en": "PAD FIRE",
+  "cur": "حريق على منصة الإطلاق"
+ },
+ {
+  "rel": "missions/earth/apollo-soyuz.json",
+  "at": "name",
+  "en": "Apollo-Soyuz Test Project (ASTP)",
+  "cur": "مشروع Apollo-Soyuz التجريبي (ASTP)"
+ },
+ {
+  "rel": "missions/earth/apollo-soyuz.json",
+  "at": "first",
+  "en": "First international human spaceflight cooperation; first US-USSR rendezvous + docking",
+  "cur": "أول تعاون بشري دولي في الفضاء؛ أول التقاء وربط بين مركبة أمريكية وسوفييتية"
+ },
+ {
+  "rel": "missions/earth/apollo-soyuz.json",
+  "at": "dispatch",
+  "en": "Apollo-Soyuz is where the space race ends — not at a finish line, but with a handshake. In July 1975 an American Apollo and a Soviet Soyuz, the rival spacecraft of the rival superpowers, met and docked in orbit, and Tom Stafford and Alexei Leonov shook hands through the open hatch between them. It took a jointly-built docking adapter, two crews learning each other's language, and a thaw in the Cold War deep enough to let the era's fiercest competitors cooperate in full view of the world. Nothing about it was strictly necessary; that was the point. After eighteen years of racing to be first, the two programs chose, for one flight, simply to meet — and set the template for the international cooperation that would one day build the Space Station.",
+  "cur": "Apollo-Soyuz هي المكان الذي تنتهي فيه سباق الفضاء — ليس عند خط النهاية، بل بمصافحة. في يوليو 1975 التقت مركبة Apollo الأمريكية وSoyuz السوفييتية، المركبات الفضائية المنافسة للدولتين العظميين المنافستين، والتقت وربطت في المدار، وصافح توم ستافورد وألكسي ليونوف بعضهما عبر الفتحة المفتوحة بينهما. استغرق الأمر محول ربط مصمم بشكل مشترك، وطاقمي عمل يتعلمان لغة بعضهما البعض، وذوبان في الحرب الباردة عميق بما يكفي ليسمح لأشرس المتنافسين في تلك الحقبة بالتعاون على مرأى من العالم أجمع. لم يكن هناك شيء ضروري تماماً حول ذلك؛ كان هذا هو الهدف. بعد ثماني عشرة سنة من السباق ليكونا الأول، اختارت البرنامجان — لرحلة واحدة فقط — ببساطة الالتقاء — ورسما القالب للتعاون الدولي الذي سيبني يوماً ما محطة الفضاء."
+ },
+ {
+  "rel": "missions/earth/apollo-soyuz.json",
+  "at": "description",
+  "en": "The Apollo-Soyuz Test Project — first international crewed spaceflight, first US-USSR rendezvous + docking, and the final flight of an Apollo CSM. Apollo (Stafford + Brand + Slayton) launched 1975-07-15 from LC-39B; Soyuz 19 (Leonov + Kubasov) launched the same day from Baikonur. Apollo's docking module (built by NASA + Rockwell) used a new androgynous docking ring (APAS) that allowed either spacecraft to be active — the precursor of every international docking system since (Mir, ISS, Tiangong, Dragon, Starliner). Hatch opening 1975-07-17 ~16:00 UTC; the crews exchanged flags, gifts, and joint experiments across 2 dockings (initial July 17, practice July 19) totalling ~44 hours docked. Soyuz returned 1975-07-21; Apollo continued 5 more days in orbit before splashdown 1975-07-24 — last Apollo splashdown ever. CSM-111 is on display at the California Science Center, LA (alongside Endeavour). The détente-era cooperation that ASTP modelled informed the Shuttle-Mir programme 20 years later.",
+  "cur": "مشروع اختبار Apollo-سويوز — أول رحلة فضائية مأهولة بالبشر دولية، وأول التقاء وإرساء دوكينج بين الولايات المتحدة والاتحاد السوفييتي، والرحلة الأخيرة لوحدة القيادة والخدمة Apollo (CSM). أطلق Apollo (ستافورد + براند + سلايتون) في 1975-07-15 من LC-39B؛ وأطلقت سويوز 19 (ليونوف + كوباسوف) في نفس اليوم من بايكونور. استخدمت وحدة الإرساء التابعة لApollo (من بناء NASA و Rockwell) حلقة إرساء ثنائية الاتجاه جديدة (APAS) سمحت لأي من المركبتين بأن تكون نشطة — المقدمة لكل نظام إرساء دولي منذ ذلك الحين (Mir ومحطة الفضاء الدولية و Tiangong و Dragon و Starliner). فتح الفتحة في 1975-07-17 حوالي 16:00 بتوقيت UTC؛ تبادل الطاقمان الأعلام والهدايا والتجارب المشتركة عبر عمليتي إرساء (الأولى في 17 يوليو، والتدريبية في 19 يوليو) بإجمالي حوالي 44 ساعة مرسية. عادت سويوز في 1975-07-21؛ واستمر Apollo 5 أيام إضافية في المدار قبل الهبوط بالمظلة في 1975-07-24 — آخر هبوط بالمظلة لApollo على الإطلاق. وحدة القيادة والخدمة CSM-111 معروضة في مركز كاليفورنيا للعلوم، لوس أنجلوس (إلى جانب Endeavour). سبقت التعاون في عصر التهدئة الذي جسده مشروع اختبار Apollo-سويوز برنامج Shuttle-Mir قبل 20 سنة."
+ },
+ {
+  "rel": "missions/earth/apollo7.json",
+  "at": "first",
+  "en": "First crewed Apollo flight — Earth-orbit CSM shakedown",
+  "cur": "أول رحلة Apollo مأهولة — اختبار CSM في المدار الأرضي"
+ },
+ {
+  "rel": "missions/earth/apollo7.json",
+  "at": "description",
+  "en": "The first crewed Apollo flight, 21 months after the Apollo 1 fire (1967-01-27) killed Grissom, White and Chaffee on the pad. Apollo 7 verified the redesigned Block II Command and Service Module in Earth orbit — life support, power, propulsion (SPS fired eight times), thermal control, and the world's first live TV broadcast from a crewed US spacecraft. Schirra (head cold + irritable throughout) overruled Houston on a re-entry helmet question, contributing to Mission Control's decision that none of the three crewmembers would fly again. The 10 day 20 hour flight cleared the way for Apollo 8's lunar-orbit gamble two months later.",
+  "cur": "أول رحلة مأهولة بالبشر في برنامج Apollo، بعد 21 شهراً من حريق Apollo 1 (1967-01-27) الذي أودى بحياة غريسوم ووايت وشافي على منصة الإطلاق. تحقّقت Apollo 7 من موثوقية وحدة القيادة والخدمة Block II المُعادة تصميمها في مدار الأرض — أنظمة دعم الحياة والطاقة والدفع (أُطلقت SPS ثماني مرات)، والتحكم الحراري، وأول بث تلفزيوني مباشر من مركبة فضائية أمريكية مأهولة في العالم. تجاوز شيرا (الذي عاني من الزكام وكان متهيّجاً طوال الوقت) تعليمات هيوستن بشأن مسألة خوذة العودة إلى الأرض، الأمر الذي ساهم في قرار مركز التحكم في المهام بعدم السماح لأي من أفراد الطاقم الثلاثة بالتحليق مرة أخرى. أتاحت الرحلة التي استغرقت 10 أيام و20 ساعة الطريق أمام Apollo 8 لمحاولتها الجريئة في مدار القمر بعد شهرين."
+ },
+ {
+  "rel": "missions/earth/apollo7.json",
+  "at": "events.2.label",
+  "en": "FIRST LIVE TV",
+  "cur": "أول بث تلفزيوني مباشر"
+ },
+ {
+  "rel": "missions/earth/apollo9.json",
+  "at": "first",
+  "en": "First crewed LM flight — Earth-orbit LM separation + rendezvous tests",
+  "cur": "أول رحلة مأهولة بالرواد للوحدة القمرية — فصل في المدار الأرضي واختبارات الالتقاء والاقتران"
+ },
+ {
+  "rel": "missions/earth/apollo9.json",
+  "at": "description",
+  "en": "The first crewed flight of the Lunar Module. In Earth orbit, McDivitt and Schweickart undocked LM Spider from CSM Gumdrop, flew up to 183 km away over six hours, then rendezvous and re-docked — every step of the lunar-rendezvous procedure tested without the option of bringing the crew home in the CSM if anything went wrong. Schweickart did a 38-minute EVA on the LM porch, demonstrating the Apollo EVA spacesuit + PLSS backpack design that the Moonwalking crews would use. Scott did a stand-up EVA from the CSM hatch. With LM hardware and rendezvous procedures verified, NASA was clear to send Apollo 10 to the Moon two months later.",
+  "cur": "أول رحلة مأهولة بالرواد للوحدة القمرية. في المدار الأرضي، فصل ماكديفيت وشفايكارت وحدة القمر Spider عن وحدة القيادة والخدمة Gumdrop، وحلّقا بعيداً حتى 183 كم على مدى ست ساعات، ثم التقيا واقترنا مجدداً — تمت اختبار كل خطوة من خطوات إجراء الالتقاء القمري دون خيار إعادة الطاقم إلى الوطن في وحدة القيادة والخدمة إذا حدث أي خطأ. قام Schweickart برحلة سير فضائي بمدة 38 دقيقة على درج الوحدة القمرية، مما أثبت تصميم بدلة سير الفضاء الخاصة بـ Apollo وحقيبة الظهر PLSS التي ستستخدمها أطقم المشي على القمر. قام سكوت برحلة سير فضائي واقفة من فتحة وحدة القيادة والخدمة. مع التحقق من أجهزة الوحدة القمرية وإجراءات الالتقاء، كانت NASA مستعدة لإرسال Apollo 10 إلى القمر بعد شهرين."
+ },
+ {
+  "rel": "missions/earth/apollo9.json",
+  "at": "events.1.label",
+  "en": "CSM-LM EXTRACTION",
+  "cur": "استخراج وحدة القيادة-القمرية"
+ },
+ {
+  "rel": "missions/earth/apollo9.json",
+  "at": "events.5.label",
+  "en": "LM JETTISON",
+  "cur": "التخلص من الوحدة القمرية"
+ },
+ {
+  "rel": "missions/earth/aurora-7.json",
+  "at": "dispatch",
+  "en": "Aurora 7 was meant to be a repeat and became a scare. Scott Carpenter flew the same three-orbit profile as Glenn, but distracted by experiments and a balky control system he burned through his attitude fuel and fired his retros a few seconds late and slightly out of line — enough to carry him some 400 kilometres past his landing target. For a long, silent hour no one knew whether he was alive, until a search plane spotted him bobbing in a life raft. It is a plain reminder that in a machine with almost no margin, small errors compound fast — and that recovering from them is a skill of its own.",
+  "cur": "كانت Aurora 7 من المفترض أن تكون تكراراً فأصبحت مصدر قلق. طار سكوت كاربنتر بنفس مسار الدورات الثلاث الذي طار به غلين، لكنه انشغل بالتجارب ونظام تحكم متعثر فاستهلك وقود التحكم بالوضعية وأطلق صواريخ الكبح الرجعية متأخراً ببضع ثوانٍ وبانحراف طفيف — ما يكفي لحمله حوالي 400 كيلومتر بعد هدف الهبوط المحدد. لمدة ساعة طويلة صامتة لم يعلم أحد ما إذا كان حياً، إلى أن رصدته طائرة بحث وهو يتأرجح في قارب نجاة. إنها تذكير واضح بأن الأخطاء الصغيرة في آلة لا تملك أي هامش تقريباً تتفاقم بسرعة — وأن التعافي منها مهارة بحد ذاتها."
+ },
+ {
+  "rel": "missions/earth/aurora-7.json",
+  "at": "first",
+  "en": "Repeated Glenn's 3-orbit profile; overshot landing target by 400 km",
+  "cur": "كرّرت رحلة غلين بثلاث دورات؛ تجاوزت هدف الهبوط بـ 400 كم"
+ },
+ {
+  "rel": "missions/earth/aurora-7.json",
+  "at": "description",
+  "en": "Scott Carpenter's 3-orbit flight — repeated Glenn's MA-6 profile to firm up confidence in the Mercury-Atlas vehicle before attempting the longer Schirra/Cooper flights. Carpenter ran extensive zero-g experiments and observation tasks; the heavy experimental load + a stuck yaw thruster caused him to be ~25° off attitude at retro-fire, overshooting the landing target by ~400 km. The 1 h 7 min recovery delay was widely reported and damaged Carpenter's reputation in NASA management; he never flew again. Capsule Aurora 7 on display at the Museum of Science and Industry, Chicago IL.",
+  "cur": "رحلة سكوت كاربنتر بثلاث دورات — كرّرت ملف رحلة غلين MA-6 لتعزيز الثقة بمركبة Mercury-Atlas قبل خوض رحلات شيرا/كوبر الأطول. أجرى كاربنتر تجارب موسعة على انعدام الجاذبية ومهام رصد؛ تسبّب الحمل التجريبي الثقيل مع دافع انحراف عالق في أن يكون منحرفًا نحو 25° عن الزاوية الصحيحة عند إطلاق الرتروج، فتجاوز هدف الهبوط بنحو 400 كم. أُذيع تأخير الاستعادة الذي بلغ ساعة و7 دقائق على نطاق واسع وأضر بسمعة كاربنتر داخل إدارة NASA؛ لم يُحلّق مرة أخرى. كبسولة Aurora 7 معروضة في متحف العلوم والصناعة، Chicago، إلينوي."
+ },
+ {
+  "rel": "missions/earth/faith-7.json",
+  "at": "dispatch",
+  "en": "Faith 7 closed Mercury, and did it the hard way. Gordon Cooper flew twenty-two orbits over a day and a half — longer than every previous Mercury flight combined — and then, in the final hours, his automatic control system failed. So he flew the reentry by hand, lining the capsule up against the horizon and the stars and firing his retros on a spoken count, and put it down closer to the ship than any flight before. It was the last time an American flew in space alone, and a fitting last word for a program built by test pilots: when the automation quit, the pilot brought it home.",
+  "cur": "أنهت Faith 7 برنامج Mercury، وفعلت ذلك بالطريقة الصعبة. طار جوردن كوبر اثنين وعشرين مدارًا على مدى يوم ونصف — أطول من جميع رحلات Mercury السابقة مجتمعة — ثم، في الساعات الأخيرة، تعطل نظام التحكم الآلي. لذا قاد عملية العودة يدويًا، محاذيًا الكبسولة مع الأفق والنجوم وأطلق محركات الكبح بناءً على عد شفهي، وهبط بها أقرب إلى السفينة من أي رحلة سابقة. كانت آخر مرة يطير فيها أمريكي في الفضاء وحيدًا، وكانت خاتمة مناسبة لبرنامج بناه طيارو اختبار: عندما توقفت الأتمتة، عاد بها الطيار إلى الوطن."
+ },
+ {
+  "rel": "missions/earth/faith-7.json",
+  "at": "first",
+  "en": "Last solo American crewed spaceflight; 22 orbits / 34 hours",
+  "cur": "آخر رحلة فضاء أمريكية مأهولة منفردة؛ 22 دورة / 34 ساعة"
+ },
+ {
+  "rel": "missions/earth/faith-7.json",
+  "at": "description",
+  "en": "Gordon Cooper's 22-orbit flight — last Mercury mission and last solo American spaceflight ever (all subsequent US programmes flew multi-person crews). Duration 34 h 19 min — more than all previous Mercury flights combined. Cooper conducted Earth observation, photography, and ate the first meal in space. Late in the mission a power-supply failure forced manual control of all attitude + retro-fire — Cooper used the window's painted alignment marks against Earth's horizon for orientation, achieving the most accurate splashdown of any Mercury flight (~7 km from target). Capsule Faith 7 on display at Space Center Houston, TX.",
+  "cur": "رحلة جوردن كوبر بـ 22 دورة — آخر رحلة Mercury وآخر رحلة فضاء أمريكية مأهولة منفردة على الإطلاق (شملت جميع البرامج الأمريكية اللاحقة أطقمًا متعددة). المدة 34 ساعة و19 دقيقة — أكثر من مجموع كل رحلات Mercury السابقة مجتمعة. أجرى كوبر رصدًا للأرض وتصويرًا، وتناول أول وجبة في الفضاء. في وقت متأخر من الرحلة، أجبر عطل في مصدر الطاقة على التحكم اليدوي بالكامل في الموضع وإطلاق الرتروج — استخدم كوبر علامات المحاذاة المرسومة على النافذة بمحاذاة أفق الأرض للتوجيه، فحقق أدق هبوط في أي رحلة Mercury (~7 كم من الهدف). كبسولة Faith 7 معروضة في Space Center Houston، تكساس."
+ },
+ {
+  "rel": "missions/earth/freedom-7.json",
+  "at": "dispatch",
+  "en": "Freedom 7 is where American human spaceflight begins. Three weeks after Gagarin had already orbited the Earth, Alan Shepard's flight was shorter, lower, and slower — fifteen minutes, straight up and straight back down, never even reaching orbit — and the country celebrated anyway, because for the first time an American had left the planet. What set it apart from Gagarin's flight was the man: Shepard hand-flew his capsule's attitude in space, where Gagarin had ridden a fully automated one, and to a program built around test pilots that difference was everything. Twenty days later, its success gave Kennedy the nerve to stand before Congress and bet the nation on the Moon. A small flight that started something very large.",
+  "cur": "Freedom 7 هي حيث يبدأ الطيران البشري الأمريكي إلى الفضاء. بعد ثلاثة أسابيع من دوران جاجارين حول الأرض بالفعل، كانت رحلة ألان شيبارد أقصر وأدنى وأبطأ — خمسة عشر دقيقة، صعوداً مباشراً ونزولاً مباشراً، دون الوصول حتى إلى المدار — واحتفلت البلاد على أي حال، لأن أمريكياً غادر الكوكب للمرة الأولى. ما ميزها عن رحلة جاجارين كان الرجل نفسه: قاد شيبارد وضعية كبسولته يدوياً في الفضاء، بينما ركب جاجارين كبسولة آلية بالكامل، وبالنسبة لبرنامج بُني حول طياري اختبار كان هذا الفارق كل شيء. بعد عشرين يوماً، منح نجاحها Kennedy الجرأة للوقوف أمام الكونغرس والمراهنة بالأمة على القمر. رحلة صغيرة بدأت شيئاً كبيراً جداً."
+ },
+ {
+  "rel": "missions/earth/freedom-7.json",
+  "at": "first",
+  "en": "First American in space",
+  "cur": "أول أمريكي في الفضاء"
+ },
+ {
+  "rel": "missions/earth/freedom-7.json",
+  "at": "description",
+  "en": "Alan Shepard's 15-minute suborbital flight — first American in space, 23 days after Yuri Gagarin's Vostok 1 orbital flight. Apogee 187 km; max-g 11.6 g during re-entry; max-Q 3.7 g. Capsule Freedom 7 splashed down 487 km downrange in the Atlantic. Shepard reportedly remarked \"What a beautiful view\" at apogee. The flight was suborbital because the Mercury-Redstone launcher couldn't reach orbital velocity; subsequent orbital Mercury missions used the more powerful Atlas LV-3B. Capsule Freedom 7 is on display at the JFK Presidential Library, Boston MA.",
+  "cur": "رحلة ألان شيبارد دون المدارية التي استغرقت 15 دقيقة — أول أمريكي في الفضاء، بعد 23 يومًا من رحلة يوري جاجارين المدارية على متن Vostok 1. ارتفاع الذروة 187 كم؛ تسارع أقصى 11.6 جي أثناء العودة؛ ضغط ديناميكي أقصى 3.7 جي. هبطت كبسولة Freedom 7 في المحيط الأطلسي على بعد 487 كم. يُنقل أن شيبارد علّق قائلاً 'يا له من منظر جميل' عند الذروة. كانت الرحلة دون مدارية لأن صاروخ Mercury-Redstone لم يستطع بلوغ السرعة المدارية؛ استخدمت بعثات Mercury المدارية اللاحقة صاروخ Atlas LV-3B الأقوى. كبسولة Freedom 7 معروضة في مكتبة JFK Presidential Library، بوسطن، ماساتشوستس."
+ },
+ {
+  "rel": "missions/earth/friendship-7.json",
+  "at": "dispatch",
+  "en": "Friendship 7 is the flight where the United States finally caught its breath. John Glenn was the first American to orbit — three times around the planet, ten months after Gagarin — and for a country that had spent four years watching the Soviets go first, that was enough to make him the most famous man in the nation overnight. The drama came near the end: a faulty sensor suggested his heat shield might be loose, and controllers had him keep his spent retro-pack strapped on through reentry as a long shot to hold it in place. It held. Glenn came home, and the anxiety that had hung over the whole program lifted with him.",
+  "cur": "Friendship 7 هي الرحلة التي استعادت فيها الولايات المتحدة أنفاسها أخيراً. كان جون غلين أول أمريكي يدور حول الأرض — ثلاث دورات حول الكوكب، بعد عشرة أشهر من جاجارين — وبالنسبة لبلد قضى أربع سنوات يشاهد السوفييت يسبقونه، كان ذلك كافياً ليصبح أشهر رجل في الأمة بين عشية وضحاها. جاءت الدراما قرب النهاية: أشار مستشعر معطل إلى احتمال ارتخاء الدرع الحراري، وطلب المراقبون منه إبقاء حزمة الكبح المستهلكة مثبتة خلال العودة إلى الغلاف الجوي كمحاولة أخيرة لتثبيته في مكانه. صمد الدرع. عاد غلين إلى الوطن، وارتفع معه القلق الذي خيّم على البرنامج بأكمله."
+ },
+ {
+  "rel": "missions/earth/friendship-7.json",
+  "at": "first",
+  "en": "First American to orbit the Earth",
+  "cur": "أول أمريكي يدور حول الأرض"
+ },
+ {
+  "rel": "missions/earth/friendship-7.json",
+  "at": "description",
+  "en": "John Glenn's 3-orbit flight — first American to orbit Earth, 10 months after Gagarin and 4 months after Titov. Orbit: 159 × 265 km, inclination 32.5°. A heat-shield warning indicator in mission control suggested the shield might be loose — the retropack was kept attached through re-entry as a backup, prompting Glenn's famous \"fireflies\" observation as bits of retropack ablated past the window. Splashdown 1287 km southeast of Cape Canaveral, 4 h 55 min after launch. Glenn returned to space 36 years later on STS-95 (1998) at age 77. Friendship 7 on display at the National Air and Space Museum, Washington DC.",
+  "cur": "رحلة جون غلين على ثلاثة مدارات — أول أمريكي يدور حول الأرض، بعد 10 أشهر من جاجارين وبعد 4 أشهر من تيتوف. المدار: 159 × 265 كم، الميل 32.5°. حذّر مؤشر حماية الحرارة في مركز المراقبة من احتمال تفكك الدرع — تم الاحتفاظ بحزمة الإبطاء مرفقة خلال إعادة الدخول كنسخة احتياطية، مما دفع جون غلين إلى ملاحظته الشهيرة بـ \"اليراعات\" (fireflies) حيث تآكل أجزاء من حزمة الإبطاء أمام النافذة. الانغطاس في الماء على بعد 1287 كم جنوب شرق رأس كانافيرال، بعد 4 ساعات و55 دقيقة من الإطلاق. عاد جون غلين إلى الفضاء بعد 36 سنة على متن STS-95 (1998) في سن 77. تُعرض Friendship 7 في المتحف الوطني للهواء والفضاء في Washington DC."
+ },
+ {
+  "rel": "missions/earth/gemini12.json",
+  "at": "first",
+  "en": "Solved EVA — Aldrin's spacewalks; final Gemini",
+  "cur": "حلّ مشكلة EVA — سير ألدرن الفضائي؛ آخر Gemini"
+ },
+ {
+  "rel": "missions/earth/gemini12.json",
+  "at": "dispatch",
+  "en": "By the last Gemini, one problem was still unsolved: spacewalking didn't work. The flights between Ed White and Gemini 12 had turned EVA into a series of exhausting near-failures — astronauts fighting for every motion, overheating, running out of time. Buzz Aldrin fixed it, and the fix was preparation: he rehearsed the whole thing underwater until it was routine, and the spacecraft was fitted with handholds, footholds, and tethers so he had something to work against. Across more than five hours outside, he did ordinary tasks calmly and came back unspent — proof that EVA could be made reliable. It was the final item on the Gemini checklist, and with it the program closed, having taught NASA everything the Moon would require.",
+  "cur": "مع آخر رحلة Gemini، كانت هناك مشكلة واحدة لم تُحَل بعد: السير الفضائي لم ينجح. حوّلت الرحلات بين إد وايت وGemini 12 نشاط EVA إلى سلسلة من الإخفاقات المُنهِكة شبه الكاملة — رواد فضاء يصارعون من أجل كل حركة، يعانون من ارتفاع الحرارة، وينفد وقتهم. أصلح بز ألدرن المشكلة، وكان الحل هو الإعداد: تدرّب على كل شيء تحت الماء حتى أصبح روتينياً، وزُوِّدت المركبة بمقابض يدوية وموطئ أقدام وحبال ربط ليكون لديه ما يستند إليه أثناء العمل. على مدى أكثر من خمس ساعات في الخارج، أنجز مهام عادية بهدوء وعاد دون إنهاك — دليل على أن EVA يمكن أن يصبح موثوقاً. كانت هذه آخر بنود قائمة Gemini، ومعها أُغلِق البرنامج، بعد أن علّم NASA كل ما يتطلبه القمر."
+ },
+ {
+  "rel": "missions/earth/gemini12.json",
+  "at": "description",
+  "en": "James Lovell and Buzz Aldrin flew the final Gemini, 11-15 November 1966. Aldrin's three EVAs totalling 5 h 30 m — supported by underwater training, handholds, and foot restraints — finally showed that useful work could be done in space, solving the EVA difficulties of earlier flights. 59 orbits.",
+  "cur": "طار جيمس لوفل وبز ألدرن في آخر رحلة Gemini، 11-15 نوفمبر 1966. نشاطات ألدرن الثلاثة من نوع EVA بمجموع 5 ساعة 30 دقيقة — المدعومة بالتدريب تحت الماء والمقابض اليدوية ومثبِّتات القدم — أظهرت أخيراً أن العمل المفيد يمكن إنجازه في الفضاء، حاسمةً صعوبات EVA التي واجهتها الرحلات السابقة. 59 دورة مدارية."
+ },
+ {
+  "rel": "missions/earth/gemini3.json",
+  "at": "first",
+  "en": "First crewed Gemini; first orbital maneuver by a crew",
+  "cur": "أول رحلة Gemini مأهولة؛ أول مناورة مدارية بواسطة طاقم"
+ },
+ {
+  "rel": "missions/earth/gemini3.json",
+  "at": "dispatch",
+  "en": "Gemini 3 was the shakedown — the first flight of the new two-seat spacecraft, and the first time an American crew changed their own orbit rather than just riding the one the rocket gave them. Gus Grissom commanded it, four years after his Mercury capsule sank on splashdown, and named this one \"Molly Brown\" after the unsinkable heroine — a piece of gallows humor NASA's public-affairs office did not love. The flight itself was short and deliberately modest, three orbits to prove the machine flew as designed. But that small act of nudging the orbit with onboard thrusters was the first step of everything Gemini existed to do.",
+  "cur": "كانت Gemini 3 رحلة الاختبار الأولية — الرحلة الأولى للمركبة الفضائية الجديدة ذات المقعدين، والمرة الأولى التي يغير فيها طاقم أمريكي مدارهم بأنفسهم بدلاً من مجرد البقاء في المدار الذي وضعهم فيه الصاروخ. قادها غوس غريسوم، بعد أربع سنوات من غرق كبسولته Mercury عند الهبوط على الماء، وأطلق على هذه الكبسولة اسم \"Molly Brown\" تيمناً بالبطلة التي لا تغرق — نوع من الفكاهة السوداء لم يكن مكتب الشؤون العامة في NASA راضياً عنه. الرحلة نفسها كانت قصيرة ومتواضعة عن قصد، ثلاث دورات مدارية لإثبات أن الآلة تطير كما صُممت. لكن ذلك الفعل الصغير بدفع المدار باستخدام الدفاعات الموجودة على متن المركبة كان الخطوة الأولى لكل ما وُجدت Gemini من أجله."
+ },
+ {
+  "rel": "missions/earth/gemini3.json",
+  "at": "description",
+  "en": "First crewed Gemini flight. Gus Grissom and John Young flew three orbits on 23 March 1965, checking out the new two-person spacecraft and performing the first orbital maneuver by a crewed vehicle — firing thrusters to change the orbit. Grissom nicknamed the capsule \"Molly Brown.\" Duration 4 h 52 m; Atlantic splashdown.",
+  "cur": "أول رحلة Gemini مأهولة. حلق غوس غريسوم وجون يونغ في ثلاث دورات مدارية في 23 مارس 1965، لاختبار المركبة الفضائية الجديدة ذات المقعدين وإجراء أول مناورة مدارية بواسطة مركبة مأهولة — إطلاق الدفاعات لتغيير المدار. أطلق غريسوم على الكبسولة لقب \"Molly Brown\". المدة 4 ساعات و52 دقيقة؛ هبوط على الماء في المحيط الأطلسي."
+ },
+ {
+  "rel": "missions/earth/gemini4.json",
+  "at": "first",
+  "en": "First American spacewalk (Ed White)",
+  "cur": "أول سير في الفضاء أمريكي (إد وايت)"
+ },
+ {
+  "rel": "missions/earth/gemini4.json",
+  "at": "dispatch",
+  "en": "Gemini 4 is remembered for one photograph: Ed White, tethered to the spacecraft by a gold umbilical, floating over a blue Earth with a handheld maneuvering gun — the first American to walk in space. The moment was so exhilarating that when Mission Control ordered him back inside after twenty minutes, White called it the saddest moment of his life. The spacewalk looked effortless and mostly was, because White was drifting free rather than working — the hard truth that EVA is exhausting labor wouldn't arrive until the next few flights. But for a country that had been trailing the Soviets, who had made the first spacewalk eleven weeks earlier, it was proof America could do this too, and the image became one of the defining pictures of the era.",
+  "cur": "يُذكر Gemini 4 بصورة واحدة: إد وايت، مربوط بالمركبة الفضائية برباط سري ذهبي، يطفو فوق الأرض الزرقاء وفي يده مسدس مناورة يدوي — أول أمريكي يسير في الفضاء. كانت اللحظة مثيرة لدرجة أنه عندما أمره مركز المهمة بالعودة إلى الداخل بعد عشرين دقيقة، أطلق عليها وايت أحزن لحظة في حياته. بدا السير في الفضاء سهلاً وكان كذلك في الغالب، لأن وايت كان يطفو بحرية بدلاً من العمل — الحقيقة المؤلمة بأن السير خارج المركبة هو عمل مرهق لم تأتِ إلا في الرحلات اللاحقة. لكن بالنسبة لدولة كانت متخلفة عن السوفييت، الذين قاموا بأول سير في الفضاء قبل احدى عشرة أسبوعاً، كانت دليلاً على أن أمريكا تستطيع أن تفعل هذا أيضاً، وأصبحت الصورة إحدى الصور المميزة للعصر."
+ },
+ {
+  "rel": "missions/earth/gemini4.json",
+  "at": "description",
+  "en": "James McDivitt and Edward White flew a four-day, 62-orbit mission from 3 June 1965. During the third orbit White made the first American spacewalk — about 23 minutes outside, tethered, using a handheld maneuvering unit. The flight also ran the first US extended medical + science program.",
+  "cur": "قاد جيمس ماكديفيت وإدوارد وايت رحلة استمرت أربعة أيام و62 دورة حول الأرض من 3 يونيو 1965. في الدورة الثالثة، قام وايت بأول سير في الفضاء أمريكي — حوالي 23 دقيقة خارج المركبة، مربوطاً، باستخدام وحدة مناورة يدوية. كما شهدت الرحلة أول برنامج طبي وعلمي أمريكي موسّع."
+ },
+ {
+  "rel": "missions/earth/gemini6a.json",
+  "at": "first",
+  "en": "First crewed space rendezvous",
+  "cur": "أول التقاء مأهول في الفضاء"
+ },
+ {
+  "rel": "missions/earth/gemini6a.json",
+  "at": "dispatch",
+  "en": "Rendezvous — two spacecraft finding and joining each other in orbit — was the skill Apollo could not do without, and Gemini 6A is where it was first done. It nearly didn't fly: its original target blew up on the way to orbit, and then, strapped in for the rescheduled launch, the Titan's engines lit and abruptly died on the pad — a moment when the rules said eject, and Wally Schirra, feeling no motion, coolly chose not to. Three days later it flew and did the thing that had never been done: caught up with Gemini 7 and held station a foot away, the crews close enough to read each other's faces. It looked easy and was anything but — the orbital mechanics of catching another craft are deeply counter-intuitive — and cracking it was the moment lunar-orbit rendezvous, and the whole Apollo plan, became real.",
+  "cur": "الالتقاء — أي قيام مركبتين فضائيتين بإيجاد بعضهما البعض والانضمام معًا في المدار — كان المهارة التي لم يكن بوسع Apollo الاستغناء عنها، وGemini 6A هي المهمة التي تحقق فيها ذلك للمرة الأولى. كادت ألا تُحلق أصلاً: فقد انفجر هدفها الأصلي في طريقه إلى المدار، ثم، بعد أن كان الطاقم مربوطًا لإطلاق المهمة المعاد جدولته، اشتعلت محركات Titan وانطفأت فجأة على منصة الإطلاق — لحظة كانت القواعد تقول فيها اقذف، لكن والي شيرا، إذ لم يشعر بأي حركة، اختار ببرود ألا يفعل. بعد ثلاثة أيام حُلقت المهمة وأنجزت الأمر الذي لم يُنجَز من قبل: لحقت بـGemini 7 وحافظت على محطتها على بُعد قدم واحد، إذ كان الطاقمان قريبين بما يكفي لقراءة ملامح وجهي بعضهما البعض. بدا الأمر سهلاً لكنه كان أي شيء إلا ذلك — فالميكانيكا المدارية للحاق بمركبة أخرى مناقضة للحدس بشكل عميق — واختراق تلك المشكلة كان اللحظة التي أصبح فيها الالتقاء في المدار القمري، وخطة Apollo بأكملها، حقيقة."
+ },
+ {
+  "rel": "missions/earth/gemini6a.json",
+  "at": "description",
+  "en": "Wally Schirra and Tom Stafford achieved the first crewed space rendezvous on 15 December 1965, station-keeping within ~30 cm of Gemini 7 for over five hours. It followed a launch-pad engine shutdown three days earlier that Schirra chose not to abort. Duration ~1 d 1 h; 16 orbits.",
+  "cur": "حقق والي شيرا وتوم ستافورد أول التقاء مأهول في الفضاء في 15 ديسمبر 1965، مع الحفاظ على المحطة ضمن ~30 سم من Gemini 7 لأكثر من خمس ساعات. جاء ذلك بعد إيقاف محركات على منصة الإطلاق قبل ثلاثة أيام اختار شيرا عدم إجهاضه. المدة ~1 يوم 1 ساعة؛ 16 مدارًا."
+ },
+ {
+  "rel": "missions/earth/gemini7.json",
+  "at": "first",
+  "en": "14-day endurance flight; rendezvous target for Gemini 6A",
+  "cur": "رحلة تحمُّل لمدة 14 يومًا؛ هدف لقاء Gemini 6A"
+ },
+ {
+  "rel": "missions/earth/gemini7.json",
+  "at": "dispatch",
+  "en": "Gemini 7 answered the least glamorous but most fundamental question: could a crew survive as long as a trip to the Moon and back? Frank Borman and Jim Lovell spent fourteen days sealed in a cabin the size of the front seat of a small car — no room to stand, stretch, or escape each other — to prove the human body and mind could take it. It was tedious and physically miserable, and it worked: they came back healthy, retiring the fear that long spaceflight might be impossible. Along the way they doubled as the target for Gemini 6A's rendezvous, so the single flight quietly proved two of Apollo's prerequisites at once — that people could last the distance, and that two ships could meet.",
+  "cur": "أجابت Gemini 7 على السؤال الأقل بريقًا والأكثر جوهرية: هل يمكن للطاقم البقاء على قيد الحياة لفترة تعادل رحلة الذهاب والإياب إلى القمر؟ أمضى فرانك بورمان وجيم لوفل أربعة عشر يومًا محصورَين في مقصورة بحجم المقعد الأمامي لسيارة صغيرة — دون مساحة للوقوف أو التمدد أو الابتعاد عن بعضهما — لإثبات قدرة الجسد والعقل البشري على التحمُّل. كانت مملة وبائسة جسديًا، ونجحت: عادا بصحة جيدة، منهِيَين الخوف من أن السفر الفضائي الطويل قد يكون مستحيلاً. خلال ذلك، عملا كهدف للقاء Gemini 6A، لذا أثبتت الرحلة الواحدة بهدوء شرطَين أساسيَّين من شروط Apollo في آن واحد — أن البشر يمكنهم تحمُّل المسافة، وأن مركبتَين يمكنهما الالتقاء."
+ },
+ {
+  "rel": "missions/earth/gemini7.json",
+  "at": "description",
+  "en": "Frank Borman and Jim Lovell flew a 14-day, 206-orbit endurance mission from 4 December 1965 — the longest crewed spaceflight to that date — and served as the rendezvous target for Gemini 6A. It demonstrated that a crew could withstand spaceflight of full lunar-mission duration.",
+  "cur": "طار فرانك بورمان وجيم لوفل في مهمة تحمُّل لمدة 14 يومًا و206 مدارات بدءًا من 4 ديسمبر 1965 — أطول رحلة فضائية مأهولة حتى ذلك التاريخ — وعملا كهدف اللقاء لـ Gemini 6A. أثبتت أن الطاقم يمكنه تحمُّل رحلة فضائية بكامل مدة المهمة القمرية."
+ },
+ {
+  "rel": "missions/earth/gemini8.json",
+  "at": "first",
+  "en": "First docking of two spacecraft; emergency return",
+  "cur": "أول التحام لمركبتين فضائيتين؛ عودة طارئة"
+ },
+ {
+  "rel": "missions/earth/gemini8.json",
+  "at": "dispatch",
+  "en": "Gemini 8 made the first docking of two spacecraft in orbit — and then nearly killed its crew. Minutes after Neil Armstrong eased his Gemini into a locked joint with an Agena target, the linked pair began to roll, faster and faster, until it was tumbling roughly once a second and the astronauts' vision was starting to gray toward blackout. Armstrong undocked — which only made it worse, since the fault was in his own spacecraft — then shut down the main thrusters and stopped the spin with the reentry-control system, a decision that saved their lives but, by the rules, forced an immediate emergency return. It was the program's most dangerous moment, and it was Armstrong's first spaceflight. The calm, fast diagnosis under a failing situation is exactly the temperament NASA would remember when it chose who would land on the Moon.",
+  "cur": "حقّق Gemini 8 أول التحام بين مركبتي فضاء في المدار — وكاد أن يودي بحياة طاقمه. بعد دقائق من قيام نيل أرمسترونغ بإدخال مركبته Gemini بحذر في وصلة مقفلة مع هدف Agena، بدأ الزوج المترابط يدور بسرعة متزايدة، حتى أصبح يتمايح بمعدل دورة واحدة تقريباً في الثانية، وبدأت رؤية رواد الفضاء تتلاشى نحو الإغماء. فصل أرمسترونغ الارتباط — مما جعل الأمر أسوأ فحسب، لأن العطل كان في مركبته الخاصة — ثم أوقف المحركات الرئيسية وأوقف الدوران باستخدام نظام التحكم بإعادة الدخول، وهو قرار أنقذ حياتهما لكنه فرض عليهم، بحسب القواعد، عودة طوارئ فوراً. كانت اللحظة الأخطر في البرنامج، وكانت أول رحلة فضاء لأرمسترونغ. التشخيص الهادئ والسريع تحت ضغط موقف متدهور هو بالضبط المزاج الذي ستتذكره NASA عندما تختار من سينزل على القمر."
+ },
+ {
+  "rel": "missions/earth/gemini8.json",
+  "at": "description",
+  "en": "Neil Armstrong and David Scott achieved the first docking of two spacecraft — with an Agena target — on 16 March 1966. A stuck attitude thruster then caused a violent tumble; Armstrong undocked and used the reentry-control system to recover, forcing an emergency landing after 10 h 41 m. It was Armstrong's first spaceflight.",
+  "cur": "حقق نيل آرمسترونغ وديفيد سكوت أول التحام لمركبتين فضائيتين — مع هدف Agena — في 16 مارس 1966. تسبب محرك وضعية عالق بعد ذلك في تدحرج عنيف؛ فك آرمسترونغ الالتحام واستخدم نظام التحكم في العودة للغلاف الجوي للتعافي، مما فرض هبوطاً طارئاً بعد 10 ساعة 41 دقيقة. كانت أول رحلة فضائية لأرمسترونغ."
+ },
+ {
+  "rel": "missions/earth/gemini8.json",
+  "at": "events.3.label",
+  "en": "EMERGENCY SPLASHDOWN",
+  "cur": "الهبوط الطارئ في المحيط"
+ },
+ {
+  "rel": "missions/earth/inspiration4.json",
+  "at": "first",
+  "en": "First all-civilian orbital spaceflight; raised $243M for St. Jude Children's Research Hospital",
+  "cur": "أول رحلة فضائية مدارية بطاقم مدني بالكامل؛ جمعت 243 مليون دولار لمستشفى سانت جود للبحوث الطبية للأطفال"
+ },
+ {
+  "rel": "missions/earth/inspiration4.json",
+  "at": "description",
+  "en": "Jared Isaacman, Sian Proctor, Hayley Arceneaux and Chris Sembroski — the first orbital flight crewed entirely by people who were not professional government astronauts. Launched 2021-09-15 00:02 UTC from LC-39A on Falcon 9 B1062 (third flight), atop Crew Dragon Resilience (C207, previously flown on Crew-1). Reached a 585 km circular orbit at 51.6° inclination — the highest crewed orbit since the Hubble servicing missions. No docking with any station; three days of free flight including the first onboard cupola (replacing the docking adapter). Splashed down off the Florida coast 2021-09-18 23:06 UTC. The mission raised over $243M for St. Jude Children's Research Hospital — Arceneaux is a former St. Jude patient and the first cancer survivor in orbit.",
+  "cur": "جاريد إيزاكمان وسيان بروكتور وهايلي أرسينو وكريس سيمبروسكي — أول رحلة مدارية يقودها طاقم بالكامل من أشخاص لم يكونوا رواد فضاء حكوميين محترفين. أُطلقت في 2021-09-15 00:02 UTC من LC-39A على صاروخ Falcon 9 B1062 (الرحلة الثالثة)، فوق مركبة Crew Dragon Resilience (C207، التي حلقت سابقاً على Crew-1). وصلت إلى مدار دائري بارتفاع 585 كم بزاوية ميل قدرها 51.6° — وهو أعلى مدار يقوده طاقم بشري منذ بعثات خدمة تلسكوب Hubble. لم تلتحم بأي محطة؛ ثلاثة أيام من الرحلة الحرة تضمنت أول قبة مراقبة بداخل المركبة (بديلة لمحول الالتحام). هبطت في المحيط بالقرب من ساحل فلوريدا في 2021-09-18 23:06 UTC. جمعت البعثة أكثر من 243 مليون دولار لمستشفى سانت جود للبحوث الطبية للأطفال — وArceneaux هي مريضة سابقة في مستشفى سانت جود وأول ناجية من السرطان في المدار."
+ },
+ {
+  "rel": "missions/earth/liberty-bell-7.json",
+  "at": "name",
+  "en": "Liberty Bell 7 / MR-4",
+  "cur": "Liberty Bell 7 / MR-4"
+ },
+ {
+  "rel": "missions/earth/liberty-bell-7.json",
+  "at": "first",
+  "en": "Second American suborbital flight; hatch malfunction lost the capsule (recovered 1999)",
+  "cur": "ثاني رحلة أمريكية تحت مدارية؛ عطل في الفتحة أدى لفقدان الكبسولة (تم استرجاعها عام 1999)"
+ },
+ {
+  "rel": "missions/earth/liberty-bell-7.json",
+  "at": "dispatch",
+  "en": "Liberty Bell 7 flew flawlessly and is remembered for the thirty seconds after it stopped flying. Gus Grissom's suborbital hop repeated Shepard's — proof the first flight hadn't been a fluke — but on the water the new explosive hatch fired on its own, the capsule flooded, and it sank to the floor of the Atlantic while Grissom nearly drowned in his filling suit. Whether he had bumped the trigger or it had gone off by itself was argued for the rest of his life and never settled. The flight's real lesson was quieter and more useful: the most dangerous part of a spaceflight isn't always the spaceflight.",
+  "cur": "حلقت Liberty Bell 7 بكفاءة تامة وتذكر بسبب الثلاثين ثانية بعد توقفها عن الطيران. أعادت رحلة غوس غريسوم تحت المدارية إثبات رحلة شيبارد — دليل على أن الرحلة الأولى لم تكن مجرد مصادفة — لكن في الماء انطلقت الفتحة الانفجارية من تلقاء نفسها، امتلأت الكبسولة بالماء، وغرقت في قاع المحيط الأطلسي بينما كاد غريسوم ينغرق في بدلته المليئة بالماء. ما إذا كان قد اصطدم بالمشغل أم انطلق من تلقاء نفسه ظل محل جدل طوال حياته ولم يتم حله أبداً. الدرس الحقيقي للرحلة كان أهدأ وأكثر فائدة: الجزء الأخطر من رحلة الفضاء ليس دائماً رحلة الفضاء نفسها."
+ },
+ {
+  "rel": "missions/earth/liberty-bell-7.json",
+  "at": "description",
+  "en": "Gus Grissom's 15-min suborbital flight — second American in space, first flight to feature an explosive escape hatch. After splashdown the hatch fired prematurely, the capsule flooded, and Liberty Bell 7 sank in 4900 m of water; Grissom escaped but his suit took on water and he was nearly drowned during helicopter pickup. The cause of the hatch firing remained controversial for decades; Grissom maintained he had not bumped the firing pin. Recovered 1999-07-20 by an Oceaneering/Discovery Channel expedition, restored and now displayed at the Kansas Cosmosphere & Space Center, Hutchinson KS. The Tom Wolfe book / 1983 film The Right Stuff dramatised this flight + the hatch controversy.",
+  "cur": "رحلة غوس غريسوم تحت المدارية لمدة 15 دقيقة — ثاني أمريكي في الفضاء، أول رحلة تتميز بفتحة خروج انفجارية. بعد الهبوط المائي انطلقت الفتحة بشكل مبكر، امتلأت الكبسولة بالماء، وغرقت Liberty Bell 7 في عمق 4900 م من الماء؛ نجا غريسوم لكن بدلته امتصت الماء وكاد يغرق أثناء الالتقاط بطائرة هليكوبتر. ظل سبب انطلاق الفتحة محل جدل لعقود؛ أصر غريسوم على أنه لم يصطدم بمشغل الانطلاق. تم استرجاعها 1999-07-20 بواسطة بعثة Oceaneering/Discovery Channel، تم ترميمها وهي الآن معروضة في Kansas Cosmosphere & Space Center، Hutchinson KS. استوحت كتاب توم وولف / فيلم 1983 The Right Stuff هذه الرحلة + جدل الفتحة."
+ },
+ {
+  "rel": "missions/earth/otv-1.json",
+  "at": "name",
+  "en": "X-37B OTV-1 (USA-212)",
+  "cur": "X-37B OTV-1 (USA-212)"
+ },
+ {
+  "rel": "missions/earth/otv-1.json",
+  "at": "first",
+  "en": "USA-212 — 224 days on orbit, Vandenberg AFB",
+  "cur": "USA-212 — 224 يوماً في المدار، قاعدة فاندنبرغ الجوية"
+ },
+ {
+  "rel": "missions/earth/otv-1.json",
+  "at": "description",
+  "en": "First flight of the Boeing-built X-37B Orbital Test Vehicle programme. Launched 2010-04-22 23:52 UTC from Cape Canaveral SLC-41 on Atlas V 501 AV-012; the first autonomous orbital spaceplane re-entry under runway-landing operations since the Soviet Buran 1.01 in 1988. Landed at Vandenberg AFB 2010-12-03 09:16 UTC after 224 days. Payloads and orbital parameters classified.",
+  "cur": "أول رحلة لبرنامج طائرة Boeing الفضائية X-37B Orbital Test Vehicle. أُطلقت في 2010-04-22 23:52 UTC من موقع رأس كانافيرال SLC-41 على صاروخ Atlas V 501 AV-012؛ وهي أول طائرة فضائية مدارية مستقلة تعود من المدار بهبوط على مدرج منذ Buran 1.01 السوفييتية في 1988. هبطت في قاعدة فاندنبرغ الجوية في 2010-12-03 09:16 UTC بعد 224 يومًا. الحمولات والمعاملات المدارية سرية."
+ },
+ {
+  "rel": "missions/earth/otv-2.json",
+  "at": "name",
+  "en": "X-37B OTV-2 (USA-226)",
+  "cur": "X-37B OTV-2 (USA-226)"
+ },
+ {
+  "rel": "missions/earth/otv-2.json",
+  "at": "first",
+  "en": "USA-226 — 469 days on orbit, Vandenberg AFB",
+  "cur": "USA-226 — 469 يومًا في المدار، قاعدة فاندنبرغ الجوية"
+ },
+ {
+  "rel": "missions/earth/otv-2.json",
+  "at": "description",
+  "en": "Second X-37B flight, second of two flight vehicles. Launched 2011-03-05 22:46 UTC from CCAFS SLC-41 on Atlas V 501 AV-026; landed at Vandenberg AFB 2012-06-16 12:48 UTC. 469 days on orbit — at the time the longest US autonomous orbital spaceflight, surpassed by every subsequent OTV flight. Payloads classified.",
+  "cur": "ثاني رحلة لـ X-37B، وثاني مركبتي البرنامج. أُطلقت في 2011-03-05 الساعة 22:46 بالتوقيت العالمي من CCAFS SLC-41 على صاروخ Atlas V 501 AV-026؛ هبطت في قاعدة فاندنبرغ الجوية في 2012-06-16 الساعة 12:48 بالتوقيت العالمي. 469 يومًا في المدار — وكان آنذاك أطول رحلة فضائية مدارية ذاتية أمريكية، تجاوزتها كل رحلات OTV اللاحقة. الحمولات سرية."
+ },
+ {
+  "rel": "missions/earth/otv-3.json",
+  "at": "name",
+  "en": "X-37B OTV-3 (USA-240)",
+  "cur": "X-37B OTV-3 (USA-240)"
+ },
+ {
+  "rel": "missions/earth/otv-3.json",
+  "at": "first",
+  "en": "USA-240 — 675 days on orbit, Vandenberg AFB",
+  "cur": "USA-240 — 675 يوماً في المدار، قاعدة فاندنبرغ الجوية"
+ },
+ {
+  "rel": "missions/earth/otv-3.json",
+  "at": "description",
+  "en": "Third X-37B flight, reuse of the OTV-1 flight vehicle. Launched 2012-12-11 18:03 UTC from CCAFS SLC-41 on Atlas V 501 AV-034; landed at Vandenberg AFB 2014-10-17 16:24 UTC. 675 days on orbit.",
+  "cur": "رحلة X-37B الثالثة، إعادة استخدام مركبة الرحلة OTV-1. أُطلقت في 2012-12-11 18:03 UTC من CCAFS SLC-41 على صاروخ Atlas V 501 AV-034؛ هبطت في قاعدة فاندنبرغ الجوية في 2014-10-17 16:24 UTC. 675 يوماً على المدار."
+ },
+ {
+  "rel": "missions/earth/otv-4.json",
+  "at": "name",
+  "en": "X-37B OTV-4 (USA-261, AFSPC-5)",
+  "cur": "X-37B OTV-4 (USA-261, AFSPC-5)"
+ },
+ {
+  "rel": "missions/earth/otv-4.json",
+  "at": "first",
+  "en": "USA-261 / AFSPC-5 — 718 days on orbit, KSC Shuttle Landing Facility",
+  "cur": "USA-261 / AFSPC-5 — 718 يومًا في المدار، منشأة هبوط المكوك في KSC"
+ },
+ {
+  "rel": "missions/earth/otv-4.json",
+  "at": "description",
+  "en": "Fourth X-37B flight. Launched 2015-05-20 15:05 UTC from CCAFS SLC-41 on Atlas V 501 AV-054; first OTV landing at the Kennedy Space Center Shuttle Landing Facility (the same 4.6 km runway formerly used by the Space Shuttle orbiters) on 2017-05-07 11:47 UTC. Carried the AFRL Hall-effect-thruster experiment (XR-5A, ion propulsion) and a NASA Materials Exposure Test bed.",
+  "cur": "الرحلة الرابعة لـ X-37B. أُطلقت في 2015-05-20 الساعة 15:05 بتوقيت UTC من CCAFS SLC-41 على الصاروخ Atlas V 501 AV-054؛ أول هبوط لـ OTV في مرفق الهبوط بمكوك الفضاء بمركز كينيدي للفضاء (نفس المدرج البالغ طوله 4٫6 كم الذي استخدمته مكوكات Space Shuttle المداريّة سابقًا) في 2017-05-07 الساعة 11:47 بتوقيت UTC. حملت تجربة Hall-effect-thruster من AFRL (XR-5A، الدفع الأيوني) وسرير اختبار تعريض المواد من NASA."
+ },
+ {
+  "rel": "missions/earth/otv-5.json",
+  "at": "name",
+  "en": "X-37B OTV-5 (USA-277)",
+  "cur": "X-37B OTV-5 (USA-277)"
+ },
+ {
+  "rel": "missions/earth/otv-5.json",
+  "at": "first",
+  "en": "USA-277 — 780 days on orbit, KSC Shuttle Landing Facility",
+  "cur": "USA-277 — 780 يومًا في المدار، منشأة هبوط المكوك في KSC"
+ },
+ {
+  "rel": "missions/earth/otv-5.json",
+  "at": "description",
+  "en": "Fifth X-37B flight, first launch on Falcon 9 instead of Atlas V — and the only X-37B flight on a Block 4 Falcon 9. Launched 2017-09-07 14:00 UTC from KSC LC-39A (the booster recovered downrange at LZ-1); landed at KSC SLF 2019-10-27 07:51 UTC. 780 days on orbit. First X-37B flight to a higher-inclination orbit (54.5°) — broadens the publicly-tracked overflight pattern.",
+  "cur": "خامس رحلة لـ X-37B، وأول إطلاق على Falcon 9 بدلاً من Atlas V — والوحيد على Falcon 9 من Block 4. أُطلقت في 2017-09-07 الساعة 14:00 بالتوقيت العالمي من KSC LC-39A (تم استرداد المعزز في الميدان عند LZ-1)؛ هبطت في KSC SLF في 2019-10-27 الساعة 07:51 بالتوقيت العالمي. 780 يومًا في المدار. أول رحلة لـ X-37B إلى مدار أعلى ميلًا (54.5°) — وسعت نمط التحليق المتعقَّب علنيًا."
+ },
+ {
+  "rel": "missions/earth/otv-6.json",
+  "at": "name",
+  "en": "X-37B OTV-6 (USA-299, USSF-7)",
+  "cur": "X-37B OTV-6 (USA-299, USSF-7)"
+ },
+ {
+  "rel": "missions/earth/otv-6.json",
+  "at": "first",
+  "en": "USA-299 / USSF-7 — 908 days on orbit, KSC Shuttle Landing Facility",
+  "cur": "USA-299 / USSF-7 — 908 أيام في المدار، مرفق هبوط مكوك KSC"
+ },
+ {
+  "rel": "missions/earth/otv-6.json",
+  "at": "description",
+  "en": "Sixth X-37B flight — first under the new USSF organisational designation; record-setting 908 days on orbit (~2.5 years). Launched 2020-05-17 13:14 UTC from CCAFS SLC-41 on Atlas V 501 AV-081; landed at KSC SLF 2022-11-12 10:22 UTC. Carried the Naval Research Laboratory PRAM (Photovoltaic RF Antenna Module — 1 W solar power-to-microwave-beaming experiment) and an AFRL FalconSAT-8 deployer.",
+  "cur": "الرحلة السادسة من X-37B — الأولى تحت التسمية التنظيمية الجديدة للـ USSF؛ رقم قياسي بـ 908 أيام في المدار (حوالي سنتان ونصف). أطلقت في 2020-05-17 13:14 UTC من CCAFS SLC-41 على صاروخ Atlas V 501 AV-081؛ هبطت في KSC SLF في 2022-11-12 10:22 UTC. حملت وحدة PRAM (Photovoltaic RF Antenna Module — تجربة نقل الطاقة الشمسية إلى الموجات الدقيقة بقوة 1 W) من مختبر البحوث البحرية، وناشر FalconSAT-8 من AFRL."
+ },
+ {
+  "rel": "missions/earth/otv-7.json",
+  "at": "name",
+  "en": "X-37B OTV-7 (USA-358, USSF-52)",
+  "cur": "X-37B OTV-7 (USA-358, USSF-52)"
+ },
+ {
+  "rel": "missions/earth/otv-7.json",
+  "at": "first",
+  "en": "USA-358 / USSF-52 — 434 days on orbit, Vandenberg SFB",
+  "cur": "USA-358 / USSF-52 — 434 يومًا في المدار، قاعدة فاندنبرغ الجوية الفضائية"
+ },
+ {
+  "rel": "missions/earth/otv-7.json",
+  "at": "description",
+  "en": "Seventh X-37B flight — first to a highly-elliptical (HEO) orbit and first launched on Falcon Heavy. Launched 2023-12-29 01:07 UTC from KSC LC-39A; both side boosters recovered at LZ-1 / LZ-2, centre core expended for the HEO insertion energy. The HEO trajectory took the OTV to roughly the GEO belt altitude at apogee. Performed a controlled aerobraking-style de-orbit sequence (USSF released a public update on the manoeuvre, a deliberate transparency departure from earlier classified flights). Landed at Vandenberg SFB 2025-03-07 09:22 UTC.",
+  "cur": "رحلة X-37B السابعة — الأولى إلى مدار عالي الإهليلجية (HEO) والأولى المطلقة على صاروخ Falcon Heavy. أُطلقت في 2023-12-29 الساعة 01:07 بتوقيت UTC من مركز كينيدي الفضائي LC-39A؛ تم استرجاع معززا الجانب في LZ-1 و LZ-2، أما النواة المركزية فقد استُنزفت لتوفير الطاقة اللازمة لإدراج المدار الإهليلجي. اتجهت مسارات المدار الإهليلجي بالمركبة نحو ارتفاع حزام GEO تقريباً عند الأوج. نفذت تسلسل إعادة دخول مسيطر عليه بأسلوب الكبح الهوائي (أصدرت USSF تحديثاً علنياً حول المناورة، وهو انحراف متعمد في الشفافية عن الرحلات المصنفة السابقة). هبطت في قاعدة فاندنبرغ الفضائية في 2025-03-07 الساعة 09:22 بتوقيت UTC."
+ },
+ {
+  "rel": "missions/earth/polaris-dawn.json",
+  "at": "first",
+  "en": "First commercial spacewalk; highest Earth orbit by humans since Apollo 17 (1408 km)",
+  "cur": "أول سَير فضائي تجاري؛ أعلى مدار أرضي لبشر منذ Apollo 17 (1408 كم)"
+ },
+ {
+  "rel": "missions/earth/polaris-dawn.json",
+  "at": "description",
+  "en": "Jared Isaacman (commander), Scott 'Kidd' Poteet (pilot), Sarah Gillis and Anna Menon (SpaceX engineers / mission specialists). Launched 2024-09-10 09:23 UTC from LC-39A on Falcon 9 B1083, atop Crew Dragon Resilience (C207, third flight). Day 1 raised apogee to 1408 km — the highest orbit ever flown by humans excluding Apollo lunar missions; the apogee then lowered to 730 km circular for the EVA. Day 3 saw the first commercial EVA: Isaacman and Gillis stepped through the open hatch in new SpaceX EVA suits (no airlock — full cabin vacuum exposure for all 4 crew), each spending ~8 minutes in vacuum testing mobility. Tested Starlink laser inter-satellite links from orbit. Splashed down off Florida 2024-09-15 07:36 UTC.",
+  "cur": "جاريد إيزاكمان (القائد)، وسكوت 'كيد' بوتيت (الطيار)، وسارة جيليس وآنا منون (مهندسان / متخصصان في المهام من SpaceX). انطلقت في 2024-09-10 09:23 بتوقيت UTC من LC-39A على Falcon 9 B1083، فوق Crew Dragon Resilience (C207، الرحلة الثالثة). في اليوم الأول، رفعت الأوج إلى 1408 كم — أعلى مدار حول الأرض حلّق به البشر على الإطلاق باستثناء بعثات Apollo القمرية؛ ثم خُفّض الأوج إلى 730 كم دائري لنشاط السير في الفضاء. شهد اليوم الثالث أول عملية سير في الفضاء تجارية: خرج آيزاكمان وجيليس عبر الفتحة المفتوحة في بدلات سير فضاء جديدة من SpaceX (بدون حجرة معادلة ضغط — تعريض الكابينة بالكامل للفراغ لجميع أفراد الطاقم الأربعة)، وقضى كلٌّ منهما حوالي 8 دقائق في الفراغ لاختبار القدرة على الحركة. اختُبرت روابط Starlink الليزرية بين الأقمار الصناعية من المدار. هبطت في البحر قبالة سواحل فلوريدا في 2024-09-15 07:36 بتوقيت UTC."
+ },
+ {
+  "rel": "missions/earth/shenzhou-1.json",
+  "at": "first",
+  "en": "China's first Shenzhou orbital test — opened the path to crewed PRC spaceflight",
+  "cur": "أول اختبار مداري صيني لبرنامج Shenzhou — فتح الطريق أمام رحلات جمهورية الصين الشعبية البشرية إلى الفضاء"
+ },
+ {
+  "rel": "missions/earth/shenzhou-1.json",
+  "at": "description",
+  "en": "First flight of the Shenzhou crewed-spacecraft programme. Launched 1999-11-19 22:30 UTC from Jiuquan on the inaugural flight of the human-rated Long March 2F (CZ-2F). The capsule completed 14 orbits at 195 × 315 km, 42.6° inclination, and re-entered to recovery on the Inner Mongolia steppe 1999-11-20 19:41 UTC. Carried mock-up life-support hardware, telemetry packages, and a Chinese flag, plus seeds for a microgravity-genetics return cargo. Marked China's commitment to follow the USSR / USA into independent crewed spaceflight; led directly to Shenzhou 5 (2003) with Yang Liwei.",
+  "cur": "أول رحلة في برنامج مركبة Shenzhou المأهولة. أُطلقت في 1999-11-19 الساعة 22:30 بالتوقيت العالمي المنسّق من جيوتشيوان في أول رحلة تشغيلية لصاروخ Long March 2F (CZ-2F) الموثّق للرحلات المأهولة. أكملت الكبسولة 14 مدارًا على ارتفاع 195 × 315 كم بميل 42,6°، وأعادت الدخول للاسترجاع في سهوب منغوليا الداخلية في 1999-11-20 الساعة 19:41 بالتوقيت العالمي المنسّق. حملت معدات دعم حياة وهمية وحزم قياس عن بُعد وعلمًا صينيًّا، بالإضافة إلى بذور لحمولة إرجاع وراثيات الجاذبية الدقيقة. ميّزت التزام الصين باتباع الاتحاد السوفييتي / الولايات المتحدة نحو الرحلات الفضائية المأهولة المستقلة؛ وأدّت مباشرة إلى Shenzhou 5 (2003) مع يانغ لي وي."
+ },
+ {
+  "rel": "missions/earth/sigma-7.json",
+  "at": "first",
+  "en": "First textbook Mercury flight — 6 orbits; double Glenn / Carpenter duration",
+  "cur": "أول رحلة زئبقية نموذجية — 6 مدارات؛ ضعف مدة رحلات غلين / كاربنتر"
+ },
+ {
+  "rel": "missions/earth/sigma-7.json",
+  "at": "dispatch",
+  "en": "After two flights that ended in scares, Sigma 7 was the one that was boring on purpose — and that was the achievement. Wally Schirra called it a textbook engineering test and flew it like one: minimal experiments, careful conservation of every kilogram of fuel and every amp of power, six orbits spent proving the spacecraft could be operated with discipline rather than wrestled. He splashed down almost on top of the recovery carrier. In a program that had been improvising under pressure, Sigma 7 showed the Americans had learned to fly the thing calmly — the prerequisite for the far longer missions ahead.",
+  "cur": "بعد رحلتين انتهتا بأحداث مريعة، كانت Sigma 7 هي الرحلة التي كانت مملة عن قصد — وكان ذلك هو الإنجاز. أطلق والي شيرا على الرحلة اختبار هندسة نموذجي، وحافظ عليه كما هو: تجارب قليلة جداً، حفاظ دقيق على كل كيلوغرام من الوقود وكل أمبير من الطاقة، ستة مدارات قضيت في إثبات أن المركبة يمكن تشغيلها بانضباط بدلاً من مصارعتها. وهبط بالقرب جداً من سفينة الاستعادة. في برنامج كان يرتجل تحت الضغط، أظهرت Sigma 7 أن الأمريكيين قد تعلموا الطيران بهدوء — الشرط الأساسي للمهام الأطول بكثير في المستقبل."
+ },
+ {
+  "rel": "missions/earth/sigma-7.json",
+  "at": "description",
+  "en": "Wally Schirra's 6-orbit flight — doubled Glenn's and Carpenter's mission length. Schirra called his flight a \"textbook engineering test\" — minimal experimental load, focus on conserving consumables, validating the vehicle for longer duration. Flight duration 9 h 13 min; orbital parameters 161 × 283 km. Splashed down ~445 km NE of Midway in the Pacific — first Mercury flight to splash in the Pacific. Aurora 7 had used 38 kg of attitude control gas; Schirra used only 32 kg with double the flight time. Capsule Sigma 7 on display at the Astronaut Memorial Planetarium and Observatory, Cocoa FL.",
+  "cur": "رحلة والي شيرا التي أكملت 6 مدارات — ضاعفت مدة الرحلة التي قام بها غلين وكاربنتر. وصف شيرا رحلته بأنها «اختبار هندسي نموذجي» — حمل تجريبي ضئيل، التركيز على تقليل استهلاك الموارد، والتحقق من صلاحية المركبة للرحلات الأطول مدة. مدة الرحلة 9 ساعات و 13 دقيقة؛ المعاملات المدارية 161 × 283 كم. هبطت في الماء على بعد حوالي 445 كم شمال شرق Midway في المحيط الهادئ — أول رحلة Mercury تهبط في المحيط الهادئ. استهلكت Aurora 7 38 كجم من غاز التحكم في الاتجاه؛ استهلك شيرا 32 كجم فقط مع ضعف مدة الرحلة. المحفظة Sigma 7 معروضة في Astronaut Memorial Planetarium and Observatory في كوكوا، فلوريدا."
+ },
+ {
+  "rel": "missions/earth/skylab-2.json",
+  "at": "dispatch",
+  "en": "Skylab 2 is the mission that saved America's first space station and, in doing so, proved that astronauts are repair crews as much as explorers. Skylab had reached orbit crippled — its sun shield ripped off during launch, one solar panel gone, the other jammed shut, the interior overheating toward uninhabitable. Pete Conrad's crew flew up to a station that might have been a write-off, deployed a parasol sunshade through a small airlock to cool it, and then freed the stuck panel in a dangerous, improvised spacewalk that restored its power. It was the first time a crew had rescued a failing spacecraft in orbit, and it rewrote the assumption that space hardware was disposable.",
+  "cur": "Skylab 2 هي المهمة التي أنقذت أول محطة فضائية أمريكية، وبذلك أثبتت أن رواد الفضاء هم أطقم إصلاح بقدر ما هم مستكشفون. كانت Skylab قد وصلت إلى المدار معطوبة — حيث تمزق درعها الواقي من الشمس أثناء الإطلاق، وفُقد أحد الألواح الشمسية، وانحشر الآخر مغلقاً، وارتفعت حرارة الداخل نحو مستوى غير قابل للسكن. طار طاقم بيت كونراد إلى محطة كان يمكن أن تكون خسارة كاملة، ونشروا مظلة شمسية من خلال غرفة معادلة ضغط صغيرة لتبريدها، ثم حرروا اللوح المحشور في سير فضائي خطر وارتجالي أعاد إليها الطاقة. كانت المرة الأولى التي ينقذ فيها طاقم مركبة فضائية معطلة في المدار، وأعادت كتابة الافتراض بأن المعدات الفضائية قابلة للاستهلاك."
+ },
+ {
+  "rel": "missions/earth/skylab-2.json",
+  "at": "first",
+  "en": "First crewed Skylab visit — repaired the damaged workshop and saved the programme",
+  "cur": "أول زيارة مأهولة لـ Skylab — أصلحت ورشة العمل المتضررة وأنقذت البرنامج"
+ },
+ {
+  "rel": "missions/earth/skylab-2.json",
+  "at": "description",
+  "en": "Conrad, Kerwin and Weitz — the first crew to inhabit the US Skylab space station. Launched 1973-05-25 13:00 UTC on Saturn IB (SA-206), 11 days after Skylab itself was damaged at launch (the micrometeoroid / sun shield ripped off, taking one solar wing with it and jamming the second). The crew executed a 28-day rescue: Weitz attempted (and failed) to free the jammed wing during a 38-minute stand-up EVA on day 1, then Conrad and Kerwin successfully cut the restraining strap on a 3.5-hour EVA on day 14, restoring power. Deployed a Marshall-designed parasol thermal shield through the scientific airlock to bring cabin temperatures back from 54°C to 24°C. Returned 1973-06-22 13:50 UTC; CSM-116 displayed at the National Air and Space Museum, Washington DC.",
+  "cur": "كونراد وكيروين وويتز — الطاقم الأول الذي يأهل محطة Skylab الفضائية الأمريكية. أطلقت في 1973-05-25 13:00 UTC على صاروخ Saturn IB (SA-206)، بعد 11 يوماً من تضرّر Skylab نفسه عند الإطلاق (حيث انقطع الدرع الواقي من الأشعة الشمسية / الميكروميتيور، فأزال إحدى أجنحة الطاقة الشمسية وعطّل الثانية). نفّذ الطاقم عملية إنقاذ استغرقت 28 يوماً: حاول ويتز (وفشل) في تحرير الجناح المعطّل خلال نشاط خارج المركبة (EVA) قصير مدته 38 دقيقة في اليوم الأول، ثم نجح كونراد وكيروين في قطع الحزام المثبت على نشاط خارج المركبة مدته 3.5 ساعات في اليوم الرابع عشر، مما استعاد الطاقة. نشّطا درعاً حرارياً على شكل مظلة مصمماً من قبل Marshall من خلال الفتحة العلمية لإعادة درجات حرارة المقصورة من 54°C إلى 24°C. عادت في 1973-06-22 13:50 UTC؛ CSM-116 معروضة في متحف الهواء والفضاء الوطني في واشنطن دي سي."
+ },
+ {
+  "rel": "missions/earth/skylab-2.json",
+  "at": "events.2.label",
+  "en": "EVA #2 — POWER RESTORED",
+  "cur": "النشاط الخارجي 2 — استعادة الطاقة"
+ },
+ {
+  "rel": "missions/earth/skylab-3.json",
+  "at": "dispatch",
+  "en": "Skylab 3 took the endurance question and nearly doubled the answer. Where the first crew had stayed 28 days, Alan Bean's crew stayed 59 — pushing the human body further into long-duration weightlessness than anyone had gone, and returning healthier than the pessimists had feared. They logged a huge haul of solar observations from the Apollo Telescope Mount and rode out a scare when thruster leaks on their Apollo ferry briefly raised the prospect of a rescue flight. Skylab 3 is where long stays in space started to look not just survivable but routine — the quiet groundwork for every months-long station tour since.",
+  "cur": "أخذت مهمة Skylab 3 مسألة القدرة على التحمل ومضاعفت الإجابة تقريبًا. حيث بقي الطاقم الأول 28 يومًا، بقي طاقم ألان بين لمدة 59 يومًا — دافعين جسم الإنسان بعيدًا في انعدام الوزن طويل الأمد أكثر من أي شخص آخر، وعادوا بصحة أفضل مما كان يخشى المتشائمون. سجلوا كمية هائلة من الرصد الشمسي من Apollo Telescope Mount وتجاوزوا حالة ذعر عندما أدى تسرب الدفاعات في مركبة Apollo العبارة إلى إثارة احتمال رحلة إنقاذ لفترة وجيزة. كانت Skylab 3 هي المهمة التي بدأت فيها الإقامات الطويلة في الفضاء تبدو ليس فقط قابلة للبقاء بل روتينية — العمل الأساسي الهادئ لكل جولة محطة تستمر لأشهر منذ ذلك الحين."
+ },
+ {
+  "rel": "missions/earth/skylab-3.json",
+  "at": "first",
+  "en": "Second Skylab crew — 59 days, deployed twin-pole solar shield to replace parasol",
+  "cur": "ثاني طاقم لـ Skylab — 59 يومًا، ونشَر درعًا شمسيًا ثنائي العمود بديلًا للمظلة"
+ },
+ {
+  "rel": "missions/earth/skylab-3.json",
+  "at": "description",
+  "en": "Bean, Garriott and Lousma — the second crew to live aboard Skylab, for 59 days 11 hours. Launched 1973-07-28 11:11 UTC on Saturn IB (SA-207). Within hours of docking the CSM service module suffered an attitude-control thruster leak — back-up CSM-119 was prepped at Cape Canaveral for a possible rescue mission, but the crew completed nominally. Garriott led 305 hours of solar observations using the Apollo Telescope Mount instruments. Three EVAs deployed a twin-pole sun shield over the original parasol, repaired the rate gyro package, and recovered film canisters from the ATM. Splashed down 1973-09-25 22:19 UTC; CSM-117 displayed at the Glenn Visitor Center, Cleveland.",
+  "cur": "بين وغاريوت ولوسما — الطاقم الثاني الذي عاش على متن Skylab، لمدة 59 يوماً و11 ساعة. أُطلقت في 1973-07-28 الساعة 11:11 UTC على Saturn IB (SA-207). في غضون ساعات من الالتحام، عاني مصدر الدفع service module من CSM من تسرب في محرك التحكم بالموقف — تم تحضير CSM-119 البديل في رأس كانافيرال لحالة مهمة إنقاذ محتملة، إلا أن الطاقم أكمل بشكل اسمي. قاد Garriott 305 ساعات من الرصودات الشمسية باستخدام أجهزة Apollo Telescope Mount. نشرت ثلاثة نشاطات خارج المركبة درعاً شمسياً ثنائي القطب فوق المظلة الأصلية، وأصلحت حزمة gyro المعدل للسرعة، وأعادت استرجاع علب الأفلام من ATM. هبطت بأمان في 1973-09-25 الساعة 22:19 UTC؛ يُعرض CSM-117 في غلين Visitor Center بـCleveland."
+ },
+ {
+  "rel": "missions/earth/skylab-3.json",
+  "at": "events.2.label",
+  "en": "TWIN-POLE SHIELD EVA",
+  "cur": "نشاط خارجي: درع بعمودين"
+ },
+ {
+  "rel": "missions/earth/skylab-4.json",
+  "at": "first",
+  "en": "Longest Skylab stay — 84 days, observed Comet Kohoutek, disputed \"Skylab strike\" rest day",
+  "cur": "أطول مدة بقاء في Skylab — 84 يوماً، رصد مذنب كوهوتك، يوم راحة مثير للجدل يُدعى «إضراب Skylab»"
+ },
+ {
+  "rel": "missions/earth/skylab-4.json",
+  "at": "description",
+  "en": "Carr, Gibson and Pogue — the final and longest Skylab crew, 84 days 1 hour, all-rookie. Launched 1973-11-16 14:01 UTC on Saturn IB (SA-208). Comprehensive Earth-resources and solar observation, including a full Comet Kohoutek campaign over December–January. The mission is best remembered for what NASA later called a 'Skylab mutiny' or 'strike' — a disputed account of a rest-day stand-down around day 42 after relentless ground-controller demands compressed every minute of waking time; NASA and the crew have stated no organised strike occurred, but the underlying timeline overload was real and led to permanent NASA reforms on crew time-line planning for long-duration missions. Splashed down 1974-02-08 15:17 UTC — the last Skylab splashdown. CSM-118 displayed at the National Museum of the US Air Force, Dayton OH.",
+  "cur": "Carr و Gibson و Pogue — طاقم Skylab الأخير والأطول، 84 يوماً و ساعة واحدة، جميعهم روّاد أولى. أُطلقت في 1973-11-16 14:01 بالتوقيت العالمي على صاروخ Saturn IB (SA-208). رصد شامل لموارد الأرض والنشاط الشمسي، يشمل حملة مراقبة كاملة لمذنب كوهوتك خلال ديسمبر–يناير. تُذكّر المهمة بشكل أساسي لما أسمته NASA لاحقاً «تمرّد Skylab» أو «إضراب» — حساب مختلف عليه لفترة توقف الراحة حول اليوم الثاني والأربعين بعد مطالب متواصلة من متحكمي الأرض ضغطت كل دقيقة من وقت اليقظة؛ وقد أفادت NASA والطاقم بأن لا إضراب منظماً حدث، لكن الضغط الزمني الأساسي كان حقيقياً وأدى إلى إصلاحات دائمة في NASA بشأن التخطيط الزمني للطاقم في المهام طويلة الأمد. أنزلت في 1974-02-08 15:17 بالتوقيت العالمي — آخر هبوط Skylab. عُرضت CSM-118 في المتحف الوطني لسلاح الجو الأمريكي، Dayton OH."
+ },
+ {
+  "rel": "missions/earth/skylab-4.json",
+  "at": "dispatch",
+  "en": "Skylab 4 set an endurance record that stood for years — 84 days aloft — and became a landmark in something less expected: who gets to run a mission. Gerald Carr's crew arrived to a punishing schedule radioed up from the ground, fell behind, and eventually pushed back, taking an unscheduled rest period — NASA and the crew themselves later disputed how deliberate the stand-down was — and forcing mission control to negotiate a workload humans could actually sustain. They also captured the era's best observations of Comet Kohoutek. The flight is remembered both for its record and for asserting, for the first time clearly, that the people in orbit — not only the planners below — have a say in how a long mission is flown.",
+  "cur": "حطّت Skylab 4 رقماً قياسياً للتحمّل ظلّ صامداً لسنوات — 84 يوماً في المدار — وأضحت معلماً في أمر لم يكن متوقعاً: من يحقّ له أن يدير مهمة فضائية. وصلت طاقم Carr إلى جدول زمني قاسٍ أرسِل لهم من الأرض، فتأخروا، وفي النهاية تراجعوا، متخذين فترة استراحة غير مجدولة — اختلفت NASA والطاقم نفسه لاحقاً حول مدى قصد هذا التوقف — وأرغموا مركز التحكم في المهمة على التفاوض بشأن عبء عمل يمكن للإنسان أن يستدام فعلاً. كما وثّقوا أفضل رصود تلك الحقبة للمذنب Kohoutek. يُذكر الرحلة لسجلّها القياسي ولتأكيدها، وللمرة الأولى بوضوح، أنّ الأشخاص في المدار — لا الخطّاطين في الأسفل وحدهم — لهم كلمة في كيفية إجراء مهمة طويلة."
+ },
+ {
+  "rel": "missions/earth/skylab-4.json",
+  "at": "events.2.label",
+  "en": "TIMELINE RESET",
+  "cur": "إعادة تعيين الجدول الزمني"
+ },
+ {
+  "rel": "missions/earth/soyuz-1.json",
+  "at": "first",
+  "en": "First Soyuz flight — parachute failure killed Vladimir Komarov (first in-flight spaceflight death)",
+  "cur": "أول رحلة Soyuz — فشل المظلة أودى بحياة فلاديمير كوماروف (أول وفاة أثناء رحلة فضائية)"
+ },
+ {
+  "rel": "missions/earth/soyuz-1.json",
+  "at": "dispatch",
+  "en": "Soyuz 1 is the flight that killed a cosmonaut, and it should never have flown. The new Soyuz spacecraft was rushed into service under political pressure with hundreds of known unresolved faults — engineers reportedly pleaded to delay — and in orbit it began to fail: a solar panel wouldn't deploy, the attitude control fought the pilot. Vladimir Komarov flew it down anyway, and on reentry the parachutes tangled and failed. He hit the ground at full speed. It was the first death in the history of human spaceflight, and its cause was less bad luck than a program that couldn't afford to admit its machine wasn't ready — the exact failure the culture of hidden, must-succeed firsts had been building toward.",
+  "cur": "Soyuz 1 هي الرحلة التي قتلت رائد فضاء، وما كان يجب لها أن تُطلق قط. المركبة الفضائية Soyuz الجديدة دُفعت للخدمة على عجل تحت ضغط سياسي مع مئات من الأعطال المعروفة غير المحلولة — ذُكر أن المهندسين توسلوا بالتأجيل — وفي المدار بدأت تتعطل: لوح شمسي لم ينفتح، نظام التحكم في الموقف صارع الطيار. فلاديمير كوماروف قادها للهبوط على أي حال، وعند العودة للغلاف الجوي تشابكت المظلات وفشلت. اصطدم بالأرض بسرعة كاملة. كانت أول وفاة في تاريخ رحلات الفضاء البشرية، وسببها لم يكن سوء الحظ بقدر ما كان برنامجاً لا يستطيع الاعتراف بأن آلته لم تكن جاهزة — الفشل بعينه الذي كانت ثقافة الأوليات الخفية الواجب نجاحها تبني نحوه."
+ },
+ {
+  "rel": "missions/earth/soyuz-1.json",
+  "at": "description",
+  "en": "The first crewed flight of the Soyuz spacecraft, launched 23 April 1967 with Vladimir Komarov aboard. The rushed vehicle suffered cascading failures in orbit — an undeployed solar panel, attitude-control problems — and the mission was cut short. On reentry the drogue chute deployed but the main parachute failed to open properly; the descent module struck the ground near-terminal velocity and Komarov was killed — the first in-flight fatality in spaceflight history.",
+  "cur": "أول رحلة مأهولة للمركبة الفضائية Soyuz، أُطلقت في 23 أبريل 1967 مع فلاديمير كوماروف على متنها. المركبة المتعجلة عانت من أعطال متتالية في المدار — لوح شمسي لم ينفتح، مشاكل في التحكم بالموقف — والمهمة اختُصرت. عند العودة للغلاف الجوي انفتحت مظلة الكبح لكن المظلة الرئيسية فشلت في الانفتاح بشكل صحيح؛ اصطدمت وحدة الهبوط بالأرض بسرعة شبه نهائية وقُتل كوماروف — أول حالة وفاة أثناء رحلة في تاريخ رحلات الفضاء."
+ },
+ {
+  "rel": "missions/earth/soyuz-11.json",
+  "at": "first",
+  "en": "First crew to a space station (Salyut 1); all 3 died of decompression on reentry",
+  "cur": "أول طاقم إلى محطة فضائية (Salyut 1)؛ مات الثلاثة من نزع الضغط أثناء العودة"
+ },
+ {
+  "rel": "missions/earth/soyuz-11.json",
+  "at": "dispatch",
+  "en": "Soyuz 11 achieved something extraordinary and then lost its crew in the last minutes of the flight. Georgy Dobrovolsky, Vladislav Volkov, and Viktor Patsayev became the first people to live aboard a space station, spending twenty-two days aboard Salyut 1 — and then, during reentry, a valve jolted open at the instant the modules separated and let their cabin air hiss out into space. They wore no pressure suits; there had been no room for suits when the couches were fitted for three. Within seconds, at the edge of space, all three were dead. The capsule landed itself, perfectly on target; the recovery team opened it to find the crew still strapped in their seats. They remain the only human beings to have died in space — and the price bought a rule that has held ever since: crews wear pressure suits through launch and reentry, always.",
+  "cur": "حققت Soyuz 11 إنجازاً غير عادي ثم فقدت طاقمها في اللحظات الأخيرة من الرحلة. أصبح جورجي دوبروفولسكي وفلاديسلاف فولكوف وفكتور باتساييف أول من عاش على محطة فضائية، حيث أمضوا اثنين وعشرين يوماً على متن Salyut 1 — وبعد ذلك، أثناء العودة، فتح صمام تنفيسي فجأة في لحظة الفصل بين الوحدات وترك هواء كابينتهم يخرج بصفير إلى الفضاء. لم يكونوا يرتدون بدلات ضغط؛ لم يكن هناك مجال لبدل الضغط عندما تم تركيب المقاعد لثلاثة أشخاص. في ثوانٍ معدودة، على حافة الفضاء، كانوا جميعاً ميتين. هبطت الكبسولة بنفسها، بدقة على الهدف؛ فتحت فرقة الاستعادة لتجد الطاقم لا يزال مربوطاً بمقاعده. يبقون الوحيدين بين البشر الذين ماتوا في الفضاء — والثمن الذي دفعوه أسس قاعدة ظلت سارية منذ ذلك الحين: يرتدي الطاقم بدلات الضغط أثناء الإطلاق والعودة، دائماً."
+ },
+ {
+  "rel": "missions/earth/soyuz-11.json",
+  "at": "description",
+  "en": "The first crewed mission to a space station — Salyut 1 — launched 6 June 1971 with Georgy Dobrovolsky, Vladislav Volkov, and Viktor Patsayev. The crew spent 22 days aboard Salyut 1 (total mission duration 23 days 18 hours). During reentry on 30 June a pressure-equalisation valve opened prematurely at module separation (~168 km); the cabin depressurised and the three cosmonauts, unsuited, died within seconds. The capsule landed normally. They remain the only humans to have died above the Kármán line.",
+  "cur": "أول بعثة مأهولة إلى محطة فضائية — Salyut 1 — انطلقت في 6 يونيو 1971 مع جورجي دوبروفولسكي وفلاديسلاف فولكوف وفيكتور بتسايف. أمضى الطاقم 22 يوماً على متن Salyut 1 (إجمالي مدة البعثة 23 يوماً 18 ساعة). أثناء العودة إلى الأرض في 30 يونيو، فُتِح صمام معادلة الضغط بشكل مبكر جداً عند فصل الوحدة (~168 كم)؛ تفرغت الكابينة من الهواء وتوفي رواد الفضاء الثلاثة، غير مرتدين بدلات الفضاء، في غضون ثوانٍ. هبطت الكبسولة بشكل طبيعي. يبقى هؤلاء الثلاثة الوحيدين من البشر الذين توفوا فوق خط Kármán."
+ },
+ {
+  "rel": "missions/earth/sputnik1.json",
+  "at": "first",
+  "en": "First artificial satellite to orbit Earth — start of the Space Age",
+  "cur": "أول قمر صناعي يدور حول الأرض — بداية عصر الفضاء"
+ },
+ {
+  "rel": "missions/earth/sputnik1.json",
+  "at": "dispatch",
+  "en": "Sputnik 1 did almost nothing, and that was the point. No camera, no experiment worth the name — a radio, a battery, and a polished shell chosen so the world could watch the rocket that carried it. Its whole job was to reach orbit first and be heard doing it, and for twenty-one days it was: a beep on the shortwave that anyone on Earth could tune in, and that Washington could not switch off. The machine mattered far less than the fact of it — proof, broadcast to everyone at once, that the Soviet Union had beaten the United States to orbit and flew a rocket that could reach any city on the map. It burned up over the new year. The race it started ran all the way to the Moon.",
+  "cur": "لم تفعل Sputnik 1 شيئاً يذكر، وفي ذلك كانت الفكرة بأكملها. لا كاميرا، لا تجربة تستحق الاسم — مجرد جهاز راديو وبطارية وقوقعة مصقولة اختيرت لكي يتمكن العالم من مراقبة الصاروخ الذي حملها. كانت مهمتها كلها الوصول إلى المدار أولاً والانجراح صوتياً، وظلّت تفعل ذلك لمدة واحد وعشرين يوماً: صرير على الموجات القصيرة يمكن لأي شخص على الأرض أن يستقبله، وما كانت واشنطن قادرة على إطفاؤه. كانت الآلة نفسها أقل أهمية بكثير من حقيقة وجودها — دليل يُبث للجميع في الوقت نفسه، على أن الاتحاد السوفييتي كان قد سبق الولايات المتحدة إلى المدار وكان لديه صاروخ قادر على الوصول إلى أي مدينة على الخريطة. احترقت مع قدوم السنة الجديدة. والسباق الذي بدأته امتدّ كل الطريق إلى القمر."
+ },
+ {
+  "rel": "missions/earth/sputnik1.json",
+  "at": "description",
+  "en": "Korolev's polished aluminium sphere — 58 cm wide, 83.6 kg, two transmitters on 20.005 and 40.002 MHz — became the first human-made object to reach orbit on 1957-10-04 19:28 UTC. The 215 × 939 km, 65.1° trajectory beeped over America that night and again every 96 minutes, audible on shortwave to anyone who tuned in. Batteries depleted on 1957-10-26 (after 21 days, ~315 orbits); the satellite decayed and burned up on re-entry 1958-01-04 after roughly 1440 orbits. The flight was an OKB-1 side project: Korolev needed a lightweight payload for his still-developmental R-7 ICBM and pitched 'PS-1' (Prosteyshiy Sputnik — 'simplest satellite') to Khrushchev as a propaganda coup. It worked. The shock in Washington triggered ARPA (founded 1958-02), the National Aeronautics and Space Act (signed 1958-07), and Kennedy's Moon-landing pledge four years later. Sputnik 1 also returned the first orbital ionospheric and atmospheric-density data — engineers used the Doppler shift on the 20 / 40 MHz carriers to map air density at 215 km, work that fed into every subsequent re-entry calculation.",
+  "cur": "كرة الألمنيوم المصقولة التي صنعها كوروليوف — بعرض 58 سم، ووزن 83.6 كغ، وجهازَي إرسال على ترددَي 20.005 و40.002 ميغاهرتز — أصبحت أول جسم من صنع الإنسان يصل إلى المدار في 1957-10-04 19:28 UTC. أصدر المسار البالغ 215 × 939 كم بميل 65.1° أصوات صفير فوق أمريكا تلك الليلة ومرة أخرى كل 96 دقيقة، مسموعة على الموجات القصيرة لكل من ضبط جهازه. نفدت البطاريات في 1957-10-26 (بعد 21 يوماً، نحو 315 دورة)؛ تحلل القمر الصناعي واحترق عند العودة في 1958-01-04 بعد ما يقارب 1440 دورة. كانت الرحلة مشروعاً جانبياً لمكتب التصميم OKB-1: احتاج كوروليوف إلى حمولة خفيفة لصاروخه R-7 العابر للقارات الذي كان لا يزال قيد التطوير، وعرض على خروتشوف 'PS-1' (Prosteyshiy Sputnik — 'القمر الصناعي الأبسط') بوصفه انتصاراً دعائياً. ونجح الأمر. الصدمة في واشنطن أطلقت وكالة ARPA (تأسست 1958-02)، وقانون الفضاء والملاحة الجوية الوطني (وُقِّع 1958-07)، وتعهد Kennedy بالهبوط على القمر بعد أربع سنوات. كذلك أعاد Sputnik 1 أول بيانات مدارية للأيونوسفير وكثافة الغلاف الجوي — استخدم المهندسون انزياح دوبلر على حاملَي 20 / 40 ميغاهرتز لرسم خريطة كثافة الهواء على ارتفاع 215 كم، وهو عمل غذّى كل حسابات العودة اللاحقة."
+ },
+ {
+  "rel": "missions/earth/sputnik1.json",
+  "at": "events.3.label",
+  "en": "RE-ENTRY",
+  "cur": "العودة إلى الغلاف الجوي"
+ },
+ {
+  "rel": "missions/earth/voskhod-1.json",
+  "at": "dispatch",
+  "en": "Voskhod 1 was the first flight to carry more than one person into space, and it managed it by subtraction. There was no room in the one-seat Vostok for a three-person crew, so the engineers took things out — the ejection seats that had saved every previous cosmonaut, and, because even then it was too tight, the pressure suits. Komarov, Feoktistov, and Yegorov flew for a day in shirtsleeves, with no way to escape a launch or reentry emergency and no protection if the cabin lost air. Nothing went wrong, so it looked like a triumph. It was really a bet — that the corners cut to score a first wouldn't be the ones that mattered — and it happened to win.",
+  "cur": "كانت Voskhod 1 أول رحلة تحمل أكثر من شخص واحد إلى الفضاء، وقد حققت ذلك بالحذف. لم يكن هناك مكان في Vostok ذات المقعد الواحد لطاقم مكون من ثلاثة أشخاص، لذا أزال المهندسون أشياء — مقاعد القذف التي أنقذت كل رائد فضاء سابق، وبسبب ضيق المساحة حتى بعد ذلك، أزالوا بدلات الضغط. طار كوماروف وفيوكتيستوف ويغوروف لمدة يوم بأكمام القمصان، دون أي وسيلة للهروب من طوارئ الإطلاق أو العودة ودون حماية في حال فقدت المقصورة الهواء. لم يحدث خطأ، لذا بدا الأمر وكأنه انتصار. كان في الواقع رهانًا — أن الزوايا التي تم قطعها لتحقيق السبق لن تكون تلك التي تهم — وقد كُتب له الفوز."
+ },
+ {
+  "rel": "missions/earth/voskhod-1.json",
+  "at": "first",
+  "en": "First multi-crew spaceflight — three cosmonauts in a Vostok-derived capsule",
+  "cur": "أول رحلة فضائية متعددة الطاقم — ثلاثة رواد فضاء في كبسولة مشتقّة من Vostok"
+ },
+ {
+  "rel": "missions/earth/voskhod-1.json",
+  "at": "description",
+  "en": "First three-crew spaceflight in history. Komarov, Feoktistov and Yegorov flew 1964-10-12 to 1964-10-13 in a heavily modified Vostok capsule (designated Voskhod / 'Sunrise'). Ejection seats were removed and the cabin pressure system re-rated to allow three men to sit in shirtsleeves — a propaganda victory against the planned US Gemini two-crew flights, but a brutal compromise that left the crew with no escape capability during launch or re-entry. Cabin spacing was so tight Komarov reported he could feel Yegorov's breath on his neck for 24 hours. Landed 1964-10-13 07:47 UTC near Marevka, Kazakhstan, using the new soft-landing solid-rocket retro system because no parachute ejection was possible. While they were in orbit, Khrushchev was deposed; the crew returned to a fully different Soviet leadership.",
+  "cur": "أول رحلة فضائية بثلاثة رواد في التاريخ. حلّق كوماروف وفيوكتيستوف ويغوروف من 1964-10-12 إلى 1964-10-13 في كبسولة Vostok معدّلة بشدة (مصنّفة باسم Voskhod / 'شروق الشمس'). تمّ إزالة مقاعد الطرد وإعادة تصنيف نظام ضغط المقصورة للسماح لثلاثة رجال بالجلوس بملابس عادية — وهو انتصار دعائي ضد رحلات Gemini المخطط لها من الولايات المتحدة برواد اثنين، لكن حل وسط قاسٍ ترك الطاقم بدون قدرة على الهروب في أثناء الإقلاع أو إعادة الدخول. كان التباعد داخل المقصورة ضيقًا جدًا لدرجة أن كوماروف أبلغ عن شعوره بنفس يغوروف على رقبته لمدة 24 ساعة. هبط في 1964-10-13 07:47 بتوقيت UTC بالقرب من Marevka بكازاخستان، مستخدمًا نظام محركات صواريخ الكبح الصلبة الناعمة الجديد لأن أي انفجار بمظلة كان مستحيلًا. بينما كانوا يدورون حول الأرض، تمّ الإطاحة بخروتشوف؛ عاد الطاقم إلى قيادة سوفييتية مختلفة تمامًا."
+ },
+ {
+  "rel": "missions/earth/voskhod-2.json",
+  "at": "first",
+  "en": "First extra-vehicular activity (Leonov, 12 min, 1965-03-18)",
+  "cur": "أول نشاط خارج المركبة (ليونوف، 12 دقيقة، 1965-03-18)"
+ },
+ {
+  "rel": "missions/earth/voskhod-2.json",
+  "at": "dispatch",
+  "en": "Voskhod 2 achieved the first spacewalk and nearly turned it into the first death in space. Alexei Leonov floated out of an inflatable airlock into vacuum, the first human ever fully outside a spacecraft — and then his suit ballooned so stiff he couldn't bend to get back in. He had to open a valve and bleed his own air out, courting the bends, just to shrink enough to fit through the hatch. It wasn't over: the automatic reentry failed, the crew flew down by hand, and they landed hundreds of kilometres off course in the frozen Siberian forest, where they waited out two nights among wolves before rescuers reached them on skis. The public saw twelve triumphant minutes; how close it came stayed secret for years.",
+  "cur": "حققت Voskhod 2 أول رحلة فضائية خارج المركبة وكادت أن تحولها إلى أول وفاة في الفضاء. خرج ألكسي ليونوف عائماً من حجرة هواء قابلة للنفخ إلى الفراغ، أول إنسان يكون بالكامل خارج مركبة فضائية — ثم انتفخت بدلته بحيث لم يستطع الانحناء للعودة للداخل. اضطر لفتح صمام وإفراغ الهواء من بدلته بنفسه، مخاطراً بمرض الضغط، فقط ليصغر بما يكفي للدخول من الفتحة. لم تنته المعاناة هناك: فشل نظام العودة الآلي، فقاد الطاقم المركبة يدوياً للهبوط، وهبطوا على بعد مئات الكيلومترات عن المسار المخطط في غابة سيبيريا المتجمدة، حيث انتظروا ليلتين بين الذئاب قبل وصول فرق الإنقاذ إليهم على متن الزحافات. رأى الجمهور اثنتي عشرة دقيقة منتصرة؛ لكن مدى قرب اقترابها من الكارثة ظل سراً لسنوات."
+ },
+ {
+  "rel": "missions/earth/voskhod-2.json",
+  "at": "description",
+  "en": "Pavel Belyayev + Alexei Leonov's 1-day flight — first EVA in history. Leonov spent 12 min outside Voskhod 2 (1965-03-18 11:34 UTC), pressurised through an inflatable Volga airlock that Soviet engineers added because the Voskhod hull lacked the room for full depressurisation. Leonov's suit ballooned in vacuum, jamming him outside the airlock; he had to vent suit pressure to re-enter, raising decompression-sickness risk. Re-entry was equally dramatic — the automatic landing system failed, and Belyayev manually piloted the descent module to a hard landing in deep Urals snow ~390 km off-target; the crew survived two nights in the forest among wolves before rescue helicopters arrived 1965-03-21. The cabin atmosphere also became O₂-rich in orbit, after the EVA hatch failed to re-seal, briefly risking spontaneous combustion.",
+  "cur": "رحلة بافيل بلياييف وألكسي ليونوف التي استغرقت يوماً واحداً — أول نشاط خارج المركبة في التاريخ. قضى ليونوف 12 دقيقة خارج Voskhod 2 (1965-03-18 11:34 UTC)، مدعوماً من خلال حجرة هواء قابلة للنفخ من طراز Volga أضافها المهندسون السوفييت لأن هيكل Voskhod الأصلي لم يتسع لإزالة الضغط الكاملة. انتفخت بدلة ليونوف في الفراغ، مما جعله عالقاً خارج حجرة الهواء؛ اضطر لتفريغ ضغط البدلة للعودة للداخل، مما رفع خطر مرض الضغط. كانت العودة مثيرة بنفس القدر — فشل نظام الهبوط الآلي، وقاد بلياييف وحدة الهبوط يدوياً إلى هبوط قاسي في ثلوج جبال الأورال العميقة حوالي 390 كم بعيداً عن الهدف؛ نجا الطاقم ليلتين في الغابة بين الذئاب قبل وصول مروحيات الإنقاذ في 1965-03-21. كما أصبح الغلاف الجوي للمركبة غنياً بالأكسجين في المدار، بعد أن فشل فتح حجرة النشاط الخارجي في إعادة الإغلاق، مما أثار مؤقتاً خطر الاشتعال التلقائي."
+ },
+ {
+  "rel": "missions/earth/vostok-1.json",
+  "at": "dispatch",
+  "en": "Vostok 1 is where the space age begins with a person in it. For 108 minutes on 12 April 1961, Yuri Gagarin — a 27-year-old fighter pilot — became the first human being to leave the planet and orbit it, and the world woke to find the Soviet Union had done the thing everyone assumed America would do first. He had almost no control of the spacecraft; the flight was run from the ground, and he was as much passenger as pilot, sealed in a sphere built to bring him home whether he was conscious or not. It didn't matter. A human had circled the Earth and returned, and nothing about how people saw their place in the universe was quite the same afterward.",
+  "cur": "Vostok 1 هو حيث يبدأ عصر الفضاء بوجود إنسان فيه. لمدة 108 دقيقة في 12 أبريل 1961، أصبح يوري جاجارين — طيار مقاتل يبلغ من العمر 27 عامًا — أول إنسان يغادر الكوكب ويدور حوله، واستيقظ العالم ليجد أن الاتحاد السوفييتي قد أنجز الأمر الذي افترض الجميع أن أمريكا ستفعله أولاً. لم يكن لديه تقريبًا أي تحكم في المركبة الفضائية؛ تمت إدارة الرحلة من الأرض، وكان راكبًا بقدر ما كان طيارًا، محبوسًا في كرة صُممت لإعادته إلى الوطن سواء كان واعيًا أم لا. لم يكن ذلك مهمًا. لقد دار إنسان حول الأرض وعاد، ولم يعد أي شيء حول كيفية رؤية الناس لمكانهم في الكون كما كان تمامًا بعد ذلك."
+ },
+ {
+  "rel": "missions/earth/vostok-1.json",
+  "at": "first",
+  "en": "First human in space; first crewed orbital flight",
+  "cur": "أول إنسان في الفضاء؛ أول رحلة مدارية مأهولة"
+ },
+ {
+  "rel": "missions/earth/vostok-1.json",
+  "at": "description",
+  "en": "Yuri Gagarin's 108-minute single-orbit flight — the first crewed spaceflight in history, and the first human to orbit Earth. Launched 1961-04-12 06:07 UTC from Baikonur on a Vostok-K (8K72K) launcher; orbit 169 × 327 km, inclination 65°. The spherical descent module ejected Gagarin at ~7 km altitude (a fact the USSR concealed for years to claim full crewed landing under FAI rules). Gagarin parachuted to Smelovka, Saratov Oblast; the capsule landed separately and is on display at the RKK Energia Museum in Korolyov, Russia. The flight ended Korolev's decade-long missile / satellite work and triggered the U.S. crewed-spaceflight programme + Kennedy's Moon-landing pledge six weeks later.",
+  "cur": "رحلة يوري جاجارين المدارية الواحدة التي استغرقت 108 دقائق — أول رحلة فضائية مأهولة في التاريخ، وأول إنسان يدور حول الأرض. أُطلقت في 12 أبريل 1961 الساعة 06:07 ت.ع.م من بايكونور على صاروخ Vostok-K (8K72K)؛ مدار 169 × 327 كم، ميل 65°. قذفت وحدة الهبوط الكروية جاجارين على ارتفاع نحو 7 كم (حقيقة أخفاها الاتحاد السوفيتي لسنوات للمطالبة بهبوط مأهول كامل بموجب قواعد FAI). هبط جاجارين بالمظلة في Smelovka، مقاطعة Saratov Oblast؛ هبطت الكبسولة بشكل منفصل وتُعرض اليوم في متحف RKK Energia في Korolyov، روسيا. أنهت الرحلة عقد كوروليوف من العمل على الصواريخ والأقمار الصناعية، وأطلقت برنامج رحلات الفضاء المأهولة الأمريكي + تعهد Kennedy بالهبوط على القمر بعد ستة أسابيع."
+ },
+ {
+  "rel": "missions/earth/vostok-2.json",
+  "at": "dispatch",
+  "en": "If Gagarin proved a person could reach orbit, Vostok 2 proved a person could live there. Gherman Titov — at twenty-five, still the youngest person ever to fly in space — spent a full day aloft, seventeen orbits over twenty-five hours, long enough to eat, sleep, and discover something no one had felt before: space sickness, the nausea of an inner ear with no up or down to hold onto. He worked through it. The flight retired a genuine fear — that the body might simply fail over hours of weightlessness — and pushed the boundary from a single lap to a full day, at a stride the Americans, still flying fifteen-minute hops, couldn't answer.",
+  "cur": "إذا أثبت جاجارين أن الإنسان يستطيع الوصول إلى المدار، فقد أثبتت Vostok 2 أن الإنسان يستطيع العيش فيه. جيرمان تيتوف — الذي كان في الخامسة والعشرين، ولا يزال الأصغر سناً على الإطلاق الذي طار في الفضاء — قضى يوماً كاملاً في الأعالي، سبع عشرة دورة على مدى خمس وعشرين ساعة، وقت كافٍ للأكل والنوم واكتشاف شيء لم يشعر به أحد من قبل: دوار الفضاء، الغثيان الناتج عن أذن داخلية ليس لديها أعلى أو أسفل تتمسك به. تجاوز ذلك وواصل عمله. أنهت الرحلة خوفاً حقيقياً — أن الجسم قد يفشل ببساطة على مدى ساعات من انعدام الوزن — ودفعت الحدود من دورة واحدة إلى يوم كامل، بخطوة لم يستطع الأمريكيون، الذين كانوا لا يزالون يقومون بقفزات مدتها خمس عشرة دقيقة، مجاراتها."
+ },
+ {
+  "rel": "missions/earth/vostok-2.json",
+  "at": "first",
+  "en": "First day in space — 17 orbits over 25 hours",
+  "cur": "أول يوم كامل في الفضاء — 17 مدارًا على مدى 25 ساعة"
+ },
+ {
+  "rel": "missions/earth/vostok-2.json",
+  "at": "description",
+  "en": "Gherman Titov's 17-orbit, 25-hour flight — the second human in space and the first to spend over a day in orbit. Launched 1961-08-06 06:00 UTC from Baikonur; at 25 years 10 months Titov remained the youngest person ever launched into space until 2021 (Oliver Daemen, NS-16). Tested human reactions to prolonged microgravity — Titov reported the first case of space motion sickness, slept ~8 hours on orbit, and made the first hand-camera Earth photographs. Capsule landed near Krasny Kut, Saratov Oblast 1961-08-07 07:18 UTC after Titov ejected during descent. Service-module strap separation problem (same as Vostok 1) recurred.",
+  "cur": "رحلة جيرمان تيتوف بـ 17 مدارًا و25 ساعة — الإنسان الثاني في الفضاء والأول الذي يقضي أكثر من يوم واحد في المدار. انطلقت في 1961-08-06 06:00 UTC من بايكونور؛ وفي سن 25 سنة و10 أشهر، ظل تيتوف أصغر شخص تم إطلاقه إلى الفضاء على الإطلاق حتى 2021 (Oliver Daemen، NS-16). اختبرت ردود أفعال الإنسان للجاذبية الدقيقة المطولة — أبلغ تيتوف عن أول حالة دوار الفضاء، ونام حوالي 8 ساعات في المدار، وألتقط أول صور بكاميرا يدوية للأرض. هبطت الكبسولة بالقرب من Krasny Kut في منطقة Saratov Oblast في 1961-08-07 07:18 UTC بعد أن أطلق تيتوف نفسه بالمظلة أثناء الهبوط. عاد مشكلة فصل حزام وحدة الخدمة (نفس مشكلة Vostok 1) مرة أخرى."
+ },
+ {
+  "rel": "missions/earth/vostok-3.json",
+  "at": "first",
+  "en": "First dual-flight rendezvous — flew within ~6.5 km of Vostok 4",
+  "cur": "أول لقاء ثنائي في الرحلات — حلقت ضمن ~6.5 كم من Vostok 4"
+ },
+ {
+  "rel": "missions/earth/vostok-3.json",
+  "at": "dispatch",
+  "en": "Vostok 3 opened the first act of a piece of orbital theatre. A day after Andriyan Nikolayev reached orbit, Vostok 4 followed him up, and for a while the two spacecraft flew within a few kilometres of each other — the first time two crewed craft had ever been in space together. To the world it looked like a rendezvous, and the Soviets were glad to let it. In truth neither ship could maneuver; the closeness came from launching one almost into the other's path, and the gap widened steadily after. A genuine first and a bit of a magic trick at once — and a hint at the real skill, true rendezvous, that no one yet had.",
+  "cur": "فتحت Vostok 3 الفصل الأول من مسرحية مدارية. بعد يوم واحد من وصول أندريان نيكولايف إلى المدار، تبعه Vostok 4، وللوهلة حلقت المركبتان على بعد بضعة كيلومترات من بعضهما — وللمرة الأولى طافت مركبتان مأهولتان معاً في الفضاء. بدا للعالم وكأنه التقاء حقيقي، والسوفييتيون لم يمانعوا الإشارة إلى ذلك. لكن الحقيقة أن أياً من المركبتين لم تكن قادرة على المناورة؛ كان التقارب نتيجة إطلاق إحداهما تقريباً في مسار الأخرى، والفجوة بينهما اتسعت تدريجياً بعد ذلك. إنجاز حقيقي وخدعة سحرية في آن واحد — ورمز إلى المهارة الحقيقية، اللقاء الفعلي، التي لم يكن قد أتقنها أحد بعد."
+ },
+ {
+  "rel": "missions/earth/vostok-3.json",
+  "at": "description",
+  "en": "Andriyan Nikolayev's 64-orbit flight, launched 1962-08-11 08:24 UTC. Twenty-four hours after launch Vostok 4 (Popovich) joined him in orbit — the closest approach was approximately 6.5 km, though no actual rendezvous capability existed (the two capsules had no manoeuvring thrusters). The simultaneous flight was a propaganda response to US suborbital missions and to John Glenn's Friendship 7. Nikolayev landed 1962-08-15 06:52 UTC near Karaganda, Kazakh SSR, after almost 4 days in space.",
+  "cur": "رحلة أندريان نيكولايف البالغة 64 مداراً، أُطلقت في 1962-08-11 08:24 بتوقيت العالمي المنسق. وبعد أربع وعشرين ساعة من الإطلاق، انضم Vostok 4 (بوبوفيتش) إليه في المدار — كان أقرب اقتراب حوالي 6.5 كم، مع أنه لم تكن هناك قدرة التحام فعلية (الكبسولتان لم تكن لديهما محركات مناورة). كانت الرحلة المتزامنة ردّ فعل دعائي على البعثات تحت المدارية للولايات المتحدة وعلى Friendship 7 لجون جلين. هبط نيكولايف في 1962-08-15 06:52 بتوقيت العالمي المنسق بالقرب من كاراجاندا، جمهورية كازاخستان السوفيتية الاشتراكية، بعد ما يقارب 4 أيام في الفضاء."
+ },
+ {
+  "rel": "missions/earth/vostok-4.json",
+  "at": "first",
+  "en": "Second half of first dual flight — first communications between two crewed spacecraft",
+  "cur": "النصف الثاني من أول رحلة مزدوجة — أول اتصالات بين مركبتين فضائيتين مأهولتين بالبشر"
+ },
+ {
+  "rel": "missions/earth/vostok-4.json",
+  "at": "dispatch",
+  "en": "Vostok 4 was the answer to Vostok 3 — the second ship in the first dual flight, and the moment two humans in two separate spacecraft first spoke to each other in orbit. Pavel Popovich launched a day after Nikolayev and closed to within about six and a half kilometres, near enough to trade radio voice directly, ship to ship, rather than through the ground. Like its partner it couldn't maneuver to hold the distance, so the two drifted apart. But the image of two cosmonauts circling the Earth in formation, talking to each other, was exactly the kind of first the program was built to manufacture.",
+  "cur": "كانت Vostok 4 الرد على Vostok 3 — السفينة الثانية في أول رحلة مزدوجة، واللحظة التي تحدث فيها إنسانان في مركبتين منفصلتين لأول مرة مع بعضهما البعض في المدار. أطلق بافل بوبوفيتش بعد يوم واحد من نيكولايف واقترب من مسافة حوالي ستة كيلومترات ونصف، قريبة بما يكفي لتبادل الحديث عبر الراديو مباشرة، من سفينة إلى أخرى، وليس عبر الأرض. مثل نظيرتها، لم تتمكن من المناورة للحفاظ على المسافة، لذلك انجرفت المركبتان بعيدتين. لكن صورة رائدي فضاء يدوران حول الأرض معاً، يتحدثان مع بعضهما البعض، كانت بالضبط نوع الإنجاز الأول الذي كان البرنامج مصمماً لتحقيقه."
+ },
+ {
+  "rel": "missions/earth/vostok-4.json",
+  "at": "description",
+  "en": "Pavel Popovich's 48-orbit flight, launched 1962-08-12 08:02 UTC, twenty-four hours after Vostok 3. The two capsules came within ~6.5 km and exchanged the first voice radio communications between cosmonauts in orbit. Popovich was ordered down a day early when ground controllers misinterpreted a coded phrase about thunder as the duress code-word for early termination — the real signal was a routine weather observation. Landed 1962-08-15 06:59 UTC near Karaganda, seven minutes after Vostok 3.",
+  "cur": "رحلة بافل بوبوفيتش البالغة 48 مدار، أطلقت في 1962-08-12 08:02 UTC، بعد 24 ساعة من Vostok 3. اقتربت الكبسولتان من بعضهما ≈6.5 km وتبادلتا أول اتصالات راديوية صوتية بين رواد الفضاء في المدار. أُرسل بوبوفيتش للهبوط قبل يوم واحد من الموعد المقرر عندما أساء مراقبو الأرض تفسير عبارة مشفرة عن الرعد واعتبروها إشارة الضائقة لإنهاء الرحلة مبكراً — كانت الإشارة الحقيقية ملاحظة روتينية عن الطقس. هبط في 1962-08-15 06:59 UTC بالقرب من Karaganda، بعد سبع دقائق من هبوط Vostok 3."
+ },
+ {
+  "rel": "missions/earth/vostok-4.json",
+  "at": "events.1.label",
+  "en": "INTER-CRAFT VOICE",
+  "cur": "اتصال صوتي بين المركبات"
+ },
+ {
+  "rel": "missions/earth/vostok-5.json",
+  "at": "dispatch",
+  "en": "Vostok 5 set a record that still stands. Valery Bykovsky flew nearly five days alone in orbit — eighty-one laps of the planet — which remains, six decades on, the longest solo spaceflight anyone has ever made. It was an endurance test above all, pushing a single cosmonaut and a small spacecraft far past the day Titov managed, to see whether a person could simply keep going. He could. And Bykovsky wasn't even the headline of his own mission: two days into his flight, Vostok 6 went up carrying the first woman in space, and the world's attention went with her.",
+  "cur": "حطّم Vostok 5 رقماً لا يزال قائماً. حلّق فاليري بيكوفسكي ما يقرب من خمسة أيام بمفرده في المدار — واحد وثمانون دورة حول الكوكب — وهو ما يظل، بعد ستة عقود، أطول رحلة فضائية فردية قام بها أي شخص على الإطلاق. كان اختباراً للقدرة على التحمل قبل كل شيء، دافعاً رائد فضاء واحد ومركبة فضائية صغيرة إلى ما هو أبعد بكثير من اليوم الذي تمكّن منه تيتوف، لمعرفة ما إذا كان الإنسان قادراً ببساطة على الاستمرار. لقد كان قادراً. ولم يكن بيكوفسكي حتى العنوان الرئيسي لمهمته الخاصة: بعد يومين من رحلته، انطلق Vostok 6 حاملاً أول امرأة في الفضاء، وذهب معها اهتمام العالم."
+ },
+ {
+  "rel": "missions/earth/vostok-5.json",
+  "at": "first",
+  "en": "Longest solo Earth-orbital flight — 4 days 23 hours, 81 orbits",
+  "cur": "أطول رحلة فردية في مدار حول الأرض — 4 أيام و23 ساعة و81 مدارًا"
+ }
+]

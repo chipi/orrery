@@ -1,0 +1,812 @@
+[
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "narrative_101.0",
+  "en": "Every planet has, at most, a handful of robots actively studying it. Mars has the most: six active orbiters (NASA's MRO + MAVEN, ESA's Mars Express + ExoMars TGO, China's Tianwen-1, UAE's Hope) plus surface rovers (Perseverance, Curiosity) and the Ingenuity helicopter. Jupiter has one: NASA's Juno, in a polar orbit since 2016, studying Jupiter's magnetic field + auroras + deep atmosphere. Venus has one: JAXA's Akatsuki, the only active Venus orbiter, studying cloud-top winds + lightning. Saturn currently has none — Cassini ended in 2017; the next dedicated mission (NASA's Dragonfly to Titan) launches mid-2027. Mercury, Uranus, Neptune, and Pluto currently have no active orbiters either.",
+  "cur": "Сваку планету активно проучава највише неколицина робота. Марс их има највише: шест активних орбитера (NASA-ин MRO + MAVEN, ESA-ини Mars Express + ExoMars TGO, кинески Tianwen-1, емиратски Hope), плус ровере на површини (Perseverance, Curiosity) и хеликоптер Ingenuity. Јупитер има једну летелицу: NASA-ину Juno, у поларној орбити од 2016. године, која проучава Јупитерово магнетно поље + аурору + дубоку атмосферу. Венера има једну: JAXA-ину Akatsuki, једини активни орбитер око Венере, који проучава ветрове на врху облака + муње. Сатурн тренутно нема ниједну — Cassini је окончана 2017. године; следећа посвећена мисија (NASA-ин Dragonfly до Титана) лансира се средином 2027. Ни Меркур, Уран, Нептун и Плутон тренутно немају активне орбитере."
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "narrative_101.1",
+  "en": "The global nature of this list matters. Mars in 2026 has spacecraft from the US, Europe, Russia, India, China, and the UAE all actively orbiting. The era of \"only NASA does this\" ended around 2014 when Mangalyaan arrived. Hope (2021) was the first interplanetary mission from any Arab country. Tianwen-1 (2021) made China the second nation to land a rover on Mars (after the US). Akatsuki, after a near-miss in 2010, became the first JAXA interplanetary success when JAXA re-attempted orbit insertion five years later. The chart you see when you zoom in on Mars in Orrery has all those flags represented.",
+  "cur": "Глобални карактер ове листе је важан. Марс у 2026. години има летелице из САД, Европе, Русије, Индије, Кине и УАЕ које све активно круже у орбити. Ера у којој је „то радила само NASA“ окончана је око 2014. године, када је стигла Mangalyaan. Hope (2021) била је прва међупланетарна мисија неке арапске земље. Tianwen-1 (2021) учинила је Кину другом нацијом која је спустила ровер на Марс (после САД). Akatsuki је, након замало промашаја 2010. године, постала први међупланетарни успех агенције JAXA када је JAXA пет година касније поново покушала улазак у орбиту. Графикон који видите када зумирате Марс у Orrery-ју приказује све те заставе."
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "narrative_101.2",
+  "en": "Most of these missions outlive their designed lifetimes by years or decades. MRO was designed for a 2-year primary mission; it's been at Mars 20 years and counting, and serves as a critical data relay for every surface mission. Mars Express was a 2-year primary; it's 22 years in. Juno was designed for 33 perijove passes; it's done 60+. These extensions are how planetary science gets long baselines.",
+  "cur": "Већина ових мисија надживи свој пројектовани век трајања за године или деценије. MRO је био замишљен као двогодишња примарна мисија; код Марса је већ 20 година и још траје, а служи као кључни релеј података за сваку мисију на површини. Mars Express је био двогодишња примарна мисија; сада је у 22. години рада. Juno је био пројектован за 33 проласка кроз перијов; обавио је више од 60. Управо захваљујући таквим продужењима планетарна наука долази до дугих временских низова посматрања."
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "body_paragraphs.0",
+  "en": "Mars — orbital fleet as of 2026: MRO (NASA, since 2006, 300 km polar orbit, HiRISE camera + atmosphere observations + data relay). MAVEN (NASA, since 2014, 6200 km orbit, atmospheric escape rates). Mars Express (ESA, since 2003, 4200 km, mineralogy + atmosphere). ExoMars TGO (ESA, since 2016, 400 km, trace gases + Russian relay). Mangalyaan / MOM (ISRO, 2014–2022, methane + atmosphere — first Asian mission to successfully orbit Mars). Tianwen-1 (CNSA, since 2021, 4250 km, delivered Zhurong rover + global mapping). Hope / EMM (UAE Space Agency, since 2021, 30,000 km equatorial, atmospheric science). On the surface: Perseverance + Curiosity rovers (both NASA) and the now-grounded Ingenuity helicopter.",
+  "cur": "Марс — орбитална флота у 2026. години: MRO (NASA, од 2006, поларна орбита на 300 km, камера HiRISE + посматрања атмосфере + релеј података). MAVEN (NASA, од 2014, орбита на 6200 km, брзине бекства атмосфере). Mars Express (ESA, од 2003, 4200 km, минералогија + атмосфера). ExoMars TGO (ESA, од 2016, 400 km, гасови у траговима + руски релеј). Mangalyaan / MOM (ISRO, 2014–2022, метан + атмосфера — прва азијска мисија која је успешно ушла у орбиту Марса). Tianwen-1 (CNSA, од 2021, 4250 km, допремио ровер Zhurong + глобално картографисање). Hope / EMM (Свемирска агенција УАЕ, од 2021, екваторијална орбита на 30.000 km, наука о атмосфери). На површини: ровери Perseverance + Curiosity (оба NASA) и хеликоптер Ingenuity, који је сада трајно на тлу."
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "body_paragraphs.1",
+  "en": "Jupiter system: Juno (NASA, since 2016, polar 53-day orbit). Designed to map Jupiter's magnetic field + atmosphere + interior structure. Polar orbit avoids Jupiter's intense equatorial radiation belt — the belt is so harsh that other gas-giant orbiters would be permanently damaged within months on an equatorial trajectory. Juno's mission has been extended multiple times; it will continue until it's deorbited into Jupiter (designed to prevent biological contamination of Europa, which the spacecraft passes near). The next Jupiter mission is ESA's JUICE (Jupiter Icy moons Explorer, arriving 2031); NASA's Europa Clipper launches 2024 and arrives 2030.",
+  "cur": "Систем Јупитера: Juno (NASA, од 2016, поларна орбита од 53 дана). Намењена је мапирању Јупитеровог магнетног поља, атмосфере и унутрашње структуре. Поларна орбита избегава Јупитеров интензивни екваторијални радијациони појас — тај појас је толико суров да би други орбитери око гасовитих дивова на екваторијалној путањи били трајно оштећени у року од неколико месеци. Juno-ова мисија је више пута продужавана; трајаће све док не буде усмерена на уништење у Јупитеру (што је замишљено како би се спречила биолошка контаминација Европе, поред које летелица пролази). Следећа мисија ка Јупитеру је ESA-ин JUICE (Jupiter Icy moons Explorer, долазак 2031); NASA-ин Europa Clipper лансира се 2024, а стиже 2030."
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "body_paragraphs.2",
+  "en": "Venus: Akatsuki / PLANET-C (JAXA, since 2015 after a 5-year recovery). Cloud-top circulation, super-rotation studies, lightning detection. The next Venus missions launch in the late 2020s — NASA's DAVINCI + VERITAS, ESA's EnVision, ISRO's Shukrayaan. After a 30-year hiatus in Venus exploration (Magellan ended in 1994), the late 2020s will see four new orbiters arrive within a few years of each other. Mercury currently has no active spacecraft (MESSENGER ended in 2015); ESA/JAXA's BepiColombo arrives 2026. Uranus + Neptune have only ever been visited by Voyager 2 (1986 + 1989); a dedicated Uranus mission is the top priority of the 2023 Planetary Decadal Survey.",
+  "cur": "Венера: Akatsuki / PLANET-C (JAXA, од 2015. после петогодишњег опоравка). Циркулација на врховима облака, проучавање суперротације, откривање муња. Следеће мисије ка Венери лансирају се крајем 2020-их — NASA-ини DAVINCI + VERITAS, ESA-ин EnVision и ISRO-ов Shukrayaan. После паузе од 30 година у истраживању Венере (Magellan је завршио 1994), крајем 2020-их стићиће четири нова орбитера у размаку од неколико година. Меркур тренутно нема ниједну активну летелицу (MESSENGER је завршио 2015); BepiColombo, заједничка мисија ESA и JAXA, стиже 2026. Уран и Нептун посетио је до сада само Voyager 2 (1986. и 1989); посебна мисија ка Урану главни је приоритет Planetary Decadal Survey из 2023. године."
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "diagram_caption",
+  "en": "Active orbiters by planet, 2026. Mars: 6 (NASA, ESA, CNSA, UAESA). Jupiter: 1 (NASA Juno). Venus: 1 (JAXA Akatsuki). Saturn, Mercury, outer planets: none active.",
+  "cur": "Активни орбитери по планетама, 2026. Марс: 6 (NASA, ESA, CNSA, UAESA). Јупитер: 1 (NASA-ина Juno). Венера: 1 (JAXA-ина Akatsuki). Сатурн, Меркур и спољне планете: ниједан активан."
+ },
+ {
+  "rel": "science/planets/asteroid-belt.json",
+  "at": "intro_sentence",
+  "en": "A planet that almost was — the rocky remnants between Mars and Jupiter that Jupiter's gravity wouldn't let coalesce.",
+  "cur": "Планета која је замало настала — стеновити остаци између Марса и Јупитера које Јупитерова гравитација није дозволила да се споје."
+ },
+ {
+  "rel": "science/planets/asteroid-belt.json",
+  "at": "narrative_101.0",
+  "en": "When Bode's Law predicted a body at 2.8 AU between Mars and Jupiter in the late 18th century, astronomers went hunting. On New Year's Day 1801, Giuseppe Piazzi at the Palermo observatory found something. He called it Ceres after the patron goddess of Sicily, and at first the Royal Society classified it as the missing planet. Within four years a second body — Pallas — turned up in the same neighborhood. Then Juno (1804) and Vesta (1807). The realization dawned slowly: this wasn't a planet, it was a swarm.",
+  "cur": "Када је Bode-ов закон крајем 18. века предвидео тело на 2,8 AU између Марса и Јупитера, астрономи су кренули у потрагу. На Нову годину 1801. Ђузепе Пјаци је у опсерваторији у Палерму пронашао нешто. Назвао га је Церера, по богињи заштитници Сицилије, а Royal Society га је у почетку сврстао међу несталу планету. У року од четири године у истом суседству појавило се друго тело — Палас. Затим Juno (1804) и Веста (1807). Спознаја је сазревала полако: ово није планета, него рој."
+ },
+ {
+  "rel": "science/planets/asteroid-belt.json",
+  "at": "narrative_101.1",
+  "en": "Today catalogues list more than 1.3 million asteroids larger than 1 km, and dynamical models put the population of 100-metre-class bodies in the hundreds of millions. The total mass is a surprise: only about 4% of the Moon, and roughly a third of that sits in Ceres alone. The belt is mostly empty — the average separation between members is in the millions of kilometres. The dense rock-field of cinema is a Hollywood invention.",
+  "cur": "Данас каталози бележе више од 1,3 милиона астероида већих од 1 km, а динамички модели процењују да популација тела величине око 100 метара броји стотине милиона. Укупна маса је права изненађења: тек око 4% масе Месеца, а отприлике трећина тога налази се само у Церери. Појас је углавном празан — просечно растојање међу његовим члановима мери се милионима километара. Густо поље стена из филмова измишљотина је Холивуда."
+ },
+ {
+  "rel": "science/planets/asteroid-belt.json",
+  "at": "narrative_101.2",
+  "en": "Why no planet ever formed here is itself the story. Jupiter sits just outside the belt at 5.2 AU, and during the solar system's formation Jupiter's gravity stirred the inner-belt material too vigorously for accretion to win against fragmentation. Whatever was trying to grow into a planet got smashed back into fragments faster than it could re-accrete. The asteroid belt is the unfinished planet, frozen at an earlier stage of solar-system evolution.",
+  "cur": "Зашто се овде никада није образовала планета, и само је по себи прича. Јупитер се налази одмах изван појаса, на 5,2 AU, и током формирања Сунчевог система његова гравитација је материјал унутрашњег дела појаса мешала сувише жестоко да би акреција надјачала фрагментацију. Све што је покушавало да израсте у планету разбијано је натраг у крхотине брже него што је могло поново да се сабере. Астероидни појас је недовршена планета, замрзнута у раној фази развоја Сунчевог система."
+ },
+ {
+  "rel": "science/planets/asteroid-belt.json",
+  "at": "body_paragraphs.0",
+  "en": "The belt has internal structure. Spectroscopy divides it into three rough zones: the inner belt (2.1–2.5 AU) dominated by stony S-type bodies; the middle belt (2.5–3.2 AU) where carbonaceous C-types take over (Ceres + Hygiea live here); and the outer belt blending into the Trojan asteroids that share Jupiter's orbit at the L4 and L5 Lagrange points. Different parent populations, different formation temperatures, different histories — preserved in the same belt because Jupiter's resonances corralled them.",
+  "cur": "Појас има унутрашњу структуру. Спектроскопија га дели на три приближне зоне: унутрашњи појас (2,1–2,5 AU), у коме доминирају стеновита тела S-типа; средњи појас (2,5–3,2 AU), где преовладавају угљенична тела C-типа (овде бораве Церера и Хигија); и спољашњи појас, који се стапа с тројанским астероидима што деле Јупитерову орбиту у Лагранжовим тачкама L4 и L5. Различите матичне популације, различите температуре формирања, различите историје — сачуване у истом појасу зато што их је Јупитерове резонанције држале на окупу."
+ },
+ {
+  "rel": "science/planets/asteroid-belt.json",
+  "at": "body_paragraphs.1",
+  "en": "Major missions have visited only a handful of belt members directly. NASA's Galileo flyby of Gaspra (1991) was the first close-up image of any asteroid. Dawn (2011 + 2015) orbited Vesta then Ceres — the only spacecraft to ever orbit two extra-terrestrial bodies. Ceres turned out to be a water-ice + brine world: bright sodium-carbonate deposits at Occator Crater are residue from cryovolcanic eruptions of subsurface salty water, and Dawn detected a thin transient atmosphere of water vapor. Vesta is the other extreme — a differentiated rocky proto-planet whose southern hemisphere is one giant 500-km-wide impact basin (Rheasilvia), and pieces blasted out of that impact are the HED meteorite class on Earth.",
+  "cur": "Велике мисије су директно посетиле тек шачицу чланова појаса. NASA-ин прелет Galileo-а поред Гаспре (1991) донео је прву снимку изблиза неког астероида. Dawn (2011 + 2015) је орбитирао око Весте, а затим око Церере — једина летелица која је икада кружила око два вануземаљска тела. Показало се да је Церера свет од воденог леда и сланог раствора: светле наслаге натријум-карбоната у кратеру Окатор остатак су криовулканских ерупција подповршинске слане воде, а Dawn је открио и танку пролазну атмосферу водене паре. Веста је друга крајност — диференцирана стеновита протопланета чија је јужна хемисфера један џиновски ударни базен широк 500 km (Реасилвија), а комади избачени тим ударом чине класу метеорита HED на Земљи."
+ },
+ {
+  "rel": "science/planets/asteroid-belt.json",
+  "at": "body_paragraphs.2",
+  "en": "Most meteorites that fall on Earth come from the asteroid belt. Yarkovsky drift — uneven thermal re-radiation slowly nudging a body's orbit over millennia — pushes asteroids out of resonance gaps inward to Earth-crossing orbits. Sample-return missions are starting to close the loop directly: JAXA's Hayabusa2 returned 5.4 grams of asteroid Ryugu in 2020, and NASA's OSIRIS-REx returned samples from Bennu in 2023. Both are near-Earth asteroids derived from belt parent bodies. NASA's Lucy mission (launched 2021) is the long game: visiting eight Trojan asteroids plus belt member Dinkinesh, the first multi-Trojan tour, exploring fragments of the outer-belt population that share Jupiter's orbit but stay 60° ahead or behind.",
+  "cur": "Већина метеорита који падају на Земљу потиче из астероидног појаса. Yarkovsky-јев дрифт — неравномерно топлотно поновно зрачење које током миленијума полако мења путању тела — гура астероиде из резонантних пукотина ка унутрашњости, на орбите које секу Земљину. Мисије повратка узорака почињу директно да затварају круг: JAXA-ин Hayabusa2 вратио је 2020. године 5,4 грама астероида Рјугу, а NASA-ин OSIRIS-REx вратио је 2023. узорке са Бену. Оба су астероиди блиски Земљи, настали од матичних тела из појаса. NASA-ина мисија Lucy (лансирана 2021) јесте дугорочна игра: посетиће осам тројанских астероида и члана појаса Dinkinesh, што је прва турнеја кроз више Тројанаца, а истражује фрагменте популације спољашњег појаса који деле Јупитерову орбиту, али остају 60° испред или иза њега."
+ },
+ {
+  "rel": "science/planets/asteroid-belt.json",
+  "at": "diagram_caption",
+  "en": "The asteroid belt sweep, 2.2–3.2 AU between Mars and Jupiter. Major members Ceres / Vesta / Pallas / Hygiea labelled. Arrows from Jupiter show its gravity stirring the inner belt — the reason no planet ever accreted here.",
+  "cur": "Распон астероидног појаса, 2,2–3,2 AU између Марса и Јупитера. Означени су главни чланови: Церера / Веста / Палас / Хигија. Стрелице од Јупитера показују како његова гравитација узбуркава унутрашњи појас — разлог зашто се овде никада није образовала планета."
+ },
+ {
+  "rel": "science/planets/axial-tilt-and-seasons.json",
+  "at": "title",
+  "en": "Axial Tilt and Seasons",
+  "cur": "Нагиб осе и годишња доба"
+ },
+ {
+  "rel": "science/planets/axial-tilt-and-seasons.json",
+  "at": "intro_sentence",
+  "en": "Why Earth has seasons, why Uranus rolled onto its side, and why Venus spins backward.",
+  "cur": "Зашто на Земљи постоје годишња доба, зашто се Уран откотрљао на бок и зашто се Венера окреће уназад."
+ },
+ {
+  "rel": "science/planets/axial-tilt-and-seasons.json",
+  "at": "narrative_101.0",
+  "en": "If Earth's spin axis were perfectly perpendicular to its orbit, every day would have 12 hours of sunlight everywhere on the planet, year-round. There would be no seasons. The reason your hemisphere gets long summer days and short winter days is that Earth's spin axis is tilted — by 23.4° relative to the orbital plane. As Earth orbits the Sun, the north pole points first toward the Sun (June solstice — long northern days), then away from it six months later (December solstice — short northern days). Same planet, same orbit; just a slowly changing geometry.",
+  "cur": "Када би Земљина оса ротације била савршено управна на њену орбиту, сваки дан би на целој планети, током целе године, имао 12 сати сунчеве светлости. Годишњих доба не би било. Разлог због којег на вашој полулопти постоје дуги летњи и кратки зимски дани јесте то што је Земљина оса ротације нагнута — за 23,4° у односу на раван орбите. Док Земља кружи око Сунца, северни пол је најпре усмерен ка Сунцу (јунско сунцестање — дуги дани на северу), а шест месеци касније од њега (децембарско сунцестање — кратки дани на северу). Иста планета, иста орбита; само геометрија која се споро мења."
+ },
+ {
+  "rel": "science/planets/axial-tilt-and-seasons.json",
+  "at": "narrative_101.1",
+  "en": "Every planet has some axial tilt, but the solar system contains some wild outliers. Uranus is tilted 97.77° — its rotation axis lies almost in the orbital plane. Each pole gets 42 Earth-years of continuous sunlight followed by 42 years of continuous darkness. There's no real \"day-night cycle\" near Uranus's poles in the usual sense; just a slow forty-year sunrise. The leading hypothesis is that a giant impact early in Uranus's history tipped the planet over.",
+  "cur": "Свака планета има извесан нагиб осе, али Сунчев систем садржи и неколико правих изузетака. Уран је нагнут за 97,77° — његова оса ротације лежи готово у равни орбите. Сваки пол добија 42 земаљске године непрекидне сунчеве светлости, а затим 42 године непрекидне таме. У близини Уранових полова нема правог „смењивања дана и ноћи“ у уобичајеном смислу, већ само један спор, четрдесетогодишњи излазак Сунца. Водећа хипотеза је да је џиновски удар у раној историји Урана преврнуо планету."
+ },
+ {
+  "rel": "science/planets/axial-tilt-and-seasons.json",
+  "at": "narrative_101.2",
+  "en": "Venus is even stranger: tilted 177.4°, which is effectively upside-down. The convention is that a planet's \"north pole\" is the one above the ecliptic in the same rotational sense as Earth's. By that convention Venus's rotation is retrograde — spinning the wrong way relative to its orbit. A solar day on Venus lasts 117 Earth days, despite a sidereal rotation of 243 Earth days, because the retrograde spin partially cancels with the orbital motion. Why Venus rotates this way is still unsettled — runaway atmospheric tides are one candidate.",
+  "cur": "Венера је још чуднија: нагнута је за 177,4°, што је практично наопако. По конвенцији, „северни пол“ планете јесте онај изнад еклиптике у истом смеру ротације као код Земље. По тој конвенцији Венерина ротација је ретроградна — окреће се погрешним смером у односу на своју орбиту. Сунчев дан на Венери траје 117 земаљских дана, упркос сидералној ротацији од 243 земаљска дана, јер се ретроградна ротација делимично поништава са орбиталним кретањем. Зашто се Венера окреће на овај начин, још увек је нерешено питање — одбегле атмосферске плиме једна су од могућих хипотеза."
+ },
+ {
+  "rel": "science/planets/axial-tilt-and-seasons.json",
+  "at": "body_paragraphs.0",
+  "en": "Obliquity = the angle between a planet's rotation axis and the line perpendicular to its orbital plane. Values: Mercury 0.034°, Venus 177.36°, Earth 23.44°, Mars 25.19°, Jupiter 3.13°, Saturn 26.73°, Uranus 97.77°, Neptune 28.32°, Pluto 122.53°. The two clusters — small-tilt gas giants except Uranus, and 23-28° rocky bodies + Saturn + Neptune — likely reflect different formation histories. Uranus's 97° is the canonical \"giant impact\" signature; Venus's 177° and Pluto's 122° are still actively debated.",
+  "cur": "Нагиб осе (обликвитет) = угао између осе ротације планете и праве управне на раван њене орбите. Вредности: Меркур 0,034°, Венера 177,36°, Земља 23,44°, Марс 25,19°, Јупитер 3,13°, Сатурн 26,73°, Уран 97,77°, Нептун 28,32°, Плутон 122,53°. Две групе — гасовити дивови малог нагиба осим Урана, и стеновита тела с нагибом од 23° до 28° заједно са Сатурном и Нептуном — вероватно одражавају различите историје настанка. Уранових 97° јесте класичан траг „џиновског судара“, док су Венерин нагиб од 177° и Плутонов од 122° и даље предмет живих расправа."
+ },
+ {
+  "rel": "science/planets/axial-tilt-and-seasons.json",
+  "at": "body_paragraphs.1",
+  "en": "Seasons on a planet are driven by the changing angle between its rotation axis and the Sun-planet line as the planet orbits. The sub-solar latitude (where the Sun is directly overhead at noon) oscillates over the year — on Earth between 23.4°N (June solstice) and 23.4°S (December solstice). Hemispheres receive more solar flux when their pole tilts toward the Sun and less when it tilts away; that flux difference, integrated over months, drives surface and atmospheric temperature.",
+  "cur": "Годишња доба на некој планети изазива промена угла између њене осе ротације и праве која спаја Сунце и планету док планета кружи по орбити. Подсунчева географска ширина (место где је Сунце у подне тачно над главом) осцилује током године — на Земљи између 23,4° северно (јунско сунцестоје) и 23,4° јужно (децембарско сунцестоје). Полулопте примају већи сунчев флукс када је њихов пол нагнут ка Сунцу, а мањи када је нагнут од њега; та разлика у флуксу, сабрана током месеци, одређује температуру површине и атмосфере."
+ },
+ {
+  "rel": "science/planets/axial-tilt-and-seasons.json",
+  "at": "body_paragraphs.2",
+  "en": "Earth's tilt itself isn't constant — it oscillates between 22.1° and 24.5° (about ±1.2° around the mean) over ~41,000 years, one of the Milankovitch cycles that drive ice-age timing. Mars's tilt is much more variable: simulations show Mars's obliquity has chaotically wandered between 0° and 60° over geologic time, in part because Mars lacks a large moon (Earth's Moon stabilises our tilt). Without the Moon, Earth's tilt might also wander chaotically — a sobering point about how fragile a stable climate is.",
+  "cur": "Нагиб Земљине осе ни сам по себи није константан — осцилује између 22,1° и 24,5° (око ±1,2° око средње вредности) током ~41.000 година, а то је један од Миланковићевих циклуса који одређују време ледених доба. Нагиб осе Марса је знатно променљивији: симулације показују да је обликвитет Марса хаотично лутао између 0° и 60° током геолошког времена, делом зато што Марс нема велики месец (Земљин Месец стабилизује наш нагиб). Без Месеца би и нагиб Земљине осе могао хаотично да лута — отрежњујућ податак о томе колико је стабилна клима крхка."
+ },
+ {
+  "rel": "science/planets/axial-tilt-and-seasons.json",
+  "at": "diagram_caption",
+  "en": "Obliquity = angle between rotation axis and the orbit normal. Earth at 23.4° drives seasons. Uranus at 97.8° lies on its side; each pole gets 42 years of darkness.",
+  "cur": "Нагиб осе (обликвитет) = угао између осе ротације и нормале на орбиту. Земља са 23,4° изазива годишња доба. Уран са 97,8° лежи на боку; сваки пол добија 42 године таме."
+ },
+ {
+  "rel": "science/planets/kuiper-belt.json",
+  "at": "intro_sentence",
+  "en": "A disc of icy bodies beyond Neptune — predicted in 1951, confirmed in 1992, and the source of every short-period comet that flies past Earth.",
+  "cur": "Диск ледених тела иза Нептуна — предвиђен 1951, потврђен 1992, и извор сваке краткопериодичне комете која пролети поред Земље."
+ },
+ {
+  "rel": "science/planets/kuiper-belt.json",
+  "at": "narrative_101.0",
+  "en": "Gerard Kuiper proposed it in a 1951 paper: if the early solar system's planet-forming disc extended past Neptune, then somewhere out there a population of icy leftovers should still be orbiting the Sun. They wouldn't have made it into planets because nothing accreted at those distances, but the disc should still be there, dynamically intact. For four decades the prediction sat unconfirmed because the objects are small, cold, and tens of AU away — almost impossible to detect with mid-20th-century telescopes.",
+  "cur": "Џерард Кајпер га је предложио у раду из 1951: ако се диск из ког су настајале планете у раном Сунчевом систему простирао иза Нептуна, онда би негде тамо и даље требало да око Сунца кружи популација ледених остатака. Они нису постали планете јер се на тим удаљеностима ништа није скупило у веће тело, али диск би ипак требало да буде ту, динамички нетакнут. Четири деценије предвиђање је остало непотврђено, јер су тела мала, хладна и удаљена десетинама AU — готово немогућа за откривање телескопима из средине 20. века."
+ },
+ {
+  "rel": "science/planets/kuiper-belt.json",
+  "at": "narrative_101.1",
+  "en": "In 1992 David Jewitt and Jane Luu, observing from Mauna Kea with a then-novel CCD detector, found 1992 QB1 (later named Albion). A ~160 km icy body in a stable circular orbit at 44 AU. Within a year they had a second. Within five years there were dozens. Today catalogues hold more than 3,000 confirmed Kuiper-Belt objects and dynamical models predict over 100,000 bodies larger than 100 km — and on the order of a billion comet-sized objects. The total mass is small (~2% of Earth) but that's still ~50× the asteroid belt.",
+  "cur": "Године 1992. David Jewitt и Jane Luu, посматрајући са Mauna Kea помоћу тада новог CCD детектора, открили су 1992 QB1 (касније назван Albion). Ледено тело од ~160 km у стабилној кружној орбити на 44 AU. У року од годину дана имали су и друго. У року од пет година било их је на десетине. Данас каталози садрже више од 3.000 потврђених објеката Kuiper-овог појаса, а динамички модели предвиђају преко 100.000 тела већих од 100 km — и око милијарду објеката величине комете. Укупна маса је мала (~2% масе Земље), али то је ипак ~50× више од масе астероидног појаса."
+ },
+ {
+  "rel": "science/planets/kuiper-belt.json",
+  "at": "narrative_101.2",
+  "en": "Pluto, demoted in 2006, turned out to be the largest known member of the belt rather than the runt of the planets. Eris, discovered in 2005 and slightly more massive than Pluto, is what triggered the IAU's reclassification: if Eris is a planet, then so are Haumea, Makemake, Quaoar, Sedna, and dozens of likely candidates further out. The IAU drew the line at 'dwarf planet' instead, and the Kuiper Belt is the dwarf-planet reservoir.",
+  "cur": "Плутон, деградиран 2006, испоставио се као највећи познати члан појаса, а не као најмањи међу планетама. Ерида, откривена 2005. и нешто масивнија од Плутона, управо је то што је покренуло прекласификацију IAU: ако је Ерида планета, онда су то и Хаумеа, Макемаке, Кваоар, Седна и десетине вероватних кандидата даље у свемиру. IAU је повукла црту код појма „патуљаста планета“, а Kuiper-ов појас је резервоар патуљастих планета."
+ },
+ {
+  "rel": "science/planets/kuiper-belt.json",
+  "at": "body_paragraphs.0",
+  "en": "Structurally the belt has three populations. The classical Kuiper Belt at 42–48 AU holds bodies on nearly circular, low-inclination orbits — the dynamically unperturbed remnant of the original disc, Albion and Quaoar live here. The resonant population is held in 2:3 mean-motion resonance with Neptune (Pluto is the archetype — for every two Pluto orbits, Neptune does three); these are called Plutinos. Then the scattered disc is the eccentric, high-inclination outer extension where Eris and Sedna roam, with perihelia near Neptune and aphelia hundreds of AU out. Each population is a fossil of a different chapter of the early solar system's gravitational history.",
+  "cur": "По структури, појас има три популације. Класични Кајперов појас на 42–48 AU садржи тела на готово кружним орбитама малог нагиба — динамички неометани остатак првобитног диска; ту живе Albion и Кваоар. Резонантна популација је у резонанци средњег кретања 2:3 са Нептуном (Плутон је прототип — на свака два обиласка Плутона, Нептуна направи три); та тела се зову плутини. Затим, расејани диск је ексцентрично спољно проширење великог нагиба, у којем лутају Ерида и Седна, са перихелима близу Нептуна и афелима стотинама AU даље. Свака популација је фосил другог поглавља гравитационе историје раног Сунчевог система."
+ },
+ {
+  "rel": "science/planets/kuiper-belt.json",
+  "at": "body_paragraphs.1",
+  "en": "The Kuiper Belt is the source reservoir for short-period comets — bodies like Halley, Hartley 2, and 67P/Churyumov–Gerasimenko whose orbits return to the inner solar system in less than 200 years. Gravitational nudges from Neptune occasionally fling members inward where solar heating sublimates surface ices into the visible coma and tail. Long-period comets come from much further out (the Oort Cloud at thousands of AU), but short-period comets are Kuiper kin. The European Rosetta mission orbited 67P from 2014 to 2016 and detected glycine + phosphorus + oxygen — the molecular building blocks of life — sublimating off the surface.",
+  "cur": "Кајперов појас је резервоар краткопериодичних комета — тела попут Халејеве комете, комета Хартли 2 и 67P/Churyumov–Gerasimenko, чије се орбите враћају у унутрашњи Сунчев систем за мање од 200 година. Гравитациони потисци Нептуна повремено бацају чланове ка унутра, где сунчева топлота сублимира површински лед у видљиву кому и реп. Дугопериодичне комете долазе из много даљих крајева (из Оортовог облака на хиљадама AU), али краткопериодичне комете су Кајперов род. Европска мисија Rosetta обилазила је 67P од 2014. до 2016. и открила глицин + фосфор + кисеоник — молекуларне градивне блокове живота — како сублимирају са површине."
+ },
+ {
+  "rel": "science/planets/kuiper-belt.json",
+  "at": "body_paragraphs.2",
+  "en": "New Horizons remains the only spacecraft to have visited the belt directly. The Pluto + Charon flyby on July 14, 2015 returned the first close-up images of a classical Kuiper-Belt object, revealing Sputnik Planitia (a 1,000-km nitrogen-ice plain), water-ice mountains, and Charon's dark red polar tholin deposits. In January 2019 New Horizons reached its Kuiper-Belt extended-mission target Arrokoth — a 36-km bilobate object that looks like two pancakes pressed together, the most pristine planetesimal humans have ever imaged. Voyager 1 + 2 passed through the inner edge of the belt in the 1980s en route to interstellar space, but had no targeted encounters.",
+  "cur": "New Horizons је и даље једина летелица која је непосредно посетила појас. Прелет поред Плутона + Харона 14. јула 2015. донео је прве снимке изблиза једног класичног објекта Кајперовог појаса и открио равницу Спутњик (равницу азотног леда од 1.000 km), планине од воденог леда и тамноцрвене поларне наслаге толина на Харону. Јануара 2019. New Horizons је стигао до циља свог продуженог задатка у Кајперовом појасу, Арокота — двоструког објекта од 36 km који изгледа као две спљоштене палачинке, најнетакнутије планетезимале коју су људи икада снимили. Voyager 1 + 2 прошли су кроз унутрашњу ивицу појаса 1980-их на путу ка међузвезданом простору, али без циљаних сусрета."
+ },
+ {
+  "rel": "science/planets/kuiper-belt.json",
+  "at": "diagram_caption",
+  "en": "The Kuiper Belt's three populations. Classical KBOs at 42–48 AU on near-circular orbits; resonant Plutinos in 2:3 with Neptune (Pluto + Charon at 39 AU); the scattered disc extending eccentrically toward the inner Oort Cloud (Eris's aphelion is at 96 AU).",
+  "cur": "Три популације Кајперовог појаса. Класични објекти на 42–48 AU на готово кружним орбитама; резонантни плутини у односу 2:3 са Нептуном (Плутон + Харон на 39 AU); расејани диск који се ексцентрично протеже ка унутрашњем Оортовом облаку (афел Ериде је на 96 AU)."
+ },
+ {
+  "rel": "science/planets/lunar-ice.json",
+  "at": "title",
+  "en": "Lunar Ice — water in the permanent dark",
+  "cur": "Месечев лед — вода у вечној тами"
+ },
+ {
+  "rel": "science/planets/lunar-ice.json",
+  "at": "intro_sentence",
+  "en": "Near the lunar poles, some crater floors have never seen sunlight — and in that perpetual cold, water ice delivered by comets and asteroids over billions of years has accumulated and been trapped.",
+  "cur": "У близини Месечевих полова нека дна кратера никада нису видела сунчеву светлост — а у тој вечној хладноћи накупио се и заробљен је воден лед који су током милијарди година донели комете и астероиди."
+ },
+ {
+  "rel": "science/planets/lunar-ice.json",
+  "at": "body_paragraphs.0",
+  "en": "The Moon's axial tilt is only about 1.5 degrees, far less than Earth's 23.5 degrees. As a result, sunlight near the poles arrives almost horizontally, and the floors of deep polar craters fall permanently in shadow. These permanently shadowed regions (PSRs) are among the coldest places in the solar system: measured temperatures run below 100 K (−170°C), and some spots near the lunar south pole approach ~25 K. At those temperatures, water ice is stable for billions of years — it simply does not sublimate.",
+  "cur": "Нагиб Месечеве осе износи само око 1,5 степен, много мање од Земљиних 23,5 степени. Зато сунчева светлост у близини полова пристиже готово хоризонтално, а дна дубоких поларних кратера заувек остају у сенци. Ти трајно засењени региони (PSR) убрајају се међу најхладнија места у Сунчевом систему: измерене температуре спуштају се испод 100 K (−170 °C), а на неким местима у близини Месечевог јужног пола приближавају се ~25 K. На таквим температурама воден лед је стабилан милијардама година — једноставно не сублимира."
+ },
+ {
+  "rel": "science/planets/lunar-ice.json",
+  "at": "body_paragraphs.1",
+  "en": "Evidence for water in PSRs has been assembled by several missions. India's Chandrayaan-1 carried NASA's Moon Mineralogy Mapper (M3) instrument, which in 2009 detected the spectral signature of hydroxyl and water molecules at the surface across a range of latitudes — including sunlit terrain, where the solar wind may be creating water by implanting hydrogen into oxygen-bearing minerals. Most dramatically, NASA's LCROSS mission in 2009 deliberately crashed a spent rocket stage into a PSR near the south pole and observed the resulting plume with a following spacecraft; the plume contained water vapour and ice, directly confirming the presence of water in the cold trap.",
+  "cur": "Доказе о води у PSR-овима прикупило је неколико мисија. Индијска летелица Chandrayaan-1 носила је NASA-ин инструмент Moon Mineralogy Mapper (M3), који је 2009. открио спектрални потпис молекула хидроксила и воде на површини у распону различитих географских ширина — укључујући и осунчани терен, где сунчев ветар можда ствара воду уградњом водоника у минерале који садрже кисеоник. Најдраматичније је то што је NASA-ина мисија LCROSS 2009. намерно срушила истрошени степен ракете у један PSR у близини јужног пола и посматрала настали облак помоћу летелице која је ишла за њим; облак је садржао водену пару и лед, чиме је директно потврђено присуство воде у хладној замци."
+ },
+ {
+  "rel": "science/planets/lunar-ice.json",
+  "at": "body_paragraphs.2",
+  "en": "Estimates of total water ice in lunar PSRs vary — figures in the range of hundreds of millions to billions of tonnes have been published — but the exact amount, depth profile, concentration, and physical form (pure ice, ice mixed with regolith, or thin frost layers) remain uncertain. The ice appears to be heterogeneous: patchy, mixed with dirt, and not a uniform layer. ISRO's Chandrayaan-3 landing in 2023 targeted the south polar region partly to begin characterising this terrain at close range.",
+  "cur": "Процене укупне количине воденог леда у Месечевим PSR-овима се разликују — објављене су бројке у распону од стотина милиона до милијарди тона — али тачна количина, дубински профил, концентрација и физички облик (чист лед, лед помешан с реголитом или танки слојеви иња) и даље остају неизвесни. Изгледа да је лед хетероген: неравномерно распоређен, помешан с прашином и тлом, а не јединствен слој. Слетање мисије Chandrayaan-3 агенције ISRO 2023. године било је усмерено на јужну поларну област, делимично да би се овај терен почео проучавати изблиза."
+ },
+ {
+  "rel": "science/planets/lunar-ice.json",
+  "at": "body_paragraphs.3",
+  "en": "The strategic significance is straightforward. Water is H2O: split it and you have hydrogen and oxygen — the most energetic chemical rocket propellant combination known. You also have breathable air and drinking water. Lunar polar ice, if accessible and extractable at scale, would make the Moon a potential fuel depot for missions throughout cislunar space and beyond, dramatically reducing the mass that must be launched from Earth. That shift in economics is the central reason that NASA's Artemis program, ESA, ISRO, Roscosmos, and CNSA all target the south pole rather than the equatorial sites of Apollo.",
+  "cur": "Стратешки значај је јасан. Вода је H2O: раздвојите је и добијате водоник и кисеоник — најенергичнију познату хемијску комбинацију ракетног погонског горива. Добијате и ваздух за дисање и воду за пиће. Лед на Месецу у поларним областима, ако буде доступан и ако се може вадити у великим размерама, учинио би Месец потенцијалним складиштем горива за мисије широм циклунарног простора и даље, чиме би се драматично смањила маса која мора да буде лансирана са Земље. Управо је тај помак у економици главни разлог зашто NASA-ин програм Artemis, ESA, ISRO, Roscosmos и CNSA циљају јужни пол, а не екваторијалне локације програма Apollo."
+ },
+ {
+  "rel": "science/planets/lunar-ice.json",
+  "at": "body_paragraphs.4",
+  "en": "Access is the hard part. The coldest, darkest terrain on the Moon is also the most difficult to reach and operate in. Rover solar panels generate little power in near-permanent shadow. Equipment must survive extreme thermal cycling between the illuminated crater rim (needed for power) and the shadowed floor (where the ice is). Drilling or mining in low-gravity regolith without contaminating the ice is an unsolved engineering problem. The science is settled enough to motivate a race; the engineering is not.",
+  "cur": "Приступ је тежи део. Најхладнији и најмрачнији терен на Месецу уједно је и најтеже досећи и у њему радити. Соларни панели ровера производе мало енергије у готово трајној сенци. Опрема мора да преживи екстремне термичке циклусе између осветљеног обода кратера (потребног за напајање) и засењеног дна (где се налази лед). Бушење или вађење руде у реголиту мале гравитације без загађивања леда нерешен је инжењерски проблем. Наука је довољно поуздана да покрене трку; инжењерство није."
+ },
+ {
+  "rel": "science/planets/lunar-ice.json",
+  "at": "diagram_caption",
+  "en": "Cross-section of a lunar south-pole crater — sunlight skims the rim while the floor stays permanently shadowed, cold-trapping water ice delivered over geological time.",
+  "cur": "Попречни пресек кратера на Месечевом јужном полу — сунчева светлост口 само клизи по ободу, док дно остаје трајно засењено и хладном замком задржава воден лед пристигао током геолошког времена."
+ },
+ {
+  "rel": "science/planets/magnetic-fields.json",
+  "at": "intro_sentence",
+  "en": "Every planet's magnetosphere is different. Saturn's is uniquely aligned, Uranus's is chaotic, Venus and Mars don't have one at all.",
+  "cur": "Магнетосфера сваке планете је другачија. Сатурнова је јединствено поравната, Уранова је хаотична, а Венера и Марс је немају уопште."
+ },
+ {
+  "rel": "science/planets/magnetic-fields.json",
+  "at": "narrative_101.0",
+  "en": "Planets generate magnetic fields the same way an electromagnet does — by moving an electrically conducting fluid around. Inside Earth, that fluid is liquid iron in the outer core, sloshing as the planet rotates and as heat from the inner core convects it. The combined motion of a conducting fluid in a rotating frame is called a dynamo, and it spins up its own magnetic field for free. Without convection, or without rotation, or without a conductor, the field decays.",
+  "cur": "Планете стварају магнетна поља на исти начин као електромагнет — покретањем течности која проводи електричну струју. Унутар Земље та течност је течно гвожђе у спољашњем језгру, које се прелива док се планета окреће и док га топлота из унутрашњег језгра покреће конвекцијом. Заједничко кретање проводне течности у систему који ротира назива се динамо, а он сам од себе, без икаквог спољашњег улагања, појачава сопствено магнетно поље. Без конвекције, или без ротације, или без проводника, поље слаби и нестаје."
+ },
+ {
+  "rel": "science/planets/magnetic-fields.json",
+  "at": "narrative_101.1",
+  "en": "That's why Mars doesn't have a global magnetic field today. Four billion years ago it did — we can see frozen-in magnetisation in southern-hemisphere crustal rocks where the dynamo's signature got locked in. But Mars is small, so its interior cooled faster than Earth's, the iron core froze, convection stopped, and the dynamo died. Solar wind has been stripping Mars's atmosphere ever since — there's no magnetic shield deflecting it. Venus is the opposite case: hot inside, no shortage of conductor, but its 243-day rotation is so slow that the dynamo never spins up properly.",
+  "cur": "Зато Марс данас нема глобално магнетно поље. Пре четири милијарде година га је имао — у кори јужне хемисфере видимо „замрзнуту“ намагнетисаност стена, у којој је остао забележен траг динама. Али Марс је мали, па се његова унутрашњост хладила брже од земљине, гвоздено језгро се учврстило, конвекција је стала и динамо је престао да ради. Сунчев ветар од тада односи Марсову атмосферу — нема магнетног штита који би га скренуо. Венера је супротан случај: врела је изнутра и проводника јој не недостаје, али је њена ротација од 243 дана толико спора да се динамо никада не покрене како треба."
+ },
+ {
+  "rel": "science/planets/magnetic-fields.json",
+  "at": "narrative_101.2",
+  "en": "Then there's Saturn — a gas giant with a dynamo so cleanly aligned with its rotation axis that the magnetic tilt is essentially zero. Every other dynamo we know has at least some offset (Earth 10.5°, Jupiter 9.6°), but Saturn's is < 1°. Nobody's sure why. The leading theory is that Saturn has an unusual layer structure that mechanically smooths the field's symmetry, but the mechanism is debated. Saturn's near-perfect alignment is one of the unsolved puzzles of planetary physics.",
+  "cur": "Ту је затим Сатурн — гасовити џин с динамом тако уредно поравнатим са осом ротације да је магнетни нагиб практично једнак нули. Сваки други динамо који познајемо има бар неко одступање (Земља 10,5°, Јупитер 9,6°), али Сатурнов је мањи од 1°. Нико не зна зашто. Водећа теорија каже да Сатурн има необичну слојевиту структуру која механички изглађује симетрију поља, али је механизам предмет спорења. Готово савршено Сатурново поравнање једна је од нерешених загонетки физике планета."
+ },
+ {
+  "rel": "science/planets/magnetic-fields.json",
+  "at": "body_paragraphs.0",
+  "en": "Magnetic-axis tilt (angle between the dipole and the rotation axis) for each planet with a known dynamo: Mercury 0.7°, Earth 10.5°, Jupiter 9.6°, Saturn ~0°, Uranus 58.6°, Neptune 46.9°. Venus, Mars, and Pluto have no globally significant dipole today. Uranus and Neptune's wildly off-axis dipoles are also offset from the planet's centre — Uranus's by about 1/3 of the planet's radius. The conventional dynamo (iron core) can't easily produce that geometry; the favoured explanation is that Uranus and Neptune host their dynamos in an outer mantle layer of ionic water + ammonia + methane, not in a deep core.",
+  "cur": "Нагиб магнетне осе (угао између дипола и осе ротације) за сваку планету с познатим динамом: Меркур 0,7°, Земља 10,5°, Јупитер 9,6°, Сатурн ~0°, Уран 58,6°, Нептун 46,9°. Венера, Марс и Плутон данас немају глобално значајан дипол. Диполи Урана и Нептуна, који су необуздано удаљени од осе ротације, померени су и из центра планете — Уранов отприлике за 1/3 полупречника планете. Конвенционални динамо (с гвозденим језгром) не може лако да створи такву геометрију; најприхваћеније објашњење је да Уран и Нептун свој динамо имају у спољашњем слоју омотача од јонске воде, амонијака и метана, а не у дубоком језгру."
+ },
+ {
+  "rel": "science/planets/magnetic-fields.json",
+  "at": "body_paragraphs.1",
+  "en": "Magnetospheres extend well beyond the planet itself. Earth's reaches about 65,000 km sunward (where it bows against the solar wind) and stretches into a long tail on the night side. Jupiter's magnetosphere is the largest physical structure inside the solar system that isn't the Sun's heliosphere: its magnetotail reaches Saturn's orbit, around 1.4 billion km long. The tail is shaped by the solar wind pushing the field downstream; the upstream nose gets compressed.",
+  "cur": "Магнетосфере се протежу далеко изван саме планете. Земљина допире на око 65.000 km у правцу Сунца (где се савија под притиском сунчевог ветра) и протеже се у дугачак реп на ноћној страни. Јупитерова магнетосфера је највећа физичка структура унутар Сунчевог система која није сунчева хелиосфера: њен магнетни реп допире до Сатурнове орбите, дугачак је око 1,4 милијарде km. Реп настаје тако што сунчев ветар потискује поље низ струју, док се предњи део, окренут ветру, сабија."
+ },
+ {
+  "rel": "science/planets/magnetic-fields.json",
+  "at": "body_paragraphs.2",
+  "en": "Particles trapped in the magnetic field create radiation belts — the Van Allen belts at Earth, the much more intense ones at Jupiter (one of the reasons missions like Juno fly polar orbits, avoiding the equatorial belt). Where field lines converge near the magnetic poles, charged particles spiral down and excite the atmosphere — that's the aurora. Every magnetised planet has aurorae; we've imaged them on Earth, Jupiter, Saturn, Uranus, and Neptune.",
+  "cur": "Честице заробљене у магнетном пољу стварају радијационе појасеве — Van Allen-ове појасеве око Земље и много интензивније појасеве око Јупитера (један од разлога зашто мисије као што је Juno лете поларним орбитама и избегавају екваторијални појас). Тамо где се линије поља сустичу у близини магнетних полова, наелектрисане честице спирално се спуштају и побуђују атмосферу — то је поларна светлост. Свака намагнетисана планета има поларну светлост; снимили смо је на Земљи, Јупитеру, Сатурну, Урану и Нептуну."
+ },
+ {
+  "rel": "science/planets/magnetic-fields.json",
+  "at": "diagram_caption",
+  "en": "Dipole-axis tilts vs rotation axes across the planets. Saturn is uniquely aligned (<1°); Uranus + Neptune are chaotically off-axis, hinting at ionic-water mantle dynamos rather than deep iron cores.",
+  "cur": "Нагиби осе дипола у односу на осе ротације код планета. Сатурн је јединствено поравнат (<1°); Уран и Нептун су хаотично удаљени од осе, што указује на динама у плаштевима од јонске воде, а не на дубока гвоздена језгра."
+ },
+ {
+  "rel": "science/planets/moons-of-the-system.json",
+  "at": "title",
+  "en": "Moons of the System",
+  "cur": "Месеци Сунчевог система"
+ },
+ {
+  "rel": "science/planets/moons-of-the-system.json",
+  "at": "intro_sentence",
+  "en": "Galileo's four-night observation in 1610 ended geocentrism. The system's moons are still ending old assumptions today.",
+  "cur": "Галилејево четвороноћно посматрање 1610. године окончало је геоцентризам. Месеци Сунчевог система и данас руше старе претпоставке."
+ },
+ {
+  "rel": "science/planets/moons-of-the-system.json",
+  "at": "narrative_101.0",
+  "en": "In January 1610, Galileo pointed his 20× telescope at Jupiter and saw four bright dots arranged in a line on either side of the planet. He drew them. The next night, they'd moved — and not toward the stars behind Jupiter, but as if they were orbiting Jupiter itself. Over five nights he tracked them, and concluded: these are moons of Jupiter. Bodies that orbit something other than Earth. Geocentrism, which had been the dominant cosmology for two thousand years, was over.",
+  "cur": "У јануару 1610. године Галилеј је окренуо свој телескоп са увећањем 20× ка Јупитеру и угледао четири сјајне тачке распоређене у низу са обе стране планете. Нацртао их је. Следеће ноћи помериле су се — и то не ка звездама иза Јупитера, већ као да круже око самог Јупитера. Пет ноћи их је пратио и закључио: то су месеци Јупитера. Тела која круже око нечега што није Земља. Геоцентризам, који је две хиљаде година био доминантна космологија, био је готов."
+ },
+ {
+  "rel": "science/planets/moons-of-the-system.json",
+  "at": "narrative_101.1",
+  "en": "Four centuries later, the moons of the outer planets are where most modern astrobiology focuses. Europa, around Jupiter, has a subsurface ocean of liquid water under a thick ice shell — potentially 2-3× the volume of Earth's oceans. Enceladus, around Saturn, vents that same ocean through cracks at its south pole; the Cassini mission flew through the plumes and detected organic molecules. Titan, also Saturn's, has a thick nitrogen atmosphere (denser at the surface than Earth's), liquid methane lakes, and a probable underground water-ammonia ocean. Three independent ocean worlds, all in one outer-solar-system tour.",
+  "cur": "Четири века касније, месеци спољашњих планета су оно на чему се усредсређује већина савремене астробиологије. Европа, око Јупитера, има подповршински океан течне воде испод дебелог леденог омотача — потенцијално 2–3× веће запремине од земљиних океана. Енцелад, око Сатурна, избацује тај исти океан кроз пукотине на свом јужном полу; мисија Cassini је прелетела кроз перјанице и открила органске молекуле. Титан, такође Сатурнов, има густу атмосферу азота (на површини гушћу од земљине), језера течног метана и вероватан подземни океан воде и амонијака. Три независна света са океанима, сва у једној турнеји кроз спољашњи део Сунчевог система."
+ },
+ {
+  "rel": "science/planets/moons-of-the-system.json",
+  "at": "narrative_101.2",
+  "en": "Mars's two tiny moons — Phobos and Deimos — are almost certainly captured asteroids from the main belt. Phobos orbits faster than Mars rotates, so on Mars it rises in the west and sets in the east — the only moon in the system that does. Phobos is also on a slow death spiral toward Mars: tidal forces are pulling it down, and in roughly 50 million years it will either crash or tear apart into a brief Martian ring.",
+  "cur": "Два ситна месеца Марса — Фобос и Дејмос — готово сигурно су заробљени астероиди из главног појаса. Фобос кружи брже него што Марс ротира, па на Марсу излази на западу, а залази на истоку — једини је месец у систему који то ради. Фобос је уз то на спором путу смрти ка Марсу: плимске силе вуку га наниже, а за отприлике 50 милиона година он ће се или срушити или распасти у кратковечан марсовски прстен."
+ },
+ {
+  "rel": "science/planets/moons-of-the-system.json",
+  "at": "body_paragraphs.0",
+  "en": "The four Galilean moons of Jupiter are wildly different worlds. Io: most volcanically active body in the solar system, with active eruptions visible from telescopes — driven by tidal heating from the others. Europa: ice shell over a global water ocean, a top astrobiology priority. Ganymede: largest moon in the solar system, bigger than Mercury, and the only moon with its own magnetic field. Callisto: outermost Galilean, ancient cratered surface, possibly a subsurface ocean too. All four discovered in 1610 by Galileo from a Padua rooftop.",
+  "cur": "Четири Галилејева месеца Јупитера су светови невероватно различити једни од других. Ио: најактивније вулканско тело у Сунчевом систему, са активним ерупцијама које се виде и из телескопа — покреће га плимско загревање изазвано осталим месецима. Европа: ледени омотач изнад глобалног воденог океана, један од главних приоритета астробиологије. Ганимед: највећи месец у Сунчевом систему, већи од Меркура, и једини месец са сопственим магнетним пољем. Калисто: најудаљенији од Галилејевих месеци, древне површине прекривене кратерима, вероватно такође са подповршинским океаном. Сва четири открио је 1610. године Галилеј, са једног крова у Падови."
+ },
+ {
+  "rel": "science/planets/moons-of-the-system.json",
+  "at": "body_paragraphs.1",
+  "en": "Saturn has the most moons of any planet — ~290 with confirmed orbits as of 2026. Two stand out: Titan, the second-largest moon in the solar system (after Ganymede), with a nitrogen atmosphere thicker than Earth's at the surface; Huygens probe landed there in 2005 and returned the first surface images. Enceladus, much smaller, has a young icy surface, ridged 'tiger stripes' at the south pole, and active cryovolcanic vents that spray water vapor and organics into space — sampled directly by Cassini flying through the plume. Enceladus's plumes are the source of Saturn's E ring — its cryovolcanic ice supplies the ring directly.",
+  "cur": "Сатурн има највише месеца од свих планета — ~290 са потврђеним орбитама у 2026. години. Два се истичу: Титан, други по величини месец у Сунчевом систему (после Ганимеда), са атмосфером од азота која је при површини гушћа од земљине; сонда Huygens спустила се на њега 2005. године и послала прве снимке површине. Енцелад, много мањи, има младу ледену површину, избраздане „тиграсте пруге“ на јужном полу и активне криовулканске отворе који избацују водену пару и органска једињења у свемир — а узорак тога директно је узела сонда Cassini прелетевши кроз перјаницу. Енцеладове перјанице извор су Сатурновог прстена E — његов криовулкански лед директно снабдева прстен."
+ },
+ {
+  "rel": "science/planets/moons-of-the-system.json",
+  "at": "body_paragraphs.2",
+  "en": "Pluto and Charon are unique: at radius 606 km vs Pluto's 1188 km, Charon is half Pluto's diameter — the largest moon-to-planet ratio in the system. The two bodies orbit a common centre of mass that lies outside Pluto's surface, so neither object is really orbiting the other; they're orbiting each other around a shared barycentre. The New Horizons flyby in 2015 imaged both for the first time, revealing red equatorial deposits on Charon (tholins from Pluto's atmosphere blown over) and a heart-shaped nitrogen-ice plain on Pluto. Neptune's Triton is similarly captured (retrograde orbit, geologically young — possibly captured from the Kuiper belt) — and like Charon, almost certainly hosts a subsurface ocean.",
+  "cur": "Плутон и Харон су јединствени: са полупречником од 606 km наспрам 1188 km код Плутона, Харон има половину пречника Плутона — највећи однос месеца и планете у систему. Та два тела круже око заједничког центра масе који лежи изван површине Плутона, па заправо ниједно не кружи око другог; она круже једно око другог око заједничког барицентра. Прелет New Horizons 2015. године први пут је снимио оба тела, откривши црвене екваторијалне наслаге на Харону (толине из атмосфере Плутона које је разнео ветар) и равницу од азотног леда у облику срца на Плутону. Нептунов Тритон је слично заробљен (ретроградна орбита, геолошки млад — вероватно заробљен из Kuiper-овог појаса) — и, као и Харон, готово сигурно има подповршински океан."
+ },
+ {
+  "rel": "science/planets/moons-of-the-system.json",
+  "at": "diagram_caption",
+  "en": "Major moons of the giant planets at a comparison scale. Ganymede (Jupiter) is the largest at 2,634 km radius — bigger than Mercury. Charon is half of Pluto's diameter, the largest moon:planet ratio anywhere.",
+  "cur": "Главни месеци гасовитих планета-дивова у упоредној размери. Ганимед (Јупитер) је највећи, полупречника 2.634 km — већи од Меркура. Харон има половину пречника Плутона, што је највећи однос месеца и планете икада забележен."
+ },
+ {
+  "rel": "science/planets/planetary-stats.json",
+  "at": "intro_sentence",
+  "en": "How different is Jupiter from Earth, really? Eleven times the diameter. Two and a half times the surface gravity.",
+  "cur": "Колико се Јупитер заправо разликује од Земље? Једанаест пута већи пречник. Два и по пута јача гравитација на површини."
+ },
+ {
+  "rel": "science/planets/planetary-stats.json",
+  "at": "narrative_101.0",
+  "en": "When you hear \"Jupiter is the biggest planet\", that's roughly true — but \"big\" hides multiple separate facts. Jupiter is 11× Earth's diameter, 318× Earth's mass, but only 2.53× Earth's surface gravity. Why doesn't 318× mass mean 318× gravity? Because gravity at the surface depends on both mass and the distance from the centre — and Jupiter's surface is 11× farther out than Earth's. The two effects almost cancel. Jupiter is huge, but standing on its 1-bar level (the conventional \"surface\" for a gas giant) you'd weigh 2.5× what you weigh on Earth — not 300×.",
+  "cur": "Када чујете да је „Јупитер највећа планета“, то је отприлике тачно — али „велик“ крије неколико засебних чињеница. Јупитер има 11 пута већи пречник од Земље и 318 пута већу масу, али само 2,53 пута јачу гравитацију на површини. Зашто 318 пута већа маса не значи 318 пута јачу гравитацију? Зато што гравитација на површини зависи и од масе и од удаљености од центра — а Јупитерова површина је 11 пута даље од центра него земљина. Та два ефекта се скоро поништавају. Јупитер је огроман, али када бисте стајали на нивоу од 1 бара (условној „површини“ гасовитог џина), тежили бисте 2,5 пута више него на Земљи — а не 300 пута."
+ },
+ {
+  "rel": "science/planets/planetary-stats.json",
+  "at": "narrative_101.1",
+  "en": "Mars is the opposite trade-off. Mars has only 11% of Earth's mass, but it has 53% of Earth's diameter. That makes its surface gravity 38% of Earth's — much higher than the mass ratio alone would predict, because you're closer to a smaller centre. The relationship that makes both cases sensible: surface gravity scales as mass / radius². For a planet of average density, gravity scales linearly with radius. Saturn (9.14× Earth's diameter) has surface gravity almost equal to Earth's (1.07 g) because Saturn is much less dense than Earth — Saturn is mostly hydrogen-helium, less than 0.7× water's density.",
+  "cur": "Марс је супротан случај. Марс има само 11% Земљине масе, али 53% њеног пречника. Зато му је гравитација на површини 38% Земљине — много већа него што би предвиђао сам однос маса, јер сте ближи центру мањег тела. Однос који чини оба случаја разумљивим: гравитација на површини расте сразмерно маси / полупречнику². За планету просечне густине гравитација расте линеарно са полупречником. Сатурн (са 9,14 пута већим пречником од Земље) има гравитацију на површини готово једнаку Земљиној (1,07 g), јер је Сатурн знатно ређи од Земље — састоји се углавном од водоника и хелијума, а његова густина је мања од 0,7 густине воде."
+ },
+ {
+  "rel": "science/planets/planetary-stats.json",
+  "at": "narrative_101.2",
+  "en": "Atmospheric pressure: huge dynamic range. Mercury essentially zero. Mars 0.006 bar (a thin CO₂ wisp). Earth 1 bar. Venus 92 bar (about the pressure 900 m down in Earth's ocean — would crush you). Gas giants don't have a true \"surface pressure\" because there's no surface; the convention is to use the 1-bar level inside the atmosphere as the reference. Below that, pressures grow continuously into millions of bars deep in the interior.",
+  "cur": "Атмосферски притисак: огроман динамички опсег. Меркур у суштини нула. Марс 0,006 bar (танак прамен CO₂). Земља 1 bar. Венера 92 bar (отприлике притисак на 900 m дубине у Земљином океану — сломио би вас). Гасовити дивови немају прави „притисак на површини“ јер немају површину; по договору се као референца користи ниво од 1 bar унутар атмосфере. Испод њега притисак непрекидно расте до милиона bar дубоко у унутрашњости."
+ },
+ {
+  "rel": "science/planets/planetary-stats.json",
+  "at": "body_paragraphs.0",
+  "en": "Diameters relative to Earth: Mercury 0.38, Venus 0.95 (nearly Earth-sized), Earth 1.0, Mars 0.53, Jupiter 10.97, Saturn 9.14, Uranus 3.98, Neptune 3.86, Pluto 0.19. Surface gravities in Earth-g: Mercury 0.38, Venus 0.91, Earth 1.00, Mars 0.38, Jupiter 2.53, Saturn 1.07, Uranus 0.89, Neptune 1.14, Pluto 0.06. Notable surprises: Mars and Mercury share the same surface gravity (0.38 g) despite very different sizes, because their density × radius products land close. Uranus and Saturn both have lower-than-Earth gravity despite their giant sizes — both are dominated by H/He, much less dense than rocky Earth.",
+  "cur": "Пречници у односу на Земљу: Меркур 0,38, Венера 0,95 (скоро величине Земље), Земља 1,0, Марс 0,53, Јупитер 10,97, Сатурн 9,14, Уран 3,98, Нептун 3,86, Плутон 0,19. Гравитација на површини у јединицама Земљиног g: Меркур 0,38, Венера 0,91, Земља 1,00, Марс 0,38, Јупитер 2,53, Сатурн 1,07, Уран 0,89, Нептун 1,14, Плутон 0,06. Значајна изненађења: Марс и Меркур имају исту гравитацију на површини (0,38 g) упркос веома различитим величинама, јер су им производи густине и полупречника блиски. Уран и Сатурн имају мању гравитацију од Земљине упркос џиновским димензијама — на обе планете преовлађују H/He, који су знатно ређи од стеновите Земље."
+ },
+ {
+  "rel": "science/planets/planetary-stats.json",
+  "at": "body_paragraphs.1",
+  "en": "Rotation periods (sidereal, in hours): Mercury 1407.5 (essentially 58 Earth days for one full spin), Venus −5832.5 (retrograde, 243 days), Earth 23.93, Mars 24.62, Jupiter 9.93 (the fastest rotator — its day is under 10 hours despite its size, which is why Jupiter is visibly oblate; centrifugal forces flatten it), Saturn 10.66, Uranus −17.24 (retrograde), Neptune 16.11, Pluto −153.3 (retrograde). Solar days (sunrise to sunrise) differ from sidereal periods because the planet is also moving along its orbit — Venus's solar day is 117 Earth days even though its sidereal rotation is 243 days, because the retrograde spin partially cancels the orbital motion.",
+  "cur": "Периоди ротације (сидерички, у сатима): Меркур 1.407,5 (у суштини 58 земаљских дана за један пун обрт), Венера −5.832,5 (ретроградна, 243 дана), Земља 23,93, Mars 24,62, Јупитер 9,93 (најбржи ротатор — његов дан траје мање од 10 сати упркос величини, због чега је Јупитер видљиво спљоштен; центрифугалне силе га спљоштавају), Сатурн 10,66, Уран −17,24 (ретроградан), Нептун 16,11, Плутон −153,3 (ретроградан). Сунчани дани (од изласка до изласка Сунца) разликују се од сидеричких периода јер се планета креће и дуж своје орбите — Венерин сунчани дан траје 117 земаљских дана иако њена сидеричка ротација траје 243 дана, јер ретроградно окретање делимично поништава орбитално кретање."
+ },
+ {
+  "rel": "science/planets/planetary-stats.json",
+  "at": "body_paragraphs.2",
+  "en": "The Earth-comparison ghost on /explore lets you read these ratios at a glance: Jupiter's planet image looks 11× the apparent size of the Earth thumbnail, Mars's about half, Pluto's about 1/5. The tactical-scan overlay surfaces the harder-to-imagine numbers: the gravity you'd feel on the surface, the air pressure you'd breathe (or get crushed by, or have nothing to breathe in), the rotation period that sets the planet's day length. All four numbers come from the planetary fact sheet, hard-coded into the PLANET_STATS map in /explore (Slice E.4).",
+  "cur": "„Дух поређења са Земљом“ на /explore омогућава вам да ове односе прочитате одједном: слика Јупитера делује 11 пута већа од сличице Земље, слика Марса отприлике упола мања, а слика Плутона отприлике 1/5. Преклоп тактичког скенирања открива бројеве које је теже замислити: гравитацију коју бисте осетили на површини, ваздушни притисак који бисте удисали (или који би вас сломио, или немате чиме да дишете), и период ротације који одређује дужину дана на планети. Сва четири броја потичу из табеле планетарних података и непосредно су уписана у мапу PLANET_STATS у /explore (Slice E.4)."
+ },
+ {
+  "rel": "science/planets/planetary-stats.json",
+  "at": "diagram_caption",
+  "en": "Earth-relative diameters at scale. Jupiter and Saturn are the giants; Mercury, Mars, and Pluto sit below Earth. Surface gravity doesn't track size linearly — Saturn (9.1× Earth's diameter) has gravity essentially equal to Earth's because it's so much less dense.",
+  "cur": "Пречници у односу на Земљу, у размери. Јупитер и Сатурн су дивови; Меркур, Марс и Плутон налазе се испод Земље. Гравитација на површини не прати величину линеарно — Сатурн (9,1 пута већег пречника од Земље) има гравитацију у суштини једнаку Земљиној, јер је далеко мање густ."
+ },
+ {
+  "rel": "science/planets/regolith.json",
+  "at": "title",
+  "en": "Regolith — the dust of airless worlds",
+  "cur": "Реголит — прашина светова без атмосфере"
+ },
+ {
+  "rel": "science/planets/regolith.json",
+  "at": "intro_sentence",
+  "en": "Regolith is the loose blanket of fragmented rock and glass dust that covers the Moon, Mercury, and most asteroids — ground down by billions of years of micrometeorite bombardment, with no wind or water to round its edges.",
+  "cur": "Реголит је растресит покривач од уситњене стене и стаклене прашине који прекрива Месец, Меркур и већину астероида — самлевен милијардама година бомбардовања микрометеоритима, без ветра и воде који би му заобили ивице."
+ },
+ {
+  "rel": "science/planets/regolith.json",
+  "at": "body_paragraphs.0",
+  "en": "On Earth, sediment grains are rounded and smoothed by water and wind over time. Airless bodies have neither, so their surfaces are abraded purely by impactors — from multi-kilometre asteroids down to interplanetary dust grains arriving at tens of kilometres per second. The result is a layer of angular, glassy shards called regolith, ranging from fine powder to house-sized boulders. On the Moon this layer runs from a few metres deep in the highlands to tens of metres in the maria.",
+  "cur": "На Земљи се зрна седимента временом заобљују и глаткају под дејством воде и ветра. Тела без атмосфере немају ништа од тога, па се њихове површине троше искључиво ударима — од астероида пречника неколико километара до зрнаца међупланетарне прашине која пристижу брзином од више десетина километара у секунди. Резултат је слој угластих, стакластих крхотина које називамо реголит, од ситног праха до громада величине куће. На Месецу овај слој сеже од неколико метара дубине у висоравнима до десетина метара у маређима."
+ },
+ {
+  "rel": "science/planets/regolith.json",
+  "at": "body_paragraphs.1",
+  "en": "Lunar regolith has a property that makes it actively dangerous: it is electrostatically charged. On the Moon’s dayside, ultraviolet sunlight knocks electrons off the grains by the photoelectric effect, leaving the sunlit surface positively charged; on the nightside, electrons from the solar wind charge it negatively. Either way the grains carry a persistent electrostatic charge. Dust sticks to everything — visors, suit joints, instrument optics, thermal radiators. Apollo astronauts found their suits grey-black within hours of their first moonwalks, and abrasion by sharp grains degraded suit seams over the course of a single EVA.",
+  "cur": "Лунарни реголит има својство које га чини изричито опасним: електростатички је наелектрисан. На осветљеној страни Месеца ултраљубичасто сунчево светло фотоелектричним ефектом избија електроне из зрна, па осунчана површина остаје позитивно наелектрисана; на ноћној страни је негативно наелектришу електрони из Сунчевог ветра. У оба случаја зрна носе трајно електростатичко наелектрисање. Прашина се лепи за све — визире, зглобове одела, оптику инструмената, термалне радијаторе. Астронаути мисије Apollo открили су да су им одела постала сиво-црна у року од неколико сати од првих шетњи по Месецу, а абразија оштрих зрна оштетила је шавове одела током само једног EVA."
+ },
+ {
+  "rel": "science/planets/regolith.json",
+  "at": "body_paragraphs.2",
+  "en": "For future surface operations, regolith is both threat and resource. As a hazard it can clog mechanical joints, scratch optical surfaces, and if inhaled, sharp glassy particles lodge in lung tissue like asbestos fibres. As a resource it is available in essentially unlimited quantity: bulk regolith can shield habitats from cosmic radiation and micrometeorites without launching any material from Earth. Processed regolith can in principle yield oxygen, metals, and silicon — the basis of in-situ resource utilisation (ISRU).",
+  "cur": "За будуће операције на површини, реголит је истовремено претња и ресурс. Као опасност, може да запуши механичке зглобове, огребе оптичке површине, а ако се удише, оштре стакласте честице заглављују се у плућном ткиву попут азбестних влакана. Као ресурс, доступан је у практично неограниченим количинама: обичан реголит може да заштити станишта од космичког зрачења и микрометеорита, без лансирања иједног материјала са Земље. Прерађен реголит у принципу може да даје кисеоник, метале и силицијум — а то је основа искоришћавања ресурса на лицу места (ISRU)."
+ },
+ {
+  "rel": "science/planets/regolith.json",
+  "at": "body_paragraphs.3",
+  "en": "Asteroid regolith presents its own physics. On rubble-pile bodies like Bennu (sampled by NASA's OSIRIS-REx in 2020) and Ryugu (sampled by JAXA's Hayabusa2 in 2019), gravity is so weak — millionths of Earth's — that regolith barely coheres. OSIRIS-REx's sample arm sank unexpectedly deep into Bennu's surface, revealing a body less like a solid rock and more like a loosely packed bag of gravel. How material moves, consolidates, and behaves under such conditions is still an active area of research.",
+  "cur": "Реголит астероида има сопствену физику. На телима попут гомиле рушевина, као што су Бену (са којег је узорке 2020. узео NASA-ин OSIRIS-REx) и Рјугу (са којег је узорке 2019. узела JAXA-ина Hayabusa2), гравитација је толико слаба — милионити делови земљине — да се реголит једва држи на окупу. Узорковачка рука летелице OSIRIS-REx неочекивано је дубоко утонула у површину Бену, откривши тело које више личи на лабаво напуњену врећу шљунка него на чврсту стену. Како се материјал у таквим условима креће, збија и понаша, и даље је активно поље истраживања."
+ },
+ {
+  "rel": "science/planets/regolith.json",
+  "at": "body_paragraphs.4",
+  "en": "The depth and composition of regolith also record planetary history. The rate of impact gardening — the churning of the surface by successive impacts — can be used to date surfaces: denser crater counts mean older, less-churned terrain. Trace elements delivered by comets and the solar wind are preserved in regolith grains in a way that eroded Earth rocks cannot preserve them, making returned samples irreplaceable archives of early solar system chemistry.",
+  "cur": "Дубина и састав реголита такође бележе историју планета. Брзина „вртења површине“ — то јест стапања и мешања тла узастопним ударима — може се користити за датирање површина: гушћа бројност кратера значи старији терен, мање измешан ударима. Елементи у траговима које су донеле комете и сунчев ветар чувају се у зрнима реголита на начин на који их ерозијом уништене земаљске стене не могу сачувати, због чега су узорци враћени на Земљу непроцењиви архиви хемије раног Сунчевог система."
+ },
+ {
+  "rel": "science/planets/regolith.json",
+  "at": "diagram_caption",
+  "en": "Scanning electron micrograph of lunar regolith grains — angular, glassy, and jagged, unlike the rounded grains of water-sorted sediment on Earth.",
+  "cur": "Снимак зрна лунарног реголита добијен скенирајућим електронским микроскопом — угласта, стакласта и назубљена, за разлику од заобљених зрна седимента на Земљи који је сортирала вода."
+ },
+ {
+  "rel": "science/planets/sub-solar-and-terminator.json",
+  "at": "title",
+  "en": "Sub-solar Point and Terminator",
+  "cur": "Подсунчева тачка и терминатор"
+ },
+ {
+  "rel": "science/planets/sub-solar-and-terminator.json",
+  "at": "intro_sentence",
+  "en": "Where it's noon on a planet at this instant, and the line dividing day from night.",
+  "cur": "Место на планети где је у овом тренутку подне и линија која раздваја дан од ноћи."
+ },
+ {
+  "rel": "science/planets/sub-solar-and-terminator.json",
+  "at": "narrative_101.0",
+  "en": "Stand at the equator at solar noon. The Sun is directly overhead. Wherever you are at that moment defines the sub-solar point — the single longitude where the Sun's rays hit the surface perpendicularly. As the planet rotates eastward, the sub-solar point sweeps westward across the surface. As the planet orbits the Sun and its tilt swings the hemispheres into and out of sunlight, the sub-solar latitude also changes — on Earth it oscillates between 23.4°N and 23.4°S over the year (the tropics of Cancer and Capricorn).",
+  "cur": "Станите на екватор у право сунчево подне. Сунце је тачно изнад ваше главе. Место на којем се у том тренутку налазите одређује подсунчеву тачку — једину географску дужину на којој Сунчеви зраци погађају површину под правим углом. Док се планета окреће ка истоку, подсунчева тачка се помера ка западу преко површине. Како планета кружи око Сунца, а њен нагиб смењује хемисфере које улазе у сунчеву светлост и излазе из ње, мења се и подсунчева географска ширина — на Земљи она током године осцилује између 23,4° северно и 23,4° јужно (повратници Рака и Јарца)."
+ },
+ {
+  "rel": "science/planets/sub-solar-and-terminator.json",
+  "at": "narrative_101.1",
+  "en": "Ninety degrees away from the sub-solar point — in every direction — sits the terminator: the great circle separating the lit hemisphere from the dark one. Stand on the terminator and the Sun is on the horizon. East of it (in the planet's rotation sense), it's morning everywhere; west of it, sunset, then night. The terminator moves at exactly the speed of planetary rotation at the equator (about 1670 km/h on Earth, about 16 km/h on the Moon).",
+  "cur": "Деведесет степени удаљен од подсунчеве тачке — у сваком смеру — налази се терминатор: велики круг који раздваја осветљену хемисферу од тамне. Станете ли на терминатор, Сунце је на хоризонту. Источно од њега (у смеру ротације планете) свуда је јутро; западно од њега је залазак сунца, а потом ноћ. Терминатор се креће тачно брзином ротације планете на екватору (око 1670 km/h на Земљи, око 16 km/h на Месецу)."
+ },
+ {
+  "rel": "science/planets/sub-solar-and-terminator.json",
+  "at": "narrative_101.2",
+  "en": "On an airless body like Mercury or the Moon, the terminator is razor-sharp — sunlight versus pitch black, no twilight. With an atmosphere, the terminator becomes a gradient: Earth's atmosphere scatters sunlight forward into the night side and back into the day side, giving you civil twilight, nautical twilight, astronomical twilight — about 30 minutes of usable light after sunset at mid-latitudes. Venus's much thicker atmosphere makes the day/night transition essentially indistinguishable from above; on the surface, sunlight is so diffused that the sky is uniformly bright.",
+  "cur": "На телу без атмосфере, као што су Меркур или Месец, терминатор је оштар као бритва — сунчева светлост насупрот потпуном мраку, без сумрака. Уз атмосферу терминатор постаје градијент: Земљина атмосфера расипа сунчеву светлост унапред, на ноћну страну, и уназад, на дневну, па добијате грађански сумрак, наутички сумрак и астрономски сумрак — отприлике 30 минута употребљиве светлости после заласка сунца на средњим географским ширинама. Много гушћа атмосфера Венере чини прелаз између дана и ноћи одозго практично неприметним; на површини је сунчева светлост толико расејана да је небо равномерно светло."
+ },
+ {
+  "rel": "science/planets/sub-solar-and-terminator.json",
+  "at": "body_paragraphs.0",
+  "en": "The sub-solar point's instantaneous location is calculated from three angles: the planet's rotation phase (which longitude faces the Sun right now), its axial tilt (which seasonal latitude the Sun illuminates), and its orbital position (which hemisphere is angled sunward). On Earth, the sub-solar latitude oscillates between +23.4° and −23.4° in the cycle we call seasons. On Mars, the cycle is similar (25.19° tilt) but slower (687-day year) and more eccentric (Mars's orbit is more elliptical, so its seasons have unequal durations).",
+  "cur": "Тренутни положај подсунчеве тачке израчунава се из три угла: фазе ротације планете (која географска дужина је управо сада окренута Сунцу), њеног нагиба осе (коју сезонску географску ширину Сунце осветљава) и њеног положаја на орбити (која је хемисфера нагнута ка Сунцу). На Земљи подсунчева географска ширина осцилује између +23,4° и −23,4° у циклусу који називамо годишњим добима. На Марсу је циклус сличан (нагиб од 25,19°), али спорији (година од 687 дана) и ексцентричнији (орбита Марса је елиптичнија, па годишња доба трају неједнако)."
+ },
+ {
+  "rel": "science/planets/sub-solar-and-terminator.json",
+  "at": "body_paragraphs.1",
+  "en": "The terminator has a long history as the scientifically richest place to observe surface detail. Shadows are longest there, exaggerating topography. Apollo-era lunar imagery for crater geology was almost always taken with the terminator nearby. Voyager 1 + 2's most striking outer-planet imagery (Saturn's ring structure, Neptune's Great Dark Spot) was taken near each body's terminator for the same reason: low Sun angle picks out features.",
+  "cur": "Терминатор већ дуго важи за научно најбогатије место за посматрање детаља на површини. Сенке су ту најдуже и наглашавају топографију. Снимци Месеца из доба програма Apollo, који су служили за геологију кратера, готово увек су прављени када је терминатор био у близини. Најупечатљивији снимци спољашњих планета које су направили Voyager 1 + 2 (структура Сатурнових прстенова, Great Dark Spot на Нептуну) такође су настали у близини терминатора сваког од тих тела, из истог разлога: низак упадни угао Сунчевих зрака истиче обележја."
+ },
+ {
+  "rel": "science/planets/sub-solar-and-terminator.json",
+  "at": "body_paragraphs.2",
+  "en": "On airless bodies, the temperature swing across the terminator is brutal. Mercury's day side reaches 430 °C; its night side drops to −180 °C. The Moon swings from +127 °C to −173 °C every lunar day (29.5 Earth days). With an atmosphere, thermal inertia softens this swing dramatically — Earth's surface temperature varies maybe 15 °C between day and night at temperate latitudes, because the atmosphere holds and redistributes heat. Venus, with its dense CO₂ atmosphere, has essentially no day-night temperature variation despite its 117-day solar day — the atmosphere homogenises temperature across the planet.",
+  "cur": "На телима без атмосфере температурни скок преко терминатора је суров. Дневна страна планете Меркур достиже 430 °C, а ноћна пада на −180 °C. Месец прелази са +127 °C на −173 °C сваког лунарног дана (29,5 земаљских дана). Уз атмосферу, топлотна инерција тај скок драстично ублажава — температура Земљине површине на умереним географским ширинама између дана и ноћи варира можда 15 °C, јер атмосфера задржава и прерасподељује топлоту. Венера, са својом густом атмосфером од CO₂, готово да нема разлике између дневне и ноћне температуре упркос сунчевом дану дугом 117 дана — атмосфера изједначава температуру на целој планети."
+ },
+ {
+  "rel": "science/planets/sub-solar-and-terminator.json",
+  "at": "diagram_caption",
+  "en": "Sub-solar point (direct overhead) + terminator (90° great circle). On airless bodies the terminator is sharp; on Earth and Venus, scattered sunlight blurs it into twilight.",
+  "cur": "Подсунчева тачка (тачно изнад главе) + терминатор (велики круг на 90°). На телима без атмосфере терминатор је оштар; на Земљи и Венери расејана сунчева светлост замагљује га у сумрак."
+ },
+ {
+  "rel": "science/planets/tides.json",
+  "at": "intro_sentence",
+  "en": "The Moon's gravity pulls the oceans into two bulges — one beneath it, one on the far side — so most coasts get two high tides a day.",
+  "cur": "Гравитација Месеца развлачи океане у две испупчине — једну испод њега, а другу на супротној страни — па већина обала има две плиме дневно."
+ },
+ {
+  "rel": "science/planets/tides.json",
+  "at": "narrative_101.0",
+  "en": "Gravity weakens with distance, so the Moon tugs the near side of Earth harder than the centre, and the centre harder than the far side.",
+  "cur": "Гравитација слаби с удаљеношћу, па Месец јаче привлачи ближу страну Земље него њено средиште, а средиште јаче него даљу страну."
+ },
+ {
+  "rel": "science/planets/tides.json",
+  "at": "narrative_101.1",
+  "en": "Stretched between these unequal pulls, the oceans rise into a bulge facing the Moon and a matching bulge on the opposite side — and Earth rotates through both every day.",
+  "cur": "Развучени између ових неједнаких привлачења, океани се издижу у испупчину окренуту ка Месецу и одговарајућу испупчину на супротној страни — а Земља кроз обе пролази ротирајући сваког дана."
+ },
+ {
+  "rel": "science/planets/tides.json",
+  "at": "body_paragraphs.0",
+  "en": "A tide is not the Moon lifting the water straight up — it is the difference in the Moon's pull across the width of the Earth. The near side is pulled toward the Moon more strongly than the planet's centre, and the far side less, so the water envelope is stretched into a prolate, two-bulge shape aligned with the Earth–Moon line.",
+  "cur": "Плима није Месец који воду диже право увис — она је последица разлике у привлачењу Месеца преко ширине Земље. Ближа страна се привлачи ка Месецу јаче него средиште планете, а даља страна слабије, па се водени омотач развлачи у издужен облик са две испупчине, поравнат са правцем Земља–Месец."
+ },
+ {
+  "rel": "science/planets/tides.json",
+  "at": "body_paragraphs.1",
+  "en": "Because there are two bulges and the Earth turns once a day, a given coastline usually sweeps through two high tides and two low tides every ~24 h 50 min (the extra 50 minutes is the Moon moving on in its orbit). When the Sun lines up with the Moon at new and full moon their pulls add — the large spring tides; at the quarters they partly cancel into the smaller neap tides.",
+  "cur": "Пошто постоје две испупчине, а Земља се окрене једном дневно, одређена обала обично прође кроз две плиме и две осеке сваких ~24 h 50 min (додатних 50 минута потиче од тога што се Месец у својој орбити помера даље). Када се Сунце на младом и пуном месецу поравна са Месецом, њихова привлачења се сабирају — настају велике квадратурне плиме; у првој и последњој четвртини делимично се поништавају, па настају мање плитке плиме."
+ },
+ {
+  "rel": "science/planets/tides.json",
+  "at": "body_paragraphs.2",
+  "en": "Tides are a two-way street. The bulge Earth raises sits slightly ahead of the Moon because Earth rotates faster than the Moon orbits; its gravity tugs the Moon forward, nudging it into a higher orbit (~3.8 cm/year), while the Moon drags back on the bulge and slowly lengthens Earth's day.",
+  "cur": "Плиме су пут у оба смера. Испупчина коју подиже Земља налази се нешто испред Месеца, јер се Земља окреће брже него што Месец кружи око ње; њена гравитација вуче Месец унапред и гура га у вишу орбиту (~3,8 cm годишње), док Месец вуче испупчину уназад и полако продужава Земљин дан."
+ },
+ {
+  "rel": "science/planets/tides.json",
+  "at": "body_paragraphs.3",
+  "en": "The same effect already finished the job on the Moon: tidal friction braked its spin until its rotation matched its orbit, so it keeps one face toward Earth — tidal locking. The Tides lens on /earth draws the twin bulges; the Sub-Earth Point lens on /moon shows the locked near side they produced.",
+  "cur": "Исти ефекат је већ завршио посао на Месецу: плимно трење кочило је његово обртање све док се ротација није изједначила с обиласком орбите, па он једну страну стално држи окренутом ка Земљи — то је плимно закључавање. Поглед „Tides“ на /earth приказује двоструке испупчине, а поглед „Sub-Earth Point“ на /moon показује закључану ближу страну коју су оне створиле."
+ },
+ {
+  "rel": "science/planets/tides.json",
+  "at": "diagram_caption",
+  "en": "Twin tidal bulges stretched along the Earth–Moon line — the near bulge under the Moon, the far bulge thrown outward.",
+  "cur": "Двострука плимна испупчина развучена дуж правца Земља–Месец — ближа испупчина испод Месеца, а даља избачена ка споља."
+ },
+ {
+  "rel": "science/porkchop/_intro.json",
+  "at": "headline",
+  "en": "Porkchop Plots — when to launch, and why the windows are the windows.",
+  "cur": "Porkchop дијаграми — када лансирати и зашто су прозори баш такви какви јесу."
+ },
+ {
+  "rel": "science/porkchop/_intro.json",
+  "at": "paragraphs.0",
+  "en": "Mission planners don't compute one trajectory to Mars — they compute millions, in a giant grid, and they paint a heatmap. Cheap trajectories show up as cool blue lobes. Expensive ones go red. The result, weirdly, looks like a pork chop. The cheap zone is the meat of the chop; the expensive ridge is the bone.",
+  "cur": "Планери мисија не рачунају једну путању до Марса — они их рачунају милионе, у џиновској мрежи, и од тога праве топлотну карту. Јефтине путање појављују се као хладни плави режњеви. Скупе постају црвене. Резултат, чудно довољно, изгледа као свињски котлет. Јефтина зона је месо котлета, а скупи гребен је кост."
+ },
+ {
+  "rel": "science/porkchop/_intro.json",
+  "at": "paragraphs.1",
+  "en": "Why do we draw the whole map instead of just the optimum? Because real missions have constraints — a rocket that's only ready a particular year, a launch pad that's only available certain weeks, a landing site that needs a specific season at Mars. The porkchop lets you see ALL the trade-offs at once and pick the cheap-enough trajectory that fits your real-world calendar.",
+  "cur": "Зашто цртамо целу карту, а не само оптимум? Зато што стварне мисије имају ограничења — ракета која је спремна тек одређене године, лансирна рампа која је доступна само одређених недеља, место слетања које захтева одређено годишње доба на Марсу. Дијаграм у облику свињског котлета омогућава да сагледате СВЕ компромисе одједном и изаберете довољно јефтину путању која се уклапа у ваш стварни календар."
+ },
+ {
+  "rel": "science/porkchop/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Six sections here, in reading order. Start with \"What is a porkchop plot?\" and walk through the axes (departure, time-of-flight), the colour scale (∆v heatmap), how to read the lobe shape (contour reading), and how to map the porkchop onto a specific rocket (viability). A note on convention: standard porkchop plots contour characteristic energy C3 (km²/s²) at departure and arrival V∞ (km/s) — Orrery simplifies this onto a single ∆v-in-km/s colour scale for readability. By the end you'll be able to look at /plan's porkchop for any of nine destinations and read it like a flight dynamicist.",
+  "cur": "Овде има шест одељака, редоследом читања. Почните са „Шта је porkchop дијаграм?“ и прођите кроз осе (полазак, време лета), колорну скалу (∆v топлотна карта), начин читања облика режња (читање изохипси) и начин на који се porkchop дијаграм пресликава на конкретну ракету (изводљивост). Напомена о конвенцији: стандардни porkchop дијаграми приказују изолиније карактеристичне енергије C3 (km²/s²) при полетању и V∞ (km/s) при доласку — Orrery то ради прегледности поједностављује на јединствену колорну скалу ∆v у km/s. До краја ћете моћи да погледате porkchop дијаграм у /plan за било коју од девет дестинација и читате га као стручњак за динамику лета."
+ },
+ {
+  "rel": "science/porkchop/contour-reading.json",
+  "at": "intro_sentence",
+  "en": "The shape of the cheap zone tells you the geometry of viable trajectories — and where the trade-offs live.",
+  "cur": "Облик јефтине зоне открива геометрију изводљивих путања — и где се налазе компромиси."
+ },
+ {
+  "rel": "science/porkchop/contour-reading.json",
+  "at": "narrative_101.0",
+  "en": "Now you know the axes and the colour scale. The next skill is reading the SHAPE of the cheap zone. The lobe of teal isn't just a generic blob — it's a literal map of which trajectories work and which don't.",
+  "cur": "Сада познајете осе и скалу боја. Следећа вештина је читање ОБЛИКА јефтине зоне. Тиркизни режањ није обична безлична мрља — он је дословна мапа тога које путање функционишу, а које не."
+ },
+ {
+  "rel": "science/porkchop/contour-reading.json",
+  "at": "narrative_101.1",
+  "en": "The classic Mars porkchop has TWO cheap lobes per launch window, side by side. They're called the \"Type I\" and \"Type II\" trajectories — same window, two different ways around the Sun. Type I goes the short way (transfer angle below 180 degrees) and is faster. Type II goes the long way (transfer angle above 180 degrees) and is slower but sometimes cheaper. Both are real, both are flown.",
+  "cur": "Класични porkchop дијаграм за Марс има ДВА јефтина режња по лансирном прозору, један поред другог. Зову се путање „типа I“ и „типа II“ — исти прозор, два различита пута око Сунца. Тип I иде краћим путем (угао трансфера мањи од 180 степени) и бржи је. Тип II иде дужим путем (угао трансфера већи од 180 степени) и спорији је, али је понекад јефтинији. Обе су стварне и обе се лете."
+ },
+ {
+  "rel": "science/porkchop/contour-reading.json",
+  "at": "narrative_101.2",
+  "en": "Outside the lobes: red. Most of the porkchop is red, actually. That's the lesson. There are very few cheap moments to launch a spacecraft to another planet, and they're not negotiable. \"Just wait for the right window\" almost always beats \"invent a clever trajectory.\" Reading the shape of the lobe — where it widens, where it narrows, where the optima sit — is what flight dynamicists do for a living.",
+  "cur": "Ван режњева: црвено. Већина porkchop дијаграма је заправо црвена. У томе је поента. Веома је мало повољних тренутака за лансирање летелице ка другој планети, и они нису предмет погађања. „Само сачекај прави прозор“ скоро увек надмашује „измисли домишљату путању“. Читање облика режња — где се шири, где се сужава, где леже оптимуми — посао је којим се баве стручњаци за динамику лета."
+ },
+ {
+  "rel": "science/porkchop/contour-reading.json",
+  "at": "body_paragraphs.0",
+  "en": "Look at a Mars porkchop. You'll see a roughly oval lobe of teal cells centred near a 250-day TOF, recurring every 26 months. That's the Hohmann opportunity. Inside the lobe, all combinations of (departure, TOF) deliver feasible Mars missions at acceptable ∆v.",
+  "cur": "Погледајте porkchop дијаграм за Марс. Видећете отприлике овалан режањ тиркизних ћелија усредсређен близу времена лета (TOF) од 250 дана, који се понавља на сваких 26 месеци. То је Hohmann-ова прилика. Унутар режња све комбинације (поласка, TOF) дају изводљиве мисије ка Марсу уз прихватљив ∆v."
+ },
+ {
+  "rel": "science/porkchop/contour-reading.json",
+  "at": "body_paragraphs.1",
+  "en": "Two solutions per window. The 'short way' (transfer angle < 180°) and the 'long way' (transfer angle > 180°) both connect Earth to Mars but via different ellipses. They appear as two cheap lobes in the porkchop, separated by a high-∆v ridge at the ~180° transfer angle — this ridge is literally the 'bone' of the pork chop. Sometimes both lobes appear, sometimes only one, depending on geometry.",
+  "cur": "Два решења по прозору. „Краћи пут“ (угао трансфера < 180°) и „дужи пут“ (угао трансфера > 180°) обојица повезују Земљу и Марс, али преко различитих елипси. У porkchop дијаграму појављују се као два јефтина режња, раздвојена гребеном високог ∆v на углу трансфера од ~180° — тај гребен је буквално „кост“ те свињске котлете. Понекад се појаве оба режња, понекад само један, зависно од геометрије."
+ },
+ {
+  "rel": "science/porkchop/contour-reading.json",
+  "at": "body_paragraphs.2",
+  "en": "Outside the cheap lobes: red. Far from any natural window, you'd need a custom high-energy trajectory (gravity assist, multi-burn) to make the math work. Real missions cluster in the cheap zones; design philosophy 'just wait for the right window' often beats 'invent a clever trajectory.'",
+  "cur": "Ван јефтиних режњева: црвено. Далеко од сваког природног прозора била би вам потребна посебна високоенергетска путања (гравитациони замах, вишеструка паљења) да би рачуница функционисала. Праве мисије се групишу у јефтиним зонама; филозофија пројектовања „само сачекај прави прозор“ често надмашује „измисли домишљату путању“."
+ },
+ {
+  "rel": "science/porkchop/departure-axis.json",
+  "at": "title",
+  "en": "Departure-Window Axis",
+  "cur": "Оса прозора за полазак"
+ },
+ {
+  "rel": "science/porkchop/departure-axis.json",
+  "at": "intro_sentence",
+  "en": "When you launch — running across the X-axis, typically a four-year span sampled daily.",
+  "cur": "Када лансирате — тј. дуж X-осе, обично у распону од четири године са дневним узорковањем."
+ },
+ {
+  "rel": "science/porkchop/departure-axis.json",
+  "at": "narrative_101.0",
+  "en": "Read the porkchop like a calendar. The horizontal axis — left to right — is the date you leave Earth. Each pixel column is a different launch day. Orrery samples at one-day resolution across about four years; that's enough to capture two full synodic cycles for Mars (the ~26-month cycle fits roughly twice in four years), which is enough to see the launch-window pattern repeat.",
+  "cur": "Читајте porkchop дијаграм као календар. Хоризонтална оса — слева надесно — јесте датум када напуштате Земљу. Сваки пикселни стубац представља другачији дан лансирања. Orrery узоркује са резолуцијом од један дан током отприлике четири године; то је довољно да се обухвате два пуна синодичка циклуса за Марс (циклус од ~26 месеци стане отприлике двапут у четири године), а то је довољно да се види како се образац прозора за лансирање понавља."
+ },
+ {
+  "rel": "science/porkchop/departure-axis.json",
+  "at": "narrative_101.1",
+  "en": "Look across the row of cheap-cost cells (the cool teal lobe) and you can read off, on the calendar, exactly when the launch windows are. For Mars they're roughly every 26 months. For Venus every 19. For Jupiter every 13. Each cheap zone is one window — outside of those zones, the calendar is fighting you.",
+  "cur": "Погледајте дуж реда јефтиних ћелија (хладног тиркизног режња) и на календару можете прочитати тачно када су прозори за лансирање. За Марс они се отварају отприлике сваких 26 месеци. За Венеру сваких 19. За Јупитер сваких 13. Свака јефтина зона је један прозор — изван тих зона календар ради против вас."
+ },
+ {
+  "rel": "science/porkchop/departure-axis.json",
+  "at": "narrative_101.2",
+  "en": "When you scrub the launch-year selector in /plan, you're sliding the X-axis. Different year, different window placement, but the underlying physics is the same. This is why mission scheduling is calendar-driven: the cheap zones don't move just because we have a deadline.",
+  "cur": "Када померате бирач године лансирања у /plan, клизите по X-оси. Друга година, другачији положај прозора, али физика у основи остаје иста. Зато је распоред мисија одређен календаром: јефтине зоне се не померају само зато што имамо рок."
+ },
+ {
+  "rel": "science/porkchop/departure-axis.json",
+  "at": "body_paragraphs.0",
+  "en": "The X-axis tells you when you leave Earth. Each pixel column is a different launch date — for Orrery's plots, sampled at one-day resolution across roughly four years. Why a four-year span? Because the Earth-Mars synodic period is ~26 months; four years captures roughly two full Mars windows. For Venus (~19 months) or Jupiter (~13 months) the same span fits more windows — the four-year width is calibrated for Mars-class planning.",
+  "cur": "X-оса показује када напуштате Земљу. Сваки пикселни стубац представља другачији датум лансирања — на Orrery-јевим дијаграмима, са узорковањем од један дан током отприлике четири године. Зашто управо четири године? Зато што синодички период Земља–Марс износи ~26 месеци, па четири године обухватају отприлике два пуна прозора за Марс. За Венеру (~19 месеци) или Јупитер (~13 месеци) исти распон садржи више прозора — ширина од четири године калибрисана је за планирање на нивоу Марса."
+ },
+ {
+  "rel": "science/porkchop/departure-axis.json",
+  "at": "body_paragraphs.1",
+  "en": "Read the X-axis like a calendar. The cheap-cost lobes (the porkchop's 'pork') sit at predictable intervals. For Mars: every ~26 months. For Venus: every ~19 months. For Jupiter: every ~13 months (Jupiter moves slowly enough that the synodic period is close to Earth's year).",
+  "cur": "Читајте X-осу као календар. Режњеви ниске цене (porkchop-ово „месо“) налазе се на предвидивим размацима. За Марс: на сваких ~26 месеци. За Венеру: на сваких ~19 месеци. За Јупитер: на сваких ~13 месеци (Јупитер се креће довољно споро да је синодички период близак земљиној години)."
+ },
+ {
+  "rel": "science/porkchop/departure-axis.json",
+  "at": "body_paragraphs.2",
+  "en": "On `/plan` the X-axis label is `DEPARTURE WINDOW · 2026 — 2030`. The literal calendar dates appear in the tooltip when you hover.",
+  "cur": "На `/plan` је ознака X-осе `DEPARTURE WINDOW · 2026 — 2030`. Тачни календарски датуми појављују се у облачићу када задржите показивач миша изнад дијаграма."
+ },
+ {
+  "rel": "science/porkchop/dv-heatmap.json",
+  "at": "intro_sentence",
+  "en": "The colour scale that turns ∆v numbers into a picture you can read at a glance.",
+  "cur": "Скала боја која претвара бројеве ∆v у слику коју можете прочитати једним погледом."
+ },
+ {
+  "rel": "science/porkchop/dv-heatmap.json",
+  "at": "narrative_101.0",
+  "en": "The whole point of a porkchop plot is the colours. Numbers in a giant grid would tell you the same thing, but you couldn't see the patterns. So we paint each cell — cool teal for cheap trajectories, yellow for borderline, orange and red for hopelessly expensive. Pattern recognition takes over from arithmetic.",
+  "cur": "Цела поента porkchop дијаграма јесте у бојама. Бројеви у огромној мрежи рекли би вам исто, али не бисте могли да уочите обрасце. Зато бојимо свако поље — хладном тиркизном за јефтине путање, жутом за гранични случај, наранџастом и црвеном за безнадежно скупе. Препознавање образаца преузима улогу рачунања."
+ },
+ {
+  "rel": "science/porkchop/dv-heatmap.json",
+  "at": "narrative_101.1",
+  "en": "Cool teal sits at around 3 km/s of ∆v — the departure burn from LEO for a Hohmann-like transfer to Mars (trans-Mars injection). Blue around 5 km/s — affordable, slightly faster trips. Yellow around 7 km/s — getting expensive, you're paying for speed. Orange and red beyond 9 km/s — you've left the realm of what current rockets can practically deliver. The colour-to-cost mapping is consistent across all the porkchops in /plan.",
+  "cur": "Хладна тиркизна налази се на око 3 km/s ∆v — то је импулс за поласком из LEO за транзиферни лет налик Hohmann-овом ка Марсу (убацивање на путању ка Марсу). Плава на око 5 km/s — приступачна, нешто бржа путовања. Жута на око 7 km/s — постаје скупо, плаћате брзину. Наранџаста и црвена изнад 9 km/s — напустили сте домен онога што садашње ракете могу практично да испоруче. Веза између боје и цене иста је на свим porkchop дијаграмима у /plan."
+ },
+ {
+  "rel": "science/porkchop/dv-heatmap.json",
+  "at": "narrative_101.2",
+  "en": "Hovering any cell shows you the exact ∆v in km/s, but the visual story is the eye-trick that makes porkchops indispensable. You can scan the chart in one second and know whether a destination is reachable, when the windows are, and what the trade-offs cost. No formula does that.",
+  "cur": "Када курсором пређете преко било ког поља, види се тачан ∆v у km/s, али визуелна прича је трик за око који porkchop дијаграме чини незаменљивим. Графикон можете прегледати за једну секунду и знати да ли је одредиште достижно, када су прозори и колико коштају компромиси. Ниједна формула то не може."
+ },
+ {
+  "rel": "science/porkchop/dv-heatmap.json",
+  "at": "body_paragraphs.0",
+  "en": "Cool teal sits at low ∆v (~3 km/s) — the departure-burn minimum for a Mars-like Hohmann (this is the trans-Mars injection ∆v from LEO, not the total mission ∆v). Blue at ~5 km/s. Yellow around 7 km/s — the threshold of expensive. Orange and red above 9 km/s — runaway-cost cells, where you'd need an SLS-class launch vehicle just to make the math close.",
+  "cur": "Хладна тиркизна налази се на ниској вредности ∆v (~3 km/s) — минимуму импулса за полазак код Hohmann-овог преласка налик оном ка Марсу (то је ∆v за убацивање на путању ка Марсу из LEO, а не укупан ∆v мисије). Плава је на ~5 km/s. Жута око 7 km/s — праг скупоће. Наранџаста и црвена изнад 9 km/s — поља с отетим трошком, где би вам била потребна ракета-носач класе SLS само да рачуница уопште изађе на нулу."
+ },
+ {
+  "rel": "science/porkchop/dv-heatmap.json",
+  "at": "body_paragraphs.1",
+  "en": "Orrery's scale tops out around 11+ km/s. Anything beyond that is rendered as the deepest red because in practice no current launch vehicle can deliver the payload at those ∆v costs. Voyager 1 is an example of the far-red end: its departure from Earth required a characteristic energy C3 ≈ 100 km²/s² (note: C3 is V∞ squared, so C3 and ∆v sit on different scales — √100 km²/s² ≈ 10 km/s hyperbolic excess). Converting to a departure ∆v from LEO puts Voyager 1 above 7 km/s — already near the limit of what a Titan IIIE/Centaur could deliver in 1977.",
+  "cur": "Скала програма Orrery завршава се негде око 11+ km/s. Све изнад тога приказује се најдубљом црвеном јер у пракси ниједна данашња ракета-носач не може да испоручи корисни терет при таквим ∆v трошковима. Voyager 1 је пример за крајње црвени део скале: за његов полазак са Земље била је потребна карактеристична енергија C3 ≈ 100 km²/s² (напомена: C3 је V∞ на квадрат, па C3 и ∆v леже на различитим скалама — √100 km²/s² ≈ 10 km/s хиперболичког вишка брзине). Када се то преведе у ∆v за полазак из LEO, Voyager 1 се налази изнад 7 km/s — већ близу границе онога што су Titan IIIE/Centaur могли да испоруче 1977. године."
+ },
+ {
+  "rel": "science/porkchop/dv-heatmap.json",
+  "at": "body_paragraphs.2",
+  "en": "On `/plan` you can hover any cell to see the exact ∆v in km/s. The heatmap is a visualisation of the answer; the cell value is the answer itself.",
+  "cur": "На `/plan` можете курсором прећи преко било ког поља да видите тачан ∆v у km/s. Топлотна мапа је визуелизација одговора; вредност поља јесте сâм одговор."
+ },
+ {
+  "rel": "science/porkchop/tof-axis.json",
+  "at": "intro_sentence",
+  "en": "How long the trip takes — running up the Y-axis, in days for inner planets and years for the outer ones.",
+  "cur": "Колико траје путовање — оно расте уз Y-осу, у данима за унутрашње планете, а у годинама за спољашње."
+ },
+ {
+  "rel": "science/porkchop/tof-axis.json",
+  "at": "narrative_101.0",
+  "en": "If the X-axis tells you WHEN you leave, the Y-axis tells you HOW LONG the trip takes. Bottom of the chart: fast, short trips. Top of the chart: slow, long trips. For Mars-class destinations the axis spans roughly 100 to 500 days. For Jupiter it's years.",
+  "cur": "Ако вам X-оса говори КАДА полазите, Y-оса вам говори КОЛИКО ТРАЈЕ путовање. Дно графикона: брза, кратка путовања. Врх графикона: спора, дуга путовања. За одредишта класе Марса оса обухвата отприлике од 100 до 500 дана. За Јупитер су то године."
+ },
+ {
+  "rel": "science/porkchop/tof-axis.json",
+  "at": "narrative_101.1",
+  "en": "Now you can read the entire trade-off in one glance. Walk straight up a column on the porkchop — that's the SAME launch date but different transit times. Near the bottom (fast trip) the cells turn red — fast trips are expensive because you're forcing a steep transfer ellipse. Higher up (slower trip) the cells go cool blue — that's the natural Hohmann band where the math wants the trip to take.",
+  "cur": "Сада цео компромис можете прочитати једним погледом. Пођите право увис дуж једне колоне на porkchop графикону — то је ИСТИ датум лансирања, али различита времена преласка. При дну (брзо путовање) ћелије постају црвене — брза путовања су скупа јер намећете стрму трансферну елипсу. Више горе (спорије путовање) ћелије постају хладно плаве — то је природни Hohmann-ов појас, онако како рачуница „жели“ да путовање траје."
+ },
+ {
+  "rel": "science/porkchop/tof-axis.json",
+  "at": "narrative_101.2",
+  "en": "This is why a Hohmann transfer to Mars is always around 8.5 months. Pull below that and you're paying steeply for the speed. Pull way above and you're loitering for no reason. The porkchop visualises that trade-off as a colour gradient up each column. Cargo missions can afford slow; crew missions usually can't, because every extra month is more food, water, oxygen, and radiation exposure.",
+  "cur": "Зато Hohmann-ов трансфер до Марса увек траје око 8,5 месеци. Ако покушате да будете испод тога, за брзину плаћате немилосрдно високу цену. Ако се подигнете знатно изнад, залуд се задржавате на путу. Графикон „свињски котлет“ тај компромис приказује као колорни градијент уз сваку колону. Теретне мисије могу да приуште спорост; мисије с посадом обично не могу, јер сваки додатни месец значи више хране, воде, кисеоника и излагања зрачењу."
+ },
+ {
+  "rel": "science/porkchop/tof-axis.json",
+  "at": "body_paragraphs.0",
+  "en": "Y-axis is transit duration. For Mars-class targets the natural Hohmann transit is ~250 days, so Orrery's Y range runs roughly 100-500 days. For Jupiter or Saturn the Hohmann transit is years, so the axis is in years.",
+  "cur": "Y-оса представља трајање преласка. За циљеве класе Марса природни Hohmann-ов трансфер траје ~250 дана, па Orrery-јева Y-скала обухвата отприлике 100–500 дана. За Јупитер или Сатурн Hohmann-ов трансфер траје годинама, па је оса изражена у годинама."
+ },
+ {
+  "rel": "science/porkchop/tof-axis.json",
+  "at": "body_paragraphs.1",
+  "en": "Different rows on the porkchop trade transit time against ∆v cost. The cheapest cells (Hohmann band) sit at the natural Hohmann transit time. Pull the transit time down (faster trip) and the ∆v cost climbs steeply. Pull it up (slower trip) and you get cheaper but slower options — sometimes worth it for cargo or non-time-sensitive payloads.",
+  "cur": "Различити редови на porkchop графикону мењају време преласка за цену у ∆v. Најјефтиније ћелије (Hohmann-ов појас) налазе се на природном Hohmann-овом времену преласка. Ако скратите време преласка (брже путовање), цена у ∆v стрмо расте. Ако га продужите (спорије путовање), добијате јефтиније, али спорије опције — које се понекад исплате за теретне или друге терете који нису временски осетљиви."
+ },
+ {
+  "rel": "science/porkchop/tof-axis.json",
+  "at": "body_paragraphs.2",
+  "en": "The shape of the cheap zone tells you about trade-offs. A narrow Hohmann band means the optimum is sharp; a wide cheap zone means you have flexibility. Mars's porkchop has a narrow optimum. Jupiter's wider — the gravity assist landscape spreads launch options across more dates.",
+  "cur": "Облик јефтине зоне говори вам о компромисима. Уски Hohmann-ов појас значи да је оптимум оштар; широка јефтина зона значи да имате гипкост. Графикон „свињски котлет“ за Марс има узак оптимум. Јупитеров је шири — пејзаж гравитационих праћки распоређује могућности лансирања на више датума."
+ },
+ {
+  "rel": "science/porkchop/viability.json",
+  "at": "title",
+  "en": "Reading Viability",
+  "cur": "Како проценити изводљивост"
+ },
+ {
+  "rel": "science/porkchop/viability.json",
+  "at": "intro_sentence",
+  "en": "A cell is viable when your rocket's ∆v capability ≥ the cell's ∆v cost — and the porkchop turns that comparison into a yes/no map.",
+  "cur": "Ћелија је изводљива када је ∆v могућност ваше ракете ≥ ∆v цене те ћелије — а porkchop график претвара то поређење у карту са одговорима „да/не“."
+ },
+ {
+  "rel": "science/porkchop/viability.json",
+  "at": "narrative_101.0",
+  "en": "Here's the question that turns a porkchop from a pretty heatmap into a real mission decision: can my rocket actually fly this? Each rocket — Falcon Heavy, SLS, Atlas V, you name it — has a published ∆v capability for a given payload mass. Compare that ceiling to the porkchop's per-cell costs and you have a yes/no map.",
+  "cur": "Ево питања које porkchop график претвара из лепе топлотне карте у стварну одлуку о мисији: може ли моја ракета заиста да одлети ово? Свака ракета — Falcon Heavy, SLS, Atlas V, све редом — има објављену ∆v могућност за дату масу корисног терета. Упоредите ту горњу границу са ценама појединачних ћелија на porkchop графику и добићете карту са одговорима „да/не“."
+ },
+ {
+  "rel": "science/porkchop/viability.json",
+  "at": "narrative_101.1",
+  "en": "Cells where the rocket's capability exceeds the cost are doable, with margin to spare. Cells where capability matches cost exactly are doable but tight — risky, no slack for things going wrong. Cells where the cost exceeds the capability? That trajectory is simply not flyable with that rocket. You can want it all you want; physics says no.",
+  "cur": "Ћелије у којима могућност ракете премашује цену изводљиве су, и то с резервом. Ћелије у којима се могућност тачно поклапа с ценом изводљиве су, али на граници — ризично, без простора за грешку ако нешто пође по злу. А ћелије у којима цена премашује могућност? Та путања једноставно није проходна с том ракетом. Можете је желети колико год хоћете; физика каже не."
+ },
+ {
+  "rel": "science/porkchop/viability.json",
+  "at": "narrative_101.2",
+  "en": "Pick a rocket on /plan and the porkchop overlays a margin/deficit colour. The lobe shrinks for smaller rockets, expands for bigger ones. This is how mission planners actually work: try a vehicle, see what's feasible, see what isn't, swap vehicle, payload, or schedule until the cheap zone fits inside the rocket's capability. Real flight planning is exactly this iteration, just with more decimal places.",
+  "cur": "Изаберите ракету на /plan и porkchop график ће приказати боју резерве или мањка. Режањ се смањује за мање ракете, а шири за веће. Тако мисије заиста планирају њихови планери: испробају возило, виде шта је изводљиво, а шта није, па мењају возило, корисни терет или распоред док јефтина зона не стане унутар могућности ракете. Прави план лета је управо та итерација, само са више децимала."
+ },
+ {
+  "rel": "science/porkchop/viability.json",
+  "at": "body_paragraphs.0",
+  "en": "Pick a vehicle. Falcon Heavy, SLS Block 1, Atlas V N22, whatever. That vehicle has a published C3-vs-payload-mass performance curve — heavier payloads shrink the reachable lobe; lighter ones expand it. For a given payload mass you can read off the maximum C3 (or equivalent departure ∆v) the vehicle can deliver, then compare against the porkchop: every cell where ∆v_cost ≤ capability is a feasible launch opportunity. Every cell where it's greater is impossible without a different vehicle or a lighter spacecraft.",
+  "cur": "Изаберите возило. Falcon Heavy, SLS Block 1, Atlas V N22, свеједно које. То возило има објављену криву перформанси C3 у односу на масу корисног терета — тежи терети смањују доступни режањ, а лакши га шире. За дату масу корисног терета можете очитати највећи C3 (или еквивалентни полазни ∆v) који возило може да испоручи, па га упоредити с porkchop графиком: свака ћелија у којој је ∆v_цена ≤ могућност представља изводљиву прилику за лансирање. Свака ћелија у којој је та вредност већа немогућа је без другог возила или лакше летелице."
+ },
+ {
+  "rel": "science/porkchop/viability.json",
+  "at": "body_paragraphs.1",
+  "en": "On `/plan` you can pick a launch vehicle and Orrery overlays a margin/deficit indicator. Cool teal cells become 'doable, big margin.' Yellow cells become 'doable but tight.' Red cells become impossible-with-this-vehicle, and switch to a deficit display showing how much more capability you'd need.",
+  "cur": "На `/plan` можете изабрати ракету-носач, а Orrery преко графика додаје индикатор резерве или мањка. Хладне тиркизне ћелије постају „изводљиво, с великом резервом“. Жуте ћелије постају „изводљиво, али на граници“. Црвене ћелије постају немогуће с овим возилом и прелазе на приказ мањка, који показује колико бисте још могућности морали да имате."
+ },
+ {
+  "rel": "science/porkchop/viability.json",
+  "at": "body_paragraphs.2",
+  "en": "This is mission feasibility analysis in one view. Real planners run it many times — for different vehicles, payload masses, trajectory variants — to find the cheapest combination that meets the science requirements. The porkchop is the visualisation; the underlying choice is always 'how much rocket do I need vs how much trip am I buying.'",
+  "cur": "Ово је анализа изводљивости мисије на једном приказу. Прави планери је покрећу много пута — за различита возила, масе корисног терета и варијанте путање — да би пронашли најјефтинију комбинацију која испуњава научне захтеве. Поркчоп график је визуализација; суштински избор увек је „колико ракете ми треба у односу на то колико путовања куповином добијам“."
+ },
+ {
+  "rel": "science/porkchop/what-is-a-porkchop.json",
+  "at": "title",
+  "en": "What is a Porkchop Plot?",
+  "cur": "Шта је „свињски котлет“ дијаграм?"
+ },
+ {
+  "rel": "science/porkchop/what-is-a-porkchop.json",
+  "at": "intro_sentence",
+  "en": "A 2D heatmap showing trajectory cost across every (departure date, transit time) pair — the standard tool for finding launch windows. (Standard porkchops contour C3 and arrival V∞; Orrery uses a simplified ∆v-in-km/s colour scale.)",
+  "cur": "2D топлотна мапа цене путање за сваки пар (датум поласка, време путовања) — стандардни алат за проналажење прозора за лансирање. (Стандардно се приказују изолиније C3 и V∞ доласка; Orrery користи упрошћену скалу ∆v у km/s.)"
+ },
+ {
+  "rel": "science/porkchop/what-is-a-porkchop.json",
+  "at": "narrative_101.0",
+  "en": "When mission planners want to know if a trip to Mars is feasible, they don't compute one trajectory. They compute MILLIONS — every possible departure date, every possible transit time, in a giant grid — and they paint a heatmap. Cheap trajectories show up as cool blue zones, expensive ones as red. The result, weirdly, looks like a pork chop. The cheap zone is the meat of the chop; the expensive ridge is the bone.",
+  "cur": "Када планери мисија желе да сазнају да ли је путовање на Марс изводљиво, они не израчунавају једну путању. Они израчунавају МИЛИОНЕ њих — сваки могући датум поласка, свако могуће време путовања, у џиновској мрежи — и од тога осликају топлотну мапу. Јефтине путање појављују се као хладне плаве зоне, а скупе као црвене. Резултат, чудно, изгледа као свињски котлет. Јефтина зона је месо котлета, а скупи гребен је кост."
+ },
+ {
+  "rel": "science/porkchop/what-is-a-porkchop.json",
+  "at": "narrative_101.1",
+  "en": "Why bother with a whole heatmap instead of just one optimal answer? Because real missions have constraints. Maybe a particular launch pad is only available in 2026. Maybe you need to land before a dust storm season ends. Maybe a particular rocket is only ready by a certain month. The porkchop lets you see ALL the trade-offs at once — pick the cheap-enough trajectory that fits your real-world calendar.",
+  "cur": "Зашто се замарати читавом топлотном мапом уместо само једним оптималним одговором? Зато што стварне мисије имају ограничења. Можда је одређена лансирна рампа доступна само током 2026. године. Можда морате да слетите пре краја сезоне прашњавих олуја. Можда ће одређена ракета бити спремна тек до извесног месеца. „Свињски котлет“ дијаграм омогућава да сагледате СВЕ компромисе одједном — изаберите довољно јефтину путању која одговара вашем стварном календару."
+ }
+]

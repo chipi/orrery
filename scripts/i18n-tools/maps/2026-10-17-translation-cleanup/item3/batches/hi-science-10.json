@@ -1,0 +1,1022 @@
+[
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "body_paragraphs.2",
+  "en": "The first spacecraft to fly by solar-sail propulsion in interplanetary space was JAXA's IKAROS, launched in May 2010 as a secondary payload on the Akatsuki Venus mission. IKAROS deployed a 196 m² polyimide sail just 7.5 micrometres thick — thinner than a human hair — and demonstrated measurable acceleration and attitude control by liquid-crystal panels embedded in the sail's edges. The Planetary Society's LightSail 2 (2019) became the first spacecraft to raise its orbit using only solar-sail thrust, demonstrating sustained propulsion in low Earth orbit. NASA's NEA Scout CubeSat (launched 2022 on Artemis I) was the first American interplanetary solar sail mission, though contact was not established after deployment. NASA's ACS3 mission (2024) demonstrated a larger composite boom structure for future scaling.",
+  "cur": "अंतरग्रहीय अंतरिक्ष में सौर-पाल प्रणोदन द्वारा उड़ने वाला पहला अंतरिक्ष यान JAXA का IKAROS था, जिसे मई 2010 में Akatsuki शुक्र मिशन पर एक माध्यमिक पेलोड के रूप में लॉन्च किया गया था। IKAROS ने एक 196 m² पॉलीइमाइड पाल को तैनात किया जो केवल 7.5 माइक्रोमीटर मोटा था — मानव बाल से पतला — और पाल के किनारों में एम्बेड किए गए तरल-क्रिस्टल पैनलों द्वारा मापने योग्य त्वरण और दृष्टिकोण नियंत्रण का प्रदर्शन किया। The Planetary Society का LightSail 2 (2019) केवल सौर-पाल थ्रस्ट का उपयोग करके अपनी कक्षा को बढ़ाने वाला पहला अंतरिक्ष यान बन गया, निम्न पृथ्वी कक्षा में निरंतर प्रणोदन का प्रदर्शन किया। NASA का NEA Scout CubeSat (2022 को Artemis I पर लॉन्च किया गया) पहला अमेरिकी अंतरग्रहीय सौर पाल मिशन था, हालांकि तैनाती के बाद संपर्क स्थापित नहीं किया गया। NASA का ACS3 मिशन (2024) ने भविष्य के स्केलिंग के लिए एक बड़ी समग्र बूम संरचना का प्रदर्शन किया।"
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "body_paragraphs.3",
+  "en": "The fundamental limit is distance. Radiation pressure falls as the inverse square of distance from the Sun: at Jupiter (5.2 AU), it is 27 times weaker than at Earth. For trajectories beyond the asteroid belt, a sail needs to be very large or very light — or use a different power source. The natural successor concept is laser propulsion (sometimes called a laser sail or Breakthrough Starshot approach), where a ground- or space-based laser array illuminates the sail at far higher intensity than the Sun provides, enabling interstellar-class velocities. That remains speculative engineering; solar sails are flying hardware today. See also: /science/propulsion/specific-impulse and /essays/new-propulsion for where these ideas lead.",
+  "cur": "मौलिक सीमा दूरी है। विकिरण दबाव सूर्य से दूरी के व्युत्क्रम वर्ग के रूप में गिरता है: बृहस्पति (5.2 AU) पर, यह पृथ्वी की तुलना में 27 गुना कमजोर है। क्षुद्रग्रह बेल्ट से परे के प्रक्षेपवक्र के लिए, एक पाल को बहुत बड़ा या बहुत हल्का होने की आवश्यकता है — या एक अलग शक्ति स्रोत का उपयोग करना चाहिए। प्राकृतिक उत्तराधिकारी अवधारणा लेजर प्रणोदन है (कभी-कभी लेजर पाल या Breakthrough Starshot दृष्टिकोण कहा जाता है), जहाँ एक जमीन- या अंतरिक्ष-आधारित लेजर सरणी पाल को सूर्य द्वारा प्रदान किए जाने वाली तुलना में बहुत अधिक तीव्रता पर रोशन करती है, अंतरतारकीय-वर्ग वेग को सक्षम करते हुए। यह अभी भी सट्टा इंजीनियरिंग रहता है; सौर पाल आज उड़ने वाला हार्डवेयर हैं।"
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "diagram_caption",
+  "en": "Photon momentum transfer: reflected photon imparts 2p to sail; force = 2 × (solar flux / c) × area × cos²θ — independent of propellant, falls as 1/r² from Sun.",
+  "cur": "फोटॉन संवेग स्थानांतरण: परावर्तित फोटॉन पाल को 2p प्रदान करता है; बल = 2 × (सौर प्रवाह / c) × क्षेत्र × cos²θ — प्रणोदक से स्वतंत्र, सूर्य से 1/r² के रूप में गिरता है।"
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "intro_sentence",
+  "en": "How efficient an engine is — how many seconds a kilogram of propellant produces a kilogram of thrust.",
+  "cur": "एक इंजन कितना कुशल है — एक किलोग्राम प्रणोदक कितने सेकंड तक एक किलोग्राम थ्रस्ट प्रदान करता है।"
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "narrative_101.0",
+  "en": "If you've ever cared about miles-per-gallon for a car, specific impulse is the same idea for rockets. It tells you how efficiently the engine converts fuel into push. Higher Isp = better mileage = more ∆v from the same propellant load.",
+  "cur": "यदि आपने कभी कार के लिए माइल-प्रति-गैलन की परवाह की है, तो विशिष्ट आवेग रॉकेटों के लिए वही अवधारणा है। यह बताता है कि इंजन ईंधन को थ्रस्ट में कितने कुशलता से परिवर्तित करता है। अधिक Isp = बेहतर दक्षता = समान प्रणोदक भार से अधिक ∆v।"
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "narrative_101.1",
+  "en": "The unit is weird — it's measured in seconds, which makes no intuitive sense at first. The reason: Isp = thrust ÷ (fuel-burned-per-second × Earth's gravity). The mass and length units cancel, leaving pure seconds — which is why you can compare any two engines with one number. The bigger the number, the more efficient the engine, and you can compare engines across decades and continents using the same number.",
+  "cur": "इकाई विचित्र है — इसे सेकंड में मापा जाता है, जो पहली नज़र में कोई सहज अर्थ नहीं रखता। कारण: Isp = थ्रस्ट ÷ (प्रति-सेकंड-जली-गई-ईंधन × पृथ्वी का गुरुत्वाकर्षण)। द्रव्यमान और लंबाई की इकाइयाँ रद्द हो जाती हैं, शुद्ध सेकंड बचते हैं — इसीलिए आप किसी एक संख्या से किन्हीं दो इंजनों की तुलना कर सकते हैं। संख्या जितनी बड़ी होगी, इंजन उतना अधिक कुशल होगा, और आप एक ही संख्या का उपयोग करके दशकों और महाद्वीपों में इंजनों की तुलना कर सकते हैं।"
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "narrative_101.2",
+  "en": "The range is huge. Solid rockets (the boosters on the Space Shuttle): ~250 seconds. Liquid hydrogen-oxygen (best chemical you can do): ~450 seconds. Hypergolic storables (cheap, reliable, what most spacecraft sip on for course corrections): ~310 seconds. Ion engines (super efficient but very low thrust): 3,000-9,000 seconds. The practical rule: for getting off planets, you need high thrust; for cruising in deep space, you want high Isp. Real missions stage their choices — chemical to escape Earth, ion to cruise.",
+  "cur": "श्रेणी विशाल है। ठोस रॉकेट (Space Shuttle के बूस्टर): ~250 सेकंड। तरल हाइड्रोजन-ऑक्सीजन (सर्वोत्तम रासायनिक): ~450 सेकंड। हाइपरगोलिक स्टोरेबल्स (सस्ता, विश्वसनीय, अधिकांश अंतरिक्ष यान पाठ्यक्रम सुधार के लिए उपयोग करते हैं): ~310 सेकंड। आयन इंजन (अत्यंत कुशल लेकिन बहुत कम थ्रस्ट): 3,000-9,000 सेकंड। व्यावहारिक नियम: ग्रहों से निकलने के लिए, आपको उच्च थ्रस्ट की आवश्यकता है; गहरे अंतरिक्ष में क्रूज़ करने के लिए, आप उच्च Isp चाहते हैं। वास्तविक मिशन अपनी पसंद को चरणबद्ध करते हैं — पृथ्वी से बचने के लिए रासायनिक, क्रूज़ के लिए आयन।"
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "body_paragraphs.0",
+  "en": "Isp is the fuel-economy number for rockets. Higher is better. Definition: divide thrust by propellant mass-flow rate, divide by `g₀` (standard gravity), get a number in seconds. Burn one kilogram of propellant per second, get `Isp × g₀` newtons of thrust.",
+  "cur": "Isp रॉकेटों के लिए ईंधन-दक्षता संख्या है। अधिक बेहतर है। परिभाषा: थ्रस्ट को प्रणोदक द्रव्यमान-प्रवाह दर से विभाजित करें, `g₀` (मानक गुरुत्वाकर्षण) से विभाजित करें, सेकंड में एक संख्या प्राप्त करें। प्रति सेकंड एक किलोग्राम प्रणोदक जलाएं, `Isp × g₀` न्यूटन का थ्रस्ट प्राप्त करें।"
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "body_paragraphs.1",
+  "en": "The number ranges over four orders of magnitude. Solid rockets: 250s. Hydrogen/oxygen liquids (Space Shuttle Main Engine): 452s. Hypergolic storables (Apollo Service Module): 314s. Ion drives (Dawn, BepiColombo): 3000-9000s. Nuclear thermal (NERVA, never flown): 800-1000s in theory.",
+  "cur": "संख्या चार परिमाण के क्रम में विस्तृत है। ठोस रॉकेट: 250s। हाइड्रोजन/ऑक्सीजन तरल (Space Shuttle Main Engine): 452s। हाइपरगोलिक स्टोरेबल्स (Apollo Service Module): 314s। आयन ड्राइव (Dawn, BepiColombo): 3000-9000s। परमाणु थर्मल (NERVA, कभी उड़ान नहीं भरी): सिद्धांत में 800-1000s।"
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "body_paragraphs.2",
+  "en": "Trade-offs everywhere. High Isp usually means low thrust — ion engines push ten newtons or so, useful for years-long deep-space cruises but useless for getting off Earth. Chemical engines deliver mega-newtons of thrust but burn through propellant in minutes. Real missions stage the choice: chemical for ascent, ion for cruise.",
+  "cur": "हर जगह व्यापार-बंद। उच्च Isp आमतौर पर कम थ्रस्ट का अर्थ है — आयन इंजन लगभग दस न्यूटन की शक्ति देते हैं, वर्षों तक चलने वाले गहरे अंतरिक्ष क्रूज़ के लिए उपयोगी लेकिन पृथ्वी से निकलने के लिए बेकार। रासायनिक इंजन मेगा-न्यूटन का थ्रस्ट देते हैं लेकिन मिनटों में प्रणोदक को जला देते हैं। वास्तविक मिशन विकल्प को चरणबद्ध करते हैं: चढ़ाई के लिए रासायनिक, क्रूज़ के लिए आयन।"
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "title",
+  "en": "Staged combustion — closing the cycle",
+  "cur": "स्तरीय दहन — चक्र को बंद करना"
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "intro_sentence",
+  "en": "Instead of dumping the turbopump's drive gas overboard, feed it into the main chamber and burn it too. Nothing is wasted, so the engine runs hotter, at higher pressure, and with more performance — at the cost of fearsome plumbing.",
+  "cur": "टर्बोपंप की ड्राइव गैस को बोर्ड से बाहर न फेंकें, इसे मुख्य कक्ष में डालें और इसे भी जलाएँ। कुछ भी बर्बाद नहीं होता, इसलिए इंजन गर्म, उच्च दबाव पर चलता है और अधिक प्रदर्शन देता है — इंजीनियरिंग में सबसे कठिन प्लंबिंग की कीमत पर।"
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "body_paragraphs.0",
+  "en": "Staged combustion takes the gas-generator idea and closes the loop. A preburner still burns propellant to drive the turbopumps, but its exhaust — thick with unburned fuel or oxidiser — is not dumped. It is routed into the main combustion chamber and burned a second time, so every gram of propellant ends up producing thrust. Closing the cycle buys two things at once: higher specific impulse, because nothing is thrown away, and much higher chamber pressure, because the pumps can be driven harder. Higher chamber pressure means a smaller, more powerful engine for the same thrust. The price is brutal operating conditions — the turbine now sits in the full propellant flow at extreme temperature and pressure.",
+  "cur": "स्तरीय दहन गैस-जनरेटर विचार लेता है और लूप को बंद करता है। एक प्रीबर्नर अभी भी टर्बोपंप चलाने के लिए प्रणोदक को जलाता है, लेकिन इसका निकास — जलने वाले ईंधन या ऑक्सीडाइजर से भरपूर — को नहीं फेंका जाता। इसे मुख्य दहन कक्ष में भेजा जाता है और दूसरी बार जलाया जाता है, इसलिए प्रणोदक का हर ग्राम थ्रस्ट पैदा करता है। चक्र को बंद करना एक साथ दो चीजें प्राप्त करता है: उच्च विशिष्ट आवेग, क्योंकि कुछ भी नहीं फेंका जाता है, और बहुत अधिक कक्ष दबाव, क्योंकि पंप को अधिक कठोरता से चलाया जा सकता है। उच्च कक्ष दबाव का अर्थ है समान थ्रस्ट के लिए एक छोटा, अधिक शक्तिशाली इंजन। मूल्य क्रूर परिचालन स्थितियां हैं — टर्बाइन अब पूर्ण प्रणोदक प्रवाह में चरम तापमान और दबाव पर बैठता है।"
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "body_paragraphs.1",
+  "en": "There are two ways to run the preburner, and the choice split the spacefaring world for decades. American engines like the RS-25 (the Space Shuttle main engine, now flying on SLS) went fuel-rich: excess hydrogen keeps the preburner gas relatively cool and easy on the metallurgy. Soviet engineers took the harder road of oxidiser-rich staged combustion — the RD-170 family, RD-180 and RD-253 drive their turbines on hot, oxygen-rich gas that corrodes ordinary alloys on contact. Solving that was a metallurgical triumph that Western engineers had long believed impossible. China's YF-100 carries the oxidiser-rich tradition forward today, while Japan's LE-7A is a modern fuel-rich staged-combustion engine in the RS-25 mould.",
+  "cur": "प्रीबर्नर चलाने के दो तरीके हैं, और यह विकल्प दशकों तक अंतरिक्ष-यात्रा करने वाली दुनिया को विभाजित करता है। RS-25 (Space Shuttle मुख्य इंजन, अब SLS पर उड़ान भर रहा है) जैसे अमेरिकी इंजन ईंधन-समृद्ध थे: अतिरिक्त हाइड्रोजन प्रीबर्नर गैस को अपेक्षाकृत ठंडा और धातु विज्ञान के लिए आसान रखता है। सोवियत इंजीनियरों ने ऑक्सीडाइजर-समृद्ध स्तरीय दहन के कठिन रास्ते पर चल गए — RD-170 पारिवारिक, RD-180 और RD-253 गर्म, ऑक्सीजन-समृद्ध गैस पर अपनी टर्बाइन चलाते हैं जो संपर्क पर सामान्य मिश्र धातु को नष्ट करता है। इसे हल करना एक धातु विज्ञान की विजय थी जिसे पश्चिमी इंजीनियरों ने लंबे समय तक असंभव माना था। चीन का YF-100 आज ऑक्सीडाइजर-समृद्ध परंपरा को आगे बढ़ाता है, जबकि जापान का LE-7A RS-25 मोल्ड में एक आधुनिक ईंधन-समृद्ध स्तरीय-दहन इंजन है।"
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "body_paragraphs.2",
+  "en": "The ultimate version is full-flow staged combustion, which uses two preburners — one oxidiser-rich, one fuel-rich — so that both propellants are fully gasified before they meet in the main chamber. Both turbopumps get their own drive gas, temperatures stay manageable, and the seals no longer have to separate a fuel-driven turbine from liquid oxygen. It had been designed on paper for half a century, but SpaceX's Raptor, on Starship, is the first full-flow staged-combustion engine ever to fly. Each rung up this ladder buys perhaps twenty to forty seconds of specific impulse over a gas-generator engine — and adds a corresponding step in complexity, mass, and development cost.",
+  "cur": "अंतिम संस्करण पूर्ण-प्रवाह स्तरीय दहन है, जो दो प्रीबर्नर का उपयोग करता है — एक ऑक्सीडाइजर-समृद्ध, एक ईंधन-समृद्ध — ताकि दोनों प्रणोदक पूरी तरह से गैसीकृत हों इससे पहले कि वे मुख्य कक्ष में मिलें। दोनों टर्बोपंप को अपनी स्वयं की ड्राइव गैस मिलती है, तापमान प्रबंधनीय रहता है, और सील को अब एक ईंधन-संचालित टर्बाइन को तरल ऑक्सीजन से अलग नहीं करना पड़ता है। इसे आधी सदी के लिए कागज पर डिजाइन किया गया था, लेकिन SpaceX का Raptor, Starship पर, उड़ान भरने वाला पहला पूर्ण-प्रवाह स्तरीय-दहन इंजन है। इस सीढ़ी में हर कदम गैस-जनरेटर इंजन पर शायद बीस से चालीस सेकंड विशिष्ट आवेग खरीदता है — और जटिलता, द्रव्यमान और विकास लागत में एक संबंधित कदम जोड़ता है।"
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "diagram_caption",
+  "en": "Closed cycle: the preburner exhaust that drove the turbopump is fed into the main chamber and burned, not dumped. Fuel-rich (RS-25), oxidiser-rich (RD-180), or full-flow with both (Raptor).",
+  "cur": "बंद चक्र: प्रीबर्नर निकास जिसने टर्बोपंप को चलाया था वह मुख्य कक्ष में खिलाया जाता है और जलाया जाता है, नहीं फेंका जाता है। ईंधन-समृद्ध (RS-25), ऑक्सीडाइजर-समृद्ध (RD-180), या दोनों के साथ पूर्ण-प्रवाह (Raptor)।"
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "title",
+  "en": "Throttling and gimbaling — how rockets steer and how they hover",
+  "cur": "थ्रॉटलिंग और जिम्बलिंग — रॉकेट कैसे संचालित होते और कैसे होवर करते हैं"
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "intro_sentence",
+  "en": "Once an engine is lit, two control inputs remain: how hard it pushes (throttle) and where it points (gimbal). Together they steer ascent, manage crew g-loads, and allow propulsive landings.",
+  "cur": "एक बार इंजन प्रज्वलित होने पर, दो नियंत्रण इनपुट बचते हैं: कितना ज़ोर से धकेलता (थ्रॉटल) और कहाँ इंगित करता (जिम्बल)। साथ मिलकर वे आरोहण संचालित करते, क्रू g-भार प्रबंधित करते, और प्रणोदक लैंडिंग की अनुमति देते।"
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "body_paragraphs.0",
+  "en": "Throttling sounds trivial — turn a valve — but is one of the hardest things a rocket engine does. Combustion chambers are tuned for a specific operating point: chamber pressure, mass-flow ratio, injector velocity. Drop the flow and combustion becomes unstable; rough burning starts to chew the engine apart within seconds. Most engines have a narrow band: Merlin 1D throttles 40-100%, Raptor 2 throttles 40-100%, RS-25 throttles 67-109% but is qualified only for full power throughout an ascent. The F-1 had no throttling at all — its only control was 'on'. Solid boosters cannot throttle at any throughput; the burn profile is locked when the grain is cast.",
+  "cur": "थ्रॉटलिंग तुच्छ लगती — एक वाल्व मोड़ना — पर रॉकेट इंजन जो कठिनतम काम करता उनमें से एक। दहन कक्ष विशिष्ट कार्य बिंदु पर ट्यून हैं: चैम्बर दबाव, द्रव्यमान-प्रवाह अनुपात, इंजेक्टर वेग। प्रवाह गिराओ और दहन अस्थिर हो जाता; खुरदुरा दहन सेकंडों में इंजन को चबाने लगता। अधिकांश इंजनों का संकीर्ण बैंड: Merlin 1D 40-100% थ्रॉटल, Raptor 2 40-100%, RS-25 67-109% पर पूरे आरोहण में केवल फुल पावर के लिए योग्य। F-1 में कोई थ्रॉटलिंग नहीं थी — उसका एकमात्र नियंत्रण 'चालू' था। ठोस बूस्टर किसी भी प्रवाह पर थ्रॉटल नहीं कर सकते; जब ग्रेन ढाला जाता है तब बर्न प्रोफाइल बंद हो जाता।"
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "body_paragraphs.1",
+  "en": "Deep throttling (below ~40%) is a different class of problem. Soft landings need engines that can hold the vehicle just above its own weight — TWR ≈ 1 — for the final hover-and-set-down. Apollo Lunar Module Descent Engine throttled 10-65%, a record for its era, by using a variable-area pintle injector that physically moved to maintain injector velocity. The same pintle-injector descent is in Merlin and (with a different mechanism) Raptor. The reason Mars rovers cannot land directly on engines (Curiosity / Perseverance use the Skycrane) is that no engine in the MR-80 class has deep enough throttle for direct touchdown of a one-tonne rover, and lighter throttleable engines lack the thrust. The latest Chinese Tianwen-1 / Zhurong landing used a 7500 N variable-thrust engine that did hover-then-set; SpaceX Starship's landing depends on Raptor's deep-throttle qualification.",
+  "cur": "गहरे थ्रॉटलिंग (लगभग 40% से कम) समस्या की एक अलग श्रेणी है। मृदु लैंडिंग के लिए ऐसे इंजनों की आवश्यकता होती है जो वाहन को उसके अपने वजन के ठीक ऊपर रख सकें — TWR ≈ 1 — अंतिम होवर-और-सेट-डाउन के लिए। Apollo Lunar Module Descent Engine को 10-65% के बीच थ्रॉटल किया जा सकता था, जो अपने समय के लिए एक रिकॉर्ड था, इसने एक चर-क्षेत्र पिंटल इंजेक्टर का उपयोग किया जो इंजेक्टर वेग को बनाए रखने के लिए भौतिक रूप से चलता था। वही पिंटल-इंजेक्टर डिसेंट Merlin और (एक अलग तंत्र के साथ) Raptor में है। मंगल रोवर सीधे इंजनों पर लैंड नहीं कर सकते (Curiosity / Perseverance Skycrane का उपयोग करते हैं) इसका कारण यह है कि MR-80 वर्ग का कोई भी इंजन एक टन रोवर की सीधी लैंडिंग के लिए पर्याप्त गहरे थ्रॉटलिंग को नहीं रखता है, और हल्के थ्रॉटलेबल इंजनों में जोर की कमी है। सबसे हाल की चीनी Tianwen-1 / Zhurong लैंडिंग में 7500 N चर-थ्रस्ट इंजन का उपयोग किया गया था जो होवर-फिर-सेट करता था; SpaceX Starship की लैंडिंग Raptor की गहरे थ्रॉटलिंग योग्यता पर निर्भर करती है।"
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "body_paragraphs.2",
+  "en": "Gimbaling — pivoting the engine bell to redirect thrust — is how almost every modern rocket steers. Two hydraulic or electric actuators tilt the engine on a gimbal block; the thrust vector follows. Falcon 9 first stage: ±5° on each Merlin, with the centre engine doing most of the steering work and the outer eight contributing roll authority through differential gimbal. Starship Super Heavy: the inner 13 Raptors gimbal, the outer 20 are fixed. SLS: each RS-25 gimbals ±10.5°. Solid boosters cannot gimbal in flight (the bell is bolted on) — they use a *flex bearing* that lets the entire nozzle pivot relative to the case, which the Shuttle SRBs and SLS boosters use to provide steering in the booster phase. SLS lost most of its trans-stage steering when Shuttle SRBs were inherited; the flex-bearing nozzles handle it.",
+  "cur": "जिम्बलिंग — इंजन बेल को घुमाकर थ्रस्ट को पुनर्निर्देशित करना — लगभग हर आधुनिक रॉकेट इस तरह संचालित होता। दो हाइड्रोलिक या इलेक्ट्रिक एक्चुएटर एक जिम्बल-ब्लॉक पर इंजन को झुकाते हैं; थ्रस्ट वेक्टर अनुसरण करता है। Falcon 9 पहला चरण: हर Merlin पर ±5°, केंद्रीय इंजन अधिकतर संचालन कार्य करता और बाहरी आठ अंतर जिम्बलिंग के माध्यम से रोल अधिकार में योगदान देते। Starship Super Heavy: भीतरी 13 Raptors जिम्बल करते, बाहरी 20 स्थिर हैं। SLS: हर RS-25 ±10.5° जिम्बल करता। ठोस बूस्टर उड़ान में जिम्बल नहीं कर सकते (बेल बोल्ट से जुड़ा है) — वे *फ्लेक्स बेयरिंग* उपयोग करते जो पूरी नोज़ल को केस के सापेक्ष घूमने देता है, जिसका Shuttle SRB और SLS बूस्टर बूस्टर चरण संचालन के लिए उपयोग करते। SLS ने अपनी अधिकांश ट्रांस-स्टेज स्टीयरिंग खो दी जब Shuttle SRB विरासत में मिले; फ्लेक्स-बेयरिंग नोज़ल इसे संभालते।"
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "body_paragraphs.3",
+  "en": "A handful of vehicles steer differently. Soyuz uses fixed main engines with separate gimballed vernier engines around the booster cores. The Saturn V S-IC gimballed the four outer F-1s; the centre F-1 was fixed. Cold-gas thrusters at the booster top or side handle attitude in coast phases (Falcon 9 between booster shutdown and reentry, Starship during high-altitude flips). And many small spacecraft use no gimbal at all: a single fixed engine plus reaction wheels and small RCS thrusters. The choice is mass-trade: gimbal hardware costs 50-200 kg per engine; for a launcher with ten engines and a 200-tonne payload the cost is worth paying, for a 100-kg smallsat with a single kick motor it usually is not.",
+  "cur": "मुट्ठी भर वाहन अलग संचालित होते। Soyuz स्थिर मुख्य इंजन उपयोग करता बूस्टर कोर के चारों ओर अलग जिम्बल योग्य वर्नियर इंजनों के साथ। Saturn V S-IC ने चार बाहरी F-1 जिम्बल किए; केंद्रीय F-1 स्थिर था। बूस्टर शीर्ष या किनारे पर कोल्ड-गैस थ्रस्टर कोस्ट चरणों में एटीट्यूड संभालते (Falcon 9 बूस्टर शटडाउन और रीएंट्री के बीच, Starship उच्च-ऊँचाई फ्लिप के दौरान)। और कई छोटे अंतरिक्षयान कोई जिम्बल नहीं उपयोग करते: एक अकेला स्थिर इंजन + प्रतिक्रिया चक्र और छोटे RCS थ्रस्टर। चुनाव द्रव्यमान-ट्रेड है: जिम्बल हार्डवेयर प्रति इंजन 50-200 kg खर्च होता; दस इंजन और 200 टन पेलोड वाले लॉन्चर के लिए कीमत चुकाने लायक है, 100 kg स्मॉलसैट के एकल किक मोटर के लिए आमतौर पर नहीं।"
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "diagram_caption",
+  "en": "Throttle: changes thrust magnitude. Narrow on most engines (40-100%); deep on landing engines (10-65% LM, qualified deep on Merlin / Raptor for landings). Gimbal: tilts the bell to vector thrust direction. ±5-10° typical. Liquid engines gimbal directly; solid boosters use flex-bearing nozzles.",
+  "cur": "थ्रॉटल: थ्रस्ट परिमाण बदलता है। अधिकांश इंजनों पर संकीर्ण (40-100%); लैंडिंग इंजनों पर गहरा (LM 10-65%, लैंडिंग के लिए Merlin / Raptor पर गहरा योग्य)। जिम्बल: थ्रस्ट दिशा को वेक्टर करने हेतु बेल झुकाता है। ±5-10° सामान्य। द्रव इंजन सीधे जिम्बल करते; ठोस बूस्टर फ्लेक्स-बेयरिंग नोज़ल उपयोग करते।"
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "title",
+  "en": "Thrust and TWR — how much push per kilogram you actually need",
+  "cur": "थ्रस्ट और TWR — हर किलोग्राम पर वास्तव में कितने थ्रस्ट की ज़रूरत है"
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "intro_sentence",
+  "en": "A rocket has to push harder than it weighs, or it sits on the pad. The ratio is called TWR. Every operational launcher in history has lifted off in a narrow band around 1.2 to 1.5.",
+  "cur": "रॉकेट को अपने वज़न से ज़ोर से धकेलना होगा, अन्यथा वह पैड पर बैठा रहता है। अनुपात को TWR कहते हैं। इतिहास का हर परिचालन लॉन्चर 1.2 से 1.5 के संकीर्ण बैंड में उठा है।"
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "body_paragraphs.0",
+  "en": "Thrust is force. The unit is newtons (or kilonewtons / meganewtons for anything that flies). A Merlin 1D produces 845 kN at sea level. A single F-1 produced 6770 kN. SLS boosters each produce 16,000 kN. Thrust is not specific impulse: thrust says how *hard* the engine pushes; Isp says how *efficiently* it does so. A high-thrust low-Isp engine (a solid booster) and a low-thrust high-Isp engine (an ion drive) can both be useful — for different jobs in different parts of a mission. The thrust equation is simple: thrust equals the propellant mass flow rate multiplied by exhaust velocity, plus a small pressure term where the nozzle exit pressure differs from ambient. That is why staged combustion engines with high chamber pressure produce more thrust per kilogram of engine mass — they push more propellant through the same throat per second at higher velocity.",
+  "cur": "थ्रस्ट बल है। इसकी इकाई न्यूटन है (या उड़ने वाली किसी भी चीज़ के लिए किलोन्यूटन / मेगान्यूटन)। Merlin 1D समुद्र तल पर 845 kN पैदा करता है। एक F-1 ने 6770 kN पैदा किया। SLS के हर बूस्टर से 16,000 kN मिलता है। थ्रस्ट विशिष्ट आवेग नहीं है: थ्रस्ट बताता है कि इंजन कितने *ज़ोर* से धकेलता है; Isp बताता है कि वह यह कितनी *कुशलता* से करता है। उच्च-थ्रस्ट कम-Isp इंजन (ठोस बूस्टर) और कम-थ्रस्ट उच्च-Isp इंजन (आयन ड्राइव) दोनों उपयोगी हो सकते हैं — मिशन के अलग-अलग हिस्सों में अलग-अलग कामों के लिए। थ्रस्ट का समीकरण सरल है: थ्रस्ट = प्रणोदक द्रव्यमान प्रवाह दर × निष्कासन वेग, साथ में एक छोटा दबाव पद जहाँ नोज़ल निकास दबाव परिवेश से भिन्न होता है। इसीलिए उच्च चैम्बर दबाव वाले स्टेज्ड-कंबशन इंजन प्रति किलोग्राम इंजन द्रव्यमान अधिक थ्रस्ट देते हैं — वे उसी गले से प्रति सेकंड अधिक प्रणोदक को अधिक वेग पर धकेलते हैं।"
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "body_paragraphs.1",
+  "en": "Thrust-to-weight ratio (TWR) is thrust divided by the vehicle's *current* weight on Earth. At lift-off it must be greater than 1, or the rocket cannot leave the pad. In practice you do not want TWR right at 1.0 because every second spent fighting gravity without altitude gain is propellant burned with no upward velocity gained — gravity losses. The accountants' sweet spot is TWR 1.2-1.5 at lift-off. Saturn V lifted with 1.18, which was felt to be uncomfortably low — the vehicle rose so slowly the launch tower nearly snagged the engine bell. Falcon 9, SLS, and Starship all sit in the 1.3-1.5 band by design. The Soviet N1 was 1.07, marginal even when the engines worked; all four flights failed.",
+  "cur": "थ्रस्ट-टू-वज़न अनुपात (TWR) पृथ्वी पर वाहन के *वर्तमान* वज़न से थ्रस्ट को विभाजित किया जाता है। लिफ्ट-ऑफ पर इसे 1 से अधिक होना चाहिए, अन्यथा रॉकेट पैड नहीं छोड़ता। व्यवहार में आप TWR को बिल्कुल 1.0 पर नहीं चाहते — गुरुत्व से लड़ने का हर सेकंड बिना ऊँचाई लाभ के, बिना ऊर्ध्व वेग लाभ के जलाया गया प्रोपेलेंट है (गुरुत्व हानि)। एकाउंटेंट का स्वीट-स्पॉट: लिफ्ट-ऑफ पर TWR 1.2–1.5। Saturn V ने 1.18 पर लिफ्ट किया, जिसे असुविधाजनक रूप से कम समझा गया — वाहन इतना धीरे उठा कि लॉन्च टावर लगभग इंजन बेल को छू गया। Falcon 9, SLS और Starship डिज़ाइन से 1.3–1.5 बैंड में हैं। सोवियत N1 1.07 पर था, इंजन काम करने पर भी मार्जिनल; चारों उड़ानें विफल।"
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "body_paragraphs.2",
+  "en": "TWR also matters mid-flight. As propellant burns, mass falls and TWR climbs — by main-engine cut-off a first stage's TWR can be 3-4. Saturn V's S-IC inboard F-1 was shut down early to keep crew accelerations below 4 g. Modern reusable boosters (Falcon 9, Starship) shut down some engines and throttle the rest for the same reason — and to leave enough propellant for the boost-back and landing burns. Upper stages run at lower TWR (often 0.7 at ignition) because they are firing horizontally in vacuum where gravity losses do not eat them and high Isp matters more than getting to peak thrust quickly.",
+  "cur": "TWR उड़ान में भी मायने रखता है। प्रोपेलेंट जलते ही द्रव्यमान गिरता है और TWR चढ़ता है — मुख्य-इंजन कट-ऑफ पर पहले चरण का TWR 3–4 हो सकता। Saturn V S-IC के अंदरूनी F-1 को क्रू त्वरण को 4 g से नीचे रखने के लिए जल्दी बंद किया जाता था। आधुनिक पुन: उपयोग्य बूस्टर (Falcon 9, Starship) उसी कारण से कुछ इंजन बंद करते और बाकी को थ्रॉटल करते — और boost-back + लैंडिंग बर्न के लिए पर्याप्त प्रोपेलेंट छोड़ने के लिए। ऊपरी चरण कम TWR (अक्सर ज्ञलन पर 0.7) पर चलते क्योंकि वे निर्वात में क्षैतिज दिशा में फायर करते जहाँ गुरुत्व हानियाँ उन्हें नहीं खातीं और चरम थ्रस्ट तक जल्दी पहुँचने से ज़्यादा उच्च Isp महत्वपूर्ण होता।"
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "body_paragraphs.3",
+  "en": "How much push per kilogram do you actually need for lift-off? With TWR 1.3 and Earth gravity 9.81 m/s², the engines need to deliver about 12.8 N/kg of vehicle mass. Stack that up for a 3000-tonne vehicle (Saturn V wet mass) and you need 38 MN of thrust — which is exactly why Saturn V used five F-1 engines totalling 33.9 MN at sea level, rising past 40 MN as ambient pressure dropped. For Starship (5000 tonnes wet) you need ~64 MN, which is why the Super Heavy booster carries 33 Raptors. The number of engines a stack carries is not a styling choice — it falls out directly from the TWR-vs-launch-mass arithmetic and the thrust of the largest engine the programme could develop.",
+  "cur": "लिफ्ट-ऑफ के लिए वास्तव में कितने थ्रस्ट प्रति किलो चाहिए? TWR 1.3 और पृथ्वी गुरुत्व 9.81 m/s² के साथ, इंजनों को लगभग 12.8 N/kg वाहन द्रव्यमान देना होगा। 3000 टन वाहन (Saturn V गीला द्रव्यमान) के लिए 38 MN चाहिए — ठीक यही कारण है कि Saturn V ने पाँच F-1 का उपयोग किया जो समुद्र तल पर कुल 33.9 MN देते थे, परिवेश दबाव घटने के साथ 40 MN के पार बढ़ते। Starship (5000 टन गीला) के लिए ~64 MN चाहिए, इसलिए Super Heavy 33 Raptors ले जाता है। एक स्टैक के इंजनों की संख्या स्टाइल विकल्प नहीं है — यह सीधे TWR-बनाम-लॉन्च-द्रव्यमान अंकगणित और कार्यक्रम विकसित कर सकने वाले सबसे बड़े इंजन के थ्रस्ट से निकलती है।"
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "diagram_caption",
+  "en": "TWR = thrust / (mass × g). Below 1: stays on pad. 1.0-1.2: marginal, big gravity losses. 1.3-1.5: operational sweet spot. Above 1.5: crew acceleration and aerodynamic load become the limit. Engine count = required thrust / single-engine thrust.",
+  "cur": "TWR = थ्रस्ट / (द्रव्यमान × g)। 1 से कम: पैड पर रहता। 1.0–1.2: मार्जिनल, बड़ी गुरुत्व हानियाँ। 1.3–1.5: परिचालन स्वीट-स्पॉट। 1.5 से ऊपर: क्रू त्वरण + वायुगतिकीय भार सीमा बन जाते। इंजन संख्या = आवश्यक थ्रस्ट / एकल-इंजन थ्रस्ट।"
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "title",
+  "en": "Tsiolkovsky Rocket Equation",
+  "cur": "Tsiolkovsky रॉकेट समीकरण"
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "intro_sentence",
+  "en": "How much velocity change you can buy from a given engine and a given propellant load — the equation that makes spaceflight a logarithmic problem.",
+  "cur": "दिए गए इंजन और प्रोपेलेंट लोड से आप कितना वेग परिवर्तन प्राप्त कर सकते हैं — वह समीकरण जो अंतरिक्ष उड़ान को लॉगरिदमिक समस्या बनाती है।"
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "narrative_101.0",
+  "en": "Konstantin Tsiolkovsky was a deaf Russian schoolteacher who thought about spaceflight in his spare time, decades before anyone could actually build a rocket. In 1903 he wrote down an equation that nobody could escape, and we still haven't. It says: the ∆v you can squeeze out of a rocket depends on two things — how good your engine is, and how much of your rocket is fuel. And the relationship is LOGARITHMIC.",
+  "cur": "कॉन्स्टेंटिन त्सिओल्कोव्स्की एक बहरे रूसी स्कूलशिक्षक थे जो अपने खाली समय में अंतरिक्ष उड़ान के बारे में सोचते थे, किसी के भी वास्तव में रॉकेट बनाने से दशकों पहले। 1903 में उन्होंने एक समीकरण लिखा जिससे कोई नहीं बच सकता, और हम अभी भी नहीं बच सके हैं। यह कहता है: रॉकेट से जो ∆v आप निकाल सकते हैं वह दो चीजों पर निर्भर करता है — आपका इंजन कितना अच्छा है, और आपका रॉकेट कितना ईंधन है। और संबंध लॉगरिदमिक है।"
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "narrative_101.1",
+  "en": "The logarithm is the trap. If your rocket is half fuel, you get a certain ∆v. To double that ∆v, you don't make your rocket two-thirds fuel — you have to make it about 75% fuel. To triple it, closer to 87–88% fuel. The numbers run away from you exponentially. This is why a Saturn V is a 110-metre tower that's almost entirely propellant — the spacecraft is a tiny capsule on top.",
+  "cur": "लॉगरिदम जाल है। अगर आपका रॉकेट आधा ईंधन है, तो आपको एक निश्चित ∆v मिलता है। उस ∆v को दोगुना करने के लिए, आप अपने रॉकेट को दो-तिहाई ईंधन नहीं बनाते — आपको इसे लगभग 75% ईंधन बनाना होगा। इसे तीन गुना करने के लिए, लगभग 87–88% ईंधन। संख्याएं आपसे घातांकी रूप से दूर भाग जाती हैं। यह है कि सैटर्न V एक 110-मीटर का टावर है जो लगभग पूरी तरह से प्रोपेलेंट है — अंतरिक्ष यान शीर्ष पर एक छोटी कैप्सूल है।"
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "narrative_101.2",
+  "en": "Two ways out. One: better engines (higher specific impulse) — that bumps the multiplier up so you get more ∆v from the same mass ratio. Two: staging — drop empty tanks as they empty so you're not lugging dead weight. Real rockets do both. Even then, single-shot missions cap out around 10-15 km/s of ∆v. Beyond that the equation says you need to refuel in orbit, or use exotic engines, or get help from a planet.",
+  "cur": "दो तरीके बाहर निकलने के। एक: बेहतर इंजन (उच्च विशिष्ट आवेग) — यह गुणक को बढ़ाता है इसलिए आपको समान द्रव्यमान अनुपात से अधिक ∆v मिलता है। दो: स्टेजिंग — खाली टैंकों को गिरा दें जैसे-जैसे वे खाली हो जाएं ताकि आप मृत भार को घसीट न रहे हों। असली रॉकेट दोनों करते हैं। तब भी, एक-शॉट मिशन लगभग 10-15 किमी/सेकंड ∆v तक पहुंचते हैं। इसके बाद समीकरण कहता है कि आपको कक्षा में ईंधन भरना होगा, या विदेशी इंजन का उपयोग करना होगा, या किसी ग्रह से सहायता लेनी होगी।"
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "body_paragraphs.0",
+  "en": "Konstantin Tsiolkovsky derived the rocket equation in 1903, decades before anyone built a rocket worth flying. The result has the inevitability of physics: ∆v depends on engine `Isp` and the ratio of starting mass to final mass — and it's logarithmic in that ratio.",
+  "cur": "कॉन्स्टेंटिन त्सिओल्कोव्स्की ने 1903 में रॉकेट समीकरण प्राप्त किया, दशकों पहले किसी ने भी एक उड़ने योग्य रॉकेट बनाया। परिणाम भौतिकी की अनिवार्यता है: ∆v इंजन `Isp` और शुरुआती द्रव्यमान से अंतिम द्रव्यमान के अनुपात पर निर्भर करता है — और यह उस अनुपात में लॉगरिदमिक है।"
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "body_paragraphs.1",
+  "en": "The log is the cruel part. Doubling propellant doesn't double ∆v; it adds a constant chunk. Want to fly twice as far? You need an exponentially larger rocket. This is the tyranny of the rocket equation: chemical engines (`Isp` ~300-450s) hit a wall around 10-15 km/s of ∆v before the mass ratio becomes absurd. To go further you need higher `Isp` (ion engines, ~3000s) or staging (drop tanks as they empty), or both.",
+  "cur": "लॉग क्रूर भाग है। प्रोपेलेंट को दोगुना करने से ∆v दोगुना नहीं होता; यह एक स्थिर हिस्सा जोड़ता है। दो गुना दूर उड़ना चाहते हैं? आपको एक घातांकी रूप से बड़े रॉकेट की आवश्यकता है। यह रॉकेट समीकरण का अत्याचार है: रासायनिक इंजन (`Isp` ~300-450s) लगभग 10-15 किमी/सेकंड ∆v पर एक दीवार से टकराते हैं इससे पहले कि द्रव्यमान अनुपात हास्यास्पद हो जाए। आगे जाने के लिए आपको उच्च `Isp` (आयन इंजन, ~3000s) या स्टेजिंग (जैसे-जैसे टैंक खाली हों उन्हें गिरा दें), या दोनों की आवश्यकता है।"
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "body_paragraphs.2",
+  "en": "Saturn V: 7,800 tonnes wet, 600 tonnes dry. Mass ratio 13. Isp ~330s. ∆v ≈ 8.3 km/s — barely enough to reach trans-lunar injection. Falcon 9 reuse hits a different wall: every kilogram of recoverable hardware costs you proportional payload.",
+  "cur": "सैटर्न V: 7,800 टन गीला, 600 टन सूखा। द्रव्यमान अनुपात 13। Isp ~330s। ∆v ≈ 8.3 किमी/सेकंड — ट्रांस-चंद्र इंजेक्शन तक पहुंचने के लिए मुश्किल से पर्याप्त। फाल्कन 9 पुनः उपयोग एक अलग दीवार से टकराता है: पुनः प्राप्त करने योग्य हार्डवेयर का हर किलोग्राम आपके पेलोड को आनुपातिक रूप से खर्च करता है।"
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "formula_caption",
+  "en": "∆v from specific impulse, gravitational acceleration g₀, and mass ratio m₀/m_f.",
+  "cur": "विशिष्ट आवेग, गुरुत्वाकर्षण त्वरण g₀, और द्रव्यमान अनुपात m₀/m_f से ∆v।"
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "diagram_caption",
+  "en": "Curve of ∆v vs mass ratio: logarithmic. Doubling propellant adds only a constant ∆v chunk.",
+  "cur": "∆v बनाम द्रव्यमान अनुपात का वक्र: लॉगरिदमिक। प्रोपेलेंट को दोगुना करने से केवल एक स्थिर ∆v हिस्सा जोड़ता है।"
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "title",
+  "en": "V∞ — Hyperbolic Excess Velocity",
+  "cur": "V∞ — हाइपरबोलिक एक्सेस वेलोसिटी"
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "intro_sentence",
+  "en": "The speed you have left over once you've climbed out of a planet's gravity well — what defines a flyby's arrival energy.",
+  "cur": "एक बार जब आप किसी ग्रह के गुरुत्वाकर्षण कुएँ से बाहर निकल जाते हैं तो आपके पास बची हुई गति — जो एक फ्लाईबाई की आगमन ऊर्जा को परिभाषित करती है।"
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "narrative_101.0",
+  "en": "C3 is what your rocket has to deliver at LAUNCH. V∞ — pronounced \"v-infinity\" — is the same idea, but at the OTHER end of the trip. When you arrive at Mars, how fast are you moving relative to Mars, before its gravity grabs you? That's V∞.",
+  "cur": "C3 वह है जो आपके रॉकेट को प्रक्षेपण के समय देना होता है। V∞ — जिसे \"वी-इन्फिनिटी\" उच्चारित किया जाता है — यह वही विचार है, लेकिन यात्रा के दूसरे छोर पर। जब आप मंगल पर पहुँचते हैं, तो इसका गुरुत्वाकर्षण आपको पकड़ने से पहले आप मंगल के सापेक्ष कितनी तेज़ी से चल रहे हैं? वही V∞ है।"
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "narrative_101.1",
+  "en": "It matters because it sets your arrival burn. The faster you arrive, the more you have to brake to stop. Mars Reconnaissance Orbiter arrived with V∞ ≈ 2.6 km/s and burned ~1 km/s to capture into orbit. Voyager 2 reached Neptune with V∞ ≈ 8 km/s and didn't even bother trying to stop — it just flew by, snapped pictures, and continued out of the solar system forever.",
+  "cur": "यह महत्वपूर्ण है क्योंकि यह आपके आगमन बर्न को निर्धारित करता है। आप जितनी तेज़ी से पहुँचते हैं, रुकने के लिए उतना ही अधिक ब्रेक लगाना पड़ता है। Mars Reconnaissance Orbiter V∞ ≈ 2.6 km/s के साथ पहुँचा और कक्षा में कैप्चर करने के लिए ~1 km/s बर्न किया। Voyager 2, वरुण पर V∞ ≈ 8 km/s के साथ पहुँचा और रुकने की कोशिश भी नहीं की — इसने बस फ्लाईबाई किया, तस्वीरें खींचीं, और सौर मंडल से बाहर हमेशा के लिए निकल गया।"
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "narrative_101.2",
+  "en": "The math has a beautiful symmetry: arrival V∞ at Mars is the same number you'd see if you watched Mars from a long way off and the spacecraft was on its way in. The whole journey, viewed from outside both planets' spheres of influence, becomes a clean Keplerian arc with two well-defined V∞ values — one at each end. That's the moment-of-truth number on the /fly HUD when the spacecraft crosses into the destination's gravity well.",
+  "cur": "गणित में एक सुंदर समरूपता है: मंगल पर आगमन V∞ वही संख्या है जो आप देखेंगे यदि आप मंगल को बहुत दूर से देखते हैं और अंतरिक्ष यान अंदर आ रहा हो। पूरी यात्रा, दोनों ग्रहों के प्रभाव क्षेत्र के बाहर से देखने पर, दो सुपरिभाषित V∞ मानों के साथ एक स्वच्छ केपलेरियन चाप बन जाती है — प्रत्येक छोर पर एक। यह /fly HUD पर सच्चाई का वह क्षण है जब अंतरिक्ष यान गंतव्य के गुरुत्वाकर्षण कुएँ में प्रवेश करता है।"
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "body_paragraphs.0",
+  "en": "Imagine an asymptote, infinitely far from the planet. The speed you'd be moving at on that asymptote is V∞ — pronounced 'V-infinity.' It's the Sun-relative speed minus the planet's contribution to your motion. On a hyperbolic flyby, V∞ is constant along both arms of the hyperbola.",
+  "cur": "कल्पना करें एक असिम्पटोट, ग्रह से अनंत दूरी पर। उस असिम्पटोट पर आप जिस गति से चल रहे होंगे वह V∞ है — जिसे 'वी-इन्फिनिटी' उच्चारित किया जाता है। यह सूर्य-सापेक्ष गति घटा ग्रह का आपकी गति में योगदान है। हाइपरबोलिक फ्लाईबाई पर, V∞ हाइपरबोला की दोनों भुजाओं के साथ स्थिर रहता है।"
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "body_paragraphs.1",
+  "en": "V∞ controls how big the arrival burn has to be. To capture into orbit, you need to bleed off enough energy to drop below escape — the deeper the well, the more `∆v` it costs to slow you down. Mars Reconnaissance Orbiter arrived at Mars with V∞ ≈ 2.6 km/s, then spent ~1 km/s of `∆v` for orbit insertion. Voyager 2 reached Neptune with V∞ ≈ 8 km/s and didn't even try to insert — it just flew by.",
+  "cur": "V∞ यह नियंत्रित करता है कि आगमन बर्न कितना बड़ा होना चाहिए। कक्षा में कैप्चर करने के लिए, आपको एस्केप से नीचे गिरने के लिए पर्याप्त ऊर्जा को कम करना होगा — कुआँ जितना गहरा होगा, आपको धीमा करने में उतना ही अधिक `∆v` खर्च होगा। Mars Reconnaissance Orbiter, मंगल पर V∞ ≈ 2.6 km/s के साथ पहुँचा, फिर कक्षा सम्मिलन के लिए ~1 km/s का `∆v` खर्च किया। Voyager 2, वरुण पर V∞ ≈ 8 km/s के साथ पहुँचा और सम्मिलित होने की कोशिश भी नहीं की — इसने बस फ्लाईबाई किया।"
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "body_paragraphs.2",
+  "en": "On `/fly`'s HUD you'll see V∞ pop up when the spacecraft enters the destination's sphere of influence. It's the moment of truth: how much speed do you have to kill, and can your rocket afford to kill it?",
+  "cur": "`/fly` के HUD पर आप V∞ को तब देखेंगे जब अंतरिक्ष यान गंतव्य के प्रभाव क्षेत्र में प्रवेश करेगा। यह सच्चाई का क्षण है: आपको कितनी गति को खत्म करना है, और क्या आपका रॉकेट इसे खत्म करने का खर्च उठा सकता है?"
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "diagram_caption",
+  "en": "Hyperbolic flyby: V∞ is the constant speed on the asymptotes, far from the planet.",
+  "cur": "हाइपरबोलिक फ्लाईबाई: V∞ ग्रह से दूर, असिम्पटोट पर स्थिर गति है।"
+ },
+ {
+  "rel": "science/scales-time/_intro.json",
+  "at": "headline",
+  "en": "Scales & Time — none of this is Earth-sized, and it's all happening on a slow clock.",
+  "cur": "स्केल और समय — इसमें से कुछ भी पृथ्वी के आकार का नहीं है, और यह सब एक धीमी घड़ी पर हो रहा है।"
+ },
+ {
+  "rel": "science/scales-time/_intro.json",
+  "at": "paragraphs.0",
+  "en": "The solar system is bigger than your intuition is calibrated for. Mars is 200 million km away. Saturn is 1.4 billion. Pluto is 6 billion. Numbers in kilometres stop helping. So astronomers picked a more human ruler — one Earth-Sun distance, called the astronomical unit (AU). Mars is 1.5 AU. Jupiter is 5. Pluto orbits between 30 and 50.",
+  "cur": "सौर मंडल आपकी सहज समझ से कहीं अधिक बड़ा है। मंगल 200 मिलियन km दूर है। शनि 1.4 बिलियन। यम 6 बिलियन। किलोमीटर में संख्याएँ मदद करना बंद कर देती हैं। इसलिए खगोलविदों ने एक अधिक मानवीय पैमाना चुना — एक पृथ्वी-सूर्य दूरी, जिसे खगोलीय इकाई (AU) कहा जाता है। मंगल 1.5 AU है। बृहस्पति 5। यम 30 और 50 के बीच परिक्रमा करता है।"
+ },
+ {
+  "rel": "science/scales-time/_intro.json",
+  "at": "paragraphs.1",
+  "en": "Time is the other axis you have to recalibrate. A signal from Earth takes 4 to 22 minutes to reach Mars. There is no way to joystick a Mars rover from Earth — every important manoeuvre has to be autonomous, because by the time you find out it failed, it's been failing for an hour. Mars launch windows only open every 26 months. If you miss one, you wait two years.",
+  "cur": "समय दूसरी अक्ष है जिसे आपको पुनः अंशांकित करना होगा। पृथ्वी से एक संकेत को मंगल तक पहुँचने में 4 से 22 मिनट लगते हैं। पृथ्वी से मंगल रोवर को जॉयस्टिक से नियंत्रित करने का कोई तरीका नहीं है — हर महत्वपूर्ण युद्धाभ्यास स्वायत्त होना चाहिए, क्योंकि जब तक आपको पता चलता है कि यह विफल हो गया है, यह एक घंटे से विफल हो रहा होता है। मंगल प्रक्षेपण खिड़कियाँ केवल हर 26 महीनों में खुलती हैं। यदि आप एक चूक जाते हैं, तो आप दो साल प्रतीक्षा करते हैं।"
+ },
+ {
+  "rel": "science/scales-time/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Six sections here. AU and light-minute give you the rulers. J2000 is the universal calendar zero astronomers all agree on. Sidereal vs synodic explains why Mars windows recur every 26 months, not 23. The ecliptic plane is the flat disc the planets all (mostly) lie on. Reference frames is the bookkeeping for switching between Sun-centred, Earth-centred, and body-centred views — which mission control juggles constantly.",
+  "cur": "यहाँ छः खंड हैं। AU और light-minute आपको पैमाने देते हैं। J2000 ब्रह्मांडीय कैलेंडर का शून्य है जिस पर सभी खगोलविद् सहमत हैं। Sidereal और synodic की तुलना समझाती है कि मंगल की खिड़कियाँ 26 महीने में दोहराई जाती हैं, 23 महीने नहीं। क्रांतिवृत्त तल वह सपाट डिस्क है जिस पर ग्रह (ज्यादातर) स्थित हैं। Reference frames सूर्य-केंद्रित, पृथ्वी-केंद्रित, और पिंड-केंद्रित दृश्यों के बीच स्विच करने की बुककीपिंग है — जिसे मिशन नियंत्रण लगातार संभालता है।"
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "intro_sentence",
+  "en": "Earth's average distance to the Sun, fixed at exactly 149,597,870,700 metres — the natural ruler for solar-system distances.",
+  "cur": "पृथ्वी की सूर्य से औसत दूरी, बिल्कुल 149,597,870,700 मीटर पर निश्चित — सौर मंडल की दूरियों का प्राकृतिक पैमाना।"
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "narrative_101.0",
+  "en": "Once you start measuring distances in space, kilometres get unmanageable fast. Mars is 200 million km. Saturn is 1.4 billion km. Pluto is 6 billion km. Your brain stops parsing those numbers as anything except \"big.\" So astronomers picked a more human ruler: one Earth-Sun distance. That's an Astronomical Unit, abbreviated AU.",
+  "cur": "एक बार जब आप अंतरिक्ष में दूरियाँ मापने लगते हैं, तो किलोमीटर बहुत जल्दी अप्रबंधनीय हो जाते हैं। मंगल 200 मिलियन किमी है। शनि 1.4 अरब किमी है। यम 6 अरब किमी है। आपका दिमाग उन संख्याओं को \"बड़ी\" के अलावा कुछ और के रूप में समझना बंद कर देता है। तो खगोलविदों ने एक अधिक मानवीय पैमाना चुना: एक पृथ्वी-सूर्य दूरी। इसे Astronomical Unit कहा जाता है, जिसे AU के रूप में संक्षिप्त किया जाता है।"
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "narrative_101.1",
+  "en": "The unit is anchored to a specific integer number of metres — 149,597,870,700 of them, fixed in 2012 — but the practical idea is simpler. Mars is 1.5 AU from the Sun. Jupiter is 5 AU. Pluto orbits between 30 and 50 AU. Voyager 1, the most distant human-made object, is past 170 AU now and still going. Numbers you can actually hold in your head.",
+  "cur": "यह इकाई मीटर की एक विशिष्ट पूर्णांक संख्या से जुड़ी है — 149,597,870,700 की, 2012 में निश्चित — लेकिन व्यावहारिक विचार सरल है। मंगल सूर्य से 1.5 AU दूर है। बृहस्पति 5 AU दूर है। यम 30 और 50 AU के बीच परिक्रमा करता है। Voyager 1, सबसे दूर का मानव-निर्मित वस्तु, अब 170 AU से आगे है और अभी भी जा रहा है। ऐसी संख्याएं जिन्हें आप वास्तव में अपने दिमाग में रख सकते हैं।"
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "narrative_101.2",
+  "en": "AU is everywhere in this app. The /explore screen draws orbital radii in AU. The /plan porkchop axes are calibrated in AU. The HUD on /fly converts AU to kilometres and light-minutes when you need those, but the underlying ruler is always AU. Once you internalise it, the solar system stops feeling abstract — you can roughly map distances by counting hops in AU.",
+  "cur": "AU इस ऐप में हर जगह है। /explore स्क्रीन कक्षीय त्रिज्या को AU में खींचता है। /plan पोर्कचॉप अक्ष AU में अंशांकित होते हैं। /fly पर HUD AU को किलोमीटर और प्रकाश-मिनटों में परिवर्तित करता है जब आपको उन की आवश्यकता होती है, लेकिन अंतर्निहित पैमाना हमेशा AU है। एक बार जब आप इसे आंतरिक करते हैं, सौर मंडल अमूर्त महसूस करना बंद कर देता है — आप AU में हॉप की गणना करके दूरियों को मोटे तौर पर मैप कर सकते हैं।"
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "body_paragraphs.0",
+  "en": "Until 2012 the AU was defined by Earth's orbit. As Earth's orbit slowly evolves under planetary perturbations, the AU was technically changing too. The IAU fixed it in 2012 to a precise integer number of metres — 149,597,870,700 — and the definition has been stable ever since. The AU is no longer 'Earth's orbit'; it's a metric ruler that happens to roughly equal it.",
+  "cur": "2012 तक AU को पृथ्वी की कक्षा से परिभाषित किया जाता था। जैसे-जैसे पृथ्वी की कक्षा ग्रहीय विक्षोभों के तहत धीरे-धीरे विकसित होती है, AU तकनीकी रूप से भी बदल रहा था। IAU ने 2012 में इसे मीटर की एक सटीक पूर्णांक संख्या पर निश्चित किया — 149,597,870,700 — और तब से परिभाषा स्थिर रही है। AU अब 'पृथ्वी की कक्षा' नहीं है; यह एक मीट्रिक पैमाना है जो लगभग इसके बराबर होता है।"
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "body_paragraphs.1",
+  "en": "Solar-system distances in AU: Mercury 0.39, Venus 0.72, Earth 1.0, Mars 1.52, Jupiter 5.20, Saturn 9.58, Uranus 19.22, Neptune 30.05, Pluto 39.5 (averages — eccentricity makes them vary). The Voyagers are well past 150 AU and still going. The Oort Cloud reaches out tens of thousands of AU.",
+  "cur": "सौर-प्रणाली की दूरियाँ AU में: बुध 0.39, शुक्र 0.72, पृथ्वी 1.0, मंगल 1.52, बृहस्पति 5.20, शनि 9.58, अरुण 19.22, वरुण 30.05, यम 39.5 (औसत — विलक्षणता इन्हें बदलती रहती है)। Voyager 150 AU से कहीं आगे हैं और अभी भी आगे बढ़ रहे हैं। और्ट बादल दसों हज़ार AU तक विस्तृत है।"
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "body_paragraphs.2",
+  "en": "Why AU instead of metres? Because numbers in metres are unwieldy at solar-system scale. Saturn's 1.4 billion km is unreadable. 9.58 AU is a number you can hold in your head. Orrery's panels and HUD all use AU for solar-system positions — converted to km, light-minutes, and other units only where the audience needs the conversion.",
+  "cur": "मीटर के बजाय AU क्यों? क्योंकि सौर-मंडल पैमाने पर मीटर में संख्याएँ अनिच्छनीय हैं। शनि का 1.4 अरब किमी अपठनीय है। 9.58 AU एक संख्या है जिसे आप अपने दिमाग में रख सकते हैं। Orrery के पैनल और HUD सभी सौर-मंडल की स्थितियों के लिए AU का उपयोग करते हैं — किमी, प्रकाश-मिनटों, और अन्य इकाइयों में परिवर्तित केवल जहाँ दर्शकों को परिवर्तन की आवश्यकता होती है।"
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "diagram_caption",
+  "en": "1 AU ≈ Earth-Sun distance. Planet semi-major axes in AU, log-scale to handle the outer planets.",
+  "cur": "1 AU ≈ पृथ्वी-सूर्य दूरी। ग्रह अर्ध-मुख्य अक्ष AU में, बाहरी ग्रहों को संभालने के लिए लॉग-पैमाने पर।"
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "intro_sentence",
+  "en": "The plane of Earth's orbit around the Sun — used as the reference for almost every solar-system measurement.",
+  "cur": "पृथ्वी की सूर्य के चारों ओर की कक्षा का तल — लगभग हर सौर-मंडल मापन के लिए संदर्भ के रूप में उपयोग किया जाता है।"
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "narrative_101.0",
+  "en": "Hold up a flat plate and put a marble in the centre — that's the Sun. Now spin a smaller marble around the edge — that's Earth. The flat plate is the ecliptic plane. Earth's orbit defines it; everything else in the solar system gets measured against it.",
+  "cur": "एक सपाट प्लेट पकड़ें और बीच में एक संगमरमर रखें — वह सूर्य है। अब किनारे के चारों ओर एक छोटे संगमरमर को घुमाएं — वह पृथ्वी है। सपाट प्लेट ग्रहण तल है। पृथ्वी की कक्षा इसे परिभाषित करती है; सौर मंडल की बाकी सब कुछ इसके विरुद्ध मापी जाती है।"
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "narrative_101.1",
+  "en": "Here's the strange thing: most of the solar system roughly lives on this plate. The eight planets are all within a few degrees of it. The Moon orbits Earth in a plane just 5 degrees off it. The asteroid belt is mostly on it. This is not a coincidence — it's a fossil of how the solar system formed, when everything condensed out of one big spinning disc of gas and dust around the young Sun. The disc set the plane and most of what's left still respects it.",
+  "cur": "यहाँ अजीब बात है: सौर मंडल का अधिकांश हिस्सा मोटे तौर पर इस प्लेट पर रहता है। आठों ग्रह इसके कुछ डिग्री के भीतर हैं। चंद्रमा पृथ्वी की परिक्रमा एक ऐसे तल में करता है जो इससे केवल 5 डिग्री दूर है। क्षुद्रग्रह पेटी अधिकतर इस पर है। यह कोई संयोग नहीं है — यह सौर मंडल के निर्माण का एक अवशेष है, जब सब कुछ युवा सूर्य के चारों ओर गैस और धूल की एक बड़ी घूमती हुई डिस्क से बाहर आया। डिस्क ने तल निर्धारित किया और जो कुछ बचा है वह अभी भी इसका सम्मान करता है।"
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "narrative_101.2",
+  "en": "Comets are the wild cards. Long-period comets come in from any direction at any tilt — they’re remnants of the outer Oort Cloud which never settled into the disc. Pluto orbits at 17 degrees off-plane — by far the most tilted of the classical nine. (Its 2006 reclassification was about not clearing its orbital neighbourhood, not its tilt.)",
+  "cur": "धूमकेतु जंगली पत्ते हैं। लंबी अवधि के धूमकेतु किसी भी दिशा से किसी भी झुकाव पर आते हैं — वे बाहरी और्ट बादल के अवशेष हैं जो कभी डिस्क में नहीं बसे। यम तल से 17 डिग्री की दूरी पर परिक्रमा करता है — शास्त्रीय नौ में सबसे अधिक झुका हुआ। (इसका 2006 पुनर्वर्गीकरण इसके कक्षीय पड़ोस को साफ न करने के बारे में था, इसके झुकाव के बारे में नहीं।)"
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "body_paragraphs.0",
+  "en": "The Sun, Earth, and the Moon trace out paths in space. The Earth's orbit defines a plane. Looking out from Earth, the Sun appears to move along this plane against the background stars — that path on the sky is the ecliptic. Most other solar-system bodies lie close to it: the eight planets are all within a few degrees, the asteroid belt clusters near it, comets are scattered.",
+  "cur": "सूर्य, पृथ्वी, और चंद्रमा अंतरिक्ष में पथ का पता लगाते हैं। पृथ्वी की कक्षा एक तल को परिभाषित करती है। पृथ्वी से बाहर देखने पर, सूर्य पृष्ठभूमि के तारों के विरुद्ध इस तल के साथ चलता प्रतीत होता है — आकाश पर वह पथ ग्रहण है। अधिकांश अन्य सौर-मंडल पिंड इसके पास स्थित हैं: आठ ग्रह सभी कुछ डिग्री के भीतर हैं, क्षुद्रग्रह पेटी इसके पास झुंड बनाती है, धूमकेतु बिखरे हुए हैं।"
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "body_paragraphs.1",
+  "en": "The ecliptic is the reference plane for orbital inclinations of solar-system bodies. Earth's inclination is 0° by construction. Mercury at 7°, Pluto at 17°, are measured against this plane. The vernal equinox direction — where the ecliptic crosses the celestial equator going north — is the zero-longitude reference, used to anchor every orbit's longitude of ascending node and argument of periapsis.",
+  "cur": "ग्रहण सौर-मंडल पिंडों के कक्षीय झुकाव के लिए संदर्भ तल है। पृथ्वी का झुकाव निर्माण के अनुसार 0° है। बुध 7° पर, यम 17° पर, इस तल के विरुद्ध मापा जाता है। वर्नल विषुव दिशा — जहाँ ग्रहण आकाशीय भूमध्य रेखा को उत्तर की ओर पार करता है — शून्य-देशांतर संदर्भ है, जिसका उपयोग हर कक्षा के आरोही नोड के देशांतर और पेरिएप्सिस तर्क को सुदृढ़ करने के लिए किया जाता है।"
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "body_paragraphs.2",
+  "en": "Orrery's `/explore` view looks down on the ecliptic plane from above by default — the natural perspective for thinking about heliocentric motion. Tilting the view shows you why Mercury and Pluto's orbits look 'wrong' even though they're perfectly Keplerian: their orbital planes don't match the rest of the gang.",
+  "cur": "Orrery का `/explore` दृश्य डिफ़ॉल्ट रूप से ग्रहण तल को ऊपर से देखता है — सूर्यकेंद्रीय गति के बारे में सोचने के लिए प्राकृतिक दृष्टिकोण। दृश्य को झुकाना आपको दिखाता है कि बुध और यम की कक्षाएँ भले ही पूरी तरह से Keplerian हों, लेकिन 'गलत' क्यों दिखती हैं: उनके कक्षीय तल बाकी की तरह मेल नहीं खाते।"
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "title",
+  "en": "Heliocentric · Geocentric · Body-Centric Frames",
+  "cur": "सूर्यकेंद्रित · भूकेंद्रित · पिंड-केंद्रित संदर्भ तंत्र"
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "intro_sentence",
+  "en": "Three reference frames for three different questions: where is it relative to the Sun, the Earth, or the planet you're studying?",
+  "cur": "तीन अलग-अलग सवालों के लिए तीन संदर्भ फ्रेम: यह सूर्य, पृथ्वी, या जिस ग्रह का आप अध्ययन कर रहे हैं, उसके सापेक्ष कहाँ है?"
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "narrative_101.0",
+  "en": "Where is the Moon? The honest answer is \"depends on where YOU are.\" From Earth's surface it's overhead at 1am tonight. From the Sun it's a tiny dot 1 AU away near Earth. From Mars it's an irrelevant speck. None of these answers is wrong — they're just measured from different origins. That choice of origin is what \"reference frame\" means.",
+  "cur": "चंद्रमा कहाँ है? ईमानदार उत्तर है \"यह इस बात पर निर्भर करता है कि आप कहाँ हैं।\" पृथ्वी की सतह से यह आज रात 1 बजे सिर के ऊपर है। सूर्य से यह पृथ्वी के पास 1 AU दूर एक छोटा सा बिंदु है। मंगल से यह एक अप्रासंगिक कण है। इनमें से कोई भी उत्तर गलत नहीं है — ये बस अलग-अलग मूल बिंदुओं से मापे गए हैं। मूल बिंदु की यह पसंद ही \"संदर्भ फ्रेम\" का अर्थ है।"
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "narrative_101.1",
+  "en": "Spaceflight juggles three of them constantly. Heliocentric (origin at the Sun) is the natural frame for cruise — everything Earth-to-Mars happens here. Geocentric (origin at Earth) is the natural frame for satellites and the Moon. Body-centric (origin at whatever planet you're flying past or orbiting) is the natural frame for arrival burns and surface ops.",
+  "cur": "अंतरिक्ष उड़ान लगातार इनमें से तीन को संतुलित करती है। हेलियोसेंट्रिक (सूर्य पर मूल बिंदु) क्रूज़ के लिए प्राकृतिक फ्रेम है — पृथ्वी-से-मंगल तक सब कुछ यहाँ होता है। जियोसेंट्रिक (पृथ्वी पर मूल बिंदु) उपग्रहों और चंद्रमा के लिए प्राकृतिक फ्रेम है। बॉडी-सेंट्रिक (जिस भी ग्रह के पास आप उड़ रहे हैं या परिक्रमा कर रहे हैं, उस पर मूल बिंदु) आगमन बर्न और सतह संचालन के लिए प्राकृतिक फ्रेम है।"
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "narrative_101.2",
+  "en": "Switching between them is mostly arithmetic — translate the origin, maybe rotate the axes. But it matters where you are conceptually: a transfer ellipse is heliocentric. A flyby past Mars is body-centric. The handoff between them is exactly the patched-conics trick. Every screen in this app picks a frame and sticks to it: /explore is heliocentric, /earth is geocentric, /moon and /mars are body-centric.",
+  "cur": "उनके बीच स्विच करना ज्यादातर अंकगणित है — मूल बिंदु को स्थानांतरित करें, शायद अक्षों को घुमाएं। लेकिन यह मायने रखता है कि आप वैचारिक रूप से कहाँ हैं: एक ट्रांसफर दीर्घवृत्त हेलियोसेंट्रिक है। मंगल के पास एक फ्लाईबाई बॉडी-सेंट्रिक है। उनके बीच का हैंडऑफ बिल्कुल पैच्ड-कोनिक्स ट्रिक है। इस ऐप में हर स्क्रीन एक फ्रेम चुनती है और उस पर टिकी रहती है: /explore हेलियोसेंट्रिक है, /earth जियोसेंट्रिक है, /moon और /mars बॉडी-सेंट्रिक हैं।"
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "body_paragraphs.0",
+  "en": "Heliocentric: origin at the Sun, axes aligned with the ecliptic. The natural frame for solar-system motion. Planet positions, transfer orbits, mission cruises — all most naturally described here. Orrery's `/explore` is fundamentally heliocentric.",
+  "cur": "हेलियोसेंट्रिक: सूर्य पर मूल बिंदु, अक्ष क्रांतिवृत्त के साथ संरेखित। सौर-मंडल की गति के लिए प्राकृतिक फ्रेम। ग्रहों की स्थिति, ट्रांसफर कक्षाएं, मिशन क्रूज़ — सभी यहाँ सबसे स्वाभाविक रूप से वर्णित हैं। Orrery का `/explore` मूल रूप से हेलियोसेंट्रिक है।"
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "body_paragraphs.1",
+  "en": "Geocentric: origin at Earth. Useful for satellites, the Moon, and any spacecraft inside Earth's sphere of influence. Earth's `/earth` route works in this frame. Geocentric coordinates relate to heliocentric by a translation (Earth's heliocentric position) and possibly a rotation (Earth's axial tilt).",
+  "cur": "जियोसेंट्रिक: पृथ्वी पर मूल बिंदु। उपग्रहों, चंद्रमा, और पृथ्वी के प्रभाव क्षेत्र के अंदर किसी भी अंतरिक्ष यान के लिए उपयोगी। पृथ्वी का `/earth` रूट इस फ्रेम में काम करता है। जियोसेंट्रिक निर्देशांक हेलियोसेंट्रिक से एक स्थानांतरण (पृथ्वी की हेलियोसेंट्रिक स्थिति) और संभवतः एक घूर्णन (पृथ्वी का अक्षीय झुकाव) द्वारा संबंधित होते हैं।"
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "body_paragraphs.2",
+  "en": "Body-centric (Mars-centric, Saturn-centric, Moon-centric, etc.): origin at the body you're orbiting or flying past. Used for orbit insertion, surface ops, flyby geometry — anything where the body's gravity dominates. Patched-conic mission design switches frames at sphere-of-influence boundaries: you describe an arc in whatever frame keeps the math local.",
+  "cur": "बॉडी-सेंट्रिक (मंगल-centric, शनि-centric, चंद्रमा-centric, आदि): जिस पिंड की आप परिक्रमा कर रहे हैं या उसके पास उड़ रहे हैं, उस पर मूल बिंदु। कक्षा प्रविष्टि, सतह संचालन, फ्लाईबाई ज्यामिति के लिए उपयोग किया जाता है — कुछ भी जहाँ पिंड का गुरुत्वाकर्षण हावी होता है। पैच्ड-कोनिक मिशन डिज़ाइन प्रभाव-क्षेत्र की सीमाओं पर फ्रेम स्विच करता है: आप जो भी फ्रेम गणित को स्थानीय रखता है, उसमें एक चाप का वर्णन करते हैं।"
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "intro_sentence",
+  "en": "12:00 TT (Terrestrial Time) on January 1, 2000 — the universal anchor moment astronomers use to date orbital elements.",
+  "cur": "1 जनवरी 2000 को 12:00 TT (Terrestrial Time) — वह सार्वभौमिक संदर्भ क्षण जिसका उपयोग खगोलविद कक्षीय तत्वों को दिनांकित करने के लिए करते हैं।"
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "narrative_101.0",
+  "en": "Orbits drift. Slowly — over centuries — but enough that you can't just say \"Mars's orbit has eccentricity 0.0934\" without saying \"as of when.\" Astronomers needed an agreed-upon zero point in time, the same way map-makers needed an agreed-upon zero meridian (which is why Greenwich exists). They picked noon TT (Terrestrial Time) on January 1, 2000 — formally 12:00 TT, roughly 11:59 UTC. That's J2000.",
+  "cur": "कक्षाएँ बहाव करती हैं। धीरे-धीरे — सदियों में — लेकिन पर्याप्त रूप से कि आप यह नहीं कह सकते कि 'मंगल की कक्षा की विलक्षणता 0.0934 है' बिना यह कहे कि 'कब के अनुसार।' खगोलविदों को समय में एक सहमत शून्य बिंदु की जरूरत था, उसी तरह जैसे मानचित्र निर्माताओं को एक सहमत शून्य मध्याह्न रेखा की जरूरत थी (इसी वजह से Greenwich मौजूद है)। उन्होंने 1 जनवरी 2000 को दोपहर TT (Terrestrial Time) को चुना — औपचारिक रूप से 12:00 TT, मोटे तौर पर 11:59 UTC। वह J2000 है।"
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "narrative_101.1",
+  "en": "Why noon, not midnight? Because the Julian Day count — astronomers' running tally of days since 4713 BC — has always ticked over at noon, not midnight, so observers don't have to handle a date change in the middle of the night's work. J2000 corresponds exactly to Julian Day 2,451,545.0 — a clean integer reference.",
+  "cur": "दोपहर क्यों, आधी रात क्यों नहीं? क्योंकि Julian Day गणना — खगोलविदों की 4713 BC के बाद से दिनों की चल रही गिनती — हमेशा दोपहर में बदली है, आधी रात को नहीं, इसलिए प्रेक्षकों को रात की कार्य के बीच तारीख में परिवर्तन से निपटना नहीं पड़ता। J2000 बिल्कुल Julian Day 2,451,545.0 के अनुरूप है — एक स्वच्छ पूर्णांक संदर्भ।"
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "narrative_101.2",
+  "en": "Every orbit you see in this simulator is anchored to J2000. Earth's mean longitude at J2000. Mars's argument of periapsis at J2000. The planet positions you watch animate in /explore are extrapolated forward (or backward) from J2000 using simple linear math: \"start here, advance at this rate, here's where you are now.\" Pick any date in history and the orrery can tell you where the planets were.",
+  "cur": "इस सिम्युलेटर में आप जो हर कक्षा देखते हैं वह J2000 से जुड़ी है। J2000 पर पृथ्वी की माध्य देशांतर। J2000 पर मंगल का periapsis argument। /explore में आप जो ग्रह स्थिति को चलते देखते हैं उसे J2000 से सरल रैखिक गणित का उपयोग करके आगे (या पीछे) बढ़ाया जाता है: 'यहाँ से शुरू करो, इस दर से आगे बढ़ो, अब तुम कहाँ हो।' इतिहास में कोई भी तारीख चुनो और orrery तुम्हें बता सकता है कि ग्रह कहाँ थे।"
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "body_paragraphs.0",
+  "en": "Orbital elements drift over time — perturbations from other planets nudge eccentricity, longitudes precess, inclinations wobble. To make a planet's elements meaningful, you have to say 'as of when.' The standard answer is J2000: noon TT (Terrestrial Time) on January 1, 2000. Orbits are quoted at that moment; propagation forward or backward uses analytical or numerical models.",
+  "cur": "कक्षीय तत्व समय के साथ बहाव करते हैं — अन्य ग्रहों से व्यतिक्षेप विलक्षणता को धकेलते हैं, देशांतर पूर्वगमन करते हैं, झुकाव कँपकँपाते हैं। किसी ग्रह के तत्वों को सार्थक बनाने के लिए, आपको 'कब के अनुसार' कहना होगा। मानक उत्तर J2000 है: 1 जनवरी 2000 को दोपहर TT (Terrestrial Time)। कक्षाएँ उस क्षण पर उद्धृत होती हैं; आगे या पीछे का प्रसार विश्लेषणात्मक या संख्यात्मक मॉडल का उपयोग करता है।"
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "body_paragraphs.1",
+  "en": "Why noon? Because Julian Date (JD) — the astronomers' continuous day count starting at noon Universal Time on January 1, 4713 BC (proleptic Julian calendar) — increments at noon, not midnight. J2000 corresponds exactly to JD 2,451,545.0, a clean reference point with no fractional days.",
+  "cur": "दोपहर क्यों? क्योंकि Julian Date (JD) — खगोलविदों की निरंतर दिन गिनती जो 4713 BC के 1 जनवरी को दोपहर Universal Time से शुरू होती है (proleptic Julian calendar) — दोपहर में वृद्धि होती है, आधी रात में नहीं। J2000 बिल्कुल JD 2,451,545.0 के अनुरूप है, बिना भिन्नात्मक दिनों के एक स्वच्छ संदर्भ बिंदु।"
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "body_paragraphs.2",
+  "en": "Orrery's planet data uses J2000 elements throughout. The mean longitude `L₀` field in `/explore` panels is the planet's heliocentric position angle at J2000. From there, mean motion `n = 2π / T` advances `L` linearly to any other epoch — modulo small perturbations the simulator ignores.",
+  "cur": "Orrery का ग्रह डेटा पूरे J2000 तत्वों का उपयोग करता है। `/explore` पैनल में माध्य देशांतर `L₀` क्षेत्र J2000 पर ग्रह की सूर्य-केंद्रित स्थिति कोण है। वहाँ से, माध्य गति `n = 2π / T` `L` को किसी भी अन्य epoch तक रैखिक रूप से बढ़ाता है — छोटी व्यतिक्षेप के modulo जिन्हें सिम्युलेटर अनदेखा करता है।"
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "title",
+  "en": "Light-Minute and Light-Year",
+  "cur": "प्रकाश-मिनट और प्रकाश-वर्ष"
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "intro_sentence",
+  "en": "Distance measured in how long light takes to cross it — the most useful unit for thinking about communication delays and stellar distances.",
+  "cur": "दूरी को इस आधार पर मापा जाता है कि प्रकाश को इसे पार करने में कितना समय लगता है — संचार विलंब और तारकीय दूरियों के बारे में सोचने के लिए सबसे उपयोगी इकाई।"
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "narrative_101.0",
+  "en": "A light-minute is how far light travels in a minute. Light goes 300,000 km per second, which works out to 18 million km in a minute. It's a distance, not a time — confusing but useful. The Sun is 8.3 light-minutes away. Mars is somewhere between 4 and 22 light-minutes depending on orbital geometry.",
+  "cur": "एक प्रकाश-मिनट वह दूरी है जो प्रकाश एक मिनट में तय करता है। प्रकाश 300,000 km प्रति सेकंड चलता है, जो एक मिनट में 18 मिलियन km होता है। यह एक दूरी है, समय नहीं — भ्रामक लेकिन उपयोगी। सूर्य 8.3 प्रकाश-मिनट दूर है। मंगल ग्रह कक्षीय ज्यामिति के आधार पर 4 और 22 प्रकाश-मिनट के बीच कहीं है।"
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "narrative_101.1",
+  "en": "Why care? Because radio waves travel at the speed of light, and that's also how long your commands take to reach a spacecraft. When Curiosity drives across Mars, the rover team sends a command and then waits — 8 to 22 minutes — for the rover to start moving. Then another 8 to 22 to find out whether it worked. There is NO way to joystick a Mars rover from Earth. Everything important has to be autonomous.",
+  "cur": "क्यों चिंता करें? क्योंकि रेडियो तरंगें प्रकाश की गति से यात्रा करती हैं, और यही वह समय भी है जो आपकी आज्ञाओं को अंतरिक्ष यान तक पहुंचने में लगता है। जब Curiosity मंगल ग्रह पर चलता है, तो रोवर टीम एक आज्ञा भेजती है और फिर प्रतीक्षा करती है — 8 से 22 मिनट — रोवर के चलना शुरू करने के लिए। फिर एक और 8 से 22 यह पता लगाने के लिए कि यह काम करता है या नहीं। पृथ्वी से मंगल ग्रह के रोवर को जॉयस्टिक से नियंत्रित करने का कोई तरीका नहीं है। सभी महत्वपूर्ण काम स्वायत्त होना चाहिए।"
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "narrative_101.2",
+  "en": "Out at Voyager-1 distance (around 170 AU now), one-way light delay is about 23.5 hours — it hits one full light-day (24 hours) in late 2026. Send a command today, you find out tomorrow afternoon if it worked. Light-years exist for the next scale up — distance to other stars. The nearest one, Proxima Centauri, is 4.2 light-years. At Voyager's speed it'd take 70,000 years to get there. The universe is large and slow.",
+  "cur": "Voyager-1 की दूरी पर (अब लगभग 170 AU), एकतरफा प्रकाश विलंब लगभग 23.5 घंटे है — यह देर से 2026 में एक पूर्ण प्रकाश-दिवस (24 घंटे) में पहुंचता है। आज आज्ञा भेजें, आप कल दोपहर को पता लगाएंगे कि यह काम करता है या नहीं। प्रकाश-वर्ष अगले स्तर तक मौजूद हैं — अन्य तारों की दूरी। निकटतम एक, प्रॉक्सिमा सेन्टॉरी, 4.2 प्रकाश-वर्ष है। Voyager की गति पर वहां पहुंचने में 70,000 वर्ष लगेंगे। ब्रह्मांड बड़ा और धीमा है।"
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "body_paragraphs.0",
+  "en": "Light moves at about 300,000 km/s. A light-second is 300,000 km. A light-minute is 18 million km. A light-year is 9.46 trillion km. They're distances, not times — confusingly named, but useful: 1 AU ≈ 8.3 light-minutes, so 'Mars is 4–22 light-minutes away depending on orbit' tells you the round-trip command latency at any moment.",
+  "cur": "प्रकाश लगभग 300,000 km/s चलता है। एक प्रकाश-सेकंड 300,000 km है। एक प्रकाश-मिनट 18 मिलियन km है। एक प्रकाश-वर्ष 9.46 ट्रिलियन km है। ये दूरियां हैं, समय नहीं — नामकरण भ्रामक है, लेकिन उपयोगी है: 1 AU ≈ 8.3 प्रकाश-मिनट, इसलिए 'मंगल ग्रह कक्षा के आधार पर 4–22 प्रकाश-मिनट दूर है' आपको किसी भी समय round-trip आज्ञा विलंब बताता है।"
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "body_paragraphs.1",
+  "en": "When Curiosity drives across Mars, the rover team sends a command, then waits 8-22 minutes for the rover to start the manoeuvre — and another 8-22 to find out if it worked. Real-time control is impossible at planetary distances. Far enough out (Voyager 1 at ~23.5 light-hours) you're sending one-way nudges that arrive almost a day later.",
+  "cur": "जब Curiosity मंगल ग्रह पर चलता है, तो रोवर टीम एक आज्ञा भेजती है, फिर रोवर को युक्ति शुरू करने के लिए 8-22 मिनट प्रतीक्षा करती है — और एक और 8-22 यह जानने के लिए कि यह काम करता है या नहीं। ग्रहीय दूरियों पर वास्तविक समय नियंत्रण असंभव है। पर्याप्त दूर (Voyager 1 लगभग 23.5 प्रकाश-घंटे पर) आप एकतरफा nudges भेज रहे हैं जो लगभग एक दिन बाद आते हैं।"
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "body_paragraphs.2",
+  "en": "Light-years are for stars. Proxima Centauri is 4.2 light-years away. Voyager 1 is moving at ~17 km/s, which is fast for a spacecraft but slow against light: at that speed Proxima would take ~70,000 years.",
+  "cur": "प्रकाश-वर्ष तारों के लिए हैं। प्रॉक्सिमा सेन्टॉरी 4.2 प्रकाश-वर्ष दूर है। Voyager 1 लगभग 17 km/s पर चल रहा है, जो एक अंतरिक्ष यान के लिए तेज है लेकिन प्रकाश के विरुद्ध धीमा है: उस गति पर Proxima लगभग 70,000 वर्ष लगेंगे।"
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "title",
+  "en": "Long-Duration Spaceflight",
+  "cur": "दीर्घकालीन अंतरिक्ष यात्रा"
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "intro_sentence",
+  "en": "Beyond about three months, microgravity stops being neutral and starts taking measurable bites out of the human body.",
+  "cur": "तीन महीने से अधिक समय तक, सूक्ष्मगुरुत्व तटस्थ रहना बंद कर देता है और मानव शरीर को मापने योग्य नुकसान पहुंचाना शुरू कर देता है।"
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "narrative_101.0",
+  "en": "On Earth, gravity is doing background work all day: pulling fluids toward your feet, loading your bones every step, exercising your heart against the weight of your blood. Take that away and the body un-builds — bones lose ~1-2% density per month if you don't fight back, muscles atrophy, the cardiovascular system de-conditions, fluid shifts pile pressure into your skull and squish your eyeballs slightly. Two hours a day on a treadmill harness and a resistive exercise device claws most of it back, but not all.",
+  "cur": "पृथ्वी पर, गुरुत्वाकर्षण पूरे दिन पृष्ठभूमि में काम करता है: तरल पदार्थ को आपके पैरों की ओर खींचता है, हर कदम पर आपकी हड्डियों को भारित करता है, आपके रक्त के भार के विरुद्ध आपके दिल को व्यायाम कराता है। यदि आप इसके खिलाफ लड़ाई न करें तो शरीर खुद को ढहाने लगता है — हड्डियां प्रति माह ~1-2% घनत्व खो देती हैं, मांसपेशियां सिकुड़ती हैं, हृदय प्रणाली कमजोर हो जाती है, तरल पदार्थ की बदलाहट आपकी खोपड़ी में दबाव डालती है और आपकी आंखों को थोड़ा सा निचोड़ देती है। प्रतिदिन ट्रेडमिल हार्नेस और प्रतिरोधी व्यायाम उपकरण पर दो घंटे ज्यादातर क्षति को ठीक कर देते हैं, लेकिन पूरी तरह नहीं।"
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "narrative_101.1",
+  "en": "The current single-mission record on the ISS is Frank Rubio at 371 days (Sep 2022 – Sep 2023). The all-time record was Valeri Polyakov on Mir at 437.7 days in 1994-95 — a deliberate test for a potential Mars mission. Tiangong's crews currently rotate at roughly 6-month intervals, matching the ISS standard.",
+  "cur": "आईएसएस पर वर्तमान एकल-मिशन रिकॉर्ड फ्रैंक रुबियो का 371 दिन है (सितंबर 2022 – सितंबर 2023)। सर्वकालिक रिकॉर्ड Mir पर वलेरी पोल्याकोव द्वारा 437.7 दिन (1994-95) है — यह संभावित मंगल मिशन के लिए एक जानबूझकर किया गया परीक्षण था। Tiangong के दल वर्तमान में लगभग 6-महीने के अंतराल पर घूमते हैं, जो आईएसएस मानक से मेल खाता है।"
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "narrative_101.2",
+  "en": "Beyond bone and muscle, the harder problems are radiation (Galactic Cosmic Rays accumulate at ~0.5 mSv/day in LEO — about 100× sea level), eyesight (Spaceflight-Associated Neuro-ocular Syndrome remains poorly understood), and behavioural health (small spaces, isolation, no privacy).",
+  "cur": "हड्डी और मांसपेशी से परे, अधिक कठिन समस्याएँ हैं विकिरण (Galactic Cosmic Rays LEO में ~0.5 mSv/दिन की दर से जमा होती हैं — समुद्र तल के बारे में 100× अधिक), दृष्टि (Spaceflight-Associated Neuro-ocular Syndrome अभी भी खराब समझा जाता है), और व्यावहारिक स्वास्थ्य (छोटी जगहें, अलगाववाद, कोई गोपनीयता नहीं)।"
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "body_paragraphs.0",
+  "en": "BONE + MUSCLE — astronauts lose 1-2% bone mineral density per month in weight-bearing bones without countermeasures (~0.5% with the Advanced Resistive Exercise Device + bisphosphonate). Type I muscle fibres atrophy fastest; daily 2-hour exercise on treadmill + cycle ergometer + ARED preserves about 90% of pre-flight muscle mass.",
+  "cur": "हड्डी + मांसपेशी — अंतरिक्ष यात्री प्रति माह वजन उठाने वाली हड्डियों में बिना कुछ किए 1-2% अस्थि खनिज घनत्व खो देते हैं (Advanced Resistive Exercise Device + बिस्फॉस्फोनेट के साथ ~0.5%)। टाइप I मांसपेशी फाइबर सबसे तेजी से सिकुड़ते हैं; ट्रेडमिल + साइकल ergometer + ARED पर दैनिक 2-घंटे का व्यायाम उड़ान से पहले लगभग 90% मांसपेशियों को संरक्षित करता है।"
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "body_paragraphs.1",
+  "en": "CARDIOVASCULAR + FLUID SHIFT — heart’s left ventricle loses roughly 9–12% of its mass over a 6-month mission; orthostatic intolerance persists for weeks after return. About 2 L of fluid migrates from legs to head in microgravity, causing facial puffiness, raised intracranial pressure, and is implicated in Spaceflight-Associated Neuro-ocular Syndrome (SANS).",
+  "cur": "हृदय प्रणाली + द्रव स्थानांतरण — हृदय के बाएँ निलय का द्रव्यमान 6 महीने की मिशन में लगभग 9–12% खो देता है; ऑर्थोस्टेटिक असहिष्णुता वापसी के कुछ सप्ताह बाद तक बनी रहती है। सूक्ष्मगुरुत्व में लगभग 2 L द्रव पैरों से सिर की ओर प्रवाहित होता है, जिससे चेहरे की सूजन, खोपड़ी के अंदर का दबाव बढ़ता है, और यह Spaceflight-Associated Neuro-ocular Syndrome (SANS) में शामिल है।"
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "body_paragraphs.2",
+  "en": "VESTIBULAR / SENSORIMOTOR — re-adaptation to gravity takes hours to days post-landing; fine motor control is measurably degraded for ~2 weeks.",
+  "cur": "वेस्टिबुलर / सेंसरिमोटर — गुरुत्वाकर्षण के अनुकूल होने में लैंडिंग के बाद घंटे से दिन लगते हैं; सूक्ष्म मोटर नियंत्रण लगभग 2 सप्ताह के लिए मापने योग्य रूप से ख़राब होता है।"
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "body_paragraphs.3",
+  "en": "RADIATION — LEO crew receive ~150-180 mSv per 6-month mission. Career limits are set per agency; NASA's effective dose-limit framework caps career risk at 3% increased cancer mortality, which translates to roughly 3-5 ISS-length missions for most astronauts.",
+  "cur": "विकिरण — LEO दल 6-महीने के मिशन में ~150-180 mSv प्राप्त करते हैं। कैरियर सीमाएं एजेंसी द्वारा निर्धारित की जाती हैं; NASA की प्रभावी खुराक-सीमा ढांचा कैरियर जोखिम को कैंसर मृत्यु दर में 3% वृद्धि पर सीमित करता है, जो अधिकांश अंतरिक्ष यात्रियों के लिए लगभग 3-5 आईएसएस-लंबाई के मिशन में अनुवाद करता है।"
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "body_paragraphs.4",
+  "en": "Records: Polyakov 437.7 d (Mir, 1994-95); Rubio 371 d (ISS, 2022-23); Vande Hei 355 d (ISS, 2021-22); Kononenko cumulative >1000 d across 5 missions.",
+  "cur": "रिकॉर्ड: पोल्याकोव 437.7 d (Mir, 1994-95); रुबियो 371 d (आईएसएस, 2022-23); वांडे हाई 355 d (आईएसएस, 2021-22); Kononenko संचयी >1000 d पाँच मिशन में।"
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "diagram_caption",
+  "en": "Physiological-loss curves over a 12-month mission. Bone (red, sharpest fall), muscle (blue), cardiovascular (gold). Daily exercise countermeasures (dashed) flatten each curve.",
+  "cur": "12-महीने के मिशन में शारीरिक-नुकसान के वक्र। हड्डी (लाल, तेजतम गिरावट), मांसपेशी (नीला), हृदय प्रणाली (सोना)। दैनिक व्यायाम उपाय (बिंदीदार) प्रत्येक वक्र को समतल करते हैं।"
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "title",
+  "en": "Sidereal vs Synodic Period",
+  "cur": "नाक्षत्र बनाम संयोजन काल"
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "intro_sentence",
+  "en": "Two ways of asking 'how often does this come around again?' — same body, different reference frame, different answer.",
+  "cur": "यह पूछने के दो तरीके 'यह कितनी बार फिर से आता है?' — एक ही पिंड, अलग संदर्भ तंत्र, अलग उत्तर।"
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "narrative_101.0",
+  "en": "There are two different answers to the question \"how long is a year on Mars?\" — and which one you want depends on what you're trying to do.",
+  "cur": "\"मंगल पर एक वर्ष कितना लंबा है?\" इस सवाल के दो अलग जवाब हैं — और आपको कौन सा चाहिए यह इस बात पर निर्भर करता है कि आप क्या करने की कोशिश कर रहे हैं।"
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "narrative_101.1",
+  "en": "If you want to know how long Mars takes to make ONE LOOP around the Sun, the answer is 687 Earth days. That's the sidereal period — measured against the unmoving distant stars. It's the geometric truth of the orbit. Vis-viva and Kepler's third law both work in sidereal time.",
+  "cur": "यदि आप जानना चाहते हैं कि मंगल को सूर्य के चारों ओर एक चक्कर लगाने में कितना समय लगता है, तो जवाब है 687 पृथ्वी दिन। यह साइडीरियल अवधि है — जो अचल दूर के तारों के सापेक्ष मापी जाती है। यह कक्षा का ज्यामितीय सत्य है। Vis-viva और केप्लर का तीसरा नियम दोनों साइडीरियल समय में काम करते हैं।"
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "narrative_101.2",
+  "en": "But if you want to know how often Earth and Mars LINE UP THE SAME WAY (so you can launch a mission), the answer is 780 days — about 26 months. That's the synodic period. Why longer? Because while Mars is going around the Sun once, Earth is going around it almost twice — both planets keep moving. The line-up only repeats when Earth has lapped Mars in the dance.",
+  "cur": "लेकिन यदि आप जानना चाहते हैं कि पृथ्वी और मंगल कितनी बार एक ही तरह से पंक्तिबद्ध होते हैं (ताकि आप एक मिशन लॉन्च कर सकें), तो जवाब है 780 दिन — लगभग 26 महीने। यह सिनोडिक अवधि है। लंबी क्यों? क्योंकि जब मंगल सूर्य के चारों ओर एक बार घूम रहा होता है, पृथ्वी इसके चारों ओर लगभग दो बार घूम रही होती है — दोनों ग्रह चलते रहते हैं। पंक्तिबद्धता केवल तभी दोहराती है जब पृथ्वी ने नृत्य में मंगल को पीछे छोड़ दिया हो।"
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "narrative_101.3",
+  "en": "This is why Mars launch windows appear every 26 months. If you miss one, you wait two years. Every Mars mission you've ever heard of had to time itself to a synodic window — Curiosity in 2011, Perseverance in 2020, the next one in 2026. The synodic period is the heartbeat of interplanetary mission planning.",
+  "cur": "यही कारण है कि मंगल लॉन्च विंडो हर 26 महीने में दिखाई देती हैं। यदि आप एक को चूक जाते हैं, तो आप दो साल प्रतीक्षा करते हैं। हर मंगल मिशन जिसके बारे में आपने कभी सुना है, उसे एक सिनोडिक विंडो के अनुसार समय निर्धारित करना पड़ा — 2011 में Curiosity, 2020 में Perseverance, अगला 2026 में। सिनोडिक अवधि अंतरग्रहीय मिशन योजना की धड़कन है।"
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "body_paragraphs.0",
+  "en": "Sidereal period: time for one full orbit relative to the fixed stars. This is the geometric, Kepler-third-law period — Mars sidereal year is 687 Earth days. Synodic period: time for one body to return to the same position relative to another body, usually as seen from a third. Mars synodic period — time between Mars-Earth alignments — is 780 days, or about 26 months.",
+  "cur": "साइडीरियल अवधि: स्थिर तारों के सापेक्ष एक पूर्ण कक्षा के लिए समय। यह ज्यामितीय, केप्लर-तीसरे-नियम अवधि है — मंगल का साइडीरियल वर्ष 687 पृथ्वी दिन है। सिनोडिक अवधि: एक पिंड के लिए दूसरे पिंड के सापेक्ष उसी स्थिति में लौटने का समय, आमतौर पर तीसरे से देखा जाता है। मंगल की सिनोडिक अवधि — मंगल-पृथ्वी पंक्तिबद्धता के बीच का समय — 780 दिन है, या लगभग 26 महीने।"
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "body_paragraphs.1",
+  "en": "The synodic period is what mission planners care about. Earth-Mars Hohmann transfers only work when Mars is in the right place. The next viable launch window appears every 26 months. Miss one, wait two years for another. That's the cadence of every Mars mission ever flown.",
+  "cur": "सिनोडिक अवधि वह है जिसकी मिशन योजनाकारों को परवाह है। पृथ्वी-मंगल Hohmann स्थानांतरण केवल तभी काम करते हैं जब मंगल सही जगह पर हो। अगली व्यवहार्य लॉन्च विंडो हर 26 महीने में दिखाई देती है। एक को चूक जाओ, दूसरे के लिए दो साल प्रतीक्षा करो। यह हर मंगल मिशन की गति है जो कभी उड़ाया गया है।"
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "body_paragraphs.2",
+  "en": "Mathematically: `1/T_syn = 1/T_inner − 1/T_outer`. If Earth's year is 1.0 yr and Mars's is 1.88 yr: `1/T_syn = 1 − 1/1.88 = 0.468`, so `T_syn = 2.14 yr ≈ 26 months`. The math is simple; the operational consequence — every mission timeline must respect it — is where it lives in mission planning.",
+  "cur": "गणितीय रूप से: `1/T_syn = 1/T_inner − 1/T_outer`। यदि पृथ्वी का वर्ष 1.0 yr है और मंगल का 1.88 yr है: `1/T_syn = 1 − 1/1.88 = 0.468`, तो `T_syn = 2.14 yr ≈ 26 months`। गणित सरल है; परिचालन परिणाम — हर मिशन समयरेखा को इसका सम्मान करना चाहिए — यही वह जगह है जहां यह मिशन योजना में रहता है।"
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "diagram_caption",
+  "en": "Sidereal: same star alignment. Synodic: same Earth-Mars-Sun alignment, longer because both planets moved.",
+  "cur": "साइडीरियल: एक ही तारा पंक्तिबद्धता। सिनोडिक: एक ही पृथ्वी-मंगल-सूर्य पंक्तिबद्धता, लंबी क्योंकि दोनों ग्रह चले।"
+ },
+ {
+  "rel": "science/space-stations/_intro.json",
+  "at": "headline",
+  "en": "Space Stations — pressurized boxes that fall forever.",
+  "cur": "अंतरिक्ष स्टेशन — दबाव वाले डिब्बे जो हमेशा गिरते रहते हैं।"
+ },
+ {
+  "rel": "science/space-stations/_intro.json",
+  "at": "paragraphs.0",
+  "en": "A space station is what you get when you stack human-rated pressure vessels in low Earth orbit and never let them come down. Every system on board exists to keep the inside warmer than -270°C and at one atmosphere of breathable air, while the outside does its best to claw the air back out (vacuum) and chill the metal to space temperatures (radiative cooling).",
+  "cur": "अंतरिक्ष स्टेशन वह है जो आप प्राप्त करते हैं जब आप मानव-योग्य दबाव वाहिकाओं को निम्न पृथ्वी कक्षा में ढेर करते हैं और उन्हें कभी नीचे आने नहीं देते। जहाज़ पर प्रत्येक प्रणाली अंदर को -270°C से अधिक गर्म रखने और श्वसन योग्य हवा के एक वायुमंडल पर बनाए रखने के लिए मौजूद है, जबकि बाहर हवा को वापस बाहर निकालने का सर्वोत्तम प्रयास करता है (निर्वात) और धातु को अंतरिक्ष तापमान तक ठंडा करता है (विकिरणीय शीतलन)।"
+ },
+ {
+  "rel": "science/space-stations/_intro.json",
+  "at": "paragraphs.1",
+  "en": "Three numbers really define a station: how much pressurized volume the crew has to live and work in, how the pressure modules are connected (nodes), and how much electrical power the solar arrays can deliver. The three sections here unpack each of those — what they are, how they're sized, and how the ISS and Tiangong made different design choices.",
+  "cur": "तीन संख्याएं वास्तव में एक स्टेशन को परिभाषित करती हैं: चालक दल के पास रहने और काम करने के लिए कितना दबाव वाला आयतन है, दबाव मॉड्यूल कैसे जुड़े हुए हैं (नोड्स), और सौर सरणियां कितनी विद्युत शक्ति प्रदान कर सकती हैं। यहां तीन खंड प्रत्येक को विस्तार से समझाते हैं — वे क्या हैं, उनका आकार कैसे निर्धारित किया जाता है, और आईएसएस और Tiangong ने अलग-अलग डिजाइन विकल्प कैसे बनाए।"
+ },
+ {
+  "rel": "science/space-stations/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Stations aren't just \"big spacecraft.\" They're permanent, modular, and grow over time. The ISS started with a single module (Zarya, launched 1998 — Russian-built, US-funded) and grew over fifteen years to a truss ~109 m across with roughly a dozen and a half pressurized elements. Tiangong went up faster (2021–2022) but follows the same logic: launch one box, dock the next, plug it in.",
+  "cur": "स्टेशन केवल \"बड़ी अंतरिक्ष यान\" नहीं हैं। वे स्थायी, मॉड्यूलर हैं, और समय के साथ बढ़ते हैं। आईएसएस ने एक एकल मॉड्यूल (Zarya, लॉन्च 1998 — रूसी-निर्मित, US-वित्तपोषित) से शुरुआत की थी और पंद्रह वर्षों में ~109 m के ट्रस तक बढ़ा जिसमें लगभग डेढ़ दर्जन दबाव वाले तत्व हैं। Tiangong तेजी से ऊपर गई (2021–2022) लेकिन समान तर्क का पालन करती है: एक बॉक्स लॉन्च करें, अगला डॉक करें, इसे प्लग करें।"
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "intro_sentence",
+  "en": "Stations run on rolling 6-month crew rotations — a balance of suit consumables, vehicle shelf-life, training pipelines, and human physiology.",
+  "cur": "स्टेशन 6 महीने के रोलिंग क्रू रोटेशन पर चलते हैं — सूट की खपत, वाहन की शेल्फ लाइफ, प्रशिक्षण पाइपलाइन और मानव शरीर विज्ञान का संतुलन।"
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "narrative_101.0",
+  "en": "Why six months? It's the answer to several constraints meeting in one place. Soyuz and Crew Dragon spacecraft are certified to stay docked for ~6–7 months (Soyuz ~200 d; Crew Dragon originally ~210 d, since extended) before their thrusters and seals need refreshing. EVA-suit consumables (O₂, LiOH, battery) are replenished on orbit; suit certification life caps how long a suit can stay in service. NASA's bone-loss countermeasure data is most reliable in 6-month buckets. Rotating one third of the crew every 4-6 months keeps fresh hands on board without hot-bunking.",
+  "cur": "छः महीने क्यों? यह कई बाधाओं का एक ही जगह पर मिलना है। Soyuz और Crew Dragon अंतरिक्ष यान लगभग 6-7 महीने के लिए डॉक किए रहने के लिए प्रमाणित हैं (Soyuz ~200 दिन; Crew Dragon मूल रूप से ~210 दिन, अब विस्तारित) इससे पहले कि उनके थ्रस्टर और सील्स को ताज़ा करने की जरूरत पड़े। EVA-सूट की खपत (O₂, LiOH, बैटरी) को कक्षा में भरा जाता है; सूट प्रमाणन जीवन यह निर्धारित करता है कि एक सूट कितने समय तक सेवा में रह सकता है। NASA की हड्डी क्षति की भरपाई के डेटा 6 महीने के ब्लॉक में सबसे विश्वसनीय हैं। प्रत्येक 4-6 महीने में एक-तिहाई क्रू को बदलना बोर्ड पर ताज़े हाथ रखता है बिना हॉट-बंकिंग के।"
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "narrative_101.1",
+  "en": "ISS started with 3-person expeditions (Expedition 1 in 2000) and stepped up to 6-person crews in 2009 once the lifeboat capacity was there. Each expedition typically runs ~6 months. Some run longer — Frank Rubio's accidental 371-day stay (Expedition 67/68/69) happened when his Soyuz was damaged by debris and a replacement had to be ferried up.",
+  "cur": "आईएसएस ने 3-व्यक्ति अभियान (2000 में Expedition 1) के साथ शुरुआत की थी और 2009 में लाइफबोट क्षमता होने के बाद 6-व्यक्ति क्रू में बढ़ गया। प्रत्येक अभियान आमतौर पर ~6 महीने चलता है। कुछ लंबे समय तक चलते हैं — फ्रैंक रुबियो का आकस्मिक 371-दिन का प्रवास (Expedition 67/68/69) तब हुआ जब उनका Soyuz मलबे से क्षतिग्रस्त हुआ और एक प्रतिस्थापन को ऊपर भेजा गया।"
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "narrative_101.2",
+  "en": "Tiangong started with shorter rotations (Shenzhou 12: 92 days; Shenzhou 13: 183 days) and stabilized at ~6 months from Shenzhou 14 onward. Crews of three rotate; the outgoing and incoming crews share about a week on board to hand over operational state.",
+  "cur": "Tiangong ने छोटे रोटेशन से शुरुआत की (Shenzhou 12: 92 दिन; Shenzhou 13: 183 दिन) और Shenzhou 14 से ~6 महीने पर स्थिर हो गया। तीन व्यक्तियों की क्रू घूमती है; बाहर जाने वाली और आने वाली क्रू बोर्ड पर लगभग एक सप्ताह साझा करती है संचालन स्थिति को हाथ करने के लिए।"
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "body_paragraphs.0",
+  "en": "Constraints driving the ~6-month cadence: docked-spacecraft certified lifetime (~6–7 months; Soyuz ~200 d; Crew Dragon originally ~210 d, since extended; Shenzhou ~180–210 d), on-orbit EVA suit consumable replenishment and certification limits, food-pantry capacity per resupply, and the NASA Human Research Program's preference for 6-month bone-loss data brackets.",
+  "cur": "~6-महीने की कैडेंस को संचालित करने वाली बाधाएं: डॉक किए गए अंतरिक्ष यान की प्रमाणित जीवनकाल (~6–7 महीने; Soyuz ~200 दिन; Crew Dragon मूल रूप से ~210 दिन, अब विस्तारित; Shenzhou ~180–210 दिन), कक्षा में EVA सूट की खपत और प्रमाणन सीमाएं, भोजन-कोष की क्षमता प्रति रिसप्लाई, और NASA मानव अनुसंधान कार्यक्रम की 6-महीने की हड्डी-क्षति डेटा ब्रैकेट की पसंद।"
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "body_paragraphs.1",
+  "en": "ISS expeditions: numbered sequentially since Expedition 1 (Nov 2000). Crew sizes — 3 (Exp 1-19), 6 (Exp 20-63), 7 (Exp 64–), briefly higher during crew handovers.",
+  "cur": "आईएसएस अभियान: Expedition 1 (नवंबर 2000) के बाद से क्रमिक रूप से संख्या बद्ध। क्रू का आकार — 3 (Exp 1-19), 6 (Exp 20-63), 7 (Exp 64–), क्रू हैंडओवर के दौरान संक्षेप में अधिक।"
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "body_paragraphs.2",
+  "en": "Handover: incoming Soyuz/Crew Dragon docks 5-10 days before the outgoing departure. Both crews share the station, conduct briefings, transfer cargo, then the outgoing crew undocks. Combined-crew period is the most resource-stressed: more bodies, more CO₂, more food consumption.",
+  "cur": "हैंडओवर: आने वाली Soyuz/Crew Dragon बाहर जाने वाली यान के प्रस्थान से 5-10 दिन पहले डॉक करती है। दोनों क्रू स्टेशन साझा करती हैं, ब्रीफिंग आयोजित करती हैं, कार्गो स्थानांतरित करती हैं, फिर बाहर जाने वाली क्रू अनडॉक करती है। संयुक्त-क्रू अवधि सबसे संसाधन-तनावग्रस्त है: अधिक लोग, अधिक CO₂, अधिक भोजन की खपत।"
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "body_paragraphs.3",
+  "en": "Long-duration outliers: Polyakov 437.7 d (Mir, 1994-95, deliberate Mars-class endurance test); Rubio 371 d (ISS, 2022-23, contingency); Vande Hei 355 d (ISS, 2021-22, Soyuz seat shuffle); Kelly + Kornienko 340 d (ISS, 2015-16, twin-study programme).",
+  "cur": "दीर्घ अवधि की विषमताएं: पोल्याकोव 437.7 दिन (Mir, 1994-95, जानबूझकर मंगल-वर्ग सहनशीलता परीक्षण); रुबियो 371 दिन (आईएसएस, 2022-23, आकस्मिकता); वांडे हाई 355 दिन (आईएसएस, 2021-22, Soyuz सीट शफल); Kelly + Kornienko 340 दिन (आईएसएस, 2015-16, जुड़वाँ-अध्ययन कार्यक्रम)।"
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "body_paragraphs.4",
+  "en": "Tiangong cadence: Shenzhou 12 (92 d), 13 (183 d), 14 (186 d), 15 (186 d), 16 (155 d), 17 (187 d), 18 (192 d). Stable rhythm matching ISS practice.",
+  "cur": "Tiangong कैडेंस: Shenzhou 12 (92 दिन), 13 (183 दिन), 14 (186 दिन), 15 (186 दिन), 16 (155 दिन), 17 (187 दिन), 18 (192 दिन)। आईएसएस अभ्यास से मेल खाता हुआ स्थिर लय।"
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "diagram_caption",
+  "en": "ISS expedition timeline 2000-2025: stacked colour bands (3-, 6-, 7-person crews) with annotated outliers (Polyakov, Vande Hei, Rubio).",
+  "cur": "आईएसएस अभियान समयरेखा 2000-2025: स्टैक्ड रंग बैंड (3-, 6-, 7-व्यक्ति क्रू) व्याख्यात्मक विषमताओं के साथ (पोल्याकोव, वांडे हाई, रुबियो)।"
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "intro_sentence",
+  "en": "A pressurized hub with multiple docking ports — the structural connector that lets a station branch.",
+  "cur": "दबाव युक्त हब जिसमें कई डॉकिंग पोर्ट हैं — संरचनात्मक कनेक्टर जो स्टेशन को शाखाओं में विभाजित करता है।"
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "narrative_101.0",
+  "en": "A node is a special kind of pressurized module: it doesn't host experiments or crew quarters, it just connects other modules together. Picture a hexagonal box where each face has a docking port. Bolt one node to a launching rocket, send it up, then dock five more modules to the five remaining ports and you've grown your station from one module into six.",
+  "cur": "नोड एक विशेष प्रकार का दबाव युक्त मॉड्यूल है: यह प्रयोगों या चालक दल के क्वार्टर की मेजबानी नहीं करता, यह केवल अन्य मॉड्यूल को एक साथ जोड़ता है। एक षट्भुज आकार के बॉक्स की कल्पना करें जहाँ प्रत्येक फेस में एक डॉकिंग पोर्ट हो। एक नोड को लॉन्चिंग रॉकेट से जोड़ें, इसे ऊपर भेजें, फिर पाँच अन्य मॉड्यूल को शेष पाँच पोर्ट पर डॉक करें और आप अपने स्टेशन को एक मॉड्यूल से छः मॉड्यूल में विकसित कर लेंगे।"
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "narrative_101.1",
+  "en": "The ISS has three: Unity (Node 1), Harmony (Node 2), and Tranquility (Node 3). Each one is the central junction for one segment of the station — Unity glues the Russian and US sides together; Harmony connects the US lab cluster to the Japanese and European modules; Tranquility carries the Cupola observation dome.",
+  "cur": "आईएसएस के पास तीन हैं: Unity (Node 1), Harmony (Node 2), और Tranquility (Node 3)। प्रत्येक स्टेशन के एक सेगमेंट के लिए केंद्रीय जंक्शन है — Unity रूसी और अमेरिकी पक्षों को एक साथ जोड़ता है; Harmony अमेरिकी लैब क्लस्टर को जापानी और यूरोपीय मॉड्यूल से जोड़ता है; Tranquility Cupola अवलोकन डोम को ले जाता है।"
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "narrative_101.2",
+  "en": "Tiangong took a different approach: instead of dedicated nodes, the central Tianhe module acts as both living quarters and a hub, with multiple docking ports built directly into its forward and aft ends. It's a tighter design that costs less mass to launch but limits how many modules can branch off.",
+  "cur": "Tiangong ने एक अलग दृष्टिकोण लिया: समर्पित नोड्स के बजाय, केंद्रीय Tianhe मॉड्यूल रहने के क्वार्टर और हब दोनों के रूप में कार्य करता है, जिसमें कई डॉकिंग पोर्ट इसके आगे और पीछे के सिरों में सीधे बने हुए हैं। यह एक कम लागत वाला डिज़ाइन है जो लॉन्च के लिए कम द्रव्यमान की आवश्यकता होती है लेकिन कितने मॉड्यूल शाखाएँ ले सकते हैं इस पर सीमा डालता है।"
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "body_paragraphs.0",
+  "en": "Nodes are connector modules — pressurized hubs with multiple Common Berthing Mechanism (CBM) or docking ports — that allow a station to branch into a tree topology rather than a linear chain.",
+  "cur": "नोड कनेक्टर मॉड्यूल हैं — दबाव युक्त हब जिनमें कई Common Berthing Mechanism (CBM) या डॉकिंग पोर्ट हैं — जो स्टेशन को एक रैखिक श्रंखला के बजाय एक वृक्ष टोपोलॉजी में शाखाओं में विभाजित करने की अनुमति देते हैं।"
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "body_paragraphs.1",
+  "en": "ISS Unity (Node 1) launched in 1998 on STS-88. Six CBM ports: forward → Destiny, aft → Zarya, starboard → Quest airlock, zenith → Z1 truss, port → Tranquility (2010), nadir → PMA/cargo berthing (formerly Leonardo PMM 2011–2015). The first US-built ISS module.",
+  "cur": "आईएसएस Unity (Node 1) STS-88 पर 1998 में लॉन्च हुआ। छः CBM पोर्ट: आगे → Destiny, पीछे → Zarya, दाएँ → Quest airlock, ऊपर → Z1 truss, बाएँ → Tranquility (2010), नीचे → PMA/cargo berthing (पहले Leonardo PMM 2011–2015)। यह पहला अमेरिकी-निर्मित आईएसएस मॉड्यूल था।"
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "body_paragraphs.2",
+  "en": "ISS Harmony (Node 2) launched 2007. Six ports: connects Destiny to Columbus (port), Kibo (starboard), and the two docking adapters (IDA-2 forward, IDA-3 zenith) for Crew Dragon / Starliner.",
+  "cur": "आईएसएस Harmony (Node 2) 2007 में लॉन्च हुआ। छः पोर्ट: Destiny को Columbus (बाएँ), Kibo (दाएँ), और दो डॉकिंग एडेप्टर (IDA-2 आगे, IDA-3 ऊपर) से जोड़ता है Crew Dragon / Starliner के लिए।"
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "body_paragraphs.3",
+  "en": "ISS Tranquility (Node 3) launched 2010. Hosts the Cupola observation dome (nadir port), the Permanent Multipurpose Module Leonardo (forward), and BEAM (aft).",
+  "cur": "आईएसएस Tranquility (Node 3) 2010 में लॉन्च हुआ। Cupola अवलोकन डोम (नीचे पोर्ट), Permanent Multipurpose Module Leonardo (आगे), और BEAM (पीछे) की मेजबानी करता है।"
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "body_paragraphs.4",
+  "en": "Tiangong's Tianhe core: combines node + crew quarters + propulsion + control. The node hub carries a forward axial port (Shenzhou), two lateral radial ports (Wentian to starboard, Mengtian to port, both relocated there by the arm), and a nadir port; the aft axial port takes Tianzhou cargo. Ports use the Chinese Docking Mechanism, not the US CBM.",
+  "cur": "Tiangong का Tianhe कोर: नोड + चालक दल के क्वार्टर + प्रणोदन + नियंत्रण को जोड़ता है। नोड हब एक आगे का अक्षीय पोर्ट (Shenzhou), दो पार्श्व रेडियल पोर्ट (Wentian दाएँ को, Mengtian बाएँ को, दोनों हथियार द्वारा वहाँ पुनः स्थापित), और एक नीचे का पोर्ट ले जाता है; पिछला अक्षीय पोर्ट Tianzhou कार्गो के लिए है। पोर्ट Chinese Docking Mechanism का उपयोग करते हैं, US CBM का नहीं।"
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "diagram_caption",
+  "en": "Hexagonal node module with six docking ports labelled forward / aft / port / starboard / zenith / nadir.",
+  "cur": "छः डॉकिंग पोर्ट के साथ षट्भुज नोड मॉड्यूल जिसमें आगे / पीछे / बाएँ / दाएँ / ऊपर / नीचे लेबल किए गए हैं।"
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "intro_sentence",
+  "en": "The total habitable interior of a station — how much room the crew actually has to live and work.",
+  "cur": "एक स्टेशन का कुल रहने योग्य आंतरिक भाग — चालक दल के पास जीने और काम करने के लिए वास्तव में कितनी जगह है।"
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "narrative_101.0",
+  "en": "Every station spec sheet leads with one key number: habitable volume in cubic meters — the inside of the modules that crew can breathe and move around in, summed across the whole station. The ISS habitable volume is roughly 388 m³ (about the size of a large 3-bedroom house). Tiangong comes in at about 122 m³ — comfortable for three crew, tight for six.",
+  "cur": "हर स्टेशन स्पेक शीट एक मुख्य संख्या से शुरू होती है: घन मीटर में रहने योग्य आयतन — उन मॉड्यूल के अंदर जहाँ चालक दल साँस ले सकते हैं और घूम सकते हैं, पूरे स्टेशन में जोड़ा गया। आईएसएस का रहने योग्य आयतन लगभग 388 m³ है (एक बड़े 3-बेडरूम घर के बारे में)। Tiangong लगभग 122 m³ में आता है — तीन चालक दल के लिए आरामदायक, छह के लिए तंग।"
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "narrative_101.1",
+  "en": "Pressurized volume is bounded by two ceilings: launch-vehicle fairing diameter (you can only ship a module as fat as the rocket can lift) and pressure-shell mass (the thicker the wall, the heavier the launch). Modern composite-aluminum hulls hit a sweet spot at 2-4 mm thick. Anything beyond and you're paying mass for safety margin you don't use; anything thinner and a micrometeoroid might puncture you.",
+  "cur": "दबाव वाला आयतन दो सीमाओं से घिरा है: लॉन्च-वाहन फेयरिंग व्यास (आप एक मॉड्यूल को केवल उतना बड़ा भेज सकते हैं जितना रॉकेट उठा सकता है) और दबाव-शेल द्रव्यमान (दीवार जितनी मोटी होगी, लॉन्च उतना भारी होगा)। आधुनिक समग्र-एल्यूमीनियम पतवार 2-4 मिमी मोटाई पर एक मीठा स्थान हिट करते हैं। इससे अधिक कुछ भी और आप सुरक्षा मार्जिन के लिए द्रव्यमान का भुगतान कर रहे हैं जो आप उपयोग नहीं करते; इससे पतला कुछ भी और एक माइक्रोमेटेरॉइड आपको छेद कर सकता है।"
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "narrative_101.2",
+  "en": "Crews need roughly 15–25 m³ per person of net habitable volume for multi-month missions (NASA-STD-3001 net-habitable-volume guidance is duration-dependent, not a single fixed value). ISS and Tiangong both comfortably exceed the minimum — which sounds excessive until you remember that the crew is awake 16 hours a day, every day, for months on end.",
+  "cur": "चालक दल को बहु-महीने की मिशन के लिए सकल रहने योग्य आयतन के प्रति व्यक्ति लगभग 15-25 m³ की आवश्यकता होती है (NASA-STD-3001 सकल-रहने-योग्य-आयतन मार्गदर्शन अवधि पर निर्भर है, एक ही निश्चित मान नहीं)। आईएसएस और Tiangong दोनों आसानी से न्यूनतम को पार करते हैं — जो अत्यधिक लगता है जब तक कि आप याद नहीं रखते कि चालक दल हर दिन 16 घंटे जागता है, हर दिन, महीनों के अंत तक।"
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "body_paragraphs.0",
+  "en": "Habitable volume is the air-filled usable interior of a space station, measured in cubic meters. It excludes structural racks, bulkheads, and equipment volume — the figure usually quoted is gross internal volume, of which 30-50% is occupied by hardware.",
+  "cur": "रहने योग्य आयतन एक अंतरिक्ष स्टेशन की हवा से भरी उपयोगी आंतरिक जगह है, जिसे घन मीटर में मापा जाता है। इसमें संरचनात्मक रैक, बल्कहेड्स और उपकरण आयतन शामिल नहीं है — आमतौर पर उद्धृत आंकड़ा सकल आंतरिक आयतन है, जिसमें 30-50% हार्डवेयर द्वारा कब्जा किया गया है।"
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "body_paragraphs.1",
+  "en": "ISS: ~388 m³ habitable across 16 pressurized modules (Zarya, Zvezda, Unity, Destiny, Quest, Pirs/Nauka, Harmony, Columbus, Kibo + ELM, Tranquility, Cupola, Leonardo PMM, Bigelow BEAM, plus the Russian Rassvet and Poisk). Total pressurized volume is ~916 m³.",
+  "cur": "आईएसएस: 16 दबाव वाले मॉड्यूल में ~388 m³ रहने योग्य (Zarya, Zvezda, Unity, Destiny, Quest, Pirs/Nauka, Harmony, Columbus, Kibo + ELM, Tranquility, Cupola, Leonardo PMM, Bigelow BEAM, साथ ही Russian Rassvet और Poisk)। कुल दबाव वाला आयतन ~916 m³ है।"
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "body_paragraphs.2",
+  "en": "Tiangong: ~122 m³ habitable across three modules (Tianhe core, Wentian and Mengtian labs). Total pressurized volume is ~340 m³.",
+  "cur": "Tiangong: तीन मॉड्यूल में ~122 m³ रहने योग्य (Tianhe कोर, Wentian और Mengtian लैब)। कुल दबाव वाला आयतन ~340 m³ है।"
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "body_paragraphs.3",
+  "en": "Mir: ~350 m³ total pressurized volume at peak (1986–2001) — broadly comparable in scale to Tiangong's pressurized envelope, but built from heavier-walled modules and an older generation of life-support systems.",
+  "cur": "Mir: शिखर पर ~350 m³ कुल दबाव वाला आयतन (1986–2001) — Tiangong के दबाव वाले लिफाफे के आकार में व्यापक रूप से तुलनीय, लेकिन भारी-दीवार वाले मॉड्यूल और जीवन-समर्थन प्रणालियों की एक पुरानी पीढ़ी से बना।"
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "body_paragraphs.4",
+  "en": "The net habitable volume guidance in NASA-STD-3001 Volume 2 is empirically derived from confined-environment psychology studies dating back to Skylab and the Soviet Salyut programme, and scales with mission duration rather than setting a single floor. Below the minimum guidance band, crew well-being and mission performance decline measurably.",
+  "cur": "NASA-STD-3001 वॉल्यूम 2 में सकल रहने योग्य आयतन मार्गदर्शन Skylab और Soviet Salyut कार्यक्रम से शुरू होने वाले सीमित-पर्यावरण मनोविज्ञान अध्ययनों से अनुभवजन्य रूप से व्युत्पन्न है, और एक ही मंजिल निर्धारित करने के बजाय मिशन अवधि के साथ स्केल करता है। न्यूनतम मार्गदर्शन बैंड से नीचे, चालक दल की सुस्थता और मिशन प्रदर्शन में मापने योग्य गिरावट आती है।"
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "diagram_caption",
+  "en": "Three station habitable volumes to scale: Tiangong (~122 m³), Mir (~350 m³ total pressurized), ISS (~388 m³ habitable). One human silhouette for reference scale.",
+  "cur": "तीन स्टेशन रहने योग्य आयतन को स्केल करने के लिए: Tiangong (~122 m³), Mir (~350 m³ कुल दबाव वाला), आईएसएस (~388 m³ रहने योग्य)। संदर्भ स्केल के लिए एक मानव सिल्हूट।"
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "intro_sentence",
+  "en": "How much electricity the solar arrays generate — the upstream constraint on every system the crew can run.",
+  "cur": "सौर सरणियाँ कितनी विद्युत उत्पन्न करती हैं — चालक दल जो कोई भी प्रणाली चला सकता है उस पर ऊपरी सीमा।"
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "narrative_101.0",
+  "en": "A space station runs on solar electricity. The solar wings run the length of the ISS's ~109 m truss — bigger than a football field — because everything else depends on the watts they pull from sunlight: life support, communications, scientific instruments, the crew's exercise machine, the toilet's air-flow fan.",
+  "cur": "एक अंतरिक्ष स्टेशन सौर विद्युत पर चलता है। सौर पंख आईएसएस के ~109 m ट्रस की लंबाई तक फैले हैं — एक फुटबॉल मैदान से बड़े — क्योंकि बाकी सब कुछ सूर्य के प्रकाश से खींचे गए वाट पर निर्भर करता है: जीवन समर्थन, संचार, वैज्ञानिक उपकरण, चालक दल की व्यायाम मशीन, शौचालय का वायु-प्रवाह पंखा।"
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "narrative_101.1",
+  "en": "The eight original 35 m × 12 m ISS arrays delivered ~160 kW peak sunlit at beginning of life, derated with age; augmented by six iROSA roll-out arrays (covering six of the eight original wings, each adding >20 kW), total installed generation capacity reached ~215 kW. Orbit-average power delivered to loads — accounting for the ~0.6 sunlit fraction and battery/regulation losses — is roughly 84–120 kW. Tiangong runs lighter at about 27 kW peak — fewer crew, fewer experiments, simpler thermal load.",
+  "cur": "आठ मूल 35 m × 12 m आईएसएस सरणियों ने शुरुआत में ~160 kW चरम धूप प्रदान की, जो समय के साथ कम हुई; छह iROSA रोल-आउट सरणियों द्वारा बढ़ाई गई (छह मूल पंखों को कवर करते हुए, प्रत्येक >20 kW जोड़ता है), कुल स्थापित पीढ़ी क्षमता ~215 kW तक पहुंची। कक्षा-औसत विद्युत भार तक पहुंचाई गई — ~0.6 धूप अंश और बैटरी/विनियमन नुकसान को ध्यान में रखते हुए — लगभग 84–120 kW है। Tiangong हल्का है लगभग 27 kW चरम पर — कम चालक दल, कम प्रयोग, सरल तापीय भार।"
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "narrative_101.2",
+  "en": "Power dictates ambition. Want to run a centrifuge biology experiment? Plug it in — it'll cost 1.5 kW. Want to add ten more racks of payloads? You need a power budget, and either you grow the array (expensive — new mission) or you load-shed something else.",
+  "cur": "विद्युत महत्वाकांक्षा को निर्धारित करती है। एक केंद्रीकरण जीव विज्ञान प्रयोग चलाना चाहते हैं? इसे प्लग करें — इसकी कीमत 1.5 kW होगी। दस और अधिक पेलोड रैक जोड़ना चाहते हैं? आपको एक विद्युत बजट की आवश्यकता है, और या तो आप सरणी बढ़ाते हैं (महंगा — नया मिशन) या आप कुछ और को हटाते हैं।"
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "body_paragraphs.0",
+  "en": "Solar power budget = peak generated power × duty cycle (sunlit fraction of orbit) × downstream efficiency (battery + regulator losses). For LEO stations the duty cycle is about 0.6 — roughly 35 minutes sunlit out of every 92-minute orbit.",
+  "cur": "सौर विद्युत बजट = चरम उत्पन्न विद्युत × कर्तव्य चक्र (कक्षा का धूप अंश) × डाउनस्ट्रीम दक्षता (बैटरी + नियामक नुकसान)। LEO स्टेशनों के लिए कर्तव्य चक्र लगभग 0.6 है — प्रत्येक 92-मिनट की कक्षा में लगभग 35 मिनट धूप।"
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "body_paragraphs.1",
+  "en": "ISS solar arrays: 8 main IEA wings (4× P3/P4, P6 + 4× S3/S4, S6) at ~160 kW peak BOL, derated to ~84 kW EOL at 15 years. Six iROSA roll-out arrays (covering 6 of the 8 original wings), each adding >20 kW, bring total installed generation to ~215 kW sunlit. Orbit-average power delivered to loads (×~0.6 sunlit fraction, minus storage/regulation losses) ≈ 84–120 kW.",
+  "cur": "आईएसएस सौर सरणियाँ: 8 मुख्य IEA पंख (4× P3/P4, P6 + 4× S3/S4, S6) ~160 kW चरम BOL पर, 15 वर्षों में ~84 kW EOL तक कम हुई। छह iROSA रोल-आउट सरणियाँ (8 मूल पंखों में से 6 को कवर करती हैं), प्रत्येक >20 kW जोड़ती है, कुल स्थापित धूप पीढ़ी को ~215 kW में लाती है। कक्षा-औसत विद्युत भार तक पहुंचाई गई (×~0.6 धूप अंश, भंडारण/विनियमन नुकसान को घटाकर) ≈ 84–120 kW है।"
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "body_paragraphs.2",
+  "en": "Tiangong solar arrays: 4 wings on Tianhe (2 retractable each side) plus 4 large wings on Wentian and Mengtian. Total ~30 kW BOL × duty cycle = ~18 kW continuous, with 27 kW peak during sunlit pass.",
+  "cur": "Tiangong सौर सरणियाँ: Tianhe पर 4 पंख (प्रत्येक पक्ष पर 2 पुनः आकर्षक) साथ ही Wentian और Mengtian पर 4 बड़े पंख। कुल ~30 kW BOL × कर्तव्य चक्र = ~18 kW निरंतर, धूप पास के दौरान 27 kW चरम के साथ।"
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "body_paragraphs.3",
+  "en": "Battery storage: ISS uses lithium-ion battery ORUs (orbital replacement units) at ~50 kWh capacity per pair. Each battery covers one main array's night-side load. Tiangong uses similar Li-ion banks, sized for the smaller load.",
+  "cur": "बैटरी भंडारण: आईएसएस लिथियम-आयन बैटरी ORU (कक्षीय प्रतिस्थापन इकाइयों) का उपयोग करता है ~50 kWh क्षमता प्रति जोड़ी के साथ। प्रत्येक बैटरी एक मुख्य सरणी के रात पक्ष भार को कवर करती है। Tiangong समान Li-ion बैंक का उपयोग करता है, छोटे भार के लिए आकार दिया गया।"
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "body_paragraphs.4",
+  "en": "Mir, by contrast, peaked at ~30 kW from 1500 m² of array — comparable on a per-volume basis to Tiangong but with older nickel-cadmium battery storage that needed deeper rebuilds over its 15-year life.",
+  "cur": "इसके विपरीत Mir, ~30 kW 1500 m² सरणी से चरम पर था — Tiangong के लिए प्रति-आयतन आधार पर तुलनीय लेकिन पुरानी निकल-कैडमियम बैटरी भंडारण के साथ जिसे इसके 15-वर्षीय जीवन के दौरान गहरे पुनर्निर्माण की आवश्यकता थी।"
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "diagram_caption",
+  "en": "Solar input → array → DC bus → battery + loads. Duty cycle bar shows the 60% sunlit fraction per 92-minute orbit.",
+  "cur": "सौर इनपुट → सरणी → DC बस → बैटरी + भार। कर्तव्य चक्र पट्टी 92-मिनट की कक्षा प्रति 60% धूप अंश दिखाता है।"
+ },
+ {
+  "rel": "science/transfers/_intro.json",
+  "at": "headline",
+  "en": "Transfers — once you're in orbit, you're halfway to anywhere.",
+  "cur": "ट्रांसफर — एक बार कक्षा में पहुँचने के बाद, आप कहीं भी आधे रास्ते पर हैं।"
+ },
+ {
+  "rel": "science/transfers/_intro.json",
+  "at": "paragraphs.0",
+  "en": "Robert Heinlein wrote that. He was right. Reaching low Earth orbit costs about 9.4 km/s of ∆v — the hardest part of any trip. The trans-Mars injection burn adds only ~3.6 km/s. Once you're free of the planet's atmosphere and in a proper orbit, the rest of the solar system is mostly geometry.",
+  "cur": "रॉबर्ट हाइनलाइन ने यह लिखा था। वह सही थे। निम्न पृथ्वी कक्षा तक पहुँचने में लगभग 9.4 km/s का ∆v खर्च होता है — किसी भी यात्रा का सबसे कठिन भाग। ट्रांस-मार्स इंजेक्शन बर्न में केवल ~3.6 km/s की जोड़ होती है। एक बार जब आप ग्रह के वायुमंडल से मुक्त हो जाते हैं और उचित कक्षा में होते हैं, तो सौर मंडल का बाकी हिस्सा अधिकांशतः ज्यामिति है।"
+ },
+ {
+  "rel": "science/transfers/_intro.json",
+  "at": "paragraphs.1",
+  "en": "The seven sections in this tab cover the geometry. The Hohmann transfer is the cheapest possible trip between two orbits — two burns, eight months of coasting. Lambert's problem generalises Hohmann to arbitrary departure and arrival dates. Gravity assists let you steal speed from a planet (essentially) for free, which is how Voyager 2 reached Neptune. Free-return trajectories are the safety net that brought Apollo 13 home. Patched conics is the working approximation that lets us compute all of this in a browser.",
+  "cur": "इस टैब के सात खंड ज्यामिति को कवर करते हैं। Hohmann transfer दो कक्षाओं के बीच सबसे सस्ती संभावित यात्रा है — दो बर्न, आठ महीने की कोस्टिंग। Lambert's problem Hohmann को मनमानी प्रस्थान और आगमन तिथियों के लिए सामान्यीकृत करता है। गुरुत्वाकर्षण सहायता आपको एक ग्रह से गति चोरी करने देती है (अनिवार्य रूप से) मुक्त में, जो यह है कि कैसे Voyager 2 वरुण तक पहुँचा। मुक्त-वापसी प्रक्षेपवक्र वह सुरक्षा जाल हैं जो Apollo 13 को घर लाए। Patched conics कार्यशील सन्निकटन है जो हमें ब्राउज़र में इस सब की गणना करने देता है।"
+ },
+ {
+  "rel": "science/transfers/_intro.json",
+  "at": "paragraphs.2",
+  "en": "If you only read one section: Hohmann transfer. Everything else builds on it.",
+  "cur": "यदि आप केवल एक खंड पढ़ें: Hohmann transfer। बाकी सब कुछ इसी पर निर्मित है।"
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "intro_sentence",
+  "en": "Slice a cone four ways and you get every possible Keplerian trajectory — circle, ellipse, parabola, hyperbola.",
+  "cur": "एक शंकु को चार तरीकों से काटें और आपको हर संभव Keplerian प्रक्षेप पथ मिलता है — वृत्त, दीर्घवृत्त, परवलय, अतिपरवलय।"
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "narrative_101.0",
+  "en": "There's a bizarre piece of mathematical luck at the heart of orbital mechanics. The shapes you can make by slicing a cone with a flat plane — circle, ellipse, parabola, hyperbola — turn out to be EXACTLY the only shapes a body under gravity can travel along. The Greeks studied these curves for fun in 200 BC. Two thousand years later we discovered the universe runs on them.",
+  "cur": "कक्षीय यांत्रिकी के हृदय में एक अजीब गणितीय भाग्य है। आकृतियाँ जो आप किसी शंकु को एक समतल तल से काटकर बना सकते हैं — वृत्त, दीर्घवृत्त, परवलय, अतिपरवलय — यह ठीक वही अकेली आकृतियाँ हैं जो गुरुत्वाकर्षण के अंतर्गत कोई पिंड यात्रा कर सकता है। यूनानियों ने 200 BC में मज़े के लिए इन वक्रों का अध्ययन किया। दो हज़ार साल बाद हमने खोजा कि ब्रह्मांड उन पर चलता है।"
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "narrative_101.1",
+  "en": "The four shapes form a continuum. Slow enough? You're on a circle or ellipse — bound, you'll come back. Right at escape speed? Parabola — you'll just barely never come back. Faster than that? Hyperbola — you blast through and never return. Eccentricity is the dial: 0 is a circle, 1 is the escape edge, above 1 you're free.",
+  "cur": "ये चार आकृतियाँ एक सातत्य बनाती हैं। काफ़ी धीमी गति में? आप एक वृत्त या दीर्घवृत्त पर हैं — बंधा हुआ, आप वापस आएँगे। ठीक पलायन गति पर? परवलय — आप बस कभी वापस नहीं आएँगे। उससे तेज़? अतिपरवलय — आप आगे बढ़ते हैं और कभी नहीं लौटते। विकेंद्रता डायल है: 0 एक वृत्त है, 1 पलायन किनारा है, 1 से ऊपर आप स्वतंत्र हैं।"
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "narrative_101.2",
+  "en": "Real missions use all four. The cruise from Earth to Mars is an ellipse. The flyby past Jupiter on the way to Saturn is a hyperbola — relative to Jupiter, you're going too fast to be captured. The Voyager probes are now on hyperbolic escape trajectories (e > 1) that will take them out of the solar system forever. Same equation describes all of them; only the eccentricity differs.",
+  "cur": "असली मिशन सभी चार का उपयोग करते हैं। पृथ्वी से मंगल तक की यात्रा एक दीर्घवृत्त है। शनि के रास्ते में बृहस्पति के पास की उड़ान एक अतिपरवलय है — बृहस्पति के सापेक्ष, आप पकड़े जाने के लिए बहुत तेज़ जा रहे हैं। Voyager जाँचें अब अतिपरवलयिक पलायन प्रक्षेप पथ (e > 1) पर हैं जो उन्हें सौर मंडल से हमेशा के लिए बाहर ले जाएँगे। वही समीकरण उन सभी का वर्णन करता है; केवल विकेंद्रता भिन्न होती है।"
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "body_paragraphs.0",
+  "en": "Take an infinite cone and cut it with a flat plane. Slice horizontally: a circle (`e = 0`). Tilt the slice: an ellipse (`0 < e < 1`). Tilt parallel to the cone's edge: a parabola (`e = 1`, the exact escape case). Tilt past that: a hyperbola (`e > 1`, escape with energy to spare). Two thousand years before Kepler, Apollonius of Perga catalogued these curves. Two centuries before Newton, Kepler discovered planets fly along them.",
+  "cur": "एक अनंत शंकु लीजिए और उसे एक समतल से काटिए। क्षैतिज रूप से काटिए: एक वृत्त (`e = 0`)। स्लाइस को झुकाइए: एक दीर्घवृत्त (`0 < e < 1`)। शंकु की सीमा के समानांतर झुकाइए: एक परवलय (`e = 1`, सटीक पलायन स्थिति)। उससे आगे झुकाइए: एक अतिपरवलय (`e > 1`, अतिरिक्त ऊर्जा के साथ पलायन)। केप्लर से दो हजार वर्ष पहले, एपोलोनियस ने इन वक्रों को सूचीबद्ध किया। Newton से दो शताब्दी पहले, केप्लर ने खोजा कि ग्रह इनके साथ उड़ते हैं।"
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "body_paragraphs.1",
+  "en": "Every Keplerian orbit is one of these four. Bound orbits — planets, moons, satellites, anything that returns — are circles or ellipses. Unbound trajectories — flybys, escapes, hyperbolic captures — are parabolas or hyperbolas. The boundary is exact: at `e = 1` you're moving at exactly the local escape velocity.",
+  "cur": "हर Keplerian कक्षा इन चारों में से एक है। बंधी कक्षाएँ — ग्रह, चंद्रमा, उपग्रह, कुछ भी जो लौटता है — वृत्त या दीर्घवृत्त हैं। बेजोड़ प्रक्षेप पथ — उड़ानें, पलायन, अतिपरवलयिक कब्जे — परवलय या अतिपरवलय हैं। सीमा सटीक है: `e = 1` पर आप बिल्कुल स्थानीय पलायन वेग पर चल रहे हैं।"
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "body_paragraphs.2",
+  "en": "Mission designers exploit all four. Cruise on an ellipse, flyby a planet on a hyperbola (relative to that planet), insert into orbit on an ellipse again. The simulator's `/fly` route does this naturally — the same trajectory equation handles every case, the eccentricity tells you which conic you're flying.",
+  "cur": "मिशन डिज़ाइनर सभी चारों का दोहन करते हैं। दीर्घवृत्त पर क्रूज़ करें, अतिपरवलय पर किसी ग्रह के पास उड़ान भरें (उस ग्रह के सापेक्ष), फिर से दीर्घवृत्त पर कक्षा में डालें। सिमुलेटर का `/fly` रूट यह स्वाभाविक रूप से करता है — एक ही प्रक्षेप पथ समीकरण हर मामले को संभालता है, विकेंद्रता आपको बताती है कि आप किस शांकव पर उड़ रहे हैं।"
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "diagram_caption",
+  "en": "Four conics from cutting a cone: circle, ellipse, parabola, hyperbola. Eccentricity sets which.",
+  "cur": "शंकु को काटने से चार शांकव: वृत्त, दीर्घवृत्त, परवलय, अतिपरवलय। विकेंद्रता तय करती है कि कौन सा है।"
+ },
+ {
+  "rel": "science/transfers/coplanar-trajectories.json",
+  "at": "title",
+  "en": "Why mission trajectories look flat",
+  "cur": "मिशन प्रक्षेपपथ सपाट क्यों दिखते हैं"
+ },
+ {
+  "rel": "science/transfers/coplanar-trajectories.json",
+  "at": "intro_sentence",
+  "en": "The solar system is a disk, and propellant is finite — so missions don't leave the disk unless they have to.",
+  "cur": "सौर मंडल एक डिस्क है, और प्रणोदक सीमित है — इसलिए मिशन तब तक डिस्क नहीं छोड़ते जब तक उन्हें ऐसा करना न पड़े।"
+ }
+]

@@ -1,0 +1,494 @@
+[
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "dek",
+  "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+  "cur": "标题说小行星含有价值四千万亿美元的黄金和铂。标题是错的——不是在金属上出错，而是在金钱上出错。关于小行星资源的真正论证方向完全相反。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.0.md",
+  "en": "Every few years, someone does the arithmetic on asteroid 16 Psyche and announces, in a breathless press release, that the metal-rich body orbiting in the [asteroid belt](/science/planets/asteroid-belt) contains iron, nickel, and precious metals worth something in the range of ten quintillion dollars. The figure is always staggering. It is also, in any meaningful economic sense, meaningless — and understanding why it is meaningless leads directly to what the genuine argument for asteroid resources actually is, which is almost the opposite of the headline version.",
+  "cur": "每隔几年，就会有人对小行星16 Psyche进行运算，并在一份措辞激烈的新闻稿中宣布，这颗富含金属、在[小行星带](/science/planets/asteroid-belt)中轨道运行的天体含有价值十六万亿亿美元范围内的铁、镍和贵金属。这个数字总是令人瞠目结舌的。从任何有意义的经济学角度来说，它也是无意义的——理解为什么它是无意义的，会直接引出小行星资源真正的论证是什么，这几乎与新闻标题的版本相反。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.1.md",
+  "en": "Start with the number itself. The global platinum market is worth, in a given year, roughly $5 billion. If you could deliver the platinum-group-metal content of even a modest metallic asteroid to Earth and sell it tomorrow, you would not make a fortune. You would collapse the market. The price of platinum derives entirely from its scarcity; remove the scarcity, and you remove the price. Value, for a commodity, is set at the margin — by the last unit sold, not the total volume in existence. The $10-quintillion asteroid, successfully mined and delivered to Earth's surface, would be worth roughly what iron ore is worth: not much per kilogram. But this market-collapse argument is almost beside the point, because it assumes delivery to Earth — and delivery to Earth is where the arithmetic goes wrong long before the market enters the picture. This is where the [rocket equation](/science/propulsion/tsiolkovsky) closes the discussion.",
+  "cur": "从数字本身开始。全球铂族金属市场在任何特定年份的价值约为50亿美元。如果你能够把一颗中等规模的金属小行星的铂族金属含量运送到地球并立即售出，你不会发家致富。你会导致市场崩溃。铂的价格完全源于其稀缺性；消除稀缺性，就消除了价格。对商品而言，价值是在边际处设定的——由最后出售的单位决定，而不是现有的总体积。这颗价值10万亿亿美元的小行星，如果成功开采并运到地球表面，其价值大约相当于铁矿石的价值：每公斤价值不高。但这个市场崩溃的论证几乎可以搁置不谈，因为它假设运送到地球——而运送到地球正是运算在市场介入之前就出错的地方。这就是[火箭方程](/science/propulsion/tsiolkovsky)结束讨论的地方。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.3.md",
+  "en": "The [delta-v budget](/science/propulsion/dv-budget) for a mission from Earth to a near-Earth asteroid is, for a favourable target, somewhere around 6 km/s — comparable to reaching Mars. Getting material back from that asteroid to Earth orbit costs more still, and getting it from Earth orbit to Earth's surface requires surviving the atmosphere. This is all before you have done any mining. The [rocket equation](/science/propulsion/tsiolkovsky) does not grade on a curve: every kilogram of payload you want to return home from deep space must be matched, at launch, by enough propellant to carry it back, which must itself be matched by propellant to carry that propellant, and so on down the regress the equation describes. The [Tsiolkovsky constraint](/science/propulsion/tsiolkovsky), which has not been repealed since 1903, makes the numbers brutal.",
+  "cur": "从地球到近地小行星的太空任务的[变速增量预算](/science/propulsion/dv-budget)，对于一个有利的目标来说，大约在6公里/秒左右——相当于到达火星。从那颗小行星将物质运回地球轨道成本更高，而从地球轨道到地球表面需要穿过大气层存活。这一切都是在你进行任何采矿之前。[火箭方程](/science/propulsion/tsiolkovsky)没有曲线打分：你想从深空返回家园的每一公斤有效载荷，在发射时都必须与足够的推进剂相匹配以将其运回，而这些推进剂本身也必须与携带该推进剂的推进剂相匹配，以此类推，就像方程描述的无限递归一样。自1903年以来从未被废除的[齐奥尔科夫斯基约束](/science/propulsion/tsiolkovsky)使数字变得残酷。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.4.md",
+  "en": "Put plainly: you are pulling material out of a gravity well — not Earth's, but the solar system's. The asteroid is, admittedly, tiny, with a surface gravity a thousandth of Earth's. Getting off it costs almost nothing in [delta-v](/essays/delta-v). But you are then in interplanetary space, and Earth is at the bottom of a very large gravity well, and arriving there with any significant velocity means spending fuel to slow down, or accepting the violence of aerobraking, or both. The economic cost of transporting mass across interplanetary distances and then decelerating it safely is, at current and foreseeable propulsion technologies, so far above the market value of any commodity that the business case for returning bulk materials to Earth cannot close. This is not a pessimistic reading. It is what the [specific impulse](/science/propulsion/specific-impulse) numbers say when you run them honestly.",
+  "cur": "简单地说：你正在从重力井中提取物质——不是地球的，而是太阳系的。这颗小行星确实很小，表面重力只有地球的千分之一。摆脱它在[变速增量](/essays/delta-v)上花费几乎为零。但你随后进入星际空间，地球位于一个非常大的重力井底部，以任何显著速度到达那里意味着花费燃料减速，或接受气动制动的冲击，或两者兼有。在当前和可预见的推进技术下，在星际距离上运输质量然后安全减速的经济成本，远远高于任何商品的市场价值，以至于将散装材料运回地球的商业案例无法成立。这不是一种悲观的解读。这是当你诚实地运行[比冲](/science/propulsion/specific-impulse)数字时它们所说的内容。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.5.md",
+  "en": "This is also why the first generation of commercial asteroid ventures — Planetary Resources, founded in 2012, and Deep Space Industries, founded in 2013 — failed within a decade, not because the asteroids aren't there, but because the market for Earth-delivered asteroid platinum does not exist at any price that the [delta-v economics](/essays/delta-v) can support. The logic of hauling wealth down to Earth's surface was broken from the start.",
+  "cur": "这也是为什么第一代商业小行星企业——成立于2012年的Planetary Resources和成立于2013年的Deep Space Industries——在十年内失败了，不是因为小行星不存在，而是因为地球运送的小行星铂市场在任何价格上都不存在，至少在[变速增量经济学](/essays/delta-v)能够支持的范围内。将财富运往地球表面的逻辑从一开始就被打破了。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.7.md",
+  "en": "Now invert the question. Instead of asking what it costs to bring material from space to Earth, ask what it costs to bring material from Earth to space. The answer is the same rocket equation, running the other direction, and it is just as brutal. Getting one kilogram to low Earth orbit on a [reusable launcher](/essays/reusable-launchers) costs, at best, a few thousand dollars today — down dramatically from the tens of thousands it cost a decade ago. Getting that kilogram further, to a lunar transfer orbit or to a Mars-bound trajectory, costs more still, because you are climbing higher out of Earth's gravity well and the [Oberth arithmetic](/science/propulsion/oberth-effect) that makes deep burns efficient cannot fix the fundamental mass-ratio problem.",
+  "cur": "现在反转这个问题。与其问从太空向地球运送物质的成本，不如问从地球向太空运送物质的成本。答案是同样的火箭方程，沿另一个方向运行，同样残酷。在[可重用运载火箭](/essays/reusable-launchers)上将一公斤送到近地轨道的成本最多是今天的几千美元——比十年前的数万美元下降了很多。将那一公斤进一步送到月球转移轨道或火星轨迹需要更多成本，因为你正在爬出地球的重力井，而[奥伯特算术](/science/propulsion/oberth-effect)使深层燃烧高效无法解决根本的质量比问题。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.8.md",
+  "en": "This is what the gravity-well framing clarifies. Earth's surface sits at the bottom of a well that costs roughly 9.4 km/s of delta-v to escape entirely. Every kilogram of food, fuel, water, air, structural material, or radiation shielding that a crewed spacecraft carries above low Earth orbit has paid that toll. The toll is not a surcharge that clever engineering can avoid; it is a physical consequence of being on Earth, which is a large planet with a deep gravitational field. If you want to build and operate spacecraft above low Earth orbit — for a lunar base, for Mars transit, for anything sustained in deep space — the dominant cost is not your hardware. It is the propellant burned to lift your hardware and its consumables out of the well every single time.",
+  "cur": "这就是重力井框架所澄清的。地球表面位于一个需要大约9.4公里/秒变速增量才能完全逃脱的井底。载人航天器在近地轨道上方携带的每一公斤食物、燃料、水、空气、结构材料或辐射屏蔽都已付出了这个代价。这个代价不是聪明工程可以避免的附加费用；它是位于地球这个拥有深重力场的大行星上的物理后果。如果你想在近地轨道上方建造和运营航天器——用于月球基地、用于火星运输、用于深空中的任何持续活动——主导成本不是你的硬件。而是燃烧的推进剂成本，用来每次都将你的硬件和其消耗品提升出井。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.9.md",
+  "en": "The genuine economic argument for asteroid resources begins exactly here, and it runs in the direction opposite to the headline. Instead of bringing material from asteroids to Earth, the question is: can we use material that is *already* above Earth's gravity well to avoid lifting it from the surface? Can we, in effect, find a fuel depot and a hardware store already in orbit — or close enough that the delivery cost is measured in fractions of a km/s rather than ten km/s — and stop paying the launch toll on every kilogram of material a deep-space economy needs? The answer, if the recon missions are to be believed, is yes. But not for gold. For water.",
+  "cur": "小行星资源的真正经济论证恰好从这里开始，其方向与标题相反。问题不是将小行星中的物质运到地球，而是：我们能否利用*已经*在地球重力井上方的物质来避免从表面提升它？我们能否有效地找到一个燃料库和一个硬件商店已经在轨道中——或足够接近使得运送成本以公里/秒的分数计算，而不是十公里/秒——并停止为深空经济所需的每一公斤物质支付发射代价？如果勘察任务是可信的，答案是肯定的。但不是为了黄金。是为了水。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.10.caption",
+  "en": "Every kilogram launched from Earth pays a brutal toll in delta-v just to climb out of the planet’s gravity well. Anything already in space — an asteroid drifting above the rim — has that price paid. Which is why a litre of water parked in orbit is worth more than a litre of gold sitting on the ground.",
+  "cur": "从地球发射的每一公斤都要付出残酷的变速增量代价，仅仅是为了爬出行星的重力井。任何已经在太空中的东西——一颗漂浮在井口上方的小行星——都已付出了这个代价。这就是为什么停泊在轨道中的一升水比坐在地面上的一升黄金更值钱。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.12.md",
+  "en": "Carbonaceous chondrite asteroids — the C-type and related classes that represent the majority of near-Earth objects — contain significant quantities of hydrated minerals: clays and phyllosilicates that hold water molecules in their crystal structure at levels ranging from a few percent to more than twenty percent by mass. Some also contain organics. The water is not sitting in puddles; it is chemically bound, and extracting it requires heating the material to drive off the water vapour and then condensing it. But the energy to do that can, in principle, come from solar concentrators in space. The result is water — and water, in the context of a deep-space programme, is not primarily a thing to drink.",
+  "cur": "碳质球粒陨石——C型及相关类别代表近地天体的大多数——包含大量含水矿物：粘土和叶硅酸盐，在其晶体结构中以从质量的几个百分比到超过20%的水平持有水分子。有些还含有有机物。水不是坐在水坑里；它是化学结合的，提取它需要加热材料以驱离水蒸气，然后冷凝它。但这样做所需的能量原则上可以来自太空中的太阳集中器。结果是水——在深空计划的背景下，水主要不是一种饮用的东西。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.13.md",
+  "en": "Electrolysis splits water into hydrogen and oxygen: the most energetic chemical propellant combination ever flown. Hydrogen and oxygen, liquefied and stored, are rocket propellant. The [delta-v](/essays/delta-v) budget for a Mars transfer is approximately 3.6 km/s from low Earth orbit; a propellant depot at a convenient [Lagrange point](/science/transfers/hohmann-transfer) or in a near-Earth orbit, stocked from asteroid-derived water, would dramatically change the mass that needs to be launched from Earth for any beyond-LEO mission. The fuel is the dominant mass fraction of any spacecraft — the Saturn V that carried Apollo astronauts to the Moon was [85% propellant by mass](/essays/delta-v). A depot that supplies propellant without requiring it to be lifted from Earth's surface is not a logistical convenience. It restructures the entire economics of deep space.",
+  "cur": "电解将水分解为氢和氧：有史以来飞行过的最高效的化学推进剂组合。液化和储存的氢和氧是火箭推进剂。从近地轨道到火星转移的[变速增量](/essays/delta-v)预算约为3.6公里/秒；在一个方便的[拉格朗日点](/science/transfers/hohmann-transfer)或近地轨道中的推进剂库，由小行星衍生水补充，将大大改变地球为任何LEO外任务所需发射的质量。燃料是任何航天器的主要质量分数——携带Apollo宇航员登月的土星五号是[质量的85%推进剂](/essays/delta-v)。一个无需从地球表面提升推进剂即可供应推进剂的库不是一个后勤便利。它重构了整个深空经济。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.14.md",
+  "en": "Beyond propellant, water provides oxygen for breathing. The same carbonaceous material provides carbon and nitrogen. The bulk mass — rock, in most cases, not metal — provides radiation shielding: a spacecraft transiting to Mars is outside Earth's magnetosphere for six to nine months, and lifting enough mass to shield a crew from cosmic rays costs enormously if every kilogram has to be launched from Earth's surface. None of this has the glamour of platinum. All of it is more valuable to a space-based economy than platinum is. The argument is not about treasure. It is about [in-situ resource utilisation](/science/life-in-space/isru-resource-utilization) — the only approach that makes sustained human presence beyond Earth physically feasible — and the resource that matters most is not the rarest or most expensive one, but the one that is most expensive to launch from Earth: propellant mass. The [going-to-the-moon essay](/essays/going-to-the-moon) makes the same case at the lunar south pole, for the same reasons. The Moon and carbonaceous near-Earth asteroids are the same argument in two different places.",
+  "cur": "除了推进剂外，水提供呼吸所需的氧气。相同的碳质材料提供碳和氮。大部分质量——在大多数情况下是岩石，而不是金属——提供辐射屏蔽：过境到火星的航天器在地球磁层外6到9个月，如果每一公斤都必须从地球表面发射，提升足够的质量来保护船员免受宇宙射线的伤害需要花费大量成本。这些都没有铂的光彩。对基于空间的经济而言，所有这些都比铂更有价值。论证不是关于财宝。它是关于[就地资源利用](/science/life-in-space/isru-resource-utilization)——唯一使人类在地球外持续存在在物理上可行的方法——最重要的资源不是最稀有或最昂贵的资源，而是从地球发射最昂贵的资源：推进剂质量。[登月文章](/essays/going-to-the-moon)在月球南极对相同原因进行了相同的论证。月球和碳质近地小行星是两个不同地方的相同论证。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.15.caption",
+  "en": "Split asteroid water and you have hydrogen and oxygen — rocket propellant — plus air to breathe, water to drink, and bulk rock for radiation shielding. The prize was never metal to sell back home; it is a fuel depot that is already in the sky.",
+  "cur": "分解小行星水，你得到氢和氧——火箭推进剂——加上呼吸用的空气、饮用水和用于辐射屏蔽的散装岩石。奖品从不是回家售卖的金属；它是已经在天空中的一个燃料库。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.17.md",
+  "en": "The recon that would support any of this is not theoretical. It has been done, twice, by Japan, and once by the United States — and what it found was both more interesting and more humbling than the headline version suggested.",
+  "cur": "支撑这一切的勘察工作并非纸上谈兵。日本已经进行过两次，美国进行过一次——其发现既比头条新闻版本更有趣，也更令人谦虚。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.18.md",
+  "en": "Japan's [Hayabusa](/missions?id=hayabusa1) reached the S-type asteroid Itokawa in September 2005. Its sample collection mechanism had malfunctioned, but the spacecraft returned to Earth in June 2010 carrying approximately 1,500 sub-millimetre particles — the first samples ever returned from an asteroid. The analysis confirmed ordinary LL chondrite mineralogy: not the water-rich carbonaceous target the ISRU argument needs, but proof of concept that you can reach an asteroid, touch it, and bring pieces back.",
+  "cur": "日本的[Hayabusa](/missions?id=hayabusa1)在2005年9月到达S型小行星糸川。其样本采集机构发生了故障，但这艘航天器在2010年6月返回地球，携带了约1500个亚毫米粒子——有史以来首次从小行星返回的样本。分析证实了普通LL陨石球粒体矿物学成分：虽然不是原地资源利用论证所需的富含水的碳质靶体，但证明了一个概念——你可以抵达小行星、接触它、将碎片带回来。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.19.md",
+  "en": "[Hayabusa2](/missions?id=hayabusa2), launched in December 2014, was designed to go further. Its target was Ryugu, a C-type near-Earth asteroid — the carbonaceous variety that hydration models predicted should contain water-bearing minerals. The spacecraft arrived at Ryugu in June 2018 and spent a year and a half studying it before performing sample collection in February and July 2019. In July 2019, it also deployed a small impactor that blasted a crater in Ryugu's surface, then collected material from the exposed subsurface — material that had not been altered by space weathering. The capsule returned to Earth in December 2020. The analysis confirmed what the models predicted: Ryugu's material is rich in hydrated minerals, contains organics including amino acid precursors, and in chemical composition is closely related to CI chondrites — the most primitive and water-rich class of carbonaceous chondrites. The ore that the ISRU argument needs is there. Ryugu is not a unique body; C-type asteroids represent roughly 75% of all asteroids in the main belt and a significant fraction of near-Earth objects.",
+  "cur": "[Hayabusa2](/missions?id=hayabusa2)于2014年12月发射，旨在实现更大的目标。它的目标天体是龙宫，一颗C型近地小行星——是碳质类型，水合作用模型预测其应含有含水矿物。该航天器于2018年6月抵达龙宫，花了一年半时间对其进行研究，然后在2019年2月和7月执行采样任务。2019年7月，它还部署了一个小型撞击器，在龙宫表面轰击出一个撞击坑，随后收集了未经空间风化改造的暴露的次表层物质。返回舱于2020年12月返回地球。分析证实了模型的预测：龙宫的物质富含水合矿物，含有包括氨基酸前体在内的有机物，在化学成分上与CI陨石密切相关——CI陨石是最原始、含水量最丰富的碳质陨石类别。ISRU论证所需的矿石就在那里。龙宫并非独一无二的天体；C型小行星约占主小行星带所有小行星的75%，也占近地天体相当大的比例。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.20.md",
+  "en": "NASA's [OSIRIS-REx](/missions?id=osiris-rex) reached the carbonaceous asteroid Bennu in December 2018 and spent almost two years mapping it before performing its Touch-And-Go sample collection in October 2020. The capsule returned to Earth in September 2023 with approximately 120 grams of material — the largest sample ever returned from an asteroid. Analysis confirmed hydrated clay minerals and carbon-rich compounds: the same ingredients the Hayabusa2 team found at Ryugu, on a different body, reached by a different nation, via a different trajectory. The result was the same. This is not a coincidence. It is confirmation that the C-type carbonaceous composition — water-bearing, organic-rich — is the rule for these bodies, not the exception.",
+  "cur": "NASA的[OSIRIS-REx](/missions?id=osiris-rex)于2018年12月抵达碳质小行星贝努，花了将近两年时间对其进行映射，然后在2020年10月执行接触采样任务。返回舱于2023年9月返回地球，携带了约120克的物质——这是有史以来从小行星返回的最大样本。分析证实了水合黏土矿物和富碳化合物的存在：这些与Hayabusa2团队在龙宫发现的成分相同，但龙宫是不同的天体，由不同的国家探测，通过不同的轨迹到达。结果却是相同的。这并非巧合。它证实了C型碳质成分——含水、富有机物——是这些天体的共同特征，而非例外。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.21.caption",
+  "en": "Three robotic missions have already touched and sampled asteroids: Japan’s Hayabusa (Itokawa, 2010, the first ever), Hayabusa2 (Ryugu, 2020), and NASA’s OSIRIS-REx (Bennu, 2023). What came back was water-bearing clay and organics — from loose rubble, not solid metal.",
+  "cur": "三个机器人任务已经接触并采样了小行星：日本的Hayabusa（糸川，2010年，史上首次）、Hayabusa2（龙宫，2020年）和NASA的OSIRIS-REx（贝努，2023年）。回收的是含水粘土和有机物——来自松散的瓦砾堆，而非实心金属。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.22.caption",
+  "en": "Hayabusa2 at Ryugu — JAXA’s second asteroid sample return, and the mission bold enough to fire a copper impactor into the surface to blast open a fresh crater before scooping up what it exposed.",
+  "cur": "Hayabusa2在龙宫——JAXA的第二次小行星采样返回任务，这个大胆的任务向表面发射了一个铜撞击器，轰击出一个新鲜的撞击坑，然后收集暴露的物质。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.24.md",
+  "en": "Here is what the missions also found, and what the headlines about asteroid mining consistently understate: Bennu and Ryugu are not solid bodies. They are rubble piles.",
+  "cur": "但任务还发现了什么——以及关于小行星采矿的头条新闻一贯轻视的内容——贝努和龙宫并非实心天体。它们是瓦砾堆。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.25.md",
+  "en": "A rubble pile is an aggregate of loosely consolidated material — boulders, pebbles, dust — held together by gravity so weak that walking on the surface would require careful consideration of whether you might bounce off entirely. Bennu's surface gravity is approximately 6 micronewtons per kilogram. An astronaut standing on its equator would weigh less than a milligram in Earth terms. Trying to anchor a mining system — to drill, to excavate, to push against the surface with any force — generates a reaction that could push the mining equipment off the asteroid. The TAG (Touch-and-Go) event that OSIRIS-REx used to collect its sample lasted approximately six seconds of surface contact; during those six seconds, the spacecraft's sample head sank deeper into the surface than expected, because Bennu's material is less consolidated than a sandcastle. The mission team later said the spacecraft would have sunk entirely if the thrusters hadn't fired to pull it back. This is not a hostile environment in the way that Mars is hostile. It is a hostile environment in the way that a bag of loose sand floating in zero gravity is hostile: fundamentally different from every assumption that terrestrial mining engineering makes.",
+  "cur": "碎石堆是由松散固结的物质——巨石、鹅卵石、尘埃——通过极其微弱的重力黏合在一起的集合体，其重力之弱使得在表面行走时需要谨慎考虑自己是否会直接弹起来。贝努的表面重力约为每千克6微牛。一名宇航员站在其赤道上的体重折合地球重量不到一毫克。试图锚固采矿系统——钻孔、挖掘或对表面施加任何压力——会产生反作用力，可能将采矿设备推离小行星。OSIRIS-REx用来收集样本的TAG（接触-离开）事件仅有约6秒的表面接触时间；在这6秒内，航天器的采样头陷入表面的深度超出预期，因为贝努的物质比沙堡还要松散。任务团队后来表示，如果制动器没有启动将其拉回，航天器会完全陷入其中。这不是火星那样的敌对环境。这是一种从根本上的敌对环境——如同悬浮在零重力中的一袋松散沙子一样，与陆地采矿工程所有的既有假设都截然不同。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.26.md",
+  "en": "Hayabusa2's impactor experiment confirmed the same picture from a different angle. Its 2-kg copper impactor created a crater roughly 14 metres in diameter and 2 metres deep — larger than predicted, because the surface was more porous than expected. The [DART](/missions?id=dart) mission, which in September 2022 redirected the asteroid Dimorphos by deliberately crashing a spacecraft into it, produced an ejecta plume and an orbital period change both larger than solid-body models predicted — consistent, again, with a loosely bound aggregate. Working in that environment is not a matter of scaling up terrestrial mining and adding vacuum suits. Anchoring against a surface you cannot push against, excavating material that floats away at centimetres per second, containing ejecta in microgravity — these are unsolved engineering problems unlike anything in the history of extraction industry. The science is confirmed. The engineering has not yet begun in earnest.",
+  "cur": "Hayabusa2的撞击器实验从另一个角度证实了同样的结论。它的2公斤铜撞击器创造了一个直径约14米、深度2米的撞击坑——比预期更大，因为表面比预期更疏松。[DART](/missions?id=dart)任务在2022年9月通过故意将航天器撞向小行星双卫一来改变其轨道，产生了一个喷射物羽流和轨道周期变化，两者都比固体物理模型预测的要大——再次证实了物体是一个松散结合的集合体。在这样的环境中工作，不仅仅是放大地球采矿并穿上真空服。抵抗你无法反作用的表面、开挖以每秒厘米速度漂浮的材料、在微重力环境中收集喷射物——这些都是采矿工业历史上从未遇见过的、尚未解决的工程问题。科学已被证实。工程尚未正式开始。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.27.caption",
+  "en": "OSIRIS-REx reaching down to touch Bennu — and finding not solid ground but a rubble pile so loosely bound that the sampling head sank straight in, nearly swallowing the arm. “Mining” a body like this is unlike anything ever done on Earth.",
+  "cur": "OSIRIS-REx伸手去触碰贝努——却发现的不是坚实的地面，而是一堆结合力如此微弱的碎石堆，采样头直接陷了进去，几乎要吞没整条机臂。采矿这样的天体不像地球上曾做过的任何事情。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.29.md",
+  "en": "The question the long view has to answer is: where does this go? The ISRU argument is logically sound. The recon confirms the resources exist. The engineering challenges are real but not in principle insoluble. The economics, however, require something that does not yet exist: demand for resources in space.",
+  "cur": "长期观点必须回答的问题是：这条路走向何方？原位资源利用的论证在逻辑上是严密的。勘探确认了资源的存在。工程上的挑战是真实的，但原则上并非不可解决。然而，经济学层面需要一个尚不存在的条件：太空中对资源的需求。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.30.md",
+  "en": "This is the timing problem that killed the first commercial wave. Planetary Resources and Deep Space Industries were building supply chains for a customer base that didn't exist yet — specifically, for the propellant-hungry beyond-LEO economy that a sustained lunar programme and eventual Mars operations would create. In 2012, when Planetary Resources was founded, the [reusable launcher revolution](/essays/reusable-launchers) was not yet proven, the Artemis programme did not exist, no commercial space stations were under development, and the idea of regular human Mars missions was firmly in the speculative future. The companies were, in infrastructure terms, building fuel stations before the highway. Infrastructure almost always has to wait for the traffic before it becomes viable, and space resource extraction is no different.",
+  "cur": "这就是杀死第一波商业浪潮的时序问题。Planetary Resources和Deep Space Industries正在为一个还不存在的客户基础建立供应链——具体来说，是为了满足一个持续的月球计划和最终的火星运营所创造的、渴望推进剂的地球轨道外经济。在2012年Planetary Resources成立时，[可重复使用火箭革命](/essays/reusable-launchers)还未被证实，Artemis计划不存在，没有商业空间站正在开发中，定期人类火星任务的概念还牢牢停留在推测的未来。从基础设施的角度来说，这些公司是在修建高速公路之前就先建加油站。基础设施几乎总是不得不等待交通流量出现才能变得可行，太空资源开采也不例外。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.31.md",
+  "en": "The situation in the mid-2020s is different in one respect: the traffic is closer. [Reusable launch vehicles](/essays/reusable-launchers) have changed the economics of reaching orbit. Commercial station programmes are under development. The Artemis programme, however delayed, has placed crewed lunar operations back on planning horizons. NASA's [Psyche mission](/missions?id=psyche-mission), launched in October 2023 and en route to the metallic asteroid 16 Psyche, will deliver the most thorough remote characterisation of a metallic asteroid ever attempted. The supply chain's potential customers are no longer purely hypothetical. But closer is not here. A propellant depot servicing Mars-bound spacecraft is, at minimum, a decade away from operational reality — and that estimate is optimistic, contingent on a pace of lunar development that has consistently slipped. The honest reading: asteroid resources become economically viable when, and only when, there is sustained human activity beyond low Earth orbit at a scale that makes fuel, air, and shielding the binding constraint. That constraint is approaching. The gap between approaching and here has swallowed businesses before.",
+  "cur": "2020年代中期的情况在一个方面有所不同：交通流量更接近了。[可重用运载火箭](/essays/reusable-launchers)改变了到达轨道的经济学。商业空间站计划正在开发中。Artemis计划虽然延期，但已将载人月球运营重新纳入规划视野。NASA的[Psyche mission](/missions?id=psyche-mission)于2023年10月发射，正在前往金属小行星16 Psyche的途中，将进行迄今为止最彻底的金属小行星远程表征。供应链潜在的客户不再纯粹是假设的。但更接近并非已至。为火星飞船加油的推进剂仓库离运营现实至少还需要十年——而这个估计已经相当乐观，还取决于月球开发的进度，而该进度一直在滑动。诚实的评估是：小行星资源只有在低轨道以外存在持续的人类活动、规模足以使燃料、氧气和屏蔽材料成为约束条件时，才会在经济上变得可行。这个约束正在逼近。从逼近到已至之间的鸿沟曾吞没过无数企业。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.32.md",
+  "en": "What remains, after the hype has been deflated and the market-collapse fallacy disposed of, is something more durable and less exciting to press release: a structural argument that the long-term economics of human presence beyond Earth cannot be made to work without drawing on resources that are already above the gravity well. The solar system contains more water, more carbon, more structural material than the entirety of human civilisation has ever consumed, distributed across millions of bodies whose surface gravity costs almost nothing to overcome, sitting above the one thing that makes spaceflight expensive. The argument is not about quintillions of dollars. It is about the [rocket equation](/science/propulsion/tsiolkovsky) and the direction it is pointing.",
+  "cur": "在炒作被戳穿、市场崩溃谬论被揭示之后，剩下的是某种更持久、不那么令新闻稿兴奋的东西：一个结构性论证，即人类在地球以外长期存在的经济学不能成立，除非动用重力井之外已有的资源。太阳系包含的水、碳、结构材料的总量超过人类文明迄今为止消耗的所有资源，分布在数百万个天体上，这些天体的表面重力成本几乎可以忽略不计，而它们都悬停在使太空飞行昂贵的那一个问题之上。这个论证不是关乎五万亿美元。它是关乎[火箭方程](/science/propulsion/tsiolkovsky)及其指向的方向。"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.33.md",
+  "en": "Tsiolkovsky's constraint has an escape. It is not clever chemistry or radical new propulsion — though [new propulsion](/essays/new-propulsion) helps at the margins. The escape is not launching the consumables in the first place. It is finding them already above the well and using them there. [Hayabusa2](/missions?id=hayabusa2) brought 5.4 grams of Ryugu back to Earth. [OSIRIS-REx](/missions?id=osiris-rex) brought 120 grams of Bennu. The next missions in this sequence won't be bringing material home. They will be learning how to leave it where it is — and use it there. That is the point the headline never reaches. [Explore the small bodies in the atlas](/explore) and what you are looking at is not a storehouse of Earth-deliverable treasure. It is the hardware store for a civilization that hasn't arrived yet.",
+  "cur": "齐奥尔科夫斯基的约束有一个逃脱口。它不是聪明的化学或激进的新推进——尽管[新推进](/essays/new-propulsion)在边际上有所帮助。逃脱口不是首先发射消耗品。它是找到已经在井外的东西，并在那里使用它们。[Hayabusa2](/missions?id=hayabusa2)将5.4克龙宫物质带回地球。[OSIRIS-REx](/missions?id=osiris-rex)带回了120克贝努物质。这一系列的下一批任务将不再是把物质运回家。它们将学习如何把物质留在原地——并在那里使用它。这就是头条新闻永远无法呈现的要点。[在地图集中探索小行星](/explore)，你看到的不是可以运回地球的宝藏仓库。它是一个还未到达的文明的五金店。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "dek",
+  "en": "Three dish complexes on Earth carry on every conversation humanity has ever had with anything beyond the Moon. A 22-watt radio signal, a light-hour of patience, and the most oversubscribed network in the solar system — this is how the whole enterprise holds together.",
+  "cur": "地球上的三个天线阵列维持着人类与月球之外任何事物之间的每一次对话。一个22瓦的无线电信号、一光小时的耐心，以及太阳系中最负荷的网络——整个事业就是靠这些支撑的。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.0.md",
+  "en": "In the navigation essay we named the problem and then mostly set it aside: the speed of light imposes a lag on every instruction, every correction, every answer, and the further out you go the worse it gets. The navigation essay could afford to set it aside because, for most of what it describes, the lag is inconvenient but manageable. A twenty-minute round trip to Mars is long enough to be annoying and short enough to work around. The spacecraft coasts; the ground catches up. But that arithmetic doesn't hold forever. Push it another order of magnitude — to Saturn, to Pluto, to the place where [Voyager 1](/missions?id=voyager-1) is right now, almost a full light-day from the Earth — and \"hold on, we're thinking\" stops being a workable answer. The problem that navigation named but deferred is the one this essay is about.",
+  "cur": "在导航论文中，我们指出了问题，然后基本上将其搁置一旁：光速对每一条指令、每一次修正、每一个答案都施加了延迟，而你去得越远，情况就越糟。导航论文之所以能够搁置这个问题，是因为对于它描述的大部分情况而言，延迟令人不便但仍可处理。往返火星需要二十分钟，长得足够让人烦恼，又短得足以能够应对。宇宙飞船滑行；地面追上来。但这种算术不会永远成立。再把它推高一个数量级——到土星、冥王星、到[Voyager 1](/missions?id=voyager-1)现在所在的地方，距离地球几乎整整一光日——\"稍等，我们在思考\"就不再是可行的答案。导航指出但推迟的问题就是这篇论文要讨论的。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.1.md",
+  "en": "Before we get to the lag, though, there's a more fundamental strangeness to absorb. Every probe, every rover, every lander in this atlas maintains exactly one thread of connection to Earth: a radio link through a handful of large dishes on the ground. Not a constellation of relay satellites. Not a mesh network. Not a pair of backups standing by in case the primary goes down. One link, through one of roughly forty antennas spread across three sites, and the whole solar system runs on it. Everything we've learned about Mars, Saturn, Jupiter, Uranus, Neptune, Pluto, the asteroid belt, and interstellar space beyond the heliosphere has traveled down that single thread. The miracle isn't that we've lost spacecraft. The miracle is how few.",
+  "cur": "不过在我们谈论延迟之前，有一个更基本的奇异现象需要理解。这个图集中的每个探测器、每辆漫游车、每个着陆器都与地球保持着恰好一条连接线：一条经过地面上少数几个大型天线的无线电链接。没有中继卫星星座。没有网状网络。没有备用的一对天线以防主要天线出故障。一条链接，经过分布在三个站点的大约四十个天线中的一个，整个太阳系就靠它运行。我们所有关于火星、土星、木星、天王星、海王星、冥王星、小行星带以及日球顶外星际空间的了解都是通过那条单一的线路传来的。奇迹不在于我们丧失了航天器。奇迹在于我们丧失的如此之少。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.3.md",
+  "en": "The [Deep Space Network](/science/mission-phases/dsn) is a creation of the early 1960s, built when the first probes were heading for Venus and Mars and the question of how to talk to them as they receded became urgently practical. The answer JPL arrived at was elegant in its simplicity: place antenna complexes roughly 120 degrees of longitude apart around the planet, so that as the Earth rotates, at least one of them always faces the part of the sky where the mission is. Three sites: Goldstone in the California desert, Madrid in Spain, and Canberra in Australia. They have been the ears and mouth of the solar system ever since.",
+  "cur": "[Deep Space Network](/science/mission-phases/dsn)是在20世纪60年代初期创建的产物，当时第一批探测器正朝着金星和火星飞去，而如何与这些日渐远离地球的探测器进行通信变成了一个迫切的实际问题。JPL得出的答案在其简洁性上显得优雅：在地球周围布置三个天线复合设施，大致相隔120度经度，这样当地球自转时，其中至少有一个始终面向任务所在天空的方向。三个站点分别是：Goldstone、Madrid和Canberra。从那以后，它们就一直是太阳系的耳朵和嘴巴。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.4.md",
+  "en": "The crown of each complex is its 70-metre dish — a structure about the size and weight of a naval destroyer balanced on a bearing that lets it track a point in the sky to within a fraction of a degree, hour after hour, as the Earth turns beneath it. The three 70-metre antennas (DSS-14 at Goldstone, DSS-43 at Canberra, DSS-63 at Madrid) were built as 64-metre dishes and then, between 1982 and 1988, expanded specifically to support Voyager 2's approaching encounter with Neptune — a civilisational upgrade to a global network, for one flyby, of one planet. Canberra's DSS-43 carries a distinction the other two don't: because Voyager 2's trajectory took it south of the solar plane, it is the only antenna on Earth with a line of sight to it. One dish, on one continent, is the reason [Voyager 2](/missions?id=voyager-2) is still in the conversation.",
+  "cur": "每个复合设施的皇冠是其70米的天线盘——一个大小和重量都相当于一艘海军驱逐舰的结构，安装在一个轴承上，可以在地球自转时，小时以小时地追踪天空中的一个点，精确度达到不足一度。这三个70米天线（Goldstone的DSS-14、Canberra的DSS-43、Madrid的DSS-63）最初是按64米的规格建造的，然后在1982年至1988年间被扩展，特别是为了支持Voyager 2即将到来的海王星相遇——这是对全球网络进行的一次文明进步的升级，仅仅是为了一次飞掠、一个行星。Canberra的DSS-43具有其他两个天线所没有的一个特殊之处：因为Voyager 2的轨迹将其带到了太阳系平面以南，它是地球上唯一拥有与其视线相通的天线。一个天线，在一个大陆上，是[Voyager 2](/missions?id=voyager-2)仍然保持联系的原因。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.5.md",
+  "en": "Arrayed around the 70-metre giants at each site are a family of 34-metre dishes — some with high-efficiency beam waveguide feeds, some optimised for different frequency bands, all contributing to a schedule that is, even in good years, relentlessly oversubscribed. Demand on the DSN has been running roughly 40 percent above capacity; by the early 2030s NASA projects it will grow by a factor of ten, driven by Artemis lunar missions, a surge in science probes, and commercial operators who want their own slice. The upgrade program meant to address it is running nearly five years late and has roughly doubled in cost. The network that carries every word we speak to the outer planets is doing so on a timetable that leaves almost no margin. Missions negotiate for antenna time the way airlines negotiate for takeoff slots, and the answer is sometimes no.",
+  "cur": "在每个站点的70米巨型天线周围排列着一个由34米碟形天线组成的阵列——有些配备高效波导馈源，有些针对不同频段进行了优化，所有这些都被纳入一项繁重的日程中，即使在好年份也是如此，远远超过可用容量。DSN的需求一直在以约40%的幅度超过容量；NASA预计到2030年代初，这个需求将增长十倍，由Artemis月球任务、科学探测器的激增以及想要自己专属时间段的商业运营商所驱动。旨在解决这一问题的升级计划延迟了将近五年，成本也大幅增加了一倍。这个承载我们对外行星传送的每一句话的网络，其运行时间表几乎没有余地。任务与天线时间的协商方式就像航空公司与起飞时间段的协商方式一样，有时候答案是否定的。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.7.md",
+  "en": "Stand next to a DSN dish while it is locked onto [Voyager 1](/missions?id=voyager-1) and try to hold in your head what it is listening for. The spacecraft's transmitter puts out 22.4 watts — roughly the output of a refrigerator's interior bulb, or a dimmer-switch lamp set to half. That signal leaves a 3.7-metre dish on Voyager 1 and begins to spread. Radio waves obey an inverse-square law: double the distance, quarter the power. By the time the beam crosses the distance to Earth — currently about 23 and a half light-hours, a number that grows by roughly 520 million kilometres per year — the power arriving at a 70-metre dish is less than a femtowatt. A femtowatt is 10⁻¹⁵ watts. The number often quoted for Voyager is closer to 10⁻²¹ watts — a single zeptowatt, unimaginably faint. The dish has to fish that out of a sky full of everything else.",
+  "cur": "在数字网络天线指向[Voyager 1](/missions?id=voyager-1)时站在它旁边，试着在脑海中想象它在监听什么。这艘航天器的发射机输出22.4瓦——大致相当于冰箱内部灯泡的功率，或调到一半亮度的调光灯。那个信号从Voyager 1上的3.7米天线发出并开始扩散。无线电波遵循反平方律：距离加倍，功率四分之一。当光束跨越地球的距离——目前约23.5光小时，这个数字每年增长约5.2亿公里——到达地球70米天线的功率小于飞瓦。飞瓦是10⁻¹⁵瓦。Voyager 1常被引用的数字更接近10⁻²¹瓦——单个仄瓦，难以想象的微弱。天线必须从充满其他一切的天空中捕捉那个信号。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.8.md",
+  "en": "That it can do this at all is a feat of engineering in three parts. First, the geometry: a 70-metre dish has roughly 3,600 square metres of collecting area, and every square metre counts. Second, the cold: the receivers sit cooled to within a few degrees of absolute zero, because thermal noise from a room-temperature amplifier would drown the signal entirely — the receiver has to be colder than interstellar space to hear something weaker than starlight. Third, the coding. Voyager's engineers, like every subsequent mission team, knew that individual bits would be corrupted by noise over distances like these, so they encoded the data with far more mathematical redundancy than the information itself requires. A single real bit of science travels inside a protective shell of check bits; the ground-side computer strips the shell away and recovers the original, even from a stream where a significant fraction of the received symbols are wrong. [New Horizons](/missions?id=new-horizons) used the same principle to send back Pluto's face: each image arrived corrupted and was reconstructed, the way a librarian might reassemble a burned manuscript from a set of redundant copies.",
+  "cur": "这种能力本身就是三部分工程壮举的成就。首先是几何：70米天线拥有大约3600平方米的收集面积，每平方米都很重要。其次是冷却：接收器被冷却到接近绝对零度的温度，因为室温放大器的热噪声会完全淹没信号——接收器必须比星际空间还冷才能听到比星光更微弱的东西。第三是编码。Voyager的工程师，和所有随后的任务团队一样，深知在这样的距离上单个比特会被噪声破坏，所以他们用远超信息本身所需的数学冗余度对数据进行了编码。单个真实的科学比特在检验比特保护壳内传输；地面计算机剥离壳层并恢复原始数据，即使来自一个接收符号中很大比例错误的流。[New Horizons](/missions?id=new-horizons)使用相同原理传回了冥王星的面貌：每张图像都带着破坏到达，然后被重建，就像图书馆员从一套冗余副本中重新组装一份被烧毁的手稿一样。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.9.md",
+  "en": "The practical ceiling on data rates is real. Voyager 1 peaked at 115,200 bits per second during its planetary encounters, when the distances were shorter and the dishes could be pointed tighter. At its current remove it manages a few tens of bits per second for engineering telemetry, a trickle that would have been embarrassingly slow on a 1970s modem. Everything we know about what lies beyond the heliosphere — the plasma density, the magnetic field, the particle flux in interstellar space, the data that no other instrument in existence could ever gather — arrives at the DSN at a rate slower than a fax machine. We are grateful for every bit.",
+  "cur": "数据速率的实际上限是真实的。Voyager 1在行星际遭遇期间峰值达到115200比特每秒，当时距离较短，天线指向更紧密。在目前的距离，它只能管理每秒几十比特的工程遥测，一个在1970年代调制解调器上会令人尴尬地缓慢的流量。我们对日球层外的一切了解——等离子体密度、磁场、星际空间粒子流量，没有其他现存仪器能够收集的数据——以比传真机还慢的速率到达DSN。我们对每一比特都心存感激。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.10.caption",
+  "en": "A spacecraft answers on roughly twenty watts — less than the bulb in a refrigerator. Spread across a billion kilometres by nothing but the inverse-square law, what reaches the dish is around a millionth of a billionth of a watt. The genius of deep-space comms is not the shout; it is the listening.",
+  "cur": "一艘航天器的通信功率约为二十瓦——还不及冰箱灯泡的亮度。这个信号散布在十亿公里的距离上，只受平方反比律的约束，到达天线的功率约为百万分之一的十亿分之一瓦。深空通信的妙处不在于喊得多响，而在于听得多仔细。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.12.md",
+  "en": "The lag compounds everything. At [Mars](/missions?id=perseverance), a signal takes between 3 and 22 minutes one way, depending on where the two planets are in their orbits. That means a round-trip question and answer — \"are you receiving?\" … \"yes\" — can take anywhere from six minutes to nearly three-quarters of an hour. Rover drivers at JPL developed an entire philosophy around this: you can't joystick [Perseverance](/missions?id=perseverance) the way you'd drive a car. You plan the day's work in the Martian morning, uplink a command sequence, and watch the outcome arrive hours later. The rover moves autonomously between waypoints; you correct its course tomorrow. The planet is close enough that a human can still be meaningfully in the loop, if the human is willing to think in Martian sol-lengths rather than real-time.",
+  "cur": "时间延迟使一切都复杂化了。在[Perseverance](/missions?id=perseverance)，信号单程传播需要3到22分钟，取决于两颗行星在各自轨道上的位置。这意味着一个往返的问题和回答——\"你在接收吗？\"……\"是的\"——可能耗时六分钟到近三刻小时。JPL的漫游车驾驶员围绕这一点发展出了整套哲学：你不能像驾驶汽车那样用遥控手柄操纵Perseverance。你在火星早晨规划一天的工作，上传一个命令序列，然后在数小时后看到结果。漫游车在路径点之间自主移动；你明天再修正它的路线。这颗行星离得足够近，使得人类仍然可以有意义地参与其中——如果人类愿意按火星日而非地球实时来思考的话。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.13.md",
+  "en": "At [Cassini](/missions?id=cassini), orbiting Saturn, the one-way lag ran between 68 and 85 minutes. At [New Horizons](/missions?id=new-horizons) during the Pluto flyby it was four and a half hours. Every command sent to New Horizons on its closest approach day had been uplinked — and confirmed received — well in advance, because there was no time to react. The flyby sequence ran entirely on stored instructions while the ground held its breath. The spacecraft would either do what it was told or not, and no one on Earth would know for hours. It did.",
+  "cur": "在[Cassini](/missions?id=cassini)号环绕土星时，单程时间延迟在68到85分钟之间。在[New Horizons](/missions?id=new-horizons)号冥王星掠过期间是四个半小时。发往New Horizons号最接近接近时刻的每条命令都已事先上传——并确认已接收——因为没有时间做出反应。这次掠过序列完全按照预存指令运行，地面屏住了呼吸。航天器要么按指令行动，要么不行动，地球上没有人会在数小时内知道结果。它确实按指令行动了。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.14.md",
+  "en": "Now consider [Voyager 1](/missions?id=voyager-1), which in July 2026 is approximately 23 hours and 32 minutes of light-travel time from Earth — and which, on a specific day in November 2026, will cross a threshold no human-made object has ever crossed: one full light-day from the planet that built it. Send a command Monday morning at eight; the acknowledgement arrives Wednesday morning. A round trip between Earth and Voyager 1 takes nearly two days. In that span, whatever the spacecraft does, it does alone. It has been alone, in this sense, since the day it launched. The ground is not flying it anymore. The ground is listening to it.",
+  "cur": "现在考虑[Voyager 1](/missions?id=voyager-1)，它在2026年7月时距离地球约23小时32分钟的光速旅行时间——在2026年11月的某一特定日期，它将跨越一个人造物体从未跨越的阈值：距离制造它的行星整整一个光日。星期一上午8点发送指令；确认信息在星期三上午抵达。地球与Voyager 1之间的往返通信耗时近两天。在这段时间内，无论航天器做什么，它都是独自进行的。从发射的那天起，它一直都是孤独的。地面不再驾驶它了。地面只是在倾听它。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.15.caption",
+  "en": "The whole enterprise runs on delay. A word to the Moon is answered in under three seconds; to Mars, in minutes to the better part of an hour; to Voyager, in nearly two days. You cannot fly these craft in real time — you write ahead, and wait for the echo.",
+  "cur": "整个事业运行在延迟之上。发往月球的信息在三秒以内得到回复；发往火星的信息需要数分钟到一小时；发往Voyager号的信息需要近两天。你无法实时驾驶这些航天器——你提前编好指令，然后等待回声。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.17.md",
+  "en": "That patience has shaped every mission in ways the public almost never sees. Trajectory corrections for outer-planet probes are planned weeks in advance and uplinked as timed sequences; if the spacecraft's position turns out to be slightly different from the prediction — which it always is, by some small amount — the navigators have to wait for the next DSN track, reconstruct the actual position, plan a correcting burn, and uplink it, all before the window closes. For a spacecraft approaching its target at several kilometres per second, that timing can be the difference between threading the gap and missing. The navigation essay described the [Deep Space Network](/science/mission-phases/dsn) as the instrument that lets the ground fly the spacecraft. What it didn't dwell on is that the ground can only respond to what the spacecraft reported minutes or hours ago, and can only correct what it predicted minutes or hours from now. Navigation is perfect in principle, patient in practice, and always slightly behind.",
+  "cur": "这种耐心以公众几乎从未看到的方式塑造了每一次任务。外行星探测器的轨迹修正提前数周规划，并作为定时序列上传；如果航天器的实际位置与预测略有不同——而它总会有些许偏差——导航员必须等待下一次Deep Space Network追踪，重新构建实际位置，规划修正变轨，并上传指令，所有这一切都要在窗口关闭前完成。对于以每秒数公里速度接近目标的航天器来说，这个时间差可能是穿过间隙和错过之间的差别。导航文章将[Deep Space Network](/science/mission-phases/dsn)描述为让地面驾驶航天器的仪器。它没有深入探讨的是，地面只能对航天器数分钟或数小时前报告的信息做出反应，也只能修正它数分钟或数小时后的预测。导航在原则上是完美的，在实践中是耐心的，但总是略微滞后的。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.18.md",
+  "en": "There is a related cost that rarely makes mission descriptions: the sheer cognitive weight of maintaining these conversations over years. [Cassini](/missions?id=cassini) operated at Saturn for thirteen years. Teams at JPL developed what amounted to a working relationship with a machine they could not see, could not touch, and could never respond to in less than an hour. Procedures existed for every contingency — a failed reaction wheel, a software fault, an unexpected safe-mode entry — and those procedures had to be rehearsed on the ground before they could be uplinked, because there was no room to improvise at the speed of a crisis when every reply took longer than a lunch break. The people who ran Cassini built a kind of institutional memory for a spacecraft: knowing its habits, its quirks, its patterns of health, better than some operators know their own machinery. They had to, because the spacecraft couldn't ask for help.",
+  "cur": "还有一种代价在任务描述中很少提及：保持这些对话数年之久所需的纯粹认知负担。Cassini号在土星上运行了十三年。JPL的团队与一台他们看不见、摸不着、且永远无法在一小时内做出回应的机器建立了某种工作关系。针对每一种突发情况都存在既定程序——反应轮失效、软件故障、意外进入安全模式——这些程序必须在地面进行演练，然后才能上传，因为当每次回复都要花费超过午餐时间的时间时，就没有空间在危机速度下临时应变。运行Cassini号的人们为这艘航天器建立了一种制度记忆：了解它的习性、它的怪癖、它的健康模式，甚至比一些操作员了解他们自己的机器还要深入。他们必须这样做，因为航天器无法请求帮助。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.19.caption",
+  "en": "Voyager 1, more than twenty-four billion kilometres out, still answers — but a question sent today waits some forty-five hours for its reply. You do not converse with it so much as leave a letter and come back for the answer.",
+  "cur": "Voyager 1，距离地球已超过240亿公里，仍然有回应——但今天发出的问题要等待四十五小时左右才能得到回复。你与它的交流与其说是对话，不如说是留下一封信，然后回来取信。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.21.md",
+  "en": "Radio has carried every conversation we've had with the solar system for sixty years. It is mature, well-understood, and operates at the edge of physics — the DSN dishes are close to the thermal noise floor; the coding schemes approach the Shannon limit for the signal-to-noise ratios involved. There isn't a factor of ten left to find in radio. But there is in optics.",
+  "cur": "六十年来，无线电承载了我们与太阳系的每一次对话。它已经成熟，被充分理解，并运作于物理学的边缘——DSN的天线接近热噪声下限；编码方案接近Shannon极限对于相关信噪比。无线电中已经没有十倍的改进空间了。但光学有。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.22.md",
+  "en": "In October 2023, a small laser terminal bolted to the side of the Psyche spacecraft launched toward the asteroid belt carrying an experiment called DSOC — Deep Space Optical Communications. The concept is straightforward: an infrared laser, tightly focused, can concentrate far more power into a far narrower beam than a radio transmitter of the same mass and electrical draw. The beam spreads less with distance, which means more of it arrives. By April 2024, DSOC had transmitted engineering data from 140 million miles at 25 megabits per second — faster than most household broadband connections, from a distance greater than the Earth-Sun separation. By December 2024 it had set a distance record: downlinking Psyche mission data from 307 million miles, 494 million kilometres out. The project demonstrated 10 to 100 times the throughput of radio at equivalent power.",
+  "cur": "2023年10月，一个小型激光终端被固定在Psyche航天器的侧面，该航天器朝小行星带发射，搭载了一项名为DSOC的实验。这个概念很直接：聚焦的红外激光可以将远比同质量和功耗的无线电发射器更大的功率集中在更窄的波束中。光束随距离的扩散较少，这意味着抵达的光束更多。到2024年4月，DSOC已从1.4亿英里外以25兆比特每秒的速度传输工程数据——比大多数家庭宽带连接更快，距离超过地日距离。到2024年12月，它创造了距离记录：从3.07亿英里、即4.94亿公里外下行链路Psyche任务数据。该项目展示了在等效功率下10到100倍的无线电吞吐量。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.23.md",
+  "en": "This is not a small step. The bandwidth bottleneck is one of the binding constraints on what deep-space science can do: the more data you can return per watt, the more instruments you can fly, the higher the camera resolution, the denser the scientific haul from each mission. DSOC's laser link, scaled up and deployed on future spacecraft, would transform the economics of talking to the outer planets. The catch — there is always a catch — is that optical links require exceptional pointing precision (the beam is narrow enough that a pointing error of a fraction of a milliradian spills it off target) and are blocked by cloud cover at the ground station. The DSN's radio dishes work through weather. Optical ground terminals don't. The architecture for a reliable optical deep-space network will need multiple geographically spread receive sites, clear-sky redundancy, and decades of operational experience to mature. It will come. The question is whether it comes before the radio architecture buckles under the weight of demand.",
+  "cur": "这不是一小步。带宽瓶颈是制约深空科学能够做什么的束缚因素之一：你能返回的数据越多，每瓦电力就越多，你能搭载的仪器越多，相机分辨率越高，每次任务的科学收获越丰富。DSOC的激光链路如果扩大规模并部署在未来航天器上，将改变与外行星通信的经济学。问题是——总有问题——光学链路需要异常精准的指向精度（光束足够窄，以至于指向误差只要几毫弧度就会使其偏离目标），并且被地面站的云层阻挡。DSN的无线电天线可以在恶劣天气中工作。光学地面终端不能。可靠的光学深空网络的架构将需要多个地理分散的接收站点、晴空冗余，以及数十年的操作经验才能成熟。它终将来临。问题是它是否会在无线电架构在需求压力下崩溃之前到来。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.24.caption",
+  "en": "The next turn is toward light. A laser’s pencil-thin beam carries ten to a hundred times the data of a radio’s wide cone: Psyche’s demonstration streamed high-definition video from thirty million kilometres away, on a beam you could have blocked with a coin.",
+  "cur": "下一个转向是朝向光。激光笔尖般细的光束携带的数据量是无线电宽锥形的十到一百倍：Psyche的示范从3000万公里外流传高清视频，沿着一束你可以用硬币挡住的光束。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.26.md",
+  "en": "Here is what the whole apparatus actually amounts to. Three patches of desert and scrubland on three continents. Roughly forty antenna mounts, of which the big work falls on three 70-metre bowls that have been pointing at things no one can see with the naked eye since the first one locked onto a Mariner in 1963. A budget that, in real terms, has been shrinking. An upgrade programme running years behind. A schedule so overbooked that some missions go without their allocated tracks, and the people who run them learn to live on less contact than they planned.",
+  "cur": "整个装置实际上归结为什么。三块大陆上的三片沙漠和灌木丛地。大约四十个天线安装座，其中大部分的工作由三个70米的大碗承担，自1963年第一次锁定Mariner以来，它们一直指向肉眼无法看到的东西。经费在实际意义上一直在萎缩。一个改造计划落后多年。日程表超载得如此厉害，以至于有些任务得不到分配的追踪时间，运行它们的人们学会了靠比计划中更少的联系生存。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.27.md",
+  "en": "And through this: everything. The Voyager images of Neptune that no spacecraft has repeated in the thirty-seven years since. The Cassini portraits of Saturn — the hexagonal storm at the pole, the geysers of Enceladus, the braided F ring — delivered one compressed frame at a time across more than an hour of silence. The [Perseverance](/missions?id=perseverance) samples staged for eventual return, their GPS coordinates known to the centimetre because every transmission of the rover's position came back through a dish in California or Spain or Australia, was checked against the orbital mechanics, and became a number the whole atlas stands on. Everything in this atlas that came from beyond the Moon arrived here through a 22-watt whisper and a room full of people patient enough to wait for the reply.",
+  "cur": "通过这一切：一切。Voyager对海王星的图像，自三十七年前以来没有任何航天器重复过。Cassini对土星的肖像——极地的六边形风暴、土卫二的间歇泉、编织的F环——每次一幅压缩帧地穿过一小时多的寂静而传送。[Perseverance](/missions?id=perseverance)的样本为最终返回而暂存，其GPS坐标精确到厘米级，因为漫游车每一次位置传输都经过加州、西班牙或澳大利亚的一个天线，与轨道力学相核对，然后成为整个地图集都依靠的一个数字。这部地图集中来自月球之外的一切都通过22瓦的低语和一屋子耐心到足以等待回复的人抵达这里。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.28.md",
+  "en": "The lag never goes away. Light travels at the fastest speed physics allows, and it is not fast enough. As we push further — human crews to Mars whose round-trip communication delay will be measured in tens of minutes on a good day; robotic probes to the ice giants; whatever comes next in the generations after those — the distance will keep growing and the patience required will keep compounding. What changes is only who bears it: the ground team waiting for a reply, or the spacecraft itself, making decisions faster than any signal can carry permission. The DSN isn't becoming obsolete. It is becoming one layer of a deeper architecture, the radio backbone of a solar system where more and more of the thinking happens out there, in the dark, on craft that have learned — because they had to — to manage without asking. We built the network so we could stay in the conversation. We're slowly discovering that the conversation, at these distances, looks less like a dialogue and more like letters sent between people who have both already moved on by the time any answer arrives.",
+  "cur": "延迟永远不会消失。光以物理学允许的最快速度传播，但这还不够快。当我们推进得更远时——人类乘员前往火星，往返通信延迟在好情况下将以十多分钟计量；机器人探测器前往冰巨星；以及之后几代出现的任何东西——距离会不断增加，所需的耐心也会不断复合。改变的只是谁承担这种耐心：等待回复的地面团队，或者航天器本身，做出决定的速度超过任何信号能传递许可的速度。DSN不会变得过时。它正在成为更深层架构的一层，一个太阳系的无线电骨干网，这个太阳系中越来越多的思考发生在那里，在黑暗中，在已经学会——因为他们不得不——在没有请求的情况下自我管理的航天器上。我们建立这个网络是为了保持对话。我们正在慢慢发现，在这些距离上，对话看起来不太像一场对话，更像是在两个人之间寄出的信，而那两个人在任何答复到达之前已经继续前行。"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.29.caption",
+  "en": "Pioneer 10 was the first craft tracked into the outer dark. Its final faint signal reached the Deep Space Network in 2003, from beyond the orbit of Pluto — a whisper that at last fell below hearing, still outbound.",
+  "cur": "Pioneer 10是第一艘被追踪进入外部黑暗的航天器。它的最后微弱信号在2003年到达Deep Space Network，来自冥王星轨道之外——一声低语，终于低于听觉阈值，仍在向外传播。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "dek",
+  "en": "Every spacecraft that has ever left Earth carried one thing above all else: a budget. Not money — velocity. The rocket equation meted it out in kilometres per second, gravity was the only free refill, and every engineer who ever planned a mission has been living inside that constraint since 1903.",
+  "cur": "每一艘离开地球的航天器都携带过一样东西，而这样东西高于一切：预算。不是金钱——而是速度。火箭方程用每秒公里数来分配它，重力是唯一免费的补给，自1903年以来，每位规划任务的工程师都生活在这个约束之中。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.0.md",
+  "en": "Imagine you are handed a chequebook with a fixed balance. You can spend it however you like — but every purchase is final, there are no deposits, and when the balance reaches zero you are done. That is the situation every spacecraft faces from the moment it clears the launch tower. The currency is not fuel. It is not thrust. It is **velocity** — more precisely, the *change* in velocity, measured in kilometres per second, that the spacecraft can accumulate over its entire mission. Engineers call it delta-v, and the account opens, once, at launch.",
+  "cur": "想象你得到一本余额固定的支票簿。你可以随意花费——但每笔支出都是最终的，没有存款，当余额达到零时你就完成了。这正是每艘航天器从清离发射塔那一刻起所面对的局面。货币不是燃料。也不是推力。它是**速度**——更确切地说，是速度的*变化*，以每秒公里数衡量，这是航天器在整个任务期间能够积累的变化。工程师称之为德尔塔-V，这个账户在发射时开启，而且仅开启一次。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.1.md",
+  "en": "The rule that wrote this constraint was published in 1903, by a self-taught Russian schoolteacher named Konstantin Tsiolkovsky, working alone in a small provincial town. His [rocket equation](/science/propulsion/tsiolkovsky) has not been repealed since: **∆v = Isp · g₀ · ln(m₀/mf)**. Read it in English: the velocity you can buy equals the efficiency of your engine — measured in seconds of [specific impulse](/science/propulsion/specific-impulse) and multiplied by a gravitational constant of 9.807 m/s² — times the natural logarithm of how much heavier the rocket was at the start than at the end. That logarithm is the villain. Because *ln* is the slowest-growing function in mathematics, it means that every extra kilometre per second you want to add costs you an exponentially larger bite of propellant mass — and propellant has to be lifted too, which means it needs its own propellant, which has to be lifted too, and so on down a regress that has no floor.",
+  "cur": "这个约束的规则是由一位自学成才的俄罗斯乡村教师康斯坦丁·齐奥尔科夫斯基在1903年发布的，他独自在一个小镇工作。他的[火箭方程](/science/propulsion/tsiolkovsky)此后从未被废除：**∆v = Isp · g₀ · ln(m₀/mf)**。用英文读就是：你能获得的速度等于你的发动机效率——用[比冲](/science/propulsion/specific-impulse)的秒数衡量，乘以重力常数9.807米/秒²——再乘以火箭起始质量与最终质量之比的自然对数。这个对数是反派。因为*ln*是数学中增长最慢的函数，这意味着你想增加的每一额外公里/秒都要付出指数级更大的推进剂质量代价——而推进剂本身必须被抬升，这意味着它需要自己的推进剂，这个推进剂也必须被抬升，如此往复无穷。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.2.md",
+  "en": "Astronaut Don Pettit called this *the tyranny of the rocket equation* in a 2012 essay written aboard the ISS, and the word tyranny is exactly right. The Saturn V that carried Apollo astronauts to the Moon stood thirty stories tall on the pad and was **85% propellant by mass**; its payload — everything that actually went anywhere — never exceeded about 4% of that wet mass. The rest was a controlled explosion in slow motion, consumed step by step just to get the remainder a little faster, a little higher. Everything else in spaceflight — the missions, the trajectories, the waiting for launch windows, the obsessive trimming of instrument mass — flows from that single, merciless denominator.",
+  "cur": "航天员唐·佩蒂特在2012年于国际空间站上撰写的一篇文章中称之为火箭方程的*暴虐性*，而暴虐性这个词正是恰当的。运送Apollo航天员登月的土星五号在发射台上矗立三十层楼高，**质量的85%是推进剂**；其有效载荷——所有真正能去任何地方的东西——从未超过这个湿质量的约4%。其余部分是一场缓慢进行的受控爆炸，逐步消耗只是为了让剩余部分稍快一些，稍高一些。航天飞行中的一切——任务、轨迹、等待发射窗口、对仪器质量的执着修剪——都源自这个单一、无情的分母。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.3.caption",
+  "en": "The rocket equation’s exponential wall: at chemical efficiency, each extra kilometre per second demands a wildly larger propellant fraction — and the closer you push toward a real destination, the steeper the price climbs.",
+  "cur": "火箭方程的指数壁垒：在化学效率下，每额外一公里/秒都需要大幅更大的推进剂比例——你越接近真实目标，价格攀升得越陡峭。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.5.md",
+  "en": "A [delta-v budget](/science/propulsion/dv-budget) is what mission planners call the spreadsheet that accounts for every velocity change a mission must perform, from Earth parking orbit to final destination. It is the most consequential document in mission design: it decides whether the mission is possible at all. Getting a spacecraft from a low Earth orbit to, say, a Hohmann transfer toward Mars and into Martian orbit costs roughly **5.6 km/s** total — a figure that sounds modest until you remember that every decimal place is paid for in tonnes of propellant, and the rocket equation means the exchange rate gets worse the more you spend.",
+  "cur": "[德尔塔-V预算](/science/propulsion/dv-budget)是任务规划人员对电子表格的称呼，该表格记录任务必须执行的每一个速度变化，从地球停泊轨道到最终目的地。它是任务设计中最具决定性的文件：它决定了任务本身是否可能。将航天器从近地轨道运送到、比如说、Hohmann转移到火星并进入火星轨道，总共耗费约**5.6公里/秒**——这个数字听起来很适度，直到你记起每一位小数都用推进剂的吨数支付，而火箭方程意味着你花得越多，汇率就越差。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.6.md",
+  "en": "A [Hohmann transfer](/science/transfers/hohmann-transfer) is the minimum-energy arc between two orbits — the path that costs the least delta-v to get from A to B. It is not straight; it is an ellipse that brushes the inner orbit at one end and the outer at the other, coasting the entire way on nothing but inertia. The trick is that you fire the engine twice: once to leave the departure orbit, once to match the arrival orbit. Between those two burns — typically 259 days in the Earth-to-Mars case — you spend nothing. The solar system's gravity does the carrying for free, as long as you had the sense to aim the right way at the start.",
+  "cur": "[霍曼转移](/science/transfers/hohmann-transfer)是两条轨道之间最小能量的弧线——从A到B成本最低的德尔塔-V路径。它不是直线；它是一条椭圆，在一端与内轨道相切，在另一端与外轨道相切，沿途仅靠惯性海岸航行。诀窍是你启动两次发动机：一次离开出发轨道，一次匹配到达轨道。在这两次点火之间——在地球到火星的情况下通常是259天——你什么都不花。太阳系的重力免费运载，只要你一开始有足够的意识来瞄准正确的方向。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.7.caption",
+  "en": "The cheapest path between two orbits is never the straight line — a Hohmann transfer coasts along an ellipse that just grazes each orbit, firing the engine only twice: once to leave, once to arrive.",
+  "cur": "两条轨道之间最便宜的路径绝不是直线——Hohmann转移沿着恰好与每条轨道相切的椭圆海岸航行，仅启动两次发动机：一次离开，一次到达。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.8.md",
+  "en": "This is what *navigation* hands off to delta-v planning. The [navigation essay](/essays/navigation) opened with the problem of aiming at a moving planet — the Lambert problem, the long arc, the correction burns that close the gap between plan and reality. But choosing that arc in the first place was a budget decision. The Hohmann minimum-energy path was chosen because it spends the least; a faster trajectory exists, but it costs more delta-v than most missions can afford, and delta-v is the one thing you cannot borrow.",
+  "cur": "这就是*导航*传递给德尔塔-V规划的东西。[导航文章](/essays/navigation)以对准移动中行星的问题开篇——Lambert问题、长弧线、闭合计划与现实之间差距的修正点火。但首先选择那条弧线是一个预算决定。Hohmann最小能量路径被选中是因为它花费最少；存在更快的轨迹，但它的成本超过大多数任务能负担的德尔塔-V，而德尔塔-V是你不能借用的唯一东西。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.10.md",
+  "en": "Given the equation's tyranny, any trick that adds delta-v for free is not merely useful — it is transformative. There is exactly one: **gravity**.",
+  "cur": "鉴于方程的暴虐性，任何不花费推进剂就增加德尔塔-V的技巧不仅仅是有用的——它是变革性的。恰好有一种：**重力**。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.11.md",
+  "en": "A spacecraft that swings close past a planet enters the planet's gravitational field fast, curves around it, and leaves faster than it arrived — because the planet is itself moving, and the craft has stolen a whisper of that motion. The [gravity assist](/science/transfers/gravity-assist) costs no propellant at all. The planet loses an unmeasurably tiny amount of its own orbital velocity; the spacecraft gains a great deal. For most interplanetary probes, this is not a bonus — it is the entire business model.",
+  "cur": "一艘航天器快速经过一个行星进入该行星的引力场，绕其曲折，然后离开时速度比到达时更快——因为行星本身在移动，航天器窃取了这种运动的一丝。[重力助推](/science/transfers/gravity-assist)完全不消耗推进剂。行星失去它自己轨道速度的不可衡量的极小部分；航天器获得很多。对于大多数行星际探测器，这不是奖励——这是整个商业模式。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.12.md",
+  "en": "In the mid-1960s, a JPL mathematician named Gary Flandro was doing summer calculations when he noticed something. The outer planets — Jupiter, Saturn, Uranus, Neptune — were drifting toward a once-in-175-years alignment. A probe launched in 1977 and aimed right could use Jupiter's gravity to reach Saturn, Saturn's to reach Uranus, Uranus's to reach Neptune: a four-planet bank shot, each flyby adding delta-v for free and redirecting the trajectory to the next target. The flight time to Neptune would fall from thirty years to twelve. That observation became the Grand Tour — and [Voyager 2](/missions?id=voyager-2) made it real, gaining roughly **10 km/s** from the Jupiter flyby alone, enough to reach the outer system in the time originally budgeted for a Saturn-only mission. Neptune, today, has been visited once. The reason is that the window closed in the 1980s and won't open again until the 2150s.",
+  "cur": "在1960年代中期，JPL的一位数学家加里·弗兰德罗在做夏日计算时注意到了什么。外行星——木星、土星、天王星、海王星——正在漂向一个175年一遇的对齐。一艘在1977年发射并正确瞄准的探测器可以利用木星的重力到达土星，利用土星的到达天王星，利用天王星的到达海王星：一个四行星斯诺克球杆，每次飞掠都免费增加德尔塔-V并将轨迹重定向到下一个目标。到达海王星的飞行时间将从三十年降至十二年。这个观察成为了大巡游——而[Voyager 2](/missions?id=voyager-2)使其成真，仅从木星飞掠就获得约**10公里/秒**，足以在原本预算用于仅土星任务的时间内到达外行星系。海王星至今已被访问一次。原因是这个窗口在1980年代关闭，直到2150年代才会再次打开。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.13.caption",
+  "en": "Voyager 2 took the free refill four times over — Jupiter to Saturn to Uranus to Neptune — banking each planet’s motion into the next, on a route that will not line up again for 175 years.",
+  "cur": "Voyager 2获得了四次免费补给——木星到土星到天王星到海王星——将每个行星的运动存入下一个，沿着一条175年内不会再对齐的路线。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.14.md",
+  "en": "The same arithmetic is why [Cassini](/missions?id=cassini) looped through Venus — twice — and past Earth and past Jupiter before heading outward to Saturn: not the scenic route, but the cheap one. And why [Mangalyaan](/missions?id=mangalyaan), India's first interplanetary mission, reached Mars in 2014 on a budget of roughly US$74 million — a fraction of what comparable missions have cost — in part because its trajectory was designed to extract maximum value from every kilogram of its 852-kilogram propellant load, the largest single component of a spacecraft that weighed 1,340 kg on the pad. The delta-v budget was 1,350 m/s for the entire mission after escape. Every gram was accounted for.",
+  "cur": "同样的算术是为什么[Cassini](/missions?id=cassini)经过金星两次——以及经过地球和木星——才向外指向土星：不是风景路线，而是便宜路线。以及为什么[Mangalyaan](/missions?id=mangalyaan)，印度的第一个行星际任务，在2014年以大约美元740万的预算到达火星——仅为相当任务成本的一小部分——部分是因为其轨迹被设计为从每公斤推进剂中获取最大价值，其852公斤的推进剂负载是一艘在发射台上重1,340公斤的航天器的最大单一组件。整个逃逸后任务的德尔塔-V预算是1,350米/秒。每一克都被记账。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.15.caption",
+  "en": "Cassini reached Saturn on borrowed speed, swinging past Venus twice, Earth, and Jupiter along the way — a seven-year detour that cost less fuel than aiming straight at it ever could.",
+  "cur": "卡西尼沿着借来的速度到达土星，经过金星两次、地球和木星——一条七年的绕路，消耗的燃料比直接瞄准它要少。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.17.md",
+  "en": "Gravity offers a second trick, subtler than the first. It was described in 1929 by Hermann Oberth, and it turns on a fact about kinetic energy that is not obvious until you write it out: energy grows as the *square* of velocity. A burn that adds 1 km/s at 10 km/s adds far more kinetic energy than the same burn at 1 km/s — because the work done equals force times distance, and a rocket moving fast covers more distance during the burn.",
+  "cur": "重力提供了第二个技巧，比第一个更微妙。它在1929年由赫尔曼·奥伯特描述，它建立在一个关于动能的事实之上，这个事实在你写出来之前并不明显：能量随速度的*平方*增长。在10公里/秒速度下增加1公里/秒的点火增加的动能远大于在1公里/秒速度下的相同点火——因为功等于力乘以距离，而快速移动的火箭在点火期间覆盖更多距离。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.18.md",
+  "en": "The consequence, called the [Oberth effect](/science/propulsion/oberth-effect), is that burns deep in a gravity well — at the lowest point of an orbit, *periapsis*, where a spacecraft is moving fastest — are drastically more efficient than burns performed at altitude. The same delta-v, spent at the right moment in the right place, delivers more final energy to the craft. Missions that can arrange to fire their engines at periapsis — arriving planets, close passes, deliberately engineered low-point maneuvers — get, in effect, a multiplier on whatever delta-v they spend. [New Horizons](/missions?id=new-horizons) used a Jupiter flyby not just for the gravity-assist velocity boost but timed its burn to coincide with closest approach, stacking the Oberth dividend on top of the assist. The combination shaved three years from its flight to Pluto.",
+  "cur": "结果称为[Oberth效应](/science/propulsion/oberth-effect)，是深在重力井中的点火——在轨道的最低点，*近地点*，航天器移动最快的地方——比在高度处进行的点火效率要高得多。相同的德尔塔-V，在正确的时刻、正确的地点花费，为航天器提供更多最终能量。能够安排在近地点启动发动机的任务——到达行星、近距离通过、刻意设计的低点机动——实际上在他们花费的任何德尔塔-V上获得倍数。[New Horizons](/missions?id=new-horizons)不仅用木星飞掠获取重力助推速度增加，还在其点火与最近距离重合时进行，将Oberth股利堆叠在助推之上。这种组合从其到冥王星的飞行中剪去了三年。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.19.caption",
+  "en": "Burn low, gain more: deep in a gravity well a spacecraft is moving fastest, and the same engine burn there buys far more energy than it would out at the slow, distant top of the orbit.",
+  "cur": "低处点火，获益更多：深在重力井中航天器移动最快，相同的发动机点火在那里购买的能量远大于在轨道缓慢、遥远的顶部获得的能量。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.20.md",
+  "en": "These are not hacks or loopholes. They are the mathematics of moving through a gravitational landscape that, if you read it right, is not hostile to motion but is in fact riddled with chutes and ramps. The budget does not disappear — but the skilled reader of that landscape can stretch it, sometimes enormously.",
+  "cur": "这些都不是技巧或漏洞。它们是通过引力景观运动的数学，如果你正确阅读它，不是对运动的敌意，而实际上充满了滑道和斜坡。预算不会消失——但熟练的该景观读者可以拉伸它，有时是极其重要的拉伸。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.22.md",
+  "en": "The delta-v budget is ruthlessly indifferent to almost everything that feels important about a mission — the science, the prestige, the geopolitics. It does not care who built the spacecraft or what flag is painted on it. It cares only about mass, exhaust velocity, and the logarithm.",
+  "cur": "德尔塔-V预算对几乎所有关于任务感觉重要的事物都残忍地漠不关心——科学、威望、地缘政治。它不在意谁制造了航天器或在其上绘制了哪面旗帜。它只关心质量、排气速度和对数。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.23.md",
+  "en": "This creates a discipline unlike any other in engineering. The camera added to a Mars rover, the extra redundancy in a computer, the additional science instrument a team lobbied years for — every one of them comes with a delta-v price. If the instrument is heavier than the margin allows, either something else is removed or the entire mission becomes infeasible. Mission planning is an exercise in continuous, painful arbitrage between what you want and what you can carry, and the equation is the judge of every dispute.",
+  "cur": "这在工程学中创造了一门与任何其他学科都不同的纪律。添加到火星漫游车的相机、计算机中的额外冗余、一个团队为之游说多年的额外科学仪器——它们每一个都有德尔塔-V成本。如果仪器比许可边际更重，要么移除其他什么，要么整个任务变得不可行。任务规划是在你想要的和你能携带的之间进行连续、痛苦套利的练习，而方程是每个争议的裁判。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.24.md",
+  "en": "The budget also erases the margin for error in a way that land-based engineering rarely does. A bridge that is slightly overloaded still stands. A spacecraft that runs out of delta-v before completing orbital insertion becomes a piece of uncontrolled debris. There is no partial credit. Every mission in this atlas that succeeded did so because someone, somewhere, kept an honest accounting and never spent more than was there. The anonymous room of people who did that math — who watched the budget, checked the astrodynamics, ran the correction-burn sequences — carried every mission that ever arrived.",
+  "cur": "预算也以陆基工程很少做的方式清除了错误的余地。一座轻微超载的桥仍然屹立。一艘在完成轨道插入前耗尽德尔塔-V的航天器成为不受控碎片。没有部分加分。本图集中成功的每个任务都成功是因为某个地方的某人保持了诚实的记账，从未花费超过存在的东西。做那个数学的匿名房间的人——那些监视预算、检查航天动力学、运行修正点火序列的人——承载了每个到达的任务。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.26.md",
+  "en": "For sixty years, the tyranny of the rocket equation produced a particular answer to the problem of getting to orbit: build a machine optimized for the task, burn it on the way up, throw it away. The structural mass savings from designing a single-use first stage were real, and the delta-v was real, and the math closed. The problem was that you were throwing away an engine worth tens of millions of dollars after using it once.",
+  "cur": "六十年来，火箭方程的暴虐性为到达轨道的问题产生了一个特定答案：建造一台为任务优化的机器，在上升时燃烧，扔掉。从设计单次使用第一级的结构质量节省是真实的，德尔塔-V是真实的，数学封闭了。问题是你在使用一次后就扔掉了一个价值数千万美元的发动机。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.27.md",
+  "en": "Landing a rocket stage and flying it again changes the denominator, but not in the way the equation predicts. Structurally, a reusable stage is slightly heavier — it needs landing legs, grid fins, thermal protection, residual propellant reserves for the return burn — which means the [specific impulse](/science/propulsion/specific-impulse) advantage narrows and the mass ratio shrinks. The equation, strictly read, says reuse costs you delta-v. What the equation doesn't model is that you can fly the stage again next week, at a fraction of the cost of building a new one, which means you can afford to fly more missions, which means the budget that matters — dollars per kilogram to orbit — collapses. The delta-v logic didn't change. The economic logic that runs alongside it did.",
+  "cur": "着陆一个火箭级并再次飞行改变了分母，但不是方程预测的方式。在结构上，可重用级稍微重一些——它需要着陆腿、网格鳍、热保护、剩余推进剂回程点火——这意味着[比冲](/science/propulsion/specific-impulse)优势缩小，质量比收缩。严格阅读的方程说重用让你失去德尔塔-V。方程没有模型的是你下周就可以再次飞行该级，成本仅为建造新的一小部分，这意味着你可以负担飞更多任务，这意味着重要的预算——美元/公斤到轨道——崩溃。德尔塔-V逻辑没有改变。与其运行的经济逻辑改变了。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.28.md",
+  "en": "This is the tension that has defined the last decade of launch vehicle development, and it is not yet resolved. The rocket equation still sets the hard physical floor. What changes is how much it costs to stand on it. [Fly a trajectory in the atlas](/fly) and watch what happens to the delta-v budget as each stage separates — the mass ratio snapshots at each cut are what the equation is actually enforcing, invisibly, on every flight.",
+  "cur": "这是过去十年推出车辆发展定义的紧张关系，它还未解决。火箭方程仍然设置硬物理底线。改变的是站在它上面要花费多少。[在图集中飞行轨迹](/fly)并观察每个级分离时德尔塔-V预算发生什么——每个切割处的质量比快照是方程实际上在每次飞行中无形施加的。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.30.md",
+  "en": "There is something clarifying about a constraint with no exceptions. The rocket equation does not yield for political reasons or budget increases or engineering heroics. Every mission that has ever left this planet — [Voyager](/missions?id=voyager-2), [Cassini](/missions?id=cassini), [New Horizons](/missions?id=new-horizons), [Mangalyaan](/missions?id=mangalyaan) — did so because someone reconciled a column of delta-v requirements against a column of what the propellant could provide, and the second number was at least as large as the first. Every mission that never left — and there have been many, killed quietly in planning — failed that test.",
+  "cur": "有关一个没有例外的约束有什么澄清。火箭方程不会因政治原因、预算增加或工程英雄主义而让步。曾经离开这个星球的每个任务——[Voyager](/missions?id=voyager-2)、[Cassini](/missions?id=cassini)、[New Horizons](/missions?id=new-horizons)、[Mangalyaan](/missions?id=mangalyaan)——都这样做是因为某人将德尔塔-V需求列对照了推进剂能提供的列，第二个数字至少与第一个一样大。从未离开的每个任务——有很多，在规划中被安静地杀死——未通过该测试。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.31.md",
+  "en": "What the equation also does, less obviously, is make gravity precious. Not as a hazard to overcome — every rocket is burning upward against it — but as a free account. A planet's gravity well, threaded correctly, is a source. Jupiter's gravity gave Voyager 2 a velocity it could never have bought with propellant. The Oberth effect makes deep periapsis passes worth engineering deliberately. The solar system's entire orbital architecture is, from a delta-v perspective, a landscape of free refills scattered across a mostly empty map — and every [trajectory you can explore here](/science/transfers/hohmann-transfer) is a record of someone finding one.",
+  "cur": "方程还做的，不太明显，是使重力珍贵。不是作为要克服的危险——每支火箭都在对抗它向上燃烧——而是作为免费账户。一个行星的重力井，正确穿过，是一个源头。木星的重力给了Voyager 2一个它永远不能用推进剂购买的速度。Oberth效应使深近地点通过值得刻意工程。太阳系的整个轨道架构从德尔塔-V角度来看是散布在大多是空地图上的免费补给景观——每一条[你在这里能探索的轨迹](/science/transfers/hohmann-transfer)是某人找到一条记录。"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.32.md",
+  "en": "Tsiolkovsky died in 1935, nine years before the first ballistic missile flew and a generation before the first spacecraft left Earth. He never saw a rocket in orbit. What he did was write down, in 1903, the grammar that every mission since has spoken — the one rule that turns the aspiration of going somewhere into the arithmetic of whether you can. Everything else is a sentence in that language. The question the atlas keeps answering, mission by mission, is how much you can say within it.",
+  "cur": "齐奥尔科夫斯基在1935年去世，在第一枚弹道导弹飞行前九年，在第一艘航天器离开地球一代前。他从未看到过运行中的火箭。他所做的是在1903年写下，此后每个任务都讲过的语法——那个规则将去某个地方的渴望变成你是否能的算术。其他一切都是那种语言的句子。图集不断回答的问题，任务接任务，是在其中你能说多少。"
+ }
+]

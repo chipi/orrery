@@ -19,6 +19,10 @@ follows the name rules. Fix it when any of these holds:
 - unnatural, word-for-word or ungrammatical phrasing; wrong register; mixed scripts;
 - a name written against the rules below.
 
+The English is the source of truth for content: translate what it says. Do not correct,
+soften or add to facts, numbers or names in the English, even if you believe they are
+wrong.
+
 When you fix, write the whole string anew in good `<LOCALE>`. Keep Markdown, links
 (`[text](path)` — the path unchanged), `{placeholders}`, `\n`, numbers, units and
 formulas exactly. Keep the length close to `cur` (never more than 1.3× its length; some

@@ -1,0 +1,674 @@
+[
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "body_paragraphs.1",
+  "en": "Andromeda is approaching the Milky Way at 110 km/s in the radial direction. This was known from Doppler-shift measurements since Vesto Slipher's 1912 work at Lowell Observatory — Andromeda was the first galaxy ever measured to have a blueshift (most galaxies are receding due to cosmic expansion; Andromeda's mutual gravitation with the Milky Way overrides the Hubble flow at our distance). Until Hubble Space Telescope's high-precision proper-motion measurements in 2012, it was unclear whether Andromeda's transverse velocity would steer it past us or into us. HST measurements (2012) and Gaia DR2/DR3 (2019) suggested a near-head-on trajectory. However, a 2024 analysis by Sawala et al. (Nature Astronomy, 2025) — one of the first to include M33 and the LMC in the orbit integration — found only roughly even odds of a merger within the next 10 Gyr, with less than a 2% chance within the originally predicted ~4–5 Gyr window. If the merger does happen, tidal disruption would begin around 4.5 billion years from now, with the central coalescence taking another ~2 billion years to settle into an elliptical remnant nicknamed 'Milkomeda'.",
+  "cur": "안드로메다는 반지름 방향으로 초속 110km 속도로 은하계에 접근 중입니다. 이는 Lowell Observatory의 베스토 슬라이퍼의 1912년 연구 이래 도플러 편이 측정으로 알려져 있었습니다. 안드로메다는 청색편이를 측정한 첫 번째 은하였습니다(대부분의 은하는 우주 팽창으로 인해 멀어지고 있으며, 안드로메다의 은하계와의 상호 중력은 우리 거리에서 Hubble 흐름을 압도합니다). 2012년 Hubble Space Telescope의 고정밀 고유운동 측정까지 안드로메다의 횡방향 속도가 우리를 지나갈 것인지 또는 충돌할 것인지는 불명확했습니다. HST 측정(2012)과 Gaia DR2/DR3(2019)는 거의 정면 충돌 궤도를 시사했습니다. 그러나 Sawala et al.(Nature Astronomy, 2025)의 2024년 분석 — M33과 LMC를 궤도 적분에 포함한 최초 분석 중 하나 — 는 향후 10 Gyr 내에 병합될 확률이 약 50/50이며, 원래 예상된 약 4–5 Gyr 기간 내에 병합될 확률은 2% 미만임을 발견했습니다. 병합이 일어난다면, 조석 파괴는 현재로부터 약 45억 년 뒤에 시작되며, 중심 합체가 Milkomeda라는 별명의 타원은하 잔해로 정착되는 데 약 20억 년이 더 걸릴 것입니다."
+ },
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "body_paragraphs.2",
+  "en": "Andromeda has its own satellite system. The most prominent members are M32 (a compact elliptical companion, possibly the stripped core of a once-larger galaxy disrupted by tidal interaction with M31), M110 (a dwarf elliptical companion), and a population of about 20 known dwarf spheroidals and irregulars (M31's group). M32's high central stellar density and the existence of stellar streams in Andromeda's halo are evidence of past accretion events — Andromeda has eaten dwarfs in the past, the same way the Milky Way is eating Sagittarius today. The two great spirals plus M33 plus their dwarf retinues are the heart of the Local Group.",
+  "cur": "안드로메다는 자신의 위성계를 가지고 있습니다. 가장 두드러진 멤버는 M32(콤팩트한 타원 동반은하로, M31과의 조석 상호작용에 의해 붕괴된 한때 더 큰 은하의 벗겨진 핵일 가능성이 있음), M110(왜소 타원 동반은하), 그리고 약 20개 정도로 알려진 왜소 구상 은하와 불규칙 은하들의 개체군(M31의 군집)입니다. M32의 높은 중심 항성 밀도와 안드로메다의 헤일로에 존재하는 항성 흐름은 과거의 식적(accretion) 사건들의 증거입니다 — 안드로메다는 과거에 왜소은하들을 먹어온 것이고, 오늘날 은하수가 궁수자리 왜소타원은하를 먹고 있는 것과 같은 방식입니다. 이 두 거대 나선 은하와 M33 그리고 그들의 왜소 수행원들은 국부 은하군의 중심입니다."
+ },
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "body_paragraphs.3",
+  "en": "Observing Andromeda. Bortle-class-3 or darker skies make Andromeda visible to the naked eye as a smudge slightly elongated north-northeast. The standard pointing trick: find the Great Square of Pegasus, then trace the chain of stars eastward (β-And, μ-And, ν-And) and look just south-west of ν-And. Binoculars show the bright nuclear bulge clearly; a 4-inch telescope at low power shows the elongated disc and the brightest companion M32 as a small fuzzy patch. The dust lanes that show so clearly in long-exposure photography are visible to the eye only in larger telescopes (>8 inch). Andromeda is best observed in autumn (September-December) in the northern hemisphere, when it climbs nearly overhead at mid-northern latitudes.",
+  "cur": "안드로메다 관찰. Bortle 등급 3 이상의 어두운 하늘은 안드로메다를 북북동쪽으로 약간 길어진 얼룩으로 맨눈으로 볼 수 있게 합니다. 표준 찾기 방법: 페가수스의 대사각형을 찾은 다음, 별들의 체인을 동쪽으로 따라가(β-And, μ-And, ν-And), ν-And의 남서쪽을 찾으세요. 쌍안경은 밝은 핵 팽대부를 명확하게 보여주고, 저배율 4인치 망원경은 길쭉한 원판과 가장 밝은 동반은하 M32를 작은 흐릿한 덩어리로 보여줍니다. 장시간 노출 사진에서 명확하게 보이는 먼지띠는 더 큰 망원경(>8인치)에서만 맨눈으로 볼 수 있습니다. 안드로메다는 북반구에서 가을(9월-12월)에 가장 잘 관찰되며, 중위도 북쪽에서 거의 직오로 상승합니다."
+ },
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "diagram_caption",
+  "en": "M31 / Andromeda: 2.5 Mly distant, ~1.5 × 10¹² M☉, trillion stars, spiral (formal type SA(s)b; weak bar debated). Approaching Milky Way at 110 km/s. A merger is possible but not certain — Sawala et al. (2025) put odds at ~50/50; if it occurs, tidal disruption begins ~4.5 Gyr from now. Naked-eye visible from dark sites. Satellites: M32, M110, ~20 dwarf companions.",
+  "cur": "M31 / 안드로메다: 250만 광년 거리, ~1.5 × 10¹² M☉, 1조 개 항성, 나선은하(정식 유형 SA(s)b; 약한 막대 논쟁 중). 초속 110km로 은하계에 접근 중. 병합 가능성 있지만 확실하지 않음 — Sawala et al. (2025)는 확률을 약 50/50으로 추정; 발생 시, 조석 파괴는 현재로부터 약 45억 년 뒤 시작. 어두운 관찰지에서 맨눈으로 볼 수 있음. 위성: M32, M110, 약 20개 난쟁이 동반은하."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "intro_sentence",
+  "en": "A region of spacetime where mass is so compressed that even light can't climb out — and we've now imaged the shadows of two of them.",
+  "cur": "질량이 너무 압축 된 우주 시간의 지역은 빛이 상승 할 수 없다는 것을 압축하고 이제 두 가지의 그림자를 이미지했습니다."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "body_paragraphs.0",
+  "en": "A black hole forms when a sufficient mass collapses to inside its Schwarzschild radius — the size at which the escape velocity equals the speed of light. The formula on the right says it directly: for any mass M, there's a radius r_s = 2GM/c² inside which nothing escapes. The Sun's Schwarzschild radius is 3 km. The Earth's is 9 mm. Compress either to that size and you've made one.",
+  "cur": "충분한 질량이 Schwarzschild 반경 안쪽에 붕괴될 때 까만 구멍 모양 - 탈출 각측정속도가 빛의 속도를 동등한 크기. 오른쪽의 공식은 직접 말한다: 어떤 질량 M에 대 한, 반경 r s = 2GM/c2 어떤 탈출. 태양 Schwarzschild 반경은 3km 떨어져 있습니다. 지구는 9 mm입니다. 그 크기 중 하나를 압축하고 하나가되었습니다."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "body_paragraphs.1",
+  "en": "Real black holes form by stellar collapse (a massive star running out of fusion fuel; the core falls inside its own Schwarzschild radius) or by accretion of mass onto seed black holes in the early universe (the supermassive black holes at galaxy centres, 10⁶ to 10¹⁰ solar masses). They aren't holes — they're points with a one-way membrane. Outside the event horizon spacetime is well-behaved and orbits work normally. Inside, all timelike paths point toward the singularity.",
+  "cur": "stellar 붕괴 (퓨전 연료에서 실행되는 대규모 별; 핵심은 자체 Schwarzschild 반경 안쪽에 떨어지는) 또는 초기 우주에서 종자 검정 구멍에 대량의 accretion (갤럭시 센터, 106에서 1010 태양 질량). 그들은 구멍이 없습니다 - 그들은 한 방향 막으로 포인트입니다. event horizon spacetime 외부는 잘 행동하고 궤도는 일반적으로 작동합니다. 안쪽에, 모든 timelike 경로는 단속합니다."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "body_paragraphs.2",
+  "en": "We detect them three ways. **Stellar dynamics**: stars orbiting an invisible mass concentration imply a black hole — that's how Sgr A* (4 × 10⁶ M☉ at the centre of the Milky Way) was confirmed, by tracking stars whipping around the central darkness for 30 years (Nobel 2020). **X-ray emission from accretion discs**: gas spiralling in heats to 10⁶ K and glows in X-rays — Chandra's specialty. **Direct shadow imaging**: the Event Horizon Telescope ([interferometry](observation/interferometry) across 8 sub-mm observatories) imaged the shadow of M87's black hole in 2019 and Sgr A* in 2022. Two black holes, photographed.",
+  "cur": "우리는 세 가지 방법으로 검출합니다. **항성 역학**: 보이지 않는 질량 집중체 주위를 공전하는 별들은 블랙홀을 시사하며 — 이것이 Sgr A* (은하계 중심의 4 × 10⁶ M☉)가 확인된 방식입니다. 30년 동안 중앙의 어둠 주위를 돌아가는 별들을 추적함으로써 (노벨상 2020). **강착 원판에서의 X선 방출**: 나선형으로 유입되는 가스는 10⁶ K까지 가열되어 X선으로 빛납니다 — Chandra의 전문 분야입니다. **직접 그림자 이미징**: 사건의 지평선 망원경(8개의 밀리미터파 관측소를 가로지르는 [간섭계](observation/interferometry))는 2019년 M87의 블랙홀 그림자를 이미징했고 2022년 Sgr A*을 이미징했습니다. 두 개의 블랙홀, 사진으로 촬영되었습니다."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "body_paragraphs.3",
+  "en": "What black holes do NOT do: lead anywhere useful for spaceflight. They're the most extreme energy regimes in the universe and we observe them with great enthusiasm; they're also the worst places to fly a spacecraft. Tidal forces near a stellar-mass black hole would shred a vehicle long before any \"event horizon crossing\" became a question. Supermassive black holes are calmer (lower curvature at the horizon) but tens of thousands of light-years away. They are a thing to look at, not a thing to visit.",
+  "cur": "블랙홀이 하지 않는 것: 우주비행을 위해 유용한 곳으로 통하기. 이들은 우주에서 가장 극단적인 에너지 영역이며 우리는 큰 열정으로 관측합니다. 그러나 우주선을 날리기에는 최악의 장소들입니다. 항성질량 블랙홀 근처의 조석력은 어떤 \"사건의 지평선 통과\"가 문제가 되기 훨씬 전에 우주선을 산산조각 낼 것입니다. 초질량 블랙홀은 더 조용합니다 (지평선에서의 곡률이 낮음). 그러나 수만 광년 떨어져 있습니다. 이들은 관찰할 대상이지, 방문할 대상이 아닙니다."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "formula_caption",
+  "en": "Schwarzschild radius — the size at which any mass becomes a black hole. G = 6.674×10⁻¹¹ N·m²/kg². For the Sun: 3.0 km. For 1 kg: 1.5 × 10⁻²⁷ m, smaller than a proton.",
+  "cur": "Schwarzschild 반경 — 어떤 질량든지 까만 구멍이 되는 크기. G = 6.674×10−11 N·m2/kg2. 태양의 경우: 3.0 km. 1개 kg를 위해: 1.5 × 10−27 m의 proton 보다는 더 작은."
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "diagram_caption",
+  "en": "Event horizon (one-way membrane) + accretion disc (10⁶ K, X-ray glow) + photon sphere (light orbits at r = 1.5 r_s) + shadow (what EHT imaged). Real, mapped, weighed.",
+  "cur": "이벤트 수평선 (편도 막) + 가속 디스크 (106 K, X 레이 글로우) + 광 영역 (R = 1.5 r s의 조명 궤도) + 그림자 (EHT 이미지). 현실, mapped, 무게."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "intro_sentence",
+  "en": "An occulting disc inside the telescope blocks the host star so the planet next to it — a billion times fainter — becomes visible.",
+  "cur": "망원경 내부의 occulting 원판은 주인 별을 막습니다 그래서 그 옆에 지구 — 수십억 시간 fainter — 가시적 됩니다."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "body_paragraphs.0",
+  "en": "A Sun-like star outshines its planets by a factor of about 10⁹ at visible wavelengths and 10⁶ in the infrared. The planet's photons aren't missing — they're drowning in the diffraction wings of the star's point-spread function. Direct imaging of an exoplanet is only possible if you can suppress that PSF by many orders of magnitude. A coronagraph does exactly that.",
+  "cur": "태양-like 스타는 눈에 보이는 파장에서 약 109의 요인에 의해 지구를 노출하고 적외선에서 106. 행성의 광란은 누락되지 않습니다 - 그들은 별의 포인트 퍼짐 기능의 확산 날개에서 무인합니다. exoplanet의 직접 이미징은 많은 순서로 PSF를 억제할 수 있는 경우에만 가능합니다. 관상관은 정확히 그것입니다."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "body_paragraphs.1",
+  "en": "The classical Lyot coronagraph (1930, invented by Bernard Lyot for solar photography) places an opaque disc at the telescope's focal plane to block the star, then a second mask further down to block the diffracted light from the first mask's edge. Modern apodised pupil coronagraphs and vortex coronagraphs use intricate phase patterns to push the suppression to 10⁻⁹ or better in narrow regions of the image.",
+  "cur": "고전적인 Lyot 코로나그래프(1930년, 태양 사진촬영을 위해 베르나르 리오가 발명함)는 별을 가리기 위해 망원경의 초점면에 불투명한 원판을 놓고, 첫 번째 원판의 가장자리에서 나온 회절광을 가리기 위해 더 아래에 두 번째 마스크를 배치합니다. 현대의 apodised 동공 코로나그래프와 소용돌이 코로나그래프는 복잡한 위상 패턴을 사용하여 이미지의 좁은 영역에서 억제를 10⁻⁹ 이상으로 높입니다."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "body_paragraphs.2",
+  "en": "JWST carries coronagraphs on both NIRCam and MIRI; they've directly imaged several gas giant exoplanets around nearby stars. The Nancy Grace Roman telescope (launching mid-2020s) carries a coronagraph instrument designed to image gas giants around bright stars at unprecedented contrast — and to demonstrate the technology for the larger Habitable Worlds Observatory, which will aim at Earth-mass planets.",
+  "cur": "JWST는 NIRCam과 MIRI 모두에 코로나그래프를 탑재하고 있으며, 근처 별 주위의 여러 가스 거대 행성을 직접 촬영했습니다. Nancy Grace Roman 망원경(2020년대 중반에 발사 예정)은 밝은 별 주위의 가스 거대 행성을 전례 없는 명암비로 촬영하도록 설계된 코로나그래프 기기를 탑재하고 있으며, 지구 크기 행성을 목표로 할 Habitable Worlds Observatory를 위한 기술을 입증하도록 합니다."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "body_paragraphs.3",
+  "en": "An alternative architecture is the **starshade**: a 30+ metre opaque shape flown thousands of km in front of the telescope, blocking the star without any optics inside the instrument. Starshades are mechanically harder (the formation-flying alignment is brutal) but reach higher contrast. None has flown yet; concept studies for direct Earth-twin imaging always include a starshade in the mix.",
+  "cur": "다른 구조로는 **스타셰이드**가 있습니다. 망원경 앞쪽 수천 킬로미터 떨어진 곳에서 비행하는 30미터 이상의 불투명한 형태로, 기기 내부의 어떤 광학 요소도 없이 별을 차단합니다. 스타셰이드는 기계적으로 더 어렵습니다(편대 비행 정렬이 매우 까다로움). 하지만 더 높은 대비도에 도달합니다. 아직 비행한 것이 없습니다. 지구와 같은 쌍둥이 행성의 직접 촬영에 대한 개념 연구에는 항상 스타셰이드가 포함됩니다."
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "diagram_caption",
+  "en": "Block the star at the focal plane → diffraction wings sneak around → second mask kills those → 10⁻⁹ suppression, planet emerges. Vortex coronagraphs replace the disc with a phase pattern.",
+  "cur": "focal plane → diffraction wings에서 별을 블록 → 두 번째 마스크 → 10 ~ 9 킬레이트, 지구가 등장합니다. Vortex 관상은 단계 본을 가진 원판을 대체합니다."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "title",
+  "en": "Dwarf spheroidals — small, faint, and almost entirely dark matter",
+  "cur": "왜소 타원체 — 작고 어둡고 거의 전부 암흑물질"
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "intro_sentence",
+  "en": "Dwarf spheroidal galaxies are the most numerous galaxies in the Local Group and the most dark-matter-dominated objects we have ever measured — mass-to-light ratios of 100, 500, even 1000 — far higher than any spiral.",
+  "cur": "왜소 타원체 은하는 국부 은하군에서 가장 수가 많은 은하이자 우리가 측정한 가장 암흑물질-지배적 천체다 — 질량 대 광도비 100, 500, 심지어 1000 — 어떤 나선보다 훨씬 높다."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "body_paragraphs.0",
+  "en": "Dwarf spheroidals (often abbreviated dSph) are small, faint, gas-poor, roughly elliptical satellites of larger galaxies. Around the Milky Way, the brighter members are Sagittarius, Sculptor, Fornax, Draco, Ursa Minor, Leo I, Leo II, Sextans, Carina, Canes Venatici I, plus a long tail of ultra-faint dwarfs discovered by SDSS, DES, Pan-STARRS, and now the Vera C. Rubin Observatory's LSST. The total count of known Milky Way dSph satellites is now over 60 and rising. Each typically has only millions to tens of millions of stars — compared to the Milky Way's hundreds of billions — and was for decades dismissed as boring stragglers. The picture changed in the 1980s when stellar-velocity-dispersion measurements showed they were anything but boring.",
+  "cur": "왜소 타원체(보통 dSph로 약칭)는 작고 어둡고 가스가 부족하며 대략 타원형인 더 큰 은하의 위성이다. 우리 은하 주위의 더 밝은 구성원은 Sagittarius, Sculptor, Fornax, Draco, Ursa Minor, Leo I, Leo II, Sextans, Carina, 사냥개자리 왜소은하 그리고 SDSS, DES, Pan-STARRS, 이제는 Vera C. Rubin Observatory의 LSST를 통해 발견된 긴 꼬리의 극미광 왜소은하들. 알려진 우리 은하 dSph 위성의 총 수는 이제 60개를 넘었고 증가하고 있다. 각각은 일반적으로 수백만에서 수천만 개의 별만 가진다 — 우리 은하의 수천억과 비교하면 — 그리고 수십 년간 지루한 낙오자로 무시되었다. 그림은 1980년대 별 속도 분산 측정이 그것들이 결코 지루하지 않다는 것을 보여주었을 때 바뀌었다."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "body_paragraphs.1",
+  "en": "The story of dwarf-spheroidal dark matter starts with Marc Aaronson at the Lowell Observatory in 1983. He measured the velocity dispersion of red giants in Draco and Ursa Minor and found they moved much faster than the visible stellar mass could gravitationally bind. To hold the stars together, each system needed mass roughly 100× greater than the visible stellar mass. Subsequent decades of measurement (Walker, Mateo, Kleyna, McConnachie, Battaglia, and many others) confirmed and extended this: the brightest dSphs have mass-to-light ratios around 30, the dimmer ones around 100-300, and the ultra-faint dwarfs (Segue 1, Boötes II, Reticulum II) have mass-to-light ratios of 500-3000. These objects are essentially balls of dark matter with a sprinkling of stars trapped at the bottom of the potential well.",
+  "cur": "왜소 타원체 암흑물질 이야기는 1983년 Lowell Observatory의 마크 아론슨과 함께 시작한다. 그는 Draco와 Ursa Minor의 적색거성 속도 분산을 측정했고 그것들이 가시 별 질량이 중력적으로 묶을 수 있는 것보다 훨씬 빠르게 움직임을 발견했다. 별을 결합시키려면 각 시스템이 가시 별 질량보다 약 100배 더 큰 질량을 필요로 했다. 이후 수십 년의 측정(Walker, Mateo, Kleyna, McConnachie, Battaglia, 그리고 많은 다른 이들)이 이를 확인하고 확장했다: 가장 밝은 dSph는 약 30의 질량 대 광도비, 더 어두운 것들은 약 100-300, 그리고 극미광 왜소은하(Segue 1, 목동자리 II, 그물자리 II)는 500-3000의 질량 대 광도비를 갖는다. 이 천체들은 본질적으로 잠재 우물 바닥에 갇힌 별 한 점이 흩뿌려진 암흑물질 공이다."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "body_paragraphs.2",
+  "en": "Why this matters cosmologically. Standard ΛCDM cosmology predicts that galaxy formation proceeds hierarchically: small dark-matter halos form first, then merge into larger ones. The Milky Way's halo formed by accreting hundreds of smaller dark-matter clumps over its lifetime. Most of those clumps had little or no baryonic mass attached and remain dark and undetectable. But the ones that did acquire and retain some stars are exactly the dwarf spheroidals we see today — sub-halo remnants that the Milky Way has eaten but not fully digested. The dwarfs are direct evidence for the existence of dark matter at sub-galactic scales, AND they are the empirical test for whether dark matter behaves as cold and collisionless as ΛCDM assumes. Several dSph properties (the 'core-cusp problem', the 'too-big-to-fail problem') still don't fit ΛCDM neatly — they are at the centre of every alternative-dark-matter discussion today (warm DM, self-interacting DM, fuzzy DM, primordial-black-hole DM).",
+  "cur": "이것이 우주론적으로 중요한 이유. 표준 ΛCDM 우주론은 은하 형성이 위계적으로 진행됨을 예측한다: 작은 암흑물질 헤일로가 먼저 형성된 다음 더 큰 것으로 합쳐진다. 우리 은하의 헤일로는 그 수명 동안 수백 개의 더 작은 암흑물질 덩어리를 강착시켜 형성되었다. 그 덩어리들 대부분은 거의 또는 전혀 바리온 질량을 갖지 못했고 검출할 수 없는 채로 남는다. 그러나 일부 별을 획득하고 유지한 것들은 정확히 오늘 우리가 보는 왜소 타원체다 — 우리 은하가 먹었지만 완전히 소화하지 못한 서브-헤일로 잔재. 왜소은하는 서브 은하 척도에서 암흑물질의 존재에 대한 직접 증거이며, 동시에 ΛCDM이 가정하는 것처럼 암흑물질이 차갑고 무충돌적인지에 대한 경험적 시험이다. 여러 dSph 속성('core-cusp 문제', 'too-big-to-fail 문제')은 여전히 ΛCDM에 깔끔하게 맞지 않는다 — 오늘날 모든 대안 암흑물질 논의의 중심이다(따뜻한 DM, 자기-상호작용 DM, 퍼지 DM, 원시 블랙홀 DM)."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "body_paragraphs.3",
+  "en": "Some dSphs are actively being torn apart by Milky Way tides. The Sagittarius Dwarf Galaxy at 22 kpc is the canonical example: its stellar stream wraps around the Milky Way more than once, mapped star by star using SDSS + 2MASS + Gaia data. The Sagittarius stream is the strongest single piece of evidence we have for the Milky Way's potential shape (you can fit the stream's 3D path against models of Milky Way mass distribution and constrain whether the dark halo is spherical, oblate, or triaxial). The disrupted galaxy is being slowly digested over the next ~1 Gyr; the Milky Way has done this to dozens of dwarfs over cosmic time, and the Andromeda Stream and other tidal features in M31's halo show Andromeda has done the same. Galactic cannibalism is how spirals grow.",
+  "cur": "일부 dSph는 우리 은하 조석에 의해 활발하게 찢어지고 있다. 22 kpc의 Sagittarius Dwarf Galaxy가 정전적 예다: 그 별의 흐름이 우리 은하 주위를 한 바퀴 이상 감싸며 SDSS + 2MASS + Gaia 데이터를 사용하여 별 단위로 매핑되었다. Sagittarius 스트림은 우리 은하의 잠재 형태에 대해 우리가 가진 가장 강력한 단일 증거다(스트림의 3D 경로를 우리 은하 질량 분포 모델에 맞춰 암흑 헤일로가 구형, 편평, 또는 삼축인지 제약할 수 있다). 파괴된 은하는 다음 ~1 Gyr에 걸쳐 천천히 소화되고 있다; 우리 은하는 우주 시간에 걸쳐 수십 개의 왜소은하에게 이렇게 했고, M31 헤일로의 Andromeda Stream 및 다른 조석 특징은 Andromeda도 같은 일을 했음을 보여준다. 은하 식인은 나선이 성장하는 방식이다."
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "diagram_caption",
+  "en": "Dwarf spheroidals: small (millions of stars), gas-poor, ~roughly elliptical satellites. Mass-to-light ratios 30-1000 (highest among galaxies). Direct evidence for dark matter at sub-galactic scales. Sagittarius dSph is being torn apart by Milky Way tides — its stream is the strongest probe of Milky Way halo shape. ΛCDM open problems (core-cusp, too-big-to-fail) live here.",
+  "cur": "왜소 타원체: 작음(수백만 별), 가스 부족, ~타원형 위성. 질량 대 광도비 30-1000(은하 중 최고). 서브 은하 척도에서 암흑물질 직접 증거. Sagittarius dSph는 우리 은하 조석에 의해 찢어지고 있다 — 그 스트림은 우리 은하 헤일로 형태의 가장 강력한 탐사. ΛCDM 미해결 문제(core-cusp, too-big-to-fail)가 여기 산다."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "title",
+  "en": "Galaxy types — spirals, ellipticals, irregulars, dwarfs",
+  "cur": "은하 유형 — 나선, 타원, 불규칙, 왜소"
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "intro_sentence",
+  "en": "Galaxies fall into a handful of structural families: spirals (Milky Way, Andromeda), ellipticals (M87, NGC 4889), irregulars (Magellanic Clouds), and dwarfs of several sub-classes. The taxonomy is Hubble's 1936 framework, refined.",
+  "cur": "은하는 소수의 구조적 계열로 분류됩니다. 나선은하(우리 은하, Andromeda), 타원은하(M87, NGC 4889), 불규칙은하(마젤란 은하), 그리고 여러 소분류의 왜소은하가 있습니다. 이 분류 체계는 Hubble이 1936년에 제시한 틀을 바탕으로 개선된 것입니다."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.0",
+  "en": "Spiral galaxies are flat rotating discs of stars and gas surrounding a central bulge, with one or more prominent spiral arms wrapping outward. The arms are not rigid structures — they are density waves where star formation is currently elevated, plus young blue stars and pink HII regions that make the arms look brighter than the inter-arm disc. About two-thirds of bright nearby galaxies are spirals. The Milky Way is a barred spiral (SBbc — its central bulge is elongated into a bar 'cigar' shape that funnels gas inward, fuelling central star formation and feeding the supermassive black hole). Andromeda's bar status is unsettled: the formal RC3 classification is SA(s)b (unbarred), though kinematic and photometric studies point to a weak inner non-axisymmetry. The Triangulum Galaxy M33 in the Local Group is an unbarred spiral. The third Hubble category — Sc / SBc — has loose, well-separated spiral arms; the Milky Way is type SBbc or SBc.",
+  "cur": "나선 은하는 중심 벌지를 둘러싼 별과 가스의 납작한 회전 원판으로, 하나 이상의 눈에 띄는 나선팔이 바깥쪽으로 감싸 있다. 팔은 강직한 구조가 아니라 항성 형성이 현재 증가하는 밀도 파이며, 젊고 파란 별과 분홍색 HII 영역이 팔을 팔 사이 원판보다 밝게 보이게 한다. 밝은 근처 은하의 약 2/3는 나선 은하다. 은하수는 막대 나선 은하(SBbc — 중심 벌지가 긴 '시가' 모양의 막대로 늘어나 가스를 안쪽으로 모아 중심부의 항성 형성을 촉진하고 초질량 블랙홀을 먹인다). Andromeda의 막대 상태는 확정되지 않았다: 정식 RC3 분류는 SA(s)b(막대 없음)이지만, 운동학과 광도 측정 연구는 약한 내부 비원대칭을 가리킨다. 국부 은하군의 삼각형 은하 M33은 막대 없는 나선 은하다. 세 번째 Hubble 범주인 Sc / SBc는 헐거하고 잘 떨어진 나선팔을 가지고 있으며, 은하수는 SBbc 또는 SBc형이다."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.1",
+  "en": "Elliptical galaxies are dispersion-supported balls of mostly old stars with little gas, little dust, and almost no ongoing star formation. They range from small (M32, the compact dwarf elliptical companion to Andromeda) to enormous (M87 at the heart of the Virgo Cluster, the host of the first imaged supermassive black hole; cD-class brightest cluster galaxies like NGC 4889 in Coma which contain trillions of stars). Most ellipticals are the products of past major mergers — when two spirals collide, the disc structure is disrupted, gas is consumed in a starburst, and the merged remnant settles into an elliptical. The Milky Way is destined to become an elliptical once it merges with Andromeda. There are essentially no ellipticals in the Local Group except M32, M110, NGC 147, and NGC 185 — small companions to M31. The big ellipticals all live in dense cluster environments.",
+  "cur": "타원 은하는 주로 늙은 별들로 이루어진 분산 지지 구 형태로, 가스가 거의 없고 먼지가 거의 없으며 진행 중인 항성 형성이 거의 없다. 작은 것(M32, Andromeda의 소형 왜소 타원 동반)부터 거대한 것(처녀자리 은하단 중심의 M87, 최초로 촬영된 초질량 블랙홀의 주인; Coma의 NGC 4889 같은 cD급 최밝은 은하단 은하로 수조 개의 별을 포함)까지 범위가 있다. 대부분의 타원 은하는 과거의 대규모 충돌의 산물이다 — 두 나선 은하가 충돌하면 원판 구조가 파괴되고, 가스가 폭발적 항성 형성에 소비되며, 합병된 잔존물이 타원 은하로 안정화된다. 은하수는 Andromeda와 합병되면 타원 은하가 될 운명이다. 국부 은하군에는 M32, M110, NGC 147, NGC 185 — M31의 작은 동반 외에는 본질적으로 타원 은하가 없다. 큰 타원 은하들은 모두 밀집한 은하단 환경에 산다."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.2",
+  "en": "Irregulars are everything that doesn't fit. The Magellanic Clouds are the prototypes — gas-rich, actively star-forming, no clear spiral arms or central bulge, often elongated or distorted by tidal interactions with larger neighbours. Most low-mass star-forming galaxies are irregular. Many were once classified as spiral-like but have been so tidally disrupted that the structure is no longer recognisable; others are too small to have ever developed a self-supporting disc. Irregulars dominate the count of galaxies at the low-mass end of the galactic mass function — there are far more dwarf irregulars than spirals, but they are individually faint so spirals dominate the night sky and the historical record.",
+  "cur": "불규칙 은하는 맞지 않는 모든 것이다. 마젤란 은하는 원형이다 — 가스가 풍부하고, 활발한 항성 형성, 명확한 나선팔이나 중심 벌지가 없으며, 종종 더 큰 이웃과의 기조 상호작용으로 늘어나거나 왜곡된다. 대부분의 저질량 항성 형성 은하는 불규칙 은하다. 많은 것들이 한때 나선 같다고 분류되었지만 기조 파괴가 너무 심해서 구조를 인식할 수 없으며, 다른 것들은 자기 지지 원판을 발전시킨 적이 없을 정도로 너무 작다. 불규칙 은하는 은하 질량 함수의 저질량 끝에서 은하 개수를 지배한다 — 나선 은하보다 왜소 불규칙 은하가 훨씬 많지만, 개별적으로는 희미하여 나선 은하가 밤하늘과 역사 기록을 지배한다."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.3",
+  "en": "Dwarf galaxies subdivide further. Dwarf spheroidals (Sagittarius, Fornax, Sculptor) — gas-poor, ~elliptical, dark-matter-dominated, see the separate /science article. Dwarf irregulars (NGC 6822, IC 1613, WLM in the Local Group) — gas-rich, star-forming, no defined morphology. Dwarf ellipticals (M32 is the type example) — small versions of large ellipticals, often companions to large galaxies. Ultra-faint dwarfs — discovered only since 2005 via deep SDSS / DES / LSST surveys, with luminosities below 10⁵ solar luminosities and stellar masses comparable to a single globular cluster but with mass-to-light ratios in the hundreds (i.e., still dominated by dark matter, not by stars). These ultra-faints are probably the dimmest galaxies in existence — at lower masses, no galaxy is detectable because there are no stars at all, only dark-matter halos.",
+  "cur": "왜소 은하는 더 세분화된다. 왜소 구면(Sagittarius, Fornax, Sculptor) — 가스가 부족하고, ~타원형, 암흑 물질 지배, 별도의 /science 기사 참조. 왜소 불규칙(NGC 6822, IC 1613, 국부 은하군의 WLM) — 가스 풍부, 항성 형성, 정의된 형태 없음. 왜소 타원(M32가 표본형) — 큰 타원 은하의 소형 버전, 종종 큰 은하의 동반. 초희미 왜소 은하 — 2005년 이후 깊은 SDSS / DES / LSST 조사로만 발견되었으며, 광도가 태양 광도의 10⁵ 이하이고 항성 질량이 단일 구상 성단에 필적하지만 질량-광도비가 수백(즉, 여전히 암흑 물질이 별이 아닌 별이 지배)이다. 이 초희미 은하들은 아마도 존재하는 가장 희미한 은하일 것이다 — 더 낮은 질량에서는 별이 전혀 없기 때문에 감지할 수 있는 은하가 없으며, 암흑 물질 헤일로만 있다."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.4",
+  "en": "Beyond the Hubble framework. Modern surveys have added several galaxy types that didn't fit Hubble's 1936 scheme: starburst galaxies (M82) where star formation is many times higher than normal due to a recent merger or tidal interaction; AGN-hosting galaxies (Seyferts, quasars, radio galaxies) where the central black hole is actively accreting and dominating the light output; ring galaxies (Hoag's Object) formed by head-on bullet-collisions; and the ultra-diffuse galaxies (NGC 1052-DF2, Dragonfly 44) discovered in the 2010s, with sizes of full-sized galaxies but stellar densities so low you can almost see through them. The classification scheme keeps being extended as observations improve; Hubble's tuning fork remains the backbone of how astronomers talk about morphology, even when individual galaxies refuse to fit.",
+  "cur": "Hubble 틀을 넘어. 현대 조사는 Hubble의 1936년 체계에 맞지 않는 여러 은하 유형을 추가했다: 폭발적 항성 형성 은하(M82) 항성 형성이 최근 합병 또는 기조 상호작용으로 인해 정상보다 여러 배 높은 곳; AGN 호스팅 은하(Seyferts, 퀘이사, 전파 은하) 중심 블랙홀이 적극적으로 강착하고 광도 출력을 지배하는 곳; 고리 은하(Hoag Object) 정면 총알 충돌로 형성됨; 2010년대에 발견된 초확산 은하(NGC 1052-DF2, Dragonfly 44) 완전 크기 은하 크기이지만 항성 밀도가 매우 낮아 거의 투명할 정도다. 분류 체계는 관측이 개선됨에 따라 계속 확장된다. Hubble 음차 포크는 개별 은하가 맞지 않으려고 해도 천문학자들이 형태를 논하는 방식의 척추로 남아 있다."
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "diagram_caption",
+  "en": "Hubble tuning fork: ellipticals (E0-E7) on the left, spirals (S/SB, types a/b/c) on the right, irregulars off to the side. Plus dwarf sub-classes (dSph / dE / dIrr / ultra-faint) and modern additions (starburst, AGN, ring, ultra-diffuse). Local Group spans almost all categories — useful pedagogical microcosm.",
+  "cur": "Hubble 튜닝 포크: 왼쪽에는 타원(E0-E7), 오른쪽에는 나선(S/SB, a/b/c형), 옆에는 불규칙. 더하기 왜소 소분류(dSph / dE / dIrr / 초희미)와 현대 추가(폭발적, AGN, 고리, 초확산). 국부 은하군은 거의 모든 범주에 걸쳐 있다 — 유용한 교육학적 소우주."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "title",
+  "en": "Stars — colour, class, and the H–R diagram",
+  "cur": "별 — 색, 스펙트럼 등급, 그리고 H–R 다이어그램"
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "intro_sentence",
+  "en": "A star's colour is a thermometer, and its brightness is a life story. Plot the two against each other and almost every star falls onto a single diagonal band — the Hertzsprung–Russell diagram, the most important graph in stellar astronomy.",
+  "cur": "별의 색은 온도계이고, 밝기는 생애 기록이다. 이 둘을 서로 대비시켜 그리면 거의 모든 별이 하나의 대각선 띠 위에 떨어진다 — Hertzsprung–Russell 다이어그램, 항성 천문학에서 가장 중요한 그래프."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.0",
+  "en": "Colour comes first. A star radiates as a near-perfect blackbody, so its colour is set almost entirely by its surface temperature: hot stars glow blue-white (~30,000 K), the Sun is yellow-white (~5,800 K), and cool stars burn deep red (~3,000 K). Astronomers measure that colour as the B–V index — the difference between a star's brightness through a blue and a visual filter — and it maps cleanly onto temperature. Sort stars left-to-right by colour and you have the spectral sequence O, B, A, F, G, K, M, hottest to coolest (mnemonic: “Oh Be A Fine Girl/Guy, Kiss Me”).",
+  "cur": "색이 먼저다. 별은 거의 완벽한 흑체로 복사하므로, 그 색은 거의 전적으로 표면 온도에 의해 결정된다: 뜨거운 별은 파란색-하얀색으로 빛난다(~30,000 K), 태양은 노란색-하얀색(~5,800 K), 차가운 별은 깊은 빨간색으로 타오른다(~3,000 K). 천문학자들은 그 색을 B–V 지수로 측정한다 — 파란 필터와 시각 필터를 통한 별의 밝기 차이 — 그리고 이는 온도에 깔끔하게 대응된다. 별들을 색으로 왼쪽에서 오른쪽으로 정렬하면 스펙트럼 계열 O, B, A, F, G, K, M, 가장 뜨거운 것부터 가장 차가운 것까지 얻는다(기억법: \"Oh Be A Fine Girl/Guy, Kiss Me\")."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.1",
+  "en": "Brightness is the second axis — but you have to be careful which brightness. A star can look bright because it is genuinely luminous or merely because it is close. To compare stars fairly you convert apparent magnitude m to absolute magnitude M, the brightness it would have at a standard 10 parsecs, using the distance: M = m − 5(log₁₀ d − 1). Only then does luminosity mean intrinsic power output, and only then does the diagram work.",
+  "cur": "밝기가 두 번째 축이다 — 하지만 어느 밝기인지 주의해야 한다. 별은 정말로 밝기 때문에 밝아 보일 수도 있고, 단순히 가까워서 밝아 보일 수도 있다. 별들을 공정하게 비교하려면 겉보기 등급 m을 절대 등급 M으로 변환해야 한다. 이는 표준 거리인 10 파섹에서 가질 밝기이며, 거리를 이용한다: M = m − 5(log₁₀ d − 1). 그렇게 해야만 광도는 진정한 에너지 방출량을 의미하고, 그렇게 해야만 다이어그램이 작동한다."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.2",
+  "en": "Now plot temperature (hot on the left, by convention) against luminosity (bright at the top). The stars do not scatter randomly. Roughly 90% of them land on a single sweeping diagonal — the main sequence — running from hot, luminous, massive O and B stars at the top-left down to cool, faint red dwarfs at the bottom-right. A star sits on the main sequence for as long as it fuses hydrogen in its core, which is most of its life. The Sun is a G-type main-sequence star, sitting unremarkably near the middle.",
+  "cur": "이제 온도(왼쪽이 뜨거움, 관례에 따라)를 광도(위가 밝음)에 대해 그린다. 별들은 무작위로 흩어지지 않는다. 대략 90%의 별들이 하나의 완만한 대각선 — 주계열 — 위에 떨어진다. 이는 상단 왼쪽의 뜨겁고 밝고 거대한 O와 B 별에서 하단 오른쪽의 차갑고 희미한 적색 왜소성까지 내려간다. 별은 핵심에서 수소를 융합하는 동안 주계열 위에 있으며, 이는 그 삶의 대부분이다. 태양은 G형 주계열 별이며, 중간 근처에 눈에 띄지 않게 자리 잡고 있다."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.3",
+  "en": "The interesting stars are the ones off the main sequence. Top-right: the red giants and supergiants — cool but enormous and hugely luminous, stars that have exhausted their core hydrogen and swollen up (Betelgeuse, Aldebaran, Arcturus live here). Bottom-left: the white dwarfs — hot but tiny and faint, the exposed cores left when a Sun-like star dies. Where a star lands, and how it moves across the diagram over time, is the whole narrative of stellar evolution written in two coordinates.",
+  "cur": "흥미로운 별들은 주계열을 벗어난 것들입니다. 우측 상단: 적색 거성과 초거성 — 차갑지만 거대하고 엄청나게 밝은 별들로, 핵의 수소를 모두 소진하고 부풀어 오른 별들입니다(베텔게우스, 알데바란, 아크투루스가 여기에 위치합니다). 좌측 하단: 백색 왜성 — 뜨겁지만 작고 희미한 별로, 태양과 같은 별이 죽을 때 남겨진 노출된 핵입니다. 별이 어디에 위치하고 시간이 지나면서 다이어그램을 가로질러 어떻게 이동하는지가 바로 별 진화의 전체 서사가 두 개의 좌표로 쓰인 것입니다."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.4",
+  "en": "The H–R diagram is also a distance ladder and a clock. Because a star's position fixes its true luminosity, comparing that to how bright it appears gives its distance (“spectroscopic parallax”). And because more massive stars burn out faster, the point where a star cluster's main sequence bends toward the giants — the “turn-off” — tells you the cluster's age. One graph, and you can read a star's temperature, size, power, distance, and remaining lifetime.",
+  "cur": "H–R 다이어그램은 또한 거리 사다리이자 시계다. 별의 위치가 그 진정한 광도를 결정하기 때문에, 그것을 보이는 밝기와 비교하면 거리를 준다(\"분광 시차\"). 그리고 더 거대한 별들이 더 빠르게 타버리기 때문에, 별 성단의 주계열이 거성 쪽으로 구부러지는 지점 — \"턴오프\" — 은 그 성단의 나이를 말해준다. 한 그래프로 별의 온도, 크기, 전력, 거리, 그리고 남은 수명을 읽을 수 있다."
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "diagram_caption",
+  "en": "The Hertzsprung–Russell diagram: temperature (hot O-stars left, cool M-stars right) against luminosity (bright top, faint bottom). The main sequence runs corner to corner; red giants sit top-right, white dwarfs bottom-left. The Sun is a G-type main-sequence star, marked near the centre — the same axes the /explore HR-lens re-plots the real neighbourhood stars onto.",
+  "cur": "Hertzsprung–Russell 다이어그램: 온도(왼쪽 뜨거운 O형 별, 오른쪽 차가운 M형 별)를 광도(위가 밝음, 아래가 희미함)에 대해. 주계열은 구석 구석을 달린다; 적색 거성은 우측 상단에, 백색 왜성은 좌측 하단에 앉는다. 태양은 G형 주계열 별이며, 중심 근처에 표시된다 — /explore HR-lens가 실제 근처 별들을 다시 그리는 것과 같은 축이다."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "intro_sentence",
+  "en": "Stitch separate telescopes into one virtual aperture larger than any of them — the Event Horizon Telescope is an Earth-sized radio interferometer built from antennas on four continents.",
+  "cur": "별개의 망원경들을 하나의 가상 개구경으로 연결하면 어느 것보다도 더 큰 구경을 만들 수 있습니다. Event Horizon Telescope는 네 대륙의 안테나로부터 구축된 지구 크기의 전파 간섭계입니다."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "body_paragraphs.0",
+  "en": "A single telescope's resolving power depends on its aperture (diameter / wavelength). A radio antenna 30 m across imaging at 1 mm wavelength has an angular resolution of about 7 arcseconds — too coarse to see most things. But two antennas 1000 km apart, observing the same source simultaneously and combining their signals, behave like a single telescope **1000 km across** at that resolution — milliarcseconds.",
+  "cur": "단 하나 망원경의 해결 힘은 그것의 가늠구멍 (직경/파열)에 달려 있습니다. 1 mm 파장에서 이미징에 걸쳐 라디오 안테나 30 m는 약 7 arcseconds의 각도 해상도를 가지고 있습니다. 대부분의 것을 볼 수 있습니다. 하지만 두 개의 안테나 1000 km 떨어져, 동시에 동일한 소스를 관찰하고 신호를 결합, 하나의 망원경처럼 행동 ** 1000 그 해상도에서 km - 밀리 초."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "body_paragraphs.1",
+  "en": "The trick is correlation: the radio waves arriving at antenna A and antenna B differ by a tiny phase delay that depends on the source direction and the antenna baseline. Cross-correlate the two signals over time, and you measure that phase delay. Do it with N antennas in different positions and the combined signal samples N×(N-1)/2 baselines simultaneously, filling in the Fourier components of the source brightness distribution. An iterative deconvolution then recovers the image.",
+  "cur": "핵심은 상관관계입니다. 안테나 A와 안테나 B에 도달하는 전파는 신호원 방향과 안테나 기선에 따라 결정되는 미소한 위상 지연만큼 다릅니다. 두 신호를 시간에 걸쳐 교차상관시키면 그 위상 지연을 측정할 수 있습니다. 서로 다른 위치에 있는 N개의 안테나로 이를 수행하면 결합된 신호가 N×(N-1)/2개의 기선을 동시에 샘플링하여 신호원 밝기 분포의 푸리에 성분을 채웁니다. 그 다음 반복적인 역합성곱을 통해 영상을 복원합니다."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "body_paragraphs.2",
+  "en": "**VLA** (27 antennas in New Mexico) does this at radio wavelengths. **ALMA** (66 antennas in Chile) does it at sub-mm wavelengths, where atmospheric water absorption is brutal but the dust-thermal-continuum lights up. **Event Horizon Telescope** linked 8 sub-mm observatories across 4 continents to image M87's black hole at 1.3 mm — Earth-diameter aperture, 20 microarcsecond resolution, the shadow of an event horizon.",
+  "cur": "**VLA**(뉴멕시코의 27개 안테나)는 전파 파장에서 이를 수행합니다. **ALMA**(칠레의 66개 안테나)는 서브밀리미터 파장에서 이를 수행하는데, 여기서 대기 수증기 흡수가 심하지만 먼지 열 복사 연속 방사가 밝아집니다. **Event Horizon Telescope**는 4개 대륙에 걸쳐 8개의 서브밀리미터 관측소를 연결하여 M87의 블랙홀을 1.3 mm 파장에서 영상화했습니다 — 지구 직경의 개구경, 20 마이크로아크초의 분해능, 사건의 지평선의 그림자입니다."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "body_paragraphs.3",
+  "en": "Optical/IR interferometry exists but is much harder because optical wavelengths are 6+ orders of magnitude shorter than radio, requiring laser-stabilised path matching to nanometre accuracy. CHARA, NPOI, and the VLTI are the survivors. Space interferometers like LISA (gravitational-wave detection via laser arms between three free-flying spacecraft) are the future architecture — both for gravity-wave astronomy and for the long-term goal of imaging Earth-twin exoplanets at high contrast.",
+  "cur": "광학/IR interferometry는 그러나 광학적인 파장이 라디오 보다는 6+ 순서, nanometre 정확도에 어울리는 레이저 안정된 경로 요구하는 레이저 안정된 경로 보다는 더 적은의 순서이기 때문에 훨씬 더 단단합니다. CHARA, NPOI 및 VLTI는 생존자입니다. LISA와 같은 공간 인터퍼미터 (3개의 자유롭 비행 우주선 사이 레이저 팔을 통해 중력파 천문학 그리고 높은 대조에 화상 진찰 지구 twin exoplanets의 장기 목표 둘 다 미래 건축술입니다."
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "diagram_caption",
+  "en": "Two antennas + cross-correlation → effective aperture = the baseline between them. Earth-sized → EHT M87 black hole. Space-sized → LISA gravitational waves.",
+  "cur": "두 개의 안테나 + 크로스 상관 → 효과적인 조리 = 그들 사이의 기본. 지구 크기 → EHT M87 검정 구멍. 공간 크기 → LISA gravitational 파도."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "title",
+  "en": "The Local Group — our gravitationally bound neighbourhood",
+  "cur": "국부 은하군 — 중력으로 결합된 우리의 이웃"
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "intro_sentence",
+  "en": "The Local Group is the small cluster of ~80 known galaxies bound to the Milky Way and Andromeda by mutual gravity. It is about 3 megaparsecs across and contains essentially every galaxy close enough to study individual stars in.",
+  "cur": "로컬 그룹은 상호 중력으로 은하수와 안드로메다은하에 묶여 있는 약 80개의 알려진 은하들로 이루어진 작은 군집입니다. 이것은 약 3메가파섹에 걸쳐 있으며 개별 별들을 연구할 수 있을 만큼 충분히 가까운 본질적으로 모든 은하를 포함합니다."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "body_paragraphs.0",
+  "en": "The Local Group is dominated by three spiral galaxies — the Milky Way, Andromeda (M31), and the Triangulum Galaxy (M33). Around the Milky Way and Andromeda are clouds of satellite galaxies, mostly small and faint — the Magellanic Clouds, Sagittarius Dwarf, Sculptor, Fornax, Draco, the Leo dwarfs, and many more. Total members known today: about 80, and the count keeps rising as deep imaging surveys (DES, LSST, Euclid) find ultra-faint dwarfs missed by earlier searches. The whole structure is gravitationally bound — it is not expanding with the Hubble flow, and the Milky Way and Andromeda are actually approaching each other at about 110 km/s.",
+  "cur": "로컬 그룹은 세 개의 나선은하로 지배되고 있습니다 — 은하수, Andromeda(M31), 그리고 삼각형 은하(M33)입니다. 은하수와 Andromeda 주변에는 위성은하의 구름들이 있으며, 대부분 작고 희미합니다 — 마젤란 은하, Sagittarius Dwarf, Sculptor, Fornax, Draco, Leo 왜소은하들, 그리고 훨씬 더 많습니다. 현재 알려진 총 구성원: 약 80개이며, 심층 영상 조사(DES, LSST, Euclid)가 이전 탐색에서 놓친 초저광도 왜소은하들을 발견하면서 그 개수는 계속 증가하고 있습니다. 전체 구조는 중력으로 묶여 있습니다 — 이것은 Hubble 흐름과 함께 팽창하지 않으며, 은하수와 Andromeda는 실제로 약 110 km/s의 속도로 서로 접근하고 있습니다."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "body_paragraphs.1",
+  "en": "The boundary of the Local Group is not sharp. The conventional outer edge is the zero-velocity surface, the imaginary surface at which a test galaxy would have just enough kinetic energy to escape the group's gravity but no more — roughly 1.5 Mpc from the Milky Way / Andromeda barycentre. Inside that radius, members are bound; outside it, galaxies belong to the broader Local Sheet and feel the Hubble expansion. The Sculptor Group, the Maffei Group, the M81 Group, and the Centaurus A Group are all within 4 Mpc of the Milky Way — close neighbours, but not Local Group members.",
+  "cur": "로컬 그룹의 경계는 명확하지 않습니다. 관례적인 바깥쪽 경계는 영속도 표면으로, 시험 은하가 그룹의 중력을 벗어나기에 충분한 정도의 운동에너지를 가지고 있지만 그 이상은 없을 지점인 가상의 표면입니다 — 은하수/안드로메다 질량중심으로부터 대략 1.5 Mpc입니다. 그 반지름 내에서는 회원들이 묶여 있습니다. 그 밖에서는 은하들이 더 광범위한 로컬 시트에 속하며 Hubble 팽창을 느낍니다. 조각가자리 은하단, 마페이 은하단, M81 은하단, 그리고 센타우루스 A 은하단은 모두 은하수로부터 4 Mpc 이내에 있습니다 — 가까운 이웃들이지만 로컬 그룹 회원들은 아닙니다."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "body_paragraphs.2",
+  "en": "The Local Group matters out of proportion to its size. Because everything in it is within a few million light-years, individual stars in Local Group members can be resolved with HST, JWST, and the largest ground-based telescopes. This is where almost all stellar-population science gets done: variable-star distance calibration (the Hubble constant ladder starts with Cepheids in M31, M33, and the LMC), dwarf-galaxy dark-matter measurements (Draco, Fornax, the Leo dwarfs have stellar velocity dispersions consistent with mass-to-light ratios of 100+ — meaning they are dominated by dark matter), and galactic archaeology (the stellar streams of Sagittarius being torn apart by the Milky Way tide are mapped star-by-star). Galaxies further out have to be studied as ensembles; Local Group galaxies are studied star by star.",
+  "cur": "로컬 그룹은 그 크기에 비해 불균형적으로 중요합니다. 모든 것이 수백만 광년 이내에 있기 때문에, 로컬 그룹 구성원의 개별 별들은 HST, JWST, 그리고 가장 큰 지상 망원경으로 해결할 수 있습니다. 이것이 거의 모든 항성 개체군 과학이 수행되는 장소입니다: 변광성 거리 보정(Hubble 상수 사다리는 M31, M33, LMC의 세페이드로 시작됩니다), 왜성 은하 암흑물질 측정(Draco, Fornax, Leo 왜성들은 성속도 분산이 100 이상의 질량-광도비와 일치합니다 — 이는 이들이 암흑물질로 지배됨을 의미합니다), 그리고 은하 고고학(은하수의 조석에 의해 산산이 부서지는 Sagittarius의 항성 흐름들은 별 단위로 지도화됩니다). 더 먼 은하들은 집단으로 연구해야 하지만, 로컬 그룹 은하들은 별 단위로 연구됩니다."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "body_paragraphs.3",
+  "en": "Long-term trajectory: gravity has the last word. The so-called 'Milkomeda' collision — first predicted in detail by Cox & Loeb (2008) and supported by van der Marel et al. (2019) using Gaia DR3 proper motions — was long considered a near-certainty. However, Sawala et al. (Nature Astronomy, 2025), incorporating M33 and the LMC into the orbit integration, found only roughly even odds of a merger within the next 10 Gyr. If a close pass does occur, tidal disruption might begin around 4.5 billion years from now, with the merger taking perhaps 2 billion years to complete and settling into a single elliptical galaxy. By the time it finishes, the Sun (still a main-sequence star, only ~6 Gyr old at the merger) will likely be ejected to a much larger orbit or remain in a thick disc remnant. The remaining Local Group galaxies will continue merging into the new central elliptical over the next ~100 Gyr, leaving 'Milkomeda' as the only galaxy visible from Earth's eventual successor planet, the cosmic-web filaments having long since carried other groups away in the accelerating Hubble flow.",
+  "cur": "장기 궤적: 중력이 최후의 말을 합니다. 소위 '밀코메다' 충돌은 Cox & Loeb(2008)에 의해 처음으로 상세히 예측되었으며 van der Marel et al.(2019)이 Gaia DR3 고유운동을 사용하여 지지했던 것입니다 — 오랫동안 거의 확실한 것으로 간주되었습니다. 그러나 Sawala et al.(Nature Astronomy, 2025)은 M33과 LMC를 궤도 적분에 포함시킨 결과, 향후 10 Gyr 내에 병합이 일어날 확률이 대략 반반에 가깝다는 것을 발견했습니다. 만약 가까운 접근이 실제로 일어난다면, 조석 파괴가 약 지금으로부터 45억 년 후에 시작될 수 있으며, 병합이 완전히 진행되는 데 아마도 20억 년이 걸릴 것이고 단일 타원은하로 정착할 것입니다. 그것이 완성될 때쯤에는 태양(여전히 주계열성이며, 병합 당시 약 6 Gyr에 불과함)이 훨씬 더 큰 궤도로 방출되거나 두꺼운 원판 잔해에 남아 있을 가능성이 높습니다. 남은 로컬 그룹 은하들은 계속해서 다음 약 100 Gyr 동안 새로운 중심 타원은하로 병합될 것이고, 우주망 필라멘트들이 오랫동안 다른 그룹들을 가속화하는 Hubble 팽창 속에서 멀리 옮겨간 이후 지구의 미래 후속 행성에서 볼 수 있는 유일한 은하로 '밀코메다'를 남길 것입니다."
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "diagram_caption",
+  "en": "Local Group: ~80 galaxies, ~3 Mpc across, gravitationally bound. Dominated by Milky Way + Andromeda spirals plus M33 third. Most members are dwarf satellites of one of the two large spirals. Boundary at zero-velocity surface (~1.5 Mpc). Future: Milkomeda merger possible (~50/50 per Sawala et al. 2025) if it occurs, ~4.5 Gyr hence.",
+  "cur": "로컬 그룹: 약 80개 은하, 약 3 Mpc 크기, 중력으로 결합됨. 은하수 + Andromeda 나선 및 M33 세 번째가 지배. 대부분의 구성원은 두 개의 큰 나선 중 하나의 왜성 위성. 영속도 표면(약 1.5 Mpc)에서의 경계. 미래: Milkomeda 병합 가능(Sawala et al. 2025에 따르면 약 50/50) — 약 45억 년 후 발생 시."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "title",
+  "en": "The Magellanic Clouds — LMC and SMC, our nearest galactic neighbours",
+  "cur": "마젤란 은하 — LMC와 SMC, 우리의 가장 가까운 은하 이웃"
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "intro_sentence",
+  "en": "The Large and Small Magellanic Clouds are the closest galaxies large enough to see with the naked eye — irregular dwarf galaxies trailing the Milky Way's south-galactic pole, ~50 and ~62 kpc away.",
+  "cur": "대마젤란은하와 소마젤란은하는 육안으로 볼 수 있을 정도로 충분히 큰 가장 가까운 은하들이며, 은하계의 남쪽 극점을 따라가는 불규칙 왜소 은하로서 약 50 kpc와 약 62 kpc 거리에 있습니다."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "body_paragraphs.0",
+  "en": "The Magellanic Clouds dominate the southern hemisphere sky from any reasonably dark site below about +20° latitude. They look exactly as they sound — two detached fuzzy patches in the night sky, the LMC about 5° across and the SMC about 3°. They are catalogued under several names, but Magellanic comes from Ferdinand Magellan's 1519-1522 circumnavigation, during which the clouds were the most reliable navigation reference his crew had in the South Atlantic. The clouds have been continuously observed by humanity for as long as humans have lived in the southern hemisphere; rock art and oral traditions from Aboriginal Australia, the Khoisan, and Andean cultures reference them by name in ways that long predate European contact.",
+  "cur": "마젤란 은하는 약 +20° 위도 이하의 충분히 어두운 지역에서 남반구 하늘을 지배합니다. 이들은 이름 그대로 보이는데, 밤하늘의 두 개의 떨어진 흐릿한 반점으로서 LMC는 약 5° 크기이고 SMC는 약 3° 크기입니다. 여러 이름으로 분류되지만 마젤란이라는 명칭은 페르디난드 마젤란의 1519~1522년 항해로부터 나왔으며, 이 항해 중 이 은하들은 그의 승무원이 남대서양에서 가진 가장 신뢰할 만한 항해 참고 자료였습니다. 이 은하들은 남반구에 인류가 살기 시작한 이래 계속 관찰되어 왔으며, 호주 원주민, 코이산, 안데스 문화의 암각화와 구전 전통이 유럽인 접촉보다 훨씬 이전에 이들을 이름으로 언급합니다."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "body_paragraphs.1",
+  "en": "Both are irregular galaxies rather than spirals — chaotic, dust-rich, actively forming stars. The LMC has about 10 billion solar masses (about 1% of the Milky Way), the SMC about a tenth of that. The LMC hosts the Tarantula Nebula (30 Doradus), one of the most prolific star-formation regions in the Local Group and the site of supernova 1987A — the brightest supernova since Kepler's in 1604 and the first visible to the naked eye since SN 1885A in Andromeda, and the first supernova whose neutrinos were detected (Kamiokande, IMB, Baksan detectors caught about 25 neutrinos within seconds of each other, hours before the optical light arrived). The Tarantula's central star cluster R136 contains some of the most massive known stars (R136a1 is around 200 solar masses).",
+  "cur": "둘 다 나선 은하가 아닌 불규칙 은하이며, 혼돈스럽고 먼지가 많으며 능동적으로 별을 형성하고 있다. LMC는 약 100억 태양질량(밀키 웨이의 약 1%)을 가지고 있으며, SMC는 그것의 약 10분의 1이다. LMC는 타란툴라 성운(30 Doradus)을 포함하고 있는데, 이는 국부군에서 가장 활발한 별 형성 영역 중 하나이며 초신성 1987A의 발생지이다 — 1604년 케플러의 초신성 이후 가장 밝은 초신성이며, Andromeda의 SN 1885A 이후 육안으로 관측된 첫 초신성이고, 중성미자가 탐지된 첫 초신성이다(Kamiokande, IMB, Baksan 검출기가 광학 빛이 도달하기 몇 시간 전에 수 초 내에 약 25개의 중성미자를 포착했다). 타란툴라의 중앙 성단 R136은 알려진 가장 거대한 별들을 포함하고 있으며(R136a1은 약 200 태양질량 정도이다)."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "body_paragraphs.2",
+  "en": "Until recently it was assumed the Clouds were long-term gravitationally-bound satellites of the Milky Way, on bound orbits that had taken them around our galaxy multiple times. Hubble Space Telescope proper-motion measurements (Kallivayalil et al. 2013, refined with Gaia DR2/DR3) overturned this picture: the Clouds are moving too fast to be bound on a long-term orbit, suggesting they are on first-passage — falling in toward the Milky Way for the first time from the Local Group's outer regions, having only recently arrived in the last ~1-2 Gyr. This re-frames a great deal of Magellanic Cloud research: their star-formation histories, their gas content (the Magellanic Stream — a vast hydrogen tail trailing behind them — was being torn out by Milky Way tides during the recent close passage), and their long-term fate (probably eventual merger with the Milky Way, but on Gyr timescales).",
+  "cur": "최근까지 이 은하들은 은하계의 오랫동안 중력으로 묶인 위성이며, 우리 은하를 여러 번 공전해온 궤도에 있다고 가정했습니다. Hubble Space Telescope 고유 운동 측정(Kallivayalil et al. 2013, Gaia DR2/DR3로 정밀화)은 이 그림을 뒤집었습니다: 마젤란 은하들은 장기 궤도에서 중력으로 묶이기에는 너무 빠르게 움직이고 있으며, 이는 그들이 국부 은하군의 외부 영역에서 처음으로 은하계를 향해 떨어지고 있으며, 지난 약 1~2 Gyr 동안 최근에 도착했음을 시사합니다. 이는 많은 마젤란 은하 연구를 재정의합니다: 그들의 별 형성 역사, 가스 함량(Magellanic Stream — 그들을 따라가는 거대한 수소 꼬리 — 최근의 밀접한 근접 통과 중에 은하계 조수에 의해 떨어지고 있었음), 그들의 장기 운명(아마도 은하계와의 최종 병합, 그러나 Gyr 시간 규모에서)."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "body_paragraphs.3",
+  "en": "Observing the Clouds requires being in or visiting the southern hemisphere. From mid-southern latitudes (Sydney, Cape Town, Santiago, Auckland) they are circumpolar — never set, visible every clear night. From the equator they rise low in the south during southern summer. From the northern hemisphere they are invisible: even from Hawaii at 19°N latitude, the SMC barely clears the horizon. Astronomers historically had to travel south to study them — the major southern observatories at Cerro Pachón, Paranal, La Silla, Sutherland, and Siding Spring were sited specifically to give continuous access to the Magellanic Clouds plus the galactic centre. The Vera C. Rubin Observatory at Cerro Pachón, which started science operations in 2025, will image the LMC and SMC every few nights for the duration of its decade-long LSST survey.",
+  "cur": "마젤란 은하를 관측하려면 남반구에 있거나 방문해야 합니다. 중위도 남부(시드니, 케이프타운, 산티아고, 오클랜드)에서는 그들이 주극 — 절대 지지 않고 맑은 밤마다 보입니다. 적도에서 그들은 남쪽에서 남반구 여름 동안 낮게 떠오릅니다. 북반구에서는 보이지 않습니다: 19°N 위도의 하와이에서도 SMC는 겨우 지평선을 넘습니다. 천문학자들은 역사적으로 이들을 연구하기 위해 남쪽으로 여행해야 했으며, Cerro Pachón, Paranal, La Silla, Sutherland, Siding Spring의 주요 남부 천문대는 마젤란 은하와 은하 중심에 지속적으로 접근할 수 있도록 특별히 설치되었습니다. Cerro Pachón의 Vera C. Rubin Observatory는 2025년에 과학 관측을 시작했으며, 10년 길이의 LSST 조사 기간 동안 몇 밤마다 LMC와 SMC를 촬영할 것입니다."
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "diagram_caption",
+  "en": "LMC: 49.97 kpc distant, ~10¹⁰ M☉, irregular, southern naked-eye visible. SMC: 62.1 kpc, ~10⁹ M☉, irregular. Both on first-passage orbits (Gaia DR3, Kallivayalil et al.), not long-term-bound. Magellanic Stream: hydrogen tail trailing their recent close pass through the Milky Way's tides. SN 1987A in LMC: brightest supernova since Kepler 1604; first naked-eye supernova since SN 1885A (Andromeda).",
+  "cur": "LMC: 49.97 kpc 거리, ~10¹⁰ M☉, 불규칙, 남반구 육안 관측 가능. SMC: 62.1 kpc, ~10⁹ M☉, 불규칙. 모두 첫 번째 통과 궤도(Gaia DR3, Kallivayalil et al.), 장기 중력 속박이 아님. Magellanic Stream: 은하계 조수를 통한 최근 밀접한 통과를 뒤따르는 수소 꼬리. LMC의 초신성 1987A: 1604년 케플러 이후 가장 밝은 초신성; Andromeda의 SN 1885A 이후 처음 육안 초신성."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "intro_sentence",
+  "en": "We live inside a barred spiral galaxy of a few hundred billion stars, and we have never seen it from the outside. Everything we know about the Milky Way's shape is reconstructed from within the disc, looking through it.",
+  "cur": "수천억 개의 별을 가진 막대 나선 은하 내부에 우리는 살고 있으며, 외부에서 본 적이 없습니다. 은하수의 형태에 관해 알고 있는 모든 것은 원판 내부에서 바라보며 재구성한 것입니다."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.0",
+  "en": "The Milky Way is a flat, rotating disc about 100,000 light-years across but only ~1,000 light-years thick — a cosmic vinyl record. Its stars, gas, and dust are wound into spiral arms (Perseus, Sagittarius, Scutum-Centaurus, Norma, plus our own minor Orion Spur), trailing from a central bar of older stars. Wrapping all of it is a spherical halo of ancient globular clusters and the invisible dark-matter that dominates the galaxy's mass. Estimates of the star count run from 100 to 400 billion.",
+  "cur": "은하수는 약 10만 광년에 걸쳐 펼쳐진 평평하고 회전하는 원판이지만 두께는 겨우 ~1,000 광년에 불과한 우주적 비닐 레코드입니다. 그 별들, 가스, 그리고 먼지는 나선팔(Perseus, Sagittarius, 방패자리-Centaurus, Norma, 그리고 우리 자신의 작은 Orion Spur)로 감겨 있으며, 나이 많은 별들의 중앙 막대에서 뻗어나갑니다. 이 모든 것을 감싸고 있는 것은 오래된 구상성단들의 구형 헤일로와 은하계의 질량을 지배하는 보이지 않는 암흑물질입니다. 별의 개수에 대한 추정치는 1,000억에서 4,000억 사이입니다."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.1",
+  "en": "The Sun is not special and not central. It sits about 26,000 light-years — roughly halfway — out from the core, on the inner edge of the Orion Spur, orbiting the galactic centre at about 230 km/s. Even at that speed one lap — a “galactic year” — takes ~230 million years; the Sun has completed only about 20 orbits in its entire existence. The last time it was here, dinosaurs were just beginning.",
+  "cur": "태양은 특별하지 않으며 중심에 있지도 않습니다. 그것은 핵으로부터 약 26,000광년 떨어져 있으며 — 대략 중간쯤 — Orion Spur의 안쪽 가장자리에 앉아 있으며 약 230 km/s의 속도로 은하 중심을 공전합니다. 그 속도로도 한 바퀴 — \"은하년\"— 에는 약 230,000,000년이 걸립니다. 태양은 전체 존재 기간 동안 약 20번의 공전만 완성했습니다. 지난번 태양이 이곳에 있었을 때 공룡은 방금 나타나기 시작했습니다."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.2",
+  "en": "At the very centre, 26,000 light-years away in the direction of Sagittarius, lies Sagittarius A* — a supermassive black hole of about 4.3 million solar masses. We know its mass precisely because we have watched individual stars whip around it on decades-long orbits, and in 2022 the Event Horizon Telescope imaged its shadow directly. Every star in the galaxy, the Sun included, orbits this one point.",
+  "cur": "정중앙에는 Sagittarius 방향으로 26,000광년 떨어진 곳에 Sagittarius A*가 있습니다 — 약 430만 태양질량의 초대질량 블랙홀입니다. 우리는 개별 별들이 수십 년 길이의 공전 궤도에서 그 주변을 휘감아 도는 것을 관찰해 왔기 때문에 그 질량을 정확히 알고 있으며, 2022년 Event Horizon Telescope이 그 그림자를 직접 촬영했습니다. 은하의 모든 별, 태양을 포함하여, 이 한 점을 공전합니다."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.3",
+  "en": "Seeing the whole thing from inside is hard: interstellar dust blocks visible light toward the centre, so the disc's structure is mapped in infrared and radio, which pass through. The band of light we call “the Milky Way” in a dark sky is simply the combined glow of the disc's billions of stars, viewed edge-on from our seat within it — the plane of our own galaxy, seen the long way.",
+  "cur": "내부에서 전체를 보는 것은 어렵습니다: 성간 먼지가 중심 방향의 가시광선을 막으므로 원판의 구조는 적외선과 전파로 매핑되어 있으며, 이들은 통과합니다. 어두운 하늘에서 우리가 \"은하수\"라고 부르는 빛의 띠는 단순히 원판의 수십억 별들의 결합된 광채이며, 그 내부의 우리의 자리에서 가장자리-정면으로 봅니다 — 우리 자신의 은하의 평면이 긴 방식으로 보입니다."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.4",
+  "en": "Mapping it is the great project of modern astrometry. ESA's Gaia mission has measured precise distances and motions for nearly two billion stars, turning a fuzzy impression of spiral arms into a moving three-dimensional model — and revealing that the Milky Way is still digesting smaller galaxies it has swallowed, its disc gently warped and rippling from the collisions.",
+  "cur": "이를 매핑하는 것은 현대 천체측정학의 위대한 프로젝트입니다. ESA의 Gaia 미션은 거의 20억 개의 별에 대한 정확한 거리와 운동을 측정했으며, 나선팔의 흐릿한 인상을 움직이는 3차원 모델로 변환했습니다 — 그리고 은하수가 삼킨 더 작은 은하들을 여전히 소화 중이며, 충돌로부터 원판이 부드럽게 휘어지고 물결치고 있음을 드러냈습니다."
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "diagram_caption",
+  "en": "The Milky Way face-on (a schematic — we cannot photograph it from outside): a central bar, four major spiral arms plus the Orion Spur, and the Sun ~26,000 light-years out, about halfway to the edge. Sagittarius A*, the 4-million-solar-mass central black hole, sits at the core — the same layout the /explore Milky Way view renders.",
+  "cur": "은하수 얼굴 맞춤(도식 — 우리는 외부에서 촬영할 수 없습니다): 중앙 막대, 4개의 주요 나선팔 더하기 Orion Spur, 그리고 태양 약 26,000광년 떨어진 곳, 가장자리까지 약 중간. Sagittarius A*, 430만 태양질량의 중앙 블랙홀, 핵에 앉아 있습니다 — /explore 은하수 보기가 렌더링하는 것과 같은 배치입니다."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "intro_sentence",
+  "en": "Every famous \"telescope picture\" is a stack of long exposures through narrow-band filters, calibrated, registered, false-colour mapped — the image is what humans make of the count.",
+  "cur": "모든 유명한 \"telescope pictures\"는 좁은 밴드 필터를 통해 긴 노출의 스택, 캘리브레이션, 등록, false-colour mapped - 이미지는 인간이 계산을 만드는 것입니다."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "narrative_101.0",
+  "en": "Hubble didn't take a photo of the Pillars of Creation. Hubble took a few dozen photos — each through a different filter, each minutes long — and a team of imaging scientists stacked them, aligned them sub-pixel, calibrated out the bad pixels and cosmic-ray hits, then assigned colours by what physics the filter captured. The thing you see on the poster is real data and real interpretation, in equal parts. Telescope imagery isn't dishonest — it's just not what your phone camera does.",
+  "cur": "Hubble는 창조의 기둥 사진을 하나 찍은 것이 아닙니다. Hubble는 서로 다른 필터를 통해 수십 장의 사진을 찍었으며, 각 사진은 몇 분 동안 노출되었습니다. 그 후 이미징 과학자 팀이 이 사진들을 겹쳐 정렬하고, 부분 픽셀 수준에서 정밀하게 정렬한 다음, 나쁜 픽셀과 우주선 입자에 의한 손상을 보정하고, 각 필터가 포착한 물리 현상에 따라 색깔을 할당했습니다. 포스터에서 보이는 것은 실제 데이터와 실제 해석이 동등하게 담긴 결과입니다. 망원경 영상은 부정직한 것이 아닙니다. 다만 휴대폰 카메라가 하는 것과는 다를 뿐입니다."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "narrative_101.1",
+  "en": "Below this section the Observatory Showcase strip pulls one signature image from each of the twelve observatories in Orrery's fleet — Hubble, JWST, Chandra, Spitzer, Kepler, TESS, Gaia, Euclid, XMM-Newton, Spektr-RG, Compton GRO, and Hitomi. Click any of them to drop into that observatory's full gallery + technical panel.",
+  "cur": "이 섹션 아래 Observatory Showcase 스트립은 Orrery의 함대에 12개의 관측소 각각에서 하나의 서명 이미지를 끌어 - Hubble, JWST, Chandra, Spitzer, Kepler, TESS, Gaia, Euclid, XMM-Newton, Spektr-RG, Compton GRO 및 Hitomi. 그 관측소의 전체 갤러리 + 기술 패널에 떨어뜨리려면 그들 중 하나를 클릭하십시오."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "body_paragraphs.0",
+  "en": "A space telescope's image sensor is a CCD or CMOS chip — a grid of photon-counters. Each pixel sits on the focal plane for an exposure (anywhere from milliseconds to multiple hours), accumulating electron counts. The output is a number per pixel: how many photons of which narrow-band filter hit there. Multiple exposures are stacked to beat down read noise, registered to sub-pixel alignment, and median-combined to reject cosmic-ray hits.",
+  "cur": "공간 망원경의 이미지 센서는 CCD 또는 CMOS 칩입니다 - photon-counters의 그리드. 각 화소는 노출을 위한 초점 비행기에 앉습니다 (밀리초에서 다수 시간에 어디에나), 전기 조사 축적. 산출은 화소 당 수입니다: 얼마나 많은 광경은 어느 좁은 밴드 여과기가 거기 명중합니다. 여러 노출은 하위 픽셀 정렬에 등록 된 읽힌 잡음을 이길 수 있으며, cosmic-ray를 거부 할 수 있습니다."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "body_paragraphs.1",
+  "en": "Colour is the most-misunderstood part. Telescope filters are narrow-band — they pass a specific 10–100 nm slice of the spectrum: hydrogen-alpha at 656.3 nm, doubly-ionised oxygen at 500.7 nm, infrared bands at 2 µm or 12 µm. The Hubble Palette assigns those filters to RGB channels in non-physical ways (S-II red, H-α green, O-III blue) to maximise contrast between physical processes. JWST's mid-infrared images map 21 µm, 11 µm, and 7 µm to RGB — colours your eye couldn't see if you were there.",
+  "cur": "색상은 가장 미묘한 부분입니다. 망원경 필터는 좁은 밴드입니다 - 그들은 스펙트럼의 특정 10-100 nm 슬라이스를 전달합니다 : 656.3 nm에서 수소 알파, 500.7 nm에서 투수 이온 산소, 2 μm 또는 12 μm의 적외선 밴드. Hubble Palette은 물리적 프로세스의 대비를 극대화하기 위해 S-II red, H-α green, O-III blue)의 RGB 채널에 필터를 할당합니다. JWST의 중간 적외선 이미지지도 21 μm, 11 μm, 그리고 7 μm에서 RGB — 당신의 눈이 거기 있는 경우에 볼 수 없었습니다."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "body_paragraphs.2",
+  "en": "The processing pipeline is open-source for most NASA / ESA observatories. Raw exposures land in MAST (Mikulski Archive for Space Telescopes) or ESA Datalabs the moment they hit the ground; image-pipeline tutorials show exactly how a final composite is assembled. The pictures aren't manufactured — they're documented to the byte.",
+  "cur": "처리 파이프라인은 대부분의 NASA / ESA 관측소에 대한 오픈 소스입니다. MAST (Mikulski Archive for Space Telescopes) 또는 ESA Datalabs에서 토지 노출; 이미지 파이프 자습서는 최종 복합체가 조립되는 방법을 정확히 보여줍니다. 그림은 제조되지 않습니다 - 그들은 바이트에 문서화됩니다."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "body_paragraphs.3",
+  "en": "For ground-based imaging the additional challenge is the atmosphere. [Adaptive optics](observation/adaptive-optics) corrects it in real time by sensing the turbulence with a laser guide star and counter-bending a deformable mirror. JWST and Hubble are in space partly to skip this problem entirely; the atmosphere is also opaque at most infrared and UV bands, which is the other reason.",
+  "cur": "지표면 기반 이미징의 추가적인 도전 과제는 대기권입니다. [적응 광학](observation/adaptive-optics)은 레이저 유도 별을 사용하여 난류를 감지하고 변형 가능한 거울을 역으로 구부려 실시간으로 이를 보정합니다. JWST와 Hubble이 우주에 있는 이유 중 하나는 이 문제를 완전히 피하기 위함입니다. 대기권은 또한 대부분의 적외선 및 자외선 대역에서 불투명한데, 이것이 다른 이유입니다."
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "diagram_caption",
+  "en": "Filter → CCD → stack → register → calibrate → composite → colour-map. Six steps, hours of compute, real data the whole way through.",
+  "cur": "필터 → CCD → 스택 → 등록 → 교정 → 복합 → 색상 맵. 6개의 단계, compute의 시간, 진짜 자료 전체적인 방법을 통해."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "intro_sentence",
+  "en": "Pass starlight through a prism or diffraction grating and the spectrum tells you what the star is made of — every element prints a unique fingerprint of absorption lines.",
+  "cur": "prism 또는 diffraction 격자를 통해 별빛을 통과하고 스펙트럼은 별이 만드는 것을 알려줍니다. 모든 요소는 흡수 라인의 독특한 지문을 인쇄합니다."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "body_paragraphs.0",
+  "en": "Each chemical element absorbs light at a unique set of wavelengths corresponding to its electronic transitions. Pass starlight through a prism and you see a rainbow with thin dark lines at exactly those wavelengths — Joseph Fraunhofer mapped 574 of them across the solar spectrum in 1814. Each line is an element in the star's atmosphere stealing photons.",
+  "cur": "각 화학 성분은 그것의 전자 전환에 대응하는 파장의 유일한 세트에 빛을 흡수합니다. 프리즘을 통해 별빛을 통과하고 1814 년 태양 스펙트럼을 가로 질러 태양 광을 가로 질러내는 요제프 프라운호퍼가 1814 년에 태양 광을 가로 질러 무지개를 볼 수 있습니다. 각 선은 photons를 훔치는 별 분위기의 요소입니다."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "body_paragraphs.1",
+  "en": "Astronomy reverses Fraunhofer's process: catalogue the lines, match them to elements, and you know what the star is made of. The Sun is 73% hydrogen, 25% helium, 2% heavier elements — that came from spectroscopy, no sample needed. The same technique applied to galaxies gave us the redshift-distance relation and ultimately the expanding universe; applied to molecular clouds it gave us interstellar organic chemistry; applied to exoplanet atmospheres (via transit transmission spectroscopy) it now gives us oxygen / methane / water signatures from worlds we'll never visit.",
+  "cur": "천문학은 Fraunhofer의 과정을 역이용합니다. 스펙트럼선들을 목록화하고, 그것들을 원소들과 맞추면 별이 무엇으로 이루어졌는지 알 수 있습니다. 태양은 수소 73%, 헬륨 25%, 더 무거운 원소 2%로 이루어져 있습니다. 이는 표본이 필요 없는 분광학으로부터 나온 결과입니다. 같은 기법을 은하에 적용하면 적색편이-거리 관계식과 결국 팽창하는 우주를 얻었고, 분자운에 적용하면 성간 유기화학을 얻었으며, 외계행성 대기에 적용하면(통과 투과 분광법을 통해) 우리가 결코 방문할 수 없는 세계들로부터 산소/메탄/물의 신호를 얻게 됩니다."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "body_paragraphs.2",
+  "en": "Modern spectrographs split light with a diffraction grating (a finely-ruled reflective surface, often with thousands of lines per millimetre) and feed the dispersed spectrum onto a CCD. Resolution is measured by R = λ/Δλ; consumer kit hits R~1000, JWST NIRSpec hits R~2700, the ESPRESSO spectrograph on the VLT hits R~140,000 — enough to detect a planet's reflex velocity of just centimetres per second.",
+  "cur": "현대 spectrographs는 diffraction 삐걱거리는을 가진 빛을 나누었습니다 (밀어 찢긴 사려깊은 표면은, 수시로 밀리미터 당 수천의 선으로) 그리고 CCD에 분산한 스펙트럼을 먹이. 해결책은 R = λ/Δλ에 의해 측정됩니다; 소비자 장비는 R~1000의 JWST NIRSpec는 R~2700의 VLT에 ESPRESSO spectrograph를 보였습니다 R~140,000 — 초당 지구의 반사 각측정속도를 검출하기 위하여 충분히."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "body_paragraphs.3",
+  "en": "Spectroscopy is the **most informative** astronomical observation. A single image tells you what's there; a single spectrum tells you what it's made of, how fast it's moving toward or away from you (Doppler shift), how hot it is (continuum shape), how strong its magnetic field is (Zeeman splitting), and how dense its source region is (line profile shape). Most major facilities — Hubble, JWST, VLT, Keck, ALMA — spend the majority of their time taking spectra, not pictures.",
+  "cur": "Spectroscopy는 ** 가장 유익한 ** 천문학적 관측입니다. 단 하나 이미지는 당신에게 무엇을 거기 말합니까; 단 하나 스펙트럼은 당신이 만드는 무슨을 말합니다, 얼마나 빨리 당신이 (Doppler 교대)에서 이동하는 방법, 얼마나 뜨겁습니다 (지속 모양), 얼마나 강한 자석 분야는 (지먼 쪼개는), 그것의 근원 지구가 (선 단면도 모양) 감광하는 방법. 대부분의 주요 시설 - Hubble, JWST, VLT, Keck, ALMA - 사진이 아닌 스펙트라를 복용하는 대부분의 시간을 보내십시오."
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "diagram_caption",
+  "en": "Starlight → grating → spectrum → dark lines at element-specific wavelengths → composition + velocity + temperature + magnetic field. The most-informative observation in astronomy.",
+  "cur": "Starlight → 삐걱거리는 → 스펙트럼 → 성분 특정한 파장 → 구성 + 각측정속도 + 온도 + 자석 분야에 어두운 선. 천문학의 가장 중요한 관측."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "intro_sentence",
+  "en": "Mathematical solutions to general relativity that connect distant regions of spacetime. None has ever been observed. Included for completeness — they are NOT used for spaceflight.",
+  "cur": "시공간의 먼 영역들을 연결하는 일반상대성이론의 수학적 해법. 지금까지 관측된 적이 없음. 완전성을 위해 포함됨 — 우주여행에는 사용되지 않음."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "body_paragraphs.0",
+  "en": "A wormhole — formally an Einstein-Rosen bridge — is a topological feature of spacetime that the equations of general relativity permit but the universe has never been observed to actually instantiate. The mathematics is real (Einstein and Rosen worked it out in 1935); the physics is uncertain (no candidate has been seen); the engineering does not exist (and may be physically impossible). Treat them the way you'd treat tachyons or time-travel paradoxes: interesting puzzles in the equations, not flight hardware.",
+  "cur": "우주적 터널(wormhole) — 정식으로는 Einstein-Rosen 다리 — 는 시공간의 위상학적 특성으로, 일반상대성이론의 방정식이 허용하지만 우주에서는 실제로 실현된 것으로 관찰된 적이 없습니다. 수학은 실재합니다 (Einstein과 Rosen이 1935년에 이를 풀어냈습니다); 물리학은 불확실합니다 (후보가 발견된 것이 없습니다); 공학은 존재하지 않습니다 (그리고 물리적으로 불가능할 수도 있습니다). 타키온이나 시간여행 역설을 다루는 방식으로 이를 다루세요: 방정식 속의 흥미로운 퍼즐이지, 비행 장비가 아닙니다."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "body_paragraphs.1",
+  "en": "The original Schwarzschild solution to Einstein's equations describes a non-rotating black hole, and inside the geometry there's a second \"universe\" connected by a tube of spacetime. The catch: the tube isn't traversable. To cross it you'd have to move faster than light. Kip Thorne and others worked out in the 1980s that adding \"exotic matter\" — material with negative energy density, of which we have no examples — could in principle hold a wormhole open long enough to cross. Stephen Hawking pushed back: quantum effects probably destroy any traversable wormhole as soon as you try to use one.",
+  "cur": "원래의 Schwarzschild 해는 Einstein의 방정식에서 회전하지 않는 블랙홀을 설명하며, 그 기하학 내부에는 시공간의 튜브로 연결된 두 번째 \"우주\"가 있습니다. 문제점은 이 튜브가 통과 가능하지 않다는 것입니다. 이를 건너려면 빛보다 빠르게 움직여야 합니다. 킵 손과 다른 연구자들은 1980년대에 \"이국적 물질\" — 음의 에너지 밀도를 가진 물질이지만 우리가 예시를 갖지 못한 — 을 더하면 원칙적으로 우주적 터널을 충분히 오래 열린 상태로 유지하여 통과할 수 있다는 것을 풀어냈습니다. 스티븐 호킹은 반박했습니다: 양자 효과는 아마도 당신이 사용하려는 순간 통과 가능한 우주적 터널을 모두 파괴할 것입니다."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "body_paragraphs.2",
+  "en": "Observationally, we have no candidates. No gravitational-lensing signature, no astrophysical source has yet been identified that requires a wormhole interpretation. If they exist in nature, they're either very small (sub-atomic, quantum gravity domain) or very far away. The popular-culture wormhole — a stable, traversable, instant-shortcut between solar systems — would require physics we have no example of, and would carry the same causality-violation paradoxes that make time travel philosophically uncomfortable.",
+  "cur": "관찰적으로, 우리는 후보자가 없습니다. gravitational-lensing 서명 없음, astrophysical 소스는 아직 웜 홀 해석이 필요한지 확인되었습니다. 자연에 존재하는 경우, 그들은 매우 작습니다 (sub-atomic, quantum 중력 도메인) 또는 매우 멀리. 대중 문화 웜 홀 - 안정적인, 트래블, 태양 시스템 간의 즉시 단축 - 우리가 예가없는 물리학을 요구하고, 시간 여행 철학적 불행하게도 시간을 만드는 동일한 카시니얼-violation paradoxes를 수행 할 것입니다."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "body_paragraphs.3",
+  "en": "So why include them in a science encyclopedia at all? Because they're a beautiful illustration of the limits of general relativity: the equations admit solutions that the universe doesn't seem to use, and figuring out *why* is one of the live frontiers of theoretical physics. Quantum gravity, AdS/CFT correspondence, the ER=EPR conjecture — all of it touches wormhole geometry. They are real mathematics. They are not real spacecraft.",
+  "cur": "그래서 왜 과학 백과 사전에 포함? 그들은 일반적인 종교의 한계의 아름다운 일러스트가 있기 때문에 : 우주가 사용되지 않다는 것을 방정식 해결책, *why*를 파악하는 것은 이론적 물리학의 살아있는 국경 중 하나입니다. Quantum 중력, AdS/CFT 대응, ER=EPR 주입 — 모두는 웜홀 기하학을 접촉합니다. 그들은 실제 수학입니다. 그들은 실제 우주선이 아닙니다."
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "diagram_caption",
+  "en": "Einstein-Rosen bridge — a topological tube connecting distant regions of spacetime. Requires negative-energy \"exotic matter\" to be traversable. None observed; none flyable.",
+  "cur": "Einstein-Rosen 교량 — 우주선의 먼 지역을 연결하는 지형 관. 대변할 수 있는 부정적인 에너지 \"exotic 사정\"를 요구합니다. 아무도 관찰하지 않습니다."
+ },
+ {
+  "rel": "science/orbits/_intro.json",
+  "at": "headline",
+  "en": "Orbits — gravity is the only physics that matters.",
+  "cur": "궤도 — 중요한 유일한 물리학은 중력뿐이다."
+ },
+ {
+  "rel": "science/orbits/_intro.json",
+  "at": "paragraphs.0",
+  "en": "An orbit is what happens when you fall toward something but keep missing it. Throw a ball off a tower hard enough and the ground curves away faster than the ball drops — the ball never lands. Every spacecraft, every moon, every planet is doing exactly that trick around something heavier.",
+  "cur": "궤도란 무언가를 향해 떨어지지만 계속 빗나가는 현상이다. 탑에서 공을 충분히 세게 던지면 지면이 공이 떨어지는 것보다 더 빠르게 휘어져 사라진다 — 공은 절대 착지하지 않는다. 모든 우주선, 모든 위성, 모든 행성은 더 무거운 무언가 주위에서 정확히 그 묘기를 하고 있다."
+ },
+ {
+  "rel": "science/orbits/_intro.json",
+  "at": "paragraphs.1",
+  "en": "All orbits are ellipses, every single one. The Sun (or Earth, or whatever you're orbiting) sits at one focal point of the ellipse, never the centre. Six numbers — size, shape, three angles, and a clock position — describe any orbit perfectly. The eight sections in this tab unpack each of those numbers, and the master equation (vis-viva) that ties them all together.",
+  "cur": "모든 궤도는 타원이며, 예외는 하나도 없다. 태양(또는 지구, 또는 당신이 공전하고 있는 무엇이든)은 타원의 한 초점에 위치하며, 결코 중심이 아니다. 여섯 개의 숫자 — 크기, 모양, 세 개의 각도, 그리고 시계 위치 — 가 모든 궤도를 완벽하게 설명한다. 이 탭의 여덟 개 섹션은 각각의 숫자들과 그것들을 모두 묶어주는 핵심 방정식(vis-viva)을 설명한다."
+ },
+ {
+  "rel": "science/orbits/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Pick where you want to start. If physics is new to you, start with the Keplerian orbit — that's the whole concept in one section. If you want the workhorse equation, jump to vis-viva. If you want the historical drama, go to Kepler's three laws — a German astronomer in 1609 figured all this out from raw eyeball data.",
+  "cur": "어디서 시작할지 선택하라. 물리학이 처음이라면 Keplerian 궤도부터 시작하라 — 그것이 한 섹션에 담긴 전체 개념이다. 핵심 방정식을 원한다면 vis-viva로 건너뛰어라. 역사적 드라마를 원한다면 케플러의 세 법칙으로 가라 — 1609년 독일의 천문학자가 순수한 육안 관측 데이터로부터 이 모든 것을 알아냈다."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "title",
+  "en": "Apsides — Perihelion, Aphelion, Perigee, Apogee",
+  "cur": "궤도 극점 — 근일점, 원일점, 근지점, 원지점"
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "intro_sentence",
+  "en": "The two extreme points on every elliptical orbit: closest approach, and farthest.",
+  "cur": "모든 타원 궤도의 두 극단점: 최근접과 최원점."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "narrative_101.0",
+  "en": "Every elliptical orbit has a high point and a low point. That's all an apsis is — one of those two extremes. The closest approach to whatever you're orbiting; or the farthest. Spacecraft people obsess over these two spots because almost every important burn happens at one of them.",
+  "cur": "모든 타원 궤도는 최고점과 최저점을 가지고 있습니다. 그것이 apsis의 전부입니다 — 그 두 극단 중 하나. 당신이 공전하는 천체에 가장 가까운 접근 지점, 또는 가장 먼 지점입니다. 우주선 운영 담당자들은 거의 모든 중요한 궤도변경이 이 두 지점 중 하나에서 일어나기 때문에 이 두 지점에 집착합니다."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "narrative_101.1",
+  "en": "Why? Two reasons. First, your speed is at its extremes there too — fastest at the close end, slowest at the far end. The Oberth effect (which we'll get to in propulsion) says you get the most bang for your fuel when you burn fast — so departure burns happen near the close end. Second, raising or lowering the OPPOSITE side of an orbit is cheapest when you push at the extreme — so to raise your orbit you fire at the low point.",
+  "cur": "왜일까요? 두 가지 이유가 있습니다. 첫째, 당신의 속도도 그곳에서 극값을 가집니다 — 가까운 쪽에서 가장 빠르고, 먼 쪽에서 가장 느립니다. Oberth 효과(우리는 이것을 추진력에서 다룰 것입니다)는 빠르게 움직일 때 연료로부터 최고의 효율을 얻는다고 말합니다 — 따라서 출발 궤도변경은 가까운 쪽 근처에서 일어납니다. 둘째, 궤도의 반대편을 올리거나 내리는 것은 극단에서 가할 때 가장 저렴합니다 — 따라서 당신의 궤도를 올리려면 최저점에서 가속합니다."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "narrative_101.2",
+  "en": "Annoying naming convention warning: every planet gets its own pair of words. Around the Sun: perihelion / aphelion. Around the Earth: perigee / apogee. Around the Moon: perilune / apolune. Same physics, just Greek roots glued to whichever body you're circling. Don't let it intimidate you — it's just one word for 'low' and one for 'high'.",
+  "cur": "짜증나는 명명 규칙 경고: 모든 행성은 자신의 단어 쌍을 얻습니다. 태양 주위: 근일점/원일점. 지구 주위: 근지점/원지점. 달 주위: 근달점/원달점. 같은 물리학이지만, 그리스어 어근이 당신이 공전하는 천체에 붙어 있을 뿐입니다. 그것이 당신을 위협하도록 하지 마세요 — 그것은 '낮음'을 위한 한 단어와 '높음'을 위한 한 단어일 뿐입니다."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "body_paragraphs.0",
+  "en": "An apsis is one of the two points on an elliptical orbit where the body is at minimum or maximum distance from its focus. The line connecting them — passing through both foci — is the line of apsides. Every Keplerian orbit has exactly two: closest, and farthest.",
+  "cur": "apsis는 천체가 초점으로부터 최소 또는 최대 거리에 있는 타원 궤도의 두 지점 중 하나입니다. 그들을 연결하는 선 — 두 초점을 모두 지나는 — apsides 선입니다. 모든 Keplerian 궤도는 정확히 두 개를 가집니다: 가장 가까운 지점과 가장 먼 지점."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "body_paragraphs.1",
+  "en": "The names depend on what you're orbiting. Around the Sun: perihelion (closest) and aphelion (farthest), from Greek `peri` (near) and `apo` (far) plus `helios` (Sun). Around Earth: perigee and apogee. Around the Moon: periselene and aposelene, or perilune and apolune. Around any star: periastron and apastron. The ground truth is identical; only the suffix changes.",
+  "cur": "이름은 당신이 무엇을 공전하는지에 따라 다릅니다. 태양 주위: 근일점(가장 가까운)과 원일점(가장 먼), 그리스어 `peri`(근처)와 `apo`(먼)에 `helios`(태양)를 더해서. 지구 주위: 근지점과 원지점. 달 주위: 근달점과 원달점 또는 근달점과 원달점. 모든 별 주위: 근성점과 원성점. 기본 물리는 동일합니다; 오직 접미사만 바뀝니다."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "body_paragraphs.2",
+  "en": "Apsides anchor mission timelines. The Voyager flybys were timed at closest approach (periapsis) to each target planet — peri-jove for Jupiter, peri-saturnium for Saturn. ISS reboost burns add energy to fight atmospheric drag, consistent with the rule of firing at the low point to raise the orbit. Rendezvous and docking phasing burns are placed for phasing efficiency, often near perigee (Oberth effect). The Sun's perihelion passage by Parker Solar Probe is the closest a human-made object has ever been to a star.",
+  "cur": "Apsides는 임무 일정의 기준점입니다. Voyager 플라이바이는 각 목표 행성에 대한 최근접 지점(근일점)에서 시간이 맞춰졌습니다 — 목성의 경우 근목성점, 토성의 경우 근토성점. ISS 재부스트 궤도변경은 대기 항력에 맞서기 위해 에너지를 추가하며, 최저점에서 가속하여 궤도를 올리는 규칙과 일치합니다. 랑데부 및 도킹 단계 궤도변경은 단계 효율을 위해 배치되며, 종종 근지점 근처에 있습니다(Oberth 효과). Parker Solar Probe에 의한 태양의 근일점 통과는 인간이 만든 물체가 별에 가장 가까이 접근한 것입니다."
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "diagram_caption",
+  "en": "Line of apsides through both foci, connecting perihelion (closest) and aphelion (farthest).",
+  "cur": "두 초점을 지나는 apsides 선, 근일점(가장 가까운)과 원일점(가장 먼)을 연결합니다."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "title",
+  "en": "Cislunar orbits — DRO, NRHO, halo, lunar frozen",
+  "cur": "지구-달 공간 궤도 — DRO, NRHO, 헤일로 궤도, 달 동결 궤도"
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "intro_sentence",
+  "en": "Between Earth and the Moon's surface lies a zoo of carefully-engineered orbits — none of them obvious from two-body physics, all of them exploited by the modern lunar architecture from Gateway to robotic probes.",
+  "cur": "지구와 달 표면 사이에는 정교하게 설계된 궤도들의 동물원이 펼쳐져 있다. 두 물체 물리학으로는 전혀 명백하지 않지만, Gateway부터 로봇 탐사선까지 현대 달 아키텍처가 모두 활용하고 있다."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.0",
+  "en": "Near-Rectilinear Halo Orbit (NRHO) is the orbit class NASA chose for the Lunar Gateway. Geometrically: a six-day-period halo orbit around the Earth-Moon L2 Lagrange point, with perilune ≈1,500 km altitude (perilune radius ~3,200 km) over the lunar north pole and apolune ≈70,000 km over the lunar south pole. The 'near-rectilinear' name comes from the orbit's shape in the Earth-Moon rotating frame — it sweeps a long, narrow loop perpendicular to the Earth-Moon line, almost like a rectangle. Three properties made it the winning choice for Gateway. First, station-keeping ΔV is extraordinarily low (~5 m/s/year) compared to lunar low orbits (>100 m/s/year). Second, Earth communication is unobstructed because the orbit stays out of the Moon's radio shadow. Third, the long dwell near apolune over the south pole gives near-continuous coverage of the Artemis south-polar sites at Shackleton crater rim. The trade is that descent from NRHO to lunar surface is harder than from a low circular lunar orbit (~2.5 km/s vs ~1.8 km/s) — but for a programme that needs an enduring staging point, the trade is worth it.",
+  "cur": "근직선 할로 궤도(NRHO)는 NASA가 루나 게이트웨이를 위해 선택한 궤도 등급입니다. 기하학적으로: 지구-달 L2 라그랑주점 주위의 6일 주기 할로 궤도이며, 달의 북극 상공에서 근달점이 약 1,500 km 고도(근달점 반지름 약 3,200 km)이고 달의 남극 상공에서 원달점이 약 70,000 km입니다. '근직선' 이름은 지구-달 회전계에서 궤도의 형태에서 비롯되었습니다. 지구-달 선에 수직으로 길고 좁은 고리를 그리며, 거의 직사각형처럼 보입니다. 세 가지 특성이 게이트웨이의 최종 선택 이유가 되었습니다. 첫째, 스테이션 유지를 위한 ΔV가 극히 낮습니다(약 5 m/s/년). 이는 달 저궤도(>100 m/s/년)와 비교하면 매우 우수합니다. 둘째, 궤도가 달의 전파 음영 밖에 머물러 있기 때문에 지구 통신이 방해받지 않습니다. 셋째, 남극 상공 원달점 근처에서의 긴 체류 시간이 Shackleton 분화구 연부의 Artemis 남극 지역에 대한 거의 연속적인 관측을 제공합니다. 절충점은 NRHO에서 달 표면으로의 하강이 저궤도 원형 달 궤도(약 2.5 km/s 대 약 1.8 km/s)보다 더 어렵다는 것입니다. 하지만 지속되는 중전 지점이 필요한 계획의 경우, 이러한 절충은 가치가 있습니다."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.1",
+  "en": "Distant Retrograde Orbit (DRO). A large, circular-leaning orbit around the Moon in retrograde direction relative to the Moon's orbit around Earth. Distance: typically 60,000-80,000 km from the Moon. The retrograde motion plus the large radius makes DROs unusually stable — there's no station-keeping ΔV required (essentially zero, on multi-year timescales), because the orbit exploits a quirk of the three-body problem where the Earth's gravity acts as a restoring force when the spacecraft tries to drift. The Artemis-1 Orion (uncrewed flight test, November 2022) inserted into a DRO around the Moon for a 6-day stay before returning to Earth, demonstrating both the manoeuvre stack and the orbit's stability. DROs are the long-term-storage parking orbit of choice for cislunar architecture — you can park a propellant depot or a backup vehicle there and not worry about it drifting for years.",
+  "cur": "원심 역행 궤도(Distant Retrograde Orbit, DRO). 지구 주위 달의 궤도에 상대적으로 역행 방향으로 달 주위의 크고 원에 가까운 궤도다. 거리: 일반적으로 달로부터 60,000-80,000 km. 역행 운동과 큰 반경이 DRO를 비정상적으로 안정적으로 만든다 — 우주선이 떠내려가려고 할 때 지구의 중력이 복원력으로 작용하는 삼체 문제의 묘한 특성을 이용하기 때문에 관측소 유지 ΔV가 필요 없다(다년 규모에서 본질적으로 0). Artemis-1 Orion(비승무원 비행 시험, 2022년 11월)은 달 주위의 DRO에 6일간 머물다가 지구로 돌아오기 위해 삽입되었으며, 이는 기동 스택과 궤도의 안정성을 모두 입증했다. DRO는 cislunar 아키텍처에서 장기 보관 주차 궤도로 선택되는 궤도다 — 추진제 저장소나 백업 차량을 거기에 주차해두고 수년간 떠내려갈까봐 걱정할 필요가 없다."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.2",
+  "en": "Halo orbits at EML1 and EML2. Halo orbits are periodic 3-D families around the collinear Lagrange points (L1, L2, L3) — and around the Sun-Earth collinear points too (JWST, Gaia, Euclid all sit in Sun-Earth L2 halos). EML1 halos (between Earth and Moon) are useful for lunar gateway concepts that need continuous Earth visibility from the front side. EML2 halos (beyond the Moon from Earth's perspective) are useful for far-side observation; the proposed Lunar Crater Radio Telescope and the Chinese Queqiao relay satellite (supporting Chang'e-4 farside landing) both used variations on EML2 halo orbits. Compared to NRHO, traditional halos require more station-keeping ΔV but offer geometrically simpler orbits.",
+  "cur": "EML1 및 EML2의 할로 궤도. 할로 궤도는 동일직선 라그랑주점(L1, L2, L3) 주위의 주기적인 3차원 족이다 — 태양-지구 동일직선점 주위도 마찬가지다(JWST, Gaia, Euclid는 모두 태양-지구 L2 할로에 위치함). EML1 할로 궤도(지구와 달 사이)는 앞쪽에서 지속적인 지구 가시성이 필요한 달 게이트웨이 개념에 유용하다. EML2 할로 궤도(지구 관점에서 달 너머)는 먼쪽 관측에 유용하다. 제안된 Lunar Crater Radio Telescope과 Chang'e-4 먼쪽 착륙을 지원하는 중국의 Queqiao 중계 위성은 모두 EML2 할로 궤도의 변형을 사용했다. NRHO에 비해 전통적인 할로는 더 많은 관측소 유지 ΔV가 필요하지만 기하학적으로 더 단순한 궤도를 제공한다."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.3",
+  "en": "Lunar frozen orbits. The Moon's gravity field is highly non-spherical because its crust is uneven (mascons — mass concentrations under the maria) and the Moon has no atmosphere to damp orbital perturbations. A satellite in a circular low lunar orbit at most inclinations will see its orbit get progressively more eccentric over months until it crashes into the surface. Lunar Prospector (1999) was deliberately deorbited at end of mission because mission planners couldn't keep it stable. The 'frozen' lunar inclinations — 27°, 50°, 76°, and 86° — are the ones where the various perturbations cancel and a satellite can stay in approximate circular orbit for years without station-keeping. The Lunar Reconnaissance Orbiter (LRO, 2009-) uses a near-frozen polar orbit at ~50 km altitude that requires only modest station-keeping. The Chinese Queqiao-2 relay satellite (2024) uses a frozen elliptical orbit at L2.",
+  "cur": "달의 고정 궤도. 달의 중력장은 지각이 불규칙해서(mascons — 마리아 아래의 질량 집중) 매우 비구형이며, 달은 궤도 섭동을 감쇠시킬 대기가 없다. 대부분의 경사각에서 원형의 낮은 달 궤도에 있는 위성은 몇 개월에 걸쳐 궤도가 점진적으로 더 편심적이 되어 결국 표면에 충돌할 때까지 늘어난다. Lunar Prospector(1999)는 임무 계획자들이 안정적으로 유지할 수 없었기 때문에 임무 종료 시점에 의도적으로 궤도 이탈되었다. '고정' 달 경사각 — 27°, 50°, 76°, 86° — 은 다양한 섭동이 상쇄되어 위성이 관측소 유지 없이 수년간 대략적인 원형 궤도를 유지할 수 있는 각도들이다. Lunar Reconnaissance Orbiter(LRO, 2009-)는 ~50 km 고도의 거의 고정된 극 궤도를 사용하며 이는 적당한 수준의 관측소 유지만 필요하다. 중국의 Queqiao-2 중계 위성(2024)은 L2의 고정된 타원 궤도를 사용한다."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.4",
+  "en": "Why this matters operationally. The 1960s-style 'circular lunar orbit at 100 km' approach used by Apollo Command Modules was acceptable because crews were only there for days and re-entry was guaranteed. Modern multi-mission cislunar architecture (Artemis, ILRS, multiple crewed and robotic missions over decades) demands orbits that are cheap to maintain and don't require constant attention. NRHO + DRO + frozen lunar are the carefully-engineered solutions to that constraint. The 'cislunar economy' (DARPA's term for the projected commercial activity in Earth-Moon space) lives or dies by these orbital choices — and 5 m/s/year station-keeping vs 100 m/s/year is the difference between a viable commercial venture and a money pit.",
+  "cur": "이것이 운영상 중요한 이유입니다. Apollo 사령선이 사용했던 1960년대식 '100 km 원형 달 궤도' 방식은 승무원이 며칠만 머물고 재진입이 보장되었기 때문에 수용할 만했습니다. 현대의 다중 미션 지구-달 아키텍처(Artemis, ILRS, 수십 년에 걸친 여러 유인 및 로봇 미션)는 유지비가 저렴하고 지속적인 관심을 요구하지 않는 궤도를 필요로 합니다. NRHO + DRO + 동결 달 궤도는 그 제약 조건에 대한 신중하게 설계된 솔루션입니다. '지구-달 경제'(지구-달 우주의 예상 상업 활동을 일컫는 DARPA의 용어)는 이러한 궤도 선택에 따라 생존하거나 소멸하며 — 5 m/s/년 스테이션키핑 대 100 m/s/년은 실행 가능한 상업 벤처와 돈 낭비 사이의 차이입니다."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "diagram_caption",
+  "en": "NRHO: halo around Earth-Moon L2, 6-day period, perilune (~1,500 km) over lunar north pole, apolune (~70,000 km) over south pole for south-polar coverage, 5 m/s/yr station-keeping. DRO: large retrograde lunar orbit, essentially zero station-keeping. Halo orbits at EML1/EML2: continuous Earth/farside comms. Frozen lunar orbits: 27°/50°/76°/86° inclinations where mascon-driven perturbations cancel.",
+  "cur": "NRHO: 지구-달 L2 주위의 할로 궤도, 6일 주기, 달 북극 상의 근달점(~1,500 km), 남극 관측을 위한 남극 상의 원달점(~70,000 km), 5 m/s/년 관측소 유지. DRO: 크고 역행하는 달 궤도, 본질적으로 0의 관측소 유지. EML1/EML2의 할로 궤도: 지속적인 지구/먼쪽 통신. 고정 달 궤도: mascon 주도 섭동이 상쇄되는 27°/50°/76°/86° 경사각."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "title",
+  "en": "End-of-life disposal — graveyard orbits, controlled deorbit, the 25-year rule",
+  "cur": "수명 종료 처분 — 묘지 궤도, 제어 탈궤도, 25년 규칙"
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "intro_sentence",
+  "en": "Every satellite must have an end-of-life disposal plan to launch — either deorbit into the atmosphere, or boost to a stable graveyard orbit. Mismanaged disposal is what produces the orbital-debris problem covered in the next article.",
+  "cur": "모든 위성은 발사 시 수명 종료 처분 계획을 가져야 한다 — 대기로의 탈궤도, 또는 안정적인 묘지 궤도로의 부스트. 잘못 관리된 처분이 다음 기사에서 다루는 궤도 잔해 문제를 만든다."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.0",
+  "en": "LEO disposal: deorbit. Spacecraft in LEO are dragged down by residual atmospheric density (negligible per orbit, accumulative over years). A satellite at 400 km decays naturally within a year if propulsion fails; at 800 km the natural decay time is ~50 years; at 1500 km it's centuries. The international standard codified by the IADC (Inter-Agency Space Debris Coordination Committee) in 2002 and adopted by every spacefaring nation: LEO objects must be deorbited within 25 years of end of mission. The FCC tightened this for US-licensed satellites to 5 years in 2022. Mechanism: at end of life, the spacecraft uses its remaining propellant to lower perigee into the upper atmosphere (typically 200-300 km perigee), guaranteeing rapid drag-driven decay within months. Large objects (ISS modules, Hubble, retired LEO comsats) are targeted at SPOUA — the South Pacific Ocean Uninhabited Area, a remote stretch of open ocean centred near Point Nemo, the official 'spacecraft cemetery' since the Soviet Salyut deorbits in the 1970s. Mir was deorbited there in 2001 (130 tonnes); the ISS is scheduled for controlled deorbit there in 2031.",
+  "cur": "LEO 처분: 탈궤도. LEO의 우주선은 잔류 대기 밀도에 의해 끌려 내려간다(궤도당 무시할 수 있지만 수년에 걸쳐 누적). 추진이 실패하면 400 km의 위성은 1년 이내에 자연적으로 부패한다; 800 km에서 자연 부패 시간은 ~50년; 1500 km에서는 수세기. IADC(Inter-Agency Space Debris Coordination Committee)가 2002년에 성문화하고 모든 우주 비행 국가가 채택한 국제 표준: LEO 물체는 임무 종료 후 25년 이내에 탈궤도되어야 한다. FCC는 2022년에 미국 면허 위성에 대해 이를 5년으로 강화했다. 메커니즘: 수명 종료 시 우주선은 남은 추진제를 사용하여 근지점을 상층 대기로 내린다(일반적으로 200-300 km 근지점), 수개월 내 항력 주도 빠른 부패를 보장한다. 대형 물체(ISS 모듈, Hubble, 은퇴한 LEO 통신 위성)는 SPOUA — South Pacific Ocean Uninhabited Area, Point Nemo 근처 중심의 외딴 개방 해양 지역, 1970년대 소련 Salyut 탈궤도 이후의 공식 '우주선 묘지' — 로 표적된다. Mir는 2001년에 거기로 탈궤도되었고(130톤); ISS는 2031년에 거기에서 제어 탈궤도 예정."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.1",
+  "en": "GEO disposal: graveyard orbit. GEO satellites can't be economically deorbited because the ΔV cost to drop from GEO (35,786 km) to Earth-impact is enormous (~1.5 km/s) and the satellite would still have to plough through the dense LEO debris belt on the way down. Instead, IADC guidelines (and most national regulators) require GEO operators to boost their spacecraft into a 'graveyard orbit' at least 235 km above GEO before exhausting station-keeping propellant. The 235 km figure combines a 200 km buffer above the protected GEO region with ~35 km of perigee drop a derelict can undergo from luni-solar gravity and Earth's oblateness; solar-radiation-pressure effects, which scale with a satellite's area-to-mass ratio, are added on top via the IADC formula. Boosting clear of that combined altitude guarantees the dead satellite won't drift back into the GEO ring. Each graveyard boost typically consumes 5-10 kg of propellant, equivalent to several months of station-keeping margin. Operators that fail to perform the graveyard burn (typically because the satellite died too quickly to spare the fuel) leave a derelict in or near GEO that will menace operational comsats for the indefinite future — the so-called 'GEO graveyard derelicts'.",
+  "cur": "GEO 폐기: 우주묘지 궤도. GEO 위성은 경제적으로 회수 불가능한데, GEO(고도 35,786 km)에서 지구 충돌까지 도달하는 데 필요한 ΔV 비용이 엄청나기 때문(약 1.5 km/s)이고, 그 과정에서 위성이 여전히 하강 경로상의 고밀도 LEO 우편물 대역을 통과해야 하기 때문이다. 대신, IADC 지침(및 대부분의 국가 규제 기관)은 GEO 운영자에게 위성이 역추진 추진제를 소진하기 전에 GEO 상공 최소 235 km 이상의 '우주묘지 궤도'로 우주선을 부양할 것을 요구한다. 235 km 수치는 보호된 GEO 지역 상방의 200 km 완충 구간과 달-태양 중력 및 지구의 편원성으로 인해 우주 폐기물이 겪을 수 있는 근지점 약 35 km 강하를 결합한 것이다. 위성의 면적-질량 비와 관련하여 스케일링되는 태양복사압 효과는 IADC 공식을 통해 그 위에 추가된다. 그 결합된 고도를 넘어 상승하면 죽은 위성이 GEO 고리로 다시 표류하지 않음을 보장한다. 각 우주묘지 부양은 일반적으로 5-10 kg의 추진제를 소비하며, 이는 여러 달간의 스테이션 유지 여유와 동등하다. 우주묘지 분사를 수행하지 못하는 운영자(일반적으로 위성이 너무 빨리 사망하여 연료를 절약할 수 없는 경우)는 GEO 내 또는 근처에 우주 폐기물을 남기게 되며, 이는 무한정 운영 통신위성을 위협할 것이다 — 소위 'GEO 우주묘지 우주 폐기물'이다."
+ }
+]

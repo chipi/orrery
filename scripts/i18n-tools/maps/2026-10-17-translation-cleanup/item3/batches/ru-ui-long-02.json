@@ -1,0 +1,1796 @@
+[
+ {
+  "rel": "messages",
+  "at": "science_intro",
+  "en": "Every term, formula, and named law the simulator references — explained where you'll meet them.",
+  "cur": "Каждый термин, формула и названный законом симулятор ссылается — объясняется, где вы их встретите."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_apsides_desc",
+  "en": "Perihelion / aphelion markers + the live true-anomaly (ν) angle.",
+  "cur": "Маркеры перигелия / афелия и текущий угол истинной аномалии (ν)."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_ascent_losses_desc",
+  "en": "Running tally of the gravity, drag & steering Δv spent reaching orbit.",
+  "cur": "Текущий подсчёт гравитационных, аэродинамических и рулевых потерь Δv на выведение на орбиту."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_atmosphere_desc",
+  "en": "Translucent shell at the body's effective atmospheric edge — Kármán line on Earth, ~120 km on Mars.",
+  "cur": "Прозрачная оболочка на эффективном атмосферном крае тела — линия Кармана на Земле, ~ 120 км на Марсе."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_axial_tilt_desc",
+  "en": "Spin axis + obliquity arc against the orbital plane — the tilt that drives the seasons.",
+  "cur": "Ось вращения + дуга наклона относительно орбитальной плоскости — наклон, который определяет смену сезонов."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_centripetal_desc",
+  "en": "Inward acceleration that bends the path into an orbit — gravity itself provides it (a = v²/r), so it points the same way as the gravity arrow.",
+  "cur": "Ускорение, направленное внутрь и искривляющее траекторию в орбиту — его обеспечивает сама гравитация (a = v²/r), поэтому оно указывает в том же направлении, что и вектор гравитации."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_climate_desc",
+  "en": "Latitude climate bands (tropical → polar) + how much sunlight this world gets vs Earth and whether its air keeps the heat. Sun is life.",
+  "cur": "Климатические зоны по широте (тропики → полюса) + сколько света получает этот мир по сравнению с Землёй и удерживает ли атмосфера тепло. Солнце — это жизнь."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_coast_desc",
+  "en": "Where the spacecraft would drift if the engine cut right now.",
+  "cur": "Где бы дрейфовал аппарат, если бы двигатель выключился прямо сейчас."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_conics_desc",
+  "en": "Names the current arc shape (ellipse / hyperbola / etc.) live.",
+  "cur": "Отображает текущую форму дуги (эллипс / гипербола / и т.д.) в реальном времени."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_constellations_desc",
+  "en": "The constellation figures traced over the nearby stars — patterns the eye projects onto stars that lie at wildly different distances. Neighbours on the sky are rarely neighbours in space.",
+  "cur": "Фигуры созвездий, начертанные над близлежащими звёздами — паттерны, которые глаз проецирует на звёзды, лежащие на совершенно разных расстояниях. Соседи на небе редко бывают соседями в пространстве."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_dark_matter_halo_desc",
+  "en": "The roughly spherical halo of unseen mass around the disc, inferred from the flat rotation curve. It far outweighs the galaxy's visible stars and gas.",
+  "cur": "Примерно сферический ореол невидимой массы вокруг диска, выведенный из плоской кривой вращения. Он намного превосходит по массе видимые звёзды и газ галактики."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_dead_dynamo_desc",
+  "en": "No global field — only fossil crustal magnetism in the southern highlands. With the shield gone, the solar wind stripped most of the air.",
+  "cur": "Нет глобального поля — только ископаемый корковый магнетизм в южных возвышенностях. Без щита солнечный ветер унёс большую часть атмосферы."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_deep_sky_desc",
+  "en": "Nebulae, star clusters, and galaxies beyond the individual stars — the 'faint fuzzies' Messier and the NGC catalogued, each a different kind of object at a different distance.",
+  "cur": "Туманности, звёздные скопления и галактики за пределами отдельных звёзд — «тусклые размытости», которые каталогизировали Мессье и NGC, каждая — объект другого типа на другом расстоянии."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_drag_desc",
+  "en": "Aerodynamic resistance opposing the rocket's motion.",
+  "cur": "Аэродинамическое сопротивление, противодействующее движению ракеты."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_far_side_desc",
+  "en": "The hemisphere that never faces Earth — unseen until Luna 3 photographed it in 1959. Heavily cratered, almost no maria.",
+  "cur": "Полушарие, которое никогда не обращено к Земле — невидимое до съёмки Luna 3 в 1959 году. Сильно кратерировано, почти без морей."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_galaxies_desc",
+  "en": "Billboard sprites of ~15 neighbouring galaxies (Andromeda, Magellanic Clouds, dwarf spheroidals) on the celestial sphere at correct RA/Dec — sky-overlay only, not true scale.",
+  "cur": "Билборд-спрайты ~15 соседних галактик (Andromeda, Магеллановы Облака, карликовые сфероидальные) на небесной сфере с корректными RA/Dec — наложение на небо, не в реальном масштабе."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_gravity_desc",
+  "en": "Force arrows from each body, log-scaled so all are visible.",
+  "cur": "Стрелки силы от каждого тела в логарифмическом масштабе — видны все."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_hill_sphere_desc",
+  "en": "The boundary where this planet’s gravity dominates over the Sun’s. Stylised radius (real Hill spheres can exceed the planet’s orbit).",
+  "cur": "Граница, где гравитация планеты доминирует над солнечной. Стилизованный радиус (реальные сферы Hill могут выходить за орбиту планеты)."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_hover_desc",
+  "en": "Live numbers (speed, distance, gravity) when hovering a planet.",
+  "cur": "Живые числа (скорость, расстояние, гравитация) при зависании планеты."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_hr_diagram_desc",
+  "en": "Plots the nearby stars by colour (surface temperature) against brightness. Most fall on the main sequence; red giants sit above it and white dwarfs below it, tracing where a star has been in its life.",
+  "cur": "Расположение близлежащих звёзд по цвету (температура поверхности) в зависимости от светимости. Большинство лежат на главной последовательности; красные гиганты расположены выше, белые карлики ниже, обозначая фазы жизни звезды."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_hydrosphere_desc",
+  "en": "71% of the surface is ocean — Earth is the only known world with stable surface liquid water.",
+  "cur": "71% поверхности — океан. Земля — единственный известный мир со стабильной жидкой водой на поверхности."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_lagrange_points_desc",
+  "en": "L1 + L2 markers along the planet→Sun line. JWST orbits Earth’s L2; SOHO sits at Earth’s L1.",
+  "cur": "Маркеры L1 + L2 на линии планета→Солнце. JWST обращается вокруг L2 Земли; SOHO находится в L1 Земли."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_light_cones_desc",
+  "en": "Concentric shells at fixed look-back times around the Sun. Light travels at a finite speed, so to look farther out is to look further into the past.",
+  "cur": "Концентрические оболочки на фиксированных временах светового пути вокруг Солнца. Свет распространяется с конечной скоростью, поэтому смотреть дальше в пространство — значит смотреть дальше в прошлое."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_mag_north_desc",
+  "en": "Geographic pole (spin axis) vs magnetic pole — the offset a compass reads as declination.",
+  "cur": "Географический полюс (ось вращения) против магнитного полюса — смещение, которое компас показывает как склонение."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_magnetosphere_desc",
+  "en": "Stylised magnetic-field shell + dipole axis. Jupiter’s mag-tail extends past Saturn’s orbit in reality.",
+  "cur": "Стилизованная оболочка магнитного поля + ось диполя. Магнитный хвост Юпитера в реальности простирается за орбиту Сатурна."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_mars_moons_desc",
+  "en": "Two captured-asteroid moons. Phobos orbits faster than Mars rotates, so it rises in the west and sets in the east; it will break up into a ring in ~50 Myr.",
+  "cur": "Два захваченных астероида-спутника. Фобос обращается быстрее, чем вращается Марс, поэтому он восходит на западе и заходит на востоке; через ~50 млн лет он разрушится и образует кольцо."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_microgravity_desc",
+  "en": "Three colour-keyed body axes — zenith / nadir, prograde / retrograde, port / starboard.",
+  "cur": "Три оси тела с цветовой маркировкой — зенит/надир, проград/ретроград, левый/правый борт."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_moons_desc",
+  "en": "Major moons + orbit rings around each planet (Galilean at Jupiter, Titan/Enceladus/Iapetus at Saturn, the Moon at Earth, Phobos/Deimos at Mars, Triton at Neptune).",
+  "cur": "Крупные спутники + орбитальные кольца вокруг каждой планеты (галилеевы у Юпитера, Титан/Энцелад/Япет у Сатурна, Луна у Земли, Фобос/Деймос у Марса, Тритон у Нептуна)."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_ozone_desc",
+  "en": "Polar ozone-depletion zones — Antarctic + Arctic — that open seasonally as ClO and BrO catalyse O₃ destruction in the stratosphere.",
+  "cur": "Полярные зоны истощения озона - Антарктика + Арктика - которые сезонно открываются как катализатор ClO и BrO Разрушение O3 в стратосфере."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_planet_stats_desc",
+  "en": "Floating overlay with surface gravity, atmospheric pressure, and rotation period. Visible only at planet focus.",
+  "cur": "Всплывающая панель с поверхностной гравитацией, атмосферным давлением и периодом вращения. Видна только при фокусе на планете."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_polar_caps_desc",
+  "en": "Seasonal CO₂ frost over perennial water ice. They grow and shrink as each hemisphere tips toward and away from the Sun.",
+  "cur": "Сезонный CO₂-иней поверх постоянного водяного льда. Растут и тают, когда полушарие наклоняется к Солнцу и от него."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_rotation_curve_desc",
+  "en": "How orbital speed changes with distance from the galactic centre — it stays nearly flat out to ~15–20 kpc instead of falling away, the classic hint of unseen mass.",
+  "cur": "Как орбитальная скорость меняется с расстоянием от галактического центра — она остаётся почти плоской до ~15–20 кпк вместо падения, классический признак невидимой массы."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_soi_desc",
+  "en": "Translucent rings marking where each body's gravity dominates — an approximation for planning trajectories, not a physical wall.",
+  "cur": "Полупрозрачные кольца, обозначающие область, где гравитация каждого тела доминирует — приближение для планирования траекторий, а не физическая стена."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_stellar_populations_desc",
+  "en": "Sorts the galaxy's stars into the young, metal-rich disc, the old, metal-poor halo, and the central bulge — a fossil record of how the Milky Way assembled.",
+  "cur": "Разделяет звёзды галактики на молодой, богатый металлами диск, старый, бедный металлами ореол и центральное ядро — летопись того, как собиралась Млечный Путь."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_sub_earth_desc",
+  "en": "Earth hangs fixed over this spot — the Moon is tidally locked. Libration lets us see 59% of the surface over a month.",
+  "cur": "Земля неподвижно висит над этой точкой — Луна приливно заблокирована. Либрация позволяет видеть 59% поверхности за месяц."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_sub_solar_desc",
+  "en": "Marker at the longitude where it’s currently noon — the point directly under the Sun.",
+  "cur": "Маркер на долготе, где сейчас полдень — точка прямо под Солнцем."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_thrust_desc",
+  "en": "Engine force driving the rocket up its body axis.",
+  "cur": "Сила двигателя, толкающая ракету вдоль её оси."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_tidal_lock_desc",
+  "en": "Marks the Moon's near-side (always-Earth-facing) hemisphere — the result of synchronous rotation.",
+  "cur": "Отмечает ближнее полушарие Луны (всегда обращенное к Земле) — результат синхронного вращения."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_tides_desc",
+  "en": "Twin tidal bulges raised by the Moon — one beneath it, one on the far side. Two high tides a day.",
+  "cur": "Два приливных выступа, создаваемых Луной — один под ней, другой на противоположной стороне. Два прилива в сутки."
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_velocity_desc",
+  "en": "Tangent arrows showing instantaneous heliocentric speed.",
+  "cur": "Тангентные стрелки, показывающие мгновенную гелиоцентрическую скорость."
+ },
+ {
+  "rel": "messages",
+  "at": "science_meta_description",
+  "en": "In-app encyclopedia of orbital mechanics, transfers, propulsion, mission phases, scales & time, and porkchop reading — every formula and named term Orrery references.",
+  "cur": "Встроенная энциклопедия орбитальной механики, перелётов, тяги, фаз миссии, масштабов и времени, а также чтения диаграммы porkchop — каждая формула и термин, используемые в Orrery, имеют ссылку."
+ },
+ {
+  "rel": "messages",
+  "at": "science_panel_earth_body",
+  "en": "A 100 km Kármán-line shell separates atmosphere from space; LEO begins another 100 km up. The ozone column at ~30 km blocks the UV-C that would otherwise sterilise the surface — its polar depletion is one of the few global atmospheric measurements visible from orbit.",
+  "cur": "100-километровая оболочка линии Кармана отделяет атмосферу от космоса; LEO начинается ещё через 100 км. Озоновый слой на ~30 км блокирует UV-C, который иначе стерилизовал бы поверхность — его полярное истощение — одно из немногих глобальных атмосферных явлений, видимых с орбиты."
+ },
+ {
+  "rel": "messages",
+  "at": "science_panel_earth_title",
+  "en": "Earth · 6371 km radius, our orbital perch",
+  "cur": "Земля · радиус 6371 км, наша орбитальная база"
+ },
+ {
+  "rel": "messages",
+  "at": "science_panel_mars_body",
+  "en": "Mars' atmospheric pressure sits at 0.6 % of Earth's — enough for parachute aerobraking but not aerocapture. The global magnetic dynamo died ~4 Gyr ago; the residual crustal magnetism in the southern highlands is the only fossil record of when it was alive.",
+  "cur": "Атмосферное давление Марса — 0,6% земного: достаточно для парашютного аэроторможения, но не для аэрозахвата. Глобальное магнитное динамо погасло ~4 млрд лет назад; остаточный корковый магнетизм в южных возвышенностях — единственное ископаемое свидетельство его существования."
+ },
+ {
+  "rel": "messages",
+  "at": "science_panel_mars_title",
+  "en": "Mars · thin CO₂ shell + a dynamo gone quiet",
+  "cur": "Марс · тонкая CO₂-оболочка + затихшее динамо"
+ },
+ {
+  "rel": "messages",
+  "at": "science_panel_moon_body",
+  "en": "Lunar surface gravity is 1/6 g; a vacuum-thin exosphere offers no aerobraking, so every mission has to carry full ∆v for the descent. Apollo's free-return trajectory let the Earth-Moon-Earth figure-8 act as a built-in abort path.",
+  "cur": "Поверхностная гравитация Луны — 1/6 g; вакуумно-тонкая экзосфера не даёт аэроторможения, поэтому каждая миссия несёт полный ∆v для спуска. Траектория свободного возврата Apollo использовала петлю Земля–Луна–Земля как встроенный путь аварийного возврата."
+ },
+ {
+  "rel": "messages",
+  "at": "science_panel_moon_title",
+  "en": "The Moon · 384 000 km out, three days each way",
+  "cur": "Луна · 384 000 км, три дня в каждую сторону"
+ },
+ {
+  "rel": "messages",
+  "at": "science_search_placeholder",
+  "en": "Search the encyclopedia… (e.g. perihelion, ∆v, porkchop)",
+  "cur": "Поиск по энциклопедии… (напр. перигелий, ∆v, porkchop)"
+ },
+ {
+  "rel": "messages",
+  "at": "science_tab_empty",
+  "en": "Sections for this tab are still being authored.",
+  "cur": "Разделы для этой вкладки все еще создаются."
+ },
+ {
+  "rel": "messages",
+  "at": "sensory_gyro_denied",
+  "en": "Motion access denied — enable it in your browser settings.",
+  "cur": "Доступ к датчику движения запрещён — включите его в настройках браузера."
+ },
+ {
+  "rel": "messages",
+  "at": "sensory_hint_toast",
+  "en": "Sensory mode on — try sound, vibration and tilt.",
+  "cur": "Сенсорный режим включён — попробуйте звук, вибрацию и наклон."
+ },
+ {
+  "rel": "messages",
+  "at": "sensory_master_hint",
+  "en": "Sound, vibration and tilt cues that respond to the physics.",
+  "cur": "Звуковые, вибрационные и наклонные сигналы, реагирующие на физику."
+ },
+ {
+  "rel": "messages",
+  "at": "sensory_row_audio_desc",
+  "en": "Hear the physics — cues and ambient tones.",
+  "cur": "Слушайте физику — сигналы и фоновые тона."
+ },
+ {
+  "rel": "messages",
+  "at": "sourcing_footer",
+  "en": "Orrery’s rule is simple: authentic content under a free licence (Creative Commons or public domain), no watermarks, no fan reproductions. When we can’t clear that bar we show the gap rather than paper over it. Provenance for what we did source is on the {colophon}; the insignia live in the {gallery}.",
+  "cur": "Правило Orrery простое: аутентичный контент под свободной лицензией (Creative Commons или общественное достояние), без водяных знаков, без любительских реконструкций. Когда не можем преодолеть эту планку — показываем пробел, а не замазываем его. Происхождение того, что мы нашли, указано в {colophon}; эмблемы находятся в {gallery}."
+ },
+ {
+  "rel": "messages",
+  "at": "star_portrait_caption",
+  "en": "Representation · colour from catalogued B−V",
+  "cur": "Представление · цвет по каталожному B−V"
+ },
+ {
+  "rel": "messages",
+  "at": "star_why_colour_body",
+  "en": "A star's colour is set by its surface temperature. We read it from the B−V index — how much brighter the star is in visible light than in blue — which maps to temperature: hot stars glow blue-white, cool ones orange-red. The swatch shows that real colour.",
+  "cur": "Цвет звезды определяется температурой её поверхности. Мы считываем его по индексу B−V — насколько ярче звезда в видимом свете, чем в синем — который соответствует температуре: горячие звёзды светятся сине-белым, холодные — оранжево-красным. Образец показывает этот реальный цвет."
+ },
+ {
+  "rel": "messages",
+  "at": "sun_source_nasa",
+  "en": "Source: NASA · IAU · absolute magnitude {mag}",
+  "cur": "Source: NASA · IAU · абсолютная звёздная величина {mag}"
+ },
+ {
+  "rel": "messages",
+  "at": "surface_flat_upsample_warning_mars",
+  "en": "⚠ Approaching native pixel limit (HiRISE 25 cm/px)",
+  "cur": "⚠ Приближение к нативному пределу пикселей (HiRISE 25 см/px)"
+ },
+ {
+  "rel": "messages",
+  "at": "surface_flat_upsample_warning_moon",
+  "en": "⚠ Approaching native pixel limit (LROC NAC 50 cm/px)",
+  "cur": "⚠ Приближение к нативному пределу пикселей (LROC NAC 50 см/px)"
+ },
+ {
+  "rel": "messages",
+  "at": "tiangong_canvas_aria",
+  "en": "Interactive 3D model of the Tiangong space station. Drag to orbit the view; tap a module to open details.",
+  "cur": "Интерактивная 3D-модель космической станции Tiangong. Перетягивайте для орбитального обзора; нажимайте на модуль для открытия подробностей."
+ },
+ {
+  "rel": "messages",
+  "at": "tiangong_fallback_memory",
+  "en": "Low-memory mode: list view first. Use the toggle to try 3D.",
+  "cur": "Режим экономии памяти: сначала отображается список. Используйте переключатель, чтобы попробовать 3D."
+ },
+ {
+  "rel": "messages",
+  "at": "tiangong_fallback_perf",
+  "en": "3D mode looked slow on this device — switched to the list. Use the toggle to try 3D again.",
+  "cur": "Трёхмерный режим работает медленно на этом устройстве — переключились на список. Используйте переключатель, чтобы попробовать трёхмерный режим снова."
+ },
+ {
+  "rel": "messages",
+  "at": "tiangong_timeline_title",
+  "en": "Chronological timeline of when each Tiangong module + visitor joined the station",
+  "cur": "Хронологическая шкала присоединения модулей и посетителей к станции Tiangong"
+ },
+ {
+  "rel": "messages",
+  "at": "tiangong_watch_assembly_title",
+  "en": "Watch the station's modules join in chronological order",
+  "cur": "Посмотреть присоединение модулей станции в хронологическом порядке"
+ },
+ {
+  "rel": "messages",
+  "at": "version_info_title",
+  "en": "Build version + deploy date (opens CHANGELOG on GitHub)",
+  "cur": "Версия сборки + дата развёртывания (открывает CHANGELOG на GitHub)"
+ },
+ {
+  "rel": "messages",
+  "at": "video_advisory_graphic",
+  "en": "This footage may be distressing. Continue?",
+  "cur": "Это видео может быть тревожным. Продолжить?"
+ },
+ {
+  "rel": "messages",
+  "at": "video_advisory_loss_of_life",
+  "en": "This footage shows a fatal accident. It is included for its historical significance. Continue?",
+  "cur": "Это видео содержит запись смертельного несчастного случая. Оно включено в историческими целями. Продолжить?"
+ },
+ {
+  "rel": "messages",
+  "at": "watch_list_lede",
+  "en": "Films, documentaries, podcasts, and YouTube channels for when you want space content you didn't have to read. Curated for what's actually accurate (or beautifully wrong on purpose), not for what's popular.",
+  "cur": "Фильмы, документалистика, подкасты и YouTube-каналы — для тех случаев, когда хочется космического контента, который не нужно читать. Отобраны за точность (или за намеренную красивую неточность), а не за популярность."
+ },
+ {
+  "rel": "messages",
+  "at": "why_aphelion_body",
+  "en": "The farthest point of the orbit from the Sun (or parent body). The slowest point — vis-viva: large r → small v. Good place to nudge the orbit cheaply (small ∆v moves the opposite side a lot) but bad for big burns.",
+  "cur": "Самая удалённая от Солнца (или родительского тела) точка орбиты. Самая медленная точка — vis-viva: большое r → малое v. Хорошее место для дешёвой коррекции (малое ∆v сильно сдвигает противоположную сторону), но плохое для больших манёвров."
+ },
+ {
+  "rel": "messages",
+  "at": "why_arrival_inclination_body",
+  "en": "The tilt of the captured orbit versus the destination's equator. Polar orbits (90°) see the whole surface every day but cost more ∆v at insertion. Equatorial orbits (0°) are cheap but see only a band.",
+  "cur": "Наклон захваченной орбиты относительно экватора назначения. Полярные орбиты (90°) видят всю поверхность каждый день, но стоят больше ∆v при выводе. Экваториальные орбиты (0°) дёшевы, но видят только полосу."
+ },
+ {
+  "rel": "messages",
+  "at": "why_axial_tilt_body",
+  "en": "The angle between a body's spin axis and the perpendicular to its orbit. Earth's 23.4° gives us seasons. Uranus's 98° means it rolls along its orbit on its side. The tilt also sets where the sun rises and sets at landing sites — critical for solar-power planning.",
+  "cur": "Угол между осью вращения тела и перпендикуляром к его орбите. Наклон Земли 23,4° даёт нам смену времён года. Наклон Урана 98° означает, что он катится вдоль орбиты на боку. Наклон также определяет, где восходит и заходит солнце в местах посадки — критично для планирования солнечного питания."
+ },
+ {
+  "rel": "messages",
+  "at": "why_caveat_reconstructed_body",
+  "en": "Public flight records vary by mission. RECONSTRUCTED means we synthesised numbers from secondary sources (trajectory papers, agency press kits, peer-reviewed reanalysis). They're our best honest estimate, not raw telemetry.",
+  "cur": "Публичные полётные данные различаются по миссиям. РЕКОНСТРУИРОВАНО означает, что мы синтезировали числа из вторичных источников (статьи о траекториях, пресс-киты агентств, рецензируемые переанализы). Это наша наилучшая честная оценка, а не исходная телеметрия."
+ },
+ {
+  "rel": "messages",
+  "at": "why_caveat_sparse_body",
+  "en": "Some agencies released only partial flight data. SPARSE flags missions where headline numbers exist but key parameters (like mid-cruise speeds or per-burn ∆v) were never made public.",
+  "cur": "Некоторые агентства опубликовали лишь частичные полётные данные. SPARSE отмечает миссии, где основные цифры существуют, но ключевые параметры (такие как скорость в середине полёта или ∆v отдельных манёвров) никогда не публиковались."
+ },
+ {
+  "rel": "messages",
+  "at": "why_caveat_unknown_body",
+  "en": "We haven't yet researched flight data for this mission. The mission is real and historically documented, but the structured numbers used for visualisations aren't sourced yet.",
+  "cur": "Мы ещё не исследовали полётные данные для этой миссии. Миссия реальна и исторически документирована, но структурированные числа для визуализаций пока не получены."
+ },
+ {
+  "rel": "messages",
+  "at": "why_dla_body",
+  "en": "DLA is the latitude of the spacecraft's outbound velocity vector relative to Earth's equator. It constrains which launch sites can reach the trajectory: a high-latitude DLA needs a high-inclination launch and costs ∆v.",
+  "cur": "DLA — это широта вектора исходящей скорости аппарата относительно экватора Земли. Она ограничивает, какие стартовые площадки могут достичь траектории: высокоширотная DLA требует запуска с большим наклонением и стоит ∆v."
+ },
+ {
+  "rel": "messages",
+  "at": "why_dla_title",
+  "en": "Why declination of launch asymptote (DLA)?",
+  "cur": "Почему отклонение запуска асимптота (DLA)?"
+ },
+ {
+  "rel": "messages",
+  "at": "why_dv_required_body",
+  "en": "The number adds three pieces: the launch energy needed to escape Earth (C3), the cruise burns to shape the transfer ellipse, and the orbit-insertion burn at arrival (zero for a flyby). Cells in the cheap teal lobe sit near a Hohmann minimum; ridges flag synodic gaps where physics makes you wait or pay.",
+  "cur": "Число складывается из трёх частей: энергия запуска для ухода с Земли (C3), крейсерские манёвры для формирования переходного эллипса и манёвр выхода на орбиту при прибытии (ноль для пролёта). Ячейки в дешёвой бирюзовой области лежат вблизи минимума Hohmann; гребни отмечают синодические разрывы, где физика заставляет ждать или платить."
+ },
+ {
+  "rel": "messages",
+  "at": "why_earth_altitude_body",
+  "en": "Altitude bands (LEO ≤ 2 000 km, MEO ≤ 35 786, GEO at 35 786, HEO above) trade off ground resolution, coverage, communication latency, and launch cost. Operators pick altitude to match the mission — imaging wants low, GPS wants medium, broadcast wants geosynchronous.",
+  "cur": "Высотные диапазоны (LEO ≤ 2 000 км, MEO ≤ 35 786, GEO на 35 786, HEO выше) соотносят разрешение съёмки, зону покрытия, задержку связи и стоимость запуска. Операторы выбирают высоту под миссию — съёмка требует низкой, GPS — средней, трансляция — геосинхронной."
+ },
+ {
+  "rel": "messages",
+  "at": "why_earth_inclination_body",
+  "en": "Inclination is the orbit's tilt versus Earth's equator. 0° (equatorial) is cheap from low-latitude launch sites; 51.6° (ISS) is the lowest inclination Russian launches reach without flying over populated areas; ~98° (sun-synchronous) keeps the same lighting for imaging. It's a constraint, not a choice.",
+  "cur": "Наклонение — это угол наклона орбиты к экватору Земли. 0° (экваториальная) дешева при запуске с низких широт; 51,6° (МКС) — минимальное наклонение, которого достигают российские запуски без пролёта над населёнными районами; ~98° (солнечно-синхронная) обеспечивает одинаковое освещение для съёмки. Это ограничение, а не выбор."
+ },
+ {
+  "rel": "messages",
+  "at": "why_earth_period_body",
+  "en": "Period and altitude are locked together by Kepler's third law. LEO satellites complete a lap every ~90 minutes, MEO every ~12 hours, GEO every 24 hours (matching Earth's rotation). The period decides how often the satellite passes a given ground point.",
+  "cur": "Период и высота связаны между собой третьим законом Кеплера. Спутники на НОО завершают оборот примерно за ~90 минут, на СОО примерно за ~12 часов, на ГСО за 24 часа (совпадая с вращением Земли). Период определяет, как часто спутник проходит над данной точкой на земной поверхности."
+ },
+ {
+  "rel": "messages",
+  "at": "why_eccentricity_body",
+  "en": "How squashed the ellipse is. e=0 is a perfect circle; e→1 is a knife-edge ellipse. High eccentricity means big swings in distance and speed between perihelion (close, fast) and aphelion (far, slow) — the orbit feels lopsided.",
+  "cur": "Насколько сплюснут эллипс. e=0 — идеальная окружность; e→1 — острый эллипс. Высокий эксцентриситет означает большие колебания расстояния и скорости между перигелием (близко, быстро) и афелием (далеко, медленно) — орбита кажется несимметричной."
+ },
+ {
+  "rel": "messages",
+  "at": "why_entry_velocity_body",
+  "en": "The speed the vehicle hits the destination's atmosphere at, after gravitational pull has accelerated it. Sets the heat-shield design — every km/s extra means dramatically more heating during entry, descent, and landing.",
+  "cur": "Скорость, с которой аппарат входит в атмосферу назначения после разгона гравитацией. Определяет конструкцию теплозащитного экрана — каждый дополнительный км/с означает драматически большее нагревание при входе, спуске и посадке."
+ },
+ {
+  "rel": "messages",
+  "at": "why_eva_time_body",
+  "en": "Extravehicular activity (EVA) is the highest-risk, highest-reward portion of a crewed mission. Suit consumables, micrometeoroid exposure, and CO₂ scrubbing limits cap each EVA at about 8 hours. Total EVA time on a mission is the real measure of how much surface science got done.",
+  "cur": "Внекорабельная деятельность (ВКД) — самая рискованная и самая результативная часть пилотируемой миссии. Расход скафандра, риск микрометеоритов и пределы поглощения CO₂ ограничивают каждую ВКД примерно 8 часами. Суммарное время ВКД в миссии — реальный показатель объёма выполненной работы на поверхности."
+ },
+ {
+  "rel": "messages",
+  "at": "why_inclination_body",
+  "en": "The orbit's tilt versus the reference plane (ecliptic for heliocentric orbits, equator for Earth orbits). High-inclination orbits cost more ∆v to reach but unlock unique geometries — polar imaging, sun-synchronous lighting, north-south coverage.",
+  "cur": "Наклон орбиты относительно опорной плоскости (эклиптики для гелиоцентрических орбит, экватора для околоземных орбит). Орбиты с большим наклонением стоят больше ∆v, но открывают уникальные геометрии — полярная съёмка, солнечно-синхронное освещение, покрытие север-юг."
+ },
+ {
+  "rel": "messages",
+  "at": "why_landing_site_body",
+  "en": "Landing sites are a tradeoff: equatorial latitudes are cheap and warm but low-information; polar sites preserve volatiles (water ice in permanently shadowed craters) and are scientifically rich but costly. Specific coordinates target a geological feature — a crater rim, an ancient lakebed, a fresh impact site.",
+  "cur": "Место посадки — компромисс: экваториальные широты дешевы и тёплы, но малоинформативны; полярные районы сохраняют летучие вещества (водяной лёд в постоянно затенённых кратерах) и научно ценны, но дороги. Точные координаты нацелены на геологический объект — край кратера, древнее озеро, свежий ударный кратер."
+ },
+ {
+  "rel": "messages",
+  "at": "why_mass_tli_body",
+  "en": "The wet mass right after the trans-X injection burn drives every downstream calculation: cruise ∆v budget, structural loads, even the entry mass for landers. Two missions can have similar payloads but very different masses at TLI depending on staging.",
+  "cur": "Заправленная масса сразу после манёвра транс-X определяет все последующие расчёты: бюджет ∆v на крейсерском участке, структурные нагрузки, даже массу входа для посадочных аппаратов. Две миссии могут иметь схожую полезную нагрузку, но очень разную массу на TLI в зависимости от ступенчатости."
+ },
+ {
+  "rel": "messages",
+  "at": "why_mean_velocity_body",
+  "en": "The average orbital speed. Closer-in bodies move fast (Mercury averages 47 km/s); outer bodies crawl (Neptune averages 5.4 km/s). Vis-viva ties velocity to position on the ellipse — perihelion is fast, aphelion is slow.",
+  "cur": "Средняя орбитальная скорость. Близкие тела движутся быстро (Меркурий в среднем 47 км/с); внешние ползут (Нептун в среднем 5,4 км/с). Vis-viva связывает скорость с положением на эллипсе — в перигелии быстро, в афелии медленно."
+ },
+ {
+  "rel": "messages",
+  "at": "why_module_length_body",
+  "en": "Module length is constrained by the rocket's payload fairing — the aerodynamic nose cone that protects the module during launch. Falcon 9's fairing is 13.2 m tall; Long March 5B's is 20 m. Modules longer than the fairing simply can't fly on that rocket.",
+  "cur": "Длину модуля ограничивает обтекатель ракеты — аэродинамический обтекатель-конус, защищающий модуль при запуске. Обтекатель Falcon 9 имеет высоту 13,2 м; Long March 5B — 20 м. Модули, длиннее чем обтекатель, просто не смогут полететь на этой ракете."
+ },
+ {
+  "rel": "messages",
+  "at": "why_module_mass_body",
+  "en": "Mass to LEO is the unforgiving currency of station construction. Every kilogram needs ~9.4 km/s of ∆v to reach orbit; that drives launch-vehicle choice and dictates which modules can fly together. Big modules (Zarya, Tianhe) need heavy-lift; small ones can hitch on cargo flights.",
+  "cur": "Масса на НОО — жёсткая валюта строительства станций. Каждый килограмм требует ~9,4 км/с ∆v для выхода на орбиту; это определяет выбор ракеты-носителя и решает, какие модули можно запускать вместе. Крупные модули (Zarya, Tianhe) требуют тяжёлых носителей; малые могут лететь с грузовыми кораблями."
+ },
+ {
+  "rel": "messages",
+  "at": "why_orbital_period_body",
+  "en": "How long one full lap around the Sun (or parent body) takes. Tied to semi-major axis by Kepler's third law: P² ∝ a³. The further out, the slower; Neptune's year is 165 Earth years.",
+  "cur": "Время полного оборота вокруг Солнца (или родительского тела). Связан с большой полуосью третьим законом Кеплера: P² ∝ a³. Чем дальше, тем медленнее; год Нептуна — 165 земных лет."
+ },
+ {
+  "rel": "messages",
+  "at": "why_peak_speed_body",
+  "en": "The fastest the spacecraft moves in the Sun's frame during cruise — usually right after the trans-X injection burn or near perihelion of the transfer arc. Tells you the kinetic energy budget the vehicle is working with.",
+  "cur": "Максимальная скорость аппарата в системе отсчёта Солнца во время полёта — обычно сразу после манёвра транс-X или вблизи перигелия переходной дуги. Показывает бюджет кинетической энергии, с которым работает аппарат."
+ },
+ {
+  "rel": "messages",
+  "at": "why_periapsis_body",
+  "en": "The orbit's closest point to the destination after insertion. Low periapsis = closer to the planet (better imaging, more drag) but more atmospheric heating; high periapsis = wider orbit, less heating, more fuel needed to get there.",
+  "cur": "Ближайшая к планете точка орбиты после вывода. Низкий периапсис = ближе к планете (лучше съёмка, больше торможение) но больше атмосферный нагрев; высокий периапсис = более широкая орбита, меньше нагрев, больше топлива нужно для достижения."
+ },
+ {
+  "rel": "messages",
+  "at": "why_perihelion_body",
+  "en": "The closest point of the orbit to the Sun (or whatever the orbit is around). The fastest point — vis-viva: small r → large v. For comets, perihelion is when the show happens; for spacecraft, it's the cheapest place to do an Oberth burn.",
+  "cur": "Ближайшая к Солнцу (или вокруг чего вращается орбита) точка орбиты. Самая быстрая точка — vis-viva: малое r → большое v. Для комет перигелий — это когда начинается шоу; для аппаратов — самое дешёвое место для манёвра Оберта."
+ },
+ {
+  "rel": "messages",
+  "at": "why_samples_body",
+  "en": "Returned samples can be analysed with mass spectrometers, electron microscopes, isotope dating — instruments that are too big or power-hungry to fly. Apollo brought back 382 kg; Chang'e 5 brought 1.7 kg of younger near-side regolith (Oceanus Procellarum). Each kilogram unlocks decades of follow-up science.",
+  "cur": "Возвращённые образцы можно анализировать с помощью масс-спектрометров, электронных микроскопов, методов изотопного датирования — приборов, которые слишком велики или энергоёмки для доставки в космос. Apollo привезла 382 кг; Chang'e 5 доставила 1,7 кг молодого реголита с ближней стороны (Океан Бурь). Каждый килограмм открывает десятилетия дальнейших научных исследований."
+ },
+ {
+  "rel": "messages",
+  "at": "why_semi_major_axis_body",
+  "en": "Half the long axis of an elliptical orbit — the single most important orbit parameter. Pins the average distance from the Sun and (via Kepler's third law) the orbital period. If you only know one number about an orbit, you want this one.",
+  "cur": "Половина большой оси эллиптической орбиты — важнейший орбитальный параметр. Определяет среднее расстояние от Солнца и (через третий закон Кеплера) орбитальный период. Если об орбите известно только одно число, вы хотите знать именно это."
+ },
+ {
+  "rel": "messages",
+  "at": "why_solar_mass_body",
+  "en": "Mass sets gravity, gravity sets every orbit. The Sun is 333,000× Earth's mass and dominates the solar system; that one number, with Kepler's laws, predicts where every planet is at every moment.",
+  "cur": "Масса определяет гравитацию, гравитация определяет каждую орбиту. Солнце в 333 000 раз массивнее Земли и доминирует в Солнечной системе; это одно число вместе с законами Кеплера предсказывает, где каждая планета находится в каждый момент."
+ },
+ {
+  "rel": "messages",
+  "at": "why_station_altitude_body",
+  "en": "Both stations sit in low Earth orbit, ~400 km up. Below ~330 km atmospheric drag eats orbital energy faster than the visiting cargo ships can re-boost. Above ~500 km the inner Van Allen radiation belt starts to bite, and crewed-vehicle range drops. The 350-450 km band is the sweet spot.",
+  "cur": "Обе станции находятся на низкой околоземной орбите, ~400 км. Ниже ~330 км атмосферное торможение съедает орбитальную энергию быстрее, чем грузовые корабли могут компенсировать довыведением. Выше ~500 км начинается внутренний радиационный пояс Van Allen, и запас хода пилотируемых кораблей падает. Диапазон 350–450 км — оптимум."
+ },
+ {
+  "rel": "messages",
+  "at": "why_station_inclination_body",
+  "en": "Inclination is set by the launch site, not designer preference. ISS at 51.6° is the lowest inclination Russian Soyuz launches can reach without dropping spent stages on populated land. Tiangong at 41.5° is reachable from Wenchang in southern China without overflying populated areas. Each choice trades launch ∆v for ground-coverage range.",
+  "cur": "Наклонение задаётся космодромом, а не выбором проектировщика. 51,6° для МКС — минимальное наклонение, которого достигают российские запуски «Союзов» без падения отработавших ступеней на населённые районы. 41,5° для Tiangong достижимо с Вэньчана на юге Китая без пролёта над населёнными районами. Каждый выбор обменивает стартовую ∆v на диапазон покрытия поверхности."
+ },
+ {
+  "rel": "messages",
+  "at": "why_station_period_body",
+  "en": "Kepler's third law: at ~400 km the period is locked at about 92 minutes. That's 16 sunrises and 16 sunsets per crew day — the body's circadian rhythm gets hammered, which is why crews live on synthetic 24-hour Mission Time set to UTC.",
+  "cur": "Третий закон Кеплера: на ~400 км период жёстко зафиксирован на ~92 минутах. Это 16 восходов и 16 закатов за экипажные сутки — циркадный ритм организма разрушается, поэтому экипажи живут по синтетическим 24-часовым суткам полётного времени, привязанным к UTC."
+ },
+ {
+  "rel": "messages",
+  "at": "why_station_sunrises_body",
+  "en": "92-minute orbits × 24 hours = 15.6 laps per day, each crossing the day/night terminator twice. Crews see roughly 16 sunrises and 16 sunsets daily. The cabin uses scheduled lighting that follows UTC so circadian rhythm doesn't desynchronise.",
+  "cur": "92-минутные витки × 24 часа = 15,6 витков в сутки, каждый дважды пересекает терминатор день/ночь. Экипажи видят примерно 16 восходов и 16 закатов ежедневно. В каютах используется запрограммированное освещение по UTC, чтобы циркадный ритм не рассинхронизировался."
+ },
+ {
+  "rel": "messages",
+  "at": "why_surface_time_body",
+  "en": "Surface duration is bounded by power (solar charge or RTG), thermal cycling, and crew life-support consumables. Apollo's lunar-day window was about 3 Earth days; Mars rovers ride out years on RTG; static landers usually fail when their batteries drop below freezing.",
+  "cur": "Длительность пребывания на поверхности ограничена энергией (солнечной зарядкой или РИТЭГ), температурными циклами и расходом систем жизнеобеспечения экипажа. Лунное окно Apollo составляло около 3 земных суток; марсоходы на РИТЭГ работают годами; стационарные посадочные модули обычно отказывают, когда их батареи замерзают."
+ },
+ {
+  "rel": "messages",
+  "at": "worlds_hub_intro",
+  "en": "The worlds you can stand on — each built from real data, close enough to look around. Drop onto a surface, trace a rover's path, watch the terminator move.",
+  "cur": "Миры, на которых можно стоять — каждый построен из реальных данных, достаточно близко, чтобы осмотреться. Приземлитесь на поверхность, отследите путь ровера, наблюдайте движение терминатора."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_land_earth_desc",
+  "en": "Getting down is its own problem — and it comes in strict order: leave orbit, survive the heat, thread the entry corridor, and only THEN does a parachute matter. Trade speed for heat, then heat for a soft touchdown, and see why coming home is harder than leaving.",
+  "cur": "Снижение — это отдельная задача, и она идёт в строгом порядке: покинуть орбиту, пережить нагрев, пройти коридор входа, и только ПОТОМ парашют имеет значение. Обменивайте скорость на нагрев, затем нагрев на мягкую посадку, и поймите, почему возвращение домой сложнее, чем отправление."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_loe_capsule",
+  "en": "A bare capsule falling through Earth's thick air keeps accelerating until drag balances its weight — its terminal velocity. For a 2-tonne capsule that's about 46 m/s: survivable in principle, but a bone-jarring hit.",
+  "cur": "Голая капсула, падая сквозь плотный воздух Земли, продолжает ускоряться, пока сопротивление не уравновесит её вес — это её конечная скорость. Для 2-тонной капсулы это около 46 м/с: в принципе выживаемо, но удар костедробительный."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_loe_parachute",
+  "en": "Open a parachute and you multiply the drag area many times over. The same capsule now settles to roughly 10 m/s — slow enough that a splashdown or a crushable seat can soak up the rest.",
+  "cur": "Раскройте парашют — и вы многократно увеличиваете площадь сопротивления. Та же капсула теперь снижается примерно до 10 м/с — достаточно медленно, чтобы приводнение или сминаемое кресло погасили остаток."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_loe_verdict",
+  "en": "Is 10 m/s soft enough to walk away from? That depends on HOW you land: splashing into the ocean or crushing a seat can absorb about 12 m/s, so on Earth — yes. The dense air did almost all the braking for free, and a forgiving landing medium finishes the job. Remember this number: the identical capsule reaches Mars at ~50 m/s — too fast for any seat or airbag, which is why you will watch it fail — and gets no braking at all on the airless Moon.",
+  "cur": "Достаточно ли 10 м/с, чтобы уцелеть? Это зависит от того, КАК вы садитесь: приводнение в океан или деформируемое кресло могут поглотить около 12 м/с, так что на Земле — да. Плотная атмосфера бесплатно взяла на себя почти всё торможение, а мягкая среда приземления довершила дело. Запомните это число: та же самая капсула достигает Марса на ~50 м/с — слишком быстро для любого кресла или подушки безопасности, поэтому вы увидите, как она разбивается, — а на безвоздушной Луне торможения нет вовсе."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lar_why",
+  "en": "Why do rockets launch near the equator? Earth's own spin gives you a free head-start, and it's fastest at the equator (it falls off with the cosine of your latitude). Europe flies from Kourou at just 5° north to bank the biggest boost; Baikonur at 46° gives up nearly a third of it. That invisible speed is worth real fuel — and less fuel means a smaller rocket.",
+  "cur": "Почему ракеты запускают ближе к экватору? Собственное вращение Земли даёт бесплатную фору, и она максимальна на экваторе (убывает по косинусу широты). Европа летает из Куру всего в 5° к северу, чтобы взять наибольший прирост; Байконур на 46° теряет почти треть его. Эта невидимая скорость стоит реального топлива — а меньше топлива значит меньше ракета."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lar_hook",
+  "en": "Newton's cannonball: picture firing a cannon from a mountaintop, harder and harder. Eventually the ground curves away as fast as the ball drops, and it never lands. That 'falling forever' is exactly what an orbit is — and it's the very next lesson.",
+  "cur": "Ядро Ньютона: представьте пушку на вершине горы, стреляющую всё сильнее и сильнее. В какой-то момент земля уходит вниз так же быстро, как падает ядро, и оно никогда не приземляется. Это «вечное падение» и есть орбита — и это как раз следующий урок."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lar_kourou",
+  "en": "Kourou (5°N) — Europe's equatorial spaceport",
+  "cur": "Куру (5° с.ш.) — европейский экваториальный космодром"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lar_cape",
+  "en": "Cape Canaveral (28°N) — the US east-coast range",
+  "cur": "Мыс Канаверал (28° с.ш.) — полигон на восточном побережье США"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lar_wenchang",
+  "en": "Wenchang (19°N) — China's low-latitude coastal pad",
+  "cur": "Вэньчан (19° с.ш.) — прибрежная низкоширотная площадка Китая"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lar_vostok1",
+  "en": "Vostok 1 — Gagarin, the first human to orbit",
+  "cur": "Vostok 1 — Гагарин, первый человек на орбите"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_loe_why",
+  "en": "Earth's atmosphere is dense — about 60 times thicker than Mars's — so a parachute alone can bring a returning crew down to a gentle speed. The only 'extra' is how you spend the last few metres per second: splash into the ocean (Apollo, Dragon) or fire small braking rockets a metre above the ground (Soyuz, Shenzhou).",
+  "cur": "Атмосфера Земли плотная — примерно в 60 раз плотнее марсианской — поэтому один лишь парашют может снизить возвращающийся экипаж до мягкой скорости. Единственное «дополнение» — как вы тратите последние несколько метров в секунду: приводнение в океан (Apollo, Dragon) или включение малых тормозных двигателей в метре над землёй (Soyuz, Shenzhou)."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_loe_hook",
+  "en": "The earliest spaceflights were exactly this arc — up on a rocket, down under a canopy. Gagarin even ejected and parachuted separately from his Vostok capsule; Shepard and Glenn splashed into the sea.",
+  "cur": "Самые первые космические полёты были именно такой дугой — вверх на ракете, вниз под куполом. Гагарин даже катапультировался и приземлялся на парашюте отдельно от капсулы Vostok; Шепард и Гленн приводнялись в море."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_loe_next",
+  "en": "Next: reach the Moon — where there's no air to catch you at all.",
+  "cur": "Далее: добраться до Луны — где воздуха, который бы вас подхватил, нет вовсе."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_loe_vostok1",
+  "en": "Vostok 1 — Gagarin rides up and parachutes home",
+  "cur": "Vostok 1 — Гагарин поднимается вверх и спускается на парашюте"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_loe_freedom7",
+  "en": "Freedom 7 — Shepard, the first American in space",
+  "cur": "Freedom 7 — Шепард, первый американец в космосе"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_loe_friendship7",
+  "en": "Friendship 7 — Glenn, the first American to orbit",
+  "cur": "Friendship 7 — Гленн, первый американец на орбите"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_loe_dragon",
+  "en": "Crew Dragon — splashes down under four parachutes",
+  "cur": "Crew Dragon — приводняется на четырёх парашютах"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_loe_soyuz",
+  "en": "Soyuz — fires retro-rockets a metre above the steppe",
+  "cur": "Союз — включает двигатели мягкой посадки в метре над степью"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_loe_falcon9",
+  "en": "Falcon 9 — the booster flips it around and lands on its engines",
+  "cur": "Falcon 9 — ускоритель разворачивается и садится на двигатели"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_motion_why",
+  "en": "Every trajectory is the same two ideas at once: gravity pulling down while something coasts sideways. A thrown ball, an artillery shell and a spacecraft all obey it — only the speed is different.",
+  "cur": "Любая траектория — это две идеи сразу: гравитация тянет вниз, а тело по инерции движется вбок. Брошенный мяч, артиллерийский снаряд и космический аппарат подчиняются одному закону — различается лишь скорость."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_motion_hook",
+  "en": "Newton's cannonball again: a slow lob falls back to Earth (a suborbital hop), but fire it at about 7.9 km/s and it falls all the way around the planet. Shepard flew the lob; Gagarin flew the full circle.",
+  "cur": "Снова ядро Ньютона: медленный бросок падает обратно на Землю (суборбитальный прыжок), но выстрели со скоростью около 7,9 км/с — и оно будет падать вокруг всей планеты. Шепард совершил бросок, Гагарин — полный круг."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_motion_freedom7",
+  "en": "Freedom 7 — a suborbital lob, the cannonball that comes back down",
+  "cur": "Freedom 7 — суборбитальный бросок, ядро, что падает обратно"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_motion_vostok1",
+  "en": "Vostok 1 — the cannonball fast enough to circle the Earth",
+  "cur": "Vostok 1 — ядро, достаточно быстрое, чтобы обогнуть Землю"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_rtm_why",
+  "en": "You don't fly straight at the Moon — you coast along an ellipse that just grazes its orbit and let the Moon's gravity catch you. It's the cheapest path there, and it takes about three days.",
+  "cur": "К Луне летят не по прямой — движутся по эллипсу, который лишь касается её орбиты, и позволяют гравитации Луны поймать себя. Это самый дешёвый путь туда, и занимает он около трёх дней."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_rtm_hook",
+  "en": "Apollo 13 turned that same ellipse into a lifeboat: with the ship crippled, the crew looped once around the Moon on a 'free-return' trajectory the geometry handed them for nothing, and rode it home.",
+  "cur": "Apollo 13 превратил тот же эллипс в спасательную шлюпку: с повреждённым кораблём экипаж один раз облетел Луну по траектории «свободного возврата», которую геометрия подарила даром, и вернулся домой."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_rtm_apollo11",
+  "en": "Apollo 11 — the first crewed transfer to the Moon",
+  "cur": "Apollo 11 — первый пилотируемый перелёт к Луне"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_rtm_apollo13",
+  "en": "Apollo 13 — the free-return that brought the crew home",
+  "cur": "Apollo 13 — свободный возврат, вернувший экипаж домой"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_rtm_chandrayaan1",
+  "en": "Chandrayaan-1 — India's first mission to the Moon",
+  "cur": "Chandrayaan-1 — первая миссия Индии к Луне"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_rtm_saturn",
+  "en": "Saturn V — the rocket that threw Apollo at the Moon",
+  "cur": "Saturn V — ракета, забросившая Apollo к Луне"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_rtm_csm",
+  "en": "Apollo Command/Service Module — the crew's ship",
+  "cur": "Apollo Command/Service Module — корабль экипажа"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_ltm_why",
+  "en": "The Moon has no atmosphere, so a parachute does nothing — the only way down is to fire an engine and cancel your entire orbital speed, fighting gravity the whole way. Thrust has to beat weight or you crash. This is the pure case; Mars will hand some of that braking back to the air.",
+  "cur": "У Луны нет атмосферы, поэтому парашют бесполезен — единственный путь вниз — включить двигатель и погасить всю орбитальную скорость, всё время борясь с гравитацией. Тяга должна превзойти вес, иначе разобьёшься. Это чистый случай; на Марсе часть торможения возьмёт на себя воздух."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_ltm_hook",
+  "en": "The margin is brutal: Apollo 11 touched down with about 25 seconds of fuel to spare. Luna 25 (2023) and Israel's Beresheet (2019) got the burn wrong and hit the surface.",
+  "cur": "Запас безжалостен: Apollo 11 сел, имея в запасе около 25 секунд топлива. Luna 25 (2023) и израильский Beresheet (2019) ошиблись с торможением и разбились о поверхность."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_ltm_apollo_lm",
+  "en": "Apollo Lunar Module — the first crewed lander",
+  "cur": "Лунный модуль Apollo — первый пилотируемый посадочный аппарат"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_ltm_apollo11",
+  "en": "Tranquility Base — where Apollo 11 set down",
+  "cur": "База Спокойствия — место посадки Apollo 11"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_ltm_luna9",
+  "en": "Luna 9 — the first-ever soft landing on another world (USSR)",
+  "cur": "Luna 9 — первая в истории мягкая посадка на другое небесное тело (СССР)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_ltm_change4",
+  "en": "Chang'e 4 — the first landing on the lunar far side (China)",
+  "cur": "Chang'e 4 — первая посадка на обратную сторону Луны (Китай)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_ltm_chandrayaan3",
+  "en": "Chandrayaan-3 — the first landing near the south pole (India)",
+  "cur": "Chandrayaan-3 — первая посадка у южного полюса (Индия)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_ltm_beresheet",
+  "en": "Beresheet — how close a privately-built lander came (Israel)",
+  "cur": "Beresheet — как близко подошёл частный посадочный аппарат (Израиль)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_gtm_why",
+  "en": "The same coasting ellipse, one frame further out: now everything orbits the Sun. The hard part is timing — Earth and Mars only line up for the cheap transfer about every 26 months, so you launch in a narrow window or wait two years for the next.",
+  "cur": "Тот же баллистический эллипс, но на кадр дальше: теперь всё обращается вокруг Солнца. Сложность в тайминге — Земля и Марс выстраиваются для дешёвого перелёта примерно раз в 26 месяцев, поэтому либо стартуешь в узком окне, либо ждёшь следующего два года."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_gtm_hook",
+  "en": "That's why 2020 launched a convoy: NASA's Perseverance, China's Tianwen-1 and the UAE's Hope all left within eleven days of each other. The window opened for everyone at once.",
+  "cur": "Вот почему в 2020 году запустили конвой: Perseverance NASA, Tianwen-1 Китая и Hope ОАЭ стартовали в течение одиннадцати дней друг от друга. Окно открылось для всех одновременно."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_gtm_tianwen1",
+  "en": "Tianwen-1 — China's orbiter, lander and rover together",
+  "cur": "Tianwen-1 — китайские орбитальный аппарат, посадочный модуль и марсоход разом"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_gtm_hope",
+  "en": "Hope — the UAE's first interplanetary mission",
+  "cur": "Hope — первая межпланетная миссия ОАЭ"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_gtm_mangalyaan",
+  "en": "Mangalyaan — India reaches Mars on its first try",
+  "cur": "Mangalyaan — Индия достигает Марса с первой попытки"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_gtm_mars_express",
+  "en": "Mars Express — Europe's long-lived orbiter",
+  "cur": "Mars Express — европейский орбитальный долгожитель"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_gtm_odyssey",
+  "en": "Mars Odyssey — NASA's longest-serving Mars orbiter",
+  "cur": "Mars Odyssey — самый долгоживущий марсианский орбитальный аппарат NASA"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_gtm_atlas",
+  "en": "Atlas V — the workhorse that launched many Mars missions",
+  "cur": "Atlas V — рабочая лошадка, запустившая множество миссий к Марсу"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_gtm_planning",
+  "en": "Plan your own transfer — the mission configurator",
+  "cur": "Спланируйте собственный перелёт — конфигуратор миссии"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lom_why",
+  "en": "Mars air is thin — roughly 1/60 of Earth’s. A parachute helps but still leaves you at around 50 m/s, far too fast to survive. So every Mars lander adds power: airbags to bounce the light ones down, a retro-rocket or a sky-crane to lower the heavy ones. The right method depends on the mass.",
+  "cur": "Атмосфера Марса разреженная — примерно 1/60 земной. Парашют помогает, но всё равно оставляет скорость около 50 м/с, слишком много для выживания. Поэтому каждый марсианский аппарат добавляет мощность: подушки безопасности, чтобы «отскочить» лёгкими, тормозной двигатель или «небесный кран» для мягкого спуска тяжёлых. Метод зависит от массы."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lom_hook",
+  "en": "'Seven minutes of terror': the whole entry, descent and landing is over faster than a radio signal can even reach Earth to say it started. Mars 3 (1971), Beagle 2 and Schiaparelli all show how easily it ends in silence.",
+  "cur": "«Семь минут страха»: вся фаза входа, снижения и посадки протекает быстрее, чем радиосигнал может даже достичь Земли, чтобы сообщить, что всё началось. Mars 3 (1971), Beagle 2 и Schiaparelli наглядно показывают, как легко всё может закончиться молчанием."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lom_pathfinder",
+  "en": "Mars Pathfinder — bounced down on airbags (NASA)",
+  "cur": "Mars Pathfinder — приземлился на подушках безопасности (NASA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lom_opportunity",
+  "en": "Opportunity — airbags again, then 14 years of driving (NASA)",
+  "cur": "Opportunity — снова подушки, затем 14 лет пути (NASA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lom_curiosity",
+  "en": "Curiosity — the first sky-crane landing (NASA)",
+  "cur": "Curiosity — первая посадка «небесным краном» (NASA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lom_perseverance",
+  "en": "Perseverance — sky-crane again, this time filmed live (NASA)",
+  "cur": "Perseverance — снова «небесный кран», на этот раз в прямом эфире (NASA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lom_viking1",
+  "en": "Viking 1 — parachute plus throttled retro-legs (NASA)",
+  "cur": "Viking 1 — парашют плюс тормозные двигатели с регулируемой тягой (NASA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lom_mars3",
+  "en": "Mars 3 — the first soft landing on Mars, lost after 20 s (USSR)",
+  "cur": "Mars 3 — первая мягкая посадка на Марс, потеряна через 20 с (СССР)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lom_schiaparelli",
+  "en": "Schiaparelli — the retro cut off early and it crashed (ESA)",
+  "cur": "Schiaparelli — тормозная двигательная установка отключилась слишком рано, аппарат разбился (ESA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lom_vikingcraft",
+  "en": "Viking 1 — the first spacecraft to land and work on Mars (NASA)",
+  "cur": "Viking 1 — первый аппарат, севший и работавший на Марсе (NASA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lom_persrover",
+  "en": "Perseverance — the sky-crane rover, as flight hardware (NASA)",
+  "cur": "Perseverance — марсоход с посадкой на «небесном кране», как лётное оборудование (NASA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lom_currover",
+  "en": "Curiosity — the first sky-crane landing, as flight hardware (NASA)",
+  "cur": "Curiosity — первая посадка на «небесном кране», как лётное оборудование (NASA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lot_why",
+  "en": "Huygens is still the most distant landing ever made — 1.2 billion kilometres from Earth, carried for seven years under Cassini's belly, then dropped alone into the haze. Its 2 h 27 min descent returned the first pictures from Titan's surface: rounded pebbles of water ice in a frozen river delta. One battery-powered probe, one small parachute, a whole new world.",
+  "cur": "Huygens остаётся самой далёкой посадкой из когда-либо совершённых — 1,2 миллиарда километров от Земли, доставлен семь лет под брюхом Cassini, затем выброшен один в дымку. Его спуск в течение 2 ч 27 мин вернул первые снимки с поверхности Титана: округлые льдистые галька в замёрзшей речной дельте. Один работающий на батарейке зонд, один маленький парашют, целый новый мир."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lot_hook",
+  "en": "Huygens transmitted from Titan's surface for over an hour — longer than its designers dared hope — until Cassini dipped below the horizon.",
+  "cur": "Huygens передавал данные с поверхности Титана более часа — дольше, чем осмеливались надеяться его конструкторы — до тех пор, пока Cassini не опустился ниже линии горизонта."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lot_huygens",
+  "en": "Huygens — the Titan descent, as a flight (ESA)",
+  "cur": "Huygens — спуск на Титан как полёт (ESA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lot_cassini",
+  "en": "Cassini — the seven-year ride to Saturn (NASA/ESA/ASI)",
+  "cur": "Кассини — семилетний полёт к Сатурну (NASA/ESA/ASI)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lot_explore",
+  "en": "See Saturn and Titan in the 3D solar system",
+  "cur": "Посмотри Сатурн и Титан в 3D модели Солнечной системы"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lot_next",
+  "en": "Next: the giant planets — entering a world with no surface at all.",
+  "cur": "Далее: газовые гиганты — вход в мир без поверхности вообще."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lov_why",
+  "en": "Eight Soviet Venera landers reached the surface and spoke between 1970 and 1982 — and to this day, every spacecraft that has landed on Venus and transmitted was Soviet. They proved the strangest EDL truth in the solar system: the hellish planet is the EASY one to land on. Its atmosphere is so dense that drag alone delivers a survivable touchdown; the engineering war is fought against 460 °C and 90 atmospheres instead.",
+  "cur": "Восемь советских посадочных аппаратов Venera достигли поверхности и передавали данные между 1970 и 1982 годами — и по сей день каждый космический аппарат, который приземлился на Венеру и передавал сигнал, был советским. Они доказали самую странную истину о входе, спуске и посадке в Солнечной системе: адский планета — это ЛЁГКАЯ цель для посадки. Её атмосфера настолько плотная, что одного аэродинамического торможения достаточно для мягкого приземления; инженерная борьба ведётся против 460 °C и 90 атмосфер вместо этого."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lov_hook",
+  "en": "Venera-13 sent back the first colour photographs of the Venusian surface — and lasted 127 minutes in the furnace, nearly four times its 32-minute design life.",
+  "cur": "Venera-13 передала первые цветные фотографии поверхности Венеры — и проработала 127 минут в пекле, почти в четыре раза дольше своего расчётного ресурса в 32 минуты."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lov_sevenmin",
+  "en": "Seven minutes — the essay on why landings are the hardest part",
+  "cur": "Семь минут — эссе о том, почему посадки — самая сложная часть"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lov_next",
+  "en": "Next: the descent ladder continues — Titan, the gas giants, and the micro-gravity worlds.",
+  "cur": "Далее: спуск продолжается — Титан, газовые гиганты и миры микрогравитации."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_escverd_err_insufficient",
+  "en": "Not enough — even with the assist you stay bound to the Sun.",
+  "cur": "Недостаточно — даже с манёвром вы остаётесь связаны с Солнцем."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_ignore_planet_well",
+  "en": "Heliocentric Δv only — excludes climbing out of the departure planet's gravity",
+  "cur": "Только гелиоцентрическая Δv — без учёта выхода из гравитационного поля планеты отправления"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_patched_conic",
+  "en": "Patched-conic flyby (an instantaneous encounter)",
+  "cur": "Пролёт по методу сопряжённых конических сечений (мгновенное сближение)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_ideal_deflection",
+  "en": "Ideal maximum deflection (an upper bound)",
+  "cur": "Идеальное максимальное отклонение (верхняя граница)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_leave_system_desc",
+  "en": "Beat the Sun's own gravity. Find escape velocity, borrow speed from the planets, and set a course that never comes back.",
+  "cur": "Победите гравитацию самого Солнца. Найдите вторую космическую скорость, займите скорость у планет и проложите курс без возврата."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lss_escape",
+  "en": "To leave the Sun for good you must reach its escape velocity. At Earth's distance — 1 AU — that is about 42 km/s. Drag the distance outward and watch it fall: escape is easier the further out you already are.",
+  "cur": "Чтобы навсегда покинуть Солнце, нужно достичь второй космической скорости для него. На расстоянии Земли — 1 а.е. — это около 42 км/с. Перетащите расстояние наружу и посмотрите, как она падает: чем дальше вы уже находитесь, тем легче вырваться."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lss_helio",
+  "en": "But you do not start from rest. A craft at Earth already circles the Sun at ~29.8 km/s, so the extra heliocentric speed you must gain is only 42 − 29.8 ≈ 12.3 km/s. That is the hyperbolic excess v∞ relative to Earth — how fast you must still be moving once Earth's pull has done its worst. Riding Earth's own 29.8 km/s, that is exactly enough to clear the Sun.",
+  "cur": "Но вы стартуете не из состояния покоя. Аппарат у Земли уже обращается вокруг Солнца со скоростью ~29,8 км/с, поэтому дополнительная гелиоцентрическая скорость, которую нужно набрать, составляет всего 42 − 29,8 ≈ 12,3 км/с. Это гиперболический избыток скорости v∞ относительно Земли — то, с какой скоростью вы должны продолжать двигаться после того, как притяжение Земли сделает своё дело. Используя собственные 29,8 км/с Земли, этого ровно достаточно, чтобы покинуть Солнце."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lss_assist",
+  "en": "So you cheat, with a gravity assist. Fly close past a planet and — in the Sun’s frame — its motion changes your speed, by up to twice your approach speed (a full 180° turn is the ceiling; real flybys turn less). And it cuts both ways: pass BEHIND the planet and it flings you forward, pass in FRONT and it slows you down — the same slingshot run backwards, which is how MESSENGER braked into Mercury and how Parker Solar Probe keeps falling toward the Sun. Jupiter, massive and fast, bends the hardest, which is why every outer-system probe flew past it.",
+  "cur": "Значит, вы хитрите — с помощью гравитационного манёвра. Пролетите близко мимо планеты, и — в системе отсчёта Солнца — её движение изменит вашу скорость, вплоть до удвоенной скорости сближения (полный разворот на 180° — это предел; реальные пролёты дают меньше). И это работает в обе стороны: пройдите ПОЗАДИ планеты — и она подбросит вас вперёд, пройдите ПЕРЕД ней — и она вас затормозит; тот же манёвр, но наоборот, именно так MESSENGER затормозил у Меркурия и так Parker Solar Probe продолжает падать к Солнцу. Юпитер, массивный и быстрый, изгибает траекторию сильнее всего — вот почему мимо него пролетали все зонды к внешней Солнечной системе."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lss_verdict",
+  "en": "Add it up in Δv from low orbit: a strong stage (~8.5 km/s) lands right on the ~8.7 line — the very biggest launches just clear it alone. A flyby supplies the margin and, more to the point, the extra speed to actually TOUR the outer planets instead of limping past escape. That is why Voyager took the slingshots.",
+  "cur": "Сложите Δv с низкой орбиты: мощный этап (~8,5 км/с) приземляется прямо на линию ~8,7 — лишь самые грандиозные запуски её преодолевают. Пролёт обеспечивает запас и, что важнее, дополнительную скорость, чтобы действительно ПОСЕТИТЬ внешние планеты вместо того, чтобы еле пройти точку убегания. Вот почему Voyager воспользовался гравитационными манёврами."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lss_why",
+  "en": "Leaving the Sun sits right at the edge of chemical rockets: from low orbit the Oberth effect makes solar escape cost only ~8.7 km/s, so the biggest launches (New Horizons) can just manage it on their own. But to reach the outer planets within a human lifetime — and to visit several in one mission — you need the speed a gravity assist adds. That is why the Grand-Tour probes all slingshot past Jupiter.",
+  "cur": "Покинуть Солнце — задача на самом пределе возможностей химических ракет: с низкой орбиты эффект Oberth делает солнечное убегание стоящим всего ~8,7 км/с, так что крупнейшие запуски (New Horizons) справляются с этим самостоятельно. Но чтобы достичь внешних планет в пределах человеческой жизни — и посетить несколько за одну миссию — нужна скорость, которую добавляет гравитационный манёвр. Именно поэтому все зонды Grand-Tour используют пращу у Юпитера."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lss_hook",
+  "en": "The Voyagers caught a once-in-176-year alignment of Jupiter, Saturn, Uranus and Neptune — the 'Grand Tour' — letting a single probe slingshot from world to world. Miss that window and it would not come round again until the 22nd century.",
+  "cur": "Аппараты Voyager застали выравнивание Юпитера, Сатурна, Урана и Нептуна, повторяющееся раз в 176 лет, — так называемый «Великий тур», — позволившее одному зонду по очереди совершать гравитационные манёвры у каждого мира. Упустишь это окно — и оно не повторится до XXII века."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lss_voyager1",
+  "en": "Voyager 1 — the most distant human-made object, now in interstellar space",
+  "cur": "Voyager 1 — самый удалённый созданный человеком объект, ныне в межзвёздном пространстве"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lss_voyager2",
+  "en": "Voyager 2 — the Grand Tour: Jupiter, Saturn, Uranus, Neptune",
+  "cur": "Voyager 2 — Большой тур: Юпитер, Сатурн, Уран, Нептун"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lss_pioneer10",
+  "en": "Pioneer 10 — the first craft flung past Jupiter to solar escape",
+  "cur": "Pioneer 10 — первый аппарат, запущенный пращой мимо Юпитера к солнечному убеганию"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lss_newhorizons",
+  "en": "New Horizons — a Jupiter assist on the way to Pluto and beyond",
+  "cur": "New Horizons — гравитационный манёвр у Юпитера на пути к Плутону и дальше"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lss_galileo",
+  "en": "Galileo — used Venus and Earth flybys to reach Jupiter",
+  "cur": "Galileo — использовал пролёты Венеры и Земли, чтобы достичь Юпитера"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lss_oberth",
+  "en": "Here is the twist that makes it possible: you do not buy that 12.3 km/s out in deep space. You burn from a low parking orbit, deep in Earth's gravity well where speed is cheap — the Oberth effect. From there the Δv to reach v∞ = 12.3 is only about 8.7 km/s, not 12.3. That is within a strong chemical upper stage — which is exactly how New Horizons launched straight onto a Sun-escaping path.",
+  "cur": "Вот в чём хитрость, которая это делает возможным: вы не приобретаете эти 12,3 км/с в глубоком космосе. Вы совершаете манёвр с низкой парковочной орбиты, глубоко в гравитационной яме Земли, где скорость дешевле — эффект Oberth. Оттуда Δv для достижения v∞ = 12,3 составляет всего около 8,7 км/с, а не 12,3. Это в пределах мощной химической верхней ступени — именно так New Horizons стартовал прямо на солнцеубежищную траекторию."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_impulsive_burn",
+  "en": "Impulsive burn (all Δv applied instantly at periapsis)",
+  "cur": "Импульсный манёвр (вся Δv прикладывается мгновенно в перицентре)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_scale_rocket_desc",
+  "en": "One engine or thirty? Add mass, add thrust, and let the thrust-to-weight ratio decide whether your rocket leaps off the pad or never leaves it.",
+  "cur": "Один двигатель или тридцать? Добавьте массу, добавьте тягу — и пусть тяговооружённость решит, спрыгнет ли ракета со стартового стола или никогда его не покинет."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_sar_size",
+  "en": "Launching asks for a Δv; building asks what that TAKES. The rocket equation, solved for mass, is brutal: to carry a payload you carry propellant, and to carry that propellant you carry structure, which needs yet more propellant. Every extra kilo of payload cascades. Watch the curve climb — and note the wall it runs into.",
+  "cur": "Запуск требует Δv; постройка спрашивает, чего это СТОИТ. Уравнение Циолковского, решённое относительно массы, беспощадно: чтобы нести полезную нагрузку, вы несёте топливо, а чтобы нести это топливо — конструкцию, которой нужно ещё больше топлива. Каждый лишний килограмм нагрузки нарастает лавиной. Смотрите, как кривая взлетает — и обратите внимание на стену, в которую она упирается."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_sar_thrust",
+  "en": "That whole stack has to leave the pad, so thrust must beat weight: F = TWR·m₀·g. Liftoff thrust-to-weight sits around 1.2–1.5 — too low and gravity eats your Δv while you crawl upward, too high and you shake the rocket apart.",
+  "cur": "Весь этот стек должен покинуть стартовый стол, поэтому тяга должна превзойти вес: F = TWR·m₀·g. Тяговооружённость при старте около 1,2–1,5 — слишком мала, и гравитация съедает ваше Δv, пока вы ползёте вверх; слишком велика, и ракету разносит на части."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_sar_engines",
+  "en": "That thrust comes from engines, and you rarely have one big enough: N = ⌈F ÷ thrust-per-engine⌉. This is why a Falcon 9 clusters nine Merlins, a Saturn V five giant F-1s, an Atlas V a single RD-180 — and why the Soviet N1 needed thirty, more than anyone could control.",
+  "cur": "Эта тяга создаётся двигателями, и редко бывает один достаточно мощный: N = ⌈F ÷ thrust-per-engine⌉. Поэтому Falcon 9 использует девять Merlin, Saturn V — пять гигантских F-1, Atlas V — один RD-180, а советский N1 требовал тридцать, больше, чем кто-либо мог контролировать."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_sar_stage",
+  "en": "Here is the wall from the first rung, named: a single stage caps at v_e·ln(1/ε) — about 8 km/s for a good stage, no matter how much fuel you pour in, because you must haul its empty structure the whole way. Orbit needs ~9.4. So you STAGE: drop the dead tank and the next stage starts fresh.",
+  "cur": "Вот та стена с первой ступеньки, теперь названная: одиночная ступень ограничена v_e·ln(1/ε) — около 8 км/с для хорошей ступени, сколько топлива ни лей, потому что вы тащите её пустую конструкцию весь путь. Для орбиты нужно ~9,4. Поэтому вы РАЗДЕЛЯЕТЕ на ступени: сбрасываете отработавший бак, и следующая ступень стартует с чистого листа."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_sar_boosters",
+  "en": "The other way to buy thrust is sideways. When a heavy payload leaves the core short of liftoff thrust, you strap on parallel boosters — Ariane 5’s two solids, Atlas V’s up to five, Falcon Heavy’s two side cores. Crank the payload up and watch how many you need.",
+  "cur": "Другой способ добавить тягу — вбок. Когда тяжёлая нагрузка оставляет центральный блок без нужной стартовой тяги, вы навешиваете параллельные ускорители — два твердотопливных у Ariane 5, до пяти у Atlas V, два боковых блока у Falcon Heavy. Увеличивайте нагрузку и смотрите, сколько их нужно."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sar_why",
+  "en": "A rocket is almost all fuel: only ~2–4% of the mass on the pad reaches orbit; the rest is propellant and structure you burn and throw away. That is why one payload can produce wildly different rockets — the designer trades engine count, staging and boosters against the exponential. Many small engines (Falcon 9’s nine Merlins) or a few giants (Saturn V’s five F-1s); one core plus solids (Atlas V, Ariane 5) or a stack of cores (Falcon Heavy).",
+  "cur": "Ракета почти вся состоит из топлива: лишь ~2–4% массы на старте достигает орбиты; остальное — топливо и конструкция, которые вы сжигаете и отбрасываете. Вот почему одна нагрузка может породить совершенно разные ракеты — конструктор балансирует число двигателей, ступени и ускорители против экспоненты. Много малых двигателей (девять Merlin у Falcon 9) или несколько гигантов (пять F-1 у Saturn V); один блок плюс твердотопливные ускорители (Atlas V, Ariane 5) или связка блоков (Falcon Heavy)."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sar_hook",
+  "en": "The Soviet N1 Moon rocket needed THIRTY first-stage engines and could not synchronise them — all four launches failed. Sixty years on, SpaceX’s Starship fires THIRTY-THREE Raptors and lands the booster: the same clustering bet the N1 lost, finally won with modern engines and avionics. More small engines, or fewer big ones, has been rocketry’s oldest argument.",
+  "cur": "Советской лунной ракете N1 требовалось ТРИДЦАТЬ двигателей первой ступени, но синхронизировать их не удалось — все четыре пуска закончились неудачей. Шестьдесят лет спустя Starship от SpaceX запускает ТРИДЦАТЬ ТРИ Raptor и сажает ускоритель: та самая ставка на связку, которую проиграла N1, наконец выиграна благодаря современным двигателям и авионике. Больше маленьких двигателей или меньше больших — старейший спор ракетостроения."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sar_falcon9",
+  "en": "Falcon 9 — nine Merlins clustered on the first stage",
+  "cur": "Falcon 9 — девять Merlin, объединённых на первой ступени"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sar_merlin",
+  "en": "Merlin — the ~845 kN engine you multiply by nine",
+  "cur": "Merlin — двигатель ~845 кН, который вы умножаете на девять"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sar_saturnv",
+  "en": "Saturn V — five F-1s, still the most thrust ever flown",
+  "cur": "Saturn V — пять F-1, до сих пор наибольшая летавшая тяга"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sar_f1",
+  "en": "F-1 — one engine at ~6.8 MN; five lifted Apollo",
+  "cur": "F-1 — один двигатель на ~6,8 МН; пять подняли Apollo"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sar_atlasv",
+  "en": "Atlas V — a single RD-180 core, plus 0–5 strap-on solids",
+  "cur": "Atlas V — единственный блок RD-180 плюс 0–5 навесных твердотопливных ускорителей"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sar_ariane5",
+  "en": "Ariane 5 — a Vulcain core that can’t lift alone; two big solids do",
+  "cur": "Ariane 5 — блок Vulcain, который не взлетит один; это делают два больших твердотопливных ускорителя"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sar_n1",
+  "en": "N1 — thirty first-stage engines, and why that was too many",
+  "cur": "N1 — тридцать двигателей первой ступени, и почему это было слишком много"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_sizing_err_wall",
+  "en": "Impossible in one stage — this Δv needs more than any mass of fuel can give (Rε ≥ 1). You must stage.",
+  "cur": "Невозможно в одну ступень — для такой Δv не хватит никакого количества топлива (Rε ≥ 1). Нужно разделение на ступени."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_single_stage",
+  "en": "Single stage (one set of tanks + engines)",
+  "cur": "Одна ступень (один комплект баков + двигателей)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_ideal_staging",
+  "en": "Ideal staging (ignores carrying the upper stages)",
+  "cur": "Идеальное разделение ступеней (без учёта переноса верхних ступеней)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_cluster_err_twr",
+  "en": "Thrust does not beat weight — it cannot leave the pad.",
+  "cur": "Тяга не превышает вес — ракета не сможет оторваться от стартового стола."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_sar_starship",
+  "en": "The biggest ever built: SpaceX’s Starship on its Super Heavy booster. Thirty-three Raptor engines fire at once — about 76 meganewtons, twice a Saturn V — to lift a ~5,000-tonne stack at a thrust-to-weight near 1.5. And unlike anyone else, it is built of stainless steel: heavier than aerospace aluminium (a worse ε — the first rung’s penalty, made of metal), but cheap, tough, and able to survive re-entry and fly again. That is the whole bet: fly a heavier rocket to get a fully reusable one.",
+  "cur": "Самая большая из когда-либо построенных: Starship от SpaceX на ускорителе Super Heavy. Тридцать три двигателя Raptor работают одновременно — около 76 меганьютонов, вдвое больше Saturn V — чтобы поднять связку массой ~5000 тонн при тяговооружённости около 1,5. И, в отличие от всех остальных, она сделана из нержавеющей стали: тяжелее авиационного алюминия (хуже ε — штраф первой ступени, воплощённый в металле), но дешёвой, прочной и способной пережить вход в атмосферу и лететь снова. В этом вся ставка: запустить более тяжёлую ракету, чтобы получить полностью многоразовую."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sar_starship",
+  "en": "Starship + Super Heavy — 33 Raptors, the most powerful rocket ever flown",
+  "cur": "Starship + Super Heavy — 33 Raptor, самая мощная летавшая ракета"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sar_raptor",
+  "en": "Raptor — the ~2.3 MN engine you multiply by thirty-three",
+  "cur": "Raptor — двигатель на ~2,3 МН, который вы умножаете на тридцать три"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_deorbit_err_altitude",
+  "en": "The parking orbit must sit above the entry altitude.",
+  "cur": "Опорная орбита должна располагаться выше высоты входа."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_exponential_atmosphere",
+  "en": "Exponential atmosphere (constant scale height)",
+  "cur": "Экспоненциальная атмосфера (постоянная высота однородной атмосферы)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_loe_deorbit",
+  "en": "Coming home starts by slowing down — barely. A single retrograde burn at your parking altitude, only ~80 m/s from low orbit, drops the far side of the orbit into the top of the atmosphere. You do not fly down; you nudge the low point into the air and let drag take over.",
+  "cur": "Возвращение домой начинается с торможения — совсем небольшого. Единственный ретроградный импульс на опорной высоте, всего ~80 м/с от низкой орбиты, опускает противоположную сторону орбиты в верхние слои атмосферы. Вы не спускаетесь активно; вы лишь подталкиваете нижнюю точку в атмосферу и позволяете сопротивлению сделать остальное."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_loe_entry",
+  "en": "Now the hard part. You meet the atmosphere at almost 8 km/s, carrying about 30 megajoules per kilogram — about seven times the energy of the same mass of TNT — and every joule must become heat. The shield’s job is to dump it into the air, not the capsule. Come in too steep and the g-load and heating spike (drag the angle up and watch); too shallow and you skip back off into space. That narrow band is the re-entry corridor.",
+  "cur": "Теперь сложная часть. Вы встречаете атмосферу почти на 8 км/с, неся около 30 мегаджоулей на килограмм — примерно в семь раз больше энергии, чем у той же массы тротила, — и каждый джоуль должен превратиться в тепло. Задача щита — отдать его в воздух, а не в капсулу. Войдёте слишком круто — перегрузки и нагрев резко возрастут (потяните угол вверх и посмотрите); слишком полого — отскочите обратно в космос. Эта узкая полоса и есть коридор входа."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_loe_orion",
+  "en": "Orion — a heat shield built for the faster, hotter return from the Moon",
+  "cur": "Orion — теплозащитный экран, рассчитанный на более быстрое и горячее возвращение от Луны"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lss_messenger",
+  "en": "MESSENGER — flybys used to SLOW down and fall into Mercury",
+  "cur": "MESSENGER — пролёты использовались для ТОРМОЖЕНИЯ и падения к Меркурию"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lss_parker",
+  "en": "Parker Solar Probe — Venus flybys shed speed to dive at the Sun",
+  "cur": "Parker Solar Probe — пролёты у Венеры гасят скорость для нырка к Солнцу"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lss_voyager1craft",
+  "en": "Voyager 1 — the farthest human-made object from Earth",
+  "cur": "Voyager 1 — самый удалённый от Земли рукотворный объект"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lss_voyager2craft",
+  "en": "Voyager 2 — the only craft to fly past all four giant planets",
+  "cur": "Voyager 2 — единственный аппарат, пролетевший мимо всех четырёх планет-гигантов"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_geocentric_moon",
+  "en": "Geocentric ephemeris (Meeus/Schlyter, ~1′)",
+  "cur": "Геоцентрическая эфемерида (Meeus/Schlyter, ~1′)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_optical_only",
+  "en": "Phase geometry only (no libration or atmosphere)",
+  "cur": "Только геометрия фазы (без либрации и атмосферы)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_moon_phases_desc",
+  "en": "Why the Moon changes shape night to night. Track the geometry of Sun, Earth and Moon and predict exactly what you will see in the sky.",
+  "cur": "Почему Луна меняет форму от ночи к ночи. Проследите геометрию Солнца, Земли и Луны и точно предскажите, что вы увидите на небе."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g8_phase",
+  "en": "The Moon makes no light of its own — you are watching sunlight sweep across a sphere. The lit fraction you see is ½(1 + cos α), where α is the Sun–Moon–Earth angle: α = 0 when the Moon sits opposite the Sun (full), 180° when it is between us and the Sun (new). Pick a date and the disc shows the real phase for that night — waxing (filling, sunlit on the right) toward full, then waning back to new over about 29.5 days.",
+  "cur": "Луна не излучает собственного света — вы наблюдаете, как солнечный свет скользит по сфере. Видимая освещённая доля равна ½(1 + cos α), где α — угол Солнце–Луна–Земля: α = 0, когда Луна находится напротив Солнца (полнолуние), и 180°, когда она между нами и Солнцем (новолуние). Выберите дату — и диск покажет реальную фазу для этой ночи: растущую (заполняющуюся, освещённую справа) к полнолунию, а затем убывающую обратно к новолунию примерно за 29,5 суток."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g8_why",
+  "en": "Phase is pure geometry: the same half of the Moon is always sunlit; we just see it from a changing angle as the Moon orbits us. Full moon = the Sun behind you lighting the whole near side; new moon = the Sun beyond the Moon, its lit face turned away. It is also why the \"dark side of the Moon\" is a myth — there is a FAR side, but every part gets about two weeks of day and two of night.",
+  "cur": "Фаза — это чистая геометрия: одна и та же половина Луны всегда освещена Солнцем; мы просто видим её под меняющимся углом по мере обращения Луны вокруг нас. Полнолуние = Солнце позади вас освещает всю обращённую к нам сторону; новолуние = Солнце за Луной, и её освещённая сторона отвёрнута от нас. Именно поэтому «тёмная сторона Луны» — миф: есть ОБРАТНАЯ сторона, но на каждой части бывает около двух недель дня и двух недель ночи."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g8_hook",
+  "en": "The cycle drives more than the calendar: at full and new moon the Sun, Earth and Moon line up enough to raise the biggest \"spring\" tides — and, when the alignment is near-exact, an eclipse.",
+  "cur": "Этот цикл управляет не только календарём: в полнолуние и новолуние Солнце, Земля и Луна выстраиваются достаточно точно, чтобы вызвать самые сильные «сизигийные» приливы — а при почти точном выравнивании и затмение."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g8_moon",
+  "en": "See the Moon’s real surface, lit for tonight’s phase",
+  "cur": "Посмотрите на реальную поверхность Луны, освещённую по сегодняшней фазе"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g8_explore",
+  "en": "Find the Moon and planets in the live sky",
+  "cur": "Найдите Луну и планеты на живом небе"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_choose_orbit_desc",
+  "en": "Low and fast, or high and slow? Pick an altitude and see the trade between speed, orbital period, and how much of the Earth you can watch at once.",
+  "cur": "Низко и быстро или высоко и медленно? Выберите высоту и оцените компромисс между скоростью, орбитальным периодом и тем, какую часть Земли вы охватываете разом."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g10_regime",
+  "en": "Every satellite starts with one choice: how high? Altitude sets everything else. Circular speed FALLS the higher you go (v = √(µ/r)), and the period GROWS (T = 2π√(r³/µ)): a 550 km Starlink circles the Earth every ~96 minutes, a 20,000 km GPS satellite takes about 12 hours. Low means fast, close and short passes; high means slow, distant and lingering.",
+  "cur": "Каждый спутник начинается с одного выбора: как высоко? Высота задаёт всё остальное. Круговая скорость ПАДАЕТ по мере подъёма (v = √(µ/r)), а период РАСТЁТ (T = 2π√(r³/µ)): Starlink на 550 км облетает Землю каждые ~96 минут, а спутник GPS на 20 000 км — примерно за 12 часов. Низко — значит быстро, близко и короткие пролёты; высоко — значит медленно, далеко и продолжительно."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g10_geo",
+  "en": "Push the altitude until the period matches the planet’s day — 23.93 hours for Earth — and something clever happens: the satellite keeps pace with the ground turning beneath it, hanging over one fixed spot. That is geostationary orbit, about 35,786 km up. It is why a TV dish never has to move and one weather satellite can watch a whole hemisphere.",
+  "cur": "Поднимайте высоту, пока период не совпадёт с сутками планеты — 23,93 часа для Земли — и происходит нечто изящное: спутник поспевает за вращающейся под ним поверхностью, зависая над одной неподвижной точкой. Это геостационарная орбита, около 35 786 км над Землёй. Именно поэтому спутниковой тарелке никогда не нужно двигаться, а один метеоспутник может наблюдать за целым полушарием."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g10_latency",
+  "en": "So why not put everything up there? Distance costs time. A signal must climb to the satellite and back — at geostationary that is ~72,000 km round trip, about a quarter-second of delay you can hear on an old satellite phone call. Drop to a 550 km shell and it is under 4 milliseconds. That lag is exactly why Starlink and the other megaconstellations went LOW.",
+  "cur": "Так почему бы не разместить всё там, наверху? Расстояние стоит времени. Сигнал должен подняться к спутнику и вернуться обратно — на геостационарной орбите это ~72 000 км в оба конца, около четверти секунды задержки, которую можно услышать в старом спутниковом телефонном разговоре. Опуститесь на оболочку в 550 км — и это менее 4 миллисекунд. Именно из-за этой задержки Starlink и другие мегасозвездия ушли НИЗКО."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g10_why",
+  "en": "There is no \"best\" orbit, only trade-offs. Low (LEO): fast, close, tiny lag — but each satellite sees a small patch and whips past, so you need thousands (Starlink, OneWeb). Medium (MEO): the GPS compromise, a couple dozen satellites covering the globe. Geostationary (GEO): one satellite, whole-hemisphere coverage that never moves — at the cost of distance and lag. Sun-synchronous (SSO): a low polar orbit that crosses each spot at the same local time, ideal for imaging.",
+  "cur": "«Лучшей» орбиты не существует — есть только компромиссы. Низкая (LEO): быстро, близко, крошечная задержка — но каждый спутник видит небольшой участок и стремительно проносится мимо, поэтому их нужны тысячи (Starlink, OneWeb). Средняя (MEO): компромисс GPS, пара десятков спутников охватывают весь земной шар. Геостационарная (GEO): один спутник, покрытие целого полушария, которое никогда не сдвигается — ценой расстояния и задержки. Солнечно-синхронная (SSO): низкая полярная орбита, пересекающая каждую точку в одно и то же местное время, идеальна для съёмки."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g10_hook",
+  "en": "The Molniya orbit is the clever exception: a steep, stretched ellipse that loiters for hours over the far north, where a geostationary satellite (parked over the equator) sits uselessly low on the horizon. It is how the USSR — and Sirius radio — covered high latitudes.",
+  "cur": "Орбита Molniya — изящное исключение: крутой вытянутый эллипс, который часами задерживается над далёким севером, где геостационарный спутник (стоящий над экватором) бесполезно висит низко у горизонта. Именно так СССР — и радио Sirius — покрывали высокие широты."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g10_starlink",
+  "en": "Starlink — thousands of satellites in a ~550 km LEO shell for low lag",
+  "cur": "Starlink — тысячи спутников в оболочке LEO ~550 км для малой задержки"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g10_gps",
+  "en": "GPS — a couple dozen at ~20,200 km MEO to blanket the globe",
+  "cur": "GPS — пара десятков на MEO ~20 200 км для покрытия всего земного шара"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g10_goes",
+  "en": "GOES — a weather watcher parked at geostationary over one hemisphere",
+  "cur": "GOES — метеонаблюдатель на геостационарной орбите над одним полушарием"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g10_molniya",
+  "en": "Molniya — a stretched orbit that loiters over the far north",
+  "cur": "Molniya — вытянутая орбита, задерживающаяся над далёким севером"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g10_sentinel",
+  "en": "Sentinel — a sun-synchronous imager that always crosses at the same local time",
+  "cur": "Sentinel — солнечно-синхронный съёмщик, всегда пересекающий в одно и то же местное время"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_catch_iss_desc",
+  "en": "Rendezvous is a chase in curved space, where speeding up drops you behind. Use live station data to work out where the ISS is and how to catch it.",
+  "cur": "Сближение — это погоня в искривлённом пространстве, где разгон отбрасывает вас назад. По живым данным станции вычислите, где находится МКС и как её догнать."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g9_orbit",
+  "en": "The International Space Station orbits about 420 km up — low enough that it circles the Earth every ~92 minutes at nearly 7.7 km/s, roughly 16 laps a day. Reuse the orbit tool, preset to the station’s altitude, and its speed and period drop straight out.",
+  "cur": "Международная космическая станция обращается на высоте около 420 км — достаточно низко, чтобы облетать Землю каждые ~92 минуты со скоростью почти 7,7 км/с, примерно 16 витков в сутки. Воспользуйтесь инструментом для орбит, задав высоту станции, и её скорость с периодом получатся сами собой."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g9_track",
+  "en": "Here is why you cannot just look up at the same time each night: in the ~92 minutes it takes to go around, the Earth turns underneath by about 23° (~2,500 km at the equator), so every pass traces a fresh path, marching westward. The track itself is a sine — latitude swings up to the orbit’s inclination (±51.6°) and no further, which is why the ISS only ever reaches your latitude if you live within that band.",
+  "cur": "Вот почему нельзя просто смотреть вверх в одно и то же время каждую ночь: за ~92 минуты одного витка Земля поворачивается под станцией примерно на 23° (~2500 км на экваторе), поэтому каждый пролёт прочерчивает новую траекторию, смещаясь на запад. Сама трасса — синусоида: широта колеблется вплоть до наклонения орбиты (±51,6°) и не дальше, поэтому МКС достигает вашей широты только если вы живёте в этом поясе."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g9_visible",
+  "en": "And you can only SEE it in a narrow window. The ISS shines by reflected sunlight, so it is visible when it is still lit but your sky has gone dark. At 420 km it stays in sunlight until the Sun is about 20° below your horizon — just past the end of twilight — so look in the couple of hours after dusk or before dawn, when a steady, fast, un-blinking \"star\" glides across in a few minutes.",
+  "cur": "И УВИДЕТЬ её можно лишь в узком окне. МКС светит отражённым солнечным светом, поэтому видна, когда сама ещё освещена, а ваше небо уже потемнело. На высоте 420 км она остаётся на солнце, пока Солнце не опустится примерно на 20° ниже вашего горизонта — сразу после окончания сумерек — так что ищите её в пару часов после заката или перед рассветом, когда ровная, быстрая, не мигающая «звезда» скользит по небу за несколько минут."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g9_why",
+  "en": "Everything here is naked-eye and free: the ISS is one of the brightest things in the night sky — brighter than any star — and it crosses in 2–5 minutes without blinking (no aircraft lights). Apps and NASA’s \"Spot the Station\" turn these same three numbers — altitude, inclination, twilight window — into the exact times it passes over your address.",
+  "cur": "Всё это доступно невооружённым глазом и бесплатно: МКС — один из ярчайших объектов ночного неба, ярче любой звезды, и пересекает его за 2–5 минут без мигания (в отличие от огней самолётов). Приложения и «Spot the Station» от NASA превращают эти же три числа — высоту, наклонение, сумеречное окно — в точное время её пролёта над вашим адресом."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g9_hook",
+  "en": "You are not just seeing a light — you are seeing a spacecraft the size of a football field with people aboard, moving fast enough to cross a continent in ten minutes. China’s Tiangong station is up there too, and a bright Starlink \"train\" can appear for a few nights after each launch.",
+  "cur": "Вы видите не просто огонёк — это космический аппарат размером с футбольное поле с людьми на борту, летящий достаточно быстро, чтобы пересечь континент за десять минут. Китайская станция Tiangong тоже там, наверху, а яркий «поезд» Starlink может появляться несколько ночей после каждого запуска."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g9_iss",
+  "en": "The ISS — the station you are catching, in 3D",
+  "cur": "МКС — станция, которую вы ловите, в 3D"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g9_tiangong",
+  "en": "Tiangong — China’s station, another bright pass to catch",
+  "cur": "Tiangong — китайская станция, ещё один яркий пролёт для наблюдения"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g9_starlink",
+  "en": "Starlink — the \"trains\" of satellites you might spot after a launch",
+  "cur": "Starlink — «поезда» спутников, которые можно заметить после запуска"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g9_iss_fleet",
+  "en": "ISS — the assembled station and its modules",
+  "cur": "МКС — собранная станция и её модули"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_ecliptic_longitude",
+  "en": "Ecliptic-longitude elongation (latitude ignored)",
+  "cur": "Элонгация по эклиптической долготе (широта не учитывается)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_observe_sky_desc",
+  "en": "Turn a date and a place into a map of the heavens. Work out what is above you right now, and when the planets rise.",
+  "cur": "Преврати дату и место в карту небес. Определи, что сейчас над тобой, и когда взойдут планеты."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g7_elong",
+  "en": "Where is a planet tonight? It is all about its angle from the Sun — the elongation. Near 0° it is buried in the glare; swung out east it follows the Sun down as an evening star, out west it leads the Sun up at dawn as a morning star. An outer planet can reach ~180°, opposite the Sun — rising as the Sun sets, up all night. Pick a planet and a date and read it straight from the sky.",
+  "cur": "Где сегодня вечером искать планету? Всё определяется её углом от Солнца — элонгацией. Вблизи 0° она тонет в сиянии; отклонившись к востоку, она заходит вслед за Солнцем как вечерняя звезда, к западу — восходит перед Солнцем на рассвете как утренняя звезда. Внешняя планета может достичь ~180°, напротив Солнца — восходит на закате и видна всю ночь. Выберите планету и дату и считайте прямо с неба."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g7_max",
+  "en": "Why do Mercury and Venus never appear at midnight, always hugging sunset or sunrise? Because they orbit INSIDE Earth's: a planet at a AU can only swing arcsin(a) from the Sun. But their orbits are ellipses, so the leash stretches and shrinks — Mercury's greatest elongation ranges from ~18° near perihelion to ~28° at aphelion, while Venus holds near 46°. Outer planets have no leash at all; they wander all the way to opposition. Inside or outside Earth's orbit — that one line splits the naked-eye planets in two.",
+  "cur": "Почему Меркурий и Венера никогда не видны в полночь, а всегда жмутся к закату или рассвету? Потому что их орбиты лежат ВНУТРИ земной: планета на расстоянии a а.е. может отходить от Солнца лишь на arcsin(a). Но орбиты — эллипсы, поэтому поводок то растягивается, то укорачивается: наибольшая элонгация Меркурия меняется от ~18° у перигелия до ~28° в афелии, а у Венеры держится около 46°. У внешних планет поводка нет вовсе — они доходят до самого противостояния. Внутри или вне земной орбиты — эта единственная граница делит планеты, видимые невооружённым глазом, на две группы."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g7_why",
+  "en": "Five planets are naked-eye, and they behave in two ways set entirely by whether they orbit inside or outside Earth's. Mercury and Venus (inside) are always near the Sun — dawn or dusk objects, and Venus is the brilliant morning/evening star. Mars, Jupiter and Saturn (outside) can stand opposite the Sun at opposition, riding the sky all night at their brightest. Elongation tells you which, and when.",
+  "cur": "Пять планет видны невооружённым глазом, и ведут они себя двояко — целиком в зависимости от того, лежит ли их орбита внутри или снаружи земной. Меркурий и Венера (внутри) всегда близки к Солнцу — объекты рассвета и заката, а Венера — яркая утренняя/вечерняя звезда. Марс, Юпитер и Сатурн (снаружи) могут стоять напротив Солнца в противостоянии, сияя всю ночь в максимальном блеске. Элонгация подсказывает, кто и когда."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g7_hook",
+  "en": "The ancients tracked Venus so carefully that the Maya built a calendar around its 584-day cycle — appearing as morning star, vanishing, then returning as evening star, the same swing between greatest western and eastern elongation this lesson computes.",
+  "cur": "Древние следили за Венерой так тщательно, что майя построили календарь вокруг её 584-дневного цикла — появление как утренней звезды, исчезновение, затем возвращение как вечерней звезды, тот самый размах между наибольшей западной и восточной элонгацией, что вычисляет этот урок."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g7_explore",
+  "en": "Find the planets in the live sky right now",
+  "cur": "Найдите планеты на небе прямо сейчас"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g7_venus",
+  "en": "Venus — the brilliant morning and evening star",
+  "cur": "Венера — яркая утренняя и вечерняя звезда"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g7_mars",
+  "en": "Mars — the red planet, brightest at opposition",
+  "cur": "Марс — красная планета, ярче всего в противостоянии"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_transit_altitude",
+  "en": "Altitude at meridian transit (refraction ignored)",
+  "cur": "Высота в момент кульминации (рефракция не учитывается)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g7_retro",
+  "en": "Watch a planet night after night against the stars and it drifts slowly eastward — except for a few months around opposition, when it stops, reverses, and loops WESTWARD before resuming. This retrograde motion baffled astronomers for two thousand years and is the ghost that finally killed the Earth-centred cosmos. The secret is simple: faster Earth, on the inside track, overtakes the outer planet, so it appears to slide backward — just as a car you pass seems to drift back against the hills. The curve dips below zero exactly when that happens.",
+  "cur": "Наблюдайте за планетой ночь за ночью на фоне звёзд — и она медленно смещается к востоку, кроме нескольких месяцев вблизи противостояния, когда она останавливается, разворачивается и описывает петлю к ЗАПАДУ, прежде чем возобновить путь. Это попятное движение две тысячи лет ставило астрономов в тупик и стало тем призраком, что в итоге погубил геоцентрическую картину мира. Разгадка проста: более быстрая Земля, на внутренней дорожке, обгоняет внешнюю планету, и та словно скользит назад — так же, как обгоняемая машина будто сдвигается назад на фоне холмов. Кривая опускается ниже нуля именно в этот момент."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g7_alt",
+  "en": "Finally, the observer's question: from where YOU stand, how high will it get? A planet peaks as it crosses the meridian, at an altitude of 90° minus how far its declination sits from your latitude. Match your latitude and it sails overhead; sit far to the other side and it skims the horizon, dimmed by thick air — or never rises at all (a negative answer). Same planet, a wildly different show depending on where on Earth you watch.",
+  "cur": "И наконец вопрос наблюдателя: насколько высоко она поднимется именно ТАМ, где стоите ВЫ? Планета достигает максимума при пересечении меридиана — на высоте 90° минус то, насколько её склонение отстоит от вашей широты. Совпадите с широтой — и она пройдёт прямо над головой; сядьте далеко на другой стороне — и она едва скользнёт по горизонту, приглушённая толщей воздуха, или не взойдёт вовсе (отрицательный ответ). Та же планета — совершенно разное зрелище в зависимости от того, где на Земле вы смотрите."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_eclipse_limit",
+  "en": "Eclipse-possibility limit ~±1.5° (not exact prediction)",
+  "cur": "Предел возможности затмения ~±1,5° (не точный прогноз)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g8_distance",
+  "en": "The Moon's orbit is an ellipse, so it is not always the same distance — it swings from about 356,500 km at perigee to 406,700 km at apogee each month. Apparent size goes as 1/distance, so a full moon at perigee (a supermoon) looks about 14% wider and 30% brighter than one at apogee. Same Moon, a real size wobble you can photograph.",
+  "cur": "Орбита Луны — эллипс, поэтому расстояние до неё непостоянно: каждый месяц оно меняется примерно от 356 500 км в перигее до 406 700 км в апогее. Видимый размер обратно пропорционален расстоянию, поэтому полнолуние в перигее (суперлуние) выглядит примерно на 14% шире и на 30% ярче, чем в апогее. Та же Луна — но реальное колебание размера, которое можно сфотографировать."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g8_eclipse",
+  "en": "Why isn't there an eclipse every month, at every new and full moon? Because the Moon's orbit is tilted 5.1° to the Sun's path, so at most new moons the Moon passes above or below the Sun, not across it. An eclipse needs the syzygy to land near a NODE — where the tilted orbit crosses the ecliptic — inside a narrow ±1.5° window. The Sun reaches a node only twice a year, so eclipses come in two seasons about six months apart. Watch the Moon's latitude dip through the band.",
+  "cur": "Почему затмения не происходят каждый месяц, при каждом новолунии и полнолунии? Потому что орбита Луны наклонена к пути Солнца на 5,1°, так что при большинстве новолуний Луна проходит выше или ниже Солнца, а не по нему. Для затмения сизигия должна прийтись вблизи УЗЛА — где наклонённая орбита пересекает эклиптику — в узком окне ±1,5°. Солнце достигает узла лишь дважды в год, поэтому затмения приходят двумя сезонами примерно с интервалом в полгода. Понаблюдайте, как широта Луны опускается сквозь эту полосу."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g8_altitude",
+  "en": "And from where YOU stand, how high does the Moon climb? Like any body it peaks on the meridian at 90° minus the gap between its declination and your latitude — but the Moon's declination swings ±28.5° in a month, far faster than the Sun's yearly march. That is why a winter full moon rides high overhead while a summer one skims the horizon from the northern hemisphere — the reverse of the Sun.",
+  "cur": "А насколько высоко Луна поднимается там, где стоите ВЫ? Как любое светило, она достигает максимума на меридиане на высоте 90° минус разность между её склонением и вашей широтой — но склонение Луны меняется на ±28,5° за месяц, гораздо быстрее, чем годовой ход Солнца. Вот почему зимнее полнолуние идёт высоко над головой, а летнее едва задевает горизонт в северном полушарии — противоположно Солнцу."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_isspass_err_none",
+  "en": "No pass above 10° in the next 48 hours from here — try another date or location.",
+  "cur": "Нет пролётов выше 10° в ближайшие 48 часов отсюда — попробуйте другую дату или место."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_satellite_overhead",
+  "en": "Sun-depression at the sub-satellite point (≈ yours when overhead)",
+  "cur": "Понижение Солнца в подспутниковой точке (≈ ваше в зените)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_snapshot_tle",
+  "en": "Fixed element set, epoch ~2026-07-20 — for tonight use a live tracker",
+  "cur": "Фиксированный набор элементов, эпоха ~2026-07-20 — для сегодняшней ночи используйте актуальный трекер"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_kepler_j2",
+  "en": "Kepler + secular J2 propagation (not full SGP4)",
+  "cur": "Кеплер + вековая J2-прогонка (не полный SGP4)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g9_pass",
+  "en": "So put it all together — where are YOU? The last rung propagates a real element set for the station and finds its next pass over your latitude and longitude: how many minutes until it rises, how high it climbs, and which compass direction it appears from. Cross that with the twilight window above and you know exactly when to step outside and look up. One honest caveat: this uses a snapshot of the orbit from a fixed date, so it is accurate for a few days around then — for tonight's pass to the minute, an app or NASA's Spot the Station pulls today's fresh element set.",
+  "cur": "Итак, соберём всё воедино — где находитесь ВЫ? Последняя ступень прогоняет реальный набор элементов орбиты станции и находит её следующий пролёт над вашей широтой и долготой: сколько минут до восхода, как высоко она поднимется и с какой стороны света появится. Сопоставьте это с окном сумерек выше — и вы точно знаете, когда выйти на улицу и посмотреть вверх. Одна честная оговорка: здесь используется снимок орбиты на фиксированную дату, поэтому расчёт точен лишь на несколько дней вокруг неё — чтобы узнать сегодняшний пролёт с точностью до минуты, приложение или NASA Spot the Station подтягивает свежий набор элементов на сегодня."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_sso_err_altitude",
+  "en": "No sun-synchronous orbit at this altitude (above ~5,970 km the geometry runs out).",
+  "cur": "На этой высоте солнечно-синхронной орбиты не существует (выше ~5970 км геометрия не позволяет)."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_molniya_reference",
+  "en": "Molniya reference orbit (a≈26,600 km, e≈0.74)",
+  "cur": "Опорная орбита Molniya (a≈26 600 км, e≈0,74)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_equatorial_ring",
+  "en": "One equatorial ring (global coverage needs many)",
+  "cur": "Одно экваториальное кольцо (для глобального покрытия нужно много)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_azimuth_err_unreachable",
+  "en": "Cannot reach an inclination below your latitude without a costly plane change.",
+  "cur": "Невозможно достичь наклонения ниже вашей широты без затратного изменения плоскости."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_non_rotating_launch",
+  "en": "Non-rotating Earth (ignores the launch-site velocity turn)",
+  "cur": "Невращающаяся Земля (без учёта поворота от скорости стартовой площадки)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_j2_secular",
+  "en": "First-order J2 secular drift (ignores drag, J3+, Sun/Moon)",
+  "cur": "Вековой дрейф J2 первого порядка (без учёта сопротивления, J3+, Солнца/Луны)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g10_sso",
+  "en": "Here is a trick from Earth's own imperfection. Our planet bulges at the equator, and that extra mass drags a satellite's orbit plane around — usually a nuisance. But choose the inclination just right and the drag turns the plane exactly 360° a year, keeping pace with Earth's trip around the Sun. Now the orbit crosses every point at the same LOCAL time, every day, forever. It works out to a retrograde, near-polar ~98° — which is why almost every imaging, weather and spy satellite flies a sun-synchronous orbit.",
+  "cur": "Вот трюк, основанный на собственном несовершенстве Земли. Наша планета вытянута на экваторе, и эта дополнительная масса разворачивает плоскость орбиты спутника — обычно это помеха. Но выберите наклонение точно, и разворот повернёт плоскость ровно на 360° в год, поспевая за путешествием Земли вокруг Солнца. Теперь орбита пересекает каждую точку в одно и то же МЕСТНОЕ время, каждый день, вечно. Получается ретроградное, околополярное наклонение ~98° — вот почему почти каждый съёмочный, метеорологический и разведывательный спутник летает по солнечно-синхронной орбите."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g10_frozen",
+  "en": "The same bulge also swivels an elliptical orbit's perigee — unless you fly at the critical inclination of 63.4°, where that drift cancels and the low and high points stay put. That is the secret of the Molniya orbit: a steep, stretched ellipse whose apogee loiters for hours over the far north (Kepler's second law — it dawdles at the top), covering high latitudes where a geostationary satellite sits uselessly on the horizon. It is how the USSR, and later Sirius radio, reached the Arctic.",
+  "cur": "Та же выпуклость также разворачивает перигей эллиптической орбиты — если только вы не летите на критическом наклонении 63,4°, где этот дрейф исчезает и нижняя и верхняя точки остаются на месте. В этом секрет орбиты «Молния»: крутой, вытянутый эллипс, чей апогей на часы задерживается над дальним севером (второй закон Кеплера — там наверху он медлит), покрывая высокие широты, где геостационарный спутник бесполезно висит на горизонте. Именно так СССР, а позднее радио Sirius, достигали Арктики."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g10_coverage",
+  "en": "So how many satellites does it take? A higher orbit sees a bigger patch of Earth, so it needs fewer of them: from geostationary, just THREE cover the whole populated globe — the idea Arthur C. Clarke published in 1945. Drop to a 550 km shell and each sees so little that you need a full ring just to bridge the horizon, and thousands of them in many rings for global coverage. That is the megaconstellation math behind Starlink and OneWeb.",
+  "cur": "Сколько же спутников нужно? Более высокая орбита охватывает большую часть Земли, поэтому требуется меньше спутников: с геостационарной орбиты всего ТРИ охватывают всю населённую планету — идея, которую Артур Кларк опубликовал в 1945 году. Спустившись на оболочку 550 км, каждый спутник видит так мало, что нужно целое кольцо только для связи через горизонт, и тысячи спутников во множестве колец для глобального покрытия. Это математика мегаконстелляции, лежащая в основе Starlink и OneWeb."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g10_azimuth",
+  "en": "One last thread, back to where we started: launching. You cannot reach any orbit from any pad — the inclination can never be less than your launch latitude, and the compass heading is fixed by cos(azimuth) = cos(inclination)/cos(latitude). Aim due east and you get an orbit tilted at your latitude, the cheapest one (why the ISS is served from Baikonur and the Cape). And a sun-synchronous orbit, being retrograde, means aiming SOUTH — exactly why those missions launch down the California coast from Vandenberg.",
+  "cur": "Последняя нить, вернёмся туда, откуда начали: запуски. Невозможно достичь любую орбиту с любой площадки — наклонение никогда не может быть меньше широты запуска, и компасный курс фиксирован формулой cos(азимут) = cos(наклонение)/cos(широта). Направьте ракету точно на восток — и получите орбиту, наклонённую на угол вашей широты, самую дешёвую (именно поэтому МКС обслуживается из Байконура и мыса Канаверал). А солнечно-синхронная орбита, поскольку она ретроградна, требует целиться на ЮГ — именно поэтому те миссии запускаются вдоль побережья Калифорнии с Ванденберга."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_equal_vinf_chain",
+  "en": "Equal approach speed at every flyby (real chains vary)",
+  "cur": "Одинаковая скорость подхода на каждом пролёте (в реальных цепочках она различается)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_upper_bound_sum",
+  "en": "Optimistic ceiling — flyby Δv vectors don't add as scalars; a real tour delivers less",
+  "cur": "Оптимистичный предел — векторы Δv пролётов не складываются как скаляры; реальный тур даёт меньше"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_plan_mission_desc",
+  "en": "The capstone. Everything you've learned — how to launch, how to leave, how to read where the planets are — comes together in the one job a mission designer actually has: sequencing a trajectory. We plan it the way JPL did on the greatest tour ever flown: Voyager 2, past Jupiter, Saturn, Uranus and Neptune on a single tank.",
+  "cur": "Итоговый рубеж. Всё, чему ты научился — как запускать, как уходить, как читать положение планет — сходится в единственной задаче, которую по-настоящему решает разработчик миссии: выстраивании траектории. Мы спланируем её так, как это делала JPL в величайшем турне за всю историю: Voyager 2, мимо Юпитера, Сатурна, Урана и Нептуна на одной заправке."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_fc_window",
+  "en": "First: you cannot just leave — you launch when the planets line up. Earth and Jupiter align every ~13 months (the window below); that sets when you can start. The rarer magic is when ALL the giants line up so a single craft can chain them end to end — a geometry that fell into place in the late 1970s and recurs only about every 176 years. Voyager 2 caught it.",
+  "cur": "Сначала: просто так уйти нельзя — стартуют, когда планеты выстраиваются в линию. Земля и Юпитер выравниваются примерно каждые 13 месяцев (окно ниже); это определяет, когда можно начать. Более редкое чудо — когда ВСЕ гиганты выстраиваются так, что один аппарат может связать их от начала до конца в цепочку. Такая геометрия сложилась в конце 1970-х и повторяется лишь примерно раз в 176 лет. Voyager 2 её поймал."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_fc_leg",
+  "en": "Now the first leg: a Hohmann transfer from Earth out to Jupiter. It costs a departure burn, arrives at some speed, and takes years of cruise. This is the single hop you already know from 'Get to Mars' — a mission is just a chain of these legs, stitched together at the planets.",
+  "cur": "Теперь первый этап: перелёт Hohmann от Земли к Юпитеру. Он требует стартового импульса, приводит к некоторой скорости прибытия и занимает годы полёта. Это тот самый одиночный прыжок, что вы уже знаете из «Долети до Марса» — миссия и есть цепочка таких этапов, сшитых вместе у планет."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_fc_inject",
+  "en": "That departure Δv is measured against the Sun, but you start in low Earth orbit — and burning deep in Earth's gravity well, the Oberth effect makes it cheaper than it looks. Wire the leg's departure speed in and read the honest cost from LEO. This is the number your launch vehicle has to deliver.",
+  "cur": "Эта стартовая Δv отсчитывается относительно Солнца, но вы начинаете с низкой околоземной орбиты — и разгон в глубине гравитационного колодца Земли делает его дешевле, чем кажется, благодаря эффекту Оберта. Подставьте скорость отправления этого этапа и прочитайте честную стоимость с LEO. Это то число, которое должна обеспечить ваша ракета-носитель."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_fc_assist",
+  "en": "Here is the trick that makes a tour possible. You arrive at Jupiter carrying all that approach speed — the leg calls it an 'arrival burn' because it is what you would spend to STOP and orbit, but on a flyby you do not stop. You let Jupiter's gravity swing you instead, leaving with up to 2·v∞ of Δv in the Sun's frame (the ideal 180° ceiling, rarely reached) — stolen from Jupiter's own orbital motion, for almost no propellant.",
+  "cur": "Вот приём, который делает тур возможным. Вы прибываете к Юпитеру со всей этой скоростью подхода — на этапе она называется «импульсом прибытия», потому что столько вы потратили бы, чтобы ОСТАНОВИТЬСЯ и выйти на орбиту, но при пролёте вы не останавливаетесь. Вместо этого гравитация Юпитера разворачивает вас, и вы уходите с приростом до 2·v∞ по Δv в системе отсчёта Солнца (идеальный предел при 180°, достигаемый редко) — украденным у собственного орбитального движения Юпитера, почти без топлива."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_fc_chain",
+  "en": "Do it once and you save a burn. Do it four times — Jupiter, Saturn, Uranus, Neptune — and the borrowed Δv stacks into something no rocket could carry. This is the ceiling: four ideal flybys, summed. It is deliberately optimistic: real flybys never hit the perfect 180° turn, the vectors do not add as neatly as a sum, and it counts gross speed stolen, not the rising energy each further planet demands. But even the honest upper bound tells the story — tens of km/s, for free.",
+  "cur": "Сделайте так один раз — и сэкономите импульс. Сделайте четыре раза — Юпитер, Сатурн, Уран, Нептун — и заимствованная Δv складывается в нечто, что не унесёт ни одна ракета. Это предел: четыре идеальных пролёта, суммированные. Он намеренно оптимистичен: реальные пролёты никогда не дают идеальный разворот на 180°, векторы не складываются так аккуратно, как сумма, и он учитывает валовую украденную скорость, а не растущую энергию, которую требует каждая следующая планета. Но даже честная верхняя граница говорит сама за себя — десятки км/с, бесплатно."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_fc_verdict",
+  "en": "So: could you fly this on fuel alone? Reaching Jupiter is actually within chemical reach — about 6 km/s from LEO, less than a strong upper stage's ~8.5. But a Grand Tour means ESCAPING the solar system with speed to spare, and that needs ~8.7 km/s from LEO — just past what the best chemical stage delivers. Chemistry gets you to Jupiter and stops; the gravity-assist chain supplies the rest, and the tens of km/s of touring speed on top. That is why Voyager was flyable, and why every deep-space mission since is a plan for borrowing speed from the planets.",
+  "cur": "Итак: можно ли пролететь это на одном топливе? Достичь Юпитера на самом деле в пределах химических возможностей — около 6 км/с с LEO, меньше, чем ~8,5 у мощной верхней ступени. Но Большой тур означает ПОКИНУТЬ Солнечную систему с запасом скорости, а для этого нужно ~8,7 км/с с LEO — чуть больше того, что даёт лучшая химическая ступень. Химия доносит вас до Юпитера и останавливается; цепочка гравитационных манёвров даёт остальное и десятки км/с скорости тура сверху. Вот почему Voyager был осуществим и почему каждая миссия в дальний космос с тех пор — это план по заимствованию скорости у планет."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_fc_why",
+  "en": "This is how real missions are designed: a launch window set by the planets, a chain of transfer legs, and gravity assists to buy the Δv chemistry cannot. Voyager 2 remains the only spacecraft to visit all four giant planets — on a route that existed for a 176-year moment. Cassini took the opposite tack: four assists (Venus twice, Earth, Jupiter) that first sent it INWARD to build speed before flinging it out to Saturn.",
+  "cur": "Именно так проектируются реальные миссии: стартовое окно, заданное планетами, цепочка перелётных этапов и гравитационные манёвры, чтобы добыть Δv, которую химия дать не может. Voyager 2 остаётся единственным аппаратом, посетившим все четыре планеты-гиганта — по маршруту, существовавшему лишь в 176-летний миг. Cassini пошёл противоположным путём: четыре манёвра (дважды Венера, Земля, Юпитер), которые сперва отправили его ВНУТРЬ для набора скорости, прежде чем швырнуть к Сатурну."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_fc_hook",
+  "en": "In 1965 Gary Flandro, a Caltech graduate student working at JPL, noticed the outer planets would line up in the late 1970s so a single craft could tour them all — a coincidence that would not repeat until 2153. That observation became Voyager.",
+  "cur": "В 1965 году Gary Flandro, аспирант Caltech, работавший в JPL, заметил, что внешние планеты выстроятся в линию в конце 1970-х так, что один аппарат сможет облететь их все — совпадение, которое не повторится до 2153 года. Это наблюдение стало Voyager."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_fc_next",
+  "en": "You have planned a mission. From here, fly the real ones — watch Voyager and Cassini trace the trajectories you just budgeted.",
+  "cur": "Вы спланировали миссию. Отсюда — летите на настоящих: смотрите, как Voyager и Cassini прокладывают траектории, которые вы только что рассчитали."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_fc_cassini",
+  "en": "Cassini — the inward-first route to Saturn",
+  "cur": "Cassini — маршрут к Сатурну через внутренние планеты"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_keplerian_above_atmosphere",
+  "en": "Keplerian trajectory above the atmosphere",
+  "cur": "Кеплерова траектория над атмосферой"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_loe_corridor",
+  "en": "Coming home, you cannot just aim at the ground — you must thread a corridor of entry angles. Too shallow and your trajectory's perigee stays above the thick air: you graze the top and SKIP back into space, like a stone off a pond. Too steep and the deceleration spikes past what a body — or a hull — can take. From low orbit at 7.8 km/s the corridor is generous (you are too slow to skip). But drop in from the MOON at 11 km/s and the ballistic corridor vanishes: any angle shallow enough to not skip pulls over 30 g. That is why Apollo did not fall like a brick — it flew a LIFTING entry, tilting its offset centre of mass to steer, threading a corridor barely 2° wide.",
+  "cur": "Возвращаясь домой, нельзя просто целиться в землю — нужно попасть в узкий коридор углов входа. Слишком полого — и перигей траектории остаётся над плотными слоями: вы задеваете верхушку атмосферы и РИКОШЕТИТЕ обратно в космос, как камень от глади пруда. Слишком круто — и перегрузка взлетает выше того, что выдержит тело или корпус. С низкой орбиты на 7,8 км/с коридор широк (вы слишком медленны, чтобы рикошетить). Но при входе от ЛУНЫ на 11 км/с баллистический коридор исчезает: любой угол, достаточно пологий, чтобы не срикошетить, даёт более 30 g. Вот почему Apollo не падал кирпичом — он выполнял вход с ПОДЪЁМНОЙ силой, наклоняя смещённый центр масс для управления и проходя коридор шириной едва 2°."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_porkchop_err_no_window",
+  "en": "No feasible transfer in this window — widen the departure or flight-time range.",
+  "cur": "Нет допустимого перелёта в этом окне — расширьте диапазон дат старта или времени перелёта."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_lambert_two_body",
+  "en": "Two-body Lambert transfer (patched-conic, no perturbations)",
+  "cur": "Двухтельный Lambert перелёт (сопряжённые конические сечения, без возмущений)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_gtm_porkchop",
+  "en": "So WHEN do you leave? Every departure date and cruise duration costs a different amount of fuel, and the way to see them all at once is the chart mission designers actually use: the porkchop plot. Each cell here is a real solution of Lambert's problem — given where Earth is on this day and where Mars will be after that many days of flight, what single transfer orbit connects them, and what Δv does it cost? The cool valleys are the launch windows; the crosshair is the single cheapest date-and-duration to go. Miss the valley and the fuel climbs a wall — which is why a Mars launch window opens for only a few weeks every 26 months.",
+  "cur": "Так КОГДА же стартовать? Каждая дата старта и длительность перелёта стоят разного количества топлива, и увидеть их все сразу помогает диаграмма, которой действительно пользуются проектировщики миссий: porkchop-диаграмма. Каждая ячейка здесь — это реальное решение задачи Ламберта: зная, где находится Земля в этот день и где будет Марс через заданное число дней полёта, какая единственная переходная орбита их соединяет и какой Δv для этого нужен? Прохладные впадины — это стартовые окна; перекрестие — единственная самая дешёвая комбинация даты и длительности. Промахнётесь мимо впадины — и расход топлива взлетает стеной, вот почему стартовое окно к Марсу открывается лишь на несколько недель каждые 26 месяцев."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_hohmann_translunar",
+  "en": "Minimum-energy (Hohmann) trans-lunar geometry",
+  "cur": "Транслунарная геометрия минимальной энергии (Гомана)"
+ }
+]

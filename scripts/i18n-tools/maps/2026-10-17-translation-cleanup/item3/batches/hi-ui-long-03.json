@@ -1,0 +1,1340 @@
+[
+ {
+  "rel": "messages",
+  "at": "lab_goal_rtm_cislunar",
+  "en": "Now put it in the Earth-centred frame and SEE the trip. From a low parking orbit you fire the trans-lunar injection at perigee and coast a long half-ellipse whose far end (apogee) just reaches the Moon's distance — a roughly five-day fall uphill. But you do not aim AT the Moon: it moves about 62° along its orbit while you coast, so you aim where it WILL be and arrive as it catches up. At the far end you fire again to be captured into lunar orbit. Both Δv here are the real patched-conic values from the kernel's Earth-Moon Lambert solver — this is the geometry every crewed lunar mission from Apollo to Artemis flies.",
+  "cur": "अब इसे पृथ्वी-केंद्रित फ्रेम में रखें और यात्रा को देखें। एक निम्न पार्किंग कक्षा से आप पेरिजी पर ट्रांस-लूनर इंजेक्शन फायर करते हैं और एक लंबे अर्ध-दीर्घवृत्त पर तैरते हैं जिसका दूर छोर (अपोजी) ठीक चंद्रमा की दूरी तक पहुँचता है — लगभग पाँच-दिन की ऊपर की ओर गिरावट। लेकिन आप चंद्रमा को निशाना नहीं बनाते: जब तक आप तैरते हैं, वह अपनी कक्षा में लगभग 62° आगे बढ़ जाता है, इसलिए आप वहाँ निशाना लगाते हैं जहाँ वह होगा और तब पहुँचते हैं जब वह आपको पकड़ लेता है। दूर छोर पर आप चंद्र कक्षा में कैप्चर होने के लिए फिर से फायर करते हैं। यहाँ दोनों Δv कर्नेल के पृथ्वी-चंद्रमा Lambert सॉल्वर से वास्तविक पैच्ड-कॉनिक मान हैं — यही वह ज्यामिति है जिस पर Apollo से Artemis तक हर मानवयुक्त चंद्र मिशन उड़ान भरता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_patched_conic_insertion",
+  "en": "Patched-conic insertion (instantaneous sphere-of-influence handover)",
+  "cur": "पैच्ड-कॉनिक अंतर्वेशन (तात्क्षणिक प्रभाव-क्षेत्र हस्तांतरण)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_ascent_err_no_orbit",
+  "en": "Underpowered for this payload — the stack runs out of Δv before orbital speed. Lighten the payload or lower the orbit.",
+  "cur": "इस पेलोड के लिए अपर्याप्त शक्ति — कक्षीय गति से पहले ही स्टैक का Δv खत्म हो जाता है। पेलोड हल्का करें या कक्षा नीची करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_planar_ascent",
+  "en": "Planar (2-D) ascent, eastward launch, single-exponential atmosphere",
+  "cur": "समतलीय (2-D) आरोहण, पूर्व दिशा में प्रक्षेपण, एकल-चरघातांकी वायुमंडल"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_reach_orbit_desc",
+  "en": "Launching gets you UP; orbit is going sideways fast enough that you keep missing the ground — about 7.8 km/s. But climbing through gravity and air, a real rocket pays a tax that pushes the true cost past 9 km/s. Let's fly it for real.",
+  "cur": "प्रक्षेपण आपको ऊपर ले जाता है; कक्षा तो बग़ल में इतनी तेज़ी से जाना है कि आप ज़मीन से चूकते रहें — लगभग 7.8 km/s। लेकिन गुरुत्व और वायु से ऊपर चढ़ते हुए, एक असली रॉकेट को कर चुकाना पड़ता है जो सच्ची लागत को 9 km/s के पार धकेल देता है। चलिए इसे सचमुच उड़ाएं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_ro_speed",
+  "en": "First, the target. Orbit is a SPEED, not a height: at ~200 km you must be moving ~7.8 km/s sideways, or you fall back down. Height alone is nothing — a sub-orbital hop reaches space and drops straight back. The whole game is the horizontal speed.",
+  "cur": "पहले, लक्ष्य। कक्षा एक गति है, ऊँचाई नहीं: ~200 km पर आपको बग़ल में ~7.8 km/s की गति से चलना होगा, वरना आप वापस गिर जाएँगे। अकेली ऊँचाई कुछ नहीं है — एक उप-कक्षीय छलाँग अंतरिक्ष तक पहुँचकर सीधे वापस गिर जाती है। पूरा खेल क्षैतिज गति का है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_ro_ascent",
+  "en": "Now fly it. This runs the real ascent — the same gravity-turn integrator our mission screens use — and breaks out the three taxes a textbook Δv hides: GRAVITY loss (thrust burned holding the rocket up while it climbs), DRAG loss (the atmosphere), and STEERING loss (the cosine cost of tilting from vertical toward horizontal). Add them to the 7.8 km/s of orbital speed and you get the ~9.4 km/s every launch vehicle is really sized for. Load it heavier and watch the same rocket fall short — orbit is a knife-edge of mass.",
+  "cur": "अब इसे उड़ाएँ। यह असली आरोहण चलाता है — वही गुरुत्व-मोड़ इंटीग्रेटर जो हमारी मिशन स्क्रीनें इस्तेमाल करती हैं — और उन तीन करों को उजागर करता है जिन्हें पाठ्यपुस्तक का Δv छिपा देता है: गुरुत्व हानि (चढ़ते समय रॉकेट को ऊपर थामे रखने में जला थ्रस्ट), कर्षण हानि (वायुमंडल), और स्टीयरिंग हानि (ऊर्ध्व से क्षैतिज की ओर झुकने की कोसाइन लागत)। इन्हें कक्षीय गति के 7.8 km/s में जोड़ें और आपको वे ~9.4 km/s मिलते हैं जिनके लिए हर प्रक्षेपण यान वास्तव में आकारित होता है। इसे भारी लादें और देखें वही रॉकेट कम पड़ जाता है — कक्षा द्रव्यमान की धार पर है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_ro_why",
+  "en": "Everything in space starts here: you cannot go to the Moon, Mars, or anywhere until you are first in orbit — moving fast enough sideways to keep falling around the Earth. Sputnik proved it in 1957; four years later Gagarin rode the same idea to become the first human in orbit.",
+  "cur": "अंतरिक्ष में सब कुछ यहीं से शुरू होता है: आप चाँद, मंगल या कहीं भी नहीं जा सकते जब तक आप पहले कक्षा में न हों — बग़ल में इतनी तेज़ी से चलते हुए कि पृथ्वी के चारों ओर गिरते रहें। Sputnik ने इसे 1957 में सिद्ध किया; चार साल बाद गगारिन ने उसी विचार पर सवार होकर कक्षा में पहला इंसान बन गए।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_ro_hook",
+  "en": "Newton drew it in 1687: a cannon on a mountain fired harder and harder, until the ball falls exactly as fast as the Earth curves away and never lands. That is orbit — perpetual falling.",
+  "cur": "न्यूटन ने इसे 1687 में चित्रित किया: एक पहाड़ पर रखी तोप को और ज़ोर से दागा गया, जब तक गोला ठीक उतनी ही तेज़ी से गिरता है जितनी तेज़ी से पृथ्वी वक्र होकर दूर हटती है और कभी उतरता नहीं। यही कक्षा है — निरंतर गिरना।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_ro_next",
+  "en": "You are in orbit. Now you can go somewhere — to the Moon, to Mars, or catch another spacecraft already up here.",
+  "cur": "आप कक्षा में हैं। अब आप कहीं जा सकते हैं — चाँद पर, मंगल पर, या यहाँ पहले से मौजूद किसी अन्य यान को पकड़ सकते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_peg_linear_tangent",
+  "en": "PEG linear-tangent steering (sin γ = A + B·t) with a per-cycle gravity integral",
+  "cur": "PEG रैखिक-स्पर्शरेखा स्टीयरिंग (sin γ = A + B·t) प्रति-चक्र गुरुत्व समाकल के साथ"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_flying_computer_desc",
+  "en": "There is physics, and then there are problems the physics makes too HARD to solve by hand — and reaching orbit is one. The first lesson on the guidance computers that fly the machine, not the physics they obey.",
+  "cur": "एक भौतिकी है, और फिर कुछ समस्याएं हैं जिन्हें भौतिकी हाथ से हल करने के लिए बहुत कठिन बना देती है — और कक्षा तक पहुंचना उनमें से एक है। मशीन को उड़ाने वाले मार्गदर्शन कंप्यूटरों पर पहला पाठ, न कि उन भौतिकी नियमों पर जिनका वे पालन करते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_sysasc_guidance",
+  "en": "Watch the flight computer think. Getting to orbit is a boundary-value problem with an exact answer — arrive at the target altitude, going level, at circular speed — and the vehicle's real state drifts every second, so you cannot pre-plan the whole path. So it flies in two regimes. In the thick atmosphere it follows a PRE-PLANNED pitch table (open-loop) that keeps the loads safe through the gravity turn. Above ~55 km the computer TAKES OVER: for this low-thrust upper stage that is Powered Explicit Guidance, which re-solves a two-point boundary problem each second for a steering law sin γ = A + B·t — and its answer LOFTS the climb, commanding the nose BELOW the horizon to spend altitude buying speed. No human flies that blind. Lower the upper-stage thrust and watch it loft harder.",
+  "cur": "फ्लाइट कंप्यूटर को सोचते हुए देखें। कक्षा तक पहुँचना एक सीमा-मान समस्या है जिसका एक सटीक उत्तर है — लक्ष्य ऊँचाई पर, समतल होकर, वृत्ताकार गति से पहुँचना — और यान की वास्तविक स्थिति हर सेकंड बहती रहती है, इसलिए आप पूरा पथ पहले से योजना नहीं बना सकते। तो यह दो व्यवस्थाओं में उड़ता है। घने वायुमंडल में यह एक पूर्व-नियोजित पिच तालिका (ओपन-लूप) का अनुसरण करता है जो गुरुत्व मोड़ के दौरान भार को सुरक्षित रखती है। ~55 किमी से ऊपर कंप्यूटर नियंत्रण संभाल लेता है: इस कम-थ्रस्ट ऊपरी चरण के लिए यह Powered Explicit Guidance है, जो हर सेकंड एक दो-बिंदु सीमा समस्या को फिर से हल करती है ताकि एक स्टीयरिंग नियम sin γ = A + B·t मिले — और इसका उत्तर चढ़ाई को ऊपर की ओर उछालता है: नाक को क्षितिज से नीचे रखने का आदेश देकर यह गति पाने के लिए ऊँचाई खर्च करता है। कोई इंसान आँख मूँदकर इस तरह नहीं उड़ा सकता। ऊपरी-चरण का थ्रस्ट घटाएँ और देखें कि यह चढ़ाई को और ज़्यादा ऊपर उछालता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sysasc_why",
+  "en": "Every launch vehicle since the 1960s has flown itself the last stretch to orbit, because the insertion is too precise and too fast for a human hand. The Apollo Guidance Computer ran exactly this kind of closed-loop steering on 4 KB of memory; today Falcon 9's computer does it and then lands the booster on a boat — control problems no person could solve in real time.",
+  "cur": "1960 के दशक से हर प्रक्षेपण यान ने कक्षा तक का अंतिम हिस्सा स्वयं उड़ाया है, क्योंकि प्रवेश इंसानी हाथ के लिए बहुत सटीक और बहुत तेज़ है। Apollo Guidance Computer ने ठीक यही बंद-लूप स्टीयरिंग 4 KB मेमोरी पर चलाया; आज Falcon 9 का कंप्यूटर यही करता है और फिर बूस्टर को एक नाव पर उतारता है — नियंत्रण समस्याएँ जिन्हें कोई व्यक्ति वास्तविक समय में हल नहीं कर सकता।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sysasc_hook",
+  "en": "Draper's MIT lab bet the Moon on it: the Apollo Guidance Computer was the first machine to fly humans, steering by re-solving its own guidance equations many times a second — the ancestor of every fly-by-wire system since.",
+  "cur": "Draper की MIT प्रयोगशाला ने इस पर चंद्रमा दांव पर लगा दिया: Apollo Guidance Computer पहली मशीन थी जिसने इंसानों को उड़ाया, अपने ही मार्गदर्शन समीकरणों को प्रति सेकंड कई बार फिर से हल करके स्टीयरिंग करते हुए — तब से हर फ्लाई-बाय-वायर प्रणाली का पूर्वज।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sysasc_next",
+  "en": "You have met the ascent computer. The same idea — a machine solving a control problem too hard for a human — runs the powered descent to a landing and the lift-vector steering through a re-entry corridor.",
+  "cur": "आप आरोहण कंप्यूटर से मिल चुके हैं। वही विचार — एक मशीन जो इंसान के लिए बहुत कठिन नियंत्रण समस्या हल करती है — लैंडिंग तक पावर्ड अवरोहण और पुनः-प्रवेश गलियारे के माध्यम से लिफ्ट-वेक्टर स्टीयरिंग चलाता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sysasc_apollo",
+  "en": "Apollo 11 — flown by the Apollo Guidance Computer",
+  "cur": "Apollo 11 — Apollo Guidance Computer द्वारा उड़ाया गया"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sysasc_saturnv",
+  "en": "Saturn V — the Instrument Unit that steered it",
+  "cur": "Saturn V — Instrument Unit जिसने इसे स्टीयर किया"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sysasc_falcon9",
+  "en": "Falcon 9 — flies to orbit and lands itself",
+  "cur": "Falcon 9 — कक्षा तक उड़ता है और स्वयं उतरता है"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_pdescent_err_crash",
+  "en": "Crashed — arrived too fast for the braking to null the velocity before the surface. Slow the approach or raise the max braking.",
+  "cur": "दुर्घटनाग्रस्त — इतनी तेज़ी से पहुँचे कि सतह से पहले ब्रेकिंग वेग को शून्य नहीं कर सकी। अप्रोच धीमा करें या अधिकतम ब्रेकिंग बढ़ाएँ।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_vertical_descent",
+  "en": "Vertical descent, throttle back-solved from the descent-rate schedule",
+  "cur": "लंबवत अवतरण, अवतरण-दर अनुसूची से थ्रॉटल पश्च-हल किया गया"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_constant_gravity",
+  "en": "Constant surface gravity (low-altitude approximation)",
+  "cur": "स्थिर सतही गुरुत्व (निम्न-ऊँचाई सन्निकटन)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_landing_computer_desc",
+  "en": "On a world with no air you cannot parachute down — the only brake is the engine. A burn that must stop you at exactly zero altitude, with seconds of fuel to spare, is a control loop no human flies by eye. Here you fly the real one.",
+  "cur": "बिना वायु वाली दुनिया पर आप पैराशूट से नहीं उतर सकते — एकमात्र ब्रेक इंजन है। एक ऐसा बर्न जो आपको ठीक शून्य ऊंचाई पर रोक दे, कुछ सेकंड ईंधन बचाकर, ऐसा नियंत्रण लूप है जिसे कोई मनुष्य आंख से नहीं उड़ाता। यहाँ आप असली वाला उड़ाते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_sysland_descent",
+  "en": "A soft landing is a race between altitude and speed. The controller runs a descent-rate SCHEDULE — the target speed is proportional to how high you still are (v = gain·altitude), so it eases you toward a crawl as the ground rises to meet you — and it throttles the engine every step to track that line, rate-limited so the g never spikes. Fly it: from a couple of kilometres up, watch the computer null your speed to a gentle touchdown. Then arrive faster, or cap the braking lower, and watch the same computer run out of room — the speed stays above the schedule all the way down and you hit hard. This is the loop Apollo's lunar module, the Mars sky-crane, and every Falcon 9 booster landing flies.",
+  "cur": "कोमल लैंडिंग ऊँचाई और गति के बीच एक दौड़ है। नियंत्रक एक अवतरण-दर अनुसूची चलाता है — लक्ष्य गति इस पर आनुपातिक है कि आप अब भी कितने ऊँचे हैं (v = गेन·ऊँचाई), इसलिए ज़मीन जैसे-जैसे आपसे मिलने ऊपर उठती है यह आपको रेंगने की गति की ओर सहज करता है — और यह हर चरण में इंजन को थ्रॉटल कर उस रेखा पर चलता है, दर-सीमित ताकि g कभी अचानक न चढ़े। इसे उड़ाएँ: कुछ किलोमीटर ऊपर से देखें कि कंप्यूटर आपकी गति को कोमल स्पर्श तक शून्य कर देता है। फिर तेज़ी से पहुँचें, या ब्रेकिंग कम रखें, और देखें कि वही कंप्यूटर जगह से बाहर हो जाता है — गति नीचे तक अनुसूची से ऊपर बनी रहती है और आप ज़ोर से टकराते हैं। यह वही लूप है जिसे Apollo का लूनर मॉड्यूल, मंगल स्काई-क्रेन, और हर Falcon 9 बूस्टर लैंडिंग उड़ाती है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sysland_why",
+  "en": "You cannot hand-fly a rocket to a soft touchdown: the throttle has to be trimmed many times a second to null the velocity at the instant of contact, and being a few percent off means a crater. Every soft landing on another world — Luna 9, the Apollo LM, Curiosity, Perseverance — and every Falcon 9 return has been flown by a computer running exactly this kind of terminal-guidance loop.",
+  "cur": "आप किसी रॉकेट को हाथ से उड़ाकर कोमल स्पर्श तक नहीं ला सकते: संपर्क के क्षण पर वेग को शून्य करने के लिए थ्रॉटल को हर सेकंड कई बार समायोजित करना पड़ता है, और कुछ प्रतिशत भी चूकने का अर्थ है एक गड्ढा। किसी अन्य पिंड पर हर कोमल लैंडिंग — Luna 9, Apollo LM, Curiosity, Perseverance — और हर Falcon 9 वापसी ठीक इसी प्रकार के टर्मिनल-गाइडेंस लूप को चलाने वाले कंप्यूटर द्वारा उड़ाई गई है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sysland_hook",
+  "en": "Apollo 11's landing computer threw 1202 alarms while overloaded, and kept flying the descent anyway — because its guidance loop was designed to shed low-priority work and never drop the one job that mattered: land the spacecraft. Armstrong took manual attitude control, but the computer still ran the throttle.",
+  "cur": "Apollo 11 के लैंडिंग कंप्यूटर ने अतिभारित होते हुए 1202 अलार्म फेंके, और फिर भी अवतरण उड़ाता रहा — क्योंकि इसका गाइडेंस लूप निम्न-प्राथमिकता वाले काम को छोड़ने और उस एकमात्र काम को कभी न गिराने के लिए डिज़ाइन किया गया था जो मायने रखता था: यान को उतारना। आर्मस्ट्रांग ने मैनुअल एटीट्यूड नियंत्रण लिया, पर कंप्यूटर फिर भी थ्रॉटल चलाता रहा।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sysland_next",
+  "en": "You have flown the landing computer. One control loop is left — steering the LIFT of a capsule through the knife-edge re-entry corridor.",
+  "cur": "आपने लैंडिंग कंप्यूटर उड़ा लिया है। एक नियंत्रण लूप शेष है — तीक्ष्ण पुनःप्रवेश गलियारे से एक कैप्सूल के लिफ्ट को चलाना।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_esteer_err_lost",
+  "en": "This entry does not survive — too steep (over-g) or too shallow (skipped out). It sits outside the survivable corridor.",
+  "cur": "यह प्रवेश जीवित नहीं रहता — बहुत तीव्र (over-g) या बहुत उथला (उछलकर बाहर)। यह सहनीय कॉरिडोर के बाहर है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_two_dof_entry",
+  "en": "2-D lifting entry (altitude, speed, flight-path angle), exponential atmosphere, constant-g bank law",
+  "cur": "2-D लिफ्टिंग प्रवेश (ऊँचाई, गति, उड़ान-पथ कोण), घातांकी वायुमंडल, स्थिर-g बैंक नियम"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_entry_computer_desc",
+  "en": "Coming home from the Moon at 11 km/s, a capsule cannot throttle and cannot open a parachute — its only control is to ROLL, aiming its lift up or down. Fly that control and see what it buys you: a corridor.",
+  "cur": "चंद्रमा से 11 km/s पर घर लौटते हुए, एक कैप्सूल न थ्रॉटल कर सकता है न पैराशूट खोल सकता है — उसका एकमात्र नियंत्रण है रोल करना, अपने लिफ़्ट को ऊपर या नीचे ताकना। उस नियंत्रण को उड़ाएं और देखें यह क्या देता है: एक गलियारा।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_sysentry_steer",
+  "en": "Recall the ballistic corridor: too steep and you are crushed, too shallow and you skip back into space — and for a lunar return a plummeting capsule has almost no gap between the two. Lift is the way out. A capsule with a little lift can BANK to steer: roll so the lift points up and it pulls out of a steep dive (capping the g); roll so it points down and it digs into a shallow one (stopping the skip). This lesson flies a real lifting entry with a bank controller holding the deceleration, then sweeps every entry angle to measure the survivable corridor. A ballistic capsule's is a knife-edge; even Apollo's modest lift-to-drag of 0.3 roughly DOUBLES it. Turn up the lift-to-drag and watch the corridor widen — the margin that made crewed Moon returns survivable.",
+  "cur": "बैलिस्टिक कॉरिडोर याद करें: बहुत तीव्र तो आप कुचल जाते हैं, बहुत उथला तो आप उछलकर वापस अंतरिक्ष में चले जाते हैं — और चंद्र वापसी के लिए एक गिरते कैप्सूल के पास दोनों के बीच लगभग कोई अंतर नहीं होता। लिफ्ट ही रास्ता है। थोड़ी सी लिफ्ट वाला कैप्सूल स्टीयर करने के लिए BANK कर सकता है: घुमाएँ ताकि लिफ्ट ऊपर की ओर हो और यह तीव्र गोता से बाहर खिंच आए (g को सीमित करते हुए); घुमाएँ ताकि यह नीचे की ओर हो और यह उथले में गहरे धँस जाए (उछाल को रोकते हुए)। यह पाठ एक बैंक नियंत्रक के साथ एक वास्तविक लिफ्टिंग प्रवेश उड़ाता है जो मंदन को थामे रखता है, फिर सहनीय कॉरिडोर मापने के लिए हर प्रवेश कोण पर घुमाता है। एक बैलिस्टिक कैप्सूल का कॉरिडोर चाकू की धार है; यहाँ तक कि Apollo का मामूली लिफ्ट-टू-ड्रैग 0.3 भी इसे लगभग दोगुना कर देता है। लिफ्ट-टू-ड्रैग बढ़ाएँ और देखें कॉरिडोर चौड़ा होते हुए — वह मार्जिन जिसने चालक-दल की चंद्र वापसियों को जीवनयोग्य बनाया।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sysentry_why",
+  "en": "Every crew that has come back from the Moon — Apollo, and soon Artemis — rode a LIFTING capsule that banked to steer through a re-entry corridor a ballistic craft could never thread. The Apollo command module rolled left and right under computer control the whole way down, its offset centre of mass giving just enough lift to hold the g-load and reach the recovery zone.",
+  "cur": "हर वह चालक-दल जो चंद्रमा से लौटा है — Apollo, और जल्द ही Artemis — एक LIFTING कैप्सूल पर सवार हुआ जिसने एक पुनःप्रवेश कॉरिडोर से स्टीयर करने के लिए बैंक किया जिसे कोई बैलिस्टिक यान कभी पार नहीं कर सकता। Apollo कमांड मॉड्यूल पूरे रास्ते नीचे कंप्यूटर नियंत्रण में बाएँ और दाएँ घूमा, इसके असंतुलित द्रव्यमान-केंद्र ने g-भार थामने और रिकवरी क्षेत्र तक पहुँचने के लिए बस पर्याप्त लिफ्ट दी।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sysentry_hook",
+  "en": "Apollo's computer flew re-entry as a bank program: it commanded roll reversals — flip the lift left, then right — to steer downrange while holding the deceleration, threading a corridor about two degrees wide at 40,000 km/h. Bank wrong and you skip off into a lonely orbit or burn.",
+  "cur": "Apollo के कंप्यूटर ने पुनःप्रवेश को एक बैंक प्रोग्राम के रूप में उड़ाया: इसने रोल उलटफेर का आदेश दिया — लिफ्ट को बाएँ पलटो, फिर दाएँ — डाउनरेंज स्टीयर करने के लिए जबकि मंदन थामे रखा, 40,000 km/h पर लगभग दो डिग्री चौड़े कॉरिडोर से गुज़रते हुए। गलत बैंक करें और आप एक अकेली कक्षा में उछल जाएँ या जल जाएँ।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sysentry_next",
+  "en": "That is all three flight computers — the ascent guidance, the landing throttle, and the re-entry bank. Together they fly a whole mission no human hand could.",
+  "cur": "यही तीनों उड़ान कंप्यूटर हैं — आरोहण मार्गदर्शन, अवतरण थ्रॉटल, और पुनःप्रवेश बैंक। साथ मिलकर वे एक पूरा मिशन उड़ाते हैं जिसे कोई मानव हाथ नहीं उड़ा सकता।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sysentry_apollo",
+  "en": "Apollo 11 — the lifting command-module re-entry",
+  "cur": "Apollo 11 — लिफ्टिंग कमांड-मॉड्यूल पुनःप्रवेश"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sysentry_orion",
+  "en": "Orion — the lifting capsule for Artemis returns",
+  "cur": "Orion — Artemis वापसियों के लिए लिफ्टिंग कैप्सूल"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_sysentry_osiris",
+  "en": "OSIRIS-REx — a lifting sample-return entry",
+  "cur": "OSIRIS-REx — एक लिफ्टिंग नमूना-वापसी प्रवेश"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_apollo_roundtrip_desc",
+  "en": "The whole journey in one notebook — launch, translunar coast, landing, and the ride home. Retrace Apollo end to end and watch every phase connect.",
+  "cur": "पूरी यात्रा एक ही नोटबुक में — प्रक्षेपण, ट्रांसल्यूनर कोस्ट, लैंडिंग, और घर वापसी। Apollo को अंत से अंत तक फिर से खोजें और हर चरण को जुड़ते देखें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_art_ascent",
+  "en": "Every Moon shot starts the same way: reach orbit. The Saturn V upper stage cannot be flown by hand — a guidance computer (PEG) solves its own steering in real time, pitching the stack to arrive at the exact speed and height for low Earth orbit. This is the first of the three computers that fly this mission.",
+  "cur": "हर चंद्र मिशन एक ही तरह शुरू होता है: कक्षा तक पहुँचना। Saturn V का ऊपरी चरण हाथ से नहीं उड़ाया जा सकता — एक मार्गदर्शन कंप्यूटर (PEG) वास्तविक समय में अपना दिशा-नियंत्रण हल करता है, स्टैक को इस तरह झुकाता है कि वह निम्न पृथ्वी कक्षा के लिए ठीक-ठीक गति और ऊँचाई पर पहुँचे। यह इस मिशन को उड़ाने वाले तीन कंप्यूटरों में से पहला है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_art_tli",
+  "en": "In orbit you do not aim at the Moon — you aim at where it will be. One burn (trans-lunar injection, TLI) stretches your orbit into an ellipse that reaches lunar distance; the coast takes about three days (the minimum-energy transfer here runs a little longer — Apollo spent fuel to fly it faster), then a second burn (lunar orbit insertion, LOI) brakes you into orbit around the Moon.",
+  "cur": "कक्षा में आप चंद्रमा पर निशाना नहीं लगाते — आप वहाँ निशाना लगाते हैं जहाँ वह होगा। एक बर्न (trans-lunar injection, TLI) आपकी कक्षा को एक दीर्घवृत्त में खींचता है जो चंद्र दूरी तक पहुँचता है; यह कोस्ट लगभग तीन दिन लेता है (यहाँ न्यूनतम-ऊर्जा स्थानांतरण थोड़ा अधिक समय लेता है — Apollo ने इसे तेज़ उड़ाने के लिए ईंधन खर्च किया), फिर एक दूसरा बर्न (lunar orbit insertion, LOI) आपको चंद्रमा के चारों ओर कक्षा में ब्रेक करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_art_descent",
+  "en": "The landing computer takes over. After a burn cancels most of your orbital speed, it flies a descent-rate schedule for the final approach — throttling the engine every moment so you ease to a crawl exactly as the ground rises to meet you. No air, no parachute: thrust is the only brake. (This rung models that final powered descent, not the full orbit-cancel burn.)",
+  "cur": "लैंडिंग कंप्यूटर नियंत्रण संभालता है। एक बर्न आपकी अधिकांश कक्षीय गति को रद्द करने के बाद, यह अंतिम पहुँच के लिए एक अवरोहण-दर अनुसूची पर उड़ान भरता है — हर पल इंजन को थ्रॉटल करते हुए ताकि आप ठीक उसी क्षण रेंगती गति पर आ जाएँ जब ज़मीन आपसे मिलने के लिए ऊपर उठती है। न हवा, न पैराशूट: थ्रस्ट ही एकमात्र ब्रेक है। (यह चरण उस अंतिम शक्ति-चालित अवरोहण को मॉडल करता है, न कि पूरे कक्षा-रद्द बर्न को।)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_art_liftoff",
+  "en": "Now leave. The ascent stage fires and climbs back to lunar orbit. With no atmosphere there is no drag and no steering loss — the whole Δv goes into speed, which is why a small ascent stage is enough to leave the Moon.",
+  "cur": "अब प्रस्थान करें। आरोहण चरण प्रज्वलित होता है और चंद्र कक्षा में वापस चढ़ता है। वायुमंडल न होने से न कोई ड्रैग है और न कोई स्टीयरिंग हानि — पूरा Δv गति में जाता है, यही कारण है कि एक छोटा आरोहण चरण चंद्रमा छोड़ने के लिए पर्याप्त है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_art_tei",
+  "en": "One more burn throws you home: trans-Earth injection (TEI). By symmetry it is the SAME cislunar ellipse run in reverse — so the transfer numbers match the outbound leg — a burn out of lunar orbit onto a coast that falls back to Earth.",
+  "cur": "एक और बर्न आपको घर की ओर फेंकता है: trans-Earth injection (TEI)। समरूपता के कारण यह वही सिसलूनर दीर्घवृत्त है जो उलटे क्रम में चलता है — इसलिए स्थानांतरण संख्याएँ बहिर्गामी चरण से मेल खाती हैं — चंद्र कक्षा से एक बर्न जो एक कोस्ट पर पृथ्वी की ओर वापस गिरती है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_art_entry",
+  "en": "The climax. You hit the atmosphere at nearly 11 km/s — coming from the Moon, not just from orbit. Flown ballistic, the survivable corridor almost vanishes: too shallow and you skip back into space, too steep and the g-load is fatal. That is why the capsule flies LIFTING — the entry computer banks its offset lift vector up and down, and that lift roughly DOUBLES the survivable corridor. The bars here compare the two: lift is the difference between a splashdown and a burn-up.",
+  "cur": "चरम क्षण। आप वायुमंडल में लगभग 11 km/s की गति से टकराते हैं — चंद्रमा से आते हुए, न कि केवल कक्षा से। बैलिस्टिक उड़ान में जीवित बचने योग्य गलियारा लगभग गायब हो जाता है: बहुत उथला हुआ तो आप अंतरिक्ष में वापस उछल जाते हैं, बहुत तीव्र हुआ तो g-भार घातक होता है। यही कारण है कि कैप्सूल लिफ्टिंग उड़ान भरता है — प्रवेश कंप्यूटर अपने ऑफसेट लिफ्ट वेक्टर को ऊपर-नीचे झुकाता है, और यह लिफ्ट जीवित बचने योग्य गलियारे को लगभग दोगुना कर देती है। यहाँ बार्स दोनों की तुलना करते हैं: लिफ्ट ही स्प्लैशडाउन और जल जाने के बीच का अंतर है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_art_why",
+  "en": "A Moon mission is not one problem — it is a chain of them, each a different regime with a different machine to fly it. This capstone walks the whole Apollo 8 round trip end to end, so every rung you learned separately clicks into one flight.",
+  "cur": "एक चंद्र मिशन एक समस्या नहीं है — यह उनकी एक श्रृंखला है, हर एक अलग व्यवस्था जिसे उड़ाने के लिए अलग मशीन। यह capstone पूरी Apollo 8 राउंड ट्रिप को शुरू से अंत तक चलाता है, ताकि आपने अलग-अलग सीखी हर सीढ़ी एक ही उड़ान में जुड़ जाए।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_art_hook",
+  "en": "Apollo 8 flew this round trip in December 1968 — the first crew to orbit the Moon and ride an 11 km/s lifting entry home. (Its return is at /fly?mission=apollo8; note our fixed-lift model flies a fuller exo-atmospheric skip than the flown in-atmosphere loft.)",
+  "cur": "Apollo 8 ने दिसंबर 1968 में यह आना-जाना का सफर उड़ाया — चंद्रमा की परिक्रमा करने और 11 km/s की लिफ्टिंग प्रवेश से घर लौटने वाला पहला दल। (इसकी वापसी /fly?mission=apollo8 पर है; ध्यान दें कि हमारा स्थिर-लिफ्ट मॉडल उड़ाई गई वायुमंडल-भीतरी लोफ्ट की तुलना में एक पूर्ण बाह्य-वायुमंडलीय स्किप उड़ाता है।)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_art_apollo8",
+  "en": "Apollo 8 — the first crewed lunar round trip and 11 km/s lifting entry",
+  "cur": "Apollo 8 — पहला मानवयुक्त चंद्र आना-जाना का सफर और 11 km/s की लिफ्टिंग प्रवेश"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_art_apollo11",
+  "en": "Apollo 11 — the first crewed landing, the full round trip with a surface stay",
+  "cur": "Apollo 11 — पहली मानवयुक्त लैंडिंग, सतह पर ठहराव के साथ पूरी राउंड ट्रिप"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_art_apollo13",
+  "en": "Apollo 13 — the free-return loop that carried the crew home",
+  "cur": "Apollo 13 — फ्री-रिटर्न लूप जो चालक दल को घर वापस लाया"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_art_saturn",
+  "en": "Saturn V — the rocket that flew every Apollo crew to the Moon",
+  "cur": "Saturn V — वह रॉकेट जिसने हर Apollo चालक दल को चंद्रमा तक पहुँचाया"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_art_csm",
+  "en": "Apollo Command/Service Module — the ship that came home",
+  "cur": "Apollo Command/Service Module — वह यान जो घर लौटा"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_art_apollo_lm",
+  "en": "Apollo Lunar Module — the craft that flew the descent and lunar ascent",
+  "cur": "Apollo Lunar Module — वह यान जिसने अवरोहण और चंद्र आरोहण उड़ाया"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_art_program",
+  "en": "The Apollo program — nine crewed lunar missions",
+  "cur": "Apollo कार्यक्रम — नौ मानवयुक्त चंद्र मिशन"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_rangectl_err_unreachable",
+  "en": "Target is outside the reachable footprint — the computer clamps to the nearest edge (flown at full lift-up or full lift-down).",
+  "cur": "लक्ष्य पहुँच योग्य फुटप्रिंट के बाहर है — कंप्यूटर निकटतम किनारे पर सीमित कर देता है (पूर्ण लिफ्ट-अप या पूर्ण लिफ्ट-डाउन पर उड़ाया जाता है)।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_sysentry_range",
+  "en": "Surviving the corridor is only half the job — the computer must also land you at the recovery zone, not just anywhere. Downrange is monotone in bank: full lift-up flies the farthest (a long shallow skim), lift-down digs in short. So the computer solves the one bank angle that lands at your target. The footprint curve shows the price: a near target forces a lift-down dig-in that spikes the g, a far one rides lift-up gently. Range and g trade — and the computer hits both.",
+  "cur": "गलियारे में जीवित रहना केवल आधा काम है — कंप्यूटर को आपको रिकवरी ज़ोन पर उतारना भी है, कहीं भी नहीं। डाउनरेंज बैंक में एकदिष्ट होता है: पूर्ण लिफ्ट-अप सबसे दूर तक उड़ता है (एक लंबी उथली छूती हुई उड़ान), लिफ्ट-डाउन कम दूरी में गोता लगाता है। तो कंप्यूटर वह एक बैंक कोण हल करता है जो आपके लक्ष्य पर उतरे। फुटप्रिंट वक्र कीमत दिखाता है: निकट लक्ष्य एक लिफ्ट-डाउन गोता मजबूर करता है जो g को बढ़ा देता है, दूर वाला लिफ्ट-अप पर धीरे से चलता है। रेंज और g में अदला-बदली होती है — और कंप्यूटर दोनों को साध लेता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_bounce_err_escaped",
+  "en": "Your rebound clears this world's escape velocity — there is no apex to report. You didn't land; you left.",
+  "cur": "आपकी उछाल इस पिंड के पलायन वेग को पार कर गई — कोई शिखर रिपोर्ट करने के लिए नहीं है। आप उतरे नहीं; आप चले गए।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_mean_radius",
+  "en": "Uses the body's mean radius — real small worlds are lumpy, and local gravity varies across their surface.",
+  "cur": "पिंड की औसत त्रिज्या का उपयोग करता है — वास्तविक छोटे पिंड असमान होते हैं, और स्थानीय गुरुत्व उनकी सतह पर भिन्न होता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_vertical_bounce",
+  "en": "Vertical rebound along the local radius; rotation and sideways motion are ignored.",
+  "cur": "स्थानीय त्रिज्या के साथ ऊर्ध्वाधर उछाल; घूर्णन और पार्श्व गति को अनदेखा किया जाता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_touch_small_world_desc",
+  "en": "Gravity so weak you could jump clean off. On a comet or asteroid, landing is less a descent than a slow, careful docking with a mountain in space.",
+  "cur": "गुरुत्व इतना कमज़ोर कि आप कूदकर बाहर निकल सकते हैं। किसी धूमकेतु या क्षुद्रग्रह पर, लैंडिंग उतरने से कम और अंतरिक्ष में एक पर्वत के साथ धीमी, सावधान डॉकिंग ज़्यादा है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_tsw_microg",
+  "en": "Comet 67P/Churyumov–Gerasimenko is a mountain-sized world where gravity is a rumour: the kernel puts its surface pull near a fifth of a thousandth of a metre per second squared, and its escape velocity under one metre per second. Read that again — you could jog off this comet. Every intuition you built landing on the Moon, Mars, Venus and Titan now works against you: the hard part is not arriving. It is staying.",
+  "cur": "धूमकेतु 67P/Churyumov–Gerasimenko एक पर्वत-आकार का पिंड है जहाँ गुरुत्व एक अफवाह है: इसकी सतह का खिंचाव लगभग प्रति सेकंड वर्ग मीटर के हजारवें का पाँचवाँ हिस्सा है, और इसका पलायन वेग एक मीटर प्रति सेकंड से कम है। फिर से पढ़ें — आप इस धूमकेतु से दौड़ लगा सकते हैं। चंद्रमा, मंगल, शुक्र और टाइटन पर उतरते समय आपने जो भी अंतर्ज्ञान बनाया था, वह अब आपके विरुद्ध काम करता है: कठिन हिस्सा आना नहीं है। यह रहना है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_tsw_philae",
+  "en": "In November 2014, Philae arrived at 67P at about walking pace — and its anchoring harpoons failed to fire. What happens to an unanchored box that hits a world like this? It bounces. Set the rebound to about 38% of the touchdown speed and the point-mass energy equation sends Philae hundreds of metres back into space — a bounce that lasted nearly two hours. It stayed only because the rebound sat under 67P's escape velocity. One notch bouncier, and humanity's first comet landing would have been a slow-motion miss into the dark.",
+  "cur": "नवंबर 2014 में, Philae 67P पर लगभग चलने की गति से पहुँचा — और इसके लंगर हार्पून फायर करने में विफल रहे। एक अनलंगर बॉक्स जो इस तरह के पिंड से टकराता है, उसका क्या होता है? यह उछलता है। उछाल को लैंडिंग गति के लगभग 38% पर सेट करें और बिंदु-द्रव्यमान ऊर्जा समीकरण Philae को अंतरिक्ष में सैकड़ों मीटर वापस भेज देती है — एक उछाल जो लगभग दो घंटे तक चली। यह केवल रहा क्योंकि उछाल 67P के पलायन वेग से कम था। एक पायदान अधिक उछालपन, और मानवता की पहली धूमकेतु लैंडिंग अंधकार में धीमी गति से मिस हो गई होती।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_tsw_bennu",
+  "en": "Now try the same class of bounce on Bennu — and the formula refuses to give you an apex, because there isn't one: the rebound clears Bennu's ~0.2 m/s escape velocity and simply leaves. This is not a bug to fix; it is the reason OSIRIS-REx never tried to land. Its TAG manoeuvre — Touch-And-Go — pressed a sampling arm into the rubble for about six seconds, fired thrusters, and backed away with the treasure. On a world you cannot stay on, the honest landing is the one that never pretends to stop.",
+  "cur": "अब बेन्नू पर उछाल की एक ही श्रेणी आजमाएँ — और सूत्र आपको एक शिखर देने से इनकार करता है, क्योंकि एक नहीं है: उछाल बेन्नू के ~0.2 m/s पलायन वेग को पार कर जाता है और बस चला जाता है। यह एक बग नहीं है जिसे ठीक करना है; यह कारण है कि OSIRIS-REx ने कभी उतरने का प्रयास नहीं किया। इसका TAG युक्ति — टच-एंड-गो — एक सैंपलिंग भुजा को मलबे में लगभग छह सेकंड के लिए दबाती है, थ्रस्टर फायर करती है, और खजाने के साथ वापस जाती है। एक पिंड पर जहाँ आप नहीं रह सकते, ईमानदारी से लैंडिंग वह है जो कभी रुकने का दिखावा नहीं करती।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_tsw_ryugu",
+  "en": "Hayabusa2 turned the bounce from a hazard into a vehicle. Its little MINERVA-II rovers had no wheels — on Ryugu, wheels would fling you off the ground you are trying to grip. Instead they carried internal torque wheels and HOPPED: a spin, a nudge of a tenth of a metre per second, a slow arc some fifteen metres downrange, and up to fifteen minutes of hang time before the next step. The first rovers ever to drive a world by deliberately, repeatedly leaving it.",
+  "cur": "Hayabusa2 ने उछाल को एक खतरे से एक वाहन में परिणत किया। इसके छोटे MINERVA-II रोवर के पास पहिये नहीं थे — र्युगु पर, पहिये आपको उस जमीन से दूर फेंक देंगे जिसे आप पकड़ने की कोशिश कर रहे हैं। इसके बजाय वे आंतरिक टॉर्क पहिये ले गए और हॉप करते थे: एक स्पिन, दसवें मीटर प्रति सेकंड का एक धक्का, लगभग पंद्रह मीटर की एक धीमी चाप, और अगले कदम से पहले पंद्रह मिनट तक का हैंग टाइम। पहले रोवर जो जानबूझकर, बार-बार एक पिंड को छोड़कर उसे चलाते थे।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_tsw_itokawa",
+  "en": "Itokawa is the smallest world on this ladder — a peanut of rubble a few hundred metres long, with an escape velocity you could beat with a firm push. In 2005 the first Hayabusa touched it, struggled, improvised, and still delivered the first asteroid dust ever returned to Earth, in 2010. Its samples confirmed something quietly profound: this 'mountain' is not a rock but a gravel pile, held together by a gravity ten-thousandth of yours.",
+  "cur": "इटोकावा इस सीढ़ी पर सबसे छोटा पिंड है — कुछ सौ मीटर लंबा मलबे का एक मूंगफली, जिसका पलायन वेग आप एक दृढ़ धक्के से हरा सकते हैं। 2005 में पहला Hayabusa इसे स्पर्श करता है, संघर्ष करता है, तुरंत सुधार करता है, और फिर भी 2010 में पृथ्वी पर वापस की गई पहली क्षुद्रग्रह धूल प्रदान करता है। इसके नमूनों ने कुछ शांत रूप से गहरी बात की पुष्टि की: यह 'पर्वत' एक चट्टान नहीं बल्कि गुरुत्व द्वारा एक बजरी का ढेर है, जो आपके दसवें-हजारवें हिस्से का है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_tsw_eros",
+  "en": "Eros is the counterexample that proves the scale. At thirty-odd kilometres it is a giant among these worlds, and its ~10 m/s average escape velocity (ranging from roughly 3 to 17 m/s across its elongated surface) finally behaves like a place you can land. In 2001, NEAR Shoemaker — an orbiter with no landing legs at all — was eased down at under 2 m/s at mission's end and, to everyone's delight, kept transmitting from the surface for two weeks. On a small enough world, even a spacecraft that was never built to land can simply... arrive.",
+  "cur": "एरोस वह प्रतिउदाहरण है जो पैमाने को सिद्ध करता है। तीस किलोमीटर के आसपास, यह इन दुनियाओं में एक विशाल पिंड है, और इसका ~10 m/s औसत पलायन वेग (इसकी लंबी सतह पर लगभग 3 से 17 m/s तक भिन्न) अंततः एक ऐसी जगह की तरह व्यवहार करता है जहाँ आप उतर सकते हैं। 2001 में, NEAR Shoemaker — एक ऑर्बिटर जिसके पास बिल्कुल भी लैंडिंग पैर नहीं थे — को मिशन के अंत में 2 m/s से भी कम गति पर धीरे-धीरे उतारा गया और, सभी की खुशी में, यह सतह से दो सप्ताह तक प्रसारण करता रहा। एक छोटी पर्याप्त दुनिया पर, एक अंतरिक्ष यान जो कभी लैंडिंग के लिए नहीं बनाया गया था, बस... पहुँच सकता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_tsw_why",
+  "en": "Five worlds, five firsts, three space agencies: ESA's Philae made the first comet landing (three touchdowns before it settled), JAXA's Hayabusa missions returned the first asteroid samples and hopped the first rovers across one, NASA's NEAR made the first asteroid landing and OSIRIS-REx the largest asteroid sample grab. Between them they wrote the manual for operating where gravity barely exists — the same physics every future asteroid miner and planetary-defence mission will live by.",
+  "cur": "पाँच दुनियाएँ, पाँच प्रथम, तीन अंतरिक्ष एजेंसियाँ: ESA का Philae पहली धूमकेतु लैंडिंग (तीन स्पर्श करने के बाद बस गया) बनाता है, JAXA की Hayabusa मिशनें पहले क्षुद्रग्रह नमूने लौटाती हैं और एक पर पहले रोवर को कूदते हैं, NASA का NEAR पहली क्षुद्रग्रह लैंडिंग बनाता है और OSIRIS-REx सबसे बड़ा क्षुद्रग्रह नमूना संग्रह करता है। उन्होंने मिलकर उस जगह पर काम करने का मैनुअल लिखा जहाँ गुरुत्वाकर्षण मुश्किल से मौजूद है — वही भौतिकी जो हर भविष्य के क्षुद्रग्रह खनक और ग्रहीय-रक्षा मिशन को जीवित रहना होगा।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_tsw_hook",
+  "en": "Philae's first bounce lasted nearly two hours. In that time it drifted about a kilometre — and the comet's gravity was so weak that mission control could not tell for hours whether it had landed or was drifting away forever.",
+  "cur": "Philae का पहला उछाल लगभग दो घंटे तक चला। उस समय में यह लगभग एक किलोमीटर तक बह गया — और धूमकेतु का गुरुत्वाकर्षण इतना कमजोर था कि मिशन नियंत्रण को घंटों तक पता नहीं चल सका कि यह उतर गया है या हमेशा के लिए दूर बह रहा है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_tsw_next",
+  "en": "Next: leaving not just a world, but the whole solar system.",
+  "cur": "अगला: न केवल एक दुनिया, बल्कि पूरे सौर मंडल को छोड़ना।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_tsw_rosetta",
+  "en": "Rosetta & Philae — the comet landing, as a flight (ESA)",
+  "cur": "Rosetta & Philae — धूमकेतु लैंडिंग, एक उड़ान के रूप में (ESA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_tsw_hayabusa1",
+  "en": "Hayabusa — the first sample return, Itokawa (JAXA)",
+  "cur": "Hayabusa — पहला नमूना रिटर्न, इटोकावा (JAXA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_tsw_explore",
+  "en": "Find the small worlds in the live solar system",
+  "cur": "लाइव सौर मंडल में छोटी दुनियाओं को खोजें"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_land_mercury_desc",
+  "en": "No air at all, and a fierce dive down the Sun's gravity well. With nothing to brake against, every metre per second must be killed by the engine.",
+  "cur": "बिल्कुल वायु नहीं, और सूर्य के गुरुत्व कूप में एक तीव्र गोता। रोकने के लिए कुछ न होने से, हर मीटर प्रति सेकंड को इंजन से ही समाप्त करना होगा।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lmc_chute",
+  "en": "Start with the tool that tamed Mars, Venus and Titan: a parachute. On Mercury the formula refuses — there is no terminal velocity because there is essentially no air, just an exosphere thinner than a laboratory vacuum. Every landing trick that leans on an atmosphere — chutes, airbags slowed by drag, heat-shield braking — is paper here. Whatever speed you bring, you must cancel with a rocket. All of it.",
+  "cur": "उस उपकरण से शुरू करें जिसने मंगल, शुक्र और टाइटन को वश में किया: एक पैराशूट। बुध पर यह सूत्र काम नहीं करता — कोई टर्मिनल वेलोसिटी नहीं है क्योंकि यहाँ अनिवार्य रूप से कोई वायु नहीं है, केवल एक प्रयोगशाला वैक्यूम से पतला बहिरावरण है। हर उतरने की तरकीब जो वायुमंडल पर निर्भर करती है — पैराशूट, ड्रैग से धीमे किए गए एयरबैग, ताप-ढाल ब्रेकिंग — यहाँ कागज़ के समान है। जो भी गति आप लाते हैं, उसे रॉकेट से रद्द करना होगा। पूरी तरह।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lmc_orbit",
+  "en": "Now feel the depth of the well. A 100-kilometre orbit above Mercury circles at about 2.9 kilometres per second — nearly twice the Moon's 1.6. Mercury may look like the Moon's grey twin, but it is a rocky heavyweight with an iron heart: more than twice the surface gravity, and every extra bit of orbital speed is speed a lander must later pay to shed.",
+  "cur": "अब कुएँ की गहराई महसूस करें। बुध के ऊपर 100-किलोमीटर की कक्षा लगभग 2.9 किलोमीटर प्रति सेकंड पर परिक्रमा करती है — चंद्रमा के 1.6 का लगभग दोगुना। बुध चंद्रमा का धूसर जुड़वाँ दिख सकता है, लेकिन यह लोहे के दिल वाला एक भारी चट्टानी पिंड है: दो गुना से अधिक सतह गुरुत्वाकर्षण, और कक्षीय गति का हर अतिरिक्त हिस्सा वह गति है जो एक लैंडर को बाद में त्यागनी होगी।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lmc_descent",
+  "en": "Wire that orbital speed into the powered-descent burn and read the bill: with a thrust-to-weight of 3, stopping from Mercury orbit costs about 4.4 kilometres per second of Δv — cancel the orbit, then pay the gravity toll on the way down. For comparison, the same burn at the Moon costs about 2.4. Airless landing has no discounts: the planet does not brake you, ever.",
+  "cur": "उस कक्षीय गति को संचालित-अवतरण बर्न में जोड़ें और बिल पढ़ें: 3 की जोर-से-भार अनुपात के साथ, बुध की कक्षा से रुकना लगभग 4.4 किलोमीटर प्रति सेकंड Δv का खर्च करता है — कक्षा को रद्द करें, फिर नीचे आते समय गुरुत्वाकर्षण का खर्च दें। तुलना के लिए, चंद्रमा पर समान बर्न लगभग 2.4 का खर्च करता है। वायुरहित उतरने में कोई छूट नहीं: ग्रह आपको कभी ब्रेक नहीं करता।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lmc_verdict",
+  "en": "Give your lander the same descent stage that conquered the Moon — Apollo-class, about 2.5 kilometres per second — and the verdict is blunt: roughly two kilometres per second short. This is the honest answer to a fair question: why has NOTHING ever landed on Mercury? Not because it is uninteresting, but because a Moon-lander's worth of rocket isn't half of what the job takes — and that is before you pay the years of gravity assists it costs merely to ARRIVE this deep in the Sun's well.",
+  "cur": "अपने लैंडर को वही डिसेंट स्टेज दें जिसने चंद्रमा को जीता — Apollo-class, लगभग 2.5 किलोमीटर प्रति सेकंड — और फैसला कठोर है: लगभग दो किलोमीटर प्रति सेकंड कम। यह एक निष्पक्ष सवाल का ईमानदार जवाब है: Mercury पर अब तक कुछ भी क्यों नहीं उतरा? इसलिए नहीं कि यह अरुचिकर है, बल्कि इसलिए कि चंद्रमा-लैंडर के बराबर रॉकेट उस काम का आधा भी नहीं है — और यह सब कुछ करने से पहले कि आप सूर्य के कुंड में इतनी गहराई तक सिर्फ पहुंचने के लिए गुरुत्वाकर्षण सहायता की वर्षों की कीमत चुकाएँ।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lmc_why",
+  "en": "No spacecraft has ever touched Mercury's surface. MESSENGER needed six planetary flybys over nearly seven years just to enter orbit, and ended its mission as an impact, not a landing. BepiColombo — ESA and JAXA's twin-orbiter mission — needed nine flybys and a cruise of more than eight years, arriving only in late 2026. The Lab's ladder shows why the surface itself remains unclaimed: it is one of the most expensive parking spots in the solar system.",
+  "cur": "कोई भी अंतरिक्ष यान बुध की सतह पर कभी नहीं पहुँचा। MESSENGER को कक्षा में प्रवेश करने के लिए लगभग सात वर्षों में छह ग्रहीय फ्लाइबाई की आवश्यकता थी, और इसने अपने मिशन को प्रभाव के रूप में समाप्त किया, उतरने के रूप में नहीं। BepiColombo — ESA और JAXA का जुड़वाँ-ऑर्बिटर मिशन — को नौ फ्लाईबाई और आठ वर्ष से अधिक की क्रूज की आवश्यकता थी, केवल दिसंबर 2026 में पहुँचा। लैब की सीढ़ी दिखाती है कि सतह ही अदावेदार क्यों रही: यह सौर मंडल में सबसे महँगी पार्किंग जगहों में से एक है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lmc_hook",
+  "en": "When MESSENGER's fuel ran out in 2015, it hit Mercury at about 3.9 kilometres per second — adding a fresh crater to the planet it had mapped. Even its ending was a demonstration of the problem: without propellant, Mercury only knows one way down.",
+  "cur": "जब MESSENGER का ईंधन 2015 में खत्म हुआ, तो यह बुध से लगभग 3.9 किलोमीटर प्रति सेकंड पर टकराया — उस ग्रह पर एक ताज़ी गड्ढा जोड़ा जिसे इसने मानचित्रित किया। इसका अंत भी समस्या का प्रदर्शन था: बिना प्रणोदक के, बुध केवल एक ही तरीका जानता है नीचे आने का।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lmc_next",
+  "en": "Next: the smallest worlds — landing where gravity barely exists.",
+  "cur": "अगला: सबसे छोटे विश्व — जहाँ गुरुत्वाकर्षण मुश्किल से मौजूद है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lmc_messenger",
+  "en": "MESSENGER — six flybys to Mercury orbit (NASA)",
+  "cur": "MESSENGER — बुध की कक्षा तक छह फ्लाईबाई (NASA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lmc_bepicolombo",
+  "en": "BepiColombo — the twin Mercury orbiters (ESA/JAXA)",
+  "cur": "BepiColombo — जुड़वाँ बुध ऑर्बिटर (ESA/JAXA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_engine_perf_err_unknown",
+  "en": "Unknown engine — not in the kernel's curated catalog.",
+  "cur": "अज्ञात इंजन — कर्नल की क्यूरेटेड कैटलॉग में नहीं है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_engine_perf_err_no_isp",
+  "en": "The registry has no published specific impulse for this engine — thrust is shown, but exhaust velocity cannot be derived honestly.",
+  "cur": "रजिस्ट्री में इस इंजन के लिए कोई प्रकाशित विशिष्ट आवेग नहीं है — थ्रस्ट दिखाया गया है, लेकिन निष्कास वेग ईमानदारी से प्राप्त नहीं किया जा सकता।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_registry_datasheet",
+  "en": "Values come from the kernel's curated engine registry — nominal datasheet figures, not flight telemetry. Thrust is quoted at sea level for booster engines and in vacuum for upper-stage engines.",
+  "cur": "मान कर्नेल के क्यूरेटेड इंजन रजिस्ट्री से आते हैं — नाममात्र डेटाशीट आंकड़े, उड़ान दूरबीन नहीं। थ्रस्ट को बूस्टर इंजन के लिए समुद्र स्तर पर और ऊपरी-चरण इंजन के लिए निर्वात में उद्धृत किया गया है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_vacuum_isp_preferred",
+  "en": "Vacuum specific impulse is used where published; sea-level otherwise.",
+  "cur": "निर्वात विशिष्ट आवेग का उपयोग किया जाता है जहां प्रकाशित हो; अन्यथा समुद्र-स्तर।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_engines_desc",
+  "en": "Every rocket is a bargain between thrust and efficiency. Compare the real engines that have flown, from kerosene workhorses to hydrogen upper stages, on the numbers that matter.",
+  "cur": "हर रॉकेट थ्रस्ट और दक्षता के बीच एक सौदा है। उड़ान भर चुके असली इंजनों की तुलना करें, केरोसीन के परिश्रमी घोड़ों से लेकर हाइड्रोजन ऊपरी चरणों तक, उन आंकड़ों पर जो मायने रखते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_eng_f1",
+  "en": "Three engines, one yardstick — the same card three times on purpose, so the numbers can be compared side by side. Start with the brute. The F-1 burned 2.6 tonnes of propellant a second to make 6.77 meganewtons — five of them lifted a Saturn V off the pad. But look past the thrust to the number beside it: specific impulse 304 seconds in vacuum (263 down at the pad), an exhaust velocity near 3 km/s. Thrust is what the pad demands. It is not what the journey rewards.",
+  "cur": "तीन इंजन, एक मापदंड — उद्देश्य से तीन बार एक ही कार्ड, ताकि संख्याओं की आगे-पीछे तुलना की जा सके। कच्चे बल से शुरू करें। F-1 ने 6.77 मेगान्यूटन बनाने के लिए प्रति सेकंड 2.6 टन प्रणोदक को जलाया — उनमें से पाँच ने Saturn V को पैड से ऊपर उठाया। जोर के आगे संख्या को देखें: निर्दिष्ट आवेग निर्वात में 304 सेकंड (पैड पर 263), निकास वेग लगभग 3 km/s। जोर वह है जो पैड की माँग करता है। यह वह नहीं है जो यात्रा को पुरस्कृत करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_eng_rl10",
+  "en": "Now the surgeon. The RL10 makes about 100 kilonewtons — a fraction of a first-stage engine; it was never meant for the pad. But its hydrogen expander cycle reaches 450 seconds of specific impulse in modern variants (the first 1963 engine managed 427), an exhaust velocity of 4.4 km/s — every kilogram of propellant buys half again more speed. That is why versions of this quiet engine have flown upper stages from 1963 to this decade: upstairs, efficiency is the only currency.",
+  "cur": "अब सर्जन को लें। RL10 लगभग 100 किलोन्यूटन बनाता है — पहले चरण के इंजन का एक अंश; यह पैड के लिए कभी नहीं था। लेकिन इसका हाइड्रोजन विस्तारक चक्र आधुनिक रूपांतरों में 450 सेकंड का निर्दिष्ट आवेग तक पहुँचता है (पहले 1963 इंजन ने 427 हासिल किए), 4.4 किमी/सेकंड का निकास वेग — प्रत्येक किलोग्राम प्रणोदक आधा गुना अधिक गति खरीदता है। यही कारण है कि इस शांत इंजन के संस्करण 1963 से इस दशक तक ऊपरी चरणों पर उड़े हैं: ऊपर की ओर, दक्षता ही एकमात्र मुद्रा है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_eng_raptor",
+  "en": "Raptor is the modern attempt to refuse the choice. Full-flow staged combustion — both propellants fully gasified through twin preburners — holds methane at 350 seconds in vacuum (327 where the booster actually fires) while delivering booster-class thrust, in an engine built to be mass-produced and reflown. The trade between the F-1 and the RL10 didn't disappear; it got engineered thinner.",
+  "cur": "Raptor विकल्प को अस्वीकार करने का आधुनिक प्रयास है। पूर्ण-प्रवाह चरणबद्ध दहन — दोनों प्रणोदक जुड़वाँ प्रीबर्नर के माध्यम से पूरी तरह गैसीकृत — मीथेन को 350 सेकंड पर निर्वात में (327 जहाँ बूस्टर वास्तव में काम करता है) रखते हुए बूस्टर-श्रेणी की थ्रस्ट देता है, एक इंजन में जो बड़े पैमाने पर उत्पादित और पुनः उड़ाया जाने के लिए बनाया गया है। F-1 और RL10 के बीच व्यापार गायब नहीं हुआ; इसे पतला अभियांत्रित किया गया।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_eng_tsiolkovsky",
+  "en": "Here is why the quiet number wins. Wire the RL10's specific impulse into the rocket equation at a mass ratio of ten and read the result: over 10 km/s from one stage. Run the same mass ratio with an F-1-class impulse and you get under 7. The only thing that changed is exhaust velocity — Isp·g0 is the lever the whole rocket equation swings on. One honest asterisk: in real vehicles hydrogen's low density buys some of this back in bigger tanks and heavier structure — which is why the brutes still own the first stage.",
+  "cur": "यहाँ है कि शांत संख्या क्यों जीतती है। RL10 के निर्दिष्ट आवेग को 10 के द्रव्यमान अनुपात पर रॉकेट समीकरण में डालें और परिणाम पढ़ें: एक चरण से 10 किमी/सेकंड से अधिक। एक F-1-श्रेणी के आवेग के साथ समान द्रव्यमान अनुपात चलाएँ और आप 7 से कम पाते हैं। एकमात्र चीज़ जो बदली वह है निकास वेग — Isp·g0 वह लीवर है जिस पर पूरी रॉकेट समीकरण झूलती है। एक ईमानदार नोट: वास्तविक वाहनों में हाइड्रोजन का कम घनत्व बड़े टैंकों और भारी संरचना में इसका कुछ भाग वापस खरीदता है — यही कारण है कि कच्चे इंजन पहले चरण के मालिक अभी भी हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_eng_why",
+  "en": "The Lab's engine registry spans every major spacefaring agency — American gas-generators and staged-combustion, the Soviet RD line, Europe's Vulcain, China's YF engines, India's Vikas and CE-20, Japan's LE series. Each one is a different answer to the same question this ladder asks: how much of your thrust are you willing to trade for how much of your efficiency?",
+  "cur": "Lab की इंजन रजिस्ट्री हर बड़ी अंतरिक्ष सक्षम एजेंसी को फैलाती है — अमेरिकी गैस-जनरेटर और मंचित-दहन, सोवियत RD लाइन, यूरोप का Vulcain, चीन के YF इंजन, भारत के Vikas और CE-20, जापान की LE श्रृंखला। प्रत्येक इसी प्रश्न का एक अलग उत्तर है जो यह सीढ़ी पूछती है: आप अपने थ्रस्ट का कितना व्यापार अपनी दक्षता के लिए करने को इच्छुक हैं?"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_eng_hook",
+  "en": "The RL10 first flew in 1963 and its descendants still fly today — six decades of service from an engine built for the vacuum, not the pad.",
+  "cur": "RL10 पहली बार 1963 में उड़ा और इसके वंशज आज भी उड़ते हैं — निर्वात के लिए बनाए गए इंजन से छह दशक की सेवा, पैड के लिए नहीं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_eng_next",
+  "en": "Next: put an engine under a real rocket — sizing, staging, and counting engines.",
+  "cur": "अगला: एक असली रॉकेट के तहत एक इंजन रखें — आकार निर्धारण, चरणबद्धता, और इंजन गणना।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_eng_f1",
+  "en": "F-1 — the Saturn V's first-stage brute (NASA)",
+  "cur": "F-1 — Saturn V का पहला-चरण कच्चा बल (NASA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_eng_rl10",
+  "en": "RL10 — six decades of upper stages (NASA)",
+  "cur": "RL10 — ऊपरी चरणों के छह दशक (NASA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_eng_raptor",
+  "en": "Raptor — full-flow staged combustion (SpaceX)",
+  "cur": "Raptor — पूर्ण-प्रवाह चरणबद्ध दहन (SpaceX)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ask_signed_out",
+  "en": "The ask box answers your spaceflight questions with real kernel numbers — sign in with your Google account to use it (beta, invited accounts only).",
+  "cur": "यह पूछें बॉक्स वास्तविक कर्नेल संख्याओं के साथ आपके अंतरिक्ष उड़ान प्रश्नों का उत्तर देता है — इसे (बीटा, केवल आमंत्रित खातों के लिए) का उपयोग करने के लिए अपने Google खाते से साइन इन करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ask_denied",
+  "en": "This account isn't on the beta list. The rest of the Lab works without signing in.",
+  "cur": "यह खाता बीटा सूची में नहीं है। बाकी लैब साइन इन के बिना काम करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ask_single_turn_note",
+  "en": "Each question stands alone — the ask box doesn't remember previous turns.",
+  "cur": "प्रत्येक प्रश्न स्वतंत्र है — पूछें बॉक्स पिछले बारी को याद नहीं रखता।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ask_placeholder",
+  "en": "Ask about a launch, a transfer, a landing…",
+  "cur": "किसी लॉन्च, ट्रांसफर या लैंडिंग के बारे में पूछें…"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ask_computing",
+  "en": "Computing — the kernel runs the numbers, then the narrator writes…",
+  "cur": "गणना कर रहे हैं — कर्नेल संख्याएं चलाता है, फिर कथावाचक लिखता है…"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ask_honesty",
+  "en": "Narrated by {model} — the numbers above are kernel-computed.",
+  "cur": "{model} द्वारा वर्णित — ऊपर की संख्याएं कर्नेल-गणना की गई हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ask_tool_rejected",
+  "en": "The narrator asked the kernel something out of range; the kernel refused (that refusal is shown to the narrator too).",
+  "cur": "कथावाचक ने कर्नेल से कुछ सीमा से बाहर पूछा; कर्नेल ने मना कर दिया (वह अस्वीकृति कथावाचक को भी दिखाई गई है)।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ask_err_signed_out",
+  "en": "Your session ended — sign in again to keep asking.",
+  "cur": "आपका सत्र समाप्त हो गया — पूछते रहने के लिए फिर से साइन इन करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ask_err_rate",
+  "en": "Too many questions in a row — wait about {seconds} seconds and try again.",
+  "cur": "एक पंक्ति में बहुत सारे प्रश्न — लगभग {seconds} सेकंड प्रतीक्षा करें और फिर से कोशिश करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ask_err_busy",
+  "en": "The ask box is busy with other questions right now — try again in a moment.",
+  "cur": "पूछें बॉक्स अभी अन्य प्रश्नों में व्यस्त है — थोड़ी देर में फिर से कोशिश करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ask_err_llm",
+  "en": "The narrator is unreachable right now. The Lab itself still works — try the Notebook and Canvas views.",
+  "cur": "कथावाचक अभी तक पहुंच योग्य नहीं है। लैब स्वयं अभी भी काम करता है — नोटबुक और कैनवास दृश्यों को आजमाएं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ask_err_offline",
+  "en": "You're offline. The ask box needs a connection; the rest of the Lab works without one.",
+  "cur": "आप ऑफ़लाइन हैं। प्रश्न बॉक्स को कनेक्शन की आवश्यकता है; बाकी लैब बिना कनेक्शन के काम करती है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ask_err_generic",
+  "en": "Something went wrong with that question — try again.",
+  "cur": "उस प्रश्न के साथ कुछ गलत हुआ — फिर से कोशिश करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ask_budget_exhausted",
+  "en": "The narrator ran out of tool-call budget before writing a final answer — the results above are kernel-computed and complete.",
+  "cur": "वर्णनकार अंतिम उत्तर लिखने से पहले टूल-कॉल बजट समाप्त हो गया — ऊपर के परिणाम कर्नल-कंप्यूटेड और पूर्ण हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ask_callback_denied",
+  "en": "This Google account isn't on the beta list, so the ask box stays locked — everything else in the Lab works without it.",
+  "cur": "यह Google खाता बीटा सूची में नहीं है, इसलिए प्रश्न बॉक्स लॉक रहता है — लैब में सब कुछ बिना इसके काम करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ask_callback_error",
+  "en": "Sign-in didn't complete — please try again.",
+  "cur": "साइन-इन पूरा नहीं हुआ — कृपया फिर से कोशिश करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_badge",
+  "en": "Illustration — AI-generated art, not a computed result",
+  "cur": "चित्र — AI-जनित कला, परिकलित परिणाम नहीं"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_credit",
+  "en": "AI-generated illustration, {date} — reviewed by the editor",
+  "cur": "AI-जनित चित्र, {date} — संपादक द्वारा समीक्षित"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_report_aria_print",
+  "en": "Print or save this notebook as a PDF lab report",
+  "cur": "इस नोटबुक को PDF लैब रिपोर्ट के रूप में प्रिंट या सहेजें"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_report_aria_card",
+  "en": "Download a shareable image card of this notebook",
+  "cur": "इस नोटबुक का साझेयोग्य छवि कार्ड डाउनलोड करें"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lar_thrust",
+  "en": "Now turn that momentum into a force. Hurl mass out the back at exhaust speed vₑ and, by Newton’s third law, the reaction pushes you forward: thrust F = ṁ·vₑ. This is the force the next step weighs against gravity.",
+  "cur": "अब उस गति को बल में बदलें। द्रव्यमान को निकास गति vₑ पर पीछे की ओर फेंकें और न्यूटन के तीसरे नियम के अनुसार, प्रतिक्रिया आपको आगे की ओर धकेलती है: थ्रस्ट F = ṁ·vₑ। यह वह बल है जिसे अगला चरण गुरुत्वाकर्षण के विरुद्ध तौलता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_momentum_thrust_only",
+  "en": "Momentum thrust only — ignores the nozzle pressure term",
+  "cur": "केवल गति थ्रस्ट — नोजल दबाव पद को नज़रअंदाज़ करता है"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lar_challenge",
+  "en": "Load the rocket heavier — raise the loaded mass in the rocket equation until this verdict flips red. That mass is the payload wall for this stack.",
+  "cur": "रॉकेट पर और भार लादें — रॉकेट समीकरण में लदा द्रव्यमान तब तक बढ़ाएँ जब तक यह निर्णय लाल न हो जाए। वही द्रव्यमान इस स्टैक की पेलोड-सीमा है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_sar_challenge",
+  "en": "Push the payload up until a single stage can no longer reach orbit and the sizing wall appears — then watch staging beat it.",
+  "cur": "पेलोड को ऊपर धकेलें जब तक एक एकल स्टेज कक्षा तक पहुँचने में असमर्थ न हो जाए और साइजिंग वॉल दिखाई न दे — फिर स्टेजिंग को इसे हराते हुए देखें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lom_challenge",
+  "en": "Thin the parachute or the atmosphere until the touchdown stops being survivable. Mars leaves almost no margin — that is why it is hard.",
+  "cur": "पैराशूट या वायुमंडल को तब तक पतला करें जब तक लैंडिंग जीवंत न रह जाए। मंगल लगभग कोई मार्जिन नहीं छोड़ता — यही कारण है कि यह कठिन है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_tsw_challenge",
+  "en": "Raise your approach speed until you bounce off instead of landing. On a world this small, escape velocity is barely walking pace.",
+  "cur": "अपनी दृष्टिकोण गति बढ़ाएँ जब तक आप उतरने के बजाय उछल न जाएँ। इतनी छोटी दुनिया पर, एस्केप वेग मुश्किल से चलने की गति है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lss_challenge",
+  "en": "Pour more Δv into a single rocket — can it clear the Sun on fuel alone, or do you still need the gravity-assist chain?",
+  "cur": "एक एकल रॉकेट में अधिक Δv डालें — क्या यह अकेले ईंधन पर सूर्य को साफ कर सकता है, या क्या आपको अभी भी गुरुत्व-सहायता श्रृंखला की आवश्यकता है?"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_target_geo",
+  "en": "Target: the 35,786 km geostationary altitude",
+  "cur": "लक्ष्य: 35,786 किमी भूस्थिर कक्षा"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_newton_second_law_glossary",
+  "en": "Newton’s second law: force (F) equals mass (m) times acceleration (a). The same push moves a lighter mass faster — this is the law every other rung here builds on.",
+  "cur": "न्यूटन का दूसरा नियम: बल (F) = द्रव्यमान (m) × त्वरण (a)। एक ही धक्का हल्के द्रव्यमान को तेजी से गति देता है — यह वह नियम है जिस पर यहाँ हर अन्य स्तर निर्भर करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_weight_glossary",
+  "en": "Weight is just mass (m) pulled by gravity (g): W = m·g. Same mass, different world, different weight — which is why gravity is the field you pick.",
+  "cur": "भार केवल द्रव्यमान (m) को गुरुत्वाकर्षण (g) से खींचा जाता है: W = m·g। समान द्रव्यमान, अलग ग्रह, अलग भार — इसीलिए आप गुरुत्वाकर्षण क्षेत्र को चुनते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_momentum_glossary",
+  "en": "Momentum is mass in motion: p = m·v. A rocket gains forward momentum by throwing exhaust backward — Newton’s third law, action and reaction, in numbers.",
+  "cur": "संवेग गति में द्रव्यमान है: p = m·v। एक रॉकेट निकास को पीछे की ओर फेंककर आगे की ओर संवेग प्राप्त करता है — न्यूटन का तीसरा नियम, क्रिया और प्रतिक्रिया, संख्याओं में।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_thrust_flow_glossary",
+  "en": "Thrust is the exhaust’s momentum per second: F = ṁ·vₑ (mass flow ṁ times exhaust speed vₑ). It turns the momentum idea from the last card into the force this rocket actually pushes with.",
+  "cur": "थ्रस्ट निकास का प्रति सेकंड संवेग है: F = ṁ·vₑ (द्रव्यमान प्रवाह ṁ गुणा निकास गति vₑ)। यह पिछले कार्ड के संवेग विचार को इस बल में बदलता है जो रॉकेट वास्तव में लगाता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_twr_glossary",
+  "en": "Thrust-to-weight ratio: TWR = T / W = T / (m·g). It weighs the thrust (previous card) against the weight (weight card). Above 1 it lifts off; below 1 it sits on the pad.",
+  "cur": "थ्रस्ट-टू-वेट अनुपात: TWR = T / W = T / (m·g)। यह थ्रस्ट (पिछला कार्ड) को भार (भार कार्ड) के विरुद्ध तौलता है। 1 से अधिक होने पर यह उड़ता है; 1 से कम होने पर यह पैड पर बैठा रहता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_tsiolkovsky_glossary",
+  "en": "The rocket equation. Δv is your speed budget — how much you can change your velocity. It grows with exhaust efficiency (Iₛₚ) and the wet/dry mass ratio m₀/m_f; the ln means every extra km/s costs exponentially more propellant.",
+  "cur": "रॉकेट समीकरण। Δv आपका वेग बजट है — आप अपने वेग को कितना बदल सकते हैं। यह निकास दक्षता (Iₛₚ) और गीले/सूखे द्रव्यमान अनुपात m₀/m_f के साथ बढ़ता है; ln का मतलब है कि हर अतिरिक्त km/s के लिए तेजी से अधिक ईंधन की लागत आती है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_launch_site_glossary",
+  "en": "Earth’s spin is a free head start: boost = v_eq·cosφ (the equator’s eastward speed times the cosine of your latitude φ). Maximum at the equator, zero at the poles — which is why launch sites hug the tropics.",
+  "cur": "पृथ्वी की घूर्णन एक मुफ्त शुरुआत है: boost = v_eq·cosφ (भूमध्य रेखा की पूर्वी गति अक्षांश φ की कोज्या से गुणा)। भूमध्य रेखा पर अधिकतम, ध्रुवों पर शून्य — इसीलिए प्रक्षेपण स्थल उष्ण कटिबंध के पास हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_free_fall_glossary",
+  "en": "Drop from height h and gravity does the rest: fall time t = √(2h/g), impact speed v = √(2gh). No thrust, no drag — gravity alone, the baseline every descent card fights against.",
+  "cur": "ऊंचाई h से गिरें और गुरुत्वाकर्षण बाकी काम करे: गिरने का समय t = √(2h/g), प्रभाव गति v = √(2gh)। कोई जोर नहीं, कोई ड्रैग नहीं — केवल गुरुत्वाकर्षण, वह आधार रेखा जिसके विरुद्ध हर वंश कार्ड लड़ता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_projectile_glossary",
+  "en": "Range R = v₀²·sin 2θ / g: launch speed v₀, launch angle θ, gravity g. The sin 2θ peaks at 45° — and the free-fall card already supplied the vertical half of this story.",
+  "cur": "परास R = v₀²·sin 2θ / g: प्रक्षेप गति v₀, प्रक्षेप कोण θ, गुरुत्वाकर्षण g। sin 2θ 45° पर शिखर पर पहुंचता है — और मुक्त-पतन कार्ड पहले से ही इस कहानी का ऊर्ध्वाधर आधा आपूर्ति कर चुका है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_delta_v_margin_glossary",
+  "en": "The verdict as subtraction: margin = v_cap − v_req — what the rocket CAN do (Tsiolkovsky's rocket equation, from the launch lesson) minus what the mission needs. Positive means go; negative means redesign.",
+  "cur": "घटाव के रूप में निर्णय: मार्जिन = v_cap − v_req — रॉकेट क्या कर सकता है (Tsiolkovsky का रॉकेट समीकरण, प्रक्षेपण पाठ से) घटा मिशन की आवश्यकता। सकारात्मक का अर्थ है आगे बढ़ें; नकारात्मक का अर्थ है पुनः डिज़ाइन करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_dvorbit_glossary",
+  "en": "The real price of orbit: v_req = v_orbit + v_loss — the orbital speed itself plus everything the climb steals (gravity and drag). Orbit is a speed, and you must buy more than the sticker price.",
+  "cur": "कक्षा की असली कीमत: v_req = v_orbit + v_loss — कक्षीय गति स्वयं प्लस सब कुछ जो चढ़ाव चोरी करता है (गुरुत्वाकर्षण और ड्रैग)। कक्षा एक गति है, और आपको स्टिकर मूल्य से अधिक खरीदना चाहिए।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_reach_orbit_glossary",
+  "en": "margin = v_cap + v_boost − v_req: the rocket's Δv budget, plus the free eastward boost from Earth's spin (launch-site card), minus the cost of orbit. One line decides whether the design flies.",
+  "cur": "मार्जिन = v_cap + v_boost − v_req: रॉकेट का Δv बजट, प्लस पृथ्वी की घूर्णन से मुक्त पूर्वी बूस्ट (लॉन्च-साइट कार्ड), माइनस कक्षा की लागत। एक पंक्ति यह तय करती है कि डिज़ाइन उड़ता है या नहीं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_sizing_glossary",
+  "en": "Tsiolkovsky run backwards: from payload m_pl, mass ratio R = e^(Δv/vₑ) and structure fraction ε, out comes the gross mass m₀ on the pad. The exponential is why big Δv means a huge rocket for a small payload.",
+  "cur": "त्सिओलकोव्स्की उलटा चलाएं: पेलोड m_pl से, द्रव्यमान अनुपात R = e^(Δv/vₑ) और संरचना अंश ε, पैड पर सकल द्रव्यमान m₀ निकलता है। घातांकीय यही कारण है कि बड़ी Δv का मतलब छोटे पेलोड के लिए विशाल रॉकेट है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_liftoff_glossary",
+  "en": "F = TWR·m₀·g₀: pick a thrust-to-weight ratio (TWR card), multiply by the gross mass the sizing card produced, and that is the thrust the pad must deliver. TWR > 1 or it never leaves.",
+  "cur": "F = TWR·m₀·g₀: थ्रस्ट-टू-वेट अनुपात चुनें (TWR कार्ड), सकल द्रव्यमान से गुणा करें जो आकार कार्ड ने बनाया, और यह वह जोर है जो पैड को देना चाहिए। TWR > 1 या कभी नहीं छोड़ता।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_engines_glossary",
+  "en": "N = ⌈F / F_engine⌉ — divide the thrust you need by the thrust one engine gives, and round UP. Fractional engines don't exist; the ceiling is why real rockets fly with 9, 27, 33 engines.",
+  "cur": "N = ⌈F / F_engine⌉ — जोर जिसकी आपको जरूरत है उसे एक इंजन द्वारा दिए गए जोर से विभाजित करें, और गोल करें। आंशिक इंजन मौजूद नहीं हैं; छत यही कारण है कि असली रॉकेट 9, 27, 33 इंजन के साथ उड़ते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_staging_glossary",
+  "en": "One stage tops out at vₑ·ln(1/ε) — even carrying nothing, the structure fraction ε caps its Δv. Divide the mission Δv by that ceiling and you get the number of stages you must drop along the way.",
+  "cur": "एक चरण vₑ·ln(1/ε) पर शीर्ष पर पहुंचता है — भले ही कुछ न ले जाएं, संरचना अंश ε इसके Δv को सीमित करता है। मिशन Δv को उस छत से विभाजित करें और आपको उन चरणों की संख्या मिलती है जिन्हें आपको रास्ते में छोड़ना चाहिए।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_boosters_glossary",
+  "en": "N_b = ⌈(F_req − F_core)/F_b⌉: whatever thrust the core stage can't provide, strap-on boosters must — each adds F_b. Round up, because half a booster is not a thing.",
+  "cur": "N_b = ⌈(F_req − F_core)/F_b⌉: जो भी जोर कोर चरण प्रदान नहीं कर सकता, strap-on बूस्टर को चाहिए — प्रत्येक F_b जोड़ता है। गोल करें, क्योंकि आधा बूस्टर एक चीज नहीं है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_cluster_glossary",
+  "en": "The cluster's total is simply F = N·F_engine, and the pad verdict is TWR = F/(m₀·g₀) — the engine-count card's N cashed back into the liftoff check.",
+  "cur": "क्लस्टर की कुल सरलता से F = N·F_engine है, और पैड फैसला TWR = F/(m₀·g₀) है — इंजन-गिनती कार्ड का N लिफ्टऑफ जांच में वापस भुगतान किया गया।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_orbital_velocity_glossary",
+  "en": "v = √(μ/r): circular-orbit speed from the body's gravity parameter μ and the orbit radius r. Lower orbits are FASTER — gravity pulls harder there, so the sideways speed must keep up.",
+  "cur": "v = √(μ/r): पिंड के गुरुत्वाकर्षण पैरामीटर μ और कक्षा त्रिज्या r से वृत्ताकार-कक्षा गति। निचली कक्षाएं तेज हैं — गुरुत्वाकर्षण वहां कड़ा खींचता है, इसलिए पार्श्व गति को पकड़ना चाहिए।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_vis_viva_glossary",
+  "en": "Vis-viva is the orbit's energy ledger: v = √(μ(2/r − 1/a)). At any point r on an orbit of semi-major axis a — half the ellipse's longest diameter — it hands you the speed; the circular-orbit card is just the special case a = r.",
+  "cur": "Vis-viva कक्षा की ऊर्जा खाता है: v = √(μ(2/r − 1/a))। किसी भी बिंदु r पर अर्ध-प्रमुख अक्ष a की कक्षा पर — दीर्घवृत्त के सबसे लंबे व्यास का आधा — यह आपको गति देता है; वृत्ताकार-कक्षा केस केवल विशेष स्थिति a = r है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_hohmann_glossary",
+  "en": "The cheapest two-burn transfer: Δv = Δv₁ + Δv₂ — one burn stretches the orbit out, one circularizes at the top; both sizes come from vis-viva (previous card). Half an ellipse between two circles.",
+  "cur": "सबसे सस्ता दो-बर्न स्थानांतरण: Δv = Δv₁ + Δv₂ — एक बर्न कक्षा को खींचता है, एक शीर्ष पर गोलाकार करता है; दोनों आकार vis-viva से आते हैं (पिछला कार्ड)। दो वृत्तों के बीच आधा दीर्घवृत्त।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_descent_burn_glossary",
+  "en": "Δv = v_orb·TWR/(TWR−1): killing orbital speed against gravity costs MORE than v_orb — while you brake, gravity keeps pulling. Weak engines (TWR barely above 1) pay a huge gravity tax.",
+  "cur": "Δv = v_orb·TWR/(TWR−1): गुरुत्वाकर्षण के विरुद्ध कक्षीय गति को मारना v_orb से अधिक खर्च करता है — जबकि आप ब्रेक लगाते हैं, गुरुत्वाकर्षण खींचता रहता है। कमजोर इंजन (TWR मुश्किल से 1 से ऊपर) भारी गुरुत्वाकर्षण कर देते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_interplanetary_glossary",
+  "en": "The same Hohmann sum Δv = Δv₁ + Δv₂, one frame up: now the Sun's μ rules, the two circles are Earth's orbit and the target planet's, and the half-ellipse takes months to years.",
+  "cur": "समान Hohmann योग Δv = Δv₁ + Δv₂, एक फ्रेम ऊपर: अब सूर्य का μ शासन करता है, दोनों वृत्त पृथ्वी की कक्षा और लक्ष्य ग्रह की हैं, और आधा दीर्घवृत्त महीने से वर्षों तक लेता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_synodic_glossary",
+  "en": "1/S = |1/T₁ − 1/T₂|: the synodic period S is how often two planets return to the same lineup — the beat frequency of their years. That beat sets how long you wait for the next cheap ride.",
+  "cur": "1/S = |1/T₁ − 1/T₂|: सिनोडिक अवधि S यह है कि दो ग्रह कितनी बार एक ही पंक्ति में लौटते हैं — उनके वर्षों की बीट आवृत्ति। वह बीट तय करता है कि आप अगली सस्ती सवारी के लिए कितने समय इंतजार करते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_porkchop_glossary",
+  "en": "Every departure date × flight time gets its price tag Δv(t_dep, t_of). The valleys of this map are the launch windows — the transfer and window cards, computed for every date at once.",
+  "cur": "हर प्रस्थान तारीख × उड़ान का समय इसकी कीमत टैग Δv(t_dep, t_of) पाता है। इस नक्शे की घाटियां लॉन्च विंडो हैं — स्थानांतरण और विंडो कार्ड, हर तारीख पर एक बार गणना की गई।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_cislunar_glossary",
+  "en": "A half-ellipse to the Moon: a = ½(r_LEO + r_Moon), flight time t_of = π√(a³/μ⊕). The same Hohmann geometry as the planet transfers — the Moon is just close enough to make it days, not months.",
+  "cur": "चंद्रमा के लिए आधा दीर्घवृत्त: a = ½(r_LEO + r_Moon), उड़ान का समय t_of = π√(a³/μ⊕)। ग्रह स्थानांतरण के समान Hohmann ज्यामिति — चंद्रमा बस महीने नहीं, दिन बनाने के लिए काफी करीब है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_ascent_glossary",
+  "en": "The climb's full bill: Δv_needed = v_orbit + ℓ_grav + ℓ_drag + ℓ_steer. Each ℓ is speed the rocket burns without keeping — the gap between orbit's sticker price and what ascent really costs.",
+  "cur": "चढ़ाई का पूरा बिल: Δv_needed = v_orbit + ℓ_grav + ℓ_drag + ℓ_steer। प्रत्येक ℓ वह गति है जो रॉकेट बिना रखे जलाता है — कक्षा की स्टिकर कीमत और जो चढ़ाई वास्तव में खर्च करती है के बीच का अंतर।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_guidance_glossary",
+  "en": "Linear-tangent steering: sin γ = A + B·t — the pitch angle's sine follows a straight line in time. Two constants steer the whole climb from vertical liftoff to horizontal orbit; that simplicity is why real guidance (PEG) uses it.",
+  "cur": "रैखिक-स्पर्शी स्टीयरिंग: sin γ = A + B·t — पिच कोण की साइन समय में एक सीधी रेखा का अनुसरण करती है। दो स्थिरांक पूरी चढ़ाई को ऊर्ध्वाधर लॉफ्ट से क्षैतिज कक्षा तक नियंत्रित करते हैं; यह सरलता ही कारण है कि वास्तविक मार्गदर्शन (PEG) इसका उपयोग करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_pdescent_glossary",
+  "en": "Follow the schedule v_target = min(v, g_sched·h): never fall faster than the height allows, never brake harder than a_max. Ride it down and you arrive at h = 0 with v ≈ 0 — a landing.",
+  "cur": "अनुसूची v_target = min(v, g_sched·h) का पालन करें: कभी भी ऊंचाई से तेज गिरें नहीं, कभी भी a_max से अधिक तेजी से ब्रेक न करें। इसे नीचे चलाएँ और आप h = 0 पर v ≈ 0 के साथ पहुँचते हैं — एक लैंडिंग।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_esteer_glossary",
+  "en": "Rolling the capsule banks its lift: cos φ is the command. Lift up stretches the path (shallower, cooler); lift down bends it in — the flight angle γ answers to L/D and the bank. Steering with no engine at all.",
+  "cur": "कैप्सूल को रोल करने से इसका लिफ्ट बैंक हो जाता है: cos φ आदेश है। लिफ्ट ऊपर पथ को खींचता है (उथला, ठंडा); लिफ्ट नीचे इसे मोड़ता है — उड़ान कोण γ L/D और बैंक का जवाब देता है। बिना इंजन के स्टीयरिंग।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_rangectl_glossary",
+  "en": "Range answers one-way to bank — more lift-up, more range. A monotone knob can be bisected: solve cos φ so the landed range hits R_target. That is how a capsule lands on a dot.",
+  "cur": "रेंज एक-तरफा बैंक का जवाब देती है — अधिक लिफ्ट-अप, अधिक रेंज। एक मोनोटोन नॉब को समद्विभाजित किया जा सकता है: cos φ को हल करें ताकि लैंडेड रेंज R_target को मारे। यह है कि कैप्सूल एक बिंदु पर कैसे उतरता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_terminal_glossary",
+  "en": "v_t = √(2mg/(ρ·A·C_d)): fall fast enough and drag equals weight — speed locks at v_t. Heavier m falls faster; a bigger chute area A or thicker air ρ slows the fall. Weight = m·g is the numerator (from the launch lesson).",
+  "cur": "v_t = √(2mg/(ρ·A·C_d)): पर्याप्त तेज़ गिरें और ड्रैग वजन के बराबर हो जाता है — गति v_t पर बंद हो जाती है। भारी m तेज़ी से गिरता है; बड़ा पैराशूट क्षेत्र A या सघन हवा ρ गिरावट को धीमा करता है। वजन = m·g अंश है (प्रक्षेपण पाठ से)।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_soft_land_glossary",
+  "en": "margin = v_safe − v_t: what the landing gear survives minus what the parachute delivers (terminal-velocity card). Positive: touchdown. Negative: you need retro-rockets or airbags — the next cards.",
+  "cur": "मार्जिन = v_safe − v_t: लैंडिंग गियर क्या सहन करता है माइनस पैराशूट क्या देता है (टर्मिनल-वेलोसिटी कार्ड)। सकारात्मक: टचडाउन। नकारात्मक: आपको रेट्रो-रॉकेट या एयरबैग की जरूरत है — अगले कार्ड।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_airbags_glossary",
+  "en": "The blunt check v_impact ≤ v_airbag: can the bags absorb the leftover speed? This eats a crash rather than preventing one — how Pathfinder and the MER rovers reached Mars soil.",
+  "cur": "कुंद जांच v_impact ≤ v_airbag: क्या बैग बचा हुआ गति को अवशोषित कर सकते हैं? यह एक दुर्घटना को रोकने के बजाय खा जाता है — कैसे Pathfinder और MER रोवर मंगल की मिट्टी तक पहुँचे।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_retro_glossary",
+  "en": "Δv_retro = v_t − v_safe: the speed gap the parachute cannot close, killed by rockets in the final seconds. It is exactly the soft-landing margin, sign-flipped into a burn.",
+  "cur": "Δv_retro = v_t − v_safe: गति का अंतर जो पैराशूट बंद नहीं कर सकता, अंतिम सेकंड में रॉकेट द्वारा मारा जाता है। यह बिल्कुल नरम-लैंडिंग मार्जिन है, साइन-फ्लिप्ड बर्न में।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_deorbit_glossary",
+  "en": "Δv = v_circ − v_apo: brake on one side of the orbit and the OTHER side drops into the atmosphere. A small burn now — then drag does the expensive half of the work.",
+  "cur": "Δv = v_circ − v_apo: कक्षा के एक ओर ब्रेक करें और दूसरी ओर वायुमंडल में गिर जाता है। अभी एक छोटी बर्न — फिर ड्रैग काम का महंगा आधा करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_entry_glossary",
+  "en": "Entry banks E = ½v² of energy per kilogram into heat; the peak deceleration a_peak = v²·sinγ/(2eH) follows how steeply (γ) you dive through the atmosphere's scale height H. Steeper means a harder slam.",
+  "cur": "प्रवेश बैंक E = ½v² ऊर्जा प्रति किलोग्राम गर्मी में; शिखर मंदन a_peak = v²·sinγ/(2eH) इस बात का अनुसरण करता है कि आप वायुमंडल के पैमाने की ऊंचाई H के माध्यम से कितनी खड़ी गोता लगाते हैं। खड़ी का मतलब कठिन झटका है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_corridor_glossary",
+  "en": "Squeezed from both sides: the perigee r_p = a(1−e) must dip into the atmosphere (or you skip off into space), but the slam a_peak grows with entry angle (or you burn up). The survivable range of γ is a corridor a few degrees wide.",
+  "cur": "दोनों ओर से निचोड़ा हुआ: पेरीजी r_p = a(1−e) को वायुमंडल में डुबकी लगानी चाहिए (या आप अंतरिक्ष में छोड़ दिए जाते हैं), लेकिन झटका a_peak प्रवेश कोण के साथ बढ़ता है (या आप जल जाते हैं)। γ की रहने योग्य श्रेणी कुछ डिग्री चौड़ा एक कॉरिडोर है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_microg_glossary",
+  "en": "Little worlds, little pull: g = μ/R² and v_esc = √(2μ/R). On a comet both are tiny — walking speed beats escape velocity, which is why landing there is really docking.",
+  "cur": "छोटे संसार, छोटा खिंचाव: g = μ/R² और v_esc = √(2μ/R)। एक धूमकेतु पर दोनों ही छोटे हैं — चलने की गति बच निकलने के वेग को मारता है, यही कारण है कि वहाँ लैंडिंग वास्तव में डॉकिंग है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_bounce_glossary",
+  "en": "Touch down at v_td and the surface gives back v_b = e·v_td (restitution e). In micro-gravity (this goal's opening card) that bounce can arc kilometres high — Philae's double bounce, as an equation.",
+  "cur": "v_td पर स्पर्श करें और सतह v_b = e·v_td वापस देती है (प्रत्यास्थता e)। सूक्ष्म-गुरुत्व में (इस लक्ष्य का उद्घाटन कार्ड) वह उछाल किलोमीटर की ऊँचाई तक चाप बना सकता है — फिलै की दोहरी उछाल, एक समीकरण के रूप में।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_engine_perf_glossary",
+  "en": "vₑ = Iₛₚ·g₀: specific impulse converts straight into exhaust speed. It is the efficiency knob inside Tsiolkovsky — double the Iₛₚ and every kilogram of propellant buys twice the Δv.",
+  "cur": "vₑ = Iₛₚ·g₀: विशिष्ट आवेग सीधे निकास गति में परिवर्तित होता है। यह Tsiolkovsky के अंदर दक्षता नॉब है — Iₛₚ को दोगुना करें और प्रत्येक किलोग्राम प्रणोदक दो गुना Δv खरीदता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_solesc_glossary",
+  "en": "Escape from the Sun at distance r: v_esc = √(2μ☉/r) — exactly √2 times the circular speed there. That √2 is the whole story: leaving costs 41% more speed than orbiting.",
+  "cur": "दूरी r पर सूर्य से बचें: v_esc = √(2μ☉/r) — बिल्कुल वहाँ वृत्ताकार गति का √2 गुना। यह √2 पूरी कहानी है: निकलना कक्षा के आसपास 41% अधिक गति का खर्च करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_helesc_glossary",
+  "en": "Δv = v_esc − v_orb: you already MOVE at Earth's orbital speed around the Sun — escaping only costs the difference. Starting from a moving platform is most of the discount.",
+  "cur": "Δv = v_esc − v_orb: आप पहले से ही सूर्य के चारों ओर पृथ्वी की कक्षा की गति पर चलते हैं — बचना केवल अंतर का खर्च करता है। एक चलती प्लेटफॉर्म से शुरू करना अधिकांश छूट है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_oberth_glossary",
+  "en": "Burn deep in Earth's gravity well: Δv = √(v∞² + v_esc²) − v_circ. Fuel spent where you move fastest buys the same v∞ for less — the Oberth effect, the cheapest exit there is.",
+  "cur": "पृथ्वी के गुरुत्वाकर्षण कुआं में गहरी बर्न करें: Δv = √(v∞² + v_esc²) − v_circ। जहाँ आप सबसे तेजी से चलते हैं वहाँ खर्च किया गया ईंधन समान v∞ के लिए कम खरीदता है — Oberth प्रभाव, सबसे सस्ता निकास।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_grav_glossary",
+  "en": "A flyby is elastic in the planet's frame — speed in equals speed out. Swing through a full 180° and your velocity relative to the planet reverses, which adds up to Δv_max = 2v∞ in the Sun's frame. Free speed for the spacecraft; the planet pays with a recoil too tiny to measure.",
+  "cur": "ग्रह के फ्रेम में एक फ्लाईबाय प्रत्यास्थ है — गति में = गति बाहर। पूरे 180° से गुजरें और आपका ग्रह के सापेक्ष वेग उलट जाता है, जो सूर्य के फ्रेम में Δv_max = 2v∞ तक जोड़ता है। अंतरिक्षयान के लिए मुक्त गति; ग्रह एक अमापनीय प्रतिक्षेप से चुकाता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_escverd_glossary",
+  "en": "margin = v_cap + v_assist − v_req: the rocket's budget plus what flybys donate (gravity-assist card), against the price of leaving the Sun. Voyager's ledger in one line.",
+  "cur": "मार्जिन = v_cap + v_assist − v_req: रॉकेट का बजट प्लस फ्लाईबाय क्या दान करते हैं (गुरुत्व-सहायता कार्ड), सूर्य छोड़ने की कीमत के खिलाफ। Voyager की लेजर एक पंक्ति में।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_assistchain_glossary",
+  "en": "Chain the flybys and the donations add: Δv_max ≤ Σ 2v∞ᵢ — each planet contributes its 2v∞ (gravity-assist card). This sum is how spacecraft reach speeds no rocket alone could buy.",
+  "cur": "फ्लाईबाय को श्रृंखलित करें और दान जोड़ते हैं: Δv_max ≤ Σ 2v∞ᵢ — प्रत्येक ग्रह अपना 2v∞ योगदान देता है (गुरुत्व-सहायता कार्ड)। यह योग है कि अंतरिक्ष यान कैसे उन गति तक पहुँचते हैं जो कोई भी रॉकेट अकेले नहीं खरीद सकता।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_moonphase_glossary",
+  "en": "Illuminated fraction k = ½(1 + cos α): the phase angle α between Sun and Moon, seen from Earth, sets how much face is lit. New at α = 180°, full at 0° — geometry, not Earth's shadow.",
+  "cur": "प्रकाशित अंश k = ½(1 + cos α): चरण कोण α सूर्य और चंद्रमा के बीच, पृथ्वी से देखा गया, यह निर्धारित करता है कि कितना मुख प्रकाशित है। α = 180° पर नवचंद्र, 0° पर पूर्ण — ज्यामिति, पृथ्वी की छाया नहीं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_moondist_glossary",
+  "en": "Apparent size ∝ 1/d: the Moon's elliptical orbit takes it near (perigee) and far (apogee), so its disc swells and shrinks by about 14%. A 'supermoon' is just perigee timed with full phase.",
+  "cur": "दृश्य आकार ∝ 1/d: चंद्रमा की दीर्घवृत्तीय कक्षा इसे निकट (उपभू) और दूर (अपभू) ले जाती है, इसलिए इसकी डिस्क लगभग 14% तक फूलती और सिकुड़ती है। 'अतिचंद्र' केवल उपभू का पूर्ण चरण के साथ समय है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_eclipse_glossary",
+  "en": "The Moon's orbit tilts 5°, so its shadow usually misses. Only when the Moon sits within |β| < 1.5° of the ecliptic at new or full can an eclipse happen — the twice-a-year eclipse seasons.",
+  "cur": "चंद्रमा की कक्षा 5° झुकी हुई है, इसलिए इसकी छाया आमतौर पर चूक जाती है। केवल जब चंद्रमा नवचंद्र या पूर्ण चंद्र पर ग्रहण पथ के |β| < 1.5° के भीतर बैठता है — साल में दो बार ग्रहण ऋतु।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_moonalt_glossary",
+  "en": "How high the Moon culminates: h_max = 90° − |φ − δ| — your latitude φ against the Moon's declination δ. The same rule the Sun obeys; it is why the full Moon rides high in winter.",
+  "cur": "चंद्रमा कितना ऊँचा चढ़ता है: h_max = 90° − |φ − δ| — आपका अक्षांश φ और चंद्रमा का दिक्पात δ। यही नियम सूर्य पर भी लागू होता है; इसी कारण पूर्णिमा का चंद्रमा सर्दियों में ऊँचा चलता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_regime_glossary",
+  "en": "One radius, two numbers: v = √(μ/r) and T = 2π√(r³/μ) (orbital-velocity card plus Kepler's third law). LEO laps Earth in 90 minutes; higher orbits slow — the whole regime map in two formulas.",
+  "cur": "एक त्रिज्या, दो संख्याएं: v = √(μ/r) और T = 2π√(r³/μ) (कक्षीय-वेग कार्ड प्लस केप्लर का तीसरा नियम)। LEO पृथ्वी को 90 मिनट में पार करता है; उच्च कक्षाएं धीमी होती हैं — संपूर्ण व्यवस्था मानचित्र दो सूत्रों में।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_geo_glossary",
+  "en": "Set the period T to one sidereal day and solve Kepler: a = ∛(μT²/4π²) — 35,786 km up, the orbit keeps pace with the turning Earth. Hang there and you stand still in the sky.",
+  "cur": "अवधि T को एक नाक्षत्र दिन पर सेट करें और केप्लर को हल करें: a = ∛(μT²/4π²) — 35,786 किमी ऊपर, कक्षा पृथ्वी की घूर्णन के साथ गति रखती है। वहां रहें और आप आकाश में स्थिर खड़े होते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_latency_glossary",
+  "en": "Light speed is the toll: Δt = 2h/c for the round trip. LEO answers in milliseconds; GEO's 36,000 km costs a quarter of a second — why voice over GEO feels laggy.",
+  "cur": "प्रकाश की गति शुल्क है: Δt = 2h/c राउंड ट्रिप के लिए। LEO मिलीसेकंड में उत्तर देता है; GEO का 36,000 किमी एक सेकंड का चौथाई खर्च करता है — क्यों GEO पर आवाज़ पिछड़ी महसूस होती है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_sso_glossary",
+  "en": "Earth's equatorial bulge (J₂) twists orbit planes. Choose the inclination i where that twist makes exactly one lap per year and your orbit keeps pace with the Sun — the same local time under every pass. Sun-synchronous.",
+  "cur": "पृथ्वी की विषुवतीय उभार (J₂) कक्षीय तल को मोड़ता है। झुकाव i को चुनें जहां वह मोड़ साल में बिल्कुल एक चक्र बनाता है और आपकी कक्षा सूर्य के साथ गति रखती है — हर पास के नीचे एक जैसा स्थानीय समय। सूर्य-समकालिक।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_frozen_glossary",
+  "en": "The bulge also swings an orbit's low point around the orbit. At 5cos²i − 1 = 0 — i = 63.4° — the swing stops and the ellipse freezes in orientation: Molniya's trick for keeping its slow, high APOGEE dwelling over the far north.",
+  "cur": "उभार भी कक्षा के निम्न बिंदु को कक्षा के चारों ओर घुमाता है। 5cos²i − 1 = 0 पर — i = 63.4° — यह झूल रुक जाता है और दीर्घवृत्त अभिविन्यास में जम जाता है: दूर उत्तर के ऊपर अपनी धीमी, उच्च APOGEE को रखने के लिए Molniya की चाल।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_coverage_glossary",
+  "en": "One satellite sees a cap of half-angle λ = arccos(R·cos ε/(R+h)) − ε: altitude h buys footprint, the elevation mask ε shrinks it. Divide the circle by the cap and you get the ring count — constellation math.",
+  "cur": "एक उपग्रह आधा-कोण λ = arccos(R·cos ε/(R+h)) − ε की टोपी देखता है: ऊंचाई h पदचिह्न खरीदता है, उन्नयन मुखौटा ε इसे सिकोड़ता है। वलय को टोपी से विभाजित करें और आप वलय गणना प्राप्त करते हैं — नक्षत्र गणित।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_azimuth_glossary",
+  "en": "cos A = cos i / cos φ: to reach inclination i from latitude φ, aim at azimuth A. You cannot launch to an inclination below your latitude — the equation itself refuses (|cos A| ≤ 1).",
+  "cur": "cos A = cos i / cos φ: अक्षांश φ से झुकाव i तक पहुंचने के लिए, दिगंश A पर लक्ष्य रखें। आप अपने अक्षांश के नीचे झुकाव पर प्रक्षेपण नहीं कर सकते — समीकरण ही इंकार करता है (|cos A| ≤ 1)।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_gtrack_glossary",
+  "en": "While you fly one orbit (period T), Earth turns beneath you: each ground track shifts west by Δλ = 360°·T/T⊕. It is why one satellite sweeps the whole planet without steering.",
+  "cur": "जबकि आप एक कक्षा (अवधि T) उड़ते हैं, पृथ्वी आपके नीचे घूमती है: हर जमीनी ट्रैक पश्चिम में Δλ = 360°·T/T⊕ से बदलता है। यह है क्यों एक उपग्रह पूरे ग्रह को बिना स्टीयरिंग के स्वीप करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_viswin_glossary",
+  "en": "From altitude h the horizon dips by θ = arccos(R/(R+h)) — the slice of Earth a satellite can see, and the slice of sky where a pass can happen at all.",
+  "cur": "ऊंचाई h से क्षितिज θ = arccos(R/(R+h)) से डूबता है — पृथ्वी का टुकड़ा जो उपग्रह देख सकता है, और आकाश का टुकड़ा जहां पास बिल्कुल हो सकता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_isspass_glossary",
+  "en": "No closed formula here: propagate the live TLE forward and find the next time the ISS climbs above 10° at your site. The visibility-window card said a pass exists — this one says WHEN.",
+  "cur": "कोई बंद सूत्र नहीं यहां: लाइव TLE को आगे प्रसारित करें और अगली बार खोजें जब आईएसएस आपकी जगह पर 10° से ऊपर चढ़ता है। दृश्यमानता-खिड़की कार्ड ने कहा एक पास मौजूद है — यह कहता है कब।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_elong_glossary",
+  "en": "Elongation ε = λ_planet − λ☉: the angle between a planet and the Sun in our sky. It decides everything about viewing — near 0° the planet is lost in glare, near 180° it is up all night.",
+  "cur": "दीर्घन ε = λ_ग्रह − λ☉: हमारे आकाश में ग्रह और सूर्य के बीच कोण। यह दृश्य के बारे में सबकुछ तय करता है — 0° के पास ग्रह चमक में खो गया है, 180° के पास यह सारी रात ऊपर है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_maxelong_glossary",
+  "en": "An inner planet can only swing so far from the Sun: ε_max = arcsin(a(1+e)) — the arcsin of its APHELION distance in AU, the farthest its orbit reaches. Venus caps near 47° (aphelion 0.73 AU), Mercury near 28° (aphelion 0.47 AU) — why both are forever morning or evening stars.",
+  "cur": "एक आंतरिक ग्रह सूर्य से केवल इतना ही दूर झूल सकता है: ε_max = arcsin(a(1+e)) — इसकी APHELION दूरी का आर्क्साइन AU में, जहाँ तक इसकी कक्षा पहुँचती है। शुक्र लगभग 47° पर सीमित है (aphelion 0.73 AU), बुध लगभग 28° पर (aphelion 0.47 AU) — यही कारण है कि दोनों हमेशा सुबह या शाम के तारे हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_retrograde_glossary",
+  "en": "Retrograde is an overtake, not a reversal: as Earth laps an outer planet, the planet's apparent drift λ̇ along the ecliptic turns negative for a while. This card computes today's rate — negative means the loop is under way.",
+  "cur": "वक्री गति एक ओवरटेक है, उलट नहीं: जब पृथ्वी बाहरी ग्रह को पार करती है, ग्रह की स्पष्ट बहाव λ̇ ग्रहण के साथ एक समय के लिए नकारात्मक हो जाती है। यह कार्ड आज की दर गणना करता है — नकारात्मक का मतलब लूप चल रहा है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_skyalt_glossary",
+  "en": "Culmination height h_max = 90° − |φ − δ|: your latitude φ against the planet's declination δ (the moon-altitude card's rule, aimed at planets). It says how high tonight's target ever gets — low means mud and haze.",
+  "cur": "परिणति ऊंचाई h_अधिकतम = 90° − |φ − δ|: आपका अक्षांश φ ग्रह की विचलन δ के विरुद्ध (चंद्रमा-ऊंचाई कार्ड का नियम, ग्रहों को लक्षित)। यह कहता है आज रात का लक्ष्य कितना ऊंचा जाता है — कम का मतलब कीचड़ और कोहरा।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_target_suborbital",
+  "en": "Target: a 100 km sub-orbital hop (the Kármán line)",
+  "cur": "लक्ष्य: 100 किमी की सबऑर्बिटल यात्रा (कर्मन रेखा)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_target_tli",
+  "en": "Target: trans-lunar injection from a 200 km parking orbit",
+  "cur": "लक्ष्य: 200 किमी की पार्किंग कक्षा से ट्रांस-लूनर इंजेक्शन"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_launch_a_rocket",
+  "en": "Hand-sketched rocket lifting off on a blooming exhaust plume, the gantry falling away beside it and Earth's curve faint below.",
+  "cur": "हाथ से खींचा गया रॉकेट खिलते हुए निकास प्लूम पर उड़ान भर रहा है, इसके पास गैंट्री गिर रहा है और नीचे पृथ्वी का वक्र धुंधला है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_scale_a_rocket",
+  "en": "Three sketched rockets of wildly different sizes side by side, propellant tanks ghosted through their skins.",
+  "cur": "तीन खींचे गए रॉकेट अलग-अलग आकारों के एक-दूसरे के पास, उनकी त्वचा के माध्यम से प्रणोदक टैंक धुंधले हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_reach_orbit",
+  "en": "A rocket's ascent arc bending from vertical liftoff into a closed orbital ellipse around Earth, drawn as one continuous stroke.",
+  "cur": "एक रॉकेट का आरोह चाप ऊर्ध्वाधर लॉन्च से पृथ्वी के चारों ओर एक बंद कक्षीय दीर्घवृत्त में मुड़ रहा है, एक निरंतर स्ट्रोक के रूप में खींचा गया है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_land_on_earth",
+  "en": "A blunt capsule descending under three domed parachutes toward the ocean, the glow of entry heat fading above it.",
+  "cur": "एक कुंद कैप्सूल तीन गुंबद वाले पैराशूट के तहत महासागर की ओर उतर रहा है, इसके ऊपर प्रवेश ताप की चमक फीकी पड़ रही है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_motion_first_principles",
+  "en": "An astronaut adrift beside a floating wrench, their diverging sketched paths showing action and reaction.",
+  "cur": "एक अंतरिक्ष यात्री तैरते हुए रिंच के पास, उनके अलग-अलग खींचे गए पथ कार्रवाई और प्रतिक्रिया दिखा रहे हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_reach_the_moon",
+  "en": "A translunar trajectory arcing from a sketched Earth to the waiting Moon, a tiny spacecraft riding the transfer curve.",
+  "cur": "एक पारचंद्र प्रक्षेपवक्र खींचे गए पृथ्वी से प्रतीक्षारत चंद्रमा तक बढ़ रहा है, एक छोटा अंतरिक्षयान स्थानांतरण वक्र पर सवार है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_land_on_the_moon",
+  "en": "A spidery lunar lander on final descent above cratered ground, engine glow lighting the dust, Earth small in the black sky.",
+  "cur": "एक जालीदार चंद्र लैंडर गड्ढों वाली जमीन के ऊपर अंतिम वंश पर, इंजन चमक धूल को रोशन कर रही है, काले आकाश में पृथ्वी छोटी है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_get_to_mars",
+  "en": "Earth and Mars on their Sun-centred orbits with the tangent transfer ellipse bridging them, the Sun glowing amber at centre.",
+  "cur": "पृथ्वी और मंगल उनकी सूर्य-केंद्रित कक्षाओं पर स्पर्शरेखा स्थानांतरण दीर्घवृत्त उन्हें पुल देता है, सूर्य केंद्र में एम्बर गोल्डन है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_land_on_mars",
+  "en": "A capsule under one huge parachute above a rust-toned cratered plain, sky-crane rockets sketched firing below.",
+  "cur": "एक कैप्सूल एक विशाल पैराशूट के तहत लाल रंग की गड्ढों वाली मैदान के ऊपर, नीचे स्केच किए गए आकाश-क्रेन रॉकेट आग लगा रहे हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_land_on_venus",
+  "en": "An armoured spherical probe sinking through crushing layered clouds, heat and pressure glowing around it.",
+  "cur": "एक सशस्त्र गोलाकार जांच कुचलने वाली स्तरित बादलों के माध्यम से डूब रहा है, इसके चारों ओर गर्मी और दबाव चमक रहे हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_land_on_titan",
+  "en": "A small probe under a tiny drogue chute drifting through thick orange haze toward a dim frozen shoreline.",
+  "cur": "एक छोटी जांच एक छोटे ड्रोग शूट के तहत मोटे नारंगी कोहरे के माध्यम से बहती हुई एक मंद जमी हुई तटरेखा की ओर।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_probe_jupiter",
+  "en": "A heat-shielded probe plunging glowing into towering banded cloud decks of a gas giant, no surface below.",
+  "cur": "एक ताप-ढाल वाली जांच एक गैस विशाल की ऊंची बंदी बादल डेकों में चमकती हुई डूब रही है, नीचे कोई सतह नहीं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_engines_of_the_world",
+  "en": "A rocket engine sketched in cutaway half-silhouette, turbopump and bell nozzle visible, exhaust drawn as one amber stroke.",
+  "cur": "एक रॉकेट इंजन कटवे आधे सिल्हूट में खींचा गया है, टर्बोपंप और बेल नोजल दिखाई दे रहे हैं, निकास एक एम्बर स्ट्रोक के रूप में खींचा गया है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_land_on_mercury",
+  "en": "A lander braking on pure rocket fire over a scorched airless cratered surface, an enormous Sun dominating the black sky.",
+  "cur": "एक लैंडर शुद्ध रॉकेट आग पर एक झलसी हुई वायुहीन गड्ढों वाली सतह पर ब्रेकिंग कर रहा है, एक विशाल सूर्य काले आकाश पर हावी है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_touch_small_world",
+  "en": "A tiny spacecraft touching down on a rubble-pile asteroid whose horizon curves sharply away, dust drifting weightless.",
+  "cur": "एक छोटा अंतरिक्षयान एक मलबे-ढेर क्षुद्रग्रह पर उतर रहा है जिसका क्षितिज तीव्रता से दूर मुड़ता है, धूल निरपेक्षता से बहती है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_leave_the_solar_system",
+  "en": "A lone probe crossing outward past the last planetary orbits, the Sun shrunk to a bright star behind it.",
+  "cur": "एक अकेला जांच अंतिम ग्रहीय कक्षाओं के पार बाहर की ओर पार हो रहा है, सूर्य इसके पीछे एक उज्ज्वल तारा में सिकुड़ा हुआ है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_moon_phases",
+  "en": "The Moon repeated in an arc across the frame through its phases from crescent to full, the shadow geometry ghosted.",
+  "cur": "चंद्रमा क्रीसेंट से पूर्ण तक अपने चरणों के माध्यम से फ्रेम के पार एक चाप में दोहराया गया है, छाया ज्यामिति धुंधली है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_choose_an_orbit",
+  "en": "Earth ringed by nested sketched orbit ellipses of different heights and tilts, one highlighted in amber as the chosen path.",
+  "cur": "पृथ्वी विभिन्न ऊंचाई और झुकाव के नेस्टेड खींचे गए कक्षा दीर्घवृत्त से घिरी हुई है, एक चुने हुए पथ के रूप में एम्बर में हाइलाइट किया गया है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_catch_the_iss",
+  "en": "The ISS sketched in solar-panel silhouette with a small capsule closing along a rendezvous spiral beneath it.",
+  "cur": "आईएसएस सौर-पैनल सिल्हूट में खींचा गया है जिसमें एक छोटा कैप्सूल इसके नीचे एक रेंडेजस सर्पिल के साथ बंद है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_observe_the_sky",
+  "en": "A low horizon under a hand-sketched star field, one bright planet marked by an amber glow, sight-lines rising from a small observer.",
+  "cur": "एक कम क्षितिज हाथ से खींचे गए तारकीय क्षेत्र के तहत, एक उज्ज्वल ग्रह एम्बर चमक द्वारा चिह्नित है, एक छोटे पर्यवेक्षक से दृष्टि-रेखाएं बढ़ रही हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_plan_a_mission",
+  "en": "A mission's full arc in one frame — launch, orbit, transfer ellipse and arrival as a single continuous journey line.",
+  "cur": "एक मिशन का संपूर्ण चाप एक फ्रेम में — प्रक्षेपण, कक्षा, स्थानांतरण दीर्घवृत्त और आगमन एक सतत यात्रा रेखा के रूप में।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_flying_computer",
+  "en": "A rocket mid-ascent with its guidance arc traced ahead of it, the steering correction sketched as a confident stroke.",
+  "cur": "एक रॉकेट चढ़ाई के मध्य में इसके नेविगेशन चाप को आगे की ओर खींचा गया, स्टीयरिंग सुधार को आत्मविश्वास के साथ दर्शाया गया।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_landing_computer",
+  "en": "A lander hovering on a throttled engine above the surface, its descent-rate curve ghosted beside it easing to zero.",
+  "cur": "एक लैंडर थ्रॉटल किए गए इंजन के सहारे सतह के ऊपर मँडरा रहा है, और उसकी अवरोहण-दर का वक्र बगल में धुंधला खिंचा हुआ शून्य तक उतरता दिख रहा है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_entry_computer",
+  "en": "A lifting capsule banking through entry plasma, its steered corridor sketched as a narrowing channel toward a target.",
+  "cur": "एक लिफ्टिंग कैप्सूल प्रवेश प्लाज्मा के माध्यम से बैंकिंग करते हुए, इसके नियंत्रित गलियारे को एक लक्ष्य की ओर संकरी चैनल के रूप में दर्शाया गया।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_illustration_alt_apollo_round_trip",
+  "en": "The full Apollo figure-eight — Earth and Moon with the free-return trajectory looping around both, the capsule tiny on the path.",
+  "cur": "संपूर्ण Apollo आकृति-आठ — पृथ्वी और चंद्रमा मुक्त-वापसी प्रक्षेपवक्र के साथ दोनों के चारों ओर लूपिंग करता हुआ, कैप्सूल पथ पर छोटा है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ui_no_inputs",
+  "en": "No dials on this one — the geometry fully determines the answer, and the kernel computes it.",
+  "cur": "इस पर कोई डायल नहीं — ज्यामिति पूरी तरह उत्तर निर्धारित करती है, और kernel इसे परिकलित करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_canvas_purpose",
+  "en": "Freeform canvas — add formula cards, wire outputs into inputs, then promote your build to the notebook.",
+  "cur": "मुक्त-रूप कैनवास — सूत्र कार्ड जोड़ें, आउटपुट को इनपुट में जोड़ें, फिर अपने बिल्ड को नोटबुक में प्रचारित करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_logs_body",
+  "en": "Separately from analytics, ordinary web-server access logs record every request — including your IP address, the page requested, and your browser's user-agent. The same is true at the edge for the analytics endpoint. These are standard operational logs kept on our own infrastructure for debugging and abuse handling: the log store keeps them for up to 30 days, and the edge logs rotate by size rather than age. They are not joined to the analytics data, are not used to build a profile, and the opt-out below does not switch them off — serving a page cannot happen without them. Cloudflare, which fronts the site, may also keep its own connection logs under its policy.",
+  "cur": "विश्लेषण से अलग, साधारण वेब-सर्वर एक्सेस लॉग हर अनुरोध को रिकॉर्ड करते हैं — आपके IP पते, अनुरोधी पृष्ठ, और आपके ब्राउज़र के user-agent सहित। विश्लेषण अंतिम बिंदु के लिए किनारे पर भी यही सच है। ये मानक परिचालनात्मक लॉग हैं जो डिबग करने और दुरुपयोग सामना करने के लिए हमारी अपनी अवसंरचना पर रखे जाते हैं: लॉग स्टोर उन्हें 30 दिनों तक रखता है, और किनारे के लॉग आयु के बजाय आकार से घूमते हैं। ये विश्लेषण डेटा से जुड़े नहीं हैं, प्रोफ़ाइल बनाने के लिए उपयोग नहीं किए जाते हैं, और नीचे दिया गया ऑप्ट-आउट उन्हें बंद नहीं करता है — एक पृष्ठ परोसना उन्हें बिना नहीं हो सकता। Cloudflare, जो साइट के सामने है, अपनी नीति के तहत अपने स्वयं के कनेक्शन लॉग भी रख सकता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_mass_period_desc",
+  "en": "Every known exoplanet with a measured mass, plotted by orbital period — hot Jupiters, super-Earths and sub-Neptunes fall into visible families. This system's planets are highlighted.",
+  "cur": "प्रत्येक ज्ञात एक्सोप्लैनेट जिसका मापा हुआ द्रव्यमान है, कक्षीय अवधि के अनुसार प्लॉट किया गया — हॉट जुपिटर, सुपर-अर्थ और सब-नेप्च्यून दृश्यमान परिवारों में आते हैं। इस प्रणाली के ग्रह हाइलाइट किए गए हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_lens_story_bh_body",
+  "en": "This render traces real light paths (geodesics) around the black hole — the ring is the far side of the disk, lensed over the top. The layers add a curvature grid and a table of how much slower clocks tick this deep in the well.",
+  "cur": "यह रेंडर ब्लैक होल के चारों ओर वास्तविक प्रकाश पथ (जियोडेसिक्स) को ट्रेस करता है — वलय डिस्क का दूर पक्ष है, शीर्ष पर लेंस किया गया। परतें एक वक्रता ग्रिड और एक तालिका जोड़ती हैं कि इस गहराई में घड़ियां कितनी धीरे चलती हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_bh_curvature_desc",
+  "en": "A spacetime grid warped by the same geodesics that bend the light — an analogy for curvature, not a literal surface.",
+  "cur": "एक अंतरिक्ष-काल ग्रिड जो उसी जियोडेसिक्स द्वारा विकृत है जो प्रकाश को मोड़ते हैं — वक्रता के लिए एक सादृश्य, शाब्दिक सतह नहीं।"
+ },
+ {
+  "rel": "messages",
+  "at": "science_layer_bh_time_desc",
+  "en": "How much slower clocks tick at the photon sphere, the innermost stable orbit, and farther out — gravitational time dilation, quantified.",
+  "cur": "फोटॉन क्षेत्र, सबसे आंतरिक स्थिर कक्षा, और उससे आगे घड़ियां कितनी धीरे चलती हैं — गुरुत्वाकर्षण समय-विस्तार, परिमाणित।"
+ }
+]

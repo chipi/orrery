@@ -1,0 +1,2282 @@
+[
+ {
+  "rel": "belts/asteroid.json",
+  "at": "science_sections.0.why",
+  "en": "The main belt: ~1–2 million bodies between Mars and Jupiter, total mass ≈ 4 % of the Moon. Jupiter's resonances cleared the belt — fragmentation has won against accretion ever since.",
+  "cur": "Главни појас: ~1–2 милиона тела између Марса и Јупитера, укупне масе ≈ 4 % масе Месеца. Јупитерове резонанције очистиле су појас — фрагментација од тада односи победу над акрецијом."
+ },
+ {
+  "rel": "belts/asteroid.json",
+  "at": "science_sections.1.why",
+  "en": "The belt occupies the 2.2–3.2 AU annulus. Kirkwood gaps — empty orbit zones at Jupiter mean-motion resonances — pattern the population.",
+  "cur": "Појас заузима прстен од 2,2 до 3,2 АЈ. Кирквудове пукотине — празне зоне орбита у резонанцијама средњег кретања са Јупитером — дају популацији њену структуру."
+ },
+ {
+  "rel": "belts/asteroid.json",
+  "at": "science_sections.2.why",
+  "en": "Most belt asteroids stay near the ecliptic (< 10° inclination) but the high-inclination Pallas family at 33° reminds you the belt is a 3-D disc, not a 2-D ring.",
+  "cur": "Већина астероида у појасу остаје близу еклиптике (нагиб < 10°), али породица Палас са великим нагибом од 33° подсећа нас да је појас 3-D диск, а не 2-D прстен."
+ },
+ {
+  "rel": "belts/kuiper.json",
+  "at": "science_sections.0.why",
+  "en": "The Kuiper Belt is the trans-Neptunian remnant of the protoplanetary disc — 30 to 50 AU, dominated by ice. Pluto, Eris, Haumea, Makemake live here.",
+  "cur": "Кајперов појас је транснептунски остатак протопланетарног диска — од 30 до 50 AU, којим доминира лед. Овде се налазе Плутон, Ерида, Хаумеа и Макемаке."
+ },
+ {
+  "rel": "belts/kuiper.json",
+  "at": "science_sections.1.why",
+  "en": "The classical KBOs orbit between 42 and 48 AU in low-eccentricity, low-inclination orbits — they have been mostly undisturbed since the early system.",
+  "cur": "Класични КБО објекти орбитирају између 42 и 48 АУ у орбитама мале екцентричности и мале инклинације — углавном су остали неремећени од раног система."
+ },
+ {
+  "rel": "belts/kuiper.json",
+  "at": "science_sections.2.why",
+  "en": "The scattered-disc subpopulation (e.g. Eris) sits at high inclinations — gravitationally scattered by Neptune's outward migration; Sedna, by contrast, is a detached 'sednoid' whose distant perihelion lies beyond Neptune's reach and currently spreading the belt vertically.",
+  "cur": "Подпопулација расејаног диска (нпр. Ерида) налази се на великим нагибима орбита — гравитационо је расејана услед миграције Нептуна ка спољашњим деловима система; Седна је, насупрот томе, одвојени „седноид“ чији се далеки перихел налази изван домашаја Нептуна и који тренутно шири појас по вертикали."
+ },
+ {
+  "rel": "mars-sites/beagle2.json",
+  "at": "mission_type",
+  "en": "Uncrewed Lander · Lost",
+  "cur": "Лендер без посаде · Изгубљен"
+ },
+ {
+  "rel": "mars-sites/beagle2.json",
+  "at": "fact",
+  "en": "UK-led astrobiology lander aboard ESA's Mars Express. Touched down on Christmas Day 2003 but never made contact. The lander was located in 2015 by NASA's MRO HiRISE camera — it had reached the surface intact, but at least one of its four solar panels failed to deploy, blocking its radio antenna. A 12-year mystery solved by orbital imagery.",
+  "cur": "Астробиолошки лендер под водством Уједињеног Краљевства, који је летео на летелици ESA-ине мисије Mars Express. Спустио се на површину на Божић 2003, али никада није успоставио везу. Лендер је 2015. пронашла камера HiRISE на NASA-иној летелици MRO — стигао је на површину неоштећен, али се бар један од његових четири соларна панела није развио и тако је блокирао радио-антену. Дванаестогодишња мистерија решена снимцима из орбите."
+ },
+ {
+  "rel": "mars-sites/beagle2.json",
+  "at": "capability",
+  "en": "First UK-led planetary lander; demonstrated that orbital reconnaissance can locate failed surface assets at metre-scale.",
+  "cur": "Први планетарни лендер под водством Уједињеног Краљевства; показао је да орбитално извиђање може да лоцира отказале летелице на површини с прецизношћу од неколико метара."
+ },
+ {
+  "rel": "mars-sites/curiosity.json",
+  "at": "mission_type",
+  "en": "Uncrewed Rover · Active",
+  "cur": "Ровер без посаде · Активан"
+ },
+ {
+  "rel": "mars-sites/curiosity.json",
+  "at": "site_name",
+  "en": "Gale Crater (Aeolis Mons / Mt. Sharp)",
+  "cur": "Кратер Гејл (планина Еолида / планина Шарп)"
+ },
+ {
+  "rel": "mars-sites/curiosity.json",
+  "at": "fact",
+  "en": "Mars Science Laboratory. RTG-powered (no solar reliance), car-sized (899 kg), still operational over a decade after landing. Confirmed Gale Crater hosted a habitable lake environment in the deep past. Climbing Mt. Sharp's stratigraphic sequence — billion-year-by-billion-year readings of Mars's environmental history.",
+  "cur": "Mars Science Laboratory. Напаја га RTG (не ослања се на Сунчеву светлост), величине аутомобила (899 kg), и даље је у функцији више од деценије након слетања. Потврдио је да је кратер Гејл у далекој прошлости био станиште језера погодног за живот. Пење се кроз стратиграфски низ планине Шарп — милијарду по милијарду година, читајући записе о еколошкој историји Марса."
+ },
+ {
+  "rel": "mars-sites/curiosity.json",
+  "at": "capability",
+  "en": "First nuclear-powered Mars rover; first to confirm a past habitable environment on Mars.",
+  "cur": "Први ровер на Марсу с нуклеарним погоном; први који је потврдио да је на Марсу некада постојало окружење погодно за живот."
+ },
+ {
+  "rel": "mars-sites/exomars-rosalind-franklin.json",
+  "at": "name",
+  "en": "Rosalind Franklin rover",
+  "cur": "Ровер Rosalind Franklin"
+ },
+ {
+  "rel": "mars-sites/exomars-rosalind-franklin.json",
+  "at": "mission_type",
+  "en": "Uncrewed Rover · Planned",
+  "cur": "Ровер без посаде · Планирано"
+ },
+ {
+  "rel": "mars-sites/exomars-rosalind-franklin.json",
+  "at": "fact",
+  "en": "ESA's first Mars rover. Originally a Russian-led joint mission planned for 2022; cancelled after the 2022 invasion of Ukraine and rescoped as ESA-led with NASA contributions. Re-targeted for 2028 launch, 2029 arrival. Carries a 2-metre subsurface drill — the deepest yet planned for a Mars rover, designed to reach below the radiation-damaged top metre.",
+  "cur": "Први ровер агенције ESA за Марс. Првобитно је то била заједничка мисија под руководством Русије, планирана за 2022. годину; отказана је након инвазије на Украјину 2022. и преиначена у мисију под вођством агенције ESA уз допринос агенције NASA. Лансирање је поново заказано за 2028, а долазак за 2029. годину. Носи бушилицу за подповршинско бушење дубине 2 метра — најдубљу коју је икада планирано уградити у неки ровер за Марс, осмишљену да допре испод горњег метра тла оштећеног зрачењем."
+ },
+ {
+  "rel": "mars-sites/exomars-rosalind-franklin.json",
+  "at": "capability",
+  "en": "Will reach 2 m subsurface depth; the first directly-targeted astrobiology mission since Viking.",
+  "cur": "Досећи ће дубину од 2 m испод површине; прва мисија директно усмерена на астробиологију још од програма Viking."
+ },
+ {
+  "rel": "mars-sites/hope.json",
+  "at": "mission_type",
+  "en": "Active Orbiter · 2021 – present",
+  "cur": "Активни орбитер · 2021 – данас"
+ },
+ {
+  "rel": "mars-sites/hope.json",
+  "at": "site_name",
+  "en": "~20,000 × 43,000 km highly elliptical, 25° inclination",
+  "cur": "~20.000 × 43.000 km, високоелиптична орбита, нагиб 25°"
+ },
+ {
+  "rel": "mars-sites/hope.json",
+  "at": "fact",
+  "en": "First Arab interplanetary mission. The unusual high-altitude, low-inclination orbit lets Hope observe the same point on Mars's equator across all hours of the local day — building the first comprehensive global picture of Martian weather, atmospheric circulation, and atmospheric escape.",
+  "cur": "Прва арапска међупланетарна мисија. Необична орбита на великој висини и са малим нагибом омогућава да Hope посматра исту тачку на екватору Марса у свим сатима локалног дана — и тако изгради прву свеобухватну глобалну слику марсовског времена, атмосферске циркулације и бекства атмосфере."
+ },
+ {
+  "rel": "mars-sites/hope.json",
+  "at": "capability",
+  "en": "First Arab world interplanetary mission; first to observe Mars's full diurnal weather cycle.",
+  "cur": "Прва међупланетарна мисија арапског света; прва која посматра цео дневни циклус времена на Марсу."
+ },
+ {
+  "rel": "mars-sites/insight.json",
+  "at": "mission_type",
+  "en": "Uncrewed Lander · Mission Complete",
+  "cur": "Беспосадни лендер · Мисија завршена"
+ },
+ {
+  "rel": "mars-sites/insight.json",
+  "at": "fact",
+  "en": "First dedicated planetary seismograph on Mars. Detected over 1,300 marsquakes including a record magnitude-4.7 quake (S1222a) in May 2022. Heat-flow probe (HP³) failed to penetrate the unexpectedly cohesive regolith. Mission ended December 2022 when dust accumulation on solar panels dropped power below operating threshold.",
+  "cur": "Први наменски планетарни сеизмограф на Марсу. Забележио је више од 1.300 марсотреса, међу њима и рекордни потрес магнитуде 4,7 (S1222a) у мају 2022. Сонда за мерење топлотног тока (HP³) није успела да продре у неочекивано кохезивни реголит. Мисија је окончана у децембру 2022, када је накупљање прашине на соларним панелима снизило снагу испод радног прага."
+ },
+ {
+  "rel": "mars-sites/insight.json",
+  "at": "capability",
+  "en": "First seismic exploration of another planet's interior — established Mars's core size and crustal thickness.",
+  "cur": "Прво сеизмичко истраживање унутрашњости друге планете — утврђена је величина језгра Марса и дебљина његове коре."
+ },
+ {
+  "rel": "mars-sites/mangalyaan.json",
+  "at": "name",
+  "en": "Mangalyaan (Mars Orbiter Mission)",
+  "cur": "Mangalyaan (Mars Orbiter Mission)"
+ },
+ {
+  "rel": "mars-sites/mangalyaan.json",
+  "at": "mission_type",
+  "en": "Orbiter · Ended 2022",
+  "cur": "Орбитер · Завршена 2022."
+ },
+ {
+  "rel": "mars-sites/mangalyaan.json",
+  "at": "site_name",
+  "en": "~370 × 80,000 km highly elliptical",
+  "cur": "~370 × 80.000 km, високо елиптична"
+ },
+ {
+  "rel": "mars-sites/mangalyaan.json",
+  "at": "fact",
+  "en": "ISRO's first interplanetary mission, on a budget of ~$74M — less than the Hollywood film *Gravity*. India became the first Asian nation to reach Mars, and the first country to do so on a maiden interplanetary attempt. Operated 8 years (designed for 6 months) before contact was lost in April 2022.",
+  "cur": "Прва међупланетарна мисија агенције ISRO, са буџетом од око 74 милиона долара — мањим од буџета холивудског филма *Gravity*. Индија је постала прва азијска држава која је стигла до Марса и прва земља којој је то пошло за руком већ при првом међупланетарном покушају. Радила је 8 година (била је пројектована за 6 месеци), све до губитка контакта у априлу 2022."
+ },
+ {
+  "rel": "mars-sites/mangalyaan.json",
+  "at": "capability",
+  "en": "Demonstrated low-cost interplanetary missions; first Asian Mars mission.",
+  "cur": "Показала је изводљивост јефтиних међупланетарних мисија; прва азијска мисија до Марса."
+ },
+ {
+  "rel": "mars-sites/mariner9.json",
+  "at": "mission_type",
+  "en": "Active Orbiter · Ended 1972",
+  "cur": "Орбитер · Мисија завршена 1972."
+ },
+ {
+  "rel": "mars-sites/mariner9.json",
+  "at": "site_name",
+  "en": "Mars orbit, ~1,400 × 17,900 km",
+  "cur": "Орбита око Марса, ~1.400 × 17.900 km"
+ },
+ {
+  "rel": "mars-sites/mariner9.json",
+  "at": "fact",
+  "en": "First spacecraft to orbit another planet. Arrived at Mars during a planet-wide dust storm and waited until the atmosphere cleared. Returned 7,329 images covering 85% of the Martian surface — the first global mosaic of any planet besides Earth. Discovered Olympus Mons, Valles Marineris, and the polar layered terrain.",
+  "cur": "Прва свемирска летелица која је ушла у орбиту око друге планете. На Марс је стигла усред прашинске олује која је захватила целу планету и чекала је да се атмосфера разбистри. Послала је 7.329 снимака који покривају 85% марсовске површине — први глобални мозаик неке планете осим Земље. Открила је планину Олимп, долину Маринера и поларни слојевити терен."
+ },
+ {
+  "rel": "mars-sites/mariner9.json",
+  "at": "capability",
+  "en": "First-ever orbital reconnaissance of another planet — defined the template for every subsequent orbital science mission.",
+  "cur": "Прво орбитално извиђање неке друге планете у историји — поставило је образац за сваку потоњу орбиталну научну мисију."
+ },
+ {
+  "rel": "mars-sites/mars-express.json",
+  "at": "mission_type",
+  "en": "Active Orbiter · 2003 – present",
+  "cur": "Активни орбитер · 2003 – данас"
+ },
+ {
+  "rel": "mars-sites/mars-express.json",
+  "at": "site_name",
+  "en": "~250 × 11,500 km elliptical, near-polar",
+  "cur": "~250 × 11.500 km, елиптична, скоро поларна"
+ },
+ {
+  "rel": "mars-sites/mars-express.json",
+  "at": "fact",
+  "en": "ESA's first interplanetary mission. Carried Beagle 2 to its lost landing. The HRSC stereo camera continues to map Mars at 10 m/pixel; MARSIS subsurface radar discovered evidence of liquid water beneath the south polar cap in 2018.",
+  "cur": "Прва међупланетарна мисија агенције ESA. Однела је Beagle 2 до његовог изгубљеног слетања. Стереокамера HRSC и даље приказује Марс са резолуцијом од 10 m/пикселу, а радар MARSIS за истраживање подповршине открио је 2018. доказе о течној води испод јужне поларне капе."
+ },
+ {
+  "rel": "mars-sites/mars-express.json",
+  "at": "capability",
+  "en": "First European interplanetary mission; first orbital subsurface radar at Mars.",
+  "cur": "Прва европска међупланетарна мисија; први орбитални радар за истраживање подповршине на Марсу."
+ },
+ {
+  "rel": "mars-sites/mars-odyssey.json",
+  "at": "mission_type",
+  "en": "Active Orbiter · 2001 – present",
+  "cur": "Активни орбитер · 2001 – данас"
+ },
+ {
+  "rel": "mars-sites/mars-odyssey.json",
+  "at": "site_name",
+  "en": "Sun-synchronous polar orbit, ~400 km",
+  "cur": "Поларна сунчево-синхрона орбита, ~400 km"
+ },
+ {
+  "rel": "mars-sites/mars-odyssey.json",
+  "at": "fact",
+  "en": "The longest continuously-active spacecraft in orbit around any planet other than Earth. Detected vast subsurface water-ice deposits in 2002 (a discovery that drove the Phoenix and Curiosity targeting). Still active in 2026 as a relay node for surface assets.",
+  "cur": "Најдуже непрекидно активна летелица у орбити око било које планете осим Земље. Године 2002. открила је огромна подповршинска налазишта воденог леда (откриће које је одредило избор циљева за Phoenix и Curiosity). И у 2026. је још активна као релејни чвор за апарате на површини."
+ },
+ {
+  "rel": "mars-sites/mars-odyssey.json",
+  "at": "capability",
+  "en": "First detection of large subsurface water-ice reservoirs; longest-running interplanetary mission in history.",
+  "cur": "Прво откриће великих подповршинских резервоара воденог леда; најдуже трајућа међупланетарна мисија у историји."
+ },
+ {
+  "rel": "mars-sites/mars-pathfinder.json",
+  "at": "name",
+  "en": "Mars Pathfinder + Sojourner",
+  "cur": "Mars Pathfinder + Sojourner"
+ },
+ {
+  "rel": "mars-sites/mars-pathfinder.json",
+  "at": "mission_type",
+  "en": "Uncrewed Lander + Rover · Mission Complete",
+  "cur": "Лендер и ровер без посаде · Мисија завршена"
+ },
+ {
+  "rel": "mars-sites/mars-pathfinder.json",
+  "at": "fact",
+  "en": "First-ever Mars rover (Sojourner, 11 kg, microwave-sized). Demonstrated airbag-cushioned EDL — the same pattern Spirit and Opportunity later used. Sojourner traversed ~100 m and analysed 16 rock and soil targets before the lander relay died. Pathfinder's images popularised Mars on the early web — the first interplanetary mission whose data the public consumed in real time.",
+  "cur": "Први ровер на Марсу икада (Sojourner, 11 kg, величине микроталасне пећнице). Показао је улазак у атмосферу, спуштање и слетање уз ублажавање ваздушним јастуцима — исти образац који су касније користили Spirit и Opportunity. Sojourner је прешао ~100 m и анализирао 16 циљева међу стенама и тлом пре него што је престао да ради релеј на лендеру. Слике са Pathfinder-а популаризовале су Марс на раном вебу — то је била прва међупланетарна мисија чије је податке јавност пратила у реалном времену."
+ },
+ {
+  "rel": "mars-sites/mars-pathfinder.json",
+  "at": "capability",
+  "en": "Proved low-cost, faster-cheaper Mars missions could deliver primary science. Inaugurated mobile robotic exploration of Mars.",
+  "cur": "Доказала је да јефтине мисије на Марс по принципу „брже и јефтиније“ могу да постигну примарне научне циљеве. Започела је еру покретног роботског истраживања Марса."
+ },
+ {
+  "rel": "mars-sites/mars2.json",
+  "at": "mission_type",
+  "en": "Uncrewed Lander · Crashed",
+  "cur": "Беспилотни лендер · Срушио се"
+ },
+ {
+  "rel": "mars-sites/mars2.json",
+  "at": "site_name",
+  "en": "Approx. 45°S, 313°E (Hellas Planitia)",
+  "cur": "Приближно 45° јгш, 313° игд (Равница Хелада)"
+ },
+ {
+  "rel": "mars-sites/mars2.json",
+  "at": "fact",
+  "en": "First human-built object to reach the Martian surface — by impact. The lander's parachute failed during EDL on 27 November 1971; it crashed at high speed in the Hellas region. The orbiter component continued to return data for eight months. Mars 2 began the Soviet attempt to leapfrog the Americans to the Martian surface in the 1971 launch window.",
+  "cur": "Први објекат који је направио човек и који је стигао до површине Марса — ударом. Падобран лендера отказао је током уласка у атмосферу, спуштања и слетања 27. новембра 1971; лендер се великом брзином срушио у области Hellas. Орбитални модул наставио је да шаље податке осам месеци. Mars 2 је започео совјетски покушај да претекну Американце и први стигну на површину Марса у лансирном прозору 1971."
+ },
+ {
+  "rel": "mars-sites/mars2.json",
+  "at": "capability",
+  "en": "Demonstrated that reaching Mars's surface — even by impact — was achievable in a single launch window.",
+  "cur": "Показао је да је стизање до површине Марса — чак и ударом — могуће у једном лансирном прозору."
+ },
+ {
+  "rel": "mars-sites/mars3-orbiter.json",
+  "at": "mission_type",
+  "en": "Orbiter · Ended 1972",
+  "cur": "Орбитер · Завршено 1972."
+ },
+ {
+  "rel": "mars-sites/mars3-orbiter.json",
+  "at": "site_name",
+  "en": "Mars orbit, highly elliptical",
+  "cur": "Орбита Марса, веома елиптична"
+ },
+ {
+  "rel": "mars-sites/mars3-orbiter.json",
+  "at": "fact",
+  "en": "Orbital component of the Mars 3 mission. Returned the first surface temperature and atmospheric measurements of Mars from orbit. Made eight months of observations before contact was lost in August 1972.",
+  "cur": "Орбитална компонента мисије Mars 3. Послала је прва мерења температуре површине и атмосфере Марса из орбите. Осам месеци је вршила посматрања, све док веза није прекинута у августу 1972."
+ },
+ {
+  "rel": "mars-sites/mars3-orbiter.json",
+  "at": "capability",
+  "en": "First Soviet Mars orbiter; first to deliver a soft-landing payload to another planet.",
+  "cur": "Први совјетски орбитер Марса; први који је на другу планету испоручио терет за меко слетање."
+ },
+ {
+  "rel": "mars-sites/mars3.json",
+  "at": "mission_type",
+  "en": "Uncrewed Soft Lander · Partial Success",
+  "cur": "Беспилотни леандер за меко слетање · Делимичан успех"
+ },
+ {
+  "rel": "mars-sites/mars3.json",
+  "at": "site_name",
+  "en": "Approx. 45°S, 158°W (Ptolemaeus Crater)",
+  "cur": "Прибл. 45° Ј, 158° З (кратер Птолемеј)"
+ },
+ {
+  "rel": "mars-sites/mars3.json",
+  "at": "fact",
+  "en": "First soft landing on Mars. The lander touched down successfully and began transmitting data — for roughly 14–20 seconds. A planet-wide dust storm at the time of arrival is the leading explanation for the silence that followed. Despite the brevity, Mars 3 proved a Martian soft landing was possible: a foundational engineering result built on by every Mars lander since.",
+  "cur": "Прво меко слетање на Марс. Лендер је успешно додирнуо тло и почео да шаље податке — отприлике 14–20 секунди. Прашинска олуја која је у време доласка захватила целу планету главно је објашњење за тишину која је уследила. Упркос краткоћи сигнала, Mars 3 је доказао да је меко слетање на Марс могуће: то је темељно инжењерско достигнуће на коме се заснива сваки каснији лендер на Марсу."
+ },
+ {
+  "rel": "mars-sites/mars3.json",
+  "at": "capability",
+  "en": "First successful Mars EDL — proved soft-landing was a solved problem before American hardware tried it.",
+  "cur": "Први успешан улазак, спуштање и слетање (EDL) на Марсу — доказ да је меко слетање био решен проблем пре него што га је покушала америчка летелица."
+ },
+ {
+  "rel": "mars-sites/mars6.json",
+  "at": "mission_type",
+  "en": "Uncrewed Lander · Lost",
+  "cur": "Беспосадни лендер · Изгубљен"
+ },
+ {
+  "rel": "mars-sites/mars6.json",
+  "at": "site_name",
+  "en": "Approx. 23.9°S, 19.4°W (Margaritifer Sinus)",
+  "cur": "Приближно 23,9° Ј, 19,4° З (Маргаритифер Синус)"
+ },
+ {
+  "rel": "mars-sites/mars6.json",
+  "at": "fact",
+  "en": "First spacecraft to return atmospheric data during Mars descent. Communications were lost at touchdown, but the descent telemetry — pressure, temperature, and a partial atmospheric composition profile — fed the engineering models that Viking would rely on three years later.",
+  "cur": "Прва летелица која је током спуштања на Марс послала податке о атмосфери. Веза је прекинута при додиру са тлом, али су телеметријски подаци о спуштању — притисак, температура и делимичан профил састава атмосфере — постали улазни подаци за инжењерске моделе на које ће се Viking ослонити три године касније."
+ },
+ {
+  "rel": "mars-sites/mars6.json",
+  "at": "capability",
+  "en": "First in-situ atmospheric profile of Mars during EDL — direct input to all subsequent EDL designs.",
+  "cur": "Први профил атмосфере Марса снимљен на лицу места током уласка, спуштања и слетања (EDL) — директан улазни податак за сва каснија решења EDL-а."
+ },
+ {
+  "rel": "mars-sites/maven.json",
+  "at": "mission_type",
+  "en": "Active Orbiter · 2014 – present",
+  "cur": "Активни орбитер · 2014 – данас"
+ },
+ {
+  "rel": "mars-sites/maven.json",
+  "at": "site_name",
+  "en": "Nominal ~150 × 6,200 km, ~75° inclination",
+  "cur": "Номинално ~150 × 6.200 km, нагиб ~75°"
+ },
+ {
+  "rel": "mars-sites/maven.json",
+  "at": "fact",
+  "en": "Mars Atmosphere and Volatile EvolutioN. Quantified the rate at which Mars loses atmosphere to space — about 100 g/s of oxygen and CO₂ stripped by the solar wind. Showed that Mars's atmospheric thinning was driven by the loss of its global magnetic field ~4 billion years ago.",
+  "cur": "Mars Atmosphere and Volatile EvolutioN. Квантификовала је брзину којом Марс губи атмосферу у свемир — око 100 g/s кисеоника и CO₂ које односи Сунчев ветар. Показала је да је сабијање атмосфере Марса изазвано губитком његовог глобалног магнетног поља пре ~4 милијарде година."
+ },
+ {
+  "rel": "mars-sites/maven.json",
+  "at": "capability",
+  "en": "First mission dedicated to atmospheric escape; explained how Mars lost its early atmosphere.",
+  "cur": "Прва мисија посвећена бекству атмосфере; објаснила је како је Марс изгубио своју рану атмосферу."
+ },
+ {
+  "rel": "mars-sites/mro.json",
+  "at": "name",
+  "en": "Mars Reconnaissance Orbiter",
+  "cur": "Mars Reconnaissance Orbiter"
+ },
+ {
+  "rel": "mars-sites/mro.json",
+  "at": "mission_type",
+  "en": "Active Orbiter · 2006 – present",
+  "cur": "Активни орбитер · 2006 – данас"
+ },
+ {
+  "rel": "mars-sites/mro.json",
+  "at": "site_name",
+  "en": "Sun-synchronous polar orbit, ~255 km",
+  "cur": "Поларна сунчево-синхрона орбита, ~255 km"
+ },
+ {
+  "rel": "mars-sites/mro.json",
+  "at": "fact",
+  "en": "MRO's HiRISE camera has a pixel scale of 25 cm — sharp enough to find Beagle 2's wreckage in 2015 and to image Curiosity and Perseverance from orbit. Acts as the primary high-bandwidth relay for surface assets.",
+  "cur": "Камера HiRISE на MRO-у има резолуцију од 25 cm по пикселу — довољно оштру да се 2015. пронађу крхотине лендера Beagle 2 и да се из орбите сними Curiosity и Perseverance. Служи као главни релеј великог пропусног опсега за апарате на површини."
+ },
+ {
+  "rel": "mars-sites/mro.json",
+  "at": "capability",
+  "en": "Highest-resolution orbital imaging of any planet; the eyes-in-the-sky for every recent Mars surface mission.",
+  "cur": "Снимци највеће резолуције из орбите икада направљени за неку планету; „очи у небу“ за сваку недавну мисију на површини Марса."
+ },
+ {
+  "rel": "mars-sites/opportunity.json",
+  "at": "mission_type",
+  "en": "Uncrewed Rover · Mission Complete",
+  "cur": "Ровер без посаде · Мисија завршена"
+ },
+ {
+  "rel": "mars-sites/opportunity.json",
+  "at": "fact",
+  "en": "Mars Exploration Rover B — the marathon rover. 5,111 sols of active operation (over 14 years), 45.16 km traversed (the most by any vehicle on another world until Curiosity broke the cumulative record). Confirmed past liquid water at Endurance, Victoria, and Endeavour craters. During the final 2018 dust storm, the rover's last telemetry showed depleted power — a moment poetically paraphrased as \"my battery is low and it's getting dark.\"",
+  "cur": "Mars Exploration Rover B — ровер маратонац. 5.111 солова активног рада (преко 14 година), прешао је 45,16 km (највише од свих возила на неком другом свету, све док Curiosity није оборио збирни рекорд). Потврдио је постојање течне воде у прошлости у кратерима Endurance, Victoria и Endeavour. Током последње прашњаве олује 2018. године, последња телеметрија ровера показала је исцрпљено напајање — тренутак који је песнички парафразиран као „батерија ми је при крају и пада мрак.“"
+ },
+ {
+  "rel": "mars-sites/opportunity.json",
+  "at": "capability",
+  "en": "Set the bar for rover endurance; established the field-geology playbook every subsequent rover has followed.",
+  "cur": "Поставио је мерило издржљивости за ровере и утемељио приручник теренске геологије којег су се држали сви потоњи ровери."
+ },
+ {
+  "rel": "mars-sites/perseverance.json",
+  "at": "name",
+  "en": "Perseverance + Ingenuity",
+  "cur": "Perseverance + Ingenuity"
+ },
+ {
+  "rel": "mars-sites/perseverance.json",
+  "at": "mission_type",
+  "en": "Uncrewed Rover + Helicopter · Active",
+  "cur": "Ровер без посаде + хеликоптер · Активна"
+ },
+ {
+  "rel": "mars-sites/perseverance.json",
+  "at": "fact",
+  "en": "Designed to cache promising rock cores for a future Mars Sample Return mission. Already drilled and sealed 26+ samples by mid-2024. The Ingenuity helicopter — originally a 30-day technology demo — flew 72 times before damaging a rotor in January 2024. First powered, controlled flight on another world.",
+  "cur": "Намењен је томе да похрани узорке језгара обећавајућих стена за будућу мисију Mars Sample Return. До средине 2024. већ је избушио и запечатио више од 26 узорака. Хеликоптер Ingenuity — првобитно замишљен као технолошка демонстрација од 30 дана — летео је 72 пута, а у јануару 2024. оштетио је елису. Први погонски, контролисани лет на другом свету."
+ },
+ {
+  "rel": "mars-sites/perseverance.json",
+  "at": "capability",
+  "en": "First Mars sample-caching for future return; first powered flight in another atmosphere (Ingenuity).",
+  "cur": "Прво похрањивање узорака с Марса за будући повратак на Земљу; први погонски лет у атмосфери неког другог света (Ingenuity)."
+ },
+ {
+  "rel": "mars-sites/phoenix.json",
+  "at": "mission_type",
+  "en": "Uncrewed Lander · Mission Complete",
+  "cur": "Беспосадни лендер · Мисија завршена"
+ },
+ {
+  "rel": "mars-sites/phoenix.json",
+  "at": "site_name",
+  "en": "Vastitas Borealis (northern polar plain)",
+  "cur": "Велика северна равница"
+ },
+ {
+  "rel": "mars-sites/phoenix.json",
+  "at": "fact",
+  "en": "First spacecraft to physically touch Martian water ice. Phoenix's robotic arm scooped ice that sublimated in front of its cameras within hours — direct visual confirmation of the subsurface ice that Mars Odyssey's neutron spectrometer had inferred from orbit. Operated 157 sols before the northern winter froze its solar panels.",
+  "cur": "Прва свемирска летелица која је физички додирнула водени лед на Марсу. Phoenix-ова роботска рука захватила је лед који је сублимирао пред његовим камерама у року од неколико сати - директна визуелна потврда подземног леда који је неутронски спектрометар Mars Odyssey-а закључио из орбите. Радио је 157 сола пре него што је северна зима замрзнула његове соларне панеле."
+ },
+ {
+  "rel": "mars-sites/phoenix.json",
+  "at": "capability",
+  "en": "Validated water-ice-driven Mars exploration strategy; baselined polar-region surface operations.",
+  "cur": "Потврђена стратегија истраживања Марса заснована на воденом леду; површинске операције у поларним областима постављене као полазна основа."
+ },
+ {
+  "rel": "mars-sites/schiaparelli.json",
+  "at": "mission_type",
+  "en": "Uncrewed Test Lander · Crashed",
+  "cur": "Лендер за испитивање без посаде · Срушио се"
+ },
+ {
+  "rel": "mars-sites/schiaparelli.json",
+  "at": "fact",
+  "en": "ExoMars 2016 Entry, Descent, Landing Demonstrator. A control software fault caused the inertial measurement unit to saturate, leading the lander to compute a negative altitude and triggering premature parachute and backshell jettison. The thrusters fired briefly as if already on the ground, then shut off. It free-fell ~3.7 km to the surface. The flight data informed the ExoMars 2028 EDL redesign.",
+  "cur": "Демонстратор уласка, спуштања и слетања мисије ExoMars 2016. Грешка у контролном софтверу довела је до засићења инерцијалне мерне јединице, па је лендер израчунао негативну висину и превремено одбацио падобран и задњи штит. Потисници су накратко радили као да је већ на тлу, а затим су се угасили. Слободним падом пао је са висине од ~3,7 km на површину. Подаци са лета били су основа за редизајн система за улазак, спуштање и слетање (EDL) мисије ExoMars 2028."
+ },
+ {
+  "rel": "mars-sites/schiaparelli.json",
+  "at": "capability",
+  "en": "Hard-won EDL diagnostic data — a partial demonstration that fed forward into the next ExoMars mission.",
+  "cur": "Скупо плаћени дијагностички подаци о уласку, спуштању и слетању (EDL) — делимична демонстрација чији су резултати послужили као основа за следећу мисију ExoMars."
+ },
+ {
+  "rel": "mars-sites/spirit.json",
+  "at": "mission_type",
+  "en": "Uncrewed Rover · Mission Complete",
+  "cur": "Ровер без посаде · Мисија завршена"
+ },
+ {
+  "rel": "mars-sites/spirit.json",
+  "at": "fact",
+  "en": "Mars Exploration Rover A. Designed for a 90-sol primary mission; lasted 2,208 sols. Discovered evidence that Gusev Crater had once held volcanic-water interaction. Got stuck in soft soil at \"Troy\" in 2009; the team kept Spirit running as a stationary platform until the last contact in March 2010.",
+  "cur": "Mars Exploration Rover A. Пројектован за основну мисију од 90 сола, а трајао је 2.208 сола. Открио је доказе да је у кратеру Gusev некада постојала интеракција вулканских стена и воде. Заглавио се у меком тлу на локацији „Troy“ 2009. године; тим је одржавао Spirit у раду као непокретну платформу до последњег контакта у марту 2010."
+ },
+ {
+  "rel": "mars-sites/spirit.json",
+  "at": "capability",
+  "en": "First long-distance Mars rover; demonstrated multi-year robotic geology on the Martian surface.",
+  "cur": "Први ровер на Марсу за велике удаљености; показао је вишегодишњу роботску геологију на површини Марса."
+ },
+ {
+  "rel": "mars-sites/tgo.json",
+  "at": "name",
+  "en": "ExoMars Trace Gas Orbiter",
+  "cur": "ExoMars Trace Gas Orbiter"
+ },
+ {
+  "rel": "mars-sites/tgo.json",
+  "at": "mission_type",
+  "en": "Active Orbiter · 2016 – present",
+  "cur": "Активни орбитер · 2016 – данас"
+ },
+ {
+  "rel": "mars-sites/tgo.json",
+  "at": "site_name",
+  "en": "Circular ~400 km, 74° inclination",
+  "cur": "Кружна, ~400 km, нагиб 74°"
+ },
+ {
+  "rel": "mars-sites/tgo.json",
+  "at": "fact",
+  "en": "ExoMars 2016 mission's surviving half (Schiaparelli was the lander). Characterises atmospheric methane, water vapour, and other trace gases at part-per-trillion sensitivity. Found no methane above 0.05 ppbv — far below all prior claimed detections — deepening rather than settling the methane mystery. Curiosity's surface-level detections remain unexplained.",
+  "cur": "Преживела половина мисије ExoMars 2016 (Schiaparelli је био лендер). Одређује особине атмосферског метана, водене паре и других гасова у траговима с осетљивошћу од једног дела на билион. Није пронашао метан изнад 0,05 ppbv — далеко испод свих претходно тврђених детекција — што загонетку метана продубљује, уместо да је разреши. Curiosity-јеви детектовани трагови метана при површини и даље остају необјашњени."
+ },
+ {
+  "rel": "mars-sites/tgo.json",
+  "at": "capability",
+  "en": "Highest-sensitivity atmospheric trace-gas mapping at any planet.",
+  "cur": "Мапирање гасова у траговима у атмосфери с највећом осетљивошћу на било којој планети."
+ },
+ {
+  "rel": "mars-sites/tianwen1-orbiter.json",
+  "at": "mission_type",
+  "en": "Active Orbiter · 2021 – present",
+  "cur": "Активни орбитер · 2021 – данас"
+ },
+ {
+  "rel": "mars-sites/tianwen1-orbiter.json",
+  "at": "site_name",
+  "en": "~265 × 12,000 km elliptical, 87° inclination",
+  "cur": "~265 × 12.000 km елиптична орбита, нагиб 87°"
+ },
+ {
+  "rel": "mars-sites/tianwen1-orbiter.json",
+  "at": "fact",
+  "en": "Orbital component of China's first Mars mission. Acted as relay for the Zhurong rover; conducts global imaging, subsurface radar, and magnetic-field mapping. Continues to operate after Zhurong's 2022 communications loss.",
+  "cur": "Орбитална компонента прве кинеске мисије на Марс. Служио је као релеј за ровер Zhurong; обавља глобално снимање, радарско сондирање подповршине и мапирање магнетног поља. Наставља да ради и након што је 2022. прекинута веза са стране ровера Zhurong."
+ },
+ {
+  "rel": "mars-sites/tianwen1-orbiter.json",
+  "at": "capability",
+  "en": "China's first Mars orbiter; demonstrated combined orbiter+lander+rover capability on a single mission.",
+  "cur": "Први кинески орбитер око Марса; показао је комбиновану способност орбитера, лендера и ровера у оквиру једне мисије."
+ },
+ {
+  "rel": "mars-sites/viking1-lander.json",
+  "at": "mission_type",
+  "en": "Uncrewed Lander · Mission Complete",
+  "cur": "Лендер без посаде · Мисија завршена"
+ },
+ {
+  "rel": "mars-sites/viking1-lander.json",
+  "at": "fact",
+  "en": "First fully successful Mars surface mission. Viking 1 operated for over six years on the surface — the longest-duration surface mission until Opportunity (a rover) broke the record in 2010. It returned the first colour images from the Martian surface, conducted the first life-detection experiments (results famously inconclusive), and characterised the regolith and weather.",
+  "cur": "Прва потпуно успешна мисија на површини Марса. Viking 1 је радио на површини више од шест година — то је била најдужа мисија на површини све док рекорд 2010. године није оборио Opportunity (ровер). Послао је прве снимке у боји с марсовске површине, извео прве експерименте за откривање живота (чији су резултати, као што је добро познато, остали неубедљиви) и описао реголит и време на Марсу."
+ },
+ {
+  "rel": "mars-sites/viking1-lander.json",
+  "at": "capability",
+  "en": "First long-duration in-situ Martian science — every modern lander runs on Viking's playbook.",
+  "cur": "Прва дуготрајна научна истраживања на самом Марсу — сваки савремени лендер ради по Viking-овом узору."
+ },
+ {
+  "rel": "mars-sites/viking1-orbiter.json",
+  "at": "mission_type",
+  "en": "Orbiter · Ended 1980",
+  "cur": "Орбитер · Завршено 1980."
+ },
+ {
+  "rel": "mars-sites/viking1-orbiter.json",
+  "at": "site_name",
+  "en": "Mars orbit, highly elliptical",
+  "cur": "Орбита око Марса, веома елиптична"
+ },
+ {
+  "rel": "mars-sites/viking1-orbiter.json",
+  "at": "fact",
+  "en": "Returned over 50,000 images of Mars's surface and moons over four years. Mapped potential landing sites in advance for both Viking landers. Ended operations in August 1980 when its attitude-control gas was depleted.",
+  "cur": "Током четири године послао је више од 50.000 снимака Марсове површине и месеца. Унапред је картирао потенцијална места слетања за оба Viking лендера. Престао је са радом у августу 1980, када су му се потрошили гас за контролу положаја."
+ },
+ {
+  "rel": "mars-sites/viking1-orbiter.json",
+  "at": "capability",
+  "en": "First long-duration Mars orbital reconnaissance — produced the first Mars atlas.",
+  "cur": "Прво дуготрајно орбитално извиђање Марса — израдило је први атлас Марса."
+ },
+ {
+  "rel": "mars-sites/viking2-lander.json",
+  "at": "mission_type",
+  "en": "Uncrewed Lander · Mission Complete",
+  "cur": "Лендер без посаде · Мисија завршена"
+ },
+ {
+  "rel": "mars-sites/viking2-lander.json",
+  "at": "fact",
+  "en": "Operated 1,281 days at 48°N — the highest-latitude Mars surface mission until Phoenix. Detected the first frost on Mars in September 1977 — water ice confirmed — with an iconic high-resolution image captured in May 1979. The lander's biological experiments returned the same ambiguous results as Viking 1's: chemistry that mimicked metabolism, but without unambiguous biology.",
+  "cur": "Радио је 1.281 дан на 48° северне ширине — као мисија с највишом географском ширином на површини Марса све до мисије Phoenix. У септембру 1977. открио је први мраз на Марсу — потврђен је воденим ледом — а култна слика високе резолуције снимљена је у мају 1979. Биолошки експерименти слетача дали су исте двосмислене резултате као и они на Viking 1: хемију која је опонашала метаболизам, али без недвосмислене биологије."
+ },
+ {
+  "rel": "mars-sites/viking2-lander.json",
+  "at": "capability",
+  "en": "Demonstrated Mars surface operations could survive multi-year northern-hemisphere seasonal cycles.",
+  "cur": "Показао је да површински радови на Марсу могу да преживе вишегодишње сезонске циклусе северне хемисфере."
+ },
+ {
+  "rel": "mars-sites/zhurong.json",
+  "at": "name",
+  "en": "Zhurong (with Tianwen-1 lander)",
+  "cur": "Zhurong (са десантним модулом мисије Tianwen-1)"
+ },
+ {
+  "rel": "mars-sites/zhurong.json",
+  "at": "mission_type",
+  "en": "Uncrewed Rover · Mission Complete",
+  "cur": "Ровер без посаде · Мисија завршена"
+ },
+ {
+  "rel": "mars-sites/zhurong.json",
+  "at": "fact",
+  "en": "China's first Mars rover. Operated 358 sols, traversed 1.92 km. Returned ground-penetrating radar evidence for buried subsurface layers consistent with ancient catastrophic flooding events. Lost contact during the 2022 Martian winter; CNSA confirmed no further communications.",
+  "cur": "Први кинески ровер на Марсу. Радио је 358 сола и прешао 1,92 km. Радаром који продире кроз тло прикупио је доказе о закопаним подповршинским слојевима који су у складу с древним катастрофалним поплавама. Веза је изгубљена током марсовске зиме 2022. године; CNSA је потврдила да даљих комуникација није било."
+ },
+ {
+  "rel": "mars-sites/zhurong.json",
+  "at": "capability",
+  "en": "First non-US rover to operate on Mars; first non-US GPR-equipped Martian rover.",
+  "cur": "Први ровер ван САД који је радио на Марсу; први марсовски ровер ван САД опремљен радаром за проучавање тла (GPR)."
+ },
+ {
+  "rel": "moon-sites/apollo11.json",
+  "at": "left",
+  "en": "Descent stage · EASEP · laser retroreflector · flag · plaque: 'We came in peace for all mankind'",
+  "cur": "Спусни степен · EASEP · ласерски ретрорефлектор · застава · плоча: „Дошли смо у миру у име целог човечанства“"
+ },
+ {
+  "rel": "moon-sites/apollo11.json",
+  "at": "fact",
+  "en": "The first humans on the Moon. Watched live by ~600 million people — roughly one in six people on Earth at the time. The laser retroreflector placed by Armstrong and Aldrin still receives pulses today, measuring the Earth-Moon distance to millimetre precision. Footprints in the airless regolith will survive unchanged for a million years.",
+  "cur": "Први људи на Месецу. Уживо их је гледало ~600 милиона људи — отприлике сваки шести становник Земље у то доба. Ласерски ретрорефлектор који су поставили Армстронг и Олдрин и данас прима импулсе и мери растојање између Земље и Месеца с прецизношћу до милиметра. Отисци стопала у реголиту без атмосфере остаће непромењени милион година."
+ },
+ {
+  "rel": "moon-sites/apollo11.json",
+  "at": "capability",
+  "en": "First human landing — proved crewed planetary surface operations are possible. The capability ladder for Mars begins here.",
+  "cur": "Прво слетање људи — доказало је да су операције са посадом на планетарној површини могуће. Лествица способности за Марс почиње овде."
+ },
+ {
+  "rel": "moon-sites/apollo12.json",
+  "at": "left",
+  "en": "Descent stage · ALSEP · flag · retrieved parts of Surveyor 3",
+  "cur": "Степен за спуштање · ALSEP · застава · враћени делови летелице Surveyor 3"
+ },
+ {
+  "rel": "moon-sites/apollo12.json",
+  "at": "fact",
+  "en": "The precision landing — Conrad touched down within ~163 m of the uncrewed Surveyor 3 probe (1967). They retrieved pieces of it for return to Earth, showing spacecraft survive years on the Moon undamaged by radiation or micrometeorites. A proof-of-concept for future rendezvous missions.",
+  "cur": "Прецизно слетање — Конрад је додирнуо тло на ~163 m од беспилотне сонде Surveyor 3 (1967). Астронаути су узели њене делове да би их вратили на Земљу, што показује да свемирске летелице годинама опстају на Месецу, а да их зрачење или микрометеороиди не оштете. Доказ изводљивости за будуће мисије сусрета у орбити."
+ },
+ {
+  "rel": "moon-sites/apollo12.json",
+  "at": "capability",
+  "en": "First precision landing at a designated point — the prerequisite for any sample-return rendezvous architecture, including Mars.",
+  "cur": "Прво прецизно слетање на унапред одређену тачку — предуслов за сваку архитектуру сусрета у орбити при враћању узорака, укључујући и ону за Марс."
+ },
+ {
+  "rel": "moon-sites/apollo14.json",
+  "at": "left",
+  "en": "Descent stage · ALSEP · flag · two golf balls",
+  "cur": "Степен за спуштање · ALSEP · застава · две лоптице за голф"
+ },
+ {
+  "rel": "moon-sites/apollo14.json",
+  "at": "fact",
+  "en": "Alan Shepard, the first American in space (1961), became the only person to play golf on the Moon. He smuggled a club head and two balls aboard. He claimed one 'went miles and miles' — LRO images suggest about 37 m (40 yards). Still: the furthest sporting achievement in history.",
+  "cur": "Алан Шепард, први Американац у свемиру (1961), постао је једина особа која је играла голф на Месецу. Прокријумчарио је у летелицу главу палице и две лоптице. Тврдио је да је једна отишла „миљама и миљама“ далеко — снимци сонде LRO указују на око 37 m (40 јарди). Ипак: најдаљи спортски подвиг у историји."
+ },
+ {
+  "rel": "moon-sites/apollo14.json",
+  "at": "capability",
+  "en": "Demonstrated highland landing — opened scientifically valuable terrain types previously considered too hazardous, a blueprint for non-mare Mars sites.",
+  "cur": "Показано слетање у висије — отворени су научно вредни типови терена који су раније сматрани превише опасним, а то је узор за локације на Марсу које нису маре."
+ },
+ {
+  "rel": "moon-sites/apollo15.json",
+  "at": "mission_type",
+  "en": "Crewed Lander · Rover",
+  "cur": "Лендер с посадом · Ровер"
+ },
+ {
+  "rel": "moon-sites/apollo15.json",
+  "at": "left",
+  "en": "Descent stage · ALSEP · LRV rover · flag · Fallen Astronaut sculpture",
+  "cur": "Спусни степен · ALSEP · ровер LRV · застава · скулптура Fallen Astronaut"
+ },
+ {
+  "rel": "moon-sites/apollo15.json",
+  "at": "fact",
+  "en": "First mission with the Lunar Roving Vehicle — drove 27.9 km. Scott left a small aluminium figurine, 'Fallen Astronaut', and a plaque listing all astronauts and cosmonauts who died in the space race. It is the only artwork on the Moon, left without public announcement at the time.",
+  "cur": "Прва мисија са возилом Lunar Roving Vehicle — њиме је прешао 27,9 km. Скот је оставио малу алуминијумску фигурицу „Fallen Astronaut“ и плочицу с именима свих астронаута и космонаута који су погинули у свемирској трци. То је једино уметничко дело на Месецу, остављено тада без јавне најаве."
+ },
+ {
+  "rel": "moon-sites/apollo15.json",
+  "at": "capability",
+  "en": "First crewed surface mobility — extended exploration radius from hundreds of metres to tens of kilometres, the model for crewed Mars surface operations.",
+  "cur": "Прва покретљивост посаде на површини — проширила је радијус истраживања са неколико стотина метара на десетине километара и постала узор за операције посаде на површини Марса."
+ },
+ {
+  "rel": "moon-sites/apollo16.json",
+  "at": "mission_type",
+  "en": "Crewed Lander · Rover",
+  "cur": "Лендер с посадом · Ровер"
+ },
+ {
+  "rel": "moon-sites/apollo16.json",
+  "at": "left",
+  "en": "Descent stage · ALSEP · LRV rover · flag · Duke family photo",
+  "cur": "Степен за спуштање · ALSEP · ровер LRV · застава · фотографија породице Дјук"
+ },
+ {
+  "rel": "moon-sites/apollo16.json",
+  "at": "fact",
+  "en": "The only mission to land in the lunar highlands. Charles Duke left a photo of his family sealed in a bag on the lunar surface. On the back he wrote: 'This is the family of Astronaut Duke from Planet Earth. Landed on the Moon, April 1972.' It will outlast civilisation.",
+  "cur": "Једина мисија која је слетела на Месечеве висоравни. Чарлс Дјук оставио је на површини Месеца фотографију своје породице, запечаћену у кесици. На полеђини је написао: „Ово је породица астронаута Дјука са планете Земље. Слетели на Месец, април 1972.“ Надживеће цивилизацију."
+ },
+ {
+  "rel": "moon-sites/apollo16.json",
+  "at": "capability",
+  "en": "Highland geological sampling — diversified the lunar sample inventory beyond mare basalts and reshaped models of planetary crust formation, methods reused for Mars.",
+  "cur": "Геолошко узорковање висоравни — разноврсније је учинило збирку месечевих узорака изван базалта маре и преобликовало моделе настанка планетарне коре; методе су поново искоришћене за Марс."
+ },
+ {
+  "rel": "moon-sites/apollo17.json",
+  "at": "mission_type",
+  "en": "Crewed Lander · Rover",
+  "cur": "Лендер с посадом · Ровер"
+ },
+ {
+  "rel": "moon-sites/apollo17.json",
+  "at": "site_name",
+  "en": "Taurus-Littrow Valley",
+  "cur": "Долина Таурус-Литроу"
+ },
+ {
+  "rel": "moon-sites/apollo17.json",
+  "at": "left",
+  "en": "Descent stage · ALSEP · LRV rover · flag · plaque: 'Here Man completed his first explorations of the Moon. May the spirit of peace in which we came be reflected in the lives of all mankind.'",
+  "cur": "Степен за спуштање · ALSEP · ровер LRV · застава · плоча: „Овде је човек завршио своја прва истраживања Месеца. Нека се дух мира у коме смо дошли огледа у животима целог човечанства.“"
+ },
+ {
+  "rel": "moon-sites/apollo17.json",
+  "at": "fact",
+  "en": "The last time humans visited the Moon. Gene Cernan was the last person to walk on its surface. Before climbing the ladder, he said: 'We leave as we came, and God willing, we shall return.' Harrison Schmitt, the only trained geologist on the Moon, collected samples that reshaped our understanding of lunar geology.",
+  "cur": "Последњи пут да су људи посетили Месец. Јуџин Сернан био је последња особа која је ходала по његовој површини. Пре него што се попео уз мердевине, рекао је: „Одлазимо онако како смо дошли и, ако Бог да, вратићемо се.“ Харисон Шмит, једини геолог по струци који је боравио на Месецу, сакупио је узорке који су из основа променили наше разумевање геологије Месеца."
+ },
+ {
+  "rel": "moon-sites/apollo17.json",
+  "at": "capability",
+  "en": "First trained geologist on a planetary surface — set the precedent that crewed Mars missions should include scientists, not just pilots.",
+  "cur": "Први геолог по струци на површини једног планетарног тела — створио је преседан да мисије на Марс са људском посадом треба да укључују научнике, а не само пилоте."
+ },
+ {
+  "rel": "moon-sites/artemis3.json",
+  "at": "mission_type",
+  "en": "Crewed Lander (Planned)",
+  "cur": "Лендер с посадом (планирано)"
+ },
+ {
+  "rel": "moon-sites/artemis3.json",
+  "at": "site_name",
+  "en": "Lunar South Pole (specific site TBD)",
+  "cur": "Јужни пол Месеца (тачна локација се одређује)"
+ },
+ {
+  "rel": "moon-sites/artemis3.json",
+  "at": "crew.0",
+  "en": "TBD — first woman and first person of colour on Moon",
+  "cur": "Одређује се — прва жена и прва особа друге боје коже на Месецу"
+ },
+ {
+  "rel": "moon-sites/artemis3.json",
+  "at": "fact",
+  "en": "The first crewed lunar landing since Apollo 17 in 1972 — a 55-year gap. Targets the south pole for its water ice deposits, which may enable refuelling for future deep space missions. Will land the first woman and first person of colour on the Moon. If it happens on schedule, it begins the sustained human presence that leads to Mars.",
+  "cur": "Прво слетање људске посаде на Месец од мисије Apollo 17 1972. године — пауза од 55 година. Циљ је јужни пол због налазишта воденог леда, која би могла омогућити поновно снабдевање горивом за будуће мисије у дубоком свемиру. На Месецу ће слетети прва жена и прва особа друге боје коже. Ако се све одвије по плану, започеће трајно присуство људи које води ка Марсу."
+ },
+ {
+  "rel": "moon-sites/artemis3.json",
+  "at": "capability",
+  "en": "Human polar surface operations and in-situ resource utilisation rehearsal — the direct precursor to crewed Mars missions, which will depend on polar water ice for both consumables and propellant.",
+  "cur": "Људске операције на површини у поларној области и увежбавање коришћења ресурса на лицу места — директни претходник мисија са људском посадом на Марс, које ће зависити од поларног воденог леда како за потрошну робу, тако и за погонско гориво."
+ },
+ {
+  "rel": "moon-sites/beresheet.json",
+  "at": "mission_type",
+  "en": "Robotic Lander (failed)",
+  "cur": "Роботски лендер (неуспешан)"
+ },
+ {
+  "rel": "moon-sites/beresheet.json",
+  "at": "left",
+  "en": "Crash-impact debris field (April 2019)",
+  "cur": "Поље крхотина од судара (април 2019)"
+ },
+ {
+  "rel": "moon-sites/beresheet.json",
+  "at": "fact",
+  "en": "First privately-funded lunar landing attempt — Israeli non-profit SpaceIL, 585 kg lander. Reached lunar orbit but a gyroscope failure during descent led to engine shutdown and a crash at ~950 m/s (nearly 1 km/s). Carrying a 'lunar library' of human knowledge etched on nickel discs, plus a sample of tardigrades — extremophiles capable of cryptobiosis — that may or may not have survived the impact. Inspired Beresheet 2 (planned).",
+  "cur": "Први покушај слетања на Месец финансиран из приватних извора — израелска непрофитна организација SpaceIL, лендер масе 585 kg. Достигао је лунарну орбиту, али је квар жироскопа током спуштања довео до гашења мотора и пада брзином од ~950 m/s (скоро 1 km/s). Носио је „лунарну библиотеку“ људског знања угравирану на никловим дисковима, као и узорак тардиграда — екстремофила способних за криптобиозу — који су можда преживели удар, а можда и нису. Подстакао је настанак мисије Beresheet 2 (планирана)."
+ },
+ {
+  "rel": "moon-sites/beresheet.json",
+  "at": "capability",
+  "en": "Demonstrated that a small private team can reach the Moon. The crash itself surfaced lessons about descent-engine restart and IMU redundancy adopted by later commercial landers.",
+  "cur": "Показао је да мали приватни тим може да стигне до Месеца. Сам пад открио је поуке о поновном паљењу мотора за спуштање и редундантности инерцијалне мерне јединице (IMU), које су потом усвојили каснији комерцијални лендери."
+ },
+ {
+  "rel": "moon-sites/chandrayaan1.json",
+  "at": "mission_type",
+  "en": "Orbiter · Ended 2009",
+  "cur": "Орбитер · Завршена 2009."
+ },
+ {
+  "rel": "moon-sites/chandrayaan1.json",
+  "at": "site_name",
+  "en": "Lunar polar orbit, 100 km",
+  "cur": "Поларна орбита око Месеца, 100 km"
+ },
+ {
+  "rel": "moon-sites/chandrayaan1.json",
+  "at": "fact",
+  "en": "India's first lunar mission. Carried NASA's Moon Mineralogy Mapper (M³) — which in 2009 returned the first orbital spectroscopic confirmation of water (H₂O and OH) widely distributed across the lunar surface, not just at the poles. Mission ended after 312 days when communications were lost; M³ data is still being analysed today.",
+  "cur": "Прва мисија Индије до Месеца. Носила је NASA-ин Moon Mineralogy Mapper (M³), који је 2009. године први пут из орбите спектроскопски потврдио присуство воде (H₂O и OH) широко распрострањене по површини Месеца, а не само на половима. Мисија је завршена после 312 дана, када је изгубљена веза са летелицом; подаци инструмента M³ анализирају се и данас."
+ },
+ {
+  "rel": "moon-sites/chandrayaan1.json",
+  "at": "capability",
+  "en": "First direct global confirmation of lunar surface water; transformed every subsequent lunar resource-utilisation roadmap.",
+  "cur": "Прва директна глобална потврда постојања воде на површини Месеца; променила је сваку потоњу мапу пута за искоришћавање ресурса на Месецу."
+ },
+ {
+  "rel": "moon-sites/chandrayaan3.json",
+  "at": "mission_type",
+  "en": "Uncrewed Lander · Rover",
+  "cur": "Лендер без посаде · Ровер"
+ },
+ {
+  "rel": "moon-sites/chandrayaan3.json",
+  "at": "site_name",
+  "en": "Shiv Shakti Point (south polar region)",
+  "cur": "Shiv Shakti Point (јужна поларна област)"
+ },
+ {
+  "rel": "moon-sites/chandrayaan3.json",
+  "at": "left",
+  "en": "Vikram lander · Pragyan rover",
+  "cur": "Лендер Vikram · ровер Pragyan"
+ },
+ {
+  "rel": "moon-sites/chandrayaan3.json",
+  "at": "fact",
+  "en": "First spacecraft to land near the lunar south pole — the most contested territory in current space exploration, where permanently shadowed craters harbour water ice. Pragyan made the first in-situ detection of sulfur near the lunar south pole using its LIBS instrument. India became the fourth nation to soft-land on the Moon, and the first to reach the poles.",
+  "cur": "Прва летелица која је слетела у близини јужног пола Месеца — најспорније територије у савременом истраживању свемира, где у трајно засењеним кратерима почива воденни лед. Pragyan је помоћу свог инструмента LIBS извршио прво откриће сумпора *in situ* у близини јужног пола Месеца. Индија је постала четврта држава која је извела меко слетање на Месец и прва која је стигла до његових полова."
+ },
+ {
+  "rel": "moon-sites/chandrayaan3.json",
+  "at": "capability",
+  "en": "Polar landing technique — Mars's south pole region (where seasonal water ice exists) becomes a destination only after the polar landing problem is solved on the Moon.",
+  "cur": "Техника поларног слетања — област јужног пола Марса (где постоји сезонски водени лед) постаје одредиште тек пошто се на Месецу реши проблем поларног слетања."
+ },
+ {
+  "rel": "moon-sites/change1.json",
+  "at": "mission_type",
+  "en": "Orbiter · Ended 2009",
+  "cur": "Орбитер · Завршена 2009."
+ },
+ {
+  "rel": "moon-sites/change1.json",
+  "at": "site_name",
+  "en": "Lunar polar orbit, ~200 km",
+  "cur": "Поларна лунарна орбита, ~200 km"
+ },
+ {
+  "rel": "moon-sites/change1.json",
+  "at": "fact",
+  "en": "China's first lunar mission. Built and operated as a deliberate precursor test for the Chang'e 3 lander — the orbital phase served as a flight-qualification rehearsal for the deep-space communications and orbital mechanics that the lander mission would depend on. Crashed into the Moon at end of life as a controlled impact-test.",
+  "cur": "Прва кинеска мисија према Месецу. Направљена је и вођена као намерни претходни тест за лендер Chang'e 3 — орбитална фаза послужила је као проба за проверу летне оспособљености комуникација у дубоком свемиру и орбиталне механике од којих би зависила мисија лендера. На крају животног века пала је на Месец као контролисани тест удара."
+ },
+ {
+  "rel": "moon-sites/change1.json",
+  "at": "capability",
+  "en": "First Chinese lunar mission; opened the Chang'e programme that delivered the only foreign sample-return missions (Chang'e 5, 6) of the 21st century.",
+  "cur": "Прва кинеска лунарна мисија; отворила је програм Chang'e, који је остварио једине стране мисије повратка узорака (Chang'e 5, 6) у 21. веку."
+ },
+ {
+  "rel": "moon-sites/change2.json",
+  "at": "mission_type",
+  "en": "Orbiter · Lunar phase 2010-2011",
+  "cur": "Орбитер · Лунарна фаза 2010–2011"
+ },
+ {
+  "rel": "moon-sites/change2.json",
+  "at": "site_name",
+  "en": "Lunar polar orbit, 100 km",
+  "cur": "Лунарна поларна орбита, 100 km"
+ },
+ {
+  "rel": "moon-sites/change2.json",
+  "at": "fact",
+  "en": "Began as a higher-resolution remap of the Moon following Chang'e 1, then repurposed for an extended deep-space mission. After completing lunar mapping in 2011, Chang'e 2 departed for Sun-Earth L2 — China's first deep-space mission — and then on to a 2012 flyby of asteroid 4179 Toutatis. Still tracked in heliocentric orbit.",
+  "cur": "Мисија је започета као снимање Месеца у вишој резолуцији након Chang'e 1, а затим је преусмерена на продужену мисију у далеком свемиру. Након завршетка лунарног мапирања 2011, Chang'e 2 је отпутовао ка тачки L2 система Сунце–Земља — првој кинеској мисији у далеком свемиру — а потом даље, до прелета поред астероида 4179 Тутатис 2012. године. И даље се прати у хелиоцентричној орбити."
+ },
+ {
+  "rel": "moon-sites/change2.json",
+  "at": "capability",
+  "en": "First Chinese deep-space mission; first non-NASA-non-ESA mission to L2; first Chinese asteroid flyby.",
+  "cur": "Прва кинеска мисија у далеком свемиру; прва мисија до тачке L2 која не потиче од NASA нити од ESA; први кинески прелет поред астероида."
+ },
+ {
+  "rel": "moon-sites/change3.json",
+  "at": "mission_type",
+  "en": "Uncrewed Lander · Rover",
+  "cur": "Беспилотни лендер · Ровер"
+ },
+ {
+  "rel": "moon-sites/change3.json",
+  "at": "left",
+  "en": "Chang'e 3 lander (still active 2024+) · Yutu rover",
+  "cur": "Лендер Chang'e 3 (још активан 2024+) · ровер Yutu"
+ },
+ {
+  "rel": "moon-sites/change3.json",
+  "at": "fact",
+  "en": "China's first lunar landing — the first soft landing anywhere on the Moon in 37 years. The Chang'e 3 lander is still alive, making it the longest-surviving lunar lander ever. Yutu drove 114 m before its drive mechanism failed, but its instruments continued returning science data.",
+  "cur": "Прво кинеско слетање на Месец — прво меко слетање на Месец после 37 година. Лендер Chang'e 3 је и даље жив, што га чини лендером који је најдуже опстао на Месецу. Yutu је прешао 114 m пре него што је отказао његов погонски механизам, али су његови инструменти наставили да шаљу научне податке."
+ },
+ {
+  "rel": "moon-sites/change3.json",
+  "at": "capability",
+  "en": "Re-established robotic landing capability after a decades-long pause — the foundation for the sample-return missions (Chang'e 5, 6) that informed Mars Sample Return architecture.",
+  "cur": "Поново успостављена способност роботског слетања после паузе дуге неколико деценија — темељ за мисије повратка узорака (Chang'e 5, 6) које су утицале на архитектуру програма Mars Sample Return."
+ },
+ {
+  "rel": "moon-sites/change4.json",
+  "at": "mission_type",
+  "en": "Uncrewed Lander · Rover (Far Side)",
+  "cur": "Беспосадни лендер · Ровер (далека страна Месеца)"
+ },
+ {
+  "rel": "moon-sites/change4.json",
+  "at": "left",
+  "en": "Chang'e 4 lander · Yutu-2 rover (stationary since March 2024)",
+  "cur": "Лендер Chang'e 4 · ровер Yutu-2 (непокретан од марта 2024)"
+ },
+ {
+  "rel": "moon-sites/change4.json",
+  "at": "fact",
+  "en": "The first spacecraft to land on the Moon's far side — technically and operationally the hardest lunar landing ever attempted. Required a relay satellite (Queqiao) at L2 since the far side has no direct radio contact with Earth. Yutu-2 rover drove over 1.6 km before becoming stationary in March 2024; telemetry continued through at least September 2024. The far side had never been visited.",
+  "cur": "Прва летелица која је слетела на далеку страну Месеца — технички и оперативно најтеже слетање на Месец икада покушано. Захтевало је релејни сателит (Queqiao) у тачки L2, јер са далеком страном нема директне радио-везе са Земљом. Ровер Yutu-2 прешао је више од 1,6 km пре него што је у марту 2024. остао непокретан; телеметрија је настављена најмање до септембра 2024. Далеку страну Месеца дотад нико никада није посетио."
+ },
+ {
+  "rel": "moon-sites/change4.json",
+  "at": "capability",
+  "en": "Demonstrated relay-satellite communications architecture for operations beyond direct line-of-sight — the exact pattern any Mars far-side or polar mission will need.",
+  "cur": "Показана је архитектура комуникације преко релејног сателита за операције изван директне линије видљивости — управо онај образац који ће бити потребан свакој мисији на далекој страни Марса или у његовим поларним областима."
+ },
+ {
+  "rel": "moon-sites/change5.json",
+  "at": "mission_type",
+  "en": "Uncrewed Sample Return",
+  "cur": "Повратак узорака без посаде"
+ },
+ {
+  "rel": "moon-sites/change5.json",
+  "at": "site_name",
+  "en": "Mons Rümker (Oceanus Procellarum)",
+  "cur": "Планина Римкер (Океан олуја)"
+ },
+ {
+  "rel": "moon-sites/change5.json",
+  "at": "left",
+  "en": "Descent stage, drilling equipment",
+  "cur": "Степен за спуштање, опрема за бушење"
+ },
+ {
+  "rel": "moon-sites/change5.json",
+  "at": "fact",
+  "en": "First lunar sample return in 44 years — ending a gap since Luna 24 (1976). Returned 1.731 kg from a geologically young region (2 billion years old vs 3–4 billion for Apollo samples). Rewrote our model of lunar volcanism: the Moon was geologically active much more recently than thought.",
+  "cur": "Први повратак узорака са Месеца после 44 године — чиме је прекинут застој од мисије Luna 24 (1976). Доспело је на Земљу 1,731 kg материјала из геолошки младе области (стара 2 милијарде година, наспрам 3–4 милијарде година колико имају узорци из програма Apollo). Преправљен је наш модел месечевог вулканизма: Месец је био геолошки активан много скорије него што се мислило."
+ },
+ {
+  "rel": "moon-sites/change5.json",
+  "at": "capability",
+  "en": "Modern robotic sample return architecture — direct precursor to Mars Sample Return's lander/ascent vehicle/orbiter chain.",
+  "cur": "Савремена роботска архитектура за повратак узорака — директан претходник ланца лендер/ракета за узлет/орбитер у програму Mars Sample Return."
+ },
+ {
+  "rel": "moon-sites/change6.json",
+  "at": "mission_type",
+  "en": "Uncrewed Sample Return (Far Side)",
+  "cur": "Повратак узорака без посаде (удаљена страна Месеца)"
+ },
+ {
+  "rel": "moon-sites/change6.json",
+  "at": "site_name",
+  "en": "Apollo Crater (far side)",
+  "cur": "Кратер Аполон (далека страна)"
+ },
+ {
+  "rel": "moon-sites/change6.json",
+  "at": "fact",
+  "en": "First sample return from the lunar far side — possibly the most scientifically significant lunar mission since Apollo. Far-side material (thicker crust, older surface, different composition) was completely unstudied. These samples may finally explain why the Moon's two hemispheres are so fundamentally different.",
+  "cur": "Први повратак узорака са удаљене стране Месеца — могуће најзначајнија лунарна мисија са научног становишта још од програма Apollo. Материјал са удаљене стране (дебља кора, старија површина, другачији састав) био је потпуно непроучен. Ови узорци би напокон могли да објасне зашто су две хемисфере Месеца тако суштински различите."
+ },
+ {
+  "rel": "moon-sites/change6.json",
+  "at": "capability",
+  "en": "Sample return from a relay-only site — combines the architectures of Chang'e 4 (far-side comms) and Chang'e 5 (sample return). The full set of capabilities for Mars Sample Return at any latitude.",
+  "cur": "Повратак узорака са локације доступне само преко релејне везе — спаја архитектуре мисија Chang'e 4 (комуникација са удаљеном страном) и Chang'e 5 (повратак узорака). Комплетан скуп способности потребних за Mars Sample Return на било којој географској ширини."
+ },
+ {
+  "rel": "moon-sites/clementine.json",
+  "at": "mission_type",
+  "en": "Orbiter · Ended 1994",
+  "cur": "Орбитер · Завршена 1994."
+ },
+ {
+  "rel": "moon-sites/clementine.json",
+  "at": "site_name",
+  "en": "Lunar polar orbit",
+  "cur": "Лунарна поларна орбита"
+ },
+ {
+  "rel": "moon-sites/clementine.json",
+  "at": "fact",
+  "en": "Joint NASA/DoD Strategic Defense Initiative mission. Spent ten weeks mapping the Moon at 11 spectral bands — the first systematic global multispectral map. Bistatic radar measurements at the south pole produced the first hints of polar water ice, later confirmed by Lunar Prospector and Chandrayaan-1.",
+  "cur": "Заједничка мисија NASA и DoD у оквиру Strategic Defense Initiative. Десет недеља је картирала Месец у 11 спектралних појасева — прва систематска глобална мултиспектрална карта. Бистатичка радарска мерења на јужном полу дала су први наговештај поларног воденог леда, који су касније потврдиле мисије Lunar Prospector и Chandrayaan-1."
+ },
+ {
+  "rel": "moon-sites/clementine.json",
+  "at": "capability",
+  "en": "First hint of lunar polar water ice — the discovery that motivated every subsequent south-pole mission, including Artemis III.",
+  "cur": "Први наговештај воденог леда на лунарним половима — открића које је подстакло сваку потоњу мисију на јужни пол, укључујући Artemis III."
+ },
+ {
+  "rel": "moon-sites/lro.json",
+  "at": "name",
+  "en": "Lunar Reconnaissance Orbiter",
+  "cur": "Lunar Reconnaissance Orbiter"
+ },
+ {
+  "rel": "moon-sites/lro.json",
+  "at": "mission_type",
+  "en": "Active Orbiter · 2009 – present",
+  "cur": "Активни орбитер · 2009 – данас"
+ },
+ {
+  "rel": "moon-sites/lro.json",
+  "at": "site_name",
+  "en": "Lunar polar orbit (~50 km science phase; elliptical since 2011)",
+  "cur": "Лунарна поларна орбита (~50 km у научној фази; елиптична од 2011)"
+ },
+ {
+  "rel": "moon-sites/lro.json",
+  "at": "fact",
+  "en": "The longest-running active lunar orbital mission. LROC's narrow-angle camera resolves objects ≥50 cm — sharp enough to image every Apollo descent stage, both Lunokhod rover tracks, and every recent landed asset. Built the topographic and imagery base maps used by every recent Moon-landing mission. Currently mapping permanently-shadowed craters for Artemis south-pole site selection.",
+  "cur": "Најдуговечнија активна лунарна орбитална мисија. Узанопокатна камера инструмента LROC разазнаје објекте величине ≥50 cm — довољно оштро да забележи сваки Apollo спусни степен, трагове оба ровера Lunokhod и свако скорије спуштено летелично средство. Направила је топографске и сликовне основне карте које користи свака скорашња мисија спуштања на Месец. Тренутно мапира трајно засењене кратере за избор места код јужног пола за програм Artemis."
+ },
+ {
+  "rel": "moon-sites/lro.json",
+  "at": "capability",
+  "en": "Definitive modern lunar reconnaissance — the eyes-in-the-sky for every recent Moon mission.",
+  "cur": "Меродавно савремено извиђање Месеца — око у небу за сваку недавну мисију на Месец."
+ },
+ {
+  "rel": "moon-sites/luna10.json",
+  "at": "mission_type",
+  "en": "Orbiter · Ended 1966",
+  "cur": "Орбитер · Завршена 1966."
+ },
+ {
+  "rel": "moon-sites/luna10.json",
+  "at": "site_name",
+  "en": "Lunar orbit, ~350 km",
+  "cur": "Месечева орбита, ~350 km"
+ },
+ {
+  "rel": "moon-sites/luna10.json",
+  "at": "fact",
+  "en": "First artificial satellite of any body other than Earth. Reached lunar orbit in April 1966 — about four months before NASA's Lunar Orbiter 1 — and broadcast \"The Internationale\" from lunar orbit during a Communist Party Congress. Ran for 56 days before its batteries died.",
+  "cur": "Први вештачки сателит неког другог тела осим Земље. У Месечеву орбиту стигла је у априлу 1966. — око четири месеца пре NASA-иног Lunar Orbiter 1 — и емитовала „Интернационалу“ из Месечеве орбите током конгреса Комунистичке партије. Радила је 56 дана, док јој се нису истрошиле батерије."
+ },
+ {
+  "rel": "moon-sites/luna10.json",
+  "at": "capability",
+  "en": "First orbital reconnaissance of another world; opened the Soviet sequence that culminated in Luna 9 + Lunokhod.",
+  "cur": "Прво орбитално извиђање другог света; отворила је совјетски низ мисија који је кулминирао програмима Luna 9 + Lunokhod."
+ },
+ {
+  "rel": "moon-sites/luna16.json",
+  "at": "mission_type",
+  "en": "Robotic Sample Return",
+  "cur": "Роботски повратак узорака"
+ },
+ {
+  "rel": "moon-sites/luna16.json",
+  "at": "left",
+  "en": "Descent stage with cabling, ascent stage launch base",
+  "cur": "Степен за спуштање са каблирањем, лансирна база степена за узлет"
+ },
+ {
+  "rel": "moon-sites/luna16.json",
+  "at": "fact",
+  "en": "First fully robotic sample return from another world — September 1970. Drilled into the lunar regolith with an articulated rotary drill, transferred 101 g of dust + small rock fragments into a sealed return capsule, then launched directly back to Earth without orbital rendezvous. Landed in Kazakhstan three days later. Two more Luna sample returns followed (Luna 20 in 1972, Luna 24 in 1976).",
+  "cur": "Први потпуно роботски повратак узорака са другог света — септембар 1970. Зглобном ротационом бушилицом избушио је лунарни реголит, пренео 101 g прашине и ситних комада стена у запечаћену повратну капсулу, а затим полетео право ка Земљи, без сусрета у орбити. Слетео је у Казахстан три дана касније. Уследила су још два повратка узорака мисија Luna (Luna 20 1972. и Luna 24 1976. године)."
+ },
+ {
+  "rel": "moon-sites/luna16.json",
+  "at": "capability",
+  "en": "Proved end-to-end robotic sample return is feasible — the capability that underwrites Mars Sample Return today.",
+  "cur": "Доказао је да је роботски повратак узорака од почетка до краја изводљив — способност на којој се и данас темељи Mars Sample Return."
+ },
+ {
+  "rel": "moon-sites/luna17.json",
+  "at": "name",
+  "en": "Luna 17 / Lunokhod 1",
+  "cur": "Luna 17 / Lunokhod 1"
+ },
+ {
+  "rel": "moon-sites/luna17.json",
+  "at": "left",
+  "en": "Lunokhod 1 rover (756 kg), descent stage",
+  "cur": "Ровер Lunokhod 1 (756 kg), степен за спуштање"
+ },
+ {
+  "rel": "moon-sites/luna17.json",
+  "at": "fact",
+  "en": "The first remote-controlled rover to operate on another world. Drove 10.5 km over 322 days, photographing over 20,000 images. Lost to history until 2010, when the Lunar Reconnaissance Orbiter spotted it from orbit — still sitting exactly where it stopped.",
+  "cur": "Први даљински управљан ровер који је радио на другом небеском телу. Прешао је 10,5 km у трајању од 322 дана, фотографишући преко 20.000 слика. Изгубљен за историју до 2010. године, када га је Lunar Reconnaissance Orbiter видео са орбите — још увек седи управо тамо где је стао."
+ },
+ {
+  "rel": "moon-sites/luna17.json",
+  "at": "capability",
+  "en": "First teleoperated rover — established the architecture every Mars rover from Sojourner to Perseverance has built on.",
+  "cur": "Први даљински управљани ровер — успоставио је архитектуру на којој су градили сви марсовски ровери, од Sojourner-а до Perseverance-а."
+ },
+ {
+  "rel": "moon-sites/luna21.json",
+  "at": "name",
+  "en": "Luna 21 / Lunokhod 2",
+  "cur": "Luna 21 / Lunokhod 2"
+ },
+ {
+  "rel": "moon-sites/luna21.json",
+  "at": "site_name",
+  "en": "Le Monnier Crater (Mare Serenitatis)",
+  "cur": "Кратер Ле Моније (Море ведрине)"
+ },
+ {
+  "rel": "moon-sites/luna21.json",
+  "at": "left",
+  "en": "Luna 21 lander + Lunokhod 2 rover (final resting position)",
+  "cur": "Лендер Luna 21 + ровер Lunokhod 2 (коначни положај мировања)"
+ },
+ {
+  "rel": "moon-sites/luna21.json",
+  "at": "fact",
+  "en": "Lunokhod 2 was the second of two Soviet lunar rovers (1973). Driven by a 5-person ground crew rotating in shifts at the IKI control centre. In 4 months it covered ~39 km — the lunar-surface distance record that stood for 41 years until NASA's Opportunity Mars rover passed it in 2014. Carried French laser retroreflectors that are still used for Earth-Moon ranging today.",
+  "cur": "Lunokhod 2 био је други од два совјетска лунарна ровера (1973). Њиме је управљала петочлана посада на Земљи, која се смењивала по сменама у контролном центру IKI. За 4 месеца прешао је ~39 km – рекорд у пређеној раздаљини по површини Месеца, који је трајао 41 годину, све док га 2014. није престигао NASA-ин марсовски ровер Opportunity. Носио је француске ласерске ретрорефлекторе који се и данас користе за мерење растојања између Земље и Месеца."
+ },
+ {
+  "rel": "moon-sites/luna21.json",
+  "at": "capability",
+  "en": "Long-distance teleoperated mobility — proved a remote crew can drive an unmanned vehicle across an alien surface in real time (with light-delay).",
+  "cur": "Даљинско управљање покретљивошћу на великим удаљеностима — доказало је да удаљена посада може у стварном времену (уз кашњење због брзине светлости) да вози беспосадно возило преко ванземаљске површине."
+ },
+ {
+  "rel": "moon-sites/luna24.json",
+  "at": "mission_type",
+  "en": "Uncrewed Sample Return",
+  "cur": "Повратак узорака без посаде"
+ },
+ {
+  "rel": "moon-sites/luna24.json",
+  "at": "left",
+  "en": "Descent stage, drill apparatus",
+  "cur": "Степен за спуштање, бушећи уређај"
+ },
+ {
+  "rel": "moon-sites/luna24.json",
+  "at": "fact",
+  "en": "The last Soviet lunar mission — and the last uncrewed Moon landing until China's Chang'e 3 in 2013: a gap of 37 years. Returned 170 g of samples including minerals containing water, foreshadowing the later discovery of lunar water ice.",
+  "cur": "Последња совјетска мисија ка Месецу — и последње слетање без посаде на Месец све до кинеске мисије Chang'e 3 2013. године: размак од 37 година. Донела је 170 g узорака, међу којима и минерале који садрже воду, наговестивши касније откриће воденог леда на Месецу."
+ },
+ {
+  "rel": "moon-sites/luna24.json",
+  "at": "capability",
+  "en": "Demonstrated robotic sample return — the architecture Mars Sample Return is now attempting at interplanetary scale.",
+  "cur": "Показан роботски повратак узорака — архитектура коју Mars Sample Return сада покушава да примени у међупланетарним размерама."
+ },
+ {
+  "rel": "moon-sites/luna9.json",
+  "at": "mission_type",
+  "en": "Uncrewed Soft Lander",
+  "cur": "Беспосадна летелица за меко спуштање"
+ },
+ {
+  "rel": "moon-sites/luna9.json",
+  "at": "left",
+  "en": "Lander shell, cameras, battery",
+  "cur": "Љуска летелице, камере, батерија"
+ },
+ {
+  "rel": "moon-sites/luna9.json",
+  "at": "fact",
+  "en": "The first spacecraft to achieve a soft landing on the Moon and transmit photographs from the surface. Nine panoramic images ended the debate about whether landers would sink into deep lunar dust. A defining moment — the Moon could be reached.",
+  "cur": "Прва летелица која је извела меко спуштање на Месец и са његове површине послала фотографије. Девет панорамских снимака окончало је расправу о томе да ли ће лендери утонути у дубоку месечеву прашину. Пресудан тренутак — до Месеца се могло доћи."
+ },
+ {
+  "rel": "moon-sites/luna9.json",
+  "at": "capability",
+  "en": "First soft landing — required before any subsequent lunar surface operation, and the prerequisite proof-of-concept for every Mars lander since.",
+  "cur": "Прво меко спуштање — неопходан услов за сваку потоњу операцију на површини Месеца и први доказ изводљивости на коме почива сваки марсовски лендер од тада."
+ },
+ {
+  "rel": "moon-sites/lunar-prospector.json",
+  "at": "mission_type",
+  "en": "Orbiter · Ended 1999",
+  "cur": "Орбитер · Завршена 1999."
+ },
+ {
+  "rel": "moon-sites/lunar-prospector.json",
+  "at": "site_name",
+  "en": "Lunar polar orbit, 100 km",
+  "cur": "Поларна орбита око Месеца, 100 km"
+ },
+ {
+  "rel": "moon-sites/lunar-prospector.json",
+  "at": "fact",
+  "en": "Direct neutron-spectrometer detection of hydrogen at both lunar poles — strong evidence for water ice in permanently-shadowed crater floors. Deliberately impacted into Shoemaker crater at end of mission, hoping the impact ejecta would confirm water; Earth-based observers detected nothing definitive (a follow-up only delivered by LCROSS in 2009).",
+  "cur": "Директно откривање водоника на оба лунарна пола помоћу неутронског спектрометра — снажан доказ за воденни лед на дну трајно осенчених кратера. На крају мисије намерно је усмерена на судар са кратером Shoemaker, у нади да ће избачени материјал потврдити присуство воде; посматрачи са Земље нису открили ништа одлучујуће (потврда је уследила тек са LCROSS 2009. године)."
+ },
+ {
+  "rel": "moon-sites/lunar-prospector.json",
+  "at": "capability",
+  "en": "Confirmed Clementine's polar-ice hypothesis; established neutron-spectroscopy as the primary tool for lunar volatiles.",
+  "cur": "Потврдила је хипотезу о леду на половима коју је поставио Clementine; утврдила је неутронску спектроскопију као основни алат за проучавање лунарних испарљивих састојака."
+ },
+ {
+  "rel": "moon-sites/slim.json",
+  "at": "left",
+  "en": "SLIM lander · two micro-rovers (LEV-1, LEV-2)",
+  "cur": "SLIM лендер · два микро-ровера (LEV-1, LEV-2)"
+ },
+ {
+  "rel": "moon-sites/slim.json",
+  "at": "fact",
+  "en": "Japan's Smart Lander demonstrated pinpoint precision landing — targeting within 100 m accuracy vs the km-scale standard of all previous missions. Landed nose-down at roughly 90° from the intended attitude, leaving its solar panels initially pointing away from the Sun; operations resumed nine days later once the Sun angle shifted. Japan became the fifth nation to achieve a lunar soft landing.",
+  "cur": "Јапански Smart Lander показао је слетање с изузетном прецизношћу — циљање са тачношћу од 100 m, наспрам стандарда од неколико километара код свих претходних мисија. Слетео је носом надоле, под углом од око 90° у односу на предвиђени положај, па су његови соларни панели у почетку били окренути од Сунца; рад је настављен девет дана касније, када се променио упадни угао Сунчеве светлости. Јапан је постао пета држава којој је успело меко слетање на Месец."
+ },
+ {
+  "rel": "moon-sites/slim.json",
+  "at": "capability",
+  "en": "Pinpoint landing accuracy — bridges the gap between 'we can land somewhere on this body' and 'we can land at the specific scientifically valuable rock', the precondition for surface-asset rendezvous on Mars.",
+  "cur": "Прецизност слетања до у танчине — премошћује јаз између „можемо да слетимо негде на овом небеском телу“ и „можемо да слетимо на одређену, научно вредну стену“, што је предуслов за сусрет у орбити са средствима на површини Марса."
+ },
+ {
+  "rel": "moon-sites/smart-1.json",
+  "at": "mission_type",
+  "en": "Orbiter · Ended 2006",
+  "cur": "Орбитер · Завршена 2006."
+ },
+ {
+  "rel": "moon-sites/smart-1.json",
+  "at": "site_name",
+  "en": "Lunar polar orbit, ~470 km",
+  "cur": "Поларна орбита око Месеца, ~470 km"
+ },
+ {
+  "rel": "moon-sites/smart-1.json",
+  "at": "fact",
+  "en": "ESA's first lunar mission. Used solar-electric (ion) propulsion to spiral out from a geostationary transfer orbit to lunar capture — a 14-month, fuel-efficient transit that pioneered low-thrust trajectories for ESA's later interplanetary missions. Deliberately impacted the lunar surface in 2006 for an observed end-of-life experiment.",
+  "cur": "Прва лунарна мисија агенције ESA. Користила је соларни електрични (јонски) погон да се спиралном путањом удаљи од геостационарне transfer орбите све до хватања у лунарну орбиту — четрнаестомесечни, горивом штедљив прелаз који је утро пут путањама са малим потиском за касније међупланетарне мисије агенције ESA. Намерно је ударила у површину Месеца 2006. године, у оквиру посматраног експеримента на крају животног века."
+ },
+ {
+  "rel": "moon-sites/smart-1.json",
+  "at": "capability",
+  "en": "First operational use of ion propulsion for a lunar mission — a template for ESA's later BepiColombo and Hera deep-space missions.",
+  "cur": "Прва оперативна примена јонског погона у лунарној мисији — узор за касније ESA-ине мисије у далеком свемиру, BepiColombo и Hera."
+ },
+ {
+  "rel": "planets/arrokoth.json",
+  "at": "fact",
+  "en": "The most distant body ever visited by a spacecraft — 4.1 billion km from the Sun when New Horizons flew within 3,500 km on New Year's Day 2019. Its two lobes (Wenu and Weeyo) gently merged at the dawn of the solar system and have stayed merged for 4.5 billion years at ~40 K.",
+  "cur": "Најудаљеније тело које је свемирска летелица икада посетила — 4,1 милијарду km од Сунца када је New Horizons на Нову годину 2019. прелетео на удаљености од 3.500 km. Његова два режња (Wenu и Weeyo) нежно су се спојила у зору Сунчевог система и остала спојена 4,5 милијарди година на ~40 K."
+ },
+ {
+  "rel": "planets/arrokoth.json",
+  "at": "bio",
+  "en": "Discovered in 2014 by Hubble and originally catalogued as 2014 MU69. Renamed Arrokoth (Powhatan for 'sky') in 2019 after the New Horizons flyby — a pristine remnant of the planetesimal disk preserved unmodified since formation. Its red, gently-accreted contact-binary shape is a direct fingerprint of how planet-building started in the outer solar system.",
+  "cur": "Открио га је 2014. свемирски телескоп Hubble, а првобитно је заведен као 2014 MU69. Преименован је у Арокот (на језику Powhatan „небо“) 2019, после прелета летелице New Horizons — као нетакнут остатак диска планетезимала, сачуван непромењен још од постанка. Његов црвенкасти облик контактног двојног тела, настао благим нагомилавањем, непосредан је отисак тога како је почела градња планета у спољашњем делу Сунчевог система."
+ },
+ {
+  "rel": "planets/arrokoth.json",
+  "at": "links.0.l",
+  "en": "Arrokoth — Wikipedia",
+  "cur": "Arrokoth — Wikipedia"
+ },
+ {
+  "rel": "planets/arrokoth.json",
+  "at": "links.1.l",
+  "en": "Arrokoth flyby (NASA New Horizons)",
+  "cur": "Arrokoth flyby (NASA New Horizons)"
+ },
+ {
+  "rel": "planets/arrokoth.json",
+  "at": "links.2.l",
+  "en": "Arrokoth's gentle origins (NASA / Stern et al., Science 2020)",
+  "cur": "Мирно порекло Арокота (NASA / Stern et al., Science 2020)"
+ },
+ {
+  "rel": "planets/arrokoth.json",
+  "at": "links.3.l",
+  "en": "Renaming 2014 MU69 → Arrokoth (NASA, 2019-11-12)",
+  "cur": "Renaming 2014 MU69 → Arrokoth (NASA, 2019-11-12)"
+ },
+ {
+  "rel": "planets/didymos.json",
+  "at": "fact",
+  "en": "Parent of the 160-m moonlet Dimorphos struck by NASA's DART on 2022-09-26 — the first demonstration of kinetic-impactor planetary defense. Didymos itself remained intact as a 780-m S-type observing the binary period change.",
+  "cur": "Матично тело месечића Диморфос пречника 160 m, у који је 26. 9. 2022. ударила NASA-ина сонда DART — прва демонстрација планетарне одбране помоћу кинетичког ударача. Сам Дидимос остао је нетакнут као астероид S-типа пречника 780 m, а посматрана је промена периода двојног система."
+ },
+ {
+  "rel": "planets/didymos.json",
+  "at": "bio",
+  "en": "S-type near-Earth binary discovered 1996, with the 160-m moonlet Dimorphos in an 11.9-hour orbit at 1.2-km separation. Classified as a chondritic body — LL-class silicate composition, common in the inner main belt. ESA's Hera mission (launched 2024) will arrive 2026 to survey the post-impact system in detail.",
+  "cur": "Двојни астероид S-типа близу Земље, откривен 1996. године, са месечићем Диморфос пречника 160 m који кружи у орбити периода 11,9 сати на удаљености од 1,2 km. Сврстан је међу хондритска тела — силикатног састава класе LL, уобичајеног у унутрашњем делу главног астероидног појаса. Мисија Hera агенције ESA (лансирана 2024) стићи ће 2026. да детаљно истражи систем после удара."
+ },
+ {
+  "rel": "planets/didymos.json",
+  "at": "links.0.l",
+  "en": "65803 Didymos — Wikipedia",
+  "cur": "65803 Didymos — Wikipedia"
+ },
+ {
+  "rel": "planets/dimorphos.json",
+  "at": "fact",
+  "en": "The first celestial body whose orbit was deliberately altered by humans. NASA's DART struck Dimorphos at 6.14 km/s on 2022-09-26, shortening its 11.9-hour orbit around Didymos by 33 minutes (4.2%) — exceeding the success threshold by ~25× and demonstrating planetary defense is possible.",
+  "cur": "Прво небеско тело чију су орбиту људи намерно изменили. NASA-ин DART ударио је у Диморфос брзином од 6,14 km/s дана 2022-09-26, скративши његову орбиту око Дидимоса од 11,9 сати за 33 минута (4,2%) — премашивши праг успеха за ~25 пута и показавши да је планетарна одбрана могућа."
+ },
+ {
+  "rel": "planets/dimorphos.json",
+  "at": "bio",
+  "en": "160-m moonlet of 65803 Didymos, discovered 2003. The DART surface turned out to be 'rubble-pile fluid' — the spacecraft sank ~50 cm into the surface during the half-second of contact, and the momentum-transfer enhancement factor β ≈ 3.6 indicated significant carry from ejected surface material. The CubeSat LICIACube imaged the plume in real time; HST and JWST observed the ejecta tail for weeks.",
+  "cur": "Сателит величине 160 m који кружи око 65803 Дидимоса, откривен 2003. Површина коју је погодио DART показала се као „флуид од гомиле крхотина“ — летелица је утонула ~50 cm у површину током пола секунде контакта, а фактор појачања преноса импулса β ≈ 3,6 указао је на значајан допринос избаченог површинског материјала. CubeSat LICIACube снимио је облак материјала у реалном времену, а HST и JWST посматрали су реп избаченог материјала недељама."
+ },
+ {
+  "rel": "planets/dimorphos.json",
+  "at": "links.0.l",
+  "en": "Dimorphos — Wikipedia",
+  "cur": "Dimorphos — Wikipedia"
+ },
+ {
+  "rel": "planets/dimorphos.json",
+  "at": "links.1.l",
+  "en": "DART final results (NASA)",
+  "cur": "DART final results (NASA)"
+ },
+ {
+  "rel": "planets/dimorphos.json",
+  "at": "links.2.l",
+  "en": "Daly et al. (2023) — Successful kinetic impact (Nature)",
+  "cur": "Daly et al. (2023) — успешан кинетички удар (Nature)"
+ },
+ {
+  "rel": "planets/donaldjohanson.json",
+  "at": "fact",
+  "en": "A 4-km main-belt C-type named for the discoverer of the Lucy hominid fossil. Added late in Lucy's mission design as a bonus en-route flyby (2025-04-20, 960 km closest approach at 13.4 km/s) — a chance to test instruments before the harder Trojan encounters.",
+  "cur": "Астероид C-типа из главног астероидног појаса, пречника 4 km, назван по открићу фосила хоминида Lucy — по човеку који га је открио. Додат је касно, током израде дизајна мисије Lucy, као бонус прелет на путу ка главним метама (2025-04-20, најмање растојање 960 km, при брзини од 13,4 km/s) — прилика да се инструменти испробају пре захтевнијих сусрета са Тројанцима."
+ },
+ {
+  "rel": "planets/donaldjohanson.json",
+  "at": "bio",
+  "en": "Discovered 1981, located in the inner main belt. The dual etymology — Donald Johanson (paleoanthropologist) → Lucy fossil → Lucy spacecraft — makes the asteroid a deliberate naming gesture toward the mission's evolutionary-deep-history theme: Trojans preserve early-solar-system material the way the fossil preserves early-human history.",
+  "cur": "Откривен 1981. године, налази се у унутрашњем делу главног астероидног појаса. Двострука етимологија — Доналд Џохансон (палеоантрополог) → фосил Lucy → свемирска сонда Lucy — чини од овог астероида намерну гесту у имену, окренуту теми дубоке еволуционе историје на којој почива мисија: Тројанци чувају материјал из раног Сунчевог система онако како фосил чува историју раних људи."
+ },
+ {
+  "rel": "planets/donaldjohanson.json",
+  "at": "links.0.l",
+  "en": "52246 Donaldjohanson — Wikipedia",
+  "cur": "52246 Donaldjohanson — Wikipedia"
+ },
+ {
+  "rel": "planets/earth.json",
+  "at": "fact",
+  "en": "Every human who has ever lived did so here. The reference orbit by which all others are measured.",
+  "cur": "Сваки човек који је икада живео, живео је овде. Референтна орбита по којој се мере све остале."
+ },
+ {
+  "rel": "planets/earth.json",
+  "at": "bio",
+  "en": "The 23.44° axial tilt creates the seasons — not distance from the Sun. Earth is actually closer to the Sun in January than July.",
+  "cur": "Аксијални нагиб од 23,44° ствара годишња доба - а не удаљеност од Сунца. Земља је заправо ближа Сунцу у јануару него у јулу."
+ },
+ {
+  "rel": "planets/earth.json",
+  "at": "links.1.l",
+  "en": "Earth (NASA Solar System Exploration)",
+  "cur": "Земља (NASA Solar System Exploration)"
+ },
+ {
+  "rel": "planets/earth.json",
+  "at": "links.2.l",
+  "en": "Earth Observing System (NASA)",
+  "cur": "Систем за посматрање Земље (NASA)"
+ },
+ {
+  "rel": "planets/earth.json",
+  "at": "links.3.l",
+  "en": "Why Earth has seasons (NASA Climate Kids)",
+  "cur": "Зашто Земља има годишња доба (NASA Climate Kids)"
+ },
+ {
+  "rel": "planets/earth.json",
+  "at": "links.4.l",
+  "en": "Pale Blue Dot — Carl Sagan reflection (Planetary Society)",
+  "cur": "Бледоплава тачка — одраз Карла Сагана (Planetary Society)"
+ },
+ {
+  "rel": "planets/earth.json",
+  "at": "science_sections.0.why",
+  "en": "The astronomical unit IS the Earth-Sun mean distance — Earth is the literal yardstick for every solar-system measurement.",
+  "cur": "Астрономска јединица ЈЕСТЕ средња удаљеност између Земље и Сунца — Земља је буквални мерни штап за свако мерење у Сунчевом систему."
+ },
+ {
+  "rel": "planets/earth.json",
+  "at": "science_sections.1.why",
+  "en": "Earth's orbit defines the ecliptic plane. Every other planet's inclination is measured relative to this reference.",
+  "cur": "Земљина орбита одређује раван еклиптике. Нагиб путање сваке друге планете мери се у односу на ову референтну раван."
+ },
+ {
+  "rel": "planets/earth.json",
+  "at": "science_sections.2.why",
+  "en": "Earth's 23.4° tilt is the textbook seasons-machine — equinoxes and solstices arise directly from the angle between rotation axis and orbital plane.",
+  "cur": "Земља 23,4° нагиб осе уџбенички је механизам годишњих доба — равнодневице и сунцестоји произлазе непосредно из угла између осе ротације и равни орбите."
+ },
+ {
+  "rel": "planets/earth.json",
+  "at": "science_sections.3.why",
+  "en": "Every Mars launch window — every 26 months — is an Earth-departure Hohmann transfer. The ladder leaves from here.",
+  "cur": "Сваки лансирни прозор за Марс — на сваких 26 месеци — јесте Hohmann-ов трансфер с поласком са Земље. Лествица креће одавде."
+ },
+ {
+  "rel": "planets/earth.json",
+  "at": "science_sections.4.why",
+  "en": "The Moon is unusually large for its parent — the ratio (diameter ≈ 0.27 of Earth) is the highest in any planet–satellite pair.",
+  "cur": "Месец је необично велик за своје матично тело — однос (пречник ≈ 0,27 пречника Земље) највећи је у било ком пару планета–сателит."
+ },
+ {
+  "rel": "planets/eurybates.json",
+  "at": "fact",
+  "en": "Largest member of the L4 Eurybates Trojan family — a collisional cluster of 64-km parent and ~280 smaller fragments. Lucy's 2027-08-12 encounter at 5.7 km/s will be the first close-up of a Jupiter Trojan ever, accompanied by Eurybates's 1-km moon Queta (discovered by Hubble in 2018).",
+  "cur": "Највећи члан породице тројанаца Еурибат у тачки L4 — сударног скупа који чине матично тело пречника 64 km и ~280 мањих фрагмената. Сусрет сонде Lucy 12. 8. 2027. при брзини од 5,7 km/s биће први снимак изблиза неког Јупитеровог тројанца икада, а пратиће га Еурибат 1-km месец Queta (а који је Hubble открио 2018. године)."
+ },
+ {
+  "rel": "planets/eurybates.json",
+  "at": "bio",
+  "en": "Named for the Greek herald of Odysseus (Iliad / Odyssey), discovered 1973. C-type spectrum implies a carbonaceous, primitive composition — Trojans are believed to be relict planetesimals captured into Jupiter's L4 / L5 Lagrange points during early solar-system migration, preserving compositional fingerprints of the outer protoplanetary disc.",
+  "cur": "Назван по грчком Одисејевом гласнику (Илијада / Одисеја), откривен 1973. Спектар C-типа указује на угљенични, примитивни састав — сматра се да су тројанци заостале планетезимале које су током раних миграција у Сунчевом систему заробљене у Јупитеровим Лагранжовим тачкама L4 / L5 и да чувају састојачке отиске спољашњег протопланетарног диска."
+ },
+ {
+  "rel": "planets/eurybates.json",
+  "at": "links.0.l",
+  "en": "3548 Eurybates — Wikipedia",
+  "cur": "3548 Eurybates — Wikipedia"
+ },
+ {
+  "rel": "planets/itokawa.json",
+  "at": "fact",
+  "en": "First asteroid sample ever returned to Earth — JAXA's Hayabusa survived a hydrazine leak, three dead reaction wheels, an ion engine failure, and a seven-week communications blackout to bring 1500 micrograms of Itokawa material to Woomera AUS on 2010-06-13.",
+  "cur": "Први узорак астероида икада враћен на Земљу — JAXA-ина летелица Hayabusa преживела је цурење хидразина, отказивање три реакциона точка, квар јонског мотора и седмонедељни прекид комуникације да би 13. јуна 2010. у Вумери (AUS) допремила 1500 микрограма материјала са Итокаве."
+ },
+ {
+  "rel": "planets/itokawa.json",
+  "at": "bio",
+  "en": "Peanut-shaped 535 × 294 × 209-m near-Earth asteroid discovered 1998. The 2005 Hayabusa rendezvous revealed Itokawa as a gravitationally-bound rubble pile rather than a solid body — a collection of fragments held together by mutual gravity, with the boulder distribution and absence of impact craters indicating regolith reset events on a geologically active small body.",
+  "cur": "Астероид близу Земље у облику кикирикија, димензија 535 × 294 × 209 m, откривен 1998. Сусрет летелице Hayabusa с њим 2005. открио је да је Итокава гравитационо везана гомила крша, а не чврсто тело — скуп фрагмената које држи на окупу међусобна гравитација, при чему распоред громада и одсуство ударних кратера указују на догађаје поновног обликовања реголита на геолошки активном малом телу."
+ },
+ {
+  "rel": "planets/itokawa.json",
+  "at": "links.0.l",
+  "en": "25143 Itokawa — Wikipedia",
+  "cur": "25143 Itokawa — Wikipedia"
+ },
+ {
+  "rel": "planets/itokawa.json",
+  "at": "links.1.l",
+  "en": "Hayabusa mission archive (JAXA / ISAS)",
+  "cur": "Hayabusa mission archive (JAXA / ISAS)"
+ },
+ {
+  "rel": "planets/itokawa.json",
+  "at": "links.2.l",
+  "en": "Yano et al. (2006) — Touchdown of Hayabusa at Itokawa (Science)",
+  "cur": "Yano et al. (2006) — Touchdown of Hayabusa at Itokawa (Science)"
+ },
+ {
+  "rel": "planets/jupiter.json",
+  "at": "fact",
+  "en": "Jupiter's gravity sculpted the asteroid belt — preventing a fifth rocky planet. Without it, Mars would be far larger.",
+  "cur": "Гравитација Јупитера обликовала је астероидни појас и тиме спречила настанак пете стеновите планете. Без ње би Марс био далеко већи."
+ },
+ {
+  "rel": "planets/jupiter.json",
+  "at": "bio",
+  "en": "Rotates in just 10 hours despite its enormous size, creating powerful magnetic fields. More massive than all other planets combined.",
+  "cur": "Ротира за свега 10 сати упркос својој огромној величини, чиме ствара моћна магнетна поља. Масивнији је од свих осталих планета заједно."
+ },
+ {
+  "rel": "planets/jupiter.json",
+  "at": "links.0.l",
+  "en": "Jupiter — Wikipedia",
+  "cur": "Јупитер — Википедија"
+ },
+ {
+  "rel": "planets/jupiter.json",
+  "at": "links.1.l",
+  "en": "Jupiter (NASA Solar System Exploration)",
+  "cur": "Јупитер (NASA Solar System Exploration)"
+ },
+ {
+  "rel": "planets/jupiter.json",
+  "at": "links.3.l",
+  "en": "Galilean moons — Wikipedia",
+  "cur": "Галилејеви месеци — Википедија"
+ },
+ {
+  "rel": "planets/jupiter.json",
+  "at": "links.4.l",
+  "en": "Jupiter's deep interior (Nature 2018)",
+  "cur": "Дубока унутрашњост Јупитера (Nature 2018)"
+ },
+ {
+  "rel": "planets/jupiter.json",
+  "at": "science_sections.0.why",
+  "en": "Jupiter has 101 confirmed moons — the four Galileans (Io, Europa, Ganymede, Callisto) are each worlds in their own right and trace a 1:2:4 orbital resonance.",
+  "cur": "Јупитер има 101 потврђен месец — четири галилејанска месеца (Ио, Европа, Ганимед, Калисто) јесу сваки за себе прави засебан свет и заједно чине орбиталну резонанцију 1:2:4."
+ },
+ {
+  "rel": "planets/jupiter.json",
+  "at": "science_sections.1.why",
+  "en": "Jupiter's magnetosphere is the largest planetary structure in the solar system — extending past Saturn's orbit on the anti-sunward side.",
+  "cur": "Магнетосфера Јупитера је највећа планетарна структура у Сунчевом систему — протеже се иза орбите Сатурна, на страни окренутој од Сунца."
+ },
+ {
+  "rel": "planets/jupiter.json",
+  "at": "science_sections.2.why",
+  "en": "Jupiter is the favoured gravity-assist target for outer-system missions — Voyager 1+2, Cassini, Galileo, New Horizons, Juno, Europa Clipper and JUICE all used or use a Jovian flyby for velocity gain.",
+  "cur": "Јупитер је омиљена мета за гравитациону праћку код мисија ка спољашњем делу Сунчевог система — Voyager 1+2, Cassini, Galileo, New Horizons, Juno, Europa Clipper и JUICE користили су или користе јовијански прелет за добијање брзине."
+ },
+ {
+  "rel": "planets/jupiter.json",
+  "at": "science_sections.3.why",
+  "en": "Jupiter's vast Hill sphere (50 million km radius) is what makes its 101-moon system stable — the gravitational well extends nearly to Mars at perihelion.",
+  "cur": "Огромна Hill-ова сфера Јупитера (полупречник 50 милиона km) омогућава да његов систем од 101 месеца буде стабилан — гравитациони бунар се у перихелу простире готово до Марса."
+ },
+ {
+  "rel": "planets/jupiter.json",
+  "at": "science_sections.4.why",
+  "en": "Juno (NASA) is currently in polar orbit; Europa Clipper (NASA) and JUICE (ESA) are en route — orbital arrival at Ganymede 2034.",
+  "cur": "Juno (NASA) се тренутно налази у поларној орбити; Europa Clipper (NASA) и JUICE (ESA) су на путу — долазак у орбиту око Ганимеда 2034. године."
+ },
+ {
+  "rel": "planets/leucus.json",
+  "at": "fact",
+  "en": "One of the slowest-rotating bodies of its size known — a 446-hour (18.6-day) rotation period, unusually long for a 35-km asteroid. The slow spin suggests a complex collisional or tidal history with another body, possibly a recent (in geologic terms) major event.",
+  "cur": "Једно од најспорије ротирајућих тела своје величине које је познато — период ротације од 446 сати (18,6 дана), необично дуг за астероид од 35 km. Спора ротација указује на сложену историју судара или плимских интеракција с неким другим телом, а могуће и на недавни (у геолошком смислу) велики догађај."
+ },
+ {
+  "rel": "planets/leucus.json",
+  "at": "bio",
+  "en": "Discovered 1997, named for Leucus (a comrade of Odysseus, killed at Troy). D-type spectral classification — the darkest and reddest of the Trojan family. Lucy's 2028-04-18 encounter will profile shape, surface composition, and the rotation-state evolution behind the slow spin.",
+  "cur": "Откривен 1997. године, назван по Леуку (Одисејевом саборцу кога су убили код Троје). Спектрална класа D — најтамији и најцрвенији међу тројанцима. Сусрет са сондом Lucy 18. 4. 2028. откриће облик, састав површине и еволуцију стања ротације која стоји иза споре ротације."
+ },
+ {
+  "rel": "planets/leucus.json",
+  "at": "links.0.l",
+  "en": "11351 Leucus — Wikipedia",
+  "cur": "11351 Leucus — Wikipedia"
+ },
+ {
+  "rel": "planets/mars.json",
+  "at": "fact",
+  "en": "Earth–Mars launch windows open every 26 months — driven by orbital resonance. Miss the window and wait two years.",
+  "cur": "Прозори за лансирање са Земље ка Марсу отварају се сваких 26 месеци — због орбиталне резонанције. Ако пропустите прозор, чекате две године."
+ },
+ {
+  "rel": "planets/mars.json",
+  "at": "bio",
+  "en": "The highest eccentricity of the inner planets (e=0.093) — Mars swings ~20% farther from the Sun at aphelion than at perihelion, driving big seasonal and dust-storm swings. Launch windows, by contrast, are set by the ~26-month Earth–Mars synodic period.",
+  "cur": "Највећи ексцентрицитет међу унутрашњим планетама (e=0,093) — Марс се у афелу удаљава од Сунца за ~20% више него у перихелу, што изазива велике сезонске промене и промене у учесталости прашињавих олуја. Прозори за лансирање, насупрот томе, одређени су синодичким периодом Земља–Марс од ~26 месеци."
+ },
+ {
+  "rel": "planets/mars.json",
+  "at": "links.1.l",
+  "en": "Mars (NASA Solar System Exploration)",
+  "cur": "Марс (NASA Solar System Exploration)"
+ },
+ {
+  "rel": "planets/mars.json",
+  "at": "links.2.l",
+  "en": "Mars Exploration Program (NASA)",
+  "cur": "Програм истраживања Марса (NASA)"
+ },
+ {
+  "rel": "planets/mars.json",
+  "at": "links.3.l",
+  "en": "Earth-Mars launch windows — Wikipedia",
+  "cur": "Прозори за лансирање Земље-Марса — Википедија"
+ },
+ {
+  "rel": "planets/mars.json",
+  "at": "science_sections.0.why",
+  "en": "Mars's 25.2° axial tilt is remarkably close to Earth's — but combined with its eccentricity, southern summers are intensely hot and short while northern summers are long and mild.",
+  "cur": "Марсов наклон осе од 25,2° је изванредно близак Земљином — али у комбинацији са његовом ексцентричношћу, јужна лета су интензивно топла и кратка док су северна лета дуга и блага."
+ },
+ {
+  "rel": "planets/mars.json",
+  "at": "science_sections.1.why",
+  "en": "Mars's 0.0935 eccentricity (six times Earth's) gives a 20 % swing in solar flux per orbit — the engine behind global dust storms that can engulf the planet for months.",
+  "cur": "Марсова ексцентричност од 0,0935 (шест пута већа од Земљине) даје замах од 20 % у соларном флуксу по орбити — мотор иза глобалних пешчаних олуја које могу обухватити планету месецима."
+ },
+ {
+  "rel": "planets/mars.json",
+  "at": "science_sections.2.why",
+  "en": "Mars launch windows open every 26 months — the synodic period between Mars and Earth — and Hohmann transfer is why every Mars mission departs in one of those windows.",
+  "cur": "Прозори за лансирање ка Марсу отварају се сваких 26 месеци — колики је синодички период између Марса и Земље — а Hohmann-ов трансфер је разлог зашто свака мисија ка Марсу полеће у једном од тих прозора."
+ },
+ {
+  "rel": "planets/mars.json",
+  "at": "science_sections.3.why",
+  "en": "Mars has two small captured-looking moons — Phobos (orbiting below synchronous altitude, spiraling inward) and Deimos (slowly receding).",
+  "cur": "Марс има два мала месеца који изгледају као заробљени — Фобос (који кружи испод синхроне висине и спирално се приближава планети) и Дејмос (који се полако удаљава)."
+ },
+ {
+  "rel": "planets/mars.json",
+  "at": "science_sections.4.why",
+  "en": "Mars hosts the densest active spacecraft census beyond Earth — orbiters from five agencies and surface rovers / landers from three.",
+  "cur": "На Марсу делује најгушћа популација активних летелица изван Земље — орбитери пет агенција и ровери и лендери три агенције на површини."
+ },
+ {
+  "rel": "planets/menoetius.json",
+  "at": "fact",
+  "en": "104-km secondary of the Patroclus-Menoetius binary in the L5 Trojan swarm — nearly equal-mass partner to Patroclus, separated by 680 km. Lucy's 2033-03 encounter will be the first close-up of a Trojan binary system, mapping both partners simultaneously.",
+  "cur": "Секундарна компонента двојног система Патрокло-Менетије у тројанском роју L5, пречника 104 km — партнер готово једнаке масе као Патрокло, удаљен 680 km. Сусрет сонде Lucy у марту 2033. биће први снимак изблиза једног тројанског двојног система, при чему ће оба партнера бити истовремено картографисана."
+ },
+ {
+  "rel": "planets/menoetius.json",
+  "at": "bio",
+  "en": "Identified as a separate body in 2001 via mutual-events observations. Menoetius (father of Patroclus in Homeric tradition) shares the L5 stable orbit with Patroclus 60° trailing Jupiter. The near-equal-mass binary geometry produces a barycenter that lies outside either body, making Patroclus-Menoetius the largest known close-binary in the Trojan population.",
+  "cur": "Као засебно тело идентификован је 2001. помоћу посматрања узајамних догађаја. Менетије (отац Патрокла у хомерској традицији) дели стабилну орбиту L5 са телом Патрокло 60° иза Јупитера. Геометрија двојног система готово једнаких маса даје барицентар који лежи изван оба тела, због чега је Патрокло-Менетије највећи познати тесни двојни систем међу тројанцима."
+ },
+ {
+  "rel": "planets/menoetius.json",
+  "at": "links.0.l",
+  "en": "Patroclus-Menoetius binary — Wikipedia",
+  "cur": "Patroclus-Menoetius binary — Wikipedia"
+ },
+ {
+  "rel": "planets/mercury.json",
+  "at": "fact",
+  "en": "Surface temperatures swing 610°C in a single day. No atmosphere — just raw exposure to space.",
+  "cur": "Температуре на површини се у току једног дана мењају за 610°C. Нема атмосфере — само голо излагање свемиру."
+ },
+ {
+  "rel": "planets/mercury.json",
+  "at": "bio",
+  "en": "The smallest planet. Its highly elliptical orbit (e=0.206) makes it accelerate noticeably near perihelion. Despite being closest to the Sun, Venus is hotter.",
+  "cur": "Најмања планета. Њена изразито елиптична орбита (e=0,206) чини да приметно убрзава у близини перихела. Иако је најближа Сунцу, Венера је топлија."
+ },
+ {
+  "rel": "planets/mercury.json",
+  "at": "links.1.l",
+  "en": "Mercury (NASA Solar System Exploration)",
+  "cur": "Меркур (NASA Solar System Exploration)"
+ },
+ {
+  "rel": "planets/mercury.json",
+  "at": "links.2.l",
+  "en": "MESSENGER mission overview (NASA)",
+  "cur": "Преглед мисије MESSENGER (NASA)"
+ },
+ {
+  "rel": "planets/mercury.json",
+  "at": "links.3.l",
+  "en": "BepiColombo (ESA / JAXA)",
+  "cur": "BepiColombo (ESA / JAXA)"
+ },
+ {
+  "rel": "planets/mercury.json",
+  "at": "links.4.l",
+  "en": "Mercury's molten core (Nature Geoscience 2019)",
+  "cur": "Истопљено језгро Меркура (Nature Geoscience 2019)"
+ },
+ {
+  "rel": "planets/mercury.json",
+  "at": "science_sections.0.why",
+  "en": "Mercury's 0.206 eccentricity is the highest of the 8 planets — at perihelion the Sun appears 1.5× larger in its sky than at aphelion.",
+  "cur": "Ексцентричност Меркура од 0,206 највећа је међу 8 планета — у перихелу се Сунце на његовом небу види 1,5× веће него у афелу."
+ },
+ {
+  "rel": "planets/mercury.json",
+  "at": "science_sections.1.why",
+  "en": "The perihelion-aphelion swing (46–70 million km) drives huge differences in solar flux — Mercury's surface heats and cools more than any other planet.",
+  "cur": "Размах између перихела и афела (46–70 милиона km) изазива огромне разлике у Сунчевом флуксу — површина Меркура се више загрева и хлади него површина било које друге планете."
+ },
+ {
+  "rel": "planets/mercury.json",
+  "at": "science_sections.2.why",
+  "en": "Vis-viva is what shows Mercury speeding up dramatically at perihelion and slowing at aphelion — a 12 km/s swing.",
+  "cur": "Vis-viva је оно што показује како Меркур драматично убрзава у перихелу, а успорава у афелу — размах од 12 km/s."
+ },
+ {
+  "rel": "planets/mercury.json",
+  "at": "science_sections.3.why",
+  "en": "Mercury's axial tilt is essentially zero (0.034°), so the bottoms of polar craters never see sunlight — and water ice survives there despite the planet's heat.",
+  "cur": "Нагиб осе Меркура практично је нула (0,034°), па дна поларних кратера никада не виде сунчеву светлост — а водени лед тамо опстаје упркос врелини планете."
+ },
+ {
+  "rel": "planets/mercury.json",
+  "at": "science_sections.4.why",
+  "en": "Three missions span Mercury's exploration: Mariner 10 (1974), MESSENGER (2011–15), and BepiColombo (orbit insertion late 2026).",
+  "cur": "Истраживање Меркура обухватају три мисије: Mariner 10 (1974), MESSENGER (2011–15) и BepiColombo (улазак у орбиту крајем 2026)."
+ },
+ {
+  "rel": "planets/neptune.json",
+  "at": "fact",
+  "en": "Voyager 2 flew past Neptune in 1989 after a 12-year journey. It remains the only spacecraft ever to visit.",
+  "cur": "Voyager 2 је прелетео поред Нептуна 1989. године, после путовања дугог 12 година. И даље је једина свемирска летелица која га је посетила."
+ },
+ {
+  "rel": "planets/neptune.json",
+  "at": "bio",
+  "en": "Windiest planet — 2,100 km/h surface winds. Discovered by mathematical prediction before direct observation, because Uranus's orbit showed an unseen gravitational influence.",
+  "cur": "Најветровитија планета — површински ветрови брзине 2.100 km/h. Откривена је математичким предвиђањем пре непосредног посматрања, јер је орбита Урана указивала на невидљив гравитациони утицај."
+ },
+ {
+  "rel": "planets/neptune.json",
+  "at": "links.1.l",
+  "en": "Neptune (NASA Solar System Exploration)",
+  "cur": "Нептун (NASA Solar System Exploration)"
+ },
+ {
+  "rel": "planets/neptune.json",
+  "at": "links.2.l",
+  "en": "Voyager 2 at Neptune (NASA JPL)",
+  "cur": "Voyager 2 код Нептуна (NASA JPL)"
+ },
+ {
+  "rel": "planets/neptune.json",
+  "at": "links.3.l",
+  "en": "Discovery of Neptune — Wikipedia",
+  "cur": "Откриће Нептуна — Википедија"
+ },
+ {
+  "rel": "planets/neptune.json",
+  "at": "links.4.l",
+  "en": "Neptune's interior model (Icarus 2021)",
+  "cur": "Нептунов модел унутрашњости (Icarus 2021)"
+ },
+ {
+  "rel": "planets/neptune.json",
+  "at": "science_sections.0.why",
+  "en": "At 30.07 AU mean distance, Neptune is so far that a single one-way light signal takes 4 hours each way. Voyager 2 needed 12 years to reach it.",
+  "cur": "На удаљености од 30.07 AU, Нептун је толико далеко да једносмеран светлосни сигнал траје 4 часа у оба смера. Voyager 2 требао је 12 година да би га достигао."
+ },
+ {
+  "rel": "planets/neptune.json",
+  "at": "science_sections.1.why",
+  "en": "Triton is the only large moon in the solar system with a retrograde orbit — strong evidence it was captured from the Kuiper Belt, not formed with Neptune.",
+  "cur": "Тритон је једини велики месец у Сунчевом систему са ретроградном орбитом — снажан доказ да је заробљен из Кајперовог појаса, а не да је настао заједно са Нептуном."
+ },
+ {
+  "rel": "planets/neptune.json",
+  "at": "science_sections.2.why",
+  "en": "Neptune's gentle 0.0086 eccentricity gives an orbit so circular that perihelion–aphelion swing is under 200 million km on a 30-AU semi-major axis — a 1.4 % variation.",
+  "cur": "Нептунов благи ексцентрицитет од 0,0086 даје орбиту толико кружну да је размах између перихела и афела мањи од 200 милиона km на великој полуоси од 30 AU — варијација од 1,4 %."
+ },
+ {
+  "rel": "planets/neptune.json",
+  "at": "science_sections.3.why",
+  "en": "Voyager 2 (1989 flyby) remains the only spacecraft to have visited Neptune. No mission to the system is currently funded or in flight.",
+  "cur": "Voyager 2 (прелет 1989. године) и даље је једина свемирска летелица која је посетила Нептун. Ниједна мисија ка овом систему тренутно није финансирана нити је у лету."
+ },
+ {
+  "rel": "planets/orus.json",
+  "at": "fact",
+  "en": "A 51-km D-type Trojan in Jupiter's leading L4 swarm. D-type asteroids are believed to be among the most primitive bodies in the solar system, with surface composition that preserves chemistry from the outer protoplanetary disc largely unchanged for 4.5 billion years.",
+  "cur": "Тројанац D-типа пречника 51 km у предњем Јупитеровом роју L4. Верује се да су астероиди D-типа међу најпримитивнијим телима у Сунчевом систему, са површинским саставом који је хемију спољашњег протопланетарног диска сачувао углавном непромењену током 4,5 милијарди година."
+ },
+ {
+  "rel": "planets/orus.json",
+  "at": "bio",
+  "en": "Discovered 1999, named for Orus — a Trojan ally killed by Ajax in the Iliad. Lucy's 2028-11-11 encounter will measure surface composition, regolith properties, and any satellite presence, completing the survey of the leading-cloud spectral range (C → P → D).",
+  "cur": "Откривен 1999. године, назван по Ору, тројанском савезнику којег је у епу Iliad убио Ajax. Сусрет сонде Lucy са овим астероидом, 2028-11-11, измериће површински састав, својства реголита и евентуално присуство пратилаца, чиме ће бити завршено истраживање спектралног опсега предњег облака (C → P → D)."
+ },
+ {
+  "rel": "planets/orus.json",
+  "at": "links.0.l",
+  "en": "21900 Orus — Wikipedia",
+  "cur": "21900 Orus — Wikipedia"
+ },
+ {
+  "rel": "planets/patroclus.json",
+  "at": "fact",
+  "en": "Primary of the largest known binary in the Jupiter Trojans — 113-km Patroclus paired with the 104-km Menoetius at a mutual separation of 680 km. The Iliadic pairing is deliberate: Patroclus and Menoetius are Achilles' beloved companion and his father, the two who in the epic fall together.",
+  "cur": "Примарно тело највећег познатог двојног система међу Јупитеровим тројанцима — Патрокло пречника 113 km у пару са Менетијем пречника 104 km, на међусобном растојању од 680 km. Пар имена из Илијаде је намеран: Патрокло и Менетије су Achilles-ов вољени друг и његов отац, двојица који у епу заједно гину."
+ },
+ {
+  "rel": "planets/patroclus.json",
+  "at": "bio",
+  "en": "Discovered 1906, classified as a P-type with low-albedo, reddish reflectance. Lucy's 2033-03-02 encounter at 8.4 km/s closes the primary mission — the spacecraft will image both partners of the binary in one approach, mapping the surface terrain, composition, and the gravitational dance that has bound them through 4.5 Gyr.",
+  "cur": "Откривен 1906. године, класификован као P-тип са ниским албедом и црвенкастом рефлексијом. Сусрет сонде Lucy 2033-03-02 при брзини од 8,4 km/s завршава њену основну мисију — летелица ће у једном приласку снимити оба члана двојног система, пресликавајући рељеф површине, састав и гравитациони плес који их везује већ 4,5 Gyr."
+ },
+ {
+  "rel": "planets/patroclus.json",
+  "at": "links.0.l",
+  "en": "617 Patroclus — Wikipedia",
+  "cur": "617 Патрокло — Википедија"
+ },
+ {
+  "rel": "planets/patroclus.json",
+  "at": "links.2.l",
+  "en": "Mueller et al. (2010) — Patroclus-Menoetius shape (Icarus)",
+  "cur": "Mueller et al. (2010) — облик Патрокла и Менетија (Icarus)"
+ },
+ {
+  "rel": "planets/pluto.json",
+  "at": "fact",
+  "en": "The largest known Kuiper Belt body and the first object beyond Neptune ever discovered (1930). Reclassified from planet to dwarf planet by the IAU in 2006.",
+  "cur": "Највеће познато тело у Кајперовом појасу и први откривени објекат иза Нептуна (1930). IAU је 2006. променила његову класификацију из планете у патуљасту планету."
+ },
+ {
+  "rel": "planets/pluto.json",
+  "at": "bio",
+  "en": "Pluto's 248-year orbit is highly eccentric (e = 0.249) and inclined 17° to the ecliptic — so its orbit dips inside Neptune's for 20 years per cycle and rises well above the planetary plane. Surface temperatures swing wide enough that the thin nitrogen atmosphere thickens near perihelion and freezes back onto the surface near aphelion. The mutual tidal lock with Charon makes the pair a true binary system.",
+  "cur": "Плутонова 248-годишња орбита веома је ексцентрична (e = 0,249) и нагнута 17° у односу на еклиптику — па се током сваког циклуса 20 година налази унутар Нептунове орбите, а затим се уздиже високо изнад равни планета. Температуре на површини толико се мењају да се танка атмосфера од азота згушњава близу перихела, а близу афела се поново таложи у залеђеном облику на површину. Међусобна плимска закључаност са Хароном чини овај пар правим двојним системом."
+ },
+ {
+  "rel": "planets/polymele.json",
+  "at": "fact",
+  "en": "A 21-km P-type Trojan in Jupiter's leading swarm. After Lucy selected it as a target, Hubble follow-up observations revealed a previously-unknown satellite — a 5-km moonlet for which a name has yet to be approved.",
+  "cur": "Тројанац типа P пречника 21 km у Јупитеровом претходећем роју. Након што је Lucy изабрала овај објекат као мету, накнадна посматрања телескопом Hubble открила су до тада непознат сателит — месечић пречника 5 km, за који име тек треба да буде одобрено."
+ },
+ {
+  "rel": "planets/polymele.json",
+  "at": "bio",
+  "en": "Discovered 1999, named for Polymele — mother of Patroclus in Homeric tradition. P-type asteroids feature reddish, featureless reflectance spectra interpreted as organic-rich and dehydrated; their dynamical history places them firmly among the primordial outer-disc planetesimals Lucy was designed to sample.",
+  "cur": "Откривен 1999. године, а име носи по Полимели — мајци Патрокла у хомерској традицији. Астероиди типа P имају црвенкасте спектре рефлексије без изражених карактеристика, за које се сматра да указују на обиље органских једињења и дехидрираност; њихова динамичка историја сврстава их међу првобитне планетезимале спољашњег диска које је Lucy била осмишљена да узоркује."
+ },
+ {
+  "rel": "planets/polymele.json",
+  "at": "links.0.l",
+  "en": "15094 Polymele — Wikipedia",
+  "cur": "15094 Polymele — Wikipedia"
+ },
+ {
+  "rel": "planets/saturn.json",
+  "at": "fact",
+  "en": "Saturn's density is 0.687 g/cm³ — less than water. Its ring system spans 282,000 km but is only tens of metres thick.",
+  "cur": "Густина Сатурна износи 0,687 g/cm³ — мање него код воде. Његов прстенасти систем простире се на 282.000 km, а дебео је тек неколико десетина метара."
+ },
+ {
+  "rel": "planets/saturn.json",
+  "at": "bio",
+  "en": "The least dense planet — it would float on water. The ring system spans 282,000 km but is only metres thick. The 26.73° tilt means Earth sees the rings at different angles across Saturn's 29-year orbit.",
+  "cur": "Најмања густа планета — плутала би на води. Систем прстенова се простире на 282.000 км, али је дебео само метар. Нагиб од 26,73° значи да Земља види прстенове под различитим угловима широм Сатурнове 29-годишње орбите."
+ },
+ {
+  "rel": "planets/saturn.json",
+  "at": "links.1.l",
+  "en": "Saturn (NASA Solar System Exploration)",
+  "cur": "Сатурн (NASA Solar System Exploration)"
+ },
+ {
+  "rel": "planets/saturn.json",
+  "at": "links.2.l",
+  "en": "Cassini mission archive (NASA)",
+  "cur": "Архива мисије Cassini (NASA)"
+ },
+ {
+  "rel": "planets/saturn.json",
+  "at": "links.3.l",
+  "en": "Rings of Saturn — Wikipedia",
+  "cur": "Прстенови Сатурна — Википедија"
+ },
+ {
+  "rel": "planets/saturn.json",
+  "at": "links.4.l",
+  "en": "Saturn's rings are young (Science 2019)",
+  "cur": "Сатурнови прстенови су млади (Science 2019)"
+ },
+ {
+  "rel": "planets/saturn.json",
+  "at": "science_sections.0.why",
+  "en": "Saturn's 26.7° tilt is what makes its rings appear to open and close over the 29-year orbit — and what gives the planet hemispheric seasons that last more than seven Earth years.",
+  "cur": "Сатурнов наклон од 26,7° је разлог што се његови прстенови чине да се отварају и затварају током 29-годишње орбите — и што дају планети хемисферске сезоне које трају дуже од седам земаљских година."
+ },
+ {
+  "rel": "planets/saturn.json",
+  "at": "science_sections.1.why",
+  "en": "Saturn has ~274 confirmed moons — the most of any planet — with Titan large enough to have its own dense atmosphere and Enceladus actively venting water from a subsurface ocean.",
+  "cur": "Сатурн има ~274 потврђена месеца — највише међу свим планетама — при чему је Титан довољно велик да има сопствену густу атмосферу, а Енцелад активно избацује воду из подповршинског океана."
+ },
+ {
+  "rel": "planets/saturn.json",
+  "at": "science_sections.2.why",
+  "en": "Cassini's 13-year orbital campaign was built around Kepler's laws — every ring-crossing and moon flyby was a Keplerian arc designed years in advance.",
+  "cur": "Cassini's 13-годишња орбитална кампања заснивала се на Kepler-овим законима — сваки прелазак кроз прстенове и сваки прелет поред неког месеца био је Kepler-ов лук, осмишљен годинама унапред."
+ },
+ {
+  "rel": "planets/saturn.json",
+  "at": "science_sections.3.why",
+  "en": "Saturn's orbit is gentle (eccentricity 0.054) but its 9.6 AU mean distance means perihelion and aphelion differ by 100 million km — Cassini timed its arrival to use the inbound speed.",
+  "cur": "Орбита Сатурна је блага (ексцентрицитет 0,054), али због средње удаљености од 9,6 AU перихел и афел разликују се за 100 милиона km — Cassini је време свог доласка ускладио тако да искористи брзину при приближавању."
+ },
+ {
+  "rel": "planets/uranus.json",
+  "at": "fact",
+  "en": "Uranus rotates on its side — axial tilt 98°. Its north pole points almost directly at the Sun for half its 84-year orbit.",
+  "cur": "Уран се окреће на боку — нагиб осе износи 98°. Његов северни пол током половине његове 84-годишње орбите усмерен је готово право ка Сунцу."
+ },
+ {
+  "rel": "planets/uranus.json",
+  "at": "bio",
+  "en": "Tipped almost on its side (97.77°). Each pole gets 42 years of continuous sunlight, then 42 years of darkness. Almost certainly caused by an ancient massive collision.",
+  "cur": "Нагнут готово на бок (97,77°). Сваки пол добија 42 године непрекидне сунчеве светлости, а затим 42 године таме. Готово сигурно је то последица древног масивног судара."
+ },
+ {
+  "rel": "planets/uranus.json",
+  "at": "links.1.l",
+  "en": "Uranus (NASA Solar System Exploration)",
+  "cur": "Уран (NASA Solar System Exploration)"
+ },
+ {
+  "rel": "planets/uranus.json",
+  "at": "links.2.l",
+  "en": "Voyager 2 at Uranus (NASA JPL)",
+  "cur": "Voyager 2 код Урана (NASA JPL)"
+ },
+ {
+  "rel": "planets/uranus.json",
+  "at": "links.3.l",
+  "en": "Uranus Orbiter and Probe — Decadal Survey",
+  "cur": "Uranus Orbiter and Probe — Декадно истраживање"
+ },
+ {
+  "rel": "planets/uranus.json",
+  "at": "science_sections.0.why",
+  "en": "Uranus's 97.8° tilt means it rotates on its side — each pole gets ~42 years of continuous sunlight, then ~42 years of darkness.",
+  "cur": "Нагиб од 97,8° код Урана значи да се ротира на страну — сваки пол добија ~42 години континуираног сунчевог светла, затим ~42 години таме."
+ },
+ {
+  "rel": "planets/uranus.json",
+  "at": "science_sections.1.why",
+  "en": "The inclination of the planet matters less than the tilt of its rotation axis — Uranus has the most dramatic axial inclination in the system, even though its orbital inclination is modest (0.77°).",
+  "cur": "Нагиб орбите планете мање је важан од нагиба њене осе ротације — Уран има најдраматичнији нагиб осе у Сунчевом систему, иако је нагиб његове орбите скроман (0,77°)."
+ },
+ {
+  "rel": "planets/uranus.json",
+  "at": "science_sections.2.why",
+  "en": "The five major Uranian moons (Miranda, Ariel, Umbriel, Titania, Oberon) share Uranus's tilt — they orbit in the equatorial plane, which is nearly perpendicular to the ecliptic.",
+  "cur": "Пет великих Уранових месеца (Миранда, Аријел, Умбријел, Титанија, Оберон) деле нагиб Урана — они круже у екваторијалној равни, која је готово управна на еклиптику."
+ },
+ {
+  "rel": "planets/uranus.json",
+  "at": "science_sections.3.why",
+  "en": "No spacecraft has visited Uranus since Voyager 2 (1986). A Uranus orbiter is a top NASA Decadal-Survey priority for the 2030s.",
+  "cur": "Ниједна летелица није посетила Уран од мисије Voyager 2 (1986). Орбитер за Уран главни је приоритет NASA-иног Decadal Survey-а за 2030-е године."
+ },
+ {
+  "rel": "planets/venus.json",
+  "at": "fact",
+  "en": "Surface pressure 90× Earth's. Soviet Venera probes lasted 23–127 minutes before the heat and pressure overwhelmed them.",
+  "cur": "Притисак на површини је 90 пута већи од земљиног. Совјетске сонде Venera издржале су од 23 до 127 минута, пре него што их је савладала врелина и притисак."
+ },
+ {
+  "rel": "planets/venus.json",
+  "at": "bio",
+  "en": "Rotates retrograde — backwards and so slowly that a Venusian day is longer than its year. The 177.4° axial tilt is why: Venus is essentially upside down.",
+  "cur": "Ротира ретроградно — уназад и тако споро да је дан на Венери дужи од године. Разлог за то је аксијални нагиб од 177,4°: Венера је у суштини окренута наопачке."
+ },
+ {
+  "rel": "planets/venus.json",
+  "at": "links.1.l",
+  "en": "Venus (NASA Solar System Exploration)",
+  "cur": "Венера (NASA Solar System Exploration)"
+ },
+ {
+  "rel": "planets/venus.json",
+  "at": "links.2.l",
+  "en": "Venera program — Wikipedia",
+  "cur": "Програм Венера — Википедија"
+ },
+ {
+  "rel": "planets/venus.json",
+  "at": "links.3.l",
+  "en": "DAVINCI + VERITAS (NASA)",
+  "cur": "DAVINCI + VERITAS (NASA)"
+ },
+ {
+  "rel": "planets/venus.json",
+  "at": "links.4.l",
+  "en": "Venus's runaway greenhouse (Nature Astronomy 2020)",
+  "cur": "Венерин одбегли стакленик (Nature Astronomy 2020)"
+ },
+ {
+  "rel": "planets/venus.json",
+  "at": "science_sections.0.why",
+  "en": "Venus rotates retrograde with an axial tilt of 177° — effectively upside-down. Combined with a 243-day sidereal rotation, its day is longer than its 225-day year.",
+  "cur": "Венера ротира ретроградно, са нагибом осе од 177° — практично наглавачке. Услед тога, уз сидеричку ротацију од 243 дана, њен дан је дужи од њене године, која траје 225 дана."
+ },
+ {
+  "rel": "planets/venus.json",
+  "at": "science_sections.1.why",
+  "en": "The most circular planetary orbit in the system (e = 0.0068) — Venus moves around the Sun like a near-perfect ring.",
+  "cur": "Најкружнија планетарна орбита у систему (e = 0,0068) — Венера се креће око Сунца као готово савршен прстен."
+ },
+ {
+  "rel": "planets/venus.json",
+  "at": "science_sections.2.why",
+  "en": "Venus has the most extreme greenhouse: surface temperatures stay ~460°C day and night, so the sub-solar / terminator distinction matters less than for any other planet.",
+  "cur": "Венера има најекстремнији ефекат стаклене баште: температуре на површини остају око 460°C и дању и ноћу, па разлика између подсунчане тачке и терминатора има мањи значај него на било којој другој планети."
+ },
+ {
+  "rel": "planets/venus.json",
+  "at": "science_sections.3.why",
+  "en": "Akatsuki (JAXA, 2015–) is the only active Venus orbiter; the Soviet Venera campaign (1961–83) still owns the only surface images ever taken.",
+  "cur": "Akatsuki (JAXA, 2015–) је једина активна орбитална сонда око Венере, а совјетски програм Venera (1961–83) и даље поседује једине снимке површине који су икада направљени."
+ },
+ {
+  "rel": "small-bodies/67p.json",
+  "at": "science_sections.0.why",
+  "en": "67P/Churyumov–Gerasimenko has e = 0.64 — a Jupiter-family comet whose orbit was reshaped by a 1959 Jupiter close approach.",
+  "cur": "67P/Churyumov–Gerasimenko има е = 0,64 — комета из Јупитерове фамилије, чија је орбита преобликована блиским проласком поред Јупитера 1959. године."
+ },
+ {
+  "rel": "small-bodies/67p.json",
+  "at": "science_sections.1.why",
+  "en": "Rosetta needed three Earth gravity assists and a Mars flyby to reach 67P — a 10-year cruise to catch a comet moving on its own elliptical trajectory.",
+  "cur": "Rosetta је за долазак до 67P требала три гравитациона маневра поред Земље и прелет поред Марса — крстарење од 10 година да би стигла комету која се креће по сопственој елиптичној путањи."
+ },
+ {
+  "rel": "small-bodies/arrokoth.json",
+  "at": "science_sections.0.why",
+  "en": "486958 Arrokoth (visited by New Horizons in 2019) is the most distant solar-system object ever explored — a primordial Kuiper-belt contact binary that has likely never been warmed by the Sun.",
+  "cur": "486958 Арокот (који је 2019. посетила сонда New Horizons) најудаљенији је објекат Сунчевог система који је икада истражен — изворни контактни двојни објекат из Kuiper-овог појаса, кога Сунце вероватно никада није загрејало."
+ },
+ {
+  "rel": "small-bodies/arrokoth.json",
+  "at": "science_sections.1.why",
+  "en": "Arrokoth orbits at 44.6 AU — classical Kuiper Belt, beyond Pluto, in a region where bodies have been mostly undisturbed since the early solar system.",
+  "cur": "Арокот кружи на удаљености од 44,6 AU — у класичном Kuiper-овом појасу, иза Плутона, у области где тела углавном нису била узнемиравана још од раног Сунчевог система."
+ },
+ {
+  "rel": "small-bodies/bennu.json",
+  "at": "science_sections.0.why",
+  "en": "Bennu is a near-Earth asteroid (semi-major axis 1.13 AU) — close enough that OSIRIS-REx could rendezvous, sample, and return material to Earth in 7 years.",
+  "cur": "Бену је астероид близак Земљи (велика полуосовина 1,13 AU) — довољно близу да је OSIRIS-REx могао да оствари сусрет у орбити, узме узорак и врати материјал на Земљу за 7 година."
+ },
+ {
+  "rel": "small-bodies/bennu.json",
+  "at": "science_sections.1.why",
+  "en": "Bennu's 0.204 eccentricity gives it a low probability impact path with Earth in the 2100s — one of the reasons it was chosen for OSIRIS-REx (planetary-defence reconnaissance).",
+  "cur": "Бенуов ексцентрицитет од 0,204 даје му путању са малом вероватноћом удара у Земљу у 22. веку — један од разлога зашто је изабран за OSIRIS-REx (извиђање за потребе планетарне одбране)."
+ },
+ {
+  "rel": "small-bodies/ceres.json",
+  "at": "science_sections.0.why",
+  "en": "Ceres holds ~25% of the main belt's total mass in a single body — and is the only main-belt object classified as a dwarf planet.",
+  "cur": "Церера у једном телу држи ~25% укупне масе главног астероидног појаса — и једини је објекат главног појаса који је класификован као патуљаста планета."
+ },
+ {
+  "rel": "small-bodies/ceres.json",
+  "at": "science_sections.1.why",
+  "en": "Ceres orbits at 2.77 AU — squarely inside the asteroid belt and used as the canonical \"middle of the belt\" reference distance.",
+  "cur": "Церера кружи на 2,77 AU — тачно усред астероидног појаса — и користи се као канонска референтна удаљеност за „средину појаса“."
+ },
+ {
+  "rel": "small-bodies/didymos.json",
+  "at": "science_sections.0.why",
+  "en": "Didymos is a binary near-Earth asteroid (semi-major axis 1.64 AU). DART (NASA, 2022) struck its small companion Dimorphos to test asteroid-deflection physics.",
+  "cur": "Дидимос је двојни астероид близу Земље (велика полуоса 1,64 AU). DART (NASA, 2022) ударио је његовог малог пратиоца Диморфос како би се испитала физика скретања астероида са путање."
+ },
+ {
+  "rel": "small-bodies/dimorphos.json",
+  "at": "science_sections.0.why",
+  "en": "Dimorphos orbits Didymos at a mere 1.2 km — and after DART, its orbital period changed by 33 minutes. The first deliberate orbit change of a celestial body by humans.",
+  "cur": "Диморфос орбитира око Дидимоса на удаљености од свега 1,2 km — а након мисије DART његов орбитални период се променио за 33 минута. Прва намерна промена орбите једног небеског тела коју су извели људи."
+ },
+ {
+  "rel": "small-bodies/donaldjohanson.json",
+  "at": "science_sections.0.why",
+  "en": "52246 Donaldjohanson is a main-belt asteroid (named after Lucy fossil discoverer) — NASA Lucy flew by on 20 April 2025 as its first belt encounter.",
+  "cur": "52246 Доналдџохансон је астероид главног појаса (назван по открићу фосила Lucy) — летелица NASA Lucy га је прелетела 20. априла 2025. као свој први сусрет са објектом из појаса."
+ },
+ {
+  "rel": "small-bodies/eris.json",
+  "at": "science_sections.0.why",
+  "en": "Eris's 44° orbital inclination is among the highest of any catalogued large body — its scattered-disc origin puts it well off the ecliptic.",
+  "cur": "Нагиб орбите објекта Ерида од 44° међу највећима је код свих каталогизованих великих тела — његово порекло у расејаном диску смешта га далеко од еклиптике."
+ },
+ {
+  "rel": "small-bodies/eris.json",
+  "at": "science_sections.1.why",
+  "en": "Eris swings from 38 AU at perihelion to 97 AU at aphelion — a ~68-AU mean orbit (semi-major axis). It passed aphelion around 1977 and is now slowly moving back toward the Sun.",
+  "cur": "Ерида се креће од 38 AU у перихелу до 97 AU у афелу — што даје средњу орбиту од ~68 AU (велика полуоса). Афел је прошао око 1977. године, а сада се полако враћа ка Сунцу."
+ },
+ {
+  "rel": "small-bodies/eurybates.json",
+  "at": "science_sections.0.why",
+  "en": "Eurybates orbits in the L4 Jupiter Trojan cloud — leading the planet by 60°. Lucy will be the first spacecraft to visit a Trojan (August 2027).",
+  "cur": "Еурибат кружи у облаку Јупитерових тројанаца L4 — испред планете за 60°. Lucy ће бити прва свемирска сонда која ће посетити неког тројанца (август 2027)."
+ },
+ {
+  "rel": "small-bodies/halley.json",
+  "at": "science_sections.0.why",
+  "en": "Halley's 0.967 eccentricity is the textbook short-period-comet orbit — nearly parabolic, with perihelion 0.59 AU and aphelion 35 AU.",
+  "cur": "Ексцентрицитет Халејеве комете од 0,967 је уџбенички пример орбите краткопериодичне комете — готово параболичне, са перихелом на 0,59 AU и афелом на 35 AU."
+ },
+ {
+  "rel": "small-bodies/halley.json",
+  "at": "science_sections.1.why",
+  "en": "Halley's enormous perihelion-aphelion swing (35 to 0.59 AU) drives the surface ices to sublimate violently near perihelion, producing the coma and tail. Next perihelion: 2061.",
+  "cur": "Огромна разлика између афела и перихела Халејеве комете (од 35 до 0,59 AU) узрокује да се површински ледови у близини перихела бурно сублимишу, чиме настају кома и реп. Следећи перихел: 2061."
+ },
+ {
+  "rel": "small-bodies/haumea.json",
+  "at": "science_sections.0.why",
+  "en": "Haumea's elongated shape (a 3.9-hour rotation deforms it into a triaxial ellipsoid) is a clue to the violent collision that created its family of icy fragments.",
+  "cur": "Хаумеин издужени облик (ротација од 3,9 сати деформише га у троосни елипсоид) траг је насилног судара који је створио њену породицу ледених фрагмената."
+ },
+ {
+  "rel": "small-bodies/haumea.json",
+  "at": "science_sections.1.why",
+  "en": "Haumea is part of a small collisional family in the Kuiper Belt — bodies with similar orbits and spectra that share an ancient parent.",
+  "cur": "Хаумеа је део мале сударне породице у Кајперовом појасу — тела сличних орбита и спектара која деле заједничког древног претка."
+ },
+ {
+  "rel": "small-bodies/itokawa.json",
+  "at": "science_sections.0.why",
+  "en": "Itokawa is a near-Earth Apollo asteroid — semi-major axis 1.32 AU. Hayabusa's 2005 rendezvous + 2010 sample return was the first NEA round-trip.",
+  "cur": "Итокава је астероид из групе Apollo који пролази близу Земље — велика полуоса му је 1,32 AU. Сусрет у орбити са летелицом Hayabusa 2005. и повратак узорка 2010. били су прво путовање до астероида блиског Земљи и назад."
+ },
+ {
+  "rel": "small-bodies/leucus.json",
+  "at": "science_sections.0.why",
+  "en": "Leucus is an unusually slow-rotating L4 Trojan (445-hour period) — Lucy flyby April 2028 will image its odd elongated shape up close.",
+  "cur": "Леук је необично споро ротирајући тројанац у тачки L4 (период од 445 сати) — прелет сонде Lucy у априлу 2028. снимиће изблиза његов чудан издужен облик."
+ },
+ {
+  "rel": "small-bodies/makemake.json",
+  "at": "science_sections.0.why",
+  "en": "Makemake's 45.7-AU semi-major axis puts it in the classical Kuiper Belt — distant enough that surface methane survives as the dominant ice.",
+  "cur": "Велика полуоса Макемаке од 45,7 AU сврстава га у класични Кајперов појас — довољно далеко да метан на површини опстаје као доминантни лед."
+ },
+ {
+  "rel": "small-bodies/makemake.json",
+  "at": "science_sections.1.why",
+  "en": "Makemake is the fourth-largest known KBO and the only one of the IAU-recognised dwarf planets without a confirmed moon until Hubble found MK2 in 2016.",
+  "cur": "Макемаке је четврти по величини познати објекат Кајперовог појаса (KBO) и једина међу патуљастим планетама које признаје IAU која није имала потврђен месец све док Hubble 2016. године није открио MK2."
+ },
+ {
+  "rel": "small-bodies/menoetius.json",
+  "at": "science_sections.0.why",
+  "en": "Menoetius is Patroclus's binary companion at L5. Their tight binary geometry has kept them dynamically stable for 4.5 billion years.",
+  "cur": "Менетије је двојни сапутник објекта Патрокло у тачки L5. Због њихове блиске двојне геометрије, они су динамички стабилни већ 4,5 милијарди година."
+ },
+ {
+  "rel": "small-bodies/orus.json",
+  "at": "science_sections.0.why",
+  "en": "Orus is a C-type L4 Trojan — Lucy flyby November 2028. Its dark, carbon-rich spectrum is closer to Kuiper-belt objects than to inner-belt asteroids.",
+  "cur": "Ор је тројанац L4 типа C — прелет сонде Lucy у новембру 2028. Његов таман спектар, богат угљеником, ближи је објектима Кајперовог појаса него астероидима унутрашњег појаса."
+ },
+ {
+  "rel": "small-bodies/oumuamua.json",
+  "at": "science_sections.0.why",
+  "en": "ʻOumuamua had e > 1 — a hyperbolic, unbound orbit. The first confirmed interstellar object to pass through the solar system (2017).",
+  "cur": "ʻOumuamua је имао e > 1 — хиперболичну, невезану орбиту. Први потврђени међузвездани објекат који је прошао кроз Сунчев систем (2017)."
+ },
+ {
+  "rel": "small-bodies/oumuamua.json",
+  "at": "science_sections.1.why",
+  "en": "Oumuamua's trajectory was the textbook hyperbolic conic — defined by escape velocity exceeded at every point. By the time it was discovered it was already leaving.",
+  "cur": "Путања објекта Oumuamua била је уџбенички пример хиперболичног конусног пресека — одређеног брзином већом од брзине бекства у свакој тачки. Када је откривен, већ је био на одласку."
+ },
+ {
+  "rel": "small-bodies/patroclus.json",
+  "at": "science_sections.0.why",
+  "en": "Patroclus is a binary system at L5 — trailing Jupiter by 60°. Lucy reaches it in 2033 to complete the first spacecraft tour of both Trojan clouds.",
+  "cur": "Патрокло је двојни систем у тачки L5 — који за Јупитером заостаје 60°. Lucy стиже до њега 2033. године и тако окончава прву турнеју једне свемирске летелице кроз оба облака Тројанаца."
+ },
+ {
+  "rel": "small-bodies/pluto.json",
+  "at": "science_sections.0.why",
+  "en": "Pluto's 0.249 eccentricity dips its orbit inside Neptune's for 20 years per 248-year cycle.",
+  "cur": "Због ексцентричности од 0,249 Плутонова орбита залази унутар Нептунове на 20 година у сваком циклусу од 248 година."
+ },
+ {
+  "rel": "small-bodies/pluto.json",
+  "at": "science_sections.1.why",
+  "en": "Pluto's 17.2° inclination keeps it well clear of Neptune even though the orbits cross in projection.",
+  "cur": "Плутонов нагиб од 17,2° држи га на безбедној удаљености од Нептуна, иако се орбите у пројекцији секу."
+ },
+ {
+  "rel": "small-bodies/pluto.json",
+  "at": "science_sections.2.why",
+  "en": "Pluto is the largest known Kuiper-belt body — its 1930 discovery predated the belt concept by 60 years.",
+  "cur": "Плутон је највеће познато тело Kuiper-овог појаса — његово откриће 1930. претходило је концепту тог појаса за 60 година."
+ },
+ {
+  "rel": "small-bodies/polymele.json",
+  "at": "science_sections.0.why",
+  "en": "Polymele is an L4 Trojan — Lucy flyby September 2027. The Trojans are dynamically locked at Jupiter's L4/L5 Lagrange points and may be captured Kuiper-belt bodies.",
+  "cur": "Полимела је тројанац у тачки L4 — прелет сонде Lucy у септембру 2027. Тројанци су динамички закључани у Јупитеровим тачкама L4/L5 (Lagrange-овим тачкама) и могу бити заробљена тела из Kuiper-овог појаса."
+ },
+ {
+  "rel": "small-bodies/psyche.json",
+  "at": "science_sections.0.why",
+  "en": "16 Psyche may be the exposed nickel-iron core of a protoplanet that lost its mantle in the early belt's violent youth. NASA Psyche (launched 2023) arrives in 2029.",
+  "cur": "16 Psyche је можда огољено језгро од никла и гвожђа некадашње протопланете која је изгубила омотач у бурној младости раног астероидног појаса. Мисија NASA Psyche (лансирана 2023) стиже 2029. године."
+ },
+ {
+  "rel": "small-bodies/vesta.json",
+  "at": "science_sections.0.why",
+  "en": "Vesta is the second-most-massive belt body — its surface is the only main-belt source confirmed for HED meteorites found on Earth.",
+  "cur": "Веста је друго по маси тело у појасу — њена површина је једини потврђени извор у главном појасу за HED метеорите пронађене на Земљи."
+ },
+ {
+  "rel": "small-bodies/vesta.json",
+  "at": "science_sections.1.why",
+  "en": "Vesta orbits at 2.36 AU — inner belt. Its proximity drove Dawn's choice to visit Vesta first (2011), then leave for Ceres (2015).",
+  "cur": "Веста кружи на 2,36 AU — у унутрашњем појасу. Њена близина определила је избор мисије Dawn да прво посети Весту (2011), а затим отпутује ка Церери (2015)."
+ },
+ {
+  "rel": "sun.json",
+  "at": "fact",
+  "en": "The Sun contains 99.86% of all mass in the solar system. Its gravity holds everything — from Mercury to the Oort Cloud — in orbit. Every second, it fuses 600 million tonnes of hydrogen into helium, releasing the energy that has sustained life on Earth for 4.5 billion years.",
+  "cur": "Сунце садржи 99,86% целокупне масе Сунчевог система. Његова гравитација држи све — од Меркура до Оортовог облака — у орбити. Сваке секунде оно претопи 600 милиона тона водоника у хелијум, ослобађајући енергију која већ 4,5 милијарде година одржава живот на Земљи."
+ }
+]

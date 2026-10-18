@@ -1,0 +1,824 @@
+[
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "diagram_caption",
+  "en": "As the planet crosses the star's disk, the measured brightness drops by the ratio of their areas, then recovers.",
+  "cur": "행성이 별의 원반을 가로지르면서 측정된 밝기가 두 천체의 면적 비율만큼 감소했다가 다시 회복됩니다."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "title",
+  "en": "TRAPPIST-1: Seven Earth-Sized Worlds",
+  "cur": "TRAPPIST-1: 일곱 개의 지구 크기 행성들"
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "intro_sentence",
+  "en": "A dim red dwarf 40 light-years away hosts seven roughly Earth-sized planets — the richest compact system known, and a prime hunting ground for habitability.",
+  "cur": "40광년 떨어진 어두운 적색왜성이 대략 지구 크기의 일곱 행성을 거느리고 있습니다 — 알려진 것 중 가장 풍부한 밀집 행성계로, 생명체 거주 가능성을 찾는 최고의 사냥터입니다."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "narrative_101.0",
+  "en": "In February 2017 NASA unveiled a system unlike any other: seven planets, all close to Earth's size, circling a single ultracool dwarf star barely larger than Jupiter, all packed closer to their star than Mercury is to the Sun.",
+  "cur": "2017년 2월 NASA는 그 어떤 것과도 다른 행성계를 공개했습니다: 일곱 개의 행성 모두 지구 크기에 가깝고, 목성보다 겨우 조금 큰 극저온 왜성 하나를 공전하며, 모두 수성이 태양에 있는 것보다 더 가까이 밀집되어 있습니다."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "narrative_101.1",
+  "en": "Three or four of them fall in the habitable zone. The star is so dim that even those temperate worlds orbit in a matter of days, and the whole system would nest inside Mercury's orbit.",
+  "cur": "이 중 세 개 또는 네 개가 생명체 거주가능 영역에 속합니다. 별이 너무 어두워서 온화한 환경의 행성들조차 며칠 만에 공전하며, 전체 행성계가 수성의 궤도 안에 들어갈 수 있습니다."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "narrative_101.2",
+  "en": "The seven move in a near-perfect chain of orbital resonances — a cosmic metronome — which let astronomers weigh them by their mutual tugs and made them the top small-planet targets for the James Webb Space Telescope.",
+  "cur": "일곱 행성은 거의 완벽한 궤도 공명 사슬을 이루며 움직입니다 — 우주의 메트로놈과 같죠 — 이를 통해 천문학자들은 행성 간 상호 인력으로 질량을 측정할 수 있었고, James Webb Space Telescope의 최고 소형 행성 관측 대상이 되었습니다."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "body_paragraphs.0",
+  "en": "TRAPPIST-1 (an M8 dwarf ~40 light-years away in Aquarius) hosts seven transiting planets, b through h, with radii from about 0.75 to 1.13 Earth. Discovered by ground-based transit surveys and Spitzer and announced in full in 2017, their masses came from transit-timing variations — the planets are far too faint for radial velocity.",
+  "cur": "TRAPPIST-1 (물병자리에 있는 ~40광년 떨어진 M8 왜성)은 b부터 h까지 일곱 개의 통과 행성을 거느리며, 반지름은 지구의 약 0.75배에서 1.13배입니다. 지상 기반 통과 관측과 Spitzer로 발견되어 2017년에 전체가 발표되었으며, 질량은 통과 시간 변화로 측정되었습니다 — 이 행성들은 시선속도 측정으로는 너무 희미합니다."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "body_paragraphs.1",
+  "en": "The planets sit in a chain of first-order resonances, strong evidence they migrated inward together through the birth disk. Planets e, f, and g lie in the conservative habitable zone; all are likely tidally locked.",
+  "cur": "행성들은 1차 공명 사슬을 이루고 있으며, 이는 탄생 원반을 통해 함께 안쪽으로 이동했다는 강력한 증거입니다. 행성 e, f, g는 보수적 생명체 거주가능 영역에 위치하며, 모두 조석 고정되어 있을 가능성이 높습니다."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "body_paragraphs.2",
+  "en": "JWST is systematically probing their atmospheres. Early results point to the innermost worlds (b, c) being largely airless — the expected toll of red-dwarf flares — while the temperate outer planets remain the field's marquee test of whether the galaxy's most common habitable zones can hold air.",
+  "cur": "JWST는 체계적으로 이들의 대기를 탐사하고 있습니다. 초기 결과는 가장 안쪽 행성들(b, c)이 대체로 대기가 없음을 시사하는데 — 적색왜성 플레어의 예상되는 대가입니다 — 반면 온화한 외부 행성들은 은하에서 가장 흔한 생명체 거주가능 영역이 대기를 유지할 수 있는지에 대한 이 분야의 대표적 시험장으로 남아 있습니다."
+ },
+ {
+  "rel": "science/history/_intro.json",
+  "at": "headline",
+  "en": "History — how a few hundred years of physics put us in orbit.",
+  "cur": "역사 — 몇 백 년의 물리학이 우리를 궤도에 올리기까지"
+ },
+ {
+  "rel": "science/history/_intro.json",
+  "at": "paragraphs.0",
+  "en": "Spaceflight didn't appear from nowhere. It rests on a stack of discoveries — Kepler's ellipses, Newton's gravity, Tsiolkovsky's rocket equation, Goddard's first liquid burn, Korolev's R-7 — each one assembled on the previous. This tab walks the milestones in chronological order, names the people who got there, and points back into the rest of /science where the maths lives.",
+  "cur": "우주비행은 무에서 나온 것이 아닙니다. 이것은 발견들의 쌓임 위에 세워졌습니다 — 케플러의 타원, Newton의 중력, Tsiolkovsky의 로켓 방정식, Goddard의 첫 액체 연소, 코롤료프의 R-7 — 각각은 이전 것 위에 조립되었습니다. 이 탭은 시간 순서대로 주요 이정표들을 정리하고, 거기에 도달한 사람들의 이름을 거론하며, /science의 나머지 부분으로 돌아가 수학이 있는 곳을 가리킵니다."
+ },
+ {
+  "rel": "science/history/_intro.json",
+  "at": "paragraphs.1",
+  "en": "We've cherry-picked six pivots: Kepler's ellipses, Newton's gravity, Tsiolkovsky's rocket equation, Goddard's first liquid burn, Korolev's R-7, and Apollo 11. Hundreds more deserve a place; future revisions will fill them in (Galileo's telescopes, Hohmann's transfer paper, Goddard's wife who took most of the photos, the Soviet engineers Korolev couldn't name in public, Ed White's spacewalk, von Kármán's altitude line). The story isn't owned by any one nation — every chapter has people you've never heard of who made it work.",
+  "cur": "우리는 여섯 가지 핵심 전환점을 엄선했습니다: 케플러의 타원 궤도, Newton의 중력, Tsiolkovsky의 로켓 방정식, Goddard의 첫 액체 연료 연소, 코롤료프의 R-7, 그리고 Apollo 11. 수백 개의 다른 사건들도 마땅히 이 자리에 있어야 합니다. 향후 개정판에서 보완할 것입니다(갈릴레오의 망원경, Hohmann의 전이 궤도 논문, 대부분의 사진을 찍은 Goddard의 아내, 공개적으로 이름을 밝힐 수 없었던 소비에트 공학자 코롤료프, 에드 화이트의 우주유영, von Kármán의 고도 경계선). 이 이야기는 어떤 한 국가의 소유가 아닙니다. 모든 장에는 당신이 들어본 적 없는 사람들이 있고, 그들이 이를 가능하게 했습니다."
+ },
+ {
+  "rel": "science/history/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Read it as a chain. Each step required the previous one. None were inevitable.",
+  "cur": "이것을 연쇄 관계로 읽으세요. 각 단계는 이전 단계를 필요로 했습니다. 어느 것도 필연적이지 않았습니다."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "title",
+  "en": "Apollo 11 · July 20, 1969",
+  "cur": "Apollo 11 · 1969년 7월 20일"
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "intro_sentence",
+  "en": "Three astronauts, a Saturn V, and a moonshot deadline JFK set in 1961. Tranquillity Base, eight years later, on schedule.",
+  "cur": "세 명의 우주비행사, Saturn V 로켓, 그리고 1961년 JFK가 정한 달 착륙 기한. 8년 후, 예정대로 고요의 기지에 도착했다."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "narrative_101.0",
+  "en": "On May 25, 1961, John F. Kennedy told Congress \"this nation should commit itself to achieving the goal, before this decade is out, of landing a man on the Moon and returning him safely to the Earth.\" Eight years later, almost to the month, Neil Armstrong stepped onto Mare Tranquillitatis. 400,000 people worked on Apollo at peak; the programme cost ~$25.4 billion total (1960–1973, nominal); NASA's budget peaked at ~4.4% of the federal budget in 1966.",
+  "cur": "1961년 5월 25일, 존 F. 케네디는 의회에 \"이 국가는 이 십년이 끝나기 전에 달에 사람을 착륙시키고 안전하게 지구로 돌아오게 하는 목표를 달성하기 위해 노력해야 한다\"고 말했다. 8년 뒤, 거의 같은 시기에 닐 암스트롱은 고요의 바다에 발을 디뎠다. Apollo 프로그램 최고 시기에 400,000명이 일했으며, 총 비용은 약 254억 달러였다(1960~1973년, 명목가; NASA 예산은 1966년 연방 예산의 약 4.4%까지 도달했다)."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "narrative_101.1",
+  "en": "Apollo 11: Commander Neil Armstrong, CMP Michael Collins, LMP Edwin \"Buzz\" Aldrin. Saturn V launch July 16; lunar orbit July 19; landing July 20 at 20:17 UTC; first step at 02:56 UTC July 21 (UTC; 22:56 EDT July 20 in the US). Splashdown July 24. 8 days, 3 hours, 18 minutes total.",
+  "cur": "Apollo 11: 사령관 닐 암스트롱, 사령선 조종사 마이클 콜린스, 달 착륙선 조종사 Edwin \"Buzz\" Aldrin. Saturn V 발사 7월 16일; 달 궤도 진입 7월 19일; 7월 20일 협정세계시 20:17 착륙; 첫 발걸음 협정세계시 7월 21일 02:56 (협정세계시; 미국 동부시간 7월 20일 22:56). 착수 7월 24일. 총 8일 3시간 18분."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "narrative_101.2",
+  "en": "The moon landing was watched live by an estimated 600 million people — about a fifth of humanity at the time. The \"one small step\" line was Armstrong's; it was unscripted (he later said he meant to say \"one small step for a man\" but the indefinite article got lost in transmission).",
+  "cur": "달 착륙은 약 6억 명의 사람들이 생중계로 시청했다 — 당시 인류의 약 5분의 1. \"한 작은 발걸음\"이라는 문구는 암스트롱의 것이며, 준비된 대사가 아니었다(나중에 그는 \"한 사람의 작은 발걸음\"이라고 말하려 했지만 부정관사가 전송 중에 손실되었다고 말했다)."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.0",
+  "en": "Saturn V was a 110-meter, three-stage liquid-fuel monster designed under Wernher von Braun (the German V-2 designer, brought to the US under Operation Paperclip in 1945). First stage: 5× F-1 engines, 7.6 million lbf thrust. Still the highest-thrust rocket to fly a fully successful crewed mission (SLS Block 1 and Starship exceed its raw liftoff thrust; nothing yet matched its crewed payload to TLI).",
+  "cur": "Saturn V는 베르너 폰 브라운이 설계한 높이 110미터의 3단 액체연료 로켓이었다(독일의 V-2 설계자로, 1945년 Operation Paperclip에 따라 미국으로 이입됨). 첫 번째 단계: 5개의 F-1 엔진, 760만 lbf의 추력. 여전히 유인 미션으로 완전히 성공적인 비행을 한 최고 추력의 로켓이다(SLS Block 1과 Starship은 기본 이륙 추력에서 이를 초과하지만, 유인 달 천이궤도 수송에서는 아직 이를 능가한 것이 없다)."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.1",
+  "en": "Trajectory: free-return loop, the \"figure-8\" Earth-Moon-Earth. If the lunar-orbit insertion burn failed, Apollo 11 would have looped around the Moon and returned to Earth on the same arc — built-in abort. Apollo 13 used exactly this property when its service module failed, looping behind the Moon and coming home.",
+  "cur": "궤도: 자유복귀 궤도, \"숫자 8\" 지구-달-지구 궤도. 달 궤도 투입 분사가 실패하면 Apollo 11은 달 주위를 돌아 같은 호를 따라 지구로 돌아올 것이다 — 내장된 중단 장치. Apollo 13은 서비스 모듈이 실패했을 때 정확히 이 특성을 사용하여 달 뒤로 루프를 돌고 집으로 돌아왔다."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.2",
+  "en": "Key personnel beyond the crew: George Mueller (NASA Apollo programme director), Christopher Kraft (Mission Control founder), Margaret Hamilton (Apollo Guidance Computer software lead — she ran the team that wrote the AGC code that ran on the LM during descent), Glynn Lunney + Gene Kranz + Cliff Charlesworth (flight directors).",
+  "cur": "승무원 외 주요 인물: George Mueller(NASA Apollo 프로그램 책임자), 크리스토퍼 크래프트(Mission Control 창립자), Margaret Hamilton(Apollo Guidance Computer 소프트웨어 책임자 — 달착륙선 강하 중 실행된 AGC 코드를 작성한 팀을 이끌었음), Glynn Lunney + 진 크랜츠 + Cliff Charlesworth(비행 책임자)."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.3",
+  "en": "Things-that-could-have-killed-them: AGC alarms 1201 and 1202 during descent (executive overflow — Hamilton's robust software design recovered automatically); manual landing because the auto-target was a boulder field (Armstrong landed with ~25 seconds of fuel left); the LM ascent engine had ONE chance to fire and was untested at full duration in flight.",
+  "cur": "생명을 위협했을 수 있었던 것들: 착륙 중 AGC 경보 1201과 1202 (실행 스택 오버플로우 — Hamilton의 견고한 소프트웨어 설계가 자동으로 복구됨); 자동 목표지가 바위밭이었기 때문의 수동 착륙 (암스트롱은 연료가 약 25초 분량 남은 상태로 착륙함); LM 상승 엔진은 단 한 번의 점화 기회만 있었고 비행 중 전체 지속 시간에서 미시험 상태였음."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.4",
+  "en": "Apollo flew six successful landings: 11, 12, 14, 15, 16, 17 (1969-1972). Apollo 13 missed the Moon (LOI cancelled), looped behind it, returned safely. 12 humans walked on the Moon; the last (Gene Cernan, Apollo 17) left on December 14, 1972.",
+  "cur": "Apollo는 여섯 번의 성공적인 착륙을 기록했다: 11, 12, 14, 15, 16, 17 (1969-1972년). Apollo 13은 달 도착에 실패했다(달 궤도 진입이 취소됨), 달 뒤를 선회하고 안전하게 귀환했다. 12명의 인간이 달을 걸었고, 마지막 우주비행사(유진 서넌, Apollo 17)는 1972년 12월 14일에 떠났다."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "title",
+  "en": "Goddard's First Liquid-Fuel Rocket · 1926",
+  "cur": "Goddard의 첫 액체연료 로켓 · 1926"
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "intro_sentence",
+  "en": "March 16, 1926: a 3-meter spindly contraption rises 12 meters into the Massachusetts sky. The first liquid-fuel rocket flight in history.",
+  "cur": "1926년 3월 16일: 3미터의 가느다란 기계장치가 매사추세츠 하늘로 12미터를 상승한다. 역사 속 첫 액체연료 로켓 비행."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "narrative_101.0",
+  "en": "Robert Goddard was a physics professor at Clark University in Worcester, Massachusetts, with a 1919 Smithsonian paper proposing rockets could reach the Moon — for which the New York Times mocked him in a 1920 editorial that claimed he didn't even understand high-school physics. (The Times retracted on July 17, 1969 — the day after Apollo 11 launched, as the spacecraft was en route to the Moon.)",
+  "cur": "로버트 고다드는 매사추세츠 Worcester의 Clark University 물리학 교수로, 1919년 Smithsonian 논문에서 로켓이 달에 도달할 수 있다고 제안했다 — New York Times는 1920년 논설에서 그를 조롱하며 고등학교 물리도 이해하지 못한다고 주장했다. (Times는 1969년 7월 17일에 정정했다 — Apollo 11이 발사된 다음날로, 우주선이 달을 향해 가는 중이었다.)"
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "narrative_101.1",
+  "en": "On a snowy March 16, 1926, on his Aunt Effie Ward's farm in Auburn, Goddard launched a 4.4-pound, 10-foot rocket fueled by liquid oxygen and gasoline. It flew for 2.5 seconds, reached 41 feet altitude, and crashed in the cabbage field 184 feet downrange. His wife Esther Goddard photographed it. That short hop is the start of every modern rocket lineage.",
+  "cur": "눈이 소복이 내리던 1926년 3월 16일, Auburn의 Aunt Effie Ward 농장에서 Goddard는 4.4파운드의 10피트 로켓에 액체산소와 가솔린을 연료로 발사했다. 비행 시간은 2.5초, 고도 41피트에 도달했으며 184피트 떨어진 양배추밭에 추락했다. 그의 아내 Esther Goddard가 사진을 찍었다. 이 짧은 도약이 모든 현대 로켓 계보의 시작이다."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "narrative_101.2",
+  "en": "Goddard was secretive — paranoid about competitors, refused most collaboration. His patents covered fundamentally everything: gimbaled engines, pumps, gyroscopic guidance, multi-stage configurations. Postwar Germans had read his patents; postwar Americans had to relearn most of his work because he hadn't shared it.",
+  "cur": "Goddard는 비밀주의자였다 — 경쟁자를 경계하고 대부분의 협력을 거부했다. 그의 특허는 근본적으로 모든 것을 포함했다: 짐벌식 엔진, 펌프, 자이로스코프 유도, 다단계 구성. 전후 독일인들은 그의 특허를 읽었다. 전후 미국인들은 그가 공유하지 않았기 때문에 그의 대부분의 작업을 다시 배워야 했다."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.0",
+  "en": "March 16, 1926 launch site: Aunt Effie Ward's farm, Auburn, Massachusetts. Vehicle: \"Nell\" — 10 ft tall, ~3 m long structure, weighing about 6 kg dry. Propellants: liquid oxygen + gasoline, regeneratively cooled, gimbaled nozzle.",
+  "cur": "1926년 3월 16일 발사지: Auburn, 매사추세츠의 Aunt Effie Ward 농장. 기체: \"Nell\" — 10피트 높이, 약 3미터 길이 구조, 건조 무게 약 6kg. 추진제: 액체산소 + 가솔린, 재생식 냉각, 짐벌식 노즐."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.1",
+  "en": "Earlier solid-fuel rockets existed (Chinese fire-arrows from the 13th century onward, Congreve rockets in the Napoleonic wars), but liquid fuels were the door to spaceflight: higher specific impulse, controllable throttling, restartable.",
+  "cur": "초기 고체연료 로켓은 존재했지만 (13세기 이후의 중국 화전, 나폴레옹 전쟁 시기의 콩그리브 로켓), 액체연료가 우주비행으로 가는 문이었다: 더 높은 비추력, 제어 가능한 추력 조절, 재시작 가능성."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.2",
+  "en": "Esther Goddard took most of the photographs. Her work is undercredited in standard histories — the iconic 1926 launch image is hers.",
+  "cur": "Esther Goddard는 대부분의 사진을 찍었다. 그녀의 작업은 표준 역사에서 인정받지 못한다 — 1926년 발사의 상징적 이미지는 그녀의 것이다."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.3",
+  "en": "Goddard's later flights from Roswell, New Mexico (1930-1941), reached 1.7 mi altitude (Mar 1937) and 9000 ft (1941). Modest by modern standards but every key technology — gimbaling, pumps, gyros, parachute recovery — proved out on Goddard's hardware decades before mass-produced rocketry caught up.",
+  "cur": "Goddard의 이후 비행은 Roswell, New Mexico에서 이루어졌다 (1930-1941), 1.7마일 고도 (1937년 3월)와 9000피트 (1941)에 도달했다. 현대 기준으로는 미미하지만 모든 핵심 기술 — 짐벌링, 펌프, 자이로, 낙하산 회수 — 은 대량 생산 로켓 산업이 따라잡기 수십 년 전 Goddard의 하드웨어에서 입증되었다."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.4",
+  "en": "Postwar acknowledgment: NASA's Goddard Space Flight Center in Maryland (1959) is named for him.",
+  "cur": "전후 인정: NASA의 Goddard Space Flight Center in Maryland (1959)는 그의 이름을 딴 것이다."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "intro_sentence",
+  "en": "Tycho Brahe's lifetime of naked-eye Mars data, distilled by Kepler into the three rules every orbit obeys.",
+  "cur": "티코 브라헤의 평생에 걸친 육안 화성 관측 데이터를 케플러가 정제하여 모든 궤도가 따르는 세 가지 규칙으로 도출했다."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "narrative_101.0",
+  "en": "Tycho Brahe spent ~20 years at the Uraniborg observatory on Hven measuring Mars's position with quadrants made of brass and oak — better-than-arcminute precision, all with naked eyes. He died in 1601 having published little of his planetary results.",
+  "cur": "티코 브라헤는 Hven 섬의 Uraniborg 천문대에서 약 20년간 황동과 참나무로 만든 사분의에 이용해 화성의 위치를 각분 이하의 정밀도로 측정했다 — 모두 육안 관측이었다. 그는 1601년 행성 관측 결과를 거의 발표하지 못한 채 사망했다."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "narrative_101.1",
+  "en": "Kepler inherited the Mars notebooks. He spent another decade trying to fit them to circles and failed. The break came when he tried an ellipse — Mars matched immediately. Out of that came three laws: orbits are ellipses with the Sun at one focus; equal areas swept in equal time; period squared equals semi-major axis cubed.",
+  "cur": "케플러는 화성 관측 일지를 물려받았다. 그는 10년을 더 들여 원 궤도에 맞추려 했으나 실패했다. 타원을 시도했을 때 돌파구가 열렸다 — 화성 데이터가 바로 들어맞았다. 거기서 세 법칙이 나왔다: 궤도는 태양이 한 초점에 있는 타원이다; 같은 시간에 같은 넓이를 쓸어낸다; 주기의 제곱은 반장축의 세제곱과 같다."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "narrative_101.2",
+  "en": "Without those three laws, no spacecraft trajectory in this app would compute. Every porkchop cell, every transfer arc, every planet on /explore is a Keplerian solution.",
+  "cur": "이 세 법칙이 없다면 이 앱의 어떤 우주선 궤적도 계산할 수 없다. 모든 포크초프 셀, 모든 전이 호, /explore의 모든 행성이 Keplerian 해법이다."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.0",
+  "en": "Astronomia Nova (1609) published Laws 1 + 2 — the ellipse + equal-areas rules, derived from the Mars opposition data. Harmonices Mundi (1619) published Law 3 — period² ∝ semi-major axis³.",
+  "cur": "Astronomia Nova(1609)는 제1, 2 법칙 — 타원과 등면적 법칙을 발표했으며, 화성의 충(opposition) 데이터에서 도출했다. Harmonices Mundi(1619)는 제3 법칙 — 주기² ∝ 반장축³을 발표했다."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.1",
+  "en": "Kepler had no theoretical justification — the laws were empirical patterns extracted from data. Newton would supply the why 70 years later (gravity goes as 1/r²; bound orbits are conic sections; Law 3 falls out of energy conservation).",
+  "cur": "케플러는 이론적 근거가 없었다 — 법칙들은 데이터에서 추출한 경험적 패턴이었다. Newton은 70년 후에 그 이유를 제공했다(중력은 1/r²로 작용; 속박 궤도는 원뿔곡선; 제3 법칙은 에너지 보존에서 나온다)."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.2",
+  "en": "Brahe's contribution wasn't just data: he was a meticulous instrumentalist who pushed naked-eye measurement to its physical limit. Telescope-grade precision arrived only after Galileo's 1609 telescope — too late to overlap with Brahe's career.",
+  "cur": "Brahe의 기여는 단지 데이터만이 아니었다: 그는 육안 측정을 물리적 한계까지 밀어붙인 정밀한 기기 제작자였다. 망원경급 정밀도는 갈릴레오의 1609년 망원경 이후에야 도착했다 — Brahe의 활동 기간과 겹칠 수 없었다."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.3",
+  "en": "Modern reanalysis: Kepler's Mars residuals are sub-arcminute. He nailed an ellipse with eccentricity 0.0934 from data that had irreducible measurement uncertainty of ~1 arcminute. The fit was real.",
+  "cur": "현대 재분석: 케플러의 화성 잔차는 각분 미만이다. 그는 약 1 각분의 기약할 수 없는 측정 불확도를 가진 데이터에서 이심률 0.0934인 타원을 정확히 맞췄다. 그 피팅은 실제였다."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "diagram_caption",
+  "en": "Tycho's Mars positions (dots) versus Kepler's elliptical fit (curve). Sun at one focus.",
+  "cur": "Tycho의 화성 위치(점)와 케플러의 타원 피팅(곡선). 한 초점에 태양."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "title",
+  "en": "Newton's Principia · 1687",
+  "cur": "Newton의 Principia · 1687"
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "intro_sentence",
+  "en": "One book, three laws of motion, and the inverse-square law of gravity — the foundation everything spaceflight does still rests on.",
+  "cur": "한 권의 책, 세 가지 운동 법칙, 그리고 역제곱 중력 법칙 — 오늘날 우주비행이 여전히 의존하는 모든 것의 기초."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "narrative_101.0",
+  "en": "By 1684 Halley was asking the right people what shape an orbit would take if the Sun's pull went as 1/r². Christopher Wren wagered a book of forty shillings that no-one could prove it; Hooke claimed a proof he didn't have. Halley asked Newton — Newton said \"an ellipse\" without hesitation, dug up the proof from years-old notes, and three years later published the Principia.",
+  "cur": "1684년쯤 핼리 혜성은 태양의 끌어당김이 1/r²에 따를 때 궤도가 어떤 형태를 취할지에 대해 적절한 사람들에게 묻기 시작했습니다. 크리스토퍼 렌은 아무도 이를 증명할 수 없다는 데 40실링짜리 책에 걸었고, Hooke는 자신이 가지지 않은 증명을 주장했습니다. 핼리 혜성이 Newton에게 물었고, Newton은 망설임 없이 \"타원\"이라고 말하고, 수년 전의 낡은 노트에서 증명을 끄집어냈으며, 3년 뒤에 Principia를 출판했습니다."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "narrative_101.1",
+  "en": "Three laws of motion (inertia, F = ma, action-reaction) plus the inverse-square gravity law (F = Gm₁m₂/r²) plus the calculus to do it all — one book, three years, no peer review. Halley paid the printing costs himself when the Royal Society ran out of money on a fish-anatomy book.",
+  "cur": "세 가지 운동 법칙(관성, F = ma, 작용-반작용)에 역제곱 중력 법칙(F = Gm₁m₂/r²)을 더하고 이 모든 것을 계산할 미적분학까지 — 한 권의 책, 삼 년, 동료 검토 없음. Royal Society가 어류 해부학 책에 돈을 다 써버렸을 때 핼리 혜성이 인쇄 비용을 직접 부담했다."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "narrative_101.2",
+  "en": "Out of those equations: Kepler's three laws derive cleanly. Tides, projectile motion, the precession of the equinoxes, the shape of the Earth — all consequences. Spaceflight 280 years later is straightforward Newtonian mechanics with engines added.",
+  "cur": "그 방정식들로부터: 케플러의 세 법칙이 깔끔하게 유도된다. 조석, 포물선 운동, 춘분점의 세차, 지구의 형태 — 모두 결과이다. 280년 뒤의 우주비행은 엔진을 더한 직선적인 뉴턴 역학이다."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "body_paragraphs.0",
+  "en": "Philosophiæ Naturalis Principia Mathematica was published July 1687 in Latin. Three books: motion in a vacuum, motion through resisting media, the system of the world. The third book applies the laws to the actual cosmos and reproduces all of Kepler's data from first principles.",
+  "cur": "Philosophiæ Naturalis Principia Mathematica는 1687년 7월 라틴어로 출판되었다. 세 권으로 구성: 진공 속 운동, 저항 매질을 통한 운동, 세계 체계. 셋째 권은 법칙들을 실제 우주에 적용하고 케플러의 모든 데이터를 제1원리로부터 재현한다."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "body_paragraphs.1",
+  "en": "Calculus was Newton's invention specifically to do this. He called it \"fluxions\" — Leibniz independently invented essentially the same machinery in Germany around the same time, and the rivalry over priority lasted decades.",
+  "cur": "미적분학은 이를 수행하기 위해 Newton이 특별히 발명한 것입니다. 그는 이를 \"유량(fluxions)\"이라고 불렀습니다. 라이프니츠는 독립적으로 같은 시기쯤 독일에서 본질적으로 동일한 수학 체계를 발명했으며, 우선권을 놓고 벌어진 경쟁은 수십 년간 지속되었습니다."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "body_paragraphs.2",
+  "en": "What Newton DIDN'T explain: WHY gravity follows 1/r². His own famous comment — added to the 1713 second edition: \"Hypotheses non fingo\" — \"I feign no hypotheses.\" The mechanism would wait for Einstein in 1915.",
+  "cur": "Newton이 설명하지 않은 것: 중력이 왜 1/r²을 따를까요? 1713년 제2판에 추가된 그의 유명한 주석 — \"Hypotheses non fingo\" — \"나는 어떤 가설도 만들어내지 않는다.\" 그 메커니즘은 1915년 Einstein을 기다리고 있었습니다."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "body_paragraphs.3",
+  "en": "Modern numerical orbit propagators run essentially Newton's equations with floating-point arithmetic. /fly's heliocentric arc, /plan's porkchop, every Keplerian solution — Newtonian gravity all the way down.",
+  "cur": "현대의 수치 궤도 전파 계산기는 본질적으로 부동소수점 산술로 Newton의 방정식을 실행한다. /fly의 태양 중심 호, /plan의 포크초프, 모든 케플러 해 — 끝까지 Newton 중력이다."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "formula_caption",
+  "en": "Newton's law of universal gravitation. G ≈ 6.674 × 10⁻¹¹ N·m²/kg².",
+  "cur": "뉴턴의 만유인력 법칙. G ≈ 6.674 × 10⁻¹¹ N·m²/kg²."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "title",
+  "en": "Sputnik 1 · October 4, 1957",
+  "cur": "Sputnik 1 · 1957년 10월 4일"
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "intro_sentence",
+  "en": "An 84-kg Soviet aluminium ball goes into a 96-minute orbit. Spaceflight is real now — for everyone, all at once.",
+  "cur": "84kg 소비에트 알루미늄 구체가 96분 궤도에 진입했다. 우주비행이 현실이 되었다 — 모두를 위해, 한 번에."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "narrative_101.0",
+  "en": "October 4, 1957, Baikonur Cosmodrome, Kazakh SSR: Sergei Korolev's R-7 rocket lofts a 58-cm aluminium sphere with four whip antennas into low Earth orbit. The sphere broadcasts a single beep every 0.4 seconds at 20 and 40 MHz. Anyone on Earth with a shortwave radio can hear it — and they did. The space age starts that night.",
+  "cur": "1957년 10월 4일, 바이코누르 우주 기지, Kazakh SSR: 세르게이 코롤료프의 R-7 로켓이 네 개의 채찍 안테나를 가진 58센티미터 알루미늄 구를 지구 저궤도로 쏘아 올린다. 구는 20과 40 MHz에서 0.4초마다 한 번의 신호음을 송신한다. 지구 위의 누구나 단파 라디오만 있으면 이것을 들을 수 있었다—그리고 실제로 들었다. 그 밤 우주 시대가 시작된 것이다."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "narrative_101.1",
+  "en": "Sergei Korolev, the Soviet chief designer, ran the R-7 programme as an ICBM project — the satellite was a sideshow. His engineering team launched a ~500 kg biological satellite (Sputnik 2, with the dog Laika) one month later. Korolev's name was a state secret his entire life; he was credited only as \"Chief Designer\" until obituary in 1966.",
+  "cur": "소비에트 총수석 설계자인 세르게이 코롤료프는 R-7 프로그램을 대륙간탄도미사일(ICBM) 프로젝트로 운영했으며, 위성은 부차적인 프로젝트였다. 그의 엔지니어링 팀은 1개월 후 ~500kg 생물 위성(개 Laika가 탑재된 Sputnik 2)을 발사했다. 코롤료프의 이름은 평생 국가 기밀이었으며, 1966년 부고까지 오직 \"총수석 설계자\"로만 공식 기록되었다."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "narrative_101.2",
+  "en": "America had no operational rocket capable of orbit in 1957 — Vanguard exploded on the launch pad in December. Explorer 1 finally reached orbit January 31, 1958, on a von Braun Redstone derivative. The \"Sputnik shock\" launched NASA (1958), the National Defense Education Act, and the entire space race that would define the next decade.",
+  "cur": "미국은 1957년에 궤도에 진입할 수 있는 작동 가능한 로켓이 없었다 — Vanguard는 12월 발사대에서 폭발했다. Explorer 1은 마침내 1958년 1월 31일 Redstone 유도 로켓으로 궤도에 도달했다. \"Sputnik 충격\"은 NASA(1958)와 국방교육법, 그리고 이후 10년을 정의할 우주 경쟁 전체를 촉발했다."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.0",
+  "en": "Vehicle: R-7 Semyorka, the world's first ICBM, repurposed. Five strap-on first-stage boosters around a sustainer core. The same family of rockets (heavily evolved) launches Soyuz crews to ISS today — direct hardware lineage from Sputnik.",
+  "cur": "운반 체계: R-7 Semyorka, 세계 최초의 ICBM으로 재사용되었다. 중심부 엔진 주위에 5개의 보조 첫 단계 부스터. 같은 계열의 로켓(크게 개선됨)이 오늘날 ISS로 Soyuz 승무원을 운반한다 — Sputnik 이래 직접적인 하드웨어 계통이다."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.1",
+  "en": "Sputnik orbit: perigee 215 km, apogee 939 km, inclination 65°, period 96 minutes. It re-entered January 4, 1958, after 92 days and 1440 orbits.",
+  "cur": "스푸트니크 궤도: 근지점 215km, 원지점 939km, 궤도 경사각 65°, 공전 주기 96분. 1958년 1월 4일 재진입했으며, 92일과 1440 궤도 후였다."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.2",
+  "en": "Key personnel beyond Korolev: Tikhonravov (rocket designer), Keldysh (mathematician — orbit calculations), Glushko (rocket-engine designer for the R-7 boosters). Russian engineering had absorbed German V-2 work after WWII (the Soviets captured the Mittelwerk facility) but the R-7 was substantively native.",
+  "cur": "코롤료프 외의 주요 인력: Tikhonravov (로켓 설계자), Keldysh (수학자—궤도 계산), 글루시코 (R-7 부스터용 로켓 엔진 설계자). 러시아 공학은 2차 세계대전 이후 독일 V-2 기술을 흡수했지만 (소련은 Mittelwerk 시설을 점령했음), R-7은 본질적으로 국산이었다."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.3",
+  "en": "American reaction was outsize: Sputnik was technically simple (a radio beacon) but politically enormous. The fact that the USSR could put 84 kg in orbit meant they could put a thermonuclear warhead anywhere on Earth via the same rocket. ICBM panic drove a decade of US R&D acceleration.",
+  "cur": "미국의 반응은 과도했다: Sputnik은 기술적으로 단순했으나(라디오 신호기) 정치적으로는 막대했다. USSR이 84kg을 궤도에 올릴 수 있다는 사실은 같은 로켓으로 핵탄두를 지구 어디든 보낼 수 있다는 의미였다. ICBM 공포는 미국의 10년간 연구개발 가속화를 촉발했다."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.4",
+  "en": "Sputnik's legacy: NASA founded July 29, 1958. ARPA (later DARPA) founded same year. The civilian US space programme was a direct response.",
+  "cur": "스푸트니크의 유산: NASA는 1958년 7월 29일 설립되었다. ARPA(후일 DARPA)는 같은 해 설립되었다. 미국 민간 우주 프로그램은 직접적인 응답이었다."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "title",
+  "en": "Tsiolkovsky Equation · 1903",
+  "cur": "Tsiolkovsky 방정식 · 1903"
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "intro_sentence",
+  "en": "A deaf Russian schoolteacher works out the rocket equation 50 years before anyone could build a rocket to use it.",
+  "cur": "청각장애 러시아 시골 교사가 로켓을 실제로 만들 수 있기 50년 전에 로켓 방정식을 유도하다."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "narrative_101.0",
+  "en": "Konstantin Tsiolkovsky was a self-taught provincial schoolteacher in Kaluga, deaf since childhood from scarlet fever, who spent his evenings sketching multi-stage rockets while teaching arithmetic by day. In 1903 he published \"The Investigation of Space by Means of Reactive Devices\" in an obscure Russian journal — and worked out the equation that would govern every rocket ever built.",
+  "cur": "콘스탄틴 Tsiolkovsky는 칼루가에 사는 독학으로 배운 시골 교사였으며, 어린 시절 성홍열로 청각을 잃었다. 낮에는 산술을 가르치며 저녁 시간에는 다단계 로켓을 스케치했다. 1903년 그는 \"반작용 장치를 통한 우주 탐험\"을 무명의 러시아 학술지에 출판했고, 그 후 건설된 모든 로켓을 지배할 방정식을 유도해냈다."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "narrative_101.1",
+  "en": "The Tsiolkovsky equation: ∆v = vₑ × ln(m₀/m₁). The change in velocity a rocket can produce equals its exhaust velocity times the natural log of its mass ratio. That natural-log term is brutal — getting more ∆v requires exponentially more fuel. Most of every rocket is fuel. The Saturn V was 85% propellant by mass.",
+  "cur": "Tsiolkovsky 방정식: ∆v = vₑ × ln(m₀/m₁). 로켓이 만들 수 있는 속도 변화는 배기 속도에 질량비의 자연로그를 곱한 값과 같다. 그 자연로그 항은 가혹하다 — 더 많은 ∆v를 얻으려면 기하급수적으로 더 많은 연료가 필요하다. 모든 로켓의 대부분은 연료다. 새턴 V는 질량의 85%가 추진제였다."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "narrative_101.2",
+  "en": "Tsiolkovsky also figured out: liquid fuels would beat solids; multi-staging was necessary to escape Earth; orbital stations could host humans permanently. He died in 1935, two years before Goddard's rockets reached serious altitude.",
+  "cur": "Tsiolkovsky는 또한 다음을 파악했다: 액체 연료가 고체 연료보다 우수할 것; 지구를 탈출하려면 다단계가 필수적일 것; 궤도 정거장이 인간을 영구적으로 수용할 수 있을 것. 그는 1935년에 사망했으며, Goddard의 로켓이 심각한 고도에 도달하기 2년 전이었다."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "body_paragraphs.0",
+  "en": "Tsiolkovsky published the equation, the multi-stage rocket concept, and the orbital-station concept years before serious rocket engineering existed. Goddard would build the first liquid-fuel rocket in 1926 (US); von Braun's V-2 in 1942 (Germany); Korolev's R-7 in 1957 (USSR).",
+  "cur": "Tsiolkovsky는 심각한 로켓 공학이 존재하기 수십 년 전에 이 방정식, 다단 로켓 개념, 그리고 궤도 정거장 개념을 발표했습니다. Goddard는 1926년(미국)에 첫 번째 액체 연료 로켓을 제작할 것이고, von Braun의 V-2는 1942년(독일)에, 코롤료프의 R-7은 1957년(소련)에 만들어질 것입니다."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "body_paragraphs.1",
+  "en": "The equation is the inverse of Newton's third law: every kilogram of propellant ejected at velocity vₑ pushes the vehicle by 1 kg × vₑ. Integrate that over decreasing mass and you get the natural-log dependence.",
+  "cur": "방정식은 뉴턴의 제3 법칙의 역이다: 속도 vₑ로 배출된 1kg의 추진제는 차량을 1 kg × vₑ만큼 밀어낸다. 감소하는 질량에 대해 적분하면 자연로그 의존성을 얻는다."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "body_paragraphs.2",
+  "en": "Why log scale matters: doubling ∆v needs the mass ratio squared. Tripling needs cubed. To get from 0 to escape velocity (~11.2 km/s) with a typical chemical exhaust velocity of 4.4 km/s, mass ratio = e^(11.2/4.4) ≈ 13. So a 1-tonne payload needs 12 tonnes of propellant, plus the structure to hold it.",
+  "cur": "왜 로그 스케일이 중요한가: ∆v를 두 배로 늘리려면 질량비를 제곱해야 한다. 3배로 늘리려면 세제곱해야 한다. 0에서 탈출 속도(약 11.2 km/s)에 도달하려면 전형적인 화학 배기 속도 4.4 km/s로 계산하면 질량비 = e^(11.2/4.4) ≈ 13이다. 따라서 1톤의 탑재물에는 12톤의 추진제와 이를 담을 구조가 필요하다."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "body_paragraphs.3",
+  "en": "Tsiolkovsky never tested anything. He wasn't an engineer — he was a theoretician with chalk. The Soviet space programme posthumously canonised him; his Kaluga house is now a museum and his name is on the far-side crater the lunar Soviets aimed at.",
+  "cur": "Tsiolkovsky는 어떤 것도 실제로 시험하지 않았다. 그는 공학자가 아니었다 — 분필을 들고 있던 이론가였다. 소련 우주 계획은 사후에 그를 신성화했고; 그의 칼루가 집은 현재 박물관이며 그의 이름은 소련이 목표로 했던 달 뒷면의 분화구에 붙여져 있다."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "formula_caption",
+  "en": "The rocket equation. m₀ = wet mass (full); m₁ = dry mass (empty); vₑ = exhaust velocity.",
+  "cur": "로켓 방정식. m₀ = 습식 질량(만수); m₁ = 건식 질량(공);vₑ = 배기 속도."
+ },
+ {
+  "rel": "science/life-in-space/_intro.json",
+  "at": "headline",
+  "en": "Life in space — what the human body does when gravity goes away.",
+  "cur": "우주의 삶 — 인간 몸이 중력이 멀리 갈 때 무슨 일이."
+ },
+ {
+  "rel": "science/life-in-space/_intro.json",
+  "at": "paragraphs.0",
+  "en": "Spaceflight is a slow medical experiment that humanity has been running on itself for 65 years. The body evolved in 1 g, in a thick atmosphere, behind a magnetic field. Take any of those away and physiology re-wires — fluids redistribute, bones thin, muscles fade, eyes change shape, the immune system gets weird, the inner ear gives up trying to tell which way is down.",
+  "cur": "Spaceflight는 65 년 동안 자체적으로 실행 된 느린 의료 실험입니다. 몸은 자기장 뒤에 두꺼운 분위기에서 1 g에서 진화했습니다. 그 어느 곳에서나 생리학 재선 - 액체 적혈구, 뼈, 근육 퇴색, 눈 변화 모양, 면역 체계가 이상한 얻고, 내부 귀는 아래로 말하는 것을 시도합니다."
+ },
+ {
+  "rel": "science/life-in-space/_intro.json",
+  "at": "paragraphs.1",
+  "en": "This tab walks through the headline effects and what astronauts do to fight them. Microgravity is the big one — every other tab section traces back to it. Radiation is the other one we don't yet know how to defeat for a Mars trip. EVA is its own physiological problem: a hard vacuum on the other side of a thin pressure suit changes everything.",
+  "cur": "이 탭은 헤드 라인 효과와 우주 비행사들은 그들을 싸울 수 있습니다. Microgravity는 큰 것 — 다른 탭 단면도는 그것을 다시 추적합니다. Radiation은 우리가 아직 화성 여행에 대한 패배하는 방법을 알고 있지 않습니다. EVA는 그것의 자신의 생리적인 문제입니다: 얇은 압력 한 벌의 다른 측에 단단한 진공은 모두를 변화합니다."
+ },
+ {
+  "rel": "science/life-in-space/_intro.json",
+  "at": "paragraphs.2",
+  "en": "The countermeasures are real: ARED exercise machines on the ISS, sleep schedules calibrated against orbital sunrise, pre-breathe protocols before every spacewalk. None of them are perfect. The longer-duration we fly, the more we learn about what gives way first.",
+  "cur": "카운터 측정은 실제적입니다. ISS의 ARED 운동 기계, 수면 일정은 궤도 태양계, 모든 우주선 전에 사전 브리아 프로토콜에 대해 측정합니다. 그들 중 아무도 완벽합니다. 더 이상 우리는 비행, 우리가 무엇을 제공하는 방법에 대해 자세히 알아."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "intro_sentence",
+  "en": "Astronauts lose roughly 1–2% of bone mass per month in microgravity — the same rate as elderly osteoporosis, but compressed and reversible-ish.",
+  "cur": "Astronauts는 microgravity에서 달 당 뼈 질량의 대략 1-2%를 잃습니다 — elderly osteoporosis로 동일한 비율, 그러나 압축되고 뒤집을 수 있는 ish."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "body_paragraphs.0",
+  "en": "Bone is a living tissue that constantly remodels itself: osteoblasts lay new bone down, osteoclasts dissolve old bone away, and on Earth the loading from walking, lifting, and just standing keeps the two roughly balanced. Take that loading away in orbit and the balance tips. Resorption keeps going at its normal rate; new-bone deposition slows. The result is a net loss of about 1–2% per month, concentrated in the weight-bearing structures: lumbar spine, pelvis, femoral neck, calcaneus.",
+  "cur": "Bone은 지속적으로 자체를 재개하는 살아있는 조직입니다: osteoblasts는 새로운 뼈를 아래로 놓고, osteoclasts는 오래된 뼈를 멀리 녹고, 지구는 걷는, 드는에서 적재하고, 다만 서 있는 2 대략 균형을 잡습니다. 궤도와 균형 팁에서 멀리로드. 흡수는 그것의 정상적인 비율에 갈 것을 유지합니다; 새로운 뼈 증착은 느립니다. 결과는 달 당 대략 1-2%의 순수한 손실, 무게 방위 구조에서 집중된: lumbar 회전, pelvis, femoral 목, calcaneus."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "body_paragraphs.1",
+  "en": "For comparison, post-menopausal osteoporosis on Earth runs at about 1–2% per **year**. A six-month ISS mission compresses about a decade of age-related loss into half a year. Some of it comes back after flight; some doesn't. Studies of long-duration crew suggest measurable bone-mineral-density deficits persist for years post-flight even after dedicated rehabilitation.",
+  "cur": "비교를 위해, 지구에 포스트 폐경 osteoporosis는 ** 년 당 대략 1-2%에 달합니다 **. 6 개월 ISS 임무는 1 년 반에 수십 년의 나이 관련 손실을 압축합니다. 그 중 일부는 비행 후 돌아 왔습니다. 일부는 그렇지 않습니다. 긴 담원 승무원의 연구는 헌신적인 재활 후도 몇 년 동안 measurable bone-mineral-density deficits persist를 제안합니다."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "body_paragraphs.2",
+  "en": "The countermeasure stack on the ISS is ARED (Advanced Resistive Exercise Device — a vacuum-piston-loaded fake squat rack), the T2 treadmill (run while bungeed down), and the cycle ergometer. Modern protocols hit ~1100 N axial loading on ARED — high enough to be osteogenic. With ARED + bisphosphonate drug regimens, six-month crew now return with bone losses around 0.5%/month rather than the pre-ARED 1.5%/month. Better, not solved.",
+  "cur": "ISS에 대한 대책 스택은 ARED (Advanced Resistive Exercise Device - 진공 피스톤로드 가짜 스쿼트 랙), T2 러닝 밀 (배우는 동안 실행) 및 사이클 ergometer입니다. 현대 의정서는 ARED에 ~1100 N 축 선적을 명중합니다 — 골극성에 충분히 높은. ARED + bisphosphonate 약 식으로, 6 개월 승무원은 이제 사전 ARED 1.5% / 월보다 0.5% / 월 주위에 뼈 손실로 돌아갑니다. 더 나은, 해결하지."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "body_paragraphs.3",
+  "en": "For a Mars-class three-year round trip, even the best current countermeasures imply a fracture-risk landing astronaut. Active research lines include vibration platforms, mechanical loading suits, and exploring whether artificial gravity (a slowly rotating habitat) is the only durable answer.",
+  "cur": "화성-class 3 년 왕복 여행의 경우, 심지어 최고의 전류 대책은 골절-리스크 착륙 astronaut. 활성 연구 라인은 진동 플랫폼, 기계 로딩 한 벌을 포함하고 인공 중력 ( 천천히 회전 서식지)가 유일한 튼튼한 대답인지 탐구합니다."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "diagram_caption",
+  "en": "ARED + treadmill + cycle keep loading on the weight-bearing skeleton; with countermeasures, modern crew lose ~0.5%/month vs the pre-ARED 1.5%/month.",
+  "cur": "ARED + treadmill + 사이클은 무게 베어링 스켈레톤에 적재를 유지; 카운터 측정, 현대 승무원은 ~ 0.5 % / 월 대 사전 ARED 1.5% / 월을 잃습니다."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "title",
+  "en": "Crew dynamics & psychology — Mir crises, ISS protocols, isolation",
+  "cur": "승무원 역학 & 심리학 — Mir 위기, ISS 프로토콜, 격리"
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "intro_sentence",
+  "en": "Most of what we know about humans-in-space psychology was learned on Mir between 1986 and 2001. Fifteen years, 28 expeditions, four near-loss events, and a permanent shift in how every space agency thinks about crew composition.",
+  "cur": "우주에서의 인간 심리학에 대해 우리가 알고 있는 대부분의 것은 1986년부터 2001년 사이 Mir에서 학습되었습니다. 15년, 28차 원정대, 4건의 위기 상황, 그리고 모든 우주 기관의 승무원 구성 방식에 대한 생각의 영구적 변화."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.0",
+  "en": "Salyut 6 (Soviet, 1977-82) was the first station with deliberate long-duration crews, and the first to encounter the psychological problem that every subsequent long-mission station has had: at roughly 4-6 weeks into a mission, even highly-screened crews enter a phase Soviet psychologists called *asthenia* — fatigue, irritability, withdrawal from communication with ground, declining motivation. It was first attributed to physical deconditioning but became clear during Salyut 7 + Mir that it's primarily psychological — the novelty of orbit wears off, the work becomes routine, the crew is acutely aware they can't leave for another 5 months, and the relationship with ground control turns adversarial. Soviet ground controllers used to deliberately schedule unstructured personal time + family video calls + occasional surprise resupply gifts (chocolate, fresh fruit) as countermeasures; the practice is now standard on ISS + Tiangong + every analog station.",
+  "cur": "Salyut 6 (소련, 1977-82)는 의도적으로 장기 승무원을 배치한 첫 우주정거장이었고, 이후 모든 장기 임무 우주정거장이 겪게 될 심리적 문제를 처음 맞닥뜨린 곳이기도 했다. 임무 시작 4-6주 정도 지나면 엄격한 선발 기준을 통과한 승무원들도 소련 심리학자들이 *무력증*이라고 부르는 단계에 진입한다 — 피로, 과민성, 지구와의 통신으로부터의 단절, 동기 저하. 처음에는 신체 약화 탓으로 여겨졌지만 Salyut 7과 Mir 시대에 그것이 주로 심리적 문제임이 분명해졌다 — 궤도 운행의 신기함이 사라지고, 일이 일상화되고, 승무원들은 5개월을 더 떠날 수 없다는 사실을 절실히 깨닫고, 지구 관제소와의 관계가 적대적으로 변한다. 소련 지구 관제사들은 이를 대응하기 위해 의도적으로 구조화되지 않은 개인 시간 + 가족 영상 통화 + 간헐적인 깜짝 보급품(초콜릿, 신선한 과일) 제공을 일정에 넣곤 했다. 이제 이런 관행은 ISS + Tiangong + 모든 아날로그 우주정거장의 표준 관행이 되었다."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.1",
+  "en": "Mir's 1997 was the formative year. In February, a Vika oxygen-generation candle caught fire in the Kvant-1 module — flames that Linenger described as burning for up to ~14 minutes (Russian accounts put the active flame nearer 90 seconds) tore through the corridor connecting Mir's modules to the Soyuz lifeboats, blocking the escape path. The two-cosmonaut + one-NASA-astronaut crew (Tsibliyev, Lazutkin, Linenger) put on respirators and fought the fire with extinguishers in zero-g (which is harder than it sounds; the extinguisher's reaction mass kicks the operator backward). They prevailed but the cabin was full of toxic smoke for days. Four months later (June 1997), a manual remote-controlled Progress docking went wrong — the unmanned cargo ship struck the Spektr module at 1 m/s, puncturing the hull. Tsibliyev and Lazutkin sealed Spektr in 11 minutes (the hatch had to be wired closed because cables ran through the bulkhead), preventing total station loss. After both events the same crew remained on station until the regular crew rotation. Linenger's memoir + the post-mission psychiatric debriefs documented severe cumulative stress, withdrawal, and conflict between the cosmonauts and ground control over operational decisions.",
+  "cur": "Mir의 1997년은 결정적인 해였다. 2월에 Kvant-1 모듈에서 Vika 산소 생성 양초가 불을 낸다 — Linenger는 불이 약 14분간 타올랐다고 묘사했지만(러시아 기록에 따르면 활발한 화염은 90초에 가까웠다) Mir 모듈들을 Soyuz 구명정에 연결하는 복도를 거쳐 탈출 경로를 차단했다. 우주비행사 2명(Tsibliyev, Lazutkin)과 NASA 우주비행사 1명(Linenger)으로 구성된 승무원은 호흡기를 착용하고 무중력에서 소화기로 불을 껐다(생각보다 어렵다. 소화기의 반작용 질량이 사용자를 뒤로 밀어낸다). 그들은 불을 진압했지만 선실은 며칠간 독성 연기로 가득 찼다. 4개월 후(1997년 6월)에는 수동 원격 조종식 Progress 도킹이 잘못되었다 — 무인 화물선이 Spektr 모듈에 초속 1미터의 속도로 충돌하여 선체에 구멍을 뚫었다. Tsibliyev와 Lazutkin이 11분 내에 Spektr를 밀폐했다(해치를 폐쇄하기 위해 전선을 연결해야 했는데, 케이블이 격벽을 관통하고 있었기 때문이다). 이는 우주정거장의 완전한 손실을 막았다. 두 사건 후에도 같은 승무원이 정기 승무원 교대까지 우주정거장에 남아 있었다. Linenger의 회고록과 임무 후 정신과 검진 기록에서 심각한 누적 스트레스, 위축, 우주비행사들과 지상 통제 간의 운영 결정에 대한 갈등을 기록했다."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.2",
+  "en": "ISS Expedition 1 (Shepherd-Krikalev-Gidzenko, 2000-01) was the first true international long-duration crew. The protocol stack — daily ground-uplink schedule, mandatory rest periods, weekly private psychiatric conferences (PPCs) with a flight surgeon, mandatory family video calls — was designed from the Mir lessons. The interpersonal model is closer to a small-team submarine than to a corporate office: clear authority but flat decision-making in non-emergency contexts; structured conflict resolution (a problem is discussed, voted on if disagreement persists, deferred to commander if still disagreement); active management of personality friction by ground (a crew member who's not getting along with another can be paired on tasks with a third). Every multi-national crew since Expedition 1 has had English as the common operational language (NASA-Russian crews use Russian for Russian-segment operations, English for joint operations); Chinese-American direct cooperation remains operationally constrained by the Wolf Amendment, but the ISS-Tiangong operational profile has converged on similar communication protocols anyway.",
+  "cur": "ISS Expedition 1(Shepherd-크리칼료프-기젠코, 2000-01)은 최초의 진정한 국제 장기 승무원이었습니다. 프로토콜 스택 — 매일 지상 상향 스케줄, 필수 휴식 시간, 비행 외과의와의 주간 개인 정신과 상담(PPC), 필수 가족 영상 통화 — 는 Mir 교훈에서 설계되었습니다. 대인관계 모델은 기업 사무실보다는 소규모 잠수함 팀에 더 가깝습니다: 비상 상황이 아닌 맥락에서 명확한 권한이지만 평탄한 의사 결정; 구조화된 갈등 해결(문제를 논의하고, 의견 불일치가 지속되면 투표, 여전히 의견 불일치가 있으면 사령관에게 연기); 지상의 인격 마찰 능동 관리(한 승무원이 다른 승무원과 잘 지내지 못하면 세 번째 승무원과 함께 작업에 배치될 수 있습니다). Expedition 1 이후의 모든 다국적 승무원은 공통 운영 언어로 영어를 사용했습니다(NASA-러시아 승무원은 러시아 구간 운영에 러시아어를, 공동 운영에 영어를 사용합니다); 중국-미국 직접 협력은 Wolf Amendment에 의해 운영상 제약을 받지만, ISS-Tiangong 운영 프로파일은 어쨌든 유사한 통신 프로토콜로 수렴했습니다."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.3",
+  "en": "Tiangong's crew dynamics are constructed differently. Single-agency means all crew are PLA-officer-status with similar military-rank backgrounds; the hierarchy is more vertical than ISS, with the commander having more unilateral authority. Shenzhou 13 (Zhai-Wang-Ye, 2021-22, Tiangong's first 6-month crew) reported in post-mission debriefs that the unified operational language + shared training background + same-agency authority chain reduced the international-translation friction that ISS crews experience but added a different friction (peer-conflict resolution between same-rank colleagues was reportedly harder than peer-conflict resolution between cross-agency colleagues with different bosses). The CMSA-internal psychological screening criteria emphasise collaborative behaviour even more strongly than NASA's, partially because the architecture's vertical authority doesn't have the cross-agency safety-valve that ISS provides.",
+  "cur": "Tiangong의 승무원 역학은 다르게 구성됩니다. 단일 기관이라는 의미는 모든 승무원이 유사한 군사 계급 배경을 가진 PLA 장교 신분이며; 계층 구조는 ISS보다 더 수직적이며, 사령관이 더 일방적인 권한을 갖습니다. Shenzhou 13(Zhai-Wang-Ye, 2021-22, Tiangong의 최초 6개월 승무원)는 임무 후 심층 면담에서 통합된 운영 언어 + 공유 훈련 배경 + 동일 기관 권한 체계가 ISS 승무원들이 경험하는 국제-번역 마찰을 감소시켰지만 다른 마찰을 추가했다고 보고했습니다(동일 계급 동료 간의 동료 갈등 해결은 다른 상사를 가진 교차 기관 동료 간의 동료 갈등 해결보다 더 어려웠다고 보고됨). CMSA 내부 심리학적 선별 기준은 부분적으로 건축학의 수직 권한이 ISS가 제공하는 교차 기관 안전 밸브를 갖지 않기 때문에, NASA의 기준보다 훨씬 더 협력적 행동을 강조합니다."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.4",
+  "en": "Mars-class missions are the open psychological problem. The 26-month minimum-energy mission profile means crews are in confinement for ~33 months including transit + surface + return. The ground-to-vehicle round-trip-light-time grows from <0.1 second (Moon) to 4-24 minutes (Mars); real-time conversation with family + mission control is impossible for most of the journey. The cumulative stress modelling is largely extrapolated from analog campaigns (HI-SEAS Hawaii, Roscosmos SIRIUS in Moscow, MARS-500 in Moscow — the latter was 520 simulated days of crew isolation, with notable interpersonal conflict patterns by day ~200). The conservative architecture assumption is that a Mars crew needs ~7 people (not 6) for redundancy under acute behavioural-health events; the lossy assumption is that AI / autonomous medical support + procedural-skill expansion can compensate for loss of real-time ground psychological support. Neither has been validated. The first crewed Mars mission will be the first long-distance space-isolation experiment ever conducted with stakes high enough that failure is non-recoverable.",
+  "cur": "화성급 미션은 열려 있는 심리학적 문제입니다. 26개월 최소 에너지 미션 프로파일은 승무원들이 수송 + 표면 + 복귀를 포함하여 약 33개월 동안 격리 상태에 있음을 의미합니다. 지상-차량 왕복 빛의 시간은 <0.1초(달)에서 4-24분(화성)으로 증가합니다; 가족 및 미션 통제소와의 실시간 대화는 여행의 대부분 동안 불가능합니다. 누적 스트레스 모델링은 대부분 아날로그 캠페인(하와이 HI-SEAS, 모스크바의 Roscosmos SIRIUS, 모스크바의 MARS-500 — 후자는 520일의 시뮬레이션 승무원 격리였으며, 약 200일째 주목할 만한 대인관계 갈등 패턴이 있었음)에서 추정되었습니다. 보수적인 건축학 가정은 화성 승무원이 급성 행동 건강 이벤트 시 중복성을 위해 ~7명(6명 아님)이 필요하다는 것입니다; 손실적 가정은 AI/자율 의료 지원 + 절차적 기술 확장이 실시간 지상 심리학적 지원의 손실을 보상할 수 있다는 것입니다. 둘 다 검증되지 않았습니다. 최초의 유인 화성 미션은 실패가 회복 불가능할 정도의 높은 가치를 가진 첫 장거리 우주 격리 실험이 될 것입니다."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "diagram_caption",
+  "en": "Mir 1997 (fire + Spektr collision) is the canonical case study; ISS protocols (daily uplink schedule + PPCs + multi-national authority chain) are the operational response; Tiangong (single-agency hierarchy) is the contrast case; Mars (33 months + 4-24 min ground delay + no resupply) is the unsolved next-generation problem.",
+  "cur": "Mir 1997(화재 + Spektr 충돌)은 표준적인 사례 연구입니다; ISS 프로토콜(매일 상향 스케줄 + PPC + 다국적 권한 체계)은 운영 대응입니다; Tiangong(단일 기관 계층 구조)은 대조 사례입니다; 화성(33개월 + 4-24분 지상 지연 + 재보급 불가)은 해결되지 않은 차세대 문제입니다."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "title",
+  "en": "Crew selection — the funnel from applicant to astronaut",
+  "cur": "승무원 선발 — 지원자에서 우주비행사까지의 깔때기"
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "intro_sentence",
+  "en": "Every space agency runs roughly the same selection funnel — physical, cognitive, psychological, operational — narrowing ~10,000 applicants to ~10 selectees. The bottleneck is crew dynamics under stress.",
+  "cur": "모든 우주국은 거의 같은 선발 깔때기를 운영한다 — 신체적, 인지적, 심리적, 운영적 — 약 10,000명의 지원자를 약 10명의 선발자로 좁힌다. 병목 현상은 스트레스 하의 승무원 동역학이다."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.0",
+  "en": "The first generation of selection was driven by hardware constraints. Mercury (NASA, 1959) accepted only military jet test pilots under 5'11\" (180 cm — the Mercury capsule cabin limit), under 40 years old, with engineering degrees, and parachute-jump experience. The Soviet Vostok program (1959-60) accepted only fighter pilots under 5'7\" (170 cm — the Vostok hatch), under 30, under 70 kg. The reasoning was that the vehicle didn't have enough margin to fly someone larger or older, and a test pilot already had the airmanship + stress-tolerance the program needed. Of the original 20-person Soviet cosmonaut group (1960), only 12 ever flew; of the Mercury Seven, all seven flew. Both numbers tell you the selection bar was set very high relative to mission availability.",
+  "cur": "첫 세대의 선발은 하드웨어의 제약이 좌우했다. Mercury(NASA, 1959)는 키 5'11\"(180 cm — Mercury 캡슐 선실의 한계) 미만, 40세 미만, 공학 학위와 낙하산 강하 경험을 갖춘 군 제트기 시험비행 조종사만 받았다. 소련의 Vostok 프로그램(1959-60)은 키 5'7\"(170 cm — Vostok 해치) 미만, 30세 미만, 체중 70 kg 미만의 전투기 조종사만 받았다. 기체에 더 크거나 나이 든 사람을 태울 여유가 없었고, 시험비행 조종사라면 프로그램에 필요한 비행 능력과 스트레스 내성을 이미 갖추고 있다는 논리였다. 1960년 소련 최초의 우주비행사 그룹 20명 중 실제로 비행한 사람은 12명뿐이었고, Mercury Seven은 7명 모두 비행했다. 두 숫자 모두 가능한 임무 수에 비해 선발 기준이 매우 높게 잡혀 있었음을 보여 준다."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.1",
+  "en": "Modern selection looks for different things. NASA's 2017 class accepted 12 from 18,300 applicants (0.07% acceptance — significantly lower than Harvard). Education requirement: STEM master's degree or equivalent operational experience (test pilot, MD, PhD). Height window: 4'9\"–6'4\" (149-193 cm — Crew Dragon and Soyuz both accommodate this range). No vision restriction beyond correctable. No upper age limit. Two years of related professional experience minimum, but actual selectees average 13 years. The fitness bar has shifted from 'jet-pilot G tolerance' to 'will not develop a serious illness on a 6-month ISS expedition' — different problem, different test.",
+  "cur": "현대의 선발은 다른 것을 본다. NASA의 2017년 기수는 지원자 18,300명 중 12명을 뽑았다(합격률 0.07% — Harvard보다 훨씬 낮다). 학력 요건은 STEM 분야 석사 학위 또는 그에 상응하는 실무 경험(시험비행 조종사, 의사, 박사)이다. 키 범위는 4'9\"–6'4\"(149-193 cm — Crew Dragon과 Soyuz 모두 이 범위를 수용한다). 교정 가능하다면 시력 제한은 없다. 나이 상한도 없다. 관련 경력은 최소 2년이지만 실제 선발자의 평균은 13년이다. 신체 기준은 '제트기 조종사 수준의 G 내성'에서 'ISS 6개월 장기 체류 중 중병에 걸리지 않을 것'으로 바뀌었다 — 문제가 다르니 시험도 다르다."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.2",
+  "en": "The medical phase is the single largest filter. Lovelace Clinic (Mercury, 1959) ran ~30 separate tests over a week, including the iconic ice-water-in-the-ear vestibular shock and the 'how long can you sit in a dark sensory-deprivation tank' isolation screen. Modern medicals still run isolation chambers (NASA uses a 12-hour confined-space evaluation; Roscosmos uses a longer 5-day Звезда isolation chamber session) but the medical workup is more sophisticated: comprehensive metabolic profile, full cardiology with stress echo, neurological imaging, dental clearance (a tooth abscess on orbit is a mission-loss event), and a psychiatric screen done by panel interview. Soyuz qualification adds centrifuge tolerance to 8g and 14-day quarantine to confirm the immune profile.",
+  "cur": "의학 검사는 가장 큰 단일 관문이다. Lovelace Clinic(Mercury, 1959)은 일주일 동안 약 30가지 검사를 했는데, 귀에 얼음물을 넣는 유명한 전정 충격 검사와 '어두운 감각 차단 탱크 안에 얼마나 오래 앉아 있을 수 있나'를 보는 격리 검사도 있었다. 현대의 검사도 여전히 격리실을 쓰지만(NASA는 12시간 밀폐 공간 평가, Roscosmos는 격리실 Звезда에서 더 긴 5일간의 세션), 의학적 정밀 검사는 훨씬 정교해졌다. 종합 대사 프로필, 부하 심초음파를 포함한 전체 심장 검사, 신경 영상, 치과 승인(궤도에서의 치아 농양은 임무를 잃게 할 수 있는 사건이다), 그리고 위원회 면접을 통한 정신의학적 선별이다. Soyuz 자격 심사에는 8 g까지의 원심분리기 내성과 면역 상태를 확인하는 14일 격리가 추가된다."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.3",
+  "en": "Psychological screening is the part that's hardest to evaluate but disqualifies the most candidates relative to its visibility. The selection psychologists are looking for what JSC calls 'expedition behaviour' — the ability to work productively in a confined multinational team for 6+ months with no escape. Disqualifiers include rigid thinking, conflict-avoidance, score-keeping, perfectionism (counterintuitively — the trait is associated with crew-friction in long missions), and the specific cluster called 'right-stuff syndrome' that the early astronaut corps prized. The Apollo psychologist Patricia Santy's 1994 book *Choosing the Right Stuff* documents how the personality profile that wins selection in the test-pilot era is partially the profile that fails in long-duration missions; modern selection has shifted toward the temperament profile that succeeds in Antarctic-winter scientific bases and submarine deployments — calmer, more collaborative, less individually-aggressive.",
+  "cur": "심리 선별은 평가하기 가장 어렵지만, 눈에 띄지 않는 것에 비해 가장 많은 후보를 탈락시킨다. 선발 담당 심리학자들은 JSC가 '원정 행동'이라 부르는 것, 즉 탈출구 없는 밀폐 공간에서 다국적 팀과 6개월 이상 생산적으로 일하는 능력을 찾는다. 탈락 요인으로는 경직된 사고, 갈등 회피, 손익을 따지는 태도, 완벽주의(직관과 달리 이 특성은 장기 임무에서 승무원 간 마찰과 연관된다), 그리고 초기 우주비행사단이 높이 샀던 'right stuff 증후군'이라는 특정한 특성 묶음이 있다. Apollo 심리학자 Patricia Santy의 1994년 저서 *Choosing the Right Stuff*는 시험비행 조종사 시대에 선발을 통과하던 성격 유형이 장기 임무에서 실패하는 유형과 일부 겹친다는 점을 기록했다. 현대의 선발은 남극 월동 과학 기지와 잠수함 근무에서 성공하는 기질 — 더 침착하고, 더 협력적이며, 개인적으로 덜 공격적인 기질 — 쪽으로 옮겨 갔다."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.4",
+  "en": "Non-NASA programs follow parallel logic with national variation. Roscosmos cosmonaut selection inherits the Soviet preference for engineering-heavy backgrounds and longer quarantine windows; the typical Soyuz commander has flown two or three previous missions before the assignment. CSA, ESA, and JAXA each select small cohorts (typically 1-2 per generation) through agency-specific medical + psychological standards but increasingly use shared training infrastructure — every modern ISS crew member trains in Houston, Star City, and either Tsukuba or Cologne. China's astronaut selection, run by the China Manned Space Agency (CMSA), took only PLAAF pilots for its first two groups (1998, 2010); the third group, selected in 2020, added flight engineers and payload specialists, mirroring NASA's 1965 expansion beyond test pilots. India's Gaganyaan crew (4 selected, 2022) all came from the IAF test-pilot pool — the program is following Mercury's 1959 playbook because, like Mercury, this is India's first crewed effort.",
+  "cur": "NASA 밖의 프로그램들도 나라별 차이를 두고 같은 논리를 따른다. Roscosmos의 우주비행사 선발은 공학 중심의 경력과 더 긴 격리 기간을 선호하는 소련의 전통을 이어받았고, 전형적인 Soyuz 선장은 임명 전에 이미 두세 번의 임무를 비행했다. CSA, ESA, JAXA는 각자 기관 고유의 의학·심리 기준으로 소수(보통 세대마다 1-2명)를 뽑지만, 훈련 인프라는 점점 더 공유한다 — 현대의 ISS 승무원은 모두 휴스턴, Star City, 그리고 쓰쿠바나 쾰른에서 훈련받는다. 중국 우주비행사 선발은 China Manned Space Agency(CMSA)가 맡고 있는데, 첫 두 기수(1998년, 2010년)는 PLAAF 조종사만 뽑았으나, 2020년에 선발한 3기에서는 비행 엔지니어와 탑재체 전문가까지 넓혔다. 1965년 NASA가 시험비행 조종사 외로 문호를 넓힌 것과 닮았다. 인도의 Gaganyaan 승무원(2022년 4명 선발)은 모두 IAF 시험비행 조종사 출신이다 — 이 프로그램이 Mercury의 1959년 방식을 따르는 것은, Mercury처럼 인도 최초의 유인 도전이기 때문이다."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "diagram_caption",
+  "en": "Selection funnel circa 2024: ~10,000 applicants → medical screen → physical fitness → cognitive testing → psychological screening → centrifuge / isolation → panel interview → ~10 selectees. The 99.9% drop-off is split roughly: 70% on the medical, 15% cognitive, 15% psychological/expedition-behaviour.",
+  "cur": "선발 깔때기 약 2024: ~10,000 지원자 → 의학 → 신체 → 인지 → 심리 → 원심분리기/격리 → 패널 인터뷰 → ~10 선발. 99.9% 탈락: 70% 의학, 15% 인지, 15% 심리."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "title",
+  "en": "Crewed-station design — Salyut to ISS to Tiangong",
+  "cur": "유인 우주정거장 설계 — Salyut에서 ISS, Tiangong까지"
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "intro_sentence",
+  "en": "Six decades of crewed stations, six generations of architecture — the answer to 'how do you keep humans alive in orbit for months' got refined every time the previous answer broke.",
+  "cur": "60년의 유인 정거장, 6세대의 아키텍처 — 「궤도에서 인간을 수개월 살리는 방법」에 대한 답은 이전 답이 깨질 때마다 다듬어졌다."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.0",
+  "en": "A space station is four problems stacked: a pressurised hull strong enough to hold 1 atm against vacuum, a docking system that lets crew + cargo arrive, a life-support stack that recycles air/water/heat, and crew quarters that don't drive the occupants to mutiny. Every station ever flown made a different trade-off on those four. Salyut 1 (Soviet, 1971) was essentially a tin can with a docking port and one airlock; its first long-duration crew (Soyuz 11, 1971) died on the return because the IVA suit problem hadn't been solved yet. Skylab (US, 1973) was a converted Saturn V third stage — enormous interior volume (~360 m³) and one shot at it; the micrometeoroid shield tore off on launch and the first crew had to deploy a parasol from outside to keep the workshop from cooking. Each station's first crew is the one that finds the design flaws.",
+  "cur": "우주정거장은 네 가지 문제를 쌓아 올린 것이다. 진공에 맞서 1기압을 유지할 만큼 튼튼한 여압 선체, 승무원과 화물이 도착할 수 있게 하는 도킹 시스템, 공기·물·열을 재활용하는 생명 유지 시스템, 그리고 거주자를 반란으로 몰아넣지 않는 거주 공간이다. 지금까지 비행한 모든 정거장은 이 네 가지 사이에서 서로 다른 절충을 택했다. Salyut 1(소련, 1971)은 사실상 도킹 포트 하나와 에어록 하나가 달린 깡통이었다. 첫 장기 체류 승무원(Soyuz 11, 1971)은 IVA 우주복 문제가 아직 해결되지 않아 귀환 중에 사망했다. Skylab(미국, 1973)은 Saturn V의 3단을 개조한 것으로, 내부 부피는 거대했지만(약 360 m³) 기회는 단 한 번이었다. 발사 중 미소 운석 차폐막이 뜯겨 나갔고, 첫 승무원은 작업장이 과열되지 않도록 바깥에서 파라솔을 펼쳐야 했다. 모든 정거장에서 설계 결함을 찾아내는 것은 첫 승무원이다."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.1",
+  "en": "Modular construction was the breakthrough that made permanent crewing possible. Mir (Soviet→Russian, 1986–2001) was the first multi-module station: a Salyut-derived core plus six attached modules added over a decade. The architecture proved you could keep humans aboard *continuously*, swap crews, and grow the station while it was occupied. Mir also taught everyone what happens when the docking architecture breaks: the 1997 Progress collision punctured Spektr, and the crew sealed it off rather than abandon ship. That lesson — every module has to be isolatable — is wired into every station since.",
+  "cur": "모듈식 건설은 상시 체류를 가능하게 한 돌파구였다. Mir(소련→러시아, 1986–2001)는 최초의 다중 모듈 정거장으로, Salyut에서 파생된 코어에 10년에 걸쳐 모듈 6개를 붙였다. 이 구조는 사람을 *끊김 없이* 머물게 하고, 승무원을 교대하고, 사람이 사는 동안 정거장을 키울 수 있음을 증명했다. Mir는 도킹 구조가 무너지면 무슨 일이 벌어지는지도 모두에게 가르쳤다. 1997년 Progress 충돌로 Spektr에 구멍이 났고, 승무원은 정거장을 버리는 대신 그 모듈을 봉쇄했다. 그 교훈 — 모든 모듈은 격리될 수 있어야 한다 — 은 이후 모든 정거장에 반영되어 있다."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.2",
+  "en": "The ISS (1998–) inherited Mir's modular logic and scaled it: 16 pressurised elements built by NASA, Roscosmos, ESA, JAXA, and CSA, joined through a small number of standardised docking ports (CBM for berthing, IDSS for autonomous dock). The American segment (Unity, Destiny, Tranquility, Harmony, Columbus, Kibo, etc.) is hung off the truss with utilities running through Harmony; the Russian segment (Zarya, Zvezda, Nauka, Poisk, Rassvet, Prichal) operates on its own ECLSS and power loop and can theoretically survive segment isolation. The redundancy is doubled because the two halves were never quite trusted to fail together. The cost was complexity — ISS assembly took 13 years, 30+ assembly flights, and over 160 spacewalks.",
+  "cur": "ISS(1998–)는 Mir의 모듈 방식을 이어받아 규모를 키웠다. NASA, Roscosmos, ESA, JAXA, CSA가 만든 16개의 여압 요소를 소수의 표준화된 도킹 포트(결합용 CBM, 자율 도킹용 IDSS)로 연결한다. 미국 구역(Unity, Destiny, Tranquility, Harmony, Columbus, Kibo 등)은 트러스에 매달려 있고 각종 유틸리티는 Harmony를 지난다. 러시아 구역(Zarya, Zvezda, Nauka, Poisk, Rassvet, Prichal)은 자체 ECLSS와 전력 계통으로 돌아가며, 이론상 구역이 분리되어도 살아남을 수 있다. 두 절반이 함께 고장 날 것이라고 완전히 믿은 적이 없기에 이중화도 두 배다. 그 대가는 복잡성이었다 — ISS 조립에는 13년, 30회 이상의 조립 비행, 160회가 넘는 우주유영이 들었다."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.3",
+  "en": "Tiangong (CMSA, 2021–) is the deliberate counter-design: smaller (3 modules vs ISS's 16), tighter (single-agency, single supplier, single docking standard), and faster to build (core + two labs in under 24 months). The architecture borrows Salyut/Mir's core+module idea but lands closer to Skylab in scope — large interior volumes, fewer joints, less assembly EVA. The trade-off is no international redundancy: a problem in Tianhe's ECLSS isn't backed by a separate segment, and Wentian's airlock is the only EVA path. Tiangong's lessons will inform whoever builds the next station, which is now plausibly Axiom Station (commercial, attaches to ISS first then detaches) or a Chinese Mars-bound design — both are pencilled in for the 2030s.",
+  "cur": "Tiangong(CMSA, 2021–)은 의도적인 반대 설계다. 더 작고(ISS의 16개 대비 3개 모듈), 더 간결하며(기관 하나, 공급자 하나, 도킹 표준 하나), 더 빨리 지었다(코어와 실험 모듈 두 개를 24개월 안에). 구조는 Salyut/Mir의 코어+모듈 개념을 빌렸지만 규모는 Skylab에 더 가깝다 — 큰 내부 부피, 적은 접합부, 적은 조립 우주유영. 대신 국제적 이중화가 없다. Tianhe의 ECLSS에 문제가 생겨도 별도의 구역이 뒷받침해 주지 않으며, Wentian의 에어록이 밖으로 나가는 유일한 길이다. Tiangong의 교훈은 다음 정거장을 짓는 이들에게 이어질 것이다. 현재 유력한 후보는 Axiom Station(상업용으로, 먼저 ISS에 결합했다가 나중에 분리)이나 화성을 지향하는 중국의 설계이며, 둘 다 2030년대로 잡혀 있다."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.4",
+  "en": "What's invariant across all of them: every crewed station ever flown has had bigger problems with water, fire, and crew dynamics than with vacuum or radiation. Salyut 7 (1985) was almost lost when its onboard systems failed and Leonov + Savinykh had to dock manually with a dead station and reboot it in the cold. Mir had a fire (1997) bad enough that the crew put on respirators. ISS Expedition 1 had its toilet break in week one. The hull engineering is the part that's been solved since Salyut; the human-system engineering keeps revealing new ways to go wrong, which is what makes the encyclopedia's Life-in-Space section a moving target.",
+  "cur": "모든 정거장에 변하지 않는 것이 있다. 지금까지 비행한 모든 유인 정거장은 진공이나 방사선보다 물, 화재, 승무원 간 관계에서 더 큰 문제를 겪었다. Salyut 7(1985)은 탑재 시스템이 고장 나 거의 잃을 뻔했고, 레오노프 + 사비니흐는 죽은 정거장에 수동으로 도킹해 추위 속에서 다시 살려 내야 했다. Mir에서는 승무원이 호흡기를 쓸 만큼 심각한 화재(1997)가 났다. ISS Expedition 1은 첫 주에 화장실이 고장 났다. 선체 공학은 Salyut 이후로 해결된 부분이다. 인간이라는 시스템의 공학은 계속해서 새로운 실패 방식을 드러내며, 바로 그 점이 이 백과사전의 우주에서의 삶 섹션을 움직이는 표적으로 만든다."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "diagram_caption",
+  "en": "Six decades, six architectures: Salyut 1 (single can) → Skylab (single big can) → Mir (core + attached modules) → ISS (US + Russian segments + international truss) → Tiangong (compact tri-module) → next generation (commercial / Mars-precursor).",
+  "cur": "육십 년, 여섯 가지 구조: Salyut 1(단일 캔) → Skylab(단일 대형 캔) → Mir(핵심 모듈 + 부착 모듈) → ISS(미국 분절 + 러시아 분절 + 국제 트러스) → Tiangong(소형 삼중 모듈) → 차세대(상용 / 화성 선행 조사용)."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "title",
+  "en": "Life support — ECLSS, the air and water loop",
+  "cur": "생명 유지 — ECLSS, 공기 및 물 루프"
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "intro_sentence",
+  "en": "Six people breathe 6 kg of oxygen a day, drink 18 L of water, and exhale 7 kg of CO₂. None of it is launched from Earth if the station can help it — every gram has to be recovered.",
+  "cur": "6명이 하루에 산소 6 kg을 마시고, 물 18 L을 마시고, CO₂ 7 kg을 배출합니다. 역이 도움을 줄 수 있다면 지구에서 발사된 것은 없습니다. 모든 그램을 회수해야 합니다."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.0",
+  "en": "Environmental Control and Life Support System — ECLSS — is the part of a station that nobody sees and everybody depends on. Its job is to keep four numbers inside the green band: oxygen partial pressure (~21 kPa, like sea level), carbon dioxide partial pressure (<0.7 kPa nominal; humans get headaches above 1 kPa), cabin temperature (~22 °C), and relative humidity (40-60%). Get any of those wrong and the crew gets sick within hours. Get oxygen or CO₂ wrong badly enough and the crew dies. The system is engineered with at least one redundant subsystem for every function, and the US segment + Russian segment of ISS each run their own complete ECLSS so a fault on one side doesn't take both.",
+  "cur": "환경 제어 및 생명 유지 시스템(ECLSS)은 아무도 보지 못하지만 모든 사람이 의존하는 역의 부분입니다. 역할은 4개의 수치를 녹색 범위 내에 유지하는 것입니다: 산소 분압(~21 kPa, 해수면과 같음), 이산화탄소 분압(<0.7 kPa 표준; 1 kPa 이상이면 인간의 두통 유발), 실내 온도(~22 °C), 상대 습도(40-60%). 이 중 하나라도 잘못되면 승무원은 몇 시간 내에 병에 걸립니다. 산소 또는 CO₂가 심각하게 잘못되면 승무원이 사망합니다. 시스템은 모든 기능에 대해 최소 1개의 중복 서브시스템으로 설계되었으며, ISS의 미국 부분 + 러시아 부분은 각각 완전한 ECLSS를 운영하므로 한쪽의 결함이 양쪽을 모두 손상시키지 않습니다."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.1",
+  "en": "Oxygen comes from electrolysis. The ISS Oxygen Generation System (OGS, in the Tranquility node) electrolyses water — pumped from the Water Recovery System — into O₂ (vented into the cabin) and H₂ (vented to space until 2010, then routed to the Sabatier reactor; see below). At nominal load OGS produces about 9 kg of O₂ per day, which covers 6 crew at 1.5 kg each plus losses. Russian Elektron-VM does the same thing on the other side, plus solid-fuel oxygen candles as a backup (essentially smoke grenades that release O₂ when ignited — used during Mir's 1997 fire-stricken weeks, where they were also the cause of the fire). Tiangong's Tianhe module runs a similar electrolyser; the Chinese architecture explicitly mirrors the ISS Sabatier-electrolysis closed loop.",
+  "cur": "산소는 전기분해에서 나옵니다. ISS 산소 생성 시스템(OGS, Tranquility 노드에 위치)은 물을 전기분해합니다 — 물 회수 시스템에서 펌핑됩니다 — O₂(실내로 배출됨)와 H₂(2010년까지 우주로 배출, 그 후 Sabatier 반응기로 전달됨; 아래 참조)로 분해됩니다. 정상 부하에서 OGS는 하루에 약 9 kg의 O₂를 생성하며, 이는 1인당 1.5 kg의 6명 승무원과 손실을 충당합니다. 러시아 Elektron-VM은 다른 쪽에서 같은 일을 하며, 고체 연료 산소 양초가 백업입니다(본질적으로 점화되었을 때 O₂를 방출하는 연기 수류탄 — Mir의 1997년 화재 사건 중 사용됨, 화재의 원인이기도 함). Tiangong의 Tianhe 모듈은 유사한 전기분해기를 운영합니다. 중국 아키텍처는 명시적으로 ISS Sabatier-전기분해 폐쇄 루프를 미러링합니다."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.2",
+  "en": "CO₂ removal evolved more than any other ECLSS function. Apollo and early Shuttle used lithium-hydroxide canisters (LiOH absorbs CO₂ irreversibly; the Apollo 13 'square peg in a round hole' improvisation was a LiOH canister adapter). Modern ISS uses two regenerable systems: the US-side CDRA (Carbon Dioxide Removal Assembly), which uses zeolite molecular sieves that adsorb CO₂ then thermally desorb it for venting, and the Russian Vozdukh, which uses amine swing beds. The Sabatier reactor (Hamilton Sundstrand, installed on ISS in 2010) takes that vented CO₂ and combines it with the electrolysis-generated H₂ to make methane and water — closing the loop. The methane is currently vented; future Mars-bound architectures (Moxie on Perseverance is a related demo) intend to use it as propellant.",
+  "cur": "CO₂ 제거는 다른 모든 ECLSS 기능보다 진화했습니다. Apollo와 초기 Shuttle은 수산화리튬 캐니스터(LiOH는 CO₂를 돌이킬 수 없게 흡수함; Apollo 13의 '둥근 구멍에 정사각형 못' 즉흥 개선는 LiOH 캐니스터 어댑터였음)를 사용했습니다. 현대 ISS는 두 가지 재생 가능한 시스템을 사용합니다: 미국 측 CDRA(Carbon Dioxide Removal Assembly), 제올라이트 분자 체를 사용하여 CO₂를 흡착한 후 열적으로 탈착하여 배출하고, 러시아 Vozdukh, 아민 스윙 베드를 사용합니다. Sabatier 반응기(Hamilton Sundstrand, 2010년 ISS에 설치)는 배출된 CO₂를 가져와 전기분해로 생성된 H₂와 결합하여 메탄과 물을 만듭니다 — 루프를 닫습니다. 메탄은 현재 배출됩니다. 향후 화성 행 아키텍처(Perseverance의 Moxie는 관련 데모)는 이를 추진제로 사용할 계획입니다."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.3",
+  "en": "Water recovery is the most engineered subsystem. The ISS Water Recovery System (WRS, also in Tranquility) takes urine, humidity condensate from the air conditioning, EVA suit water (which is small), and waste from hygiene, and runs them through a urine processor (vacuum distillation to remove water from brine) and a water processor (multi-filtration, catalytic oxidation, ion exchange). The output is potable water cleaner than most municipal supplies. US-segment recovery was ~93–94% before the Brine Processor Assembly (added 2021); with the BPA, NASA demonstrated ~98% in 2023. The remaining losses are launched up from Earth as resupply water in disposable bags, mostly because the brine that comes out of urine processing still contains 15–20% water that can't be economically recovered — the BPA closes most but not all of that gap. The target for Mars-class missions is >98% continuously.",
+  "cur": "물 회수는 가장 공학적인 서브시스템입니다. ISS 물 회수 시스템(WRS, Tranquility에도 위치)은 소변, 에어컨 습도 응축수, EVA 정장 물(양은 적음), 위생 폐기물을 가져와 소변 처리기(염수에서 물을 제거하기 위한 진공 증류)와 물 처리기(다중 여과, 촉매 산화, 이온 교환)를 통해 실행합니다. 출력은 대부분의 지방 자치 통수보다 깨끗한 음료수입니다. 미국 부분 회수는 Brine Processor Assembly(2021년 추가) 이전에는 ~93-94%였습니다. BPA를 사용하면 NASA는 2023년에 ~98%를 입증했습니다. 나머지 손실은 지구에서 일회용 봉지의 재공급 물로 발사됩니다. 주로 소변 처리에서 나오는 염수가 여전히 경제적으로 회수할 수 없는 15-20% 물을 포함하기 때문입니다 — BPA는 대부분의 격차를 해결하지만 모든 격차를 해결하지는 않습니다. 화성급 임무의 목표는 지속적으로 >98%입니다."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.4",
+  "en": "Thermal control is the last and largest subsystem — the ISS dumps about 75 kW of waste heat through external ammonia loops feeding 14 deployable radiators. The internal heat-transport loop uses water (non-toxic); the external loop uses ammonia (excellent thermal properties, but a leak inside the station would kill the crew, hence the two-loop design with heat exchangers at the segment boundary). The Russian segment uses an ethylene-glycol-based internal loop and a different external arrangement. Every ammonia leak on ISS (there have been several over 25 years) becomes a major operational event because of the cross-contamination risk; the suit-side EVA procedure for handling an ammonia leak is one of the longer training units in the astronaut curriculum.",
+  "cur": "열 제어는 마지막이자 가장 큰 서브시스템입니다 — ISS는 14개의 전개 가능한 라디에이터를 공급하는 외부 암모니아 루프를 통해 약 75 kW의 폐열을 배출합니다. 내부 열 수송 루프는 물을 사용합니다(무독성); 외부 루프는 암모니아를 사용합니다(우수한 열 특성, 하지만 역 내부의 누출은 승무원을 죽일 것입니다. 따라서 세그먼트 경계에서 열 교환기를 포함한 2-루프 설계). 러시아 부분은 에틸렌 글리콜 기반 내부 루프와 다른 외부 배열을 사용합니다. ISS의 모든 암모니아 누출(25년 동안 여러 건 있었음)은 교차 오염 위험 때문에 주요 운영 이벤트가 됩니다. 암모니아 누출 처리를 위한 정장 측 EVA 절차는 우주비행사 커리큘럼에서 더 긴 교육 단위 중 하나입니다."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "diagram_caption",
+  "en": "Air: O₂ from electrolysis of recycled water → cabin → CO₂ scrubbed by zeolite (US) / amine (Russia) → Sabatier converts CO₂ + H₂ to methane + water → back into the water loop. Water: urine + condensate → distillation + multi-filtration → potable water → drink + electrolyse. Heat: internal water loop → ammonia external loop → 14 radiators.",
+  "cur": "공기: 재활용 물의 전기분해에서 O₂ → 실내 → 제올라이트(미국) / 아민(러시아)으로 스크럽된 CO₂ → Sabatier는 CO₂ + H₂를 메탄 + 물로 변환 → 물 루프로 다시 들어갑니다. 물: 소변 + 응축수 → 증류 + 다중 여과 → 음료수 → 음료 + 전기분해. 열: 내부 물 루프 → 암모니아 외부 루프 → 14개의 라디에이터."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "title",
+  "en": "EVA operations — the spacewalk procedure end to end",
+  "cur": "EVA 작전 — 우주 유영의 처음부터 끝까지"
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "intro_sentence",
+  "en": "Crack the airlock and 6–8 hours later you've put a payload on the truss. In between is the most procedural activity in spaceflight — 50+ choreographed steps, every one a chance to fail safely.",
+  "cur": "에어록을 열고 6–8시간 후에 페이로드가 트러스에 설치된다. 그 사이에는 우주 비행에서 가장 절차적인 활동 — 50개 이상의 안무화된 단계, 각각이 안전하게 실패할 기회이다."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.0",
+  "en": "A modern EVA starts about 24 hours before egress. The crew reviews the procedure binder (now a tablet) — every tether transfer, every bolt torque, every contingency. Tools are pre-staged on the airlock wall in the order they'll be needed. The night before, the crew sleeps at reduced cabin pressure (10.2 psi on the US side; the Russian Orlan side skips this step because of suit-pressure differences — see the `eva-physiology` article). At T-minus 4 hours the crew is in-suit, mask-breathing pure oxygen to wash nitrogen out of body tissues — the prebreathe protocol. Pre-breathe is non-negotiable; skipping it causes decompression sickness ('the bends') from N₂ bubbling out as the suit depressurises.",
+  "cur": "현대의 우주유영은 밖으로 나가기 약 24시간 전에 시작된다. 승무원은 절차서(지금은 태블릿)를 검토한다 — 테더를 옮겨 거는 순서 하나하나, 볼트 체결 토크 하나하나, 비상 상황 하나하나. 공구는 필요한 순서대로 에어록 벽에 미리 배치해 둔다. 전날 밤 승무원은 낮춘 선실 압력에서 잔다(미국 쪽은 10.2 psi. 러시아의 Orlan 쪽은 우주복 압력 차이 때문에 이 단계를 건너뛴다 — `eva-physiology` 문서 참고). T-마이너스 4시간에 승무원은 우주복을 입고 마스크로 순수 산소를 호흡해 체내 조직에서 질소를 씻어 낸다 — 이것이 사전 호흡 절차다. 이는 협상할 수 없다. 건너뛰면 우주복이 감압될 때 N₂가 기포로 빠져나오며 감압병('the bends')이 생긴다."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.1",
+  "en": "Egress is the riskiest 15 minutes. The airlock depressurises to 5.0 psi for a leak check (no audible whoosh = no suit puncture), then to vacuum. The crew member opens the outer hatch, attaches a primary safety tether to a station handrail, attaches a secondary local tether, and steps out. Every modern EVA uses two-tether discipline by default: the body tether to the station, and a local fixed-point tether at the worksite. The third backup is SAFER — a small jet-pack worn over the suit. SAFER's only job is to fly an untethered astronaut back to the structure if both primary tethers fail. It's been carried on every US EVA since 1994 and used in anger zero times.",
+  "cur": "밖으로 나가는 순간이 가장 위험한 15분이다. 에어록을 5.0 psi까지 감압해 누설 점검을 하고(쉭 하는 소리가 들리지 않음 = 우주복에 구멍 없음), 이어서 진공까지 낮춘다. 승무원은 바깥 해치를 열고, 주 안전 테더를 정거장 손잡이에 걸고, 두 번째 로컬 테더를 건 뒤 밖으로 나간다. 모든 현대 우주유영은 기본적으로 두 테더 원칙을 따른다. 몸에서 정거장으로 이어지는 테더, 그리고 작업 지점의 고정점에 거는 로컬 테더다. 세 번째 예비 수단은 SAFER — 우주복 위에 메는 작은 제트팩이다. 그 유일한 임무는 주 테더 두 개가 모두 실패했을 때 떨어져 나간 우주비행사를 구조물까지 다시 비행해 데려오는 것이다. 1994년 이후 모든 미국 우주유영에 휴대되었지만 실제로 쓰인 적은 한 번도 없다."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.2",
+  "en": "Most of the actual work happens at a foot restraint, called an APFR (Articulating Portable Foot Restraint). The crew clips their feet in, leaving both hands free; without it, every motion requires expending grip strength to counter Newton's third law. EVA tasks are arm-fatigue-limited long before they're metabolic-limited. The EMU glove (the US suit's pressure glove) is the single most physiologically demanding piece of equipment ever flown — fingernail damage is so common NASA tracks it as a known injury, and crews routinely tape their fingertips before egress. The Russian Orlan glove is slightly less rigid (lower suit pressure trade-off) and the Chinese Feitian glove is a re-engineering of Orlan's design.",
+  "cur": "실제 작업의 대부분은 APFR(Articulating Portable Foot Restraint)이라는 발 고정 장치 위에서 이뤄진다. 승무원은 발을 고정하고 두 손을 자유롭게 둔다. 이것이 없으면 모든 동작마다 Newton의 제3법칙을 거스르기 위해 악력을 써야 한다. 우주유영 작업은 대사 한계보다 훨씬 먼저 팔의 피로로 한계에 이른다. EMU 장갑(미국 우주복의 여압 장갑)은 지금까지 비행한 장비 가운데 생리적으로 가장 혹독하다 — 손톱 손상이 워낙 흔해서 NASA는 이를 알려진 부상으로 기록하며, 승무원은 나가기 전에 손가락 끝을 테이프로 감싸는 것이 보통이다. 러시아 Orlan의 장갑은 약간 덜 뻣뻣하고(낮은 우주복 압력의 대가), 중국 Feitian의 장갑은 Orlan의 설계를 다시 설계한 것이다."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.3",
+  "en": "While the crew works, ground controllers track three numbers in real-time: suit metabolic rate (heat the suit's sublimator is dumping), CO₂ in the suit (LiOH canister saturation), and suit consumables remaining (battery, water for cooling, oxygen). A typical 6-hour EVA budget is ~5 kg of water for cooling and ~1 kg of oxygen for breathing + leak make-up. If any of those track high, the EVA gets shortened. The longest EVA in history is STS-49's 8h 29min (1992); the typical ISS construction EVA was 6h 30min ± 30min.",
+  "cur": "승무원이 작업하는 동안 지상 관제사는 세 가지 수치를 실시간으로 추적한다. 우주복 내 대사율(우주복의 승화기가 내보내는 열), 우주복 내 CO₂(LiOH 캐니스터의 포화도), 그리고 남은 소모품(배터리, 냉각수, 산소)이다. 전형적인 6시간 우주유영은 냉각용 물 약 5 kg과 호흡 및 누설 보충용 산소 약 1 kg을 예산으로 잡는다. 이 중 하나라도 높게 나오면 우주유영은 단축된다. 역사상 가장 긴 우주유영은 STS-49의 8시간 29분(1992)이며, 전형적인 ISS 조립 우주유영은 6시간 30분 ± 30분이었다."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.4",
+  "en": "Ingress is the reverse of egress: untether (last tether comes off last), repressurise the airlock to station pressure, doff suit, drink lots of water, sleep. The day after an EVA the crew is in negative water balance, has lost 2-3 kg of mass (mostly sweat), and has muscle soreness comparable to a marathon. Apollo lunar EVAs added a separate consideration: lunar dust. The Apollo suit gaskets clogged with lunar regolith, the suits couldn't be re-used after 2-3 EVAs, and crew members reported a sharp burnt-gunpowder smell after every ingress. The Artemis-program AxEMU suit attempts to engineer this problem out with redesigned gaskets + a dust-tolerant rear-entry hatch — borrowed from the Russian Orlan family, which never went to the Moon but did spend decades dealing with similar gasket-life issues.",
+  "cur": "안으로 들어오는 것은 나가는 과정의 역순이다. 테더를 풀고(마지막 테더는 마지막에 푼다), 에어록을 정거장 압력까지 재가압하고, 우주복을 벗고, 물을 많이 마시고, 잔다. 우주유영 다음 날 승무원은 수분 수지가 마이너스이고, 체중이 2-3 kg(대부분 땀) 줄었으며, 마라톤에 버금가는 근육통을 겪는다. Apollo의 월면 우주유영에는 또 다른 문제가 더해졌다. 바로 달 먼지다. Apollo 우주복의 개스킷은 달 레골리스로 막혔고, 우주복은 2-3회 우주유영 후에는 재사용할 수 없었으며, 승무원들은 안으로 들어올 때마다 탄 화약 같은 날카로운 냄새를 보고했다. Artemis 프로그램의 AxEMU 우주복은 다시 설계한 개스킷과 먼지에 강한 후면 출입 해치로 이 문제를 설계 단계에서 없애려 한다 — 이는 러시아 Orlan 계열에서 빌려 온 것으로, Orlan은 달에 간 적은 없지만 수십 년 동안 비슷한 개스킷 수명 문제와 씨름해 왔다."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "diagram_caption",
+  "en": "T-24h: review procedure → T-12h: stage tools → T-4h: prebreathe + suit-up → T-0: depress to vacuum, two-tether egress → 6-8h work at foot restraint, SAFER as last backup → ingress, repress, doff. 50+ procedural steps, every one a chance to fail safely.",
+  "cur": "T-24h: 절차 검토 → T-12h: 도구 배치 → T-4h: 산소 호흡 + 우주복 착용 → T-0: 진공 감압, 투-테더 복부 출입 → 6-8시간 발 지지대에서 작업, SAFER를 최후의 백업으로 → 귀환, 재가압, 우주복 벗기. 50개 이상의 절차 단계, 각 단계마다 안전하게 실패할 기회."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "intro_sentence",
+  "en": "A spacewalk is a 6–8 hour endurance event in a 1/3-atmosphere oxygen-pressurised suit — preceded by hours of pre-breathe to keep the bends at bay.",
+  "cur": "우주유영은 1/3기압 산소가압복에서의 6~8시간 지구력 시험으로, 기포증(감압병)을 방지하기 위한 수시간의 사전호흡이 선행된다."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "body_paragraphs.0",
+  "en": "The fundamental EVA problem is that the human body wants Earth-sealevel atmosphere — 1 atm of mixed N₂/O₂ — and the spacesuit can't deliver it without becoming so rigid the astronaut can't move. So the suit runs at about 4.3 psi (0.29 atm) of pure oxygen. That's enough partial pressure of O₂ to breathe comfortably, but the abrupt drop from station pressure (14.7 psi, ~80% N₂) to suit pressure (4.3 psi, 100% O₂) would cause decompression sickness — the bends — exactly the way scuba divers get them on a fast ascent.",
+  "cur": "EVA의 근본적인 문제는 인체가 지구 해수면 기압인 1 atm의 혼합 N₂/O₂를 원하지만, 우주복이 이를 공급하면 우주인이 움직일 수 없을 정도로 경직된다는 점이다. 따라서 우주복은 약 4.3 psi(0.29 atm)의 순산소로 작동한다. 이 정도의 O₂ 분압이면 편안하게 호흡할 수 있지만, 스테이션 기압(14.7 psi, ~80% N₂)에서 우주복 기압(4.3 psi, 100% O₂)으로의 급격한 저하는 감압 질환 즉 기포증을 유발한다 — 스쿠버 다이버가 급속 상승할 때 걸리는 것과 정확히 같은 방식이다."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "body_paragraphs.1",
+  "en": "The countermeasure is pre-breathe: hours of breathing pure oxygen at gradually lower pressures before egress, washing nitrogen out of body tissues. The current US-side ISS protocol uses an in-suit pre-breathe + the Campout protocol (overnight at 10.2 psi) totalling about 4 hours before the airlock depressurises. Russian Orlan suits run at 5.7 psi, which shortens pre-breathe substantially — different trade-off.",
+  "cur": "대응책은 사전 호흡이다: 선외 활동에 나서기 전, 점차 낮은 기압에서 몇 시간 동안 순수 산소를 호흡해 체내 조직의 질소를 씻어 낸다. 현재 미국 측 ISS 절차는 우주복 안에서의 사전 호흡과 Campout 절차(10.2 psi에서 하룻밤)를 합쳐, 에어록 감압 전까지 약 4시간이 걸린다. 러시아의 Orlan 우주복은 5.7 psi로 운용되어 사전 호흡이 크게 짧아진다 — 서로 다른 절충이다."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "body_paragraphs.2",
+  "en": "Once outside, the work is physically harder than it looks. Even small motions require constant arm and grip strength against suit rigidity; experienced spacewalkers describe the EMU gloves as the single most fatiguing piece of equipment ever flown. Fingernail damage is common. Hand cramps and shoulder strain limit EVA duration before metabolic budget does. Modern EVAs cap around 7 hours nominal, 8.5 hours with extension; longer than that and crew error rates rise sharply.",
+  "cur": "실외 작업은 보기보다 신체적으로 어렵다. 아주 작은 동작도 우주복의 경직에 맞서 팔과 악력을 지속적으로 사용해야 한다. 경험이 많은 우주유영사들은 EMU 장갑을 비행한 장비 중 가장 피로하게 만드는 단일 부품이라고 묘사한다. 손톱 손상은 흔하다. 손의 경련과 어깨 피로가 대사 예산이 소진되기 전에 EVA 지속 시간을 제한한다. 현대의 EVA는 명목상 약 7시간, 연장할 경우 8.5시간으로 제한된다. 그보다 더 길면 승무원 오류율이 급격히 상승한다."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "body_paragraphs.3",
+  "en": "Suit risks also include thermal management (the suit dumps about 250 W of metabolic heat into a sublimator that vents water vapour to space), CO₂ scrubbing (lithium-hydroxide canister or amine swing bed), and the constant risk of a glove or visor puncture. Astronauts train the same EVA in the Neutral Buoyancy Laboratory pool roughly 7–10 hours of training per 1 hour of flight EVA — the cost-per-hour of spacewalking is the highest of any astronaut activity.",
+  "cur": "우주복 위험 요소는 또한 열 관리(우주복은 약 250 W의 대사열을 우주로 수증기를 배출하는 승화기로 배출), CO₂ 제거(수산화리튬 캐니스터 또는 아민 스윙 베드), 그리고 장갑이나 바이저 천공의 상시적 위험을 포함한다. 우주인들은 Neutral Buoyancy Laboratory 수중 풀에서 비행 EVA 1시간당 대략 7~10시간의 훈련을 통해 동일한 EVA를 훈련한다 — 우주유영의 시간당 비용은 우주인의 모든 활동 중 가장 높다."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "diagram_caption",
+  "en": "Pre-breathe O₂ to wash out nitrogen → step into 4.3 psi pure-O₂ suit → 6–8 hour metabolic-budgeted walk → fingernail damage and shoulder fatigue. Russian Orlan at 5.7 psi shortens pre-breathe.",
+  "cur": "사전호흡 O₂로 질소 배출 → 4.3 psi 순산소 우주복 착용 → 6~8시간 대사 예산 제한 유영 → 손톱 손상 및 어깨 피로. 러시아의 Orlan 5.7 psi는 사전호흡을 단축한다."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "intro_sentence",
+  "en": "An EVA suit is a one-person spacecraft — pressure shell, closed-loop life support, thermal control, sun visor, and a thruster pack — built so a human can spend 6–8 hours outside in vacuum.",
+  "cur": "EVA 우주복은 일인용 우주선이다 — 기압 외벽, 폐쇄형 생명 유지 시스템, 열 제어, 금색 바이저, 추진기 팩 — 인간이 진공의 우주에서 6~8시간을 머물 수 있도록 설계됨."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "body_paragraphs.0",
+  "en": "The EVA suit's central problem is **closed-loop rebreathing**. Outside the airlock there is no atmosphere to vent CO₂ into, so the suit must scrub it from the astronaut's exhalation and recycle the remaining oxygen. The current US EMU runs a **lithium hydroxide (LiOH) canister** in the backpack that absorbs CO₂ irreversibly — replaced ground-side after every EVA. The Russian Orlan and the latest US METOX canister use a **regenerable amine swing-bed**: it adsorbs CO₂ during the EVA, then is baked out in the airlock between walks and reused. The station-side equivalent inside the ISS (the CDRA, Carbon Dioxide Removal Assembly) does the same thing on a regenerative cycle, while the OGS (Oxygen Generation System) electrolyses water to replenish O₂. The suit is a miniature, hand-portable version of station ECLSS, running for 8 hours on its own power and supplies.",
+  "cur": "EVA 우주복의 핵심 문제는 **폐쇄형 재호흡**이다. 에어락 밖에는 CO₂를 배출할 대기가 없으므로, 우주복은 우주인의 호기에서 CO₂를 제거하고 남은 산소를 재활용해야 한다. 현재 미국의 EMU는 배낭에 **수산화리튬(LiOH) 캐니스터**를 설치하여 CO₂를 비가역적으로 흡수하며 — 매 EVA 후 지상에서 교체된다. 러시아의 Orlan과 최신 미국 METOX 캐니스터는 **재생 가능한 아민 스윙베드**를 사용한다: EVA 중 CO₂를 흡착하고, 행보 사이에 에어락에서 구워내어 재사용한다. ISS 내부의 대응 설비(CDRA, 이산화탄소 제거 조립)는 재생 사이클로 같은 일을 하고, OGS(산소 발생 시스템)는 물을 전기분해하여 O₂를 보충한다. 우주복은 스테이션 ECLSS의 소형 휴대용 버전이며, 자체 전력과 공급물로 8시간 동안 작동한다."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "body_paragraphs.1",
+  "en": "The Primary Life Support System (**PLSS**) backpack carries oxygen at ~6800 kPa (1000 psi) in two tanks, a battery, the LiOH canister, a fan to circulate air through the helmet, a water tank for cooling, and a sublimator — a porous plate that lets liquid water boil into vacuum, dumping ~250 W of metabolic heat to space as water vapour. A liquid-cooling garment is worn against the skin: water threading through tubes against the body picks up heat and returns to the sublimator. The arms and gloves get pressurised gloves; the body gets a Hard Upper Torso (HUT) made of fibreglass or composite; the legs articulate through soft fabric joints. Operating pressure is 4.3 psi (US EMU, pure O₂) or 5.7 psi (Russian Orlan, pure O₂). Lower pressure = easier to move; higher pressure = less pre-breathe time.",
+  "cur": "주요 생명 유지 시스템(**PLSS**) 배낭은 약 6800 kPa(1000 psi)의 산소를 두 개의 탱크에 보관하고, 배터리, LiOH 캐니스터, 헬멧을 통해 공기를 순환시키는 팬, 냉각용 물 탱크, 그리고 승화기 — 액체 물이 진공으로 끓어 올라 대략 250 W의 신진대사 열을 수증기로 우주에 배출하는 다공성 판을 포함한다. 액체 냉각 의류는 피부에 착용된다: 몸 앞 튜브를 통한 물이 열을 흡수하고 승화기로 돌아온다. 팔과 장갑은 가압 장갑이고; 신체는 유리섬유 또는 복합재로 만든 견고한 상반신(HUT)을 입는다; 다리는 연질 천 관절을 통해 움직인다. 작동 압력은 4.3 psi(미국 EMU, 순산소) 또는 5.7 psi(러시아 Orlan, 순산소)이다. 낮은 압력 = 움직이기 쉬움; 높은 압력 = 사전 호흡 시간 단축."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "body_paragraphs.2",
+  "en": "Two specialised details. **Sun visor**: the gold-plated outer visor on every EVA helmet is gold for a reason — a thin vapour-deposited gold film reflects ~98% of infrared radiation while letting visible light through. With the Sun in the suit's field of view (about half the orbit on the ISS), direct sunlight on a clear polycarbonate visor would heat the helmet beyond tolerable. The astronaut flips the gold visor down when looking sunward and back up when working in shadow. **EVA thrusters**: the SAFER (Simplified Aid For EVA Rescue) backpack on every modern US EVA carries 1.4 kg of compressed nitrogen and 24 small thrusters, giving the astronaut about 3 m/s of total Δv — enough to fly back to the station if a tether breaks and no more. The earlier **MMU** (Manned Maneuvering Unit, 1984–1985) carried ~12 kg of nitrogen and ~25 m/s; Bruce McCandless and Robert Stewart famously flew untethered with it on STS-41B. After Challenger, NASA grounded the MMU as too risky and reverted to tethered EVA with SAFER as backup only.",
+  "cur": "두 가지 특수한 세부 사항이 있다. **태양 바이저**: 모든 EVA 헬멧의 금도금 외부 바이저는 이유가 있어서 금색이다 — 얇은 기상 증착 금 필름은 적외선 방사의 약 98%를 반사하면서 가시광선을 통과시킨다. 우주복의 시야에 태양이 있을 때(ISS의 약 반 궤도), 맑은 폴리카보네이트 바이저에 직사광선이 비치면 헬멧이 견딜 수 없는 온도로 가열된다. 우주인은 태양을 향해 볼 때 금색 바이저를 내리고 그림자에서 작업할 때 다시 올린다. **EVA 추진기**: 모든 현대 미국 EVA의 SAFER(EVA 구조 간소화 지원) 배낭은 1.4 kg의 압축 질소와 24개의 소형 추진기를 탑재하여 우주인에게 약 3 m/s의 총 Δv를 제공한다 — 테더가 끊어지고 더 이상 없을 때 우주정으로 날아갈 수 있을 만큼 충분하다. 초기의 **MMU**(유인 기동 장치, 1984–1985)는 약 12 kg의 질소와 약 25 m/s를 탑재했으며; Bruce McCandless와 Robert Stewart는 유명하게 STS-41B에서 이를 이용해 테더 없이 비행했다. Challenger 이후 NASA는 MMU를 너무 위험하다고 판단하여 사용을 중단하고 테더를 사용한 EVA로 돌아갔으며 SAFER는 백업 용도로만 사용한다."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "body_paragraphs.3",
+  "en": "Four EVA suit families fly today — see /fleet for each: EMU (US Shuttle/ISS, 1981 to present), Orlan-MKS (Russia, latest of the rear-entry family flying since 1977), Feitian (China, Tiangong + Shenzhou), and AxEMU (Axiom, qualifying for Artemis III). The architectural choice that splits them most cleanly is entry geometry — US EMU is front-entry (HUT + LTA assembled), Orlan and Feitian are rear-entry (PLSS hatch on the back) — and operating pressure (4.3 vs 5.7 psi), which decides how much pre-breathe each program requires.",
+  "cur": "네 가지 EVA 우주복 제품군이 현재 운영 중이다 — 각각은 /fleet을 참조하라: EMU(미국 우주왕복선/ISS, 1981년~현재), Orlan-MKS(러시아, 1977년 이래 운영되는 후방 진입 계열의 최신형), Feitian(중국, Tiangong + Shenzhou), 그리고 AxEMU(Axiom, Artemis III 인증 대기 중). 이들을 가장 명확하게 구분하는 건축적 선택은 진입 기하학이다 — 미국 EMU는 전방 진입(HUT + LTA 조립), Orlan과 Feitian은 후방 진입(배낭 뒷면의 PLSS 해치) — 그리고 작동 압력(4.3 vs 5.7 psi)이고, 이는 각 프로그램에서 필요한 사전 호흡 양을 결정한다."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "diagram_caption",
+  "en": "PLSS backpack on the back · gold sun visor · hard upper torso · liquid-cooling garment underneath · LiOH or amine CO₂ scrubber · sublimator dumps ~250 W of metabolic heat as water vapour · SAFER mini-thruster pack with ~3 m/s of nitrogen Δv for rescue.",
+  "cur": "배낭 뒤쪽의 PLSS · 금색 태양 바이저 · 견고한 상반신 · 아래의 액체 냉각 의류 · LiOH 또는 아민 CO₂ 스크러버 · 승화기가 신진대사 열 약 250 W를 수증기로 배출 · 구조용 약 3 m/s 질소 Δv를 가진 SAFER 미니 추진기 팩."
+ },
+ {
+  "rel": "science/life-in-space/food-production-off-world.json",
+  "at": "title",
+  "en": "Food production off-world — from Veggie to greenhouses on Mars",
+  "cur": "외계 식량 생산 — Veggie에서 화성의 온실까지"
+ },
+ {
+  "rel": "science/life-in-space/food-production-off-world.json",
+  "at": "intro_sentence",
+  "en": "ISS crew have been eating food they grew themselves since 2015. The leap from 'salad supplement' to 'closed-loop daily diet' is the open frontier between the ISS today and any Mars settlement worth the name.",
+  "cur": "ISS 승무원은 2015년부터 자신이 재배한 식량을 먹고 있다. '샐러드 보충'에서 '폐쇄 루프 일일 식단'으로의 도약은 오늘날의 ISS와 그 이름값을 하는 화성 정착지 사이의 열려 있는 프론티어다."
+ },
+ {
+  "rel": "science/life-in-space/food-production-off-world.json",
+  "at": "body_paragraphs.0",
+  "en": "ISS started its food-from-orbit programme in 2014 with Veggie, a small chamber bolted into the Destiny lab with red and blue LED lighting and pillow-style root modules. The first crop the crew was cleared to eat was 'Outredgeous' red romaine lettuce, in August 2015 — half the harvest eaten on-orbit, half returned for analysis. Since then Veggie has cycled mizuna, pak choi, mustard greens, tatsoi, kale, peppers, and zinnia flowers (the flowers were a deliberate test for crops with reproductive structures), plus the Advanced Plant Habitat (APH, installed 2017) adding a closed-environment 0.4 m² growing volume with sensor-monitored CO₂, humidity, and light. The contribution to crew nutrition is small — measured in handfuls per crew per month — but the psychological contribution is large, and validated against the recommendations from the Mir 1980s isolation studies which flagged 'connection with growing things' as a core countermeasure against asthenia.",
+  "cur": "ISS는 2014년 Veggie와 함께 궤도 식량 프로그램을 시작했다 — Destiny 랩에 볼트로 고정된 작은 챔버, 빨간색과 파란색 LED 조명, 베개 모양 뿌리 모듈. 승무원이 먹을 수 있도록 허가된 첫 작물은 2015년 8월의 'Outredgeous' 빨간 로메인 양상추였다 — 절반은 궤도에서 먹고, 절반은 분석을 위해 반환. 그 이후 Veggie는 미즈나, 청경채, 겨자잎, 타초이, 케일, 고추, 백일홍 꽃(꽃은 생식 구조가 있는 작물에 대한 의도적 테스트)을 순환시켰고, 2017년에 설치된 Advanced Plant Habitat(APH)이 센서 모니터링되는 CO₂, 습도, 빛이 있는 0.4 m²의 폐쇄 환경 재배 부피를 추가했다. 승무원 영양에 대한 기여는 작다 — 한 달에 승무원당 한 줌으로 측정 — 그러나 심리적 기여는 크고, '자라는 것과의 연결'을 무력증에 대한 핵심 대책으로 지적한 1980년대 Mir 격리 연구의 권장 사항에 비추어 검증되었다."
+ }
+]

@@ -1,0 +1,1490 @@
+[
+ {
+  "rel": "fleet/launcher/long-march-5.json",
+  "at": "description",
+  "en": "China’s first heavy-lift launcher, capable of putting 25 t to LEO. Lifts the Tiangong space station modules and Tianwen Mars probes; Long March 5B is the variant used for station modules.",
+  "cur": "Прва кинеска ракета-носач тешке класе, способна да у ниску Земљину орбиту изнесе 25 t. Подиже модуле свемирске станице Tiangong и марсовске сонде Tianwen; Long March 5B је верзија која се користи за модуле станице."
+ },
+ {
+  "rel": "fleet/launcher/long-march-5.json",
+  "at": "best_known_for",
+  "en": "Heavy-lift backbone of the Chinese space program",
+  "cur": "Ракета тешке класе као окосница кинеског свемирског програма"
+ },
+ {
+  "rel": "fleet/launcher/long-march-7.json",
+  "at": "tagline",
+  "en": "Tianzhou cargo launcher to Tiangong",
+  "cur": "Ракета-носач за теретни брод Tianzhou ка станици Tiangong"
+ },
+ {
+  "rel": "fleet/launcher/long-march-7.json",
+  "at": "description",
+  "en": "Long March 7 is a orbital launcher built by CALT in China. Tianzhou cargo launcher to Tiangong. In service since 2016.",
+  "cur": "Long March 7 је орбитална ракета-носач коју је направио CALT у Кини. Ракета-носач за теретни брод Tianzhou ка станици Tiangong. У служби од 2016. године."
+ },
+ {
+  "rel": "fleet/launcher/long-march-7.json",
+  "at": "best_known_for",
+  "en": "Tianzhou cargo launcher to Tiangong",
+  "cur": "Ракета-носач за теретни брод Tianzhou ка станици Tiangong"
+ },
+ {
+  "rel": "fleet/launcher/lvm3.json",
+  "at": "tagline",
+  "en": "Crew-rated launcher for Gaganyaan",
+  "cur": "Ракета-носач сертификована за летове с посадом за Gaganyaan"
+ },
+ {
+  "rel": "fleet/launcher/lvm3.json",
+  "at": "description",
+  "en": "LVM3 (GSLV Mk III) is a orbital launcher built by ISRO in India. Crew-rated launcher for Gaganyaan. In service since 2014.",
+  "cur": "LVM3 (GSLV Mk III) је орбитална ракета-носач коју је направила организација ISRO у Индији. Ракета-носач сертификована за летове с посадом за Gaganyaan. У употреби је од 2014."
+ },
+ {
+  "rel": "fleet/launcher/lvm3.json",
+  "at": "best_known_for",
+  "en": "Crew-rated launcher for Gaganyaan",
+  "cur": "Ракета-носач сертификована за летове с посадом за Gaganyaan"
+ },
+ {
+  "rel": "fleet/launcher/mercury-redstone.json",
+  "at": "tagline",
+  "en": "First US human-rated launcher — variant of the Army's Redstone IRBM. Launched Freedom 7 (1961-05-05) and Liberty Bell 7 (1961-07-21)",
+  "cur": "Прва ракета-носач САД за људску посаду — варијанта Redstone IRBM војске. Лансирала Freedom 7 (1961-05-05) и Liberty Bell 7 (1961-07-21)"
+ },
+ {
+  "rel": "fleet/launcher/mercury-redstone.json",
+  "at": "dispatch",
+  "en": "The Mercury-Redstone was a weapon taught to carry a passenger. Its ancestor was the German V-2, and its direct parent an Army ballistic missile built to deliver a warhead — now modified, softened, and made just reliable enough to trust with a human life. It could manage only a suborbital arc; it never had the power to reach orbit. But that was exactly its job: the cautious first step, the machine that let America prove a person could ride a rocket up and come back down alive before betting a life on the bigger, riskier booster that could actually reach orbit.",
+  "cur": "Mercury-Redstone је било оружје које су научили да носи путника. Његов предак била је немачка V-2, а непосредни родитељ балистичка ракета америчке копнене војске, направљена да допреми бојеву главу — сада преправљена, ублажена и учињена тек довољно поузданом да јој се повери људски живот. Могла је да оствари само суборбитални лук; никада није имала снагу да достигне орбиту. Али управо то је био њен задатак: опрезан први корак, машина која је омогућила Америци да докаже да човек може ракетом да узлети и жив се врати на Земљу, пре него што уложи живот у већу и ризичнију ракету-носач која је заиста могла да достигне орбиту."
+ },
+ {
+  "rel": "fleet/launcher/mercury-redstone.json",
+  "at": "description",
+  "en": "The Mercury-Redstone launch vehicle was a man-rated derivative of the U.S. Army's Redstone ballistic missile, modified at NASA Marshall Space Flight Center for the suborbital Mercury crewed missions. Single-stage liquid-propellant (LOX + alcohol), 25 metres tall with capsule and escape tower (~18 m booster alone), producing approximately 347 kN (~35 tonnes-force) of thrust. The first crewed flight was Mercury-Redstone 3 / Freedom 7 (1961-05-05, Alan Shepard) — the first American in space, 23 days after Gagarin. Mercury-Redstone 4 / Liberty Bell 7 followed (1961-07-21, Gus Grissom). After Liberty Bell 7's hatch malfunction, NASA moved the orbital Mercury flights to the more powerful Atlas LV-3B. Final flight 1961-07-21; total 6 Mercury-Redstone vehicles built, 2 crewed flights flown.",
+  "cur": "Ракета-носач Mercury-Redstone била је верзија балистичке ракете Redstone америчке копнене војске, сертификована за лет људске посаде и прилагођена у NASA Marshall Space Flight Center за суборбиталне мисије Mercury с људском посадом. Једностепена је, на течни погонски гориво (LOX + алкохол), висока 25 метара с капсулом и торњем за спасавање (~18 m сам бустер), а даје потисак од приближно 347 kN (~35 тона-силе). Први лет с посадом био је Mercury-Redstone 3 / Freedom 7 (5. 5. 1961, Алан Шепард) — први Американац у свемиру, 23 дана након Гагарина. Следио је Mercury-Redstone 4 / Liberty Bell 7 (21. 7. 1961, Гас Грисом). Након квара на отвору капсуле Liberty Bell 7, NASA је орбиталне летове Mercury преселила на моћнију ракету Atlas LV-3B. Последњи лет обављен је 21. 7. 1961; укупно је направљено 6 ракета Mercury-Redstone, а изведена су 2 лета с посадом."
+ },
+ {
+  "rel": "fleet/launcher/mercury-redstone.json",
+  "at": "best_known_for",
+  "en": "First US human-rated launcher — variant of the Army's Redstone IRBM. Launched Freedom 7 (1961-05-05) and Liberty Bell 7 (1961-07-21)",
+  "cur": "Прва америчка ракета-носач сертификована за лет људске посаде — верзија ракете средњег домета Redstone америчке копнене војске. Лансирала је Freedom 7 (5. 5. 1961) и Liberty Bell 7 (21. 7. 1961)"
+ },
+ {
+  "rel": "fleet/launcher/n1.json",
+  "at": "tagline",
+  "en": "Soviet Moon rocket; four launches all failed",
+  "cur": "Совјетска ракета за Месец; сва четири лансирања била су неуспешна"
+ },
+ {
+  "rel": "fleet/launcher/n1.json",
+  "at": "dispatch",
+  "en": "The N1 was the Soviet Union's Saturn V — and the reason it never reached the Moon. Standing 105 metres tall, its first stage clustered thirty engines around its base, not by choice but by necessity: no single Soviet engine came close to the power of the American F-1, so Korolev's team ganged thirty smaller ones together and hoped they would fire in concert. They never did. With no test stand large enough to fire the assembled stage on the ground, every launch was the first full test of the propulsion system — and all four, between 1969 and 1972, failed. The second launch (N1-5L, 3 July 1969) fell back onto its pad in one of the largest non-nuclear explosions ever recorded. Its NK-33 engines, hidden away after the programme was cancelled, proved among the finest ever built and flew on American rockets a quarter-century later — a brilliant machine beaten by the one thing it was never allowed to do: be tested before it flew.",
+  "cur": "N1 је био совјетски Saturn V — и разлог зашто Совјетски Савез никада није стигао до Месеца. Standing 105 метара у висину, имала је први степен са тридесет мотора збијених око његове основе, не из избора, већ из нужде: ниједан совјетски мотор није се ни приближио снази америчког F-1, па је Korolev-ов тим повезао тридесет мањих и понадао се да ће радити складно. То се никада није догодило. Пошто није постојало довољно велико испитно постоље на којем би се склопљени степен могао испробати на земљи, свако лансирање било је прво потпуно испитивање погонског система — а сва четири, између 1969. и 1972, завршила су неуспехом. Друго лансирање (N1-5L, 3. јул 1969) пало је назад на лансирну рампу у једној од највећих ненуклеарних експлозија икада забележених. Њени мотори NK-33, склоњени након обустављања програма, показали су се међу најбољима икада изграђеним и летели су на америчким ракетама четврт века касније — бриљантна машина коју је поразила једина ствар која јој никада није била дозвољена: да буде испитана пре лета."
+ },
+ {
+  "rel": "fleet/launcher/n1.json",
+  "at": "description",
+  "en": "The Soviet Union’s answer to Saturn V — a 105 m super-heavy rocket with thirty NK-15 engines on the first stage. All four launches between 1969 and 1972 failed; the program was cancelled when Apollo 17 ended any chance of a Soviet crewed lunar landing.",
+  "cur": "Одговор Совјетског Савеза на Saturn V — супертешка ракета висока 105 m са тридесет мотора NK-15 на првом степену. Сва четири лансирања између 1969. и 1972. завршила су неуспехом; програм је обустављен када је Apollo 17 окончао сваку могућност совјетског спуштања људске посаде на Месец."
+ },
+ {
+  "rel": "fleet/launcher/n1.json",
+  "at": "best_known_for",
+  "en": "Soviet Moon rocket; four launches all failed",
+  "cur": "Совјетска ракета за Месец; сва четири лансирања била су неуспешна"
+ },
+ {
+  "rel": "fleet/launcher/new-glenn.json",
+  "at": "tagline",
+  "en": "Blue Origin's two-stage reusable heavy-lift orbital launcher",
+  "cur": "Blue Origin-ов дводелни вишекратно употребљиви орбитални носач велике носивости"
+ },
+ {
+  "rel": "fleet/launcher/new-glenn.json",
+  "at": "description",
+  "en": "Two-stage heavy-lift vehicle built around seven BE-4 methane engines on the first stage (the same engine Vulcan uses) and two hydrogen-burning BE-3U engines on the second. Designed for first-stage recovery via a downrange ship landing. Lifts ~45 t to LEO and is certified for NSSL Phase 3 + Project Kuiper deployments. Maiden flight NG-1 launched from Cape Canaveral LC-36 on 2025-01-16 and successfully delivered the Blue Ring pathfinder to orbit — the first-stage landing attempt was lost but the orbital insertion was clean.",
+  "cur": "Двостепена ракета велике носивости изграђена око седам метанских мотора BE-4 на првом степену (истог мотора који користи Vulcan) и два мотора BE-3U на водоник на другом. Пројектована је за повратак првог степена слетањем на брод удаљен низ путању лета. Диже ~45 t у ниску Земљину орбиту (LEO) и сертификована је за NSSL Phase 3 и за постављање сателита Project Kuiper. Први лет, NG-1, лансиран је са комплекса LC-36 на Кејп Канавералу 2025-01-16 и успешно је у орбиту убацио пробни модул Blue Ring — покушај слетања првог степена није успео, али је убацивање у орбиту протекло беспрекорно."
+ },
+ {
+  "rel": "fleet/launcher/new-glenn.json",
+  "at": "best_known_for",
+  "en": "Blue Origin's two-stage reusable heavy-lift orbital launcher — BE-4 first stage + cryogenic second",
+  "cur": "Blue Origin-ов дводелни вишекратно употребљиви орбитални носач велике носивости — први степен са моторима BE-4 + криогени други степен"
+ },
+ {
+  "rel": "fleet/launcher/proton-k.json",
+  "at": "tagline",
+  "en": "The Soviet / Russian heavy-lift workhorse 1967-2012 — Salyut, Mir, Venera, Vega, Luna sample-return",
+  "cur": "Совјетска/руска ракета-носач велике носивости, радни коњ од 1967. до 2012. — Salyut, Mir, Venera, Vega, Luna повратак узорака"
+ },
+ {
+  "rel": "fleet/launcher/proton-k.json",
+  "at": "description",
+  "en": "Three-stage hypergolic (N2O4 / UDMH) heavy-lift vehicle with optional Blok-D / D-1 / D-2 high-energy upper stages. 311 launches between 1967-03-10 and 2012-03-30 — anchored every Salyut + Mir + ISS Russian-segment module, every Venera and Vega Venus probe, every Luna sample-return, and Soviet Mars-2/-3/-5/-7. The Blok-D upper stage was originally developed for the cancelled N1-L3 crewed lunar architecture; reusing it on Proton-K kept the heavy-energy Soviet planetary line viable into the 1980s. Replaced by Proton-M which still flies.",
+  "cur": "Тростепена хиперголична (N2O4 / UDMH) ракета-носач велике носивости са опционим горњим степенима високе енергије Blok-D / D-1 / D-2. Остварила је 311 лансирања између 1967-03-10 и 2012-03-30 — изнела је сваки модул Salyut, Mir и руског сегмента МСС, сваку Venera и Vega сонду за Венеру, сваки повратак узорака мисије Luna, као и совјетске сонде Mars-2/-3/-5/-7. Горњи степен Blok-D првобитно је развијен за отказану архитектуру совјетског пилотираног лета на Месец N1-L3; његова поновна употреба на ракети Proton-K одржала је одрживом совјетску линију планетарних мисија високих енергија све до 1980-их. Заменила ју је Proton-M, која и даље лети."
+ },
+ {
+  "rel": "fleet/launcher/proton-k.json",
+  "at": "best_known_for",
+  "en": "Soviet / Russian heavy-lift workhorse 1967-2012 — Salyut, Mir, every Venera + Vega Venus probe, every Luna sample-return, and every Soviet outer-planet attempt",
+  "cur": "Совјетски/руски радни коњ велике носивости од 1967. до 2012. — Salyut, Mir, свака Venera и Vega сонда за Венеру, сваки повратак узорака мисије Luna и сваки совјетски покушај истраживања спољашњих планета"
+ },
+ {
+  "rel": "fleet/launcher/proton-m.json",
+  "at": "tagline",
+  "en": "Successor to Proton-K; modernised heavy lift",
+  "cur": "Наследник ракете Proton-K; осавремењена ракета за тешке терете"
+ },
+ {
+  "rel": "fleet/launcher/proton-m.json",
+  "at": "description",
+  "en": "Proton-M is a orbital launcher built by Khrunichev in Russia. Successor to Proton-K; modernised heavy lift. In service since 2001.",
+  "cur": "Proton-M је орбитална ракета-носач коју је направио Khrunichev у Русији. Наследник ракете Proton-K; осавремењена ракета за тешке терете. У употреби од 2001. године."
+ },
+ {
+  "rel": "fleet/launcher/proton-m.json",
+  "at": "best_known_for",
+  "en": "Successor to Proton-K; modernised heavy lift",
+  "cur": "Наследник ракете Proton-K; осавремењена ракета за тешке терете"
+ },
+ {
+  "rel": "fleet/launcher/pslv-xl.json",
+  "at": "tagline",
+  "en": "ISRO's heavy strap-on PSLV variant — Chandrayaan-1 + Mars Orbiter",
+  "cur": "ISRO-ова тешка варијанта ракете PSLV са помоћним ракетним појачивачима — Chandrayaan-1 + Mars Orbiter"
+ },
+ {
+  "rel": "fleet/launcher/pslv-xl.json",
+  "at": "description",
+  "en": "Four-stage Polar Satellite Launch Vehicle in its extended (XL) configuration: six PS0M-XL strap-on solid boosters with ~50 % more propellant than the standard PSLV. Lifts ~3.8 t to LEO / ~1.8 t to SSO / ~1.4 t to GTO and has carried India's most significant interplanetary missions — Chandrayaan-1 (2008) and Mangalyaan / Mars Orbiter Mission (2013) — from Sriharikota's First Launch Pad. Still active for hyperspectral + radar Earth-observation deployments.",
+  "cur": "Четворостепена ракета-носач Polar Satellite Launch Vehicle у проширеној (XL) конфигурацији: шест помоћних чврстих појачивача PS0M-XL са око 50 % више погонског горива него стандардни PSLV. Диже око 3,8 t у LEO, око 1,8 t у SSO и око 1,4 t у GTO, а са Првог лансирног стола у Шрихарикоти пренела је најзначајније индијске међупланетарне мисије — Chandrayaan-1 (2008) и Mangalyaan / Mars Orbiter Mission (2013). И даље је у употреби за постављање хиперспектралних и радарских сателита за осматрање Земље."
+ },
+ {
+  "rel": "fleet/launcher/pslv-xl.json",
+  "at": "best_known_for",
+  "en": "ISRO's heavy-strap-on PSLV variant — launched Chandrayaan-1 + Mars Orbiter Mission",
+  "cur": "ISRO-ова тешка варијанта ракете PSLV са помоћним ракетним појачивачима — лансирала је Chandrayaan-1 и Mars Orbiter Mission"
+ },
+ {
+  "rel": "fleet/launcher/r-7-vostok.json",
+  "at": "tagline",
+  "en": "Carried Sputnik and Gagarin to orbit",
+  "cur": "Однела Sputnik и Гагарина у орбиту"
+ },
+ {
+  "rel": "fleet/launcher/r-7-vostok.json",
+  "at": "description",
+  "en": "The launcher that put Sputnik in orbit in 1957 and Yuri Gagarin into space in 1961. A direct ancestor of every Soyuz rocket flown since — the longest production lineage in spaceflight, with thousands of flights across six decades.",
+  "cur": "Ракета-носач која је 1957. поставила Sputnik у орбиту, а 1961. Јурија Гагарина у свемир. Директни предак сваке ракете Soyuz која је од тада летела — најдужа производна лоза у историји свемирских летова, са хиљадама летова током шест деценија."
+ },
+ {
+  "rel": "fleet/launcher/r-7-vostok.json",
+  "at": "best_known_for",
+  "en": "Carried Sputnik and Gagarin to orbit",
+  "cur": "Однела Sputnik и Гагарина у орбиту"
+ },
+ {
+  "rel": "fleet/launcher/saturn-ib.json",
+  "at": "tagline",
+  "en": "Lifted Apollo 7, Skylab crews, and ASTP",
+  "cur": "Лансирала је Apollo 7, посаде Skylab-а и ASTP"
+ },
+ {
+  "rel": "fleet/launcher/saturn-ib.json",
+  "at": "dispatch",
+  "en": "Not every Apollo job needed the Moon rocket. The Saturn IB was the pragmatic option — a crew-rated lifter for the work that stayed in Earth orbit: Apollo 7's shakedown of the redesigned spacecraft, the ferry flights to Skylab, and the handshake-in-orbit of Apollo-Soyuz. Its first stage was famously a bundle of tanks borrowed from the earlier Redstone and Jupiter missiles, clustered together — proven parts doing a new job rather than a clean-sheet design. It's the least glamorous rocket in the program, and a quiet lesson in not overbuilding: match the machine to the mission.",
+  "cur": "Није сваки задатак програма Apollo захтевао ракету за Месец. Saturn IB била је прагматичан избор — ракета-носач одобрена за посаде, намењена пословима који су остајали у орбити око Земље: пробном лету прерађене свемирске летелице Apollo 7, превозним летовима до Skylab-а и руковању у орбити у оквиру програма Apollo-Soyuz. Њен први степен био је, што је постало чувено, сноп резервоара позајмљених од ранијих ракета Redstone и Jupiter, спојених у кластер — проверени делови са новим задатком, а не конструкција израђена од почетка. То је најмање блистава ракета у програму и тиха поука о томе како не треба градити преко мере: прилагоди машину мисији."
+ },
+ {
+  "rel": "fleet/launcher/saturn-ib.json",
+  "at": "description",
+  "en": "Saturn IB is a orbital launcher built by Chrysler / Douglas / IBM in USA. Lifted Apollo 7, Skylab crews, and ASTP.",
+  "cur": "Saturn IB је орбитална ракета-носач коју су у САД направиле компаније Chrysler / Douglas / IBM. Лансирала је Apollo 7, посаде Skylab-а и ASTP."
+ },
+ {
+  "rel": "fleet/launcher/saturn-ib.json",
+  "at": "best_known_for",
+  "en": "Lifted Apollo 7, Skylab crews, and ASTP",
+  "cur": "Лансирала је Apollo 7, посаде Skylab-а и ASTP"
+ },
+ {
+  "rel": "fleet/launcher/saturn-v.json",
+  "at": "tagline",
+  "en": "Sent humans to the Moon",
+  "cur": "Однела људе на Месец"
+ },
+ {
+  "rel": "fleet/launcher/saturn-v.json",
+  "at": "dispatch",
+  "en": "The Saturn V existed to solve one brutal piece of arithmetic: putting a crew on the Moon means throwing roughly 45 tonnes onto a path out of Earth's gravity, and in 1961 nothing on Earth could throw a fraction of that. So von Braun's Marshall team built the largest machine that had ever flown — five F-1 engines at its base, each the most powerful single-chamber rocket engine ever fired at the time, together burning some thirteen tonnes of propellant every second. Everything about it was sized by the destination, not by what looked reasonable. That it flew thirteen times and never once failed to reach space is the part that still doesn't quite seem possible.",
+  "cur": "Saturn V је постојао да би решио један суров аритметички проблем: слање посаде на Месец значи избацити отприлике 45 тона на путању ван Земљине гравитације, а 1961. ништа на Земљи није могло да избаци ни делић тога. Зато је von Braun-ов тим из центра Marshall направио највећу машину која је икада полетела — пет мотора F-1 у подножју, од којих је сваки био најмоћнији ракетни мотор с једном комором који је до тада икада био упаљен, а заједно су сагоревали око тринаест тона погонског горива сваке секунде. Све на њему било је димензионисано према одредишту, а не према ономе што је изгледало разумно. То што је полетео тринаест пута и ниједном није пропустио да стигне до свемира онај је део који и данас готово да не изгледа могуће."
+ },
+ {
+  "rel": "fleet/launcher/saturn-v.json",
+  "at": "description",
+  "en": "The 110.6 m three-stage rocket that put 24 humans on a translunar trajectory and 12 of them on the lunar surface. Thirteen launches between 1967 and 1973, zero losses on ascent. The most powerful rocket to reach orbit for over five decades until Starship's Super Heavy surpassed it in 2024.",
+  "cur": "Тростепена ракета висока 110,6 m која је 24 човека упутила на транслунарну путању, а 12 њих на површину Месеца. Тринаест лансирања између 1967. и 1973, без иједног губитка при узлету. Најмоћнија ракета која је стигла у орбиту током више од пет деценија, све док је 2024. није престигао Super Heavy из програма Starship."
+ },
+ {
+  "rel": "fleet/launcher/saturn-v.json",
+  "at": "best_known_for",
+  "en": "Sent humans to the Moon",
+  "cur": "Однела људе на Месец"
+ },
+ {
+  "rel": "fleet/launcher/sls-block-1.json",
+  "at": "tagline",
+  "en": "Heavy lift for Artemis lunar program",
+  "cur": "Тешки носач за лунарни програм Artemis"
+ },
+ {
+  "rel": "fleet/launcher/sls-block-1.json",
+  "at": "description",
+  "en": "NASA’s super-heavy successor to the Space Shuttle stack, sharing its RS-25 engines and SRB heritage. Carried Orion on Artemis I in 2022; planned to launch crewed lunar missions through Artemis IV.",
+  "cur": "NASA-ин супертешки наследник Space Shuttle-а, који дели његове моторе RS-25 и наслеђе чврстих ракетних потисника (SRB). Однео је Orion на мисији Artemis I 2022. године; планирано је да лансира посаде на лунарне мисије закључно са мисијом Artemis IV."
+ },
+ {
+  "rel": "fleet/launcher/sls-block-1.json",
+  "at": "best_known_for",
+  "en": "Heavy lift for Artemis lunar program",
+  "cur": "Тешки носач за лунарни програм Artemis"
+ },
+ {
+  "rel": "fleet/launcher/soyuz-2.json",
+  "at": "tagline",
+  "en": "Modern Soyuz workhorse — carries Soyuz MS crew + Progress MS cargo to the ISS",
+  "cur": "Модерни радни коњ породице Soyuz — носи посаду летелица Soyuz MS и теретне летелице Progress MS до МСС"
+ },
+ {
+  "rel": "fleet/launcher/soyuz-2.json",
+  "at": "description",
+  "en": "RKTs Progress's modernised Soyuz family, with digital flight controls replacing the analogue systems of Soyuz-FG / Soyuz-U. Variants 2.1a (RD-107A/RD-108A first stage + RD-0124 third stage), 2.1b (uprated third stage), and 2.1v (no boosters, single RD-110 stage). Carries every modern Russian crewed and cargo flight to the ISS plus Glonass, Resurs-P, and Lotos-S payloads.",
+  "cur": "Модернизована породица Soyuz компаније RKTs Progress, са дигиталним системима управљања летом који замењују аналогне системе ракета Soyuz-FG / Soyuz-U. Variants 2.1a (први степен RD-107A/RD-108A + трећи степен RD-0124), 2.1b (трећи степен повећане снаге) и 2.1v (без потисника, један степен RD-110). Носи сваки савремени руски лет са посадом и теретни лет до МСС, као и кориснике терета Glonass, Resurs-P и Lotos-S."
+ },
+ {
+  "rel": "fleet/launcher/soyuz-2.json",
+  "at": "best_known_for",
+  "en": "Modern Soyuz workhorse for ISS crew + cargo",
+  "cur": "Модерни радни коњ породице Soyuz за посаду и терет за МСС"
+ },
+ {
+  "rel": "fleet/launcher/soyuz-fg.json",
+  "at": "tagline",
+  "en": "Crewed Soyuz launches 2001-2019",
+  "cur": "Лансирања посада летелицама Soyuz 2001–2019"
+ },
+ {
+  "rel": "fleet/launcher/soyuz-fg.json",
+  "at": "description",
+  "en": "Soyuz-FG is a orbital launcher built by Progress Rocket Space Centre in Russia. Crewed Soyuz launches 2001-2019.",
+  "cur": "Soyuz-FG је орбитална ракета-носач коју је направио Progress Rocket Space Centre у Русији. Лансирања посада летелицама Soyuz 2001–2019."
+ },
+ {
+  "rel": "fleet/launcher/soyuz-fg.json",
+  "at": "best_known_for",
+  "en": "Crewed Soyuz launches 2001-2019",
+  "cur": "Лансирања посада летелицама Soyuz 2001–2019"
+ },
+ {
+  "rel": "fleet/launcher/soyuz-u.json",
+  "at": "tagline",
+  "en": "Most-launched orbital rocket in history",
+  "cur": "Орбитална ракета с највише лансирања у историји"
+ },
+ {
+  "rel": "fleet/launcher/soyuz-u.json",
+  "at": "description",
+  "en": "Soyuz-U is a orbital launcher built by Progress Rocket Space Centre in USSR. Most-launched orbital rocket in history — 786 missions from 1973 to 2017.",
+  "cur": "Soyuz-U је орбитална ракета-носач коју је направио Progress Rocket Space Centre у USSR. Орбитална ракета с највише лансирања у историји — 786 мисија од 1973. до 2017."
+ },
+ {
+  "rel": "fleet/launcher/soyuz-u.json",
+  "at": "best_known_for",
+  "en": "Most-launched orbital rocket in history",
+  "cur": "Орбитална ракета с највише лансирања у историји"
+ },
+ {
+  "rel": "fleet/launcher/soyuz.json",
+  "at": "tagline",
+  "en": "R-7-derived launcher for the first-generation Soyuz spacecraft — flew Soyuz 1 (1967) and Soyuz 11 (1971)",
+  "cur": "Ракета-носач изведена из ракете R-7, намењена свемирској летелици Soyuz прве генерације — лансирала је Soyuz 1 (1967) и Soyuz 11 (1971)"
+ },
+ {
+  "rel": "fleet/launcher/soyuz.json",
+  "at": "dispatch",
+  "en": "The launcher that opened the Soyuz era also carried its two tragedies. The 11A511 was the next step in Korolev's R-7 lineage — the same rocket family that lofted Sputnik and Gagarin, now uprated to carry the heavier, more capable Soyuz spacecraft that would become the workhorse of Soviet and Russian human spaceflight for the next half-century. Its first crewed flight, Soyuz 1 in 1967, ended when the descent module's parachutes fouled and Vladimir Komarov was lost. Four years later, Soyuz 11 returned its crew from the world's first space station — but a valve had opened at separation, and all three men died of depressurisation before touchdown. The rocket performed; the spacecraft's early margins did not. The R-7 lineage it belonged to still flies crews today.",
+  "cur": "Ракета-носач која је отворила еру Soyuz-а носила је и обе њене трагедије. 11A511 био је следећи корак у лози ракете R-7 Корољова — исте породице ракета која је извела Sputnik и Гагарина, сада појачане да понесе тежу и способнију свемирску летелицу Soyuz, која ће у наредних пола века постати радни коњ совјетских и руских летова с људском посадом. Њен први лет с посадом, Soyuz 1 1967. године, завршио се када су се падобрани спусног модула уплели и Владимир Комаров је погинуо. Четири године касније, Soyuz 11 вратио је посаду са прве свемирске станице на свету — али се при раздвајању отворио вентил и сва тројица људи страдала су од губитка притиска пре додира са тлом. Ракета је обавила свој задатак; почетне границе сигурности летелице нису. Лоза R-7 којој је припадала и данас лансира посаде."
+ },
+ {
+  "rel": "fleet/launcher/soyuz.json",
+  "at": "description",
+  "en": "The Soyuz 11A511 was the R-7 derivative built to loft the first-generation Soyuz 7K-OK spacecraft, adding a more capable upper stage to the Vostok/Voskhod launcher lineage. Three-stage liquid-propellant (LOX + kerosene), ~50 metres tall, ~308 tonnes lift-off mass. It carried the crewed Soyuz programme's earliest flights, including its two fatal missions — Soyuz 1 (1967), lost when its recovery parachutes fouled, and Soyuz 11 (1971), whose crew died of depressurisation during descent. The 11A511 was succeeded by the Soyuz-U in 1973; the same R-7 lineage still flies crews as the Soyuz-2 today.",
+  "cur": "Soyuz 11A511 био је дериват ракете R-7, направљен да лансира свемирску летелицу Soyuz 7K-OK прве генерације, уз способнији горњи степен у односу на лозу ракета-носача Vostok/Voskhod. Тростепена ракета на течни погон (LOX + керозин), висока ~50 метара, масе при полетању ~308 тона. Носила је најраније летове пилотираног програма Soyuz, укључујући и обе његове кобне мисије — Soyuz 1 (1967), изгубљен када су се запетљали падобрани за спуштање, и Soyuz 11 (1971), чија је посада погинула услед губитка притиска током спуштања. Ракету 11A511 наследио је Soyuz-U 1973. године; иста лоза R-7 и данас преноси посаде као Soyuz-2."
+ },
+ {
+  "rel": "fleet/launcher/soyuz.json",
+  "at": "best_known_for",
+  "en": "R-7-derived launcher for the first-generation Soyuz spacecraft — flew Soyuz 1 (1967) and Soyuz 11 (1971)",
+  "cur": "Ракета-носач изведена из ракете R-7, намењена свемирској летелици Soyuz прве генерације — лансирала је Soyuz 1 (1967) и Soyuz 11 (1971)"
+ },
+ {
+  "rel": "fleet/launcher/space-shuttle-stack.json",
+  "at": "name",
+  "en": "Space Shuttle stack",
+  "cur": "Склоп Space Shuttle-а"
+ },
+ {
+  "rel": "fleet/launcher/space-shuttle-stack.json",
+  "at": "tagline",
+  "en": "Orbiter + ET + SRBs; 135 missions",
+  "cur": "Орбитер + спољни резервоар + ракетни потисници на чврсто гориво; 135 мисија"
+ },
+ {
+  "rel": "fleet/launcher/space-shuttle-stack.json",
+  "at": "description",
+  "en": "The reusable orbiter, external tank, and twin solid rocket boosters that flew 135 missions between 1981 and 2011. Built the ISS, deployed and serviced Hubble, and demonstrated the engineering trade-offs of a partially-reusable crewed launcher.",
+  "cur": "Вишекратно употребљив орбитер, спољни резервоар и два ракетна потисника на чврсто гориво, који су летели у 135 мисија између 1981. и 2011. године. Изградио је МСС, лансирао Hubble и одржавао га, и показао инжењерске компромисе делимично вишекратно употребљиве ракете-носача за летове с посадом."
+ },
+ {
+  "rel": "fleet/launcher/space-shuttle-stack.json",
+  "at": "best_known_for",
+  "en": "Orbiter + ET + SRBs; 135 missions",
+  "cur": "Орбитер + спољни резервоар + ракетни потисници на чврсто гориво; 135 мисија"
+ },
+ {
+  "rel": "fleet/launcher/starship.json",
+  "at": "tagline",
+  "en": "Fully reusable super-heavy launch vehicle",
+  "cur": "Потпуно вишекратна супертешка ракета-носач"
+ },
+ {
+  "rel": "fleet/launcher/starship.json",
+  "at": "description",
+  "en": "Two-stage vehicle built around the methane-burning Raptor engine — Super Heavy first stage (33 Raptors) + Starship second stage (6 Raptors). Designed for full and rapid reuse via tower-catch recovery of both stages, targeting Mars transit timelines + Artemis Human Landing System. First integrated flight test (IFT-1) cleared the pad on 2023-04-20 but lost vehicle control before stage separation; demonstrated controlled recovery of both stages beginning with IFT-4 in June 2024.",
+  "cur": "Двостепено возило изграђено око Raptor мотора на метан — први степен Super Heavy (33 Raptor-а) + други степен Starship (6 Raptor-а). Дизајнирано за потпуну и брзу поновну употребу захваљујући опоравку оба степена хватањем у торњу, с циљем да омогући временске оквире за прелет до Марса + Artemis Human Landing System. Први интегрисани пробни лет (IFT-1) напустио је рампу 2023-04-20, али је изгубио контролу над возилом пре раздвајања степена; контролисани опоравак оба степена показан је почев од лета IFT-4 у јуну 2024."
+ },
+ {
+  "rel": "fleet/launcher/starship.json",
+  "at": "best_known_for",
+  "en": "Fully reusable super-heavy launch vehicle in development for Artemis HLS + Mars",
+  "cur": "Потпуно вишекратна супертешка ракета-носач у развоју за Artemis HLS + Марс"
+ },
+ {
+  "rel": "fleet/launcher/titan-ii-glv.json",
+  "at": "tagline",
+  "en": "Workhorse for Project Gemini",
+  "cur": "Радни коњ пројекта Gemini"
+ },
+ {
+  "rel": "fleet/launcher/titan-ii-glv.json",
+  "at": "dispatch",
+  "en": "The Titan II that launched Gemini was, like Mercury's rockets, a converted weapon — America's largest intercontinental missile, man-rated to carry a crew. Its defining trait was its fuel: where cryogenic propellants have to be loaded just before launch and can force a scrub, the Titan burned storable liquids that let it sit ready and lift off close to on time. That reliability of timing mattered more than it sounds, because Gemini's whole job was rendezvous, and catching another spacecraft in orbit depends on launching at an exact moment. The workhorse of the program, it flew all ten crewed Geminis without losing a crew.",
+  "cur": "Titan II који је лансирао Gemini био је, као и ракете програма Mercury, преуређено оружје — највећа америчка интерконтинентална ракета, прилагођена за превоз посаде. Његово кључно обележје било је гориво: док се криогени погонски горива морају пунити непосредно пред лансирање и могу довести до одлагања, Titan је сагоревао течна горива која се могу складиштити, па је могао да стоји спреман и да полети готово тачно на време. Та поузданост у погледу времена значила је више него што се чини, јер је цео посао програма Gemini био сусрет у орбити, а хватање другог летелице у орбити зависи од лансирања у тачном тренутку. Као радна лошадка програма, лансирао је свих десет Gemini летова с посадом, а да није изгубио ниједну посаду."
+ },
+ {
+  "rel": "fleet/launcher/titan-ii-glv.json",
+  "at": "description",
+  "en": "Titan II GLV is a orbital launcher built by Martin Marietta in USA. Workhorse for Project Gemini. Retired after first flight in 1964.",
+  "cur": "Titan II GLV је орбитална ракета-носач коју је направила компанија Martin Marietta у САД. Радна лошадка пројекта Gemini. Повучена из употребе после првог лета 1964. године."
+ },
+ {
+  "rel": "fleet/launcher/titan-ii-glv.json",
+  "at": "best_known_for",
+  "en": "Workhorse for Project Gemini",
+  "cur": "Радни коњ пројекта Gemini"
+ },
+ {
+  "rel": "fleet/launcher/voskhod-11a57.json",
+  "at": "tagline",
+  "en": "Vostok-K successor — more thrust for the heavier Voskhod capsule. Launched Voskhod 1 (1964) + Voskhod 2 (1965 Leonov EVA)",
+  "cur": "Наследник Vostok-K: већи потисак за тежу капсулу Voskhod. Лансирао Voskhod 1 (1964) и Voskhod 2 (1965, Леонов изашао у свемир)"
+ },
+ {
+  "rel": "fleet/launcher/voskhod-11a57.json",
+  "at": "dispatch",
+  "en": "The Voskhod 11A57 was the R-7 turned up a notch. The modified Vostok capsule was heavier than the original, so it needed more push than the Vostok-K could give — which the R-7 family, endlessly adaptable, duly provided with an uprated upper stage. It's a small chapter in a very long story: the same basic rocket that launched Sputnik and Gagarin, stretched again to loft the two Voskhod flights, and still being stretched, decades later, to fly Soyuz crews. Few designs have been asked to do so many different jobs for so long.",
+  "cur": "Voskhod 11A57 била је ракета R-7 подигнута за један степеник више. Измењена капсула Vostok била је тежа од оригиналне, па јој је био потребан јачи потисак него што га је могла пружити ракета Vostok-K — а породица R-7, која се бескрајно прилагођава, то је и учинила, појачаним горњим степеном. То је мало поглавље у веома дугој причи: иста основна ракета која је лансирала Sputnik и Гагарина, поново издужена да би изнела два лета Voskhod, а која се и деценијама касније још увек надограђује како би носила посаде Soyuz. Мало је конструкција од којих се толико дуго тражило да обављају толико различитих послова."
+ },
+ {
+  "rel": "fleet/launcher/voskhod-11a57.json",
+  "at": "description",
+  "en": "Voskhod (GRAU index 11A57) was the next iteration of the R-7 family after Vostok-K, with uprated Blok-I third-stage engines for the heavier Voskhod capsule. Three-stage LOX + kerosene, 44 metres tall, 298 tonnes lift-off mass. Launched both crewed Voskhod flights (Voskhod 1 first 3-person crew in 1964; Voskhod 2 with Leonov's first EVA in 1965). After the Voskhod programme ended the 11A57 continued in service for ~300 uncrewed military / civilian satellite launches through 1976, when it was superseded by the Soyuz 11A511 line.",
+  "cur": "Voskhod (GRAU индекс 11A57) била је следећа итерација породице R-7 после ракете Vostok-K, са појачаним моторима трећег степена Blok-I за тежу капсулу Voskhod. Тростепена ракета на течни кисеоник и керозин, висока 44 метра, масе при полетању 298 тона. Лансирала је оба лета Voskhod с посадом (Voskhod 1 са првом трочланом посадом 1964. године; Voskhod 2 са Леоновљевим првим изласком у свемир 1965. године). Пошто је програм Voskhod окончан, 11A57 је остала у употреби за око 300 лансирања војних и цивилних сателита без посаде, све до 1976. године, када ју је заменила линија Soyuz 11A511."
+ },
+ {
+  "rel": "fleet/launcher/voskhod-11a57.json",
+  "at": "best_known_for",
+  "en": "Vostok-K successor — more thrust for the heavier Voskhod capsule. Launched Voskhod 1 (1964) + Voskhod 2 (1965 Leonov EVA)",
+  "cur": "Наследник ракете Vostok-K — већи потисак за тежу капсулу Voskhod. Лансирала је Voskhod 1 (1964) и Voskhod 2 (1965, Леонов излазак у свемир)"
+ },
+ {
+  "rel": "fleet/launcher/vostok-k.json",
+  "at": "tagline",
+  "en": "Soviet R-7-derived launcher that put Gagarin in space — Vostok 1 (1961-04-12) and 5 more Vostok flights through 1963",
+  "cur": "Совјетска ракета-носач изведена из R-7 која је Гагарина однела у свемир — Vostok 1 (1961-04-12) и још 5 летова Vostok до 1963."
+ },
+ {
+  "rel": "fleet/launcher/vostok-k.json",
+  "at": "dispatch",
+  "en": "The rocket that launched Gagarin was a weapon that changed careers. The Vostok-K was a human-rated version of Korolev's R-7 — the world's first intercontinental ballistic missile, built to throw a warhead across the planet, now asked to lift a person into orbit. It was the same lineage that had lofted Sputnik, and it is, astonishingly, the same lineage still flying: the Soyuz rocket that carries crews to the Space Station today is a direct descendant, which makes the R-7 family by far the most-launched rocket in history. Few machines built for war have had so long or so peaceful a second life.",
+  "cur": "Ракета која је лансирала Гагарина била је оружје које је променило каријеру. Vostok-K је била верзија Корољовљеве ракете R-7 прилагођена за људску посаду — првог међуконтиненталног балистичког пројектила на свету, направљеног да пребаци бојеву главу преко читаве планете, а сада задуженог да подигне човека у орбиту. Била је то иста лоза која је узнела Sputnik, и, невероватно, то је иста лоза која и даље лети: ракета Soyuz која данас односи посаде на Свемирску станицу њен је директни потомак, због чега је породица R-7 далеко најлансирана ракета у историји. Мало је машина направљених за рат имало тако дуг или тако миран други живот."
+ },
+ {
+  "rel": "fleet/launcher/vostok-k.json",
+  "at": "description",
+  "en": "Vostok-K (GRAU index 8K72K) was the human-rated derivative of Korolev's R-7 ICBM, with a Blok-E upper stage and crew-rated parameters. Three-stage liquid-propellant (LOX + kerosene), 38 metres tall, 287 tonnes lift-off mass. Launched all six crewed Vostok flights (1-6, 1961-1963) plus a handful of uncrewed precursors. Reliability evolved from early R-7 teething problems (3 of 6 first-stage failures before Gagarin) to perfect record across the crewed series. The Vostok-K design lineage continues today as the Soyuz-2 launcher (the only crew-capable Russian launch vehicle of 2026).",
+  "cur": "Vostok-K (GRAU индекс 8K72K) био је дериват међуконтиненталног балистичког пројектила R-7 конструктора Корољова, прилагођен за људску посаду, са горњим степеном Blok-E и параметрима предвиђеним за летове с посадом. Троступњевита ракета на течни погон (течни кисеоник + керозин), висока 38 метара, масе при полетању 287 тона. Лансирала је свих шест Vostok летова с посадом (1–6, 1961–1963), као и неколико претходних летова без посаде. Поузданост се развијала од почетних дечјих болести ракете R-7 (3 од 6 отказа првог степена пре Гагарина) до савршеног учинка у целој серији летова с посадом. Лоза конструкције Vostok-K наставља се и данас у ракети-носачу Soyuz-2 (јединој руској ракети-носачу способној да лансира посаду у 2026. години)."
+ },
+ {
+  "rel": "fleet/launcher/vostok-k.json",
+  "at": "best_known_for",
+  "en": "Soviet R-7-derived launcher that put Gagarin in space — Vostok 1 (1961-04-12) and 5 more Vostok flights through 1963",
+  "cur": "Совјетска ракета-носач изведена из ракете R-7 која је у свемир однела Гагарина — Vostok 1 (1961-04-12) и још 5 летова ракете Vostok до 1963."
+ },
+ {
+  "rel": "fleet/launcher/vulcan.json",
+  "at": "tagline",
+  "en": "Atlas V + Delta IV successor; certifies for NSSL Phase 3 + planned for Dream Chaser",
+  "cur": "Наследник ракета Atlas V и Delta IV; сертификација за NSSL Phase 3 и планиран за Dream Chaser"
+ },
+ {
+  "rel": "fleet/launcher/vulcan.json",
+  "at": "description",
+  "en": "United Launch Alliance's two-stage successor to Atlas V and Delta IV. Powered by twin BE-4 methalox engines on the first stage and Centaur V (RL10) above. First flight 2024-01-08 carried Astrobotic Peregrine. Slated to certify for National Security Space Launch Phase 3 contracts and planned as the launch vehicle for Sierra Space's Dream Chaser cargo spaceplane.",
+  "cur": "Двостепени наследник ракета Atlas V и Delta IV компаније United Launch Alliance. Покрећу га два мотора BE-4 на метан и течни кисеоник на првом степену, а изнад њега Centaur V (RL10). Први лет, 2024-01-08, понео је Astrobotic Peregrine. Предвиђено је да добије сертификат за уговоре National Security Space Launch Phase 3, а планирано је да буде ракета-носач за теретни свемирски авион Dream Chaser компаније Sierra Space."
+ },
+ {
+  "rel": "fleet/launcher/vulcan.json",
+  "at": "best_known_for",
+  "en": "Atlas V + Delta IV successor",
+  "cur": "Наследник ракета Atlas V и Delta IV"
+ },
+ {
+  "rel": "fleet/observatory/chandra.json",
+  "at": "name",
+  "en": "Chandra X-ray Observatory",
+  "cur": "Рендгенска опсерваторија Chandra"
+ },
+ {
+  "rel": "fleet/observatory/chandra.json",
+  "at": "tagline",
+  "en": "Sharpest X-ray imagery in space",
+  "cur": "Најоштрије рендгенске слике у свемиру"
+ },
+ {
+  "rel": "fleet/observatory/chandra.json",
+  "at": "description",
+  "en": "NASA’s flagship X-ray observatory, in service since 1999. Resolution roughly 25× better than any previous X-ray telescope, allowing direct imaging of black-hole accretion disks, supernova remnants, and the hot gas threading galaxy clusters.",
+  "cur": "NASA-ина водећа рендгенска опсерваторија, у служби од 1999. године. Резолуција је отприлике 25 пута боља од било ког претходног рендгенског телескопа, што омогућава директно снимање акреционих дискова црних рупа, остатака супернова и врелог гаса који прожима јата галаксија."
+ },
+ {
+  "rel": "fleet/observatory/chandra.json",
+  "at": "best_known_for",
+  "en": "Sharpest X-ray imagery in space",
+  "cur": "Најоштрије рендгенске слике у свемиру"
+ },
+ {
+  "rel": "fleet/observatory/compton-gro.json",
+  "at": "name",
+  "en": "Compton Gamma Ray Observatory",
+  "cur": "Compton Gamma Ray Observatory"
+ },
+ {
+  "rel": "fleet/observatory/compton-gro.json",
+  "at": "tagline",
+  "en": "One of NASA's four Great Observatories",
+  "cur": "Једна од четири NASA-ине велике опсерваторије"
+ },
+ {
+  "rel": "fleet/observatory/compton-gro.json",
+  "at": "description",
+  "en": "One of NASA’s four \"Great Observatories\" alongside Hubble, Chandra, and Spitzer. In orbit 1991–2000, mapped the gamma-ray sky and discovered that gamma-ray bursts come from cosmological distances rather than nearby sources.",
+  "cur": "Једна од четири NASA-ине „великих опсерваторија“ уз Hubble, Chandra и Spitzer. У орбити од 1991. до 2000. године, начинила је мапу гама-неба и открила да рафали гама-зрачења потичу са космолошких удаљености, а не из оближњих извора."
+ },
+ {
+  "rel": "fleet/observatory/compton-gro.json",
+  "at": "best_known_for",
+  "en": "One of NASA's four Great Observatories",
+  "cur": "Једна од четири NASA-ине велике опсерваторије"
+ },
+ {
+  "rel": "fleet/observatory/euclid.json",
+  "at": "tagline",
+  "en": "Dark-energy survey across one third of the sky",
+  "cur": "Преглед тамне енергије на једној трећини неба"
+ },
+ {
+  "rel": "fleet/observatory/euclid.json",
+  "at": "description",
+  "en": "Euclid surveys the sky in visible and near-infrared light to map the large-scale structure of the Universe and constrain dark energy. In service since 2023.",
+  "cur": "Euclid посматра небо у видљивој и блиској инфрацрвеној светлости како би мапирао структуру Универзума великих размера и ограничио вредности параметара тамне енергије. У служби од 2023."
+ },
+ {
+  "rel": "fleet/observatory/euclid.json",
+  "at": "best_known_for",
+  "en": "Dark-energy survey across one third of the sky",
+  "cur": "Преглед тамне енергије на једној трећини неба"
+ },
+ {
+  "rel": "fleet/observatory/gaia.json",
+  "at": "tagline",
+  "en": "Mapped 1.8 billion stars in 3D",
+  "cur": "Мапирала 1,8 милијарди звезда у 3Д"
+ },
+ {
+  "rel": "fleet/observatory/gaia.json",
+  "at": "description",
+  "en": "ESA’s star-charting satellite, mapping the position, brightness, and motion of nearly two billion stars in the Milky Way at unprecedented precision. Operated 2013–2025; the resulting catalogue will underpin galactic astronomy for decades.",
+  "cur": "ESA-ин сателит за картографисање звезда, који је с дотад невиђеном прецизношћу мапирао положај, сјајност и кретање готово две милијарде звезда у Млечном путу. Радио је од 2013. до 2025. године; добијени каталог биће темељ галактичке астрономије деценијама."
+ },
+ {
+  "rel": "fleet/observatory/gaia.json",
+  "at": "best_known_for",
+  "en": "Mapped 1.8 billion stars in 3D",
+  "cur": "Мапирала 1,8 милијарди звезда у 3Д"
+ },
+ {
+  "rel": "fleet/observatory/hitomi.json",
+  "at": "tagline",
+  "en": "Spun apart in orbit; loss drove XRISM development",
+  "cur": "Распао се у орбити; губитак је покренуо развој мисије XRISM"
+ },
+ {
+  "rel": "fleet/observatory/hitomi.json",
+  "at": "description",
+  "en": "JAXA’s X-ray observatory, lost 37 days after launch in February 2016. A reaction-wheel saturation triggered a sequence of attitude-control errors that spun the spacecraft so fast it broke apart. Lessons drove the development of XRISM (launched 2023).",
+  "cur": "JAXA-ина рендгенска опсерваторија, изгубљена 37 дана након лансирања у фебруару 2016. Засићење реакционих точкова изазвало је низ грешака у контроли оријентације, због којих се летелица толико брзо вртела да се распала. Научене лекције покренуле су развој мисије XRISM (лансиране 2023)."
+ },
+ {
+  "rel": "fleet/observatory/hitomi.json",
+  "at": "best_known_for",
+  "en": "Spun apart in orbit; loss drove XRISM development",
+  "cur": "Распао се у орбити; губитак је покренуо развој мисије XRISM"
+ },
+ {
+  "rel": "fleet/observatory/hubble.json",
+  "at": "name",
+  "en": "Hubble Space Telescope",
+  "cur": "Свемирски телескоп Hubble"
+ },
+ {
+  "rel": "fleet/observatory/hubble.json",
+  "at": "tagline",
+  "en": "Iconic visible/UV space telescope; 5 servicing missions",
+  "cur": "Култни свемирски телескоп за видљиву и UV светлост; 5 сервисних мисија"
+ },
+ {
+  "rel": "fleet/observatory/hubble.json",
+  "at": "description",
+  "en": "NASA’s and ESA’s shared visible/UV space telescope, in low Earth orbit since 1990 and serviced five times by Space Shuttle missions through 2009. Still in operation 35+ years later, with major instruments installed by spacewalking astronauts and a primary mirror flaw corrected in 1993 by COSTAR (later replaced by instruments with built-in corrective optics).",
+  "cur": "Заједнички свемирски телескоп за видљиву и UV светлост агенција NASA и ESA, у ниској орбити око Земље од 1990. године, који су мисије Space Shuttle-а сервисирале пет пута до 2009. Још увек је у раду више од 35 година касније: главне инструменте поставили су астронаути током шетњи свемиром, а грешку на главном огледалу 1993. исправио је COSTAR (касније замењен инструментима са уграђеном корективном оптиком)."
+ },
+ {
+  "rel": "fleet/observatory/hubble.json",
+  "at": "best_known_for",
+  "en": "Iconic visible/UV space telescope; 5 servicing missions",
+  "cur": "Култни свемирски телескоп за видљиву и UV светлост; 5 сервисних мисија"
+ },
+ {
+  "rel": "fleet/observatory/jwst.json",
+  "at": "name",
+  "en": "James Webb Space Telescope",
+  "cur": "Свемирски телескоп James Webb"
+ },
+ {
+  "rel": "fleet/observatory/jwst.json",
+  "at": "tagline",
+  "en": "Largest infrared space telescope; L2 orbit",
+  "cur": "Највећи инфрацрвени свемирски телескоп; орбита у тачки L2"
+ },
+ {
+  "rel": "fleet/observatory/jwst.json",
+  "at": "description",
+  "en": "The largest infrared space telescope ever built. Stationed at Sun-Earth L2 since January 2022, with a 6.5 m segmented gold-coated beryllium primary mirror behind a tennis-court-sized sunshield. Sees back to the first galaxies after the Big Bang.",
+  "cur": "Највећи инфрацрвени свемирски телескоп икада изграђен. Од јануара 2022. налази се у тачки L2 система Сунце–Земља, са сегментисаним примарним огледалом од берилијума пресвученог златом, пречника 6,5 m, постављеним иза штита за заштиту од Сунца величине тениског терена. Гледа уназад све до првих галаксија настали после Великог праска."
+ },
+ {
+  "rel": "fleet/observatory/jwst.json",
+  "at": "best_known_for",
+  "en": "Largest infrared space telescope; L2 orbit",
+  "cur": "Највећи инфрацрвени свемирски телескоп; орбита у тачки L2"
+ },
+ {
+  "rel": "fleet/observatory/kepler.json",
+  "at": "tagline",
+  "en": "Discovered 2,700+ exoplanets",
+  "cur": "Открила 2.700+ егзопланета"
+ },
+ {
+  "rel": "fleet/observatory/kepler.json",
+  "at": "description",
+  "en": "NASA’s exoplanet hunter (2009–2018). Stared at a single patch of sky and detected exoplanets via transit photometry — the brief dip in starlight when a planet passes in front of its star. Discovered more than 2,700 confirmed exoplanets and demonstrated that Earth-sized worlds are common.",
+  "cur": "NASA-in ловац на егзопланете (2009–2018). Непрекидно је посматрао један исечак неба и откривао егзопланете транзитном фотометријом — кратким падом сјаја звезде када планета прође испред ње. Открио је више од 2.700 потврђених егзопланета и показао да су светови величине Земље уобичајени."
+ },
+ {
+  "rel": "fleet/observatory/kepler.json",
+  "at": "best_known_for",
+  "en": "Discovered 2,700+ exoplanets",
+  "cur": "Открила 2.700+ егзопланета"
+ },
+ {
+  "rel": "fleet/observatory/spektr-rg.json",
+  "at": "tagline",
+  "en": "Russian-German X-ray sky-mapping observatory",
+  "cur": "Руско-немачка опсерваторија за мапирање неба у рендгенском подручју"
+ },
+ {
+  "rel": "fleet/observatory/spektr-rg.json",
+  "at": "description",
+  "en": "Spektr-RG is a space observatory built by NPO Lavochkin in Russia. Russian-German X-ray sky-mapping observatory. In service since 2019; its German eROSITA telescope entered safe mode in February 2022, while the Russian ART-XC instrument keeps observing.",
+  "cur": "Spektr-RG је свемирска опсерваторија коју је направио NPO Lavochkin у Русији. Руско-немачка опсерваторија за мапирање неба у рендгенском подручју. У раду је од 2019. године; њен немачки телескоп eROSITA прешао је у безбедан режим рада у фебруару 2022. године, док руски инструмент ART-XC наставља да посматра."
+ },
+ {
+  "rel": "fleet/observatory/spektr-rg.json",
+  "at": "best_known_for",
+  "en": "Russian-German X-ray sky-mapping observatory",
+  "cur": "Руско-немачка опсерваторија за мапирање неба у рендгенском подручју"
+ },
+ {
+  "rel": "fleet/observatory/spitzer.json",
+  "at": "name",
+  "en": "Spitzer Space Telescope",
+  "cur": "Свемирски телескоп Spitzer"
+ },
+ {
+  "rel": "fleet/observatory/spitzer.json",
+  "at": "tagline",
+  "en": "Infrared Great Observatory; 16 years of data",
+  "cur": "Инфрацрвена велика опсерваторија; 16 година података"
+ },
+ {
+  "rel": "fleet/observatory/spitzer.json",
+  "at": "description",
+  "en": "NASA’s infrared Great Observatory, in service 2003–2020. Designed for a five-year cryogenic mission but operated for sixteen, including a \"warm mission\" phase after its liquid-helium coolant was exhausted in 2009.",
+  "cur": "NASA-ина инфрацрвена велика опсерваторија, у служби од 2003. до 2020. године. Пројектован за петогодишњу криогену мисију, а радио је шеснаест година, укључујући и фазу „топле мисије“ након што се 2009. утрошило течно хелијумско расхладно средство."
+ },
+ {
+  "rel": "fleet/observatory/spitzer.json",
+  "at": "best_known_for",
+  "en": "Infrared Great Observatory; 16 years of data",
+  "cur": "Инфрацрвена велика опсерваторија; 16 година података"
+ },
+ {
+  "rel": "fleet/observatory/tess.json",
+  "at": "tagline",
+  "en": "All-sky exoplanet transit survey",
+  "cur": "Преглед целог неба у потрази за транзитима егзопланета"
+ },
+ {
+  "rel": "fleet/observatory/tess.json",
+  "at": "description",
+  "en": "The Transiting Exoplanet Survey Satellite, in orbit since 2018. Surveys nearly the entire sky in 26 sectors per year, looking for short-period exoplanets around the brightest, closest stars to Earth — the targets that will be most amenable to follow-up atmospheric characterisation by JWST.",
+  "cur": "Transiting Exoplanet Survey Satellite, у орбити од 2018. године. Прегледа скоро цело небо у 26 сектора годишње, тражећи егзопланете кратког периода око најсјајнијих звезда које су најближе Земљи — циљева који ће бити најпогоднији за накнадну атмосферску карактеризацију помоћу JWST-а."
+ },
+ {
+  "rel": "fleet/observatory/tess.json",
+  "at": "best_known_for",
+  "en": "All-sky exoplanet transit survey",
+  "cur": "Преглед целог неба у потрази за транзитима егзопланета"
+ },
+ {
+  "rel": "fleet/observatory/xmm-newton.json",
+  "at": "tagline",
+  "en": "ESA's flagship X-ray observatory",
+  "cur": "Водећа ESA-ина опсерваторија за рендгенско зрачење"
+ },
+ {
+  "rel": "fleet/observatory/xmm-newton.json",
+  "at": "description",
+  "en": "XMM-Newton is a space observatory built by Airbus Defence and Space in Multi (Europe). ESA's flagship X-ray observatory. In service since 1999.",
+  "cur": "XMM-Newton је свемирска опсерваторија коју је направила компанија Airbus Defence and Space у месту Multi (Европа). Водећа ESA-ина опсерваторија за рендгенско зрачење. У употреби од 1999. године."
+ },
+ {
+  "rel": "fleet/observatory/xmm-newton.json",
+  "at": "best_known_for",
+  "en": "ESA's flagship X-ray observatory",
+  "cur": "Водећа ESA-ина опсерваторија за рендгенско зрачење"
+ },
+ {
+  "rel": "fleet/orbiter/akatsuki.json",
+  "at": "tagline",
+  "en": "Japan's first Venus orbiter; recovered from a 2010 orbit-insertion failure to study cloud-top dynamics",
+  "cur": "Први јапански орбитер Венере; опоравио се после неуспелог уласка у орбиту 2010. године и проучавао динамику на врховима облака"
+ },
+ {
+  "rel": "fleet/orbiter/akatsuki.json",
+  "at": "description",
+  "en": "JAXA's Venus Climate Orbiter, Japan's first spacecraft to successfully orbit Venus. Originally failed orbit insertion in 2010 but was recovered on a backup attempt five years later (2015) using less efficient thrusters. Studied cloud-top winds, lightning, and atmospheric dynamics of Venus's super-rotating atmosphere. Mission ended September 2025 after contact was lost.",
+  "cur": "JAXA-ин Venus Climate Orbiter, први јапански свемирски летилица која је успешно ушла у орбиту Венере. Првобитни покушај уласка у орбиту 2010. године није успео, али је аналогни покушај пет година касније (2015) успео уз помоћ мање ефикасних потисника. Проучавала је ветрове на врховима облака, муње и динамику атмосфере Венере, која се супер-ротира. Мисија је окончана у септембру 2025. након губитка контакта."
+ },
+ {
+  "rel": "fleet/orbiter/akatsuki.json",
+  "at": "best_known_for",
+  "en": "Japan's first Venus orbiter; studied cloud-top winds and atmospheric dynamics. Recovered after a 2010 orbit-insertion failure",
+  "cur": "Први јапански орбитер Венере; проучавао је ветрове на врховима облака и динамику атмосфере. Опоравио се после неуспелог уласка у орбиту 2010. године"
+ },
+ {
+  "rel": "fleet/orbiter/bepicolombo.json",
+  "at": "tagline",
+  "en": "Twin-orbiter joint ESA + JAXA Mercury mission — splits into MPO + Mio at Mercury arrival in 2026",
+  "cur": "Заједничка мисија ESA + JAXA ка Меркуру са два орбитера — по доласку на Меркур 2026. раздваја се на MPO + Mio"
+ },
+ {
+  "rel": "fleet/orbiter/bepicolombo.json",
+  "at": "description",
+  "en": "Joint ESA + JAXA mission. Launched 2018-10-20 on an Ariane 5 ECA. Mercury Transfer Module carries the stack on a 7-year flyby cruise (1 Earth + 2 Venus + 6 Mercury gravity assists) before Mercury orbit insertion on 2026-11-21. At arrival the two science orbiters separate: ESA's Mercury Planetary Orbiter (MPO) flies a 480 × 1500 km polar orbit with 11 instruments for surface composition, topography, gravity, and exosphere; JAXA's Mio (Mercury Magnetospheric Orbiter) flies a 590 × 11 640 km polar orbit with 5 instruments for the magnetosphere and plasma. Together they are the first European + Japanese spacecraft ever in Mercury orbit.",
+  "cur": "Заједничка мисија ESA + JAXA. Лансирана 2018-10-20 ракетом Ariane 5 ECA. Mercury Transfer Module носи склоп на седмогодишњем крстарењу са прелетима (1 гравитациони маневар Земље + 2 Венере + 6 Меркура) пре убацивања у орбиту око Меркура 2026-11-21. По доласку се два научна орбитера раздвајају: ESA-ин Mercury Planetary Orbiter (MPO) лети поларном орбитом 480 × 1500 km са 11 инструмената за проучавање састава површине, топографије, гравитације и егзосфере; JAXA-ин Mio (Mercury Magnetospheric Orbiter) лети поларном орбитом 590 × 11.640 km са 5 инструмената за проучавање магнетосфере и плазме. Заједно су то прве европске + јапанске летелице икада у орбити око Меркура."
+ },
+ {
+  "rel": "fleet/orbiter/bepicolombo.json",
+  "at": "best_known_for",
+  "en": "Joint ESA + JAXA twin-orbiter Mercury mission — MPO + Mio at Mercury, 2026 arrival",
+  "cur": "Заједничка мисија ESA + JAXA ка Меркуру са два орбитера — MPO + Mio на Меркуру, долазак 2026."
+ },
+ {
+  "rel": "fleet/orbiter/cassini.json",
+  "at": "tagline",
+  "en": "Saturn orbiter; Huygens landed on Titan",
+  "cur": "Орбитер око Сатурна; Huygens се спустио на Титан"
+ },
+ {
+  "rel": "fleet/orbiter/cassini.json",
+  "at": "description",
+  "en": "The Saturn orbiter (2004–2017) that carried ESA’s Huygens lander to Titan — still the only landing on a moon of an outer planet. Discovered the active geyser plumes of Enceladus and the global ocean beneath its icy crust. Ended in a planned plunge into Saturn’s atmosphere.",
+  "cur": "Орбитер око Сатурна (2004–2017) који је носио ESA-ин лендер Huygens до Титана — и даље једино спуштање на неки месец једне од спољних планета. Открио је активне гејзирске перјанице Енцелада и глобални океан испод његове ледене коре. Мисија се завршила планираним зароном у Сатурнову атмосферу."
+ },
+ {
+  "rel": "fleet/orbiter/cassini.json",
+  "at": "best_known_for",
+  "en": "Saturn orbiter; Huygens landed on Titan",
+  "cur": "Орбитер око Сатурна; Huygens се спустио на Титан"
+ },
+ {
+  "rel": "fleet/orbiter/chandrayaan1.json",
+  "at": "tagline",
+  "en": "India's first Moon mission. Discovered widespread surface water on the Moon (M3 + MIP, 2009). Lost contact 2009-08-29 after only 312 days",
+  "cur": "Прва индијска мисија на Месец. Открила површинску воду широм Месеца (M3 + MIP, 2009). Контакт изгубљен 2009-08-29 после само 312 дана"
+ },
+ {
+  "rel": "fleet/orbiter/chandrayaan1.json",
+  "at": "description",
+  "en": "India's first mission beyond Earth orbit and its first to the Moon. Launched 2008-10-22 from Satish Dhawan Space Centre on a PSLV-XL, Chandrayaan-1 entered a 100-km polar lunar orbit on 2008-11-12. Carried 11 instruments from 6 countries (India, USA, UK, Germany, Sweden, Bulgaria) — most consequentially NASA's Moon Mineralogy Mapper (M3) which detected the absorption-band signature of OH/H₂O across vast swathes of the lunar surface, particularly at high latitudes (Pieters et al., 2009, Science 326). Its 35-kg Moon Impact Probe (MIP) was released 2008-11-14 and impacted near the rim of Shackleton Crater at the lunar south pole (Jawahar Sthal, ~89.5°S), becoming the first Indian artefact on the Moon and recording lunar atmospheric water vapour during descent. Spacecraft contact was lost 2009-08-29 after ~10 months / 3400 orbits — half of its planned 2-year mission, but the science return was already game-changing. Remains in lunar orbit, re-acquired by NASA Goldstone radar in 2017.",
+  "cur": "Прва индијска мисија изван Земљине орбите и прва мисија те земље до Месеца. Chandrayaan-1 је лансиран 2008-10-22 из Свемирског центра „Сатиш Даван“ ракетом PSLV-XL, а 2008-11-12 ушао је у поларну лунарну орбиту на висини од 100 km. Носио је 11 инструмената из 6 земаља (Индија, САД, Уједињено Краљевство, Немачка, Шведска, Бугарска) — међу којима је најважнији био NASA-ин Moon Mineralogy Mapper (M3), који је открио спектрални потпис апсорпционог појаса OH/H₂O на огромним пространствима лунарне површине, нарочито на великим географским ширинама (Pieters et al., 2009, Science 326). Његова Moon Impact Probe (MIP), тешка 35 kg, одвојена је 2008-11-14 и ударила у близини обода кратера Shackleton на јужном полу Месеца (Jawahar Sthal, ~89,5°S), постала први индијски артефакт на Месецу и током спуштања забележила водену пару у лунарној атмосфери. Веза са летелицом изгубљена је 2009-08-29, после ~10 месеци / 3400 орбита — упола краће од планиране двогодишње мисије, али је научни принос већ био прекретница. И даље се налази у лунарној орбити, а NASA-ин радар Goldstone поново ју је уочио 2017. године."
+ },
+ {
+  "rel": "fleet/orbiter/chandrayaan1.json",
+  "at": "best_known_for",
+  "en": "India's first Moon mission. Discovered widespread surface water on the Moon (M3 + MIP, 2009). Lost contact 2009-08-29 after only 312 days",
+  "cur": "Прва мисија Индије до Месеца. Открила је распрострањену воду на површини Месеца (M3 + MIP, 2009). Контакт је изгубљен 29. 8. 2009. после само 312 дана"
+ },
+ {
+  "rel": "fleet/orbiter/change-2.json",
+  "at": "tagline",
+  "en": "Second Chinese lunar orbiter; first to visit asteroid 4179 Toutatis",
+  "cur": "Други кинески лунарни орбитер; први који је посетио астероид 4179 Тутатис"
+ },
+ {
+  "rel": "fleet/orbiter/change-2.json",
+  "at": "description",
+  "en": "China's second lunar orbiter, launched 2010-10-01. Chang'e 2 orbited the Moon from 2010 to 2011, then departed lunar orbit in June 2011 for an extended deep-space mission. It proceeded to the Sun-Earth L2 point (arriving August 2011), then departed L2 in April 2012 for a historic flyby of asteroid 4179 Toutatis, executing a close approach on 2012-12-13 at ~770 m distance — the first spacecraft to visit the asteroid. After the Toutatis encounter, Chang'e 2 continued into deep space on a heliocentric trajectory, becoming a drifting interplanetary object.",
+  "cur": "Други кинески лунарни орбитер, лансиран 2010-10-01. Chang'e 2 је кружио око Месеца од 2010. до 2011. године, а затим је у јуну 2011. напустио лунарну орбиту и отпочео продужену мисију у далеком свемиру. Упутио се ка тачки L2 система Сунце–Земља (стигавши у августу 2011), а потом је у априлу 2012. напустио L2 ради историјског прелета поред астероида 4179 Тутатис, при чему је 2012-12-13 извео блиски прилаз на удаљености од око 770 m — први свемирски апарат који је посетио тај астероид. Након сусрета са астероидом Тутатис, Chang'e 2 је наставио пут кроз далеки свемир по хелиоцентричној путањи, постајући међупланетарни објекат који лута свемиром."
+ },
+ {
+  "rel": "fleet/orbiter/change-2.json",
+  "at": "best_known_for",
+  "en": "Second Chinese lunar orbiter; first spacecraft flyby of asteroid 4179 Toutatis (Dec 13, 2012, ~770 m closest approach)",
+  "cur": "Други кинески лунарни орбитер; прва летелица која је извршила прелет астероида 4179 Тутатис (Dec 13, 2012, најмања удаљеност ~770 m)"
+ },
+ {
+  "rel": "fleet/orbiter/change1.json",
+  "at": "tagline",
+  "en": "China's first lunar mission. 200-m global topo map; deliberate Mare Fecunditatis impact 2009-03-01 — first Chinese object on the Moon",
+  "cur": "Прва кинеска лунарна мисија. Глобална топографска мапа 200 m; намерни удар у Мору плодности 2009-03-01 — први кинески објекат на Месецу"
+ },
+ {
+  "rel": "fleet/orbiter/change1.json",
+  "at": "description",
+  "en": "The first phase of China's Lunar Exploration Program (CLEP), and CNSA's first mission beyond Earth. Launched 2007-10-24 from Xichang Satellite Launch Center on a Long March 3A, Chang'e 1 (named after the Moon goddess of Chinese folklore) entered a 200-km circular polar lunar orbit on 2007-11-07. Carried 8 instruments including a CCD stereo camera, laser altimeter, imaging spectrometer, gamma-ray and X-ray spectrometers, microwave radiometer, solar wind detector, and high-energy particle detector. Produced China's first full lunar global topographic map at 120-200 m resolution and elemental abundance maps of Th, K, U, O, Si, Mg, Al, Ca, Ti, Fe. Mission deliberately ended 2009-03-01 with a controlled impact at 1.50° S, 52.36° E in Mare Fecunditatis — China's first object on the lunar surface, paving the way for Chang'e 3 (2013 surface landing) and Chang'e 5 (2020 sample return). Operated 16 months — 4 months past nominal.",
+  "cur": "Прва фаза кинеског програма истраживања Месеца (CLEP) и прва мисија CNSA изван Земље. Chang'e 1 (названа по богињи Месеца из кинеског фолклора) лансирана је 2007-10-24 из космодрома Сичанг на ракети Long March 3A, а 2007-11-07 ушла је у кружну поларну лунарну орбиту на висини од 200 km. Носила је 8 инструмената, међу њима CCD стереокамеру, ласерски висиномер, спектрометар за снимање, гама-спектрометар и рендгенски спектрометар, микроталасни радиометар, детектор Сунчевог ветра и детектор честица високе енергије. Направила је прву кинеску потпуну глобалну топографску карту Месеца у резолуцији од 120 до 200 m, као и карте заступљености елемената Th, K, U, O, Si, Mg, Al, Ca, Ti и Fe. Мисија је намерно окончана 2009-03-01 контролисаним ударом на 1,50° S, 52,36° E у Мору плодности — први кинески објекат на површини Месеца, чиме је утрт пут за Chang'e 3 (слетање 2013) и Chang'e 5 (враћање узорака 2020). Радила је 16 месеци — 4 месеца дуже од планираног."
+ },
+ {
+  "rel": "fleet/orbiter/change1.json",
+  "at": "best_known_for",
+  "en": "China's first lunar mission. 200-m global topo map; deliberate Mare Fecunditatis impact 2009-03-01 — first Chinese object on the Moon",
+  "cur": "Прва кинеска мисија на Месец. Глобална топографска карта резолуције 200 m; намерни удар у Мору плодности 1. 3. 2009. — први кинески објекат на Месецу"
+ },
+ {
+  "rel": "fleet/orbiter/clementine.json",
+  "at": "tagline",
+  "en": "Joint BMDO + NASA lunar orbiter — first global multispectral map and first bistatic-radar evidence for polar water ice",
+  "cur": "Заједнички лунарни орбитер BMDO и NASA — прва глобална мултиспектрална мапа и први бистатички радарски доказ воденог леда на половима"
+ },
+ {
+  "rel": "fleet/orbiter/clementine.json",
+  "at": "description",
+  "en": "Officially the Deep Space Program Science Experiment (DSPSE). Conceived by the Ballistic Missile Defense Organization to qualify lightweight sensors in deep-space conditions, with NASA collaborating on lunar + asteroid science. Launched 1994-01-25 on a Titan IIG, entered lunar polar orbit 1994-02-19 for 71 days of mapping. Imaged every square kilometre of the Moon at 100-300 m resolution across 11 wavelengths — the first complete global lunar map. The bistatic radar experiment using Clementine's transmitter and DSN ground antennas found enhanced echoes at south-polar Shackleton crater consistent with water ice, predating LCROSS by 15 years. A failed thruster firing aborted the planned Geographos asteroid flyby and ended the mission.",
+  "cur": "Званично Deep Space Program Science Experiment (DSPSE). Замислила га је Ballistic Missile Defense Organization како би испитала лаке сензоре у условима дубоког свемира, а NASA је сарађивала на науци о Месецу и астероидима. Лансиран је 25. 1. 1994. на ракети Titan IIG, а 19. 2. 1994. ушао је у поларну орбиту око Месеца ради 71 дан картографисања. Снимио је сваки квадратни километар Месеца у резолуцији од 100 до 300 m у 11 таласних дужина — прва потпуна глобална карта Месеца. Бистатички радарски експеримент, у којем су коришћени Clementine-ов предајник и антене DSN-а на Земљи, открио је појачане одјеке у кратеру Shackleton на јужном полу, у складу с воденим ледом, 15 година пре LCROSS-а. Неуспело паљење потисника прекинуло је планирани прелет поред астероида Geographos и окончало мисију."
+ },
+ {
+  "rel": "fleet/orbiter/clementine.json",
+  "at": "best_known_for",
+  "en": "First complete global lunar multispectral map and first hint of polar water ice — 1994",
+  "cur": "Прва потпуна глобална мултиспектрална карта Месеца и први наговештај воденог леда на половима — 1994."
+ },
+ {
+  "rel": "fleet/orbiter/dart.json",
+  "at": "tagline",
+  "en": "First planetary defense impactor (Dimorphos)",
+  "cur": "Први ударач за планетарну одбрану (Диморфос)"
+ },
+ {
+  "rel": "fleet/orbiter/dart.json",
+  "at": "description",
+  "en": "The first planetary defense impactor. Deliberately collided with the asteroid moonlet Dimorphos in September 2022, shortening its orbital period around its parent Didymos by 33 minutes — proving that kinetic deflection is a viable planet-protection technique.",
+  "cur": "Први ударач за планетарну одбрану. Намерно се сударио са астероидним месецом Диморфос у септембру 2022, скративши његов орбитални период око матичног астероида Дидимос за 33 минута — и тиме доказао да је кинетичко скретање одржива техника заштите планете."
+ },
+ {
+  "rel": "fleet/orbiter/dart.json",
+  "at": "best_known_for",
+  "en": "First planetary defense impactor (Dimorphos)",
+  "cur": "Први ударач за планетарну одбрану (Диморфос)"
+ },
+ {
+  "rel": "fleet/orbiter/dawn.json",
+  "at": "tagline",
+  "en": "Only spacecraft to orbit two extraterrestrial worlds — Vesta then Ceres via ion propulsion",
+  "cur": "Једина свемирска летелица која је орбитирала око два ванземаљска света — Веста, а затим Церера, помоћу јонског погона"
+ },
+ {
+  "rel": "fleet/orbiter/dawn.json",
+  "at": "description",
+  "en": "NASA Discovery-class mission powered by three NSTAR xenon ion thrusters that produced the 11 km/s of total delta-v needed to enter orbit around Vesta, escape, cruise three years, and enter orbit around Ceres. Mapped both bodies in unprecedented detail — Vesta's southern Rheasilvia basin, Ceres' bright Cerealia Facula spots, ammoniated phyllosilicates, and cryovolcanism at Ahuna Mons. Mission ended 2018 when reaction-control hydrazine was exhausted; the spacecraft remains in a stable orbit around Ceres.",
+  "cur": "Мисија класе Discovery агенције NASA, коју су покретала три јонска потисника NSTAR на ксенон, а они су обезбедили укупних 11 km/s делта-в потребних да се уђе у орбиту око тела Веста, напусти она, крстари три године и уђе у орбиту око тела Церера. Оба небеска тела су мапирана с дотад невиђеном прецизношћу — јужни басен Реасилвија на Вести, светле мрље Cerealia Facula на Церери, амонијаком обогаћени филосиликати и криовулканизам на планини Ахуна. Мисија је завршена 2018. године, када је истрошен хидразин за систем за управљање положајем; летелица остаје у стабилној орбити око тела Церера."
+ },
+ {
+  "rel": "fleet/orbiter/dawn.json",
+  "at": "best_known_for",
+  "en": "Only spacecraft to orbit two extraterrestrial worlds — Vesta (2011-2012), Ceres (2015-2018)",
+  "cur": "Једина свемирска летелица која је орбитирала око два ванземаљска света — Веста (2011–2012) и Церера (2015–2018)"
+ },
+ {
+  "rel": "fleet/orbiter/europa-clipper.json",
+  "at": "tagline",
+  "en": "First mission dedicated to characterising Europa's habitability",
+  "cur": "Прва мисија посвећена одређивању насељивости Европе"
+ },
+ {
+  "rel": "fleet/orbiter/europa-clipper.json",
+  "at": "description",
+  "en": "NASA's mission to study the habitability of Jupiter's icy moon Europa — believed to harbour a global liquid-water ocean beneath a 15-25 km ice shell, possibly the most accessible potentially-habitable environment in the solar system. Largest planetary mission spacecraft ever launched (~6000 kg). ~102-m² solar arrays generate enough power at Jupiter's distance to drive nine instruments through 49 close Europa flybys, designed to map the entire moon while limiting the spacecraft's dose in Jupiter's brutal radiation belts.",
+  "cur": "NASA-ина мисија за проучавање насељивости Јупитеровог леденог месеца Европе, за који се верује да испод леденог омотача дебљег 15–25 km крије глобални океан течне воде — вероватно најприступачнија потенцијално насељива средина у Сунчевом систему. Највећа летелица икада лансирана за планетарну мисију (~6000 kg). Соларни панели површине ~102 m² на Јупитеровој удаљености производе довољно енергије за рад девет инструмената током 49 блиских прелета поред Европе, осмишљених тако да се мапира цео месец, а да се истовремено ограничи доза зрачења коју летелица прими у Јупитеровим суровим радијационим појасевима."
+ },
+ {
+  "rel": "fleet/orbiter/europa-clipper.json",
+  "at": "best_known_for",
+  "en": "First mission dedicated to Europa habitability",
+  "cur": "Прва мисија посвећена насељивости Европе"
+ },
+ {
+  "rel": "fleet/orbiter/exomars-tgo.json",
+  "at": "tagline",
+  "en": "Trace-gas analysis + ESA/NASA surface relay",
+  "cur": "Анализа гасова у траговима + ESA/NASA релеј за површину"
+ },
+ {
+  "rel": "fleet/orbiter/exomars-tgo.json",
+  "at": "description",
+  "en": "ESA's Trace Gas Orbiter, in orbit at Mars since 2016. Sniffs the atmosphere for methane and water vapor that could hint at biology or geology, and relays data for Mars surface missions via its UHF relay.",
+  "cur": "ESA-ин Trace Gas Orbiter, у орбити око Марса од 2016. године. „Њуши“ атмосферу у потрази за метаном и воденом паром који би могли указивати на биологију или геологију, а преко свог UHF релеја преноси податке за мисије на површини Марса."
+ },
+ {
+  "rel": "fleet/orbiter/exomars-tgo.json",
+  "at": "best_known_for",
+  "en": "Trace gas analysis at Mars; relay for ESA and NASA surface missions",
+  "cur": "Анализа гасова у траговима на Марсу; релеј за ESA-ине и NASA-ине мисије на површини"
+ },
+ {
+  "rel": "fleet/orbiter/galileo.json",
+  "at": "tagline",
+  "en": "First Jupiter orbiter; 8 years of measurements",
+  "cur": "Први орбитер око Јупитера; 8 година мерења"
+ },
+ {
+  "rel": "fleet/orbiter/galileo.json",
+  "at": "description",
+  "en": "The first Jupiter orbiter (1995–2003), and the only mission to drop a probe into Jupiter’s atmosphere. Also discovered evidence for a subsurface ocean on Europa — making it one of the most consequential planetary missions ever flown.",
+  "cur": "Први орбитер око Јупитера (1995–2003) и једина мисија која је спустила сонду у атмосферу Јупитера. Открио је и доказе о подповршинском океану на Европи — због чега је једна од најзначајнијих планетарних мисија икада изведених."
+ },
+ {
+  "rel": "fleet/orbiter/galileo.json",
+  "at": "best_known_for",
+  "en": "First Jupiter orbiter; 8 years of measurements",
+  "cur": "Први орбитер око Јупитера; 8 година мерења"
+ },
+ {
+  "rel": "fleet/orbiter/giotto.json",
+  "at": "tagline",
+  "en": "First close-up images of a cometary nucleus — flew 596 km past Halley's Comet at 68 km/s in 1986",
+  "cur": "Први снимци језгра комете изблиза — прелет поред Халејеве комете на удаљености од 596 km, брзином од 68 km/s, 1986. године"
+ },
+ {
+  "rel": "fleet/orbiter/giotto.json",
+  "at": "description",
+  "en": "ESA's first deep-space probe. Spin-stabilised drum-shaped bus protected by a Whipple-shield dust bumper, built around the Halley Multicolour Camera plus 9 other instruments contributed by 11 European countries, NASA, and Japan. Closest approach to comet 1P/Halley on 1986-03-14 at 596 km — the bumper survived, though a 100 mg dust strike 14 seconds before closest approach offset the spin axis and broke camera contact. Reactivated in 1990 for a 200 km flyby of comet Grigg-Skjellerup in 1992, the first time a spacecraft returned to a different cometary target.",
+  "cur": "Прва ESA-ина сонда за далеки свемир. Тело летелице у облику бубња, стабилизовано ротацијом, заштићено је Whipple-овим штитом од прашине, а изграђено је око камере Halley Multicolour Camera и још 9 инструмената које су обезбедиле 11 европских земаља, NASA и Јапан. Најближи прилаз комети 1P/Халеј догодио се 14. марта 1986. на удаљености од 596 km — штит је издржао, иако је удар честице прашине масе 100 mg, 14 секунди пре најближег прилаза, померио осу ротације и прекинуо контакт камере. Поново је активирана 1990. ради прелета комете Григ-Шелеруп на удаљености од 200 km 1992. године, што је први пут да се једна летелица вратила другом кометарском циљу."
+ },
+ {
+  "rel": "fleet/orbiter/giotto.json",
+  "at": "best_known_for",
+  "en": "First close-up images of a cometary nucleus — 596 km past Halley's Comet, 1986-03-14",
+  "cur": "Први снимци језгра комете изблиза — 596 km поред Халејеве комете, 14. 3. 1986."
+ },
+ {
+  "rel": "fleet/orbiter/hayabusa-2.json",
+  "at": "tagline",
+  "en": "Asteroid sample return from Ryugu",
+  "cur": "Повратак узорака са астероида Рјугу"
+ },
+ {
+  "rel": "fleet/orbiter/hayabusa-2.json",
+  "at": "description",
+  "en": "Hayabusa2 is a deep-space orbiter built by NEC in Japan. Successfully returned ~5.4 grams of samples from asteroid 162173 Ryugu on December 6, 2020. After sample delivery, the spacecraft continued on an extended SHARP (Small Hazardous Asteroid Reconnaissance Probe) mission to other asteroids. It flew past asteroid Torifune on July 5, 2026, and is planned to rendezvous with asteroid 1998 KY26 in 2031.",
+  "cur": "Hayabusa2 је орбитална летелица за далеки свемир, коју је у Јапану направила компанија NEC. Успешно је 6. децембра 2020. на Земљу вратила ~5,4 грама узорака са астероида 162173 Рјугу. Након испоруке узорака, летелица је наставила продужену мисију SHARP (Small Hazardous Asteroid Reconnaissance Probe) ка другим астероидима. Прелетела је поред астероида Torifune 5. јула 2026. године, а сусрет у орбити са астероидом 1998 KY26 планиран је за 2031. годину."
+ },
+ {
+  "rel": "fleet/orbiter/hayabusa-2.json",
+  "at": "best_known_for",
+  "en": "First asteroid sample return to Earth from Ryugu (Dec 2020); continuing extended mission to Torifune and 1998 KY26",
+  "cur": "Први повратак узорака астероида на Земљу са астероида Рјугу (децембар 2020); наставак продужене мисије ка Torifune и 1998 KY26"
+ },
+ {
+  "rel": "fleet/orbiter/hayabusa.json",
+  "at": "tagline",
+  "en": "First asteroid sample ever returned to Earth",
+  "cur": "Први узорак астероида икада враћен на Земљу"
+ },
+ {
+  "rel": "fleet/orbiter/hayabusa.json",
+  "at": "description",
+  "en": "JAXA's pioneering asteroid sample-return mission. Launched 2003-05-09 to Itokawa carrying four μ10 microwave-discharge ion thrusters. Survived a hydrazine leak, three of four reaction wheels failing, an ion engine failure, and seven weeks of lost communications before engineers nursed it back to Earth with one working engine assembled from the surviving halves of two damaged ones. Sample capsule recovered at Woomera AUS 2010-06-13 with 1500 μg of Itokawa material — the first asteroid sample ever returned to Earth.",
+  "cur": "JAXA-ина пионирска мисија враћања узорка са астероида. Лансирана 2003-05-09 ка астероиду Итокава, са четири јонска потисника μ10 на микроталасно пражњење. Преживела је цурење хидразина, отказивање три од четири реакциона точка, квар јонског мотора и седам недеља изгубљене комуникације, пре него што су је инжењери довели назад до Земље са једним исправним мотором, састављеним од преживелих половина два оштећена. Капсула са узорком пронађена је у месту Вумера у Аустралији 2010-06-13, са 1500 μg материјала са астероида Итокава — први узорак астероида икада враћен на Земљу."
+ },
+ {
+  "rel": "fleet/orbiter/hayabusa.json",
+  "at": "best_known_for",
+  "en": "First asteroid sample-return mission",
+  "cur": "Прва мисија враћања узорка са астероида"
+ },
+ {
+  "rel": "fleet/orbiter/hope.json",
+  "at": "tagline",
+  "en": "First Arab interplanetary mission",
+  "cur": "Прва арапска међупланетарна мисија"
+ },
+ {
+  "rel": "fleet/orbiter/hope.json",
+  "at": "description",
+  "en": "The UAE's Hope orbiter — Emirates Mars Mission, known in Arabic as Al-Amal. Reached Mars in 2021 and provided the first holistic global view of the Martian atmosphere through a complete Martian year. Built in partnership with the University of Colorado LASP.",
+  "cur": "Орбитер Hope Уједињених Арапских Емирата — Emirates Mars Mission, на арапском познат као Al-Amal. До Марса је стигао 2021. године и пружио први целовит глобални поглед на марсовску атмосферу током читаве марсовске године. Изграђен је у партнерству са University of Colorado LASP."
+ },
+ {
+  "rel": "fleet/orbiter/hope.json",
+  "at": "best_known_for",
+  "en": "First Arab interplanetary mission; first holistic global view of the Martian atmosphere through a Mars year",
+  "cur": "Прва арапска међупланетарна мисија; први целовит глобални поглед на марсовску атмосферу током једне марсовске године"
+ },
+ {
+  "rel": "fleet/orbiter/juice.json",
+  "at": "tagline",
+  "en": "ESA flagship to Jupiter — first orbiter ever to settle around a Galilean moon (Ganymede, 2034)",
+  "cur": "Водећа мисија ESA ка Јупитеру — први орбитер икада који ће се сместити у орбиту око једног од Галилејевих месеца (Ганимед, 2034)"
+ },
+ {
+  "rel": "fleet/orbiter/juice.json",
+  "at": "description",
+  "en": "Jupiter Icy Moons Explorer. Launched 2023-04-14 on an Ariane 5 ECA+ for an 8.5-year cruise via Earth-Venus-Earth-Earth gravity assists to Jupiter arrival in July 2031. Once in the Jovian system, JUICE flies ~35 times past Europa, Ganymede, and Callisto before entering Ganymede orbit in 2034 — the first spacecraft to orbit a moon other than Earth's. Ten-instrument payload includes ice-penetrating radar (RIME), spectrometers, magnetometer, and a laser altimeter, optimised to characterise the three icy moons as potentially habitable subsurface-ocean worlds.",
+  "cur": "Jupiter Icy Moons Explorer. Лансиран 14. априла 2023. ракетом Ariane 5 ECA+ на крстарење дуго осам и по година, уз гравитационе маневре Земља–Венера–Земља–Земља, до доласка код Јупитера у јулу 2031. Када уђе у Јупитеров систем, JUICE ће око 35 пута прелетети поред Европе, Ганимеда и Калисто, а потом ући у орбиту око Ганимеда 2034. — прва свемирска летелица која кружи око неког другог месеца осим Земљиног. Корисни терет од десет инструмената обухвата радар који продире кроз лед (RIME), спектрометре, магнетометар и ласерски висиномер, оптимизоване да окарактеришу та три ледена месеца као потенцијално настањиве светове са океанима испод површине."
+ },
+ {
+  "rel": "fleet/orbiter/juice.json",
+  "at": "best_known_for",
+  "en": "ESA Jupiter flagship — first orbiter ever around a Galilean moon (Ganymede), arrival 2031-2034",
+  "cur": "Водећа мисија ESA ка Јупитеру — први орбитер икада у орбити око једног од Галилејевих месеца (Ганимед), долазак 2031–2034."
+ },
+ {
+  "rel": "fleet/orbiter/juno.json",
+  "at": "tagline",
+  "en": "Polar Jupiter orbiter; magnetosphere studies",
+  "cur": "Поларни орбитер око Јупитера; проучавање магнетосфере"
+ },
+ {
+  "rel": "fleet/orbiter/juno.json",
+  "at": "description",
+  "en": "NASA’s polar Jupiter orbiter, in orbit since 2016. Solar-powered (a first at Jupiter’s distance), spinning to maintain stability, and orbiting close enough to Jupiter’s cloud-tops to risk severe radiation damage with each pass.",
+  "cur": "NASA-ин поларни орбитер око Јупитера, у орбити од 2016. године. Напаја се енергијом Сунца (први пут на удаљености на којој се налази Јупитер), ротира око своје осе ради одржавања стабилности и кружи довољно близу врхова Јупитерових облака да при сваком проласку ризикује тешка оштећења од зрачења."
+ },
+ {
+  "rel": "fleet/orbiter/juno.json",
+  "at": "best_known_for",
+  "en": "Polar Jupiter orbiter; magnetosphere studies",
+  "cur": "Поларни орбитер око Јупитера; проучавање магнетосфере"
+ },
+ {
+  "rel": "fleet/orbiter/lro.json",
+  "at": "tagline",
+  "en": "NASA's active lunar recon orbiter. LROC's 0.5 m/pixel imagery is the source of every Apollo + Luna + Chang'e landing-site photo here",
+  "cur": "NASA-ин активни лунарни извиђачки орбитер. LROC снимци од 0,5 m/пиксел извор су свих фотографија места слетања Apollo, Luna и Chang'e овде"
+ },
+ {
+  "rel": "fleet/orbiter/lro.json",
+  "at": "description",
+  "en": "NASA's active flagship lunar orbiter — operating continuously since 2009-06-23. Launched 2009-06-18 with LCROSS on an Atlas V from Cape Canaveral, LRO's payload of 7 instruments has remapped every aspect of the Moon at unprecedented resolution. The Lunar Reconnaissance Orbiter Camera (LROC) NAC (Narrow-Angle Camera, 0.5 m/pixel at 50 km altitude) has imaged every Apollo, Luna, Surveyor, Chang'e, Vikram, Beresheet and Hakuto landing site — every \"tier-2 LROC\" image in this app's /moon hotspots came from LROC NAC. LOLA (Laser Altimeter) gave the most detailed topography of any solar-system body. Diviner mapped surface temperature 10 K precision; LAMP detected widespread surface H₂O down to lunar dawn; LEND mapped neutron flux at <10 km resolution. As of 2026 still operational on extended mission, with no planned end-of-life — propellant supports operations through ~2030+.",
+  "cur": "NASA-ин активни водећи орбитер за истраживање Месеца — у непрекидном раду од 2009-06-23. Лансиран 2009-06-18 заједно са LCROSS-ом на ракети Atlas V са Кејп Канаверала, LRO својим теретом од 7 инструмената поново је снимио и мапирао сваки аспект Месеца у досад невиђеној резолуцији. Камера Lunar Reconnaissance Orbiter Camera (LROC) NAC (Narrow-Angle Camera, 0,5 m/пиксел са висине од 50 km) снимила је сва места слетања мисија Apollo, Luna, Surveyor, Chang'e, Vikram, Beresheet и Hakuto — сваки снимак „tier-2 LROC\" у жариштима /moon у овој апликацији потиче из LROC NAC. LOLA (Laser Altimeter) дао је најдетаљнију топографију неког тела Сунчевог система. Diviner је мапирао температуру површине с прецизношћу од 10 K; LAMP је открио распрострањену површинску H₂O све до месечеве зоре; LEND је мапирао проток неутрона у резолуцији <10 km. Од 2026. и даље је у погону у продуженој мисији, без планираног краја радног века — погонско гориво омогућава рад до ~2030. и после тога."
+ },
+ {
+  "rel": "fleet/orbiter/lro.json",
+  "at": "best_known_for",
+  "en": "NASA's active lunar recon orbiter. LROC's 0.5 m/pixel imagery is the source of every Apollo + Luna + Chang'e landing-site photo here",
+  "cur": "NASA-ин активни орбитер за извиђање Месеца. LROC's 0,5 m/пиксел снимци извор су свих фотографија места слетања мисија Apollo, Luna и Chang'e које се овде налазе"
+ },
+ {
+  "rel": "fleet/orbiter/lucy.json",
+  "at": "tagline",
+  "en": "First mission to the Jupiter Trojans",
+  "cur": "Прва мисија до Јупитерових тројанаца"
+ },
+ {
+  "rel": "fleet/orbiter/lucy.json",
+  "at": "description",
+  "en": "NASA's 12-year multi-flyby mission to 6 Jupiter Trojan asteroid systems and 2 main-belt asteroids (11 total encounters including satellites). Three Earth gravity assists shape a single trajectory visiting both the L4 and L5 Trojan clouds. Carries 1003 kg of hydrazine — more propellant than dry mass. Named for the 1974 Australopithecus afarensis fossil, in turn named for the Beatles song — the implication being that Trojans preserve early-solar-system material the way the fossil preserves early-human history.",
+  "cur": "NASA-ина 12-годишња мисија са више пролетања кроз 6 система Јупитеровог Тројанца и 2 астероида у главном појасу (укупно 11 сусрета укључујући сателите). Три гравитациона маневра код Земље формирају једну путању која посећује оба Тројанска облака L4 и L5. Носи 1003 kg хидразина — више горива него суве масе. Названа по фосилу Australopithecus afarensis из 1974. године, који је заузврат назван по песми Битлса — имплицирајући да Тројанци сачувају материјал раног сунчевог система на исти начин на који фосил чува рану људску историју."
+ },
+ {
+  "rel": "fleet/orbiter/lucy.json",
+  "at": "best_known_for",
+  "en": "First mission to the Jupiter Trojans",
+  "cur": "Прва мисија до Јупитерових тројанаца"
+ },
+ {
+  "rel": "fleet/orbiter/luna10.json",
+  "at": "tagline",
+  "en": "First spacecraft to orbit the Moon (or any body other than Earth) — entered lunar orbit 1966-04-03, three years before Apollo 8",
+  "cur": "Прва летелица у орбити око Месеца (и било ког тела осим Земље) — у лунарну орбиту ушла 1966-04-03, три године пре Apollo 8"
+ },
+ {
+  "rel": "fleet/orbiter/luna10.json",
+  "at": "description",
+  "en": "First spacecraft to orbit the Moon — and the first artificial satellite of any body other than Earth. Launched 1966-03-31 from Baikonur on a Molniya rocket, Luna 10 entered lunar orbit 1966-04-03 with a 349 × 1015 km orbit at 71.9° inclination, three years before Apollo 8 reached the Moon with humans aboard. Measured the lunar magnetic field (~3 nT, essentially zero), micrometeoroid flux, gamma-ray emission, ionising radiation, and solar plasma — the gamma-ray data was the first compositional remote sensing of the Moon, suggesting basalt-like mare composition. Famously played the \"Internationale\" anthem during the 23rd Congress of the Soviet Communist Party (1966-04-04). Operated 56 days / 460 orbits before its NiCd batteries depleted. Remains in lunar orbit.",
+  "cur": "Прва летелица која је ушла у орбиту око Месеца — и први вештачки сателит неког тела осим Земље. Luna 10 је лансирана 31. 3. 1966. са Бајконура ракетом Molniya, а 3. 4. 1966. ушла је у месечеву орбиту димензија 349 × 1015 km, са нагибом од 71,9°, три године пре него што је Apollo 8 стигао до Месеца с људском посадом. Мерила је месечево магнетно поље (~3 nT, практично нула), проток микрометеороида, гама-зрачење, јонизујуће зрачење и соларну плазму — подаци о гама-зрачењу били су прво даљинско истраживање састава Месеца и указивали су на састав маре сличан базалту. Чувена је по томе што је емитовала химну „Internationale“ током 23. конгреса Комунистичке партије Совјетског Савеза (4. 4. 1966). Радила је 56 дана / 460 орбита, док јој се нису испразниле NiCd батерије. И даље се налази у месечевој орбити."
+ },
+ {
+  "rel": "fleet/orbiter/luna10.json",
+  "at": "best_known_for",
+  "en": "First spacecraft to orbit the Moon (or any body other than Earth) — entered lunar orbit 1966-04-03, three years before Apollo 8",
+  "cur": "Прва летелица која је ушла у орбиту око Месеца (или било ког другог тела осим Земље) — у месечеву орбиту ушла је 1966-04-03, три године пре Apollo 8"
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-1.json",
+  "at": "tagline",
+  "en": "First US lunar orbiter (1966-08-14); mapped Apollo landing sites and took the first photo of Earth from lunar orbit (1966).",
+  "cur": "Први амерички орбитер Месеца (1966-08-14); мапирао места слетања Apollo и први снимио Земљу из орбите око Месеца (1966)."
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-1.json",
+  "at": "description",
+  "en": "The first US spacecraft to orbit the Moon, four months after Luna 10. Launched 1966-08-10 from Cape Canaveral on an Atlas-Agena D, Lunar Orbiter 1 entered an elliptical lunar orbit on 1966-08-14. Its primary mission was to photograph candidate Apollo landing sites at sub-metre resolution — a 70 mm + 610 mm dual-lens camera system that developed film in-orbit (Bimat process) and scanned it for radio transmission to Earth. Captured the first photograph of Earth from lunar orbit (1966-08-23 — over two years before Apollo 8's more famous Earthrise) as a wide-angle shot taken during the 16th orbit. Returned 207 high-resolution + 207 medium-resolution frames mapping 4.1 million km² of the lunar surface. Deliberately crashed into the lunar far side on 1966-10-29 to clear the radio band for Lunar Orbiter 2.",
+  "cur": "Прва америчка летелица која је ушла у орбиту око Месеца, четири месеца после Luna 10. Lunar Orbiter 1 лансиран је 1966-08-10 са Кејп Канаверала ракетом Atlas-Agena D и 1966-08-14 ушао је у елиптичну орбиту око Месеца. Његов основни задатак био је да фотографише кандидате за места слетања мисије Apollo с резолуцијом мањом од једног метра — помоћу система камера са два објектива, од 70 mm и 610 mm, који је филм развијао у орбити (поступак Bimat) и скенирао га ради слања радио-сигналом ка Земљи. Снимио је прву фотографију Земље из лунарне орбите (1966-08-23 — више од две године пре познатијег снимка изласка Земље који је направио Apollo 8) као широкоугаони кадар начињен током 16. обиласка. Послао је 207 снимака високе и 207 снимака средње резолуције, којима је приказано 4,1 милион km² лунарне површине. Намерно је срушен на удаљену страну Месеца 1966-10-29 како би се радио-опсег ослободио за Lunar Orbiter 2."
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-1.json",
+  "at": "best_known_for",
+  "en": "First US lunar orbiter (1966-08-14). Mapped potential Apollo landing sites; took the first photograph of Earth from lunar orbit — over two years before the famous Apollo 8 Earthrise",
+  "cur": "Први амерички лунарни орбитер (14. 8. 1966). Снимио је потенцијална места слетања мисија Apollo; направио је прву фотографију Земље из лунарне орбите — више од две године пре чувног излаза Земље мисије Apollo 8"
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-2.json",
+  "at": "tagline",
+  "en": "Second US lunar orbiter (1966-11-10). Took the 'Picture of the Century' — oblique view of Copernicus crater at ~45 km altitude",
+  "cur": "Други амерички лунарни орбитер (1966-11-10). Снимио је „Слику века\" — коси поглед на кратер Copernicus са висине од ~45 km"
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-2.json",
+  "at": "description",
+  "en": "Second of the five Lunar Orbiter spacecraft. Launched 1966-11-06 from Cape Canaveral, entered lunar orbit 1966-11-10. Mapped 13 sites in the equatorial Apollo zone. On 1966-11-24, Frame 162 captured an oblique view of the 93-km Copernicus crater from 45.8 km altitude looking north — a never-before-seen Earth-style mountain landscape on another world. Newspapers called it the 'Picture of the Century'. The photo's release became a turning point in public engagement with lunar exploration. Returned 422 frames total across 33 days of imaging. Deliberately impacted 1967-10-11 at 4° S, 98° E (lunar far side) to prevent radio-frequency interference with Lunar Orbiter 5.",
+  "cur": "Друга од пет летелица програма Lunar Orbiter. Лансирана је 1966-11-06 са Кејп Канаверала, а у орбиту око Месеца ушла је 1966-11-10. Снимила је 13 локација у екваторијалној зони Apollo. Дана 1966-11-24 кадар 162 забележио је коси поглед на кратер Copernicus пречника 93 km, са висине од 45,8 km, у правцу севера — до тада невиђен планински предео налик земаљском, на другом свету. Новине су га назвале „Сликом века“. Објава те фотографије постала је прекретница у интересовању јавности за истраживање Месеца. Укупно је послала 422 кадра током 33 дана снимања. Намерно је срушена 1967-10-11 на 4° ј. ш., 98° и. д. (далека страна Месеца) како би се спречиле радиофреквенцијске сметње са летелицом Lunar Orbiter 5."
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-2.json",
+  "at": "best_known_for",
+  "en": "Second US lunar orbiter (1966-11-10). Took the 'Picture of the Century' — oblique view of Copernicus crater at ~45 km altitude",
+  "cur": "Други амерички лунарни орбитер (1966-11-10). Снимио је „Слику века\" — коси поглед на кратер Copernicus са висине од ~45 km"
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-3.json",
+  "at": "tagline",
+  "en": "Third US lunar orbiter (1967-02-08). Photographed Surveyor 1 sitting on the lunar surface — first photo of a spacecraft on another world",
+  "cur": "Трећи амерички лунарни орбитер (1967-02-08). Снимио Surveyor 1 на површини Месеца — прва фотографија летелице на другом свету"
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-3.json",
+  "at": "description",
+  "en": "Third of the five Lunar Orbiter spacecraft. Launched 1967-02-04 from Cape Canaveral, entered lunar orbit 1967-02-08. Continued the Apollo site-mapping campaign with 477 frames across 30 days, including a celebrated 1967-02-22 photograph that resolved the 3-metre Surveyor 1 lander sitting on the Oceanus Procellarum surface — the first photograph of one spacecraft taken by another at another world. Mid-mission failure of the camera's film-transport system curtailed the imaging campaign on 1967-03-04. Continued to operate as an Apollo-tracking beacon for navigation tests. Deliberately impacted 1967-10-09 at 14.6° N, 91.7° W.",
+  "cur": "Трећа од пет летелица програма Lunar Orbiter. Лансирана је 4. 2. 1967. са Кејп Канаверала, а у лунарну орбиту ушла је 8. 2. 1967. Наставила је кампању снимања локација за Apollo са 477 кадрова током 30 дана, укључујући чувену фотографију од 22. 2. 1967. на којој се разазнаје лендер Surveyor 1 од 3 метра на површини Океана олуја — прву фотографију једне свемирске летелице коју је начинила друга летелица на другом свету. Квар система за померање филма у камери усред мисије прекинуо је кампању снимања 4. 3. 1967. Летелица је и даље радила као светионик за праћење Apollo летелица при навигационим пробама. Намерно је ударила у Месец 9. 10. 1967. на 14,6° северне ширине и 91,7° западне дужине."
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-3.json",
+  "at": "best_known_for",
+  "en": "Third US lunar orbiter (1967-02-08). Photographed Surveyor 1 sitting on the lunar surface — first photo of a spacecraft on another world",
+  "cur": "Трећи амерички лунарни орбитер (8. 2. 1967). Фотографисао је Surveyor 1 на површини Месеца — прва фотографија свемирске летелице на другом свету"
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-4.json",
+  "at": "tagline",
+  "en": "Fourth US lunar orbiter (1967-05-08). First polar lunar orbit; mapped 99 % of the near side at 60 m/pixel + far-side regions",
+  "cur": "Четврти амерички орбитер Месеца (1967-05-08). Прва поларна орбита; мапирано 99 % ближе стране на 60 m/пиксел + делови далеке стране"
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-4.json",
+  "at": "description",
+  "en": "Fourth of the five Lunar Orbiter spacecraft, and the first to fly a high-inclination polar lunar orbit. Launched 1967-05-04 from Cape Canaveral, entered a 6111 × 2706 km polar orbit on 1967-05-08. Mission redirected from Apollo site-selection (the first three Orbiters had already done that job) to broad scientific mapping. Returned 419 frames covering 99 % of the lunar near side at 60 m/pixel resolution plus the first detailed imaging of significant far-side regions. The frames remain the highest-resolution coverage of the lunar near side at this scale until the modern LRO era. Impact in October 1967 at 22-30° W on the far side after the radio failed.",
+  "cur": "Четврта од пет летелица програма Lunar Orbiter и прва која је летела високонагнутом поларном лунарном орбитом. Лансирана 4. 5. 1967. са Кејп Канаверала, а 8. 5. 1967. ушла је у поларну орбиту од 6111 × 2706 km. Мисија је преусмерена са избора места за слетање Apollo (тај посао су већ обавиле прве три летелице Orbiter) на широко научно картирање. Послала је 419 снимака који покривају 99 % видљиве стране Месеца у резолуцији од 60 m по пикселу, као и прве детаљне снимке значајних области са наличја. Ови снимци остају покривеност видљиве стране Месеца највише резолуције у овој размери све до модерне ере LRO. Пала је на Месец у октобру 1967. на 22–30° западно на наличју, након квара радио-везе."
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-4.json",
+  "at": "best_known_for",
+  "en": "Fourth US lunar orbiter (1967-05-08). First polar lunar orbit; mapped 99 % of the near side at 60 m/pixel + far-side regions",
+  "cur": "Четврти амерички лунарни орбитер (1967-05-08). Прва поларна лунарна орбита; мапирано 99 % видљиве стране Месеца са 60 m по пикселу + области на његовој удаљеној страни"
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-5.json",
+  "at": "tagline",
+  "en": "Final US lunar orbiter (1967-08-05). Completed far-side mapping at 60 m/pixel; impacted 1968-01-31 ahead of Apollo lunar operations",
+  "cur": "Последњи амерички орбитер Месеца (1967-08-05). Завршио мапирање далеке стране (60 m/пиксел); срушио се 1968-01-31, пре операција Apollo"
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-5.json",
+  "at": "description",
+  "en": "Fifth and final Lunar Orbiter spacecraft. Launched 1967-08-01 from Cape Canaveral, entered polar lunar orbit 1967-08-05. Returned 633 frames in 35 days — closing out the Lunar Orbiter programme's near-complete coverage of both lunar hemispheres at high resolution. Imaged 36 high-priority science targets selected from gaps in the earlier Orbiters' coverage and from Surveyor / Apollo landing-site needs. After the 1968-01 end-of-mission decision, deliberately crashed 1968-01-31 at 2.79° S, 83.04° W to clear lunar orbital space ahead of Apollo. The five Orbiters together photographed 99 % of the Moon at 60 m/pixel — until LRO began its 0.5 m/pixel LROC NAC programme in 2009, this was the highest-resolution global lunar map ever made.",
+  "cur": "Пета и последња летелица програма Lunar Orbiter. Лансирана 1967-08-01 са Кејп Канаверала, ушла је у поларну лунарну орбиту 1967-08-05. За 35 дана вратила је 633 кадра — чиме је програм Lunar Orbiter окончао готово потпуно снимање обе хемисфере Месеца у високој резолуцији. Снимила је 36 научних циљева високог приоритета, одабраних међу празнинама у покривености претходних Orbiter-а и према потребама за слетним местима програма Surveyor и Apollo. Након одлуке о завршетку мисије у јануару 1968. намерно је срушена 1968-01-31 на 2,79° S, 83,04° W, како би се ослободио лунарни орбитални простор пред мисије Apollo. Свих пет Orbiter-а заједно снимило је 99 % Месеца са 60 m/пиксел — све док LRO није 2009. започео свој програм LROC NAC са 0,5 m/пиксел, то је била глобална мапа Месеца највише резолуције икада направљена."
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-5.json",
+  "at": "best_known_for",
+  "en": "Final US lunar orbiter (1967-08-05). Completed far-side mapping at 60 m/pixel; impacted 1968-01-31 ahead of Apollo lunar operations",
+  "cur": "Последњи амерички лунарни орбитер (1967-08-05). Завршио је мапирање далеке стране Месеца са 60 m/пикселу; срушио се на Месец 1968-01-31, пре лунарних операција програма Apollo"
+ },
+ {
+  "rel": "fleet/orbiter/lunar-prospector.json",
+  "at": "tagline",
+  "en": "NASA Discovery polar orbiter — neutron-spectrometer hydrogen finding at both poles 1998; deliberate Shackleton impact ended mission 1999",
+  "cur": "NASA-ин Discovery поларни орбитер — неутронски спектрометар открио водоник на оба пола 1998; намеран удар у Shackleton окончао мисију 1999."
+ },
+ {
+  "rel": "fleet/orbiter/lunar-prospector.json",
+  "at": "best_known_for",
+  "en": "NASA Discovery polar orbiter — neutron-spectrometer hydrogen finding at both poles 1998; deliberate Shackleton impact ended mission 1999",
+  "cur": "NASA-ин поларни орбитер из програма Discovery — налаз водоника на оба пола 1998. помоћу неутронског спектрометра; намерни удар у Shackleton окончао мисију 1999."
+ },
+ {
+  "rel": "fleet/orbiter/lunar-prospector.json",
+  "at": "description",
+  "en": "The third NASA Discovery-class mission (and the first competitively selected) and the first dedicated NASA science mission to the Moon since Explorer 49 (1973). Launched 1998-01-07 on an Athena II from Cape Canaveral, Lunar Prospector entered a 100-km circular polar orbit. Its neutron spectrometer detected sharp neutron-flux deficits over both lunar poles (Feldman et al., 1998 / 1999) — consistent with ~2 × 10⁹ tonnes of hydrogen-rich material (most plausibly water ice) in permanently shadowed polar craters. The gravimeter, magnetometer, gamma-ray and alpha-particle spectrometers also delivered global maps of crustal composition and remnant magnetism. End of mission 1999-07-31: deliberately impacted near Shackleton crater hoping to release a detectable water-vapour plume; none was seen (the lithium-7 fluorescence experiment that would have detected it was a long shot). The hydrogen finding stood until LCROSS (2009) and Chandrayaan-1 / M3 (2009) provided independent confirmation.",
+  "cur": "Трећа мисија програма NASA-ине класе Discovery (и прва изабрана конкурсом) и прва наменска NASA-ина научна мисија ка Месецу од Explorer 49 (1973). Lunar Prospector је лансиран 1998-01-07 ракетом Athena II са Кејп Канаверала и ушао је у кружну поларну орбиту на висини од 100 km. Његов неутронски спектрометар открио је нагле мањкове флукса неутрона изнад оба лунарна пола (Feldman et al., 1998 / 1999) — у складу са ~2 × 10⁹ тона материјала богатог водоником (највероватније воденог леда) у трајно осенченим поларним кратерима. Гравиметар, магнетометар, гама-спектрометар и спектрометар алфа-честица такође су дали глобалне карте састава коре и заосталог магнетизма. Крај мисије 1999-07-31: намерно је ударио у близини кратера Shackleton у нади да ће ослободити облак водене паре који би се могао открити; ништа није примећено (експеримент флуоресценције литијума-7 који би га открио био је мала шанса). Налаз водоника остао је на снази све док LCROSS (2009) и Chandrayaan-1 / M3 (2009) нису пружили независну потврду."
+ },
+ {
+  "rel": "fleet/orbiter/magellan.json",
+  "at": "tagline",
+  "en": "Radar-mapped 98% of Venus's surface",
+  "cur": "Радаром снимио 98% површине Венере"
+ },
+ {
+  "rel": "fleet/orbiter/magellan.json",
+  "at": "description",
+  "en": "Magellan is a deep-space orbiter built by Martin Marietta in USA. Radar-mapped 98% of Venus's surface. Retired after first flight in 1989.",
+  "cur": "Magellan је орбитер за далеки свемир који је направила компанија Martin Marietta у САД. Радаром је снимио 98% површине Венере. Повучен је из употребе након првог лета 1989. године."
+ },
+ {
+  "rel": "fleet/orbiter/magellan.json",
+  "at": "best_known_for",
+  "en": "Radar-mapped 98% of Venus's surface",
+  "cur": "Радаром снимио 98% површине Венере"
+ },
+ {
+  "rel": "fleet/orbiter/mangalyaan.json",
+  "at": "tagline",
+  "en": "First Asian Mars mission; first successful try",
+  "cur": "Прва азијска мисија на Марс; први успешан покушај"
+ },
+ {
+  "rel": "fleet/orbiter/mangalyaan.json",
+  "at": "description",
+  "en": "India’s first interplanetary mission and the first successful Mars mission by an Asian space agency. Delivered an orbiter to Mars on its first attempt — a feat no other national space agency had managed (ESA, a multi-national organization, succeeded on its first Mars attempt with Mars Express in 2003). Operated for nearly eight years before contact was lost in 2022.",
+  "cur": "Прва међупланетарна мисија Индије и прва успешна мисија на Марс коју је извела нека азијска свемирска агенција. Орбитер је до Марса доспео већ при првом покушају — подвиг који није успео ниједној другој националној свемирској агенцији (ESA, вишенационална организација, успела је при првом покушају на Марсу са мисијом Mars Express 2003. године). Радио је скоро осам година, све док 2022. није изгубљена веза с њим."
+ },
+ {
+  "rel": "fleet/orbiter/mangalyaan.json",
+  "at": "best_known_for",
+  "en": "First Asian Mars mission; first successful try",
+  "cur": "Прва азијска мисија на Марс; први успешан покушај"
+ },
+ {
+  "rel": "fleet/orbiter/mariner-4.json",
+  "at": "tagline",
+  "en": "First successful Mars flyby",
+  "cur": "Први успешан прелет поред Марса"
+ },
+ {
+  "rel": "fleet/orbiter/mariner-4.json",
+  "at": "dispatch",
+  "en": "Mariner 4 did what no machine had done: it photographed another planet. Small and spare, built to fly past Mars once and send home whatever it could in the hours it had, it carried a camera and a tape recorder across the solar system and in July 1965 returned the first close-up pictures ever taken of another world — 22 grainy frames of a cratered, moon-like surface. Those images ended a century of speculation about Martian canals and civilisations in a single afternoon, and proved a spacecraft could cross interplanetary space and bring back a planet’s face. Every camera humanity has since sent to another world descends from this one.",
+  "cur": "Mariner 4 је учинио оно што ниједна машина пре њега није: фотографисао је другу планету. Мала и скромно опремљена, грађена да једном прелети поред Марса и пошаље кући све што стигне у часовима којима је располагала, носила је камеру и магнетофон кроз Сунчев систем и у јулу 1965. вратила прве снимке изблиза икада направљене на неком другом свету — 22 зрнаста кадра кратерисане површине налик на месечеву. Те слике су у једном поподневу окончале читав век нагађања о марсовским каналима и цивилизацијама и доказале да свемирска летелица може да пређе међупланетарни простор и донесе лик једне планете. Свака камера коју је човечанство од тада послало на неки други свет води порекло од ове."
+ },
+ {
+  "rel": "fleet/orbiter/mariner-4.json",
+  "at": "description",
+  "en": "The first successful Mars flyby — July 1965. The 22 grainy black-and-white photos returned ended over a century of speculation about Martian canals and life by showing a cratered, Moon-like surface.",
+  "cur": "Први успешан прелет поред Марса — јул 1965. The 22 зрнаста црно-бела снимка, послата на Земљу, окончала су више од века нагађања о марсовским каналима и животу, показавши површину прекривену кратерима, налик Месецу."
+ },
+ {
+  "rel": "fleet/orbiter/mariner-4.json",
+  "at": "best_known_for",
+  "en": "First successful Mars flyby",
+  "cur": "Први успешан прелет поред Марса"
+ },
+ {
+  "rel": "fleet/orbiter/mariner-9.json",
+  "at": "tagline",
+  "en": "First spacecraft to orbit another planet",
+  "cur": "Прва свемирска летелица која је орбитирала око друге планете"
+ },
+ {
+  "rel": "fleet/orbiter/mariner-9.json",
+  "at": "dispatch",
+  "en": "Mariner 9 was the first machine to stop at another planet instead of flying past. Where the earlier Mariners glimpsed Mars in a few hours, it carried enough fuel to brake into orbit and stay — and it arrived to find the whole planet buried under a global dust storm. So it waited. When the dust settled it mapped all of Mars, and the survey revealed a world the flybys had missed entirely: the largest volcano in the solar system, a canyon a continent wide, and the dry channels of ancient rivers. It proved that an orbiter patient enough to watch a planet over time sees what no flyby ever can.",
+  "cur": "Mariner 9 је била прва машина која се зауставила код друге планете уместо да само прелети поред ње. Док су ранији Mariner-и Марс само начас запазили током неколико сати, она је носила довољно горива да се закочи у орбиту и остане — а стигла је и затекла целу планету затрпану глобалном прашинском олујом. Зато је чекала. Када се прашина слегла, мапирала је цео Марс, а снимање је открило свет који прелети нису ни наслутили: највећи вулкан у Сунчевом систему, кањон широк колико један континент и суве токове древних река. Доказала је да орбитер који има довољно стрпљења да током времена посматра једну планету види оно што ниједан прелет никада не може."
+ },
+ {
+  "rel": "fleet/orbiter/mariner-9.json",
+  "at": "description",
+  "en": "The first spacecraft to orbit another planet (Mars, November 1971). Mapped 100% of the Martian surface — including the global dust storm that hid everything for the first month and the first close-up of Olympus Mons.",
+  "cur": "Прва летелица која је орбитирала другу планету (Марс, новембар 1971). Мапирала је 100% марсовске површине — укључујући глобалну прашну олују која је све сакривала прве месеце и први приближен поглед Олимпус Монса."
+ },
+ {
+  "rel": "fleet/orbiter/mariner-9.json",
+  "at": "best_known_for",
+  "en": "First spacecraft to orbit another planet",
+  "cur": "Прва свемирска летелица која је орбитирала око друге планете"
+ },
+ {
+  "rel": "fleet/orbiter/mars-express.json",
+  "at": "tagline",
+  "en": "ESA's first and only Mars orbiter; Europe's first planetary mission",
+  "cur": "Први и једини ESA-ин орбитер Марса; прва европска планетарна мисија"
+ },
+ {
+  "rel": "fleet/orbiter/mars-express.json",
+  "at": "description",
+  "en": "Mars Express is a deep-space orbiter built by EADS Astrium in Multi (Europe). ESA's first and only Mars orbiter; Europe's first planetary mission. In service since 2003.",
+  "cur": "Mars Express је орбитер за далеки свемир који је направила компанија EADS Astrium у Multi (Европа). Први и једини ESA-ин орбитер Марса; прва европска планетарна мисија. У служби од 2003."
+ },
+ {
+  "rel": "fleet/orbiter/mars-express.json",
+  "at": "best_known_for",
+  "en": "ESA's first and only Mars orbiter; Europe's first planetary mission",
+  "cur": "Први и једини ESA-ин орбитер Марса; прва европска планетарна мисија"
+ },
+ {
+  "rel": "fleet/orbiter/mars-odyssey.json",
+  "at": "tagline",
+  "en": "Longest-lived Mars asset ever — orbiting since 2001-10-24. Gamma-ray + neutron water-ice maps; UHF relay for the surface fleet",
+  "cur": "Најдуговечнија летелица на Марсу — у орбити од 2001-10-24. Мапе воденог леда (гама-зраци и неутрони); UHF релеј за флоту на површини"
+ },
+ {
+  "rel": "fleet/orbiter/mars-odyssey.json",
+  "at": "description",
+  "en": "The longest-lived spacecraft ever to operate at Mars — entered Mars orbit 2001-10-24 and is still active in 2026, surpassing every other Mars mission's lifetime. Launched 2001-04-07 on a Delta II from Cape Canaveral, named after Arthur C. Clarke's '2001: A Space Odyssey'. Carried THEMIS (Thermal Emission Imaging System, 100-m visible / 100-m infrared imaging that mapped global surface mineralogy) and the gamma-ray spectrometer suite GRS + HEND + NS — Boynton et al. (2002, Science 297) used HEND neutron spectroscopy to map global near-surface water ice, the discovery that drove every subsequent lander-mission target selection. Also serves as the primary UHF relay for Mars-surface assets (MERs, MSL, InSight, Perseverance) and a backup for Mars Reconnaissance Orbiter. Extended-mission fuel reserves expected to last to 2026-2027.",
+  "cur": "Најдуговечнија летелица која је икада радила на Марсу — ушла је у орбиту Марса 2001-10-24 и још је активна 2026. године, чиме је надмашила животни век сваке друге мисије на Марс. Лансирана је 2001-04-07 ракетом Delta II са Кејп Канаверала, а име је добила по роману „2001: Одисеја у свемиру“ Артура Ч. Кларка. Носила је THEMIS (Thermal Emission Imaging System, снимање у видљивом и инфрацрвеном спектру са резолуцијом од 100 m, којим је мапирана глобална минералогија површине) и комплет гама-спектрометара GRS + HEND + NS — Boynton и сарадници (2002, Science 297) искористили су HEND неутронску спектроскопију да мапирају глобалне залихе воденог леда близу површине, а то откриће одредило је избор циља за сваку потоњу мисију слетања. Поред тога служи као примарни UHF релеј за летелице на површини Марса (ровери за истраживање Марса, MSL, InSight, Perseverance) и као резерва за Mars Reconnaissance Orbiter. Очекује се да ће резерве горива за продужену мисију трајати до 2026–2027."
+ },
+ {
+  "rel": "fleet/orbiter/mars-odyssey.json",
+  "at": "best_known_for",
+  "en": "Longest-lived Mars asset ever — orbiting since 2001-10-24. Gamma-ray + neutron water-ice maps; UHF relay for the surface fleet",
+  "cur": "Најдуговечнија летелица у орбити Марса икада — у орбити од 2001-10-24. Мапе воденог леда добијене гама-зрацима и неутронима; UHF релеј за површинску флоту"
+ },
+ {
+  "rel": "fleet/orbiter/mars2-orbiter.json",
+  "at": "tagline",
+  "en": "Soviet companion orbiter to Mars 2 — second spacecraft ever in Mars orbit (after Mariner 9 by 13 days). Operated 1971-11-27 to 1972-08",
+  "cur": "Совјетски пратећи орбитер сонде Mars 2 — друга летелица икада у орбити Марса (13 дана после Mariner 9). Радио од 1971-11-27 до 1972-08"
+ },
+ {
+  "rel": "fleet/orbiter/mars2-orbiter.json",
+  "at": "description",
+  "en": "The orbital half of the Soviet Mars 2 mission. Launched 1971-05-19 on a Proton-K from Baikonur, Mars 2 reached Mars 1971-11-27 — just 13 days after Mariner 9 became the first Mars orbiter. Its lander attempted descent on 1971-11-27 but its parachute failed to deploy and the lander crashed (the first man-made object on Mars, but no telemetry). The orbiter half was much more successful, returning ~60 image frames + extensive measurements of the upper atmosphere, magnetic field, and surface temperatures during the same global dust storm that compromised Mariner 9's early imaging. Carried infrared and ultraviolet spectrometers, photometers, a Lyman-alpha sensor, magnetometer, plasma analyser, and cosmic-ray detectors — the same instrument suite as Mars 3 Orbiter. End of mission 1972-08-22 after 362 orbits.",
+  "cur": "Орбитални део совјетске мисије Mars 2. Лансиран 1971-05-19 ракетом Proton-K са космодрома Бајконур, Mars 2 је стигао до Марса 1971-11-27 — само 13 дана након што је Mariner 9 постао први орбитер око Марса. Његов спустни модул покушао је спуштање 1971-11-27, али се падобран није отворио и модул се срушио (први вештачки објекат на Марсу, али без телеметрије). Орбитални део био је знатно успешнији: послао је око 60 снимака и опсежна мерења горње атмосфере, магнетног поља и температура површине током исте глобалне прашинске олује која је отежала први снимање летелице Mariner 9. Носио је инфрацрвени и ултраљубичасти спектрометар, фотометре, сензор Lyman-alpha, магнетометар, анализатор плазме и детекторе космичких зрака — исти скуп инструмената као Mars 3 Orbiter. Крај мисије 1972-08-22, након 362 орбите."
+ },
+ {
+  "rel": "fleet/orbiter/mars2-orbiter.json",
+  "at": "best_known_for",
+  "en": "Soviet companion orbiter to Mars 2 — second spacecraft ever in Mars orbit (after Mariner 9 by 13 days). Operated 1971-11-27 to 1972-08",
+  "cur": "Совјетски орбитер-пратилац летелице Mars 2 — друга летелица икада у орбити око Марса (13 дана после летелице Mariner 9). У раду од 1971-11-27 до 1972-08."
+ },
+ {
+  "rel": "fleet/orbiter/mars3-orbiter.json",
+  "at": "tagline",
+  "en": "Soviet companion orbiter to Mars 3 — orbited Mars from 1971-12-02 through 1972-08; first measurements of Mars upper atmosphere temperature",
+  "cur": "Совјетски пратећи орбитер сонде Mars 3 — кружио око Марса од 1971-12-02 до 1972-08; прва мерења температуре горње атмосфере Марса"
+ },
+ {
+  "rel": "fleet/orbiter/mars3-orbiter.json",
+  "at": "description",
+  "en": "The orbital half of the Soviet Mars 3 mission (its lander made the first soft landing on Mars 1971-12-02 but only transmitted for 14.5 seconds before signal loss in a global dust storm). The orbiter was much more successful — entered a highly elliptical 1500 × 211400 km Mars orbit on 1971-12-02, the third spacecraft ever to orbit Mars (after Mariner 9 on 1971-11-14 and Mars 2 Orbiter on 1971-11-27). Carried infrared and ultraviolet spectrometers, photometers, a Lyman-alpha sensor, magnetometer, plasma analyser, and cosmic-ray detectors. Returned the first measurements of the upper atmosphere temperature profile, mapped surface temperatures (peak +13 °C, lowest -93 °C), and confirmed atmospheric water vapour. Returned approximately 60 image-frames; image quality was compromised by Mars' global dust storm that was already in progress when the orbiter arrived. End of mission 1972-08-22.",
+  "cur": "Орбитална половина совјетске мисије Mars 3 (њен лендер је 2. 12. 1971. извео прво меко слетање на Марс, али је емитовао свега 14,5 секунди пре губитка сигнала у глобалној прашинској олуји). Орбитер је био далеко успешнији — 2. 12. 1971. ушао је у високоеластичну марсовску орбиту димензија 1.500 × 211.400 km, као трећа летелица која је икада орбитирала око Марса (после Mariner 9 14. 11. 1971. и Mars 2 Orbiter 27. 11. 1971). Носио је инфрацрвени и ултраљубичасти спектрометар, фотометре, сензор Lyman-alpha, магнетометар, анализатор плазме и детекторе космичког зрачења. Доставио је прва мерења температурног профила горње атмосфере, начинио карту температура површине (највише +13 °C, најниже -93 °C) и потврдио присуство водене паре у атмосфери. Послао је приближно 60 снимака; квалитет слика био је умањен глобалном прашинском олујом на Марсу, која је већ беснела када је орбитер стигао. Крај мисије: 22. 8. 1972."
+ },
+ {
+  "rel": "fleet/orbiter/mars3-orbiter.json",
+  "at": "best_known_for",
+  "en": "Soviet companion orbiter to Mars 3 — orbited Mars from 1971-12-02 through 1972-08; first measurements of Mars upper atmosphere temperature",
+  "cur": "Совјетски пратећи орбитер мисије Mars 3 — орбитирао је око Марса од 2. 12. 1971. до августа 1972; прва мерења температуре у горњој атмосфери Марса"
+ },
+ {
+  "rel": "fleet/orbiter/maven.json",
+  "at": "tagline",
+  "en": "Mars atmospheric loss to solar wind",
+  "cur": "Губитак марсовске атмосфере под дејством Сунчевог ветра"
+ },
+ {
+  "rel": "fleet/orbiter/maven.json",
+  "at": "description",
+  "en": "NASA's atmospheric orbiter at Mars — Mars Atmosphere and Volatile EvolutioN. In Mars orbit since 2014, studying how the planet lost its early thick atmosphere to solar wind erosion over billions of years.",
+  "cur": "NASA-ин атмосферски орбитер на Марсу — Mars Atmosphere and Volatile EvolutioN. У орбити око Марса налази се од 2014. године и проучава како је планета током милијарди година изгубила своју ранију густу атмосферу услед ерозије коју изазива Сунчев ветар."
+ },
+ {
+  "rel": "fleet/orbiter/maven.json",
+  "at": "best_known_for",
+  "en": "Studying Mars atmospheric loss to solar wind; revealed Mars lost its atmosphere over billions of years",
+  "cur": "Проучава губитак марсовске атмосфере под дејством Сунчевог ветра; открио је да је Марс током милијарди година изгубио своју атмосферу"
+ },
+ {
+  "rel": "fleet/orbiter/messenger.json",
+  "at": "tagline",
+  "en": "First Mercury orbiter — 6 planetary gravity assists over 6.6 years to bleed energy before insertion in 2011",
+  "cur": "Први орбитер око Меркура — 6 планетарних гравитационих потпомагања током 6,6 година за одузимање енергије пре уласка у орбиту 2011."
+ },
+ {
+  "rel": "fleet/orbiter/messenger.json",
+  "at": "description",
+  "en": "NASA Discovery-class MErcury Surface, Space ENvironment, GEochemistry, and Ranging mission. Launched 2004-08-03 on a Delta II 7925H-9.5. The 6.6-year cruise used 6 gravity assists (1 Earth, 2 Venus, 3 Mercury) to lose ~5 km/s of heliocentric energy — direct orbit insertion would have needed impossible delta-v. Mercury orbit insertion 2011-03-18; mapped the planet for 4 years. Discoveries: water ice in permanently shadowed polar craters, organic-rich dark material at the poles, exosphere composition, a magnetic field offset from the planet centre, abundant hollow-bottomed pits. Impacted Mercury 2015-04-30 after exhausting propellant — left a 16 m artificial crater near the north pole.",
+  "cur": "NASA-ина мисија класе Discovery MErcury Surface, Space ENvironment, GEochemistry, and Ranging. Лансирана 2004-08-03 ракетом Delta II 7925H-9.5. Током 6,6 година дугог крстарења искоришћено је 6 гравитационих праћака (1 код Земље, 2 код Венере, 3 код Меркура) да би се изгубило ~5 km/s хелиоцентричне енергије — за директно убацивање у орбиту било би потребно немогуће delta-v. Убацивање у орбиту око Меркура 2011-03-18; планета је картографисана четири године. Открића: водени лед у трајно засењеним поларним кратерима, тамни материјал богат органским једињењима на половима, састав егзосфере, магнетно поље померено у односу на центар планете, мноштво удубљења шупљег дна. Удар у Меркур 2015-04-30, након потрошње погонског горива — оставила је вештачки кратер од 16 m близу северног пола."
+ },
+ {
+  "rel": "fleet/orbiter/messenger.json",
+  "at": "best_known_for",
+  "en": "First Mercury orbiter — 4 years mapping the planet, ended in controlled impact 2015-04-30",
+  "cur": "Први орбитер око Меркура — 4 године картографисања планете, окончано контролисаним ударом 30. априла 2015. године"
+ },
+ {
+  "rel": "fleet/orbiter/mro.json",
+  "at": "name",
+  "en": "Mars Reconnaissance Orbiter",
+  "cur": "Mars Reconnaissance Orbiter"
+ },
+ {
+  "rel": "fleet/orbiter/mro.json",
+  "at": "tagline",
+  "en": "Highest-resolution Mars imaging from orbit",
+  "cur": "Снимање Марса из орбите у највећој резолуцији"
+ },
+ {
+  "rel": "fleet/orbiter/mro.json",
+  "at": "description",
+  "en": "Mars Reconnaissance Orbiter is a deep-space orbiter built by Lockheed Martin in USA. Highest-resolution Mars imaging from orbit. In service since 2005.",
+  "cur": "Mars Reconnaissance Orbiter је орбитер за далеки свемир који је направио Lockheed Martin у САД. Снимање Марса из орбите у највећој резолуцији. У служби од 2005."
+ },
+ {
+  "rel": "fleet/orbiter/mro.json",
+  "at": "best_known_for",
+  "en": "Highest-resolution Mars imaging from orbit",
+  "cur": "Снимање Марса из орбите у највећој резолуцији"
+ },
+ {
+  "rel": "fleet/orbiter/osiris-rex.json",
+  "at": "tagline",
+  "en": "Sample-returned Bennu (2023); now en route to Apophis",
+  "cur": "Донео узорак са Бену (2023); сада на путу ка Апофису"
+ },
+ {
+  "rel": "fleet/orbiter/osiris-rex.json",
+  "at": "description",
+  "en": "NASA’s asteroid sample-return mission. Approached asteroid Bennu in 2018, captured a sample with its TAGSAM arm in 2020, and returned the sample capsule to Utah in September 2023. Now redesignated OSIRIS-APEX, en route to asteroid Apophis for its 2029 close Earth flyby.",
+  "cur": "NASA-ина мисија повратка узорка са астероида. Приближила се астероиду Бену 2018. године, 2020. је својом роботском руком TAGSAM узела узорак и у септембру 2023. вратила капсулу са узорком у Јуту. Сада је преименована у OSIRIS-APEX и налази се на путу ка астероиду Апофис, због његовог блиског прелета поред Земље 2029. године."
+ },
+ {
+  "rel": "fleet/orbiter/osiris-rex.json",
+  "at": "best_known_for",
+  "en": "Sample-returned Bennu (2023); now en route to Apophis",
+  "cur": "Донео узорак са Бену (2023); сада на путу ка Апофису"
+ },
+ {
+  "rel": "fleet/orbiter/parker-solar-probe.json",
+  "at": "tagline",
+  "en": "Closest spacecraft to the Sun ever flown",
+  "cur": "Најближа Сунцу летелица икад послата"
+ },
+ {
+  "rel": "fleet/orbiter/parker-solar-probe.json",
+  "at": "description",
+  "en": "NASA's Sun-grazing mission. Launched 2018-08-12 on a Delta IV Heavy + Star 48BV stack at the highest C3 ever achieved for a science payload (154 km²/s²). Seven Venus gravity assists over six years walked perihelion in from 0.16 AU (P1) to 0.046 AU (P22, 2024-12-24) — 9.86 solar radii, 6.1 million km from the Sun's surface. At P8 (2021-04-28) Parker dipped below the Alfvén critical surface — the first spacecraft to enter the Sun's corona. Peak speed at perihelion: 192.22 km/s, the fastest human-made object ever.",
+  "cur": "NASA-ина мисија која залази у непосредну близину Сунца. Лансирана 2018-08-12 ракетом Delta IV Heavy са горњим степеном Star 48BV, при највећем C3 икада постигнутом за научни терет (154 km²/s²). Седам гравитационих потпомагања поред Венере током шест година померало је перихел од 0,16 AU (P1) до 0,046 AU (P22, 2024-12-24) — 9,86 Сунчевих полупречника, 6,1 милион km од површине Сунца. При P8 (2021-04-28) Parker је заронио испод Alfvén-ове критичне површи — прва летелица која је ушла у Сунчеву корону. Највећа брзина у перихелу: 192,22 km/s, што је најбржи објекат који је човек икада направио."
+ },
+ {
+  "rel": "fleet/orbiter/parker-solar-probe.json",
+  "at": "best_known_for",
+  "en": "Closest spacecraft to the Sun ever flown (9.86 R☉)",
+  "cur": "Најближа Сунцу летелица икад послата (9,86 R☉)"
+ },
+ {
+  "rel": "fleet/orbiter/phobos-2.json",
+  "at": "tagline",
+  "en": "Last Soviet planetary mission; lost at Phobos approach",
+  "cur": "Последња совјетска планетарна мисија; изгубљена при приласку Фобосу"
+ },
+ {
+  "rel": "fleet/orbiter/phobos-2.json",
+  "at": "description",
+  "en": "The last Soviet planetary mission. Reached Mars orbit in January 1989 but lost contact with Earth on March 27, 1989, just before its planned encounter with the moon Phobos. Phobos 2 returned 37 images of Phobos before contact was lost. The loss was attributed to an on-board computer failure causing loss of attitude control and power, though the complete sequence was never fully reconstructed.",
+  "cur": "Последња совјетска планетарна мисија. Стигла је у орбиту Марса јануара 1989. године, али је 27. марта 1989. изгубила везу са Земљом, непосредно пре планираног сусрета са месецом Фобос. Phobos 2 је пре губитка везе послао 37 снимака Фобоса. Губитак је приписан квару бродског рачунара, који је изазвао губитак контроле оријентације и напајања, мада читав след догађаја никада није у потпуности реконструисан."
+ },
+ {
+  "rel": "fleet/orbiter/phobos-2.json",
+  "at": "best_known_for",
+  "en": "Last Soviet planetary mission; lost at Phobos approach",
+  "cur": "Последња совјетска планетарна мисија; изгубљена при приласку Фобосу"
+ },
+ {
+  "rel": "fleet/orbiter/pioneer-10.json",
+  "at": "tagline",
+  "en": "First spacecraft to traverse the asteroid belt",
+  "cur": "Прва свемирска летелица која је прошла кроз појас астероида"
+ },
+ {
+  "rel": "fleet/orbiter/pioneer-10.json",
+  "at": "description",
+  "en": "The first spacecraft to traverse the asteroid belt and the first to fly past Jupiter (December 1973). Carried the Pioneer plaque — the etched gold-anodized aluminium drawing of human figures + solar system that Carl Sagan and Frank Drake designed in three weeks.",
+  "cur": "Прва свемирска летелица која је прошла кроз појас астероида и прва која је прелетела поред Јупитера (децембар 1973). Носила је Pioneer плочицу — угравирани цртеж људских фигура и Сунчевог система на златно анодизираном алуминијуму, који су Карл Сејган и Френк Дрејк осмислили за три недеље."
+ },
+ {
+  "rel": "fleet/orbiter/pioneer-10.json",
+  "at": "best_known_for",
+  "en": "First spacecraft to traverse the asteroid belt",
+  "cur": "Прва свемирска летелица која је прошла кроз појас астероида"
+ },
+ {
+  "rel": "fleet/orbiter/pioneer-11.json",
+  "at": "tagline",
+  "en": "First spacecraft to encounter Saturn — Jupiter flyby in 1974 then gravity-assist to Saturn in 1979",
+  "cur": "Прва свемирска летелица која је стигла до Сатурна — прелет Јупитера 1974, а затим гравитационо убрзање ка Сатурну 1979."
+ }
+]

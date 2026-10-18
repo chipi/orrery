@@ -1,0 +1,20 @@
+[
+ {
+  "rel": "universe/named-stars/alhena.json",
+  "at": "bio",
+  "old": "Alhena (Gamma Geminorum) est une sous-géante bleu-blanc située à environ 109 années-lumière, la troisième étoile la plus brillante de Gemini, placée au pied des Jumeaux près du bord de la Voie lactée.",
+  "new": "Alhena (Gamma Geminorum) est une sous-géante bleu-blanc située à environ 109 années-lumière, la troisième étoile la plus brillante de Gémeaux, placée au pied des Jumeaux près du bord de la Voie lactée."
+ },
+ {
+  "rel": "universe/named-stars/deneb.json",
+  "at": "cultural",
+  "old": "Le nom vient de l'arabe pour « queue », marquant la queue de Cygnus le Cygne. Deneb ancre le Triangle d'été avec Véga et Altaïr et suit la longueur du courant septentrional de la Voie lactée.",
+  "new": "Le nom vient de l'arabe pour « queue », marquant la queue de Cygne le Cygne. Deneb ancre le Triangle d'été avec Véga et Altaïr et suit la longueur du courant septentrional de la Voie lactée."
+ },
+ {
+  "rel": "universe/named-stars/sadr.json",
+  "at": "bio",
+  "old": "Sadr (Gamma Cygni) est une supergéante jaune-blanc située à environ 1 800 années-lumière, au croisement de la Croix du Nord où les ailes de Cygnus rencontrent le corps. Elle est noyée dans un vaste complexe d'hydrogène luminescent connu sous le nom de région de Sadr.",
+  "new": "Sadr (Gamma Cygni) est une supergéante jaune-blanc située à environ 1 800 années-lumière, au croisement de la Croix du Nord où les ailes de Cygne rencontrent le corps. Elle est noyée dans un vaste complexe d'hydrogène luminescent connu sous le nom de région de Sadr."
+ }
+]

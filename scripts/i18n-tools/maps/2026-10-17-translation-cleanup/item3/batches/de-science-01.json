@@ -1,0 +1,1370 @@
+[
+ {
+  "rel": "science/_landing.json",
+  "at": "intro_heading",
+  "en": "So you want to fly a rocket to Mars.",
+  "cur": "Sie wollen also eine Rakete zum Mars fliegen."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "intro_paragraphs.0",
+  "en": "Welcome. This is the part of Orrery where the buttons stop being magic. Every label in the HUD, every coloured contour in the porkchop, every burn marker on the trajectory — this section explains where it comes from. Read it like a comic book: the diagrams do most of the work, and every italicised term is a link you can chase as deep as you want.",
+  "cur": "Willkommen. Dies ist der Teil von Orrery, in dem die Knöpfe aufhören, magisch zu sein. Jede Beschriftung im HUD, jede farbige Kontur im Porkchop, jeder Brennmarker auf der Flugbahn – dieser Abschnitt erklärt, woher sie kommen. Lesen Sie es wie einen Comic: Die Diagramme erledigen den Großteil der Arbeit, und jeder kursivierte Begriff ist ein Link, dem Sie so weit folgen können, wie Sie möchten."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "intro_paragraphs.1",
+  "en": "We're going to build a rocket together. Not a literal one — Orrery is a simulator — but the same chain of decisions a real flight team makes, in the order they'd make them. By the end you'll know why launch windows happen every 26 months for Mars and every month for the Moon, why a free-return trajectory exists, and why thrust is the cheapest part of a mission and fuel is the entire fight.",
+  "cur": "Wir werden zusammen eine Rakete bauen. Keine echte – Orrery ist ein Simulator –, aber dieselbe Kette von Entscheidungen, die ein echtes Flugteam trifft, in der Reihenfolge, in der es sie treffen würde. Am Ende werden Sie wissen, warum Startfenster alle 26 Monate für den Mars und jeden Monat für den Mond auftreten, warum es eine Free-Return-Flugbahn gibt und warum Schub der billigste Teil einer Mission ist und Treibstoff der gesamte Kampf."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.0.heading",
+  "en": "1 — Gravity is the only physics that matters.",
+  "cur": "1 – Gravitation ist die einzige Physik, die zählt."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.0.diagram_alt",
+  "en": "An ellipse with the Sun at one focus.",
+  "cur": "Eine Ellipse mit der Sonne in einem Brennpunkt."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.0.diagram_caption",
+  "en": "One body, one focus, one ellipse. That's the whole solar system.",
+  "cur": "Ein Körper, ein Brennpunkt, eine Ellipse. Das ist das gesamte Sonnensystem."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.0.paragraphs.0",
+  "en": "Forget rockets for a second. Stand on the Earth, throw a baseball as hard as you can. It comes back down. Throw it harder, it lands farther. Throw it so hard that the ground curves away faster than the ball falls, and the ball misses the planet — forever. That's an [orbit](orbits/keplerian-orbit). Every spacecraft, every planet, every rock in the asteroid belt is doing this trick around something heavier.",
+  "cur": "Vergessen Sie Raketen für eine Sekunde. Stehen Sie auf der Erde, werfen Sie einen Baseball so hart Sie können. Er kommt zurück. Werfen Sie ihn härter, er landet weiter weg. Werfen Sie ihn so hart, dass sich der Boden schneller wegkrümmt als der Ball fällt, und der Ball verfehlt den Planeten – für immer. Das ist eine [Umlaufbahn](orbits/keplerian-orbit). Jedes Raumfahrzeug, jeder Planet, jeder Felsen im Asteroidengürtel führt diesen Trick um etwas Schwereres herum aus."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.0.paragraphs.1",
+  "en": "An orbit is an ellipse. It has a [size](orbits/semi-major-axis), a [shape](orbits/eccentricity) (round vs. stretched), a [tilt](orbits/inclination), and a phase telling you where on the ellipse the spacecraft is right now ([true anomaly](orbits/true-anomaly)). Five numbers and you can predict the position of any object in the solar system, forever, without any other data. That's [Kepler's three laws](orbits/keplers-laws), written down in 1609 — they still work.",
+  "cur": "Eine Umlaufbahn ist eine Ellipse. Sie hat eine [Größe](orbits/semi-major-axis), eine [Form](orbits/eccentricity) (rund vs. gestreckt), eine [Neigung](orbits/inclination) und eine Phase, die Ihnen sagt, wo auf der Ellipse sich das Raumfahrzeug gerade befindet ([wahre Anomalie](orbits/true-anomaly)). Fünf Zahlen, und Sie können die Position jedes Objekts im Sonnensystem vorhersagen, für immer, ohne weitere Daten. Das sind [Keplers drei Gesetze](orbits/keplers-laws), niedergeschrieben 1609 – sie funktionieren immer noch."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.0.paragraphs.2",
+  "en": "The single most useful equation you'll meet here is [vis-viva](orbits/vis-viva). Plug in your radius, your orbit's size, and out comes your speed. That's it. Earth at perihelion: 30.3 km/s. Earth at aphelion: 29.3 km/s. Same orbit, same energy, different speed.",
+  "cur": "Die einzelne nützlichste Gleichung, die Sie hier treffen werden, ist [Vis-Viva](orbits/vis-viva). Geben Sie Ihren Radius und die Größe Ihrer Umlaufbahn ein, und heraus kommt Ihre Geschwindigkeit. Das ist alles. Erde im Perihel: 30,3 km/s. Erde im Aphel: 29,3 km/s. Dieselbe Umlaufbahn, dieselbe Energie, unterschiedliche Geschwindigkeit."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.heading",
+  "en": "2 — The rocket equation is the boss fight.",
+  "cur": "2 – Die Raketengleichung ist der Endgegner."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.diagram_alt",
+  "en": "Mass-ratio curve: ∆v rises logarithmically with how much fuel you burn.",
+  "cur": "Massenverhältnis-Kurve: ∆v steigt logarithmisch mit der Menge an verbranntem Treibstoff."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.diagram_caption",
+  "en": "The cruel truth: doubling your ∆v means burning a lot more than 2× the fuel.",
+  "cur": "Die grausame Wahrheit: Das Verdoppeln Ihres ∆v bedeutet, viel mehr als das 2-fache an Treibstoff zu verbrennen."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.paragraphs.0",
+  "en": "Now: how do you change orbits? You burn fuel. [∆v](propulsion/dv-budget) (\"delta-v\") is the universal currency of spaceflight — the total velocity change a mission needs. Every move you make on a trajectory has a price tag in km/s.",
+  "cur": "Nun: Wie ändert man Umlaufbahnen? Man verbrennt Treibstoff. [∆v](propulsion/dv-budget) (\"Delta-v\") ist die universelle Währung der Raumfahrt – die gesamte Geschwindigkeitsänderung, die eine Mission benötigt. Jede Bewegung, die Sie auf einer Flugbahn machen, hat einen Preis in km/s."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.paragraphs.1",
+  "en": "And that price is brutal. The [Tsiolkovsky rocket equation](propulsion/tsiolkovsky) says ∆v scales with the logarithm of how much of your rocket is fuel. Want twice the ∆v? You don't carry twice the fuel — you carry exponentially more. This is why a Saturn V was 90% propellant. Most of the rocket is the fuel that lifts the fuel that lifts the fuel that lifts the spacecraft.",
+  "cur": "Und dieser Preis ist brutal. Die [Tsiolkovsky-Raketengleichung](propulsion/tsiolkovsky) besagt, dass ∆v mit dem Logarithmus skaliert, wie viel von Ihrer Rakete Treibstoff ist. Wollen Sie das doppelte ∆v? Sie tragen nicht das Doppelte an Treibstoff – Sie tragen exponentiell mehr. Deshalb bestand eine Saturn V zu 90 % aus Treibstoff. Der Großteil der Rakete ist der Treibstoff, der den Treibstoff hebt, der den Treibstoff hebt, der das Raumfahrzeug hebt."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.paragraphs.2",
+  "en": "Two numbers fight this gravity tax. Thrust tells you how hard the engine pushes — that's the number nobody really cares about after launch. [Specific impulse](propulsion/specific-impulse) tells you how efficiently the engine pushes — and that's the one that matters. A chemical rocket gets ~450 seconds. An ion thruster gets 4,000+ — sips fuel for months and outperforms anything chemical for deep-space cruises.",
+  "cur": "Zwei Zahlen bekämpfen diese Gravitationssteuer. Der Schub sagt Ihnen, wie stark das Triebwerk drückt – das ist die Zahl, die nach dem Start wirklich niemanden interessiert. Der [spezifische Impuls](propulsion/specific-impulse) sagt Ihnen, wie effizient das Triebwerk schiebt – und das ist die Zahl, die zählt. Eine chemische Rakete erreicht ~450 Sekunden. Ein Ionentriebwerk erreicht 4.000+ – nippt monatelang am Treibstoff und übertrifft alles Chemische für Tiefraumflüge."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.paragraphs.3",
+  "en": "Best magic trick of all: the [Oberth effect](propulsion/oberth-effect). Burning your engine when you're already moving fast (low and close to a planet) gives you way more bang for the same fuel. This is why every interplanetary mission does its big departure burn at perigee, hugging the Earth, going as fast as physics allows. Free energy from geometry.",
+  "cur": "Der beste Zaubertrick von allen: der [Oberth-Effekt](propulsion/oberth-effect). Das Zünden Ihres Triebwerks, wenn Sie bereits schnell unterwegs sind (tief und nah an einem Planeten), gibt Ihnen viel mehr für denselben Treibstoff. Deshalb führt jede interplanetare Mission ihr großes Abflugmanöver im Perigäum durch, nah an der Erde, so schnell wie die Physik erlaubt. Freie Energie aus Geometrie."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.2.heading",
+  "en": "3 — Once you're in orbit, you're halfway to anywhere.",
+  "cur": "3 – Sobald Sie im Orbit sind, sind Sie auf halbem Weg zu überall."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.2.diagram",
+  "en": "hohmann-transfer.svg",
+  "cur": "hohmann-transfer.svg"
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.2.diagram_alt",
+  "en": "An ellipse tangent to Earth's orbit and Mars's orbit.",
+  "cur": "Eine Ellipse, die die Erdumlaufbahn und die Marsumlaufbahn tangiert."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.2.diagram_caption",
+  "en": "Two burns, one ellipse. The cheapest way to change orbits.",
+  "cur": "Zwei Brennmanöver, eine Ellipse. Der billigste Weg, Umlaufbahnen zu wechseln."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.2.paragraphs.0",
+  "en": "Robert Heinlein wrote it: \"Once you're in orbit, you're halfway to anywhere in the solar system.\" He wasn't kidding. Reaching low Earth orbit costs ~9.4 km/s of ∆v. Going from there to Mars costs another ~3.6 km/s. The hardest part is already behind you.",
+  "cur": "Robert Heinlein schrieb es: \"Sobald Sie im Orbit sind, sind Sie auf halbem Weg zu überall im Sonnensystem.\" Er scherzte nicht. Den niedrigen Erdorbit zu erreichen kostet ~9,4 km/s an ∆v. Von dort zum Mars zu gelangen kostet weitere ~3,6 km/s. Der schwierigste Teil liegt bereits hinter Ihnen."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.2.paragraphs.1",
+  "en": "The cheapest interplanetary route is a [Hohmann transfer](transfers/hohmann-transfer): an ellipse that just barely kisses Earth's orbit at one end and the destination's orbit at the other. Two burns, no wasted fuel. To Mars it takes ~8.5 months. Slow, but optimal.",
+  "cur": "Die billigste interplanetare Route ist ein [Hohmann-Transfer](transfers/hohmann-transfer): eine Ellipse, die gerade eben die Erdumlaufbahn an einem Ende und die Umlaufbahn des Ziels am anderen Ende küsst. Zwei Brennmanöver, kein verschwendeter Treibstoff. Zum Mars dauert es ~8,5 Monate. Langsam, aber optimal."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.2.paragraphs.2",
+  "en": "Want to go faster? Solve a [Lambert's problem](transfers/lambert-problem) — pick your departure date and your transit time, and Lambert tells you the unique [transfer ellipse](transfers/transfer-ellipse) that connects them. That's exactly what Orrery's [/plan](app:/plan) screen does, ten thousand times in parallel, to draw a porkchop plot.",
+  "cur": "Wollen Sie schneller sein? Lösen Sie ein [Lambert-Problem](transfers/lambert-problem) – wählen Sie Ihr Abflugdatum und Ihre Transferzeit, und Lambert sagt Ihnen die eindeutige [Transferellipse](transfers/transfer-ellipse), die sie verbindet. Genau das macht Orrery's [/plan](app:/plan)-Bildschirm, zehntausend Mal parallel, um einen Porkchop-Plot zu zeichnen."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.2.paragraphs.3",
+  "en": "Need to go even further? Steal speed from a planet. A [gravity assist](transfers/gravity-assist) uses a flyby to change your trajectory at zero fuel cost — Voyager 2 used four of them to reach Neptune. The whole solar system stitches together as [patched conics](transfers/patched-conics): a series of [conic-section](transfers/conic-sections) arcs handed off between gravitational neighbourhoods like batons in a relay race.",
+  "cur": "Müssen Sie noch weiter gehen? Stehlen Sie Geschwindigkeit von einem Planeten. Ein [Gravity-Assist](transfers/gravity-assist) nutzt einen Vorbeiflug, um Ihre Flugbahn ohne Treibstoffkosten zu ändern – Voyager 2 nutzte vier davon, um Neptun zu erreichen. Das gesamte Sonnensystem fügt sich zu [Patched Conics](transfers/patched-conics) zusammen: eine Reihe von [Kegelschnitt](transfers/conic-sections)-Bögen, die zwischen Gravitationsnachbarschaften wie Staffelstäbe in einem Staffellauf übergeben werden."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.3.heading",
+  "en": "4 — Pick a launch window, or wait two years.",
+  "cur": "4 – Wählen Sie ein Startfenster oder warten Sie zwei Jahre."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.3.diagram_alt",
+  "en": "The classic porkchop contour plot — departure date on x, time of flight on y.",
+  "cur": "Der klassische Porkchop-Konturplot – Abflugdatum auf der x-Achse, Flugzeit auf der y-Achse."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.3.diagram_caption",
+  "en": "A porkchop. Each contour is constant ∆v; the lobe is when nature makes Mars cheap.",
+  "cur": "Ein Porkchop. Jede Kontur ist konstantes ∆v; der Lappen ist, wenn die Natur Mars günstig macht."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.3.paragraphs.0",
+  "en": "Earth and Mars don't sit still. Earth races around the Sun every 365 days, Mars every 687. Their relative geometry repeats only every ~26 months — and most of those months, the planets are too far apart, on the wrong sides of the Sun, to reach cheaply. Mission design starts with a calendar, not a rocket.",
+  "cur": "Erde und Mars stehen nicht still. Die Erde rast alle 365 Tage um die Sonne, der Mars alle 687. Ihre relative Geometrie wiederholt sich nur alle ~26 Monate – und die meisten dieser Monate sind die Planeten zu weit auseinander, auf den falschen Seiten der Sonne, um günstig erreicht zu werden. Missionsdesign beginnt mit einem Kalender, nicht mit einer Rakete."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.3.paragraphs.1",
+  "en": "The [porkchop plot](porkchop/what-is-a-porkchop) is how engineers see this. Departure date along [one axis](porkchop/departure-axis), [flight time](porkchop/tof-axis) along the other, ∆v as a [colour heatmap](porkchop/dv-heatmap). Cheap zones appear as oval lobes — the launch windows. Outside the lobe: red, expensive, impossible-with-current-rockets. [Reading the contours](porkchop/contour-reading) is half the job of a flight dynamicist.",
+  "cur": "Der [Porkchop-Plot](porkchop/what-is-a-porkchop) ist, wie Ingenieure dies sehen. Abflugdatum entlang [einer Achse](porkchop/departure-axis), [Flugzeit](porkchop/tof-axis) entlang der anderen, ∆v als [Farb-Heatmap](porkchop/dv-heatmap). Günstige Zonen erscheinen als ovale Lappen – die Startfenster. Außerhalb des Lappens: rot, teuer, unmöglich mit aktuellen Raketen. [Das Lesen der Konturen](porkchop/contour-reading) ist die halbe Arbeit eines Flugdynamikers."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.3.paragraphs.2",
+  "en": "Two technical terms you'll see everywhere: [C3](propulsion/c3) is the launch energy your rocket needs to leave Earth's gravity well. [V∞](propulsion/v-infinity) (\"v-infinity\") is your speed relative to the destination at the moment you arrive. Both come straight out of the porkchop math.",
+  "cur": "Zwei Fachbegriffe, die Sie überall sehen werden: [C3](propulsion/c3) ist die Startenergie, die Ihre Rakete benötigt, um dem Gravitationsfeld der Erde zu entkommen. [V∞](propulsion/v-infinity) (\"v-unendlich\") ist Ihre Geschwindigkeit relativ zum Ziel in dem Moment, in dem Sie ankommen. Beide stammen direkt aus der Porkchop-Mathematik."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.4.heading",
+  "en": "5 — The flight is just five phases on repeat.",
+  "cur": "5 – Der Flug besteht nur aus fünf Phasen in Wiederholung."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.4.diagram_alt",
+  "en": "Atmospheric entry, parachute deploy, retropropulsion, landing.",
+  "cur": "Atmosphärischer Eintritt, Fallschirm-Entfaltung, Retroantrieb, Landung."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.4.diagram_caption",
+  "en": "Entry, descent, landing. Six minutes of pure terror.",
+  "cur": "Eintritt, Abstieg, Landung. Sechs Minuten purer Schrecken."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.4.paragraphs.0",
+  "en": "Pretty much every interplanetary mission, from Voyager to Perseverance, runs the same script:",
+  "cur": "So ziemlich jede interplanetare Mission, von Voyager bis Perseverance, folgt demselben Drehbuch:"
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.4.paragraphs.1",
+  "en": "[Launch](mission-phases/launch) — get out of the atmosphere and into low Earth orbit. [Trans-X Injection](mission-phases/trans-x-injection) — a single hard burn at perigee that flings you onto the transfer ellipse to the Moon (TLI), Mars (TMI), Venus (TVI), or Jupiter (TJI). [Trajectory Correction Maneuvers](mission-phases/tcm) — tiny burns during cruise to fix dispersion errors. Usually 1–3 of them. [Orbit Insertion](mission-phases/orbit-insertion) — a braking burn at the destination to bend you into a captured orbit. [EDL](mission-phases/edl) — Entry, Descent, Landing — for the lander. Six minutes of supersonic atmospheric chaos.",
+  "cur": "[Start](mission-phases/launch) — aus der Atmosphäre hinaus und in die niedrige Erdumlaufbahn. [Trans-X-Injektion](mission-phases/trans-x-injection) — ein kraftvoller Manöverschub im Perigäum, der dich auf die Transferellipse zum Mond (TLI), zum Mars (TMI), zur Venus (TVI) oder zum Jupiter (TJI) schleudert. [Bahnkorrekturen](mission-phases/tcm) — kleine Schübe während der Reiseflugphase, um Streuungsfehler zu korrigieren. Normalerweise 1–3 davon. [Umlaufbahneinschuss](mission-phases/orbit-insertion) — ein Bremsmanöver am Ziel, um dich in eine Einfangbahn zu lenken. [EDL](mission-phases/edl) — Eintritt, Abstieg, Landung — für den Lander. Sechs Minuten überschallschnelles atmosphärisches Chaos."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.4.paragraphs.2",
+  "en": "Lunar missions sometimes detour through a [Near-Rectilinear Halo Orbit](mission-phases/nrho) (Gateway will live in one), and crewed Apollo flights flew [free-return trajectories](transfers/free-return) — figure-8 paths that drop you back to Earth automatically if every engine on the spacecraft dies. Apollo 13 owes its life to this geometry.",
+  "cur": "Mondmissionen machen manchmal einen Umweg durch eine [Near-Rectilinear Halo Orbit](mission-phases/nrho) (Gateway wird in einer solchen leben), und bemannte Apollo-Flüge flogen [Free-Return-Flugbahnen](transfers/free-return) – Achter-Pfade, die Sie automatisch zur Erde zurückbringen, wenn jedes Triebwerk am Raumfahrzeug ausfällt. Apollo 13 verdankt dieser Geometrie sein Leben."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.5.heading",
+  "en": "6 — Distances and time, since none of this is Earth-sized.",
+  "cur": "6 – Entfernungen und Zeit, da nichts davon erdgroß ist."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.5.diagram_alt",
+  "en": "The astronomical unit, marked along Earth's orbital radius.",
+  "cur": "Die astronomische Einheit, markiert entlang des Erdbahnradius."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.5.diagram_caption",
+  "en": "One AU = one Earth-Sun distance. Mars is ~1.5 AU. Jupiter is ~5.2.",
+  "cur": "Eine AU = eine Erde-Sonne-Entfernung. Mars ist ~1,5 AU. Jupiter ist ~5,2."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.5.paragraphs.0",
+  "en": "Three units pop up everywhere. The [astronomical unit](scales-time/au) (AU) is the average Earth-Sun distance — 150 million km. We measure the solar system in AU because kilometres get unwieldy fast. The [light-minute](scales-time/light-minute) tells you how long it takes a radio signal to reach a spacecraft. Mars: 4 to 24 minutes one-way. You can't joystick a rover from Earth. Everything important is autonomous.",
+  "cur": "Drei Einheiten tauchen überall auf. Die [astronomische Einheit](scales-time/au) (AU) ist die durchschnittliche Entfernung Erde-Sonne – 150 Millionen km. Wir messen das Sonnensystem in AU, weil Kilometer schnell unhandlich werden. Die [Lichtminute](scales-time/light-minute) sagt Ihnen, wie lange ein Funksignal braucht, um ein Raumfahrzeug zu erreichen. Mars: 4 bis 24 Minuten in eine Richtung. Sie können keinen Rover von der Erde aus mit dem Joystick steuern. Alles Wichtige ist autonom."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.5.paragraphs.1",
+  "en": "The [J2000 epoch](scales-time/j2000) is the calendar zero every astrodynamicist uses. [Sidereal vs. synodic periods](scales-time/sidereal-synodic) explain why Mars windows recur every 26 months instead of every 23. The [ecliptic plane](scales-time/ecliptic-plane) is the flat disc the planets all (mostly) lie on. [Reference frames](scales-time/frames) are the coordinate systems mission control juggles between Earth-centred, Sun-centred, and body-centred views.",
+  "cur": "Die [J2000-Epoche](scales-time/j2000) ist die Kalender-Null, die jeder Astrodynamiker verwendet. [Siderische vs. synodische Perioden](scales-time/sidereal-synodic) erklären, warum sich Mars-Fenster alle 26 Monate wiederholen statt alle 23. Die [Ekliptikebene](scales-time/ecliptic-plane) ist die flache Scheibe, auf der die Planeten alle (meistens) liegen. [Bezugssysteme](scales-time/frames) sind die Koordinatensysteme, zwischen denen die Missionskontrolle jongliert: erdzentriert, sonnenzentriert und körperzentriert."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.6.heading",
+  "en": "7 — Humans aren't built for this.",
+  "cur": "7 – Menschen sind dafür nicht gebaut."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.6.diagram",
+  "en": "_cover-life-in-space.svg",
+  "cur": "_cover-life-in-space.svg"
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.6.diagram_alt",
+  "en": "A stylised astronaut floating in microgravity with bone/muscle/countermeasure indicator bars.",
+  "cur": "Ein stilisierter Astronaut, der in Mikrogravitation schwebt, mit Knochen-/Muskel-/Gegenmaßnahmen-Indikatorbalken."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.6.diagram_caption",
+  "en": "Bone, muscle, vision, vestibular, immune — everything re-wires in microgravity, and not toward Earth.",
+  "cur": "Knochen, Muskeln, Sehvermögen, Gleichgewicht, Immunsystem – alles verdrahtet sich in Mikrogravitation neu, und nicht in Richtung Erde."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.6.paragraphs.0",
+  "en": "Spend six months in orbit and you come back smaller, lighter, and shorter than you left. [Microgravity](life-in-space/microgravity-physiology) is the root cause: fluids redistribute headward, the postural muscles unload, the [bones](life-in-space/bone-density-loss) shed 1–2% of their mineral per month, the [vestibular system](life-in-space/vestibular-adaptation) gives up trying to find \"down\". The [counter-measures](life-in-space/muscle-atrophy) — two hours of resistive and aerobic exercise a day on ARED + the treadmill — slow it without solving it.",
+  "cur": "Verbringen Sie sechs Monate im Orbit und Sie kommen kleiner, leichter und kürzer zurück, als Sie gegangen sind. [Mikrogravitation](life-in-space/microgravity-physiology) ist die Grundursache: Flüssigkeiten verteilen sich kopfwärts um, die Haltemuskeln werden entlastet, die [Knochen](life-in-space/bone-density-loss) verlieren 1–2 % ihrer Mineralien pro Monat, das [vestibuläre System](life-in-space/vestibular-adaptation) gibt auf, \"unten\" zu finden. Die [Gegenmaßnahmen](life-in-space/muscle-atrophy) – zwei Stunden Widerstands- und Ausdauertraining pro Tag auf ARED + dem Laufband – verlangsamen es, ohne es zu lösen."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.6.paragraphs.1",
+  "en": "[Radiation](life-in-space/radiation-exposure) is the harder problem. The ISS gets ~200 mSv/year (vs 3 mSv background on Earth); deep space outside the magnetosphere is 600+ mSv/year, with no good shielding strategy yet. A Mars-class trip would put a crew member near career-limit cancer risk in a single round trip.",
+  "cur": "[Strahlung](life-in-space/radiation-exposure) ist das schwierigere Problem. Die ISS bekommt ~200 mSv/Jahr (vs. 3 mSv Hintergrundstrahlung auf der Erde); der Tiefraum außerhalb der Magnetosphäre ist 600+ mSv/Jahr, ohne bisher gute Abschirmungsstrategie. Eine Mars-Reise würde ein Besatzungsmitglied bei einer einzigen Hin- und Rückreise nahe an die Karriere-Grenze des Krebsrisikos bringen."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.6.paragraphs.2",
+  "en": "Then there's [EVA](life-in-space/eva-physiology) (a 6-hour endurance event in a 4.3 psi pure-oxygen suit) and [long-duration effects](life-in-space/long-duration-effects) like SANS — Space-Associated Neuro-ocular Syndrome — where 60% of long-flight crew develop measurable eye changes that don't fully reverse. These are the unsolved problems standing between humanity and Mars.",
+  "cur": "Dann gibt es [EVA](life-in-space/eva-physiology) (ein 6-Stunden-Ausdauerereignis in einem 4,3 psi Reinsauerstoff-Anzug) und [Langzeiteffekte](life-in-space/long-duration-effects) wie SANS – Space-Associated Neuro-ocular Syndrome –, bei dem 60 % der Langzeitbesatzung messbare Augenveränderungen entwickeln, die sich nicht vollständig umkehren. Dies sind die ungelösten Probleme, die zwischen der Menschheit und dem Mars stehen."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.7.heading",
+  "en": "8 — Everything we know about the universe arrived as a photon.",
+  "cur": "8 – Alles, was wir über das Universum wissen, kam als Photon an."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.7.diagram",
+  "en": "_cover-observation.svg",
+  "cur": "_cover-observation.svg"
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.7.diagram_alt",
+  "en": "A space telescope aimed at a distant galaxy with a representative emission spectrum below.",
+  "cur": "Ein Weltraumteleskop, das auf eine ferne Galaxie gerichtet ist, mit einem repräsentativen Emissionsspektrum darunter."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.7.diagram_caption",
+  "en": "Telescope + filter + spectrograph + maths. Almost every fact about the cosmos was reconstructed from light.",
+  "cur": "Teleskop + Filter + Spektrograf + Mathematik. Fast jede Tatsache über den Kosmos wurde aus Licht rekonstruiert."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.7.paragraphs.0",
+  "en": "[Space photography](observation/space-photography) is not what people think it is. There's no shutter clicking; every observatory image you've seen is a stack of long exposures through narrow-band filters, calibrated, registered, false-colour assigned. The hardware is a CCD or CMOS sensor — a grid of photon-counters — and the data is the count, not the picture. The picture is what humans make of the count.",
+  "cur": "[Weltraumfotografie](observation/space-photography) ist nicht das, was die Leute denken. Es gibt kein Klicken des Verschlusses; jedes Observatoriumsbild, das Sie gesehen haben, ist ein Stapel von Langzeitbelichtungen durch Schmalbandfilter, kalibriert, registriert, mit Falschfarben versehen. Die Hardware ist ein CCD- oder CMOS-Sensor – ein Raster von Photonenzählern – und die Daten sind die Zählung, nicht das Bild. Das Bild ist das, was Menschen aus der Zählung machen."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.7.paragraphs.1",
+  "en": "[Adaptive optics](observation/adaptive-optics) defeats the atmosphere by measuring its distortion in real time and bending the mirror to cancel it. [Coronagraphs](observation/coronagraphs) block the central star to see the planets orbiting it. [Spectroscopy](observation/spectroscopy) reads a star's chemical composition from the absorption lines in its light. [Interferometry](observation/interferometry) stitches separate telescopes into one virtual aperture larger than any of them.",
+  "cur": "[Adaptive Optik](observation/adaptive-optics) besiegt die Atmosphäre, indem sie ihre Verzerrung in Echtzeit misst und den Spiegel biegt, um sie aufzuheben. [Koronografen](observation/coronagraphs) blockieren den Zentralstern, um die Planeten zu sehen, die ihn umkreisen. [Spektroskopie](observation/spectroscopy) liest die chemische Zusammensetzung eines Sterns aus den Absorptionslinien in seinem Licht. [Interferometrie](observation/interferometry) fügt separate Teleskope zu einer virtuellen Apertur zusammen, die größer ist als jedes einzelne von ihnen."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.7.paragraphs.2",
+  "en": "And the strangest objects those methods have found: [black holes](observation/black-holes) (real, mapped, shadow-imaged at the centre of two galaxies) and [wormholes](observation/wormholes) (pure mathematics, included so you know what to do with them when you see one in a film). The /fleet ↦ Observatory category has the actual machines — Hubble, JWST, Chandra, Spitzer, Kepler, TESS — each with its own gallery of what it saw.",
+  "cur": "Und die seltsamsten Objekte, die diese Methoden gefunden haben: [Schwarze Löcher](observation/black-holes) (real, kartiert, Schatten im Zentrum zweier Galaxien abgebildet) und [Wurmlöcher](observation/wormholes) (reine Mathematik, enthalten, damit Sie wissen, was Sie damit tun sollen, wenn Sie eines in einem Film sehen). Die Kategorie /fleet ↦ Observatory hat die tatsächlichen Maschinen – Hubble, JWST, Chandra, Spitzer, Kepler, TESS – jede mit ihrer eigenen Galerie dessen, was sie gesehen hat."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "tools_intro",
+  "en": "That's the whole loop. You now know enough to read every label, contour, and HUD readout in the rest of the app. Here's where to put it to work:",
+  "cur": "Das ist die ganze Schleife. Sie wissen jetzt genug, um jede Beschriftung, Kontur und HUD-Anzeige im Rest der App zu lesen. Hier können Sie es anwenden:"
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "tools.0.text",
+  "en": "Spin the solar system. Watch Kepler's laws live. Click any planet for its orbital elements.",
+  "cur": "Drehen Sie das Sonnensystem. Beobachten Sie Keplers Gesetze live. Klicken Sie auf jeden Planeten für seine Bahnelemente."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "tools.1.text",
+  "en": "Pick a destination, pick a launch year, see the porkchop. The lobe is where Hohmann transfers hide.",
+  "cur": "Wählen Sie ein Ziel, wählen Sie ein Startjahr, sehen Sie den Porkchop. Der Lappen ist dort, wo sich Hohmann-Transfers verstecken."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "tools.2.text",
+  "en": "Fly a real mission arc. The HUD shows ∆v, V∞, MET, distance to Earth. Every number is something you just learned.",
+  "cur": "Fliegen Sie einen echten Missionsbogen. Das HUD zeigt ∆v, V∞, MET, Entfernung zur Erde. Jede Zahl ist etwas, das Sie gerade gelernt haben."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "tools.3.text",
+  "en": "36 real spacecraft, from Luna 9 to Artemis II. Each one's FLIGHT tab decomposes its actual ∆v budget across the phases above.",
+  "cur": "36 echte Raumfahrzeuge, von Luna 9 bis Artemis II. Der FLIGHT-Tab jedes einzelnen zerlegt sein tatsächliches ∆v-Budget über die oben genannten Phasen."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "tools.4.text",
+  "en": "Ground truth. Where every Apollo, every rover, every active satellite actually sits.",
+  "cur": "Grundwahrheit. Wo jeder Apollo, jeder Rover, jeder aktive Satellit tatsächlich sitzt."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "tools.5.text",
+  "en": "The two inhabited orbital outposts, module by module.",
+  "cur": "Die beiden bewohnten Außenposten im Orbit – Modul für Modul."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "closing",
+  "en": "Below this story, the encyclopedia proper: six tabs, forty entries, every formula and every diagram in one place. Bookmark it. We'll be here when you need it.",
+  "cur": "Unterhalb dieser Geschichte folgt die eigentliche Enzyklopädie: sechs Reiter, vierzig Einträge, jede Formel und jedes Diagramm an einem Ort. Setzen Sie ein Lesezeichen. Wir sind da, wenn Sie es brauchen."
+ },
+ {
+  "rel": "science/cosmology/_intro.json",
+  "at": "headline",
+  "en": "Cosmology — the universe at large, and how we know its size.",
+  "cur": "Kosmologie – das Universum im Großen und wie wir seine Größe kennen."
+ },
+ {
+  "rel": "science/cosmology/_intro.json",
+  "at": "paragraphs.0",
+  "en": "Zoom out far enough and the individual galaxy stops mattering. What comes into view is structure: galaxies gathered into groups, groups into clusters, clusters strung along filaments and sheets that wrap around near-empty voids — the cosmic web. This tab is about that largest scale, and about the measuring chain that lets us put honest distances on it.",
+  "cur": "Zoomt man weit genug hinaus, spielt die einzelne Galaxie keine Rolle mehr. Sichtbar wird stattdessen Struktur: Galaxien, die sich zu Gruppen zusammenschließen, Gruppen zu Haufen, Haufen, die sich entlang von Filamenten und Schichten aneinanderreihen, welche beinahe leere Leerräume umspannen – das kosmische Netz. In diesem Tab geht es um diese größte Skala und um die Messkette, mit der wir ihr ehrliche Entfernungen zuordnen können."
+ },
+ {
+  "rel": "science/cosmology/_intro.json",
+  "at": "paragraphs.1",
+  "en": "It pairs with the outer shells of the /explore scale ladder. When you climb past the Local Group into the Local Sheet, the Virgo Supercluster, and beyond, these are the articles that explain what you are looking at and how anyone could possibly know how far away it is.",
+  "cur": "Er ergänzt die äußeren Schalen der /explore-Maßstabsleiter. Wenn du über die Lokale Gruppe hinaus in die Lokale Schicht, den Virgo-Superhaufen und noch weiter aufsteigst, erklären diese Artikel, was du dort vor dir siehst – und woher man überhaupt wissen kann, wie weit es entfernt ist."
+ },
+ {
+  "rel": "science/cosmology/_intro.json",
+  "at": "paragraphs.2",
+  "en": "The set grows with the ladder: large-scale structure and the distance ladder land first, with the Virgo Supercluster; the deeper cosmology — redshift and Hubble's law, dark matter and dark energy, the microwave background, the Big Bang itself — arrives alongside the tiers that need it.",
+  "cur": "Die Sammlung wächst mit der Leiter: Die großräumige Struktur und die Entfernungsleiter erscheinen zuerst, zusammen mit dem Virgo-Superhaufen; die tiefere Kosmologie – Rotverschiebung und das Hubble-Gesetz, Dunkle Materie und Dunkle Energie, die kosmische Mikrowellenhintergrundstrahlung, der Urknall selbst – kommt gemeinsam mit den Stufen hinzu, die sie brauchen."
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "title",
+  "en": "The cosmic distance ladder",
+  "cur": "Die kosmische Entfernungsleiter"
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "intro_sentence",
+  "en": "No single method measures every cosmic distance. Astronomers build a ladder: each technique reaches a little farther and is calibrated by the rung beneath it, from radar in the solar system out to the edge of the observable universe.",
+  "cur": "Keine Methode misst alle kosmischen Entfernungen. Astronomen bauen eine Leiter: Jede Technik reicht etwas weiter und wird von der Sprosse darunter geeicht – vom Radar im Sonnensystem bis zum Rand des beobachtbaren Universums."
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "body_paragraphs.0",
+  "en": "The bottom rung is geometry. Bounce radar off a planet and you know the astronomical unit directly. Watch a nearby star shift back and forth against the background over a year — parallax — and simple trigonometry gives its distance; ESA's Gaia mission has done this for nearly two billion stars, reaching tens of thousands of light-years with precision.",
+  "cur": "Die unterste Sprosse ist die Geometrie. Schickt man Radarwellen zu einem Planeten und wieder zurück, kennt man die Astronomische Einheit unmittelbar. Beobachtet man, wie ein nahegelegener Stern im Lauf eines Jahres vor dem Hintergrund hin und her wandert – die Parallaxe –, liefert einfache Trigonometrie seine Entfernung. Die Mission Gaia der ESA hat das für fast zwei Milliarden Sterne getan und reicht dabei präzise bis in Entfernungen von Zehntausenden Lichtjahren."
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "body_paragraphs.1",
+  "en": "Beyond parallax, geometry runs out and you switch to standard candles — objects whose true brightness you know, so their apparent faintness reveals their distance. Cepheid variable stars pulse with a period that tracks their luminosity: time the pulse, read off the true brightness, compare with how bright it looks. Cepheids, calibrated by parallax, carry the ladder out to nearby galaxy clusters — this is how the Virgo Cluster is pinned near 16.5 megaparsecs.",
+  "cur": "Jenseits der Parallaxe ist die Geometrie am Ende, und man wechselt zu Standardkerzen – Objekten, deren wahre Helligkeit man kennt, sodass ihre scheinbare Lichtschwäche ihre Entfernung verrät. Cepheiden, veränderliche Sterne, pulsieren mit einer Periode, die ihrer Leuchtkraft folgt: Man misst die Dauer des Pulses, liest die wahre Helligkeit ab und vergleicht sie damit, wie hell der Stern erscheint. Cepheiden, durch Parallaxe geeicht, tragen die Leiter bis zu nahen Galaxienhaufen – so wird der Virgo-Haufen bei etwa 16,5 Megaparsec verortet."
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "body_paragraphs.2",
+  "en": "For the far rungs you need a brighter candle. Type Ia supernovae — the thermonuclear explosion of a white dwarf — all peak at nearly the same luminosity and can briefly rival the total light of their host galaxy, so they are visible across billions of light-years. Calibrated by Cepheids in galaxies where both appear, they extend the ladder deep into the expanding universe.",
+  "cur": "Für die fernen Sprossen braucht man eine hellere Kerze. Supernovae vom Typ Ia – die thermonukleare Explosion eines Weißen Zwergs – erreichen alle nahezu dieselbe Leuchtkraft und können kurzzeitig das gesamte Licht ihrer Heimatgalaxie übertreffen, sodass sie über Milliarden Lichtjahre hinweg sichtbar sind. Von Cepheiden in Galaxien geeicht, in denen beide vorkommen, verlängern sie die Leiter tief hinein in das expandierende Universum."
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "body_paragraphs.3",
+  "en": "At the top, distance and cosmic expansion merge. The farther a galaxy, the faster it recedes and the more its light is redshifted — Hubble's law. Once the ladder has calibrated the expansion rate, redshift itself becomes the yardstick for the most distant galaxies. Each rung leans on the one below, so an error low down propagates all the way up — which is why the persistent disagreement over the exact expansion rate (the 'Hubble tension') is taken so seriously.",
+  "cur": "Ganz oben verschmelzen Entfernung und kosmische Expansion. Je weiter eine Galaxie entfernt ist, desto schneller entfernt sie sich und desto stärker ist ihr Licht rotverschoben – das Hubble-Gesetz. Sobald die Leiter die Expansionsrate geeicht hat, wird die Rotverschiebung selbst zum Maßstab für die fernsten Galaxien. Jede Sprosse stützt sich auf die darunterliegende, sodass sich ein Fehler weit unten bis ganz nach oben fortpflanzt – weshalb die anhaltende Uneinigkeit über die genaue Expansionsrate (die „Hubble-Spannung“) so ernst genommen wird."
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "diagram_caption",
+  "en": "The ladder, rung by rung: radar and parallax (geometry) → Cepheid variables (calibrated by parallax) → Type Ia supernovae (calibrated by Cepheids) → redshift and Hubble's law. Each method hands off to the next; the megaparsec distances on the /explore outer shells all rest on this chain.",
+  "cur": "Die Leiter, Sprosse für Sprosse: Radar und Parallaxe (Geometrie) → Cepheiden (durch Parallaxe geeicht) → Supernovae vom Typ Ia (durch Cepheiden geeicht) → Rotverschiebung und Hubble-Gesetz. Jede Methode übergibt an die nächste; die Entfernungen in Megaparsec auf den äußeren Schalen unter /explore beruhen allesamt auf dieser Kette."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "title",
+  "en": "Laniakea and the Great Attractor",
+  "cur": "Laniakea und der Große Attraktor"
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "intro_sentence",
+  "en": "In 2014 astronomers redrew the map of our cosmic address — not by charting where galaxies sit, but by tracing where they flow. The answer was Laniakea, a supercluster far larger than the Virgo Supercluster we thought was home.",
+  "cur": "2014 zeichneten Astronomen unsere kosmische Adresse neu — nicht durch Kartierung von Galaxienpositionen, sondern durch Verfolgung ihrer Strömungen. Das Ergebnis war Laniakea, ein Supercluster weit größer als der Virgo-Superhaufen."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "body_paragraphs.0",
+  "en": "The idea is a watershed. On Earth, a drainage basin is defined not by a fence but by which way the rain runs: every drop that flows to the same river mouth belongs to the same basin. Brent Tully's team applied the same logic to galaxies. Using the Cosmicflows survey of galaxy velocities, they mapped which way each galaxy is drifting once the overall expansion of the universe is subtracted, and drew the boundary where the flows diverge.",
+  "cur": "Die Idee ist grundlegend. Auf der Erde wird ein Einzugsgebiet nicht durch einen Zaun, sondern dadurch definiert, wie das Wasser fließt: jeder Tropfen, der zum selben Flussmündung fließt, gehört zum selben Becken. Brent Tullys Team wandte dieselbe Logik auf Galaxien an. Mit der Cosmicflows-Vermessung von Galaxiengeschwindigkeiten kartierten sie, wie jede Galaxie driftet, wenn die allgemeine Ausdehnung des Universums abgezogen wird, und zogen die Grenze, wo die Strömungen auseinander gehen."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "body_paragraphs.1",
+  "en": "The result is Laniakea — Hawaiian for 'immense heaven' — about 160 megaparsecs (500 million light-years) across and home to roughly 100,000 galaxies. Our Virgo Supercluster, once thought to be the whole neighbourhood, turns out to be a single outlying lobe of it. Everything within Laniakea is slowly streaming toward one gravitational low point.",
+  "cur": "Das Ergebnis ist Laniakea — hawaiianisch für »immenser Himmel« — etwa 160 Megaparsec (500 Millionen Lichtjahre) breit und Heimat von rund 100.000 Galaxien. Unser Virgo-Superhaufen, einst für die ganze Nachbarschaft befunden, ist nur ein einzelner äußerer Lappen davon. Alles in Laniakea strömt langsam zu einem gravitativen Tiefpunkt hin."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "body_paragraphs.2",
+  "en": "That focus is the Great Attractor, a mass concentration around the Norma Cluster (Abell 3627), roughly 65 megaparsecs away. It is awkward to study because it lies behind the dense star clouds and dust of the Milky Way's own disc — the 'Zone of Avoidance' — so much of what we know comes from radio and infrared surveys that see through the obscuration, and from the galaxy motions themselves.",
+  "cur": "Dieser Fokus ist der Große Attraktor, eine Massenkonzentration um den Norma-Galaxienhaufen (Abell 3627), etwa 65 Megaparsec entfernt. Er ist schwierig zu untersuchen, da er hinter den dichten Sternenwolken und Staub der eigenen Scheibe der Milchstraße liegt — der »Zone of Avoidance« — daher stammt vieles von unserem Wissen aus Radio- und Infrarotsuveys, die durch die Verdeckung sehen, und von den Galaxienbewegungen selbst."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "body_paragraphs.3",
+  "en": "It does not end there. Laniakea itself is not at rest: the whole supercluster, along with its neighbours, is caught in a broader flow toward an even greater concentration of mass beyond its border — the Shapley Concentration, the densest known collection of galaxy clusters in the nearby universe. A basin within a slope.",
+  "cur": "Es endet dort nicht. Laniakea selbst ist nicht in Ruhe: der ganze Supercluster, zusammen mit seinen Nachbarn, wird in eine breitere Strömung zu einer noch größeren Massenkonzentration jenseits seiner Grenze gezogen — der Shapley-Superhaufen, die dichteste bekannte Ansammlung von Galaxienhaufen im nahegelegenen Universum. Ein Becken auf einer Neigung."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "body_paragraphs.4",
+  "en": "And there is a twist in the tail. These flows built up over billions of years, but dark energy now drives the universe's expansion to accelerate. Over cosmic time that acceleration wins: Laniakea is not gravitationally bound and will not collapse into a single object. It is a snapshot of a flow, not a structure that will endure — a useful way to name our place, not a permanent home.",
+  "cur": "Und es gibt eine überraschende Wendung. Diese Strömungen bauten sich über Milliarden Jahre auf, aber dunkle Energie treibt jetzt die Ausdehnung des Universums zu beschleunigen. Über kosmische Zeit hinweg gewinnt diese Beschleunigung: Laniakea ist gravitativ nicht gebunden und wird nicht zu einem einzelnen Objekt zusammenbrechen. Es ist ein Schnappschuss einer Strömung, keine Struktur, die bestehen wird — ein nützlicher Weg, unseren Platz zu benennen, nicht ein permanentes Zuhause."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "diagram_caption",
+  "en": "Laniakea as a watershed of galaxy flows: streamlines converge on the Great Attractor near the Norma Cluster, with the Virgo Supercluster (our lobe, and our position) out on the rim. The /explore Laniakea shell renders these members schematically — real distances, illustrative layout.",
+  "cur": "Laniakea als Einzugsgebiet von Galaxienströmungen: Stromlinien konvergieren zum Großen Attraktor nahe dem Norma-Galaxienhaufen, mit dem Virgo-Superhaufen (unser Lappen und unsere Position) auf dem Rand. Die /explore Laniakea-Shell rendert diese Mitglieder schematisch — echte Entfernungen, illustratives Layout."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "title",
+  "en": "Large-scale structure — the cosmic web",
+  "cur": "Großräumige Struktur — das kosmische Netz"
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "intro_sentence",
+  "en": "On the largest scales, galaxies are not scattered at random. They gather into groups and clusters, strung along filaments and sheets that wrap around vast near-empty voids — a foam-like pattern astronomers call the cosmic web.",
+  "cur": "Auf den größten Skalen sind Galaxien nicht zufällig verteilt. Sie sammeln sich in Gruppen und Haufen, entlang von Filamenten und Wänden um riesige, fast leere Voids — ein Muster, das Astronomen das kosmische Netz nennen."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "body_paragraphs.0",
+  "en": "The hierarchy nests. Stars gather into galaxies; galaxies fall together into groups (like our Local Group) and rich clusters (like the Virgo Cluster, over a thousand galaxies bound in one gravitational well). Groups and clusters are themselves drawn into superclusters — loose, sprawling concentrations tens of megaparsecs across. Our Local Group sits on the outskirts of the Virgo Supercluster, ~33 megaparsecs (about 110 million light-years) wide and centred on the Virgo Cluster.",
+  "cur": "Die Hierarchie verschachtelt sich. Sterne sammeln sich zu Galaxien; Galaxien stürzen gemeinsam in Gruppen (wie unsere Lokale Gruppe) und reiche Haufen (wie den Virgo-Galaxienhaufen, über tausend Galaxien in einem Gravitationspotential gebunden). Gruppen und Haufen werden selbst in Superhaufen gezogen — lockere, ausgedehnte Konzentrationen von Dutzenden Megaparsec Durchmesser. Unsere Lokale Gruppe liegt am Rand des Virgo-Superhaufen, ~33 Megaparsec (etwa 110 Millionen Lichtjahre) breit und auf den Virgo-Galaxienhaufen zentriert."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "body_paragraphs.1",
+  "en": "Superclusters are not the top. Map the motions of galaxies rather than just their positions and the Virgo Supercluster turns out to be one lobe of a far larger basin of attraction — Laniakea, some 160 megaparsecs across, defined in 2014 as the region where galaxy flows all stream toward a common gravitational focus near the Great Attractor. Laniakea in turn borders neighbouring superclusters across the sky.",
+  "cur": "Superhaufen sind nicht die Spitze. Kartiert man die Bewegungen von Galaxien statt nur ihre Positionen, zeigt sich, dass der Virgo-Superhaufen ein Lappen eines weit größeren Einzugsgebiets ist — Laniakea, etwa 160 Megaparsec groß, 2014 definiert als die Region, in der Galaxienströme alle zu einem gemeinsamen Gravitationsfokus nahe dem Großer Attraktor fließen. Laniakea grenzt wiederum an benachbarte Superhaufen am Himmel."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "body_paragraphs.2",
+  "en": "Between the bright filaments lie the voids — enormous, roughly spherical regions tens of megaparsecs across that are nearly empty of galaxies. Most of the volume of the universe is void; most of the galaxies live in the thin walls and threads between them. Seen at the largest scale, the distribution looks like a sponge, or a web of glowing threads around dark bubbles.",
+  "cur": "Zwischen den hellen Filamenten liegen die Voids — gewaltige, ungefähr kugelförmige Regionen von Dutzenden Megaparsec Durchmesser, die fast leer von Galaxien sind. Das meiste Volumen des Universums ist Void; die meisten Galaxien leben in den dünnen Wänden und Fäden zwischen ihnen. In der größten Skala betrachtet, sieht die Verteilung wie ein Schwamm aus, oder ein Netz aus leuchtenden Fäden um dunkle Blasen."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "body_paragraphs.3",
+  "en": "This pattern is not decorative — it is the fossil of the early universe. Tiny density ripples present when the universe was 380,000 years old, imprinted on the cosmic microwave background, were amplified over billions of years by gravity: dense regions pulled in more matter and grew, empty regions emptied further. Dark matter, which outweighs ordinary matter roughly five to one, did most of the pulling and laid down the scaffolding the visible galaxies later lit up.",
+  "cur": "Dieses Muster ist nicht dekorativ — es ist das Fossil des frühen Universums. Winzige Dichtefluktuationen, die vorhanden waren, als das Universum 380.000 Jahre alt war, eingeprägt im kosmischen Mikrowellenhintergrund, wurden über Milliarden von Jahren durch Gravitation verstärkt: Dichte Regionen zogen mehr Materie an und wuchsen, leere Regionen leerten sich weiter. Dunkle Materie, die gewöhnliche Materie etwa fünf zu eins überwiegt, leistete das meiste Ziehen und legte das Gerüst an, das die sichtbaren Galaxien später beleuchteten."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "body_paragraphs.4",
+  "en": "The cosmic web is also the frontier of the honest map. At these distances positions come from redshift, not a tape measure, and the finest structure is model-dependent — which is why Orrery renders the outer scale shells as explicit schematics, real distances on an illustrative layout, rather than pretending to a precision no survey yet has.",
+  "cur": "Das kosmische Netz ist auch die Grenze der ehrlichen Karte. In diesen Entfernungen stammen Positionen aus der Rotverschiebung, nicht von einem Maßband, und die feinste Struktur ist modellabhängig — weshalb Orrery die äußeren Skalenschalen als explizite Schemata rendert, reale Entfernungen in einer illustrativen Anordnung, statt eine Präzision vorzutäuschen, die noch keine Durchmusterung hat."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "diagram_caption",
+  "en": "The nested hierarchy the /explore scale ladder climbs: Local Group → Local Sheet → Virgo Supercluster → Laniakea → the cosmic web of filaments and voids. Each shell is a schematic — real catalogue distances on an illustrative layout, not a photograph of a structure no telescope can frame.",
+  "cur": "Die verschachtelte Hierarchie, die die /explore-Skalenleiter erklimmt: Lokale Gruppe → Local Sheet → Virgo-Superhaufen → Laniakea → das kosmische Netz aus Filamenten und Voids. Jede Schale ist ein Schema — reale Katalogentfernungen in einer illustrativen Anordnung, kein Foto einer Struktur, die kein Teleskop erfassen kann."
+ },
+ {
+  "rel": "science/exoplanets/_intro.json",
+  "at": "headline",
+  "en": "Exoplanets — the other solar systems.",
+  "cur": "Exoplaneten – die anderen Sonnensysteme."
+ },
+ {
+  "rel": "science/exoplanets/_intro.json",
+  "at": "paragraphs.0",
+  "en": "For most of history the planets we knew fit on one page: the Sun's family. That changed in 1995, when the first world was confirmed around another Sun-like star. Today the count runs into the thousands, and the strangeness is the point — lava worlds hugging their stars, giant planets on wild tilted orbits, and small rocky worlds in the temperate zone where water could pool.",
+  "cur": "Den Großteil der Geschichte passten die Planeten, die wir kannten, auf eine einzige Seite: die Familie der Sonne. Das änderte sich 1995, als erstmals eine Welt um einen anderen sonnenähnlichen Stern bestätigt wurde. Heute geht die Zahl in die Tausende, und gerade das Fremdartige macht den Reiz aus – Lavawelten, die sich dicht an ihre Sterne schmiegen, Riesenplaneten auf wild geneigten Bahnen und kleine Gesteinswelten in der gemäßigten Zone, wo sich Wasser sammeln könnte."
+ },
+ {
+  "rel": "science/exoplanets/_intro.json",
+  "at": "paragraphs.1",
+  "en": "This tab is about how we find them — you cannot photograph most exoplanets, so we detect them by their fingerprints: a star's wobble, a periodic dimming, a gravitational flash. Then it turns to what we've learned: habitable zones, hot Jupiters, the seven chiming worlds of TRAPPIST-1, and the honest state of the question everyone asks — are we alone?",
+  "cur": "In diesem Tab geht es darum, wie wir sie finden: Die meisten Exoplaneten lassen sich nicht fotografieren, also spüren wir sie über ihre Fingerabdrücke auf – das Taumeln eines Sterns, eine periodische Verdunkelung, einen Gravitationsblitz. Danach wenden wir uns dem zu, was wir gelernt haben: habitable Zonen, Hot Jupiters, die sieben klingenden Welten von TRAPPIST-1 und der ehrliche Stand der Frage, die jeder stellt – sind wir allein?"
+ },
+ {
+  "rel": "science/exoplanets/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Every method section links into /explore, where you can drop into a real system on real orbits and watch the physics the article describes.",
+  "cur": "Jeder Abschnitt zu einer Methode führt direkt zu /explore. Dort kannst du in ein reales System mit echten Umlaufbahnen eintauchen und die Physik, die der Artikel beschreibt, selbst beobachten."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "intro_sentence",
+  "en": "Thousands of worlds later, the oldest question is closer to a test than ever — but honesty about what we do and don't know is the whole discipline.",
+  "cur": "Tausende Welten später ist die älteste Frage näher an einem Test als je zuvor — aber Ehrlichkeit darüber, was wir wissen und was nicht, ist die ganze Disziplin."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "narrative_101.0",
+  "en": "The exoplanet count now runs into the thousands, and statistics say roughly every star hosts planets, with small rocky worlds in habitable zones numbering in the billions across the galaxy. The stage for life, at least, is vast.",
+  "cur": "Die Anzahl der Exoplaneten geht inzwischen in die Tausende, und Statistiken besagen, dass grob jeder Stern Planeten beherbergt, wobei kleine felsige Welten in habitablen Zonen in die Milliarden in der Galaxie gehen. Die Bühne für Leben ist zumindest gewaltig."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "narrative_101.1",
+  "en": "That's what makes the silence loud. If habitable real estate is everywhere, where is everyone? — the question Enrico Fermi framed over lunch, still unanswered.",
+  "cur": "Das ist es, was die Stille laut macht. Wenn habitables Territorium überall ist, wo sind alle? — die Frage, die Enrico Fermi beim Mittagessen formulierte, noch immer unbeantwortet."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "narrative_101.2",
+  "en": "We have gone from 'are there other worlds?' — settled, yes — to 'are any of them alive?', a question we can finally start to test rather than only argue about.",
+  "cur": "Wir sind von 'gibt es andere Welten?' — geklärt, ja — zu 'ist auf irgendeiner Leben?' übergegangen, eine Frage, die wir endlich anfangen können zu testen, statt nur darüber zu streiten."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "body_paragraphs.0",
+  "en": "The Drake equation frames the odds as a chain of factors — how many stars, how many with planets, how many habitable, how many that develop life, and so on. Exoplanet science has now pinned the first factors observationally: planets are common, and habitable-zone rocky worlds abundant. The later factors remain unknown.",
+  "cur": "Die Drake-Gleichung rahmt die Chancen als eine Kette von Faktoren — wie viele Sterne, wie viele mit Planeten, wie viele habitabel, wie viele die Leben entwickeln, und so weiter. Die Exoplanetenforschung hat nun die ersten Faktoren beobachtend festgenagelt: Planeten sind häufig, und felsige Welten in habitablen Zonen reichlich vorhanden. Die späteren Faktoren bleiben unbekannt."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "body_paragraphs.1",
+  "en": "The next step is empirical, not philosophical. Reading the atmospheres of temperate rocky worlds for biosignatures — patiently, with instruments and standards built to survive scrutiny — is how the question moves from the Drake equation's guesses toward a measurement.",
+  "cur": "Der nächste Schritt ist empirisch, nicht philosophisch. Das Ablesen der Atmosphären gemäßigter felsiger Welten nach Biosignaturen — geduldig, mit Instrumenten und Standards, die gebaut wurden, um Überprüfung zu überstehen — ist, wie die Frage von den Vermutungen der Drake-Gleichung zu einer Messung übergeht."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "body_paragraphs.2",
+  "en": "The honest state of the art: no life beyond Earth has been detected, no biosignature confirmed. But for the first time, the tools to look are real — and that is the quiet revolution the exoplanet era has delivered.",
+  "cur": "Der ehrliche Stand der Technik: Kein Leben jenseits der Erde wurde entdeckt, keine Biosignatur bestätigt. Aber zum ersten Mal sind die Werkzeuge zum Suchen real — und das ist die stille Revolution, die die Exoplanetenära geliefert hat."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "body_paragraphs.3",
+  "en": "We have not only listened but spoken. In 1974 the Arecibo radio telescope beamed a three-minute pictogram toward the globular cluster M13, 25,000 light-years away, and in 1977 both Voyager spacecraft left Earth carrying the Golden Record — greetings, music, and images bolted to a probe now drifting between the stars. Both are gestures more than conversations, but they are humanity's first deliberate messages to whoever might be out there.",
+  "cur": "Wir haben nicht nur zugehört, sondern auch gesprochen. 1974 strahlte das Radioteleskop Arecibo ein dreiminütiges Piktogramm in Richtung des Kugelsternhaufens M13 aus, 25.000 Lichtjahre entfernt, und 1977 verließen beide Voyager-Raumsonden die Erde mit der Golden Record an Bord — Grüße, Musik und Bilder, an eine Sonde geschraubt, die nun zwischen den Sternen driftet. Beides sind eher Gesten als Gespräche, aber sie sind die ersten bewussten Botschaften der Menschheit an wer auch immer da draußen sein mag."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "intro_sentence",
+  "en": "Track a star's exact position on the sky and you can see it trace a tiny loop as an unseen planet swings it around their shared centre of mass.",
+  "cur": "Verfolgt man die genaue Position eines Sterns am Himmel, sieht man ihn eine winzige Schleife beschreiben, während ein unsichtbarer Planet ihn um ihren gemeinsamen Massenschwerpunkt schwingt."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "narrative_101.0",
+  "en": "Radial velocity catches the star moving toward and away from us. Astrometry catches the other component — the star's side-to-side wobble across the sky as a planet pulls it around.",
+  "cur": "Die Radialgeschwindigkeit erfasst die Bewegung des Sterns auf uns zu und von uns weg. Die Astrometrie erfasst die andere Komponente — das seitliche Taumeln des Sterns über den Himmel, während ein Planet ihn herumzieht."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "narrative_101.1",
+  "en": "The loop the star traces is fantastically small, measured in millionths of a degree, which is why astrometry was long the great near-miss of planet hunting: promised for decades, delivering little, because the precision simply wasn't there.",
+  "cur": "Die Schleife, die der Stern beschreibt, ist fantastisch klein und wird in Millionstel Grad gemessen, weshalb die Astrometrie lange Zeit der große Beinahe-Erfolg der Planetenjagd war: über Jahrzehnte versprochen, wenig geliefert, weil die Präzision einfach nicht vorhanden war."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "narrative_101.2",
+  "en": "Space astrometry has changed that. ESA's Gaia mission has mapped the positions of nearly two billion stars with the precision needed to feel a giant planet's tug — and is beginning to harvest planets from those wobbles.",
+  "cur": "Weltraum-Astrometrie hat das verändert. Die Gaia-Mission der ESA hat die Positionen von fast zwei Milliarden Sternen mit der Präzision kartiert, die nötig ist, um den Zug eines riesigen Planeten zu spüren — und beginnt nun, Planeten aus diesen Taumelbewegungen zu ernten."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "body_paragraphs.0",
+  "en": "Astrometry measures a star's periodic displacement on the plane of the sky as it orbits the system's centre of mass. Unlike radial velocity, it senses the full orbit regardless of orientation, so it yields a true mass (not just a lower bound) and works well for planets on wide orbits, where the astrometric signal grows.",
+  "cur": "Die Astrometrie misst die periodische Verschiebung eines Sterns in der Himmelsebene, während er den Massenschwerpunkt des Systems umkreist. Im Gegensatz zur Radialgeschwindigkeit erfasst sie die vollständige Umlaufbahn unabhängig von ihrer Ausrichtung, liefert also eine echte Masse (nicht nur eine Untergrenze) und funktioniert gut für Planeten auf weiten Umlaufbahnen, wo das astrometrische Signal wächst."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "body_paragraphs.1",
+  "en": "Historically it produced more retractions than planets — Barnard's Star is the classic cautionary tale, its famous 'planets' from 1960s astrometry all spurious. The signal is simply tiny, and instrumental drift easily fakes it.",
+  "cur": "Historisch führte es zu mehr Widerrufen als zu Planeten – Barnards Pfeilstern ist die klassische Warnung, seine berühmten „Planeten\" aus der Astrometrie der 1960er-Jahre alle falsch. Das Signal ist einfach winzig, und instrumentelle Abweichungen können es leicht vortäuschen."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "body_paragraphs.2",
+  "en": "Gaia's all-sky, high-precision astrometry is now delivering genuine detections and, crucially, true masses for planets found by other methods — closing a chapter that stayed open for most of a century.",
+  "cur": "Gaias Ganzhimmel-Hochpräzisions-Astrometrie liefert nun echte Entdeckungen und, entscheidend, echte Massen für Planeten, die durch andere Methoden gefunden wurden — und schließt damit ein Kapitel, das fast ein Jahrhundert lang offen blieb."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "diagram_caption",
+  "en": "The star traces a small loop on the sky as an unseen planet swings it around their common centre of mass.",
+  "cur": "Der Stern beschreibt eine kleine Schleife am Himmel, während ein unsichtbarer Planet ihn um ihren gemeinsamen Massenschwerpunkt schwingt."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "intro_sentence",
+  "en": "The gases or features in a planet's light that could betray life — and why no single one is ever proof on its own.",
+  "cur": "Die Gase oder Merkmale im Licht eines Planeten, die Leben verraten könnten — und warum kein einzelnes jemals allein als Beweis ausreicht."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "narrative_101.0",
+  "en": "If a distant world holds life, it might leave a chemical mark on its atmosphere — a gas that shouldn't be there without something making it. Oxygen on Earth is the classic example: it would vanish in a few million years if photosynthesis stopped replenishing it.",
+  "cur": "Wenn eine ferne Welt Leben beherbergt, könnte es eine chemische Spur in ihrer Atmosphäre hinterlassen — ein Gas, das ohne etwas, das es produziert, nicht da sein sollte. Sauerstoff auf der Erde ist das klassische Beispiel: Er würde innerhalb weniger Millionen Jahre verschwinden, wenn die Photosynthese ihn nicht ständig nachliefern würde."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "narrative_101.1",
+  "en": "The trouble is that nature can fake it. Oxygen, methane, and other candidate 'biosignatures' all have non-living ways to accumulate, so any single detection is a clue, not a verdict.",
+  "cur": "Das Problem ist, dass die Natur es vortäuschen kann. Sauerstoff, Methan und andere potenzielle ‚Biosignaturen' haben alle nichtlebende Wege zur Akkumulation, daher ist jeder einzelne Nachweis ein Hinweis, kein Urteil."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "narrative_101.2",
+  "en": "The honest test is context and combination: the right gases together, out of chemical equilibrium, on a world where geology and starlight can't easily explain them. That's a high bar, and reaching it is the point.",
+  "cur": "Der ehrliche Test ist Kontext und Kombination: die richtigen Gase zusammen, außerhalb des chemischen Gleichgewichts, auf einer Welt, wo Geologie und Sternenlicht sie nicht leicht erklären können. Das ist eine hohe Messlatte, und sie zu erreichen ist der Sinn der Sache."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "body_paragraphs.0",
+  "en": "A biosignature is an observable — a gas, a surface feature, a seasonal cycle — whose most plausible explanation is life. The strongest cases rely on chemical disequilibrium: combinations of gases (like oxygen with methane) that react away unless continuously resupplied, ideally alongside signs that abiotic sources are ruled out.",
+  "cur": "Eine Biosignatur ist eine Observable — ein Gas, ein Oberflächenmerkmal, ein Jahreszeitenzyklus —, deren plausibelste Erklärung Leben ist. Die stärksten Fälle beruhen auf chemischem Ungleichgewicht: Kombinationen von Gasen (wie Sauerstoff mit Methan), die miteinander reagieren und verschwinden, wenn sie nicht kontinuierlich nachgeliefert werden, idealerweise zusammen mit Anzeichen dafür, dass abiotische Quellen ausgeschlossen sind."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "body_paragraphs.1",
+  "en": "Every proposed biosignature has known false positives. Oxygen can build up from water photolysis on some worlds; methane has abundant geological sources. So the field emphasises multiple, mutually-reinforcing lines of evidence and careful modelling of the planet and its star before any claim.",
+  "cur": "Jede vorgeschlagene Biosignatur hat bekannte falsch-positive Ergebnisse. Sauerstoff kann sich auf manchen Welten durch Wasserphotolyse anreichern; Methan hat reichlich geologische Quellen. Daher betont das Forschungsfeld mehrere, sich gegenseitig verstärkende Beweislinien und sorgfältige Modellierung des Planeten und seines Sterns, bevor irgendeine Behauptung aufgestellt wird."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "body_paragraphs.2",
+  "en": "No exoplanet biosignature has been confirmed. Detecting one would demand extraordinary evidence — which is exactly why the search is being built patiently, on instruments and standards designed to withstand the scrutiny such a claim would face.",
+  "cur": "Keine Exoplaneten-Biosignatur wurde bisher bestätigt. Eine zu entdecken würde außergewöhnliche Beweise erfordern — und genau deshalb wird die Suche geduldig aufgebaut, mit Instrumenten und Standards, die darauf ausgelegt sind, der Überprüfung standzuhalten, der eine solche Behauptung ausgesetzt wäre."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "intro_sentence",
+  "en": "Blot out the overwhelming glare of the star and, for a lucky few planets, you can photograph the faint pinprick of light beside it.",
+  "cur": "Blende das überwältigende Licht des Sterns aus, und bei einigen wenigen glücklichen Planeten kannst du den schwachen Lichtpunkt daneben fotografieren."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "narrative_101.0",
+  "en": "Most exoplanets are found indirectly, by their effect on their star. Direct imaging is the exception — it captures actual photons from the planet itself, a genuine picture of another world.",
+  "cur": "Die meisten Exoplaneten werden indirekt gefunden, durch ihre Wirkung auf ihren Stern. Die direkte Abbildung ist die Ausnahme — sie erfasst tatsächliche Photonen vom Planeten selbst, ein echtes Bild einer anderen Welt."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "narrative_101.1",
+  "en": "The problem is contrast. A planet can be a billion times fainter than its star and sits right next to it, like spotting a firefly beside a lighthouse. So the technique hides the star behind a mask — a coronagraph inside the telescope, or a distant free-flying starshade — and lets the planet's light through.",
+  "cur": "Das Problem ist der Kontrast. Ein Planet kann eine Milliarde Mal lichtschwächer sein als sein Stern und befindet sich direkt daneben, wie ein Glühwürmchen neben einem Leuchtturm zu entdecken. Daher verbirgt die Technik den Stern hinter einer Maske — einem Koronografen im Teleskop oder einem entfernten, frei fliegenden Starshade — und lässt das Licht des Planeten durch."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "narrative_101.2",
+  "en": "It works best for the hardest planets to find by other means: young, hot, massive worlds on wide orbits, still glowing with the heat of their formation.",
+  "cur": "Sie funktioniert am besten für die Planeten, die mit anderen Methoden am schwersten zu finden sind: junge, heiße, massereiche Welten auf weiten Umlaufbahnen, die noch mit der Hitze ihrer Entstehung glühen."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "body_paragraphs.0",
+  "en": "Direct imaging blocks or nulls the starlight (with a coronagraph or interferometer) to reveal planets and disks that would otherwise be lost in the glare. Because it detects the planet's own light, it uniquely enables spectroscopy of the world in isolation — a direct read on its temperature and atmosphere.",
+  "cur": "Die direkte Abbildung blockiert oder nullt das Sternenlicht (mit einem Koronografen oder Interferometer), um Planeten und Scheiben sichtbar zu machen, die sonst im Glanz verloren gingen. Da sie das eigene Licht des Planeten erfasst, ermöglicht sie einzigartig die Spektroskopie der Welt in Isolation — eine direkte Aussage über ihre Temperatur und Atmosphäre."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "body_paragraphs.1",
+  "en": "Its bias is the mirror image of the others: it favours large, self-luminous planets far from their stars (wide orbits ease the contrast problem, and youth keeps the planet hot and bright). Systems like HR 8799 — four giant planets imaged at once — and the sculpted debris ring of Fomalhaut are showcases.",
+  "cur": "Ihre Verzerrung ist das Spiegelbild der anderen: Sie bevorzugt große, selbstleuchtende Planeten weit von ihren Sternen entfernt (weite Umlaufbahnen erleichtern das Kontrastproblem, und Jugend hält den Planeten heiß und hell). Systeme wie HR 8799 — vier Riesenplaneten auf einmal abgebildet — und der skulptierte Trümmerring von Fomalhaut sind Vorzeigeobjekte."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "body_paragraphs.2",
+  "en": "The method drives the next generation of flagship instruments, whose goal is to image and take the spectrum of a rocky planet in a Sun-like star's habitable zone — and search its air for signs of life.",
+  "cur": "Die Methode treibt die nächste Generation von Flaggschiff-Instrumenten voran, deren Ziel es ist, einen Gesteinsplaneten in der habitablen Zone eines sonnenähnlichen Sterns abzubilden und sein Spektrum aufzunehmen — und seine Atmosphäre nach Anzeichen von Leben zu durchsuchen."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "diagram_caption",
+  "en": "A coronagraph masks the star's glare so the faint, nearby planet becomes visible.",
+  "cur": "Ein Koronograf maskiert das Licht des Sterns, sodass der schwache, nahe Planet sichtbar wird."
+ },
+ {
+  "rel": "science/exoplanets/exoplanet-atmospheres.json",
+  "at": "title",
+  "en": "Reading Exoplanet Atmospheres",
+  "cur": "Atmosphären von Exoplaneten lesen"
+ },
+ {
+  "rel": "science/exoplanets/exoplanet-atmospheres.json",
+  "at": "intro_sentence",
+  "en": "During a transit, a sliver of starlight filters through a planet's air and carries the fingerprints of its gases back to us.",
+  "cur": "Während eines Transits wird ein schmaler Streifen Sternenlicht durch die Atmosphäre eines Planeten gefiltert und trägt die Fingerabdrücke seiner Gase zu uns zurück."
+ },
+ {
+  "rel": "science/exoplanets/exoplanet-atmospheres.json",
+  "at": "narrative_101.0",
+  "en": "You can't land on an exoplanet, but you can taste its atmosphere from light-years away. When a planet transits, a thin ring of starlight passes through the atmosphere on its way to us, and each gas absorbs its own set of colours.",
+  "cur": "Man kann nicht auf einem Exoplaneten landen, aber man kann seine Atmosphäre aus Lichtjahren Entfernung erschmecken. Wenn ein Planet transitiert, passiert ein dünner Ring Sternenlicht die Atmosphäre auf seinem Weg zu uns, und jedes Gas absorbiert seine eigene Auswahl an Farben."
+ },
+ {
+  "rel": "science/exoplanets/exoplanet-atmospheres.json",
+  "at": "narrative_101.1",
+  "en": "Split that light into a spectrum and the missing colours spell out what the air is made of — water, carbon dioxide, methane, sodium. This is transmission spectroscopy, and the James Webb Space Telescope was built for it.",
+  "cur": "Zerlegt man dieses Licht in ein Spektrum, buchstabieren die fehlenden Farben aus, woraus die Luft besteht — Wasser, Kohlendioxid, Methan, Natrium. Dies ist Transmissionsspektroskopie, und das James Webb Space Telescope wurde dafür gebaut."
+ },
+ {
+  "rel": "science/exoplanets/exoplanet-atmospheres.json",
+  "at": "narrative_101.2",
+  "en": "So far JWST has detected carbon dioxide and other molecules on giant planets, and begun the far harder task of testing whether small rocky worlds around red dwarfs have any atmosphere at all.",
+  "cur": "Bisher hat JWST Kohlendioxid und andere Moleküle auf Riesenplaneten nachgewiesen und die weitaus schwierigere Aufgabe begonnen, zu testen, ob kleine felsige Welten um Rote Zwerge überhaupt eine Atmosphäre besitzen."
+ },
+ {
+  "rel": "science/exoplanets/exoplanet-atmospheres.json",
+  "at": "body_paragraphs.0",
+  "en": "Transmission spectroscopy measures how a planet's atmosphere absorbs starlight during transit, wavelength by wavelength, revealing its composition. Emission spectroscopy — catching the planet's own thermal glow just before it slips behind the star — adds temperature structure. Together they turn a transiting planet into a world with a measurable sky.",
+  "cur": "Transmissionsspektroskopie misst, wie die Atmosphäre eines Planeten während des Transits Sternenlicht absorbiert, Wellenlänge für Wellenlänge, und enthüllt so ihre Zusammensetzung. Emissionsspektroskopie — das Einfangen des eigenen thermischen Leuchtens des Planeten kurz bevor er hinter dem Stern verschwindet — fügt Temperaturstruktur hinzu. Zusammen verwandeln sie einen transitierenden Planeten in eine Welt mit einem messbaren Himmel."
+ },
+ {
+  "rel": "science/exoplanets/exoplanet-atmospheres.json",
+  "at": "body_paragraphs.1",
+  "en": "JWST has pushed the field from hot giants to the edge of rocky-world atmospheres: clear carbon-dioxide detections on gas planets, and sensitive searches around TRAPPIST-1 that so far suggest its innermost planets are largely airless. Red-dwarf flares make holding an atmosphere hard, and that verdict is exactly what these observations test.",
+  "cur": "JWST hat das Feld von heißen Riesen bis an die Grenze felsiger Weltatmosphären vorangebracht: klare Kohlendioxid-Nachweise auf Gasplaneten und empfindliche Suchen um TRAPPIST-1, die bisher darauf hindeuten, dass seine innersten Planeten weitgehend luftlos sind. Ausbrüche Roter Zwerge erschweren das Halten einer Atmosphäre, und genau dieses Urteil ist es, was diese Beobachtungen testen."
+ },
+ {
+  "rel": "science/exoplanets/exoplanet-atmospheres.json",
+  "at": "body_paragraphs.2",
+  "en": "The long-term goal is a rocky planet in a Sun-like star's habitable zone whose atmosphere can be searched for the gases life might produce — the technical bridge from finding worlds to characterising them.",
+  "cur": "Das langfristige Ziel ist ein felsiger Planet in der habitablen Zone eines sonnenähnlichen Sterns, dessen Atmosphäre nach den Gasen durchsucht werden kann, die Leben hervorbringen könnte — die technische Brücke vom Finden von Welten zu ihrer Charakterisierung."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "title",
+  "en": "51 Pegasi b: The First",
+  "cur": "51 Pegasi b: Der Erste"
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "intro_sentence",
+  "en": "In 1995 a giant planet was found skimming a Sun-like star every four days — the discovery that opened the exoplanet era and won a Nobel Prize.",
+  "cur": "1995 wurde ein Riesenplanet entdeckt, der alle vier Tage einen sonnenähnlichen Stern umkreist — die Entdeckung, die die Exoplaneten-Ära eröffnete und einen Nobelpreis gewann."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "narrative_101.0",
+  "en": "For centuries other solar systems were pure speculation. That ended in October 1995, when Michel Mayor and Didier Queloz announced a planet around 51 Pegasi, an ordinary Sun-like star 50 light-years away.",
+  "cur": "Jahrhundertelang waren andere Sonnensysteme reine Spekulation. Das endete im Oktober 1995, als Michel Mayor und Didier Queloz einen Planeten um 51 Pegasi ankündigten, einen gewöhnlichen sonnenähnlichen Stern 50 Lichtjahre entfernt."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "narrative_101.1",
+  "en": "The planet — 51 Pegasi b, informally Dimidium — was a shock: a Jupiter-mass world orbiting its star in just 4.2 days, far closer than any giant was thought able to form. The first exoplanet around a normal star was nothing anyone predicted.",
+  "cur": "Der Planet — 51 Pegasi b, informell Dimidium — war ein Schock: eine Welt von Jupitermasse, die ihren Stern in nur 4,2 Tagen umkreist, weit näher als man dachte, dass sich ein Riesenplanet bilden könnte. Der erste Exoplanet um einen normalen Stern war nichts, was irgendjemand vorhergesagt hatte."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "narrative_101.2",
+  "en": "It opened the floodgates. Within years, dozens more 'hot Jupiters' turned up, planet-formation theory grew a chapter on migration, and in 2019 Mayor and Queloz shared the Nobel Prize in Physics.",
+  "cur": "Es öffnete die Schleusen. Innerhalb von Jahren tauchten Dutzende weitere ‚heiße Jupiter' auf, die Planetenentstehungstheorie erhielt ein Kapitel über Migration, und 2019 teilten sich Mayor und Queloz den Nobelpreis für Physik."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "body_paragraphs.0",
+  "en": "51 Pegasi b was found by radial velocity: a clear ~4.2-day Doppler wobble revealing a planet of at least half Jupiter's mass orbiting perilously close to its star. It was the first confirmed planet around a main-sequence star other than the Sun.",
+  "cur": "51 Pegasi b wurde durch Radialgeschwindigkeit gefunden: ein klares ~4,2-Tage-Doppler-Wackeln enthüllte einen Planeten von mindestens der halben Jupitermasse, der gefährlich nahe an seinem Stern kreist. Es war der erste bestätigte Planet um einen Hauptreihenstern außer der Sonne."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "body_paragraphs.1",
+  "en": "The find was doubly important — it proved the radial-velocity technique worked, and it revealed a planet type (the hot Jupiter) that demanded orbital migration and rewrote formation theory. Its informal name, Dimidium, means 'half', for its minimum mass.",
+  "cur": "Die Entdeckung war doppelt wichtig — sie bewies, dass die Radialgeschwindigkeitsmethode funktionierte, und sie enthüllte einen Planetentyp (den heißen Jupiter), der orbitale Migration erforderte und die Entstehungstheorie neu schrieb. Sein informeller Name, Dimidium, bedeutet ‚halb', wegen seiner Minimalmasse."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "body_paragraphs.2",
+  "en": "The 2019 Nobel Prize in Physics recognised Mayor and Queloz for the discovery — the moment the study of other worlds turned from philosophy into observational science.",
+  "cur": "Der Nobelpreis für Physik 2019 würdigte Mayor und Queloz für die Entdeckung — der Moment, in dem sich das Studium anderer Welten von Philosophie in beobachtende Wissenschaft verwandelte."
+ },
+ {
+  "rel": "science/exoplanets/habitable-zone.json",
+  "at": "intro_sentence",
+  "en": "The band of orbits around a star where a rocky planet could hold liquid water on its surface — not too hot, not too cold.",
+  "cur": "Der Bereich von Umlaufbahnen um einen Stern, in dem ein felsiger Planet flüssiges Wasser auf seiner Oberfläche halten könnte – nicht zu heiß, nicht zu kalt."
+ },
+ {
+  "rel": "science/exoplanets/habitable-zone.json",
+  "at": "narrative_101.0",
+  "en": "Water is liquid only over a narrow range of temperatures, and temperature falls off with distance from a star. So around every star there is a ring of orbits — the habitable zone — where an Earth-like planet could keep oceans rather than boiling or freezing them away.",
+  "cur": "Wasser ist nur in einem engen Temperaturbereich flüssig, und die Temperatur nimmt mit der Entfernung von einem Stern ab. Daher gibt es um jeden Stern herum einen Ring von Umlaufbahnen – die habitable Zone –, in dem ein erdähnlicher Planet Ozeane halten könnte, anstatt sie zu verkochen oder zu gefrieren."
+ },
+ {
+  "rel": "science/exoplanets/habitable-zone.json",
+  "at": "narrative_101.1",
+  "en": "The zone isn't fixed: a hot, bright star pushes it far out; a dim red dwarf pulls it in close. That's why habitable-zone planets around red dwarfs orbit in days, tucked right up against their stars.",
+  "cur": "Die Zone ist nicht fest: Ein heißer, heller Stern schiebt sie weit hinaus; ein schwacher roter Zwerg zieht sie nah heran. Deshalb umkreisen Planeten in der habitablen Zone um rote Zwerge diese in Tagen, dicht an ihre Sterne geschmiegt."
+ },
+ {
+  "rel": "science/exoplanets/habitable-zone.json",
+  "at": "narrative_101.2",
+  "en": "'Habitable zone' is a hopeful shorthand, not a promise. A world there could still be an airless rock or a runaway greenhouse — location is necessary, not sufficient.",
+  "cur": "‚Habitable Zone' ist eine hoffnungsvolle Abkürzung, kein Versprechen. Eine Welt dort könnte dennoch ein luftloser Fels oder ein galoppierendes Treibhaus sein – die Lage ist notwendig, aber nicht hinreichend."
+ },
+ {
+  "rel": "science/exoplanets/habitable-zone.json",
+  "at": "body_paragraphs.0",
+  "en": "The circumstellar habitable zone is defined by stellar flux: the inner edge is where a runaway greenhouse would boil the oceans (Venus's fate), the outer edge where even a strong carbon-dioxide greenhouse can't stop global freezing (beyond Mars). Its distance scales with the square root of the star's luminosity, so it sits far from bright stars and close to faint ones.",
+  "cur": "Die zirkumstellare habitable Zone wird durch den stellaren Strahlungsfluss definiert: Die innere Grenze liegt dort, wo ein galoppierendes Treibhaus die Ozeane verkochen würde (das Schicksal der Venus), die äußere Grenze dort, wo selbst ein starkes Kohlendioxid-Treibhaus das globale Einfrieren nicht verhindern kann (jenseits des Mars). Ihre Entfernung skaliert mit der Quadratwurzel der Sternenleuchtkraft, daher liegt sie weit von hellen Sternen und nahe bei lichtschwachen."
+ },
+ {
+  "rel": "science/exoplanets/habitable-zone.json",
+  "at": "body_paragraphs.1",
+  "en": "Because small red dwarfs are by far the most common stars, most known habitable-zone planets orbit them — worlds like TOI-700 d and several of the TRAPPIST-1 planets. Their tight orbits bring complications: tidal locking and exposure to stellar flares that can strip an atmosphere.",
+  "cur": "Weil kleine rote Zwerge mit Abstand die häufigsten Sterne sind, umkreisen die meisten bekannten Planeten in der habitablen Zone diese – Welten wie TOI-700 d und mehrere der TRAPPIST-1-Planeten. Ihre engen Umlaufbahnen bringen Komplikationen mit sich: Gezeitenbindung und Exposition gegenüber stellaren Flares, die eine Atmosphäre abtragen können."
+ },
+ {
+  "rel": "science/exoplanets/habitable-zone.json",
+  "at": "body_paragraphs.2",
+  "en": "The habitable zone is a first filter, not a verdict. Whether any of these worlds is actually habitable depends on things the zone can't tell us — an atmosphere, water, a magnetic field — which is why the frontier has moved to reading their air.",
+  "cur": "Die habitable Zone ist ein erster Filter, kein Urteil. Ob eine dieser Welten tatsächlich bewohnbar ist, hängt von Dingen ab, die uns die Zone nicht verraten kann – eine Atmosphäre, Wasser, ein Magnetfeld –, weshalb die Grenze sich verlagert hat zum Auslesen ihrer Luft."
+ },
+ {
+  "rel": "science/exoplanets/habitable-zone.json",
+  "at": "diagram_caption",
+  "en": "The habitable zone (shaded) — orbits where a rocky planet could hold liquid water; inward is too hot, outward too cold.",
+  "cur": "Die habitable Zone (schattiert) – Umlaufbahnen, auf denen ein felsiger Planet flüssiges Wasser halten könnte; innen ist es zu heiß, außen zu kalt."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "intro_sentence",
+  "en": "Giant planets orbiting scorchingly close to their stars — the surprise that greeted the very first exoplanet discoveries and rewrote how we think planets form.",
+  "cur": "Riesenplaneten, die ihren Sternen sengend nah umkreisen – die Überraschung, die uns die allerersten Exoplanetenfunde bescherte und unser Verständnis davon, wie Planeten entstehen, neu schrieb."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "narrative_101.0",
+  "en": "The first exoplanets found around Sun-like stars were nothing like our own giants. Instead of a Jupiter parked far out in the cold, they were Jupiters roasting a few stellar radii from their stars, whipping around in days.",
+  "cur": "Die ersten Exoplaneten, die um sonnenähnliche Sterne gefunden wurden, glichen unseren eigenen Riesen in nichts. Statt eines Jupiter, der weit draußen in der Kälte parkt, waren es Jupiter, die wenige Sternradien von ihren Sternen entfernt rösteten und in wenigen Tagen herumwirbelten."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "narrative_101.1",
+  "en": "Nobody expected them. Gas giants were supposed to form far out, beyond the 'snow line' where ice can condense. A giant planet skimming its star violated the textbook — and forced a new idea: planets can migrate inward after they form.",
+  "cur": "Niemand hatte sie erwartet. Gasriesen sollten weit draußen entstehen, jenseits der ‚Schneegrenze', wo Eis kondensieren kann. Ein Riesenplanet, der seinen Stern streift, verstieß gegen das Lehrbuch – und erzwang eine neue Idee: Planeten können nach ihrer Entstehung nach innen wandern."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "narrative_101.2",
+  "en": "Hot Jupiters are rare in absolute terms but easy to find — huge, close, and deeply transiting — so they dominated the early years and remain the best-studied exoplanets of all.",
+  "cur": "Heiße Jupiter sind in absoluten Zahlen selten, aber leicht zu finden – riesig, nah und mit tiefen Transits – daher dominierten sie die frühen Jahre und bleiben die am besten untersuchten Exoplaneten überhaupt."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "body_paragraphs.0",
+  "en": "Hot Jupiters are gas giants on orbits of only a few days, with dayside temperatures often exceeding 1,000 degrees. Their existence implies large-scale orbital migration: they likely formed beyond the snow line and spiralled inward through interactions with the protoplanetary disk or with other bodies, ending up where no giant could have assembled in place.",
+  "cur": "Heiße Jupiter sind Gasriesen auf Umlaufbahnen von nur wenigen Tagen, deren Tagseiten oft Temperaturen von über 1.000 Grad erreichen. Ihre Existenz deutet auf großräumige Bahnwanderung hin: Sie entstanden wahrscheinlich jenseits der Schneegrenze und spiralten durch Wechselwirkungen mit der protoplanetaren Scheibe oder mit anderen Körpern nach innen, wo sie an einem Ort endeten, an dem kein Riesenplanet vor Ort hätte entstehen können."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "body_paragraphs.1",
+  "en": "Their size and proximity make them the workhorses of exoplanet atmosphere science. Inflated by their stars' heat, they produce deep transits and strong signals, and they were the first worlds to have their atmospheres, winds, and even escaping tails detected.",
+  "cur": "Ihre Größe und Nähe machen sie zu den Arbeitspferden der Exoplaneten-Atmosphärenforschung. Durch die Hitze ihrer Sterne aufgebläht, erzeugen sie tiefe Transits und starke Signale, und sie waren die ersten Welten, bei denen Atmosphären, Winde und sogar entweichende Schweife nachgewiesen wurden."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "body_paragraphs.2",
+  "en": "51 Pegasi b, the first planet found around a Sun-like star, is the archetype — and the reason planet-formation theory had to grow a chapter on migration.",
+  "cur": "51 Pegasi b, der erste um einen sonnenähnlichen Stern gefundene Planet, ist der Archetypus – und der Grund, warum die Planetenentstehungstheorie ein Kapitel über Migration hinzufügen musste."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "title",
+  "en": "Gravitational Microlensing",
+  "cur": "Gravitativer Mikrolinseneffekt"
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "intro_sentence",
+  "en": "When one star drifts precisely in front of another, its gravity magnifies the background star — and a planet adds a brief extra flash.",
+  "cur": "Wenn ein Stern genau vor einem anderen vorbeizieht, vergrößert seine Schwerkraft den Hintergrundstern — und ein Planet fügt einen kurzen zusätzlichen Lichtblitz hinzu."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "narrative_101.0",
+  "en": "Gravity bends light. When a foreground star passes almost exactly in front of a far more distant one, it acts as a lens, briefly brightening the background star over days or weeks.",
+  "cur": "Schwerkraft beugt Licht. Wenn ein Vordergrundstern fast exakt vor einem sehr viel weiter entfernten vorbeizieht, wirkt er wie eine Linse und erhellt den Hintergrundstern kurzzeitig über Tage oder Wochen."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "narrative_101.1",
+  "en": "If the foreground star has a planet, the planet's own gravity adds a short, sharp spike on top of that smooth brightening — a blip lasting hours to a day that betrays a world you will never see directly.",
+  "cur": "Hat der Vordergrundstern einen Planeten, fügt die eigene Schwerkraft des Planeten dieser sanften Aufhellung eine kurze, scharfe Spitze hinzu — ein Ausschlag von Stunden bis zu einem Tag, der eine Welt verrät, die man niemals direkt sehen wird."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "narrative_101.2",
+  "en": "Because it relies on a one-off chance alignment, each microlensing event happens once and never repeats. But the method reaches where others can't: cold planets far from their stars, and even free-floating worlds bound to no star at all.",
+  "cur": "Da die Methode auf einer einmaligen Zufallsausrichtung beruht, ereignet sich jedes Mikrolinsen-Ereignis nur ein einziges Mal und wiederholt sich nie. Doch die Methode erreicht Regionen, die andere nicht erreichen können: kalte Planeten weit entfernt von ihren Sternen und sogar frei schwebende Welten, die an keinen Stern gebunden sind."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "body_paragraphs.0",
+  "en": "Microlensing detects planets by the transient gravitational magnification they add to a chance alignment of two stars. It is uniquely sensitive to low-mass planets on wide, cool orbits — the region beyond the snow line that transits and radial velocity struggle to reach — and to rogue planets drifting alone through the galaxy.",
+  "cur": "Mikrolinsen-Effekte entdecken Planeten durch die vorübergehende gravitative Vergrößerung, die sie einer zufälligen Ausrichtung zweier Sterne hinzufügen. Die Methode ist einzigartig empfindlich für massearme Planeten auf weiten, kühlen Umlaufbahnen — der Region jenseits der Schneelinie, die Transiten und Radialgeschwindigkeitsmessungen nur schwer erreichen — sowie für vagabundierende Planeten, die allein durch die Galaxis treiben."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "body_paragraphs.1",
+  "en": "The trade-off is that events are singular and unrepeatable, the host and planet are often too distant to study further, and the mass and separation come out somewhat degenerate. It is a statistical tool: it measures how common cold and free-floating planets are, more than it catalogues individual worlds.",
+  "cur": "Der Nachteil ist, dass die Ereignisse einmalig und nicht wiederholbar sind, dass Stern und Planet oft zu weit entfernt sind, um weiter untersucht zu werden, und dass Masse und Abstand etwas entartet herauskommen. Es ist ein statistisches Werkzeug: Es misst, wie häufig kalte und frei schwebende Planeten sind, mehr als dass es einzelne Welten katalogisiert."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "body_paragraphs.2",
+  "en": "NASA's Nancy Grace Roman Space Telescope will run a wide microlensing survey expected to find thousands of these otherwise-invisible planets, filling in the cold outer reaches of the exoplanet census.",
+  "cur": "Das Nancy Grace Roman Space Telescope der NASA wird eine weitreichende Mikrolinsen-Durchmusterung durchführen, von der erwartet wird, dass sie Tausende dieser sonst unsichtbaren Planeten findet und damit die kalten äußeren Bereiche der Exoplaneten-Zählung ausfüllt."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "diagram_caption",
+  "en": "A foreground star lenses a background one; an orbiting planet adds a brief secondary spike to the light curve.",
+  "cur": "Ein Vordergrundstern bündelt das Licht eines Hintergrundsterns; ein umlaufender Planet fügt der Lichtkurve eine kurze sekundäre Spitze hinzu."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "intro_sentence",
+  "en": "When planets' orbital periods form simple whole-number ratios, their repeated alignments lock the system into a self-reinforcing rhythm.",
+  "cur": "Wenn die Umlaufzeiten von Planeten einfache ganzzahlige Verhältnisse bilden, verriegeln ihre wiederholten Ausrichtungen das System in einem selbstverstärkenden Rhythmus."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "narrative_101.0",
+  "en": "If one planet orbits exactly twice for every once of its neighbour, the two line up in the same place over and over, and their gravitational nudges add up instead of averaging out. That's a resonance — a rhythmic lock between orbits.",
+  "cur": "Falls ein Planet genau zweimal umläuft, während sein Nachbar einmal umläuft, reihen sich die beiden immer wieder an derselben Stelle auf, und ihre gravitativen Anstöße summieren sich, anstatt sich herauszumitteln. Das ist eine Resonanz — eine rhythmische Verriegelung zwischen Bahnen."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "narrative_101.1",
+  "en": "TRAPPIST-1 is the showpiece: its seven planets sit in a near-unbroken chain of resonances, each period a tidy ratio of the next. Speed the system up and the alignments would ring out an actual musical scale.",
+  "cur": "TRAPPIST-1 ist das Paradebeispiel: seine sieben Planeten sitzen in einer nahezu ununterbrochenen Kette von Resonanzen, jede Periode ein ordentliches Vielfaches der nächsten. Beschleunigt man das System, würden die Ausrichtungen tatsächlich eine musikalische Tonleiter erklingen lassen."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "narrative_101.2",
+  "en": "Resonances are footprints of how a system formed — they arise when planets migrate inward together through the birth disk and catch each other in step.",
+  "cur": "Resonanzen sind Fußabdrücke davon, wie sich ein System gebildet hat — sie entstehen, wenn Planeten gemeinsam durch die Entstehungsscheibe nach innen wandern und sich gegenseitig im Gleichschritt einfangen."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "body_paragraphs.0",
+  "en": "An orbital resonance occurs when orbiting bodies exert regular, periodic gravitational influence on each other, usually because their periods are in a ratio of small integers. Resonances can stabilise a tightly packed system by keeping planets in a locked pattern, or destabilise one by pumping up eccentricities.",
+  "cur": "Eine Bahnresonanz tritt auf, wenn umlaufende Körper regelmäßigen, periodischen gravitativen Einfluss aufeinander ausüben, üblicherweise weil ihre Perioden im Verhältnis kleiner ganzer Zahlen stehen. Resonanzen können ein dicht gepacktes System stabilisieren, indem sie Planeten in einem verriegelten Muster halten, oder es destabilisieren, indem sie Exzentrizitäten hochtreiben."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "body_paragraphs.1",
+  "en": "Chains of resonances, like TRAPPIST-1's, are strong evidence for convergent migration: planets forming farther out and drifting inward through the gas disk, becoming trapped in successive resonances as they go. The delicate arrangement also makes the planets' mutual tugs measurable as transit-timing variations, which is how their masses were weighed.",
+  "cur": "Ketten von Resonanzen, wie die von TRAPPIST-1, sind starke Belege für konvergente Migration: Planeten, die weiter außen entstehen und durch die Gasscheibe nach innen driften, werden nacheinander in Resonanzen gefangen, während sie wandern. Die empfindliche Anordnung macht auch die gegenseitigen Zerrungen der Planeten als Transit-Timing-Variationen messbar, und so wurden ihre Massen bestimmt."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "body_paragraphs.2",
+  "en": "Resonance is a bridge between a system's present rhythm and its deep past — the orbits still carry the memory of how they assembled.",
+  "cur": "Resonanz ist eine Brücke zwischen dem gegenwärtigen Rhythmus eines Systems und seiner tiefen Vergangenheit — die Bahnen tragen noch immer die Erinnerung daran, wie sie sich zusammengefügt haben."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "diagram_caption",
+  "en": "Planets in near-integer period ratios line up repeatedly, so their gravitational tugs reinforce.",
+  "cur": "Planeten in nahezu ganzzahligen Periodenverhältnissen reihen sich wiederholt auf, sodass sich ihre gravitativen Anstöße verstärken."
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "title",
+  "en": "Formation & Migration",
+  "cur": "Entstehung & Migration"
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "intro_sentence",
+  "en": "Planets condense from a disk of gas and dust around a young star — and often don't stay where they were born.",
+  "cur": "Planeten kondensieren aus einer Scheibe aus Gas und Staub um einen jungen Stern — und bleiben oft nicht dort, wo sie geboren wurden."
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "narrative_101.0",
+  "en": "A new star is wrapped in a spinning disk of gas and dust. Grains stick into pebbles, pebbles into boulders, boulders into planet-sized bodies — the whole planetary system assembling from the leftovers of the star's own birth.",
+  "cur": "Ein neuer Stern ist umhüllt von einer rotierenden Scheibe aus Gas und Staub. Körner verkleben zu Kieseln, Kiesel zu Felsbrocken, Felsbrocken zu planetengroßen Körpern — das gesamte Planetensystem baut sich aus den Überresten der eigenen Geburt des Sterns zusammen."
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "narrative_101.1",
+  "en": "Where a planet forms depends on temperature: rock and metal condense close in, ice only beyond the 'snow line'. That's why the Solar System has small rocky worlds inside and giants outside.",
+  "cur": "Wo ein Planet entsteht, hängt von der Temperatur ab: Gestein und Metall kondensieren in der Nähe, Eis erst jenseits der ‚Schneegrenze'. Deshalb hat das Sonnensystem kleine felsige Welten innen und Riesen außen."
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "narrative_101.2",
+  "en": "But the exoplanet zoo — hot Jupiters, resonant chains — proved that planets migrate. They exchange momentum with the disk and with each other and can spiral far from where they were born, scrambling the tidy picture.",
+  "cur": "Doch der Exoplaneten-Zoo — heiße Jupiter, resonante Ketten — bewies, dass Planeten wandern. Sie tauschen Impuls mit der Scheibe und miteinander aus und können weit von ihrem Geburtsort spiralförmig wegdriften, wodurch das ordentliche Bild durcheinandergerät."
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "body_paragraphs.0",
+  "en": "The nebular model builds planets by core accretion in a protoplanetary disk: dust coagulates into planetesimals, which merge into cores; a core beyond the snow line that grows fast enough can capture a massive gas envelope and become a giant before the disk disperses.",
+  "cur": "Das Nebularmodell baut Planeten durch Kernakkretion in einer protoplanetaren Scheibe auf: Staub koaguliert zu Planetesimalen, die zu Kernen verschmelzen; ein Kern jenseits der Schneegrenze, der schnell genug wächst, kann eine massive Gashülle einfangen und zu einem Riesen werden, bevor sich die Scheibe auflöst."
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "body_paragraphs.1",
+  "en": "Migration reshuffles the result. Gravitational torques between a planet and the disk gas can drive large radial drift, delivering hot Jupiters to their scorching orbits and sweeping smaller planets into resonant chains. Later scattering between planets can tilt and stretch orbits further.",
+  "cur": "Migration mischt das Ergebnis neu. Gravitationsdrehmomente zwischen einem Planeten und dem Scheibengas können eine große radiale Drift antreiben, heiße Jupiter in ihre glühenden Umlaufbahnen bringen und kleinere Planeten in resonante Ketten fegen. Spätere Streuung zwischen Planeten kann Umlaufbahnen weiter neigen und strecken."
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "body_paragraphs.2",
+  "en": "Exoplanet demographics — the abundance of close-in giants, the ubiquity of super-Earths, the resonant multis — are the observational constraints that any formation-and-migration theory now has to reproduce.",
+  "cur": "Exoplaneten-Demografie — die Häufigkeit naher Riesen, die Allgegenwart von Super-Erden, die resonanten Mehrfachsysteme — sind die beobachtenden Randbedingungen, die jede Entstehungs- und Migrationstheorie nun reproduzieren muss."
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "title",
+  "en": "Proxima Centauri: The Nearest Planets",
+  "cur": "Proxima Centauri: Die nächstgelegenen Planeten"
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "intro_sentence",
+  "en": "Around the closest star to the Sun orbits a roughly Earth-mass planet in the habitable zone — the nearest potentially habitable world, 4.24 light-years away.",
+  "cur": "Um den sonnennächsten Stern kreist ein Planet mit etwa Erdmasse in der habitablen Zone — die nächstgelegene potenziell bewohnbare Welt, 4,24 Lichtjahre entfernt."
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "narrative_101.0",
+  "en": "The nearest star to the Sun, Proxima Centauri, is a small red dwarf just 4.24 light-years away — and in 2016 astronomers found a roughly Earth-mass planet, Proxima b, orbiting it in its habitable zone.",
+  "cur": "Der sonnennächste Stern, Proxima Centauri, ist ein kleiner roter Zwerg nur 4,24 Lichtjahre entfernt — und 2016 entdeckten Astronomen einen Planeten mit etwa Erdmasse, Proxima b, der ihn in seiner habitablen Zone umkreist."
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "narrative_101.1",
+  "en": "It is the closest potentially habitable world we know of, which makes it the natural first target for any dream of reaching another star. The Breakthrough Starshot project imagines gram-scale light-sail probes crossing to it within a human lifetime.",
+  "cur": "Es ist die nächstgelegene potenziell bewohnbare Welt, die wir kennen, was sie zum natürlichen ersten Ziel für jeden Traum macht, einen anderen Stern zu erreichen. Das Breakthrough Starshot-Projekt stellt sich grammleichte Lichtsegel-Sonden vor, die ihn innerhalb eines Menschenlebens erreichen könnten."
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "narrative_101.2",
+  "en": "The catch is the star itself: Proxima flares violently, and its habitable-zone planet — likely tidally locked — sits close enough to take the brunt, a serious threat to any atmosphere or life.",
+  "cur": "Der Haken ist der Stern selbst: Proxima zeigt heftige Flares, und sein Planet in der habitablen Zone — wahrscheinlich gebunden rotierend — sitzt nah genug, um die volle Wucht abzubekommen, eine ernsthafte Bedrohung für jede Atmosphäre oder Leben."
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "body_paragraphs.0",
+  "en": "Proxima Centauri b was detected by radial velocity: a ~11-day signal implying a planet of at least about 1.1 Earth masses in the temperate zone of the M5.5 dwarf. A second, far lighter planet, Proxima d, was confirmed in the early 2020s on a tighter orbit — one of the lowest-mass planets known.",
+  "cur": "Proxima Centauri b wurde durch Radialgeschwindigkeit entdeckt: ein ~11-Tage-Signal, das auf einen Planeten von mindestens etwa 1,1 Erdmassen in der temperierten Zone des M5.5-Zwergs hindeutet. Ein zweiter, weit leichterer Planet, Proxima d, wurde in den frühen 2020er Jahren auf einer engeren Umlaufbahn bestätigt — einer der Planeten mit der geringsten bekannten Masse."
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "body_paragraphs.1",
+  "en": "Proximity is the whole story. At 4.24 light-years the system anchors interstellar thought experiments, from Breakthrough Starshot's light sails to generations of science fiction, and is a priority target for future direct-imaging searches.",
+  "cur": "Die Nähe ist die ganze Geschichte. Bei 4,24 Lichtjahren ist das System der Ankerpunkt interstellarer Gedankenexperimente, von Breakthrough Starshots Lichtsegeln bis zu Generationen von Science-Fiction, und ein vorrangiges Ziel für zukünftige Direktabbildungs-Suchprogramme."
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "body_paragraphs.2",
+  "en": "Habitability is genuinely uncertain. Red-dwarf flares, tidal locking, and the difficulty of confirming an atmosphere from Earth all keep Proxima b in the tantalising-but-unproven column — the nearest test case for whether red-dwarf worlds can be alive.",
+  "cur": "Die Bewohnbarkeit ist wirklich ungewiss. Flares roter Zwerge, gebundene Rotation und die Schwierigkeit, eine Atmosphäre von der Erde aus zu bestätigen, halten Proxima b alle in der verlockend-aber-unbewiesenen Spalte — der nächstgelegene Testfall dafür, ob Welten roter Zwerge lebendig sein können."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "title",
+  "en": "The Radial-Velocity Method",
+  "cur": "Die Radialgeschwindigkeitsmethode"
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "intro_sentence",
+  "en": "A planet's gravity tugs its star into a tiny to-and-fro wobble; a spectrograph reads that motion as a Doppler shift in starlight.",
+  "cur": "Die Schwerkraft eines Planeten zieht seinen Stern in ein winziges Hin-und-her-Taumeln; ein Spektrograf liest diese Bewegung als Dopplerverschiebung im Sternenlicht."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "narrative_101.0",
+  "en": "A planet doesn't just orbit its star — the two swing around their shared centre of mass, so the star traces a small circle of its own. From our vantage that shows up as the star moving slightly toward us, then slightly away, over and over.",
+  "cur": "Ein Planet umkreist nicht einfach nur seinen Stern – die beiden schwingen um ihren gemeinsamen Massenschwerpunkt, sodass der Stern selbst einen kleinen Kreis beschreibt. Aus unserer Perspektive zeigt sich das dadurch, dass sich der Stern leicht auf uns zu, dann wieder leicht von uns weg bewegt, immer und immer wieder."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "narrative_101.1",
+  "en": "That approach-and-recede shifts the star's spectral lines blue then red — the same Doppler effect that raises and lowers a passing siren's pitch. Measure the shift precisely enough and the planet reveals itself, even though you never see it.",
+  "cur": "Diese Annäherung und Entfernung verschiebt die Spektrallinien des Sterns erst ins Blaue, dann ins Rote – derselbe Dopplereffekt, der die Tonhöhe einer vorbeifahrenden Sirene anhebt und absenkt. Misst man die Verschiebung präzise genug, offenbart sich der Planet, obwohl man ihn nie sieht."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "narrative_101.2",
+  "en": "The wobble is minute: Jupiter tugs the Sun at about 12 metres per second, Earth at barely 9 centimetres per second. Reaching those speeds is a decades-long instrument story that is still unfolding.",
+  "cur": "Das Taumeln ist winzig: Jupiter zieht die Sonne mit etwa 12 Metern pro Sekunde, die Erde mit kaum 9 Zentimetern pro Sekunde. Diese Geschwindigkeiten zu erreichen ist eine jahrzehntelange Instrumentengeschichte, die noch immer andauert."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "body_paragraphs.0",
+  "en": "Radial velocity was the first method to deliver, confirming 51 Pegasi b in 1995 and dominating the early exoplanet count. It measures the line-of-sight speed of the star from Doppler shifts in its spectrum; the amplitude of that speed (K) scales with the planet's mass and shrinks with orbital distance, so it favours massive planets on short orbits — the reason the first finds were 'hot Jupiters'.",
+  "cur": "Die Radialgeschwindigkeit war die erste Methode, die Ergebnisse lieferte: Sie bestätigte 51 Pegasi b im Jahr 1995 und dominierte die frühe Exoplanetenanzahl. Sie misst die Sichtliniengeschwindigkeit des Sterns aus Dopplerverschiebungen in seinem Spektrum; die Amplitude dieser Geschwindigkeit (K) skaliert mit der Masse des Planeten und nimmt mit dem Orbitalabstand ab, sodass sie massereiche Planeten auf kurzen Umlaufbahnen begünstigt – der Grund, warum die ersten Funde ›heiße Jupiter‹ waren."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "body_paragraphs.1",
+  "en": "Its great strength is mass: radial velocity yields the planet's minimum mass (m·sin i), the quantity that tells you whether a world is rocky, icy, or gas. Its limits are the unknown orbital inclination (only a lower bound on mass without a transit) and the wall set by the star's own surface churning, which mimics a wobble and currently hides true Earth-analogue signals.",
+  "cur": "Ihre große Stärke ist die Masse: Die Radialgeschwindigkeit liefert die Minimalmasse des Planeten (m·sin i), die Größe, die verrät, ob eine Welt felsig, eisig oder gasförmig ist. Ihre Grenzen sind die unbekannte Bahnneigung (nur eine untere Massengrenze ohne Transit) und die Mauer, die das Brodeln der Sternoberfläche selbst setzt, das ein Taumeln imitiert und derzeit echte Erdanaloga-Signale verbirgt."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "body_paragraphs.2",
+  "en": "Modern spectrographs like ESPRESSO reach sub-metre-per-second precision, enough to detect the sub-Earth worlds recently found around Barnard's Star. Paired with a transit, radial velocity turns a size into a density — and a density into a guess at what a planet is made of.",
+  "cur": "Moderne Spektrografen wie ESPRESSO erreichen eine Präzision unter einem Meter pro Sekunde, genug um die Sub-Erd-Welten zu entdecken, die kürzlich um Barnards Pfeilstern gefunden wurden. Kombiniert mit einem Transit verwandelt die Radialgeschwindigkeit eine Größe in eine Dichte – und eine Dichte in eine Vermutung darüber, woraus ein Planet besteht."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "formula_caption",
+  "en": "The velocity semi-amplitude K grows with planet mass and shrinks with orbital period.",
+  "cur": "Die Geschwindigkeitssemiamplitude K wächst mit der Planetenmasse und nimmt mit der Umlaufperiode ab."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "diagram_caption",
+  "en": "Star and planet orbit their common centre of mass; the star's line-of-sight motion shifts its spectrum blue then red.",
+  "cur": "Stern und Planet umkreisen ihren gemeinsamen Massenschwerpunkt; die Sichtlinienbewegung des Sterns verschiebt sein Spektrum erst ins Blaue, dann ins Rote."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "title",
+  "en": "Super-Earths & Sub-Neptunes",
+  "cur": "Supererden & Sub-Neptun"
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "intro_sentence",
+  "en": "The galaxy's most common planets are sizes the Solar System skipped entirely — bigger than Earth, smaller than Neptune.",
+  "cur": "Die häufigsten Planeten der Galaxie haben Größen, die das Sonnensystem völlig ausgelassen hat — größer als die Erde, kleiner als Neptun."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "narrative_101.0",
+  "en": "Our own system has a gap: nothing between Earth and Neptune, a factor of nearly four in size with no members. The galaxy, it turns out, loves that gap — planets in it are the single most common kind we've found.",
+  "cur": "Unser eigenes System hat eine Lücke: nichts zwischen Erde und Neptun, ein Größenunterschied von fast Faktor vier ohne jegliche Mitglieder. Die Galaxie, wie sich herausstellt, liebt diese Lücke — Planeten darin sind die mit Abstand häufigste Art, die wir gefunden haben."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "narrative_101.1",
+  "en": "They come in two flavours that blur together: rocky 'super-Earths' up to about 1.5 times Earth's size, and gas-shrouded 'sub-Neptunes' above roughly twice Earth's size. In between sits a real scarcity — the 'radius valley' — that hints at how these worlds lose or keep their atmospheres.",
+  "cur": "Sie kommen in zwei Varianten vor, die ineinander übergehen: felsige ‚Supererden' bis etwa 1,5-facher Erdgröße und gasumhüllte ‚Sub-Neptun' oberhalb von etwa dem Doppelten der Erdgröße. Dazwischen liegt eine echte Seltenheit — das ‚Radiustal' — das darauf hindeutet, wie diese Welten ihre Atmosphären verlieren oder behalten."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "narrative_101.2",
+  "en": "Because we have no local example, these worlds are genuinely alien territory: we're still learning what they're made of and whether any could be habitable.",
+  "cur": "Da wir kein lokales Beispiel haben, sind diese Welten wahrhaft fremdes Terrain: Wir lernen immer noch, woraus sie bestehen und ob welche von ihnen bewohnbar sein könnten."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "body_paragraphs.0",
+  "en": "Statistically, super-Earths and sub-Neptunes are the most abundant planets in the galaxy, yet the Solar System contains none. The 'radius valley' — a dip in the number of planets around 1.5–2 Earth radii — appears to divide bare rocky cores from worlds that have held onto a thick hydrogen-helium or steam envelope.",
+  "cur": "Statistisch gesehen sind Supererden und Sub-Neptun die häufigsten Planeten der Galaxie, doch das Sonnensystem enthält keine. Das ‚Radiustal' — ein Rückgang in der Anzahl der Planeten um 1,5–2 Erdradien — scheint nackte Gesteinskerne von Welten zu trennen, die eine dicke Wasserstoff-Helium- oder Dampfhülle behalten haben."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "body_paragraphs.1",
+  "en": "The dividing line is likely set by atmospheric escape: close-in planets can have their light envelopes stripped by stellar radiation, leaving a rocky super-Earth, while those that keep the envelope read as larger, lower-density sub-Neptunes.",
+  "cur": "Die Trennlinie wird wahrscheinlich durch atmosphärischen Verlust bestimmt: Planeten in Sternnähe können ihre leichten Hüllen durch Sternstrahlung abgetragen bekommen, wodurch eine felsige Supererde übrig bleibt, während jene, die die Hülle behalten, als größere Sub-Neptun mit geringerer Dichte erscheinen."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "body_paragraphs.2",
+  "en": "Mass-and-radius measurements from paired transit and radial-velocity data — and increasingly atmospheric spectra from JWST — are what let us sort one from the other and probe a class of planet Earth has no cousin to.",
+  "cur": "Masse-Radius-Messungen aus kombinierten Transit- und Radialgeschwindigkeitsdaten — und zunehmend Atmosphärenspektren von JWST — sind es, die uns erlauben, das eine vom anderen zu unterscheiden und eine Planetenklasse zu untersuchen, zu der die Erde keinen Verwandten hat."
+ },
+ {
+  "rel": "science/exoplanets/tidal-locking.json",
+  "at": "intro_sentence",
+  "en": "Planets orbiting close to small stars often keep one face turned toward the star forever — permanent day on one side, permanent night on the other.",
+  "cur": "Planeten, die kleine Sterne eng umkreisen, halten oft für immer eine Seite dem Stern zugewandt — permanenter Tag auf der einen Seite, permanente Nacht auf der anderen."
+ },
+ {
+  "rel": "science/exoplanets/tidal-locking.json",
+  "at": "narrative_101.0",
+  "en": "The Moon does it to Earth: it keeps one face toward us always, because tides have synchronised its spin to its orbit. The same thing happens to planets that hug their stars.",
+  "cur": "Der Mond tut es mit der Erde: Er hält uns stets eine Seite zugewandt, weil Gezeitenkräfte seine Rotation mit seinem Umlauf synchronisiert haben. Das Gleiche geschieht mit Planeten, die ihre Sterne eng umkreisen."
+ },
+ {
+  "rel": "science/exoplanets/tidal-locking.json",
+  "at": "narrative_101.1",
+  "en": "For a rocky world in the habitable zone of a red dwarf — orbiting in days, tucked in close — tidal locking is almost inevitable. One hemisphere bakes in endless daylight; the other freezes in endless night; a ring of perpetual twilight runs between.",
+  "cur": "Für eine Gesteinswelt in der habitablen Zone eines Roten Zwergs — die in Tagen umläuft, dicht herangezogen — ist gebundene Rotation nahezu unvermeidlich. Eine Hemisphäre backt in endlosem Tageslicht; die andere gefriert in endloser Nacht; ein Ring ewiger Dämmerung verläuft dazwischen."
+ },
+ {
+  "rel": "science/exoplanets/tidal-locking.json",
+  "at": "narrative_101.2",
+  "en": "It sounds hostile, but it isn't necessarily fatal to life. A thick atmosphere or an ocean can carry heat around the planet and even out the extremes — one of the big open questions for red-dwarf habitability.",
+  "cur": "Es klingt lebensfeindlich, ist aber nicht notwendigerweise tödlich für Leben. Eine dicke Atmosphäre oder ein Ozean kann Wärme um den Planeten tragen und die Extreme ausgleichen — eine der großen offenen Fragen für die Habitabilität von Roten Zwergen."
+ },
+ {
+  "rel": "science/exoplanets/tidal-locking.json",
+  "at": "body_paragraphs.0",
+  "en": "Tidal locking (spin-orbit synchronisation) arises when a star's tidal pull brakes a close-in planet's rotation until its day equals its year. Because the effect strengthens sharply with proximity, essentially every rocky planet in a red dwarf's habitable zone is expected to be locked or in a related resonant spin state.",
+  "cur": "Gebundene Rotation (Spin-Bahn-Synchronisation) entsteht, wenn die Gezeitenkraft eines Sterns die Rotation eines nahen Planeten abbremst, bis sein Tag seinem Jahr entspricht. Weil der Effekt mit der Nähe stark zunimmt, wird erwartet, dass im Wesentlichen jeder Gesteinsplanet in der habitablen Zone eines Roten Zwergs gebunden ist oder sich in einem verwandten resonanten Rotationszustand befindet."
+ },
+ {
+  "rel": "science/exoplanets/tidal-locking.json",
+  "at": "body_paragraphs.1",
+  "en": "The consequence is an extreme, permanent temperature contrast between the substellar 'eye' and the antistellar night side. Whether that's habitable depends on heat transport: climate models show a sufficiently thick atmosphere or a global ocean can redistribute warmth and keep the terminator — or even much of the night side — temperate.",
+  "cur": "Die Folge ist ein extremer, permanenter Temperaturkontrast zwischen dem substellaren ‚Auge' und der antistellaren Nachtseite. Ob das bewohnbar ist, hängt vom Wärmetransport ab: Klimamodelle zeigen, dass eine ausreichend dicke Atmosphäre oder ein globaler Ozean Wärme umverteilen und den Terminator — oder sogar große Teile der Nachtseite — gemäßigt halten können."
+ },
+ {
+  "rel": "science/exoplanets/tidal-locking.json",
+  "at": "body_paragraphs.2",
+  "en": "Since red dwarfs host most of the galaxy's habitable-zone real estate, the fate of tidally locked worlds like Proxima b is central to whether the most common habitable zones are actually habitable.",
+  "cur": "Da Rote Zwerge den Großteil der Immobilien in habitablen Zonen der Galaxie beherbergen, ist das Schicksal gebundener Welten wie Proxima b zentral dafür, ob die häufigsten habitablen Zonen tatsächlich bewohnbar sind."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "title",
+  "en": "Transit-Timing Variations",
+  "cur": "Transitzeitvariationen"
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "intro_sentence",
+  "en": "In a crowded system, planets tug on one another and arrive early or late; the drift in transit times reveals unseen worlds and weighs the ones we see.",
+  "cur": "In einem dicht besetzten System ziehen Planeten aneinander und treffen früher oder später ein; die Drift in den Transitzeiten enthüllt unsichtbare Welten und wiegt diejenigen, die wir sehen."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "narrative_101.0",
+  "en": "A lone transiting planet arrives like clockwork — same interval, every orbit. But put several planets in one system and their mutual gravity nudges each other, so transits creep a little early or a little late in a repeating pattern.",
+  "cur": "Ein einzelner transitierender Planet trifft ein wie ein Uhrwerk — gleicher Abstand, jede Umlaufbahn. Aber setze mehrere Planeten in ein System und ihre gegenseitige Gravitation schubst sie, sodass Transite ein wenig früher oder ein wenig später in einem sich wiederholenden Muster eintreffen."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "narrative_101.1",
+  "en": "Those few-minute drifts are a gravitational signature. Model them and you can weigh the planets from their tugs alone — no spectrograph needed — and sometimes infer a planet that never transits at all, felt only through its pull on the others.",
+  "cur": "Diese wenigen Minuten Drift sind eine Gravitationssignatur. Modelliere sie und du kannst die Planeten allein durch ihre Anziehung wiegen — kein Spektrograph nötig — und manchmal auf einen Planeten schließen, der niemals transitiert, sondern nur durch seinen Zug an den anderen spürbar ist."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "narrative_101.2",
+  "en": "This is how the seven small worlds of TRAPPIST-1 were weighed: too faint for radial velocity, their masses came from the way they hurry and delay each other across the star.",
+  "cur": "So wurden die sieben kleinen Welten von TRAPPIST-1 gewogen: zu lichtschwach für Radialgeschwindigkeit, kamen ihre Massen aus der Art, wie sie einander über den Stern hinweg beschleunigen und verzögern."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "body_paragraphs.0",
+  "en": "Transit-timing variations (TTVs) exploit the gravitational interactions between planets in the same system. A perfectly isolated planet transits with a constant period; interacting planets show periodic deviations whose amplitude and pattern encode the planets' masses and orbits.",
+  "cur": "Transit-Timing-Variationen (TTVs) nutzen die gravitativen Wechselwirkungen zwischen Planeten im selben System. Ein perfekt isolierter Planet transitiert mit konstanter Periode; wechselwirkende Planeten zeigen periodische Abweichungen, deren Amplitude und Muster die Massen und Bahnen der Planeten kodieren."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "body_paragraphs.1",
+  "en": "TTVs shine exactly where radial velocity struggles — around faint, small stars whose Doppler wobble is buried in noise — and they can reveal non-transiting planets by their influence alone. They are most sensitive near orbital resonances, where repeated close encounters amplify the tugs.",
+  "cur": "TTVs glänzen genau dort, wo Radialgeschwindigkeit kämpft — um lichtschwache, kleine Sterne, deren Doppler-Wobble im Rauschen vergraben ist — und sie können nicht-transitierende Planeten allein durch ihren Einfluss enthüllen. Sie sind am empfindlichsten nahe Bahnresonanzen, wo wiederholte nahe Begegnungen die Anziehungen verstärken."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "body_paragraphs.2",
+  "en": "The method's masses complement transit radii to give densities, which is why compact resonant systems like TRAPPIST-1 and Kepler's multi-planet chains are so well characterised despite orbiting dim stars.",
+  "cur": "Die Massen der Methode ergänzen Transitradien, um Dichten zu erhalten, weshalb kompakte resonante Systeme wie TRAPPIST-1 und Keplers Multiplanetenketten so gut charakterisiert sind, obwohl sie dunkle Sterne umkreisen."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "diagram_caption",
+  "en": "Mutual gravitational tugs make transits arrive early or late; the pattern of drift encodes the planets' masses.",
+  "cur": "Gegenseitige gravitative Anziehungen lassen Transite früher oder später eintreffen; das Muster der Drift kodiert die Massen der Planeten."
+ },
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "intro_sentence",
+  "en": "When a planet crosses in front of its star, it blocks a sliver of light; that periodic dip in brightness betrays the planet and measures its size.",
+  "cur": "Wenn ein Planet vor seinem Stern vorbeizieht, blockiert er einen schmalen Streifen Licht; dieser periodische Helligkeitsabfall verrät den Planeten und misst seine Größe."
+ },
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "narrative_101.0",
+  "en": "If a planet's orbit happens to be edge-on to us, once per orbit it passes directly between us and its star — a transit — and the star dims by a tiny, precise fraction while the planet is in front.",
+  "cur": "Wenn die Umlaufbahn eines Planeten zufällig von der Kante zu uns ausgerichtet ist, passiert er einmal pro Umlauf direkt zwischen uns und seinem Stern — ein Transit — und der Stern wird um einen winzigen, präzisen Bruchteil dunkler, während der Planet davor steht."
+ },
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "narrative_101.1",
+  "en": "The depth of that dip is just the ratio of areas: a bigger planet blocks more light. An Earth crossing the Sun dims it by about one part in ten thousand; a Jupiter, by one percent. Catch the dips repeating on a clock and you have a planet's size and orbital period.",
+  "cur": "Die Tiefe dieses Abfalls ist einfach das Verhältnis der Flächen: Ein größerer Planet blockiert mehr Licht. Eine Erde, die die Sonne kreuzt, verdunkelt sie um etwa einen Teil von zehntausend; ein Jupiter um ein Prozent. Wenn man die sich wiederholenden Abfälle nach der Uhr erfasst, hat man die Größe und Umlaufperiode eines Planeten."
+ },
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "narrative_101.2",
+  "en": "Only a small fraction of systems are lined up for us to see transits — but survey enough stars and the numbers win. That is exactly what NASA's Kepler and TESS missions did, from space, staring at hundreds of thousands of stars at once.",
+  "cur": "Nur ein kleiner Bruchteil der Systeme ist so ausgerichtet, dass wir Transite sehen können — aber wenn man genügend Sterne erfasst, gewinnen die Zahlen. Genau das haben die NASA-Missionen Kepler und TESS aus dem Weltraum getan, indem sie Hunderttausende von Sternen gleichzeitig beobachteten."
+ },
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "body_paragraphs.0",
+  "en": "Transit photometry is the most productive method by far, responsible for the large majority of known exoplanets. It measures a planet's radius directly (from the fractional dip in starlight) and its orbital period (from the spacing of the dips); combined with a radial-velocity mass it yields a bulk density.",
+  "cur": "Die Transitphotometrie ist bei weitem die produktivste Methode und für die große Mehrheit der bekannten Exoplaneten verantwortlich. Sie misst den Radius eines Planeten direkt (aus dem fraktionalen Abfall des Sternenlichts) und seine Umlaufperiode (aus dem Abstand der Abfälle); kombiniert mit einer Radialgeschwindigkeitsmasse ergibt dies eine mittlere Dichte."
+ }
+]

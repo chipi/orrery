@@ -75,6 +75,9 @@ const ONLY = {
     /^messages:(lab_assume_kepler_j2|lab_f_geo_glossary|lab_f_regime_glossary|lab_goal_g10_frozen|why_)|^planets\/saturn\.json|^science\/_landing\.json:(chapters\.0|tools\.0)\.|^science\/(history|orbits|scales-time|transfers)\/|^science\/observation\/magellanic-clouds|^sun\.json/,
   Galileo:
     /^(missions\/moon|site-stories)\/apollo15\.json|^science\/history\/|^science\/planets\/moons-of-the-system/,
+  // the constellations, not Project Gemini or the Cygnus cargo craft
+  Gemini: /^universe\/named-stars\//,
+  Cygnus: /^universe\/named-stars\//,
 };
 const GUARD = {
   Vega: {

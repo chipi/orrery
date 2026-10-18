@@ -1,0 +1,770 @@
+[
+ {
+  "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+  "at": "body_paragraphs.2",
+  "en": "Food engineering is a stranger problem than it sounds. Microgravity changes swallowing (the bolus has to be actively pushed; crew members chew more times per bite than on Earth), changes taste (the fluid shift toward the head causes ~30% reduction in odour perception, which means taste is also reduced — astronauts describe everything as bland for the first 2 weeks), changes appetite (most crew lose 5-10% body weight in the first month of an expedition; the body is in a different metabolic state than at 1 g), and changes choking risk (no gravity to pull a misdirected swallow down the right pipe). The ISS Food System engineering response is foods that don't crumble (no bread; crews eat tortillas), foods that bind to themselves (a lot of sauces and gravies — they hold the meal together), strong flavours (hot sauce is iconically over-consumed on ISS), and absolutely no carbonated drinks (the bubbles don't separate from the liquid in microgravity, which makes drinking carbonated water in zero-g a uniquely unpleasant experience).",
+  "cur": "La ingeniería de la comida es un problema más extraño de lo que parece. La microgravedad cambia la deglución (el bolo hay que empujarlo activamente; los tripulantes mastican cada bocado más veces que en la Tierra), cambia el gusto (el desplazamiento de líquidos hacia la cabeza reduce ~30 % la percepción de olores, y con ella el gusto — los astronautas describen todo como insípido durante las 2 primeras semanas), cambia el apetito (la mayoría pierde un 5-10 % de peso en el primer mes de una expedición; el cuerpo está en un estado metabólico distinto que a 1 g) y cambia el riesgo de atragantamiento (no hay gravedad que lleve un trago desviado por el conducto correcto). La respuesta del EEI Food System son alimentos que no se desmigajan (nada de pan; se comen tortillas), alimentos que se mantienen unidos (muchas salsas y jugos que cohesionan la comida), sabores fuertes (la salsa picante se consume en exceso de forma legendaria en la EEI) y ninguna bebida con gas (las burbujas no se separan del líquido en microgravedad, lo que hace de beber agua con gas en ingravidez una experiencia especialmente desagradable)."
+ },
+ {
+  "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+  "at": "body_paragraphs.3",
+  "en": "Caloric needs are higher in space than on Earth — typically 2800-3000 kcal/day for a male astronaut on ISS, vs 2400-2600 at 1 g. Part of that is exercise (2 hours/day of resistance + cardio, more on that in the bone-density-loss article), part is the elevated metabolic demand of constant micro-corrections against drift. NASA's Space Food Systems Laboratory at Johnson runs through about 200 menu items per crew rotation; Roscosmos has a parallel menu programme; China’s CMSA has built up its own Chinese-cuisine-oriented menu (yuxiang shredded pork, kung pao chicken, all engineered for microgravity). International missions cross-pollinate: ISS crew members of any nationality can request food from any of the partner agencies. The Apollo programme used spoon-bowl pouches + freeze-dried rehydration; Shuttle moved to thermostabilised pouches; ISS uses a mix; Mars-class transit menus are still being designed — the longest food-supply storage problem in the project.",
+  "cur": "Las necesidades calóricas son mayores en el espacio que en la Tierra: normalmente 2800-3000 kcal/día para un astronauta varón en la EEI, frente a 2400-2600 a 1 g. Parte se debe al ejercicio (2 horas diarias de fuerza y cardio; más en el artículo sobre pérdida de densidad ósea) y parte a la mayor demanda metabólica de las microcorrecciones constantes contra la deriva. El Space Food Systems Laboratory de NASA en Johnson maneja unos 200 platos por rotación de tripulación; Roscosmos tiene un programa de menús paralelo; la CMSA de China ha desarrollado su propio menú orientado a la cocina china (cerdo desmenuzado yuxiang, pollo kung pao, todo adaptado a la microgravedad). Las misiones internacionales se mezclan: los tripulantes de la EEI de cualquier nacionalidad pueden pedir comida de cualquiera de las agencias socias. El programa Apollo usaba bolsas con cuchara y rehidratación de liofilizados; el Shuttle pasó a bolsas termoestabilizadas; la EEI usa una mezcla; los menús para tránsitos a Marte aún se están diseñando: el problema de almacenamiento de alimentos más largo del proyecto."
+ },
+ {
+  "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+  "at": "body_paragraphs.4",
+  "en": "Water is the other thermal-rebalancing variable. ISS crew drink 2.0-2.5 L/day, all of it from the Water Recovery System (see the ECLSS article — most of it is recycled urine + condensate + EVA suit water). Hydration tracks closely with bone-density and renal-stone risk, so the data is monitored daily. Russian-segment water is from a parallel Roscosmos system that doesn't process urine (the source is humidity condensate + resupply); the two halves can share but typically don't. Tiangong runs its own closed-loop system on Tianhe. The Mars-class architecture being studied at JSC + EAC + IKI explicitly assumes >98% closed-loop water — anything less than that requires more launch mass than chemical-rocket Mars architectures can plausibly deliver.",
+  "cur": "El agua es la otra variable de reequilibrio térmico. La tripulación de la EEI bebe 2,0-2,5 L/día, todo procedente del Water Recovery System (véase el artículo sobre ECLSS: la mayor parte es orina reciclada, condensado y agua de los trajes de EVA). La hidratación está muy relacionada con la densidad ósea y el riesgo de cálculos renales, así que los datos se vigilan a diario. El agua del segmento ruso procede de un sistema paralelo de Roscosmos que no procesa orina (la fuente es el condensado de humedad y el reabastecimiento); las dos mitades pueden compartir agua, pero normalmente no lo hacen. Tiangong tiene su propio sistema de ciclo cerrado en Tianhe. La arquitectura de clase Marte que se estudia en JSC, EAC e IKI asume explícitamente más de un 98 % de agua en ciclo cerrado: cualquier cifra inferior exige más masa de lanzamiento de la que las arquitecturas de Marte con cohetes químicos pueden aportar de forma realista."
+ },
+ {
+  "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+  "at": "diagram_caption",
+  "en": "Body wants: single sunrise, gravity to swallow, gravity to settle bubbles, 7-8 hrs sleep. ISS gives: 16 sunrises/day, 0 g, no fizz, ~6 hrs sleep. Countermeasures: hard schedule on GMT + circadian lighting + sealed sleep booths + engineered food + recycled water.",
+  "cur": "El cuerpo quiere: un amanecer, gravedad para tragar, gravedad para separar burbujas, 7–8 h de sueño. EEI da: 16 amaneceres/día, 0 g, sin gas, ~6 h de sueño. Contramedidas: horario GMT estricto + iluminación circadiana + cabinas selladas + comida diseñada + agua reciclada."
+ },
+ {
+  "rel": "science/life-in-space/suit-lineage.json",
+  "at": "title",
+  "en": "Suit lineage — Sokol to Orlan to Feitian, A7L to AxEMU",
+  "cur": "Linaje de trajes — Sokol a Orlan a Feitian, A7L a AxEMU"
+ },
+ {
+  "rel": "science/life-in-space/suit-lineage.json",
+  "at": "intro_sentence",
+  "en": "Every modern spacesuit traces to one of three families: American Apollo-derived, Soviet/Russian Sokol + Orlan, and Chinese Feitian (itself derived from Orlan). Six decades, three lineages, lots of cross-pollination.",
+  "cur": "Todo traje espacial moderno desciende de una de tres familias: americana (derivada de Apollo), soviética/rusa (Sokol + Orlan) y china (Feitian, derivada de Orlan). Seis décadas, tres linajes, mucha retroalimentación cruzada."
+ },
+ {
+  "rel": "science/life-in-space/suit-lineage.json",
+  "at": "body_paragraphs.0",
+  "en": "The original IVA suit problem was simple and terrible: keep the crew alive if the spacecraft loses pressure. Vostok and Voskhod cosmonauts wore SK-1 / Berkut suits. Mercury used a modified Navy Mark IV. Gemini used the G3C / G4C. None of these were tested as full-decompression life-savers because no flight had ever lost cabin pressure. Then in June 1971 Soyuz 11 returned with the crew dead from rapid decompression during separation — Dobrovolsky, Volkov, Patsayev were in shirtsleeves because the Soyuz cabin couldn't fit three suited cosmonauts. The Soviet response was the Sokol K-V (1973), a lightweight rubberised-fabric pressure suit designed specifically to fit inside the Soyuz couch and inflate in seconds if the cabin failed. Every Soyuz crew since wears a descendant of Sokol — the current Sokol-M is its latest modernised variant.",
+  "cur": "Linaje de trajes — Sokol a Orlan a Feitian, A7L a AxEMU\n\nEl problema de los trajes IVA originales era simple y terrible: mantener viva la tripulación si la nave espacial perdía presión. Los cosmonautas del Vostok y el Voskhod llevaban trajes SK-1 / Berkut. El Mercury utilizaba un Mark IV de la Armada modificado. El Gemini utilizaba el G3C / G4C. Ninguno de estos fue probado como salvadores de vida en descompresión total porque ningún vuelo había perdido nunca la presión de la cabina. Entonces, en junio de 1971, el Soyuz 11 regresó con la tripulación muerta por descompresión rápida durante la separación — Dobrovolski, Vólkov y Patsáyev iban en mangas de camisa porque la cabina del Soyuz no podía albergar a tres cosmonautas entrajeados. La respuesta soviética fue el Sokol K-V (1973), un traje de presión ligero de tela caucho diseñado específicamente para caber dentro del asiento del Soyuz e inflarse en segundos si fallaba la cabina. Cada tripulación del Soyuz desde entonces lleva un descendiente del Sokol — la actual variante Sokol-M es su último variant modernizado."
+ },
+ {
+  "rel": "science/life-in-space/suit-lineage.json",
+  "at": "body_paragraphs.1",
+  "en": "The American IVA lineage went through more iterations. Apollo used pressure-tight Block I (which killed Grissom-White-Chaffee in the 1967 fire) then Block II (post-fire redesign). Shuttle used the Launch Entry Suit (orange LES, 1988-94) then the ACES — Advanced Crew Escape Suit (1994-2011). When the Shuttle retired and US-side flights resumed in 2020, both SpaceX and Boeing produced their own clean-sheet IVA suits — the SpaceX Crew Dragon IVA (custom-fitted, single-piece zipper-entry, designed by Jose Fernandez of Hollywood costume background) and the Boeing Starliner IVA (more conventional NASA-design lineage). Neither is rated for EVA. Both inherit the Sokol functional contract — protect against rapid decompression, single-occupant fit, integrated with the seat — but neither shares Sokol's parts list.",
+  "cur": "El linaje IVA americano pasó por más iteraciones. Apollo usó el Block I hermético a la presión (que mató a Grissom, White y Chaffee en el incendio de 1967) y luego el Block II (rediseño post-incendio). El Shuttle usó el Launch Entry Suit (LES naranja, 1988-94) y luego el ACES — Advanced Crew Escape Suit (1994-2011). Cuando el Shuttle se retiró y los vuelos desde el lado estadounidense reanudaron en 2020, tanto SpaceX como Boeing produjeron sus propios trajes IVA de nueva generación — el SpaceX Crew Dragon IVA (ajuste personalizado, entrada de cremallera de una sola pieza, diseñado por Jose Fernandez con experiencia en vestuario de cine) y el Boeing Starliner IVA (con linaje de diseño NASA más convencional). Ninguno está calificado para EVA. Ambos heredan el contrato funcional Sokol — protección contra descompresión rápida, ajuste para un ocupante, integración con el asiento — pero ninguno comparte la lista de componentes del Sokol."
+ },
+ {
+  "rel": "science/life-in-space/suit-lineage.json",
+  "at": "body_paragraphs.2",
+  "en": "The American EVA lineage starts with A7L (Apollo, 1969-72) and A7LB (later Apollo, 1971-72), then the EMU (Extravehicular Mobility Unit, 1981-present), which is the iconic white modular suit used for every US-side EVA on Skylab, Shuttle, and ISS. The EMU is now in its 40+ year of service — newer than most aircraft, older than most operational hardware on station. Its components include the HUT (Hard Upper Torso, the white shell), the LCVG (Liquid Cooling and Ventilation Garment — water tubes against the skin), the LTA (Lower Torso Assembly), the PLSS (Portable Life Support System, the backpack — CO₂ scrubbing + water cooling + oxygen + radio), and the MAG (Maximum Absorbency Garment — astronaut's diaper, a Lockheed-Martin acquisition from the 1980s). EMU production stopped after the Shuttle programme; the suits currently flying are refurbs of the 1980s-1990s build, with parts cannibalised from retired units. The AxEMU (Axiom Space EMU, for Artemis III lunar EVA) is the first new American EVA suit since the original; it inherits the modular philosophy but rebuilds every subsystem.",
+  "cur": "El linaje EVA americano comienza con A7L (Apollo, 1969-72) y A7LB (Apollo tardío, 1971-72), luego el EMU (Extravehicular Mobility Unit, 1981-presente), que es el icónico traje modular blanco usado en cada EVA del lado estadounidense en Skylab, Shuttle y EEI. El EMU ahora está en su cuarta década de servicio — más nuevo que la mayoría de aeronaves, más antiguo que la mayoría del hardware operacional en la estación. Sus componentes incluyen el HUT (Hard Upper Torso, la cáscara blanca), el LCVG (Liquid Cooling and Ventilation Garment — tubos de agua contra la piel), el LTA (Lower Torso Assembly), el PLSS (Portable Life Support System, la mochila — eliminación de CO₂ + refrigeración por agua + oxígeno + radio) y el MAG (Maximum Absorbency Garment — pañal del astronauta, una adquisición de Lockheed-Martin de los años 80). La producción de EMU se detuvo después del programa Shuttle; los trajes en vuelo actualmente son reacondicionamientos de construcción de los años 80-90, con piezas canibalizadas de unidades retiradas. El AxEMU (Axiom Space EMU, para EVA lunar en Artemis III) es el primer traje EVA americano nuevo desde el original; hereda la filosofía modular pero reconstruye cada subsistema."
+ },
+ {
+  "rel": "science/life-in-space/suit-lineage.json",
+  "at": "body_paragraphs.3",
+  "en": "The Russian EVA lineage is Orlan (Орлан, 'sea eagle'), continuous since 1977. Unlike the American semi-modular EMU, Orlan is a rear-entry one-piece suit — the astronaut climbs in through a hatch in the back, closes the hatch, and is suited. Five-minute prep vs the EMU's 30-minute layered suit-up. Orlan also runs at higher pressure (5.8 psi vs EMU's 4.3 psi) which gives shorter prebreathe windows in exchange for more rigidity. The current Orlan-MKS (introduced 2017) is the seventh generation; flown on every Russian EVA since 2017 and on Tiangong's first crewed EVAs in 2021-22 before China's own Feitian became available.",
+  "cur": "El linaje EVA ruso es Orlan (águila marina), continuo desde 1977. A diferencia del EMU semimodular americano, Orlan es un traje de una sola pieza con entrada trasera — el astronauta entra por una escotilla en la espalda, cierra la escotilla y queda equipado. Preparación de cinco minutos contra los 30 minutos de colocación de capas del EMU. Orlan también funciona a mayor presión (5,8 psi vs 4,3 psi del EMU) lo que permite ventanas de prerespiracion más cortas a cambio de mayor rigidez. El actual Orlan-MKS (introducido en 2017) es la séptima generación; volado en cada EVA rusa desde 2017 y en los primeros EVA tripulados de Tiangong en 2021-22 antes de que el Feitian propio de China estuviera disponible."
+ },
+ {
+  "rel": "science/life-in-space/suit-lineage.json",
+  "at": "body_paragraphs.4",
+  "en": "Feitian (飞天, 'flying sky') is China's EVA suit, debuted on Shenzhou 7 (2008) for the country's first EVA, and now in its second-generation Feitian-2 variant on Tiangong. Feitian is derived from Orlan — rear-entry one-piece, similar internal geometry, similar operating pressure — but built domestically with Chinese-sourced materials and Chinese-developed thermal control. The lineage is admitted openly: ACC (China's Astronaut Centre) had Roscosmos-trained engineers as consultants on the first Feitian, and the second-gen suit further customised the design for Tiangong's Wentian airlock. The geopolitical irony is that Feitian — a Russian-lineage suit — represents the only currently-operational EVA capability outside of the US-Russian ISS partnership. AxEMU (American, lunar-targeted) is in development. Beyond those three, there is no other operational EVA suit in the world today; the IVA market is more diverse (Sokol-M, Crew Dragon IVA, Starliner IVA, Shenzhou IVA, India's planned Gaganyaan IVA), but EVA remains a three-suit world.",
+  "cur": "Feitian (cielo volador) es el traje EVA chino, debutó en el Shenzhou 7 (2008) para el primer EVA del país, y ahora en su variante Feitian-2 de segunda generación en Tiangong. Feitian está derivado de Orlan — entrada trasera de una sola pieza, geometría interna similar, presión de funcionamiento similar — pero construido internamente con materiales de origen chino y control térmico desarrollado por los chinos. El linaje es admitido abiertamente: ACC (Centro de Astronautas de China) contaba con ingenieros capacitados por Roscosmos como consultores en el primer Feitian, y el traje de segunda generación adaptó aún más el diseño para la esclusa del módulo Wentian de Tiangong. La ironía geopolítica es que Feitian — un traje de linaje ruso — representa la única capacidad EVA operacional actualmente fuera de la asociación EEI estadounidense-rusa. AxEMU (americana, objetivo lunar) está en desarrollo. Más allá de estos tres, no existe otro traje EVA operacional en el mundo hoy; el mercado IVA es más diverso (Sokol-M, Crew Dragon IVA, Starliner IVA, Shenzhou IVA, Gaganyaan IVA planificado de India), pero EVA sigue siendo un mundo de tres trajes."
+ },
+ {
+  "rel": "science/life-in-space/suit-lineage.json",
+  "at": "diagram_caption",
+  "en": "Three lineages: American IVA (Mercury Mark IV → ACES → SpaceX / Starliner) + American EVA (A7L/A7LB → EMU → AxEMU). Russian IVA (Sokol K → Sokol-M) + Russian EVA (Orlan → Orlan-MKS). Chinese EVA (Feitian, derived from Orlan, second-gen on Tiangong). Cross-pollination is the rule, not the exception — every modern suit borrows from at least one ancestor in another lineage.",
+  "cur": "Tres linajes: IVA americano (Mercury Mark IV → ACES → SpaceX / Starliner) + EVA americano (A7L/A7LB → EMU → AxEMU). IVA ruso (Sokol K → Sokol-M) + EVA ruso (Orlan → Orlan-MKS). EVA chino (Feitian, derivado de Orlan, segunda generación en Tiangong). La retroalimentación cruzada es la regla, no la excepción — todo traje moderno toma prestado de al menos un ancestro en otro linaje."
+ },
+ {
+  "rel": "science/life-in-space/surface-dust-mitigation.json",
+  "at": "title",
+  "en": "Surface dust — the lunar + Mars hazard everyone underestimated",
+  "cur": "Polvo superficial — el peligro lunar + marciano que todos subestimaron"
+ },
+ {
+  "rel": "science/life-in-space/surface-dust-mitigation.json",
+  "at": "intro_sentence",
+  "en": "Apollo crews returned with suits abraded after 10 EVAs and airlocks jamming on dust. Mars regolith is chemically toxic. Every long-stay architecture is built around dust protocols — they are the operational hazard nothing makes go away.",
+  "cur": "Tripulaciones Apollo regresaron con trajes abrasionados tras 10 EVAs y esclusas atascadas. Regolito marciano es químicamente tóxico. Arquitecturas largas se construyen en torno a protocolos de polvo — peligro operativo que nada disipa."
+ },
+ {
+  "rel": "science/life-in-space/surface-dust-mitigation.json",
+  "at": "body_paragraphs.0",
+  "en": "Lunar dust is mechanically dangerous in a way no terrestrial dust prepares you for. The surface is a fine regolith — particle sizes from sub-micron up to coarse sand, with a median of 70 µm — that was created by 4 billion years of micrometeorite impacts. Each impact is a tiny explosion that fragments existing rock; the fragments cool in vacuum without water to round their edges. The result is a powder of angular glass shards, sharper than ground glass. Adding to the hazard: lunar regolith is electrostatically charged by UV photoionisation on the day side and by plasma exposure in the lunar terminator zone. Charged dust clings to everything — sticks to suit fabric via electrostatic adhesion at a level that brushing alone cannot remove. Apollo crews reported that lunar dust degraded EVA suit joint seals after about 10 EVAs (Apollo 17 was the only mission to make three back-to-back EVAs, and Cernan's suit zipper was showing wear by the third).",
+  "cur": "El polvo lunar es mecánicamente peligroso de una manera que ningún polvo terrestre te prepara para enfrentar. La superficie es un regolito fino — tamaños de partícula desde submicrónico hasta arena gruesa, mediana 70 µm — creado por 4.000 millones de años de impactos de micrometeoritos. Cada impacto es una pequeña explosión que fragmenta la roca existente; los fragmentos se enfrían en vacío sin agua para redondear sus bordes. El resultado es un polvo de fragmentos de vidrio angulares, más afilados que vidrio molido. Sumándose al peligro: el regolito lunar está cargado electrostáticamente por fotoionización UV en el lado diurno y por exposición a plasma en la zona del terminador lunar. El polvo cargado se adhiere a todo — pega a la tela del traje por adhesión electrostática a un nivel que el cepillado solo no puede quitar. Las tripulaciones Apollo reportaron que el polvo lunar degradó los sellos de articulación de los trajes EVA tras ~10 EVAs (Apollo 17 fue la única misión en hacer tres EVAs consecutivas, y la cremallera del traje de Cernan mostraba desgaste a la tercera)."
+ },
+ {
+  "rel": "science/life-in-space/surface-dust-mitigation.json",
+  "at": "body_paragraphs.1",
+  "en": "Operational impacts on Apollo: airlock seals jammed when dust contaminated the gasket interfaces; coolant lines on the LM PLSS (Portable Life Support System) clogged with dust ingressed through the suit umbilical; cameras and instruments needed constant brush-down; sample-return containers couldn't seal properly against the dust intrusion; and the LM cabin atmosphere after the third EVA had a smell that all 12 moonwalking astronauts described as 'gunpowder' or 'spent fireworks' (the actual cause is still debated — possibly nano-iron particles re-oxidising on contact with cabin O₂). Several Apollo crew members reported hay-fever-like symptoms in the LM cabin during the rest periods between EVAs. None of these were show-stoppers for missions lasting 12-72 hours; all of them would become show-stoppers for sustained presence.",
+  "cur": "Impactos operativos en Apollo: los sellos de las esclusas se atascaban cuando el polvo contaminaba las interfaces de las juntas; las líneas de refrigerante en el PLSS (Portable Life Support System) del LM se obstruían con polvo ingresado por el umbilical del traje; cámaras e instrumentos necesitaban cepillado constante; los contenedores de retorno de muestras no podían sellarse correctamente contra la intrusión de polvo; y la atmósfera de la cabina LM tras la tercera EVA tenía un olor que los 12 caminantes lunares describieron como 'pólvora' o 'fuegos artificiales gastados' (la causa real aún se debate — posiblemente partículas nano-hierro re-oxidándose al contacto con O₂ de cabina). Varios miembros de la tripulación Apollo reportaron síntomas tipo fiebre del heno en la cabina LM durante los periodos de descanso entre EVAs. Ninguno fue bloqueante para misiones de 12-72 horas; todos lo serían para presencia sostenida."
+ },
+ {
+  "rel": "science/life-in-space/surface-dust-mitigation.json",
+  "at": "body_paragraphs.2",
+  "en": "Mars dust is chemically dangerous in a way the Moon is not. Phoenix lander (2008) confirmed by wet chemistry that Martian regolith contains 0.5-1% by mass of perchlorate (ClO₄⁻) salts, plus chlorate and chlorite. Perchlorates are thyroid endocrine disruptors at concentrations above ~25 ppb; ingesting Mars dust unfiltered would deliver doses orders of magnitude above the OSHA workplace limit within minutes. Curiosity and Perseverance have confirmed perchlorate distribution across both equatorial and high-latitude sites — it is global. Mars dust is also significantly more weathered than lunar dust (water has acted on it during the planet's wetter past), with rounder particle shapes and lower electrostatic charging, so the mechanical hazard is smaller. But the chemical hazard means Mars dust ingress into the habitat is a medical emergency, not just an operational nuisance.",
+  "cur": "El polvo de Marte es químicamente peligroso de una manera que el de la Luna no. Phoenix lander (2008) confirmó por química húmeda que el regolito marciano contiene 0,5-1% en masa de sales de perclorato (ClO₄⁻), más clorato y clorito. Los percloratos son disruptores endocrinos tiroideos a concentraciones por encima de ~25 ppb; ingerir polvo marciano sin filtrar entregaría dosis órdenes de magnitud por encima del límite OSHA de lugar de trabajo en minutos. Curiosity y Perseverance han confirmado la distribución de perclorato tanto en sitios ecuatoriales como de alta latitud — es global. El polvo marciano también está significativamente más meteorizado que el lunar (el agua ha actuado sobre él durante el pasado más húmedo del planeta), con formas de partícula más redondas y menor carga electrostática, así que el peligro mecánico es menor. Pero el peligro químico significa que la intrusión de polvo marciano al hábitat es una emergencia médica, no solo una molestia operativa."
+ },
+ {
+  "rel": "science/life-in-space/surface-dust-mitigation.json",
+  "at": "body_paragraphs.3",
+  "en": "The mitigation architecture that has emerged is the suitlock airlock. Instead of cycling suits through a pressurised airlock (Apollo, Shuttle, ISS approach), the suitlock keeps the suit permanently outside, attached to the habitat's outer hull via a backpack-port. Crew climb into the suit from inside the habitat without bringing dust into the pressurised volume. The Mars Z-2 prototype, the Boeing-Collins Aerospace Artemis EVA suit, the Russian Orlan-derived ILRS suit, and the Chinese Feitian-derived lunar EVA suit are all designed around suitlock attachment. Supplementary tech: Electrostatic Dust Shield (ESD), a NASA Kennedy invention that puts AC voltages across surface coatings to lift charged dust off via electrohydrodynamic forces, demonstrated at lab + small-flight scale (CubeSat experiments). Internal HEPA filtration on every airlock cycle. Decontamination shower (water rinse) before re-entering deeper habitat zones. All of these are necessary; none of them alone is sufficient. Dust will be the most-managed daily operational risk of any surface stay longer than 30 days.",
+  "cur": "La arquitectura de mitigación que ha surgido es la esclusa suitlock. En vez de ciclar los trajes a través de una esclusa presurizada (enfoque Apollo, Shuttle, EEI), la suitlock mantiene el traje permanentemente fuera, sujeto al casco externo del hábitat vía un puerto de mochila. La tripulación se mete en el traje desde dentro del hábitat sin traer polvo al volumen presurizado. El prototipo Mars Z-2, el traje EVA Artemis de Boeing-Collins Aerospace, el traje ILRS derivado del Orlan ruso y el traje EVA lunar chino derivado del Feitian están todos diseñados en torno a la fijación suitlock. Tecnología suplementaria: Electrostatic Dust Shield (ESD), una invención de NASA Kennedy que aplica voltajes AC a recubrimientos superficiales para levantar el polvo cargado por fuerzas electrohidrodinámicas, demostrada a escala laboratorio + pequeño vuelo (experimentos CubeSat). Filtración HEPA interna en cada ciclo de esclusa. Ducha de descontaminación (enjuague con agua) antes de re-entrar en zonas más profundas del hábitat. Todas estas son necesarias; ninguna sola es suficiente. El polvo será el riesgo operativo diario más gestionado de cualquier estancia de superficie de más de 30 días."
+ },
+ {
+  "rel": "science/life-in-space/surface-dust-mitigation.json",
+  "at": "diagram_caption",
+  "en": "Lunar dust: glass-shard angular, electrostatically charged, mechanically destructive (Apollo suit-seal wear at 10 EVAs). Mars dust: chemically toxic (0.5-1% perchlorate by mass, thyroid endocrine disruptor). Mitigation: suitlock airlocks (suit lives outside, no dust ingress), Electrostatic Dust Shield, HEPA filtration, decontamination showers. All four are necessary together.",
+  "cur": "Polvo lunar: fragmentos de vidrio angulares, cargados electrostáticamente, mecánicamente destructivos (desgaste de sellos de traje Apollo en 10 EVAs). Polvo marciano: químicamente tóxico (0,5-1% perclorato en masa, disruptor endocrino tiroideo). Mitigación: esclusas suitlock (el traje vive fuera, sin intrusión de polvo), Electrostatic Dust Shield, filtración HEPA, duchas de descontaminación. Las cuatro son necesarias juntas."
+ },
+ {
+  "rel": "science/life-in-space/surface-mobility-rovers.json",
+  "at": "title",
+  "en": "Surface mobility — from Apollo's LRV to pressurised rovers for Moon and Mars",
+  "cur": "Movilidad en superficie — del LRV de Apollo a rovers presurizados para la Luna y Marte"
+ },
+ {
+  "rel": "science/life-in-space/surface-mobility-rovers.json",
+  "at": "intro_sentence",
+  "en": "Crewed surface stays live and die by how far the crew can travel. Apollo's LRV pushed traverse range from 1 km to 35.7 km. The next generation — pressurised rovers — pushes it to multi-week, multi-hundred-km expeditions.",
+  "cur": "La estancia en superficie depende de cuán lejos pueda viajar la tripulación. El LRV de Apollo amplió el alcance de 1 km a 35,7 km. La próxima generación —rovers presurizados— permite expediciones de semanas y cientos de kilómetros."
+ },
+ {
+  "rel": "science/life-in-space/surface-mobility-rovers.json",
+  "at": "body_paragraphs.0",
+  "en": "Apollo's Lunar Roving Vehicle (LRV) flew on the last three Apollo missions (15, 16, 17, 1971-72). Before the LRV, surface traverses were limited by suit consumables to about 1 km radius from the LM — and EVA fatigue from walking in 1/6-g while carrying a pressurised suit made even that distance limit a stretch. The LRV was deliberately scoped to fit folded into the LM Quad-1 storage bay (a 0.7 × 0.7 m envelope), weighed only 210 kg unloaded, and ran on two 36-V silver-zinc batteries (no recharge — the LRV was a single-mission asset). Top speed: 18 km/h. Total range on those batteries: ~92 km (57 mi), with a hard walk-back limit of half the consumables remaining (so practical traverses were 5-10 km out + 5-10 km back). Apollo 17 logged 35.7 km total over three EVAs, the all-time human surface-driving record. The LRV's design template — open-frame, unpressurised, suit-only, single-mission disposable — is what Artemis is rebuilding now as the LTV.",
+  "cur": "El Lunar Roving Vehicle (LRV) de Apollo volaba en las tres últimas misiones de Apollo (15, 16, 17, 1971-72). Antes del LRV, los desplazamientos en superficie estaban limitados por los consumibles del traje a unos 1 km de radio desde el LM —la fatiga de los EVA al caminar en gravedad 1/6 mientras se llevaba un traje presurizado hacía que incluso esa distancia fuera un esfuerzo. El LRV fue intencionalmente diseñado para caber plegado en la bahía de almacenamiento Quad-1 del LM (una envoltura de 0,7 × 0,7 m), pesaba solo 210 kg sin carga, y funcionaba con dos baterías de plata-zinc de 36 V (sin recarga —el LRV era un activo de una sola misión). Velocidad máxima: 18 km/h. Autonomía total con esas baterías: ~92 km (57 mi), con un límite de retorno a pie del 50 % de consumibles restantes (los desplazamientos prácticos eran de 5-10 km de ida + 5-10 km de vuelta). Apollo 17 registró 35,7 km totales en tres EVAs, el récord mundial de conducción en superficie. La plantilla de diseño del LRV —marco abierto, sin presurizar, solo traje, desechable de una sola misión— es lo que Artemis está reconstruyendo como el LTV."
+ },
+ {
+  "rel": "science/life-in-space/surface-mobility-rovers.json",
+  "at": "body_paragraphs.1",
+  "en": "Artemis Lunar Terrain Vehicle (LTV) is the direct LRV descendant: open-frame, unpressurised, designed for two suited crew, ~20 km traverse radius. Three contracts were issued by NASA in April 2024 — Intuitive Machines, Lunar Outpost, and Astrolab — for design + delivery, with a single down-select expected for the production order. Differences from LRV: rechargeable batteries with solar trickle-charge (the LTV stays at the site between Artemis missions, supporting subsequent crews and operating as a tele-driven rover during the lunar nights and intervals when no crew is present), partial autonomy for self-positioning and obstacle avoidance, designed for ~10-year deployed lifetime instead of single-use. Target IOC: Artemis V (currently scheduled mid-2030).",
+  "cur": "El Lunar Terrain Vehicle (LTV) de Artemis es el descendiente directo del LRV: marco abierto, sin presurizar, diseñado para dos tripulantes en traje, ~20 km de radio de desplazamiento. La NASA emitió tres contratos en abril de 2024 —Intuitive Machines, Lunar Outpost y Astrolab— para diseño y entrega, con una selección única esperada para el pedido de producción. Diferencias respecto al LRV: baterías recargables con carga solar (el LTV permanece en el sitio entre misiones de Artemis, apoyando tripulaciones posteriores y operando como rover teleoperado durante las noches lunares e intervalos sin tripulación), autonomía parcial para autop osicionamiento y evasión de obstáculos, diseñado para una vida útil desplegada de ~10 años en lugar de un uso único. IOC objetivo: Artemis V (actualmente programado para mediados de 2030)."
+ },
+ {
+  "rel": "science/life-in-space/surface-mobility-rovers.json",
+  "at": "body_paragraphs.2",
+  "en": "Pressurised rovers are the qualitatively different next step. The Toyota / JAXA Lunar Cruiser concept (the project name for what JAXA calls the Manned Pressurised Rover) is a 6-tonne, 6 × 5 × 4 m vehicle with internal pressurised volume of ~13 m³ — about the size of a small bus or a Winnebago RV. Two crew live inside in shirtsleeves for up to 30 days at a time, exiting in suits through suitlock airlocks. The fuel cell + regenerative cycle gives 1000-km range. The Chinese ILRS programme has a similar pressurised rover under development. Practical implications: a pair of pressurised rovers can support multi-month expeditions far from the base camp, transforming surface ops from 'a few days outdoor activity from home' to 'expedition-style traverses of hundreds of km' — closer to Antarctic field-camp logistics than to Apollo. NASA's plan uses the Toyota Lunar Cruiser as the agency-baseline pressurised rover starting around Artemis VII.",
+  "cur": "Los rovers presurizados son el próximo paso cualitativamente diferente. El concepto Lunar Cruiser de Toyota / JAXA (nombre del proyecto para lo que JAXA denomina Manned Pressurised Rover) es un vehículo de 6 toneladas, 6 × 5 × 4 m con un volumen presurizado interno de ~13 m³ —aproximadamente del tamaño de un autobús pequeño o una autocaravana Winnebago. Dos tripulantes viven en su interior en mangas de camisa hasta 30 días seguidos, saliendo en trajes a través de esclusas de aire. La pila de combustible y el ciclo regenerativo proporcionan 1000 km de autonomía. El programa ILRS chino tiene un rover presurizado similar en desarrollo. Implicaciones prácticas: un par de rovers presurizados puede apoyar expediciones de varios meses lejos del campamento base, transformando las operaciones en superficie de 'una actividad de algunos días desde casa' a 'desplazamientos estilo expedición de cientos de km' —más parecido a la logística de los campamentos de campo antárticos que a Apollo. El plan de NASA utiliza el Lunar Cruiser de Toyota como rover presurizado de referencia de la agencia a partir de Artemis VII."
+ },
+ {
+  "rel": "science/life-in-space/surface-mobility-rovers.json",
+  "at": "body_paragraphs.3",
+  "en": "Mars rover heritage is purely robotic so far — Sojourner (1997), Spirit + Opportunity (2004-2010 and 2004-2018), Curiosity (2012-present), Perseverance (2021-present), Zhurong (2021-2022), Pragyan (2023). All four-wheel or six-wheel, all unpressurised, all autonomous-with-Earth-supervision. Crewed Mars architectures lean heavily on this heritage: Perseverance's autonomous-navigation software (AutoNav 2.0, which can drive 200+ m per Sol without intervention) is being matured into the navigation stack for crewed pressurised rovers. The pressurised rover for Mars is qualitatively the same machine as the lunar one, but with two extra demands: it has to handle dust storms (typhoon-class scenarios that can last weeks), and it has to handle the perchlorate / dust contamination problem on every airlock cycle. Both are unsolved at the engineering level today; both are the kind of problem that gets solved by 5-10 years of lunar pressurised-rover field-testing before Mars.",
+  "cur": "El patrimonio de rovers en Marte es puramente robótico hasta ahora —Sojourner (1997), Spirit + Opportunity (2004-2010 y 2004-2018), Curiosity (2012-presente), Perseverance (2021-presente), Zhurong (2021-2022), Pragyan (2023). Todos de cuatro o seis ruedas, todos sin presurizar, todos autónomos con supervisión desde la Tierra. Las arquitecturas tripuladas de Marte se apoyan mucho en este patrimonio: el software de navegación autónoma de Perseverance (AutoNav 2.0, que puede conducir 200+ m por Sol sin intervención) está siendo mejorado para la pila de navegación de rovers presurizados tripulados. El rover presurizado para Marte es cualitativamente la misma máquina que el lunar, pero con dos exigencias adicionales: tiene que soportar tormentas de polvo (escenarios de clase tifón que pueden durar semanas), y tiene que lidiar con el problema de contaminación por perclorato / polvo en cada ciclo de esclusa. Ambos no están resueltos a nivel de ingeniería hoy; ambos son el tipo de problema que se resuelve con 5-10 años de pruebas de campo con rovers presurizados lunares antes de Marte."
+ },
+ {
+  "rel": "science/life-in-space/surface-mobility-rovers.json",
+  "at": "diagram_caption",
+  "en": "Apollo LRV (1971-72): 210 kg, unpressurised, single-mission, 35.7 km record (Apollo 17). Artemis LTV (~2030): unpressurised, rechargeable, deployed-asset, ~20 km radius. Pressurised rovers (Toyota Lunar Cruiser, ILRS equivalent, late 2030s+): 6 t, 13 m³ pressurised, 30-day endurance, 1000-km range — qualitatively different mobility envelope.",
+  "cur": "LRV de Apollo (1971-72): 210 kg, sin presurizar, de una misión, récord de 35,7 km (Apollo 17). LTV de Artemis (~2030): sin presurizar, recargable, activo desplegado, ~20 km de radio. Rovers presurizados (Toyota Lunar Cruiser, equivalente ILRS, finales de 2030+): 6 t, 13 m³ presurizados, resistencia de 30 días, 1000 km de autonomía —envolvente de movilidad cualitativamente diferente."
+ },
+ {
+  "rel": "science/life-in-space/vestibular-adaptation.json",
+  "at": "title",
+  "en": "Vestibular adaptation",
+  "cur": "Adaptación vestibular"
+ },
+ {
+  "rel": "science/life-in-space/vestibular-adaptation.json",
+  "at": "intro_sentence",
+  "en": "The inner ear's gravity sensor goes silent in orbit — roughly 60–80% of astronauts spend their first 2–4 days nauseous while the brain re-weights vestibular vs visual cues.",
+  "cur": "El sensor de gravedad del oído interno se silencia en órbita — aproximadamente 60–80% de los astronautas pasan sus primeros 2–4 días nauseosos mientras el cerebro repondera las señales vestibulares frente a las visuales."
+ },
+ {
+  "rel": "science/life-in-space/vestibular-adaptation.json",
+  "at": "body_paragraphs.0",
+  "en": "The vestibular system in your inner ear is built around three semicircular canals (rotation) and two otolith organs (linear acceleration + gravity). On Earth those otoliths sit in a one-g field; their hair cells are constantly bent by the calcium-carbonate crystals (otoconia) pressing downward. The brain reads that bend as \"down\". In microgravity the otoconia float free. The signal goes ambiguous.",
+  "cur": "El sistema vestibular del oído interno se construye alrededor de tres conductos semicirculares (rotación) y dos órganos otolíticos (aceleración lineal + gravedad). En la Tierra esos otolitos se encuentran en un campo de un g; sus células ciliadas están constantemente flexionadas por los cristales de carbonato de calcio (otoconias) que presionan hacia abajo. El cerebro interpreta esa flexión como \"abajo\". En microgravedad las otoconias flotan libremente. La señal se vuelve ambigua."
+ },
+ {
+  "rel": "science/life-in-space/vestibular-adaptation.json",
+  "at": "body_paragraphs.1",
+  "en": "Roughly 60–80% of astronauts develop Space Adaptation Syndrome in the first 24–72 hours: nausea, vomiting, sweating, headaches. It's not the body's only sensory conflict (eyes still report up/down via the visual horizon of the cabin, proprioception still reports limb position) but it's the most striking, and it usually resolves within 2–4 days as the brain learns to down-weight the now-unreliable vestibular channel.",
+  "cur": "Aproximadamente 60–80% de los astronautas desarrollan Space Adaptation Syndrome en las primeras 24–72 horas: náuseas, vómitos, sudoración, dolores de cabeza. No es el único conflicto sensorial del cuerpo (los ojos todavía reportan arriba/abajo a través del horizonte visual de la cabina, la propiocepción todavía reporta la posición de las extremidades) pero es el más evidente, y generalmente se resuelve en 2–4 días cuando el cerebro aprende a reducir el peso del canal vestibular ahora poco fiable."
+ },
+ {
+  "rel": "science/life-in-space/vestibular-adaptation.json",
+  "at": "body_paragraphs.2",
+  "en": "The down-weighting doesn't reverse instantly on return. Post-flight, astronauts walk into a 1-g world with a brain that's spent months ignoring vestibular input — and the results are gait disturbances, balance deficits, and head-movement-triggered nausea that take days to weeks to clear. Long-duration crew show measurable changes in eye-tracking and posture testing for months after landing.",
+  "cur": "La reducción del peso no se invierte instantáneamente al regresar. Después del vuelo, los astronautas caminan en un mundo de 1 g con un cerebro que ha pasado meses ignorando las señales vestibulares — y los resultados son alteraciones en la marcha, déficits de equilibrio y náuseas desencadenadas por movimientos de cabeza que tardan días a semanas en desaparecer. El personal de larga duración muestra cambios medibles en el seguimiento ocular y pruebas posturales meses después del aterrizaje."
+ },
+ {
+  "rel": "science/life-in-space/vestibular-adaptation.json",
+  "at": "body_paragraphs.3",
+  "en": "For a Mars mission, the open question is whether the surface vestibular environment (0.38 g) is enough to re-anchor the system on arrival, or whether crew step out of the lander into a hybrid balance state — partially adapted to space, partially relearning gravity. Centrifuge research on the ISS and human-rotation studies on Earth suggest the answer is somewhere in between; planning assumes a few days of reduced surface mobility immediately post-landing.",
+  "cur": "Para una misión a Marte, la pregunta abierta es si el ambiente vestibular de la superficie (0,38 g) es suficiente para re-anclar el sistema a la llegada, o si la tripulación emerge del módulo de aterrizaje en un estado de equilibrio híbrido — parcialmente adaptado al espacio, parcialmente reaprendiendo la gravedad. Las investigaciones con centrífuga en la EEI y los estudios de rotación humana en la Tierra sugieren que la respuesta está en algún punto intermedio; la planificación asume unos pocos días de movilidad reducida en la superficie inmediatamente después del aterrizaje."
+ },
+ {
+  "rel": "science/life-in-space/vestibular-adaptation.json",
+  "at": "diagram_caption",
+  "en": "Otolith crystals float in microgravity → ambiguous \"down\" signal → brain down-weights vestibular cues → re-entry into 1 g requires days-to-weeks of re-weighting.",
+  "cur": "Los cristales otolíticos flotan en microgravedad → señal de \\\"abajo\\\" ambigua → el cerebro reduce el peso de las señales vestibulares → la reentrada a 1 g requiere días a semanas de re-ponderación."
+ },
+ {
+  "rel": "science/mission-phases/_intro.json",
+  "at": "headline",
+  "en": "Mission Phases — the flight is just five phases on repeat.",
+  "cur": "Fases de Misión — el vuelo son cinco fases en repetición."
+ },
+ {
+  "rel": "science/mission-phases/_intro.json",
+  "at": "paragraphs.0",
+  "en": "Pretty much every interplanetary mission, from Voyager to Perseverance, follows the same script. Launch out of Earth's atmosphere into low orbit. Trans-X injection — the big single burn that flings you onto the transfer ellipse to the Moon (TLI), Mars (TMI), Venus, Jupiter, whatever. Coast for months, with a few small Trajectory Correction Maneuvers along the way. Orbit insertion — the braking burn at the destination. EDL — entry, descent, and landing — for landers.",
+  "cur": "Prácticamente cada misión interplanetaria, de Voyager a Perseverance, sigue el mismo guion. Lanzamiento fuera de la atmósfera terrestre y a órbita baja. Inyección Trans-X — la gran quemada que te lanza a la elipse de transferencia hacia la Luna (TLI), Marte (TMI), Venus, Júpiter, lo que sea. Crucero de meses, con unas pocas pequeñas Maniobras de Corrección de Trayectoria por el camino. Inserción orbital — la quemada de frenado en el destino. EDL — entrada, descenso y aterrizaje — para los módulos de aterrizaje."
+ },
+ {
+  "rel": "science/mission-phases/_intro.json",
+  "at": "paragraphs.1",
+  "en": "Apollo flew this script to the Moon in three days. Curiosity flew it to Mars in eight months. Voyager flew it three times — once to leave Earth, then twice more for gravity-assist hops past Jupiter and Saturn. The phases scale; the phase sequence doesn't.",
+  "cur": "Apollo voló este guion a la Luna en tres días. Curiosity lo voló a Marte en ocho meses. Voyager lo voló tres veces — una para salir de la Tierra, luego dos más para saltos por asistencia gravitatoria pasando Júpiter y Saturno. Las fases escalan; la secuencia no."
+ },
+ {
+  "rel": "science/mission-phases/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Seven sections here cover all of it, plus two specialised phases — MET (Mission Elapsed Time, the universal stopwatch) and NRHO (the orbit NASA's Lunar Gateway will live in). Read them as a flight log: launch first, EDL last.",
+  "cur": "Siete secciones aquí lo cubren todo, más dos fases especializadas — MET (Tiempo Transcurrido de Misión, el cronómetro universal) y NRHO (la órbita en la que vivirá el Lunar Gateway de la NASA). Léelas como un cuaderno de vuelo: lanzamiento primero, EDL al final."
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "title",
+  "en": "Aerobraking",
+  "cur": "Frenado aerodinámico"
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "intro_sentence",
+  "en": "Trimming a wide capture orbit down to a working one for almost no fuel — by dipping into the very top of a planet's atmosphere a little on every pass.",
+  "cur": "Reducir una órbita de captura amplia a una órbita de trabajo con casi ningún combustible, rozando la parte superior de la atmósfera de un planeta en cada pasada."
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "narrative_101.0",
+  "en": "When an orbiter arrives at a planet it fires a capture burn to drop into orbit — but stopping fully into a tight, useful orbit would cost a huge amount of fuel. So mission planners cheat physics with the atmosphere: they capture into a big, loose ellipse, then let the spacecraft skim the very top of the air at the low point of each orbit. Each brush of thin air steals a little speed, and the far side of the orbit sinks a bit lower.",
+  "cur": "Cuando un orbitador llega a un planeta, realiza una maniobra de captura para entrar en órbita, pero frenar completamente hasta una órbita cerrada y útil requeriría una cantidad enorme de combustible. Por eso los planificadores de misiones engañan a la física con la atmósfera: capturan en una órbita elíptica amplia y suelta, y luego dejan que la sonda roce la parte superior del aire en el punto más bajo de cada órbita. Cada contacto con el aire delgado reduce un poco la velocidad, y el lado opuesto de la órbita desciende gradualmente."
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "narrative_101.1",
+  "en": "Do this a few hundred times over weeks or months and the wide capture ellipse shrinks into the near-circular science orbit the mission actually wants — all for the price of the small capture burn, not the enormous one full propulsive insertion would need. It is one of the great fuel bargains in spaceflight.",
+  "cur": "Repetir esto cientos de veces durante semanas o meses encoge la elipse amplia de captura hasta convertirse en la órbita casi circular que la misión realmente necesita, todo al precio del pequeño impulso de captura, no del enorme que requeriría una inserción totalmente propulsada. Es uno de los grandes ahorros de combustible en astronáutica."
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "narrative_101.2",
+  "en": "The catch is that it is slow and delicate. Dip too shallow and nothing happens; dip too deep and the heating or the aerodynamic forces can damage or tumble the spacecraft. Controllers nudge the low point up and down pass by pass, riding a narrow corridor between 'too little' and 'too much' for months on end.",
+  "cur": "La dificultad es que es lento y delicado. Si rozas demasiado superficialmente no pasa nada; si te adentras demasiado, el calor o las fuerzas aerodinámicas pueden dañar o hacer rotar la sonda. Los controladores ajustan el punto más bajo hacia arriba y hacia abajo en cada pasada, manteniéndose en un estrecho margen entre 'demasiado poco' y 'demasiado' durante meses."
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "body_paragraphs.0",
+  "en": "Aerobraking trades propellant for time and patience. Mars Global Surveyor, Mars Odyssey, Mars Reconnaissance Orbiter, MAVEN, and Venus's Magellan all used it to reach their final orbits, saving hundreds of kilograms of fuel that would otherwise have had to be launched from Earth — often more than the spacecraft's own dry mass.",
+  "cur": "El frenado aerodinámico intercambia propelente por tiempo y paciencia. Mars Global Surveyor, Mars Odyssey, Mars Reconnaissance Orbiter, MAVEN y Magellan de Venus lo utilizaron para alcanzar sus órbitas finales, ahorrando cientos de kilogramos de combustible que de otro modo habría que lanzar desde la Tierra, a menudo más que la masa en seco de la propia sonda."
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "body_paragraphs.1",
+  "en": "The physics is the same drag that lands a probe, applied in tiny, repeated doses at orbital speed instead of one fierce entry. Because the spacecraft only grazes the outermost, thinnest air, each pass sheds just a few metres per second — but orbits repeat, and the effect compounds. Solar panels, turned edge-on or used as brake surfaces, often take the load.",
+  "cur": "La física es la misma resistencia que frena una sonda, aplicada en pequeñas dosis repetidas a velocidad orbital en lugar de una entrada feroz única. Dado que la sonda solo roza el aire más exterior y más delgado, cada pasada reduce solo algunos metros por segundo, pero las órbitas se repiten y el efecto se acumula. Los paneles solares, orientados de canto o usados como superficies de frenado, a menudo soportan la carga."
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "body_paragraphs.2",
+  "en": "Aerocapture is the bolder cousin: braking enough on a SINGLE deep pass to go straight from arrival into a captured orbit, no capture burn at all. It would save even more fuel, but it demands a heat shield and split-second guidance, and no mission has yet flown it — aerobraking's patient, low-risk version remains the workhorse.",
+  "cur": "La aerocaptura es la prima más audaz: frenar lo suficiente en una ÚNICA pasada profunda para pasar directamente de la llegada a una órbita capturada, sin ningún impulso de captura. Ahorraría aún más combustible, pero requiere un escudo térmico y una guía de precisión, y ninguna misión la ha volado aún; la versión paciente y de bajo riesgo del frenado aerodinámico sigue siendo la más utilizada."
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "diagram_caption",
+  "en": "Aerobraking: capture into a wide ellipse, then skim the upper atmosphere at periapsis pass after pass; each dip lowers apoapsis until the orbit is circular.",
+  "cur": "Frenado aerodinámico: captura en una elipse amplia, luego rozar la atmósfera superior en el periapsis en cada pasada; cada rozadura reduce el apoapsis hasta que la órbita es circular."
+ },
+ {
+  "rel": "science/mission-phases/antenna-arrays.json",
+  "at": "title",
+  "en": "Arraying — many small ears instead of one giant one",
+  "cur": "Arraying — muchos oídos pequeños en lugar de uno gigante"
+ },
+ {
+  "rel": "science/mission-phases/antenna-arrays.json",
+  "at": "intro_sentence",
+  "en": "Combining the signals from multiple antennas in real time creates a single virtual aperture larger than any individual dish, capturing fainter spacecraft signals without building ever-bigger structures.",
+  "cur": "Combinar las señales de múltiples antenas en tiempo real crea una única apertura virtual mayor que cualquier antena individual, capturando señales más débiles de naves espaciales sin construir estructuras cada vez más grandes."
+ },
+ {
+  "rel": "science/mission-phases/antenna-arrays.json",
+  "at": "body_paragraphs.0",
+  "en": "A single large antenna is the obvious way to hear a faint spacecraft signal from billions of kilometres away. The DSN's 70 m dishes — at Goldstone, Madrid, and Canberra — are near the practical limit for fully steerable, ground-based reflectors. Building something appreciably larger would require a fixed structure (limiting sky coverage) or engineering that doesn't yet exist. The alternative is to combine many smaller antennas: arraying.",
+  "cur": "Una antena grande única es la forma obvia de captar una señal débil de una nave espacial desde miles de millones de kilómetros de distancia. Los platos de 70 m de la DSN —en Goldstone, Madrid y Canberra— están cerca del límite práctico para reflectores totalmente orientables basados en tierra. Construir algo significativamente mayor requeriría una estructura fija (limitando la cobertura del cielo) o una ingeniería que aún no existe. La alternativa es combinar muchas antenas más pequeñas: arraying."
+ },
+ {
+  "rel": "science/mission-phases/antenna-arrays.json",
+  "at": "body_paragraphs.1",
+  "en": "When multiple antennas observe the same spacecraft simultaneously and their signals are combined with the correct phase and time offsets, the result is coherent addition. The noise from each antenna adds incoherently (it scales with the square root of the number of antennas) while the signal adds coherently (it scales with the number of antennas). The effective collecting area of an array of N identical dishes is N times that of a single dish. This is not an approximation — it is the same principle behind radio telescope arrays like the Very Large Array and ALMA.",
+  "cur": "Cuando múltiples antenas observan la misma nave espacial simultáneamente y sus señales se combinan con los desplazamientos correctos de fase y tiempo, el resultado es adición coherente. El ruido de cada antena se suma incoherentemente (se escala con la raíz cuadrada del número de antenas), mientras que la señal se suma coherentemente (se escala con el número de antenas). El área colectora efectiva de un array de N antenas idénticas es N veces la de una única antena. Esto no es una aproximación — es el mismo principio detrás de arrays de radiotelescopios como el Very Large Array y ALMA."
+ },
+ {
+  "rel": "science/mission-phases/antenna-arrays.json",
+  "at": "body_paragraphs.2",
+  "en": "The most famous demonstration in deep-space operations came during Voyager 2's Neptune flyby in August 1989. At 4.4 billion kilometres, Voyager's signal was so faint that capturing it at full science data rate required arraying dishes across four continents at once — the Goldstone 70 m and the Very Large Array in the United States, the 64 m Canberra DSN antenna and the Parkes 64 m radio telescope in Australia, and Japan’s 64 m Usuda dish. NASA's arraying agreement with non-NASA facilities like Parkes (operated by CSIRO) established that the deep-space communication network can be augmented internationally at critical mission moments.",
+  "cur": "La demostración más célebre en operaciones en el espacio profundo ocurrió durante el sobrevuelo de Neptuno de la Voyager 2 en agosto de 1989. A 4,4 mil millones de kilómetros, la señal de la Voyager era tan débil que capturarla a velocidad de datos científicos completa requería arraying de platos distribuidos por cuatro continentes a la vez — la antena de 70 m de Goldstone y la Very Large Array en Estados Unidos, la antena DSN de 64 m de Canberra y el radiotelescopio Parkes de 64 m en Australia, y la antena Usuda de 64 m de Japón. El acuerdo de arraying de la NASA con instalaciones no pertenecientes a la NASA como Parkes (operada por CSIRO) estableció que la red de comunicaciones del espacio profundo puede ser aumentada internacionalmente en momentos críticos de la misión."
+ },
+ {
+  "rel": "science/mission-phases/antenna-arrays.json",
+  "at": "body_paragraphs.3",
+  "en": "Arraying has real costs and limits. Downlink arraying (receiving from a spacecraft) is tractable because each antenna independently captures the signal and the combination happens in post-processing or in real time with precise timing. Uplink arraying (transmitting to a spacecraft) is harder: the signals from multiple dishes must combine coherently at the spacecraft's location, far away, requiring extremely precise phase synchronisation across sites. NASA's DSN Aperture Enhancement Program is investing in more distributed arrays specifically because it is cheaper to add 34 m dishes than to build new 70 m ones — and an array of smaller dishes is also more fault-tolerant: losing one antenna degrades performance gracefully rather than losing a unique irreplaceable asset.",
+  "cur": "El arraying tiene costos reales y límites. El arraying de enlace descendente (recepción desde una nave espacial) es viable porque cada antena captura independientemente la señal y la combinación ocurre en post-procesamiento o en tiempo real con sincronización precisa. El arraying de enlace ascendente (transmisión a una nave espacial) es más difícil: las señales de múltiples platos deben combinarse coherentemente en la ubicación de la nave espacial, muy lejos, requiriendo sincronización de fase extremadamente precisa entre sitios. El Programa de Mejora de Apertura DSN de la NASA está invirtiendo en arrays más distribuidos específicamente porque es más barato añadir antenas de 34 m que construir nuevas de 70 m — y un array de antenas más pequeñas también es más tolerante a fallos: perder una antena degrada el rendimiento gradualmente en lugar de perder un activo único e irreemplazable."
+ },
+ {
+  "rel": "science/mission-phases/antenna-arrays.json",
+  "at": "diagram_caption",
+  "en": "N dishes observe same spacecraft → signals phase-aligned and coherently summed → effective area = N × single-dish area → weaker signal threshold reachable, or same threshold with smaller individual dishes.",
+  "cur": "N antenas observan la misma nave espacial → señales alineadas en fase y sumadas coherentemente → área efectiva = N × área de antena única → umbral de señal débil alcanzable, o mismo umbral con antenas individuales más pequeñas."
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "title",
+  "en": "Ascent guidance — the computer that flies a rocket to orbit",
+  "cur": "Guía de ascenso — el ordenador que pilota un cohete hacia la órbita"
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "intro_sentence",
+  "en": "Getting to orbit is not a fixed script you can write in advance — it is a boundary-value problem solved anew every second, which is why spaceflight had to wait for the digital computer.",
+  "cur": "Llegar a órbita no es un guión fijo que se pueda escribir de antemano — es un problema de valor en la frontera resuelto de nuevo cada segundo, por eso el vuelo espacial tuvo que esperar a la llegada del ordenador digital."
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "narrative_101.0",
+  "en": "A rocket climbing to orbit has to satisfy an exact end condition: at engine cutoff it must be at the right altitude, moving horizontally, at precisely orbital speed. Miss the speed by a little and the orbit is wrong or the vehicle falls back. But the rocket is getting lighter every second as it burns propellant, the air thins, gravity pulls, winds shove — so the \"right\" way to point the engine is different at every instant and depends on everything that has happened so far. No fixed pitch schedule can hit the target exactly.",
+  "cur": "Un cohete que asciende hacia órbita debe cumplir una condición final exacta: en el corte del motor debe estar a la altura correcta, moviéndose horizontalmente, a la velocidad orbital precisa. Si se falla la velocidad por poco, la órbita es incorrecta o el vehículo cae de nuevo. Pero el cohete se va haciendo más ligero cada segundo conforme quema propelente, el aire se enrarece, la gravedad tira, el viento empuja — por lo que la forma \"correcta\" de apuntar el motor es diferente en cada instante y depende de todo lo que ha ocurrido hasta entonces. Ningún programa de cabeceo fijo puede alcanzar el objetivo exactamente."
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "narrative_101.1",
+  "en": "Early in flight, low in the atmosphere, the rocket does follow a pre-planned open-loop program: a gentle pitch-over just after liftoff starts a gravity turn, and the vehicle holds a smooth pre-computed attitude to keep aerodynamic loads low through the dense air. But once it is above the atmosphere the guidance switches to closed loop — it measures where it actually is and how fast, computes the steering that will thread the exact cutoff condition, and updates that answer many times a second all the way to orbit.",
+  "cur": "Al principio del vuelo, bajo en la atmósfera, el cohete sigue un programa preplanificado en bucle abierto: un cabeceo suave poco después del despegue inicia un giro por gravedad, y el vehículo mantiene una actitud pre-calculada suave para mantener las cargas aerodinámicas bajas a través del aire denso. Pero una vez que está por encima de la atmósfera, la guía cambia a bucle cerrado — mide dónde está realmente y a qué velocidad, calcula la dirección que atravesará la condición de corte exacta, y actualiza esa respuesta muchas veces por segundo todo el camino hacia órbita."
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "narrative_101.2",
+  "en": "That closed-loop scheme has a name — Powered Explicit Guidance (PEG) — and a predecessor on the Saturn V, the Iterative Guidance Mode (IGM) — and it is the reason a low-thrust upper stage can loft its trajectory below the horizon and still arrive at orbital velocity on time. It is, quite literally, why spaceflight needed onboard computers: a human cannot re-solve the problem every second, but the flight computer does.",
+  "cur": "Ese esquema de bucle cerrado tiene un nombre — Powered Explicit Guidance (PEG) — y un predecesor en el Saturn V, el Iterative Guidance Mode (IGM) — y es la razón por la que una etapa superior de bajo empuje puede lanzar su trayectoria por debajo del horizonte y aún así llegar a la velocidad orbital a tiempo. Es, literalmente, por qué el vuelo espacial necesitaba ordenadores a bordo: un humano no puede resolver el problema de nuevo cada segundo, pero la computadora de vuelo sí."
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "body_paragraphs.0",
+  "en": "Ascent guidance is a two-phase affair. In the atmospheric first phase the vehicle flies open-loop: a small pitch-over kick just after tower clear initiates a gravity turn, and thereafter it holds a pre-computed pitch program that keeps the angle of attack near zero so aerodynamic and structural loads stay bounded through max-Q. There is little freedom here — the air dictates the path.",
+  "cur": "La guía de ascenso es un asunto de dos fases. En la primera fase atmosférica el vehículo vuela en bucle abierto: un pequeño impulso de cabeceo poco después de despejar la torre inicia un giro por gravedad, y después mantiene un programa de cabeceo pre-calculado que mantiene el ángulo de ataque cerca de cero para que las cargas aerodinámicas y estructurales se mantengan acotadas a través del máximo dinámico. Hay poco margen aquí — el aire dicta la trayectoria."
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "body_paragraphs.1",
+  "en": "Above the atmosphere the guidance goes closed-loop and explicit. Powered Explicit Guidance treats the remaining burn as a boundary-value problem: given the current state (position, velocity, mass, thrust) and the desired cutoff state (target altitude, flight-path angle, orbital speed), it computes the optimal steering — essentially a linear-tangent pitch law — and the time-to-go, then re-solves the whole thing every guidance cycle. As the burn proceeds the solution converges and the commands smooth out; the stage can even loft (pitch above the local horizontal) early to bank altitude, then pitch down to trade it for speed.",
+  "cur": "Por encima de la atmósfera la guía cambia a bucle cerrado y explícita. Powered Explicit Guidance trata la quema restante como un problema de valor en la frontera: dada la situación actual (posición, velocidad, masa, empuje) y la situación de corte deseada (altitud de objetivo, ángulo de la trayectoria de vuelo, velocidad orbital), calcula la dirección óptima — esencialmente una ley de cabeceo lineal-tangente — y el tiempo para llegar, luego resuelve todo de nuevo cada ciclo de guía. Conforme la quema progresa la solución converge y los comandos se suavizan; la etapa incluso puede lanzarse (cabecear por encima del horizontal local) al principio para ganar altitud, luego cabecear hacia abajo para intercambiarla por velocidad."
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "body_paragraphs.2",
+  "en": "This is the flight computer’s job, and it is unforgiving of a low thrust-to-weight upper stage, where the burn is long and the boundary condition is a moving target the whole way. The Saturn V flew IGM; the Space Shuttle and SLS fly PEG, and most modern upper stages use PEG-class guidance (SpaceX has not published Falcon 9’s exact algorithm). The Physics Lab’s \"flying computer\" lesson runs exactly this — an open-loop program handing over to closed-loop PEG lofting the arc to orbit.",
+  "cur": "Este es el trabajo de la computadora de vuelo, y es despiadado con una etapa superior de relación empuje-peso bajo, donde la quema es larga y la condición de frontera es un objetivo móvil todo el camino. El Saturn V voló con IGM; el Space Shuttle y SLS vuelan con PEG, y la mayoría de etapas superiores modernas utilizan guía de clase PEG (SpaceX no ha publicado el algoritmo exacto del Falcon 9). La lección \"ordenador volador\" del Physics Lab ejecuta exactamente esto — un programa de bucle abierto que cede a la PEG de bucle cerrado lanzando el arco hacia órbita."
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "diagram_caption",
+  "en": "Ascent guidance: an open-loop pitch program through the atmosphere hands over to closed-loop PEG, which re-solves the steering to the exact orbital cutoff every second.",
+  "cur": "Guía de ascenso: un programa de cabeceo en bucle abierto a través de la atmósfera cede a la PEG de bucle cerrado, que resuelve de nuevo la dirección al corte orbital exacto cada segundo."
+ },
+ {
+  "rel": "science/mission-phases/ballistic-coefficient.json",
+  "at": "title",
+  "en": "Ballistic Coefficient",
+  "cur": "Coeficiente Balístico"
+ },
+ {
+  "rel": "science/mission-phases/ballistic-coefficient.json",
+  "at": "intro_sentence",
+  "en": "The single number — mass divided by drag area — that decides how fast a spacecraft falls through an atmosphere, and whether it can stop in time.",
+  "cur": "Un único número —masa dividida por área de resistencia— que determina la velocidad con la que cae una nave espacial a través de la atmósfera y si puede detenerse a tiempo."
+ },
+ {
+  "rel": "science/mission-phases/ballistic-coefficient.json",
+  "at": "narrative_101.0",
+  "en": "Drop a feather and a hammer in air and the feather drifts down while the hammer plummets. The difference is the ballistic coefficient: how much mass each carries behind how much drag area. A low ballistic coefficient (lots of drag, little mass) falls slowly; a high one (compact and heavy) falls fast. It is the one number that most shapes how a spacecraft comes down.",
+  "cur": "Deja caer una pluma y un martillo en el aire y la pluma desciende lentamente mientras el martillo se precipita. La diferencia es el coeficiente balístico: cuánta masa lleva cada uno frente a cuánta área de resistencia presenta. Un coeficiente balístico bajo (mucha resistencia, poca masa) cae lentamente; uno alto (compacto y pesado) cae rápido. Es el único número que más determina cómo desciende una nave espacial."
+ },
+ {
+  "rel": "science/mission-phases/ballistic-coefficient.json",
+  "at": "narrative_101.1",
+  "en": "Landing engineers spend enormous effort keeping the ballistic coefficient low. A blunt heat shield, a huge parachute, an inflatable decelerator — all are ways to add drag area without adding much mass, so the vehicle sheds speed higher up where there is more air-column left to work with. The bigger and heavier the payload, the harder this fight becomes.",
+  "cur": "Los ingenieros de aterrizaje dedican un esfuerzo enorme a mantener el coeficiente balístico bajo. Un escudo térmico romo, un paracaídas enorme, un decelerador inflable —todos son formas de añadir área de resistencia sin añadir mucha masa, permitiendo que el vehículo pierda velocidad en altitudes mayores donde queda más columna de aire con la que trabajar. Cuanto mayor y más pesada sea la carga útil, más difícil se vuelve esta batalla."
+ },
+ {
+  "rel": "science/mission-phases/ballistic-coefficient.json",
+  "at": "narrative_101.2",
+  "en": "This is the quiet reason Mars is so hard. Its air is thin, so even a large parachute on a modest lander only bleeds the speed so far — the ballistic coefficient is too high to stop on drag alone. Every Mars lander needs a second act (retro-rockets, airbags, a sky-crane), while a light probe at Venus, in dense air, can drift down on drag alone.",
+  "cur": "Esta es la razón silenciosa por la que Marte es tan difícil. Su atmósfera es tenue, así que incluso un paracaídas grande en un módulo de aterrizaje modesto solo reduce la velocidad hasta cierto punto —el coeficiente balístico es demasiado alto para frenar solo con resistencia. Cada aterrizador en Marte necesita un segundo acto (cohetes retropropulsores, bolsas de aire, una grúa celeste), mientras que una sonda ligera en Venus, en aire denso, puede descender flotando solo con la resistencia."
+ },
+ {
+  "rel": "science/mission-phases/ballistic-coefficient.json",
+  "at": "body_paragraphs.0",
+  "en": "Formally the ballistic coefficient is mass ÷ (drag coefficient × reference area). Terminal velocity scales with its square root, so halving the ballistic coefficient slows the fall by about 30%. Peak deceleration and peak heating both rise with it too — a heavier, more compact entry hits the atmosphere harder and hotter, which is why big vehicles face the worst of both.",
+  "cur": "Formalmente el coeficiente balístico es masa ÷ (coeficiente de resistencia × área de referencia). La velocidad terminal escala con su raíz cuadrada, así que reducir el coeficiente balístico a la mitad ralentiza la caída aproximadamente un 30%. La deceleración máxima y el calentamiento máximo también aumentan con él —una entrada más pesada y compacta golpea la atmósfera más fuerte y caliente, lo que es por qué los vehículos grandes enfrentan lo peor de ambos."
+ },
+ {
+  "rel": "science/mission-phases/ballistic-coefficient.json",
+  "at": "body_paragraphs.1",
+  "en": "It also sets WHERE in the descent the action happens. A low-ballistic-coefficient vehicle decelerates high up, in thin air, giving more time and altitude for the terminal phases. A high one carries its speed deep into the atmosphere before drag catches up, compressing the whole sequence into the last few kilometres — exactly the squeeze that makes a heavy Mars landing a race against the ground.",
+  "cur": "También establece DÓNDE en el descenso ocurre la acción. Un vehículo con coeficiente balístico bajo desacelera alto, en aire tenue, dando más tiempo y altitud para las fases terminales. Uno alto lleva su velocidad profundamente en la atmósfera antes de que la resistencia lo alcance, comprimiendo toda la secuencia en los últimos kilómetros —exactamente el aprieto que convierte un aterrizaje pesado en Marte en una carrera contra el suelo."
+ },
+ {
+  "rel": "science/mission-phases/ballistic-coefficient.json",
+  "at": "body_paragraphs.2",
+  "en": "On `/fly`, the contrast is visible across bodies in `?descent=1`. A light Mars lander under a big parachute (low ballistic coefficient) settles gently; a 100-tonne Starship (very high) must brake propulsively; a Venus probe in thick air drifts down on a small drag plate. Same physics, three ballistic coefficients, three very different descents.",
+  "cur": "En `/fly`, el contraste es visible entre cuerpos en `?descent=1`. Un aterrizador ligero en Marte bajo un paracaídas grande (coeficiente balístico bajo) desciende suavemente; una Starship de 100 toneladas (muy alto) debe frenar propulsivamente; una sonda de Venus en aire denso desciende flotando sobre una pequeña placa de resistencia. Misma física, tres coeficientes balísticos, tres descensos muy diferentes."
+ },
+ {
+  "rel": "science/mission-phases/ballistic-coefficient.json",
+  "at": "diagram_caption",
+  "en": "Ballistic coefficient = mass ÷ drag area. Low (big chute, light payload) → slow, high-altitude deceleration; high (heavy, compact) → fast, deep, hot entry.",
+  "cur": "Coeficiente balístico = masa ÷ área de resistencia. Bajo (paracaídas grande, carga ligera) → desaceleración lenta, alta altitud; alto (pesado, compacto) → entrada rápida, profunda, caliente."
+ },
+ {
+  "rel": "science/mission-phases/comms-blackout.json",
+  "at": "title",
+  "en": "Communications Blackout",
+  "cur": "Apagón de comunicaciones"
+ },
+ {
+  "rel": "science/mission-phases/comms-blackout.json",
+  "at": "intro_sentence",
+  "en": "For a few minutes at the hottest part of re-entry, the air itself turns to plasma and swallows every radio signal — the capsule goes silent, and everyone on the ground can only wait.",
+  "cur": "Durante unos minutos en la parte más caliente de la reentrada, el propio aire se convierte en plasma y engulle cada señal de radio — la cápsula enmudece, y todos en tierra solo pueden esperar."
+ },
+ {
+  "rel": "science/mission-phases/comms-blackout.json",
+  "at": "narrative_101.0",
+  "en": "When a capsule slams into the atmosphere at orbital speed, it doesn't push the air aside — it can't, there isn't time. The air piles up in front of the heat shield, gets crushed and heated to thousands of degrees, and glows. That glowing sheath is the fireball you see streaking across the sky. But it isn't just hot: it's ionised. The heat rips electrons loose from the air molecules, and a cloud of free electrons is exactly what a radio wave cannot pass through.",
+  "cur": "Cuando una cápsula golpea la atmósfera a velocidad orbital no aparta el aire — no hay tiempo para eso. El aire se amontona frente al escudo térmico, se comprime y se calienta a miles de grados, y brilla. Esa vaina luminosa es la bola de fuego que se ve atravesando el cielo. Pero no es solo caliente: está ionizada. El calor arranca electrones de las moléculas de aire, y una nube de electrones libres es exactamente lo que una onda de radio no puede atravesar."
+ },
+ {
+  "rel": "science/mission-phases/comms-blackout.json",
+  "at": "narrative_101.1",
+  "en": "So the capsule wraps itself in a mirror it can't see out of. Radio signals coming up from the ground bounce off the plasma; signals going down from the capsule can't get through it either. For the few minutes the heating is fiercest, the spacecraft is cut off — no voice, no telemetry, nothing. Mission Control watches a clock and a predicted track, and waits for the capsule to slow enough that the plasma fades and the crew's voice comes back. Glenn, Apollo, every Soyuz crew rode through that silence.",
+  "cur": "Así que la cápsula se envuelve en un espejo a través del cual no puede ver hacia fuera. Las señales de radio que suben desde tierra rebotan en el plasma; las señales que bajan desde la cápsula tampoco consiguen cruzarlo. Durante los pocos minutos en que el calentamiento es más intenso, la nave está incomunicada — ni voz, ni telemetría, nada. El Control de Misión observa un reloj y una trayectoria prevista, y espera a que la cápsula frene lo suficiente para que el plasma se disipe y la voz de la tripulación regrese. Glenn, Apollo, cada tripulación Soyuz atravesó ese silencio."
+ },
+ {
+  "rel": "science/mission-phases/comms-blackout.json",
+  "at": "narrative_101.2",
+  "en": "The blackout ends on its own: as the capsule decelerates and drops into thicker, cooler air lower down, the shock layer stops ionising, the electron cloud thins, and the radio link snaps back. The Space Shuttle cheated the problem — it talked upward through the thinner plasma on its top side to relay satellites in orbit, keeping a link when a downward signal to the ground would have been blocked.",
+  "cur": "El apagón termina por sí solo: a medida que la cápsula decelera y desciende al aire más denso y frío de altitudes más bajas, la capa de choque deja de ionizar, la nube de electrones se adelgaza y el enlace de radio se restablece de golpe. La Space Shuttle sorteó el problema — transmitía hacia arriba a través del plasma más fino en su superficie superior hacia satélites relé en órbita, manteniendo una conexión cuando una señal descendente hacia una estación en tierra habría sido bloqueada."
+ },
+ {
+  "rel": "science/mission-phases/comms-blackout.json",
+  "at": "body_paragraphs.0",
+  "en": "The blackout is caused by the plasma sheath: the bow shock ahead of a blunt entry body compresses and heats the gas enough to ionise it, producing a layer of free electrons around the vehicle. A radio wave can only propagate through plasma above the local plasma frequency, which scales with electron density; during peak heating the electron density is high enough that this cutoff rises above the spacecraft's communication frequencies, and the signal is reflected and attenuated rather than transmitted. The link is lost in both directions.",
+  "cur": "El apagón está causado por la vaina de plasma: la onda de choque de proa frente a un cuerpo de entrada romo comprime y calienta el gas lo suficiente como para ionizarlo, produciendo una capa de electrones libres alrededor del vehículo. Una onda de radio solo puede propagarse por el plasma por encima de la frecuencia de plasma local, que escala con la densidad electrónica; durante el pico de calentamiento la densidad electrónica es suficientemente alta como para que esta frecuencia de corte supere las frecuencias de comunicación de la nave, y la señal es reflejada y atenuada en lugar de transmitida. La conexión se pierde en ambas direcciones."
+ },
+ {
+  "rel": "science/mission-phases/comms-blackout.json",
+  "at": "body_paragraphs.1",
+  "en": "For Earth-return capsules the blackout typically spans the altitude band from roughly 90 km down to about 40 km, lasting on the order of three to four minutes and coinciding with peak heating and near-peak deceleration. Its duration and severity depend on entry velocity, vehicle shape and the radio frequency in use — higher frequencies penetrate a given plasma density better, and the wake behind the vehicle is less ionised than the stagnation region ahead of the shield. Faster lunar-return entries produced longer, more complete blackouts than shallow LEO returns.",
+  "cur": "Para las cápsulas que regresan a la Tierra, el apagón abarca típicamente la banda de altitud desde unos 90 km hasta unos 40 km, dura del orden de 3–4 min y coincide con el pico de calentamiento y la desaceleración casi máxima. Su duración e intensidad dependen de la velocidad de entrada, la forma del vehículo y la frecuencia de radio empleada — las frecuencias más altas penetran mejor una densidad de plasma dada, y la estela tras el vehículo está menos ionizada que la región de estancamiento frente al escudo. Las reentradas lunarias más rápidas producían apagones más largos y completos que las reentradas LEO más planas."
+ },
+ {
+  "rel": "science/mission-phases/comms-blackout.json",
+  "at": "body_paragraphs.2",
+  "en": "The classic mitigation is geometry: the Space Shuttle relayed through TDRS satellites overhead, transmitting through the thinner plasma over its upper surface rather than down through the dense sheath to a ground station. On `/fly`, the re-entry HUD marks the blackout window explicitly — the plasma indicator lamp lights through the peak-heating phase, the one stretch of the descent where the telemetry you're watching would, in a real mission, have gone dark.",
+  "cur": "La mitigación clásica es geométrica: la Space Shuttle retransmitía a través de los satélites TDRS en el cénit, transmitiendo a través del plasma más delgado en su superficie superior en lugar de hacia abajo a través de la densa vaina hacia una estación en tierra. En `/fly`, el HUD de reentrada marca explícitamente la ventana de apagón — el indicador de plasma se enciende durante la fase de calentamiento máximo, el único tramo del descenso en el que la telemetría que estás viendo habría, en una misión real, dejado de transmitir."
+ },
+ {
+  "rel": "science/mission-phases/comms-blackout.json",
+  "at": "diagram_caption",
+  "en": "Communications blackout: the ionised plasma sheath around the heat shield reflects radio signals in both directions during peak heating, cutting the link for several minutes until the capsule slows and the plasma thins.",
+  "cur": "Apagón de comunicaciones: la vaina de plasma ionizado alrededor del escudo térmico refleja las señales de radio en ambas direcciones durante el calentamiento máximo, cortando la conexión durante varios minutos hasta que la cápsula frena y el plasma se adelgaza."
+ },
+ {
+  "rel": "science/mission-phases/dead-reckoning.json",
+  "at": "intro_sentence",
+  "en": "Integrate the accelerometers to get velocity, integrate again to get position — works for hours, drifts noticeably over days, and is exactly why every cruise needs periodic ground-based fixes.",
+  "cur": "Integrar los acelerómetros para obtener velocidad, integrar de nuevo para obtener posición — trabaja durante horas, deriva notablemente durante días, y es exactamente por qué cada crucero necesita correcciones terrestres periódicas."
+ },
+ {
+  "rel": "science/mission-phases/dead-reckoning.json",
+  "at": "body_paragraphs.0",
+  "en": "Between burns and outside the range of useful celestial landmarks, a spacecraft tracks its own state by integrating the output of its inertial measurement unit (IMU): three accelerometers measuring linear acceleration, three gyroscopes measuring rotation rate. Integrate acceleration once → velocity. Integrate again → position. Combined with the orientation from [star trackers](mission-phases/star-trackers), the spacecraft can propagate its full state vector forward in time without any external help.",
+  "cur": "Entre quemaduras y fuera de la gama de hitos celestiales útiles, una nave espacial rastrea su propio estado integrando la salida de su unidad de medición inercial (IMU): tres acelerómetros que miden aceleración lineal, tres giroscopios que miden la velocidad de rotación. Integrar la aceleración una vez → velocidad. Integrar de nuevo → posición. Combinado con la orientación de [los rastreadores de estrellas] (fases de misión/estrellas), la nave espacial puede propagar su vector de estado completo hacia adelante en el tiempo sin ninguna ayuda externa."
+ },
+ {
+  "rel": "science/mission-phases/dead-reckoning.json",
+  "at": "body_paragraphs.1",
+  "en": "The fundamental problem is **drift**. Every accelerometer has a small bias (~10⁻⁵ m/s² on a navigation-grade IMU); over 1 day that bias integrated twice contributes ~3.7 km of position error. Over a 6-month cruise to Mars, dead-reckoning error builds up to thousands of km even with the best space-rated IMUs (which are far better than the consumer-grade ones in your phone). This is why every interplanetary mission carries [trajectory correction maneuvers](mission-phases/tcm) on its budget: the cruise dispersion has to be measured against ground tracking and the spacecraft has to physically adjust its course.",
+  "cur": "El problema fundamental es ** deriva**. Cada acelerómetro tiene un pequeño sesgo (~10−5 m/s2 en un IMU de nivel de navegación); más de 1 día ese sesgo integrado dos veces contribuye a ~3.7 km de error de posición. Durante un crucero de 6 meses a Marte, el error de recapitulación se acumula hasta miles de km incluso con los mejores IMUs (que son mucho mejores que los de grado de consumo en su teléfono). Es por ello que cada misión interplanetaria lleva [maniobras de corrección de tráfico] (fase de misión/tcm) en su presupuesto: la dispersión de crucero tiene que ser medida contra el rastreo de tierra y la nave espacial tiene que ajustar físicamente su curso."
+ },
+ {
+  "rel": "science/mission-phases/dead-reckoning.json",
+  "at": "body_paragraphs.2",
+  "en": "Modern best practice combines dead-reckoning with periodic Deep Space Network ranging (see [DSN](mission-phases/dsn)): the ground measures position to ~1 km accuracy via round-trip light time and Doppler, uplinks a corrected state, and the spacecraft restarts its propagation from a known-good fix. The combined system is far more accurate than either component alone. Star trackers tell the spacecraft which way it's pointing; the IMU tells it what's happening between fixes; the DSN tells it where it actually is.",
+  "cur": "La mejor práctica moderna combina la estima de posición con mediciones periódicas de la Deep Space Network (ver [DSN](mission-phases/dsn)): la estación terrestre mide la posición con una precisión de ~1 km mediante tiempo de viaje de luz de ida y vuelta y efecto Doppler, transmite un estado corregido hacia arriba, y la nave espacial reinicia su propagación desde una corrección conocida y verificada. El sistema combinado es mucho más preciso que cualquiera de sus componentes por separado. Los rastreadores de estrellas le dicen a la nave espacial hacia dónde apunta; la IMU le dice qué ocurre entre correcciones; la DSN le dice dónde se encuentra realmente."
+ },
+ {
+  "rel": "science/mission-phases/dead-reckoning.json",
+  "at": "body_paragraphs.3",
+  "en": "Dead-reckoning matters most when the DSN isn't available — during a Mars-EDL communications blackout, during the ~22 minute one-way light delay to Jupiter and beyond, or during an attitude-control crisis. Every spacecraft autonomy system is essentially a state-vector propagator running on dead-reckoning while ground operations work on the recovery.",
+  "cur": "Lo más importante es que el DSN no esté disponible durante un apagón de comunicaciones Marte-EDL, durante el retraso de luz unidireccional de ~22 minutos a Júpiter y más allá, o durante una crisis de control de actitud. Cada sistema de autonomía de las naves espaciales es esencialmente un propagador estatal-vector que se ejecuta en la recuperación muerta mientras las operaciones terrestres trabajan en la recuperación."
+ },
+ {
+  "rel": "science/mission-phases/dead-reckoning.json",
+  "at": "diagram_caption",
+  "en": "Accelerometer + gyro → integrate → state vector → drifts over days without external fix → why TCMs exist. DSN ranging + Doppler resets the drift.",
+  "cur": "Accelerometer + gyro → integrar → vector de estado → derivas en días sin fijación externa → por qué TCMs existen. DSN que van + Doppler reajusta la deriva."
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "title",
+  "en": "Deorbit & the Re-entry Corridor",
+  "cur": "Desorbita y el corredor de reentrada"
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "intro_sentence",
+  "en": "A capsule doesn't fall out of orbit — it's nudged into a corridor barely a degree wide, where too steep burns the crew up and too shallow skips them back into space.",
+  "cur": "Una cápsula no cae simplemente de la órbita — se la guía hacia un corredor de apenas un grado de anchura, donde demasiado inclinada incinera a la tripulación y demasiado plana la devuelve al espacio."
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "narrative_101.0",
+  "en": "Being in orbit means going sideways fast enough that you keep missing the ground. To come home you don't point down and dive — you slow down. A short retrograde burn, firing the engine against the direction of travel, shaves off only about a hundred metres per second. That's all it takes: the low point of the orbit now dips into the top of the atmosphere, and from there the air does the rest of the braking.",
+  "cur": "Estar en órbita significa moverse lateralmente lo bastante rápido como para seguir fallando el suelo. Para volver a casa no apuntas hacia abajo y te lanzas en picado — frenas. Un breve impulso retrógrado, disparando el motor en sentido contrario al de la marcha, recorta apenas unos cien metros por segundo. Con eso basta: el punto bajo de la órbita ahora se sumerge en lo alto de la atmósfera, y a partir de ahí el aire hace el resto del frenado."
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "narrative_101.1",
+  "en": "The catch is the angle you arrive at. Come in too shallow and the capsule grazes the atmosphere like a stone skipped across a pond — it bounces back out into space, and the crew loops around for another lap they may not have air or power for. Come in too steep and the air brakes them so violently that the deceleration crushes the crew and the heat shield can't shed the heat fast enough. Between those two failures is a safe band — the re-entry corridor — and for a capsule returning from the Moon it was famously less than two degrees wide.",
+  "cur": "El problema es el ángulo de llegada. Entrar demasiado plano y la cápsula roza la atmósfera como una piedra que salta sobre un estanque — rebota de vuelta al espacio, y la tripulación da otra vuelta para la que puede que ya no quede aire ni energía. Entrar demasiado empinado y el aire frena con tal violencia que la desaceleración aplasta a la tripulación y el escudo térmico no puede disipar el calor lo bastante rápido. Entre esos dos modos de fallo hay una banda segura — el corredor de reentrada — que en el caso de una cápsula que regresaba de la Luna era notoriamente inferior a dos grados de anchura."
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "narrative_101.2",
+  "en": "So the whole return is a targeting problem solved before the burn ever happens. Get the deorbit burn's size and timing right and the capsule threads the corridor: steep enough not to skip, shallow enough to survive. Everything after entry interface — the fireball, the blackout, the parachutes — is just physics playing out along a path that was locked in the moment the engine shut down.",
+  "cur": "Así que todo el regreso es un problema de puntería resuelto antes de que se produzca la quemada. Si el tamaño y el momento del impulso de desorbita son correctos, la cápsula enhebra el corredor: lo bastante empinada para no rebotar, lo bastante plana para sobrevivir. Todo lo que ocurre tras la interfaz de entrada — la bola de fuego, el apagón, los paracaídas — es simplemente la física siguiendo una trayectoria que quedó fijada en el momento en que el motor se apagó."
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "body_paragraphs.0",
+  "en": "Deorbit is a retrograde impulse that lowers perigee from orbital altitude to inside the sensible atmosphere — for a low-Earth-orbit capsule, dropping perigee to roughly 40–60 km with a burn of only ~100 m/s. The vehicle then coasts, unpowered, down to entry interface at about 122 km, where aerodynamic forces take over. The single number that decides its fate is the entry flight-path angle: how far below the local horizontal the velocity vector points as it crosses that interface.",
+  "cur": "La desorbita es un impulso retrógrado que baja el perigeo desde la altitud orbital hasta el interior de la atmósfera sensible — para una cápsula en órbita baja terrestre, bajar el perigeo a aproximadamente 40–60 km con una quemada de solo ~100 m/s. El vehículo planea entonces sin propulsión hasta la interfaz de entrada a unos 122 km, donde las fuerzas aerodinámicas toman el relevo. El único número que decide su destino es el ángulo de trayectoria de vuelo de entrada γ: cuánto por debajo de la horizontal local apunta el vector velocidad al cruzar esa interfaz."
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "body_paragraphs.1",
+  "en": "The corridor is bounded on both sides. The overshoot (shallow) boundary is set by skip-out: too little atmosphere is intercepted, drag can't capture the vehicle, and it returns to space. The undershoot (steep) boundary is set by the survivable limits — peak deceleration and peak heating rate both climb sharply with entry angle. A ballistic capsule entering from LEO at a few degrees pulls around 8 g; a purely ballistic lunar-return entry would exceed 20 g, which is why Apollo flew a lifting entry, using the capsule's offset centre of mass to generate a little lift and stretch the corridor to a survivable ~6–7 g. Steeper is shorter and hotter; shallower is longer and gentler but risks the skip.",
+  "cur": "El corredor está delimitado por ambos lados. El límite de sobrepaso (demasiado plano) lo fija el riesgo de rebote: se intercepta demasiado poca atmósfera, el arrastre no puede capturar el vehículo y este regresa al espacio. El límite inferior (demasiado empinado) lo fijan los límites de supervivencia — tanto la desaceleración máxima como la tasa de calentamiento máxima aumentan bruscamente con el ángulo de entrada. Una cápsula balística que entra desde LEO a unos pocos grados alcanza unos 8 g; una reentrada lunar puramente balística superaría los 20 g, razón por la cual Apollo voló una reentrada con sustentación, usando el centro de masa desplazado de la cápsula para generar algo de sustentación y ampliar el corredor a un ~6–7 g soportable. Más empinado es más corto y más caliente; más plano es más largo y más suave pero arriesga el rebote."
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "body_paragraphs.2",
+  "en": "On `/fly`, the re-entry act plays this out: the entry flight-path angle is baked into each mission's profile, and the Science-Lens drag layer shows the deceleration spike growing and fading as the capsule crosses peak-heating and peak-g. Compare a shallow, lifting entry against a steep ballistic one and the corridor logic is visible in the g-load trace — the same trade every returning crew has ridden since Gagarin.",
+  "cur": "En `/fly`, el acto de reentrada reproduce esto: el ángulo de trayectoria de vuelo de entrada está integrado en el perfil de cada misión, y la capa Science-Lens de arrastre muestra el pico de desaceleración crecer y desvanecerse cuando la cápsula cruza el pico de calentamiento y el pico de g. Compara una reentrada plana con sustentación frente a una balística empinada y la lógica del corredor es visible en el trazado de la carga en g — el mismo compromiso que ha vivido cada tripulación que ha regresado desde Gagarin."
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "diagram_caption",
+  "en": "The re-entry corridor: a retrograde deorbit burn drops perigee into the atmosphere; too shallow skips back to space, too steep exceeds the g-load and heating limits, and a narrow band between them is survivable.",
+  "cur": "El corredor de reentrada: un impulso retrógrado de desorbita baja el perigeo hacia la atmósfera; demasiado plano rebota de vuelta al espacio, demasiado empinado supera los límites de carga en g y de calentamiento, y una banda estrecha entre ambos es supervivible."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "title",
+  "en": "DSN — Deep Space Network",
+  "cur": "DSN — Deep Space Network"
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "intro_sentence",
+  "en": "Three giant antenna complexes spaced 120° around Earth — Goldstone, Madrid, Canberra — providing continuous coverage of any spacecraft beyond low Earth orbit.",
+  "cur": "Tres complejos de antenas gigantes espaciaron 120° alrededor de la Tierra — Goldstone, Madrid, Canberra— proporcionando cobertura continua de cualquier nave espacial más allá de la órbita terrestre baja."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "body_paragraphs.0",
+  "en": "The Deep Space Network is what makes interplanetary spaceflight legible. Without it the spacecraft would still fly (dead-reckoning + autonomous nav can hold a mission together for weeks) but nobody on Earth would know where it was, what it was doing, or what it was learning. The DSN is the umbilical for every NASA mission past the Moon and a contracted partner for ESA, JAXA, and ISRO deep-space missions.",
+  "cur": "La Red del Espacio Profundo es lo que hace legible la navegación interplanetaria. Sin ella, la nave espacial seguiría volando (la navegación inercial más la navegación autónoma pueden mantener unida una misión durante semanas), pero nadie en la Tierra sabría dónde estaba, qué estaba haciendo, o qué estaba aprendiendo. La DSN es el cordón umbilical de todas las misiones de la NASA más allá de la Luna y un socio contratado para las misiones de exploración del espacio profundo de la ESA, JAXA e ISRO."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "body_paragraphs.1",
+  "en": "Three antenna complexes spaced 120° around the globe — Goldstone (California), Madrid (Spain), Canberra (Australia) — ensure that any spacecraft beyond GEO is in line-of-sight of at least one complex at all times as Earth rotates. Each complex has multiple antennas, the marquee being the 70 m \"big dishes\" (DSS-14, DSS-43, DSS-63). Smaller 34 m antennas handle most modern traffic.",
+  "cur": "Tres complejos de antenas espaciados 120° alrededor del mundo — Goldstone (California), Madrid (España), Canberra (Australia)— aseguran que cualquier nave espacial más allá de GEO esté en línea de visión de al menos un complejo en todo momento mientras la Tierra gira. Cada complejo tiene múltiples antenas, siendo la marquea los 70 m \"gran platos\" (DSS-14, DSS-43, DSS-63). Las antenas más pequeñas de 34 m manejan el tráfico más moderno."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "body_paragraphs.2",
+  "en": "Three operations matter. **Telemetry**: receive science + housekeeping data from the spacecraft (the slow link, megabits to a few hundred Mbits from Mars; tens of bits/s from Voyager at 24 billion km). **Commands**: uplink instructions to the spacecraft (encoded for radiation hardness; signed for security). **Tracking**: measure the round-trip light time and the Doppler shift on the carrier signal — these together reveal the spacecraft's range and range-rate to a precision of ~1 m and ~0.1 mm/s. That's where the spacecraft is, with kilometres-class accuracy across hundreds of millions of km of empty space.",
+  "cur": "Tres operaciones importan. **Telemetría**: recibir datos de ciencia + limpieza de la nave espacial (el enlace lento, megabits a unos pocos cientos de Mbits de Marte; decenas de bits/s de Voyager a 24 billones de km). **Commands**: uplink instructions to the spacecraft (encoded for radiation hardness; signed for security). **Tracking**: mide el tiempo de luz de ida y vuelta y el cambio Doppler en la señal de portaaviones, estos juntos revelan la gama y el rango de la nave espacial a una precisión de ~1 m y ~0.1 mm/s. Ahí es donde está la nave espacial, con precisión de kilómetros a través de cientos de millones de kilómetros de espacio vacío."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "body_paragraphs.3",
+  "en": "Advanced techniques layer on top. **Delta-DOR** (Delta-Differential One-way Range) uses two antennas viewing the same spacecraft + a nearby quasar simultaneously; the differential timing gives angular position to nanoradians. Mars EDL navigation now routinely hits ~100 m landing-ellipse accuracy on what is essentially a multi-month coast at 30,000 km/h. The DSN is the reason.",
+  "cur": "capa de técnicas avanzadas en la parte superior. **Delta-DOR** (Delta-Differential One-way Range) utiliza dos antenas que ven la misma nave espacial + un quasar cercano simultáneamente; el momento diferencial da posición angular a los nanoradianos. Marte EDL navegación ahora golpea rutinariamente ~100 m landing-ellipse precisión en lo que es esencialmente una costa de varios meses a 30,000 km/h. El DSN es la razón."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "diagram_caption",
+  "en": "Goldstone + Madrid + Canberra at 120° intervals → continuous coverage as Earth rotates → ranging + Doppler + delta-DOR → kilometre-class spacecraft position across the solar system.",
+  "cur": "Goldstone + Madrid + Canberra a intervalos de 120° → cobertura continua como la Tierra gira → van + Doppler + delta-DOR → posición de naves espaciales de clase kilómetro a través del sistema solar."
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "title",
+  "en": "EDL — Entry, Descent, Landing",
+  "cur": "EDL — Entrada, descenso y aterrizaje"
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "intro_sentence",
+  "en": "Seven minutes from the top of the atmosphere to wheels-down — the most automated, lowest-margin phase of any planetary mission.",
+  "cur": "Siete minutos desde el techo de la atmósfera hasta tocar suelo — la fase más automatizada y de menor margen de cualquier misión planetaria."
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "narrative_101.0",
+  "en": "Mars is fourteen light-minutes away. By the time a signal from the rover reaches Mission Control, the rover has been on the ground for fourteen minutes — alive or dead. Nobody on Earth flies a Mars landing. The spacecraft does it itself, autonomously, in about seven minutes, with hundreds of moving parts and zero second chances.",
+  "cur": "Marte está a catorce minutos-luz de distancia. Para cuando una señal del róver llega a Mission Control, el róver ha estado en el suelo durante catorce minutos — vivo o muerto. Nadie en la Tierra vuela un aterrizaje marciano. La nave lo hace ella sola, autónomamente, en unos siete minutos, con cientos de partes móviles y cero segundas oportunidades."
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "narrative_101.1",
+  "en": "Step one: hit the atmosphere at ~5.8 km/s. The heat shield handles temperatures hot enough to glow. Step two: deploy a supersonic parachute at Mach 2 — yes, a parachute, while still going faster than sound. Step three: drop the heat shield, drop the parachute, fire retrorockets to slow the rest of the way. Step four: touchdown.",
+  "cur": "Paso uno: chocar con la atmósfera a ~5,8 km/s. El escudo térmico maneja temperaturas suficientemente calientes para brillar. Paso dos: desplegar un paracaídas supersónico a Mach 2 — sí, un paracaídas, mientras todavía vas más rápido que el sonido. Paso tres: tirar el escudo térmico, tirar el paracaídas, disparar retrocohetes para frenar el resto. Paso cuatro: aterrizaje."
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "narrative_101.2",
+  "en": "Different missions, different tricks. Apollo just fired its descent engine all the way down. Curiosity and Perseverance used the genuinely insane Sky Crane: a rocket-powered platform that hovered 20 metres above the ground and lowered the rover on three cables, then flew itself away. China's Zhurong did a hybrid. The seven minutes are called \"the seven minutes of terror\" inside JPL because there's nothing anyone can do during them. The simulator has done the math; you trust the simulator.",
+  "cur": "Distintas misiones, distintos trucos. Apollo simplemente disparó su motor de descenso todo el camino abajo. Curiosity y Perseverance usaron la genuinamente loca Sky Crane: una plataforma propulsada por cohetes que flotó 20 metros sobre el suelo y bajó el róver con tres cables, luego se voló sola. Zhurong de China hizo un híbrido. Los siete minutos se llaman \"los siete minutos de terror\" dentro de JPL porque no hay nada que nadie pueda hacer durante ellos. El simulador ha hecho la matemática; confías en el simulador."
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "body_paragraphs.0",
+  "en": "Entry begins when the spacecraft hits sensible atmosphere — about 125 km up at Mars, 100 km at Earth. From that moment, atmospheric drag is doing your braking; engines stay quiet. The heat shield handles thousands of degrees, the aeroshell holds shape, and the trajectory is essentially ballistic.",
+  "cur": "La entrada empieza cuando la nave golpea atmósfera sensible — unos 125 km arriba en Marte, 100 km en la Tierra. Desde ese momento, la fricción atmosférica hace tu frenado; los motores se mantienen quietos. El escudo térmico maneja miles de grados, el aerocaparazón mantiene la forma, y la trayectoria es esencialmente balística."
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "body_paragraphs.1",
+  "en": "Descent picks up when supersonic parachutes deploy, around Mach 1.5-2. They strip another huge chunk of velocity — but parachutes alone can't get you to a soft landing on a thin atmosphere. Mars goes from supersonic to subsonic on parachute, then transitions to powered descent: heat shield drops, retro-rockets fire, the lander falls the last few hundred metres on engine plumes alone.",
+  "cur": "El descenso comienza cuando despliegan paracaídas supersónicos, alrededor de Mach 1,5-2. Eliminan otro gran trozo de velocidad — pero los paracaídas solos no pueden llevarte a un aterrizaje suave en una atmósfera fina. Marte va de supersónico a subsónico en paracaídas, luego transiciona a descenso propulsado: el escudo térmico cae, los retrocohetes disparan, el módulo cae los últimos cientos de metros solo sobre los chorros del motor."
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "body_paragraphs.2",
+  "en": "Curiosity and Perseverance used the sky-crane: hover at ~20m, lower the rover on cables to wheels-down, fly the descent stage away. Apollo used a direct rocket-burn to surface. China's Zhurong used a hybrid hover/lower scheme. Different planets, different atmospheres, different schemes — same seven minutes.",
+  "cur": "Curiosity y Perseverance usaron el sky-crane: flotar a ~20m, bajar el róver con cables a tocar suelo, volar la etapa de descenso lejos. Apollo usó una quemada directa de cohete a la superficie. Zhurong de China usó un esquema híbrido de flotar/bajar. Distintos planetas, distintas atmósferas, distintos esquemas — los mismos siete minutos."
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "diagram_caption",
+  "en": "EDL sequence: entry (heat shield) → parachute → powered descent → touchdown.",
+  "cur": "Secuencia EDL: entrada (escudo térmico) → paracaídas → descenso propulsado → aterrizaje."
+ },
+ {
+  "rel": "science/mission-phases/entry-footprint.json",
+  "at": "title",
+  "en": "The landing footprint — where a capsule’s lift can take it",
+  "cur": "La huella de aterrizaje — dónde puede llevar el sustentamiento de una cápsula"
+ },
+ {
+  "rel": "science/mission-phases/entry-footprint.json",
+  "at": "intro_sentence",
+  "en": "A re-entering capsule is not aimed like a dart at one point — its lift gives it a whole reachable area on the ground, the \"footprint\", and the guidance computer picks a landing site inside it by deciding how to spend that lift.",
+  "cur": "Una cápsula que reingresa no se apunta como un dardo a un punto; su sustentamiento define una zona alcanzable en tierra, la \"huella\", y la computadora de guía elige el sitio dentro de ella."
+ },
+ {
+  "rel": "science/mission-phases/entry-footprint.json",
+  "at": "narrative_101.0",
+  "en": "Once a capsule commits to re-entry it cannot add energy — no engines, no go-around. But it is not helpless about WHERE it comes down. By rolling to point its lift up it stretches the glide and flies far; by rolling lift-down it dives and lands short; by banking left or right it moves sideways. The set of all the places it could reach, given its speed and its lift, is a patch on the ground shaped like a stretched teardrop — the landing footprint.",
+  "cur": "Una vez que una cápsula se compromete con el reingreso no puede añadir energía — sin motores, sin vuelta atrás. Pero tiene opciones sobre DÓNDE desciende. Inclinándose para apuntar el sustentamiento hacia arriba estira el planeo y vuela lejos; inclinándolo hacia abajo buza y aterriza corto; inclinándose a izquierda o derecha se mueve lateralmente. El conjunto de todos los lugares alcanzables, dada su velocidad y sustentamiento, es una mancha en tierra con forma de lágrima estirada — la huella de aterrizaje."
+ },
+ {
+  "rel": "science/mission-phases/entry-footprint.json",
+  "at": "narrative_101.1",
+  "en": "Reaching the far edge of that footprint costs something: flying lift-up to go long means a shallower, gentler descent and a lower peak-g, while diving short means a steeper, harsher one. So there is a trade written into the footprint — the farther targets are the low-g ones, the near targets the high-g ones — and the guidance has to find a bank schedule that lands on the chosen spot without ever breaking the g or heating limits along the way.",
+  "cur": "Alcanzar el borde lejano de esa huella tiene un costo: volar con sustentamiento hacia arriba para ir lejos significa un descenso más suave, más leve, y un pico-g menor, mientras que bucear corto significa uno más pronunciado y más severo. Así que hay un compromiso inscrito en la huella — los objetivos lejanos son de bajo-g, los cercanos de alto-g — y la guía debe encontrar un programa de inclinación que aterrice en el punto elegido sin exceder nunca los límites de g ni de calentamiento en el camino."
+ },
+ {
+  "rel": "science/mission-phases/entry-footprint.json",
+  "at": "narrative_101.2",
+  "en": "This is exactly why Apollo could splash down near its recovery carrier and why Perseverance could hit a landing ellipse under 8 kilometres across (about 7.7 by 6.6 km) on Mars from millions of kilometres away. The computer is not steering to a point so much as choosing a point inside the footprint and then flying the lift to reach it.",
+  "cur": "Por eso Apollo pudo amarizar cerca de su portaaviones de recuperación y por eso Perseverance pudo impactar una elipse de aterrizaje menor a 8 kilómetros de largo (unos 7,7 por 6,6 km) en Marte desde millones de kilómetros de distancia. La computadora no apunta a un punto sino que elige un punto dentro de la huella y luego vuela el sustentamiento para alcanzarlo."
+ },
+ {
+  "rel": "science/mission-phases/entry-footprint.json",
+  "at": "body_paragraphs.0",
+  "en": "The footprint is the reachable set in downrange–crossrange space. Downrange is set mostly by how the vehicle spends vertical lift: full lift-up maximises range (the capsule \"floats\", decelerating slowly and travelling far), full lift-down minimises it (a steep, fast arrival). Crossrange comes from banking the lift sideways, and its extent grows with L/D. For a low-L/D capsule the footprint is modest; for a lifting body or a winged vehicle it is huge.",
+  "cur": "La huella es el conjunto alcanzable en el espacio de alcance longitudinal y transversal. El alcance longitudinal depende sobre todo de cómo gasta el vehículo la sustentación vertical: con sustentación máxima hacia arriba se maximiza el alcance (la cápsula «flota», desacelera despacio y viaja lejos), y con sustentación máxima hacia abajo se minimiza (una llegada pronunciada y rápida). El alcance transversal procede de inclinar lateralmente la sustentación, y su extensión crece con L/D. Para una cápsula de L/D bajo la huella es modesta; para un cuerpo sustentador o un vehículo alado es enorme."
+ },
+ {
+  "rel": "science/mission-phases/entry-footprint.json",
+  "at": "body_paragraphs.1",
+  "en": "The trade between range and g-load is the load-bearing fact. Because a long, lift-up trajectory sheds speed high in thin air over a long time, its peak deceleration is low; a short, lift-down trajectory concentrates the braking and peaks higher. A footprint diagram therefore doubles as a menu: each reachable range comes with the peak-g it costs, and the target must sit inside both the range band and the g limit.",
+  "cur": "El compromiso entre alcance y carga-g es el hecho fundamental. Porque una trayectoria larga con sustentamiento hacia arriba disipa velocidad alto en aire delgado durante mucho tiempo, su desaceleración máxima es baja; una trayectoria corta con sustentamiento hacia abajo concentra el frenado y alcanza un máximo mayor. Un diagrama de huella por lo tanto funciona también como un menú: cada alcance alcanzable viene con el pico-g que cuesta, y el objetivo debe estar dentro de ambos la banda de alcance y el límite de g."
+ },
+ {
+  "rel": "science/mission-phases/entry-footprint.json",
+  "at": "body_paragraphs.2",
+  "en": "A range-control guidance loop closes this. Given a target range it solves for the bank angle (really a bank schedule) that lands there, then flies it, reversing bank left/right to cancel crossrange error. If the target lies outside the footprint the honest answer is that it cannot be reached — the guidance clamps to the nearest edge — which is why mission design chooses entry conditions that keep the target comfortably inside the footprint.",
+  "cur": "Un bucle de guía con control de alcance cierra esto. Dado un alcance objetivo resuelve el ángulo de inclinación (realmente un programa de inclinación) que aterriza ahí, luego lo vuela, revirtiendo la inclinación izquierda/derecha para cancelar el error de crossrange. Si el objetivo está fuera de la huella la respuesta honesta es que no puede ser alcanzado — la guía se fija en el borde más cercano — por eso el diseño de misión elige condiciones de entrada que mantengan el objetivo cómodamente dentro de la huella."
+ },
+ {
+  "rel": "science/mission-phases/entry-footprint.json",
+  "at": "diagram_caption",
+  "en": "The reachable landing footprint: lift-up reaches far at low peak-g, lift-down lands short at high g; the guidance solves a bank schedule to a target inside the band.",
+  "cur": "La huella de aterrizaje alcanzable: sustentamiento hacia arriba alcanza lejos con bajo pico-g, sustentamiento hacia abajo aterriza corto con alto g; la guía resuelve un programa de inclinación hacia un objetivo dentro de la banda."
+ },
+ {
+  "rel": "science/mission-phases/entry-heating.json",
+  "at": "title",
+  "en": "Entry Heating",
+  "cur": "Calentamiento en la entrada"
+ },
+ {
+  "rel": "science/mission-phases/entry-heating.json",
+  "at": "intro_sentence",
+  "en": "Why hitting an atmosphere at kilometres per second heats a spacecraft to thousands of degrees — and how a heat shield takes the punishment.",
+  "cur": "Por qué impactar una atmósfera a kilómetros por segundo calienta una nave a miles de grados — y cómo un escudo térmico aguanta el castigo."
+ },
+ {
+  "rel": "science/mission-phases/entry-heating.json",
+  "at": "narrative_101.0",
+  "en": "A spacecraft arriving at a planet is moving fast — 5 to 6 km/s at Mars, nearly 11 km/s at Venus. When it slams into the top of the atmosphere it does not so much rub against the air as crush it. The gas piling up in front of the vehicle is compressed so violently that it heats to thousands of degrees and glows — the fireball you see around any returning capsule.",
+  "cur": "Una nave que llega a un planeta se mueve deprisa — 5 a 6 km/s en Marte, casi 11 km/s en Venus. Cuando impacta contra la parte superior de la atmósfera no tanto roza el aire como lo comprime. El gas que se acumula frente al vehículo se comprime tan violentamente que se calienta a miles de grados y brilla — la bola de fuego que ves alrededor de cualquier cápsula que regresa."
+ },
+ {
+  "rel": "science/mission-phases/entry-heating.json",
+  "at": "narrative_101.1",
+  "en": "It is a common myth that this heat comes from friction. Almost all of it comes from compression: the spacecraft cannot push the air out of the way fast enough, so a shock wave forms just ahead of it and the trapped gas superheats. The faster the entry, the hotter the shock — which is why Venus, with the fastest entries and the thickest air, is the harshest entry environment in the solar system.",
+  "cur": "Es un mito común que este calor provenga de la fricción. Casi todo proviene de la compresión: la nave no puede apartar el aire lo bastante rápido, así que se forma una onda de choque justo delante de ella y el gas atrapado se sobrecalienta. Cuanto más rápida sea la entrada, más caliente la onda de choque — por eso Venus, con las entradas más rápidas y el aire más denso, es el entorno de entrada más hostil del sistema solar."
+ },
+ {
+  "rel": "science/mission-phases/entry-heating.json",
+  "at": "narrative_101.2",
+  "en": "The vehicle survives behind a heat shield — a blunt, ablative shell that faces the flow. Blunt is deliberate: a sharp nose would concentrate the heat, while a broad shield holds the shock wave out at a distance and spreads the load. The shield's surface chars and flakes away on purpose, carrying the heat off with it, so the spacecraft tucked behind stays cool.",
+  "cur": "El vehículo sobrevive protegido por un escudo térmico — una cubierta roma y ablativa que enfrenta el flujo. Lo de roma es deliberado: una nariz afilada concentraría el calor, mientras que un escudo ancho mantiene la onda de choque a distancia y distribuye la carga. La superficie del escudo se carboniza y se descascara a propósito, llevándose el calor consigo, así que la nave protegida detrás permanece fría."
+ },
+ {
+  "rel": "science/mission-phases/entry-heating.json",
+  "at": "body_paragraphs.0",
+  "en": "Two peaks matter during entry and they do not coincide. Peak heating happens high up, where the vehicle is still fast and the heating rate (which scales roughly with velocity cubed) is enormous even in thin air. Peak deceleration happens lower down, in denser air, where the force on the vehicle is greatest — Mars entries peak around 8–15 g, Venus entries at 100–350 g. A lander's structure is sized for the g-peak; its heat shield is sized for the heat-peak.",
+  "cur": "Dos picos importan durante la entrada y no coinciden. El pico de calentamiento ocurre arriba, donde la nave aún es rápida y la velocidad de calentamiento (que escala aproximadamente con la velocidad al cubo) es enorme incluso en aire fino. El pico de desaceleración ocurre más abajo, en aire más denso, donde la fuerza en la nave es mayor — las entradas en Marte alcanzan picos de 8–15 g, las entradas en Venus de 100–350 g. La estructura de una sonda se dimensiona para el pico de g; su escudo térmico se dimensiona para el pico de calor."
+ },
+ {
+  "rel": "science/mission-phases/entry-heating.json",
+  "at": "body_paragraphs.1",
+  "en": "The plasma sheath that glows around the vehicle also blocks radio: for a minute or two at peak heating, ionised gas wraps the spacecraft and cuts communications — the famous entry blackout. Controllers simply wait it out; the vehicle is flying a pre-loaded sequence, on its own, through the hottest part of the trajectory.",
+  "cur": "La vaina de plasma que brilla alrededor de la nave también bloquea la radio: durante un minuto o dos en el pico de calentamiento, el gas ionizado envuelve la nave y corta las comunicaciones — el famoso apagón de entrada. Los controladores simplemente esperan; la nave vuela una secuencia precargada, por su cuenta, a través de la parte más caliente de la trayectoria."
+ },
+ {
+  "rel": "science/mission-phases/entry-heating.json",
+  "at": "body_paragraphs.2",
+  "en": "On `/fly`, the descent HUD's aero-heating gauge is a relative proxy for this — it climbs as the vehicle bites into the atmosphere and peaks well before touchdown, then falls away as the vehicle slows. Turn on the drag Science-Lens layer during any `?descent=1` Mars or Venus entry to see the deceleration build as the air thickens.",
+  "cur": "En `/fly`, el medidor de calentamiento aerodinámico del HUD de descenso es un indicador relativo para esto — sube cuando la nave muerde la atmósfera y alcanza su pico mucho antes de tocar tierra, luego cae cuando la nave desacelera. Activa la capa de ciencia de arrastre durante cualquier entrada a Marte o Venus con `?descent=1` para ver cómo la desaceleración aumenta conforme el aire se vuelve más denso."
+ }
+]

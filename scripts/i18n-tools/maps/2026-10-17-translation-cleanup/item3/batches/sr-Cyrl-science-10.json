@@ -1,0 +1,1040 @@
+[
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "body_paragraphs.2",
+  "en": "The first spacecraft to fly by solar-sail propulsion in interplanetary space was JAXA's IKAROS, launched in May 2010 as a secondary payload on the Akatsuki Venus mission. IKAROS deployed a 196 m² polyimide sail just 7.5 micrometres thick — thinner than a human hair — and demonstrated measurable acceleration and attitude control by liquid-crystal panels embedded in the sail's edges. The Planetary Society's LightSail 2 (2019) became the first spacecraft to raise its orbit using only solar-sail thrust, demonstrating sustained propulsion in low Earth orbit. NASA's NEA Scout CubeSat (launched 2022 on Artemis I) was the first American interplanetary solar sail mission, though contact was not established after deployment. NASA's ACS3 mission (2024) demonstrated a larger composite boom structure for future scaling.",
+  "cur": "Прва свемирска летелица која је у међупланетарном простору летела помоћу погона соларним једром био је IKAROS агенције JAXA, лансиран у мају 2010. као споредни терет на венерској мисији Akatsuki. IKAROS је развио полиимидно једро површине 196 m² и дебљине свега 7,5 микрометара — тање од људске власи — и показао мерљиво убрзање, као и контролу положаја помоћу течнокристалних панела уграђених у ивице једра. LightSail 2 организације The Planetary Society (2019) постао је прва свемирска летелица која је подигла своју орбиту искључиво потиском соларног једра, чиме је показала континуиран погон у ниској орбити око Земље. NEA Scout CubeSat агенције NASA (лансиран 2022. на мисији Artemis I) био је прва америчка међупланетарна мисија са соларним једром, мада након развијања једра веза није успостављена. Мисија ACS3 агенције NASA (2024) показала је већу конструкцију носача од композитног материјала за будуће увећање."
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "body_paragraphs.3",
+  "en": "The fundamental limit is distance. Radiation pressure falls as the inverse square of distance from the Sun: at Jupiter (5.2 AU), it is 27 times weaker than at Earth. For trajectories beyond the asteroid belt, a sail needs to be very large or very light — or use a different power source. The natural successor concept is laser propulsion (sometimes called a laser sail or Breakthrough Starshot approach), where a ground- or space-based laser array illuminates the sail at far higher intensity than the Sun provides, enabling interstellar-class velocities. That remains speculative engineering; solar sails are flying hardware today. See also: /science/propulsion/specific-impulse and /essays/new-propulsion for where these ideas lead.",
+  "cur": "Основно ограничење је растојање. Притисак зрачења опада с обрнутим квадратом растојања од Сунца: на Јупитеру (5,2 AU) он је 27 пута слабији него на Земљи. За путање иза астероидног појаса једро мора бити веома велико или веома лако — или користити другачији извор енергије. Природни наследни концепт је ласерски погон (понекад назван ласерско једро или приступ Breakthrough Starshot), код којег ласерски низ на тлу или у свемиру осветљава једро далеко већим интензитетом него што га пружа Сунце, што омогућава брзине међузвезданог разреда. То за сада остаје спекулативно инжењерство; соларна једра су данас хардвер који лети. Погледајте и: /science/propulsion/specific-impulse и /essays/new-propulsion да видите куда ове идеје воде."
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "diagram_caption",
+  "en": "Photon momentum transfer: reflected photon imparts 2p to sail; force = 2 × (solar flux / c) × area × cos²θ — independent of propellant, falls as 1/r² from Sun.",
+  "cur": "Пренос импулса фотона: одбијени фотон предаје једру импулс 2p; сила = 2 × (Сунчев флукс / c) × површина × cos²θ — не зависи од погонског горива и опада с 1/r² од Сунца."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "title",
+  "en": "Specific Impulse (Isp)",
+  "cur": "Специфични импулс (Isp)"
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "intro_sentence",
+  "en": "How efficient an engine is — how many seconds a kilogram of propellant produces a kilogram of thrust.",
+  "cur": "Колико је мотор ефикасан — колико секунди један килограм погонског горива даје један килограм потиска."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "narrative_101.0",
+  "en": "If you've ever cared about miles-per-gallon for a car, specific impulse is the same idea for rockets. It tells you how efficiently the engine converts fuel into push. Higher Isp = better mileage = more ∆v from the same propellant load.",
+  "cur": "Ако сте икада марили за потрошњу аутомобила изражену у миљама по галону, специфични импулс је иста идеја за ракете. Он показује колико ефикасно мотор претвара гориво у потисак. Већи Isp = боља километража = више ∆v из исте количине погонског горива."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "narrative_101.1",
+  "en": "The unit is weird — it's measured in seconds, which makes no intuitive sense at first. The reason: Isp = thrust ÷ (fuel-burned-per-second × Earth's gravity). The mass and length units cancel, leaving pure seconds — which is why you can compare any two engines with one number. The bigger the number, the more efficient the engine, and you can compare engines across decades and continents using the same number.",
+  "cur": "Јединица је необична — мери се у секундама, што на први поглед нема никаквог интуитивног смисла. Разлог је следећи: Isp = потисак ÷ (потрошња горива у секунди × убрзање Земљине теже). Јединице масе и дужине се скраћују, па остају чисте секунде — зато се било која два мотора могу упоредити једним бројем. Што је број већи, мотор је ефикаснији, а помоћу истог броја можете упоређивати моторе кроз деценије и преко континената."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "narrative_101.2",
+  "en": "The range is huge. Solid rockets (the boosters on the Space Shuttle): ~250 seconds. Liquid hydrogen-oxygen (best chemical you can do): ~450 seconds. Hypergolic storables (cheap, reliable, what most spacecraft sip on for course corrections): ~310 seconds. Ion engines (super efficient but very low thrust): 3,000-9,000 seconds. The practical rule: for getting off planets, you need high thrust; for cruising in deep space, you want high Isp. Real missions stage their choices — chemical to escape Earth, ion to cruise.",
+  "cur": "Распон је огроман. Ракете на чврсто гориво (потисници на Space Shuttle-у): ~250 секунди. Течни водоник и кисеоник (најбоље што хемијски погон може да понуди): ~450 секунди. Хиполголна складишна горива (јефтина, поуздана, оно чиме се већина свемирских летелица храни за корекције курса): ~310 секунди. Јонски мотори (изузетно ефикасни, али са врло малим потиском): 3.000–9.000 секунди. Практично правило: за полетање са планета потребан је велики потисак, а за крстарење дубоким свемиром желите висок Isp. Праве мисије степенују свој избор — хемијски погон за напуштање Земље, јонски за крстарење."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "body_paragraphs.0",
+  "en": "Isp is the fuel-economy number for rockets. Higher is better. Definition: divide thrust by propellant mass-flow rate, divide by `g₀` (standard gravity), get a number in seconds. Burn one kilogram of propellant per second, get `Isp × g₀` newtons of thrust.",
+  "cur": "Isp је број који описује потрошњу горива код ракета. Што је већи, то је боље. Дефиниција: потисак поделите масеним протоком погонског горива, затим поделите са `g₀` (стандардно убрзање теже) и добијате број у секундама. Ако сагорите један килограм погонског горива у секунди, добијате потисак од `Isp × g₀` њутна."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "body_paragraphs.1",
+  "en": "The number ranges over four orders of magnitude. Solid rockets: 250s. Hydrogen/oxygen liquids (Space Shuttle Main Engine): 452s. Hypergolic storables (Apollo Service Module): 314s. Ion drives (Dawn, BepiColombo): 3000-9000s. Nuclear thermal (NERVA, never flown): 800-1000s in theory.",
+  "cur": "Ова вредност се простире кроз четири реда величине. Ракете на чврсто гориво: 250 s. Течни водоник и кисеоник (Space Shuttle Main Engine): 452 s. Хиполголна складишна горива (Apollo Service Module): 314 s. Јонски погони (Dawn, BepiColombo): 3000–9000 s. Нуклеарно-термички погон (NERVA, никада није летео): 800–1000 s у теорији."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "body_paragraphs.2",
+  "en": "Trade-offs everywhere. High Isp usually means low thrust — ion engines push ten newtons or so, useful for years-long deep-space cruises but useless for getting off Earth. Chemical engines deliver mega-newtons of thrust but burn through propellant in minutes. Real missions stage the choice: chemical for ascent, ion for cruise.",
+  "cur": "Компромиси на сваком кораку. Висок Isp обично значи низак потисак — јонски мотори потискују са десетак њутна, што је корисно за вишегодишња крстарења кроз дубоки свемир, али бескорисно за узлетање са Земље. Хемијски мотори дају мегањутне потиска, али троше погонско гориво за неколико минута. Праве мисије стога поделе избор по фазама: хемијски погон за успон, јонски за крстарење."
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "title",
+  "en": "Staged combustion — closing the cycle",
+  "cur": "Степенасто сагоревање — затварање циклуса"
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "intro_sentence",
+  "en": "Instead of dumping the turbopump's drive gas overboard, feed it into the main chamber and burn it too. Nothing is wasted, so the engine runs hotter, at higher pressure, and with more performance — at the cost of fearsome plumbing.",
+  "cur": "Уместо да се погонски гас турбопумпе испусти у свемир, он се води у главну комору и сагорева и он. Ништа се не расипа, па мотор ради на вишој температури, при већем притиску и с бољим перформансама — по цену застрашујуће сложених цевовода."
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "body_paragraphs.0",
+  "en": "Staged combustion takes the gas-generator idea and closes the loop. A preburner still burns propellant to drive the turbopumps, but its exhaust — thick with unburned fuel or oxidiser — is not dumped. It is routed into the main combustion chamber and burned a second time, so every gram of propellant ends up producing thrust. Closing the cycle buys two things at once: higher specific impulse, because nothing is thrown away, and much higher chamber pressure, because the pumps can be driven harder. Higher chamber pressure means a smaller, more powerful engine for the same thrust. The price is brutal operating conditions — the turbine now sits in the full propellant flow at extreme temperature and pressure.",
+  "cur": "Степенасто сагоревање преузима идеју гасног генератора и затвара петљу. Претходна комора и даље сагорева погонску компоненту да би покретала турбопумпе, али се њен издувни гас — богат несагореним горивом или оксидансом — не испушта. Он се усмерава у главну комору за сагоревање и сагорева по други пут, тако да свака грам погонског горива на крају даје потисак. Затварање циклуса доноси две ствари одједном: већи специфични импулс, јер се ништа не баца, и знатно већи притисак у комори, јер се пумпе могу покретати јаче. Већи притисак у комори значи мањи и снажнији мотор за исти потисак. Цена су брутални радни услови — турбина се сада налази у пуном току погонског горива, на екстремној температури и под екстремним притиском."
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "body_paragraphs.1",
+  "en": "There are two ways to run the preburner, and the choice split the spacefaring world for decades. American engines like the RS-25 (the Space Shuttle main engine, now flying on SLS) went fuel-rich: excess hydrogen keeps the preburner gas relatively cool and easy on the metallurgy. Soviet engineers took the harder road of oxidiser-rich staged combustion — the RD-170 family, RD-180 and RD-253 drive their turbines on hot, oxygen-rich gas that corrodes ordinary alloys on contact. Solving that was a metallurgical triumph that Western engineers had long believed impossible. China's YF-100 carries the oxidiser-rich tradition forward today, while Japan's LE-7A is a modern fuel-rich staged-combustion engine in the RS-25 mould.",
+  "cur": "Претходну комору је могуће водити на два начина, а избор између њих деценијама је делио свемирски свет. Амерички мотори попут RS-25 (главног мотора Space Shuttle-а, који данас лети на SLS-у) користили су сагоревање са вишком горива: вишак водоника одржава гас у претходној комори релативно хладним и штеди металургију. Совјетски инжењери кренули су тежим путем — степенастим сагоревањем са вишком оксиданса: породица RD-170, RD-180 и RD-253 покрећу своје турбине врелим гасом богатим кисеоником, који при додиру нагриза обичне легуре. Решити то био је металуршки тријумф за који су западни инжењери дуго веровали да је немогућ. Кинески YF-100 данас наставља традицију сагоревања са вишком оксиданса, док је јапански LE-7A савремени мотор са степенастим сагоревањем и вишком горива, у духу мотора RS-25."
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "body_paragraphs.2",
+  "en": "The ultimate version is full-flow staged combustion, which uses two preburners — one oxidiser-rich, one fuel-rich — so that both propellants are fully gasified before they meet in the main chamber. Both turbopumps get their own drive gas, temperatures stay manageable, and the seals no longer have to separate a fuel-driven turbine from liquid oxygen. It had been designed on paper for half a century, but SpaceX's Raptor, on Starship, is the first full-flow staged-combustion engine ever to fly. Each rung up this ladder buys perhaps twenty to forty seconds of specific impulse over a gas-generator engine — and adds a corresponding step in complexity, mass, and development cost.",
+  "cur": "Врхунска верзија је степенасто сагоревање са потпуним протоком, које користи две претходне коморе — једну богату оксидансом, другу богату горивом — тако да се обе погонске компоненте у потпуности гасификују пре него што се сретну у главној комори. Обе турбопумпе добијају сопствени погонски гас, температуре остају у подношљивим границама, а заптивке више не морају да одвајају турбину коју покреће гориво од течног кисеоника. На папиру је била осмишљена пола века, али је Raptor компаније SpaceX, на ракети Starship, први мотор са степенастим сагоревањем и потпуним протоком који је икада полетео. Сваки успон уз ову лествицу доноси можда двадесет до четрдесет секунди специфичног импулса више у односу на мотор са гасним генератором — и додаје одговарајући корак у сложености, маси и трошковима развоја."
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "diagram_caption",
+  "en": "Closed cycle: the preburner exhaust that drove the turbopump is fed into the main chamber and burned, not dumped. Fuel-rich (RS-25), oxidiser-rich (RD-180), or full-flow with both (Raptor).",
+  "cur": "Затворени циклус: издувни гас из претходне коморе, који је покретао турбопумпу, води се у главну комору и сагорева, уместо да се испусти. Са вишком горива (RS-25), са вишком оксиданса (RD-180) или са потпуним протоком кроз обе претходне коморе (Raptor)."
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "title",
+  "en": "Throttling and gimbaling — how rockets steer and how they hover",
+  "cur": "Регулација потиска и закретање млазнице — како ракете управљају смером и како лебде"
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "intro_sentence",
+  "en": "Once an engine is lit, two control inputs remain: how hard it pushes (throttle) and where it points (gimbal). Together they steer ascent, manage crew g-loads, and allow propulsive landings.",
+  "cur": "Када се мотор упали, остају две управљачке величине: колико снажно гура (потисак) и куда је усмерен (закретање млазнице). Заједно управљају успоном, ограничавају g-оптерећења посаде и омогућавају слетање помоћу потиска."
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "body_paragraphs.0",
+  "en": "Throttling sounds trivial — turn a valve — but is one of the hardest things a rocket engine does. Combustion chambers are tuned for a specific operating point: chamber pressure, mass-flow ratio, injector velocity. Drop the flow and combustion becomes unstable; rough burning starts to chew the engine apart within seconds. Most engines have a narrow band: Merlin 1D throttles 40-100%, Raptor 2 throttles 40-100%, RS-25 throttles 67-109% but is qualified only for full power throughout an ascent. The F-1 had no throttling at all — its only control was 'on'. Solid boosters cannot throttle at any throughput; the burn profile is locked when the grain is cast.",
+  "cur": "Регулација потиска делује тривијално — довољно је окренути вентил — али је једна од најтежих ствари које ракетни мотор уопште ради. Коморе за сагоревање подешене су за одређену радну тачку: притисак у комори, однос масеног протока, брзину убризгавања. Смањите проток и сагоревање постаје нестабилно; грубо, неравномерно сагоревање почиње да разара мотор за неколико секунди. Већина мотора има узак опсег: Merlin 1D регулише потисак у распону 40–100%, Raptor 2 такође 40–100%, RS-25 у распону 67–109%, али је за читав успон квалификован само за пуну снагу. F-1 није имао никакву регулацију потиска — његова једина команда била је „укључено\". Помоћни ракетни мотори на чврсто гориво не могу да регулишу потисак ни при једном протоку; профил сагоревања је одређен чим се гориво излије у калуп."
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "body_paragraphs.1",
+  "en": "Deep throttling (below ~40%) is a different class of problem. Soft landings need engines that can hold the vehicle just above its own weight — TWR ≈ 1 — for the final hover-and-set-down. Apollo Lunar Module Descent Engine throttled 10-65%, a record for its era, by using a variable-area pintle injector that physically moved to maintain injector velocity. The same pintle-injector descent is in Merlin and (with a different mechanism) Raptor. The reason Mars rovers cannot land directly on engines (Curiosity / Perseverance use the Skycrane) is that no engine in the MR-80 class has deep enough throttle for direct touchdown of a one-tonne rover, and lighter throttleable engines lack the thrust. The latest Chinese Tianwen-1 / Zhurong landing used a 7500 N variable-thrust engine that did hover-then-set; SpaceX Starship's landing depends on Raptor's deep-throttle qualification.",
+  "cur": "Дубока регулација потиска (испод ~40%) представља сасвим другачију класу проблема. За меко слетање потребни су мотори који могу да држе летелицу тек изнад њене тежине — TWR ≈ 1 — током завршног лебдења и спуштања. Мотор спусног степена лунарног модула програма Apollo имао је опсег регулације од 10 до 65%, што је у његово доба био рекорд, захваљујући игличастом инјектору променљивог пресека који се физички померао како би одржао брзину убризгавања. Исти принцип спуштања са игличастим инјектором примењен је у моторима Merlin и (другачијим механизмом) Raptor. Разлог зашто ровери за Марс не могу да слећу директно на моторима (Curiosity и Perseverance користе Skycrane) јесте то што ниједан мотор класе MR-80 нема довољно дубоку регулацију за директно додиривање тла ровера тешког једну тону, а лакши мотори с регулацијом немају довољан потисак. Најновије кинеско слетање мисије Tianwen-1 / Zhurong користило је мотор променљивог потиска од 7500 N, који је најпре лебдео, а затим се спустио; слетање SpaceX-овог Starship-а зависи од квалификације дубоке регулације потиска мотора Raptor."
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "body_paragraphs.2",
+  "en": "Gimbaling — pivoting the engine bell to redirect thrust — is how almost every modern rocket steers. Two hydraulic or electric actuators tilt the engine on a gimbal block; the thrust vector follows. Falcon 9 first stage: ±5° on each Merlin, with the centre engine doing most of the steering work and the outer eight contributing roll authority through differential gimbal. Starship Super Heavy: the inner 13 Raptors gimbal, the outer 20 are fixed. SLS: each RS-25 gimbals ±10.5°. Solid boosters cannot gimbal in flight (the bell is bolted on) — they use a *flex bearing* that lets the entire nozzle pivot relative to the case, which the Shuttle SRBs and SLS boosters use to provide steering in the booster phase. SLS lost most of its trans-stage steering when Shuttle SRBs were inherited; the flex-bearing nozzles handle it.",
+  "cur": "Закретање млазнице — померање звона мотора ради преусмеравања потиска — начин је на који управља готово свака савремена ракета. Два хидраулична или електрична актуатора нагињу мотор на кардански носач, а вектор потиска следи тај нагиб. Први степен ракете Falcon 9: ±5° на сваком мотору Merlin, при чему централни мотор обавља највећи део посла управљања, а осам спољашњих доприносе управљању по прегибу кроз диференцијално закретање. Starship Super Heavy: унутрашњих 13 мотора Raptor се закреће, а спољашњих 20 је непокретно. SLS: сваки RS-25 се закреће ±10,5°. Ракетни мотори на чврсто гориво не могу да се закрећу у лету (звоно је чврсто причвршћено) — они користе *флексибилни лежај* који омогућава да се цела млазница нагне у односу на кућиште, што SRB-ови Shuttle-а и booster-и ракете SLS користе за управљање у фази рада потисника. SLS је изгубио већи део управљања у транс-степену када су наслеђени SRB-ови Shuttle-а; то преузимају млазнице са флексибилним лежајем."
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "body_paragraphs.3",
+  "en": "A handful of vehicles steer differently. Soyuz uses fixed main engines with separate gimballed vernier engines around the booster cores. The Saturn V S-IC gimballed the four outer F-1s; the centre F-1 was fixed. Cold-gas thrusters at the booster top or side handle attitude in coast phases (Falcon 9 between booster shutdown and reentry, Starship during high-altitude flips). And many small spacecraft use no gimbal at all: a single fixed engine plus reaction wheels and small RCS thrusters. The choice is mass-trade: gimbal hardware costs 50-200 kg per engine; for a launcher with ten engines and a 200-tonne payload the cost is worth paying, for a 100-kg smallsat with a single kick motor it usually is not.",
+  "cur": "Неколико летелица управља на другачији начин. Soyuz има фиксне главне моторе и посебне вернијер моторе са закретном млазницом око бочних степена. Код ракете Saturn V степен S-IC закретао је четири спољашња мотора F-1s, док је централни F-1 био фиксан. Хладногасни потисници на врху или са стране ракетног степена управљају положајем током лета по инерцији (Falcon 9 између гашења првог степена и поновног уласка у атмосферу, Starship током прекретања на великој висини). А многе мале свемирске летелице уопште немају закретну млазницу: имају један фиксан мотор, реакционе точкове и мале RCS потиснике. Избор је компромис у маси: опрема за закретање млазнице кошта 50–200 kg по мотору; за ракету-носач са десет мотора и корисним теретом од 200 тона та цена се исплати, а за сателит од 100 kg са једним апогејским мотором обично не."
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "diagram_caption",
+  "en": "Throttle: changes thrust magnitude. Narrow on most engines (40-100%); deep on landing engines (10-65% LM, qualified deep on Merlin / Raptor for landings). Gimbal: tilts the bell to vector thrust direction. ±5-10° typical. Liquid engines gimbal directly; solid boosters use flex-bearing nozzles.",
+  "cur": "Регулација потиска: мења јачину потиска. Код већине мотора опсег је узак (40–100%); код мотора за слетање је дубок (10–65% код LM, а код мотора Merlin / Raptor дубока регулација је квалификована за слетања). Закретање млазнице: нагиње звоно мотора да би усмерило вектор потиска. Уобичајено је ±5–10°. Течни мотори се закрећу директно, док ракетни појачивачи на чврсто гориво користе млазнице са флексибилним лежајем."
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "title",
+  "en": "Thrust and TWR — how much push per kilogram you actually need",
+  "cur": "Потисак и TWR — колико вам заправо треба потиска по килограму"
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "intro_sentence",
+  "en": "A rocket has to push harder than it weighs, or it sits on the pad. The ratio is called TWR. Every operational launcher in history has lifted off in a narrow band around 1.2 to 1.5.",
+  "cur": "Ракета мора да гура јаче него што тежи, иначе остаје на лансирној рампи. Тај однос се зове TWR. Сваки оперативни ракетни носач у историји полетео је унутар уског распона од око 1,2 до 1,5."
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "body_paragraphs.0",
+  "en": "Thrust is force. The unit is newtons (or kilonewtons / meganewtons for anything that flies). A Merlin 1D produces 845 kN at sea level. A single F-1 produced 6770 kN. SLS boosters each produce 16,000 kN. Thrust is not specific impulse: thrust says how *hard* the engine pushes; Isp says how *efficiently* it does so. A high-thrust low-Isp engine (a solid booster) and a low-thrust high-Isp engine (an ion drive) can both be useful — for different jobs in different parts of a mission. The thrust equation is simple: thrust equals the propellant mass flow rate multiplied by exhaust velocity, plus a small pressure term where the nozzle exit pressure differs from ambient. That is why staged combustion engines with high chamber pressure produce more thrust per kilogram of engine mass — they push more propellant through the same throat per second at higher velocity.",
+  "cur": "Потисак је сила. Јединица су њутни (или килоњутни / мегањутни за све што лети). Merlin 1D на нивоу мора производи 845 kN. Један F-1 производио је 6770 kN. Свака помоћна ракета SLS-а производи по 16.000 kN. Потисак није специфични импулс: потисак говори колико *јако* мотор гура, а Isp колико *ефикасно* то чини. Мотор великог потиска и малог Isp (чврсти погонски појачивач) и мотор малог потиска и великог Isp (јонски погон) могу бити корисни — за различите послове у различитим деловима мисије. Једначина потиска је једноставна: потисак је једнак масеном протоку погонског горива помноженом брзином истицања, плус мали притисни члан тамо где се притисак на излазу млазнице разликује од околног. Зато мотори са поступним сагоревањем и високим притиском у комори производе више потиска по килограму масе мотора — кроз исто грло потискују више погонског горива у секунди и то већом брзином."
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "body_paragraphs.1",
+  "en": "Thrust-to-weight ratio (TWR) is thrust divided by the vehicle's *current* weight on Earth. At lift-off it must be greater than 1, or the rocket cannot leave the pad. In practice you do not want TWR right at 1.0 because every second spent fighting gravity without altitude gain is propellant burned with no upward velocity gained — gravity losses. The accountants' sweet spot is TWR 1.2-1.5 at lift-off. Saturn V lifted with 1.18, which was felt to be uncomfortably low — the vehicle rose so slowly the launch tower nearly snagged the engine bell. Falcon 9, SLS, and Starship all sit in the 1.3-1.5 band by design. The Soviet N1 was 1.07, marginal even when the engines worked; all four flights failed.",
+  "cur": "Однос потиска и тежине (TWR) јесте потисак подељен *тренутном* тежином летелице на Земљи. При полетању он мора бити већи од 1, иначе ракета не може да напусти лансирну рампу. У пракси не желите да TWR буде тачно 1,0, јер је свака секунда проведена у борби против гравитације без добитка на висини гориво потрошено без постигнуте брзине навише — то су гравитациони губици. Идеална тачка за рачуновође јесте TWR од 1,2 до 1,5 при полетању. Saturn V је полетео са 1,18, што се сматрало непријатно ниским — летелица се дизала тако споро да је лансирни торањ замало закачио млазницу мотора. Falcon 9, SLS и Starship по пројекту се налазе у распону од 1,3 до 1,5. Совјетски N1 имао је 1,07, што је гранична вредност чак и када су мотори радили; сва четири лета су пропала."
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "body_paragraphs.2",
+  "en": "TWR also matters mid-flight. As propellant burns, mass falls and TWR climbs — by main-engine cut-off a first stage's TWR can be 3-4. Saturn V's S-IC inboard F-1 was shut down early to keep crew accelerations below 4 g. Modern reusable boosters (Falcon 9, Starship) shut down some engines and throttle the rest for the same reason — and to leave enough propellant for the boost-back and landing burns. Upper stages run at lower TWR (often 0.7 at ignition) because they are firing horizontally in vacuum where gravity losses do not eat them and high Isp matters more than getting to peak thrust quickly.",
+  "cur": "TWR је важан и усред лета. Како гориво сагорева, маса опада, а TWR расте — до гашења главних мотора TWR првог степена може достићи 3–4. Унутрашњи мотор F-1 на степену S-IC ракете Saturn V гашен је раније како би убрзања посаде остала испод 4 g. Савремени вишекратни бустери (Falcon 9, Starship) из истог разлога гасе неке моторе, а остале пригушују — и да би остало довољно горива за повратно паљење и паљење при слетању. Горњи степени раде при нижем TWR (често 0,7 при паљењу), јер дејствују хоризонтално у вакууму, где их губици услед гравитације не исцрпљују, а висок Isp је важнији од брзог достизања максималног потиска."
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "body_paragraphs.3",
+  "en": "How much push per kilogram do you actually need for lift-off? With TWR 1.3 and Earth gravity 9.81 m/s², the engines need to deliver about 12.8 N/kg of vehicle mass. Stack that up for a 3000-tonne vehicle (Saturn V wet mass) and you need 38 MN of thrust — which is exactly why Saturn V used five F-1 engines totalling 33.9 MN at sea level, rising past 40 MN as ambient pressure dropped. For Starship (5000 tonnes wet) you need ~64 MN, which is why the Super Heavy booster carries 33 Raptors. The number of engines a stack carries is not a styling choice — it falls out directly from the TWR-vs-launch-mass arithmetic and the thrust of the largest engine the programme could develop.",
+  "cur": "Колико вам заправо треба потиска по килограму за полетање? Са TWR 1,3 и Земљином гравитацијом од 9,81 m/s², мотори морају да пруже око 12,8 N/kg масе летелице. Помножите то за летелицу од 3000 тона (пуна маса ракете Saturn V) и добијате 38 MN потиска — што је управо разлог зашто је Saturn V користио пет мотора F-1 са укупно 33,9 MN на нивоу мора, уз раст преко 40 MN како је амбијентални притисак опадао. За Starship (5000 тона у пуном стању) потребно је ~64 MN, због чега први степен Super Heavy носи 33 мотора Raptor. Број мотора у склопу ракете није стилски избор — он произлази директно из рачунице односа TWR и полетне масе и из потиска највећег мотора који је програм могао да развије."
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "diagram_caption",
+  "en": "TWR = thrust / (mass × g). Below 1: stays on pad. 1.0-1.2: marginal, big gravity losses. 1.3-1.5: operational sweet spot. Above 1.5: crew acceleration and aerodynamic load become the limit. Engine count = required thrust / single-engine thrust.",
+  "cur": "TWR = потисак / (маса × g). Испод 1: остаје на лансирној рампи. 1,0–1,2: гранично, велики губици због гравитације. 1,3–1,5: оперативна идеална зона. Изнад 1,5: убрзање посаде и аеродинамичко оптерећење постају ограничење. Број мотора = потребан потисак / потисак једног мотора."
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "title",
+  "en": "Tsiolkovsky Rocket Equation",
+  "cur": "Једначина ракете Tsiolkovsky"
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "intro_sentence",
+  "en": "How much velocity change you can buy from a given engine and a given propellant load — the equation that makes spaceflight a logarithmic problem.",
+  "cur": "Колику промену брзине можете да „купите“ од датог мотора и дате количине погонског горива — једначина која свемирски лет претвара у логаритамски проблем."
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "narrative_101.0",
+  "en": "Konstantin Tsiolkovsky was a deaf Russian schoolteacher who thought about spaceflight in his spare time, decades before anyone could actually build a rocket. In 1903 he wrote down an equation that nobody could escape, and we still haven't. It says: the ∆v you can squeeze out of a rocket depends on two things — how good your engine is, and how much of your rocket is fuel. And the relationship is LOGARITHMIC.",
+  "cur": "Константин Циолковски био је глуви руски учитељ који је о свемирском лету размишљао у слободно време, деценијама пре него што је неко заиста могао да изгради ракету. Године 1903. записао је једначину од које нико није могао да умакне, а нисмо ни до данас. Она каже: ∆v који можете да исцедите из ракете зависи од две ствари — колико је добар ваш мотор и колики део ваше ракете чини гориво. А тај однос је ЛОГАРИТАМСКИ."
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "narrative_101.1",
+  "en": "The logarithm is the trap. If your rocket is half fuel, you get a certain ∆v. To double that ∆v, you don't make your rocket two-thirds fuel — you have to make it about 75% fuel. To triple it, closer to 87–88% fuel. The numbers run away from you exponentially. This is why a Saturn V is a 110-metre tower that's almost entirely propellant — the spacecraft is a tiny capsule on top.",
+  "cur": "Логаритам је замка. Ако се ваша ракета наполовину састоји од горива, добијате одређени ∆v. Да бисте тај ∆v удвостручили, не правите ракету која је на две трећине гориво — морате да направите ракету која је отприлике 75% гориво. Да бисте га утростручили, потребно је близу 87–88% горива. Бројеви вам експоненцијално измичу из руку. Зато је Saturn V торањ висок 110 метара који је готово у потпуности погонско гориво — летелица је сићушна капсула на врху."
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "narrative_101.2",
+  "en": "Two ways out. One: better engines (higher specific impulse) — that bumps the multiplier up so you get more ∆v from the same mass ratio. Two: staging — drop empty tanks as they empty so you're not lugging dead weight. Real rockets do both. Even then, single-shot missions cap out around 10-15 km/s of ∆v. Beyond that the equation says you need to refuel in orbit, or use exotic engines, or get help from a planet.",
+  "cur": "Два излаза. Први: бољи мотори (већи специфични импулс) — то повећава множитељ, па из исте масене заступљености добијате више ∆v. Други: степеновање — одбацујте празне резервоаре чим се испразне, да не бисте вукли беспотребан терет. Праве ракете раде и једно и друго. Чак и тада, мисије једног лансирања достижу границу од око 10–15 km/s ∆v. Изнад тога, једначина каже да морате да допуњавате гориво у орбити, или да користите егзотичне моторе, или да потражите помоћ од неке планете."
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "body_paragraphs.0",
+  "en": "Konstantin Tsiolkovsky derived the rocket equation in 1903, decades before anyone built a rocket worth flying. The result has the inevitability of physics: ∆v depends on engine `Isp` and the ratio of starting mass to final mass — and it's logarithmic in that ratio.",
+  "cur": "Константин Циолковски извео је једначину ракете 1903. године, деценијама пре него што је неко направио ракету вредну лансирања. Резултат има неумитност физике: ∆v зависи од `Isp` мотора и од односа почетне и крајње масе — и то логаритамски у односу на тај однос."
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "body_paragraphs.1",
+  "en": "The log is the cruel part. Doubling propellant doesn't double ∆v; it adds a constant chunk. Want to fly twice as far? You need an exponentially larger rocket. This is the tyranny of the rocket equation: chemical engines (`Isp` ~300-450s) hit a wall around 10-15 km/s of ∆v before the mass ratio becomes absurd. To go further you need higher `Isp` (ion engines, ~3000s) or staging (drop tanks as they empty), or both.",
+  "cur": "Логаритам је сурови део приче. Удвостручавање погонског горива не удвостручује ∆v; оно додаје константан износ. Желите да стигнете двапут даље? Потребна вам је експоненцијално већа ракета. То је тиранија једначине ракете: хемијски мотори (`Isp` ~300–450 s) наилазе на зид око 10–15 km/s ∆v, пре него што масени однос постане апсурдан. Да бисте отишли даље, потребан вам је виши `Isp` (јонски мотори, ~3000 s) или степеновање (одбацивање резервоара чим се испразне), или и једно и друго."
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "body_paragraphs.2",
+  "en": "Saturn V: 7,800 tonnes wet, 600 tonnes dry. Mass ratio 13. Isp ~330s. ∆v ≈ 8.3 km/s — barely enough to reach trans-lunar injection. Falcon 9 reuse hits a different wall: every kilogram of recoverable hardware costs you proportional payload.",
+  "cur": "Saturn V: 7.800 тона са горивом, 600 тона празан. Масени однос 13. Isp ~330 s. ∆v ≈ 8,3 km/s — једва довољно за убацивање на путању ка Месецу. Поновна употреба ракете Falcon 9 наилази на други зид: сваки килограм хардвера који се враћа кошта вас сразмерно корисног терета."
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "formula_caption",
+  "en": "∆v from specific impulse, gravitational acceleration g₀, and mass ratio m₀/m_f.",
+  "cur": "∆v из специфичног импулса, гравитационог убрзања g₀ и масеног односа m₀/m_f."
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "diagram_caption",
+  "en": "Curve of ∆v vs mass ratio: logarithmic. Doubling propellant adds only a constant ∆v chunk.",
+  "cur": "Крива зависности ∆v од масеног односа: логаритамска. Удвостручавање погонског горива додаје само константан износ ∆v."
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "title",
+  "en": "V∞ — Hyperbolic Excess Velocity",
+  "cur": "V∞ — хиперболична вишкова брзина"
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "intro_sentence",
+  "en": "The speed you have left over once you've climbed out of a planet's gravity well — what defines a flyby's arrival energy.",
+  "cur": "Брзина која вам преостане када се извучете из гравитационог бунара планете — оно што одређује долазну енергију прелета."
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "narrative_101.0",
+  "en": "C3 is what your rocket has to deliver at LAUNCH. V∞ — pronounced \"v-infinity\" — is the same idea, but at the OTHER end of the trip. When you arrive at Mars, how fast are you moving relative to Mars, before its gravity grabs you? That's V∞.",
+  "cur": "C3 је оно што ваша ракета мора да испоручи при ЛАНСИРАЊУ. V∞ — изговара се „ве-бесконачно“ — иста је идеја, али на ДРУГОМ крају путовања. Када стигнете до Марса, колико брзо се крећете у односу на Марс, пре него што вас његова гравитација зграби? То је V∞."
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "narrative_101.1",
+  "en": "It matters because it sets your arrival burn. The faster you arrive, the more you have to brake to stop. Mars Reconnaissance Orbiter arrived with V∞ ≈ 2.6 km/s and burned ~1 km/s to capture into orbit. Voyager 2 reached Neptune with V∞ ≈ 8 km/s and didn't even bother trying to stop — it just flew by, snapped pictures, and continued out of the solar system forever.",
+  "cur": "Важна је јер одређује паљење при доласку. Што брже стигнете, то више морате да кочите да бисте се зауставили. Mars Reconnaissance Orbiter је стигао са V∞ ≈ 2,6 km/s и потрошио ~1 km/s да уђе у орбиту. Voyager 2 је стигао до Нептуна са V∞ ≈ 8 km/s и није ни покушао да се заустави — само је пролетео, снимио фотографије и наставио заувек ван Сунчевог система."
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "narrative_101.2",
+  "en": "The math has a beautiful symmetry: arrival V∞ at Mars is the same number you'd see if you watched Mars from a long way off and the spacecraft was on its way in. The whole journey, viewed from outside both planets' spheres of influence, becomes a clean Keplerian arc with two well-defined V∞ values — one at each end. That's the moment-of-truth number on the /fly HUD when the spacecraft crosses into the destination's gravity well.",
+  "cur": "Математика има лепу симетрију: долазна V∞ код Марса је исти број који бисте видели када бисте Марс посматрали из велике даљине док летелица долази. Цело путовање, посматрано изван сфера утицаја обеју планета, постаје чист Кеплеров лук са две јасно одређене вредности V∞ — по једном на сваком крају. То је број истине на HUD-у у /fly када летелица уђе у гравитациони бунар одредишта."
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "body_paragraphs.0",
+  "en": "Imagine an asymptote, infinitely far from the planet. The speed you'd be moving at on that asymptote is V∞ — pronounced 'V-infinity.' It's the Sun-relative speed minus the planet's contribution to your motion. On a hyperbolic flyby, V∞ is constant along both arms of the hyperbola.",
+  "cur": "Замислите асимптоту, бесконачно далеко од планете. Брзина којом бисте се кретали на тој асимптоти је V∞ — изговара се „ве-бесконачно“. То је брзина у односу на Сунце умањена за допринос планете вашем кретању. Током хиперболичног прелета, V∞ је иста дуж оба крака хиперболе."
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "body_paragraphs.1",
+  "en": "V∞ controls how big the arrival burn has to be. To capture into orbit, you need to bleed off enough energy to drop below escape — the deeper the well, the more `∆v` it costs to slow you down. Mars Reconnaissance Orbiter arrived at Mars with V∞ ≈ 2.6 km/s, then spent ~1 km/s of `∆v` for orbit insertion. Voyager 2 reached Neptune with V∞ ≈ 8 km/s and didn't even try to insert — it just flew by.",
+  "cur": "V∞ одређује колико велико мора бити паљење при доласку. Да бисте ушли у орбиту, морате да изгубите довољно енергије да паднете испод брзине бекства — што је бунар дубљи, то више `∆v` кошта успоравање. Mars Reconnaissance Orbiter је стигао до Марса са V∞ ≈ 2,6 km/s, па потрошио ~1 km/s `∆v` за улазак у орбиту. Voyager 2 је стигао до Нептуна са V∞ ≈ 8 km/s и није ни покушао да уђе у орбиту — само је пролетео."
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "body_paragraphs.2",
+  "en": "On `/fly`'s HUD you'll see V∞ pop up when the spacecraft enters the destination's sphere of influence. It's the moment of truth: how much speed do you have to kill, and can your rocket afford to kill it?",
+  "cur": "На HUD-у у `/fly` видећете да се V∞ појави када летелица уђе у сферу утицаја одредишта. То је тренутак истине: колико брзине морате да поништите и да ли ваша ракета може то да приушти?"
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "diagram_caption",
+  "en": "Hyperbolic flyby: V∞ is the constant speed on the asymptotes, far from the planet.",
+  "cur": "Хиперболички прелет: V∞ је константна брзина на асимптотама, далеко од планете."
+ },
+ {
+  "rel": "science/scales-time/_intro.json",
+  "at": "headline",
+  "en": "Scales & Time — none of this is Earth-sized, and it's all happening on a slow clock.",
+  "cur": "Размере и време — ништа од овога није величине Земље и све се то одвија на спором сату."
+ },
+ {
+  "rel": "science/scales-time/_intro.json",
+  "at": "paragraphs.0",
+  "en": "The solar system is bigger than your intuition is calibrated for. Mars is 200 million km away. Saturn is 1.4 billion. Pluto is 6 billion. Numbers in kilometres stop helping. So astronomers picked a more human ruler — one Earth-Sun distance, called the astronomical unit (AU). Mars is 1.5 AU. Jupiter is 5. Pluto orbits between 30 and 50.",
+  "cur": "Сунчев систем је већи него што је ваша интуиција подешена да појми. Марс је удаљен 200 милиона km. Сатурн 1,4 милијарде. Плутон 6 милијарди. Бројеви у километрима престају да помажу. Зато су астрономи изабрали човечније мерило — једно растојање између Земље и Сунца, које се зове астрономска јединица (AU). Марс је на 1,5 AU. Јупитер на 5. Плутон кружи између 30 и 50."
+ },
+ {
+  "rel": "science/scales-time/_intro.json",
+  "at": "paragraphs.1",
+  "en": "Time is the other axis you have to recalibrate. A signal from Earth takes 4 to 22 minutes to reach Mars. There is no way to joystick a Mars rover from Earth — every important manoeuvre has to be autonomous, because by the time you find out it failed, it's been failing for an hour. Mars launch windows only open every 26 months. If you miss one, you wait two years.",
+  "cur": "Време је друга оса коју морате поново да подесите. Сигналу са Земље потребно је од 4 до 22 минута да стигне до Марса. Марсовим ровером се са Земље не може управљати џојстиком — сваки важан маневар мора да буде аутономан, јер док сазнате да је пошао наопако, већ сат времена иде наопако. Прозори за лансирање ка Марсу отварају се само на сваких 26 месеци. Ако један пропустите, чекате две године."
+ },
+ {
+  "rel": "science/scales-time/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Six sections here. AU and light-minute give you the rulers. J2000 is the universal calendar zero astronomers all agree on. Sidereal vs synodic explains why Mars windows recur every 26 months, not 23. The ecliptic plane is the flat disc the planets all (mostly) lie on. Reference frames is the bookkeeping for switching between Sun-centred, Earth-centred, and body-centred views — which mission control juggles constantly.",
+  "cur": "Овде има шест одељака. AU и светлосни минут дају вам мерила. J2000 је општа календарска нула око које се сви астрономи слажу. Сидерички наспрам синодичког објашњава зашто се прозори за Марс понављају на сваких 26 месеци, а не на 23. Раван еклиптике је равни диск на коме (углавном) леже све планете. Референтни системи су евиденција потребна за прелазак између погледа усредсређених на Сунце, на Земљу и на само небеско тело — а контрола мисије стално жонглира међу њима."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "title",
+  "en": "AU — Astronomical Unit",
+  "cur": "AU — астрономска јединица"
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "intro_sentence",
+  "en": "Earth's average distance to the Sun, fixed at exactly 149,597,870,700 metres — the natural ruler for solar-system distances.",
+  "cur": "Просечно растојање Земље од Сунца, утврђено на тачно 149.597.870.700 метара — природно лењир-мерило за растојања у Сунчевом систему."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "narrative_101.0",
+  "en": "Once you start measuring distances in space, kilometres get unmanageable fast. Mars is 200 million km. Saturn is 1.4 billion km. Pluto is 6 billion km. Your brain stops parsing those numbers as anything except \"big.\" So astronomers picked a more human ruler: one Earth-Sun distance. That's an Astronomical Unit, abbreviated AU.",
+  "cur": "Када почнете да мерите растојања у свемиру, километри врло брзо постану нехватљиви. Марс је удаљен 200 милиона km. Сатурн је удаљен 1,4 милијарде km. Плутон је удаљен 6 милијарди km. Ваш мозак те бројеве више не доживљава као ништа друго осим као „велико“. Зато су астрономи изабрали мерило по људској мери: једно растојање између Земље и Сунца. То је астрономска јединица, скраћено AU."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "narrative_101.1",
+  "en": "The unit is anchored to a specific integer number of metres — 149,597,870,700 of them, fixed in 2012 — but the practical idea is simpler. Mars is 1.5 AU from the Sun. Jupiter is 5 AU. Pluto orbits between 30 and 50 AU. Voyager 1, the most distant human-made object, is past 170 AU now and still going. Numbers you can actually hold in your head.",
+  "cur": "Јединица је везана за тачно одређен цео број метара — 149.597.870.700 њих, утврђен 2012. године — али практична идеја је једноставнија. Марс је од Сунца удаљен 1,5 AU. Јупитер је на 5 AU. Плутон кружи на растојању између 30 и 50 AU. Voyager 1, најудаљенији објекат који је направио човек, сада је далеко иза 170 AU и наставља даље. Бројеви које заиста можете да задржите у глави."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "narrative_101.2",
+  "en": "AU is everywhere in this app. The /explore screen draws orbital radii in AU. The /plan porkchop axes are calibrated in AU. The HUD on /fly converts AU to kilometres and light-minutes when you need those, but the underlying ruler is always AU. Once you internalise it, the solar system stops feeling abstract — you can roughly map distances by counting hops in AU.",
+  "cur": "AU је свуда у овој апликацији. Екран /explore приказује полупречнике орбита у AU. Осе porkchop дијаграма на /plan калибрисане су у AU. HUD на /fly претвара AU у километре и светлосне минуте када вам затребају, али основно мерило је увек AU. Када га једном усвојите, Сунчев систем престаје да делује апстрактно — растојања можете приближно да прикажете на мапи тако што бројите скокове у AU."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "body_paragraphs.0",
+  "en": "Until 2012 the AU was defined by Earth's orbit. As Earth's orbit slowly evolves under planetary perturbations, the AU was technically changing too. The IAU fixed it in 2012 to a precise integer number of metres — 149,597,870,700 — and the definition has been stable ever since. The AU is no longer 'Earth's orbit'; it's a metric ruler that happens to roughly equal it.",
+  "cur": "До 2012. године AU је био дефинисан Земљином орбитом. Пошто се Земљина орбита споро мења под утицајем планетарних пертурбација, технички се мењала и сама AU. IAU ју је 2012. утврдила на прецизан цео број метара — 149.597.870.700 — и од тада је дефиниција стабилна. AU више није „Земљина орбита“; она је метричко мерило које се само приближно поклапа са њом."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "body_paragraphs.1",
+  "en": "Solar-system distances in AU: Mercury 0.39, Venus 0.72, Earth 1.0, Mars 1.52, Jupiter 5.20, Saturn 9.58, Uranus 19.22, Neptune 30.05, Pluto 39.5 (averages — eccentricity makes them vary). The Voyagers are well past 150 AU and still going. The Oort Cloud reaches out tens of thousands of AU.",
+  "cur": "Растојања у Сунчевом систему изражена у AU: Меркур 0,39, Венера 0,72, Земља 1,0, Марс 1,52, Јупитер 5,20, Сатурн 9,58, Уран 19,22, Нептун 30,05, Плутон 39,5 (то су просечне вредности — ексцентрицитет орбита чини да оне варирају). Сонде Voyager су одавно далеко иза 150 AU и настављају даље. Облак Oort сеже до десетина хиљада AU."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "body_paragraphs.2",
+  "en": "Why AU instead of metres? Because numbers in metres are unwieldy at solar-system scale. Saturn's 1.4 billion km is unreadable. 9.58 AU is a number you can hold in your head. Orrery's panels and HUD all use AU for solar-system positions — converted to km, light-minutes, and other units only where the audience needs the conversion.",
+  "cur": "Зашто AU уместо метара? Зато што су бројеви у метрима неподесни за размере Сунчевог система. Сатурнових 1,4 милијарде km тешко је уопште прочитати. 9,58 AU је број који можете да задржите у глави. Панели и HUD апликације Orrery користе AU за положаје у Сунчевом систему — а у km, светлосне минуте и друге јединице претварају само тамо где публици та конверзија заиста треба."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "diagram_caption",
+  "en": "1 AU ≈ Earth-Sun distance. Planet semi-major axes in AU, log-scale to handle the outer planets.",
+  "cur": "1 AU ≈ растојање Земља–Сунце. Велике полуосе планета у AU, у логаритамској размери због спољашњих планета."
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "intro_sentence",
+  "en": "The plane of Earth's orbit around the Sun — used as the reference for almost every solar-system measurement.",
+  "cur": "Раван Земљине орбите око Сунца — узета као референца за готово свако мерење у Сунчевом систему."
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "narrative_101.0",
+  "en": "Hold up a flat plate and put a marble in the centre — that's the Sun. Now spin a smaller marble around the edge — that's Earth. The flat plate is the ecliptic plane. Earth's orbit defines it; everything else in the solar system gets measured against it.",
+  "cur": "Замислите раван тањир и ставите куглицу у његов центар — то је Сунце. Затим окрећите мању куглицу око ивице — то је Земља. Тај раван тањир је раван еклиптике. Њу одређује Земљина орбита; све остало у Сунчевом систему мери се у односу на њу."
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "narrative_101.1",
+  "en": "Here's the strange thing: most of the solar system roughly lives on this plate. The eight planets are all within a few degrees of it. The Moon orbits Earth in a plane just 5 degrees off it. The asteroid belt is mostly on it. This is not a coincidence — it's a fossil of how the solar system formed, when everything condensed out of one big spinning disc of gas and dust around the young Sun. The disc set the plane and most of what's left still respects it.",
+  "cur": "Ево шта је необично: већи део Сунчевог система отприлике „живи“ на том тањиру. Свих осам планета налази се на неколико степени од њега. Месец кружи око Земље у равни која одступа од ње тек 5 степени. Астероидни појас је углавном на њој. То није случајност — то је фосил настанка Сунчевог система, када се све згуснуло из једног великог ротирајућег диска гаса и прашине око младог Сунца. Диск је одредио раван, а већина онога што је остало и даље је поштује."
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "narrative_101.2",
+  "en": "Comets are the wild cards. Long-period comets come in from any direction at any tilt — they’re remnants of the outer Oort Cloud which never settled into the disc. Pluto orbits at 17 degrees off-plane — by far the most tilted of the classical nine. (Its 2006 reclassification was about not clearing its orbital neighbourhood, not its tilt.)",
+  "cur": "Комете су џокери. Дугопериодичне комете долазе из било ког правца и под било којим нагибом — оне су остаци спољашњег дела Ортовог облака који се никада нису слегли у диск. Плутон кружи под нагибом од 17 степени у односу на раван — убедљиво најнагнутији од класичних девет. (Његово прекласификовање 2006. није било због нагиба, већ зато што није очистио околину своје орбите.)"
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "body_paragraphs.0",
+  "en": "The Sun, Earth, and the Moon trace out paths in space. The Earth's orbit defines a plane. Looking out from Earth, the Sun appears to move along this plane against the background stars — that path on the sky is the ecliptic. Most other solar-system bodies lie close to it: the eight planets are all within a few degrees, the asteroid belt clusters near it, comets are scattered.",
+  "cur": "Сунце, Земља и Месец исцртавају путање у свемиру. Земљина орбита одређује једну раван. Када се гледа са Земље, чини се да се Сунце креће дуж те равни на фону удаљених звезда — та путања на небу је еклиптика. Већина осталих тела Сунчевог система налази се близу ње: свих осам планета је на неколико степени од ње, астероидни појас груписан је уз њу, а комете су расуте."
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "body_paragraphs.1",
+  "en": "The ecliptic is the reference plane for orbital inclinations of solar-system bodies. Earth's inclination is 0° by construction. Mercury at 7°, Pluto at 17°, are measured against this plane. The vernal equinox direction — where the ecliptic crosses the celestial equator going north — is the zero-longitude reference, used to anchor every orbit's longitude of ascending node and argument of periapsis.",
+  "cur": "Еклиптика је референтна раван за нагибе орбита тела Сунчевог система. Нагиб Земље по дефиницији износи 0°. Меркур са 7° и Плутон са 17° мере се у односу на ту раван. Правац пролећне равнодневнице — тачка у којој еклиптика прелази небески екватор крећући се ка северу — јесте референца нулте дужине, на коју се наслањају дужина узлазног чвора и аргумент перицентра сваке орбите."
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "body_paragraphs.2",
+  "en": "Orrery's `/explore` view looks down on the ecliptic plane from above by default — the natural perspective for thinking about heliocentric motion. Tilting the view shows you why Mercury and Pluto's orbits look 'wrong' even though they're perfectly Keplerian: their orbital planes don't match the rest of the gang.",
+  "cur": "Приказ `/explore` у апликацији Orrery подразумевано гледа на раван еклиптике одозго — природна перспектива за размишљање о хелиоцентричном кретању. Нагињањем приказа видећете зашто орбите Меркура и Плутона изгледају „погрешно“ иако су савршено кеплеровске: њихове орбиталне равни не поклапају се са равнима остатка дружине."
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "title",
+  "en": "Heliocentric · Geocentric · Body-Centric Frames",
+  "cur": "Хелиоцентрични · геоцентрични · телоцентрични системи референције"
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "intro_sentence",
+  "en": "Three reference frames for three different questions: where is it relative to the Sun, the Earth, or the planet you're studying?",
+  "cur": "Три система референције за три различита питања: где се нешто налази у односу на Сунце, на Земљу или на планету коју проучавате?"
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "narrative_101.0",
+  "en": "Where is the Moon? The honest answer is \"depends on where YOU are.\" From Earth's surface it's overhead at 1am tonight. From the Sun it's a tiny dot 1 AU away near Earth. From Mars it's an irrelevant speck. None of these answers is wrong — they're just measured from different origins. That choice of origin is what \"reference frame\" means.",
+  "cur": "Где је Месец? Искрен одговор гласи: „зависи од тога где сте ВИ.“ Са површине Земље он вечерас у 1 сат после поноћи стоји високо изнад вас. Са Сунца је ситна тачка удаљена 1 AU, у близини Земље. Са Марса је небитна мрља. Ниједан од ових одговора није погрешан — они су само мерени из различитих исходишта. Управо тај избор исходишта значи „систем референције“."
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "narrative_101.1",
+  "en": "Spaceflight juggles three of them constantly. Heliocentric (origin at the Sun) is the natural frame for cruise — everything Earth-to-Mars happens here. Geocentric (origin at Earth) is the natural frame for satellites and the Moon. Body-centric (origin at whatever planet you're flying past or orbiting) is the natural frame for arrival burns and surface ops.",
+  "cur": "Свемирски летови стално користе сва три. Хелиоцентрични систем (исходиште у Сунцу) природан је оквир за крстарење — све што се догађа на путу од Земље до Марса одвија се у њему. Геоцентрични систем (исходиште у Земљи) природан је оквир за сателите и Месец. Телоцентрични систем (исходиште у било којој планети поред које пролећете или око које кружите) природан је оквир за маневре кочења при доласку и за операције на површини."
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "narrative_101.2",
+  "en": "Switching between them is mostly arithmetic — translate the origin, maybe rotate the axes. But it matters where you are conceptually: a transfer ellipse is heliocentric. A flyby past Mars is body-centric. The handoff between them is exactly the patched-conics trick. Every screen in this app picks a frame and sticks to it: /explore is heliocentric, /earth is geocentric, /moon and /mars are body-centric.",
+  "cur": "Прелазак из једног система у други углавном је аритметика — преместите исходиште, можда окренете осе. Али важно је где се налазите појмовно: трансферна елипса је хелиоцентрична. Прелет поред Марса је телоцентричан. Примопредаја између њих управо је трик спојених коника (patched conics). Сваки екран у овој апликацији бира један систем и држи га се: /explore је хелиоцентричан, /earth је геоцентричан, а /moon и /mars су телоцентрични."
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "body_paragraphs.0",
+  "en": "Heliocentric: origin at the Sun, axes aligned with the ecliptic. The natural frame for solar-system motion. Planet positions, transfer orbits, mission cruises — all most naturally described here. Orrery's `/explore` is fundamentally heliocentric.",
+  "cur": "Хелиоцентрични систем: исходиште је у Сунцу, а осе су поравнате са еклиптиком. Природан оквир за кретање у Сунчевом систему. Положаји планета, трансферне орбите, крстарења мисија — све се то најприродније описује управо у њему. Orrery-јев `/explore` у основи је хелиоцентричан."
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "body_paragraphs.1",
+  "en": "Geocentric: origin at Earth. Useful for satellites, the Moon, and any spacecraft inside Earth's sphere of influence. Earth's `/earth` route works in this frame. Geocentric coordinates relate to heliocentric by a translation (Earth's heliocentric position) and possibly a rotation (Earth's axial tilt).",
+  "cur": "Геоцентрични систем: исходиште је у Земљи. Користан је за сателите, Месец и сваку летелицу унутар Земљине сфере утицаја. Рута `/earth` у апликацији Земља ради у овом систему. Геоцентричне координате се према хелиоцентричним односе преко транслације (хелиоцентрични положај Земље) и евентуално ротације (нагиб Земљине осе)."
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "body_paragraphs.2",
+  "en": "Body-centric (Mars-centric, Saturn-centric, Moon-centric, etc.): origin at the body you're orbiting or flying past. Used for orbit insertion, surface ops, flyby geometry — anything where the body's gravity dominates. Patched-conic mission design switches frames at sphere-of-influence boundaries: you describe an arc in whatever frame keeps the math local.",
+  "cur": "Телоцентрични систем (центриран на Марс, Сатурн, Месец итд.): исходиште је у телу које орбитирате или поред кога прелећете. Користи се за убацивање у орбиту, операције на површини и геометрију прелета — за све ситуације у којима доминира гравитација тог тела. Пројектовање мисија методом спојених коника мења системе референције на границама сфере утицаја: путању описујете у ономе систему у коме рачун остаје локалан."
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "intro_sentence",
+  "en": "12:00 TT (Terrestrial Time) on January 1, 2000 — the universal anchor moment astronomers use to date orbital elements.",
+  "cur": "12:00 TT (земаљско време) 1. јануара 2000. године — универзални сидрени тренутак који астрономи користе за датирање орбиталних елемената."
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "narrative_101.0",
+  "en": "Orbits drift. Slowly — over centuries — but enough that you can't just say \"Mars's orbit has eccentricity 0.0934\" without saying \"as of when.\" Astronomers needed an agreed-upon zero point in time, the same way map-makers needed an agreed-upon zero meridian (which is why Greenwich exists). They picked noon TT (Terrestrial Time) on January 1, 2000 — formally 12:00 TT, roughly 11:59 UTC. That's J2000.",
+  "cur": "Орбите лутају. Споро — током векова — али довољно да не можете просто рећи „орбита Марса има ексцентрицитет 0,0934“ а да не додате „према стању на који датум“. Астрономима је био потребан договорени нулти тренутак у времену, баш као што је картографима био потребан договорени нулти меридијан (због чега и постоји Гриниџ). Изабрали су подне по TT (земаљско време) 1. јануара 2000. године — формално 12:00 TT, отприлике 11:59 UTC. То је J2000."
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "narrative_101.1",
+  "en": "Why noon, not midnight? Because the Julian Day count — astronomers' running tally of days since 4713 BC — has always ticked over at noon, not midnight, so observers don't have to handle a date change in the middle of the night's work. J2000 corresponds exactly to Julian Day 2,451,545.0 — a clean integer reference.",
+  "cur": "Зашто подне, а не поноћ? Зато што јулијански дан — астрономско непрекидно бројање дана од 4713. године пре нове ере — одувек „прелази“ у подне, а не у поноћ, па посматрачи не морају да се баве променом датума усред ноћног рада. J2000 тачно одговара јулијанском дану 2.451.545,0 — чистој целобројној референтној вредности."
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "narrative_101.2",
+  "en": "Every orbit you see in this simulator is anchored to J2000. Earth's mean longitude at J2000. Mars's argument of periapsis at J2000. The planet positions you watch animate in /explore are extrapolated forward (or backward) from J2000 using simple linear math: \"start here, advance at this rate, here's where you are now.\" Pick any date in history and the orrery can tell you where the planets were.",
+  "cur": "Свака орбита коју видите у овом симулатору везана је за J2000. Средња дужина Земље у J2000. Аргумент перицентра Марса у J2000. Положаји планета које гледате како се крећу у /explore екстраполирани су унапред (или уназад) од J2000 помоћу једноставне линеарне математике: „почни одавде, напредуј овом брзином, и ево где се сада налазиш“. Изаберите било који датум у историји и модел Сунчевог система ће вам показати где су се планете налазиле."
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "body_paragraphs.0",
+  "en": "Orbital elements drift over time — perturbations from other planets nudge eccentricity, longitudes precess, inclinations wobble. To make a planet's elements meaningful, you have to say 'as of when.' The standard answer is J2000: noon TT (Terrestrial Time) on January 1, 2000. Orbits are quoted at that moment; propagation forward or backward uses analytical or numerical models.",
+  "cur": "Орбитални елементи се временом мењају — пертурбације других планета благо померају ексцентрицитет, дужине прецесирају, а нагиби осцилирају. Да би елементи неке планете имали смисла, мора се рећи „према стању на који датум“. Стандардни одговор је J2000: подне по TT (земаљском времену) 1. јануара 2000. године. Орбите се наводе за тај тренутак, а прорачун унапред или уназад користи аналитичке или нумеричке моделе."
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "body_paragraphs.1",
+  "en": "Why noon? Because Julian Date (JD) — the astronomers' continuous day count starting at noon Universal Time on January 1, 4713 BC (proleptic Julian calendar) — increments at noon, not midnight. J2000 corresponds exactly to JD 2,451,545.0, a clean reference point with no fractional days.",
+  "cur": "Зашто подне? Зато што се јулијански датум (JD) — непрекидно астрономско бројање дана које почиње у подне по светском времену 1. јануара 4713. године пре нове ере (пролептички јулијански календар) — увећава у подне, а не у поноћ. J2000 тачно одговара JD 2.451.545,0, чистој референтној тачки без разломљених делова дана."
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "body_paragraphs.2",
+  "en": "Orrery's planet data uses J2000 elements throughout. The mean longitude `L₀` field in `/explore` panels is the planet's heliocentric position angle at J2000. From there, mean motion `n = 2π / T` advances `L` linearly to any other epoch — modulo small perturbations the simulator ignores.",
+  "cur": "Подаци о планетама у апликацији Orrery свуда користе елементе за J2000. Поље средње дужине `L₀` у панелима `/explore` јесте хелиоцентрични положајни угао планете у J2000. Одатле средње кретање `n = 2π / T` линеарно помера `L` до било које друге епохе — уз занемарљиве пертурбације које симулатор не узима у обзир."
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "title",
+  "en": "Light-Minute and Light-Year",
+  "cur": "Светлосни минут и светлосна година"
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "intro_sentence",
+  "en": "Distance measured in how long light takes to cross it — the most useful unit for thinking about communication delays and stellar distances.",
+  "cur": "Растојање мерено временом које је светлости потребно да га пређе — најкориснија јединица за размишљање о кашњењима у комуникацији и о звезданим удаљеностима."
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "narrative_101.0",
+  "en": "A light-minute is how far light travels in a minute. Light goes 300,000 km per second, which works out to 18 million km in a minute. It's a distance, not a time — confusing but useful. The Sun is 8.3 light-minutes away. Mars is somewhere between 4 and 22 light-minutes depending on orbital geometry.",
+  "cur": "Светлосни минут је растојање које светлост пређе за један минут. Светлост путује брзином од 300.000 km у секунди, што значи 18 милиона km у минуту. То је растојање, а не време — збуњујуће, али корисно. Сунце је удаљено 8,3 светлосна минута. Марс је удаљен негде између 4 и 22 светлосна минута, зависно од орбиталне геометрије."
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "narrative_101.1",
+  "en": "Why care? Because radio waves travel at the speed of light, and that's also how long your commands take to reach a spacecraft. When Curiosity drives across Mars, the rover team sends a command and then waits — 8 to 22 minutes — for the rover to start moving. Then another 8 to 22 to find out whether it worked. There is NO way to joystick a Mars rover from Earth. Everything important has to be autonomous.",
+  "cur": "Зашто је то важно? Зато што радио-таласи путују брзином светлости, а толико времена је потребно и вашим командама да стигну до летелице. Када Curiosity вози по Марсу, тим који води ровер пошаље команду, а затим чека — од 8 до 22 минута — да ровер почне да се креће. Затим још толико, од 8 до 22 минута, да сазна да ли је команда успела. Ровером на Марсу НЕМА начина да се управља са Земље џојстиком. Све што је важно мора да се обавља аутономно."
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "narrative_101.2",
+  "en": "Out at Voyager-1 distance (around 170 AU now), one-way light delay is about 23.5 hours — it hits one full light-day (24 hours) in late 2026. Send a command today, you find out tomorrow afternoon if it worked. Light-years exist for the next scale up — distance to other stars. The nearest one, Proxima Centauri, is 4.2 light-years. At Voyager's speed it'd take 70,000 years to get there. The universe is large and slow.",
+  "cur": "На удаљености на којој се налази Voyager-1 (данас око 170 AU) једносмерно кашњење светлости износи око 23,5 сати — један пуни светлосни дан (24 сата) достиже крајем 2026. године. Пошаљете ли команду данас, сутра по подне сазнајете да ли је успела. Светлосне године постоје за следећу размеру — за растојања до других звезда. Најближа, Проксима Кентаури, удаљена је 4,2 светлосне године. Брзином којом лети Voyager требало би 70.000 година да се стигне до ње. Васиона је велика и спора."
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "body_paragraphs.0",
+  "en": "Light moves at about 300,000 km/s. A light-second is 300,000 km. A light-minute is 18 million km. A light-year is 9.46 trillion km. They're distances, not times — confusingly named, but useful: 1 AU ≈ 8.3 light-minutes, so 'Mars is 4–22 light-minutes away depending on orbit' tells you the round-trip command latency at any moment.",
+  "cur": "Светлост се креће брзином од око 300.000 km/s. Светлосна секунда износи 300.000 km. Светлосни минут износи 18 милиона km. Светлосна година износи 9,46 билиона km. То су растојања, а не време — збуњујућег назива, али корисна: 1 AU ≈ 8,3 светлосна минута, па податак да је „Марс удаљен од 4 до 22 светлосна минута, зависно од орбите“ у сваком тренутку говори колико траје кашњење команде у оба смера."
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "body_paragraphs.1",
+  "en": "When Curiosity drives across Mars, the rover team sends a command, then waits 8-22 minutes for the rover to start the manoeuvre — and another 8-22 to find out if it worked. Real-time control is impossible at planetary distances. Far enough out (Voyager 1 at ~23.5 light-hours) you're sending one-way nudges that arrive almost a day later.",
+  "cur": "Када Curiosity вози по Марсу, тим који води ровер пошаље команду, а затим чека од 8 до 22 минута да ровер започне маневар — и још толико, од 8 до 22 минута, да сазна да ли је успео. Управљање у реалном времену немогуће је на планетарним удаљеностима. Довољно далеко (Voyager 1 на ~23,5 светлосних сати) шаљете једносмерне подстицаје који стижу готово дан касније."
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "body_paragraphs.2",
+  "en": "Light-years are for stars. Proxima Centauri is 4.2 light-years away. Voyager 1 is moving at ~17 km/s, which is fast for a spacecraft but slow against light: at that speed Proxima would take ~70,000 years.",
+  "cur": "Светлосне године служе за звезде. Проксима Кентаури је удаљена 4,2 светлосне године. Voyager 1 се креће брзином од ~17 km/s, што је за једну летелицу много, али у поређењу са светлошћу споро: при тој брзини до Проксиме Кентаури било би потребно ~70.000 година."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "title",
+  "en": "Long-Duration Spaceflight",
+  "cur": "Дуготрајни свемирски летови"
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "intro_sentence",
+  "en": "Beyond about three months, microgravity stops being neutral and starts taking measurable bites out of the human body.",
+  "cur": "Након отприлике три месеца микрогравитација престаје да буде неутрална и почиње да одгриза мерљиве комаде људског тела."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "narrative_101.0",
+  "en": "On Earth, gravity is doing background work all day: pulling fluids toward your feet, loading your bones every step, exercising your heart against the weight of your blood. Take that away and the body un-builds — bones lose ~1-2% density per month if you don't fight back, muscles atrophy, the cardiovascular system de-conditions, fluid shifts pile pressure into your skull and squish your eyeballs slightly. Two hours a day on a treadmill harness and a resistive exercise device claws most of it back, but not all.",
+  "cur": "На Земљи гравитација цео дан ради у позадини: вуче течности ка вашим стопалима, оптерећује кости при сваком кораку, тера срце да се бори с тежином ваше крви. Одузмите то и тело почиње да се растаче: кости губе ~1–2% густине месечно ако се не одупрете, мишићи атрофирају, кардиоваскуларни систем губи кондицију, а померање течности нагомилава притисак у лобањи и благо спљошти очне јабучице. Два сата дневно на траци за трчање са појасом и на справи за вежбе с отпором врате већи део изгубљеног, али не све."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "narrative_101.1",
+  "en": "The current single-mission record on the ISS is Frank Rubio at 371 days (Sep 2022 – Sep 2023). The all-time record was Valeri Polyakov on Mir at 437.7 days in 1994-95 — a deliberate test for a potential Mars mission. Tiangong's crews currently rotate at roughly 6-month intervals, matching the ISS standard.",
+  "cur": "Тренутни рекорд за један лет на МСС држи Frank Rubio са 371 даном (септембар 2022 – септембар 2023). Апсолутни рекорд поставио је Валериј Пољаков на Mir-у са 437,7 дана 1994–95 — као намерни тест за потенцијалну мисију на Марс. Посаде станице Tiangong тренутно се смењују отприлике на сваких шест месеци, што одговара стандарду на МСС."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "narrative_101.2",
+  "en": "Beyond bone and muscle, the harder problems are radiation (Galactic Cosmic Rays accumulate at ~0.5 mSv/day in LEO — about 100× sea level), eyesight (Spaceflight-Associated Neuro-ocular Syndrome remains poorly understood), and behavioural health (small spaces, isolation, no privacy).",
+  "cur": "Поред костију и мишића, тежи проблеми су зрачење (галактички космички зраци накупљају се брзином од ~0,5 mSv/дан у LEO — око 100 пута више него на нивоу мора), вид (неуро-очни синдром повезан са свемирским летом и даље је слабо схваћен) и бихевиорално здравље (мали простори, изолација, никакве приватности)."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "body_paragraphs.0",
+  "en": "BONE + MUSCLE — astronauts lose 1-2% bone mineral density per month in weight-bearing bones without countermeasures (~0.5% with the Advanced Resistive Exercise Device + bisphosphonate). Type I muscle fibres atrophy fastest; daily 2-hour exercise on treadmill + cycle ergometer + ARED preserves about 90% of pre-flight muscle mass.",
+  "cur": "КОСТИ + МИШИЋИ — астронаути без противмера губе 1–2% минералне густине костију месечно у костима које носе тежину (~0,5% уз Advanced Resistive Exercise Device + бисфосфонат). Мишићна влакна типа I најбрже атрофирају; свакодневно двочасовно вежбање на траци за трчање + бициклу-ергометру + уређају ARED чува око 90% предлетне мишићне масе."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "body_paragraphs.1",
+  "en": "CARDIOVASCULAR + FLUID SHIFT — heart’s left ventricle loses roughly 9–12% of its mass over a 6-month mission; orthostatic intolerance persists for weeks after return. About 2 L of fluid migrates from legs to head in microgravity, causing facial puffiness, raised intracranial pressure, and is implicated in Spaceflight-Associated Neuro-ocular Syndrome (SANS).",
+  "cur": "КАРДИОВАСКУЛАРНИ СИСТЕМ + ПОМЕРАЊЕ ТЕЧНОСТИ — леву срчану комору током мисије од 6 месеци напусти отприлике 9–12% њене масе; ортостатска нетолеранција траје још недељама након повратка. У микрогравитацији се око 2 L течности премешта из ногу ка глави, што изазива отеченост лица и повишен интракранијални притисак, а сматра се и да је умешано у Neuro-ocular синдром повезан са свемирским летом (SANS)."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "body_paragraphs.2",
+  "en": "VESTIBULAR / SENSORIMOTOR — re-adaptation to gravity takes hours to days post-landing; fine motor control is measurably degraded for ~2 weeks.",
+  "cur": "ВЕСТИБУЛАРНИ / СЕНЗОМОТОРНИ СИСТЕМ — поновно прилагођавање гравитацији траје од неколико сати до неколико дана након слетања; фина моторика је мерљиво ослабљена око 2 недеље."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "body_paragraphs.3",
+  "en": "RADIATION — LEO crew receive ~150-180 mSv per 6-month mission. Career limits are set per agency; NASA's effective dose-limit framework caps career risk at 3% increased cancer mortality, which translates to roughly 3-5 ISS-length missions for most astronauts.",
+  "cur": "РАДИЈАЦИЈА — посада у LEO током мисије од 6 месеци прими ~150–180 mSv. Границе доза током читаве каријере одређује свака агенција посебно; NASA-ин оквир ограничења ефективне дозе поставља горњу границу каријерног ризика на 3% повећане смртности од рака, што за већину астронаута износи отприлике 3–5 мисија дужине колико траје боравак на МСС."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "body_paragraphs.4",
+  "en": "Records: Polyakov 437.7 d (Mir, 1994-95); Rubio 371 d (ISS, 2022-23); Vande Hei 355 d (ISS, 2021-22); Kononenko cumulative >1000 d across 5 missions.",
+  "cur": "Рекорди: Пољаков 437,7 д (Mir, 1994–95); Рубио 371 д (МСС, 2022–23); Ванде Хај 355 д (МСС, 2021–22); Kononenko укупно >1.000 д током 5 мисија."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "diagram_caption",
+  "en": "Physiological-loss curves over a 12-month mission. Bone (red, sharpest fall), muscle (blue), cardiovascular (gold). Daily exercise countermeasures (dashed) flatten each curve.",
+  "cur": "Криве физиолошких губитака током дванаестомесечне мисије. Кости (црвено, најстрмији пад), мишићи (плаво), кардиоваскуларни систем (златно). Свакодневне противмере у виду вежбања (испрекидано) заравњују сваку криву."
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "title",
+  "en": "Sidereal vs Synodic Period",
+  "cur": "Сидерички и синодички период"
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "intro_sentence",
+  "en": "Two ways of asking 'how often does this come around again?' — same body, different reference frame, different answer.",
+  "cur": "Два начина да се упита „колико често се ово враћа?“ — исто тело, други референтни оквир, другачији одговор."
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "narrative_101.0",
+  "en": "There are two different answers to the question \"how long is a year on Mars?\" — and which one you want depends on what you're trying to do.",
+  "cur": "Постоје два различита одговора на питање „колико траје година на Марсу?“ — а који вам је потребан зависи од тога шта покушавате да урадите."
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "narrative_101.1",
+  "en": "If you want to know how long Mars takes to make ONE LOOP around the Sun, the answer is 687 Earth days. That's the sidereal period — measured against the unmoving distant stars. It's the geometric truth of the orbit. Vis-viva and Kepler's third law both work in sidereal time.",
+  "cur": "Ако желите да знате колико је Марсу потребно да направи ЈЕДАН КРУГ око Сунца, одговор је 687 земаљских дана. То је сидерички период — мерен у односу на непокретне далеке звезде. То је геометријска истина орбите. Vis-viva једначина и Kepler-ов трећи закон делују у сидеричком времену."
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "narrative_101.2",
+  "en": "But if you want to know how often Earth and Mars LINE UP THE SAME WAY (so you can launch a mission), the answer is 780 days — about 26 months. That's the synodic period. Why longer? Because while Mars is going around the Sun once, Earth is going around it almost twice — both planets keep moving. The line-up only repeats when Earth has lapped Mars in the dance.",
+  "cur": "Али ако желите да знате колико често се Земља и Марс ПОНОВО НАЂУ У ИСТОМ ПОЛОЖАЈУ (како бисте могли да лансирате мисију), одговор је 780 дана — око 26 месеци. То је синодички период. Зашто је дужи? Зато што док Марс једном обиђе Сунце, Земља га обиђе скоро два пута — обе планете се непрестано крећу. Овакав распоред се понавља тек када Земља у том плесу престигне Марс за цео круг."
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "narrative_101.3",
+  "en": "This is why Mars launch windows appear every 26 months. If you miss one, you wait two years. Every Mars mission you've ever heard of had to time itself to a synodic window — Curiosity in 2011, Perseverance in 2020, the next one in 2026. The synodic period is the heartbeat of interplanetary mission planning.",
+  "cur": "Зато се прозори за лансирање ка Марсу појављују на сваких 26 месеци. Ако пропустите један, чекате две године. Свака мисија ка Марсу за коју сте икада чули морала је да се временски прилагоди синодичком прозору — Curiosity 2011, Perseverance 2020, следећа 2026. Синодички период је откуцај срца планирања међупланетарних мисија."
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "body_paragraphs.0",
+  "en": "Sidereal period: time for one full orbit relative to the fixed stars. This is the geometric, Kepler-third-law period — Mars sidereal year is 687 Earth days. Synodic period: time for one body to return to the same position relative to another body, usually as seen from a third. Mars synodic period — time between Mars-Earth alignments — is 780 days, or about 26 months.",
+  "cur": "Сидерички период: време за један пун обилазак орбите у односу на непокретне звезде. Ово је геометријски период по Kepler-овом трећем закону — сидеричка година Марса траје 687 земаљских дана. Синодички период: време које је потребно да се једно тело врати у исти положај у односу на друго тело, обично посматрано са трећег. Синодички период Марса — време између поравнања Марса и Земље — износи 780 дана, или око 26 месеци."
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "body_paragraphs.1",
+  "en": "The synodic period is what mission planners care about. Earth-Mars Hohmann transfers only work when Mars is in the right place. The next viable launch window appears every 26 months. Miss one, wait two years for another. That's the cadence of every Mars mission ever flown.",
+  "cur": "Синодички период је оно до чега је планерима мисија стало. Hohmann-ови трансфери између Земље и Марса раде само када се Марс налази на правом месту. Следећи погодан прозор за лансирање појављује се на сваких 26 месеци. Пропустите један — чекате две године на следећи. То је ритам сваке мисије ка Марсу која је икада летела."
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "body_paragraphs.2",
+  "en": "Mathematically: `1/T_syn = 1/T_inner − 1/T_outer`. If Earth's year is 1.0 yr and Mars's is 1.88 yr: `1/T_syn = 1 − 1/1.88 = 0.468`, so `T_syn = 2.14 yr ≈ 26 months`. The math is simple; the operational consequence — every mission timeline must respect it — is where it lives in mission planning.",
+  "cur": "Математички: `1/T_syn = 1/T_inner − 1/T_outer`. Ако је Земљина година 1,0 год, а марсовска 1,88 год: `1/T_syn = 1 − 1/1,88 = 0,468`, дакле `T_syn = 2,14 год ≈ 26 месеци`. Математика је једноставна; оперативна последица — да свака временска линија мисије мора да је поштује — управо је оно што одређује планирање мисија."
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "diagram_caption",
+  "en": "Sidereal: same star alignment. Synodic: same Earth-Mars-Sun alignment, longer because both planets moved.",
+  "cur": "Сидерички: исти положај у односу на звезде. Синодички: исти међусобни положај Земље, Марса и Сунца — дужи зато што су се обе планете померале."
+ },
+ {
+  "rel": "science/space-stations/_intro.json",
+  "at": "headline",
+  "en": "Space Stations — pressurized boxes that fall forever.",
+  "cur": "Свемирске станице — под притиском затворене кутије које вечно падају."
+ },
+ {
+  "rel": "science/space-stations/_intro.json",
+  "at": "paragraphs.0",
+  "en": "A space station is what you get when you stack human-rated pressure vessels in low Earth orbit and never let them come down. Every system on board exists to keep the inside warmer than -270°C and at one atmosphere of breathable air, while the outside does its best to claw the air back out (vacuum) and chill the metal to space temperatures (radiative cooling).",
+  "cur": "Свемирска станица је оно што добијете када у ниској орбити око Земље сложите посуде под притиском погодне за људе и никада им не дозволите да сиђу. Сваки систем на станици постоји зато да би унутрашњост одржавао топлијом од -270°C и под притиском од једне атмосфере ваздуха за дисање, док споља све чини да ваздух отме назад (вакуум) и да метал охлади до температуре свемира (радијативно хлађење)."
+ },
+ {
+  "rel": "science/space-stations/_intro.json",
+  "at": "paragraphs.1",
+  "en": "Three numbers really define a station: how much pressurized volume the crew has to live and work in, how the pressure modules are connected (nodes), and how much electrical power the solar arrays can deliver. The three sections here unpack each of those — what they are, how they're sized, and how the ISS and Tiangong made different design choices.",
+  "cur": "Три броја заиста дефинишу једну станицу: колико запремине под притиском посада има на располагању за живот и рад, како су модули под притиском међусобно повезани (чворови) и колико електричне енергије могу да обезбеде соларни панели. Три одељка овде разјашњавају сваки од њих — шта су, како се димензионишу и како су МСС и Tiangong донели различите конструкцијске одлуке."
+ },
+ {
+  "rel": "science/space-stations/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Stations aren't just \"big spacecraft.\" They're permanent, modular, and grow over time. The ISS started with a single module (Zarya, launched 1998 — Russian-built, US-funded) and grew over fifteen years to a truss ~109 m across with roughly a dozen and a half pressurized elements. Tiangong went up faster (2021–2022) but follows the same logic: launch one box, dock the next, plug it in.",
+  "cur": "Станице нису само „велике летелице\". Оне су трајне, модуларне и временом расту. МСС је почела с једним модулом (Zarya, лансиран 1998. — руске израде, финансиран од стране САД) и током петнаест година израсла у решеткасту конструкцију широку ~109 m са отприлике осамнаест елемената под притиском. Tiangong је подигнут брже (2021–2022), али следи исту логику: лансирај једну кутију, спој са њом следећу, повежи је на систем."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "intro_sentence",
+  "en": "Stations run on rolling 6-month crew rotations — a balance of suit consumables, vehicle shelf-life, training pipelines, and human physiology.",
+  "cur": "Станице функционишу на основу сталне ротације посада на сваких 6 месеци — равнотеже између потрошне опреме за скафандере, века трајања возила, програма обуке и људске физиологије."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "narrative_101.0",
+  "en": "Why six months? It's the answer to several constraints meeting in one place. Soyuz and Crew Dragon spacecraft are certified to stay docked for ~6–7 months (Soyuz ~200 d; Crew Dragon originally ~210 d, since extended) before their thrusters and seals need refreshing. EVA-suit consumables (O₂, LiOH, battery) are replenished on orbit; suit certification life caps how long a suit can stay in service. NASA's bone-loss countermeasure data is most reliable in 6-month buckets. Rotating one third of the crew every 4-6 months keeps fresh hands on board without hot-bunking.",
+  "cur": "Зашто шест месеци? То је одговор на неколико ограничења која се сусрећу на једном месту. Свемирске летелице Soyuz и Crew Dragon сертификоване су да остану спојене са станицом ~6–7 месеци (Soyuz ~200 дана; Crew Dragon првобитно ~210 дана, од тада продужено) пре него што је потребно обновити њихове потиснике и заптивке. Потрошни материјал за EVA-скафандере (O₂, LiOH, батерија) допуњава се у орбити; век трајања који скафандру даје сертификација ограничава колико дуго он може да остане у употреби. NASA-ини подаци о мерама против губитка коштане масе најпоузданији су у интервалима од по 6 месеци. Ротирање једне трећине посаде на сваа 4–6 месеци обезбеђује свеж посао на броду без дељења лежаја у смени."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "narrative_101.1",
+  "en": "ISS started with 3-person expeditions (Expedition 1 in 2000) and stepped up to 6-person crews in 2009 once the lifeboat capacity was there. Each expedition typically runs ~6 months. Some run longer — Frank Rubio's accidental 371-day stay (Expedition 67/68/69) happened when his Soyuz was damaged by debris and a replacement had to be ferried up.",
+  "cur": "МСС је започела са експедицијама од по 3 члана (Expedition 1 2000. године), а 2009. прешла је на посаде од по 6 чланова, чим је постојао довољан капацитет за спасилачке бродове. Свака експедиција обично траје ~6 месеци. Неке трају дуже — случајни боравак Frank-а Rubio-а од 371 дан (Expedition 67/68/69) догодио се када је његов Soyuz оштећен отпацима, па је морала да се лансира замена."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "narrative_101.2",
+  "en": "Tiangong started with shorter rotations (Shenzhou 12: 92 days; Shenzhou 13: 183 days) and stabilized at ~6 months from Shenzhou 14 onward. Crews of three rotate; the outgoing and incoming crews share about a week on board to hand over operational state.",
+  "cur": "Tiangong је започела са краћим ротацијама (Shenzhou 12: 92 дана; Shenzhou 13: 183 дана), а од Shenzhou 14 надаље стабилизовала се на ~6 месеци. Ротирају се посаде од по троје чланова; одлазећа и долазећа посада проводе на станици отприлике недељу дана заједно како би примопредајом пренеле оперативно стање."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "body_paragraphs.0",
+  "en": "Constraints driving the ~6-month cadence: docked-spacecraft certified lifetime (~6–7 months; Soyuz ~200 d; Crew Dragon originally ~210 d, since extended; Shenzhou ~180–210 d), on-orbit EVA suit consumable replenishment and certification limits, food-pantry capacity per resupply, and the NASA Human Research Program's preference for 6-month bone-loss data brackets.",
+  "cur": "Ограничења која одређују ритам од ~6 месеци: сертификовани век трајања спојене летелице (~6–7 месеци; Soyuz ~200 дана; Crew Dragon првобитно ~210 дана, од тада продужено; Shenzhou ~180–210 дана), ограничења допуне и сертификације потрошне опреме за скафандере за ванвозне активности у орбити, капацитет оставе за храну по једном допремању залиха и склоност NASA-иног Human Research Program-а ка подацима о губитку коштане масе у распонима од 6 месеци."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "body_paragraphs.1",
+  "en": "ISS expeditions: numbered sequentially since Expedition 1 (Nov 2000). Crew sizes — 3 (Exp 1-19), 6 (Exp 20-63), 7 (Exp 64–), briefly higher during crew handovers.",
+  "cur": "Експедиције на МСС: нумерисане узастопно од Expedition 1 (нов. 2000). Величина посаде — 3 (Exp 1-19), 6 (Exp 20-63), 7 (Exp 64–), а кратко и већа током примопредаје посада."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "body_paragraphs.2",
+  "en": "Handover: incoming Soyuz/Crew Dragon docks 5-10 days before the outgoing departure. Both crews share the station, conduct briefings, transfer cargo, then the outgoing crew undocks. Combined-crew period is the most resource-stressed: more bodies, more CO₂, more food consumption.",
+  "cur": "Примопредаја: долазећа летелица Soyuz/Crew Dragon се спаја са станицом 5–10 дана пре одласка одлазеће посаде. Обе посаде деле станицу, одржавају брифинге и преносе терет, а потом одлазећа посада раставља летелицу од станице. Период заједничког боравка обе посаде најзахтевнији је по потрошњи ресурса: више људи, више CO₂, већа потрошња хране."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "body_paragraphs.3",
+  "en": "Long-duration outliers: Polyakov 437.7 d (Mir, 1994-95, deliberate Mars-class endurance test); Rubio 371 d (ISS, 2022-23, contingency); Vande Hei 355 d (ISS, 2021-22, Soyuz seat shuffle); Kelly + Kornienko 340 d (ISS, 2015-16, twin-study programme).",
+  "cur": "Изузеци по дужини боравка: Пољаков 437,7 дана (Mir, 1994–95, намерни тест издржљивости на нивоу мисије на Марс); Рубио 371 дан (МСС, 2022–23, ванредна ситуација); Ванде Хај 355 дана (МСС, 2021–22, премештање места у летелици Soyuz); Kelly + Kornienko 340 дана (МСС, 2015–16, програм студије близанаца)."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "body_paragraphs.4",
+  "en": "Tiangong cadence: Shenzhou 12 (92 d), 13 (183 d), 14 (186 d), 15 (186 d), 16 (155 d), 17 (187 d), 18 (192 d). Stable rhythm matching ISS practice.",
+  "cur": "Ритам станице Tiangong: Shenzhou 12 (92 дана), 13 (183 дана), 14 (186 дана), 15 (186 дана), 16 (155 дана), 17 (187 дана), 18 (192 дана). Стабилан ритам који одговара пракси на МСС."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "diagram_caption",
+  "en": "ISS expedition timeline 2000-2025: stacked colour bands (3-, 6-, 7-person crews) with annotated outliers (Polyakov, Vande Hei, Rubio).",
+  "cur": "Временска линија експедиција на МСС 2000–2025: наслагане обојене траке (посаде од 3, 6 и 7 чланова) са означеним изузецима (Пољаков, Ванде Хај, Рубио)."
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "intro_sentence",
+  "en": "A pressurized hub with multiple docking ports — the structural connector that lets a station branch.",
+  "cur": "Модул под притиском са више прикључних прстенова — структурни спојник који омогућава да се станица рашчлани у више праваца."
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "narrative_101.0",
+  "en": "A node is a special kind of pressurized module: it doesn't host experiments or crew quarters, it just connects other modules together. Picture a hexagonal box where each face has a docking port. Bolt one node to a launching rocket, send it up, then dock five more modules to the five remaining ports and you've grown your station from one module into six.",
+  "cur": "Чворни модул је посебна врста модула под притиском: у њему се не изводе експерименти нити су смештене посадне кабине, већ он само повезује остале модуле. Замислите шестострану кутију чија свака страна има прикључни прстен. Причврстите један такав чвор за ракету-носач, пошаљите га у орбиту, затим на преосталих пет прстенова прикључите још пет модула и ваша станица израста из једног модула у шест."
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "narrative_101.1",
+  "en": "The ISS has three: Unity (Node 1), Harmony (Node 2), and Tranquility (Node 3). Each one is the central junction for one segment of the station — Unity glues the Russian and US sides together; Harmony connects the US lab cluster to the Japanese and European modules; Tranquility carries the Cupola observation dome.",
+  "cur": "МСС има три таква модула: Unity (Node 1), Harmony (Node 2) и Tranquility (Node 3). Сваки од њих је централно чвориште једног дела станице — Unity спаја руску и америчку страну; Harmony повезује амерички лабораторијски склоп са јапанским и европским модулима; Tranquility носи посматрачку куполу Cupola."
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "narrative_101.2",
+  "en": "Tiangong took a different approach: instead of dedicated nodes, the central Tianhe module acts as both living quarters and a hub, with multiple docking ports built directly into its forward and aft ends. It's a tighter design that costs less mass to launch but limits how many modules can branch off.",
+  "cur": "Tiangong је кренула другачијим путем: уместо посебних чворних модула, централни модул Tianhe служи и као стамбени простор и као чвориште, са више прикључних прстенова уграђених директно у његов предњи и задњи крај. То је збијенија конструкција којој је за лансирање потребно мање масе, али која ограничава број модула који се на њу могу надовезати."
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "body_paragraphs.0",
+  "en": "Nodes are connector modules — pressurized hubs with multiple Common Berthing Mechanism (CBM) or docking ports — that allow a station to branch into a tree topology rather than a linear chain.",
+  "cur": "Чворни модули су спојни модули — чворишта под притиском са више прикључних прстенова типа Common Berthing Mechanism (CBM) или стезних прикључака за пристајање — који омогућавају да се станица рашчлани у стабласту топологију, а не у линеарни низ."
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "body_paragraphs.1",
+  "en": "ISS Unity (Node 1) launched in 1998 on STS-88. Six CBM ports: forward → Destiny, aft → Zarya, starboard → Quest airlock, zenith → Z1 truss, port → Tranquility (2010), nadir → PMA/cargo berthing (formerly Leonardo PMM 2011–2015). The first US-built ISS module.",
+  "cur": "МСС Unity (Node 1) лансиран је 1998. мисијом STS-88. Шест CBM прикључака: напред → Destiny, назад → Zarya, десни бок → ваздушна комора Quest, зенит → решеткаста конструкција Z1, леви бок → Tranquility (2010), надир → PMA/прикључак за теретне модуле (раније Leonardo PMM 2011–2015). Први модул МСС-а направљен у САД."
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "body_paragraphs.2",
+  "en": "ISS Harmony (Node 2) launched 2007. Six ports: connects Destiny to Columbus (port), Kibo (starboard), and the two docking adapters (IDA-2 forward, IDA-3 zenith) for Crew Dragon / Starliner.",
+  "cur": "МСС Harmony (Node 2) лансиран је 2007. Шест прикључака: повезује Destiny са модулима Columbus (леви бок) и Kibo (десни бок), као и са два прикључна адаптера (IDA-2 напред, IDA-3 зенит) за Crew Dragon / Starliner."
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "body_paragraphs.3",
+  "en": "ISS Tranquility (Node 3) launched 2010. Hosts the Cupola observation dome (nadir port), the Permanent Multipurpose Module Leonardo (forward), and BEAM (aft).",
+  "cur": "МСС Tranquility (Node 3) лансиран је 2010. На њему се налазе посматрачка купола Cupola (надирски прикључак), Permanent Multipurpose Module Leonardo (напред) и BEAM (назад)."
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "body_paragraphs.4",
+  "en": "Tiangong's Tianhe core: combines node + crew quarters + propulsion + control. The node hub carries a forward axial port (Shenzhou), two lateral radial ports (Wentian to starboard, Mengtian to port, both relocated there by the arm), and a nadir port; the aft axial port takes Tianzhou cargo. Ports use the Chinese Docking Mechanism, not the US CBM.",
+  "cur": "Језгро Tianhe станице Tiangong: обједињује чвор, посадне кабине, погон и управљање. Чворно чвориште има предњи аксијални прикључак (Shenzhou), два бочна радијална прикључка (Wentian на десном боку, Mengtian на левом боку, оба премештена тамо помоћу роботске руке) и надирски прикључак; задњи аксијални прикључак прихвата теретне летелице Tianzhou. Прикључци користе Chinese Docking Mechanism, а не амерички CBM."
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "diagram_caption",
+  "en": "Hexagonal node module with six docking ports labelled forward / aft / port / starboard / zenith / nadir.",
+  "cur": "Шестострани чворни модул са шест прикључних прстенова означених као напред / назад / леви бок / десни бок / зенит / надир."
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "intro_sentence",
+  "en": "The total habitable interior of a station — how much room the crew actually has to live and work.",
+  "cur": "Укупан настањиви унутрашњи простор станице — колико простора посада заиста има за живот и рад."
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "narrative_101.0",
+  "en": "Every station spec sheet leads with one key number: habitable volume in cubic meters — the inside of the modules that crew can breathe and move around in, summed across the whole station. The ISS habitable volume is roughly 388 m³ (about the size of a large 3-bedroom house). Tiangong comes in at about 122 m³ — comfortable for three crew, tight for six.",
+  "cur": "Сваки технички лист станице започиње једним кључним бројем: настањивом запремином у кубним метрима — то је унутрашњост модула у којој посада може да дише и да се креће, сабрана за целу станицу. Настањива запремина станице МСС износи отприлике 388 m³ (отприлике колико велика кућа са три спаваће собе). Tiangong има око 122 m³ — удобно за троје чланова посаде, тесно за шесторо."
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "narrative_101.1",
+  "en": "Pressurized volume is bounded by two ceilings: launch-vehicle fairing diameter (you can only ship a module as fat as the rocket can lift) and pressure-shell mass (the thicker the wall, the heavier the launch). Modern composite-aluminum hulls hit a sweet spot at 2-4 mm thick. Anything beyond and you're paying mass for safety margin you don't use; anything thinner and a micrometeoroid might puncture you.",
+  "cur": "Запремина под притиском ограничена је двема границама: пречником кожуха ракете-носача (модул не можете лансирати шири од оног који ракета може да подигне) и масом носеће љуске под притиском (што је зид дебљи, то је лансирање теже). Савремени трупови од композита и алуминијума налазе идеалну меру при дебљини од 2 до 4 mm. Све преко тога значи да плаћате масом за сигурносну резерву коју не користите; све тање, а микрометероид би вас могао пробушити."
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "narrative_101.2",
+  "en": "Crews need roughly 15–25 m³ per person of net habitable volume for multi-month missions (NASA-STD-3001 net-habitable-volume guidance is duration-dependent, not a single fixed value). ISS and Tiangong both comfortably exceed the minimum — which sounds excessive until you remember that the crew is awake 16 hours a day, every day, for months on end.",
+  "cur": "Посадама је за вишемесечне мисије потребно отприлике 15–25 m³ нето настањиве запремине по особи (смернице NASA-STD-3001 о нето настањивој запремини зависе од трајања мисије, а не од једне фиксне вредности). И МСС и Tiangong удобно премашују тај минимум — што звучи претерано све док се не сетите да је посада будна 16 сати дневно, сваког дана, месецима узастопно."
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "body_paragraphs.0",
+  "en": "Habitable volume is the air-filled usable interior of a space station, measured in cubic meters. It excludes structural racks, bulkheads, and equipment volume — the figure usually quoted is gross internal volume, of which 30-50% is occupied by hardware.",
+  "cur": "Настањива запремина је употребљиви унутрашњи простор свемирске станице испуњен ваздухом, изражен у кубним метрима. Она не укључује носеће оквире, преграде и запремину опреме — број који се обично наводи јесте бруто унутрашња запремина, од које 30–50% заузима опрема."
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "body_paragraphs.1",
+  "en": "ISS: ~388 m³ habitable across 16 pressurized modules (Zarya, Zvezda, Unity, Destiny, Quest, Pirs/Nauka, Harmony, Columbus, Kibo + ELM, Tranquility, Cupola, Leonardo PMM, Bigelow BEAM, plus the Russian Rassvet and Poisk). Total pressurized volume is ~916 m³.",
+  "cur": "МСС: ~388 m³ настањивог простора у 16 модула под притиском (Zarya, Zvezda, Unity, Destiny, Quest, Pirs/Nauka, Harmony, Columbus, Kibo + ELM, Tranquility, Cupola, Leonardo PMM, Bigelow BEAM, као и руски Rassvet и Poisk). Укупна запремина под притиском износи ~916 m³."
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "body_paragraphs.2",
+  "en": "Tiangong: ~122 m³ habitable across three modules (Tianhe core, Wentian and Mengtian labs). Total pressurized volume is ~340 m³.",
+  "cur": "Tiangong: ~122 m³ настањивог простора у три модула (главни модул Tianhe и лабораторијски модули Wentian и Mengtian). Укупна запремина под притиском износи ~340 m³."
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "body_paragraphs.3",
+  "en": "Mir: ~350 m³ total pressurized volume at peak (1986–2001) — broadly comparable in scale to Tiangong's pressurized envelope, but built from heavier-walled modules and an older generation of life-support systems.",
+  "cur": "Mir: ~350 m³ укупне запремине под притиском у врхунцу (1986–2001) — по размерама отприлике упоредиво са Tiangong-овом омотачем под притиском, али изграђена од модула са тежим зидовима и старије генерације система за одржавање живота."
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "body_paragraphs.4",
+  "en": "The net habitable volume guidance in NASA-STD-3001 Volume 2 is empirically derived from confined-environment psychology studies dating back to Skylab and the Soviet Salyut programme, and scales with mission duration rather than setting a single floor. Below the minimum guidance band, crew well-being and mission performance decline measurably.",
+  "cur": "Смернице о нето настањивој запремини у 2. тому стандарда NASA-STD-3001 емпиријски су изведене из психолошких студија о боравку у скученом окружењу, које сежу све до Skylab-а и совјетског програма Salyut, и скалирају се према трајању мисије, а не постављају једну јединствену доњу границу. Испод минималног распона који смернице прописују, добробит посаде и учинак мисије мерљиво опадају."
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "diagram_caption",
+  "en": "Three station habitable volumes to scale: Tiangong (~122 m³), Mir (~350 m³ total pressurized), ISS (~388 m³ habitable). One human silhouette for reference scale.",
+  "cur": "Три настањиве запремине станица у размери: Tiangong (~122 m³), Mir (~350 m³ укупно под притиском), МСС (~388 m³ настањиво). Једна људска силуета као референтна размера."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "title",
+  "en": "Solar Power Budget",
+  "cur": "Буџет соларне енергије"
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "intro_sentence",
+  "en": "How much electricity the solar arrays generate — the upstream constraint on every system the crew can run.",
+  "cur": "Колико електричне енергије производе соларни панели — ограничење на самом почетку ланца за сваки систем који посада може да покреће."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "narrative_101.0",
+  "en": "A space station runs on solar electricity. The solar wings run the length of the ISS's ~109 m truss — bigger than a football field — because everything else depends on the watts they pull from sunlight: life support, communications, scientific instruments, the crew's exercise machine, the toilet's air-flow fan.",
+  "cur": "Свемирска станица ради на соларну електричну енергију. Соларна крила протежу се целом дужином решеткасте конструкције станице МСС, дугачке ~109 m — веће од фудбалског терена — јер све остало зависи од вати које она добијају из сунчеве светлости: систем за одржавање живота, комуникација, научни инструменти, справа за вежбање за посаду, вентилатор за струјање ваздуха у тоалету."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "narrative_101.1",
+  "en": "The eight original 35 m × 12 m ISS arrays delivered ~160 kW peak sunlit at beginning of life, derated with age; augmented by six iROSA roll-out arrays (covering six of the eight original wings, each adding >20 kW), total installed generation capacity reached ~215 kW. Orbit-average power delivered to loads — accounting for the ~0.6 sunlit fraction and battery/regulation losses — is roughly 84–120 kW. Tiangong runs lighter at about 27 kW peak — fewer crew, fewer experiments, simpler thermal load.",
+  "cur": "Осам изворних панела станице МСС димензија 35 m × 12 m давало је на почетку радног века ~160 kW у врхунцу на сунчевој светлости, уз пад снаге с годинама; уз шест соларних панела на развијање iROSA (који прекривају шест од осам изворних крила, а сваки додаје >20 kW), укупан инсталисани производни капацитет достигао је ~215 kW. Снага коју потрошачи просечно добијају током једне орбите — узимајући у обзир удео осветљеног дела орбите од ~0,6 и губитке у батеријама и регулацији — износи отприлике 84–120 kW. Tiangong ради с мање енергије, са око 27 kW у врхунцу — мање чланова посаде, мање експеримената, једноставније термичко оптерећење."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "narrative_101.2",
+  "en": "Power dictates ambition. Want to run a centrifuge biology experiment? Plug it in — it'll cost 1.5 kW. Want to add ten more racks of payloads? You need a power budget, and either you grow the array (expensive — new mission) or you load-shed something else.",
+  "cur": "Снага диктира амбицију. Желите да покренете биолошки експеримент с центрифугом? Прикључите је — коштаће 1,5 kW. Желите да додате још десет ормара с корисним теретом? Потребан вам је буџет снаге, а онда или проширите соларне панеле (скупо — нова мисија) или искључите неког другог потрошача да бисте прерасподелили оптерећење."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "body_paragraphs.0",
+  "en": "Solar power budget = peak generated power × duty cycle (sunlit fraction of orbit) × downstream efficiency (battery + regulator losses). For LEO stations the duty cycle is about 0.6 — roughly 35 minutes sunlit out of every 92-minute orbit.",
+  "cur": "Буџет соларне енергије = максимална произведена снага × радни циклус (осунчани део орбите) × ефикасност низводно (губици у батеријама и регулаторима). Код станица у ниској Земљиној орбити радни циклус износи око 0,6 — отприлике 35 минута на сунчевој светлости током сваке орбите од 92 минута."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "body_paragraphs.1",
+  "en": "ISS solar arrays: 8 main IEA wings (4× P3/P4, P6 + 4× S3/S4, S6) at ~160 kW peak BOL, derated to ~84 kW EOL at 15 years. Six iROSA roll-out arrays (covering 6 of the 8 original wings), each adding >20 kW, bring total installed generation to ~215 kW sunlit. Orbit-average power delivered to loads (×~0.6 sunlit fraction, minus storage/regulation losses) ≈ 84–120 kW.",
+  "cur": "Соларни панели станице МСС: 8 главних IEA крила (4× P3/P4, P6 + 4× S3/S4, S6) са ~160 kW у врхунцу на почетку радног века (BOL), уз пад на ~84 kW на крају радног века (EOL) после 15 година. Шест соларних панела на развијање iROSA (који прекривају 6 од 8 изворних крила), од којих сваки додаје >20 kW, подижу укупну инсталисану производњу на ~215 kW на сунчевој светлости. Просечна снага по орбити која стиже до потрошача (×~0,6 осунчаног дела орбите, минус губици при складиштењу и регулацији) ≈ 84–120 kW."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "body_paragraphs.2",
+  "en": "Tiangong solar arrays: 4 wings on Tianhe (2 retractable each side) plus 4 large wings on Wentian and Mengtian. Total ~30 kW BOL × duty cycle = ~18 kW continuous, with 27 kW peak during sunlit pass.",
+  "cur": "Соларни панели станице Tiangong: 4 крила на модулу Tianhe (по 2 увлачива са сваке стране) плус 4 велика крила на модулима Wentian и Mengtian. Укупно ~30 kW на почетку радног века (BOL) × радни циклус = ~18 kW континуално, са 27 kW у врхунцу током проласка кроз осунчани део орбите."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "body_paragraphs.3",
+  "en": "Battery storage: ISS uses lithium-ion battery ORUs (orbital replacement units) at ~50 kWh capacity per pair. Each battery covers one main array's night-side load. Tiangong uses similar Li-ion banks, sized for the smaller load.",
+  "cur": "Складиштење у батеријама: станица МСС користи литијум-јонске батерије у виду ORU јединица (орбиталних заменљивих јединица) капацитета ~50 kWh по пару. Свака батерија покрива потрошњу једног главног соларног панела на ноћној страни орбите. Tiangong користи сличне литијум-јонске батерије, димензионисане за мање оптерећење."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "body_paragraphs.4",
+  "en": "Mir, by contrast, peaked at ~30 kW from 1500 m² of array — comparable on a per-volume basis to Tiangong but with older nickel-cadmium battery storage that needed deeper rebuilds over its 15-year life.",
+  "cur": "Станица Mir је, за разлику од тога, достизала врхунац од ~30 kW са 1500 m² соларних панела — упоредиво са станицом Tiangong по јединици запремине, али са старијим никл-кадмијумским батеријама за складиштење енергије, које су током свог 15-годишњег радног века захтевале темељније обнове."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "diagram_caption",
+  "en": "Solar input → array → DC bus → battery + loads. Duty cycle bar shows the 60% sunlit fraction per 92-minute orbit.",
+  "cur": "Сунчево зрачење → соларни панели → једносмерна сабирница → батерија + потрошачи. Трака радног циклуса приказује осунчани део орбите од 60% током сваке орбите од 92 минута."
+ },
+ {
+  "rel": "science/transfers/_intro.json",
+  "at": "headline",
+  "en": "Transfers — once you're in orbit, you're halfway to anywhere.",
+  "cur": "Трансфери — када си једном у орбити, на пола си пута докле год пожелиш."
+ },
+ {
+  "rel": "science/transfers/_intro.json",
+  "at": "paragraphs.0",
+  "en": "Robert Heinlein wrote that. He was right. Reaching low Earth orbit costs about 9.4 km/s of ∆v — the hardest part of any trip. The trans-Mars injection burn adds only ~3.6 km/s. Once you're free of the planet's atmosphere and in a proper orbit, the rest of the solar system is mostly geometry.",
+  "cur": "То је написао Роберт Хајнлајн. И био је у праву. Достизање ниске Земљине орбите кошта око 9,4 km/s ∆v — а то је најтежи део сваког путовања. Паљење за убацивање на путању ка Марсу додаје тек ~3,6 km/s. Када се једном ослободиш планетине атмосфере и нађеш се у правој орбити, остатак Сунчевог система је углавном геометрија."
+ },
+ {
+  "rel": "science/transfers/_intro.json",
+  "at": "paragraphs.1",
+  "en": "The seven sections in this tab cover the geometry. The Hohmann transfer is the cheapest possible trip between two orbits — two burns, eight months of coasting. Lambert's problem generalises Hohmann to arbitrary departure and arrival dates. Gravity assists let you steal speed from a planet (essentially) for free, which is how Voyager 2 reached Neptune. Free-return trajectories are the safety net that brought Apollo 13 home. Patched conics is the working approximation that lets us compute all of this in a browser.",
+  "cur": "Седам одељака у овој картици бави се геометријом. Hohmann-ов трансфер је најјефтинији могући пут између две орбите — два паљења и осам месеци лета по инерцији. Lambert-ов проблем уопштава Hohmann-ов трансфер на произвољне датуме поласка и доласка. Гравитациони маневри омогућавају да се од планете (у суштини) бесплатно „украде“ брзина, и тако је Voyager 2 стигао до Нептуна. Путање слободног повратка су сигурносна мрежа која је вратила Apollo 13 кући. Спојене коничне секције су радна апроксимација која нам омогућава да све ово израчунамо у претраживачу."
+ },
+ {
+  "rel": "science/transfers/_intro.json",
+  "at": "paragraphs.2",
+  "en": "If you only read one section: Hohmann transfer. Everything else builds on it.",
+  "cur": "Ако читаш само један одељак, нека то буде Hohmann-ов трансфер. На њему се заснива све остало."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "intro_sentence",
+  "en": "Slice a cone four ways and you get every possible Keplerian trajectory — circle, ellipse, parabola, hyperbola.",
+  "cur": "Пресеците конус на четири начина и добићете сваку могућу кеплеровску путању — круг, елипсу, параболу и хиперболу."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "narrative_101.0",
+  "en": "There's a bizarre piece of mathematical luck at the heart of orbital mechanics. The shapes you can make by slicing a cone with a flat plane — circle, ellipse, parabola, hyperbola — turn out to be EXACTLY the only shapes a body under gravity can travel along. The Greeks studied these curves for fun in 200 BC. Two thousand years later we discovered the universe runs on them.",
+  "cur": "У срцу орбиталне механике крије се необична математичка срећа. Облици које добијате када конус пресечете равном равни — круг, елипса, парабола, хипербола — испоставља се да су ТАЧНО једини облици којима се може кретати тело под дејством гравитације. Грци су ове криве проучавали из забаве још 200. године пре нове ере. Две хиљаде година касније открили смо да се васиона управо на њима заснива."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "narrative_101.1",
+  "en": "The four shapes form a continuum. Slow enough? You're on a circle or ellipse — bound, you'll come back. Right at escape speed? Parabola — you'll just barely never come back. Faster than that? Hyperbola — you blast through and never return. Eccentricity is the dial: 0 is a circle, 1 is the escape edge, above 1 you're free.",
+  "cur": "Ова четири облика чине континуум. Довољно спори? Налазите се на кружници или елипси — везани сте и вратићете се. Тачно при брзини бекства? Парабола — једва ћете се икада вратити, то јест нећете. Бржи од тога? Хипербола — јурнете кроз простор и никада се не враћате. Ексцентрицитет је регулатор: 0 је круг, 1 је граница бекства, а изнад 1 сте слободни."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "narrative_101.2",
+  "en": "Real missions use all four. The cruise from Earth to Mars is an ellipse. The flyby past Jupiter on the way to Saturn is a hyperbola — relative to Jupiter, you're going too fast to be captured. The Voyager probes are now on hyperbolic escape trajectories (e > 1) that will take them out of the solar system forever. Same equation describes all of them; only the eccentricity differs.",
+  "cur": "Стварне мисије користе сва четири облика. Путовање са Земље на Марс је елипса. Прелет поред Јупитера на путу ка Сатурну је хипербола — у односу на Јупитер крећете се пребрзо да бисте били заробљени. Сонде Voyager сада се налазе на хиперболичким путањама бекства (e > 1) које ће их заувек одвести из Сунчевог система. Иста једначина описује све њих; разликује се само ексцентрицитет."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "body_paragraphs.0",
+  "en": "Take an infinite cone and cut it with a flat plane. Slice horizontally: a circle (`e = 0`). Tilt the slice: an ellipse (`0 < e < 1`). Tilt parallel to the cone's edge: a parabola (`e = 1`, the exact escape case). Tilt past that: a hyperbola (`e > 1`, escape with energy to spare). Two thousand years before Kepler, Apollonius of Perga catalogued these curves. Two centuries before Newton, Kepler discovered planets fly along them.",
+  "cur": "Узмите бесконачан конус и пресеците га равном равни. Пресеците га водоравно: добијате круг (`e = 0`). Нагните пресек: добијате елипсу (`0 < e < 1`). Нагните га паралелно са ивицом конуса: добијате параболу (`e = 1`, тачан случај бекства). Нагните га и даље од тога: добијате хиперболу (`e > 1`, бекство са вишком енергије). Две хиљаде година пре Кеплера, Apollonius из Perga је сврстао ове криве у каталог. Два века пре Newton-а, Кеплер је открио да планете лете управо њима."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "body_paragraphs.1",
+  "en": "Every Keplerian orbit is one of these four. Bound orbits — planets, moons, satellites, anything that returns — are circles or ellipses. Unbound trajectories — flybys, escapes, hyperbolic captures — are parabolas or hyperbolas. The boundary is exact: at `e = 1` you're moving at exactly the local escape velocity.",
+  "cur": "Свака кеплеровска орбита је једна од ова четири облика. Везане орбите — планета, месеца, сателита, свега што се враћа — јесу кругови или елипсе. Невезане путање — прелети, бекства, хиперболичка хватања — јесу параболе или хиперболе. Граница је тачна: при `e = 1` крећете се тачно локалном брзином бекства."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "body_paragraphs.2",
+  "en": "Mission designers exploit all four. Cruise on an ellipse, flyby a planet on a hyperbola (relative to that planet), insert into orbit on an ellipse again. The simulator's `/fly` route does this naturally — the same trajectory equation handles every case, the eccentricity tells you which conic you're flying.",
+  "cur": "Пројектанти мисија користе сва четири облика. Крстарите по елипси, прелетите поред планете по хиперболи (у односу на ту планету), па се поново убаците у орбиту по елипси. Рута `/fly` у симулатору то ради сасвим природно — иста једначина путање обухвата сваки случај, а ексцентрицитет вам казује којим конусним пресеком летите."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "diagram_caption",
+  "en": "Four conics from cutting a cone: circle, ellipse, parabola, hyperbola. Eccentricity sets which.",
+  "cur": "Четири конусна пресека добијена сечењем конуса: круг, елипса, парабола, хипербола. Ексцентрицитет одређује који ће то бити."
+ },
+ {
+  "rel": "science/transfers/coplanar-trajectories.json",
+  "at": "title",
+  "en": "Why mission trajectories look flat",
+  "cur": "Зашто путање мисија изгледају равно"
+ },
+ {
+  "rel": "science/transfers/coplanar-trajectories.json",
+  "at": "intro_sentence",
+  "en": "The solar system is a disk, and propellant is finite — so missions don't leave the disk unless they have to.",
+  "cur": "Сунчев систем је диск, а погонско гориво је ограничено — зато мисије не напуштају раван диска осим ако то морају."
+ }
+]

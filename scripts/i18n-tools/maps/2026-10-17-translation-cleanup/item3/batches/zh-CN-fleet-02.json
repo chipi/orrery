@@ -1,0 +1,1160 @@
+[
+ {
+  "rel": "fleet/engine/viking.json",
+  "at": "description",
+  "en": "The Viking engine, developed by SEP in France for CNES and ESA, powered the first through fourth generations of the Ariane family from Ariane 1's inaugural launch on 24 December 1979. It burns nitrogen tetroxide and UH25 — a nitrogen-hydrazine blend — in a gas-generator cycle, a hypergolic propellant combination that trades efficiency for room-temperature storability and ignition simplicity. The Viking's most consequential second act came when ISRO licensed the design from France in the 1970s and developed it into the Vikas engine, which still flies on Indian launch vehicles today. One French engine design seeded two nations' access to space.",
+  "cur": "Viking引擎由法国SEP为CNES和ESA开发，为Ariane系列第一至第四代火箭提供动力，首次发射于1979年12月24日的Ariane 1。它燃烧四氧化二氮和UH25——一种氮肼混合燃料——采用燃气发生器循环，这是一种自燃推进剂组合，牺牲效率换取室温可储存性和点火简便性。Viking最重要的第二次成功出现在1970年代ISRO从法国获得设计许可并将其开发为Vikas引擎，该引擎至今仍在印度运载火箭上飞行。一个法国引擎设计为两个国家的航天进入提供了基础。"
+ },
+ {
+  "rel": "fleet/engine/viking.json",
+  "at": "best_known_for",
+  "en": "The French engine later licensed to India as Vikas — powered Ariane 1–4",
+  "cur": "法国引擎，后来以Vikas名义许可给印度——为Ariane 1–4号提供动力"
+ },
+ {
+  "rel": "fleet/engine/vulcain-2.json",
+  "at": "tagline",
+  "en": "Europe's hydrogen core engine — every Ariane 5 depended on it",
+  "cur": "欧洲的氢燃料核心引擎——每一枚Ariane 5火箭都依靠它"
+ },
+ {
+  "rel": "fleet/engine/vulcain-2.json",
+  "at": "description",
+  "en": "Vulcain 2 was the engine Europe built to achieve independent access to geostationary orbit. Developed by Snecma under ESA's Ariane 5 program, it runs a gas-generator cycle on LOX and LH2, powering the cryogenic main stage from liftoff through main-engine cutoff while the solid boosters do the heavy lifting of the first minutes. Its December 2002 debut was lost to a nozzle-cooling failure that destroyed the vehicle; after redesign it flew successfully from 2005 and became the reliable heart of Ariane 5 through the rocket's final flight in July 2023, placing satellites and interplanetary probes — including JWST — on their trajectories.",
+  "cur": "Vulcain 2是欧洲为实现地球静止轨道独立进入能力而开发的引擎。由Snecma在ESA的Ariane 5计划下开发，采用气体发生器循环，燃烧LOX和LH2，驱动低温主级从点火到主引擎关闭，而固体助推器则承担前几分钟的重力任务。其2002年12月首飞因喷管冷却失效而失败，摧毁了整个火箭；经过重新设计后，从2005年起成功飞行，并成为Ariane 5从2023年7月最后一次飞行前的可靠核心，将卫星和行星际探测器——包括JWST——送上了各自的轨道。"
+ },
+ {
+  "rel": "fleet/engine/vulcain-2.json",
+  "at": "best_known_for",
+  "en": "Europe's hydrogen core engine — powered every Ariane 5",
+  "cur": "欧洲的氢燃料核心引擎——为每一枚Ariane 5火箭提供动力"
+ },
+ {
+  "rel": "fleet/engine/yf-100.json",
+  "at": "tagline",
+  "en": "China's staged-combustion kerolox engine, powering the new generation",
+  "cur": "中国分级燃烧液氧煤油发动机，为新一代火箭提供动力"
+ },
+ {
+  "rel": "fleet/engine/yf-100.json",
+  "at": "description",
+  "en": "The YF-100 is the engine that moved China's launch capability into the performance tier that Russia and the United States had occupied for decades. Developed by AALPT in Xi'an, it applies oxygen-rich staged combustion to LOX and RP-1 — the thermodynamic cycle that extracts the most energy from kerosene propellants — and first flew on 20 September 2015. Two YF-100s power the core stage of Long March 5, China's heaviest operational rocket, and clustered variants fly on Long March 6 and Long March 7. The YF-100 underpins China's lunar program, its space station resupply, and its growing commercial launch cadence.",
+  "cur": "YF-100是将中国运载火箭能力提升到俄罗斯和美国数十年来所占据性能等级的发动机。由位于西安的AALPT开发，它采用富氧分级燃烧技术处理液氧和RP-1燃料——这种热力循环能从煤油推进剂中提取最大能量——并于2015年9月20日首次飞行。两台YF-100发动机为长征五号的芯级提供动力，长征五号是中国最重的现役运载火箭，而其集群型变体装备在长征六号和长征七号上。YF-100是中国月球计划、空间站补给和日益增长的商业发射节奏的基础。"
+ },
+ {
+  "rel": "fleet/engine/yf-100.json",
+  "at": "best_known_for",
+  "en": "China's modern staged-combustion kerolox engine — Long March 5/6/7",
+  "cur": "中国现代分级燃烧煤油液氧发动机——长征五号/6/7"
+ },
+ {
+  "rel": "fleet/engine/yf-77.json",
+  "at": "tagline",
+  "en": "China's first large hydrogen engine — Long March 5's foundation",
+  "cur": "中国首台大型液氢发动机——长征五号的基础"
+ },
+ {
+  "rel": "fleet/engine/yf-77.json",
+  "at": "description",
+  "en": "The YF-77 is China's first large-scale cryogenic engine burning LOX and LH2, ending a multi-decade dependence on storable hypergolic propellants for core stages. Developed by AALPT and running a gas-generator cycle, two YF-77s power Long March 5's central core, providing the efficiency boost that made lunar-return and space-station-module missions achievable without a prohibitively large rocket. It first flew on 3 November 2016, and the early flights were not without difficulty — a YF-77 anomaly grounded Long March 5 for nearly three years before engineers identified and resolved the failure mode.",
+  "cur": "YF-77是中国首台大推力低温液体火箭发动机，以液态氧和LH2为推进剂，结束了数十年对稳定双组分推进剂的依赖。该发动机由AALPT研制，采用燃气发生器循环，两台YF-77s发动机为长征五号芯级提供动力，其卓越性能使得月球返回任务和空间站舱段任务无需超大型火箭便可实现。YF-77于2016年11月3日首飞，早期飞行并非一帆风顺——一次YF-77异常导致长征五号停飞近三年，直到工程师查明并解决了这一失效模式。"
+ },
+ {
+  "rel": "fleet/engine/yf-77.json",
+  "at": "best_known_for",
+  "en": "China's first large hydrogen engine — the Long March 5 core",
+  "cur": "中国首台大推力液氢发动机——长征五号芯级"
+ },
+ {
+  "rel": "fleet/lander/beagle2.json",
+  "at": "tagline",
+  "en": "UK/ESA Mars lander from Mars Express (2003). Silent on arrival; HiRISE found it intact in 2015 — a solar panel had failed to deploy",
+  "cur": "来自Mars Express号（2003）的英国/ESA火星着陆器。抵达时无信号；HiRISE在2015年发现它完好无损——一块太阳能板未能展开"
+ },
+ {
+  "rel": "fleet/lander/beagle2.json",
+  "at": "description",
+  "en": "A 33-kg UK-led Mars lander released from ESA's Mars Express on 2003-12-19, six days before its planned 2003-12-25 landing at Isidis Planitia. Beagle 2 (named after HMS Beagle which carried Darwin) carried a clamshell payload of a Gas Analysis Package mass spectrometer for atmospheric + sub-surface volatiles, a stereo camera, a microscope, a Mössbauer + APX spectrometer pair, and a mole drill. It went silent at separation and was presumed crashed for 12 years — until 2015-01, when high-resolution HiRISE imagery from Mars Reconnaissance Orbiter clearly showed Beagle 2 sitting on the Martian surface (~5 km from its target), with one of four solar panels (petals) failing to fully deploy, preventing the antenna from clearing the housing and collecting enough power. So: a successful landing, an unsuccessful deployment, and a 12-year mystery solved by the same kind of imagery that LRO uses for the Moon.",
+  "cur": "一个33公斤重的英国主导火星着陆器，于2003年12月19日从ESA的Mars Express号上释放，在计划登陆日期2003年12月25日前六天，目标着陆点为伊西地斯平原。Beagle 2（以达尔文搭乘的HMS Beagle号命名）携带一个贝壳形有效载荷，包括用于分析大气和地表以下挥发性物质的气体分析套件质谱仪、立体摄像机、显微镜、穆斯堡尔光谱仪与APX光谱仪对，以及一个钻孔探针。它在分离时无信号，被推断已坠毁12年——直到2015年1月，火星勘测轨道器发来的高分辨率HiRISE图像清楚地显示Beagle 2完好地坐在火星表面（距离目标着陆点约5公里），其四块太阳能板（花瓣）之一未能完全展开，导致天线无法脱离舱体，收集不了足够电力。因此：一次成功的着陆，一次失败的部署，以及一个12年的谜团被同类型的图像解开——LRO正是用这种图像来观察月球的。"
+ },
+ {
+  "rel": "fleet/lander/beagle2.json",
+  "at": "best_known_for",
+  "en": "UK/ESA Mars lander — landed 2003, silent for 12 years, found by HiRISE 2015",
+  "cur": "英国/ESA火星着陆器——2003年着陆，沉默12年，2015年被HiRISE发现"
+ },
+ {
+  "rel": "fleet/lander/beresheet.json",
+  "at": "description",
+  "en": "The first private lunar landing attempt, by Israel’s SpaceIL nonprofit. Crashed in April 2019 when an IMU gyroscope failure triggered repeated computer reboots, each shutting the engine down; by the time control was recovered, the lander was too low and fast to survive. Demonstrated that landing on the Moon is much harder than reaching it.",
+  "cur": "首次私人月球着陆尝试，由以色列的SpaceIL非营利组织执行。2019年4月因惯性测量单元(IMU)陀螺仪故障引发计算机反复重启而坠毁，每次重启都会关闭引擎；待控制恢复时，着陆器已经高度过低、速度过快而无法存活。该任务证明了在月球上着陆远比到达月球困难。"
+ },
+ {
+  "rel": "fleet/lander/blue-moon-mk1.json",
+  "at": "tagline",
+  "en": "Blue Origin's first-generation lunar cargo lander — single-stage hydrogen / oxygen vehicle, ~3 t to the surface",
+  "cur": "Blue Origin第一代月球货运着陆器——单级液氢/液氧运载器，约3吨至月面"
+ },
+ {
+  "rel": "fleet/lander/blue-moon-mk1.json",
+  "at": "description",
+  "en": "Single-stage cryogenic lander built around the LH₂ / LOX BE-7 engine. Mk1 is the cargo-only precursor to the much larger Mk2 crewed Artemis HLS variant; both share the BE-7 propulsion and hydrogen-based reusability architecture. The first crewed lunar flight to carry Blue Moon Mk1 has not yet launched, with first landing currently planned no earlier than 2026. Cargo Mk1 will deliver up to ~3000 kg to the lunar surface; the crewed Mk2 derivative anchored Blue Origin's HLS contract awarded by NASA in 2023 as the second Artemis-era human lander alongside SpaceX Starship HLS.",
+  "cur": "单级低温着陆器，采用 LH₂ / LOX BE-7 发动机。Mk1 是货运专用前驱版本，为更大的 Mk2 载人 Artemis HLS 变体的前身；两者都采用 BE-7 推进系统和氢基可重复使用架构。搭载 Blue Moon Mk1 的首次载人月球飞行尚未发射，首次着陆目前计划最早不早于 2026 年。货运 Mk1 可向月面运送约 3000 千克；载人 Mk2 衍生版本使 Blue Origin 获得了 NASA 在 2023 年颁发的 HLS 合同，成为 Artemis 时代第二款人类着陆器，与 SpaceX Starship HLS 并列。"
+ },
+ {
+  "rel": "fleet/lander/blue-moon-mk1.json",
+  "at": "best_known_for",
+  "en": "Blue Origin cargo lunar lander — BE-7 hydrogen propulsion, ~3 t to the surface, NASA CLPS",
+  "cur": "Blue Origin月球货运着陆器——BE-7氢推进系统、约3吨至月面、NASA CLPS"
+ },
+ {
+  "rel": "fleet/lander/change-3.json",
+  "at": "description",
+  "en": "China’s first lunar lander (December 2013), carrying the Yutu rover. Mare Imbrium touchdown — the first soft landing on the Moon since Luna 24 in 1976.",
+  "cur": "中国第一艘月球登陆舰(2013年12月),搭载玉兔漫游车。雨海触地——自1976年Luna 24以来首次在月球上软着陆。"
+ },
+ {
+  "rel": "fleet/lander/change-4.json",
+  "at": "description",
+  "en": "The first soft landing on the lunar far side (January 2019). Required a relay satellite (Queqiao) at Earth-Moon L2 to maintain communications. Yutu-2 has since roamed the Von Kármán crater terrain for years.",
+  "cur": "首次在月球远侧成功软着陆（2019年1月）。需要在地球-月球 L2点部署中继卫星鹊桥以维持通信。玉兔二号自登陆以来已在Von Kármán撞击坑地形上漫游多年。"
+ },
+ {
+  "rel": "fleet/lander/change-5.json",
+  "at": "description",
+  "en": "The first lunar sample return since Luna 24 in 1976. Returned 1.731 kg of basalt from a region 1.2 billion years younger than the Apollo and Luna samples — extending the timeline of recent lunar volcanism.",
+  "cur": "自1976年Luna 24任务以来首次月球样本返回。从一个比Apollo和Luna样本年轻12亿年的地区返回了1.731千克玄武岩——延伸了近期月球火山活动的时间线。"
+ },
+ {
+  "rel": "fleet/lander/change6.json",
+  "at": "tagline",
+  "en": "First-ever lunar far-side sample return. Apollo basin landing 2024-06-01 (UTC); 1935 g returned to Inner Mongolia 2024-06-25",
+  "cur": "首次月球背面采样返回。Apollo盆地着陆于2024-06-01（UTC）；1935克样品于2024-06-25返回内蒙古"
+ },
+ {
+  "rel": "fleet/lander/change6.json",
+  "at": "description",
+  "en": "The first-ever sample-return mission from the lunar far side — a 53-year-after-Apollo landmark that no other space agency has yet attempted. Launched 2024-05-03 on a Long March 5 from Wenchang, Chang'e 6 used the Queqiao-2 relay satellite (positioned in a halo orbit around Earth-Moon L2 since March 2024) to communicate with Earth across the lunar limb. The lander touched down in the Apollo basin within the giant South Pole-Aitken impact basin (-153.99° W, -41.64° S) on 2024-06-01 (UTC, 2024-06-02 Beijing time). Its drill + scoop collected ~1935 g of regolith from a region that has remained largely undisturbed since the basin-forming impact ~4.3 billion years ago — material from the lunar mantle excavated by SPA. The ascender lifted off 2024-06-03, rendezvoused with the orbiter in lunar orbit, and the return capsule landed in Siziwang Banner, Inner Mongolia, on 2024-06-25 14:07 local time. France, Italy, Sweden, and Pakistan contributed instruments — the first international science payloads on a Chinese sample-return mission.",
+  "cur": "月球背面首次采样返回任务——一个超越Apollo 53年的里程碑式壮举，尚无其他航天机构尝试过。于2024-05-03在文昌用长征五号火箭发射升空，嫦娥六号通过位于地球-月球 L2点晕轨道上（自2024年3月起）的鹊桥二号中继卫星与地球通信，绕过月球边缘的障碍。着陆器于2024-06-01（世界协调时）或2024-06-02（北京时间）降落在Apollo盆地内，该盆地位于巨大的南极-艾特肯撞击盆地内（西经153.99°，南纬41.64°）。其钻杆加铲斗采集了约1935克月壤样品，来自一个自盆地撞击形成以来约43亿年间基本保持未扰动状态的区域——系由SPA撞击所开挖的月幔物质。上升器于2024-06-03升空，与月球轨道上的轨道器对接，返回舱于2024-06-25 14:07（当地时间）在内蒙古四子王旗着陆。法国、意大利、瑞典和巴基斯坦提供了科学仪器——这是中国采样返回任务首次搭载国际科学载荷。"
+ },
+ {
+  "rel": "fleet/lander/change6.json",
+  "at": "best_known_for",
+  "en": "First-ever lunar far-side sample return. Apollo basin landing 2024-06-02; 1935 g returned to Inner Mongolia 2024-06-25",
+  "cur": "首次月球背面采样返回。Apollo盆地着陆于2024-06-02；1935克样品于2024-06-25返回内蒙古"
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "tagline",
+  "en": "First private Japanese lunar lander; M1 + M2 both crashed",
+  "cur": "日本第一台私人月球着陆器 M1 + M2 都坠毁"
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "description",
+  "en": "Hakuto-R program is a planetary lander built by ispace in Japan. First private Japanese lunar lander; M1 + M2 both crashed. Flew in 2023 but failed; informs the redemption-arc layer of the commercial era epoch.",
+  "cur": "Hakuto-R程序(日语:Hakuto-R程序)是日本ispace公司建造的一颗行星着陆器. 第一台日本私人月球着陆器;M1 + M2均坠毁. 2023年浮出水面但失败了;通知了商业时代时代的救赎-arc层."
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "best_known_for",
+  "en": "First private Japanese lunar lander; M1 + M2 both crashed",
+  "cur": "日本第一台私人月球着陆器 M1 + M2 都坠毁"
+ },
+ {
+  "rel": "fleet/lander/im-1-odysseus.json",
+  "at": "tagline",
+  "en": "First U.S. lunar landing since Apollo; sideways",
+  "cur": "Apollo任务以来美国首次月球着陆；侧身降落"
+ },
+ {
+  "rel": "fleet/lander/im-1-odysseus.json",
+  "at": "description",
+  "en": "The first US lunar landing since Apollo 17 in 1972. Touched down sideways near the lunar south pole on 2024-02-22 (the primary laser rangefinder had been left inactive — safety switch not armed pre-launch); operated briefly before sunset.",
+  "cur": "自1972年Apollo 17以来美国首次月球着陆。于2024-02-22在月球南极附近侧身着陆（主激光测距仪在发射前未启动——安全开关未装备）；在日落前短暂运行。"
+ },
+ {
+  "rel": "fleet/lander/im-1-odysseus.json",
+  "at": "best_known_for",
+  "en": "First U.S. lunar landing since Apollo; sideways",
+  "cur": "Apollo任务以来美国首次月球着陆；侧身降落"
+ },
+ {
+  "rel": "fleet/lander/insight.json",
+  "at": "description",
+  "en": "NASA’s 2018–2022 Mars seismometer mission. Detected over 1,300 marsquakes, mapped the planet’s internal structure for the first time, and confirmed the existence of a large molten core. Ended when dust accumulation on its solar panels finally starved its power.",
+  "cur": "NASA 2018 年至 2022 年的火星地震仪任务。探测到 1,300 多次火星地震，首次绘制出火星的内部构造图，并证实了一个大型熔融核心的存在。最终因太阳能电池板上的尘埃积累导致电力耗尽而结束任务。"
+ },
+ {
+  "rel": "fleet/lander/luna-16.json",
+  "at": "description",
+  "en": "Built by NPO Lavochkin, Luna 16 achieved the first fully robotic lunar sample return, bringing 101 g of soil back to Earth in September 1970.",
+  "cur": "由 NPO Lavochkin 制造的 Luna 16 实现了首次完全机器人月球采样返回，在 1970 年 9 月将 101 克土壤样本带回地球。"
+ },
+ {
+  "rel": "fleet/lander/luna-9.json",
+  "at": "description",
+  "en": "The first soft landing on another world. Touched down on Oceanus Procellarum in February 1966, returning the first photographs from the lunar surface — a panorama of the cratered landscape just centimeters from the lander’s eye.",
+  "cur": "第一次软着陆 在另一个世界。 1966年2月在风暴洋上触摸,还原了月球表面的第一批照片——从着陆者眼中仅厘米的陨坑地貌全景."
+ },
+ {
+  "rel": "fleet/lander/luna24.json",
+  "at": "tagline",
+  "en": "Last successful Soviet Moon mission — returned 170 g of Mare Crisium regolith 1976-08-22; last lunar sample return until Chang'e 5",
+  "cur": "苏联最后一次成功的月球任务——1976年8月22日带回了170克危海月壤；在嫦娥五号之前最后一次月球样本返回"
+ },
+ {
+  "rel": "fleet/lander/luna24.json",
+  "at": "description",
+  "en": "The last successful Soviet Moon mission and the last sample-return lunar lander until Chang'e 5 in 2020 — a 44-year gap. Launched 1976-08-09 from Baikonur on a Proton-K, Luna 24 soft-landed in Mare Crisium (12.7° N, 62.2° E) on 1976-08-18, drilled to a depth of 2.25 m using its rotary-percussive drill, retrieved a 1.6 m core sample, and lifted off the ascent stage which returned 170.1 g of lunar regolith to western Siberia (~200 km southeast of Surgut) on 1976-08-22. Soviet scientists at the Vernadsky Institute confirmed the presence of water (~0.1 % by mass) in the samples in a 1978 paper that was largely ignored in the West until LCROSS and Chandrayaan-1 (2008-09) re-confirmed lunar water.",
+  "cur": "最后一次成功的苏联月球任务，也是嫦娥五号在2020年之前最后一次样本返回月球着陆器——相隔44年。Luna 24于1976年8月9日从拜科努尔使用Proton-K运载火箭发射，于1976年8月18日在Crisium月海(12.7°N, 62.2°E)软着陆，使用其旋转-冲击钻进行钻探，钻深2.25 m，取得1.6 m的岩芯样本，然后上升段点火起飞，于1976年8月22日返回170.1克月壤到西伯利亚(Surgut东南方约200 km处)。苏联Vernadsky研究所的科学家在1978年的一篇论文中确认了样本中水的存在(质量百分数约0.1%)，该论文在西方长期被忽视，直到LCROSS和Chandrayaan-1(2008-09)重新确认了月球水。"
+ },
+ {
+  "rel": "fleet/lander/luna24.json",
+  "at": "best_known_for",
+  "en": "Last successful Soviet Moon mission — returned 170 g of Mare Crisium regolith 1976-08-22; last lunar sample return until Chang'e 5",
+  "cur": "苏联最后一次成功的月球任务——1976年8月22日返回了从Crisium月海采集的170克月壤;在嫦娥五号之前最后一次月球样本返回"
+ },
+ {
+  "rel": "fleet/lander/mars-2.json",
+  "at": "tagline",
+  "en": "First human-made object to reach Mars surface; lander crashed (1971)",
+  "cur": "首个到达火星表面的人造物体；着陆器坠毁（1971年）"
+ },
+ {
+  "rel": "fleet/lander/mars-2.json",
+  "at": "description",
+  "en": "The first human-made object to reach the Martian surface — by hard impact. The descent module crashed during the 1971 dust storm that obscured every other Mars probe in orbit at the time. Companion Mars 3 made the first soft landing two days later.",
+  "cur": "首个到达火星表面的人造物体——通过硬撞击。下降舱在1971年的沙尘暴中坠毁，当时这场风暴遮挡了轨道上所有其他火星探测器。它的伙伴Mars 3两天后实现了首次软着陆。"
+ },
+ {
+  "rel": "fleet/lander/mars-2.json",
+  "at": "best_known_for",
+  "en": "First human-made object to reach the Martian surface; lander crashed on impact (1971)",
+  "cur": "首个到达火星表面的人造物体；着陆器撞击时坠毁（1971年）"
+ },
+ {
+  "rel": "fleet/lander/mars-3.json",
+  "at": "description",
+  "en": "The first soft landing on Mars (December 1971). Began transmitting what would have been a surface image, but contact was lost after ~20 seconds leaving only a featureless grey frame. The global dust storm raging across the planet may have contributed to the early transmission loss.",
+  "cur": "火星首次软着陆（1971年12月）。开始传输本应成为地面图像的数据，但在约20秒后失去联系，仅留下一个无特征的灰色画面。当时肆虐全球的沙尘暴可能导致了早期传输中断。"
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "description",
+  "en": "Mars Polar Lander is a planetary lander built by Lockheed Martin in USA. Lost on landing; drove faster-better-cheaper review. Flew in 1999 but failed; informs the redemption-arc layer of the Shuttle and Mir epoch.",
+  "cur": "Mars Polar Lander是由美国Lockheed Martin公司建造的行星着陆器。在着陆时丧失；推动了更快更好更廉价的评审。在1999年飞行但失败；为航天飞机与Mir时代的救赎弧层提供了经验教训。"
+ },
+ {
+  "rel": "fleet/lander/mars6.json",
+  "at": "tagline",
+  "en": "Soviet 1973 Mars lander — first descent telemetry from Mars atmosphere (224 s, mostly corrupted)",
+  "cur": "苏联1973年火星着陆器——首次从火星大气中获得下降遥测数据（224秒，大部分受损）"
+ },
+ {
+  "rel": "fleet/lander/mars6.json",
+  "at": "description",
+  "en": "Part of the Soviet four-spacecraft Mars wave of 1973 (Mars 4, 5, 6, 7) — and the only one to return useful science from a descent through Mars' atmosphere. Launched 1973-08-05 from Baikonur on a Proton-K, arrived 1974-03-12. The descent module separated from the flyby bus, entered the Martian atmosphere over Margaritifer Terra (23.90° S, 19.42° W), and returned 224 seconds of direct atmospheric telemetry — the first in-situ measurements of Mars' atmospheric temperature, pressure, and composition profile. However, due to a design flaw in the mass spectrometer's data system, a large amount of the data was corrupted and only partially recoverable. Signal was lost just before landing, during retrorocket firing; whether the lander crashed or survived to the surface is unknown. The flyby bus continued past Mars and acted as a relay station.",
+  "cur": "作为苏联1973年四航天器火星波的一部分（Mars 4、5、6、7），也是唯一一个从穿过火星大气的下降过程中返回了有用科学数据的航天器。1973年8月5日从拜科努尔用Proton-K火箭发射升空，于1974年3月12日抵达。下降模块与飞掠总线分离，在珍珠湾高地（南纬23.90°、西经19.42°）上空进入火星大气，返回了224秒的直接大气遥测数据——这是火星大气温度、压力和成分剖面的首次原位测量。但是，由于质谱仪数据系统的设计缺陷，大量数据被破坏，只能部分恢复。信号在着陆前、变轨火箭点火期间中断；着陆器究竟是坠毁还是幸存于表面，仍属未知。飞掠总线继续飞过火星，充当中继站。"
+ },
+ {
+  "rel": "fleet/lander/mars6.json",
+  "at": "best_known_for",
+  "en": "Soviet 1973 Mars lander — first descent telemetry from Mars atmosphere (224 s, mostly corrupted)",
+  "cur": "苏联1973年火星着陆器——首次从火星大气中获得下降遥测数据（224秒，大部分受损）"
+ },
+ {
+  "rel": "fleet/lander/phoenix.json",
+  "at": "description",
+  "en": "Phoenix is a planetary lander built by Lockheed Martin in USA. Confirmed water ice in Martian soil. Retired after first flight in 2008.",
+  "cur": "Phoenix是美国Lockheed Martin建造的一颗行星着陆器。火星土壤中确认的水冰。2008年首飞后退役。"
+ },
+ {
+  "rel": "fleet/lander/schiaparelli.json",
+  "at": "tagline",
+  "en": "ExoMars precursor; lessons fed Rosalind Franklin",
+  "cur": "ExoMars先驱；经验教训被用于Rosalind Franklin着陆器"
+ },
+ {
+  "rel": "fleet/lander/schiaparelli.json",
+  "at": "description",
+  "en": "ESA’s 2016 ExoMars demonstrator that crashed during landing — the IMU saturated during parachute descent, causing the flight computer to believe it was below ground level; it released the parachute and fired the retrorockets for only 3 seconds instead of 30, then went silent and impacted at ~300 km/h from 3.7 km altitude. Lessons fed directly into the Rosalind Franklin lander design.",
+  "cur": "ESA 2016年ExoMars演示器，在着陆期间坠毁——惯性测量单元在降落伞下降期间饱和，导致飞行计算机误认为它已在地面以下；它释放了降落伞，仅点燃了3秒钟的逆火箭而非30秒，随后失联，最终从3.7公里高度以约300公里/小时的速度撞击地面。所汲取的经验教训直接被用于Rosalind Franklin着陆器的设计。"
+ },
+ {
+  "rel": "fleet/lander/schiaparelli.json",
+  "at": "best_known_for",
+  "en": "ExoMars precursor; lessons fed Rosalind Franklin",
+  "cur": "ExoMars先驱；经验教训被用于Rosalind Franklin着陆器"
+ },
+ {
+  "rel": "fleet/lander/slim.json",
+  "at": "description",
+  "en": "JAXA’s 2024 lunar lander. Touched down within 100 m of its target — pinpoint accuracy unprecedented for a lunar lander — but landed on its nose at roughly 90 degrees, with solar panels facing away from the Sun. Still operated and survived four lunar nights without radioisotope heating — a record for passively-heated lunar surface missions.",
+  "cur": "JAXA的2024年月球着陆器。在距离目标100米以内着陆——这是月球着陆器前所未有的精确度——但以约90度的角度鼻部先着陆，太阳能电池板背离太阳。仍可运作，并在没有放射性同位素加热的情况下经历了四个月夜——这是被动加热月面任务的记录。"
+ },
+ {
+  "rel": "fleet/lander/surveyor-3.json",
+  "at": "description",
+  "en": "Surveyor 3 is a planetary lander built by Hughes Aircraft in USA. Apollo 12 visited it 2.5 years later. Retired after first flight in 1967.",
+  "cur": "Surveyor 3是Hughes Aircraft在美国建造的一颗行星着陆器. Apollo 12在2.5年后访问了它. 1967年首飞后退役."
+ },
+ {
+  "rel": "fleet/lander/venera-13.json",
+  "at": "tagline",
+  "en": "First colour images of the Venusian surface — survived 127 minutes in 457 °C / 89-atm conditions",
+  "cur": "金星表面首批彩色图像——在 457 °C / 89 大气压条件下存活 127 分钟"
+ },
+ {
+  "rel": "fleet/lander/venera-13.json",
+  "at": "description",
+  "en": "Soviet Venus lander pair (with Venera 14). Launched 1981-10-30 on a Proton-K / D-1. Venus arrival 1982-03-01: the 1645 kg titanium descent capsule entered the atmosphere at 11.2 km/s, deployed a parachute through the upper haze, then jettisoned it at 47 km and free-fell through the lower atmosphere with a disc-brake for terminal descent. Surface touchdown at 7.5°S, 303°E (Phoebe Regio volcanic flank). First panoramic colour images of the Venusian surface; first X-ray fluorescence soil-composition analysis (basaltic, like terrestrial ocean floor); first acoustic recordings from another planet. Operated 127 minutes — far beyond the 32-minute design life — before silicon-electronic failure in the 457 °C / 89-atmosphere CO₂ environment.",
+  "cur": "苏联金星着陆器双星任务之一（与 Venera 14 配对）。1981-10-30 搭乘 Proton-K / D-1 火箭发射。1982-03-01 抵达金星：1645 千克钛制下降舱以 11.2 千米/秒速度进入大气，通过上层霾层部署降落伞，在 47 千米处分离伞体，尾部装有圆盘制动器自由下降穿过下层大气进行终端减速。表面着陆于 7.5°S, 303°E（福柏区火山斜坡）。拍摄金星表面首批全景彩色图像；首次进行 X 射线荧光土壤成分分析（玄武岩，类似地球洋壳）；首次记录来自另一颗行星的声学信号。在 457 °C / 89 大气压 CO₂ 环境中运行 127 分钟——远超 32 分钟的设计寿命——最终因硅电子器件故障而停止工作。"
+ },
+ {
+  "rel": "fleet/lander/venera-13.json",
+  "at": "best_known_for",
+  "en": "First colour images of Venus surface — 127-minute survival in 457 °C / 89-atm conditions",
+  "cur": "金星表面首批彩色图像——在 457 °C / 89 大气压条件下存活 127 分钟"
+ },
+ {
+  "rel": "fleet/lander/venera-7.json",
+  "at": "tagline",
+  "en": "First soft landing on another planet and first to transmit data from another planet's surface (Venus, 1970)",
+  "cur": "首次在另一颗行星上软着陆，首次从另一颗行星表面传输数据（金星，1970年）"
+ },
+ {
+  "rel": "fleet/lander/venera-7.json",
+  "at": "description",
+  "en": "Venera 7-class is a planetary lander built by NPO Lavochkin in USSR. First soft landing on another planet and first to transmit data from another planet's surface (Venus, 1970). Retired after first flight in 1970.",
+  "cur": "Venera 7-class是由苏联NPO Lavochkin公司研制的行星着陆器。首次在另一颗行星上软着陆，首次从另一颗行星表面传输数据（金星，1970年）。在1970年首次飞行后停用。"
+ },
+ {
+  "rel": "fleet/lander/venera-7.json",
+  "at": "best_known_for",
+  "en": "First soft landing on another planet and first to transmit data from another planet's surface (Venus, 1970)",
+  "cur": "首次在另一颗行星上软着陆，首次从另一颗行星表面传输数据（金星，1970年）"
+ },
+ {
+  "rel": "fleet/lander/viking-1.json",
+  "at": "dispatch",
+  "en": "Viking 1 solved the problem nothing had solved: how to land on Mars and live. The Soviet landers before it had died within about twenty seconds of touchdown, returning only a featureless grey frame; Viking had to descend through an atmosphere too thin to rely on and too thick to ignore, and it did it with a first-of-its-kind sequence — an aeroshell to survive entry, a parachute for the middle of the fall, and throttled rocket engines to set its three legs down softly at the end. It was two machines in one, an orbiter to survey and relay and a lander to work the ground, and it carried the first laboratory ever sent to test another planet’s soil for life. Every Mars landing since has flown some version of the descent Viking proved.",
+  "cur": "Viking 1 解决了一个未曾被解决的问题：如何着陆火星并继续工作。此前的苏联着陆器在接触地面约二十秒内就失败了，只留下一帧特征模糊的灰色画面；Viking 必须降落通过一个既太稀薄而无法依赖、又太浓密而无法忽视的大气层，而它用首创的一系列方式完成了这一任务——隔热罩以承受进入冲击，降落伞用于下降的中段，节流火箭发动机在最后柔和地将三条着陆腿放在地面。它是两台机器合一，一个绕行器用于勘测和中继，一个着陆器用于地面工作，它携带了有史以来第一个被送往另一个星球测试土壤生命迹象的实验室。此后每一次火星着陆都采用了 Viking 所证明的下降方式的某个版本。"
+ },
+ {
+  "rel": "fleet/lander/viking-1.json",
+  "at": "description",
+  "en": "The first successful Mars lander mission, on the surface from July 1976 through November 1982. Carried four biology experiments and returned high-resolution images of the Chryse Planitia plains. The Viking 1 / Viking 2 pair set the template for every Mars lander that followed.",
+  "cur": "首次成功的火星着陆任务，在火星表面工作时间从 1976 年 7 月至 1982 年 11 月。搭载四项生物学实验，并拍摄了克律塞平原的高分辨率图像。Viking 1 / Viking 2 任务组合为此后的每一个火星着陆器设定了模板。"
+ },
+ {
+  "rel": "fleet/lander/viking2-lander.json",
+  "at": "tagline",
+  "en": "Second US Mars surface lander (Utopia Planitia 1976-09-03). Twin of Viking 1 lander; ran biology, soil chemistry + meteorology until 1980",
+  "cur": "美国第二艘火星表面着陆器（乌托邦平原 1976-09-03）。Viking 1 着陆器的孪生姐妹；进行了生物学、土壤化学和气象学研究，一直工作到 1980 年"
+ },
+ {
+  "rel": "fleet/lander/viking2-lander.json",
+  "at": "description",
+  "en": "The surface half of NASA's Viking 2 mission and the second successful US Mars lander, 47 days after Viking 1. Launched 1975-09-09 on a Titan IIIE-Centaur, touched down at Utopia Planitia (47.97° N, 134.04° E) on 1976-09-03 — much further north than Viking 1, in a different plains type to broaden the science return. Ran the same instrument suite as Viking 1: a biology package (Pyrolytic Release / Labeled Release / Gas Exchange experiments looking for microbial metabolism — the famously ambiguous Labeled Release positive that remains debated), GC-MS for soil organics (none detected), facsimile cameras returning > 1,400 images, X-ray fluorescence soil chemistry, meteorology, and seismometer (one of two ever flown on Mars — unable to detect quakes through cabin noise). Operated until 1980-04-11 when batteries failed.",
+  "cur": "NASA Viking 2 号任务的地表部分，也是继Viking 1 号47天后第二台成功登陆火星的美国着陆器。1975年9月9日由Titan IIIE-Centaur火箭发射，1976年9月3日在乌托邦平原(北纬47.97°，东经134.04°)着陆 — 比Viking 1号靠北得多，在不同类型的平原以拓宽科学收获。携带与Viking 1号相同的仪器组：生物学装置(Pyrolytic Release/Labeled Release/Gas Exchange实验 — Labeled Release著名的模糊阳性结果至今仍有争议)、用于土壤有机物的GC-MS(未检出)、传回超过1,400张图像的传真相机、X射线荧光土壤化学、气象学和地震仪。运行至1980年4月11日。"
+ },
+ {
+  "rel": "fleet/lander/viking2-lander.json",
+  "at": "best_known_for",
+  "en": "Second US Mars surface lander (Utopia Planitia 1976-09-03). Twin of Viking 1 lander; ran biology, soil chemistry + meteorology until 1980",
+  "cur": "美国第二艘火星表面着陆器（乌托邦平原 1976-09-03）。Viking 1 着陆器的孪生姐妹；进行了生物学、土壤化学和气象学研究，一直工作到 1980 年"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "name",
+  "en": "Vikram (Chandrayaan-2)",
+  "cur": "Vikram (Chandrayaan-2)"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "tagline",
+  "en": "Chandrayaan-2 lander; crashed; orbiter lives on",
+  "cur": "Chandrayaan-2号着陆器;坠毁;轨道飞行器在"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "description",
+  "en": "Vikram (Chandrayaan-2) is a planetary lander built by ISRO in India. Chandrayaan-2 lander; crashed; orbiter lives on. Flew in 2019 but failed; informs the redemption-arc layer of the commercial era epoch.",
+  "cur": "Vikram (Chandrayaan-2)是ISRO在印度建造的一颗行星着陆器。Chandrayaan-2着陆器;坠毁;轨道飞行器继续运行。2019年Flew但失败;通知了商业时代时代的救赎-arc层。"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "best_known_for",
+  "en": "Chandrayaan-2 lander; crashed; orbiter lives on",
+  "cur": "Chandrayaan-2号着陆器;坠毁;轨道飞行器在"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy3.json",
+  "at": "name",
+  "en": "Vikram (Chandrayaan-3)",
+  "cur": "Vikram (Chandrayaan-3)"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy3.json",
+  "at": "description",
+  "en": "India’s first successful lunar lander (August 2023), the first spacecraft to land near the lunar south pole. Two years after Vikram CY-2 crashed in the same region — the redemption arc India and ISRO needed.",
+  "cur": "印度首次成功登月着陆器（2023年8月），首个在月球南极附近着陆的航天器。在Vikram CY-2在同一地区坠毁两年后——这是印度和ISRO所需的救赎时刻。"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-1-5.json",
+  "at": "name",
+  "en": "Baikonur Site 1/5 (Gagarin's Start)",
+  "cur": "拜科努尔 1/5号发射场（加加林发射台）"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-1-5.json",
+  "at": "tagline",
+  "en": "Sputnik 1 (1957). Vostok 1 — Gagarin (1961). Five hundred and forty Soyuz launches from a single pad.",
+  "cur": "Sputnik 1（1957年）。Vostok 1——加加林（1961年）。从单一发射台发射了五百四十枚Soyuz火箭。"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-1-5.json",
+  "at": "description",
+  "en": "The single most historically significant orbital launch pad in the world. R-7 ICBM test stand from 1957; immediately repurposed for Sputnik 1 on October 4, 1957 — the start of the Space Age. Yuri Gagarin lifted from here on April 12, 1961. Every Vostok crew, every Voskhod, the bulk of all Soyuz manifests through to MS-15 in September 2019. Five hundred and forty launches from one pad over sixty-two years. Preserved as a museum monument; the 2019-era refurbishment plan was abandoned when the site was transferred to Kazakhstan in 2025.",
+  "cur": "世界上历史意义最重大的地球轨道发射台。R-7洲际弹道导弹试验台；在1957年10月4日立即被改用于Sputnik 1——太空时代的开始。尤里·加加林于1961年4月12日从这里升空。每一次Vostok载人飞行、每一次Voskhod载人飞行，以及迄至2019年9月MS-15的大部分Soyuz任务，都从这个发射台发射。六十二年来从一个发射台共发射了五百四十枚火箭。被保护为博物馆纪念地；当该基地在2025年移交给哈萨克斯坦时，2019年代的翻新计划被搁置。"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-1-5.json",
+  "at": "best_known_for",
+  "en": "Sputnik 1 (1957). Vostok 1 — Gagarin (1961). Five hundred and forty Soyuz launches from a single pad.",
+  "cur": "Sputnik 1（1957年）。Vostok 1——加加林（1961年）。从单一发射台发射了五百四十枚Soyuz火箭。"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-200.json",
+  "at": "tagline",
+  "en": "Proton-M heavy-lift pad — Mir modules, ISS Zvezda/Zarya, GLONASS, Luna 25",
+  "cur": "Proton-M重型运载火箭发射台——Mir模块、国际空间站 Zvezda/Zarya、GLONASS、Luna 25"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-200.json",
+  "at": "description",
+  "en": "Baikonur Site 200 hosts pads PU-1 (LC200/39) and PU-2 (LC200/40) for the Proton-K and Proton-M heavy-lift rockets. From here Roscosmos has launched almost every Mir module, the ISS modules Zarya and Zvezda, GEO communications satellites, GLONASS navigation constellation, and Luna 25 (2023). Site 200 remains active alongside Site 81 for Proton's final operational years.",
+  "cur": "拜科努尔 200号发射场拥有用于Proton-K和Proton-M重型火箭的发射台PU-1（LC200/39）和PU-2（LC200/40）。Roscosmos从该发射场发射了几乎所有的Mir舱段、国际空间站的Zarya和Zvezda舱、地球同步轨道通信卫星、GLONASS导航星座，以及Luna 25（2023年）。拜科努尔 200号发射场与Site 81并行运作，以应对Proton火箭的最后运营年份。"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-31-6.json",
+  "at": "tagline",
+  "en": "Active Soyuz crewed pad — every ISS Soyuz crew rotation since 2020 has lifted from Site 31",
+  "cur": "现役 Soyuz 载人发射台——自2020年起每一次飞往国际空间站的 Soyuz 乘员轮换均由31号工位升空"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-31-6.json",
+  "at": "description",
+  "en": "The other half of the Baikonur Soyuz operation. Originally an R-7 ICBM pad from 1961; modernised for Soyuz-2.1a in 2014. When Site 1/5 went down for refurbishment in 2019, Site 31 picked up the entire Soyuz crew programme — every Soyuz MS rotation to the ISS since MS-16 in April 2020 has lifted from here. Continuous human spaceflight cadence: roughly two crews per year, with no interruption.",
+  "cur": "拜科努尔航天基地载人航天飞行作业的另一半。原为1961年建造的 R-7 洲际弹道导弹发射台；2014年为 Soyuz-2.1a 进行了现代化改造。2019年1号场地停用进行翻新期间，31号场地承担了整个 Soyuz 载人飞行计划——自2020年4月 MS-16 任务以来，每一次 Soyuz MS 任务前往国际空间站的发射都从这里进行。持续的载人航天飞行节奏：大约每年两个乘组，无任何间断。"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-31-6.json",
+  "at": "best_known_for",
+  "en": "Active Soyuz crewed pad — every ISS Soyuz crew rotation since 2020 has lifted from Site 31",
+  "cur": "活跃的 Soyuz 载人发射台——自2020年以来，前往国际空间站的每一次 Soyuz 乘组轮换任务都从31号场地升空"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-lc-36b.json",
+  "at": "tagline",
+  "en": "USAF Atlas-Centaur pad — Mariner 10, Pioneer 11 (1973), Pioneer Venus (1978); now Blue Origin New Glenn (leased 2015, flew 2025)",
+  "cur": "美国空军Atlas-Centaur发射台——Mariner 10、Pioneer 11（1973年）、Pioneer 金星号（1978年）；现为Blue Origin New Glenn（2015年租赁，2025年首飞）"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-lc-36b.json",
+  "at": "description",
+  "en": "Cape Canaveral Launch Complex 36B was the second of two Atlas-Centaur pads at Cape Canaveral (alongside LC-36A, built first). LC-36B first flew 1965-08-11 with Atlas-Centaur AC-6 and became the workhorse pad for the high-energy Atlas-Centaur stack — flying Mariner 10 (1973-11-03, first Mercury flyby), Pioneer 11 (1973-04-06, first Saturn flyby), Pioneer Venus 1 + 2 (1978), and many Intelsat / Inmarsat / Hot Bird commercial GEO comsats through the 1990s and early 2000s. Final flight 2005-02-03 — Atlas IIIB AC-208 — the last Atlas IIIB launch and last LC-36B flight under USAF auspices. The complex was leased to Blue Origin in 2015 and demolished + rebuilt as the Blue Origin New Glenn pad (LC-36 unified), with first New Glenn flight 2025-01-16. The original LC-36B mobile service tower was felled 2007-06-16.",
+  "cur": "卡纳维拉尔角发射设施36B是卡纳维拉尔角两个Atlas-Centaur发射台中的第二个（与LC-36A相邻，LC-36A先建成）。LC-36B于1965年8月11日首次发射Atlas-Centaur AC-6，成为高能量Atlas-Centaur组合火箭的主力发射台——发射过Mariner 10（1973年11月3日，首次水星飞掠）、Pioneer 11（1973年4月6日，首次土星飞掠）、Pioneer 金星 1和2（1978年），以及许多Intelsat、Inmarsat和Hot Bird商业地球同步轨道通信卫星，贯穿整个1990年代和2000年代初期。最后一次发射于2005年2月3日——Atlas IIIB AC-208——这是最后一次Atlas IIIB发射，也是美国空军指挥下最后一次LC-36B发射。该设施于2015年被租赁给Blue Origin，随后被拆除并重建为Blue Origin New Glenn发射台（LC-36统一）。首次New Glenn发射于2025年1月16日。原LC-36B移动服务塔于2007年6月16日被拆除。"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-lc-36b.json",
+  "at": "best_known_for",
+  "en": "USAF Atlas-Centaur pad — Mariner 10 + Pioneer 11 (1973), Pioneer Venus (1978), Intelsat — now Blue Origin New Glenn (since 2015)",
+  "cur": "美国空军Atlas-Centaur发射台——Mariner 10和Pioneer 11（1973年）、Pioneer 金星号（1978年）、Intelsat——现为Blue Origin New Glenn（2015年起）"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+  "at": "tagline",
+  "en": "Highest-cadence Falcon 9 pad on the planet — workhorse for ISS resupply + Starlink + national-security",
+  "cur": "全球节奏最快的Falcon 9发射台——国际空间站补给、Starlink与国家安全任务的主力"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+  "at": "description",
+  "en": "Originally a Titan III / Titan IV pad from 1965 through 2005, refit by SpaceX in 2008 for Falcon 9. Today SLC-40 is the highest-cadence orbital pad ever operated, flying Starlink batches, commercial sats, ISS resupply via Cargo Dragon, and US national-security payloads. Rebuilt after the AMOS-6 explosion in September 2016 with an upgraded propellant system; the pad still does most of the SpaceX manifest the world sees.",
+  "cur": "原为1965年至2005年的Titan III/Titan IV发射台，2008年由SpaceX改造为Falcon 9专用。如今SLC-40是历史上发射节奏最高的轨道发射台，承担Starlink批次、商业卫星、Cargo Dragon 国际空间站补给和美国国家安全载荷。2016年9月AMOS-6爆炸事件后重建，配备升级的推进剂系统；该发射台至今仍承担世界所见SpaceX发射清单的大部分。"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+  "at": "best_known_for",
+  "en": "Highest-cadence Falcon 9 pad on the planet — workhorse for ISS resupply + Starlink + national-security",
+  "cur": "全球节奏最快的Falcon 9发射台——国际空间站补给、Starlink与国家安全任务的主力"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-41.json",
+  "at": "tagline",
+  "en": "Atlas V's main pad — flew every Atlas V mission including Mars Perseverance + Lucy + Starliner CFT",
+  "cur": "Atlas V 的主发射台——执行过每一次 Atlas V 任务，包括火星 Perseverance、Lucy 及 Starliner CFT"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-41.json",
+  "at": "description",
+  "en": "United Launch Alliance's primary Atlas V pad at Cape Canaveral, originally built for Titan III in the 1960s, entirely demolished in 1999 and rebuilt as the Atlas V pad; first Atlas V flight 2002-08-21. Every Atlas V flight has launched from here — Mars Reconnaissance Orbiter, Curiosity, Perseverance, Lucy, Juno, the Boeing Starliner Crew Flight Test, and dozens of NSSL national-security missions. Also hosts Vulcan Centaur, which began flying from SLC-41 in January 2024.",
+  "cur": "联合发射联盟在卡纳维拉尔角的主要 Atlas V 发射台，最初在 1960 年代为 Titan III 而建造，1999 年完全拆除并重建为 Atlas V 发射台；首次 Atlas V 飞行于 2002-08-21。每一次 Atlas V 飞行都从这里发射——火星勘测轨道卫星、Curiosity、Perseverance、Lucy、Juno、Boeing Starliner Crew Flight Test，以及数十项 NSSL 国家安全任务。同时也支持 Vulcan Centaur，该火箭自 2024 年 1 月开始从 SLC-41 执行任务。"
+ },
+ {
+  "rel": "fleet/launch-site/gagarins-start.json",
+  "at": "tagline",
+  "en": "Baikonur Site 1 — Sputnik 1 (1957-10-04), Gagarin's Vostok 1 (1961-04-12), every crewed Soyuz through MS-15 (2019). Retired 2019",
+  "cur": "拜科努尔 1号发射场 — Sputnik 1（1957-10-04）、加加林的Vostok 1（1961-04-12）、每一艘有人Soyuz飞船直至MS-15（2019）。已停用2019"
+ },
+ {
+  "rel": "fleet/launch-site/gagarins-start.json",
+  "at": "dispatch",
+  "en": "Launch Complex 1 at Baikonur is, by a wide margin, the most consequential patch of ground in the history of spaceflight. From this single pad the Soviet Union launched Sputnik in 1957, opening the space age; Gagarin in 1961, opening it to human beings; and then, for the next sixty years, nearly every crewed flight the program flew, right up to the Soyuz crews of 2019. Cosmonauts nicknamed it Gagarin's Start. It was a working R-7 missile stand pressed into history, and for six decades the phrase \"a crew launched today\" almost always meant they launched from here.",
+  "cur": "拜科努尔的1号发射场是太空飞行历史上最重要的一块地方，毫无疑问。正是从这个单一的发射台，苏联在1957年发射了Sputnik，开启了太空时代；1961年发射了加加林，向人类开放了太空；随后的六十年里，几乎发射了该计划进行的每一次载人飞行，直至2019年的Soyuz航天员队伍。航天员们昵称它\"加加林的开始\"。它是一个被历史改造的R-7导弹发射台，六十年来，\"一支队伍今天发射\"这句话几乎总是意味着他们从这里出发。"
+ },
+ {
+  "rel": "fleet/launch-site/gagarins-start.json",
+  "at": "description",
+  "en": "Baikonur Cosmodrome Site 1 (designation 5 in Soviet docs; nicknamed \"Gagarin's Start\" after Vostok 1) was the original R-7 ICBM launch pad and the most-flown crewed launch site in history. First launch 1957-05-15 (R-7 test); Sputnik 1 (1957-10-04 — first artificial satellite); Vostok 1 (1961-04-12 — first crewed spaceflight); every crewed Soyuz from Soyuz 1 (1967) through Soyuz MS-15 (2019) launched from Site 1. After 2019 the pad was decommissioned for an upgrade to support Soyuz-2 (the Vostok-derived Soyuz-FG was retired); subsequent ISS crews (from Soyuz MS-16 onward in April 2020) launched from Baikonur Site 31 instead. Site 1 is preserved as a historical monument. Visited by every Russian crew during pre-flight ceremonies.",
+  "cur": "拜科努尔航天发射场1号场区（苏联文件中的代号5；因Vostok 1而昵称\"加加林的开始\"）是最初的R-7洲际弹道导弹发射台，也是历史上使用最频繁的载人发射场。首次发射于1957-05-15（R-7测试）；Sputnik 1（1957-10-04——首颗人造卫星）；Vostok 1（1961-04-12——首次载人航天飞行）；从Soyuz 1（1967年）到Soyuz MS-15（2019年）的每一次载人Soyuz发射都从1号场区起飞。2019年后，该发射台因升级以支持Soyuz-2而停用（衍生自Vostok的Soyuz-FG已退役）；随后的国际空间站航天员队伍（从2020年4月的Soyuz MS-16开始）改为从拜科努尔航天发射场31号场区起飞。1号场区作为历史纪念碑被保留。每支俄罗斯航天员队都在飞行前仪式中对其进行过访问。"
+ },
+ {
+  "rel": "fleet/launch-site/gagarins-start.json",
+  "at": "best_known_for",
+  "en": "Baikonur Site 1 — Sputnik 1 (1957-10-04), Gagarin's Vostok 1 (1961-04-12), every crewed Soyuz through MS-15 (2019). Retired 2019",
+  "cur": "拜科努尔 1号发射场 — Sputnik 1（1957-10-04）、加加林的Vostok 1（1961-04-12）、每一艘有人Soyuz飞船直至MS-15（2019）。已停用2019"
+ },
+ {
+  "rel": "fleet/launch-site/jiuquan-slc-43.json",
+  "at": "description",
+  "en": "The first Chinese space launch site (1958), operational orbital launches since 1970, and from 1999 onward the dedicated home of human spaceflight: every Shenzhou crew (1 through 19 as of 2025) has lifted from SLC-43 Pad 91 on Long March 2F rockets. Jiuquan is inland in the Gobi desert at 40.96°N — too far north for the equatorial geometry that Wenchang handles. Tianzhou cargo missions to Tiangong fly from Wenchang Space Launch Site instead.",
+  "cur": "中国首个航天发射场（1958年），自1970年起进行轨道发射，从1999年起成为载人航天专用基地：所有神舟载人飞船（截至2025年第1至19批）都从SLC-43 Pad 91发射台搭乘长征二号F火箭升空。酒泉位于戈壁沙漠内陆，地理位置为40.96°N——纬度过高，不适合文昌航天发射场所执行的赤道附近发射任务。天舟货运飞船往来天宫空间站的任务改由文昌航天发射场执行。"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-2.json",
+  "at": "tagline",
+  "en": "Early Ariane pad — 1 Ariane 2, 2 Ariane 3, 116 Ariane 4 (1986-2003)",
+  "cur": "早期发射台——1枚 Ariane 2，2枚 Ariane 3，116枚 Ariane 4（1986-2003）"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-2.json",
+  "at": "description",
+  "en": "ELA-2 (Ensemble de Lancement Ariane 2) at Kourou's Centre Spatial Guyanais hosted 119 Ariane launches: one Ariane 2 (1986-03-28), two Ariane 3, and all 116 launches of the Ariane 4 rocket (1988-2003). Its near-equatorial position gave Ariane 4 a substantial GTO performance advantage over launch sites at higher latitudes, anchoring Arianespace's commercial dominance in the 1990s. Decommissioned after Ariane 4 retired; ELA-3 (Ariane 5) and ELA-4 (Ariane 6) are its successors.",
+  "cur": "ELA-2（Ensemble de Lancement Ariane 2）位于库鲁Centre Spatial Guyanais，共承载119次Ariane火箭发射：一次Ariane 2（1986-03-28）、两次Ariane 3以及全部116次Ariane 4火箭发射（1988-2003）。其近赤道位置使Ariane 4相比位于高纬度的发射场具有显著的地球同步转移轨道性能优势，这巩固了Arianespace在20世纪90年代的商业统治地位。在Ariane 4退役后停用；ELA-3（Ariane 5）和ELA-4（Ariane 6）是其继任者。"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-3.json",
+  "at": "tagline",
+  "en": "Ariane 5's home pad — JWST + Galileo + a quarter of geostationary commercial sats over a decade",
+  "cur": "Ariane 5 的主发射台——在十年间发射了 JWST、Galileo 及四分之一的地球同步商业卫星"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-3.json",
+  "at": "description",
+  "en": "Europe chose French Guiana in the 1960s because 5.2°N is just five degrees off the equator — the geometry adds about 460 m/s of free eastward velocity for geostationary launches, and the Atlantic to the east is empty. ELA-3 hosted Ariane 5 from its maiden flight in June 1996 — which failed 37 seconds after launch due to a software error — through the successful final mission in July 2023: James Webb, the Galileo navigation system, BepiColombo, Rosetta, Herschel + Planck, JUICE, and the bulk of Western commercial GEO traffic for two decades. ELA-4 next door is now active with Ariane 6.",
+  "cur": "欧洲在20世纪60年代选择了法属圭亚那，因为其5.2°N的纬度距赤道仅五度——这种几何位置为地球静止轨道发射增添了约460 m/s的免费东向速度，而东面的大西洋完全空旷。ELA-3从Ariane 5于1996年6月的首次飞行——该飞行因软件错误在发射后37秒失败——一直运营到2023年7月的成功末次任务：James Webb、Galileo导航系统、BepiColombo、Rosetta、Herschel + Planck、JUICE，以及二十年间绝大部分西方商业GEO卫星。隔壁的ELA-4现已启用Ariane 6。"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-3.json",
+  "at": "best_known_for",
+  "en": "Ariane 5's home pad — JWST + Galileo + a quarter of geostationary commercial sats over a decade",
+  "cur": "Ariane 5 的主发射台——在十年间发射了 JWST、Galileo 及四分之一的地球同步商业卫星"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-4.json",
+  "at": "tagline",
+  "en": "Ariane 6's home pad — Europe's geostationary access after Ariane 5",
+  "cur": "Ariane 6的母港发射台——继Ariane 5之后欧洲的地球同步轨道入口"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-4.json",
+  "at": "description",
+  "en": "The sister pad to ELA-3 at the Centre Spatial Guyanais. Construction started in 2015; Ariane 6's maiden flight VA262 lifted from here on July 9, 2024. ELA-4 inherits the same 5.2°N equatorial advantage that made Ariane 5 the most successful Western geostationary launcher of its era, with a redesigned ground-segment for higher cadence: horizontal-integration assembly building, sliding mobile gantry, full integration of the new ESC-B upper stage. Europe's strategic-autonomy launcher for institutional payloads (Galileo upgrade, Copernicus, ESA science missions) plus commercial GEO traffic.",
+  "cur": "圭亚那航天中心ELA-3的姐妹发射台。2015年开工建设；Ariane 6首飞VA262于2024年7月9日从此地升空。ELA-4继承了使Ariane 5成为同时代最成功西方地球同步轨道运载器的同等北纬5.2°赤道优势，地面段为更高发射节奏而重新设计：水平集成厂房、可滑动移动塔架、新型ESC-B上面级的完整集成。承担欧洲战略自主的运载器，服务于机构性载荷（Galileo升级、Copernicus、ESA科学任务）以及商业地球同步轨道运输。"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-4.json",
+  "at": "best_known_for",
+  "en": "Ariane 6's home pad — Europe's geostationary access after Ariane 5",
+  "cur": "Ariane 6的母港发射台——继Ariane 5之后欧洲的地球同步轨道入口"
+ },
+ {
+  "rel": "fleet/launch-site/lc-14.json",
+  "at": "tagline",
+  "en": "Cape Canaveral Mercury-Atlas pad — launched all 4 orbital Mercury flights (Glenn / Carpenter / Schirra / Cooper, 1962-1963)",
+  "cur": "卡纳维拉尔角Mercury-Atlas发射台——发射了全部4次水星轨道飞行任务（格伦 / 卡彭特 / 施艾拉 / 库勃，1962-1963年）"
+ },
+ {
+  "rel": "fleet/launch-site/lc-14.json",
+  "at": "dispatch",
+  "en": "If Complex 5 is where Americans first touched space, Complex 14 is where they first stayed. This was the Atlas pad, and all four orbital Mercury flights left from it — Glenn, Carpenter, Schirra, Cooper — the flights that put an American in orbit rather than on an arc. It later launched the Gemini-Atlas target vehicles that taught crews to rendezvous, so the same patch of ground bridges the first orbits and the docking skills Apollo would need. Where 5 holds the starting line, 14 holds the moment the United States became a genuinely orbital nation.",
+  "cur": "如果说Complex 5是美国人首次触及太空的地方，那么Complex 14就是他们首次停留的地方。这是Atlas发射台，所有四次轨道水星飞行都从这里发射——格伦、卡彭特、施艾拉、库勃——这些飞行将美国人送入轨道而非弧形轨迹。之后它发射了Gemini-Atlas目标飞行器，这些飞行器教会了宇航员进行对接，因此同一块地面见证了首次轨道飞行和Apollo所需的对接技能。Complex 5是起跑线，Complex 14是美国成为真正轨道国家的时刻。"
+ },
+ {
+  "rel": "fleet/launch-site/lc-14.json",
+  "at": "description",
+  "en": "Cape Canaveral Launch Complex 14 hosted Atlas missile tests then the four orbital Mercury-Atlas crewed missions: Friendship 7 (1962-02-20, Glenn — first American in orbit), Aurora 7 (1962-05-24, Carpenter), Sigma 7 (1962-10-03, Schirra), and Faith 7 (1963-05-15, Cooper). After Mercury, LC-14 hosted four Atlas-Agena uncrewed missions before being deactivated in 1967. A steel Mercury 7 monument was dedicated on November 10, 1964 at the pad. The launch ring + service tower base remain visible.",
+  "cur": "卡纳维拉尔角航天发射复合体14号曾用于Atlas导弹测试，随后承载了四次载人Mercury-Atlas轨道飞行任务：Friendship 7（1962年2月20日，格伦——美国第一位进入轨道的航天员）、Aurora 7（1962年5月24日，卡彭特）、Sigma 7（1962年10月3日，施艾拉）和Faith 7（1963年5月15日，库勃）。水星计划之后，LC-14承载了四次无人的Atlas-Agena任务，然后在1967年停用。1964年11月10日，一座钢制的Mercury 7纪念碑在发射台落成。发射环和服务塔底座仍然可见。"
+ },
+ {
+  "rel": "fleet/launch-site/lc-14.json",
+  "at": "best_known_for",
+  "en": "Cape Canaveral Mercury-Atlas pad — launched all 4 orbital Mercury flights (Glenn / Carpenter / Schirra / Cooper, 1962-1963)",
+  "cur": "卡纳维拉尔角Mercury-Atlas发射台——发射了全部4次水星轨道飞行任务（格伦 / 卡彭特 / 施艾拉 / 库勃，1962-1963年）"
+ },
+ {
+  "rel": "fleet/launch-site/lc-34.json",
+  "at": "tagline",
+  "en": "NASA pad at Cape Canaveral (1961-68) — first Saturn I; Apollo 1 fire site 1967-01-27; Apollo 7 first crewed launch 1968-10-11",
+  "cur": "NASA 卡纳维拉尔角发射台（1961-68年）— 首枚土星一号火箭；Apollo 1火灾现场1967-01-27；Apollo 7首次载人发射1968-10-11"
+ },
+ {
+  "rel": "fleet/launch-site/lc-34.json",
+  "at": "dispatch",
+  "en": "Launch Complex 34 is where the Saturn era began — and where it almost ended. The first Saturn rocket lifted off from this single-towered pad in 1961, proving von Braun's outsized boosters could fly at all. It is also the place where, on 27 January 1967, the Apollo 1 fire killed Gus Grissom, Ed White, and Roger Chaffee during a ground test — the program's darkest day, on the pad, before anything had left the ground. And it is where Apollo came back twenty-one months later: Apollo 7, the first crewed flight, launched from LC-34 and proved the redesigned spacecraft was sound. One small pad held the whole arc — the beginning, the catastrophe, and the recovery. A memorial stands there now.",
+  "cur": "Launch Complex 34 是Saturn时代的起点——也几乎是它的终点。第一枚Saturn火箭于 1961 年从这个单塔台架升空，证明了冯·布劳恩的超大推进器确实能够飞行。这里也是 1967 年 1 月 27 日发生 Apollo 1 火灾的地方，那场灾难在地面测试中夺去了格斯·格里森、埃德·怀特和罗杰·查菲的生命——这是该项目最黑暗的日子，发生在发射台上，在任何东西升空之前。而且这里也是阿波罗回归的地方，时隔二十一个月：Apollo 7 是首次载人飞行，从 LC-34 发射升空，证明了重新设计的航天器是可靠的。一个小小的发射台见证了整个弧线——开始、灾难和恢复。现在那里矗立着一座纪念碑。"
+ },
+ {
+  "rel": "fleet/launch-site/lc-34.json",
+  "at": "description",
+  "en": "Cape Canaveral Launch Complex 34 served NASA from 1961-10-27 (first Saturn I, SA-1) through 1968-10-11 (Apollo 7, the first crewed Apollo flight). LC-34's single steel umbilical tower hosted four uncrewed Saturn I flights (SA-1 through SA-4, 1961-1963), was then reconstructed for Saturn IB, and flew two uncrewed Saturn IB flights (AS-201 in 1966, AS-202 in 1966) before the Apollo 1 test. On 1967-01-27 during a Plugs-Out test of Apollo 1 — the planned first crewed Block I CSM flight — a flash fire in the pure-O₂ cabin killed Gus Grissom, Ed White, and Roger Chaffee in seconds. The pad was rebuilt for Apollo 7 (1968-10-11) which launched the first crewed Apollo flight, then deactivated 1968-11. The pad's concrete deluge ring + main flame trench still stand; a memorial plaque on site reads \"They gave their lives in service to their country in the ongoing exploration of humankind's final frontier.\"",
+  "cur": "卡纳维拉尔角 Launch Complex 34 为 NASA 服役于 1961 年 10 月 27 日（首枚 Saturn I，SA-1）至 1968 年 10 月 11 日（Apollo 7，首次载人 Apollo 飞行）。LC-34 的单根钢制脐带塔承载了四次无人 Saturn I 飞行（SA-1 至 SA-4，1961-1963），随后进行了改建以适应 Saturn IB，并在 Apollo 1 测试前完成了两次无人 Saturn IB 飞行（1966 年的 AS-201 和 1966 年的 AS-202）。1967 年 1 月 27 日，在 Apollo 1 的 Plugs-Out 测试中——该计划是首次载人 Block I CSM 飞行——纯氧舱内的闪火在数秒内夺去了格斯·格里森、埃德·怀特和罗杰·查菲的生命。发射台为 Apollo 7（1968 年 10 月 11 日）进行了重建，该飞行器发射了首次载人 Apollo 飞行，随后于 1968 年 11 月停用。该台的混凝土泛水环和主要火焰沟至今仍然存在；现场的纪念牌上刻有\"他们为国效力，献身于人类最终疆域的持续探索。\""
+ },
+ {
+  "rel": "fleet/launch-site/lc-34.json",
+  "at": "best_known_for",
+  "en": "NASA pad at Cape Canaveral (1961-68) — first Saturn I; Apollo 1 fire site 1967-01-27; Apollo 7 first crewed launch 1968-10-11",
+  "cur": "NASA 卡纳维拉尔角发射台（1961-68年）— 首枚土星一号火箭；Apollo 1火灾现场1967-01-27；Apollo 7首次载人发射1968-10-11"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "tagline",
+  "en": "Launched Apollo 8, 9, 11-17 (all crewed lunar missions to the Moon); today flies Falcon 9, Falcon Heavy, and Crew Dragon",
+  "cur": "发射了Apollo 8、9、11-17号（所有载人月球任务）；今天执飞Falcon 9、Falcon Heavy和Crew Dragon"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "dispatch",
+  "en": "Launch Complex 39A was built around an idea nearly as radical as the rocket it served: don't build the rocket at the pad. Instead, stack the Saturn V inside the cavernous Vehicle Assembly Building, then carry the whole ~3,000-tonne stack out to the pad — standing upright — on a crawler-transporter creeping along at walking pace. That \"clean pad\" approach let one site turn around the largest rocket ever flown far faster than assembling it in place ever could. The design outlived Apollo by half a century: the same pad launched most of the Space Shuttle fleet and, leased to SpaceX in 2014, now flies Falcon Heavy and astronauts on Crew Dragon. Good infrastructure, it turns out, is the quietest kind of moonshot — build it once and it keeps paying off.",
+  "cur": "39A号发射台围绕一个几乎与它所服务的火箭一样激进的理念而建：不要在发射台上组装火箭。相反，在巨大的Vehicle Assembly Building内组装Saturn V，然后通过履带运输车以步行速度将整个约3,000吨的火箭堆栈直立运送到发射台。这种\"清洁发射台\"的方法让单个场址能够以远比现场组装快得多的速度完成迄今最大火箭的周转。这一设计的生命周期超越了Apollo计划半个世纪：同一发射台发射了大部分Space Shuttle，2014年被租给SpaceX后，现在用于发射Falcon Heavy和搭载Crew Dragon的宇航员。事实证明，优秀的基础设施是最无声的登月计划——建造一次，它就会持续带来收益。"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "description",
+  "en": "Built for Saturn V, kept for the Shuttle, leased to SpaceX in 2014. From Pad A: Apollo 4 (the first Saturn V), Apollo 11 (the first lunar landing), Apollo 13, Apollo 17 (the last lunar landing), Skylab, eighty-two Space Shuttle flights including the first STS-1, and since 2017 every Falcon Heavy and every Crew Dragon to the ISS. The same flame trench, the same crawlerway, three eras of US human spaceflight.",
+  "cur": "为土星五号而建，为Space Shuttle而保留，2014年租赁给SpaceX。从A台：Apollo 4（首枚土星五号）、Apollo 11（首次月球着陆）、Apollo 13、Apollo 17（最后一次月球着陆）、Skylab、八十二次Space Shuttle飞行（包括STS-1首飞），自2017年以来每一枚Falcon Heavy和每一艘前往国际空间站的Crew Dragon。同样的火焰沟，同样的爬虫道，美国三个时代的载人航天。"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "best_known_for",
+  "en": "Launched Apollo 8, 9, 11-17 (all crewed lunar missions to the Moon); today flies Falcon 9, Falcon Heavy, and Crew Dragon",
+  "cur": "发射了Apollo 8、9、11-17号（所有载人月球任务）；今天执飞Falcon 9、Falcon Heavy和Crew Dragon"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39b.json",
+  "at": "tagline",
+  "en": "Apollo 10 + Skylab + 53 Shuttle flights; now NASA's SLS / Artemis pad",
+  "cur": "Apollo 10 + Skylab + 53次航天飞机飞行；现为NASA的SLS / Artemis发射台"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39b.json",
+  "at": "description",
+  "en": "Pad 39B carried Apollo 10 (the lunar dress rehearsal), Skylab 2/3/4 crew launches, and fifty-three Space Shuttle flights — the first of which was the ill-fated STS-51-L Challenger in January 1986. Rebuilt as a clean pad in the late 2000s — no permanent service tower, mobile launcher platform per mission — to host the next generation of vehicles. Artemis I lifted from 39B in November 2022; Artemis II and III will follow.",
+  "cur": "39B发射台承载了Apollo 10（月球演习任务）、Skylab 2/3/4号载人发射，以及五十三次Space Shuttle飞行——其中第一次是1986年1月的不幸事故STS-51-L Challenger。在2000年代末期经过重建，成为无常设服务塔架、每次任务使用移动发射器平台的清洁发射台——旨在承载新一代运载工具。Artemis I于2022年11月从39B发射升空；Artemis II和III将陆续进行。"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39b.json",
+  "at": "best_known_for",
+  "en": "Apollo 10 + Skylab + 53 Shuttle flights; now NASA's SLS / Artemis pad",
+  "cur": "Apollo 10 + Skylab + 53次航天飞机飞行；现为NASA的SLS / Artemis发射台"
+ },
+ {
+  "rel": "fleet/launch-site/lc-5.json",
+  "at": "tagline",
+  "en": "Cape Canaveral Mercury-Redstone pad — launched Freedom 7 (Shepard, 1961-05-05) and Liberty Bell 7 (Grissom, 1961-07-21)",
+  "cur": "卡纳维拉尔角水星-红石发射台 — 发射Freedom 7（谢泼德，1961-05-05）与Liberty Bell 7（格里森，1961-07-21）"
+ },
+ {
+  "rel": "fleet/launch-site/lc-5.json",
+  "at": "dispatch",
+  "en": "Launch Complex 5 is a modest concrete pad with an outsized claim: it is where American human spaceflight physically began. It had been a Redstone missile test stand before NASA adapted it, and from it, on 5 May 1961, Alan Shepard became the first American to leave the planet. It launched only the two suborbital Mercury hops before the program moved to the more powerful Atlas pads down the Cape — a short career, but it holds the starting line. The first American flight of everything that followed traces back to this spot.",
+  "cur": "Launch Complex 5是一个朴素的混凝土发射台，却有着超越其身份的荣光：这正是美国载人航天从这里真正起航的地方。在NASA改造之前，它曾是Redstone导弹试验台。1961年5月5日，艾伦·谢泼德从这里升空，成为首位离开地球的美国人。它仅发射了两次亚轨道的Mercury飞行试验，随后项目转向Cape下方更强大的Atlas发射台——虽然生涯短暂，但它标志着美国载人航天的起点。此后美国航天的一切第一次都可以追溯到这个地方。"
+ },
+ {
+  "rel": "fleet/launch-site/lc-5.json",
+  "at": "description",
+  "en": "Cape Canaveral Launch Complex 5 hosted Redstone IRBM tests (1956-1961) before being modified for NASA's Mercury-Redstone programme. Freedom 7 (1961-05-05, Shepard, first American in space) and Liberty Bell 7 (1961-07-21, Grissom) both launched from LC-5. The pad's blockhouse — heavy reinforced concrete with thick blast-resistant glass — survives intact and is part of the Cape Canaveral Air Force Station Museum, used as a Mercury programme exhibit space. The blockhouse interior preserves the period instrument panels, including the consoles where launch teams worked through the Cuban missile crisis. Final launch 1961-07-21 — LC-5 was retired after Liberty Bell 7 when NASA shifted to LC-14 for the Atlas-Mercury flights.",
+  "cur": "卡纳维拉尔角 LC-5曾为Redstone中程弹道导弹试验提供场地（1956-1961年），之后被改造用于NASA的Mercury-Redstone项目。Freedom 7（1961年5月5日，谢泼德，首位进入太空的美国人）和Liberty Bell 7（1961年7月21日，格里森）均从LC-5发射升空。该发射台的指挥所——由厚重的加强混凝土和耐爆炸玻璃构成——保存完好，现为卡纳维拉尔角空军基地博物馆的一部分，用作Mercury项目展览空间。指挥所内部保留着时期仪器控制面板，包括发射团队在古巴导弹危机期间工作过的控制台。最后一次发射于1961年7月21日——在Liberty Bell 7发射后，LC-5被停用，NASA随后转向使用LC-14进行Atlas-Mercury飞行试验。"
+ },
+ {
+  "rel": "fleet/launch-site/lc-5.json",
+  "at": "best_known_for",
+  "en": "Cape Canaveral Mercury-Redstone pad — launched Freedom 7 (Shepard, 1961-05-05) and Liberty Bell 7 (Grissom, 1961-07-21)",
+  "cur": "卡纳维拉尔角水星-红石发射台 — 发射Freedom 7（谢泼德，1961-05-05）与Liberty Bell 7（格里森，1961-07-21）"
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-41-1.json",
+  "at": "tagline",
+  "en": "R-7-family pad (Vostok-2 / Soyuz-class) — 308 launches, 1966-1981",
+  "cur": "R-7系列发射台（Vostok-2 / Soyuz级）— 308次发射，1966-1981年"
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-41-1.json",
+  "at": "description",
+  "en": "Plesetsk's LC-41/1 pad (also called Lesobaza or SK-1) operated R-7-derived rockets from 1966 to 1981, supporting a vast catalogue of military reconnaissance, navigation, and communications satellites. The pad hosted the first orbital launch from LC-41/1: Kosmos 112 on March 17, 1966 (Vostok-2 booster). Over ~15 years of operation, approximately 308 successful orbital launches were achieved. Located at NIIP-53 in Russia's far north, the pad was disassembled after its operational period ended.",
+  "cur": "普列谢茨克的LC-41/1发射台（也称为Lesobaza或SK-1）在1966至1981年间运营R-7衍生火箭，支持了大量军用侦察、导航和通信卫星的发射。该发射台进行了LC-41/1的首次轨道发射：1966年3月17日的Kosmos 112（Vostok-2助推器）。在约15年的运营期间，共实现了约308次成功的轨道发射。发射台位于俄罗斯北部地区的NIIP-53，在其运营期结束后被拆卸。"
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-41-1.json",
+  "at": "best_known_for",
+  "en": "R-7-family pad (Vostok-2 / Soyuz-class)",
+  "cur": "R-7系列发射台（Vostok-2 / Soyuz级）"
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-43.json",
+  "at": "tagline",
+  "en": "Plesetsk's workhorse Soyuz pad at 62.9°N — the world's highest-latitude active orbital launch complex",
+  "cur": "普列谢茨克的主力Soyuz发射台（62.9°N）— 世界上纬度最高的现役轨道发射复合体"
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-43.json",
+  "at": "description",
+  "en": "Plesetsk Cosmodrome sits at 62.9°N — the world's highest-latitude active orbital launch complex. Site 43 is one of several pads at Plesetsk and operates Soyuz-2 today for Russian polar / Molniya / GLONASS payloads. Originally an R-7 ICBM base in the late 1950s, repurposed for space launches in 1966, and for several decades Plesetsk held the record for most orbital launches from any single site on Earth. The high latitude limits how much the Earth's rotation contributes (less than at Baikonur or Wenchang), but it's perfect for high-inclination missions that Baikonur can't easily reach without dogleg manoeuvres.",
+  "cur": "普列谢茨克航天发射场位于62.9°N — 世界上纬度最高的现役轨道发射复合体。第43发射场是普列谢茨克的多个发射台之一，目前运营Soyuz-2火箭，用于俄罗斯极地／Molniya／GLONASS有效载荷。该设施最初是1950年代后期的R-7洲际导弹基地，1966年改用于太空发射，数十年来普列谢茨克一直保持单一地点轨道发射数量最多的纪录。高纬度限制了地球自转的助力（少于拜科努尔或文昌），但它非常适合拜科努尔难以轻易到达的高倾角任务，而无需进行偏弯机动。"
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-43.json",
+  "at": "best_known_for",
+  "en": "World's most northerly orbital launch site — Russia's polar / Molniya military + GLONASS pad",
+  "cur": "世界最北端的轨道发射场 — 俄罗斯极地／Molniya军事 + GLONASS发射台"
+ },
+ {
+  "rel": "fleet/launch-site/sriharikota-slp.json",
+  "at": "tagline",
+  "en": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3, Mangalyaan, and the upcoming Gaganyaan crew programme",
+  "cur": "印度重型运载台 — GSLV Mk III / LVM3 承载Chandrayaan-3、Mangalyaan、以及即将到来的Gaganyaan载人项目"
+ },
+ {
+  "rel": "fleet/launch-site/sriharikota-slp.json",
+  "at": "best_known_for",
+  "en": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3, Mangalyaan, and the upcoming Gaganyaan crew programme",
+  "cur": "印度重型运载台——GSLV Mk III／LVM3承载Chandrayaan-3、Mangalyaan、以及即将到来的Gaganyaan载人项目"
+ },
+ {
+  "rel": "fleet/launch-site/sriharikota-slp.json",
+  "at": "description",
+  "en": "Sriharikota Island on India's east coast, 13.7°N — closer to the equator than Cape Canaveral, with the Bay of Bengal corridor empty downrange. The Second Launch Pad (SLP) handles ISRO's heavy-lift programme: PSLV manifests, LVM3 (formerly GSLV Mk III), Chandrayaan-1 (October 2008, lunar orbiter/impactor), Chandrayaan-2 (July 2019, lost on landing), Chandrayaan-3 (July 2023, successful soft landing near the south pole), and the planned Gaganyaan crewed missions. The First Launch Pad next door handles smaller PSLV / SSLV manifests and hosted the Mangalyaan Mars launch (November 2013).",
+  "cur": "斯里赫里戈达岛位于印度东海岸，纬度13.7°N — 比卡纳维拉尔角更靠近赤道，孟加拉湾走廊下游空域开放。第二发射台（SLP）承载ISRO的重型运载项目：PSLV宇航任务、LVM3（前身为GSLV Mk III）、Chandrayaan-1（2008年10月，月球轨道器/撞击器）、Chandrayaan-2（2019年7月，着陆失败）、Chandrayaan-3（2023年7月，在南极附近成功软着陆）和计划中的Gaganyaan载人任务。相邻的第一发射台处理较小的PSLV / SSLV宇航任务，并曾主持Mangalyaan火星探测器发射（2013年11月）。"
+ },
+ {
+  "rel": "fleet/launch-site/starbase-orbital-a.json",
+  "at": "tagline",
+  "en": "First Starship orbital flight test; designed for the full reusable Mars-bound stack",
+  "cur": "Starship首次轨道飞行试验；为完全可重复使用、飞往火星的整套火箭而设计"
+ },
+ {
+  "rel": "fleet/launch-site/starbase-orbital-a.json",
+  "at": "best_known_for",
+  "en": "First Starship orbital flight test; designed for the full reusable Mars-bound stack",
+  "cur": "Starship首次轨道飞行试验；为完全可重复使用的火星任务堆栈而设计"
+ },
+ {
+  "rel": "fleet/launch-site/starbase-orbital-a.json",
+  "at": "description",
+  "en": "SpaceX's Starship pad at Boca Chica, Texas — built from scratch starting in 2019 for the fully reusable Starship + Super Heavy. First integrated flight test (IFT-1) lifted off April 20, 2023; vehicle lost ~4 minutes post-liftoff after engine failures caused loss of control, but the pad survived. Subsequent IFTs through 2024-25 demonstrated booster catch via the Mechazilla tower arms, successful sea splashdowns, and increasing payload-class capability. The water deluge system at this pad is the largest ever built for an orbital launch — the over-pressure footprint from 33 Raptor-class engines is unlike anything else flying.",
+  "cur": "SpaceX位于德克萨斯州博卡奇卡的Starship发射台——从2019年开始从零开始建造，用于完全可重复使用的Starship + Super Heavy。首次综合飞行试验（IFT-1）于2023年4月20日升空；飞行器在升空约4分钟后因引擎故障导致失控而坠毁，但发射台完好无损。随后的IFT试验在2024-25年期间展示了通过Mechazilla塔臂进行的助推器回收、成功的海上溅落和日益增长的有效载荷级能力。该发射台的水淹没系统是有史以来为轨道发射建造的最大系统——来自33台Raptor级引擎的超压足迹是目前任何飞行器都无法比拟的。"
+ },
+ {
+  "rel": "fleet/launch-site/taiyuan-lc-9.json",
+  "at": "tagline",
+  "en": "Long March 2D / 4B / 4C polar-orbit workhorse — Yaogan, Gaofen, weather sats",
+  "cur": "长征2D/4B/4C极地轨道主力火箭——遥感、高分、气象卫星"
+ },
+ {
+  "rel": "fleet/launch-site/taiyuan-lc-9.json",
+  "at": "description",
+  "en": "Taiyuan Satellite Launch Center's LC-9 (also known as Pad 9) handles most of TYSC's polar and sun-synchronous orbit launches with the Long March 2D, 4B, 4C, and 6A. Typical payloads include the Yaogan reconnaissance series, the Gaofen Earth-observation constellation, and the Fengyun meteorological satellites. Active since 2008.",
+  "cur": "太原卫星发射中心的LC-9号（又称第9号发射台）是太原卫星发射中心承担极地轨道和日光同步轨道发射任务的主要设施，使用长征2D、4B、4C和6A火箭。典型载荷包括遥感系列卫星、高分对地观测卫星星座和风云气象卫星。自2008年起投入使用。"
+ },
+ {
+  "rel": "fleet/launch-site/taiyuan-lc-9.json",
+  "at": "best_known_for",
+  "en": "Polar-orbit workhorse for Yaogan + Gaofen + Fengyun",
+  "cur": "极轨 Yaogan / Gaofen / Fengyun 主力"
+ },
+ {
+  "rel": "fleet/launch-site/tanegashima-yoshinobu.json",
+  "at": "tagline",
+  "en": "Japan's heavy-lift gateway — H-IIA + H3, HTV / HTV-X cargo to the ISS",
+  "cur": "日本重型运载火箭门户 — H-IIA + H3、HTV / HTV-X货运飞船往返国际空间站"
+ },
+ {
+  "rel": "fleet/launch-site/tanegashima-yoshinobu.json",
+  "at": "description",
+  "en": "On Tanegashima, the southern Japanese island that's been home to JAXA's orbital programme since 1969. LP-1 hosted the H-II maiden flight in 1996; the H-IIA from 2001 (49 successes in 50 flights; retired June 2025 after its final mission); the seven HTV cargo flights to the ISS between 2009 and 2020; and from 2023 the new H3 rocket. Tanegashima's 30°N geometry is workable for geostationary launches — the south Pacific is empty downrange — and the fishing fleet stand-down windows are famously short, giving Japan some of the tightest launch-window protocols in the world.",
+  "cur": "位于日本南方岛屿种子岛，自1969年以来一直是JAXA轨道计划的所在地。LP-1承办了1996年的H-II首飞；2001年起的H-IIA火箭（50次飞行中49次成功；2025年6月执行最后一次任务后退役）；2009年至2020年间七次前往国际空间站的 HTV 货运飞行；以及自2023年起的新型H3火箭。Tanegashima30°N的地理位置适合地球同步轨道发射 — 南太平洋下落区域空阔无碍 — 而捕鱼船队待命时间窗口出了名的短，使日本拥有世界上最严格的发射窗口协议之一。"
+ },
+ {
+  "rel": "fleet/launch-site/tanegashima-yoshinobu.json",
+  "at": "best_known_for",
+  "en": "Japan's heavy-lift gateway — H-IIA + H3, HTV / HTV-X cargo to the ISS",
+  "cur": "日本重型运载火箭门户 — H-IIA + H3、HTV / HTV-X货运飞船往返国际空间站"
+ },
+ {
+  "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+  "at": "tagline",
+  "en": "Polar / sun-synchronous gateway — Falcon 9 to Starlink + national-security + earth-observation",
+  "cur": "极轨 / 太阳同步轨道门户——Falcon 9承担Starlink、国家安全与对地观测任务"
+ },
+ {
+  "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+  "at": "description",
+  "en": "The US west-coast orbital gateway. Built for Atlas-Agena in 1963; Titan III/IV through to 2005; refit by SpaceX in 2011. Vandenberg's geographic advantage is the corridor due south over the Pacific — that's how US payloads reach polar and sun-synchronous orbits without overflying populated land. Today SLC-4E flies Falcon 9 to Starlink polar shells, NRO classified payloads, USSF + commercial earth-observation satellites. SLC-4W next door is the booster recovery zone.",
+  "cur": "美国西海岸轨道入口。1963年为Atlas-Agena建造；1972年至2005年承担Titan III/IV；2011年由SpaceX改造。范登堡的地理优势是正南方向穿越太平洋的发射走廊——美国载荷得以抵达极地与太阳同步轨道而无需飞越居住地区。如今SLC-4E承担Falcon 9发射Starlink极轨壳层、NRO机密载荷、USSF与商业对地观测卫星。隔壁SLC-4W是助推器回收区。"
+ },
+ {
+  "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+  "at": "best_known_for",
+  "en": "Polar / sun-synchronous gateway — Falcon 9 to Starlink + national-security + earth-observation",
+  "cur": "极轨 / 太阳同步轨道门户——Falcon 9承担Starlink、国家安全与对地观测任务"
+ },
+ {
+  "rel": "fleet/launch-site/wenchang-lc-101.json",
+  "at": "tagline",
+  "en": "China's heavy-lift pad — Long March 5 to Tianhe, Chang'e 5/6, Tianwen-1, and the lunar return programme",
+  "cur": "中国重型运载火箭发射台——长征五号运载天和、嫦娥五号/6、天问一号，以及探月返回任务"
+ },
+ {
+  "rel": "fleet/launch-site/wenchang-lc-101.json",
+  "at": "description",
+  "en": "Built in 2014, operational from 2016, on Hainan Island at 19.6°N — the southernmost CNSA launch site. The low latitude adds about 460 m/s of free eastward velocity vs Jiuquan or Xichang, which is how Long March 5B can reach the 25-tonne LEO class needed to put the Tianhe core module into orbit in a single launch. Wenchang LC-101 is dedicated to Long March 5 / 5B; maiden flight November 3, 2016. It also flew Chang'e 5 (lunar sample return, 2020), Chang'e 6 (the farside sample return, 2024), and Tianwen-1 (Mars orbiter + Zhurong rover, 2020). Sister pad LC-201 next door handles Long March 7/8 manifests and achieved its first launch in June 2016.",
+  "cur": "建于2014年，2016年投入运营，位于海南岛19.6°N——国家航天局最南端的发射场。低纬度相对酒泉、西昌增加了约460米/秒的东向自由速度，这使长征五号B能够达到2.5万吨低轨运载能力，可在单次发射中将天和核心舱送入轨道。文昌 LC-101专用于长征五号/5B；首飞于2016年11月3日。它还发射过嫦娥五号（月球样品采集任务，2020年）、嫦娥六号（月球背面样品采集任务，2024年）和天问一号（火星轨道器+祝融火星车，2020年）。相邻的姊妹发射台LC-201处理长征七号/8的发射计划，在2016年6月完成了首次发射。"
+ },
+ {
+  "rel": "fleet/launch-site/wenchang-lc-101.json",
+  "at": "best_known_for",
+  "en": "China's heavy-lift pad — Long March 5 to Tianhe, Chang'e 5/6, Tianwen-1, and the lunar return programme",
+  "cur": "中国重型运载火箭发射台——长征五号运载天和、嫦娥五号/6、天问一号，以及探月返回任务"
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-2.json",
+  "at": "tagline",
+  "en": "Long March 3A/3B family — most Chinese GTO commercial launches and Beidou GNSS deployments",
+  "cur": "长征三号甲/乙系列——中国大多数GTO商业发射和北斗GNSS部署"
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-2.json",
+  "at": "description",
+  "en": "Xichang Satellite Launch Center's LC-2 has handled the majority of China's commercial geostationary launches, the Beidou/Compass navigation constellation, and the Chang'e lunar program through the Long March 3A, 3B, and 3C variants. Located in the mountainous Sichuan province, the site combines a low-latitude advantage for GTO performance with year-round operational availability.",
+  "cur": "西昌卫星发射中心 LC-2 通过长征 3A/3B/3C 系列承担了中国大部分商业地球同步转移轨道发射、北斗导航星座部署以及嫦娥探月工程。位于四川山区，兼具低纬度对 GTO 任务的运力优势与全年可用的发射窗口。"
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-2.json",
+  "at": "best_known_for",
+  "en": "Long March 3A/3B GTO + Beidou GNSS",
+  "cur": "长征三号甲/三号乙地球同步转移轨道 + 北斗全球卫星导航系统"
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-3.json",
+  "at": "tagline",
+  "en": "First CZ-3 operational successes — DFH-2 first GTO success, Apstar / Asiasat / Sinosat era",
+  "cur": "首批CZ-3运营成功——DFH-2首次GTO成功，Apstar/Asiasat/Sinosat时代"
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-3.json",
+  "at": "description",
+  "en": "Xichang LC-3 hosted the first Long March 3 launch attempt on January 29, 1984 (DFH-2-01), which partially failed on third-stage re-ignition. The first successful Long March 3 flight occurred on April 8, 1984 (DFH-2-02), which placed the DFH-2 'Dong Fang Hong-2' communications satellite into geostationary transfer orbit — China's first GTO success. Both CZ-3 flights were from LC-3. Through the 1990s it supported many Apstar, Asiasat, and Sinosat commercial communications launches. Today it remains in active use alongside LC-2 for Long March 3B operations.",
+  "cur": "西昌 LC-3承载了1984年1月29日长征三号的首次发射尝试（DFH-2-01），该火箭在第三级点火时部分失败。首次成功的长征三号飞行发生在1984年4月8日（DFH-2-02），它将DFH-2\"Hong-2\"通信卫星送入地球同步转移轨道——中国首次GTO成功。两次CZ-3飞行都从LC-3发射。在20世纪90年代，它支持了许多亚太卫星、亚星卫星和中卫卫星的商业通信发射。如今它仍在与LC-2一起用于长征三号B运载火箭的运营中。"
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-3.json",
+  "at": "best_known_for",
+  "en": "First Chinese GTO success (1984) + comsat workhorse",
+  "cur": "首次中国GTO成功（1984年）+ 通信卫星发射主力"
+ },
+ {
+  "rel": "fleet/launcher/antares.json",
+  "at": "tagline",
+  "en": "Workhorse for Cygnus ISS resupply through NG-19",
+  "cur": "为Cygnus 国际空间站物资补给提供支持，截至NG-19任务"
+ },
+ {
+  "rel": "fleet/launcher/antares.json",
+  "at": "description",
+  "en": "Northrop Grumman's medium-lift launcher, originally built around the Aerojet AJ26 and later RD-181 first stages with a Castor solid second stage. Carried Cygnus to the ISS from 2013 through NG-19 in 2023. The Antares 330 successor (jointly developed with Firefly Aerospace) replaces the Russian first stage with seven Miranda engines.",
+  "cur": "Northrop Grumman的中型运载火箭，早期采用Aerojet AJ26发动机，后改用RD-181第一级和Castor固体第二级。从2013年至2023年NG-19任务期间，将Cygnus运送至国际空间站。Antares 330继任者（与Firefly Aerospace联合开发）用七台Miranda发动机取代俄罗斯第一级。"
+ },
+ {
+  "rel": "fleet/launcher/antares.json",
+  "at": "best_known_for",
+  "en": "Workhorse for Cygnus ISS resupply through NG-19",
+  "cur": "为Cygnus 国际空间站物资补给提供支持，截至NG-19任务"
+ },
+ {
+  "rel": "fleet/launcher/ariane-1.json",
+  "at": "tagline",
+  "en": "Europe's first independent orbital launcher — opened the commercial-comsat era for ESA, flew Giotto to Halley",
+  "cur": "欧洲首枚独立轨道运载火箭 — 为 ESA 打开商用通信卫星时代，并将 Giotto 送往哈雷彗星"
+ },
+ {
+  "rel": "fleet/launcher/ariane-1.json",
+  "at": "dispatch",
+  "en": "Ariane 1 was where Europe won its independence in space. Built after the United States made clear it would launch European satellites only on its own terms, Ariane 1 flew from Kourou in 1979 and gave Europe, for the first time, a launcher it fully controlled — answerable to no other power. It was a modest rocket by later standards, but the principle it established was not modest at all: that a continent's access to orbit should belong to that continent. Every Ariane since has flown that principle.",
+  "cur": "Ariane 1 是欧洲赢得太空独立的起点。在美国明确表示只会按自己的条件发射欧洲卫星之后,Ariane 1 于 1979 年从库鲁发射,首次为欧洲提供了一枚完全由其掌控的运载火箭——不受任何其他力量支配。以后来的标准衡量,它只是一枚普通的火箭,但它确立的原则却一点也不普通:一个大陆进入轨道的通道应当属于这个大陆本身。此后每一枚 Ariane 都践行着这一原则。"
+ },
+ {
+  "rel": "fleet/launcher/ariane-1.json",
+  "at": "description",
+  "en": "Three-stage rocket built by CNES at ESA's request after the cancelled Europa programme — hypergolic UH-25 / N2O4 first + second stages topped with the LH₂ / LOX HM7 third stage. 11 launches from Kourou between 1979-12-24 and 1986-02-22 carried 27 European telecom and science satellites including ECS-1, Marecs A/B, Spacenet, Telecom 1A/1B, and ESA's Giotto Halley flyby probe. Retired in favour of the bigger Ariane 2/3/4; the HM7 cryogenic upper-stage line lived on through Ariane 4 and into Ariane 5's ESC-A.",
+  "cur": "木卫二计划取消后，ESA 委托 CNES 研制的三级火箭 — 一级与二级使用偏二甲肼/四氧化二氮（UH-25 / N2O4）联氨自燃推进剂，三级搭载液氢液氧 HM7 低温上面级。1979-12-24 至 1986-02-22 间从库鲁发射 11 次，搭载包括 ECS-1、Marecs A/B、Spacenet、Telecom 1A/1B 以及 ESA 的 Giotto 哈雷彗星探测器在内的 27 颗欧洲通信和科学卫星。让位给更大的 Ariane 2/3/4 而退役；但 HM7 低温上面级技术经 Ariane 4 一路延续，演化为 Ariane 5 的 ESC-A 上面级。"
+ },
+ {
+  "rel": "fleet/launcher/ariane-1.json",
+  "at": "best_known_for",
+  "en": "Europe's first independent orbital launcher — 11 flights 1979-1986, opened commercial comsats + Giotto to Halley",
+  "cur": "欧洲首枚独立轨道运载火箭 — 1979-1986 年 11 次飞行，开启商用通信卫星市场，将 Giotto 送往哈雷彗星"
+ },
+ {
+  "rel": "fleet/launcher/ariane-5.json",
+  "at": "tagline",
+  "en": "Launched Rosetta, JWST, Galileo satnav (ESA)",
+  "cur": "发射了Rosetta、JWST、Galileo卫星导航系统（ESA）"
+ },
+ {
+  "rel": "fleet/launcher/ariane-5.json",
+  "at": "dispatch",
+  "en": "Ariane 5 was the heavy-lift workhorse that carried European spaceflight to its peak — after one of the most famous failures in the field. Its 1996 maiden flight self-destructed 37 seconds up when guidance software inherited from Ariane 4 overflowed at the new rocket's higher speed, a software-engineering cautionary tale now taught worldwide. It recovered to become one of the most reliable heavy launchers ever built, lofting Rosetta, Galileo (navigation constellation), BepiColombo, the ATV freighters to the ISS, and finally the James Webb Space Telescope — placed so precisely it saved years of the observatory's fuel.",
+  "cur": "Ariane 5是欧洲太空飞行的重型主力运载火箭，它见证了该领域最为著名的失败之后的复兴。1996年的首次飞行中，火箭在升空37秒时自毁——从Ariane 4继承的制导软件在新火箭的更高速度下溢出，这个软件工程的教训现已被全球教学引用。该火箭随后恢复并成为有史以来最可靠的重型运载火箭之一，成功发射了Rosetta、Galileo（导航星座）、BepiColombo、自动转运飞行器（ATV）前往国际空间站，以及James Webb Space Telescope——精确的投放轨迹为该天文台节省了多年的燃料。"
+ },
+ {
+  "rel": "fleet/launcher/ariane-5.json",
+  "at": "description",
+  "en": "ESA’s long-running heavy lifter, retired in 2023 after 117 launches. Carried Rosetta to comet 67P, JWST to L2, and dual-manifested geostationary commercial payloads for two decades.",
+  "cur": "ESA长期运营的重型运载火箭，于2023年退役，共完成117次发射。将Rosetta送往彗星67P、JWST发送至L2，并在20年间多次承载地球同步轨道商业有效载荷。"
+ },
+ {
+  "rel": "fleet/launcher/ariane-5.json",
+  "at": "best_known_for",
+  "en": "Launched Rosetta, JWST, Galileo (ESA)",
+  "cur": "发射Rosetta、JWST、Galileo星座（ESA）"
+ },
+ {
+  "rel": "fleet/launcher/ariane-6.json",
+  "at": "dispatch",
+  "en": "Ariane 6 is Europe's answer to a market it no longer dominates. For two decades Ariane owned commercial launch; then reusable rockets undercut its prices and ended that reign. Ariane 6, flying from 2024, is the established power's response to the disruptive one — cheaper and more flexible than Ariane 5, built to keep Europe's independent access to space alive as the economics of launch are rewritten around it. Whether an expendable rocket can hold its ground against reusable rivals is the open question it now carries.",
+  "cur": "Ariane 6是欧洲对一个它不再主导的市场的回应。二十年来Ariane拥有商业发射的统治地位；然后可重复使用火箭以更低价格削弱了它的优势并终结了那个时代。Ariane 6从2024年开始飞行，是既有势力对颠覆者的回应——比Ariane 5更便宜、更灵活，旨在维持欧洲独立进入太空的能力，而发射经济学正在其周围被重写。一枚一次性火箭能否在可重复使用的竞争对手面前守住阵地，是它现在承载的开放问题。"
+ },
+ {
+  "rel": "fleet/launcher/ariane-6.json",
+  "at": "description",
+  "en": "Ariane 6 is a orbital launcher built by ArianeGroup in Multi (Europe). Successor to Ariane 5. In service since 2024.",
+  "cur": "Ariane 6是ArianeGroup在欧洲建造的轨道发射装置。Ariane 5的继承人。2024年起服役。"
+ },
+ {
+  "rel": "fleet/launcher/atlas-lv-3b.json",
+  "at": "dispatch",
+  "en": "If the Redstone was the cautious step, the Atlas was the leap. It was America's first intercontinental missile, and it reached orbital speed by being audaciously, almost alarmingly light: its skin was so thin that the rocket had to be kept pressurised like a balloon just to stand up without crumpling. Man-rating that — trusting a person to a missile that would collapse if you let the pressure drop — was the hard call that separated Mercury's suborbital half from its orbital one. Every American orbital flight of the program rode this thin steel balloon, and it is why Glenn, Carpenter, Schirra, and Cooper circled the Earth while Shepard and Grissom only touched the edge of it.",
+  "cur": "如果说Redstone火箭是谨慎的一步，那么Atlas就是一次飞跃。它是美国第一枚洲际导弹，通过大胆、几乎令人惊恐的轻量化设计达到轨道速度：火箭外壳薄得惊人，必须像气球一样保持充压状态才能直立而不会塌陷。对此进行人员评定——相信一个人乘坐这样一枚会在失压时坍塌的导弹——这是艰难的决定，将水星计划分为了亚轨道和轨道两个阶段。该计划中每一次美国的轨道飞行都搭乘过这个薄钢气球，正因如此，格伦、卡彭特、施艾拉和库勃绕地球飞行，而谢泼德和格里森只触及了它的边缘。"
+ },
+ {
+  "rel": "fleet/launcher/atlas-lv-3b.json",
+  "at": "description",
+  "en": "Atlas LV-3B was Convair's orbital launcher that lifted Mercury astronauts to orbit on six flights (Mercury-Atlas 6 through 10) between February and May 1963. The thin-skinned booster — so light it required pressurization to stand upright — proved that a ballistic missile could be man-rated. Retired after the Mercury program.",
+  "cur": "Atlas LV-3B 是 Convair 的轨道运载火箭，在 1963 年 2 月至 5 月期间的六次飞行（水星-Atlas 6 至 10 号）中将水星计划宇航员送入轨道。这枚壁厚很薄的助推火箭非常轻，需要加压才能直立——它证明了弹道导弹可以用于载人航天。水星计划结束后退役。"
+ },
+ {
+  "rel": "fleet/launcher/atlas-slv-3d.json",
+  "at": "tagline",
+  "en": "1970s NASA outer-planet workhorse — Pioneer 10/11, Helios 1/2, Mariner 9/10, Pioneer Venus",
+  "cur": "1970 年代 NASA 外行星探测主力 — Pioneer 10/11、Helios 1/2、Mariner 9/10、Pioneer 金星"
+ },
+ {
+  "rel": "fleet/launcher/atlas-slv-3d.json",
+  "at": "description",
+  "en": "Stretched Atlas SLV-3D first stage with the world's first hydrogen-fuelled upper stage (Centaur D-1A, LOX/LH₂) — the combination that enabled every American Jupiter, Saturn, Mariner, and Helios mission of the 1970s. A Star-37E or Star-48 solid-kick stage was added on top for the very-high-energy trajectories (Pioneer 11 past Jupiter to Saturn). Served 1973-1983; superseded by the Atlas G/H/I family that fed into the Atlas II of the 1990s.",
+  "cur": "加长版 Atlas SLV-3D 一级与世界首个液氢上面级 Centaur D-1A（LOX/LH₂）的组合 — 1970 年代每一次美国木星、土星、Mariner 与 Helios 任务都靠它实现。需要最高能量的轨道（Pioneer 11 借木星飞越奔向土星）时，会在顶部加装 Star-37E 或 Star-48 固体推进上面级。1973-1983 年服役，被 Atlas G/H/I 家族取代，后者又演化为 1990 年代的 Atlas II。"
+ },
+ {
+  "rel": "fleet/launcher/atlas-slv-3d.json",
+  "at": "best_known_for",
+  "en": "1970s NASA outer-planet workhorse — Centaur D-1A's first H₂ upper stage opened the gas giants",
+  "cur": "1970 年代 NASA 外行星主力 — Centaur D-1A 世界首个液氢上面级，打开气态巨星之门"
+ },
+ {
+  "rel": "fleet/launcher/atlas-v.json",
+  "at": "tagline",
+  "en": "United Launch Alliance's evolved Atlas",
+  "cur": "United Launch Alliance进化的Atlas"
+ },
+ {
+  "rel": "fleet/launcher/atlas-v.json",
+  "at": "description",
+  "en": "The reliable workhorse of United Launch Alliance, with over 100 successful launches since 2002. Carried Curiosity, Perseverance, MAVEN, MRO, New Horizons, and many of the most consequential US planetary missions of the 21st century.",
+  "cur": "联合发射联盟的可靠工作马，自2002年以来成功发射100多次。具有Curiosity、Perseverance、MAVEN、MRO、New Horizons以及许多美国21世纪最著名的行星任务。"
+ },
+ {
+  "rel": "fleet/launcher/atlas-v.json",
+  "at": "best_known_for",
+  "en": "United Launch Alliance's evolved Atlas",
+  "cur": "United Launch Alliance进化的Atlas"
+ },
+ {
+  "rel": "fleet/launcher/delta-ii.json",
+  "at": "tagline",
+  "en": "NASA's medium-lift planetary-science workhorse — 155 flights 1989-2018",
+  "cur": "NASA的中等运力行星科学工作马 — 155次飞行 1989-2018"
+ },
+ {
+  "rel": "fleet/launcher/delta-ii.json",
+  "at": "description",
+  "en": "Two- or three-stage Delta variant with an RS-27A LOX/RP-1 first stage, up to nine GEM strap-on solid boosters, and an optional Star-48B kick stage for high-energy escape trajectories. 155 launches over 29 years with a 98.7% success rate; carried Dawn, Messenger, MRO, Phoenix, Kepler, Spitzer, GRAIL, and the original GPS Block II constellation. The 'Delta II Heavy' (7920H + Star-48B) was the configuration that delivered enough C3 for direct-to-Ceres + Mercury orbital insertion. Retired after the medium-lift market shifted to Atlas V and Falcon 9.",
+  "cur": "两级或三级Delta变体，配备RS-27A液氧/RP-1第一级，最多九枚GEM固体助推器，以及用于高能逃逸轨迹的可选Star-48B上面级。在29年间进行了155次发射，成功率达98.7%；运载过Dawn、Messenger、MRO、Phoenix、Kepler、Spitzer、GRAIL，以及最初的GPS Block II星座。\"Delta II Heavy\"（7920H + Star-48B）配置提供了足够的C3用于直接到谷神星+水星轨道注入。在中型运载火箭市场转向Atlas V和Falcon 9后停用。"
+ },
+ {
+  "rel": "fleet/launcher/delta-ii.json",
+  "at": "best_known_for",
+  "en": "NASA's medium-lift planetary-science workhorse 1989-2018 — Dawn, Messenger, MRO, Phoenix, Kepler",
+  "cur": "NASA的中等运力行星科学工作马 1989-2018 — Dawn、Messenger、MRO、Phoenix、Kepler"
+ },
+ {
+  "rel": "fleet/launcher/energia.json",
+  "at": "tagline",
+  "en": "Soviet super-heavy; two flights (Polyus 1987, Buran 1988)",
+  "cur": "苏联超重型运载火箭；两次飞行（1987年Polyus、1988年Buran）"
+ },
+ {
+  "rel": "fleet/launcher/energia.json",
+  "at": "dispatch",
+  "en": "Energia was the rocket that redeemed the N1 — the super-heavy launcher the Soviet Union finally got right. Where the N1 exploded on all four attempts, Energia worked, lifting the Polyus payload in 1987 and the Buran orbiter in 1988. Crucially, it was a launcher in its own right, not a shuttle stack: because Buran had no main engines, Energia did the whole job of reaching orbit and could just as well have lifted other heavy payloads with no orbiter at all. It was the most powerful rocket the Soviet Union ever flew successfully — and, like Buran, it was cancelled for want of anything left to launch.",
+  "cur": "Energia是弥补N1不足的运载火箭——苏联最终成功研制的超重型运载火箭。N1四次试射均告失败，而Energia却成功了，在1987年成功发射了Polyus载荷，在1988年成功发射了Buran航天飞机。至关重要的是，它本身就是一个独立的运载火箭，而不是航天飞机堆栈：由于Buran没有主引擎，Energia承担了全部到达轨道的工作，完全可以在没有轨道飞行器的情况下发射其他重型载荷。它是苏联有史以来成功飞行的最强大火箭——就像Buran一样，它因为没有其他任务可发射而被取消了。"
+ },
+ {
+  "rel": "fleet/launcher/energia.json",
+  "at": "description",
+  "en": "The only Soviet super-heavy launcher to fly successfully. Designed to carry the Buran orbiter or stand-alone payloads up to 100 t to LEO. Two flights: Polyus payload test (1987) and Buran orbiter (1988), both successful. Program shelved at the end of the Cold War.",
+  "cur": "唯一成功飞行的苏联超重型运载火箭。设计用于将Buran轨道飞行器或独立载荷（最多100吨）送至LEO。两次飞行：Polyus载荷测试（1987年）和Buran轨道飞行器（1988年），均成功。冷战结束时项目被搁置。"
+ },
+ {
+  "rel": "fleet/launcher/energia.json",
+  "at": "best_known_for",
+  "en": "Soviet super-heavy; flew twice (Polyus 1987, Buran 1988)",
+  "cur": "苏联超重型运载火箭；飞行两次（1987年Polyus、1988年Buran）"
+ },
+ {
+  "rel": "fleet/launcher/falcon-9.json",
+  "at": "description",
+  "en": "SpaceX’s Block 5 booster, designed for ten flights without refurbishment. The first orbital-class rocket to land and re-fly itself, fundamentally reshaping the commercial-launch market and dropping the cost-to-orbit by roughly an order of magnitude.",
+  "cur": "SpaceX 的 Block 5 助推器，设计用于十次飞行而无需大修。第一款能够着陆并自行再飞行的轨道级火箭，从根本上改变了商业发射市场，并使入轨成本大幅下降了约一个数量级。"
+ },
+ {
+  "rel": "fleet/launcher/falcon-heavy.json",
+  "at": "description",
+  "en": "Three Falcon 9 first-stage cores strapped together, with the two side boosters returning to land while the center core lands downrange on a drone ship. Presently among the most-powerful operational heavy-lift rockets, with payload capacity rivalling Saturn V on a cost-per-kg basis far below it. (As of mid-2026, Starship has demonstrated increasingly operational capability.)",
+  "cur": "由三个Falcon 9一级芯级并联组成，两个侧推进器返回陆地着陆，中心芯级在无人船上远程着陆。目前是运行中最强大的重型运载火箭之一，有效载荷能力可与土星五号相比，但单位成本远低于后者。（截至2026年中期，Starship已展现出越来越强的运行能力。）"
+ },
+ {
+  "rel": "fleet/launcher/h-iia.json",
+  "at": "description",
+  "en": "Japan's H-IIA launched 50 successful missions between 2001 and June 2025 for JAXA's flagship missions including Hayabusa, Hayabusa2, Himawari, and SLIM. Dependable liquid-propellant workhorse that became one of the most reliable launchers ever built.",
+  "cur": "日本H-IIA运载火箭在2001年至2025年6月间为JAXA成功执行了50次任务,涵盖了Hayabusa、Hayabusa2、Himawari和SLIM等旗舰项目。这种可靠的液体推进剂运载火箭已成为世界上最可靠的运载火箭之一。"
+ },
+ {
+  "rel": "fleet/launcher/h3.json",
+  "at": "description",
+  "en": "H3 is a orbital launcher built by Mitsubishi Heavy Industries in Japan. Replaces H-IIA / H-IIB at lower cost. In service since 2024.",
+  "cur": "H3是三菱重工公司在日本建造的轨道发射器。以较低成本取代H-IIA / H-IIB。2024年起服役。"
+ },
+ {
+  "rel": "fleet/launcher/long-march-2f.json",
+  "at": "description",
+  "en": "Long March 2F is a orbital launcher built by CALT in China. Crew-rated for all Shenzhou flights. In service since 1999.",
+  "cur": "长征二号F是由中国CALT公司开发的轨道运载火箭。为所有神舟飞行任务进行了人员认可。自1999年起投入使用。"
+ },
+ {
+  "rel": "fleet/launcher/long-march-3b.json",
+  "at": "tagline",
+  "en": "China's GTO workhorse — Chang'e lunar landers + most Chinese comsats",
+  "cur": "中国的地球同步转移轨道主力火箭——嫦娥月球着陆器和大多数中国通信卫星"
+ },
+ {
+  "rel": "fleet/launcher/long-march-3b.json",
+  "at": "description",
+  "en": "Three-stage liquid-hypergolic launcher (UDMH/N2O4 on the lower stages, LH2/LOX on the third) with four side-mounted strap-on boosters. Lifts ~11 t to LEO / ~5.1 t to GTO from Xichang Satellite Launch Centre. The maiden flight (1996-02-15, Intelsat 708) failed catastrophically due to a guidance-loop fault and killed villagers downrange; the redesigned vehicle has since flown well over 100 successful missions and is the standard launcher for Chang'e lunar exploration.",
+  "cur": "三级液体自燃推进剂运载火箭（下两级采用偏二甲肼/四氧化二氮，第三级采用LH2/LOX），侧装四个捆绑助推器。从西昌卫星发射中心可运送约 11 吨有效载荷到LEO / 约 5.1 吨到GTO。首飞（1996-02-15，Intelsat 708）因制导控制系统故障而发生灾难性失败，造成下落区村民伤亡；经过改进设计的火箭已成功完成100多次任务，是嫦娥月球探测计划的标准运载火箭。"
+ },
+ {
+  "rel": "fleet/launcher/long-march-3b.json",
+  "at": "best_known_for",
+  "en": "China's GTO workhorse — Chang'e 3 / 4 lunar landers + most commercial comsats from Xichang",
+  "cur": "中国的地球同步转移轨道主力火箭——嫦娥三号/4月球着陆器和从西昌发射的大多数商用通信卫星"
+ },
+ {
+  "rel": "fleet/launcher/long-march-5.json",
+  "at": "description",
+  "en": "China’s first heavy-lift launcher, capable of putting 25 t to LEO. Lifts the Tiangong space station modules and Tianwen Mars probes; Long March 5B is the variant used for station modules.",
+  "cur": "中国首台重型升降机,能将25t投入低地球轨道。抬升天宫空间站模块和天问火星探测器;长征5B是空间站模块使用的变体。"
+ },
+ {
+  "rel": "fleet/launcher/long-march-7.json",
+  "at": "description",
+  "en": "Long March 7 is a orbital launcher built by CALT in China. Tianzhou cargo launcher to Tiangong. In service since 2016.",
+  "cur": "长征七号是由中国 CALT 制造的轨道运载火箭。向天宫运送天舟货运飞船。自2016年起投入使用。"
+ },
+ {
+  "rel": "fleet/launcher/lvm3.json",
+  "at": "name",
+  "en": "LVM3 (GSLV Mk III)",
+  "cur": "LVM3 (GSLV Mk III) (英语)."
+ },
+ {
+  "rel": "fleet/launcher/lvm3.json",
+  "at": "description",
+  "en": "LVM3 (GSLV Mk III) is a orbital launcher built by ISRO in India. Crew-rated launcher for Gaganyaan. In service since 2014.",
+  "cur": "LVM3 (GSLV Mk III)是ISRO在印度建造的轨道发射器。Gaganyaan的船员级发射器。2014年起服役。"
+ },
+ {
+  "rel": "fleet/launcher/mercury-redstone.json",
+  "at": "tagline",
+  "en": "First US human-rated launcher — variant of the Army's Redstone IRBM. Launched Freedom 7 (1961-05-05) and Liberty Bell 7 (1961-07-21)",
+  "cur": "首个美国载人火箭 — 陆军Redstone中程弹道导弹的改进型。发射了Freedom 7（1961-05-05）和Liberty Bell 7（1961-07-21）"
+ },
+ {
+  "rel": "fleet/launcher/mercury-redstone.json",
+  "at": "dispatch",
+  "en": "The Mercury-Redstone was a weapon taught to carry a passenger. Its ancestor was the German V-2, and its direct parent an Army ballistic missile built to deliver a warhead — now modified, softened, and made just reliable enough to trust with a human life. It could manage only a suborbital arc; it never had the power to reach orbit. But that was exactly its job: the cautious first step, the machine that let America prove a person could ride a rocket up and come back down alive before betting a life on the bigger, riskier booster that could actually reach orbit.",
+  "cur": "水星-Redstone火箭是一种将武器改造成了运载乘客工具的火箭。它的祖先是德国V-2火箭，直接的父系则是陆军为投放弹头而建造的弹道导弹 — 现已被改装、软化，并调校得足够可靠，能够信任地承载一个人的生命。它只能完成亚轨道飞行；它从未具备到达轨道的能力。但这正是它的工作：谨慎的第一步，这台机器让美国得以证明一个人可以乘坐火箭飞上太空并安全返回地面，然后才敢将生命托付给那个更大、更危险、真正能到达轨道的推进器。"
+ },
+ {
+  "rel": "fleet/launcher/mercury-redstone.json",
+  "at": "description",
+  "en": "The Mercury-Redstone launch vehicle was a man-rated derivative of the U.S. Army's Redstone ballistic missile, modified at NASA Marshall Space Flight Center for the suborbital Mercury crewed missions. Single-stage liquid-propellant (LOX + alcohol), 25 metres tall with capsule and escape tower (~18 m booster alone), producing approximately 347 kN (~35 tonnes-force) of thrust. The first crewed flight was Mercury-Redstone 3 / Freedom 7 (1961-05-05, Alan Shepard) — the first American in space, 23 days after Gagarin. Mercury-Redstone 4 / Liberty Bell 7 followed (1961-07-21, Gus Grissom). After Liberty Bell 7's hatch malfunction, NASA moved the orbital Mercury flights to the more powerful Atlas LV-3B. Final flight 1961-07-21; total 6 Mercury-Redstone vehicles built, 2 crewed flights flown.",
+  "cur": "Mercury-Redstone运载火箭是美国陆军Redstone弹道导弹的载人改进型，在NASA Marshall Space Flight Center进行了改装，用于亚轨道Mercury载人任务。单级液体推进剂火箭（液氧+酒精），加上太空舱和逃逸塔后高度25米（助推器单独约18米），推力约347千牛（约35吨力）。首次载人飞行是Mercury-Redstone 3 / Freedom 7（1961-05-05，艾伦·谢泼德）——美国第一位太空人，比加加林晚23天。随后是Mercury-Redstone 4 / Liberty Bell 7（1961-07-21，格斯·格里森）。Liberty Bell 7舱门故障后，NASA将轨道Mercury飞行转移到更强大的Atlas LV-3B火箭。最后飞行于1961-07-21；共建造6枚Mercury-Redstone运载火箭，进行了2次载人飞行。"
+ },
+ {
+  "rel": "fleet/launcher/mercury-redstone.json",
+  "at": "best_known_for",
+  "en": "First US human-rated launcher — variant of the Army's Redstone IRBM. Launched Freedom 7 (1961-05-05) and Liberty Bell 7 (1961-07-21)",
+  "cur": "首个美国载人火箭 — 陆军Redstone中程弹道导弹的改进型。发射了Freedom 7（1961-05-05）和Liberty Bell 7（1961-07-21）"
+ },
+ {
+  "rel": "fleet/launcher/n1.json",
+  "at": "dispatch",
+  "en": "The N1 was the Soviet Union's Saturn V — and the reason it never reached the Moon. Standing 105 metres tall, its first stage clustered thirty engines around its base, not by choice but by necessity: no single Soviet engine came close to the power of the American F-1, so Korolev's team ganged thirty smaller ones together and hoped they would fire in concert. They never did. With no test stand large enough to fire the assembled stage on the ground, every launch was the first full test of the propulsion system — and all four, between 1969 and 1972, failed. The second launch (N1-5L, 3 July 1969) fell back onto its pad in one of the largest non-nuclear explosions ever recorded. Its NK-33 engines, hidden away after the programme was cancelled, proved among the finest ever built and flew on American rockets a quarter-century later — a brilliant machine beaten by the one thing it was never allowed to do: be tested before it flew.",
+  "cur": "N1是苏联的土星五号——也是苏联从未登月的原因。这枚火箭高105米，第一级在其底部聚集了三十台发动机，这不是出于选择，而是出于必要：没有任何一台苏联发动机的推力能接近美国的F-1，所以科罗廖夫的团队将三十台较小的发动机联合在一起，寄希望于它们能够协调工作。但它们从未做到过。由于没有足够大的试车台来在地面上点火组装好的第一级，每次发射实际上都是推进系统的首次完整测试——而1969年至1972年间的全部四次发射都失败了。第二次发射（N1-5L，1969年7月3日）从发射台坠落，引发了有记录以来最大规模的非核爆炸之一。其NK-33发动机在项目取消后被隐藏起来，后来被证明是有史以来最优秀的发动机之一，在四分之一世纪后飞上了美国火箭——一台杰出的机器，败给了唯一它从未被允许去做的事情：在飞行前接受测试。"
+ },
+ {
+  "rel": "fleet/launcher/n1.json",
+  "at": "description",
+  "en": "The Soviet Union’s answer to Saturn V — a 105 m super-heavy rocket with thirty NK-15 engines on the first stage. All four launches between 1969 and 1972 failed; the program was cancelled when Apollo 17 ended any chance of a Soviet crewed lunar landing.",
+  "cur": "苏联对应土星五号的火箭——一枚105米高的超重型运载火箭，第一级配备三十台NK-15发动机。1969年至1972年间的四次发射均失败；在Apollo 17结束苏联载人登月任何可能性后，该计划被取消。"
+ },
+ {
+  "rel": "fleet/launcher/new-glenn.json",
+  "at": "tagline",
+  "en": "Blue Origin's two-stage reusable heavy-lift orbital launcher",
+  "cur": "Blue Origin 的两级可重复使用重型轨道运载火箭"
+ }
+]

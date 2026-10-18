@@ -1,0 +1,20 @@
+[
+ {
+  "rel": "universe/named-stars/alhena.json",
+  "at": "bio",
+  "old": "Alhena (Gamma Geminorum) is een blauwwitte subreus op ongeveer 109 lichtjaar afstand, de op twee na helderste ster in Gemini en gelegen bij de voet van de Twins nabij de rand van de Melkweg.",
+  "new": "Alhena (Gamma Geminorum) is een blauwwitte subreus op ongeveer 109 lichtjaar afstand, de op twee na helderste ster in Tweelingen en gelegen bij de voet van de Twins nabij de rand van de Melkweg."
+ },
+ {
+  "rel": "universe/named-stars/deneb.json",
+  "at": "cultural",
+  "old": "De naam komt uit het Arabisch voor 'staart' en duidt de staart aan van Cygnus de Zwaan. Deneb vormt de hoeksteen van de Zomerdriehoek met Wega en Altair en volgt de lengte van de noordelijke stroom van de Melkweg.",
+  "new": "De naam komt uit het Arabisch voor 'staart' en duidt de staart aan van Zwaan de Zwaan. Deneb vormt de hoeksteen van de Zomerdriehoek met Wega en Altair en volgt de lengte van de noordelijke stroom van de Melkweg."
+ },
+ {
+  "rel": "universe/named-stars/sadr.json",
+  "at": "bio",
+  "old": "Sadr (Gamma Cygni) is een geelwitte superreus op ongeveer 1.800 lichtjaar afstand, gelegen op het kruispunt van het Noorderkruis waar de vleugels van Cygnus het lichaam raken. De ster ligt ingebed tegen een uitgestrekt complex van gloeiend waterstof, bekend als de Sadr-regio.",
+  "new": "Sadr (Gamma Cygni) is een geelwitte superreus op ongeveer 1.800 lichtjaar afstand, gelegen op het kruispunt van het Noorderkruis waar de vleugels van Zwaan het lichaam raken. De ster ligt ingebed tegen een uitgestrekt complex van gloeiend waterstof, bekend als de Sadr-regio."
+ }
+]

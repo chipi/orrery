@@ -1,0 +1,764 @@
+[
+ {
+  "rel": "programs/change.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of Chang'e is that a patient, published ladder of capability can outperform a dramatic sprint. China did not try to leap to the hardest goals; it climbed to them, proving orbiting before landing, landing before roving, roving before sample return — and by the time it attempted the truly unprecedented, the far-side landing and sample return, it had earned every prerequisite. Method, sustained over two decades, produced a run of firsts no rival matched.",
+  "cur": "Лекција програма Chang'e јесте да стрпљиво, јавно објављено степеновање способности може надмашити драматичан спринт. Кина није покушала да одмах скочи до најтежих циљева; пењала се ка њима, потврдивши орбитирање пре спуштања, спуштање пре крстарења, крстарење пре повратка узорака — а када се упустила у збиља безпрецедентно, спуштање на невидљиву страну и повратак узорака с ње, већ је стекла сваки предуслов. Метод, доследно спровођен две деценије, донео је низ премијера које нико од ривала није достигао."
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is that quiet competence reshapes the field. Chang'e made no grand proclamations and won no race for headlines, yet its steady success did more to restart human lunar ambition worldwide than any speech — because a program that simply keeps succeeding, mission after mission, becomes a strategic fact that everyone else has to answer. Consistency, in the end, is its own kind of power.",
+  "cur": "Дубља лекција јесте да тиха компетентност преобликује поље. Chang'e није давао велике изјаве нити је добијао трку за наслове, а ипак је његов постојан успех учинио више да се широм света поново покрене људска лунарна амбиција него било који говор — јер програм који једноставно наставља да успева, мисију за мисијом, постаје стратешка чињеница на коју сви остали морају да одговоре. Доследност је, на крају, посебна врста моћи."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "name",
+  "en": "Commercial Stations",
+  "cur": "Комерцијалне станице"
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "tagline",
+  "en": "The private outposts meant to replace the ISS — a bet that low Earth orbit can become a business, not just a government program.",
+  "cur": "Приватне полазне тачке намењене да замене МСС — опклада да ниска Земљина орбита може постати посао, а не само државни програм."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "the_land.0.md",
+  "en": "The International Space Station is the largest thing humanity has ever built in orbit, and it is going to be deliberately destroyed. Around 2030, after more than three decades of continuous crewed operation, the ISS will be guided down to burn up over the Pacific — because it is aging, expensive to maintain, and its partners have decided the future of low Earth orbit belongs to private companies rather than government agencies. The Commercial Stations are what is supposed to take its place.",
+  "cur": "Међународна свемирска станица (МСС) највећа је ствар коју је човечанство икада саградило у орбити, и биће намерно уништена. Око 2030, после више од три деценије непрекидног рада са посадом, МСС ће бити спуштена и изгорети изнад Пацифика — зато што стари, скупо се одржава, а њени партнери су одлучили да будућност ниске Земљине орбите припада приватним компанијама, а не државним агенцијама. Комерцијалне станице треба да заузму њено место."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "the_land.1.md",
+  "en": "This is a genuine change in model, not just in hardware. For sixty years, space stations were built and run by nations. The plan now is for NASA and its partners to stop operating stations altogether and instead buy time aboard privately-owned ones — the same handover that gave commercial companies the job of launching cargo and crew, extended to the destination itself. Several ventures are racing to build the outposts NASA and others will rent: Axiom Station, Orbital Reef, Starlab, and more.",
+  "cur": "Ово је права промена модела, а не само хардвера. Шездесет година државе су градиле станице и њима управљале. Сада је план да NASA и њени партнери потпуно престану да управљају станицама и да уместо тога купују време на станицама у приватном власништву — исто препуштање посла које је комерцијалним компанијама поверило задатак лансирања терета и посаде, овога пута проширено на само одредиште. Неколико подухвата се утркује да изгради упоришта која ће NASA и други изнајмљивати: Axiom Station, Orbital Reef, Starlab и друге."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "goals.0.md",
+  "en": "The immediate goal is continuity: to have at least one commercial station operating before the ISS is deorbited, so that human presence in low Earth orbit — unbroken since 2000 — is never interrupted. Losing that continuity would mean surrendering a hard-won capability and, symbolically, ceding the low-orbit high ground at exactly the moment China's station is the only other one flying.",
+  "cur": "Непосредни циљ је континуитет: да бар једна комерцијална станица ради пре него што МСС буде скинута с орбите, како људско присуство у ниској Земљиној орбити — непрекинуто од 2000. — никада не би било прекинуто. Губитак тог континуитета значио би одрицање од тешко стечене способности и, симболично, препуштање предности у ниској орбити баш у тренутку када је кинеска станица једина друга која лети."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "goals.1.md",
+  "en": "The deeper goal is to turn low Earth orbit into a self-sustaining economy. The vision is stations that pay for themselves through paying customers — research for companies and agencies, in-space manufacturing of things that can only be made in microgravity, and private astronauts and tourists — so that a human presence in orbit no longer depends on government budgets. NASA becomes one tenant among many, and the station becomes a business.",
+  "cur": "Дубљи циљ је да се ниска Земљина орбита претвори у економију која се сама одржава. Визија су станице које саме себе финансирају захваљујући клијентима који плаћају — истраживања за компаније и агенције, производња у свемиру оних ствари које се могу направити само у микрогравитацији, те приватни астронаути и туристи — тако да људско присуство у орбити више не зависи од државних буџета. NASA постаје један закупац међу многима, а станица постаје посао."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "goals.2.md",
+  "en": "There is also a strategic goal wrapped inside the commercial one: to keep an American-led human presence in low orbit as the ISS ends and China's Tiangong continues. The commercial stations are meant to ensure that the retirement of the ISS is a handover, not a withdrawal — that the West does not simply leave low Earth orbit to China by default.",
+  "cur": "Унутар комерцијалног циља крије се и стратешки: да се задржи људско присуство у ниској орбити под америчким вођством док МСС окончава рад, а кинески Tiangong наставља. Комерцијалне станице треба да обезбеде да повлачење МСС буде примопредаја, а не одустајање — да Запад једноставно не препусти ниску Земљину орбиту Кини по аутоматизму."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "outcome.0.md",
+  "en": "The outcome is still unwritten — these are, for now, contracts, designs, and test articles rather than flying stations. The plans are real and funded: Axiom is building an independent free-flyer, with only its first module docking briefly to the ISS before detaching to join the rest of the station in free flight — a plan restructured in late 2024 that dropped the earlier vision of assembling modules permanently at the ISS and then departing. Orbital Reef and Starlab are designing independent outposts, and Vast's Haven-1 — a single-module free-flyer — is among the most likely to fly first. But no commercial station is yet in orbit, and the timelines are tight against the ISS's planned end, with the usual risk that a paper station slips while the deadline does not.",
+  "cur": "Исход је још ненаписан — за сада су то уговори, пројекти и пробни модели, а не станице које лете. Планови су стварни и финансирани: Axiom гради независну станицу слободног лета, при чему се само њен први модул накратко спаја са МСС, а затим одваја да би се придружио остатку станице у слободном лету — план који је преструктуриран крајем 2024. и којим је напуштена ранија замисао да се модули трајно састављају на МСС, па да потом одлете. Orbital Reef и Starlab пројектују независне полазне тачке, а Vast-ов Haven-1 — станица слободног лета са једним модулом — међу најизгледнијима је да први полети. Али ниједна комерцијална станица још није у орбити, а рокови су тесни у односу на планирани крај МСС, уз уобичајени ризик да станица на папиру касни, док рок не касни."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "outcome.1.md",
+  "en": "The central uncertainty is not engineering but economics. It is not obvious that there is enough paying demand — research, manufacturing, tourism — to sustain even one private station, let alone several, once the deep pockets of a government anchor tenant are removed. The commercial-station era is a bet that a market exists where, so far, only a government program has. Whether that bet pays off is the question the next decade will answer.",
+  "cur": "Кључна неизвесност није инжењерска, већ економска. Није очигледно да постоји довољно платежне тражње — истраживања, производње, туризма — да би се одржала чак и једна приватна станица, а камоли неколико њих, пошто нестану дубоки џепови државе као главног закупца. Доба комерцијалних станица јесте опклада да тржиште постоји тамо где је до сада постојао само државни програм. Да ли ће се та опклада исплатити, питање је на које ће одговорити наредна деценија."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "outcome.2.md",
+  "en": "What is already clear is that the model has momentum and official backing. NASA has committed to becoming a customer rather than an operator, several well-funded companies are competing, and the ISS's fixed retirement date gives the whole effort a hard deadline. The commercial stations may slip, consolidate, or partly fail — but the intent to hand low Earth orbit to the private sector is firm.",
+  "cur": "Већ је јасно да модел има замах и званичну подршку. NASA се определила да постане купац, а не оператер, неколико добро финансираних компанија се надмећу, а утврђени датум повлачења МСС читавом подухвату поставља чврст рок. Комерцијалне станице могу да закасне, да се споје или делимично пропадну — али намера да се ниска Земљина орбита преда приватном сектору чврста је."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "narrative.0.md",
+  "en": "The commercial-station push is the last step in a long handover. First NASA handed cargo delivery to SpaceX and others; then crew transport; now the destination itself. Each step transferred a capability from a government that pioneered it to companies meant to run it more cheaply and open it to more users. The stations are the endpoint of that logic — the moment low Earth orbit stops being something governments operate and becomes something they buy.",
+  "cur": "Покушај да се створе комерцијалне станице последњи је корак дуге примопредаје. Прво је NASA пренела испоруку терета на SpaceX и друге; затим превоз посаде; а сада и само одредиште. Сваки корак пренео је једну способност с државе која ју је започела на компаније које треба да њоме управљају јефтиније и да је отворе већем броју корисника. Станице су крајња тачка те логике — тренутак када ниска Земљина орбита престаје да буде нешто чиме државе управљају и постаје нешто што оне купују."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "narrative.1.md",
+  "en": "It is also a wager about markets that has failed before. Previous attempts to build a commercial economy in low orbit found that, outside government contracts, paying demand was thin. The current effort is better funded and better timed — riding cheaper launch and a real deadline — but it is attempting the same hard thing: to prove that orbit can be a business. The ISS was never expected to turn a profit; its successors are supposed to, and that is a genuinely new and unproven demand.",
+  "cur": "То је уједно и опклада о тржиштима која је већ једном пропала. Претходни покушаји да се у ниској орбити изгради комерцијална економија показали су да је, изван државних уговора, платежна тражња била танка. Садашњи напор боље је финансиран и боље темпиран — јаше на таласу јефтинијих лансирања и стварног рока — али покушава исту тешку ствар: да докаже да орбита може бити посао. Од МСС-а се никада није очекивало да оствари профит; од њених наследница се то очекује, а то је заиста нова и недоказана тражња."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "narrative.2.md",
+  "en": "And it unfolds against a clock and a rival. The ISS's retirement is scheduled; China's Tiangong is flying and will not retire with it. The commercial stations are being built to ensure the West does not exit low Earth orbit just as a competitor settles in — which loads a business proposition with strategic weight, and raises the question of what happens if the market proves too thin but the strategic need remains.",
+  "cur": "И све се то одвија уз сат који откуцава и супарника. Повлачење МСС је заказано; кинески Tiangong лети и неће отићи у пензију заједно с њим. Комерцијалне станице граде се да би се осигурало да Запад не напусти ниску Земљину орбиту баш у тренутку када се такмац у њој настани — што пословну замисао оптерећује стратешком тежином и поставља питање шта ће бити ако се тржиште покаже сувише танко, а стратешка потреба остане."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "legacy.0.md",
+  "en": "If the commercial stations succeed, their legacy will be the transformation of low Earth orbit from a government program into an economy — a permanent human presence sustained by paying customers rather than national budgets, and a template for how every future orbital destination might be owned and run.",
+  "cur": "Ако комерцијалне станице успеју, њихово наслеђе биће претварање ниске Земљине орбите из државног програма у привреду — трајно људско присуство које издржавају купци који плаћају, а не национални буџети, и узор по коме би се могло поседовати и водити свако будуће орбитално одредиште."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "legacy.1.md",
+  "en": "If they struggle, their legacy will be a hard lesson about the limits of commercialization: that some capabilities, however desirable, may not yet have a market that can sustain them without a government anchor — and that the handover of low orbit may need to be slower, or subsidized longer, than the ISS's deadline allows.",
+  "cur": "Ако буду посустале, њихово наслеђе биће тешка лекција о границама комерцијализације: да за неке способности, ма колико пожељне, можда још не постоји тржиште које би их могло одржати без државе као главног закупца — и да примопредаја ниске орбите можда мора бити спорија, или дуже субвенционисана, него што то дозвољава рок МСС."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "legacy.2.md",
+  "en": "Either way, they mark the end of the ISS era and the test of a new model. The commercial stations are where the long experiment of privatizing access to space meets its hardest question — not whether a company can reach orbit, but whether it can profitably live there.",
+  "cur": "У сваком случају, оне означавају крај ере МСС и проверу новог модела. Комерцијалне станице су место где дуги експеримент приватизације приступа свемиру наилази на своје најтеже питање — не да ли једна компанија може да стигне у орбиту, већ да ли у њој може профитабилно да живи."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "lessons.0.md",
+  "en": "The lesson the commercial stations are testing is whether a capability pioneered by governments can be handed to a market that does not yet demonstrably exist. Launch had obvious customers; a permanently-crewed station's business case is far less proven. The effort is a real-time experiment in whether commercialization has limits, and where they lie.",
+  "cur": "Лекција коју комерцијалне станице проверавају јесте да ли се способност коју су започеле државе може предати тржишту које још увек нема уочљиво постојање. Лансирање је имало очигледне купце; пословни случај за станицу са трајном посадом далеко је мање доказан. Овај напор је експеримент у реалном времену о томе да ли комерцијализација има границе и где се оне налазе."
+ },
+ {
+  "rel": "programs/commercial-stations.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson, still forming, is about the danger of retiring a capability before its replacement is secure. The ISS has a fixed end date; its commercial successors do not yet fly. Betting that a market will materialize on schedule, with a hard deadline and a rival already in orbit, is a gamble whose stakes are nothing less than continuous human presence in low Earth orbit itself.",
+  "cur": "Дубља лекција, која се још обликује, тиче се опасности од гашења једне способности пре него што је њена замена обезбеђена. МСС има утврђен датум краја; његови комерцијални наследници још не лете. Кладити се да ће се тржиште појавити по плану, уз чврст рок и супарника који је већ у орбити, јесте коцка у којој је на коцки не мање него непрекидно људско присуство у самој ниској Земљиној орбити."
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "name",
+  "en": "ESA — Europe in human spaceflight",
+  "cur": "ESA — Европа у људским свемирским летовима"
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "tagline",
+  "en": "Europe never built a crewed spaceship of its own — and became indispensable to human spaceflight anyway, by choosing partnership over independence and mastering the pieces no one else wanted to build.",
+  "cur": "Европа никада није саградила сопствени свемирски брод за посаду — а ипак је постала незаменљива у људским свемирским летовима, јер је изабрала партнерство уместо независности и овладала деловима које нико други није желео да гради."
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "the_land.0.md",
+  "en": "Europe made a deliberate, unusual choice about human spaceflight: it decided not to build a crewed spacecraft of its own. Where the United States, the Soviet Union, and later China each developed the full stack — rockets, capsules, the ability to launch their own citizens — Europe, acting collectively through the European Space Agency, chose instead to be the best possible partner. It would fly its astronauts on other nations' vehicles, and it would contribute the capabilities that made the shared enterprise work. It is a quieter path than a national space race, and it turned out to be a remarkably effective one.",
+  "cur": "Европа је донела намерну, необичну одлуку о људским свемирским летовима: одлучила је да не гради сопствену летелицу за посаду. Док су Сједињене Државе, Совјетски Савез, а касније и Кина развиле цео склоп — ракете, капсуле, способност да лансирају сопствене грађане — Европа је, деловајући заједнички преко European Space Agency, изабрала да уместо тога буде најбољи могући партнер. Њене астронауте превозила би возила других нација, а она би допринела оним способностима које су омогућиле да заједнички подухват функционише. То је тиши пут од националне свемирске трке, а показао се као изузетно делотворан."
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "the_land.1.md",
+  "en": "This began with Spacelab in 1983 — a European-built laboratory that rode in the Space Shuttle's cargo bay and turned the Shuttle into a science platform, carrying the first ESA astronaut on its first flight. It continued with Columbus, Europe's permanent laboratory bolted onto the International Space Station, and with the Automated Transfer Vehicle, the largest and most sophisticated cargo ship of its era. Along the way European astronauts flew on Shuttles and Soyuz, lived aboard Mir and the ISS, and commanded the Station. Europe never launched its own crew — and became essential to nearly everyone who did.",
+  "cur": "Све је почело са Spacelab-ом 1983. године — лабораторијом европске градње која је путовала у теретном простору Space Shuttle-а и претворила Shuttle у научну платформу, носећи првог астронаута ESA на његовом првом лету. Настављено је са Columbus-ом, сталном европском лабораторијом причвршћеном за Међународну свемирску станицу (МСС), и са Automated Transfer Vehicle-ом, највећим и најсложенијим теретним бродом свог доба. Успут су европски астронаути летели на Shuttle-овима и Soyuz-има, живели на Mir-у и МСС-у и командовали Станицом. Европа никада није лансирала сопствену посаду — а постала је неопходна готово свима који јесу."
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "goals.0.caption",
+  "en": "The International Space Station, of which Europe is a full partner. ESA's Columbus laboratory is a permanent part of it, and European astronauts have lived aboard and commanded it — the fruit of the choice to join rather than to go it alone.",
+  "cur": "Међународна свемирска станица, чији је Европа пуноправни партнер. Лабораторија Columbus агенције ESA њен је стални део, а европски астронаути су живели на њој и њоме командовали — плод одлуке да се придружи, а не да иде сама."
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "goals.1.md",
+  "en": "Europe's goal was to matter in human spaceflight without carrying the full cost and risk of an independent crewed program. That meant specialising — building the laboratories where the science is done, the cargo ships that keep stations supplied, and the modules that expand them, and training astronauts who could fly on whatever vehicle a partnership provided. Rather than duplicate what others already had, Europe set out to supply what the shared endeavour needed and could not easily do without.",
+  "cur": "Циљ Европе био је да буде релевантна у људским свемирским летовима, а да не сноси пуне трошкове и ризик независног програма са посадом. То је значило специјализацију — градњу лабораторија у којима се обавља наука, теретних бродова који станице одржавају снабдевеним и модула који их проширују, као и обуку астронаута који могу да лете на било којој летелици коју партнерство обезбеди. Уместо да удваја оно што су други већ имали, Европа је кренула да обезбеди оно што је заједнички подухват захтевао и без чега је тешко могао да се снађе."
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "goals.2.md",
+  "en": "The strategy had a hidden strength: contributing an essential piece buys a permanent seat at the table. By building Spacelab, Europe earned a place aboard the Shuttle; by building Columbus and the ATV, it became a full and equal partner in the International Space Station, with its own laboratory and its own indispensable resupply craft. A nation that only bought seats would be a customer; Europe, by building capabilities others relied on, became a partner — with a real say in the enterprise.",
+  "cur": "Стратегија је имала скривену снагу: допринос једног битног дела купује стално место за столом. Градећи Spacelab, Европа је заслужила место на Shuttle-у; градећи Columbus и ATV, постала је пуноправан и равноправан партнер на Међународној свемирској станици, са сопственом лабораторијом и сопственом незаменљивом летелицом за снабдевање. Држава која би само куповала места била би купац; Европа је, градећи могућности на које су се други ослањали, постала партнер — са стварним правом гласа у том подухвату."
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "outcome.0.caption",
+  "en": "The Automated Transfer Vehicle — Europe's ISS freighter. Twenty tonnes fully loaded, it flew itself to an automatic docking with the Station, delivered cargo, water, air and propellant, and used its engines to boost the ISS's orbit.",
+  "cur": "Automated Transfer Vehicle — европски теретњак за МСС. Са двадесет тона у потпуно натовареном стању, сам је долетео до аутоматског спајања са Станицом, доставио терет, воду, ваздух и погонско гориво, а својим моторима подизао орбиту МСС-а."
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "outcome.1.md",
+  "en": "The results were substantial and distinctly European. Spacelab flew on 22 Shuttle missions between 1983 and 1998, giving Europe two decades of hands-on crewed science and a generation of experienced astronauts. Columbus, installed in 2008, gave Europe a permanent laboratory in orbit and made it a first-rank partner in the largest structure humans have ever built. And the Automated Transfer Vehicle — five enormous freighters flown between 2008 and 2015, each named for a European thinker from Jules Verne to Georges Lemaître — did something genuinely advanced: a twenty-tonne spacecraft that navigated itself to a fully automatic docking with the ISS, delivered supplies and fuel, and reboosted the entire Station with its engines.",
+  "cur": "Резултати су били значајни и изразито европски. Spacelab је летео на 22 мисије Shuttle-а између 1983. и 1998. године, дајући Европи две деценије практичне науке са посадом и једну генерацију искусних астронаута. Columbus, уграђен 2008. године, дао је Европи сталну лабораторију у орбити и учинио је партнером првог реда на највећој конструкцији коју су људи икада саградили. А Automated Transfer Vehicle — пет огромних теретњака лансираних између 2008. и 2015. године, од којих је сваки понео име једног европског мислиоца, од Жила Верна до Жоржа Леметра — учинио је нешто заиста напредно: свемирска летелица од двадесет тона сама је навигирала до потпуно аутоматског спајања са МСС-ом, доставила намирнице и гориво и својим моторима поново подигла орбиту целе Станице."
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "outcome.2.md",
+  "en": "That ATV expertise then paid an unexpected dividend. The technology Europe developed to build a self-flying, ISS-docking spacecraft became the basis of the European Service Module — the part Europe now builds for NASA's Orion, the spacecraft carrying astronauts back toward the Moon under Artemis. The service module supplies Orion's power, propulsion, air, and water: the section that keeps the crew alive on the way to lunar orbit and back. A continent that never built its own crewed spaceship now builds the half of an American one that its astronauts cannot survive without.",
+  "cur": "То искуство са ATV-ом затим је донело неочекивану дивиденду. Технологија коју је Европа развила да би изградила летелицу која сама лети и спаја се са МСС-ом постала је основа European Service Module — дела који Европа сада гради за NASA-ин Orion, летелицу која астронауте под програмом Artemis носи назад ка Месецу. Сервисни модул обезбеђује Orion-у енергију, погон, ваздух и воду: то је део који одржава посаду у животу на путу до месечеве орбите и назад. Континент који никада није саградио сопствени свемирски брод за посаду сада гради half једне америчке летелице без које њени астронаути не би могли да преживе."
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "narrative.0.md",
+  "en": "The through-line of Europe's human spaceflight is that partnership, done well, is not a lesser path than independence — it is a different and sometimes stronger one. By pooling the resources of many nations through ESA and specialising in the capabilities others needed, Europe achieved a role in human spaceflight far larger than any single European country could have afforded alone, and larger than the size of its budget would suggest. It never had the autonomy of a nation that launches its own crews; it had, instead, the leverage of being indispensable to those who do.",
+  "cur": "Заједничка нит европских људских свемирских летова јесте то да партнерство, када је добро изведено, није мањевредан пут од независности — већ другачији, а понекад и јачи. Здруживањем средстава многих нација преко ESA и специјализацијом у способностима које су другима биле потребне, Европа је постигла улогу у људским свемирским летовима далеко већу него што би је иједна европска држава сама могла себи приуштити, и већу него што би то сугерисала величина њеног буџета. Никада није имала аутономију нације која сама лансира своје посаде; уместо тога, имала је полугу коју пружа то што је неопходна онима који то раде."
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "narrative.1.md",
+  "en": "The ATV is the clearest expression of this. It was not a prestige project or a race entry; it was a supremely capable piece of infrastructure — an automated freighter more advanced in its docking and its cargo capacity than anything else flying — that made Europe central to keeping the ISS alive. And because Europe had built that capability, it was positioned to build the next thing: the Orion service module, and with it a place in humanity's return to the Moon. Mastering an unglamorous niche led, step by step, to a share in the most ambitious crewed program of the new century.",
+  "cur": "ATV је најјаснији израз тога. Није био престижни пројекат нити учесник у трци; био је изузетно способан део инфраструктуре — аутоматски теретњак напреднији по начину спајања и по носивости од било чега другог што је летело — који је Европу учинио кључном за одржавање МСС у животу. А пошто је Европа изградила ту способност, била је у положају да изгради следеће: сервисни модул за Orion, а са њим и место у повратку човечанства на Месец. Овладавање неупадљивом нишом довело је, корак по корак, до удела у најамбициознијем програму са посадом новог века."
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "legacy.0.caption",
+  "en": "The International Space Station — the enterprise Europe helped build and sustain, and the proof that a nation can shape human spaceflight profoundly without ever launching a crew of its own.",
+  "cur": "Међународна свемирска станица — подухват који је Европа помогла да се изгради и одржи, и доказ да нација може дубоко обликовати људске свемирске летове а да никада сама не лансира посаду."
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "legacy.1.md",
+  "en": "Europe's legacy in human spaceflight is a model as much as a set of hardware: proof that a mid-sized space power can matter enormously by partnering rather than competing, by pooling many nations' resources, and by building the essential pieces others depend on rather than duplicating what already exists. Columbus is still in orbit; European astronauts still fly and command; and the ATV's descendants now carry humans toward the Moon. None of it required an independent European crewed spacecraft, and that is precisely the point.",
+  "cur": "Наслеђе Европе у људским свемирским летовима подједнако је модел колико и скуп опреме: доказ да средње велика свемирска сила може имати огроман значај тако што се удружује уместо да се такмичи, здружује средства многих нација и гради битне делове од којих други зависе, уместо да удвостручује оно што већ постоји. Columbus је још у орбити; европски астронаути и даље лете и командују; а потомци ATV-а сада носе људе ка Месецу. Ништа од тога није захтевало самосталну европску летелицу са посадом, и управо је то поента."
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "legacy.2.md",
+  "en": "It is also the human-spaceflight complement to Ariane. Where Ariane secured Europe's independent *access* to space, its human program secured Europe's *place* in space — a permanent, respected seat in the international enterprise, earned by contribution rather than claimed by flag. Together they define a distinctly European way of being a great space power: autonomous where it must be, collaborative where that is stronger, and essential either way.",
+  "cur": "То је уједно и допуна Ariane у области људских свемирских летова. Док је Ariane обезбедила независан европски *приступ* свемиру, европски програм са људском посадом обезбедио је *место* Европе у свемиру — трајно, поштовано седиште у међународном подухвату, стечено доприносом, а не заузето заставом. Заједно они одређују изразито европски начин да се буде велика свемирска сила: самостална где то мора да буде, сарадничка где је то јаче, а у оба случаја незаменљива."
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "lessons.0.md",
+  "en": "The first lesson is that you do not have to build everything yourself to be essential. Europe never developed an independent crewed spacecraft, yet by mastering laboratories, cargo, and modules it became a partner no major human-spaceflight program could easily do without. Contributing a distinctive, genuinely needed capability buys more lasting influence than trying to replicate, at lower quality, what others already do well. Specialisation, not duplication, was Europe's route to relevance.",
+  "cur": "Прва лекција јесте да не морате све сами да изградите да бисте били незаменљиви. Европа никада није развила самосталну летелицу са посадом, али је овладавањем лабораторијама, теретом и модулима постала партнер без кога ниједан већи програм људских свемирских летова не би лако могао. Доприношење посебној, заиста потребној способности доноси трајнији утицај него покушај да се, уз нижи квалитет, понови оно што други већ добро раде. Специјализација, а не удвостручавање, била је европски пут ка важности."
+ },
+ {
+  "rel": "programs/esa-human.json",
+  "at": "lessons.1.md",
+  "en": "The second lesson is that partnership multiplies a limited budget. By combining the resources of many nations through a single agency and investing them in capabilities that earned a permanent role, Europe achieved far more in human spaceflight than its spending alone would predict — and turned mastery of one niche, automated cargo, into a share of the return to the Moon. For a power that cannot outspend the giants, being indispensable is a better strategy than being independent, and Europe has made it work for forty years.",
+  "cur": "Друга лекција јесте да партнерство множи ограничени буџет. Обједињавањем средстава многих нација кроз једну агенцију и улагањем у способности које су јој обезбедиле трајну улогу, Европа је у људским свемирским летовима постигла далеко више него што би то предвидела њена издвајања сама по себи — и овладавање једном нишом, аутоматизованим теретом, претворила у удео у повратку на Месец. За силу која не може да надмаши гиганте по потрошњи, бити незаобилазан боља је стратегија него бити независан, а Европа је већ четрдесет година успешно спроводи."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "name",
+  "en": "ESA — Space Science",
+  "cur": "ESA — свемирска наука"
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "tagline",
+  "en": "Europe's robotic science fleet — the first spacecraft to land on a comet, the most precise map of the galaxy ever made, and a telescope hunting the dark universe.",
+  "cur": "Европска роботска научна флота — прва летелица која је слетела на комету, најпрецизнија мапа галаксије икада направљена и телескоп који ослушкује тамни свемир."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "the_land.0.md",
+  "en": "The European Space Agency's human spaceflight is done in partnership — modules on the ISS, astronauts flown on others' rockets, a share of Artemis. But in robotic science, ESA leads in its own right, running some of the most ambitious deep-space missions ever flown. Where NASA's science is vast and broad, ESA's tends to be precise and audacious: a small number of missions attempting things no one had ever done, executed with a patience measured in decades.",
+  "cur": "Људске свемирске летове Европске свемирске агенције ESA остварује у партнерству — модулима на МСС-у, астронаутима који лете на туђим ракетама и уделом у програму Artemis. Али у роботској науци ESA предводи самостално и води неке од најамбициознијих мисија у далеком свемиру које су икада летеле. Док је NASA-ина наука огромна и широка, ESA-ина по правилу тежи прецизности и смелости: мали број мисија које покушавају оно што нико никада није учинио, изведених са стрпљењем које се мери деценијама."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "the_land.1.md",
+  "en": "Three missions capture the character of it. Rosetta chased a comet for ten years and then did something never attempted before — orbited it and landed on it. Gaia has spent a decade making the most accurate three-dimensional map of the Milky Way in history, pinning down the positions of nearly two billion stars. And Euclid is surveying a third of the entire sky to trace the invisible scaffolding of dark matter and the mysterious force pulling the universe apart. Together they are Europe's argument that it belongs at the front of space science.",
+  "cur": "Три мисије исказују њену суштину. Rosetta је десет година јурила комету, а затим учинила нешто што никада раније није покушано — ушла је у орбиту око ње и спустила се на њу. Gaia већ деценију израђује најтачнију тродимензионалну мапу Млечног пута у историји, одређујући положаје скоро две милијарде звезда. А Euclid истражује трећину целог неба како би ушао у траг невидљивој скели тамне материје и тајанственој сили која раздваја свемир. Заједно оне чине аргумент Европе да њено место припада самом врху свемирске науке."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "goals.0.md",
+  "en": "The goals are as varied as the missions, but each targets a first-rank scientific question. Rosetta set out to understand comets — pristine leftovers from the solar system's birth — by escorting one through its closest approach to the Sun and sampling it directly. Gaia's goal is the map itself: a precise census of the galaxy's stars that underpins nearly all of modern astronomy, because you cannot understand the Milky Way until you know where its stars actually are and how they move.",
+  "cur": "Циљеви су разноврсни колико и саме мисије, али сваки од њих усмерен је на научно питање првог реда. Rosetta је кренула да разуме комете — нетакнуте остатке из доба рађања Сунчевог система — тако што је једну од њих пратила кроз њену највећу близину Сунцу и непосредно узела узорке. Циљ мисије Gaia јесте сама мапа: прецизан попис звезда галаксије, на коме почива готово сва савремена астрономија, јер не можете разумети Млечни пут све док не знате где се његове звезде заиста налазе и како се крећу."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "goals.1.caption",
+  "en": "Rosetta — the spacecraft that chased comet 67P for ten years, orbited it, and dropped the Philae lander onto its surface: the first landing on a comet in history.",
+  "cur": "Rosetta — летелица која је десет година јурила комету 67P, ушла у њену орбиту и спустила лендер Philae на њену површину: прво слетање на комету у историји."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "goals.2.md",
+  "en": "Euclid's goal is the darkest: to map how the universe's structure has grown over cosmic time, and from that to constrain what dark matter and dark energy actually are — the roughly 95% of the universe that is neither stars nor atoms and that no one understands. It is a mission aimed squarely at the biggest open question in physics, attacked with the patient, survey-everything method that European science has made its signature.",
+  "cur": "Циљ мисије Euclid је најмрачнији: да мапира како је структура свемира расла током космичког времена и да из тога сузи могућности о томе шта тамна материја и тамна енергија заправо јесу — око 95% свемира које нису ни звезде ни атоми и које нико не разуме. То је мисија уперена право у највеће отворено питање физике, а прилази му се стрпљивим методом прегледа свега, који је европска наука учинила својим обележјем."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "outcome.0.md",
+  "en": "Rosetta's 2014 arrival at comet 67P, after a ten-year, six-billion-kilometre chase that slingshot past Earth and Mars to build up speed, was one of the great moments of modern spaceflight. Its Philae lander bounced across the low-gravity surface and came to rest in shadow, its batteries running down within days — a partial, dramatic success — but the Rosetta orbiter itself escorted the comet for two years through its fiery passage around the Sun, returning a transformative picture of what comets are made of and how they behave.",
+  "cur": "Долазак летелице Rosetta до комете 67P 2014. године, после десетогодишње потере дуге шест милијарди километара, током које је користила гравитациону праћку поред Земље и Марса да би добила на брзини, био је један од великих тренутака савременог свемирског летења. Њен лендер Philae одскакивао је преко површине са слабом гравитацијом и зауставио се у сенци, а његове батерије су се истрошиле за неколико дана — делимичан, али драматичан успех — док је сама орбитална летелица Rosetta две године пратила комету кроз њен ватрени пролаз око Сунца и доставила преображајну слику о томе од чега су комете састављене и како се понашају."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "outcome.1.caption",
+  "en": "Gaia — a spacecraft that did nothing but measure, precisely, the positions of nearly two billion stars. Its map is the foundation beneath a decade of galactic astronomy.",
+  "cur": "Gaia — летелица која није радила ништа осим што је прецизно мерила положаје скоро две милијарде звезда. Њена мапа је темељ деценије галактичке астрономије."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "outcome.2.md",
+  "en": "Gaia's data releases have quietly reshaped astronomy: its star map is now the reference frame almost every other observation is calibrated against, revealing the Milky Way's structure, hidden streams of ancient merged galaxies, and the motions that will play out over millions of years. Euclid, newer, is already returning sky surveys of staggering depth and breadth. Between them, ESA's science fleet has delivered firsts — the comet landing, the galactic map — that stand among the most significant robotic achievements of the era.",
+  "cur": "Објављивања података мисије Gaia тихо су преобликовала астрономију: њена мапа звезда је данас референтни оквир према коме се калибрише готово свако друго посматрање, а открива структуру Млечног пута, скривене токове звезда древних галаксија које су се споиле с њим и кретања која ће се одвијати током милиона година. Euclid, као новија мисија, већ враћа прегледе неба задивљујуће дубине и обима. Заједно, научна флота ESA остварила је прваке — слетање на комету и мапу галаксије — који спадају међу најзначајнија роботска достигнућа ове ере."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "narrative.0.md",
+  "en": "The thread through ESA's science is patience at a scale few programs attempt. Rosetta's mission was two decades from approval to comet, ten of them spent simply flying to the target, including nearly three years in hibernation to save power. Gaia's value only emerged after years of accumulating measurements. This is science as a long game — missions that demand a continuity of funding and purpose across a decade or more, and a willingness to wait for a payoff that arrives all at once, near the end.",
+  "cur": "Нит која провлачи кроз науку агенције ESA јесте стрпљење у размерама које мало који програм покушава да достигне. Мисији Rosetta било је потребно две деценије од одобрења до комете, од тога десет година само за лет до циља, укључујући скоро три године хибернације ради уштеде енергије. Вредност мисије Gaia показала се тек након година прикупљања мерења. То је наука као дуга игра — мисије које захтевају континуитет финансирања и сврхе током десетак или више година, као и спремност да се чека на добит која стиже одједном, при крају."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "narrative.1.md",
+  "en": "It is also science defined by doing one hard thing supremely well. ESA does not try to match NASA's breadth; it picks a small number of missions and makes each a genuine first or a definitive instrument. Landing on a comet had never been done; Gaia's precision had never been achieved; Euclid's survey is unmatched in scope. The strategy is depth over quantity — a European specialty of turning a focused mission into a landmark.",
+  "cur": "То је уједно и наука одређена тиме што једну тешку ствар ради изузетно добро. ESA не покушава да се мери са ширином програма агенције NASA; бира мали број мисија и од сваке прави заиста прво достигнуће или коначан инструмент. Слетање на комету никада раније није изведено; прецизност мисије Gaia никада раније није постигнута; преглед неба мисије Euclid нема премца по обухвату. Стратегија је дубина уместо количине — европска специјалност претварања усредсређене мисије у прекретницу."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "narrative.2.md",
+  "en": "And it is deeply collaborative and international, in the European manner — missions built across many member states, often flown in partnership with NASA, launched on Europe's own Ariane rockets, and feeding a scientific community that spans the continent. ESA's science is a demonstration that a coalition of nations, pooling resources, can produce results that rival or exceed what any single one of them could achieve alone.",
+  "cur": "И дубоко је колаборативна и међународна, на европски начин — мисије се граде широм многих држава чланица, често лете у партнерству с агенцијом NASA, лансирају се на европским ракетама Ariane и хране научну заједницу која обухвата цео континент. Наука агенције ESA показује да коалиција нација, удруживањем ресурса, може постићи резултате који парирају ономе што би свака од њих понаособ могла да оствари сама, или то чак премашују."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "legacy.0.md",
+  "en": "ESA's science leaves a legacy of firsts and foundations: the first comet landing, which proved that even the smallest, most irregular bodies can be reached and touched; and Gaia's galactic map, which has become the reference frame underpinning modern astronomy, used by nearly every observatory on Earth and in space.",
+  "cur": "Наука агенције ESA оставља наслеђе прворазредних достигнућа и темеља: прво слетање на комету, које је доказало да се чак и до најмањих, најнеправилнијих тела може стићи и дотаћи их; и галактичку мапу мисије Gaia, која је постала референтни оквир на коме почива савремена астрономија и који користи готово свака опсерваторија на Земљи и у свемиру."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "legacy.1.md",
+  "en": "Its deeper legacy is a model of ambitious, patient, focused science — a small number of missions, each attempting a genuine first, sustained across decades. That model has made Europe a leader in robotic exploration despite budgets well below NASA's, and a partner the larger agencies actively seek out.",
+  "cur": "Њено дубље наслеђе је узор амбициозне, стрпљиве и усредсређене науке — мали број мисија, од којих свака покушава право прво достигнуће, а све одржаване током деценија. Тај узор је од Европе направио предводницу у роботском истраживању упркос буџетима знатно мањим од буџета агенције NASA, и партнера кога веће агенције активно траже."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "legacy.2.md",
+  "en": "And through Euclid and the dark-universe work, ESA is positioned at the frontier of the biggest unanswered question in physics — what the universe is actually made of. Whatever the answer, Europe's survey telescopes will be central to finding it.",
+  "cur": "А преко мисије Euclid и истраживања тамног универзума, ESA се налази на самој граници највећег неодговореног питања у физици — од чега се универзум заправо састоји. Какав год био одговор, европски телескопи за истраживање неба биће кључни у његовом проналажењу."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of ESA's science is that patience is a scientific instrument. Missions like Rosetta and Gaia deliver nothing for years and then everything at once, and they are only possible for an organization willing to commit to a decade-long payoff. The willingness to wait — to fund and fly a mission whose results arrive near its end — is itself a capability, and one Europe has made a specialty.",
+  "cur": "Лекција науке агенције ESA јесте да је стрпљење научни инструмент. Мисије попут Rosetta и Gaia годинама не дају ништа, а затим све одједном, а могуће су само за организацију која је спремна да се обавеже на исплату која стиже тек после читаве деценије. Спремност да се чека — да се финансира и лансира мисија чији резултати стижу при крају — и сама је способност, и то она коју је Европа учинила својом специјалношћу."
+ },
+ {
+  "rel": "programs/esa-science.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is that focus beats breadth for a mid-sized power. ESA cannot do everything NASA does, so it does a few things no one else has done — land on a comet, map the galaxy, survey the dark universe — and becomes a leader through depth rather than scale. Picking the right hard problem, and solving it definitively, is how a coalition punches above its budget.",
+  "cur": "Дубља лекција јесте да усредсређеност надјачава широину када је реч о средње великој сили. ESA не може да ради све што ради NASA, па ради неколико ствари које нико други није учинио — слеће на комету, мапира галаксију, истражује тамни универзум — и постаје предводница дубином, а не размерама. Одабрати прави тежак проблем и решити га коначно — тако једна коалиција надилази могућности свог буџета."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "tagline",
+  "en": "India's bid to launch its own people — the crewed program that would make it the fourth nation with independent human spaceflight.",
+  "cur": "Покушај Индије да сама лансира своје људе — програм са посадом који би је учинио четвртом нацијом са независним свемирским летовима људи."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "the_land.0.md",
+  "en": "India has reached the Moon and Mars with robots, on famously small budgets, and earned a place among the world's serious space powers. But one capability has remained out of reach: launching its own people. Human spaceflight is a different order of difficulty from robotic exploration — a single failure costs lives, not just a mission — and only three nations have ever done it independently. Gaganyaan — Sanskrit for \"sky craft\" — is India's program to become the fourth.",
+  "cur": "Индија је роботима стигла до Месеца и Марса, уз чувено скромне буџете, и заслужила место међу озбиљним светским свемирским силама. Али једна способност остала је ван домашаја: самостално лансирање сопствених људи. Свемирски лет са људском посадом је сасвим други ред тежине од роботског истраживања — један једини неуспех односи животе, а не само једну мисију — и само три нације су га икада оствариле самостално. Gaganyaan — на санскриту „небеска летелица“ — јесте индијски програм да постане четврта."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "the_land.1.md",
+  "en": "It is a deliberate step up the ladder ISRO has been climbing for decades. The agency that reached Mars on its first try and landed at the lunar south pole is now building the far harder capability of keeping human beings alive in orbit and bringing them safely home — a crew capsule, a human-rated launcher, a life-support system, an escape system, and an astronaut corps. Gaganyaan is the program where India's robotic confidence meets the unforgiving standard of human safety.",
+  "cur": "То је промишљен корак уз лествицу којом се ISRO пење деценијама. Агенција која је стигла до Марса из првог покушаја и спустила се на лунарни јужни пол сада гради знатно тежу способност: да људска бића одржи у животу у орбити и безбедно их врати кући — капсулу за посаду, ракету-носач сертификовану за људску посаду, систем за одржавање живота, систем за бег у случају опасности и корпус астронаута. Gaganyaan је програм у коме се индијско роботско самопоуздање среће са немилосрдним мерилом безбедности људи."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "goals.0.md",
+  "en": "The core goal is straightforward and enormous: fly a small crew of Indian astronauts to low Earth orbit on an Indian rocket, keep them alive there for a few days, and return them safely. Doing so requires mastering the specific, life-critical technologies of human spaceflight — a pressurized crew capsule, a reliable life-support system, a human-rated version of India's heavy launcher, and above all a crew-escape system that can pull the capsule clear of a rocket failing on the pad or in flight.",
+  "cur": "Основни циљ је једноставан и огроман: послати малу посаду индијских астронаута у ниску орбиту око Земље на индијској ракети, одржати их у животу тамо неколико дана и безбедно их вратити. За то је потребно овладати специфичним технологијама свемирског лета са људском посадом од којих зависи живот — капсулом за посаду под притиском, поузданим системом за одржавање живота, верзијом индијске тешке ракете сертификованом за људе, и пре свега системом за бег посаде који може да извуче капсулу из ракете која отказује на лансирној рампи или у лету."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "goals.1.caption",
+  "en": "The Gaganyaan crew module — India's first human-rated spacecraft. Everything about it is held to a higher standard than the robotic missions that came before, because for the first time the payload is people.",
+  "cur": "Модул за посаду Gaganyaan — прва индијска свемирска летелица сертификована за људску посаду. Све на њој подлеже вишем стандарду него код роботских мисија које су јој претходиле, јер су по први пут терет људи."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "goals.2.md",
+  "en": "The longer-term goal is a foundation, not a single flight. India has stated ambitions for its own space station and eventually crewed lunar missions, and none of that is possible without first mastering basic human spaceflight. Gaganyaan is the prerequisite — the program that turns India from a nation that explores with robots into one that can send its own people, the gateway to everything crewed that follows.",
+  "cur": "Дугорочни циљ је темељ, а не један лет. Индија је изнела амбиције да изгради сопствену свемирску станицу и да на крају оствари мисије са људском посадом до Месеца, а ништа од тога није могуће без претходног овладавања основним свемирским летом са људском посадом. Gaganyaan је предуслов — програм који Индију претвара из нације која истражује роботима у нацију која може да пошаље сопствене људе, капију ка свему што са посадом тек долази."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "outcome.0.md",
+  "en": "Gaganyaan is still ahead of its first crewed flight, working methodically through the same prove-it-first discipline that defined Chandrayaan and Mangalyaan. It has run uncrewed tests, including a 2023 flight that demonstrated the crew-escape system pulling the capsule away from its rocket — the single most important safety capability of any human program. Uncrewed orbital test flights and a robotic humanoid passenger will precede any human launch; the first crew is targeted for 2027.",
+  "cur": "Gaganyaan тек треба да дочека свој први лет са посадом и методично пролази кроз исту дисциплину „прво докажи“ која је обележила Chandrayaan и Mangalyaan. Већ су изведена испитивања без посаде, укључујући лет из 2023. године на којем је показано како систем за спасавање посаде одвлачи капсулу од ракете — најважнију безбедносну способност сваког програма са људском посадом. Пре било ког лансирања људи уследиће орбитални пробни летови без посаде и роботски хуманоидни путник; прва посада предвиђена је за 2027. годину."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "outcome.1.md",
+  "en": "The outcome will be measured not just by reaching orbit but by doing it safely, on an ISRO budget, without the years of fatal accidents that scarred the early US and Soviet programs. India is attempting to join the human-spaceflight club having watched everyone else do it first — and, as with its robotic firsts, is betting that patience and frugality can deliver a capability the pioneers paid for in lives.",
+  "cur": "Исход ће се мерити не само доласком у орбиту, већ и тиме да се то постигне безбедно, у оквиру буџета ISRO-а, без година кобних несрећа које су оставиле ожиљке на раним америчким и совјетским програмима. Индија покушава да уђе у клуб земаља са свемирским летовима људи пошто је гледала како то сви остали раде пре ње — и, као и код својих роботских првенаца, кладећи се да стрпљење и штедљивост могу да донесу способност за коју су пионири платили људским животима."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "outcome.2.md",
+  "en": "Because the program is not yet complete, its story is still being written. But its trajectory is clear: India has methodically acquired every other deep-space capability it set out to build, and Gaganyaan is the current rung on that ladder — the hardest one, and the one that would place India among the very small group of nations that can put a human into space on their own.",
+  "cur": "Пошто програм још није завршен, његова прича се и даље пише. Али његова путања је јасна: Индија је методично стекла сваку другу способност за далеки свемир коју је желела да изгради, а Gaganyaan је тренутна пречага на тој лествици — најтежа, и она која би Индију сврстала међу сасвим малу групу држава које самостално могу да пошаљу човека у свемир."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "narrative.0.md",
+  "en": "The narrative of Gaganyaan is a nation stepping deliberately from robots to people. Every capability India built before it — reaching orbit, navigating to other worlds, landing softly, returning samples of experience — was preparation for the one it could not shortcut: keeping humans alive in space. Gaganyaan is ISRO applying its signature method, incremental and frugal and unhurried, to the highest-stakes problem in spaceflight, where the usual tolerance for failure does not apply.",
+  "cur": "Прича о Gaganyaan-у је прича о нацији која промишљено прелази од робота ка људима. Свака способност коју је Индија изградила пре њега — досезање орбите, навигација до других светова, меко спуштање, враћање узорака искуства — била је припрема за ону која се није могла прескочити: одржати људе у животу у свемиру. Gaganyaan је ISRO који примењује свој препознатљиви метод, поступан, штедљив и без журбе, на најризичнији проблем свемирског лета, где уобичајена толеранција на неуспех не важи."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "narrative.1.md",
+  "en": "It is also a program shaped by watching others. India comes to human spaceflight six decades after Gagarin, with the entire history of the US, Soviet, and Chinese programs to learn from — their triumphs and, more valuably, their disasters. Like China before it, India is optimizing not for being early but for arriving safely, engineering out in advance the failure modes that killed earlier crews. Being last to this capability is, in the specific domain of human safety, an advantage.",
+  "cur": "То је такође програм обликован посматрањем других. Индија долази до свемирског лета са људском посадом шест деценија после Гагарина, имајући читаву историју америчког, совјетског и кинеског програма из које може да учи — њихове тријумфе и, што је вредније, њихове катастрофе. Попут Кине пре ње, Индија не оптимизује тако да буде рана, већ да стигне безбедно, унапред уклањајући инжењерским решењима режиме отказа који су убили раније посаде. Бити последњи на путу до ове способности, у конкретном домену безбедности људи, јесте предност."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "narrative.2.md",
+  "en": "And it carries national weight beyond the engineering. An Indian astronaut in an Indian spacecraft, launched from Indian soil, is a milestone of a kind that resonates far past the space community — a marker of technological arrival for the world's most populous nation. Gaganyaan is a science-and-engineering program that is also, unmistakably, a statement about India's place among the powers that can reach space on their own.",
+  "cur": "А носи и националну тежину која превазилази инжењерство. Индијски астронаут у индијској свемирској летелици, лансиран са индијског тла, представља прекретницу која одјекује далеко ван свемирске заједнице — знак технолошког доласка најмногољудније нације на свету. Gaganyaan је научно-инжењерски програм који је, неспорно, и изјава о месту Индије међу силама које могу самостално да допру до свемира."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "legacy.0.md",
+  "en": "Gaganyaan's legacy, once it flies, will be India's entry into the small club of nations with independent human spaceflight — a capability that cannot be bought or borrowed, only built, and that reshapes a country's standing in space overnight.",
+  "cur": "Наслеђе програма Gaganyaan, када полети, биће улазак Индије у мали клуб нација са независним свемирским летом људи — способност која се не може купити нити позајмити, већ само изградити, и која преко ноћи мења положај једне земље у свемиру."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "legacy.1.md",
+  "en": "Its deeper legacy is as a foundation. Every ambition India has voiced beyond it — a national space station, crewed lunar missions, a long-term human presence in orbit — depends on the basic human-spaceflight capability Gaganyaan is built to establish. It is the doorway through which all of India's crewed future must pass.",
+  "cur": "Његово дубље наслеђе је у томе што представља темељ. Свака амбиција коју је Индија изнела изван њега — национална свемирска станица, лунарне мисије са посадом, дуготрајно људско присуство у орбити — зависи од основне способности свемирског лета људи коју Gaganyaan треба да успостави. То су врата кроз која мора проћи сва будућност Индије са посадом."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "legacy.2.md",
+  "en": "And it extends the multipolar shift that Chandrayaan and Mangalyaan began. As India joins Russia, the US, and China in independent human spaceflight, the capability to send people to space becomes genuinely distributed — no longer the preserve of the Cold War powers, but shared among a widening circle of nations.",
+  "cur": "И он проширује вишеполарни помак који су започели Chandrayaan и Mangalyaan. Како се Индија придружује Русији, САД и Кини у независном свемирском лету људи, способност слања људи у свемир постаје заиста распоређена — више није привилегија сила из доба Хладног рата, већ је подељена међу све ширим кругом нација."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "lessons.0.md",
+  "en": "The lesson Gaganyaan is testing is whether the frugal, incremental method that carried India to the Moon and Mars can be extended to the one domain that punishes shortcuts hardest: human safety. Robotic missions can fail and teach; a crewed one that fails kills. Gaganyaan is the case study in whether ISRO's discipline scales to a problem where the margin for error is zero.",
+  "cur": "Лекција коју Gaganyaan проверава јесте питање да ли се штедљив, поступан метод који је Индију довео до Месеца и Марса може проширити на једно подручје које најстрожије кажњава пречице: безбедност људи. Роботске мисије могу да пропадну и да науче нечему; она са посадом, ако пропадне, убија. Gaganyaan је студија случаја о томе да ли се дисциплина организације ISRO може применити на проблем у коме је маргина за грешку нула."
+ },
+ {
+  "rel": "programs/gaganyaan.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is that in human spaceflight, arriving last can be a form of wisdom. India comes to crewed flight with every predecessor's accidents to study, and the chance to engineer out in advance the failures that others discovered fatally. Being decades late costs it prestige it does not seem to want; what it buys, if the method holds, is astronauts who come home.",
+  "cur": "Дубља лекција је да у свемирском лету људи долазак последњи може бити облик мудрости. Индија долази до лета са посадом имајући да проучи несреће свих својих претходника, као и прилику да унапред пројектантски отклони кварове које су други открили по цену живота. Кашњење од неколико деценија кошта је престижа који, чини се, не жели; оно што тиме купује, ако метод издржи, јесу астронаути који се враћају кући."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "tagline",
+  "en": "The first spacecraft to orbit Jupiter flew a crippled antenna for over a decade — and still returned the strongest evidence yet that a moon of Jupiter hides an ocean.",
+  "cur": "Прва свемирска летелица која је ушла у орбиту око Јупитера више од деценије летела је са оштећеном антеном — а ипак је вратила до тада најјачи доказ да један Јупитеров месец крије океан."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "the_land.0.md",
+  "en": "The Pioneers and Voyagers had flown past Jupiter, each in a matter of hours, and each had left more questions than it answered: hints of an ocean under the ice of Europa, volcanoes on Io, a magnetic field vaster than anything else in the solar system. Flybys could not resolve them. To understand Jupiter and its four great moons — worlds as varied and interesting as planets in their own right — a spacecraft would have to enter orbit and stay for years.",
+  "cur": "Летелице Pioneers и Voyagers прошле су поред Јупитера, свака за неколико сати, и свака је оставила више питања него одговора: наговештаје океана испод леда Европе, вулкане на Иму, магнетно поље пространије од било чега другог у Сунчевом систему. Прелети нису могли да их разреше. Да би се разумели Јупитер и његова четири велика месеца — светови разноврсни и занимљиви као планете за себе — свемирска летелица морала је да уђе у орбиту и остане годинама."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "the_land.1.md",
+  "en": "Galileo was built to be that resident, and it had a hard road even before launch. Delayed for years by the Challenger disaster and shifting launch plans, it finally left Earth from the Space Shuttle in 1989 on a slow, looping path — swinging past Venus and twice past Earth to build up speed — that took six years to reach a planet other missions had flown to directly.",
+  "cur": "Galileo је изграђен да буде тај становник, а пут му је био тежак још пре лансирања. Због катастрофе Challenger-а и честих промена планова лансирања годинама је каснио, да би напокон 1989. напустио Земљу са Space Shuttle-а на спорој, петљастој путањи — замахнувши поред Венере и двапут поред Земље да би добио на брзини — због које му је требало шест година да стигне до планете до које су друге мисије летеле директно."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "goals.0.md",
+  "en": "The goal was the first sustained study of the Jupiter system: to orbit the planet, tour its four large moons repeatedly, and turn the Voyagers' tantalising glimpses into understanding. Was there really an ocean under Europa? How did Io's volcanoes work? What drove the largest magnetic field in the solar system? These were questions only an orbiter, passing each moon again and again over years, could answer.",
+  "cur": "Циљ је било прво континуирано проучавање јупитерског система: ући у орбиту око планете, више пута обићи његова четири велика месеца и претворити мамљиве наговештаје летелица Voyagers у разумевање. Да ли заиста постоји океан испод Европе? Како раде вулкани на месецу Ио? Шта покреће највеће магнетно поље у Сунчевом систему? То су била питања на која је могла да одговори само орбитална летелица, која годинама пролази поред сваког месеца изнова и изнова."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "goals.1.caption",
+  "en": "Galileo carried a probe to drop into Jupiter's atmosphere and an orbiter to tour the moons. Its large umbrella-like main antenna was meant to unfold in flight to send data home at high speed — and it never fully did.",
+  "cur": "Galileo је носио сонду коју је требало спустити у Јупитерову атмосферу и орбитер који је требало да обиђе месеце. Његова велика главна антена налик кишобрану требало је да се развије у лету и великом брзином шаље податке кући — али се никада није потпуно отворила."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "goals.2.md",
+  "en": "Galileo also carried a second spacecraft: a probe designed to separate on arrival and plunge directly into Jupiter's clouds, measuring the giant planet's atmosphere from the inside as it fell — the first and, so far, only direct sample of the interior of a gas giant.",
+  "cur": "Galileo је носио и другу летелицу: сонду осмишљену да се по доласку одвоји и зарони право у Јупитерове облаке, мерећи атмосферу џиновске планете изнутра док пада — први и до сада једини директан узорак унутрашњости гасовитог џина."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "outcome.0.md",
+  "en": "Then the mission nearly broke. In 1991, on the way to Jupiter, Galileo's main antenna failed to open — it stuck half-furled, like an umbrella that would not deploy, cutting the spacecraft's data rate to a tiny fraction of what was planned. The mission should have been crippled. Instead, engineers rewrote its software from Earth, teaching the distant spacecraft to compress its data far more aggressively and dribble it home through a small backup antenna. Most of the science was saved over a link thousands of times slower than intended.",
+  "cur": "Тада је мисија замало пропала. Године 1991, на путу ка Јупитеру, главна антена летелице Galileo није се отворила — заглавила се напола склопљена, као кишобран који неће да се развије, па је брзина преноса података пала на сићушан део планиране. Мисија је требало да буде осакаћена. Уместо тога, инжењери су са Земље преписали њен софтвер и научили удаљену летелицу да много агресивније сажима податке и да их кап по кап шаље кући преко мале помоћне антене. Највећи део научних резултата спасен је преко везе хиљадама пута спорије од предвиђене."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "outcome.1.md",
+  "en": "It arrived at Jupiter in December 1995, released its probe into the clouds, and settled into orbit — the first spacecraft ever to do so. Over the nearly eight years it toured the moons dozens of times, and its greatest discovery emerged slowly from that persistence: the way Jupiter's magnetic field draped around Europa could only be explained by a salty, conducting ocean of liquid water beneath the moon's ice. It also mapped Io's relentless volcanism and found signs of a magnetic field generated inside the moon Ganymede.",
+  "cur": "До Јупитера је стигао у децембру 1995, испустио своју сонду у облаке и ушао у орбиту — прва летелица која је то икада учинила. Током скоро осам година обилазио је месеце десетине пута, а његово највеће откриће полако је израсло из те упорности: начин на који се Јупитерово магнетно поље обавија око Европе могао је да се објасни само сланим, проводљивим океаном течне воде испод леда тог месеца. Такође је сачинио карту Иовог неумољивог вулканизма и пронашао знаке магнетног поља које настаје у унутрашњости месеца Ганимед."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "outcome.2.md",
+  "en": "In 2003, low on fuel, Galileo was deliberately flown into Jupiter and destroyed — the same choice Cassini would later make at Saturn — to be certain that the spacecraft could never one day crash onto Europa and contaminate the ocean it had done so much to reveal.",
+  "cur": "Године 2003, са мало преосталог горива, Galileo је намерно послат у Јупитер и уништен — исти избор који ће касније направити Cassini код Сатурна — како би се са сигурношћу спречило да се та летелица једног дана сруши на Европу и загади океан чије је откривање толико помогла."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "narrative.0.md",
+  "en": "The story of Galileo is a mission rescued from disaster by ingenuity. The stuck antenna could have ended it; the spacecraft was designed around a high-speed link that no longer existed. That Galileo returned most of its science anyway — through a backup antenna never meant to carry the load, over software written and uploaded after launch — is one of the great salvage jobs in the history of spaceflight, and a reminder that a mission's outcome is decided as much by the people flying it as by the hardware that flew.",
+  "cur": "Прича о летелици Galileo је прича о мисији спасеној из несреће досетљивошћу. Заглављена антена могла је да је оконча; летелица је била пројектована око везе велике брзине која више није постојала. То што је Galileo ипак послао већину својих научних резултата — преко помоћне антене која никада није била предвиђена за такво оптерећење, помоћу софтвера написаног и послатог након лансирања — један је од највећих подухвата спасавања у историји свемирских летова, и подсетник да исход мисије одређују подједнако људи који њоме управљају колико и опрема која лети."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "narrative.1.md",
+  "en": "Its most important discovery reframed a moon. Before Galileo, Europa's ocean was a hypothesis drawn from a few Voyager images; after Galileo, it was the leading explanation for hard magnetic data gathered on pass after pass. A frozen moon of Jupiter joined Saturn's Enceladus as a place where liquid water — and the possibility of life — hides beneath the ice. Galileo did not see the ocean; it made the case for it undeniable, and pointed the next generation of missions at Europa.",
+  "cur": "Његово најважније откриће променило је слику једног месеца. Пре летелице Galileo, Европин океан био је хипотеза заснована на неколико снимака летелица Voyager; након ње, постао је водеће објашњење за поуздане магнетне податке прикупљене при прелету за прелетом. Залеђени Јупитеров месец придружио се Сатурновом Енцеладу као место где се течна вода — и могућност живота — крије испод леда. Galileo није видео океан; учинио је да се његово постојање не може порећи и усмерио следећу генерацију мисија ка Европи."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "narrative.2.md",
+  "en": "And, like Cassini after it, Galileo ended by destroying itself to protect what it had found. A spacecraft that had spent nearly eight years arguing that Europa might be habitable could not be allowed to become the thing that seeded it with Earth life. Its final act was to fall into Jupiter — the giant planet swallowing the robot that had finally understood its moons.",
+  "cur": "И, попут летелице Cassini после ње, Galileo је окончао тако што је уништио самог себе да би заштитио оно што је открио. Летелица која је скоро осам година доказивала да би Европа могла бити настањива није смела да постане оно што ће је засејати земаљским животом. Њен последњи чин био је пад у Јупитер — џиновска планета прогутала је робота који је напокон разумео њене месеце."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "legacy.0.md",
+  "en": "Galileo's first legacy is Europa. Its data turned a subsurface ocean from speculation into the leading model, making Europa one of the two or three most compelling places in the solar system to search for life — and the direct reason a dedicated mission, Europa Clipper, was later built to follow up.",
+  "cur": "Прво наслеђе летелице Galileo је Европа. Њени подаци претворили су подповршински океан из нагађања у водећи модел, чиме је Европа постала једно од два или три најуверљивија места у Сунчевом систему за потрагу за животом — и непосредан разлог зашто је касније изграђена посебна мисија, Europa Clipper, која ће наставити одатле."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "legacy.1.md",
+  "en": "Its second is the Jupiter system as a whole: the first sustained study of the giant planet, its atmosphere sampled from within, its magnetic field mapped, and its four great moons transformed from Voyager glimpses into understood worlds across nearly eight years in orbit.",
+  "cur": "Друго је систем Јупитера у целини: прво дуготрајно проучавање џиновске планете, са атмосфером испитаном изнутра, са мапираним магнетним пољем и са четири велика месеца која су током скоро осам година у орбити из тренутних снимака летелица Voyager постала схваћени светови."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "legacy.2.md",
+  "en": "Its third is a demonstration of resilience — that a mission can lose its central capability and still succeed if the people flying it are inventive enough. Galileo's software rescue is a permanent case study in salvaging a spacecraft that should, by rights, have been lost.",
+  "cur": "Треће је доказ упорности и отпорности — да мисија може да изгуби своју кључну способност и ипак успе ако су они који њоме управљају довољно досетљиви. Спас летелице Galileo путем софтвера трајна је студија случаја спашавања свемирске летелице која је, по свим правилима, требало да буде изгубљена."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of Galileo is that a mission is not finished when its hardware fails. The stuck antenna removed the capability the whole spacecraft had been designed around — and the mission still succeeded, because its operators rewrote what the machine did rather than mourning what it could no longer do. When the plan breaks, the question is not what was lost but what can still be done with what remains; the difference between a dead mission and a great one is often the answer to that.",
+  "cur": "Лекција коју нам пружа Galileo јесте да мисија није завршена када откаже њена опрема. Заглављена антена одузела је могућност око које је цела летелица била пројектована — а мисија је ипак успела, јер су њени оператери преписали оно што машина ради, уместо да оплакују оно што више не може да ради. Када се план сруши, питање није шта је изгубљено, већ шта се још може учинити с оним што је остало; разлика између мртве и велике мисије често је управо одговор на то питање."
+ },
+ {
+  "rel": "programs/galileo.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is that patience turns hints into knowledge. Europa's ocean was invisible in any single pass; it emerged only from the accumulated weight of many, gathered over years in orbit. The most important discoveries are frequently not seen but built — assembled measurement by measurement, until a hypothesis becomes the only thing that fits the data.",
+  "cur": "Дубља лекција је да стрпљење претвара наговештаје у знање. Европин океан био је невидљив у било ком појединачном прелету; појавио се тек из нагомилане тежине многих прелета, прикупљених током година у орбити. Најважнија открића често се не виде већ граде — састављају се мерење по мерење, све док хипотеза не постане једино што се слаже са подацима."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "tagline",
+  "en": "The bridge program — the unglamorous middle where NASA learned everything Apollo would need except how to fly to the Moon.",
+  "cur": "Програм-мост — незахвална средина без сјаја у којој је NASA научила све што ће затребати програму Apollo, осим тога како се лети до Месеца."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "the_land.0.md",
+  "en": "Mercury had answered one question — a person can survive spaceflight and come home — and left a much harder list unanswered. Landing on the Moon meant flying for two weeks at a stretch, finding and joining up with another spacecraft in orbit, docking the two together, working outside in a pressure suit, and returning to a precise spot on Earth. In 1961, when Kennedy set the lunar deadline, NASA could do none of it. Between the first American in space and the first American on the Moon lay a canyon of skills nobody on Earth had yet worked out.",
+  "cur": "Програм Mercury одговорио је на једно питање — човек може да преживи свемирски лет и врати се кући — а оставио је много тежи списак питања без одговора. Слетање на Месец значило је летети две недеље без прекида, пронаћи другу летелицу у орбити и сусрести се с њом, спојити две летелице, радити споља у скафандеру и вратити се на тачно одређено место на Земљи. Године 1961, када је Kennedy поставио рок за Месец, NASA није умела да уради ништа од тога. Између првог Американца у свемиру и првог Американца на Месецу зјапио је кањон вештина којима још нико на Земљи није овладао."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "the_land.1.md",
+  "en": "Gemini was built to cross that canyon. It was never meant to be first at anything or to go anywhere new; it was a training program with a deadline, designed to invent and rehearse — in Earth orbit, where a mistake might still be survivable — every technique Apollo would later bet lives on. A larger, two-seat spacecraft that the crew could actually fly and steer would spend twenty months teaching NASA how to do the things the Moon required.",
+  "cur": "Програм Gemini створен је да премости тај понор. Никада није требало да буде први у било чему нити да оде на неко ново место; био је то програм обуке са роком, замишљен да измисли и увежба — у орбити око Земље, где грешка још може бити преживљива — сваку технику на коју ће Apollo касније уложити животе. Већа летелица са два седишта, коју је посада заиста могла сама да пилотира и усмерава, провела би двадесет месеци учећи NASA како да уради оно што је Месец захтевао."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "goals.0.caption",
+  "en": "The Gemini spacecraft — bigger than Mercury, and for the first time a ship the crew could truly fly: it could change its own orbit, chase down another craft, and dock.",
+  "cur": "Летелица Gemini — већа од летелице Mercury и први пут брод којим је посада заиста могла да лети: могла је сама да мења своју орбиту, да сустигне другу летелицу и да се споји с њом."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "goals.1.md",
+  "en": "Gemini's goals read like a checklist torn from the Apollo flight plan. Endurance: prove a crew could last as long as a trip to the Moon and back — up to two weeks. Rendezvous: two spacecraft finding each other in orbit, which is far less intuitive than it sounds, because speeding up to catch something ahead of you actually drops you into a lower, faster orbit and leaves you behind. Docking: physically joining two craft, the maneuver Apollo would depend on twice on every flight. And EVA: opening the hatch in vacuum and working outside. Master those four, and the Moon became an engineering problem rather than an unknown.",
+  "cur": "Циљеви програма Gemini читају се као контролна листа ишчупана из плана лета програма Apollo. Издржљивост: доказати да посада може да издржи колико и пут до Месеца и назад — до две недеље. Сусрет у орбити: две летелице које налазе једна другу у орбити, што је далеко мање интуитивно него што звучи, јер те убрзавање ради сустизања нечега испред тебе заправо спушта у нижу, бржу орбиту и оставља те иза. Спајање: физичко повезивање две летелице, маневар од кога ће Apollo зависити двапут на сваком лету. И EVA: отварање отвора у вакууму и рад споља. Савладајте та четири задатка и Месец је постао инжењерски проблем, а не непознаница."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "goals.2.md",
+  "en": "To do any of it, the spacecraft had to grow up. Gemini carried two, gave them a real flight-control system and thrusters to steer with, and split into a crew module and an equipment section much as Apollo would. Where Mercury's astronaut mostly rode, Gemini's crews genuinely flew — which was the entire point, because the new skills only counted if a human could perform them on demand.",
+  "cur": "Да би се остварило било шта од тога, летелица је морала да сазри. Gemini је носила двоје астронаута, добила прави систем за управљање летом и потиснике којима се усмеравала, и била подељена на кабину за посаду и одељак за опрему, слично као што ће бити и Apollo. Док се астронаут програма Mercury углавном само возио, посаде програма Gemini заиста су летеле — а то је и била сва поента, јер су нове вештине вределе само ако их човек може извести на захтев."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "outcome.0.caption",
+  "en": "The Titan II — a repurposed intercontinental missile, man-rated to launch all ten crewed Gemini flights in just twenty months.",
+  "cur": "Ракета Titan II — преуређена интерконтинентална ракета, оспособљена за превоз људи, која је лансирала свих десет Gemini летова с посадом за само двадесет месеци."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "outcome.1.md",
+  "en": "In twenty months across 1965 and 1966, ten crewed Geminis checked off the entire list. Ed White floated outside Gemini 4 on the first American spacewalk. Gemini 7 stayed up for fourteen days while Gemini 6A flew up to meet it, the two ships holding station a foot apart — the first rendezvous. Gemini 8 made the first docking, then survived the program's worst scare when a stuck thruster set it tumbling and Neil Armstrong had to wrestle it back under control and come home early. And after several exhausting, near-failed attempts at spacewalking, Gemini 12's Buzz Aldrin finally cracked it — with underwater rehearsal and enough handholds to work against — proving EVA could be made routine.",
+  "cur": "За двадесет месеци током 1965. и 1966. године, десет летелица Gemini с посадом обавило је цео списак. Ед Вајт је први амерички свемирски излазак провео лебдећи изван летелице Gemini 4. Gemini 7 остала је горе четрнаест дана док јој је летелица Gemini 6A долетела у сусрет, па су два брода држала положај на размаку од једне стопе — први сусрет у орбити. Gemini 8 извела је прво спајање у свемиру, а потом преживела највећи страх у историји програма, када ју је заглављени потисник бацио у ковитлање, а Нил Армстронг морао да се избори да поново овлада њоме и да се врати раније него што је планирано. А после неколико исцрпљујућих покушаја изласка у свемир који су замало пропали, Баз Олдрин са летелице Gemini 12 коначно је решио проблем — уз вежбе под водом и довољно рукохвата о које се могао ослонити — и тако доказао да излазак у свемир може постати рутина."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "outcome.2.md",
+  "en": "By the last flight, NASA could do everything the Moon required except leave Earth orbit. It had also, almost quietly, pulled ahead: for the first time the United States had logged more time and more capability in space than the Soviet Union, which had gone quiet as it wrestled with its own next-generation hardware. The race wasn't won, but the lead had changed hands.",
+  "cur": "До последњег лета NASA је могла да уради све што је Месец захтевао, осим да напусти орбиту око Земље. Готово нечујно, она је такође однела предност: први пут су Сједињене Државе имале више проведеног времена и више способности у свемиру него Совјетски Савез, који је утихнуо борећи се са сопственом опремом нове генерације. Трка није била добијена, али је вођство променило власника."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "narrative.0.md",
+  "en": "Gemini's whole character was pace. Ten crewed launches in less than two years — sometimes only weeks apart — each one a rehearsal for a specific Apollo maneuver, each feeding what it learned straight into the next. It was less a set of separate missions than a single sustained apprenticeship, run at a tempo NASA would never quite match again.",
+  "cur": "Цео карактер програма Gemini био је темпо. Десет лансирања с посадом за мање од две године — понекад размакнутих тек за неколико недеља — свако је било проба за одређени маневар програма Apollo, и свако је оно што је научило директно преносило у следеће. То није био скуп одвојених мисија, већ једно непрекидно шегртовање, вођено темпом који NASA никада више није сасвим достигла."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "narrative.1.md",
+  "en": "And it learned the hard way. The early spacewalks went badly: astronauts found that without anything to hold or brace against, every motion sent them tumbling and every small task became a wrestling match, and they came back inside soaked and spent. Rather than declare EVA solved and move on, NASA treated the failures as data — it built handholds and foot restraints and rehearsed the whole thing underwater until it worked. Gemini 12 was the payoff. That willingness to admit the technique wasn't working and rebuild it is a large part of why Apollo's spacewalks went smoothly.",
+  "cur": "И учио је на тежи начин. Први свемирски изласци прошли су лоше: астронаути су открили да их без нечега за шта би се ухватили или на шта би се ослонили сваки покрет баца у превртање и да сваки мали задатак постаје рвање, па су се враћали унутра прогрејани знојем и исцрпљени. Уместо да прогласи EVA решеним и крене даље, NASA је неуспехе третирала као податке — направила је рукохвате и држаче за стопала и увежбавала цео поступак под водом док није функционисао. Gemini 12 био је плод тог труда. Спремност да се призна да техника не функционише и да се изнова изгради велики је део разлога зашто су свемирски изласци програма Apollo протекли глатко."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "narrative.2.md",
+  "en": "By December 1966 the bridge was finished. Everything Gemini had proven — the endurance, the rendezvous, the docking, the EVA — went straight into Apollo, whose crews would use all of it a quarter-million miles from home. Gemini had made the Moon reachable, and then, its job done, it stopped.",
+  "cur": "До децембра 1966. мост је био готов. Све што је Gemini доказао — издржљивост, сусрет у орбити, спајање, EVA — директно је прешло у програм Apollo, чије ће посаде све то користити четврт милиона миља од куће. Gemini је учинио Месец достижним, а онда је, пошто је посао био завршен, стао."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "legacy.0.caption",
+  "en": "Gemini in orbit — the program that turned the Moon from an open question into a solved set of techniques, and the one almost nobody remembers.",
+  "cur": "Gemini у орбити — програм који је Месец претворио из отвореног питања у скуп решених техника, и онај којег се скоро нико не сећа."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "legacy.1.md",
+  "en": "Gemini is the reason Apollo worked, and it is the program almost nobody remembers. Caught between Mercury's fame as the first and Apollo's fame as the Moon, it did the essential middle work: every capability Apollo depended on — flying for two weeks, finding and docking with another craft, working outside the spacecraft — was invented and made reliable on Gemini first. Take Gemini out of the story and the Apollo landings simply aren't possible on Kennedy's timeline.",
+  "cur": "Gemini је разлог зашто је Apollo успео, а ипак је то програм којег се скоро нико не сећа. Заробљен између славе програма Mercury као првог и славе програма Apollo као оног који је стигао до Месеца, обавио је суштински посао у средини: свака способност од које је Apollo зависио — лет од две недеље, проналажење другог летећег објекта и спајање с њим, рад изван свемирске летелице — прво је изумљена и учињена поузданом на програму Gemini. Уклоните Gemini из ове приче и слетања програма Apollo једноставно нису могућа у року који је поставио Kennedy."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "legacy.2.md",
+  "en": "Its material legacy is the capability itself. Rendezvous and docking became routine tools that every crewed program since — Apollo, Skylab, the Shuttle, the Space Station — has relied on, and the underwater EVA training Gemini pioneered is still exactly how astronauts prepare for spacewalks today. It was also the moment the United States drew level with and then passed the Soviet Union in human spaceflight — not with one dramatic first, but by methodically building the skills that actually mattered.",
+  "cur": "Његово материјално наслеђе је сама способност. Сусрет у орбити и спајање постали су рутински алати на које се ослања сваки програм с посадом откад постоје — Apollo, Skylab, Space Shuttle, Међународна свемирска станица — а подводни тренинг за EVA, чији је пионир био Gemini, и данас је тачно онај начин на који се астронаути припремају за свемирске изласке. Био је то и тренутак у којем су Сједињене Државе стигле Совјетски Савез у свемирским летовима с људском посадом, а затим га и престигле — не једним драматичним првенством, већ методичним грађењем вештина које су заиста биле важне."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "lessons.0.md",
+  "en": "Gemini's transferable lesson is the value of the deliberate bridge. Faced with an enormous goal and a hard deadline, NASA didn't lunge straight for the Moon; it identified the specific unsolved capabilities in between and built a whole program to master them one at a time, in a place where failure was still survivable. The unglamorous middle — the rehearsal nobody remembers — is very often what makes the finale possible. When a goal sits far beyond current ability, the useful question isn't \"how do we get there\" but \"what are the intermediate things we don't yet know how to do.\"",
+  "cur": "Лекција програма Gemini која се може пренети на друга подручја јесте вредност промишљеног моста. Суочена с огромним циљем и тешким роком, NASA није јурнула право ка Месецу; одредила је конкретне нерешене способности које леже између и изградила цео програм да их овлада једну по једну, на месту где се неуспех још могао преживети. Неупадљива средина — проба које се нико не сећа — врло често је оно што финале чини могућим. Када циљ лежи далеко иза садашњих могућности, корисно питање није „како да стигнемо тамо“, већ „које су то међукораке које још не умемо да изведемо“."
+ },
+ {
+  "rel": "programs/gemini.json",
+  "at": "lessons.1.md",
+  "en": "The second lesson is in how Gemini handled its early spacewalking disasters — not as embarrassments to bury, but as information. The technique was failing, so they said so, worked out why, and rebuilt it: handholds, restraints, underwater practice, until it worked. A team that can admit a thing isn't working, in time to fix it before it matters, is worth far more than one that never appears to fail.",
+  "cur": "Друга лекција крије се у начину на који је Gemini поступио са раним неуспесима у свемирским изласцима — не као са срамотама које треба затурити, већ као са информацијом. Техника није функционисала, па су то отворено рекли, утврдили зашто, и изнова је изградили: рукохвати, везице за придржавање, вежбање под водом, све док није почела да ради. Тим који може да призна да нешто не ради, и то на време да то поправи пре него што постане важно, вреди далеко више од тима који никад не делује као да греши."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "name",
+  "en": "The Great Observatories",
+  "cur": "Велике опсерваторије"
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "tagline",
+  "en": "NASA's plan to see the whole universe — four flagship telescopes, one for each kind of light, and the lineage of great space eyes that followed.",
+  "cur": "NASA-ин план да се сагледа цео свемир — четири водећа телескопа, по један за сваку врсту светлости, и лоза великих свемирских очију која је уследила."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "the_land.0.md",
+  "en": "The light the universe gives off is not just the visible colours our eyes evolved to catch. The hottest, most violent objects shine in X-rays and gamma rays; the coldest, dustiest, most distant ones glow only in the infrared. To see the cosmos whole, you need eyes for every band of the spectrum — and, crucially, you need them above the atmosphere, which absorbs most of those wavelengths before they reach the ground. In the 1980s NASA set out to build exactly that: a coordinated set of flagship space telescopes, each optimized for a different slice of light.",
+  "cur": "Светлост коју емитује свемир нису само видљиве боје које су наше очи еволуирале да ухвате. Најтоплији и најнасилнији објекти сјаје у рендгенским и гама зрацима; најхладнији, најпрашњавији и најудаљенији светле само у инфрацрвеном делу спектра. Да бисте сагледали космос у целини, потребне су вам очи за сваки опсег спектра — и, што је кључно, потребне су вам изнад атмосфере, која упија већину тих таласних дужина пре него што стигну до тла. Осамдесетих година 20. века NASA је кренула да изгради управо то: усклађен скуп водећих свемирских телескопа, од којих је сваки оптимизован за другачији делић светлости."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "the_land.1.md",
+  "en": "The result was the Great Observatories program — four spacecraft, deliberately conceived as a family: Hubble for visible and ultraviolet, Compton for gamma rays, Chandra for X-rays, and Spitzer for the infrared. Between roughly 1990 and 2003 all four reached orbit, and for the first time humanity could look at the same object across the entire electromagnetic spectrum at once. Officially, those four are 'the Great Observatories.' But from our vantage decades later, they read as the opening chapter of a single, continuing NASA project: the building of ever-greater eyes in space.",
+  "cur": "Резултат је био програм Велике опсерваторије — четири свемирске летелице, намерно замишљене као породица: Hubble за видљиву и ултраљубичасту светлост, Compton за гама зраке, Chandra за рендгенске зраке и Spitzer за инфрацрвени део спектра. Отприлике између 1990. и 2003. сва четири стигла су у орбиту и човечанство је по први пут могло да посматра исти објект у целом електромагнетном спектру истовремено. Званично, та четири су „Велике опсерваторије“. Али из наше перспективе, деценијама касније, она се читају као уводно поглавље једног јединственог NASA-иног пројекта који траје: градње све већих очију у свемиру."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "goals.0.md",
+  "en": "The founding goal was spectral completeness. A galaxy, a black hole, a dying star looks radically different in each band of light, and any one telescope tells only part of the story. By fielding four complementary observatories, NASA could assemble a full picture — the visible starlight, the X-ray fury of matter falling into black holes, the gamma-ray flashes of the most extreme events, and the infrared glow of cold dust and the earliest, most redshifted galaxies — of the same objects, the same universe, seen every way it can be seen.",
+  "cur": "Полазни циљ била је спектрална потпуност. Галаксија, црна рупа или звезда која умире изгледају радикално другачије у сваком опсегу светлости, а сваки појединачни телескоп казује тек део приче. Постављањем четири комплементарне опсерваторије NASA је могла да састави целовиту слику — видљиве звездане светлости, рендгенске бесомучности материје која пада у црне рупе, гама-бљескова најекстремнијих догађаја и инфрацрвеног сјаја хладне прашине и најранијих, најпомереније ка црвеном галаксија — истих објеката, истог свемира, виђеног на све начине на које се може видети."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "goals.1.caption",
+  "en": "Hubble — the visible-light member of the four, and the most famous telescope ever built. Above the blur of the atmosphere, it turned fuzzy smudges into resolved galaxies and made deep-space imagery part of the human imagination.",
+  "cur": "Hubble — члан четворке за видљиву светлост и најпознатији телескоп икада саграђен. Изнад замућења атмосфере претворио је мутне мрље у разрешене галаксије и учинио да слике дубоког свемира постану део људске маште."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "goals.2.md",
+  "en": "The lineage's goal, as it extended past the original four, has been to keep pushing that vision deeper and wider. The Nancy Grace Roman Space Telescope, the next entry planned in the NASA line, trades Hubble's narrow, deep stare for an enormous field of view — the same sharpness across a patch of sky over a hundred times larger — built to survey the universe at scale, mapping dark energy and hunting exoplanets across vast areas rather than studying one target at a time.",
+  "cur": "Циљ те лозе, пошто се проширила изван првобитне четворке, био је да ту визију гура све дубље и шире. Nancy Grace Roman Space Telescope, следећи члан који је планиран у NASA-иној лози, мења Hubble-ов уски, дубоки поглед огромним видним пољем — исту оштрину на делу неба више од сто пута већем — и намењен је прегледу свемира у великом обиму: мапирању тамне енергије и трагању за егзопланетама на пространим подручјима, уместо проучавања једне по једне мете."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "outcome.0.md",
+  "en": "All four originals flew and delivered, and three of the four vastly outlived their planned lifetimes. Hubble, launched by the Space Shuttle in 1990 and famously rescued from a flawed mirror by astronauts, has operated for more than three decades and rewritten astronomy. Chandra revealed the X-ray universe of black holes and galaxy clusters. Spitzer opened the infrared sky. Only Compton was lost early, deliberately de-orbited in 2000 after a gyroscope failed. The program did what it set out to do: it gave humanity, for the first time, eyes across the whole spectrum.",
+  "cur": "Сва четири првобитна телескопа су полетела и испунила очекивања, а три од четири далеко су надживела планирани радни век. Hubble, лансиран Space Shuttle-ом 1990. и чувено спасен од неисправног огледала захваљујући астронаутима, ради више од три деценије и изнова је написао астрономију. Chandra је открио рендгенски свемир црних рупа и јата галаксија. Spitzer је отворио инфрацрвено небо. Једино је Compton изгубљен рано, намерно спуштен из орбите 2000. након што је отказао један жироскоп. Програм је учинио оно што је наумио: први пут је човечанству дао очи за цео спектар."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "outcome.1.caption",
+  "en": "Chandra — the X-ray observatory, tuned to the most violent light in the universe: matter spiralling into black holes, the million-degree gas between galaxies, the shockwaves of exploded stars. Light the ground can never see.",
+  "cur": "Chandra — рендгенска опсерваторија, подешена на најнасилнију светлост у универзуму: материја која се спирално креће у црне рупе, гас од милион степени између галаксија, ударни таласи експлодираних звезда. Светлост коју земља никада не може да види."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "outcome.2.md",
+  "en": "The scientific harvest is almost too large to summarize: the accelerating expansion of the universe, the confirmation of supermassive black holes at galactic centers, the age and composition of the cosmos pinned down, the atmospheres of exoplanets first probed, the deepest images ever taken of the early universe. Much of what a modern person knows about what the universe looks like comes, directly or indirectly, from these four telescopes and the ones that followed them.",
+  "cur": "Научна жетва је готово превелика да би се сажела: убрзано ширење свемира, потврда постојања супермасивних црних рупа у центрима галаксија, утврђена старост и састав космоса, прва истраживања атмосфера егзопланета, најдубљи снимци раног свемира икада направљени. Велики део онога што савремени човек зна о томе како свемир изгледа потиче, непосредно или посредно, од ова четири телескопа и оних који су уследили после њих."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "narrative.0.md",
+  "en": "The story of the Great Observatories is the story of a single good idea — see every kind of light, from above the air — pursued patiently across decades. The original four were a deliberate, coordinated set; but the idea did not stop with them. Each generation of great space telescope inherits the same ambition and pushes it further: sharper, colder, wider, deeper. From our perspective the program is less a closed list of four than an ongoing NASA tradition of building the largest eye the technology of the moment allows.",
+  "cur": "Прича о Великим опсерваторијама је прича о једној доброј идеји — видети сваку врсту светлости, из висине изнад ваздуха — коју се стрпљиво следило деценијама. Првобитна четворка била је намеран, усклађен скуп; али идеја се није зауставила на њима. Свака генерација великих свемирских телескопа наслеђује исту амбицију и гура је даље: оштрије, хладније, шире, дубље. Из наше перспективе, програм је мање затворен списак од четири телескопа, а више трајна NASA-ина традиција грађења највећег ока које технологија тренутка дозвољава."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "narrative.1.md",
+  "en": "Hubble is the emotional center of that tradition. Its near-failure and dramatic repair, its images that became cultural touchstones, its sheer longevity made it the telescope the public knows by name — and proved that a space observatory could be not just a scientific instrument but a shared human window on the cosmos. Every telescope in the lineage is measured, fairly or not, against what Hubble did to our sense of where we are.",
+  "cur": "Hubble је емотивно средиште те традиције. Његов умало пропали почетак и драматична поправка, његове слике које су постале културни узори, његова чиста дуговечност учинили су га телескопом који јавност познаје по имену — и доказали да свемирска опсерваторија може бити не само научни инструмент него и заједнички људски прозор у космос. Сваки телескоп у тој лози мери се, праведно или не, према ономе што је Hubble учинио нашем осећају где се налазимо."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "narrative.2.md",
+  "en": "The lineage also branches. The James Webb Space Telescope — Hubble's infrared successor, and a genuinely international flagship built with Europe and Canada — is a chapter large and distinct enough to stand on its own, covered separately in this atlas. Roman continues the NASA line here. The point is not the exact boundaries of the family tree but the continuity of the ambition: humanity, decade after decade, building better eyes and pointing them at everything.",
+  "cur": "Лоза се такође грана. James Webb Space Telescope — Hubble-ов инфрацрвени наследник и истински међународни водећи пројекат изграђен са Европом и Канадом — поглавље је довољно велико и посебно да стоји самостално, па је обрађено засебно у овом атласу. Roman овде наставља NASA-ину линију. Није важно где тачно леже границе породичног стабла, већ континуитет амбиције: човечанство које деценију за деценијом гради боље очи и усмерава их на све."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "legacy.0.md",
+  "en": "The first legacy is the modern picture of the universe itself. The accelerating cosmos, the black holes, the ages and distances, the first exoplanet atmospheres, the deepest fields — the Great Observatories and their successors are where an enormous fraction of what we know about the universe was actually seen. They are the instruments behind the textbook.",
+  "cur": "Прво наслеђе је сама савремена слика свемира. Убрзани космос, црне рупе, старости и удаљености, прве атмосфере егзопланета, најдубља поља — Велике опсерваторије и њихови наследници су место где је заправо виђен огроман део онога што знамо о свемиру. Оне су инструменти иза уџбеника."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "legacy.1.md",
+  "en": "The second is a proven model for how to see comprehensively: complementary telescopes across the spectrum, above the atmosphere, studying the same universe every way it radiates. That multi-wavelength approach is now simply how astronomy is done, and the coordination the original four pioneered is the standard every observatory campaign follows.",
+  "cur": "Друго је проверен модел за свеобухватно посматрање: допунски телескопи широм спектра, изнад атмосфере, који проучавају исти свемир на сваки начин на који он зрачи. Тај приступ на више таласних дужина данас је једноставно начин на који се астрономија ради, а усклађеност коју је пионирски увела првобитна четворка стандард је којим се води свака опсерваторијска кампања."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "legacy.2.md",
+  "en": "And the third is Hubble's cultural legacy — the transformation of deep space from an abstraction into imagery that anyone can recognize. The Great Observatories made the universe visible, in the fullest sense: not only measured, but seen, and made part of how humanity pictures its own home.",
+  "cur": "А треће је Hubble-ово културно наслеђе — преображај далеког свемира из апстракције у слике које свако може да препозна. Велике опсерваторије су учиниле свемир видљивим у најпунијем смислу: не само измереним, него виђеним и утка–ним у начин на који човечанство замишља сопствени дом."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of the Great Observatories is that seeing whole requires seeing in every kind of light. No single telescope, however powerful, captures more than a slice of what an object is; the leap in understanding came from looking at the same universe across the entire spectrum at once. Completeness, not any one instrument, was the breakthrough.",
+  "cur": "Лекција Великих опсерваторија је да сагледати целину захтева посматрање у свакој врсти светлости. Ниједан појединачни телескоп, колико год био моћан, не обухвата више од једног исечка онога што објекат јесте; скок у разумевању дошао је из посматрања истог свемира истовремено широм целог спектра. Потпуност, а не неки појединачни инструмент, била је прави искорак."
+ },
+ {
+  "rel": "programs/great-observatories.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is the value of a sustained tradition over a single triumph. The program's real power is not the four original telescopes but the continuity of ambition they began — a decades-long commitment to keep building greater eyes. Individual missions age and die; the tradition of always building the next, better observatory is what keeps the view expanding.",
+  "cur": "Дубља лекција је вредност истрајне традиције изнад појединачног тријумфа. Права снага програма нису четири првобитна телескопа, него континуитет амбиције који су започела — деценијама дуга посвећеност томе да се стално граде већа и бистрија „очи“. Појединачне мисије старе и престају да раде; управо традиција да се увек гради следећа, боља опсерваторија одржава поглед у непрестаном ширењу."
+ },
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "tagline",
+  "en": "Japan's asteroid sample-return campaign — a crippled probe that limped home with the first grains ever taken from an asteroid, and a sequel that did it flawlessly.",
+  "cur": "Јапанска кампања враћања узорака са астероида — оштећена сонда која се једва довукла кући с првим зрнцима икад узетим са неког астероида, и наставак који је то урадио беспрекорно."
+ },
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "the_land.0.md",
+  "en": "Bringing a piece of another world back to Earth is one of the hardest things a robotic mission can do. You must fly to a target millions of kilometres away, match its orbit, descend to a surface whose gravity is so weak that landing is really a controlled touch, grab material without anchoring, and then fly all the way home and survive reentry. The Moon aside, only a handful of missions in history have returned samples from anywhere — and the first to do it from an asteroid was not American or Russian, but Japanese.",
+  "cur": "Донети комад другог света назад на Земљу један је од најтежих подухвата које једна роботска мисија може да изведе. Морате да прелетите до циља удаљеног милионе километара, ускладите се с његовом орбитом, спустите се на површину чија је гравитација толико слаба да је слетање заправо контролисан додир, узмете материјал без сидрења, а затим прелетите цео пут кући и преживите поновни улазак у атмосферу. Изузев Месеца, тек шачица мисија у историји вратила је узорке са било ког места — а прва која је то учинила са неког астероида није била ни америчка ни руска, него јапанска."
+ },
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "the_land.1.md",
+  "en": "Hayabusa — \"Peregrine Falcon\" — is JAXA's signature deep-space achievement, and it is as much a story of stubbornness as of engineering. The first mission was a technology demonstrator that suffered almost every failure it could and still came home. The second was a masterclass that executed a far more ambitious plan almost perfectly. Together they made Japan the world's leader in asteroid sample return, and made the little falcon probes into a national saga of persistence.",
+  "cur": "Hayabusa — „Сиви соко“ — најзначајније је JAXA-ино достигнуће у дубоком свемиру и подједнако је прича о тврдоглавости колико и о инжењерству. Прва мисија била је демонстратор технологије који је претрпео готово сваки квар који је могао и ипак се вратио кући. Друга је била мајсторска лекција која је далеко амбициознији план извела готово савршено. Заједно су Јапан учиниле светским лидером у враћању узорака са астероида, а мале сонде-соколове претвориле у националну сагу о истрајности."
+ }
+]

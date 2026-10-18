@@ -1,0 +1,848 @@
+[
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.2",
+  "en": "MEO and HEO disposal. Harder cases than either LEO or GEO. MEO navigation constellations (GPS, Galileo, GLONASS, BeiDou MEO) at ~20,000 km have very long natural decay times (thousands of years) and no convenient graveyard equivalent above; the current practice is to leave retired satellites in their operational orbit and rely on careful constellation phasing to avoid collisions. As MEO populations grow this is becoming a known forward-looking problem. HEO (Molniya, Tundra) satellites typically have a perigee low enough that atmospheric drag will eventually deorbit them — Molniya satellites with 600 km perigee decay within decades. Higher-perigee HEOs need explicit deorbit burns.",
+  "cur": "MEO와 HEO 처분. LEO나 GEO보다 더 어려운 경우. ~20,000 km의 MEO 항법 별자리(GPS, Galileo, GLONASS, BeiDou MEO)는 매우 긴 자연 부패 시간(수천 년)을 가지며 위에 편리한 묘지 등가물이 없다; 현재 관행은 은퇴한 위성을 운영 궤도에 두고 충돌을 피하기 위해 신중한 별자리 위상에 의존하는 것이다. MEO 인구가 증가함에 따라 이는 알려진 전망 문제가 되고 있다. HEO 위성(Molniya, Tundra)은 일반적으로 대기 항력이 결국 탈궤도시킬 만큼 충분히 낮은 근지점을 가진다 — 600 km 근지점의 Molniya는 수십 년 내에 부패. 더 높은 근지점 HEO는 명시적인 탈궤도 점화가 필요하다."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.3",
+  "en": "Cislunar disposal. No formal regulations yet, but emerging practice for Artemis-era spacecraft: end-of-life Lunar Reconnaissance Orbiter, Chang'e-1, Chandrayaan-1 all eventually impacted the lunar surface (sometimes deliberately for science — LCROSS impacted Cabeus to look for water; sometimes incidentally from station-keeping exhaustion). The Lunar Gateway's planned disposal at end of life is controlled deorbit into the lunar surface, similar to Mir's SPOUA disposal but on the Moon. Several proposals exist for parking retired cislunar assets at Earth-Moon L4 / L5, which are extremely stable and would tolerate derelict satellites indefinitely — but this hasn't been formalised in international agreement.",
+  "cur": "시스루나 처분. 아직 정식 규정은 없지만 Artemis 시대 우주선을 위한 신흥 관행: Lunar Reconnaissance Orbiter, Chang'e-1, Chandrayaan-1의 수명 종료는 모두 결국 달 표면에 충돌했다(때로는 과학을 위해 의도적으로 — LCROSS는 물을 찾기 위해 카베우스에 충돌; 때로는 정거장 유지 고갈로 부수적으로). Lunar Gateway의 계획된 수명 종료 처분은 달 표면으로의 제어 탈궤도이며, Mir의 SPOUA 처분과 유사하지만 달에서. 매우 안정적이고 폐기물을 무한정 허용할 수 있는 지구-달 L4 / L5에 은퇴한 시스루나 자산을 주차하는 제안이 여러 개 있다 — 하지만 이는 국제 협정에서 공식화되지 않았다."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.4",
+  "en": "Disposal is no longer optional. Until ~2015, end-of-life disposal was technically required but laxly enforced. Multiple regulatory shifts since then have changed the calculus: FCC's 5-year LEO rule (2022) requires all US-licensed satellites to deorbit within 5 years of mission end; ESA's Zero Debris Charter (2023) commits signatories to leave no debris in orbit; the UN's Long-Term Sustainability Guidelines (2019) make disposal a precondition for licensing. Modern satellite designs now include disposal propellant as a hard mass-budget item, with margin reservation enforced by mission-design reviews. The orbital-debris article covers what happens when disposal fails.",
+  "cur": "처분은 더 이상 선택 사항이 아니다. ~2015년까지 수명 종료 처분은 기술적으로 필수였지만 느슨하게 시행되었다. 그 이후의 여러 규제 변화가 계산을 바꿨다: FCC의 5년 LEO 규칙(2022)은 모든 미국 면허 위성이 임무 종료 후 5년 이내에 탈궤도되도록 요구; ESA의 Zero Debris Charter(2023)는 서명자에게 궤도에 잔해를 남기지 않도록 약속; UN의 장기 지속 가능성 지침(2019)은 처분을 면허의 전제 조건으로 만든다. 현대 위성 설계는 이제 처분 추진제를 단단한 질량 예산 항목으로 포함하며, 임무 설계 검토에 의해 강제되는 여유 예약이 있다. 궤도 잔해 기사는 처분이 실패할 때 무슨 일이 일어나는지 다룬다."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "diagram_caption",
+  "en": "LEO: deorbit within 25 years (IADC) / 5 years (FCC 2022). Burn perigee down to ~200 km → atmospheric re-entry. Large objects targeted at SPOUA (Point Nemo). GEO: boost ≥235 km above GEO ring into graveyard orbit. MEO: no formal disposal — long natural decay times, careful operational phasing. Cislunar: emerging practice, controlled lunar-surface impact.",
+  "cur": "LEO: 25년 이내 탈궤도(IADC) / 5년(FCC 2022). 근지점을 ~200 km로 태움 → 대기 재진입. 대형 물체는 SPOUA(Point Nemo)로 표적. GEO: GEO 링 위 ≥235 km로 부스트하여 묘지 궤도로. MEO: 정식 처분 없음 — 긴 자연 부패 시간, 신중한 운영 위상. 시스루나: 신흥 관행, 제어된 달 표면 충돌."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "intro_sentence",
+  "en": "How stretched the orbit is — zero is a perfect circle, one is a parabolic escape.",
+  "cur": "궤도가 얼마나 늘어났는지를 나타냅니다 — 0은 완벽한 원, 1은 포물선 탈출 궤도입니다."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "narrative_101.0",
+  "en": "If size is the orbit's first knob, eccentricity is the second. Pick a number from 0 to almost-1. At 0 the orbit is a perfect circle — boring, predictable, same speed everywhere. Push it toward 1 and the ellipse stretches into a long egg, then a cigar, then almost a straight line.",
+  "cur": "궤도의 크기가 첫 번째 조절 요소라면, 이심률은 두 번째 요소입니다. 0에서 거의 1에 가까운 숫자를 선택하세요. 0에서 궤도는 완벽한 원입니다 — 지루하고, 예측 가능하며, 어디서나 같은 속도입니다. 1에 가까워질수록 타원은 긴 달걀 모양으로 늘어나고, 그다음 시가 모양으로, 그리고 거의 직선에 가깝게 됩니다."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "narrative_101.1",
+  "en": "What changes physically? Speed. A circular orbit is calm. A stretched one is not. The body rips past the close end of the ellipse and then loiters out at the far end for most of the orbit. Halley's Comet is in here for less than a year out of every 76 — the rest of the time it's drifting around aphelion at a crawl. Same orbit, wildly different pace.",
+  "cur": "물리적으로 무엇이 변하는가? 속도다. 원형 궤도는 차분하다. 늘어난 궤도는 그렇지 않다. 천체는 타원의 근점을 휘몰아쳐 지나가다가 궤도의 대부분 구간에서 원점 근처에서 서성거린다. 핼리 혜성 Comet은 76년마다 1년 미만을 이곳에서 보내고, 나머지 시간에는 원점에서 기어 들어가는 속도로 떠돌아다닌다. 같은 궤도, 완전히 다른 속력."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "narrative_101.2",
+  "en": "Real planets are way more boring than comets — almost everything you'll see in /explore has eccentricity below 0.1. But the moment you start designing a mission trajectory, you're picking transfer ellipses with eccentricity all over the place. Hohmann transfers to Mars sit around 0.21. The Apollo TLI burn put the spacecraft on an ellipse with e ≈ 0.97 — almost an escape.",
+  "cur": "실제 행성들은 혜성보다 훨씬 더 지루합니다 — /explore에서 볼 수 있는 거의 모든 것들은 이심률이 0.1 이하입니다. 하지만 임무 궤적을 설계하기 시작하는 순간, 당신은 온갖 이심률을 가진 전이 타원을 선택하게 됩니다. 화성으로 가는 호만 전이는 약 0.21 정도입니다. Apollo TLI 분사는 우주선을 e ≈ 0.97인 타원 궤도에 올려놓았습니다 — 거의 탈출 궤도에 가깝습니다."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "body_paragraphs.0",
+  "en": "Eccentricity (`e`) is the shape number. Set it to 0 and you have a circle — the foci collapse onto a single centre, and the orbiting body stays at the same distance forever. Crank it up toward 1 and the ellipse stretches into a cigar — the body whips past the focus at perihelion, then loiters out at aphelion for most of the orbit.",
+  "cur": "이심률(`e`)은 형태를 나타내는 숫자입니다. 0으로 설정하면 원이 됩니다 — 초점들이 하나의 중심으로 합쳐지고, 궤도를 도는 천체는 영원히 같은 거리를 유지합니다. 1에 가까워지면 타원은 시가 모양으로 늘어납니다 — 천체는 근일점에서 초점을 빠르게 지나치고, 그다음 궤도의 대부분 시간 동안 원일점에서 천천히 머뭅니다."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "body_paragraphs.1",
+  "en": "Above `e = 1` you're no longer bound. `e = 1` exactly is a parabolic trajectory (escape, just barely). Anything higher is hyperbolic — a flyby that never returns. Most spacecraft trajectories Orrery shows are heliocentric ellipses with `e < 1`. The exception: gravity-assist arms drawn around Jupiter or Saturn dip into hyperbolic territory.",
+  "cur": "`e = 1`을 넘으면 더 이상 구속되지 않습니다. `e = 1`은 정확히 포물선 궤적입니다(간신히 탈출). 그보다 높으면 쌍곡선 궤도입니다 — 다시 돌아오지 않는 근접 통과입니다. Orrery가 보여주는 대부분의 우주선 궤적은 `e < 1`인 태양 중심 타원입니다. 예외: 목성나 토성 주변에 그려진 중력 도움 경로는 쌍곡선 영역에 들어갑니다."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "body_paragraphs.2",
+  "en": "Real planets cluster at low eccentricity. Earth: 0.0167 — almost circular. Mars: 0.093 — visibly elongated. Mercury: 0.205 — most eccentric of the eight planets. Pluto and the comets sit much higher, which is why their visits to perihelion are the show-stopping events of the outer solar system.",
+  "cur": "실제 행성들은 낮은 이심률에 모여 있습니다. 지구: 0.0167 — 거의 원형입니다. 화성: 0.093 — 눈에 띄게 늘어났습니다. 수성: 0.205 — 8개 행성 중 가장 이심률이 높습니다. 명왕성과 혜성들은 훨씬 더 높은 이심률을 가지고 있으며, 그래서 이들의 근일점 방문은 외태양계의 주목할 만한 사건입니다."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "formula_caption",
+  "en": "Eccentricity from perihelion and aphelion radii.",
+  "cur": "근일점과 원일점 반지름으로부터 구한 이심률."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "diagram_caption",
+  "en": "Three orbits with the same semi-major axis but eccentricity e = 0, 0.4, 0.8. Shape changes; period does not.",
+  "cur": "같은 긴반지름을 가지지만 이심률이 e = 0, 0.4, 0.8인 세 궤도. 형태는 변하지만 주기는 변하지 않습니다."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "intro_sentence",
+  "en": "Throw anything upward fast enough and it never falls back — escape velocity is the exact speed at which a body’s kinetic energy just balances the gravity well it is climbing out of.",
+  "cur": "물체를 충분히 빠르게 위로 던지면 절대 떨어지지 않는다. 탈출 속도는 물체의 운동 에너지가 중력 우물의 중력 에너지와 정확히 균형을 이루는 속도다."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "narrative_101.0",
+  "en": "Gravity never quite lets go — its pull reaches to infinity, only getting weaker with distance. So \"escaping\" a planet does not mean outrunning gravity; it means having exactly enough energy that, as you climb and slow, you slow toward zero speed only as you reach infinite distance. Come up even a hair short and gravity eventually wins, halts you, and pulls you back. Escape velocity is the knife-edge between those two fates.",
+  "cur": "중력은 절대로 완전히 놓지 않는다. 중력의 영향은 무한히 멀리까지 미치고 거리가 멀어질수록 약해질 뿐이다. 따라서 행성에서 \"탈출\"한다는 것은 중력을 능가한다는 뜻이 아니라, 오를수록 느려지다가 무한거리에서 정확히 속도 영(0)에 도달할 정도의 에너지를 가졌다는 뜻이다. 조금만 부족해도 중력이 결국 당신을 멈추게 하고 다시 끌어당긴다. 탈출 속도는 이 두 운명 사이의 칼날이다."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "narrative_101.1",
+  "en": "From Earth’s surface that speed is about 11.2 kilometres a second — roughly 40,000 km/h. It does not depend on which way you throw the object or how heavy it is: a pebble and a spaceship need the same speed. And it is tied to circular orbital speed by a clean factor — escape velocity is exactly the square root of two (about 1.41) times the speed of a circular orbit at the same height. Reach orbit, then go about 41% faster, and you are gone.",
+  "cur": "지구 표면에서 이 속도는 약 11.2 km/s, 즉 대략 시속 40,000 km다. 물체를 던지는 방향이나 무게에는 무관하다. 자갈이든 우주선이든 같은 속도가 필요하다. 그리고 원형 궤도 속도와 깔끔한 비율로 연결되어 있다. 탈출 속도는 같은 높이의 원형 궤도 속도에 정확히 루트 2배(약 1.41배)다. 궤도에 도달한 후 약 41% 더 빠르게 가면 탈출한다."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "narrative_101.2",
+  "en": "The number that matters for leaving the whole Solar System is bigger: escaping the Sun from Earth’s distance takes about 42 km/s. Earth already carries us around the Sun at about 30, so a probe needs only the difference — but that is still more than most chemical rockets can add on their own, which is why the craft leaving the Solar System leaned on gravity assists: decisive for Voyager and Pioneer, and an added boost for New Horizons, which the biggest launcher of its day had already flung onto an escape trajectory.",
+  "cur": "태양계 전체를 떠나기 위해 중요한 수치는 더 큽니다. 지구 궤도에서 태양을 탈출하려면 약 42 km/s가 필요합니다. 지구가 이미 우리를 태양 주위에서 약 30 km/s로 실어 나르고 있으므로, 탐사선은 그 차이만 필요하지만, 그것도 대부분의 화학 로켓이 자체적으로 추가할 수 있는 것보다 많습니다. 이것이 태양계를 떠나는 우주선이 중력 보조를 활용한 이유이며, 이는 Voyager와 Pioneer에 결정적이었고, New Horizons에는 당시 최대 규모의 발사체가 이미 탈출 궤도에 던져 놓은 추가적인 가속을 제공했습니다."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "body_paragraphs.0",
+  "en": "Escape velocity follows from energy conservation: set total energy (kinetic plus gravitational potential) to zero, and v_escape = √(2μ / r), where μ is the body’s gravitational parameter and r the distance from its centre. Because circular orbital speed is √(μ / r), escape velocity is exactly √2 times it — the same factor at every altitude. A trajectory launched at exactly escape speed is a parabola (orbital energy zero); above it, a hyperbola that arrives at infinity with leftover speed, the \"hyperbolic excess\" v∞.",
+  "cur": "탈출 속도는 에너지 보존에서 나온다. 총 에너지(운동 에너지 더하기 중력 퍼텐셜 에너지)를 영으로 설정하면 v_escape = √(2μ / r)이다. 여기서 μ는 천체의 중력 상수이고 r은 중심으로부터의 거리다. 원형 궤도 속도가 √(μ / r)이므로, 탈출 속도는 정확히 √2배다. 이는 모든 고도에서 같은 계수다. 정확히 탈출 속도로 발사된 궤도는 포물선(궤도 에너지 영)이다. 그 이상이면 쌍곡선이 되고 남은 속도 \"쌍곡선 초과 속도\" v∞를 가지고 무한거리에 도달한다."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "body_paragraphs.1",
+  "en": "The values are worth knowing: ~11.2 km/s from Earth’s surface, ~2.4 km/s from the Moon, ~5.0 km/s from Mars, ~618 km/s from the Sun’s surface, and ~42.1 km/s to escape the Sun from Earth’s 1-AU orbit. Escape speed falls with altitude (larger r), so leaving from a high orbit is cheaper than from the ground — one reason missions build up speed in stages.",
+  "cur": "이 값들은 알 만한 가치가 있다. 지구 표면에서 약 11.2 km/s, 달에서 약 2.4 km/s, 화성에서 약 5.0 km/s, 태양 표면에서 약 618 km/s, 그리고 지구의 1-AU 궤도에서 태양을 탈출하는 데 약 42.1 km/s다. 탈출 속도는 고도가 높아질수록 감소한다(r이 커질수록). 그래서 높은 궤도에서 떠나는 것이 지표면에서보다 저렴하다. 이것이 임무가 여러 단계로 속도를 높이는 이유 중 하나다."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "body_paragraphs.2",
+  "en": "Reaching solar escape is why deep-space missions lean on the Oberth effect and gravity assists. Earth’s ~30 km/s orbital motion is a free head start, but the remaining Δv to 42 km/s, applied from low Earth orbit, exceeds a chemical stage’s budget; a planetary flyby donates the rest without propellant. Escape velocity is the target the Physics Lab’s \"leave the Solar System\" lesson has to clear.",
+  "cur": "태양계 탈출에 도달하기 위해 심우주 임무는 Oberth effect와 중력 보조에 의존한다. 지구의 약 30 km/s 공전 속도는 무료 선제 우위다. 하지만 낮은 지구 궤도에서 적용된 42 km/s까지의 추가 Δv는 화학 단계의 예산을 초과한다. 행성 플라이바이가 추진제 없이 나머지를 제공한다. 탈출 속도는 Physics Lab의 \"태양계를 떠나기\" 강의가 넘어야 할 목표다."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "diagram_caption",
+  "en": "Escape velocity v = √(2μ/r) = √2 × circular speed: below it the path is a bound ellipse, at it a parabola, above it a hyperbola that reaches infinity with speed to spare.",
+  "cur": "탈출 속도 v = √(2μ/r) = √2 × 원형 속도: 이 아래면 경로는 닫힌 타원이고, 이것이면 포물선이고, 이 위면 여분의 속도를 가지고 무한거리에 도달하는 쌍곡선이다."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "intro_sentence",
+  "en": "The volume of space where a planet's gravity wins out over the Sun's.",
+  "cur": "행성의 중력이 태양의 중력을 이기는 우주 공간의 부피."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "narrative_101.0",
+  "en": "Out at Earth's orbit, the Sun's pull on you would be about 46,000× weaker than it is on the Sun's surface — but it's still strong. So why does the Moon orbit Earth and not the Sun? Because right next to Earth, you're SO close to Earth that its 80× smaller mass still wins. The boundary where that flips — where you're far enough away that the Sun is back in charge — is the Hill sphere.",
+  "cur": "지구 궤도에서 태양이 당신을 끌어당기는 힘은 태양 표면에서의 약 46,000배 약하지만, 여전히 강력합니다. 그렇다면 달은 왜 태양이 아닌 지구를 공전할까요? 지구 바로 옆에 있을 때, 당신은 지구에 너무 가까워서 지구의 질량이 80배 작아도 여전히 우세하기 때문입니다. 그 균형이 뒤바뀌는 경계 — 충분히 멀리 떨어져 태양이 다시 주도권을 갖는 지점 — 이 Hill 구입니다."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "narrative_101.1",
+  "en": "Inside Earth's Hill sphere (a roughly spherical region about 1.5 million km across), an object can hold a stable orbit around Earth. Outside it, the Sun's gravity reaches in too strongly and yanks the object away. The Moon, at 384,000 km out, sits about a quarter of the way to that edge — comfortably stable. The James Webb Space Telescope orbits the Sun–Earth L2 point, also ~1.5 million km out, and needs small station-keeping burns (~2.5 m/s per year) because L2 is a dynamically unstable saddle point — not because it sits at the edge of Earth's Hill sphere.",
+  "cur": "지구의 힐 구(대략 180만 km 크기의 대체로 구형인 영역) 내에서는 물체가 지구 주위의 안정적인 궤도를 유지할 수 있습니다. 이 영역 밖에서는 태양의 중력이 너무 강하게 작용하여 물체를 끌어당깁니다. 달은 38만 4,000 km 떨어진 곳에 있으며, 그 경계까지의 약 1/4 지점에 위치해 있어서 충분히 안정적입니다. James Webb Space Telescope는 태양–지구 L2 지점을 공전하고 있으며, 역시 약 180만 km 떨어져 있고, L2가 역학적으로 불안정한 안장 지점이기 때문에 작은 궤도 유지 분사(년당 약 2.5 m/s)가 필요합니다. 이는 지구의 힐 구의 경계에 위치하기 때문이 아닙니다."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "narrative_101.2",
+  "en": "Every planet has one. They scale with the planet's mass and its distance from the Sun. Mercury — small and close — has a Hill sphere only about 90 Mercury-radii across, which is why Mercury has no moon (any captured object would be ripped away). Jupiter — huge and far — has a Hill sphere about 740 Jupiter-radii across, big enough to hold 95 known moons plus extensive Trojan asteroid swarms.",
+  "cur": "모든 행성은 Hill 구를 가집니다. 이는 행성의 질량과 태양으로부터의 거리에 따라 변합니다. 수성은 작고 태양에 가까워 Hill 구가 약 90개 수성 반지름 크기에 불과하므로 위성을 가질 수 없습니다(포획된 물체는 떨어져 나갑니다). 목성은 거대하고 멀리 있어 Hill 구가 약 740개 목성 반지름 크기로, 95개의 알려진 위성과 광대한 목성 Trojan 소행성군을 유지할 수 있을 정도로 큽니다."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "body_paragraphs.0",
+  "en": "The Hill radius formula approximates the boundary as r_H ≈ a × (1−e) × (m / 3M)^(1/3), where `a` is the planet's semi-major axis, `e` its eccentricity, `m` its mass, and `M` the Sun's mass. The (1−e) factor accounts for perihelion shrinkage — a more eccentric orbit means the planet swings closer to the Sun and its authority shrinks accordingly. The cube root means doubling a planet's mass only enlarges its Hill sphere by ~26%; doubling its orbital distance enlarges it by 100%.",
+  "cur": "Hill 반지름 공식은 경계를 r_H ≈ a × (1−e) × (m / 3M)^(1/3)로 근사합니다. 여기서 `a`는 행성의 반장축, `e`는 이심률, `m`은 행성의 질량, `M`은 태양의 질량입니다. (1−e) 인수는 근일점 축소를 설명합니다. — 더 긴 타원 궤도는 행성이 태양에 더 가까워지므로 태양의 영향력이 줄어듭니다. 세제곱근은 행성의 질량을 두 배로 늘려도 Hill 구가 약 26%만 커지지만, 궤도 거리를 두 배로 늘리면 100% 커집니다."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "body_paragraphs.1",
+  "en": "Real numbers for the solar system: Mercury 220,000 km (90 R_Mercury). Venus 1.0 M km (170 R_Venus). Earth 1.5 M km (236 R_Earth). Mars 1.1 M km (320 R_Mars — bigger than Earth's in radii because Mars is small and farther from the Sun). Jupiter 53 M km (740 R_Jupiter — by far the largest in the system). Saturn 65 M km (1100 R_Saturn). Uranus 70 M km. Neptune 116 M km. Pluto ~6.0 M km (~5000 R_Pluto — the largest Hill sphere measured in its own body radii in the solar system, because Pluto is far from the Sun and tiny).",
+  "cur": "태양계의 실제 수치: 수성 22만 km(90 R_Mercury). 금성 100만 km(170 R_Venus). 지구 150만 km(236 R_Earth). 화성 110만 km(320 R_Mars — 지구보다 작지만 태양에서 더 멀어 반지름 기준으로는 더 큼). 목성 5,300만 km(740 R_Jupiter — 태양계에서 가장 큼). 토성 6,500만 km(1,100 R_Saturn). 천왕성 7,000만 km. 해왕성 1억 1,600만 km. 명왕성 약 600만 km(약 5,000 R_Pluto — 태양계에서 자체 반지름 기준으로 가장 큼, 명왕성이 태양에서 멀고 매우 작기 때문)."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "body_paragraphs.2",
+  "en": "The Hill sphere is the outer limit; the inner limit is the Roche limit, where the planet's tidal forces would shatter a satellite. Stable moons live in the band between the two. Mercury's case is the strict one — its Hill sphere is small enough that any captured body would be pulled within Roche distance and disrupted, so Mercury has stayed moonless for 4.5 billion years.",
+  "cur": "Hill 구는 바깥쪽 한계이고, 안쪽 한계는 행성의 조석력이 위성을 파괴할 Roche 한계입니다. 안정적인 위성들은 두 한계 사이의 범위에 있습니다. 수성의 경우가 가장 극단적입니다. — Hill 구가 충분히 작아서 포획된 물체가 Roche 거리 내로 끌려가 파괴되므로, 수성은 45억 년 동안 위성이 없는 상태를 유지해 왔습니다."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "diagram_caption",
+  "en": "Hill sphere of a planet on a near-circular orbit. The L1 + L2 Lagrange points sit at the boundary along the planet→Sun line; moons orbit stably inside, anything outside gets reclaimed by the Sun.",
+  "cur": "거의 원형 궤도를 도는 행성의 Hill 구. L1과 L2 라그랑주점은 행성→태양 선을 따라 경계에 위치합니다; 위성들은 내부에서 안정적으로 공전하고, 바깥쪽의 모든 물체는 태양에 의해 회수됩니다."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "intro_sentence",
+  "en": "The tilt of the orbit plane relative to a reference plane — usually the ecliptic or Earth's equator.",
+  "cur": "기준면(보통 황도면 또는 지구 적도면)에 대한 궤도면의 기울기입니다."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "narrative_101.0",
+  "en": "Hold a dinner plate flat in front of you — that's the reference plane. Now tilt it. The angle you tilted by is inclination. That's the whole concept. Every orbit lives on its own tilted plate.",
+  "cur": "접시를 평평하게 들고 있다고 상상해 보세요. 그것이 기준면입니다. 이제 접시를 기울여 보세요. 기울인 각도가 바로 궤도 경사각입니다. 개념은 이게 전부입니다. 모든 궤도는 각자 기울어진 접시 위에 놓여 있습니다."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "narrative_101.1",
+  "en": "It matters because changing inclination is brutally expensive in fuel. If you launch a rocket from Florida, the Earth is already spinning eastward at 0.4 km/s — you get that for free if your orbit goes east. Try to launch into a polar orbit instead and you don't just lose the freebie, you have to fight against it. Picking your inclination at launch is one of the biggest decisions a mission makes; you almost never want to change it later.",
+  "cur": "경사각이 중요한 이유는 경사각을 바꾸는 데 엄청난 연료가 들기 때문입니다. 플로리다에서 로켓을 발사하면 지구는 이미 동쪽으로 0.4 km/s 속도로 자전하고 있습니다. 동쪽으로 가는 궤도라면 이 속도를 공짜로 얻게 됩니다. 하지만 극궤도로 발사하려 한다면 이 보너스를 잃는 것뿐만 아니라 오히려 그것에 맞서 싸워야 합니다. 발사 시 경사각을 선택하는 것은 임무에서 가장 중요한 결정 중 하나입니다. 나중에 경사각을 바꾸는 일은 거의 없습니다."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "narrative_101.2",
+  "en": "This is why the ISS sits at 51.6° — that's the angle you have to launch at if you want to reach it from Russia's launch site at Baikonur. Why imaging satellites go polar — they need to fly over every latitude. Why GEO comsats sit on the equator — so they hover over the same patch of ground forever. Each inclination is a deliberate choice with a fuel bill attached.",
+  "cur": "이것이 바로 ISS가 51.6°에 위치한 이유입니다. 이 각도는 Russia의 바이코누르 발사장에서 ISS에 도달하려면 발사해야 하는 각도입니다. 영상 촬영 위성이 극궤도를 도는 이유는 모든 위도를 지나가야 하기 때문입니다. GEO 통신위성이 적도에 위치하는 이유는 지상의 같은 지점 위에 영원히 머물러야 하기 때문입니다. 각각의 경사각은 연료 비용이 따르는 의도적인 선택입니다."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "body_paragraphs.0",
+  "en": "Inclination (`i`) is the angle between the orbit plane and a chosen reference. For a heliocentric orbit, the reference is the ecliptic — the plane Earth orbits in. For Earth-orbiters, it's usually the equator. The angle is measured at the ascending node, where the orbit climbs through the reference plane heading north.",
+  "cur": "궤도 경사각(`i`)은 궤도면과 선택된 기준면 사이의 각도입니다. 태양 중심 궤도의 경우 기준면은 황도면, 즉 지구가 공전하는 평면입니다. 지구 궤도 위성의 경우에는 보통 적도면을 기준으로 합니다. 이 각도는 승교점에서 측정되며, 승교점은 궤도가 북쪽으로 향하며 기준면을 통과하는 지점입니다."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "body_paragraphs.1",
+  "en": "Most planets sit close to the ecliptic — Earth defines it (`i = 0°` by construction), and the rest stay within a few degrees. Mercury at 7° is the outlier. Pluto's wild 17° is one of the reasons it got demoted: real planets stay nearly co-planar.",
+  "cur": "대부분의 행성은 황도면에 가깝게 위치합니다. 지구는 황도면을 정의하며(정의상 `i = 0°`), 나머지 행성들은 몇 도 이내에 머뭅니다. 수성은 7°로 예외적입니다. 명왕성의 극단적인 17°는 명왕성이 강등된 이유 중 하나입니다. 진짜 행성들은 거의 같은 평면에 머물러 있습니다."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "body_paragraphs.2",
+  "en": "For Earth satellites the inclination story is different and pragmatic. Equatorial (0°) for geostationary comsats. ~28° for Cape Canaveral launches that need to ride the Earth's spin. ~51.6° for the ISS — chosen so Russian crews can launch from Baikonur. Polar (~90°) for Earth-imaging satellites that need every latitude. Sun-synchronous (~98°) for science platforms that want consistent lighting on every pass.",
+  "cur": "지구 위성의 경우 궤도경사각 이야기는 다르고 실용적이다. 정지 통신위성의 경우 적도(0°). 지구의 자전을 활용해야 하는 케이프 커내버럴 발사의 경우 약 28°. ISS의 경우 약 51.6°인데, 러시아 우주 비행사들이 바이코누르에서 발사할 수 있도록 선택되었다. 모든 위도를 촬영해야 하는 지구 관측 위성의 경우 극궤도(약 90°). 매 통과마다 일정한 조명을 원하는 과학 플랫폼의 경우 태양동기궤도(약 98°)."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "diagram_caption",
+  "en": "Orbit plane tilted by angle i from the reference plane. Ascending node N marks where the orbit crosses going north.",
+  "cur": "기준면으로부터 각도 i만큼 기울어진 궤도면. 승교점 N은 궤도가 북쪽으로 향하며 교차하는 지점을 표시합니다."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "intro_sentence",
+  "en": "An ellipse with the Sun at one focus — the simplest orbit a body can have around another.",
+  "cur": "태양이 한 초점에 위치한 타원 — 천체가 다른 천체 주위를 도는 가장 단순한 궤도."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "narrative_101.0",
+  "en": "Imagine throwing a ball off a tall tower. It curves down to the ground. Throw it harder, the curve gets longer. Throw it so hard that the ground falls away under it as fast as the ball drops — and the ball never lands. It just keeps falling, forever, in a closed loop. That's an orbit. Every spacecraft, every moon, every planet is doing that one trick.",
+  "cur": "높은 탑에서 공을 던진다고 상상해 보자. 공은 곡선을 그리며 땅으로 떨어진다. 더 세게 던지면 곡선이 더 길어진다. 공이 떨어지는 속도만큼 빠르게 땅이 아래로 멀어지도록 충분히 세게 던지면 — 공은 절대 착지하지 않는다. 그저 영원히, 닫힌 고리를 그리며 계속 떨어질 뿐이다. 그것이 궤도다. 모든 우주선, 모든 위성, 모든 행성이 바로 그 한 가지 묘기를 하고 있는 것이다."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "narrative_101.1",
+  "en": "What makes the loop a Keplerian orbit specifically is that we're treating gravity as a single, clean tug toward one heavy thing — the Sun for planets, the Earth for satellites, Mars for InSight. Two bodies, one force, no complications. The result is always an ellipse, and the heavy body always sits at one of the two focal points, never the middle. That single picture lives behind every number you'll see in this whole encyclopedia.",
+  "cur": "그 고리를 특별히 케플러 궤도라고 부르는 이유는 중력을 하나의 무거운 천체를 향한 단일하고 깔끔한 당김으로 취급하기 때문이다 — 행성에게는 태양, 인공위성에게는 지구, InSight에게는 화성. 두 천체, 하나의 힘, 복잡한 것은 없다. 그 결과는 항상 타원이며, 무거운 천체는 항상 두 초점 중 하나에 위치하지 중심에는 오지 않는다. 이 하나의 그림이 이 백과사전 전체에서 보게 될 모든 수치의 기반이 된다."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "narrative_101.2",
+  "en": "Reality is messier — moons perturb planets, the Earth's bulge tugs on satellites, the Sun pulls on lunar trajectories — but the messiness is mostly a small correction on top of a Keplerian orbit. So we start here. Get the ellipse right and everything else is decoration.",
+  "cur": "현실은 더 복잡하다 — 위성들이 행성을 교란하고, 지구의 편평도가 인공위성을 잡아당기며, 태양이 달 궤적에 영향을 준다 — 하지만 그 복잡함은 대부분 케플러 궤도 위에 더해지는 작은 보정일 뿐이다. 그래서 우리는 여기서 시작한다. 타원을 제대로 이해하면 나머지는 모두 장식이다."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "body_paragraphs.0",
+  "en": "When you fall toward something massive but miss it, you get a Keplerian orbit. The path is an ellipse — a stretched circle — and the body you're falling toward sits at one of the two focal points, never the centre. Earth around the Sun, Moon around Earth, every spacecraft you'll see in Orrery: all Keplerian to a first approximation.",
+  "cur": "거대한 천체를 향해 떨어지지만 빗나가면, 케플러 궤도를 얻게 된다. 그 경로는 타원 — 늘어난 원 — 이며, 당신이 떨어지고 있는 천체는 두 초점 중 하나에 위치하지 중심에는 오지 않는다. 태양 주위의 지구, 지구 주위의 달, Orrery에서 보게 될 모든 우주선: 모두 1차 근사에서 케플러 궤도를 따른다."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "body_paragraphs.1",
+  "en": "Six numbers fully describe one of these orbits: the size (semi-major axis), the stretch (eccentricity), three angles that orient the ellipse in space (inclination, longitude of ascending node, argument of periapsis), and where the body is along the path right now (true anomaly). These are the Keplerian elements — the language every other section in this tab translates into something you can picture.",
+  "cur": "여섯 개의 숫자가 이러한 궤도 중 하나를 완전히 기술한다: 크기 (반장축), 늘어남 (이심률), 공간에서 타원을 정향하는 세 개의 각도 (궤도경사각, 승교점 경도, 근점 인수), 그리고 천체가 지금 경로를 따라 어디에 있는지 (진근점 이각). 이것들이 케플러 요소다 — 이 탭의 다른 모든 섹션이 시각화할 수 있는 것으로 번역하는 언어."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "body_paragraphs.2",
+  "en": "The model breaks down whenever a third body's gravity matters: spacecraft near the Moon, satellites in low Earth orbit feeling the bulge of the equator, anything passing through Jupiter's shadow. Orrery uses Keplerian orbits for the heliocentric story and patched-conic approximations for the rest.",
+  "cur": "이 모델은 제3 천체의 중력이 중요해질 때마다 무너진다: 달 근처의 우주선, 적도 편평도를 느끼는 저궤도 인공위성, 목성의 그림자를 통과하는 모든 것. Orrery는 태양중심 이야기에는 케플러 궤도를 사용하고 나머지에는 패치된 원뿔 근사를 사용한다."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "diagram_caption",
+  "en": "Ellipse with focus F₁ at the Sun. Semi-major axis a · perihelion (closest) and aphelion (farthest) on the line of apsides.",
+  "cur": "태양에 초점 F₁이 있는 타원. 반장축 a · 근일점 (가장 가까운 지점)과 원일점 (가장 먼 지점)이 장축선 위에 있음."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "intro_sentence",
+  "en": "Three observational rules that turned planetary motion into a closed-form science a century before Newton explained why.",
+  "cur": "뉴턴이 그 이유를 설명하기 한 세기 전에 행성 운동을 정형화된 과학으로 바꾼 세 가지 관측 규칙."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "narrative_101.0",
+  "en": "Kepler did not have calculus. He did not have Newton's gravity. He did not have a computer. He had twenty years of his boss Tycho Brahe's painstaking eyeballed-with-a-quadrant observations of Mars, and he had patience. Out of that he wrote three rules that are still exactly correct today, four hundred years later.",
+  "cur": "케플러에게는 미적분학이 없었다. 뉴턴의 중력 이론도 없었다. 컴퓨터도 없었다. 그에게 있던 것은 상사 티코 브라헤가 사분의를 이용해 육안으로 20년간 공들여 관측한 화성 데이터와 인내심이었다. 그것으로부터 그는 400년이 지난 지금도 여전히 정확히 맞아떨어지는 세 가지 규칙을 만들어냈다."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "narrative_101.1",
+  "en": "Law one: orbits are ellipses, not circles. Heretical at the time. Law two: the line from a planet to the Sun sweeps out equal areas in equal times — which is a sneaky way of saying planets speed up when they're close to the Sun and slow down when they're far. Law three: the bigger the orbit, the longer the year, in a precise way (T² scales as a³).",
+  "cur": "첫 번째 법칙: 궤도는 원이 아니라 타원이다. 당시로서는 이단적인 주장이었다. 두 번째 법칙: 행성에서 태양까지 이은 선은 같은 시간에 같은 면적을 쓸고 지나간다 — 이는 행성이 태양에 가까울 때 속도가 빨라지고 멀 때 느려진다는 것을 교묘하게 표현한 방식이다. 세 번째 법칙: 궤도가 클수록 공전 주기가 길어지며, 이는 정확한 관계를 따른다 (T²는 a³에 비례)."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "narrative_101.2",
+  "en": "Newton came along seventy years later and proved that all three laws fall out of one simple gravity equation. But Kepler got there first, with no theory — just by staring at numbers until they confessed. That's the kind of move you can still pull in modern science if you have the patience for it.",
+  "cur": "Newton은 70년 후에 나타나 세 법칙 모두가 하나의 단순한 중력 방정식에서 도출됨을 증명했다. 하지만 케플러가 먼저 도달했으며, 어떤 이론도 없이 — 오직 숫자들이 고백할 때까지 응시함으로써. 이것이 바로 현대 과학에서도 인내심만 있다면 여전히 통할 수 있는 접근법이다."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "body_paragraphs.0",
+  "en": "First law: planets orbit on ellipses with the Sun at one focus. Before Kepler, every model used circles — sometimes nested, sometimes offset, but always circular. Kepler used Tycho Brahe's twenty years of Mars observations and gave up: the data didn't fit circles, and nothing he could do made them. Ellipses fit on the first try.",
+  "cur": "첫 번째 법칙: 행성은 태양을 한 초점으로 하는 타원 궤도를 돈다. 케플러 이전에는 모든 모델이 원을 사용했다 — 때로는 중첩되고, 때로는 중심이 치우쳤지만, 항상 원형이었다. 케플러는 티코 브라헤의 20년간 화성 관측 데이터를 사용하다 포기했다: 데이터가 원에 맞지 않았고, 무엇을 해도 맞출 수 없었다. 타원은 첫 시도에 딱 들어맞았다."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "body_paragraphs.1",
+  "en": "Second law: the line from Sun to planet sweeps equal areas in equal times. This is angular-momentum conservation in disguise. Near perihelion the planet is close to the Sun, the line is short — so it has to swing fast to sweep the same area as a long, slow line near aphelion. It's why orbital speed isn't constant.",
+  "cur": "두 번째 법칙: 태양에서 행성까지 이은 선은 같은 시간에 같은 면적을 쓸고 지나간다. 이는 각운동량 보존을 위장한 형태다. 근일점 근처에서는 행성이 태양에 가깝고 선이 짧다 — 따라서 원일점 근처의 길고 느린 선과 같은 면적을 쓸기 위해서는 빠르게 회전해야 한다. 이것이 궤도 속도가 일정하지 않은 이유다."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "body_paragraphs.2",
+  "en": "Third law: `T² ∝ a³`. The square of the orbital period is proportional to the cube of the semi-major axis. With Earth set to T = 1 year and a = 1 AU, you can read off any planet's period from its distance — or its distance from its period. Newton would later derive this from gravity; Kepler got there through pure pattern-matching on Brahe's data.",
+  "cur": "세 번째 법칙: `T² ∝ a³`. 공전 주기의 제곱은 긴반지름의 세제곱에 비례한다. 지구를 T = 1 년, a = 1 AU로 설정하면, 어떤 행성이든 거리로부터 주기를 — 또는 주기로부터 거리를 — 읽어낼 수 있다. Newton은 나중에 이것을 중력으로부터 유도했지만, 케플러는 Brahe의 데이터에서 순수한 패턴 매칭을 통해 도달했다."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "formula_caption",
+  "en": "Kepler's third law in modern form: T² depends only on a (and the central body's μ).",
+  "cur": "현대적 형태의 케플러 제3법칙: T²는 오직 a (그리고 중심 천체의 μ)에만 의존한다."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "diagram_caption",
+  "en": "Equal areas in equal times: shorter arc near perihelion sweeps the same area as the longer arc near aphelion.",
+  "cur": "같은 시간에 같은 면적: 근일점 근처의 짧은 호가 원일점 근처의 긴 호와 같은 면적을 쓸고 지나간다."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "intro_sentence",
+  "en": "Five gravitationally-balanced spots in every two-body system where a small spacecraft can hover with almost no fuel — and where most modern deep-space observatories actually live.",
+  "cur": "작은 우주선이 거의 아무 연료도 없이 놀 수 있는 각 2 몸 체계에 있는 5개의 gravitationally 균형 잡힌 반점 — 그리고 실제로 살아있는 대부분의 현대 깊은 공간 관찰자."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "narrative_101.0",
+  "en": "Take any two bodies orbiting each other — Sun and Earth, Earth and Moon, Sun and Jupiter — and there are exactly five spots in the orbit plane where a third, much smaller body can stay put relative to the two big ones. Joseph-Louis Lagrange worked them out in 1772. Two and a half centuries later they are the most valuable real estate in cislunar space.",
+  "cur": "다른 두 가지 신체 궤도를 가져다 - 태양과 지구, 지구와 달, 태양과 목성 - 그리고 세 번째, 훨씬 작은 몸이 두 개의 큰 것들에 상대를 수용 할 수있는 궤도 비행기에서 정확히 다섯 개의 반점이 있습니다. 조제프루이 라그랑주는 1772에서 근무했습니다. 두 반 세기 후 그들은 가장 가치있는 부동산입니다."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "narrative_101.1",
+  "en": "JWST sits at Sun-Earth L2. SOHO sits at Sun-Earth L1. Gateway will live near Earth-Moon L2. Queqiao relays Chang'e signals from beyond the Moon at Earth-Moon L2 too. The named-spacecraft list is short and almost entirely Lagrange-stationed.",
+  "cur": "JWST는 태양-지구 L2에 자리합니다. SOHO는 태양-지구 L1에 자리합니다. Gateway는 지구-달 L2 근처에 위치할 것입니다. Queqiao는 지구-달 L2에서 달 너머로부터 Chang'e 신호를 중계합니다. 명명된 우주선의 목록은 짧으며 거의 전부가 라그랑주 지점에 배치되어 있습니다."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "body_paragraphs.0",
+  "en": "The five points sit in specific geometries. **L1** lies between the two bodies on the line connecting them — for Sun-Earth, that's ~1.5 million km sunward of Earth, where the Sun's pull and Earth's pull balance the centripetal requirement. **L2** is on the same line but on the FAR side of the smaller body — for Sun-Earth, ~1.5 million km anti-sunward of Earth. **L3** is on the opposite side of the larger body, hidden behind the Sun from Earth's perspective. **L4** and **L5** are at the vertices of equilateral triangles formed with the two bodies — 60° ahead and 60° behind the smaller body's orbit.",
+  "cur": "특정 지오메트리에 앉아 5 점. **L1**는 태양-지구를 연결하는 선에 2개의 몸 사이에서 있습니다, 지구의 ~1.5백만 킬로미터 태양, 태양의 잡아당기기 및 지구의 잡아당기기 균형은 원심적인 필요조건입니다. **L2**는 동일한 선에 있지만, 더 작은 몸의 FAR 측에 - 태양-지구, ~1.5 백만 km 지구의 항선. **L3**는 지구의 관점에서 태양 뒤에 숨은 더 큰 몸의 반대면에 있습니다. ** L4** 및 ** L5**는 2개의 몸으로 형성된 평지 삼각형의 vertices에 있습니다 — 60°는 더 작은 몸 궤도의 뒤에 60°."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "body_paragraphs.1",
+  "en": "Stability differs sharply. L1, L2, and L3 are **saddle points** — gravitationally balanced on the in-out axis but unstable on perpendicular axes. A spacecraft parked there will drift off within months unless it does small station-keeping burns. L4 and L5 are **stable** — they're potential-energy wells. Dust collects at the Earth-Sun L4/L5 (the Kordylewski clouds, faint but real); Trojan asteroids librate around the Sun-Jupiter L4 and L5 in their millions.",
+  "cur": "안정성은 극명하게 다릅니다. L1, L2, L3은 **안장점**입니다. 즉, 중력 균형이 내향-외향 축 위에는 있지만 수직 축 위에서는 불안정합니다. 이 지점에 주차된 우주선은 작은 자세유지 분사를 하지 않으면 수개월 내에 벗어날 것입니다. L4와 L5는 **안정적**입니다. 이들은 퍼텐셜 에너지 우물입니다. 먼지가 지구-태양 L4/L5에 모입니다(Kordylewski 구름, 희미하지만 실제입니다). 트로이 소행성들은 태양-목성 L4와 L5 주변을 수백만 개 단위로 진동합니다."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "body_paragraphs.2",
+  "en": "**Sun-Earth Lagrange points** are where big observatories live: SEL1 hosts SOHO (Sun-watching since 1996) and DSCOVR (Earth-watching); SEL2 hosts JWST, Spektr-RG, Euclid, Gaia, and previously Herschel + Planck — anti-sunward so the Sun + Earth + Moon are all on one side, easy to shadow-shield. SEL2 is ~6 months of free-coast away from Earth, with one ~5 m/s halo-orbit-insertion burn at arrival; no fuel for station-keeping more than ~2 m/s/yr.",
+  "cur": "** 태양-지구 Lagrange 포인트 ** 큰 관찰자가 살고있는 곳 : SEL1 호스트 SOHO (1996 년 이후 일요일 시계) 및 DSCOVR (Earth-watching); SEL2 호스트 JWST, Spektr-RG, Euclid, Gaia, 이전에 Herschel + Planck - 안티 - 태양 + 지구 + 달은 한쪽에 모두 그림자 방패로 쉽습니다. SEL2는 지구에서 떨어져 자유 낙하의 6 달, 도착에 1개의 ~5 m/s halo-orbit-insertion 화상과 더불어 입니다; ~2 m/s/yr 보다는 역 기류를 위한 연료 없음."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "body_paragraphs.3",
+  "en": "**Earth-Moon Lagrange points** are the strategic real estate for the Artemis programme. EML2 (~64,500 km past the Moon) is the staging point for Gateway in NRHO (a near-rectilinear halo around it). It gives line-of-sight to both the lunar far side (where Chang'e-4 landed; Queqiao relays from EML2) and to Earth. EML1, between Earth and the Moon, is a natural waypoint for any cislunar architecture that wants to descend and ascend repeatedly without bleeding ∆v on transfers. The next decade of crewed Moon operations is largely a Lagrange-point story.",
+  "cur": "**지구-달 라그랑주점**은 아르테미스 계획을 위한 전략적 요지입니다. EML2(달 너머 약 64,500 km)는 NRHO(그 주변의 근직선 할로)에서 Gateway의 기지점입니다. 달의 뒷면(Chang'e-4가 착륙한 곳; Queqiao는 EML2에서 중계)과 지구 양쪽 모두에 시선이 통합니다. 지구와 달 사이에 있는 EML1은 반복적으로 하강과 상승을 하면서 이동에 ∆v를 낭비하지 않으려는 모든 근달우주 구조에서 자연스러운 경유지입니다. 앞으로의 10년간 유인 달 작전은 대부분 라그랑주점에 관한 이야기입니다."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "diagram_caption",
+  "en": "Five gravity-balanced spots per two-body system. L1/L2/L3 saddle points (station-keeping required); L4/L5 stable wells. Sun-Earth L2 hosts JWST + Euclid + Spektr-RG; Earth-Moon L2 hosts Gateway + Queqiao.",
+  "cur": "두 몸 체계 당 5개의 중력 균형 잡힌 반점. L1/L2/L3 안장 점 (전송 요구); L4/L5 안정되어 있는 우물. 태양-지구 L2는 JWST + Euclid + Spektr-RG를 호스팅합니다. 지구-달 L2는 Gateway + Queqiao를 호스팅합니다."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "title",
+  "en": "Orbit Regimes — LEO, MEO, GEO, HEO",
+  "cur": "궤도 범위 — LEO, MEO, GEO, HEO"
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "intro_sentence",
+  "en": "Earth orbits cluster into four altitude bands; each one is a different mission compromise between latency, lifetime, and cost.",
+  "cur": "지구 궤도는 4가지 고도 대역으로 나뉘며, 각각은 지연, 수명, 비용 간의 서로 다른 임무 상충점을 나타냅니다."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.0",
+  "en": "Pick a satellite. The most important thing about it isn't what it does — it's what altitude it lives at. Altitude sets how often it can see the same patch of ground, how long it takes a radio signal to reach it, how much fuel it needs to maintain orbit, and what its useful lifetime is. Spacecraft engineers cluster orbits into four bands — LEO, MEO, GEO, HEO — because the trade-offs change discretely as you climb.",
+  "cur": "위성 하나를 골라봅시다. 그 위성의 가장 중요한 특성은 무엇을 하는가가 아니라 어느 고도에 있는가입니다. 고도는 같은 지표면을 얼마나 자주 볼 수 있는지, 무선 신호가 도달하는 데 걸리는 시간, 궤도를 유지하는 데 필요한 연료, 그리고 유용한 수명이 얼마나 되는지를 결정합니다. 우주선 엔지니어들은 고도가 올라가면서 상충점이 급격하게 변하기 때문에 궤도를 4가지 대역으로 분류합니다 — LEO, MEO, GEO, HEO."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.1",
+  "en": "LEO is up to ~2,000 km. The ISS lives at 408 km. Hubble at 540 km. SpaceX's Starlink at ~550 km. Cheap to reach (most rockets can throw a payload here), but you whip around the planet every 90 minutes, the atmosphere drags you down (lifetime: years without reboost), and you only see any one ground spot for ~10 minutes per pass.",
+  "cur": "LEO는 약 2,000 km까지입니다. ISS는 408 km에 있고, Hubble은 540 km에 있으며, SpaceX의 Starlink는 약 550 km에 있습니다. 도달하기 저렴합니다(대부분의 로켓이 페이로드를 여기까지 보낼 수 있음), 하지만 90분마다 지구를 한 바퀴 돌고, 대기가 당신을 끌어내립니다(수명: 재부스트 없이 수년), 그리고 각 통과마다 약 10분 동안만 같은 지표면을 볼 수 있습니다."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.2",
+  "en": "MEO is 2,000–35,786 km — the GPS / Galileo / Beidou band, plus some communications. Periods are 2-12 hours; you cover the globe with fewer satellites than LEO, and you're above most of the radiation belts' worst zones (carefully chosen). GEO sits exactly at 35,786 km — period exactly 24 hours — so a satellite there hovers over the same point on Earth forever, which is why every weather and broadcast comsat is up there.",
+  "cur": "MEO는 2,000~35,786 km입니다 — GPS / Galileo / Beidou 대역과 일부 통신 위성들이 있습니다. 공전 주기는 2~12시간이며, LEO보다 적은 위성으로 지구 전체를 커버하고, 방사능 대 거의 없는 영역(신중하게 선택됨)에 있습니다. GEO는 정확히 35,786 km에 있으며 — 공전 주기가 정확히 24시간 — 따라서 그곳의 위성은 지구의 같은 지점 위에 계속 떠있게 되어, 모든 기상 및 방송 통신위성이 그곳에 있는 이유입니다."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.3",
+  "en": "HEO (highly-elliptical orbit) is the wildcard — high apogee, low perigee, long dwell time over a chosen latitude. Russia's Molniya orbits are HEO, optimised for high-latitude coverage that GEO can't reach. Each regime is a different mission philosophy, encoded as a number on the y-axis.",
+  "cur": "HEO(고타원 궤도)는 와일드카드입니다 — 높은 원지점, 낮은 근지점, 선택된 위도에서의 장시간 체류. 러시아의 Molniya 궤도는 HEO이며, GEO가 도달할 수 없는 고위도 커버리지에 최적화되어 있습니다. 각 범위는 서로 다른 임무 철학이며, y축 숫자로 인코딩됩니다."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.0",
+  "en": "LEO (Low Earth Orbit, < 2,000 km altitude): cheapest to reach, fastest period (~90 minutes for ISS at 408 km), shortest ground-link delay (a few ms), shortest lifetime due to residual atmospheric drag. Hosts the ISS, Hubble, Starlink, most Earth observation satellites, all crewed activity beyond Apollo.",
+  "cur": "LEO(저지구 궤도, 고도 2,000 km 미만): 도달하기 가장 저렴하고, 가장 빠른 공전 주기(408 km의 ISS의 경우 약 90분), 가장 짧은 지상 신호 지연(수 밀리초), 잔존 대기 항력으로 인한 가장 짧은 수명. ISS, Hubble, Starlink, 대부분의 지구 관측 위성, Apollo 이후의 모든 유인 활동을 호스트합니다."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.1",
+  "en": "MEO (Medium Earth Orbit, 2,000–35,786 km): the navigation band. GPS at 20,200 km, GLONASS at 19,100 km, Galileo at 23,222 km, Beidou MEO at 21,500 km. Periods ~11–14 hours across the navigation band; constellations of 24-30 satellites give global coverage. Above the inner Van Allen belt, below most of the outer.",
+  "cur": "MEO(중지구 궤도, 2,000~35,786 km): 항법 대역입니다. GPS는 20,200 km에, GLONASS는 19,100 km에, Galileo는 23,222 km에, Beidou MEO는 21,500 km에 있습니다. 항법 대역 전체에서 공전 주기는 약 11~14시간이며, 24~30개 위성의 성좌는 전 지구적 커버리지를 제공합니다. 내부 Van Allen 대 위쪽, 외부 대부분 아래에 있습니다."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.2",
+  "en": "GEO (Geostationary Earth Orbit, 35,786 km altitude exactly, 0° inclination): period equals Earth's sidereal day (23h 56m 4s) so the satellite appears stationary above one longitude on the equator. Hosts the world's broadcast TV, weather imagery (GOES, Himawari, Meteosat), and traditional comsats. Light-time round-trip ~240 ms — perceptible in voice calls.",
+  "cur": "GEO(정지 지구 궤도, 고도 정확히 35,786 km, 경사도 0°): 공전 주기가 지구의 항성일(23시간 56분 4초)과 같아서 위성이 적도의 한 경도 위에 정지해 보입니다. 세계의 방송 TV, 기상 영상(GOES, Himawari, Meteosat), 그리고 전통적인 통신위성을 호스트합니다. 왕복 광신호 지연 시간 약 240 밀리초 — 음성 통화에서 감지할 수 있습니다."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.3",
+  "en": "HEO (Highly-Elliptical Orbit): low perigee + high apogee. Molniya orbits (Russia) sit at perigee ~600 km, apogee ~40,000 km, inclination 63.4° — chosen so the apogee dwell happens over the northern hemisphere where GEO comsats can't reach. Critical for high-latitude communications and some early-warning constellations.",
+  "cur": "HEO(고타원 궤도): 낮은 근지점 + 높은 원지점. Molniya 궤도(러시아)는 근지점 약 600 km, 원지점 약 40,000 km, 경사도 63.4°에 있습니다 — GEO 통신위성이 도달할 수 없는 북반구에서 원지점 체류가 발생하도록 선택되었습니다. 고위도 통신 및 일부 조기 경보 성좌에 중요합니다."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.4",
+  "en": "Crossing regimes is expensive. ∆v from LEO to GEO is about 3.9 km/s. From LEO to escape / TLI is about 3.2 km/s — counter-intuitively cheaper than reaching GEO from LEO, because you don't have to circularise on arrival (TMI for Mars requires ~3.6+ km/s).",
+  "cur": "범위를 넘나드는 것은 비쌉니다. LEO에서 GEO로의 ∆v는 약 3.9 km/s입니다. LEO에서 탈출 / TLI로는 약 3.2 km/s — 반직관적으로 LEO에서 GEO에 도달하는 것보다 저렴합니다. 도착할 때 원형화할 필요가 없기 때문입니다(화성으로의 TMI는 약 3.6+ km/s가 필요합니다)."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "diagram_caption",
+  "en": "Concentric Earth bands: LEO (cyan, low altitude), MEO (blue, GPS region), GEO (gold, geostationary ring), HEO (orange, lopsided ellipse).",
+  "cur": "동심원 지구 대역: LEO(청록색, 저고도), MEO(파란색, GPS 영역), GEO(금색, 정지 궤도 고리), HEO(주황색, 비대칭 타원)."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "intro_sentence",
+  "en": "Half the longest diameter of the orbit ellipse — and the single number that sets the orbital period.",
+  "cur": "궤도 타원의 가장 긴 지름의 절반 — 그리고 궤도 주기를 결정하는 단 하나의 숫자."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "narrative_101.0",
+  "en": "Take a piece of string, two thumbtacks, and a pencil. Pin the tacks to a board, loop the string around them, pull it taut with the pencil and trace it. You've drawn an ellipse. The semi-major axis is half the longest line you can draw across that shape — the orbit's size.",
+  "cur": "끈 한 조각, 압정 두 개, 그리고 연필 하나를 준비하세요. 압정을 판에 꽂고, 끈을 그 주위에 걸고, 연필로 팽팽하게 당겨서 그리면 타원이 그려집니다. 긴반지름은 그 도형을 가로질러 그을 수 있는 가장 긴 선의 절반 — 궤도의 크기입니다."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "narrative_101.1",
+  "en": "Here's the magical bit: that one number tells you how long it takes the planet to lap the Sun. Not the shape of the orbit, not its tilt, not where the planet is right now. Just the size. A lopsided cigar-shaped orbit and a perfectly round one with the same semi-major axis take the same time to come around. Kepler figured this out four hundred years ago and we still pay him in textbooks.",
+  "cur": "여기 마법 같은 부분이 있습니다: 그 하나의 숫자가 행성이 태양을 한 바퀴 도는 데 걸리는 시간을 알려줍니다. 궤도의 모양도, 기울기도, 지금 행성이 어디에 있는지도 아닙니다. 오직 크기만으로요. 찌그러진 시가 모양의 궤도와 완벽하게 둥근 궤도가 같은 긴반지름을 가지면 같은 시간에 돌아옵니다. 케플러가 400년 전에 이것을 알아냈고 우리는 여전히 교과서에서 그에게 경의를 표하고 있습니다."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "narrative_101.2",
+  "en": "When you're sizing a mission, this is the first lever you pull. Want to reach Mars? Your transfer ellipse needs a semi-major axis somewhere between Earth's and Mars's. Pick the size, the time-of-flight follows automatically.",
+  "cur": "임무를 계획할 때 이것이 당신이 처음 당기는 레버입니다. 화성에 도달하고 싶으신가요? 전이 타원의 긴반지름은 지구와 화성 사이 어딘가에 있어야 합니다. 크기를 선택하면 비행 시간은 자동으로 따라옵니다."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "body_paragraphs.0",
+  "en": "If you flatten a Keplerian ellipse into its longest dimension, the line you've drawn is the major axis. Cut that in half and you have the semi-major axis — written `a`. It's the average distance from the orbiting body to the focus, kind of: an arithmetic mean of perihelion (closest) and aphelion (farthest).",
+  "cur": "Keplerian 타원을 가장 긴 치수로 펼치면 그린 선이 장축입니다. 그것을 반으로 자르면 긴반지름 — `a`로 표기됩니다 — 을 얻습니다. 이것은 궤도를 도는 천체에서 초점까지의 평균 거리로, 근일점(가장 가까운)과 원일점(가장 먼)의 산술 평균입니다."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "body_paragraphs.1",
+  "en": "Why care? Because of Kepler's third law: `T² ∝ a³`. The orbital period depends only on the semi-major axis. Shape doesn't matter. Inclination doesn't matter. Stretch one orbit so it's a cigar and another so it's a circle — if both have the same `a`, both take exactly the same time to come back round.",
+  "cur": "왜 중요할까요? 케플러의 제3법칙 때문입니다: `T² ∝ a³`. 궤도 주기는 오직 긴반지름에만 의존합니다. 모양은 중요하지 않습니다. 경사도 중요하지 않습니다. 한 궤도를 시가처럼 늘리고 다른 하나를 원으로 만들어도 — 둘 다 같은 `a`를 가지면 정확히 같은 시간에 돌아옵니다."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "body_paragraphs.2",
+  "en": "In Orrery's `/explore` panels you'll see this number in astronomical units. Earth: a ≈ 1.0 AU. Mars: 1.52 AU. Jupiter: 5.2 AU. Plug into the period formula and you've reproduced the orrery clock: 1 year, 687 days, 11.86 years.",
+  "cur": "Orrery의 `/explore` 패널에서 이 숫자를 천문단위로 볼 수 있습니다. 지구: a ≈ 1.0 AU. 화성: 1.52 AU. 목성: 5.2 AU. 주기 공식에 대입하면 orrery 시계를 재현할 수 있습니다: 1년, 687일, 11.86년."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "formula_caption",
+  "en": "Semi-major axis as the mean of perihelion and aphelion radii.",
+  "cur": "근일점과 원일점 반지름의 평균으로서의 긴반지름."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "diagram_caption",
+  "en": "The major axis spans from perihelion to aphelion through both foci. Semi-major axis a is half that span.",
+  "cur": "장축은 두 초점을 통과하여 근일점에서 원일점까지 걸쳐 있습니다. 긴반지름 a는 그 길이의 절반입니다."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "title",
+  "en": "Space debris — Kessler syndrome, ASAT events, and the cleanup attempts",
+  "cur": "우주 잔해 — 케슬러 신드롬, ASAT 이벤트, 그리고 정리 시도"
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "intro_sentence",
+  "en": "Earth orbit holds ~36,000 tracked debris objects bigger than 10 cm and an estimated 100+ million pieces smaller. Two ASAT events and one accidental collision created most of it. Cleanup is just beginning to ramp.",
+  "cur": "지구 궤도에는 10 cm 이상의 추적 가능한 잔해 ~36,000개, 더 작은 조각은 1억 개 이상 추정. 2건의 ASAT 이벤트와 1건의 우발적 충돌이 대부분 생성. 정리 작업이 이제 시작."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.0",
+  "en": "The numbers are blunt. ESA's Space Debris Office, NASA's Orbital Debris Program Office, and the US Space Force's 18th Space Defense Squadron maintain converging estimates of the orbital population (as of 2024-2025): ~36,000 catalogued objects with diameter ≥10 cm, of which ~9,000 are active spacecraft and the rest are debris. ~1 million pieces estimated between 1 cm and 10 cm, mostly untracked. >100 million pieces between 1 mm and 1 cm, completely untracked but individually capable of disabling a spacecraft on impact (a 1 cm aluminium fragment at 14 km/s closing speed delivers the kinetic energy of a hand grenade). Total mass in Earth orbit: roughly 11,000 tonnes. Of that, perhaps 8,000 tonnes is the debris fraction — derelicts, spent upper stages, fragments from breakups, paint flakes, rocket-engine slag.",
+  "cur": "수치는 명확하다. ESA 우주 잔해 사무소, NASA 궤도 잔해 프로그램 오피스, 미 우주군 18th Space Defense Squadron이 유지하는 궤도 인구 추정치(2024-2025 현재)는 수렴한다: 직경 ≥10 cm의 카탈로그 천체 ~36,000개, 이 중 ~9,000개는 운용 중인 우주선이고 나머지는 잔해. 1~10 cm 사이 추정 ~100만 개, 대부분 미추적. 1 mm~1 cm 사이 >1억 개, 완전히 미추적이지만 충돌 시 우주선을 무력화할 수 있음(시속 14 km/s로 접근하는 1 cm 알루미늄 조각은 수류탄 에너지 전달). 지구 궤도의 총 질량: 약 11,000 톤. 이 중 약 8,000 톤이 잔해 부분 — 폐기된 우주선, 사용 완료 상단 단계, 파편화 조각, 페인트 벗겨짐, 로켓 엔진 슬래그."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.1",
+  "en": "Three events account for the majority of the trackable debris population. **Fengyun-1C** (China, January 2007): China conducted an anti-satellite weapon test against its own retired weather satellite at 865 km altitude in a deliberately polar orbit chosen to maximise debris longevity. The kinetic-kill impact fragmented the ~880 kg target into 3,500+ trackable pieces, which will largely remain in orbit for centuries. **Iridium 33 + Cosmos 2251 collision** (February 2009): the first known accidental satellite collision in history. Iridium's operational comsat collided with Russia's defunct Cosmos at 789 km altitude, generating ~2,300 trackable fragments. **Russian ASAT test** (November 2021): Russia kinetic-killed its own retired Tselina-D satellite, producing 1,500+ trackable fragments at ~480 km — close enough to ISS that the crew sheltered in their Soyuz return capsules during the first 24 hours of debris cloud encounter. Combined, these three events generated about 25% of all currently catalogued LEO debris.",
+  "cur": "세 가지 사건이 추적 가능한 우주 잔해의 대부분을 차지합니다. **Fengyun-1C**(중국, 2007년 1월): 중국이 2007년 1월 자국의 퇴역한 기상위성에 대한 반위성 무기 시험을 실시했습니다. 이 위성은 865 km 고도의 극궤도에 있었으며, 잔해의 수명을 최대화하도록 의도적으로 선택된 궤도였습니다. 운동 에너지 기반의 충돌로 약 880 kg의 목표물이 추적 가능한 3,500개 이상의 조각으로 파편화되었으며, 대부분은 수 세기 동안 궤도에 남아 있을 것입니다. **Iridium 33 + Cosmos 2251 충돌**(2009년 2월): 역사상 최초로 알려진 인공위성 우발 충돌입니다. Iridium의 운영 중인 통신위성이 789 km 고도에서 러시아의 폐기된 Cosmos와 충돌하여 약 2,300개의 추적 가능한 파편을 생성했습니다. **러시아 ASAT 시험**(2021년 11월): 러시아가 자국의 퇴역한 Tselina-D 위성을 운동 에너지로 제거했으며, 약 480 km 고도에서 1,500개 이상의 추적 가능한 파편을 생성했습니다. ISS와 충분히 가까워서 우주비행사들이 잔해 구름 조우의 처음 24시간 동안 Soyuz 귀환 캡슐 내에서 대피했습니다. 이 세 가지 사건을 합치면, 현재 분류된 모든 저궤도(LEO) 잔해의 약 25%를 생성했습니다."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.2",
+  "en": "Kessler syndrome is the runaway-cascade scenario, named after NASA's Donald Kessler who modelled it in 1978. Once the LEO debris density passes a critical threshold, each collision generates enough new fragments to cause further collisions, and the cascade can take centuries to play out. Above that threshold, the LEO environment effectively becomes inaccessible — even careful launches can't avoid being hit on the way through. The 1978 Kessler model put the critical threshold at roughly 5× the 1978 population; current LEO is approaching that threshold in some altitude shells (especially 750-1000 km, which has the highest collision-cross-section density). The IADC's current operating assumption is that without continued aggressive disposal, certain LEO altitude bands will reach Kessler-critical densities by 2050-2080.",
+  "cur": "Kessler 신드롬은 폭주 캐스케이드 시나리오이며, NASA의 Donald Kessler의 이름을 따왔으며 그는 1978년 이를 모델링했다. LEO 잔해 밀도가 임계값을 초과하면 각 충돌이 추가 충돌을 야기할 충분한 새로운 파편을 생성하고, 캐스케이드는 수 세기에 걸쳐 진행될 수 있다. 해당 임계값 이상에서 LEO 환경은 사실상 접근 불가능해진다 — 신중한 발사도 통과 중 충돌을 피할 수 없다. 1978 Kessler 모델은 임계값을 대략 1978년 인구의 5배로 설정했다; 현재 LEO는 일부 고도 대역(특히 750-1000 km, 가장 높은 충돌 단면적 밀도)에서 해당 임계값에 접근하고 있다. IADC의 현재 운영 가정은 계속된 적극적인 폐기 없이 특정 LEO 고도 대역이 2050-2080년까지 Kessler 임계 밀도에 도달할 것이라는 것이다."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.3",
+  "en": "Tracking infrastructure. The US Space Force's Space Surveillance Network (SSN) is the world's primary catalogue source — a fleet of ~30 ground-based radars + telescopes worldwide (Eglin FPS-85 phased-array in Florida, Globus II in Norway, Maui Space Surveillance Site in Hawaii) plus the Space Based Space Surveillance satellite. The SSN tracks every object ≥10 cm in LEO and ≥1 m in GEO, with daily orbit updates publicly available via Space-Track.org. Private competitors (LeoLabs, with its own phased-array radar network at six sites globally, since 2018) and partners (EU Space Surveillance and Tracking consortium, since 2014; China's SSA network at Xinjiang since the 2010s) have added redundant tracking — pre-2010 the world had effectively a single point of failure in SSN.",
+  "cur": "추적 인프라. 미 우주군 Space Surveillance Network(SSN)는 세계 주요 카탈로그 소스이다 — 세계 곳곳 약 30개의 지상 기반 레이더 + 망원경 함대(플로리다의 Eglin FPS-85 위상 배열, 노르웨이의 Globus II, 하와이의 Maui Space Surveillance Site) 및 Space Based Space Surveillance 위성. SSN은 LEO의 모든 ≥10 cm 천체와 GEO의 ≥1 m을 추적하며, 일일 궤도 업데이트는 Space-Track.org를 통해 공개적으로 이용 가능하다. 민간 경쟁사(LeoLabs, 2018년부터 전 세계 6개 지역의 독자 위상 배열 레이더 네트워크 보유) 및 파트너(EU 우주 감시 및 추적 컨소시엄, 2014년부터; 2010년대부터 신장의 중국 SSA 네트워크)가 중복 추적을 추가했다 — 2010년 이전 세계는 SSN에서 효과적으로 단일 장애점을 가지고 있었다."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.4",
+  "en": "Cleanup + daily-ops mitigation. Active Debris Removal (ADR) — missions that visit dead spacecraft and deorbit them — is starting to ramp. **ELSA-d** (Astroscale, 2021) demonstrated magnetic-grapple docking. **ClearSpace-1** (ESA, scheduled 2026) will deorbit a ~100 kg Vega Secondary Payload Adapter from 660 km. **ELSA-M** (Astroscale-Japan, 2025-26) and the US National Reconnaissance Office's classified Salvage Series follow. ESA's own analysis suggests removing 5 major LEO objects per year is the minimum to halt growth; current cadence is ~0/year — the Kessler clock is running. Meanwhile, every operator does Conjunction Assessment Risk Avoidance (CARA): SSN publishes daily conjunction warnings 7 days ahead of close approaches within ~1 km. ISS performs ~25 avoidance burns/year; Starlink's autonomous system performs ~50,000 per six months (~100,000/year) across the constellation; Tiangong does several per year. Hubble (no propulsion) has been hit by small debris dozens of times and was nearly hit by a Cosmos-1408 fragment in November 2021. Operational debris-avoidance burden is rising fast.",
+  "cur": "정리 + 일상 운영 완화. 능동 잔해 제거(ADR) — 폐기된 우주선을 방문하여 궤도에서 제거하는 임무 — 가 시작되고 있다. **ELSA-d**(Astroscale, 2021)는 자기 파지 도킹을 입증했다. **ClearSpace-1**(ESA, 예정 2026년)은 660 km에서 ~100 kg Vega Secondary Payload Adapter를 궤도에서 제거할 것이다. **ELSA-M**(Astroscale-Japan, 2025-26년) 및 미국 National Reconnaissance Office의 기밀 Salvage Series가 뒤따른다. ESA의 자체 분석에 따르면 성장을 멈추기 위해 연간 5개의 주요 LEO 천체를 제거하는 것이 최소치이며, 현재 속도는 ~0/년이다 — Kessler 시계가 돌아가고 있다. 한편 모든 운영자는 결합 평가 위험 회피(CARA)를 수행한다: SSN은 ~1 km 내의 근접 접근 7일 전에 일일 결합 경고를 발행한다. ISS는 연 ~25회의 회피 소각을 수행한다; Starlink의 자율 시스템은 약 6개월에 ~50,000회(연 ~100,000회)를 전체 성좌에 걸쳐 수행한다; Tiangong은 연 수회를 수행한다. Hubble(추진 불가능)은 작은 잔해로 수십 번 충돌했으며 2021년 11월 Cosmos-1408 파편에 거의 충돌할 뻔했다. 운영 잔해 회피 부담이 빠르게 증가하고 있다."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "diagram_caption",
+  "en": "Population: 36k tracked ≥10 cm + 1M est 1-10 cm + 100M+ est <1 cm. Origin: Fengyun-1C (2007 China ASAT, +3500), Iridium-Cosmos (2009 accidental, ~2300), Russia Tselina-D (2021 ASAT, +1500). Kessler threshold approaching in 750-1000 km LEO band by 2050-2080. ADR: ClearSpace-1 (2026), ELSA-M (2025-26), and few others — far below the 5/year needed to halt growth.",
+  "cur": "인구: 추적된 ≥10 cm 36k + 1-10 cm 추정 1M + <1 cm 추정 100M+. 출처: Fengyun-1C(2007 중국 ASAT, +3500), Iridium-Cosmos(2009 우발적, ~2300), 러시아 Tselina-D(2021 ASAT, +1500). Kessler 임계값 750-1000 km LEO 대역에서 2050-2080년까지 접근. ADR: ClearSpace-1(2026), ELSA-M(2025-26), 및 소수 — 성장을 멈추기 위해 필요한 연 5회 훨씬 이하."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "title",
+  "en": "Special orbits — Molniya, Tundra, GTO, frozen",
+  "cur": "특수 궤도 — Molniya, Tundra, GTO, 동결 궤도"
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "intro_sentence",
+  "en": "Beyond LEO / MEO / GEO / HEO, a handful of named special orbits do specific jobs: communications above 70° latitude, geostationary transfer, drift-free station-keeping. Each is a clever exploit of orbital mechanics.",
+  "cur": "LEO/MEO/GEO/HEO 너머로, 이름붙은 특수 궤도 몇 개가 특정 임무를 수행한다: 70° 이상의 위도에서 통신, 정지궤도 이동, 점표류 없는 스테이션 유지. 각각은 궤도역학의 영리한 활용이다."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.0",
+  "en": "Molniya orbit (Russia, since 1965). High-eccentricity (e ≈ 0.74), low perigee (~600 km), high apogee (~40,000 km), inclination 63.4°, period exactly 12 hours. Two design decisions make it work. First, the 63.4° inclination is the 'critical inclination' at which Earth's J2 perturbation does NOT cause the line of apsides to rotate (at any other inclination the perigee drifts around the orbit over months); apogee stays locked over the northern hemisphere where you want it. Second, with a 12-hour period the satellite spends about 8 hours near apogee, slowly tracing across the northern sky, then races through perigee in 4 hours. A constellation of three Molniya satellites at staggered phase angles provides continuous coverage of latitudes north of 70°, where GEO comsats can't reach because they sit on the equator. Used by Russia for civilian phone + TV (Molniya I/II/III series), military comms (Meridian), and Oko early-warning satellites watching for US ICBM launches.",
+  "cur": "Molniya 궤도(러시아, 1965년 이래). 높은 이심률(e ≈ 0.74), 낮은 근지점(~600 km), 높은 원지점(~40,000 km), 기울기 63.4°, 주기 정확히 12시간. 두 가지 설계 결정이 이를 가능하게 한다. 첫째, 63.4° 기울기는 지구의 J2 섭동이 근점선을 회전시키지 않는 '임계 기울기'이다(다른 기울기에서는 근지점이 수개월에 걸쳐 궤도 주위를 표류한다); 원지점은 원하는 북반구 상공에 잠긴다. 둘째, 12시간 주기로 인해 위성은 원지점 근처에서 약 8시간을 보내며 천천히 북쪽 하늘을 가로질러 이동한 후, 근지점을 4시간에 거친다. 엇갈린 위상각으로 배치된 세 개의 Molniya 위성의 성좌는 70°보다 북쪽의 위도에 대해 지속적인 적용 범위를 제공하며, 여기서 GEO 통신위성은 적도에 앉아 있기 때문에 도달할 수 없다. 러시아가 민간 전화 + TV(Molniya I/II/III 시리즈), 군사 통신(Meridian), 미국의 ICBM 발사를 감시하는 Oko 조기경보 위성에 사용한다."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.1",
+  "en": "Tundra orbit. Same critical-inclination + 24-hour-period idea as Molniya but circular-leaning rather than highly eccentric (e ≈ 0.25). Apogee at GEO altitude (~35,786 km), perigee at ~25,000 km. Period exactly 24 hours so the ground track repeats once a day in a long figure-8 shape elongated over the chosen latitude band. Used by Sirius XM Satellite Radio for North American coverage (the figure-8 lets antennas in the continental US see a satellite continuously at high elevation), Russian Yamal-200 and other comsats, and US SBIRS-HEO early-warning sensors that mostly need long dwell over the Arctic. Tundra trades the higher peak elevation of Molniya for full 24-hour repeat (Molniya has two apogees per day, both over the northern hemisphere — one over Russia, one over North America, 180° apart in longitude).",
+  "cur": "Tundra 궤도. Molniya와 동일한 임계-기울기 + 24시간-주기 개념이지만 높은 이심률보다는 거의 원형에 가깝다(e ≈ 0.25). 원지점은 GEO 고도(~35,786 km), 근지점은 ~25,000 km. 정확히 24시간 주기이므로 지표 궤적은 선택된 위도 대역에 대해 길쭉한 8자 형태로 하루에 한 번 반복된다. 북미 적용 범위를 위해 Sirius XM 위성 라디오, 러시아 Yamal-200 및 기타 통신위성, 주로 북극 상공에서 장시간 체류가 필요한 미국 SBIRS-HEO 조기경보 센서에 사용된다. Tundra는 Molniya의 더 높은 피크 고도를 전체 24시간 반복으로 대체한다(Molniya는 하루에 두 개의 원지점을 가지며, 둘 다 북반구 상공에 있다 — 하나는 러시아 상공, 하나는 북미 상공, 경도로 180° 떨어져 있다)."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.2",
+  "en": "Geostationary Transfer Orbit (GTO). The standard staging orbit for nearly every commercial GEO comsat. Highly elliptical: perigee at ~200-400 km LEO altitude, apogee at GEO altitude (35,786 km), inclination usually equal to the launch site's latitude (28.5° from Cape Canaveral, 5.2° from Kourou which is why Ariane launches dominate commercial GEO). The launch vehicle puts the payload onto GTO; the spacecraft then performs an apogee-kick-motor burn at apogee to circularise at GEO and zero out the inclination. The kick-motor burn is the most fuel-intensive single manoeuvre most comsats ever do — typically 1.5-1.8 km/s of ΔV, consuming most of the spacecraft's hypergolic propellant for that one event. Modern electric-propulsion comsats use weeks-long ion-thruster spiral-up from GTO to GEO instead of a chemical kick burn, trading time for ~40% more usable payload at orbit.",
+  "cur": "정지궤도 이동 궤도(GTO). 거의 모든 상업 GEO 통신위성의 표준 스테이징 궤도. 고도로 타원형: 근지점은 ~200-400 km LEO 고도, 원지점은 GEO 고도(35,786 km), 기울기는 보통 발사지점의 위도와 같다(케이프 커내버럴에서 28.5°, 쿠루에서 5.2° — Ariane 발사가 상업 GEO를 지배하는 이유). 발사체는 탑재물을 GTO에 올려놓고, 위성은 원지점에서 근지점 킥 모터 화염을 수행하여 GEO에서 원형화하고 기울기를 0으로 만든다. 킥 모터 화염은 대부분의 통신위성이 수행하는 가장 연료-집약적인 단일 기동이다 — 일반적으로 1.5-1.8 km/s의 ΔV, 이 한 번의 사건으로 위성의 쌍곡선 추진제의 대부분을 소비한다. 현대 전기 추진 통신위성은 GTO에서 GEO로의 수주에 걸친 이온 스러스터 나선형-상승을 화학 킥 화염 대신 사용하며, 시간을 ~40% 더 많은 유용한 탑재물과 교환한다."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.3",
+  "en": "Frozen orbits. Orbits in which the perigee altitude does not drift over time despite the various perturbing forces (J2, J3, atmospheric drag, lunar/solar gravity). The classical frozen-orbit prescription: argument of perigee = 90° (so perigee is at the southern apex of the orbit), eccentricity matched to inclination and altitude per a J2-vs-J3 balance equation. Used by Earth-observation missions that need their imaging altitude to stay precisely fixed for years (ICESat-2 ice altimetry, GRACE-FO gravity field). The freezing is approximate — drag and third-body perturbations eventually deflect the orbit, requiring small station-keeping burns every few months — but the J2-driven drift, which would otherwise dominate, is cancelled.",
+  "cur": "Frozen 궤도. 다양한 섭동력(J2, J3, 대기 항력, 달/태양 중력)에도 불구하고 근지점 고도가 시간이 지남에 따라 표류하지 않는 궤도. 고전적인 frozen 궤도 처방: 근점 인수 = 90°(따라서 근지점은 궤도의 남쪽 꼭짓점에 있음), 이심률은 J2-vs-J3 평형 방정식에 따라 기울기 및 고도와 일치한다. 위성 이미징 고도가 수년간 정확히 고정된 상태로 유지되어야 하는 지구 관측 임무에 사용된다(ICESat-2 얼음 고도측정, GRACE-FO 중력장). 냉동은 근사이다 — 항력과 제3자 섭동은 결국 궤도를 벗어나게 하며, 수개월마다 작은 스테이션 유지 화염이 필요하다 — 하지만 그렇지 않으면 지배할 J2-구동 표류는 취소된다."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.4",
+  "en": "Other named special orbits worth knowing: Sub-synchronous transfer orbit (SSTO — not single-stage to orbit, but a low-altitude staging orbit used by Soyuz launches to ISS); super-synchronous transfer orbit (apogee above GEO, used on some GEO launches (Ariane, Proton) to minimise inclination-change ΔV); repeat ground-track orbit (altitude tuned to integer ratio of orbit period to Earth's rotation, so the satellite passes over the same patch of ground every N days exactly — used by oceanographic missions like Jason / TOPEX-Poseidon); cislunar orbits (DRO, NRHO, halo — covered separately in /science/orbits/cislunar-orbits).",
+  "cur": "알아야 할 다른 이름붙은 특수 궤도: Sub-synchronous 이동 궤도(SSTO — 단계별 단일 궤도가 아니라, Soyuz 발사가 ISS로 사용하는 저고도 스테이징 궤도); super-synchronous 이동 궤도(GEO 위의 원지점, 기울기-변화 ΔV를 최소화하기 위해 일부 GEO 발사(Ariane, Proton)에 사용); 반복 지표 궤적 궤도(고도는 궤도 주기와 지구 회전의 정수 비율로 조정되어 위성이 정확히 N일마다 같은 지면을 지난다 — 해양학 임무(Jason/TOPEX-Poseidon)에 사용); cislunar 궤도(DRO, NRHO, halo — /science/orbits/cislunar-orbits에서 별도로 다룬다)."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "diagram_caption",
+  "en": "Molniya: e=0.74, 12-hour period, 63.4° inclination (critical, apsides locked). Tundra: e=0.25, 24-hour period, 63.4°. GTO: LEO perigee + GEO apogee, staging for comsats. Frozen orbit: perigee altitude doesn't drift (J2/J3 balance + argument of perigee = 90°).",
+  "cur": "Molniya: e=0.74, 12시간 주기, 63.4° 기울기(임계, 근점선 잠김). Tundra: e=0.25, 24시간 주기, 63.4°. GTO: LEO 근지점 + GEO 원지점, 통신위성 스테이징. Frozen 궤도: 근지점 고도가 표류하지 않음(J2/J3 평형 + 근점 인수 = 90°)."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "title",
+  "en": "Sun-synchronous + polar orbits — the Earth-observation backbone",
+  "cur": "태양동기궤도 + 극궤도 — 지구관측의 핵심"
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "intro_sentence",
+  "en": "Sun-synchronous orbits cross every point on Earth at the same local solar time daily. Nearly polar, retrograde, tuned to use Earth's equatorial bulge as a precession motor — the trick behind consistent Earth observation.",
+  "cur": "태양동기궤도는 지구상의 모든 지점을 매일 같은 지역 태양시에 통과합니다. 거의 극궤도이며 역행궤도이며, 지구의 적도 팽대부를 세차운동 동력으로 사용하도록 조정되어 있습니다. 일관된 지구관측을 가능하게 하는 핵심입니다."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.0",
+  "en": "A sun-synchronous orbit (SSO) is a near-polar orbit (inclination usually 96-99°) at low to mid-LEO altitude (600-900 km) whose orbital plane rotates eastward at exactly the same rate Earth orbits the Sun — 360°/year, or about 0.9856°/day. The effect: the angle between the satellite's orbital plane and the Sun stays constant year-round, so the satellite always crosses any given latitude at the same local solar time. A Sentinel-2 spacecraft, for instance, crosses the equator on the descending node at 10:30 local time every single day; this is what lets you compare a Landsat image of a forest from 2010 to one from 2025 and know the lighting conditions are similar.",
+  "cur": "태양동기궤도(SSO)는 근극궤도(경사각 보통 96-99°)이며 저~중LEO 고도(600-900 km)에 위치하며, 궤도 평면이 지구가 태양을 도는 것과 정확히 같은 속도로 동쪽으로 회전합니다 — 년 360°, 즉 일일 약 0.9856°. 그 결과: 위성의 궤도 평면과 태양 사이의 각도가 연중 일정하게 유지되므로, 위성은 항상 주어진 위도를 같은 지역 태양시에 통과합니다. 예를 들어 Sentinel-2 우주선은 하강 노드에서 매일 정확히 10:30 지역 태양시에 적도를 통과합니다. 이것이 2010년의 숲의 Landsat 영상과 2025년의 영상을 비교할 때 조명 조건이 유사함을 알 수 있게 하는 이유입니다."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.1",
+  "en": "The mechanism is gravitational. Earth is not a perfect sphere — the equatorial bulge (about 21 km extra radius at the equator vs the poles) creates a non-central gravity field. For a satellite in a non-equatorial orbit, that asymmetry exerts a torque that gradually precesses the orbital plane. The rate of precession depends on altitude and inclination: lower altitudes precess faster; inclinations between 90° and 180° (retrograde orbits) precess eastward. There's exactly one combination of altitude + inclination for any given altitude that gives 0.9856°/day precession — those are the sun-synchronous orbits. At 800 km altitude, SSO inclination is 98.6° (8.6° past polar, retrograde). At 600 km it's 97.8°. At 400 km it's 97.0°.",
+  "cur": "이 메커니즘은 중력입니다. 지구는 완벽한 구가 아닙니다 — 적도 팽대부(적도와 극점 사이 약 21 km의 추가 반지름)는 중심이 아닌 중력장을 만듭니다. 비적도 궤도의 위성에 대해, 그 비대칭은 궤도 평면을 점진적으로 세차하게 하는 토크를 발휘합니다. 세차 속도는 고도와 경사각에 따라 달라집니다: 낮은 고도일수록 더 빠르게 세차; 90°에서 180° 사이의 경사각(역행궤도)은 동쪽으로 세차합니다. 주어진 고도에 대해 0.9856°/일 세차를 제공하는 고도 + 경사각의 정확히 하나의 조합이 있습니다 — 이것들이 태양동기궤도입니다. 800 km 고도에서 SSO 경사각은 98.6°(극궤도 8.6° 이상, 역행)입니다. 600 km에서는 97.8°입니다. 400 km에서는 97.0°입니다."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.2",
+  "en": "Almost every Earth-observation satellite operating today lives in SSO. ESA's Copernicus programme (Sentinel-1A/B/C/D radar imaging, Sentinel-2A/B/C/D optical imaging, Sentinel-3A/B ocean monitoring, Sentinel-5P atmosphere) — all SSO. NASA/USGS Landsat 8 + Landsat 9 — SSO, 705 km, 98.2°, descending-node 10:00 local. NOAA polar weather (NOAA-20, NOAA-21, Suomi NPP) — SSO. Planet Labs' PlanetScope fleet (~150 active CubeSats) — SSO at 475 km. Japan's GCOM-W1, China's Gaofen series, India's Resourcesat. The reason every operator picks SSO is the same: consistent illumination geometry lets you build time-series data products (vegetation indices, snow extent, ocean colour) that mean something across years.",
+  "cur": "현재 운영 중인 거의 모든 지구관측 위성이 SSO에 있습니다. ESA의 Copernicus 프로그램(Sentinel-1A/B/C/D 레이더 영상, Sentinel-2A/B/C/D 광학 영상, Sentinel-3A/B 해양 모니터링, Sentinel-5P 대기) — 모두 SSO입니다. NASA/USGS Landsat 8 + Landsat 9 — SSO, 705 km, 98.2°, 하강 노드 10:00 지역 태양시. NOAA 극궤도 기상(NOAA-20, NOAA-21, Suomi NPP) — SSO. Planet Labs의 PlanetScope 함대(~150개 활성 CubeSats) — 475 km SSO. 일본의 GCOM-W1, 중국의 Gaofen 시리즈, 인도의 Resourcesat. 모든 운영사가 SSO를 선택하는 이유는 같습니다: 일관된 조명 기하학을 통해 시간 시계열 데이터 제품(식생 지수, 적설 범위, 해색)을 구축할 수 있으며, 이는 수년에 걸쳐 의미를 갖습니다."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.3",
+  "en": "Polar orbits without sun-synchrony are rare and special. A truly polar orbit (90.0°) is one specific case; below 90° is prograde, above 90° is retrograde. Some military reconnaissance satellites (KH-11 / EVOLVED ENHANCED CRYSTAL — NRO) use near-polar non-SSO orbits to vary their lighting angle deliberately. ICESat-2 (NASA, 92° inclination, 488 km) is near-polar but at a slightly non-SSO altitude to give better coverage of the high-latitude ice sheets it's designed to measure. The non-SSO polar regime trades consistent lighting for better ground-track variety.",
+  "cur": "태양동기가 아닌 극궤도는 드물고 특별합니다. 진정한 극궤도(90.0°)는 한 가지 특수한 경우입니다; 90° 미만은 순행, 90° 초과는 역행입니다. 일부 군사 정찰 위성(KH-11 / EVOLVED ENHANCED CRYSTAL — NRO)은 의도적으로 조명 각도를 변화시키기 위해 근극궤도 비SSO 궤도를 사용합니다. ICESat-2(NASA, 92° 경사각, 488 km)는 근극궤도이지만, 설계된 고위도 빙상을 더 잘 관측하기 위해 약간 비SSO 고도입니다. 비SSO 극궤도 체제는 일관된 조명을 더 나은 지표 추적 다양성으로 트레이드합니다."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.4",
+  "en": "SSO downside: launch energy. Reaching SSO at 98.6° inclination from anywhere below ~45° latitude requires substantial inclination change from the launch site's natural inclination. Launching south-bound out of Vandenberg Space Force Base (34.7°N) or Plesetsk (62.9°N) or Wenchang (19.6°N for southerly launches over open water) is the standard approach. The ΔV cost of inclination change at LEO is roughly 130 m/s per degree for small angles; the exact cost for a large plane change uses 2v·sin(Δi/2), which for a ~70° change gives ≈ 8.9 km/s — so a typical SSO ascent from Florida (Cape Canaveral, 28.5°N) would cost roughly ~9 km/s of inclination-change ΔV — utterly impractical. This is why Vandenberg exists as a dedicated west-coast launch site, and why Plesetsk and Sriharikota and Hammaguir (early French) were chosen for high-inclination launches.",
+  "cur": "SSO 단점: 발사 에너지. 약 45° 위도 아래 어디에서든 98.6° 경사각의 SSO에 도달하려면 발사장의 자연 경사각에서 상당한 경사각 변화가 필요하다. 반덴버그 우주군기지(34.7°N) 또는 플레세츠크(62.9°N) 또는 원창(19.6°N, 개해상 위의 남쪽 방향 발사)에서 남향으로 발사하는 것이 표준 접근법이다. LEO에서 경사각 변화의 ΔV 비용은 작은 각도의 경우 대략 도당 130 m/s이며, 큰 평면 변화의 정확한 비용은 2v·sin(Δi/2)을 사용하는데, 약 70° 변화의 경우 ≈ 8.9 km/s를 준다. 따라서 플로리다의 케이프 커내버럴(28.5°N)에서의 전형적인 SSO 상승은 대략 경사각 변화 ΔV 약 9 km/s의 비용이 들 것이다 — 완전히 비실용적이다. 이것이 반덴버그가 전용 서해안 발사장으로 존재하는 이유이고, 플레세츠크와 스리하리코타와 Hammaguir(초기 프랑스)가 고경사각 발사를 위해 선택된 이유이다."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "diagram_caption",
+  "en": "SSO: near-polar (96-99°), retrograde, LEO (600-900 km). J2 perturbation from Earth's equatorial bulge precesses the orbital plane east at 0.9856°/day — exactly matching Earth's orbital motion around the Sun. Result: satellite crosses any latitude at the same local solar time every day. Workhorse of Sentinel, Landsat, NOAA polar, PlanetScope, GCOM.",
+  "cur": "SSO: 근극궤도(96-99°), 역행, LEO(600-900 km). 지구의 적도 팽대부로부터의 J2 섭동이 궤도 평면을 동쪽으로 0.9856°/일 세차합니다 — 정확히 지구의 태양 주위 공전 운동과 일치합니다. 결과: 위성이 매일 같은 지역 태양시에 어떤 위도도 통과합니다. Sentinel, Landsat, NOAA 극궤도, PlanetScope, GCOM의 주력입니다."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "title",
+  "en": "Synodic period — why launch windows open and close",
+  "cur": "회합 주기 — 발사 윈도우가 열리고 닫히는 이유"
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "intro_sentence",
+  "en": "Two planets on different orbits drift in and out of alignment on a clock of their own — the synodic period — and that clock decides when the cheap road between them is open.",
+  "cur": "서로 다른 궤도에 있는 두 행성은 자신만의 시계인 회합 주기에 따라 정렬 상태가 변하고, 이 시계가 두 행성 사이의 저비용 경로가 열리는 시점을 결정합니다."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "narrative_101.0",
+  "en": "A cheap trip to another planet is not a straight line — it is a long coasting ellipse that leaves Earth and just grazes the target’s orbit half a lap later. For that to work, the target planet has to be at the far end of the ellipse when the spacecraft arrives, not somewhere else on its orbit. Since the two planets move at different speeds, that lucky geometry only lines up now and then. The time between one alignment and the next is the synodic period.",
+  "cur": "다른 행성으로의 저비용 여행은 직선이 아닙니다 — 지구를 떠나 목표 행성의 궤도를 반 바퀴 뒤에 스치고 지나가는 긴 타원 궤도입니다. 이것이 가능하려면, 우주선이 도착할 때 목표 행성이 타원의 먼 끝에 있어야 하며, 궤도의 다른 곳에 있으면 안 됩니다. 두 행성이 서로 다른 속도로 움직이기 때문에, 이러한 운이 좋은 기하학적 배치는 시간이 지나면서만 일치합니다. 한 번의 정렬에서 다음 정렬까지의 시간이 회합 주기입니다."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "narrative_101.1",
+  "en": "For Earth and Mars it is about 780 days — roughly 26 months. That is why Mars missions come in clumps: miss the window and you wait more than two years for the planets to line up again. In 2020 the window opened for everyone at once, and NASA’s Perseverance, China’s Tianwen-1 and the UAE’s Hope all launched within three weeks of each other.",
+  "cur": "지구와 화성의 경우 약 780일(대략 26개월)입니다. 이것이 화성 미션이 뭉쳐서 옵니다: 윈도우를 놓치면 행성들이 다시 정렬될 때까지 2년 이상을 기다려야 합니다. 2020년에 윈도우가 모두에게 동시에 열렸고, NASA의 Perseverance, 중국의 Tianwen-1, UAE의 Hope가 서로 3주 이내에 발사되었습니다."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "narrative_101.2",
+  "en": "The alignment needed is not \"planets next to each other\" but a specific lead angle — Mars has to be a set number of degrees ahead of Earth at launch so that it arrives at the rendezvous point just as the spacecraft does. The synodic clock is simply how often that exact lead angle comes back around.",
+  "cur": "필요한 정렬은 \"행성이 나란히 있다\"는 것이 아니라 특정한 선행각입니다 — 화성은 발사 시 지구보다 특정 도수만큼 앞에 있어야 우주선과 정확히 같은 시점에 만남점에 도착합니다. 회합 시계는 단순히 그 정확한 선행각이 다시 돌아오는 빈도입니다."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "body_paragraphs.0",
+  "en": "The synodic period S is set by the two orbital periods through 1/S = |1/T₁ − 1/T₂|: the rate at which the faster planet laps the slower one. For Earth (365.25 d) and Mars (687 d) that gives ~780 days; for Earth and Venus ~584 days; for Earth and Jupiter ~399 days (Jupiter is so slow that the synodic period is barely longer than Earth’s year). The closer two orbits are in period, the LONGER the synodic period — nearby planets take ages to lap each other.",
+  "cur": "회합 주기 S는 두 궤도 주기를 통해 1/S = |1/T₁ − 1/T₂|로 설정됩니다: 더 빠른 행성이 느린 행성을 추월하는 속도입니다. 지구(365.25일)와 화성(687일)의 경우 약 780일을 얻습니다; 지구와 금성은 약 584일; 지구와 목성은 약 399일입니다(목성은 너무 느려서 회합 주기는 지구의 년보다 겨우 약간 깁니다). 두 궤도의 주기가 가까울수록, 회합 주기는 더 깁니다 — 가까운 행성들은 서로를 추월하는 데 오랜 시간이 걸립니다."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "body_paragraphs.1",
+  "en": "The launch window itself is set by phasing. A Hohmann transfer takes a fixed time (about 259 days Earth→Mars), during which the target sweeps a known arc; so at departure the target must lead the departure planet by a specific phase angle (roughly 44° for Earth→Mars) so it reaches the transfer’s far apse exactly when the spacecraft does. That geometry recurs every synodic period — which is why the window is periodic.",
+  "cur": "발사 윈도우 자체는 위상 위치로 설정됩니다. 호만 전이는 고정된 시간이 걸리고(약 259일 지구→화성), 이 동안 목표는 알려진 호를 휩쓸며; 따라서 출발 시 목표는 출발 행성보다 특정 위상각(지구→화성의 경우 대략 44°)만큼 앞에 있어야 전이의 원점에 정확히 우주선과 동시에 도달합니다. 그 기하학적 배치는 회합 주기마다 반복됩니다 — 이것이 윈도우가 주기적인 이유입니다."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "body_paragraphs.2",
+  "en": "Real windows have width and cost structure: the porkchop plot maps departure date against flight time and shades the total Δv, and the synodic clock is what makes a fresh porkchop valley appear each cycle. The Physics Lab’s launch-window lesson computes S from the two periods and the required lead angle from the transfer time — the same arithmetic every interplanetary mission is scheduled by.",
+  "cur": "실제 윈도우는 폭과 비용 구조를 가집니다: 돼지 등 그래프(porkchop plot)는 출발 날짜를 비행 시간에 대해 맵핑하고 총 Δv를 음영 처리하며, 회합 시계는 각 주기마다 신선한 돼지 등 계곡이 나타나게 합니다. Physics Lab의 발사-윈도우 수업은 S를 두 주기에서 계산하고 필요한 선행각을 전이 시간에서 계산합니다 — 모든 행성간 미션이 스케줄되는 동일한 산술입니다."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "diagram_caption",
+  "en": "Synodic geometry: the target must lead by a set phase angle so it meets the transfer ellipse at arrival; that alignment recurs every synodic period 1/S = |1/T₁ − 1/T₂|.",
+  "cur": "회합 기하학: 목표는 설정된 위상각만큼 앞에 있어야 도착 시 전이 타원을 만나며, 그 정렬은 회합 주기 1/S = |1/T₁ − 1/T₂|마다 반복됩니다."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "intro_sentence",
+  "en": "The angle that tells you where on the orbit a body is right now, measured from perihelion.",
+  "cur": "천체가 궤도상에서 지금 어디에 있는지를 근일점으로부터 측정한 각도입니다."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "narrative_101.0",
+  "en": "Imagine a planet running around its ellipse. We've already given it a size, a shape, a tilt. The one thing we still need is: where is it on the loop right this instant? That's the true anomaly. Stand at the Sun, point at the planet's closest pass, and measure the angle to where the planet actually is. That's it.",
+  "cur": "행성이 타원 궤도를 도는 모습을 상상해 보세요. 우리는 이미 궤도의 크기, 모양, 기울기를 정했습니다. 이제 필요한 한 가지는 바로 이 순간 행성이 궤도의 어디에 있는가 하는 것입니다. 그것이 진근점이각입니다. 태양에 서서 행성이 가장 가까이 지나가는 지점을 가리킨 다음, 행성이 실제로 있는 곳까지의 각도를 측정합니다. 그게 전부입니다."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "narrative_101.1",
+  "en": "But here's the catch — and this is where Kepler's second law sneaks in. The planet doesn't sweep this angle at a steady pace. Near the close pass it whips around fast. Out at the far end it lumbers. So if you ask 'how many degrees per day?', the answer changes constantly throughout the orbit.",
+  "cur": "하지만 여기 함정이 있습니다. 바로 케플러의 제2법칙이 등장하는 지점이죠. 행성은 이 각도를 일정한 속도로 쓸고 지나가지 않습니다. 가까운 지점 근처에서는 빠르게 회전하고, 먼 끝에서는 느릿느릿 움직입니다. 그래서 '하루에 몇 도씩?'이라고 묻는다면, 답은 궤도 내내 끊임없이 변합니다."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "narrative_101.2",
+  "en": "Astronomers got tired of that, so they invented two other angles — mean anomaly and eccentric anomaly — that DO tick at a steady pace, and built a tiny ladder of equations connecting all three. When you watch the planets move smoothly in /explore, that ladder is what's running under the hood, sixty times a second.",
+  "cur": "천문학자들은 이것에 지쳐서 평균근점이각과 이심근점이각이라는 두 개의 다른 각을 발명했습니다. 이 둘은 일정한 속도로 진행되며, 세 가지 모두를 연결하는 작은 방정식 사다리를 만들었습니다. /explore에서 행성들이 부드럽게 움직이는 것을 볼 때, 그 사다리가 내부에서 초당 60번씩 작동하고 있는 것입니다."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "body_paragraphs.0",
+  "en": "The Keplerian elements describe the shape and orientation of an orbit; true anomaly (`ν`) tells you where the body is along that orbit at a given instant. Stand at the focus (the Sun, for a planet), point at perihelion, and rotate your finger to follow the body around. The angle you sweep is the true anomaly.",
+  "cur": "케플러 궤도 요소는 궤도의 모양과 방향을 설명합니다. 진근점이각(`ν`)은 특정 순간에 천체가 그 궤도상의 어디에 있는지를 알려줍니다. 초점(행성의 경우 태양)에 서서 근일점을 가리킨 다음, 천체를 따라 손가락을 회전시킵니다. 손가락이 쓸고 지나가는 각도가 진근점이각입니다."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "body_paragraphs.1",
+  "en": "It runs from 0 at perihelion (closest approach) through 90° (a quarter of the way) to 180° at aphelion (farthest), and back. Unlike a clock, it doesn't tick uniformly — Kepler's second law tells you the body races near perihelion and crawls near aphelion. So true anomaly per second changes throughout the orbit.",
+  "cur": "근일점(가장 가까운 지점)에서 0부터 시작해서 90°(4분의 1 지점)를 거쳐 원일점(가장 먼 지점)에서 180°까지 갔다가 돌아옵니다. 시계와 달리 균일하게 진행되지 않습니다. 케플러의 제2법칙에 따르면 천체는 근일점 근처에서는 빠르게 움직이고 원일점 근처에서는 느리게 움직입니다. 따라서 초당 진근점이각은 궤도 내내 변합니다."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "body_paragraphs.2",
+  "en": "Sister angles you'll meet: mean anomaly (`M`), which does tick uniformly with time but is geometrically meaningless; and eccentric anomaly (`E`), the bridge between them. `M` advances at constant rate, you solve Kepler's equation `M = E - e·sin(E)` to get `E`, then convert to `ν`. The chain is the heartbeat of every orbital simulator including Orrery's.",
+  "cur": "만나게 될 자매 각도들이 있습니다. 평균근점이각(`M`)은 시간에 따라 균일하게 진행되지만 기하학적으로는 의미가 없습니다. 그리고 이심근점이각(`E`)은 둘 사이의 다리입니다. `M`은 일정한 속도로 진행되고, 케플러 방정식 `M = E - e·sin(E)`를 풀어서 `E`를 구한 다음, `ν`로 변환합니다. 이 연쇄 과정은 Orrery를 포함한 모든 궤도 시뮬레이터의 심장 박동입니다."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "diagram_caption",
+  "en": "True anomaly ν measured at the focus, from perihelion to the body's current position.",
+  "cur": "초점에서 근일점부터 천체의 현재 위치까지 측정한 진근점이각 ν."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "intro_sentence",
+  "en": "How fast a body is moving at any point on its orbit — given just its current radius and the orbit's semi-major axis.",
+  "cur": "궤도의 임의의 지점에서 천체가 얼마나 빠르게 움직이는지 — 현재 반지름과 궤도의 긴반지름만으로 계산합니다."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "narrative_101.0",
+  "en": "If you only ever learn one orbital-mechanics equation, make it this one. Tell vis-viva three things — what you're orbiting, how far you currently are, and the size of your orbit — and it tells you exactly how fast you're moving. No time, no integration, no clever trick. Three inputs, one square root, done.",
+  "cur": "궤도역학 방정식을 단 하나만 배운다면, 바로 이것을 선택하세요. vis-viva에 세 가지를 알려주세요 — 무엇을 공전하고 있는지, 현재 얼마나 떨어져 있는지, 그리고 궤도의 크기 — 그러면 정확히 얼마나 빠르게 움직이는지 알려줍니다. 시간도, 적분도, 교묘한 트릭도 필요 없습니다. 세 개의 입력, 한 번의 제곱근, 끝."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "narrative_101.1",
+  "en": "The reason it works is conservation of energy. A spacecraft trading altitude for speed (or vice versa) keeps its total energy constant on a given orbit. So if you know where it is along the ellipse, you know how that energy is split between potential and kinetic — and once you know the kinetic part you've got the speed.",
+  "cur": "이것이 작동하는 이유는 에너지 보존 때문입니다. 고도를 속도로 교환하는(또는 그 반대) 우주선은 주어진 궤도에서 총 에너지를 일정하게 유지합니다. 따라서 타원 상의 어디에 있는지 알면, 그 에너지가 위치 에너지와 운동 에너지로 어떻게 나뉘는지 알 수 있고 — 운동 에너지 부분을 알면 속도를 얻을 수 있습니다."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "narrative_101.2",
+  "en": "Open the /fly screen and watch the velocity readout as a spacecraft swings past a planet. That's vis-viva, recomputed every frame. The departure-velocity and arrival-velocity numbers on every porkchop in /plan? Vis-viva, sampled at the launch radius and arrival radius. It's everywhere.",
+  "cur": "/fly 화면을 열고 우주선이 행성을 지나갈 때 속도 표시를 관찰하세요. 그것이 바로 vis-viva이며, 매 프레임마다 재계산됩니다. /plan의 모든 porkchop에 표시되는 출발 속도와 도착 속도 수치는? Vis-viva이며, 발사 반지름과 도착 반지름에서 샘플링됩니다. 모든 곳에 있습니다."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "body_paragraphs.0",
+  "en": "Vis-viva is the workhorse equation of orbital mechanics. It connects three numbers — the gravitational parameter `μ` of whatever you're orbiting, your current distance `r` from the focus, and the orbit's semi-major axis `a` — and spits out the speed `v`. That's it. No time integration, no anomaly chain, just one square root and you know how fast you're going.",
+  "cur": "Vis-viva는 궤도역학의 핵심 방정식입니다. 세 개의 숫자 — 공전하는 천체의 중력 매개변수 `μ`, 초점으로부터의 현재 거리 `r`, 그리고 궤도의 긴반지름 `a` — 를 연결하여 속도 `v`를 산출합니다. 그게 전부입니다. 시간 적분도, 이각 연쇄도 없이, 단지 한 번의 제곱근으로 얼마나 빠르게 움직이는지 알 수 있습니다."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "body_paragraphs.1",
+  "en": "The equation packages conservation of energy: total mechanical energy on a Keplerian orbit is constant, so any time you know `r` you can recover the speed. At perihelion `r` is small, the parenthetical term is large, `v` is high. At aphelion `r` is large, the term shrinks, `v` drops. Earth zips through perihelion at 30.3 km/s and crawls through aphelion at 29.3 km/s — same orbit, different speed, same energy.",
+  "cur": "이 방정식은 에너지 보존을 패키징합니다: Keplerian 궤도의 총 역학적 에너지는 일정하므로, `r`을 알면 언제든지 속도를 복원할 수 있습니다. 근일점에서 `r`은 작고, 괄호 안의 항은 크며, `v`는 높습니다. 원일점에서 `r`은 크고, 항은 줄어들며, `v`는 감소합니다. 지구는 근일점에서 30.3 km/s로 질주하고 원일점에서 29.3 km/s로 느리게 움직입니다 — 같은 궤도, 다른 속도, 같은 에너지."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "body_paragraphs.2",
+  "en": "In Orrery, vis-viva is what computes the velocity readouts you see on `/fly`'s HUD as a spacecraft swings past a planet — and the launch-energy and arrival-velocity numbers feeding the porkchop heatmap on `/plan`.",
+  "cur": "Orrery에서 vis-viva는 우주선이 행성을 지나갈 때 `/fly`의 HUD에서 보이는 속도 표시를 계산하는 것이며 — `/plan`의 porkchop 히트맵에 제공되는 발사 에너지와 도착 속도 수치도 계산합니다."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "formula_caption",
+  "en": "v from gravitational parameter μ, current radius r, semi-major axis a.",
+  "cur": "중력 매개변수 μ, 현재 반지름 r, 긴반지름 a로부터 v를 구함."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "diagram_caption",
+  "en": "Speed varies along the orbit: high at perihelion, low at aphelion. Vis-viva ties speed to radius.",
+  "cur": "속도는 궤도를 따라 변합니다: 근일점에서 높고, 원일점에서 낮습니다. Vis-viva는 속도를 반지름과 연결합니다."
+ },
+ {
+  "rel": "science/planets/_intro.json",
+  "at": "headline",
+  "en": "Planets — every world tells a different story.",
+  "cur": "행성 — 각 세계는 다른 이야기를 들려줍니다."
+ },
+ {
+  "rel": "science/planets/_intro.json",
+  "at": "paragraphs.0",
+  "en": "Solar-system bodies are not interchangeable. Mars lost its atmosphere because its dynamo died. Venus rotates backward. Saturn's magnetic axis is uniquely aligned with its rotation axis. Uranus rolled onto its side. Earth has city lights you can see from orbit, and Mars doesn't. Each of these is a real, observed fact with a real, debated explanation. This tab is the place to read those explanations.",
+  "cur": "태양계 천체들은 서로 바꿔 쓸 수 없습니다. 화성은 자기 다이나모가 죽었기 때문에 대기를 잃었습니다. 금성은 역방향으로 자전합니다. 토성의 자기축은 회전축과 고유하게 일치합니다. 천왕성은 옆으로 굴러갔습니다. 지구는 궤도에서 볼 수 있는 도시 불빛이 있지만 화성에는 없습니다. 이들 각각은 실제로 관측된 사실이며 실제로 논쟁이 있는 설명입니다. 이 탭은 그러한 설명을 읽을 수 있는 곳입니다."
+ },
+ {
+  "rel": "science/planets/_intro.json",
+  "at": "paragraphs.1",
+  "en": "Six sections. The first three are about the planets themselves — axial tilt, magnetic fields, and the geometry of day and night. The next two are about the system: the moons that orbit each planet (Galileans, Titan, Triton, Charon), and the comparison-stats that let you see at a glance how Jupiter differs from Earth. The last section is a survey of the spacecraft actively studying each planet right now, in 2026 — what's at Mars (six active orbiters, multiple agencies), at Jupiter (Juno), at Venus (Akatsuki), and the long absences elsewhere.",
+  "cur": "여섯 개의 섹션으로 구성됩니다. 처음 세 섹션은 행성 자체에 관한 것입니다. 자전축 기울기, 자기장, 그리고 낮과 밤의 기하학적 구조를 다룹니다. 다음 두 섹션은 행성계에 관한 것으로, 각 행성을 공전하는 위성(Galileans, 타이탄, 트리톤, 카론)과 목성이 지구와 어떻게 다른지를 한눈에 볼 수 있게 해주는 비교 통계를 포함합니다. 마지막 섹션은 2026년 현재 각 행성을 적극적으로 연구하고 있는 우주선들을 조사합니다. 화성에는 무엇이 있는지(여섯 개의 활동 중인 궤도선, 여러 기관), 목성에는 무엇이 있는지(Juno), 금성에는 무엇이 있는지(Akatsuki), 그리고 다른 곳의 긴 공백들을 살펴봅니다."
+ },
+ {
+  "rel": "science/planets/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Every section pairs with a visualisation on /explore. The yellow spin axis you see when you zoom in on a planet ↔ the axial-tilt article. The cyan magnetic axis (lens-gated) ↔ the magnetic-fields article. The active orbiter glyphs ↔ the spacecraft-survey article. Toggle the lens on /explore to see the physics overlays, then come back here to read what they mean.",
+  "cur": "모든 섹션은 /explore의 시각화와 쌍을 이룹니다. 행성을 확대할 때 보이는 노란색 회전축 ↔ 자전축 기울기 기사. 시안색 자기축(렌즈 게이트) ↔ 자기장 기사. 활성 궤도선 글리프 ↔ 우주선 조사 기사. /explore에서 렌즈를 전환하여 물리 오버레이를 보고, 여기로 돌아와서 그것이 무엇을 의미하는지 읽으십시오."
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "intro_sentence",
+  "en": "What's at each planet right now: from MRO at Mars to Juno at Jupiter to Akatsuki at Venus.",
+  "cur": "각 행성에 지금 있는 것: 화성의 MRO부터 목성의 Juno까지, 금성의 Akatsuki까지."
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "narrative_101.0",
+  "en": "Every planet has, at most, a handful of robots actively studying it. Mars has the most: six active orbiters (NASA's MRO + MAVEN, ESA's Mars Express + ExoMars TGO, China's Tianwen-1, UAE's Hope) plus surface rovers (Perseverance, Curiosity) and the Ingenuity helicopter. Jupiter has one: NASA's Juno, in a polar orbit since 2016, studying Jupiter's magnetic field + auroras + deep atmosphere. Venus has one: JAXA's Akatsuki, the only active Venus orbiter, studying cloud-top winds + lightning. Saturn currently has none — Cassini ended in 2017; the next dedicated mission (NASA's Dragonfly to Titan) launches mid-2027. Mercury, Uranus, Neptune, and Pluto currently have no active orbiters either.",
+  "cur": "각 행성은 최대 한 줌의 로봇이 활발히 연구하고 있습니다. 화성이 가장 많습니다: 6개의 활성 궤도선(NASA의 MRO + MAVEN, ESA의 Mars Express + ExoMars TGO, 중국의 Tianwen-1, UAE의 Hope)과 지표면 로버(Perseverance, Curiosity), 그리고 Ingenuity 헬리콥터. 목성에는 1개입니다: NASA의 Juno는 2016년부터 극궤도에 있으며, 목성의 자기장 + 오로라 + 깊은 대기를 연구하고 있습니다. 금성에는 1개입니다: JAXA의 Akatsuki, 유일한 활성 금성 궤도선으로, 구름 꼭대기의 바람 + 번개를 연구합니다. 토성은 현재 없습니다 — Cassini는 2017년에 종료되었고, 다음 전담 임무(NASA의 Dragonfly to 타이탄)는 2027년 중순에 발사됩니다. 수성, 천왕성, 해왕성, 명왕성도 현재 활성 궤도선이 없습니다."
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "narrative_101.1",
+  "en": "The global nature of this list matters. Mars in 2026 has spacecraft from the US, Europe, Russia, India, China, and the UAE all actively orbiting. The era of \"only NASA does this\" ended around 2014 when Mangalyaan arrived. Hope (2021) was the first interplanetary mission from any Arab country. Tianwen-1 (2021) made China the second nation to land a rover on Mars (after the US). Akatsuki, after a near-miss in 2010, became the first JAXA interplanetary success when JAXA re-attempted orbit insertion five years later. The chart you see when you zoom in on Mars in Orrery has all those flags represented.",
+  "cur": "이 목록의 글로벌 성격이 중요합니다. 2026년의 화성에는 미국, 유럽, 러시아, 인도, 중국, UAE의 우주선이 모두 활발히 궤도에 있습니다. \"오직 NASA만 한다\"는 시대는 2014년경 Mangalyaan이 도착했을 때 끝났습니다. Hope(2021)는 아랍 국가에서 보낸 첫 번째 행성간 임무였습니다. Tianwen-1(2021)은 중국을 화성에 로버를 착륙시킨 두 번째 국가(미국 이후)로 만들었습니다. Akatsuki는 2010년의 실패 후 2015년 궤도 진입을 다시 시도했을 때 첫 번째 JAXA 행성간 성공이 되었습니다. Orrery에서 화성을 확대했을 때 보이는 차트에는 모든 국가 깃발이 표시되어 있습니다."
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "narrative_101.2",
+  "en": "Most of these missions outlive their designed lifetimes by years or decades. MRO was designed for a 2-year primary mission; it's been at Mars 20 years and counting, and serves as a critical data relay for every surface mission. Mars Express was a 2-year primary; it's 22 years in. Juno was designed for 33 perijove passes; it's done 60+. These extensions are how planetary science gets long baselines.",
+  "cur": "이러한 임무들 대부분은 설계 수명보다 수년 또는 수십 년을 더 오래 지속된다. MRO는 2년의 1차 임무로 설계되었지만 화성에서 20년 이상 운용되고 있으며, 모든 표면 임무의 중요한 데이터 중계기로 기여하고 있다. Mars Express는 2년의 1차 임무였지만 22년이 지났다. Juno는 33번의 근일점 통과를 위해 설계되었지만 60회 이상을 달성했다. 이러한 연장이 바로 행성 과학이 장기 기준선을 확보하는 방법이다."
+ }
+]

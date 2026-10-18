@@ -1,0 +1,560 @@
+[
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "dek",
+  "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+  "cur": "A manchete diz que asteroides contêm quatrilhões de dólares em ouro e platina. A manchete está errada — não sobre o metal, mas sobre o dinheiro. O argumento real para recursos de asteroides corre em direção completamente oposta."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.0.md",
+  "en": "Every few years, someone does the arithmetic on asteroid 16 Psyche and announces, in a breathless press release, that the metal-rich body orbiting in the [asteroid belt](/science/planets/asteroid-belt) contains iron, nickel, and precious metals worth something in the range of ten quintillion dollars. The figure is always staggering. It is also, in any meaningful economic sense, meaningless — and understanding why it is meaningless leads directly to what the genuine argument for asteroid resources actually is, which is almost the opposite of the headline version.",
+  "cur": "A cada alguns anos, alguém faz a aritmética do asteroide 16 Psyche e anuncia, em um comunicado à imprensa ofegante, que o corpo rico em metais orbitando no [cinturão de asteroides](/science/planets/asteroid-belt) contém ferro, níquel e metais preciosos no valor de algo em torno de dez quintilhões de dólares. A cifra é sempre impressionante. É também, em qualquer sentido econômico significativo, sem sentido — e entender por que é sem sentido nos leva diretamente ao que o argumento genuíno para recursos de asteroides realmente é, que é quase o oposto da versão da manchete."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.1.md",
+  "en": "Start with the number itself. The global platinum market is worth, in a given year, roughly $5 billion. If you could deliver the platinum-group-metal content of even a modest metallic asteroid to Earth and sell it tomorrow, you would not make a fortune. You would collapse the market. The price of platinum derives entirely from its scarcity; remove the scarcity, and you remove the price. Value, for a commodity, is set at the margin — by the last unit sold, not the total volume in existence. The $10-quintillion asteroid, successfully mined and delivered to Earth's surface, would be worth roughly what iron ore is worth: not much per kilogram. But this market-collapse argument is almost beside the point, because it assumes delivery to Earth — and delivery to Earth is where the arithmetic goes wrong long before the market enters the picture. This is where the [rocket equation](/science/propulsion/tsiolkovsky) closes the discussion.",
+  "cur": "Comece com o próprio número. O mercado global de platina vale, em um determinado ano, aproximadamente 5 bilhões de dólares. Se você conseguisse entregar o conteúdo de metais do grupo da platina até mesmo de um asteroide metálico modesto à Terra e vendê-lo amanhã, você não faria uma fortuna. Você colapsaria o mercado. O preço da platina deriva inteiramente de sua escassez; remova a escassez e você remove o preço. O valor, para uma mercadoria, é definido na margem — pela última unidade vendida, não pelo volume total em existência. O asteroide de 10 quintilhões de dólares, minado com sucesso e entregue na superfície da Terra, valeria aproximadamente o que o minério de ferro vale: não muito por quilograma. Mas este argumento de colapso de mercado é quase irrelevante, porque assume entrega à Terra — e a entrega à Terra é onde a aritmética fica errada muito antes do mercado entrar em cena. É aqui que a [equação do foguete](/science/propulsion/tsiolkovsky) encerra a discussão."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.2.text",
+  "en": "Gravity is the accountant",
+  "cur": "A gravidade é o contador"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.3.md",
+  "en": "The [delta-v budget](/science/propulsion/dv-budget) for a mission from Earth to a near-Earth asteroid is, for a favourable target, somewhere around 6 km/s — comparable to reaching Mars. Getting material back from that asteroid to Earth orbit costs more still, and getting it from Earth orbit to Earth's surface requires surviving the atmosphere. This is all before you have done any mining. The [rocket equation](/science/propulsion/tsiolkovsky) does not grade on a curve: every kilogram of payload you want to return home from deep space must be matched, at launch, by enough propellant to carry it back, which must itself be matched by propellant to carry that propellant, and so on down the regress the equation describes. The [Tsiolkovsky constraint](/science/propulsion/tsiolkovsky), which has not been repealed since 1903, makes the numbers brutal.",
+  "cur": "O [orçamento de delta-v](/science/propulsion/dv-budget) para uma missão da Terra a um asteroide próximo à Terra é, para um alvo favorável, algo em torno de 6 km/s — comparável a alcançar Marte. Trazer material de volta daquele asteroide à órbita terrestre custa ainda mais, e trazê-lo da órbita terrestre à superfície da Terra requer sobreviver à atmosfera. Tudo isso antes de você ter feito qualquer mineração. A [equação do foguete](/science/propulsion/tsiolkovsky) não é clementa: cada quilograma de carga que você quer trazer de volta do espaço profundo deve ser igualado, no lançamento, por combustível suficiente para levá-lo de volta, que deve ser igualado por combustível para levar esse combustível, e assim por diante na regressão que a equação descreve. A [restrição de Tsiolkovsky](/science/propulsion/tsiolkovsky), que não foi revogada desde 1903, torna os números brutais."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.4.md",
+  "en": "Put plainly: you are pulling material out of a gravity well — not Earth's, but the solar system's. The asteroid is, admittedly, tiny, with a surface gravity a thousandth of Earth's. Getting off it costs almost nothing in [delta-v](/essays/delta-v). But you are then in interplanetary space, and Earth is at the bottom of a very large gravity well, and arriving there with any significant velocity means spending fuel to slow down, or accepting the violence of aerobraking, or both. The economic cost of transporting mass across interplanetary distances and then decelerating it safely is, at current and foreseeable propulsion technologies, so far above the market value of any commodity that the business case for returning bulk materials to Earth cannot close. This is not a pessimistic reading. It is what the [specific impulse](/science/propulsion/specific-impulse) numbers say when you run them honestly.",
+  "cur": "Falando claramente: você está puxando material de um poço gravitacional — não da Terra, mas do sistema solar. O asteroide é, admitidamente, minúsculo, com gravidade superficial um milésimo da da Terra. Sair dele custa quase nada em [delta-v](/essays/delta-v). Mas você está então no espaço interplanetário, e a Terra está no fundo de um poço gravitacional muito grande, e chegar lá com qualquer velocidade significativa significa gastar combustível para desacelerar, ou aceitar a violência da aerofreagem, ou ambos. O custo econômico de transportar massa através de distâncias interplanetárias e depois desacelerá-la com segurança é, com as tecnologias de propulsão atuais e previsíveis, tão acima do valor de mercado de qualquer mercadoria que o caso de negócios para retornar materiais em massa à Terra não pode se fechar. Isso não é uma leitura pessimista. É o que os números de [impulso específico](/science/propulsion/specific-impulse) dizem quando você os executa honestamente."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.5.md",
+  "en": "This is also why the first generation of commercial asteroid ventures — Planetary Resources, founded in 2012, and Deep Space Industries, founded in 2013 — failed within a decade, not because the asteroids aren't there, but because the market for Earth-delivered asteroid platinum does not exist at any price that the [delta-v economics](/essays/delta-v) can support. The logic of hauling wealth down to Earth's surface was broken from the start.",
+  "cur": "Isso também explica por que a primeira geração de empreendimentos comerciais de asteroides — Planetary Resources, fundada em 2012, e Deep Space Industries, fundada em 2013 — fracassou dentro de uma década, não porque os asteroides não estejam lá, mas porque o mercado para platina de asteroide entregue na Terra não existe a nenhum preço que a [economia de delta-v](/essays/delta-v) possa sustentar. A lógica de transportar riqueza para a superfície da Terra estava quebrada desde o início."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.7.md",
+  "en": "Now invert the question. Instead of asking what it costs to bring material from space to Earth, ask what it costs to bring material from Earth to space. The answer is the same rocket equation, running the other direction, and it is just as brutal. Getting one kilogram to low Earth orbit on a [reusable launcher](/essays/reusable-launchers) costs, at best, a few thousand dollars today — down dramatically from the tens of thousands it cost a decade ago. Getting that kilogram further, to a lunar transfer orbit or to a Mars-bound trajectory, costs more still, because you are climbing higher out of Earth's gravity well and the [Oberth arithmetic](/science/propulsion/oberth-effect) that makes deep burns efficient cannot fix the fundamental mass-ratio problem.",
+  "cur": "Agora inverta a questão. Em vez de perguntar quanto custa trazer material do espaço para a Terra, pergunte quanto custa trazer material da Terra para o espaço. A resposta é a mesma equação do foguete, funcionando na outra direção, e é igualmente brutal. Levar um quilograma para órbita terrestre baixa em um [lançador reutilizável](/essays/reusable-launchers) custa, na melhor das hipóteses, alguns milhares de dólares hoje — dramaticamente reduzido em relação às dezenas de milhares que custava uma década atrás. Levar esse quilograma mais adiante, para uma órbita de transferência lunar ou para uma trajetória vinculada a Marte, custa ainda mais, porque você está escalando mais alto do poço gravitacional da Terra e a [aritmética de Oberth](/science/propulsion/oberth-effect) que torna as queimas profundas eficientes não pode consertar o problema fundamental de razão de massa."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.8.md",
+  "en": "This is what the gravity-well framing clarifies. Earth's surface sits at the bottom of a well that costs roughly 9.4 km/s of delta-v to escape entirely. Every kilogram of food, fuel, water, air, structural material, or radiation shielding that a crewed spacecraft carries above low Earth orbit has paid that toll. The toll is not a surcharge that clever engineering can avoid; it is a physical consequence of being on Earth, which is a large planet with a deep gravitational field. If you want to build and operate spacecraft above low Earth orbit — for a lunar base, for Mars transit, for anything sustained in deep space — the dominant cost is not your hardware. It is the propellant burned to lift your hardware and its consumables out of the well every single time.",
+  "cur": "É isso que a estrutura do poço gravitacional esclarece. A superfície da Terra fica no fundo de um poço que custa aproximadamente 9,4 km/s de delta-v para escapar inteiramente. Cada quilograma de alimento, combustível, água, ar, material estrutural ou blindagem de radiação que uma espaçonave tripulada carrega acima da órbita terrestre baixa pagou esse pedágio. O pedágio não é uma sobretaxa que a engenharia inteligente pode evitar; é uma consequência física de estar na Terra, que é um grande planeta com um campo gravitacional profundo. Se você quer construir e operar espaçonaves acima da órbita terrestre baixa — para uma base lunar, para trânsito para Marte, para qualquer coisa sustentada no espaço profundo — o custo dominante não é seu hardware. É o combustível queimado para tirar seu hardware e seus consumíveis do poço a cada vez."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.9.md",
+  "en": "The genuine economic argument for asteroid resources begins exactly here, and it runs in the direction opposite to the headline. Instead of bringing material from asteroids to Earth, the question is: can we use material that is *already* above Earth's gravity well to avoid lifting it from the surface? Can we, in effect, find a fuel depot and a hardware store already in orbit — or close enough that the delivery cost is measured in fractions of a km/s rather than ten km/s — and stop paying the launch toll on every kilogram of material a deep-space economy needs? The answer, if the recon missions are to be believed, is yes. But not for gold. For water.",
+  "cur": "O argumento econômico genuíno para recursos de asteroides começa exatamente aqui e corre na direção oposta à manchete. Em vez de trazer material de asteroides para a Terra, a questão é: podemos usar material que *já está* acima do poço gravitacional da Terra para evitar trazê-lo da superfície? Podemos, em efeito, encontrar um depósito de combustível e uma loja de materiais já em órbita — ou próximo o suficiente para que o custo de entrega seja medido em frações de km/s em vez de dez km/s — e parar de pagar o pedágio de lançamento em cada quilograma de material que uma economia de espaço profundo precisa? A resposta, se as missões de reconhecimento estão certas, é sim. Mas não por ouro. Por água."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.10.caption",
+  "en": "Every kilogram launched from Earth pays a brutal toll in delta-v just to climb out of the planet’s gravity well. Anything already in space — an asteroid drifting above the rim — has that price paid. Which is why a litre of water parked in orbit is worth more than a litre of gold sitting on the ground.",
+  "cur": "Cada quilograma lançado da Terra paga um pedágio brutal em delta-v apenas para sair do poço gravitacional do planeta. Qualquer coisa já no espaço — um asteroide à deriva acima da borda — tem esse preço pago. Por isso um litro de água estacionado em órbita vale mais do que um litro de ouro sentado no chão."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.12.md",
+  "en": "Carbonaceous chondrite asteroids — the C-type and related classes that represent the majority of near-Earth objects — contain significant quantities of hydrated minerals: clays and phyllosilicates that hold water molecules in their crystal structure at levels ranging from a few percent to more than twenty percent by mass. Some also contain organics. The water is not sitting in puddles; it is chemically bound, and extracting it requires heating the material to drive off the water vapour and then condensing it. But the energy to do that can, in principle, come from solar concentrators in space. The result is water — and water, in the context of a deep-space programme, is not primarily a thing to drink.",
+  "cur": "Asteroides condritos carbonáceos — as classes do tipo C e relacionadas que representam a maioria dos objetos próximos à Terra — contêm quantidades significativas de minerais hidratados: argilas e filossilicatos que mantêm moléculas de água em sua estrutura cristalina em níveis variando de alguns por cento a mais de vinte por cento em massa. Alguns também contêm compostos orgânicos. A água não fica em poças; está quimicamente ligada, e extraí-la requer aquecimento do material para expulsar o vapor de água e depois condensá-lo. Mas a energia para isso pode, em princípio, vir de concentradores solares no espaço. O resultado é água — e água, no contexto de um programa de espaço profundo, não é principalmente uma coisa para beber."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.13.md",
+  "en": "Electrolysis splits water into hydrogen and oxygen: the most energetic chemical propellant combination ever flown. Hydrogen and oxygen, liquefied and stored, are rocket propellant. The [delta-v](/essays/delta-v) budget for a Mars transfer is approximately 3.6 km/s from low Earth orbit; a propellant depot at a convenient [Lagrange point](/science/transfers/hohmann-transfer) or in a near-Earth orbit, stocked from asteroid-derived water, would dramatically change the mass that needs to be launched from Earth for any beyond-LEO mission. The fuel is the dominant mass fraction of any spacecraft — the Saturn V that carried Apollo astronauts to the Moon was [85% propellant by mass](/essays/delta-v). A depot that supplies propellant without requiring it to be lifted from Earth's surface is not a logistical convenience. It restructures the entire economics of deep space.",
+  "cur": "A eletrólise divide a água em hidrogênio e oxigênio: a combinação de propelente químico mais energético já voo. Hidrogênio e oxigênio, liquefatos e armazenados, são combustível de foguete. O orçamento de [delta-v](/essays/delta-v) para uma transferência para Marte é aproximadamente 3,6 km/s da órbita terrestre baixa; um depósito de combustível em um [ponto de Lagrange](/science/transfers/hohmann-transfer) conveniente ou em uma órbita próxima à Terra, abastecido a partir de água derivada de asteroides, mudaria dramaticamente a massa que precisa ser lançada da Terra para qualquer missão além de órbita terrestre baixa. O combustível é a fração de massa dominante de qualquer espaçonave — o Saturn V que levou astronautas da Apollo à Lua era [85% combustível em massa](/essays/delta-v). Um depósito que fornece combustível sem exigir que seja levantado da superfície da Terra não é uma conveniência logística. Reestrutura toda a economia do espaço profundo."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.14.md",
+  "en": "Beyond propellant, water provides oxygen for breathing. The same carbonaceous material provides carbon and nitrogen. The bulk mass — rock, in most cases, not metal — provides radiation shielding: a spacecraft transiting to Mars is outside Earth's magnetosphere for six to nine months, and lifting enough mass to shield a crew from cosmic rays costs enormously if every kilogram has to be launched from Earth's surface. None of this has the glamour of platinum. All of it is more valuable to a space-based economy than platinum is. The argument is not about treasure. It is about [in-situ resource utilisation](/science/life-in-space/isru-resource-utilization) — the only approach that makes sustained human presence beyond Earth physically feasible — and the resource that matters most is not the rarest or most expensive one, but the one that is most expensive to launch from Earth: propellant mass. The [going-to-the-moon essay](/essays/going-to-the-moon) makes the same case at the lunar south pole, for the same reasons. The Moon and carbonaceous near-Earth asteroids are the same argument in two different places.",
+  "cur": "Além do combustível, a água fornece oxigênio para respirar. O mesmo material carbonáceo fornece carbono e nitrogênio. A massa em volume — rocha, na maioria dos casos, não metal — fornece blindagem de radiação: uma espaçonave em trânsito para Marte fica fora da magnetosfera da Terra por seis a nove meses, e levantar massa suficiente para blindar uma tripulação contra raios cósmicos custa enormemente se cada quilograma tiver que ser lançado da superfície da Terra. Nada disso tem o glamour da platina. Tudo isso é mais valioso para uma economia baseada no espaço do que a platina é. O argumento não é sobre tesouro. É sobre [utilização de recursos in-situ](/science/life-in-space/isru-resource-utilization) — a única abordagem que torna a presença humana sustentada além da Terra fisicamente viável — e o recurso que mais importa não é o mais raro ou mais caro, mas o que é mais caro de lançar da Terra: massa de combustível. O [ensaio sobre ir à Lua](/essays/going-to-the-moon) faz o mesmo argumento no pólo sul lunar, pelas mesmas razões. A Lua e asteroides carbonáceos próximos à Terra são o mesmo argumento em dois lugares diferentes."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.15.caption",
+  "en": "Split asteroid water and you have hydrogen and oxygen — rocket propellant — plus air to breathe, water to drink, and bulk rock for radiation shielding. The prize was never metal to sell back home; it is a fuel depot that is already in the sky.",
+  "cur": "Divida água de asteroide e você tem hidrogênio e oxigênio — combustível de foguete — além de ar para respirar, água para beber e rocha em volume para blindagem de radiação. O prêmio nunca foi metal para vender de volta para casa; é um depósito de combustível que já está no céu."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.17.md",
+  "en": "The recon that would support any of this is not theoretical. It has been done, twice, by Japan, and once by the United States — and what it found was both more interesting and more humbling than the headline version suggested.",
+  "cur": "O reconhecimento que apoiaria qualquer coisa disso não é teórico. Foi feito, duas vezes, pelo Japão, e uma vez pelos Estados Unidos — e o que encontrou foi simultaneamente mais interessante e mais humilhante do que a versão da manchete sugeriu."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.18.md",
+  "en": "Japan's [Hayabusa](/missions?id=hayabusa1) reached the S-type asteroid Itokawa in September 2005. Its sample collection mechanism had malfunctioned, but the spacecraft returned to Earth in June 2010 carrying approximately 1,500 sub-millimetre particles — the first samples ever returned from an asteroid. The analysis confirmed ordinary LL chondrite mineralogy: not the water-rich carbonaceous target the ISRU argument needs, but proof of concept that you can reach an asteroid, touch it, and bring pieces back.",
+  "cur": "O [Hayabusa](/missions?id=hayabusa1) do Japão alcançou o asteroide tipo S Itokawa em setembro de 2005. Seu mecanismo de coleta de amostras havia apresentado falha, mas a espaçonave retornou à Terra em junho de 2010 carregando aproximadamente 1.500 partículas submilimétricas — as primeiras amostras já retornadas de um asteroide. A análise confirmou mineralogía de condrito comum LL: não o alvo carbonáceo rico em água que o argumento ISRU precisa, mas prova de conceito de que você pode alcançar um asteroide, tocá-lo e trazer pedaços de volta."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.19.md",
+  "en": "[Hayabusa2](/missions?id=hayabusa2), launched in December 2014, was designed to go further. Its target was Ryugu, a C-type near-Earth asteroid — the carbonaceous variety that hydration models predicted should contain water-bearing minerals. The spacecraft arrived at Ryugu in June 2018 and spent a year and a half studying it before performing sample collection in February and July 2019. In July 2019, it also deployed a small impactor that blasted a crater in Ryugu's surface, then collected material from the exposed subsurface — material that had not been altered by space weathering. The capsule returned to Earth in December 2020. The analysis confirmed what the models predicted: Ryugu's material is rich in hydrated minerals, contains organics including amino acid precursors, and in chemical composition is closely related to CI chondrites — the most primitive and water-rich class of carbonaceous chondrites. The ore that the ISRU argument needs is there. Ryugu is not a unique body; C-type asteroids represent roughly 75% of all asteroids in the main belt and a significant fraction of near-Earth objects.",
+  "cur": "[Hayabusa2](/missions?id=hayabusa2), lançado em dezembro de 2014, foi projetado para ir mais longe. Seu alvo era Ryugu, um asteroide tipo C próximo à Terra — a variedade carbonácea que modelos de hidratação prediziam deveria conter minerais com água. A espaçonave chegou em Ryugu em junho de 2018 e passou um ano e meio estudando-o antes de realizar coleta de amostras em fevereiro e julho de 2019. Em julho de 2019, também implantou um pequeno impactador que criou uma cratera na superfície de Ryugu, depois coletou material da subsuperfície exposta — material que não havia sido alterado pelo intemperismo espacial. A cápsula retornou à Terra em dezembro de 2020. A análise confirmou o que os modelos previram: o material de Ryugu é rico em minerais hidratados, contém compostos orgânicos incluindo precursores de amino ácidos, e em composição química está intimamente relacionado a condritos CI — a classe mais primitiva e mais rica em água de condritos carbonáceos. O minério que o argumento ISRU precisa está lá. Ryugu não é um corpo único; asteroides do tipo C representam aproximadamente 75% de todos os asteroides no cinturão principal e uma fração significativa de objetos próximos à Terra."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.20.md",
+  "en": "NASA's [OSIRIS-REx](/missions?id=osiris-rex) reached the carbonaceous asteroid Bennu in December 2018 and spent almost two years mapping it before performing its Touch-And-Go sample collection in October 2020. The capsule returned to Earth in September 2023 with approximately 120 grams of material — the largest sample ever returned from an asteroid. Analysis confirmed hydrated clay minerals and carbon-rich compounds: the same ingredients the Hayabusa2 team found at Ryugu, on a different body, reached by a different nation, via a different trajectory. The result was the same. This is not a coincidence. It is confirmation that the C-type carbonaceous composition — water-bearing, organic-rich — is the rule for these bodies, not the exception.",
+  "cur": "O [OSIRIS-REx](/missions?id=osiris-rex) da NASA alcançou o asteroide carbonáceo Bennu em dezembro de 2018 e passou quase dois anos mapeando-o antes de realizar sua coleta de amostra Touch-And-Go em outubro de 2020. A cápsula retornou à Terra em setembro de 2023 com aproximadamente 120 gramas de material — a maior amostra já retornada de um asteroide. A análise confirmou minerais de argila hidratados e compostos ricos em carbono: os mesmos ingredientes que a equipe do Hayabusa2 encontrou em Ryugu, em um corpo diferente, alcançado por uma nação diferente, via uma trajetória diferente. O resultado foi o mesmo. Isso não é uma coincidência. É confirmação de que a composição carbonácea tipo C — com água, rica em orgânicos — é a regra para esses corpos, não a exceção."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.21.caption",
+  "en": "Three robotic missions have already touched and sampled asteroids: Japan’s Hayabusa (Itokawa, 2010, the first ever), Hayabusa2 (Ryugu, 2020), and NASA’s OSIRIS-REx (Bennu, 2023). What came back was water-bearing clay and organics — from loose rubble, not solid metal.",
+  "cur": "Três missões robóticas já tocaram e coletaram amostras de asteroides: Hayabusa do Japão (Itokawa, 2010, a primeira de todas), Hayabusa2 (Ryugu, 2020) e OSIRIS-REx da NASA (Bennu, 2023). O que voltou foi argila hidratada com água e compostos orgânicos — de escombros soltos, não de metal sólido."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.22.caption",
+  "en": "Hayabusa2 at Ryugu — JAXA’s second asteroid sample return, and the mission bold enough to fire a copper impactor into the surface to blast open a fresh crater before scooping up what it exposed.",
+  "cur": "Hayabusa2 em Ryugu — a segunda missão de retorno de amostra de asteroide da JAXA, e a missão audaciosa o suficiente para disparar um impactador de cobre na superfície a fim de abrir uma cratera fresca antes de recolher o que ela expunha."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.23.text",
+  "en": "Rubble, not rock",
+  "cur": "Escombros, não rocha"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.24.md",
+  "en": "Here is what the missions also found, and what the headlines about asteroid mining consistently understate: Bennu and Ryugu are not solid bodies. They are rubble piles.",
+  "cur": "Aqui está o que as missões também encontraram, e o que as manchetes sobre mineração de asteroides consistentemente subestimam: Bennu e Ryugu não são corpos sólidos. São pilhas de escombros."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.25.md",
+  "en": "A rubble pile is an aggregate of loosely consolidated material — boulders, pebbles, dust — held together by gravity so weak that walking on the surface would require careful consideration of whether you might bounce off entirely. Bennu's surface gravity is approximately 6 micronewtons per kilogram. An astronaut standing on its equator would weigh less than a milligram in Earth terms. Trying to anchor a mining system — to drill, to excavate, to push against the surface with any force — generates a reaction that could push the mining equipment off the asteroid. The TAG (Touch-and-Go) event that OSIRIS-REx used to collect its sample lasted approximately six seconds of surface contact; during those six seconds, the spacecraft's sample head sank deeper into the surface than expected, because Bennu's material is less consolidated than a sandcastle. The mission team later said the spacecraft would have sunk entirely if the thrusters hadn't fired to pull it back. This is not a hostile environment in the way that Mars is hostile. It is a hostile environment in the way that a bag of loose sand floating in zero gravity is hostile: fundamentally different from every assumption that terrestrial mining engineering makes.",
+  "cur": "Uma pilha de escombros é um agregado de material fracamente consolidado — rochas, cascalho, pó — mantido junto pela gravidade tão fraca que caminhar na superfície exigiria consideração cuidadosa de se você poderia não quicar inteiramente. A gravidade superficial de Bennu é aproximadamente 6 micronewtons por quilograma. Um astronauta em pé no seu equador pesaria menos de um miligrama em termos terrestres. Tentar ancorar um sistema de mineração — para perfurar, escavar, empurrar contra a superfície com qualquer força — gera uma reação que poderia empurrar o equipamento de mineração para longe do asteroide. O evento TAG (Touch-and-Go) que OSIRIS-REx usou para coletar sua amostra durou aproximadamente seis segundos de contato com a superfície; durante esses seis segundos, a cabeça de amostra da espaçonave afundou mais profundamente na superfície do que esperado, porque o material de Bennu é menos consolidado do que um castelo de areia. A equipe da missão depois disse que a espaçonave teria afundado inteiramente se os propulsores não tivessem disparado para puxá-la de volta. Isso não é um ambiente hostil no sentido de que Marte é hostil. É um ambiente hostil no sentido de que um saco de areia solta flutuando em gravidade zero é hostil: fundamentalmente diferente de cada suposição que a engenharia de mineração terrestre faz."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.26.md",
+  "en": "Hayabusa2's impactor experiment confirmed the same picture from a different angle. Its 2-kg copper impactor created a crater roughly 14 metres in diameter and 2 metres deep — larger than predicted, because the surface was more porous than expected. The [DART](/missions?id=dart) mission, which in September 2022 redirected the asteroid Dimorphos by deliberately crashing a spacecraft into it, produced an ejecta plume and an orbital period change both larger than solid-body models predicted — consistent, again, with a loosely bound aggregate. Working in that environment is not a matter of scaling up terrestrial mining and adding vacuum suits. Anchoring against a surface you cannot push against, excavating material that floats away at centimetres per second, containing ejecta in microgravity — these are unsolved engineering problems unlike anything in the history of extraction industry. The science is confirmed. The engineering has not yet begun in earnest.",
+  "cur": "O experimento de impactador do Hayabusa2 confirmou a mesma conclusão sob um ângulo diferente. Seu impactador de cobre de 2 kg criou uma cratera com aproximadamente 14 metros de diâmetro e 2 metros de profundidade — maior do que previsto, porque a superfície era mais porosa que o esperado. A missão [DART](/missions?id=dart), que em setembro de 2022 redirecionou o asteroide Dimorfos ao colidir deliberadamente uma espaçonave nele, produziu uma pluma de ejecta e uma mudança de período orbital ambas maiores do que modelos de corpo sólido previram — consistente, novamente, com um agregado fracamente ligado. Trabalhar nesse ambiente não é uma questão de ampliar a escala da mineração terrestre e adicionar ternos à vácuo. Ancorar-se contra uma superfície contra a qual você não pode se impulsionar, escavar material que flutua a centímetros por segundo, conter a ejecta em microgravidade — estes são problemas de engenharia não resolvidos, diferente de qualquer coisa na história da indústria de extração. A ciência está confirmada. A engenharia ainda não começou a sério."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.27.caption",
+  "en": "OSIRIS-REx reaching down to touch Bennu — and finding not solid ground but a rubble pile so loosely bound that the sampling head sank straight in, nearly swallowing the arm. “Mining” a body like this is unlike anything ever done on Earth.",
+  "cur": "OSIRIS-REx chegando para tocar Bennu — e encontrando não solo sólido mas uma pilha de escombros tão fracamente ligada que a cabeça de amostra afundou direto, quase engolindo o braço. \"Minerar\" um corpo como este é diferente de qualquer coisa já feita na Terra."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.28.text",
+  "en": "The economy above the well",
+  "cur": "A economia acima do poço"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.29.md",
+  "en": "The question the long view has to answer is: where does this go? The ISRU argument is logically sound. The recon confirms the resources exist. The engineering challenges are real but not in principle insoluble. The economics, however, require something that does not yet exist: demand for resources in space.",
+  "cur": "A questão que a visão de longo prazo tem que responder é: para onde isso vai? O argumento ISRU é logicamente sólido. O reconhecimento confirma que os recursos existem. Os desafios de engenharia são reais mas não são em princípio insolúveis. A economia, entretanto, requer algo que ainda não existe: demanda por recursos no espaço."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.30.md",
+  "en": "This is the timing problem that killed the first commercial wave. Planetary Resources and Deep Space Industries were building supply chains for a customer base that didn't exist yet — specifically, for the propellant-hungry beyond-LEO economy that a sustained lunar programme and eventual Mars operations would create. In 2012, when Planetary Resources was founded, the [reusable launcher revolution](/essays/reusable-launchers) was not yet proven, the Artemis programme did not exist, no commercial space stations were under development, and the idea of regular human Mars missions was firmly in the speculative future. The companies were, in infrastructure terms, building fuel stations before the highway. Infrastructure almost always has to wait for the traffic before it becomes viable, and space resource extraction is no different.",
+  "cur": "Este é o problema de tempo que matou a primeira onda comercial. Planetary Resources e Deep Space Industries estavam construindo cadeias de suprimentos para uma base de clientes que não existia ainda — especificamente, para a economia além de órbita terrestre baixa faminta por combustível que um programa Artemis sustentado e eventual operações em Marte criariam. Em 2012, quando Planetary Resources foi fundada, a [revolução dos lançadores reutilizáveis](/essays/reusable-launchers) ainda não havia sido provada, o programa Artemis não existia, nenhuma estação comercial no espaço estava em desenvolvimento, e a ideia de missões regulares de humanos a Marte estava firmemente no futuro especulativo. As empresas estavam, em termos de infraestrutura, construindo postos de combustível antes da rodovia. A infraestrutura quase sempre tem que esperar pelo tráfego antes de se tornar viável, e a extração de recursos espaciais não é diferente."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.31.md",
+  "en": "The situation in the mid-2020s is different in one respect: the traffic is closer. [Reusable launch vehicles](/essays/reusable-launchers) have changed the economics of reaching orbit. Commercial station programmes are under development. The Artemis programme, however delayed, has placed crewed lunar operations back on planning horizons. NASA's [Psyche mission](/missions?id=psyche-mission), launched in October 2023 and en route to the metallic asteroid 16 Psyche, will deliver the most thorough remote characterisation of a metallic asteroid ever attempted. The supply chain's potential customers are no longer purely hypothetical. But closer is not here. A propellant depot servicing Mars-bound spacecraft is, at minimum, a decade away from operational reality — and that estimate is optimistic, contingent on a pace of lunar development that has consistently slipped. The honest reading: asteroid resources become economically viable when, and only when, there is sustained human activity beyond low Earth orbit at a scale that makes fuel, air, and shielding the binding constraint. That constraint is approaching. The gap between approaching and here has swallowed businesses before.",
+  "cur": "A situação em meados de 2020 é diferente em um aspecto: o tráfego está mais próximo. [Veículos de lançamento reutilizáveis](/essays/reusable-launchers) mudaram a economia de alcançar órbita. Programas de estação comercial estão em desenvolvimento. O programa Artemis, porém atrasado, colocou operações lunares tripuladas de volta nos horizontes de planejamento. A [missão Psyche](/missions?id=psyche-mission) da NASA, lançada em outubro de 2023 e em rota para o asteroide metálico 16 Psique, entregará a caracterização remota mais completa de um asteroide metálico jamais tentada. Os clientes em potencial da cadeia de suprimentos não são mais puramente hipotéticos. Mas mais próximo não é aqui. Um depósito de combustível servindo espaçonaves rumo a Marte está, no mínimo, uma década longe da realidade operacional — e essa estimativa é otimista, contingente a um ritmo de desenvolvimento lunar que consistentemente escorregou. A leitura honesta: recursos de asteroides se tornam economicamente viáveis quando, e somente quando, há atividade humana sustentada além da órbita terrestre baixa em escala que faz combustível, ar e blindagem a restrição vinculante. Essa restrição está se aproximando. A lacuna entre se aproximando e aqui engoliu negócios antes."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.32.md",
+  "en": "What remains, after the hype has been deflated and the market-collapse fallacy disposed of, is something more durable and less exciting to press release: a structural argument that the long-term economics of human presence beyond Earth cannot be made to work without drawing on resources that are already above the gravity well. The solar system contains more water, more carbon, more structural material than the entirety of human civilisation has ever consumed, distributed across millions of bodies whose surface gravity costs almost nothing to overcome, sitting above the one thing that makes spaceflight expensive. The argument is not about quintillions of dollars. It is about the [rocket equation](/science/propulsion/tsiolkovsky) and the direction it is pointing.",
+  "cur": "O que permanece, depois que a exageração foi desinflada e a falácia de colapso de mercado descartada, é algo mais durável e menos emocionante para divulgar: um argumento estrutural de que a economia de longo prazo da presença humana além da Terra não pode ser feita funcionar sem recorrer a recursos que já estão acima do poço gravitacional. O sistema solar contém mais água, mais carbono, mais material estrutural do que toda a civilização humana jamais consumiu, distribuído entre milhões de corpos cuja gravidade superficial custa quase nada para superar, sentando acima da única coisa que torna a viagem espacial cara. O argumento não é sobre quintilhões de dólares. É sobre a [equação do foguete](/science/propulsion/tsiolkovsky) e a direção para a qual ela está apontando."
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.33.md",
+  "en": "Tsiolkovsky's constraint has an escape. It is not clever chemistry or radical new propulsion — though [new propulsion](/essays/new-propulsion) helps at the margins. The escape is not launching the consumables in the first place. It is finding them already above the well and using them there. [Hayabusa2](/missions?id=hayabusa2) brought 5.4 grams of Ryugu back to Earth. [OSIRIS-REx](/missions?id=osiris-rex) brought 120 grams of Bennu. The next missions in this sequence won't be bringing material home. They will be learning how to leave it where it is — and use it there. That is the point the headline never reaches. [Explore the small bodies in the atlas](/explore) and what you are looking at is not a storehouse of Earth-deliverable treasure. It is the hardware store for a civilization that hasn't arrived yet.",
+  "cur": "A restrição de Tsiolkovsky tem uma escapatória. Não é química inteligente ou propulsão radical — embora [nova propulsão](/essays/new-propulsion) ajude nas margens. A escapatória não é lançar os consumíveis em primeiro lugar. É encontrá-los já acima do poço e usá-los lá. [Hayabusa2](/missions?id=hayabusa2) trouxe 5,4 gramas de Ryugu de volta à Terra. [OSIRIS-REx](/missions?id=osiris-rex) trouxe 120 gramas de Bennu. As próximas missões nesta sequência não estarão trazendo material para casa. Estarão aprendendo como deixá-lo onde está — e usá-lo lá. Esse é o ponto que a manchete nunca alcança. [Explore os pequenos corpos no atlas](/explore) e o que você está vendo não é um armazém de tesouro entregável à Terra. É a loja de materiais para uma civilização que ainda não chegou."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "title",
+  "en": "Running the Solar System on a Whisper",
+  "cur": "Executando o Sistema Solar em um Sussurro"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "dek",
+  "en": "Three dish complexes on Earth carry on every conversation humanity has ever had with anything beyond the Moon. A 22-watt radio signal, a light-hour of patience, and the most oversubscribed network in the solar system — this is how the whole enterprise holds together.",
+  "cur": "Três complexos de antenas na Terra sustentam todas as conversas que a humanidade já teve com qualquer coisa além da Lua. Um sinal de rádio de 22 watts, uma hora-luz de paciência e a rede mais sobrecarregada do sistema solar — é assim que todo o empreendimento se mantém unido."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.0.md",
+  "en": "In the navigation essay we named the problem and then mostly set it aside: the speed of light imposes a lag on every instruction, every correction, every answer, and the further out you go the worse it gets. The navigation essay could afford to set it aside because, for most of what it describes, the lag is inconvenient but manageable. A twenty-minute round trip to Mars is long enough to be annoying and short enough to work around. The spacecraft coasts; the ground catches up. But that arithmetic doesn't hold forever. Push it another order of magnitude — to Saturn, to Pluto, to the place where [Voyager 1](/missions?id=voyager-1) is right now, almost a full light-day from the Earth — and \"hold on, we're thinking\" stops being a workable answer. The problem that navigation named but deferred is the one this essay is about.",
+  "cur": "No ensaio sobre navegação, nomeamos o problema e depois o deixamos praticamente de lado: a velocidade da luz impõe um atraso em toda instrução, toda correção, toda resposta, e quanto mais longe você vai, pior fica. O ensaio sobre navegação podia permitir-se deixá-lo de lado porque, para a maior parte do que descreve, o atraso é incômodo, mas administrável. Uma viagem de vinte minutos de ida e volta para Marte é longa o suficiente para ser irritante e curta o suficiente para funcionar. A nave espacial segue sua trajetória; o solo consegue acompanhar. Mas essa aritmética não se sustenta para sempre. Aumente-a mais uma ordem de magnitude — para Saturno, para Plutão, para o lugar onde [Voyager 1](/missions?id=voyager-1) está agora, quase um dia-luz completo da Terra — e \"espera aí, estamos pensando\" deixa de ser uma resposta viável. O problema que a navegação nomeou mas adiou é o de que trata este ensaio."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.1.md",
+  "en": "Before we get to the lag, though, there's a more fundamental strangeness to absorb. Every probe, every rover, every lander in this atlas maintains exactly one thread of connection to Earth: a radio link through a handful of large dishes on the ground. Not a constellation of relay satellites. Not a mesh network. Not a pair of backups standing by in case the primary goes down. One link, through one of roughly forty antennas spread across three sites, and the whole solar system runs on it. Everything we've learned about Mars, Saturn, Jupiter, Uranus, Neptune, Pluto, the asteroid belt, and interstellar space beyond the heliosphere has traveled down that single thread. The miracle isn't that we've lost spacecraft. The miracle is how few.",
+  "cur": "Antes de chegamos ao atraso, porém, há uma estranheza mais fundamental para absorver. Cada sonda, cada rover, cada pouso neste atlas mantém exatamente um fio de conexão com a Terra: um link de rádio através de um punhado de grandes antenas no solo. Não uma constelação de satélites retransmissores. Não uma rede em malha. Não um par de backup em espera caso o principal falhe. Um link, através de um de aproximadamente quarenta antenas espalhadas por três locais, e todo o sistema solar funciona com ele. Tudo o que aprendemos sobre Marte, Saturno, Júpiter, Urano, Netuno, Plutão, o cinturão de asteroides e o espaço interestelar além da heliosfera viajou através desse único fio. O milagre não é que tenhamos perdido naves espaciais. O milagre é que tenhamos perdido tão poucas."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.3.md",
+  "en": "The [Deep Space Network](/science/mission-phases/dsn) is a creation of the early 1960s, built when the first probes were heading for Venus and Mars and the question of how to talk to them as they receded became urgently practical. The answer JPL arrived at was elegant in its simplicity: place antenna complexes roughly 120 degrees of longitude apart around the planet, so that as the Earth rotates, at least one of them always faces the part of the sky where the mission is. Three sites: Goldstone in the California desert, Madrid in Spain, and Canberra in Australia. They have been the ears and mouth of the solar system ever since.",
+  "cur": "A [Deep Space Network](/science/mission-phases/dsn) é uma criação do início dos anos 1960, construída quando as primeiras sondas se dirigiam para Vênus e Marte e a questão de como conversar com elas enquanto recuavam se tornou urgentemente prática. A resposta a que o JPL chegou era elegante em sua simplicidade: colocar complexos de antenas aproximadamente 120 graus de longitude uma da outra ao redor do planeta, de modo que, quando a Terra gira, pelo menos um deles sempre enfrenta a parte do céu onde a missão está. Três locais: Goldstone no deserto da Califórnia, Madrid na Espanha e Canberra na Austrália. Eles têm sido os ouvidos e a boca do sistema solar desde então."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.4.md",
+  "en": "The crown of each complex is its 70-metre dish — a structure about the size and weight of a naval destroyer balanced on a bearing that lets it track a point in the sky to within a fraction of a degree, hour after hour, as the Earth turns beneath it. The three 70-metre antennas (DSS-14 at Goldstone, DSS-43 at Canberra, DSS-63 at Madrid) were built as 64-metre dishes and then, between 1982 and 1988, expanded specifically to support Voyager 2's approaching encounter with Neptune — a civilisational upgrade to a global network, for one flyby, of one planet. Canberra's DSS-43 carries a distinction the other two don't: because Voyager 2's trajectory took it south of the solar plane, it is the only antenna on Earth with a line of sight to it. One dish, on one continent, is the reason [Voyager 2](/missions?id=voyager-2) is still in the conversation.",
+  "cur": "A coroa de cada complexo é sua antena de 70 metros — uma estrutura aproximadamente do tamanho e peso de um destruidor naval equilibrada em um rolamento que lhe permite rastrear um ponto no céu com uma precisão de uma fração de grau, hora após hora, enquanto a Terra gira sob ela. As três antenas de 70 metros (DSS-14 em Goldstone, DSS-43 em Canberra, DSS-63 em Madrid) foram construídas como pratos de 64 metros e depois, entre 1982 e 1988, expandidas especificamente para apoiar o encontro próximo de Voyager 2 com Netuno — uma atualização civilizacional de uma rede global, para um único sobrevoo, de um único planeta. A DSS-43 de Canberra carrega uma distinção que as outras duas não têm: porque a trajetória de Voyager 2 a levou para o sul do plano solar, é a única antena na Terra com linha de visão para ela. Um prato, em um continente, é a razão pela qual [Voyager 2](/missions?id=voyager-2) ainda está na conversa."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.5.md",
+  "en": "Arrayed around the 70-metre giants at each site are a family of 34-metre dishes — some with high-efficiency beam waveguide feeds, some optimised for different frequency bands, all contributing to a schedule that is, even in good years, relentlessly oversubscribed. Demand on the DSN has been running roughly 40 percent above capacity; by the early 2030s NASA projects it will grow by a factor of ten, driven by Artemis lunar missions, a surge in science probes, and commercial operators who want their own slice. The upgrade program meant to address it is running nearly five years late and has roughly doubled in cost. The network that carries every word we speak to the outer planets is doing so on a timetable that leaves almost no margin. Missions negotiate for antenna time the way airlines negotiate for takeoff slots, and the answer is sometimes no.",
+  "cur": "Dispostos ao redor dos gigantes de 70 metros em cada local há uma família de antenas de 34 metros — algumas com alimentações de guia de ondas de feixe de alta eficiência, algumas otimizadas para diferentes faixas de frequência, todas contribuindo para uma programação que é, até mesmo em anos bons, implacavelmente sobrecarregada. A demanda na DSN tem estado funcionando aproximadamente 40 por cento acima da capacidade; no início dos anos 2030, a NASA projeta que ela crescerá por um fator de dez, impulsionada pelas missões lunares Artemis, um aumento em sondas científicas e operadores comerciais que querem sua própria fatia. O programa de atualização destinado a abordá-lo está com quase cinco anos de atraso e teve aproximadamente o dobro de custo. A rede que carrega cada palavra que falamos aos planetas externos está fazendo isso em um cronograma que deixa quase nenhuma margem. As missões negociam o tempo de antena da forma como as companhias aéreas negociam slots de decolagem, e a resposta às vezes é não."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.6.text",
+  "en": "22 watts across the void",
+  "cur": "22 watts através do vazio"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.7.md",
+  "en": "Stand next to a DSN dish while it is locked onto [Voyager 1](/missions?id=voyager-1) and try to hold in your head what it is listening for. The spacecraft's transmitter puts out 22.4 watts — roughly the output of a refrigerator's interior bulb, or a dimmer-switch lamp set to half. That signal leaves a 3.7-metre dish on Voyager 1 and begins to spread. Radio waves obey an inverse-square law: double the distance, quarter the power. By the time the beam crosses the distance to Earth — currently about 23 and a half light-hours, a number that grows by roughly 520 million kilometres per year — the power arriving at a 70-metre dish is less than a femtowatt. A femtowatt is 10⁻¹⁵ watts. The number often quoted for Voyager is closer to 10⁻²¹ watts — a single zeptowatt, unimaginably faint. The dish has to fish that out of a sky full of everything else.",
+  "cur": "Fique ao lado de um prato da DSN enquanto ele está travado em [Voyager 1](/missions?id=voyager-1) e tente manter em sua mente o que ele está ouvindo. O transmissor da nave espacial emite 22,4 watts — aproximadamente a saída da lâmpada interior de uma geladeira, ou uma lâmpada com dimmer ajustada para metade. Esse sinal deixa um prato de 3,7 metros em Voyager 1 e começa a se dispersar. Ondas de rádio obedecem a uma lei do inverso do quadrado: dobre a distância, reduza a potência a um quarto. No momento em que o feixe percorre a distância até a Terra — atualmente cerca de 23 e meia horas-luz, um número que cresce aproximadamente 520 milhões de quilômetros por ano — a potência que chega a um prato de 70 metros é menor que um femtowatt. Um femtowatt é 10⁻¹⁵ watts. O número frequentemente citado para Voyager é mais próximo de 10⁻²¹ watts — um único zeptowatt, indescritivelmente fraco. O prato tem que pescar isso em um céu cheio de tudo mais."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.8.md",
+  "en": "That it can do this at all is a feat of engineering in three parts. First, the geometry: a 70-metre dish has roughly 3,600 square metres of collecting area, and every square metre counts. Second, the cold: the receivers sit cooled to within a few degrees of absolute zero, because thermal noise from a room-temperature amplifier would drown the signal entirely — the receiver has to be colder than interstellar space to hear something weaker than starlight. Third, the coding. Voyager's engineers, like every subsequent mission team, knew that individual bits would be corrupted by noise over distances like these, so they encoded the data with far more mathematical redundancy than the information itself requires. A single real bit of science travels inside a protective shell of check bits; the ground-side computer strips the shell away and recovers the original, even from a stream where a significant fraction of the received symbols are wrong. [New Horizons](/missions?id=new-horizons) used the same principle to send back Pluto's face: each image arrived corrupted and was reconstructed, the way a librarian might reassemble a burned manuscript from a set of redundant copies.",
+  "cur": "Que ele possa fazer isso é uma façanha de engenharia em três partes. Primeiro, a geometria: um prato de 70 metros tem aproximadamente 3.600 metros quadrados de área coletora, e cada metro quadrado conta. Segundo, o frio: os receptores ficam resfriados a poucos graus do zero absoluto, porque o ruído térmico de um amplificador à temperatura ambiente afogaria o sinal completamente — o receptor tem que ser mais frio que o espaço interestelar para ouvir algo mais fraco que a luz das estrelas. Terceiro, a codificação. Os engenheiros de Voyager, como todas as equipes de missão subsequentes, sabiam que bits individuais seriam corrompidos pelo ruído a distâncias como essas, então codificaram os dados com uma redundância matemática muito maior do que a própria informação requer. Um único bit real de ciência viaja dentro de uma casca protetora de bits de verificação; o computador do solo remove a casca e recupera o original, mesmo de um fluxo onde uma fração significativa dos símbolos recebidos está errada. [New Horizons](/missions?id=new-horizons) usou o mesmo princípio para enviar de volta o rosto de Plutão: cada imagem chegava corrompida e era reconstruída, da forma como um bibliotecário poderia remontar um manuscrito queimado a partir de um conjunto de cópias redundantes."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.9.md",
+  "en": "The practical ceiling on data rates is real. Voyager 1 peaked at 115,200 bits per second during its planetary encounters, when the distances were shorter and the dishes could be pointed tighter. At its current remove it manages a few tens of bits per second for engineering telemetry, a trickle that would have been embarrassingly slow on a 1970s modem. Everything we know about what lies beyond the heliosphere — the plasma density, the magnetic field, the particle flux in interstellar space, the data that no other instrument in existence could ever gather — arrives at the DSN at a rate slower than a fax machine. We are grateful for every bit.",
+  "cur": "O teto prático das taxas de dados é real. Voyager 1 atingiu o pico em 115.200 bits por segundo durante seus encontros planetários, quando as distâncias eram menores e os pratos podiam ser apontados com maior precisão. Em seu afastamento atual, consegue alguns tens de bits por segundo para telemetria de engenharia, um fio de água que teria sido envergonhosamente lento em um modem dos anos 1970. Tudo o que sabemos sobre o que existe além da heliosfera — a densidade do plasma, o campo magnético, o fluxo de partículas no espaço interestelar, os dados que nenhum outro instrumento em existência jamais poderia coletar — chega à DSN a uma taxa mais lenta que uma máquina de fax. Somos gratos por cada bit."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.10.caption",
+  "en": "A spacecraft answers on roughly twenty watts — less than the bulb in a refrigerator. Spread across a billion kilometres by nothing but the inverse-square law, what reaches the dish is around a millionth of a billionth of a watt. The genius of deep-space comms is not the shout; it is the listening.",
+  "cur": "Uma nave espacial responde em aproximadamente vinte watts — menos que a lâmpada em uma geladeira. Dispersado por um bilhão de quilômetros por nada além da lei do inverso do quadrado, o que chega ao prato é cerca de um milionésimo de um bilionésimo de um watt. O gênio das comunicações de espaço profundo não é o grito; é a escuta."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.11.text",
+  "en": "The patience required",
+  "cur": "A paciência necessária"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.12.md",
+  "en": "The lag compounds everything. At [Mars](/missions?id=perseverance), a signal takes between 3 and 22 minutes one way, depending on where the two planets are in their orbits. That means a round-trip question and answer — \"are you receiving?\" … \"yes\" — can take anywhere from six minutes to nearly three-quarters of an hour. Rover drivers at JPL developed an entire philosophy around this: you can't joystick [Perseverance](/missions?id=perseverance) the way you'd drive a car. You plan the day's work in the Martian morning, uplink a command sequence, and watch the outcome arrive hours later. The rover moves autonomously between waypoints; you correct its course tomorrow. The planet is close enough that a human can still be meaningfully in the loop, if the human is willing to think in Martian sol-lengths rather than real-time.",
+  "cur": "O atraso complica tudo. Em [Marte](/missions?id=perseverance), um sinal leva entre 3 e 22 minutos em um sentido, dependendo de onde os dois planetas estão em suas órbitas. Isso significa que uma pergunta de ida e volta — \"você está recebendo?\" … \"sim\" — pode levar de seis minutos a quase três quartos de hora. Os pilotos de rover no JPL desenvolveram toda uma filosofia em torno disso: você não pode controlar [Perseverance](/missions?id=perseverance) da forma como dirigiria um carro. Você planeja o trabalho do dia na manhã marciana, carrega uma sequência de comandos e observa o resultado chegar horas depois. O rover se move autonomamente entre pontos de passagem; você corrige seu curso amanhã. O planeta é próximo o suficiente para que um humano ainda possa estar significativamente no circuito, se o humano estiver disposto a pensar em comprimentos de sol marcianos em vez de tempo real."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.13.md",
+  "en": "At [Cassini](/missions?id=cassini), orbiting Saturn, the one-way lag ran between 68 and 85 minutes. At [New Horizons](/missions?id=new-horizons) during the Pluto flyby it was four and a half hours. Every command sent to New Horizons on its closest approach day had been uplinked — and confirmed received — well in advance, because there was no time to react. The flyby sequence ran entirely on stored instructions while the ground held its breath. The spacecraft would either do what it was told or not, and no one on Earth would know for hours. It did.",
+  "cur": "Em [Cassini](/missions?id=cassini), orbitando Saturno, o atraso de mão única variava entre 68 e 85 minutos. Em [New Horizons](/missions?id=new-horizons) durante o sobrevoo de Plutão era quatro horas e meia. Todo comando enviado para New Horizons no seu dia de máxima aproximação foi transmitido — e confirmado como recebido — bem com antecedência, porque não havia tempo de reagir. A sequência de sobrevolo funcionava inteiramente com instruções armazenadas enquanto o solo retinha a respiração. A nave espacial faria o que lhe foi dito ou não, e ninguém na Terra saberia por horas. Ele fez."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.14.md",
+  "en": "Now consider [Voyager 1](/missions?id=voyager-1), which in July 2026 is approximately 23 hours and 32 minutes of light-travel time from Earth — and which, on a specific day in November 2026, will cross a threshold no human-made object has ever crossed: one full light-day from the planet that built it. Send a command Monday morning at eight; the acknowledgement arrives Wednesday morning. A round trip between Earth and Voyager 1 takes nearly two days. In that span, whatever the spacecraft does, it does alone. It has been alone, in this sense, since the day it launched. The ground is not flying it anymore. The ground is listening to it.",
+  "cur": "Agora considere [Voyager 1](/missions?id=voyager-1), que em julho de 2026 está aproximadamente 23 horas e 32 minutos de tempo de viagem da luz da Terra — e que, em um dia específico em novembro de 2026, cruzará um limite que nenhum objeto feito pelo homem jamais cruzou: um dia-luz completo do planeta que o construiu. Envie um comando segunda-feira de manhã às oito; o reconhecimento chega quarta-feira de manhã. Uma viagem de ida e volta entre a Terra e Voyager 1 leva quase dois dias. Nesse período, seja o que for que a nave espacial faça, ela faz sozinha. Ela tem estado sozinha, nesse sentido, desde o dia em que foi lançada. O solo não está mais pilotando-a. O solo está ouvindo-a."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.15.caption",
+  "en": "The whole enterprise runs on delay. A word to the Moon is answered in under three seconds; to Mars, in minutes to the better part of an hour; to Voyager, in nearly two days. You cannot fly these craft in real time — you write ahead, and wait for the echo.",
+  "cur": "Todo o empreendimento funciona em atraso. Uma palavra para a Lua é respondida em menos de três segundos; para Marte, em minutos até a melhor parte de uma hora; para Voyager, em quase dois dias. Você não pode pilotar essas naves em tempo real — você escreve com antecedência e espera pelo eco."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.16.text",
+  "en": "What patience costs",
+  "cur": "O que a paciência custa"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.17.md",
+  "en": "That patience has shaped every mission in ways the public almost never sees. Trajectory corrections for outer-planet probes are planned weeks in advance and uplinked as timed sequences; if the spacecraft's position turns out to be slightly different from the prediction — which it always is, by some small amount — the navigators have to wait for the next DSN track, reconstruct the actual position, plan a correcting burn, and uplink it, all before the window closes. For a spacecraft approaching its target at several kilometres per second, that timing can be the difference between threading the gap and missing. The navigation essay described the [Deep Space Network](/science/mission-phases/dsn) as the instrument that lets the ground fly the spacecraft. What it didn't dwell on is that the ground can only respond to what the spacecraft reported minutes or hours ago, and can only correct what it predicted minutes or hours from now. Navigation is perfect in principle, patient in practice, and always slightly behind.",
+  "cur": "Essa paciência moldou cada missão de maneiras que o público quase nunca vê. Correções de trajetória para sondas de planetas externos são planejadas semanas com antecedência e carregadas como sequências cronometradas; se a posição da nave espacial se revelar um pouco diferente da previsão — o que sempre é, por uma pequena quantidade — os navegadores têm que esperar pelo próximo rastreamento da DSN, reconstruir a posição real, planejar uma queimadura de correção e carregá-la, tudo antes que a janela feche. Para uma nave espacial se aproximando de seu alvo em vários quilômetros por segundo, esse tempo pode ser a diferença entre atravessar a lacuna e errar. O ensaio sobre navegação descreveu a [Deep Space Network](/science/mission-phases/dsn) como o instrumento que permite ao solo pilotar a nave espacial. O que ele não explorou é que o solo só pode responder ao que a nave espacial relatou minutos ou horas atrás, e só pode corrigir o que previu minutos ou horas à frente. A navegação é perfeita em princípio, paciente na prática e sempre um pouco atrás."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.18.md",
+  "en": "There is a related cost that rarely makes mission descriptions: the sheer cognitive weight of maintaining these conversations over years. [Cassini](/missions?id=cassini) operated at Saturn for thirteen years. Teams at JPL developed what amounted to a working relationship with a machine they could not see, could not touch, and could never respond to in less than an hour. Procedures existed for every contingency — a failed reaction wheel, a software fault, an unexpected safe-mode entry — and those procedures had to be rehearsed on the ground before they could be uplinked, because there was no room to improvise at the speed of a crisis when every reply took longer than a lunch break. The people who ran Cassini built a kind of institutional memory for a spacecraft: knowing its habits, its quirks, its patterns of health, better than some operators know their own machinery. They had to, because the spacecraft couldn't ask for help.",
+  "cur": "Há um custo relacionado que raramente aparece nas descrições de missões: o simples peso cognitivo de manter essas conversas ao longo dos anos. [Cassini](/missions?id=cassini) operou em Saturno por treze anos. As equipes no JPL desenvolveram o que se assemelhava a um relacionamento de trabalho com uma máquina que não podiam ver, não podiam tocar e nunca poderiam responder em menos de uma hora. Procedimentos existiam para todas as contingências — uma roda de reação falhada, uma falha de software, uma entrada inesperada de modo seguro — e esses procedimentos tinham que ser ensaiados no solo antes de serem carregados, porque não havia espaço para improvisar na velocidade de uma crise quando cada resposta levava mais tempo que um intervalo para almoço. As pessoas que executaram Cassini construíram uma espécie de memória institucional para uma nave espacial: conhecendo seus hábitos, suas peculiaridades, seus padrões de saúde, melhor do que alguns operadores conhecem sua própria maquinaria. Eles tinham que, porque a nave espacial não podia pedir ajuda."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.19.caption",
+  "en": "Voyager 1, more than twenty-four billion kilometres out, still answers — but a question sent today waits some forty-five hours for its reply. You do not converse with it so much as leave a letter and come back for the answer.",
+  "cur": "Voyager 1, a mais de vinte e quatro bilhões de quilômetros de distância, ainda responde — mas uma pergunta enviada hoje espera cerca de quarenta e cinco horas por sua resposta. Você não conversa com ela tanto quanto deixa uma carta e volta para a resposta."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.21.md",
+  "en": "Radio has carried every conversation we've had with the solar system for sixty years. It is mature, well-understood, and operates at the edge of physics — the DSN dishes are close to the thermal noise floor; the coding schemes approach the Shannon limit for the signal-to-noise ratios involved. There isn't a factor of ten left to find in radio. But there is in optics.",
+  "cur": "O rádio carregou todas as conversas que temos tido com o sistema solar por sessenta anos. É maduro, bem compreendido e opera na beira da física — os pratos da DSN estão próximos do piso de ruído térmico; os esquemas de codificação se aproximam do limite de Shannon para as relações sinal-ruído envolvidas. Não há um fator de dez para encontrar em rádio. Mas há em óptica."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.22.md",
+  "en": "In October 2023, a small laser terminal bolted to the side of the Psyche spacecraft launched toward the asteroid belt carrying an experiment called DSOC — Deep Space Optical Communications. The concept is straightforward: an infrared laser, tightly focused, can concentrate far more power into a far narrower beam than a radio transmitter of the same mass and electrical draw. The beam spreads less with distance, which means more of it arrives. By April 2024, DSOC had transmitted engineering data from 140 million miles at 25 megabits per second — faster than most household broadband connections, from a distance greater than the Earth-Sun separation. By December 2024 it had set a distance record: downlinking Psyche mission data from 307 million miles, 494 million kilometres out. The project demonstrated 10 to 100 times the throughput of radio at equivalent power.",
+  "cur": "Em outubro de 2023, um pequeno terminal de laser aparafusado ao lado da nave espacial Psyche lançado em direção ao cinturão de asteroides carregando um experimento chamado DSOC — Deep Space Optical Communications. O conceito é direto: um laser infravermelhos, fortemente focado, pode concentrar muito mais potência em um feixe muito mais estreito do que um transmissor de rádio da mesma massa e consumo elétrico. O feixe se dispersa menos com a distância, o que significa que mais dele chega. Por abril de 2024, o DSOC tinha transmitido dados de engenharia de 140 milhões de milhas a 25 megabits por segundo — mais rápido que a maioria das conexões de banda larga domésticas, a uma distância maior que a separação Terra-Sol. Por dezembro de 2024, havia estabelecido um recorde de distância: carregando dados da missão Psyche de 307 milhões de milhas, 494 milhões de quilômetros de distância. O projeto demonstrou 10 a 100 vezes a taxa de transferência de rádio com potência equivalente."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.23.md",
+  "en": "This is not a small step. The bandwidth bottleneck is one of the binding constraints on what deep-space science can do: the more data you can return per watt, the more instruments you can fly, the higher the camera resolution, the denser the scientific haul from each mission. DSOC's laser link, scaled up and deployed on future spacecraft, would transform the economics of talking to the outer planets. The catch — there is always a catch — is that optical links require exceptional pointing precision (the beam is narrow enough that a pointing error of a fraction of a milliradian spills it off target) and are blocked by cloud cover at the ground station. The DSN's radio dishes work through weather. Optical ground terminals don't. The architecture for a reliable optical deep-space network will need multiple geographically spread receive sites, clear-sky redundancy, and decades of operational experience to mature. It will come. The question is whether it comes before the radio architecture buckles under the weight of demand.",
+  "cur": "Isso não é um pequeno passo. O gargalo de largura de banda é uma das restrições vinculantes sobre o que a ciência de espaço profundo pode fazer: quanto mais dados você pode retornar por watt, mais instrumentos você pode voar, quanto maior a resolução da câmera, quanto mais denso o retorno científico de cada missão. O link de laser do DSOC, dimensionado e implantado em naves espaciais futuras, transformaria a economia de conversa com os planetas externos. A captura — sempre há uma captura — é que os links ópticos requerem uma precisão de apontamento excepcional (o feixe é estreito o suficiente para que um erro de apontamento de uma fração de milirradiano o derrube do alvo) e são bloqueados pela cobertura de nuvens na estação terrestre. Os pratos de rádio da DSN funcionam em qualquer tempo. Os terminais ópticos não. A arquitetura para uma rede óptica de espaço profundo confiável precisará de vários locais de recepção geograficamente espalhados, redundância de céu claro e décadas de experiência operacional para amadurecer. Isso virá. A questão é se vem antes que a arquitetura de rádio falhar sob o peso da demanda."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.24.caption",
+  "en": "The next turn is toward light. A laser’s pencil-thin beam carries ten to a hundred times the data of a radio’s wide cone: Psyche’s demonstration streamed high-definition video from thirty million kilometres away, on a beam you could have blocked with a coin.",
+  "cur": "O próximo volta é para a luz. O feixe fino como um lápis de um laser carrega dez a cem vezes mais dados que o cone amplo de um rádio: a demonstração de Psyche transmitiu vídeo em alta definição de trinta milhões de quilômetros de distância, em um feixe que você teria podido bloquear com uma moeda."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.26.md",
+  "en": "Here is what the whole apparatus actually amounts to. Three patches of desert and scrubland on three continents. Roughly forty antenna mounts, of which the big work falls on three 70-metre bowls that have been pointing at things no one can see with the naked eye since the first one locked onto a Mariner in 1963. A budget that, in real terms, has been shrinking. An upgrade programme running years behind. A schedule so overbooked that some missions go without their allocated tracks, and the people who run them learn to live on less contact than they planned.",
+  "cur": "Eis o que todo o aparato realmente se resume. Três faixas de deserto e matagal em três continentes. Aproximadamente quarenta suportes de antena, dos quais o trabalho pesado recai sobre três pratos de 70 metros que estão apontando para coisas que ninguém consegue ver a olho nu desde o primeiro que travou em um Mariner em 1963. Um orçamento que, em termos reais, tem sido reduzido. Um programa de atualização com anos de atraso. Um cronograma tão cheio de reservas que algumas missões ficam sem suas faixas alocadas, e as pessoas que as executam aprendem a viver com menos contato do que planejavam."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.27.md",
+  "en": "And through this: everything. The Voyager images of Neptune that no spacecraft has repeated in the thirty-seven years since. The Cassini portraits of Saturn — the hexagonal storm at the pole, the geysers of Enceladus, the braided F ring — delivered one compressed frame at a time across more than an hour of silence. The [Perseverance](/missions?id=perseverance) samples staged for eventual return, their GPS coordinates known to the centimetre because every transmission of the rover's position came back through a dish in California or Spain or Australia, was checked against the orbital mechanics, and became a number the whole atlas stands on. Everything in this atlas that came from beyond the Moon arrived here through a 22-watt whisper and a room full of people patient enough to wait for the reply.",
+  "cur": "E através disso: tudo. As imagens de Netuno de Voyager que nenhuma nave espacial repetiu nos trinta e sete anos desde então. Os retratos de Cassini de Saturno — a tempestade hexagonal no pólo, os gêiseres de Encélado, o anel F trançado — entregues um quadro comprimido por vez através de mais de uma hora de silêncio. As amostras de [Perseverance](/missions?id=perseverance) encenadas para eventual devolução, suas coordenadas GPS conhecidas ao centímetro porque cada transmissão da posição do rover voltou através de um prato na Califórnia ou Espanha ou Austrália, foi verificada contra a mecânica orbital e se tornou um número em que todo o atlas se sustenta. Tudo neste atlas que veio de além da Lua chegou aqui através de um sussurro de 22 watts e uma sala cheia de pessoas pacientes o suficiente para esperar a resposta."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.28.md",
+  "en": "The lag never goes away. Light travels at the fastest speed physics allows, and it is not fast enough. As we push further — human crews to Mars whose round-trip communication delay will be measured in tens of minutes on a good day; robotic probes to the ice giants; whatever comes next in the generations after those — the distance will keep growing and the patience required will keep compounding. What changes is only who bears it: the ground team waiting for a reply, or the spacecraft itself, making decisions faster than any signal can carry permission. The DSN isn't becoming obsolete. It is becoming one layer of a deeper architecture, the radio backbone of a solar system where more and more of the thinking happens out there, in the dark, on craft that have learned — because they had to — to manage without asking. We built the network so we could stay in the conversation. We're slowly discovering that the conversation, at these distances, looks less like a dialogue and more like letters sent between people who have both already moved on by the time any answer arrives.",
+  "cur": "O atraso nunca desaparece. A luz viaja à velocidade mais rápida que a física permite, e não é rápido o suficiente. Conforme avançamos — tripulações humanas para Marte cujo atraso de comunicação de ida e volta será medido em dezenas de minutos em um bom dia; sondas robóticas para os gigantes de gelo; seja o que for que venha depois nas gerações após essas — a distância continuará crescendo e a paciência necessária continuará se agravando. O que muda é apenas quem a suporta: a equipe do solo esperando uma resposta, ou a própria nave espacial, tomando decisões mais rápido do que qualquer sinal pode carregar permissão. A DSN não está ficando obsoleta. Está se tornando uma camada de uma arquitetura mais profunda, a espinha dorsal de rádio de um sistema solar onde cada vez mais do pensamento acontece lá fora, na escuridão, em naves que aprenderam — porque tiveram que — a se gerir sem pedir. Construímos a rede para podermos permanecer na conversa. Estamos descobrindo lentamente que a conversa, nessas distâncias, se parece menos com um diálogo e mais com cartas enviadas entre pessoas que já se moveram quando qualquer resposta chega."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.29.caption",
+  "en": "Pioneer 10 was the first craft tracked into the outer dark. Its final faint signal reached the Deep Space Network in 2003, from beyond the orbit of Pluto — a whisper that at last fell below hearing, still outbound.",
+  "cur": "Pioneer 10 foi a primeira nave rastreada para a escuridão externa. Seu sinal final fraco alcançou a Deep Space Network em 2003, além da órbita de Plutão — um sussurro que por fim caiu abaixo da audição, ainda se afastando."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "title",
+  "en": "The Grammar of Delta-V",
+  "cur": "A Gramática do Delta-V"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "dek",
+  "en": "Every spacecraft that has ever left Earth carried one thing above all else: a budget. Not money — velocity. The rocket equation meted it out in kilometres per second, gravity was the only free refill, and every engineer who ever planned a mission has been living inside that constraint since 1903.",
+  "cur": "Toda espaçonave que já saiu da Terra carregava uma coisa acima de tudo: um orçamento. Não dinheiro — velocidade. A equação do foguete distribuía em quilômetros por segundo, a gravidade era o único reabastecimento gratuito, e todo engenheiro que planejou uma missão vive dentro dessa restrição desde 1903."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.0.md",
+  "en": "Imagine you are handed a chequebook with a fixed balance. You can spend it however you like — but every purchase is final, there are no deposits, and when the balance reaches zero you are done. That is the situation every spacecraft faces from the moment it clears the launch tower. The currency is not fuel. It is not thrust. It is **velocity** — more precisely, the *change* in velocity, measured in kilometres per second, that the spacecraft can accumulate over its entire mission. Engineers call it delta-v, and the account opens, once, at launch.",
+  "cur": "Imagine que lhe entregam um talão de cheques com um saldo fixo. Você pode gastá-lo como quiser — mas cada compra é final, não há depósitos, e quando o saldo chega a zero você termina. Essa é a situação que toda espaçonave enfrenta no momento em que ultrapassa a torre de lançamento. A moeda não é combustível. Não é empuxo. É **velocidade** — mais precisamente, a *mudança* na velocidade, medida em quilômetros por segundo, que a espaçonave pode acumular ao longo de toda sua missão. Os engenheiros a chamam de delta-v, e a conta se abre, uma única vez, no lançamento."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.1.md",
+  "en": "The rule that wrote this constraint was published in 1903, by a self-taught Russian schoolteacher named Konstantin Tsiolkovsky, working alone in a small provincial town. His [rocket equation](/science/propulsion/tsiolkovsky) has not been repealed since: **∆v = Isp · g₀ · ln(m₀/mf)**. Read it in English: the velocity you can buy equals the efficiency of your engine — measured in seconds of [specific impulse](/science/propulsion/specific-impulse) and multiplied by a gravitational constant of 9.807 m/s² — times the natural logarithm of how much heavier the rocket was at the start than at the end. That logarithm is the villain. Because *ln* is the slowest-growing function in mathematics, it means that every extra kilometre per second you want to add costs you an exponentially larger bite of propellant mass — and propellant has to be lifted too, which means it needs its own propellant, which has to be lifted too, and so on down a regress that has no floor.",
+  "cur": "A regra que escreveu essa restrição foi publicada em 1903, por um professor de escola autodidata russo chamado Konstantin Tsiolkovsky, trabalhando sozinho em uma pequena cidade provinciana. Sua [equação do foguete](/science/propulsion/tsiolkovsky) não foi revogada desde então: **∆v = Isp · g₀ · ln(m₀/mf)**. Lendo em português: a velocidade que você consegue é igual à eficiência do seu motor — medida em segundos de [impulso específico](/science/propulsion/specific-impulse) e multiplicada por uma constante gravitacional de 9,807 m/s² — vezes o logaritmo natural de quanto o foguete era mais pesado no início do que no fim. Esse logaritmo é o vilão. Porque *ln* é a função que cresce mais lentamente em matemática, isso significa que cada quilômetro por segundo adicional que você quer adicionar custa uma quantidade exponencialmente maior de massa de propelente — e o propelente tem que ser levantado também, o que significa que precisa de seu próprio propelente, que tem que ser levantado também, e assim por diante em uma regressão que não tem fundo."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.2.md",
+  "en": "Astronaut Don Pettit called this *the tyranny of the rocket equation* in a 2012 essay written aboard the ISS, and the word tyranny is exactly right. The Saturn V that carried Apollo astronauts to the Moon stood thirty stories tall on the pad and was **85% propellant by mass**; its payload — everything that actually went anywhere — never exceeded about 4% of that wet mass. The rest was a controlled explosion in slow motion, consumed step by step just to get the remainder a little faster, a little higher. Everything else in spaceflight — the missions, the trajectories, the waiting for launch windows, the obsessive trimming of instrument mass — flows from that single, merciless denominator.",
+  "cur": "O astronauta Don Pettit chamou isso de *a tirania da equação do foguete* em um ensaio de 2012 escrito a bordo da EEI, e a palavra tirania é exatamente certa. O Saturno V que levou astronautas da Apollo à Lua tinha trinta andares de altura na plataforma e era **85% propelente em massa**; sua carga útil — tudo que realmente foi para algum lugar — nunca ultrapassou cerca de 4% dessa massa úmida. O resto era uma explosão controlada em câmera lenta, consumida passo a passo apenas para deixar o restante um pouco mais rápido, um pouco mais alto. Tudo mais em voo espacial — as missões, as trajetórias, a espera por janelas de lançamento, o ajuste obsessivo da massa de instrumentos — flui desse único e implacável denominador."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.3.caption",
+  "en": "The rocket equation’s exponential wall: at chemical efficiency, each extra kilometre per second demands a wildly larger propellant fraction — and the closer you push toward a real destination, the steeper the price climbs.",
+  "cur": "A parede exponencial da equação do foguete: com eficiência química, cada quilômetro por segundo adicional exige uma fração de propelente drasticamente maior — e quanto mais você se aproxima de um destino real, mais íngreme o preço sobe."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.5.md",
+  "en": "A [delta-v budget](/science/propulsion/dv-budget) is what mission planners call the spreadsheet that accounts for every velocity change a mission must perform, from Earth parking orbit to final destination. It is the most consequential document in mission design: it decides whether the mission is possible at all. Getting a spacecraft from a low Earth orbit to, say, a Hohmann transfer toward Mars and into Martian orbit costs roughly **5.6 km/s** total — a figure that sounds modest until you remember that every decimal place is paid for in tonnes of propellant, and the rocket equation means the exchange rate gets worse the more you spend.",
+  "cur": "Um [orçamento de delta-v](/science/propulsion/dv-budget) é o que os planejadores de missão chamam de planilha que contabiliza cada mudança de velocidade que uma missão deve executar, de órbita terrestre baixa até o destino final. É o documento mais consequente no design de missão: decide se a missão é sequer possível. Levar uma espaçonave de uma órbita terrestre baixa para, digamos, uma transferência de Hohmann em direção a Marte e para a órbita marciana custa aproximadamente **5,6 km/s** no total — uma figura que parece modesta até você lembrar que cada casa decimal é paga em toneladas de propelente, e a equação do foguete significa que a taxa de câmbio fica pior quanto mais você gasta."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.6.md",
+  "en": "A [Hohmann transfer](/science/transfers/hohmann-transfer) is the minimum-energy arc between two orbits — the path that costs the least delta-v to get from A to B. It is not straight; it is an ellipse that brushes the inner orbit at one end and the outer at the other, coasting the entire way on nothing but inertia. The trick is that you fire the engine twice: once to leave the departure orbit, once to match the arrival orbit. Between those two burns — typically 259 days in the Earth-to-Mars case — you spend nothing. The solar system's gravity does the carrying for free, as long as you had the sense to aim the right way at the start.",
+  "cur": "Uma [transferência de Hohmann](/science/transfers/hohmann-transfer) é o arco de mínima energia entre duas órbitas — o caminho que custa menos delta-v para ir de A para B. Não é reto; é uma elipse que toca a órbita interna em uma ponta e a externa na outra, flutuando o caminho inteiro sem nada além de inércia. O truque é que você dispara o motor duas vezes: uma vez para sair da órbita de partida, uma vez para corresponder à órbita de chegada. Entre esses dois disparos — tipicamente 259 dias no caso Terra-Marte — você não gasta nada. A gravidade do sistema solar faz o transporte de graça, desde que você tenha tido o bom senso de apontar na direção correta no começo."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.7.caption",
+  "en": "The cheapest path between two orbits is never the straight line — a Hohmann transfer coasts along an ellipse that just grazes each orbit, firing the engine only twice: once to leave, once to arrive.",
+  "cur": "O caminho mais barato entre duas órbitas nunca é a linha reta — uma transferência de Hohmann flutua ao longo de uma elipse que apenas toca cada órbita, disparando o motor apenas duas vezes: uma vez para sair, uma vez para chegar."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.8.md",
+  "en": "This is what *navigation* hands off to delta-v planning. The [navigation essay](/essays/navigation) opened with the problem of aiming at a moving planet — the Lambert problem, the long arc, the correction burns that close the gap between plan and reality. But choosing that arc in the first place was a budget decision. The Hohmann minimum-energy path was chosen because it spends the least; a faster trajectory exists, but it costs more delta-v than most missions can afford, and delta-v is the one thing you cannot borrow.",
+  "cur": "Isso é o que *navegação* passa para o planejamento de delta-v. O [ensaio de navegação](/essays/navigation) começou com o problema de apontar para um planeta em movimento — o problema de Lambert, o arco longo, os disparos de correção que fecham a lacuna entre plano e realidade. Mas escolher aquele arco em primeiro lugar era uma decisão de orçamento. O caminho de mínima energia de Hohmann foi escolhido porque gasta menos; uma trajetória mais rápida existe, mas custa mais delta-v do que a maioria das missões pode gastar, e delta-v é a única coisa que você não pode pedir emprestado."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.9.text",
+  "en": "The one free refill",
+  "cur": "O único reabastecimento gratuito"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.10.md",
+  "en": "Given the equation's tyranny, any trick that adds delta-v for free is not merely useful — it is transformative. There is exactly one: **gravity**.",
+  "cur": "Dada a tirania da equação, qualquer truque que adicione delta-v de graça não é meramente útil — é transformador. Existe exatamente um: **gravidade**."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.11.md",
+  "en": "A spacecraft that swings close past a planet enters the planet's gravitational field fast, curves around it, and leaves faster than it arrived — because the planet is itself moving, and the craft has stolen a whisper of that motion. The [gravity assist](/science/transfers/gravity-assist) costs no propellant at all. The planet loses an unmeasurably tiny amount of its own orbital velocity; the spacecraft gains a great deal. For most interplanetary probes, this is not a bonus — it is the entire business model.",
+  "cur": "Uma espaçonave que passa perto de um planeta entra no campo gravitacional do planeta rápido, faz uma curva ao redor dele, e sai mais rápida do que chegou — porque o planeta está se movendo, e a nave roubou um sussurro daquele movimento. A [assistência gravitacional](/science/transfers/gravity-assist) não custa propelente algum. O planeta perde uma quantidade imensamente pequena de sua própria velocidade orbital; a espaçonave ganha muito. Para a maioria das sondas interplanetárias, isso não é um bônus — é todo o modelo de negócio."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.12.md",
+  "en": "In the mid-1960s, a JPL mathematician named Gary Flandro was doing summer calculations when he noticed something. The outer planets — Jupiter, Saturn, Uranus, Neptune — were drifting toward a once-in-175-years alignment. A probe launched in 1977 and aimed right could use Jupiter's gravity to reach Saturn, Saturn's to reach Uranus, Uranus's to reach Neptune: a four-planet bank shot, each flyby adding delta-v for free and redirecting the trajectory to the next target. The flight time to Neptune would fall from thirty years to twelve. That observation became the Grand Tour — and [Voyager 2](/missions?id=voyager-2) made it real, gaining roughly **10 km/s** from the Jupiter flyby alone, enough to reach the outer system in the time originally budgeted for a Saturn-only mission. Neptune, today, has been visited once. The reason is that the window closed in the 1980s and won't open again until the 2150s.",
+  "cur": "Em meados dos anos 1960, um matemático do JPL chamado Gary Flandro estava fazendo cálculos de verão quando notou algo. Os planetas externos — Júpiter, Saturno, Urano, Netuno — estavam se aproximando de um alinhamento uma vez a cada 175 anos. Uma sonda lançada em 1977 e apontada corretamente poderia usar a gravidade de Júpiter para alcançar Saturno, a de Saturno para alcançar Urano, a de Urano para alcançar Netuno: um tiro de quatro planetas, cada sobrevoo adicionando delta-v de graça e redirecionando a trajetória para o próximo alvo. O tempo de voo para Netuno cairia de trinta anos para doze. Aquela observação se tornou o Grand Tour — e a [Voyager 2](/missions?id=voyager-2) a tornou real, ganhando aproximadamente **10 km/s** apenas do sobrevoo de Júpiter, o suficiente para alcançar o sistema externo no tempo originalmente orçado para uma missão apenas a Saturno. Netuno, hoje, foi visitado uma vez. A razão é que a janela fechou nos anos 1980 e não abrirá novamente até os anos 2150."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.13.caption",
+  "en": "Voyager 2 took the free refill four times over — Jupiter to Saturn to Uranus to Neptune — banking each planet’s motion into the next, on a route that will not line up again for 175 years.",
+  "cur": "A Voyager 2 aproveitou o reabastecimento gratuito quatro vezes — Júpiter para Saturno para Urano para Netuno — depositando o movimento de cada planeta no próximo, em uma rota que não se alinhará novamente por 175 anos."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.14.md",
+  "en": "The same arithmetic is why [Cassini](/missions?id=cassini) looped through Venus — twice — and past Earth and past Jupiter before heading outward to Saturn: not the scenic route, but the cheap one. And why [Mangalyaan](/missions?id=mangalyaan), India's first interplanetary mission, reached Mars in 2014 on a budget of roughly US$74 million — a fraction of what comparable missions have cost — in part because its trajectory was designed to extract maximum value from every kilogram of its 852-kilogram propellant load, the largest single component of a spacecraft that weighed 1,340 kg on the pad. The delta-v budget was 1,350 m/s for the entire mission after escape. Every gram was accounted for.",
+  "cur": "A mesma aritmética é por que [Cassini](/missions?id=cassini) fez um loop através de Vênus — duas vezes — e passou pela Terra e por Júpiter antes de seguir para Saturno: não a rota cênica, mas a barata. E por que [Mangalyaan](/missions?id=mangalyaan), a primeira missão interplanetária da Índia, alcançou Marte em 2014 com um orçamento de aproximadamente US$ 74 milhões — uma fração do que missões comparáveis custaram — em parte porque sua trajetória foi projetada para extrair valor máximo de cada quilograma de seus 852 quilogramas de carga de propelente, o maior componente único de uma espaçonave que pesava 1.340 kg na plataforma. O orçamento de delta-v foi 1.350 m/s para a missão inteira após o escape. Cada grama foi contabilizada."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.15.caption",
+  "en": "Cassini reached Saturn on borrowed speed, swinging past Venus twice, Earth, and Jupiter along the way — a seven-year detour that cost less fuel than aiming straight at it ever could.",
+  "cur": "Cassini alcançou Saturno em velocidade emprestada, passando por Vênus duas vezes, Terra e Júpiter no caminho — um desvio de sete anos que custou menos combustível do que apontar direto para ela jamais poderia."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.16.text",
+  "en": "The Oberth dividend",
+  "cur": "O dividendo de Oberth"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.17.md",
+  "en": "Gravity offers a second trick, subtler than the first. It was described in 1929 by Hermann Oberth, and it turns on a fact about kinetic energy that is not obvious until you write it out: energy grows as the *square* of velocity. A burn that adds 1 km/s at 10 km/s adds far more kinetic energy than the same burn at 1 km/s — because the work done equals force times distance, and a rocket moving fast covers more distance during the burn.",
+  "cur": "A gravidade oferece um segundo truque, mais sutil que o primeiro. Foi descrito em 1929 por Hermann Oberth, e se baseia em um fato sobre energia cinética que não é óbvio até você escrevê-lo: a energia cresce como o *quadrado* da velocidade. Um disparo que adiciona 1 km/s a 10 km/s adiciona muito mais energia cinética do que o mesmo disparo a 1 km/s — porque o trabalho realizado é igual a força vezes distância, e um foguete movendo-se rápido cobre mais distância durante o disparo."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.18.md",
+  "en": "The consequence, called the [Oberth effect](/science/propulsion/oberth-effect), is that burns deep in a gravity well — at the lowest point of an orbit, *periapsis*, where a spacecraft is moving fastest — are drastically more efficient than burns performed at altitude. The same delta-v, spent at the right moment in the right place, delivers more final energy to the craft. Missions that can arrange to fire their engines at periapsis — arriving planets, close passes, deliberately engineered low-point maneuvers — get, in effect, a multiplier on whatever delta-v they spend. [New Horizons](/missions?id=new-horizons) used a Jupiter flyby not just for the gravity-assist velocity boost but timed its burn to coincide with closest approach, stacking the Oberth dividend on top of the assist. The combination shaved three years from its flight to Pluto.",
+  "cur": "A consequência, chamada de [efeito de Oberth](/science/propulsion/oberth-effect), é que disparos profundos em um poço gravitacional — no ponto mais baixo de uma órbita, *periapsis*, onde uma espaçonave está se movendo mais rápido — são drasticamente mais eficientes do que disparos executados em altitude. O mesmo delta-v, gasto no momento certo no lugar certo, entrega mais energia final à nave. Missões que conseguem disparar seus motores em periapsis — chegadas a planetas, passagens próximas, manobras de ponto baixo deliberadamente engenheiradas — obtêm, em efeito, um multiplicador em qualquer delta-v que gastem. [New Horizons](/missions?id=new-horizons) usou um sobrevoo de Júpiter não apenas para o impulso de velocidade de assistência gravitacional mas cronometrou seu disparo para coincidir com a aproximação mais próxima, empilhando o dividendo de Oberth em cima da assistência. A combinação economizou três anos de seu voo para Plutão."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.19.caption",
+  "en": "Burn low, gain more: deep in a gravity well a spacecraft is moving fastest, and the same engine burn there buys far more energy than it would out at the slow, distant top of the orbit.",
+  "cur": "Dispare baixo, ganhe mais: profundo em um poço gravitacional uma espaçonave está se movendo mais rápido, e o mesmo disparo do motor ali compra muito mais energia do que teria lá em cima no topo lento e distante da órbita."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.20.md",
+  "en": "These are not hacks or loopholes. They are the mathematics of moving through a gravitational landscape that, if you read it right, is not hostile to motion but is in fact riddled with chutes and ramps. The budget does not disappear — but the skilled reader of that landscape can stretch it, sometimes enormously.",
+  "cur": "Esses não são hacks ou brechas. Eles são a matemática de se mover através de uma paisagem gravitacional que, se você a lê corretamente, não é hostil ao movimento mas é de fato permeada de escorregas e rampas. O orçamento não desaparece — mas o leitor hábil dessa paisagem pode estendê-lo, às vezes enormemente."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.21.text",
+  "en": "What the equation erases",
+  "cur": "O que a equação apaga"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.22.md",
+  "en": "The delta-v budget is ruthlessly indifferent to almost everything that feels important about a mission — the science, the prestige, the geopolitics. It does not care who built the spacecraft or what flag is painted on it. It cares only about mass, exhaust velocity, and the logarithm.",
+  "cur": "O orçamento de delta-v é impiedosamente indiferente a quase tudo que parece importante sobre uma missão — a ciência, o prestígio, a geopolítica. Não importa quem construiu a espaçonave ou qual bandeira está pintada nela. Só importa massa, velocidade de exaustão, e o logaritmo."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.23.md",
+  "en": "This creates a discipline unlike any other in engineering. The camera added to a Mars rover, the extra redundancy in a computer, the additional science instrument a team lobbied years for — every one of them comes with a delta-v price. If the instrument is heavier than the margin allows, either something else is removed or the entire mission becomes infeasible. Mission planning is an exercise in continuous, painful arbitrage between what you want and what you can carry, and the equation is the judge of every dispute.",
+  "cur": "Isso cria uma disciplina única em qualquer outro ramo da engenharia. A câmera adicionada a um rover de Marte, a redundância extra em um computador, o instrumento científico adicional que uma equipe defendeu por anos — cada um tem um preço de delta-v. Se o instrumento é mais pesado do que a margem permite, algo mais é removido ou a missão inteira se torna inviável. O planejamento de missão é um exercício de arbitragem contínua e dolorosa entre o que você quer e o que você pode carregar, e a equação é o juiz de cada disputa."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.24.md",
+  "en": "The budget also erases the margin for error in a way that land-based engineering rarely does. A bridge that is slightly overloaded still stands. A spacecraft that runs out of delta-v before completing orbital insertion becomes a piece of uncontrolled debris. There is no partial credit. Every mission in this atlas that succeeded did so because someone, somewhere, kept an honest accounting and never spent more than was there. The anonymous room of people who did that math — who watched the budget, checked the astrodynamics, ran the correction-burn sequences — carried every mission that ever arrived.",
+  "cur": "O orçamento também apaga a margem para erro de uma forma que a engenharia baseada em terra raramente faz. Uma ponte ligeiramente sobrecarregada ainda se mantém em pé. Uma espaçonave que fica sem delta-v antes de completar a inserção orbital se torna um pedaço de detritos descontrolados. Não há crédito parcial. Toda missão neste atlas que teve sucesso o fez porque alguém, em algum lugar, manteve uma contabilidade honesta e nunca gastou mais do que havia. A sala anônima de pessoas que fizeram aquela matemática — que observou o orçamento, verificou a astrodinâmica, executou as sequências de disparo de correção — realizou cada missão que jamais chegou."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.25.text",
+  "en": "The reuse argument, stated plainly",
+  "cur": "O argumento de reuso, afirmado claramente"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.26.md",
+  "en": "For sixty years, the tyranny of the rocket equation produced a particular answer to the problem of getting to orbit: build a machine optimized for the task, burn it on the way up, throw it away. The structural mass savings from designing a single-use first stage were real, and the delta-v was real, and the math closed. The problem was that you were throwing away an engine worth tens of millions of dollars after using it once.",
+  "cur": "Por sessenta anos, a tirania da equação do foguete produziu uma resposta particular para o problema de chegar à órbita: construir uma máquina otimizada para a tarefa, queimá-la no caminho para cima, jogá-la fora. A economia de massa estrutural de projetar um primeiro estágio de uso único era real, e o delta-v era real, e a matemática fechava. O problema era que você estava jogando fora um motor no valor de dezenas de milhões de dólares depois de usá-lo uma vez."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.27.md",
+  "en": "Landing a rocket stage and flying it again changes the denominator, but not in the way the equation predicts. Structurally, a reusable stage is slightly heavier — it needs landing legs, grid fins, thermal protection, residual propellant reserves for the return burn — which means the [specific impulse](/science/propulsion/specific-impulse) advantage narrows and the mass ratio shrinks. The equation, strictly read, says reuse costs you delta-v. What the equation doesn't model is that you can fly the stage again next week, at a fraction of the cost of building a new one, which means you can afford to fly more missions, which means the budget that matters — dollars per kilogram to orbit — collapses. The delta-v logic didn't change. The economic logic that runs alongside it did.",
+  "cur": "Pousar um estágio de foguete e voá-lo novamente muda o denominador, mas não da forma que a equação prevê. Estruturalmente, um estágio reutilizável é ligeiramente mais pesado — precisa de pernas de pouso, aletas de grade, proteção térmica, reservas de propelente residuais para o disparo de retorno — o que significa que a vantagem de [impulso específico](/science/propulsion/specific-impulse) se estreita e a razão de massa encolhe. A equação, estritamente lida, diz que reutilização custa delta-v. O que a equação não modela é que você pode voar o estágio novamente semana que vem, a uma fração do custo de construir um novo, o que significa que você pode gastar mais missões, o que significa que o orçamento que importa — dólares por quilograma em órbita — colapsa. A lógica de delta-v não mudou. A lógica econômica que corre ao lado dela mudou."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.28.md",
+  "en": "This is the tension that has defined the last decade of launch vehicle development, and it is not yet resolved. The rocket equation still sets the hard physical floor. What changes is how much it costs to stand on it. [Fly a trajectory in the atlas](/fly) and watch what happens to the delta-v budget as each stage separates — the mass ratio snapshots at each cut are what the equation is actually enforcing, invisibly, on every flight.",
+  "cur": "Essa é a tensão que definiu a última década de desenvolvimento de veículos de lançamento, e ainda não foi resolvida. A equação do foguete ainda estabelece o piso físico rígido. O que muda é quanto custa estar em pé nele. [Voe uma trajetória no atlas](/fly) e observe o que acontece com o orçamento de delta-v enquanto cada estágio se separa — os snapshots de razão de massa em cada corte são o que a equação está realmente forçando, invisivamente, em cada voo."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.30.md",
+  "en": "There is something clarifying about a constraint with no exceptions. The rocket equation does not yield for political reasons or budget increases or engineering heroics. Every mission that has ever left this planet — [Voyager](/missions?id=voyager-2), [Cassini](/missions?id=cassini), [New Horizons](/missions?id=new-horizons), [Mangalyaan](/missions?id=mangalyaan) — did so because someone reconciled a column of delta-v requirements against a column of what the propellant could provide, and the second number was at least as large as the first. Every mission that never left — and there have been many, killed quietly in planning — failed that test.",
+  "cur": "Há algo que clarifica uma restrição sem exceções. A equação do foguete não cede por razões políticas ou aumentos de orçamento ou heroísmo de engenharia. Cada missão que já saiu deste planeta — [Voyager](/missions?id=voyager-2), [Cassini](/missions?id=cassini), [New Horizons](/missions?id=new-horizons), [Mangalyaan](/missions?id=mangalyaan) — o fez porque alguém reconciliou uma coluna de requisitos de delta-v com uma coluna do que o propelente poderia fornecer, e o segundo número era pelo menos tão grande quanto o primeiro. Cada missão que nunca saiu — e houve muitas, mortas silenciosamente no planejamento — falhou aquele teste."
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.31.md",
+  "en": "What the equation also does, less obviously, is make gravity precious. Not as a hazard to overcome — every rocket is burning upward against it — but as a free account. A planet's gravity well, threaded correctly, is a source. Jupiter's gravity gave Voyager 2 a velocity it could never have bought with propellant. The Oberth effect makes deep periapsis passes worth engineering deliberately. The solar system's entire orbital architecture is, from a delta-v perspective, a landscape of free refills scattered across a mostly empty map — and every [trajectory you can explore here](/science/transfers/hohmann-transfer) is a record of someone finding one.",
+  "cur": "O que a equação também faz, menos obviamente, é tornar a gravidade preciosa. Não como um perigo a vencer — todo foguete está queimando para cima contra ela — mas como uma conta gratuita. Um poço gravitacional de um planeta, atravessado corretamente, é uma fonte. A gravidade de Júpiter deu à Voyager 2 uma velocidade que nunca poderia ter comprado com propelente. O efeito de Oberth torna as passagens de periapsis profundo valer a pena ser engenheiradas deliberadamente. A arquitetura orbital do sistema solar inteiro é, de uma perspectiva de delta-v, uma paisagem de reabastecimentos gratuitos espalhados por um mapa principalmente vazio — e cada [trajetória que você pode explorar aqui](/science/transfers/hohmann-transfer) é um registro de alguém encontrando um."
+ }
+]

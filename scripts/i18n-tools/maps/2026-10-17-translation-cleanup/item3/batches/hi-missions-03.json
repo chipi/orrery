@@ -1,0 +1,452 @@
+[
+ {
+  "rel": "missions/moon/clementine.json",
+  "at": "description",
+  "en": "Designed primarily as a Strategic Defense Initiative technology demonstrator, Clementine spent 10 weeks in lunar orbit returning the first systematic global topographic and multispectral map of the Moon. Bistatic radar measurements at the lunar south pole produced the first tantalising hints of water ice — confirmed years later by Lunar Prospector and Chandrayaan-1. The follow-on mission to flyby the asteroid Geographos failed when a thruster malfunction depleted the spacecraft's propellant.",
+  "cur": "मुख्यतः रणनीतिक रक्षा पहल तकनीक प्रदर्शक के रूप में डिज़ाइन, Clementine ने दस सप्ताह चंद्र कक्षा में चंद्रमा का पहला व्यवस्थित वैश्विक टोपोग्राफिक और बहुस्पेक्ट्रल मानचित्र लौटाया। दक्षिण ध्रुव पर द्विस्थिर रडार माप ने जल बर्फ के पहले लुभावने संकेत दिए — वर्षों बाद Lunar Prospector और चंद्रयान-1 ने पुष्टि की। एस्टेरॉइड Geographos फ्लाइबाय का अनुवर्ती मिशन तब विफल जब थ्रस्टर दोष ने अंतरिक्ष यान का ईंधन समाप्त कर दिया।"
+ },
+ {
+  "rel": "missions/moon/lro.json",
+  "at": "name",
+  "en": "Lunar Reconnaissance Orbiter",
+  "cur": "Lunar Reconnaissance Orbiter"
+ },
+ {
+  "rel": "missions/moon/lro.json",
+  "at": "first",
+  "en": "Highest-resolution lunar maps ever made",
+  "cur": "अब तक के सबसे उच्च रिज़ॉल्यूशन चंद्र मानचित्र"
+ },
+ {
+  "rel": "missions/moon/lro.json",
+  "at": "description",
+  "en": "Orbiting the Moon since 2009 at 50 km mean lunar altitude, LRO's narrow-angle camera images at 50 cm/pixel — high enough to see Apollo descent stages, rover tracks, and astronaut footpaths still preserved in the regolith. It found Lunokhod 1 thirty-nine years after the rover went dark. It identified 200+ candidate landing sites for Artemis. The water ice deposits at the lunar south pole that drive every modern lunar programme were quantified by LRO instruments. A scout mission that became the foundation of the modern lunar era.",
+  "cur": "2009 से चंद्रमा की कक्षा में औसत 50 km चंद्र ऊँचाई पर, LRO का संकीर्ण-कोण कैमरा 50 cm/पिक्सेल पर छवि लेता है — Apollo अवतरण चरण, रोवर ट्रैक, और यात्री पदपथ देखने के लिए काफ़ी तीखा जो अभी भी रेगोलिथ में संरक्षित हैं। इसने Lunokhod 1 को रोवर के अंधेरे होने के 39 वर्ष बाद खोजा। Artemis के लिए 200+ संभावित उतराव स्थल पहचाने। आधुनिक चंद्र कार्यक्रम को चलाने वाले चंद्र दक्षिण ध्रुव जल बर्फ जमा LRO उपकरणों से मात्रित किए गए। खोज मिशन जो आधुनिक चंद्र युग की नींव बना।"
+ },
+ {
+  "rel": "missions/moon/luna10.json",
+  "at": "first",
+  "en": "First spacecraft to orbit the Moon (and any body other than Earth)",
+  "cur": "चंद्रमा की कक्षा में पहुंचने वाला पहला अंतरिक्ष यान (और पृथ्वी को छोड़कर किसी अन्य खगोलीय पिंड की कक्षा में पहुंचने वाला पहला)"
+ },
+ {
+  "rel": "missions/moon/luna10.json",
+  "at": "description",
+  "en": "Launched 1966-03-31 from Baikonur, Luna 10 became the first spacecraft to orbit the Moon — and the first artificial satellite of any body other than Earth — when it inserted into a 350 × 1017 km lunar orbit at 71.9° inclination on 1966-04-03. Two and a half years before Apollo 8 reached the Moon with humans aboard. Carried a magnetometer, gamma-ray spectrometer, infrared radiometer, micrometeoroid detectors, plasma sensors, and a radio probe of the lunar gravity field. The gamma-ray data was the first compositional remote sensing of the Moon, suggesting basalt-like mare composition. Famously broadcast the Internationale anthem during the 23rd Congress of the Soviet Communist Party on 1966-04-04 — a propaganda flourish more than science. Operated 56 days / 460 orbits before its NiCd batteries depleted on 1966-05-30; remains in lunar orbit.",
+  "cur": "1966-03-31 को बायकोनूर से प्रक्षेपित, Luna 10 चंद्रमा की कक्षा में पहुंचने वाला पहला अंतरिक्ष यान बना — और पृथ्वी को छोड़कर किसी अन्य खगोलीय पिंड का पहला कृत्रिम उपग्रह — जब यह 1966-04-03 को 71.9° झुकाव पर 350 × 1017 km की चंद्र कक्षा में प्रवेश किया। Apollo 8 के मनुष्यों सहित चंद्रमा तक पहुंचने से दढ़ेढ़ साल पहले। इसमें एक चुंबकत्वमापी, गामा-किरण स्पेक्ट्रोमीटर, अवरक्त रेडिओमीटर, सूक्ष्म उल्कापिंड संसूचक, प्लाज्मा सेंसर और चंद्र गुरुत्वीय क्षेत्र का एक रेडियो परीक्षण था। गामा-किरण डेटा चंद्रमा की पहली संरचनात्मक दूरसंवेदन थी, जो बेसाल्ट जैसी मारे संरचना का सुझाव देती थी। 1966-04-04 को सोवियत कम्युनिस्ट पार्टी की 23वीं कांग्रेस के दौरान कुख्यात रूप से Internationale गान का प्रसारण किया — एक विज्ञान से कहीं अधिक प्रचार प्रयास। 56 दिनों तक संचालित / 460 कक्षाएं जब तक इसकी NiCd बैटरी 1966-05-30 को खत्म नहीं हो गई; चंद्र कक्षा में बनी रहती है।"
+ },
+ {
+  "rel": "missions/moon/luna16.json",
+  "at": "first",
+  "en": "First robotic lunar sample return; first non-American lunar samples",
+  "cur": "पहला रोबोटिक चंद्र नमूना वापसी; पहले गैर-अमेरिकी चंद्र नमूने"
+ },
+ {
+  "rel": "missions/moon/luna16.json",
+  "at": "description",
+  "en": "Luna 16 was the Soviet Union's first successful robotic sample-return mission and the first non-crewed lunar return of any kind. After Apollo 11 brought home 22 kg of crewed samples in 1969, Luna 16 returned 101 grams of regolith from Mare Fecunditatis a year later — a fraction of Apollo's payload, but a profound proof-of-concept for the alternative architecture. The mission used a Proton-K booster and a direct return profile: descent to the surface, drill core, ascent stage launch, ballistic return capsule to Kazakhstan. The technique was reused for Luna 20 and Luna 24, and decades later by Chang'e 5 and Chang'e 6.",
+  "cur": "Luna 16 सोवियत संघ का पहला सफल रोबोटिक नमूना-वापसी मिशन था और किसी भी प्रकार की पहली मानवरहित चंद्र वापसी थी। Apollo 11 के 1969 में 22 किग्रा के दल द्वारा एकत्र किए गए नमूने घर लाने के बाद, Luna 16 ने एक साल बाद उर्वरता सागर से 101 ग्राम रेगोलिथ वापस किए — Apollo के पेलोड का एक अंश, लेकिन वैकल्पिक आर्किटेक्चर के लिए एक गहरा प्रमाण-अवधारणा। मिशन ने Proton-K बूस्टर और प्रत्यक्ष वापसी प्रोफ़ाइल का उपयोग किया: सतह पर वंश, ड्रिल कोर, आरोहण चरण प्रक्षेपण, कजाकिस्तान के लिए बैलिस्टिक रिटर्न कैप्सूल। यह तकनीक Luna 20 और Luna 24 के लिए पुनः उपयोग की गई, और दशकों बाद Chang'e 5 और Chang'e 6 द्वारा भी।"
+ },
+ {
+  "rel": "missions/moon/luna17.json",
+  "at": "name",
+  "en": "Luna 17 / Lunokhod 1",
+  "cur": "Luna 17 / Lunokhod 1"
+ },
+ {
+  "rel": "missions/moon/luna17.json",
+  "at": "first",
+  "en": "First teleoperated rover to operate on another world",
+  "cur": "किसी अन्य दुनिया पर संचालित पहला दूर-संचालित रोवर"
+ },
+ {
+  "rel": "missions/moon/luna17.json",
+  "at": "description",
+  "en": "The first wheels on the Moon — driven from a control room in Crimea. Lunokhod 1 was a 322 kg pressurised tub mounted on eight independently-driven wheels, controlled by a five-person team in real time across the 2.5-second light-speed delay. It drove 10.5 km over 11 lunar days (322 Earth days), photographed 20,000+ scenes, and operated long past its 90-day design lifetime. Lost to history in the 1970s, located again in 2010 when NASA's Lunar Reconnaissance Orbiter spotted it sitting where it stopped.",
+  "cur": "चाँद पर पहिए — क्राइमिया में एक नियंत्रण कक्ष से संचालित। Lunokhod 1 आठ स्वतंत्र रूप से संचालित पहियों पर लगा हुआ एक 322 किग्रा का दबाववाला यान था, जिसे 2.5 सेकंड के प्रकाश-गति विलंब के दौरान पाँच लोगों की टीम द्वारा वास्तविक समय में नियंत्रित किया जाता था। यह 11 चंद्र दिनों (322 पृथ्वी दिन) में 10.5 किमी चला, 20,000 से अधिक दृश्यों का फ़ोटोग्राफ़ किया, और अपने 90-दिन के डिजाइन जीवनकाल से कहीं अधिक समय तक संचालित रहा। 1970 के दशक में इतिहास से खो गया, 2010 में फिर से मिला जब NASA के Lunar Reconnaissance Orbiter ने इसे उस जगह देखा जहाँ यह रुका था।"
+ },
+ {
+  "rel": "missions/moon/luna21.json",
+  "at": "name",
+  "en": "Luna 21 / Lunokhod 2",
+  "cur": "Luna 21 / Lunokhod 2"
+ },
+ {
+  "rel": "missions/moon/luna21.json",
+  "at": "first",
+  "en": "Second Soviet lunar rover; longest off-world drive (~39 km) for over 40 years",
+  "cur": "दूसरा सोवियत चंद्र रोवर; 40 से अधिक वर्षों तक पृथ्वी से परे सबसे लंबी ड्राइव (~39 किमी)"
+ },
+ {
+  "rel": "missions/moon/luna21.json",
+  "at": "description",
+  "en": "Luna 21 delivered Lunokhod 2, the Soviet Union's second crewed-controlled lunar rover, to Le Monnier crater on the southern edge of Mare Serenitatis in January 1973. The rover was driven from a control room in Crimea by a five-person team and traversed approximately 39 km over four lunar days — a record off-world distance that held until NASA's Opportunity rover passed it on Mars in 2014. Lunokhod 2 returned 80,000 television frames and 86 panoramas before dust contamination of its solar arrays ended operations.",
+  "cur": "Luna 21 ने जनवरी 1973 में Le Monnier क्रेटर में, जो निर्मलता सागर के दक्षिणी किनारे पर है, Lunokhod 2 को पहुंचाया। Lunokhod 2 सोवियत संघ का दूसरा मानव-नियंत्रित चंद्र रोवर था। इस रोवर को क्रीमिया के एक नियंत्रण कक्ष से पांच सदस्यीय टीम द्वारा संचालित किया गया और इसने चार चंद्र दिनों में लगभग 39 किमी की यात्रा की — यह एक पृथ्वी से परे की रिकॉर्ड दूरी थी जो 2014 में NASA के Opportunity रोवर द्वारा मंगल पर इसे पार करने तक बनी रही। Lunokhod 2 ने 80,000 टेलीविजन फ्रेम और 86 पैनोरमा लौटाए, इससे पहले कि इसके सौर सरणियों पर धूल संदूषण के कारण संचालन समाप्त हो गया।"
+ },
+ {
+  "rel": "missions/moon/luna24.json",
+  "at": "first",
+  "en": "Last Soviet lunar mission; last uncrewed lunar landing for 37 years",
+  "cur": "अंतिम सोवियत चंद्र मिशन; 37 साल के लिए अंतिम मानवरहित चंद्र लैंडिंग"
+ },
+ {
+  "rel": "missions/moon/luna24.json",
+  "at": "description",
+  "en": "The Soviet Union's final lunar mission and the last uncrewed lunar landing until China's Chang'e 3 in 2013 — a gap of 37 years. The drilled core extracted regolith from 2 m depth and returned 170 g to Earth. A 1978 Soviet analysis reported ~0.1% water by mass in the core — an unconfirmed, still-debated result — foreshadowing later confirmed detections of lunar water. Luna 24 also marked the closure of the Soviet lunar programme; resources shifted to Mars and Venus.",
+  "cur": "सोवियत संघ का अंतिम चंद्र मिशन और चीन के Chang'e 3 द्वारा 2013 में अगली मानवरहित चंद्र लैंडिंग तक 37 साल का अंतराल — अंतिम मानवरहित चंद्र लैंडिंग। ड्रिल किए गए कोर ने 2 मी गहराई से regolith निकाला और 170 ग्राम पृथ्वी पर लौटाए। 1978 की सोवियत विश्लेषण ने कोर में ~0.1% जल द्रव्यमान के आधार पर रिपोर्ट की — एक अपुष्ट, अभी भी विवादास्पद परिणाम — जो बाद में चंद्र जल की पुष्टि किए गए खोजों का संकेत दे रहा है। Luna 24 ने सोवियत चंद्र कार्यक्रम के समापन को भी चिह्नित किया; संसाधन मंगल और शुक्र की ओर स्थानांतरित हुए।"
+ },
+ {
+  "rel": "missions/moon/luna9.json",
+  "at": "first",
+  "en": "First soft-landing on the Moon; first photographs from the lunar surface",
+  "cur": "चंद्रमा पर पहली नरम लैंडिंग; चंद्र सतह से पहली तस्वीरें"
+ },
+ {
+  "rel": "missions/moon/luna9.json",
+  "at": "description",
+  "en": "After 11 Soviet failures and 5 American Ranger missions designed only to crash, Luna 9 became the first spacecraft to soft-land on another world. Nine images — including five panoramas — returned across three sessions over three days settled a long-running scientific debate: the Moon's surface was solid, not a sea of dust deep enough to swallow a lander. The mission lasted 3 days before battery depletion. Within months, every Moon-bound mission afterwards used soft-landing as the baseline.",
+  "cur": "11 सोवियत विफलताओं और 5 अमेरिकी Ranger मिशनों के बाद जो केवल दुर्घटनाग्रस्त होने के लिए डिज़ाइन किए गए थे, Luna 9 किसी अन्य दुनिया पर नरम लैंडिंग करने वाली पहली अंतरिक्ष यान बन गई। नौ तस्वीरें — जिनमें पाँच पैनोरमा शामिल हैं — तीन दिनों में तीन सत्रों में प्राप्त की गईं, जिससे एक दीर्घकालीन वैज्ञानिक विवाद का समाधान हुआ: चंद्रमा की सतह ठोस थी, धूल का समुद्र नहीं जो लैंडर को निगल सकता था। मिशन बैटरी की कमी से पहले 3 दिन तक चला। कुछ महीनों के भीतर, उसके बाद चंद्रमा की ओर भेजे गए हर मिशन ने नरम लैंडिंग को मानक के रूप में अपनाया।"
+ },
+ {
+  "rel": "missions/moon/lunar-prospector.json",
+  "at": "first",
+  "en": "Neutron-spectrometer hydrogen finding at both lunar poles",
+  "cur": "चंद्र ध्रुवों पर न्यूट्रॉन स्पेक्ट्रोमीटर द्वारा हाइड्रोजन की खोज"
+ },
+ {
+  "rel": "missions/moon/lunar-prospector.json",
+  "at": "description",
+  "en": "The third NASA Discovery-class mission and the first NASA-managed dedicated lunar orbiter of the post-Apollo era. Launched 1998-01-07 on an Athena II from Cape Canaveral, Lunar Prospector entered a 100-km circular polar lunar orbit on 1998-01-11. The 296-kg spinning spacecraft carried five instruments: a gamma-ray spectrometer for global crustal composition, a neutron spectrometer for hydrogen / water-ice detection at the poles, an alpha-particle spectrometer for radon gas (indirect volcanism detection), a magnetometer + electron reflectometer for crustal magnetism, and a Doppler gravity experiment. Boynton-team analysis of the neutron data (Feldman et al., Science 281 + 284) found sharp neutron-flux deficits over both lunar poles — consistent with ~2 × 10⁹ tonnes of hydrogen-rich material (probably water ice) in permanently shadowed polar craters. Mission ended 1999-07-31 with deliberate impact near Shackleton crater hoping to release a detectable water-vapour plume; none was seen. The hydrogen finding stood until LCROSS and Chandrayaan-1 / M3 (2009) provided independent confirmation.",
+  "cur": "तीसरा NASA Discovery-class मिशन और post-Apollo युग का पहला NASA-संचालित समर्पित चंद्र कक्षीय उपग्रह। केप केनवरल से 1998-01-07 को Athena II पर प्रक्षेपित, Lunar Prospector 1998-01-11 को 100-किमी वृत्ताकार ध्रुवीय चंद्र कक्षा में प्रवेश किया। 296-किग्रा घूर्णनशील अंतरिक्ष यान पाँच उपकरण ले गया: विश्वव्यापी क्रस्टल संरचना के लिए गामा-किरण स्पेक्ट्रोमीटर, ध्रुवों पर हाइड्रोजन / जल-बर्फ की खोज के लिए न्यूट्रॉन स्पेक्ट्रोमीटर, रेडॉन गैस के लिए अल्फा-कण स्पेक्ट्रोमीटर (अप्रत्यक्ष ज्वालामुखीवाद खोज), क्रस्टल चुंबकत्व के लिए मैग्नेटोमीटर + इलेक्ट्रॉन परावर्तक, और डॉप्लर गुरुत्वाकर्षण प्रयोग। Boynton-दल के न्यूट्रॉन डेटा का विश्लेषण (Feldman et al., Science 281 + 284) ने दोनों चंद्र ध्रुवों पर तीव्र न्यूट्रॉन-प्रवाह घाटियाँ पाईं — जो ~2 × 10⁹ टन हाइड्रोजन-समृद्ध सामग्री (संभवतः जल-बर्फ) के साथ सामंजस्यपूर्ण हैं जो स्थायी रूप से छायांकित ध्रुवीय गड्ढों में हैं। मिशन 1999-07-31 को शैकलटन क्रेटर के निकट जानबूझकर प्रभाव के साथ समाप्त हुआ, यह आशा करते हुए कि एक पता लगाने योग्य जल-वाष्प प्लम मुक्त होगा; कुछ नहीं देखा गया। हाइड्रोजन खोज तब तक स्थिर रही जब तक LCROSS और चंद्रयान-1 / M3 (2009) ने स्वतंत्र पुष्टि प्रदान की।"
+ },
+ {
+  "rel": "missions/moon/slim.json",
+  "at": "first",
+  "en": "First precision landing within 100 m of target on another world",
+  "cur": "किसी अन्य दुनिया पर लक्ष्य के भीतर 100 m में पहली सटीक उतराव"
+ },
+ {
+  "rel": "missions/moon/slim.json",
+  "at": "description",
+  "en": "Until SLIM, lunar landings had a kilometre-scale targeting accuracy. JAXA's Smart Lander demonstrated 100 m accuracy — the precision required for crewed missions to dock with pre-positioned cargo, for sample-return ascent vehicles to find their orbital partners, and for any future architecture that depends on landing at specific scientifically valuable sites. SLIM also pioneered low-energy ballistic transfer to the Moon, taking 135 days to arrive but using less propellant than direct trajectories. A demonstration of the patience interplanetary missions can afford when timeline isn't the binding constraint.",
+  "cur": "SLIM से पहले, चंद्र लैंडिंग की सटीकता किलोमीटर पैमाने पर थी। JAXA के Smart Lander ने 100 मीटर की सटीकता का प्रदर्शन किया — वह सटीकता जो मानवयुक्त मिशनों के लिए आवश्यक है ताकि वे पूर्व-स्थापित कार्गो के साथ डॉक कर सकें, नमूना-वापसी आरोहण वाहनों के लिए अपने कक्षीय साथियों को खोज सकें, और किसी भी भविष्य की आर्किटेक्चर के लिए जो वैज्ञानिक रूप से मूल्यवान स्थानों पर लैंड करने पर निर्भर हो। SLIM ने चंद्रमा तक कम-ऊर्जा बैलिस्टिक स्थानांतरण का भी पथप्रदर्शन किया, आने में 135 दिन लगे लेकिन सीधे प्रक्षेपवक्र की तुलना में कम ईंधन का उपयोग किया। अंतग्रहीय मिशन जो धैर्य को सामर्थ्य दे सकते हैं उसका एक प्रदर्शन, जब समयसीमा बाध्यकारी बाधा न हो।"
+ },
+ {
+  "rel": "missions/moon/smart-1.json",
+  "at": "first",
+  "en": "First European spacecraft to reach the Moon; first mission to reach the Moon under ion propulsion",
+  "cur": "चंद्रमा तक पहुँचने वाला पहला यूरोपीय अंतरिक्ष यान; आयन प्रणोदन के तहत चंद्रमा तक पहुँचने वाला पहला मिशन"
+ },
+ {
+  "rel": "missions/moon/smart-1.json",
+  "at": "description",
+  "en": "ESA's first lunar mission and the first European spacecraft to reach the Moon. SMART = Small Missions for Advanced Research in Technology — and the key technology was a Hall-effect solar-electric ion thruster (PPS-1350-G), at the time the largest such thruster ever flown. Launched 2003-09-27 as a shared payload on an Ariane 5 from Kourou, the 367-kg spacecraft used its 1.2-kW xenon ion drive over 13 months to slowly raise its Earth orbit, eventually captured by lunar gravity on 2004-11-15 — a 13-month low-thrust spiral rather than the days-long chemical transfer of every prior lunar mission. Operated for 16 months in a polar lunar orbit returning AMIE camera imagery, the first X-ray fluorescence elemental maps of the Moon (D-CIXS), and infrared mineral spectroscopy (SIR). Deliberately impacted Lacus Excellentiae (34.4° S, 46.2° W) on 2006-09-03 05:42 UTC — the impact flash was observed live from the Canada-France-Hawaii Telescope.",
+  "cur": "ESA का पहला चंद्र मिशन और चंद्रमा तक पहुँचने वाला पहला यूरोपीय अंतरिक्ष यान। SMART = स्मॉल मिशन्स फॉर एडवांस्ड रिसर्च इन टेक्नोलॉजी — और मुख्य प्रौद्योगिकी एक हॉल-इफेक्ट सोलर-इलेक्ट्रिक आयन थ्रस्टर (PPS-1350-G) थी, जो उस समय तक उड़ाया गया सबसे बड़ा ऐसा थ्रस्टर था। कूरू से Ariane 5 पर साझा पेलोड के रूप में 2003-09-27 को लॉन्च किए गए 367-kg अंतरिक्ष यान ने अपने 1.2-kW जेनॉन आयन ड्राइव का उपयोग 13 महीनों में पृथ्वी की कक्षा को धीरे-धीरे ऊँचा करने के लिए किया, जिससे अंततः 2004-11-15 को चंद्र गुरुत्वाकर्षण द्वारा कब्जा किया गया — एक 13 महीने की निम्न-थ्रस्ट स्पाइरल जो किसी भी पूर्वकालीन चंद्र मिशन के दिन-लंबे रासायनिक स्थानांतरण के विपरीत था। ध्रुवीय चंद्र कक्षा में 16 महीनों के लिए संचालित, AMIE कैमरा इमेजरी, चंद्रमा के पहले X-ray फ्लोरेसेंस तत्व मानचित्र (D-CIXS), और अवरक्त खनिज स्पेक्ट्रोस्कोपी (SIR) लौटाया। 2006-09-03 05:42 UTC पर उत्कृष्टता झील (34.4° S, 46.2° W) पर जानबूझकर प्रभाव — प्रभाव फ्लैश को Canada-France-Hawaii Telescope से सीधे देखा गया।"
+ },
+ {
+  "rel": "missions/moon/smart-1.json",
+  "at": "events.4.label",
+  "en": "LACUS EXCELLENTIAE IMPACT",
+  "cur": "LACUS EXCELLENTIAE प्रभाव"
+ },
+ {
+  "rel": "missions/neptune/voyager-2.json",
+  "at": "first",
+  "en": "Only spacecraft to visit Uranus and Neptune; Grand Tour of four giant planets",
+  "cur": "अरुण और वरुण की यात्रा करने वाला एकमात्र अंतरिक्ष यान; चार विशाल ग्रहों का Grand Tour"
+ },
+ {
+  "rel": "missions/neptune/voyager-2.json",
+  "at": "dispatch",
+  "en": "Voyager 2 flew the tour that may never be flown again. Launched sixteen days before its twin on a slower, longer arc, it is the only spacecraft ever to visit Uranus and Neptune — two worlds that remain, decades later, known to us almost entirely from the few hours it spent racing past each one. It found a planet tipped on its side, the fastest winds in the solar system, and a frozen moon venting geysers into space, and then it too crossed into interstellar space, in 2018. Every serious plan to return to the ice giants still rests on what this single spacecraft saw on its way out.",
+  "cur": "Voyager 2 ने वह यात्रा की जो शायद फिर कभी नहीं की जा सकेगी। अपने जुड़वाँ से सोलह दिन पहले एक धीमे, लंबे चाप पर प्रक्षेपित, यह अब तक का एकमात्र अंतरिक्ष यान है जो अरुण और वरुण तक पहुँचा — दो ऐसी दुनियाएँ जो दशकों बाद भी हमें लगभग पूरी तरह उन्हीं कुछ घंटों से ज्ञात हैं जो इसने हर एक के पास से तेज़ी से गुज़रते हुए बिताए। इसने अपनी बगल पर झुका हुआ एक ग्रह पाया, सौर मंडल की सबसे तेज़ हवाएँ, और एक जमा हुआ चाँद जो अंतरिक्ष में गीज़र छोड़ रहा था, और फिर यह भी 2018 में अंतरतारकीय अंतरिक्ष में पहुँच गया। बर्फ़ीले दानव ग्रहों पर लौटने की हर गंभीर योजना आज भी उस पर टिकी है जो इस अकेले अंतरिक्ष यान ने अपने जाते हुए रास्ते में देखा था।"
+ },
+ {
+  "rel": "missions/neptune/voyager-2.json",
+  "at": "description",
+  "en": "The twin that kept going when budgets tightened, Voyager 2 carried the Grand Tour from Jupiter and Saturn out to Uranus and Neptune — still the only close-up images we have of the ice giants. Its Neptune encounter in 1989 revealed the Great Dark Spot and Triton's geysers. Today both Voyagers sail in interstellar space with a golden record as humanity's calling card. Orrery lists Neptune as the catalogue destination; the real path relied on multiple gravity assists.",
+  "cur": "बजट तंग होने पर भी चलते रहने वाला जुड़वाँ, Voyager 2 ने Grand Tour को बृहस्पति और शनि से आगे अरुण और वरुण तक पहुँचाया — बर्फ़ीले दानवों की आज भी हमारे पास यही एकमात्र नज़दीकी तस्वीरें हैं। 1989 में वरुण से इसकी मुलाक़ात ने Great Dark Spot और ट्राइटन के गीज़र उजागर किए। आज दोनों Voyager अंतरतारकीय अंतरिक्ष में चल रहे हैं, मानवता के परिचय-पत्र के रूप में सुनहरी रिकॉर्ड के साथ। Orrery वरुण को सूची के गंतव्य के रूप में दिखाता है; असली मार्ग कई गुरुत्व-सहायताओं पर निर्भर था।"
+ },
+ {
+  "rel": "missions/pluto/new-horizons.json",
+  "at": "first",
+  "en": "First flyby of Pluto and its moons; sharpest images of a Kuiper belt world",
+  "cur": "यम और उसके चंद्रमाओं का पहला फ्लाइबाय; Kuiper बेल्ट की दुनिया की सबसे तीखी छवियाँ"
+ },
+ {
+  "rel": "missions/pluto/new-horizons.json",
+  "at": "dispatch",
+  "en": "New Horizons had exactly one chance and took it. There was no orbit and no way to slow down — nine and a half years of travel, the fastest launch in history, all converging on a few hours at Pluto, executed by a machine so far away that each command took hours to arrive. It nailed the flyby on 14 July 2015 and overturned the expectation of a dead world: Pluto turned out to have mountains of water ice, a vast heart-shaped glacier of frozen nitrogen still slowly churning, and a young, active surface no one thought a body that small and cold could keep. Then it flew on to Arrokoth, a billion kilometres past Pluto — the most distant world ever seen up close — and it is still going.",
+  "cur": "New Horizons के पास बिल्कुल एक ही मौका था और उसने उसे पकड़ लिया। कोई कक्षा नहीं थी और धीमा होने का कोई रास्ता नहीं था — नौ साल से ज़्यादा की यात्रा, इतिहास में सबसे तेज़ लॉन्च, सब कुछ यम पर कुछ घंटों में सिमट रहा था, जिसे एक ऐसी मशीन निष्पादित कर रही थी जो इतनी दूर थी कि हर कमांड को पहुँचने में घंटों लग जाते थे। इसने 14 July 2015 को फ़्लाईबाई को परफ़ेक्ट अंजाम दिया और एक मृत दुनिया की अपेक्षा को पलट दिया: यम में पानी की बर्फ़ के पहाड़, जमी हुई नाइट्रोजन का एक विशाल दिल के आकार का ग्लेशियर जो अब भी धीरे-धीरे मंथन कर रहा है, और एक युवा, सक्रिय सतह निकली — जो कोई नहीं सोचता था कि इतना छोटा और ठंडा पिंड बनाए रख सकता है। फिर यह एरोकोथ की ओर उड़ गया, यम से एक अरब किलोमीटर आगे — अब तक क़रीब से देखी गई सबसे दूर की दुनिया — और यह अब भी जा रहा है।"
+ },
+ {
+  "rel": "missions/pluto/new-horizons.json",
+  "at": "description",
+  "en": "A nine-year sprint after the fastest launch to date, New Horizons compressed decades of anticipation into one July 2015 day — a world turned from a pixelated blur into mountains of water ice and nitrogen glaciers on Pluto's heart-shaped Tombaugh Regio. The spacecraft later flew Arrokoth, linking the mission to the primordial solar system. Flight arcs in Orrery are direct-transfer teaching models, not the actual Jupiter gravity assist.",
+  "cur": "अब तक के सबसे तेज़ प्रक्षेपण के बाद नौ वर्ष की दौड़, New Horizons ने दशकों की प्रतीक्षा एक जुलाई 2015 के दिन में समेटी — एक बौना ग्रह जो धब्बेदार धुंधला था वह जल बर्फ के पहाड़ों और नाइट्रोजन हिमनदों में बदल गया, यम के दिल के आकार का टॉमबॉ क्षेत्र। अंतरिक्ष यान ने बाद में एरोकोथ को पार किया, मिशन को प्रारंभिक सौर मंडल से जोड़ा। Orrery में उड़ान चाप सीधे स्थानांतरण शिक्षण मॉडल हैं, वास्तविक बृहस्पति गुरुत्व सहायता नहीं।"
+ },
+ {
+  "rel": "missions/psyche/psyche-mission.json",
+  "at": "first",
+  "en": "First mission to a metal-rich M-class asteroid; first use of Hall-effect ion thrusters as the primary cruise propulsion",
+  "cur": "धातु-युक्त M-श्रेणी के क्षुद्रग्रह का पहला मिशन; क्रूज़ प्रणोदन के लिए Hall-effect आयन thruster का पहला उपयोग"
+ },
+ {
+  "rel": "missions/psyche/psyche-mission.json",
+  "at": "description",
+  "en": "Psyche reaches for the exposed nickel-iron core of a differentiated proto-planet — a 226-km metal body that may be the closest analogue to Earth's own core anywhere accessible. Launched 2023-10-13 on a Falcon Heavy from Kennedy LC-39A. Four SPT-140 Hall-effect ion thrusters spiral the trajectory outward; a Mars gravity assist in May 2026 (4,609 km closest approach) added the energy ion thrust alone couldn't deliver in time. Arrival planned 2029-08, followed by a 26-month four-orbit-phase descent (A → B → C → D) mapping the asteroid's gravity, magnetism, topography, and composition. If the metal-core hypothesis is right, Psyche will look unlike anything else we've visited — bare metal surface, iron-sulphide deposits, none of the rubble-pile chaos of typical asteroids.",
+  "cur": "Psyche एक विभेदित प्राथमिक-ग्रह के पर्दाफाश निकल-लोह कोर की ओर पहुँचता है — एक 226-किमी का धातु पिंड जो पृथ्वी के अपने कोर के लिए कहीं भी सुलभ सबसे निकटतम सदृश हो सकता है। Falcon Heavy पर 2023-10-13 को Kennedy LC-39A से लॉन्च किया गया। चार SPT-140 हॉल-प्रभाव आयन थ्रस्टर प्रक्षेपवक्र को बाहर की ओर सर्पिल करते हैं; मई 2026 में मंगल गुरुत्व सहायता (4,609 किमी निकटतम दृष्टिकोण) ने वह ऊर्जा जोड़ी जो आयन थ्रस्ट अकेले समय में प्रदान नहीं कर सकता था। 2029-08 में आगमन की योजना है, उसके बाद 26-महीने की चार-कक्षा-चरण वंश (A → B → C → D) क्षुद्रग्रह की गुरुत्व, चुंबकत्व, स्थलाकृति और संघटन का मानचित्रण है। यदि धातु-कोर परिकल्पना सही है, तो Psyche ऐसा दिखेगा जैसा कुछ भी हमने नहीं देखा — बाहरी धातु की सतह, लोह-सल्फाइड जमाव, सामान्य क्षुद्रग्रहों की मलबे-ढेर की गड़बड़ी में से कोई नहीं।"
+ },
+ {
+  "rel": "missions/psyche/psyche-mission.json",
+  "at": "events.1.label",
+  "en": "ION CRUISE BEGINS",
+  "cur": "आयन क्रूज़ शुरू होता है"
+ },
+ {
+  "rel": "missions/psyche/psyche-mission.json",
+  "at": "events.2.label",
+  "en": "MARS GRAVITY ASSIST",
+  "cur": "मंगल गुरुत्वाकर्षण सहायता"
+ },
+ {
+  "rel": "missions/saturn/cassini.json",
+  "at": "first",
+  "en": "13 years in orbit around Saturn — Huygens landed on Titan 2005-01-14 (first outer-solar-system soft landing)",
+  "cur": "शनि की कक्षा में 13 वर्ष — Huygens ने टाइटन पर 14-01-2005 को अवतरण किया (बाहरी सौर मंडल में पहला कोमल अवतरण)"
+ },
+ {
+  "rel": "missions/saturn/cassini.json",
+  "at": "dispatch",
+  "en": "Cassini did what no spacecraft had done at any giant planet: it stopped. For thirteen years it lived at Saturn, and the discoveries that mattered most came from staying — the geysers of Enceladus, caught because the orbiter flew close enough, often enough, to see a tiny moon venting its hidden ocean into space. It dropped Europe’s Huygens probe onto Titan, the only landing ever made in the outer solar system, and charted a world of methane rivers and lakes. At the end, out of fuel, it was flown deliberately into Saturn so it could never fall onto the ocean moons it had found and contaminate them — a mission that closed by protecting the places it discovered.",
+  "cur": "कैसिनी ने वह किया जो किसी भी विशाल ग्रह पर किसी यान ने नहीं किया था: यह रुक गया। तेरह वर्षों तक यह शनि पर रहा, और जो खोजें सबसे अधिक मायने रखती थीं वे रुकने से आईं — एन्सेलाडस के गीज़र, जो इसलिए पकड़े गए क्योंकि यह orbiter इतने करीब, इतनी बार उड़ा कि एक छोटे चाँद को अपने छिपे हुए महासागर को अंतरिक्ष में उगलते हुए देख सका। इसने Europe के Huygens probe को टाइटन पर उतारा, बाहरी सौर मंडल में कभी की गई एकमात्र लैंडिंग, और methane नदियों और झीलों की एक दुनिया का मानचित्रण किया। अंत में, ईंधन खत्म होने पर, इसे जानबूझकर शनि में उड़ा दिया गया ताकि यह कभी भी उन महासागर चाँदों पर न गिरे जिन्हें इसने खोजा था और उन्हें दूषित न करे — एक मिशन जो अपनी खोजी गई जगहों की रक्षा करके समाप्त हुआ।"
+ },
+ {
+  "rel": "missions/saturn/cassini.json",
+  "at": "description",
+  "en": "Joint NASA-ESA-ASI mission. After a 7-year cruise using gravity assists at Venus, Earth, and Jupiter, Cassini entered Saturn orbit 2004-07-01 and operated for 13 years, completing 294 orbits and 162 close moon flybys. It discovered Enceladus’s south-polar plumes (active water-ice geysers), mapped Titan’s methane lakes via radar, and resolved Saturn’s hexagonal polar storm. The Grand Finale (April–September 2017) wove 22 orbits through the gap between the rings and the cloud tops, ending with a controlled atmospheric entry to prevent any chance of contaminating Enceladus or Titan with terrestrial microbes.",
+  "cur": "NASA-ESA-ASI की संयुक्त परियोजना। शुक्र, पृथ्वी तथा बृहस्पति पर गुरुत्व-सहायताओं के साथ 7 वर्षीय यात्रा के बाद, Cassini ने 01-07-2004 को शनि की कक्षा में प्रवेश किया और 13 वर्षों तक कार्यरत रही, 294 कक्षाएँ तथा 162 निकट चंद्रमा फ्लाईबाई पूरे किए। इसने एन्सेलाडस के दक्षिणी ध्रुवीय जल-बर्फ़ गीज़र, टाइटन की मीथेन झीलों का राडार मानचित्र, तथा शनि के षट्भुजाकार ध्रुवीय तूफ़ान का विश्लेषण किया। Grand Finale (अप्रैल–सितंबर 2017) ने वलयों तथा मेघ-शीर्षों के बीच की दरार में 22 कक्षाओं की बुनाई की, और एक नियंत्रित वायुमंडलीय प्रवेश से समाप्त हुआ ताकि स्थलीय सूक्ष्मजीवों से एन्सेलाडस या टाइटन को संदूषण से बचाया जा सके।"
+ },
+ {
+  "rel": "missions/saturn/cassini.json",
+  "at": "events.1.label",
+  "en": "VENUS GRAVITY ASSIST",
+  "cur": "शुक्र गुरुत्व-सहायता"
+ },
+ {
+  "rel": "missions/saturn/huygens.json",
+  "at": "first",
+  "en": "First and only soft landing in the outer solar system — parachuted through Titan's atmosphere on 2005-01-14",
+  "cur": "बाहरी सौर मंडल में पहली और एकमात्र कोमल लैंडिंग — 2005-01-14 को टाइटन के वायुमंडल के माध्यम से पैराशूट द्वारा उतारा गया"
+ },
+ {
+  "rel": "missions/saturn/huygens.json",
+  "at": "dispatch",
+  "en": "Huygens was sent not to orbit but to fall. Strapped to Cassini for seven years, it detached on Christmas Day 2004 and coasted alone toward Titan for twenty days. When it hit Titan's atmosphere at six kilometres per second, a heat shield bought the time it needed; then three parachute stages slowed it for two and a half hours through an orange haze no instrument had ever crossed. It photographed river valleys, measured wind speeds, smelled the atmosphere — and touched down on a floodplain of rounded water-ice pebbles. It was the first landing ever made in the outer solar system, and no spacecraft has landed there since.",
+  "cur": "Huygens कक्षा में जाने के लिए नहीं, गिरने के लिए भेजा गया था। सात साल तक Cassini से बंधा रहने के बाद, यह क्रिसमस के दिन 2004 को अलग हुआ और बीस दिन तक अकेले टाइटन की ओर बढ़ता रहा। जब यह छह किलोमीटर प्रति सेकंड की गति से टाइटन के वायुमंडल से टकराया, तो ताप ढाल ने इसे ज़रूरी समय दिलाया; फिर तीन पैराशूट चरणों ने इसे ढाई घंटे तक एक नारंगी धुंध के बीच धीमा किया, जिसे किसी उपकरण ने पहले कभी पार नहीं किया था। इसने नदी की घाटियों की तस्वीरें लीं, हवा की गति नापी, वायुमंडल को सूँघा — और गोल जल-बर्फ़ के कंकड़ों वाले बाढ़ के मैदान पर उतरा। बाहरी सौर मंडल में यह पहली लैंडिंग थी, और तब से कोई अंतरिक्ष यान वहाँ नहीं उतरा है।"
+ },
+ {
+  "rel": "missions/saturn/huygens.json",
+  "at": "description",
+  "en": "ESA's Huygens probe rode aboard NASA's Cassini spacecraft on a 7-year interplanetary cruise to the Saturn system, arriving at Saturn in July 2004. Released on 2004-12-25, it coasted for 20 days before entering Titan's nitrogen–methane atmosphere on 2005-01-14 at 6 km/s. An aeroshell slowed the probe to subsonic speed; three successive parachute stages then guided it through 2 hours 27 minutes of descent, collecting the first direct measurements of Titan's atmosphere — temperature, pressure, wind, and chemical composition at all altitudes. The probe transmitted 350 images during descent and continued transmitting from the surface for 72 minutes, revealing a floodplain of rounded water-ice pebbles beneath a thin veneer of liquid methane at 10.3°S, 192.3°W.",
+  "cur": "ESA की Huygens जांच NASA के Cassini अंतरिक्ष यान पर सवार होकर 7 साल की अंतरग्रहीय यात्रा से शनि प्रणाली तक गई और जुलाई 2004 में शनि पहुँची। 2004-12-25 को छोड़े जाने के बाद यह 20 दिन तक आगे बढ़ती रही और 2005-01-14 को 6 किमी/सेकंड की गति से टाइटन के नाइट्रोजन–मीथेन वायुमंडल में प्रविष्ट हुई। एक एयरोशेल ने जांच को ध्वनि की गति से नीचे तक धीमा किया; फिर तीन क्रमिक पैराशूट चरणों ने इसे 2 घंटे 27 मिनट के अवरोहण में उतारा और टाइटन के वायुमंडल के पहले प्रत्यक्ष माप जुटाए — सभी ऊँचाइयों पर तापमान, दबाव, हवा और रासायनिक संघटन। जांच ने अवरोहण के दौरान 350 तस्वीरें प्रेषित कीं और सतह से 72 मिनट तक प्रसारण जारी रखा, जिसमें 10.3°S, 192.3°W पर तरल मीथेन की पतली परत के नीचे गोल जल-बर्फ़ के कंकड़ों का बाढ़ का मैदान दिखा।"
+ },
+ {
+  "rel": "missions/saturn/huygens.json",
+  "at": "events.0.label",
+  "en": "LAUNCH (WITH CASSINI)",
+  "cur": "लॉन्च (कैसिनी के साथ)"
+ },
+ {
+  "rel": "missions/saturn/huygens.json",
+  "at": "events.3.label",
+  "en": "TITAN ENTRY + LANDING",
+  "cur": "टाइटन प्रवेश + लैंडिंग"
+ },
+ {
+  "rel": "missions/saturn/pioneer-11.json",
+  "at": "first",
+  "en": "First spacecraft to fly past Saturn (1979-09-01); demonstrated the gravity-assist that sent Voyager 2 onward",
+  "cur": "शनि ग्रह के पास से गुजरने वाला पहला अंतरिक्ष यान (1979-09-01); Voyager 2 को आगे भेजने वाली गुरुत्व-सहायता का प्रदर्शन"
+ },
+ {
+  "rel": "missions/saturn/pioneer-11.json",
+  "at": "dispatch",
+  "en": "Pioneer 11 was the second scout, and it went further than its twin. After its own pass by Jupiter it used the planet’s gravity to cross the solar system and reach Saturn in 1979 — the first spacecraft ever to do so — deliberately flying through the ring plane to test whether the region was safe. It found the gap the Voyagers would thread a year later. Much of what made the Grand Tour possible was this: a small, cheap probe sent ahead to take the risks and map the hazards, so the flagships behind it could fly with confidence instead of fear.",
+  "cur": "Pioneer 11 दूसरा अन्वेषक था, और यह अपने जुड़वाँ से भी आगे गया। बृहस्पति के अपने ही सहारे के बाद इसने ग्रह के गुरुत्वाकर्षण का उपयोग करके सौर मंडल को पार किया और 1979 में शनि तक पहुँचा — पहला अंतरिक्ष यान जो ऐसा कर सका — वलय तल के माध्यम से जानबूझकर उड़ान भरी ताकि यह परीक्षा की जा सके कि वह क्षेत्र सुरक्षित था। इसने वह अंतराल खोजा जिसमें से Voyager एक साल बाद गुजरेंगे। Grand Tour को संभव बनाने वाली बहुत सी चीजें इसी में निहित थीं: एक छोटा, सस्ता प्रोब जो आगे भेजा गया था जोखिम लेने और खतरों का नक्शा बनाने के लिए, ताकि इसके पीछे के प्रमुख अंतरिक्ष यान आत्मविश्वास के साथ उड़ान भर सकें, डर के बजाय।"
+ },
+ {
+  "rel": "missions/saturn/pioneer-11.json",
+  "at": "description",
+  "en": "Twin of Pioneer 10, launched a year later. Pioneer 11 used Jupiter’s gravity to bend its trajectory toward Saturn — the canonical proof of gravity-assist propulsion, the technique that later enabled the Voyager Grand Tour. At Saturn it discovered the F ring and a small inner moon later resolved into the co-orbital pair Janus/Epimetheus. Carries the same Pioneer plaque as its twin. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; the spacecraft is now heading toward the constellation Aquila.",
+  "cur": "Pioneer 10 का जुड़वां, एक साल बाद लॉन्च किया गया। Pioneer 11 ने बृहस्पति की गुरुत्व का उपयोग अपनी गति को शनि की ओर मोड़ने के लिए किया — गुरुत्व-सहायता प्रणोदन का विहित प्रमाण, वह तकनीक जिसने बाद में Voyager Grand Tour को सक्षम बनाया। शनि पर इसने F वलय की खोज की और एक छोटा आंतरिक चंद्रमा खोजा जिसे बाद में सह-कक्षीय जोड़ी जानूस/एपिमेथियस के रूप में हल किया गया। अपने जुड़वां के जैसे ही Pioneer पट्टिका ले जाता है। 1995-09-30 को सूर्य-केंद्रीय दूरी ~43 AU से संकेत खो गया; अंतरिक्ष यान अब गरुड़ तारामंडल नक्षत्र की ओर बढ़ रहा है।"
+ },
+ {
+  "rel": "missions/saturn/pioneer-11.json",
+  "at": "events.2.label",
+  "en": "SATURN CLOSEST APPROACH",
+  "cur": "शनि निकटतम दृष्टिकोण"
+ },
+ {
+  "rel": "missions/saturn/voyager-1.json",
+  "at": "first",
+  "en": "Most distant human-made object — currently ~170 AU from the Sun in interstellar space",
+  "cur": "सबसे दूर मानव-निर्मित वस्तु — वर्तमान में सूर्य से ~170 AU दूर अंतरतारकीय अंतरिक्ष में"
+ },
+ {
+  "rel": "missions/saturn/voyager-1.json",
+  "at": "dispatch",
+  "en": "Voyager 1 is the farthest thing humanity has ever made, and it got there almost by an accident of geometry. A close pass by Saturn’s giant moon Titan — chosen for the science — bent its path up and out of the plane of the planets and aimed it at the edge of the solar system, and it has been climbing ever since. Along the way it found active volcanoes on Io, the first ever seen off Earth, and in 1990 it turned back to take the Pale Blue Dot. In 2012 it became the first machine to cross into interstellar space. It is still transmitting, on fading nuclear power, from more than a hundred times the Earth’s distance from the Sun.",
+  "cur": "Voyager 1 मानवता द्वारा कभी बनाई गई सबसे दूर की चीज़ है, और यह ज्यामिति के एक दुर्घटनावश संयोग से वहां पहुंची। शनि के विशाल चंद्रमा टाइटन के एक निकट मार्ग — विज्ञान के लिए चुना गया — ने इसके पथ को ग्रहों के तल से ऊपर और बाहर की ओर मोड़ दिया और इसे सौर मंडल के किनारे की ओर निर्देशित किया, और यह तब से चढ़ता रहा है। इस यात्रा में इसने आयो पर सक्रिय ज्वालामुखी खोजे — पृथ्वी के बाहर पहली बार देखे गए — और 1990 में यह Pale Blue Dot लेने के लिए पीछे मुड़ा। 2012 में यह अंतरतारकीय अंतरिक्ष में प्रवेश करने वाली पहली मानव-निर्मित वस्तु बन गई। यह अभी भी सूर्य से पृथ्वी की दूरी के सौ गुना से भी अधिक दूर से, क्षीण परमाणु ऊर्जा पर, संकेत भेज रहा है।"
+ },
+ {
+  "rel": "missions/saturn/voyager-1.json",
+  "at": "description",
+  "en": "Launched 16 days after Voyager 2, Voyager 1 flew faster and arrived at Jupiter first (1979) and Saturn first (1980). Its Titan flyby bent the trajectory upward out of the ecliptic plane, ending the planetary tour but sending it on the most direct path to the heliopause — which it crossed on 2012-08-25, the first human-made object to enter interstellar space. From a heliocentric distance of ~6 billion km it took the Pale Blue Dot family portrait (1990-02-14), the photograph Carl Sagan wrote about. Both Voyagers carry the Golden Record as humanity’s calling card.",
+  "cur": "Voyager 2 के 16 दिन बाद लॉन्च किया गया, Voyager 1 तेजी से उड़ा और बृहस्पति (1979) और शनि (1980) पहले पहुंचा। इसके टाइटन फ्लाईबाई ने प्रक्षेप पथ को ग्रहण तल से ऊपर की ओर मोड़ दिया, ग्रहीय दौरा समाप्त किया लेकिन इसे हीलिओपॉज़ का सबसे सीधा मार्ग भेजा — जिसे यह 2012-08-25 पर पार करता है, अंतरतारकीय अंतरिक्ष में प्रवेश करने वाली पहली मानव-निर्मित वस्तु। ~6 बिलियन किमी की हीलिओसेंट्रिक दूरी से इसने Pale Blue Dot के पारिवारिक चित्र (1990-02-14) को लिया, वह तस्वीर जिसके बारे में कार्ल सेगन ने लिखा। दोनों Voyagers मानवता की पुकार के रूप में Golden Record ले जाते हैं।"
+ },
+ {
+  "rel": "missions/saturn/voyager-1.json",
+  "at": "events.1.label",
+  "en": "JUPITER CLOSEST APPROACH",
+  "cur": "बृहस्पति निकटतम दृष्टिकोण"
+ },
+ {
+  "rel": "missions/saturn/voyager-1.json",
+  "at": "events.2.label",
+  "en": "SATURN + TITAN FLYBYS",
+  "cur": "शनि + टाइटन फ्लाईबाई"
+ },
+ {
+  "rel": "missions/sun/parker-solar-probe.json",
+  "at": "first",
+  "en": "Closest spacecraft to the Sun ever flown (6.1 M km, 9.86 R☉); first spacecraft to enter the solar corona (2021-04-28); fastest human-made object (~191 km/s)",
+  "cur": "सूर्य के सबसे निकट पहुँचने वाला अंतरिक्षयान (6.1 M किमी, 9.86 R☉); सौर कोरोना में प्रवेश करने वाला पहला अंतरिक्षयान (2021-04-28); सबसे तेज़ मानव निर्मित वस्तु (~191 किमी/सेकंड)"
+ },
+ {
+  "rel": "missions/sun/parker-solar-probe.json",
+  "at": "description",
+  "en": "Parker Solar Probe ran the highest-energy launch ever flown for a science mission — C3 of 154 km²/s², requiring a custom Star 48BV solid third stage atop a Delta IV Heavy just to escape Earth into a Sun-falling trajectory. Seven Venus gravity assists over six years progressively lowered perihelion from 0.16 AU (P1, 2018-11-05) to 0.046 AU (P22, 2024-12-24 — 9.86 solar radii, 6.1 million km from the surface). At P8 in 2021-04-28 Parker dipped below the Alfvén critical surface — the first spacecraft ever to enter the Sun's corona. At P22 it reached ~191 km/s, becoming the fastest human-made object ever. The 11.43-cm carbon-carbon heat shield sustained 1,377 °C while the spacecraft bus 1 metre behind it remained at room temperature.",
+  "cur": "Parker Solar Probe ने विज्ञान मिशन के लिए अब तक का सर्वोच्च-ऊर्जा प्रक्षेपण किया — C3 154 km²/s² के साथ, जिसके लिए एक Delta IV Heavy के शीर्ष पर एक कस्टम Star 48BV ठोस तीसरे चरण की आवश्यकता थी जो पृथ्वी से बाहर निकलकर सूर्य-गिरते हुए कक्षापथ में प्रवेश करने के लिए था। छह वर्षों में सात शुक्र गुरुत्वाकर्षण सहायताएँ क्रमिक रूप से perihelion को 0.16 AU (P1, 2018-11-05) से 0.046 AU (P22, 2024-12-24 — 9.86 सौर त्रिज्या, सतह से 6.1 मिलियन km) तक कम करीं। 2021-04-28 को P8 पर Parker ने Alfvén critical surface के नीचे प्रवेश किया — सूर्य के corona में प्रवेश करने वाली पहली spacecraft। P22 पर यह ~191 km/s तक पहुँची, जिससे यह अब तक की सर्वाधिक तीव्र मानव-निर्मित वस्तु बन गई। 11.43 cm कार्बन-कार्बन heat shield 1,377 °C को सहन करती रही जबकि इसके 1 मीटर पीछे की spacecraft bus कक्ष के तापमान पर बनी रही।"
+ },
+ {
+  "rel": "missions/sun/parker-solar-probe.json",
+  "at": "events.5.label",
+  "en": "P22 — DESIGN MILESTONE",
+  "cur": "P22 — डिज़ाइन मील का पत्थर"
+ },
+ {
+  "rel": "missions/sun/solar-orbiter.json",
+  "at": "first",
+  "en": "First mission designed to image the Sun's polar regions in detail; complements Parker Solar Probe's in-corona measurements with high-latitude remote sensing",
+  "cur": "सूर्य के ध्रुवीय क्षेत्रों की विस्तृत इमेजिंग के लिए डिज़ाइन किया गया पहला मिशन; उच्च-अक्षांश रिमोट सेंसिंग के साथ Parker Solar Probe के कोरोना-आंतरिक मापन को पूरक बनाता है"
+ },
+ {
+  "rel": "missions/sun/solar-orbiter.json",
+  "at": "description",
+  "en": "ESA-led mission with a NASA launch and one instrument contribution. Where Parker Solar Probe goes closer than anyone has ever been, Solar Orbiter goes higher — using repeated Venus gravity assists over a decade to climb out of the ecliptic toward ~33° heliographic inclination. From that vantage point its instrument suite (PHI, EUI, SPICE, STIX, METIS, SoloHI + four in-situ packages) images the Sun's polar magnetic fields, traces solar-wind acceleration in real time, and links remote and in-situ measurements simultaneously. First perihelion 2020-06-15 at 0.51 AU. Closest perihelion to date 2022-10-12 at 0.29 AU (inside Mercury's perihelion).",
+  "cur": "ESA के नेतृत्व वाला मिशन जिसमें NASA द्वारा प्रक्षेपण और एक उपकरण योगदान शामिल है। जहाँ Parker Solar Probe किसी से भी अधिक निकट जाता है, वहीं Solar Orbiter अधिक ऊँचाई पर जाता है — एक दशक में बार-बार शुक्र गुरुत्वाकर्षण सहायता का उपयोग करते हुए ग्रहण तल से बाहर ~33° हेलियोग्राफिक झुकाव की ओर चढ़ता है। उस सुविधाजनक बिंदु से इसका उपकरण सूट (PHI, EUI, SPICE, STIX, METIS, SoloHI + चार इन-सीटू पैकेज) सूर्य के ध्रुवीय चुंबकीय क्षेत्रों की इमेजिंग करता है, सौर-पवन त्वरण को वास्तविक समय में ट्रेस करता है, और रिमोट तथा इन-सीटू मापन को एक साथ जोड़ता है। पहला पेरिहेलियन 2020-06-15 को 0.51 AU पर। अब तक का निकटतम पेरिहेलियन 2022-10-12 को 0.29 AU पर (Mercury के पेरिहेलियन के अंदर)।"
+ },
+ {
+  "rel": "missions/sun/solar-orbiter.json",
+  "at": "events.2.label",
+  "en": "P1 — FIRST PERIHELION",
+  "cur": "P1 — पहला पेरिहेलियन"
+ },
+ {
+  "rel": "missions/sun/solar-orbiter.json",
+  "at": "events.4.label",
+  "en": "P4 — CLOSEST TO DATE",
+  "cur": "P4 — अब तक का निकटतम"
+ },
+ {
+  "rel": "missions/sun/ulysses.json",
+  "at": "first",
+  "en": "Only spacecraft ever to enter a high-inclination heliocentric orbit; only direct measurements of the solar wind at all heliographic latitudes",
+  "cur": "अब तक एकमात्र अंतरिक्षयान जो उच्च-झुकाव सूर्यकेंद्रित कक्षा में प्रवेश किया; सौर पवन के सभी हेलियोग्राफिक अक्षांशों पर एकमात्र प्रत्यक्ष माप"
+ },
+ {
+  "rel": "missions/sun/ulysses.json",
+  "at": "description",
+  "en": "Joint ESA / NASA mission. Launched 1990-10-06 from STS-41 Discovery + IUS + PAM-S upper stages, Ulysses used a Jupiter gravity assist on 1992-02-08 to deflect itself ~80° out of the ecliptic — the only way to reach a near-polar Sun-relative orbit from Earth's near-equatorial orbital plane. Three full polar orbits of the Sun over 18.5 years mapped the solar wind, heliospheric magnetic field, and energetic particles at all heliographic latitudes — direct measurements that revealed how solar-wind structure varies between equatorial slow-wind regions and high-latitude fast-wind streams from coronal holes. Mission terminated 2009-06-30 when thruster hydrazine froze in the lines. Hardware remains in heliocentric polar orbit.",
+  "cur": "ESA / NASA का संयुक्त मिशन। 1990-10-06 को STS-41 Discovery + IUS + PAM-S ऊपरी चरणों से प्रक्षेपित, Ulysses ने 1992-02-08 को बृहस्पति के गुरुत्वाकर्षण सहायता का उपयोग करके अपने आप को ~80° अपनी लंबवत कक्षा से बाहर करीब-ध्रुवीय सूर्य-सापेक्ष कक्षा में मोड़ा — पृथ्वी की निकट-भूमध्यरेखीय कक्षीय तल से किसी ध्रुवीय सूर्य-सापेक्ष कक्षा तक पहुंचने का एकमात्र तरीका। 18.5 वर्षों में सूर्य के तीन पूर्ण ध्रुवीय परिक्रमाओं ने सभी हीलियोग्राफिक अक्षांशों पर सौर हवा, हीलियोस्फीयर चुंबकीय क्षेत्र और ऊर्जावान कणों का मानचित्रण किया — प्रत्यक्ष माप जिन्होंने यह प्रकट किया कि सौर-हवा संरचना भूमध्यरेखीय धीमी-हवा क्षेत्रों और कोरोनल होल से उच्च-अक्षांश तीव्र-हवा धाराओं के बीच कैसे भिन्न होती है। मिशन 2009-06-30 को समाप्त हुआ जब थ्रस्टर हाइड्रेजीन लाइनों में जम गया। हार्डवेयर हीलियोसेंट्रिक ध्रुवीय कक्षा में रहता है।"
+ },
+ {
+  "rel": "missions/sun/ulysses.json",
+  "at": "events.2.label",
+  "en": "FIRST SOUTH POLAR PASS",
+  "cur": "पहला दक्षिणी ध्रुवीय मार्ग"
+ },
+ {
+  "rel": "missions/sun/ulysses.json",
+  "at": "events.3.label",
+  "en": "FIRST NORTH POLAR PASS",
+  "cur": "पहला उत्तरी ध्रुवीय मार्ग"
+ },
+ {
+  "rel": "missions/venus/akatsuki.json",
+  "at": "first",
+  "en": "Recovered from a 5-year solar-orbit hold to achieve Venus orbit on a backup attempt; the only Venus orbiter active in its final years of operation",
+  "cur": "5 साल की सौर-कक्षा प्रतीक्षा से शुक्र की कक्षा में पहुँचने के लिए पुनः प्राप्त; अपने परिचालन के अंतिम वर्षों में सक्रिय एकमात्र शुक्र ऑर्बिटर"
+ },
+ {
+  "rel": "missions/venus/akatsuki.json",
+  "at": "description",
+  "en": "Akatsuki — \"dawn\" — was Japan's first Venus mission. Launched 2010-05-20 from Tanegashima on an H-IIA 202, paired with the IKAROS solar-sail demonstrator. The planned Venus orbit insertion 2010-12-07 failed when salt crystal buildup in an oxidiser check valve threw the main engine off-axis 152 seconds into the burn. JAXA kept the spacecraft alive in solar orbit for five years, twelve correction maneuvers, until the next Venus encounter window. On 2015-12-07 a 1228-second burn using four attitude-control thrusters — never designed for orbital insertion — placed Akatsuki into a highly elliptical 400 × 440,000 km, 3°-inclination orbit. One of the most dramatic mission-saves in spaceflight history. Contact was lost in 2024; JAXA declared operations complete on 2025-09-18.",
+  "cur": "Akatsuki — \"उषा\" (भोर) — जापान का पहला शुक्र मिशन था। 2010-05-20 को तानेगाशिमा से H-IIA 202 पर लॉन्च किया गया, IKAROS सौर-पाल प्रदर्शक के साथ जोड़ा गया। नियोजित शुक्र कक्षा प्रविष्टि 2010-12-07 को विफल हुई जब एक ऑक्सीडाइज़र जाँच वाल्व में नमक क्रिस्टल का जमाव मुख्य इंजन को बर्न के 152 सेकंड में अक्ष से हटा दिया। JAXA ने पाँच साल, बारह सुधार युद्धाभ्यास के लिए अंतरिक्षयान को सौर कक्षा में जीवित रखा, जब तक अगली शुक्र मुठभेड़ की खिड़की न आ गई। 2015-12-07 को 1228-सेकंड की बर्न — जो कभी कक्षा प्रविष्टि के लिए डिज़ाइन नहीं की गई थी — ने Akatsuki को एक अत्यधिक दीर्घवृत्ताकार 400 × 440,000 किमी, 3°-झुकाव वाली कक्षा में रखा। अंतरिक्ष उड़ान के इतिहास में सबसे नाटकीय मिशन-बचाव में से एक। 2024 में संपर्क खो गया; JAXA ने 2025-09-18 को परिचालन पूर्ण घोषित किया।"
+ },
+ {
+  "rel": "missions/venus/magellan.json",
+  "at": "first",
+  "en": "Most complete radar map of Venus — 98% of the surface at ~120-m resolution; first planetary spacecraft launched from the Space Shuttle",
+  "cur": "शुक्र का सबसे संपूर्ण राडार मानचित्र — सतह का 98% लगभग 120-मी संकल्प पर; Space Shuttle से लॉन्च किया गया पहला ग्रहीय अंतरिक्ष यान"
+ },
+ {
+  "rel": "missions/venus/magellan.json",
+  "at": "description",
+  "en": "Magellan turned Venus from a featureless cloud-veiled disc into a mapped planet. Launched from Shuttle Atlantis's payload bay 1989-05-04 — the first planetary spacecraft to ride a Shuttle — and arrived at Venus 1990-08-10 via a long Type-IV trajectory (1.5 solar revolutions). Over four mapping cycles the synthetic-aperture radar imaged 98% of Venus's surface at ~120-m resolution, revealing tessera highlands, coronae, pancake domes, and a young, volcanically-resurfaced surface. Mission ended 1994-10-13 in the Termination Experiment — the first planned controlled atmospheric entry of a planetary spacecraft.",
+  "cur": "Magellan ने शुक्र को एक विशेषताहीन बादलों से ढके हुए डिस्क से एक मानचित्रित ग्रह में बदल दिया। Shuttle Atlantis के पेलोड बे से 1989-05-04 को प्रक्षेपित किया गया — पहला ग्रहीय अंतरिक्ष यान जो किसी Shuttle पर सवार हुआ — और 1990-08-10 को एक लंबे Type-IV प्रक्षेपवक्र (1.5 सौर परिक्रमण) के माध्यम से शुक्र पर पहुंचा। चार मानचित्रण चक्रों में कृत्रिम-छिद्र राडार ने शुक्र की सतह का 98% लगभग 120 मीटर के विभेदन पर प्रतिबिंबित किया, जिससे tessera पठार, coronae, pancake गुंबद और एक युवा, ज्वालामुखी रूप से पुनः सतही ग्रह का पता चला। मिशन 1994-10-13 को Termination Experiment में समाप्त हुआ — ग्रहीय अंतरिक्ष यान की पहली योजनाबद्ध नियंत्रित वायुमंडलीय प्रविष्टि।"
+ },
+ {
+  "rel": "missions/venus/magellan.json",
+  "at": "events.4.label",
+  "en": "MAPPING CYCLE 1 COMPLETE",
+  "cur": "मानचित्रण चक्र 1 पूर्ण"
+ },
+ {
+  "rel": "missions/venus/vega-1.json",
+  "at": "first",
+  "en": "First-ever balloon aerostat deployed in another planet's atmosphere (Venus, 1985); first spacecraft to carry science to two distinct solar-system targets",
+  "cur": "किसी अन्य ग्रह के वायुमंडल (शुक्र, 1985) में पहली बार तैनात किया गया गुब्बारा एरोस्टैट; सौर मंडल के दो अलग-अलग लक्ष्यों तक विज्ञान पहुँचाने वाला पहला अंतरिक्ष यान"
+ },
+ {
+  "rel": "missions/venus/vega-1.json",
+  "at": "description",
+  "en": "Soviet–ESA flagship of the Halley armada. Vega 1 launched 1984-12-15 with a Venera-lineage lander plus a first-of-kind ESA/CNES-built helium balloon that drifted in Venus's cloud deck at 54 km altitude for 46.5 hours, transmitting wind + temperature data via a 20-station global radio net. After dropping its descent module the bus used Venus gravity assist to redirect to comet 1P/Halley, achieving a 8890 km closest approach on 1986-03-06 — the first cometary nucleus encounter, and the position fix that ESA's Giotto used to navigate its own much closer Halley flyby a week later.",
+  "cur": "सोवियत–ESA का हैली धूमकेतु आर्मडा का प्रमुख मिशन। Vega 1 ने 1984-12-15 को Venera वंश के लैंडर के साथ प्रक्षेपण किया, साथ ही एक अभूतपूर्व ESA/CNES द्वारा निर्मित हीलियम गुब्बारा था जो शुक्र के बादल आवरण में 54 किमी की ऊँचाई पर 46.5 घंटे तक तैरता रहा, और विश्वव्यापी रेडियो नेटवर्क के 20 स्टेशनों के माध्यम से हवा और तापमान डेटा संचारित करता रहा। अपने अवरोहण मॉड्यूल को गिराने के बाद, बस ने शुक्र के गुरुत्वाकर्षण सहायता का उपयोग करके धूमकेतु 1P/हैली की ओर अपनी दिशा बदली, और 1986-03-06 को 8890 किमी की निकटतम दूरी प्राप्त की — यह पहली धूमकेतु नाभिक मुठभेड़ थी, और यह स्थिति निर्धारण ही था जिसे ESA के Giotto ने एक हफ्ते बाद अपनी स्वयं की बहुत अधिक निकट हैली धूमकेतु फ्लाईबाई के लिए नेविगेट करने में उपयोग किया था।"
+ },
+ {
+  "rel": "missions/venus/vega-2.json",
+  "at": "first",
+  "en": "First chemical analysis of Venusian highland-type soil (Aphrodite Terra, 1985); paired Halley encounter with Vega 1 fed Giotto's targeting solution",
+  "cur": "शुक्र की पहाड़ी-प्रकार की मिट्टी का पहला रासायनिक विश्लेषण (एफ्रोडाइट टेरा, 1985); Vega 1 के साथ हैली धूमकेतु मिलन ने Giotto के लक्ष्य समाधान को खिलाया"
+ },
+ {
+  "rel": "missions/venus/vega-2.json",
+  "at": "description",
+  "en": "Twin of Vega 1, launched 6 days later (1984-12-21) for redundancy + a paired Halley armada solution. Vega 2's descent module landed 1985-06-15 in Rusalka Planitia, on the northern flank of Aphrodite Terra, and used XRF spectrometry to find anorthosite-norite-troctolite material — the first chemical analysis of highland-type Venusian crust (the composition resembles lunar highlands, though the landing site itself is a plain). Its balloon performed identically to Vega 1's, drifting in the opposite hemisphere at ~240 km/h. The bus flew past comet 1P/Halley at 8030 km on 1986-03-09. Together the two Vega buses returned the first close-up cometary-nucleus images and refined the position fix that allowed Giotto to attempt a 596 km flyby five days later.",
+  "cur": "Vega 1 का जुड़वां, 6 दिन बाद (1984-12-21) में पुनरावृत्ति के लिए और युग्मित हैली धूमकेतु आर्मेडा समाधान के लिए लॉन्च किया गया। Vega 2 का अवतरण मॉड्यूल 1985-06-15 को रुसाल्का मैदान में, एफ्रोडाइट टेरा के उत्तरी हिस्से पर उतरा, और XRF स्पेक्ट्रोमेट्री का उपयोग करके anorthosite-norite-troctolite सामग्री को खोजा — शुक्र की पहाड़ी-प्रकार की भूपर्पटी का पहला रासायनिक विश्लेषण (संरचना चंद्र पहाड़ियों से मिलती-जुलती है, हालांकि लैंडिंग स्थल स्वयं एक मैदान है)। इसके बैलून ने Vega 1 के समान प्रदर्शन किया, विपरीत गोलार्ध में ~240 km/h पर बहते हुए। बस ने धूमकेतु 1P/हैली को 1986-03-09 को 8030 km की दूरी पर पास किया। दोनों Vega बसों ने एक साथ धूमकेतु-नाभिक की पहली क्लोज-अप छवियां लौटाईं और स्थिति सुधार को परिष्कृत किया जिसने Giotto को पांच दिन बाद 596 km फ्लाईबाई का प्रयास करने की अनुमति दी।"
+ },
+ {
+  "rel": "missions/venus/venera-13.json",
+  "at": "first",
+  "en": "Longest surface survival of any Venus mission (127 min); first colour panoramic images and first audio from another planet's surface",
+  "cur": "किसी भी शुक्र मिशन की सबसे लंबी सतह उत्तरजीविता (127 मिनट); पहली रंगीन पैनोरामिक छवियां और किसी अन्य ग्रह की सतह से पहला ऑडियो"
+ },
+ {
+  "rel": "missions/venus/venera-13.json",
+  "at": "description",
+  "en": "The peak of the Soviet Venera program. Venera 13 launched 1981-10-30 and landed 1982-03-01 at 7.5°S 303°E in the Phoebe Regio highlands. Surface conditions at touchdown: 457 °C, 89 bar, sulfuric-acid haze. The lander survived 127 minutes — nearly an hour beyond its design target — returning the first colour panoramas from another planet's surface, recording wind microphone audio, and using its drill + onboard X-ray fluorescence spectrometer to determine that the basalt at the landing site was a weakly differentiated leucite alkaline composition. Twin spacecraft Venera 14 performed identical operations at a separate site five days later. The Venera series (1967–1983) remains the only successful surface program at Venus to date.",
+  "cur": "सोवियत Venera कार्यक्रम का शिखर। Venera 13 1981-10-30 को प्रक्षेपित हुआ और 1982-03-01 को फ़ीबी क्षेत्र पर्वतीय क्षेत्र में 7.5°S 303°E पर उतरा। स्पर्शन के समय सतह की परिस्थितियाँ: 457 °C, 89 bar, सल्फ्यूरिक एसिड धुंध। लैंडर 127 मिनट तक जीवित रहा — अपने डिज़ाइन लक्ष्य से लगभग एक घंटा अधिक — किसी अन्य ग्रह की सतह से पहला रंगीन पैनोरामा लौटाता हुआ, पवन माइक्रोफोन ऑडियो रिकॉर्ड करते हुए, और अपने ड्रिल + ऑनबोर्ड X-ray फ्लूरोसेंस स्पेक्ट्रोमीटर का उपयोग करते हुए यह निर्धारित किया कि लैंडिंग स्थल पर बैसाल्ट एक दुर्बल विभेदित ल्यूसाइट क्षारीय संरचना थी। जुड़वाँ अंतरिक्ष यान Venera 14 ने पाँच दिन बाद एक अलग स्थान पर समान संचालन किया। Venera श्रृंखला (1967–1983) आज तक शुक्र पर एकमात्र सफल सतह कार्यक्रम बनी हुई है।"
+ }
+]

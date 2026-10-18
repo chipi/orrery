@@ -1,0 +1,722 @@
+[
+ {
+  "rel": "programs/apollo.json",
+  "at": "tagline",
+  "en": "The Cold-War sprint that put twelve people on the Moon — and then stopped.",
+  "cur": "शीत युद्ध की वह दौड़ जिसने बारह लोगों को चाँद पर पहुँचाया — और फिर रुक गई।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "the_land.0.md",
+  "en": "For ninety minutes at a stretch, in the autumn of 1957, a polished metal sphere the size of a beach ball crossed the sky over the United States — and it was beeping. Sputnik 1 belonged to the Soviet Union, and there was nothing the most powerful country on Earth could do but listen. Less than four years later, on 12 April 1961, the Soviets put up a person too: Yuri Gagarin, the first human to leave the planet. Washington heard none of it as science. It heard a syllogism it couldn't unhear — a rocket that can lift a satellite into orbit can drop a warhead onto any city you care to name. Almost overnight, spaceflight stopped being exploration and became the leading edge of the Cold War.",
+  "cur": "1957 की शरद ऋतु में नब्बे मिनट के खंडों में, एक चमकदार धातु का गोला जो समुद्र तट की गेंद के आकार का था, संयुक्त राज्य अमेरिका के आकाश में से गुज़रता था — और वह बीप कर रहा था। Sputnik 1 सोवियत संघ का था, और पृथ्वी पर सबसे शक्तिशाली देश सुनने के अलावा कुछ नहीं कर सकता था। चार साल से भी कम समय बाद, 12 अप्रैल 1961 को, सोवियतों ने एक व्यक्ति को भी भेजा: यूरी गगारिन, ग्रह छोड़ने वाले पहले मानव। Washington ने इसे विज्ञान के रूप में नहीं सुना। उसने एक तर्कसंगति सुनी जिसे वह नहीं भुला सकता था — एक रॉकेट जो एक उपग्रह को कक्षा में उठा सकता है, वह किसी भी शहर पर जिसका आप नाम लेना चाहें, एक वारहेड गिरा सकता है। लगभग रातोंरात, अंतरिक्ष उड़ान अन्वेषण नहीं रही और शीत युद्ध की अग्रिम धार बन गई।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "the_land.1.md",
+  "en": "On 25 May 1961 — six weeks after Gagarin, and twenty days after Alan Shepard's fifteen-minute suborbital hop made America a spacefaring nation on a technicality — John F. Kennedy stood before Congress and bet the country on the Moon. Land a man there and return him safely, he said, \"before this decade is out.\" Strip away the rhetoric and it was a contest for prestige: a bid to beat the Soviets in the one arena where they were plainly ahead. The science would be real, and it would outlast the politics — but it rode behind them. Apollo was born of that choice, and it's worth saying so without flinching.",
+  "cur": "25 मई 1961 को — गगारिन के छह सप्ताह बाद, और एलन शेपर्ड की पंद्रह मिनट की उपकक्षीय छलांग के बीस दिन बाद जिसने अमेरिका को तकनीकी आधार पर एक अंतरिक्षयात्री राष्ट्र बना दिया — जॉन एफ़. केनेडी कांग्रेस के सामने खड़े हुए और देश को चाँद पर दाँव पर लगा दिया। वहाँ एक व्यक्ति को उतारें और उसे सुरक्षित वापस लाएँ, उन्होंने कहा, \"इस दशक के अंत से पहले।\" बयानबाजी को हटा दें तो यह प्रतिष्ठा की प्रतियोगिता थी: उस एकमात्र क्षेत्र में सोवियतों को हराने की बोली जहाँ वे स्पष्ट रूप से आगे थे। विज्ञान वास्तविक होगा, और यह राजनीति से अधिक समय तक टिकेगा — लेकिन यह उनके पीछे चला। Apollo उस चुनाव से जन्मा था, और बिना किसी झिझक के यह कहना उचित है।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "goals.0.caption",
+  "en": "The Saturn V — 111 metres tall, about 3,000 tonnes on the pad, and the most powerful rocket ever to carry humans — and, for over fifty years, the most powerful ever flown, until SpaceX's Super Heavy in 2023. It existed for exactly one reason: to beat a deadline.",
+  "cur": "Saturn V — 111 मीटर ऊँचा, पैड पर लगभग 3,000 टन, और मनुष्यों को ले जाने वाला अब तक का सबसे शक्तिशाली रॉकेट — और, पचास साल से अधिक समय तक, उड़ाया गया अब तक का सबसे शक्तिशाली, जब तक कि 2023 में SpaceX का Super Heavy नहीं आया। यह ठीक एक कारण से अस्तित्व में था: एक समय सीमा को हराने के लिए।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "goals.1.md",
+  "en": "The goal was narrow and absolute: put American astronauts on the lunar surface and bring them home alive, ahead of the USSR, before 1970. Everything else was engineered backward from that one sentence — the Saturn rockets, a three-part spacecraft that had to fly in pieces a quarter-million miles from any help, pressure suits rated for hard vacuum, a worldwide tracking network, and a workforce that swelled to roughly 400,000 across NASA, its contractors, and the universities.",
+  "cur": "लक्ष्य संकीर्ण और पूर्ण था: अमेरिकी अंतरिक्ष यात्रियों को चंद्र सतह पर उतारें और उन्हें जीवित घर लाएँ, USSR से पहले, 1970 से पहले। बाकी सब कुछ उस एक वाक्य से पीछे की ओर इंजीनियर किया गया था — Saturn रॉकेट, तीन-भाग का एक अंतरिक्ष यान जिसे किसी भी सहायता से एक चौथाई मिलियन मील दूर टुकड़ों में उड़ना था, कठोर निर्वात के लिए रेट किए गए दबाव सूट, एक विश्वव्यापी ट्रैकिंग नेटवर्क, और एक कार्यबल जो NASA, इसके ठेकेदारों और विश्वविद्यालयों में लगभग 400,000 तक फैल गया।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "goals.2.md",
+  "en": "There were genuine scientific goals too — sampling the Moon's geology, planting instruments that would keep working long after the crews left, finding out whether people could actually do useful work on another world. But in the program's own priority order they sat behind the landing, and everyone involved knew it. The race set the schedule. The science fit into the gaps it left.",
+  "cur": "वास्तविक वैज्ञानिक लक्ष्य भी थे — चाँद की भूविज्ञान का नमूना लेना, ऐसे उपकरण लगाना जो चालक दल के जाने के बाद भी लंबे समय तक काम करते रहें, यह पता लगाना कि क्या लोग वास्तव में किसी अन्य दुनिया पर उपयोगी काम कर सकते हैं। लेकिन कार्यक्रम की अपनी प्राथमिकता क्रम में वे लैंडिंग के पीछे बैठे थे, और इसमें शामिल हर कोई इसे जानता था। दौड़ ने अनुसूची निर्धारित की। विज्ञान उसके द्वारा छोड़ी गई जगहों में फिट हो गया।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "outcome.0.caption",
+  "en": "Apollo 11 on the Sea of Tranquility, 20 July 1969 — the moment the race was decided.",
+  "cur": "शांति सागर पर Apollo 11, 20 जुलाई 1969 — वह क्षण जब दौड़ का फैसला हो गया।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "outcome.1.md",
+  "en": "It worked. On 20 July 1969 Neil Armstrong and Buzz Aldrin walked on the Sea of Tranquility while Michael Collins flew the Command Module alone overhead, losing radio contact every time his orbit carried him behind the Moon. Five more landings followed through December 1972. Twelve people in all walked on the Moon and came home, carrying 382 kilograms of rock and soil that still anchors lunar science more than half a century later.",
+  "cur": "यह काम कर गया। 20 जुलाई 1969 को नील आर्मस्ट्रांग और बज़ एल्ड्रिन ने शांति सागर पर चलते हुए माइकल कोलिन्स ने Command Module को अकेले ऊपर उड़ाया, हर बार जब उनकी कक्षा उन्हें चाँद के पीछे ले गई तो रेडियो संपर्क खो गया। दिसंबर 1972 तक पाँच और लैंडिंग हुईं। कुल बारह लोग चाँद पर चले और घर आए, 382 किलोग्राम चट्टान और मिट्टी ले जाते हुए जो आधी सदी से अधिक समय बाद भी चंद्र विज्ञान को आधार देती है।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "outcome.2.md",
+  "en": "The bill came due in money and in lives. In January 1967 a cabin fire during a routine ground test killed Gus Grissom, Ed White, and Roger Chaffee in seconds, and grounded the program for twenty months. In April 1970 an oxygen tank ruptured on the way to the Moon and nearly killed the crew of Apollo 13, who came home cold and rationing water inside their own Lunar Module. And Apollo stopped at its technical peak: the last three planned landings, Apollo 18 through 20, were cancelled as budgets shrank and the public's attention drifted elsewhere. Did it succeed? It won the race it was built to win — and it was switched off while it was still getting better at the Moon. Pick your yardstick.",
+  "cur": "बिल पैसे में और जीवन में चुकाया गया। जनवरी 1967 में एक नियमित ग्राउंड टेस्ट के दौरान केबिन में आग ने गस ग्रिसम, एड व्हाइट और रॉजर शैफ़ी को सेकंडों में मार डाला, और बीस महीनों के लिए कार्यक्रम को रोक दिया। अप्रैल 1970 में चाँद के रास्ते में एक ऑक्सीजन टैंक फट गया और Apollo 13 के चालक दल को लगभग मार डाला, जो ठंडे होकर और अपने स्वयं के Lunar Module के अंदर पानी की राशनिंग करते हुए घर आए। और Apollo अपने तकनीकी शिखर पर रुक गया: अंतिम तीन नियोजित लैंडिंग, Apollo 18 से 20, बजट सिकुड़ने और जनता का ध्यान कहीं और भटकने के कारण रद्द कर दी गईं। क्या यह सफल रहा? इसने वह दौड़ जीती जिसके लिए इसे बनाया गया था — और इसे उस समय बंद कर दिया गया जब यह अभी भी चाँद पर बेहतर होता जा रहा था। अपना मापदंड चुनें।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "narrative.0.md",
+  "en": "The arc is unusually clean for something this big. It opens on catastrophe: the 1967 fire forced a ground-up redesign of the spacecraft and of NASA's entire safety culture — the reckoning that made everything after it possible. Then the fixed hardware went to work. In 1968 Apollo 7 shook out the redesigned Command Module in Earth orbit; that December, Apollo 8 became the first crewed flight to leave Earth's gravity altogether and circle the Moon, its crew reading from Genesis on live television to the largest audience that had ever existed.",
+  "cur": "इस बड़े काम के लिए यह चाप असामान्य रूप से साफ है। यह विपत्ति से शुरू होता है: 1967 की आग ने अंतरिक्ष यान और NASA की पूरी सुरक्षा संस्कृति के ग्राउंड-अप रीडिजाइन को मजबूर किया — वह हिसाब-किताब जिसने इसके बाद सब कुछ संभव बनाया। फिर ठीक किया गया हार्डवेयर काम पर लग गया। 1968 में Apollo 7 ने पृथ्वी की कक्षा में पुनर्डिज़ाइन किए गए Command Module को झटका दिया; उस दिसंबर में, Apollo 8 पृथ्वी के गुरुत्वाकर्षण को पूरी तरह से छोड़ने और चाँद के चक्कर लगाने वाली पहली चालक दल उड़ान बन गई, इसके चालक दल ने Genesis से लाइव टेलीविजन पर उस सबसे बड़े दर्शक वर्ग के लिए पढ़ा जो कभी अस्तित्व में था।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "narrative.1.md",
+  "en": "Apollo 11 answered Kennedy. And then the program did something a Cold-War instrument was under no obligation to do: it turned toward science. Apollos 12 through 17 grew steadily more ambitious — longer stays, the battery-powered Lunar Roving Vehicle, and finally, on Apollo 17, a trained field geologist named Harrison Schmitt walking the surface he had spent years studying. Apollo 13, the near-disaster in the middle of that run, did something strange to NASA's reputation: by surviving it, the agency came off looking more capable than it would have by never failing at all.",
+  "cur": "Apollo 11 ने Kennedy को जवाब दिया। और फिर कार्यक्रम ने कुछ ऐसा किया जो एक शीत-युद्ध साधन के पास करने की कोई बाध्यता नहीं थी: यह विज्ञान की ओर मुड़ गया। Apollo 12 से 17 लगातार अधिक महत्वाकांक्षी होते गए — लंबे प्रवास, बैटरी से चलने वाला Lunar Roving Vehicle, और अंत में, Apollo 17 पर, हैरिसन श्मिट नामक एक प्रशिक्षित फील्ड भूविज्ञानी उस सतह पर चलते हुए जिसका उन्होंने वर्षों तक अध्ययन किया था। Apollo 13, उस दौड़ के बीच में लगभग-आपदा, ने NASA की प्रतिष्ठा के साथ कुछ अजीब किया: इसे सहकर, एजेंसी उससे अधिक सक्षम दिखी जितनी वह कभी भी विफल न होकर दिखती।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "narrative.2.md",
+  "en": "Apollo 17 lifted off the Moon on 14 December 1972. No human has been back since. But the program's hardware, its people, and its momentum ran straight into nearly everything American human spaceflight did next — Skylab, the Space Shuttle, and, fifty years on, Artemis, now reaching for the lunar south pole that Apollo never touched.",
+  "cur": "Apollo 17 ने 14 दिसंबर 1972 को चाँद से उड़ान भरी। तब से कोई भी मानव वापस नहीं गया है। लेकिन कार्यक्रम का हार्डवेयर, इसके लोग और इसकी गति सीधे लगभग हर उस चीज़ में चली गई जो अमेरिकी मानव अंतरिक्ष उड़ान ने इसके बाद की — Skylab, Space Shuttle, और, पचास साल बाद, Artemis, जो अब चंद्र दक्षिणी ध्रुव की ओर पहुँच रहा है जिसे Apollo ने कभी छुआ नहीं।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "legacy.0.caption",
+  "en": "Earthrise — Apollo 8, Christmas Eve 1968. An unplanned photograph that became one of the most reproduced images in history, and a founding picture of the environmental movement.",
+  "cur": "Earthrise — Apollo 8, क्रिसमस की पूर्व संध्या 1968। एक अनियोजित तस्वीर जो इतिहास में सबसे अधिक पुनरुत्पादित छवियों में से एक बन गई, और पर्यावरण आंदोलन की एक संस्थापक तस्वीर।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "legacy.1.md",
+  "en": "Apollo's return on investment is still argued over, but the shape of it is clear. The program cost about $25.8 billion in period dollars — comfortably north of $250 billion today — and at its peak it put some 400,000 people to work across NASA, its contractors, and the universities. That was a deliberate industrial and educational build-out, not just a rocket, and most of it outlived the Moon shots.",
+  "cur": "Apollo का निवेश पर रिटर्न अभी भी बहस का विषय है, लेकिन इसका आकार स्पष्ट है। कार्यक्रम की लागत अवधि के डॉलर में लगभग $25.8 बिलियन थी — आज आराम से $250 बिलियन से अधिक — और अपने चरम पर इसने NASA, इसके ठेकेदारों और विश्वविद्यालयों में लगभग 400,000 लोगों को काम पर लगाया। यह एक जानबूझकर औद्योगिक और शैक्षिक निर्माण था, सिर्फ एक रॉकेट नहीं, और इसका अधिकांश हिस्सा चाँद की गोलीबारी से अधिक समय तक जीवित रहा।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "legacy.2.md",
+  "en": "The technological pull was real, and it compounded. Apollo pulled early integrated circuits into volume production, drove the young discipline of software engineering, and all but invented modern systems management — the art of keeping a million interdependent parts on schedule at once. Those techniques seeded whole later industries. And the 382 kilograms of returned rock rewrote the age and origin story of the Solar System; researchers are still pulling new results from sealed samples today.",
+  "cur": "तकनीकी खिंचाव वास्तविक था, और यह बढ़ता गया। Apollo ने शुरुआती एकीकृत सर्किट को वॉल्यूम उत्पादन में खींचा, सॉफ्टवेयर इंजीनियरिंग के युवा अनुशासन को आगे बढ़ाया, और आधुनिक सिस्टम प्रबंधन को लगभग आविष्कृत किया — एक साथ दस लाख परस्पर निर्भर भागों को समय पर रखने की कला। उन तकनीकों ने बाद के पूरे उद्योगों को बीज दिया। और 382 किलोग्राम वापस लाई गई चट्टान ने सौर मंडल की आयु और मूल कहानी को फिर से लिखा; शोधकर्ता आज भी सीलबंद नमूनों से नए परिणाम निकाल रहे हैं।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "legacy.3.md",
+  "en": "For the United States it was soft power at planetary scale — a demonstration, watched live around the world, of what an open society could organize and pull off. For everyone else, the most durable thing Apollo left behind may not be a technology at all but a photograph: the whole Earth, small and alone against the black, seen from another world for the first time. Whatever you make of the Cold-War motives that paid for it, that picture changed how people saw the ground under their own feet — worth holding onto as a louder, more crowded space age begins.",
+  "cur": "संयुक्त राज्य अमेरिका के लिए यह ग्रह पैमाने पर सॉफ्ट पावर था — दुनिया भर में लाइव देखा गया एक प्रदर्शन, कि एक खुला समाज क्या व्यवस्थित कर सकता है और कर सकता है। बाकी सभी के लिए, सबसे टिकाऊ चीज़ जो Apollo ने पीछे छोड़ी हो सकता है वह एक प्रौद्योगिकी बिल्कुल नहीं बल्कि एक तस्वीर हो: पूरी पृथ्वी, छोटी और काले के खिलाफ अकेली, पहली बार किसी दूसरी दुनिया से देखी गई। शीत-युद्ध के उद्देश्यों के बारे में आप जो भी सोचें जिन्होंने इसके लिए भुगतान किया, उस तस्वीर ने बदल दिया कि लोग अपने ही पैरों के नीचे की जमीन को कैसे देखते थे — एक शोरगुल वाले, अधिक भीड़भाड़ वाले अंतरिक्ष युग के शुरू होने के साथ इसे पकड़े रखने लायक।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "lessons.0.md",
+  "en": "Apollo's most portable lesson has nothing to do with rocketry. It's about how you point a very large number of people at the same hard thing. Kennedy handed the program a goal that was specific, audacious, and time-boxed — land a crew on the Moon and return them safely, before the decade was out — and that single sentence did what no org chart could. It aligned 400,000 people who would never meet, and it made every decision legible: does this get us to the Moon by 1970, or not? A clear, dated, non-negotiable goal that anyone can check their own work against will out-coordinate any hierarchy.",
+  "cur": "Apollo का सबसे पोर्टेबल सबक रॉकेटरी से कोई लेना-देना नहीं है। यह इस बारे में है कि आप बहुत बड़ी संख्या में लोगों को एक ही कठिन चीज़ की ओर कैसे इंगित करते हैं। Kennedy ने कार्यक्रम को एक लक्ष्य दिया जो विशिष्ट, साहसी और समय-बाध्य था — चाँद पर एक चालक दल उतारें और उन्हें सुरक्षित रूप से वापस लाएँ, दशक के अंत से पहले — और उस एकल वाक्य ने वह किया जो कोई संगठनात्मक चार्ट नहीं कर सकता था। इसने 400,000 लोगों को संरेखित किया जो कभी नहीं मिलेंगे, और इसने हर निर्णय को सुपाठ्य बनाया: क्या यह हमें 1970 तक चाँद पर पहुँचाता है, या नहीं? एक स्पष्ट, दिनांकित, गैर-परक्राम्य लक्ष्य जिसके खिलाफ कोई भी अपने स्वयं के काम की जांच कर सकता है, किसी भी पदानुक्रम को बेहतर समन्वय देगा।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "lessons.1.md",
+  "en": "The second lesson lives in Mission Control. Apollo institutionalized a particular kind of teamwork under pressure: controllers trained to stay ahead of the vehicle, to speak up regardless of rank, and to solve problems as a room rather than a chain of command. When Apollo 13 crippled itself roughly 320,000 kilometres from home, no lone hero saved the crew — a room full of people worked the problem together, against the clock, and improvised a way back. \"Work the problem\" beat panic. Any team that ever hits a crisis can borrow the habit.",
+  "cur": "दूसरा पाठ Mission Control में निहित है। Apollo ने दबाव में टीमवर्क का एक विशेष प्रकार संस्थागत किया: नियंत्रक प्रशिक्षित थे कि वे वाहन से आगे रहें, पद के बावजूद बोलें, और समस्याओं को एक कमरे में हल करें न कि आदेश की श्रृंखला के रूप में। जब Apollo 13 लगभग 320,000 किलोमीटर दूर घर से अपने आप को विकलांग कर गया, तब कोई अकेला नायक दल को नहीं बचा सका — एक कमरे भर के लोगों ने समस्या पर काम किया, घड़ी के विरुद्ध, और वापसी का एक तरीका सुधारा। \"समस्या पर काम करो\" ने घबराहट को हराया। कोई भी टीम जो कभी संकट से टकराती है, इस आदत को अपना सकती है।"
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "lessons.2.md",
+  "en": "And the human note worth keeping: they did it in eight years, having never done it before, with onboard computers weaker than a modern doorbell. Apollo is a standing argument that a clear mission, the right people, and an honest deadline can still outrun the odds — a useful thing to remember the next time a goal looks impossible.",
+  "cur": "और मानवीय नोट जो रखने लायक है: उन्होंने इसे आठ साल में किया, पहले कभी नहीं किया था, ऑनबोर्ड कंप्यूटर के साथ जो एक आधुनिक डोरबेल से कमजोर थे। Apollo एक खड़ा तर्क है कि एक स्पष्ट मिशन, सही लोग, और एक ईमानदार समय सीमा अभी भी संभावनाओं को पछाड़ सकती है — एक उपयोगी बात जो अगली बार याद रखने लायक है जब कोई लक्ष्य असंभव लगे।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "tagline",
+  "en": "Europe's guarantee of its own way to space — born from being told no, grown into the world's dominant commercial launcher, and still flying the continent's independence into orbit.",
+  "cur": "अंतरिक्ष तक पहुँचने के अपने स्वतंत्र मार्ग की यूरोप की गारंटी — इनकार सुनने से जन्मी, दुनिया के प्रमुख व्यावसायिक प्रक्षेपक के रूप में विकसित हुई, और अब भी महाद्वीप की स्वतंत्रता को कक्षा में भेज रही है।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "the_land.0.md",
+  "en": "In the early 1970s Europe did not control its own access to space, and it found out what that meant. When Europe wanted to launch the Franco-German Symphonie communications satellites, the only ride available was American — and the United States would only provide it on the condition that the satellites not be used for commercial telecommunications that might compete with the US-led Intelsat. It was a quiet, decisive humiliation: to fly on someone else's rocket is to let them decide what your spacecraft is allowed to do. Europe drew the obvious conclusion and resolved never to be in that position again.",
+  "cur": "1970 के दशक के प्रारंभ में यूरोप का अंतरिक्ष तक अपनी पहुँच पर नियंत्रण नहीं था, और उसे पता चला कि इसका क्या अर्थ है। जब यूरोप फ्रांसीसी-जर्मन Symphonie संचार उपग्रहों को प्रक्षेपित करना चाहता था, तो एकमात्र उपलब्ध साधन अमेरिकी था — और संयुक्त राज्य अमेरिका केवल इस शर्त पर इसे उपलब्ध कराता कि उपग्रहों का उपयोग ऐसे व्यावसायिक दूरसंचार के लिए न किया जाए जो अमेरिका के नेतृत्व वाले Intelsat से प्रतिस्पर्धा कर सके। यह एक शांत, निर्णायक अपमान था: किसी और के रॉकेट पर उड़ान भरना उन्हें यह तय करने देना है कि आपके अंतरिक्ष यान को क्या करने की अनुमति है। यूरोप ने स्पष्ट निष्कर्ष निकाला और संकल्प लिया कि वह फिर कभी इस स्थिति में नहीं रहेगा।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "the_land.1.md",
+  "en": "The answer was Ariane — a European launcher, led by France and built under the newly-formed European Space Agency, flying from Kourou in French Guiana, close to the equator where the Earth's spin gives a rocket a free boost. Its first flight, in 1979, was the moment Europe secured guaranteed, independent access to orbit. Unlike almost every other program in this atlas, Ariane carried no crew and chased no records. It is infrastructure — the road, not the journey — and it turned out to be one of the most consequential roads of the space age.",
+  "cur": "इसका उत्तर था Ariane — एक यूरोपीय प्रक्षेपक, जिसका नेतृत्व फ्रांस ने किया और जिसे नवगठित European Space Agency के तहत बनाया गया, French Guiana में कूरू से उड़ान भरते हुए, भूमध्य रेखा के करीब जहाँ पृथ्वी की घूर्णन गति रॉकेट को मुफ्त बढ़ावा देती है। 1979 में इसकी पहली उड़ान वह क्षण था जब यूरोप ने गारंटीकृत, स्वतंत्र कक्षा पहुँच सुरक्षित कर ली। इस एटलस के लगभग हर दूसरे कार्यक्रम के विपरीत, Ariane ने कोई चालक दल नहीं ले जाया और कोई रिकॉर्ड नहीं बनाया। यह बुनियादी ढाँचा है — सड़क, यात्रा नहीं — और यह अंतरिक्ष युग की सबसे परिणामी सड़कों में से एक साबित हुआ।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "goals.0.caption",
+  "en": "Ariane 1, Europe's first independent orbital launcher, first flown in 1979. It existed to guarantee that Europe would never again need another power's permission to put its own spacecraft into space.",
+  "cur": "Ariane 1, यूरोप का पहला स्वतंत्र कक्षीय प्रक्षेपक, पहली बार 1979 में उड़ाया गया। यह इस बात की गारंटी देने के लिए बना था कि यूरोप को फिर कभी अपने स्वयं के अंतरिक्ष यान को अंतरिक्ष में भेजने के लिए किसी दूसरी शक्ति की अनुमति की आवश्यकता नहीं पड़ेगी।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "goals.1.md",
+  "en": "Ariane's first goal was strategic and simple: autonomy. Europe would build a launcher it fully controlled, so that its satellites, its science, and eventually its astronauts could reach orbit on European terms, answerable to no one. That goal alone would have justified the program. But a second goal emerged almost immediately and became just as important — to sell that capacity on the open market.",
+  "cur": "Ariane का पहला लक्ष्य रणनीतिक और सरल था: स्वायत्तता। यूरोप एक ऐसा प्रक्षेपक बनाएगा जिस पर उसका पूर्ण नियंत्रण हो, ताकि उसके उपग्रह, उसका विज्ञान, और अंततः उसके अंतरिक्ष यात्री यूरोपीय शर्तों पर कक्षा में पहुँच सकें, किसी के प्रति जवाबदेह नहीं। केवल वह लक्ष्य ही कार्यक्रम को उचित ठहरा सकता था। लेकिन लगभग तुरंत ही एक दूसरा लक्ष्य उभरा और उतना ही महत्वपूर्ण हो गया — उस क्षमता को खुले बाजार में बेचना।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "goals.2.md",
+  "en": "In 1980 Europe created Arianespace, the world's first commercial launch company, and turned a strategic asset into a business. The idea was that if Ariane launched not only European payloads but satellites for anyone willing to pay, the commercial revenue would help sustain the launcher and drive down its cost. It was a genuinely new model — treating access to space as a service to be sold rather than a capability each nation built only for itself — and for two decades it worked spectacularly well.",
+  "cur": "1980 में यूरोप ने Arianespace बनाया, दुनिया की पहली व्यावसायिक प्रक्षेपण कंपनी, और एक रणनीतिक संपत्ति को व्यवसाय में बदल दिया। विचार यह था कि यदि Ariane न केवल यूरोपीय पेलोड बल्कि भुगतान करने को तैयार किसी के लिए भी उपग्रह प्रक्षेपित करे, तो व्यावसायिक राजस्व प्रक्षेपक को बनाए रखने में मदद करेगा और इसकी लागत को कम करेगा। यह वास्तव में एक नया मॉडल था — अंतरिक्ष तक पहुँच को बेची जाने वाली सेवा के रूप में देखना न कि प्रत्येक राष्ट्र द्वारा केवल अपने लिए बनाई गई क्षमता के रूप में — और दो दशकों तक यह शानदार ढंग से काम करता रहा।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "outcome.0.caption",
+  "en": "Ariane 5 on its launch pad at Kourou. After a famous maiden-flight failure, it became one of the most reliable heavy-lift rockets ever flown — launching Rosetta, Galileo, the ATV freighters to the ISS, and the James Webb Space Telescope.",
+  "cur": "कूरू में अपने प्रक्षेपण मंच पर Ariane 5। एक प्रसिद्ध पहली उड़ान विफलता के बाद, यह अब तक उड़ाए गए सबसे विश्वसनीय भारी-लिफ्ट रॉकेटों में से एक बन गया — Rosetta, Galileo, आईएसएस के लिए ATV मालवाहक, और James Webb Space Telescope को प्रक्षेपित करते हुए।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "outcome.1.md",
+  "en": "The outcome exceeded the ambition. Ariane 4, the reliable workhorse of the 1980s and 90s, captured roughly half of the entire global market for commercial satellite launches, making Arianespace the dominant launch provider on Earth and Europe a first-rank spacefaring power. Its successor, Ariane 5, had a notorious start — its 1996 maiden flight destroyed itself about thirty-seven seconds after ignition (thirty seconds after liftoff) when guidance software carried over from Ariane 4 overflowed at the new rocket's higher speed, a failure now taught in every software-engineering course — but recovered to become one of the most dependable heavy launchers ever built.",
+  "cur": "परिणाम महत्वाकांक्षा से बढ़कर रहा। Ariane 4, 1980 और 90 के दशक का विश्वसनीय कार्यकर्ता, वाणिज्यिक उपग्रह प्रक्षेपणों की वैश्विक बाजार का लगभग आधा हिस्सा हासिल करने में सफल रहा, जिससे Arianespace पृथ्वी पर प्रमुख प्रक्षेपण प्रदाता बना और यूरोप एक प्रथम-श्रेणी अंतरिक्ष शक्ति बन गया। इसके उत्तराधिकारी, Ariane 5 की शुरुआत कुख्यात रही — इसकी 1996 की पहली उड़ान ने प्रज्वलन के लगभग सैंतीस सेकंड बाद (लिफ्टऑफ के बाद तीस सेकंड में) स्वयं को नष्ट कर दिया जब Ariane 4 से स्थानांतरित निर्देशन सॉफ्टवेयर नए राकेट की अधिक गति पर अतिप्रवाह हो गया, एक विफलता जो अब हर सॉफ्टवेयर-इंजीनियरिंग पाठ्यक्रम में पढ़ाई जाती है — लेकिन यह सबसे विश्वसनीय भारी प्रक्षेपण वाहनों में से एक बनने के लिए वापसी करने में सफल रहा।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "outcome.2.md",
+  "en": "Ariane 5's manifest is a roll-call of the era's science and infrastructure: the Rosetta comet mission, the Galileo navigation constellation, BepiColombo to Mercury, the ATV cargo freighters that resupplied the International Space Station, and — most celebrated of its late payloads — the James Webb Space Telescope (December 2021), launched so precisely that it saved years of the telescope's fuel. Ariane 5's true final flight came in July 2023, carrying the Heinrich Hertz and Syracuse 4B telecommunications satellites on VA261. Then the ground shifted. SpaceX's reusable rockets undercut Ariane's prices and ended its commercial dominance, and Ariane 6, flying from 2024, is Europe's answer: a cheaper, more flexible launcher built to keep the continent's independent access alive in a transformed market.",
+  "cur": "Ariane 5 का प्रक्षेपण कार्यक्रम युग के विज्ञान और बुनियादी ढाँचे की सूची है: Rosetta धूमकेतु मिशन, Galileo नेविगेशन तारामंडल, बुध के लिए BepiColombo, ATV कार्गो मालवाहक जिन्होंने अंतर्राष्ट्रीय अंतरिक्ष स्टेशन को पुनः आपूर्ति की, और — इसके बाद के पेलोड में सबसे प्रसिद्ध — James Webb Space Telescope (दिसंबर 2021), इतनी सटीकता से प्रक्षेपित किया गया कि इसने दूरबीन के ईंधन के वर्षों की बचत की। Ariane 5 की वास्तविक अंतिम उड़ान जुलाई 2023 में आई, जिसने VA261 पर Heinrich Hertz और Syracuse 4B दूरसंचार उपग्रहों को ले जाया। फिर जमीन बदल गई। SpaceX के पुन: प्रयोज्य रॉकेटों ने Ariane की कीमतों को कम किया और इसके व्यावसायिक प्रभुत्व को समाप्त कर दिया, और Ariane 6, 2024 से उड़ान भरते हुए, यूरोप का जवाब है: एक सस्ता, अधिक लचीला प्रक्षेपक जो परिवर्तित बाजार में महाद्वीप की स्वतंत्र पहुँच को जीवित रखने के लिए बनाया गया है।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "narrative.0.md",
+  "en": "Ariane's through-line is that access to space is not a convenience but a form of sovereignty. The whole program grew from the recognition that depending on another power's rockets means depending on that power's permission — and everything Europe did afterwards, from building Ariane to sustaining it commercially to replacing it under pressure, followed from the decision that this dependence was unacceptable. In a domain usually told through crews and destinations, Ariane is the reminder that someone has to build and own the road, and that who owns it matters enormously.",
+  "cur": "Ariane का मूल सिद्धांत यह है कि अंतरिक्ष तक पहुँच कोई सुविधा नहीं बल्कि संप्रभुता का एक रूप है। पूरा कार्यक्रम इस मान्यता से उत्पन्न हुआ कि किसी दूसरी शक्ति के रॉकेटों पर निर्भर रहने का अर्थ है उस शक्ति की अनुमति पर निर्भर रहना — और इसके बाद यूरोप ने जो कुछ भी किया, Ariane बनाने से लेकर इसे व्यावसायिक रूप से बनाए रखने से लेकर दबाव में इसे प्रतिस्थापित करने तक, इस निर्णय से उत्पन्न हुआ कि यह निर्भरता अस्वीकार्य थी। चालक दल और गंतव्यों के माध्यम से आमतौर पर बताए जाने वाले एक क्षेत्र में, Ariane यह याद दिलाता है कि किसी को सड़क बनानी और उसका मालिक बनना होता है, और यह कि कौन इसका मालिक है यह बेहद महत्वपूर्ण है।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "narrative.1.md",
+  "en": "The commercial pivot is the program's cleverest move and its central lesson. By founding Arianespace and selling launches worldwide, Europe made its strategic launcher pay for much of its own upkeep and honed it against real competition, rather than letting it become a subsidised national project that flew only occasionally. For twenty years this made Ariane both independent and dominant. It also made the program vulnerable in a way a purely strategic launcher would not have been: when a cheaper competitor appeared, Ariane lost the commercial market that had sustained it, and had to reinvent itself to survive.",
+  "cur": "व्यावसायिक बदलाव कार्यक्रम की सबसे चतुर चाल और इसका केंद्रीय सबक है। Arianespace की स्थापना करके और दुनिया भर में प्रक्षेपण बेचकर, यूरोप ने अपने रणनीतिक प्रक्षेपक को अपने अधिकांश रखरखाव के लिए भुगतान करवाया और इसे वास्तविक प्रतिस्पर्धा के खिलाफ तेज किया, बजाय इसे एक सब्सिडी वाली राष्ट्रीय परियोजना बनने देने के जो केवल कभी-कभार उड़ती। बीस वर्षों तक इसने Ariane को स्वतंत्र और प्रभावशाली दोनों बना दिया। इसने कार्यक्रम को उस तरह से कमजोर भी बना दिया जिस तरह से एक पूरी तरह से रणनीतिक प्रक्षेपक नहीं होता: जब एक सस्ता प्रतियोगी आया, तो Ariane ने वह व्यावसायिक बाजार खो दिया जिसने इसे बनाए रखा था, और जीवित रहने के लिए खुद को फिर से स्थापित करना पड़ा।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "narrative.2.md",
+  "en": "That competitor, of course, was reusability done right — the thing the Space Shuttle had promised and not delivered, and that a new generation achieved. Ariane, long built on the logic of the reliable expendable rocket, found that logic overturned almost overnight, and Ariane 6 is the response of an established power to a disruptive one. The outcome is still being written, but the stake is exactly what it was in 1979: whether Europe keeps its own guaranteed way to space.",
+  "cur": "वह प्रतियोगी, निश्चित रूप से, पुन: प्रयोज्यता सही ढंग से की गई थी — वह चीज जिसका Space Shuttle ने वादा किया था और नहीं दिया था, और जिसे एक नई पीढ़ी ने हासिल किया। Ariane, जो लंबे समय से विश्वसनीय व्ययशील रॉकेट के तर्क पर बना था, ने पाया कि वह तर्क लगभग रातोंरात उलट गया, और Ariane 6 एक विघटनकारी शक्ति के लिए एक स्थापित शक्ति की प्रतिक्रिया है। परिणाम अभी भी लिखा जा रहा है, लेकिन दांव बिल्कुल वही है जो 1979 में था: क्या यूरोप अंतरिक्ष तक अपना स्वयं का गारंटीकृत मार्ग बनाए रखता है।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "legacy.0.caption",
+  "en": "Ariane 6, flying from 2024 — Europe's answer to a market transformed by reusable rockets, and the continuation of the same mandate Ariane 1 was built for: independent European access to space.",
+  "cur": "Ariane 6, 2024 से उड़ान भरते हुए — पुन: प्रयोज्य रॉकेटों द्वारा परिवर्तित बाजार के लिए यूरोप का जवाब, और उसी जनादेश की निरंतरता जिसके लिए Ariane 1 बनाया गया था: अंतरिक्ष तक स्वतंत्र यूरोपीय पहुँच।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "legacy.1.md",
+  "en": "Ariane's legacy is that Europe has never again had to ask permission to reach space. For over four decades an unbroken line of European rockets has launched the continent's satellites, science missions, and contributions to the International Space Station — and for much of that time launched the world's, too. The commercial launch industry that is now so central to spaceflight was, in large part, invented by Arianespace; the model of selling access to orbit as a service began at Kourou.",
+  "cur": "Ariane की विरासत यह है कि यूरोप को फिर कभी अंतरिक्ष तक पहुँचने के लिए अनुमति नहीं माँगनी पड़ी है। चार दशकों से अधिक समय से यूरोपीय रॉकेटों की एक अटूट श्रृंखला ने महाद्वीप के उपग्रहों, विज्ञान मिशनों और अंतर्राष्ट्रीय अंतरिक्ष स्टेशन में योगदान को प्रक्षेपित किया है — और उस समय के अधिकांश के लिए दुनिया के भी प्रक्षेपित किए हैं। व्यावसायिक प्रक्षेपण उद्योग जो अब अंतरिक्ष उड़ान के लिए इतना केंद्रीय है, बड़े हिस्से में, Arianespace द्वारा आविष्कार किया गया था; एक सेवा के रूप में कक्षा तक पहुँच बेचने का मॉडल कूरू में शुरू हुआ।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "legacy.2.md",
+  "en": "It also stands as the clearest case study in the value — and the cost — of strategic autonomy. Ariane was more expensive than simply buying launches from whoever was cheapest, and in the reusable era that gap has grown. But the program's founders understood that the cheapest launch is worthless if the seller can dictate its terms, and Europe has spent four decades and considerable money to keep that from ever happening again. Whether to keep paying that premium, as reusable competitors reshape the market, is the live question Ariane 6 now embodies.",
+  "cur": "यह रणनीतिक स्वायत्तता के मूल्य — और लागत — में सबसे स्पष्ट केस स्टडी के रूप में भी खड़ा है। Ariane सबसे सस्ते से प्रक्षेपण खरीदने की तुलना में अधिक महंगा था, और पुन: प्रयोज्य युग में वह अंतर बढ़ गया है। लेकिन कार्यक्रम के संस्थापकों ने समझा कि सबसे सस्ता प्रक्षेपण बेकार है यदि विक्रेता अपनी शर्तें निर्धारित कर सकता है, और यूरोप ने चार दशक और काफी पैसा खर्च किया है ताकि यह फिर कभी न हो। क्या उस प्रीमियम का भुगतान करना जारी रखा जाए, जैसे पुन: प्रयोज्य प्रतियोगी बाजार को फिर से आकार दे रहे हैं, यह वह जीवंत प्रश्न है जिसे Ariane 6 अब मूर्त रूप देता है।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "lessons.0.md",
+  "en": "Ariane's first lesson is that independent access to critical infrastructure is worth paying for. Europe built its own launcher not because it was cheaper but because the alternative — depending on a rival or partner for something as fundamental as reaching orbit — meant surrendering control over its own space program, as the Symphonie affair had shown. The premium Europe has paid for Ariane is the price of never again being told what its satellites are allowed to do. For anything genuinely strategic, autonomy is a capability, not an extravagance.",
+  "cur": "Ariane का पहला सबक यह है कि महत्वपूर्ण बुनियादी ढाँचे तक स्वतंत्र पहुँच के लिए भुगतान करना उचित है। यूरोप ने अपना स्वयं का प्रक्षेपक इसलिए नहीं बनाया क्योंकि यह सस्ता था बल्कि इसलिए कि विकल्प — कक्षा तक पहुँचने जैसी किसी मौलिक चीज के लिए किसी प्रतिद्वंद्वी या साझेदार पर निर्भर रहना — अपने स्वयं के अंतरिक्ष कार्यक्रम पर नियंत्रण छोड़ने का मतलब था, जैसा कि Symphonie प्रकरण ने दिखाया था। यूरोप ने Ariane के लिए जो प्रीमियम चुकाया है वह फिर कभी यह न बताए जाने की कीमत है कि उसके उपग्रहों को क्या करने की अनुमति है। वास्तव में रणनीतिक किसी भी चीज के लिए, स्वायत्तता एक क्षमता है, कोई फिजूलखर्ची नहीं।"
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "lessons.1.md",
+  "en": "The second lesson is written in Flight 501: reused software is not automatically safe software. Ariane 5 was destroyed because guidance code proven on Ariane 4 was carried over untested into a rocket that flew faster, where an assumption baked into the old code no longer held. The components were sound; the failure was in assuming that what worked in one context would work unchanged in another. Every reused system must be re-validated against the new conditions it will actually face — a lesson that reaches far beyond rockets.",
+  "cur": "दूसरा सबक Flight 501 में लिखा है: पुन: उपयोग किया गया सॉफ्टवेयर स्वचालित रूप से सुरक्षित सॉफ्टवेयर नहीं है। Ariane 5 इसलिए नष्ट हो गया क्योंकि Ariane 4 पर सिद्ध मार्गदर्शन कोड को बिना परीक्षण के एक ऐसे रॉकेट में ले जाया गया जो तेज उड़ता था, जहाँ पुराने कोड में निहित एक धारणा अब मान्य नहीं थी। घटक मजबूत थे; विफलता यह मानने में थी कि जो एक संदर्भ में काम करता था वह दूसरे में बिना बदलाव के काम करेगा। प्रत्येक पुन: उपयोग की गई प्रणाली को उन नई परिस्थितियों के खिलाफ पुनः मान्य किया जाना चाहिए जिनका वह वास्तव में सामना करेगी — एक सबक जो रॉकेटों से कहीं आगे तक पहुँचता है।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "tagline",
+  "en": "The return to the Moon — this time to stay, and this time with the world, not to beat it.",
+  "cur": "चंद्रमा पर वापसी — इस बार रुकने के लिए, और इस बार दुनिया के साथ, उसे हराने के लिए नहीं।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "the_land.0.md",
+  "en": "Twelve people walked on the Moon between 1969 and 1972, and then no one did for more than fifty years. Apollo went, planted its flags, gathered its rocks, and stopped — because it had been built to win a race, and once the race was won there was no reason to keep paying for it. Artemis is NASA's attempt to go back and, this time, not stop. Named for Apollo's twin sister, it is designed around a different premise: not a sprint to arrive, but the slow construction of a permanent human foothold at the Moon.",
+  "cur": "1969 और 1972 के बीच बारह लोग चंद्रमा पर चले, और फिर पचास वर्षों से अधिक समय तक कोई नहीं गया। Apollo गया, अपने झंडे गाड़े, अपने पत्थर इकट्ठे किए, और रुक गया — क्योंकि यह एक दौड़ जीतने के लिए बनाया गया था, और एक बार दौड़ जीतने के बाद इसके लिए भुगतान जारी रखने का कोई कारण नहीं था। Artemis, NASA का चंद्रमा पर वापस जाने और इस बार न रुकने का प्रयास है। Apollo की जुड़वां बहन के नाम पर, यह एक अलग आधार पर डिज़ाइन किया गया है: पहुंचने के लिए एक स्प्रिंट नहीं, बल्कि चंद्रमा पर एक स्थायी मानव आधार का धीमा निर्माण।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "the_land.1.md",
+  "en": "The other difference is who goes. Apollo was a national project, a demonstration of American superiority over the Soviet Union, flown entirely by American astronauts on American hardware. Artemis is deliberately international and deliberately commercial — Europe builds the service module that powers Orion, Japan and Canada contribute to the lunar Gateway, SpaceX and others build the landers, and the crews will include astronauts from partner nations. Where Apollo was a race, Artemis is a coalition.",
+  "cur": "दूसरा अंतर यह है कि कौन जाता है। Apollo एक राष्ट्रीय परियोजना थी, सोवियत संघ पर अमेरिकी श्रेष्ठता का प्रदर्शन, पूरी तरह से अमेरिकी अंतरिक्ष यात्रियों द्वारा अमेरिकी हार्डवेयर पर उड़ाया गया। Artemis जानबूझकर अंतर्राष्ट्रीय और जानबूझकर वाणिज्यिक है — यूरोप सेवा मॉड्यूल बनाता है जो Orion को शक्ति देता है, Japan और Canada चंद्र Gateway में योगदान करते हैं, SpaceX और अन्य लैंडर बनाते हैं, और दल में साझेदार देशों के अंतरिक्ष यात्री शामिल होंगे। जहां Apollo एक दौड़ थी, Artemis एक गठबंधन है।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "goals.0.md",
+  "en": "The headline goal is a crewed landing near the lunar south pole — a region Apollo never visited, chosen because permanently-shadowed craters there hold water ice. Water is the prize: split into hydrogen and oxygen it becomes rocket propellant and breathable air, and a Moon that can supply its own water is a Moon you can stay on, and stage from, rather than merely visit.",
+  "cur": "मुख्य लक्ष्य चंद्र दक्षिणी ध्रुव के पास एक चालक दल के साथ लैंडिंग है — एक ऐसा क्षेत्र जिस पर Apollo कभी नहीं गया, इसे इसलिए चुना गया क्योंकि वहां स्थायी रूप से छाया में रहने वाले गड्ढों में जल बर्फ है। पानी पुरस्कार है: हाइड्रोजन और ऑक्सीजन में विभाजित होकर यह रॉकेट प्रणोदक और सांस लेने योग्य हवा बन जाता है, और एक चंद्रमा जो अपना पानी स्वयं आपूर्ति कर सकता है, वह एक ऐसा चंद्रमा है जिस पर आप रह सकते हैं और जहां से आप आगे जा सकते हैं, न कि केवल देखने के लिए।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "goals.1.caption",
+  "en": "Orion — the crew spacecraft, launched on the giant SLS rocket. Its service module, which supplies power and propulsion, is built by ESA in Europe: the vehicle that carries American astronauts to the Moon literally cannot fly without its international half.",
+  "cur": "Orion — चालक दल का अंतरिक्ष यान, विशाल SLS रॉकेट पर लॉन्च किया गया। इसका सेवा मॉड्यूल, जो शक्ति और प्रणोदन आपूर्ति करता है, यूरोप में ESA द्वारा बनाया गया है: जो वाहन अमेरिकी अंतरिक्ष यात्रियों को चंद्रमा पर ले जाता है, वह सचमुच अपने अंतर्राष्ट्रीय आधे हिस्से के बिना उड़ नहीं सकता।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "goals.2.md",
+  "en": "The deeper goal is permanence and a stepping stone. Artemis aims to build the Gateway — a small station in lunar orbit — and eventually surface infrastructure, turning the Moon from a destination into a base. And it is explicitly framed as a rehearsal for Mars: the place to learn how to live and work on another world, close enough to Earth that mistakes are survivable, before attempting the same thing months away.",
+  "cur": "गहरा लक्ष्य स्थायित्व और एक कदम है। Artemis का लक्ष्य Gateway बनाना है — चंद्र कक्षा में एक छोटा स्टेशन — और अंततः सतह पर बुनियादी ढांचा, चंद्रमा को एक गंतव्य से एक आधार में बदलना। और इसे स्पष्ट रूप से मंगल की पूर्वाभ्यास के रूप में प्रस्तुत किया गया है: दूसरी दुनिया पर रहना और काम करना सीखने की जगह, पृथ्वी के इतने करीब कि गलतियां जीवित रहने योग्य हैं, महीनों दूर वही चीज़ करने का प्रयास करने से पहले।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "goals.3.md",
+  "en": "There is also a goal no one states but everyone understands: to get there before China. China has its own crewed lunar plans for around 2030, and Artemis is, among other things, a race to establish presence, partners, and norms at the lunar south pole first. The coalition framing is genuine — and it is also how the United States intends to lead the return rather than follow it.",
+  "cur": "एक लक्ष्य भी है जिसे कोई नहीं बताता लेकिन सभी समझते हैं: China से पहले वहां पहुंचना। China की 2030 के आसपास अपनी चालक दल के साथ चंद्र योजनाएं हैं, और Artemis, अन्य बातों के अलावा, चंद्र दक्षिणी ध्रुव पर पहले उपस्थिति, साझेदार और मानदंड स्थापित करने की दौड़ है। गठबंधन का ढांचा वास्तविक है — और यह भी है कि United States वापसी का नेतृत्व करने का इरादा कैसे रखता है न कि उसका अनुसरण।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "outcome.0.md",
+  "en": "Artemis is underway but not yet at the Moon's surface. Artemis I flew in 2022 — an uncrewed Orion looped around the Moon and returned, proving the SLS rocket and the spacecraft on their first flight. The crewed flyby (Artemis II) and the landing (Artemis III) follow, though both have slipped repeatedly as the enormous, multi-contractor program works through the hardest parts: the heat shield, the Starship lander, the new spacesuits, and the orbital refuelling the lander depends on.",
+  "cur": "Artemis चल रहा है लेकिन अभी तक चंद्रमा की सतह पर नहीं है। Artemis I ने 2022 में उड़ान भरी — एक चालक दल रहित Orion चंद्रमा के चारों ओर घूमा और लौटा, अपनी पहली उड़ान पर SLS रॉकेट और अंतरिक्ष यान को साबित करते हुए। चालक दल के साथ फ्लाईबाई (Artemis II) और लैंडिंग (Artemis III) का अनुसरण करती है, हालांकि दोनों बार-बार खिसक गए हैं क्योंकि विशाल, बहु-ठेकेदार कार्यक्रम सबसे कठिन हिस्सों के माध्यम से काम करता है: ताप ढाल, Starship लैंडर, नए स्पेससूट, और कक्षीय ईंधन भरना जिस पर लैंडर निर्भर करता है।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "outcome.1.caption",
+  "en": "The Space Launch System — the most powerful rocket NASA has flown since the Saturn V, and, unlike Apollo's expendable machine, the launcher for a campaign meant to keep going rather than a handful of flights.",
+  "cur": "The Space Launch System — सबसे शक्तिशाली रॉकेट जो NASA ने Saturn V के बाद से उड़ाया है, और, Apollo की व्ययनीय मशीन के विपरीत, एक अभियान के लिए लॉन्चर जो जारी रखने के लिए है न कि मुट्ठी भर उड़ानों के लिए।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "outcome.2.md",
+  "en": "The program is also a study in how differently big space is done now. Apollo was a single agency directing contractors toward one deadline; Artemis is a web of international partners and commercial providers, with NASA buying a lunar lander as a service from SpaceX rather than owning it. That structure spreads cost and risk and builds a durable coalition — and it also means the schedule depends on many organizations, including a Starship that must first prove itself, so the timeline is genuinely uncertain in a way Apollo's brute-force sprint was not.",
+  "cur": "यह कार्यक्रम इस बात का भी अध्ययन है कि अब बड़े अंतरिक्ष को कैसे अलग तरीके से किया जाता है। Apollo एक एकल एजेंसी थी जो ठेकेदारों को एक समय सीमा की ओर निर्देशित करती थी; Artemis अंतर्राष्ट्रीय भागीदारों और वाणिज्यिक प्रदाताओं का एक जाल है, जिसमें NASA SpaceX से एक सेवा के रूप में चंद्र लैंडर खरीद रहा है न कि उसका मालिक बन रहा है। यह संरचना लागत और जोखिम फैलाती है और एक टिकाऊ गठबंधन बनाती है — और इसका मतलब यह भी है कि समय-सारणी कई संगठनों पर निर्भर करती है, जिसमें एक Starship भी शामिल है जिसे पहले खुद को साबित करना होगा, इसलिए समयरेखा वास्तव में अनिश्चित है जिस तरह से Apollo की क्रूर-बल स्प्रिंट नहीं थी।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "narrative.0.md",
+  "en": "Artemis is the answer to a question Apollo left hanging: what is the Moon for, if not to win a race? Apollo proved humans could go and then revealed that going, by itself, was not a reason to keep going — the political engine that funded it switched off the moment the Soviets were beaten. Artemis is built to survive that problem by having a purpose beyond arrival: water, infrastructure, a base, a path to Mars, and a coalition of partners with their own reasons to sustain it. Whether that purpose is durable enough to outlast changing administrations is the open question the whole program is really testing.",
+  "cur": "Artemis उस प्रश्न का उत्तर है जो Apollo ने लटका छोड़ा था: चंद्रमा किसलिए है, अगर दौड़ जीतने के लिए नहीं? Apollo ने साबित किया कि मनुष्य जा सकते हैं और फिर पता चला कि जाना, अपने आप में, जाते रहने का कारण नहीं था — राजनीतिक इंजन जिसने इसे वित्तपोषित किया, उसी क्षण बंद हो गया जब Soviets हार गए। Artemis इस समस्या से बचने के लिए बनाया गया है, पहुंचने से परे एक उद्देश्य रखकर: पानी, बुनियादी ढांचा, एक आधार, मंगल का रास्ता, और साझेदारों का एक गठबंधन जिनके पास इसे बनाए रखने के अपने कारण हैं। क्या वह उद्देश्य बदलते प्रशासनों से बचने के लिए पर्याप्त टिकाऊ है, यह खुला प्रश्न है जिसकी पूरी परियोजना वास्तव में परीक्षा कर रही है।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "narrative.1.md",
+  "en": "It is also a deliberate inversion of Apollo's politics. Apollo's strength was singular national will; its weakness was that the same will could evaporate. Artemis trades some of that focus for resilience — spreading the program across nations and companies so that no single budget decision can cancel it outright, and so that partners who have invested their own hardware and astronauts have reasons to keep it alive. The coalition is slower and more complex than a race, and that is the point: it is built to endure, not to sprint.",
+  "cur": "यह Apollo की राजनीति का एक जानबूझकर उलटा भी है। Apollo की ताकत एकल राष्ट्रीय इच्छाशक्ति थी; इसकी कमजोरी यह थी कि वही इच्छाशक्ति गायब हो सकती थी। Artemis उस फोकस के कुछ हिस्से को लचीलेपन के लिए व्यापार करता है — कार्यक्रम को राष्ट्रों और कंपनियों में फैलाता है ताकि कोई एक बजट निर्णय इसे पूरी तरह से रद्द न कर सके, और ताकि जिन साझेदारों ने अपने स्वयं के हार्डवेयर और अंतरिक्ष यात्रियों में निवेश किया है, उनके पास इसे जीवित रखने के कारण हों। गठबंधन एक दौड़ की तुलना में धीमा और अधिक जटिल है, और यही बात है: यह टिकने के लिए बनाया गया है, स्प्रिंट करने के लिए नहीं।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "narrative.2.md",
+  "en": "And it inherits Apollo's hardware lineage even as it breaks from its politics. The SLS rocket descends from Space Shuttle engines and boosters; Orion is the spiritual heir of the Apollo command module; the whole program carries the DNA of the programs in this atlas that came before it. Artemis is not a fresh start but a continuation — the accumulated capability of sixty years of spaceflight pointed, once more, at the Moon.",
+  "cur": "और यह Apollo के हार्डवेयर वंश को विरासत में मिला है, भले ही यह इसकी राजनीति से अलग हो। SLS रॉकेट Space Shuttle इंजन और बूस्टर से उतरता है; Orion, Apollo कमांड मॉड्यूल का आध्यात्मिक उत्तराधिकारी है; पूरा कार्यक्रम इस एटलस में इससे पहले आए कार्यक्रमों का DNA रखता है। Artemis एक नई शुरुआत नहीं है बल्कि एक निरंतरता है — साठ वर्षों की अंतरिक्ष उड़ान की संचित क्षमता, एक बार फिर, चंद्रमा की ओर इशारा करती है।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "legacy.0.md",
+  "en": "Artemis's legacy is still ahead of it, but its structure is already a template. By building the return to the Moon as an international coalition with commercial landers rather than a single-nation sprint, it has defined how large exploration programs are now assembled — cost and risk shared, capability bought as a service, partners bound in by their own contributions.",
+  "cur": "Artemis की विरासत अभी भी इसके आगे है, लेकिन इसकी संरचना पहले से ही एक टेम्पलेट है। चंद्रमा पर वापसी को एकल-राष्ट्र स्प्रिंट के बजाय वाणिज्यिक लैंडरों के साथ एक अंतर्राष्ट्रीय गठबंधन के रूप में बनाकर, इसने परिभाषित किया है कि अब बड़े अन्वेषण कार्यक्रम कैसे इकट्ठे किए जाते हैं — लागत और जोखिम साझा किए जाते हैं, क्षमता एक सेवा के रूप में खरीदी जाती है, साझेदार अपने स्वयं के योगदान से बंधे होते हैं।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "legacy.1.md",
+  "en": "If it succeeds, the legacy is a permanent human presence beyond low Earth orbit for the first time — a base at the lunar south pole, a station in lunar orbit, and the operational experience of living off another world that any Mars mission will require. The Moon becomes a place people work rather than a place twelve people once visited.",
+  "cur": "यदि यह सफल होता है, तो विरासत पहली बार निम्न पृथ्वी कक्षा से परे एक स्थायी मानव उपस्थिति है — चंद्र दक्षिणी ध्रुव पर एक आधार, चंद्र कक्षा में एक स्टेशन, और दूसरी दुनिया से जीने का परिचालन अनुभव जिसकी किसी भी मंगल मिशन को आवश्यकता होगी। चंद्रमा एक ऐसी जगह बन जाता है जहां लोग काम करते हैं न कि एक ऐसी जगह जहां बारह लोग एक बार गए थे।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "legacy.2.md",
+  "en": "And it is the frame for a new era of lunar activity. Artemis, China's parallel program, and a fleet of robotic landers from many nations are converging on the same small region of the Moon at the same time — making the 2020s the busiest decade at the Moon since Apollo, and the south pole the most contested real estate in the solar system.",
+  "cur": "और यह चंद्र गतिविधि के एक नए युग के लिए रूपरेखा है। Artemis, China का समानांतर कार्यक्रम, और कई राष्ट्रों के रोबोटिक लैंडरों का एक बेड़ा एक ही समय में चंद्रमा के एक ही छोटे क्षेत्र पर अभिसरण कर रहे हैं — जिससे 2020 का दशक Apollo के बाद से चंद्रमा पर सबसे व्यस्त दशक बन रहा है, और दक्षिणी ध्रुव सौर मंडल में सबसे विवादित अचल संपत्ति।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "lessons.0.md",
+  "en": "The lesson Artemis is built on is the one Apollo taught the hard way: arriving is not a purpose. A program that exists only to reach a destination ends the moment it arrives, because the reason to fund it arrives with it. Artemis's whole design — water, infrastructure, partners, a path to Mars — is an attempt to give the Moon a reason to keep going that outlives the excitement of getting there.",
+  "cur": "जिस पाठ पर Artemis बनाया गया है, वह वही है जो Apollo ने कठिन तरीके से सिखाया: पहुंचना एक उद्देश्य नहीं है। एक कार्यक्रम जो केवल एक गंतव्य तक पहुंचने के लिए मौजूद है, उसी क्षण समाप्त हो जाता है जब यह पहुंचता है, क्योंकि इसे वित्तपोषित करने का कारण इसके साथ पहुंचता है। Artemis का पूरा डिज़ाइन — पानी, बुनियादी ढांचा, साझेदार, मंगल का रास्ता — चंद्रमा को जाते रहने का एक कारण देने का प्रयास है जो वहां पहुंचने के उत्साह से बचता है।"
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is about resilience versus focus. Apollo's singular national will was its power and its fragility; Artemis trades focus for a coalition that no single budget can easily kill. It is slower, more complex, and harder to schedule — and it is betting that endurance, not speed, is what a return 'to stay' actually requires. Whether that bet pays off is the story the next decade will tell.",
+  "cur": "गहरा पाठ लचीलेपन बनाम फोकस के बारे में है। Apollo की एकल राष्ट्रीय इच्छाशक्ति इसकी शक्ति और इसकी नाजुकता थी; Artemis फोकस को एक ऐसे गठबंधन के लिए व्यापार करता है जिसे कोई एक बजट आसानी से नहीं मार सकता। यह धीमा है, अधिक जटिल है, और शेड्यूल करना कठिन है — और यह दांव लगा रहा है कि सहनशक्ति, गति नहीं, वह है जो वापसी 'रहने के लिए' वास्तव में आवश्यक है। क्या वह दांव फल देता है, यह वह कहानी है जो अगला दशक बताएगा।"
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "tagline",
+  "en": "The Soviet space shuttle that looked like America's, flew better in one respect — and flew exactly once, uncrewed and flawless, before the country that built it disappeared out from under it.",
+  "cur": "सोवियत अंतरिक्ष शटल जो अमेरिका के शटल जैसा दिखता था, एक मामले में बेहतर उड़ान भरी — और ठीक एक बार उड़ा, चालक रहित और त्रुटिहीन, इससे पहले कि वह देश जिसने इसे बनाया था, उसके नीचे से गायब हो गया।"
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "the_land.0.md",
+  "en": "By the mid-1970s the Soviet Union was watching the United States build the Space Shuttle and drawing an alarming conclusion. It could not quite believe the Americans would spend so much on a reusable spaceplane purely for the reasons stated, and feared a hidden military purpose — a vehicle that could dive into the atmosphere, snatch a Soviet satellite, and fly home, or drop weapons from orbit. Unwilling to be without an answer, the Politburo ordered one of its own. The result, Buran, was the largest and most expensive space project in Soviet history, and it began as a response to a threat that may never have been real.",
+  "cur": "1970 के दशक के मध्य तक सोवियत संघ संयुक्त राज्य अमेरिका को Space Shuttle बनाते हुए देख रहा था और एक चिंताजनक निष्कर्ष निकाल रहा था। वह यह विश्वास नहीं कर सकता था कि अमेरीकी केवल बताए गए कारणों के लिए एक पुन: प्रयोज्य स्पेसप्लेन पर इतना खर्च करेंगे, और एक छिपे हुए सैन्य उद्देश्य से डरता था — एक वाहन जो वायुमंडल में उतर सकता है, एक सोवियत उपग्रह को पकड़ सकता है और घर उड़ सकता है, या कक्षा से हथियार गिरा सकता है। बिना जवाब के रहने को तैयार नहीं, पोलितब्यूरो ने अपने स्वयं के एक शटल का आदेश दिया। परिणाम, Buran, सोवियत इतिहास में सबसे बड़ी और सबसे महंगी अंतरिक्ष परियोजना थी, और यह एक ऐसे खतरे की प्रतिक्रिया के रूप में शुरू हुई जो शायद कभी वास्तविक ही नहीं था।"
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "the_land.1.md",
+  "en": "From the outside Buran looked almost identical to the American orbiter — the same delta wing, the same rough shape — because the same job and the same physics of hypersonic reentry drive a design toward the same answer. But underneath, the Soviet engineers made two decisions that set their machine apart, and both, arguably, improved on the original. Buran carried no main ascent engines of its own — it had orbital-manoeuvring engines for use in space, but the heavy lift to orbit was handled entirely by the rocket — and Buran could fly with no one aboard at all.",
+  "cur": "बाहर से Buran लगभग अमेरिकी ऑर्बिटर के समान दिखता था — वही डेल्टा विंग, वही मोटा आकार — क्योंकि एक ही काम और हाइपरसोनिक रीएंट्री की वही भौतिकी एक डिजाइन को उसी उत्तर की ओर ले जाती है। लेकिन भीतर, सोवियत इंजीनियरों ने दो निर्णय लिए जिन्होंने उनकी मशीन को अलग बनाया, और दोनों ने, कहा जाए तो, मूल में सुधार किया। Buran अपने स्वयं के कोई मुख्य आरोहण इंजन नहीं ले गया — अंतरिक्ष में उपयोग के लिए इसके पास कक्षीय-युद्धाभ्यास इंजन थे, लेकिन कक्षा तक भारी लिफ्ट पूरी तरह से रॉकेट द्वारा संभाली गई — और Buran बिना किसी के बिल्कुल उड़ सकता था।"
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "goals.0.caption",
+  "en": "The Energia super-heavy launcher, which lifted Buran. Unlike the American orbiter, Buran had no main ascent engines: all the lift came from Energia, a genuine heavy-lift rocket in its own right — one of the most powerful ever flown, and the most powerful the Soviet Union ever flew successfully.",
+  "cur": "Energia सुपर-हेवी लॉन्चर, जिसने Buran को उठाया। अमेरिकी ऑर्बिटर के विपरीत, Buran में कोई मुख्य आरोहण इंजन नहीं थे: सारी लिफ्ट Energia से आई, जो अपने आप में एक वास्तविक हेवी-लिफ्ट रॉकेट था — अब तक उड़ाए गए सबसे शक्तिशाली रॉकेटों में से एक, और सोवियत संघ द्वारा कभी सफलतापूर्वक उड़ाया गया सबसे शक्तिशाली।"
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "goals.1.md",
+  "en": "The first decision was about the engines. The American Shuttle mounted its three big main engines on the orbiter itself, which meant hauling that heavy, expensive machinery to orbit and back every flight and throwing away only the external tank. The Soviets instead put all the lift into the rocket: Buran rode on Energia, a true super-heavy launcher that did the whole job of reaching orbit, leaving the orbiter to be a payload rather than part of the propulsion. This made Energia useful on its own — a powerful rocket that could launch other heavy payloads with no orbiter at all — and freed Buran of a burden its rival carried for thirty years.",
+  "cur": "पहला निर्णय इंजनों के बारे में था। अमेरिकी Shuttle ने अपने तीन बड़े मुख्य इंजन ऑर्बिटर पर ही लगाए, जिसका मतलब था हर उड़ान में उस भारी, महंगी मशीनरी को कक्षा तक और वापस ले जाना और केवल बाहरी टैंक को फेंकना। सोवियत ने इसके बजाय सारी लिफ्ट रॉकेट में डाल दी: Buran Energia पर सवार होकर उड़ा, एक सच्चा सुपर-हेवी लॉन्चर जिसने कक्षा में पहुंचने का पूरा काम किया, ऑर्बिटर को प्रणोदन का हिस्सा बनाने के बजाय एक पेलोड बना दिया। इसने Energia को अपने आप में उपयोगी बना दिया — एक शक्तिशाली रॉकेट जो बिना किसी ऑर्बिटर के अन्य भारी पेलोड लॉन्च कर सकता था — और Buran को उस बोझ से मुक्त किया जो उसके प्रतिद्वंद्वी ने तीस साल तक ढोया।"
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "goals.2.md",
+  "en": "The second decision was automation. The American Shuttle always needed a crew to land it; it could not come home on its own. Buran was built to fly the entire mission — launch, orbit, reentry, and landing — with no one aboard, guided by its computers and the ground. In an era when full automatic landing of a winged spacecraft was at the frontier of what was possible, this was a genuine advance, and it set up the one moment when Buran got to prove what it could do.",
+  "cur": "दूसरा निर्णय स्वचालन का था। अमेरिकी Shuttle को हमेशा उसे उतारने के लिए एक चालक दल की जरूरत थी; यह अपने आप घर नहीं आ सकता था। Buran पूरे मिशन को उड़ाने के लिए बनाया गया था — प्रक्षेपण, कक्षा, रीएंट्री, और लैंडिंग — बिना किसी के, अपने कंप्यूटर और जमीन द्वारा मार्गदर्शित। एक ऐसे युग में जब एक पंख वाले अंतरिक्ष यान की पूरी स्वचालित लैंडिंग संभव की सीमा पर थी, यह एक वास्तविक प्रगति थी, और इसने उस एक क्षण को स्थापित किया जब Buran को यह साबित करने का मौका मिला कि वह क्या कर सकता है।"
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "outcome.0.caption",
+  "en": "The Buran orbiter. It flew one perfect uncrewed mission in November 1988 and then never flew again — grounded by the collapse of the Soviet economy and, finally, of the Soviet Union itself.",
+  "cur": "Buran ऑर्बिटर। इसने नवंबर 1988 में एक परफेक्ट चालक रहित मिशन उड़ाया और फिर कभी नहीं उड़ा — सोवियत अर्थव्यवस्था के पतन और अंततः, सोवियत संघ के पतन से ठप हो गया।"
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "outcome.1.md",
+  "en": "On 15 November 1988, Buran flew. It launched on Energia, circled the Earth twice, reentered, and — in a gusting crosswind that would have tested any pilot — brought itself down onto the runway at Baikonur fully automatically, touching down within metres of its target with no human aboard at any point. It was a flawless flight and a real technical triumph: no other winged spacecraft had flown an entire orbital mission and landed itself. And it was the only time Buran ever flew.",
+  "cur": "15 नवंबर 1988 को, Buran ने उड़ान भरी। यह Energia पर प्रक्षेपित हुआ, पृथ्वी की दो बार परिक्रमा की, पुनः प्रवेश किया, और — एक तेज हवा में जो किसी भी पायलट की परीक्षा लेती — पूरी तरह से स्वचालित रूप से बायकोनूर के रनवे पर उतर गया, किसी भी बिंदु पर बिना किसी मानव के अपने लक्ष्य से मीटर के भीतर उतरा। यह एक त्रुटिहीन उड़ान और एक वास्तविक तकनीकी विजय थी: किसी भी अन्य पंख वाले अंतरिक्ष यान ने पूरे कक्षीय मिशन को उड़ाया और खुद को उतारा नहीं था। और यह एकमात्र बार था जब Buran ने उड़ान भरी।"
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "outcome.2.md",
+  "en": "The timing could not have been worse. Buran reached its triumph exactly as the Soviet Union began to come apart. Within three years the country was gone; the money vanished; and a hugely expensive spaceplane built to counter an American threat had no threat to counter, no budget to fly, and no mission anyone could afford to give it. The program limped on paper until 1993 and was then cancelled outright. The final indignity came in 2002, when the roof of the hangar housing the one orbiter that had actually flown collapsed, crushing the spacecraft and killing eight workers. Buran's single flight remains one of the most impressive — and most pointless — achievements in the history of spaceflight.",
+  "cur": "समय इससे बुरा नहीं हो सकता था। Buran ठीक उसी समय अपनी विजय पर पहुंचा जब सोवियत संघ टूटने लगा। तीन साल के भीतर देश खत्म हो गया; पैसा गायब हो गया; और एक अमेरिकी खतरे का मुकाबला करने के लिए बनाया गया बेहद महंगा स्पेसप्लेन, जिसके पास मुकाबला करने के लिए कोई खतरा नहीं था, उड़ने के लिए कोई बजट नहीं था, और कोई मिशन नहीं था जो कोई उसे देने का जोखिम उठा सके। कार्यक्रम 1993 तक कागज पर चला और फिर पूरी तरह से रद्द कर दिया गया। अंतिम अपमान 2002 में आया, जब उस हैंगर की छत, जिसमें वह एक ऑर्बिटर रखा था जिसने वास्तव में उड़ान भरी थी, ढह गई, अंतरिक्ष यान को कुचल दिया और आठ कर्मचारियों की मौत हो गई। Buran की एकल उड़ान अंतरिक्ष उड़ान के इतिहास में सबसे प्रभावशाली — और सबसे निरर्थक — उपलब्धियों में से एक बनी हुई है।"
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "narrative.0.md",
+  "en": "Buran is the story of a magnificent answer to a question that stopped being asked. Technically it was a success and in places an improvement on the vehicle it copied — the separate launcher, the automatic landing, real engineering advances. But it was built for strategic and political reasons that evaporated, at a cost the Soviet economy could not sustain, and it arrived at its moment of triumph just as the system that ordered it collapsed. No amount of engineering excellence could survive the disappearance of the reason for the program and the money to run it.",
+  "cur": "Buran एक शानदार उत्तर की कहानी है उस सवाल के लिए जो पूछा जाना बंद हो गया। तकनीकी रूप से यह एक सफलता थी और कुछ जगहों पर उस वाहन में सुधार थी जिसकी इसने नकल की — अलग लॉन्चर, स्वचालित लैंडिंग, वास्तविक इंजीनियरिंग प्रगति। लेकिन यह रणनीतिक और राजनीतिक कारणों से बनाया गया था जो वाष्पित हो गए, एक ऐसी लागत पर जो सोवियत अर्थव्यवस्था बनाए नहीं रख सकती थी, और यह अपनी विजय के क्षण पर ठीक उसी समय पहुंचा जब वह व्यवस्था जिसने इसे आदेश दिया था, ढह गई। कोई भी इंजीनियरिंग उत्कृष्टता कार्यक्रम के कारण और इसे चलाने के लिए पैसे के गायब होने से नहीं बच सकती थी।"
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "narrative.1.md",
+  "en": "There is an irony worth holding onto. In the two respects where Buran differed from the American Shuttle — putting the engines on the rocket rather than the orbiter, and flying automatically without a crew — it arguably had the better ideas, and both have echoes in later spaceflight. And yet the American Shuttle flew 135 times over thirty years and built a space station, while Buran flew once. The lesson is not that Buran's engineering was worse; it is that engineering is never the whole story. A program needs a purpose and a budget that outlast its first flight, and Buran had neither.",
+  "cur": "एक विडंबना है जिसे पकड़े रखने लायक है। दो मामलों में जहां Buran अमेरिकी Shuttle से अलग था — इंजन को ऑर्बिटर के बजाय रॉकेट पर लगाना, और चालक दल के बिना स्वचालित रूप से उड़ना — यह कहा जाए तो बेहतर विचार थे, और दोनों के बाद की अंतरिक्ष उड़ान में प्रतिध्वनियां हैं। और फिर भी अमेरिकी Shuttle ने तीस साल में 135 बार उड़ान भरी और एक अंतरिक्ष स्टेशन बनाया, जबकि Buran ने एक बार उड़ान भरी। सबक यह नहीं है कि Buran की इंजीनियरिंग खराब थी; यह है कि इंजीनियरिंग कभी पूरी कहानी नहीं होती। एक कार्यक्रम को एक उद्देश्य और एक बजट की आवश्यकता होती है जो उसकी पहली उड़ान से अधिक समय तक चले, और Buran के पास दोनों में से कोई नहीं था।"
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "legacy.0.caption",
+  "en": "OK-GLI, Buran's atmospheric test orbiter — fitted with jet engines to practise runway approaches, and now a museum exhibit in Germany. The surviving Buran hardware is scattered across museums; the one orbiter that reached space was destroyed in 2002.",
+  "cur": "OK-GLI, Buran का वायुमंडलीय परीक्षण ऑर्बिटर — रनवे दृष्टिकोण का अभ्यास करने के लिए जेट इंजनों से लैस, और अब जर्मनी में एक संग्रहालय प्रदर्शनी। जीवित Buran हार्डवेयर संग्रहालयों में बिखरा हुआ है; वह एक ऑर्बिटर जो अंतरिक्ष में पहुंचा था, 2002 में नष्ट हो गया।"
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "legacy.1.md",
+  "en": "Buran's direct legacy is almost nothing — a cancelled program, a single flight, hardware in museums, and one orbiter lost under a fallen roof. But its indirect legacy is real. Energia proved that the Soviet Union could, at last, build a super-heavy rocket that actually worked, redeeming the failure of the N1 — even if it, too, was cancelled for want of anything to launch. And Buran's fully automated flight demonstrated a capability that would only become standard decades later, as uncrewed and autonomously-landing spacecraft became routine.",
+  "cur": "Buran की प्रत्यक्ष विरासत लगभग कुछ भी नहीं है — एक रद्द कार्यक्रम, एक एकल उड़ान, संग्रहालयों में हार्डवेयर, और एक गिरी हुई छत के नीचे खोया एक ऑर्बिटर। लेकिन इसकी अप्रत्यक्ष विरासत वास्तविक है। Energia ने साबित किया कि सोवियत संघ, आखिरकार, एक सुपर-हेवी रॉकेट बना सकता था जो वास्तव में काम करता था, N1 की विफलता को भुनाते हुए — भले ही इसे भी लॉन्च करने के लिए किसी चीज के अभाव में रद्द कर दिया गया। और Buran की पूरी तरह से स्वचालित उड़ान ने एक क्षमता का प्रदर्शन किया जो केवल दशकों बाद मानक बनेगी, जब चालक रहित और स्वायत्त रूप से उतरने वाले अंतरिक्ष यान नियमित हो गए।"
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "legacy.2.md",
+  "en": "Mostly, though, Buran endures as a cautionary monument — the clearest case in the space age of a program that got the engineering right and everything else wrong. It stands beside the American Shuttle as the road not taken, and beside the N1 as the other great Soviet what-might-have-been: proof that in spaceflight, a brilliant machine with no purpose and no money is still a machine that does not fly.",
+  "cur": "ज्यादातर, हालांकि, Buran एक चेतावनी स्मारक के रूप में बना हुआ है — अंतरिक्ष युग में एक कार्यक्रम का सबसे स्पष्ट मामला जिसने इंजीनियरिंग को सही किया और बाकी सब कुछ गलत। यह अमेरिकी Shuttle के साथ उस रास्ते के रूप में खड़ा है जो नहीं लिया गया, और N1 के साथ दूसरे महान सोवियत क्या-हो-सकता-था के रूप में: सबूत कि अंतरिक्ष उड़ान में, एक शानदार मशीन बिना उद्देश्य और बिना पैसे के अभी भी एक मशीन है जो नहीं उड़ती।"
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "lessons.0.md",
+  "en": "Buran's first lesson is that a program needs a reason that outlasts its origins. It was born from a strategic fear and a refusal to let the Americans hold a capability the Soviet Union lacked — and when the fear faded and the Cold War ended, nothing was left to justify the enormous cost. Building an expensive capability to match a rival, rather than to do a job you actually need done, leaves you with a magnificent machine and no reason to fly it the moment the rivalry cools.",
+  "cur": "Buran का पहला सबक यह है कि एक कार्यक्रम को एक कारण की आवश्यकता होती है जो उसकी उत्पत्ति से अधिक समय तक चले। यह एक रणनीतिक भय और अमेरिकियों को एक ऐसी क्षमता रखने देने से इनकार से पैदा हुआ था जो सोवियत संघ के पास नहीं थी — और जब भय फीका पड़ गया और शीत युद्ध समाप्त हो गया, तो विशाल लागत को न्यायोचित ठहराने के लिए कुछ भी नहीं बचा। एक प्रतिद्वंद्वी के मुकाबले एक महंगी क्षमता का निर्माण करना, बजाय उस काम को करने के जो आपको वास्तव में करने की आवश्यकता है, आपको एक शानदार मशीन और उसे उड़ाने के लिए कोई कारण नहीं देता जिस क्षण प्रतिद्वंद्विता ठंडी होती है।"
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "lessons.1.md",
+  "en": "The second lesson is that engineering excellence cannot save a program from the loss of its purpose and its budget. Buran was, in real ways, a better design than the vehicle it answered — and it flew once. The American Shuttle, for all its flaws, flew for thirty years because it had missions to fly and money to fly them. A spacecraft is only as durable as the institutional will and funding behind it; without those, even a flawless flight is an ending rather than a beginning.",
+  "cur": "दूसरा सबक यह है कि इंजीनियरिंग उत्कृष्टता एक कार्यक्रम को उसके उद्देश्य और उसके बजट के नुकसान से नहीं बचा सकती। Buran, वास्तविक तरीकों से, उस वाहन से बेहतर डिजाइन था जिसका इसने जवाब दिया — और इसने एक बार उड़ान भरी। अमेरिकी Shuttle, अपनी सभी खामियों के बावजूद, तीस साल तक उड़ा क्योंकि इसके पास उड़ाने के लिए मिशन थे और उन्हें उड़ाने के लिए पैसा था। एक अंतरिक्ष यान केवल उतना ही टिकाऊ होता है जितना कि उसके पीछे की संस्थागत इच्छाशक्ति और फंडिंग; उनके बिना, एक त्रुटिहीन उड़ान भी एक शुरुआत के बजाय एक अंत है।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "tagline",
+  "en": "A bus-sized robot spent thirteen years orbiting Saturn — and found, on a moon nobody was watching, an ocean that could hold life.",
+  "cur": "एक बस के आकार का रोबोट तेरह वर्षों तक शनि की परिक्रमा करता रहा — और एक ऐसे चंद्रमा पर, जिसे कोई नहीं देख रहा था, एक महासागर मिला जो जीवन धारण कर सकता है।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "the_land.0.md",
+  "en": "By the 1990s Saturn had been seen three times, and only in passing: Pioneer 11 and the two Voyagers had each swept through the system in a matter of hours, returning tantalising glimpses of a ringed world with dozens of moons and a giant, haze-shrouded moon, Titan, whose surface no camera could pierce. A flyby can photograph a place; it cannot live there. To understand Saturn — its rings, its weather, its improbable family of moons — a spacecraft would have to stop and stay.",
+  "cur": "1990 के दशक तक शनि को तीन बार देखा गया था, और वह भी केवल गुज़रते हुए: Pioneer 11 और दोनों Voyager प्रत्येक ने कुछ घंटों में सौर मंडल से गुज़रते हुए एक छल्लेदार दुनिया की मनमोहक झलकियाँ लौटाई थीं जिसमें दर्जनों चंद्रमा थे और एक विशाल, धुंध से ढका चंद्रमा टाइटन था, जिसकी सतह को कोई कैमरा भेद नहीं सकता था। एक फ्लाईबाई किसी स्थान की तस्वीर ले सकता है; वह वहाँ रह नहीं सकता। शनि को समझने के लिए — इसके छल्ले, इसका मौसम, इसके चंद्रमाओं का असंभव परिवार — एक अंतरिक्ष यान को रुकना और रहना होगा।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "the_land.1.md",
+  "en": "Cassini was built to do exactly that, and it was built by a coalition: NASA supplied the orbiter, the European Space Agency supplied a lander called Huygens to drop through Titan's haze, and Italy built its high-gain antenna. It launched in 1997 as one of the largest and most capable interplanetary craft ever flown — a seven-year, three-and-a-half-billion-kilometre cruise ahead of it just to reach the planet it was designed to study.",
+  "cur": "Cassini को ठीक यही करने के लिए बनाया गया था, और इसे एक गठबंधन ने बनाया था: NASA ने ऑर्बिटर की आपूर्ति की, European Space Agency ने टाइटन की धुंध से गुज़रने के लिए Huygens नामक एक लैंडर की आपूर्ति की, और इटली ने इसका हाई-गेन एंटीना बनाया। यह 1997 में अब तक के सबसे बड़े और सबसे सक्षम अंतरग्रहीय यानों में से एक के रूप में प्रक्षेपित हुआ — केवल उस ग्रह तक पहुँचने के लिए सात वर्ष की, साढ़े तीन अरब किलोमीटर की यात्रा सामने थी जिसका अध्ययन करने के लिए इसे डिज़ाइन किया गया था।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "goals.0.md",
+  "en": "The primary goal was to become Saturn's first resident: to enter orbit and stay for years, studying the planet's atmosphere, its rings, its magnetic field, and its moons across the slow turn of the Saturnian seasons — the sustained, patient science that no flyby can do. Chief among the targets was Titan, the one moon large enough to hold a thick atmosphere, and the great mystery of the outer solar system.",
+  "cur": "प्राथमिक लक्ष्य शनि का पहला निवासी बनना था: कक्षा में प्रवेश करना और वर्षों तक रहना, ग्रह के वायुमंडल, इसके छल्लों, इसके चुंबकीय क्षेत्र, और शनि के मौसमों के धीमे चक्र में इसके चंद्रमाओं का अध्ययन करना — वह निरंतर, धैर्यपूर्ण विज्ञान जो कोई फ्लाईबाई नहीं कर सकता। लक्ष्यों में मुख्य था टाइटन, वह एकमात्र चंद्रमा जो इतना बड़ा है कि घना वायुमंडल धारण कर सके, और बाहरी सौर मंडल का महान रहस्य।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "goals.1.caption",
+  "en": "Cassini carried the European Huygens probe piggyback for seven years, then released it to parachute onto Titan. The orbiter itself would spend thirteen years circling Saturn, threading between the moons and, at the end, between the planet and its rings.",
+  "cur": "Cassini ने यूरोपीय Huygens जांच को सात वर्षों तक पीठ पर लादे रखा, फिर इसे टाइटन पर पैराशूट से उतरने के लिए छोड़ दिया। ऑर्बिटर स्वयं तेरह वर्षों तक शनि की परिक्रमा करता रहा, चंद्रमाओं के बीच से गुज़रता रहा और अंत में, ग्रह और इसके छल्लों के बीच से।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "goals.2.md",
+  "en": "The second goal belonged to Huygens: to descend through Titan's orange haze and land — or splash — on a surface no one had ever seen, and find out whether the moon really had the lakes and rivers of liquid methane that theory predicted. It was a single, one-way attempt at the most distant landing ever tried.",
+  "cur": "दूसरा लक्ष्य Huygens का था: टाइटन की नारंगी धुंध से उतरना और उस सतह पर उतरना — या उछलना — जिसे किसी ने कभी नहीं देखा था, और यह पता लगाना कि क्या चंद्रमा में वाकई तरल मीथेन की झीलें और नदियाँ हैं जैसा कि सिद्धांत ने भविष्यवाणी की थी। यह अब तक की सबसे दूर की लैंडिंग का एक एकल, एकतरफा प्रयास था।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "outcome.0.md",
+  "en": "Cassini reached Saturn in 2004 and settled into orbit. Months later it released Huygens, which parachuted through Titan's haze in January 2005 and returned the first pictures from the surface of a moon in the outer solar system: a dim, orange plain scattered with rounded pebbles of water ice, shaped by rivers of liquid methane. It remains the only landing humanity has ever made beyond the asteroid belt.",
+  "cur": "Cassini 2004 में शनि पर पहुँचा और कक्षा में स्थिर हो गया। महीनों बाद इसने Huygens को छोड़ा, जो जनवरी 2005 में टाइटन की धुंध से पैराशूट द्वारा उतरा और बाहरी सौर मंडल के एक चंद्रमा की सतह से पहली तस्वीरें लौटाईं: पानी की बर्फ के गोल कंकड़ों से बिखरा एक मंद, नारंगी मैदान, जिसे तरल मीथेन की नदियों ने आकार दिया था। यह क्षुद्रग्रह बेल्ट से परे मानवता की एकमात्र लैंडिंग बनी हुई है।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "outcome.1.md",
+  "en": "The orbiter's own great discovery came from a moon almost no one had expected to matter. Passing tiny Enceladus, Cassini found towering jets of water ice and vapour erupting from cracks at its south pole — proof of a global ocean of liquid water beneath the ice, warm and salty and laced with organic molecules. A frozen speck five hundred kilometres across turned out to be one of the most promising places in the solar system to look for life.",
+  "cur": "ऑर्बिटर की अपनी महान खोज एक ऐसे चंद्रमा से आई जिसके महत्वपूर्ण होने की लगभग किसी ने उम्मीद नहीं की थी। छोटे एन्सेलाडस से गुज़रते हुए, Cassini ने इसके दक्षिणी ध्रुव पर दरारों से पानी की बर्फ और वाष्प के विशाल जेट फूटते हुए पाए — बर्फ के नीचे तरल पानी के एक वैश्विक महासागर का प्रमाण, जो गर्म और नमकीन और कार्बनिक अणुओं से युक्त था। पाँच सौ किलोमीटर व्यास का एक जमा हुआ कण जीवन की खोज के लिए सौर मंडल में सबसे आशाजनक स्थानों में से एक निकला।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "outcome.2.md",
+  "en": "Cassini worked for thirteen years, long past its planned mission, until it ran low on fuel. Rather than risk it eventually crashing into Enceladus or Titan and contaminating them with Earth microbes, mission planners chose a deliberate end: twenty-two dives through the unexplored gap between Saturn and its rings, returning data to the last, and then a final plunge into the planet's atmosphere in September 2017, transmitting until it burned up.",
+  "cur": "Cassini ने तेरह वर्षों तक काम किया, अपने नियोजित मिशन से काफी आगे तक, जब तक कि इसका ईंधन कम नहीं हो गया। अंततः एन्सेलाडस या टाइटन पर दुर्घटनाग्रस्त होने और उन्हें पृथ्वी के सूक्ष्मजीवों से दूषित करने के जोखिम के बजाय, मिशन योजनाकारों ने एक सुविचारित अंत चुना: शनि और इसके छल्लों के बीच अनन्वेषित अंतराल से बाईस गोते, अंत तक डेटा लौटाते हुए, और फिर सितंबर 2017 में ग्रह के वायुमंडल में एक अंतिम डुबकी, जलने तक प्रसारण करते हुए।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "narrative.0.md",
+  "en": "The story of Cassini is what patience buys. The Voyagers had shown Saturn in a day and moved on; Cassini stayed for over a decade, and almost everything it found that mattered came from being there long enough to watch — a storm wrap the whole planet, a season turn, a moon pass close enough on the four-hundredth orbit to reveal what the first flyby had missed. Its discoveries were not lucky glances but the reward of persistence.",
+  "cur": "Cassini की कहानी यह है कि धैर्य क्या खरीदता है। Voyager ने एक दिन में शनि को दिखाया था और आगे बढ़ गए थे; Cassini एक दशक से अधिक समय तक रुका, और लगभग हर वह चीज़ जो इसने पाई जो मायने रखती थी, वह वहाँ इतने लंबे समय तक रहने से आई कि देख सके — एक तूफान पूरे ग्रह को लपेट ले, एक मौसम बदल जाए, चार सौवीं कक्षा पर एक चंद्रमा इतना करीब से गुज़रे कि जो पहले फ्लाईबाई ने चूक दिया था उसे प्रकट कर दे। इसकी खोजें भाग्यशाली झलकियाँ नहीं थीं बल्कि दृढ़ता का इनाम थीं।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "narrative.1.md",
+  "en": "Its most consequential find rewrote where we look for life. Before Cassini, the search for habitable places focused on Mars and the warm inner solar system. Enceladus — small, frozen, far from the Sun — should have been dead. Instead it was venting the ingredients of life into space, kept liquid by the flexing pull of Saturn's gravity. Cassini turned the outer solar system, long thought a frozen wasteland, into a plausible home for oceans, and for whatever oceans might hold.",
+  "cur": "इसकी सबसे महत्वपूर्ण खोज ने यह फिर से लिखा कि हम जीवन की तलाश कहाँ करते हैं। Cassini से पहले, रहने योग्य स्थानों की खोज मंगल और गर्म आंतरिक सौर मंडल पर केंद्रित थी। एन्सेलाडस — छोटा, जमा हुआ, सूर्य से दूर — मृत होना चाहिए था। इसके बजाय यह जीवन की सामग्री को अंतरिक्ष में उगल रहा था, शनि के गुरुत्वाकर्षण के लचीले खिंचाव से तरल रखा गया। Cassini ने बाहरी सौर मंडल को, जिसे लंबे समय से एक जमी हुई बंजर भूमि माना जाता था, महासागरों के लिए एक प्रशंसनीय घर में बदल दिया, और जो कुछ भी महासागर धारण कर सकते हैं उसके लिए।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "narrative.2.md",
+  "en": "And its ending was a moral choice as much as an engineering one. A spacecraft that had discovered two possibly habitable ocean worlds could not be allowed to become the thing that contaminated them. So its operators flew it into Saturn on purpose, sacrificing the machine to protect the very places it had found — planetary exploration taking responsibility for its own reach.",
+  "cur": "और इसका अंत उतना ही नैतिक विकल्प था जितना कि एक इंजीनियरिंग विकल्प। एक अंतरिक्ष यान जिसने दो संभवतः रहने योग्य महासागर दुनिया की खोज की थी, उसे उन्हीं को दूषित करने वाली चीज़ बनने की अनुमति नहीं दी जा सकती थी। इसलिए इसके संचालकों ने इसे जानबूझकर शनि में उड़ा दिया, उन स्थानों की रक्षा के लिए मशीन का बलिदान करते हुए जिन्हें इसने पाया था — ग्रह अन्वेषण अपनी पहुँच की जिम्मेदारी ले रहा था।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "legacy.0.md",
+  "en": "Cassini's first legacy is Saturn itself, transformed from a world seen in passing into the best-understood planet in the outer solar system — its rings, its weather, its magnetic field, and its dozens of moons mapped across thirteen years of continuous observation that no future mission is scheduled to repeat.",
+  "cur": "Cassini की पहली विरासत शनि स्वयं है, जो गुज़रते हुए देखी गई एक दुनिया से बाहरी सौर मंडल के सबसे अच्छी तरह समझे गए ग्रह में बदल गया — इसके छल्ले, इसका मौसम, इसका चुंबकीय क्षेत्र, और तेरह वर्षों के निरंतर अवलोकन में मैप किए गए इसके दर्जनों चंद्रमा जिसे दोहराने के लिए कोई भविष्य का मिशन निर्धारित नहीं है।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "legacy.1.md",
+  "en": "Its second is Enceladus and Titan: two ocean worlds and one methane world moved, by Cassini's data, to the front rank of places worth returning to in the search for life. Every proposal to hunt for biology in the outer solar system now begins with what Cassini found.",
+  "cur": "इसकी दूसरी एन्सेलाडस और टाइटन हैं: दो महासागर दुनिया और एक मीथेन दुनिया को, Cassini के डेटा द्वारा, जीवन की खोज में लौटने योग्य स्थानों की अग्रिम पंक्ति में ले जाया गया। बाहरी सौर मंडल में जीवविज्ञान की खोज का हर प्रस्ताव अब उसी से शुरू होता है जो Cassini ने पाया।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "legacy.2.md",
+  "en": "Its third is the model of the mission itself — a genuinely international flagship, NASA and Europe flying one spacecraft for two decades, that demonstrated how much more a patient orbiter returns than a fast flyby, and set the template for the long-duration missions that followed.",
+  "cur": "इसकी तीसरी मिशन का मॉडल स्वयं है — एक वास्तव में अंतर्राष्ट्रीय फ्लैगशिप, NASA और यूरोप दो दशकों तक एक अंतरिक्ष यान उड़ा रहे हैं, जिसने प्रदर्शित किया कि एक धैर्यवान ऑर्बिटर एक तेज़ फ्लाईबाई की तुलना में कितना अधिक लौटाता है, और लंबी अवधि के मिशनों के लिए टेम्पलेट सेट किया जो उसके बाद आए।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of Cassini is that staying beats passing through. The same planet the Voyagers characterised in hours yielded its deepest secrets — the ocean of Enceladus, the methane cycle of Titan — only to a spacecraft willing to spend thirteen years in orbit. For the hardest questions, presence over time is worth more than any single brilliant glance.",
+  "cur": "Cassini का पाठ यह है कि ठहरना गुज़रने से बेहतर है। वही ग्रह जिसे Voyager ने घंटों में चित्रित किया था, अपने गहरे रहस्य — एन्सेलाडस का महासागर, टाइटन का मीथेन चक्र — केवल एक ऐसे अंतरिक्ष यान को दिए जो तेरह वर्षों तक कक्षा में रहने के लिए तैयार था। सबसे कठिन सवालों के लिए, समय के साथ उपस्थिति किसी भी एकल शानदार झलक से अधिक मूल्यवान है।"
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is that reach carries responsibility. Cassini ended by flying itself into Saturn to protect the ocean moons it had discovered — a recognition that the power to visit a possibly living world comes with a duty not to poison it. Capability without that restraint is not exploration; it is trespass.",
+  "cur": "गहरा पाठ यह है कि पहुँच जिम्मेदारी लाती है। Cassini ने अपने द्वारा खोजे गए महासागर चंद्रमाओं की रक्षा के लिए शनि में स्वयं को उड़ाकर समाप्त किया — एक मान्यता कि संभवतः जीवित दुनिया पर जाने की शक्ति इसे ज़हर न देने के कर्तव्य के साथ आती है। उस संयम के बिना क्षमता अन्वेषण नहीं है; यह अतिक्रमण है।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "tagline",
+  "en": "India's Moon program — it found the water that changed how we see the Moon, then became the first nation ever to land near the south pole.",
+  "cur": "भारत का चंद्र कार्यक्रम — इसने वह जल खोजा जिसने चंद्रमा को देखने का हमारा नज़रिया बदल दिया, फिर दक्षिणी ध्रुव के निकट उतरने वाला पहला राष्ट्र बन गया।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "the_land.0.md",
+  "en": "For most of the space age, the Moon was thought to be bone dry — a dead, airless rock with nothing useful on its surface. That assumption was overturned by a spacecraft from a country that had never been to the Moon before. Chandrayaan-1, India's first lunar mission — launched in 2008 — carried NASA/JPL's Moon Mineralogy Mapper (M3) instrument, which detected water molecules bound into the lunar soil across broad, mostly higher-latitude regions of the surface; the findings were published in 2009. It was one of the most consequential discoveries in modern planetary science, and it came from an ISRO orbiter working on a fraction of NASA's or ESA's budget.",
+  "cur": "अंतरिक्ष युग के अधिकांश समय तक चंद्रमा को पूरी तरह शुष्क माना जाता था — एक मृत, वायुहीन चट्टान जिसकी सतह पर कुछ भी उपयोगी नहीं था। यह धारणा एक ऐसे देश के अंतरिक्ष यान ने पलट दी जो पहले कभी चंद्रमा पर नहीं गया था। चंद्रयान-1, भारत का पहला चंद्र मिशन — 2008 में प्रक्षेपित — NASA/JPL के Moon Mineralogy Mapper (M3) उपकरण को ले गया, जिसने सतह के व्यापक, अधिकतर उच्च-अक्षांश क्षेत्रों में चंद्र मिट्टी से बंधे जल अणुओं का पता लगाया; निष्कर्ष 2009 में प्रकाशित हुए। यह आधुनिक ग्रह विज्ञान में सबसे महत्वपूर्ण खोजों में से एक थी, और यह NASA या ESA के बजट के एक अंश पर काम करने वाले इसरो ऑर्बिटर से आई थी।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "the_land.1.md",
+  "en": "Chandrayaan — Sanskrit for \"Moon craft\" — is the program that announced India as a genuine deep-space power, not a regional one. It is defined by two things: doing world-class science cheaply, and a refusal to be stopped by failure. Its second mission crashed a lander on the Moon in front of a watching nation; its third went back four years later and succeeded, landing where no one ever had — near the lunar south pole, the most sought-after real estate in the solar system.",
+  "cur": "चंद्रयान — संस्कृत में \"चंद्र यान\" — वह कार्यक्रम है जिसने भारत को एक वास्तविक गहन-अंतरिक्ष शक्ति के रूप में घोषित किया, न कि क्षेत्रीय। यह दो बातों से परिभाषित होता है: सस्ते में विश्व स्तरीय विज्ञान करना, और असफलता से रुकने से इनकार। इसका दूसरा मिशन देखते हुए राष्ट्र के सामने चंद्रमा पर एक लैंडर को दुर्घटनाग्रस्त कर गया; इसका तीसरा मिशन चार साल बाद वापस गया और सफल हुआ, वहां उतरा जहां कभी कोई नहीं उतरा था — चंद्र दक्षिणी ध्रुव के निकट, सौर मंडल में सबसे अधिक मांग वाली संपत्ति।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "goals.0.md",
+  "en": "The scientific goal from the start was the Moon's composition and, above all, its water. Chandrayaan-1 set out to map the surface and search for water and minerals; its success made the later goal obvious and urgent — reach the south pole, where permanently-shadowed craters are thought to hold water ice, the resource that could one day fuel and sustain a lunar base. India aimed its program directly at the most valuable question about the Moon.",
+  "cur": "शुरू से ही वैज्ञानिक लक्ष्य चंद्रमा की संरचना और सबसे बढ़कर, उसका जल था। चंद्रयान-1 ने सतह का मानचित्रण करने और जल और खनिजों की खोज करने का लक्ष्य रखा; इसकी सफलता ने बाद के लक्ष्य को स्पष्ट और तत्काल बना दिया — दक्षिणी ध्रुव तक पहुंचना, जहां स्थायी रूप से छाया में रहने वाले गड्ढों में जल बर्फ होने की संभावना है, वह संसाधन जो एक दिन चंद्र आधार को ईंधन और बनाए रख सकता है। भारत ने अपने कार्यक्रम को सीधे चंद्रमा के बारे में सबसे मूल्यवान प्रश्न पर लक्षित किया।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "goals.1.caption",
+  "en": "Chandrayaan-1 — India's first Moon mission, and the platform that carried NASA's M3 instrument, whose data revealed water bound into the lunar soil and overturned the long assumption that the Moon was dry.",
+  "cur": "चंद्रयान-1 — भारत का पहला चंद्र मिशन, और वह मंच जिसने NASA के M3 उपकरण को ले जाया, जिसके डेटा ने चंद्र मिट्टी में बंधे जल को प्रकट किया और इस लंबे धारणा को पलट दिया कि चंद्रमा शुष्क था।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "goals.2.md",
+  "en": "The engineering goal grew mission by mission: first to orbit the Moon and release an impactor (Chandrayaan-1), then to soft-land a rover (Chandrayaan-2 and -3). Soft-landing on the Moon is brutally difficult — most attempts by most nations have failed — and doing it at the rough, poorly-lit south pole is harder still. India's goal was to master that landing, and to do it on an ISRO budget that made every rupee count.",
+  "cur": "इंजीनियरिंग लक्ष्य मिशन दर मिशन बढ़ता गया: पहले चंद्रमा की कक्षा में जाना और एक इम्पैक्टर छोड़ना (चंद्रयान-1), फिर एक रोवर को सॉफ्ट-लैंड करना (चंद्रयान-2 और -3)। चंद्रमा पर सॉफ्ट-लैंडिंग बेहद कठिन है — अधिकांश राष्ट्रों द्वारा अधिकांश प्रयास असफल रहे हैं — और खुरदरे, खराब-रोशनी वाले दक्षिणी ध्रुव पर ऐसा करना और भी कठिन है। भारत का लक्ष्य उस लैंडिंग में महारत हासिल करना था, और यह इसरो के बजट पर करना था जो हर रुपये को महत्व देता था।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "outcome.0.md",
+  "en": "The outcomes bracket the whole arc of the program. Chandrayaan-1 (2008) carried NASA's M3 instrument, whose data — published in 2009 — revealed lunar water, a genuinely field-changing result. Chandrayaan-2 (2019) was a partial heartbreak: its orbiter reached the Moon and still operates, returning excellent data, but its Vikram lander lost control in the final moments and crashed, watched live by a nation that had dared to hope. Then Chandrayaan-3 (2023) returned and landed softly near the south pole — the first spacecraft ever to do so, and the achievement that made India the fourth country to land on the Moon, days after a Russian attempt at the same region failed.",
+  "cur": "परिणाम कार्यक्रम के पूरे चाप को घेरते हैं। चंद्रयान-1 (2008) NASA के M3 उपकरण को ले गया, जिसके डेटा — 2009 में प्रकाशित — ने चंद्र जल को प्रकट किया, एक वास्तव में क्षेत्र-परिवर्तनकारी परिणाम। चंद्रयान-2 (2019) आंशिक दिल टूटना था: इसका ऑर्बिटर चंद्रमा तक पहुंचा और अभी भी संचालित है, उत्कृष्ट डेटा लौटा रहा है, लेकिन इसके विक्रम लैंडर ने अंतिम क्षणों में नियंत्रण खो दिया और दुर्घटनाग्रस्त हो गया, जिसे उस राष्ट्र ने लाइव देखा जिसने उम्मीद करने की हिम्मत की थी। फिर चंद्रयान-3 (2023) वापस आया और दक्षिणी ध्रुव के निकट सॉफ्ट उतरा — ऐसा करने वाला पहला अंतरिक्ष यान, और वह उपलब्धि जिसने भारत को चंद्रमा पर उतरने वाला चौथा देश बनाया, उसी क्षेत्र में रूसी प्रयास की असफलता के दिनों बाद।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "outcome.1.md",
+  "en": "The contrast with the budgets involved is the part that stunned the world. India reached the Moon, found its water, and landed at its south pole for costs that were a small fraction of comparable Western missions — a demonstration that frontier lunar exploration is not the exclusive preserve of the richest agencies. ISRO turned constraint into a discipline, and delivered firsts that far larger programs had not.",
+  "cur": "शामिल बजटों के साथ विरोधाभास वह हिस्सा है जिसने दुनिया को चौंका दिया। भारत चंद्रमा तक पहुंचा, उसका जल खोजा, और उसके दक्षिणी ध्रुव पर ऐसी लागतों पर उतरा जो तुलनीय पश्चिमी मिशनों के एक छोटे अंश थीं — एक प्रदर्शन कि सीमांत चंद्र अन्वेषण सबसे अमीर एजेंसियों का विशेष अधिकार नहीं है। इसरो ने बाधा को अनुशासन में बदल दिया, और ऐसी पहली उपलब्धियां दीं जो बहुत बड़े कार्यक्रमों ने नहीं दी थीं।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "outcome.2.md",
+  "en": "Chandrayaan-3's success also carried a weight beyond science. It landed at a moment when the south pole had become a contested goal — Russia's Luna-25 had crashed attempting the same thing that same month — and India's soft touchdown was a national triumph celebrated across the country, and a signal that the emerging space powers now reach places the old ones are still struggling toward.",
+  "cur": "चंद्रयान-3 की सफलता विज्ञान से परे भी एक भार लेकर आई। यह ऐसे क्षण में उतरा जब दक्षिणी ध्रुव एक प्रतिस्पर्धी लक्ष्य बन गया था — रूस का Luna-25 उसी महीने वही प्रयास करते हुए दुर्घटनाग्रस्त हुआ था — और भारत का सॉफ्ट टचडाउन पूरे देश में मनाई गई एक राष्ट्रीय विजय थी, और एक संकेत कि उभरती अंतरिक्ष शक्तियां अब उन स्थानों तक पहुंचती हैं जहां पुरानी शक्तियां अभी भी संघर्ष कर रही हैं।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "narrative.0.md",
+  "en": "The story of Chandrayaan is a country teaching itself to land on another world in public, and refusing to quit when it went wrong. Chandrayaan-2's crash was not hidden or downplayed; it happened live, and the head of ISRO was shown grieving it on national television. Four years later the same program came back and succeeded — the same engineers, the same objective, the lessons of the failure engineered into the fix. It is the clearest recent example of a space agency turning a very visible defeat into a very visible victory.",
+  "cur": "चंद्रयान की कहानी एक देश की है जो खुद को सार्वजनिक रूप से एक अन्य दुनिया पर उतरना सिखाता है, और जब यह गलत हो जाए तो छोड़ने से इनकार करता है। चंद्रयान-2 का दुर्घटना छिपाया या कम नहीं किया गया; यह लाइव हुआ, और इसरो के प्रमुख को राष्ट्रीय टेलीविजन पर इसका शोक मनाते हुए दिखाया गया। चार साल बाद वही कार्यक्रम वापस आया और सफल हुआ — वही इंजीनियर, वही उद्देश्य, असफलता के सबक को सुधार में इंजीनियर किया गया। यह हाल का सबसे स्पष्ट उदाहरण है कि एक अंतरिक्ष एजेंसी एक अत्यंत दृश्यमान हार को एक अत्यंत दृश्यमान जीत में बदलती है।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "narrative.1.md",
+  "en": "It is also a story about cost. ISRO's genius is doing profound things cheaply — reaching the Moon and Mars for budgets that would barely fund a study elsewhere. That frugality is partly necessity and partly philosophy: a deliberate engineering culture of simplicity, reuse of proven hardware, and ruthless prioritization. Chandrayaan proves that the price of admission to deep space has fallen far enough that a determined nation of modest means can hold genuine firsts.",
+  "cur": "यह लागत के बारे में भी एक कहानी है। इसरो की प्रतिभा गहन चीजें सस्ते में करना है — चंद्रमा और मंगल तक ऐसे बजट पर पहुंचना जो कहीं और मुश्किल से एक अध्ययन को वित्त पोषित करेगा। वह मितव्ययिता आंशिक रूप से आवश्यकता है और आंशिक रूप से दर्शन: सरलता की एक जानबूझकर इंजीनियरिंग संस्कृति, सिद्ध हार्डवेयर का पुन: उपयोग, और निर्मम प्राथमिकता। चंद्रयान साबित करता है कि गहन अंतरिक्ष में प्रवेश की कीमत इतनी गिर चुकी है कि मामूली साधनों का एक दृढ़ राष्ट्र वास्तविक पहली उपलब्धियां रख सकता है।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "narrative.2.md",
+  "en": "And it is a story about who the Moon belongs to now. For decades lunar exploration was a two-superpower affair, then a quiet scientific one. Chandrayaan, alongside China's program, Japan's SLIM, and a wave of others, marks the arrival of a genuinely multipolar Moon — where the first soft landing at the south pole was made not by the United States, Russia, or China, but by India.",
+  "cur": "और यह इस बारे में एक कहानी है कि चंद्रमा अब किसका है। दशकों तक चंद्र अन्वेषण दो-महाशक्ति का मामला था, फिर एक शांत वैज्ञानिक। चंद्रयान, चीन के कार्यक्रम, जापान के SLIM, और अन्य की एक लहर के साथ, एक वास्तव में बहुध्रुवीय चंद्रमा के आगमन को चिह्नित करता है — जहां दक्षिणी ध्रुव पर पहली सॉफ्ट लैंडिंग संयुक्त राज्य अमेरिका, रूस, या चीन द्वारा नहीं, बल्कि भारत द्वारा की गई थी।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "legacy.0.md",
+  "en": "Chandrayaan's first legacy is scientific and permanent: providing the platform from which NASA's M3 instrument detected water on the Moon — data published in 2009, which reframed the Moon from a dead rock into a place that might sustain a human presence and underlies every current plan to return, including Artemis and China's.",
+  "cur": "चंद्रयान की पहली विरासत वैज्ञानिक और स्थायी है: वह मंच प्रदान करना जिससे NASA के M3 उपकरण ने चंद्रमा पर जल का पता लगाया — 2009 में प्रकाशित डेटा, जिसने चंद्रमा को एक मृत चट्टान से एक ऐसे स्थान के रूप में फिर से परिभाषित किया जो मानव उपस्थिति को बनाए रख सकता है और वापस जाने की हर वर्तमान योजना को आधार बनाता है, जिसमें Artemis और चीन के शामिल हैं।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "legacy.1.md",
+  "en": "Its second legacy is the first soft landing near the lunar south pole, the region every future lunar program is aiming for. India got there first, giving it a genuine claim to leadership at the most important destination on the Moon and hard-won landing experience that later missions will build on.",
+  "cur": "इसकी दूसरी विरासत चंद्र दक्षिणी ध्रुव के निकट पहली सॉफ्ट लैंडिंग है — वह क्षेत्र जिसे हर भावी चंद्र कार्यक्रम निशाना बना रहा है। भारत वहाँ सबसे पहले पहुँचा, जिससे उसे चंद्रमा के सबसे महत्वपूर्ण गंतव्य पर नेतृत्व का वास्तविक दावा मिलता है और कठिनाई से कमाया लैंडिंग अनुभव भी, जिस पर आगे के मिशन निर्माण करेंगे।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "legacy.2.md",
+  "en": "And its third is a demonstration, watched worldwide, that frontier space is now affordable to more than the traditional powers. ISRO's costs reset expectations for what lunar exploration has to cost — an example the next generation of emerging space nations is already following.",
+  "cur": "और इसका तीसरा विश्वभर में देखा गया एक प्रदर्शन है, कि सीमांत अंतरिक्ष अब पारंपरिक शक्तियों से अधिक के लिए किफायती है। इसरो की लागतों ने चंद्र अन्वेषण में क्या खर्च होना चाहिए इसकी अपेक्षाओं को रीसेट किया — एक उदाहरण जिसे उभरते अंतरिक्ष राष्ट्रों की अगली पीढ़ी पहले से ही अनुसरण कर रही है।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of Chandrayaan is that a public failure, fully owned and learned from, can become the foundation of a greater success. Chandrayaan-2's crash could have ended the program's ambition; instead it became the data that made Chandrayaan-3's historic landing possible. The willingness to try again, in the same public eye that watched the failure, is the whole story.",
+  "cur": "चंद्रयान का सबक यह है कि एक सार्वजनिक असफलता, पूरी तरह से स्वीकार की गई और सीखी गई, एक बड़ी सफलता की नींव बन सकती है। चंद्रयान-2 का दुर्घटना कार्यक्रम की महत्वाकांक्षा को समाप्त कर सकता था; इसके बजाय यह वह डेटा बन गया जिसने चंद्रयान-3 की ऐतिहासिक लैंडिंग को संभव बनाया। उसी सार्वजनिक नज़र में फिर से प्रयास करने की इच्छा, जिसने असफलता देखी, पूरी कहानी है।"
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is that cost is a form of capability. By doing profound exploration cheaply, ISRO did not merely save money — it made a class of missions possible for a nation that could never have afforded them at Western prices, and reset what the rest of the world believes deep-space exploration must cost. Frugality, pursued as engineering discipline, is itself a kind of power.",
+  "cur": "गहरा सबक यह है कि लागत क्षमता का एक रूप है। गहन अन्वेषण सस्ते में करके, इसरो ने केवल पैसा नहीं बचाया — इसने एक ऐसे राष्ट्र के लिए मिशनों की एक श्रेणी को संभव बनाया जो पश्चिमी कीमतों पर उन्हें कभी वहन नहीं कर सकता था, और शेष दुनिया जो मानती है कि गहन-अंतरिक्ष अन्वेषण में क्या खर्च होना चाहिए उसे रीसेट किया। मितव्ययिता, इंजीनियरिंग अनुशासन के रूप में अपनाई गई, स्वयं एक प्रकार की शक्ति है।"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "name",
+  "en": "Chang'e — China's Moon Program",
+  "cur": "Chang'e — चीन का चंद्र कार्यक्रम"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "tagline",
+  "en": "The methodical conquest of the Moon: orbit, land, rove, return — including the first landing ever on the far side, and the first samples from it.",
+  "cur": "चंद्रमा की व्यवस्थित विजय: परिक्रमा करना, उतरना, विचरण करना, वापस लौटना — जिसमें सुदूर पक्ष पर पहली बार उतरना और वहां से पहले नमूने लाना शामिल है।"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "the_land.0.md",
+  "en": "While the United States was away from the Moon for fifty years and Russia's lunar program lay dormant, China quietly built the most sustained and successful campaign of robotic lunar exploration of the twenty-first century. Named for the Chinese goddess of the Moon, the Chang'e program has, step by deliberate step, done everything a robotic program can do at another world — orbited it, landed on it, driven across it, and brought pieces of it home — and then done the things no one had ever done at all.",
+  "cur": "जब संयुक्त राज्य अमेरिका पचास वर्षों तक चंद्रमा से दूर रहा और रूस का चंद्र कार्यक्रम सुप्त पड़ा रहा, तब चीन ने चुपचाप इक्कीसवीं सदी का सबसे निरंतर और सफल रोबोटिक चंद्र अन्वेषण अभियान खड़ा किया। चंद्रमा की चीनी देवी के नाम पर, Chang'e कार्यक्रम ने, कदम दर कदम जानबूझकर, वह सब कुछ किया है जो एक रोबोटिक कार्यक्रम किसी अन्य दुनिया में कर सकता है — उसकी परिक्रमा की, उस पर उतरा, उस पर चला, और उसके टुकड़े घर लाया — और फिर वे काम किए जो पहले कभी किसी ने नहीं किए थे।"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "the_land.1.md",
+  "en": "The program's signature is the same patient, incremental method that built the Tiangong stations: each mission is a rehearsal for the next, each capability proven before the next is attempted. Orbit first (Chang'e 1–2), then soft-land and rove (Chang'e 3), then reach the impossible far side (Chang'e 4), then return samples (Chang'e 5), then return samples from the far side (Chang'e 6). It is a ladder climbed rung by rung, and China has not missed a rung.",
+  "cur": "कार्यक्रम की विशेषता वही धैर्यवान, क्रमिक विधि है जिसने Tiangong स्टेशनों का निर्माण किया: प्रत्येक मिशन अगले के लिए एक पूर्वाभ्यास है, अगली कोशिश से पहले प्रत्येक क्षमता को सिद्ध किया जाता है। पहले परिक्रमा (Chang'e 1–2), फिर सॉफ्ट-लैंड और विचरण (Chang'e 3), फिर असंभव सुदूर पक्ष तक पहुंचना (Chang'e 4), फिर नमूने वापस लाना (Chang'e 5), फिर सुदूर पक्ष से नमूने वापस लाना (Chang'e 6)। यह एक सीढ़ी है जिसे डंडे दर डंडे चढ़ा जाता है, और चीन ने एक भी डंडा नहीं छोड़ा है।"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "goals.0.md",
+  "en": "The near-term goals are scientific and methodical: map the Moon, land softly, deploy rovers, and return samples — mastering each capability in turn. The far side of the Moon, which never faces Earth and so cannot communicate with it directly, was a specific and audacious target: reaching it required first placing a relay satellite beyond the Moon, and no nation had ever landed there before China did it in 2019.",
+  "cur": "निकट-अवधि के लक्ष्य वैज्ञानिक और व्यवस्थित हैं: चंद्रमा का मानचित्रण करना, नरमी से उतरना, रोवर तैनात करना, और नमूने वापस लाना — बारी-बारी से प्रत्येक क्षमता में महारत हासिल करना। चंद्रमा का सुदूर पक्ष, जो कभी पृथ्वी की ओर नहीं होता और इसलिए सीधे इसके साथ संचार नहीं कर सकता, एक विशिष्ट और साहसिक लक्ष्य था: वहां पहुंचने के लिए पहले चंद्रमा के पार एक रिले उपग्रह रखना आवश्यक था, और 2019 में चीन द्वारा ऐसा करने से पहले किसी भी राष्ट्र ने वहां कभी उतरा नहीं था।"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "goals.1.caption",
+  "en": "Chang'e-4 on the far side of the Moon — the first spacecraft ever to land on the hemisphere that never faces Earth, reached only after China placed a relay satellite in position to carry its signals home.",
+  "cur": "Chang'e-4 चंद्रमा के सुदूर पक्ष पर — पहला अंतरिक्ष यान जो कभी उस गोलार्ध पर उतरा जो कभी पृथ्वी की ओर नहीं होता, केवल तभी पहुंचा जब चीन ने अपने संकेतों को घर ले जाने के लिए एक रिले उपग्रह को स्थिति में रखा।"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "goals.2.md",
+  "en": "The long-term goals are far larger: to land Chinese astronauts on the Moon by 2030, and to build the International Lunar Research Station — a robotic-then-crewed base near the lunar south pole, developed with international partners as an explicit alternative to the American-led Artemis coalition. The robotic Chang'e missions are the reconnaissance and the proof of capability; the crewed base is the destination the whole program is climbing toward.",
+  "cur": "दीर्घकालिक लक्ष्य कहीं अधिक बड़े हैं: 2030 तक चंद्रमा पर चीनी अंतरिक्ष यात्रियों को उतारना, और International Lunar Research Station का निर्माण करना — चंद्र दक्षिणी ध्रुव के पास एक रोबोटिक-फिर-चालक दल वाला आधार, जिसे अंतर्राष्ट्रीय साझेदारों के साथ अमेरिकी नेतृत्व वाले Artemis गठबंधन के स्पष्ट विकल्प के रूप में विकसित किया गया है। रोबोटिक Chang'e मिशन टोही और क्षमता का प्रमाण हैं; चालक दल वाला आधार वह गंतव्य है जिसकी ओर पूरा कार्यक्रम चढ़ रहा है।"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "outcome.0.md",
+  "en": "The record is a near-unbroken string of firsts and successes. Chang'e 1 and 2 mapped the Moon. Chang'e 3 (2013) made the first soft landing since 1976, carrying the Yutu rover. Chang'e 4 (2019) achieved the first landing in history on the lunar far side. Chang'e 5 (2020) returned the first fresh lunar samples in 44 years. And Chang'e 6 (2024) returned the first samples ever collected from the far side — material that had never been held in human hands. No other lunar program of the era comes close to this run of achievement.",
+  "cur": "रिकॉर्ड प्रथम और सफलताओं की लगभग अटूट श्रृंखला है। Chang'e 1 और 2 ने चंद्रमा का मानचित्रण किया। Chang'e 3 (2013) ने 1976 के बाद पहली सॉफ्ट लैंडिंग की, Yutu रोवर के साथ। Chang'e 4 (2019) ने चंद्र सुदूर पक्ष पर इतिहास में पहली लैंडिंग हासिल की। Chang'e 5 (2020) ने 44 वर्षों में पहले ताजा चंद्र नमूने वापस लाए। और Chang'e 6 (2024) ने सुदूर पक्ष से एकत्र किए गए पहले नमूने वापस लाए — ऐसी सामग्री जो कभी मानव हाथों में नहीं रही थी। युग के किसी अन्य चंद्र कार्यक्रम की उपलब्धि इस श्रृंखला के करीब नहीं आती।"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "outcome.1.caption",
+  "en": "Chang'e-5's sample return — the first new Moon rocks brought to Earth since the Soviet Luna missions of the 1970s, and proof that China had mastered the full round trip to the lunar surface and back.",
+  "cur": "Chang'e-5 का नमूना रिटर्न — 1970 के दशक के सोवियत Luna मिशनों के बाद पृथ्वी पर लाई गई पहली नई चंद्र चट्टानें, और इस बात का प्रमाण कि चीन ने चंद्र सतह तक और वापस पूर्ण राउंड ट्रिप में महारत हासिल कर ली थी।"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "outcome.2.md",
+  "en": "The samples alone have reshaped lunar science, revealing volcanic activity far more recent than models predicted and returning far-side material that may finally explain why the Moon's two hemispheres are so different. And the program's success has made China the pacing threat that reanimated the American lunar program: Artemis exists, in part, because China demonstrated it could and would go to the Moon — and stay.",
+  "cur": "केवल नमूनों ने ही चंद्र विज्ञान को नया आकार दिया है, जो मॉडलों की भविष्यवाणी से कहीं अधिक हाल की ज्वालामुखी गतिविधि को प्रकट करते हैं और सुदूर पक्ष की सामग्री वापस लाते हैं जो अंततः यह समझा सकती है कि चंद्रमा के दोनों गोलार्ध इतने अलग क्यों हैं। और कार्यक्रम की सफलता ने चीन को वह गति देने वाला खतरा बना दिया है जिसने अमेरिकी चंद्र कार्यक्रम को फिर से जीवित किया: Artemis आंशिक रूप से इसलिए मौजूद है, क्योंकि चीन ने प्रदर्शित किया कि वह चंद्रमा पर जा सकता है और जाएगा — और रुक जाएगा।"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "narrative.0.md",
+  "en": "The story of Chang'e is a program that treated the Moon as a sequence of problems to be solved in order, and solved them. There was no rush to plant a flag, no single dramatic sprint — just a steady, published progression through orbiting, landing, roving, and returning, each mission building precisely on the last. The far-side landing is the purest expression of the method: reaching it required first solving the communication problem with a relay satellite, so China solved that first, then landed. The audacity is real, but it is always earned by preparation.",
+  "cur": "Chang'e की कहानी एक ऐसे कार्यक्रम की है जिसने चंद्रमा को क्रम में हल की जाने वाली समस्याओं के अनुक्रम के रूप में माना, और उन्हें हल किया। झंडा गाड़ने की कोई जल्दबाजी नहीं थी, कोई एकल नाटकीय दौड़ नहीं — बस परिक्रमा करने, उतरने, विचरण करने और लौटने के माध्यम से एक स्थिर, प्रकाशित प्रगति, प्रत्येक मिशन ठीक पिछले पर निर्माण कर रहा था। सुदूर पक्ष की लैंडिंग विधि की सबसे शुद्ध अभिव्यक्ति है: वहां पहुंचने के लिए पहले रिले उपग्रह के साथ संचार समस्या को हल करना आवश्यक था, इसलिए चीन ने पहले इसे हल किया, फिर उतरा। साहस वास्तविक है, लेकिन यह हमेशा तैयारी से अर्जित किया जाता है।"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "narrative.1.md",
+  "en": "It is also the robotic vanguard of a larger ambition. The Chang'e missions are not an end in themselves; they are the reconnaissance for crewed landings and a permanent base. Every soft landing, every sample return, every far-side first is a capability China will need to put people on the Moon and keep them there — and the program is explicitly structured as the robotic first half of a plan whose second half is human.",
+  "cur": "यह एक बड़ी महत्वाकांक्षा का रोबोटिक अगुआ भी है। Chang'e मिशन अपने आप में एक अंत नहीं हैं; वे चालक दल वाली लैंडिंग और स्थायी आधार के लिए टोही हैं। हर सॉफ्ट लैंडिंग, हर नमूना रिटर्न, हर सुदूर पक्ष का प्रथम एक ऐसी क्षमता है जिसकी चीन को चंद्रमा पर लोगों को रखने और वहां बनाए रखने के लिए आवश्यकता होगी — और कार्यक्रम को स्पष्ट रूप से एक योजना के रोबोटिक पहले आधे के रूप में संरचित किया गया है जिसका दूसरा आधा मानव है।"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "narrative.2.md",
+  "en": "And it is one half of a new race. For the first time since Apollo, two powers are driving hard for the Moon at once — China's Chang'e-and-crewed program and America's Artemis — both aiming for the same resource-rich south pole, both building coalitions, both on timelines that converge around 2030. Chang'e's quiet, methodical success is the reason that race exists, and China's steadiness makes it a formidable competitor in it.",
+  "cur": "और यह एक नई दौड़ का एक आधा है। Apollo के बाद पहली बार, दो शक्तियां एक साथ चंद्रमा के लिए कठिन प्रयास कर रही हैं — चीन का Chang'e-और-चालक दल कार्यक्रम और अमेरिका का Artemis — दोनों एक ही संसाधन-समृद्ध दक्षिणी ध्रुव का लक्ष्य रख रहे हैं, दोनों गठबंधन बना रहे हैं, दोनों समयरेखाओं पर जो 2030 के आसपास एकत्रित होती हैं। Chang'e की शांत, व्यवस्थित सफलता ही वह कारण है कि वह दौड़ मौजूद है, और चीन की स्थिरता इसे इसमें एक दुर्जेय प्रतियोगी बनाती है।"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "legacy.0.md",
+  "en": "Chang'e's first legacy is scientific: fresh lunar samples from both near and far sides after a half-century gap, already rewriting the Moon's volcanic history and offering the first direct clues to why its two hemispheres differ so profoundly. These are among the most valuable planetary samples returned in a generation.",
+  "cur": "Chang'e की पहली विरासत वैज्ञानिक है: आधी सदी के अंतराल के बाद निकट और सुदूर दोनों पक्षों से ताजा चंद्र नमूने, जो पहले से ही चंद्रमा के ज्वालामुखी इतिहास को फिर से लिख रहे हैं और इस बात के पहले प्रत्यक्ष सुराग प्रदान कर रहे हैं कि इसके दोनों गोलार्ध इतने गहराई से अलग क्यों हैं। ये एक पीढ़ी में लौटाए गए सबसे मूल्यवान ग्रह नमूनों में से हैं।"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "legacy.1.md",
+  "en": "Its second legacy is the first human access to the lunar far side — a place that had been utterly unreachable, opened by the simple, clever step of a relay satellite. Chang'e turned the hidden half of the Moon from an abstraction into explored ground.",
+  "cur": "इसकी दूसरी विरासत चंद्र सुदूर पक्ष तक पहली मानव पहुंच है — एक ऐसी जगह जो पूरी तरह से अप्राप्य थी, एक रिले उपग्रह के सरल, चतुर कदम द्वारा खोली गई। Chang'e ने चंद्रमा के छिपे हुए आधे हिस्से को एक अमूर्तता से खोजी गई जमीन में बदल दिया।"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "legacy.2.md",
+  "en": "And its third is the reanimation of the Moon race itself. China's methodical success is a principal reason the United States committed to Artemis and to returning humans to the Moon on a deadline. Chang'e did not just explore the Moon; it changed the strategic calculus that governs who else goes, and when.",
+  "cur": "और इसकी तीसरी विरासत चंद्र दौड़ का ही पुनर्जीवन है। चीन की व्यवस्थित सफलता एक प्रमुख कारण है कि संयुक्त राज्य अमेरिका ने Artemis के लिए और समय सीमा पर मनुष्यों को चंद्रमा पर वापस लाने के लिए प्रतिबद्ध किया। Chang'e ने केवल चंद्रमा की खोज नहीं की; इसने उस रणनीतिक गणना को बदल दिया जो यह नियंत्रित करती है कि कौन और कब जाता है।"
+ }
+]

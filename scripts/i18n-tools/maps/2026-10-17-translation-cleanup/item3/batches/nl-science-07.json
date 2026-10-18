@@ -1,0 +1,860 @@
+[
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.1",
+  "en": "GEO disposal: graveyard orbit. GEO satellites can't be economically deorbited because the ΔV cost to drop from GEO (35,786 km) to Earth-impact is enormous (~1.5 km/s) and the satellite would still have to plough through the dense LEO debris belt on the way down. Instead, IADC guidelines (and most national regulators) require GEO operators to boost their spacecraft into a 'graveyard orbit' at least 235 km above GEO before exhausting station-keeping propellant. The 235 km figure combines a 200 km buffer above the protected GEO region with ~35 km of perigee drop a derelict can undergo from luni-solar gravity and Earth's oblateness; solar-radiation-pressure effects, which scale with a satellite's area-to-mass ratio, are added on top via the IADC formula. Boosting clear of that combined altitude guarantees the dead satellite won't drift back into the GEO ring. Each graveyard boost typically consumes 5-10 kg of propellant, equivalent to several months of station-keeping margin. Operators that fail to perform the graveyard burn (typically because the satellite died too quickly to spare the fuel) leave a derelict in or near GEO that will menace operational comsats for the indefinite future — the so-called 'GEO graveyard derelicts'.",
+  "cur": "GEO-verwijdering: kerkhofbaan. GEO-satellieten kunnen economisch niet worden geboost uit hun baan omdat de ΔV-kosten om van GEO (35.786 km) naar aardimpact te dalen enorm zijn (~1,5 km/s) en de satelliet nog steeds door de dichte LEO-puinriem zou moeten gaan op weg naar beneden. In plaats daarvan vereisen IADC-richtlijnen (en de meeste nationale regelgevers) dat GEO-operatoren hun ruimtevaartuig in een 'kerkhofbaan' op minstens 235 km boven GEO boosten voordat zij hun stationhoudingsstuwmiddel opgebruikt hebben. Het getal 235 km combineert een buffer van 200 km boven het beveiligde GEO-gebied met ~35 km pergeumval waaraan een verlaten satelliet kan onderhevig zijn door luni-zonnezwaartekracht en de uitbolling van de aarde; effecten van zonnestralingsdruk, die schalen met de oppervlakte-massa-verhouding van een satelliet, worden bovenop toegevoegd via de IADC-formule. Boosten boven die gecombineerde hoogte garandeert dat de dode satelliet niet terug zal drijven naar de GEO-ring. Elke kerkhofboost verbruikt doorgaans 5-10 kg stuwmiddel, gelijk aan enkele maanden stationhoudingsmarge. Operatoren die de kerkhofverbrand niet uitvoeren (meestal omdat de satelliet te snel uitviel om brandstof te besparen) laten een verlaten satelliet in of nabij GEO achter die operationele comsats gedurende onbepaalde tijd zal bedreigen — de zogenaamde 'GEO-kerkhofverlaten satelliet'."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.2",
+  "en": "MEO and HEO disposal. Harder cases than either LEO or GEO. MEO navigation constellations (GPS, Galileo, GLONASS, BeiDou MEO) at ~20,000 km have very long natural decay times (thousands of years) and no convenient graveyard equivalent above; the current practice is to leave retired satellites in their operational orbit and rely on careful constellation phasing to avoid collisions. As MEO populations grow this is becoming a known forward-looking problem. HEO (Molniya, Tundra) satellites typically have a perigee low enough that atmospheric drag will eventually deorbit them — Molniya satellites with 600 km perigee decay within decades. Higher-perigee HEOs need explicit deorbit burns.",
+  "cur": "MEO en HEO verwijdering. Moeilijker gevallen dan LEO of GEO. MEO-navigatieconstellaties (GPS, Galileo, GLONASS, BeiDou MEO) op ~20.000 km hebben zeer lange natuurlijke vervaltijden (duizenden jaren) en geen handig kerkhof-equivalent erboven; de huidige praktijk is gepensioneerde satellieten in de operationele baan te laten en te vertrouwen op zorgvuldige constellatie-fasering om botsingen te vermijden. Met groeiende MEO-populaties wordt dit een toekomstig probleem. HEO-satellieten (Molniya, Tundra) hebben meestal een laag genoeg perigeum dat atmosferische weerstand ze uiteindelijk deorbiteert — Molniya's met 600 km perigeum vervallen binnen decennia. Hoger-perigeum HEO's hebben expliciete deorbit-burns nodig."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.3",
+  "en": "Cislunar disposal. No formal regulations yet, but emerging practice for Artemis-era spacecraft: end-of-life Lunar Reconnaissance Orbiter, Chang'e-1, Chandrayaan-1 all eventually impacted the lunar surface (sometimes deliberately for science — LCROSS impacted Cabeus to look for water; sometimes incidentally from station-keeping exhaustion). The Lunar Gateway's planned disposal at end of life is controlled deorbit into the lunar surface, similar to Mir's SPOUA disposal but on the Moon. Several proposals exist for parking retired cislunar assets at Earth-Moon L4 / L5, which are extremely stable and would tolerate derelict satellites indefinitely — but this hasn't been formalised in international agreement.",
+  "cur": "Cislunaire verwijdering. Nog geen formele regelgeving, maar opkomende praktijk voor Artemis-era sondes: einde-leven van Lunar Reconnaissance Orbiter, Chang'e-1, Chandrayaan-1 alle eindigden uiteindelijk in inslag op het maanoppervlak (soms bewust voor wetenschap — LCROSS sloeg in op Cabeus om naar water te zoeken; soms incidenteel door uitputting). De geplande verwijdering van Lunar Gateway aan einde leven is gecontroleerde deorbit naar het maanoppervlak, vergelijkbaar met Mir's SPOUA-verwijdering maar op de maan. Verschillende voorstellen bestaan om gepensioneerde cislunaire assets bij Aarde-Maan L4 / L5 te parkeren, die uiterst stabiel zijn en wrakken voor onbepaalde tijd zouden tolereren — maar dit is internationaal niet geformaliseerd."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.4",
+  "en": "Disposal is no longer optional. Until ~2015, end-of-life disposal was technically required but laxly enforced. Multiple regulatory shifts since then have changed the calculus: FCC's 5-year LEO rule (2022) requires all US-licensed satellites to deorbit within 5 years of mission end; ESA's Zero Debris Charter (2023) commits signatories to leave no debris in orbit; the UN's Long-Term Sustainability Guidelines (2019) make disposal a precondition for licensing. Modern satellite designs now include disposal propellant as a hard mass-budget item, with margin reservation enforced by mission-design reviews. The orbital-debris article covers what happens when disposal fails.",
+  "cur": "Verwijdering is niet langer optioneel. Tot ~2015 was einde-leven verwijdering technisch vereist maar lakse handhaving. Meerdere regelgevingsverschuivingen sindsdien hebben de berekening veranderd: FCC's 5-jaars LEO-regel (2022) vereist deorbit binnen 5 jaar na missie-einde voor alle US-gelicentieerde satellieten; ESA's Zero Debris Charter (2023) verbindt ondertekenaars om geen puin in baan achter te laten; de Long-Term Sustainability Guidelines van de VN (2019) maken verwijdering een voorwaarde voor licensing. Moderne satellietontwerpen bevatten nu verwijderingsdrijfgas als hard massabudget-item, met marge-reservering afgedwongen door missie-ontwerp-reviews. Het artikel over ruimteafval behandelt wat er gebeurt als verwijdering faalt."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "diagram_caption",
+  "en": "LEO: deorbit within 25 years (IADC) / 5 years (FCC 2022). Burn perigee down to ~200 km → atmospheric re-entry. Large objects targeted at SPOUA (Point Nemo). GEO: boost ≥235 km above GEO ring into graveyard orbit. MEO: no formal disposal — long natural decay times, careful operational phasing. Cislunar: emerging practice, controlled lunar-surface impact.",
+  "cur": "LEO: deorbit binnen 25 jaar (IADC) / 5 jaar (FCC 2022). Brand perigeum naar ~200 km → atmosferische terugkeer. Grote objecten gericht op SPOUA (Point Nemo). GEO: boost ≥235 km boven GEO-ring naar kerkhofbaan. MEO: geen formele verwijdering — lange natuurlijke vervaltijden, zorgvuldige operationele fasering. Cislunair: opkomende praktijk, gecontroleerde inslag op maanoppervlak."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "intro_sentence",
+  "en": "How stretched the orbit is — zero is a perfect circle, one is a parabolic escape.",
+  "cur": "Hoe uitgerekt de baan is — nul is een perfecte cirkel, één is een parabolische ontsnapping."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "narrative_101.0",
+  "en": "If size is the orbit's first knob, eccentricity is the second. Pick a number from 0 to almost-1. At 0 the orbit is a perfect circle — boring, predictable, same speed everywhere. Push it toward 1 and the ellipse stretches into a long egg, then a cigar, then almost a straight line.",
+  "cur": "Als grootte de eerste knop van de baan is, dan is excentriciteit de tweede. Kies een getal van 0 tot bijna 1. Bij 0 is de baan een perfecte cirkel — saai, voorspelbaar, overal dezelfde snelheid. Duw het richting 1 en de ellips rekt zich uit tot een lang ei, dan een sigaar, dan bijna een rechte lijn."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "narrative_101.1",
+  "en": "What changes physically? Speed. A circular orbit is calm. A stretched one is not. The body rips past the close end of the ellipse and then loiters out at the far end for most of the orbit. Halley's Comet is in here for less than a year out of every 76 — the rest of the time it's drifting around aphelion at a crawl. Same orbit, wildly different pace.",
+  "cur": "Wat verandert er fysisch? Snelheid. Een cirkelvormige baan is kalm. Een uitgerekte niet. Het object schiet langs het dichtbije uiteinde van de ellips en dralt dan bij het verre uiteinde rond voor het grootste deel van de baan. Komeet Halley is hier minder dan een jaar van elke 76 — de rest van de tijd drijft hij traag rond bij aphelium. Dezelfde baan, totaal verschillend tempo."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "narrative_101.2",
+  "en": "Real planets are way more boring than comets — almost everything you'll see in /explore has eccentricity below 0.1. But the moment you start designing a mission trajectory, you're picking transfer ellipses with eccentricity all over the place. Hohmann transfers to Mars sit around 0.21. The Apollo TLI burn put the spacecraft on an ellipse with e ≈ 0.97 — almost an escape.",
+  "cur": "Echte planeten zijn veel saaier dan kometen — bijna alles wat je in /explore ziet heeft een excentriciteit onder de 0,1. Maar zodra je een missiebaan begint te ontwerpen, kies je transferellipsen met excentriciteit overal. Hohmann-transfers naar Mars zitten rond de 0,21. De Apollo TLI-ontsteking plaatste het ruimtevaartuig op een ellips met e ≈ 0,97 — bijna een ontsnapping."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "body_paragraphs.0",
+  "en": "Eccentricity (`e`) is the shape number. Set it to 0 and you have a circle — the foci collapse onto a single centre, and the orbiting body stays at the same distance forever. Crank it up toward 1 and the ellipse stretches into a cigar — the body whips past the focus at perihelion, then loiters out at aphelion for most of the orbit.",
+  "cur": "Excentriciteit (`e`) is het vormgetal. Zet het op 0 en je hebt een cirkel — de brandpunten vallen samen in één enkel middelpunt, en het object in de baan blijft altijd op dezelfde afstand. Draai het op richting 1 en de ellips rekt zich uit tot een sigaar — het object schiet langs het brandpunt bij perihelium, en dralt dan bij aphelium rond voor het grootste deel van de baan."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "body_paragraphs.1",
+  "en": "Above `e = 1` you're no longer bound. `e = 1` exactly is a parabolic trajectory (escape, just barely). Anything higher is hyperbolic — a flyby that never returns. Most spacecraft trajectories Orrery shows are heliocentric ellipses with `e < 1`. The exception: gravity-assist arms drawn around Jupiter or Saturn dip into hyperbolic territory.",
+  "cur": "Boven `e = 1` ben je niet langer gebonden. `e = 1` precies is een parabolische baan (ontsnapping, maar net). Alles hoger is hyperbolisch — een voorbijvlucht die nooit terugkeert. De meeste ruimtevaartuigbanen die Orrery toont zijn heliocentrische ellipsen met `e < 1`. De uitzondering: zwaartekracht-assistentiearmen getekend rond Jupiter of Saturnus duiken het hyperbolische gebied in."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "body_paragraphs.2",
+  "en": "Real planets cluster at low eccentricity. Earth: 0.0167 — almost circular. Mars: 0.093 — visibly elongated. Mercury: 0.205 — most eccentric of the eight planets. Pluto and the comets sit much higher, which is why their visits to perihelion are the show-stopping events of the outer solar system.",
+  "cur": "Echte planeten clusteren bij lage excentriciteit. Aarde: 0,0167 — bijna cirkelvormig. Mars: 0,093 — zichtbaar uitgerekt. Mercurius: 0,205 — meest excentrisch van de acht planeten. Pluto en de kometen zitten veel hoger, en daarom zijn hun bezoeken aan perihelium de sensationele gebeurtenissen van het buitenste zonnestelsel."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "formula_caption",
+  "en": "Eccentricity from perihelion and aphelion radii.",
+  "cur": "Excentriciteit uit perihelium- en apheliumstralen."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "diagram_caption",
+  "en": "Three orbits with the same semi-major axis but eccentricity e = 0, 0.4, 0.8. Shape changes; period does not.",
+  "cur": "Drie banen met dezelfde halve lange as maar excentriciteit e = 0, 0,4, 0,8. Vorm verandert; periode niet."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "title",
+  "en": "Escape velocity — the speed that never comes back",
+  "cur": "Ontsnappingssnelheid — de snelheid die niet terugkeert"
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "intro_sentence",
+  "en": "Throw anything upward fast enough and it never falls back — escape velocity is the exact speed at which a body’s kinetic energy just balances the gravity well it is climbing out of.",
+  "cur": "Gooi iets snel genoeg omhoog en het valt nooit terug — ontsnappingssnelheid is de exacte snelheid waarbij de kinetische energie van een lichaam precies de zwaartekrachtput in evenwicht houdt die het verlaat."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "narrative_101.0",
+  "en": "Gravity never quite lets go — its pull reaches to infinity, only getting weaker with distance. So \"escaping\" a planet does not mean outrunning gravity; it means having exactly enough energy that, as you climb and slow, you slow toward zero speed only as you reach infinite distance. Come up even a hair short and gravity eventually wins, halts you, and pulls you back. Escape velocity is the knife-edge between those two fates.",
+  "cur": "De zwaartekracht laat nooit helemaal los — de aantrekkingskracht reikt tot oneindig, slechts zwakker wordend met afstand. Dus \"ontsnappen\" aan een planeet betekent niet sneller zijn dan de zwaartekracht; het betekent genoeg energie hebben zodat je, terwijl je klimt en vertraagt, naar nulsnelheid vertraagt wanneer je oneindige afstand bereikt. Kom ook maar net iets te kort en de zwaartekracht wint uiteindelijk, stopt je, en trekt je terug. Ontsnappingssnelheid is het mes scherp snijvlak tussen die twee lot."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "narrative_101.1",
+  "en": "From Earth’s surface that speed is about 11.2 kilometres a second — roughly 40,000 km/h. It does not depend on which way you throw the object or how heavy it is: a pebble and a spaceship need the same speed. And it is tied to circular orbital speed by a clean factor — escape velocity is exactly the square root of two (about 1.41) times the speed of a circular orbit at the same height. Reach orbit, then go about 41% faster, and you are gone.",
+  "cur": "Vanaf het aardoppervlak is die snelheid ongeveer 11,2 kilometer per seconde — ruwweg 40.000 km/u. Het hangt niet af van de richting waarin je het object gooit of hoe zwaar het is: een steentje en een ruimteschip hebben dezelfde snelheid nodig. En het is gekoppeld aan cirkelbaansnelheid door een schone factor — ontsnappingssnelheid is exact de vierkantswortel van twee (ongeveer 1,41) keer de snelheid van een cirkelbaan op dezelfde hoogte. Bereid een baan, ga dan ongeveer 41% sneller, en je bent weg."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "narrative_101.2",
+  "en": "The number that matters for leaving the whole Solar System is bigger: escaping the Sun from Earth’s distance takes about 42 km/s. Earth already carries us around the Sun at about 30, so a probe needs only the difference — but that is still more than most chemical rockets can add on their own, which is why the craft leaving the Solar System leaned on gravity assists: decisive for Voyager and Pioneer, and an added boost for New Horizons, which the biggest launcher of its day had already flung onto an escape trajectory.",
+  "cur": "Het getal dat belangrijk is voor het verlaten van het hele zonnestelsel is groter: ontsnappen aan de Zon vanaf afstand van de Aarde kost ongeveer 42 km/s. De Aarde voert ons al rond de Zon met ongeveer 30 km/s, dus een sonde hoeft alleen het verschil — maar dat is nog steeds meer dan de meeste chemische raketten zelf kunnen toevoegen, daarom steunden de vaartuigen die het zonnestelsel verlaten op zwaartekrachtassistentie: beslissend voor Voyager en Pioneer, en een extra boost voor New Horizons, die de grootste lanceerder van die tijd al op een ontsnappingstraject had geworpen."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "body_paragraphs.0",
+  "en": "Escape velocity follows from energy conservation: set total energy (kinetic plus gravitational potential) to zero, and v_escape = √(2μ / r), where μ is the body’s gravitational parameter and r the distance from its centre. Because circular orbital speed is √(μ / r), escape velocity is exactly √2 times it — the same factor at every altitude. A trajectory launched at exactly escape speed is a parabola (orbital energy zero); above it, a hyperbola that arrives at infinity with leftover speed, the \"hyperbolic excess\" v∞.",
+  "cur": "Ontsnappingssnelheid volgt uit energiebehoud: stel totale energie (kinetisch plus zwaartekrachtpotentiaal) op nul, en v_escape = √(2μ / r), waarbij μ de zwaartekrachtparameter van het lichaam is en r de afstand tot het middelpunt. Omdat cirkelbaansnelheid √(μ / r) is, is ontsnappingssnelheid exact √2 keer ervan — dezelfde factor op elke hoogte. Een traject gelanceerd op exact ontsnappingssnelheid is een parabool (baanenergie nul); daarboven een hyperbool die oneindigheid bereikt met restsnelheid, de \"hyperbolisch overschot\" v∞."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "body_paragraphs.1",
+  "en": "The values are worth knowing: ~11.2 km/s from Earth’s surface, ~2.4 km/s from the Moon, ~5.0 km/s from Mars, ~618 km/s from the Sun’s surface, and ~42.1 km/s to escape the Sun from Earth’s 1-AU orbit. Escape speed falls with altitude (larger r), so leaving from a high orbit is cheaper than from the ground — one reason missions build up speed in stages.",
+  "cur": "De waarden zijn het waard om te weten: ~11,2 km/s vanaf het aardoppervlak, ~2,4 km/s vanaf de Maan, ~5,0 km/s vanaf Mars, ~618 km/s vanaf het zonneopppervlak, en ~42,1 km/s om de Zon te ontsnappen vanaf aardse 1-AU baan. Ontsnappingssnelheid neemt af met hoogte (groter r), dus vertrekken vanuit hoge baan is goedkoper dan vanaf de grond — één reden waarom missies snelheid in stappen opbouwen."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "body_paragraphs.2",
+  "en": "Reaching solar escape is why deep-space missions lean on the Oberth effect and gravity assists. Earth’s ~30 km/s orbital motion is a free head start, but the remaining Δv to 42 km/s, applied from low Earth orbit, exceeds a chemical stage’s budget; a planetary flyby donates the rest without propellant. Escape velocity is the target the Physics Lab’s \"leave the Solar System\" lesson has to clear.",
+  "cur": "Het bereiken van zonneontsnapping is waarom diepe-ruimtemissies leunen op het Oberth-effect en zwaartekrachtassistentie. De ~30 km/s baanbeweging van de Aarde is een gratis voorsprong, maar de resterende Δv naar 42 km/s, uitgeoefend vanuit lage baan rond de Aarde, overschrijdt het budget van een chemische trap; een planetaire voorbijvliegen geeft de rest zonder drijfstof. Ontsnappingssnelheid is het doel dat de \"verlaat het zonnestelsel\"-les van het Physics Lab moet overwinnen."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "diagram_caption",
+  "en": "Escape velocity v = √(2μ/r) = √2 × circular speed: below it the path is a bound ellipse, at it a parabola, above it a hyperbola that reaches infinity with speed to spare.",
+  "cur": "Ontsnappingssnelheid v = √(2μ/r) = √2 × cirkelbaansnelheid: eronder is het pad een gebonden ellips, erbij een parabool, erboven een hyperbool die oneindigheid bereikt met snelheid over."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "intro_sentence",
+  "en": "The volume of space where a planet's gravity wins out over the Sun's.",
+  "cur": "Het volume ruimte waar de zwaartekracht van een planeet sterker is dan die van de Zon."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "narrative_101.0",
+  "en": "Out at Earth's orbit, the Sun's pull on you would be about 46,000× weaker than it is on the Sun's surface — but it's still strong. So why does the Moon orbit Earth and not the Sun? Because right next to Earth, you're SO close to Earth that its 80× smaller mass still wins. The boundary where that flips — where you're far enough away that the Sun is back in charge — is the Hill sphere.",
+  "cur": "Op de baan van de Aarde zou de Zon aan jou trekken met een kracht ongeveer 46.000× zwakker dan aan het Zonoppervlak — maar toch nog sterk. Waarom draait de Maan dan om de Aarde en niet om de Zon? Omdat je dicht genoeg bij de Aarde bent dat haar 80× kleinere massa wél wint. De grens waar dat kantelt — waar je ver genoeg weg bent dat de Zon weer de baas is — is de Hill-sfeer."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "narrative_101.1",
+  "en": "Inside Earth's Hill sphere (a roughly spherical region about 1.5 million km across), an object can hold a stable orbit around Earth. Outside it, the Sun's gravity reaches in too strongly and yanks the object away. The Moon, at 384,000 km out, sits about a quarter of the way to that edge — comfortably stable. The James Webb Space Telescope orbits the Sun–Earth L2 point, also ~1.5 million km out, and needs small station-keeping burns (~2.5 m/s per year) because L2 is a dynamically unstable saddle point — not because it sits at the edge of Earth's Hill sphere.",
+  "cur": "Binnen Aarde Hill sphere (een ruwweg bolvormig gebied van ongeveer 1,5 miljoen km doorsnede) kan een object een stabiele baan rond Aarde behouden. Erbuiten reikt de zwaartekracht van de Zon te sterk in en sleurt het object weg. De Maan, op 384.000 km afstand, bevindt zich ongeveer een kwart van de weg naar die rand — comfortabel stabiel. De James Webb Space Telescope omloopt het Zon–Aarde L2-punt, ook op ~1,5 miljoen km afstand, en heeft kleine station-keeping burns nodig (~2,5 m/s per jaar) omdat L2 een dynamisch instabiel zadelpunt is — niet omdat het aan de rand van Aarde Hill sphere ligt."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "narrative_101.2",
+  "en": "Every planet has one. They scale with the planet's mass and its distance from the Sun. Mercury — small and close — has a Hill sphere only about 90 Mercury-radii across, which is why Mercury has no moon (any captured object would be ripped away). Jupiter — huge and far — has a Hill sphere about 740 Jupiter-radii across, big enough to hold 95 known moons plus extensive Trojan asteroid swarms.",
+  "cur": "Elke planeet heeft er een. Ze schalen met de massa van de planeet en haar afstand tot de Zon. Mercurius — klein en dicht bij — heeft een Hill-sfeer slechts ongeveer 90 Mercurius-stralen groot, daarom heeft Mercurius geen maan (elk ingevangen object zou worden weggesleurд). Jupiter — enorm en ver weg — heeft een Hill-sfeer ongeveer 740 Jupiter-stralen groot, groot genoeg voor 95 bekende manen plus uitgebreide zwermen Trojaanse asteroïden."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "body_paragraphs.0",
+  "en": "The Hill radius formula approximates the boundary as r_H ≈ a × (1−e) × (m / 3M)^(1/3), where `a` is the planet's semi-major axis, `e` its eccentricity, `m` its mass, and `M` the Sun's mass. The (1−e) factor accounts for perihelion shrinkage — a more eccentric orbit means the planet swings closer to the Sun and its authority shrinks accordingly. The cube root means doubling a planet's mass only enlarges its Hill sphere by ~26%; doubling its orbital distance enlarges it by 100%.",
+  "cur": "De Hill-radiusformule benadert de grens als r_H ≈ a × (1−e) × (m / 3M)^(1/3), waarbij `a` de halve lange as van de planeet is, `e` haar excentriciteit, `m` haar massa, en `M` de massa van de Zon. De factor (1−e) verklaart de krimp bij perihelium — een meer excentrieke baan betekent dat de planeet dichter naar de Zon zwaait en haar gezag dienovereenkomstig krimpt. De derdewortel betekent dat het verdubbelen van de massa van een planeet haar Hill-sfeer slechts met ~26% vergroot; het verdubbelen van haar baan vergroot hem met 100%."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "body_paragraphs.1",
+  "en": "Real numbers for the solar system: Mercury 220,000 km (90 R_Mercury). Venus 1.0 M km (170 R_Venus). Earth 1.5 M km (236 R_Earth). Mars 1.1 M km (320 R_Mars — bigger than Earth's in radii because Mars is small and farther from the Sun). Jupiter 53 M km (740 R_Jupiter — by far the largest in the system). Saturn 65 M km (1100 R_Saturn). Uranus 70 M km. Neptune 116 M km. Pluto ~6.0 M km (~5000 R_Pluto — the largest Hill sphere measured in its own body radii in the solar system, because Pluto is far from the Sun and tiny).",
+  "cur": "Echte getallen voor het zonnestelsel: Mercurius 220.000 km (90 R_Mercurius). Venus 1,0 M km (170 R_Venus). Aarde 1,5 M km (236 R_Aarde). Mars 1,1 M km (320 R_Mars — groter dan die van de Aarde in radii omdat Mars klein is en verder van de Zon af staat). Jupiter 53 M km (740 R_Jupiter — veruit de grootste in het stelsel). Saturnus 65 M km (1100 R_Saturnus). Uranus 70 M km. Neptunus 116 M km. Pluto ~6,0 M km (~5000 R_Pluto — de grootste Hill-sfeer gemeten in zijn eigen lichaamsradii in het zonnestelsel, omdat Pluto ver van de Zon af staat en minuscuul is)."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "body_paragraphs.2",
+  "en": "The Hill sphere is the outer limit; the inner limit is the Roche limit, where the planet's tidal forces would shatter a satellite. Stable moons live in the band between the two. Mercury's case is the strict one — its Hill sphere is small enough that any captured body would be pulled within Roche distance and disrupted, so Mercury has stayed moonless for 4.5 billion years.",
+  "cur": "De Hill-sfeer is de buitengrens; de binnengrens is de Roche-limiet, waar de getijdekrachten van de planeet een satelliet zouden verbrijzelen. Stabiele manen leven in de band tussen de twee. Het geval van Mercurius is het strikte — zijn Hill-sfeer is klein genoeg dat elk gevangen lichaam naar Roche-afstand zou worden getrokken en verbroken zou worden, dus Mercurius is 4,5 miljard jaar lang manenloos gebleven."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "diagram_caption",
+  "en": "Hill sphere of a planet on a near-circular orbit. The L1 + L2 Lagrange points sit at the boundary along the planet→Sun line; moons orbit stably inside, anything outside gets reclaimed by the Sun.",
+  "cur": "Hill-sfeer van een planeet op een vrijwel cirkelvormige baan. De L1 + L2 Lagrangepunten liggen aan de grens langs de planeet→Zon-lijn; manen draaien stabiel erbuiten, alles erbuiten wordt door de Zon opgeëist."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "intro_sentence",
+  "en": "The tilt of the orbit plane relative to a reference plane — usually the ecliptic or Earth's equator.",
+  "cur": "De kanteling van het baanvlak ten opzichte van een referentievlak — meestal de ecliptica of de evenaar van de aarde."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "narrative_101.0",
+  "en": "Hold a dinner plate flat in front of you — that's the reference plane. Now tilt it. The angle you tilted by is inclination. That's the whole concept. Every orbit lives on its own tilted plate.",
+  "cur": "Houd een dinerbord plat voor je — dat is het referentievlak. Kantel het nu. De hoek waarmee je het kantelt is de inclinatie. Dat is het hele concept. Elke baan bevindt zich op zijn eigen gekantelde bord."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "narrative_101.1",
+  "en": "It matters because changing inclination is brutally expensive in fuel. If you launch a rocket from Florida, the Earth is already spinning eastward at 0.4 km/s — you get that for free if your orbit goes east. Try to launch into a polar orbit instead and you don't just lose the freebie, you have to fight against it. Picking your inclination at launch is one of the biggest decisions a mission makes; you almost never want to change it later.",
+  "cur": "Het is belangrijk omdat het veranderen van de inclinatie extreem kostbaar is qua brandstof. Als je een raket lanceert vanuit Florida, draait de aarde al naar het oosten met 0,4 km/s — je krijgt dat gratis als je baan naar het oosten gaat. Probeer in plaats daarvan te lanceren in een polaire baan en je verliest niet alleen het cadeau, je moet er ook nog tegen vechten. Het kiezen van je inclinatie bij de lancering is een van de grootste beslissingen die een missie neemt; je wilt het bijna nooit later veranderen."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "narrative_101.2",
+  "en": "This is why the ISS sits at 51.6° — that's the angle you have to launch at if you want to reach it from Russia's launch site at Baikonur. Why imaging satellites go polar — they need to fly over every latitude. Why GEO comsats sit on the equator — so they hover over the same patch of ground forever. Each inclination is a deliberate choice with a fuel bill attached.",
+  "cur": "Daarom bevindt het ISS zich op 51,6° — dat is de hoek waarop je moet lanceren als je het wilt bereiken vanaf de Russische lanceerplaats in Bajkonoer. Waarom beeldvormingssatellieten polair gaan — ze moeten over elke breedtegraad vliegen. Waarom GEO-communicatiesatellieten op de evenaar zitten — zodat ze voor altijd boven hetzelfde stuk grond zweven. Elke inclinatie is een bewuste keuze met een brandstofrekening eraan vast."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "body_paragraphs.0",
+  "en": "Inclination (`i`) is the angle between the orbit plane and a chosen reference. For a heliocentric orbit, the reference is the ecliptic — the plane Earth orbits in. For Earth-orbiters, it's usually the equator. The angle is measured at the ascending node, where the orbit climbs through the reference plane heading north.",
+  "cur": "Inclinatie (`i`) is de hoek tussen het baanvlak en een gekozen referentie. Voor een heliocentrische baan is de referentie de ecliptica — het vlak waarin de aarde draait. Voor aardbanen is het meestal de evenaar. De hoek wordt gemeten bij de stijgende knoop, waar de baan door het referentievlak klimt in noordelijke richting."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "body_paragraphs.1",
+  "en": "Most planets sit close to the ecliptic — Earth defines it (`i = 0°` by construction), and the rest stay within a few degrees. Mercury at 7° is the outlier. Pluto's wild 17° is one of the reasons it got demoted: real planets stay nearly co-planar.",
+  "cur": "De meeste planeten bevinden zich dicht bij de ecliptica — de aarde definieert deze (`i = 0°` per definitie), en de rest blijft binnen een paar graden. Mercurius met 7° is de uitzondering. Pluto's extreme 17° is een van de redenen waarom het gedegradeerd werd: echte planeten blijven bijna co-planair."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "body_paragraphs.2",
+  "en": "For Earth satellites the inclination story is different and pragmatic. Equatorial (0°) for geostationary comsats. ~28° for Cape Canaveral launches that need to ride the Earth's spin. ~51.6° for the ISS — chosen so Russian crews can launch from Baikonur. Polar (~90°) for Earth-imaging satellites that need every latitude. Sun-synchronous (~98°) for science platforms that want consistent lighting on every pass.",
+  "cur": "Voor aardsatellieten is het inclinatieverhaal anders en pragmatisch. Equatoriaal (0°) voor geostationaire communicatiesatellieten. ~28° voor lanceringen vanaf Cape Canaveral die profiteren van de draaiing van de aarde. ~51,6° voor het ISS — gekozen zodat Russische bemanningen kunnen lanceren vanaf Bajkonoer. Polair (~90°) voor aardbeeldvormingssatellieten die elke breedtegraad nodig hebben. Zonnesynchrone (~98°) voor wetenschapsplatforms die consistente belichting willen bij elke passage."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "diagram_caption",
+  "en": "Orbit plane tilted by angle i from the reference plane. Ascending node N marks where the orbit crosses going north.",
+  "cur": "Baanvlak gekanteld met hoek i ten opzichte van het referentievlak. Stijgende knoop N markeert waar de baan noordwaarts kruist."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "intro_sentence",
+  "en": "An ellipse with the Sun at one focus — the simplest orbit a body can have around another.",
+  "cur": "Een ellips met de Zon in een van de brandpunten — de eenvoudigste baan die een lichaam rond een ander kan hebben."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "narrative_101.0",
+  "en": "Imagine throwing a ball off a tall tower. It curves down to the ground. Throw it harder, the curve gets longer. Throw it so hard that the ground falls away under it as fast as the ball drops — and the ball never lands. It just keeps falling, forever, in a closed loop. That's an orbit. Every spacecraft, every moon, every planet is doing that one trick.",
+  "cur": "Stel je voor dat je een bal van een hoge toren gooit. Hij buigt naar beneden naar de grond. Gooi je hem harder, dan wordt de boog langer. Gooi je hem zo hard dat de grond onder hem vandaan valt net zo snel als de bal naar beneden valt — en de bal komt nooit neer. Hij blijft gewoon vallen, voor altijd, in een gesloten lus. Dat is een baan. Elk ruimtevaartuig, elke maan, elke planeet doet die ene truc."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "narrative_101.1",
+  "en": "What makes the loop a Keplerian orbit specifically is that we're treating gravity as a single, clean tug toward one heavy thing — the Sun for planets, the Earth for satellites, Mars for InSight. Two bodies, one force, no complications. The result is always an ellipse, and the heavy body always sits at one of the two focal points, never the middle. That single picture lives behind every number you'll see in this whole encyclopedia.",
+  "cur": "Wat de lus specifiek een Kepleriaanse baan maakt, is dat we de zwaartekracht behandelen als één, heldere trek naar één zwaar ding — de Zon voor planeten, de Aarde voor satellieten, Mars voor InSight. Twee lichamen, één kracht, geen complicaties. Het resultaat is altijd een ellips, en het zware lichaam bevindt zich altijd in een van de twee brandpunten, nooit in het midden. Dat enkele beeld staat achter elk getal dat je in deze hele encyclopedie zult zien."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "narrative_101.2",
+  "en": "Reality is messier — moons perturb planets, the Earth's bulge tugs on satellites, the Sun pulls on lunar trajectories — but the messiness is mostly a small correction on top of a Keplerian orbit. So we start here. Get the ellipse right and everything else is decoration.",
+  "cur": "De werkelijkheid is rommelier — manen verstoren planeten, de uitstulping van de Aarde trekt aan satellieten, de Zon trekt aan maanbanen — maar die rommeligheden zijn grotendeels een kleine correctie bovenop een Kepler-baan. Dus we beginnen hier. Zorg dat je de ellips goed hebt en al het andere is decoratie."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "body_paragraphs.0",
+  "en": "When you fall toward something massive but miss it, you get a Keplerian orbit. The path is an ellipse — a stretched circle — and the body you're falling toward sits at one of the two focal points, never the centre. Earth around the Sun, Moon around Earth, every spacecraft you'll see in Orrery: all Keplerian to a first approximation.",
+  "cur": "Wanneer je naar iets massiefs valt maar het mist, krijg je een Kepleriaanse baan. Het pad is een ellips — een uitgerekte cirkel — en het lichaam waar je naartoe valt bevindt zich in een van de twee brandpunten, nooit in het centrum. Aarde rond de Zon, Maan rond de Aarde, elk ruimtevaartuig dat je in Orrery zult zien: allemaal Kepleriaans in eerste benadering."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "body_paragraphs.1",
+  "en": "Six numbers fully describe one of these orbits: the size (semi-major axis), the stretch (eccentricity), three angles that orient the ellipse in space (inclination, longitude of ascending node, argument of periapsis), and where the body is along the path right now (true anomaly). These are the Keplerian elements — the language every other section in this tab translates into something you can picture.",
+  "cur": "Zes getallen beschrijven één van deze banen volledig: de grootte (halve lange as), de uitrekking (excentriciteit), drie hoeken die de ellips in de ruimte oriënteren (inclinatie, lengtegraad van de opgaande knoop, argument van periapsis), en waar het hemellichaam zich op dit moment langs het traject bevindt (ware anomalie). Dit zijn de Kepler-elementen — de taal waarin elk ander gedeelte van dit tabblad zich vertaalt naar iets wat je je kunt voorstellen."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "body_paragraphs.2",
+  "en": "The model breaks down whenever a third body's gravity matters: spacecraft near the Moon, satellites in low Earth orbit feeling the bulge of the equator, anything passing through Jupiter's shadow. Orrery uses Keplerian orbits for the heliocentric story and patched-conic approximations for the rest.",
+  "cur": "Het model valt uiteen wanneer de zwaartekracht van een derde lichaam ertoe doet: ruimtevaartuigen bij de Maan, satellieten in een lage Aardbaan die de uitstulping van de evenaar voelen, alles wat door de schaduw van Jupiter gaat. Orrery gebruikt Kepleriaanse banen voor het heliocentrische verhaal en patched-conic-benaderingen voor de rest."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "diagram_caption",
+  "en": "Ellipse with focus F₁ at the Sun. Semi-major axis a · perihelion (closest) and aphelion (farthest) on the line of apsides.",
+  "cur": "Ellips met brandpunt F₁ in de Zon. Halve lange as a · perihelium (dichtst) en aphelium (verst) op de lijn van apsiden."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "title",
+  "en": "Kepler's Three Laws",
+  "cur": "De Drie Wetten van Kepler"
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "intro_sentence",
+  "en": "Three observational rules that turned planetary motion into a closed-form science a century before Newton explained why.",
+  "cur": "Drie waarnemingsregels die planetaire beweging omvormden tot een exacte wetenschap, een eeuw voordat Newton uitlegde waarom."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "narrative_101.0",
+  "en": "Kepler did not have calculus. He did not have Newton's gravity. He did not have a computer. He had twenty years of his boss Tycho Brahe's painstaking eyeballed-with-a-quadrant observations of Mars, and he had patience. Out of that he wrote three rules that are still exactly correct today, four hundred years later.",
+  "cur": "Kepler had geen calculus. Hij had Newtons zwaartekracht niet. Hij had geen computer. Hij had twintig jaar aan zorgvuldig met-een-kwadrant-geobserveerde waarnemingen van Mars van zijn baas Tycho Brahe, en hij had geduld. Daaruit schreef hij drie regels die vandaag de dag, vierhonderd jaar later, nog steeds precies kloppen."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "narrative_101.1",
+  "en": "Law one: orbits are ellipses, not circles. Heretical at the time. Law two: the line from a planet to the Sun sweeps out equal areas in equal times — which is a sneaky way of saying planets speed up when they're close to the Sun and slow down when they're far. Law three: the bigger the orbit, the longer the year, in a precise way (T² scales as a³).",
+  "cur": "Wet één: banen zijn ellipsen, geen cirkels. Ketters in die tijd. Wet twee: de lijn van een planeet naar de Zon strijkt gelijke oppervlakten in gelijke tijden — wat een slimme manier is om te zeggen dat planeten sneller gaan wanneer ze dicht bij de Zon zijn en vertragen wanneer ze ver zijn. Wet drie: hoe groter de baan, hoe langer het jaar, op een precieze manier (T² schaalt als a³)."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "narrative_101.2",
+  "en": "Newton came along seventy years later and proved that all three laws fall out of one simple gravity equation. But Kepler got there first, with no theory — just by staring at numbers until they confessed. That's the kind of move you can still pull in modern science if you have the patience for it.",
+  "cur": "Newton kwam zeventig jaar later langs en bewees dat alle drie de wetten voortvloeien uit één simpele zwaartekrachtvergelijking. Maar Kepler was er als eerste, zonder theorie — alleen door naar getallen te staren tot ze bekentenissen aflegden. Dat is het soort zet dat je nog steeds kunt uithalen in de moderne wetenschap als je er het geduld voor hebt."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "body_paragraphs.0",
+  "en": "First law: planets orbit on ellipses with the Sun at one focus. Before Kepler, every model used circles — sometimes nested, sometimes offset, but always circular. Kepler used Tycho Brahe's twenty years of Mars observations and gave up: the data didn't fit circles, and nothing he could do made them. Ellipses fit on the first try.",
+  "cur": "Eerste wet: planeten bewegen in ellipsen met de Zon in één brandpunt. Voor Kepler gebruikte elk model cirkels — soms genest, soms verschoven, maar altijd cirkelvormig. Kepler gebruikte Tycho Brahes twintig jaar aan waarnemingen van Mars en gaf het op: de data pasten niet bij cirkels, en niets wat hij kon doen maakte ze passend. Ellipsen pasten bij de eerste poging."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "body_paragraphs.1",
+  "en": "Second law: the line from Sun to planet sweeps equal areas in equal times. This is angular-momentum conservation in disguise. Near perihelion the planet is close to the Sun, the line is short — so it has to swing fast to sweep the same area as a long, slow line near aphelion. It's why orbital speed isn't constant.",
+  "cur": "Tweede wet: de lijn van Zon naar planeet strijkt gelijke oppervlakten in gelijke tijden. Dit is impulsmomentbehoud in vermomming. Nabij perihelium is de planeet dicht bij de Zon, de lijn is kort — dus moet hij snel zwaaien om dezelfde oppervlakte te strijken als een lange, langzame lijn nabij aphelium. Daarom is de baansnelheid niet constant."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "body_paragraphs.2",
+  "en": "Third law: `T² ∝ a³`. The square of the orbital period is proportional to the cube of the semi-major axis. With Earth set to T = 1 year and a = 1 AU, you can read off any planet's period from its distance — or its distance from its period. Newton would later derive this from gravity; Kepler got there through pure pattern-matching on Brahe's data.",
+  "cur": "Derde wet: `T² ∝ a³`. Het kwadraat van de omlooptijd is evenredig met de derde macht van de halve lange as. Met de Aarde ingesteld op T = 1 jaar en a = 1 AU, kun je de periode van elke planeet aflezen uit zijn afstand — of zijn afstand uit zijn periode. Newton zou dit later afleiden uit zwaartekracht; Kepler kwam er via pure patroonherkenning op Brahes data."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "formula_caption",
+  "en": "Kepler's third law in modern form: T² depends only on a (and the central body's μ).",
+  "cur": "Keplers derde wet in moderne vorm: T² hangt alleen af van a (en de μ van het centrale lichaam)."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "diagram_caption",
+  "en": "Equal areas in equal times: shorter arc near perihelion sweeps the same area as the longer arc near aphelion.",
+  "cur": "Gelijke oppervlakten in gelijke tijden: kortere boog nabij perihelium strijkt dezelfde oppervlakte als de langere boog nabij aphelium."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "intro_sentence",
+  "en": "Five gravitationally-balanced spots in every two-body system where a small spacecraft can hover with almost no fuel — and where most modern deep-space observatories actually live.",
+  "cur": "Vijf gravitatie-gebalanceerde plekken in elk twee-lichaamssysteem waar een klein ruimtevaartuig kan zweven met bijna geen brandstof en waar de meeste moderne ruimte-observatoria eigenlijk leven."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "narrative_101.0",
+  "en": "Take any two bodies orbiting each other — Sun and Earth, Earth and Moon, Sun and Jupiter — and there are exactly five spots in the orbit plane where a third, much smaller body can stay put relative to the two big ones. Joseph-Louis Lagrange worked them out in 1772. Two and a half centuries later they are the most valuable real estate in cislunar space.",
+  "cur": "Neem twee lichamen die om elkaar draaien. Zon en Aarde, Aarde en Maan, Zon en Jupiter en er zijn precies vijf plekken in het baanvlak waar een derde, veel kleiner lichaam kan blijven ten opzichte van de twee grote. Joseph-Louis Lagrange werkte ze uit in 1772. Tweeënhalf eeuwen later zijn ze het meest waardevolle vastgoed in de cislunar ruimte."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "narrative_101.1",
+  "en": "JWST sits at Sun-Earth L2. SOHO sits at Sun-Earth L1. Gateway will live near Earth-Moon L2. Queqiao relays Chang'e signals from beyond the Moon at Earth-Moon L2 too. The named-spacecraft list is short and almost entirely Lagrange-stationed.",
+  "cur": "JWST zit bij Zon-Aarde L2. SOHO zit bij Zon-Aarde L1. Gateway zal in de buurt van Aarde-Maan L2 verblijven. Queqiao relayeert Chang'e-signalen van achter de Maan bij Aarde-Maan L2. De lijst met naamgeving van ruimtevaartuigen is kort en bijna volledig Lagrange-gepareerd."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "body_paragraphs.0",
+  "en": "The five points sit in specific geometries. **L1** lies between the two bodies on the line connecting them — for Sun-Earth, that's ~1.5 million km sunward of Earth, where the Sun's pull and Earth's pull balance the centripetal requirement. **L2** is on the same line but on the FAR side of the smaller body — for Sun-Earth, ~1.5 million km anti-sunward of Earth. **L3** is on the opposite side of the larger body, hidden behind the Sun from Earth's perspective. **L4** and **L5** are at the vertices of equilateral triangles formed with the two bodies — 60° ahead and 60° behind the smaller body's orbit.",
+  "cur": "De vijf punten zitten in specifieke geometrieën. **L1** ligt tussen de twee lichamen op de lijn die hen verbinden  **L2** bevindt zich op dezelfde lijn maar aan de FAR kant van het kleinere lichaam voor Zon-Aarde, ~1,5 miljoen km tegen zonsondergang van de Aarde. **L3** bevindt zich aan de andere kant van het grotere lichaam, verborgen achter de Zon vanuit het perspectief van de Aarde. **L4** en **L5** bevinden zich op de hoekpunten van gelijkzijdige driehoeken gevormd met de twee lichamen voor en 60° achter de baan van het kleinere lichaam."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "body_paragraphs.1",
+  "en": "Stability differs sharply. L1, L2, and L3 are **saddle points** — gravitationally balanced on the in-out axis but unstable on perpendicular axes. A spacecraft parked there will drift off within months unless it does small station-keeping burns. L4 and L5 are **stable** — they're potential-energy wells. Dust collects at the Earth-Sun L4/L5 (the Kordylewski clouds, faint but real); Trojan asteroids librate around the Sun-Jupiter L4 and L5 in their millions.",
+  "cur": "De stabiliteit verschilt scharp. L1, L2 en L3 zijn **zadelpunten** — gravitationeel in evenwicht op de in-uit-as maar onstabiel op loodrechte assen. Een ruimtevaartuig dat daar geparkeerd staat zal binnen enkele maanden afdrijven tenzij het kleine stationhoudingscorrecties uitvoert. L4 en L5 zijn **stabiel** — zij zijn potentiaalenergieputten. Stof verzamelt zich bij de Aarde-Zon L4/L5 (de Kordylewski-wolken, flauw maar echt); Trojaanse asteroïden libreren rond de Zon-Jupiter L4 en L5 in hun miljoenen."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "body_paragraphs.2",
+  "en": "**Sun-Earth Lagrange points** are where big observatories live: SEL1 hosts SOHO (Sun-watching since 1996) and DSCOVR (Earth-watching); SEL2 hosts JWST, Spektr-RG, Euclid, Gaia, and previously Herschel + Planck — anti-sunward so the Sun + Earth + Moon are all on one side, easy to shadow-shield. SEL2 is ~6 months of free-coast away from Earth, with one ~5 m/s halo-orbit-insertion burn at arrival; no fuel for station-keeping more than ~2 m/s/yr.",
+  "cur": "**Zon-Aarde Lagrange points** zijn waar grote waarnemingsposten wonen: SEL1 hosts SOHO (Sun-watching sinds 1996) en DSCOVR (Earth-watching); SEL2 hosts JWST, Spektr-RG, Euclid, Gaia, en eerder Herschel + Planck  SEL2 is ~6 maanden vrij van de aarde, met een ~5 m/s halo-baan-invoegen brandwond bij aankomst; geen brandstof voor het station-behoud meer dan ~2 m/s/jr."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "body_paragraphs.3",
+  "en": "**Earth-Moon Lagrange points** are the strategic real estate for the Artemis programme. EML2 (~64,500 km past the Moon) is the staging point for Gateway in NRHO (a near-rectilinear halo around it). It gives line-of-sight to both the lunar far side (where Chang'e-4 landed; Queqiao relays from EML2) and to Earth. EML1, between Earth and the Moon, is a natural waypoint for any cislunar architecture that wants to descend and ascend repeatedly without bleeding ∆v on transfers. The next decade of crewed Moon operations is largely a Lagrange-point story.",
+  "cur": "**Lagrange-punten Aarde-Maan** zijn de strategische vastgoedlocaties voor het Artemis-programma. EML2 (~64.500 km voorbij de Maan) is het uitvalbasis voor Gateway in NRHO (een near-rectilinear halo eromheen). Het biedt gezichtslijn naar zowel de maanachtergrond (waar Chang'e-4 is geland; Queqiao stuurt signalen door vanuit EML2) als naar de Aarde. EML1, tussen Aarde en Maan, is een natuurlijk aanvaardenspunt voor elke cislunairearchitectuur die herhaaldelijk wil dalen en stijgen zonder ∆v te verspillen bij overbrengingen. Het volgende decennium van bemande maanoperaties is grotendeels een Lagrange-puntenverhaal."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "diagram_caption",
+  "en": "Five gravity-balanced spots per two-body system. L1/L2/L3 saddle points (station-keeping required); L4/L5 stable wells. Sun-Earth L2 hosts JWST + Euclid + Spektr-RG; Earth-Moon L2 hosts Gateway + Queqiao.",
+  "cur": "Vijf zwaartekracht-gebalanceerde vlekken per twee-lichaam systeem. L1/L2/L3 zadelpunten (station-onderhoud vereist); L4/L5 stabiele putten. Zon-Aarde L2 hosts JWST + Euclid + Spektr-RG; Aarde-Maan L2 hosts Gateway + Queqiao."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "title",
+  "en": "Orbit Regimes — LEO, MEO, GEO, HEO",
+  "cur": "Baanregimes — LEO, MEO, GEO, HEO"
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "intro_sentence",
+  "en": "Earth orbits cluster into four altitude bands; each one is a different mission compromise between latency, lifetime, and cost.",
+  "cur": "Aardbanen clusteren in vier hoogtebanden; elk is een ander missiecompromis tussen latentie, levensduur en kosten."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.0",
+  "en": "Pick a satellite. The most important thing about it isn't what it does — it's what altitude it lives at. Altitude sets how often it can see the same patch of ground, how long it takes a radio signal to reach it, how much fuel it needs to maintain orbit, and what its useful lifetime is. Spacecraft engineers cluster orbits into four bands — LEO, MEO, GEO, HEO — because the trade-offs change discretely as you climb.",
+  "cur": "Kies een satelliet. Het belangrijkste eraan is niet wat hij doet — het is op welke hoogte hij leeft. De hoogte bepaalt hoe vaak hij hetzelfde stuk grond kan zien, hoe lang een radiosignaal erover doet om hem te bereiken, hoeveel brandstof hij nodig heeft om zijn baan te houden en hoe lang hij bruikbaar blijft. Ruimtevaartingenieurs delen banen in vier banden in — LEO, MEO, GEO, HEO — omdat de afwegingen sprongsgewijs veranderen naarmate je hoger komt."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.1",
+  "en": "LEO is up to ~2,000 km. The ISS lives at 408 km. Hubble at 540 km. SpaceX's Starlink at ~550 km. Cheap to reach (most rockets can throw a payload here), but you whip around the planet every 90 minutes, the atmosphere drags you down (lifetime: years without reboost), and you only see any one ground spot for ~10 minutes per pass.",
+  "cur": "LEO loopt tot ~2.000 km. Het ISS zit op 408 km. Hubble op 540 km. Starlink van SpaceX op ~550 km. Goedkoop om te bereiken (de meeste raketten kunnen hier een lading kwijt), maar je raast elke 90 minuten rond de planeet, de atmosfeer trekt je omlaag (levensduur: jaren zonder reboost), en je ziet een bepaalde plek op de grond maar ~10 minuten per overkomst."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.2",
+  "en": "MEO is 2,000–35,786 km — the GPS / Galileo / Beidou band, plus some communications. Periods are 2-12 hours; you cover the globe with fewer satellites than LEO, and you're above most of the radiation belts' worst zones (carefully chosen). GEO sits exactly at 35,786 km — period exactly 24 hours — so a satellite there hovers over the same point on Earth forever, which is why every weather and broadcast comsat is up there.",
+  "cur": "MEO is 2.000–35.786 km — de band van GPS / Galileo / Beidou, plus wat communicatie. Omlooptijden zijn 2-12 uur; je dekt de aarde met minder satellieten dan in LEO, en je zit boven de ergste zones van de stralingsgordels (zorgvuldig gekozen). GEO ligt precies op 35.786 km — omlooptijd precies 24 uur — dus een satelliet daar hangt voor altijd boven hetzelfde punt op aarde, en daarom zitten alle weer- en omroepsatellieten daar."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.3",
+  "en": "HEO (highly-elliptical orbit) is the wildcard — high apogee, low perigee, long dwell time over a chosen latitude. Russia's Molniya orbits are HEO, optimised for high-latitude coverage that GEO can't reach. Each regime is a different mission philosophy, encoded as a number on the y-axis.",
+  "cur": "HEO (sterk elliptische baan) is de joker — hoog apogeum, laag perigeum, lange verblijftijd boven een gekozen breedtegraad. De Molniya-banen van Rusland zijn HEO, geoptimaliseerd voor dekking op hoge breedtegraden die GEO niet kan bereiken. Elk regime is een andere missiefilosofie, vastgelegd als een getal op de y-as."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.0",
+  "en": "LEO (Low Earth Orbit, < 2,000 km altitude): cheapest to reach, fastest period (~90 minutes for ISS at 408 km), shortest ground-link delay (a few ms), shortest lifetime due to residual atmospheric drag. Hosts the ISS, Hubble, Starlink, most Earth observation satellites, all crewed activity beyond Apollo.",
+  "cur": "LEO (Low Aarde Orbit, < 2.000 km hoogte): goedkoopst te bereiken, snelste omlooptijd (~90 minuten voor ISS op 408 km), kortste grondverbindingsvertraging (enkele ms), kortste levensduur door residuale atmosferische weerstand. Gastheer van het ISS, Hubble, Starlink, de meeste aardobservatiessatellieten, alle bemande activiteiten buiten Apollo."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.1",
+  "en": "MEO (Medium Earth Orbit, 2,000–35,786 km): the navigation band. GPS at 20,200 km, GLONASS at 19,100 km, Galileo at 23,222 km, Beidou MEO at 21,500 km. Periods ~11–14 hours across the navigation band; constellations of 24-30 satellites give global coverage. Above the inner Van Allen belt, below most of the outer.",
+  "cur": "MEO (Medium Aarde Orbit, 2.000–35.786 km): het navigatieband. GPS op 20.200 km, GLONASS op 19.100 km, Galileo op 23.222 km, Beidou MEO op 21.500 km. Omlooptijden ~11–14 uur over het navigatieband; constellaties van 24-30 satellieten geven wereldwijde dekking. Boven de binnenste Van Allen-gordel, onder het merendeel van de buitenste."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.2",
+  "en": "GEO (Geostationary Earth Orbit, 35,786 km altitude exactly, 0° inclination): period equals Earth's sidereal day (23h 56m 4s) so the satellite appears stationary above one longitude on the equator. Hosts the world's broadcast TV, weather imagery (GOES, Himawari, Meteosat), and traditional comsats. Light-time round-trip ~240 ms — perceptible in voice calls.",
+  "cur": "GEO (Geostationaire Aardbaan, exact 35.786 km hoogte, 0° inclinatie): omlooptijd gelijk aan Aardes sterredag (23u 56m 4s), dus de satelliet lijkt stationair boven één lengtegraad op de evenaar. Gastheer van wereldwijde uitzendtelevisie, weerbeelden (GOES, Himawari, Meteosat), en traditionele comsats. Licht-tijd roundtrip ~240 ms — waarneembaar in spraakoproepen."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.3",
+  "en": "HEO (Highly-Elliptical Orbit): low perigee + high apogee. Molniya orbits (Russia) sit at perigee ~600 km, apogee ~40,000 km, inclination 63.4° — chosen so the apogee dwell happens over the northern hemisphere where GEO comsats can't reach. Critical for high-latitude communications and some early-warning constellations.",
+  "cur": "HEO (Sterk Elliptische Baan): laag perigeum + hoog apogeum. Molniya-banen (Rusland) zitten op perigeum ~600 km, apogeum ~40.000 km, inclinatie 63,4° — gekozen zodat het apogeumverblijf boven het noordelijk halfrond plaatsvindt waar GEO-comsats niet kunnen bereiken. Kritiek voor communicatie op hoge breedtegraden en enkele vroegtijdige-waarschuwingsconstellaties."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.4",
+  "en": "Crossing regimes is expensive. ∆v from LEO to GEO is about 3.9 km/s. From LEO to escape / TLI is about 3.2 km/s — counter-intuitively cheaper than reaching GEO from LEO, because you don't have to circularise on arrival (TMI for Mars requires ~3.6+ km/s).",
+  "cur": "Baanwisseling is duur. Δv van LEO naar GEO is ongeveer 3,9 km/s. Van LEO naar ontsnapping / TLI is ongeveer 3,2 km/s — tegen intuïtie goedkoper dan GEO bereiken vanuit LEO, omdat je niet hoeft te circulariseren bij aankomst (TMI voor Mars vereist ~3,6+ km/s)."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "diagram_caption",
+  "en": "Concentric Earth bands: LEO (cyan, low altitude), MEO (blue, GPS region), GEO (gold, geostationary ring), HEO (orange, lopsided ellipse).",
+  "cur": "Concentrische Aardebanden: LEO (cyaan, lage hoogte), MEO (blauw, GPS-regio), GEO (goud, geostationaire ring), HEO (oranje, asymmetrische ellips)."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "intro_sentence",
+  "en": "Half the longest diameter of the orbit ellipse — and the single number that sets the orbital period.",
+  "cur": "De helft van de langste diameter van de baanellips — en het enige getal dat de omlooptijd bepaalt."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "narrative_101.0",
+  "en": "Take a piece of string, two thumbtacks, and a pencil. Pin the tacks to a board, loop the string around them, pull it taut with the pencil and trace it. You've drawn an ellipse. The semi-major axis is half the longest line you can draw across that shape — the orbit's size.",
+  "cur": "Neem een stuk touw, twee punaises en een potlood. Prik de punaises op een plank, sla het touw eromheen, trek het strak met het potlood en teken de vorm. Je hebt een ellips getekend. De halve lange as is de helft van de langste lijn die je door die vorm kunt trekken — de grootte van de baan."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "narrative_101.1",
+  "en": "Here's the magical bit: that one number tells you how long it takes the planet to lap the Sun. Not the shape of the orbit, not its tilt, not where the planet is right now. Just the size. A lopsided cigar-shaped orbit and a perfectly round one with the same semi-major axis take the same time to come around. Kepler figured this out four hundred years ago and we still pay him in textbooks.",
+  "cur": "Hier is het magische deel: dat ene getal vertelt je hoe lang de planeet erover doet om rond de zon te gaan. Niet de vorm van de baan, niet de kanteling ervan, niet waar de planeet nu is. Alleen de grootte. Een scheve sigaarvormige baan en een perfect ronde met dezelfde halve lange as hebben precies dezelfde omlooptijd. Kepler ontdekte dit vierhonderd jaar geleden en we blijven hem eren in studieboeken."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "narrative_101.2",
+  "en": "When you're sizing a mission, this is the first lever you pull. Want to reach Mars? Your transfer ellipse needs a semi-major axis somewhere between Earth's and Mars's. Pick the size, the time-of-flight follows automatically.",
+  "cur": "Als je een missie plant, is dit de eerste hendel die je overhaalt. Wil je Mars bereiken? Je transfer-ellips heeft een halve lange as nodig ergens tussen die van de aarde en Mars. Kies de grootte, de vliegtijd volgt automatisch."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "body_paragraphs.0",
+  "en": "If you flatten a Keplerian ellipse into its longest dimension, the line you've drawn is the major axis. Cut that in half and you have the semi-major axis — written `a`. It's the average distance from the orbiting body to the focus, kind of: an arithmetic mean of perihelion (closest) and aphelion (farthest).",
+  "cur": "Als je een Keplerian ellips samendrukt tot zijn langste dimensie, is de lijn die je hebt getekend de lange as. Deel die doormidden en je hebt de halve lange as — geschreven als `a`. Het is de gemiddelde afstand van het cirkelende lichaam tot het brandpunt, min of meer: een rekenkundig gemiddelde van perihelium (dichtst) en aphelium (verst)."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "body_paragraphs.1",
+  "en": "Why care? Because of Kepler's third law: `T² ∝ a³`. The orbital period depends only on the semi-major axis. Shape doesn't matter. Inclination doesn't matter. Stretch one orbit so it's a cigar and another so it's a circle — if both have the same `a`, both take exactly the same time to come back round.",
+  "cur": "Waarom maakt het uit? Vanwege de derde wet van Kepler: `T² ∝ a³`. De omlooptijd hangt alleen af van de halve lange as. De vorm maakt niet uit. De inclinatie maakt niet uit. Rek de ene baan uit tot een sigaar en de andere tot een cirkel — als beide dezelfde `a` hebben, doen beide er precies even lang over om terug te keren."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "body_paragraphs.2",
+  "en": "In Orrery's `/explore` panels you'll see this number in astronomical units. Earth: a ≈ 1.0 AU. Mars: 1.52 AU. Jupiter: 5.2 AU. Plug into the period formula and you've reproduced the orrery clock: 1 year, 687 days, 11.86 years.",
+  "cur": "In de `/explore`-panelen van Orrery zie je dit getal in astronomische eenheden. Aarde: a ≈ 1,0 AU. Mars: 1,52 AU. Jupiter: 5,2 AU. Stop ze in de periode-formule en je hebt de orrery-klok gereproduceerd: 1 jaar, 687 dagen, 11,86 jaar."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "formula_caption",
+  "en": "Semi-major axis as the mean of perihelion and aphelion radii.",
+  "cur": "Halve lange as als het gemiddelde van perihelium- en apheliumstralen."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "diagram_caption",
+  "en": "The major axis spans from perihelion to aphelion through both foci. Semi-major axis a is half that span.",
+  "cur": "De lange as loopt van perihelium naar aphelium door beide brandpunten. Halve lange as a is de helft van die afstand."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "title",
+  "en": "Space debris — Kessler syndrome, ASAT events, and the cleanup attempts",
+  "cur": "Ruimtepuin — Kessler-syndroom, ASAT-events en opruimingspogingen"
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "intro_sentence",
+  "en": "Earth orbit holds ~36,000 tracked debris objects bigger than 10 cm and an estimated 100+ million pieces smaller. Two ASAT events and one accidental collision created most of it. Cleanup is just beginning to ramp.",
+  "cur": "Aardbaan bevat ~36.000 gevolgen objecten groter dan 10 cm en naar schatting 100+ miljoen kleinere stukken. Twee ASAT-events en één ongeluk veroorzaakten het merendeel. Opruiming begint nu op gang te komen."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.0",
+  "en": "The numbers are blunt. ESA's Space Debris Office, NASA's Orbital Debris Program Office, and the US Space Force's 18th Space Defense Squadron maintain converging estimates of the orbital population (as of 2024-2025): ~36,000 catalogued objects with diameter ≥10 cm, of which ~9,000 are active spacecraft and the rest are debris. ~1 million pieces estimated between 1 cm and 10 cm, mostly untracked. >100 million pieces between 1 mm and 1 cm, completely untracked but individually capable of disabling a spacecraft on impact (a 1 cm aluminium fragment at 14 km/s closing speed delivers the kinetic energy of a hand grenade). Total mass in Earth orbit: roughly 11,000 tonnes. Of that, perhaps 8,000 tonnes is the debris fraction — derelicts, spent upper stages, fragments from breakups, paint flakes, rocket-engine slag.",
+  "cur": "De cijfers zijn onverbloemd. ESA's Space Debris Office, NASA's Orbital Debris Program Office en het 18th Space Defense Squadron van de US Space Force hanteren convergerende schattingen van de orbitale bevolking (per 2024-2025): ~36.000 geclassificeerde objecten met diameter ≥10 cm, waarvan ~9.000 actieve satellieten en de rest puin. ~1 miljoen stukken geschat tussen 1 en 10 cm, meestal niet gevolgd. >100 miljoen stukken tussen 1 mm en 1 cm, volledig niet gevolgd maar elk in staat een ruimtevaartuig onklaar te maken bij botsing (een 1 cm aluminiüm fragment bij 14 km/s sluitingssnelheid levert de kinetische energie van een handgranaat). Totale massa in aardbaan: ongeveer 11.000 ton. Daarvan is wellicht 8.000 ton de puinfractie — verlaten satellieten, lege bovenstadia, fragmenten van uiteen spattingen, verfsplinten, raketmotorslak."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.1",
+  "en": "Three events account for the majority of the trackable debris population. **Fengyun-1C** (China, January 2007): China conducted an anti-satellite weapon test against its own retired weather satellite at 865 km altitude in a deliberately polar orbit chosen to maximise debris longevity. The kinetic-kill impact fragmented the ~880 kg target into 3,500+ trackable pieces, which will largely remain in orbit for centuries. **Iridium 33 + Cosmos 2251 collision** (February 2009): the first known accidental satellite collision in history. Iridium's operational comsat collided with Russia's defunct Cosmos at 789 km altitude, generating ~2,300 trackable fragments. **Russian ASAT test** (November 2021): Russia kinetic-killed its own retired Tselina-D satellite, producing 1,500+ trackable fragments at ~480 km — close enough to ISS that the crew sheltered in their Soyuz return capsules during the first 24 hours of debris cloud encounter. Combined, these three events generated about 25% of all currently catalogued LEO debris.",
+  "cur": "Drie events verklaren het merendeel van de traceerbare puinbevolking. **Fengyun-1C** (China, januari 2007): China voerde een anti-satellietwapentest uit tegen zijn eigen buiten bedrijf gestelde weersatelliet op 865 km hoogte in een opzettelijk polaire baan om puinlevensduur te maximaliseren. De kinetische klap verbrijzelde het ~880 kg doelwit in 3.500+ traceerbare stukken, die grotendeels eeuwen in de baan blijven. **Iridium 33 + Cosmos 2251 botsing** (februari 2009): de eerste bekende ongeluksbotsing van satellieten in de geschiedenis. Iridium's operationele communicatiesatelliet botste met Ruslands buiten bedrijf gestelde Cosmos op 789 km, genereerde ~2.300 traceerbare fragmenten. **Russische ASAT-test** (november 2021): Rusland kinnetisch vernietigde zijn eigen buiten bedrijf gestelde Tselina-D satelliet, produceerde 1.500+ traceerbare fragmenten op ~480 km — dicht genoeg bij ISS zodat de bemanning zich in hun Soyuz-terugkeermodules schuilden gedurende de eerste 24 uur van puinwolk ontmoeting. Samen genereerden deze drie events ongeveer 25% van al het huidige geclassificeerde LEO-puin."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.2",
+  "en": "Kessler syndrome is the runaway-cascade scenario, named after NASA's Donald Kessler who modelled it in 1978. Once the LEO debris density passes a critical threshold, each collision generates enough new fragments to cause further collisions, and the cascade can take centuries to play out. Above that threshold, the LEO environment effectively becomes inaccessible — even careful launches can't avoid being hit on the way through. The 1978 Kessler model put the critical threshold at roughly 5× the 1978 population; current LEO is approaching that threshold in some altitude shells (especially 750-1000 km, which has the highest collision-cross-section density). The IADC's current operating assumption is that without continued aggressive disposal, certain LEO altitude bands will reach Kessler-critical densities by 2050-2080.",
+  "cur": "Kessler-syndroom is het runaway-cascade scenario, genoemd naar NASA's Donald Kessler die het in 1978 modeleerde. Zodra LEO-puindichtheid een kritieke drempel overschrijdt, genereert elke botsing genoeg nieuwe fragmenten voor verdere botsingen, en de cascade kan eeuwen duren. Boven die drempel wordt de LEO-omgeving effectief ontoegankelijk — zelfs voorzichtige lanceringen kunnen impact niet vermijden. Het 1978 Kessler-model plaatste de kritieke drempel op ongeveer 5× de 1978-bevolking; huidige LEO nadert die drempel in sommige hoogtebanden (vooral 750-1000 km, met hoogste botsings-dwarsdoorsnededichtheid). De huidige IADC-aanname is dat bepaalde LEO-hoogtebanden zonder agressieve verwijdering Kessler-kritieke dichtheden bereiken tegen 2050-2080."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.3",
+  "en": "Tracking infrastructure. The US Space Force's Space Surveillance Network (SSN) is the world's primary catalogue source — a fleet of ~30 ground-based radars + telescopes worldwide (Eglin FPS-85 phased-array in Florida, Globus II in Norway, Maui Space Surveillance Site in Hawaii) plus the Space Based Space Surveillance satellite. The SSN tracks every object ≥10 cm in LEO and ≥1 m in GEO, with daily orbit updates publicly available via Space-Track.org. Private competitors (LeoLabs, with its own phased-array radar network at six sites globally, since 2018) and partners (EU Space Surveillance and Tracking consortium, since 2014; China's SSA network at Xinjiang since the 2010s) have added redundant tracking — pre-2010 the world had effectively a single point of failure in SSN.",
+  "cur": "Tracking-infrastructuur. Het Space Surveillance Network (SSN) van de US Space Force is 's werelds primaire catalogusbron — een vloot van ~30 grondgestationeerde radars + telescopen wereldwijd (Eglin FPS-85 faseringsarray in Florida, Globus II in Noorwegen, Maui Space Surveillance Site op Hawaï) plus de Space Based Space Surveillance satelliet. Het SSN volgt elk object ≥10 cm in LEO en ≥1 m in GEO, met dagelijkse baanupdates openbaar beschikbaar via Space-Track.org. Privé concurrenten (LeoLabs, met eigen faseringsarray-radarnetwerk op zes locaties wereldwijd, sinds 2018) en partners (EU Space Surveillance and Tracking consortium, sinds 2014; Chinees SSA-netwerk in Xinjiang sinds 2010s) voegden redundante tracking toe — vóór 2010 had de wereld effectief één storingspunt in SSN."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.4",
+  "en": "Cleanup + daily-ops mitigation. Active Debris Removal (ADR) — missions that visit dead spacecraft and deorbit them — is starting to ramp. **ELSA-d** (Astroscale, 2021) demonstrated magnetic-grapple docking. **ClearSpace-1** (ESA, scheduled 2026) will deorbit a ~100 kg Vega Secondary Payload Adapter from 660 km. **ELSA-M** (Astroscale-Japan, 2025-26) and the US National Reconnaissance Office's classified Salvage Series follow. ESA's own analysis suggests removing 5 major LEO objects per year is the minimum to halt growth; current cadence is ~0/year — the Kessler clock is running. Meanwhile, every operator does Conjunction Assessment Risk Avoidance (CARA): SSN publishes daily conjunction warnings 7 days ahead of close approaches within ~1 km. ISS performs ~25 avoidance burns/year; Starlink's autonomous system performs ~50,000 per six months (~100,000/year) across the constellation; Tiangong does several per year. Hubble (no propulsion) has been hit by small debris dozens of times and was nearly hit by a Cosmos-1408 fragment in November 2021. Operational debris-avoidance burden is rising fast.",
+  "cur": "Opruiming + dagelijkse-bedrijfsmitigatie. Active Debris Removal (ADR) — missies die dode satellieten bezoeken en ze uit baan drijven — ramp op. **ELSA-d** (Astroscale, 2021) demonstreerde magnetische-grijper docking. **ClearSpace-1** (ESA, gepland 2026) zal een ~100 kg Vega Secondary Payload Adapter uit 660 km uit baan drijven. **ELSA-M** (Astroscale-Japan, 2025-26) en het geclassificeerde Salvage Series van het Amerikaanse National Reconnaissance Office volgen. ESA's eigen analyse suggereert minimaal 5 grote LEO-objecten per jaar verwijderen om groei te stoppen; huidige cadans is ~0/jaar — de Kessler-klok loopt. Ondertussen doet elke operator Conjunction Assessment Risk Avoidance (CARA): SSN publiceert dagelijkse conjunctie-waarschuwingen 7 dagen vóór dicht passages binnen ~1 km. ISS voert ~25 ontwijkingsbranden/jaar uit; Starlink's autonoom systeem voert ~50.000 per zes maanden (~100.000/jaar) uit over de constellatie; Tiangong doet er enkele per jaar. Hubble (geen stuwing) is dozijnen keren geraakt door klein puin en bijna geraakt door Cosmos-1408 fragment in november 2021. Operationele puinontwijkingslast stijgt snel."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "diagram_caption",
+  "en": "Population: 36k tracked ≥10 cm + 1M est 1-10 cm + 100M+ est <1 cm. Origin: Fengyun-1C (2007 China ASAT, +3500), Iridium-Cosmos (2009 accidental, ~2300), Russia Tselina-D (2021 ASAT, +1500). Kessler threshold approaching in 750-1000 km LEO band by 2050-2080. ADR: ClearSpace-1 (2026), ELSA-M (2025-26), and few others — far below the 5/year needed to halt growth.",
+  "cur": "Bevolking: 36k gevolgd ≥10 cm + 1M geschat 1-10 cm + 100M+ geschat <1 cm. Oorsprong: Fengyun-1C (2007 China ASAT, +3500), Iridium-Cosmos (2009 ongeluk, ~2300), Rusland Tselina-D (2021 ASAT, +1500). Kessler-drempel nadert in 750-1000 km LEO-band tegen 2050-2080. ADR: ClearSpace-1 (2026), ELSA-M (2025-26) en enkele anderen — veel onder de 5/jaar nodig om groei te stoppen."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "title",
+  "en": "Special orbits — Molniya, Tundra, GTO, frozen",
+  "cur": "Speciale banen — Molniya, Tundra, GTO, ingevroren"
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "intro_sentence",
+  "en": "Beyond LEO / MEO / GEO / HEO, a handful of named special orbits do specific jobs: communications above 70° latitude, geostationary transfer, drift-free station-keeping. Each is a clever exploit of orbital mechanics.",
+  "cur": "Buiten LEO / MEO / GEO / HEO voeren enkele benoemde speciale banen specifieke taken uit: communicatie boven 70° latitude, geostationaire overdracht, driftvrije baanhandhaving. Elk is een slimme exploitatie van orbitaalmecanica."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.0",
+  "en": "Molniya orbit (Russia, since 1965). High-eccentricity (e ≈ 0.74), low perigee (~600 km), high apogee (~40,000 km), inclination 63.4°, period exactly 12 hours. Two design decisions make it work. First, the 63.4° inclination is the 'critical inclination' at which Earth's J2 perturbation does NOT cause the line of apsides to rotate (at any other inclination the perigee drifts around the orbit over months); apogee stays locked over the northern hemisphere where you want it. Second, with a 12-hour period the satellite spends about 8 hours near apogee, slowly tracing across the northern sky, then races through perigee in 4 hours. A constellation of three Molniya satellites at staggered phase angles provides continuous coverage of latitudes north of 70°, where GEO comsats can't reach because they sit on the equator. Used by Russia for civilian phone + TV (Molniya I/II/III series), military comms (Meridian), and Oko early-warning satellites watching for US ICBM launches.",
+  "cur": "Molniya-baan (Rusland, sinds 1965). Hoge excentriciteit (e ≈ 0,74), lage perigeum (~600 km), hoge apogeum (~40.000 km), inclinatie 63,4°, periode exact 12 uur. Twee ontwerpbeslissingen maken het werkend. Ten eerste is de 63,4° inclinatie de 'kritische inclinatie' waarbij Earths J2-perturbatie NIET zorgt dat de lijn van apsiden roteert (bij elke andere inclinatie driftet het perigeum rond de baan over maanden); het apogeum blijft vergrendeld boven het noordelijk halfrond waar je het wilt. Ten tweede: met een periode van 12 uur brengt de satelliet ongeveer 8 uur dicht bij apogeum door, traag over de noordelijke hemel schuivend, en raast vervolgens in 4 uur door het perigeum. Een constellatie van drie Molniya-satellieten op verspreide fasehoeken biedt continue dekking van breedtegraden noordelijker dan 70°, waar GEO-comsats niet kunnen reiken omdat zij op de evenaar zitten. Gebruikt door Rusland voor civiele telefoon + tv (Molniya I/II/III-series), militaire communicatie (Meridian), en Oko-vroegsignaleringssatellieten die op Amerikaanse ICBM-lanceringen letten."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.1",
+  "en": "Tundra orbit. Same critical-inclination + 24-hour-period idea as Molniya but circular-leaning rather than highly eccentric (e ≈ 0.25). Apogee at GEO altitude (~35,786 km), perigee at ~25,000 km. Period exactly 24 hours so the ground track repeats once a day in a long figure-8 shape elongated over the chosen latitude band. Used by Sirius XM Satellite Radio for North American coverage (the figure-8 lets antennas in the continental US see a satellite continuously at high elevation), Russian Yamal-200 and other comsats, and US SBIRS-HEO early-warning sensors that mostly need long dwell over the Arctic. Tundra trades the higher peak elevation of Molniya for full 24-hour repeat (Molniya has two apogees per day, both over the northern hemisphere — one over Russia, one over North America, 180° apart in longitude).",
+  "cur": "Tundra-baan. Hetzelfde kritische-inclinatie + 24-uur-periode idee als Molniya maar meer circulair dan sterk excentrisch (e ≈ 0,25). Apogeum op GEO-hoogte (~35.786 km), perigeum op ~25.000 km. Periode exact 24 uur zodat het grondspoor zich eenmaal per dag in een lange achtfiguur herhaalt, uitgerekt over de gekozen breedtebaan. Gebruikt door Sirius XM Satellite Radio voor Noord-Amerikaanse dekking (de achtfiguur stelt antennes in de binnenlandse VS in staat een satelliet continu op hoge elevatie te zien), Russische Yamal-200 en andere comsats, en VS SBIRS-HEO vroegsignaleringssensoren die vooral lange duur boven de Noordelijke IJszee nodig hebben. Tundra ruilt de hogere piekverhoging van Molniya om voor volledig 24-uurs herhaling (Molniya heeft twee apogea per dag, beide boven het noordelijk halfrond — één boven Rusland, één boven Noord-Amerika, 180° uit elkaar in lengtegraad)."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.2",
+  "en": "Geostationary Transfer Orbit (GTO). The standard staging orbit for nearly every commercial GEO comsat. Highly elliptical: perigee at ~200-400 km LEO altitude, apogee at GEO altitude (35,786 km), inclination usually equal to the launch site's latitude (28.5° from Cape Canaveral, 5.2° from Kourou which is why Ariane launches dominate commercial GEO). The launch vehicle puts the payload onto GTO; the spacecraft then performs an apogee-kick-motor burn at apogee to circularise at GEO and zero out the inclination. The kick-motor burn is the most fuel-intensive single manoeuvre most comsats ever do — typically 1.5-1.8 km/s of ΔV, consuming most of the spacecraft's hypergolic propellant for that one event. Modern electric-propulsion comsats use weeks-long ion-thruster spiral-up from GTO to GEO instead of a chemical kick burn, trading time for ~40% more usable payload at orbit.",
+  "cur": "Geostationary Transfer Orbit (GTO). De standaard tussenbaanuit voor vrijwel elke commerciële GEO-comsat. Sterk elliptisch: periapsis op ~200-400 km LEO-hoogte, apoapsis op GEO-hoogte (35.786 km), inclinatie meestal gelijk aan de breedtegraad van de lanceringslokatie (28,5° vanaf Cape Canaveral, 5,2° vanaf Kourou, daarom domineren Ariane-lanceringen commerciële GEO). Het lanceermiddel plaatst de lading op GTO; het ruimtevaartuig voert vervolgens een apoapsis-kick-motor-brand uit op het apogeum om op GEO in een cirkelbaan te stabiliseren en de inclinatie op nul in te stellen. De kick-motor-brand is de brandstofintensievste enkele manoeuvre die de meeste comsats ooit uitvoeren — typisch 1,5-1,8 km/s ΔV, waarbij het grootste deel van de hypergolische drijfstof van het ruimtevaartuig voor deze ene handeling wordt verbruikt. Moderne elektrische-voortstuwing-comsats gebruiken weken durende ionenmotor-spiralen van GTO naar GEO in plaats van een chemische kick-brand, waarin tijd wordt ingeruild voor ~40% meer bruikbare lading in de baan."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.3",
+  "en": "Frozen orbits. Orbits in which the perigee altitude does not drift over time despite the various perturbing forces (J2, J3, atmospheric drag, lunar/solar gravity). The classical frozen-orbit prescription: argument of perigee = 90° (so perigee is at the southern apex of the orbit), eccentricity matched to inclination and altitude per a J2-vs-J3 balance equation. Used by Earth-observation missions that need their imaging altitude to stay precisely fixed for years (ICESat-2 ice altimetry, GRACE-FO gravity field). The freezing is approximate — drag and third-body perturbations eventually deflect the orbit, requiring small station-keeping burns every few months — but the J2-driven drift, which would otherwise dominate, is cancelled.",
+  "cur": "Ingevroren banen. Banen waarin de perigeum-hoogte ondanks de verschillende verstoringskrachten (J2, J3, atmosferische weerstand, maan-/zongravitatie) niet driftet. Het klassieke ingevroren-baan-voorschrift: argument van perigeum = 90° (dus perigeum ligt op de zuidelijke top van de baan), excentriciteit afgestemd op inclinatie en hoogte via een J2-versus-J3-evenwichtsvergelijking. Gebruikt door aardobservatiemissies die hun opnamehoogte precies vast moeten houden voor jaren (ICESat-2 ijshoogtemetrie, GRACE-FO zwaartekrachtveld). Het bevriezen is benaderend — weerstand en verstoringen door derden doen de baan uiteindelijk afwijken, waarvoor kleine baanhoudingsbranden om de paar maanden nodig zijn — maar de J2-gedreven drift, die anders zou domineren, is opgeheven."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.4",
+  "en": "Other named special orbits worth knowing: Sub-synchronous transfer orbit (SSTO — not single-stage to orbit, but a low-altitude staging orbit used by Soyuz launches to ISS); super-synchronous transfer orbit (apogee above GEO, used on some GEO launches (Ariane, Proton) to minimise inclination-change ΔV); repeat ground-track orbit (altitude tuned to integer ratio of orbit period to Earth's rotation, so the satellite passes over the same patch of ground every N days exactly — used by oceanographic missions like Jason / TOPEX-Poseidon); cislunar orbits (DRO, NRHO, halo — covered separately in /science/orbits/cislunar-orbits).",
+  "cur": "Andere naamde speciale banen die het weten waard zijn: Sub-synchrone transferbaan (SSTO — niet single-stage to orbit, maar een tussenbaanuit op lage hoogte die gebruikt wordt bij Soyuz-lancering naar het ISS); super-synchrone transferbaan (apoapsis boven GEO-hoogte, gebruikt bij sommige GEO-lanceringen (Ariane, Proton) om de inclinatieverandering ΔV te minimaliseren); repeat ground-track-baan (hoogte afgestemd op een geheeltallige verhouding van baanperiode tot Aardrotatie, zodat de satelliet elke N dagen precies over dezelfde grondvlek voorbijgaat — gebruikt door oceanografische missies zoals Jason / TOPEX-Poseidon); cislunaarbanen (DRO, NRHO, halo — apart behandeld in /science/orbits/cislunar-orbits)."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "diagram_caption",
+  "en": "Molniya: e=0.74, 12-hour period, 63.4° inclination (critical, apsides locked). Tundra: e=0.25, 24-hour period, 63.4°. GTO: LEO perigee + GEO apogee, staging for comsats. Frozen orbit: perigee altitude doesn't drift (J2/J3 balance + argument of perigee = 90°).",
+  "cur": "Molniya: e=0,74, 12-uur periode, 63,4° inclinatie (kritisch, apsiden vergrendeld). Tundra: e=0,25, 24-uur periode, 63,4°. GTO: LEO perigeum + GEO apogeum, staging voor comsats. Ingevroren baan: perigeum-hoogte driftet niet (J2/J3 evenwicht + argument van perigeum = 90°)."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "title",
+  "en": "Sun-synchronous + polar orbits — the Earth-observation backbone",
+  "cur": "Zon-synchrone en polaire banen — de ruggengraat van aardobservatie"
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "intro_sentence",
+  "en": "Sun-synchronous orbits cross every point on Earth at the same local solar time daily. Nearly polar, retrograde, tuned to use Earth's equatorial bulge as a precession motor — the trick behind consistent Earth observation.",
+  "cur": "Zon-synchrone banen kruisen elk punt op aarde dagelijks op dezelfde lokale zonnetijd. Nagenoeg polair, retrograde, afgestemd om de aardse equatoriale uitstulping als precessiemotor te gebruiken — de truc achter consistente aardobservatie."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.0",
+  "en": "A sun-synchronous orbit (SSO) is a near-polar orbit (inclination usually 96-99°) at low to mid-LEO altitude (600-900 km) whose orbital plane rotates eastward at exactly the same rate Earth orbits the Sun — 360°/year, or about 0.9856°/day. The effect: the angle between the satellite's orbital plane and the Sun stays constant year-round, so the satellite always crosses any given latitude at the same local solar time. A Sentinel-2 spacecraft, for instance, crosses the equator on the descending node at 10:30 local time every single day; this is what lets you compare a Landsat image of a forest from 2010 to one from 2025 and know the lighting conditions are similar.",
+  "cur": "Een zonnesynchrone baan (SSO) is een bijna-polaire baan (inclinatie meestal 96-99°) op lage tot middelhoge LEO-hoogte (600-900 km) waarvan het baanvlak met oostwaarts roteert met exact dezelfde snelheid als de Aarde rond de Zon — 360°/jaar, of ongeveer 0,9856°/dag. Het effect: de hoek tussen het baanvlak van de satelliet en de Zon blijft het hele jaar constant, dus de satelliet kruist elke gegeven breedtegraad altijd op hetzelfde lokale zonnentijd. Een Sentinel-2-ruimtevaartuig kruist bijvoorbeeld de evenaar op de dalende knoop elke dag om 10:30 lokale tijd; dit is wat het je mogelijk maakt een Landsat-foto van een bos uit 2010 te vergelijken met een foto uit 2025 en zeker te weten dat de lichtomstandigheden vergelijkbaar zijn."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.1",
+  "en": "The mechanism is gravitational. Earth is not a perfect sphere — the equatorial bulge (about 21 km extra radius at the equator vs the poles) creates a non-central gravity field. For a satellite in a non-equatorial orbit, that asymmetry exerts a torque that gradually precesses the orbital plane. The rate of precession depends on altitude and inclination: lower altitudes precess faster; inclinations between 90° and 180° (retrograde orbits) precess eastward. There's exactly one combination of altitude + inclination for any given altitude that gives 0.9856°/day precession — those are the sun-synchronous orbits. At 800 km altitude, SSO inclination is 98.6° (8.6° past polar, retrograde). At 600 km it's 97.8°. At 400 km it's 97.0°.",
+  "cur": "Het mechanisme is zwaartekracht-gerelateerd. De aarde is geen perfecte bol — de equatoriale uitstulping (ongeveer 21 km extra straal op de evenaar versus de polen) creëert een niet-centraal zwaartekrachtveld. Voor een satelliet in een niet-equatoriale baan oefent die asymmetrie een koppel uit dat het baanvlak geleidelijk precesleert. De precessiesnelheid hangt af van hoogte en inclinatie: lagere hoogtes preceseren sneller; incinaties tussen 90° en 180° (retrograde banen) preceseren naar het oosten. Voor elke gegeven hoogte bestaat er precies één combinatie van hoogte + inclinatie die 0,9856°/dag-precesie geeft — dat zijn de sun-synchrone banen. Bij 800 km hoogte is de SSO-inclinatie 98,6° (8,6° voorbij polair, retrograde). Bij 600 km is het 97,8°. Bij 400 km is het 97,0°."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.2",
+  "en": "Almost every Earth-observation satellite operating today lives in SSO. ESA's Copernicus programme (Sentinel-1A/B/C/D radar imaging, Sentinel-2A/B/C/D optical imaging, Sentinel-3A/B ocean monitoring, Sentinel-5P atmosphere) — all SSO. NASA/USGS Landsat 8 + Landsat 9 — SSO, 705 km, 98.2°, descending-node 10:00 local. NOAA polar weather (NOAA-20, NOAA-21, Suomi NPP) — SSO. Planet Labs' PlanetScope fleet (~150 active CubeSats) — SSO at 475 km. Japan's GCOM-W1, China's Gaofen series, India's Resourcesat. The reason every operator picks SSO is the same: consistent illumination geometry lets you build time-series data products (vegetation indices, snow extent, ocean colour) that mean something across years.",
+  "cur": "Bijna elke aardobservatie-satelliet die vandaag actief is, staat in SSO. Het Copernicus-programma van ESA (Sentinel-1A/B/C/D radarafbeelding, Sentinel-2A/B/C/D optische afbeelding, Sentinel-3A/B oceanobservatie, Sentinel-5P atmosfeer) — allemaal SSO. NASA/USGS Landsat 8 + Landsat 9 — SSO, 705 km, 98,2°, dalende knoop 10:00 lokaal. NOAA poolweer (NOAA-20, NOAA-21, Suomi NPP) — SSO. Planet Labs' PlanetScope-vloot (~150 actieve CubeSats) — SSO op 475 km. Japan's GCOM-W1, China's Gaofen-reeks, India's Resourcesat. De reden waarom elke operator SSO kiest, is dezelfde: consistente verlichtingsgeometrie stelt je in staat om tijdreeksdataproducten (vegetatie-indices, sneeuwbedekking, oceaankleur) te bouwen die over jaren betekenis hebben."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.3",
+  "en": "Polar orbits without sun-synchrony are rare and special. A truly polar orbit (90.0°) is one specific case; below 90° is prograde, above 90° is retrograde. Some military reconnaissance satellites (KH-11 / EVOLVED ENHANCED CRYSTAL — NRO) use near-polar non-SSO orbits to vary their lighting angle deliberately. ICESat-2 (NASA, 92° inclination, 488 km) is near-polar but at a slightly non-SSO altitude to give better coverage of the high-latitude ice sheets it's designed to measure. The non-SSO polar regime trades consistent lighting for better ground-track variety.",
+  "cur": "Polaire banen zonder sun-synchroonheid zijn zeldzaam en bijzonder. Een werkelijk polaire baan (90,0°) is één specifiek geval; onder de 90° is prograade, boven de 90° is retrograde. Sommige militaire verkenningssatellieten (KH-11 / EVOLVED ENHANCED CRYSTAL — NRO) gebruiken nagenoeg polaire niet-SSO-banen om hun verlichtingshoek opzettelijk te variëren. ICESat-2 (NASA, 92° inclinatie, 488 km) is nagenoeg polair maar op een iets niet-SSO-hoogte om betere dekking van de hoge-breedtegraad ijsplaten waarvoor het is ontworpen. Het niet-SSO polaire regime verruilt consistente verlichting voor betere variatie van grondspoor."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.4",
+  "en": "SSO downside: launch energy. Reaching SSO at 98.6° inclination from anywhere below ~45° latitude requires substantial inclination change from the launch site's natural inclination. Launching south-bound out of Vandenberg Space Force Base (34.7°N) or Plesetsk (62.9°N) or Wenchang (19.6°N for southerly launches over open water) is the standard approach. The ΔV cost of inclination change at LEO is roughly 130 m/s per degree for small angles; the exact cost for a large plane change uses 2v·sin(Δi/2), which for a ~70° change gives ≈ 8.9 km/s — so a typical SSO ascent from Florida (Cape Canaveral, 28.5°N) would cost roughly ~9 km/s of inclination-change ΔV — utterly impractical. This is why Vandenberg exists as a dedicated west-coast launch site, and why Plesetsk and Sriharikota and Hammaguir (early French) were chosen for high-inclination launches.",
+  "cur": "SSO-nadeel: lanceersenergie. Om SSO met een inclinatie van 98,6° te bereiken vanuit een willekeurig punt onder ongeveer 45° breedtegraad vereist aanzienlijke inclinatiewijziging van de startplaats' natuurlijke inclinatie. Zuidwaarts lanceren vanuit Vandenberg Space Force Base (34,7°N) of Plesetsk (62,9°N) of Wenchang (19,6°N voor zuidelijke lanceringen over open water) is de standaardbenadering. De ΔV-kosten van inclinatiewijziging op LEO bedragen ongeveer 130 m/s per graad voor kleine hoeken; de exacte kosten voor een grote vlakverandering gebruiken 2v·sin(Δi/2), wat voor een verandering van ongeveer 70° ongeveer 8,9 km/s geeft — dus een typische SSO-stijging uit Florida (Cape Canaveral, 28,5°N) zou ongeveer 9 km/s inclinatie-wijzigings-ΔV kosten — volkomen onpraktisch. Dit is waarom Vandenberg bestaat als een dedicated west-coast lanceerplek, en waarom Plesetsk en Sriharikota en Hammaguir (vroeg Frans) waren gekozen voor lanceringen met hoge inclinatie."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "diagram_caption",
+  "en": "SSO: near-polar (96-99°), retrograde, LEO (600-900 km). J2 perturbation from Earth's equatorial bulge precesses the orbital plane east at 0.9856°/day — exactly matching Earth's orbital motion around the Sun. Result: satellite crosses any latitude at the same local solar time every day. Workhorse of Sentinel, Landsat, NOAA polar, PlanetScope, GCOM.",
+  "cur": "SSO: nagenoeg polair (96–99°), retrograde, LEO (600–900 km). J2-verstoring door aardse equatoriale uitstulping precesleert het baanvlak oostwaarts op 0,9856°/dag — exact gelijk aan aardse baanbeweging rond de zon. Resultaat: satelliet kruist elke breedtegraad dagelijks op dezelfde lokale zonnetijd. Werkpaard van Sentinel, Landsat, NOAA polar, PlanetScope, GCOM."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "title",
+  "en": "Synodic period — why launch windows open and close",
+  "cur": "Synodische periode — waarom lanceervensters openen en sluiten"
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "intro_sentence",
+  "en": "Two planets on different orbits drift in and out of alignment on a clock of their own — the synodic period — and that clock decides when the cheap road between them is open.",
+  "cur": "Twee planeten op verschillende banen glijden in en uit elkaar volgens hun eigen klok — de synodische periode — en die klok bepaalt wanneer de goedkope route tussen hen open is."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "narrative_101.0",
+  "en": "A cheap trip to another planet is not a straight line — it is a long coasting ellipse that leaves Earth and just grazes the target’s orbit half a lap later. For that to work, the target planet has to be at the far end of the ellipse when the spacecraft arrives, not somewhere else on its orbit. Since the two planets move at different speeds, that lucky geometry only lines up now and then. The time between one alignment and the next is the synodic period.",
+  "cur": "Een goedkope reis naar een ander planeet is geen rechte lijn — het is een lange glijdende ellips die de Aarde verlaat en de baan van het doel halfweg later net raakt. Daarvoor moet het doelplaneet aan het verre uiteinde van de ellips zijn wanneer de ruimtesonde aankomt, niet ergens anders op zijn baan. Omdat de twee planeten met verschillende snelheden bewegen, komt die gelukkige geometrie slechts nu en dan voor. De tijd tussen één uitlijning en de volgende is de synodische periode."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "narrative_101.1",
+  "en": "For Earth and Mars it is about 780 days — roughly 26 months. That is why Mars missions come in clumps: miss the window and you wait more than two years for the planets to line up again. In 2020 the window opened for everyone at once, and NASA’s Perseverance, China’s Tianwen-1 and the UAE’s Hope all launched within three weeks of each other.",
+  "cur": "Voor Aarde en Mars is het ongeveer 780 dagen — ruwweg 26 maanden. Daarom komen Marsmissies in groepjes: mis het venster en je wacht meer dan twee jaar tot de planeten weer uitgelind zijn. In 2020 ging het venster voor iedereen tegelijk open, en NASA's Perseverance, China's Tianwen-1 en de VAE's Hope lanceerden allemaal binnen drie weken van elkaar."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "narrative_101.2",
+  "en": "The alignment needed is not \"planets next to each other\" but a specific lead angle — Mars has to be a set number of degrees ahead of Earth at launch so that it arrives at the rendezvous point just as the spacecraft does. The synodic clock is simply how often that exact lead angle comes back around.",
+  "cur": "De benodigde uitlijning is niet \"planeten naast elkaar\" maar een specifieke loodhoek — Mars moet een bepaald aantal graden voor op de Aarde staan bij lancering zodat het aankomt op het ontmoetingspunt precies wanneer de ruimtesonde dat doet. De synodische klok is eenvoudig hoe vaak die exacte loodhoek terugkomt."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "body_paragraphs.0",
+  "en": "The synodic period S is set by the two orbital periods through 1/S = |1/T₁ − 1/T₂|: the rate at which the faster planet laps the slower one. For Earth (365.25 d) and Mars (687 d) that gives ~780 days; for Earth and Venus ~584 days; for Earth and Jupiter ~399 days (Jupiter is so slow that the synodic period is barely longer than Earth’s year). The closer two orbits are in period, the LONGER the synodic period — nearby planets take ages to lap each other.",
+  "cur": "De synodische periode S wordt bepaald door de twee baanperioden via 1/S = |1/T₁ − 1/T₂|: de snelheid waarmee de snellere planeet de langzamere voorbijloopt. Voor Aarde (365,25 d) en Mars (687 d) geeft dat ~780 dagen; voor Aarde en Venus ~584 dagen; voor Aarde en Jupiter ~399 dagen (Jupiter is zo traag dat de synodische periode nauwelijks langer is dan Aarde's jaar). Hoe dichterbij twee banen in periode zijn, hoe LANGER de synodische periode — nabijgelegen planeten doen er eeuwigheden over om elkaar voorbij te lopen."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "body_paragraphs.1",
+  "en": "The launch window itself is set by phasing. A Hohmann transfer takes a fixed time (about 259 days Earth→Mars), during which the target sweeps a known arc; so at departure the target must lead the departure planet by a specific phase angle (roughly 44° for Earth→Mars) so it reaches the transfer’s far apse exactly when the spacecraft does. That geometry recurs every synodic period — which is why the window is periodic.",
+  "cur": "Het lanceervenster zelf wordt bepaald door fasering. Een Hohmann-overdracht neemt een vaste tijd (ongeveer 259 dagen Aarde→Mars), gedurende welke het doel een bekende boog doorloopt; dus bij vertrek moet het doel de vertrekplaneet voorgaan met een specifieke fasehoek (ongeveer 44° voor Aarde→Mars) zodat het het verre apsis van de overdracht precies bereikt wanneer de ruimtesonde dat doet. Die geometrie herhaalt zich elke synodische periode — daarom is het venster periodiek."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "body_paragraphs.2",
+  "en": "Real windows have width and cost structure: the porkchop plot maps departure date against flight time and shades the total Δv, and the synodic clock is what makes a fresh porkchop valley appear each cycle. The Physics Lab’s launch-window lesson computes S from the two periods and the required lead angle from the transfer time — the same arithmetic every interplanetary mission is scheduled by.",
+  "cur": "Echte vensters hebben breedte en kostenstructuur: de porkchop-grafiek zet vertrekdatum tegen vluchttijd uit en geeft de totale Δv aan, en de synodische klok is wat een vers porkchop-dal laat verschijnen in elke cyclus. Het Physics Lab's lanceervenster-les berekent S uit de twee perioden en de vereiste loodhoek uit de overdrachtstijd — dezelfde rekenkunde waarmee elke interplanetaire missie wordt ingepland."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "diagram_caption",
+  "en": "Synodic geometry: the target must lead by a set phase angle so it meets the transfer ellipse at arrival; that alignment recurs every synodic period 1/S = |1/T₁ − 1/T₂|.",
+  "cur": "Synodische geometrie: het doel moet voorgaan met een bepaalde fasehoek zodat het de overdrachtsellips bij aankomst ontmoet; die uitlijning herhaalt zich elke synodische periode 1/S = |1/T₁ − 1/T₂|."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "intro_sentence",
+  "en": "The angle that tells you where on the orbit a body is right now, measured from perihelion.",
+  "cur": "De hoek die aangeeft waar een lichaam zich op dit moment in zijn baan bevindt, gemeten vanaf het perihelium."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "narrative_101.0",
+  "en": "Imagine a planet running around its ellipse. We've already given it a size, a shape, a tilt. The one thing we still need is: where is it on the loop right this instant? That's the true anomaly. Stand at the Sun, point at the planet's closest pass, and measure the angle to where the planet actually is. That's it.",
+  "cur": "Stel je een planeet voor die zijn ellips doorloopt. We hebben hem al een grootte, een vorm en een kanteling gegeven. Het enige wat we nog nodig hebben is: waar bevindt hij zich op dit moment op de baan? Dat is de ware anomalie. Ga bij de zon staan, wijs naar het punt waar de planeet het dichtst passeert en meet de hoek tot waar de planeet zich werkelijk bevindt. Dat is alles."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "narrative_101.1",
+  "en": "But here's the catch — and this is where Kepler's second law sneaks in. The planet doesn't sweep this angle at a steady pace. Near the close pass it whips around fast. Out at the far end it lumbers. So if you ask 'how many degrees per day?', the answer changes constantly throughout the orbit.",
+  "cur": "Maar hier komt het addertje onder het gras — en hier sluipt de tweede wet van Kepler binnen. De planeet doorloopt deze hoek niet met een constant tempo. Bij het dichtste punt schiet hij er snel doorheen. Aan het verre einde sjokt hij voort. Dus als je vraagt 'hoeveel graden per dag?', verandert het antwoord voortdurend gedurende de omloop."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "narrative_101.2",
+  "en": "Astronomers got tired of that, so they invented two other angles — mean anomaly and eccentric anomaly — that DO tick at a steady pace, and built a tiny ladder of equations connecting all three. When you watch the planets move smoothly in /explore, that ladder is what's running under the hood, sixty times a second.",
+  "cur": "Astronomen werden daar moe van, dus bedachten ze twee andere hoeken — gemiddelde anomalie en excentrische anomalie — die WEL met een constant tempo tikken, en bouwden een klein laddertje van vergelijkingen die alle drie verbinden. Wanneer je de planeten vloeiend ziet bewegen in /explore, is dat laddertje wat er onder de motorkap draait, zestig keer per seconde."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "body_paragraphs.0",
+  "en": "The Keplerian elements describe the shape and orientation of an orbit; true anomaly (`ν`) tells you where the body is along that orbit at a given instant. Stand at the focus (the Sun, for a planet), point at perihelion, and rotate your finger to follow the body around. The angle you sweep is the true anomaly.",
+  "cur": "De Kepleriaanse elementen beschrijven de vorm en oriëntatie van een baan; de ware anomalie (`ν`) vertelt je waar het lichaam zich op een bepaald moment langs die baan bevindt. Ga bij het brandpunt staan (de zon, voor een planeet), wijs naar het perihelium en draai je vinger mee terwijl het lichaam rondgaat. De hoek die je doorloopt is de ware anomalie."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "body_paragraphs.1",
+  "en": "It runs from 0 at perihelion (closest approach) through 90° (a quarter of the way) to 180° at aphelion (farthest), and back. Unlike a clock, it doesn't tick uniformly — Kepler's second law tells you the body races near perihelion and crawls near aphelion. So true anomaly per second changes throughout the orbit.",
+  "cur": "Hij loopt van 0 bij het perihelium (dichtste nadering) via 90° (een kwart van de weg) naar 180° bij het aphelium (verst), en weer terug. In tegenstelling tot een klok tikt hij niet gelijkmatig — de tweede wet van Kepler vertelt je dat het lichaam raast bij het perihelium en kruipt bij het aphelium. Dus de ware anomalie per seconde verandert gedurende de omloop."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "body_paragraphs.2",
+  "en": "Sister angles you'll meet: mean anomaly (`M`), which does tick uniformly with time but is geometrically meaningless; and eccentric anomaly (`E`), the bridge between them. `M` advances at constant rate, you solve Kepler's equation `M = E - e·sin(E)` to get `E`, then convert to `ν`. The chain is the heartbeat of every orbital simulator including Orrery's.",
+  "cur": "Zusterhoeken die je zult tegenkomen: gemiddelde anomalie (`M`), die wel gelijkmatig met de tijd tikt maar meetkundig zinloos is; en excentrische anomalie (`E`), de brug tussen beide. `M` neemt toe met een constante snelheid, je lost de vergelijking van Kepler `M = E - e·sin(E)` op om `E` te krijgen, en converteert dat dan naar `ν`. Deze keten is de hartslag van elke baansimulator, inclusief die van Orrery."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "diagram_caption",
+  "en": "True anomaly ν measured at the focus, from perihelion to the body's current position.",
+  "cur": "Ware anomalie ν gemeten bij het brandpunt, van perihelium tot de huidige positie van het lichaam."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "title",
+  "en": "Vis-Viva Equation",
+  "cur": "Vis-viva-vergelijking"
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "intro_sentence",
+  "en": "How fast a body is moving at any point on its orbit — given just its current radius and the orbit's semi-major axis.",
+  "cur": "Hoe snel een lichaam beweegt op elk punt in zijn baan — gegeven alleen zijn huidige afstand en de halve lange as van de baan."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "narrative_101.0",
+  "en": "If you only ever learn one orbital-mechanics equation, make it this one. Tell vis-viva three things — what you're orbiting, how far you currently are, and the size of your orbit — and it tells you exactly how fast you're moving. No time, no integration, no clever trick. Three inputs, one square root, done.",
+  "cur": "Als je ooit maar één vergelijking uit de baanmechanica leert, laat het deze zijn. Vertel vis-viva drie dingen — wat je omcirkelt, hoe ver je op dit moment bent, en de grootte van je baan — en het vertelt je precies hoe snel je beweegt. Geen tijd, geen integratie, geen slimme trucs. Drie invoerwaarden, één wortel, klaar."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "narrative_101.1",
+  "en": "The reason it works is conservation of energy. A spacecraft trading altitude for speed (or vice versa) keeps its total energy constant on a given orbit. So if you know where it is along the ellipse, you know how that energy is split between potential and kinetic — and once you know the kinetic part you've got the speed.",
+  "cur": "De reden dat het werkt is energiebehoud. Een ruimtevaartuig dat hoogte inruilt voor snelheid (of omgekeerd) houdt zijn totale energie constant op een gegeven baan. Dus als je weet waar het zich langs de ellips bevindt, weet je hoe die energie verdeeld is over potentiële en kinetische energie — en zodra je het kinetische deel kent, heb je de snelheid."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "narrative_101.2",
+  "en": "Open the /fly screen and watch the velocity readout as a spacecraft swings past a planet. That's vis-viva, recomputed every frame. The departure-velocity and arrival-velocity numbers on every porkchop in /plan? Vis-viva, sampled at the launch radius and arrival radius. It's everywhere.",
+  "cur": "Open het /fly scherm en bekijk de snelheidsweergave terwijl een ruimtevaartuig langs een planeet zwiept. Dat is vis-viva, elk frame opnieuw berekend. De vertreksnelheid en aankomstsnelheid op elke porkchop in /plan? Vis-viva, bemonsterd op de lanceerstraal en aankomststraal. Het is overal."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "body_paragraphs.0",
+  "en": "Vis-viva is the workhorse equation of orbital mechanics. It connects three numbers — the gravitational parameter `μ` of whatever you're orbiting, your current distance `r` from the focus, and the orbit's semi-major axis `a` — and spits out the speed `v`. That's it. No time integration, no anomaly chain, just one square root and you know how fast you're going.",
+  "cur": "Vis-viva is de werkpaard-vergelijking van de baanmechanica. Het verbindt drie getallen — de gravitatieparameter `μ` van wat je ook omcirkelt, je huidige afstand `r` tot het brandpunt, en de halve lange as `a` van de baan — en geeft de snelheid `v`. Dat is alles. Geen tijdsintegratie, geen anomalieketen, gewoon één wortel en je weet hoe snel je gaat."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "body_paragraphs.1",
+  "en": "The equation packages conservation of energy: total mechanical energy on a Keplerian orbit is constant, so any time you know `r` you can recover the speed. At perihelion `r` is small, the parenthetical term is large, `v` is high. At aphelion `r` is large, the term shrinks, `v` drops. Earth zips through perihelion at 30.3 km/s and crawls through aphelion at 29.3 km/s — same orbit, different speed, same energy.",
+  "cur": "De vergelijking verpakt energiebehoud: totale mechanische energie op een Kepleriaanse baan is constant, dus telkens wanneer je `r` kent kun je de snelheid terugvinden. Bij perihelium is `r` klein, de term tussen haakjes is groot, `v` is hoog. Bij aphelium is `r` groot, de term krimpt, `v` daalt. De aarde schiet door het perihelium met 30,3 km/s en kruipt door het aphelium met 29,3 km/s — dezelfde baan, verschillende snelheid, dezelfde energie."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "body_paragraphs.2",
+  "en": "In Orrery, vis-viva is what computes the velocity readouts you see on `/fly`'s HUD as a spacecraft swings past a planet — and the launch-energy and arrival-velocity numbers feeding the porkchop heatmap on `/plan`.",
+  "cur": "In Orrery is vis-viva wat de snelheidsweergaves berekent die je ziet op de HUD van `/fly` terwijl een ruimtevaartuig langs een planeet zwiept — en de lanceerenergie en aankomstsnelheid die de porkchop-heatmap op `/plan` voeden."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "formula_caption",
+  "en": "v from gravitational parameter μ, current radius r, semi-major axis a.",
+  "cur": "v uit gravitatieparameter μ, huidige straal r, halve lange as a."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "diagram_caption",
+  "en": "Speed varies along the orbit: high at perihelion, low at aphelion. Vis-viva ties speed to radius.",
+  "cur": "Snelheid varieert langs de baan: hoog bij perihelium, laag bij aphelium. Vis-viva koppelt snelheid aan straal."
+ },
+ {
+  "rel": "science/planets/_intro.json",
+  "at": "headline",
+  "en": "Planets — every world tells a different story.",
+  "cur": "Planeten — elke wereld vertelt een ander verhaal."
+ },
+ {
+  "rel": "science/planets/_intro.json",
+  "at": "paragraphs.0",
+  "en": "Solar-system bodies are not interchangeable. Mars lost its atmosphere because its dynamo died. Venus rotates backward. Saturn's magnetic axis is uniquely aligned with its rotation axis. Uranus rolled onto its side. Earth has city lights you can see from orbit, and Mars doesn't. Each of these is a real, observed fact with a real, debated explanation. This tab is the place to read those explanations.",
+  "cur": "Lichamen in ons zonnestelsel zijn niet onderling uitwisselbaar. Mars verloor zijn atmosfeer omdat zijn dynamo uitviel. Venus draait achteruit. De magnetische as van Saturnus ligt op een unieke manier uitgelijnd met zijn rotatieëas. Uranus rolde opzij. Aarde heeft stadslichten die je vanuit een baan kunt zien, en Mars niet. Elk van deze is een echt, waargenomen feit met een echt, betwist verklaring. Dit tabblad is de plek om die verklaringen te lezen."
+ },
+ {
+  "rel": "science/planets/_intro.json",
+  "at": "paragraphs.1",
+  "en": "Six sections. The first three are about the planets themselves — axial tilt, magnetic fields, and the geometry of day and night. The next two are about the system: the moons that orbit each planet (Galileans, Titan, Triton, Charon), and the comparison-stats that let you see at a glance how Jupiter differs from Earth. The last section is a survey of the spacecraft actively studying each planet right now, in 2026 — what's at Mars (six active orbiters, multiple agencies), at Jupiter (Juno), at Venus (Akatsuki), and the long absences elsewhere.",
+  "cur": "Zes secties. De eerste drie gaan over de planeten zelf — axiale kanteling, magnetische velden en de meetkunde van dag en nacht. De volgende twee gaan over het systeem: de manen die rond elke planeet draaien (Galileanen, Titan, Triton, Charon), en de vergelijkingsstatistieken waarmee je in een oogopslag kunt zien hoe Jupiter van Aarde verschilt. De laatste sectie is een overzicht van de ruimtevaartuigen die op dit moment, in 2026, elke planeet actief bestuderen — wat er op Mars is (zes actieve orbiters, meerdere agentschappen), bij Jupiter (Juno), bij Venus (Akatsuki), en de lange afwezigheid elders."
+ },
+ {
+  "rel": "science/planets/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Every section pairs with a visualisation on /explore. The yellow spin axis you see when you zoom in on a planet ↔ the axial-tilt article. The cyan magnetic axis (lens-gated) ↔ the magnetic-fields article. The active orbiter glyphs ↔ the spacecraft-survey article. Toggle the lens on /explore to see the physics overlays, then come back here to read what they mean.",
+  "cur": "Elke sectie is gekoppeld aan een visualisatie op /explore. De gele rotatieas die je ziet wanneer je inzoomt op een planeet ↔ het artikel over axiale kanteling. De cyaan magnetische as (lens-gated) ↔ het artikel over magnetische velden. De glyfen van actieve orbiters ↔ het artikel over ruimtevaartuigen. Zet de lens aan op /explore om de natuurkundig-overlays te zien, en kom dan hier terug om te lezen wat ze betekenen."
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "title",
+  "en": "Active Spacecraft Survey",
+  "cur": "Overzicht van actieve ruimtesondes"
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "intro_sentence",
+  "en": "What's at each planet right now: from MRO at Mars to Juno at Jupiter to Akatsuki at Venus.",
+  "cur": "Wat bevindt zich nu op elke planeet: van MRO bij Mars tot Juno bij Jupiter tot Akatsuki bij Venus."
+ }
+]

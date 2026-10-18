@@ -1,0 +1,578 @@
+[
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.6.md",
+  "en": "Dawn launched in 2007 carrying three NSTAR ion thrusters — the direct descendants of Deep Space 1's engine — and used them to do something no spacecraft had ever done: orbit one body in the asteroid belt, decelerate to a stop at [Vesta](/explore), orbit that for a year, then fire up again and spiral out to a second body, [Ceres](/explore), and orbit that too. A chemical mission with the same objectives would have required so much propellant it could not have been launched on any existing rocket. The ion engines, running for a total of more than five and a half years of accumulated thrust time, made the same journey on 425 kilograms of xenon. Dawn's specific impulse was 3,100 seconds. Each kilogram of xenon did the work of seven kilograms of liquid hydrogen.",
+  "cur": "Dawn lançou em 2007 carregando três propulsores iônicos NSTAR — os descendentes diretos do motor do Deep Space 1 — e os usou para fazer algo que nenhuma espaçonave havia feito antes: orbitar um corpo no cinturão de asteroides, desacelerar para uma parada em [Vesta](/explore), orbitar isso por um ano, depois acender de novo e espiralar para um segundo corpo, [Ceres](/explore), e orbitar aquele também. Uma missão química com os mesmos objetivos teria exigido tanto propelente que não poderia ter sido lançada em nenhum foguete existente. Os motores iônicos, funcionando por um total de mais de cinco anos e meio de tempo de empuxo acumulado, fizeram a mesma jornada com 425 quilogramas de xenônio. O impulso específico de Dawn era 3.100 segundos. Cada quilograma de xenônio fez o trabalho de sete quilogramas de hidrogênio líquido."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.7.md",
+  "en": "What launched in October 2023 toward the metal asteroid Psyche pushed the idea further. [Psyche](/missions?id=psyche) uses Hall-effect thrusters — a different architecture, in which the magnetic field traps electrons and creates a ring discharge that accelerates ions more efficiently at lower power. Hall thrusters are cheaper, simpler, and compact enough to fit four of them onto a Discovery-class spacecraft. Psyche's thrusters operate at about 1,750 seconds specific impulse, lower than Dawn's ion engines but more than four times the chemical ceiling, and they represent the first time Hall thrusters — common workhorses of Earth-orbit station-keeping — have been trusted for deep-space primary propulsion. The same technology that nudges geostationary satellites by centimetres per second is now flying an interplanetary mission.",
+  "cur": "O que lançou em outubro de 2023 em direção ao asteroide metálico Psyche levou a ideia mais adiante. [Psyche](/missions?id=psyche) usa propulsores de efeito Hall — uma arquitetura diferente, na qual o campo magnético captura elétrons e cria uma descarga em anel que acelera os íons mais eficientemente em menor potência. Os propulsores Hall são mais baratos, mais simples e compactos o suficiente para caber quatro deles em uma espaçonave da classe Discovery. Os propulsores de Psyche operam em cerca de 1.750 segundos de impulso específico, menor que os motores iônicos de Dawn, mas mais de quatro vezes o teto químico, e representam a primeira vez que propulsores Hall — máquinas de trabalho comuns da manutenção de estações de órbita terrestre — foram confiados para propulsão primária no espaço profundo. A mesma tecnologia que move satélites geoestacionários por centímetros por segundo agora está voando uma missão interplanetária."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.8.caption",
+  "en": "A chemical rocket spends its whole life in a few minutes of fury, then coasts. An ion engine pushes with the weight of a coin — but never stops. Given enough time it quietly overtakes the rocket that shoved hardest, and keeps climbing.",
+  "cur": "Um foguete químico passa toda sua vida em alguns minutos de fúria, depois flutua. Um motor iônico empurra com o peso de uma moeda — mas nunca para. Dado tempo suficiente, ele silenciosamente ultrapassa o foguete que empurrou com mais força e continua subindo."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.9.caption",
+  "en": "Dawn ran on a xenon-ion engine whose thrust you could have balanced on your palm — and rode that whisper for years, becoming the only craft ever to orbit two separate worlds beyond Earth: first Vesta, then Ceres.",
+  "cur": "Dawn funcionava com um motor iônico de xenônio cujo empuxo você poderia ter balanceado na sua palma — e cavalgou esse sussurro por anos, se tornando a única nave que orbita dois mundos separados além da Terra: primeiro Vesta, depois Ceres."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.11.md",
+  "en": "Ion and Hall drives still carry propellant. They carry much less of it, and they use it far more efficiently, but the rocket equation still applies: the xenon runs out, and when it does, the thrust stops. The most radical escape from the equation is to carry no propellant at all — to push against something outside the spacecraft.",
+  "cur": "Motores iônicos e Hall ainda carregam propelente. Eles carregam muito menos dele e o usam muito mais eficientemente, mas a equação do foguete ainda se aplica: o xenônio se esgota e, quando isso acontece, o empuxo para. A fuga mais radical da equação é não carregar propelente algum — para empurrar contra algo fora da espaçonave."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.12.md",
+  "en": "Photons carry momentum. Light pushes. The pressure is tiny — at Earth's distance from the Sun, sunlight exerts about nine micronewtons per square metre of illuminated surface — but it is free, inexhaustible, and it never runs out. A sail large enough and light enough will accelerate indefinitely as long as it faces the Sun, trading thrust for patience the way an ion engine does, but without a propellant budget at all.",
+  "cur": "Fótons carregam momentum. A luz empurra. A pressão é minúscula — na distância da Terra do Sol, a luz solar exerce cerca de nove micronewtons por metro quadrado de superfície iluminada — mas é gratuita, inesgotável e nunca se esgota. Uma vela grande o suficiente e leve o suficiente acelera indefinidamente enquanto enfrenta o Sol, trocando empuxo por paciência da forma como um motor iônico faz, mas sem nenhum orçamento de propelente."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.13.md",
+  "en": "The idea is older than spaceflight by a century: Johannes Kepler noted in 1619 that comet tails always point away from the Sun and attributed it, correctly, to solar pressure. The mathematics were fully worked out by the 1920s. What was missing was a material: a sail light enough to matter, tough enough to survive the radiation environment of space, deployable from a rocket fairing. For most of the twentieth century it remained an idea.",
+  "cur": "A ideia é anterior ao voo espacial por um século: Johannes Kepler notou em 1619 que caudas de cometas sempre apontam para longe do Sol e atribuiu isso, corretamente, à pressão solar. A matemática foi totalmente trabalhada pelos anos 1920. O que faltava era um material: uma vela leve o suficiente para importar, robusta o suficiente para sobreviver ao ambiente de radiação do espaço, implantável de um compartimento de carga de foguete. Durante a maior parte do século XX permaneceu uma ideia."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.14.md",
+  "en": "JAXA flew the first one. On 21 May 2010, the Japanese spacecraft IKAROS — *Interplanetary Kite-craft Accelerating Radiation Of the Sun* — deployed a 200-square-metre polyimide sail en route to Venus and became the first spacecraft to achieve meaningful propulsion from sunlight alone in deep space. It measured the acceleration. It worked. The Planetary Society's LightSail 2, launched in 2019, went further: a small, shoebox-stacked CubeSat that deployed a 32-square-metre sail and became the first spacecraft to measurably raise its orbit using only the pressure of light. Both missions were small, low-budget, and largely ignored by the wider press. Between them they established that solar sailing is not a thought experiment.",
+  "cur": "JAXA voou a primeira. Em 21 de maio de 2010, a espaçonave japonesa IKAROS — *Interplanetary Kite-craft Accelerating Radiation Of the Sun* — implantou uma vela de poliimida de 200 metros quadrados a caminho de Vênus e se tornou a primeira espaçonave a alcançar propulsão significativa apenas da luz solar no espaço profundo. Ela mediu a aceleração. Funcionou. O LightSail 2 da Planetary Society, lançado em 2019, foi mais adiante: um pequeno CubeSat empilhado como uma caixa de sapatos que implantou uma vela de 32 metros quadrados e se tornou a primeira espaçonave a aumentar mensuravelmente sua órbita usando apenas a pressão da luz. Ambas as missões foram pequenas, com orçamento baixo e amplamente ignoradas pela imprensa mais ampla. Entre elas estabeleceram que a navegação solar não é um experimento mental."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.15.md",
+  "en": "NASA's Advanced Composite Solar Sail System — ACS3 — launched in April 2024, carrying an 80-square-metre sail on composite boom arms stiffer and lighter than any previous design, demonstrating the structural technology needed to scale up. NEA Scout, which would have been the first solar sail to visit a near-Earth asteroid, launched aboard Artemis I in November 2022 and was lost — its radio never made contact after deployment, a reminder that small missions fly small margins. The setback did not cancel the program. The reason sails are worth pursuing is not the acceleration they give today but the acceleration they give tomorrow: a solar sail ten kilometres across, launched toward the inner solar system where sunlight is stronger, would reach speeds unattainable by any propellant-limited system. Sails are the only architecture for which *making the sail larger* makes the physics better, without adding propellant mass.",
+  "cur": "O Sistema Avançado de Vela Solar Composta da NASA — ACS3 — lançou em abril de 2024, carregando uma vela de 80 metros quadrados em braços de carga composta mais rígidos e leves que qualquer design anterior, demonstrando a tecnologia estrutural necessária para aumentar a escala. NEA Scout, que teria sido a primeira vela solar a visitar um asteroide próximo à Terra, lançou a bordo de Artemis I em novembro de 2022 e foi perdida — seu rádio nunca fez contato após a implantação, um lembrete de que pequenas missões voam pequenas margens. O retrocesso não cancelou o programa. A razão pela qual as velas valem a pena ser perseguidas não é a aceleração que elas dão hoje, mas a aceleração que elas dão amanhã: uma vela solar de dez quilômetros de extensão, lançada em direção ao sistema solar interno onde a luz solar é mais forte, alcançaria velocidades inatingíveis por qualquer sistema limitado por propelente. As velas são a única arquitetura para a qual *fazer a vela maior* melhora a física, sem adicionar massa de propelente."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.17.md",
+  "en": "There is a third exit, and it is the one that, in the 1960s, seemed most likely to be first. A nuclear reactor running at high temperature can heat a propellant — hydrogen is the best choice, being the lightest gas and therefore fastest when expelled — and exhaust it through a nozzle. No combustion. No bond energies. The heat source is fission, and the temperatures a reactor can sustain are limited not by chemistry but by metallurgy: how hot can the fuel elements and the nozzle throat be made before they fail? The answer, in the engines tested at the Nevada Test Site from 1959 to 1969 under the program called NERVA, was hot enough to achieve specific impulses around 825 seconds — nearly twice the best chemical engine, at thrust levels measured in tens of kilonewtons, useful for a crewed Mars mission.",
+  "cur": "Há uma terceira saída, e é a que, nos anos 1960, parecia mais provável de ser a primeira. Um reator nuclear funcionando em alta temperatura pode aquecer um propelente — o hidrogênio é a melhor escolha, sendo o gás mais leve e portanto o mais rápido quando expelido — e expeli-lo através de um bocal. Sem combustão. Sem energias de ligação. A fonte de calor é fissão, e as temperaturas que um reator pode sustentar são limitadas não pela química, mas pela metalurgia: quão quente podem os elementos combustíveis e a garganta do bocal ser feitos antes de falharem? A resposta, nos motores testados no Nevada Test Site de 1959 a 1969 sob o programa chamado NERVA, era quente o suficiente para alcançar impulsos específicos em torno de 825 segundos — quase o dobro do melhor motor químico, em níveis de empuxo medidos em dezenas de quilonewtons, útil para uma missão tripulada para Marte."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.18.md",
+  "en": "The Phoebus 2A reactor, tested in 1968, was the most powerful nuclear rocket engine ever fired: 4,100 megawatts of thermal power, the equivalent of four large commercial nuclear power plants running simultaneously, all compressed into a structure the size of a car. The XE Prime engine, tested in 1969 in a configuration designed to simulate altitude firing, demonstrated restart capability and throttling — exactly the operational flexibility a crewed mission would need. The program accumulated more than two hours of total run time, including 28 minutes at full power. By every technical measure, it worked.",
+  "cur": "O reator Phoebus 2A, testado em 1968, foi o motor de foguete nuclear mais poderoso já disparado: 4.100 megawatts de potência térmica, o equivalente a quatro grandes usinas nucleares comerciais funcionando simultaneamente, tudo comprimido em uma estrutura do tamanho de um carro. O motor XE Prime, testado em 1969 em uma configuração projetada para simular disparo em altitude, demonstrou capacidade de reinicialização e regulação — exatamente a flexibilidade operacional que uma missão tripulada precisaria. O programa acumulou mais de duas horas de tempo total de execução, incluindo 28 minutos com potência total. Por toda medida técnica, funcionou."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.19.md",
+  "en": "And then it stopped. In 1973, with the Moon program over and budgets collapsing and no Mars mission forthcoming, NERVA was cancelled. The engines sat in Nevada. The knowledge spread into reports that aged in archives. For fifty years, no nuclear thermal rocket engine flew, or was seriously scheduled to fly. The [gravity assists](/science/transfers/gravity-assist) of [Voyager 2](/missions?id=voyager-2) made the outer planets reachable without nuclear propulsion. The outer planets were enough.",
+  "cur": "E então parou. Em 1973, com o programa lunar terminado e orçamentos desabando e nenhuma missão para Marte em vista, NERVA foi cancelada. Os motores ficaram em Nevada. O conhecimento se espalhou em relatórios que envelheceram em arquivos. Por cinquenta anos, nenhum motor de foguete nuclear térmico voou ou foi seriamente agendado para voar. Os [auxílios gravitacionais](/science/transfers/gravity-assist) de [Voyager 2](/missions?id=voyager-2) tornaram os planetas exteriores alcançáveis sem propulsão nuclear. Os planetas exteriores foram o suficiente."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.20.md",
+  "en": "The idea came back slowly in the 2010s, and more urgently in the 2020s: a crewed mission to Mars, with a flight time measured in months rather than years, almost demands nuclear-thermal propulsion. DARPA's DRACO program — *Demonstration Rocket for Agile Cislunar Operations* — was the most concrete recent attempt to close the fifty-year gap, aiming to demonstrate a nuclear thermal engine in orbit. In June 2025, DARPA cancelled it. The official reasoning cited decreasing launch costs that diminished the economic case and infrastructure barriers around ground testing a nuclear reactor that had been underestimated at program start. The decision was not a technical verdict: no one tested the engine and found it wanting. The gap simply widened again.",
+  "cur": "A ideia voltou lentamente nos anos 2010 e mais urgentemente nos anos 2020: uma missão tripulada para Marte, com um tempo de voo medido em meses em vez de anos, quase exige propulsão nucleotérmica. O programa DRACO da DARPA — *Demonstration Rocket for Agile Cislunar Operations* — foi a tentativa recente mais concreta de fechar a lacuna de cinquenta anos, visando demonstrar um motor nucleotérmico em órbita. Em junho de 2025, DARPA o cancelou. O raciocínio oficial citou custos de lançamento decrescentes que diminuíram o caso econômico e barreiras de infraestrutura em torno de testes em terra de um reator nuclear que foram subestimadas no início do programa. A decisão não foi um veredicto técnico: ninguém testou o motor e o achou inadequado. A lacuna simplesmente se ampliou novamente."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.21.caption",
+  "en": "There is no flame here at all. A reactor heats hydrogen past any temperature a chemical fire can reach and throws it from the nozzle at roughly twice the speed — the same fuel, worth twice the push, and a shorter, less-irradiated road to Mars.",
+  "cur": "Não há chama aqui em absoluto. Um reator aquece hidrogênio além de qualquer temperatura que um fogo químico pode alcançar e o lança do bocal em aproximadamente o dobro da velocidade — o mesmo combustível, valendo o dobro do empuxo, e um caminho mais curto e menos irradiado para Marte."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.22.text",
+  "en": "Why they keep failing to launch",
+  "cur": "Por que continuam falhando em lançar"
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.23.md",
+  "en": "The history of advanced propulsion is not, mostly, a history of technical failure. Ion drives work; every deep-space spacecraft that has carried one has performed as predicted. Solar sails work; IKAROS measured the thrust, LightSail 2 changed its orbit. Nuclear-thermal engines worked; NERVA demonstrated it in six decades of un-revisited ground tests. The failures are almost entirely in the space between a working technology and a funded mission.",
+  "cur": "A história da propulsão avançada não é, principalmente, uma história de fracasso técnico. Motores iônicos funcionam; toda espaçonave de espaço profundo que carregou um teve desempenho conforme previsto. Velas solares funcionam; IKAROS mediu o empuxo, LightSail 2 mudou sua órbita. Motores nucleotérmicos funcionaram; NERVA demonstrou isso em seis décadas de testes em terra nunca revisitados. Os fracassos são quase inteiramente no espaço entre uma tecnologia funcionando e uma missão financiada."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.24.md",
+  "en": "Part of it is the nature of these drives. Chemical rockets are violent and obvious — they shake the ground and light the sky and deliver their result in minutes. Ion and Hall thrusters produce a force you cannot feel, run for years before the result becomes visible, and require patience from funders who face budget cycles measured in months. Solar sails require large, delicate structures that complicate launch packaging. Nuclear-thermal engines require a reactor, and a reactor in space has a regulatory complexity that adds years and uncertainty to any program before the first component is machined. None of these are fundamental barriers. They are, in the language of systems engineering, *not-yet-solved integration problems* — and integration problems get solved when there is enough pressure behind them.",
+  "cur": "Parte disso é a natureza desses motores. Foguetes químicos são violentos e óbvios — balançam o chão e iluminam o céu e entregam seu resultado em minutos. Propulsores iônicos e Hall produzem uma força que você não pode sentir, funcionam por anos antes do resultado se tornar visível, e exigem paciência de financiadores que enfrentam ciclos orçamentários medidos em meses. Velas solares exigem estruturas grandes e delicadas que complicam o empacotamento de lançamento. Motores nucleotérmicos exigem um reator, e um reator no espaço tem uma complexidade regulatória que adiciona anos e incerteza a qualquer programa antes do primeiro componente ser usinado. Nenhum desses são barreiras fundamentais. Eles são, na linguagem da engenharia de sistemas, *problemas de integração ainda não resolvidos* — e problemas de integração são resolvidos quando há pressão suficiente por trás deles."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.25.md",
+  "en": "The pressure is building. The [Tsiolkovsky rocket equation](/science/propulsion/tsiolkovsky) has not changed. A crewed Mars round-trip at chemical Isp is not impossible — it is just enormously expensive in propellant, and therefore in launch mass, and therefore in launch cost, and therefore in political will. As the cost per kilogram to orbit drops and the ambition of missions rises, the gap between what chemistry can do and what the mission demands grows wider. Every new target — the ice giants, an asteroid on a short timeline, Mars on a crewed flight that does not require pre-positioning years of propellant — presses against the ceiling a little harder.",
+  "cur": "A pressão está crescendo. A [equação do foguete de Tsiolkovsky](/science/propulsion/tsiolkovsky) não mudou. Uma viagem de ida e volta tripulada para Marte com Isp químico não é impossível — é apenas enormemente cara em propelente, e portanto em massa de lançamento, e portanto em custo de lançamento, e portanto em vontade política. Conforme o custo por quilograma em órbita cai e a ambição das missões sobe, a lacuna entre o que a química pode fazer e o que a missão exige fica mais ampla. Todo novo alvo — os gigantes gelados, um asteroide em um cronograma curto, Marte em um voo tripulado que não exige pré-posicionamento de anos de propelente — pressiona o teto um pouco mais forte."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.26.text",
+  "en": "Where the exits lead",
+  "cur": "Para onde as saídas levam"
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.27.md",
+  "en": "What is strange, surveying this history, is not that the alternatives haven't flown — it is that they have been ready, in principle, for so long. The specific impulse limits of nuclear-thermal propulsion were calculated before Sputnik. The physics of solar sailing were understood before the Second World War. The concept of ion propulsion appeared in an Esther Goddard memoir describing a conversation with Robert Goddard in 1906, four years before he flew anything. The ideas are old. The flying is new.",
+  "cur": "O que é estranho, ao examinar essa história, não é que as alternativas não tenham voado — é que elas estiveram prontas, em princípio, há tanto tempo. Os limites de impulso específico da propulsão nucleotérmica foram calculados antes do Sputnik. A física da navegação solar foram entendidas antes da Segunda Guerra Mundial. O conceito de propulsão iônica apareceu em uma memória de Esther Goddard descrevendo uma conversa com Robert Goddard em 1906, quatro anos antes dele fazer voar qualquer coisa. As ideias são antigas. O voo é novo."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.28.md",
+  "en": "What [Dawn](/missions?id=dawn) established is the practical benchmark: ion propulsion is not exotic. It is the correct choice for any mission that requires multiple destinations, large velocity changes, or flight times long enough for continuous thrust to accumulate. The missions that come after Psyche — robotic science probes to the ice giants, fast-transit cargo to a lunar Gateway, prospectors at the inner asteroid belt — are the natural clients. Hall thrusters at [Psyche's](/missions?id=psyche) scale will be routine within a decade because the economics already work.",
+  "cur": "O que [Dawn](/missions?id=dawn) estabeleceu é o parâmetro prático: propulsão iônica não é exótica. É a escolha correta para qualquer missão que exija múltiplos destinos, grandes mudanças de velocidade ou tempos de voo longo o suficiente para o empuxo contínuo se acumular. As missões que vêm depois de Psyche — sondas científicas robóticas para os gigantes gelados, carga de trânsito rápido para um Gateway lunar, prospectores no cinturão de asteroides interno — são os clientes naturais. Propulsores Hall na escala de [Psyche](/missions?id=psyche) serão de rotina dentro de uma década porque a economia já funciona."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.29.md",
+  "en": "Solar sailing is further from routine, but the trajectory is clear: each generation of sail is larger, the booms lighter, the control systems more sophisticated. The physics reward scale in a way no other propulsion mode does. A sail the size of a sports stadium, with a spacecraft bus the mass of a desk, accelerated by a laser from the inner solar system rather than by ambient sunlight — this is the architecture proposed for interstellar precursor missions, reaching speeds of hundreds of kilometres per second. The sail does not care about the rocket equation. It has no propellant to run out of.",
+  "cur": "A navegação solar está mais longe de ser rotina, mas a trajetória é clara: cada geração de vela é maior, os braços mais leves, os sistemas de controle mais sofisticados. A física recompensa a escala de uma forma que nenhum outro modo de propulsão faz. Uma vela do tamanho de um estádio de esportes, com um barramento de espaçonave da massa de uma mesa, acelerada por um laser do sistema solar interno em vez de pela luz solar ambiente — esta é a arquitetura proposta para missões de precursoras interestelares, atingindo velocidades de centenas de quilômetros por segundo. A vela não se importa com a equação do foguete. Ela não tem propelente para se esgotar."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.30.md",
+  "en": "Nuclear-thermal propulsion is the hardest call. DRACO's cancellation in 2025 closed the most concrete near-term path. But the technical case — 825 seconds of specific impulse at high thrust, the only combination of efficiency and power that opens a fast crewed Mars transit — has not weakened. The knowledge from NERVA was not lost; it was archived. What is missing is not the engineering. It is a program with enough longevity to navigate the regulatory and infrastructure work that the 1960s began but never finished. If a crewed Mars mission becomes a fixed political objective rather than a recurring aspiration, nuclear-thermal propulsion will almost certainly be part of how it is done. The engines work. They are waiting.",
+  "cur": "Propulsão nucleotérmica é a chamada mais difícil. O cancelamento de DRACO em 2025 fechou o caminho de curto prazo mais concreto. Mas o caso técnico — 825 segundos de impulso específico em alto empuxo, a única combinação de eficiência e poder que abre um trânsito rápido para Marte tripulado — não enfraqueceu. O conhecimento de NERVA não foi perdido; foi arquivado. O que está faltando não é a engenharia. É um programa com longevidade suficiente para navegar o trabalho regulatório e de infraestrutura que os anos 1960 começaram, mas nunca terminaram. Se uma missão tripulada para Marte se tornar um objetivo político fixo em vez de uma aspiração recorrente, propulsão nucleotérmica quase certamente será parte de como isso é feito. Os motores funcionam. Estão esperando."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.31.md",
+  "en": "The chemical rocket did extraordinary things. It carried twelve people to the surface of the Moon. It landed a car-sized rover on Mars at the end of seven minutes of automated terror. It put the James Webb Space Telescope in its L2 halo orbit with so little error that the fuel margin for station-keeping, originally budgeted for ten years, now projects to last twenty. For getting mass off Earth's surface against gravity — the hardest part of any space mission — it will remain the tool for the foreseeable future. The Tsiolkovsky equation punishes propellant mass in orbit less than it does on the ground, and no ion thruster will lift anything from a launch pad.",
+  "cur": "O foguete químico fez coisas extraordinárias. Levou doze pessoas para a superfície da Lua. Pousou um rover do tamanho de um carro em Marte ao final de sete minutos de terror automatizado. Colocou o Telescópio Espacial James Webb em sua órbita de halo L2 com tão pouco erro que a margem de combustível para manutenção de estação, originalmente orçada para dez anos, agora projeta durar vinte. Para levar massa da superfície da Terra contra a gravidade — a parte mais difícil de qualquer missão espacial — continuará sendo a ferramenta para o futuro previsível. A equação de Tsiolkovsky pune massa de propelente em órbita menos do que na terra, e nenhum propulsor iônico levantará qualquer coisa de uma plataforma de lançamento."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.32.md",
+  "en": "But the ceiling above low Earth orbit is chemistry's ceiling, and the solar system above it is chemistry's trap. The exits have been drawn on the map for a hundred years. Ion drives are already flying. Sails have already changed orbits. The nuclear option is on hold, not on the shelf. We have known how to leave the chemical era since before the chemical era's greatest triumphs. We are, slowly, learning to mean it.",
+  "cur": "Mas o teto acima da órbita terrestre baixa é o teto da química, e o sistema solar acima dela é a armadilha da química. As saídas foram desenhadas no mapa por cem anos. Motores iônicos já estão voando. Velas já mudaram órbitas. A opção nuclear está em pausa, não na prateleira. Sabemos como deixar a era química desde antes dos maiores triunfos da era química. Lentamente, estamos aprendendo a ter esperança nisto."
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.33.caption",
+  "en": "Line the exits up by efficiency and the pattern is plain: every road out of the chemical era trades brute thrust for the patience to keep pushing. All of them were sketched on paper before the first satellite ever flew.",
+  "cur": "Alinhe as saídas pela eficiência e o padrão é claro: cada estrada para fora da era química troca empuxo bruto pela paciência de continuar empurrando. Todas elas foram esboçadas em papel antes do primeiro satélite voar."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "dek",
+  "en": "For sixty years we built the most expensive machine in human history, flew it once, and dropped it in the ocean. The people who decided to stop doing that have quietly pulled off the biggest shift in spaceflight since Apollo.",
+  "cur": "Durante sessenta anos construímos a máquina mais cara da história humana, a utilizámos uma única vez e a largámos no oceano. As pessoas que decidiram parar com isso conseguiram, discretamente, a maior mudança na exploração espacial desde a Apollo."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.0.md",
+  "en": "On the night of 21 December 2015, a [Falcon 9](/fleet?id=falcon-9) first stage stood vertically on a concrete pad at Cape Canaveral, engines cold, surrounded by a cloud of residual vapour, intact. It had just come back from space. About eight minutes after lifting off to deliver a batch of satellites to orbit, the booster had flipped itself around, relit three of its nine Merlin engines, braked through the upper atmosphere, deployed four landing legs, and set itself down upright on the pad it had left. The whole manoeuvre took the kind of precision usually reserved for a Swiss watch. The crowd watching erupted, and the sound — a roar of people who had just watched something genuinely new — is still in the video.",
+  "cur": "Na noite de 21 de dezembro de 2015, um primeiro estágio do Falcon 9 estava em pé verticalmente numa plataforma de concreto em Cabo Canaveral, motores frios, envolvido por uma nuvem de vapor residual, intacto. Tinha acabado de voltar do espaço. Cerca de oito minutos depois de decolar para entregar um lote de satélites em órbita, o foguete impulsionador tinha-se girado, reacendido três dos seus nove motores Merlin, travado através da atmosfera superior, implantado quatro pernas de aterragem e colocado-se de pé na plataforma de onde tinha partido. A manobra inteira exigiu o tipo de precisão normalmente reservado para um relógio suíço. A multidão que observava eclodiu em aplausos e o som — um rugido de pessoas que tinham acabado de ver algo genuinamente novo — ainda está no vídeo."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.1.md",
+  "en": "What happened that night was a demonstration, but what it demonstrated was not primarily a technical trick. It was an economic argument. Every rocket ever flown before it — the [Saturn V](/fleet?id=saturn-v) that sent twelve people to the Moon, the Soviet N1 that never made it to orbit, the workhorse Soyuz and Atlas and Proton and Long March families that between them account for most of the launches in this atlas — was built to be used once. You flew it. It fell apart in the atmosphere or sank in the sea. You built another one. The industry had been structured around this fact for sixty years: rockets were ammunition, not aircraft. The moment that Falcon 9 landed, that assumption was on the table for the first time.",
+  "cur": "O que aconteceu essa noite foi uma demonstração, mas o que demonstrava não era principalmente um truque técnico. Era um argumento económico. Cada foguete que já tinha voado antes — o [Saturn V](/fleet?id=saturn-v) que levou doze pessoas à Lua, o N1 soviético que nunca chegou à órbita, as famílias de trabalho Soyuz, Atlas, Proton e Long March que, no conjunto, respondem pela maioria dos lançamentos deste atlas — foi construído para ser utilizado uma vez. Voava. Desintegrava-se na atmosfera ou afundava-se no mar. Construíamos outro. A indústria tinha sido estruturada à volta deste facto durante sessenta anos: foguetes eram munição, não aviões. No momento em que o Falcon 9 aterrou, esse pressuposto foi colocado em causa pela primeira vez."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.2.md",
+  "en": "Why it had taken sixty years to get there is a more interesting question than it looks.",
+  "cur": "A razão pela qual tinha levado sessenta anos para chegar a esse ponto é uma questão mais interessante do que parece."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.3.text",
+  "en": "The accountant's problem",
+  "cur": "O problema do contabilista"
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.4.md",
+  "en": "The expendable rocket is wasteful in a way that is almost comical when you describe it plainly. A [Saturn V](/fleet?id=saturn-v) cost something in the range of $185 million in late-1960s dollars — roughly $1.5 billion at today's prices — and each one flew for about twelve minutes before being discarded. The five F-1 engines in its first stage, each one a staggering piece of machinery that burned roughly 2,600 kilograms of propellant per second, ended their lives rusting on the floor of the Atlantic. A private expedition funded by Jeff Bezos recovered two sets of Saturn V F-1 engines from the seafloor in 2013, nearly half a century after they were dropped there, and found them largely intact. They went to museums, not back to flight. Throwing them away the first time was the plan.",
+  "cur": "O foguete descartável é desperdiçador de uma forma que é quase cômica quando a descreves abertamente. Um [Saturn V](/fleet?id=saturn-v) custava algo na ordem dos $185 milhões em dólares do final dos anos 1960 — aproximadamente $1,5 mil milhões aos preços de hoje — e cada um voava durante apenas cerca de doze minutos antes de ser descartado. Os cinco motores F-1 no seu primeiro estágio, cada um uma peça extraordinária de engenharia que queimava aproximadamente 2.600 quilogramas de propelente por segundo, terminaram as suas vidas enferrujadas no fundo do Oceano Atlântico. Uma expedição privada financiada por Jeff Bezos recuperou dois conjuntos de motores F-1 do Saturn V do fundo do mar em 2013, quase meio século depois de terem sido largados lá, e encontrou-os em grande parte intactos. Foram para museus, não de volta ao voo. A intenção desde o início era largá-los."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.5.md",
+  "en": "The logic behind this plan was not stupidity. It was the logic of the 1960s Space Race: get there first, at whatever cost. Building a reusable rocket is harder than building an expendable one. Reusability adds weight — heat shields, landing legs, propellant reserved for the return burn — and weight is the enemy, because every kilogram you add to the structure is a kilogram you cannot deliver to orbit. Early designers ran the numbers and concluded that the penalty was too steep. Better, they decided, to build cheap and throw away. That calculation was right for its moment, and it locked in a set of assumptions that lasted two generations.",
+  "cur": "A lógica por trás deste plano não era estupidez. Era a lógica da Corrida Espacial dos anos 1960: chegar primeiro, a qualquer custo. Construir um foguete reutilizável é mais difícil do que construir um descartável. A reutilizabilidade acrescenta peso — escudos térmicos, pernas de aterragem, propelente reservado para a queimada de retorno — e o peso é o inimigo, porque cada quilograma que adicionas à estrutura é um quilograma que não podes entregar em órbita. Os designers iniciais fizeram as contas e concluíram que a penalidade era demasiado elevada. Era melhor, decidiram, construir barato e descartar. Esse cálculo era correto para o seu momento e fixou um conjunto de pressupostos que duraria duas gerações."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.6.md",
+  "en": "The [Space Shuttle](/fleet?id=space-shuttle-stack) was supposed to break the logic. It was the first genuine attempt by the United States — or anyone — to build an operationally reusable launch system, and the argument for it was economic: by flying the orbiter repeatedly, the program would drive the cost of reaching orbit down toward $600 per kilogram, low enough to make spaceflight almost routine. The shuttle flew 135 missions between 1981 and 2011. It failed the economic test completely. The real cost per flight averaged around $1.5 billion when total program expenses were spread across all missions — more expensive per kilogram to low Earth orbit than the Saturn V it replaced. Refurbishing the orbiter's 24,000 heat-shield tiles after each flight was not a quick job; it ate thousands of person-hours. Reuse turned out to be extraordinarily expensive when every subsystem had to be torn down and rebuilt to the standards of an aircraft that might carry crew. The shuttle proved that reusability *could* work mechanically — the orbiter flew dozens of times — but it also proved that reusability by itself does not reduce costs. The economics only work if you can turn the vehicle around *fast* and *cheaply*.",
+  "cur": "O Space Shuttle era suposto quebrar essa lógica. Era a primeira tentativa genuína dos Estados Unidos — ou de qualquer outro país — de construir um sistema de lançamento reutilizável operacionalmente, e o argumento a favor era económico: voando o orbitador repetidamente, o programa reduziria o custo de atingir órbita para cerca de $600 por quilograma, baixo o suficiente para tornar a exploração espacial quase rotineira. O shuttle voou 135 missões entre 1981 e 2011. Falhou completamente no teste económico. O custo real por voo tinha uma média de cerca de $1,5 mil milhões quando as despesas totais do programa foram distribuídas por todas as missões — mais caro por quilograma para órbita terrestre baixa do que o Saturn V que substituiu. A restauração das 24.000 telhas de escudo térmico do orbitador após cada voo não era um trabalho rápido; consumia milhares de horas de pessoa. A reutilização revelou-se extraordinariamente cara quando cada subsistema tinha de ser desmontado e reconstruído aos padrões de um avião que poderia levar tripulação. O shuttle provou que a reutilização *podia* funcionar mecanicamente — o orbitador voou dezenas de vezes — mas também provou que a reutilização por si só não reduz custos. A economia só funciona se conseguires girar o veículo *rapidamente* e *economicamente*."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.7.text",
+  "en": "The simplest possible trick",
+  "cur": "O truque mais simples possível"
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.8.md",
+  "en": "SpaceX approached the problem differently. Rather than trying to reuse the whole vehicle — the choice that made the Shuttle so complex — the company focused on the most expensive single component: the first-stage booster. In a typical rocket, the first stage does the heaviest lifting, burning the most propellant, carrying the most engine mass, and costing the most to manufacture. It is also the component that, on an expendable rocket, you lose every time. Save the first stage, and you have recovered the majority of the vehicle's value.",
+  "cur": "A SpaceX aproximou-se do problema de forma diferente. Em vez de tentar reutilizar todo o veículo — a escolha que tornou o Shuttle tão complexo — a empresa concentrou-se no componente mais caro único: o foguete impulsionador do primeiro estágio. Num foguete típico, o primeiro estágio faz o trabalho mais pesado, queimando a maior quantidade de propelente, transportando a maior massa de motor e custando mais a fabricar. É também o componente que, num foguete descartável, perdes sempre. Salva o primeiro estágio e tens recuperado a maioria do valor do veículo."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.9.md",
+  "en": "The technical requirement for saving it is brutal: the stage has to survive reentry through an atmosphere it spent the first few minutes punching through at Mach 7, reverse direction, slow from hypersonic to landing speed, and set down vertically on a target the size of a football field — either back at the launch site or on a drone ship hundreds of kilometres downrange in the Atlantic or Pacific. To accomplish all of this, the booster has to retain enough propellant for a series of precisely timed engine relights, which means it arrives in orbit with less fuel for the main job. That weight penalty is real: a Falcon 9 flying with a new booster delivers about 22,800 kilograms to low Earth orbit; a flight that recovers the booster delivers less. This is the fundamental trade at the heart of reusable launch, and SpaceX accepted it because the economics work regardless: the booster that lands can fly again, and again, and again.",
+  "cur": "O requisito técnico para salvá-lo é brutal: o estágio tem de sobreviver à reentrada através de uma atmosfera que passou os primeiros minutos a atravessar a Mach 7, reverter a direção, abrandar de hipersónico para velocidade de aterragem e colocar-se verticalmente numa alvo do tamanho de um campo de futebol — quer de volta ao local de lançamento quer numa nave de drone centenas de quilómetros a jusante no Atlântico ou Pacífico. Para realizar tudo isto, o foguete impulsionador tem de reter propelente suficiente para uma série de reacensões de motor cronometradas com precisão, o que significa que chega em órbita com menos combustível para o trabalho principal. Essa penalidade de peso é real: um Falcon 9 que voa com um impulsionador novo entrega cerca de 22.800 quilogramas em órbita terrestre baixa; um voo que recupera o impulsionador entrega menos. Este é o compromisso fundamental no coração do lançamento reutilizável e a SpaceX o aceitou porque a economia funciona independentemente: o impulsionador que aterra pode voar novamente, e novamente, e novamente."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.10.md",
+  "en": "After the December 2015 landing came a second, and a third, and then the reflight: in March 2017, SpaceX launched a Falcon 9 on a booster that had already flown, the first time in history that an orbital-class rocket stage flew to space twice. By mid-2026, the most-flown Falcon 9 first stage has completed 33 missions on the same hardware — more than most expendable rockets fly in total across an entire fleet. The marginal cost of a reused launch, with propellant and refurbishment, sits around $15 to $20 million against a list price of $74 million. The difference, roughly, is the cost of the booster itself, recovered by recovery.",
+  "cur": "Depois do pouso de dezembro de 2015 vieram um segundo, e um terceiro, e depois o repouso: em março de 2017, a SpaceX lançou um Falcon 9 em um impulsionador que já havia voado, a primeira vez na história que um estágio de foguete de classe orbital voou para o espaço duas vezes. Em meados de 2026, o primeiro estágio Falcon 9 mais voador completou 33 missões no mesmo hardware — mais do que a maioria dos foguetes descartáveis voa no total em toda uma frota. O custo marginal de um lançamento reutilizável, com propelente e reacondicionamento, fica em torno de US$ 15 a US$ 20 milhões contra um preço de tabela de US$ 74 milhões. A diferença, grosso modo, é o custo do próprio impulsionador, recuperado pela recuperação."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.11.caption",
+  "en": "The trick is almost insultingly simple to state and brutal to fly: hold back enough propellant, flip the booster around, and burn three times on the way down — boostback, entry, landing — until it settles onto its legs. The same stage is then inspected, refuelled, and flown again.",
+  "cur": "O truque é quase insultuosamente simples de afirmar e brutal de voar: retém propelente suficiente, gira o foguete impulsionador, e queima três vezes a caminho — reimpulsionamento, entrada, aterragem — até se assentar nas suas pernas. O mesmo estágio é depois inspecionado, reabastecido e voado novamente."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.12.text",
+  "en": "Catching it with your hands",
+  "cur": "Apanhá-lo com as tuas mãos"
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.13.md",
+  "en": "The [Falcon Heavy](/fleet?id=falcon-heavy) extended the same logic sideways: three Falcon 9 cores strapped together, two of them peeling off after the first two minutes and flying back to land simultaneously, side by side, at Cape Canaveral. The videos of the twin landings — two pillars of fire descending in mirror symmetry, touching down at the exact same instant — look like something from a film. They are not. They are the economics made visible.",
+  "cur": "O Falcon Heavy estendeu a mesma lógica lateralmente: três núcleos Falcon 9 ligados juntos, dois deles descolando-se após os primeiros dois minutos e voando de volta para aterrar simultaneamente, lado a lado, em Cabo Canaveral. Os vídeos dos aterragens gémeas — dois pilares de fogo a descer em simetria especular, tocando o solo exactamente no mesmo instante — parecem algo de um filme. Não são. São a economia tornada visível."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.14.md",
+  "en": "[Starship](/fleet?id=starship) takes the argument to its logical end. Where Falcon 9 recovers its first stage and disposes of its upper stage, Starship is designed to recover *both*. The Super Heavy booster — 71 metres tall, powered by 33 Raptor engines burning liquid methane and liquid oxygen, producing roughly twice the thrust of a Saturn V — returns to the launch site and is caught in mid-air by a pair of mechanical arms on the launch tower itself. The system is called Mechazilla by the engineers who built it. SpaceX first caught the booster this way on 13 October 2024, Flight 5 of the Starship test programme, and has repeated the manoeuvre on subsequent flights. The idea that you would not land your rocket but simply *catch it as it fell* would have sounded like fiction a decade ago. It is a Monday-morning procedure now.",
+  "cur": "O Starship leva o argumento ao seu fim lógico. Enquanto o Falcon 9 recupera o seu primeiro estágio e descarta o seu estágio superior, o Starship é desenhado para recuperar *ambos*. O impulsionador Super Heavy — 71 metros de altura, alimentado por 33 motores Raptor queimando metano líquido e oxigénio líquido, produzindo aproximadamente o dobro do impulso de um Saturn V — regressa ao local de lançamento e é apanhado no ar por um par de braços mecânicos na torre de lançamento em si. O sistema é chamado Mechazilla pelos engenheiros que o construíram. A SpaceX apanhou o impulsionador desta forma pela primeira vez em 13 de outubro de 2024, Voo 5 do programa de testes do Starship, e repetiu a manobra em voos subsequentes. A ideia de que não ia aterrar o teu foguete mas simplesmente *apanhá-lo enquanto cai* teria parecido ficção uma década atrás. É um procedimento de segunda-feira de manhã agora."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.15.md",
+  "en": "The Starship upper stage — the largest spacecraft ever built, tall as a fifteen-storey building — is intended to follow the same path, returning and being caught above the pad. Once both halves are on the ground, the system can theoretically be refuelled and relaunched within hours. No expendable rocket even attempts this comparison. An expendable rocket is a logistics chain: manufacture, transport, integrate, launch, repeat from the start. A fully reusable system is an *aircraft* with a very long route. The economics of the two are not in the same galaxy.",
+  "cur": "O estágio superior do Starship — a nave espacial maior já construída, tão alto quanto um edifício de quinze andares — é destinado a seguir o mesmo caminho, regressando e sendo apanhado acima da plataforma. Uma vez que ambas as metades estão no chão, o sistema pode teoricamente ser reabastecido e relançado em horas. Nenhum foguete descartável nem tenta esta comparação. Um foguete descartável é uma cadeia logística: fabrica, transporta, integra, lança, repete desde o início. Um sistema totalmente reutilizável é um *avião* com uma rota muito longa. A economia dos dois não está na mesma galáxia."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.16.caption",
+  "en": "Then a stranger idea: don’t give the booster legs at all. Let the launch tower catch it — two arms closing on a seventy-metre stage as it hovers, so the mass that would have been landing gear becomes payload instead. The first clean catch came in October 2024.",
+  "cur": "Depois uma ideia mais estranha: não dá ao foguete impulsionador pernas. Deixa a torre de lançamento apanhá-lo — dois braços a fecharem-se num estágio de setenta metros enquanto paira, para que a massa que teria sido equipamento de aterragem se torna carga útil em vez disso. A primeira apanha limpa veio em outubro de 2024."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.18.md",
+  "en": "Blue Origin's [New Glenn](/fleet?id=new-glenn) landed its first stage at sea for the first time on 13 November 2025 — ten years after the December 2015 Falcon 9 landing, which gives a sense of how fast the industry moves when SpaceX is setting the pace. New Glenn is a large rocket by any previous standard, carrying up to 45,000 kilograms to low Earth orbit in expendable configuration; its first stage returns to a drone ship in the Atlantic on every mission. The first reuse of a New Glenn stage followed in April 2026. Blue Origin's approach mirrors SpaceX's in architecture: save the first stage, fly it again, cut the marginal cost with each reuse.",
+  "cur": "O [New Glenn](/fleet?id=new-glenn) da Blue Origin aterrou o seu primeiro estágio no mar pela primeira vez em 13 de novembro de 2025 — dez anos após o aterragem do Falcon 9 de dezembro de 2015, o que dá uma sensação de quão rápido a indústria se move quando a SpaceX está a estabelecer o ritmo. O New Glenn é um foguete grande por qualquer padrão anterior, carregando até 45.000 quilogramas para órbita terrestre baixa em configuração descartável; o seu primeiro estágio regressa a uma nave de drone no Atlântico em cada missão. O primeiro reuso de um estágio New Glenn seguiu-se em abril de 2026. A abordagem da Blue Origin espelha a da SpaceX em arquitetura: salva o primeiro estágio, voa-o novamente, reduz o custo marginal com cada reutilização."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.19.md",
+  "en": "What the emergence of [New Glenn](/fleet?id=new-glenn) adds to the picture is competitive pressure. For most of the decade between 2015 and 2025, SpaceX was essentially alone in the reusable-launch market. A market with one supplier is not a market; it's a monopoly. The entry of a second credible reusable launcher changes the pricing dynamics for everyone who buys a ride to orbit. Satellite operators, space agencies, and commercial customers who once had no choice but to take whatever SpaceX offered now have alternatives — and more are coming.",
+  "cur": "O que o surgimento do [New Glenn](/fleet?id=new-glenn) adiciona ao quadro é pressão competitiva. Durante a maior parte da década entre 2015 e 2025, a SpaceX estava essencialmente sozinha no mercado de lançamento reutilizável. Um mercado com um fornecedor não é um mercado; é um monopólio. A entrada de um segundo lançador reutilizável credível altera a dinâmica de preços para todos que compram uma viagem para órbita. Operadores de satélites, agências espaciais e clientes comerciais que uma vez não tinham escolha senão aceitarem o que a SpaceX oferecia agora têm alternativas — e mais estão a chegar."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.20.md",
+  "en": "China has moved with unusual seriousness. LandSpace's Zhuque-3, a methane-fuelled rocket broadly analogous to Falcon 9, attempted its first recovery in December 2025; the upper stage reached orbit but the booster crashed on its landing approach. A second recovery attempt is planned for mid-2026. iSpace has its Hyperbola-3 in hardware qualification, with a dedicated drone ship already launched, and is targeting its first flight from Wenchang. Several other Chinese commercial companies are in active development. The Chinese government has made reusable access to orbit an explicit national priority. That the country that built the Great Wall has decided to stop throwing its rockets away is a data point worth sitting with.",
+  "cur": "A China moveu-se com seriedade incomum. O Zhuque-3 da LandSpace, um foguete alimentado a metano aproximadamente análogo ao Falcon 9, tentou a sua primeira recuperação em dezembro de 2025; o estágio superior atingiu órbita mas o foguete impulsionador despenhou-se na sua abordagem de aterragem. Uma segunda tentativa de recuperação está planeada para meados de 2026. O Hyperbola-3 da iSpace está em qualificação de hardware, com uma nave de drone dedicada já lançada, e está a visar o seu primeiro voo de Wenchang. Várias outras empresas comerciais chinesas estão em desenvolvimento ativo. O governo chinês fez do acesso reutilizável a órbita uma prioridade nacional explícita. Que o país que construiu a Grande Muralha decidiu parar de largar os seus foguetes é um ponto de dado que vale a pena considerar."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.21.caption",
+  "en": "A Falcon 9 first stage stands back on its legs after delivering a payload to orbit — the moment a sixty-year assumption quietly collapsed. Once one company proved a booster could be flown again, everyone else had to learn to keep theirs too.",
+  "cur": "Um primeiro estágio Falcon 9 fica em pé novamente sobre as suas pernas após entregar uma carga útil em órbita — o momento em que um pressuposto de sessenta anos desabou discretamente. Uma vez que uma empresa provou que um foguete impulsionador podia ser voado novamente, todos os outros tinham de aprender a manter os seus também."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.22.text",
+  "en": "What reuse actually changes",
+  "cur": "O que a reutilização muda realmente"
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.23.md",
+  "en": "The surface story is cost reduction, and the cost reduction is real: launch prices that once sat at $200 million or more for a large expendable have fallen toward $60–$80 million for a reusable medium-lift mission, and the marginal economics of a well-worn Falcon 9 booster are lower still. But the deeper change is in launch *cadence*. SpaceX launched 132 Falcon 9 missions in 2024 — almost three per week, sustained across a full calendar year, with the same pool of boosters cycling through the pad and back again. No expendable architecture could approach that tempo; you would need an industrial supply chain operating at wartime pace to match it. Reusability, it turns out, is not just about cost. It is about rate. And rate is about what becomes possible.",
+  "cur": "A história da superfície é redução de custos, e a redução de custos é real: os preços de lançamento que antes estavam em $200 milhões ou mais para um foguete descartável grande caíram para $60-$80 milhões para uma missão de levantamento médio reutilizável, e a economia marginal de um foguete impulsionador Falcon 9 bem-gasto é ainda menor. Mas a mudança mais profunda é na *cadência* de lançamento. A SpaceX lançou 132 missões Falcon 9 em 2024 — quase três por semana, sustentadas ao longo de um ano inteiro, com o mesmo conjunto de foguetes impulsionadores ciclando pela plataforma e de volta novamente. Nenhuma arquitetura descartável poderia aproximar-se desse tempo; precisarias de uma cadeia de abastecimento industrial operando a um ritmo de tempo de guerra para igualar. A reutilização, como se revelou, não é apenas sobre custo. É sobre taxa. E a taxa é sobre o que se torna possível."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.24.md",
+  "en": "What becomes possible is Starlink: a constellation that required more than 6,000 launches to populate, impossible to build under any expendable pricing structure that has ever existed. What becomes possible are low-cost commercial science missions that previously could not afford the ride. What becomes possible, eventually, is crewed transport to Mars at a frequency that makes it a programme rather than a stunt — because the [delta-v budget](/science/propulsion/dv-budget) of an Earth-to-Mars mission demands a vehicle that can be refuelled on orbit and reused, or the mass fractions simply don't close. Reusability is not just an economic preference. For the ambitions that [Starship](/fleet?id=starship) is being designed to support, it is a physical requirement.",
+  "cur": "O que se torna possível é Starlink: uma constelação que exigiu mais de 6.000 lançamentos para preencher, impossível de construir sob qualquer estrutura de preços descartável que alguma vez existiu. O que se torna possível são missões de ciência comercial de baixo custo que anteriormente não podiam pagar pela viagem. O que se torna possível, eventualmente, é transporte tripulado para Marte numa frequência que o torna um programa em vez de um espetáculo — porque o [orçamento delta-v](/science/propulsion/dv-budget) de uma missão Terra-Marte exige um veículo que possa ser reabastecido em órbita e reutilizado, ou as frações de massa simplesmente não se fecham. A reutilização não é apenas uma preferência económica. Para as ambições que o [Starship](/fleet?id=starship) é desenhado para suportar, é um requisito físico."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.25.md",
+  "en": "The weight penalty that made early engineers dismiss reuse is still real; it has not been engineered away. A fully expendable Starship would deliver more to orbit than a reusable one. But the question is no longer whether you can afford the mass penalty. It's whether you can afford to throw the whole thing away — whether you can afford, as the rocket industry did for six decades, to treat the most complex machine ever built as a single-use item.",
+  "cur": "A penalidade de peso que fez os engenheiros iniciais rejeitar a reutilização ainda é real; não foi engenharia para a afastar. Um Starship totalmente descartável entregaria mais em órbita do que um reutilizável. Mas a questão já não é se podes pagar a penalidade de massa. É se podes pagar por largar o tudo — se podes pagar, como a indústria de foguetes fez durante seis décadas, por tratar a máquina mais complexa alguma vez construída como um artigo de uso único."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.26.caption",
+  "en": "The number that gates everything is the price of a kilogram to orbit. The Shuttle promised to lower it and never did; reusable Falcon 9 cut it roughly twenty-fold. Drop it far enough and missions that were once unthinkable become merely scheduled.",
+  "cur": "O número que controla tudo é o preço de um quilograma em órbita. O Shuttle prometeu baixá-lo e nunca o fez; o Falcon 9 reutilizável cortou-o aproximadamente vinte vezes. Desce-o longe o suficiente e as missões que eram uma vez impensáveis tornam-se meramente agendadas."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.27.text",
+  "en": "The question that landed",
+  "cur": "A questão que aterrou"
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.28.md",
+  "en": "The rocket industry's original argument against reuse was engineering: the vehicle is too complex to refurbish cheaply, too fragile to fly again without dismantling, too weight-constrained to carry the hardware needed to land. The Space Shuttle's experience seemed to confirm all three. Those concerns were legitimate, and for thirty years they held.",
+  "cur": "O argumento original da indústria de foguetes contra a reutilização era engenharia: o veículo é demasiado complexo para restaurar barato, demasiado frágil para voar novamente sem desmontar, demasiado constrangido em peso para transportar o hardware necessário para aterrar. A experiência do Space Shuttle parecia confirmar as três coisas. Essas preocupações eram legítimas e durante trinta anos mantiveram-se."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.29.md",
+  "en": "What changed was not the physics. What changed was the manufacturing base, the propellant choice — methane burns cleaner than kerosene, leaves less residue, makes refurbishment faster — and, more than anything, the willingness to design for reuse from the start rather than retrofitting it onto a vehicle optimised for expendability. The Shuttle was an expendable rocket that had been told to come home. The Falcon 9 booster was designed from the beginning around the question of how to land. That difference in design intent accounts for most of the difference in outcome.",
+  "cur": "O que mudou não foi a física. O que mudou foi a base de fabrico, a escolha do propelente — metano queima mais limpo do que querosene, deixa menos resíduo, torna a restauração mais rápida — e, mais do que nada, a disposição de desenhar para reutilização desde o início em vez de adaptar-se a um veículo otimizado para descartabilidade. O Shuttle era um foguete descartável que tinha sido dito para regressar a casa. O foguete impulsionador Falcon 9 foi desenhado desde o início à volta da questão de como aterrar. Essa diferença na intenção de design explica a maior parte da diferença no resultado."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.30.md",
+  "en": "In the decade since that December night at Cape Canaveral, landing a booster has gone from impossible to ordinary. A Falcon 9 first stage that fails to return to its drone ship is now the unusual event, worth noting in the anomaly log. Super Heavy has been caught from the air. A second company has landed a heavy-lift stage at sea and flown it again. China is running to catch up. The assumption that has governed the entire launch industry since Sputnik — that a rocket is an expendable — has been broken, and the breaking of it is already reshaping which missions are possible, which businesses are viable, and what it will cost the next generation to go further.",
+  "cur": "Na década desde essa noite de dezembro em Cabo Canaveral, aterrar um foguete impulsionador tornou-se de impossível para ordinário. Um primeiro estágio Falcon 9 que falha em regressar à sua nave de drone é agora o evento incomum, digno de nota no registo de anomalia. O Super Heavy foi apanhado do ar. Uma segunda empresa aterrou um estágio de levantamento pesado no mar e o voou novamente. A China está a correr para alcançar. O pressuposto que governou toda a indústria de lançamento desde o Sputnik — que um foguete é um descartável — foi quebrado, e o quebrar disso já está a remodelar quais as missões que são possíveis, quais os negócios que são viáveis e quanto vai custar à próxima geração ir mais longe."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.31.md",
+  "en": "None of the [rocket stages](/science/propulsion/rocket-stages) that ever took humans or spacecraft to orbit in the first sixty years of spaceflight survived. They are on the ocean floor, or in the upper atmosphere as dispersed molecules, or in museums where engineers who built them can walk past and recognise things they once touched. The ones flying now come back. That one change — quiet, technical, brutally difficult to make work — is the thing that separates the first era of spaceflight from whatever comes next.",
+  "cur": "Nenhum dos [estágios de foguete](/science/propulsion/rocket-stages) que alguma vez levou humanos ou naves espaciais para órbita nos primeiros sessenta anos da exploração espacial sobreviveu. Estão no fundo do oceano, ou na atmosfera superior como moléculas dispersas, ou em museus onde engenheiros que as construíram podem caminhar e reconhecer coisas que uma vez tocaram. Os que voam agora regressam. Essa única mudança — discreta, técnica, brutalmente difícil de fazer funcionar — é a coisa que separa a primeira era da exploração espacial do que quer que venha a seguir."
+ },
+ {
+  "rel": "essays/reusable-launchers.json",
+  "at": "body.32.caption",
+  "en": "Starship is the larger wager: that the whole vehicle — booster and ship alike — comes home and flies again within days. If it holds, the cost of reaching orbit stops being the thing that decides what humanity is allowed to attempt.",
+  "cur": "O Starship é a aposta maior: que todo o veículo — foguete impulsionador e nave juntos — regressa e voa novamente em dias. Se aguenta, o custo de atingir órbita deixa de ser a coisa que decide o que a humanidade é permitida tentar."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "dek",
+  "en": "The cruise is easy. You spend months doing almost nothing — coasting on physics, nudging a trajectory, waiting. Arriving is where missions die. Landing is the hardest thing in spaceflight, and we have never solved it the same way twice.",
+  "cur": "A jornada é fácil. Você passa meses fazendo quase nada — deslizando pela física, ajustando uma trajetória, esperando. A chegada é onde as missões morrem. O pouso é a coisa mais difícil do voo espacial, e nunca o resolvemos da mesma maneira duas vezes."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.0.md",
+  "en": "Consider what the number means. Seven minutes: from the first bite of atmosphere at roughly 20,000 kilometres per hour to wheels-down, stationary, on another planet. Seven minutes in which a spacecraft that cost a billion dollars and took a decade to build must autonomously execute a sequence of events — heat shield deployment, parachute inflation, rocket ignition, cable deployment, touchdown — each one timed to the second, each one dependent on every step before it going exactly right. Miss any single step, or hit it five seconds too late, and the whole thing becomes a crater.",
+  "cur": "Considere o que o número significa. Sete minutos: desde o primeiro toque na atmosfera em velocidade aproximada de 20.000 quilómetros por hora até o repouso das rodas, parado, em outro planeta. Sete minutos nos quais uma espaçonave que custou um bilião de dólares e levou uma década para ser construída deve executar autonomamente uma sequência de eventos — implantação do escudo térmico, inflação do paraquedas, ignição do foguete, implantação dos cabos, toque — cada um cronometrado ao segundo, cada um dependente de todos os passos anteriores correrem exatamente certo. Falhe em um único passo, ou o acerte cinco segundos atrasado, e tudo se torna uma cratera."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.1.md",
+  "en": "And here is the detail that makes it genuinely terrifying: by the time Earth hears that the craft has touched the top of the Martian atmosphere, it has been on the ground — or part of the ground — for more than eleven minutes. The speed of light is not slow, but Mars is far enough that the round-trip lag runs anywhere from six to forty-four minutes depending on where the two planets are in their orbits. No one lands a Mars rover. No one on Earth can. The craft lands itself, in the dark, on the other side of the sun, and the people who built it can only sit in a room and wait to find out if it worked.",
+  "cur": "E aqui está o detalhe que torna genuinamente aterrorizante: no momento em que a Terra ouve que a espaçonave tocou o topo da atmosfera marciana, ela já está no solo — ou faz parte do solo — há mais de onze minutos. A velocidade da luz não é lenta, mas Marte fica longe o suficiente para que o atraso de ida e volta seja qualquer coisa entre seis e quarenta e quatro minutos, dependendo de onde os dois planetas estão em suas órbitas. Ninguém pousa um rover em Marte. Ninguém na Terra consegue. A espaçonave pousa a si mesma, na escuridão, no outro lado do sol, e as pessoas que a construíram só podem ficar em uma sala esperando descobrir se funcionou."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.2.md",
+  "en": "This is not a problem that gets easier with experience. Every world presents a different physics, a different atmosphere, a different set of constraints — and the solutions that worked on one body are useless, or dangerous, on another. The history of [entry, descent, and landing](/science/mission-phases/edl) is not a single story of improving technique. It is a collection of entirely different stories, each one a bespoke answer to the same brutal question: how do you slow down fast enough, without being crushed, in time, before you hit the ground?",
+  "cur": "Este não é um problema que fica mais fácil com a experiência. Cada mundo apresenta uma física diferente, uma atmosfera diferente, um conjunto diferente de restrições — e as soluções que funcionaram em um corpo são inúteis, ou perigosas, em outro. O histórico de [entrada, descida e pouso](/science/mission-phases/edl) não é uma história única de aprimoramento técnico. É uma coleção de histórias completamente diferentes, cada uma uma resposta sob encomenda para a mesma pergunta brutal: como você desacelera rápido o suficiente, sem ser esmagado, a tempo, antes de bater no solo?"
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.3.text",
+  "en": "The atmosphere problem",
+  "cur": "O problema da atmosfera"
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.4.md",
+  "en": "Start with the easy case, which is not the Moon. The Moon has no atmosphere at all — which sounds like a gift, until you realize what an atmosphere is actually for. It is free deceleration. A spacecraft hitting the top of Earth's atmosphere at orbital velocity arrives with an enormous kinetic energy budget, and the air slowly burns it off: the heat shield glows, drag builds up, and a craft that was moving at kilometres per second bleeds off enough speed, over enough minutes, that a parachute can catch it. Take away the atmosphere and you take away all of that. On the Moon, you arrive fast and you have only rockets to slow you, so you must carry every kilogram of the propellant you need to kill that speed from the moment you leave Earth. The Apollo Lunar Module had a dedicated descent engine that burned for twelve minutes to bring two men down from orbit. Every kilogram of lander had to be earned in fuel on the launch pad. There is nothing free about landing on an airless world.",
+  "cur": "Comece com o caso fácil, que não é a Lua. A Lua não tem atmosfera alguma — o que parece um presente, até você perceber para que uma atmosfera é realmente útil. É desaceleração gratuita. Uma espaçonave atingindo o topo da atmosfera terrestre em velocidade orbital chega com um enorme orçamento de energia cinética, e o ar queima-o lentamente: o escudo térmico brilha, o arrasto se acumula, e uma nave que estava se movimentando em quilómetros por segundo perde velocidade suficiente, durante minutos suficientes, para que um paraquedas a capture. Remova a atmosfera e você remove tudo isso. Na Lua, você chega rápido e tem apenas foguetes para o desacelerar, então você deve carregar cada quilograma do combustível que precisa matar essa velocidade desde o momento em que deixa a Terra. O Apollo Lunar Module tinha um motor de descida dedicado que queimou durante doze minutos para trazer dois homens da órbita. Cada quilograma do módulo de pouso tinha que ser conquistado com combustível na plataforma de lançamento. Não há nada gratuito no pouso em um mundo sem ar."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.5.md",
+  "en": "Mars is the cruel middle case, and it is the one that has killed the most missions. The Martian atmosphere exists — it is real carbon dioxide, roughly a hundred kilometres deep — but it is about one percent as dense as Earth's. Thick enough to matter, thin enough to be almost useless. A parachute that would stop a probe cold in Earth's air barely makes a dent in Mars; you need it, but you cannot rely on it. Every Mars lander to date has used an aeroshell — a blunt heat shield that creates drag while absorbing the thermal fury of entry — plus a supersonic parachute to pull the speed down further, and then something else on top of that, because the parachute alone never gets you all the way to safe.",
+  "cur": "Marte é o caso cruel da meio termo, e é o que matou mais missões. A atmosfera marciana existe — é dióxido de carbono real, com aproximadamente cem quilómetros de profundidade — mas é cerca de um por cento tão densa quanto a da Terra. Espessa o suficiente para importar, fina o suficiente para ser quase inútil. Um paraquedas que deteria uma sonda na ar terrestre mal faz uma marca em Marte; você precisa dele, mas não pode contar com ele. Cada módulo de pouso marciano até agora usou uma ogiva — um escudo térmico rombo que cria arrasto enquanto absorve a fúria térmica da entrada — mais um paraquedas supersónico para reduzir ainda mais a velocidade, e depois algo mais em cima disso, porque o paraquedas sozinho nunca o leva todo o caminho para o seguro."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.6.md",
+  "en": "That \"something else\" is the design problem. It is what makes every Mars landing different, and it is what every engineering team has had to solve from scratch. [Viking 1](/missions?id=viking1) solved it in 1976 the obvious way: retrorockets, fired during the final descent, slowing the lander to a gentle touchdown on Chryse Planitia — the first spacecraft ever to work on the Martian surface, and it ran for more than six years. The retrorocket approach is conservative and heavy; it works, but it demands fuel and it limits your mass budget for science. Twenty years later, [Mars Pathfinder](/missions?id=mars-pathfinder) tried something that sounds like a joke: wrap the entire lander in airbags, cut it loose at altitude, let the rockets fire upward to kill the last of the vertical speed, and then let it bounce. On July 4, 1997, the Pathfinder lander hit the surface of Mars at about 50 kilometres per hour and bounced at least fifteen times before rolling to a stop, whereupon the petals opened and [Sojourner](/missions?id=mars-pathfinder) — the first Mars rover — trundled out onto the rocks of Ares Vallis.",
+  "cur": "Esse \"algo mais\" é o problema de design. É o que torna cada pouso em Marte diferente, e é o que cada equipe de engenharia teve que resolver do zero. [Viking 1](/missions?id=viking1) o resolveu em 1976 da maneira óbvia: retroquetes, disparados durante a descida final, desacelerada a modulação de pouso suave em Chryse Planitia — a primeira espaçonave a funcionar na superfície marciana, e funcionou por mais de seis anos. A abordagem de retroquetes é conservadora e pesada; funciona, mas exige combustível e limita seu orçamento de massa para a ciência. Vinte anos depois, [Mars Pathfinder](/missions?id=mars-pathfinder) tentou algo que parece uma piada: envolva todo o módulo de pouso em bolsas de ar, libere-o em altitude, deixe os foguetes dispararem para cima para matar o último da velocidade vertical, e deixe-o quicar. Em 4 de julho de 1997, o módulo de pouso Pathfinder atingiu a superfície de Marte em aproximadamente 50 quilómetros por hora e quicou pelo menos quinze vezes antes de rolar até parar, momento em que as pétalas se abriram e [Sojourner](/missions?id=mars-pathfinder) — o primeiro rover marciano — avançou vagarosamente sobre as rochas de Ares Vallis."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.7.text",
+  "en": "Why the same answer never works twice",
+  "cur": "Por que a mesma resposta nunca funciona duas vezes"
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.8.md",
+  "en": "Airbags work for small, light craft. Sojourner massed about 10 kilograms. By 2012, [Curiosity](/missions?id=curiosity) massed nearly 900. Airbags that could absorb that landing would weigh more than the rocket could afford to launch, so the team at JPL had to invent something new: the sky crane. The descent stage — a rocket-powered flying platform — carried the rover down on cables, matching the pace of the ground, and when the wheels touched the Martian surface the cables were cut and the descent stage flew off to crash-land at a safe distance. It is the most audacious landing sequence ever flown, and it worked perfectly on the first attempt, setting Curiosity down in Gale Crater at 2:32 in the morning, California time, on August 6, 2012.",
+  "cur": "Bolsas de ar funcionam para naves pequenas e leves. Sojourner pesava cerca de 10 quilogramas. Em 2012, [Curiosity](/missions?id=curiosity) pesava quase 900. As bolsas de ar que pudessem absorver esse pouso pesariam mais do que o foguete conseguisse lançar, então a equipe do JPL teve que inventar algo novo: o guindaste do céu. O estágio de descida — uma plataforma voadora movida a foguete — carregou o rover para baixo em cabos, acompanhando o ritmo do solo, e quando as rodas tocaram a superfície marciana os cabos foram cortados e o estágio de descida voou para cair em um local seguro. É a sequência de pouso mais audaciosa jamais voada, e funcionou perfeitamente na primeira tentativa, colocando Curiosity na Cratera de Gale às 2h32 da manhã, horário da Califórnia, em 6 de agosto de 2012."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.9.md",
+  "en": "The sky crane was not just an engineering novelty. It was a philosophical shift: instead of designing the lander to survive contact with the ground, the engineers separated the problem entirely — descent, then release, then ground contact — so that each piece could be optimized independently. [Perseverance](/missions?id=perseverance) used the same architecture on February 18, 2021, landing on the floor of [Jezero Crater](/mars) and then driving, over the following months, toward the ancient river delta on its northern rim. But Perseverance added one piece the sky crane had not carried: a system that looked at the ground and thought.",
+  "cur": "O guindaste do céu não foi apenas uma novidade de engenharia. Foi uma mudança filosófica: em vez de projetar o módulo de pouso para sobreviver ao contato com o solo, os engenheiros separaram completamente o problema — descida, depois liberação, depois contato com o solo — para que cada peça pudesse ser otimizada independentemente. [Perseverance](/missions?id=perseverance) usou a mesma arquitetura em 18 de fevereiro de 2021, pousando no assoalho da [Cratera de Jezero](/mars) e depois percorrendo, durante os meses seguintes, em direção ao antigo delta do rio em sua borda norte. Mas Perseverance adicionou um componente que o guindaste do céu não tinha carregado: um sistema que olhou para o solo e pensou."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.10.md",
+  "en": "Jezero is not a flat plain. It has steep cliffs, sand dunes, boulder fields, and smaller impact craters nested inside the rim — terrain that would have been considered unlanding-able under older rules. The reason Perseverance could target it was Terrain-Relative Navigation: a camera mounted on the belly of the descent stage photographed the surface rushing up, matched the image in real time against an onboard map of the crater, located itself to within metres, and then steered the vehicle away from hazards that the camera could see and the ground team could not respond to in time. The craft chose its own landing spot. The people who built it had given it the map and the authority; the decision, in those seven minutes, was entirely the machine's. The navigation essay's phrase for this comes from the landing side now, not the cruise: the craft learned to see — and then it used that sight to save itself.",
+  "cur": "Jezero não é uma planície plana. Tem penhascos íngremes, dunas de areia, campos de rochas e crateras de impacto menores aninhadas dentro da borda — terreno que teria sido considerado não-pousável pelas regras antigas. A razão pela qual Perseverance conseguiu mirar nele foi Terrain-Relative Navigation: uma câmera montada na barriga do estágio de descida fotografou a superfície se aproximando rapidamente, correspondeu a imagem em tempo real contra um mapa a bordo da cratera, localizou a si mesma em metros, e então manobrou o veículo longe de perigos que a câmera conseguia ver e a equipe do solo não conseguia responder a tempo. A nave escolheu seu próprio local de pouso. As pessoas que a construíram lhe deram o mapa e a autoridade; a decisão, nesses sete minutos, foi inteiramente da máquina. A frase do ensaio de navegação para isso vem do lado do pouso agora, não do cruzeiro: a nave aprendeu a ver — e depois usou essa visão para se salvar."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.11.caption",
+  "en": "Every world hands you a different problem. The Moon has no air, so you fall on rockets alone; Mars has just enough to cook you but not enough to catch you; Earth and Titan have enough that a parachute does most of the work. No arrival is ever quite the arrival before it.",
+  "cur": "Cada mundo lhe entrega um problema diferente. A Lua não tem ar, então você cai apenas com foguetes; Marte tem ar justo o suficiente para cozinhá-lo, mas não o suficiente para capturá-lo; Terra e Titã têm ar suficiente para que um paraquedas faça a maior parte do trabalho. Nenhuma chegada é exatamente como a chegada anterior."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.12.text",
+  "en": "The worlds that do not forgive",
+  "cur": "Os mundos que não perdoam"
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.13.md",
+  "en": "Mars at least gives you seven minutes. Venus gives you less time than that to do anything useful, and it will kill you no matter how well you land. The Soviet [Venera program](/missions?id=venera-13) is the story of engineers deliberately designing spacecraft to die gracefully — to survive long enough to return something before the planet destroyed them. When Venera 13 touched down on March 1, 1982, it had entered a 457-degree Celsius atmosphere pressing down at 89 times Earth's standard pressure — the equivalent of a kilometre of ocean water on every surface — and its engineers had expected it to operate for perhaps thirty-two minutes before the heat cooked the electronics. It lasted 127 minutes. In that time it drilled a soil sample, analysed it chemically, and transmitted two color panoramas of flat basaltic rock under an orange sky. Those images remain, today, the best photographs ever taken from the surface of Venus. No spacecraft has been back since.",
+  "cur": "Marte pelo menos lhe dá sete minutos. Vênus lhe dá menos tempo que isso para fazer qualquer coisa útil, e vai matá-lo não importa quão bem você pousar. O programa [Venera](/missions?id=venera-13) soviético é a história de engenheiros deliberadamente projetando espaçonaves para morrer graciosamente — para sobreviver tempo suficiente para retornar algo antes que o planeta as destruísse. Quando Venera 13 tocou o solo em 1º de março de 1982, havia entrado em uma atmosfera de 457 graus Celsius com pressão de 89 vezes a pressão padrão da Terra — o equivalente a um quilómetro de água oceânica em cada superfície — e seus engenheiros esperavam que operasse por talvez trinta e dois minutos antes do calor cozinhar a eletrônica. Durou 127 minutos. Nesse tempo perfurou uma amostra de solo, analisou-a quimicamente, e transmitiu dois panoramas coloridos de rocha basáltica plana sob um céu laranja. Essas imagens permanecem, hoje, as melhores fotografias já tiradas da superfície de Vênus. Nenhuma espaçonave voltou desde então."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.14.md",
+  "en": "Descent through Venus's atmosphere is, at least, partly atmospheric: the thick CO₂ slows you. But there is no parachute phase that matters — the air is dense enough that even a relatively small drogue suffices to get you to terminal velocity, and after that the crushing pressure takes over. The engineering problem on Venus is not slowing down. It is surviving long enough to do anything after you stop.",
+  "cur": "A descida pela atmosfera de Vênus é, pelo menos, parcialmente atmosférica: o espesso CO₂ a desacelera. Mas não há uma fase de paraquedas que importe — o ar é denso o suficiente para que até um pequeno drogue relativamente simples baste para levá-lo à velocidade terminal, e depois disso a pressão esmagadora assume. O problema de engenharia em Vênus não é desacelerar. É sobreviver tempo suficiente para fazer qualquer coisa depois de parar."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.15.md",
+  "en": "Titan, Saturn's largest moon, is the strangest case of all. [Huygens](/missions?id=cassini) — an ESA probe carried to the Saturn system aboard [Cassini](/missions?id=cassini) — was released on Christmas Day 2004 and fell for twenty-two days before hitting Titan's atmosphere on January 14, 2005. Titan's air is mostly nitrogen, denser than Earth's at the surface, and colder than minus 170 degrees Celsius — a thick, orange, hydrocarbon haze that scatters sunlight into permanent amber dusk. Huygens deployed its main parachute within four minutes of atmospheric contact, then switched to a smaller drogue about fifteen minutes into the descent to prevent the batteries from dying before it reached the surface. It fell for two hours and twenty-seven minutes — not seven minutes, but nearly two and a half hours — and when it finally touched a plain scattered with ice pebbles it was moving at about 4.5 metres per second, a pace a brisk walk would match. Then it sat on the surface and transmitted for another seventy-two minutes before Cassini carried out of view. Huygens remains the only spacecraft humanity has ever landed anywhere in the outer solar system. Nothing has gone back.",
+  "cur": "Titã, a maior lua de Saturno, é o caso mais estranho de todos. [Huygens](/missions?id=cassini) — uma sonda da ESA carregada para o sistema Saturno a bordo da [Cassini](/missions?id=cassini) — foi liberada no Dia de Natal de 2004 e caiu durante vinte e dois dias antes de atingir a atmosfera de Titã em 14 de janeiro de 2005. O ar de Titã é principalmente nitrogénio, mais denso que o da Terra na superfície, e mais frio que menos 170 graus Celsius — um denso nevoeiro de hidrocarboneto laranja que dispersa a luz solar em crepúsculo permanente de âmbar. Huygens implantou seu paraquedas principal dentro de quatro minutos do contato atmosférico, depois mudou para um drogue menor cerca de quinze minutos na descida para evitar que as baterias morressem antes de chegar à superfície. Caiu durante duas horas e vinte e sete minutos — não sete minutos, mas quase duas horas e meia — e quando finalmente tocou uma planície espalhada com seixos de gelo estava se movimentando a aproximadamente 4,5 metros por segundo, um ritmo que uma caminhada rápida poderia acompanhar. Depois sentou-se na superfície e transmitiu por mais setenta e dois minutos antes de Cassini sair de vista. Huygens permanece a única espaçonave que a humanidade jamais pousou em qualquer lugar do sistema solar externo. Nada voltou."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.16.caption",
+  "en": "Mars is the cruel middle case — too thin an atmosphere to parachute down, too thick to ignore. It all happens in about seven minutes: entry, peak heating, a supersonic parachute, heat-shield separation, powered descent, and a sky crane lowering the rover on cables. Every step must fire on its own, on time, or the mission ends in a crater.",
+  "cur": "Marte é o caso cruel da meio termo — atmosfera fina demais para descer de paraquedas, espessa demais para ignorar. Tudo acontece em aproximadamente sete minutos: entrada, aquecimento máximo, um paraquedas supersónico, separação do escudo térmico, descida motorizada, e um guindaste do céu baixando o rover em cabos. Cada passo deve disparar por conta própria, a tempo, ou a missão termina em uma cratera."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.17.caption",
+  "en": "Perseverance hangs beneath its descent stage in the final seconds over Jezero Crater, moments before the sky crane pays out its cables — a manoeuvre flown entirely by the spacecraft itself, with Earth a spectator eleven minutes behind.",
+  "cur": "Perseverance pendura-se embaixo de seu estágio de descida nos segundos finais sobre a Cratera de Jezero, momentos antes do guindaste do céu pagar seus cabos — uma manobra voada inteiramente pela espaçonave, com a Terra um espectador onze minutos atrás."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.18.text",
+  "en": "The failure record",
+  "cur": "O registro de falhas"
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.19.md",
+  "en": "Across the history of Mars missions specifically, the landing problem has a body count. Mars 2, in 1971, became the first object from Earth to touch the Martian surface — and crashed, killing itself on impact, the descent system having failed before the parachute sequence was complete. Mars Polar Lander, in December 1999, almost certainly shut down its descent engines prematurely when vibrations from the legs deploying were misread as a touchdown signal, and it fell the last forty metres at full speed. Beagle 2, on Christmas Day 2003, made it through entry — the EDL sequence appears to have worked — but the solar panels failed to fully deploy on landing and it could never communicate, silent on the Martian plains. The European Space Agency's Schiaparelli lander, in October 2016, had its inertial measurement unit saturate during the violent parachute descent — the readings briefly ran off the top of their scale — corrupting the navigation solution so the onboard computer believed it was already below the surface; it cut the parachute and fired the retrorockets for just three seconds instead of thirty, and hit the ground at roughly 540 kilometres per hour.",
+  "cur": "Ao longo da história das missões a Marte, o problema do pouso deixou um rastro de mortos. A Mars 2, em 1971, foi o primeiro objeto da Terra a tocar a superfície marciana — e se espatifou, destruindo-se no impacto, porque o sistema de descida falhou antes de a sequência do paraquedas se completar. A Mars Polar Lander, em dezembro de 1999, quase certamente desligou os motores de descida cedo demais, quando as vibrações do desdobramento das pernas foram interpretadas por engano como sinal de toque, e caiu os últimos quarenta metros em velocidade total. A Beagle 2, no Dia de Natal de 2003, atravessou a entrada — a sequência EDL parece ter funcionado —, mas os painéis solares não se abriram por completo no pouso e ela nunca conseguiu se comunicar, muda nas planícies marcianas. O módulo de pouso Schiaparelli, da Agência Espacial Europeia, em outubro de 2016, teve a unidade de medição inercial saturada durante a violenta descida de paraquedas — as leituras ultrapassaram brevemente o limite da escala —, o que corrompeu a solução de navegação e fez o computador de bordo acreditar que já estava abaixo da superfície; ele soltou o paraquedas e acionou os retrofoguetes por apenas três segundos em vez de trinta, e atingiu o solo a cerca de 540 quilômetros por hora."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.20.md",
+  "en": "Each failure is a different failure. That is the pattern. There is no single thing that kills Mars landers; there is a long list of single things, each one a different link in a sequence that has to hold. Every mission that has survived landing on Mars has done so by getting every step right, in order, autonomously, without a second chance. The sequence that [Curiosity](/missions?id=curiosity) and [Perseverance](/missions?id=perseverance) flew successfully is not simpler than the ones that killed their predecessors. It is, if anything, longer and more elaborate. What is different is the margin — the care with which each potential failure mode was identified, tested, and either fixed or designed around. The seven minutes that looked like terror from the outside were, from the inside, the seven minutes that the engineers had spent years making boring.",
+  "cur": "Cada falha é uma falha diferente. Esse é o padrão. Não existe uma coisa única que mata módulos de pouso marcianos; existe uma longa lista de coisas únicas, cada uma um elo diferente em uma sequência que tem que resistir. Cada missão que sobreviveu ao pouso em Marte o fez acertando cada passo, em ordem, autonomamente, sem uma segunda chance. A sequência que [Curiosity](/missions?id=curiosity) e [Perseverance](/missions?id=perseverance) voaram com sucesso não é mais simples que as que mataram seus predecessores. É, se algo, mais longa e mais elaborada. O que é diferente é a margem — o cuidado com que cada modo de falha potencial foi identificado, testado, e seja corrigido ou projetado em torno. Os sete minutos que pareciam terror de fora eram, de dentro, os sete minutos que os engenheiros tinham gastado anos tornando enfadonho."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.21.caption",
+  "en": "Schiaparelli was meant to prove Europe could land on Mars. In 2016 its computer, briefly confused by its own sensors, decided it had already touched down — let go of its parachute, cut its thrusters, and fell the last kilometres. The record of arrivals is written as much in craters as in triumphs.",
+  "cur": "Schiaparelli foi feita para provar que a Europa conseguia pousar em Marte. Em 2016 seu computador, brevemente confundido por seus próprios sensores, decidiu que já tinha tocado o solo — soltou seu paraquedas, cortou seus propulsores, e caiu os últimos quilómetros. O registro de chegadas é escrito tanto em crateras quanto em triunfos."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.22.text",
+  "en": "The part you cannot test",
+  "cur": "A parte que você não consegue testar"
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.23.md",
+  "en": "Here is what makes this different from almost every other engineering problem: you cannot test it. You can test the parachute in a wind tunnel, the sky crane on a cable rig, the heat shield in an arc-jet facility — but you cannot test the full sequence, at full scale, in the actual atmosphere of Mars. Every Mars landing is a first flight of the complete system. Every EDL team in history has sent their machine off with a set of simulations, a set of engineering tests, a model of the atmosphere they are about to enter, and then waited. The Martian atmosphere is not uniform; its density varies with season and dust loading in ways that the models approximate but do not perfectly capture. A parachute deploying into slightly thinner air than expected needs to open a few seconds sooner; a lander touching down on a slope rather than a flat plain needs a slightly different retrorocket sequence. The software bakes in these contingencies, but the atmosphere gets a vote.",
+  "cur": "Aqui está o que torna isso diferente de quase todos os outros problemas de engenharia: você não consegue testá-lo. Você consegue testar o paraquedas em um túnel de vento, o guindaste do céu em um equipamento de cabo, o escudo térmico em uma instalação de arco-jato — mas você não consegue testar a sequência completa, em escala real, na atmosfera real de Marte. Cada pouso em Marte é um primeiro voo do sistema completo. Cada equipe EDL na história enviou sua máquina com um conjunto de simulações, um conjunto de testes de engenharia, um modelo da atmosfera que estão prestes a entrar, e depois esperou. A atmosfera marciana não é uniforme; sua densidade varia com a estação e o carregamento de poeira de maneiras que os modelos aproximam, mas não capturam perfeitamente. Um paraquedas se desdobrando em ar ligeiramente mais fino do que o esperado precisa abrir alguns segundos antes; um módulo de pouso tocando em uma encosta em vez de uma planície plana precisa de uma sequência de retroquetes ligeiramente diferente. O software assa essas contingências, mas a atmosfera tem voto."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.24.md",
+  "en": "This is, in a specific sense, the thing navigation never has to face. [Navigation](/essays/navigation) is an iterative business — you aim, check, correct, aim again, for months or years, each correction building on the last. EDL is a one-shot event. The trajectory corrections have been made; the orbit has been shaped; the approach has been dialled in with millimetric care. Then the aeroshell hits the atmosphere and the countdown begins, and every decision from that moment is made by the machine, running code written years earlier by engineers who are now sitting in a room in Pasadena, watching a number on a screen that tells them only whether the signal is still there.",
+  "cur": "Este é, em um sentido específico, a coisa que a navegação nunca tem que enfrentar. [Navegação](/essays/navigation) é um negócio iterativo — você mira, verifica, corrige, mira de novo, por meses ou anos, cada correção construindo sobre a última. EDL é um evento único. As correções de trajetória foram feitas; a órbita foi moldada; a abordagem foi calibrada com cuidado milimétrico. Depois a ogiva atinge a atmosfera e a contagem regressiva começa, e cada decisão daquele momento é feita pela máquina, executando código escrito anos antes por engenheiros que agora estão sentados em uma sala em Pasadena, observando um número em uma tela que lhes diz apenas se o sinal ainda está lá."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.25.md",
+  "en": "When that signal disappears — as it always does, for those long minutes while the aeroshell is a fireball — the room goes quiet. Not because they don't know what's happening. They have the timeline memorized. They know, to the second, when parachute deployment should occur, when the heat shield should separate, when the sky crane should ignite. They count through it, together, in silence, watching a clock. And when the signal comes back and says *I am on the ground*, what you hear from that room is not a sentence. It is a sound that has no words in it, because there are no words adequate for a machine the size of a car landing itself safely on another planet, alone, while the people who built it were standing eleven light-minutes away, unable to help.",
+  "cur": "Quando esse sinal desaparece — como sempre faz, durante aqueles longos minutos enquanto a ogiva é uma bola de fogo — a sala fica quieta. Não porque não saibam o que está acontecendo. Eles têm a linha do tempo memorizada. Eles sabem, ao segundo, quando o desdobramento do paraquedas deve ocorrer, quando o escudo térmico deve se separar, quando o guindaste do céu deve acender. Eles contam através disso, juntos, em silêncio, observando um relógio. E quando o sinal volta e diz *estou no solo*, o que você ouve daquela sala não é uma frase. É um som que não tem palavras nele, porque não há palavras adequadas para uma máquina do tamanho de um carro pousando a si mesma com segurança em outro planeta, sozinha, enquanto as pessoas que a construíram estavam em pé a onze minutos-luz de distância, incapazes de ajudar."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.26.caption",
+  "en": "And you cannot help it through any of it. Mars is light-minutes away — the whole descent fits inside the radio lag. By the time the first word of entry reaches Earth, the craft is already down, safe or dead, the outcome decided minutes before anyone here knew it had begun.",
+  "cur": "E você não consegue ajudá-la através de qualquer disso. Marte fica minutos-luz de distância — toda a descida cabe dentro do atraso de rádio. No momento em que a primeira palavra de entrada chega à Terra, a nave já está em baixo, segura ou morta, o resultado decidido minutos antes de alguém aqui saber que havia começado."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.27.text",
+  "en": "The hardest thing",
+  "cur": "A coisa mais difícil"
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.28.md",
+  "en": "Every world is different. The Moon demands rocket fuel for every metre per second of descent. Mars demands aerodynamics, parachutes, rockets, and then — because the parachute gets you only partway — invention. Venus demands thermal armor and a ticking clock. Titan offered the unexpected gift of a thick atmosphere and used it to give Huygens two and a half hours of descent data from the outer solar system, the most distant landing in history, still unmatched. Each solution is shaped by the planet that forced it into existence, and none of them transfers cleanly to the next body down the list.",
+  "cur": "Cada mundo é diferente. A Lua exige combustível de foguete para cada metro por segundo de descida. Marte exige aerodinâmica, paraquedas, foguetes, e depois — porque o paraquedas o leva apenas em parte — invenção. Vênus exige armadura térmica e um relógio contando. Titã ofereceu o presente inesperado de uma atmosfera densa e a usou para dar a Huygens duas horas e meia de dados de descida do sistema solar externo, o pouso mais distante na história, ainda sem igualar. Cada solução é moldada pelo planeta que a forçou à existência, e nenhuma delas se transfere limpa para o próximo corpo na lista."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.29.md",
+  "en": "What they share is this: the moment of landing is the moment when everything that cannot be undone happens. The months of cruise, the years of trajectory refinement, the decades of engineering — all of it has been moving toward a window of a few minutes during which the machine either does the thing or it doesn't, and there is no one close enough to intervene. The [navigation problem](/essays/navigation) has been solved, in pieces, over seventy years, by iterating: aim, correct, aim, correct. The landing problem must be solved in advance, completely, and then trusted. You cannot correct a Mars landing in progress. You can only watch the clock and count the beats of a sequence you no longer control, and wait for the signal that tells you the machine did what you asked.",
+  "cur": "O que eles compartilham é isto: o momento do pouso é o momento em que tudo o que não pode ser desfeito acontece. Os meses de cruzeiro, os anos de refinamento de trajetória, as décadas de engenharia — tudo isso tem estado se movendo em direção a uma janela de alguns minutos durante a qual a máquina faz a coisa ou não faz, e não há ninguém perto o suficiente para intervir. O [problema de navegação](/essays/navigation) foi resolvido, em pedaços, durante setenta anos, iterando: mire, corrija, mire, corrija. O problema do pouso deve ser resolvido antecipadamente, completamente, e depois confiado. Você não consegue corrigir um pouso em Marte em andamento. Você consegue apenas observar o relógio e contar os batidas de uma sequência que você não controla mais, e esperar pelo sinal que lhe diz que a máquina fez o que você pediu."
+ },
+ {
+  "rel": "essays/seven-minutes.json",
+  "at": "body.30.md",
+  "en": "Perseverance is on the floor of [Jezero Crater](/mars) right now, picking its way toward ancient geology that may or may not hold what we sent it there to find. Viking 1's bones are still on Chryse Planitia. Huygens sits on a plain of ice pebbles more than a billion kilometres away. [Venera 13](/missions?id=venera-13) lasted 127 minutes and went silent. Each of them got down by solving a different problem, with a different answer, in a different set of minutes that could not be re-run. The cruise is easy. The physics carry you. Arriving is where the work is — and every world makes you invent the work from scratch.",
+  "cur": "Perseverance está no assoalho da [Cratera de Jezero](/mars) agora, abrindo seu caminho em direção à geologia antiga que pode ou não ter o que a enviamos para encontrar. Os ossos do Viking 1 ainda estão em Chryse Planitia. Huygens senta em uma planície de seixos de gelo a mais de um bilião de quilómetros de distância. [Venera 13](/missions?id=venera-13) durou 127 minutos e ficou silenciosa. Cada um deles desceu resolvendo um problema diferente, com uma resposta diferente, em um conjunto diferente de minutos que não poderia ser reiniciado. O cruzeiro é fácil. A física o carrega. A chegada é onde o trabalho está — e cada mundo faz você inventar o trabalho do zero."
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "title",
+  "en": "Louder Than a Whisper",
+  "cur": "Mais Alto que um Sussurro"
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "dek",
+  "en": "The Deep Space Network was built for a handful of probes. It is about to face the traffic of a solar-system civilisation. The fixes — antenna arrays, laser links, a store-and-forward internet — are real, and they are already being built. None of them beats the speed of light.",
+  "cur": "A Deep Space Network foi construída para um punhado de sondas. Está prestes a enfrentar o tráfego de uma civilização do sistema solar. Os remédios — arranjos de antenas, enlaces por laser, uma internet store-and-forward — são reais, e já estão sendo construídos. Nenhum deles vence a velocidade da luz."
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.0.md",
+  "en": "The [comms essay](/essays/comms) ended on a quiet note: three patches of desert, roughly forty antennas, a 22-watt whisper crossing billions of kilometres, and the recognition that this threadbare infrastructure carries everything humanity has ever learned about the outer solar system. The miracle, that essay argued, wasn't how much the Deep Space Network had lost — it was how little. Three sites, one frequency band per mission, a schedule overbooked by forty percent, an upgrade programme running five years late. By any engineering standard, the [DSN](/science/mission-phases/dsn) should have broken under the load years ago. It hasn't, mainly because the load has grown slowly enough, and the engineers patient enough, that the cracks could be papered over one antenna track at a time.",
+  "cur": "O [ensaio sobre comms](/essays/comms) terminou em tom tranquilo: três parcelas de deserto, aproximadamente quarenta antenas, um sussurro de 22 watts atravessando bilhões de quilômetros, e o reconhecimento de que essa infraestrutura precária transporta tudo o que a humanidade jamais aprendeu sobre o sistema solar externo. O milagre, argumentava esse ensaio, não era quanto a Deep Space Network havia perdido — era quanto havia preservado. Três sítios, uma banda de frequência por missão, um cronograma superlotado em quarenta por cento, um programa de atualização cinco anos atrasado. Por qualquer padrão de engenharia, a [DSN](/science/mission-phases/dsn) deveria ter se rompido sob o peso anos atrás. Não se rompeu, principalmente porque a carga cresceu lentamente o suficiente, e os engenheiros foram pacientes o bastante, para que as fraturas pudessem ser tamponadas uma trilha de antena de cada vez."
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.1.md",
+  "en": "That arithmetic is about to stop working. The 2020s and 2030s are set to deliver a wave of missions — crewed Artemis flights with their appetite for continuous high-rate data, science probes to the ice giants, commercial operators who have been promised DSN time without anyone fully accounting for where it will come from, and eventually a sustained human presence on the Moon that will require something closer to a broadband connection than a telex line. NASA's own projections, published in successive DSN strategic reviews, show demand growing by a factor of ten before 2035. The current infrastructure was not designed to absorb a factor of ten. The bottleneck, it turns out, has never been the spacecraft. It has always been the ground.",
+  "cur": "Essa aritmética está prestes a deixar de funcionar. Os anos 2020 e 2030 estão definidos para entregar uma onda de missões — voos tripulados de Artemis com seu apetite por dados contínuos de alta taxa, sondas científicas para os gigantes de gelo, operadores comerciais que foram prometidos tempo na DSN sem que ninguém tenha contabilizado completamente de onde virá, e eventualmente uma presença humana sustentada na Lua que exigirá algo mais próximo de uma conexão de banda larga que uma linha de telex. As próprias projeções da NASA, publicadas em sucessivas revisões estratégicas da DSN, mostram a demanda crescendo por um fator de dez antes de 2035. A infraestrutura atual não foi projetada para absorver um fator de dez. O gargalo, afinal de contas, nunca foi a nave espacial. Sempre foi o solo."
+ },
+ {
+  "rel": "essays/space-comm-arrays.json",
+  "at": "body.2.md",
+  "en": "Three approaches are being built in parallel. Stop building bigger dishes and instead combine many smaller ones in software — arraying. Replace radio with laser light for the high-rate downlinks, which concentrates orders of magnitude more data into the same transmitted power. And accept that the solar system will never have a real-time network, building instead an architecture designed for that fact: a store-and-forward internet whose packets spend hours in transit and arrive anyway. Each has been demonstrated. None of them changes the one thing that cannot be changed.",
+  "cur": "Três abordagens estão sendo construídas em paralelo. Pare de construir pratos maiores e, em vez disso, combine muitos menores em software — arranjamento. Substitua rádio por luz de laser para os downlinks de alta taxa, o que concentra ordens de magnitude mais dados no mesmo poder transmitido. E aceite que o sistema solar nunca terá uma rede em tempo real, construindo em seu lugar uma arquitetura projetada para esse fato: uma internet store-and-forward cujos pacotes gastam horas em trânsito e chegam assim mesmo. Cada uma foi demonstrada. Nenhuma delas muda a única coisa que não pode ser mudada."
+ }
+]

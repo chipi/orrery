@@ -1,0 +1,836 @@
+[
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "body_paragraphs.2",
+  "en": "Beyond discovery, a transit is a door into a planet's air: during the crossing, a thin ring of starlight filters through the planet's atmosphere and imprints the fingerprints of its gases — the technique the James Webb Space Telescope now uses to sniff exoplanet skies.",
+  "cur": "खोज से परे, एक ट्रांज़िट एक ग्रह की वायु में एक द्वार है: पार करने के दौरान, तारे के प्रकाश की एक पतली वलय ग्रह के वायुमंडल से होकर छनती है और उसकी गैसों के फिंगरप्रिंट अंकित करती है — वह तकनीक जो James Webb Space Telescope अब बहिर्ग्रह आकाशों को सूँघने के लिए उपयोग करता है।"
+ },
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "diagram_caption",
+  "en": "As the planet crosses the star's disk, the measured brightness drops by the ratio of their areas, then recovers.",
+  "cur": "जैसे ही ग्रह तारे की डिस्क को पार करता है, मापी गई चमक उनके क्षेत्रफलों के अनुपात से गिरती है, फिर पुनः प्राप्त हो जाती है।"
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "title",
+  "en": "TRAPPIST-1: Seven Earth-Sized Worlds",
+  "cur": "TRAPPIST-1: सात पृथ्वी-आकार की दुनियाएँ"
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "intro_sentence",
+  "en": "A dim red dwarf 40 light-years away hosts seven roughly Earth-sized planets — the richest compact system known, and a prime hunting ground for habitability.",
+  "cur": "40 प्रकाश-वर्ष दूर एक मंद लाल बौना तारा सात लगभग पृथ्वी के आकार के ग्रहों को होस्ट करता है — यह ज्ञात सबसे समृद्ध सघन तंत्र है, और रहने योग्यता के लिए एक प्रमुख शिकारगाह है।"
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "narrative_101.0",
+  "en": "In February 2017 NASA unveiled a system unlike any other: seven planets, all close to Earth's size, circling a single ultracool dwarf star barely larger than Jupiter, all packed closer to their star than Mercury is to the Sun.",
+  "cur": "फ़रवरी 2017 में NASA ने एक ऐसे तंत्र का अनावरण किया जो किसी भी अन्य से भिन्न था: सात ग्रह, सभी पृथ्वी के आकार के करीब, एक एकल अत्यंत शीतल बौने तारे की परिक्रमा करते हुए जो मुश्किल से बृहस्पति से बड़ा है, सभी अपने तारे के इतने करीब भरे हुए हैं कि Mercury सूर्य से जितनी दूर है उससे भी पास हैं।"
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "narrative_101.1",
+  "en": "Three or four of them fall in the habitable zone. The star is so dim that even those temperate worlds orbit in a matter of days, and the whole system would nest inside Mercury's orbit.",
+  "cur": "इनमें से तीन या चार रहने योग्य क्षेत्र में आते हैं। तारा इतना मंद है कि वे समशीतोष्ण दुनियाएँ भी केवल कुछ दिनों में परिक्रमा पूरी कर लेती हैं, और पूरा तंत्र Mercury की कक्षा के भीतर समा जाएगा।"
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "narrative_101.2",
+  "en": "The seven move in a near-perfect chain of orbital resonances — a cosmic metronome — which let astronomers weigh them by their mutual tugs and made them the top small-planet targets for the James Webb Space Telescope.",
+  "cur": "ये सातों कक्षीय अनुनादों की एक लगभग-पूर्ण श्रृंखला में चलते हैं — एक ब्रह्मांडीय मेट्रोनोम — जिसने खगोलविदों को उनके आपसी खिंचाव से उन्हें तौलने की अनुमति दी और उन्हें James Webb Space Telescope के लिए शीर्ष छोटे-ग्रह लक्ष्य बना दिया।"
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "body_paragraphs.0",
+  "en": "TRAPPIST-1 (an M8 dwarf ~40 light-years away in Aquarius) hosts seven transiting planets, b through h, with radii from about 0.75 to 1.13 Earth. Discovered by ground-based transit surveys and Spitzer and announced in full in 2017, their masses came from transit-timing variations — the planets are far too faint for radial velocity.",
+  "cur": "TRAPPIST-1 (Aquarius में ~40 प्रकाश-वर्ष दूर एक M8 बौना) सात पारगमन करने वाले ग्रहों की मेजबानी करता है, b से h तक, जिनकी त्रिज्याएँ लगभग 0.75 से 1.13 पृथ्वी तक हैं। भू-आधारित पारगमन सर्वेक्षणों और Spitzer द्वारा खोजे गए और 2017 में पूर्ण रूप से घोषित, इनके द्रव्यमान पारगमन-समय विविधताओं से प्राप्त हुए — ग्रह रेडियल वेग के लिए बहुत मंद हैं।"
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "body_paragraphs.1",
+  "en": "The planets sit in a chain of first-order resonances, strong evidence they migrated inward together through the birth disk. Planets e, f, and g lie in the conservative habitable zone; all are likely tidally locked.",
+  "cur": "ग्रह प्रथम-क्रम अनुनादों की एक श्रृंखला में स्थित हैं, जो इस बात का प्रबल प्रमाण है कि वे जन्म डिस्क के माध्यम से एक साथ अंदर की ओर स्थानांतरित हुए। ग्रह e, f, और g संरक्षी रहने योग्य क्षेत्र में स्थित हैं; सभी संभवतः ज्वारीय रूप से बंद हैं।"
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "body_paragraphs.2",
+  "en": "JWST is systematically probing their atmospheres. Early results point to the innermost worlds (b, c) being largely airless — the expected toll of red-dwarf flares — while the temperate outer planets remain the field's marquee test of whether the galaxy's most common habitable zones can hold air.",
+  "cur": "JWST व्यवस्थित रूप से उनके वायुमंडलों की जांच कर रहा है। प्रारंभिक परिणाम संकेत करते हैं कि सबसे भीतरी दुनियाएँ (b, c) काफी हद तक वायुहीन हैं — लाल-बौने भड़कने का अपेक्षित परिणाम — जबकि समशीतोष्ण बाहरी ग्रह इस क्षेत्र का प्रमुख परीक्षण बने हुए हैं कि क्या आकाशगंगा के सबसे सामान्य रहने योग्य क्षेत्र वायु को रोक सकते हैं।"
+ },
+ {
+  "rel": "science/history/_intro.json",
+  "at": "headline",
+  "en": "History — how a few hundred years of physics put us in orbit.",
+  "cur": "इतिहास — कैसे भौतिकी की कुछ सौ वर्षों की खोज ने हमें कक्षा में पहुंचाया।"
+ },
+ {
+  "rel": "science/history/_intro.json",
+  "at": "paragraphs.0",
+  "en": "Spaceflight didn't appear from nowhere. It rests on a stack of discoveries — Kepler's ellipses, Newton's gravity, Tsiolkovsky's rocket equation, Goddard's first liquid burn, Korolev's R-7 — each one assembled on the previous. This tab walks the milestones in chronological order, names the people who got there, and points back into the rest of /science where the maths lives.",
+  "cur": "अंतरिक्ष उड़ान कहीं से नहीं आई। यह खोजों के एक ढेर पर टिकी है — केप्लर की दीर्घवृत्त, Newton का गुरुत्वाकर्षण, Tsiolkovsky का रॉकेट समीकरण, Goddard की पहली तरल बर्न, कोरोल्योव का R-7 — प्रत्येक एक पिछली खोज पर बना। यह टैब कालानुक्रमिक क्रम में मील के पत्थर के साथ चलता है, उन लोगों के नाम देता है जो वहां पहुंचे, और /science के बाकी हिस्से में वापस इशारा करता है जहां गणित है।"
+ },
+ {
+  "rel": "science/history/_intro.json",
+  "at": "paragraphs.1",
+  "en": "We've cherry-picked six pivots: Kepler's ellipses, Newton's gravity, Tsiolkovsky's rocket equation, Goddard's first liquid burn, Korolev's R-7, and Apollo 11. Hundreds more deserve a place; future revisions will fill them in (Galileo's telescopes, Hohmann's transfer paper, Goddard's wife who took most of the photos, the Soviet engineers Korolev couldn't name in public, Ed White's spacewalk, von Kármán's altitude line). The story isn't owned by any one nation — every chapter has people you've never heard of who made it work.",
+  "cur": "हमने छह महत्वपूर्ण क्षणों को चुना है: केप्लर के दीर्घवृत्त, Newton का गुरुत्वाकर्षण, Tsiolkovsky का रॉकेट समीकरण, Goddard का पहला द्रव ईंधन परीक्षण, कोरोल्योव का R-7, और Apollo 11। सैकड़ों और भी लायक हैं; भविष्य के संस्करण उन्हें शामिल करेंगे (गैलीलियो की दूरबीनें, Hohmann का स्थानांतरण पत्र, Goddard की पत्नी जिन्होंने अधिकांश फोटो लिए, सोवियत इंजीनियर जिनका नाम कोरोल्योव सार्वजनिक रूप से नहीं ले सकते थे, एड व्हाइट की अंतरिक्ष यात्रा, von Kármán की ऊँचाई की रेखा)। यह कहानी किसी एक राष्ट्र की नहीं है — हर अध्याय में ऐसे लोग हैं जिनका नाम आपने कभी नहीं सुना, जिन्होंने इसे संभव बनाया।"
+ },
+ {
+  "rel": "science/history/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Read it as a chain. Each step required the previous one. None were inevitable.",
+  "cur": "इसे एक श्रृंखला के रूप में पढ़ें। प्रत्येक कदम के लिए पिछला कदम आवश्यक था। कोई भी अपरिहार्य नहीं थे।"
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "title",
+  "en": "Apollo 11 · July 20, 1969",
+  "cur": "Apollo 11 · 20 जुलाई, 1969"
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "intro_sentence",
+  "en": "Three astronauts, a Saturn V, and a moonshot deadline JFK set in 1961. Tranquillity Base, eight years later, on schedule.",
+  "cur": "तीन अंतरिक्ष यात्री, एक Saturn V, और 1961 में JFK द्वारा निर्धारित चंद्रमा लक्ष्य। ट्रैंक्विलिटी बेस, आठ साल बाद, निर्धारित समय पर।"
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "narrative_101.0",
+  "en": "On May 25, 1961, John F. Kennedy told Congress \"this nation should commit itself to achieving the goal, before this decade is out, of landing a man on the Moon and returning him safely to the Earth.\" Eight years later, almost to the month, Neil Armstrong stepped onto Mare Tranquillitatis. 400,000 people worked on Apollo at peak; the programme cost ~$25.4 billion total (1960–1973, nominal); NASA's budget peaked at ~4.4% of the federal budget in 1966.",
+  "cur": "25 मई 1961 को, जॉन एफ़. केनेडी ने कांग्रेस से कहा \"यह राष्ट्र इस दशक के अंत से पहले चंद्रमा पर एक व्यक्ति को उतारने और उसे सुरक्षित रूप से पृथ्वी पर लौटाने के लक्ष्य को प्राप्त करने के लिए प्रतिबद्ध होना चाहिए।\" आठ साल बाद, लगभग महीने के अनुसार, नील आर्मस्ट्रांग शांति सागर पर उतरे। Apollo के चरम समय पर 400,000 लोग काम कर रहे थे; कार्यक्रम की कुल लागत ~$25.4 बिलियन थी (1960–1973, nominal); NASA का बजट 1966 में संघीय बजट का ~4.4% पर चरम पर पहुंचा।"
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "narrative_101.1",
+  "en": "Apollo 11: Commander Neil Armstrong, CMP Michael Collins, LMP Edwin \"Buzz\" Aldrin. Saturn V launch July 16; lunar orbit July 19; landing July 20 at 20:17 UTC; first step at 02:56 UTC July 21 (UTC; 22:56 EDT July 20 in the US). Splashdown July 24. 8 days, 3 hours, 18 minutes total.",
+  "cur": "Apollo 11: कमांडर नील आर्मस्ट्रांग, CMP माइकल कोलिन्स, LMP एडविन \"बज़\" एल्ड्रिन। Saturn V लॉन्च 16 जुलाई; चंद्र कक्षा 19 जुलाई; लैंडिंग 20 जुलाई को 20:17 UTC पर; पहला कदम 02:56 UTC 21 जुलाई पर (UTC; US में 22:56 EDT 20 जुलाई)। स्प्लैशडाउन 24 जुलाई। कुल 8 दिन, 3 घंटे, 18 मिनट।"
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "narrative_101.2",
+  "en": "The moon landing was watched live by an estimated 600 million people — about a fifth of humanity at the time. The \"one small step\" line was Armstrong's; it was unscripted (he later said he meant to say \"one small step for a man\" but the indefinite article got lost in transmission).",
+  "cur": "चंद्रमा लैंडिंग को अनुमानित 600 मिलियन लोगों ने लाइव देखा — उस समय मानवता का लगभग एक-पांचवाँ। \"one small step\" पंक्ति आर्मस्ट्रांग की थी; यह unscripted था (बाद में उन्होंने कहा कि वे \"one small step for a man\" कहना चाहते थे लेकिन indefinite article transmission में खो गया)।"
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.0",
+  "en": "Saturn V was a 110-meter, three-stage liquid-fuel monster designed under Wernher von Braun (the German V-2 designer, brought to the US under Operation Paperclip in 1945). First stage: 5× F-1 engines, 7.6 million lbf thrust. Still the highest-thrust rocket to fly a fully successful crewed mission (SLS Block 1 and Starship exceed its raw liftoff thrust; nothing yet matched its crewed payload to TLI).",
+  "cur": "Saturn V एक 110-मीटर, तीन-चरण वाला liquid-fuel राक्षस था जिसे वर्नर फ़ॉन ब्राउन (जर्मन V-2 डिज़ाइनर, 1945 में Operation Paperclip के तहत US लाया गया) के अंतर्गत डिज़ाइन किया गया था। प्रथम चरण: 5× F-1 इंजन, 7.6 मिलियन lbf जोर। अभी भी सबसे अधिक-जोर वाला रॉकेट जिसने पूरी तरह सफल crewed मिशन उड़ाया है (SLS Block 1 और Starship इसके कच्चे liftoff जोर को पार करते हैं; अभी तक कोई भी इसके crewed payload को TLI तक मेल नहीं खा सका है)।"
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.1",
+  "en": "Trajectory: free-return loop, the \"figure-8\" Earth-Moon-Earth. If the lunar-orbit insertion burn failed, Apollo 11 would have looped around the Moon and returned to Earth on the same arc — built-in abort. Apollo 13 used exactly this property when its service module failed, looping behind the Moon and coming home.",
+  "cur": "Trajectory: free-return loop, \"figure-8\" पृथ्वी-चंद्रमा-पृथ्वी। यदि lunar-orbit insertion burn विफल हो गया होता, तो Apollo 11 चंद्रमा के चारों ओर लूप होता और उसी arc पर पृथ्वी पर लौटता — built-in abort। Apollo 13 ने बिल्कुल इसी विशेषता का उपयोग किया जब इसका service module विफल हुआ, चंद्रमा के पीछे लूप करके घर लौटा।"
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.2",
+  "en": "Key personnel beyond the crew: George Mueller (NASA Apollo programme director), Christopher Kraft (Mission Control founder), Margaret Hamilton (Apollo Guidance Computer software lead — she ran the team that wrote the AGC code that ran on the LM during descent), Glynn Lunney + Gene Kranz + Cliff Charlesworth (flight directors).",
+  "cur": "क्रू के अलावा मुख्य कर्मी: George Mueller (NASA Apollo कार्यक्रम निदेशक), क्रिस्टोफ़र क्राफ़्ट (Mission Control संस्थापक), Margaret Hamilton (Apollo Guidance Computer सॉफ़्टवेयर lead — उन्होंने AGC कोड लिखने वाली टीम का नेतृत्व किया जो descent के दौरान LM पर चलता था), ग्लिन लनी + जीन क्रांज़ + क्लिफ़ चार्ल्सवर्थ (flight directors)।"
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.3",
+  "en": "Things-that-could-have-killed-them: AGC alarms 1201 and 1202 during descent (executive overflow — Hamilton's robust software design recovered automatically); manual landing because the auto-target was a boulder field (Armstrong landed with ~25 seconds of fuel left); the LM ascent engine had ONE chance to fire and was untested at full duration in flight.",
+  "cur": "मरने का कारण बन सकती चीजें: अवतरण के दौरान AGC अलर्ट 1201 और 1202 (कार्यकारी अतिप्रवाह — Hamilton के मजबूत सॉफ्टवेयर डिजाइन ने स्वचालित रूप से बहाली की); मैनुअल लैंडिंग क्योंकि ऑटो-लक्ष्य एक पत्थर का मैदान था (आर्मस्ट्रांग ने लगभग 25 सेकंड का ईंधन बचे हुए लैंड किया); LM अवरोहण इंजन को आग लगाने का केवल एक ही मौका था और यह उड़ान में पूरी अवधि के लिए परीक्षित नहीं था।"
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.4",
+  "en": "Apollo flew six successful landings: 11, 12, 14, 15, 16, 17 (1969-1972). Apollo 13 missed the Moon (LOI cancelled), looped behind it, returned safely. 12 humans walked on the Moon; the last (Gene Cernan, Apollo 17) left on December 14, 1972.",
+  "cur": "Apollo ने छह सफल लैंडिंग की: 11, 12, 14, 15, 16, 17 (1969-1972)। Apollo 13 चंद्रमा से चूक गया (LOI cancelled), इसके पीछे लूप किया, सुरक्षित रूप से लौटा। 12 इंसानों ने चंद्रमा पर कदम रखा; आखिरी (जीन सर्नन, Apollo 17) 14 दिसंबर, 1972 को चले गए।"
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "title",
+  "en": "Goddard's First Liquid-Fuel Rocket · 1926",
+  "cur": "Goddard का पहला तरल-ईंधन रॉकेट · 1926"
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "intro_sentence",
+  "en": "March 16, 1926: a 3-meter spindly contraption rises 12 meters into the Massachusetts sky. The first liquid-fuel rocket flight in history.",
+  "cur": "16 मार्च 1926: एक 3-मीटर की पतली संरचना मैसेचुसेट्स आकाश में 12 मीटर ऊपर उठती है। इतिहास की पहली तरल-ईंधन रॉकेट उड़ान।"
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "narrative_101.0",
+  "en": "Robert Goddard was a physics professor at Clark University in Worcester, Massachusetts, with a 1919 Smithsonian paper proposing rockets could reach the Moon — for which the New York Times mocked him in a 1920 editorial that claimed he didn't even understand high-school physics. (The Times retracted on July 17, 1969 — the day after Apollo 11 launched, as the spacecraft was en route to the Moon.)",
+  "cur": "रोबर्ट गोडार्ड वर्सेस्टर, मैसेचुसेट्स के Clark University में एक भौतिकी प्रोफेसर थे, जिन्होंने 1919 में Smithsonian को एक पत्र प्रस्तुत किया जिसमें प्रस्तावित किया गया कि रॉकेट चाँद तक पहुँच सकते हैं — जिसके लिए New York Times ने 1920 के एक संपादकीय में उनका मजाक उड़ाया और दावा किया कि उन्हें हाई-स्कूल भौतिकी का भी ज्ञान नहीं है। (Times ने 17 जुलाई 1969 को माफी माँगी — Apollo 11 के लॉन्च के एक दिन बाद, जब अंतरिक्ष यान चाँद की ओर जा रहा था।)"
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "narrative_101.1",
+  "en": "On a snowy March 16, 1926, on his Aunt Effie Ward's farm in Auburn, Goddard launched a 4.4-pound, 10-foot rocket fueled by liquid oxygen and gasoline. It flew for 2.5 seconds, reached 41 feet altitude, and crashed in the cabbage field 184 feet downrange. His wife Esther Goddard photographed it. That short hop is the start of every modern rocket lineage.",
+  "cur": "एक बर्फीले 16 मार्च 1926 को, अपनी चाची Effie Ward के Auburn, मैसेचुसेट्स के खेत पर, Goddard ने 4.4 पाउंड, 10 फुट का एक रॉकेट लॉन्च किया जो तरल ऑक्सीजन और गैसोलीन से ईंधन भरा था। यह 2.5 सेकंड के लिए उड़ा, 41 फुट की ऊँचाई तक पहुँचा, और डाउनरेंज 184 फुट दूर गोभी के खेत में गिरा। उसकी पत्नी Esther Goddard ने इसकी तस्वीर खींची। यह छोटी-सी उड़ान आधुनिक रॉकेट की पूरी वंशावली की शुरुआत है।"
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "narrative_101.2",
+  "en": "Goddard was secretive — paranoid about competitors, refused most collaboration. His patents covered fundamentally everything: gimbaled engines, pumps, gyroscopic guidance, multi-stage configurations. Postwar Germans had read his patents; postwar Americans had to relearn most of his work because he hadn't shared it.",
+  "cur": "Goddard गुप्तप्रिय थे — प्रतियोगियों के बारे में संदेहास्पद, अधिकतर सहयोग से इनकार करते थे। उनके पेटेंट मौलिक रूप से सब कुछ कवर करते थे: गिम्बल्ड इंजन, पंप, जाइरोस्कोपिक मार्गदर्शन, मल्टी-स्टेज कॉन्फ़िगरेशन। युद्धोत्तर जर्मनों ने उनके पेटेंट पढ़े थे; युद्धोत्तर अमेरिकियों को उनके कार्य का अधिकांश दोबारा सीखना पड़ा क्योंकि उन्होंने इसे साझा नहीं किया था।"
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.0",
+  "en": "March 16, 1926 launch site: Aunt Effie Ward's farm, Auburn, Massachusetts. Vehicle: \"Nell\" — 10 ft tall, ~3 m long structure, weighing about 6 kg dry. Propellants: liquid oxygen + gasoline, regeneratively cooled, gimbaled nozzle.",
+  "cur": "16 मार्च 1926 का लॉन्च स्थल: चाची Effie Ward का खेत, Auburn, मैसेचुसेट्स। वाहन: \"Nell\" — 10 फुट लंबा, ~3 मीटर लंबी संरचना, सूखे वजन में लगभग 6 किग्रा। प्रणोदक: तरल ऑक्सीजन + गैसोलीन, पुनर्जनरेटिवली शीतल, गिम्बल्ड नोजल।"
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.1",
+  "en": "Earlier solid-fuel rockets existed (Chinese fire-arrows from the 13th century onward, Congreve rockets in the Napoleonic wars), but liquid fuels were the door to spaceflight: higher specific impulse, controllable throttling, restartable.",
+  "cur": "इससे पहले ठोस-ईंधन वाले रॉकेट मौजूद थे (13वीं सदी से चीनी अग्नि-बाण, नेपोलियनी युद्धों में कॉन्ग्रीव रॉकेट), लेकिन तरल ईंधन अंतरिक्ष उड़ान का द्वार थे: उच्च विशिष्ट आवेग, नियंत्रित थ्रॉटलिंग, और दोबारा चालू किए जा सकने की क्षमता।"
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.2",
+  "en": "Esther Goddard took most of the photographs. Her work is undercredited in standard histories — the iconic 1926 launch image is hers.",
+  "cur": "Esther Goddard ने अधिकांश तस्वीरें लीं। उनके कार्य को मानक इतिहासों में अंडरक्रेडिट किया गया है — 1926 की प्रतिष्ठित लॉन्च तस्वीर उनकी है।"
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.3",
+  "en": "Goddard's later flights from Roswell, New Mexico (1930-1941), reached 1.7 mi altitude (Mar 1937) and 9000 ft (1941). Modest by modern standards but every key technology — gimbaling, pumps, gyros, parachute recovery — proved out on Goddard's hardware decades before mass-produced rocketry caught up.",
+  "cur": "गोडार्ड की बाद की उड़ानें Roswell, न्यू मेक्सिको से (1930-1941), 1.7 मील की ऊँचाई तक पहुँचीं (मार्च 1937) और 9000 फुट (1941)। आधुनिक मानकों से विनम्र लेकिन हर महत्वपूर्ण प्रौद्योगिकी — गिम्बलिंग, पंप, जाइरो, पैराशूट रिकवरी — Goddard के हार्डवेयर पर साबित हुई दशकों पहले बड़े पैमाने पर रॉकेटरी के अनुसरण में।"
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.4",
+  "en": "Postwar acknowledgment: NASA's Goddard Space Flight Center in Maryland (1959) is named for him.",
+  "cur": "युद्धोत्तर स्वीकृति: NASA के Goddard Space Flight Center मेरीलैंड में (1959) का नाम उनके सम्मान में है।"
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "title",
+  "en": "Kepler's Laws · 1609–1619",
+  "cur": "केप्लर के नियम · 1609–1619"
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "intro_sentence",
+  "en": "Tycho Brahe's lifetime of naked-eye Mars data, distilled by Kepler into the three rules every orbit obeys.",
+  "cur": "टैको ब्राहे के नग्न नेत्र मंगल अवलोकन को केप्लर ने तीन नियमों में संघनित किया जो हर कक्षा का पालन करते हैं।"
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "narrative_101.0",
+  "en": "Tycho Brahe spent ~20 years at the Uraniborg observatory on Hven measuring Mars's position with quadrants made of brass and oak — better-than-arcminute precision, all with naked eyes. He died in 1601 having published little of his planetary results.",
+  "cur": "टैको ब्राहे ने ह्वेन पर उरानिबोर्ग वेधशाला में ~20 वर्षों तक पीतल और ओक से बने चतुर्थांश का उपयोग करके मंगल की स्थिति मापी — आर्कमिनट से बेहतर सटीकता, सभी नग्न नेत्रों से। वह 1601 में अपने ग्रहों के परिणामों को प्रकाशित किए बिना मर गया।"
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "narrative_101.1",
+  "en": "Kepler inherited the Mars notebooks. He spent another decade trying to fit them to circles and failed. The break came when he tried an ellipse — Mars matched immediately. Out of that came three laws: orbits are ellipses with the Sun at one focus; equal areas swept in equal time; period squared equals semi-major axis cubed.",
+  "cur": "केप्लर को मंगल की नोटबुकें विरासत में मिलीं। उसने उन्हें वृत्तों से जोड़ने का एक दशक बिताया और विफल रहा। अंतर तब आया जब उसने दीर्घवृत्त का प्रयास किया — मंगल तुरंत मेल खाया। उससे तीन नियम निकले: कक्षाएं दीर्घवृत्त हैं सूर्य एक फोकस पर; समान समय में समान क्षेत्र बह जाते हैं; अवधि वर्ग अर्ध-दीर्घ अक्ष घन के बराबर है।"
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "narrative_101.2",
+  "en": "Without those three laws, no spacecraft trajectory in this app would compute. Every porkchop cell, every transfer arc, every planet on /explore is a Keplerian solution.",
+  "cur": "उन तीन नियमों के बिना, इस ऐप में कोई भी अंतरिक्षयान प्रक्षेपवक्र गणना नहीं कर सकता। प्रत्येक पोर्कचॉप सेल, प्रत्येक हस्तांतरण चाप, /explore पर हर ग्रह एक Keplerian समाधान है।"
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.0",
+  "en": "Astronomia Nova (1609) published Laws 1 + 2 — the ellipse + equal-areas rules, derived from the Mars opposition data. Harmonices Mundi (1619) published Law 3 — period² ∝ semi-major axis³.",
+  "cur": "Astronomia Nova (1609) ने नियम 1 + 2 प्रकाशित किए — दीर्घवृत्त + समान-क्षेत्र नियम, मंगल विरोध डेटा से व्युत्पन्न। Harmonices Mundi (1619) ने नियम 3 प्रकाशित किया — अवधि² ∝ अर्ध-दीर्घ अक्ष³।"
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.1",
+  "en": "Kepler had no theoretical justification — the laws were empirical patterns extracted from data. Newton would supply the why 70 years later (gravity goes as 1/r²; bound orbits are conic sections; Law 3 falls out of energy conservation).",
+  "cur": "केप्लर के पास सैद्धांतिक न्यायसंगति नहीं थी — नियम डेटा से निकाले गए अनुभवजन्य पैटर्न थे। Newton ने 70 साल बाद कारण की आपूर्ति की (गुरुत्वाकर्षण 1/r² के रूप में जाता है; बाध्य कक्षाएं शांकव खंड हैं; नियम 3 ऊर्जा संरक्षण से निकलता है)।"
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.2",
+  "en": "Brahe's contribution wasn't just data: he was a meticulous instrumentalist who pushed naked-eye measurement to its physical limit. Telescope-grade precision arrived only after Galileo's 1609 telescope — too late to overlap with Brahe's career.",
+  "cur": "Brahe का योगदान केवल डेटा नहीं था: वह एक सावधान वाद्यविज्ञानी था जिसने नग्न-नेत्र माप को अपनी भौतिक सीमा तक ले गया। टेलीस्कोप-ग्रेड सटीकता गैलीलियो के 1609 टेलीस्कोप के बाद ही आई — Brahe के कैरियर से ओवरलैप करने के लिए बहुत देर।"
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.3",
+  "en": "Modern reanalysis: Kepler's Mars residuals are sub-arcminute. He nailed an ellipse with eccentricity 0.0934 from data that had irreducible measurement uncertainty of ~1 arcminute. The fit was real.",
+  "cur": "आधुनिक पुनर्विश्लेषण: केप्लर के मंगल अवशेष उप-आर्कमिनट हैं। उन्होंने ~1 आर्कमिनट की अपरिहार्य माप अनिश्चितता वाले डेटा से 0.0934 की विलक्षणता के साथ एक दीर्घवृत्त को सटीक रूप से हिट किया। यह फिट वास्तविक था।"
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "diagram_caption",
+  "en": "Tycho's Mars positions (dots) versus Kepler's elliptical fit (curve). Sun at one focus.",
+  "cur": "Tycho की मंगल स्थिति (बिंदु) बनाम केप्लर का दीर्घवृत्तीय फिट (वक्र)। एक फोकस पर सूर्य।"
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "title",
+  "en": "Newton's Principia · 1687",
+  "cur": "Newton की Principia · 1687"
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "intro_sentence",
+  "en": "One book, three laws of motion, and the inverse-square law of gravity — the foundation everything spaceflight does still rests on.",
+  "cur": "एक किताब, गति के तीन नियम और गुरुत्वाकर्षण का व्युत्क्रम-वर्ग नियम — वह आधार जिस पर आज भी सभी अंतरिक्ष उड़ान निर्भर करती है।"
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "narrative_101.0",
+  "en": "By 1684 Halley was asking the right people what shape an orbit would take if the Sun's pull went as 1/r². Christopher Wren wagered a book of forty shillings that no-one could prove it; Hooke claimed a proof he didn't have. Halley asked Newton — Newton said \"an ellipse\" without hesitation, dug up the proof from years-old notes, and three years later published the Principia.",
+  "cur": "1684 तक Halley सही लोगों से पूछ रहे थे कि अगर सूर्य की खिंचाई 1/r² के अनुसार कार्य करे तो कक्षा का आकार क्या होगा। क्रिस्टोफ़र रेन ने चालीस शिलिंग की किताब पर शर्त लगाई कि कोई इसे साबित नहीं कर सकेगा; Hooke ने एक ऐसा प्रमाण का दावा किया जो उसके पास था ही नहीं। Halley ने Newton से पूछा — Newton ने बिना संकोच के कहा \"एक दीर्घवृत्त\" और वर्षों के पुराने नोट्स से प्रमाण निकाला, और तीन साल बाद Principia प्रकाशित किया।"
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "narrative_101.1",
+  "en": "Three laws of motion (inertia, F = ma, action-reaction) plus the inverse-square gravity law (F = Gm₁m₂/r²) plus the calculus to do it all — one book, three years, no peer review. Halley paid the printing costs himself when the Royal Society ran out of money on a fish-anatomy book.",
+  "cur": "गति के तीन नियम (जड़त्व, F = ma, क्रिया-प्रतिक्रिया) और व्युत्क्रम-वर्ग गुरुत्वाकर्षण नियम (F = Gm₁m₂/r²) और इन सभी को करने के लिए कलन — एक किताब, तीन साल, कोई सहकर्मी समीक्षा नहीं। जब Royal Society की मछली-शरीर रचना की किताब पर पैसा खत्म हो गया तो Halley ने स्वयं छपाई की लागत वहन की।"
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "narrative_101.2",
+  "en": "Out of those equations: Kepler's three laws derive cleanly. Tides, projectile motion, the precession of the equinoxes, the shape of the Earth — all consequences. Spaceflight 280 years later is straightforward Newtonian mechanics with engines added.",
+  "cur": "उन समीकरणों से: केप्लर के तीन नियम स्पष्ट रूप से प्राप्त होते हैं। ज्वार, प्रक्षेप्य गति, विषुवों की पुरस्सरण, पृथ्वी का आकार — सभी परिणाम हैं। 280 साल बाद अंतरिक्ष उड़ान इंजनों के साथ साधारण Newtonian यांत्रिकी है।"
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "body_paragraphs.0",
+  "en": "Philosophiæ Naturalis Principia Mathematica was published July 1687 in Latin. Three books: motion in a vacuum, motion through resisting media, the system of the world. The third book applies the laws to the actual cosmos and reproduces all of Kepler's data from first principles.",
+  "cur": "Philosophiæ Naturalis Principia Mathematica जुलाई 1687 में लैटिन में प्रकाशित हुआ। तीन किताबें: निर्वात में गति, प्रतिरोधी माध्यम में गति, विश्व की व्यवस्था। तीसरी किताब इन नियमों को वास्तविक ब्रह्मांड पर लागू करती है और केप्लर के सभी आंकड़ों को पहले सिद्धांतों से पुनरुत्पादित करती है।"
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "body_paragraphs.1",
+  "en": "Calculus was Newton's invention specifically to do this. He called it \"fluxions\" — Leibniz independently invented essentially the same machinery in Germany around the same time, and the rivalry over priority lasted decades.",
+  "cur": "कलन Newton का आविष्कार था विशेष रूप से यह करने के लिए। उन्होंने इसे 'फ्लक्सन्स' कहा — लाइबनित्स ने लगभग उसी समय जर्मनी में स्वतंत्र रूप से अनिवार्य रूप से एक ही प्रणाली का आविष्कार किया, और प्राथमिकता पर प्रतिद्वंद्विता दशकों तक चली।"
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "body_paragraphs.2",
+  "en": "What Newton DIDN'T explain: WHY gravity follows 1/r². His own famous comment — added to the 1713 second edition: \"Hypotheses non fingo\" — \"I feign no hypotheses.\" The mechanism would wait for Einstein in 1915.",
+  "cur": "जो Newton ने समझाया नहीं: गुरुत्वाकर्षण 1/r² का अनुसरण क्यों करता है। उनका अपना प्रसिद्ध कथन — 1713 के दूसरे संस्करण में जोड़ा गया: \"Hypotheses non fingo\" — \"मैं कोई परिकल्पना नहीं गढ़ता।\" यह क्रियावली 1915 में Einstein के लिए प्रतीक्षा करती रही।"
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "body_paragraphs.3",
+  "en": "Modern numerical orbit propagators run essentially Newton's equations with floating-point arithmetic. /fly's heliocentric arc, /plan's porkchop, every Keplerian solution — Newtonian gravity all the way down.",
+  "cur": "आधुनिक संख्यात्मक कक्षा प्रसारक अनिवार्य रूप से Newton के समीकरणों को अस्थायी-बिंदु अंकगणित के साथ चलाते हैं। /fly की सौर-केंद्रीय चाप, /plan का सूअर का मांस, हर Keplerian समाधान — Newtonian गुरुत्वाकर्षण सब तरह से नीचे।"
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "formula_caption",
+  "en": "Newton's law of universal gravitation. G ≈ 6.674 × 10⁻¹¹ N·m²/kg².",
+  "cur": "न्यूटन का सार्वत्रिक गुरुत्वाकर्षण नियम। G ≈ 6.674 × 10⁻¹¹ N·m²/kg²।"
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "title",
+  "en": "Sputnik 1 · October 4, 1957",
+  "cur": "Sputnik 1 · 4 अक्तूबर, 1957"
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "intro_sentence",
+  "en": "An 84-kg Soviet aluminium ball goes into a 96-minute orbit. Spaceflight is real now — for everyone, all at once.",
+  "cur": "84 किग्रा का सोवियत एल्यूमीनियम गोला 96 मिनट की कक्षा में प्रवेश करता है। अंतरिक्ष यान सभी के लिए, एक ही बार में वास्तविक हो जाता है।"
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "narrative_101.0",
+  "en": "October 4, 1957, Baikonur Cosmodrome, Kazakh SSR: Sergei Korolev's R-7 rocket lofts a 58-cm aluminium sphere with four whip antennas into low Earth orbit. The sphere broadcasts a single beep every 0.4 seconds at 20 and 40 MHz. Anyone on Earth with a shortwave radio can hear it — and they did. The space age starts that night.",
+  "cur": "4 अक्टूबर, 1957, बायकोनूर कॉस्मोड्रोम, कज़ाख SSR: सर्गेई कोरोल्योव का R-7 रॉकेट चार चाबुक एंटेना वाली 58 सेमी एल्यूमीनियम गोली को निम्न पृथ्वी कक्षा में भेजता है। गोला हर 0.4 सेकंड में 20 और 40 MHz पर एक बीप प्रसारित करता है। पृथ्वी पर कोई भी शॉर्टवेव रेडियो के साथ इसे सुन सकता है — और उन्होंने सुना। अंतरिक्ष युग उस रात शुरू होता है।"
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "narrative_101.1",
+  "en": "Sergei Korolev, the Soviet chief designer, ran the R-7 programme as an ICBM project — the satellite was a sideshow. His engineering team launched a ~500 kg biological satellite (Sputnik 2, with the dog Laika) one month later. Korolev's name was a state secret his entire life; he was credited only as \"Chief Designer\" until obituary in 1966.",
+  "cur": "सर्गेई कोरोल्योव, सोवियत मुख्य डिजाइनर, R-7 कार्यक्रम को एक ICBM परियोजना के रूप में चलाते थे — उपग्रह एक पार्श्व प्रदर्शन था। उनकी इंजीनियरिंग टीम ने एक महीने बाद ~500 किग्रा जैविक उपग्रह (Sputnik 2, कुत्ते Laika के साथ) लॉन्च किया। कोरोल्योव का नाम उनके पूरे जीवन में एक राज्य रहस्य था; उन्हें 1966 के मृत्युलेख तक केवल \"मुख्य डिजाइनर\" के रूप में श्रेय दिया जाता था।"
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "narrative_101.2",
+  "en": "America had no operational rocket capable of orbit in 1957 — Vanguard exploded on the launch pad in December. Explorer 1 finally reached orbit January 31, 1958, on a von Braun Redstone derivative. The \"Sputnik shock\" launched NASA (1958), the National Defense Education Act, and the entire space race that would define the next decade.",
+  "cur": "अमेरिका के पास 1957 में कक्षा में जाने में सक्षम कोई परिचालन रॉकेट नहीं था — Vanguard दिसंबर में लॉन्च पैड पर विस्फोट हुआ। Explorer 1 अंत में 31 जनवरी, 1958 को von Braun Redstone व्युत्पन्न पर कक्षा में पहुंचा। \"स्पुतनिक शॉक\" ने NASA (1958), राष्ट्रीय रक्षा शिक्षा अधिनियम, और पूरे अंतरिक्ष दौड़ को लॉन्च किया जो अगले दशक को परिभाषित करेगा।"
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.0",
+  "en": "Vehicle: R-7 Semyorka, the world's first ICBM, repurposed. Five strap-on first-stage boosters around a sustainer core. The same family of rockets (heavily evolved) launches Soyuz crews to ISS today — direct hardware lineage from Sputnik.",
+  "cur": "यान: R-7 Semyorka, दुनिया का पहला ICBM, पुनः उपयोग किया गया। एक सस्टेनर कोर के चारों ओर पाँच स्ट्रैप-ऑन पहली-चरण बूस्टर। रॉकेटों का एक ही परिवार (भारी विकसित) आज आईएसएस को Soyuz दल लॉन्च करता है — Sputnik से प्रत्यक्ष हार्डवेयर वंशपरंपरा।"
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.1",
+  "en": "Sputnik orbit: perigee 215 km, apogee 939 km, inclination 65°, period 96 minutes. It re-entered January 4, 1958, after 92 days and 1440 orbits.",
+  "cur": "स्पुतनिक कक्षा: पेरीजी 215 किमी, अपोजी 939 किमी, झुकाव 65°, अवधि 96 मिनट। यह 4 जनवरी, 1958 को 92 दिन और 1440 कक्षाओं के बाद पुनः प्रवेश करता है।"
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.2",
+  "en": "Key personnel beyond Korolev: Tikhonravov (rocket designer), Keldysh (mathematician — orbit calculations), Glushko (rocket-engine designer for the R-7 boosters). Russian engineering had absorbed German V-2 work after WWII (the Soviets captured the Mittelwerk facility) but the R-7 was substantively native.",
+  "cur": "कोरोल्योव से परे मुख्य कर्मचारी: Tikhonravov (रॉकेट डिजाइनर), Keldysh (गणितज्ञ — कक्षा गणना), ग्लुश्को (R-7 बूस्टर के लिए रॉकेट-इंजन डिजाइनर)। रूसी इंजीनियरिंग ने द्वितीय विश्व युद्ध के बाद जर्मन V-2 कार्य को अवशोषित किया था (सोवियत ने Mittelwerk सुविधा को जब्त किया) लेकिन R-7 मौलिक रूप से देशी था।"
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.3",
+  "en": "American reaction was outsize: Sputnik was technically simple (a radio beacon) but politically enormous. The fact that the USSR could put 84 kg in orbit meant they could put a thermonuclear warhead anywhere on Earth via the same rocket. ICBM panic drove a decade of US R&D acceleration.",
+  "cur": "Sputnik तकनीकी रूप से सरल था (एक रेडियो बीकन) लेकिन राजनीतिक रूप से विशाल। तथ्य यह है कि USSR 84 किग्रा को कक्षा में डाल सकता था, इसका मतलब था कि वे एक ही रॉकेट के माध्यम से पृथ्वी पर कहीं भी एक थर्मोन्यूक्लियर वारहेड डाल सकते थे। ICBM आतंक ने US R&D त्वरण का एक दशक चलाया।"
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.4",
+  "en": "Sputnik's legacy: NASA founded July 29, 1958. ARPA (later DARPA) founded same year. The civilian US space programme was a direct response.",
+  "cur": "स्पुतनिक की विरासत: NASA 29 जुलाई, 1958 को स्थापित किया गया। ARPA (बाद में DARPA) उसी वर्ष स्थापित किया गया। नागरिक US अंतरिक्ष कार्यक्रम एक प्रत्यक्ष प्रतिक्रिया थी।"
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "title",
+  "en": "Tsiolkovsky Equation · 1903",
+  "cur": "Tsiolkovsky का समीकरण · 1903"
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "intro_sentence",
+  "en": "A deaf Russian schoolteacher works out the rocket equation 50 years before anyone could build a rocket to use it.",
+  "cur": "एक बहरे रूसी शिक्षक ने राकेट बनाने से 50 साल पहले राकेट समीकरण तैयार की।"
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "narrative_101.0",
+  "en": "Konstantin Tsiolkovsky was a self-taught provincial schoolteacher in Kaluga, deaf since childhood from scarlet fever, who spent his evenings sketching multi-stage rockets while teaching arithmetic by day. In 1903 he published \"The Investigation of Space by Means of Reactive Devices\" in an obscure Russian journal — and worked out the equation that would govern every rocket ever built.",
+  "cur": "कॉन्स्टेंटिन Tsiolkovsky कालूगा में एक आत्मनिर्भर प्रांतीय स्कूल शिक्षक थे, जो बचपन से स्कारलेट फीवर से बहरे थे, जो दिन में अंकगणित सिखाते हुए अपनी शामें बहु-चरण वाली रॉकेटों को स्केच करने में बिताते थे। 1903 में उन्होंने एक अस्पष्ट रूसी पत्रिका में \"The Investigation of Space by Means of Reactive Devices\" प्रकाशित किया — और उस समीकरण को कार्यान्वित किया जो हर कभी निर्मित रॉकेट को नियंत्रित करेगा।"
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "narrative_101.1",
+  "en": "The Tsiolkovsky equation: ∆v = vₑ × ln(m₀/m₁). The change in velocity a rocket can produce equals its exhaust velocity times the natural log of its mass ratio. That natural-log term is brutal — getting more ∆v requires exponentially more fuel. Most of every rocket is fuel. The Saturn V was 85% propellant by mass.",
+  "cur": "Tsiolkovsky समीकरण: ∆v = vₑ × ln(m₀/m₁)। एक रॉकेट जो वेग परिवर्तन पैदा कर सकता है वह उसके निकास वेग के बराबर है जिसे इसके द्रव्यमान अनुपात के प्राकृतिक लघुगणक से गुणा किया जाता है। वह प्राकृतिक-लघुगणक पद कठोर है — अधिक ∆v प्राप्त करने के लिए तेजी से अधिक ईंधन की आवश्यकता होती है। प्रत्येक रॉकेट का अधिकांश भाग ईंधन है। Saturn V द्रव्यमान के आधार पर 85% प्रणोदक था।"
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "narrative_101.2",
+  "en": "Tsiolkovsky also figured out: liquid fuels would beat solids; multi-staging was necessary to escape Earth; orbital stations could host humans permanently. He died in 1935, two years before Goddard's rockets reached serious altitude.",
+  "cur": "Tsiolkovsky ने यह भी पता लगाया: तरल ईंधन ठोस को हराएगा; पृथ्वी से बचने के लिए बहु-चरणीकरण आवश्यक था; कक्षीय स्टेशन स्थायी रूप से मनुष्यों की मेजबानी कर सकते थे। वह 1935 में मृत्यु हो गए, Goddard के राकेटों के गंभीर ऊंचाई तक पहुंचने से दो साल पहले।"
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "body_paragraphs.0",
+  "en": "Tsiolkovsky published the equation, the multi-stage rocket concept, and the orbital-station concept years before serious rocket engineering existed. Goddard would build the first liquid-fuel rocket in 1926 (US); von Braun's V-2 in 1942 (Germany); Korolev's R-7 in 1957 (USSR).",
+  "cur": "Tsiolkovsky ने समीकरण, बहु-चरण वाली रॉकेट की अवधारणा, और कक्षीय-स्टेशन अवधारणा को गंभीर रॉकेट इंजीनियरिंग के अस्तित्व से वर्षों पहले प्रकाशित किया। Goddard ने 1926 में पहली तरल-ईंधन रॉकेट बनाई (अमेरिका); von Braun की V-2 1942 में बनी (जर्मनी); कोरोल्योव की R-7 1957 में बनी (सोवियत संघ)।"
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "body_paragraphs.1",
+  "en": "The equation is the inverse of Newton's third law: every kilogram of propellant ejected at velocity vₑ pushes the vehicle by 1 kg × vₑ. Integrate that over decreasing mass and you get the natural-log dependence.",
+  "cur": "समीकरण Newton के तीसरे नियम का व्युत्क्रम है: वेग vₑ पर निकाला गया हर किलोग्राम प्रणोदक वाहन को 1 kg × vₑ से आगे बढ़ाता है। घटते द्रव्यमान पर इसे एकीकृत करें और आप प्राकृतिक-लघुगणक निर्भरता प्राप्त करते हैं।"
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "body_paragraphs.2",
+  "en": "Why log scale matters: doubling ∆v needs the mass ratio squared. Tripling needs cubed. To get from 0 to escape velocity (~11.2 km/s) with a typical chemical exhaust velocity of 4.4 km/s, mass ratio = e^(11.2/4.4) ≈ 13. So a 1-tonne payload needs 12 tonnes of propellant, plus the structure to hold it.",
+  "cur": "लॉग स्केल क्यों महत्वपूर्ण है: ∆v दोगुना करने के लिए द्रव्यमान अनुपात की आवश्यकता होती है। तीन गुना करने के लिए घन की आवश्यकता है। 0 से पलायन वेग (~11.2 km/s) तक 4.4 km/s के विशिष्ट रासायनिक निकास वेग के साथ पहुंचने के लिए, द्रव्यमान अनुपात = e^(11.2/4.4) ≈ 13। तो 1-टन पेलोड को 12 टन प्रणोदक की आवश्यकता है, साथ ही इसे रखने के लिए संरचना।"
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "body_paragraphs.3",
+  "en": "Tsiolkovsky never tested anything. He wasn't an engineer — he was a theoretician with chalk. The Soviet space programme posthumously canonised him; his Kaluga house is now a museum and his name is on the far-side crater the lunar Soviets aimed at.",
+  "cur": "Tsiolkovsky ने कभी कुछ भी परीक्षण नहीं किया। वह एक इंजीनियर नहीं थे — वह चॉक के साथ एक सैद्धांतिकवादी थे। सोवियत अंतरिक्ष कार्यक्रम ने मरणोपरांत उन्हें पवित्र किया; उनका कालुगा घर अब एक संग्रहालय है और उनका नाम दूर-पक्ष के गड्ढे पर है जिसे सोवियत चंद्र ने लक्ष्य बनाया था।"
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "formula_caption",
+  "en": "The rocket equation. m₀ = wet mass (full); m₁ = dry mass (empty); vₑ = exhaust velocity.",
+  "cur": "राकेट समीकरण। m₀ = गीला द्रव्यमान (पूर्ण); m₁ = सूखा द्रव्यमान (खाली); vₑ = निकास वेग।"
+ },
+ {
+  "rel": "science/life-in-space/_intro.json",
+  "at": "headline",
+  "en": "Life in space — what the human body does when gravity goes away.",
+  "cur": "अंतरिक्ष में जीवन - जब गुरुत्वाकर्षण दूर हो जाता है तो मानव शरीर क्या करता है।"
+ },
+ {
+  "rel": "science/life-in-space/_intro.json",
+  "at": "paragraphs.0",
+  "en": "Spaceflight is a slow medical experiment that humanity has been running on itself for 65 years. The body evolved in 1 g, in a thick atmosphere, behind a magnetic field. Take any of those away and physiology re-wires — fluids redistribute, bones thin, muscles fade, eyes change shape, the immune system gets weird, the inner ear gives up trying to tell which way is down.",
+  "cur": "स्पेसफ्लाइट एक धीमी चिकित्सा प्रयोग है कि मानवता 65 साल तक चल रही है। शरीर एक चुंबकीय क्षेत्र के पीछे एक मोटी वातावरण में 1 ग्राम में विकसित हुआ। उनमें से किसी को दूर ले लो और शरीर विज्ञान फिर से तारों - तरल पदार्थ redistribute, हड्डियों पतली, मांसपेशियों फीका, आंखों को बदलने का आकार, प्रतिरक्षा प्रणाली अजीब हो जाता है, आंतरिक कान बताते हैं कि किस तरह से नीचे है की कोशिश कर रहा है।"
+ },
+ {
+  "rel": "science/life-in-space/_intro.json",
+  "at": "paragraphs.1",
+  "en": "This tab walks through the headline effects and what astronauts do to fight them. Microgravity is the big one — every other tab section traces back to it. Radiation is the other one we don't yet know how to defeat for a Mars trip. EVA is its own physiological problem: a hard vacuum on the other side of a thin pressure suit changes everything.",
+  "cur": "यह टैब हेडलाइन प्रभाव के माध्यम से चलता है और अंतरिक्ष यात्री उन्हें लड़ने के लिए क्या करते हैं। Microgravity एक बड़ा है - हर दूसरे टैब अनुभाग में यह पता चलता है। विकिरण वह दूसरा है जिसे हम अभी तक नहीं जानते कि मंगल यात्रा के लिए कैसे हारना है। EVA अपनी शारीरिक समस्या है: एक पतली दबाव सूट के दूसरी तरफ एक हार्ड वैक्यूम सब कुछ बदलता है।"
+ },
+ {
+  "rel": "science/life-in-space/_intro.json",
+  "at": "paragraphs.2",
+  "en": "The countermeasures are real: ARED exercise machines on the ISS, sleep schedules calibrated against orbital sunrise, pre-breathe protocols before every spacewalk. None of them are perfect. The longer-duration we fly, the more we learn about what gives way first.",
+  "cur": "ये प्रतिकार वास्तविक हैं: आईएसएस पर ARED व्यायाम मशीनें, कक्षीय सूर्योदय के विरुद्ध अंशांकित नींद की अनुसूचियां, प्रत्येक स्पेसवॉक से पहले प्री-ब्रीदे प्रोटोकॉल। उनमें से कोई भी पूर्ण नहीं हैं। जितने लंबे समय के लिए हम उड़ते हैं, हम उतना ही अधिक सीखते हैं कि क्या सबसे पहले ढह जाता है।"
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "intro_sentence",
+  "en": "Astronauts lose roughly 1–2% of bone mass per month in microgravity — the same rate as elderly osteoporosis, but compressed and reversible-ish.",
+  "cur": "एस्ट्रोनॉट्स माइक्रोग्रेविटी में प्रति माह लगभग 1-2% हड्डी द्रव्यमान खो देते हैं - बुजुर्ग ऑस्टियोपोरोसिस के समान दर, लेकिन संपीड़ित और प्रतिवर्ती-ish।"
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "body_paragraphs.0",
+  "en": "Bone is a living tissue that constantly remodels itself: osteoblasts lay new bone down, osteoclasts dissolve old bone away, and on Earth the loading from walking, lifting, and just standing keeps the two roughly balanced. Take that loading away in orbit and the balance tips. Resorption keeps going at its normal rate; new-bone deposition slows. The result is a net loss of about 1–2% per month, concentrated in the weight-bearing structures: lumbar spine, pelvis, femoral neck, calcaneus.",
+  "cur": "हड्डी एक जीवित ऊतक है जो लगातार खुद को फिर से मॉडल करता है: ऑस्टियोब्लास्ट नई हड्डी को नीचे रखते हैं, ऑस्टियोक्लोस्ट पुरानी हड्डी को दूर करते हैं, और पृथ्वी पर चलने, उठाने और बस खड़े रहने से दोनों को मोटे तौर पर संतुलित रखता है। इसे छोड़कर सामग्री पर बढ़ने के लिए पुनरुत्थान अपनी सामान्य दर पर चल रहा है; नई हड्डी जमाव धीमा हो जाता है। परिणाम प्रति माह लगभग 1-2% का शुद्ध नुकसान है, वजन-असर संरचनाओं में केंद्रित: लम्बर रीढ़, श्रोणि, नाभिक गर्दन, कैल्केनस।"
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "body_paragraphs.1",
+  "en": "For comparison, post-menopausal osteoporosis on Earth runs at about 1–2% per **year**. A six-month ISS mission compresses about a decade of age-related loss into half a year. Some of it comes back after flight; some doesn't. Studies of long-duration crew suggest measurable bone-mineral-density deficits persist for years post-flight even after dedicated rehabilitation.",
+  "cur": "तुलना के लिए, पृथ्वी पर रजोनिवृत्ति के बाद का ऑस्टियोपोरोसिस लगभग 1–2% प्रति **वर्ष** की दर से होता है। छह महीने का आईएसएस मिशन लगभग एक दशक की आयु-संबंधित हानि को आधे वर्ष में संपीड़ित कर देता है। उड़ान के बाद इसका कुछ हिस्सा वापस आता है; कुछ नहीं आता। दीर्घकालीन क्रू के अध्ययन से पता चलता है कि हड्डी के खनिज घनत्व में मापने योग्य कमी उड़ान के बाद वर्षों तक बनी रहती है, भले ही समर्पित पुनर्वास के बाद भी।"
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "body_paragraphs.2",
+  "en": "The countermeasure stack on the ISS is ARED (Advanced Resistive Exercise Device — a vacuum-piston-loaded fake squat rack), the T2 treadmill (run while bungeed down), and the cycle ergometer. Modern protocols hit ~1100 N axial loading on ARED — high enough to be osteogenic. With ARED + bisphosphonate drug regimens, six-month crew now return with bone losses around 0.5%/month rather than the pre-ARED 1.5%/month. Better, not solved.",
+  "cur": "आईएसएस पर काउंटरमेश्योर स्टैक ARED (Advanced Resistive Exercise Device — एक वैक्यूम-पिस्टन-लोडेड नकली स्क्वाट रैक), T2 ट्रेडमिल (जब तक बंजी हुई) और चक्र एर्गोमीटर है। आधुनिक प्रोटोकॉल ने ARED पर ~1100 एन अक्षीय लोडिंग को मारा — ओस्टियोजेनिक होने के लिए पर्याप्त। ARED + bisphosphonate ड्रग रेजिमेंट के साथ, छह महीने के चालक दल अब पूर्व-ARED 1.5%/माह के बजाय 0.5%/माह के आसपास हड्डी हानि के साथ वापस लौटते हैं। बेहतर, हल नहीं हुआ।"
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "body_paragraphs.3",
+  "en": "For a Mars-class three-year round trip, even the best current countermeasures imply a fracture-risk landing astronaut. Active research lines include vibration platforms, mechanical loading suits, and exploring whether artificial gravity (a slowly rotating habitat) is the only durable answer.",
+  "cur": "मंगलवर्ग के तीन साल के दौर की यात्रा के लिए, यहां तक कि सबसे अच्छा वर्तमान काउंटरमेशर्स ने फ्रैक्चर-जोखिम लैंडिंग अंतरिक्ष यात्री को लागू किया। सक्रिय अनुसंधान लाइनों में कंपन प्लेटफार्म, मैकेनिकल लोडिंग सूट शामिल हैं, और यह पता लगाना कि कृत्रिम गुरुत्व (एक धीरे घूर्णन आवास) एकमात्र टिकाऊ उत्तर है।"
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "diagram_caption",
+  "en": "ARED + treadmill + cycle keep loading on the weight-bearing skeleton; with countermeasures, modern crew lose ~0.5%/month vs the pre-ARED 1.5%/month.",
+  "cur": "ARED + treadmill + चक्र वजन-असर कंकाल पर लोड हो रहा है; प्रतिघात के साथ, आधुनिक चालक दल पूर्व-ARED 1.5%/माह बनाम ~0.5%/माह खो देता है।"
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "title",
+  "en": "Crew dynamics & psychology — Mir crises, ISS protocols, isolation",
+  "cur": "क्रू डायनामिक्स और मनोविज्ञान — Mir संकट, आईएसएस प्रोटोकॉल, अलगाववाद"
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "intro_sentence",
+  "en": "Most of what we know about humans-in-space psychology was learned on Mir between 1986 and 2001. Fifteen years, 28 expeditions, four near-loss events, and a permanent shift in how every space agency thinks about crew composition.",
+  "cur": "मनुष्यों के अंतरिक्ष मनोविज्ञान के बारे में हमें जो कुछ पता है वह 1986 से 2001 तक Mir पर सीखा गया। पंद्रह साल, 28 अभियान, चार निकट-नुकसान की घटनाएँ, और क्रू संरचना के बारे में प्रत्येक अंतरिक्ष एजेंसी की सोच में एक स्थायी बदलाव।"
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.0",
+  "en": "Salyut 6 (Soviet, 1977-82) was the first station with deliberate long-duration crews, and the first to encounter the psychological problem that every subsequent long-mission station has had: at roughly 4-6 weeks into a mission, even highly-screened crews enter a phase Soviet psychologists called *asthenia* — fatigue, irritability, withdrawal from communication with ground, declining motivation. It was first attributed to physical deconditioning but became clear during Salyut 7 + Mir that it's primarily psychological — the novelty of orbit wears off, the work becomes routine, the crew is acutely aware they can't leave for another 5 months, and the relationship with ground control turns adversarial. Soviet ground controllers used to deliberately schedule unstructured personal time + family video calls + occasional surprise resupply gifts (chocolate, fresh fruit) as countermeasures; the practice is now standard on ISS + Tiangong + every analog station.",
+  "cur": "Salyut 6 (सोवियत, 1977-82) जानबूझकर दीर्घ अवधि के क्रू वाला पहला स्टेशन था, और मनोवैज्ञानिक समस्या का सामना करने वाला पहला था जो बाद के हर दीर्घ-मिशन स्टेशन में रही है: एक मिशन में मोटे तौर पर 4-6 हफ्तों के बाद, यहां तक कि अत्यधिक जांच किए गए क्रू भी एक ऐसे चरण में प्रवेश करते हैं जिसे सोवियत मनोवैज्ञानिकों ने *अस्थेनिया* कहा था — थकान, चिड़चिड़ापन, जमीन से संचार से पीछे हटना, प्रेरणा में गिरावट। इसे शुरुआत में शारीरिक अक्षमता के लिए जिम्मेदार ठहराया गया था लेकिन Salyut 7 और Mir के दौरान यह स्पष्ट हो गया कि यह मुख्य रूप से मनोवैज्ञानिक है — कक्षा की नवीनता दूर हो जाती है, काम दिनचर्या बन जाता है, क्रू को तीव्रता से एहसास होता है कि वे और 5 महीने के लिए नहीं जा सकते, और जमीनी नियंत्रण के साथ संबंध विरोधी हो जाता है। सोवियत जमीनी नियंत्रकों ने जानबूझकर असंरचित व्यक्तिगत समय + पारिवारिक वीडियो कॉल + कभी-कभी आश्चर्य पुनः आपूर्ति उपहार (चॉकलेट, ताजे फल) को प्रतिरक्षा उपायों के रूप में निर्धारित करने का अभ्यास किया; यह अभ्यास अब आईएसएस, Tiangong और हर एनालॉग स्टेशन पर मानक है।"
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.1",
+  "en": "Mir's 1997 was the formative year. In February, a Vika oxygen-generation candle caught fire in the Kvant-1 module — flames that Linenger described as burning for up to ~14 minutes (Russian accounts put the active flame nearer 90 seconds) tore through the corridor connecting Mir's modules to the Soyuz lifeboats, blocking the escape path. The two-cosmonaut + one-NASA-astronaut crew (Tsibliyev, Lazutkin, Linenger) put on respirators and fought the fire with extinguishers in zero-g (which is harder than it sounds; the extinguisher's reaction mass kicks the operator backward). They prevailed but the cabin was full of toxic smoke for days. Four months later (June 1997), a manual remote-controlled Progress docking went wrong — the unmanned cargo ship struck the Spektr module at 1 m/s, puncturing the hull. Tsibliyev and Lazutkin sealed Spektr in 11 minutes (the hatch had to be wired closed because cables ran through the bulkhead), preventing total station loss. After both events the same crew remained on station until the regular crew rotation. Linenger's memoir + the post-mission psychiatric debriefs documented severe cumulative stress, withdrawal, and conflict between the cosmonauts and ground control over operational decisions.",
+  "cur": "1997 Mir का निर्णायक वर्ष था। फरवरी में, Kvant-1 मॉड्यूल में एक Vika ऑक्सीजन-निर्माण मोमबत्ती आग लगी — लिनेंजर ने जो लपटों का वर्णन किया वह लगभग 14 मिनट तक जलती रहीं (रूसी खातों में सक्रिय लपट 90 सेकंड के करीब रहीं) Mir के मॉड्यूल को Soyuz लाइफबोट से जोड़ने वाली गलियारे में फैल गईं, पलायन मार्ग को अवरुद्ध कर दिया। दो-अंतरिक्ष-यात्री + एक-NASA-अंतरिक्ष-यात्री दल (Tsibliyev, Lazutkin, लिनेंजर) ने श्वासयंत्र पहने और शून्य-गुरुत्व में अग्निशामकों के साथ आग से लड़े (जो सुनने में जितना आसान लगता है उससे कहीं अधिक कठिन है; अग्निशामक की प्रतिक्रिया द्रव्यमान संचालक को पीछे की ओर धकेलती है)। वे जीत गए किंतु केबिन दिनों तक जहरीले धुएँ से भरा रहा। चार महीने बाद (जून 1997), एक मैनुअल दूरवर्ती-नियंत्रित Progress डॉकिंग गलत हो गई — अनमानित कार्गो जहाज़ ने Spektr मॉड्यूल से 1 m/s पर टकराया, पतवार को छेद दिया। Tsibliyev और Lazutkin ने 11 मिनट में Spektr को सील किया (हैच को तारों से बंद करना पड़ा क्योंकि केबलें बल्कहेड से गुजरती थीं), कुल स्टेशन नुकसान को रोका। दोनों घटनाओं के बाद समान दल नियमित दल रोटेशन तक स्टेशन पर बने रहे। लिनेंजर की संस्मरणी + मिशन-पश्चात मनोचिकित्सा विवरणों ने गंभीर संचित तनाव, अलगाववाद, और अंतरिक्ष-यात्रियों तथा भू-नियंत्रण के बीच संचालन निर्णयों पर संघर्ष का दस्तावेज़ किया।"
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.2",
+  "en": "ISS Expedition 1 (Shepherd-Krikalev-Gidzenko, 2000-01) was the first true international long-duration crew. The protocol stack — daily ground-uplink schedule, mandatory rest periods, weekly private psychiatric conferences (PPCs) with a flight surgeon, mandatory family video calls — was designed from the Mir lessons. The interpersonal model is closer to a small-team submarine than to a corporate office: clear authority but flat decision-making in non-emergency contexts; structured conflict resolution (a problem is discussed, voted on if disagreement persists, deferred to commander if still disagreement); active management of personality friction by ground (a crew member who's not getting along with another can be paired on tasks with a third). Every multi-national crew since Expedition 1 has had English as the common operational language (NASA-Russian crews use Russian for Russian-segment operations, English for joint operations); Chinese-American direct cooperation remains operationally constrained by the Wolf Amendment, but the ISS-Tiangong operational profile has converged on similar communication protocols anyway.",
+  "cur": "आईएसएस Expedition 1 (Shepherd-क्रिकालेव-गिद्ज़ेंको, 2000-01) पहली सच्ची अंतर्राष्ट्रीय दीर्घ अवधि की क्रू था। प्रोटोकॉल स्टैक — दैनिक जमीनी-अपलिंक अनुसूची, अनिवार्य आराम अवधि, सप्ताहिक निजी मनोरोग सम्मेलन (PPCs) एक उड़ान सर्जन के साथ, अनिवार्य पारिवारिक वीडियो कॉल — Mir पाठों से डिजाइन किया गया था। पारस्परिक मॉडल एक कॉर्पोरेट कार्यालय की तुलना में एक छोटी-टीम पनडुब्बी के करीब है: स्पष्ट अधिकार लेकिन गैर-आपातकालीन संदर्भों में सपाट निर्णय-निर्माण; संरचित संघर्ष समाधान (एक समस्या पर चर्चा की जाती है, असहमति बनी रहने पर मतदान किया जाता है, अगर अभी भी असहमति है तो कमांडर को स्थगित किया जाता है); जमीन द्वारा व्यक्तित्व घर्षण का सक्रिय प्रबंधन (एक क्रू सदस्य जो किसी और के साथ अच्छी तरह से नहीं मिल रहा है उसे एक तीसरे के साथ कार्यों पर जोड़ा जा सकता है)। Expedition 1 के बाद से हर बहु-राष्ट्रीय क्रू के पास अंग्रेजी सामान्य परिचालन भाषा के रूप में है (NASA-रूसी क्रू रूसी-खंड परिचालन के लिए रूसी का उपयोग करते हैं, संयुक्त परिचालन के लिए अंग्रेजी); चीनी-अमेरिकी सीधा सहयोग Wolf Amendment द्वारा परिचालन रूप से विवश रहता है, लेकिन ISS-Tiangong परिचालन प्रोफ़ाइल वैसे भी समान संचार प्रोटोकॉल पर अभिसरित हो गई है।"
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.3",
+  "en": "Tiangong's crew dynamics are constructed differently. Single-agency means all crew are PLA-officer-status with similar military-rank backgrounds; the hierarchy is more vertical than ISS, with the commander having more unilateral authority. Shenzhou 13 (Zhai-Wang-Ye, 2021-22, Tiangong's first 6-month crew) reported in post-mission debriefs that the unified operational language + shared training background + same-agency authority chain reduced the international-translation friction that ISS crews experience but added a different friction (peer-conflict resolution between same-rank colleagues was reportedly harder than peer-conflict resolution between cross-agency colleagues with different bosses). The CMSA-internal psychological screening criteria emphasise collaborative behaviour even more strongly than NASA's, partially because the architecture's vertical authority doesn't have the cross-agency safety-valve that ISS provides.",
+  "cur": "Tiangong की क्रू गतिविधियां अलग तरीके से बनाई गई हैं। एकल-एजेंसी का मतलब है कि सभी क्रू PLA-अधिकारी-स्थिति वाले हैं जिनकी समान सैन्य-रैंक पृष्ठभूमि है; पदानुक्रम आईएसएस की तुलना में अधिक ऊर्ध्वाधर है, कमांडर के पास अधिक एकतरफा अधिकार है। Shenzhou 13 (Zhai-Wang-Ye, 2021-22, Tiangong की पहली 6-महीने की क्रू) ने मिशन के बाद की जांच में बताया कि एकीकृत परिचालन भाषा + साझा प्रशिक्षण पृष्ठभूमि + एक ही-एजेंसी अधिकार श्रृंखला ने अंतर्राष्ट्रीय-अनुवाद घर्षण को कम कर दिया जो आईएसएस क्रू अनुभव करते हैं लेकिन एक अलग घर्षण जोड़ा (समान-रैंक सहकर्मियों के बीच सहकर्मी-संघर्ष समाधान विभिन्न बॉस वाले क्रॉस-एजेंसी सहकर्मियों के बीच सहकर्मी-संघर्ष समाधान की तुलना में कथित रूप से कठिन था)। CMSA-आंतरिक मनोवैज्ञानिक स्क्रीनिंग मानदंड NASA के मुकाबले सहयोगी व्यवहार पर और भी अधिक जोर देते हैं, आंशिक रूप से क्योंकि आर्किटेक्चर का ऊर्ध्वाधर अधिकार आईएसएस प्रदान करने वाली क्रॉस-एजेंसी सुरक्षा-वाल्व नहीं है।"
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.4",
+  "en": "Mars-class missions are the open psychological problem. The 26-month minimum-energy mission profile means crews are in confinement for ~33 months including transit + surface + return. The ground-to-vehicle round-trip-light-time grows from <0.1 second (Moon) to 4-24 minutes (Mars); real-time conversation with family + mission control is impossible for most of the journey. The cumulative stress modelling is largely extrapolated from analog campaigns (HI-SEAS Hawaii, Roscosmos SIRIUS in Moscow, MARS-500 in Moscow — the latter was 520 simulated days of crew isolation, with notable interpersonal conflict patterns by day ~200). The conservative architecture assumption is that a Mars crew needs ~7 people (not 6) for redundancy under acute behavioural-health events; the lossy assumption is that AI / autonomous medical support + procedural-skill expansion can compensate for loss of real-time ground psychological support. Neither has been validated. The first crewed Mars mission will be the first long-distance space-isolation experiment ever conducted with stakes high enough that failure is non-recoverable.",
+  "cur": "मंगल-वर्ग के मिशन खुली मनोवैज्ञानिक समस्या हैं। 26-महीने की न्यूनतम-ऊर्जा मिशन प्रोफ़ाइल का अर्थ है कि क्रू ~33 महीने के लिए परिरुद्धता में हैं जिसमें पारगमन + सतह + वापसी शामिल है। जमीन-से-वाहन राउंड-ट्रिप-प्रकाश-समय <0.1 सेकंड (चंद्रमा) से 4-24 मिनट (मंगल) तक बढ़ता है; परिवार और मिशन नियंत्रण के साथ वास्तविक समय की बातचीत यात्रा के अधिकांश के लिए असंभव है। संचयी तनाव मॉडलिंग को काफी हद तक एनालॉग अभियानों से एक्सट्रपोलेट किया जाता है (HI-SEAS हवाई, Roscosmos SIRIUS मॉस्को में, MARS-500 मॉस्को में — बाद वाला क्रू अलगाववाद के 520 सिम्युलेटेड दिन था, दिन ~200 के आसपास उल्लेखनीय पारस्परिक संघर्ष पैटर्न के साथ)। रूढ़िवादी आर्किटेक्चर धारणा यह है कि एक मंगल क्रू को तीव्र व्यवहारिक-स्वास्थ्य घटनाओं के तहत अतिरेक के लिए ~7 लोगों की आवश्यकता है (6 नहीं); हानिकारक धारणा यह है कि AI / स्वायत्त चिकित्सा समर्थन + प्रक्रियात्मक-कौशल विस्तार वास्तविक समय जमीनी मनोवैज्ञानिक समर्थन के नुकसान की भरपाई कर सकता है। न तो सत्यापित किया गया है। पहला मानवयुक्त मंगल मिशन पहला दीर्घ-दूरी अंतरिक्ष-अलगाववाद प्रयोग होगा जो इतने अधिक दांव के साथ संचालित किया जाएगा कि विफलता गैर-पुनर्प्राप्य है।"
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "diagram_caption",
+  "en": "Mir 1997 (fire + Spektr collision) is the canonical case study; ISS protocols (daily uplink schedule + PPCs + multi-national authority chain) are the operational response; Tiangong (single-agency hierarchy) is the contrast case; Mars (33 months + 4-24 min ground delay + no resupply) is the unsolved next-generation problem.",
+  "cur": "Mir 1997 (आग + Spektr टकराव) विहित केस स्टडी है; आईएसएस प्रोटोकॉल (दैनिक अपलिंक अनुसूची + PPCs + बहु-राष्ट्रीय अधिकार श्रृंखला) परिचालन प्रतिक्रिया है; Tiangong (एकल-एजेंसी पदानुक्रम) विपरीत केस है; मंगल (33 महीने + 4-24 मिनट जमीन विलंब + कोई पुनः आपूर्ति नहीं) अनसुलझी अगली पीढ़ी की समस्या है।"
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "title",
+  "en": "Crew selection — the funnel from applicant to astronaut",
+  "cur": "चालक दल चयन — आवेदक से अंतरिक्ष यात्री तक की कीप"
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "intro_sentence",
+  "en": "Every space agency runs roughly the same selection funnel — physical, cognitive, psychological, operational — narrowing ~10,000 applicants to ~10 selectees. The bottleneck is crew dynamics under stress.",
+  "cur": "प्रत्येक अंतरिक्ष एजेंसी लगभग समान चयन कीप चलाती है — शारीरिक, संज्ञानात्मक, मनोवैज्ञानिक, परिचालन — जो ~10,000 आवेदकों को ~10 चयनितों तक संकीर्ण करती है। बाधा तनाव के तहत चालक दल की गतिशीलता है।"
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.0",
+  "en": "The first generation of selection was driven by hardware constraints. Mercury (NASA, 1959) accepted only military jet test pilots under 5'11\" (180 cm — the Mercury capsule cabin limit), under 40 years old, with engineering degrees, and parachute-jump experience. The Soviet Vostok program (1959-60) accepted only fighter pilots under 5'7\" (170 cm — the Vostok hatch), under 30, under 70 kg. The reasoning was that the vehicle didn't have enough margin to fly someone larger or older, and a test pilot already had the airmanship + stress-tolerance the program needed. Of the original 20-person Soviet cosmonaut group (1960), only 12 ever flew; of the Mercury Seven, all seven flew. Both numbers tell you the selection bar was set very high relative to mission availability.",
+  "cur": "चयन की पहली पीढ़ी हार्डवेयर की सीमाओं से तय हुई थी। Mercury (NASA, 1959) केवल ऐसे सैन्य जेट परीक्षण पायलट लेता था जिनकी लंबाई 5'11\" (180 सेमी — Mercury कैप्सूल केबिन की सीमा) से कम हो, उम्र 40 से कम हो, इंजीनियरिंग की डिग्री हो और पैराशूट से कूदने का अनुभव हो। सोवियत Vostok कार्यक्रम (1959-60) केवल ऐसे लड़ाकू पायलट लेता था जिनकी लंबाई 5'7\" (170 सेमी — Vostok का हैच) से कम, उम्र 30 से कम और वज़न 70 किग्रा से कम हो। तर्क यह था कि यान में इतनी गुंजाइश नहीं थी कि किसी लंबे या उम्रदराज़ व्यक्ति को ले जा सके, और परीक्षण पायलट के पास पहले से वह उड़ान-कौशल और तनाव सहने की क्षमता थी जिसकी कार्यक्रम को ज़रूरत थी। 20 लोगों के मूल सोवियत अंतरिक्ष-यात्री समूह (1960) में से केवल 12 ने उड़ान भरी; Mercury Seven में से सातों ने उड़ान भरी। दोनों संख्याएँ बताती हैं कि उपलब्ध मिशनों की तुलना में चयन की कसौटी बहुत ऊँची रखी गई थी।"
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.1",
+  "en": "Modern selection looks for different things. NASA's 2017 class accepted 12 from 18,300 applicants (0.07% acceptance — significantly lower than Harvard). Education requirement: STEM master's degree or equivalent operational experience (test pilot, MD, PhD). Height window: 4'9\"–6'4\" (149-193 cm — Crew Dragon and Soyuz both accommodate this range). No vision restriction beyond correctable. No upper age limit. Two years of related professional experience minimum, but actual selectees average 13 years. The fitness bar has shifted from 'jet-pilot G tolerance' to 'will not develop a serious illness on a 6-month ISS expedition' — different problem, different test.",
+  "cur": "आधुनिक चयन अलग चीज़ें खोजता है। NASA के 2017 बैच ने 18,300 आवेदकों में से 12 को चुना (0.07% स्वीकृति — Harvard से भी काफ़ी कम)। शिक्षा की शर्त: STEM में मास्टर डिग्री या समकक्ष परिचालन अनुभव (परीक्षण पायलट, डॉक्टर, पीएचडी)। लंबाई की सीमा: 4'9\"–6'4\" (149-193 सेमी — Crew Dragon और Soyuz दोनों यह दायरा समा लेते हैं)। सुधारी जा सकने वाली दृष्टि के अलावा कोई पाबंदी नहीं। उम्र की कोई ऊपरी सीमा नहीं। कम से कम दो साल का संबंधित पेशेवर अनुभव, पर चुने गए लोगों का औसत 13 साल है। शारीरिक कसौटी 'जेट पायलट जैसी G सहनशीलता' से बदलकर 'आईएसएस पर 6 महीने के अभियान में गंभीर रूप से बीमार नहीं पड़ेगा' हो गई है — अलग समस्या, अलग परीक्षा।"
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.2",
+  "en": "The medical phase is the single largest filter. Lovelace Clinic (Mercury, 1959) ran ~30 separate tests over a week, including the iconic ice-water-in-the-ear vestibular shock and the 'how long can you sit in a dark sensory-deprivation tank' isolation screen. Modern medicals still run isolation chambers (NASA uses a 12-hour confined-space evaluation; Roscosmos uses a longer 5-day Звезда isolation chamber session) but the medical workup is more sophisticated: comprehensive metabolic profile, full cardiology with stress echo, neurological imaging, dental clearance (a tooth abscess on orbit is a mission-loss event), and a psychiatric screen done by panel interview. Soyuz qualification adds centrifuge tolerance to 8g and 14-day quarantine to confirm the immune profile.",
+  "cur": "चिकित्सा चरण सबसे बड़ा अकेला छलना है। Lovelace Clinic (Mercury, 1959) एक हफ़्ते में ~30 अलग-अलग परीक्षण करती थी, जिनमें कान में बर्फ़ीले पानी से दिया जाने वाला प्रसिद्ध संतुलन-झटका और 'अँधेरे संवेदी-वंचना टैंक में तुम कितनी देर बैठ सकते हो' वाली एकांत-जाँच शामिल थी। आधुनिक जाँचें अब भी एकांत-कक्षों का उपयोग करती हैं (NASA बंद स्थान में 12 घंटे का मूल्यांकन करता है; Roscosmos एकांत-कक्ष Звезда में 5 दिन का लंबा सत्र), पर चिकित्सा जाँच अधिक परिष्कृत है: पूर्ण चयापचय प्रोफ़ाइल, स्ट्रेस इको सहित पूरी हृदय जाँच, तंत्रिका-इमेजिंग, दंत मंज़ूरी (कक्षा में दाँत का फोड़ा मिशन गँवा सकता है), और पैनल साक्षात्कार द्वारा मनोरोग जाँच। Soyuz योग्यता में 8 g तक सेंट्रीफ़्यूज सहनशीलता और प्रतिरक्षा प्रोफ़ाइल की पुष्टि के लिए 14 दिन का क्वारंटीन जुड़ जाता है।"
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.3",
+  "en": "Psychological screening is the part that's hardest to evaluate but disqualifies the most candidates relative to its visibility. The selection psychologists are looking for what JSC calls 'expedition behaviour' — the ability to work productively in a confined multinational team for 6+ months with no escape. Disqualifiers include rigid thinking, conflict-avoidance, score-keeping, perfectionism (counterintuitively — the trait is associated with crew-friction in long missions), and the specific cluster called 'right-stuff syndrome' that the early astronaut corps prized. The Apollo psychologist Patricia Santy's 1994 book *Choosing the Right Stuff* documents how the personality profile that wins selection in the test-pilot era is partially the profile that fails in long-duration missions; modern selection has shifted toward the temperament profile that succeeds in Antarctic-winter scientific bases and submarine deployments — calmer, more collaborative, less individually-aggressive.",
+  "cur": "मनोवैज्ञानिक जाँच का मूल्यांकन सबसे कठिन है, पर अपनी कम दिखाई देने वाली प्रकृति के अनुपात में यही सबसे अधिक उम्मीदवारों को बाहर करती है। चयन मनोवैज्ञानिक वह खोजते हैं जिसे JSC 'अभियान व्यवहार' कहता है — 6+ महीने तक, बिना किसी निकास के, बंद बहुराष्ट्रीय टीम में उत्पादक ढंग से काम करने की क्षमता। अयोग्य ठहराने वाले लक्षणों में कठोर सोच, टकराव से बचना, हिसाब रखना, पूर्णतावाद (उलटे अर्थ में — यह गुण लंबे मिशनों में दल के घर्षण से जुड़ा है), और 'right stuff सिंड्रोम' नाम का वह ख़ास समूह शामिल है जिसे शुरुआती अंतरिक्ष-यात्री दल बहुत महत्व देता था। Apollo की मनोवैज्ञानिक Patricia Santy की 1994 की पुस्तक *Choosing the Right Stuff* बताती है कि परीक्षण-पायलट युग में चयन जीतने वाली व्यक्तित्व-रूपरेखा आंशिक रूप से वही है जो लंबी अवधि के मिशनों में विफल होती है; आधुनिक चयन उस स्वभाव की ओर मुड़ गया है जो अंटार्कटिका के शीतकालीन वैज्ञानिक ठिकानों और पनडुब्बी तैनाती में सफल होता है — अधिक शांत, अधिक सहयोगी, व्यक्तिगत रूप से कम आक्रामक।"
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.4",
+  "en": "Non-NASA programs follow parallel logic with national variation. Roscosmos cosmonaut selection inherits the Soviet preference for engineering-heavy backgrounds and longer quarantine windows; the typical Soyuz commander has flown two or three previous missions before the assignment. CSA, ESA, and JAXA each select small cohorts (typically 1-2 per generation) through agency-specific medical + psychological standards but increasingly use shared training infrastructure — every modern ISS crew member trains in Houston, Star City, and either Tsukuba or Cologne. China's astronaut selection, run by the China Manned Space Agency (CMSA), took only PLAAF pilots for its first two groups (1998, 2010); the third group, selected in 2020, added flight engineers and payload specialists, mirroring NASA's 1965 expansion beyond test pilots. India's Gaganyaan crew (4 selected, 2022) all came from the IAF test-pilot pool — the program is following Mercury's 1959 playbook because, like Mercury, this is India's first crewed effort.",
+  "cur": "NASA से बाहर के कार्यक्रम राष्ट्रीय भिन्नताओं के साथ समानांतर तर्क अपनाते हैं। Roscosmos का अंतरिक्ष-यात्री चयन इंजीनियरिंग-प्रधान पृष्ठभूमि और लंबे क्वारंटीन की सोवियत पसंद विरासत में पाता है; सामान्य Soyuz कमांडर नियुक्ति से पहले दो या तीन मिशन उड़ चुका होता है। CSA, ESA और JAXA प्रत्येक एजेंसी-विशिष्ट चिकित्सा और मनोवैज्ञानिक मानकों से छोटे समूह (आमतौर पर हर पीढ़ी में 1-2) चुनते हैं, पर तेज़ी से साझा प्रशिक्षण ढाँचे का उपयोग करते हैं — आईएसएस का हर आधुनिक दल-सदस्य ह्यूस्टन, Star City, और त्सुकुबा या कोलोन में प्रशिक्षण लेता है। China Manned Space Agency (CMSA) द्वारा संचालित चीन के अंतरिक्ष-यात्री चयन ने अपने पहले दो समूहों (1998, 2010) में केवल PLAAF के पायलट लिए; 2020 में चुने गए तीसरे समूह में उड़ान इंजीनियर और पेलोड विशेषज्ञ जोड़े गए, ठीक वैसे ही जैसे NASA ने 1965 में परीक्षण पायलटों से आगे विस्तार किया था। भारत का गगनयान दल (4 चयनित, 2022) पूरी तरह IAF के परीक्षण-पायलट समूह से आया है — कार्यक्रम Mercury की 1959 वाली नीति पर चल रहा है क्योंकि, Mercury की तरह, यह भारत का पहला मानव-सहित प्रयास है।"
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "diagram_caption",
+  "en": "Selection funnel circa 2024: ~10,000 applicants → medical screen → physical fitness → cognitive testing → psychological screening → centrifuge / isolation → panel interview → ~10 selectees. The 99.9% drop-off is split roughly: 70% on the medical, 15% cognitive, 15% psychological/expedition-behaviour.",
+  "cur": "चयन कीप लगभग 2024: ~10,000 आवेदक → चिकित्सा → शारीरिक → संज्ञानात्मक → मनोवैज्ञानिक → केन्द्रापसारक/अलगाव → पैनल साक्षात्कार → ~10 चयनित। 99.9% अस्वीकृत: 70% चिकित्सा, 15% संज्ञानात्मक, 15% मनोवैज्ञानिक।"
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "title",
+  "en": "Crewed-station design — Salyut to ISS to Tiangong",
+  "cur": "मानवयुक्त अंतरिक्ष स्टेशन डिज़ाइन — Salyut से आईएसएस से Tiangong तक"
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "intro_sentence",
+  "en": "Six decades of crewed stations, six generations of architecture — the answer to 'how do you keep humans alive in orbit for months' got refined every time the previous answer broke.",
+  "cur": "छह दशकों के मानवयुक्त स्टेशन, छह पीढ़ियों की वास्तुकला — «मनुष्यों को कक्षा में महीनों जीवित कैसे रखें» का उत्तर हर बार पिछले के टूटने पर परिष्कृत किया गया।"
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.0",
+  "en": "A space station is four problems stacked: a pressurised hull strong enough to hold 1 atm against vacuum, a docking system that lets crew + cargo arrive, a life-support stack that recycles air/water/heat, and crew quarters that don't drive the occupants to mutiny. Every station ever flown made a different trade-off on those four. Salyut 1 (Soviet, 1971) was essentially a tin can with a docking port and one airlock; its first long-duration crew (Soyuz 11, 1971) died on the return because the IVA suit problem hadn't been solved yet. Skylab (US, 1973) was a converted Saturn V third stage — enormous interior volume (~360 m³) and one shot at it; the micrometeoroid shield tore off on launch and the first crew had to deploy a parasol from outside to keep the workshop from cooking. Each station's first crew is the one that finds the design flaws.",
+  "cur": "अंतरिक्ष स्टेशन चार समस्याओं का ढेर है: इतना मज़बूत दबावयुक्त ढाँचा जो निर्वात के विरुद्ध 1 atm रोक सके, ऐसी डॉकिंग प्रणाली जिससे दल और माल पहुँच सकें, ऐसी जीवन-रक्षा प्रणाली जो हवा, पानी और ऊष्मा का पुनर्चक्रण करे, और ऐसे आवास जो रहने वालों को विद्रोह तक न पहुँचाएँ। अब तक उड़े हर स्टेशन ने इन चारों में अलग संतुलन चुना। Salyut 1 (सोवियत, 1971) मूलतः एक डॉकिंग पोर्ट और एक एयरलॉक वाला टिन का डिब्बा था; उसका पहला लंबी अवधि का दल (Soyuz 11, 1971) वापसी में मारा गया क्योंकि IVA सूट की समस्या तब तक हल नहीं हुई थी। Skylab (अमेरिका, 1973) Saturn V का रूपांतरित तीसरा चरण था — विशाल भीतरी आयतन (~360 m³) और केवल एक मौका; प्रक्षेपण में सूक्ष्म-उल्कापिंड कवच उखड़ गया और पहले दल को बाहर से एक छतरी तानकर कार्यशाला को झुलसने से बचाना पड़ा। हर स्टेशन का पहला दल ही उसकी डिज़ाइन की खामियाँ खोजता है।"
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.1",
+  "en": "Modular construction was the breakthrough that made permanent crewing possible. Mir (Soviet→Russian, 1986–2001) was the first multi-module station: a Salyut-derived core plus six attached modules added over a decade. The architecture proved you could keep humans aboard *continuously*, swap crews, and grow the station while it was occupied. Mir also taught everyone what happens when the docking architecture breaks: the 1997 Progress collision punctured Spektr, and the crew sealed it off rather than abandon ship. That lesson — every module has to be isolatable — is wired into every station since.",
+  "cur": "मॉड्यूलर निर्माण वह सफलता थी जिसने स्थायी दल को संभव बनाया। Mir (सोवियत→रूसी, 1986–2001) पहला बहु-मॉड्यूल स्टेशन था: Salyut से निकला एक केंद्रीय भाग और एक दशक में जोड़े गए छह मॉड्यूल। इस संरचना ने साबित किया कि मनुष्यों को *लगातार* सवार रखा जा सकता है, दल बदले जा सकते हैं, और स्टेशन को बसे रहते हुए बढ़ाया जा सकता है। Mir ने सबको यह भी सिखाया कि डॉकिंग संरचना टूटने पर क्या होता है: 1997 में Progress की टक्कर ने Spektr में छेद कर दिया, और दल ने स्टेशन छोड़ने के बजाय उसे सील कर दिया। वह सबक — हर मॉड्यूल अलग किया जा सकने योग्य होना चाहिए — तब से हर स्टेशन में शामिल है।"
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.2",
+  "en": "The ISS (1998–) inherited Mir's modular logic and scaled it: 16 pressurised elements built by NASA, Roscosmos, ESA, JAXA, and CSA, joined through a small number of standardised docking ports (CBM for berthing, IDSS for autonomous dock). The American segment (Unity, Destiny, Tranquility, Harmony, Columbus, Kibo, etc.) is hung off the truss with utilities running through Harmony; the Russian segment (Zarya, Zvezda, Nauka, Poisk, Rassvet, Prichal) operates on its own ECLSS and power loop and can theoretically survive segment isolation. The redundancy is doubled because the two halves were never quite trusted to fail together. The cost was complexity — ISS assembly took 13 years, 30+ assembly flights, and over 160 spacewalks.",
+  "cur": "आईएसएस (1998–) ने Mir का मॉड्यूलर तर्क विरासत में पाया और उसे बड़ा किया: NASA, Roscosmos, ESA, JAXA और CSA द्वारा बनाए 16 दबावयुक्त तत्व, जो थोड़े-से मानकीकृत डॉकिंग पोर्टों से जुड़े हैं (बर्थिंग के लिए CBM, स्वायत्त डॉकिंग के लिए IDSS)। अमेरिकी खंड (Unity, Destiny, Tranquility, Harmony, Columbus, Kibo आदि) ट्रस से लटका है और सुविधाएँ Harmony से होकर गुज़रती हैं; रूसी खंड (Zarya, Zvezda, Nauka, Poisk, Rassvet, Prichal) अपनी ECLSS और बिजली प्रणाली पर चलता है और सैद्धांतिक रूप से खंडों के अलग होने पर भी टिक सकता है। अतिरेक दोगुना है क्योंकि दोनों हिस्सों पर कभी पूरा भरोसा नहीं किया गया कि वे साथ-साथ विफल होंगे। क़ीमत थी जटिलता — आईएसएस के निर्माण में 13 साल, 30+ निर्माण उड़ानें और 160 से अधिक स्पेसवॉक लगे।"
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.3",
+  "en": "Tiangong (CMSA, 2021–) is the deliberate counter-design: smaller (3 modules vs ISS's 16), tighter (single-agency, single supplier, single docking standard), and faster to build (core + two labs in under 24 months). The architecture borrows Salyut/Mir's core+module idea but lands closer to Skylab in scope — large interior volumes, fewer joints, less assembly EVA. The trade-off is no international redundancy: a problem in Tianhe's ECLSS isn't backed by a separate segment, and Wentian's airlock is the only EVA path. Tiangong's lessons will inform whoever builds the next station, which is now plausibly Axiom Station (commercial, attaches to ISS first then detaches) or a Chinese Mars-bound design — both are pencilled in for the 2030s.",
+  "cur": "Tiangong (CMSA, 2021–) जान-बूझकर बनाया गया विपरीत डिज़ाइन है: छोटा (आईएसएस के 16 के मुक़ाबले 3 मॉड्यूल), कसा हुआ (एक एजेंसी, एक आपूर्तिकर्ता, एक डॉकिंग मानक), और जल्दी बनने वाला (केंद्रीय भाग और दो प्रयोगशालाएँ 24 महीने से कम में)। यह संरचना Salyut/Mir का केंद्र-और-मॉड्यूल वाला विचार उधार लेती है, पर दायरे में Skylab के अधिक क़रीब है — बड़े भीतरी आयतन, कम जोड़, निर्माण के लिए कम EVA। इसकी क़ीमत है अंतरराष्ट्रीय अतिरेक का अभाव: Tianhe की ECLSS में कोई समस्या किसी अलग खंड से सुरक्षित नहीं है, और Wentian का एयरलॉक बाहर निकलने का अकेला रास्ता है। Tiangong के सबक अगला स्टेशन बनाने वाले का मार्गदर्शन करेंगे, जो अब संभवतः Axiom Station (व्यावसायिक, पहले आईएसएस से जुड़ता है फिर अलग हो जाता है) या मंगल की ओर लक्षित कोई चीनी डिज़ाइन है — दोनों 2030 के दशक के लिए प्रस्तावित हैं।"
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.4",
+  "en": "What's invariant across all of them: every crewed station ever flown has had bigger problems with water, fire, and crew dynamics than with vacuum or radiation. Salyut 7 (1985) was almost lost when its onboard systems failed and Leonov + Savinykh had to dock manually with a dead station and reboot it in the cold. Mir had a fire (1997) bad enough that the crew put on respirators. ISS Expedition 1 had its toilet break in week one. The hull engineering is the part that's been solved since Salyut; the human-system engineering keeps revealing new ways to go wrong, which is what makes the encyclopedia's Life-in-Space section a moving target.",
+  "cur": "सब में जो नहीं बदलता: अब तक उड़े हर मानव-सहित स्टेशन को निर्वात या विकिरण से कहीं बड़ी समस्याएँ पानी, आग और दल के आपसी व्यवहार से रही हैं। Salyut 7 (1985) लगभग खो ही गया था जब उसकी सवार प्रणालियाँ विफल हो गईं और लिओनोव + साविनिख को एक मृत स्टेशन से हाथ से डॉक करके ठंड में उसे फिर से चालू करना पड़ा। Mir पर आग लगी (1997) जो इतनी गंभीर थी कि दल को श्वासयंत्र पहनने पड़े। आईएसएस Expedition 1 में पहले ही हफ़्ते शौचालय ख़राब हो गया। ढाँचे की इंजीनियरिंग Salyut के समय से हल है; मानव-प्रणाली की इंजीनियरिंग ग़लत होने के नए-नए तरीक़े उजागर करती रहती है, और यही इस विश्वकोश के अंतरिक्ष में जीवन खंड को एक चलता-फिरता लक्ष्य बनाता है।"
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "diagram_caption",
+  "en": "Six decades, six architectures: Salyut 1 (single can) → Skylab (single big can) → Mir (core + attached modules) → ISS (US + Russian segments + international truss) → Tiangong (compact tri-module) → next generation (commercial / Mars-precursor).",
+  "cur": "छह दशक, छह वास्तुकला: Salyut 1 (एकल डिब्बा) → Skylab (बड़ा डिब्बा) → Mir (कोर + मॉड्यूल) → आईएसएस (US + रूसी खंड + अंतर्राष्ट्रीय ट्रस) → Tiangong (कॉम्पैक्ट तीन-मॉड्यूल) → अगली पीढ़ी (वाणिज्यिक / मंगल पूर्वज)।"
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "title",
+  "en": "Life support — ECLSS, the air and water loop",
+  "cur": "जीवन समर्थन — ECLSS, वायु और जल चक्र"
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "intro_sentence",
+  "en": "Six people breathe 6 kg of oxygen a day, drink 18 L of water, and exhale 7 kg of CO₂. None of it is launched from Earth if the station can help it — every gram has to be recovered.",
+  "cur": "छह लोग प्रतिदिन 6 किग्रा ऑक्सीजन लेते हैं, 18 लीटर पानी पीते हैं, और 7 किग्रा CO₂ निकालते हैं। यदि स्टेशन इससे बच सकता है तो इनमें से कोई भी पृथ्वी से लॉन्च नहीं होता — प्रत्येक ग्राम को पुनः प्राप्त किया जाना चाहिए।"
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.0",
+  "en": "Environmental Control and Life Support System — ECLSS — is the part of a station that nobody sees and everybody depends on. Its job is to keep four numbers inside the green band: oxygen partial pressure (~21 kPa, like sea level), carbon dioxide partial pressure (<0.7 kPa nominal; humans get headaches above 1 kPa), cabin temperature (~22 °C), and relative humidity (40-60%). Get any of those wrong and the crew gets sick within hours. Get oxygen or CO₂ wrong badly enough and the crew dies. The system is engineered with at least one redundant subsystem for every function, and the US segment + Russian segment of ISS each run their own complete ECLSS so a fault on one side doesn't take both.",
+  "cur": "Environmental Control and Life Support System — ECLSS — स्टेशन का वह हिस्सा है जिसे कोई नहीं देखता पर सभी इस पर निर्भर हैं। इसका काम चार संख्याओं को हरे रंग की सीमा में रखना है: ऑक्सीजन आंशिक दबाव (~21 kPa, समुद्र तल की तरह), कार्बन डाइऑक्साइड आंशिक दबाव (<0.7 kPa नामांकित; मनुष्यों को 1 kPa से ऊपर सिरदर्द होता है), केबिन तापमान (~22 °C), और सापेक्ष आर्द्रता (40-60%)। इनमें से किसी को गलत करो और चालक दल को कुछ घंटों में बीमारी हो जाती है। ऑक्सीजन या CO₂ को बहुत गलत करो और चालक दल की मृत्यु हो जाती है। सिस्टम को हर कार्य के लिए कम से कम एक अनावश्यक उप-प्रणाली के साथ इंजीनियर किया गया है, और आईएसएस के अमेरिकी खंड + रूसी खंड प्रत्येक अपना पूर्ण ECLSS चलाते हैं ताकि एक पक्ष पर एक खराबी दूसरे को न ले जाए।"
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.1",
+  "en": "Oxygen comes from electrolysis. The ISS Oxygen Generation System (OGS, in the Tranquility node) electrolyses water — pumped from the Water Recovery System — into O₂ (vented into the cabin) and H₂ (vented to space until 2010, then routed to the Sabatier reactor; see below). At nominal load OGS produces about 9 kg of O₂ per day, which covers 6 crew at 1.5 kg each plus losses. Russian Elektron-VM does the same thing on the other side, plus solid-fuel oxygen candles as a backup (essentially smoke grenades that release O₂ when ignited — used during Mir's 1997 fire-stricken weeks, where they were also the cause of the fire). Tiangong's Tianhe module runs a similar electrolyser; the Chinese architecture explicitly mirrors the ISS Sabatier-electrolysis closed loop.",
+  "cur": "ऑक्सीजन विद्युत अपघटन से आती है। आईएसएस Oxygen Generation System (OGS, Tranquility नोड में) पानी — जल पुनर्प्राप्ति प्रणाली से पंप किया गया — को विद्युत अपघटित करके O₂ (केबिन में छोड़ा गया) और H₂ (2010 तक अंतरिक्ष में छोड़ा गया, फिर Sabatier रिएक्टर में भेजा गया; नीचे देखें) प्राप्त करता है। नामांकित भार पर OGS प्रति दिन लगभग 9 किग्रा O₂ का उत्पादन करता है, जो 6 चालक दल को 1.5 किग्रा प्रत्येक से अधिक नुकसान के साथ कवर करता है। रूसी Elektron-VM दूसरी ओर भी यही करता है, साथ ही बैकअप के रूप में ठोस-ईंधन ऑक्सीजन कैंडल (अनिवार्य रूप से धुएं की ग्रेनेड जो प्रज्वलित होने पर O₂ छोड़ते हैं — Mir के 1997 अग्नि-ग्रस्त सप्ताह के दौरान उपयोग किया गया, जहां वे आग का कारण भी बने)। Tiangong का Tianhe मॉड्यूल एक समान इलेक्ट्रोलाइज़र चलाता है; चीनी आर्किटेक्चर स्पष्ट रूप से आईएसएस Sabatier-electrolysis बंद लूप को प्रतिबिंबित करता है।"
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.2",
+  "en": "CO₂ removal evolved more than any other ECLSS function. Apollo and early Shuttle used lithium-hydroxide canisters (LiOH absorbs CO₂ irreversibly; the Apollo 13 'square peg in a round hole' improvisation was a LiOH canister adapter). Modern ISS uses two regenerable systems: the US-side CDRA (Carbon Dioxide Removal Assembly), which uses zeolite molecular sieves that adsorb CO₂ then thermally desorb it for venting, and the Russian Vozdukh, which uses amine swing beds. The Sabatier reactor (Hamilton Sundstrand, installed on ISS in 2010) takes that vented CO₂ and combines it with the electrolysis-generated H₂ to make methane and water — closing the loop. The methane is currently vented; future Mars-bound architectures (Moxie on Perseverance is a related demo) intend to use it as propellant.",
+  "cur": "CO₂ हटाना किसी अन्य ECLSS कार्य की तुलना में अधिक विकसित हुआ। Apollo और प्रारंभिक Shuttle ने lithium-hydroxide कैनिस्टर का उपयोग किया (LiOH CO₂ को अपरिवर्तनीय रूप से अवशोषित करता है; Apollo 13 'square peg in a round hole' सुधार एक LiOH कैनिस्टर अडैप्टर था)। आधुनिक आईएसएस दो पुनर्जनक सिस्टम का उपयोग करता है: US-side CDRA (Carbon Dioxide Removal Assembly), जो zeolite आणविक सिएव्स का उपयोग करता है जो CO₂ को अवशोषित करते हैं फिर उसे थर्मली छोड़ते हैं, और रूसी Vozdukh, जो amine swing beds का उपयोग करता है। Sabatier रिएक्टर (Hamilton Sundstrand, 2010 में आईएसएस पर स्थापित) उस छोड़े गए CO₂ को लेता है और इसे विद्युत अपघटन-जनित H₂ के साथ मिलाता है मीथेन और पानी बनाने के लिए — लूप को बंद करता है। मीथेन को वर्तमान में छोड़ दिया जाता है; भविष्य के मंगल-bound आर्किटेक्चर (Perseverance पर Moxie एक संबंधित डेमो है) इसे प्रणोदक के रूप में उपयोग करने का इरादा रखते हैं।"
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.3",
+  "en": "Water recovery is the most engineered subsystem. The ISS Water Recovery System (WRS, also in Tranquility) takes urine, humidity condensate from the air conditioning, EVA suit water (which is small), and waste from hygiene, and runs them through a urine processor (vacuum distillation to remove water from brine) and a water processor (multi-filtration, catalytic oxidation, ion exchange). The output is potable water cleaner than most municipal supplies. US-segment recovery was ~93–94% before the Brine Processor Assembly (added 2021); with the BPA, NASA demonstrated ~98% in 2023. The remaining losses are launched up from Earth as resupply water in disposable bags, mostly because the brine that comes out of urine processing still contains 15–20% water that can't be economically recovered — the BPA closes most but not all of that gap. The target for Mars-class missions is >98% continuously.",
+  "cur": "जल पुनर्प्राप्ति सबसे अभियांत्रिक उप-प्रणाली है। आईएसएस Water Recovery System (WRS, Tranquility में भी) मूत्र, वायु प्रशीतन से आर्द्रता संघनन, EVA सूट जल (जो छोटा है), और स्वच्छता से अपशिष्ट लेता है, और उन्हें मूत्र प्रोसेसर (निर्वात आसवन ब्राइन से पानी निकालने के लिए) और जल प्रोसेसर (बहु-निस्पंदन, उत्प्रेरक ऑक्सीकरण, आयन विनिमय) के माध्यम से चलाता है। आउटपुट अधिकांश नगरपालिका आपूर्ति से स्वच्छ पेयजल है। Brine Processor Assembly (2021 में जोड़ा गया) से पहले US-segment पुनर्प्राप्ति ~93–94% थी; BPA के साथ, NASA ने 2023 में ~98% प्रदर्शित किया। शेष नुकसान पृथ्वी से पुनः आपूर्ति जल के रूप में डिस्पोजेबल बैग में लॉन्च किए जाते हैं, मुख्य रूप से क्योंकि मूत्र प्रसंस्करण से निकलने वाले ब्राइन में अभी भी 15–20% पानी होता है जिसे आर्थिक रूप से पुनः प्राप्त नहीं किया जा सकता — BPA उस अंतराल का अधिकांश भाग बंद करता है। Mars-class मिशन के लिए लक्ष्य >98% निरंतर है।"
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.4",
+  "en": "Thermal control is the last and largest subsystem — the ISS dumps about 75 kW of waste heat through external ammonia loops feeding 14 deployable radiators. The internal heat-transport loop uses water (non-toxic); the external loop uses ammonia (excellent thermal properties, but a leak inside the station would kill the crew, hence the two-loop design with heat exchangers at the segment boundary). The Russian segment uses an ethylene-glycol-based internal loop and a different external arrangement. Every ammonia leak on ISS (there have been several over 25 years) becomes a major operational event because of the cross-contamination risk; the suit-side EVA procedure for handling an ammonia leak is one of the longer training units in the astronaut curriculum.",
+  "cur": "थर्मल नियंत्रण अंतिम और सबसे बड़ी उप-प्रणाली है — आईएसएस लगभग 75 kW अपशिष्ट ऊष्मा को बाहरी अमोनिया लूप के माध्यम से 14 deployable रेडिएटर को दर्शाता है। आंतरिक ऊष्मा-परिवहन लूप पानी का उपयोग करता है (गैर-विषाक्त); बाहरी लूप अमोनिया का उपयोग करता है (उत्कृष्ट थर्मल गुण, लेकिन स्टेशन के अंदर एक रिसाव चालक दल को मार देगा, इसलिए segment boundary पर heat exchangers के साथ दो-लूप डिजाइन)। रूसी खंड एक ethylene-glycol-based आंतरिक लूप और एक अलग बाहरी व्यवस्था का उपयोग करता है। आईएसएस पर हर अमोनिया रिसाव (25 साल में कई हुए हैं) एक प्रमुख परिचालन घटना बन जाता है क्रॉस-संदूषण जोखिम के कारण; अमोनिया रिसाव को संभालने के लिए suit-side EVA प्रक्रिया अंतरिक्ष यात्री पाठ्यक्रम में लंबी प्रशिक्षण इकाइयों में से एक है।"
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "diagram_caption",
+  "en": "Air: O₂ from electrolysis of recycled water → cabin → CO₂ scrubbed by zeolite (US) / amine (Russia) → Sabatier converts CO₂ + H₂ to methane + water → back into the water loop. Water: urine + condensate → distillation + multi-filtration → potable water → drink + electrolyse. Heat: internal water loop → ammonia external loop → 14 radiators.",
+  "cur": "वायु: पुनर्चक्रित जल के विद्युत अपघटन से O₂ → केबिन → CO₂ को zeolite (US) / amine (Russia) द्वारा scrubbed किया गया → Sabatier CO₂ + H₂ को मीथेन + पानी में परिवर्तित करता है → जल लूप में वापस। जल: मूत्र + संघनन → आसवन + बहु-निस्पंदन → पेयजल → पीएं + विद्युत अपघटन करें। ऊष्मा: आंतरिक जल लूप → अमोनिया बाहरी लूप → 14 रेडिएटर।"
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "title",
+  "en": "EVA operations — the spacewalk procedure end to end",
+  "cur": "EVA संचालन — अंतरिक्ष में चहलकदमी आरंभ से अंत तक"
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "intro_sentence",
+  "en": "Crack the airlock and 6–8 hours later you've put a payload on the truss. In between is the most procedural activity in spaceflight — 50+ choreographed steps, every one a chance to fail safely.",
+  "cur": "एयरलॉक खोलें और 6-8 घंटे बाद एक पेलोड ट्रस पर होता है। बीच में अंतरिक्ष उड़ान की सबसे प्रक्रियात्मक गतिविधि है — 50+ नृत्यशिल्प चरण, प्रत्येक सुरक्षित रूप से विफल होने का मौका।"
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.0",
+  "en": "A modern EVA starts about 24 hours before egress. The crew reviews the procedure binder (now a tablet) — every tether transfer, every bolt torque, every contingency. Tools are pre-staged on the airlock wall in the order they'll be needed. The night before, the crew sleeps at reduced cabin pressure (10.2 psi on the US side; the Russian Orlan side skips this step because of suit-pressure differences — see the `eva-physiology` article). At T-minus 4 hours the crew is in-suit, mask-breathing pure oxygen to wash nitrogen out of body tissues — the prebreathe protocol. Pre-breathe is non-negotiable; skipping it causes decompression sickness ('the bends') from N₂ bubbling out as the suit depressurises.",
+  "cur": "आधुनिक EVA बाहर निकलने से लगभग 24 घंटे पहले शुरू होती है। दल प्रक्रिया-पुस्तिका (अब एक टैबलेट) की समीक्षा करता है — हर टेदर का बदलाव, हर बोल्ट का टॉर्क, हर आकस्मिक स्थिति। औज़ार एयरलॉक की दीवार पर उसी क्रम में पहले से लगा दिए जाते हैं जिसमें उनकी ज़रूरत पड़ेगी। पिछली रात दल कम केबिन दबाव पर सोता है (अमेरिकी हिस्से में 10.2 psi; रूसी Orlan वाला हिस्सा सूट-दबाव के अंतर के कारण यह चरण छोड़ देता है — `eva-physiology` लेख देखें)। T-माइनस 4 घंटे पर दल सूट में होता है और शरीर के ऊतकों से नाइट्रोजन बाहर निकालने के लिए मास्क से शुद्ध ऑक्सीजन लेता है — यह प्रीब्रीद प्रोटोकॉल है। यह अपरिहार्य है; इसे छोड़ने पर डीकंप्रेशन सिकनेस ('the bends') होती है, क्योंकि सूट का दबाव घटने पर N₂ बुलबुले बनाकर निकलती है।"
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.1",
+  "en": "Egress is the riskiest 15 minutes. The airlock depressurises to 5.0 psi for a leak check (no audible whoosh = no suit puncture), then to vacuum. The crew member opens the outer hatch, attaches a primary safety tether to a station handrail, attaches a secondary local tether, and steps out. Every modern EVA uses two-tether discipline by default: the body tether to the station, and a local fixed-point tether at the worksite. The third backup is SAFER — a small jet-pack worn over the suit. SAFER's only job is to fly an untethered astronaut back to the structure if both primary tethers fail. It's been carried on every US EVA since 1994 and used in anger zero times.",
+  "cur": "बाहर निकलना सबसे जोखिम भरे 15 मिनट हैं। एयरलॉक का दबाव रिसाव-जाँच के लिए 5.0 psi तक घटाया जाता है (कोई सीटी जैसी आवाज़ नहीं = सूट में छेद नहीं), फिर निर्वात तक। दल-सदस्य बाहरी हैच खोलता है, एक मुख्य सुरक्षा टेदर स्टेशन की रेलिंग से जोड़ता है, एक दूसरा स्थानीय टेदर जोड़ता है, और बाहर कदम रखता है। हर आधुनिक EVA डिफ़ॉल्ट रूप से दो-टेदर अनुशासन अपनाती है: शरीर से स्टेशन तक का टेदर, और कार्यस्थल पर एक स्थिर बिंदु से बँधा स्थानीय टेदर। तीसरा बचाव SAFER है — सूट के ऊपर पहना जाने वाला छोटा जेट-पैक। इसका एकमात्र काम यह है कि अगर दोनों मुख्य टेदर विफल हों तो छूट गए अंतरिक्ष-यात्री को उड़ाकर ढाँचे तक वापस लाए। यह 1994 से हर अमेरिकी EVA पर साथ गया है और असल में शून्य बार इस्तेमाल हुआ है।"
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.2",
+  "en": "Most of the actual work happens at a foot restraint, called an APFR (Articulating Portable Foot Restraint). The crew clips their feet in, leaving both hands free; without it, every motion requires expending grip strength to counter Newton's third law. EVA tasks are arm-fatigue-limited long before they're metabolic-limited. The EMU glove (the US suit's pressure glove) is the single most physiologically demanding piece of equipment ever flown — fingernail damage is so common NASA tracks it as a known injury, and crews routinely tape their fingertips before egress. The Russian Orlan glove is slightly less rigid (lower suit pressure trade-off) and the Chinese Feitian glove is a re-engineering of Orlan's design.",
+  "cur": "अधिकांश वास्तविक काम एक पैर-रोक पर होता है, जिसे APFR (Articulating Portable Foot Restraint) कहते हैं। दल अपने पैर उसमें फँसा लेता है और दोनों हाथ खाली रखता है; इसके बिना हर गतिविधि में Newton के तीसरे नियम का मुक़ाबला करने के लिए पकड़ की ताक़त ख़र्च करनी पड़ती है। EVA के काम चयापचय की सीमा से बहुत पहले बाँहों की थकान से सीमित हो जाते हैं। EMU दस्ताना (अमेरिकी सूट का दबावयुक्त दस्ताना) अब तक उड़ा सबसे अधिक शारीरिक माँग वाला उपकरण है — नाखूनों को नुक़सान इतना आम है कि NASA इसे एक ज्ञात चोट के रूप में दर्ज करता है, और दल नियमित रूप से बाहर निकलने से पहले उँगलियों के सिरों पर टेप लगाता है। रूसी Orlan का दस्ताना थोड़ा कम कठोर है (कम सूट-दबाव की क़ीमत), और चीनी Feitian दस्ताना Orlan के डिज़ाइन का पुनर्निर्माण है।"
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.3",
+  "en": "While the crew works, ground controllers track three numbers in real-time: suit metabolic rate (heat the suit's sublimator is dumping), CO₂ in the suit (LiOH canister saturation), and suit consumables remaining (battery, water for cooling, oxygen). A typical 6-hour EVA budget is ~5 kg of water for cooling and ~1 kg of oxygen for breathing + leak make-up. If any of those track high, the EVA gets shortened. The longest EVA in history is STS-49's 8h 29min (1992); the typical ISS construction EVA was 6h 30min ± 30min.",
+  "cur": "जब दल काम करता है, तब ज़मीनी नियंत्रक तीन संख्याओं पर वास्तविक समय में नज़र रखते हैं: सूट की चयापचय दर (सूट का सब्लिमेटर कितनी ऊष्मा बाहर फेंक रहा है), सूट में CO₂ (LiOH कनस्तर की संतृप्ति), और बची हुई उपभोग्य सामग्री (बैटरी, ठंडा करने का पानी, ऑक्सीजन)। सामान्य 6 घंटे की EVA में ठंडा करने के लिए ~5 किग्रा पानी और साँस लेने व रिसाव की भरपाई के लिए ~1 किग्रा ऑक्सीजन का बजट होता है। इनमें से कोई भी ज़्यादा बढ़े तो EVA छोटी कर दी जाती है। इतिहास की सबसे लंबी EVA STS-49 की है, 8 घंटे 29 मिनट (1992); आईएसएस निर्माण की सामान्य EVA 6 घंटे 30 मिनट ± 30 मिनट की होती थी।"
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.4",
+  "en": "Ingress is the reverse of egress: untether (last tether comes off last), repressurise the airlock to station pressure, doff suit, drink lots of water, sleep. The day after an EVA the crew is in negative water balance, has lost 2-3 kg of mass (mostly sweat), and has muscle soreness comparable to a marathon. Apollo lunar EVAs added a separate consideration: lunar dust. The Apollo suit gaskets clogged with lunar regolith, the suits couldn't be re-used after 2-3 EVAs, and crew members reported a sharp burnt-gunpowder smell after every ingress. The Artemis-program AxEMU suit attempts to engineer this problem out with redesigned gaskets + a dust-tolerant rear-entry hatch — borrowed from the Russian Orlan family, which never went to the Moon but did spend decades dealing with similar gasket-life issues.",
+  "cur": "भीतर आना बाहर निकलने का उलटा है: टेदर खोलना (आख़िरी टेदर सबसे अंत में), एयरलॉक को स्टेशन के दबाव तक फिर से भरना, सूट उतारना, ढेर सारा पानी पीना, सोना। EVA के अगले दिन दल का जल-संतुलन नकारात्मक होता है, उसने 2-3 किग्रा द्रव्यमान खो दिया होता है (ज़्यादातर पसीना), और उसकी मांसपेशियों में मैराथन जैसा दर्द होता है। Apollo की चंद्र EVA ने एक अलग चिंता जोड़ी: चंद्र धूल। Apollo सूटों की गैस्केट चंद्र रेगोलिथ से जाम हो गईं, सूट 2-3 EVA के बाद दोबारा इस्तेमाल नहीं हो सकते थे, और दल-सदस्यों ने हर बार भीतर आने के बाद जले हुए बारूद जैसी तेज़ गंध की सूचना दी। Artemis कार्यक्रम का AxEMU सूट दोबारा डिज़ाइन की गई गैस्केट और धूल-सहिष्णु पिछले प्रवेश हैच से इस समस्या को इंजीनियरिंग के ज़रिए ख़त्म करने की कोशिश करता है — यह रूसी Orlan परिवार से लिया गया है, जो कभी चंद्रमा पर नहीं गया पर दशकों तक गैस्केट की आयु से जुड़ी मिलती-जुलती समस्याओं से जूझता रहा।"
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "diagram_caption",
+  "en": "T-24h: review procedure → T-12h: stage tools → T-4h: prebreathe + suit-up → T-0: depress to vacuum, two-tether egress → 6-8h work at foot restraint, SAFER as last backup → ingress, repress, doff. 50+ procedural steps, every one a chance to fail safely.",
+  "cur": "T-24h: प्रक्रिया की समीक्षा → T-12h: उपकरण स्तरीकृत करें → T-4h: प्रीब्रीथ + सूट-अप → T-0: निर्वात में विघ्नित करें, दो-टेदर बाहर निकलना → पैर संयम पर 6-8 घंटे का कार्य, SAFER अंतिम बैकअप के रूप में → अंदर आना, पुनः दबाव डालना, उतारना। 50+ प्रक्रियात्मक चरण, हर एक सुरक्षित रूप से विफल होने का एक मौका।"
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "intro_sentence",
+  "en": "A spacewalk is a 6–8 hour endurance event in a 1/3-atmosphere oxygen-pressurised suit — preceded by hours of pre-breathe to keep the bends at bay.",
+  "cur": "स्पेसवॉक एक 6–8 घंटे की सहनशीलता परीक्षा है 1/3-वायुमंडल ऑक्सीजन-दबावयुक्त सूट में — जिसके लिए घंटों की पूर्व-श्वसन अवधि की आवश्यकता होती है बेंड्स को रोकने के लिए।"
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "body_paragraphs.0",
+  "en": "The fundamental EVA problem is that the human body wants Earth-sealevel atmosphere — 1 atm of mixed N₂/O₂ — and the spacesuit can't deliver it without becoming so rigid the astronaut can't move. So the suit runs at about 4.3 psi (0.29 atm) of pure oxygen. That's enough partial pressure of O₂ to breathe comfortably, but the abrupt drop from station pressure (14.7 psi, ~80% N₂) to suit pressure (4.3 psi, 100% O₂) would cause decompression sickness — the bends — exactly the way scuba divers get them on a fast ascent.",
+  "cur": "EVA की मौलिक समस्या यह है कि मानव शरीर पृथ्वी के समुद्र-तल का वायुमंडल चाहता है — 1 atm मिश्रित N₂/O₂ — और स्पेससूट इसे बिना इतना कठोर हुए नहीं दे सकता कि अंतरिक्ष यात्री हिल न सके। इसलिए सूट लगभग 4.3 psi (0.29 atm) शुद्ध ऑक्सीजन पर चलता है। यह आरामदायक रूप से सांस लेने के लिए O₂ के आंशिक दबाव के लिए पर्याप्त है, लेकिन स्टेशन दबाव (14.7 psi, ~80% N₂) से सूट दबाव (4.3 psi, 100% O₂) में अचानक गिरावट विमुक्त-दबाव सिकता — बेंड्स — का कारण बनेगी — ठीक उसी तरह जैसे स्कूबा गोताखोर तेज़ आरोहण पर इसे प्राप्त करते हैं।"
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "body_paragraphs.1",
+  "en": "The countermeasure is pre-breathe: hours of breathing pure oxygen at gradually lower pressures before egress, washing nitrogen out of body tissues. The current US-side ISS protocol uses an in-suit pre-breathe + the Campout protocol (overnight at 10.2 psi) totalling about 4 hours before the airlock depressurises. Russian Orlan suits run at 5.7 psi, which shortens pre-breathe substantially — different trade-off.",
+  "cur": "इसका उपाय प्री-ब्रीद है: बाहर निकलने से पहले क्रमशः घटते दबाव पर घंटों शुद्ध ऑक्सीजन में साँस लेना, ताकि शरीर के ऊतकों से नाइट्रोजन बाहर निकल जाए। आईएसएस का वर्तमान अमेरिकी-पक्ष प्रोटोकॉल सूट के भीतर प्री-ब्रीद और Campout प्रोटोकॉल (रात भर 10.2 psi पर) का उपयोग करता है, जो एयरलॉक का दबाव घटाने से पहले कुल लगभग 4 घंटे बैठता है। रूसी Orlan सूट 5.7 psi पर चलते हैं, जिससे प्री-ब्रीद काफी छोटा हो जाता है — अलग समझौता।"
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "body_paragraphs.2",
+  "en": "Once outside, the work is physically harder than it looks. Even small motions require constant arm and grip strength against suit rigidity; experienced spacewalkers describe the EMU gloves as the single most fatiguing piece of equipment ever flown. Fingernail damage is common. Hand cramps and shoulder strain limit EVA duration before metabolic budget does. Modern EVAs cap around 7 hours nominal, 8.5 hours with extension; longer than that and crew error rates rise sharply.",
+  "cur": "बाहर एक बार, कार्य शारीरिक रूप से देखने में जितना कठिन लगता है उससे कहीं अधिक कठिन है। यहां तक कि छोटी गतिविधियां भी सूट की कठोरता के विरुद्ध निरंतर बाहु और पकड़ की शक्ति की आवश्यकता करती हैं; अनुभवी अंतरिक्ष यात्री EMU दस्ताने को अब तक उड़ाए गए उपकरण का सबसे अधिक थकाऊ टुकड़ा बताते हैं। नाखून को नुकसान आम है। हाथ में ऐंठन और कंधे में तनाव EVA अवधि को सीमित करते हैं इससे पहले कि चयापचय बजट हो। आधुनिक EVA लगभग 7 घंटे नाममात्र के चारों ओर, विस्तार के साथ 8.5 घंटे; इससे अधिक लंबा और क्रू त्रुटि दरें तीव्रता से बढ़ जाती हैं।"
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "body_paragraphs.3",
+  "en": "Suit risks also include thermal management (the suit dumps about 250 W of metabolic heat into a sublimator that vents water vapour to space), CO₂ scrubbing (lithium-hydroxide canister or amine swing bed), and the constant risk of a glove or visor puncture. Astronauts train the same EVA in the Neutral Buoyancy Laboratory pool roughly 7–10 hours of training per 1 hour of flight EVA — the cost-per-hour of spacewalking is the highest of any astronaut activity.",
+  "cur": "सूट जोखिमों में थर्मल प्रबंधन भी शामिल है (सूट लगभग 250 W चयापचयी ताप को एक सबलीमेटर में डालता है जो जल वाष्प को अंतरिक्ष में निष्कासित करता है), CO₂ स्क्रबिंग (लिथियम-हाइड्रॉक्साइड कनिस्टर या अमाइन स्विंग बेड), और दस्ताने या वीज़र में छिद्र का निरंतर जोखिम। अंतरिक्ष यात्री Neutral Buoyancy Laboratory पूल में समान EVA को प्रशिक्षित करते हैं लगभग 7–10 घंटे प्रशिक्षण प्रति 1 घंटे उड़ान EVA — अंतरिक्ष में चलने की लागत-प्रति-घंटा किसी भी अंतरिक्ष यात्री गतिविधि में सर्वोच्च है।"
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "diagram_caption",
+  "en": "Pre-breathe O₂ to wash out nitrogen → step into 4.3 psi pure-O₂ suit → 6–8 hour metabolic-budgeted walk → fingernail damage and shoulder fatigue. Russian Orlan at 5.7 psi shortens pre-breathe.",
+  "cur": "पूर्व-श्वसन O₂ नाइट्रोजन को धोने के लिए → 4.3 psi शुद्ध-O₂ सूट में कदम रखें → 6–8 घंटे चयापचय-बजटित चलना → नाखून को नुकसान और कंधे की थकान। रूसी Orlan 5.7 psi पर पूर्व-श्वसन को कम करता है।"
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "intro_sentence",
+  "en": "An EVA suit is a one-person spacecraft — pressure shell, closed-loop life support, thermal control, sun visor, and a thruster pack — built so a human can spend 6–8 hours outside in vacuum.",
+  "cur": "EVA सूट एक व्यक्ति का अंतरिक्ष यान है — दबाव खोल, बंद-लूप जीवन समर्थन, तापीय नियंत्रण, सूर्य विज़र, और थ्रस्टर पैक — बनाया गया ताकि एक मानव 6–8 घंटे निर्वात में बाहर रह सके।"
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "body_paragraphs.0",
+  "en": "The EVA suit's central problem is **closed-loop rebreathing**. Outside the airlock there is no atmosphere to vent CO₂ into, so the suit must scrub it from the astronaut's exhalation and recycle the remaining oxygen. The current US EMU runs a **lithium hydroxide (LiOH) canister** in the backpack that absorbs CO₂ irreversibly — replaced ground-side after every EVA. The Russian Orlan and the latest US METOX canister use a **regenerable amine swing-bed**: it adsorbs CO₂ during the EVA, then is baked out in the airlock between walks and reused. The station-side equivalent inside the ISS (the CDRA, Carbon Dioxide Removal Assembly) does the same thing on a regenerative cycle, while the OGS (Oxygen Generation System) electrolyses water to replenish O₂. The suit is a miniature, hand-portable version of station ECLSS, running for 8 hours on its own power and supplies.",
+  "cur": "EVA सूट की मूल समस्या **बंद-लूप पुनःश्वसन** है। एयरलॉक के बाहर CO₂ को बाहर निकालने के लिए कोई वातावरण नहीं होता, इसलिए सूट को अंतरिक्ष यात्री के निष्श्वास से CO₂ को हटाना चाहिए और शेष ऑक्सीजन को रीसाइकिल करना चाहिए। वर्तमान यूएस EMU बैकपैक में एक **लिथियम हाइड्रॉक्साइड (LiOH) कैनिस्टर** चलाता है जो CO₂ को अपरिवर्तनीय रूप से अवशोषित करता है — हर EVA के बाद जमीन की ओर से बदल दिया जाता है। रूसी Orlan और नवीनतम यूएस METOX कैनिस्टर एक **पुनर्जनक एमाइन स्विंग-बेड** का उपयोग करते हैं: यह EVA के दौरान CO₂ को अधिशोषित करता है, फिर चलने के बीच एयरलॉक में बेक किया जाता है और पुनः उपयोग किया जाता है। आईएसएस के अंदर स्टेशन-पक्ष समकक्ष (CDRA, कार्बन डाइऑक्साइड निष्कासन असेंबली) एक पुनर्जनक चक्र पर भी यही करता है, जबकि OGS (ऑक्सीजन जनरेशन सिस्टम) O₂ को फिर से भरने के लिए पानी का विद्युत अपघटन करता है। सूट एक लघु, हाथ से ले जाने योग्य संस्करण है स्टेशन ECLSS का, अपनी शक्ति और आपूर्ति पर 8 घंटे के लिए चल रहा है।"
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "body_paragraphs.1",
+  "en": "The Primary Life Support System (**PLSS**) backpack carries oxygen at ~6800 kPa (1000 psi) in two tanks, a battery, the LiOH canister, a fan to circulate air through the helmet, a water tank for cooling, and a sublimator — a porous plate that lets liquid water boil into vacuum, dumping ~250 W of metabolic heat to space as water vapour. A liquid-cooling garment is worn against the skin: water threading through tubes against the body picks up heat and returns to the sublimator. The arms and gloves get pressurised gloves; the body gets a Hard Upper Torso (HUT) made of fibreglass or composite; the legs articulate through soft fabric joints. Operating pressure is 4.3 psi (US EMU, pure O₂) or 5.7 psi (Russian Orlan, pure O₂). Lower pressure = easier to move; higher pressure = less pre-breathe time.",
+  "cur": "प्राथमिक जीवन समर्थन प्रणाली (**PLSS**) बैकपैक ~6800 kPa (1000 psi) पर दो टैंकों में ऑक्सीजन ले जाता है, एक बैटरी, LiOH कैनिस्टर, हेलमेट के माध्यम से हवा परिचालित करने के लिए एक पंखा, शीतलन के लिए एक पानी की टंकी, और एक उर्ध्वपातक — एक झरझरी प्लेट जो तरल पानी को निर्वात में उबालने देती है, ~250 W के चयापचय ऊष्मा को जल वाष्प के रूप में अंतरिक्ष में डंप करती है। एक तरल-शीतलन कपड़ा त्वचा के विरुद्ध पहना जाता है: पानी ट्यूबों के माध्यम से शरीर के विरुद्ध धागे गर्मी लेता है और उर्ध्वपातक को लौटता है। बाहें और दस्ताने दबाव वाले दस्ताने प्राप्त करते हैं; शरीर को एक कठोर ऊपरी धड़ (HUT) मिलता है जो फाइबरग्लास या समग्र से बना होता है; पैर नरम कपड़े के जोड़ों के माध्यम से जुड़ते हैं। परिचालन दबाव 4.3 psi (यूएस EMU, शुद्ध O₂) या 5.7 psi (रूसी Orlan, शुद्ध O₂) है। कम दबाव = गति करना आसान; उच्च दबाव = कम पूर्व-श्वसन समय।"
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "body_paragraphs.2",
+  "en": "Two specialised details. **Sun visor**: the gold-plated outer visor on every EVA helmet is gold for a reason — a thin vapour-deposited gold film reflects ~98% of infrared radiation while letting visible light through. With the Sun in the suit's field of view (about half the orbit on the ISS), direct sunlight on a clear polycarbonate visor would heat the helmet beyond tolerable. The astronaut flips the gold visor down when looking sunward and back up when working in shadow. **EVA thrusters**: the SAFER (Simplified Aid For EVA Rescue) backpack on every modern US EVA carries 1.4 kg of compressed nitrogen and 24 small thrusters, giving the astronaut about 3 m/s of total Δv — enough to fly back to the station if a tether breaks and no more. The earlier **MMU** (Manned Maneuvering Unit, 1984–1985) carried ~12 kg of nitrogen and ~25 m/s; Bruce McCandless and Robert Stewart famously flew untethered with it on STS-41B. After Challenger, NASA grounded the MMU as too risky and reverted to tethered EVA with SAFER as backup only.",
+  "cur": "दो विशेष विवरण। **सूर्य विज़र**: हर EVA हेलमेट पर सोने की पट्टी वाला बाहरी विज़र एक कारण के लिए सोना है — एक पतली वाष्प-जमा की गई सोने की फिल्म लगभग 98% अवरक्त विकिरण को प्रतिबिंबित करती है जबकि दृश्य प्रकाश को गुजरने देती है। सूर्य सूट के दृष्टिकोण में होने के साथ (आईएसएस पर कक्षा के बारे में आधा), सीधी धूप एक स्पष्ट पॉलीकार्बोनेट विज़र पर हेलमेट को सहनीय से परे गर्म कर देगी। अंतरिक्ष यात्री जब सूरज की ओर देख रहा हो तो सोने का विज़र नीचे करता है और जब छाया में काम कर रहा हो तो वापस ऊपर करता है। **EVA थ्रस्टर**: हर आधुनिक यूएस EVA पर SAFER (EVA बचाव के लिए सरलीकृत सहायता) बैकपैक 1.4 kg संपीड़ित नाइट्रोजन और 24 छोटे थ्रस्टर ले जाता है, अंतरिक्ष यात्री को लगभग 3 m/s की कुल Δv देता है — एक टेदर टूट जाए और कोई और न हो तो स्टेशन पर वापस उड़ने के लिए पर्याप्त। पहले का **MMU** (Manned Maneuvering Unit, 1984–1985) ~12 kg नाइट्रोजन और ~25 m/s ले गया; ब्रूस मैककैंडलेस और Robert Stewart ने STS-41B पर इसके साथ प्रसिद्ध रूप से untethered उड़ान भरी। Challenger के बाद, NASA ने MMU को बहुत जोखिम भरा माना और केवल बैकअप के रूप में SAFER के साथ tethered EVA पर वापस आ गया।"
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "body_paragraphs.3",
+  "en": "Four EVA suit families fly today — see /fleet for each: EMU (US Shuttle/ISS, 1981 to present), Orlan-MKS (Russia, latest of the rear-entry family flying since 1977), Feitian (China, Tiangong + Shenzhou), and AxEMU (Axiom, qualifying for Artemis III). The architectural choice that splits them most cleanly is entry geometry — US EMU is front-entry (HUT + LTA assembled), Orlan and Feitian are rear-entry (PLSS hatch on the back) — and operating pressure (4.3 vs 5.7 psi), which decides how much pre-breathe each program requires.",
+  "cur": "चार EVA सूट परिवार आज उड़ते हैं — प्रत्येक के लिए /fleet देखें: EMU (यूएस शटल/आईएसएस, 1981 से वर्तमान), Orlan-MKS (रूस, 1977 से उड़ने वाली पिछली-प्रविष्टि परिवार का नवीनतम), Feitian (चीन, Tiangong + Shenzhou), और AxEMU (Axiom, Artemis III के लिए योग्य)। वास्तुकला विकल्प जो उन्हें सबसे स्पष्ट रूप से विभाजित करता है वह प्रविष्टि ज्यामिति है — यूएस EMU सामने-प्रविष्टि (HUT + LTA एकत्रित), Orlan और Feitian पिछली-प्रविष्टि (PLSS हैच पीठ पर) — और परिचालन दबाव (4.3 vs 5.7 psi), जो निर्धारित करता है कि प्रत्येक कार्यक्रम को कितना पूर्व-श्वसन की आवश्यकता है।"
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "diagram_caption",
+  "en": "PLSS backpack on the back · gold sun visor · hard upper torso · liquid-cooling garment underneath · LiOH or amine CO₂ scrubber · sublimator dumps ~250 W of metabolic heat as water vapour · SAFER mini-thruster pack with ~3 m/s of nitrogen Δv for rescue.",
+  "cur": "पीठ पर PLSS बैकपैक · सोने की सूर्य विज़र · कठोर ऊपरी धड़ · तरल-शीतलन कपड़ा नीचे · LiOH या एमाइन CO₂ स्क्रबर · उर्ध्वपातक ~250 W चयापचय ऊष्मा को जल वाष्प के रूप में डंप करता है · बचाव के लिए ~3 m/s नाइट्रोजन Δv के साथ SAFER मिनी-थ्रस्टर पैक।"
+ },
+ {
+  "rel": "science/life-in-space/food-production-off-world.json",
+  "at": "title",
+  "en": "Food production off-world — from Veggie to greenhouses on Mars",
+  "cur": "ऑफ-वर्ल्ड खाद्य उत्पादन — Veggie से मंगल पर ग्रीनहाउस तक"
+ },
+ {
+  "rel": "science/life-in-space/food-production-off-world.json",
+  "at": "intro_sentence",
+  "en": "ISS crew have been eating food they grew themselves since 2015. The leap from 'salad supplement' to 'closed-loop daily diet' is the open frontier between the ISS today and any Mars settlement worth the name.",
+  "cur": "आईएसएस चालक दल 2015 से अपना खुद का उगाया भोजन खा रहे हैं। 'सलाद पूरक' से 'बंद-लूप दैनिक आहार' तक की छलांग आज के आईएसएस और नाम के योग्य किसी भी मंगल बस्ती के बीच की खुली सीमा है।"
+ },
+ {
+  "rel": "science/life-in-space/food-production-off-world.json",
+  "at": "body_paragraphs.0",
+  "en": "ISS started its food-from-orbit programme in 2014 with Veggie, a small chamber bolted into the Destiny lab with red and blue LED lighting and pillow-style root modules. The first crop the crew was cleared to eat was 'Outredgeous' red romaine lettuce, in August 2015 — half the harvest eaten on-orbit, half returned for analysis. Since then Veggie has cycled mizuna, pak choi, mustard greens, tatsoi, kale, peppers, and zinnia flowers (the flowers were a deliberate test for crops with reproductive structures), plus the Advanced Plant Habitat (APH, installed 2017) adding a closed-environment 0.4 m² growing volume with sensor-monitored CO₂, humidity, and light. The contribution to crew nutrition is small — measured in handfuls per crew per month — but the psychological contribution is large, and validated against the recommendations from the Mir 1980s isolation studies which flagged 'connection with growing things' as a core countermeasure against asthenia.",
+  "cur": "आईएसएस ने अपना कक्षा-से-भोजन कार्यक्रम 2014 में Veggie के साथ शुरू किया — Destiny लैब में बोल्ट किया गया एक छोटा कक्ष जिसमें लाल और नीली LED लाइटिंग और तकिया-शैली रूट मॉड्यूल हैं। चालक दल को खाने की पहली अनुमति वाली फसल अगस्त 2015 में 'Outredgeous' लाल रोमेन लेट्यूस थी — आधी कक्षा में खाई गई, आधी विश्लेषण के लिए लौटाई गई। तब से Veggie ने मिज़ुना, पाक चोई, सरसों का साग, तत्सोई, केल, मिर्च और झिनिया फूल चक्र किए हैं (फूल प्रजनन संरचनाओं वाली फसलों के लिए जानबूझकर किया गया परीक्षण था), साथ ही Advanced Plant Habitat (APH, 2017 में स्थापित) जो सेंसर-मॉनिटर किए गए CO₂, आर्द्रता और प्रकाश के साथ 0.4 m² बंद-वातावरण विकास मात्रा जोड़ता है। चालक दल पोषण में योगदान छोटा है — प्रति माह प्रति चालक दल मुट्ठी भर में मापा जाता है — लेकिन मनोवैज्ञानिक योगदान बड़ा है, 1980 के दशक के Mir अलगाव अध्ययनों की सिफारिशों के विरुद्ध मान्य है जिन्होंने 'बढ़ती चीजों से संबंध' को अस्थेनिया के खिलाफ एक केंद्रीय प्रतिकार के रूप में चिह्नित किया।"
+ }
+]

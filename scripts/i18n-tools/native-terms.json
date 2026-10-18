@@ -7233,7 +7233,8 @@
       "it": "Nebulosa Fiamma",
       "nl": "Vlamnevel",
       "pt-BR": "Nebulosa da Chama",
-      "_qid": "Q490342"
+      "_qid": "Q490342",
+      "sr-Cyrl": "маглина Пламен"
     },
     "Large Magellanic Cloud": {
       "ru": "Большое Магелланово Облако",
@@ -7809,6 +7810,35 @@
       "it": "Orione",
       "pt-BR": "Órion",
       "_qid": "Q8860"
+    },
+    "Gemini": {
+      "ru": "Близнецы",
+      "ja": "ふたご座",
+      "zh-CN": "双子座",
+      "ko": "쌍둥이자리",
+      "hi": "मिथुन तारामंडल",
+      "ar": "التوأمان",
+      "sr-Cyrl": "Близанци",
+      "de": "Zwillinge",
+      "fr": "Gémeaux",
+      "es": "Géminis",
+      "it": "Gemelli",
+      "nl": "Tweelingen",
+      "_qid": "Q8923"
+    },
+    "Cygnus": {
+      "ru": "Лебедь",
+      "ja": "はくちょう座",
+      "zh-CN": "天鹅座",
+      "ko": "백조자리",
+      "hi": "हंस तारामंडल",
+      "ar": "الدجاجة",
+      "sr-Cyrl": "Лабуд",
+      "de": "Schwan",
+      "fr": "Cygne",
+      "it": "Cigno",
+      "nl": "Zwaan",
+      "_qid": "Q8921"
     }
   },
   "agency": {

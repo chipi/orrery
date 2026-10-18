@@ -1,0 +1,752 @@
+[
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "goals.0.md",
+  "en": "The scientific goal is to read the early solar system. Asteroids are leftover building material from the planets' formation, largely unchanged for 4.5 billion years; a pristine sample of one, analyzed in laboratories on Earth rather than by instruments in space, is a direct window into what the solar system was made of before the planets assembled — and, for carbon-rich asteroids like Ryugu, into the organic molecules and water that may have seeded life on Earth.",
+  "cur": "Научни циљ је да се прочита рани Сунчев систем. Астероиди су преостали грађевински материјал из времена настанка планета, у великој мери непромењен 4,5 милијарди година; нетакнут узорак једног од њих, анализиран у лабораторијама на Земљи, а не инструментима у свемиру, представља непосредан прозор у то од чега је био саздан Сунчев систем пре него што су се планете склопиле — а када је реч о астероидима богатим угљеником, попут Рјугу, и у органске молекуле и воду који су можда посејали живот на Земљи."
+ },
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "goals.1.caption",
+  "en": "Hayabusa2 at asteroid Ryugu. Ion engines for the long cruise, a sampling horn to catch material kicked up at a touch, and a small impactor to blast an artificial crater and reach shielded subsurface rock.",
+  "cur": "Hayabusa2 код астероида Рјугу. Јонски мотори за дуго крстарење, узорковачки рог који хвата материјал подигнут при додиру и мали ударни пројектил који прави вештачки кратер и допире до заштићене подповршинске стене."
+ },
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "goals.2.md",
+  "en": "The engineering goal was to prove a whole chain of hard technologies: ion-engine propulsion for the years-long cruise, autonomous navigation down to a tiny, irregular body, a sampling mechanism that works in near-zero gravity, and a reentry capsule to survive the fireball home. The first mission's job was to demonstrate the chain even roughly; the second's was to do it well enough to bring back a substantial, uncontaminated sample.",
+  "cur": "Инжењерски циљ био је да се докаже читав низ тешких технологија: погон јонским моторима за вишегодишње крстарење, аутономна навигација до сићушног, неправилног тела, механизам за узорковање који ради у скоро нултој гравитацији и повратна капсула која преживљава ватрену кугљу на путу кући. Задатак прве мисије био је да демонстрира тај низ макар и грубо; задатак друге био је да га изведе довољно добро да донесе знатан, незагађен узорак."
+ },
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "outcome.0.md",
+  "en": "The first Hayabusa, launched in 2003, reached the asteroid Itokawa in 2005 and then nearly died. Two of its three reaction wheels failed, a fuel leak crippled it, its sampling mechanism malfunctioned, contact with Earth was lost for weeks, and three of its four ion engines broke — yet the team coaxed the wounded probe home, and in 2010 its capsule parachuted into the Australian outback carrying roughly 1,500 microscopic grains: the first sample ever returned from an asteroid. It should not have worked, and it did.",
+  "cur": "Први Hayabusa, лансиран 2003. године, стигао је до астероида Итокава 2005. и онда замало угинуо. Два од три реакциона точка су отказала, цурење горива га је осакатило, његов механизам за узорковање је закаказао, веза са Земљом била је изгубљена недељама, а три од четири јонска мотора су се покварила — па ипак, тим је успео да придобије рањену сонду да се врати кући, а 2010. њена капсула спустила се падобраном у аустралијску унутрашњост носећи око 1.500 микроскопских зрнаца: први узорак икад враћен са неког астероида. Није требало да успе, а успело је."
+ },
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "outcome.1.caption",
+  "en": "The original Hayabusa — the probe that suffered nearly every failure a spacecraft can and still delivered. Its seven-year ordeal became a national story in Japan of not giving up on a machine that refused to give up.",
+  "cur": "Првобитни Hayabusa — сонда која је претрпела готово сваки квар који једна летелица може да претрпи и ипак испунила задатак. Њена седмогодишња голгота постала је у Јапану национална прича о томе да се не одустаје од машине која је одбијала да одустане."
+ },
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "outcome.2.md",
+  "en": "Hayabusa2, having learned everything from its predecessor's ordeal, was the opposite experience: a nearly flawless mission. Launched in 2014, it reached the carbon-rich asteroid Ryugu in 2018, deployed hopping rovers onto the surface, fired a copper projectile to blast an artificial crater and collect shielded subsurface material, and returned its capsule to Earth in 2020 with more than five grams of pristine asteroid — a sample already rewriting the chemistry of the early solar system. The probe itself flew on toward another asteroid, its mission extended into the 2030s.",
+  "cur": "Hayabusa2, који је из голготе свог претходника научио све, био је потпуна супротност: готово беспрекорна мисија. Лансиран 2014. године, стигао је 2018. до астероида Рјугу, богатог угљеником, спустио на површину ровере који скакућу, испалио бакарни пројектил да направи вештачки кратер и прикупи заштићени подповршински материјал, а 2020. вратио своју капсулу на Земљу са више од пет грама нетакнутог материјала астероида — узорком који већ преписује хемију раног Сунчевог система. Сама сонда наставила је лет ка другом астероиду, а њена мисија продужена је у 2030-е."
+ },
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "narrative.0.md",
+  "en": "The arc from Hayabusa to Hayabusa2 is the clearest example in this atlas of a program that turned a near-disaster into mastery. The first mission's value was not a clean success — it barely limped home — but everything its team learned surviving its cascade of failures. Reaction wheels, fuel systems, autonomous approach, the reentry capsule: each near-fatal problem became a lesson engineered out of the sequel. Hayabusa2's perfection was built entirely on Hayabusa's suffering.",
+  "cur": "Лук од Hayabusa до Hayabusa2 најјаснији је пример у овом атласу програма који је готово катастрофу претворио у мајсторство. Вредност прве мисије није био чист успех — једва се дотетурала кући — већ све што је њен тим научио преживљавајући низ њених узастопних кварова. Реакциони точкови, системи горива, аутономно приближавање, повратна капсула: сваки готово кобан проблем постао је лекција уграђена у наследника. Савршенство Hayabusa2 изграђено је у потпуности на патњи првог Hayabusa."
+ },
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "narrative.1.md",
+  "en": "It is also a distinctly Japanese kind of space program — modest in budget next to NASA's flagships, narrow in focus, and extraordinarily persistent. JAXA did not attempt to do everything; it picked one very hard thing, asteroid sample return, and became the best in the world at it. The result is a specialty that even NASA leans on: samples of Ryugu were shared with American labs, and NASA's own asteroid-return mission, OSIRIS-REx, shared samples with, and drew on the experience of, the Hayabusa team.",
+  "cur": "То је уједно и изразито јапанска врста свемирског програма — скромног буџета у поређењу са NASA-иним водећим мисијама, уског фокуса и изузетно упоран. JAXA није покушала да ради све; изабрала је једну веома тешку ствар, повратак узорака са астероида, и постала најбоља на свету у томе. Резултат је специјалност на коју се ослања чак и NASA: узорци са Рјугу подељени су са америчким лабораторијама, а NASA-ина сопствена мисија повратка са астероида, OSIRIS-REx, делила је узорке са тимом Hayabusa и ослањала се на његово искуство."
+ },
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "narrative.2.md",
+  "en": "And it made robots into protagonists. The first Hayabusa's limp home was followed by millions in Japan as a genuine drama — a machine anthropomorphized into a falcon that would not give up, its final act filmed as it burned up in the atmosphere having released the capsule it had fought seven years to deliver. Few uncrewed missions have carried that kind of public feeling; Hayabusa earned it by refusing to fail.",
+  "cur": "И претворио је роботе у протагонисте. Први Hayabusa и његово дотетурање кући милиони људи у Јапану пратили су као праву драму — машина оличена у сокола који не одустаје, а њен последњи чин снимљен је док је сагоревала у атмосфери пошто је испустила капсулу коју је седам година устрајно носила ка циљу. Мало која мисија без посаде носила је такво јавно осећање; Hayabusa га је заслужио одбијајући да закаже."
+ },
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "legacy.0.md",
+  "en": "Hayabusa's first legacy is scientific: pristine asteroid samples in Earth's laboratories, from both a stony asteroid (Itokawa) and a carbon-rich one (Ryugu), directly informing how the solar system formed and how water and organics may have reached the early Earth. These are among the most valuable few grams of material humanity possesses.",
+  "cur": "Прво наслеђе програма Hayabusa је научно: нетакнути узорци астероида у земаљским лабораторијама, и са каменог астероида (Итокава) и са астероида богатог угљеником (Рјугу), који непосредно говоре о томе како је настао Сунчев систем и како су вода и органске материје могле доспети на рану Земљу. То је међу најдрагоценијим материјалом којим човечанство располаже, и то у количини од свега неколико грама."
+ },
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "legacy.1.md",
+  "en": "Its second legacy is a proven playbook for sample return that the rest of the world now follows. The technologies and hard lessons of the Hayabusa missions fed directly into NASA's OSIRIS-REx and the broader wave of small-body missions — making JAXA's little falcons the pathfinders for an entire class of exploration.",
+  "cur": "Његово друго наслеђе је проверен приручник за повратак узорака, који сада следи остатак света. Технологије и тешке лекције мисија Hayabusa директно су утицале на NASA-ину мисију OSIRIS-REx и на шири талас мисија до малих тела — због чега су JAXA-ини мали соколови постали претходница читаве једне класе истраживања."
+ },
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "legacy.2.md",
+  "en": "And it is a demonstration that a focused, comparatively modest program can lead the world in a specific, difficult domain. Hayabusa is proof that you do not need the largest budget to hold a genuine first — only the discipline to pick one hard problem and refuse to let it beat you.",
+  "cur": "То је и доказ да један усредсређен, сразмерно скроман програм може предводити свет у одређеној, тешкој области. Hayabusa је доказ да вам није потребан највећи буџет да бисте држали право прво достигнуће — потребна је само дисциплина да изаберете један тежак проблем и одбијете да дозволите да вас победи."
+ },
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of Hayabusa is that a mission that barely survives can be worth more than one that goes smoothly, if the survival is instrumented and learned from. The first probe's cascade of failures was, in the end, the most valuable thing about it — every near-fatal problem became knowledge that made the flawless sequel possible. Failure, fully understood, is a form of progress.",
+  "cur": "Лекција програма Hayabusa је да мисија која једва преживи може вредети више од оне која прође без проблема, ако се преживљавање прати инструментима и из њега се учи. Низ узастопних кварова прве сонде био је, на крају, најдрагоценије што је имала — сваки замало кобан проблем постао је знање које је омогућило беспрекоран наставак. Неуспех, у потпуности схваћен, облик је напретка."
+ },
+ {
+  "rel": "programs/hayabusa.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is the power of focus. JAXA could not out-spend NASA on everything, so it chose one extraordinarily hard thing and became the best in the world at it. In a field where the temptation is always to attempt more, Hayabusa is a case for doing less, deeper — and holding a first that larger programs then have to come to you to learn.",
+  "cur": "Дубља лекција је снага усредсређености. JAXA није могла да надмаши NASA по улагањима у све, па је изабрала једну изузетно тешку ствар и постала најбоља на свету у њој. У области у којој је искушење увек да се покуша више, Hayabusa је аргумент за то да се ради мање, али дубље — и да се држи прво достигнуће због којег већи програми затим морају да дођу код вас да би научили."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "name",
+  "en": "International Space Station",
+  "cur": "Међународна свемирска станица"
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "tagline",
+  "en": "The largest thing humanity has ever built in space, and the place every thread of the space age converges — the former rivals' rivalry turned, after forty years, into the longest act of cooperation in the history of spaceflight.",
+  "cur": "Највеће дело које је човечанство икада изградило у свемиру и место у којем се стичу све нити свемирског доба — ривалство некадашњих супарника претворило се, после четрдесет година, у најдуже дело сарадње у историји свемирских летова."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "the_land.0.md",
+  "en": "Everything in this atlas leads here. The International Space Station is not a fresh start but a convergence — the point where the two separate histories of human spaceflight, American and Soviet, finally merged into a single structure and a single crew. Its Russian half descends directly from Salyut and Mir; its American half from Skylab; it was assembled by the Space Shuttle, is crewed by Soyuz, resupplied by the descendants of the Progress freighter, and carries laboratories built by Europe and Japan. Nearly every program that came before it is present in it, physically, as heritage bolted into orbit.",
+  "cur": "Све у овом атласу води овамо. Међународна свемирска станица није нови почетак, већ стециште — тачка у којој су се две одвојене историје људских свемирских летова, америчка и совјетска, коначно спојиле у једну конструкцију и једну посаду. Њена руска половина води директно порекло од станица Salyut и Mir, а америчка од станице Skylab; склопљена је помоћу Space Shuttle-а, посаду јој довози Soyuz, снабдевају је потомци теретног брода Progress, а носи и лабораторије које су саградиле Европа и Јапан. Готово сваки програм који јој је претходио присутан је у њој, физички, као наслеђе уграђено у орбиту."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "the_land.1.md",
+  "en": "It is also the largest and most complex object ever built in space, and the most expensive — a structure the size of a football field, assembled over more than a decade from modules launched separately and joined in orbit, sustained continuously by a fleet of spacecraft from many nations. But the deepest thing about it is not its size. It is that the two superpowers who spent four decades trying to beat each other to every first in space decided, when the racing was finally over, to build the greatest thing either had ever attempted together — and have kept it crewed, without a single day's break, for over twenty years.",
+  "cur": "То је уједно и највећи и најсложенији објекат икада изграђен у свемиру, и најскупљи — конструкција величине фудбалског терена, састављена током више од једне деценије од модула лансираних одвојено и спојених у орбити, коју непрекидно одржава флота летелица из многих држава. Али најдубља ствар у вези с њом није њена величина. То је чињеница да су две суперсиле, које су четири деценије покушавале да једна другу претекну у сваком свемирском првенцу, одлучиле, када је трка коначно завршена, да заједно изграде највеће дело које је иједна од њих икада предузела — и да су га одржавале са посадом, без иједног дана прекида, више од двадесет година."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "goals.0.caption",
+  "en": "The completed International Space Station — a structure the size of a football field, assembled in orbit from modules built on three continents, and permanently crewed since November 2000.",
+  "cur": "Завршена Међународна свемирска станица — конструкција величине фудбалског терена, састављена у орбити од модула изграђених на три континента и непрекидно настањена посадом од новембра 2000."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "goals.1.md",
+  "en": "The Station's goals were three, and they braided together. The first was scientific: a permanent, continuously-staffed laboratory in microgravity, large enough and enduring enough to do research that short flights never could — on the human body, on materials, on biology, on the long-duration questions that any journey to Mars must answer. The second was operational: to master, at last and at scale, the thing every station program had been climbing toward — a genuinely permanent human presence, sustained indefinitely by international resupply and crew rotation.",
+  "cur": "Циљеви Станице били су три, и они су се преплитали. Први је био научни: стална лабораторија у микрогравитацији, са непрекидном посадом, довољно велика и довољно трајна да се у њој спроводе истраживања каква кратки летови никада нису могли — на људском телу, на материјалима, на биологији, на питањима дуготрајног боравка на која мора одговорити свако путовање на Марс. Други је био оперативни: да се, најзад и у пуном обиму, овлада оним ка чему је тежио сваки програм свемирских станица — истински трајним присуством људи, које се на неодређено време одржава међународним снабдевањем и променом посада."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "goals.2.md",
+  "en": "The third goal was political, and in the 1990s it was arguably the most urgent. As the Soviet Union collapsed, the West feared its rocket engineers might sell their skills to any regime that would pay. Binding Russia into a shared, indispensable, decades-long project — one where its unmatched station expertise was needed and valued — was a deliberate act of statecraft as much as engineering. The ISS was built partly to give the former enemy a reason to cooperate, and it worked: the Station has kept American and Russian spaceflight entwined through terrestrial quarrels that severed almost everything else.",
+  "cur": "Трећи циљ био је политички, а деведесетих година прошлог века вероватно и најхитнији. Док се Совјетски Савез распадао, Запад се плашио да би његови ракетни инжењери могли своје вештине да продају сваком режиму који буде спреман да плати. Укључити Русију у заједнички, незаменљив пројекат који траје деценијама — пројекат у којем су њена несравњива стручност у области станица била потребна и цењена — био је промишљен чин државничке вештине у истој мери колико и инжењерства. МСС је делимично изграђена да бисмо некадашњем непријатељу дали разлог за сарадњу, и то је успело: Станица је америчке и руске свемирске летове држала испреплетеним кроз земаљске свађе које су прекинуле готово све остало."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "outcome.0.caption",
+  "en": "The International Space Station mid-assembly. Built between 1998 and 2011 across more than forty flights, module by module, it was the most ambitious construction project ever carried out beyond the ground.",
+  "cur": "Међународна свемирска станица усред склапања. Грађена између 1998. и 2011. током више од четрдесет летова, модул по модул, била је најамбициознији грађевински подухват икада изведен изван тла."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "outcome.1.md",
+  "en": "The Station was assembled between 1998 and 2011, module by module, across more than forty launches by the Space Shuttle and Russian rockets — an in-orbit construction project of a scale and difficulty never attempted before or since. Since Expedition 1 arrived on 2 November 2000, it has been continuously inhabited: for more than two decades there has not been a single moment when no human being was living off the Earth. Over 270 people from more than 20 countries have lived and worked aboard it, and it has hosted tens of thousands of experiments across every field of science.",
+  "cur": "Станица је склапана између 1998. и 2011, модул по модул, током више од четрдесет лансирања Space Shuttle-а и руских ракета — грађевински подухват у орбити какве размере и тежине никада раније нити после тога нису покушане. Откако је 2. новембра 2000. стигла Expedition 1, станица је непрекидно настањена: више од две деценије није постојао ниједан тренутак у којем ниједно људско биће није живело изван Земље. Over 270 људи из више од 20 држава живело је и радило на њој, а угостила је десетине хиљада експеримената из свих области науке."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "outcome.2.md",
+  "en": "In its operation, every lesson of every earlier program comes due at once. Its modular assembly is Mir's idea, scaled up and internationalised. Its resupply-and-refuel logistics are Salyut's, matured. Its continuous occupation and its long-duration science extend Skylab and Mir. Soyuz still ferries its crews, exactly as it ferried them to Salyut fifty years ago; Progress and its Western cousins — Europe's ATV, Japan's HTV, America's Cygnus and Dragon — keep it stocked. The Station is not merely the successor to the station programs; it is their sum, running all their hard-won techniques simultaneously and reliably.",
+  "cur": "У њеном раду сви наукови сваког ранијег програма стижу на наплату одједном. Њено модуларно склапање је идеја станице Mir, увећана и уједињена на међународном плану. Њена логистика допреме и допуне горива је логистика станица Salyut, доведена до зрелости. Њено непрекидно настањивање и дуготрајна наука настављају Skylab и Mir. Soyuz и даље довози њене посаде, потпуно исто као што их је пре педесет година довозио до станица Salyut; Progress и његови западни рођаци — европски ATV, јапански HTV, амерички Cygnus и Dragon — одржавају је снабдевеном. Станица није само наследница програма свемирских станица; она је њихов збир, који истовремено и поуздано примењује све њихове тешко стечене технике."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "narrative.0.md",
+  "en": "The central story of the ISS is convergence, and it is worth tracing thread by thread. The Russian segment — the Zarya and Zvezda modules at the Station's core — is the direct descendant of the DOS lineage that ran from Salyut 1 through Mir; Zvezda is essentially the next Mir core module. The American segment inherits Skylab and the Shuttle that built it. Columbus is Europe's, the fruit of the path that ran through Spacelab and the ATV; Kibo is Japan's. The crews arrive on Soyuz, the spacecraft that has been carrying cosmonauts since 1967, and increasingly on commercial Dragons. To understand the ISS is to see all of these programs still operating, fused into one.",
+  "cur": "Централна прича о МСС јесте прича о спајању, и вреди је пратити нит по нит. Руски сегмент — модули Zarya и Zvezda у језгру Станице — директан је потомак линије DOS која се протезала од станице Salyut 1 до станице Mir; Zvezda је у суштини следећи главни модул станице Mir. Амерички сегмент наслеђује Skylab и Shuttle који га је изградио. Columbus је европски, плод пута који је водио преко Spacelab-а и ATV-а; Kibo је јапански. Посаде стижу у летелици Soyuz, која превози космонауте од 1967, а све више и у комерцијалним летелицама Dragons. Разумети МСС значи видети све те програме како и даље раде, стопљени у један."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "narrative.1.md",
+  "en": "The other great theme is the transformation of rivalry into cooperation. The space race was a contest to be first; the ISS is a project that can only exist by being shared. No single nation now funds a permanent human presence in orbit alone — the cost and complexity are simply too great — and so the Station is held up by a standing agreement among rivals to keep cooperating even when little else survives between them. That is a genuinely new thing in the history of spaceflight: not a race won, but a commons maintained, decade after decade, by nations that do not otherwise trust each other.",
+  "cur": "Друга велика тема је претварање супарништва у сарадњу. Свемирска трка била је надметање ко ће први стићи; МСС је пројекат који може да постоји само ако се дели. Ниједна држава данас сама не финансира стално присуство људи у орбити — трошак и сложеност једноставно су превелики — па Станицу држи на окупу трајни споразум супарника да наставе да сарађују и онда када међу њима готово ништа друго не опстаје. То је заиста нешто ново у историји свемирских летова: не добијена трка, него заједничко добро које деценију за деценијом одржавају нације које иначе не верују једна другој."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "narrative.2.md",
+  "en": "And the Station is now a hinge to the future. Commercial spacecraft have taken over the job of reaching it, ending the era in which only governments could fly crews and beginning the handover of low Earth orbit to private operators. Its own end is in sight — a controlled deorbit planned for around 2030 — with commercial stations meant to succeed it and the lunar Gateway carrying the international-partnership model onward to the Moon. The ISS is both the culmination of the first age of human spaceflight and the bridge to the next.",
+  "cur": "А Станица је сада и стожер ка будућности. Комерцијалне летелице преузеле су задатак да до ње стигну, чиме се завршава доба у којем су само владе могле да лансирају посаде и почиње предаја ниске Земљине орбите приватним операторима. Њен властити крај је на видику — контролисано спуштање из орбите планирано за око 2030. — а наследиће је комерцијалне станице, док ће лунарни Gateway модел међународног партнерства пренети даље, до Месеца. МСС је истовремено круна првог доба људских свемирских летова и мост ка следећем."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "legacy.0.caption",
+  "en": "The Station against the Earth. Its deepest achievement is not its size or its science but its continuity — an unbroken human presence in space, sustained by international cooperation, for over two decades.",
+  "cur": "Станица наспрам Земље. Њено најдубље достигнуће није величина нити наука, већ континуитет — непрекинуто присуство људи у свемиру, одржавано међународном сарадњом, више од две деценије."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "legacy.1.md",
+  "en": "The ISS's legacy is the proof, at the largest scale, of two ideas this atlas returns to again and again: that a permanent human presence in space is achievable, and that the greatest things in space are built together rather than alone. It is the longest continuous human occupation of anywhere beyond Earth, the foundation of nearly everything now known about living and working in orbit for the long term, and the operational and scientific groundwork on which any journey to the Moon or Mars will be built. Everything the station programs spent fifty years learning is validated here, running at once and without pause.",
+  "cur": "Наслеђе МСС-а јесте доказ, у највећој могућој размери, двеју идеја којима се овај атлас изнова враћа: да је стално присуство људи у свемиру оствариво и да се највеће ствари у свемиру граде заједно, а не сам. То је најдуже непрекинуто настањивање људи на било ком месту изван Земље, темељ готово свега што се данас зна о животу и раду у орбити на дуге стазе, као и оперативна и научна основа на којој ће бити изграђено свако путовање до Месеца или Марса. Све што су програми свемирских станица учили пола века овде је потврђено, и то истовремено и без прекида."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "legacy.2.md",
+  "en": "Its diplomatic legacy may matter as much as its scientific one. For a quarter of a century the Station has kept the world's spacefaring nations — above all the United States and Russia — working together in orbit through wars, sanctions, and collapses of trust on the ground. It stands as the clearest evidence that cooperation can achieve what competition cannot, and that a shared endeavour, once built, can hold rivals together long after the reasons they started it have faded. When it is finally brought down, what it proved will outlast it: that the next steps — the Moon, and eventually Mars — are things humanity will take together.",
+  "cur": "Њено дипломатско наслеђе можда је подједнако важно као научно. Четврт века Станица држи свемирске силе света — пре свега Сједињене Државе и Русију — на заједничком раду у орбити, упркос ратовима, санкцијама и растурању поверења на тлу. Она је најјасији доказ да сарадња може постићи оно што надметање не може и да заједнички подухват, једном изграђен, може држати супарнике на окупу дуго пошто су разлози због којих су га започели избледели. Када буде коначно спуштена из орбите, оно што је доказала надживеће је саму њу: да су следећи кораци — Месец и, временом, Марс — ствари које ће човечанство предузети заједно."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "lessons.0.md",
+  "en": "The Station's first lesson is that cooperation achieves what competition cannot. No nation now builds a permanent human presence in space by itself, because the scale and cost exceed what any single budget will bear — and so the largest structure ever built in orbit exists only because former rivals chose to share it. The space race produced brilliant, brief triumphs; the ISS has produced two unbroken decades of presence. For the hardest and most expensive endeavours, pooling effort is not a compromise on ambition. It is the only way the greatest ambitions get realised at all.",
+  "cur": "Прва лекција Станице јесте да сарадња постиже оно што надметање не може. Ниједна држава данас сама не гради стално присуство људи у свемиру, јер размере и трошкови премашују оно што може да поднесе било који појединачни буџет — па највећа структура икад изграђена у орбити постоји само зато што су бивши супарници одлучили да је деле. Свемирска трка донела је сјајне, кратке тријумфе; МСС је донела две непрекинуте деценије присуства. За најтеже и најскупље подухвате, здруживање напора није уступак на уштрб амбиције. То је једини начин да се највеће амбиције уопште остваре."
+ },
+ {
+  "rel": "programs/iss.json",
+  "at": "lessons.1.md",
+  "en": "The second lesson is that nothing in spaceflight starts from scratch. The ISS is the sum of every program before it — Salyut's resupply, Mir's modularity, Skylab's science, the Shuttle's assembly, Soyuz's reliability, Europe's and Japan's laboratories — none of it invented anew, all of it inherited and combined. The deepest truth of the space age is that its achievements are cumulative: each program stands on the ones before, and the Station stands on them all. Progress in space is not a series of fresh beginnings but a single, continuous act of building, carried forward hand to hand across generations and across borders.",
+  "cur": "Друга лекција јесте да у свемирским летовима ништа не почиње од нуле. МСС је збир свих програма пре њега — снабдевања станице Salyut, модуларности станице Mir, науке станице Skylab, склапања помоћу Shuttle-а, поузданости летелице Soyuz, европских и јапанских лабораторија — ништа од тога није изумљено изнова, све је наслеђено и спојено. Најдубља истина свемирског доба јесте да су његова достигнућа кумулативна: сваки програм стоји на онима пре себе, а Станица стоји на свима њима. Напредак у свемиру није низ нових почетака, већ један једини, непрекинути чин грађења, који се преноси из руке у руку кроз генерације и преко граница."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "name",
+  "en": "JAXA — Moon and Planets",
+  "cur": "JAXA — Месец и планете"
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "tagline",
+  "en": "Japan's ingenious, resource-light exploration of the Moon and planets — famous for missions that fail halfway and get rescued by cleverness.",
+  "cur": "Домишљато и штедљиво јапанско истраживање Месеца и планета — познато по мисијама које наиђу на квар на пола пута, а потом бивају спасене довитљивошћу."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "the_land.0.md",
+  "en": "Japan does robotic exploration differently from the superpowers. It flies fewer missions, on smaller budgets, aimed at narrow and often audacious goals — and it has a distinct habit of turning near-catastrophe into triumph through ingenuity. Where NASA builds flagships with deep redundancy and ESA flies large international observatories, JAXA's ISAS institute tends to send one clever, lightly-built spacecraft to do one hard thing, and then improvise brilliantly when something breaks. It usually does break; the missions are famous for being saved.",
+  "cur": "Јапан се роботског истраживања лаћа другачије од суперсила. Лети мање мисија, са скромнијим буџетима, усмерених ка уским и често смелим циљевима — и има посебну навику да готово катастрофу преокрене у тријумф захваљујући довитљивости. Док NASA гради водеће летелице са дубоком редундансом, а ESA лети са великим међународним опсерваторијама, JAXA-ин институт ISAS обично шаље једну довитљиву, лако грађену летелицу да обави једну тешку ствар, а потом сјајно импровизује када нешто откаже. Углавном нешто и откаже; те мисије су чувене по томе што бивају спасене."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "the_land.1.md",
+  "en": "This is the counterpart to Hayabusa's asteroid work: JAXA's exploration of the Moon and the planets. It includes Kaguya, the largest lunar mission since Apollo; Akatsuki, a Venus orbiter that failed at arrival and was recovered five years later; and SLIM, a small lander that touched the Moon with a precision no one had achieved and then kept working upside down. Together they define a national style — lean, focused, and relentlessly resourceful.",
+  "cur": "Ово је пандан раду мисије Hayabusa на астероидима: JAXA-ино истраживање Месеца и планета. Оно обухвата летелицу Kaguya, највећу лунарну мисију од програма Apollo; Akatsuki, орбитер на Венери који је при доласку отказао, а пет година касније био опорављен; и SLIM, малу слетну летелицу која је додирнула Месец уз прецизност какву нико раније није постигао, а затим наставила да ради наопако окренута. Заједно оне чине национални стил — штедљив, усредсређен и неуморно довитљив."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "goals.0.md",
+  "en": "The scientific goals span the inner solar system: map the Moon in fine detail and understand its origin and resources (Kaguya); study the runaway greenhouse and bizarre super-rotating atmosphere of Venus (Akatsuki); and demonstrate that a spacecraft can land exactly where it intends to, rather than merely somewhere safe (SLIM). Each mission targets a specific, well-chosen question rather than attempting broad coverage.",
+  "cur": "Научни циљеви обухватају унутрашњи део Сунчевог система: детаљно картирати Месец и разумети његово порекло и ресурсе (Kaguya); проучити одбегли ефекат стаклене баште и необичну суперротирајућу атмосферу Венере (Akatsuki); и показати да свемирска летелица може да слети тачно онде где намерава, а не само на неко безбедно место (SLIM). Свака мисија циља на одређено, брижљиво изабрано питање, уместо да покушава широко покривање."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "goals.1.caption",
+  "en": "SLIM — the 'Moon Sniper.' Its goal was not to explore but to prove a technique: pinpoint landing within 100 metres of a chosen spot, the capability every future lander and crewed mission will need to reach a specific, valuable site.",
+  "cur": "SLIM — „Месечев снајпериста“. Његов циљ није било истраживање, већ доказивање технике: прецизно слетање на највише 100 метара од изабране тачке — способност која ће бити потребна свакој будућој слетној летелици и посади да би стигле до одређеног, вредног места."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "goals.2.md",
+  "en": "The engineering goal running through all of them is precision and autonomy on a budget — vision-based navigation, careful propellant management, and spacecraft clever enough to be rescued when a critical system fails. JAXA's programs are, in effect, a long argument that you do not need a flagship budget to do frontier science, if you are willing to fly lean and think fast.",
+  "cur": "Инжењерски циљ који повезује све њих јесте прецизност и аутономија уз скромна средства — навигација заснована на виду, пажљиво управљање погонским горивом и летелице довољно довитљиве да буду спасене када откаже неки кључни систем. Програми агенције JAXA су, у суштини, дугачак аргумент да вам за границе науке није потребан буџет прворазредне (flagship) мисије, ако сте спремни да летите штедљиво и мислите брзо."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "outcome.0.md",
+  "en": "The record is a string of hard-won successes. Kaguya (2007) returned the largest lunar mission's worth of mapping data since Apollo and the first HD footage of an Earthrise. Akatsuki failed its Venus orbit insertion in 2010 when its main engine failed — a total loss by any normal reckoning — and yet, after five years orbiting the Sun, JAXA used the probe's small attitude thrusters to slip it into Venus orbit on a second try, salvaging the mission entirely. SLIM (2024) landed within about 55 metres of its target, tipped onto its side, and still delivered its science.",
+  "cur": "Досије је низ тешко стечених успеха. Kaguya (2007) је вратио највећу количину података о картирању Месеца од програма Apollo и први снимак изласка Земље у HD квалитету. Akatsuki није успео да уђе у орбиту око Венере 2010. године јер је отказао његов главни мотор — потпуни губитак по свим уобичајеним мерилима — а ипак је JAXA, након пет година кружења око Сунца, помоћу малих потисника за контролу оријентације сонде при другом покушају успела да је убаци у орбиту око Венере и тако у потпуности спасе мисију. SLIM (2024) је слетео на око 55 метара од циља, преврнуо се на бок, и упркос томе предао своје научне резултате."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "outcome.1.caption",
+  "en": "Akatsuki at Venus — the probe that arrived five years late. When its orbit-insertion engine failed, the mission looked dead; a patient rescue using the spacecraft's tiny thrusters brought it back to life.",
+  "cur": "Akatsuki на Венери — сонда која је стигла пет година касније. Када је отказао мотор за убацивање у орбиту, мисија је деловала мртво; стрпљиво спасавање помоћу сићушних потисника летелице вратило ју је у живот."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "outcome.2.md",
+  "en": "What these outcomes share is a refusal to accept a failed mission as a lost one. Akatsuki should have been abandoned; SLIM's tipped landing should have ended its science; each was salvaged by teams treating a broken spacecraft as a puzzle rather than a write-off. The results are real planetary science — Venus atmospheric dynamics, detailed lunar geology, demonstrated pinpoint landing — delivered by missions that repeatedly should not have delivered anything.",
+  "cur": "Оно што ови исходи деле јесте одбијање да се неуспела мисија прихвати као изгубљена. Akatsuki је требало напустити; нагнуто слетање мисије SLIM је требало да оконча њену науку; сваку су спасили тимови који су оштећену летелицу сматрали загонетком, а не отписом. Резултати су права планетарна наука — динамика атмосфере Венере, детаљна лунарна геологија, показано прецизно слетање — коју су пружиле мисије од којих, по свему судећи, није требало очекивати ништа."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "narrative.0.md",
+  "en": "The narrative of JAXA's robotic program is rescue as a core competency. It is not that these missions fail more than others; it is that JAXA's culture is unusually good at not giving up when they do — at spending months finding a way to fly a crippled spacecraft to its goal anyway. Akatsuki's five-year detour and second orbit-insertion attempt is the purest example: a mission that any conventional program would have declared dead, patiently brought back to full science.",
+  "cur": "Окосница приче о JAXA-иног роботског програма јесте спасавање као кључна компетенција. Није реч о томе да ове мисије чешће остварују неуспех од других; реч је о томе да је култура агенције JAXA необично вешта у томе да не одустане када до тога дође — да месецима тражи начин да оштећену летелицу ипак доведе до циља. Петогодишњи заобилазни пут мисије Akatsuki и други покушај убацивања у орбиту најчистији су пример: мисија коју би сваки конвенционални програм прогласио мртвом, стрпљиво је враћена до пуне научне делатности."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "narrative.1.md",
+  "en": "It is also a philosophy of doing more with less. Japan's space science budget is a fraction of NASA's, and its answer is not to attempt less ambitious things but to attempt them more cheaply and cleverly — lean spacecraft, sharp objectives, and a tolerance for the risk that comes with flying without deep redundancy. SLIM is tiny; Akatsuki was modest; Kaguya was efficient. The ambition is in the goals, not the budgets.",
+  "cur": "То је уједно и филозофија постизања више са мање. Буџет јапанске свемирске науке је делић буџета агенције NASA, а одговор Јапана није да се упусти у мање амбициозне подухвате, већ да их изведе јефтиније и довитљивије — витке летелице, јасно постављени циљеви и спремност да се прихвати ризик који носи летење без велике редундантности. SLIM је сићушан, Akatsuki је био скроман, Kaguya је био ефикасан. Амбиција је у циљевима, а не у буџетима."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "narrative.2.md",
+  "en": "And it complements rather than competes. JAXA does not try to match NASA or ESA across the whole board; it picks specific frontiers — asteroid sample return, Venus dynamics, pinpoint landing — and leads or contributes uniquely there, often in partnership. It is the model of a mid-sized space power that earns outsized influence by being excellent at chosen, difficult things rather than adequate at everything.",
+  "cur": "И она допуњује, а не такмичи се. JAXA не покушава да се изједначи са агенцијама NASA или ESA по свим питањима; бира одређене границе — повратак узорака са астероида, динамику Венере, прецизно слетање — и на њима предводи или даје јединствен допринос, често у партнерству. То је узор средње велике свемирске силе која стиче несразмерно велики утицај тако што је одлична у изабраним, тешким стварима, а не просечна у свему."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "legacy.0.md",
+  "en": "The first legacy is a body of focused planetary science: the largest lunar mission since Apollo, yielding detailed surface mapping and the first HD Earthrise footage; years of Venus atmospheric data from a probe that should not exist; and a demonstrated pinpoint-landing capability that every future lander — robotic or crewed, at the Moon or beyond — will build on.",
+  "cur": "Прво наслеђе је скуп усредсређених планетарних наука: највећа лунарна мисија после програма Apollo, која је донела детаљно картирање површине и први снимак изласка Земље у HD квалитету; године података о атмосфери Венере са сонде која није смела да постоји; и доказана способност прецизног слетања на којој ће градити сваки будући лендер — роботски или с посадом, на Месецу или даље."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "legacy.1.md",
+  "en": "The second is a proven style of exploration: lean, precise, and resilient, showing that frontier robotic science does not require a flagship budget, only sharp goals and the ingenuity to rescue missions when they falter. It is a template many smaller and emerging space agencies now look to.",
+  "cur": "Друго је доказан стил истраживања: витак, прецизан и отпоран, који показује да врхунска роботска наука на самој граници сазнања не захтева буџет водећег пројекта, већ само јасне циљеве и довитљивост да се мисије спасу када посустану. То је узор коме се данас окреће многе мање и нове свемирске агенције."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "legacy.2.md",
+  "en": "And the third is influence through specialization. By leading in specific hard domains rather than spreading thin, JAXA has made itself a partner the larger agencies need — its techniques and its rescued spacecraft feeding directly into the wider exploration of the Moon and inner planets.",
+  "cur": "А треће је утицај путем специјализације. Предводећи у одређеним тешким областима уместо да се расипа, JAXA је постала партнер који је већим агенцијама потребан — њене технике и њене спасене летелице директно доприносе ширем истраживању Месеца и унутрашњих планета."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of JAXA's robotic missions is that a failed arrival is not always a failed mission. Akatsuki and SLIM both suffered failures that would normally end a program, and both delivered their science anyway because their teams treated the broken spacecraft as a problem to solve rather than a loss to accept. Ingenuity applied to a crippled mission can recover most of its value.",
+  "cur": "Лекција из JAXA-иних роботских мисија јесте да неуспео долазак није увек и неуспела мисија. Akatsuki и SLIM претрпели су кварове који би обично окончали програм, а обе су ипак испоручиле своју науку јер су их тимови сматрали проблемом који треба решити, а не губитком који треба прихватити. Довитљивост примењена на оштећену мисију може повратити већину њене вредности."
+ },
+ {
+  "rel": "programs/jaxa-robotic.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is that ambition and budget are separable. JAXA does frontier science on a fraction of a superpower's funding by choosing narrow, hard goals and flying lean — proof that leadership in exploration is available to anyone willing to specialize deeply and improvise well, rather than only to those who can afford flagships.",
+  "cur": "Дубља лекција јесте да се амбиција и буџет могу раздвојити. JAXA се бави врхунском науком са делићем финансијских средстава једне суперсиле тако што бира уске, тешке циљеве и лети витко — а то је доказ да је водећа улога у истраживању доступна свакоме ко је спреман да се дубоко специјализује и добро импровизује, а не само онима који себи могу да приуште водеће пројекте."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "name",
+  "en": "James Webb Space Telescope",
+  "cur": "Свемирски телескоп James Webb"
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "tagline",
+  "en": "The successor to Hubble — a gold mirror the size of a house, folded into a rocket, unfurled a million miles away to see the first light in the universe.",
+  "cur": "Наследник телескопа Hubble — златно огледало величине куће, склопљено у ракету и распоређено милион миља далеко да би угледало прву светлост у свемиру."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "the_land.0.md",
+  "en": "Hubble showed us the universe in visible light. But the most distant objects — the very first galaxies, forming a few hundred million years after the Big Bang — are invisible to it, because the expansion of the universe has stretched their light out of the visible spectrum entirely and into the infrared. To see the dawn of cosmic time, you need an infrared telescope, and a big one, kept extremely cold, parked far from the warmth of the Earth. The James Webb Space Telescope is that machine, and building it took twenty-five years, ten billion dollars, and a run of engineering audacity with almost no room for error.",
+  "cur": "Hubble нам је показао свемир у видљивој светлости. Али најудаљенији објекти — прве галаксије, које су настајале неколико стотина милиона година након Великог праска — њему су невидљиви, јер је ширење свемира растегло њихову светлост потпуно изван видљивог спектра и у инфрацрвени део. Да бисте угледали зору космичког времена, потребан вам је инфрацрвени телескоп, и то велики, одржаван на изузетно ниској температури, смештен далеко од топлоте Земље. James Webb Space Telescope је управо таква машина, а за њену изградњу били су потребни двадесет пет година, десет милијарди долара и низ инжењерских подухвата дрске смелости, готово без простора за грешку."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "the_land.1.md",
+  "en": "JWST is the largest and most complex telescope ever flown, and unlike Hubble it is genuinely international — a partnership of NASA, the European Space Agency, and the Canadian Space Agency, launched on a European rocket. It is also the riskiest: too large to fit in any rocket fully assembled, it had to be folded like origami, launched packed up, and then unfold itself perfectly in deep space, through hundreds of steps that could not be tested all together and could never be repaired. That it worked at all is one of the great engineering feats of the era.",
+  "cur": "JWST је највећи и најсложенији телескоп који је икада летео и, за разлику од телескопа Hubble, истински је међународан — партнерство агенција NASA, Европске свемирске агенције и Канадске свемирске агенције, лансиран на европској ракети. Уједно је и најризичнији: превелик да би стао у било коју ракету потпуно састављен, морао је бити склопљен попут оригамија, лансиран спакован, а затим се сâм савршено расклопити у дубоком свемиру, кроз стотине корака који никада нису могли бити испитани сви заједно и који никада нису могли бити поправљени. Да је уопште успео, једно је од великих инжењерских достигнућа ове епохе."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "goals.0.md",
+  "en": "The headline goal is to see the first galaxies — light from the earliest structures in the universe, redshifted deep into the infrared over more than 13 billion years of cosmic expansion. Webb was built to look further back in time than any instrument before it, to the era when the first stars and galaxies switched on, and to watch how the universe assembled itself out of the darkness that followed the Big Bang.",
+  "cur": "Главни циљ је угледати прве галаксије — светлост најранијих структура у свемиру, црвеним помаком дубоко померену у инфрацрвени део током више од 13 милијарди година космичког ширења. Webb је изграђен да завири даље у прошлост него иједнан инструмент пре њега — до доба када су се упалиле прве звезде и галаксије — и да посматра како се свемир састављао из таме која је уследила након Великог праска."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "goals.1.caption",
+  "en": "JWST — a 6.5-metre segmented gold-coated mirror above a five-layer sunshield the size of a tennis court. The shield keeps the telescope colder than -220°C so its own heat cannot blind its infrared eyes.",
+  "cur": "JWST — сегментно огледало пречника 6,5 метара, превучено златом, изнад петослојног штита од Сунца величине тениског терена. Штит одржава телескоп хладнијим од -220°C како његова сопствена топлота не би заслепила његове инфрацрвене очи."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "goals.2.md",
+  "en": "The second goal is to read the atmospheres of other worlds. When an exoplanet passes in front of its star, a little starlight filters through its atmosphere, and Webb's infrared sensitivity can tease apart that light to detect the gases present — water, carbon dioxide, methane. It is the first instrument capable of genuinely characterizing the atmospheres of small, potentially habitable planets, turning the search for life from counting worlds to sniffing their air.",
+  "cur": "Други циљ је да прочита атмосфере других светова. Када егзопланета прође испред своје звезде, мало звездане светлости пробија се кроз њену атмосферу, а Webb-ова инфрацрвена осетљивост може да раздвоји ту светлост и открије присутне гасове — воду, угљен-диоксид, метан. То је први инструмент способан да заиста окарактерише атмосфере малих, потенцијално насељивих планета, чиме се потрага за животом преображава из бројања светова у њушкање њиховог ваздуха."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "goals.3.md",
+  "en": "Underneath both goals is a set of brutal engineering requirements: a mirror too big to launch unfolded, a sunshield to keep the whole observatory colder than almost anywhere in the solar system, and a home a million miles from Earth at the L2 point — far enough to stay cold and stable, and far too far for any astronaut to ever visit. Everything had to work the first time, alone, in the dark.",
+  "cur": "Испод оба циља налази се скуп бруталних инжењерских захтева: огледало превелико да би било лансирано расклопљено, штит од Сунца који целу опсерваторију држи хладнијом него скоро иједно друго место у Сунчевом систему, и дом на милион миља од Земље, у тачки L2 — довољно далеко да остане хладна и стабилна, а предалеко да би је икад посетио иједан астронаут. Све је морало да проради из првог пута, самостално, у мраку."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "outcome.0.md",
+  "en": "After a development so troubled it was nearly cancelled by Congress in 2011, JWST launched on Christmas Day 2021 on an Ariane 5 — and then executed the hardest part flawlessly. Over two weeks it worked through the 344 single points of failure it carried — about 80% of them deployment steps — each of which, if it jammed, would have crippled the mission, with no possibility of a repair crew a million miles out. The sunshield unfolded, the mirror segments locked into place, the telescope cooled — and every single step worked. The launch itself was so precise that the fuel saved roughly doubled the telescope's expected lifetime.",
+  "cur": "После развоја толико мучног да га је Конгрес 2011. замало отказао, JWST је лансиран на Божић 2021. на ракети Ariane 5 — а затим је најтежи део извео беспрекорно. За две недеље прошао је кроз 344 појединачне тачке отказа које је носио — око 80% њих били су кораци распоређивања — од којих би свака, да се заглавила, осакатила мисију, без икакве могућности да екипа за поправке стигне милион миља далеко. Штит од Сунца се раширио, сегменти огледала ушли су на своје место, телескоп се охладио — и сваки појединачни корак је успео. Само лансирање било је толико прецизно да је уштеђено гориво отприлике удвостручило очекивани век трајања телескопа."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "outcome.1.caption",
+  "en": "The observatory folded for launch, and unfurled at L2. Nothing this large had ever been deployed autonomously in deep space; the two-week unfolding was watched with held breath by everyone who had spent decades building it.",
+  "cur": "Опсерваторија је за лансирање била склопљена, а у тачки L2 се распетљала. Ништа толико велико никада није аутономно распоређено у дубоком свемиру; двонедељно расклапање пратили су са заустављеним дахом сви који су деценијама градили опсерваторију."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "outcome.2.md",
+  "en": "The science began almost immediately and exceeded expectations. Webb's first images, released in July 2022, were the deepest infrared views of the universe ever taken — thousands of galaxies in a patch of sky the size of a grain of sand held at arm's length. Since then it has found galaxies far earlier and more mature than theory predicted, detected molecules in exoplanet atmospheres, peered inside the dusty clouds where stars are born, and forced a genuine rethink of how quickly the early universe assembled. It is doing what Hubble did to a previous generation: rewriting the textbook and redrawing the picture of the cosmos.",
+  "cur": "Наука је почела скоро одмах и премашила очекивања. Webb-ове прве слике, објављене у јулу 2022, биле су најдубљи инфрацрвени погледи на свемир икада снимљени — хиљаде галаксија у делићу неба величине зрна песка које држите на дохват руке. Од тада је открио галаксије много раније и зрелије него што је теорија предвиђала, детектовао молекуле у атмосферама егзопланета, завирио у прашњаве облаке у којима се рађају звезде и приморао научнике да озбиљно преиспитају колико се брзо рани свемир склопио. Чини оно што је Hubble учинио једној претходној генерацији: преписује уџбеник и изнова црта слику космоса."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "narrative.0.md",
+  "en": "The story of JWST is a bet that came within a congressional budget of being killed and paid off completely. For a decade it was the troubled giant of space science — over budget, behind schedule, absorbing money that other missions wanted, and nearly cancelled outright in 2011. The people who defended it were betting that the payoff would justify the pain: that a telescope this ambitious, if it worked, would be worth the decade of delay and the tenfold cost growth. The first images settled the argument. Almost no one now questions that the bet was right.",
+  "cur": "Прича о JWST-у је прича о опклади која је била на један буџет Конгреса удаљена од гашења, а на крају се потпуно исплатила. Читаву деценију био је проблематични џин свемирске науке — премашио је буџет, каснио с роковима, упијао новац који су желеле друге мисије, а 2011. је замало био потпуно отказан. Људи који су га бранили кладили су се да ће добит оправдати муку: да би толико амбициозан телескоп, ако проради, вредео деценије кашњења и десетоструког раста трошкова. Прве слике окончале су спор. Данас готово нико не доводи у питање да је опклада била исправна."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "narrative.1.md",
+  "en": "It is also a story about doing the impossible alone. The defining fact of JWST is that it could not be tested as it would fly and could not be fixed once flown — the sunshield and mirror had to unfold themselves perfectly, the first time, in a place no astronaut could reach. Hubble's flawed mirror was famously repaired by a shuttle crew; JWST had no such safety net. Every one of its hundreds of critical deployments had to succeed on its own, and the fact that they all did is a testament to a level of engineering discipline that borders on the unreasonable.",
+  "cur": "То је уједно и прича о томе како се немогуће постиже сам. Одлучујућа чињеница о JWST-у јесте да није могао бити тестиран онако како ће летети и да није могао бити поправљен када једном полети — штит од Сунца и огледало морали су да се расклопе савршено, из првог покушаја, на месту до којег ниједан астронаут не може да допре. Hubble-ово мањкаво огледало чувено је поправила посада спејс-шатла; JWST није имао такву сигурносну мрежу. Свако од његових стотина критичних распоређивања морало је да успе само за себе, а чињеница да су сва успела сведочи о нивоу инжењерске дисциплине који граничи са неразумним."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "narrative.2.md",
+  "en": "And it is a genuinely global achievement in a way Apollo never was. Europe built instruments and provided the launch; Canada contributed key sensors; the science is shared across the world's astronomers. JWST belongs to the era of international flagships — too expensive and too hard for any one nation, built by a coalition, and returning a view of the universe that is, in the fullest sense, humanity's rather than any single country's.",
+  "cur": "И то је заиста глобално достигнуће на начин на који Apollo никада није био. Европа је направила инструменте и обезбедила лансирање; Канада је допринела кључним сензорима; наука се дели међу астрономима широм света. JWST припада добу међународних водећих пројеката — прескупог и претешког за било коју појединачну нацију, изграђеног од стране коалиције, који враћа поглед на свемир који је, у пуном смислу те речи, припадник човечанства, а не било које једне државе."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "legacy.0.md",
+  "en": "JWST's first legacy is already visible: a new view of the early universe, with galaxies found earlier and brighter than models predicted, forcing cosmologists to revisit how the first structures formed. Like Hubble before it, it is the instrument behind a generation's worth of discoveries, and it has decades of operating life ahead of it.",
+  "cur": "Прво наслеђе JWST-а већ је видљиво: нови поглед на рани свемир, са галаксијама пронађеним раније и сјајнијим него што су модели предвиђали, што космологе приморава да поново размотре како су настале прве структуре. Као и Hubble пре њега, он је инструмент иза читаве генерације открића, а пред њим су деценије радног века."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "legacy.1.md",
+  "en": "Its second legacy is the characterization of exoplanet atmospheres — the first real capability to analyze the air of small worlds around other stars, and therefore the first serious tool in the search for signs of life beyond Earth. Whatever Webb finds there, it has opened a line of inquiry that will define astronomy for decades.",
+  "cur": "Његово друго наслеђе је одређивање карактеристика атмосфера егзопланета — прва права могућност да се анализира ваздух малих светова око других звезда, а самим тим и први озбиљан алат у потрази за траговима живота изван Земље. Шта год Webb тамо пронађе, отворио је правац истраживања који ће деценијама одређивати астрономију."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "legacy.2.md",
+  "en": "And its third is a proof of method: that an international coalition can build something too large to launch assembled, deploy it autonomously in deep space, and have it work the first time. That engineering confidence — that the impossible-to-repair can be made reliable enough to trust — is the foundation on which the next generation of even larger space observatories will be built.",
+  "cur": "А треће је доказ метода: да међународна коалиција може да изгради нешто превелико да би се лансирало склопљено, да то аутономно распореди у дубоком свемиру и да оно проради из првог покушаја. То инжењерско поверење — да се оно што је немогуће поправити може учинити довољно поузданим да му се верује — темељ је на којем ће бити грађена следећа генерација још већих свемирских опсерваторија."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of JWST is that some payoffs are worth an almost unreasonable amount of patience and pain. For most of two decades the telescope was late, expensive, and nearly cancelled; the case for continuing rested entirely on a promise that could not be proven until it flew. The first images vindicated the promise — a reminder that the most transformative projects are often the ones that look, for years, like failures waiting to happen.",
+  "cur": "Лекција JWST-а јесте да неке награде вреде готово неразумну количину стрпљења и муке. Већи део две деценије телескоп је каснио, био скуп и замало отказан; аргумент за наставак почивао је у потпуности на обећању које није могло бити доказано док телескоп не полети. Прве слике потврдиле су то обећање — подсетник да су најпреображајнији пројекти често управо они који годинама изгледају као неуспеси који тек чекају да се догоде."
+ },
+ {
+  "rel": "programs/jwst.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is about engineering without a second chance. JWST could not be tested as flown or repaired once flown, and it still succeeded — because every failure mode was hunted down and designed out in advance, on the ground, over years. It is the ultimate case for rigor over iteration: when you truly cannot fix it later, the only option is to be right the first time, and Webb proved that is achievable, even at staggering complexity.",
+  "cur": "Дубља лекција тиче се инжењерства без друге шансе. JWST није могао бити тестиран онако како лети нити поправљен када једном полети, а ипак је успео — јер је сваки могући начин квара пронађен и унапред искључен пројектом, на земљи, током година. То је врхунски аргумент за ригорозност уместо понављања покушаја: када заиста не можете да исправите грешку касније, једина могућност је да из првог пута будете у праву, а Webb је доказао да је то достижно, чак и при задивљујућој сложености."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "name",
+  "en": "Amazon Leo (Project Kuiper)",
+  "cur": "Amazon Leo (Project Kuiper)"
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "tagline",
+  "en": "Amazon's answer to Starlink — rebranded Amazon Leo in 2025, backed by the deepest pockets in retail and a deliberate refusal to depend on a rival's rocket.",
+  "cur": "Одговор компаније Amazon на Starlink — у 2025. преименован у Amazon Leo, уз подршку најдубљих џепова у малопродаји и намерно одбијање да зависи од ракете конкурента."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "the_land.0.md",
+  "en": "Once Starlink proved that a megaconstellation could actually work — that thousands of small satellites in low orbit could deliver real internet to real customers — the question stopped being whether anyone would build a second one and became who. The answer with the most money behind it is Amazon. Launched as Project Kuiper and rebranded Amazon Leo in late 2025, the program is a planned constellation of thousands of satellites aimed at the same prize: global broadband from low Earth orbit, sold to consumers, businesses, and governments who cannot get it any other way.",
+  "cur": "Откако је Starlink доказао да мегаконстелација заиста може да функционише — да хиљаде малих сателита у ниској орбити могу да пруже прави интернет стварним корисницима — питање је престало да буде хоће ли неко изградити другу и постало је ко. Одговор иза кога стоји највише новца јесте Amazon. Програм, покренут као Project Kuiper, а крајем 2025. преименован у Amazon Leo, замишљен је као констелација од хиљада сателита усмерена на исти плен: глобални широкопојасни приступ из ниске Земљине орбите, намењен потрошачима, предузећима и владама које га не могу добити на други начин."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "the_land.1.md",
+  "en": "Kuiper is the challenger, and it arrives late on purpose and by circumstance. Starlink had a years-long head start and a captive, cheap ride to orbit in its parent company's own Falcon rockets. Kuiper has neither — but it has Amazon: a company with vast capital, a global logistics and cloud business to plug the service into, and enough leverage to buy launches wholesale. The contest between them is the first real competition of the megaconstellation era.",
+  "cur": "Kuiper је изазивач, а касно стиже и намерно и као последица околности. Starlink је имао вишегодишњу предност и јефтин, сопствени превоз у орбиту на ракетама Falcon матичне компаније. Kuiper нема ништа од тога — али има Amazon: компанију с огромним капиталом, глобалним логистичким и облак пословањем у које може да укључи услугу и довољно снаге да купује лансирања на велико. Надметање између њих прва је права конкуренција у епохи мегаконстелација."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "goals.0.md",
+  "en": "The goal is a full commercial broadband constellation — thousands of satellites providing low-latency internet worldwide, integrated with Amazon's Web Services cloud so that connectivity and computing are sold together. The strategic aim is not just to sell internet but to extend Amazon's reach to every corner of the planet not yet wired, and to keep a competitor from owning that market unopposed.",
+  "cur": "Циљ је потпуна комерцијална широкопојасна констелација — хиљаде сателита који широм света пружају интернет мале латенције, интегрисана са облак услугом Amazon's Web Services, тако да се повезивост и рачунарска обрада продају заједно. Стратешки циљ није само продаја интернета, већ и ширење домета компаније Amazon до сваког краја планете који још није повезан кабловима, као и спречавање да конкурент без икаквог супарника овлада тим тржиштем."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "goals.1.caption",
+  "en": "A Project Kuiper satellite. The engineering problem is the same one Starlink solved; the strategic problem is different — how to build a constellation at scale without your rival's launch vehicle.",
+  "cur": "Сателит програма Project Kuiper. Инжењерски проблем је исти који је решио Starlink; стратешки проблем је другачији — како изградити констелацију великих размера без ракете-носача свог конкурента."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "goals.2.md",
+  "en": "A defining goal is launch independence from SpaceX. Because Kuiper competes directly with Starlink, buying rides on Falcon 9 would mean funding and depending on its rival — so Amazon deliberately spread its enormous launch contracts across many providers: United Launch Alliance's Atlas V and Vulcan, Arianespace's Ariane 6, and Blue Origin's New Glenn. It is one of the largest launch-procurement deals in history, structured specifically to avoid the one rocket that would have been easiest to buy.",
+  "cur": "Кључни циљ је независност у лансирању од компаније SpaceX. Пошто Kuiper директно конкурише систему Starlink, куповина превоза на ракети Falcon 9 значила би финансирање и зависност од сопственог конкурента — зато је Amazon намерно распоредио своје огромне уговоре о лансирању на многе пружаоце услуга: ракете Atlas V и Vulcan компаније United Launch Alliance, Ariane 6 компаније Arianespace и New Glenn компаније Blue Origin. То је један од највећих послова набавке лансирања у историји, структуриран управо тако да избегне једину ракету коју би било најлакше купити."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "outcome.0.md",
+  "en": "Kuiper is early in its deployment. Two prototype satellites reached orbit in 2023 and validated the design; production satellites began launching in the mid-2020s, years behind Starlink. An FCC deadline that had required half the constellation to be deployed by mid-2026 to secure spectrum rights was waived in June 2026, easing the pace pressure — though the competitive urgency of catching Starlink remains. The outcome — whether Kuiper becomes a genuine second force or a costly latecomer — is still being decided in orbit.",
+  "cur": "Kuiper је тек на почетку постављања. Два прототипска сателита стигла су у орбиту 2023. и потврдила пројекат; серијски сателити почели су да се лансирају средином 2020-их, годинама после Starlink-а. Рок који је одредио FCC, а који је захтевао да половина констелације буде постављена до средине 2026. ради очувања права на спектар, укинут је у јуну 2026, чиме је ублажен притисак у погледу темпа — иако конкурентска потреба да се стигне Starlink остаје. Исход — да ли ће Kuiper постати права друга сила или скупа придошлица — и даље се одлучује у орбити."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "outcome.1.md",
+  "en": "What is already clear is that the megaconstellation is no longer a one-company phenomenon. Kuiper's arrival, alongside European and national constellations, confirms that low Earth orbit is being built out by multiple competing operators at once — multiplying the benefits of connectivity and multiplying, in exact proportion, the problems of a crowded orbit: more objects to track, more collision risk, more streaks across the astronomers' sky, from more owners answering to more governments.",
+  "cur": "Већ је јасно да мегаконстелација више није феномен једне компаније. Долазак система Kuiper, уз европске и националне констелације, потврђује да ниску орбиту Земље истовремено граде многи оператери који се међусобно надмећу — умножавајући користи повезивости и, у потпуно истој мери, проблеме презасићене орбите: више објеката које треба пратити, већи ризик од судара, више трагова на небу астронома, и то од већег броја власника који одговарају већем броју влада."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "outcome.2.md",
+  "en": "Kuiper also stress-tests the launch market itself. Its multi-provider strategy is a lifeline for rockets that need payloads — Vulcan, Ariane 6, and New Glenn all benefit from having a customer this large — and a bet that a constellation can be built without vertical integration, buying its rides rather than flying its own. Whether that is competitive against a rival that launches itself is one of the open questions the program will answer.",
+  "cur": "Kuiper уједно ставља на пробу и само тржиште лансирања. Његова стратегија са више пружалаца услуга спасоносна је за ракете којима су потребни терети — Vulcan, Ariane 6 и New Glenn имају корист од тога што имају тако великог корисника — и уједно је опклада да се констелација може изградити без вертикалне интеграције, куповином превоза уместо сопствених лансирања. Да ли је то конкурентно у односу на ривала који лансира сам, једно је од отворених питања на која ће програм дати одговор."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "narrative.0.md",
+  "en": "The story of Kuiper is the story of the fast-follower. Starlink took the technical and financial risk of proving the megaconstellation; Kuiper's task is to prove that a well-capitalized second mover can catch a first mover with a head start and its own rockets. Amazon's advantages are real — money, cloud infrastructure, a consumer brand, logistics — but so is the disadvantage of starting the race after the leader has already lapped the field once.",
+  "cur": "Прича о систему Kuiper је прича о брзом следбенику. Starlink је преузео технички и финансијски ризик доказивања мегаконстелације; задатак система Kuiper је да докаже да добро капитализован други играч може стићи првог, који има предност у времену и сопствене ракете. Предности компаније Amazon су стварне — новац, облак инфраструктура, потрошачки бренд, логистика — али је стварна и мана тога што се у трку улази пошто је вођа већ једном заокружио читаво поље."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "narrative.1.md",
+  "en": "It is also a study in the strategic weight of launch. Kuiper's most distinctive decision — to buy rides everywhere except from SpaceX — is a reminder that in the constellation era, access to orbit is not a neutral utility but a competitive weapon. When your rival owns the cheapest rocket, refusing to use it is expensive; Amazon judged that dependence on a competitor was more expensive still. The launch manifest is, in effect, part of the business strategy.",
+  "cur": "То је уједно и студија о стратешкој тежини лансирања. Најкарактеристичнија одлука система Kuiper — да купује превоз свуда осим од компаније SpaceX — подсећа да у ери констелација приступ орбити није неутрална услуга, већ конкурентско оружје. Када ваш противник поседује најјефтинију ракету, одбијање да је користите скупо кошта; Amazon је проценио да је зависност од конкурента још скупља. Распоред лансирања је, у ствари, део пословне стратегије."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "narrative.2.md",
+  "en": "And it deepens the governance problem Starlink opened. Two rival megaconstellations, then several, filling the same shells of low orbit, raise the stakes on every unresolved question — coordination between operators, collision avoidance across companies that do not share data, spectrum sharing, and the brightness that astronomers have to live with. Competition is good for customers and hard for the commons; Kuiper makes both truer.",
+  "cur": "И продубљује проблем управљања који је отворио Starlink. Две конкурентске мегаконстелације, а затим неколико њих, које испуњавају исте љуске ниске орбите, подижу улог у сваком нерешеном питању — координацији између оператера, избегавању судара између компанија које не деле податке, подели спектра и сјају са којим астрономи морају да живе. Конкуренција је добра за кориснике, а тешка за заједничко добро; Kuiper чини истинитим и једно и друго."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "legacy.0.md",
+  "en": "Kuiper's legacy, still forming, is the confirmation that satellite internet is a real market with room for more than one giant. Its very existence changed Starlink from a monopoly-in-waiting into one competitor among several, and validated the megaconstellation as the settled future of orbital communications rather than one company's gamble.",
+  "cur": "Наслеђе система Kuiper, које се још формира, потврда је да је сателитски интернет прави тржишни сегмент у којем има места за више од једног гиганта. Већ само његово постојање претворило је Starlink из монопола у настајању у једног од неколико конкурената и потврдило мегаконстелацију као утврђену будућност орбиталних комуникација, а не као коцку једне компаније."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "legacy.1.md",
+  "en": "Its second legacy is to the launch industry. By spreading the largest commercial launch contract in history across Atlas V, Vulcan, Ariane 6, and New Glenn, Amazon underwrote the business case for a whole generation of rockets — proof that a constellation can be a customer that keeps multiple launch vehicles alive.",
+  "cur": "Његово друго наслеђе односи се на индустрију лансирања. Поделивши највећи комерцијални уговор о лансирању у историји на ракете Atlas V, Vulcan, Ariane 6 и New Glenn, Amazon је обезбедио пословно оправдање за читаву генерацију ракета — доказ да констелација може бити корисник који одржава у животу више ракета-носача."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "legacy.2.md",
+  "en": "And it adds a second major operator to the crowding of low orbit, making the governance of a shared, congested near-Earth space not a Starlink problem but an industry one — the environment that every future satellite, crewed spacecraft, and telescope will have to fly through.",
+  "cur": "И додаје другог великог оператера пренатрпаности ниске орбите, због чега управљање заједничким, презасићеним простором у близини Земље постаје не проблем система Starlink, већ проблем читаве индустрије — окружења кроз које ће морати да лете сваки будући сателит, свемирска летелица са посадом и телескоп."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of Kuiper is that proving something is possible invites competition to build it better or cheaper — and that the second mover's problem is entirely different from the first's. Starlink had to prove the megaconstellation could work at all; Kuiper has to prove a latecomer can catch a leader who owns the road to orbit. Money helps; a head start and your own rockets may help more.",
+  "cur": "Лекција система Kuiper јесте да доказ да је нешто могуће позива конкуренцију да то изгради боље или јефтиније — и да је проблем другог играча потпуно другачији од проблема првог. Starlink је морао да докаже да мегаконстелација уопште може да функционише; Kuiper мора да докаже да придошлица може стићи лидера који поседује пут до орбите. Новац помаже; предност у времену и сопствене ракете можда помажу још више."
+ },
+ {
+  "rel": "programs/kuiper.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is that in a networked capability, control of the supply chain is strategy. Kuiper's launch choices — deliberately routed around its rival — show that when access to orbit is scarce and partly owned by a competitor, who you buy your rides from is not a procurement detail but a decision about independence, and worth paying a premium to get right.",
+  "cur": "Дубља лекција је да је у мрежној способности контрола над ланцем снабдевања стратегија. Одлуке система Kuiper о лансирању — намерно усмерене мимо његовог конкурента — показују да, када је приступ орбити оскудан и делом у власништву конкурента, то од кога купујете превоз није детаљ набавке, већ одлука о независности, и вреди платити премију да би се исправно донела."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "tagline",
+  "en": "India reached Mars on its first attempt — the first country ever to do so — for less than the cost of a Hollywood movie about space.",
+  "cur": "Индија је стигла до Марса из првог покушаја — прва земља која је то икада постигла — за мање новца него што кошта један холивудски филм о свемиру."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "the_land.0.md",
+  "en": "Mars is where space programs go to fail. More missions have been lost on the way to Mars than have succeeded there; the United States, the Soviet Union, and Japan all crashed, missed, or fell silent on their early attempts. Reaching Mars orbit on a first try was something no country had ever managed — ESA's Mars Express orbiter succeeded in 2003, but as a multinational agency, not a single country. In September 2014 India did exactly that, with a spacecraft called Mangalyaan — Sanskrit for \"Mars craft\" — built by an agency that had never sent anything beyond the Moon, making it the first country to reach Mars orbit on its debut mission and the first to do so with indigenously developed propulsion.",
+  "cur": "Марс је место где свемирски програми одлазе да би доживели неуспех. Више мисија је изгубљено на путу ка Марсу него што их је ту успело; Сједињене Државе, Совјетски Савез и Јапан сви су се на својим раним покушајима срушили, промашили циљ или заћутали. Достизање орбите Марса из првог покушаја није пошло за руком ниједној земљи — орбитер Mars Express агенције ESA успео је 2003, али као вишенационална агенција, а не као појединачна земља. Септембра 2014. Индија је управо то учинила, летелицом по имену Mangalyaan — на санскриту „летелица за Марс“ — коју је изградила агенција која никада није послала ништа даље од Месеца, чиме је постала прва земља која је стигла у орбиту Марса у својој дебитантској мисији и прва која је то учинила сопствено развијеним погоном."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "the_land.1.md",
+  "en": "The Mars Orbiter Mission was, on paper, a modest technology demonstrator: a small orbiter with a light instrument load, meant mainly to prove that ISRO could navigate to Mars and enter orbit at all. But it succeeded so completely, so cheaply, and so improbably that it became something much larger — a symbol of what a frugal, disciplined space program could do, and a moment of national pride watched by hundreds of millions of Indians live.",
+  "cur": "Mars Orbiter Mission је на папиру био скроман технолошки демонстратор: мала орбитална сонда са лаким теретом инструмената, замишљена пре свега да докаже да ISRO може да допутује до Марса и уопште уђе у орбиту. Али успела је тако потпуно, тако јефтино и тако невероватно да је постала нешто много веће — симбол онога што може један штедљив и дисциплинован свемирски програм, и тренутак националног поноса који су уживо гледале стотине милиона Индијаца."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "goals.0.md",
+  "en": "The primary goal was capability, not science: to demonstrate that India could design, launch, and navigate a spacecraft across the interplanetary gulf and insert it precisely into Mars orbit — the specific technologies of deep-space communication, autonomous operation far from Earth, and a single make-or-break orbit-insertion burn that most first attempts get wrong. If those worked, everything else was a bonus.",
+  "cur": "Примарни циљ је била способност, а не наука: показати да Индија може да конструише, лансира и наведе свемирску летелицу преко међупланетарног понора и да је прецизно убаци у орбиту Марса — то јест да овлада специфичним технологијама комуникације у далеком свемиру, аутономним радом далеко од Земље и јединственим паљењем мотора за убацивање у орбиту, од кога све зависи и у коме већина првих покушаја погреши. Ако то успе, све остало било је бонус."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "goals.1.caption",
+  "en": "The Mars Orbiter Mission — small, light, and built fast on proven hardware. Its instruments were modest; its real payload was proof that India could reach another planet and enter its orbit on the first try.",
+  "cur": "Mars Orbiter Mission — мала, лака и брзо изграђена на провереном хардверу. Њени инструменти били су скромни; прави терет био је доказ да Индија може да стигне до друге планете и да из првог покушаја уђе у њену орбиту."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "goals.2.md",
+  "en": "The unstated goal was to do it cheaply enough to be repeatable. ISRO built and flew Mangalyaan for roughly 74 million dollars — a figure that became world-famous for being less than the budget of the film Gravity, and a small fraction of NASA's contemporaneous MAVEN Mars mission. The point was not just to reach Mars but to prove that reaching Mars need not cost a fortune, opening interplanetary science to nations that could never afford the traditional price.",
+  "cur": "Неизречени циљ био је да се то уради довољно јефтино да би могло да се понови. ISRO је изградио и лансирао Mangalyaan за отприлике 74 милиона долара — износ који је постао светски познат по томе што је мањи од буџета филма Gravity и представља мали део трошкова NASA-ине савремене марсовске мисије MAVEN. Поента није била само да се стигне до Марса, већ да се докаже да долазак до Марса не мора да кошта читаво богатство, чиме је међупланетарна наука отворена државама које никада не би могле да приуште традиционалну цену."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "outcome.0.md",
+  "en": "It worked on the first attempt — the outcome that made it historic. Mangalyaan launched in November 2013, cruised for ten months, and on 24 September 2014 fired its engine and slipped into Mars orbit exactly as planned. India became the first country to reach Mars orbit on its debut mission, the first Asian nation to reach Mars orbit, and did so for a cost that reset global expectations about what interplanetary exploration has to cost.",
+  "cur": "Успело је из првог покушаја — а управо је то учинило мисију историјском. Mangalyaan је лансиран у новембру 2013, десет месеци је крстарио, а 24. септембра 2014. упалио је свој мотор и склизнуо у орбиту Марса тачно онако како је планирано. Индија је постала прва земља која је орбиту Марса достигла на својој дебитантској мисији и прва азијска нација која је стигла до орбите Марса, и то по цени која је променила глобална очекивања о томе колико међупланетарно истраживање мора да кошта."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "outcome.1.md",
+  "en": "And then it kept going. Designed to last six months, the orbiter operated for roughly eight years, returning images and atmospheric data about Mars — a full-color view of the whole disc, dust storms, the tenuous upper atmosphere — long after its demonstration goals were met. A mission built to prove a point quietly became a durable science platform, finally falling silent only around 2022 when its propellant and power ran out.",
+  "cur": "А онда је наставила даље. Пројектована да траје шест месеци, орбитална сонда радила је отприлике осам година и слала слике и податке о атмосфери Марса — снимак целог диска у пуном колору, прашинске олује, ретку горњу атмосферу — дуго пошто су њени демонстрациони циљеви били остварени. Мисија саграђена да докаже једну тезу тихо је постала издржљива научна платформа, а заћутала је тек око 2022, када су јој понестали погонско гориво и енергија."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "outcome.2.md",
+  "en": "The outcome's largest effect was on perception. Mangalyaan showed a global audience that the club of Mars-capable nations was no longer closed to the wealthy few, and that ISRO — long underestimated as a regional agency — could deliver an interplanetary first. It turned India, in a single burn, into a recognized deep-space power.",
+  "cur": "Највећи ефекат овог исхода био је на начин на који је свет доживео Индију. Mangalyaan је светској публици показао да клуб нација способних да стигну до Марса више није затворен за богату шачицу и да ISRO — који је дуго био потцењиван као регионална агенција — може да оствари међупланетарно прво достигнуће. Једним јединим паљењем мотора претворио је Индију у признату силу у далеком свемиру."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "narrative.0.md",
+  "en": "The narrative of Mangalyaan is frugality as a superpower. Its famous low cost was not luck or corner-cutting but a deliberate engineering culture: reuse of proven components, a small and focused spacecraft, a modest instrument suite, efficient trajectories that traded time for propellant, and lean teams working to tight budgets. India did not reach Mars cheaply by doing less well; it reached Mars cheaply by a discipline of simplicity that larger programs, with more money to spend, rarely impose on themselves.",
+  "cur": "Прича о Mangalyaan-у је прича о штедљивости као суперсили. Његова чувена ниска цена није била ствар среће ни кресања на штету квалитета, већ промишљена инжењерска култура: поновна употреба проверених компоненти, мала и фокусирана свемирска летелица, скромен скуп инструмената, ефикасне путање које су време мењале за погонско гориво и мали тимови који су радили у тесним буџетским оквирима. Индија није јефтино стигла до Марса зато што је радила лошије; до Марса је јефтино стигла дисциплином једноставности коју већи програми, са више новца на располагању, ретко намећу сами себи."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "narrative.1.md",
+  "en": "It is also a story about the meaning of a first. Mangalyaan's science was real but limited; its historic weight came from being first — first-try success, first Asian nation, first at a famously low price. Firsts of that kind are partly symbolic, and their value is partly national pride, but they are not empty: they demonstrate a capability, establish a place at the table, and inspire a generation. India's Mars arrival did all three at once.",
+  "cur": "То је уједно и прича о значењу првенства. Научни резултати мисије Mangalyaan били су стварни, али ограничени; њена историјска тежина потиче отуда што је била прва — прва која је успела из првог покушаја, прва азијска нација, прва по чувено ниској цени. Таква прворазредна достигнућа делом су симболична, а њихова вредност делом лежи у националном поносу, али она нису празна: она показују способност, обезбеђују место за столом и надахњују једну генерацију. Долазак Индије до Марса учинио је сва три корака одједном."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "narrative.2.md",
+  "en": "And it belongs to the same shift as Chandrayaan — the arrival of a multipolar deep space. For decades interplanetary exploration was the preserve of two superpowers and then a handful of wealthy agencies. Mangalyaan, reaching Mars on a shoestring, was proof that the frontier had opened to determined newcomers — that the map of who explores the solar system was being redrawn, and India had put itself firmly on it.",
+  "cur": "И припада истом заокрету као Chandrayaan — доласку мултиполарног дубоког свемира. Деценијама је међупланетарно истраживање било привилегија две суперсиле, а потом шачице богатих агенција. Mangalyaan, који је стигао до Марса са скромним средствима, био је доказ да се граница отворила одлучним придошлицама — да се карта оних који истражују Сунчев систем поново црта и да је Индија на њу чврсто уписала себе."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "legacy.0.md",
+  "en": "Mangalyaan's first legacy is the record itself: the first country to reach Mars orbit on its debut mission, and the first Asian nation at Mars. That is a permanent entry in the history of exploration, and a foundation of national confidence that has driven ISRO's subsequent ambition, from Chandrayaan-3 to the crewed Gaganyaan program.",
+  "cur": "Прво наслеђе мисије Mangalyaan јесте сам рекорд: прва земља која је орбиту Марса достигла на дебитантској мисији и прва азијска нација на Марсу. То је трајан запис у историји истраживања и темељ националног самопоуздања које је покретало касније амбиције организације ISRO, од мисије Chandrayaan-3 до програма Gaganyaan с људском посадом."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "legacy.1.md",
+  "en": "Its second legacy is the cost precedent. By reaching Mars for tens of millions rather than hundreds, ISRO changed the global conversation about what interplanetary missions must cost — an example that lowers the perceived barrier to entry for every emerging space nation, and pressures the established ones to justify their prices.",
+  "cur": "Друго наслеђе мисије јесте преседан у погледу трошкова. Стигавши до Марса за десетине милиона, а не за стотине милиона, ISRO је променио глобални разговор о томе колико међупланетарне мисије морају да коштају — пример који снижава уочену препреку за улазак сваке нове свемирске нације и приморава оне утемељене да оправдају своје цене."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "legacy.2.md",
+  "en": "And its third is inspiration. Mangalyaan's success, watched live across India, drew a generation toward science and engineering and established space as a source of national pride — a soft-power dividend that outlasts the spacecraft itself.",
+  "cur": "А треће је надахнуће. Успех мисије Mangalyaan, праћен уживо широм Индије, привукао је једну генерацију науци и инжењерству и учврстио свемир као извор националног поноса — дивиденду меке моћи која траје дуже од саме летелице."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of Mangalyaan is that constraint, embraced as discipline, can produce results that money alone does not. India reached Mars on the first try not despite its small budget but partly because of the simplicity that budget forced — a focused spacecraft, proven hardware, and a refusal to over-complicate. Frugality made the mission both affordable and, in its very leanness, robust.",
+  "cur": "Лекција мисије Mangalyaan јесте да ограничење, прихваћено као дисциплина, може да донесе резултате које сам новац не може. Индија је до Марса стигла из првог покушаја не упркос свом малом буџету, већ делом управо захваљујући једноставности коју је тај буџет наметнуо — фокусираној свемирској летелици, провереној опреми и одбијању да се ствари непотребно компликују. Штедљивост је мисију учинила не само приступачном већ и, управо у својој једноставности, поузданом."
+ },
+ {
+  "rel": "programs/mangalyaan.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is that a first-try success at Mars is as much about humility as ambition. The graveyard of failed Mars missions is full of well-funded programs that reached too far; ISRO reached exactly as far as it could reliably manage, proved that, and let the mission exceed its own modest goals. Aiming precisely, rather than aiming high, is sometimes how the hardest firsts are won.",
+  "cur": "Дубља лекција јесте да је успех на Марсу из првог покушаја подједнако ствар скромности колико и амбиције. Гробље неуспелих марсовских мисија пуно је добро финансираних програма који су посегнули предалеко; ISRO је посегнуо тачно онолико колико је могао поуздано да оствари, то је и доказао, а мисији је допустио да премаши сопствене скромне циљеве. Циљати прецизно, а не високо, понекад је управо начин на који се освајају најтежа прворазредна достигнућа."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "tagline",
+  "en": "Before any other planet was more than a smudge in a telescope, a run of small American probes went out to see them — and returned the first photographs ever taken of another world.",
+  "cur": "Пре него што је иједна друга планета била више од мутне мрље у телескопу, низ малих америчких сонди запутио се да их погледа изблиза — и вратио прве фотографије једног другог света икада снимљене."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "the_land.0.md",
+  "en": "In the early 1960s the planets were still, essentially, points of light. Venus was imagined as a warm, cloudy twin of Earth, perhaps with oceans; Mars, through the best telescopes, showed markings that some still read as canals, and the century-old question of Martian life was unresolved. Everything known about the other worlds came from squinting across tens of millions of kilometres. To learn what they actually were, someone had to fly close and look.",
+  "cur": "Раних 1960-их планете су у суштини још увек биле тачке светлости. Венера је замишљана као топли, облачни близанац Земље, можда чак с океанима; на Марсу су се кроз најбоље телескопе виделе шаре које су неки још читали као канале, а вековно питање о животу на Марсу остајало је нерешено. Све што се знало о другим световима потицало је из жмиркања преко десетина милиона километара. Да би се сазнало шта оне заправо јесу, неко је морао да прилети близу и погледа."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "the_land.1.md",
+  "en": "Mariner was NASA's first attempt to do that — a family of small, lightweight interplanetary probes, built fast and flown often, aimed at Venus, Mars, and eventually Mercury. Several failed; the program pressed on. Between 1962 and 1975 the Mariners carried out the first reconnaissance of the inner solar system, and in doing so replaced imagination with photographs.",
+  "cur": "Mariner је био NASA-ин први покушај да се то постигне — породица малих, лаких међупланетарних сонди, брзо грађених и често лансираних, упућених ка Венери, Марсу и, на крају, ка Меркуру. Неколико их је доживело неуспех; програм је ипак наставио даље. Између 1962. и 1975. Mariner-и су извели прво извиђање унутрашњег Сунчевог система и тиме су машту заменили фотографијама."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "goals.0.md",
+  "en": "The goal was first contact with the other planets: to fly a spacecraft close enough to Venus and Mars to measure what they were actually made of and, above all, to photograph them. A single close pass returning a handful of pictures and readings would tell humanity more about a planet than a century of telescope work — the difference between a smudge and a surface.",
+  "cur": "Циљ је био први контакт с осталим планетама: послати летелицу довољно близу Венери и Марсу да се измери од чега су заправо направљене и, пре свега, да се сниме. Један једини блиски пролаз, који врати шачицу снимака и мерења, рекао би човечанству о некој планети више него век телескопског рада — разлика између мутне мрље и површине."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "goals.1.caption",
+  "en": "The Mariners were small and spare, built to fly past a planet once and send home whatever they could in the hours they had. Mariner 4 carried a camera to Mars; Mariner 9 carried enough fuel to stop and orbit.",
+  "cur": "Mariner-и су били мали и штедљиво грађени, замишљени да једном прелете поред планете и пошаљу кући све што могу у сатима који су им били на располагању. Mariner 4 је носио камеру до Марса; Mariner 9 је носио довољно горива да се заустави и уђе у орбиту."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "goals.2.md",
+  "en": "The later goal grew more ambitious: not just to fly past, but to stay. Mariner 9 was built to carry enough fuel to brake into orbit around Mars and study the whole planet over months — the step from a glimpse to a survey — while Mariner 10 aimed to reach Mercury by a route no one had flown, stealing speed from Venus's gravity along the way.",
+  "cur": "Каснији циљ постао је амбициознији: не само прелетети, већ и остати. Mariner 9 је грађен да понесе довољно горива да закочи у орбиту око Марса и да месецима проучава целу планету — корак од летимичног погледа до систематског прегледа — док је Mariner 10 требало да стигне до Меркура путањом којом нико раније није летео, крадући успут брзину из гравитације Венере."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "outcome.0.md",
+  "en": "The Mariners rewrote the inner solar system one flyby at a time. Mariner 2 reached Venus in 1962 — the first spacecraft ever to reach another planet — and found not a tropical twin but a furnace, its surface hundreds of degrees hot beneath crushing clouds. Three years later Mariner 4 flew past Mars and sent back the first photographs ever taken of another planet from close range: a cratered, moon-like desert that quietly killed the old dreams of canals and civilisations.",
+  "cur": "Mariner-и су, прелет по прелет, преписали унутрашњи Сунчев систем. Mariner 2 је стигао до Венере 1962. — прва летелица која је икада дошла до друге планете — и открио не тропског близанца, већ пећ, чија је површина испод угушујућих облака вреела стотинама степени. Три године касније Mariner 4 је прелетео поред Марса и послао прве фотографије друге планете снимљене изблиза: кратерисане, месецу сличне пустиње која је тихо убила старе снове о каналима и цивилизацијама."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "outcome.1.md",
+  "en": "Mariner 9 went further and stayed. In 1971 it became the first spacecraft to orbit another planet, arriving at Mars in the middle of a global dust storm that hid the surface for weeks. When the dust cleared it mapped the entire planet — and revealed a Mars far grander than Mariner 4's craters had suggested: the largest volcano in the solar system, a canyon system stretching a continent's width, and, most provocatively, the dry channels of what had once been running water.",
+  "cur": "Mariner 9 је отишао даље и остао. Године 1971. постао је прва летелица која је ушла у орбиту око неке друге планете, стигавши до Марса усред глобалне прашинске олује која је недељама скривала површину. Када се прашина разишла, он је начинио карту целе планете — и открио Марс далеко величанственији него што су кратери које је снимио Mariner 4 наговештавали: највећи вулкан у Сунчевом систему, систем кањона дугачак колико је широк један континент и, што је најпровокативније, суве токове некадашње текуће воде."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "outcome.2.md",
+  "en": "Mariner 10 closed the program with two firsts. In 1974 it became the first spacecraft to reach Mercury, photographing a scorched, cratered world — and it got there by flying past Venus and using the planet's gravity to bend its path inward toward Mercury, the first use of an interplanetary gravity-assist slingshot that every deep-space mission since has depended on.",
+  "cur": "Mariner 10 је затворио програм са два прва достигнућа. Године 1974. постао је прва летелица која је стигла до Меркура и снимила спржен, кратерима прошаран свет — а до њега је дошао прелетевши поред Венере и искористивши гравитацију те планете да скрене путању ка унутра, према Меркуру. То је била прва употреба међупланетарне гравитационе праћке, на којој је од тада почивала свака мисија у дубоком свемиру."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "narrative.0.md",
+  "en": "The story of Mariner is first contact — the moment each planet stopped being an idea and became a place. Every world the program reached had, until then, been known only by inference; Mariner returned the first hard data and the first real pictures, and in each case the reality was different from the dream. Venus was not a twin but a hell. Mars was not canal-laced but cratered — and then, on closer inspection, carved by ancient water after all. The program's gift was to replace centuries of guessing with the plain evidence of a camera.",
+  "cur": "Прича о Mariner-у је први контакт — тренутак када је свака планета престала да буде идеја и постала место. Сваки свет до кога је програм стигао био је, до тада, познат само по закључивању; Mariner је вратио прве тврде податке и прве праве слике, и у сваком случају стварност је била другачија од сна. Венера није била близанац већ пакао. Марс није био испресецан каналима већ кратерисан — а онда, при пажљивијем прегледу, ипак урезан древном водом. Дар програма био је да замени векове нагађања јасним доказима камере."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "narrative.1.md",
+  "en": "It is also the story of how planetary exploration learned its basic moves. Mariner 4 proved you could fly across the solar system and photograph a planet; Mariner 9 proved you could stop and survey one; Mariner 10 proved you could use a planet's gravity to reach another for free. Those three capabilities — the flyby, the orbiter, and the gravity assist — are the grammar of every mission that followed, and the Mariners are where each was first written.",
+  "cur": "То је уједно и прича о томе како је истраживање планета научило своје основне покрете. Mariner 4 је доказао да се може прелетети Сунчев систем и сликати планета; Mariner 9 је доказао да се једна планета може зауставити и прегледати; Mariner 10 је доказао да се гравитација једне планете може искористити да се бесплатно стигне до друге. Те три способности — прелет, орбитер и гравитациони маневар — граматика су сваке мисије која је уследила, а Mariner-и су место где је свака од њих први пут записана."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "narrative.2.md",
+  "en": "And it set up everything after it. Mariner 9's global map of Mars, with its hints of vanished water, is what sent Viking to search for life there a few years later. The Mariner design lineage, extended for the outer planets, became the Voyagers. The program was the first draft of American planetary science — the one that established both what the inner planets were and how, from then on, they would be explored.",
+  "cur": "И поставио је темеље свему што је уследило. Глобална карта Марса коју је начинио Mariner 9, са наговештајима нестале воде, управо је разлог зашто је Viking неколико година касније послат да тамо тражи живот. Из линије конструкције Mariner-а, проширене за спољне планете, настале су летелице Voyagers. Програм је био први нацрт америчке планетарне науке — онај који је утврдио и шта су унутрашње планете и како ће се, од тада па надаље, истраживати."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "legacy.0.md",
+  "en": "Mariner's first legacy is the inner solar system as we now know it: Venus revealed as a furnace, Mars mapped from craters to canyons, Mercury photographed for the first time. The program returned the first ground truth about the neighbouring planets, and the modern picture of each begins with a Mariner.",
+  "cur": "Прво наслеђе програма Mariner је унутрашњи Сунчев систем какав данас познајемо: Венера откривена као пећ, Марс приказан на карти од кратера до кањона, Меркур први пут сниман изблиза. Програм је донео прве поуздане, непосредно добијене податке о суседним планетама, а савремена слика сваке од њих почиње једним Mariner-ом."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "legacy.1.md",
+  "en": "Its second is the toolkit. The flyby, the planetary orbiter, and the interplanetary gravity-assist slingshot were all first accomplished by Mariners, and all three remain fundamental to how spacecraft explore. Later missions fly farther and carry more, but they still use the moves Mariner invented.",
+  "cur": "Друго је његов скуп алата. Прелет, планетарни орбитер и међупланетарна „праћка“ гравитационог потиска први су пут изведени управо захваљујући летелицама Mariner, а сва три и даље су темељ начина на који свемирске летелице истражују. Касније мисије лете даље и носе више, али и даље користе потезе које је измислио Mariner."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "legacy.2.md",
+  "en": "Its third is everything it made possible. Mariner 9's Mars set the target for Viking; the Mariner lineage grew into Voyager; and the whole idea that the planets could be visited and understood, not just observed, was established by these small probes. They were the first chapter, and the rest of planetary exploration is written in their grammar.",
+  "cur": "Треће је све оно што је учинио могућим. Марс који је открио Mariner 9 одредио је циљ за Viking; линија Mariner-а израсла је у Voyager; а читава замисао да се планете могу походити и разумети, а не само посматрати, утемељена је управо захваљујући тим малим сондама. Оне су биле прво поглавље, а остатак истраживања планета написан је њиховом граматиком."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of Mariner is that a single close look can overturn a century of assumption. Telescopes had studied Venus and Mars for generations and got the essentials wrong — a warm twin, a canal-laced world of life. A few hours of flyby data corrected both. When the real evidence is finally gathered, it often bears little resemblance to the careful theories built in its absence; the first direct measurement is worth more than any amount of inference.",
+  "cur": "Поука програма Mariner је да један једини поглед изблиза може преокренути столеће претпоставки. Телескопи су генерацијама проучавали Венеру и Марс и погрешили у суштини — топлу близану једне, и свет прошаран каналима и живот на другој. Неколико сати података прикупљених при прелету исправило је обоје. Када се права сазнања коначно прикупе, она често мало личе на пажљиве теорије грађене у њиховом одсуству; прво непосредно мерење вредно је више од било које количине закључивања."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is that capabilities compound. Mariner did not set out to invent the gravity assist or the planetary orbiter as ends in themselves — it solved the problem in front of it, and each solution became a permanent tool the next mission could assume. Progress on hard frontiers is often less about single triumphs than about building a grammar of moves that everyone who comes after gets to use for free.",
+  "cur": "Дубља поука је да се способности надограђују једна на другу. Mariner није кренуо да изуми гравитациони потисак или планетарни орбитер као сам себи циљ — решавао је проблем који је имао пред собом, а свако решење постало је трајно оруђе које је следећа мисија могла да узме здраво за готово. Напредак на тешким границама спознаје често се мање састоји од појединачних тријумфа, а више од грађења граматике потеза које сви који долазе после могу да користе бесплатно."
+ },
+ {
+  "rel": "programs/mars-rovers.json",
+  "at": "tagline",
+  "en": "A quarter-century of American robots driving across Mars — from a microwave-sized cart that managed about a hundred metres to a nuclear astrobiologist caching rock for the trip home.",
+  "cur": "Четврт века америчких робота који се возају по Марсу — од колица величине микроталасне пећнице која су прешла стотинак метара до нуклеарног астробиолога који похрањује узорке стена за пут кући."
+ },
+ {
+  "rel": "programs/mars-rovers.json",
+  "at": "the_land.0.md",
+  "en": "The Viking landers of 1976 had proved a spacecraft could reach the surface of Mars and work — but they were stuck where they touched down, able to study only what lay within reach of a single arm. Mars is a whole planet, its history written across terrain that stretches for thousands of kilometres, and a lander sees one spot of it. To read the record — to find where water once flowed, to sample rocks laid down billions of years ago — a robot would have to move.",
+  "cur": "Слетачи Viking из 1976. доказали су да свемирска летелица може да стигне до површине Марса и да ради — али су остали заглављени тамо где су додирнули тло, способни да проуче само оно што се нађе на домаку једне једине руке. Марс је читава планета, његова историја исписана је преко терена који се протеже хиљадама километара, а слетач види само једну тачку тог простора. Да би се прочитао тај запис — да би се пронашло где је некада текла вода, да би се узели узорци стена насталих пре више милијарди година — робот би морао да се креће."
+ },
+ {
+  "rel": "programs/mars-rovers.json",
+  "at": "the_land.1.md",
+  "en": "The Mars rovers are NASA's twenty-five-year answer to that problem: a lineage of wheeled robots, each larger and more capable than the last, sent to drive across the planet and do field geology in person. They begin with a proof of concept the size of a microwave and arrive, a quarter of a century later, at a nuclear-powered laboratory hunting for the chemical fingerprints of ancient life.",
+  "cur": "Марсовски ровери су NASA-ин двадесетпетогодишњи одговор на тај проблем: лоза робота на точковима, сваки већи и способнији од претходног, послатих да се возе преко планете и лично обављају теренску геологију. Почињу доказом концепта величине микроталасне пећнице, а четврт века касније стижу до лабораторије на нуклеарни погон која трага за хемијским отисцима прадавног живота."
+ },
+ {
+  "rel": "programs/mars-rovers.json",
+  "at": "goals.0.md",
+  "en": "The goal evolved with each generation, but the thread was constant: follow the water, and then follow the question of life. Sojourner set out only to prove that a rover could drive on Mars at all. Spirit and Opportunity were sent to find geological evidence of a warmer, wetter past. Curiosity went to ask whether Mars had ever been habitable. Perseverance went to look for signs that something had actually lived — and to begin the job of bringing Martian rock back to Earth.",
+  "cur": "Циљ се мењао из генерације у генерацију, али је нит остала иста: пратити воду, а затим пратити питање живота. Sojourner је кренуо само да докаже да ровер уопште може да вози по Марсу. Spirit и Opportunity послати су да пронађу геолошке доказе о топлијој и влажнијој прошлости. Curiosity је отишао да упита да ли је Марс икада био погодан за живот. Perseverance је отишао да потражи знакове да је нешто заиста живело — и да започне посао враћања марсовских стена на Земљу."
+ }
+]

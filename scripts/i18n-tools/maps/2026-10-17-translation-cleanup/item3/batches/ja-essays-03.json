@@ -1,0 +1,500 @@
+[
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.15.md",
+  "en": "Staying is a different problem. Staying means surviving the night, repeatedly. It means sourcing power through a fortnight of darkness, which requires either nuclear power (which the US has not sent to a planetary surface since the 1970s Viking landers) or a location near the pole where, on crater rims, the sun is present most of the time. It means managing dust accumulation over months rather than days. It means a degree of infrastructure — power, comms relay, habitat — that Apollo never attempted. The Artemis programme's stated ambition is a sustained human presence at the south pole. That goal is still years from realisation. [Artemis II](/missions?id=artemis2), the first crewed flight (a lunar flyby, not a landing), is planned but not yet flown. Artemis III, the first crewed landing since Apollo, is planned to target the south polar region. \"Planned\" is doing significant work in both those sentences.",
+  "cur": "留まることは別の問題である。留まることは、繰り返し夜を生き残ることを意味する。それは2週間の暗闇を通して電力を供給することを意味し、それは核電力（米国は1970年代のViking着陸機以来、惑星表面に送信しなかった）または極付近の位置が必要である。そこで、火口の縁に、太陽は1年の80%以上の間存在している。それは月の数日以上の月間のダスト蓄積を管理することを意味する。それは、Apolloが試みたことのない赤外線——電力、通信中継、生息地——程度のインフラストラクチャを意味する。Artemisプログラムの述べられた野心は、南極での持続された人間の存在である。その目標はまだ実現から数年である。[Artemis II](/missions?id=artemis2)、最初の有人飛行（月周回、着陸ではない）は計画されているが、まだ飛行していない。Artemis III、Apolloの後の最初の有人着陸は、南極領域をターゲットにすることが計画されている。「計画された」は両方のそれらの文で重要な仕事をしている。"
+ },
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.16.caption",
+  "en": "Apollo went to the equator, where landing and operating are easiest. The new race goes to the poles, for what the permanently shadowed craters are thought to hold: water ice — hydrogen and oxygen, which is to say propellant, air, water, and shielding. The shift is from visiting to staying.",
+  "cur": "Apollo は赤道に行った。そこで着陸と操作は最も簡単である。新しいレースは極に行く。永久に暗い火口が保有すると思われるものについて。水氷——水素と酸素、つまり、推進剤、空気、水、シールド。シフトは訪問から留まることである。"
+ },
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.17.caption",
+  "en": "Chandrayaan-3’s Vikram lander on the southern highlands, August 2023 — the first craft to set down near the lunar south pole, closer to the ice than anything before it. It worked for a single lunar day before the fortnight-long night claimed it.",
+  "cur": "Chandrayaan-3のVikramランダーが南部高地、2023年8月——月の南極の近くに着陸した最初の宇宙船。それまでのアイスより氷に近い。2週間の長い夜が終わる前に1つの月日間動作した。"
+ },
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.19.md",
+  "en": "The renewed interest in the Moon is not an American programme. It is a genuine global phenomenon, and it has a history that predates Apollo by nearly a decade. The Soviet Luna programme put the first human-made object on the Moon — [Luna 2](/missions?id=luna9) impacted the surface in September 1959 — then returned the first photographs of the lunar farside with Luna 3 the same year, and spent the following decade accumulating firsts that are not as well remembered as they should be. [Luna 9](/missions?id=luna9) made the first soft landing in 1966, settling a genuine scientific controversy about whether the surface was solid enough to support a spacecraft (there was a serious argument, before that, that the Moon's surface might be metres-deep dust in which any lander would simply sink). Luna 16, in 1970, returned the first robotic sample to Earth — proving that you did not need a crewed mission to bring back lunar material. Luna 24, in 1976, was the last Soviet lunar sample return, and it remained the last lunar sample return by anyone for 44 years.",
+  "cur": "月への更新された関心はアメリカプログラムではない。それは本当の全世界現象であり、Apolloの前にほぼ10年前に歴史がある。ソビエトLunaプログラムは、月に最初の人工的なオブジェクトを置いた——[Luna 2](/missions?id=luna2)が1959年9月に表面に衝突した——その後、同じ年のLuna 3で月の裏側の最初の写真を返し、その次の10年の最初の蓄積を過ごした。それらは彼らが彼らであるべきほどよく覚えられていない。[Luna 9](/missions?id=luna9)は1966年に最初の軟着陸をした。それは本当の科学的な論争を解決した。表面は宇宙船をサポートするのに十分に固いかどうかについて（その前に、月の表面は深さメートルダストである可能性があったという真摯な議論があった。その中で、任意の着陸機は単に沈むであろう）。Luna 16、1970年に、地球への最初のロボティックサンプルリターンを返した——あなたが月の材料をもたらすために有人ミッションを必要としなかったという証拠。Luna 24、1976年に、最後のソビエト月面サンプルリターンであり、44年間誰かによってそれを残した最後の月面サンプルリターンであった。"
+ },
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.20.md",
+  "en": "That 44-year gap ended with [Chang'e-5](/missions?id=change5), which in December 2020 landed in the volcanic Mons Rümker region, collected 1.73 kilograms of lunar basalt, and returned it to Earth — the first sample return from the Moon since Luna 24. It was a complete success. But the mission that rewrote the frontier of what had been done was [Chang'e-4](/missions?id=change4), which in January 2019 became the first spacecraft in history to land on the far side of the Moon — a feat that required a relay satellite in a halo orbit around the Earth-Moon L2 point, because no direct radio link to the farside is possible from Earth. The farside of the Moon had never been visited on the surface by anything. Chang'e-4 landed in the Von Kármán crater within the South Pole-Aitken Basin, the largest impact basin on the Moon. Then, in June 2024, [Chang'e-6](/missions?id=change6) went further still: the first mission ever to return samples from the farside, from the same basin. Two historic firsts in five years, from a programme that did not exist at all before 2007.",
+  "cur": "その44年の間隔は2020年12月に火山性のリュムケル山地域に着陸し、1.73キログラムの月の玄武岩を採集し、地球に帰還させた[Chang'e-5](/missions?id=change5)で終わった — Luna 24以来、月からの最初のサンプル帰還だった。それは完全な成功だった。しかし、なされたことの最前線を書き直した任務は、2019年1月に月の裏側に着陸した歴史上初の宇宙機となった[Chang'e-4](/missions?id=change4)だった — 地球から月の裏側への直接的な無線リンクは不可能であるため、地球-月 L2ポイントの周りのハロー軌道に中継衛星が必要だった。月の裏側は、その表面に何かが訪れたことはなかった。Chang'e-4は月の最大の衝突盆地である南極エイトケン盆地の内のVon Kármánクレーターに着陸した。その後、2024年6月に、[Chang'e-6](/missions?id=change6)はさらに一歩先へ進んだ：裏側からサンプルを帰還させた、その盆地からの、歴史上初の任務だった。5年間で2つの歴史的な初となる成就を、2007年より前にはまったく存在しなかったプログラムから得た。"
+ },
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.21.md",
+  "en": "India's [Chandrayaan-3](/missions?id=chandrayaan3) made the first landing near the lunar south pole in August 2023, touching down at approximately 69°S — further south than any previous lander — shortly after Russia's Luna-25 attempt at the same region ended in a crash. The Vikram lander and Pragyan rover operated for one lunar day before the southern winter night claimed them. Japan's SLIM spacecraft landed in January 2024 with a precision that earned it the nickname \"Moon Sniper\": it touched down within 55 metres of its target, the tightest pinpoint landing yet achieved on the lunar surface, though the lander came down at an angle and spent its first days on the surface operating on its side. It survived. The commercial wave has been less clean: Peregrine Mission One in early 2024, a US commercial lander, suffered a propellant leak shortly after launch and never reached the Moon. Intuitive Machines' IM-1 in February 2024 did reach the surface but tipped on landing. The failure rate of lunar landers — taking the full population of attempts since the 1960s — remains above fifty percent. The Moon does not simply admit visitors.",
+  "cur": "インドの[Chandrayaan-3](/missions?id=chandrayaan3)は2023年8月に月の南極の近くで最初の着陸をし、約69°Sで触れた——以前のどの着陸機よりもさらに南——ロシアのLuna-25がその地域への試みで墜落して終わった直後。Vikram着陸機とPragyanローバーは、南冬の夜がそれらを主張する前に、1つの月日間動作した。日本のSLIM宇宙船は2024年1月に着陸し、「月スナイパー」というニックネームを獲得した精度で。それはそのターゲットの55メートル以内で触れた。月面で今まで達成された最も厳密なピンポイント着陸。ただし、着陸機は角度で降下し、表面上のその最初の数日間、そのサイドで動作した。それは生き残った。商用の波は、より清潔ではなかった。Peregrine Mission Oneが2024年初期に、米国の商用着陸機は打ち上げ直後に推進剤漏れに苦しみ、月に決して到達しなかった。Intuitive MachinesのIM-1が2024年2月に表面に到達したが、着陸で倒れた。月面着陸機の失敗率——1960年代以来の試みの完全な集団を取って——50%を上回ったままである。月は単に訪問者を許可しない。"
+ },
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.22.caption",
+  "en": "The Moon is busier than it has been since the 1970s, and for the first time the cast is genuinely global: the Soviet Luna firsts, American Apollo, China reaching the farside twice, India at the south pole, Japan’s pinpoint touchdown. The oldest question spaceflight asks, now asked by more of the species than ever.",
+  "cur": "月は1970年代以来、忙しく、最初の時間に、キャストは本当に全世界である。ソビエトLuna最初、アメリカApollo、中国が遠側に二度到達、南極のインド、日本のピンポイントタッチダウン。宇宙飛行が尋ねる最も古い質問。今、以前よりも種族のより多くによって尋ねられる。"
+ },
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.24.md",
+  "en": "The Moon's two dominant hazards — regolith and the night — are not dramatic in the way that a launch failure or an EDL disaster is dramatic. They are structural, and they compound over time. Lunar dust is electrostatically charged by the solar wind, which means it clings to everything: visors, seals, radiators, solar panels, instruments. It does not shake off. The Apollo suits that were worn for several EVAs showed visible wear from it; NASA engineers at the time estimated that a six-month lunar stay would likely render spacesuits unusable through abrasion alone. No one has yet had to solve this for a duration mission, because no one has yet conducted one. The south polar ambition will require solutions that don't yet exist at operational maturity.",
+  "cur": "月の2つの支配的な危険——レゴリスと夜——は、打ち上げ失敗またはEDL災害が劇的である方法で劇的ではない。それらは構造的であり、それらは時系列で複合化する。月面のダストは太陽風によって静電気的に充電されます。つまり、あらゆるものにしがみつきます。ビザー、シール、ラジエーター、ソーラーパネル、楽器。それは揺れない。複数のEVAに着用されたApolloスーツは、摩耗の目に見えた摩耗を示した。当時のNASAエンジニアは、6か月の月間滞在がこすりだけを通して宇宙服を使用不可能にする可能性があると推定した。誰もこれを期間ミッションのために解決する必要はありませんでした。誰もまだ実施したことがないからです。南極の野心は、まだ動作成熟度で存在しない解決策を必要とするでしょう。"
+ },
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.25.md",
+  "en": "The night is a simpler problem in principle and a hard one in engineering. Fourteen Earth-days of darkness, with temperatures dropping to −170°C, is enough to kill most battery chemistries through repeated thermal cycling and to deny solar power entirely. The Chang'e-4 mission hibernated its lander and rover through each lunar night and woke them at sunrise; both survived multiple cycles. Chandrayaan-3's Pragyan rover was placed in sleep mode before the night, with the expectation that it would revive in the morning; it did not, and the mission ended there. The difference between a lander that survives lunar nights and one that does not is a narrow margin of thermal engineering, battery chemistry, and heating power that is still being learned in the field. The south pole's crater rims offer a partial reprieve — some locations there are sunlit for more than 80% of the year — but accessing ice in the permanently shadowed crater floors, which is where the resource value lies, means sending systems into terrain that is simultaneously the coldest place on the Moon and the darkest.",
+  "cur": "夜は原則的にはより単純な問題であり、エンジニアリングの中で難しい。14地球日の暗闇、気温が−170°C低下する——ほとんどのバッテリー化学を反復的な熱サイクルによって殺し、ソーラーパワーを完全に否定するのに十分である。Chang'e-4ミッションは、各月間の夜を通して着陸機とローバーをハイバーネート状態にし、日の出で目覚めさせた。両方は複数のサイクルで生き残った。Chandrayaan-3のPragyanローバーは、夜の前に睡眠モードに置かれました。朝に覚醒することを期待して。それはしなかった、そしてミッションはそこで終わった。月の夜を生き残る着陸機と生き残らない着陸機の違いは、まだ現場で学ばれている熱工学、バッテリー化学、加熱電力の狭い限界である。南極の火口の縁は部分的な寛解を提供する——そこのいくつかの場所は年の80%以上太陽に照らされている——しかし、永久に暗い火口床のアイスへのアクセスは、リソース値が存在する場所はシステムを同時に月で最も冷たい地形と最も暗いに送信することを意味する。"
+ },
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.26.md",
+  "en": "Unlike [the descent through a Martian atmosphere](/essays/seven-minutes), lunar landing offers no atmospheric braking at all — you come in on rockets from start to finish, burning propellant at every altitude, committing to a trajectory that cannot be meaningfully corrected in the final seconds if something unexpected appears on the surface below. The Moon is, in the framing of the [seven-minutes essay](/essays/seven-minutes), the purest version of the no-atmosphere case: the problem that has no free deceleration, no heat shield to buy time, no parachute phase. Everything you want to spend on the science payload, you first have to find room for in the fuel budget. And the [light-lag that makes the Moon manageable](/science/mission-phases/dsn) — that 1.3-second round trip — is short enough that humans can remain in the control loop, which means lunar landers do not yet need the fully autonomous terrain-relative navigation that Perseverance used at Jezero. They benefit from it. They do not yet strictly require it. That distinction will not hold at Mars.",
+  "cur": "[火星大気への降下](/essays/seven-minutes)とは異なり、月面着陸は大気ブレーキングをまったく提供しない——あなたはロケットの開始から終わりまで到着し、あらゆる高度で推進剤を燃焼し、下の表面に予期しないものが現れた場合、最後の秒で意味のあるように修正できない軌跡にコミットする。月は、[7分間のエッセイ](/essays/seven-minutes)のフレーミングで、大気なしケースの純粋なバージョンである。自由減速がない問題。時間を買うためのヒートシールドはない。パラシュート段階はない。科学的なペイロードに費やしたいすべてのもの。あなたはまず燃料予算のための部屋を見つける必要があります。そして[月を管理可能にする光遅延](/science/mission-phases/dsn)——その1.3秒の往復——は人間が制御ループに留まることができるのに十分短い。つまり、月の着陸機はまだ、Perseveranceがジェゼロで使用した完全に自律的な地形相対ナビゲーションを必要としません。彼らはそれから利益を得る。彼らはそれをまだ厳密に要求しない。その区別は火星で保有されない。"
+ },
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.27.caption",
+  "en": "Apollo 17, December 1972 — the last time anyone walked on the Moon. The crews came back grey to the elbows: lunar dust clings, abrades, and works into every seal, and no one has yet had to keep it out for the months a settled presence would demand.",
+  "cur": "Apollo 17、1972年12月——最後に誰かが月を歩いた時間。クルーは肘に灰色で戻った。月のダストは固執し、こすり、定着した存在が需要するであろう月間の毎のシールに機能する。"
+ },
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.29.md",
+  "en": "There is a throughline from the Moon to everywhere that comes after it, and it runs through the question of what \"staying\" actually requires. A flags-and-footprints programme — arrive, explore the vicinity, return — has a known cost structure. You build the hardware, train the crew, execute the mission, come back. Everything is bounded. A presence programme is different: it requires infrastructure that persists, resupply that repeats, systems that must be maintained and eventually replaced on-site. It requires, in short, the development of an economy rather than a series of expeditions. The Moon is the place to build that economy first, because the consequences of getting it wrong are survivable. If a power system fails at the lunar south pole, rescue is three days away and the crew can be reached in near-real-time by radio while they wait. If the same failure happens on Mars, rescue is, at minimum, a year and a half away and every decision the crew makes is their own, communicated to Earth at a lag that precludes any real oversight.",
+  "cur": "月からそれ以降に来るすべてへのスルーラインがあり、それは「留まること」が実際に必要なことについての質問を通じて実行される。フラグと足跡プログラム——到達、近所を探索、リターン——は既知のコスト構造があります。あなたはハードウェアを構築し、乗組員を訓練し、ミッションを実行し、戻ってくる。すべてが境界である。存在プログラムは異なる。それは存在する基盤インフラストラクチャ、繰り返される再度供給、現場で維持および最終的に置換する必要があるシステムが必要である。つまり、一連の遠征ではなく経済の開発が必要です。月は、それを間違えることの結果が生き残ったその経済を最初に構築する場所です。月面南極で電力システムが失敗した場合、救助は3日間離れており、クルーはラジオによって彼らが待っている間に近いリアルタイムに到達できます。同じ失敗が火星で発生した場合、救助は最小で1.5年離れており、乗組員が作る決定はすべて自分たちであり、地球に通信されており、実際の監督を除外するラグで通信されている。"
+ },
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.30.md",
+  "en": "This is what the Moon is, in the long view: a practice ground that you cannot skip, even if you could afford to. The delta-v to reach the Moon is low enough that a serious mistake can be survived. The [transfer orbit to Mars](/science/transfers/hohmann-transfer) — a six-to-nine month coast with no returns — is not survivable in the same way. When [the going-to-Mars problem](/science/mission-phases/edl) is asked in earnest, the answer requires every lesson the Moon will have taught about sustained human presence in a hard vacuum: how dust is managed across months, how power is generated through prolonged darkness, how hardware is maintained by people in suits, how food and water are produced rather than merely carried. None of that can be learned in simulation with confidence high enough to bet lives on. The Moon is where it gets learned for real.",
+  "cur": "これが月である。長い見方で。練習場。スキップすることさえできない。あなたはそれを余裕があったとしても。月に到達するためのデルタVは、深刻な間違いが生き残れるような低さです。[火星への転送軌道](/science/transfers/hohmann-transfer)——6〜9ヶ月のコースは戻りなし——は同じ方法では生き残れない。[火星に行く問題](/science/mission-phases/edl)が真摯に尋ねられるとき、答えは月が持続された人間の存在について教えることになるすべての教訓が必要です。ハード真空で。ダストがどのように月間に管理されるか。電力がどのように長期間の暗闇を通して生成されるか。ハードウェアがどのようにスーツで人々によって維持されるか。食料と水がどのように生成されるか、単に運ばれるのではなく。そのどれもが、命に賭ける十分な高さの自信で模擬での学習はできません。月は本当にそれを学んだ場所です。"
+ },
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.31.md",
+  "en": "The long view on the Moon, then, is not triumphalist and it is not pessimistic. It is something closer to sobered. We spent 1969 to 1972 climbing the first rung, then spent fifty years standing on the ground looking at it. We are climbing again now — more slowly, with more partners, with better instruments and worse institutional memory — and this time the reason is not to prove a point to a rival but to find out whether humans can actually live somewhere other than Earth. The south polar ice, if it can be harvested, would change the economics of everything beyond it. The Artemis programme, if it reaches the surface with crews and then sustains a presence, will teach things about deep-space habitation that cannot be learned any other way. And the global cast of landers — Soviet, then Chinese, Indian, Japanese, American, commercial — is proof that the question the Moon poses is not a national one. It is the oldest question spaceflight asks, now asked by more of the species than ever before: what does it actually take to be somewhere else? We are still finding out. The practice ground is open.",
+  "cur": "月の長い見方は、次に、トリウンファリスト的ではなく、悲観的でもない。何か控えめに近い。1969年から1972年、最初のランクを登った。その後、50年間、地面に立ち、それを見ていた。今、私たちは再度登っている——より遅く、より多くのパートナーで、より良い楽器とより悪い制度的な記憶で——そして今度はその理由は、ライバルに点を証明することではなく、人間が地球以外の場所に実際に住むことができるかどうか。南極氷は、収穫できた場合、それ以降のすべての経済を変えるであろう。Artemisプログラム、それが乗組員とサーフェス、その後存在を持続する場合到達する場合、他の方法で学ぶことができない深宇宙の生息地についての事を教えるであろう。そしてランダーの世界的なキャスト——ソビエト、その後中国語、インド、日本語、アメリカンの、商業——月が提起する質問が国家の1つではないという証拠。それは宇宙飛行が今尋ねます。以前よりも種族のより多くによって尋ねられた。他の場所にあるのに何が必要か。私たちはまだ見つけ出しているところ。練習地は開いています。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "dek",
+  "en": "The nearest star is not far in the way that Mars is far, or even Pluto. It is a categorically different kind of distance — and the sober math of getting there has a way of making every serious proposal look quietly heroic and quietly doomed at the same time.",
+  "cur": "最も近い星は、火星がそうであるような距離でもなく、冥王星のそれでもない。それはまったく異なる種類の距離であり、そこへ到達するための厳密な数学は、あらゆる真摯な提案を、ひそかに英雄的であると同時にひそかに絶望的に見えさせる方法を持っている。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.0.md",
+  "en": "There is a habit of mind that spaceflight encourages, and it is a reasonable one up to a point. You learn the distances — the Moon is three days away, Mars is six to nine months, Jupiter is years — and you absorb the scale of the solar system as something that is vast but navigable, something that human ingenuity has been steadily eating into for seventy years. [Voyager 1](/missions?id=voyager-1) reached interstellar space. [New Horizons](/missions?id=new-horizons) crossed five billion kilometres to [Pluto](/explore) and arrived within a minute of its schedule. The outer system feels, from inside this frame, like a problem of patience and engineering, not of fundamental limits.",
+  "cur": "宇宙飛行が奨励する思考の習慣がある。それは一定の範囲までは理にかなったものだ。あなたは距離を学ぶ——月は3日先、火星は6～9ヶ月、木星は数年——太陽系の規模を吸収する。それは広大だが航行可能な何か、人間の創意工夫がこの70年間に着実に食い込んできた何かとして。[Voyager 1](/missions?id=voyager-1)は星間空間に到達した。[New Horizons](/missions?id=new-horizons)は50億キロメートルを横断して[冥王星](/explore)に到達し、予定時刻の1分以内に到着した。この枠組みの内側からすれば、外側の太陽系は忍耐と工学の問題のように感じられ、基本的な限界の問題ではない。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.1.md",
+  "en": "Then you turn to face the nearest star, and the frame breaks.",
+  "cur": "そして次に、あなたは最も近い星に向き直く。そしてその枠は壊れる。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.2.md",
+  "en": "Proxima Centauri is 4.24 light-years away. That sentence has to be unpacked slowly to land with its full weight, because light-years and light-minutes are the same unit and the scale difference is not intuitive. A [light-minute](/science/scales-time/light-minute) is the distance light covers in sixty seconds: about 18 million kilometres, which is roughly the gap between Earth and the Sun divided by eight. The solar system — the whole inhabited and explored volume from Earth's orbit out past Neptune — fits inside a sphere about five light-hours across. Pluto, at the edge of the classical system, is about five and a half light-hours from the Sun. The Oort Cloud, the outermost gravitational reach of the Sun's influence, extends to perhaps a light-year or two. Proxima Centauri, the closest star to our own, is more than twice even that. The distance to the nearest star is not the distance to the outer solar system scaled up by some manageable factor. It is roughly *nine thousand* times the distance from Earth to Pluto. The solar system does not prepare you for it.",
+  "cur": "プロキシマ・ケンタウリは4.24光年離れている。その文は、その完全な重さを持って着地するために、ゆっくりと解き明かされる必要がある。光年と光分は同じ単位であり、スケールの差は直感的ではないからだ。[光分](/science/scales-time/light-minute)は光が60秒で移動する距離である。約1800万キロメートルで、これは地球と太陽の間のギャップをおおよそ8で割ったものである。太陽系——地球の軌道から海王星を過ぎて広がる、人間が住んでいる、探査された全体の体積——は約5光時間のスフィア内に収まる。古典的な太陽系の端にある冥王星は、太陽からおおよそ5.5光時間離れている。太陽の影響の最外郭重力域であるオールトの雲は、おそらく1光年か2光年まで広がっている。私たち自身の太陽に最も近い星、プロキシマ・ケンタウリは、その遙かに2倍以上離れている。最も近い星までの距離は、外側の太陽系までの距離が何らかの扱いやすい係数でスケールされたものではない。それはおおよそ地球から冥王星までの距離の*9000倍*である。太陽系はあなたをそれに備えることはできない。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.4.md",
+  "en": "[Voyager 1](/missions?id=voyager-1) is the fastest-receding human object in existence. Launched in 1977, slung past Jupiter and Saturn on a trajectory that borrowed energy from both planets' gravitational fields, it is now travelling at roughly 17 kilometres per second relative to the Sun — about 61,000 kilometres per hour, a speed that would take you from London to Sydney in under a minute. By any terrestrial measure it is unimaginably fast. By interstellar measure, it is glacial. At 17 km/s, Voyager 1 would take on the order of 73,000 years to cover the distance to Proxima Centauri — and it is not even aimed there. It is headed in a different direction entirely, toward the constellation Ophiuchus, on a trajectory that was designed to survey the outer solar system, not to reach the stars.",
+  "cur": "[Voyager 1](/missions?id=voyager-1)は存在する最速の人間製物体である。1977年に打ち上げられ、木星と土星を過ぎて放出され、両惑星の重力場からエネルギーを借りた軌道上で、それは現在、太陽に対して粗く毎秒17キロメートルで移動している——時速約61,000キロメートル。この速度は、あなたをロンドンからシドニーへ1分以内で移動させるだろう。あらゆる地上の基準によって、それは想像を絶するほど速い。星間の基準によって、それは氷河的である。毎秒17キロメートルで、Voyager 1はプロキシマ・ケンタウリまでの距離をカバーするのに約73,000年を要するだろう——そしてそれはそこへ向かってさえいない。それは全く別の方向、へびつかい座の星座に向かっている。その軌道は外側の太陽系を調査するために設計されたもので、星に到達するためではない。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.5.md",
+  "en": "[Pioneer 10](/missions?id=pioneer-10) and [Pioneer 11](/missions?id=pioneer-11), the first spacecraft to cross the asteroid belt and survey Jupiter and Saturn, are also departing the solar system on hyperbolic trajectories. [New Horizons](/missions?id=new-horizons) is moving at around 14 km/s. None of them will approach another star within any timeframe that matters to the civilisation that launched them. The fastest things humanity has ever flung — the culmination of seven decades of rocket engineering and gravity-assist trajectory design — would need tens of thousands of years to cover the interstellar gap. When people say \"the stars are far away,\" they mean something more specific and more sobering than the phrase usually conveys: they mean that everything we have ever done to push a spacecraft faster has not moved the scale of interstellar travel by a single order of magnitude.",
+  "cur": "[Pioneer 10](/missions?id=pioneer-10)と[Pioneer 11](/missions?id=pioneer-11)は、小惑星帯を横断し、木星と土星を調査した最初の宇宙船で、双曲線軌道上で太陽系から離れているところである。[New Horizons](/missions?id=new-horizons)は時速14キロメートルの周辺で移動している。どれもが、それらを打ち上げた文明にとって重要な時間枠内で別の星に接近することはないだろう。人類がこれまで投げつけた最速のもの——ロケット工学の70年とを重力助力軌道設計の集大成——は星間ギャップをカバーするのに数万年必要であるだろう。人々が「星は遠く離れている」と言うとき、彼らはそのフレーズが通常伝えるより、より具体的でより厳粛なことを意味する。彼らは、宇宙船をより速く推進するためにこれまでに行ったあらゆることが、星間旅行の規模を単一の大きさのオーダーで動かしていないことを意味する。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.6.caption",
+  "en": "Voyager 1, launched in 1977, is the fastest-receding object humanity has ever built — and at roughly seventeen kilometres a second it would still take on the order of 73,000 years to cross the distance to the nearest star. It isn’t even going there. Against interstellar distance, our fastest is a crawl.",
+  "cur": "1977年に打ち上げられたVoyager 1は、人類がこれまで建造した最速の後退物体である——そして粗く毎秒17キロメートルで、それは最も近い星までの距離をカバーするのに約73,000年を要するだろう。そこへ向かってさえいない。星間距離に対して、私たちの最速は這いである。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.7.caption",
+  "en": "Voyager 1 — now more than twenty-four billion kilometres out, the most distant object humans have ever made, and still, on any interstellar scale, barely out the door.",
+  "cur": "Voyager 1——現在240億キロメートル以上離れた場所にあり、人類がこれまで作った最も遠い物体であり、なお、あらゆる星間規模上で、ほとんど扉の外出している。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.9.md",
+  "en": "To reach Proxima Centauri in a human lifetime — say, in forty years — a spacecraft would need to travel at roughly ten percent of the speed of light. Ten percent of c is approximately 30,000 km/s. Voyager 1 travels at 17 km/s. The ratio is nearly 2,000 to one. You would need to go roughly two thousand times faster than the fastest thing we have ever launched.",
+  "cur": "人間の生涯でプロキシマ・ケンタウリに到達する——たとえば40年間で——宇宙船は光の速度のおおよそ10%で移動する必要があるだろう。cの10%は約毎秒30,000キロメートルである。Voyager 1は毎秒17キロメートルで移動する。その比率はほぼ2,000対1である。あなたは、これまでに打ち上げた最速の物体より、粗く2000倍速く行く必要があるだろう。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.10.md",
+  "en": "The [Tsiolkovsky rocket equation](/essays/delta-v) — the iron law that governs every propellant-burning vehicle — makes this precise, and the precision is brutal. The equation says that the velocity a rocket can achieve depends on two things: the ratio of its initial mass (fully fuelled) to its final mass (empty), and the exhaust velocity of its propellant. To go faster, you either carry more propellant or expel it faster — but carrying more propellant increases the initial mass, which increases the propellant you need to accelerate *that* propellant, in a compounding trap that grows exponentially. Chemical rockets, as [the propulsion essay](/essays/new-propulsion) traces in detail, are already at the ceiling of what their exhaust velocity allows. The best chemical engines achieve specific impulses around 450 seconds, corresponding to exhaust velocities of about 4.4 km/s. To reach ten percent of the speed of light with a chemical rocket, the mass ratio required is not ten, or a thousand, or a million. It is a number so large that the observable universe does not contain enough hydrogen to fuel the engine. Chemistry is not a path to the stars. It is not even a first step.",
+  "cur": "[ツィオルコフスキーロケット方程式](/essays/delta-v)——すべての推進剤燃焼車両を支配する鉄の法則——これを正確にする、そしてその正確性は容赦ないものである。その方程式は、ロケットが達成できる速度は2つのことに依存すると言う。その初期質量（完全給油）と最終質量（空）の比率、およびその推進剤の排気速度。より速く行くには、より多くの推進剤を運ぶか、あるいはそれをより速く排出するか——しかし、より多くの推進剤を運ぶことは初期質量を増加させ、これは*その*推進剤を加速するために必要な推進剤を増加させ、指数関数的に成長する複合トラップで。化学ロケットは、[推進エッセイ](/essays/new-propulsion)が詳細に跡付けるように、すでにそれらの排気速度が許すものの天井にいる。最良の化学エンジンは約450秒の特定のインパルスを達成し、約4.4キロメートル/秒の排気速度に対応している。化学ロケットで光の速度の10%に到達するには、必要な質量比は10でもなく、千でもなく、百万でもない。それはこれほどまでに大きな数であり、観察可能な宇宙はエンジンに燃料を供給するのに十分な水素を含まない。化学は星への道ではない。それは最初のステップでさえない。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.11.md",
+  "en": "Nuclear-thermal propulsion — heating hydrogen in a reactor and expelling it through a nozzle — roughly doubles the exhaust velocity, achieving specific impulses around 825 seconds in the best ground-tested engines of the NERVA programme. Doubling the exhaust velocity does not halve the required mass ratio; it takes the square root of it — a far larger gain. At interstellar velocities, nuclear-thermal propulsion is still categorically inadequate. The rocket equation does not care how the propellant is heated. It cares only how fast it leaves. And no propellant-burning architecture yet conceived can expel matter fast enough to reach a meaningful fraction of c without requiring a fuel load that makes the mission impossible on its face.",
+  "cur": "核熱推進――リアクターで水素を加熱し、ノズルから噴出する方式――は排気速度をおよそ2倍にし、NERVA計画の地上試験で最良のエンジンでは比推力が約825秒に達した。排気速度が2倍になっても、必要な質量比が半分になるわけではない。質量比はその平方根になる――はるかに大きな利得である。それでも星間速度に対しては、核熱推進は明らかに力不足である。ロケット方程式は推進剤がどう加熱されるかを気にしない。気にするのは、どれだけの速さで出ていくかだけだ。そして、これまでに考案された推進剤燃焼型のどの方式も、光速cの意味のある割合に達するだけの速さで物質を噴出しようとすれば、それだけでミッションが成り立たなくなるほどの燃料搭載量を必要とする。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.13.md",
+  "en": "There are a small number of proposals for interstellar flight that are serious in the sense that physicists do not immediately rule them out. None of them is easy. Each one, examined carefully, has a wall behind the initial optimism.",
+  "cur": "物理学者がすぐには排除しない意味で真摯な星間飛行のための提案がいくつかある。どれも簡単ではない。各々は注意深く調べた場合、初期の楽観主義の後ろに壁を持っている。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.14.md",
+  "en": "The most concrete current proposal is Breakthrough Starshot, announced in 2016 by a collaboration of scientists and technologists. The concept is elegant: dispense with large spacecraft entirely. Build gram-scale lightsails — wafers of material thinner than a sheet of paper, with a small electronics package attached — and accelerate them with a ground-based laser array delivering, in aggregate, around 100 gigawatts of power over a brief illumination pass. At that power level, a gram-scale sail could theoretically be pushed to around twenty percent of the speed of light, crossing the distance to Proxima Centauri in approximately twenty years. The physics are, in principle, sound. Solar sailing works — IKAROS proved it in 2010, and the Planetary Society's LightSail 2 raised its orbit on sunlight alone in 2019. Scaling the concept to laser propulsion is a different problem in engineering, not in kind.",
+  "cur": "最も具体的な現在の提案はBreakthrough Starshot(ブレークスルー・スターショット)であり、2016年に科学者と技術者の協力によって発表されました。その概念は優雅です。大型宇宙船を完全に廃止し、グラム規模のライトセイル（紙1枚より薄い材料のウェーハに小さな電子機器パッケージが取り付けられたもの）を造り、地上のレーザーアレイで総出力約100ギガワットの電力を短い照射パスで加えることにより加速させるというものです。その出力レベルでは、グラム規模のセイルは理論上、光速の約20パーセントまで加速され、プロキシマ・ケンタウリまでの距離を約20年で横断することができます。その物理学は、原則として健全です。ソーラーセイルは機能します――イカロスが2010年にそれを証明し、Planetary SocietyのLightSail 2は2019年に太陽光だけで軌道を上げました。その概念をレーザー推進にスケーリングすることは、エンジニアリングの観点から異なる問題であり、本質的には異なりません。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.15.md",
+  "en": "The walls are substantial. A 100-gigawatt [phased laser array](/science/propulsion/laser-sail) does not exist. Building one would be an engineering and financial undertaking comparable to the largest projects in human history, and maintaining beam coherence and pointing accuracy across a departing target at relativistic speed requires technology that is far beyond current demonstration. More fundamentally: the lightsails accelerate. They cannot decelerate. There is no mechanism to slow a gram-scale sail as it approaches Proxima Centauri at 20% c — no laser array waiting there, no atmospheric braking available. The flyby would last a matter of hours. After decades of travel and years of signal transmission at the speed of light, Proxima Centauri and any planets orbiting it would receive a few hours of attention. Whatever the sensors captured during that passage would take 4.24 years to arrive home. Breakthrough Starshot is not a mission to explore another star. It is a mission to glance at one.",
+  "cur": "壁は実質的である。100ギガワット[位相レーザー配列](/science/propulsion/laser-sail)は存在しない。1つを構築することは、人間の歴史の最大のプロジェクトに匹敵する工学的および財政的な事業になるだろう。そして、相対的な速度で出発するターゲット全体でビームコヒーレンスとポインティング精度を維持することは、現在のデモンストレーションをはるかに超える技術が必要である。より根本的には。ライトセイルは加速する。彼らは減速することができない。プロキシマ・ケンタウリに20% cで接近するときにグラム規模のセイルを遅くするメカニズムはない——そこで待機しているレーザー配列がない、利用可能な大気ブレーキがない。フライバイは数時間の問題で続くだろう。数十年の移動と光の速度での信号伝送の数年後、プロキシマ・ケンタウリとそれを軌道周回する惑星は数時間の注意を受けるだろう。そのパッセージの間にセンサーがキャプチャしたものはすべて、ホームに到着するのに4.24年かかるだろう。Breakthrough Starshotは別の星を探索するためのミッションではない。それは1つを一目見るためのミッションである。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.16.md",
+  "en": "Project Daedalus, proposed by the British Interplanetary Society in a study from 1973 to 1978, aimed at something more substantial: a two-stage [fusion-driven starship](/science/propulsion/fusion-propulsion), using inertial confinement ignition of deuterium-helium-3 pellets, designed to reach Barnard's Star (then thought to have planets) at about 12% of the speed of light, arriving in roughly fifty years. The ship it envisaged was enormous — initially fuelled, it would have massed around 54,000 tonnes, the size of a small skyscraper. Its successor study, Project Icarus, revisited the concept from 2009 onward with updated physics and broader propulsion options. Both studies converge on the same honest assessment: the fusion drive works, in principle, but the technology required — sustained inertial confinement fusion at the scale and repetition rate needed for propulsion — has not been achieved, and the fuel requirement for helium-3 vastly exceeds anything that can be extracted from Earth. The helium-3 would have to be mined from the atmosphere of Jupiter. No mechanism exists to do this.",
+  "cur": "Project Daedalusは、1973年から1978年の研究で British Interplanetary Society によって提案された、より実質的なものを目指していました。その概念は、重水素とヘリウム3のペレットの慣性閉じ込め着火を利用する2段階の[核融合推進宇宙船](/science/propulsion/fusion-propulsion)で、バーナード星（当時は惑星を持つと考えられていました）に光速の約12パーセントで到達するよう設計され、おおよそ50年で到着するというものです。構想された宇宙船は巨大でした。燃料補給時には約54,000トンの質量を持つもので、小さな超高層ビルの大きさです。その後継研究であるProject Icarusは、2009年以降、更新された物理学と幅広い推進オプションによってこの概念を再検討しました。両方の研究は同じ正直な評価に収束しています。核融合駆動装置は原理上機能しますが、必要な技術——推進に必要な規模と反復速度での持続的な慣性閉じ込め核融合——は達成されておらず、ヘリウム3の燃料要件は地球から抽出できるものをはるかに超えています。ヘリウム3は木星の大気から採掘する必要があります。これを行うメカニズムは存在しません。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.17.md",
+  "en": "Antimatter is the theoretical ceiling. [Matter-antimatter annihilation](/science/propulsion/antimatter-propulsion) is the most energetic process permitted by known physics, converting mass to energy at one hundred percent efficiency — compared to about 0.7% for nuclear fusion and a fraction of a percent for chemical combustion. An antimatter drive, if the annihilation could be directed efficiently, could in principle accelerate a spacecraft to a substantial fraction of c with a relatively modest fuel mass. The wall is production. The entire accumulated production of antimatter by particle accelerators worldwide — across all of human history — amounts to a few nanograms. A Daedalus-scale interstellar mission would require something like tens of thousands of tonnes of antimatter. The energy needed to produce that quantity would exceed the total energy output of human civilisation, multiplied by centuries. Antimatter propulsion is not a near-term engineering problem. It is a civilisational-scale energy problem.",
+  "cur": "反物質は理論的な天井である。[物質-反物質消滅](/science/propulsion/antimatter-propulsion)は既知の物理学によって許可された最もエネルギー的なプロセスであり、質量をエネルギーに100%効率で変換する——核融合の約0.7%およびまたは化学燃焼の割合に比べて。反物質ドライブ、消滅が効率的に向けられることができれば、原則として相対的に控えめな燃料質量を有する宇宙船をcの実質的な割合に加速させることができた。壁は生産である。粒子加速器による反物質のすべての累積生産——人類の全歴史の全体で——数ナノグラムに達する。Daedalus規模の星間ミッションは、数万トンの反物質のようなものが必要になるだろう。その量を生産するために必要なエネルギーは、人類の文明の総エネルギー出力を超えるだろう、世紀で乗算。反物質推進は近期の工学的な問題ではない。それは文明規模のエネルギー問題である。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.18.caption",
+  "en": "Three concepts survive honest scrutiny: a laser-pushed nanosail (Breakthrough Starshot) that could fly past a nearby star in decades, a fusion starship (Project Daedalus) the size of a building, and antimatter’s perfect but unmakeable fuel. None is forbidden by physics — all are forbidden by energy, distance, and patience.",
+  "cur": "3つの概念は正直なスクラチを生き残る。レーザー押されたナノセイル（Breakthrough Starshot）は数十年で近くの星を過ぎて飛行でき、核融合スターシップ（Project Daedalus）は建物のサイズ、そして反物質の完璧だが作ることができない燃料。どれも物理学によって禁止されていない——すべてはエネルギー、距離、および忍耐によって禁止されている。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.20.md",
+  "en": "Even setting aside propulsion, interstellar exploration has a second structural difficulty that chemistry and engineering cannot solve: the speed of light itself. A radio signal from Proxima Centauri takes 4.24 years to reach Earth. A question transmitted at the moment of a spacecraft's arrival receives an answer, at best, 8.48 years later. There is no meaningful real-time control. There is no mission controller calling out course corrections during an approach. Whatever a spacecraft does at Proxima Centauri, it does entirely alone — more alone, by orders of magnitude, than [the seven minutes of autonomous EDL](/essays/seven-minutes) at Mars, where the craft at least knows that humans are monitoring from twelve minutes away.",
+  "cur": "推進を脇に置いても、星間探査には、化学および工学が解くことができない第2の構造的な困難がある。光の速度そのもの。プロキシマ・ケンタウリからの無線信号は地球に到達するのに4.24年かかる。宇宙船の到着時に送信される質問は、多くても8.48年後に答えを受け取る。有意義なリアルタイム制御はない。接近中のコース補正を呼び出しているミッションコントローラーはない。宇宙船がプロキシマ・ケンタウリで行うことは何でも、完全に単独で行う——[火星の7分の自律EDL](/essays/seven-minutes)より、何桁も単独で、そこで少なくとも工芸は人間が12分先からモニターしていることを知っている。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.21.md",
+  "en": "The communication architecture this demands is qualitatively different from anything we have built. The [Deep Space Network](/science/mission-phases/dsn) handles interplanetary distances because the round-trip lag, while painful at the outer planets, is still measured in hours — a cadence that human mission controllers can work within. Interstellar lags are measured in years. Data volumes would be transmitted at the speed of light but the photons carrying them would travel for years before arriving at a dish on Earth, and any follow-up command or retransmission would take just as long. [Space communication across the solar system](/essays/comms) is already a discipline of patience; interstellar communication would be a discipline of generations. You send a message. Your grandchildren receive the reply.",
+  "cur": "この要求が通信アーキテクチャは、私たちが構築したものとは質的に異なっている。[Deep Space Network](/science/mission-phases/dsn)は星間距離を扱う。なぜなら往復遅延は外部の惑星では痛いが、まだ時間で測定される——人間のミッションコントローラーが内部で仕事をすることができる一歩。星間ラグは年で測定される。データボリュームは光の速度で送信されるが、それらを運ぶフォトンは地球の皿に到着する前に年間で移動し、任意の後続コマンドまたは再送信は同じくらい長くなるだろう。[太陽系全体でのスペース通信](/essays/comms)はすでに忍耐の規律であり、星間通信は世代の規律になるだろう。あなたはメッセージを送る。あなたの孫は返信を受け取ります。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.22.md",
+  "en": "In the Breakthrough Starshot scenario, a gram-scale probe screams through the Proxima Centauri system at 20% of the speed of light in a matter of hours. Its sensors collect whatever they can in that window. The compressed data is then transmitted home at the speed of light, arriving 4.24 years later. There is no second pass. There is no follow-up instrument deployment, no orbit insertion, no surface mission, no ability to respond to a surprising finding with a new observation. This is the honest content of \"interstellar exploration\" at the only speed we know how to reach: a brief, unidirectional snapshot, transmitted home across years of silence, from a probe that cannot slow down and will never be heard from again.",
+  "cur": "Breakthrough Starshotシナリオでは、グラム規模のプローブは数時間でプロキシマ・ケンタウリシステムを通して光の速度の20%でスクリーミングする。そのセンサーは、その窓で何ができるかを収集する。圧縮データはその後光の速度でホームに送信され、4.24年後に到着する。2回目のパスはない。フォローアップ機器の展開はない、軌道挿入はない、表面ミッションはない、驚くべき発見に新しい観察で応答する能力がない。これは、私たちが到達する方法を知る唯一の速度で「星間探査」の正直な内容である。簡潔で単方向のスナップショット、何年もの沈黙を越えてホームに送信され、減速することができず、二度と聞かれることはないプローブから。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.23.caption",
+  "en": "Even if a probe arrives, the news takes years to come home. At Proxima a signal is 4.24 years each way; a decades-long crossing yields a few hours of flyby data, then years more to hear it. Interstellar exploration is, above all, an exercise in patience.",
+  "cur": "プローブが到着しても、ニュースは家に帰るのに何年かかかる。Proximaでシグナルは4.24年の各方法である。何十年にもわたるクロッシングは数時間のフライバイデータを生成し、その後さらに何年聞くために。星間探査は、何よりも、忍耐の運動である。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.25.md",
+  "en": "None of this means interstellar travel is forbidden. There is no physical law that prohibits a spacecraft from crossing four light-years. There are only engineering walls, energy budgets, and the specific impulse ceiling of every propulsion system human beings have yet conceived. These are real constraints, not absolute ones — they are the constraints of a civilisation at a particular moment in its development, a civilisation that can launch a gram-scale probe to a nearby star on a laser beam, in principle, but cannot yet build the laser. The distinction matters. \"Forbidden by physics\" and \"beyond current engineering\" are different sentences.",
+  "cur": "このどれもが星間旅行が禁止されていることを意味するものではない。宇宙船が4光年をクロスすることを禁止する物理法則はない。工学的な壁、エネルギー予算、およびすべての推進システムの特定インパルス天井は、人類がこれまでに考案したのみある。これらは実際の制約であり、絶対的なものではない——それらは文明の特定の瞬間における特定の瞬間の制約である。その発展のその瞬間に、文明はレーザービーム上で原則的に近くの星に対してグラム規模のプローブを打ち上げることができるが、まだレーザーを構築することはできない。その区別は重要。「物理学によって禁止」および「現在の工学を超えた」は異なった文である。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.26.md",
+  "en": "But the gap between \"not forbidden\" and \"achievable in any near timeframe\" is enormous. The slowest serious proposal — a fusion starship at 12% of c — would require technology that does not exist, at a cost that dwarfs any space programme in history, to deliver a crewed vessel to another star in roughly fifty years. The fastest serious proposal — Breakthrough Starshot's laser-driven lightsail — would deliver a gram of instruments to a flyby that lasts hours, and return data for years, at a cost that its proponents estimate in the tens of billions of dollars, assuming the laser array can be built at all. Between these extremes, there is no middle option that is both technologically feasible and adequate for meaningful exploration. The scale of the problem simply does not have a moderate solution.",
+  "cur": "しかし、「禁じられていない」ことと「近い将来に実現できる」ことの間の隔たりは途方もなく大きい。最も遅い現実的な提案――光速cの12%で進む核融合スターシップ――は、存在しない技術を必要とし、歴史上のどの宇宙計画も霞むほどの費用をかけて、有人の船を約50年で別の恒星へ届ける。最も速い現実的な提案――Breakthrough Starshotのレーザー駆動ライトセイル――は、数時間で終わるフライバイに1グラムの観測機器を送り込み、何年にもわたってデータを送り返す。費用は提唱者の見積もりで数百億ドル規模であり、そもそもレーザーアレイを建造できるという前提に立っている。この両極端の間に、技術的に実現可能で、かつ意味のある探査に足る中間の選択肢は存在しない。この問題の規模は、穏当な解決策を単純に許さないのだ。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.27.md",
+  "en": "There is a third path, and it is the most human one: go slowly, and go in ships large enough to carry lives. If you cannot accelerate to ten percent of the speed of light, you accept the journey time — centuries, millennia — and you build a vessel that is itself a world. This is the idea behind [generational starships](/essays/generational-starships): not a spacecraft in the conventional sense but a closed ecological and social system, launched at speeds achievable by ambitious but conceivable near-future propulsion, aimed at Proxima or another nearby system, carrying the ancestors of the people who will arrive. The physics are forgiving in a way that the rocket equation is not. The problems shift from engineering to biology, ecology, sociology, and ethics: what it means to be born into a journey you did not choose, and to die before it ends. These are not smaller problems. They are different ones.",
+  "cur": "第3のパスがあり、それが最も人間的である。ゆっくり行き、生命を運ぶのに十分な大きさの船に行く。光の速度の10%に加速することはできなければ、あなたは旅行時間——世紀、千年——を受け入れ、それ自体が世界である容器を構築する。これは[世代的スターシップ](/essays/generational-starships)の背後にある考えである。従来の意味での宇宙船ではなく、閉じた生態学的および社会的システムであり、野心的だが見通しのある近未来推進によって達成可能な速度で打ち上げられ、Proximaまたは別の近くのシステムを目指し、着く人々の祖先を運ぶ。物理学はロケット方程式ではない方法で寛容である。その問題はエンジニアリングから生物学、生態学、社会学、および倫理にシフトする。あなたが選ばなかった旅に生まれることが何を意味するか、およびそれが終わる前に死ぬこと。これらは小さい問題ではない。彼らは異なったものである。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.28.md",
+  "en": "What the arithmetic ultimately delivers is not despair. It delivers proportion. The solar system — the vast volume from Earth's orbit to the Oort Cloud — is the largest thing human beings have ever navigated, and it took the better part of a century to build the tools to explore even its near reaches. Interstellar space is not the next step on that ladder. It is a cliff above it. The cliff is not infinite; it has a top. But reaching the top requires either a revolution in energy production and materials science (the laser array), a sustained mastery of fusion propulsion (Daedalus/Icarus), or a civilisational commitment to patience at a timescale no human institution has yet maintained (the generation ship). All three of those are genuinely possible. None of them is imminent.",
+  "cur": "その算術が最終的に配信するものは絶望ではない。それは比率を配信する。太陽系——地球の軌道からオールトの雲までの広大な体積——人類がこれまで航行した最大のものであり、その近い到達を探査するためのツールを構築するのに約1世紀かかった。星間空間はその梯子上の次のステップではない。それはそれの上の絶壁である。その絶壁は無限ではない。それは頂上を持っている。しかし、頂上に到達することには、エネルギー生産と材料科学の革命（レーザー配列）、核融合推進の持続的な習熟（Daedalus/Icarus）、または忍耐の文明的なコミットメント、人間の機関がこれまで維持していない時間規模（世代船）のいずれかが必要です。これら3つはすべて本当に可能である。どれも差し迫ったものではない。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.29.md",
+  "en": "This is what \"the long view\" means when it faces outward past the heliopause. Not that we cannot go, but that going honestly requires holding the scale in your mind without flinching — the 73,000 years Voyager 1 would need, the gram-scale probe screaming through in hours, the great-great-grandchildren arriving at a star their ancestors pointed the ship toward. The nearest star is not a destination. It is a definition: of how far we have come, how far the physics still permits us to go, and how much of the distance between those two points we have not yet crossed.",
+  "cur": "これは「ヘリオポーズを過ぎて外向きに直面するとき「長い見方」は意味するものである。私たちが行くことができないということではなく、正直に行くことはあなたの心の中でスケールを保つことが必要とするということ——Voyager 1が必要とするであろう73,000年、数時間でスクリーミングするグラム規模のプローブ、彼らの祖先が指す船に向かう星に到達した素晴らしい-素晴らしい孫。最も近い星は目的地ではない。それは定義である。私たちがどのくらい遠くに来たか、物理学が私たちが行く許可する距離、そしてこれら2つのポイント間でまだクロスしていない距離の多くの量。"
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.30.caption",
+  "en": "New Horizons, which crossed nearly five billion kilometres to Pluto and on into the Kuiper Belt — the newest of our outbound craft, and a reminder that even our boldest deep-space missions are still voyages within the solar system’s own front garden.",
+  "cur": "New Horizons、ほぼ50億キロメートルをカイパーベルトに冥王星に横断し、——最新のアウトバウンド工芸で、そしてさらに深いスペースミッションでさえ太陽系の自身の前庭内の航海であるというリマインダー。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "dek",
+  "en": "How do you steer to a moving planet across a hundred million kilometres of nothing, with no map, no horizon, and a twenty-minute lag on every instruction? The seventy-year answer is stranger, and more human, than the machines suggest.",
+  "cur": "百万キロメートル先の動く惑星へ、地図もなく、地平線もなく、すべての指示に20分の遅延がある中で、どのように舵を取るのか？その七十年の答えは、機械が示唆するものより奇妙で、より人間的である。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.0.md",
+  "en": "There are no roads in space. No coastline, no horizon, no landmark to steer by — and the one thing every driver on Earth now takes for granted, a satellite constellation whispering *you are here*, exists only in a thin shell a few thousand kilometres thick around one planet. Leave it, and you are alone with a problem three parts deep: **Where am I? Which way am I pointed? And how do I get from here to a place that is itself moving, fast, and won't be there when I arrive?**",
+  "cur": "空間に道はない。海岸線もなく、地平線もなく、舵を取るための目印もない――地球上のあらゆる運転者が今当然のこととして信じている唯一のもの、すなわち*ここにいます*と囁く衛星群は、ただ一つの惑星の周囲の厚さ数千キロメートルの薄い殻の中にしか存在しない。それを離れれば、あなたは三重の問題だけを持つことになる：**私はどこにいるのか？私はどの方向を向いているのか？ここから、それ自体が速く動いていて、私が到着する時には既にそこにない場所へ、どのようにして到達するのか？**"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.1.md",
+  "en": "Get it wrong and there is no recovering: a fraction of a degree of aiming error, multiplied across a hundred million kilometres, is the difference between an orbit and a crater. Get it right and it vanishes — navigation is the quiet skill under all the loud ones, the thing no press release leads with and no mission survives without. Consider the standard it is held to. [New Horizons](/missions?id=new-horizons) crossed nearly five billion kilometres to [Pluto](/explore) over nine and a half years and arrived within about a hundred kilometres, and about two and a half minutes, of a plan drawn up before it left the launch pad. That is the precision this is about — and the astonishing thing is how old, and how human, the ideas behind it turn out to be.",
+  "cur": "間違えれば取り返しがつかない。数度の照準誤差は、数億キロメートル先では軌道と衝突の違いになる。正しく行えば、それは見えなくなる——航法とは、派手な技術の底に隠れた静かな技能であり、どのプレスリリースも最初には語らず、しかしいかなるミッションも存在できないものだ。それが保持する基準を考えよ。[New Horizons](/missions?id=new-horizons)は約50億キロメートルを[冥王星](/explore)に向けて9年半かけて横切り、打ち上げ前に引かれた計画から、約100キロメートル、約2分半の範囲内に到着した。これが問題となっている精度である——そして驚くべきことは、その背後にある考え方がいかに古く、いかに人間的であるかということだ。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.2.md",
+  "en": "Because the answer has barely changed. The machines got smaller and then got smart; the distances grew until the ground could no longer keep up; but underneath, spacecraft still navigate the way an eighteenth-century sailor did — by measuring angles to the only fixed things there are, the stars, and by keeping honest count of every push they've ever felt. This is the story of that count, and of the slow handover of the whole delicate business from a room full of people on the ground to the spacecraft itself.",
+  "cur": "答えはほとんど変わっていないからだ。機械は小さくなり、その後賢くなった。距離は地上がもはや追いつけないほど増大した。しかし根底にあるのは、宇宙船が18世紀の船乗りと同じように航行している事実である――唯一の固定されたもの、すなわち星に対する角度を測定し、そして彼らが感じたあらゆる推進の正確な記録を保つことによって。これはその記録の物語であり、そして全体の繊細な仕事の、地上の満室から宇宙船それ自体への、遅い引き継ぎの物語である。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.4.md",
+  "en": "Start with the hardest of the three questions, the one that sounds easiest: *where am I?* On Earth you look. In space, for a long time, you couldn't — so instead you **kept count**.",
+  "cur": "三つの質問の最も難しい、最も簡単に聞こえる質問から始めよ：*私はどこにいるのか？* 地球上ではあなたは見る。宇宙では、長の間、見ることができなかった――だから代わりに、あなたは**計数を保つ**のであった。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.5.md",
+  "en": "The technique is called [dead reckoning](/science/mission-phases/dead-reckoning), and it is exactly as old as ocean navigation. If you know where you started, and you measure every acceleration you've felt since — every engine burn, every nudge — you can add them all up and know, in principle, where you are now. A spacecraft does this with an *inertial measurement unit*: a cluster of gyroscopes that hold a fixed orientation and accelerometers that feel every change in motion, integrating quietly at the craft's core the whole journey into a running guess at position and velocity.",
+  "cur": "この技術は[推測航法](/science/mission-phases/dead-reckoning)と呼ばれ、それは海洋航法と同じくらい古い。あなたが開始地点を知っており、それ以来感じたあらゆる加速度――あらゆるエンジン燃焼、あらゆる押し――を測定するなら、あなたはそれらすべてを加え合わせ、原則として、あなたが今どこにいるかを知ることができる。宇宙船はこれを*慣性測定ユニット*で行う：固定方向を保つジャイロスコープのクラスタと、運動のあらゆる変化を感じる加速度計が、船の核で全旅程を静かに統合し、位置と速度についての走行推測値となる。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.6.caption",
+  "en": "Dead reckoning — the oldest trick at sea, and still the one underneath. Hold the known start, add every push you have felt since, and a running guess at where you are slowly rots; a star sighting resets the drift to zero.",
+  "cur": "推測航法――海上の最も古いトリック、そして相変わらずその下にあるもの。既知の開始点を保ち、それ以来感じたあらゆる推進を加え、あなたがいるであろう走行推測値は徐々に腐り始める。星の観測は漂流をゼロにリセットする。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.7.md",
+  "en": "\"In principle\" is carrying weight in that sentence. Dead reckoning drifts. Every tiny error in every measurement accumulates, so the guess slowly rots, and the further you go the worse it gets. Which is why, on the flights that mattered most, they put a human in the loop with a sextant.",
+  "cur": "「原則として」はその文で重みを運んでいる。推測航法は漂流する。あらゆる測定値のあらゆる小さなエラーが蓄積するため、推測値は徐々に腐り、そしてあなたが行くほど悪くなる。それが、最も重要なフライトでは、彼らは六分儀を持つ人間をループに入れた理由である。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.8.md",
+  "en": "This is the detail worth holding onto. When [Apollo 8](/missions?id=apollo8) became the first crewed ship to leave Earth's gravity and navigate to another world in December 1968, its crew steered in part the way Cook crossed the Pacific: Jim Lovell at a telescope and sextant built into the hull, sighting known stars against the Earth's horizon, feeding the angles into a computer to correct the drift. The Apollo Guidance Computer that ran those sums had about 72 kilobytes of fixed memory and ran at a clock speed a modern doorbell would sneer at — and it flew nine crews to the Moon and [two hands' worth of them onto it](/missions?id=apollo11). The genius wasn't the hardware. It was the recognition that a machine to keep the count and a human to check it against the stars, together, could do what neither could alone.",
+  "cur": "これは保つ価値のある詳細である。[Apollo 8](/missions?id=apollo8)が1968年12月に地球の重力を離れ、別の世界へ航行する最初の乗員飛行船になったとき、その乗組員は部分的にクックが太平洋を横断した方法で舵を取った：ジム・ラヴェルが船体に組み込まれた望遠鏡と六分儀を持って、地球の地平線に対して既知の星を目撃し、角度をコンピュータに入力してドリフトを補正した。それらの計算を実行したApollo Guidance Computerは、固定メモリが約72キロバイトで、現代のドアベルがあざけるであろうクロック速度で動作していた――そしてそれは9つの乗組員を月へ飛ばし、[その手の分だけを月面へ](/missions?id=apollo11)飛ばした。天才はハードウェアにはなかった。それは、計数を保つための機械と、星に対してそれをチェックする人間が一緒に、どちらかが一人では成し遂げることができないことができるという認識であった。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.9.md",
+  "en": "The idea did not even belong to spaceflight. In those same years a reconnaissance aircraft was flying it: the SR-71 Blackbird, cruising at three times the speed of sound where the daytime sky is already dark, carried a star tracker behind the cockpit that sighted stars through a quartz window — at least two at a time, matched against an onboard catalogue — and used them to correct the drift of its inertial platform, exactly as a spacecraft does. Its crews called the unit R2-D2. The problem is the same problem at seventy thousand feet or in orbit: keep an honest count, and check it against the one thing that does not move.",
+  "cur": "その考え方は宇宙飛行にさえ属していなかった。それらの同じ年に、偵察機がそれを飛ばしていた：SR-71ブラックバード、音速の3倍の速度で巡航しており、日中の空は既に暗いところで、コックピットの後ろにスター・トラッカーを搭載していて、それは水晶窓を通して星を目撃した――一度に少なくとも2つ、搭載されたカタログに対して照合された――そして宇宙船が行う場所とまったく同じに、その慣性プラットフォームのドリフトを補正するためにそれを使用した。その乗組員はそのユニットをR2-D2と呼んだ。問題は、七万フィートまたは軌道の問題と同じである：正直な計数を保ち、動かない唯一のもの――に対してそれをチェックする。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.10.caption",
+  "en": "Apollo 8, December 1968 — the first crew to leave Earth and navigate to another world, correcting a drifting count the way a sailor would: a sextant, the stars, and the Earth’s horizon.",
+  "cur": "Apollo 8、1968年12月――地球を離れ別の世界へ航行する最初の乗組員。漂流する計数を船乗りが行うような方法で補正した：六分儀、星、そして地球の地平線。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.11.md",
+  "en": "Every deep-space craft still carries the machine half of that pair. But the crewed sextant was a stopgap for a specific decade. For everything uncrewed — every probe to every planet — the honest count had to be checked some other way. It had to be checked from the ground.",
+  "cur": "あらゆる深宇宙船はまだそのペアの機械の半分を携えている。しかし乗員の六分儀は特定の10年間の応急処置であった。すべての無人機――あらゆる惑星へのあらゆるプローブ――にとって、正直な計数は他のいくつかの方法でチェックされなければならなかった。それは地上からチェックされなければならなかった。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.13.md",
+  "en": "Here is the fact that undoes most people's intuition about space navigation: for most of the missions in this atlas, **the spacecraft doesn't know where it is. The ground does.**",
+  "cur": "ここに宇宙航行についての直感のほとんどを覆す事実がある：このアトラスの大部分のミッションについて、**宇宙船はそれがどこにいるかを知らない。地面が知っている。**"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.14.md",
+  "en": "The instrument is the [Deep Space Network](/science/mission-phases/dsn) — three great dish complexes spaced roughly 120° apart in California, Spain, and Australia, so that as the Earth turns, at least one of them can always see into deep space. When a dish points at a probe, it isn't mainly listening for data. It's measuring two things with monstrous precision. First, **range**: it sends a timing signal, the spacecraft echoes it back, and the round-trip time — multiplied by the speed of light — gives the distance, good to a few metres across billions of kilometres. Second, **velocity**: the craft's radio, shifted in frequency by its motion toward or away from us, is read for its Doppler shift, and the shift gives the speed along the line of sight to a fraction of a millimetre per second.",
+  "cur": "装置は[Deep Space Network](/science/mission-phases/dsn)である――カリフォルニア、スペイン、オーストラリアにおよそ120°間隔で配置された3つの大きなディッシュ・コンプレックス。地球が回転するにつれて、少なくとも1つはいつも深宇宙の中を見ることができる。ディッシュがプローブを指すとき、それは主にデータを聞いているわけではない。それは二つのことを怪物のような精密さで測定している。まず、**距離**：それはタイミング信号を送り、宇宙船がそれを戻し、そして往復時間――光の速度で掛け算される――は数十億キロメートル渡って数メートルまで良好な距離を与える。第二に、**速度**：その船の無線、その動きによって周波数がシフトされており、私たちに向かっているか離れているかは、その周波数ドップラーシフトについて読み取られ、そしてそのシフトは視線に沿った速度を毎秒数分の一ミリメートルの精度で与える。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.15.caption",
+  "en": "The Deep Space Network: three great dishes spaced roughly 120° apart, so one always faces deep space. Range comes from the round-trip light-time; speed from the radio’s Doppler shift. The ground does the flying.",
+  "cur": "Deep Space Network：およそ120°間隔で配置された3つの大きなディッシュ。距離は往復光時間から来る。速度は無線のドップラーシフトから来る。地面が飛行を行う。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.16.md",
+  "en": "Track those two numbers over hours as the Earth rotates and the geometry changes, and a room of navigators can reconstruct a spacecraft's path through the solar system without the spacecraft having any strong opinion about it at all. When [Mariner 4](/missions?id=mariner4) returned the first close photographs of another planet in 1965, the craft was a passenger; the navigating was done on Earth. The same was true of the [Voyagers](/missions?id=voyager-1) and of [Cassini](/missions?id=cassini) — and that knife-edge arrival at Pluto, the one that opened this essay, was flown the same way: reconstructed and corrected almost entirely from three dishes on the ground.",
+  "cur": "地球が回転し、ジオメトリが変わるにつれて、数時間にわたってこれら二つの数字を追跡し、ナビゲーターの一室は、宇宙船がそれについてまったく強い意見を持つことなく、太陽系を通る宇宙船の経路を再構築することができる。[Mariner 4](/missions?id=mariner4)が1965年に別の惑星の最初の近接写真を返したとき、その船は乗客であった。航行は地球で行われた。[Voyagers](/missions?id=voyager-1)と[Cassini](/missions?id=cassini)についても同じことが真実であった――そしてその冥王星への刃の先の到着、この論文を開いたのは、同じ方法で飛行された：ほぼ完全に地面上の三つのディッシュから再構築され、補正された。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.17.md",
+  "en": "But the Deep Space Network has one adversary it cannot argue with, and its name is the speed of light. At Mars, a command takes anywhere from about three to twenty-two minutes to arrive, and the acknowledgement takes just as long to come back. At Pluto it is four and a half *hours*, one way. The ground can navigate a probe beautifully — as long as nothing needs to be decided faster than light can carry the news home and a reply back out. For seventy years, almost nothing did. That is about to be the whole problem.",
+  "cur": "しかし、Deep Space Networkには、それが議論することができない一つの敵がいて、その名は光の速度である。火星では、コマンドは到着するのに約3分から22分の間ずっとかかり、その確認応答が戻ってくるのに同じくらい長くかかる。冥王星では、それは一方向で4時間半である。地面はプローブを美しく航行することができる――光が家にニュースを運び、返信を戻すことができるより速く決定される必要がある限り。七十年間、ほぼ何もそうしなかった。それは全体の問題であろうとしている。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.19.md",
+  "en": "Before you can go anywhere, you have to solve the second question — *which way am I pointed?* — and space is quietly hostile to it. There is no up. There is no down. A spacecraft tumbling in the dark has no floor to tell it which way it's facing, and getting that wrong means pointing your antenna away from Earth, your camera away from the target, your engine the wrong way down the trajectory.",
+  "cur": "あなたがどこかへ行く前に、あなたは第二の質問を解く必要がある――*どちらが上向きか？* ――そして空間はそれに対して静かに敵対的である。上はない。下もない。暗いところで回転している宇宙船は、それが向いている方向を示すフロアを持っていない。そしてそれを間違えることは、あなたのアンテナを地球から離れるように向けること、あなたのカメラをターゲットから離れるように向けること、あなたのエンジンを軌道を下がる間違った方法で向けることを意味する。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.20.md",
+  "en": "The fix is to agree, in advance, on a set of directions that never move, and to measure yourself against them constantly. That agreement is a [reference frame](/science/scales-time/frames) — for most of modern spaceflight, the one called J2000, an orientation pinned to the average positions of the stars at noon on the first day of the year 2000. It is an arbitrary anchor, chosen for convenience, and it is now the shared grid that nearly every spacecraft, ephemeris, and mission plan quietly hangs from.",
+  "cur": "その修正は、あらかじめ、決して動かない方向のセットに同意し、自分たちをそれに対して絶えず測定することである。その合意は[参照フレーム](/science/scales-time/frames)である――最新の宇宙飛行のほとんどの場合、J2000と呼ばれるもの。それは2000年の年の最初の日の正午の星の平均位置にピン止めされた方向である。それは利便性のために選ばれた任意のアンカーであり、それはすべての宇宙船、暦表、そしてミッション計画のほぼすべてが今静かに掛かっているゲリッドである。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.21.md",
+  "en": "To find its place in that grid, a craft reads the sky. A **star tracker** is a small camera that photographs a patch of stars, matches the pattern against an onboard catalogue, and from that single fix knows precisely which way it is oriented in the fixed frame — a machine doing, in a fraction of a second, exactly what Lovell did by hand at his sextant. Between fixes, the drifting gyroscopes carry the count; each time the star tracker gets a clean look, it resets the drift to zero. The sky, again, is the only thing worth trusting. Everything else is interpolation between glimpses of it.",
+  "cur": "そのグリッド内のその場所を見つけるために、宇宙船は空を読む。**スター・トラッカー**は、星のパッチを写真に撮り、パターンを搭載されたカタログと照合し、その単一の修正から、それが固定フレーム内でどのように方向付けられているかを正確に知っている小さなカメラである――一秒の一部で、ロベルが彼の六分儀で手動で行ったことと全く同じ機械。修正の間、漂流するジャイロスコープが計数を運び、星トラッカーが清潔な外観を得るたびに、それは漂流をゼロにリセットする。空は、また、信頼する価値のある唯一のものである。他のすべては、それを一見することの間の補間である。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.22.caption",
+  "en": "Which way is up, when there is no up: a star tracker photographs a patch of sky, matches the pattern to an onboard catalogue, and knows at once how the craft is oriented in the fixed J2000 frame. Between fixes, the gyros carry the count.",
+  "cur": "上はどちらか、上というものがないとき：スタートラッカーは空の一角を撮影し、そのパターンを搭載星表と照合して、固定されたJ2000座標系の中で機体がどちらを向いているかを即座に知る。次の更新までの間は、ジャイロが姿勢を積算し続ける。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.24.md",
+  "en": "Now the third question, the one that turns navigation from bookkeeping into something closer to marksmanship. You know where you are. You know which way you're pointed. **Mars is somewhere else — and by the time you get there, it will have moved.**",
+  "cur": "さて、第三の質問。それは航行を簿記から射撃に近い何かへ変える。あなたはあなたがどこにいるかを知っている。あなたはあなたがどちらを向いているかを知っている。**火星は他の場所にある――そしてあなたがそこに到達する時までに、それは移動したであろう。**"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.25.md",
+  "en": "You do not, ever, fly straight at it. Fuel is the currency of spaceflight, and there is never enough, so you fly the path that costs the least: a long, curving [transfer orbit](/science/transfers/hohmann-transfer) that leaves Earth and coasts, engineless, along an arc calculated so that its far end and the target planet arrive at the same rendezvous point at the same instant, months later. Working out that arc — *what velocity, in what direction, gets me from this moving point to that moving point in exactly this much time?* — is a piece of orbital mechanics old enough to have a name, the [Lambert problem](/science/transfers/lambert-problem), and solving it is the core of every interplanetary launch window.",
+  "cur": "あなたは決してそれに真っ直ぐに飛びつかない。燃料は宇宙飛行の通貨であり、そしてそれは決して十分ではないため、あなたは最もコストがかかる経路を飛ぶ：地球を離れ、エンジンなしでコースト、その遠い端とターゲット惑星が同じランデブーポイントに同じ瞬間に到達するように計算されたアーク。その弧を解く――*どの速度で、どの方向で、この動く点からあの動く点へ、正確にこれだけの時間で？* ――は、その名を持つのに十分な古い軌道力学の断片である[ランベルト問題](/science/transfers/lambert-problem)で、それを解くことはあらゆる惑星間打ち上げウィンドウの核である。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.26.md",
+  "en": "The most elegant trick in the whole discipline is to let the planets do the pushing. A spacecraft that swings close past a planet can steal a whisper of that planet's own orbital motion and fling away faster than it came, for free — a [gravity assist](/science/transfers/gravity-assist). In the mid-1960s a young mathematician at JPL named Gary Flandro, working out summer-job calculations, noticed that the outer planets were drifting into a once-in-175-year alignment that would let a single probe bank one assist into the next into the next, all the way out. That observation became the Grand Tour: [Voyager 2](/missions?id=voyager-2) used Jupiter to reach Saturn, Saturn to reach Uranus, Uranus to reach Neptune, a four-planet bank shot that saved decades of flight time and remains, today, the only time anything has visited the ice giants at all.",
+  "cur": "全体の学問における最も優雅なトリックは、惑星にプッシングさせることである。惑星の近くを揺さぶることができる宇宙船は、その惑星の独自の軌道運動の小声を盗み、それが来た以上に速く逃げることができる――自由のため――重力アシスト。1960年代半ばに、JPLの若い数学者ゲイリー・フランドロが、夏の仕事の計算を行っていたとき、外側の惑星が、単一のプローブが次から次へアシストを銀行にすることを可能にするであろう一度に175年のアライメントに漂流していることに気づいた、すべて行き。その観察はGrand Tourになった：[Voyager 2](/missions?id=voyager-2)は木星を使用して土星に到達し、土星を使用してウラヌスに到達し、ウラヌスを使用して海王星に到達した。4惑星の銀行ショット。数十年の飛行時間を節約し、今日、氷の巨人を訪問した唯一の時間のままである。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.27.caption",
+  "en": "You never fly straight at it. A Hohmann transfer coasts along the cheapest arc to a moving planet; a gravity assist steals a whisper of a planet’s own motion for free — the trick that let one probe bank Jupiter into Saturn into Uranus into Neptune.",
+  "cur": "あなたは決してそれに真っ直ぐに飛びつかない。ホーマン転移は、動く惑星への最もコストが安いアーク沿ってコースト。重力アシストは、惑星の独自の動きの小声を無料で盗む――木星をアシストして土星をアシストしてウラヌスをアシストしてネプチューンへアシストする1つのプローブを可能にするトリック。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.28.md",
+  "en": "No arc is ever flown perfectly. Small errors at launch become enormous ones over a hundred million kilometres, so every deep-space flight is a slow sequence of [trajectory-correction maneuvers](/science/mission-phases/tcm) — brief, precisely-timed nudges, each one the navigators on the ground closing the gap between where the craft *is* and where the plan says it should be. Navigation, in practice, is not a single act of aiming. It is aiming, checking, and re-aiming, over and over, for years.",
+  "cur": "完璧に飛行されたアークはない。打ち上げ時の小さなエラーは、百万キロメートルを越えて膨大なものになるため、すべての深宇宙飛行は、[軌道修正機動](/science/mission-phases/tcm)の遅い交連である――簡潔で、正確にタイミングされた押し、各々、地面上のナビゲーターが船がある場所と計画がそうあるべき場所の間のギャップを閉じている。実際には、航行は舞台指揮の単一の行為ではない。それは狙う、チェック、そして再び狙うことである、何度も、何年にもわたって。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.30.md",
+  "en": "Everything so far has a room of people on Earth in the loop. The last act of this story is the machine taking the count away from them — because at the frontier, light is simply too slow to ask permission.",
+  "cur": "これまでのすべては、地上の人間のループを持っている。この物語の最後の行為は、機械が彼らから数を離す――それは、光が単に許可を求めるには遅すぎるからである。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.31.md",
+  "en": "The first crack in the old model was **optical navigation**: instead of relying only on radio from the ground, the spacecraft photographs the target itself against the background stars and works out, onboard, exactly where the target sits relative to its own approach. [Cassini](/missions?id=cassini) refined this against Saturn's moons; it is how you thread a needle at a body whose position, before you arrive, is known less precisely than your own.",
+  "cur": "古いモデルの最初の亀裂は**光学航行**であった：地上からの無線のみに頼るのではなく、宇宙船はターゲット自体を背景の星に対して写真に撮り、搭載で機能し、正確にターゲットが自身の接近に対してどこに座っているかを機能する。[カッシーニ](/missions?id=cassini)はそれを土星の月に対して洗練された；それはあなたが到着する前にあなたの位置より既知の位置が正確に知られている体で針を通す方法である。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.32.md",
+  "en": "Then came the places where the ground genuinely cannot help. Landing on Mars is the sharpest example — the [entry, descent and landing](/science/mission-phases/edl) takes about seven minutes, and Mars is light-minutes away, so by the time Earth even hears that the craft has hit the atmosphere, the whole thing is long since over, one way or the other. No one on Earth lands a Mars rover. The rover lands itself. [Perseverance](/missions?id=perseverance) carried a system that photographed the ground rushing up, matched it in real time against an onboard map, recognised the terrain, and *chose* a safe spot to touch down — a machine doing Lovell's job, the Deep Space Network's job, and a bush pilot's job at once, in seven minutes, alone.",
+  "cur": "その後、地面が本当に助けることができない場所に来た。火星への着陸は、最も鋭い例である――[進入、降下及び着陸](/science/mission-phases/edl)は約7分かかり、そして火星は光分離れているため、地球がその船が大気に衝突したことを聞くまでに時間、全体は長の間終わっている。地球上の誰も火星ローバーを着陸させない。ローバーはそれ自体を着陸させる。[Perseverance](/missions?id=perseverance)は、地面が急速に上ってくるように写真に撮り、搭載されたマップに対してリアルタイムで照合し、地形を認識し、*そして*タッチダウンするための安全な場所を*選択*するシステムを運んだ――一度に、ロベルの仕事、Deep Space Networkの仕事、そしてブッシュパイロットの仕事をする機械、7分で、一人で。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.33.caption",
+  "en": "Perseverance lands itself. Mars is light-minutes away, so by the time Earth hears the craft has hit the atmosphere it is already down, one way or the other — the rover reads the terrain rushing up and chooses its own safe spot.",
+  "cur": "Perseverance はそれ自体を着陸させる。火星は光分離れているため、地球がその船が大気に衝突したことを聞くまでに時間、それは既に下がっている、どちらの方法で――ローバーは地形を読み、急速に上ってくるし、自らの安全な場所を選択する。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.34.md",
+  "en": "[OSIRIS-REx](/missions?id=osiris-rex) did something in the same family at the asteroid Bennu: navigating autonomously against surface features to touch a boulder-strewn rock the size of a small mountain and steal a handful of it. These are not the ground flying a passenger anymore. These are spacecraft that navigate themselves, because the alternative — waiting for the speed of light — would kill the mission.",
+  "cur": "[OSIRIS-REx](/missions?id=osiris-rex)は小惑星ベンヌで同様のことを行いました。表面の特徴に対して自律的に航行し、小さな山ほどの大きさの岩が散在する小惑星に接近して、そこから一握りのサンプルを盗み取ったのです。もはや地上が操縦する乗客機ではありません。これらは自らナビゲートする宇宙機であり、それは代替案——光の速度を待つこと——がミッションを失敗させてしまうからです。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.36.md",
+  "en": "Step back, and seventy years collapse into a single line. [Apollo 8](/missions?id=apollo8)'s Lovell at a sextant, sighting stars to correct a drifting count. The star tracker on a probe doing the identical thing, automatically, a billion kilometres out. [Perseverance](/missions?id=perseverance)'s descent camera reading the terrain because the people who built it are twelve light-minutes too far away to help. Different machines, sixty years apart, and underneath them one stubborn fact that never moved: there is no map of space, and there never was. There is only the sky, which doesn't move, and an honest count of every push, which slowly does — and the whole discipline comes down to trusting the first to correct the second. Every landing, every flyby, every photograph in this atlas rode on getting that right, and almost none of it was ever the headline.",
+  "cur": "ステップ・バック。そして七十年は単一の線に崩壊する。[Apollo 8](/missions?id=apollo8)のロベルが六分儀にいて、漂流する計数を補正するための星を目撃する。プローブのスター・トラッカーが同じことを自動的に行い、10億キロメートル離れて。[Perseverance](/missions?id=perseverance)の降下カメラが地形を読んでいるのは、それを構築した人々が12光分離れているため、助けるのは遅すぎるからである。異なる機械、60年離れて、そして根底にあるそれらは決して動かなかった一つのしつこい事実：空間の地図はなく、決してなかった。唯一の空が在り、それが動かない。そして正直な計数はあらゆる推進の、徐々に行うことになる――そして全体の学問は最初の何かに対して、秒にしる。あらゆる着陸、あらゆるフライバイ、このアトラスのあらゆる写真は、それを正しく得るのに乗った。そしてほぼ何もそれは決してヘッドラインであった。"
+ },
+ {
+  "rel": "essays/navigation.json",
+  "at": "body.37.md",
+  "en": "And it is about to stop being quiet. The further out we push — toward [the outer system](/explore), toward crewed flights to Mars where a twenty-minute lag is the gap between a correction and a crater — the less the ground can do in time, and the more each craft must become its own navigator: its own sextant, its own [Deep Space Network](/science/mission-phases/dsn), its own room full of people. We spent seventy years teaching machines to find their way by the sky. We are about to find out how well they learned.",
+  "cur": "そしてそれは静かであることを止めようとしている。あなたが押す限り、外側へ――[外側システム](/explore)の方へ、火星への乗員飛行へ、20分のラグは修正とクレーターの間のギャップである――より少なく、地面はタイムですることができる。そしてより多く、各宇宙船はそれ独自のナビゲーターになる必要がある：それ自体が六分儀。それ自体が[Deep Space Network](/science/mission-phases/dsn)。それ自体が人間の一室。私たちは七十年を機械に教えるのに費やした。空によって彼らの方法を見つけるために。私たちはすぐに、彼らがどのくらい上手に学んだかを発見するつもりである。"
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "dek",
+  "en": "The chemical rocket is a century-old ceiling we've ridden with extraordinary skill. The roads out — ion drives, [solar sail](/science/propulsion/solar-sail)s, [nuclear-thermal](/science/propulsion/nuclear-thermal) engines — were sketched before the first satellite flew. They are only now, haltingly, being built.",
+  "cur": "化学ロケットは100年の歴史を持つ上限であり、私たちはそれを並外れた技術で使いこなしてきた。脱出路となるもの——イオンドライブ、[ソーラーセイル](/science/propulsion/solar-sail)、[核熱](/science/propulsion/nuclear-thermal)エンジン——は最初の衛星が飛ぶ前にすでにスケッチされていた。それらが実際に組み立てられるようになったのは、ようやく最近になってからのことである。"
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.0.md",
+  "en": "Sometime in the last decade, if you have been paying attention to spaceflight, you may have noticed a strange doubling of the word *revolutionary*. It attaches to reusable first stages, to rideshare manifests, to the plummeting cost of a kilogram to orbit. These are real achievements, genuinely important — but underneath them, if you trace the physics, is a machine that Hermann Oberth described in 1923 and Robert Goddard flew in 1926. The engine burns a fuel and an oxidizer, heats gas, and blows it out the back. A hundred years of metallurgy and manufacturing have made it astonishingly good. They have not changed what it is.",
+  "cur": "この10年間の後半、宇宙飛行に注意を払ってきたならば、*革命的*という言葉が奇妙に二重化されたことに気づいたかもしれない。それは再利用可能な第一段、乗り合わせマニフェスト、軌道上1キログラムの急落する費用に付着している。これらは本当の成果であり、真に重要なものだが、その根底に、物理学をたどれば、ヘルマン・オーベルトが1923年に記述し、ロバート・ゴダードが1926年に飛ばした機械がある。エンジンは燃料と酸化剤を燃やし、ガスを加熱し、背後に吹き出す。100年間の冶金学と製造技術により、それは驚くほど優秀になった。しかしそれが何であるかは変わっていない。"
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.1.md",
+  "en": "The constraint is not engineering. It is chemistry. Mix any fuel with any oxidizer and the energy available is set — not by how cleverly you design the combustion chamber, but by the bond energies of the molecules you are breaking and forming. The best you can do with hydrogen and oxygen, burning cleanly at the [specific impulse](/science/propulsion/specific-impulse) that measures how efficiently a rocket uses its propellant, is about 450 seconds. The RS-25 engine that powered every Space Shuttle main engine achieves 452 seconds in vacuum. The RL-10B-2, at 465 seconds, is the highest of any production chemical engine ever built, a number refined across six decades of work. The ceiling is near. We are against it.",
+  "cur": "制約は工学ではない。それは化学である。どの燃料をどの酸化剤と混合しても、利用可能なエネルギーは決まっている。それは燃焼室をどれほど巧妙に設計するかではなく、あなたが壊して形成する分子の結合エネルギーによって決まるのだ。水素と酸素の最良の場合、ロケットがその推進剤をいかに効率よく使用するかを測定する[比推力](/science/propulsion/specific-impulse)で清浄に燃焼するとき、約450秒である。すべてのSpace Shuttleのメインエンジンを推進したRS-25エンジンは真空中で452秒を達成する。RL-10B-2は465秒で、これまで製造されたあらゆる化学エンジンの中で最高であり、その数値は6十年にわたる開発を通じて洗練されてきた。天井は近い。私たちはそれに直面している。"
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.2.md",
+  "en": "And a ceiling matters because of a trap. The [Tsiolkovsky rocket equation](/science/propulsion/tsiolkovsky) — derived in 1903, three years before Goddard lit his first engine — says that the fraction of a rocket's initial mass that must be propellant grows *exponentially* with the ratio of the velocity change needed to the exhaust velocity. Double the mission's required speed, and you don't double the fuel load — you square it. Beyond a certain point, the vehicle becomes almost entirely propellant, leaving almost no room for structure, instruments, or payload. Chemical rockets have reached that point. Getting from low Earth orbit to Mars on a chemical engine takes months; getting from low Earth orbit to Mars *and back*, without a propellant depot waiting at the other end, is close to impossible. Getting anywhere further — the outer solar system on a reasonable timescale, with a payload worth sending — is not a matter of designing a better engine. It is a matter of leaving chemistry behind.",
+  "cur": "そして、天井が重要なのは、それが罠だからである。[チオルコフスキーロケット方程式](/science/propulsion/tsiolkovsky)は、1903年に導出され、ゴダードが初めてエンジンを点火する3年前のことだが、ロケットの初期質量の中で推進剤である必要がある割合は、必要な速度変化と排気速度の比に対して*指数関数的に*増加することを示している。ミッションの必要速度を2倍にすれば、燃料負荷が2倍になるのではなく、2乗になるのだ。ある点を超えると、機体はほぼ完全に推進剤となり、構造、機器、またはペイロードの余地がほぼなくなる。化学ロケットはその点に到達している。低軌道火星軌道から火星に到達するのに化学エンジンで数ヶ月かかり、低地球軌道から火星*まで往復する*、反対側で待つ推進剤デポがない場合は、ほぼ不可能である。さらに遠い場所に行くこと――太陽系外部への合理的な時間スケールで、送る価値のあるペイロード付きは、より優れたエンジンを設計することの問題ではない。それは化学を置き去りにすることの問題である。"
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.4.md",
+  "en": "The first alternative to chemistry was demonstrated not in a laboratory but in space, in 1998, aboard a spacecraft called Deep Space 1. Its engine consumed xenon gas — inert, heavy, easy to store — and instead of burning it, *ionized* it: stripped electrons away with an electric field, accelerated the resulting ions through a voltage gradient, and expelled them at tens of kilometres per second. The [ion thruster](/science/propulsion/ion-drive) it carried produced 92 millinewtons of thrust. That is, very nearly, the weight of a small apple. At full power it burned through about 3.25 milligrams of propellant per second — ten ounces over a full day of operation. By every conventional measure of a rocket engine, it was a joke.",
+  "cur": "化学に対する最初の代替案は、実験室ではなく、宇宙で、1998年に、Deep Space 1と呼ばれる宇宙船に搭載されて実証された。そのエンジンはキセノンガスを消費した——不活性で、重く、保存しやすい——そしてそれを燃やすのではなく、*イオン化*した。電場で電子を取り除き、結果として生じるイオンを電圧勾配を通じて加速し、それらを毎秒数十キロメートルで放出した。それが搭載していた[イオンスラスタ](/science/propulsion/ion-drive)は92ミリニュートンの推力を生成した。これは、非常にほぼ、小さなりんごの重さである。フルパワーで、それは毎秒約3.25ミリグラムの推進剤を燃やした——1日の完全な操作で10オンス。ロケットエンジンのあらゆる従来的な尺度によって、それはジョークだった。"
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.5.md",
+  "en": "What it was not a joke about was efficiency. An ion engine trades thrust for specific impulse: where the best chemical engine peaks near 450 seconds, a well-designed ion thruster achieves 3,000 seconds or more — roughly seven times the exhaust velocity, which means seven times as much velocity change per kilogram of propellant. The trade-off is time. Burning a tiny apple's weight of force continuously for days and months, a spacecraft accelerates to speeds no chemical burn could reach at any reasonable propellant fraction. Deep Space 1 proved the concept. [Dawn](/missions?id=dawn) proved it at scale.",
+  "cur": "効率についてはジョークではなかったのである。イオンエンジンは推力を比推力と交換する。最良の化学エンジンが450秒近くでピークに達する一方、よく設計されたイオンスラスタは3,000秒以上を達成する——排気速度はほぼ7倍であり、これは推進剤1キログラムあたり7倍の速度変化を意味する。トレードオフは時間である。数日間と数ヶ月間、継続的に小さなりんごの重さの力を燃やし、宇宙船は化学燃焼が合理的な推進剤分数で到達できない速度に加速する。Deep Space 1は概念を証明した。[Dawn](/missions?id=dawn)はそれを規模で証明した。"
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.6.md",
+  "en": "Dawn launched in 2007 carrying three NSTAR ion thrusters — the direct descendants of Deep Space 1's engine — and used them to do something no spacecraft had ever done: orbit one body in the asteroid belt, decelerate to a stop at [Vesta](/explore), orbit that for a year, then fire up again and spiral out to a second body, [Ceres](/explore), and orbit that too. A chemical mission with the same objectives would have required so much propellant it could not have been launched on any existing rocket. The ion engines, running for a total of more than five and a half years of accumulated thrust time, made the same journey on 425 kilograms of xenon. Dawn's specific impulse was 3,100 seconds. Each kilogram of xenon did the work of seven kilograms of liquid hydrogen.",
+  "cur": "Dawn は2007年に3つの NSTAR イオンスラスタを搭載して打ち上げられた——Deep Space 1 のエンジンの直接の子孫——そしてそれらを使用して、どの宇宙船もこれまでしたことのないことをした。小惑星帯の1つの天体を軌道上に置き、[ベスタ](/explore)に停止するために減速し、1年間それを軌道上に置き、その後再び点火して2番目の天体[セレス](/explore)に螺旋状に出て、それも軌道上に置いた。同じ目標を持つ化学的なミッションは、既存のロケットで打ち上げることができないほど多くの推進剤が必要だったであろう。イオンエンジンは、累積推力時間の5年半以上を合計で実行し、425キログラムのキセノンで同じ経路を作った。Dawn の比推力は3,100秒であった。キセノン1キログラムはそれぞれ液体水素7キログラムの仕事をした。"
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.7.md",
+  "en": "What launched in October 2023 toward the metal asteroid Psyche pushed the idea further. [Psyche](/missions?id=psyche) uses Hall-effect thrusters — a different architecture, in which the magnetic field traps electrons and creates a ring discharge that accelerates ions more efficiently at lower power. Hall thrusters are cheaper, simpler, and compact enough to fit four of them onto a Discovery-class spacecraft. Psyche's thrusters operate at about 1,750 seconds specific impulse, lower than Dawn's ion engines but more than four times the chemical ceiling, and they represent the first time Hall thrusters — common workhorses of Earth-orbit station-keeping — have been trusted for deep-space primary propulsion. The same technology that nudges geostationary satellites by centimetres per second is now flying an interplanetary mission.",
+  "cur": "2023年10月に金属小惑星Psycheに向けて打ち上げられたものは、このアイデアをさらに推し進めた。[Psyche](/missions?id=psyche)はホールエフェクトスラスタを使用する——異なるアーキテクチャであり、磁場が電子をトラップし、より低い電力でイオンをより効率的に加速するリング放電を作成する。ホールスラスタはより安く、より単純で、Discovery級宇宙船に4つを装着できるほどコンパクトである。Psycheのスラスタは約1,750秒の比推力で動作し、Dawnのイオンエンジンより低いが、化学的な天井の4倍以上であり、地球軌道ステーション維持の一般的な仕事馬であるホールスラスタが深宇宙主推進力のために信頼されたのは初めてである。地静止衛星をセンチメートル毎秒で押す同じ技術が、惑星間ミッションを飛んでいる。"
+ },
+ {
+  "rel": "essays/new-propulsion.json",
+  "at": "body.8.caption",
+  "en": "A chemical rocket spends its whole life in a few minutes of fury, then coasts. An ion engine pushes with the weight of a coin — but never stops. Given enough time it quietly overtakes the rocket that shoved hardest, and keeps climbing.",
+  "cur": "化学ロケットはその全人生を数分間の激怒で過ごし、その後漂流する。イオンエンジンはコインの重さで押す——しかし決して止まらない。十分な時間があれば、それは静かに最も強くロケットをしたロケットを追い抜き、登り続ける。"
+ }
+]

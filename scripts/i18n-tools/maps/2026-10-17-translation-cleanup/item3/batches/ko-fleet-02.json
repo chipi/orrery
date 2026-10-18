@@ -1,0 +1,1358 @@
+[
+ {
+  "rel": "fleet/engine/vikas.json",
+  "at": "description",
+  "en": "The Vikas traces directly to the French Viking engine: ISRO licensed the design in the 1970s and indigenised it at the Liquid Propulsion Systems Centre, adapting it for Indian manufacturing and progressively increasing performance through successive marks. Running a gas-generator cycle on nitrogen tetroxide and UDMH, Vikas first flew in September 1993 on PSLV and has since become the core liquid stage for PSLV, GSLV, and LVM3. It is the engine that powered Chandrayaan-1 to lunar orbit, Mangalyaan to Mars, and the Chandrayaan-3 mission that put Vikram on the Moon's south polar region.",
+  "cur": "Vikas는 프랑스의 Viking 엔진에서 직접 유래했습니다. ISRO는 1970년대에 설계를 라이선스하고 Liquid Propulsion Systems Centre에서 국산화했으며, 인도 제조에 맞게 개조하고 연속적인 개선을 통해 성능을 높였습니다. 질소 사산화물과 UDMH를 사용하는 가스 발생기 사이클로 작동하며, Vikas는 1993년 9월 PSLV에서 처음 비행했고 그 이후 PSLV, GSLV, LVM3의 핵심 액체 단계 엔진이 되었습니다. 이것은 Chandrayaan-1을 달 궤도로, Mangalyaan을 화성으로, 그리고 Vikram을 달의 남극 지역에 착륙시킨 Chandrayaan-3 미션을 견인한 엔진입니다."
+ },
+ {
+  "rel": "fleet/engine/vikas.json",
+  "at": "best_known_for",
+  "en": "India's workhorse — powers PSLV, GSLV and LVM3 to this day",
+  "cur": "인도의 주력 엔진 — 오늘날까지 PSLV, GSLV, LVM3를 추진하다"
+ },
+ {
+  "rel": "fleet/engine/viking.json",
+  "at": "tagline",
+  "en": "The French engine that became India's workhorse",
+  "cur": "프랑스 엔진에서 인도의 주력 로켓 엔진이 되다"
+ },
+ {
+  "rel": "fleet/engine/viking.json",
+  "at": "description",
+  "en": "The Viking engine, developed by SEP in France for CNES and ESA, powered the first through fourth generations of the Ariane family from Ariane 1's inaugural launch on 24 December 1979. It burns nitrogen tetroxide and UH25 — a nitrogen-hydrazine blend — in a gas-generator cycle, a hypergolic propellant combination that trades efficiency for room-temperature storability and ignition simplicity. The Viking's most consequential second act came when ISRO licensed the design from France in the 1970s and developed it into the Vikas engine, which still flies on Indian launch vehicles today. One French engine design seeded two nations' access to space.",
+  "cur": "SEP가 프랑스에서 CNES와 ESA를 위해 개발한 Viking 엔진은 1979년 12월 24일 Ariane 1의 첫 발사부터 Ariane 제족의 1~4세대를 거쳐 동력을 공급했습니다. 이 엔진은 질소 사산화물(N₂O₄)과 UH25(질소-하이드래진 혼합물)을 가스 발생기 사이클로 연소시키며, 쌍곡성 추진제 조합으로서 효율성보다는 상온 저장 가능성과 점화의 단순함을 우선시합니다. Viking 엔진의 가장 중요한 두 번째 활약은 1970년대 ISRO가 프랑스로부터 설계를 허가받아 Vikas 엔진으로 개발하여 오늘날까지 인도 발사체에 여전히 사용되고 있다는 점입니다. 하나의 프랑스 엔진 설계가 두 국가의 우주 접근성을 열어주었습니다."
+ },
+ {
+  "rel": "fleet/engine/viking.json",
+  "at": "best_known_for",
+  "en": "The French engine later licensed to India as Vikas — powered Ariane 1–4",
+  "cur": "인도에 Vikas로 허가된 프랑스 엔진 — Ariane 1~4를 동력"
+ },
+ {
+  "rel": "fleet/engine/vulcain-2.json",
+  "at": "tagline",
+  "en": "Europe's hydrogen core engine — every Ariane 5 depended on it",
+  "cur": "유럽의 수소 코어 엔진 — 모든 Ariane 5가 이에 의존했다"
+ },
+ {
+  "rel": "fleet/engine/vulcain-2.json",
+  "at": "description",
+  "en": "Vulcain 2 was the engine Europe built to achieve independent access to geostationary orbit. Developed by Snecma under ESA's Ariane 5 program, it runs a gas-generator cycle on LOX and LH2, powering the cryogenic main stage from liftoff through main-engine cutoff while the solid boosters do the heavy lifting of the first minutes. Its December 2002 debut was lost to a nozzle-cooling failure that destroyed the vehicle; after redesign it flew successfully from 2005 and became the reliable heart of Ariane 5 through the rocket's final flight in July 2023, placing satellites and interplanetary probes — including JWST — on their trajectories.",
+  "cur": "Vulcain 2는 유럽이 정지궤도에 독립적으로 접근하기 위해 개발한 엔진이었다. ESA의 Ariane 5 프로그램 하에서 Snecma가 개발했으며, LOX와 LH2에서 가스 발생기 사이클을 작동하면서 고체 부스터가 초기 분의 무거운 작업을 수행하는 동안 발사부터 메인 엔진 차단까지 극저온 메인 스테이지에 전력을 공급한다. 2002년 12월의 첫 발사는 노즐 냉각 실패로 인해 차량이 파괴되었으나, 재설계 후 2005년부터 성공적으로 비행했으며 로켓의 2023년 7월 최종 비행까지 Ariane 5의 신뢰할 수 있는 핵심이 되어 JWST를 포함한 위성과 행성간 탐사선을 그들의 궤도에 배치했다."
+ },
+ {
+  "rel": "fleet/engine/vulcain-2.json",
+  "at": "best_known_for",
+  "en": "Europe's hydrogen core engine — powered every Ariane 5",
+  "cur": "유럽의 수소 코어 엔진 — 모든 Ariane 5에 전력을 공급했다"
+ },
+ {
+  "rel": "fleet/engine/yf-100.json",
+  "at": "tagline",
+  "en": "China's staged-combustion kerolox engine, powering the new generation",
+  "cur": "중국의 단계연소식 케로로스 엔진, 새로운 세대를 추진하다"
+ },
+ {
+  "rel": "fleet/engine/yf-100.json",
+  "at": "description",
+  "en": "The YF-100 is the engine that moved China's launch capability into the performance tier that Russia and the United States had occupied for decades. Developed by AALPT in Xi'an, it applies oxygen-rich staged combustion to LOX and RP-1 — the thermodynamic cycle that extracts the most energy from kerosene propellants — and first flew on 20 September 2015. Two YF-100s power the core stage of Long March 5, China's heaviest operational rocket, and clustered variants fly on Long March 6 and Long March 7. The YF-100 underpins China's lunar program, its space station resupply, and its growing commercial launch cadence.",
+  "cur": "YF-100은 중국의 발사 능력을 러시아와 미국이 수십 년간 점유했던 성능대로 끌어올린 엔진입니다. Xi'an의 AALPT에서 개발되었으며, 산화제 풍부 단계 연소 방식을 LOX와 RP-1에 적용합니다. 이는 케로신 추진제에서 가장 많은 에너지를 추출하는 열역학 사이클이며, 2015년 9월 20일에 처음 비행했습니다. 두 개의 YF-100은 중국의 가장 무거운 운용 중인 로켓인 Long March 5의 코어 스테이지에 전력을 공급하며, 집적된 변형은 Long March 6과 Long March 7에서 비행합니다. YF-100은 중국의 달 프로그램, 우주 정거장 보급, 그리고 증가하는 상용 발사 활동을 지탱합니다."
+ },
+ {
+  "rel": "fleet/engine/yf-100.json",
+  "at": "best_known_for",
+  "en": "China's modern staged-combustion kerolox engine — Long March 5/6/7",
+  "cur": "중국의 현대식 스테이징 연소 케로룩스 엔진 — Long March 5/6/7"
+ },
+ {
+  "rel": "fleet/engine/yf-77.json",
+  "at": "tagline",
+  "en": "China's first large hydrogen engine — Long March 5's foundation",
+  "cur": "중국의 첫 대형 수소 엔진 — Long March 5의 기초"
+ },
+ {
+  "rel": "fleet/engine/yf-77.json",
+  "at": "description",
+  "en": "The YF-77 is China's first large-scale cryogenic engine burning LOX and LH2, ending a multi-decade dependence on storable hypergolic propellants for core stages. Developed by AALPT and running a gas-generator cycle, two YF-77s power Long March 5's central core, providing the efficiency boost that made lunar-return and space-station-module missions achievable without a prohibitively large rocket. It first flew on 3 November 2016, and the early flights were not without difficulty — a YF-77 anomaly grounded Long March 5 for nearly three years before engineers identified and resolved the failure mode.",
+  "cur": "YF-77은 LOX와 LH2를 연소하는 중국 최초의 대규모 극저온 엔진으로, 코어 단계에서 저장식 쌍곡추진제에 대한 수십 년간의 의존성을 끝냈습니다. AALPT에서 개발했으며 가스발생기 사이클을 운용하는 YF-77 2개는 Long March 5의 중앙 코어에 동력을 공급하여, 금지적으로 큰 로켓 없이도 달 귀환 및 우주 정거장 모듈 임무를 가능하게 한 효율성 향상을 제공합니다. 2016년 11월 3일에 처음 비행했으며, 초기 비행들도 어려움이 없지는 않았습니다. YF-77 이상 현상으로 Long March 5가 거의 3년 동안 운항을 중단했다가 엔지니어들이 고장 모드를 파악하고 해결했습니다."
+ },
+ {
+  "rel": "fleet/engine/yf-77.json",
+  "at": "best_known_for",
+  "en": "China's first large hydrogen engine — the Long March 5 core",
+  "cur": "중국의 첫 대형 수소 엔진 — Long March 5 코어"
+ },
+ {
+  "rel": "fleet/lander/beagle2.json",
+  "at": "tagline",
+  "en": "UK/ESA Mars lander from Mars Express (2003). Silent on arrival; HiRISE found it intact in 2015 — a solar panel had failed to deploy",
+  "cur": "Mars Express의 영국/ESA 화성 착륙선(2003). 도착 시 신호 없음; HiRISE가 2015년 태양 전지판이 펼쳐지지 못해 그대로 발견함"
+ },
+ {
+  "rel": "fleet/lander/beagle2.json",
+  "at": "description",
+  "en": "A 33-kg UK-led Mars lander released from ESA's Mars Express on 2003-12-19, six days before its planned 2003-12-25 landing at Isidis Planitia. Beagle 2 (named after HMS Beagle which carried Darwin) carried a clamshell payload of a Gas Analysis Package mass spectrometer for atmospheric + sub-surface volatiles, a stereo camera, a microscope, a Mössbauer + APX spectrometer pair, and a mole drill. It went silent at separation and was presumed crashed for 12 years — until 2015-01, when high-resolution HiRISE imagery from Mars Reconnaissance Orbiter clearly showed Beagle 2 sitting on the Martian surface (~5 km from its target), with one of four solar panels (petals) failing to fully deploy, preventing the antenna from clearing the housing and collecting enough power. So: a successful landing, an unsuccessful deployment, and a 12-year mystery solved by the same kind of imagery that LRO uses for the Moon.",
+  "cur": "예정된 2003-12-25 이시디스 평원 착륙 6일 전인 2003-12-19에 ESA의 Mars Express에서 분리된 33kg의 영국 주도 화성 착륙선. Beagle 2(다윈을 태운 HMS Beagle의 이름을 따옴)는 대기 및 지하 휘발성 물질을 위한 기체 분석 패키지 질량 분석기, 입체 카메라, 현미경, Mössbauer 및 APX 분광계 쌍, 그리고 천공 드릴을 담은 조개껍질 형태의 페이로드를 탑재했다. 분리 시 신호가 끊겼고 12년 동안 추락한 것으로 추정되었다. 2015-01에 Mars Reconnaissance Orbiter의 고해상도 HiRISE 영상이 Beagle 2를 화성 표면에서(목표 지점으로부터 약 5km 떨어진 곳에) 발견했으며, 4개 태양 전지판(꽃잎) 중 하나가 완전히 펼쳐지지 못해 안테나가 하우징을 빠져나오지 못하고 충분한 전력을 수집할 수 없었다는 것이 명확히 드러났다. 즉, 성공적인 착륙이었지만 전개에 실패했고, LRO가 달을 관찰하는 것과 같은 종류의 영상으로 12년 만에 미스터리가 풀렸다."
+ },
+ {
+  "rel": "fleet/lander/beagle2.json",
+  "at": "best_known_for",
+  "en": "UK/ESA Mars lander — landed 2003, silent for 12 years, found by HiRISE 2015",
+  "cur": "영국/ESA 화성 착륙선 — 2003년 착륙, 12년간 신호 끊김, 2015년 HiRISE로 발견"
+ },
+ {
+  "rel": "fleet/lander/beresheet.json",
+  "at": "description",
+  "en": "The first private lunar landing attempt, by Israel’s SpaceIL nonprofit. Crashed in April 2019 when an IMU gyroscope failure triggered repeated computer reboots, each shutting the engine down; by the time control was recovered, the lander was too low and fast to survive. Demonstrated that landing on the Moon is much harder than reaching it.",
+  "cur": "이스라엘의 SpaceIL 비영리 단체의 최초의 민간 달 착륙 시도였습니다. 2019년 4월에 IMU 자이로스코프 결함으로 인한 반복된 컴퓨터 재부팅이 엔진을 계속 종료했고, 제어가 회복되었을 때는 착륙선이 너무 낮고 빨라서 생존할 수 없었습니다. 달에 도달하는 것이 달에 착륙하는 것보다 훨씬 쉽다는 것을 보여주었습니다."
+ },
+ {
+  "rel": "fleet/lander/blue-moon-mk1.json",
+  "at": "tagline",
+  "en": "Blue Origin's first-generation lunar cargo lander — single-stage hydrogen / oxygen vehicle, ~3 t to the surface",
+  "cur": "Blue Origin의 첫 세대 달 화물 착륙선 — 단일 단계 수소/산소 차량, 표면에 약 3t"
+ },
+ {
+  "rel": "fleet/lander/blue-moon-mk1.json",
+  "at": "description",
+  "en": "Single-stage cryogenic lander built around the LH₂ / LOX BE-7 engine. Mk1 is the cargo-only precursor to the much larger Mk2 crewed Artemis HLS variant; both share the BE-7 propulsion and hydrogen-based reusability architecture. The first crewed lunar flight to carry Blue Moon Mk1 has not yet launched, with first landing currently planned no earlier than 2026. Cargo Mk1 will deliver up to ~3000 kg to the lunar surface; the crewed Mk2 derivative anchored Blue Origin's HLS contract awarded by NASA in 2023 as the second Artemis-era human lander alongside SpaceX Starship HLS.",
+  "cur": "LH₂ / LOX BE-7 엔진을 중심으로 설계된 단일 단계 극저온 착륙선입니다. Mk1은 훨씬 더 큰 Mk2 유인 Artemis HLS 변형의 화물 전용 선행 모델입니다. 둘 다 BE-7 추진력과 수소 기반 재사용성 아키텍처를 공유합니다. Blue Moon Mk1을 탑재한 최초의 유인 달 비행은 아직 발사되지 않았으며, 첫 착륙은 현재 2026년 이전으로 예정되지 않았습니다. Cargo Mk1은 달 표면에 최대 약 3000 kg을 운송할 예정이며, 유인 Mk2 파생형은 Blue Origin의 2023년 NASA가 수여한 HLS 계약을 고정했으며 SpaceX Starship HLS와 함께 두 번째 Artemis 시대 유인 착륙선입니다."
+ },
+ {
+  "rel": "fleet/lander/blue-moon-mk1.json",
+  "at": "best_known_for",
+  "en": "Blue Origin cargo lunar lander — BE-7 hydrogen propulsion, ~3 t to the surface, NASA CLPS",
+  "cur": "Blue Origin 화물 달 착륙선 — BE-7 수소 추진, 표면에 약 3t, NASA CLPS"
+ },
+ {
+  "rel": "fleet/lander/change-3.json",
+  "at": "description",
+  "en": "China’s first lunar lander (December 2013), carrying the Yutu rover. Mare Imbrium touchdown — the first soft landing on the Moon since Luna 24 in 1976.",
+  "cur": "중국의 첫 달 착륙자 (12 월 2013), Yutu rover를 운반. 비의 바다 touchdown — 1976년 Luna 24 이후 첫 번째 부드러운 착륙."
+ },
+ {
+  "rel": "fleet/lander/change-4.json",
+  "at": "tagline",
+  "en": "First soft landing on lunar far side",
+  "cur": "첫 번째 부드러운 착륙 에 lunar far 측"
+ },
+ {
+  "rel": "fleet/lander/change-4.json",
+  "at": "description",
+  "en": "The first soft landing on the lunar far side (January 2019). Required a relay satellite (Queqiao) at Earth-Moon L2 to maintain communications. Yutu-2 has since roamed the Von Kármán crater terrain for years.",
+  "cur": "첫 번째 부드러운 착륙 lunar 멀리쪽 (1 월 2019). 지구-달 L2의 릴레이 위성 (Queqiao)이 통신을 유지하기 위해 필요합니다. Yutu-2는 몇 년 동안 폰 카르만 분화구 terrain을 돌렸습니다."
+ },
+ {
+  "rel": "fleet/lander/change-4.json",
+  "at": "best_known_for",
+  "en": "First soft landing on lunar far side",
+  "cur": "첫 번째 부드러운 착륙 에 lunar far 측"
+ },
+ {
+  "rel": "fleet/lander/change-5.json",
+  "at": "tagline",
+  "en": "First lunar sample return since 1976",
+  "cur": "1976년 이후 첫 번째 달 샘플 반환"
+ },
+ {
+  "rel": "fleet/lander/change-5.json",
+  "at": "description",
+  "en": "The first lunar sample return since Luna 24 in 1976. Returned 1.731 kg of basalt from a region 1.2 billion years younger than the Apollo and Luna samples — extending the timeline of recent lunar volcanism.",
+  "cur": "1976년 Luna 24 이후 첫 번째 달 샘플 반환. Apollo 및 Luna 샘플보다 12억 년 더 젊은 지역에서 1.731 kg의 현무암을 반환했으며, 최근 달 화산 활동의 시간대를 확장했습니다."
+ },
+ {
+  "rel": "fleet/lander/change-5.json",
+  "at": "best_known_for",
+  "en": "First lunar sample return since 1976",
+  "cur": "1976년 이후 첫 번째 달 샘플 반환"
+ },
+ {
+  "rel": "fleet/lander/change6.json",
+  "at": "tagline",
+  "en": "First-ever lunar far-side sample return. Apollo basin landing 2024-06-01 (UTC); 1935 g returned to Inner Mongolia 2024-06-25",
+  "cur": "첫 번째 달 뒷면 샘플 반환. Apollo 분지 착륙 2024-06-01 (UTC); 1935 g이 2024-06-25에 내몽골로 반환됨"
+ },
+ {
+  "rel": "fleet/lander/change6.json",
+  "at": "description",
+  "en": "The first-ever sample-return mission from the lunar far side — a 53-year-after-Apollo landmark that no other space agency has yet attempted. Launched 2024-05-03 on a Long March 5 from Wenchang, Chang'e 6 used the Queqiao-2 relay satellite (positioned in a halo orbit around Earth-Moon L2 since March 2024) to communicate with Earth across the lunar limb. The lander touched down in the Apollo basin within the giant South Pole-Aitken impact basin (-153.99° W, -41.64° S) on 2024-06-01 (UTC, 2024-06-02 Beijing time). Its drill + scoop collected ~1935 g of regolith from a region that has remained largely undisturbed since the basin-forming impact ~4.3 billion years ago — material from the lunar mantle excavated by SPA. The ascender lifted off 2024-06-03, rendezvoused with the orbiter in lunar orbit, and the return capsule landed in Siziwang Banner, Inner Mongolia, on 2024-06-25 14:07 local time. France, Italy, Sweden, and Pakistan contributed instruments — the first international science payloads on a Chinese sample-return mission.",
+  "cur": "달 뒷면에서의 최초 샘플 반환 미션으로, 아폴로 이후 53년이 지난 이 시점에서 다른 우주 기관은 아직 시도하지 못한 역사적 성과입니다. 2024년 5월 3일 원창에서 Long March 5로 발사된 Chang'e 6은 2024년 3월부터 지구-달 L2 주변의 헤일로 궤도에 위치한 Queqiao-2 중계 위성을 이용하여 달의 변이선 너머로 지구와 통신했습니다. 착륙선은 거대한 남극-에이트켄 충돌분지 내의 Apollo 분지에 (서경 153.99°, 남위 41.64°) 2024년 6월 1일 (UTC, 베이징 시간 2024년 6월 2일)에 착륙했습니다. 드릴과 스쿱으로 약 1935 g의 토양을 수집했는데, 이 지역은 약 43억 년 전의 분지 형성 충돌 이후로 거의 교란되지 않은 곳이었으며, SPA에 의해 파내진 달 맨틀의 물질입니다. 상승선은 2024년 6월 3일에 발사되어 달 궤도의 궤도선과 랑데뷰한 후, 귀환 캡슐은 2024년 6월 25일 14:07 현지 시간에 내몽골의 Siziwang Banner에 착륙했습니다. France, Italy, Sweden, Pakistan이 기기를 제공했으며, 이는 중국 샘플 반환 미션에 탑재된 최초의 국제 과학 페이로드입니다."
+ },
+ {
+  "rel": "fleet/lander/change6.json",
+  "at": "best_known_for",
+  "en": "First-ever lunar far-side sample return. Apollo basin landing 2024-06-02; 1935 g returned to Inner Mongolia 2024-06-25",
+  "cur": "첫 번째 달 뒷면 샘플 반환. Apollo 분지 착륙 2024-06-02; 1935 g이 2024-06-25에 내몽골로 반환됨"
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "tagline",
+  "en": "First private Japanese lunar lander; M1 + M2 both crashed",
+  "cur": "첫 번째 개인 일본어 lunar 착륙; M1 + M2 모두 충돌"
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "description",
+  "en": "Hakuto-R program is a planetary lander built by ispace in Japan. First private Japanese lunar lander; M1 + M2 both crashed. Flew in 2023 but failed; informs the redemption-arc layer of the commercial era epoch.",
+  "cur": "Hakuto-R 프로그램은 일본 ispace에 의해 지어진 행성 착륙자입니다. 첫 번째 개인 일본어 lunar 착륙자; M1 + M2 모두 충돌. 2023 년 Flew 하지만 실패; 상업 시대 epoch의 비난 층을 알려줍니다."
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "best_known_for",
+  "en": "First private Japanese lunar lander; M1 + M2 both crashed",
+  "cur": "첫 번째 개인 일본어 lunar 착륙; M1 + M2 모두 충돌"
+ },
+ {
+  "rel": "fleet/lander/im-1-odysseus.json",
+  "at": "tagline",
+  "en": "First U.S. lunar landing since Apollo; sideways",
+  "cur": "Apollo 이후 첫 미국 달 착륙; 옆으로"
+ },
+ {
+  "rel": "fleet/lander/im-1-odysseus.json",
+  "at": "description",
+  "en": "The first US lunar landing since Apollo 17 in 1972. Touched down sideways near the lunar south pole on 2024-02-22 (the primary laser rangefinder had been left inactive — safety switch not armed pre-launch); operated briefly before sunset.",
+  "cur": "1972년 Apollo 17 이후 첫 미국 달 착륙. 2024-02-22에 달의 남극 근처에 옆으로 누운 채 착륙했으며 (주 레이저 거리측정기는 미작동 상태였음 — 발사 전 안전 스위치가 장착되지 않음), 일몰 전까지 잠시 운영되었다."
+ },
+ {
+  "rel": "fleet/lander/im-1-odysseus.json",
+  "at": "best_known_for",
+  "en": "First U.S. lunar landing since Apollo; sideways",
+  "cur": "Apollo 이후 첫 미국 달 착륙; 옆으로 뒹굴며"
+ },
+ {
+  "rel": "fleet/lander/insight.json",
+  "at": "tagline",
+  "en": "Mars seismometer; 1300+ marsquakes detected",
+  "cur": "화성 지진계; 1300+ marsquakes 검출"
+ },
+ {
+  "rel": "fleet/lander/insight.json",
+  "at": "description",
+  "en": "NASA’s 2018–2022 Mars seismometer mission. Detected over 1,300 marsquakes, mapped the planet’s internal structure for the first time, and confirmed the existence of a large molten core. Ended when dust accumulation on its solar panels finally starved its power.",
+  "cur": "NASA의 2018–2022 화성 지진계 임무. 1,300마리 이상의 마리를 감지하여 지구의 내부 구조를 처음으로 맵핑하고 큰 molten 코어의 존재를 확인했습니다. 그것의 태양 전지판에 먼지 축적이 마침내 그것의 힘을 starved 때 끝냈습니다."
+ },
+ {
+  "rel": "fleet/lander/insight.json",
+  "at": "best_known_for",
+  "en": "Mars seismometer; 1300+ marsquakes detected",
+  "cur": "화성 지진계; 1,300회 이상의 화성 지진 감지"
+ },
+ {
+  "rel": "fleet/lander/luna-16.json",
+  "at": "description",
+  "en": "Built by NPO Lavochkin, Luna 16 achieved the first fully robotic lunar sample return, bringing 101 g of soil back to Earth in September 1970.",
+  "cur": "NPO Lavochkin에서 제작한 Luna 16은 1970년 9월 101 g의 토양을 지구로 되돌려 최초의 완전 자동 달 시료 채취 귀환을 달성했다."
+ },
+ {
+  "rel": "fleet/lander/luna-9.json",
+  "at": "description",
+  "en": "The first soft landing on another world. Touched down on Oceanus Procellarum in February 1966, returning the first photographs from the lunar surface — a panorama of the cratered landscape just centimeters from the lander’s eye.",
+  "cur": "다른 세계에 첫 번째 부드러운 착륙. 2 월 1966 년 폭풍의 대양에서 아래로 터치, lunar 표면에서 첫 번째 사진을 반환 - 착륙자의 눈에서 단지 센티미터의 상승 풍경의 파노라마."
+ },
+ {
+  "rel": "fleet/lander/luna24.json",
+  "at": "tagline",
+  "en": "Last successful Soviet Moon mission — returned 170 g of Mare Crisium regolith 1976-08-22; last lunar sample return until Chang'e 5",
+  "cur": "마지막 소련 달 탐사 임무 — 위난의 바다의 170 g 월석을 1976-08-22에 귀환; Chang'e 5까지 마지막 달 시료 귀환"
+ },
+ {
+  "rel": "fleet/lander/luna24.json",
+  "at": "description",
+  "en": "The last successful Soviet Moon mission and the last sample-return lunar lander until Chang'e 5 in 2020 — a 44-year gap. Launched 1976-08-09 from Baikonur on a Proton-K, Luna 24 soft-landed in Mare Crisium (12.7° N, 62.2° E) on 1976-08-18, drilled to a depth of 2.25 m using its rotary-percussive drill, retrieved a 1.6 m core sample, and lifted off the ascent stage which returned 170.1 g of lunar regolith to western Siberia (~200 km southeast of Surgut) on 1976-08-22. Soviet scientists at the Vernadsky Institute confirmed the presence of water (~0.1 % by mass) in the samples in a 1978 paper that was largely ignored in the West until LCROSS and Chandrayaan-1 (2008-09) re-confirmed lunar water.",
+  "cur": "마지막 성공한 소련 달 탐사 임무이자 2020년 Chang'e 5까지 44년간의 공백을 남긴 마지막 시료 귀환 달 착륙선. 1976-08-09에 바이코누르에서 Proton-K를 이용해 발사된 Luna 24는 1976-08-18에 위난의 바다 (12.7° N, 62.2° E)에 연착륙했으며, 회전-충격식 드릴을 사용하여 2.25 m 깊이까지 드릴링을 수행하고 1.6 m 코어 시료를 채취했으며, 상승 단계를 이용해 1976-08-22에 서부 시베리아 (~Surgut 남동쪽 약 200 km)에 170.1 g의 월 토양을 귀환했다. Vernadsky Institute의 소련 과학자들은 1978년 논문에서 시료에 포함된 물의 존재 (~질량의 0.1 %)를 확인했으나, 2008-09년 LCROSS와 Chandrayaan-1이 달의 물을 재확인할 때까지 서방에서는 대체로 무시되었다."
+ },
+ {
+  "rel": "fleet/lander/luna24.json",
+  "at": "best_known_for",
+  "en": "Last successful Soviet Moon mission — returned 170 g of Mare Crisium regolith 1976-08-22; last lunar sample return until Chang'e 5",
+  "cur": "마지막 소련 달 탐사 임무 — 위난의 바다의 170 g 월석을 1976-08-22에 귀환; Chang'e 5까지 마지막 달 시료 귀환"
+ },
+ {
+  "rel": "fleet/lander/mars-2.json",
+  "at": "tagline",
+  "en": "First human-made object to reach Mars surface; lander crashed (1971)",
+  "cur": "화성 표면에 도달한 최초의 인공물체; 착륙선 충돌(1971)"
+ },
+ {
+  "rel": "fleet/lander/mars-2.json",
+  "at": "description",
+  "en": "The first human-made object to reach the Martian surface — by hard impact. The descent module crashed during the 1971 dust storm that obscured every other Mars probe in orbit at the time. Companion Mars 3 made the first soft landing two days later.",
+  "cur": "화성 표면에 도달한 최초의 인공물체 — 경질 충돌 방식으로. 하강 모듈은 당시 궤도상의 다른 모든 화성 탐사선을 가린 1971년 먼지 폭풍 동안 충돌했다. 동료 탐사선 Mars 3은 이틀 뒤 최초의 연착륙을 수행했다."
+ },
+ {
+  "rel": "fleet/lander/mars-2.json",
+  "at": "best_known_for",
+  "en": "First human-made object to reach the Martian surface; lander crashed on impact (1971)",
+  "cur": "화성 표면에 도달한 최초의 인공물체; 착륙선이 충돌 시 파괴됨(1971)"
+ },
+ {
+  "rel": "fleet/lander/mars-3.json",
+  "at": "tagline",
+  "en": "First soft landing on Mars; ~20 s of surface transmission",
+  "cur": "화성 최초 연착륙; ~20초간의 표면 신호 송신"
+ },
+ {
+  "rel": "fleet/lander/mars-3.json",
+  "at": "description",
+  "en": "The first soft landing on Mars (December 1971). Began transmitting what would have been a surface image, but contact was lost after ~20 seconds leaving only a featureless grey frame. The global dust storm raging across the planet may have contributed to the early transmission loss.",
+  "cur": "화성 최초 연착륙 (1971년 12월). 표면 이미지 송신을 시작했으나 약 20초 후 신호 접촉이 두절되어 특징이 없는 회색 프레임만 남게 되었다. 당시 행성 전체를 휩쓸고 있던 글로벌 먼지 폭풍이 조기 신호 송신 중단에 영향을 미쳤을 가능성이 있다."
+ },
+ {
+  "rel": "fleet/lander/mars-3.json",
+  "at": "best_known_for",
+  "en": "First soft landing on Mars; ~20 s of surface transmission",
+  "cur": "화성 최초 연착륙; ~20초간의 표면 신호 송신"
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "tagline",
+  "en": "Lost on landing; drove faster-better-cheaper review",
+  "cur": "착륙에 손실; 빨리 더 나은 cheaper 검토"
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "description",
+  "en": "Mars Polar Lander is a planetary lander built by Lockheed Martin in USA. Lost on landing; drove faster-better-cheaper review. Flew in 1999 but failed; informs the redemption-arc layer of the Shuttle and Mir epoch.",
+  "cur": "Mars Polar Lander는 미국의 Lockheed Martin이 제작한 행성 착륙선입니다. 착륙 중 소실되었으며, '더 빠르게, 더 좋게, 더 싸게' 방침에 대한 검토를 촉발했습니다. 1999년에 비행했으나 실패했으며, 셔틀 및 Mir 시대의 구원 서사 레이어에 반영됩니다."
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "best_known_for",
+  "en": "Lost on landing; drove faster-better-cheaper review",
+  "cur": "착륙에 손실; 빨리 더 나은 cheaper 검토"
+ },
+ {
+  "rel": "fleet/lander/mars6.json",
+  "at": "tagline",
+  "en": "Soviet 1973 Mars lander — first descent telemetry from Mars atmosphere (224 s, mostly corrupted)",
+  "cur": "소비에트 1973년 화성 착륙선 — 화성 대기에서의 첫 강하 원격측정 (224초, 대부분 손상됨)"
+ },
+ {
+  "rel": "fleet/lander/mars6.json",
+  "at": "description",
+  "en": "Part of the Soviet four-spacecraft Mars wave of 1973 (Mars 4, 5, 6, 7) — and the only one to return useful science from a descent through Mars' atmosphere. Launched 1973-08-05 from Baikonur on a Proton-K, arrived 1974-03-12. The descent module separated from the flyby bus, entered the Martian atmosphere over Margaritifer Terra (23.90° S, 19.42° W), and returned 224 seconds of direct atmospheric telemetry — the first in-situ measurements of Mars' atmospheric temperature, pressure, and composition profile. However, due to a design flaw in the mass spectrometer's data system, a large amount of the data was corrupted and only partially recoverable. Signal was lost just before landing, during retrorocket firing; whether the lander crashed or survived to the surface is unknown. The flyby bus continued past Mars and acted as a relay station.",
+  "cur": "1973년 소비에트의 4개 우주선 화성 임무파 중 하나 (화성 4, 5, 6, 7) — 화성 대기를 통한 강하에서 유용한 과학 데이터를 반환한 유일한 우주선. 1973-08-05에 바이코누르에서 Proton-K로 발사되어 1974-03-12에 도착. 강하 모듈이 플라이바이 버스에서 분리되어 마르가리티페르 테라(남위 23.90°, 서경 19.42°)상의 화성 대기에 진입했으며, 224초의 직접 대기 원격측정을 반환했다 — 화성 대기의 온도, 압력, 조성 프로파일의 첫 현장 측정. 그러나 질량분석계의 데이터 시스템에서의 설계 결함으로 인해 대량의 데이터가 손상되었고 부분적으로만 복구 가능했다. 신호는 착륙 직전 역추진 로켓 점화 중에 끊어졌으며, 착륙선이 충돌했는지 또는 표면에 생존했는지는 알 수 없다. 플라이바이 버스는 화성을 지나 계속 진행하여 중계국 역할을 수행했다."
+ },
+ {
+  "rel": "fleet/lander/mars6.json",
+  "at": "best_known_for",
+  "en": "Soviet 1973 Mars lander — first descent telemetry from Mars atmosphere (224 s, mostly corrupted)",
+  "cur": "소비에트 1973년 화성 착륙선 — 화성 대기에서의 첫 강하 원격측정 (224초, 대부분 손상됨)"
+ },
+ {
+  "rel": "fleet/lander/phoenix.json",
+  "at": "tagline",
+  "en": "Confirmed water ice in Martian soil",
+  "cur": "Martian 토양에 있는 확인된 물 얼음"
+ },
+ {
+  "rel": "fleet/lander/phoenix.json",
+  "at": "description",
+  "en": "Phoenix is a planetary lander built by Lockheed Martin in USA. Confirmed water ice in Martian soil. Retired after first flight in 2008.",
+  "cur": "Phoenix는 미국에서 Lockheed Martin에 의해 지어진 행성 착륙자입니다. Martian 토양에 있는 확인된 물 얼음. 2008년 첫 비행 후 은퇴"
+ },
+ {
+  "rel": "fleet/lander/phoenix.json",
+  "at": "best_known_for",
+  "en": "Confirmed water ice in Martian soil",
+  "cur": "Martian 토양에 있는 확인된 물 얼음"
+ },
+ {
+  "rel": "fleet/lander/schiaparelli.json",
+  "at": "tagline",
+  "en": "ExoMars precursor; lessons fed Rosalind Franklin",
+  "cur": "ExoMars 선행 임무; Rosalind Franklin에 교훈 제공"
+ },
+ {
+  "rel": "fleet/lander/schiaparelli.json",
+  "at": "description",
+  "en": "ESA’s 2016 ExoMars demonstrator that crashed during landing — the IMU saturated during parachute descent, causing the flight computer to believe it was below ground level; it released the parachute and fired the retrorockets for only 3 seconds instead of 30, then went silent and impacted at ~300 km/h from 3.7 km altitude. Lessons fed directly into the Rosalind Franklin lander design.",
+  "cur": "ESA의 2016년 ExoMars 시연기로, 착륙 중 충돌함 — 낙하산 강하 중 IMU가 포화되어 비행 컴퓨터가 지면 아래에 있다고 잘못 판단했고, 낙하산을 방출한 후 역추진 로켓을 30초가 아닌 3초만 분사했으며, 이후 신호가 끊기고 3.7 km 고도에서 ~300 km/h의 속도로 충돌했다. 이 교훈은 Rosalind Franklin 착륙선 설계에 직접 반영되었다."
+ },
+ {
+  "rel": "fleet/lander/schiaparelli.json",
+  "at": "best_known_for",
+  "en": "ExoMars precursor; lessons fed Rosalind Franklin",
+  "cur": "ExoMars 선행 임무; Rosalind Franklin에 교훈 제공"
+ },
+ {
+  "rel": "fleet/lander/slim.json",
+  "at": "tagline",
+  "en": "Pinpoint lunar landing; toppled but operational",
+  "cur": "정밀 달 착륙; 전복되었으나 정상 작동"
+ },
+ {
+  "rel": "fleet/lander/slim.json",
+  "at": "description",
+  "en": "JAXA’s 2024 lunar lander. Touched down within 100 m of its target — pinpoint accuracy unprecedented for a lunar lander — but landed on its nose at roughly 90 degrees, with solar panels facing away from the Sun. Still operated and survived four lunar nights without radioisotope heating — a record for passively-heated lunar surface missions.",
+  "cur": "JAXA의 2024년 달 착륙선. 목표 지점에서 100 m 이내에 착륙해 달 착륙선으로서는 전례 없는 정밀도를 보였지만, 기체가 약 90도 기울어 앞부분이 아래로 향한 채 착지했고 태양전지판은 태양 반대쪽을 향했다. 그럼에도 계속 작동했으며, 방사성동위원소 가열 장치 없이 달의 밤을 네 번 견뎠다 — 수동 가열 방식 달 표면 임무로는 기록이다."
+ },
+ {
+  "rel": "fleet/lander/slim.json",
+  "at": "best_known_for",
+  "en": "Pinpoint lunar landing; toppled but operational",
+  "cur": "정밀 달 착륙; 전복되었으나 정상 작동"
+ },
+ {
+  "rel": "fleet/lander/surveyor-3.json",
+  "at": "tagline",
+  "en": "Apollo 12 visited it 2.5 years later",
+  "cur": "Apollo 12은 2.5 년 후 방문"
+ },
+ {
+  "rel": "fleet/lander/surveyor-3.json",
+  "at": "description",
+  "en": "Surveyor 3 is a planetary lander built by Hughes Aircraft in USA. Apollo 12 visited it 2.5 years later. Retired after first flight in 1967.",
+  "cur": "Surveyor 3는 미국 Hughes Aircraft에 의해 지어진 행성 착륙자입니다. Apollo 12는 2.5 년 후 방문했습니다. 1967년 첫 비행 후 은퇴했습니다."
+ },
+ {
+  "rel": "fleet/lander/surveyor-3.json",
+  "at": "best_known_for",
+  "en": "Apollo 12 visited it 2.5 years later",
+  "cur": "Apollo 12은 2.5 년 후 방문"
+ },
+ {
+  "rel": "fleet/lander/venera-13.json",
+  "at": "tagline",
+  "en": "First colour images of the Venusian surface — survived 127 minutes in 457 °C / 89-atm conditions",
+  "cur": "금성 표면의 첫 컬러 이미지 — 457 °C / 89기압 환경에서 127분 생존"
+ },
+ {
+  "rel": "fleet/lander/venera-13.json",
+  "at": "description",
+  "en": "Soviet Venus lander pair (with Venera 14). Launched 1981-10-30 on a Proton-K / D-1. Venus arrival 1982-03-01: the 1645 kg titanium descent capsule entered the atmosphere at 11.2 km/s, deployed a parachute through the upper haze, then jettisoned it at 47 km and free-fell through the lower atmosphere with a disc-brake for terminal descent. Surface touchdown at 7.5°S, 303°E (Phoebe Regio volcanic flank). First panoramic colour images of the Venusian surface; first X-ray fluorescence soil-composition analysis (basaltic, like terrestrial ocean floor); first acoustic recordings from another planet. Operated 127 minutes — far beyond the 32-minute design life — before silicon-electronic failure in the 457 °C / 89-atmosphere CO₂ environment.",
+  "cur": "소비에트 금성 착륙선 쌍(Venera 14와 함께). 1981-10-30에 Proton-K / D-1로 발사. 금성 도착 1982-03-01: 1645 kg 티타늄 강하 캡슐이 초속 11.2 km/s로 대기권에 진입했으며, 상층 헤이즈를 통해 낙하산을 전개한 후 47 km에서 낙하산을 분리하고 터미널 강하를 위한 디스크 브레이크를 갖춘 하층 대기를 자유낙하했다. 남위 7.5°, 동경 303° (포이베 지역 화산 옆)에서 표면 착지. 금성 표면의 첫 파노라마 컬러 이미지; 첫 X선 형광 토양 성분 분석(현무암질, 지구 해양 바닥처럼); 다른 행성에서의 첫 음향 녹음. 457 °C / 89기압 CO₂ 환경에서 규소 전자 장치 고장이 발생하기 전에 127분 동안 작동 — 32분 설계 수명을 훨씬 초과."
+ },
+ {
+  "rel": "fleet/lander/venera-13.json",
+  "at": "best_known_for",
+  "en": "First colour images of Venus surface — 127-minute survival in 457 °C / 89-atm conditions",
+  "cur": "금성 표면의 첫 컬러 이미지 — 457 °C / 89기압 환경에서 127분 생존"
+ },
+ {
+  "rel": "fleet/lander/venera-7.json",
+  "at": "tagline",
+  "en": "First soft landing on another planet and first to transmit data from another planet's surface (Venus, 1970)",
+  "cur": "다른 행성에 처음으로 연착 착륙했으며, 다른 행성의 표면에서 데이터를 처음으로 전송한 우주선 (금성, 1970)"
+ },
+ {
+  "rel": "fleet/lander/venera-7.json",
+  "at": "description",
+  "en": "Venera 7-class is a planetary lander built by NPO Lavochkin in USSR. First soft landing on another planet and first to transmit data from another planet's surface (Venus, 1970). Retired after first flight in 1970.",
+  "cur": "Venera 7-class는 소련의 NPO Lavochkin이 제작한 행성 착륙선입니다. 다른 행성에 처음으로 연착 착륙했으며, 다른 행성의 표면에서 데이터를 처음으로 전송했습니다 (금성, 1970). 1970년 첫 비행 후 운용이 중단되었습니다."
+ },
+ {
+  "rel": "fleet/lander/venera-7.json",
+  "at": "best_known_for",
+  "en": "First soft landing on another planet and first to transmit data from another planet's surface (Venus, 1970)",
+  "cur": "다른 행성에 처음으로 연착 착륙했으며, 다른 행성의 표면에서 데이터를 처음으로 전송한 우주선 (금성, 1970)"
+ },
+ {
+  "rel": "fleet/lander/viking-1.json",
+  "at": "tagline",
+  "en": "First successful Mars lander; biology experiments",
+  "cur": "화성에 성공적으로 착륙한 첫 탐사선; 생물학 실험"
+ },
+ {
+  "rel": "fleet/lander/viking-1.json",
+  "at": "dispatch",
+  "en": "Viking 1 solved the problem nothing had solved: how to land on Mars and live. The Soviet landers before it had died within about twenty seconds of touchdown, returning only a featureless grey frame; Viking had to descend through an atmosphere too thin to rely on and too thick to ignore, and it did it with a first-of-its-kind sequence — an aeroshell to survive entry, a parachute for the middle of the fall, and throttled rocket engines to set its three legs down softly at the end. It was two machines in one, an orbiter to survey and relay and a lander to work the ground, and it carried the first laboratory ever sent to test another planet’s soil for life. Every Mars landing since has flown some version of the descent Viking proved.",
+  "cur": "Viking 1은 아무도 해낸 적 없는 문제를 풀었다: 화성에 착륙해서 살아남는 방법이 그것이었다. 이전의 소련 착륙선들은 접촉 후 약 20초 안에 모두 고장 나서 단지 특징 없는 회색 프레임만 보내왔다. Viking은 너무 얇아서 의존할 수 없으면서도 너무 두꺼워서 무시할 수 없는 대기를 뚫고 내려와야 했다. 그리고 그것을 처음 시도되는 수열로 해냈다 — 진입을 견딜 수 있는 에어로셸, 낙하의 중간 구간을 위한 낙하산, 그리고 세 개의 다리를 부드럽게 내려놓기 위한 스로틀 조절식 로켓 엔진. 그것은 한 기체에 두 개의 기계였다: 관측하고 신호를 중계할 궤도선과 지표면에서 작동할 착륙선. 그리고 다른 행성의 토양에서 생명을 찾기 위해 보낸 첫 실험실을 실어날랐다. 그 이후 모든 화성 착륙은 Viking이 증명한 강하 방식의 어떤 버전이든 사용해왔다."
+ },
+ {
+  "rel": "fleet/lander/viking-1.json",
+  "at": "description",
+  "en": "The first successful Mars lander mission, on the surface from July 1976 through November 1982. Carried four biology experiments and returned high-resolution images of the Chryse Planitia plains. The Viking 1 / Viking 2 pair set the template for every Mars lander that followed.",
+  "cur": "1976년 7월부터 1982년 11월까지 표면에 있었던 최초의 성공한 화성 착륙 미션. 4개의 생물학 실험을 탑재했으며 크리세 평원의 고해상도 이미지를 반환했다. Viking 1 / Viking 2 쌍은 그 이후의 모든 화성 착륙선을 위한 템플릿을 설정했다."
+ },
+ {
+  "rel": "fleet/lander/viking-1.json",
+  "at": "best_known_for",
+  "en": "First successful Mars lander; biology experiments",
+  "cur": "최초의 성공한 화성 착륙선; 생물학 실험"
+ },
+ {
+  "rel": "fleet/lander/viking2-lander.json",
+  "at": "tagline",
+  "en": "Second US Mars surface lander (Utopia Planitia 1976-09-03). Twin of Viking 1 lander; ran biology, soil chemistry + meteorology until 1980",
+  "cur": "두 번째 미국 화성 표면 착륙선(유토피아 평원 1976-09-03). Viking 1 착륙선의 쌍둥이; 1980년까지 생물학, 토양 화학 및 기상 관측 수행"
+ },
+ {
+  "rel": "fleet/lander/viking2-lander.json",
+  "at": "description",
+  "en": "The surface half of NASA's Viking 2 mission and the second successful US Mars lander, 47 days after Viking 1. Launched 1975-09-09 on a Titan IIIE-Centaur, touched down at Utopia Planitia (47.97° N, 134.04° E) on 1976-09-03 — much further north than Viking 1, in a different plains type to broaden the science return. Ran the same instrument suite as Viking 1: a biology package (Pyrolytic Release / Labeled Release / Gas Exchange experiments looking for microbial metabolism — the famously ambiguous Labeled Release positive that remains debated), GC-MS for soil organics (none detected), facsimile cameras returning > 1,400 images, X-ray fluorescence soil chemistry, meteorology, and seismometer (one of two ever flown on Mars — unable to detect quakes through cabin noise). Operated until 1980-04-11 when batteries failed.",
+  "cur": "NASA의 Viking 2 임무의 표면 부분이자, Viking 1호로부터 47일 뒤 미국의 두 번째로 성공한 화성 착륙선. 1975-09-09 Titan IIIE-Centaur로 발사되어 1976-09-03 유토피아 평원(북위 47.97°, 동경 134.04°)에 착륙했다 — Viking 1호보다 훨씬 북쪽, 과학적 성과를 넓히기 위해 다른 유형의 평원을 골랐다. Viking 1호와 동일한 장비 묶음을 운용했다: 생물학 패키지(열분해 방출/표지 방출/기체 교환 실험 — 표지 방출의 모호한 양성 결과는 지금도 논쟁 중), 토양 유기물용 GC-MS(검출되지 않음), 1,400장 이상을 보내온 팩시밀리 카메라, X선 형광 토양 화학, 기상학, 지진계. 1980-04-11까지 운용되었다."
+ },
+ {
+  "rel": "fleet/lander/viking2-lander.json",
+  "at": "best_known_for",
+  "en": "Second US Mars surface lander (Utopia Planitia 1976-09-03). Twin of Viking 1 lander; ran biology, soil chemistry + meteorology until 1980",
+  "cur": "두 번째 미국 화성 표면 착륙선(유토피아 평원 1976-09-03). Viking 1 착륙선의 쌍둥이; 1980년까지 생물학, 토양 화학 및 기상 관측 수행"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "name",
+  "en": "Vikram (Chandrayaan-2)",
+  "cur": "Vikram (Chandrayaan-2)"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "tagline",
+  "en": "Chandrayaan-2 lander; crashed; orbiter lives on",
+  "cur": "Chandrayaan-2 착륙; 추락; 궤도에 생명"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "description",
+  "en": "Vikram (Chandrayaan-2) is a planetary lander built by ISRO in India. Chandrayaan-2 lander; crashed; orbiter lives on. Flew in 2019 but failed; informs the redemption-arc layer of the commercial era epoch.",
+  "cur": "Vikram (Chandrayaan-2)는 인도 ISRO에 의해 지어진 행성 착륙자입니다. Chandrayaan-2 착륙; 추락; 궤도에 생명. 2019 년 Flew는 실패했습니다; 상업 시대 epoch의 비난 층을 알려줍니다."
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "best_known_for",
+  "en": "Chandrayaan-2 lander; crashed; orbiter lives on",
+  "cur": "Chandrayaan-2 착륙; 추락; 궤도에 생명"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy3.json",
+  "at": "name",
+  "en": "Vikram (Chandrayaan-3)",
+  "cur": "Vikram (Chandrayaan-3)"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy3.json",
+  "at": "tagline",
+  "en": "First landing near the lunar south pole",
+  "cur": "달의 남극 근처에 처음으로 착륙한 우주선"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy3.json",
+  "at": "description",
+  "en": "India’s first successful lunar lander (August 2023), the first spacecraft to land near the lunar south pole. Two years after Vikram CY-2 crashed in the same region — the redemption arc India and ISRO needed.",
+  "cur": "인도의 첫 번째 달 착륙선(2023년 8월)이자 달의 남극 근처에 착륙한 첫 우주선입니다. 같은 지역에서 2년 전 Vikram CY-2가 추락한 이후, 인도와 ISRO가 필요로 했던 명예 회복의 순간이었습니다."
+ },
+ {
+  "rel": "fleet/lander/vikram-cy3.json",
+  "at": "best_known_for",
+  "en": "First landing near the lunar south pole",
+  "cur": "달의 남극 근처에 처음으로 착륙한 우주선"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-1-5.json",
+  "at": "name",
+  "en": "Baikonur Site 1/5 (Gagarin's Start)",
+  "cur": "바이코누르 1/5번 발사장 (가가린 발사대)"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-1-5.json",
+  "at": "tagline",
+  "en": "Sputnik 1 (1957). Vostok 1 — Gagarin (1961). Five hundred and forty Soyuz launches from a single pad.",
+  "cur": "Sputnik 1 (1957). Vostok 1 — 가가린 (1961). 단일 발사대에서 540회의 Soyuz 발사."
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-1-5.json",
+  "at": "description",
+  "en": "The single most historically significant orbital launch pad in the world. R-7 ICBM test stand from 1957; immediately repurposed for Sputnik 1 on October 4, 1957 — the start of the Space Age. Yuri Gagarin lifted from here on April 12, 1961. Every Vostok crew, every Voskhod, the bulk of all Soyuz manifests through to MS-15 in September 2019. Five hundred and forty launches from one pad over sixty-two years. Preserved as a museum monument; the 2019-era refurbishment plan was abandoned when the site was transferred to Kazakhstan in 2025.",
+  "cur": "세계에서 역사적으로 가장 중요한 궤도 발사대. R-7 ICBM 시험장으로 1957년부터 사용되었으며, 1957년 10월 4일 Sputnik 1을 위해 즉시 개조되었다 — 우주 시대의 시작. 유리 가가린은 1961년 4월 12일 이곳에서 발사되었다. 모든 Vostok 승무원, 모든 Voskhod, 2019년 9월 MS-15까지의 대부분의 Soyuz 임무들이 이곳에서 발사되었다. 62년에 걸쳐 한 개의 발사대에서 540회 발사. 박물관 기념물로 보존되어 있으며, 2019년대 개축 계획은 2025년 카자흐스탄으로 이관되면서 중단되었다."
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-1-5.json",
+  "at": "best_known_for",
+  "en": "Sputnik 1 (1957). Vostok 1 — Gagarin (1961). Five hundred and forty Soyuz launches from a single pad.",
+  "cur": "Sputnik 1 (1957). Vostok 1 — 가가린 (1961). 단일 발사대에서 540회의 Soyuz 발사."
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-200.json",
+  "at": "tagline",
+  "en": "Proton-M heavy-lift pad — Mir modules, ISS Zvezda/Zarya, GLONASS, Luna 25",
+  "cur": "Proton-M 중량물 발사 패드 — Mir 모듈, ISS Zvezda/Zarya, GLONASS, Luna 25"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-200.json",
+  "at": "description",
+  "en": "Baikonur Site 200 hosts pads PU-1 (LC200/39) and PU-2 (LC200/40) for the Proton-K and Proton-M heavy-lift rockets. From here Roscosmos has launched almost every Mir module, the ISS modules Zarya and Zvezda, GEO communications satellites, GLONASS navigation constellation, and Luna 25 (2023). Site 200 remains active alongside Site 81 for Proton's final operational years.",
+  "cur": "바이코누르 200번 발사장은 Proton-K와 Proton-M 중량물 로켓용 PU-1(LC200/39) 및 PU-2(LC200/40) 패드를 보유하고 있습니다. Roscosmos는 여기서 거의 모든 Mir 모듈, ISS 모듈 Zarya와 Zvezda, 정지궤도 통신위성, GLONASS 항법 성좌, 그리고 Luna 25(2023)를 발사했습니다. Site 200은 Proton의 최종 운영 기간 동안 Site 81과 함께 활발히 운영 중입니다."
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-31-6.json",
+  "at": "tagline",
+  "en": "Active Soyuz crewed pad — every ISS Soyuz crew rotation since 2020 has lifted from Site 31",
+  "cur": "활성 Soyuz 유인 패드 — 2020년 이래 ISS 향 모든 Soyuz 승무원 교대가 Site 31에서 이륙"
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-31-6.json",
+  "at": "description",
+  "en": "The other half of the Baikonur Soyuz operation. Originally an R-7 ICBM pad from 1961; modernised for Soyuz-2.1a in 2014. When Site 1/5 went down for refurbishment in 2019, Site 31 picked up the entire Soyuz crew programme — every Soyuz MS rotation to the ISS since MS-16 in April 2020 has lifted from here. Continuous human spaceflight cadence: roughly two crews per year, with no interruption.",
+  "cur": "바이코누르의 Soyuz 운영의 다른 한쪽. 원래 1961년부터의 R-7 대륙간탄도미사일 발사대였으며, 2014년 Soyuz-2.1a용으로 현대화되었습니다. 2019년 Site 1/5가 정비를 위해 가동 중지되었을 때, Site 31은 Soyuz 유인 프로그램 전체를 담당하게 되었습니다. 2020년 4월 MS-16 이후로 ISS로의 모든 Soyuz MS 로테이션은 여기서 발사되었습니다. 지속적인 인간 우주비행 일정: 매년 대략 두 승무원, 중단 없이."
+ },
+ {
+  "rel": "fleet/launch-site/baikonur-31-6.json",
+  "at": "best_known_for",
+  "en": "Active Soyuz crewed pad — every ISS Soyuz crew rotation since 2020 has lifted from Site 31",
+  "cur": "활성 Soyuz 유인 패드 — 2020년 이래 ISS 향 모든 Soyuz 승무원 교대가 Site 31에서 이륙"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-lc-36b.json",
+  "at": "tagline",
+  "en": "USAF Atlas-Centaur pad — Mariner 10, Pioneer 11 (1973), Pioneer Venus (1978); now Blue Origin New Glenn (leased 2015, flew 2025)",
+  "cur": "USAF Atlas-Centaur 발사대 — Mariner 10, Pioneer 11 (1973), Pioneer 금성 (1978); 현재 Blue Origin New Glenn (2015년 임차, 2025년 발사)"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-lc-36b.json",
+  "at": "description",
+  "en": "Cape Canaveral Launch Complex 36B was the second of two Atlas-Centaur pads at Cape Canaveral (alongside LC-36A, built first). LC-36B first flew 1965-08-11 with Atlas-Centaur AC-6 and became the workhorse pad for the high-energy Atlas-Centaur stack — flying Mariner 10 (1973-11-03, first Mercury flyby), Pioneer 11 (1973-04-06, first Saturn flyby), Pioneer Venus 1 + 2 (1978), and many Intelsat / Inmarsat / Hot Bird commercial GEO comsats through the 1990s and early 2000s. Final flight 2005-02-03 — Atlas IIIB AC-208 — the last Atlas IIIB launch and last LC-36B flight under USAF auspices. The complex was leased to Blue Origin in 2015 and demolished + rebuilt as the Blue Origin New Glenn pad (LC-36 unified), with first New Glenn flight 2025-01-16. The original LC-36B mobile service tower was felled 2007-06-16.",
+  "cur": "케이프 커내버럴 Launch Complex 36B는 케이프 커내버럴의 두 개 Atlas-Centaur 발사대 중 두 번째였습니다(먼저 건설된 LC-36A와 함께). LC-36B는 1965-08-11에 Atlas-Centaur AC-6으로 처음 발사되었으며, 고에너지 Atlas-Centaur 스택의 주력 발사대가 되었습니다 — Mariner 10 (1973-11-03, 첫 수성 근접 비행), Pioneer 11 (1973-04-06, 첫 토성 근접 비행), Pioneer 금성 1 + 2 (1978), 그리고 1990년대와 2000년대 초반을 통해 수많은 Intelsat / Inmarsat / Hot Bird 상용 GEO 통신위성을 발사했습니다. 최종 발사는 2005-02-03 — Atlas IIIB AC-208 — 마지막 Atlas IIIB 발사이자 USAF 관할 하의 마지막 LC-36B 발사였습니다. 이 복합시설은 2015년 Blue Origin에 임차되었고, 철거 후 Blue Origin New Glenn 발사대 (LC-36 통합)로 재건되었으며, 첫 New Glenn 발사는 2025-01-16입니다. 원래의 LC-36B 이동식 서비스 타워는 2007-06-16에 철거되었습니다."
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-lc-36b.json",
+  "at": "best_known_for",
+  "en": "USAF Atlas-Centaur pad — Mariner 10 + Pioneer 11 (1973), Pioneer Venus (1978), Intelsat — now Blue Origin New Glenn (since 2015)",
+  "cur": "USAF Atlas-Centaur 발사대 — Mariner 10 + Pioneer 11 (1973), Pioneer 금성 (1978), Intelsat — 현재 Blue Origin New Glenn (2015년부터)"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+  "at": "tagline",
+  "en": "Highest-cadence Falcon 9 pad on the planet — workhorse for ISS resupply + Starlink + national-security",
+  "cur": "지구상 가장 높은 케이던스의 Falcon 9 패드 — ISS 보급 + Starlink + 국가안보의 일꾼"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+  "at": "description",
+  "en": "Originally a Titan III / Titan IV pad from 1965 through 2005, refit by SpaceX in 2008 for Falcon 9. Today SLC-40 is the highest-cadence orbital pad ever operated, flying Starlink batches, commercial sats, ISS resupply via Cargo Dragon, and US national-security payloads. Rebuilt after the AMOS-6 explosion in September 2016 with an upgraded propellant system; the pad still does most of the SpaceX manifest the world sees.",
+  "cur": "원래 1965년부터 2005년까지 Titan III / Titan IV 패드였으며, 2008년 SpaceX가 Falcon 9용으로 개조했다. 오늘날 SLC-40은 운용 사상 가장 높은 케이던스의 궤도 패드로, Starlink 배치, 상업 위성, Cargo Dragon을 통한 ISS 보급, 미국 국가안보 페이로드를 발사한다. 2016년 9월 AMOS-6 폭발 사고 후 개선된 추진제 시스템으로 재건되었으며, 세계가 보는 SpaceX 발사 매니페스트의 대부분을 여전히 담당하고 있다."
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+  "at": "best_known_for",
+  "en": "Highest-cadence Falcon 9 pad on the planet — workhorse for ISS resupply + Starlink + national-security",
+  "cur": "지구상 가장 높은 케이던스의 Falcon 9 패드 — ISS 보급 + Starlink + 국가안보의 일꾼"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-41.json",
+  "at": "tagline",
+  "en": "Atlas V's main pad — flew every Atlas V mission including Mars Perseverance + Lucy + Starliner CFT",
+  "cur": "Atlas V의 주요 발사대 — 화성 Perseverance, Lucy, Starliner CFT를 포함한 모든 Atlas V 미션 발사"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-41.json",
+  "at": "description",
+  "en": "United Launch Alliance's primary Atlas V pad at Cape Canaveral, originally built for Titan III in the 1960s, entirely demolished in 1999 and rebuilt as the Atlas V pad; first Atlas V flight 2002-08-21. Every Atlas V flight has launched from here — Mars Reconnaissance Orbiter, Curiosity, Perseverance, Lucy, Juno, the Boeing Starliner Crew Flight Test, and dozens of NSSL national-security missions. Also hosts Vulcan Centaur, which began flying from SLC-41 in January 2024.",
+  "cur": "United Launch Alliance의 케이프 커내버럴 주요 Atlas V 발사대로, 원래 1960년대 Titan III를 위해 건설되었으며, 1999년 완전히 철거 후 Atlas V 발사대로 재건설됨; 첫 Atlas V 비행 2002-08-21. 모든 Atlas V 비행이 이곳에서 발사되었음 — Mars Reconnaissance Orbiter, Curiosity, Perseverance, Lucy, Juno, Boeing Starliner Crew Flight Test, 그리고 수십 개의 NSSL 국방 미션. 또한 Vulcan Centaur를 운영하며, 2024년 1월부터 SLC-41에서 비행을 시작했음."
+ },
+ {
+  "rel": "fleet/launch-site/gagarins-start.json",
+  "at": "tagline",
+  "en": "Baikonur Site 1 — Sputnik 1 (1957-10-04), Gagarin's Vostok 1 (1961-04-12), every crewed Soyuz through MS-15 (2019). Retired 2019",
+  "cur": "바이코누르 Site 1 — Sputnik 1(1957-10-04), 가가린의 Vostok 1(1961-04-12), MS-15까지의 모든 유인 Soyuz(2019). 2019년 폐지"
+ },
+ {
+  "rel": "fleet/launch-site/gagarins-start.json",
+  "at": "dispatch",
+  "en": "Launch Complex 1 at Baikonur is, by a wide margin, the most consequential patch of ground in the history of spaceflight. From this single pad the Soviet Union launched Sputnik in 1957, opening the space age; Gagarin in 1961, opening it to human beings; and then, for the next sixty years, nearly every crewed flight the program flew, right up to the Soyuz crews of 2019. Cosmonauts nicknamed it Gagarin's Start. It was a working R-7 missile stand pressed into history, and for six decades the phrase \"a crew launched today\" almost always meant they launched from here.",
+  "cur": "바이코누르의 발사장 1호는 우주비행의 역사에서 가장 중대한 지역이다. 이 한 개의 발사대에서 소련은 1957년 우주시대를 개척한 스푸트니크를 발사했고, 1961년 인류에게 개방한 가가린을 발사했으며, 그 이후 60년 동안 2019년의 소유즈 승무원에 이르기까지 프로그램이 수행한 거의 모든 유인 비행을 발사했다. 우주비행사들은 이곳을 가가린의 스타르트라고 별명을 붙였다. 그것은 역사 속으로 편입된 작동 중인 R-7 미사일 발사대였으며, 60년 동안 \"오늘 승무원이 발사되었다\"는 표현은 거의 항상 그들이 여기에서 발사되었음을 의미했다."
+ },
+ {
+  "rel": "fleet/launch-site/gagarins-start.json",
+  "at": "description",
+  "en": "Baikonur Cosmodrome Site 1 (designation 5 in Soviet docs; nicknamed \"Gagarin's Start\" after Vostok 1) was the original R-7 ICBM launch pad and the most-flown crewed launch site in history. First launch 1957-05-15 (R-7 test); Sputnik 1 (1957-10-04 — first artificial satellite); Vostok 1 (1961-04-12 — first crewed spaceflight); every crewed Soyuz from Soyuz 1 (1967) through Soyuz MS-15 (2019) launched from Site 1. After 2019 the pad was decommissioned for an upgrade to support Soyuz-2 (the Vostok-derived Soyuz-FG was retired); subsequent ISS crews (from Soyuz MS-16 onward in April 2020) launched from Baikonur Site 31 instead. Site 1 is preserved as a historical monument. Visited by every Russian crew during pre-flight ceremonies.",
+  "cur": "바이코누르 우주 기지 Site 1(소련 문서상 지정번호 5; Vostok 1 이후 '가가린의 발사대'라고 별명 붙여짐)는 원래의 R-7 대륙간탄도미사일 발사대이며 역사상 가장 많이 사용된 유인 발사시설이다. 첫 발사는 1957-05-15(R-7 시험 비행); Sputnik 1(1957-10-04 — 최초의 인공위성); Vostok 1(1961-04-12 — 최초의 유인 우주비행); Soyuz 1(1967)부터 Soyuz MS-15(2019)까지의 모든 유인 소유즈가 Site 1에서 발사되었다. 2019년 이후 이 발사대는 Soyuz-2를 지원하기 위한 개선 작업을 위해 운영을 중단했다(보스토크 기반의 Soyuz-FG는 폐지됨); 이후 ISS 승무원들(2020년 4월 Soyuz MS-16부터)은 대신 바이코누르 Site 31에서 발사되었다. Site 1은 역사유산으로 보존되고 있다. 모든 러시아 승무원들이 발사 전 의식 중에 방문한다."
+ },
+ {
+  "rel": "fleet/launch-site/gagarins-start.json",
+  "at": "best_known_for",
+  "en": "Baikonur Site 1 — Sputnik 1 (1957-10-04), Gagarin's Vostok 1 (1961-04-12), every crewed Soyuz through MS-15 (2019). Retired 2019",
+  "cur": "바이코누르 Site 1 — Sputnik 1(1957-10-04), 가가린의 Vostok 1(1961-04-12), MS-15까지의 모든 유인 Soyuz(2019). 2019년 폐지"
+ },
+ {
+  "rel": "fleet/launch-site/jiuquan-slc-43.json",
+  "at": "tagline",
+  "en": "China's crewed-spaceflight pad — every Shenzhou crew",
+  "cur": "중국의 유인우주비행 발사대 — 모든 Shenzhou 승무원"
+ },
+ {
+  "rel": "fleet/launch-site/jiuquan-slc-43.json",
+  "at": "description",
+  "en": "The first Chinese space launch site (1958), operational orbital launches since 1970, and from 1999 onward the dedicated home of human spaceflight: every Shenzhou crew (1 through 19 as of 2025) has lifted from SLC-43 Pad 91 on Long March 2F rockets. Jiuquan is inland in the Gobi desert at 40.96°N — too far north for the equatorial geometry that Wenchang handles. Tianzhou cargo missions to Tiangong fly from Wenchang Space Launch Site instead.",
+  "cur": "중국 최초의 우주 발사장(1958년), 1970년 이래 운용 중인 궤도 발사, 그리고 1999년부터는 인간 우주비행의 전담 근거지: Shenzhou 승무원(2025년 기준 1번부터 19번까지)은 모두 SLC-43 Pad 91에서 Long March 2F 로켓으로 우주로 올라갔습니다. 주취안은 Gobi 사막 내륙의 40.96°N에 위치하며 — 원창이 담당하는 적도 기하학에는 너무 북쪽입니다. Tianzhou 화물 임무에서 Tiangong으로의 비행은 대신 원창 위성발사센터에서 출발합니다."
+ },
+ {
+  "rel": "fleet/launch-site/jiuquan-slc-43.json",
+  "at": "best_known_for",
+  "en": "China's crewed-spaceflight pad — every Shenzhou crew",
+  "cur": "중국의 유인우주비행 발사대 — 모든 Shenzhou 승무원"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-2.json",
+  "at": "tagline",
+  "en": "Early Ariane pad — 1 Ariane 2, 2 Ariane 3, 116 Ariane 4 (1986-2003)",
+  "cur": "초기 아리안 발사대 — 1 Ariane 2, 2 Ariane 3, 116 Ariane 4 (1986-2003)"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-2.json",
+  "at": "description",
+  "en": "ELA-2 (Ensemble de Lancement Ariane 2) at Kourou's Centre Spatial Guyanais hosted 119 Ariane launches: one Ariane 2 (1986-03-28), two Ariane 3, and all 116 launches of the Ariane 4 rocket (1988-2003). Its near-equatorial position gave Ariane 4 a substantial GTO performance advantage over launch sites at higher latitudes, anchoring Arianespace's commercial dominance in the 1990s. Decommissioned after Ariane 4 retired; ELA-3 (Ariane 5) and ELA-4 (Ariane 6) are its successors.",
+  "cur": "쿠루의 Centre Spatial Guyanais에 위치한 ELA-2(Ensemble de Lancement Ariane 2)는 119회의 Ariane 발사를 호스팅했습니다: 1회의 Ariane 2(1986-03-28), 2회의 Ariane 3, 그리고 Ariane 4 로켓의 모든 116회 발사(1988-2003). 적도 부근의 위치 덕분에 Ariane 4는 더 높은 위도의 발사장에 비해 GTO 성능에서 상당한 이점을 가졌으며, 1990년대 Arianespace의 상업적 지배력을 확립했습니다. Ariane 4 퇴역 후 폐기되었으며, ELA-3(Ariane 5)과 ELA-4(Ariane 6)이 그 후속 시설입니다."
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-3.json",
+  "at": "tagline",
+  "en": "Ariane 5's home pad — JWST + Galileo + a quarter of geostationary commercial sats over a decade",
+  "cur": "Ariane 5의 홈 패드 — JWST + Galileo + 10년간 지정궤도 상업위성의 4분의 1"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-3.json",
+  "at": "description",
+  "en": "Europe chose French Guiana in the 1960s because 5.2°N is just five degrees off the equator — the geometry adds about 460 m/s of free eastward velocity for geostationary launches, and the Atlantic to the east is empty. ELA-3 hosted Ariane 5 from its maiden flight in June 1996 — which failed 37 seconds after launch due to a software error — through the successful final mission in July 2023: James Webb, the Galileo navigation system, BepiColombo, Rosetta, Herschel + Planck, JUICE, and the bulk of Western commercial GEO traffic for two decades. ELA-4 next door is now active with Ariane 6.",
+  "cur": "유럽은 1960년대에 프랑스령 기아나를 선택했습니다. 5.2°N의 위치는 적도에서 단 5도 떨어져 있으며 — 이 지리적 위치는 지정궤도 발사에서 약 460 m/s의 무료 동쪽 속도를 제공하고, 동쪽의 대서양은 비어 있습니다. ELA-3는 1996년 6월의 처녀 비행부터 — 발사 37초 후 소프트웨어 오류로 실패했던 — 2023년 7월의 성공적인 최종 미션까지 Ariane 5를 호스팅했습니다: James Webb, Galileo 항법 시스템, BepiColombo, Rosetta, Herschel + Planck, JUICE, 그리고 20년간 서방 상업 GEO 교통량의 대부분. 옆의 ELA-4는 현재 Ariane 6과 함께 운영 중입니다."
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-3.json",
+  "at": "best_known_for",
+  "en": "Ariane 5's home pad — JWST + Galileo + a quarter of geostationary commercial sats over a decade",
+  "cur": "Ariane 5의 홈 패드 — JWST + Galileo + 10년간 지정궤도 상업위성의 4분의 1"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-4.json",
+  "at": "tagline",
+  "en": "Ariane 6's home pad — Europe's geostationary access after Ariane 5",
+  "cur": "Ariane 6의 본거지 패드 — Ariane 5 이후 유럽의 정지궤도 접근"
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-4.json",
+  "at": "description",
+  "en": "The sister pad to ELA-3 at the Centre Spatial Guyanais. Construction started in 2015; Ariane 6's maiden flight VA262 lifted from here on July 9, 2024. ELA-4 inherits the same 5.2°N equatorial advantage that made Ariane 5 the most successful Western geostationary launcher of its era, with a redesigned ground-segment for higher cadence: horizontal-integration assembly building, sliding mobile gantry, full integration of the new ESC-B upper stage. Europe's strategic-autonomy launcher for institutional payloads (Galileo upgrade, Copernicus, ESA science missions) plus commercial GEO traffic.",
+  "cur": "Centre Spatial Guyanais의 ELA-3 자매 발사대입니다. 건설은 2015년에 시작되었고, Ariane 6의 처녀 비행 VA262가 2024년 7월 9일 여기서 발사되었습니다. ELA-4는 Ariane 5를 그 시대 가장 성공적인 서방 정지궤도 발사체로 만든 5.2°N 적도 이점을 물려받으면서, 발사 빈도 증대를 위해 재설계된 지상 기반 시설을 갖추고 있습니다: 수평 통합 조립 건물, 슬라이딩 이동식 발사 틀, 새로운 ESC-B 상단 단계의 완전한 통합. 유럽의 전략적 자율성을 갖춘 제도적 탑재물(Galileo 업그레이드, Copernicus, ESA 과학 임무) 및 상업용 정지궤도 우주 교통을 위한 발사체입니다."
+ },
+ {
+  "rel": "fleet/launch-site/kourou-ela-4.json",
+  "at": "best_known_for",
+  "en": "Ariane 6's home pad — Europe's geostationary access after Ariane 5",
+  "cur": "Ariane 6의 본거지 패드 — Ariane 5 이후 유럽의 정지궤도 접근"
+ },
+ {
+  "rel": "fleet/launch-site/lc-14.json",
+  "at": "tagline",
+  "en": "Cape Canaveral Mercury-Atlas pad — launched all 4 orbital Mercury flights (Glenn / Carpenter / Schirra / Cooper, 1962-1963)",
+  "cur": "케이프 커내버럴 머큐리-아틀라스 발사대 — 1962-1963년 모든 4개의 궤도 비행 Mercury 미션을 발사했습니다(글렌 / 카펜터 / 시라 / 쿠퍼)"
+ },
+ {
+  "rel": "fleet/launch-site/lc-14.json",
+  "at": "dispatch",
+  "en": "If Complex 5 is where Americans first touched space, Complex 14 is where they first stayed. This was the Atlas pad, and all four orbital Mercury flights left from it — Glenn, Carpenter, Schirra, Cooper — the flights that put an American in orbit rather than on an arc. It later launched the Gemini-Atlas target vehicles that taught crews to rendezvous, so the same patch of ground bridges the first orbits and the docking skills Apollo would need. Where 5 holds the starting line, 14 holds the moment the United States became a genuinely orbital nation.",
+  "cur": "Complex 5가 미국인이 처음 우주에 닿은 곳이라면, Complex 14는 그들이 처음 체류한 곳이다. 이것이 Atlas 발사대였으며, 네 개의 궤도 머큐리 비행이 모두 여기서 발사되었다 — 글렌, 카펜터, 시라, 쿠퍼 — 포물선이 아닌 궤도에 미국인을 올려놓은 비행들이었다. 나중에 승무원들에게 랑데부를 가르친 Gemini-Atlas 표적 우주선들을 발사했으므로, 같은 지역이 첫 궤도와 Apollo가 필요로 했던 도킹 능력을 잇는다. Complex 5가 시작선을 지탱한다면, Complex 14는 미국이 진정한 궤도 국가가 된 그 순간을 지탱한다."
+ },
+ {
+  "rel": "fleet/launch-site/lc-14.json",
+  "at": "description",
+  "en": "Cape Canaveral Launch Complex 14 hosted Atlas missile tests then the four orbital Mercury-Atlas crewed missions: Friendship 7 (1962-02-20, Glenn — first American in orbit), Aurora 7 (1962-05-24, Carpenter), Sigma 7 (1962-10-03, Schirra), and Faith 7 (1963-05-15, Cooper). After Mercury, LC-14 hosted four Atlas-Agena uncrewed missions before being deactivated in 1967. A steel Mercury 7 monument was dedicated on November 10, 1964 at the pad. The launch ring + service tower base remain visible.",
+  "cur": "케이프 커내버럴 발사복합체 14(Launch Complex 14)는 아틀라스 미사일 시험을 거친 후 4개의 궤도 Mercury-Atlas 유인 미션을 호스팅했습니다: Friendship 7(1962-02-20, 글렌 — 미국인 최초 궤도 진입), Aurora 7(1962-05-24, 카펜터), Sigma 7(1962-10-03, 시라), Faith 7(1963-05-15, 쿠퍼). Mercury 이후 LC-14는 1967년 폐기되기 전에 4개의 Atlas-Agena 무인 미션을 호스팅했습니다. 강철 Mercury 7 기념비가 1964년 11월 10일 발사대에 헌정되었습니다. 발사 고리와 서비스 타워 베이스가 여전히 보입니다."
+ },
+ {
+  "rel": "fleet/launch-site/lc-14.json",
+  "at": "best_known_for",
+  "en": "Cape Canaveral Mercury-Atlas pad — launched all 4 orbital Mercury flights (Glenn / Carpenter / Schirra / Cooper, 1962-1963)",
+  "cur": "케이프 커내버럴 머큐리-아틀라스 발사대 — 1962-1963년 궤도 머큐리 비행 4개 모두를 발사했습니다(글렌 / 카펜터 / 시라 / 쿠퍼)"
+ },
+ {
+  "rel": "fleet/launch-site/lc-34.json",
+  "at": "tagline",
+  "en": "NASA pad at Cape Canaveral (1961-68) — first Saturn I; Apollo 1 fire site 1967-01-27; Apollo 7 first crewed launch 1968-10-11",
+  "cur": "NASA의 케이프 커내버럴 발사대 (1961-68) — 첫 번째 새턴 I; Apollo 1 화재 사고 현장 1967-01-27; Apollo 7 첫 유인 발사 1968-10-11"
+ },
+ {
+  "rel": "fleet/launch-site/lc-34.json",
+  "at": "dispatch",
+  "en": "Launch Complex 34 is where the Saturn era began — and where it almost ended. The first Saturn rocket lifted off from this single-towered pad in 1961, proving von Braun's outsized boosters could fly at all. It is also the place where, on 27 January 1967, the Apollo 1 fire killed Gus Grissom, Ed White, and Roger Chaffee during a ground test — the program's darkest day, on the pad, before anything had left the ground. And it is where Apollo came back twenty-one months later: Apollo 7, the first crewed flight, launched from LC-34 and proved the redesigned spacecraft was sound. One small pad held the whole arc — the beginning, the catastrophe, and the recovery. A memorial stands there now.",
+  "cur": "발사 복합체 34는 새턴 시대가 시작된 곳이자 거의 끝날 뻔했던 곳이다. 첫 번째 새턴 로켓은 1961년 이 단일 타워식 발사대에서 이륙했으며, 폰 브라운의 거대한 부스터가 실제로 비행할 수 있다는 것을 입증했다. 또한 1967년 1월 27일 지상 시험 중 Apollo 1 화재가 거스 그리섬, 에드 화이트, 로저 채피를 사망하게 한 곳이기도 하다 — 발사대에서 발생한 프로그램 최악의 날로, 아무것도 지면을 떠나기 전에 일어난 사건이다. 그리고 21개월 후 Apollo가 돌아온 곳이다: 첫 유인 비행인 Apollo 7이 LC-34에서 발사되어 재설계된 우주선이 안전함을 입증했다. 하나의 작은 발사대가 전체 궤적을 담았다 — 시작, 재앙, 그리고 회복. 이제 그곳에는 추도비가 서 있다."
+ },
+ {
+  "rel": "fleet/launch-site/lc-34.json",
+  "at": "description",
+  "en": "Cape Canaveral Launch Complex 34 served NASA from 1961-10-27 (first Saturn I, SA-1) through 1968-10-11 (Apollo 7, the first crewed Apollo flight). LC-34's single steel umbilical tower hosted four uncrewed Saturn I flights (SA-1 through SA-4, 1961-1963), was then reconstructed for Saturn IB, and flew two uncrewed Saturn IB flights (AS-201 in 1966, AS-202 in 1966) before the Apollo 1 test. On 1967-01-27 during a Plugs-Out test of Apollo 1 — the planned first crewed Block I CSM flight — a flash fire in the pure-O₂ cabin killed Gus Grissom, Ed White, and Roger Chaffee in seconds. The pad was rebuilt for Apollo 7 (1968-10-11) which launched the first crewed Apollo flight, then deactivated 1968-11. The pad's concrete deluge ring + main flame trench still stand; a memorial plaque on site reads \"They gave their lives in service to their country in the ongoing exploration of humankind's final frontier.\"",
+  "cur": "케이프 커내버럴 발사 복합체 34는 1961-10-27 (첫 번째 새턴 I, SA-1)부터 1968-10-11 (첫 유인 Apollo 비행인 Apollo 7)까지 NASA에 근무했다. LC-34의 단일 강철 제연관 타워는 4개의 무인 새턴 I 비행 (SA-1부터 SA-4까지, 1961-1963)을 담당했으며, 이후 Saturn IB를 위해 재건축되었고, Apollo 1 시험 전에 2개의 무인 Saturn IB 비행 (1966년 AS-201, 1966년 AS-202)을 비행했다. 1967-01-27 Apollo 1의 Plugs-Out 시험 중 — 계획된 첫 번째 유인 Block I CSM 비행 — 순산소 객실의 폭발적인 화재가 거스 그리섬, 에드 화이트, 로저 채피를 초단위에 사망하게 했다. 발사대는 Apollo 7 (1968-10-11)을 위해 재건축되었고, 첫 유인 Apollo 비행을 발사한 후 1968-11에 폐지되었다. 발사대의 콘크리트 방사 링과 주 화염 수로는 여전히 남아 있으며, 현장의 추도 명판에는 \"그들은 인류의 마지막 개척지 탐사라는 진행 중인 과업에 봉사하며 생명을 바쳤습니다\"라고 적혀 있다."
+ },
+ {
+  "rel": "fleet/launch-site/lc-34.json",
+  "at": "best_known_for",
+  "en": "NASA pad at Cape Canaveral (1961-68) — first Saturn I; Apollo 1 fire site 1967-01-27; Apollo 7 first crewed launch 1968-10-11",
+  "cur": "NASA의 케이프 커내버럴 발사대 (1961-68) — 첫 번째 새턴 I; Apollo 1 화재 사고 현장 1967-01-27; Apollo 7 첫 유인 발사 1968-10-11"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "tagline",
+  "en": "Launched Apollo 8, 9, 11-17 (all crewed lunar missions to the Moon); today flies Falcon 9, Falcon Heavy, and Crew Dragon",
+  "cur": "Apollo 8, 9, 11-17(달 지구 밖 유인 미션 전수) 발사; 현재는 Falcon 9, Falcon Heavy, Crew Dragon 운영"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "dispatch",
+  "en": "Launch Complex 39A was built around an idea nearly as radical as the rocket it served: don't build the rocket at the pad. Instead, stack the Saturn V inside the cavernous Vehicle Assembly Building, then carry the whole ~3,000-tonne stack out to the pad — standing upright — on a crawler-transporter creeping along at walking pace. That \"clean pad\" approach let one site turn around the largest rocket ever flown far faster than assembling it in place ever could. The design outlived Apollo by half a century: the same pad launched most of the Space Shuttle fleet and, leased to SpaceX in 2014, now flies Falcon Heavy and astronauts on Crew Dragon. Good infrastructure, it turns out, is the quietest kind of moonshot — build it once and it keeps paying off.",
+  "cur": "39A 발사단지는 로켓 자체만큼이나 근본적인 아이디어를 중심으로 건설되었다: 발사대에서 로켓을 조립하지 말라는 것이었다. 대신 Saturn V를 거대한 Vehicle Assembly Building 내부에 조립한 후, ~3,000톤 무게의 전체 스택을 발사대까지 수직 상태로 crawler-transporter에 싣고 걷는 속도로 이동시켰다. 이 '깨끗한 발사대' 방식 덕분에 한 곳의 시설이 역대 가장 큰 로켓을 현지 조립보다 훨씬 빠르게 재활용할 수 있었다. 이 설계는 Apollo 시대를 반세기 이상 초과하며 지속했다: 같은 발사대에서 Space Shuttle 함대의 대부분을 발사했고, 2014년 SpaceX에 임차된 후에는 Falcon Heavy와 Crew Dragon의 우주인들을 운송한다. 결국 좋은 인프라는 가장 조용한 종류의 달 도전이다 — 한 번 건설하면 계속해서 수익을 창출한다."
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "description",
+  "en": "Built for Saturn V, kept for the Shuttle, leased to SpaceX in 2014. From Pad A: Apollo 4 (the first Saturn V), Apollo 11 (the first lunar landing), Apollo 13, Apollo 17 (the last lunar landing), Skylab, eighty-two Space Shuttle flights including the first STS-1, and since 2017 every Falcon Heavy and every Crew Dragon to the ISS. The same flame trench, the same crawlerway, three eras of US human spaceflight.",
+  "cur": "Saturn V를 위해 건설되고, Space Shuttle을 위해 유지되며, 2014년 SpaceX에 임차됨. Pad A에서: Apollo 4(첫 Saturn V), Apollo 11(첫 달 착륙), Apollo 13, Apollo 17(마지막 달 착륙), Skylab, STS-1을 포함한 82회의 Space Shuttle 비행, 그리고 2017년 이후 모든 Falcon Heavy와 ISS로 가는 모든 Crew Dragon. 같은 화염 트렌치, 같은 이송로, 미국 우주인 비행의 3개 시대."
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "best_known_for",
+  "en": "Launched Apollo 8, 9, 11-17 (all crewed lunar missions to the Moon); today flies Falcon 9, Falcon Heavy, and Crew Dragon",
+  "cur": "Apollo 8, 9, 11-17(달 지구 밖 유인 미션 전수) 발사; 현재는 Falcon 9, Falcon Heavy, Crew Dragon 운영"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39b.json",
+  "at": "tagline",
+  "en": "Apollo 10 + Skylab + 53 Shuttle flights; now NASA's SLS / Artemis pad",
+  "cur": "Apollo 10 + Skylab + 53개의 셔틀 비행; 현재 NASA의 SLS / Artemis 발사대"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39b.json",
+  "at": "description",
+  "en": "Pad 39B carried Apollo 10 (the lunar dress rehearsal), Skylab 2/3/4 crew launches, and fifty-three Space Shuttle flights — the first of which was the ill-fated STS-51-L Challenger in January 1986. Rebuilt as a clean pad in the late 2000s — no permanent service tower, mobile launcher platform per mission — to host the next generation of vehicles. Artemis I lifted from 39B in November 2022; Artemis II and III will follow.",
+  "cur": "39B 발사대는 Apollo 10(달 리허설 미션), Skylab 2/3/4 승무원 발사, 그리고 53개의 Space Shuttle 비행을 수행했습니다 — 첫 번째는 1986년 1월의 불운한 STS-51-L Challenger였습니다. 2000년대 후반에 깨끗한 발사대로 재건되었으며 — 상설 서비스 타워가 없고, 임무별 모바일 발사 플랫폼 — 차세대 우주선을 호스팅하기 위해 준비되었습니다. Artemis I은 2022년 11월에 39B에서 발사했으며, Artemis II와 III가 뒤따를 것입니다."
+ },
+ {
+  "rel": "fleet/launch-site/lc-39b.json",
+  "at": "best_known_for",
+  "en": "Apollo 10 + Skylab + 53 Shuttle flights; now NASA's SLS / Artemis pad",
+  "cur": "Apollo 10 + Skylab + 53개의 셔틀 비행; 현재 NASA의 SLS / Artemis 발사대"
+ },
+ {
+  "rel": "fleet/launch-site/lc-5.json",
+  "at": "tagline",
+  "en": "Cape Canaveral Mercury-Redstone pad — launched Freedom 7 (Shepard, 1961-05-05) and Liberty Bell 7 (Grissom, 1961-07-21)",
+  "cur": "케이프 커내버럴 머큐리-레드스톤 발사대 — Freedom 7(셰퍼드, 1961-05-05)과 Liberty Bell 7(그리섬, 1961-07-21) 발사"
+ },
+ {
+  "rel": "fleet/launch-site/lc-5.json",
+  "at": "dispatch",
+  "en": "Launch Complex 5 is a modest concrete pad with an outsized claim: it is where American human spaceflight physically began. It had been a Redstone missile test stand before NASA adapted it, and from it, on 5 May 1961, Alan Shepard became the first American to leave the planet. It launched only the two suborbital Mercury hops before the program moved to the more powerful Atlas pads down the Cape — a short career, but it holds the starting line. The first American flight of everything that followed traces back to this spot.",
+  "cur": "Launch Complex 5는 겸손한 콘크리트 발사대이지만 엄청난 의미를 지닌다. 바로 미국 유인 우주비행이 물리적으로 시작된 곳이기 때문이다. 원래 Redstone 미사일 시험대였던 이곳을 NASA가 개조했으며, 1961년 5월 5일 앨런 셰퍼드가 이곳에서 지구를 떠난 최초의 미국인이 되었다. 이 발사대는 두 차례의 준궤도 Mercury 비행만을 수행한 후 프로그램이 케이프 아래쪽의 더 강력한 Atlas 발사대로 이전되었다 — 짧은 경력이지만, 출발선을 지키고 있다. 그 이후 모든 것의 첫 미국 비행은 이 지점으로 거슬러 올라간다."
+ },
+ {
+  "rel": "fleet/launch-site/lc-5.json",
+  "at": "description",
+  "en": "Cape Canaveral Launch Complex 5 hosted Redstone IRBM tests (1956-1961) before being modified for NASA's Mercury-Redstone programme. Freedom 7 (1961-05-05, Shepard, first American in space) and Liberty Bell 7 (1961-07-21, Grissom) both launched from LC-5. The pad's blockhouse — heavy reinforced concrete with thick blast-resistant glass — survives intact and is part of the Cape Canaveral Air Force Station Museum, used as a Mercury programme exhibit space. The blockhouse interior preserves the period instrument panels, including the consoles where launch teams worked through the Cuban missile crisis. Final launch 1961-07-21 — LC-5 was retired after Liberty Bell 7 when NASA shifted to LC-14 for the Atlas-Mercury flights.",
+  "cur": "케이프 커내버럴 Launch Complex 5는 NASA의 Mercury-Redstone 프로그램으로 개조되기 전에 Redstone IRBM 시험(1956-1961)을 수행했습니다. Freedom 7(1961-05-05, 셰퍼드, 우주에 간 첫 번째 미국인)과 Liberty Bell 7(1961-07-21, 그리섬)은 모두 LC-5에서 발사되었습니다. 발사대의 블록하우스는 두꺼운 콘크리트로 보강되고 튼튼한 방폭 유리로 덮여 있으며, 손상되지 않은 상태로 케이프커내버럴 공군 기지 Museum의 일부로서 Mercury 프로그램 전시 공간으로 사용되고 있습니다. 블록하우스 내부는 쿠바 미사일 위기 동안 발사팀이 일했던 콘솔을 포함한 당시의 계기판을 보존하고 있습니다. 마지막 발사 1961-07-21 — NASA가 Atlas-Mercury 비행을 위해 LC-14로 전환한 후 LC-5는 Liberty Bell 7 발사 이후 폐지되었습니다."
+ },
+ {
+  "rel": "fleet/launch-site/lc-5.json",
+  "at": "best_known_for",
+  "en": "Cape Canaveral Mercury-Redstone pad — launched Freedom 7 (Shepard, 1961-05-05) and Liberty Bell 7 (Grissom, 1961-07-21)",
+  "cur": "케이프 커내버럴 머큐리-레드스톤 발사대 — Freedom 7(셰퍼드, 1961-05-05)과 Liberty Bell 7(그리섬, 1961-07-21) 발사"
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-41-1.json",
+  "at": "tagline",
+  "en": "R-7-family pad (Vostok-2 / Soyuz-class) — 308 launches, 1966-1981",
+  "cur": "R-7계열 발사대(Vostok-2 / Soyuz급) — 308회 발사, 1966-1981"
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-41-1.json",
+  "at": "description",
+  "en": "Plesetsk's LC-41/1 pad (also called Lesobaza or SK-1) operated R-7-derived rockets from 1966 to 1981, supporting a vast catalogue of military reconnaissance, navigation, and communications satellites. The pad hosted the first orbital launch from LC-41/1: Kosmos 112 on March 17, 1966 (Vostok-2 booster). Over ~15 years of operation, approximately 308 successful orbital launches were achieved. Located at NIIP-53 in Russia's far north, the pad was disassembled after its operational period ended.",
+  "cur": "플레세츠크의 LC-41/1 패드(Lesobaza 또는 SK-1로도 불림)는 1966년부터 1981년까지 R-7 파생 로켓을 운영하며, 광범위한 군사 정찰, 항법, 통신 위성을 지원했습니다. 이 패드는 LC-41/1의 첫 궤도 발사를 기록했습니다: 1966년 3월 17일 Kosmos 112 (Vostok-2 부스터). 약 15년의 운영 기간 동안 약 308번의 성공적인 궤도 발사를 달성했습니다. 러시아 극북 지역의 NIIP-53에 위치한 이 패드는 운영 기간이 끝난 후 해체되었습니다."
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-41-1.json",
+  "at": "best_known_for",
+  "en": "R-7-family pad (Vostok-2 / Soyuz-class)",
+  "cur": "R-7계열 발사대(Vostok-2 / Soyuz급)"
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-43.json",
+  "at": "tagline",
+  "en": "Plesetsk's workhorse Soyuz pad at 62.9°N — the world's highest-latitude active orbital launch complex",
+  "cur": "플레세츠크의 주력 Soyuz 발사대 (62.9°N) — 세계에서 가장 높은 위도의 활성 궤도 발사 기지"
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-43.json",
+  "at": "description",
+  "en": "Plesetsk Cosmodrome sits at 62.9°N — the world's highest-latitude active orbital launch complex. Site 43 is one of several pads at Plesetsk and operates Soyuz-2 today for Russian polar / Molniya / GLONASS payloads. Originally an R-7 ICBM base in the late 1950s, repurposed for space launches in 1966, and for several decades Plesetsk held the record for most orbital launches from any single site on Earth. The high latitude limits how much the Earth's rotation contributes (less than at Baikonur or Wenchang), but it's perfect for high-inclination missions that Baikonur can't easily reach without dogleg manoeuvres.",
+  "cur": "플레세츠크 우주기지는 62.9°N에 위치하며 세계에서 가장 높은 위도의 활성 궤도 발사 기지입니다. Site 43은 플레세츠크의 여러 발사대 중 하나이며 현재 러시아의 극궤도 / Molniya / GLONASS 페이로드를 위해 Soyuz-2를 운영하고 있습니다. 1950년대 후반의 R-7 대륙간탄도미사일 기지에서 시작하여 1966년 우주 발사용으로 전환되었으며, 수십 년 동안 플레세츠크는 지구상의 단일 발사 기지에서 가장 많은 궤도 발사를 수행한 기록을 보유했습니다. 높은 위도는 지구 자전이 제공하는 도움을 제한하지만(바이코누르나 웬창보다 적음), 바이코누르가 편향 기동 없이는 쉽게 도달할 수 없는 고경사 미션에 완벽합니다."
+ },
+ {
+  "rel": "fleet/launch-site/plesetsk-43.json",
+  "at": "best_known_for",
+  "en": "World's most northerly orbital launch site — Russia's polar / Molniya military + GLONASS pad",
+  "cur": "세계에서 가장 북쪽의 궤도 발사 기지 — 러시아의 극궤도 / Molniya 군사 + GLONASS 발사대"
+ },
+ {
+  "rel": "fleet/launch-site/sriharikota-slp.json",
+  "at": "tagline",
+  "en": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3, Mangalyaan, and the upcoming Gaganyaan crew programme",
+  "cur": "인도의 중형 발사대 — Chandrayaan-3, Mangalyaan, 그리고 계획 중인 Gaganyaan 유인우주비행 프로그램으로 GSLV Mk III / LVM3 운영"
+ },
+ {
+  "rel": "fleet/launch-site/sriharikota-slp.json",
+  "at": "description",
+  "en": "Sriharikota Island on India's east coast, 13.7°N — closer to the equator than Cape Canaveral, with the Bay of Bengal corridor empty downrange. The Second Launch Pad (SLP) handles ISRO's heavy-lift programme: PSLV manifests, LVM3 (formerly GSLV Mk III), Chandrayaan-1 (October 2008, lunar orbiter/impactor), Chandrayaan-2 (July 2019, lost on landing), Chandrayaan-3 (July 2023, successful soft landing near the south pole), and the planned Gaganyaan crewed missions. The First Launch Pad next door handles smaller PSLV / SSLV manifests and hosted the Mangalyaan Mars launch (November 2013).",
+  "cur": "인도 동부 해안의 스리하리코타 Island, 13.7°N — 케이프 커내버럴보다 적도에 더 가까우며, Bengal Bay 해역이 발사 경로상 비어있음. Second Launch Pad(SLP)는 ISRO의 중형 발사 프로그램을 담당함: PSLV 발사체들, LVM3(이전명 GSLV Mk III), Chandrayaan-1(2008년 10월, 달 궤도선/충돌기), Chandrayaan-2(2019년 7월, 착륙 실패), Chandrayaan-3(2023년 7월, 남극 근처 성공적인 연착륙), 그리고 계획된 Gaganyaan 유인우주비행 미션. 인접한 First Launch Pad는 소형 PSLV / SSLV 발사체를 담당하며 Mangalyaan 화성 발사(2013년 11월)를 실시했음."
+ },
+ {
+  "rel": "fleet/launch-site/sriharikota-slp.json",
+  "at": "best_known_for",
+  "en": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3, Mangalyaan, and the upcoming Gaganyaan crew programme",
+  "cur": "인도의 중형 발사대 — Chandrayaan-3, Mangalyaan, 그리고 계획 중인 Gaganyaan 유인우주비행 프로그램으로 GSLV Mk III / LVM3 운영"
+ },
+ {
+  "rel": "fleet/launch-site/starbase-orbital-a.json",
+  "at": "tagline",
+  "en": "First Starship orbital flight test; designed for the full reusable Mars-bound stack",
+  "cur": "Starship 첫 궤도 비행 시험; 완전 재사용 가능한 화성 탐사 스택을 위해 설계됨"
+ },
+ {
+  "rel": "fleet/launch-site/starbase-orbital-a.json",
+  "at": "description",
+  "en": "SpaceX's Starship pad at Boca Chica, Texas — built from scratch starting in 2019 for the fully reusable Starship + Super Heavy. First integrated flight test (IFT-1) lifted off April 20, 2023; vehicle lost ~4 minutes post-liftoff after engine failures caused loss of control, but the pad survived. Subsequent IFTs through 2024-25 demonstrated booster catch via the Mechazilla tower arms, successful sea splashdowns, and increasing payload-class capability. The water deluge system at this pad is the largest ever built for an orbital launch — the over-pressure footprint from 33 Raptor-class engines is unlike anything else flying.",
+  "cur": "텍사스 Boca Chica의 SpaceX Starship 발사대 — 완전 재사용 가능한 Starship + Super Heavy를 위해 2019년부터 새롭게 건설. 첫 통합 비행 시험(IFT-1)은 2023년 4월 20일 발사; 엔진 고장으로 인한 제어 불능 후 발사 약 4분 후 기체 손실, 하지만 발사대는 무사. 2024-25년을 통한 후속 IFT들은 Mechazilla 타워 암을 통한 부스터 포획, 성공적인 해상 물착륙, 증가된 페이로드급 성능을 입증. 이 발사대의 물 분무 시스템은 궤도 발사를 위해 지금까지 건설된 가장 큰 규모 — 33개의 Raptor급 엔진으로부터의 과압 풋프린트는 현재 비행 중인 다른 어떤 것과도 다름."
+ },
+ {
+  "rel": "fleet/launch-site/starbase-orbital-a.json",
+  "at": "best_known_for",
+  "en": "First Starship orbital flight test; designed for the full reusable Mars-bound stack",
+  "cur": "Starship 첫 궤도 비행 시험; 완전 재사용 가능한 화성 탐사 스택을 위해 설계됨"
+ },
+ {
+  "rel": "fleet/launch-site/taiyuan-lc-9.json",
+  "at": "tagline",
+  "en": "Long March 2D / 4B / 4C polar-orbit workhorse — Yaogan, Gaofen, weather sats",
+  "cur": "Long March 2D / 4B / 4C 극궤도 주력 로켓 — Yaogan, Gaofen, 기상 위성"
+ },
+ {
+  "rel": "fleet/launch-site/taiyuan-lc-9.json",
+  "at": "description",
+  "en": "Taiyuan Satellite Launch Center's LC-9 (also known as Pad 9) handles most of TYSC's polar and sun-synchronous orbit launches with the Long March 2D, 4B, 4C, and 6A. Typical payloads include the Yaogan reconnaissance series, the Gaofen Earth-observation constellation, and the Fengyun meteorological satellites. Active since 2008.",
+  "cur": "타이위안 위성발사센터의 LC-9(또는 Pad 9)는 창정 2D, 4B, 4C, 6A를 이용해 TYSC의 극궤도·태양동기궤도 발사 대부분을 담당한다. 대표 페이로드는 정찰위성 Yaogan 시리즈, 지구관측 Gaofen 군집위성, 기상위성 Fengyun이다. 2008년부터 운용 중."
+ },
+ {
+  "rel": "fleet/launch-site/taiyuan-lc-9.json",
+  "at": "best_known_for",
+  "en": "Polar-orbit workhorse for Yaogan + Gaofen + Fengyun",
+  "cur": "Yaogan + Gaofen + Fengyun의 극궤도 주력 로켓"
+ },
+ {
+  "rel": "fleet/launch-site/tanegashima-yoshinobu.json",
+  "at": "tagline",
+  "en": "Japan's heavy-lift gateway — H-IIA + H3, HTV / HTV-X cargo to the ISS",
+  "cur": "일본의 중대형 발사 거점 — H-IIA + H3, HTV / HTV-X 화물 ISS 수송"
+ },
+ {
+  "rel": "fleet/launch-site/tanegashima-yoshinobu.json",
+  "at": "description",
+  "en": "On Tanegashima, the southern Japanese island that's been home to JAXA's orbital programme since 1969. LP-1 hosted the H-II maiden flight in 1996; the H-IIA from 2001 (49 successes in 50 flights; retired June 2025 after its final mission); the seven HTV cargo flights to the ISS between 2009 and 2020; and from 2023 the new H3 rocket. Tanegashima's 30°N geometry is workable for geostationary launches — the south Pacific is empty downrange — and the fishing fleet stand-down windows are famously short, giving Japan some of the tightest launch-window protocols in the world.",
+  "cur": "1969년부터 JAXA의 궤도 프로그램의 본거지가 된 일본의 남부 섬 다네가시마에 위치. LP-1은 1996년 H-II 초도 비행을 수용했으며, 2001년부터 H-IIA (50회 비행 중 49회 성공; 2025년 6월 최종 임무 후 퇴역)를, 2009년과 2020년 사이 ISS로의 7회 HTV 화물 비행을, 그리고 2023년부터는 신형 H3 로켓을 운영하고 있다. 다네가시마의 30°N 위도는 정지궤도 발사에 적합하며 — 남태평양은 다운레인지에 무장애 구간 — 어선의 활동 중단 시간이 짧기로 유명하여 일본은 세계에서 가장 엄격한 발사 윈도우 프로토콜 중 일부를 운영하고 있다."
+ },
+ {
+  "rel": "fleet/launch-site/tanegashima-yoshinobu.json",
+  "at": "best_known_for",
+  "en": "Japan's heavy-lift gateway — H-IIA + H3, HTV / HTV-X cargo to the ISS",
+  "cur": "일본의 중대형 발사 거점 — H-IIA + H3, HTV / HTV-X 화물 ISS 수송"
+ },
+ {
+  "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+  "at": "tagline",
+  "en": "Polar / sun-synchronous gateway — Falcon 9 to Starlink + national-security + earth-observation",
+  "cur": "극궤도 / 태양동기 게이트웨이 — Falcon 9로 Starlink + 국가안보 + 지구관측"
+ },
+ {
+  "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+  "at": "description",
+  "en": "The US west-coast orbital gateway. Built for Atlas-Agena in 1963; Titan III/IV through to 2005; refit by SpaceX in 2011. Vandenberg's geographic advantage is the corridor due south over the Pacific — that's how US payloads reach polar and sun-synchronous orbits without overflying populated land. Today SLC-4E flies Falcon 9 to Starlink polar shells, NRO classified payloads, USSF + commercial earth-observation satellites. SLC-4W next door is the booster recovery zone.",
+  "cur": "미국 서해안의 궤도 진입 관문. 1963년 Atlas-Agena를 위해 건설되었으며, 2005년까지 Titan III/IV를 운용했고, 2011년 SpaceX에 의해 개수되었습니다. 반덴버그의 지리적 이점은 태평양 위 남쪽으로 뻗어 있는 통로인데, 이를 통해 미국 페이로드가 인구 지역 위를 비행하지 않고 극궤도 및 태양동기궤도에 도달할 수 있습니다. 현재 SLC-4E는 Falcon 9를 Starlink 극궤도 콘스텔레이션, NRO 기밀 페이로드, USSF 및 상용 지구관측 위성으로 발사합니다. 바로 옆의 SLC-4W는 부스터 회수 구역입니다."
+ },
+ {
+  "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+  "at": "best_known_for",
+  "en": "Polar / sun-synchronous gateway — Falcon 9 to Starlink + national-security + earth-observation",
+  "cur": "극궤도 / 태양동기 게이트웨이 — Falcon 9로 Starlink + 국가안보 + 지구관측"
+ },
+ {
+  "rel": "fleet/launch-site/wenchang-lc-101.json",
+  "at": "tagline",
+  "en": "China's heavy-lift pad — Long March 5 to Tianhe, Chang'e 5/6, Tianwen-1, and the lunar return programme",
+  "cur": "중국의 대형 발사 패드 — Long March 5를 Tianhe, Chang'e 5/6, Tianwen-1, 그리고 달 귀환 프로그램으로 운반"
+ },
+ {
+  "rel": "fleet/launch-site/wenchang-lc-101.json",
+  "at": "description",
+  "en": "Built in 2014, operational from 2016, on Hainan Island at 19.6°N — the southernmost CNSA launch site. The low latitude adds about 460 m/s of free eastward velocity vs Jiuquan or Xichang, which is how Long March 5B can reach the 25-tonne LEO class needed to put the Tianhe core module into orbit in a single launch. Wenchang LC-101 is dedicated to Long March 5 / 5B; maiden flight November 3, 2016. It also flew Chang'e 5 (lunar sample return, 2020), Chang'e 6 (the farside sample return, 2024), and Tianwen-1 (Mars orbiter + Zhurong rover, 2020). Sister pad LC-201 next door handles Long March 7/8 manifests and achieved its first launch in June 2016.",
+  "cur": "2014년에 건설되어 2016년부터 운영 중인 하이난 섬의 19.6°N에 위치한 중국 국가항천국(CNSA)의 최남단 발사장입니다. 낮은 위도는 주취안이나 시창에 비해 약 460 m/s의 자유로운 동쪽 속도를 제공하며, 이것이 Long March 5B가 Tianhe 핵심 모듈을 단일 발사로 궤도에 올릴 수 있도록 하는 25톤급 지구저궤도(LEO) 능력을 갖추는 방법입니다. 원창 LC-101는 Long March 5 / 5B 전용이며, 처녀 비행은 2016년 11월 3일입니다. 또한 Chang'e 5(달 샘플 반환, 2020), Chang'e 6(달 뒷면 샘플 반환, 2024), Tianwen-1(화성 궤도선 + Zhurong 로버, 2020)을 발사했습니다. 옆에 있는 자매 발사대 LC-201은 Long March 7/8 발사 일정을 담당하며 2016년 6월에 첫 발사를 달성했습니다."
+ },
+ {
+  "rel": "fleet/launch-site/wenchang-lc-101.json",
+  "at": "best_known_for",
+  "en": "China's heavy-lift pad — Long March 5 to Tianhe, Chang'e 5/6, Tianwen-1, and the lunar return programme",
+  "cur": "중국의 대형 발사 패드 — Long March 5를 Tianhe, Chang'e 5/6, Tianwen-1, 그리고 달 귀환 프로그램으로 운반"
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-2.json",
+  "at": "tagline",
+  "en": "Long March 3A/3B family — most Chinese GTO commercial launches and Beidou GNSS deployments",
+  "cur": "Long March 3A/3B 계열 — 대부분의 중국 정지 전이 궤도 상업 발사 및 Beidou 위성항법시스템 배치"
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-2.json",
+  "at": "description",
+  "en": "Xichang Satellite Launch Center's LC-2 has handled the majority of China's commercial geostationary launches, the Beidou/Compass navigation constellation, and the Chang'e lunar program through the Long March 3A, 3B, and 3C variants. Located in the mountainous Sichuan province, the site combines a low-latitude advantage for GTO performance with year-round operational availability.",
+  "cur": "시창 위성발사센터의 LC-2는 Long March 3A, 3B, 3C 변형을 통해 중국의 대부분의 상업용 정지 궤도 발사, Beidou/Compass 항법 별자리, Chang'e 달 탐사 계획을 담당해왔습니다. 산악 지형의 사천성에 위치한 이 발사장은 정지 전이 궤도 성능을 위한 저위도의 이점과 연중무휴 운영 가능성을 결합하고 있습니다."
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-2.json",
+  "at": "best_known_for",
+  "en": "Long March 3A/3B GTO + Beidou GNSS",
+  "cur": "Long March 3A/3B 정지 전이 궤도 + Beidou 위성항법시스템"
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-3.json",
+  "at": "tagline",
+  "en": "First CZ-3 operational successes — DFH-2 first GTO success, Apstar / Asiasat / Sinosat era",
+  "cur": "CZ-3 초기 운영 성공 — DFH-2 첫 GTO 성공, Apstar / Asiasat / Sinosat 시대"
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-3.json",
+  "at": "description",
+  "en": "Xichang LC-3 hosted the first Long March 3 launch attempt on January 29, 1984 (DFH-2-01), which partially failed on third-stage re-ignition. The first successful Long March 3 flight occurred on April 8, 1984 (DFH-2-02), which placed the DFH-2 'Dong Fang Hong-2' communications satellite into geostationary transfer orbit — China's first GTO success. Both CZ-3 flights were from LC-3. Through the 1990s it supported many Apstar, Asiasat, and Sinosat commercial communications launches. Today it remains in active use alongside LC-2 for Long March 3B operations.",
+  "cur": "시창 LC-3는 1984년 1월 29일 최초의 Long March 3 발사 시도(DFH-2-01)를 호스팅했으며, 3단 재점화에서 부분적으로 실패했습니다. 첫 번째 성공적인 Long March 3 비행은 1984년 4월 8일(DFH-2-02)에 발생했으며, DFH-2 'Dong Fang Hong-2' 통신위성을 정지전이궤도에 배치했습니다 — 중국 최초의 GTO 성공입니다. 두 CZ-3 비행 모두 LC-3에서 발사되었습니다. 1990년대를 통해 많은 Apstar, Asiasat, Sinosat 상용 통신 발사를 지원했습니다. 오늘날 Long March 3B 운영을 위해 LC-2와 함께 활발하게 사용 중입니다."
+ },
+ {
+  "rel": "fleet/launch-site/xichang-lc-3.json",
+  "at": "best_known_for",
+  "en": "First Chinese GTO success (1984) + comsat workhorse",
+  "cur": "중국 최초의 GTO 성공(1984) + 통신위성 주력 발사장"
+ },
+ {
+  "rel": "fleet/launcher/antares.json",
+  "at": "tagline",
+  "en": "Workhorse for Cygnus ISS resupply through NG-19",
+  "cur": "NG-19를 통한 Cygnus ISS 재보급용 주력 로켓"
+ },
+ {
+  "rel": "fleet/launcher/antares.json",
+  "at": "description",
+  "en": "Northrop Grumman's medium-lift launcher, originally built around the Aerojet AJ26 and later RD-181 first stages with a Castor solid second stage. Carried Cygnus to the ISS from 2013 through NG-19 in 2023. The Antares 330 successor (jointly developed with Firefly Aerospace) replaces the Russian first stage with seven Miranda engines.",
+  "cur": "Northrop Grumman의 중형 발사체로, 초기에는 Aerojet AJ26 엔진으로 구성되었고 나중에 RD-181 1단과 Castor 고체 2단으로 변경되었습니다. 2013년부터 2023년 NG-19까지 Cygnus를 ISS로 운반했습니다. Antares 330의 후속 모델(Firefly Aerospace와 공동 개발)은 러시아 제 1단을 일곱 개의 Miranda 엔진으로 대체합니다."
+ },
+ {
+  "rel": "fleet/launcher/antares.json",
+  "at": "best_known_for",
+  "en": "Workhorse for Cygnus ISS resupply through NG-19",
+  "cur": "NG-19를 통한 Cygnus ISS 재보급용 주력 로켓"
+ },
+ {
+  "rel": "fleet/launcher/ariane-1.json",
+  "at": "tagline",
+  "en": "Europe's first independent orbital launcher — opened the commercial-comsat era for ESA, flew Giotto to Halley",
+  "cur": "유럽 최초의 독자 궤도 발사체 — ESA에 상용 통신위성 시대를 열고 Giotto를 핼리 혜성으로 보냈다"
+ },
+ {
+  "rel": "fleet/launcher/ariane-1.json",
+  "at": "dispatch",
+  "en": "Ariane 1 was where Europe won its independence in space. Built after the United States made clear it would launch European satellites only on its own terms, Ariane 1 flew from Kourou in 1979 and gave Europe, for the first time, a launcher it fully controlled — answerable to no other power. It was a modest rocket by later standards, but the principle it established was not modest at all: that a continent's access to orbit should belong to that continent. Every Ariane since has flown that principle.",
+  "cur": "Ariane 1은 유럽이 우주에서 독립을 쟁취한 계기였다. 미국이 유럽 위성을 자국의 조건으로만 발사하겠다는 입장을 분명히 한 후 건조된 Ariane 1은 1979년 쿠루에서 발사되어 유럽에 처음으로 완전히 통제할 수 있는 발사체를 제공했다 — 어떤 다른 강대국에도 종속되지 않는 발사체였다. 이후 기준으로 보면 소박한 로켓이었지만, 그것이 확립한 원칙은 결코 소박하지 않았다: 대륙의 궤도 접근권은 그 대륙에 속해야 한다는 것. 이후 모든 Ariane은 그 원칙을 실어 날았다."
+ },
+ {
+  "rel": "fleet/launcher/ariane-1.json",
+  "at": "description",
+  "en": "Three-stage rocket built by CNES at ESA's request after the cancelled Europa programme — hypergolic UH-25 / N2O4 first + second stages topped with the LH₂ / LOX HM7 third stage. 11 launches from Kourou between 1979-12-24 and 1986-02-22 carried 27 European telecom and science satellites including ECS-1, Marecs A/B, Spacenet, Telecom 1A/1B, and ESA's Giotto Halley flyby probe. Retired in favour of the bigger Ariane 2/3/4; the HM7 cryogenic upper-stage line lived on through Ariane 4 and into Ariane 5's ESC-A.",
+  "cur": "CNES에서 ESA의 요청에 따라 취소된 유로파 계획 이후 제작한 3단 로켓 — 첫 번째와 두 번째 단계는 쌍모 UH-25 / N2O4 연료를 사용하고 LH₂ / LOX 연료를 사용하는 HM7 세 번째 단계로 마무리됨. 1979-12-24부터 1986-02-22까지 쿠루에서 11번 발사되어 ECS-1, Marecs A/B, Spacenet, Telecom 1A/1B, 그리고 ESA의 Giotto 핼리 혜성 근접 통과 탐사선을 포함한 27개의 유럽 통신 및 과학 위성을 실어 날랐음. 더 큰 Ariane 2/3/4에 자리를 물려주며 은퇴했으며, HM7 극저온 상단 단계 계열은 Ariane 4를 거쳐 Ariane 5의 ESC-A까지 계속되었음."
+ },
+ {
+  "rel": "fleet/launcher/ariane-1.json",
+  "at": "best_known_for",
+  "en": "Europe's first independent orbital launcher — 11 flights 1979-1986, opened commercial comsats + Giotto to Halley",
+  "cur": "유럽 최초의 독자 궤도 발사체 — 1979〜1986년 11회 발사, 상용 통신위성 개척 및 Giotto의 핼리 혜성 탐사"
+ },
+ {
+  "rel": "fleet/launcher/ariane-5.json",
+  "at": "tagline",
+  "en": "Launched Rosetta, JWST, Galileo satnav (ESA)",
+  "cur": "Rosetta, JWST, Galileo 위성항법 발사 (ESA)"
+ },
+ {
+  "rel": "fleet/launcher/ariane-5.json",
+  "at": "dispatch",
+  "en": "Ariane 5 was the heavy-lift workhorse that carried European spaceflight to its peak — after one of the most famous failures in the field. Its 1996 maiden flight self-destructed 37 seconds up when guidance software inherited from Ariane 4 overflowed at the new rocket's higher speed, a software-engineering cautionary tale now taught worldwide. It recovered to become one of the most reliable heavy launchers ever built, lofting Rosetta, Galileo (navigation constellation), BepiColombo, the ATV freighters to the ISS, and finally the James Webb Space Telescope — placed so precisely it saved years of the observatory's fuel.",
+  "cur": "Ariane 5는 유럽 우주비행을 정점으로 이끈 대형 운반 로켓이었습니다 — 이 분야에서 가장 유명한 실패 중 하나를 극복한 후. 1996년 첫 비행은 발사 37초 후 자폭했는데, Ariane 4에서 상속받은 유도 소프트웨어가 새로운 로켓의 더 높은 속도에서 오버플로우되었으며, 이는 현재 전 세계적으로 가르쳐지는 소프트웨어 엔지니어링 경고 사례가 되었습니다. 그 후 가장 신뢰할 수 있는 대형 발사체 중 하나로 회복되어 Rosetta, Galileo (항법 위성군), BepiColombo, ISS로의 ATV 수송선, 그리고 마지막으로 James Webb Space Telescope를 발사했으며 — 관측소의 연료 수년분을 절약할 수 있을 정도로 정밀하게 배치되었습니다."
+ },
+ {
+  "rel": "fleet/launcher/ariane-5.json",
+  "at": "description",
+  "en": "ESA’s long-running heavy lifter, retired in 2023 after 117 launches. Carried Rosetta to comet 67P, JWST to L2, and dual-manifested geostationary commercial payloads for two decades.",
+  "cur": "ESA의 장수하는 대형 발사체로, 2023년 117회 발사 후 퇴역했습니다. Rosetta를 혜성 67P로, JWST를 L2로, 그리고 20년간 이중 배치된 정지궤도 상용 탑재물을 운반했습니다."
+ },
+ {
+  "rel": "fleet/launcher/ariane-5.json",
+  "at": "best_known_for",
+  "en": "Launched Rosetta, JWST, Galileo (ESA)",
+  "cur": "Rosetta, JWST, Galileo 발사 (ESA)"
+ },
+ {
+  "rel": "fleet/launcher/ariane-6.json",
+  "at": "dispatch",
+  "en": "Ariane 6 is Europe's answer to a market it no longer dominates. For two decades Ariane owned commercial launch; then reusable rockets undercut its prices and ended that reign. Ariane 6, flying from 2024, is the established power's response to the disruptive one — cheaper and more flexible than Ariane 5, built to keep Europe's independent access to space alive as the economics of launch are rewritten around it. Whether an expendable rocket can hold its ground against reusable rivals is the open question it now carries.",
+  "cur": "Ariane 6는 더 이상 지배하지 못하는 시장에 대한 유럽의 답이다. 20년 동안 Ariane은 상업 발사를 독점했다. 그러나 재사용 로켓이 가격을 낮춰 그 지배를 끝냈다. 2024년부터 비행하는 Ariane 6는 기존 강자가 파괴적 혁신자에게 내놓는 대응이다 — Ariane 5보다 저렴하고 유연하며, 발사 경제학이 주변에서 재편되는 동안 유럽의 독립적 우주 접근을 유지하기 위해 만들어졌다. 일회용 로켓이 재사용 경쟁자들에 맞서 입지를 지킬 수 있을지는 이제 그것이 떠안은 열린 질문이다."
+ },
+ {
+  "rel": "fleet/launcher/ariane-6.json",
+  "at": "description",
+  "en": "Ariane 6 is a orbital launcher built by ArianeGroup in Multi (Europe). Successor to Ariane 5. In service since 2024.",
+  "cur": "Ariane 6은 ArianeGroup이 물리(유럽)에서 건설한 궤도 발사체입니다. Ariane 5의 후속 기종입니다. 2024년부터 운영 중입니다."
+ },
+ {
+  "rel": "fleet/launcher/atlas-lv-3b.json",
+  "at": "tagline",
+  "en": "Lifted Mercury astronauts to orbit",
+  "cur": "머큐리 우주비행사들을 궤도에 올려보냈다"
+ },
+ {
+  "rel": "fleet/launcher/atlas-lv-3b.json",
+  "at": "dispatch",
+  "en": "If the Redstone was the cautious step, the Atlas was the leap. It was America's first intercontinental missile, and it reached orbital speed by being audaciously, almost alarmingly light: its skin was so thin that the rocket had to be kept pressurised like a balloon just to stand up without crumpling. Man-rating that — trusting a person to a missile that would collapse if you let the pressure drop — was the hard call that separated Mercury's suborbital half from its orbital one. Every American orbital flight of the program rode this thin steel balloon, and it is why Glenn, Carpenter, Schirra, and Cooper circled the Earth while Shepard and Grissom only touched the edge of it.",
+  "cur": "Redstone이 조심스러운 발걸음이었다면, Atlas는 도약이었다. 미국의 최초 대륙간 미사일이자, 대담하고 거의 놀라울 정도로 가벼워서 궤도 속도에 도달했다. 로켓의 외피가 너무 얇아서 풍선처럼 가압되지 않으면 압납되지 않고 설 수 없었다. 그것을 유인 우주선으로 개조하는 것 — 압력이 떨어지면 붕괴될 미사일에 사람을 태우는 것 — 머큐리 프로그램의 아궤도 운영을 궤도 운영으로 전환한 어려운 결정이었다. 프로그램의 모든 미국 궤도 비행은 이 얇은 강철 풍선을 탔으며, 이것이 글렌, 카펜터, 시라, 쿠퍼가 지구를 공전한 반면 셰퍼드와 그리섬은 지구의 가장자리만 터치한 이유다."
+ },
+ {
+  "rel": "fleet/launcher/atlas-lv-3b.json",
+  "at": "description",
+  "en": "Atlas LV-3B was Convair's orbital launcher that lifted Mercury astronauts to orbit on six flights (Mercury-Atlas 6 through 10) between February and May 1963. The thin-skinned booster — so light it required pressurization to stand upright — proved that a ballistic missile could be man-rated. Retired after the Mercury program.",
+  "cur": "Atlas LV-3B는 Convair의 궤도 발사체로, 1963년 2월부터 5월 사이에 6회 비행(Mercury-Atlas 6~10)으로 머큐리 우주비행사들을 궤도에 올려보냈다. 얇은 외피의 부스터 — 직립 상태를 유지하기 위해 가압이 필요할 정도로 가벼웠던 — 탄도 미사일이 유인 우주선으로 개조될 수 있음을 증명했다. 머큐리 프로그램 후 퇴역했다."
+ },
+ {
+  "rel": "fleet/launcher/atlas-lv-3b.json",
+  "at": "best_known_for",
+  "en": "Lifted Mercury astronauts to orbit",
+  "cur": "머큐리 우주비행사들을 궤도에 올려보냈다"
+ },
+ {
+  "rel": "fleet/launcher/atlas-slv-3d.json",
+  "at": "tagline",
+  "en": "1970s NASA outer-planet workhorse — Pioneer 10/11, Helios 1/2, Mariner 9/10, Pioneer Venus",
+  "cur": "1970년대 NASA 외행성 탐사 주력 발사체 — Pioneer 10/11, Helios 1/2, Mariner 9/10, Pioneer 금성"
+ },
+ {
+  "rel": "fleet/launcher/atlas-slv-3d.json",
+  "at": "description",
+  "en": "Stretched Atlas SLV-3D first stage with the world's first hydrogen-fuelled upper stage (Centaur D-1A, LOX/LH₂) — the combination that enabled every American Jupiter, Saturn, Mariner, and Helios mission of the 1970s. A Star-37E or Star-48 solid-kick stage was added on top for the very-high-energy trajectories (Pioneer 11 past Jupiter to Saturn). Served 1973-1983; superseded by the Atlas G/H/I family that fed into the Atlas II of the 1990s.",
+  "cur": "연장된 Atlas SLV-3D 1단에 세계 최초의 액체수소 상단인 Centaur D-1A(LOX/LH₂)를 결합한 조합으로, 1970년대 모든 미국 목성·토성·매리너·헬리오스 임무를 가능케 했다. 최고 에너지 궤적(Pioneer 11이 목성을 거쳐 토성으로)을 위해 Star-37E 또는 Star-48 고체 킥 스테이지를 상단에 추가했다. 1973-1983년 운용, 이후 Atlas G/H/I 계열로 대체되어 1990년대 Atlas II로 이어졌다."
+ },
+ {
+  "rel": "fleet/launcher/atlas-slv-3d.json",
+  "at": "best_known_for",
+  "en": "1970s NASA outer-planet workhorse — Centaur D-1A's first H₂ upper stage opened the gas giants",
+  "cur": "1970년대 NASA 외행성 주력 — Centaur D-1A의 세계 최초 H₂ 상단이 가스 행성을 열었다"
+ },
+ {
+  "rel": "fleet/launcher/atlas-v.json",
+  "at": "tagline",
+  "en": "United Launch Alliance's evolved Atlas",
+  "cur": "United Launch Alliance의 진화 Atlas"
+ },
+ {
+  "rel": "fleet/launcher/atlas-v.json",
+  "at": "description",
+  "en": "The reliable workhorse of United Launch Alliance, with over 100 successful launches since 2002. Carried Curiosity, Perseverance, MAVEN, MRO, New Horizons, and many of the most consequential US planetary missions of the 21st century.",
+  "cur": "2002년부터 100개 이상의 성공적인 발사와 함께 United Launch Alliance의 신뢰할 수 있는 솜씨. Carried Curiosity, Perseverance, MAVEN, MRO, New Horizons 및 21 세기의 가장 긴급한 미국 행성 임무의 많은."
+ },
+ {
+  "rel": "fleet/launcher/atlas-v.json",
+  "at": "best_known_for",
+  "en": "United Launch Alliance's evolved Atlas",
+  "cur": "United Launch Alliance의 진화 Atlas"
+ },
+ {
+  "rel": "fleet/launcher/delta-ii.json",
+  "at": "tagline",
+  "en": "NASA's medium-lift planetary-science workhorse — 155 flights 1989-2018",
+  "cur": "NASA의 중형 탑재량 행성 과학 주력 로켓 — 155회 비행 1989-2018"
+ },
+ {
+  "rel": "fleet/launcher/delta-ii.json",
+  "at": "description",
+  "en": "Two- or three-stage Delta variant with an RS-27A LOX/RP-1 first stage, up to nine GEM strap-on solid boosters, and an optional Star-48B kick stage for high-energy escape trajectories. 155 launches over 29 years with a 98.7% success rate; carried Dawn, Messenger, MRO, Phoenix, Kepler, Spitzer, GRAIL, and the original GPS Block II constellation. The 'Delta II Heavy' (7920H + Star-48B) was the configuration that delivered enough C3 for direct-to-Ceres + Mercury orbital insertion. Retired after the medium-lift market shifted to Atlas V and Falcon 9.",
+  "cur": "RS-27A LOX/RP-1 1단계, 최대 9개의 GEM 스트랩-온 고체 부스터, 고에너지 탈출 궤도를 위한 선택형 Star-48B 킥 단계를 갖춘 2단계 또는 3단계 Delta 변형체. 29년에 걸쳐 155회 발사로 98.7%의 성공률을 기록했으며, Dawn, Messenger, MRO, Phoenix, Kepler, Spitzer, GRAIL 및 원본 GPS Block II 별자리를 운반했습니다. 'Delta II Heavy'(7920H + Star-48B)는 직접 세레스 및 수성 궤도 진입을 위한 충분한 C3를 제공한 구성이었습니다. 중형 탑재량 시장이 Atlas V 및 Falcon 9로 이동한 후 폐기되었습니다."
+ },
+ {
+  "rel": "fleet/launcher/delta-ii.json",
+  "at": "best_known_for",
+  "en": "NASA's medium-lift planetary-science workhorse 1989-2018 — Dawn, Messenger, MRO, Phoenix, Kepler",
+  "cur": "1989-2018년 NASA의 중형 탑재량 행성 과학 주력 로켓 — Dawn, Messenger, MRO, Phoenix, Kepler"
+ },
+ {
+  "rel": "fleet/launcher/energia.json",
+  "at": "tagline",
+  "en": "Soviet super-heavy; two flights (Polyus 1987, Buran 1988)",
+  "cur": "소비에트 초대형 발사체; 2회 비행 (Polyus 1987, Buran 1988)"
+ },
+ {
+  "rel": "fleet/launcher/energia.json",
+  "at": "dispatch",
+  "en": "Energia was the rocket that redeemed the N1 — the super-heavy launcher the Soviet Union finally got right. Where the N1 exploded on all four attempts, Energia worked, lifting the Polyus payload in 1987 and the Buran orbiter in 1988. Crucially, it was a launcher in its own right, not a shuttle stack: because Buran had no main engines, Energia did the whole job of reaching orbit and could just as well have lifted other heavy payloads with no orbiter at all. It was the most powerful rocket the Soviet Union ever flew successfully — and, like Buran, it was cancelled for want of anything left to launch.",
+  "cur": "Energia는 N1을 속죄한 발사체였다 — 소비에트 연방이 마침내 올바르게 만든 초대형 발사체였다. N1이 4차 시도 모두에서 폭발했던 반면, Energia는 성공했고, 1987년에는 Polyus 페이로드를, 1988년에는 Buran 우주왕복선을 궤도에 올렸다. 결정적으로, 이는 우주왕복선 스택이 아닌 그 자체로 독립적인 발사체였다: Buran이 주엔진을 갖지 않았기 때문에, Energia는 궤도 진입의 전체 업무를 담당했고 우주왕복선 없이도 다른 무거운 페이로드를 똑같이 잘 들어 올릴 수 있었다. 이는 소비에트 연방이 성공적으로 비행시킨 가장 강력한 로켓이었다 — 그리고 Buran처럼, 발사할 것이 남지 않아 취소되었다."
+ },
+ {
+  "rel": "fleet/launcher/energia.json",
+  "at": "description",
+  "en": "The only Soviet super-heavy launcher to fly successfully. Designed to carry the Buran orbiter or stand-alone payloads up to 100 t to LEO. Two flights: Polyus payload test (1987) and Buran orbiter (1988), both successful. Program shelved at the end of the Cold War.",
+  "cur": "성공적으로 비행한 유일한 소비에트 초대형 발사체. Buran 우주왕복선 또는 독립형 페이로드를 최대 100 t 규모의 LEO까지 운반하도록 설계됨. 2회 비행: Polyus 페이로드 테스트(1987년)와 Buran 우주왕복선(1988년), 모두 성공. 냉전 종료 시 프로그램 중단."
+ },
+ {
+  "rel": "fleet/launcher/energia.json",
+  "at": "best_known_for",
+  "en": "Soviet super-heavy; flew twice (Polyus 1987, Buran 1988)",
+  "cur": "소련 초중형 로켓; 2회 비행 (Polyus 1987, Buran 1988)"
+ },
+ {
+  "rel": "fleet/launcher/falcon-9.json",
+  "at": "tagline",
+  "en": "Reusable booster reshaped commercial launch",
+  "cur": "Reusable booster reshaped 상업적인 발사"
+ },
+ {
+  "rel": "fleet/launcher/falcon-9.json",
+  "at": "description",
+  "en": "SpaceX’s Block 5 booster, designed for ten flights without refurbishment. The first orbital-class rocket to land and re-fly itself, fundamentally reshaping the commercial-launch market and dropping the cost-to-orbit by roughly an order of magnitude.",
+  "cur": "SpaceX의 Block 5 부스터, refurbishment없이 10 항공편을 위해 설계되었습니다. 토지 및 재 비행에 대한 첫 번째 궤도 클래스 로켓 자체, 근본적으로 상업 발사 시장을 다시 형성하고 규모의 순서에 따라 비용으로 전환을 드롭."
+ },
+ {
+  "rel": "fleet/launcher/falcon-9.json",
+  "at": "best_known_for",
+  "en": "Reusable booster reshaped commercial launch",
+  "cur": "Reusable booster reshaped 상업적인 발사"
+ },
+ {
+  "rel": "fleet/launcher/falcon-heavy.json",
+  "at": "description",
+  "en": "Three Falcon 9 first-stage cores strapped together, with the two side boosters returning to land while the center core lands downrange on a drone ship. Presently among the most-powerful operational heavy-lift rockets, with payload capacity rivalling Saturn V on a cost-per-kg basis far below it. (As of mid-2026, Starship has demonstrated increasingly operational capability.)",
+  "cur": "3개의 Falcon 9 1단 코어를 결합한 구조로, 측면 부스터 2개는 육지로 돌아오고 중앙 코어는 무인 드론선에 착륙합니다. 현재 운영 중인 초중형 발사체 중 가장 강력한 수준이며, 페이로드 용량은 새턴 V에 필적하면서도 kg당 비용은 훨씬 낮습니다. (2026년 중반 기준, Starship은 점점 더 높은 운영 능력을 입증하고 있습니다.)"
+ },
+ {
+  "rel": "fleet/launcher/h-iia.json",
+  "at": "tagline",
+  "en": "Workhorse for JAXA's flagship missions",
+  "cur": "JAXA의 주력 미션을 위한 주력 발사체"
+ },
+ {
+  "rel": "fleet/launcher/h-iia.json",
+  "at": "description",
+  "en": "Japan's H-IIA launched 50 successful missions between 2001 and June 2025 for JAXA's flagship missions including Hayabusa, Hayabusa2, Himawari, and SLIM. Dependable liquid-propellant workhorse that became one of the most reliable launchers ever built.",
+  "cur": "일본의 H-IIA는 2001년부터 2025년 6월까지 Hayabusa, Hayabusa2, Himawari, SLIM 등 JAXA의 주력 미션을 포함하여 50개의 성공적인 미션을 수행했습니다. 신뢰할 수 있는 액체 추진 주력 발사체로, 역사상 가장 신뢰할 수 있는 발사체 중 하나가 되었습니다."
+ },
+ {
+  "rel": "fleet/launcher/h-iia.json",
+  "at": "best_known_for",
+  "en": "Workhorse for JAXA's flagship missions",
+  "cur": "JAXA의 주력 미션을 위한 주력 발사체"
+ },
+ {
+  "rel": "fleet/launcher/h3.json",
+  "at": "tagline",
+  "en": "Replaces H-IIA / H-IIB at lower cost",
+  "cur": "저가에 H-IIA/H-IIB를 대체하십시오"
+ },
+ {
+  "rel": "fleet/launcher/h3.json",
+  "at": "description",
+  "en": "H3 is a orbital launcher built by Mitsubishi Heavy Industries in Japan. Replaces H-IIA / H-IIB at lower cost. In service since 2024.",
+  "cur": "H3는 일본 Mitsubishi Heavy Industries에 의해 지어진 궤도 발사기입니다. 저가에 H-IIA/H-IIB를 대체하십시오. 2024년부터 서비스."
+ },
+ {
+  "rel": "fleet/launcher/h3.json",
+  "at": "best_known_for",
+  "en": "Replaces H-IIA / H-IIB at lower cost",
+  "cur": "저가에 H-IIA/H-IIB를 대체하십시오"
+ },
+ {
+  "rel": "fleet/launcher/long-march-2f.json",
+  "at": "tagline",
+  "en": "Crew-rated for all Shenzhou flights",
+  "cur": "모든 Shenzhou 항공편에 대한 승무원 평가"
+ },
+ {
+  "rel": "fleet/launcher/long-march-2f.json",
+  "at": "description",
+  "en": "Long March 2F is a orbital launcher built by CALT in China. Crew-rated for all Shenzhou flights. In service since 1999.",
+  "cur": "Long March 2F는 중국의 CALT에 의해 구축 된 궤도 발사기입니다. 모든 Shenzhou 항공편에 대한 승무원 평가. 1999년부터 서비스."
+ },
+ {
+  "rel": "fleet/launcher/long-march-2f.json",
+  "at": "best_known_for",
+  "en": "Crew-rated for all Shenzhou flights",
+  "cur": "모든 Shenzhou 항공편에 대한 승무원 평가"
+ },
+ {
+  "rel": "fleet/launcher/long-march-3b.json",
+  "at": "tagline",
+  "en": "China's GTO workhorse — Chang'e lunar landers + most Chinese comsats",
+  "cur": "중국의 GTO 주력 로켓 — Chang'e 달 착륙선 + 대부분의 중국 통신위성"
+ },
+ {
+  "rel": "fleet/launcher/long-march-3b.json",
+  "at": "description",
+  "en": "Three-stage liquid-hypergolic launcher (UDMH/N2O4 on the lower stages, LH2/LOX on the third) with four side-mounted strap-on boosters. Lifts ~11 t to LEO / ~5.1 t to GTO from Xichang Satellite Launch Centre. The maiden flight (1996-02-15, Intelsat 708) failed catastrophically due to a guidance-loop fault and killed villagers downrange; the redesigned vehicle has since flown well over 100 successful missions and is the standard launcher for Chang'e lunar exploration.",
+  "cur": "4개의 측면 부스터를 가진 3단 액체 쌍곡추진제 로켓(하단 2단에는 UDMH/N2O4, 3단에는 LH2/LOX 사용). 시창 Satellite Launch Centre에서 LEO까지 약 11 t, GTO까지 약 5.1 t의 탑재량을 보유. 초연 비행(1996-02-15, Intelsat 708)은 유도 루프 오류로 인해 치명적으로 실패했으며 하역 지역의 주민들이 사망했지만, 개선된 로켓은 이후 100회 이상의 성공적인 미션을 비행했으며 Chang'e 달 탐사 프로그램의 표준 발사체이다."
+ },
+ {
+  "rel": "fleet/launcher/long-march-3b.json",
+  "at": "best_known_for",
+  "en": "China's GTO workhorse — Chang'e 3 / 4 lunar landers + most commercial comsats from Xichang",
+  "cur": "중국의 GTO 주력 로켓 — Chang'e 3/4 달 착륙선 + 시창에서 발사되는 대부분의 상용 통신위성"
+ },
+ {
+  "rel": "fleet/launcher/long-march-5.json",
+  "at": "description",
+  "en": "China’s first heavy-lift launcher, capable of putting 25 t to LEO. Lifts the Tiangong space station modules and Tianwen Mars probes; Long March 5B is the variant used for station modules.",
+  "cur": "중국의 첫 번째 대형 발사체로, 25톤을 저궤도에 투입할 수 있습니다. Tiangong 우주정거장 모듈과 Tianwen 화성 탐사선을 발사하며, Long March 5B는 정거장 모듈 발사에 사용되는 변형입니다."
+ },
+ {
+  "rel": "fleet/launcher/long-march-7.json",
+  "at": "tagline",
+  "en": "Tianzhou cargo launcher to Tiangong",
+  "cur": "Tiangong에 Tianzhou화물 발사기"
+ },
+ {
+  "rel": "fleet/launcher/long-march-7.json",
+  "at": "description",
+  "en": "Long March 7 is a orbital launcher built by CALT in China. Tianzhou cargo launcher to Tiangong. In service since 2016.",
+  "cur": "Long March 7은 중국의 CALT에서 제작한 궤도 발사체입니다. Tiangong으로 Tianzhou 화물을 운반하는 발사체입니다. 2016년부터 운용 중입니다."
+ },
+ {
+  "rel": "fleet/launcher/long-march-7.json",
+  "at": "best_known_for",
+  "en": "Tianzhou cargo launcher to Tiangong",
+  "cur": "Tiangong에 Tianzhou화물 발사기"
+ },
+ {
+  "rel": "fleet/launcher/lvm3.json",
+  "at": "tagline",
+  "en": "Crew-rated launcher for Gaganyaan",
+  "cur": "Gaganyaan을위한 승무원 정격 발사기"
+ },
+ {
+  "rel": "fleet/launcher/lvm3.json",
+  "at": "description",
+  "en": "LVM3 (GSLV Mk III) is a orbital launcher built by ISRO in India. Crew-rated launcher for Gaganyaan. In service since 2014.",
+  "cur": "LVM3 (GSLV Mk III)는 인도 ISRO에 의해 건설된 궤도 발사기입니다. Gaganyaan에 대한 승무원 정격 발사기. 2014년부터 서비스."
+ },
+ {
+  "rel": "fleet/launcher/lvm3.json",
+  "at": "best_known_for",
+  "en": "Crew-rated launcher for Gaganyaan",
+  "cur": "Gaganyaan을위한 승무원 정격 발사기"
+ },
+ {
+  "rel": "fleet/launcher/mercury-redstone.json",
+  "at": "tagline",
+  "en": "First US human-rated launcher — variant of the Army's Redstone IRBM. Launched Freedom 7 (1961-05-05) and Liberty Bell 7 (1961-07-21)",
+  "cur": "미국 최초의 유인 인증 발사체 — 육군 Redstone 중거리탄도미사일의 파생형. Freedom 7 (1961-05-05)과 Liberty Bell 7 (1961-07-21) 발사"
+ },
+ {
+  "rel": "fleet/launcher/mercury-redstone.json",
+  "at": "dispatch",
+  "en": "The Mercury-Redstone was a weapon taught to carry a passenger. Its ancestor was the German V-2, and its direct parent an Army ballistic missile built to deliver a warhead — now modified, softened, and made just reliable enough to trust with a human life. It could manage only a suborbital arc; it never had the power to reach orbit. But that was exactly its job: the cautious first step, the machine that let America prove a person could ride a rocket up and come back down alive before betting a life on the bigger, riskier booster that could actually reach orbit.",
+  "cur": "Mercury-Redstone은 승객을 태우는 법을 배운 무기였다. 조상은 독일의 V-2였고 직계 부모는 탄두를 운반하려고 만든 육군 탄도미사일이었다 — 그것을 개조하고 순화해, 사람의 목숨을 맡겨도 될 만큼만 신뢰성을 끌어올린 것이다. 이 로켓은 준궤도 비행만 할 수 있었고 궤도에 오를 힘은 처음부터 없었다. 하지만 그것이 바로 임무였다. 신중한 첫걸음, 실제로 궤도에 닿을 수 있는 더 크고 위험한 부스터에 생명을 걸기 전에 사람이 로켓을 타고 올라갔다가 살아서 내려올 수 있음을 미국이 증명하게 해 준 기계였다."
+ }
+]

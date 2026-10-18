@@ -1,0 +1,722 @@
+[
+ {
+  "rel": "programs/apollo.json",
+  "at": "tagline",
+  "en": "The Cold-War sprint that put twelve people on the Moon — and then stopped.",
+  "cur": "Спринт из доба Хладног рата који је дванаесторо људи довео на Месец — а онда стао."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "the_land.0.md",
+  "en": "For ninety minutes at a stretch, in the autumn of 1957, a polished metal sphere the size of a beach ball crossed the sky over the United States — and it was beeping. Sputnik 1 belonged to the Soviet Union, and there was nothing the most powerful country on Earth could do but listen. Less than four years later, on 12 April 1961, the Soviets put up a person too: Yuri Gagarin, the first human to leave the planet. Washington heard none of it as science. It heard a syllogism it couldn't unhear — a rocket that can lift a satellite into orbit can drop a warhead onto any city you care to name. Almost overnight, spaceflight stopped being exploration and became the leading edge of the Cold War.",
+  "cur": "Током деведесет минута без прекида, у јесен 1957, углачана метална сфера величине лопте за плажу прелазила је небо изнад Сједињених Америчких Држава — и пиштала је. Sputnik 1 припадао је Совјетском Савезу, а најмоћнија земља на свету ништа друго није могла него да слуша. Мање од четири године касније, 12. априла 1961, Совјети су у свемир послали и човека: Јуриј Гагарин, први човек који је напустио планету. Вашингтон у свему томе није чуо науку. Чуо је силогизам који није могао да расчује — ракета која може да подигне сателит у орбиту може да спусти бојеву главу на сваки град који пожелите да именујете. Готово преко ноћи, свемирски лет престао је да буде истраживање и постао је предводник Хладног рата."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "the_land.1.md",
+  "en": "On 25 May 1961 — six weeks after Gagarin, and twenty days after Alan Shepard's fifteen-minute suborbital hop made America a spacefaring nation on a technicality — John F. Kennedy stood before Congress and bet the country on the Moon. Land a man there and return him safely, he said, \"before this decade is out.\" Strip away the rhetoric and it was a contest for prestige: a bid to beat the Soviets in the one arena where they were plainly ahead. The science would be real, and it would outlast the politics — but it rode behind them. Apollo was born of that choice, and it's worth saying so without flinching.",
+  "cur": "25. маја 1961. — шест недеља након Гагарина, и двадесет дана након петнаестоминутног суборбиталног скока Алана Шепарда који је Америку учинио свемирском нацијом на техничкој основи — Џон Кенеди је стао пред Конгрес и окладио земљу на Месец. Спустити човека тамо и вратити га безбедно, рекао је, „пре краја ове деценије\". Ако се одбаци реторика, то је био такмичење за престиж: покушај да се победе Совјети у једној арени где су они били очигледно испред. Наука би била реална и надживела би политику — али је возила иза ње. Apollo је рођен из тог избора, и вредно је то рећи без трзања."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "goals.0.caption",
+  "en": "The Saturn V — 111 metres tall, about 3,000 tonnes on the pad, and the most powerful rocket ever to carry humans — and, for over fifty years, the most powerful ever flown, until SpaceX's Super Heavy in 2023. It existed for exactly one reason: to beat a deadline.",
+  "cur": "Saturn V — висок 111 метара, тежак око 3.000 тона на лансирној рампи, најмоћнија ракета која је икада носила људе — и више од педесет година најмоћнија која је икада полетела, све до Super Heavy компаније SpaceX 2023. године. Постојала је из тачно једног разлога: да победи рок."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "goals.1.md",
+  "en": "The goal was narrow and absolute: put American astronauts on the lunar surface and bring them home alive, ahead of the USSR, before 1970. Everything else was engineered backward from that one sentence — the Saturn rockets, a three-part spacecraft that had to fly in pieces a quarter-million miles from any help, pressure suits rated for hard vacuum, a worldwide tracking network, and a workforce that swelled to roughly 400,000 across NASA, its contractors, and the universities.",
+  "cur": "Циљ је био узак и безуслован: спустити америчке астронауте на површину Месеца и вратити их живе кући, пре СССР-а, пре 1970. године. Све остало конструисано је уназад од те једне реченице — ракете Saturn, свемирска летелица од три дела која је морала да лети у деловима четврт милиона миља далеко од било какве помоћи, свемирска одела пројектована за тврди вакуум, светска мрежа за праћење и радна снага која је нарасла на отприлике 400.000 људи у NASA-и, међу њеним извођачима и на универзитетима."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "goals.2.md",
+  "en": "There were genuine scientific goals too — sampling the Moon's geology, planting instruments that would keep working long after the crews left, finding out whether people could actually do useful work on another world. But in the program's own priority order they sat behind the landing, and everyone involved knew it. The race set the schedule. The science fit into the gaps it left.",
+  "cur": "Постојали су и прави научни циљеви — узорковање геологије Месеца, постављање инструмената који би наставили да раде дуго пошто посаде оду, и откривање да ли људи заиста могу да обављају користан посао на другом свету. Али по приоритетима самог програма они су долазили иза спуштања, и сви који су у њему учествовали то су знали. Трка је одређивала распоред. Наука се уклапала у празнине које је та трка оставила."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "outcome.0.caption",
+  "en": "Apollo 11 on the Sea of Tranquility, 20 July 1969 — the moment the race was decided.",
+  "cur": "Apollo 11 на Мору спокојства, 20. јула 1969. — тренутак када је трка одлучена."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "outcome.1.md",
+  "en": "It worked. On 20 July 1969 Neil Armstrong and Buzz Aldrin walked on the Sea of Tranquility while Michael Collins flew the Command Module alone overhead, losing radio contact every time his orbit carried him behind the Moon. Five more landings followed through December 1972. Twelve people in all walked on the Moon and came home, carrying 382 kilograms of rock and soil that still anchors lunar science more than half a century later.",
+  "cur": "Успело је. Дана 20. јула 1969. Нил Армстронг и Баз Олдрин ходали су по Мору спокојства, док је Мајкл Колинс сам летео командним модулом изнад њих, губећи радио-везу сваки пут када би га орбита однела иза Месеца. До децембра 1972. уследило је још пет слетања. Укупно дванаест људи ходало је по Месецу и вратило се кући, носећи 382 килограма стена и тла које и више од пола века касније остаје упориште науке о Месецу."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "outcome.2.md",
+  "en": "The bill came due in money and in lives. In January 1967 a cabin fire during a routine ground test killed Gus Grissom, Ed White, and Roger Chaffee in seconds, and grounded the program for twenty months. In April 1970 an oxygen tank ruptured on the way to the Moon and nearly killed the crew of Apollo 13, who came home cold and rationing water inside their own Lunar Module. And Apollo stopped at its technical peak: the last three planned landings, Apollo 18 through 20, were cancelled as budgets shrank and the public's attention drifted elsewhere. Did it succeed? It won the race it was built to win — and it was switched off while it was still getting better at the Moon. Pick your yardstick.",
+  "cur": "Рачун је стигао на наплату у новцу и у животима. У јануару 1967. пожар у кабини током рутинског теста на земљи за неколико секунди усмртио је Гаса Грисома, Еда Вајта и Роџера Чафија, а програм је био обустављен на двадесет месеци. У априлу 1970. резервоар кисеоника пукао је на путу ка Месецу и замало усмртио посаду мисије Apollo 13, која се вратила кући смрзнута и уз рационисање воде унутар сопственог Лунарног модула. А Apollo је стао на врхунцу своје технике: последња три планирана слетања, од Apollo 18 до Apollo 20, отказана су јер су буџети се смањивали, а пажња јавности одлутала на другу страну. Да ли је успео? Добио је трку коју је требало да добије — и угашен је док је још постајао бољи у раду на Месецу. Изаберите мерило."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "narrative.0.md",
+  "en": "The arc is unusually clean for something this big. It opens on catastrophe: the 1967 fire forced a ground-up redesign of the spacecraft and of NASA's entire safety culture — the reckoning that made everything after it possible. Then the fixed hardware went to work. In 1968 Apollo 7 shook out the redesigned Command Module in Earth orbit; that December, Apollo 8 became the first crewed flight to leave Earth's gravity altogether and circle the Moon, its crew reading from Genesis on live television to the largest audience that had ever existed.",
+  "cur": "Лук приче је необично чист за нешто тако велико. Отвара се катастрофом: пожар из 1967. приморао је на потпуни редизајн летелице и целокупне NASA-ине културе безбедности — на суочавање са истином које је омогућило све што је уследило. Затим је поправљени хардвер почео да ради. Године 1968. Apollo 7 је у Земљиној орбити испробао прерађени Командни модул; у децембру исте године Apollo 8 постао је први пилотирани лет који је сасвим напустио Земљину гравитацију и обишао Месец, а његова посада читала је из Књиге постања у директном телевизијском преносу пред највећом публиком која је икада постојала."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "narrative.1.md",
+  "en": "Apollo 11 answered Kennedy. And then the program did something a Cold-War instrument was under no obligation to do: it turned toward science. Apollos 12 through 17 grew steadily more ambitious — longer stays, the battery-powered Lunar Roving Vehicle, and finally, on Apollo 17, a trained field geologist named Harrison Schmitt walking the surface he had spent years studying. Apollo 13, the near-disaster in the middle of that run, did something strange to NASA's reputation: by surviving it, the agency came off looking more capable than it would have by never failing at all.",
+  "cur": "Apollo 11 одговорио је Kennedy-ју. А онда је програм учинио нешто на шта инструмент Хладног рата није био дужан: окренуо се науци. Мисије Apollos 12 до 17 постајале су стално амбициозније — дужи боравци, Lunar Roving Vehicle на батерије, и напослетку, на мисији Apollo 17, обучени теренски геолог по имену Харисон Шмит који хода површином коју је годинама проучавао. Apollo 13, словом замало катастрофа усред тог низа, учинио је нешто чудно за углед NASA: преживљавањем те несреће агенција је испала способнија него што би то била да никада није омануло."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "narrative.2.md",
+  "en": "Apollo 17 lifted off the Moon on 14 December 1972. No human has been back since. But the program's hardware, its people, and its momentum ran straight into nearly everything American human spaceflight did next — Skylab, the Space Shuttle, and, fifty years on, Artemis, now reaching for the lunar south pole that Apollo never touched.",
+  "cur": "Apollo 17 полетео је са Месеца 14. децембра 1972. Од тада се ниједан човек није вратио. Али хардвер програма, његови људи и његов замах уливали су се право у готово све што је америчко људско свемирско летење радило после — Skylab, Space Shuttle и, педесет година касније, Artemis, који сада посеже за јужним полом Месеца до ког Apollo никада није стигао."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "legacy.0.caption",
+  "en": "Earthrise — Apollo 8, Christmas Eve 1968. An unplanned photograph that became one of the most reproduced images in history, and a founding picture of the environmental movement.",
+  "cur": "Earthrise — Apollo 8, бадњи дан 1968. Непланирана фотографија која је постала једна од најрепродукованијих слика у историји и темељна слика еколошког покрета."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "legacy.1.md",
+  "en": "Apollo's return on investment is still argued over, but the shape of it is clear. The program cost about $25.8 billion in period dollars — comfortably north of $250 billion today — and at its peak it put some 400,000 people to work across NASA, its contractors, and the universities. That was a deliberate industrial and educational build-out, not just a rocket, and most of it outlived the Moon shots.",
+  "cur": "О повраћају улагања у програм Apollo још се расправља, али је његов облик јасан. Програм је коштао око 25,8 милијарди долара тадашње вредности — што је данас с лакоћом више од 250 милијарди — а на свом врхунцу запошљавао је око 400.000 људи у NASA-и, међу њеним извођачима и на универзитетима. То је била промишљена индустријска и образовна изградња, а не само једна ракета, и највећи део ње надживео је лунарне мисије."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "legacy.2.md",
+  "en": "The technological pull was real, and it compounded. Apollo pulled early integrated circuits into volume production, drove the young discipline of software engineering, and all but invented modern systems management — the art of keeping a million interdependent parts on schedule at once. Those techniques seeded whole later industries. And the 382 kilograms of returned rock rewrote the age and origin story of the Solar System; researchers are still pulling new results from sealed samples today.",
+  "cur": "Технолошки замах био је стваран и множио се. Apollo је повукао ране интегрисане кругове у серијску производњу, покренуо младу дисциплину софтверског инжењерства и готово сам измислио савремено управљање системима — вештину да се милион међусобно зависних делова истовремено држи у задатом року. Те технике биле су семе читавих каснијих индустрија. А 382 килограма враћених стена преписала су старост и причу о настанку Сунчевог система; истраживачи и данас извлаче нове резултате из запечаћених узорака."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "legacy.3.md",
+  "en": "For the United States it was soft power at planetary scale — a demonstration, watched live around the world, of what an open society could organize and pull off. For everyone else, the most durable thing Apollo left behind may not be a technology at all but a photograph: the whole Earth, small and alone against the black, seen from another world for the first time. Whatever you make of the Cold-War motives that paid for it, that picture changed how people saw the ground under their own feet — worth holding onto as a louder, more crowded space age begins.",
+  "cur": "За Сједињене Државе то је била мека моћ у планетарним размерама — демонстрација, коју је цео свет пратио уживо, онога што отворено друштво може да организује и оствари. За све остале, најтрајније што је Apollo оставио иза себе можда уопште није технологија, већ једна фотографија: цела Земља, мала и сама наспрам црнила, први пут виђена са другог света. Шта год мислили о мотивима из доба Хладног рата који су је платили, та слика променила је начин на који људи виде тло под својим ногама — вредно је то сачувати док почиње гласније и препуније свемирско доба."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "lessons.0.md",
+  "en": "Apollo's most portable lesson has nothing to do with rocketry. It's about how you point a very large number of people at the same hard thing. Kennedy handed the program a goal that was specific, audacious, and time-boxed — land a crew on the Moon and return them safely, before the decade was out — and that single sentence did what no org chart could. It aligned 400,000 people who would never meet, and it made every decision legible: does this get us to the Moon by 1970, or not? A clear, dated, non-negotiable goal that anyone can check their own work against will out-coordinate any hierarchy.",
+  "cur": "Најпреносивија лекција програма Apollo нема никакве везе са ракетном науком. Она се тиче тога како усмерити веома велики број људи на исту тешку ствар. Kennedy је програму дао циљ који је био конкретан, смео и временски ограничен — спустити посаду на Месец и безбедно је вратити пре краја деценије — и та једина реченица учинила је оно што ниједан организациони дијаграм не може. Ускладила је 400.000 људи који се никада неће срести и учинила сваку одлуку јасном: да ли нас ово доводи до Месеца до 1970, или не? Јасан, датиран, непреговарљив циљ према коме свако може да провери сопствени рад надкоординираће сваку хијерархију."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "lessons.1.md",
+  "en": "The second lesson lives in Mission Control. Apollo institutionalized a particular kind of teamwork under pressure: controllers trained to stay ahead of the vehicle, to speak up regardless of rank, and to solve problems as a room rather than a chain of command. When Apollo 13 crippled itself roughly 320,000 kilometres from home, no lone hero saved the crew — a room full of people worked the problem together, against the clock, and improvised a way back. \"Work the problem\" beat panic. Any team that ever hits a crisis can borrow the habit.",
+  "cur": "Друга лекција живи у Центру за управљање мисијом. Apollo је институционализовао особену врсту тимског рада под притиском: контролори обучени да буду корак испред летелице, да проговоре без обзира на чин и да проблеме решавају као једна просторија, а не као командни ланац. Када се Apollo 13 тешко оштетио отприлике 320.000 километара од куће, посаду није спасао ниједан усамљени херој — читава просторија људи заједно је радила на проблему, у трци с временом, и импровизовала пут назад. „Радити на проблему\" надјачало је панику. Сваки тим који се икада нађе у кризи може да позајми ту навику."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "lessons.2.md",
+  "en": "And the human note worth keeping: they did it in eight years, having never done it before, with onboard computers weaker than a modern doorbell. Apollo is a standing argument that a clear mission, the right people, and an honest deadline can still outrun the odds — a useful thing to remember the next time a goal looks impossible.",
+  "cur": "И људска нота коју вреди сачувати: учинили су то за осам година, а никада раније нису ништа слично радили, са рачунарима на броду слабијим од савременог звона на вратима. Apollo је трајан аргумент да јасна мисија, прави људи и поштен рок и даље могу да надјачају шансе — корисна ствар коју треба запамтити следећи пут када неки циљ изгледа немогуће."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "tagline",
+  "en": "Europe's guarantee of its own way to space — born from being told no, grown into the world's dominant commercial launcher, and still flying the continent's independence into orbit.",
+  "cur": "Гаранција Европе да има сопствени пут у свемир — рођена из одбијанице, израсла у водећу светску комерцијалну ракету-носач и данас још увек уноси независност континента у орбиту."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "the_land.0.md",
+  "en": "In the early 1970s Europe did not control its own access to space, and it found out what that meant. When Europe wanted to launch the Franco-German Symphonie communications satellites, the only ride available was American — and the United States would only provide it on the condition that the satellites not be used for commercial telecommunications that might compete with the US-led Intelsat. It was a quiet, decisive humiliation: to fly on someone else's rocket is to let them decide what your spacecraft is allowed to do. Europe drew the obvious conclusion and resolved never to be in that position again.",
+  "cur": "Раних 1970-их Европа није контролисала сопствени приступ свемиру и сазнала је шта то значи. Када је Европа хтела да лансира француско-немачке комуникационе сателите Symphonie, једини доступан превоз био је амерички — а Сједињене Државе су га нудиле само под условом да се сателити не користе за комерцијалне телекомуникације које би могле да конкуришу Intelsat-у под вођством САД. Било је то тихо, одлучујуће понижење: летети на туђој ракети значи препустити другима да одлуче шта ваша летелица сме да ради. Европа је извукла очигледан закључак и одлучила да никада више не буде у таквом положају."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "the_land.1.md",
+  "en": "The answer was Ariane — a European launcher, led by France and built under the newly-formed European Space Agency, flying from Kourou in French Guiana, close to the equator where the Earth's spin gives a rocket a free boost. Its first flight, in 1979, was the moment Europe secured guaranteed, independent access to orbit. Unlike almost every other program in this atlas, Ariane carried no crew and chased no records. It is infrastructure — the road, not the journey — and it turned out to be one of the most consequential roads of the space age.",
+  "cur": "Одговор је био Ariane — европска ракета-носач, коју је предводила Француска, а изграђена је под окриљем тек основане Европске свемирске агенције, са лансирне базе у Куру у Француској Гвајани, близу екватора, где обртање Земље ракети даје бесплатан подстицај. Њен први лет, 1979. године, био је тренутак када је Европа обезбедила загарантован, независан приступ орбити. За разлику од скоро сваког другог програма у овом атласу, Ariane није носила посаду и није јурила рекорде. Она је инфраструктура — пут, а не путовање — и испоставило се да је то један од најзначајнијих путева свемирског доба."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "goals.0.caption",
+  "en": "Ariane 1, Europe's first independent orbital launcher, first flown in 1979. It existed to guarantee that Europe would never again need another power's permission to put its own spacecraft into space.",
+  "cur": "Ariane 1, прва самостална европска орбитална ракета-носач, која је први пут полетела 1979. године. Постојала је да би осигурала да Европи никада више не буде потребна дозвола друге силе да сопствене летелице пошаље у свемир."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "goals.1.md",
+  "en": "Ariane's first goal was strategic and simple: autonomy. Europe would build a launcher it fully controlled, so that its satellites, its science, and eventually its astronauts could reach orbit on European terms, answerable to no one. That goal alone would have justified the program. But a second goal emerged almost immediately and became just as important — to sell that capacity on the open market.",
+  "cur": "Први циљ програма Ariane био је стратешки и једноставан: аутономија. Европа ће изградити ракету-носач коју у потпуности контролише, како би њени сателити, њена наука и, временом, њени астронаути могли да стигну у орбиту под европским условима, не полажући рачуна никоме. Тај циљ сам по себи оправдао би програм. Али други циљ појавио се готово одмах и постао подједнако важан — да се тај капацитет понуди на отвореном тржишту."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "goals.2.md",
+  "en": "In 1980 Europe created Arianespace, the world's first commercial launch company, and turned a strategic asset into a business. The idea was that if Ariane launched not only European payloads but satellites for anyone willing to pay, the commercial revenue would help sustain the launcher and drive down its cost. It was a genuinely new model — treating access to space as a service to be sold rather than a capability each nation built only for itself — and for two decades it worked spectacularly well.",
+  "cur": "Европа је 1980. године основала Arianespace, прву светску компанију за комерцијална лансирања, и тако претворила стратешки ресурс у посао. Идеја је била да ће, ако Ariane лансира не само европске терете него и сателите за свакога ко је спреман да плати, комерцијални приход помоћи да се ракета-носач одржи и да се њена цена смањи. Био је то заиста нов модел — приступ свемиру третиран као услуга која се продаје, а не као способност коју свака држава гради само за себе — и две деценије функционисао је спектакуларно добро."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "outcome.0.caption",
+  "en": "Ariane 5 on its launch pad at Kourou. After a famous maiden-flight failure, it became one of the most reliable heavy-lift rockets ever flown — launching Rosetta, Galileo, the ATV freighters to the ISS, and the James Webb Space Telescope.",
+  "cur": "Ariane 5 на својој лансирној рампи у Куру. После чувеног неуспеха на првом лету, постала је једна од најпоузданијих ракета велике носивости икада лансираних — лансирала је Rosetta, Galileo, теретне летелице ATV ка МСС и свемирски телескоп James Webb."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "outcome.1.md",
+  "en": "The outcome exceeded the ambition. Ariane 4, the reliable workhorse of the 1980s and 90s, captured roughly half of the entire global market for commercial satellite launches, making Arianespace the dominant launch provider on Earth and Europe a first-rank spacefaring power. Its successor, Ariane 5, had a notorious start — its 1996 maiden flight destroyed itself about thirty-seven seconds after ignition (thirty seconds after liftoff) when guidance software carried over from Ariane 4 overflowed at the new rocket's higher speed, a failure now taught in every software-engineering course — but recovered to become one of the most dependable heavy launchers ever built.",
+  "cur": "Исход је премашио амбицију. Ariane 4, поуздани радни коњ 1980-их и 90-их, освојила је отприлике половину целокупног светског тржишта комерцијалних лансирања сателита, чиме је Arianespace постао водећи пружалац услуга лансирања на Земљи, а Европа свемирска сила првог ранга. Њена наследница, Ariane 5, имала је злогласан почетак — њен први лет 1996. године сам се уништио тридесетак секунди након лансирања, отприлике тридесет седам секунди након паљења, када је софтвер за навођење преузет из Ariane 4 прекорачио опсег при већој брзини нове ракете, а тај неуспех се данас изучава на сваком курсу софтверског инжењерства — али се опоравила и постала једна од најпоузданијих ракета велике носивости икада изграђених."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "outcome.2.md",
+  "en": "Ariane 5's manifest is a roll-call of the era's science and infrastructure: the Rosetta comet mission, the Galileo navigation constellation, BepiColombo to Mercury, the ATV cargo freighters that resupplied the International Space Station, and — most celebrated of its late payloads — the James Webb Space Telescope (December 2021), launched so precisely that it saved years of the telescope's fuel. Ariane 5's true final flight came in July 2023, carrying the Heinrich Hertz and Syracuse 4B telecommunications satellites on VA261. Then the ground shifted. SpaceX's reusable rockets undercut Ariane's prices and ended its commercial dominance, and Ariane 6, flying from 2024, is Europe's answer: a cheaper, more flexible launcher built to keep the continent's independent access alive in a transformed market.",
+  "cur": "Манифест лета ракете Ariane 5 је прозивник науке и инфраструктуре свог доба: мисија ка комети Rosetta, навигациона констелација Galileo, BepiColombo ка Меркуру, теретне летелице ATV које су снабдевале Међународну свемирску станицу и — најславнији међу њеним касним теретима — свемирски телескоп James Webb (децембар 2021), лансиран тако прецизно да је телескопу уштедео горива за године рада. Прави последњи лет ракете Ariane 5 одржан је јула 2023. године, када је на мисији VA261 однела телекомуникационе сателите Heinrich Hertz и Syracuse 4B. Затим су се прилике преокренуле. Вишекратне ракете компаније SpaceX оборили су цене ракете Ariane и окончале њену комерцијалну доминацију, а Ariane 6, која лети од 2024. године, одговор је Европе: јефтинија и флексибилнија ракета-носач, направљена да одржи у животу самосталан приступ континента свемиру на тржишту које се из корена променило."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "narrative.0.md",
+  "en": "Ariane's through-line is that access to space is not a convenience but a form of sovereignty. The whole program grew from the recognition that depending on another power's rockets means depending on that power's permission — and everything Europe did afterwards, from building Ariane to sustaining it commercially to replacing it under pressure, followed from the decision that this dependence was unacceptable. In a domain usually told through crews and destinations, Ariane is the reminder that someone has to build and own the road, and that who owns it matters enormously.",
+  "cur": "Заједничка нит програма Ariane јесте то да приступ свемиру није погодност, већ облик суверенитета. Цео програм израстао је из увида да зависност од туђих ракета значи зависност од туђе дозволе — а све што је Европа потом чинила, од изградње ракете Ariane, преко њеног комерцијалног одржавања, до њене замене под притиском, проистекло је из одлуке да је та зависност неприхватљива. У области која се обично приповеда кроз посаде и одредишта, Ariane је подсетник да неко мора да изгради пут и да га поседује, и да је изузетно важно ко га поседује."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "narrative.1.md",
+  "en": "The commercial pivot is the program's cleverest move and its central lesson. By founding Arianespace and selling launches worldwide, Europe made its strategic launcher pay for much of its own upkeep and honed it against real competition, rather than letting it become a subsidised national project that flew only occasionally. For twenty years this made Ariane both independent and dominant. It also made the program vulnerable in a way a purely strategic launcher would not have been: when a cheaper competitor appeared, Ariane lost the commercial market that had sustained it, and had to reinvent itself to survive.",
+  "cur": "Комерцијални заокрет је најпаметнији потез програма и његова централна лекција. Основавши Arianespace и продајући лансирања широм света, Европа је постигла да њена стратешка ракета-носач сама покрива велики део својих трошкова одржавања и да се брусила у стварној конкуренцији, уместо да постане субвенционисан национални пројекат који лети тек повремено. Двадесет година то је Ariane чинило и независном и доминантном. Истовремено је програм постао рањив на начин на који чисто стратешка ракета-носач не би била: када се појавио јефтинији конкурент, Ariane је изгубила комерцијално тржиште које ју је одржавало и морала је да се поново осмисли да би преживела."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "narrative.2.md",
+  "en": "That competitor, of course, was reusability done right — the thing the Space Shuttle had promised and not delivered, and that a new generation achieved. Ariane, long built on the logic of the reliable expendable rocket, found that logic overturned almost overnight, and Ariane 6 is the response of an established power to a disruptive one. The outcome is still being written, but the stake is exactly what it was in 1979: whether Europe keeps its own guaranteed way to space.",
+  "cur": "Тај конкурент је, наравно, била поновна употребљивост изведена како треба — оно што је Space Shuttle обећао а није испунио, а што је једна нова генерација остварила. Ariane, дуго грађена на логици поуздане ракете за једнократну употребу, затекла је ту логику преврнуту готово преко ноћи, а Ariane 6 је одговор једне устаљене силе на ону која руши постојеће односе. Исход се још пише, али улог је потпуно исти као 1979: да ли ће Европа задржати сопствени загарантовани пут до свемира."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "legacy.0.caption",
+  "en": "Ariane 6, flying from 2024 — Europe's answer to a market transformed by reusable rockets, and the continuation of the same mandate Ariane 1 was built for: independent European access to space.",
+  "cur": "Ariane 6, која лети од 2024. године — одговор Европе на тржиште преображено вишекратним ракетама и наставак истог мандата за који је грађена Ariane 1: самосталан европски приступ свемиру."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "legacy.1.md",
+  "en": "Ariane's legacy is that Europe has never again had to ask permission to reach space. For over four decades an unbroken line of European rockets has launched the continent's satellites, science missions, and contributions to the International Space Station — and for much of that time launched the world's, too. The commercial launch industry that is now so central to spaceflight was, in large part, invented by Arianespace; the model of selling access to orbit as a service began at Kourou.",
+  "cur": "Наслеђе програма Ariane јесте то што Европа више никада није морала да тражи дозволу да би стигла до свемира. Више од четири деценије непрекинут низ европских ракета лансира сателите континента, научне мисије и допринос Међународној свемирској станици — а током великог дела тог времена лансирао је и сателите остатка света. Индустрију комерцијалних лансирања, која је данас толико централна за свемирске летове, великим делом је измислио Arianespace; модел продаје приступа орбити као услуге започео је у Куру."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "legacy.2.md",
+  "en": "It also stands as the clearest case study in the value — and the cost — of strategic autonomy. Ariane was more expensive than simply buying launches from whoever was cheapest, and in the reusable era that gap has grown. But the program's founders understood that the cheapest launch is worthless if the seller can dictate its terms, and Europe has spent four decades and considerable money to keep that from ever happening again. Whether to keep paying that premium, as reusable competitors reshape the market, is the live question Ariane 6 now embodies.",
+  "cur": "Она је уједно и најјаснија студија случаја о вредности — и цени — стратешке аутономије. Ariane је била скупља него да су се лансирања једноставно куповала од оног ко је најјефтинији, а у ери вишекратне употребе тај јаз се увећао. Али оснивачи програма разумели су да је и најјефтиније лансирање безвредно ако продавац може да диктира његове услове, а Европа је четири деценије и знатан новац потрошила да се то никада више не понови. Питање да ли наставити да се плаћа та премија, док вишекратни конкуренти преобликују тржиште, јесте живо питање које Ariane 6 сада отелотворује."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "lessons.0.md",
+  "en": "Ariane's first lesson is that independent access to critical infrastructure is worth paying for. Europe built its own launcher not because it was cheaper but because the alternative — depending on a rival or partner for something as fundamental as reaching orbit — meant surrendering control over its own space program, as the Symphonie affair had shown. The premium Europe has paid for Ariane is the price of never again being told what its satellites are allowed to do. For anything genuinely strategic, autonomy is a capability, not an extravagance.",
+  "cur": "Прва лекција програма Ariane јесте то да је самосталан приступ критичној инфраструктури вредан тога да се за њега плати. Европа је изградила сопствену ракету-носач не зато што је то било јефтиније, већ зато што је алтернатива — зависити од противника или партнера када је у питању нешто тако темељно као долазак до орбите — значила препуштање контроле над сопственим свемирским програмом, као што је показала афера Symphonie. Премија коју Европа плаћа за Ariane јесте цена тога да јој никада више нико не саопштава шта њени сателити смеју да раде. Када је реч о ономе што је заиста стратешко, аутономија је способност, а не раскош."
+ },
+ {
+  "rel": "programs/ariane.json",
+  "at": "lessons.1.md",
+  "en": "The second lesson is written in Flight 501: reused software is not automatically safe software. Ariane 5 was destroyed because guidance code proven on Ariane 4 was carried over untested into a rocket that flew faster, where an assumption baked into the old code no longer held. The components were sound; the failure was in assuming that what worked in one context would work unchanged in another. Every reused system must be re-validated against the new conditions it will actually face — a lesson that reaches far beyond rockets.",
+  "cur": "Друга лекција записана је у Flight 501: поново коришћен софтвер није аутоматски безбедан софтвер. Ariane 5 је уништена зато што је код за навођење, проверен на ракети Ariane 4, неиспитан пренет у ракету која је летела брже, где претпоставка уграђена у стари код више није важила. Компоненте су биле исправне; грешка је била у претпоставци да ће оно што функционише у једном контексту функционисати непромењено и у другом. Сваки поново коришћени систем мора бити поново потврђен у односу на нове услове са којима ће се стварно суочити — лекција која далеко превазилази ракете."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "tagline",
+  "en": "The return to the Moon — this time to stay, and this time with the world, not to beat it.",
+  "cur": "Повратак на Месец — овога пута да останемо, и овога пута са светом, а не да бисмо га претекли."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "the_land.0.md",
+  "en": "Twelve people walked on the Moon between 1969 and 1972, and then no one did for more than fifty years. Apollo went, planted its flags, gathered its rocks, and stopped — because it had been built to win a race, and once the race was won there was no reason to keep paying for it. Artemis is NASA's attempt to go back and, this time, not stop. Named for Apollo's twin sister, it is designed around a different premise: not a sprint to arrive, but the slow construction of a permanent human foothold at the Moon.",
+  "cur": "Дванаест људи ходало је по Месецу између 1969. и 1972. године, а потом више од педесет година нико. Apollo је стигао, поставио своје заставе, прикупио своје стене и стао — јер је био створен да победи у трци, а када је трка добијена, више није било разлога да се за њега и даље плаћа. Artemis је NASA-ин покушај да се врати и да овога пута не стане. Добио је име по сестри близанки програма Apollo, а замишљен је на другачијој премиси: не као спринт до циља, већ као спора изградња трајног људског упоришта на Месецу."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "the_land.1.md",
+  "en": "The other difference is who goes. Apollo was a national project, a demonstration of American superiority over the Soviet Union, flown entirely by American astronauts on American hardware. Artemis is deliberately international and deliberately commercial — Europe builds the service module that powers Orion, Japan and Canada contribute to the lunar Gateway, SpaceX and others build the landers, and the crews will include astronauts from partner nations. Where Apollo was a race, Artemis is a coalition.",
+  "cur": "Друга разлика је у томе ко одлази. Apollo је био национални пројекат, демонстрација америчке надмоћи над Совјетским Савезом, који су у потпуности летели амерички астронаути на америчкој опреми. Artemis је намерно међународан и намерно комерцијалан — Европа гради сервисни модул који покреће Orion, Јапан и Канада доприносе лунарном Gateway-у, SpaceX и други граде лендере, а међу члановима посада биће и астронаути из земаља партнера. Где је Apollo био трка, Artemis је коалиција."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "goals.0.md",
+  "en": "The headline goal is a crewed landing near the lunar south pole — a region Apollo never visited, chosen because permanently-shadowed craters there hold water ice. Water is the prize: split into hydrogen and oxygen it becomes rocket propellant and breathable air, and a Moon that can supply its own water is a Moon you can stay on, and stage from, rather than merely visit.",
+  "cur": "Главни циљ је слетање посаде у близини јужног пола Месеца — региона који Apollo никада није посетио, изабраног зато што кратери у трајној сенци тамо садрже водени лед. Вода је награда: раздвојена на водоник и кисеоник постаје ракетни погонски гас и ваздух за дисање, а Месец који може да обезбеди сопствену воду јесте Месец на коме можете остати и са кога можете полазити даље, а не само га посетити."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "goals.1.caption",
+  "en": "Orion — the crew spacecraft, launched on the giant SLS rocket. Its service module, which supplies power and propulsion, is built by ESA in Europe: the vehicle that carries American astronauts to the Moon literally cannot fly without its international half.",
+  "cur": "Orion — свемирска летелица за посаду, коју у свемир лансира џиновска ракета SLS. Њен сервисни модул, који обезбеђује напајање и погон, гради ESA у Европи: летелица која носи америчке астронауте на Месец буквално не може да лети без своје међународне половине."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "goals.2.md",
+  "en": "The deeper goal is permanence and a stepping stone. Artemis aims to build the Gateway — a small station in lunar orbit — and eventually surface infrastructure, turning the Moon from a destination into a base. And it is explicitly framed as a rehearsal for Mars: the place to learn how to live and work on another world, close enough to Earth that mistakes are survivable, before attempting the same thing months away.",
+  "cur": "Дубљи циљ је трајно присуство и одскочна даска. Artemis има за циљ да изгради Gateway — малу станицу у орбити око Месеца — и на крају површинску инфраструктуру, претварајући Месец из одредишта у базу. И он је изричито замишљен као проба за Марс: место на коме се учи како живети и радити на другом свету, довољно близу Земљи да се грешке могу преживети, пре него што се исто покуша месецима далеко."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "goals.3.md",
+  "en": "There is also a goal no one states but everyone understands: to get there before China. China has its own crewed lunar plans for around 2030, and Artemis is, among other things, a race to establish presence, partners, and norms at the lunar south pole first. The coalition framing is genuine — and it is also how the United States intends to lead the return rather than follow it.",
+  "cur": "Постоји и циљ који нико не изговара наглас, а који сви разумеју: стићи тамо пре Кине. Кина има сопствене планове за лет са посадом на Месец око 2030. године, а Artemis је, између осталог, трка да се први успоставе присуство, партнери и правила на јужном полу Месеца. Представљање у виду коалиције је искрено — и истовремено је начин на који Сједињене Државе намеравају да предводе повратак, а не да га следе."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "outcome.0.md",
+  "en": "Artemis is underway but not yet at the Moon's surface. Artemis I flew in 2022 — an uncrewed Orion looped around the Moon and returned, proving the SLS rocket and the spacecraft on their first flight. The crewed flyby (Artemis II) and the landing (Artemis III) follow, though both have slipped repeatedly as the enormous, multi-contractor program works through the hardest parts: the heat shield, the Starship lander, the new spacesuits, and the orbital refuelling the lander depends on.",
+  "cur": "Artemis је у току, али још није стигао до површине Месеца. Artemis I летео је 2022. године — Orion без посаде обишао је Месец и вратио се, потврдивши исправност ракете SLS и летелице већ на првом лету. Следе лет са посадом поред Месеца (Artemis II) и слетање (Artemis III), мада су оба више пута померана док овај огроман програм, са мноштвом извођача, решава најтеже проблеме: топлотни штит, лендер Starship, нова свемирска одела и допуну горива у орбити од које лендер зависи."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "outcome.1.caption",
+  "en": "The Space Launch System — the most powerful rocket NASA has flown since the Saturn V, and, unlike Apollo's expendable machine, the launcher for a campaign meant to keep going rather than a handful of flights.",
+  "cur": "Space Launch System — најмоћнија ракета коју је NASA лансирала од времена ракете Saturn V и, за разлику од расходне летелице програма Apollo, ракета-носач за кампању која је замишљена да траје, а не да се заврши на неколицини летова."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "outcome.2.md",
+  "en": "The program is also a study in how differently big space is done now. Apollo was a single agency directing contractors toward one deadline; Artemis is a web of international partners and commercial providers, with NASA buying a lunar lander as a service from SpaceX rather than owning it. That structure spreads cost and risk and builds a durable coalition — and it also means the schedule depends on many organizations, including a Starship that must first prove itself, so the timeline is genuinely uncertain in a way Apollo's brute-force sprint was not.",
+  "cur": "Програм је уједно и студија о томе колико се другачије данас остварују велики свемирски подухвати. Apollo је био једна агенција која је усмеравала извођаче ка једном року; Artemis је мрежа међународних партнера и комерцијалних пружалаца услуга, при чему NASA лендер за Месец купује као услугу од компаније SpaceX, уместо да га поседује. Таква структура распоређује трошкове и ризик и гради трајну коалицију — а то такође значи да распоред зависи од многих организација, укључујући и летелицу Starship која најпре мора да докаже себе, па је временски оквир заиста неизвестан на начин на који то Apollo-в спринт грубом силом није био."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "narrative.0.md",
+  "en": "Artemis is the answer to a question Apollo left hanging: what is the Moon for, if not to win a race? Apollo proved humans could go and then revealed that going, by itself, was not a reason to keep going — the political engine that funded it switched off the moment the Soviets were beaten. Artemis is built to survive that problem by having a purpose beyond arrival: water, infrastructure, a base, a path to Mars, and a coalition of partners with their own reasons to sustain it. Whether that purpose is durable enough to outlast changing administrations is the open question the whole program is really testing.",
+  "cur": "Artemis је одговор на питање које је Apollo оставио да виси у ваздуху: чему служи Месец, ако не да се добије трка? Apollo је доказао да људи могу да оду, а затим открио да само одлазак није разлог да се са њим настави — политички мотор који га је финансирао угасио се оног тренутка када су Совјети били поражени. Artemis је направљен да преживи тај проблем тако што има сврху изван самог доласка: воду, инфраструктуру, базу, пут ка Марсу и коалицију партнера са сопственим разлозима да га одрже. Да ли је та сврха довољно трајна да надживи смену администрација, отворено је питање које читав програм заправо проверава."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "narrative.1.md",
+  "en": "It is also a deliberate inversion of Apollo's politics. Apollo's strength was singular national will; its weakness was that the same will could evaporate. Artemis trades some of that focus for resilience — spreading the program across nations and companies so that no single budget decision can cancel it outright, and so that partners who have invested their own hardware and astronauts have reasons to keep it alive. The coalition is slower and more complex than a race, and that is the point: it is built to endure, not to sprint.",
+  "cur": "То је уједно и намерна инверзија политике програма Apollo. Снага програма Apollo била је јединствена национална воља; његова слабост била је у томе што је та иста воља могла да ишчезне. Artemis жртвује део те усредсређености зарад отпорности — програм је распоређен на државе и компаније тако да га ниједна појединачна буџетска одлука не може потпуно укинути, а партнери који су уложили сопствени хардвер и астронауте имају разлога да га одрже у животу. Коалиција је спорија и сложенија од трке, и управо је то поента: изграђена је да опстане, а не да спринта."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "narrative.2.md",
+  "en": "And it inherits Apollo's hardware lineage even as it breaks from its politics. The SLS rocket descends from Space Shuttle engines and boosters; Orion is the spiritual heir of the Apollo command module; the whole program carries the DNA of the programs in this atlas that came before it. Artemis is not a fresh start but a continuation — the accumulated capability of sixty years of spaceflight pointed, once more, at the Moon.",
+  "cur": "И он наслеђује линију опреме програма Apollo, чак и док раскида с његовом политиком. Ракета SLS води порекло од мотора и потисника програма Space Shuttle; Orion је духовни наследник командног модула програма Apollo; цео програм носи ДНК програма из овог атласа који су му претходили. Artemis није нови почетак, већ наставак — нагомилана способност од шездесет година свемирских летова, још једном усмерена ка Месецу."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "legacy.0.md",
+  "en": "Artemis's legacy is still ahead of it, but its structure is already a template. By building the return to the Moon as an international coalition with commercial landers rather than a single-nation sprint, it has defined how large exploration programs are now assembled — cost and risk shared, capability bought as a service, partners bound in by their own contributions.",
+  "cur": "Наслеђе програма Artemis тек је пред њим, али је његова структура већ образац. Градећи повратак на Месец као међународну коалицију с комерцијалним лендерима, а не као спринт једне државе, он је одредио како се данас склапају велики истраживачки програми — трошак и ризик су подељени, способност се купује као услуга, а партнери су везани сопственим доприносима."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "legacy.1.md",
+  "en": "If it succeeds, the legacy is a permanent human presence beyond low Earth orbit for the first time — a base at the lunar south pole, a station in lunar orbit, and the operational experience of living off another world that any Mars mission will require. The Moon becomes a place people work rather than a place twelve people once visited.",
+  "cur": "Ако успе, наслеђе ће бити стална људска присутност изван ниске Земљине орбите по први пут — база на јужном полу Месеца, станица у лунарној орбити и оперативно искуство живота на другом свету, које ће захтевати свака мисија на Марс. Месец постаје место на коме људи раде, а не место које је некада посетило дванаесторо људи."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "legacy.2.md",
+  "en": "And it is the frame for a new era of lunar activity. Artemis, China's parallel program, and a fleet of robotic landers from many nations are converging on the same small region of the Moon at the same time — making the 2020s the busiest decade at the Moon since Apollo, and the south pole the most contested real estate in the solar system.",
+  "cur": "И он је оквир за нову еру активности на Месецу. Artemis, паралелни програм Кине и флота роботских лендера из многих земаља истовремено се сливају ка истом малом региону Месеца — због чега су двадесете године овог века најживља деценија на Месецу од програма Apollo, а јужни пол најспорнија некретнина у Сунчевом систему."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "lessons.0.md",
+  "en": "The lesson Artemis is built on is the one Apollo taught the hard way: arriving is not a purpose. A program that exists only to reach a destination ends the moment it arrives, because the reason to fund it arrives with it. Artemis's whole design — water, infrastructure, partners, a path to Mars — is an attempt to give the Moon a reason to keep going that outlives the excitement of getting there.",
+  "cur": "Лекција на којој је изграђен Artemis она је коју је Apollo научио на тежи начин: долазак није сврха. Програм који постоји само да би стигао до одредишта завршава се оног часа када стигне, јер разлог за његово финансирање стиже заједно с њим. Читав дизајн програма Artemis — вода, инфраструктура, партнери, пут ка Марсу — покушај је да се Месецу да разлог да се настави који траје дуже од узбуђења због доласка."
+ },
+ {
+  "rel": "programs/artemis.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is about resilience versus focus. Apollo's singular national will was its power and its fragility; Artemis trades focus for a coalition that no single budget can easily kill. It is slower, more complex, and harder to schedule — and it is betting that endurance, not speed, is what a return 'to stay' actually requires. Whether that bet pays off is the story the next decade will tell.",
+  "cur": "Дубља лекција тиче се отпорности наспрам усредсређености. Јединствена национална воља програма Apollo била је његова снага и његова крхкост; Artemis мења усредсређеност за коалицију коју ниједан појединачни буџет не може лако да угуши. Он је спорији, сложенији и теже се распоређује у времену — и клади се да је оно што повратак „да би се остало“ заиста захтева издржљивост, а не брзина. Да ли ће се та опклада исплатити јесте прича коју ће испричати наредна деценија."
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "tagline",
+  "en": "The Soviet space shuttle that looked like America's, flew better in one respect — and flew exactly once, uncrewed and flawless, before the country that built it disappeared out from under it.",
+  "cur": "Совјетски спејс-шатл који је личио на амерички, у једном погледу летео боље — и летео тачно једном, без посаде и без грешке, пре него што је држава која га је саградила нестала испод њега."
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "the_land.0.md",
+  "en": "By the mid-1970s the Soviet Union was watching the United States build the Space Shuttle and drawing an alarming conclusion. It could not quite believe the Americans would spend so much on a reusable spaceplane purely for the reasons stated, and feared a hidden military purpose — a vehicle that could dive into the atmosphere, snatch a Soviet satellite, and fly home, or drop weapons from orbit. Unwilling to be without an answer, the Politburo ordered one of its own. The result, Buran, was the largest and most expensive space project in Soviet history, and it began as a response to a threat that may never have been real.",
+  "cur": "До средине 1970-их Совјетски Савез је посматрао како Сједињене Државе граде Space Shuttle и извлачио алармантан закључак. Није могао сасвим да поверује да ће Американци потрошити толико новца на поновљиво употребљив свемирски авион искључиво из наведених разлога, па се плашио скривене војне намене — летелице која би могла да зарони у атмосферу, дограби неки совјетски сателит и одлети кући или да из орбите баца оружје. Не желећи да остане без одговора, Политбиро је наложио да се направи сопствени. Резултат, Buran, био је највећи и најскупљи свемирски пројекат у историји Совјетског Савеза, а настао је као одговор на претњу која можда никада није била стварна."
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "the_land.1.md",
+  "en": "From the outside Buran looked almost identical to the American orbiter — the same delta wing, the same rough shape — because the same job and the same physics of hypersonic reentry drive a design toward the same answer. But underneath, the Soviet engineers made two decisions that set their machine apart, and both, arguably, improved on the original. Buran carried no main ascent engines of its own — it had orbital-manoeuvring engines for use in space, but the heavy lift to orbit was handled entirely by the rocket — and Buran could fly with no one aboard at all.",
+  "cur": "Споља је Buran изгледао готово идентично америчком орбитеру — исто делта-крило, исти груби облик — јер исти задатак и иста физика хиперсоничног поновног уласка у атмосферу воде дизајн ка истом решењу. Али испод тога су совјетски инжењери донели две одлуке које су њихову летелицу издвојиле, и обе су, могло би се рећи, унапредиле оригинал. Buran није имао сопствене главне моторе за успон — имао је моторе за орбитално маневрисање за употребу у свемиру, али је тежак подизни део пута до орбите у потпуности обављала ракета — и Buran је могао да лети без иког на броду."
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "goals.0.caption",
+  "en": "The Energia super-heavy launcher, which lifted Buran. Unlike the American orbiter, Buran had no main ascent engines: all the lift came from Energia, a genuine heavy-lift rocket in its own right — one of the most powerful ever flown, and the most powerful the Soviet Union ever flew successfully.",
+  "cur": "Супертешка ракета-носач Energia, која је подигла Buran. За разлику од америчког орбитера, Buran није имао главне моторе за успон: сав потисак долазио је од ракете Energia, праве ракете за веома тешке терете сама по себи — једне од најмоћнијих икада лансираних и најмоћније коју је Совјетски Савез икада успешно лансирао."
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "goals.1.md",
+  "en": "The first decision was about the engines. The American Shuttle mounted its three big main engines on the orbiter itself, which meant hauling that heavy, expensive machinery to orbit and back every flight and throwing away only the external tank. The Soviets instead put all the lift into the rocket: Buran rode on Energia, a true super-heavy launcher that did the whole job of reaching orbit, leaving the orbiter to be a payload rather than part of the propulsion. This made Energia useful on its own — a powerful rocket that could launch other heavy payloads with no orbiter at all — and freed Buran of a burden its rival carried for thirty years.",
+  "cur": "Прва одлука тицала се мотора. Амерички Shuttle имао је своја три велика главна мотора на самом орбитеру, што је значило да се та тешка и скупа машинерија при сваком лету носи у орбиту и назад, а одбацује се само спољни резервоар. Совјети су, напротив, сав потисак пренели на ракету: Buran је узлетао на ракети Energia, правој супертешкој ракети-носачу која је обавила цео посао допремања у орбиту, па је орбитер постао терет, а не део погона. Тиме је Energia постала корисна сама за себе — моћна ракета која може да лансира друге тешке терете и без икаквог орбитера — а Buran је био растерећен бремена које је његов ривал носио тридесет година."
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "goals.2.md",
+  "en": "The second decision was automation. The American Shuttle always needed a crew to land it; it could not come home on its own. Buran was built to fly the entire mission — launch, orbit, reentry, and landing — with no one aboard, guided by its computers and the ground. In an era when full automatic landing of a winged spacecraft was at the frontier of what was possible, this was a genuine advance, and it set up the one moment when Buran got to prove what it could do.",
+  "cur": "Друга одлука била је аутоматизација. Амерички Shuttle је увек захтевао посаду да га спусти; није могао да се врати кући сам. Buran је грађен да лети целу мисију — лансирање, орбиту, поновни улазак у атмосферу и слетање — без иког на броду, вођен својим рачунарима и земаљском контролом. У доба када је потпуно аутоматско слетање крилатне летелице било на граници могућег, то је био прави напредак, и он је припремио тај један тренутак у којем је Buran могао да докаже шта уме."
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "outcome.0.caption",
+  "en": "The Buran orbiter. It flew one perfect uncrewed mission in November 1988 and then never flew again — grounded by the collapse of the Soviet economy and, finally, of the Soviet Union itself.",
+  "cur": "Орбитер Buran. Извео је један савршен лет без посаде у новембру 1988, а потом никада више није полетео — спречен сломом совјетске привреде и, напослетку, самог Совјетског Савеза."
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "outcome.1.md",
+  "en": "On 15 November 1988, Buran flew. It launched on Energia, circled the Earth twice, reentered, and — in a gusting crosswind that would have tested any pilot — brought itself down onto the runway at Baikonur fully automatically, touching down within metres of its target with no human aboard at any point. It was a flawless flight and a real technical triumph: no other winged spacecraft had flown an entire orbital mission and landed itself. And it was the only time Buran ever flew.",
+  "cur": "Дана 15. новембра 1988, Buran је полетео. Лансиран је на ракети Energia, двапут је обишао Земљу, поново ушао у атмосферу и — у налетима бочног ветра који би довео на пробу сваког пилота — потпуно аутоматски сам се спустио на писту на Бајконуру, додирнувши тло на неколико метара од циља, без људског бића на броду у било ком тренутку. То је био беспрекоран лет и прави технички тријумф: ниједан други крилати свемирски брод није одлетео целу орбиталну мисију и сам слетео. И то је био једини пут када је Buran икада летео."
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "outcome.2.md",
+  "en": "The timing could not have been worse. Buran reached its triumph exactly as the Soviet Union began to come apart. Within three years the country was gone; the money vanished; and a hugely expensive spaceplane built to counter an American threat had no threat to counter, no budget to fly, and no mission anyone could afford to give it. The program limped on paper until 1993 and was then cancelled outright. The final indignity came in 2002, when the roof of the hangar housing the one orbiter that had actually flown collapsed, crushing the spacecraft and killing eight workers. Buran's single flight remains one of the most impressive — and most pointless — achievements in the history of spaceflight.",
+  "cur": "Тренутак није могао бити гори. Buran је достигао свој тријумф баш када је Совјетски Савез почео да се распада. За три године држава је нестала; новац је ишчезао; а огромно скуп свемирски авион, изграђен да парира америчкој претњи, остао је без претње којој би парирао, без буџета за летове и без мисије коју би неко могао да приушти да му додели. Програм се на папиру вукао до 1993, а затим је потпуно укинут. Последње понижење стигло је 2002, када се срушио кров хангара у којем се налазио једини орбитер који је заиста летео, уништивши летелицу и усмртивши осам радника. Buran-ов једини лет остаје једно од најимпресивнијих — и најбесмисленијих — достигнућа у историји свемирских летова."
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "narrative.0.md",
+  "en": "Buran is the story of a magnificent answer to a question that stopped being asked. Technically it was a success and in places an improvement on the vehicle it copied — the separate launcher, the automatic landing, real engineering advances. But it was built for strategic and political reasons that evaporated, at a cost the Soviet economy could not sustain, and it arrived at its moment of triumph just as the system that ordered it collapsed. No amount of engineering excellence could survive the disappearance of the reason for the program and the money to run it.",
+  "cur": "Buran је прича о величанственом одговору на питање које је престало да се поставља. Технички гледано, био је успех, а на појединим местима и унапређење летелице коју је копирао — засебна ракета-носач, аутоматско слетање, прави инжењерски напредак. Али био је изграђен из стратешких и политичких разлога који су ишчезли, по цени коју совјетска привреда није могла да издржи, а до свог тренутка тријумфа стигао је тек када се распао систем који га је наручио. Никаква инжењерска изврсност није могла да преживи нестанак разлога за програм и новца за његово извођење."
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "narrative.1.md",
+  "en": "There is an irony worth holding onto. In the two respects where Buran differed from the American Shuttle — putting the engines on the rocket rather than the orbiter, and flying automatically without a crew — it arguably had the better ideas, and both have echoes in later spaceflight. And yet the American Shuttle flew 135 times over thirty years and built a space station, while Buran flew once. The lesson is not that Buran's engineering was worse; it is that engineering is never the whole story. A program needs a purpose and a budget that outlast its first flight, and Buran had neither.",
+  "cur": "Постоји једна иронија коју вреди задржати у мислима. У она два погледа у којима се Buran разликовао од америчког Shuttle-а — мотори смештени на ракету уместо на орбитер, и аутоматски лет без посаде — он је вероватно имао боље замисли, а обе се одјекују у каснијим свемирским летовима. Па ипак, амерички Shuttle је летео 135 пута током тридесет година и помогао да се изгради свемирска станица, док је Buran летео једном. Поука није у томе да је инжењеринг Buran-а био лошији; већ у томе да инжењеринг никада није цела прича. Програму су потребни сврха и буџет који трају дуже од његовог првог лета, а Buran није имао ни једно ни друго."
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "legacy.0.caption",
+  "en": "OK-GLI, Buran's atmospheric test orbiter — fitted with jet engines to practise runway approaches, and now a museum exhibit in Germany. The surviving Buran hardware is scattered across museums; the one orbiter that reached space was destroyed in 2002.",
+  "cur": "OK-GLI, Buran-ов атмосферски испитни орбитер — опремљен млазним моторима за увежбавање прилаза писти, а данас музејски експонат у Немачкој. Сачувани делови опреме програма Buran расути су по музејима; једини орбитер који је стигао у свемир уништен је 2002."
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "legacy.1.md",
+  "en": "Buran's direct legacy is almost nothing — a cancelled program, a single flight, hardware in museums, and one orbiter lost under a fallen roof. But its indirect legacy is real. Energia proved that the Soviet Union could, at last, build a super-heavy rocket that actually worked, redeeming the failure of the N1 — even if it, too, was cancelled for want of anything to launch. And Buran's fully automated flight demonstrated a capability that would only become standard decades later, as uncrewed and autonomously-landing spacecraft became routine.",
+  "cur": "Непосредно наслеђе програма Buran је готово никакво — отказан програм, један једини лет, делови опреме по музејима и један орбитер изгубљен под срушеним кровом. Али његово посредно наслеђе је стварно. Energia је доказала да је Совјетски Савез напослетку ипак могао да изгради супертешку ракету која заиста ради, чиме је искупљен неуспех ракете N1 — иако је и она отказана јер није било ничега што би требало да лансира. А потпуно аутоматизован лет летелице Buran показао је способност која ће постати стандард тек деценијама касније, када су свемирске летелице без посаде и оне које слећу самостално постале уобичајене."
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "legacy.2.md",
+  "en": "Mostly, though, Buran endures as a cautionary monument — the clearest case in the space age of a program that got the engineering right and everything else wrong. It stands beside the American Shuttle as the road not taken, and beside the N1 as the other great Soviet what-might-have-been: proof that in spaceflight, a brilliant machine with no purpose and no money is still a machine that does not fly.",
+  "cur": "Највише, међутим, Buran опстаје као опомињући споменик — најјаснији пример у свемирском добу програма који је инжењерство урадио како треба, а све остало погрешно. Стоји поред америчког Shuttle-а као пут којим се није пошло, а поред ракете N1 као друго велико совјетско „шта би било да је било\": доказ да је у свемирским летовима блистава машина без сврхе и без новца ипак машина која не лети."
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "lessons.0.md",
+  "en": "Buran's first lesson is that a program needs a reason that outlasts its origins. It was born from a strategic fear and a refusal to let the Americans hold a capability the Soviet Union lacked — and when the fear faded and the Cold War ended, nothing was left to justify the enormous cost. Building an expensive capability to match a rival, rather than to do a job you actually need done, leaves you with a magnificent machine and no reason to fly it the moment the rivalry cools.",
+  "cur": "Прва лекција програма Buran јесте да програму треба разлог који траје дуже од његовог порекла. Настао је из стратешког страха и одбијања да се Американцима препусти способност коју Совјетски Савез није имао — а када је страх избледео и када се Хладни рат завршио, није остало ништа што би оправдало огромне трошкове. Изградња скупе способности зарад изједначавања са супарником, а не зарад посла који заиста треба обавити, оставља вас с величанственом машином и без разлога да лети чим се ривалство охлади."
+ },
+ {
+  "rel": "programs/buran.json",
+  "at": "lessons.1.md",
+  "en": "The second lesson is that engineering excellence cannot save a program from the loss of its purpose and its budget. Buran was, in real ways, a better design than the vehicle it answered — and it flew once. The American Shuttle, for all its flaws, flew for thirty years because it had missions to fly and money to fly them. A spacecraft is only as durable as the institutional will and funding behind it; without those, even a flawless flight is an ending rather than a beginning.",
+  "cur": "Друга лекција јесте да инжењерска изврсност не може спасти програм од губитка сврхе и буџета. Buran је, у стварним стварима, био боље решење од летелице на коју је одговарао — а полетео је само једном. Амерички Shuttle је, упркос свим својим манама, летео тридесет година јер је имао мисије које треба извршити и новац да се оне изведу. Свемирска летелица траје тачно толико колико трају институционална воља и финансирање који стоје иза ње; без њих је чак и беспрекоран лет крај, а не почетак."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "tagline",
+  "en": "A bus-sized robot spent thirteen years orbiting Saturn — and found, on a moon nobody was watching, an ocean that could hold life.",
+  "cur": "Робот величине аутобуса провео је тринаест година у орбити око Сатурна — и открио, на месецу који нико није посматрао, океан који би могао да крије живот."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "the_land.0.md",
+  "en": "By the 1990s Saturn had been seen three times, and only in passing: Pioneer 11 and the two Voyagers had each swept through the system in a matter of hours, returning tantalising glimpses of a ringed world with dozens of moons and a giant, haze-shrouded moon, Titan, whose surface no camera could pierce. A flyby can photograph a place; it cannot live there. To understand Saturn — its rings, its weather, its improbable family of moons — a spacecraft would have to stop and stay.",
+  "cur": "До деведесетих година Сатурн је виђен три пута, и то само успутно: Pioneer 11 и два Voyager-а су прошли кроз систем у року од неколико сати, враћајући заводљиве одсјаје света са прстеновима са десетинама месеца и дивовског месеца обавијеног измаглицом, Титан, чију површину ниједна камера није могла да продре. Пролет може да фотографише место; не може да живи тамо. Да би се разумео Сатурн — његови прстенови, његово време, његова невероватна породица месеца — свемирска летелица би морала да се заустави и остане."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "the_land.1.md",
+  "en": "Cassini was built to do exactly that, and it was built by a coalition: NASA supplied the orbiter, the European Space Agency supplied a lander called Huygens to drop through Titan's haze, and Italy built its high-gain antenna. It launched in 1997 as one of the largest and most capable interplanetary craft ever flown — a seven-year, three-and-a-half-billion-kilometre cruise ahead of it just to reach the planet it was designed to study.",
+  "cur": "Cassini је изграђен управо за то, и изградила га је коалиција: NASA је обезбедила орбитер, Европска свемирска агенција лендер под називом Huygens, који је требало да се спусти кроз измаглицу Титана, а Италија је направила његову антену високог појачања. Лансиран је 1997. као једна од највећих и најспособнијих међупланетарних летелица икада послатих — пред њим је било седам година и три и по милијарде километара пута само да би стигао до планете коју је требало да проучава."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "goals.0.md",
+  "en": "The primary goal was to become Saturn's first resident: to enter orbit and stay for years, studying the planet's atmosphere, its rings, its magnetic field, and its moons across the slow turn of the Saturnian seasons — the sustained, patient science that no flyby can do. Chief among the targets was Titan, the one moon large enough to hold a thick atmosphere, and the great mystery of the outer solar system.",
+  "cur": "Основни циљ био је да постане први становник Сатурна: да уђе у орбиту и остане годинама, проучавајући атмосферу планете, њене прстенове, њено магнетно поље и њене месеце током спорог смењивања сатурнских годишњих доба — она истрајна, стрпљива наука коју ниједан прелет не може да пружи. Међу циљевима предњачио је Титан, једини месец довољно велик да задржи густу атмосферу и велика мистерија спољашњег Сунчевог система."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "goals.1.caption",
+  "en": "Cassini carried the European Huygens probe piggyback for seven years, then released it to parachute onto Titan. The orbiter itself would spend thirteen years circling Saturn, threading between the moons and, at the end, between the planet and its rings.",
+  "cur": "Cassini је седам година носио европску сонду Huygens на својим леђима, а затим ју је отпустио да падобраном слети на Титан. Сам орбитер ће тринаест година кружити око Сатурна, провлачећи се између месеца и, на крају, између планете и њених прстенова."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "goals.2.md",
+  "en": "The second goal belonged to Huygens: to descend through Titan's orange haze and land — or splash — on a surface no one had ever seen, and find out whether the moon really had the lakes and rivers of liquid methane that theory predicted. It was a single, one-way attempt at the most distant landing ever tried.",
+  "cur": "Други циљ припао је сонди Huygens: да се спусти кроз наранџасту измаглицу Титана и слети — или запљусне — на површину коју нико никада није видео, и да утврди да ли тај месец заиста има језера и реке течног метана које је теорија предвиђала. Био је то један једини покушај, без повратка, најудаљенијег слетања које је икада покушано."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "outcome.0.md",
+  "en": "Cassini reached Saturn in 2004 and settled into orbit. Months later it released Huygens, which parachuted through Titan's haze in January 2005 and returned the first pictures from the surface of a moon in the outer solar system: a dim, orange plain scattered with rounded pebbles of water ice, shaped by rivers of liquid methane. It remains the only landing humanity has ever made beyond the asteroid belt.",
+  "cur": "Cassini је стигао до Сатурна 2004. и ушао у орбиту. Неколико месеци касније отпустио је Huygens, који је у јануару 2005. падобраном прошао кроз измаглицу Титана и послао прве снимке са површине неког месеца у спољашњем делу Сунчевог система: тамну, наранџасту равницу посуту заобљеним облуцима воденог леда, обликованим рекама течног метана. То је и даље једино слетање које је човечанство икада извело иза астероидног појаса."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "outcome.1.md",
+  "en": "The orbiter's own great discovery came from a moon almost no one had expected to matter. Passing tiny Enceladus, Cassini found towering jets of water ice and vapour erupting from cracks at its south pole — proof of a global ocean of liquid water beneath the ice, warm and salty and laced with organic molecules. A frozen speck five hundred kilometres across turned out to be one of the most promising places in the solar system to look for life.",
+  "cur": "Велико откриће самог орбитера дошло је са месеца од кога готово нико није очекивао да ће бити важан. Прелећући ситни Енцелад, Cassini је открио високе млазеве воденог леда и паре како избијају из пукотина на његовом јужном полу — доказ глобалног океана течне воде испод леда, топлог и сланог и прожетог органским молекулима. Залеђено зрнце широко пет стотина километара показало се као једно од најперспективнијих места у Сунчевом систему на коме се може тражити живот."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "outcome.2.md",
+  "en": "Cassini worked for thirteen years, long past its planned mission, until it ran low on fuel. Rather than risk it eventually crashing into Enceladus or Titan and contaminating them with Earth microbes, mission planners chose a deliberate end: twenty-two dives through the unexplored gap between Saturn and its rings, returning data to the last, and then a final plunge into the planet's atmosphere in September 2017, transmitting until it burned up.",
+  "cur": "Cassini је радио тринаест година, знатно дуже од планиране мисије, све док му није понестало горива. Уместо да ризикују да се он на крају сруши на Енцеладу или Титану и загади их земаљским микробима, планери мисије одлучили су се за намеран крај: двадесет два зарона кроз неистражени процеп између Сатурна и његових прстенова, уз слање података до самог краја, а затим завршни зарон у атмосферу планете у септембру 2017, током ког је емитовао све док није изгорео."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "narrative.0.md",
+  "en": "The story of Cassini is what patience buys. The Voyagers had shown Saturn in a day and moved on; Cassini stayed for over a decade, and almost everything it found that mattered came from being there long enough to watch — a storm wrap the whole planet, a season turn, a moon pass close enough on the four-hundredth orbit to reveal what the first flyby had missed. Its discoveries were not lucky glances but the reward of persistence.",
+  "cur": "Прича о мисији Cassini показује шта стрпљење доноси. Voyagers су Сатурн показали за један дан и кренули даље; Cassini је остао више од деценије, а готово све што је открио и што је било важно потекло је отуд што је био ту довољно дуго да посматра — како олуја обавија целу планету, како се смењује годишње доба, како неки месец у четири стотине првој орбити прође довољно близу да открије оно што је први прелет пропустио. Његова открића нису била срећни погледи, већ награда за упорност."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "narrative.1.md",
+  "en": "Its most consequential find rewrote where we look for life. Before Cassini, the search for habitable places focused on Mars and the warm inner solar system. Enceladus — small, frozen, far from the Sun — should have been dead. Instead it was venting the ingredients of life into space, kept liquid by the flexing pull of Saturn's gravity. Cassini turned the outer solar system, long thought a frozen wasteland, into a plausible home for oceans, and for whatever oceans might hold.",
+  "cur": "Његов најважнији налаз променио је место на којем тражимо живот. Пре мисије Cassini, потрага за настањивим световима била је усмерена на Марс и топли унутрашњи део Сунчевог система. Енцелад — мали, залеђен, далеко од Сунца — требало је да буде мртав. Уместо тога, он је у свемир испуштао састојке живота, а течним га је држало савијајуће привлачење Сатурнове гравитације. Cassini је спољашњи део Сунчевог система, дуго сматран залеђеном пустињом, претворио у могући дом за океане и за све што би океани могли да крију."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "narrative.2.md",
+  "en": "And its ending was a moral choice as much as an engineering one. A spacecraft that had discovered two possibly habitable ocean worlds could not be allowed to become the thing that contaminated them. So its operators flew it into Saturn on purpose, sacrificing the machine to protect the very places it had found — planetary exploration taking responsibility for its own reach.",
+  "cur": "А његов крај био је морални избор једнако колико и инжењерски. Летелици која је открила два могуће настањива океанска света није смело да буде дозвољено да постане оно што ће их загадити. Зато су је њени оператери намерно усмерили у Сатурн, жртвујући машину да би заштитили управо она места која је пронашла — истраживање планета које преузима одговорност за сопствени домет."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "legacy.0.md",
+  "en": "Cassini's first legacy is Saturn itself, transformed from a world seen in passing into the best-understood planet in the outer solar system — its rings, its weather, its magnetic field, and its dozens of moons mapped across thirteen years of continuous observation that no future mission is scheduled to repeat.",
+  "cur": "Прво наслеђе мисије Cassini јесте сам Сатурн, претворен из света виђеног у пролазу у најбоље проучену планету у спољашњем делу Сунчевог система — његови прстенови, његово време, његово магнетно поље и његове десетине месеци, пресликани током тринаест година непрекидног посматрања које ниједна будућа мисија није планирана да понови."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "legacy.1.md",
+  "en": "Its second is Enceladus and Titan: two ocean worlds and one methane world moved, by Cassini's data, to the front rank of places worth returning to in the search for life. Every proposal to hunt for biology in the outer solar system now begins with what Cassini found.",
+  "cur": "Друго наслеђе су Енцелад и Титан: два океанска света и један метански свет које су подаци мисије Cassini померили у први ред места вредних повратка у потрази за животом. Сваки предлог да се биологија тражи у спољашњем делу Сунчевог система сада почиње оним што је открио Cassini."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "legacy.2.md",
+  "en": "Its third is the model of the mission itself — a genuinely international flagship, NASA and Europe flying one spacecraft for two decades, that demonstrated how much more a patient orbiter returns than a fast flyby, and set the template for the long-duration missions that followed.",
+  "cur": "Треће је сам узор мисије — истински међународног водећег подухвата, у коме су NASA и Европа две деценије управљале једном летелицом — који је показао колико више враћа стрпљиви орбитер него брзи прелет и поставио образац за дуготрајне мисије које су уследиле."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of Cassini is that staying beats passing through. The same planet the Voyagers characterised in hours yielded its deepest secrets — the ocean of Enceladus, the methane cycle of Titan — only to a spacecraft willing to spend thirteen years in orbit. For the hardest questions, presence over time is worth more than any single brilliant glance.",
+  "cur": "Лекција мисије Cassini јесте да останак надмашује пролазак. Исти планету који су Voyagers окарактерисали за неколико сати открио је своје најдубље тајне — океан на Енцеладу и циклус метана на Титану — тек летелици спремној да проведе тринаест година у орбити. За најтежа питања, присуство током времена вреди више од било ког појединачног, ма колико блиставог погледа."
+ },
+ {
+  "rel": "programs/cassini.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is that reach carries responsibility. Cassini ended by flying itself into Saturn to protect the ocean moons it had discovered — a recognition that the power to visit a possibly living world comes with a duty not to poison it. Capability without that restraint is not exploration; it is trespass.",
+  "cur": "Дубља лекција јесте да домет носи одговорност. Cassini је завршио тако што се сам усмерио у Сатурн да би заштитио океанске месеце које је открио — као признање да моћ да посетимо свет на коме можда постоји живот долази са дужношћу да га не отровамо. Способност без те уздржаности није истраживање; то је задирање у туђе."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "tagline",
+  "en": "India's Moon program — it found the water that changed how we see the Moon, then became the first nation ever to land near the south pole.",
+  "cur": "Индијски програм истраживања Месеца — открио је воду која је променила начин на који гледамо на Месец, а потом је Индија постала прва нација која се икада спустила у близини јужног пола."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "the_land.0.md",
+  "en": "For most of the space age, the Moon was thought to be bone dry — a dead, airless rock with nothing useful on its surface. That assumption was overturned by a spacecraft from a country that had never been to the Moon before. Chandrayaan-1, India's first lunar mission — launched in 2008 — carried NASA/JPL's Moon Mineralogy Mapper (M3) instrument, which detected water molecules bound into the lunar soil across broad, mostly higher-latitude regions of the surface; the findings were published in 2009. It was one of the most consequential discoveries in modern planetary science, and it came from an ISRO orbiter working on a fraction of NASA's or ESA's budget.",
+  "cur": "Већи део свемирског доба сматрало се да је Месец потпуно сув — мртва стена без атмосфере, са површином на којој нема ничег корисног. Ту претпоставку оборила је летелица земље која никада раније није стигла до Месеца. Chandrayaan-1, прва индијска мисија на Месец — лансирана 2008. године — носила је инструмент Moon Mineralogy Mapper (M3) агенција NASA/JPL, који је открио молекуле воде везане у лунарном тлу на широким подручјима површине, углавном на већим географским ширинама; налази су објављени 2009. године. Било је то једно од најзначајнијих открића савремене планетарне науке, а потекло је од орбитера организације ISRO, који је радио са делићем буџета којим располажу NASA или ESA."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "the_land.1.md",
+  "en": "Chandrayaan — Sanskrit for \"Moon craft\" — is the program that announced India as a genuine deep-space power, not a regional one. It is defined by two things: doing world-class science cheaply, and a refusal to be stopped by failure. Its second mission crashed a lander on the Moon in front of a watching nation; its third went back four years later and succeeded, landing where no one ever had — near the lunar south pole, the most sought-after real estate in the solar system.",
+  "cur": "Chandrayaan — на санскриту „летелица за Месец“ — програм је који је Индију представио као праву силу дубоког свемира, а не као регионалну. Одређују га две ствари: врхунска наука постигнута с мало новца и одбијање да га неуспех заустави. Његова друга мисија срушила је лендер на Месец пред очима нације која је гледала; трећа се вратила четири године касније и успела, спустивши се тамо где то нико никада није учинио — у близини јужног пола Месеца, најтраженијег „земљишта“ у Сунчевом систему."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "goals.0.md",
+  "en": "The scientific goal from the start was the Moon's composition and, above all, its water. Chandrayaan-1 set out to map the surface and search for water and minerals; its success made the later goal obvious and urgent — reach the south pole, where permanently-shadowed craters are thought to hold water ice, the resource that could one day fuel and sustain a lunar base. India aimed its program directly at the most valuable question about the Moon.",
+  "cur": "Научни циљ од самог почетка били су састав Месеца и, пре свега, његова вода. Chandrayaan-1 је требало да сними површину и потражи воду и минерале; његов успех учинио је каснији циљ очигледним и хитним — доћи до јужног пола, где се претпоставља да у трајно осенченим кратерима постоји водени лед, ресурс који би једног дана могао да покреће и одржава лунарну базу. Индија је свој програм усмерила право на најважније питање о Месецу."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "goals.1.caption",
+  "en": "Chandrayaan-1 — India's first Moon mission, and the platform that carried NASA's M3 instrument, whose data revealed water bound into the lunar soil and overturned the long assumption that the Moon was dry.",
+  "cur": "Chandrayaan-1 — прва индијска мисија на Месец и платформа која је носила NASA-ин инструмент M3, чији су подаци открили воду везану у лунарном тлу и оборили дугогодишњу претпоставку да је Месец сув."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "goals.2.md",
+  "en": "The engineering goal grew mission by mission: first to orbit the Moon and release an impactor (Chandrayaan-1), then to soft-land a rover (Chandrayaan-2 and -3). Soft-landing on the Moon is brutally difficult — most attempts by most nations have failed — and doing it at the rough, poorly-lit south pole is harder still. India's goal was to master that landing, and to do it on an ISRO budget that made every rupee count.",
+  "cur": "Инжењерски циљ растао је из мисије у мисију: прво да се уђе у орбиту око Месеца и испусти ударни сонда-пројектил (Chandrayaan-1), а затим да се меко спусти ровер (Chandrayaan-2 и -3). Меко спуштање на Месец је изузетно тешко — већина покушаја већине нација није успела — а спуштање на неравном, слабо осветљеном јужном полу још је теже. Циљ Индије био је да овлада тим спуштањем и да то постигне с ISRO-овим буџетом у ком је свака рупија бројала."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "outcome.0.md",
+  "en": "The outcomes bracket the whole arc of the program. Chandrayaan-1 (2008) carried NASA's M3 instrument, whose data — published in 2009 — revealed lunar water, a genuinely field-changing result. Chandrayaan-2 (2019) was a partial heartbreak: its orbiter reached the Moon and still operates, returning excellent data, but its Vikram lander lost control in the final moments and crashed, watched live by a nation that had dared to hope. Then Chandrayaan-3 (2023) returned and landed softly near the south pole — the first spacecraft ever to do so, and the achievement that made India the fourth country to land on the Moon, days after a Russian attempt at the same region failed.",
+  "cur": "Исходи обухватају цео лук програма. Chandrayaan-1 (2008) носио је NASA-ин инструмент M3, чији су подаци — објављени 2009. године — открили лунарну воду, што је био резултат који је заиста променио област. Chandrayaan-2 (2019) био је делимично сломљено срце: његов орбитер је стигао до Месеца и још је у раду, а шаље одличне податке, али је његов лендер Vikram у последњим тренуцима изгубио контролу и срушио се, пред очима нације која се осмелила да се нада. Затим се вратио Chandrayaan-3 (2023) и меко се спустио у близини јужног пола — прва летелица која је то икада учинила, и достигнуће које је Индију учинило четвртом земљом која се спустила на Месец, свега неколико дана након што је руски покушај спуштања у исти регион пропао."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "outcome.1.md",
+  "en": "The contrast with the budgets involved is the part that stunned the world. India reached the Moon, found its water, and landed at its south pole for costs that were a small fraction of comparable Western missions — a demonstration that frontier lunar exploration is not the exclusive preserve of the richest agencies. ISRO turned constraint into a discipline, and delivered firsts that far larger programs had not.",
+  "cur": "Контраст у односу на уложена средства управо је оно што је запрепастило свет. Индија је стигла до Месеца, пронашла његову воду и спустила се на његов јужни пол за трошак који је био мали део цене упоредивих западних мисија — доказ да истраживање Месеца на самој граници могућег није резервисано само за најбогатије агенције. ISRO је од ограничења направио дисциплину и остварио прва достигнућа која далеко већи програми нису."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "outcome.2.md",
+  "en": "Chandrayaan-3's success also carried a weight beyond science. It landed at a moment when the south pole had become a contested goal — Russia's Luna-25 had crashed attempting the same thing that same month — and India's soft touchdown was a national triumph celebrated across the country, and a signal that the emerging space powers now reach places the old ones are still struggling toward.",
+  "cur": "Успех мисије Chandrayaan-3 носио је и тежину која превазилази науку. Летелица се спустила у тренутку када је јужни пол постао спорни циљ — Luna-25 из Русије срушила се истог месеца покушавајући исто — а индијско меко спуштање било је национални тријумф који се славио широм земље и знак да нове свемирске силе сада стижу тамо ка чему се старе још увек пробијају."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "narrative.0.md",
+  "en": "The story of Chandrayaan is a country teaching itself to land on another world in public, and refusing to quit when it went wrong. Chandrayaan-2's crash was not hidden or downplayed; it happened live, and the head of ISRO was shown grieving it on national television. Four years later the same program came back and succeeded — the same engineers, the same objective, the lessons of the failure engineered into the fix. It is the clearest recent example of a space agency turning a very visible defeat into a very visible victory.",
+  "cur": "Прича о програму Chandrayaan јесте прича о једној земљи која учи да слети на други свет пред очима јавности и која не одустаје када нешто пође по злу. Пад мисије Chandrayaan-2 није био скривен нити умањен; догодио се уживо, а шеф агенције ISRO приказан је на државној телевизији како тугује због њега. Четири године касније исти програм се вратио и успео — исти инжењери, исти циљ, а лекције из неуспеха уграђене у исправку. То је најјаснији недавни пример свемирске агенције која је веома видљив пораз претворила у веома видљиву победу."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "narrative.1.md",
+  "en": "It is also a story about cost. ISRO's genius is doing profound things cheaply — reaching the Moon and Mars for budgets that would barely fund a study elsewhere. That frugality is partly necessity and partly philosophy: a deliberate engineering culture of simplicity, reuse of proven hardware, and ruthless prioritization. Chandrayaan proves that the price of admission to deep space has fallen far enough that a determined nation of modest means can hold genuine firsts.",
+  "cur": "То је уједно и прича о трошку. Генијалност агенције ISRO јесте у томе што дубоко значајне ствари ради јефтино — стиже до Месеца и Марса за буџете који би другде једва финансирали једну студију. Та штедљивост делом је нужност, а делом филозофија: смишљено негована инжењерска култура једноставности, поновне употребе проверене опреме и немилосрдног одређивања приоритета. Chandrayaan доказује да је цена улазнице за дубоки свемир пала довољно ниско да једна одлучна нација скромних средстава може да се подичи правим првенствима."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "narrative.2.md",
+  "en": "And it is a story about who the Moon belongs to now. For decades lunar exploration was a two-superpower affair, then a quiet scientific one. Chandrayaan, alongside China's program, Japan's SLIM, and a wave of others, marks the arrival of a genuinely multipolar Moon — where the first soft landing at the south pole was made not by the United States, Russia, or China, but by India.",
+  "cur": "И то је прича о томе коме Месец данас припада. Деценијама је истраживање Месеца било ствар две суперсиле, а потом тиха научна делатност. Програм Chandrayaan, уз кинески програм, јапански SLIM и талас других, обележава долазак заиста мултиполарног Месеца — где прво меко спуштање на јужном полу нису извеле Сједињене Државе, Русија или Кина, већ Индија."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "legacy.0.md",
+  "en": "Chandrayaan's first legacy is scientific and permanent: providing the platform from which NASA's M3 instrument detected water on the Moon — data published in 2009, which reframed the Moon from a dead rock into a place that might sustain a human presence and underlies every current plan to return, including Artemis and China's.",
+  "cur": "Прво наслеђе програма Chandrayaan научно је и трајно: пружио је платформу са које је NASA-ин инструмент M3 открио воду на Месецу — подаци су објављени 2009. године — чиме је Месец из мртве стене постао место које би могло да подржи људско присуство, а то открће лежи у основи сваког садашњег плана повратка, укључујући програм Artemis и кинески."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "legacy.1.md",
+  "en": "Its second legacy is the first soft landing near the lunar south pole, the region every future lunar program is aiming for. India got there first, giving it a genuine claim to leadership at the most important destination on the Moon and hard-won landing experience that later missions will build on.",
+  "cur": "Друго наслеђе програма јесте прво меко спуштање у близини јужног пола Месеца, региона коме теже сви будући лунарни програми. Индија је тамо стигла прва, што јој даје истинско право на вођство на најважнијем одредишту на Месецу, као и тешко стечено искуство у слетању на којем ће градити касније мисије."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "legacy.2.md",
+  "en": "And its third is a demonstration, watched worldwide, that frontier space is now affordable to more than the traditional powers. ISRO's costs reset expectations for what lunar exploration has to cost — an example the next generation of emerging space nations is already following.",
+  "cur": "А треће наслеђе је доказ, који је цео свет пратио, да свемир на самој граници могућег данас није приступачан само традиционалним силама. Трошкови агенције ISRO променили су очекивања о томе колико истраживање Месеца мора да кошта — а тај пример већ следи наредна генерација нових свемирских нација."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of Chandrayaan is that a public failure, fully owned and learned from, can become the foundation of a greater success. Chandrayaan-2's crash could have ended the program's ambition; instead it became the data that made Chandrayaan-3's historic landing possible. The willingness to try again, in the same public eye that watched the failure, is the whole story.",
+  "cur": "Лекција програма Chandrayaan јесте да јавни неуспех, у потпуности преузет на себе и из ког се учи, може постати темељ већег успеха. Пад мисије Chandrayaan-2 могао је да оконча амбицију програма; уместо тога постао је скуп података који је омогућио историјско спуштање мисије Chandrayaan-3. Спремност да се покуша поново, пред истим очима јавности које су гледале неуспех, јесте цела прича."
+ },
+ {
+  "rel": "programs/chandrayaan.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is that cost is a form of capability. By doing profound exploration cheaply, ISRO did not merely save money — it made a class of missions possible for a nation that could never have afforded them at Western prices, and reset what the rest of the world believes deep-space exploration must cost. Frugality, pursued as engineering discipline, is itself a kind of power.",
+  "cur": "Дубља лекција је да је цена облик способности. Истражујући дубоко значајне ствари јефтино, ISRO није само уштедела новац — омогућила је читаву класу мисија нацији која их никада не би могла приуштити по западним ценама и променила оно што остатак света сматра да истраживање далеког свемира мора да кошта. Штедљивост, спровођена као инжењерска дисциплина, и сама је врста моћи."
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "name",
+  "en": "Chang'e — China's Moon Program",
+  "cur": "Chang'e — кинески програм истраживања Месеца"
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "tagline",
+  "en": "The methodical conquest of the Moon: orbit, land, rove, return — including the first landing ever on the far side, and the first samples from it.",
+  "cur": "Методично освајање Месеца: орбита, спуштање, крстарење, повратак — укључујући прво спуштање икада на његову невидљиву страну и прве узорке са ње."
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "the_land.0.md",
+  "en": "While the United States was away from the Moon for fifty years and Russia's lunar program lay dormant, China quietly built the most sustained and successful campaign of robotic lunar exploration of the twenty-first century. Named for the Chinese goddess of the Moon, the Chang'e program has, step by deliberate step, done everything a robotic program can do at another world — orbited it, landed on it, driven across it, and brought pieces of it home — and then done the things no one had ever done at all.",
+  "cur": "Док су Сједињене Државе педесет година биле одсутне са Месеца, а руски лунарни програм мировао, Кина је тихо изградила најдоследнију и најуспешнију кампању роботског истраживања Месеца у двадесет првом веку. Програм Chang'e, назван по кинеској богињи Месеца, корак по корак и промишљено урадио је све што роботски програм може да постигне на другом свету — орбитирао је око њега, спустио се на њега, прокрстарио његовом површином и донео кући његове делиће — а потом је учинио оно што пре њега нико никада није учинио."
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "the_land.1.md",
+  "en": "The program's signature is the same patient, incremental method that built the Tiangong stations: each mission is a rehearsal for the next, each capability proven before the next is attempted. Orbit first (Chang'e 1–2), then soft-land and rove (Chang'e 3), then reach the impossible far side (Chang'e 4), then return samples (Chang'e 5), then return samples from the far side (Chang'e 6). It is a ladder climbed rung by rung, and China has not missed a rung.",
+  "cur": "Обележје програма је исти стрпљив, поступан метод којим су изграђене станице Tiangong: свака мисија је проба за следећу, а свака способност се доказује пре него што се покуша наредна. Прво орбита (Chang'e 1–2), затим меко спуштање и крстарење (Chang'e 3), затим недостижна невидљива страна (Chang'e 4), затим повратак узорака (Chang'e 5), па повратак узорака са невидљиве стране (Chang'e 6). То су мердевине којима се пење пречка по пречка, а Кина није прескочила ниједну пречку."
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "goals.0.md",
+  "en": "The near-term goals are scientific and methodical: map the Moon, land softly, deploy rovers, and return samples — mastering each capability in turn. The far side of the Moon, which never faces Earth and so cannot communicate with it directly, was a specific and audacious target: reaching it required first placing a relay satellite beyond the Moon, and no nation had ever landed there before China did it in 2019.",
+  "cur": "Краткорочни циљеви су научни и методични: направити карту Месеца, меко се спустити, распоредити ровере и вратити узорке — овладавајући редом сваком способношћу. Невидљива страна Месеца, која никада није окренута Земљи и зато не може директно да комуницира с њом, била је посебан и смео циљ: да би се до ње стигло, требало је најпре поставити релејни сателит иза Месеца, а ниједна држава се пре Кине није спустила на њу, што је она учинила 2019."
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "goals.1.caption",
+  "en": "Chang'e-4 on the far side of the Moon — the first spacecraft ever to land on the hemisphere that never faces Earth, reached only after China placed a relay satellite in position to carry its signals home.",
+  "cur": "Chang'e-4 на невидљивој страни Месеца — прва летелица икада која се спустила на хемисферу која никада није окренута Земљи, до које се стигло тек пошто је Кина поставила релејни сателит у положај одакле може да преноси њене сигнале кући."
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "goals.2.md",
+  "en": "The long-term goals are far larger: to land Chinese astronauts on the Moon by 2030, and to build the International Lunar Research Station — a robotic-then-crewed base near the lunar south pole, developed with international partners as an explicit alternative to the American-led Artemis coalition. The robotic Chang'e missions are the reconnaissance and the proof of capability; the crewed base is the destination the whole program is climbing toward.",
+  "cur": "Дугорочни циљеви су далеко већи: спустити кинеске астронауте на Месец до 2030. године и изградити Међународну лунарну истраживачку станицу — прво роботску, а потом и људски посађену базу у близини јужног пола Месеца, развијену с међународним партнерима као изричиту алтернативу коалицији Artemis под америчким вођством. Роботске мисије Chang'e представљају извиђање и доказ способности, а база с посадом је одредиште ка коме се цео програм пење."
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "outcome.0.md",
+  "en": "The record is a near-unbroken string of firsts and successes. Chang'e 1 and 2 mapped the Moon. Chang'e 3 (2013) made the first soft landing since 1976, carrying the Yutu rover. Chang'e 4 (2019) achieved the first landing in history on the lunar far side. Chang'e 5 (2020) returned the first fresh lunar samples in 44 years. And Chang'e 6 (2024) returned the first samples ever collected from the far side — material that had never been held in human hands. No other lunar program of the era comes close to this run of achievement.",
+  "cur": "Досадашњи учинак је готово непрекинут низ премијера и успеха. Chang'e 1 и 2 направиле су карту Месеца. Chang'e 3 (2013) извела је прво меко спуштање још од 1976, носећи ровер Yutu. Chang'e 4 (2019) остварила је прво спуштање у историји на невидљиву страну Месеца. Chang'e 5 (2020) вратила је прве свеже лунарне узорке после 44 године. А Chang'e 6 (2024) вратила је прве узорке икада прикупљене с невидљиве стране — материјал који никада раније није био у људским рукама. Ниједан други лунарни програм тог доба није ни близу оваквом низу достигнућа."
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "outcome.1.caption",
+  "en": "Chang'e-5's sample return — the first new Moon rocks brought to Earth since the Soviet Luna missions of the 1970s, and proof that China had mastered the full round trip to the lunar surface and back.",
+  "cur": "Повратак узорака мисије Chang'e-5 — прве нове месечеве стене донете на Земљу од совјетских мисија Luna из 1970-их и доказ да је Кина овладала целим путовањем до површине Месеца и назад."
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "outcome.2.md",
+  "en": "The samples alone have reshaped lunar science, revealing volcanic activity far more recent than models predicted and returning far-side material that may finally explain why the Moon's two hemispheres are so different. And the program's success has made China the pacing threat that reanimated the American lunar program: Artemis exists, in part, because China demonstrated it could and would go to the Moon — and stay.",
+  "cur": "Већ сами узорци преобликовали су науку о Месецу: открили су вулканску активност далеко новијег датума него што су модели предвиђали и донели материјал са невидљиве стране који би напокон могао да објасни зашто су две хемисфере Месеца толико различите. А успех програма учинио је Кину изазивачем који задаје темпо и који је оживео амерички лунарни програм: Artemis постоји, делом, зато што је Кина показала да може и хоће да оде на Месец — и да на њему остане."
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "narrative.0.md",
+  "en": "The story of Chang'e is a program that treated the Moon as a sequence of problems to be solved in order, and solved them. There was no rush to plant a flag, no single dramatic sprint — just a steady, published progression through orbiting, landing, roving, and returning, each mission building precisely on the last. The far-side landing is the purest expression of the method: reaching it required first solving the communication problem with a relay satellite, so China solved that first, then landed. The audacity is real, but it is always earned by preparation.",
+  "cur": "Прича о програму Chang'e је прича о програму који је Месец третирао као низ проблема које треба решавати један за другим — и решио их је. Није било журбе да се зарије застава, нити једног драматичног спринта — само постојан, јавно објављен след: орбитирање, спуштање, крстарење и повратак, при чему се свака мисија прецизно надовезује на претходну. Спуштање на невидљиву страну Месеца најчистији је израз тог метода: да би се до ње стигло, прво је требало решити проблем комуникације помоћу релејног сателита, па је Кина то решила први пут, а тек онда се спустила. Смелост је стварна, али је увек заслужена припремом."
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "narrative.1.md",
+  "en": "It is also the robotic vanguard of a larger ambition. The Chang'e missions are not an end in themselves; they are the reconnaissance for crewed landings and a permanent base. Every soft landing, every sample return, every far-side first is a capability China will need to put people on the Moon and keep them there — and the program is explicitly structured as the robotic first half of a plan whose second half is human.",
+  "cur": "Он је уједно и роботска претходница једне веће амбиције. Мисије Chang'e нису себи циљ; оне су извиђање за слетања људских посада и за сталну базу. Свако меко спуштање, сваки повратак узорака, свака премијера на невидљивој страни Месеца јесте способност која ће Кини бити потребна да пошаље људе на Месец и да их тамо задржи — а програм је изричито устројен као роботска прва половина плана чија је друга половина људска."
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "narrative.2.md",
+  "en": "And it is one half of a new race. For the first time since Apollo, two powers are driving hard for the Moon at once — China's Chang'e-and-crewed program and America's Artemis — both aiming for the same resource-rich south pole, both building coalitions, both on timelines that converge around 2030. Chang'e's quiet, methodical success is the reason that race exists, and China's steadiness makes it a formidable competitor in it.",
+  "cur": "И он је једна половина нове трке. По први пут од програма Apollo две силе истовремено одлучно јуре ка Месецу — кинески програм Chang'e и летова с људском посадом и амерички Artemis — обе циљају исти јужни пол богат ресурсима, обе граде коалиције, обе имају рокове који се приближавају око 2030. Тиха, методична победа програма Chang'e разлог је што та трка уопште постоји, а постојаност Кине чини је страшним такмацем у њој."
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "legacy.0.md",
+  "en": "Chang'e's first legacy is scientific: fresh lunar samples from both near and far sides after a half-century gap, already rewriting the Moon's volcanic history and offering the first direct clues to why its two hemispheres differ so profoundly. These are among the most valuable planetary samples returned in a generation.",
+  "cur": "Прво наслеђе програма Chang'e је научно: свежи узорци Месеца и са видљиве и са невидљиве стране после паузе од пола века, који већ преписују вулканску историју Месеца и нуде прве непосредне трагове о томе зашто се његове две хемисфере тако дубоко разликују. То су међу највредније планетарне узорке враћене у једној генерацији."
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "legacy.1.md",
+  "en": "Its second legacy is the first human access to the lunar far side — a place that had been utterly unreachable, opened by the simple, clever step of a relay satellite. Chang'e turned the hidden half of the Moon from an abstraction into explored ground.",
+  "cur": "Друго наслеђе програма је први приступ човечанства невидљивој страни Месеца — месту које је до тада било потпуно недостижно, а отворио га је једноставан, довитљив потез: сателит-релеј. Chang'e је скривену половину Месеца претворио из апстракције у истражено тло."
+ },
+ {
+  "rel": "programs/change.json",
+  "at": "legacy.2.md",
+  "en": "And its third is the reanimation of the Moon race itself. China's methodical success is a principal reason the United States committed to Artemis and to returning humans to the Moon on a deadline. Chang'e did not just explore the Moon; it changed the strategic calculus that governs who else goes, and when.",
+  "cur": "А треће је поновно оживљавање саме трке за Месец. Методичан успех Кине један је од главних разлога зашто су се Сједињене Државе определиле за Artemis и за повратак људи на Месец у зацртаном року. Chang'e није само истражио Месец; променио је стратешки рачун који одређује ко ће још ићи тамо и када."
+ }
+]

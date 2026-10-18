@@ -1,0 +1,2552 @@
+[
+ {
+  "rel": "messages",
+  "at": "$schema",
+  "en": "https://inlang.com/schema/inlang-message-format",
+  "cur": "https://inlang.com/schema/inlang-message-format"
+ },
+ {
+  "rel": "messages",
+  "at": "a11y_earth_bodies_list_aria",
+  "en": "Earth-orbit bodies — list view (parallel to the 3D map)",
+  "cur": "पृथ्वी-कक्षा पिंड — सूची दृश्य (3D मानचित्र के समानांतर)"
+ },
+ {
+  "rel": "messages",
+  "at": "a11y_iss_modules_list_aria",
+  "en": "ISS modules — list view (parallel to the 3D model)",
+  "cur": "आईएसएस मॉड्यूल — सूची दृश्य (3D मॉडल के समानांतर)"
+ },
+ {
+  "rel": "messages",
+  "at": "a11y_mars_sites_list_aria",
+  "en": "Mars landing sites — list view (parallel to the 3D map)",
+  "cur": "मंगल अवतरण स्थल — सूची दृश्य (3D मानचित्र के समानांतर)"
+ },
+ {
+  "rel": "messages",
+  "at": "a11y_moon_sites_list_aria",
+  "en": "Moon landing sites — list view (parallel to the 3D map)",
+  "cur": "चंद्रमा अवतरण स्थल — सूची दृश्य (3D मानचित्र के समानांतर)"
+ },
+ {
+  "rel": "messages",
+  "at": "a11y_tiangong_modules_list_aria",
+  "en": "Tiangong modules — list view (parallel to the 3D model)",
+  "cur": "Tiangong मॉड्यूल — सूची दृश्य (3D मॉडल के समानांतर)"
+ },
+ {
+  "rel": "messages",
+  "at": "ar_camera_permission_rationale",
+  "en": "To place the planets in your room, Orrery needs the camera. Nothing is recorded or uploaded.",
+  "cur": "अपने कमरे में ग्रहों को रखने के लिए, Orrery को कैमरा चाहिए। कुछ भी रिकॉर्ड या अपलोड नहीं किया जाता।"
+ },
+ {
+  "rel": "messages",
+  "at": "ar_ios_fallback",
+  "en": "AR needs the Orrery iOS app — get it on the App Store",
+  "cur": "AR के लिए Orrery iOS ऐप चाहिए — App Store से प्राप्त करें"
+ },
+ {
+  "rel": "messages",
+  "at": "ar_hint_place_explore",
+  "en": "Point at a surface and tap to place the Solar System",
+  "cur": "सतह की ओर इशारा करें और सौर मंडल को रखने के लिए टैप करें"
+ },
+ {
+  "rel": "messages",
+  "at": "ar_hint_place_earth",
+  "en": "Point at a surface and tap to place Earth",
+  "cur": "सतह की ओर इशारा करें और पृथ्वी को रखने के लिए टैप करें"
+ },
+ {
+  "rel": "messages",
+  "at": "ar_hint_place_moon",
+  "en": "Point at a surface and tap to place the Moon",
+  "cur": "सतह की ओर इशारा करें और चंद्रमा को रखने के लिए टैप करें"
+ },
+ {
+  "rel": "messages",
+  "at": "ar_hint_place_iss",
+  "en": "Point at a surface and tap to place the ISS",
+  "cur": "सतह की ओर इशारा करें और आईएसएस को रखने के लिए टैप करें"
+ },
+ {
+  "rel": "messages",
+  "at": "ar_hint_place_tiangong",
+  "en": "Point at a surface and tap to place Tiangong",
+  "cur": "सतह की ओर इशारा करें और Tiangong को रखने के लिए टैप करें"
+ },
+ {
+  "rel": "messages",
+  "at": "ar_pass_visible",
+  "en": "{name}: visible pass {when}, {direction}, max {altitude}°",
+  "cur": "{name}: दृश्यमान पास {when}, {direction}, अधिकतम {altitude}°"
+ },
+ {
+  "rel": "messages",
+  "at": "ar_pass_daytime",
+  "en": "{name}: daytime pass {when}, {direction}, max {altitude}°",
+  "cur": "{name}: दिन का पास {when}, {direction}, अधिकतम {altitude}°"
+ },
+ {
+  "rel": "messages",
+  "at": "error_typo_hint",
+  "en": "Looks like a typo: query strings start with ? (not &).",
+  "cur": "टाइपो लगता है: क्वेरी स्ट्रिंग्स ? से शुरू होती हैं (& से नहीं)।"
+ },
+ {
+  "rel": "messages",
+  "at": "error_debug_tip",
+  "en": "Append {flag} to any route URL to open the debug panel (e.g. {example}).",
+  "cur": "डीबग पैनल खोलने के लिए किसी भी रूट URL में {flag} जोड़ें (उदा. {example})।"
+ },
+ {
+  "rel": "messages",
+  "at": "assembly_open_module_title",
+  "en": "Open this module's panel (pauses playback)",
+  "cur": "इस मॉड्यूल का पैनल खोलें (प्लेबैक रोकता है)"
+ },
+ {
+  "rel": "messages",
+  "at": "audio_action_tour_driving",
+  "en": "Tour is driving — stop it to navigate freely.",
+  "cur": "टूर चल रहा है — स्वतंत्र रूप से नेविगेट करने के लिए इसे रोकें।"
+ },
+ {
+  "rel": "messages",
+  "at": "audio_inventory_empty_for_screen",
+  "en": "No episodes for this screen yet — try “All episodes”.",
+  "cur": "इस स्क्रीन के लिए अभी कोई एपिसोड नहीं — “सभी एपिसोड” आज़माएँ।"
+ },
+ {
+  "rel": "messages",
+  "at": "audio_kiosk_mode_meta",
+  "en": "chrome-free · loops · for a display screen · Esc to exit",
+  "cur": "क्रोम-मुक्त · लूप · डिस्प्ले स्क्रीन के लिए · बाहर निकलने के लिए Esc"
+ },
+ {
+  "rel": "messages",
+  "at": "audio_origin_disclosure_text",
+  "en": "Voices · ElevenLabs · Scripts · drafted by AI",
+  "cur": "आवाज़ें · ElevenLabs · स्क्रिप्ट · AI द्वारा लिखित"
+ },
+ {
+  "rel": "messages",
+  "at": "audio_tour_meta_extended",
+  "en": "{count} episodes · ~87 min · adds 10 enthusiast deep-dives",
+  "cur": "{count} एपिसोड · ~87 मिनट · 10 विशेषज्ञ गहन-विश्लेषण जोड़ता है"
+ },
+ {
+  "rel": "messages",
+  "at": "audio_tour_note",
+  "en": "Tour is driving the page. Links and nav are paused — click {stop} to explore freely.",
+  "cur": "टूर पेज को चला रहा है। लिंक और नेविगेशन रुके हुए हैं — स्वतंत्र रूप से एक्सप्लोर करने के लिए {stop} क्लिक करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "audio_tour_progress_aria",
+  "en": "Tour progress: {elapsed} of {total}, {remaining} left",
+  "cur": "टूर प्रगति: {total} में से {elapsed}, {remaining} शेष"
+ },
+ {
+  "rel": "messages",
+  "at": "catalog_hub_intro",
+  "en": "The record of everything we've flown — national programs, individual missions, and the spacecraft that carried them. Every entry cross-referenced, dated, and sourced back to the agency that built it.",
+  "cur": "उस हर चीज़ का रिकॉर्ड जो हमने उड़ान भरी है — राष्ट्रीय कार्यक्रम, व्यक्तिगत मिशन, और जो अंतरिक्ष यान उन्हें ले गए। हर प्रविष्टि परस्पर संदर्भित, तारीख सहित, और उस एजेंसी के लिए स्रोत वापस किया गया जिसने इसे बनाया।"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_adaptive_optics",
+  "en": "Adaptive optics — laser guide star + deformable mirror at 1000 Hz",
+  "cur": "अनुकूली प्रकाशिकी - 1000 हर्ट्ज पर लेजर गाइड स्टार + विकृत दर्पण"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_black_holes",
+  "en": "Black holes — Schwarzschild radius, event horizon, shadow imaging",
+  "cur": "काले छेद - Schwarzschild त्रिज्या, घटना क्षितिज, छाया इमेजिंग"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_bone_density_loss",
+  "en": "Bone density loss — 1–2 % per month without countermeasures",
+  "cur": "अस्थि घनत्व हानि - प्रति माह 1–2 % प्रतिमाह बिना प्रतिमाह"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_cislunar_orbits",
+  "en": "Cislunar orbits — Earth–Moon NRHO, halo, DRO, free-return families",
+  "cur": "चंद्र-पृथ्वी कक्षाएं — पृथ्वी–चंद्रमा NRHO, halo, DRO, मुक्त-वापसी परिवार"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_coronagraphs",
+  "en": "Coronagraphs — block the star to see the planet",
+  "cur": "Coronagraph - ग्रह देखने के लिए स्टार को ब्लॉक करें"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_crew_dynamics_psychology",
+  "en": "Crew dynamics — psychological screening + isolation countermeasures",
+  "cur": "चालक दल गतिशीलता — मनोवैज्ञानिक जांच + अलगाव प्रतिउपाय"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_crew_selection",
+  "en": "Crew selection — astronaut corps recruitment + criteria",
+  "cur": "चालक दल चयन — अंतरिक्ष यात्री कोर भर्ती + मानदंड"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_crewed_station_design",
+  "en": "Crewed station design — habitability, ergonomics, redundancy principles",
+  "cur": "चालक दल स्टेशन डिज़ाइन — रहने योग्यता, एर्गोनॉमिक्स, अतिरेक सिद्धांत"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_dead_reckoning",
+  "en": "Dead reckoning — integrate IMU output; drifts without a fix",
+  "cur": "मृत reckoning - IMU उत्पादन को एकीकृत; एक फिक्स के बिना बहाव"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_departure_axis",
+  "en": "Departure axis — the calendar of launch windows",
+  "cur": "प्रस्थान अक्ष - लॉन्च खिड़कियों का कैलेंडर"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_disposal_end_of_life",
+  "en": "End-of-life disposal — graveyard orbits + controlled re-entry",
+  "cur": "जीवन-अंत निपटान — कब्रिस्तान कक्षाएं + नियंत्रित पुनः-प्रवेश"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_dsn",
+  "en": "DSN — Deep Space Network ranging + Doppler, three antennas at 120°",
+  "cur": "DSN — Deep Space Network रेंजिंग + डॉप्लर, 120° पर तीन एंटेना"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_dv_budget",
+  "en": "∆v — the universal currency of spaceflight",
+  "cur": "∆v — अंतरिक्ष उड़ान की सार्वभौमिक मुद्रा"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_dv_heatmap",
+  "en": "Colour scale — cheap teal to expensive red",
+  "cur": "रंग स्केल - सस्ते टील से महंगे लाल"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_eccentricity",
+  "en": "Eccentricity — circle (0), ellipse (<1), parabola/escape (1), hyperbola (>1)",
+  "cur": "विकेंद्रता — वृत्त (0), दीर्घवृत्त (<1), परवलय/पलायन (1), अतिपरवलय (>1)"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_eclss_life_support",
+  "en": "ECLSS — atmospheric revitalization + water reclamation + thermal control",
+  "cur": "ECLSS — वायुमंडलीय पुनरुज्जीवन + जल पुनः दावा + तापीय नियंत्रण"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_eva_operations",
+  "en": "EVA operations — pre-breathe protocols, tether discipline, glove fatigue",
+  "cur": "EVA संचालन — पूर्व-श्वास प्रोटोकॉल, टेदर अनुशासन, दस्ताने थकान"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_eva_physiology",
+  "en": "EVA physiology — pre-breathe, 4.3 psi pure-O₂ suit, glove fatigue",
+  "cur": "EVA फिजियोलॉजी - प्री-ब्रिएथे, 4.3 psi pure-O₂ सूट, दस्ताने थकान"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_expedition_cadence",
+  "en": "Expedition cadence — 6-month crew rotations, handover overlap",
+  "cur": "अभियान गति — 6-month चालक दल रोटेशन, हस्तांतरण ओवरलैप"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_interferometry",
+  "en": "Interferometry — antennas stitched into one virtual aperture",
+  "cur": "इंटरफेरोमेट्री - एंटेना एक आभासी एपर्चर में सिलाई"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_lagrange_points",
+  "en": "Lagrange points — five gravity-balanced spots in any two-body system",
+  "cur": "Lagrange अंक - किसी भी दो-बॉडी सिस्टम में पांच गुरुत्वाकर्षण-संतुलित स्पॉट"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_light_minute",
+  "en": "Light-minute — radio-signal lag at this distance",
+  "cur": "लाइट-मिनट - इस दूरी पर रेडियो-सिग्नल लैग"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_long_duration_effects",
+  "en": "Long-duration effects — SANS, cognition, sleep, immune drift",
+  "cur": "दीर्घकालिक प्रभाव — SANS, अनुभूति, नींद, प्रतिरक्षा विचलन"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_met",
+  "en": "MET — mission elapsed time, the universal stopwatch",
+  "cur": "MET — मिशन बीता समय, सार्वभौमिक स्टॉपवॉच"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_microgravity_physiology",
+  "en": "Microgravity physiology — fluid shift, bone loss, vestibular silence",
+  "cur": "Microgravity शरीर विज्ञान — तरल बदलाव, हड्डी हानि, vestibular मौन"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_mission_phase_eva",
+  "en": "EVA mission phase — when the spacewalk fits in the schedule",
+  "cur": "EVA मिशन चरण — जब अंतरिक्ष यात्रा अनुसूची में फिट हो"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_mission_types",
+  "en": "Mission types — flyby, orbiter, lander, rover, sample return",
+  "cur": "मिशन प्रकार - फ्लाईबी, ऑर्बिटर, लैंडर, रोवर, नमूना वापसी"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_muscle_atrophy",
+  "en": "Muscle atrophy — postural muscles fade first; ARED + treadmill fight back",
+  "cur": "स्नायु एट्रोफी - पोस्टुरल मांसपेशियों को पहले फीका पड़ा; ARED + treadmill वापस लड़ाई"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_node_module",
+  "en": "Node module — branching pressurized junction with multiple docking ports",
+  "cur": "नोड मॉड्यूल — कई डॉकिंग पोर्ट के साथ शाखायुक्त दबावयुक्त जंक्शन"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_orbit_insertion",
+  "en": "Orbit insertion — the braking burn at the destination",
+  "cur": "ऑर्बिट सम्मिलन - गंतव्य पर ब्रेकिंग बर्न"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_orbit_regimes",
+  "en": "Orbit regimes — LEO / MEO / GEO / HEO altitude bands",
+  "cur": "Orbit व्यवस्था - LEO / MEO / GEO / HEO ऊंचाई बैंड"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_pre_flight_training",
+  "en": "Pre-flight training — 2+ years per increment; vehicle systems + EVA + survival",
+  "cur": "उड़ान-पूर्व प्रशिक्षण — 2+ वर्ष प्रति वृद्धि; वाहन प्रणाली + EVA + उत्तरजीविता"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_pressurized_volume",
+  "en": "Pressurized volume — habitable cubic metres per module + per crew",
+  "cur": "दबावयुक्त आयतन — प्रति मॉड्यूल + प्रति चालक दल रहने योग्य घन मीटर"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_radiation_exposure",
+  "en": "Radiation exposure — GCR + SPE + trapped belts, mSv per year",
+  "cur": "विकिरण जोखिम — GCR + SPE + फँसी विकिरण पट्टियाँ, mSv प्रति वर्ष"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_semi_major_axis",
+  "en": "Semi-major axis — the orbit's size; sets the period",
+  "cur": "सेमी-माजोर अक्ष - कक्षा का आकार; अवधि निर्धारित करता है"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_sleep_nutrition_circadian",
+  "en": "Sleep + nutrition + circadian — 16 sunrises/day, 90-min cycles, ISS galley",
+  "cur": "नींद + पोषण + सर्कैडियन — 16 सूर्योदय/दिन, 90-min चक्र, आईएसएस रसोई"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_solar_power_budget",
+  "en": "Solar power budget — array generation vs life-support + payload draw",
+  "cur": "सौर ऊर्जा बजट — सरणी उत्पादन बनाम जीवन-समर्थन + पेलोड ड्रॉ"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_space_debris",
+  "en": "Space debris — Kessler cascade risk + collision-avoidance maneuvers",
+  "cur": "अंतरिक्ष मलबा — Kessler झरना जोखिम + टक्कर-निवारण युद्धाभ्यास"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_space_photography",
+  "en": "Space photography — stack, register, calibrate, colour-map",
+  "cur": "स्पेस फोटोग्राफी - स्टैक, रजिस्टर, कैलिब्रेट, कलर-मैप"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_special_orbits",
+  "en": "Special orbits — Molniya, Tundra, frozen, GTO — beyond the LEO/MEO/GEO trio",
+  "cur": "विशेष कक्षाएं — Molniya, Tundra, जमे हुए, GTO — LEO/MEO/GEO त्रयी से परे"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_spectroscopy",
+  "en": "Spectroscopy — every element prints a unique fingerprint",
+  "cur": "स्पेक्ट्रोस्कोपी - प्रत्येक तत्व एक अद्वितीय फिंगरप्रिंट प्रिंट करता है"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_star_trackers",
+  "en": "Star trackers — onboard pattern-match against a star catalogue",
+  "cur": "स्टार ट्रैकर्स - एक स्टार कैटलॉग के खिलाफ ऑनबोर्ड पैटर्न-मैच"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_suit_lineage",
+  "en": "Suit lineage — Mercury through xEMU; pressure suits + EMU + Orlan + Feitian",
+  "cur": "सूट वंशावली — Mercury से xEMU तक; दबाव सूट + EMU + Orlan + Feitian"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_sun_synchronous",
+  "en": "Sun-synchronous — same local solar time on every pass; mapping + weather sats",
+  "cur": "सूर्य-समकालिक — प्रत्येक पास पर समान स्थानीय सौर समय; मानचित्रण + मौसम उपग्रह"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_trans_x_injection",
+  "en": "TLI/TMI — the big departure burn from Earth orbit",
+  "cur": "TLI/TMI — पृथ्वी कक्षा से बड़ा प्रस्थान दहन"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_vestibular_adaptation",
+  "en": "Vestibular adaptation — space sickness then post-flight gait deficit",
+  "cur": "वेस्टिबुलर अनुकूलन - अंतरिक्ष बीमारी तब पोस्ट-फ्लाइट गेट घाटा"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_vis_viva",
+  "en": "Vis-viva — speed from radius and orbit size",
+  "cur": "Vis-viva - त्रिज्या और कक्षा आकार से गति"
+ },
+ {
+  "rel": "messages",
+  "at": "chip_label_wormholes",
+  "en": "Wormholes — mathematics only; not used for any actual spaceflight",
+  "cur": "वोर्महोल - गणित केवल; किसी भी वास्तविक स्पेसफ्लाइट के लिए उपयोग नहीं किया जाता है"
+ },
+ {
+  "rel": "messages",
+  "at": "colophon_attribution",
+  "en": "Original graphics and writing generated for Orrery with AI.",
+  "cur": "AI के साथ Orrery के लिए बनाए गए मौलिक ग्राफ़िक्स और लेखन।"
+ },
+ {
+  "rel": "messages",
+  "at": "colophon_intro",
+  "en": "Almost everything in Orrery is drawn in code or hand-authored — diagrams, 3D models, charts, icons, and writing. This is the full inventory of that original work.",
+  "cur": "Orrery में लगभग सब कुछ कोड से बनाया गया या हाथ से रचा गया है — आरेख, 3D मॉडल, चार्ट, आइकन और लेखन। यह उस मौलिक कार्य की पूरी सूची है।"
+ },
+ {
+  "rel": "messages",
+  "at": "colophon_reused_link",
+  "en": "Material reused from others is credited separately",
+  "cur": "दूसरों से पुन: उपयोग की गई सामग्री का श्रेय अलग से दिया गया है"
+ },
+ {
+  "rel": "messages",
+  "at": "colophon_tours_note",
+  "en": "Every tour episode is written for Orrery — scripts AI-drafted, voices synthesized by third-party services. Each title links to its transcript.",
+  "cur": "हर एपिसोड Orrery के लिए लिखा गया है — स्क्रिप्ट AI द्वारा तैयार, आवाज़ें तृतीय-पक्ष सेवाओं द्वारा संश्लेषित। हर शीर्षक उसके ट्रांसक्रिप्ट से जुड़ा है।"
+ },
+ {
+  "rel": "messages",
+  "at": "command_palette_aria",
+  "en": "Command palette — jump to any page or body",
+  "cur": "कमांड पैलेट — किसी पृष्ठ या पिंड पर जाएं"
+ },
+ {
+  "rel": "messages",
+  "at": "conics_blurb_circle",
+  "en": "Effectively constant radius — speed and distance never change.",
+  "cur": "प्रभावी रूप से स्थिर त्रिज्या - गति और दूरी कभी नहीं बदलती है।"
+ },
+ {
+  "rel": "messages",
+  "at": "conics_blurb_ellipse",
+  "en": "Bound orbit. Sun at one focus; speed peaks at perihelion, drops at aphelion.",
+  "cur": "बाउंड कक्षा। एक फोकस पर सूर्य; पेरिहेलियन में गति चोटियों, अपहरण पर गिर जाता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "conics_blurb_hyperbola",
+  "en": "Unbound. Excess speed beyond escape; the body keeps going forever.",
+  "cur": "अनबाउंड। भागने से बाहर की गति; शरीर हमेशा के लिए जाना रहता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "conics_blurb_parabola",
+  "en": "Knife-edge escape — exactly enough speed to leave but never to return.",
+  "cur": "चाकू-किनार भागने - वास्तव में पर्याप्त गति छोड़ने के लिए लेकिन वापस कभी नहीं।"
+ },
+ {
+  "rel": "messages",
+  "at": "credits_audio_intro",
+  "en": "Real atmospheric recordings, played on the surface routes.",
+  "cur": "सतह दृश्यों में चलाई जाने वाली वास्तविक वायुमंडलीय रिकॉर्डिंग।"
+ },
+ {
+  "rel": "messages",
+  "at": "credits_data_intro",
+  "en": "The structured public catalogues Orrery ingests to place real objects in 3D and to build the launches calendar. Every dataset is used under its stated licence and cited here.",
+  "cur": "ओररी द्वारा वास्तविक वस्तुओं को 3D में स्थापित करने और प्रक्षेपण कैलेंडर बनाने के लिए उपयोग की जाने वाली संरचित सार्वजनिक सूचियाँ। प्रत्येक डेटासेट का उपयोग उसके निर्धारित लाइसेंस के अंतर्गत किया गया है और यहाँ उद्धृत किया गया है।"
+ },
+ {
+  "rel": "messages",
+  "at": "credits_intro_body_1",
+  "en": "Orrery exists because the world's space agencies, operators, and the Wikimedia community make their work freely available. NASA, ESA, JAXA, ISRO, CNSA, Roscosmos, MBRSC, the Canadian Space Agency, SpaceX, Blue Origin, the Wikimedia Commons contributors, and Wikipedia editors have collectively built a public archive of planetary exploration that is unmatched in human history. Thank you.",
+  "cur": "ऑरेरी इसलिए मौजूद है क्योंकि दुनिया की अंतरिक्ष एजेंसियाँ, ऑपरेटर और विकिमीडिया समुदाय अपने काम को स्वतंत्र रूप से उपलब्ध कराते हैं। NASA, ESA, JAXA, इसरो, CNSA, Roscosmos, MBRSC, कनाडाई अंतरिक्ष एजेंसी, SpaceX, Blue Origin, विकिमीडिया कॉमन्स के योगदानकर्ताओं और विकिपीडिया के संपादकों ने मिलकर ग्रह अन्वेषण का एक ऐसा सार्वजनिक संग्रह बनाया है जो मानव इतिहास में बेजोड़ है। धन्यवाद।"
+ },
+ {
+  "rel": "messages",
+  "at": "credits_intro_body_2",
+  "en": "This page is the full bill of materials for everything we redistribute. Every photograph, illustration, texture, and quoted or paraphrased editorial fragment in Orrery has an entry below — original publisher, source link, license, and the surfaces of the app where it appears.",
+  "cur": "यह पृष्ठ उन सभी चीजों के लिए सामग्री का पूरा बिल है जो हम पुनर्वितरण करते हैं। प्रत्येक तस्वीर, चित्रण, बनावट, और उद्धृत या Orrery में पैराफ़्रेज़ संपादकीय खंड में एक प्रविष्टि नीचे है - मूल प्रकाशक, स्रोत लिंक, लाइसेंस, और उस ऐप की सतहों जहां यह दिखाई देता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "credits_storage_fine",
+  "en": "No {localStorage}, {sessionStorage}, IndexedDB, or third-party trackers. Everything else — heard episodes, mission filters, Science Lens — is held in memory only and resets on reload.",
+  "cur": "कोई {localStorage}, {sessionStorage}, IndexedDB, या थर्ड-पार्टी ट्रैकर नहीं। बाकी सब कुछ — सुने गए एपिसोड, मिशन फ़िल्टर, Science Lens — केवल मेमोरी में रखा जाता है और रीलोड पर रीसेट हो जाता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "credits_storage_intro",
+  "en": "Orrery has no accounts and collects no personal data — only anonymous, cookieless usage analytics and crash reports, self-hosted and never used to identify you. Two functional preference cookies, each gated by its own ADR, are the only persistent state:",
+  "cur": "Orrery के पास खाते नहीं हैं और व्यक्तिगत डेटा नहीं एकत्र करता — केवल गुमनाम, कुकी-रहित उपयोग विश्लेषण और क्रैश रिपोर्ट, स्व-होस्ट किए गए और आपकी पहचान के लिए कभी उपयोग नहीं किए जाते। दो कार्यात्मक वरीयता कुकीज़, प्रत्येक अपने स्वयं के ADR द्वारा संरक्षित, एकमात्र स्थायी स्थिति हैं:"
+ },
+ {
+  "rel": "messages",
+  "at": "credits_storage_optout_item",
+  "en": "{code} — set only if you switch usage analytics off on the privacy page, so the choice survives a reload (ADR-092). 1 year. Absent unless you opt out. No tracking, no personal data.",
+  "cur": "{code} — केवल तब सेट किया जाता है यदि आप गोपनीयता पृष्ठ पर उपयोग विश्लेषण बंद करते हैं, ताकि चुनाव पुनः लोड के बाद भी बना रहे (ADR-092)। 1 वर्ष। सेट नहीं होता जब तक आप सहमति न दें। कोई ट्रैकिंग नहीं, कोई व्यक्तिगत डेटा नहीं।"
+ },
+ {
+  "rel": "messages",
+  "at": "credits_storage_locale_item",
+  "en": "{code} — your explicit locale pick, when you choose one in the language switcher (ADR-057). 1 year. No tracking, no personal data.",
+  "cur": "{code} — आपकी स्पष्ट लोकेल पसंद, जब आप लैंग्वेज स्विचर में एक चुनते हैं (ADR-057)। 1 वर्ष। कोई ट्रैकिंग नहीं, कोई व्यक्तिगत डेटा नहीं।"
+ },
+ {
+  "rel": "messages",
+  "at": "credits_storage_tour_item",
+  "en": "{code} — your current Curator Tour position, so you can close the tab and resume where you left off (ADR-075). 30 days. Cleared when you stop the tour or it ends naturally. No tracking, no personal data.",
+  "cur": "{code} — आपकी वर्तमान Curator Tour स्थिति, ताकि आप टैब बंद कर सकें और जहाँ छोड़ा था वहीं से फिर शुरू कर सकें (ADR-075)। 30 दिन। जब आप टूर रोकते हैं या यह स्वाभाविक रूप से समाप्त होता है तो क्लीयर हो जाता है। कोई ट्रैकिंग नहीं, कोई व्यक्तिगत डेटा नहीं।"
+ },
+ {
+  "rel": "messages",
+  "at": "credits_totals",
+  "en": "Total: {photos} photos · {texts} text entries · {sources} sources",
+  "cur": "कुल: {photos} फ़ोटो · {texts} पाठ प्रविष्टियाँ · {sources} स्रोत"
+ },
+ {
+  "rel": "messages",
+  "at": "credits_video_intro",
+  "en": "Linked, never hosted. Iconic launch, landing, and mission footage is embedded from the official agency and operator channels — we credit the source and link back; we do not redistribute the footage.",
+  "cur": "लिंक किया गया, कभी होस्ट नहीं किया गया। प्रतिष्ठित प्रक्षेपण, लैंडिंग और मिशन फुटेज आधिकारिक एजेंसी और ऑपरेटर चैनलों से एम्बेड किए जाते हैं — हम स्रोत को क्रेडिट देते हैं और वापस लिंक करते हैं; हम फुटेज को पुनः वितरित नहीं करते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "credits_video_license_summary",
+  "en": "Public-domain agency footage, plus copyrighted footage embedded (never hosted) under fair use — each clip lists its own basis below.",
+  "cur": "सार्वजनिक-डोमेन एजेंसी फुटेज, और कॉपीराइट फुटेज एम्बेड किया गया (कभी होस्ट नहीं किया गया) उचित उपयोग के तहत — प्रत्येक क्लिप नीचे अपना आधार सूचीबद्ध करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "earth_canvas_label",
+  "en": "Earth and its satellites in 3D. Drag to orbit, pinch or scroll to zoom, click any object for details.",
+  "cur": "3D में पृथ्वी और उसके उपग्रह। ऑर्बिट, चुटकी या स्क्रॉल से ज़ूम करने के लिए खींचें, विवरण के लिए किसी भी वस्तु पर क्लिक करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "earth_layer_tip_geo",
+  "en": "Geostationary communications — GEO comsat ring",
+  "cur": "जियोस्टेशनरी कम्युनिकेशंस — GEO कॉम्सैट रिंग"
+ },
+ {
+  "rel": "messages",
+  "at": "earth_layer_tip_lunar",
+  "en": "Lunar orbiters — LRO, Clementine, Chandrayaan-1, Chang'e 1/2, and others",
+  "cur": "चंद्र कक्षा उपग्रह — LRO, Clementine, Chandrayaan-1, Chang'e 1/2, और अन्य"
+ },
+ {
+  "rel": "messages",
+  "at": "earth_layer_tip_nav",
+  "en": "Navigation constellations — GPS, Galileo, GLONASS, BeiDou",
+  "cur": "नेविगेशन नक्षत्र - GPS, Galileo, GLONASS, BeiDou"
+ },
+ {
+  "rel": "messages",
+  "at": "earth_layer_tip_orbit_rings",
+  "en": "Show or hide orbital ring lines (satellites stay visible)",
+  "cur": "शो या छुपा कक्षीय अंगूठी लाइनों ( उपग्रहों को दिखाई देते हैं)"
+ },
+ {
+  "rel": "messages",
+  "at": "earth_layer_tip_telescopes",
+  "en": "Astronomy telescopes — Hubble, JWST, Chandra, XMM, Gaia",
+  "cur": "खगोल विज्ञान दूरबीन — Hubble, JWST, Chandra, XMM, Gaia"
+ },
+ {
+  "rel": "messages",
+  "at": "earth_orbit_ruler_aria",
+  "en": "Altitude reference for Earth orbital regimes — tap a band to learn more",
+  "cur": "पृथ्वी की कक्षीय क्षेत्रों के लिए ऊंचाई संदर्भ — अधिक जानने के लिए किसी बैंड पर टैप करें"
+ },
+ {
+  "rel": "messages",
+  "at": "earth_year_scrubber_aria",
+  "en": "Earth-orbit timeline scrubber, {min} to {max}",
+  "cur": "पृथ्वी-कक्षा समयरेखा स्क्रबर, {min} से {max}"
+ },
+ {
+  "rel": "messages",
+  "at": "exo_caption",
+  "en": "Orbits to scale within the system · bodies not to scale · procedural",
+  "cur": "तंत्र के भीतर कक्षाएँ पैमाने पर · पिंड पैमाने पर नहीं · प्रक्रियात्मक"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_body_index_aria",
+  "en": "Body index — jump to the Sun, any planet, or a small body",
+  "cur": "पिंड सूची — सूर्य, किसी ग्रह, या लघु पिंड पर जाएं"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_canvas_aria_2d",
+  "en": "2D top-down solar system. Drag to pan, scroll or pinch to zoom. Tap the Sun and planets for details.",
+  "cur": "2D शीर्ष नीचे सौर प्रणाली। ज़ूम करने के लिए पैन, स्क्रॉल या चुटकी में खींचें। विवरण के लिए सूर्य और ग्रह को टैप करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_canvas_aria_3d",
+  "en": "3D solar system. Drag to orbit, scroll or pinch to zoom, right-drag or shift-drag to pan. Click the Sun and planets for details.",
+  "cur": "3 डी सौर प्रणाली। ऑर्बिट, स्क्रॉल या चुटकी को ज़ूम करने के लिए खींचें। विवरण के लिए सूर्य और ग्रह पर क्लिक करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_causality_note",
+  "en": "Each shell is how far light from the Sun has travelled — nothing outside it can yet know we are here.",
+  "cur": "प्रत्येक कोश दर्शाता है कि सूर्य से प्रकाश कितनी दूर तक पहुँचा है — इसके बाहर कुछ भी अभी तक नहीं जान सकता कि हम यहाँ हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_cosmic_web_anchor_blurb",
+  "en": "You are here. All of Laniakea — a hundred thousand galaxies — is a single node in the cosmic web, one bright knot in a foam of filaments and walls wrapped around vast, dark voids.",
+  "cur": "आप यहाँ हैं। Laniakea की सभी — सौ हजार आकाशगंगाएँ — ब्रह्मांडीय जाल में एक एकल नोड है, विशाल अंधकार शून्य के चारों ओर लिपटे तंतुओं और दीवारों के झाग में एक उज्ज्वल गाँठ।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_cosmic_web_blurb",
+  "en": "One of the great structures of the nearby universe — a supercluster, filament, or wall of galaxies in the cosmic web. This shell is a diagram of an idea, not a map: the positions are illustrative, only the rough distances are real.",
+  "cur": "निकटवर्ती ब्रह्मांड की महान संरचनाओं में से एक — ब्रह्मांडीय जाल में एक महासमूह, तंतु, या आकाशगंगाओं की दीवार। यह खोल एक विचार का आरेख है, मानचित्र नहीं: स्थितियाँ केवल सांकेतिक हैं, केवल मोटे दूरियाँ वास्तविक हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_cosmic_web_schematic_badge",
+  "en": "Cosmic Web · schematic model · not a survey",
+  "cur": "ब्रह्मांडीय जाल · योजनाबद्ध मॉडल · सर्वेक्षण नहीं"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_cosmic_web_void_blurb",
+  "en": "A void — an enormous, roughly spherical region tens of megaparsecs across that is nearly empty of galaxies. Most of the volume of the universe is void; the galaxies are strung along the thin walls and filaments between them.",
+  "cur": "एक शून्य — एक विशाल, मोटे तौर पर गोलाकार क्षेत्र जो दसियों मेगापार्सेक में फैला हुआ है और जो आकाशगंगाओं से लगभग खाली है। ब्रह्मांड का अधिकांश आयतन शून्य है; आकाशगंगाएँ उनके बीच की पतली दीवारों और तंतुओं के साथ जुड़ी हुई हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_ds_gateway_note",
+  "en": "Planetary systems are born in stellar nurseries like this one.",
+  "cur": "ग्रह तंत्र इसी प्रकार की तारकीय पालनाओं में जन्म लेते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_heading_new_horizons",
+  "en": "the constellation Sagittarius — no close stellar encounter is predicted",
+  "cur": "Sagittarius तारामंडल — किसी निकट तारकीय मुठभेड़ की भविष्यवाणी नहीं की गई है"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_heading_pioneer_10",
+  "en": "the general direction of Aldebaran, in Taurus — a 2-million-year drift, not a close pass",
+  "cur": "रोहिणी की सामान्य दिशा, Taurus में — 2 मिलियन-वर्ष की गति, निकटतम गुजरना नहीं"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_heading_pioneer_11",
+  "en": "the constellation Aquila — its nearest star in about 4 million years",
+  "cur": "गरुड़ तारामंडल — इसका निकटतम तारा लगभग 4 मिलियन वर्षों में"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_heading_voyager_1",
+  "en": "Gliese 445, in Camelopardalis — closest pass in about 40,000 years",
+  "cur": "Gliese 445, जिराफ़ तारामंडल में — लगभग 40,000 वर्षों में निकटतम गुजरना"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_heading_voyager_2",
+  "en": "Ross 248, in Andromeda — closest pass in about 42,000 years",
+  "cur": "Ross 248, Andromeda में — लगभग 42,000 वर्षों में निकटतम गुजरना"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_hr_badge",
+  "en": "Hertzsprung–Russell · real stars, re-plotted",
+  "cur": "हर्ट्ज़स्प्रंग–रसेल · वास्तविक तारे, पुनः आलेखित"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_hub_desc_cosmicweb",
+  "en": "The largest scale — superclusters, walls, and voids in a web of filaments (a schematic model).",
+  "cur": "सबसे बड़ा पैमाना — महासुपरक्लस्टर, दीवारें, और तंतुओं के जाल में रिक्त स्थान (एक योजनाबद्ध मॉडल)।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_hub_desc_laniakea",
+  "en": "The ~160-Mpc basin of galaxy flows our supercluster drains into, toward the Great Attractor.",
+  "cur": "~160-Mpc आकाशगंगा प्रवाह की बेसिन जिसमें हमारा महासुपरक्लस्टर बहता है, ग्रेट अट्रैक्टर की ओर।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_hub_desc_localgroup",
+  "en": "One step further out — Andromeda, Triangulum, the Magellanic Clouds, and dozens of dwarf galaxies.",
+  "cur": "एक कदम और आगे — Andromeda, Triangulum, मॅजलॅनिक बादल, और दर्जनों बौनी आकाशगंगाएं।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_hub_desc_localsheet",
+  "en": "The flat slab of galaxy groups just past the Local Group — the first hint of cosmic structure.",
+  "cur": "स्थानीय समूह के ठीक बाद आकाशगंगा समूहों का समतल स्लैब — ब्रह्मांडीय संरचना का पहला संकेत।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_hub_desc_milkyway",
+  "en": "Pull back into the galaxy: the spiral arms, the bulge, and Sagittarius A* at the core.",
+  "cur": "आकाशगंगा में वापस खींचें: सर्पिल भुजाएं, केंद्रीय उभार, और मूल में Sagittarius A*।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_hub_desc_neighborhood",
+  "en": "Fly out past the Sun into the real HYG catalogue — thousands of nearby stars, named and placed in 3D.",
+  "cur": "सूर्य के पार असली HYG कैटलॉग में उड़ान भरें — हजारों पास के तारे, नाम दिए गए और 3D में स्थित।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_hub_desc_virgo",
+  "en": "Our home supercluster — a hundred galaxy groups drawn toward the Virgo Cluster.",
+  "cur": "हमारा घर महासुपरक्लस्टर — Virgo क्लस्टर की ओर खींचे गए सौ आकाशगंगा समूह।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_hub_intro",
+  "en": "Every world here is a place you can actually go — built from real orbital data, close enough to look around. Start with the whole solar system in motion, or drop straight onto a surface.",
+  "cur": "यहाँ हर दुनिया एक ऐसी जगह है जहाँ आप वास्तव में जा सकते हैं — असली कक्षीय डेटा से बनी, चारों ओर देखने के लिए काफी करीब। पूरे सौर मंडल को गति में देखें, या सीधे किसी सतह पर उतरें।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_bepicolombo",
+  "en": "Composite Mercury orbiter (MPO + Mio) en route since 2018.",
+  "cur": "मिश्रित बुध परिक्रमाकार (MPO + Mio) 2018 से मार्ग में।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_cassini",
+  "en": "13-year Saturn orbiter; Huygens probe landed on Titan.",
+  "cur": "13-वर्षीय शनि परिक्रमाकार; Huygens जांच टाइटन पर उतरी।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_dawn",
+  "en": "First mission to orbit two extraterrestrial bodies (Vesta, Ceres).",
+  "cur": "दो अलौकिक पिंडों (वेस्टा, सेरेस) की परिक्रमा करने वाला पहला मिशन।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_galileo",
+  "en": "First Jupiter orbiter; deployed atmospheric entry probe.",
+  "cur": "पहला बृहस्पति परिक्रमाकार; वायुमंडलीय प्रवेश जांच तैनात की।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_giotto",
+  "en": "First close-up images of a comet nucleus (1P/Halley).",
+  "cur": "धूमकेतु नाभिक की पहली निकट छवियाँ (1P/हैली)।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_juice",
+  "en": "Three Galilean moon flybys + Ganymede orbit insertion ahead.",
+  "cur": "तीन Galilean चंद्रमा उड़ानें + गैनिमीड कक्षा प्रवेश आगे।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_juno",
+  "en": "Mapping Jupiter's interior + magnetic field from polar orbit.",
+  "cur": "ध्रुवीय कक्षा से बृहस्पति के आंतरिक भाग + चुंबकीय क्षेत्र का मानचित्रण।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_new_horizons",
+  "en": "First flyby of Pluto and the Kuiper Belt.",
+  "cur": "यम और काइपर घेरे की पहली उड़ान।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_pioneer_10",
+  "en": "First spacecraft to traverse the asteroid belt and fly by Jupiter.",
+  "cur": "क्षुद्रग्रह पेटी पार करने और बृहस्पति की उड़ान भरने वाला पहला यान।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_pioneer_11",
+  "en": "First close flyby of Saturn — paved the way for Cassini.",
+  "cur": "शनि की पहली निकट उड़ान — Cassini के लिए मार्ग प्रशस्त किया।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_placeholder",
+  "en": "Hover any spacecraft to read why it's iconic.",
+  "cur": "किसी भी यान पर होवर करें यह जानने के लिए कि वह प्रतिष्ठित क्यों है।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_rosetta",
+  "en": "First orbit of a comet; Philae touched down on 67P.",
+  "cur": "धूमकेतु की पहली कक्षा; Philae ने 67P पर लैंडिंग की।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_ulysses",
+  "en": "First spacecraft to fly over the Sun's poles.",
+  "cur": "सूर्य के ध्रुवों के ऊपर उड़ने वाला पहला यान।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_vega_1",
+  "en": "Venus lander + balloon, then Halley's Comet encounter in 1986.",
+  "cur": "शुक्र लैंडर + गुब्बारा, फिर 1986 में हैली धूमकेतु से मुठभेड़।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_vega_2",
+  "en": "Twin to Vega 1 — second Venus + Halley's Comet flyby of 1986.",
+  "cur": "Vega 1 का जुड़वाँ — 1986 की दूसरी शुक्र + हैली धूमकेतु के पास से उड़ान।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_venera_13",
+  "en": "Returned the first color images of the Venusian surface.",
+  "cur": "शुक्र की सतह की पहली रंगीन छवियाँ लौटाईं।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_voyager_1",
+  "en": "First human-made object to enter interstellar space.",
+  "cur": "अंतरतारकीय अंतरिक्ष में प्रवेश करने वाली पहली मानव-निर्मित वस्तु।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_iconic_tagline_voyager_2",
+  "en": "Only spacecraft to visit all four giant planets.",
+  "cur": "सभी चार विशाल ग्रहों पर जाने वाला एकमात्र यान।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_laniakea_anchor_blurb",
+  "en": "You are here. The entire Virgo Supercluster — the Local Group, the Virgo Cluster, all of it — is a single lobe of Laniakea, out on the rim of a flow that drains toward the Great Attractor.",
+  "cur": "आप यहाँ हैं। संपूर्ण Virgo Supercluster — स्थानीय समूह, Virgo Cluster, सब कुछ — Laniakea का एक ही पालि है, प्रवाह के किनारे पर जो ग्रेट अट्रैक्टर की ओर निकलता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_laniakea_attractor_blurb",
+  "en": "The Great Attractor — the gravitational low point of Laniakea, near the Norma Cluster behind the plane of the Milky Way. The motions of thousands of galaxies, our own included, all lean toward this region; it is what defines Laniakea as a single structure.",
+  "cur": "ग्रेट अट्रैक्टर — Laniakea का गुरुत्वाकर्षण निम्न बिंदु, Norma Cluster के पास मिल्की वे के तल के पीछे। हजारों गैलेक्सियों की गतियाँ, हमारी अपनी सहित, सभी इस क्षेत्र की ओर झुकी हुई हैं; यह वही है जो Laniakea को एक एकल संरचना के रूप में परिभाषित करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_laniakea_blurb",
+  "en": "A supercluster or cluster within Laniakea — the ~160-megaparsec basin of attraction our Virgo Supercluster is only one lobe of. Everything here streams, over cosmic time, toward the same gravitational low point: the Great Attractor.",
+  "cur": "लनियाकिया के भीतर एक सुपरक्लस्टर या क्लस्टर — ~160-मेगापार्सेक आकर्षण बेसिन जिसका Virgo Supercluster केवल एक पालि है। यहाँ सब कुछ, ब्रह्मांडीय समय में, एक ही गुरुत्वाकर्षण निम्न बिंदु की ओर प्रवाहित होता है: ग्रेट अट्रैक्टर।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_laniakea_schematic_badge",
+  "en": "Laniakea Supercluster · schematic · not to scale",
+  "cur": "Laniakea सुपरक्लस्टर · आरेख · स्केल के अनुसार नहीं"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_layer_tip_comets",
+  "en": "Toggle visibility of comet trajectories (Halley, Hale-Bopp, and others)",
+  "cur": "धूमकेतु प्रक्षेपणियों की टॉगल दृश्यता (हैली धूमकेतु, Hale-Bopp, और दूसरों)"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_layer_tip_dwarfs",
+  "en": "Toggle visibility of dwarf planets (Pluto, Eris, Ceres, Haumea, Makemake)",
+  "cur": "बौना ग्रह (यम, एरिस, सेरेस, हउमेया, माकेमाके) की टॉगल दृश्यता"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_layer_tip_interstellar",
+  "en": "Interstellar visitors — show or hide objects passing through the Solar System (e.g. ʻOumuamua)",
+  "cur": "Interstellar आगंतुक - शो या छिपाने की वस्तुएं सौर प्रणाली (जैसे ओमुमुआ) से गुजरती हैं"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_layer_tip_paths",
+  "en": "Iconic spacecraft trajectories — Voyager 1/2, Pioneer 10/11, New Horizons, Cassini",
+  "cur": "प्रतीकात्मक अंतरिक्ष यान प्रक्षेप-पथ — Voyager 1/2, Pioneer 10/11, New Horizons, Cassini"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_layer_tip_planets",
+  "en": "Toggle visibility of the eight major planet orbits",
+  "cur": "आठ प्रमुख ग्रहों की कक्षाओं की दृश्यता चालू/बंद करें"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_lens_curvature_note",
+  "en": "Spacetime grid, lensed by the geodesics — an analogy for curvature, not a literal surface.",
+  "cur": "स्पेसटाइम ग्रिड, जियोडेसिक द्वारा लेंस किया गया — वक्रता के लिए एक सादृश्य, शाब्दिक सतह नहीं।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_lens_story_cosmic_web_body",
+  "en": "The largest pattern there is: galaxies are not scattered at random but strung along filaments and sheets around near-empty voids, a structure that looks like foam or a web of glowing threads. This shell is a heavily schematic model — a diagram of the idea, not a survey — showing a handful of the great walls, superclusters, and voids of the nearby universe. It is the fossil of tiny ripples in the infant cosmos, grown over billions of years by gravity.",
+  "cur": "सबसे बड़ा पैटर्न जो है: आकाशगंगाएँ यादृच्छिक रूप से बिखरी हुई नहीं हैं बल्कि लगभग खाली शून्य के चारों ओर तंतुओं और शीटों के साथ जुड़ी हुई हैं, एक संरचना जो फोम या चमकते धागों के जाल जैसी दिखती है। यह खोल एक गहन योजनाबद्ध मॉडल है — विचार का आरेख, सर्वेक्षण नहीं — निकटवर्ती ब्रह्मांड की कई महान दीवारों, महासमूहों, और शून्य को दर्शाता है। यह शिशु ब्रह्मांड में सूक्ष्म लहरों का जीवाश्म है, जो अरबों वर्षों से गुरुत्वाकर्षण द्वारा बढ़ा हुआ है।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_lens_story_laniakea_body",
+  "en": "'Immense heaven' in Hawaiian — the supercluster defined in 2014 not by where galaxies sit but by where they flow. Some 160 megaparsecs (500 million light-years) across, containing about 100,000 galaxies, Laniakea is the basin of attraction our Virgo Supercluster drains into, toward the Great Attractor. And Laniakea, with its neighbours, is part of a broader flow toward something larger still: the Shapley Concentration.",
+  "cur": "हवाईयन में 'विशाल आकाश' — 2014 में परिभाषित सुपरक्लस्टर जो यह नहीं बताता कि गैलेक्सियाँ कहाँ हैं बल्कि वे कहाँ प्रवाहित होती हैं। लगभग 160 मेगापार्सेक (500 मिलियन प्रकाश-वर्ष) व्यास में, लगभग 100,000 गैलेक्सियों को समाहित करते हुए, Laniakea वह आकर्षण बेसिन है जिसमें हमारा Virgo Supercluster ग्रेट अट्रैक्टर की ओर निकलता है। और Laniakea, अपने पड़ोसियों के साथ, कुछ और बड़े की ओर एक व्यापक प्रवाह का हिस्सा है: Shapley Concentration।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_lens_story_lg_body",
+  "en": "The Milky Way, Andromeda, the Triangulum galaxy and dozens of smaller companions, bound by gravity across some 10 million light-years. Andromeda and the Milky Way are drifting toward each other and may merge a few billion years from now — recent simulations put it closer to a coin-flip.",
+  "cur": "मिल्की वे, Andromeda, Triangulum आकाशगंगा और दर्जनों छोटे साथी, कुछ 10 मिलियन प्रकाश-वर्षों में गुरुत्वाकर्षण से बँधे। Andromeda और मिल्की वे एक-दूसरे की ओर बढ़ रहे हैं और अब से कुछ अरब वर्षों में विलय हो सकते हैं — हाल के सिमुलेशन इसे एक सिक्के के उछाल के करीब रखते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_lens_story_ls_body",
+  "en": "The galaxy groups just beyond the Local Group lie in a thin, nearly flat layer — the Local Sheet — moving together within the wider Local Volume. It is a first glimpse of the cosmic web's geometry: galaxies are not scattered at random but tend to lie along sheets and filaments.",
+  "cur": "स्थानीय समूह से बस परे आकाशगंगा समूह एक पतली, लगभग सपाट परत में स्थित हैं — Local Sheet — व्यापक स्थानीय मात्रा में एक साथ चल रहे हैं। यह ब्रह्मांडीय जाल की ज्यामिति की पहली झलक है: आकाशगंगाएँ यादृच्छिक रूप से बिखरी हुई नहीं हैं बल्कि शीटों और फिलामेंट्स के साथ झूठ बोलने का प्रवृत्ति रखती हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_lens_story_mw_body",
+  "en": "A barred spiral of a few hundred billion stars, about 100,000 light-years across. The overlays show what the eye can't: the nearly flat rotation curve, the dark-matter halo it implies, and the stellar populations that record how the disc, bulge and halo were built.",
+  "cur": "कुछ सौ अरब सितारों की एक बारदार सर्पिल, लगभग 100,000 प्रकाश-वर्ष भर में। ओवरले दिखाते हैं कि आँख क्या नहीं देख सकती: लगभग सपाट घूर्णन वक्र, इसका अर्थ हेलो, और तारकीय जनसंख्या जो दर्ज करती है कि डिस्क, उभार और हेलो कैसे बने।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_lens_story_nb_body",
+  "en": "The Sun's nearest stars, placed at their true distances and colours. The teaching layers trace the constellation figures, pick out the deep-sky objects, sort the stars on the Hertzsprung–Russell diagram, and ripple light-travel time outward from the Sun.",
+  "cur": "सूर्य के निकटतम सितारे, उनकी वास्तविक दूरियों और रंगों पर रखे गए। शिक्षण परतें तारामंडल की आकृतियों का पता लगाती हैं, गहरे आकाश की वस्तुओं को चुनती हैं, Hertzsprung–Russell आरेख पर सितारों को क्रमबद्ध करती हैं, और सूर्य से बाहर की ओर प्रकाश-यात्रा समय को लहरित करती हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_lens_story_virgo_body",
+  "en": "Our home supercluster — a hundred or more galaxy groups and clusters spread across some 33 megaparsecs (about 110 million light-years, and larger by some definitions), dominated by the Virgo Cluster. It was long thought the largest structure we belong to; Laniakea later revealed it to be one lobe of something far bigger.",
+  "cur": "हमारा घर महासुपरक्लस्टर — सौ या अधिक आकाशगंगा समूह और समूह लगभग 33 मेगापार्सेक (लगभग 110 मिलियन प्रकाश-वर्ष, और कुछ परिभाषाओं के अनुसार बड़ा) में फैले हुए हैं, जो Virgo Cluster द्वारा प्रभावित है। लंबे समय तक सोचा जाता था कि यह सबसे बड़ी संरचना है जिससे हम संबंधित हैं; Laniakea ने बाद में इसे कुछ बहुत बड़ी चीज़ का एक पालि होने का खुलासा किया।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_lens_time_note",
+  "en": "Closer to the horizon, time runs slower relative to a far-away clock — the factor is √(1 − rₛ/r). Shown for a non-spinning black hole; real spinning ones shift the photon sphere and orbits inward.",
+  "cur": "क्षितिज के निकट, समय दूर स्थित घड़ी की तुलना में धीमी गति से चलता है — गुणक √(1 − rₛ/r) है। गैर-घूर्णन कृष्ण विवर के लिए दर्शाया गया; वास्तविक घूर्णन करने वाले फोटॉन गोले और कक्षाओं को अंदर की ओर स्थानांतरित करते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_lg_blurb_dwarf",
+  "en": "A small, faint dwarf galaxy — one of the dozens that populate the Local Group.",
+  "cur": "एक छोटी, मंद बौनी आकाशगंगा — स्थानीय समूह में मौजूद दर्जनों में से एक।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_lg_blurb_irregular",
+  "en": "A gas-rich irregular galaxy with no ordered shape, lit by bursts of new star formation.",
+  "cur": "एक गैस-समृद्ध अनियमित आकाशगंगा जिसका कोई क्रमबद्ध आकार नहीं है, नए तारों के निर्माण से प्रकाशित।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_lg_blurb_spiral",
+  "en": "One of the Local Group's grand spiral galaxies — hundreds of billions of stars in a rotating disk of arms, gas, and dust.",
+  "cur": "स्थानीय समूह की भव्य सर्पिल आकाशगंगाओं में से एक — खरबों तारे घूमती हुई भुजाओं, गैस और धूल की डिस्क में।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_ls_anchor_blurb",
+  "en": "You are here. The whole Local Group — the Milky Way, Andromeda, and their dozens of companions — is a single dot at this scale, one member of the wider Local Sheet.",
+  "cur": "आप यहां हैं। पूरा स्थानीय समूह — Andromeda, और उनके दर्जनों साथी — इस पैमाने पर एक एकल बिंदु है, व्यापक स्थानीय शीट का एक सदस्य।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_ls_blurb",
+  "en": "A gravitationally bound, if loosely structured, collection of galaxies just beyond the Local Group. It belongs to the Local Sheet — a thin, roughly planar slab of nearby galaxy groups about 10 megaparsecs across — itself embedded in the wider Local Volume, the ~10-Mpc-radius sphere astronomers have mapped galaxy by galaxy.",
+  "cur": "गुरुत्वाकर्षण से बंधा हुआ, भले ही ढीले ढंग से संरचित, स्थानीय समूह के ठीक बाहर आकाशगंगाओं का एक संग्रह। यह Local Sheet से संबंधित है — पास की आकाशगंगा समूहों की एक पतली, लगभग समतल पट्टी जो लगभग 10 मेगापार्सेक की दूरी तक फैली हुई है — जो स्वयं व्यापक Local Volume में एम्बेड है, लगभग 10-Mpc-त्रिज्या वाला गोला जिसे खगोलविदों ने आकाशगंगा दर आकाशगंगा मैप किया है।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_mp_note",
+  "en": "Every known planet in our catalogue, re-plotted by mass and orbit. The lit path is this system — see where it sits among the rest, and next to our own worlds.",
+  "cur": "हमारी सूची में प्रत्येक ज्ञात ग्रह, द्रव्यमान और कक्षा द्वारा पुनः आलेखित। प्रकाशित पथ यह तंत्र है — देखें यह शेष के बीच कहाँ है, और हमारे अपने लोकों के बगल में।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_msg_no_message",
+  "en": "It carries no formal message — but it, too, is now bound for the stars.",
+  "cur": "इसमें कोई औपचारिक संदेश नहीं है — लेकिन यह भी अब तारों की ओर प्रस्थान के लिए बंधा है।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_msg_signal_body",
+  "en": "A one-way signal from Earth reaches it in about {hours} light-hours.",
+  "cur": "पृथ्वी से एक-तरफा सिग्नल इसे लगभग {hours} प्रकाश-घंटे में पहुंचता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_mw_arm_blurb",
+  "en": "A spiral arm. In the leading density-wave model it isn't a fixed set of stars but a travelling wave, where gas piles up, compresses, and lights up in bright new star formation — though whether the arms are long-lived waves or shorter-lived features is still debated.",
+  "cur": "एक सर्पिल बाहु। प्रमुख घनत्व-तरंग मॉडल में यह तारों का एक निश्चित समूह नहीं है बल्कि एक यात्री तरंग है, जहां गैस इकट्ठा होती है, संपीड़ित होती है, और उज्ज्वल नए तारा निर्माण में प्रकाश पाती है — हालांकि क्या बाहें दीर्घकालिक तरंगें हैं या छोटी अवधि की विशेषताएं अभी भी विवाद में है।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_mw_globular_blurb",
+  "en": "An ancient globular cluster — hundreds of thousands of stars bound by gravity into a dense sphere, orbiting far out in the Galactic halo. Among the oldest objects in the Milky Way, nearly as old as the Universe itself.",
+  "cur": "एक प्राचीन गोलीय तारा समूह — गुरुत्वाकर्षण से बँधे हुए सैकड़ों हज़ार तारे एक सघन गोले में, जो आकाशगंगा की बाहरी हेलो में कक्षा में घूमता है। मिल्की वे की सबसे पुरानी वस्तुओं में से एक, स्वयं ब्रह्मांड जितनी ही पुरानी।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_mw_lens_dm_label",
+  "en": "Dark-matter halo · inferred, ~15–20× the visible mass",
+  "cur": "डार्क-मैटर हेलो · अनुमानित, ~15–20× दृश्य द्रव्य"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_mw_lens_rc_label",
+  "en": "Nearly flat rotation curve — orbital speed holds near ~220 km/s across the disc (out to ~15–20 kpc)",
+  "cur": "लगभग सपाट घूर्णन वक्र — कक्षीय गति डिस्क भर में ~220 किमी/सेकंड के पास बनी रहती है (~15–20 kpc तक)"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_mw_sag_a_blurb",
+  "en": "The 4.3-million-solar-mass black hole at the heart of the Milky Way, imaged by the Event Horizon Telescope in 2022. Every star in the Galaxy — including the Sun — orbits it.",
+  "cur": "आकाशगंगा के केंद्र में स्थित 4.3 मिलियन सौर-द्रव्यमान का कृष्ण विवर, जिसे Event Horizon Telescope द्वारा 2022 में चित्रित किया गया। आकाशगंगा का हर तारा — सूर्य सहित — इसकी परिक्रमा करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_mw_satellite_blurb",
+  "en": "A satellite galaxy bound to the Milky Way, orbiting it and slowly being pulled apart by its gravity. The Magellanic Clouds are the brightest examples, visible to the naked eye from the southern sky.",
+  "cur": "मिल्की वे से बंधी एक उपग्रह आकाशगंगा, इसकी परिक्रमा कर रही है और धीरे-धीरे इसके गुरुत्वाकर्षण से खींची जा रही है। मॅजलॅनिक बादल सबसे चमकीले उदाहरण हैं, दक्षिणी आकाश से नग्न आंखों से दिखाई देते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_mw_scale_note",
+  "en": "Milky Way · ~30 kpc (~100,000 light-years) across",
+  "cur": "मिल्की वे · ~30 kpc (~100,000 प्रकाश-वर्ष) के पार"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_mw_sun_blurb",
+  "en": "The Sun sits a little more than halfway out from the centre, on a minor spur between the Sagittarius and Perseus arms. One orbit of the Galaxy takes roughly 230 million years.",
+  "cur": "सूर्य केंद्र से आधे से थोड़ा अधिक बाहर, Sagittarius और Perseus भुजाओं के बीच एक छोटी शाखा पर स्थित है। आकाशगंगा की एक परिक्रमा में लगभग 230 मिलियन वर्ष लगते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_tt_lagrange_l1_blurb",
+  "en": "Sunward gravitational balance point · ~{mkm} Mkm from {planet}",
+  "cur": "सूर्य की ओर का गुरुत्व संतुलन बिंदु · ~{mkm} मिलियन किमी {planet} से"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_tt_lagrange_l2_blurb",
+  "en": "Anti-sunward balance point · ~{mkm} Mkm beyond {planet}",
+  "cur": "सूर्य के विपरीत ओर का संतुलन बिंदु · ~{mkm} मिलियन किमी {planet} के परे"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_tt_lagrange_l2_notable_earth",
+  "en": "Hosts JWST · Gaia · Euclid (deep-space telescopes)",
+  "cur": "JWST · Gaia · Euclid का स्थान (अंतरिक्ष दूरबीनें)"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_virgo_anchor_blurb",
+  "en": "You are here, out on the supercluster's edge. The whole Local Group is a single dot, one of many groups strung through the Virgo Supercluster and falling, slowly, toward the Virgo Cluster.",
+  "cur": "आप यहाँ हैं, महासुपरक्लस्टर के किनारे पर। संपूर्ण स्थानीय समूह एक ही बिंदु है, Virgo Supercluster में फैले कई समूहों में से एक, और Virgo Cluster की ओर धीरे-धीरे गिर रहा है।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_virgo_blurb",
+  "en": "A galaxy group, cloud, or cluster within the Virgo Supercluster — the ~33-megaparsec supercluster our Local Group belongs to. Its members are drawn toward the Virgo Cluster, the dense concentration of over a thousand galaxies at the supercluster's gravitational heart.",
+  "cur": "Virgo Supercluster के भीतर एक आकाशगंगा समूह, बादल, या समूह — यह ~33-मेगापार्सेक महासुपरक्लस्टर है जिसमें हमारा स्थानीय समूह शामिल है। इसके सदस्य Virgo Cluster की ओर आकर्षित होते हैं, जो महासुपरक्लस्टर के गुरुत्वाकर्षण केंद्र में एक हजार से अधिक आकाशगंगाओं का घना सांद्रण है।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_virgo_schematic_badge",
+  "en": "Virgo Supercluster · schematic · not to scale",
+  "cur": "Virgo Supercluster · आरेख · पैमाने के अनुसार नहीं"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_voyager2_cue_at_neptune",
+  "en": "And the spacecraft that travelled every outer planet — Voyager 2, still going.",
+  "cur": "और वह यान जो हर बाहरी ग्रह तक गया — Voyager 2, अभी भी जारी।"
+ },
+ {
+  "rel": "messages",
+  "at": "explore_voyager2_today_aria",
+  "en": "Voyager 2 current position — click to open mission record",
+  "cur": "Voyager 2 वर्तमान स्थिति — मिशन रिकॉर्ड खोलने के लिए क्लिक करें"
+ },
+ {
+  "rel": "messages",
+  "at": "fleet_anatomy_caption",
+  "en": "Original anatomy illustration made for Orrery.",
+  "cur": "Orrery के लिए बनाया गया मूल शारीरिक चित्र।"
+ },
+ {
+  "rel": "messages",
+  "at": "fleet_exploded_caption",
+  "en": "Original exploded-stage cutaway made for Orrery.",
+  "cur": "Orrery के लिए बनाया गया मूल चरण-वार विस्फोटित कटअवे चित्र।"
+ },
+ {
+  "rel": "messages",
+  "at": "fly_canvas_aria_3d",
+  "en": "3D mission arc. Drag to orbit, scroll or pinch to zoom.",
+  "cur": "3 डी मिशन आर्क। ऑर्बिट, स्क्रॉल या चुटकी को ज़ूम करने के लिए खींचें।"
+ },
+ {
+  "rel": "messages",
+  "at": "fly_demo_hint",
+  "en": "This is a placeholder free-return demo. Pick a real mission to see its actual launch window.",
+  "cur": "यह एक प्लेसहोल्डर फ्री रिटर्न डेमो है। अपनी वास्तविक लॉन्च विंडो देखने के लिए एक वास्तविक मिशन चुनें।"
+ },
+ {
+  "rel": "messages",
+  "at": "fly_fd_phase_approach_body",
+  "en": "Closing on the destination. V∞ is the excess speed at infinity — the speed the spacecraft would have if the planet's gravity weren't there. It sets the minimum braking ∆v before any orbit insertion.",
+  "cur": "गंतव्य की ओर बढ़ना। V∞ अनंत पर अतिरिक्त गति है — वह गति जो अंतरिक्षयान के पास होती यदि ग्रह का गुरुत्वाकर्षण न होता। यह किसी भी कक्षा प्रविष्टि से पहले न्यूनतम ब्रेकिंग ∆v निर्धारित करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "fly_fd_phase_arrival_body",
+  "en": "The arrival burn slows the vehicle from its hyperbolic V∞ down below the destination's escape velocity, capturing it into a closed orbit. Miss this burn and the spacecraft flies past forever.",
+  "cur": "आगमन बर्न यान को उसकी अतिपरवलयिक V∞ से धीमा करके गंतव्य के पलायन वेग से नीचे लाता है, इसे बंद कक्षा में पकड़ता है। यह बर्न चूकें तो अंतरिक्षयान हमेशा के लिए आगे उड़ जाता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "fly_fd_phase_cruise_body",
+  "en": "Coasting along a Hohmann transfer — the most fuel-efficient ellipse that touches both planets' orbits. The Sun is the only force; vis-viva gives the speed at every point. No fuel burning, no engine — coast time is free.",
+  "cur": "Hohmann transfer के साथ चल रहे हैं — सबसे ईंधन-कुशल दीर्घवृत्त जो दोनों ग्रहों की कक्षाओं को छूता है। सूर्य ही एकमात्र बल है; vis-viva हर बिंदु पर गति देता है। कोई ईंधन जलता नहीं, कोई इंजन नहीं — तट का समय मुक्त है।"
+ },
+ {
+  "rel": "messages",
+  "at": "fly_fd_phase_departure_body",
+  "en": "C3 is the squared launch energy a vehicle has after escaping Earth. A positive C3 means the spacecraft is leaving Earth's gravity well; the higher the number, the faster the cruise.",
+  "cur": "C3 पृथ्वी से पलायन के बाद यान की वर्गीकृत प्रक्षेपण ऊर्जा है। धनात्मक C3 का अर्थ है कि अंतरिक्षयान पृथ्वी के गुरुत्वाकर्षण कुएँ से निकल रहा है; संख्या जितनी अधिक, क्रूज़ उतना ही तीव्र।"
+ },
+ {
+  "rel": "messages",
+  "at": "fly_fd_phase_injection_body",
+  "en": "The injection burn (TLI for the Moon, TMI for Mars) is the largest single ∆v of the trip. After it, the engine is off and the vehicle coasts on a Keplerian arc all the way to the destination.",
+  "cur": "इंजेक्शन बर्न (चंद्रमा के लिए TLI, मंगल के लिए TMI) यात्रा का सबसे बड़ा एकल ∆v है। इसके बाद, इंजन बंद हो जाता है और यान गंतव्य तक Keplerian चाप पर तैरता रहता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "fly_fd_phase_injection_title",
+  "en": "Trans-X injection · committing to the arc",
+  "cur": "Trans-X इंजेक्शन · प्रक्षेपवक्र के लिए प्रतिबद्धता"
+ },
+ {
+  "rel": "messages",
+  "at": "fly_fd_phase_separation_body",
+  "en": "After the injection burn, the spacecraft separates from the upper stage, deploys its solar panels and antennas, and begins the long coast. The first trajectory-correction maneuver verifies the arc.",
+  "cur": "इंजेक्शन बर्न के बाद, अंतरिक्षयान अपर स्टेज से अलग होता है, अपने सौर पैनल और एंटीना तैनात करता है, और लंबी तैराकी शुरू करता है। पहला प्रक्षेपवक्र-सुधार युद्धाभ्यास चाप को सत्यापित करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "fly_fd_phase_separation_title",
+  "en": "Separation · spacecraft deploys from upper stage",
+  "cur": "पृथक्करण · अंतरिक्षयान अपर स्टेज से अलग होता है"
+ },
+ {
+  "rel": "messages",
+  "at": "fly_flight_caveat_reconstructed",
+  "en": "RECONSTRUCTED FLIGHT DATA — VALUES APPROXIMATE",
+  "cur": "पुनर्निर्मित उड़ान डेटा — मान लगभग सटीक"
+ },
+ {
+  "rel": "messages",
+  "at": "fly_flight_caveat_sparse",
+  "en": "SPARSE PUBLIC RECORDS — SOME VALUES MISSING",
+  "cur": "विरल सार्वजनिक अभिलेख — कुछ मान अनुपलब्ध"
+ },
+ {
+  "rel": "messages",
+  "at": "fly_load_failed",
+  "en": "Failed to load mission. Showing default ORRERY-1 free-return.",
+  "cur": "मिशन को लोड करने में विफल रहा। डिफ़ॉल्ट ORRERY-1 मुफ्त रिटर्न दिखा रहा है।"
+ },
+ {
+  "rel": "messages",
+  "at": "fly_recovery_caption_soyuz1",
+  "en": "Parachute failure — the descent module struck the ground at high speed. Vladimir Komarov was lost, the first in-flight spaceflight fatality.",
+  "cur": "पैराशूट विफलता — अवतरण मॉड्यूल तेज़ गति से ज़मीन से टकराया। व्लादिमीर कोमारोव की मृत्यु हो गई, जो अंतरिक्ष उड़ान के दौरान पहली मृत्यु थी।"
+ },
+ {
+  "rel": "messages",
+  "at": "fly_recovery_caption_soyuz11",
+  "en": "The capsule landed nominally, but a valve had opened at module separation; the three-man crew were lost to depressurization before touchdown.",
+  "cur": "कैप्सूल सामान्य रूप से उतरा, लेकिन मॉड्यूल पृथक्करण के समय एक वाल्व खुल गया था; तीन सदस्यीय दल की उतरने से पहले दबाव-ह्रास के कारण मृत्यु हो गई।"
+ },
+ {
+  "rel": "messages",
+  "at": "fly_toggle_hud_title",
+  "en": "Toggle HUD column (mission identity, navigation, flight params, systems, live state)",
+  "cur": "HUD कॉलम टॉगल करें (मिशन पहचान, नेविगेशन, उड़ान पैरामीटर, सिस्टम, लाइव स्थिति)"
+ },
+ {
+  "rel": "messages",
+  "at": "gallery_aside",
+  "en": "Curious what didn’t make it? The {link} lists the content we couldn’t license — and why.",
+  "cur": "जानना चाहते हैं कि क्या शामिल नहीं हो सका? {link} उस सामग्री की सूची देती है जिसे हम लाइसेंस नहीं कर सके — और क्यों।"
+ },
+ {
+  "rel": "messages",
+  "at": "gallery_insignia_body",
+  "en": "Authentic program & mission patches — public domain, credited, with a sourcing wall for what we couldn’t.",
+  "cur": "प्रामाणिक कार्यक्रम और मिशन पैच — सार्वजनिक डोमेन, श्रेय सहित, जो हम लाइसेंस नहीं कर सके उनके लिए स्रोत सूची।"
+ },
+ {
+  "rel": "messages",
+  "at": "gallery_lede",
+  "en": "Orrery’s visual collections — things to look at, download, and keep. Free to use, credited in full.",
+  "cur": "Orrery के दृश्य संग्रह — देखने, डाउनलोड करने और रखने के लिए। निःशुल्क उपयोग, पूर्ण श्रेय सहित।"
+ },
+ {
+  "rel": "messages",
+  "at": "gallery_posters_body",
+  "en": "Twenty-seven original art prints — Sputnik to Starship. Full-resolution, free to download.",
+  "cur": "सत्ताईस मूल कला प्रिंट — Sputnik से Starship तक। पूर्ण-रिज़ॉल्यूशन, निःशुल्क डाउनलोड।"
+ },
+ {
+  "rel": "messages",
+  "at": "hotspots_lod_title",
+  "en": "Surface Hotspots LOD · click to cycle AUTO ↔ LOW ↔ HIGH",
+  "cur": "सतह हॉटस्पॉट LOD · क्लिक करके AUTO ↔ LOW ↔ HIGH बदलें"
+ },
+ {
+  "rel": "messages",
+  "at": "image_credit_modifications",
+  "en": "Modified for web display (resized / re-encoded). Originals available at source.",
+  "cur": "वेब डिस्प्ले के लिए संशोधित (पुनर्निर्मित / फिर से कोडित)। मूल स्रोत पर उपलब्ध है।"
+ },
+ {
+  "rel": "messages",
+  "at": "iss_canvas_aria",
+  "en": "Interactive 3D model of the International Space Station. Drag to orbit the view; tap a module to open details.",
+  "cur": "अंतर्राष्ट्रीय अंतरिक्ष स्टेशन का इंटरएक्टिव 3 डी मॉडल। दृष्टिकोण को कक्षाबद्ध करने के लिए खींचें; विवरण खोलने के लिए एक मॉड्यूल को टैप करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "iss_fallback_memory",
+  "en": "Low-memory mode: list view first. Use the toggle to try 3D.",
+  "cur": "कम स्मृति मोड: सूची दृश्य पहले। 3D की कोशिश करने के लिए टॉगल का उपयोग करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "iss_fallback_perf",
+  "en": "3D mode looked slow on this device — switched to the list. Use the toggle to try 3D again.",
+  "cur": "3D मोड इस डिवाइस पर धीमी गति से देखा - सूची में बदल गया। फिर से 3D प्रयास करने के लिए टॉगल का उपयोग करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "iss_timeline_title",
+  "en": "Chronological timeline of when each module + visitor joined the ISS",
+  "cur": "कालानुक्रमिक टाइमलाइन कि प्रत्येक मॉड्यूल + आगंतुक कब आईएसएस से जुड़े"
+ },
+ {
+  "rel": "messages",
+  "at": "iss_watch_assembly_title",
+  "en": "Watch the station's modules + visitors join in chronological order",
+  "cur": "स्टेशन के मॉड्यूल + आगंतुकों को कालानुक्रमिक क्रम में जुड़ते हुए देखें"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_ascent_losses_input",
+  "en": "Ascent gravity + drag losses entered by hand (trajectory-dependent)",
+  "cur": "आरोहण गुरुत्व + खिंचाव हानियाँ हाथ से दर्ज (प्रक्षेप-पथ पर निर्भर)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_earth_leo_required",
+  "en": "Required Δv is Earth low-orbit (losses included)",
+  "cur": "आवश्यक Δv पृथ्वी की निम्न कक्षा के लिए है (क्षति सहित)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_from_planet_orbit",
+  "en": "Δv from the departure planet's solar orbit (excludes launch + escape)",
+  "cur": "प्रस्थान ग्रह की सौर कक्षा से Δv (प्रक्षेपण + पलायन शामिल नहीं)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_vertical_gravity_loss",
+  "en": "Gravity loss approximated as constant-g × burn time",
+  "cur": "गुरुत्व हानि को स्थिर-g × बर्न समय के रूप में अनुमानित किया गया"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_blocked_compute_error",
+  "en": "This formula could not be evaluated with these inputs.",
+  "cur": "इन इनपुट के साथ यह सूत्र मूल्यांकित नहीं किया जा सका।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_blocked_invalid_wire",
+  "en": "Invalid wire — step {step} has no output named {output}.",
+  "cur": "अमान्य वायर — चरण {step} में {output} नामक कोई आउटपुट नहीं है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_blocked_upstream_failed",
+  "en": "Upstream failed — step {step} produced no value to wire in.",
+  "cur": "अपस्ट्रीम विफल — चरण {step} ने वायर करने के लिए कोई मान उत्पन्न नहीं किया।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_airbags_err_too_hard",
+  "en": "Impact too hard for airbags — slow down more first (a retro burn, as Pathfinder did).",
+  "cur": "एयरबैग के लिए टक्कर बहुत तेज़ है — पहले और धीमा करें (एक रेट्रो बर्न, जैसा Pathfinder ने किया)।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_descent_err_input",
+  "en": "Orbital speed and burn time must be real, non-negative numbers.",
+  "cur": "कक्षीय गति और बर्न समय वास्तविक, गैर-ऋणात्मक संख्याएँ होनी चाहिए।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_descent_err_twr",
+  "en": "Thrust-to-weight must exceed 1 — below it you cannot slow the fall, you crash.",
+  "cur": "थ्रस्ट-टू-वेट 1 से अधिक होना चाहिए — इससे कम पर आप गिरावट धीमी नहीं कर सकते, आप क्रैश हो जाएंगे।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_dvm_err_insufficient",
+  "en": "Not enough delta-v to reach the target — the vehicle falls short.",
+  "cur": "लक्ष्य तक पहुँचने के लिए पर्याप्त डेल्टा-वी नहीं — यान अपर्याप्त रहता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_interplanetary_err_planet",
+  "en": "That world isn't on a tabulated heliocentric orbit here.",
+  "cur": "वह लोक यहाँ किसी सारणीबद्ध सूर्यकेंद्रित कक्षा पर नहीं है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_interplanetary_err_same",
+  "en": "Departure and arrival must be different worlds.",
+  "cur": "प्रस्थान और आगमन अलग-अलग लोक होने चाहिए।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_orbits_err_unknown_body",
+  "en": "That world isn't one you can orbit here — choose Earth or the Moon.",
+  "cur": "उस दुनिया की कक्षा आप यहाँ नहीं कर सकते — पृथ्वी या चंद्रमा चुनें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_soft_land_err_too_fast",
+  "en": "Too fast to touch down — you need a powered descent (the sky-crane).",
+  "cur": "उतरने के लिए बहुत तेज़ — आपको संचालित अवरोहण (स्काई-क्रेन) की आवश्यकता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_terminal_err_airless",
+  "en": "No atmosphere here — drag can't slow you at all; a burn is the only way down.",
+  "cur": "यहाँ कोई वायुमंडल नहीं है — ड्रैग आपको बिल्कुल धीमा नहीं कर सकता; नीचे उतरने का एकमात्र रास्ता बर्न है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_tsiolkovsky_err_mass_ratio",
+  "en": "The loaded mass must be greater than the empty mass — a rocket has to carry propellant to burn.",
+  "cur": "भरा हुआ द्रव्यमान खाली द्रव्यमान से अधिक होना चाहिए — रॉकेट को जलाने के लिए प्रणोदक ले जाना पड़ता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_twr_err_wont_lift",
+  "en": "Thrust is below weight — the vehicle stays on the pad.",
+  "cur": "प्रणोद भार से कम है — यान पैड पर ही रहता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_vis_viva_err_off_orbit",
+  "en": "That distance isn't on this orbit — a point must satisfy r < 2a.",
+  "cur": "वह दूरी इस कक्षा पर नहीं है — किसी बिंदु के लिए r < 2a होना आवश्यक है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_get_mars_desc",
+  "en": "You don't aim at Mars; you aim at where Mars will be. Find the transfer orbit and the launch window that put you both in the same place, months later.",
+  "cur": "आप मंगल पर निशाना नहीं साधते; आप वहाँ निशाना साधते हैं जहाँ मंगल होगा। वह ट्रांसफर कक्षा और प्रक्षेपण खिड़की खोजें जो महीनों बाद आप दोनों को एक ही जगह ले आए।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_gtm_transfer",
+  "en": "Mars rides a bigger, slower orbit around the Sun. The same Hohmann trick as the Moon, one scale up: one burn to swing out to Mars’s orbit, coast a long arc across the solar system, one burn to arrive.",
+  "cur": "मंगल सूर्य के चारों ओर एक बड़ी, धीमी कक्षा में चलता है। चंद्रमा वाली वही Hohmann तरकीब, बस एक पैमाना बड़ा: मंगल की कक्षा तक झूलने के लिए एक बर्न, सौरमंडल भर में एक लंबे चाप पर कोस्ट, और पहुँचने के लिए एक बर्न।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_gtm_verdict",
+  "en": "Do you have the Δv to make the crossing? This is the Δv from Earth's orbit around the Sun — on top of everything it took to leave Earth in the first place.",
+  "cur": "क्या आपके पास इस पार को तय करने के लिए Δv है? यह सूर्य के चारों ओर पृथ्वी की कक्षा से Δv है — पृथ्वी को शुरू में छोड़ने में लगे सबकुछ के अतिरिक्त।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_gtm_window",
+  "en": "You can't leave whenever you like — Earth and Mars must be lined up so Mars is actually there when your arc reaches its orbit. That alignment only comes around about every 26 months.",
+  "cur": "आप जब चाहें तब प्रस्थान नहीं कर सकते — पृथ्वी और मंगल इस तरह पंक्तिबद्ध होने चाहिए कि जब आपका चाप मंगल की कक्षा तक पहुँचे तो मंगल वास्तव में वहाँ हो। ऐसा संरेखण लगभग हर 26 महीने में ही आता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_land_mars_desc",
+  "en": "Just enough air to burn you, not enough to stop you. Chain heat shield, parachute and rockets into the 'seven minutes of terror'.",
+  "cur": "आपको जलाने भर की हवा, पर रोकने भर की नहीं। हीट शील्ड, पैराशूट और रॉकेट को 'सात मिनट के आतंक' में जोड़ें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_land_moon_desc",
+  "en": "No air means no parachute — the only brake is the engine. Fly the descent burn that sets you down gently on an airless world.",
+  "cur": "हवा नहीं तो पैराशूट नहीं — एकमात्र ब्रेक इंजन है। वह अवरोहण बर्न उड़ाएँ जो आपको वायुहीन दुनिया पर धीरे से उतार दे।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_land_venus_desc",
+  "en": "The thickest air in the inner system — a furnace under crushing pressure. See how that dense atmosphere both slows your fall and fights you all the way down.",
+  "cur": "आंतरिक तंत्र की सबसे घनी हवा — कुचल देने वाले दबाव के नीचे एक भट्टी। देखें कैसे वह घना वायुमंडल आपका गिरना धीमा करता है और नीचे तक आपसे लड़ता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lar_force",
+  "en": "It all starts with one law: a force changes a mass's motion. Push harder, or make it lighter, and it speeds up faster.",
+  "cur": "यह सब एक नियम से शुरू होता है: एक बल किसी द्रव्यमान की गति को बदलता है। ज़ोर से धकेलें, या उसे हल्का करें, और वह तेज़ी से रफ़्तार पकड़ता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lar_launch_site",
+  "en": "Where on Earth you launch from is a free head start: the planet's spin already carries the pad eastward — fastest at the equator, nothing at the poles. That is why Ariane flies from Kourou, and why companies tow platforms out to sea.",
+  "cur": "पृथ्वी पर आप कहाँ से प्रक्षेपण करते हैं, यह एक मुफ्त बढ़त देता है: ग्रह का घूर्णन पहले से ही प्रक्षेपण-मंच को पूर्व की ओर ले जाता है — भूमध्य रेखा पर सबसे तेज़, ध्रुवों पर कुछ नहीं। यही कारण है कि Ariane, कूरू से उड़ान भरता है, और कंपनियाँ प्लेटफ़ॉर्म को समुद्र में खींच ले जाती हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lar_momentum",
+  "en": "A rocket moves by throwing mass out the back. The momentum it gives the exhaust is the momentum it gains going forward.",
+  "cur": "एक रॉकेट पीछे की ओर द्रव्यमान फेंककर चलता है। जो संवेग वह निकास को देता है, वही संवेग उसे आगे बढ़ने में मिलता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lar_required",
+  "en": "How much Δv does orbit actually demand? Not a magic number — it is the orbital speed you must reach (set by this world’s gravity and size) plus the losses fighting up through gravity and air. On Earth about 9.4 km/s; a smaller, airless world asks far less.",
+  "cur": "कक्षा वास्तव में कितना Δv माँगती है? यह कोई जादुई संख्या नहीं — यह वह कक्षीय गति है जिस तक आपको पहुँचना है (इस विश्व के गुरुत्व और आकार से निर्धारित) साथ ही गुरुत्व और वायु के विरुद्ध ऊपर चढ़ने में लगने वाली हानियाँ। पृथ्वी पर लगभग 9.4 km/s; एक छोटा, वायुहीन विश्व इससे कहीं कम माँगता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lar_tsiolkovsky",
+  "en": "Burning propellant builds up speed. The rocket equation ties how fast the exhaust leaves and how much propellant you carry to the delta-v you gain.",
+  "cur": "प्रणोदक जलाने से गति बढ़ती है। रॉकेट समीकरण निकास के निकलने की गति और आपके साथ ले जाए गए प्रणोदक की मात्रा को उस delta-v से जोड़ता है जो आप प्राप्त करते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lar_twr",
+  "en": "For liftoff, thrust has to beat weight. If the thrust-to-weight ratio is below one, the rocket never leaves the pad.",
+  "cur": "उड़ान भरने के लिए, प्रणोद को भार को मात देनी होगी। यदि प्रणोद-से-भार अनुपात एक से कम है, तो रॉकेट कभी पैड नहीं छोड़ता।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lar_verdict",
+  "en": "Now add it up: your rocket's Δv plus the free head-start from your launch site, against what orbit demands. A better site buys margin — or lets you fly a smaller rocket for the same job.",
+  "cur": "अब इसे जोड़ें: आपके रॉकेट का Δv और आपके प्रक्षेपण स्थल से मिली मुफ्त बढ़त, कक्षा की माँग के मुकाबले। बेहतर स्थल मार्जिन देता है — या उसी काम के लिए छोटा रॉकेट उड़ाने देता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lar_weight",
+  "en": "Gravity pulls on every mass with a force we call weight. To leave the ground, something has to push back harder than this.",
+  "cur": "गुरुत्वाकर्षण हर द्रव्यमान को एक बल से खींचता है जिसे हम भार कहते हैं। ज़मीन छोड़ने के लिए, किसी चीज़ को इससे ज़्यादा ज़ोर से धकेलना होगा।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_launch_a_rocket_desc",
+  "en": "Start where every flight starts: a force, a mass, and Newton's laws. Push harder or fly lighter, and watch exactly how much faster you go.",
+  "cur": "वहीं से शुरू करें जहाँ हर उड़ान शुरू होती है: एक बल, एक द्रव्यमान और Newton के नियम। ज़ोर से धकेलें या हल्का उड़ें, और देखें आप ठीक कितना तेज़ जाते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lom_airbags",
+  "en": "The cheap way the early rovers landed: bounce down inside inflated airbags. But they only survive so hard a hit — about 25 m/s. Your parachute leaves you faster than that, so airbags alone will not do it either; Pathfinder fired small retros first to slow down before it bounced.",
+  "cur": "शुरुआती रोवर जिस सस्ते तरीके से उतरे: फुलाए गए एयरबैग के अंदर उछलते हुए नीचे आना। लेकिन वे केवल एक सीमा तक की टक्कर ही झेल सकते हैं — लगभग 25 m/s। आपका पैराशूट आपको इससे तेज़ छोड़ देता है, इसलिए अकेले एयरबैग भी काम नहीं करेंगे; उछलने से पहले धीमा होने के लिए Pathfinder ने छोटे रेट्रो दागे थे।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lom_parachute",
+  "en": "So you deploy the biggest parachute the airflow will allow. It helps — but on Mars even a huge chute only gets you down to tens of metres per second. Still not survivable.",
+  "cur": "तो आप सबसे बड़ा पैराशूट तैनात करते हैं जिसे वायुप्रवाह अनुमति देगा। यह मदद करता है — लेकिन मंगल पर एक विशाल चूट भी आपको केवल दसियों मीटर प्रति सेकंड तक ही ला पाती है। फिर भी जीवित रहने योग्य नहीं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lom_retro",
+  "en": "So you add a retro-booster: it fires downward to kill the speed the parachute could not. The two methods together — free drag plus paid thrust — are how you actually land. On the airless Moon the parachute does nothing and the booster does it all; on Earth the chute alone is enough. Same physics, different world.",
+  "cur": "इसलिए आप एक रेट्रो-बूस्टर जोड़ते हैं: यह नीचे की ओर फायर करके उस गति को समाप्त करता है जिसे पैराशूट समाप्त नहीं कर सका। दोनों विधियाँ मिलकर — मुफ़्त ड्रैग और सशुल्क थ्रस्ट — इसी तरह आप वास्तव में उतरते हैं। वायुरहित चंद्रमा पर पैराशूट कुछ नहीं करता और बूस्टर सब कुछ करता है; पृथ्वी पर अकेला पैराशूट ही पर्याप्त है। वही भौतिकी, अलग दुनिया।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lom_terminal",
+  "en": "Mars has air — but barely. A capsule falling through it reaches terminal velocity, where drag balances weight. Because the air is roughly one-sixtieth of Earth's, that speed is still hundreds of metres per second.",
+  "cur": "मंगल पर वायु है — पर मुश्किल से। इसमें से गिरता कैप्सूल टर्मिनल वेग तक पहुँचता है, जहाँ ड्रैग वजन को संतुलित करता है। क्योंकि वायु पृथ्वी की लगभग साठवें हिस्से जितनी है, वह गति फिर भी सैकड़ों मीटर प्रति सेकंड होती है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lom_verdict",
+  "en": "Compare your terminal speed to a safe touchdown. On Mars you come up short — the thin air can't finish the job, so you must fire engines the rest of the way. That is why every Mars lander ends under power.",
+  "cur": "अपनी टर्मिनल गति की तुलना सुरक्षित लैंडिंग से करें। मंगल पर आप कम पड़ जाते हैं — पतली वायु काम पूरा नहीं कर सकती, इसलिए बाकी रास्ते के लिए आपको इंजन दागने होंगे। यही कारण है कि हर मंगल लैंडर संचालित शक्ति के तहत उतरता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_land_titan_desc",
+  "en": "Thick cold air and gentle gravity make Titan the easiest big world to land on — a parachute alone can do it. Fly Huygens' drift through the orange haze.",
+  "cur": "घनी ठंडी हवा और कोमल गुरुत्व टाइटन को उतरने के लिए सबसे आसान बड़ी दुनिया बनाते हैं — अकेला पैराशूट ही काफ़ी है। नारंगी धुंध में Huygens का बहाव उड़ाएँ।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_probe_jupiter_desc",
+  "en": "There is no surface — only deeper, hotter, denser gas. Plunge a probe into the giant and watch the atmosphere tear at it as it falls.",
+  "cur": "कोई सतह नहीं है — केवल गहरी, गर्म, घनी गैस। एक प्रोब को इस विशालकाय में डुबोएँ और देखें वायुमंडल उसके गिरते वक़्त उसे कैसे चीरता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_pj_corridor",
+  "en": "Jupiter's gravity hurls you in at 47 km/s — over four times faster than any return to Earth. At that speed the survivable band of entry angles narrows brutally: a shade too steep and even a probe built like a cannonball is crushed; too shallow and you graze off having crossed half the solar system for nothing. This card's ballistic bound already squeezes the band to a several-degree slot — and the real corridor was tighter still: heating and single-pass capture, physics beyond this simple model, forced Galileo's navigators to thread ±1.5° of sky around −8.6°.",
+  "cur": "बृहस्पति का गुरुत्वाकर्षण आपको 47 किमी/स पर झपट्टा मारता है — पृथ्वी पर किसी भी वापसी से चार गुना से भी अधिक तेज़। इस गति पर प्रवेश कोणों का जीवन-संरक्षणीय बैंड बर्बरता से संकीर्ण हो जाता है: एक छोटा सा ढलान वाला झुकाव और कनौनबॉल जैसा निर्मित जांच भी कुचल जाता है; बहुत उथला और आप आधे सौर मंडल को पार करने के बाद बस छूते हुए निकल जाते हैं। इस कार्ड की गुरुत्वाकर्षण सीमा पहले से ही बैंड को कुछ डिग्री के स्लॉट तक निचोड़ देती है — और असली कॉरिडोर इससे भी अधिक संकीर्ण था: ताप और एकल-पास कैप्चर, इस सरल मॉडल से परे की भौतिकी, Galileo के नेविगेटर को −8.6° के चारों ओर ±1.5° आकाश में पिरोने के लिए बाध्य करती है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_pj_entry",
+  "en": "Then comes the entry itself — the fastest atmospheric entry any craft has survived. The probe met the hydrogen at 47.4 km/s and decelerated at about 228 g, its shield shedding more than half its mass as glowing gas in under two minutes. Every crewed-entry rule of thumb dies here; this is survivable by machines alone.",
+  "cur": "फिर प्रवेश ही आता है — सबसे तेज वायुमंडलीय प्रवेश जो किसी अंतरिक्ष यान ने जीवित रहकर किया है। जांच ने 47.4 किमी/सेक पर हाइड्रोजन से मुलाकात की और लगभग 228 जी पर धीमी पड़ी, इसकी ढाल दो मिनट से भी कम में अपने आधे से अधिक द्रव्यमान को चमकती गैस के रूप में बहा दी। हर क्रू प्रवेश का सिद्धांत यहां मर जाता है; यह केवल मशीनों के लिए ही जीवित रहने योग्य है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_pj_descent",
+  "en": "And then — nothing to land on. Under its parachute the probe just kept sinking, and the sky surprised everyone: it had fallen into a strangely dry, cloud-sparse 'hot spot', with about ten times less water than the textbooks predicted. There is no touchdown rung in this lesson because no touchdown exists: after nearly 58 minutes and ~23 bar of pressure, Jupiter simply crushed and swallowed it. The probe's data outlived the probe.",
+  "cur": "और फिर — कहीं नहीं उतरना। अपने पैराशूट के तहत जांच सिर्फ डूबती गई, और आकाश ने सबको आश्चर्य में डाल दिया: यह एक विचित्र रूप से सूखे, बादलों से विरल 'गर्म स्थान' में गिर गई था, जिसमें पाठ्यपुस्तकें जितना अनुमान लगाती हैं उससे लगभग दस गुना कम पानी था। इस पाठ में कोई अवतरण पायदान नहीं है क्योंकि कोई अवतरण मौजूद नहीं है: लगभग 58 मिनट और ~23 बार दबाव के बाद, बृहस्पति ने इसे कुचलकर निगल लिया। जांच का डेटा जांच से अधिक जीवित रहा।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_pj_why",
+  "en": "Galileo's atmospheric probe is the only entry probe ever to fly into a giant planet's atmosphere and report back. Its 57.6 minutes of transmission rewrote the textbooks on Jupiter's winds, water and helium — and its entry remains the extreme benchmark of atmospheric flight: no object has ever hit an atmosphere faster and survived to speak.",
+  "cur": "Galileo की वायुमंडलीय जांच किसी विशाल ग्रह के वायुमंडल में उड़ान भरने और वापस संवाद करने वाली एकमात्र प्रवेश जांच है। इसके 57.6 मिनट के संचरण ने बृहस्पति की हवाओं, पानी और हीलियम पर पाठ्यपुस्तकों को दोबारा लिखा — और इसका प्रवेश वायुमंडलीय उड़ान का चरम बेंचमार्क बना हुआ है: कोई वस्तु कभी वायुमंडल से अधिक तेजी से नहीं टकराई और बोलने के लिए जीवित नहीं रही।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_pj_hook",
+  "en": "The probe's signal died 57.6 minutes in — not from a fault, but because Jupiter's heat and pressure destroyed it. Its mothership listened until there was nothing left to hear.",
+  "cur": "जांच का संकेत 57.6 मिनट में मर गया — किसी खराबी से नहीं, बल्कि क्योंकि बृहस्पति की गर्मी और दबाव ने इसे नष्ट कर दिया। इसकी मातृ पोत तब तक सुनता रहा जब तक सुनने के लिए कुछ नहीं रहा।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_pj_galileo",
+  "en": "Galileo — the mission that carried the probe (NASA)",
+  "cur": "Galileo — वह मिशन जो जांच ले गया (NASA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_pj_juno",
+  "en": "Juno — flying Jupiter's poles today (NASA)",
+  "cur": "Juno — आज बृहस्पति के ध्रुवों पर उड़ रहा है (NASA)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_pj_next",
+  "en": "Next: the smallest worlds — landing where gravity barely exists.",
+  "cur": "अगला: सबसे छोटी दुनिया — जहाँ गुरुत्वाकर्षण मुश्किल से मौजूद है, वहाँ उतरना।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lot_drogue",
+  "en": "So fifteen minutes in, Huygens let the big chute go and swapped to a drogue smaller than a beach umbrella. Even under that scrap of fabric, Titan's air lands you at under 5 m/s — a firm bump into frozen mud. The gentlest landing in the solar system, bought with the smallest parachute.",
+  "cur": "तो पंद्रह मिनट बाद, Huygens बड़े पैराशूट को छोड़ देता है और एक ड्रोग पर स्विच करता है जो समुद्र तट की छतरी से छोटा है। टाइटन की हवा के नीचे भी उस कपड़े के टुकड़े के नीचे, आप 5 मी/सेकंड से कम गति पर उतरते हैं — जमी हुई कीचड़ में एक दृढ़ टक्कर। सौर मंडल में सबसे कोमल लैंडिंग, एक मुट्ठी भर पैराशूट की कीमत पर खरीदी गई।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lot_entry",
+  "en": "Titan hides under a nitrogen atmosphere half again as thick as Earth's at the surface, and it reaches high — Huygens started feeling it over a thousand kilometres up. Coming in at 6 km/s the probe pulled over a dozen g behind its shield: a real re-entry, at a moon.",
+  "cur": "टाइटन नाइट्रोजन के एक वायुमंडल के नीचे छिपा है, जो सतह पर पृथ्वी के वायुमंडल से डेढ़ गुना घना है, और यह बहुत ऊँचाई तक फैला है — Huygens को इसका असर एक हज़ार किलोमीटर से भी ऊपर से महसूस होने लगा था। 6 km/s की गति से भीतर आते हुए इस अंतरिक्ष यान ने अपने ऊष्मा-कवच के पीछे एक दर्जन से अधिक g झेले: किसी चंद्रमा पर एक सचमुच का पुनःप्रवेश।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lot_main_chute",
+  "en": "Pop a full-sized parachute here and you fall at walking pace — which sounds perfect and is actually fatal. Titan's air is so thick and its gravity so weak that under Huygens' 8.3-metre main chute the probe would drift for many hours, and its batteries had less than three in them. On Titan the parachute paradox cuts the other way: too much drag kills you slowly.",
+  "cur": "यहाँ पूर्ण आकार का पैराशूट खोलें और आप चलने की गति से गिरते हैं — जो बिल्कुल सही लगता है और वास्तव में घातक है। टाइटन की हवा इतनी गाढ़ी है और इसका गुरुत्वाकर्षण इतना कमजोर है कि Huygens के 8.3-मीटर मुख्य पैराशूट के तहत जांच कई घंटों तक बहती रहेगी, जबकि इसकी बैटरी के पास तीन घंटे से भी कम समय था। टाइटन पर पैराशूट विरोधाभास दूसरी ओर से काटता है: बहुत अधिक ड्रैग आपको धीरे-धीरे मार देता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lot_verdict",
+  "en": "Check the touchdown: the drogue delivers you slower than the probe's design limit. Titan passes with a hand-sized parachute and no engine — the only world besides Earth where a soft landing is this cheap. The price was paid elsewhere: seven years of cruising just to arrive.",
+  "cur": "टचडाउन की जांच करें: ड्रोग आपको जांच की डिजाइन सीमा से भी धीमी गति से पहुंचाता है। टाइटन एक मुट्ठी भर पैराशूट और कोई इंजन नहीं के साथ सफल होता है — पृथ्वी के अलावा एकमात्र दुनिया जहाँ नरम लैंडिंग इतनी सस्ती है। कीमत कहीं और दी गई थी: सिर्फ पहुंचने के लिए सात साल की क्रूजिंग।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lov_aeroshell",
+  "en": "So Venera let go of its parachute at about 47–50 km — deliberately — and fell the last hour on nothing but its flat aeroshell disc. In air this thick, even that lands you at roughly 7 m/s, about the speed of dropping off a garden wall. Drag alone does what Mars needed rockets for.",
+  "cur": "तो Venera ने लगभग 47–50 km पर अपना पैराशूट जानबूझकर छोड़ दिया — और अपनी सपाट एरोशेल डिस्क पर ही अंतिम घंटा गिरा। इतने सघन वायु में भी, अकेले ड्रैग आपको लगभग 7 m/s पर उतार देगा, जो बाग की दीवार से गिरने की गति जैसा है। ड्रैग अकेला ही वह काम करता है जो मंगल को रॉकेट की जरूरत थी।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lov_chute",
+  "en": "Open a parachute in Venus's lower atmosphere and you drift down at walking pace — but that gentleness is a trap: the descent would take so long that the heat would kill the lander before the ground does. Watch what the same chute that barely helped on Mars does here.",
+  "cur": "शुक्र के निचले वायुमंडल में पैराशूट खोलें और आप चलने की गति से नीचे आते हैं — लेकिन यह कोमलता एक जाल है: अवतरण इतना लंबा होगा कि गर्मी लैंडर को जमीन से पहले मार देगी। देखें कि मंगल पर जो पैराशूट मुश्किल से मदद करता था, वह यहां क्या करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lov_corridor",
+  "en": "On Mars the entry corridor is a knife-edge; here it is a barn door. Air this dense will capture you across a huge band of entry angles — the Venera probes dove in steeply on purpose to shorten the trip through the furnace. Getting captured is not the problem on Venus.",
+  "cur": "मंगल पर प्रवेश गलियारा एक छुरी की धार है; यहां यह एक विशाल दरवाजा है। इतनी सघन हवा आपको प्रवेश कोणों की एक विशाल पट्टी में पकड़ लेगी — Venera जांच इरादे से तीव्र कोण पर भट्टी के माध्यम से यात्रा को छोटा करने के लिए गोता लगाते थे। शुक्र पर पकड़े जाना समस्या नहीं है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lov_entry",
+  "en": "Venus meets you with an atmosphere about ninety times Earth's surface pressure. Hit it directly from interplanetary speed at a steep angle and it stops you almost at once — the deceleration peaks above a hundred g. No crew could ride this; the Venera landers were built like submarines and took it.",
+  "cur": "शुक्र आपसे पृथ्वी की सतह के दबाव का लगभग नब्बे गुना वायुमंडल के साथ मिलता है। अंतरग्रहीय गति से तीव्र कोण पर इसमें सीधे टकराएं और यह आपको लगभग तुरंत रोक देता है — त्वरण सौ g से ऊपर चोटी पर पहुंचता है। कोई भी चालक दल इसे सहन नहीं कर सकता; Venera लैंडर पनडुब्बियों की तरह बनाए गए थे और इसे झेल गए।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lov_verdict",
+  "en": "Check the touchdown: the aeroshell-only fall arrives slower than the shock ring can survive. Venus passes with no retro-rockets and no parachute at the surface — the exact inverse of Mars. The real enemy waits after landing: at ~460 °C, the lander has about an hour to live.",
+  "cur": "स्पर्श की जांच करें: एरोशेल-केवल गिरावट झटके की अंगूठी से धीमी गति से आती है। शुक्र बिना रेट्रो-रॉकेट के और सतह पर बिना पैराशूट के सफल होता है — मंगल का सटीक विपरीत। असली दुश्मन अवतरण के बाद इंतजार करता है: ~460 °C पर, लैंडर के पास लगभग एक घंटा जीने के लिए है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_ltm_descent",
+  "en": "The landing burn pays twice: cancel the orbital speed you are carrying, and hold yourself up against gravity the whole way down. Add them for the descent Δv.",
+  "cur": "लैंडिंग बर्न दोहरा मूल्य चुकाती है: जो कक्षीय गति आप ले जा रहे हैं उसे रद्द करना, और नीचे उतरते समय पूरे रास्ते गुरुत्व के विरुद्ध खुद को थामे रखना। अवतरण Δv के लिए दोनों को जोड़ें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_ltm_orbit",
+  "en": "You are circling the Moon. To land, first know how fast you are going — orbital speed here is far slower than at Earth, because the Moon pulls so much more gently.",
+  "cur": "आप चंद्रमा की परिक्रमा कर रहे हैं। उतरने के लिए, पहले जानें कि आप कितनी तेज़ जा रहे हैं — यहाँ कक्षीय गति पृथ्वी की तुलना में कहीं धीमी है, क्योंकि चंद्रमा कहीं अधिक कोमलता से खींचता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_ltm_twr",
+  "en": "Landing is a controlled fall. To slow down and hover, your engine must out-push lunar gravity — thrust-to-weight above one, or you simply keep falling.",
+  "cur": "उतरना एक नियंत्रित गिरावट है। धीमा होने और मंडराने के लिए, आपके इंजन को चंद्र गुरुत्व से अधिक धक्का देना होगा — थ्रस्ट-टू-वेट एक से अधिक, वरना आप बस गिरते ही रहेंगे।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_ltm_verdict",
+  "en": "Does your lander carry enough Δv to cancel its orbit and settle softly onto the surface? Come up short and it is a crash, not a landing.",
+  "cur": "क्या आपके लैंडर के पास अपनी कक्षा रद्द करने और सतह पर धीरे से बैठने के लिए पर्याप्त Δv है? कम पड़े तो यह एक क्रैश है, लैंडिंग नहीं।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_motion_drop",
+  "en": "Let go of a mass and gravity does the rest — it speeds up as it falls. How long does it take, and how fast is it at the bottom?",
+  "cur": "किसी द्रव्यमान को छोड़ दें और बाकी काम गुरुत्वाकर्षण करता है — गिरते समय वह रफ़्तार पकड़ता है। इसमें कितना समय लगता है, और नीचे पहुँचकर उसकी गति कितनी होती है?"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_motion_throw",
+  "en": "Throw a mass and gravity curves its path. The launch speed and angle set how far it flies before it lands.",
+  "cur": "किसी द्रव्यमान को फेंकें और गुरुत्वाकर्षण उसके पथ को मोड़ देता है। लॉन्च की गति और कोण तय करते हैं कि गिरने से पहले वह कितनी दूर उड़ता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_motion_desc",
+  "en": "The first principle of everything that flies: how a force changes a mass's motion. Master this one law and the rest of the Lab follows.",
+  "cur": "उड़ने वाली हर चीज़ का पहला सिद्धांत: एक बल किसी द्रव्यमान की गति कैसे बदलता है। इस एक नियम में महारत पाएँ और बाक़ी Lab अपने आप समझ आ जाएगी।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_reach_moon_desc",
+  "en": "Leave low orbit and coast a quarter-million kilometres. Find the burn that stretches your path all the way out to the Moon.",
+  "cur": "निम्न कक्षा छोड़ें और सवा-लाख किलोमीटर तक कोस्ट करें। वह बर्न खोजें जो आपके पथ को ठीक चंद्रमा तक खींच दे।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_rtm_hohmann",
+  "en": "The cheapest way to raise your orbit is a stretched ellipse that just touches both: one burn to leave, a half-lap coast, one burn to arrive. Stretch it all the way out to the Moon.",
+  "cur": "अपनी कक्षा ऊँची करने का सबसे सस्ता तरीका एक खिंची हुई दीर्घवृत्त है जो दोनों को छूती है: निकलने के लिए एक बर्न, आधा चक्कर का तटस्थ भ्रमण, पहुँचने के लिए एक बर्न। इसे पूरा चंद्रमा तक खींचें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_rtm_orbit",
+  "en": "Going straight up isn't enough — you'd just fall back. To stay up, go sideways fast enough that the ground curves away as fast as you fall. That speed is the circular orbital velocity.",
+  "cur": "सीधे ऊपर जाना पर्याप्त नहीं है — आप बस वापस गिर जाएँगे। ऊपर बने रहने के लिए, बग़ल में इतनी तेज़ी से जाएँ कि ज़मीन उतनी ही तेज़ी से घुमावदार होकर हट जाए जितनी तेज़ी से आप गिरते हैं। वह गति वृत्ताकार कक्षीय वेग है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_rtm_verdict",
+  "en": "Add the two burns: that is the Δv to reach the Moon FROM low Earth orbit — on top of the ~9.4 km/s it already took just to get to orbit. Does your on-orbit budget cover the transfer?",
+  "cur": "दोनों बर्न जोड़ें: यही वह Δv है जो निम्न पृथ्वी कक्षा से चंद्रमा तक पहुँचने के लिए ज़रूरी है — उन ~9.4 km/s के ऊपर जो केवल कक्षा तक पहुँचने में ही लग चुके हैं। क्या आपका ऑन-ऑर्बिट बजट इस स्थानांतरण को कवर करता है?"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_rtm_visviva",
+  "en": "Orbits aren't all circles. Vis-viva gives your speed at any point of any orbit from just two numbers — where you are, and how big the orbit is. It's the tool every transfer is built from.",
+  "cur": "सभी कक्षाएँ वृत्त नहीं होतीं। Vis-viva केवल दो संख्याओं से किसी भी कक्षा के किसी भी बिंदु पर आपकी गति बताता है — आप कहाँ हैं, और कक्षा कितनी बड़ी है। यह वह उपकरण है जिससे हर ट्रांसफर बनाया जाता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_canvas_aria",
+  "en": "Canvas — spatial formula workspace. Drag cards, wire outputs to inputs, promote a subgraph to a notebook.",
+  "cur": "कैनवास — स्थानिक सूत्र कार्यक्षेत्र। कार्ड ड्रैग करें, आउटपुट को इनपुट से जोड़ें, सबग्राफ को नोटबुक में प्रचारित करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_canvas_blocked_upstream",
+  "en": "A wired source card has no honest result — fix it upstream first.",
+  "cur": "तार वाले स्रोत कार्ड का कोई मान्य परिणाम नहीं है — पहले इसे ऊपर की ओर ठीक करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_canvas_blocked_wire",
+  "en": "A wire on this card names an output or unit its source doesn't provide.",
+  "cur": "इस कार्ड पर एक तार ऐसा आउटपुट या इकाई नाम देता है जो इसका स्रोत प्रदान नहीं करता।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_canvas_cycle",
+  "en": "This card is part of a wiring loop — its result would feed itself. Break one wire.",
+  "cur": "यह कार्ड एक तारों के लूप का हिस्सा है — इसका परिणाम स्वयं को फीड करेगा। एक तार तोड़ें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_canvas_palette_aria",
+  "en": "Formula palette — every formula in the registry",
+  "cur": "सूत्र पैलेट — रजिस्ट्री का हर सूत्र"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_canvas_promote_summary",
+  "en": "Promotes {total} cards — {upstream} wired upstream dependencies included (a wired input is never frozen into a default).",
+  "cur": "{total} कार्ड प्रचारित करता है — {upstream} तार वाली ऊपरी ओर की निर्भरताएं शामिल हैं (एक तार वाला इनपुट कभी डिफ़ॉल्ट में जमा नहीं होता)।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_canvas_readonly_note",
+  "en": "The canvas is read-only on touch devices — wiring needs a pointer. Pan, zoom, and tap a card to focus it.",
+  "cur": "कैनवास स्पर्श उपकरणों पर केवल-पढ़ने के लिए है — तारों को पॉइंटर की आवश्यकता है। पैन करें, ज़ूम करें, और किसी कार्ड पर टैप करके इसे फोकस करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_canvas_upstream_cycle",
+  "en": "A card upstream of this one sits in a wiring loop — this result is blocked until the loop breaks.",
+  "cur": "इस के ऊपरी ओर का एक कार्ड तारों के लूप में बैठा है — यह परिणाम लूप टूटने तक अवरुद्ध है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_promote_reason_cycle",
+  "en": "These cards wire into each other in a loop. A notebook runs top-to-bottom, so a cycle can't be expressed — break one wire and retry.",
+  "cur": "ये कार्ड एक-दूसरे से लूप में जुड़े हुए हैं। नोटबुक ऊपर-से-नीचे चलती है, इसलिए साइकिल व्यक्त नहीं की जा सकती — एक तार तोड़ें और फिर से कोशिश करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_promote_reason_too_big",
+  "en": "This selection (with its wired dependencies) is larger than a notebook can hold. Promote a smaller subgraph.",
+  "cur": "यह चयन (अपनी वायर्ड निर्भरताओं के साथ) नोटबुक में रखे जाने से बड़ा है। एक छोटे सबग्राफ को प्रमोट करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ui_load_error_link",
+  "en": "Couldn't load that shared notebook link — showing the lesson instead.",
+  "cur": "वह साझा नोटबुक लिंक लोड नहीं हो सका — इसके बजाय पाठ दिखाया जा रहा है।"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_ui_subtitle",
+  "en": "First-principles physics, one goal at a time",
+  "cur": "मूल सिद्धांतों की भौतिकी, एक बार में एक लक्ष्य"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_card_earth_desc",
+  "en": "Active satellites, GPS, ISS, JWST — everything in our backyard.",
+  "cur": "सक्रिय उपग्रह, GPS, आईएसएस, JWST - हमारे पिछवाड़े में सब कुछ।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_card_essays_desc",
+  "en": "Generation ships, new propulsion, the body in the dark — where all this is going.",
+  "cur": "जनरेशन जहाज़, नई प्रणोदन, अंधकार में शरीर — यह सब कहाँ जा रहा है।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_card_explore_desc",
+  "en": "Zoom out through eight nested scales — solar system, galaxy, Local Group, the cosmic web — every one to real distance.",
+  "cur": "आठ नेस्टेड स्केल के माध्यम से जूम आउट करें — सौर मंडल, आकाशगंगा, स्थानीय समूह, ब्रह्मांडीय जाल — हर एक वास्तविक दूरी पर।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_card_fleet_desc",
+  "en": "The spacecraft themselves — most of the historical and current fleet, with crews, payloads, and outcomes.",
+  "cur": "अंतरिक्ष यान स्वयं - अधिकांश ऐतिहासिक और वर्तमान बेड़े, चालक दलों, पेलोड और परिणामों के साथ।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_card_fly_desc",
+  "en": "Walk a mission's arc phase by phase, with ∆v and timing live in the HUD.",
+  "cur": "चरण के द्वारा एक मिशन के आर्क चरण को चलना, जिसमें HUD में V और समय रहते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_card_iss_desc",
+  "en": "18 pressurised modules, every visiting vehicle, full station geometry.",
+  "cur": "18 दबावित मॉड्यूल, हर विज़िटिंग वाहन, पूर्ण स्टेशन ज्यामिति।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_card_lab_desc",
+  "en": "A hands-on notebook: force, weight, thrust, the rocket equation — each rule one you can watch work, building up to launching a rocket.",
+  "cur": "एक व्यावहारिक नोटबुक: बल, भार, थ्रस्ट, रॉकेट समीकरण — हर नियम को आप काम करते देख सकते हैं, जो रॉकेट लॉन्च करने तक ले जाता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_card_live_desc",
+  "en": "The permanent ISS stream and any launches happening now or soon — watched in-app, credited to the official channels.",
+  "cur": "स्थायी आईएसएस प्रवाह और अभी या शीघ्र ही होने वाले किसी भी प्रक्षेपण — ऐप में देखें, आधिकारिक चैनलों को श्रेय दिया गया।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_card_mars_desc",
+  "en": "27 missions plotted on a real DEM — Curiosity's path, Perseverance's cache, the lot.",
+  "cur": "27 मिशन असली DEM पर साजिश की - Curiosity का पथ, Perseverance का कैश, बहुत कुछ।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_card_missions_desc",
+  "en": "Real journeys to other worlds — Sputnik to Artemis II, with flight data for every one.",
+  "cur": "अन्य दुनिया के लिए वास्तविक यात्रा - Sputnik से Artemis II, हर एक के लिए उड़ान डेटा के साथ।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_card_moon_desc",
+  "en": "Every Apollo landing site, every Soviet rover, every active orbital asset.",
+  "cur": "हर Apollo लैंडिंग साइट, हर सोवियत रोवर, हर सक्रिय कक्षीय परिसंपत्ति।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_card_plan_desc",
+  "en": "Porkchop diagrams for any destination — see when nature makes the trip cheap.",
+  "cur": "किसी भी गंतव्य के लिए पोर्कचप आरेख - देखें कि प्रकृति यात्रा को सस्ते बनाता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_card_programs_desc",
+  "en": "Vostok to Artemis, Apollo to Tiangong — each national arc, first flight to future.",
+  "cur": "Vostok से Artemis, Apollo से Tiangong — हर राष्ट्रीय चाप, पहली उड़ान से भविष्य तक।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_card_science_desc",
+  "en": "73 sections across 10 tabs — orbital mechanics, propulsion, observation, life in space, and more. Every formula, every named law, hand-coded diagrams.",
+  "cur": "10 टैब पर 73 अनुभाग - कक्षीय यांत्रिकी, प्रणोदन, अवलोकन, अंतरिक्ष में जीवन, और अधिक। प्रत्येक सूत्र, प्रत्येक नामित कानून, हाथ से कोडित आरेख।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_card_tiangong_desc",
+  "en": "China's station — every module, every visiting Shenzhou and Tianzhou.",
+  "cur": "चीन का स्टेशन — हर मॉड्यूल, हर Shenzhou और Tianzhou पर जाते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_card_venus_desc",
+  "en": "Under the cloud deck — where the Venera and Vega landers touched down and survived the furnace, if only for hours.",
+  "cur": "बादल के डेक के नीचे — जहाँ Venera और Vega लैंडर उतरे थे और केवल कुछ घंटों के लिए भट्टी से बच गए थे।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_footer_about",
+  "en": "Orrery is open-source under the MIT license. No accounts, no advertising, and nothing shared with a third party. It does measure how the site is used — anonymous, cookieless, self-hosted — and you can switch that off. Three functional cookies remember your language, your place in the tour, and that choice. Details on the {privacy} page.",
+  "cur": "Orrery MIT लाइसेंस के तहत ओपन-सोर्स है। कोई खाता नहीं, कोई विज्ञापन नहीं, और कोई तीसरे पक्ष के साथ कुछ साझा नहीं। यह मापता है कि साइट का उपयोग कैसे किया जाता है — गुमनाम, कुकी-रहित, स्व-होस्ट किया गया — और आप इसे बंद कर सकते हैं। तीन कार्यात्मक कुकीज़ आपकी भाषा, दौरे में आपकी जगह, और उस पसंद को याद रखती हैं। {privacy} पृष्ठ पर विवरण।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_hero_aria",
+  "en": "Orrery — a stylised solar system with a highlighted transfer trajectory",
+  "cur": "Orrery — एक शैलीबद्ध सौर मंडल जिसमें एक हाइलाइट किया गया स्थानांतरण प्रक्षेपवक्र है"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_hero_subhead",
+  "en": "Real orbital mechanics. Curated mission catalogue. 14 languages.",
+  "cur": "वास्तविक कक्षीय यांत्रिकी। क्यूरेटेड मिशन कैटलॉग। 14 भाषाएं।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_meta_description",
+  "en": "Browser-based solar system explorer, mission simulator, and encyclopedia. Real orbital mechanics. Curated mission catalogue. 14 languages. Open source, no accounts, no ads, no third-party trackers.",
+  "cur": "ब्राउज़र-आधारित सौर प्रणाली अन्वेषक, मिशन सिम्युलेटर, और विश्वकोश। वास्तविक कक्षीय यांत्रिकी। क्यूरेटेड मिशन सूची। 14 भाषाएं। ओपन सोर्स, कोई खाता नहीं, कोई विज्ञापन नहीं, कोई तीसरे पक्ष ट्रैकर नहीं।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_page_title",
+  "en": "Orrery · A solar system explorer for the browser",
+  "cur": "Orrery · ब्राउज़र के लिए एक सौर प्रणाली एक्सप्लोरर"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_section_tour_p1",
+  "en": "Start at /explore. Spin the solar system. Click any planet to read its orbital elements — semi-major axis, eccentricity, true anomaly. The numbers are live.",
+  "cur": "/explore पर शुरू करें। सौर प्रणाली स्पिन करें। अपने कक्षीय तत्वों को पढ़ने के लिए किसी भी ग्रह पर क्लिक करें - सेमी-माजोर अक्ष, विलक्षणता, असली अनामाली। नंबर लाइव हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_section_tour_p2",
+  "en": "Find a mission you care about in /missions — Curiosity, Apollo 11, anything from Sputnik onward. Read its FLIGHT tab to see the actual ∆v budget broken down across the five phases of every spaceflight: launch, trans-X injection, cruise, orbit insertion, EDL.",
+  "cur": "/missions में एक ऐसा मिशन खोजें जिसमें आप रुचि रखते हैं — Curiosity, Apollo 11, Sputnik के बाद से कुछ भी। इसके FLIGHT टैब को पढ़ें ताकि आप वास्तविक ∆v बजट को हर अंतरिक्ष उड़ान के पाँच चरणों में विभाजित देख सकें: लॉन्च, ट्रांस-X इंजेक्शन, क्रूज़, ऑर्बिट इंसर्शन, EDL।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_section_tour_p3",
+  "en": "When something doesn't make sense — when a number on the HUD or a label on a chart confuses you — every term is linked to /science. The encyclopedia is meant to be read in order or hopped through depending on what you need.",
+  "cur": "जब कुछ समझ में नहीं आता - जब HUD या चार्ट पर एक लेबल आपको भ्रमित करता है - हर शब्द को /science से जोड़ा जाता है। एनसाइक्लोपीडिया का मतलब है कि आपको क्या ज़रूरत है, इसके आधार पर क्रम में पढ़ा जाना चाहिए या उसे ढूंढना चाहिए।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_section_tour_p4",
+  "en": "/plan and /fly are the deeper end. /plan computes porkchop diagrams for any destination — pick a launch year, see when the windows open. /fly takes a mission and walks you through its trajectory phase by phase. The HUD shows everything in real units.",
+  "cur": "/ प्लान और / फ्लाई गहरी अंत हैं। / योजना किसी भी गंतव्य के लिए पोर्चोप आरेख की गणना करती है - एक लॉन्च वर्ष चुनें, देखें कि विंडोज कब खुला है। /fly एक मिशन लेता है और चरण द्वारा अपने प्रक्षेपवक्र चरण के माध्यम से चल रहा है। HUD वास्तविक इकाइयों में सब कुछ दिखाता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_section_what_p1",
+  "en": "Orrery is a browser-based solar system explorer, mission simulator, and encyclopedia. Real orbital mechanics under the hood — Keplerian two-body propagation, Lambert solvers for transfer trajectories, the same equations real flight teams use. No backend. No accounts. Runs offline once it's loaded.",
+  "cur": "Orrery एक ब्राउज़र आधारित सौर प्रणाली खोजकर्ता, मिशन सिम्युलेटर और विश्वकोश है। हुड के तहत रियल ऑर्बिटल मैकेनिक्स - Keplerian दो-बॉडी प्रोपेगेशन, Lambert सॉलर्स ट्रांसफर ट्रेजेक्टरीज़ के लिए, वही समीकरण वास्तविक उड़ान टीमों का उपयोग करते हैं। कोई बैकएंड नहीं। कोई खाता नहीं जब यह लोड हो जाता है तो ऑफ़लाइन चला जाता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_section_what_p2",
+  "en": "It's not a flight planner. There's no API to NORAD, no real-time TLE updates, no live launch-window predictions. The numbers are physically correct but stylised; the missions in the catalogue are real but their flight arcs are teaching models, not propagated state vectors.",
+  "cur": "यह कोई उड़ान योजनाकार नहीं है। NORAD के लिए कोई API नहीं है, कोई वास्तविक समय TLE अपडेट नहीं है, कोई लाइव प्रक्षेपण-विंडो पूर्वानुमान नहीं है। संख्याएँ भौतिक रूप से सही हैं लेकिन शैलीबद्ध हैं; कैटलॉग में मिशन वास्तविक हैं लेकिन उनके उड़ान चाप शिक्षण मॉडल हैं, प्रसारित अवस्था वेक्टर नहीं।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_section_what_p3",
+  "en": "Designed for everyone — curious lay people, students, space enthusiasts, mission planners who want a sandbox. Built for the browser so it works on any device with a screen. Open source under MIT. The catalogue covers real missions across the inner solar system plus the Moon and four outer-planet destinations, and a fleet inventory of the spacecraft that flew them.",
+  "cur": "सभी के लिए डिज़ाइन किया गया — जिज्ञासु सामान्य लोग, छात्र, अंतरिक्ष उत्साही, मिशन योजनाकार जो एक सैंडबॉक्स चाहते हैं। ब्राउज़र के लिए निर्मित ताकि यह स्क्रीन वाले किसी भी डिवाइस पर काम करे। MIT के तहत ओपन सोर्स। यह कैटलॉग आंतरिक सौर मंडल भर में वास्तविक मिशन, चंद्रमा और चार बाहरी-ग्रह गंतव्य, और उन्हें उड़ाने वाले अंतरिक्ष यान का एक बेड़ा इन्वेंटरी को कवर करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_section_why_p1",
+  "en": "The project started during the lead-up to Artemis II. NASA was about to send four humans around the Moon for the first time since 1972, and the public conversation around it was almost entirely uninformed. People didn't know what 'free-return trajectory' meant. They didn't know why Mars launch windows happen every 26 months. They didn't know the rocket equation.",
+  "cur": "यह परियोजना Artemis II की तैयारी के दौरान शुरू हुई। NASA 1972 के बाद पहली बार चार मनुष्यों को चाँद के चारों ओर भेजने वाला था, और इसके बारे में जनता का संवाद लगभग पूरी तरह से अनभिज्ञ था। लोग नहीं जानते थे कि 'free-return trajectory' का क्या मतलब है। वे नहीं जानते थे कि मंगल लॉन्च विंडो हर 26 महीने में क्यों होती है। वे रॉकेट समीकरण को नहीं जानते थे।"
+ },
+ {
+  "rel": "messages",
+  "at": "landing_section_why_p2",
+  "en": "Orrery is the answer to that. Spaceflight is built on physics that's been understood since Newton. Most of what looks magical is actually visible — you can see the orbits, you can compute the transfer arcs, you can read every formula. The simulator is the front door; the encyclopedia is the textbook; together they're the project.",
+  "cur": "Orrery इसका जवाब है। स्पेसफ्लाइट भौतिकी पर बनाया गया है जिसे न्यूटन के बाद से समझा गया है। अधिकांश जो जादुई दिखता है वास्तव में दिखाई देता है - आप कक्षाओं को देख सकते हैं, आप स्थानांतरण चापों की गणना कर सकते हैं, आप प्रत्येक सूत्र को पढ़ सकते हैं। सिम्युलेटर सामने का दरवाजा है; विश्वकोश पाठ्यपुस्तक है; साथ में वे परियोजना हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "launches_citation_gcat_label",
+  "en": "General Catalog of Artificial Space Objects (GCAT)",
+  "cur": "कृत्रिम अंतरिक्ष वस्तुओं की सामान्य सूची (GCAT)"
+ },
+ {
+  "rel": "messages",
+  "at": "launches_citation_lead",
+  "en": "Launch data sourced agency-first from NASA, SpaceX, ESA, and Jonathan McDowell's",
+  "cur": "प्रक्षेपण डेटा NASA, SpaceX, ESA, और Jonathan McDowell के सूत्रों से प्राथमिकता के साथ एकत्र किया गया है"
+ },
+ {
+  "rel": "messages",
+  "at": "launches_empty",
+  "en": "No launches in this view. Try widening the filter.",
+  "cur": "इस दृष्टिकोण में कोई लॉन्च नहीं हुआ। फिल्टर को चौड़ा करने की कोशिश करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "launches_page_subtitle",
+  "en": "Upcoming and historic global spaceflight launches. Agency-first sourcing with provenance per row.",
+  "cur": "आगामी और ऐतिहासिक वैश्विक अंतरिक्ष उड़ान प्रक्षेपण। एजेंसी-पहले प्रति पंक्ति सिद्धि के साथ सोर्सिंग।"
+ },
+ {
+  "rel": "messages",
+  "at": "learn_hub_intro",
+  "en": "The ideas behind the hardware — long-form essays on where spaceflight is heading, and plain-language explainers of the physics that governs every orbit. Begin with the big picture, or the first principles.",
+  "cur": "हार्डवेयर के पीछे के विचार — अंतरिक्ष उड़ान कहाँ जा रही है इस पर लंबे निबंध, और हर कक्षा को नियंत्रित करने वाली भौतिकी की सरल भाषा में व्याख्या। बड़ी तस्वीर से, या पहले सिद्धांतों से शुरू करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "lib_load_failed",
+  "en": "Failed to load the mission library. Try refreshing the page.",
+  "cur": "मिशन पुस्तकालय को लोड करने में विफल रहा। पेज को ताज़ा करने की कोशिश करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "library_episodes_intro",
+  "en": "Read every episode without playing the tour. Each transcript links to the same prose narrated in the AudioOverlay. Sources are the primary editorial references behind each script.",
+  "cur": "टूर चलाए बिना हर एपिसोड पढ़ें। प्रत्येक ट्रांसक्रिप्ट AudioOverlay में सुनाए गए समान गद्य से जुड़ता है। स्रोत प्रत्येक स्क्रिप्ट के पीछे प्राथमिक संपादकीय संदर्भ हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "library_episodes_meta",
+  "en": "{count} episodes · {duration} total · en-US",
+  "cur": "{count} एपिसोड · {duration} कुल · en-US"
+ },
+ {
+  "rel": "messages",
+  "at": "library_episodes_meta_description",
+  "en": "Read every Orrery audio episode without playing the tour. Transcripts, anchored route, and editorial sources for each of the 33 episodes.",
+  "cur": "टूर चलाए बिना सभी 33 Orrery ऑडियो एपिसोड पढ़ें। प्रत्येक एपिसोड के लिए ट्रांसक्रिप्ट, एंकर्ड रूट और संपादकीय स्रोत।"
+ },
+ {
+  "rel": "messages",
+  "at": "library_intro_body_1",
+  "en": "Every external link Orrery sends you to lives here. Each entry shows where it goes, in what language, what kind of source it is, and when our link checker last saw it alive.",
+  "cur": "प्रत्येक बाहरी लिंक Orrery आपको यहां रहने के लिए भेजती है। प्रत्येक प्रविष्टि से पता चलता है कि यह कहाँ जाता है, किस भाषा में, यह किस तरह का स्रोत है, और जब हमारे लिंक चेकर ने इसे लाइव देखा।"
+ },
+ {
+  "rel": "messages",
+  "at": "library_intro_body_2",
+  "en": "Like the bill of materials at /credits, this page exists to keep us honest about who gets the click. We send you to operator portals when one exists, native-language Wikipedia when the mission was flown by a non-English-speaking agency, and fall back to English Wikipedia when nothing else covers the entity.",
+  "cur": "/credits पर दी गई सामग्री-सूची की तरह, यह पृष्ठ हमें इस बारे में ईमानदार रखने के लिए है कि क्लिक किसे मिलता है। जहाँ ऑपरेटर का पोर्टल मौजूद है, हम आपको वहाँ भेजते हैं; जब मिशन किसी गैर-अंग्रेज़ीभाषी एजेंसी ने उड़ाया था, तो उसकी अपनी भाषा के Wikipedia पर; और जब किसी और स्रोत में उस इकाई का ज़िक्र नहीं होता, तब अंग्रेज़ी Wikipedia पर।"
+ },
+ {
+  "rel": "messages",
+  "at": "library_totals",
+  "en": "{links} links · {sources} sources · {languages} languages · {entities} entities",
+  "cur": "{links} लिंक · {sources} स्रोत · {languages} भाषाएँ · {entities} इकाइयाँ"
+ },
+ {
+  "rel": "messages",
+  "at": "link_credit_language_title",
+  "en": "Language of the destination page (BCP-47).",
+  "cur": "गंतव्य पृष्ठ (BCP-47) की भाषा।"
+ },
+ {
+  "rel": "messages",
+  "at": "link_credit_verified_title",
+  "en": "Date when the link was last reachable from Orrery's link-checker (ADR-051).",
+  "cur": "तारीख जब लिंक Orrery के लिंक-चेकर (ADR-051) से आखिरी पहुंची थी।"
+ },
+ {
+  "rel": "messages",
+  "at": "live_intro",
+  "en": "Real-time views and broadcasts from space — the permanent ISS stream, plus any launches happening now or soon.",
+  "cur": "अंतरिक्ष से रीयल-टाइम दृश्य और प्रसारण — स्थायी आईएसएस स्ट्रीम, साथ ही कोई भी लॉन्च जो अभी या जल्द ही हो रहा है।"
+ },
+ {
+  "rel": "messages",
+  "at": "live_iss_unavailable",
+  "en": "The ISS live stream is currently unavailable.",
+  "cur": "आईएसएस लाइव स्ट्रीम वर्तमान में उपलब्ध नहीं है।"
+ },
+ {
+  "rel": "messages",
+  "at": "mars_layer_tip_orbit_rings",
+  "en": "Show or hide orbital ring lines (spacecraft stay visible)",
+  "cur": "शो या छुपा कक्षीय अंगूठी लाइनों (स्पेसक्राफ्ट दृश्यमान)"
+ },
+ {
+  "rel": "messages",
+  "at": "mars_layer_tip_orbiters",
+  "en": "Show or hide active and historical Mars orbiters",
+  "cur": "सक्रिय और ऐतिहासिक मंगल कक्षों को दिखाएं या छुपाएं"
+ },
+ {
+  "rel": "messages",
+  "at": "mars_layer_tip_surface",
+  "en": "Show or hide landers, rovers, and crashed surface vehicles",
+  "cur": "लैंडर्स, रोवर्स और दुर्घटनाग्रस्त सतह के वाहनों को दिखाएं या छुपाएं"
+ },
+ {
+  "rel": "messages",
+  "at": "mars_layer_tip_traverses",
+  "en": "Show or hide rover traverse paths (Curiosity, Perseverance, Opportunity, Spirit)",
+  "cur": "शो या छिपाना रोवर traverse पथ (Curiosity, Perseverance, Opportunity, Spirit)"
+ },
+ {
+  "rel": "messages",
+  "at": "mars_load_failed",
+  "en": "Failed to load Mars sites. Please refresh.",
+  "cur": "मंगल साइटों को लोड करने में विफल रहा। कृपया ताज़ा करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "mars_meta_description",
+  "en": "Every artefact humanity has placed on Mars — landers, rovers, and active orbiters — on a navigable 3D globe with full mission history.",
+  "cur": "हर कलाकृति मानवता को मंगल ग्रह पर रखा गया है - लैंडर्स, रोवर्स और सक्रिय ऑर्बिटर - पूर्ण मिशन इतिहास के साथ एक नेविगेट करने योग्य 3 डी ग्लोब पर।"
+ },
+ {
+  "rel": "messages",
+  "at": "microgravity_legend_port_starboard_desc",
+  "en": "Left and right of the velocity vector. Truss segments named P1/P3/P4/P5 (port) and S1/S3/S4/S5 (starboard) follow this convention.",
+  "cur": "वेग वेक्टर के बाएं और दाएं। ट्रस सेगमेंट का नाम P1 / P3 / P4 / P5 (port) और S1 / S3 / S4 / S5 (starboard) है।"
+ },
+ {
+  "rel": "messages",
+  "at": "microgravity_legend_prograde_retrograde_desc",
+  "en": "Direction of orbital motion + its opposite. Reboost burns fire prograde; deboost burns fire retrograde.",
+  "cur": "कक्षीय गति की दिशा + इसके विपरीत। Reboost आग प्रोग्रेड को जला देता है; deboost आग retrograde को जला देता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "microgravity_legend_zenith_nadir_desc",
+  "en": "Up (away from Earth) and down (toward Earth). Matters for solar-array pointing + radiator placement.",
+  "cur": "ऊपर (पृथ्वी से दूर) और नीचे (पृथ्वी)। सौर-रे बिंदु + रेडिएटर प्लेसमेंट के मामले।"
+ },
+ {
+  "rel": "messages",
+  "at": "moon_canvas_label",
+  "en": "Interactive Moon map with landing sites. Click any site marker for details.",
+  "cur": "इंटरेक्टिव मून नक्शा लैंडिंग साइटों के साथ। विवरण के लिए किसी भी साइट मार्कर पर क्लिक करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "moon_layer_tip_orbit_rings",
+  "en": "Show or hide orbital ring lines (spacecraft stay visible)",
+  "cur": "शो या छुपा कक्षीय अंगूठी लाइनों (स्पेसक्राफ्ट दृश्यमान)"
+ },
+ {
+  "rel": "messages",
+  "at": "moon_layer_tip_orbiters",
+  "en": "Show or hide active and historical lunar orbiters",
+  "cur": "सक्रिय और ऐतिहासिक चंद्र कक्षाओं को दिखाएं या छुपाएं"
+ },
+ {
+  "rel": "messages",
+  "at": "moon_layer_tip_surface",
+  "en": "Show or hide landers, rovers, and crashed surface vehicles",
+  "cur": "लैंडर्स, रोवर्स और दुर्घटनाग्रस्त सतह के वाहनों को दिखाएं या छुपाएं"
+ },
+ {
+  "rel": "messages",
+  "at": "mp_flight_caveat_reconstructed",
+  "en": "Reconstructed flight data — values approximate.",
+  "cur": "पुनर्निर्मित उड़ान डेटा - मूल्य लगभग।"
+ },
+ {
+  "rel": "messages",
+  "at": "mp_flight_caveat_sparse",
+  "en": "Sparse public records — some values unavailable.",
+  "cur": "Sparse public अभिलेख - कुछ मान अनुपलब्ध हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "mp_flight_caveat_unknown",
+  "en": "Flight data not yet researched for this mission.",
+  "cur": "उड़ान डेटा अभी तक इस मिशन के लिए शोध नहीं किया गया है।"
+ },
+ {
+  "rel": "messages",
+  "at": "mp_gallery_credit",
+  "en": "Mission imagery via Wikimedia Commons and the NASA Images API. Originals © the operating agency (NASA, ESA, JAXA, ISRO, CNSA, Roscosmos, MBRSC, SpaceX, Blue Origin, etc.) and reused under public-domain or Creative Commons (CC BY / CC BY-SA) terms — see each Commons file page for full attribution.",
+  "cur": "Wikimedia Commons और NASA Images API के माध्यम से मिशन की छवियाँ। मूल छवियाँ © संचालन एजेंसी (NASA, ESA, JAXA, इसरो, CNSA, Roscosmos, MBRSC, SpaceX, Blue Origin, आदि) की हैं और जनहित या Creative Commons (CC BY / CC BY-SA) शर्तों के तहत पुनः उपयोग की गई हैं — संपूर्ण श्रेय के लिए प्रत्येक Commons फ़ाइल पृष्ठ देखें।"
+ },
+ {
+  "rel": "messages",
+  "at": "mp_gallery_credit_agency",
+  "en": "Mission imagery © {agency_name}, sourced via Wikimedia Commons and the NASA Images API. Reused under public-domain or Creative Commons (CC BY / CC BY-SA) terms — see each Commons file page for full attribution.",
+  "cur": "मिशन इमेजरी © {agency_name}, Wikimedia Commons और NASA Images API के माध्यम से स्रोत। सार्वजनिक-डोमेन या Creative Commons (CC BY / CC BY-SA) शर्तों के तहत पुनः उपयोग किया गया — संपूर्ण श्रेय के लिए प्रत्येक Commons फ़ाइल पेज देखें।"
+ },
+ {
+  "rel": "messages",
+  "at": "mp_gallery_empty",
+  "en": "No photos available for this mission yet.",
+  "cur": "इस मिशन के लिए अभी तक कोई फोटो उपलब्ध नहीं है।"
+ },
+ {
+  "rel": "messages",
+  "at": "mp_no_links",
+  "en": "No external links recorded for this mission.",
+  "cur": "इस मिशन के लिए कोई बाहरी लिंक दर्ज नहीं किया गया है।"
+ },
+ {
+  "rel": "messages",
+  "at": "nav_science_lens_title",
+  "en": "Show the physics layer (orbital mechanics overlays)",
+  "cur": "भौतिकी परत दिखाएँ (कक्षीय यांत्रिकी ओवरले)"
+ },
+ {
+  "rel": "messages",
+  "at": "no_endorsement_disclaimer",
+  "en": "Use of agency imagery here does not imply endorsement. Trademarks remain property of their respective owners.",
+  "cur": "यहां एजेंसी इमेजरी का उपयोग समर्थन नहीं करता है। ट्रेडमार्क अपने संबंधित मालिकों की संपत्ति रखते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "observatory_caption",
+  "en": "One signature image per observatory in Orrery's fleet — click any to drop into that observatory's full gallery + technical panel. Listed by first-flight date, so the strip reads as a timeline of how our cosmic vision has expanded.",
+  "cur": "Orrery के बेड़े में प्रत्येक वेधशाला की एक विशिष्ट छवि — किसी भी वेधशाला की पूर्ण गैलरी + तकनीकी पैनल में जाने के लिए क्लिक करें। पहली उड़ान की तिथि के अनुसार सूचीबद्ध, इसलिए यह पट्टी एक समयरेखा के रूप में दिखाती है कि हमारी ब्रह्मांडीय दृष्टि कैसे विस्तारित हुई है।"
+ },
+ {
+  "rel": "messages",
+  "at": "observatory_showcase_aria",
+  "en": "Observatory showcase — one hero image per orbital observatory",
+  "cur": "वेधशाला प्रदर्शनी — प्रत्येक कक्षीय वेधशाला के लिए एक मुख्य चित्र"
+ },
+ {
+  "rel": "messages",
+  "at": "panel_belt_no_spacecraft",
+  "en": "No spacecraft have visited this belt yet.",
+  "cur": "इस बेल्ट पर अभी तक कोई अंतरिक्ष यान नहीं गया है।"
+ },
+ {
+  "rel": "messages",
+  "at": "panel_dist_row",
+  "en": "{mkm} M km from Sun · rotation {rot} days",
+  "cur": "सूर्य से {mkm} M km · घूर्णन {rot} दिन"
+ },
+ {
+  "rel": "messages",
+  "at": "panel_gallery_credit",
+  "en": "Imagery via Wikimedia Commons and the NASA Images API. Originals © the operating agency (NASA, ESA, JAXA, CSA, Roscosmos, CNSA, ISRO, MBRSC, etc.) and reused under public-domain or Creative Commons (CC BY / CC BY-SA) terms — see each Commons file page for full attribution.",
+  "cur": "Wikimedia Commons और NASA Images API के माध्यम से छवियाँ। मूल © संचालन एजेंसी (NASA, ESA, JAXA, CSA, Roscosmos, CNSA, इसरो, MBRSC, आदि) की हैं और सार्वजनिक-डोमेन या Creative Commons (CC BY / CC BY-SA) शर्तों के तहत पुनः उपयोग की गई हैं — पूर्ण श्रेय के लिए प्रत्येक Commons फ़ाइल पृष्ठ देखें।"
+ },
+ {
+  "rel": "messages",
+  "at": "panel_gallery_credit_agency",
+  "en": "Imagery © {agency_name}, sourced via Wikimedia Commons and the NASA Images API. Reused under public-domain or Creative Commons (CC BY / CC BY-SA) terms — see each Commons file page for full attribution.",
+  "cur": "चित्र © {agency_name}, Wikimedia Commons और NASA Images API के माध्यम से प्राप्त। सार्वजनिक-डोमेन या Creative Commons (CC BY / CC BY-SA) शर्तों के तहत पुनः उपयोग — पूर्ण विवरण के लिए प्रत्येक Commons फ़ाइल पृष्ठ देखें।"
+ },
+ {
+  "rel": "messages",
+  "at": "panel_no_links",
+  "en": "No external links available for this entry yet.",
+  "cur": "इस प्रविष्टि के लिए अभी तक कोई बाहरी लिंक उपलब्ध नहीं है।"
+ },
+ {
+  "rel": "messages",
+  "at": "panel_orbit_shape_meta",
+  "en": "ORBIT SHAPE · e={e} · perihelion vs aphelion ×{ratio}",
+  "cur": "कक्षा आकार · e={e} · उपसूर बनाम अपसूर ×{ratio}"
+ },
+ {
+  "rel": "messages",
+  "at": "panel_satellite_gallery_empty",
+  "en": "No gallery images sourced yet for this satellite.",
+  "cur": "इस उपग्रह के लिए अभी तक कोई गैलरी चित्र उपलब्ध नहीं हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "panel_satellite_library_empty",
+  "en": "No library entries sourced yet for this satellite.",
+  "cur": "इस उपग्रह के लिए अभी तक कोई पुस्तकालय प्रविष्टि उपलब्ध नहीं है।"
+ },
+ {
+  "rel": "messages",
+  "at": "panel_source_iau",
+  "en": "Source: IAU · JPL Planetary Fact Sheets · J2000 epoch",
+  "cur": "स्रोत: IAU · JPL Planetary Fact Sheets · J2000 epoch"
+ },
+ {
+  "rel": "messages",
+  "at": "panorama_compass_aria_generic",
+  "en": "Compass — orientation relative to panorama start",
+  "cur": "दिग्दर्शक — पैनोरमा के आरम्भ बिंदु के सापेक्ष दिशा"
+ },
+ {
+  "rel": "messages",
+  "at": "panorama_compass_aria_template",
+  "en": "Compass — facing {cardinal} relative to {direction}",
+  "cur": "दिग्दर्शक — {direction} के सापेक्ष {cardinal} की ओर मुख"
+ },
+ {
+  "rel": "messages",
+  "at": "panorama_mode_aria_label",
+  "en": "Ground-view panorama mode — press ESC to return to orbit",
+  "cur": "ज़मीनी पैनोरमा मोड — कक्षा पर लौटने के लिए ESC दबाएँ"
+ },
+ {
+  "rel": "messages",
+  "at": "panorama_no_data_body",
+  "en": "No transmitted data covers this region — the visible pattern is synthetic fill honouring the historical artifact.",
+  "cur": "प्रेषित डेटा इस क्षेत्र को कवर नहीं करता — दिखाई देने वाला पैटर्न ऐतिहासिक अवशेष का सम्मान करते हुए सिंथेटिक भराव है।"
+ },
+ {
+  "rel": "messages",
+  "at": "panorama_synthetic_nadir_body",
+  "en": "This region below the horizon was not captured (or is blocked by the lander deck). The visible pattern is synthetic.",
+  "cur": "क्षितिज के नीचे का यह क्षेत्र दर्ज नहीं किया गया (या लैंडर डेक से बाधित है)। दिखाई देने वाला पैटर्न सिंथेटिक है।"
+ },
+ {
+  "rel": "messages",
+  "at": "panorama_synthetic_sky_body",
+  "en": "This region of the sky was not photographed at this site. The visible pattern is synthetic.",
+  "cur": "इस स्थान पर आकाश का यह क्षेत्र फ़ोटोग्राफ़ नहीं किया गया था। दिखाई देने वाला पैटर्न सिंथेटिक है।"
+ },
+ {
+  "rel": "messages",
+  "at": "panorama_tour_play_aria",
+  "en": "Play guided tour through panorama annotations",
+  "cur": "पैनोरमा टिप्पणियों का निर्देशित दौरा चलाएँ"
+ },
+ {
+  "rel": "messages",
+  "at": "patches_footer",
+  "en": "Patches are sourced the same way as every image in Orrery — free licence, no watermark, authentic only. What we couldn’t source is on the {sourcing}. Full provenance lives on the {colophon}.",
+  "cur": "पैच उसी तरह स्रोतित हैं जैसे Orrery में हर छवि — मुफ्त लाइसेंस, कोई वॉटरमार्क नहीं, केवल प्रामाणिक। जो हम स्रोतित नहीं कर सके वह {sourcing} पर है। पूर्ण उत्पत्ति {colophon} पर है।"
+ },
+ {
+  "rel": "messages",
+  "at": "patches_lede",
+  "en": "The patches crews wore and programs flew under. Every one here is an authentic, public-domain NASA design — sourced from Wikimedia Commons, credited in full. Where a program never had a patch, or none exists under a free licence, we say so on the {link}.",
+  "cur": "वे पैच जो चालक दल ने पहने और कार्यक्रमों ने उड़ाए। यहाँ हर एक प्रामाणिक, सार्वजनिक-डोमेन NASA डिज़ाइन है — Wikimedia Commons से स्रोतित, पूर्ण श्रेय सहित। जहाँ किसी कार्यक्रम का कोई पैच नहीं था, या कोई मुफ्त लाइसेंस के तहत मौजूद नहीं है, हम {link} पर बताते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "plan_empty_hint_desktop",
+  "en": "Tap a cell on the porkchop plot. Cool blue zones are cheap; hot red zones are expensive launch energy.",
+  "cur": "पोर्चोप साजिश पर एक सेल टैप करें। कूल ब्लू जोन सस्ते हैं; गर्म लाल जोन महंगे लॉन्च ऊर्जा हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "plan_empty_hint_mobile",
+  "en": "On mobile, touch and hold the plot to open the magnifier.",
+  "cur": "मोबाइल पर, मैग्नीफायर खोलने के लिए साजिश को स्पर्श और पकड़ो।"
+ },
+ {
+  "rel": "messages",
+  "at": "plan_explainer_color_desc",
+  "en": "Cool teal = cheap (~3 km/s). Yellow = moderate. Red = very expensive (>9 km/s).",
+  "cur": "कूल टील = सस्ते (~ 3 km/s). पीला = मध्यम। लाल = बहुत महंगा (>9 km/s)."
+ },
+ {
+  "rel": "messages",
+  "at": "plan_explainer_how_to_desc",
+  "en": "Click a cool-colored region near the natural Hohmann minimum (~250-day TOF, every ~26 months) — that's the cheapest launch window. The right panel shows the exact dates and ∆v.",
+  "cur": "प्राकृतिक हॉमन न्यूनतम (~250 दिन TOF, लगभग हर 26 महीने) के पास ठंडे रंग का कोई क्षेत्र क्लिक करें — यही सबसे सस्ती लॉन्च विंडो है। दायाँ पैनल सटीक तारीखें और ∆v दिखाता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "plan_explainer_intro",
+  "en": "Each cell asks: \"if I launch on date X and arrive on date X+TOF, how much fuel does it take?\" Lower numbers = cheaper missions.",
+  "cur": "प्रत्येक सेल पूछता है: \"यदि मैं तारीख X पर शुरू करता हूं और तारीख X + TOF पर पहुंचता हूं, तो कितना ईंधन लेता है? कम संख्या = सस्ता मिशन।"
+ },
+ {
+  "rel": "messages",
+  "at": "plan_gravity_assist_caveat",
+  "en": "Direct trajectory shown. Real outer-planet missions use planetary gravity assists — see Voyager 2, Galileo, Cassini, New Horizons in Missions for actual flight paths.",
+  "cur": "सीधा प्रक्षेप पथ दिखाया गया है। वास्तविक बाहरी-ग्रह मिशन ग्रहों की गुरुत्व-सहायता का उपयोग करते हैं — वास्तविक उड़ान पथ के लिए मिशनों में Voyager 2, Galileo, Cassini, New Horizons देखें।"
+ },
+ {
+  "rel": "messages",
+  "at": "plan_load_failed",
+  "en": "Failed to load porkchop grid for this destination.",
+  "cur": "इस गंतव्य के लिए पोर्चोप ग्रिड को लोड करने में विफल रहा।"
+ },
+ {
+  "rel": "messages",
+  "at": "plan_mission_type_disabled_flyby_only",
+  "en": "Landing is not a defined manoeuvre for this destination at this fidelity. Use FLYBY or see the mission library for real flight paths.",
+  "cur": "लैंडिंग इस निष्ठा पर इस गंतव्य के लिए एक परिभाषित मंचूर नहीं है। FLYBY का उपयोग करें या वास्तविक उड़ान पथ के लिए मिशन लाइब्रेरी देखें।"
+ },
+ {
+  "rel": "messages",
+  "at": "plan_mission_type_disabled_gas_giant",
+  "en": "Landing on a gas giant is not a defined manoeuvre. See Galileo's orbit insertion in the mission library.",
+  "cur": "एक गैस दिग्गज पर लैंडिंग एक परिभाषित manoeuvre नहीं है। मिशन पुस्तकालय में Galileo की कक्षा सम्मिलन देखें।"
+ },
+ {
+  "rel": "messages",
+  "at": "plan_porkchop_title",
+  "en": "Porkchop plot · the calendar of cheap launches",
+  "cur": "पॉर्कचॉप प्लॉट · सस्ते लॉन्च का कैलेंडर"
+ },
+ {
+  "rel": "messages",
+  "at": "plan_sandbox_pin_hint",
+  "en": "Pin a cell, then click another to compare departures, transit times, and ∆v side by side.",
+  "cur": "एक सेल को पिन करें, फिर प्रस्थान, पारगमन समय और पक्ष के द्वारा 2v पक्ष की तुलना करने के लिए दूसरे क्लिक करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "poster_apollo11_aria",
+  "en": "Apollo 11 bootprint on the lunar surface, with Earth visible in the black sky above the Moon's horizon",
+  "cur": "चंद्र सतह पर Apollo 11 के बूट का निशान, चंद्रमा के क्षितिज के ऊपर काले आकाश में पृथ्वी दिखाई दे रही है"
+ },
+ {
+  "rel": "messages",
+  "at": "poster_gagarin_aria",
+  "en": "Yuri Gagarin poster — SK-1 helmet visor with Earth reflected in the gold-tinted glass",
+  "cur": "यूरी गगारिन पोस्टर — SK-1 हेलमेट वाइज़र में सुनहरे रंग के कांच पर पृथ्वी का प्रतिबिम्ब"
+ },
+ {
+  "rel": "messages",
+  "at": "poster_iss_aria",
+  "en": "ISS poster — partner-nation flag colours circling the station",
+  "cur": "आईएसएस पोस्टर — स्टेशन के चारों ओर साझेदार-राष्ट्रों के झंडे के रंग"
+ },
+ {
+  "rel": "messages",
+  "at": "poster_mars_aria",
+  "en": "Mars travel-poster (JPL Visions of the Future style)",
+  "cur": "मंगल यात्रा-पोस्टर (JPL Visions of the Future शैली)"
+ },
+ {
+  "rel": "messages",
+  "at": "poster_sojourner_aria",
+  "en": "Sojourner rover poster — indie-comic style, first wheels on Mars",
+  "cur": "Sojourner रोवर पोस्टर — इंडी-कॉमिक शैली, मंगल पर पहले पहिये"
+ },
+ {
+  "rel": "messages",
+  "at": "poster_sputnik_aria",
+  "en": "Sputnik 1 poster — Soviet pop-art with beep-beep-beep speech bubbles",
+  "cur": "Sputnik 1 पोस्टर — सोवियत पॉप-आर्ट बीप-बीप-बीप स्पीच बबल्स के साथ"
+ },
+ {
+  "rel": "messages",
+  "at": "poster_tiangong_aria",
+  "en": "Tiangong poster — panda in spacesuit, heavenly-palace pagoda silhouette, bamboo",
+  "cur": "Tiangong पोस्टर — अंतरिक्ष सूट में पांडा, स्वर्गीय-महल पैगोडा सिल्हूट, बांस"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_collect_build",
+  "en": "Which build you are running, whether you installed the app to your home screen, and whether the offline updater and the app's own resources loaded successfully — so a version stuck on an old build, or a broken load, shows up here instead of in a complaint weeks later.",
+  "cur": "आप कौन सा बिल्ड चला रहे हैं, क्या आपने ऐप को अपनी होम स्क्रीन पर इंस्टॉल किया है, और क्या ऑफलाइन अपडेटर और ऐप के स्वयं के संसाधन सफलतापूर्वक लोड हुए — ताकि पुराने बिल्ड पर फंसा एक संस्करण, या एक टूटा हुआ लोड, हफ्तों बाद की शिकायत के बजाय यहाँ दिखाई दे।"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_collect_intro",
+  "en": "Usage analytics run on a self-hosted Umami instance on our own server. No cookie is set, no profile is built, and nothing is shared with anyone. What it records:",
+  "cur": "उपयोग विश्लेषण हमारे अपने सर्वर पर स्व-होस्ट किए गए Umami उदाहरण पर चलता है। कोई कुकी सेट नहीं की जाती, कोई प्रोफ़ाइल नहीं बनाई जाती, और किसी के साथ कुछ साझा नहीं किया जाता। यह रिकॉर्ड करता है:"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_collect_interactions",
+  "en": "Which things you open, click, filter and toggle — a mission, a fleet entry, a marker in the 3D view, a science section, a panel tab.",
+  "cur": "आप कौन सी चीजें खोलते हैं, क्लिक करते हैं, फ़िल्टर करते हैं और टॉगल करते हैं — एक मिशन, एक फ्लीट प्रविष्टि, 3D दृश्य में एक चिन्हक, एक विज्ञान अनुभाग, एक पैनल टैब।"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_collect_outbound",
+  "en": "When you follow a link off the site, and where it went — so we know which sources people actually read.",
+  "cur": "जब आप साइट से किसी लिंक का अनुसरण करते हैं, और वह कहाँ गया — ताकि हम जान सकें कि लोग वास्तव में कौन से स्रोत पढ़ते हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_collect_pages",
+  "en": "Which pages you visit, in what order, roughly how long you stay on each, and how far down you read the longer articles — plus your browser, operating system, screen size, language, approximate location (country, region and city, derived from your IP), and the referring site or campaign link that brought you here.",
+  "cur": "आप कौन से पृष्ठ देखते हैं, किस क्रम में, प्रत्येक पर कितना समय बिताते हैं, और लंबे लेखों को कितना नीचे पढ़ते हैं — साथ ही आपका ब्राउज़र, ऑपरेटिंग सिस्टम, स्क्रीन आकार, भाषा, अनुमानित स्थान (देश, क्षेत्र और शहर, आपके IP से प्राप्त), और रेफरिंग साइट या अभियान लिंक जो आपको यहाँ लाया।"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_collect_search",
+  "en": "What you search for, truncated to the first 40 characters. Enough to see which topics people look for; never a full transcript of what you typed.",
+  "cur": "आप क्या खोजते हैं, पहले 40 वर्णों तक संक्षिप्त। किस विषयों को लोग खोजते हैं यह देखने के लिए पर्याप्त; कभी भी आपने जो टाइप किया उसका पूर्ण प्रतिलेख नहीं।"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_controls_body",
+  "en": "Turning this off stops the usage analytics and the crash reports described above. It does not affect the server logs — those are part of serving the page at all. The choice is remembered in a single cookie on this device, and the page reloads so collection stops immediately rather than at the next visit.",
+  "cur": "इसे बंद करने से उपयोग विश्लेषण और ऊपर वर्णित क्रैश रिपोर्ट बंद हो जाती हैं। यह सर्वर लॉग को प्रभावित नहीं करता — वे पृष्ठ परोसने का हिस्सा हैं। चुनाव इस डिवाइस पर एक एकल कुकी में याद रहता है, और पृष्ठ पुनः लोड होता है ताकि संग्रह अगली बार की बजाय तुरंत बंद हो जाए।"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_cookies_body",
+  "en": "Umami sets no cookie at all. Orrery uses three functional cookies — your language pick, your Curator Tour position, and the analytics opt-out below — each listed in full on the credits page. A few browser-local settings (graphics quality, debug mode, offline downloads) are also stored on your device; they never leave it and are not part of any analytics.",
+  "cur": "Umami कोई कुकी बिल्कुल नहीं सेट करता। Orrery तीन कार्यात्मक कुकीज़ का उपयोग करता है — आपकी भाषा पसंद, आपकी Curator Tour स्थिति, और नीचे दिया गया विश्लेषण ऑप्ट-आउट — प्रत्येक क्रेडिट पृष्ठ पर पूर्ण रूप से सूचीबद्ध। कुछ ब्राउज़र-स्थानीय सेटिंग्स (ग्राफ़िक्स गुणवत्ता, डिबग मोड, ऑफ़लाइन डाउनलोड) भी आपके डिवाइस पर संग्रहीत हैं; वे कभी बाहर नहीं जाती हैं और किसी विश्लेषण का हिस्सा नहीं हैं।"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_errors_body",
+  "en": "When something breaks, the browser sends a crash report — the error, the stack trace and the page it happened on — to a self-hosted GlitchTip instance. It is there to fix bugs, and it is switched off by the same opt-out below.",
+  "cur": "जब कुछ टूटता है, ब्राउज़र एक क्रैश रिपोर्ट — त्रुटि, स्टैक ट्रेस और पृष्ठ जहाँ यह हुआ — एक स्व-होस्ट किए गए GlitchTip उदाहरण को भेजता है। यह बग को ठीक करने के लिए है, और यह नीचे दिए गए एक ही ऑप्ट-आउट द्वारा बंद किया जा सकता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_never_body",
+  "en": "There are no accounts, so there is nothing to log in to and no name, email address or password anywhere. The analytics themselves never store your IP address — it is used once, in memory, to derive an approximate location, then discarded. Nothing is sold, shared with an advertising network, or used to follow you to another site.",
+  "cur": "कोई खाते नहीं हैं, इसलिए लॉग इन करने के लिए कुछ नहीं है और कोई नाम, ईमेल पता या पासवर्ड कहीं नहीं है। विश्लेषण स्वयं कभी आपका IP पता संग्रहीत नहीं करते — इसे एक बार, मेमोरी में, अनुमानित स्थान निकालने के लिए उपयोग किया जाता है, फिर हटा दिया जाता है। कुछ भी बेचा नहीं जाता, विज्ञापन नेटवर्क के साथ साझा नहीं किया जाता, या आपको किसी अन्य साइट पर ट्रैक करने के लिए उपयोग नहीं किया जाता।"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_optout_off",
+  "en": "Off — nothing is being collected on this device.",
+  "cur": "बंद — इस डिवाइस पर कुछ भी एकत्र नहीं किया जा रहा।"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_optout_on",
+  "en": "On — anonymous usage analytics are running.",
+  "cur": "चालू — अनामी उपयोग विश्लेषण चल रहा है।"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_optout_signal_note",
+  "en": "Your browser is sending a Global Privacy Control or Do Not Track signal, so analytics are already switched off and this toggle is locked. Nothing is being collected.",
+  "cur": "आपका ब्राउज़र Global Privacy Control या Do Not Track सिग्नल भेज रहा है, इसलिए विश्लेषण पहले से बंद है और यह टॉगल लॉक है। कुछ भी संग्रहीत नहीं किया जा रहा है।"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_page_intro",
+  "en": "Orrery has no accounts, no advertising and no third-party trackers. It does measure how the site is used, so the next thing built is the thing people actually reach for. This page says exactly what that means and lets you switch it off.",
+  "cur": "Orrery के पास कोई खातें, कोई विज्ञापन और कोई तीसरे पक्ष के ट्रैकर नहीं हैं। यह मापता है कि साइट का उपयोग कैसे होता है, ताकि अगली बनाई गई चीज़ वह हो जिसके लिए लोग वास्तव में पहुँचते हैं। यह पृष्ठ बिल्कुल यह कहता है कि इसका क्या मतलब है और आपको इसे बंद करने देता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_signals_body",
+  "en": "If your browser sends Global Privacy Control or Do Not Track, Orrery honours it automatically — analytics never start, and you do not need to touch anything here.",
+  "cur": "यदि आपका ब्राउज़र Global Privacy Control या Do Not Track भेजता है, तो Orrery इसे स्वचालित रूप से सम्मानित करता है — विश्लेषण कभी शुरू नहीं होता, और आपको यहाँ कुछ भी छूने की आवश्यकता नहीं है।"
+ },
+ {
+  "rel": "messages",
+  "at": "privacy_where_body",
+  "en": "Analytics and crash reports are self-hosted on infrastructure the project runs itself — no analytics provider, no third-party tracker, no advertising network. Traffic to the site and to the analytics endpoint passes through Cloudflare, which provides the CDN and terminates TLS in front of it.",
+  "cur": "विश्लेषण और क्रैश रिपोर्ट स्व-होस्ट की जाती हैं उस अवसंरचना पर जो प्रोजेक्ट स्वयं चलाता है — कोई विश्लेषण प्रदाता नहीं, कोई तीसरे पक्ष का ट्रैकर नहीं, कोई विज्ञापन नेटवर्क नहीं। साइट और विश्लेषण अंतिम बिंदु पर ट्रैफिक Cloudflare से गुज़रता है, जो CDN प्रदान करता है और इसके सामने TLS को समाप्त करता है।"
+ },
+ {
+  "rel": "messages",
+  "at": "programs_era_newspace",
+  "en": "New Space & the return to the Moon · 2020+",
+  "cur": "New Space और चंद्रमा पर वापसी · 2020+"
+ },
+ {
+  "rel": "messages",
+  "at": "programs_index_browse_hint",
+  "en": "Browse by era to follow the story in time, by kind to compare like with like, or by agency to see who did what.",
+  "cur": "समय के साथ कहानी को फॉलो करने के लिए युग के अनुसार, समान के साथ तुलना करने के लिए प्रकार के अनुसार, या किसने क्या किया यह देखने के लिए एजेंसी के अनुसार ब्राउज़ करें।"
+ },
+ {
+  "rel": "messages",
+  "at": "programs_index_intro",
+  "en": "Spaceflight is usually remembered as a string of missions and machines. But nothing here happened on its own — every rocket, every landing, every station was the work of a {program}: a sustained campaign, backed by a nation or a company, reaching for something specific. The programs are where the ambition lived and the rivalries played out. Read together, they are the whole arc of getting off the ground — from the first firsts of the Space Race to the stations, telescopes, and futures being built right now.",
+  "cur": "अंतरिक्ष उड़ान को आमतौर पर मिशनों और मशीनों की एक शृंखला के रूप में याद किया जाता है। लेकिन यहां कुछ भी अपने आप नहीं हुआ — हर रॉकेट, हर लैंडिंग, हर स्टेशन एक {program} का काम था: एक सतत अभियान, जिसे किसी राष्ट्र या कंपनी का समर्थन था, जो कुछ विशिष्ट लक्ष्य की ओर बढ़ रहा था। कार्यक्रम वे जगह हैं जहां महत्वाकांक्षा जीवित थी और प्रतिद्वंद्विताएं सामने आईं। एक साथ पढ़ें, तो ये जमीन से ऊपर उठने की पूरी यात्रा हैं — Space Race की पहली उपलब्धियों से लेकर अभी बनाए जा रहे स्टेशनों, टेलीस्कोपों और भविष्य तक।"
+ },
+ {
+  "rel": "messages",
+  "at": "reading_list_lede",
+  "en": "Books, articles, and blogs to read alongside the encyclopedia. Curated for clarity and respect for the reader's time — the entries here are short, focused, and from authors who explain rather than perform.",
+  "cur": "विश्वकोश के साथ पढ़ने के लिए पुस्तकें, लेख और ब्लॉग। स्पष्टता और पाठक के समय के सम्मान को ध्यान में रखते हुए चयनित — यहाँ की प्रविष्टियाँ संक्षिप्त, केंद्रित हैं और ऐसे लेखकों की हैं जो प्रदर्शन के बजाय व्याख्या करते हैं।"
+ }
+]

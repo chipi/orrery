@@ -1,0 +1,740 @@
+[
+ {
+  "rel": "programs/mars-rovers.json",
+  "at": "outcome.0.md",
+  "en": "The rovers vastly outlived their plans, and each rewrote what Mars had been. Sojourner, in 1997, drove about a hundred metres and proved the concept. Spirit and Opportunity, landed in 2004 on ninety-day missions, worked for six and fourteen years respectively — Opportunity crossing more than forty-five kilometres, the longest drive on any other world — and found clear chemical evidence that liquid water had once stood on the surface.",
+  "cur": "这些漫游车远远超出了它们的计划寿命，每一辆都重新定义了火星曾经的样子。1997年的Sojourner行驶了约一百米，验证了这一概念。2004年着陆、原定90天任务的Spirit和Opportunity分别工作了六年和14年——Opportunity穿越了超过45公里，创下了在其他世界上最长的行驶纪录——并发现了明确的化学证据，证明液态水曾经存在于火星表面。"
+ },
+ {
+  "rel": "programs/mars-rovers.json",
+  "at": "outcome.1.md",
+  "en": "Curiosity, lowered into Gale Crater in 2012 by a rocket-powered sky crane after a landing sequence so audacious its planners called it seven minutes of terror, confirmed the case: the crater had once held a lake, with the chemistry a living thing could have used. Perseverance followed in 2021, landing on the floor of Jezero Crater — home to an ancient river delta — to search directly for signs of past life and to seal Martian rock in sealed tubes — the first stage of a campaign to bring samples of another planet back to Earth.",
+  "cur": "2012年，Curiosity在一次着陆过程后被火箭动力空中起重机降落到盖尔撞击坑中，这一过程如此大胆，其规划者称之为恐怖七分钟，它证实了这一论断：该陨石坑曾经容纳过一个湖泊，具有生命可以利用的化学条件。2021年，Perseverance紧随其后，着陆在耶泽罗撞击坑底部——一个古老河流三角洲的所在地——直接寻找过去生命的迹象，并将火星岩石密封在密封管中——这是将另一颗行星的样本带回地球的战役的第一阶段。"
+ },
+ {
+  "rel": "programs/mars-rovers.json",
+  "at": "outcome.2.md",
+  "en": "Perseverance also carried a passenger that made its own history: Ingenuity, a small helicopter that in 2021 made the first powered, controlled flight on another planet, and then flew dozens more times — proof that Mars could be explored from the air as well as the ground. Curiosity and Perseverance are both still driving.",
+  "cur": "Perseverance还携带了一个创造自己历史的乘客：Ingenuity，一架小型直升机，在2021年完成了在另一颗行星上首次动力控制飞行，然后又飞行了数十次——证明火星可以从空中和地面进行探索。Curiosity和Perseverance目前都仍在行驶。"
+ },
+ {
+  "rel": "programs/mars-rovers.json",
+  "at": "narrative.0.md",
+  "en": "The story of the Mars rovers is one long argument, made in wheel tracks, that Mars was once a world where life was possible. Each rover advanced it a step: Sojourner proved the method, the twins proved the water, Curiosity proved the habitability, Perseverance went hunting for the life itself. No single mission settled the question, but together they turned Mars from a cold red desert into a planet with a warm, wet youth — and made the search for ancient Martian life a serious science rather than a fantasy.",
+  "cur": "火星漫游车的故事是一个用车轮印记作出的长篇论证，证明火星曾经是一个生命可能存在的世界。每一辆漫游车都推进了一步：Sojourner证明了方法，双子漫游车证明了水，Curiosity证明了宜居性，Perseverance开始寻找生命本身。没有单一任务解决这个问题，但它们共同将火星从一个寒冷的红色沙漠变成了一颗拥有温暖湿润青年时期的行星——并使寻找古代火星生命从幻想变成了严肃的科学。"
+ },
+ {
+  "rel": "programs/mars-rovers.json",
+  "at": "narrative.1.md",
+  "en": "It is also a story about robots that refused to die. Spirit and Opportunity were built for ninety days and worked for years; Opportunity drove the length of a marathon across a planet, surviving dust storms and a stuck wheel and a decade of cold nights, until a global storm finally silenced it in 2018. The rovers earned a genuine public affection almost unique among machines — mourned when they failed, cheered when they woke — because they were, unmistakably, explorers, doing in slow motion what a human geologist would do on foot.",
+  "cur": "这也是关于拒绝死亡的机器人的故事。Spirit和Opportunity为90天而建造，却工作了多年；Opportunity在一颗行星上行驶了马拉松的长度，在尘暴、卡住的车轮和十年寒夜中幸存下来，直到2018年一场全球风暴最终让它沉默。这些漫游车赢得了机器中几乎独一无二的真正公众喜爱——当它们失败时被哀悼，当它们苏醒时被欢呼——因为它们毫无疑问是探险者，以慢动作做着人类地质学家徒步会做的事情。"
+ },
+ {
+  "rel": "programs/mars-rovers.json",
+  "at": "narrative.2.md",
+  "en": "And the lineage is a study in incremental ambition. Nobody could have landed Perseverance's sky-crane, sample-caching complexity in 1997; it took Sojourner's hundred metres to justify the twins, the twins' years to justify Curiosity, and Curiosity's lake to justify sending a rover to look for life and start the long road to sample return. Each rover was the platform that made the next one thinkable — a quarter-century of building capability one mission at a time.",
+  "cur": "这一谱系也是对渐进式雄心的研究。没有人能在1997年实现Perseverance的空中起重机、样本缓存复杂性；正是Sojourner的一百米证明了双子漫游车的合理性，双子漫游车的多年工作证明了Curiosity的合理性，而Curiosity的湖泊证明了派遣一辆漫游车寻找生命并开启样本返回漫长道路的合理性。每一辆漫游车都是使下一辆变得可以想象的平台——四分之一个世纪以来一次一个任务地构建能力。"
+ },
+ {
+  "rel": "programs/mars-rovers.json",
+  "at": "legacy.0.md",
+  "en": "The rovers' first legacy is the modern Mars: a planet now known to have had standing water, habitable chemistry, and a warm early history, established not by inference but by robots that drove to the rocks and read them. The scientific case that Mars could once have hosted life rests almost entirely on their wheel tracks.",
+  "cur": "漫游车的第一个遗产是现代的火星：一颗现在已知曾有静止水体、宜居化学条件和温暖早期历史的行星，这不是通过推断确立的，而是通过驶向岩石并解读它们的机器人确立的。火星曾经可能孕育生命的科学论据几乎完全依赖于它们的车轮印记。"
+ },
+ {
+  "rel": "programs/mars-rovers.json",
+  "at": "legacy.1.md",
+  "en": "Their second is the technology of surface mobility — the sky crane, the autonomous navigation, the nuclear power, the aerial scouting of Ingenuity — a toolkit built up rover by rover that now makes it possible to explore a planet's surface as a landscape rather than a spot, and that any future surface mission, crewed or robotic, inherits.",
+  "cur": "它们的第二个遗产是表面移动技术——空中起重机、自主导航、核动力、Ingenuity的空中侦察——一个由漫游车逐辆建立起来的工具包，使得现在可以将行星表面作为地貌而非一个点来探索，任何未来的表面任务，无论是载人还是机器人，都会继承这些技术。"
+ },
+ {
+  "rel": "programs/mars-rovers.json",
+  "at": "legacy.2.md",
+  "en": "Their third is still in transit: the sealed tubes of Martian rock that Perseverance is caching, waiting for a future mission to carry them home. If that campaign succeeds, the rovers will have delivered the first samples ever returned from the surface of another planet — the payoff of a twenty-five-year drive.",
+  "cur": "它们的第三个遗产仍在运输中：Perseverance正在缓存的密封火星岩石管，等待未来的任务将它们带回家。如果这一战役成功，漫游车将交付首批从另一颗行星表面返回的样本——25年行驶的回报。"
+ },
+ {
+  "rel": "programs/mars-rovers.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of the Mars rovers is that mobility changes everything. A lander studies where it falls; a rover studies where it chooses to go. By making the instrument move, the program turned a single landing site into an entire planet's worth of geology — a reminder that on any frontier, the ability to go and look for yourself is worth more than any amount of fixed observation.",
+  "cur": "火星漫游车的教训是移动能力改变一切。着陆器研究它降落的地方；漫游车研究它选择去的地方。通过让仪器移动，该计划将单一着陆点变成了整个行星价值的地质学——提醒人们在任何前沿，亲自前往观察的能力比任何固定观测都更有价值。"
+ },
+ {
+  "rel": "programs/mars-rovers.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is that great capability is built in steps, not leaps. Perseverance's sample-caching sophistication was unimaginable in Sojourner's day; it became possible only because each rover earned the next. Ambitious ends are usually reached not by a single decisive mission but by a patient lineage, each member proving enough to justify the one that follows — progress as a relay, not a sprint.",
+  "cur": "更深层的教训是，伟大的能力是通过步骤而非飞跃建立起来的。Perseverance的样本缓存复杂性在Sojourner时代是无法想象的；它之所以成为可能，只是因为每一辆漫游车都为下一辆赢得了资格。雄心勃勃的目标通常不是通过单一决定性任务达到的，而是通过耐心的谱系，每个成员证明足够多来证明后续者的合理性——进步是一场接力，而非冲刺。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "tagline",
+  "en": "America's scramble to put a person in space — always a step behind the Soviets, and the foundation for everything that came after.",
+  "cur": "美国将人送入太空的匆忙竞赛——始终落后苏联一步,却为此后一切奠定了基础。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "the_land.0.md",
+  "en": "In the autumn of 1957 the Soviet Union put Sputnik into orbit, and the United States discovered it was losing a race it hadn't quite understood it was in. Washington's answer was institutional: in 1958 it stood up a new civilian space agency, NASA, and handed it a blunt first assignment — put an American into space, and do it fast. The program was named Mercury, and from the first day it was a scramble. The Soviets were ahead and still moving, and every month of delay was another month of headlines about the free world falling behind.",
+  "cur": "1957年秋,苏联将Sputnik送入轨道,美国发现自己正在输掉一场尚未完全意识到的竞赛。华盛顿的应对是制度性的:1958年,它建立了新的民用航天机构NASA,并交给它一项直截了当的首要任务——把美国人送入太空,而且要快。这个项目被命名为Mercury,从第一天起就是一场争分夺秒的竞赛。苏联领先且仍在前进,每延迟一个月就意味着又一个月关于自由世界落后的头条新闻。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "the_land.1.md",
+  "en": "In 1959 NASA chose seven military test pilots to fly it. Introduced at a single press conference, the Mercury Seven became national figures instantly — before any of them had gone anywhere — because the country needed them to be. They were signing on to ride an experimental capsule on top of a converted ballistic missile: a machine designed to deliver a warhead, now asked to deliver a man and bring him home. Nobody yet knew for certain that a human could survive the trip at all.",
+  "cur": "1959年,NASA选择了七名军方试飞员来执行飞行任务。在一场新闻发布会上亮相后,Mercury Seven立即成为全国性人物——在他们中任何人出发之前——因为国家需要他们成为这样的人物。他们签约乘坐一个实验性太空舱,架在改装的弹道导弹顶部:一台原本设计用于投送弹头的机器,现在被要求投送一个人并将他带回家。当时还没人确切知道人类能否在整个旅程中存活下来。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "goals.0.caption",
+  "en": "The Mercury capsule — barely larger than the person inside it. One seat, no room to move, and no way to change orbit; the astronaut could point the spacecraft, and little else.",
+  "cur": "Mercury太空舱——仅比里面的人略大一点。一个座位,没有活动空间,也无法改变轨道;宇航员能做的只是调整航天器的朝向,仅此而已。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "goals.1.md",
+  "en": "Mercury's goal was deliberately, almost brutally narrow: prove that a human being could survive the whole sequence — the crush of launch, minutes or hours of weightlessness, the fire of reentry — and be pulled from the ocean alive. Not explore, not maneuver, not build. Just live through it, and be seen to. Everything about the spacecraft followed from that: a cone scarcely bigger than its occupant, a single seat, no means of changing its path once it was up there.",
+  "cur": "Mercury的目标刻意地、几乎残酷地狭窄:证明人类能够在整个过程中存活——发射时的挤压、数分钟或数小时的失重、再入时的火焰——然后被活着从海洋中打捞上来。不是探索,不是机动,不是建造。只是活下来,并让人看到。航天器的一切都由此而来:一个几乎不比乘员大的锥体,一个座位,一旦升空就无法改变路径。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "goals.2.md",
+  "en": "The program had two rockets, and they split it in half. The Redstone — a direct descendant of the wartime V-2 — could only lob a capsule up and back down on a suborbital arc; the more powerful Atlas could actually reach orbital speed. So Mercury climbed in steps: first the short suborbital hops to prove the system worked with a person aboard, then the harder orbital flights once the Atlas had earned that trust.",
+  "cur": "该项目有两种火箭,它们将项目一分为二。Redstone——V-2战时火箭的直系后代——只能将太空舱沿亚轨道弧线抛上去再落回来;更强大的Atlas才能真正达到轨道速度。因此Mercury分步攀升:先是短暂的亚轨道跳跃,证明系统在载人情况下可行,然后在Atlas赢得信任后进行更难的轨道飞行。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "outcome.0.caption",
+  "en": "John Glenn's Friendship 7, February 1962 — the first American to orbit the Earth, and the flight that finally let a nervous country exhale.",
+  "cur": "约翰·格伦的Friendship 7,1962年2月——第一位绕地球飞行的美国人,这次飞行终于让紧张的国家松了一口气。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "outcome.1.md",
+  "en": "Six Americans flew Mercury between 1961 and 1963. Alan Shepard went first, a fifteen-minute suborbital hop three weeks after Gagarin had already orbited — shorter and lower than the Soviet flight, but enough. Gus Grissom repeated it and nearly drowned when his hatch blew open on splashdown. Then, in February 1962, John Glenn rode an Atlas into orbit and came home after three laps of the planet, and the United States at last had an answer to Gagarin. Scott Carpenter, Wally Schirra, and Gordon Cooper stretched the flights from three orbits to a full day — Cooper's Faith 7 circled the Earth twenty-two times in May 1963 and closed the program.",
+  "cur": "1961年至1963年间,六名美国人执行了Mercury飞行。艾伦·谢泼德是第一个,一次15分钟的亚轨道跳跃,比加加林已经完成的轨道飞行晚了三周——比苏联的飞行更短更低,但已足够。格斯·格里森重复了这一飞行,在溅落时舱门爆开,差点溺水。然后在1962年2月,约翰·格伦乘坐Atlas进入轨道,绕地球三圈后返回,美国终于有了应对加加林的答案。斯科特·卡彭特、沃利·施艾拉和戈尔登·库勃将飞行从三圈延长到整整一天——库勃的Faith 7在1963年5月绕地球22圈,结束了该项目。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "outcome.2.md",
+  "en": "Measured against the Soviets, Mercury was a program playing catch-up that never quite caught up: by the time Glenn orbited, the USSR had already flown a full day in space, and within two years of Mercury's close it would fly a woman and walk in the void — firsts the American programme would not match for years. What Mercury won was a different thing. It flew six people to the edge of space and back — in the open, on live television — and lost none of them. It proved exactly what it set out to prove: a person can go, and return.",
+  "cur": "与苏联相比,Mercury是一个奋起直追却始终未能追上的项目:当格伦进入轨道时,苏联已经完成了整整一天的太空飞行,而在Mercury结束后两年内,苏联将送一名女性上天并完成太空行走——这些第一次美国项目在多年后才实现。Mercury赢得的是另一种东西。它将六个人送到太空边缘再送回来——公开地,通过电视直播——没有失去任何一人。它准确地证明了它要证明的事:人可以去,也可以回来。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "narrative.0.md",
+  "en": "The story of Mercury is a country improvising in a hurry, in public. Almost everything was being invented at once — how to keep a person alive in vacuum, how to talk to a capsule racing around the planet, how to find a small craft in a very large ocean — and all of it against a deadline set by an opponent who kept moving the goalposts by getting there first.",
+  "cur": "Mercury的故事是一个国家在公开场合匆忙即兴创作。几乎所有东西都在同时被发明——如何让人在真空中存活、如何与绕地球飞行的太空舱通信、如何在浩瀚海洋中找到一个小型飞行器——而这一切都要赶在一个不断通过率先到达来移动目标的对手设定的最后期限之前完成。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "narrative.1.md",
+  "en": "There was a quieter fight inside the program, too. The early plans treated the astronaut as cargo, a passenger the automatic systems would fly. The test pilots refused that. They pushed for a window, for manual control, for a hand on the stick — and they got it, and more than once it mattered, when a person in the loop worked a problem the automation couldn't. That insistence on the astronaut as a pilot rather than a payload set the tone for everything American human spaceflight would become.",
+  "cur": "项目内部还有一场更安静的斗争。早期计划将宇航员当作货物,一个由自动系统驾驶的乘客。试飞员拒绝了这一点。他们争取要有窗户、要有手动控制、要能握住操纵杆——他们得到了,而且不止一次地证明了这很重要,当环路中的人解决了自动化无法解决的问题时。这种坚持将宇航员视为飞行员而非载荷的态度,为美国载人航天后来的一切定下了基调。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "narrative.2.md",
+  "en": "Mercury closed in 1963 having answered its one question. It handed everything it had learned — the hardware suppliers, the flight controllers, the astronaut corps, the hard-won confidence — straight to Gemini, which would learn to maneuver and rendezvous, and then to Apollo, which used all of it to reach the Moon.",
+  "cur": "Mercury于1963年结束,回答了它唯一的问题。它将学到的一切——硬件供应商、飞行控制员、宇航员队伍、来之不易的信心——直接交给了Gemini,后者将学习机动和交会对接,然后交给Apollo,后者利用这一切到达了月球。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "legacy.0.caption",
+  "en": "Gordon Cooper's Faith 7, May 1963 — twenty-two orbits and a full day aloft, the last and longest Mercury flight.",
+  "cur": "戈尔登·库勃的Faith 7,1963年5月——22圈轨道和整整一天的飞行,Mercury的最后一次也是最长的飞行。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "legacy.1.md",
+  "en": "Mercury's most valuable product wasn't any single flight; it was the machine that flew them. A worldwide tracking network, a room full of controllers learning to run a mission in real time, a recovery fleet, an astronaut corps, and a web of contractors who now knew how to build things rated to carry people — all of it stood up from almost nothing in a few years, and all of it passed directly to Gemini and Apollo. NASA learned to fly people on Mercury.",
+  "cur": "Mercury最有价值的产物不是任何单次飞行;而是执行这些飞行的机器。一个全球跟踪网络、一个满是控制员的房间学习实时运行任务、一支回收舰队、一支宇航员队伍,以及一个现在知道如何制造载人级设备的承包商网络——所有这些都在几年内从几乎空白建立起来,并全部直接传递给Gemini和Apollo。NASA在Mercury上学会了载人飞行。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "legacy.2.md",
+  "en": "It was also a Cold War argument made in the open. Where the Soviet program flew in secrecy and announced its successes after the fact, Mercury flew on live television — failures included — a deliberate bet that an open society could do hard things in full view. The Mercury Seven became the human face of that bet, famous out of all proportion to the modest distances they actually travelled, because of what they were taken to represent.",
+  "cur": "这也是一场公开进行的冷战论证。苏联项目在秘密中飞行并在事后宣布成功,而Mercury在电视直播中飞行——包括失败——这是一个深思熟虑的赌注,认为开放社会能在众目睽睽下完成困难的事情。Mercury Seven成为这一赌注的人类面孔,其名声远超他们实际飞行的有限距离,因为他们被认为代表了某种东西。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "legacy.3.md",
+  "en": "The material return came the way it usually does with a first program — not from the flights themselves but from the capability they forced into being: the tracking, the aerospace medicine, the manufacturing discipline, the plain proof that it could be done. The far larger programs that followed drew on all of it without having to build it again.",
+  "cur": "物质回报以第一个项目通常的方式到来——不是来自飞行本身,而是来自飞行迫使形成的能力:跟踪、航空医学、制造纪律、以及能做到的明确证据。随后规模大得多的项目利用了所有这些,而无需重新建立。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "lessons.0.md",
+  "en": "Mercury's most transferable lesson is the power of a narrow goal met in steps. It did not try to reach the Moon, or even to out-do the Soviets outright. It set out to prove exactly one thing — a person can survive spaceflight and come home — and it built toward that in deliberate increments: an uncrewed test, then a chimpanzee, then a suborbital hop, then orbit. When the destination is genuinely unknown, proving one link of the chain at a time beats lunging for the whole thing at once.",
+  "cur": "Mercury最可转移的教训是分步实现狭窄目标的力量。它没有试图到达月球,甚至没有试图彻底超越苏联。它只想证明一件事——人可以在太空飞行中存活并回家——并以深思熟虑的增量朝这个目标努力:无人测试,然后是黑猩猩,然后是亚轨道跳跃,然后是轨道。当目的地真正未知时,一次证明链条中的一环,胜过一次扑向整体。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "lessons.1.md",
+  "en": "The second lesson is that being first is not the same as building the foundation. Mercury lost nearly every race it entered — the Soviets reached space, orbit, and a day aloft ahead of it. And yet the program that landed on the Moon eight years later was built almost entirely on what Mercury started, not on what its rivals did first. A team that keeps showing up and compounding what it learns can lose the early sprints and still win the thing that ends up mattering.",
+  "cur": "第二个教训是,成为第一不等于奠定基础。Mercury输掉了它参加的几乎每场竞赛——苏联在它之前到达了太空、轨道和一天的太空停留。然而八年后登陆月球的项目几乎完全建立在Mercury开创的基础上,而不是建立在其对手率先完成的事情上。一个持续出现并不断积累所学的团队,可以输掉早期冲刺,却仍然赢得最终重要的事情。"
+ },
+ {
+  "rel": "programs/mercury.json",
+  "at": "lessons.2.md",
+  "en": "And the human note worth keeping: the astronauts' refusal to be cargo. Handed a design that treated them as passengers, they insisted on being pilots — a window, a stick, a say in the flight — and that insistence, more than any single mission, is what made the program theirs and set the character of everything that came after.",
+  "cur": "以及值得铭记的人性注脚:宇航员拒绝成为货物。面对将他们当作乘客的设计,他们坚持要成为飞行员——要有窗户、要有操纵杆、要在飞行中有发言权——这种坚持,超过任何单次任务,使这个项目成为他们的,并为此后一切定下了性格。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "tagline",
+  "en": "The first modular space station — built piece by piece in orbit, kept alive for fifteen years through the collapse of the country that built it, and the place where Cold-War rivals first learned to fly together.",
+  "cur": "第一座模块化空间站——在轨道上逐块建造，在建造它的国家解体后仍维持运转十五年，也是冷战对手首次学会共同飞行的地方。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "the_land.0.md",
+  "en": "Every station before Mir was a single object: launched whole, occupied, and eventually discarded. Mir was different in kind. Beginning in 1986, the Soviet Union launched a core module and then, over the next decade, flew up module after module and bolted them on in orbit — Kvant, Kvant-2, Kristall, Spektr, Priroda — growing the station like a settlement rather than deploying it like a spacecraft. It was the first time humans had assembled a large structure in space, and it turned the space station from a finished product into a permanent, expandable place.",
+  "cur": "Mir 之前的每一座空间站都是单一物体: 整体发射、载人驻留,最终废弃。Mir 本质上有所不同。从1986年开始,苏联发射了一个核心舱,然后在接下来的十年里,一个接一个地将舱段送入轨道并在太空中对接组装——Kvant、Kvant-2、Kristall、Spektr、Priroda——像建设定居点那样扩建空间站,而非像部署航天器那样一次到位。这是人类首次在太空中组装大型结构,它将空间站从一件成品变成了一个永久性的、可扩展的场所。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "the_land.1.md",
+  "en": "The name means 'peace' and also 'world', and Mir became both — the most continuously inhabited human outpost yet built, and, improbably, the stage on which the Cold War in space ended. It was designed as a Soviet showcase; it outlived the Soviet Union by a decade, was kept flying by a Russia that could barely afford it, and in its final years hosted the American astronauts whose predecessors it had been built to outdo. More than any single spacecraft, Mir is where the era of national space races gave way to the era of international partnership.",
+  "cur": "这个名字意为\"和平\"，也意为\"世界\"，而Mir最终成为了两者的化身——迄今为止人类建造的连续有人居住时间最长的前哨站，也出人意料地成为了太空冷战落幕的舞台。它最初被设计为苏联的展示窗口；却比苏联多存在了十年，由几乎无力负担的俄罗斯勉力维持运行，并在最后几年接待了美国宇航员——而它当初建造的目的正是为了超越这些宇航员的前辈。Mir比任何单一航天器都更能代表国家太空竞赛时代让位于国际合作时代的转折。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "goals.0.caption",
+  "en": "Mir under assembly, photographed from a visiting Space Shuttle — the core module with Kristall and the other modules attached. Building a large station from separately-launched pieces, in orbit, was itself the achievement.",
+  "cur": "正在组装中的Mir，由访问的Space Shuttle拍摄——核心舱及连接的Kristall和其他舱段。在轨道上用分批发射的部件组装大型空间站，这本身就是一项成就。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "goals.1.md",
+  "en": "Mir's goal was permanence at a scale no one had attempted: a continuously-crewed research complex that could grow over time and stay aloft for years, not months. Where Salyut had proved a station could be resupplied and lived in, Mir set out to prove it could be *expanded* — that new laboratories and capabilities could be added to a station already in orbit, indefinitely, so the outpost was never finished and never obsolete. It was the architecture of a genuinely permanent human presence, and it worked.",
+  "cur": "Mir的目标是实现前所未有规模的永久性：一个可以随时间增长并持续运行数年而非数月的长期载人研究综合体。Salyut证明了空间站可以得到补给和居住，而Mir则着手证明空间站可以*扩展*——新的实验室和功能模块可以不断添加到已在轨道上的空间站，使这个前哨站永远不会完工也永远不会过时。这是真正永久性人类存在的架构，而且它成功了。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "goals.2.md",
+  "en": "The other goal was endurance, pushed to its limit. Mir was where humans found out how long they could stay — and the answer, set aboard it, still stands: the physician-cosmonaut Valeri Polyakov spent 437 continuous days on Mir, longer than a mission to Mars would take, and came home able to walk. That single result quietly removed one of the great objections to deep-space human flight: it showed the body can endure the trip.",
+  "cur": "另一个目标是耐力，推向极限。Mir是人类发现自己能停留多久的地方——而在那里创下的答案至今仍然保持：医生-宇航员瓦列里·波利亚科夫在Mir上连续停留了437天，比火星任务所需的时间还长，回家时还能行走。这一项单独的成果悄然消除了深空载人飞行的一大反对理由：它表明人体能够承受这段旅程。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "outcome.0.caption",
+  "en": "Mir seen from the Space Shuttle Atlantis during the Shuttle-Mir program. American Shuttles docking with a Russian station — unthinkable a decade earlier — was the dress rehearsal for the International Space Station.",
+  "cur": "Mir空间站由Space Shuttle Atlantis拍摄，摄于Shuttle-Mir计划期间。美国航天飞机与俄罗斯空间站对接——这在十年前是不可想象的——成为国际空间站的预演。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "outcome.1.md",
+  "en": "Over fifteen years Mir hosted more than a hundred people from a dozen countries, returned an enormous body of science, and set the long-duration records that every later program relies on. But its later years were also the hardest any station has endured. When the Soviet Union collapsed, Mir's funding nearly vanished, and it was kept flying on a shoestring, its hardware aging well past its design life. In 1997 that caught up with it: first a fire broke out aboard from a failed oxygen canister, filling the station with smoke, and then a Progress cargo ship, being docked manually, struck the station and punctured the Spektr module — depressurising part of Mir and forcing the crew to seal off a module while the air leaked out.",
+  "cur": "在十五年间,Mir接待了来自十几个国家的一百多人,产出了大量科学成果,并创下了后来所有项目都依赖的长期驻留纪录。但它的后期岁月也是任何空间站所经历过的最艰难时期。苏联解体后,Mir的资金几乎消失殆尽,只能靠微薄预算维持运转,其硬件老化程度远超设计寿命。1997年,这一切终于显现出代价:先是一个故障氧气罐引发火灾,烟雾充满整个空间站,随后一艘手动对接的Progress货运飞船撞击了空间站,击穿了Spektr舱——导致Mir部分舱段失压,迫使乘组在舱内空气泄漏时封闭了该舱段。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "outcome.2.md",
+  "en": "That the crew survived both — sealing the breach, saving the station, and flying on — was the ultimate test of the idea Skylab had first proved: that people in orbit can fight for a failing machine and win. Running through those same years was the Shuttle-Mir program: from 1995, American Space Shuttles docked with Mir and NASA astronauts lived aboard for months, learning long-duration operations from the Russians who had spent two decades mastering them. It was the first joint work of the former rivals, and it was, explicitly, the rehearsal for what came next. Mir was deorbited in a controlled reentry over the Pacific in 2001, its job handed on.",
+  "cur": "机组人员在这两次事故中幸存——封堵破口、拯救空间站并继续飞行——这是对Skylab首次证明的理念的终极检验:轨道上的人可以为一台故障机器而战并取得胜利。与这些年份平行进行的是Space Shuttle-Mir计划:从1995年起,美国航天飞机与Mir对接,NASA宇航员在站上生活数月,向已用二十年时间掌握长期驻留操作的俄罗斯人学习。这是昔日对手的首次联合工作,并且明确地是为接下来的任务所做的预演。Mir于2001年在太平洋上空受控再入大气层后离轨,其使命就此交接。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "narrative.0.md",
+  "en": "Mir's central innovation is modularity, and it changed everything that followed. A station built from interchangeable, separately-launched modules can grow, be repaired by module replacement, and be assembled by more than one nation — none of which a single monolithic can can do. The International Space Station is modularity taken to its conclusion: dozens of modules from many countries, assembled over a decade. That entire approach was proven on Mir first.",
+  "cur": "Mir的核心创新在于模块化，它改变了此后的一切。由可互换、分别发射的模块建造的空间站能够扩展，能够通过更换模块进行维修，也能够由多个国家共同组装——这些都是单一整体舱体无法做到的。国际空间站是模块化理念发展到极致的产物：来自多国的数十个模块，历时十年完成组装。而这整套方法最初是在Mir上得到验证的。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "narrative.1.md",
+  "en": "The deeper story is survival and transformation. Mir was conceived as an instrument of Soviet prestige and ended as the seed of international cooperation — kept alive by a bankrupt Russia partly *because* the United States, wanting the experience and the partnership, helped pay to keep it flying. The Shuttle-Mir years built the human relationships, the joint procedures, and the political trust without which the ISS could not have been attempted. The station built to win the Cold War in space instead became the place the Cold War in space was buried.",
+  "cur": "更深层的故事关乎生存与转型。Mir最初被设想为苏联威望的象征，最终却成为国际合作的种子——在俄罗斯破产之际得以存续，部分原因*正是*美国希望获得经验和伙伴关系，出资帮助维持其运行。航天飞机-Mir计划期间建立的人际关系、联合程序和政治互信，是国际空间站得以启动的必要前提。这座为在太空中赢得冷战而建造的空间站，反而成为太空冷战的埋葬之地。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "narrative.2.md",
+  "en": "And Mir answered the question that matters most for anything beyond low orbit: can a human body take it? Polyakov's 437 days, and the many months logged by crew after crew, turned long-duration spaceflight from a frightening unknown into a characterised, survivable condition. Every serious plan for Mars rests on data first gathered on Mir.",
+  "cur": "而Mir回答了对于任何超越近地轨道任务最重要的问题：人体能否承受？波利亚科夫的437天，以及一批又一批机组人员累积的数月时间，将长期太空飞行从一个令人恐惧的未知变成了一种可描述、可生存的状态。每一个认真的火星计划都建立在Mir上首次收集的数据之上。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "legacy.0.caption",
+  "en": "Mir in orbit over Earth — the first modular station, and the template, in architecture and in international partnership, for the International Space Station that replaced it.",
+  "cur": "Mir在地球轨道上运行——第一个模块化空间站，也是在建筑结构和国际合作伙伴关系方面为取代它的国际空间站提供的模板。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "legacy.1.md",
+  "en": "Mir's legacy is the International Space Station, in almost every particular. The modular architecture, the mix of Soyuz crew ferries and automated freighters, the multi-month expeditions, the routines of long-duration life and work — all of it was developed or matured on Mir and carried directly across. So was the partnership: the ISS is run on a US-Russian core precisely because Shuttle-Mir proved the two could operate a station together, and because Russia brought to it the accumulated station expertise Mir represented.",
+  "cur": "Mir的遗产就是国际空间站，几乎体现在每一个方面。模块化架构、Soyuz载人飞船与自动货运飞船的组合、数月的驻站任务、长期驻留生活和工作的日常程序——所有这些都是在Mir上开发或成熟起来的，并直接延续下来。合作模式也是如此：国际空间站以美俄核心为基础运行，正是因为Shuttle-Mir证明了两国能够共同运营空间站，也因为俄罗斯为其带来了Mir所代表的积累多年的空间站专业技术。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "legacy.2.md",
+  "en": "It also stands as a lesson in endurance of a different kind. Mir flew for fifteen years, three times as long as intended, through the disintegration of its own nation and a run of emergencies that would have ended a less resilient program — and it kept going because its modular design let it be repaired, because its crews fought for it, and because a new international will emerged to sustain it. It was, at the end, held together by ingenuity and cooperation as much as by engineering. That is not a footnote to its story; it is the point of it.",
+  "cur": "它也是另一种耐力的见证。Mir运行了十五年,是预期寿命的三倍,经历了自己国家的解体和一系列本应终结任何一个韧性稍弱项目的紧急事件——它能够继续运行,是因为其模块化设计使它可以被修复,因为它的乘组为它奋战,也因为一种新的国际意愿涌现出来维系它。到最后,支撑它的不仅是工程技术,更是智慧和合作。这不是它故事的注脚,而是它的要义所在。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "lessons.0.md",
+  "en": "Mir's first lesson is that modularity is what makes a large station both possible and survivable. Because Mir was built from separate modules, it could grow over time, be assembled across many launches, and — crucially — be repaired by sealing off or replacing a damaged section, as the crew did when Spektr was punctured. A monolithic station offers none of these; when it fails, it fails whole. Every station meant to last has followed Mir into modularity.",
+  "cur": "Mir的首要教训是，模块化设计使大型空间站既成为可能，又能够存续。正因为Mir由独立模块建造，它可以随时间逐步扩展，通过多次发射完成组装，而且——至关重要的是——可以通过封闭或更换受损舱段来修复，就像Spektr被刺穿后乘组所做的那样。整体式空间站则不具备这些优势；一旦失效，便全盘失效。每一座旨在长期运行的空间站都追随Mir采用了模块化设计。"
+ },
+ {
+  "rel": "programs/mir.json",
+  "at": "lessons.1.md",
+  "en": "The second lesson is that international partnership can sustain what national pride cannot afford. Mir survived its hardest years because cooperation replaced competition — because a former adversary had reasons to help keep it flying. The same logic built the ISS and keeps it aloft: no single nation now funds a permanent human presence alone. Mir is where that shift was first forced by circumstance and then chosen on purpose, and it is one of the most consequential changes in the history of spaceflight.",
+  "cur": "第二个教训是，国际合作能够维持民族自豪感所无法负担的事业。Mir在最艰难的岁月中存续下来，是因为合作取代了竞争——因为曾经的对手有了帮助它继续飞行的理由。同样的逻辑建造了国际空间站并使其保持运行：如今没有任何一个国家能够独自资助永久性的人类存在。Mir是这一转变首次被环境所迫、继而被主动选择的地方，它是航天史上最具深远影响的变革之一。"
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "tagline",
+  "en": "It took nine and a half years and the fastest launch in history to reach Pluto — and the dead ball of ice everyone expected turned out to be a young, active world.",
+  "cur": "耗时九年半和史上最快的发射速度才抵达冥王星——而所有人预期中那颗死寂的冰球,实际上是一个年轻、活跃的世界。"
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "the_land.0.md",
+  "en": "By the turn of the millennium, every planet in the solar system had been visited by a spacecraft except one. Pluto — small, cold, and nearly five billion kilometres out — remained a blur even in the best telescopes, the last unexplored world of the nine planets as they were then counted. It was also receding: its thin atmosphere was expected to freeze out and collapse as it moved away from the Sun, and its orbit would soon carry it into decades of shadow. If anyone was going to see Pluto with air still on it, they had to go soon.",
+  "cur": "到千禧年之交,太阳系中除一颗行星外,其余所有行星都已被航天器探访过。冥王星——体积小、寒冷、距离近五十亿公里——即便在最好的望远镜中也只是一片模糊,是当时九大行星计数中最后一个未被探索的世界。它也在逐渐远离:其稀薄的大气层预计会随着它远离太阳而冻结坍缩,而它的轨道很快会将它带入数十年的阴影中。如果有人要在冥王星还有大气时看到它,就必须尽快前往。"
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "the_land.1.md",
+  "en": "New Horizons was the mission built to beat that clock, and it was designed around speed and thrift. Small, compact, and comparatively cheap, it was launched in 2006 on the most powerful rocket available, given a gravity boost by Jupiter, and sent coasting across the solar system faster than anything before it — a nine-and-a-half-year sprint to a single, unrepeatable flyby.",
+  "cur": "New Horizons就是为了赶上这个时限而建造的任务,其设计围绕速度和节俭展开。小巧、紧凑且相对便宜,它于2006年用当时最强大的火箭发射,借助木星引力加速,以比此前任何航天器都快的速度滑行穿越太阳系——九年半的冲刺,只为一次无法重复的飞掠。"
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "goals.0.md",
+  "en": "The goal was the first close look at Pluto and its large moon Charon: to map them, measure Pluto's thin atmosphere before it could freeze out, and turn the last unexplored planet as it was then counted from a smudge into a place. Because the spacecraft would fly past at enormous speed and could not stop, everything had to work in a few hours, executed by a machine too far away to be helped in real time — a command took hours to reach it.",
+  "cur": "目标是首次近距离观测冥王星及其大型卫星冥卫一:绘制它们的地图,在冥王星的稀薄大气冻结前测量它,并将这颗当时计数中最后一颗未被探索的行星从一个模糊点变成一个真实的地方。因为航天器会以极高速度飞过且无法停下,所有工作必须在几小时内完成,由一台远得无法实时救援的机器执行——一条指令需要数小时才能到达它。"
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "goals.1.caption",
+  "en": "New Horizons was built light and fast, with a single set of instruments and no fuel to slow down. It got one pass at Pluto, at nearly 50,000 kilometres per hour, with its makers waiting hours for each signal to cross the solar system.",
+  "cur": "New Horizons建造得轻便而快速,只配备单套仪器且没有减速燃料。它只能以近50,000公里/小时的速度对冥王星进行一次飞掠,而它的制造者们要等待数小时才能收到穿越太阳系的每个信号。"
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "goals.2.md",
+  "en": "A second goal was written in once the first was met: if the spacecraft survived Pluto, it would fly on into the Kuiper Belt — the vast ring of icy bodies beyond Neptune — and, fuel permitting, visit one of them, reaching a class of object no mission had ever seen.",
+  "cur": "一旦第一个目标达成,第二个目标就被写入了:如果航天器在冥王星任务后存活下来,它将继续飞入柯伊伯带——海王星以外由冰冻天体组成的广阔环带——并在燃料允许的情况下造访其中一个,到达一类此前从未有任务见过的天体。"
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "outcome.0.md",
+  "en": "On 14 July 2015, after nine and a half years, New Horizons swept past Pluto — and overturned the expectation of a dead world. Scientists had braced for a cratered, geologically frozen ball; instead they found towering mountains of water ice, a vast, smooth plain of frozen nitrogen shaped like a heart and churning with slow convection, hazes layered in the thin atmosphere, and signs of geological activity on a world so small and cold it should long ago have gone still. Pluto was young-looking, complex, and alive with process.",
+  "cur": "2015年7月14日,经过九年半的飞行,New Horizons掠过冥王星——并颠覆了人们对死寂世界的预期。科学家们原本准备迎接一个布满陨石坑、地质冻结的球体;结果他们发现了高耸的水冰山脉,一片巨大光滑的冻结氮平原,形状像心脏且在缓慢对流中翻腾,稀薄大气中分层的薄雾,以及在这样一个本应早已寂静的小而寒冷的世界上仍有地质活动的迹象。冥王星看起来年轻、复杂,充满活跃的过程。"
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "outcome.1.md",
+  "en": "Then it kept going. Three and a half years later, on 1 January 2019, New Horizons flew past a tiny, two-lobed body more than a billion and a half kilometres beyond Pluto — later named Arrokoth — the most distant object ever explored up close. It proved to be a pristine relic of the solar system's birth, two spheres that had drifted gently together and stuck, frozen since the beginning. The spacecraft is still flying, still returning data from the outer edge of the planetary system.",
+  "cur": "然后它继续前进。三年半后,2019年1月1日,New Horizons飞过了一个微小的双瓣状天体,距离冥王星超过十五亿公里——后来被命名为阿罗科斯——这是有史以来被近距离探索的最遥远天体。它被证明是太阳系诞生时的原始遗迹,两个球体曾轻柔地漂到一起并粘合,从一开始就冻结至今。航天器仍在飞行,仍在从行星系统的外缘传回数据。"
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "narrative.0.md",
+  "en": "The story of New Horizons is a mission that had exactly one chance and took it. There was no orbit, no second pass, no slowing down — nine and a half years of travel converged on a few hours at Pluto, and everything had to work at a distance where the spacecraft was, in effect, on its own. That it executed the flyby flawlessly, at nearly fifty thousand kilometres an hour, is a quiet triumph of doing something once and getting it right.",
+  "cur": "New Horizons的故事是一个只有唯一一次机会并抓住了它的任务。没有轨道,没有第二次飞掠,没有减速——九年半的旅程汇聚到冥王星的几个小时,而一切都必须在航天器实际上独立作业的距离上运作。它以近五万公里/小时的速度完美执行了飞掠,这是一次只做一次就做对的安静胜利。"
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "narrative.1.md",
+  "en": "Its lasting surprise was how wrong the expectation had been. The assumption that a small, ancient, sun-starved world must be geologically dead turned out to be exactly backwards: Pluto is one of the most active surfaces in the solar system, its nitrogen glaciers flowing and its terrain young. New Horizons is a standing reminder that the outer solar system keeps refusing to be the frozen wasteland it was assumed to be — first Enceladus, then Europa, and then a dwarf planet no one thought worth expecting anything from.",
+  "cur": "它持久的惊喜在于预期错得有多离谱。认为一个小型、古老、缺乏阳光的世界必然地质死寂的假设,结果恰恰相反:冥王星是太阳系中地质最活跃的表面之一,其氮冰川在流动,地形年轻。New Horizons是一个持续的提醒:外太阳系一直拒绝成为人们假设的冰冻荒原——先是土卫二,然后是木卫二,再然后是一颗没人认为值得期待什么的矮行星。"
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "narrative.2.md",
+  "en": "And it completed something. With Pluto, a spacecraft had now visited every planet of the old count, closing a reconnaissance of the solar system that began with the Mariners and Pioneers half a century earlier. Then it pushed past the finish line into the Kuiper Belt, reaching the untouched building blocks of the planets themselves — the mission that ended one era of exploration and opened the next.",
+  "cur": "而且它完成了某件事。随着冥王星,一艘航天器现在已经造访了旧计数中的每一颗行星,完成了半个世纪前从Mariner和Pioneer开始的太阳系勘察。然后它冲过终点线进入柯伊伯带,到达行星本身未经触碰的构建块——这个任务结束了一个探索时代,并开启了下一个。"
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "legacy.0.md",
+  "en": "New Horizons' first legacy is Pluto itself — transformed in a single afternoon from the last unexplored planet of the nine then recognised into a mapped, geologically active world, and the definitive answer to a century of speculation about the ninth point of light.",
+  "cur": "New Horizons的第一份遗产是冥王星本身——在一个下午里从当时承认的九大行星中最后一个未被探索的行星,转变为一个已绘图的、地质活跃的世界,以及对一个世纪以来关于第九个光点猜测的最终答案。"
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "legacy.1.md",
+  "en": "Its second is Arrokoth and the Kuiper Belt: the first close look at a pristine relic of the solar system's formation, a body untouched since the beginning, and the extension of exploration into the vast icy region beyond Neptune that had never been visited.",
+  "cur": "它的第二份遗产是阿罗科斯和柯伊伯带:首次近距离观测太阳系形成时的原始遗迹,一个自开始以来未被触碰的天体,以及将探索延伸到海王星以外从未被造访过的广阔冰冻区域。"
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "legacy.2.md",
+  "en": "Its third is a completed reconnaissance. New Horizons marked the point at which every planet of the old count had been visited by a spacecraft — the closing of a fifty-year first survey of the solar system — while pointing the way onward to the countless small worlds still unseen.",
+  "cur": "它的第三份遗产是一次完整的勘察。New Horizons标志着旧计数中的每一颗行星都已被航天器造访——完成了太阳系五十年首次巡查——同时指向前方仍未见到的无数小型世界。"
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of New Horizons is that some chances come once, and readiness is everything. There was no do-over at Pluto: a single flyby, executed by a machine too far away to help, after nearly a decade of travel. Missions built around one irreversible moment succeed or fail on the discipline of preparing for it — and New Horizons is proof that a small, focused, well-drilled effort can nail the one shot it gets.",
+  "cur": "New Horizons的教训是,有些机会只有一次,而准备就是一切。在冥王星没有重来的机会:单次飞掠,由一台远得无法帮助的机器执行,经过近十年的旅行。围绕一个不可逆转时刻建造的任务,成败取决于为之准备的纪律——而New Horizons证明了一个小型、专注、训练有素的努力可以把握住它获得的唯一机会。"
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is to distrust the assumption that distant and old means dead. Everything about Pluto was expected to be frozen and finished; almost nothing was. Again and again the outer solar system has punished the intuition that cold, small, and far from the Sun add up to lifeless — a reminder that the surest way to be surprised is to decide in advance that a place has nothing to show you.",
+  "cur": "更深层的教训是不要相信遥远和古老意味着死寂的假设。关于冥王星的一切都被预期为冻结和完结;但几乎什么都不是。外太阳系一次又一次惩罚了那种认为寒冷、小型和远离太阳就等于无生命的直觉——这提醒我们,最确定被惊讶到的方式就是提前断定一个地方没什么可展示给你的。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "tagline",
+  "en": "Before Voyager could tour the outer planets, someone had to prove the road was survivable. Two small probes went first — through the asteroid belt, past Jupiter, and out.",
+  "cur": "在Voyager能够巡游外行星之前,必须有人证明这条路是可以通行的。两个小型探测器率先出发——穿越小行星带,飞掠木星,然后向外飞去。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "the_land.0.md",
+  "en": "In the early 1970s the outer solar system was not just unexplored; it was thought to be dangerous to reach. Between Mars and Jupiter lay the asteroid belt, and no one knew whether a spacecraft could cross it without being destroyed by debris. Beyond it, Jupiter's radiation belts were understood to be lethal to electronics. The giant planets were worth visiting, but the path to them ran through two hazards no machine had ever faced.",
+  "cur": "在1970年代初,外太阳系不仅未经探索,还被认为难以抵达且充满危险。火星与木星之间横亘着小行星带,无人知晓航天器能否穿越它而不被碎片摧毁。在小行星带之外,木星的辐射带被认为对电子设备具有致命威胁。这些巨行星值得造访,但通往它们的路径要穿过两道此前从未有机器面对过的危险。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "the_land.1.md",
+  "en": "The Pioneers were the scouts sent to find out. Small, spin-stabilised, and comparatively simple, Pioneer 10 and 11 were built to go first — to test whether the belt could be crossed and whether a probe could survive a close pass by Jupiter — so that the far more expensive Voyagers, already being planned, would know what they were flying into.",
+  "cur": "Pioneer就是被派去探路的侦察兵。体积小、自旋稳定、结构相对简单的Pioneer 10和11被设计用来打头阵——测试小行星带能否穿越,以及探测器能否在近距离飞掠木星后幸存——这样已在规划中、造价昂贵得多的Voyager就能知道它们将要飞入什么样的环境。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "goals.0.md",
+  "en": "The goal was reconnaissance in the most literal sense: prove the route. Cross the asteroid belt and measure how much of a threat it really was. Fly close to Jupiter and see whether a spacecraft could take the radiation and return useful data. The science — first close looks at Jupiter, and then, for Pioneer 11, the first visit to Saturn — was real, but the deeper purpose was to clear the way.",
+  "cur": "目标是最字面意义上的侦察:证明路线可行。穿越小行星带,测量它究竟构成多大威胁。近距离飞掠木星,看看航天器能否承受辐射并传回有用数据。科学目标——首次近距离观测木星,以及Pioneer 11号首次访问土星——是真实的,但更深层的目的是开辟道路。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "goals.1.caption",
+  "en": "The Pioneers were kept simple and spun for stability, their instruments reading fields and particles as much as taking pictures. Their job was to survive the belt and the radiation and report back what the Voyagers would face.",
+  "cur": "Pioneer被保持简单,通过自旋实现稳定,其仪器测量场和粒子的成分不亚于拍摄图像。它们的任务是在小行星带和辐射环境中存活下来,并报告Voyager将要面对的情况。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "goals.2.md",
+  "en": "Each also carried a small gold plaque — designed by Carl Sagan and Frank Drake — engraved with a man, a woman, and a map to the Sun. It was a modest afterthought compared with Voyager's later Golden Record, but it was the first: the first object humanity deliberately inscribed with a message and threw toward the stars.",
+  "cur": "每个探测器还携带了一块小型金质铭板——由卡尔·萨根和法兰克·德雷克设计——上面刻有一男一女的形象,以及一张指向太阳的地图。与Voyager后来的Golden Record相比,这是一个不起眼的补充想法,但它是第一个:人类第一次刻意在物体上铭刻信息并将其抛向群星。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "outcome.0.md",
+  "en": "Both fears proved unfounded, which was the point. Pioneer 10 crossed the asteroid belt without harm — the belt, it turned out, was mostly empty space — and in December 1973 became the first spacecraft to reach Jupiter, surviving the radiation and returning the first close images of the giant planet. It then became the first human-made object placed on a trajectory to leave the solar system entirely.",
+  "cur": "两种担忧都被证明是多余的,这正是重点所在。Pioneer 10号安然穿越了小行星带——事实证明,小行星带大部分是空旷空间——并在1973年12月成为第一个抵达木星的航天器,在辐射中幸存下来并传回了这颗巨行星的首批近距离图像。随后它成为第一个被置于完全离开太阳系轨道的人造物体。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "outcome.1.md",
+  "en": "Pioneer 11 went further. After its own Jupiter flyby it used the planet's gravity to cross the solar system and reach Saturn in 1979 — the first spacecraft ever to do so — flying through the ring plane to test whether the region was safe, and finding the gap that the Voyagers would use in the years that followed. The scouts had mapped the hazards; the tour could proceed.",
+  "cur": "Pioneer 11走得更远。在完成自己的木星飞掠后,它利用行星引力穿越太阳系,于1979年抵达土星——史上第一个做到这一点的航天器——穿过环平面以测试该区域是否安全,并找到了Voyager在随后几年中使用的缝隙。侦察兵已经绘制了危险地图;巡游可以开始了。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "outcome.2.md",
+  "en": "The Pioneers kept transmitting for decades as they receded. Pioneer 10's last faint signal was received in 2003, from more than twelve billion kilometres away. Both are still out there, silent now, coasting toward the stars — Pioneer 10 in the direction of the star Aldebaran, a journey it will take some two million years to complete.",
+  "cur": "Pioneer在远去的过程中持续发射信号数十年。Pioneer 10最后一次微弱信号于2003年被接收到,当时它距离地球超过120亿公里。两个探测器都仍在那里,现在已经沉默,向群星滑行——Pioneer 10朝向毕宿五的方向,这段旅程将耗时约200万年才能完成。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "narrative.0.md",
+  "en": "The story of Pioneer is the unglamorous, essential work of going first. The Voyagers are remembered for the Grand Tour; the Pioneers are the reason the Grand Tour could be attempted at all. They took the risks that turned unknown dangers into measured ones — proving the asteroid belt was crossable and Jupiter's radiation survivable — so that the missions behind them could be designed with confidence instead of fear. Someone always has to test the road, and it is rarely the one that gets the credit.",
+  "cur": "Pioneer的故事是关于率先出发这项不起眼但至关重要的工作。人们记住Voyager是因为大巡游;而Pioneer是大巡游得以尝试的原因。它们承担了风险,将未知危险转化为可测量的危险——证明小行星带可以穿越、木星辐射可以承受——使得后续任务能够带着信心而非恐惧进行设计。总得有人去测试道路,而获得荣誉的很少是率先出发的那个。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "narrative.1.md",
+  "en": "It is also a story of doing a great deal with a little. The Pioneers were modest craft, simpler and cheaper than the Voyagers that followed, and they still achieved a run of genuine firsts — first through the belt, first to Jupiter, first to Saturn, first out of the solar system. They are proof that a well-aimed small mission can open a frontier that the flagship then walks through.",
+  "cur": "这也是一个用少量资源完成大量工作的故事。Pioneer是简朴的航天器,比随后的Voyager更简单、更便宜,但它们仍然取得了一系列真正的第一——第一个穿越小行星带,第一个抵达木星,第一个抵达土星,第一个离开太阳系。它们证明了一个目标明确的小型任务可以打开边疆,让旗舰任务随后走过。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "narrative.2.md",
+  "en": "And they carried the first message. The Pioneer plaque was a quieter gesture than the Golden Record — a single engraved sheet rather than a library of sounds — but it came first, and it framed the idea that a spacecraft leaving forever ought to say something about who sent it. Every message humanity has since aimed at deep space descends from that small gold plate bolted to a scout.",
+  "cur": "它们还携带了第一条信息。Pioneer铭板是比Golden Record更安静的姿态——一块刻有图案的板而非声音图书馆——但它是第一个,它提出了这样的理念:一个永远离去的航天器应该说明是谁派遣了它。人类此后向深空发送的每一条信息,都源自那块固定在侦察兵上的小型金板。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "legacy.0.md",
+  "en": "Pioneer's first legacy is the road it opened. By proving the asteroid belt crossable and Jupiter's radiation survivable, it converted the outer solar system from a theoretical hazard into a reachable destination — the direct enabler of Voyager, Galileo, Cassini, and every mission to the giant planets since.",
+  "cur": "Pioneer的首要遗产是它开辟的道路。通过证明小行星带可以穿越、木星辐射可以承受,它将外太阳系从理论上的危险区转变为可抵达的目的地——直接促成了Voyager、Galileo、Cassini以及此后所有前往巨行星的任务。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "legacy.1.md",
+  "en": "Its second is a set of permanent firsts: first through the belt, first to Jupiter, first to Saturn, first object on an escape trajectory out of the solar system. Those entries in the record do not expire, and they all belong to two small, cheap probes.",
+  "cur": "其次是一系列永久的第一:第一个穿越小行星带,第一个抵达木星,第一个抵达土星,第一个进入逃逸轨道离开太阳系的物体。这些记录条目不会过期,它们都属于两个小型、廉价的探测器。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "legacy.2.md",
+  "en": "Its third is the plaque — the first deliberate message from Earth to the cosmos, and the template for the Golden Records that followed. Pioneer established that a craft leaving forever should carry some account of its makers, and that idea has outlived the missions themselves.",
+  "cur": "第三是铭板——地球向宇宙发出的第一条刻意信息,以及随后Golden Records的模板。Pioneer确立了这样的理念:一个永远离去的航天器应该携带关于其制造者的某些说明,这个理念比任务本身更长久。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of Pioneer is the value of the scout. The most important thing the Pioneers did was reduce uncertainty for the missions behind them — turning guesses about the asteroid belt and Jupiter's radiation into hard numbers a designer could build against. On any real frontier, a cheap probe sent to measure the danger is worth far more than its cost, because it lets the expensive follow-on be built for the world as it is rather than as it was feared to be.",
+  "cur": "Pioneer的教训是侦察兵的价值。Pioneer所做的最重要的事情是为后续任务减少不确定性——将关于小行星带和木星辐射的猜测转化为设计师可以据以设计的确切数字。在任何真正的边疆上,一个被派去测量危险的廉价探测器的价值远超其成本,因为它让昂贵的后续任务能够针对真实世界而非想象中的恐怖世界进行设计。"
+ },
+ {
+  "rel": "programs/pioneer.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is that going first rarely brings the glory, and matters anyway. The Pioneers are less famous than the Voyagers they made possible, but without them the Grand Tour would have been a leap into the unknown rather than a calculated flight. Some of the most important work is the reconnaissance nobody remembers — and it is worth doing well precisely because everything after it depends on it.",
+  "cur": "更深层的教训是,率先出发很少带来荣耀,但无论如何都很重要。Pioneer不如它们促成的Voyager出名,但没有它们,大巡游将是一次跃入未知的冒险,而非一次经过计算的飞行。一些最重要的工作是无人记得的侦察——而它值得做好,恰恰因为之后的一切都依赖于它。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "tagline",
+  "en": "Russia's planned return to a station of its own — built first docked to the ISS, then, eventually, flying under no partner's rules again.",
+  "cur": "俄罗斯计划回归自己的空间站——首先建造并对接到国际空间站,然后最终不再受任何合作伙伴规则约束地独立飞行。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "the_land.0.md",
+  "en": "For a quarter of a century, Russia's human spaceflight has been bound to the West's. Its half of the International Space Station — descended directly from Salyut and Mir — kept the whole outpost alive, and for nine years Russian Soyuz capsules were the only ride to the ISS for anyone, American or Russian. That partnership, one of the most durable legacies of the end of the Cold War, is now ending. Russia has announced it will leave the ISS and build a national station of its own: the Russian Orbital Station.",
+  "cur": "四分之一个世纪以来,俄罗斯的载人航天一直与西方紧密相连。它在国际空间站的那一半——直接传承自Salyut和Mir——维持着整个前哨站的生存,而且有九年时间,俄罗斯的Soyuz飞船是任何人前往国际空间站的唯一交通工具,无论美国人还是俄罗斯人。这种伙伴关系,作为冷战结束后最持久的遗产之一,现在正在终结。俄罗斯已宣布将离开国际空间站,建造属于自己的国家空间站:俄罗斯轨道站。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "the_land.1.md",
+  "en": "It is, in one sense, a return to type. Before the ISS, Russia and the Soviet Union always flew their own stations — the Salyut series and then Mir, the first modular station. The ROS is a plan to go back to that model of independence: a Russian station crewed by Russian cosmonauts, answerable to no partner in the end. The move is as much geopolitical as technical, a consequence of the collapse of cooperation between Russia and the West.",
+  "cur": "从某种意义上说,这是一种回归本源。在国际空间站之前,俄罗斯和苏联始终运营着自己的空间站——Salyut系列,然后是Mir,第一座模块化空间站。ROS是回归这种独立模式的计划:一座由俄罗斯宇航员驻守的俄罗斯空间站,最终无需向任何合作伙伴负责。这一举措既是地缘政治的,也是技术性的,是俄罗斯与西方合作崩溃的后果。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "goals.0.md",
+  "en": "The primary goal is independence — a station Russia controls entirely, ending its reliance on a partnership that has become politically untenable. The station was originally planned for a high-inclination near-polar orbit chosen deliberately to pass over all of Russian territory, including the Arctic — an orbit the ISS never reaches. That plan was reversed in 2025: Roscosmos announced the first ROS modules will instead assemble while docked to the ISS, meaning the station begins life sharing the ISS's 51.6° orbital plane before eventually flying alone.",
+  "cur": "首要目标是独立——一座完全由俄罗斯控制的空间站,终结其对一个政治上已经站不住脚的伙伴关系的依赖。该空间站最初计划运行在高倾角近极轨道上,这一轨道是特意选择的,可以飞越俄罗斯全部领土,包括北极地区——这是国际空间站从未到达的轨道。该计划在2025年被推翻:Roscosmos宣布首批ROS模块将在对接到国际空间站时进行组装,这意味着该空间站将在国际空间站的51.6°轨道面上开始生命,然后最终独立飞行。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "goals.1.md",
+  "en": "A stated design goal is a station that does not require continuous crew. Rather than the permanently-occupied model of Mir and the ISS, the ROS is envisioned as visited periodically, with much of its work automated between crews — a response to the cost of continuous occupation and the practicalities of a program with far less funding than the Soviet space effort once commanded.",
+  "cur": "一个明确的设计目标是建造一座不需要持续驻人的空间站。与Mir和国际空间站的永久驻人模式不同，ROS被设想为定期访问，大部分工作在乘组之间自动化完成——这是对持续驻人成本的回应，也是对一个资金远不及苏联航天计划曾经拥有的项目的现实考量。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "goals.2.md",
+  "en": "Underneath the technical goals is a strategic one: to preserve Russia's status as an independent human-spaceflight power as the ISS ends. Without a station of its own, Russia would be left with a crew capsule and no destination — a spacefaring nation with nowhere to send its people. The ROS is the plan to keep Russia in orbit on its own terms, rather than fading from human spaceflight as its partnership dissolves.",
+  "cur": "技术目标之下是一个战略目标:在国际空间站终结之际,保持俄罗斯作为独立载人航天大国的地位。如果没有自己的空间站,俄罗斯将只剩下一艘载人飞船却没有目的地——一个拥有航天能力的国家却无处派遣自己的人员。ROS是让俄罗斯按照自己的条件留在轨道上的计划,而不是随着伙伴关系的解体而从载人航天中消失。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "outcome.0.md",
+  "en": "The outcome is entirely ahead of it — the ROS is, for now, an announcement and a set of plans, not hardware in orbit. Russia has declared its intent to withdraw from the ISS later this decade and to begin launching ROS modules toward the end of the 2020s, but the program faces real questions of funding, industrial capacity, and timeline in a Russia under heavy sanctions and economic strain. Whether the station is built on schedule, built late, or scaled back is genuinely uncertain.",
+  "cur": "结果完全在前方——ROS 目前只是一个宣布和一套计划，还不是轨道上的硬件。俄罗斯已宣布打算在本十年晚些时候退出国际空间站，并在 2020 年代末开始发射 ROS 模块，但该计划在遭受严厉制裁和经济压力的俄罗斯面临着资金、工业能力和时间表的实际问题。空间站是按时建造、延迟建造还是缩减规模，真的充满不确定性。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "outcome.1.md",
+  "en": "What is certain is the direction: Russia intends to leave the ISS and fly alone. The partnership that outlasted the Cold War is being wound down, and the ROS — whatever form it finally takes — is the vehicle for Russia's post-partnership human spaceflight. It represents the end of an era of cooperation and the reassertion of a much older Russian model of self-reliance in orbit.",
+  "cur": "可以确定的是方向:俄罗斯打算离开国际空间站并独立飞行。这个比冷战存续更久的伙伴关系正在被逐步终止,而ROS——无论它最终呈现何种形式——是俄罗斯后伙伴关系时代载人航天的载体。它代表着一个合作时代的终结,以及俄罗斯在轨道上自力更生这一古老模式的重新确立。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "outcome.2.md",
+  "en": "The risk the program carries is the one every ambitious station plan carries, sharpened by circumstance: that the announcement outruns the budget. Russia's space program has contracted sharply since Soviet times, and building a new station from scratch is expensive and slow. The ROS may fly, or it may become the station Russia meant to build — a marker of intent that reality could not fund.",
+  "cur": "该计划承载的风险是每个雄心勃勃的空间站计划都承载的风险,而且因环境而更加尖锐:宣布超越了预算。俄罗斯航天计划自苏联时代以来已急剧收缩,而从零开始建造一座新空间站既昂贵又缓慢。ROS可能会飞行,也可能成为俄罗斯曾打算建造的空间站——一个现实无法支撑的意图标记。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "narrative.0.md",
+  "en": "The story of the ROS is the unwinding of a partnership that once symbolized peace. The joining of the American and Russian station programs into the ISS was one of the great gestures of the post-Cold-War world — former rivals building the largest structure in orbit together, keeping it crewed without a break for over twenty years. The ROS is the reversal of that gesture: a decision, driven by a collapse in relations, to separate again and fly apart.",
+  "cur": "ROS的故事是一段曾经象征和平的伙伴关系的瓦解。美国和俄罗斯空间站项目合并为国际空间站,是后冷战世界的伟大姿态之一——曾经的对手共同建造轨道上最大的结构,并在二十多年里不间断地驻守。ROS是这一姿态的逆转:一个由关系崩溃驱动的决定,再次分离并各自飞行。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "narrative.1.md",
+  "en": "It is also a return to a deep Russian tradition. Long before the ISS, Russia was the world's master of space stations — Salyut proved the concept, Mir perfected the modular design that the ISS itself inherited. The ROS is framed, in part, as a homecoming to that heritage: Russia flying its own station again, as it always did, drawing on the longest and deepest station-building experience of any nation.",
+  "cur": "这也是对俄罗斯深厚传统的回归。早在国际空间站之前,俄罗斯就是世界空间站建造的大师——Salyut验证了概念,Mir完善了国际空间站本身继承的模块化设计。ROS在某种程度上被定位为回归这一遗产:俄罗斯再次运营自己的空间站,一如既往,利用任何国家中最长久、最深厚的空间站建造经验。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "narrative.2.md",
+  "en": "And it is shadowed by constraint. The Soviet space program that built Mir commanded resources the modern Russian program does not, and the ROS must be built under sanctions, with a shrunken industrial base, on a budget a fraction of NASA's. The plan is real and the heritage is genuine — but the gap between the ambition and the means is the central tension of the program, and the thing that will determine whether the ROS becomes a station or stays a plan.",
+  "cur": "而它也笼罩在约束之下。建造Mir的苏联航天计划掌握着现代俄罗斯计划所不具备的资源,ROS必须在制裁下建造,凭借萎缩的工业基础,用仅为NASA预算一小部分的经费。计划是真实的,遗产是真正的——但雄心与手段之间的差距是该计划的核心张力,也是决定ROS是成为一座空间站还是停留在计划阶段的关键。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "legacy.0.md",
+  "en": "The ROS's legacy, if it flies, will be the continuation of Russia as an independent human-spaceflight power into the post-ISS era — a nation that kept a station of its own rather than fading from crewed spaceflight when the partnership ended.",
+  "cur": "如果ROS飞行,它的遗产将是俄罗斯作为独立载人航天大国延续到后国际空间站时代——一个在伙伴关系结束时保持自己空间站而非从载人航天中消失的国家。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "legacy.1.md",
+  "en": "Its symbolic legacy is already real: it marks the formal end of the ISS partnership, one of the last major structures of post-Cold-War cooperation, and the return of human spaceflight to a more divided, more national pattern — Russia, China, and the West each flying their own stations rather than sharing one.",
+  "cur": "它的象征性遗产已经是真实的:它标志着国际空间站伙伴关系的正式终结,这是后冷战合作最后的主要结构之一,也标志着载人航天回归到一个更分裂、更民族化的格局——俄罗斯、中国和西方各自运营自己的空间站,而不是共享一座。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "legacy.2.md",
+  "en": "And it is a test of whether Russia's storied station heritage can survive its diminished means. The ROS will show whether the country that built Salyut and Mir can still build a station from scratch under modern constraints — or whether that capability, like so much of the Soviet space legacy, has outrun the resources to sustain it.",
+  "cur": "这也是对俄罗斯传奇空间站遗产能否在其资源缩减的情况下存续的考验。ROS 将展示建造了 Salyut 和 Mir 的国家，在现代约束下是否仍能从零开始建造空间站——或者这种能力，像苏联航天遗产的许多方面一样，已经超出了维持它的资源。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "lessons.0.md",
+  "en": "The lesson of the ROS is that partnerships in space are as fragile as the politics that underpin them. The ISS cooperation survived two decades and was meant to be a permanent bridge; it is ending because the relationship beneath it broke. No amount of orbital hardware can outlast the terrestrial goodwill that made it possible — a sobering counterpoint to the hope that space cooperation floats above earthly conflict.",
+  "cur": "ROS的教训是,太空中的伙伴关系和支撑它们的政治一样脆弱。国际空间站合作存续了二十年,本应成为一座永久桥梁;它的终结是因为支撑它的关系破裂了。再多的轨道硬件也无法超越使其成为可能的地面善意——这对空间合作能够超越地球冲突的希望是一个发人深省的反证。"
+ },
+ {
+  "rel": "programs/ros.json",
+  "at": "lessons.1.md",
+  "en": "The deeper lesson is the distance between announcing a station and flying one. The ROS has heritage, intent, and a clear strategic rationale — and it must still be built under sanctions on a shrunken budget. Ambition is cheap and stations are expensive; the program is a reminder that in spaceflight, the plan is the easy part, and the hard part is paying for it.",
+  "cur": "更深层的教训是宣布一座空间站与使其飞行之间的距离。ROS拥有遗产、意图和清晰的战略理由——但它仍必须在制裁下用缩减的预算建造。雄心是廉价的,而空间站是昂贵的;该计划提醒我们,在航天领域,计划是容易的部分,而困难的部分是为其买单。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "tagline",
+  "en": "The world's first space stations — two secret programmes hidden under one name, a hard and sometimes deadly decade of learning to live in orbit, and the direct ancestor of every station since.",
+  "cur": "世界上第一批空间站——隐藏在同一名称下的两个秘密项目,一段艰难且有时致命的十年轨道生活学习历程,以及此后所有空间站的直系祖先。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "the_land.0.md",
+  "en": "Having lost the race to the Moon, the Soviet Union changed the game. If it could not be first to land, it would be first to *stay* — to build the first outpost where humans lived and worked in orbit, and to turn its hard-won lead in endurance into a permanent presence. In April 1971, two years before America's Skylab, it succeeded: Salyut 1 became the first space station in history. It was the beginning of a fifteen-year campaign that, more than any other, invented the space station as we now understand it.",
+  "cur": "在登月竞赛中落败后,苏联改变了游戏规则。如果无法率先登陆,那就率先*留驻*——建造第一个人类在轨道上生活和工作的前哨站,并将其来之不易的耐力优势转化为永久存在。1971年4月,比美国的Skylab早两年,苏联成功了:Salyut 1成为历史上第一座空间站。这标志着一场十五年征程的开端,这场征程比任何其他努力都更深刻地塑造了我们今天所理解的空间站概念。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "the_land.1.md",
+  "en": "But 'Salyut' was a cover story. Behind the single civilian-sounding name ran two entirely separate programmes that the Soviet Union deliberately blurred together. One was genuinely civilian — the DOS stations, for science and long-duration spaceflight. The other was Almaz: secret military reconnaissance stations, built by a rival design bureau, carrying enormous cameras to photograph the West and a cannon — actually test-fired in orbit on one of them. Both flew as 'Salyut' so the world could not tell which was which. Untangling the two is most of the story.",
+  "cur": "但\"Salyut\"是一个掩饰故事。在这个听起来平民化的单一名称背后,运行着两个完全独立的计划,苏联故意将它们混为一谈。一个确实是民用的——DOS空间站,用于科学研究和长期太空飞行。另一个是Almaz:秘密军事侦察站,由竞争的设计局建造,携带巨大的相机拍摄西方,还有一门火炮——其中一个站上实际在轨道上进行了试射。两者都以\"Salyut\"的名义飞行,这样外界就无法分辨哪个是哪个。理清这两者就是故事的大部分内容。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "goals.0.caption",
+  "en": "Salyut 6, with craft docked at both ends. Its second docking port was the breakthrough: a Progress freighter could refuel and resupply the station while a crewed Soyuz stayed attached — the innovation that turned a station from a place you visit into a place you can stay.",
+  "cur": "Salyut 6，两端都有飞船对接。它的第二个对接口是突破性创新：Progress货运飞船可以在载人Soyuz保持对接的同时为空间站补充燃料和物资——正是这一创新将空间站从一个你访问的地方变成了一个你可以长期停留的地方。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "goals.1.md",
+  "en": "The civilian goal was to make orbit habitable — long stays, real science, and the prestige of permanence. The military goal, hidden inside the same programme, was crewed reconnaissance: cosmonauts operating telescopic cameras to image military targets below, in the years before automated spy satellites made human eyes redundant. For a decade these two purposes shared a name, a rocket, and a basic airframe, and the public saw only one of them.",
+  "cur": "民用目标是让轨道变得宜居——长期驻留、真正的科学研究，以及永久存在带来的声望。军事目标则隐藏在同一项目中，即载人侦察：宇航员操作望远镜相机拍摄下方的军事目标，那时自动化间谍卫星尚未问世，人眼还未被取代。十年间，这两个目的共享一个名称、一枚火箭和一个基本机身，而公众只看到其中之一。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "goals.2.md",
+  "en": "The technical prize that both needed, and that took years to win, was resupply. A station you cannot refuel or restock is a station with an expiry date — as Skylab would prove. The Salyut programme's central engineering achievement was solving that: the two-port design of Salyut 6 and 7, which let an uncrewed Progress freighter dock at one end and pump propellant, air, water, food, and equipment into the station while a crew's Soyuz stayed docked at the other. That single capability is what turned the space station from an experiment into an institution.",
+  "cur": "两者都需要的技术突破,也是耗费数年才赢得的,是再补给。一个无法加注燃料或补充物资的空间站就是一个有效期限的空间站——Skylab证明了这一点。Salyut计划的核心工程成就正是解决了这个问题:Salyut 6和7的双对接口设计,让无人驾驶的Progress货运飞船能够在一端对接,向空间站输送推进剂、空气、水、食物和设备,而乘组的Soyuz则停靠在另一端。正是这一项能力将空间站从实验变成了一个长期机构。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "outcome.0.caption",
+  "en": "Salyut 3 was, in truth, Almaz — a secret military reconnaissance station flown under the civilian 'Salyut' name to hide its purpose. The Almaz stations carried long-focus cameras to photograph the West, and one test-fired a cannon in orbit.",
+  "cur": "Salyut 3实际上是Almaz——一个秘密军事侦察站,以民用\"Salyut\"名义飞行以掩盖其真实目的。Almaz空间站携带长焦相机拍摄西方,其中一座还在轨道上试射过一门火炮。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "outcome.1.md",
+  "en": "The road there was hard and, at the start, deadly. Salyut 1 was a triumph and then a catastrophe: its first resident crew, Soyuz 11, died during their return when a valve vented their cabin to vacuum, and the station was never occupied again. Salyut 2 — the first Almaz — failed on orbit and was never crewed. The middle stations were a mixed run of civilian and military flights, some cut short by breakdowns and emergencies, each one teaching the engineers a little more about keeping a machine and its crew alive for weeks at a time.",
+  "cur": "这条道路艰难,而且在最初时是致命的。Salyut 1 既是一次胜利也是一场灾难:它的首批常驻乘员 Soyuz 11 在返回途中遇难,当时一个阀门将他们的座舱排气至真空,此后该空间站再未有人进驻。Salyut 2——第一座 Almaz——在轨道上失效,从未载人。中期的几座空间站混合执行民用和军用飞行任务,有些因故障和紧急情况而缩短,但每一座都让工程师们对如何让机器及其乘员存活数周有了更多了解。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "outcome.2.md",
+  "en": "Then it came together. Salyut 6 (1977) and Salyut 7 (1982), with their two ports and Progress resupply, became the first stations that could be genuinely lived in — hosting crew after crew in continuous relay, setting endurance records that climbed past half a year, and carrying the first \"Interkosmos\" guest cosmonauts from across the Soviet bloc and beyond, the first people in space who were neither American nor Soviet. Salyut 7 also produced one of the great feats of the era: in 1985, after the abandoned station fell silent, frozen and tumbling, two cosmonauts flew up, manually docked with the dead hulk, and brought it back to life by hand — the hardest repair job ever attempted in orbit.",
+  "cur": "然后一切开始成形。Salyut 6（1977年）和Salyut 7（1982年），凭借两个对接口和Progress补给，成为第一批真正可供长期居住的空间站——接连不断地接待一批又一批乘组，创下超过半年的耐久纪录，并搭载了首批来自苏联阵营及其他地区的\"Interkosmos\"客座宇航员，他们是首批既非美国人也非苏联人的太空来客。Salyut 7还创造了那个时代最伟大的壮举之一：1985年，在这座被遗弃的空间站失去信号、冻结并翻滚后，两名宇航员飞升上去，手动与这个死寂的庞然大物对接，并徒手将其恢复生机——这是有史以来在轨道上尝试过的最艰难的维修任务。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "narrative.0.md",
+  "en": "The through-line of Salyut is incremental mastery. There was no single breakthrough station; there were seven, each a little better than the last, and the programme's genius was in flying them in steady succession and learning from every failure. The first crew died; the programme fixed the suits and flew again. Stations failed on orbit; the next held. Docking was unreliable; then it was routine. Resupply was impossible; then it was the backbone. This is the opposite of the all-or-nothing gamble that sank the N1 — a patient, iterative climb that turned a deadly novelty into ordinary infrastructure.",
+  "cur": "Salyut计划的主线是渐进式的掌控。它并非一座突破性的空间站;而是七座,每一座都比前一座略好一些,该计划的天才之处在于稳步连续地发射它们,并从每次失败中学习。第一批乘组遇难;计划改进了航天服并再次飞行。空间站在轨道上失效;下一座坚持了下来。对接不可靠;后来成了例行公事。补给曾是不可能的;后来成了支柱。这与让N1沉没的孤注一掷的赌博截然相反——一次耐心的、迭代式的攀登,将致命的新奇事物转变为日常基础设施。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "narrative.1.md",
+  "en": "The dual civilian-military identity is the programme's strangest feature and a very Soviet one. Two rival bureaus, two purposes, one shared disguise — the openness of a science station and the secrecy of a spy platform running under the same friendly name, 'Salute.' The Almaz military stations were quietly retired once automated reconnaissance satellites outperformed cosmonauts with cameras, and the civilian DOS line carried on, but for years the two were deliberately hard to tell apart, and Western analysts spent enormous effort guessing which Salyut was which.",
+  "cur": "这种军民双重身份是该计划最奇特的特征,也是非常苏联式的做法。两个相互竞争的机构,两种目的,却共享一个伪装——科学站的公开性与间谍平台的隐秘性同时运行在一个友好的名字\"Salyut\"之下。一旦自动侦察卫星的性能超过携带相机的宇航员,Almaz军用空间站便悄然退役,民用DOS系列则继续发展,但多年来这两者故意难以区分,西方分析人员花费了巨大精力猜测哪个Salyut是哪种类型。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "narrative.2.md",
+  "en": "By Salyut 6 and 7 the programme had stopped being about firsts and started being about permanence — continuous occupation, international crews, resupply as routine. That shift, from visiting orbit to inhabiting it, is Salyut's real achievement, and it fed directly into what came next. Mir's core module was, in essence, the next Salyut; the operational patterns Salyut established — Soyuz crews, Progress freighters, long-duration expeditions — are exactly how the International Space Station is run today.",
+  "cur": "到 Salyut 6 号和 7 号时,该计划已不再追求首创,而是转向了持久性——持续驻留、国际乘组、常规化补给。这种从访问轨道到栖居轨道的转变,是 Salyut 的真正成就,并直接延续到后续计划中。Mir 的核心舱本质上就是下一代 Salyut;Salyut 确立的运行模式——Soyuz 乘组、Progress 货运飞船、长期驻留考察——正是国际空间站今天的运行方式。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "legacy.0.caption",
+  "en": "A full-scale Salyut with a Soyuz ferry docked. The station-plus-ferry-plus-freighter pattern that Salyut worked out over seven stations is, essentially unchanged, how Mir and then the International Space Station have been operated ever since.",
+  "cur": "一个全尺寸 Salyut 与一艘对接的 Soyuz 渡船。Salyut 在七个空间站中摸索出的\"空间站+渡船+货运飞船\"模式，基本未变，此后 Mir 和国际空间站一直沿用至今。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "legacy.1.md",
+  "en": "Salyut's legacy is the space station itself — not as an idea but as a working system. Over seven stations and fifteen years the programme solved, one at a time, every practical problem of living in orbit: docking, resupply, refuelling, crew rotation, long-duration health, emergency repair. The architecture it arrived at — a core module, crews delivered and returned by Soyuz, cargo and propellant delivered by an automated freighter, occupation measured in months — was inherited whole by Mir and then by the ISS. It is still the template.",
+  "cur": "Salyut的遗产就是空间站本身——不是作为一种理念,而是作为一个可运作的系统。在七座空间站和十五年间,该计划逐一解决了在轨生活的每一个实际问题:对接、补给、加注燃料、乘组轮换、长期驻留健康、应急维修。它最终形成的架构——一个核心舱,由Soyuz运送和接回乘组,由自动货运飞船运送货物和推进剂,驻留时间以月计——被Mir完整继承,然后又被国际空间站继承。它至今仍是范本。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "legacy.2.md",
+  "en": "It also built the expertise that made post-Cold-War cooperation possible. By the time the International Space Station was conceived, the Soviet Union and then Russia had accumulated two decades of unmatched experience in long-duration station operations — experience the United States, after Skylab, simply did not have. That imbalance is a large part of why the ISS was built on a Russian core and Russian operational doctrine, and why Salyut, the programme born from losing the Moon, ended up shaping the most ambitious human structure ever built.",
+  "cur": "它还建立了使冷战后合作成为可能的专业能力。到国际空间站构想之时,苏联及后来的俄罗斯已经积累了二十年无人匹敌的长期空间站运营经验——而美国在Skylab之后根本不具备这种经验。这种不对称在很大程度上解释了为什么国际空间站建立在俄罗斯核心舱和俄罗斯运营理论之上,以及为什么Salyut这个诞生于登月失败的计划,最终塑造了人类有史以来最宏伟的建筑结构。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "lessons.0.md",
+  "en": "Salyut's central lesson is the power of patient iteration over the single grand gamble. Seven stations, each improved from the failures of the last, turned an endeavour that killed its first crew into dependable infrastructure — the same bet-small-and-learn discipline that made Soyuz reliable, and the mirror image of the all-up gamble that destroyed the N1. Hard problems yield to steady iteration on a stable design far more reliably than to a single heroic attempt, and the Soviet station programme is the clearest proof of it.",
+  "cur": "Salyut的核心教训在于耐心迭代胜过孤注一掷的豪赌。七座空间站，每一座都在前一座的失败中得到改进，将一项导致首批乘组丧生的事业转变为可靠的基础设施——这种小步下注、从中学习的准则也使Soyuz变得可靠，与摧毁N1的全盘豪赌形成了鲜明对照。在稳定设计基础上的稳步迭代，远比单次英雄式的尝试更能可靠地攻克难题，而苏联空间站计划正是这一点的最清晰证明。"
+ },
+ {
+  "rel": "programs/salyut.json",
+  "at": "lessons.1.md",
+  "en": "The second lesson is that resupply is what makes a station real. Skylab, brilliant and short-lived, was never resupplied or reboosted, and decayed once it was left alone. Salyut's insistence on solving refuelling and resupply — the second docking port, the Progress freighter — is exactly what let its later stations be occupied for years instead of weeks. A permanent presence in space is not a matter of building a bigger spacecraft; it is a matter of building the unglamorous logistics chain that keeps a modest one continuously alive.",
+  "cur": "第二个教训是,补给才是让空间站真正成为空间站的关键。Skylab辉煌而短暂,从未得到过补给或轨道提升,一旦被遗弃便开始衰变。Salyut坚持解决燃料补充和物资补给问题——第二个对接口、Progress货运飞船——正是这些让其后期空间站能够持续运行数年而非数周。在太空中的永久存在,并非建造一艘更大的航天器那么简单;而是建立起那条并不耀眼的后勤保障链,让一个规模适度的空间站能够持续存活。"
+ },
+ {
+  "rel": "programs/shenzhou.json",
+  "at": "tagline",
+  "en": "The capsule that made China the third nation to launch its own people — built slowly, tested exhaustively, and never once lost a crew.",
+  "cur": "这个飞船让中国成为第三个独立发射本国航天员的国家——建造缓慢、测试详尽,从未损失过一名航天员。"
+ },
+ {
+  "rel": "programs/shenzhou.json",
+  "at": "the_land.0.md",
+  "en": "For forty years, only two countries had ever launched a human being into space on their own rocket: the Soviet Union and the United States. In October 2003 a third joined them, quietly and without a race to win. Yang Liwei rode a Shenzhou capsule to orbit, circled the Earth fourteen times, and came home — and China became a human spacefaring nation on its own terms, using its own vehicle, its own launcher, and its own astronaut corps. There had been no competitor to beat. There was only a capability to build, and China had spent a decade building it.",
+  "cur": "四十年来,只有两个国家曾用自己的火箭将人类送入太空:苏联和美国。2003年10月,第三个国家加入了它们的行列,悄然而至,没有竞赛需要赢得。杨利伟乘坐神舟飞船进入轨道,绕地球飞行十四圈后返回——中国凭借自己的条件成为了载人航天国家,使用自己的飞船、自己的运载火箭和自己的航天员队伍。没有需要击败的竞争对手。只有能力需要建立,而中国用了十年时间建立了这种能力。"
+ },
+ {
+  "rel": "programs/shenzhou.json",
+  "at": "the_land.1.md",
+  "en": "Shenzhou — \"Divine Vessel\" — looks, at a glance, like a Soyuz: the same three-part layout of orbital module, descent capsule, and service module, the legacy of a 1990s technology relationship with Russia. But it is larger, entirely Chinese-built, and improved in a telling way — its orbital module carries its own solar panels and can keep flying as a free satellite after the crew comes home. It is Soyuz's architecture taken to school and handed back with better marks.",
+  "cur": "神舟——意为\"神圣之舟\"——乍一看像是Soyuz：同样的轨道舱、返回舱和服务舱三段式布局，这是1990年代与俄罗斯技术合作关系留下的遗产。但它更大，完全由中国制造，并在一个颇具深意的方面得到了改进——其轨道舱配有自己的太阳能电池板，在乘组返回后可以作为独立卫星继续飞行。这是Soyuz的架构经过深造后交回的一份更优异的答卷。"
+ },
+ {
+  "rel": "programs/shenzhou.json",
+  "at": "goals.0.md",
+  "en": "The goal was never a stunt flight; it was a permanent, independent human spaceflight capability. That meant building not just a capsule but the entire apparatus around it — a rated launch vehicle, a mission-control network, a recovery force, a training program, and a corps of astronauts drawn from the air force. Shenzhou was the vehicle at the center of a national capability, and the program refused to fly a crew until every piece of that capability had been proven.",
+  "cur": "目标从来不是一次特技飞行，而是建立永久性的、独立的载人航天能力。这意味着不仅要建造一个太空舱，还要建造围绕它的整套系统——一枚经过人类认证的运载火箭、一个任务控制网络、一支回收部队、一套训练计划，以及一支从空军中选拔的航天员队伍。神舟是这一国家能力的核心载具，该计划拒绝在这一能力的每个环节都得到验证之前执行载人飞行。"
+ },
+ {
+  "rel": "programs/shenzhou.json",
+  "at": "goals.1.caption",
+  "en": "Long March 2F — the human-rated launcher built specifically to carry Shenzhou, with an escape tower and the redundancy required to put people on top. No crew flew until it had proven itself on uncrewed missions.",
+  "cur": "长征二号F — 专门为运载神舟而设计的载人级运载火箭，配备逃逸塔和保障载人飞行所需的冗余系统。在该火箭通过多次无人任务验证其可靠性之前，没有航天员乘坐过它。"
+ },
+ {
+  "rel": "programs/shenzhou.json",
+  "at": "goals.2.md",
+  "en": "Over the longer arc, the goal was to feed a station. Every capability Shenzhou proved — orbital flight, spacewalks, rendezvous, long-duration stays — was a prerequisite for the Tiangong stations that followed. The crewed program and the station program were designed as two halves of one plan: build the vehicle and the people first, then give them somewhere to go.",
+  "cur": "从更长远的角度看,目标是为空间站提供支持。神舟证明的每一项能力——轨道飞行、太空行走、交会对接、长期驻留——都是后续天宫空间站的先决条件。载人计划和空间站计划被设计为一个整体计划的两个部分:先建造飞船和培养人员,然后再为他们提供目的地。"
+ },
+ {
+  "rel": "programs/shenzhou.json",
+  "at": "outcome.0.md",
+  "en": "By any measure of reliability, Shenzhou has been a quiet triumph. Since the first uncrewed test in 1999 it has flown crews to orbit, conducted China's first spacewalk (Shenzhou 7, 2008), performed the country's first crewed docking (Shenzhou 9, 2012), and delivered every resident crew to the Chinese Space Station since 2021 — without ever losing an astronaut. In a domain where both of its predecessors paid for their firsts in lives, China reached the same milestones and brought everyone home.",
+  "cur": "无论从哪个可靠性指标来衡量，神舟都是一次低调的胜利。自1999年首次无人测试以来，它将乘组送入轨道，完成了中国首次太空行走(神舟七号，2008年)，实现了中国首次载人对接(神舟九号，2012年)，并自2021年起将每批常驻乘组送往中国空间站——从未损失过一名航天员。在这个领域，它的两位前辈都曾为开创性成就付出生命代价，而中国达到了同样的里程碑，并将所有人安全带回。"
+ },
+ {
+  "rel": "programs/shenzhou.json",
+  "at": "outcome.1.caption",
+  "en": "A Shenzhou descent module after recovery on the grasslands of Inner Mongolia. The scorched capsule is the visible end of an invisible discipline: exhaustive uncrewed testing before any human rode one.",
+  "cur": "神舟返回舱在内蒙古草原回收后的样子。这个烧焦的舱体是一项无形纪律的可见终点:在任何人乘坐之前进行的详尽无人测试。"
+ },
+ {
+  "rel": "programs/shenzhou.json",
+  "at": "outcome.2.md",
+  "en": "The program also built something less visible but just as durable: a deep bench. China now flies experienced commanders alongside rookies, has put women in orbit and on spacewalks, and rotates crews through the station on a regular cadence. Shenzhou is no longer a demonstration that China can fly people — it is the routine, dependable bus that keeps its station staffed.",
+  "cur": "该计划还建立了一些不太显眼但同样持久的东西:一支实力雄厚的人才梯队。中国现在让经验丰富的指令长与新手搭档飞行,已将女性送入轨道并执行太空行走,并以固定节奏轮换空间站乘组。神舟不再是证明中国能够进行载人航天的展示——它是维持空间站人员配备的常规、可靠的接驳工具。"
+ }
+]

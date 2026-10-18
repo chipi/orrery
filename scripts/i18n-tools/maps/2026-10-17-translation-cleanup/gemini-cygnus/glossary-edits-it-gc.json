@@ -1,0 +1,20 @@
+[
+ {
+  "rel": "universe/named-stars/alhena.json",
+  "at": "bio",
+  "old": "Alhena (Gamma Geminorum) è una subgigante bianco-azzurra distante circa 109 anni luce, la terza stella più brillante dei Gemini, situata ai piedi dei Gemini vicino al bordo della Via Lattea.",
+  "new": "Alhena (Gamma Geminorum) è una subgigante bianco-azzurra distante circa 109 anni luce, la terza stella più brillante dei Gemelli, situata ai piedi dei Gemelli vicino al bordo della Via Lattea."
+ },
+ {
+  "rel": "universe/named-stars/deneb.json",
+  "at": "cultural",
+  "old": "Il nome deriva dall'arabo per 'coda', a indicare la coda di Cygnus, il Cigno. Deneb forma il Triangolo Estivo insieme a Vega e Altair e percorre la lunghezza del ramo settentrionale della Via Lattea.",
+  "new": "Il nome deriva dall'arabo per 'coda', a indicare la coda di Cigno, il Cigno. Deneb forma il Triangolo Estivo insieme a Vega e Altair e percorre la lunghezza del ramo settentrionale della Via Lattea."
+ },
+ {
+  "rel": "universe/named-stars/sadr.json",
+  "at": "bio",
+  "old": "Sadr (Gamma Cygni) è una supergigante giallo-bianca a circa 1.800 anni luce di distanza, situata nell'intersezione della Croce del Nord dove le ali di Cygnus incontrano il corpo. È immersa in un vasto complesso di idrogeno luminoso noto come regione di Sadr.",
+  "new": "Sadr (Gamma Cygni) è una supergigante giallo-bianca a circa 1.800 anni luce di distanza, situata nell'intersezione della Croce del Nord dove le ali di Cigno incontrano il corpo. È immersa in un vasto complesso di idrogeno luminoso noto come regione di Sadr."
+ }
+]

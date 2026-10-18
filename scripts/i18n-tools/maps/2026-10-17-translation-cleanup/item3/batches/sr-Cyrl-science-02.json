@@ -1,0 +1,842 @@
+[
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "body_paragraphs.1",
+  "en": "Its bias is geometric — it only catches the minority of systems whose orbits we see nearly edge-on — and it favours large planets on short periods, which transit more often and more deeply. False positives from eclipsing binaries and stellar activity mean transits are usually confirmed by a second method.",
+  "cur": "Њена пристрасност је геометријска — хвата само мањину система чије орбите видимо готово с ивице — а даје предност великим планетама с кратким периодима, које прелазе чешће и дубље. Лажно позитивни сигнали од двојних звезда помрачења и звездане активности значе да се транзити обично потврђују другом методом."
+ },
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "body_paragraphs.2",
+  "en": "Beyond discovery, a transit is a door into a planet's air: during the crossing, a thin ring of starlight filters through the planet's atmosphere and imprints the fingerprints of its gases — the technique the James Webb Space Telescope now uses to sniff exoplanet skies.",
+  "cur": "Осим открића, транзит је врата у ваздушни омотач планете: током прелаза, танак прстен звездане светлости процеђује се кроз атмосферу планете и у њој оставља отиске прстију њених гасова — техника којом James Webb Space Telescope данас „њуши“ небо егзопланета."
+ },
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "diagram_caption",
+  "en": "As the planet crosses the star's disk, the measured brightness drops by the ratio of their areas, then recovers.",
+  "cur": "Док планета прелази преко диска звезде, измерени сјај опада за однос њихових површина, а затим се опет враћа."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "title",
+  "en": "TRAPPIST-1: Seven Earth-Sized Worlds",
+  "cur": "TRAPPIST-1: седам светова величине Земље"
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "intro_sentence",
+  "en": "A dim red dwarf 40 light-years away hosts seven roughly Earth-sized planets — the richest compact system known, and a prime hunting ground for habitability.",
+  "cur": "Слабо сјајни црвени патуљак, удаљен 40 светлосних година, окружују седам планета приближно величине Земље — најбогатији збијени систем који познајемо и одлично поље за потрагу за настањивим световима."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "narrative_101.0",
+  "en": "In February 2017 NASA unveiled a system unlike any other: seven planets, all close to Earth's size, circling a single ultracool dwarf star barely larger than Jupiter, all packed closer to their star than Mercury is to the Sun.",
+  "cur": "У фебруару 2017. NASA је представила систем какав не постоји нигде другде: седам планета, све приближно величине Земље, које круже око једне ултрахладне патуљасте звезде једва веће од Јупитера, и све збијене ближе својој звезди него што је Меркур Сунцу."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "narrative_101.1",
+  "en": "Three or four of them fall in the habitable zone. The star is so dim that even those temperate worlds orbit in a matter of days, and the whole system would nest inside Mercury's orbit.",
+  "cur": "Три или четири од њих налазе се у настањивој зони. Звезда је толико слабо сјајна да чак и ти умерени светови обилазе око ње за неколико дана, а цео систем стао би унутар Меркурове орбите."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "narrative_101.2",
+  "en": "The seven move in a near-perfect chain of orbital resonances — a cosmic metronome — which let astronomers weigh them by their mutual tugs and made them the top small-planet targets for the James Webb Space Telescope.",
+  "cur": "Седам планета креће се у готово савршеном ланцу орбиталних резонанција — као космички метроном — што је астрономима омогућило да их измере по узајамним привлачењима и учинило их најзанимљивијим циљевима међу малим планетама за James Webb Space Telescope."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "body_paragraphs.0",
+  "en": "TRAPPIST-1 (an M8 dwarf ~40 light-years away in Aquarius) hosts seven transiting planets, b through h, with radii from about 0.75 to 1.13 Earth. Discovered by ground-based transit surveys and Spitzer and announced in full in 2017, their masses came from transit-timing variations — the planets are far too faint for radial velocity.",
+  "cur": "TRAPPIST-1 (патуљак спектралног типа M8, удаљен око 40 светлосних година, у сазвежђу Водолија) има седам планета које пролазе испред своје звезде, од b до h, полупречника од око 0,75 до 1,13 полупречника Земље. Откривене помоћу копнених прегледа неба тражењем транзита и помоћу телескопа Spitzer, а у целини објављене 2017. године, њихове масе одређене су из варијација у времену транзита — планете су сувише слабо сјајне за методу радијалних брзина."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "body_paragraphs.1",
+  "en": "The planets sit in a chain of first-order resonances, strong evidence they migrated inward together through the birth disk. Planets e, f, and g lie in the conservative habitable zone; all are likely tidally locked.",
+  "cur": "Планете чине ланац резонанција првог реда, што је снажан доказ да су заједно мигрирале ка унутра кроз диск у којем су настале. Планете e, f и g налазе се у конзервативној настањивој зони; све су вероватно плимно закључане."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "body_paragraphs.2",
+  "en": "JWST is systematically probing their atmospheres. Early results point to the innermost worlds (b, c) being largely airless — the expected toll of red-dwarf flares — while the temperate outer planets remain the field's marquee test of whether the galaxy's most common habitable zones can hold air.",
+  "cur": "JWST систематски испитује њихове атмосфере. Рани резултати указују на то да су најунутрашњији светови (b, c) углавном без атмосфере — очекивани данак бакљи црвених патуљака — док умерене спољне планете остају најважнији тест у овој области: могу ли најчешће настањиве зоне у галаксији да задрже атмосферу."
+ },
+ {
+  "rel": "science/history/_intro.json",
+  "at": "headline",
+  "en": "History — how a few hundred years of physics put us in orbit.",
+  "cur": "Историја — како нас је неколико стотина година физике довело у орбиту."
+ },
+ {
+  "rel": "science/history/_intro.json",
+  "at": "paragraphs.0",
+  "en": "Spaceflight didn't appear from nowhere. It rests on a stack of discoveries — Kepler's ellipses, Newton's gravity, Tsiolkovsky's rocket equation, Goddard's first liquid burn, Korolev's R-7 — each one assembled on the previous. This tab walks the milestones in chronological order, names the people who got there, and points back into the rest of /science where the maths lives.",
+  "cur": "Свемирски лет није настао из ничега. Он почива на низу открића — Kepler-овим елипсама, Newton-овој гравитацији, Tsiolkovsky-јевој једначини ракете, Goddard-овом првом паљењу мотора на течно гориво, Korolev-овом R-7 — од којих је свако саздано на претходном. Ова картица води кроз прекретнице хронолошким редом, наводи људе који су до њих стигли и упућује назад на остатак одељка /science, где се налази математика."
+ },
+ {
+  "rel": "science/history/_intro.json",
+  "at": "paragraphs.1",
+  "en": "We've cherry-picked six pivots: Kepler's ellipses, Newton's gravity, Tsiolkovsky's rocket equation, Goddard's first liquid burn, Korolev's R-7, and Apollo 11. Hundreds more deserve a place; future revisions will fill them in (Galileo's telescopes, Hohmann's transfer paper, Goddard's wife who took most of the photos, the Soviet engineers Korolev couldn't name in public, Ed White's spacewalk, von Kármán's altitude line). The story isn't owned by any one nation — every chapter has people you've never heard of who made it work.",
+  "cur": "Ручно смо издвојили шест прекретница: Kepler-ове елипсе, Newton-ову гравитацију, Tsiolkovsky-јеву једначину ракете, Goddard-ово прво паљење мотора на течно гориво, Korolev-ов R-7 и Apollo 11. Још стотине њих заслужују место; будућа издања ће их попунити (Galileo-ови телескопи, Hohmann-ов рад о трансферу, Goddard-ова супруга која је направила већину фотографија, совјетски инжењери које Корољов није смео јавно да именује, свемирска шетња Еда Вајта, von Kármán-ова линија висине). Ову причу не поседује ниједна нација — у сваком поглављу има људи за које никада нисте чули, а који су омогућили да све функционише."
+ },
+ {
+  "rel": "science/history/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Read it as a chain. Each step required the previous one. None were inevitable.",
+  "cur": "Читајте то као ланац. Сваки корак захтевао је претходни. Ниједан није био неизбежан."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "title",
+  "en": "Apollo 11 · July 20, 1969",
+  "cur": "Apollo 11 · 20. јул 1969."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "intro_sentence",
+  "en": "Three astronauts, a Saturn V, and a moonshot deadline JFK set in 1961. Tranquillity Base, eight years later, on schedule.",
+  "cur": "Тројица астронаута, ракета Saturn V и рок за слетање на Месец који је JFK поставио 1961. године. База Спокојство, осам година касније, тачно у року."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "narrative_101.0",
+  "en": "On May 25, 1961, John F. Kennedy told Congress \"this nation should commit itself to achieving the goal, before this decade is out, of landing a man on the Moon and returning him safely to the Earth.\" Eight years later, almost to the month, Neil Armstrong stepped onto Mare Tranquillitatis. 400,000 people worked on Apollo at peak; the programme cost ~$25.4 billion total (1960–1973, nominal); NASA's budget peaked at ~4.4% of the federal budget in 1966.",
+  "cur": "Дана 25. маја 1961. Џон Кенеди је рекао Конгресу: „ова нација треба да се посвети постизању циља да, пре краја ове деценије, спусти човека на Месец и безбедно га врати на Земљу.“ Осам година касније, скоро у исти месец, Нил Армстронг је закорачио на Море спокојства. На врхунцу програма на Apollo-у је радило 400.000 људи; програм је укупно коштао ~25,4 милијарде долара (1960–1973, у номиналној вредности); NASA-ин буџет достигао је врхунац 1966. године, са ~4,4% савезног буџета."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "narrative_101.1",
+  "en": "Apollo 11: Commander Neil Armstrong, CMP Michael Collins, LMP Edwin \"Buzz\" Aldrin. Saturn V launch July 16; lunar orbit July 19; landing July 20 at 20:17 UTC; first step at 02:56 UTC July 21 (UTC; 22:56 EDT July 20 in the US). Splashdown July 24. 8 days, 3 hours, 18 minutes total.",
+  "cur": "Apollo 11: командант Нил Армстронг, пилот командног модула (CMP) Мајкл Колинс, пилот лунарног модула (LMP) Едвин „Баз“ Олдрин. Лансирање ракете Saturn V 16. јула; улазак у лунарну орбиту 19. јула; слетање 20. јула у 20:17 UTC; први корак у 02:56 UTC 21. јула (UTC; у САД 20. јула у 22:56 EDT). Спуштање у океан 24. јула. Укупно трајање: 8 дана, 3 сата и 18 минута."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "narrative_101.2",
+  "en": "The moon landing was watched live by an estimated 600 million people — about a fifth of humanity at the time. The \"one small step\" line was Armstrong's; it was unscripted (he later said he meant to say \"one small step for a man\" but the indefinite article got lost in transmission).",
+  "cur": "Слетање на Месец уживо је гледало, према процени, 600 милиона људи — отприлике петина човечанства у то време. Реченица о „малом кораку“ била је Armstrong-ова и није била унапред написана (он је касније рекао да је хтео да каже „један мали корак за једног човека“, али је неодређени члан изгубљен у преносу)."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.0",
+  "en": "Saturn V was a 110-meter, three-stage liquid-fuel monster designed under Wernher von Braun (the German V-2 designer, brought to the US under Operation Paperclip in 1945). First stage: 5× F-1 engines, 7.6 million lbf thrust. Still the highest-thrust rocket to fly a fully successful crewed mission (SLS Block 1 and Starship exceed its raw liftoff thrust; nothing yet matched its crewed payload to TLI).",
+  "cur": "Saturn V је био чудовишни троступњевити ракетни систем на течно гориво, висок 110 метара, пројектован под руководством Wernher-а von Braun-а (немачког конструктора ракете V-2, доведеног у САД у оквиру Operation Paperclip 1945. године). Први степен: 5 мотора F-1, потисак од 7,6 милиона lbf. И даље је то ракета с највећим потиском која је извела потпуно успешну мисију с посадом (SLS Block 1 и Starship премашују њен потисак при полетању, али ништа још није достигло њену корисну тежину за посаду до TLI)."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.1",
+  "en": "Trajectory: free-return loop, the \"figure-8\" Earth-Moon-Earth. If the lunar-orbit insertion burn failed, Apollo 11 would have looped around the Moon and returned to Earth on the same arc — built-in abort. Apollo 13 used exactly this property when its service module failed, looping behind the Moon and coming home.",
+  "cur": "Путања: петља слободног повратка, „осмица“ Земља–Месец–Земља. Да паљење мотора за улазак у лунарну орбиту није успело, Apollo 11 би обишао Месец и вратио се на Земљу истим луком — уграђен прекид мисије. Apollo 13 је искористио баш ово својство када је отказао његов сервисни модул: обишао је иза Месеца и вратио се кући."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.2",
+  "en": "Key personnel beyond the crew: George Mueller (NASA Apollo programme director), Christopher Kraft (Mission Control founder), Margaret Hamilton (Apollo Guidance Computer software lead — she ran the team that wrote the AGC code that ran on the LM during descent), Glynn Lunney + Gene Kranz + Cliff Charlesworth (flight directors).",
+  "cur": "Кључно особље изван посаде: George Mueller (директор програма Apollo у агенцији NASA), Christopher Kraft (оснивач Центра за управљање мисијом), Margaret Hamilton (шефица софтвера за Apollo Guidance Computer — предводила је тим који је написао AGC код који се током спуштања извршавао на LM-у), Glynn Lunney + Gene Kranz + Cliff Charlesworth (директори лета)."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.3",
+  "en": "Things-that-could-have-killed-them: AGC alarms 1201 and 1202 during descent (executive overflow — Hamilton's robust software design recovered automatically); manual landing because the auto-target was a boulder field (Armstrong landed with ~25 seconds of fuel left); the LM ascent engine had ONE chance to fire and was untested at full duration in flight.",
+  "cur": "Ствари које су могле да их убију: аларми AGC-а 1201 и 1202 током спуштања (преоптерећење извршног програма — Hamilton-ин робусни дизајн софтвера опоравио се аутоматски); ручно слетање, јер је аутоматски одабрана циљна тачка била поље громада (Армстронг је слетео са горивом за још око 25 секунди); мотор за полазак лунарног модула имао је САМО ЈЕДНУ прилику да се упали и није био испитан у лету током пуног трајања рада."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.4",
+  "en": "Apollo flew six successful landings: 11, 12, 14, 15, 16, 17 (1969-1972). Apollo 13 missed the Moon (LOI cancelled), looped behind it, returned safely. 12 humans walked on the Moon; the last (Gene Cernan, Apollo 17) left on December 14, 1972.",
+  "cur": "Програм Apollo остварио је шест успешних слетања: Apollo 11, 12, 14, 15, 16 и 17 (1969–1972). Apollo 13 није стигао до Месеца (паљење мотора за улазак у лунарну орбиту (LOI) је отказано), обишао је иза њега и безбедно се вратио. Дванаест људи ходало је по Месецу; последњи међу њима, Јуџин Сернан (Apollo 17), отишао је 14. децембра 1972."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "title",
+  "en": "Goddard's First Liquid-Fuel Rocket · 1926",
+  "cur": "Goddard-ова прва ракета на течно гориво · 1926"
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "intro_sentence",
+  "en": "March 16, 1926: a 3-meter spindly contraption rises 12 meters into the Massachusetts sky. The first liquid-fuel rocket flight in history.",
+  "cur": "16. март 1926: витка справа висока 3 метра винула се 12 метара увис над небом Масачусетса. Први лет ракете на течно гориво у историји."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "narrative_101.0",
+  "en": "Robert Goddard was a physics professor at Clark University in Worcester, Massachusetts, with a 1919 Smithsonian paper proposing rockets could reach the Moon — for which the New York Times mocked him in a 1920 editorial that claimed he didn't even understand high-school physics. (The Times retracted on July 17, 1969 — the day after Apollo 11 launched, as the spacecraft was en route to the Moon.)",
+  "cur": "Роберт Годард био је професор физике на Clark University у Вустеру у Масачусетсу. Његов рад из 1919. објављен под окриљем Smithsonian-а износио је тезу да ракете могу стићи до Месеца — због чега му се New York Times 1920. подсмевао у уводнику у коме је тврдио да не разуме ни физику из средње школе. (Times се оградио од тога 17. јула 1969, дан након лансирања Apollo 11, док је летелица била на путу ка Месецу.)"
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "narrative_101.1",
+  "en": "On a snowy March 16, 1926, on his Aunt Effie Ward's farm in Auburn, Goddard launched a 4.4-pound, 10-foot rocket fueled by liquid oxygen and gasoline. It flew for 2.5 seconds, reached 41 feet altitude, and crashed in the cabbage field 184 feet downrange. His wife Esther Goddard photographed it. That short hop is the start of every modern rocket lineage.",
+  "cur": "Током снежног 16. марта 1926, на фарми своје тетке Effie Ward у Auburn-у, Goddard је лансирао ракету тешку 4,4 фунте и високу 10 стопа, која је као погонско гориво користила течни кисеоник и бензин. Летела је 2,5 секунде, достигла висину од 41 стопе и срушила се у пољу купуса, 184 стопе даље. Фотографисала ју је његова супруга Esther Goddard. Тај кратки скок почетак је сваке савремене лозе ракета."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "narrative_101.2",
+  "en": "Goddard was secretive — paranoid about competitors, refused most collaboration. His patents covered fundamentally everything: gimbaled engines, pumps, gyroscopic guidance, multi-stage configurations. Postwar Germans had read his patents; postwar Americans had to relearn most of his work because he hadn't shared it.",
+  "cur": "Goddard је био затворен — параноичан када је реч о конкурентима, одбијао је већину сарадње. Његови патенти покривали су у суштини све: покретне млазнице мотора на кардану, пумпе, жироскопско навођење, вишестепене конфигурације. Немци после рата читали су његове патенте; Американци после рата морали су поново да савладавају већину његовог рада јер га он није поделио ни са ким."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.0",
+  "en": "March 16, 1926 launch site: Aunt Effie Ward's farm, Auburn, Massachusetts. Vehicle: \"Nell\" — 10 ft tall, ~3 m long structure, weighing about 6 kg dry. Propellants: liquid oxygen + gasoline, regeneratively cooled, gimbaled nozzle.",
+  "cur": "16. март 1926. Место лансирања: фарма тетке Effie Ward, Auburn, Масачусетс. Летелица: „Nell“ — структура висока 10 стопа, дугачка ~3 m, масе око 6 kg без горива. Погонске компоненте: течни кисеоник + бензин, регенеративно хлађење, покретна млазница на кардану."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.1",
+  "en": "Earlier solid-fuel rockets existed (Chinese fire-arrows from the 13th century onward, Congreve rockets in the Napoleonic wars), but liquid fuels were the door to spaceflight: higher specific impulse, controllable throttling, restartable.",
+  "cur": "Ракете на чврсто гориво постојале су и раније (кинеске ватрене стреле од 13. века надаље, Конгривове ракете у Наполеоновим ратовима), али су течна горива била врата у свемирске летове: већи специфични импулс, могућност регулисања потиска и поновно паљење мотора."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.2",
+  "en": "Esther Goddard took most of the photographs. Her work is undercredited in standard histories — the iconic 1926 launch image is hers.",
+  "cur": "Esther Goddard начинила је већину фотографија. Њен рад је у уобичајеним историјама недовољно признат — иконична фотографија лансирања из 1926. њено је дело."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.3",
+  "en": "Goddard's later flights from Roswell, New Mexico (1930-1941), reached 1.7 mi altitude (Mar 1937) and 9000 ft (1941). Modest by modern standards but every key technology — gimbaling, pumps, gyros, parachute recovery — proved out on Goddard's hardware decades before mass-produced rocketry caught up.",
+  "cur": "Goddard-ови каснији летови из Roswell-а у Новом Мексику (1930–1941) досегли су висину од 1,7 миље (март 1937) и 9.000 стопа (1941). По савременим мерилима скромно, али свака кључна технологија — покретне млазнице на кардану, пумпе, жироскопи, опоравак падобраном — потврдила се на Goddard-овом хардверу деценијама пре него што је серијска производња ракета стигла до тог нивоа."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.4",
+  "en": "Postwar acknowledgment: NASA's Goddard Space Flight Center in Maryland (1959) is named for him.",
+  "cur": "Признање после рата: NASA-in Goddard Space Flight Center у Мериленду (1959) носи његово име."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "title",
+  "en": "Kepler's Laws · 1609–1619",
+  "cur": "Kepler-ови закони · 1609–1619"
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "intro_sentence",
+  "en": "Tycho Brahe's lifetime of naked-eye Mars data, distilled by Kepler into the three rules every orbit obeys.",
+  "cur": "Животно дело података о Марсу које је Тихо Брахе прикупио голим оком, а Кеплер сажео у три правила којима се покорава свака орбита."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "narrative_101.0",
+  "en": "Tycho Brahe spent ~20 years at the Uraniborg observatory on Hven measuring Mars's position with quadrants made of brass and oak — better-than-arcminute precision, all with naked eyes. He died in 1601 having published little of his planetary results.",
+  "cur": "Тихо Брахе је провео ~20 година у опсерваторији Uraniborg на острву Hven мерећи положај Марса квадрантима од месинга и храстовине — са прецизношћу бољом од једног лучног минута, и то голим оком. Умро је 1601. године, а да је објавио тек мали део својих резултата о кретању планета."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "narrative_101.1",
+  "en": "Kepler inherited the Mars notebooks. He spent another decade trying to fit them to circles and failed. The break came when he tried an ellipse — Mars matched immediately. Out of that came three laws: orbits are ellipses with the Sun at one focus; equal areas swept in equal time; period squared equals semi-major axis cubed.",
+  "cur": "Кеплер је наследио бележнице са подацима о Марсу. Провео је још једну деценију покушавајући да их уклопи у кругове, и у томе није успео. Прелом је наступио када је покушао са елипсом — Марс се одмах уклопио. Из тога су проистекла три закона: орбите су елипсе са Сунцем у једној жижи; радијус-вектор у једнаким временским интервалима пребрише једнаке површине; квадрат периода једнак је кубу велике полуосе."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "narrative_101.2",
+  "en": "Without those three laws, no spacecraft trajectory in this app would compute. Every porkchop cell, every transfer arc, every planet on /explore is a Keplerian solution.",
+  "cur": "Без та три закона не би се могла израчунати ниједна путања летелице у овој апликацији. Свака porkchop ћелија, сваки трансферни лук, свака планета на /explore јесте кеплеровско решење."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.0",
+  "en": "Astronomia Nova (1609) published Laws 1 + 2 — the ellipse + equal-areas rules, derived from the Mars opposition data. Harmonices Mundi (1619) published Law 3 — period² ∝ semi-major axis³.",
+  "cur": "У делу Astronomia Nova (1609) објављени су Закони 1 и 2 — правила о елипси и једнаким површинама, изведена из података о опозицији Марса. У делу Harmonices Mundi (1619) објављен је Закон 3 — период² ∝ велика полуоса³."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.1",
+  "en": "Kepler had no theoretical justification — the laws were empirical patterns extracted from data. Newton would supply the why 70 years later (gravity goes as 1/r²; bound orbits are conic sections; Law 3 falls out of energy conservation).",
+  "cur": "Кеплер није имао теоријско објашњење — закони су били емпиријски обрасци издвојени из података. Newton ће пружити одговор на питање зашто тек 70 година касније (гравитација опада као 1/r²; везане орбите су конусни пресеци; Закон 3 произлази из одржања енергије)."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.2",
+  "en": "Brahe's contribution wasn't just data: he was a meticulous instrumentalist who pushed naked-eye measurement to its physical limit. Telescope-grade precision arrived only after Galileo's 1609 telescope — too late to overlap with Brahe's career.",
+  "cur": "Brahe-ов допринос није био само у подацима: био је педантан мајстор инструмената који је мерење голим оком довео до његове физичке границе. Прецизност на нивоу телескопа појавила се тек после Галилејевог телескопа из 1609. године — прекасно да би се преклопила са Brahe-овом каријером."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.3",
+  "en": "Modern reanalysis: Kepler's Mars residuals are sub-arcminute. He nailed an ellipse with eccentricity 0.0934 from data that had irreducible measurement uncertainty of ~1 arcminute. The fit was real.",
+  "cur": "Савремена реанализа: Kepler-ова одступања за Марс мања су од једног лучног минута. Одредио је елипсу ексцентричности 0,0934 на основу података чија је непремостива мерна несигурност износила ~1 лучни минут. Уклапање је било стварно."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "diagram_caption",
+  "en": "Tycho's Mars positions (dots) versus Kepler's elliptical fit (curve). Sun at one focus.",
+  "cur": "Tycho-ови положаји Марса (тачке) наспрам Kepler-овог елиптичног уклапања (крива). Сунце је у једној жижи."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "title",
+  "en": "Newton's Principia · 1687",
+  "cur": "Newton-ова Principia · 1687"
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "intro_sentence",
+  "en": "One book, three laws of motion, and the inverse-square law of gravity — the foundation everything spaceflight does still rests on.",
+  "cur": "Једна књига, три закона кретања и закон обрнуте пропорционалности квадрату растојања за гравитацију — темељ на коме и даље почива све што свемирски летови чине."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "narrative_101.0",
+  "en": "By 1684 Halley was asking the right people what shape an orbit would take if the Sun's pull went as 1/r². Christopher Wren wagered a book of forty shillings that no-one could prove it; Hooke claimed a proof he didn't have. Halley asked Newton — Newton said \"an ellipse\" without hesitation, dug up the proof from years-old notes, and three years later published the Principia.",
+  "cur": "До 1684. Halley је распитивао праве људе какав би облик имала орбита када би Сунчево привлачење опадало сразмерно 1/r². Кристофер Рен се кладио у књигу вредну четрдесет шилинга да нико не може то да докаже; Hooke је тврдио да поседује доказ, а није га имао. Halley је упитао Newton-а — Newton је без поколебања одговорио: „елипса\", ископао доказ из белешки старих годинама и три године касније објавио Principia."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "narrative_101.1",
+  "en": "Three laws of motion (inertia, F = ma, action-reaction) plus the inverse-square gravity law (F = Gm₁m₂/r²) plus the calculus to do it all — one book, three years, no peer review. Halley paid the printing costs himself when the Royal Society ran out of money on a fish-anatomy book.",
+  "cur": "Три закона кретања (инерција, F = ma, акција и реакција), плус закон гравитације обрнуто сразмеран квадрату растојања (F = Gm₁m₂/r²), плус рачун помоћу кога се све то изводи — једна књига, три године, без рецензије. Halley је сам платио трошкове штампе када је Royal Society остао без новца због књиге о анатомији риба."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "narrative_101.2",
+  "en": "Out of those equations: Kepler's three laws derive cleanly. Tides, projectile motion, the precession of the equinoxes, the shape of the Earth — all consequences. Spaceflight 280 years later is straightforward Newtonian mechanics with engines added.",
+  "cur": "Из тих једначина јасно следе сва три Kepler-ова закона. Плима и осека, кретање пројектила, прецесија равнодневница, облик Земље — све су то последице. Свемирски лет 280 година касније јесте обична класична механика којој су додати мотори."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "body_paragraphs.0",
+  "en": "Philosophiæ Naturalis Principia Mathematica was published July 1687 in Latin. Three books: motion in a vacuum, motion through resisting media, the system of the world. The third book applies the laws to the actual cosmos and reproduces all of Kepler's data from first principles.",
+  "cur": "Philosophiæ Naturalis Principia Mathematica објављена је јула 1687. на латинском језику. Три књиге: кретање у вакууму, кретање кроз средине које пружају отпор, устројство света. Трећа књига примењује законе на стварни космос и из основних принципа реконструише све Kepler-ове податке."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "body_paragraphs.1",
+  "en": "Calculus was Newton's invention specifically to do this. He called it \"fluxions\" — Leibniz independently invented essentially the same machinery in Germany around the same time, and the rivalry over priority lasted decades.",
+  "cur": "Рачун је Newton измислио управо зато да би ово постигао. Назвао га је „флуксије“ — Лајбниц је отприлике у исто време, независно од њега, у Немачкој измислио у суштини исти математички апарат, а спор око првенства трајао је деценијама."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "body_paragraphs.2",
+  "en": "What Newton DIDN'T explain: WHY gravity follows 1/r². His own famous comment — added to the 1713 second edition: \"Hypotheses non fingo\" — \"I feign no hypotheses.\" The mechanism would wait for Einstein in 1915.",
+  "cur": "Оно што Newton НИЈЕ објаснио: ЗАШТО гравитација прати 1/r². Његов чувени коментар — додат другом издању из 1713: „Hypotheses non fingo“ — „Не измишљам хипотезе.“ На објашњење механизма требало је чекати Einstein-а и 1915."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "body_paragraphs.3",
+  "en": "Modern numerical orbit propagators run essentially Newton's equations with floating-point arithmetic. /fly's heliocentric arc, /plan's porkchop, every Keplerian solution — Newtonian gravity all the way down.",
+  "cur": "Савремени нумерички пропагатори орбита у суштини решавају Newton-ове једначине аритметиком са покретним зарезом. Хелиоцентрични лук у /fly, porkchop дијаграм у /plan, свако кеплеровско решење — све до самог дна, то је Newton-ова гравитација."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "formula_caption",
+  "en": "Newton's law of universal gravitation. G ≈ 6.674 × 10⁻¹¹ N·m²/kg².",
+  "cur": "Newton-ов закон опште гравитације. G ≈ 6,674 × 10⁻¹¹ N·m²/kg²."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "title",
+  "en": "Sputnik 1 · October 4, 1957",
+  "cur": "Sputnik 1 · 4. октобар 1957."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "intro_sentence",
+  "en": "An 84-kg Soviet aluminium ball goes into a 96-minute orbit. Spaceflight is real now — for everyone, all at once.",
+  "cur": "Совјетска алуминијумска кугла од 84 kg улази у орбиту на којој један обилазак траје 96 минута. Свемирски лет је сада стваран — за све, и то одједном."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "narrative_101.0",
+  "en": "October 4, 1957, Baikonur Cosmodrome, Kazakh SSR: Sergei Korolev's R-7 rocket lofts a 58-cm aluminium sphere with four whip antennas into low Earth orbit. The sphere broadcasts a single beep every 0.4 seconds at 20 and 40 MHz. Anyone on Earth with a shortwave radio can hear it — and they did. The space age starts that night.",
+  "cur": "4. октобар 1957, космодром Бајконур, Казашка ССР: ракета R-7 Сергеја Корољова избацује у ниску орбиту око Земље алуминијумску сферу пречника 58 cm са четири бичаста антенска штапа. Сфера емитује један једини сигнал на сваких 0,4 секунде на 20 и 40 MHz. Свако на Земљи са краткоталасним радио-пријемником могао је да га чује — и чуо је. Свемирско доба почиње те ноћи."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "narrative_101.1",
+  "en": "Sergei Korolev, the Soviet chief designer, ran the R-7 programme as an ICBM project — the satellite was a sideshow. His engineering team launched a ~500 kg biological satellite (Sputnik 2, with the dog Laika) one month later. Korolev's name was a state secret his entire life; he was credited only as \"Chief Designer\" until obituary in 1966.",
+  "cur": "Сергеј Корољов, совјетски главни конструктор, водио је програм R-7 као пројекат интерконтиненталне балистичке ракете — сателит је био само успутна ствар. Његов инжењерски тим лансирао је месец дана касније биолошки сателит масе око 500 kg (Sputnik 2, са псом по имену Laika). Корољов име било је државна тајна читавог његовог живота; јавно је помињан само као „главни конструктор“ све до читуље 1966."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "narrative_101.2",
+  "en": "America had no operational rocket capable of orbit in 1957 — Vanguard exploded on the launch pad in December. Explorer 1 finally reached orbit January 31, 1958, on a von Braun Redstone derivative. The \"Sputnik shock\" launched NASA (1958), the National Defense Education Act, and the entire space race that would define the next decade.",
+  "cur": "Америка 1957. није имала ниједну оперативну ракету способну да достигне орбиту — Vanguard је у децембру експлодирао на лансирној рампи. Explorer 1 је коначно доспео у орбиту 31. јануара 1958, на ракети изведеној из Redstone-а, коју је развио von Braun. „Спутњик шок“ покренуо је оснивање NASA (1958), National Defense Education Act и читаву свемирску трку која ће обележити наредну деценију."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.0",
+  "en": "Vehicle: R-7 Semyorka, the world's first ICBM, repurposed. Five strap-on first-stage boosters around a sustainer core. The same family of rockets (heavily evolved) launches Soyuz crews to ISS today — direct hardware lineage from Sputnik.",
+  "cur": "Ракета-носач: R-7 Semyorka, прва интерконтинентална балистичка ракета на свету, преиначена за нову намену. Пет бочних помоћних ракетних степена првог степена окружује централни маршевски степен. Иста породица ракета (у великој мери развијана) и данас лансира посаде летелица Soyuz ка МСС — директна линија хардвера која води од Sputnik-а."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.1",
+  "en": "Sputnik orbit: perigee 215 km, apogee 939 km, inclination 65°, period 96 minutes. It re-entered January 4, 1958, after 92 days and 1440 orbits.",
+  "cur": "Орбита сателита Sputnik: перигеј 215 km, апогеј 939 km, нагиб 65°, период 96 минута. Поново је ушао у атмосферу 4. јануара 1958, после 92 дана и 1440 обилазака."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.2",
+  "en": "Key personnel beyond Korolev: Tikhonravov (rocket designer), Keldysh (mathematician — orbit calculations), Glushko (rocket-engine designer for the R-7 boosters). Russian engineering had absorbed German V-2 work after WWII (the Soviets captured the Mittelwerk facility) but the R-7 was substantively native.",
+  "cur": "Кључно особље поред Корољова: Тихонравов (конструктор ракета), Келдиш (математичар — прорачуни орбита), Глушко (конструктор ракетних мотора за помоћне ракете R-7). Руско инжењерство је након Другог светског рата преузело немачка достигнућа у вези са ракетом V-2 (Совјети су заузели погон Mittelwerk), али је R-7 у суштини био домаћи производ."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.3",
+  "en": "American reaction was outsize: Sputnik was technically simple (a radio beacon) but politically enormous. The fact that the USSR could put 84 kg in orbit meant they could put a thermonuclear warhead anywhere on Earth via the same rocket. ICBM panic drove a decade of US R&D acceleration.",
+  "cur": "Реакција Америке била је несразмерна: Sputnik је технички био једноставан (радио-фар), али политички огроман. Чињеница да је СССР могао да у орбиту изведе 84 kg значила је да би истом ракетом могао да пошаље термонуклеарну бојеву главу у било коју тачку на Земљи. Паника због интерконтиненталних балистичких ракета покренула је читаву деценију убрзаног америчког истраживања и развоја."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.4",
+  "en": "Sputnik's legacy: NASA founded July 29, 1958. ARPA (later DARPA) founded same year. The civilian US space programme was a direct response.",
+  "cur": "Наслеђе сателита Sputnik: NASA је основана 29. јула 1958. Исте године основана је и ARPA (касније DARPA). Цивилни амерички свемирски програм био је директан одговор."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "title",
+  "en": "Tsiolkovsky Equation · 1903",
+  "cur": "Tsiolkovsky-јева једначина · 1903"
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "intro_sentence",
+  "en": "A deaf Russian schoolteacher works out the rocket equation 50 years before anyone could build a rocket to use it.",
+  "cur": "Глуви руски учитељ израчунава једначину ракете 50 година пре него што је ико могао да сагради ракету која би је применила."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "narrative_101.0",
+  "en": "Konstantin Tsiolkovsky was a self-taught provincial schoolteacher in Kaluga, deaf since childhood from scarlet fever, who spent his evenings sketching multi-stage rockets while teaching arithmetic by day. In 1903 he published \"The Investigation of Space by Means of Reactive Devices\" in an obscure Russian journal — and worked out the equation that would govern every rocket ever built.",
+  "cur": "Константин Циолковски био је самоуки провинцијски учитељ у граду Калуга, глув од детињства због шарлаха, који је вечери проводио скицирајући вишестепене ракете, а дане предајући аритметику. Године 1903. објавио је рад „Истраживање свемира помоћу реактивних направа“ у једном нејасном руском часопису — и израчунао једначину која ће владати сваком ракетом икада саграђеном."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "narrative_101.1",
+  "en": "The Tsiolkovsky equation: ∆v = vₑ × ln(m₀/m₁). The change in velocity a rocket can produce equals its exhaust velocity times the natural log of its mass ratio. That natural-log term is brutal — getting more ∆v requires exponentially more fuel. Most of every rocket is fuel. The Saturn V was 85% propellant by mass.",
+  "cur": "Tsiolkovsky-јева једначина: ∆v = vₑ × ln(m₀/m₁). Промена брзине коју ракета може да оствари једнака је брзини истицања издувних гасова помноженој природним логаритмом њеног односа маса. Тај члан с природним логаритмом је немилосрдан: за веће ∆v потребно је експоненцијално више горива. Највећи део сваке ракете чини гориво. Saturn V је по маси био 85% погонско гориво."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "narrative_101.2",
+  "en": "Tsiolkovsky also figured out: liquid fuels would beat solids; multi-staging was necessary to escape Earth; orbital stations could host humans permanently. He died in 1935, two years before Goddard's rockets reached serious altitude.",
+  "cur": "Tsiolkovsky је закључио и друго: течна горива надмашиће чврста; вишестепеност је неопходна да би се побегло од Земљине гравитације; орбиталне станице могле би трајно да угосте људе. Умро је 1935. године, две године пре него што су Goddard-ове ракете достигле озбиљну висину."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "body_paragraphs.0",
+  "en": "Tsiolkovsky published the equation, the multi-stage rocket concept, and the orbital-station concept years before serious rocket engineering existed. Goddard would build the first liquid-fuel rocket in 1926 (US); von Braun's V-2 in 1942 (Germany); Korolev's R-7 in 1957 (USSR).",
+  "cur": "Tsiolkovsky је објавио једначину, концепт вишестепене ракете и концепт орбиталне станице годинама пре него што је озбиљно ракетно инжењерство уопште постојало. Goddard ће 1926. године (САД) саградити прву ракету на течно гориво; von Braun-ову V-2 1942. (Немачка); Корољовљеву R-7 1957. (СССР)."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "body_paragraphs.1",
+  "en": "The equation is the inverse of Newton's third law: every kilogram of propellant ejected at velocity vₑ pushes the vehicle by 1 kg × vₑ. Integrate that over decreasing mass and you get the natural-log dependence.",
+  "cur": "Једначина је инверзна Newton-овом трећем закону: сваки килограм погонског горива избаченог брзином vₑ потискује летелицу за 1 kg × vₑ. Проинтегришите то по маси која се смањује и добићете зависност од природног логаритма."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "body_paragraphs.2",
+  "en": "Why log scale matters: doubling ∆v needs the mass ratio squared. Tripling needs cubed. To get from 0 to escape velocity (~11.2 km/s) with a typical chemical exhaust velocity of 4.4 km/s, mass ratio = e^(11.2/4.4) ≈ 13. So a 1-tonne payload needs 12 tonnes of propellant, plus the structure to hold it.",
+  "cur": "Зашто је логаритамска скала важна: за удвостручење ∆v потребан је квадрат односа маса. За утростручење — куб. Да би се од 0 стигло до брзине бекства (~11,2 km/s) са типичном брзином истицања хемијских издувних гасова од 4,4 km/s, однос маса износи e^(11,2/4,4) ≈ 13. Дакле, за корисни терет од једне тоне потребно је 12 тона погонског горива, плус конструкција која га носи."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "body_paragraphs.3",
+  "en": "Tsiolkovsky never tested anything. He wasn't an engineer — he was a theoretician with chalk. The Soviet space programme posthumously canonised him; his Kaluga house is now a museum and his name is on the far-side crater the lunar Soviets aimed at.",
+  "cur": "Tsiolkovsky никада ништа није испробао. Није био инжењер — био је теоретичар с кредом. Совјетски свемирски програм канонизовао га је постхумно; његова кућа у граду Калуга данас је музеј, а његово име носи кратер на невидљивој страни Месеца који су совјетски лунарни стручњаци узели за мету."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "formula_caption",
+  "en": "The rocket equation. m₀ = wet mass (full); m₁ = dry mass (empty); vₑ = exhaust velocity.",
+  "cur": "Једначина ракете. m₀ = маса напуњене ракете (пуна); m₁ = сува маса (празна); vₑ = брзина истицања издувних гасова."
+ },
+ {
+  "rel": "science/life-in-space/_intro.json",
+  "at": "headline",
+  "en": "Life in space — what the human body does when gravity goes away.",
+  "cur": "Живот у свемиру — шта људско тело ради када гравитација нестане."
+ },
+ {
+  "rel": "science/life-in-space/_intro.json",
+  "at": "paragraphs.0",
+  "en": "Spaceflight is a slow medical experiment that humanity has been running on itself for 65 years. The body evolved in 1 g, in a thick atmosphere, behind a magnetic field. Take any of those away and physiology re-wires — fluids redistribute, bones thin, muscles fade, eyes change shape, the immune system gets weird, the inner ear gives up trying to tell which way is down.",
+  "cur": "Свемирски лет је спор медицински експеримент који човечанство већ 65 година спроводи на себи самом. Тело је еволуирало при 1 g, у густој атмосфери, иза магнетног поља. Одузмите му било шта од тога и физиологија се преправља изнова — течности се прерасподељују, кости се танје, мишићи слабе, очи мењају облик, имунолошки систем се чудно понаша, а унутрашње уво одустаје од покушаја да сазна где је доле."
+ },
+ {
+  "rel": "science/life-in-space/_intro.json",
+  "at": "paragraphs.1",
+  "en": "This tab walks through the headline effects and what astronauts do to fight them. Microgravity is the big one — every other tab section traces back to it. Radiation is the other one we don't yet know how to defeat for a Mars trip. EVA is its own physiological problem: a hard vacuum on the other side of a thin pressure suit changes everything.",
+  "cur": "Ова картица води кроз најважније ефекте и кроз оно што астронаути раде да би им се супротставили. Микрогравитација је најважнија — сваки други одељак ове картице своди се на њу. Радијација је други проблем за који још не знамо како да га превазиђемо на путу до Марса. EVA је посебан физиолошки проблем: тврди вакуум са друге стране танког скафандера мења све."
+ },
+ {
+  "rel": "science/life-in-space/_intro.json",
+  "at": "paragraphs.2",
+  "en": "The countermeasures are real: ARED exercise machines on the ISS, sleep schedules calibrated against orbital sunrise, pre-breathe protocols before every spacewalk. None of them are perfect. The longer-duration we fly, the more we learn about what gives way first.",
+  "cur": "Противмере су стварне: ARED справе за вежбање на МСС-у, распореди спавања прилагођени орбиталном изласку Сунца, протоколи удисања чистог кисеоника пре сваке шетње у свемиру. Ниједна од њих није савршена. Што дуже летимо, то више сазнајемо о томе шта први попушта."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "title",
+  "en": "Bone density loss",
+  "cur": "Губитак густине костију"
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "intro_sentence",
+  "en": "Astronauts lose roughly 1–2% of bone mass per month in microgravity — the same rate as elderly osteoporosis, but compressed and reversible-ish.",
+  "cur": "Астронаути у микрогравитацији губе отприлике 1–2% коштане масе месечно — исто колико и код остеопорозе у старијем добу, али у сажетом облику и донекле реверзибилно."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "body_paragraphs.0",
+  "en": "Bone is a living tissue that constantly remodels itself: osteoblasts lay new bone down, osteoclasts dissolve old bone away, and on Earth the loading from walking, lifting, and just standing keeps the two roughly balanced. Take that loading away in orbit and the balance tips. Resorption keeps going at its normal rate; new-bone deposition slows. The result is a net loss of about 1–2% per month, concentrated in the weight-bearing structures: lumbar spine, pelvis, femoral neck, calcaneus.",
+  "cur": "Кост је живо ткиво које се стално обнавља: остеобласти полажу нову коштану масу, остеокласти растварају стару, а на Земљи оптерећење од ходања, дизања терета, па чак и од самог стајања одржава ова два процеса отприлике у равнотежи. Уклоните то оптерећење у орбити и равнотежа се нарушава. Ресорпција се наставља уобичајеним темпом, а стварање нове кости успорава. Резултат је нето губитак од око 1–2% месечно, који је концентрисан у структурама које носе тежину: лумбалном делу кичме, карлици, врату бутне кости и петној кости."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "body_paragraphs.1",
+  "en": "For comparison, post-menopausal osteoporosis on Earth runs at about 1–2% per **year**. A six-month ISS mission compresses about a decade of age-related loss into half a year. Some of it comes back after flight; some doesn't. Studies of long-duration crew suggest measurable bone-mineral-density deficits persist for years post-flight even after dedicated rehabilitation.",
+  "cur": "Поредења ради, постменопаузална остеопороза на Земљи напредује брзином од око 1–2% на годишњем нивоу, односно **годишње**. Шестомесечна мисија на МСС сабија отприлике деценију губитка условљеног старењем у пола године. Део се враћа после лета; део не. Студије дуготрајних посада показују да мерљиви дефицити минералне густине костију трају годинама после лета, чак и после посебно прилагођене рехабилитације."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "body_paragraphs.2",
+  "en": "The countermeasure stack on the ISS is ARED (Advanced Resistive Exercise Device — a vacuum-piston-loaded fake squat rack), the T2 treadmill (run while bungeed down), and the cycle ergometer. Modern protocols hit ~1100 N axial loading on ARED — high enough to be osteogenic. With ARED + bisphosphonate drug regimens, six-month crew now return with bone losses around 0.5%/month rather than the pre-ARED 1.5%/month. Better, not solved.",
+  "cur": "Скуп противмера на МСС чине ARED (Advanced Resistive Exercise Device — лажни сталак за чучњеве са вакуумским клипним оптерећењем), трудбеник T2 (трчи се док сте везани гуменим тракама) и бицикл-ергометар. Савремени протоколи на ARED-у достижу аксијално оптерећење од ~1100 N — довољно високо да буде остеогено. Уз ARED и режиме лечења бисфосфонатима, посаде након шест месеци сада се враћају са губитком кости од око 0,5% месечно, уместо 1,5% месечно колико је износио пре појаве ARED-а. Боље, али не и решено."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "diagram_caption",
+  "en": "ARED + treadmill + cycle keep loading on the weight-bearing skeleton; with countermeasures, modern crew lose ~0.5%/month vs the pre-ARED 1.5%/month.",
+  "cur": "ARED + трудбеник + бицикл одржавају оптерећење на скелету који носи тежину; уз противмере савремене посаде губе ~0,5% месечно, наспрам 1,5% месечно пре појаве уређаја ARED."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "title",
+  "en": "Crew dynamics & psychology — Mir crises, ISS protocols, isolation",
+  "cur": "Динамика посаде и психологија — кризе на станици Mir, протоколи на МСС, изолација"
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "intro_sentence",
+  "en": "Most of what we know about humans-in-space psychology was learned on Mir between 1986 and 2001. Fifteen years, 28 expeditions, four near-loss events, and a permanent shift in how every space agency thinks about crew composition.",
+  "cur": "Већину онога што знамо о психологији човека у свемиру научили смо на станици Mir између 1986. и 2001. Петнаест година, 28 експедиција, четири умало кобна догађаја и трајна промена у погледу сваке агенције на састав посаде."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.0",
+  "en": "Salyut 6 (Soviet, 1977-82) was the first station with deliberate long-duration crews, and the first to encounter the psychological problem that every subsequent long-mission station has had: at roughly 4-6 weeks into a mission, even highly-screened crews enter a phase Soviet psychologists called *asthenia* — fatigue, irritability, withdrawal from communication with ground, declining motivation. It was first attributed to physical deconditioning but became clear during Salyut 7 + Mir that it's primarily psychological — the novelty of orbit wears off, the work becomes routine, the crew is acutely aware they can't leave for another 5 months, and the relationship with ground control turns adversarial. Soviet ground controllers used to deliberately schedule unstructured personal time + family video calls + occasional surprise resupply gifts (chocolate, fresh fruit) as countermeasures; the practice is now standard on ISS + Tiangong + every analog station.",
+  "cur": "Salyut 6 (совјетска, 1977–82) била је прва станица са намерно планираним посадама за дуготрајне мисије и прва која се суочила са психолошким проблемом који су имале све потоње станице за дуге мисије: отприлике четири до шест недеља након почетка мисије чак и веома пажљиво одабране посаде улазе у фазу коју су совјетски психолози назвали *астенија* — умор, раздражљивост, повлачење из комуникације са Земљом, опадање мотивације. У почетку се то приписивало физичкој детренираности, али је током програма Salyut 7 и Mir постало јасно да је углавном психолошке природе — новина орбите бледи, посао постаје рутина, посада је свесна да не може да оде још пет месеци, а однос са контролом лета постаје супротстављен. Совјетски контролори лета намерно су планирали неструктурисано лично време, породичне видео-позиве и повремене изненадне поклоне уз снабдевање (чоколаду, свеже воће) као противмере; та пракса је данас стандард на МСС, на станици Tiangong и на свакој аналогној станици."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.1",
+  "en": "Mir's 1997 was the formative year. In February, a Vika oxygen-generation candle caught fire in the Kvant-1 module — flames that Linenger described as burning for up to ~14 minutes (Russian accounts put the active flame nearer 90 seconds) tore through the corridor connecting Mir's modules to the Soyuz lifeboats, blocking the escape path. The two-cosmonaut + one-NASA-astronaut crew (Tsibliyev, Lazutkin, Linenger) put on respirators and fought the fire with extinguishers in zero-g (which is harder than it sounds; the extinguisher's reaction mass kicks the operator backward). They prevailed but the cabin was full of toxic smoke for days. Four months later (June 1997), a manual remote-controlled Progress docking went wrong — the unmanned cargo ship struck the Spektr module at 1 m/s, puncturing the hull. Tsibliyev and Lazutkin sealed Spektr in 11 minutes (the hatch had to be wired closed because cables ran through the bulkhead), preventing total station loss. After both events the same crew remained on station until the regular crew rotation. Linenger's memoir + the post-mission psychiatric debriefs documented severe cumulative stress, withdrawal, and conflict between the cosmonauts and ground control over operational decisions.",
+  "cur": "Година 1997. на станици Mir била је пресудна. У фебруару се у модулу Kvant-1 запалила Vika кисеоничка свећица за производњу кисеоника — пламен, који је Linenger описао као да је горео до ~14 минута (руски извори активни пламен своде на око 90 секунди), захватио је ходник који повезује модуле станице Mir са спасилачким капсулама Soyuz и тако блокирао пут за бекство. Посада коју су чинила два космонаута и један астронаут агенције NASA (Tsibliyev, Lazutkin, Linenger) ставила је респираторе и гасила пожар апаратима за гашење у бестежинском стању (што је теже него што звучи: реактивна маса апарата одбацује руковаоца уназад). Савладали су ватру, али је кабина данима била пуна токсичног дима. Четири месеца касније (јуна 1997) ручно даљински вођено пристајање теретног брода Progress пошло је по злу — беспилотни теретни брод ударио је у модул Spektr брзином од 1 m/s и пробио труп. Tsibliyev и Lazutkin запечатили су Spektr за 11 минута (отвор је морао да се затвори жицом јер су кроз преграду пролазили каблови), чиме су спречили потпуни губитак станице. После оба догађаја иста посада остала је на станици до редовне смене посаде. Linenger-ови мемоари и психијатријски разговори након мисије документовали су тежак кумулативни стрес, повлачење у себе и сукоб између космонаута и контроле лета на Земљи око оперативних одлука."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.2",
+  "en": "ISS Expedition 1 (Shepherd-Krikalev-Gidzenko, 2000-01) was the first true international long-duration crew. The protocol stack — daily ground-uplink schedule, mandatory rest periods, weekly private psychiatric conferences (PPCs) with a flight surgeon, mandatory family video calls — was designed from the Mir lessons. The interpersonal model is closer to a small-team submarine than to a corporate office: clear authority but flat decision-making in non-emergency contexts; structured conflict resolution (a problem is discussed, voted on if disagreement persists, deferred to commander if still disagreement); active management of personality friction by ground (a crew member who's not getting along with another can be paired on tasks with a third). Every multi-national crew since Expedition 1 has had English as the common operational language (NASA-Russian crews use Russian for Russian-segment operations, English for joint operations); Chinese-American direct cooperation remains operationally constrained by the Wolf Amendment, but the ISS-Tiangong operational profile has converged on similar communication protocols anyway.",
+  "cur": "МСС Expedition 1 (Шеперд–Крикаљов–Гидзенко, 2000–01) била је прва права међународна посада за дуготрајну мисију. Збир протокола — дневни распоред преноса података са тла, обавезни периоди одмора, недељне приватне психијатријске конференције (PPC) са лекаром лета, обавезни породични видео-позиви — осмишљен је на основу лекција са станице Mir. Међуљудски модел ближи је малој подморничкој екипи него корпоративној канцеларији: јасна хијерархија, али равноправно доношење одлука у ситуацијама које нису хитне; структурисано решавање сукоба (проблем се размотри, о њему се гласа ако неслагање потраје, а ако и даље постоји неслагање, одлука се препушта команданту); активно управљање личним трвењима са тла (члан посаде који се не слаже с другим може бити у задацима упарен с трећим). Свака вишенационална посада од Expedition 1 имала је енглески као заједнички оперативни језик (посаде NASA и Русије користе руски за операције у руском сегменту, а енглески за заједничке операције); непосредна кинеско-америчка сарадња и даље је оперативно ограничена Wolf Amendment-ом, али је оперативни профил МСС и станице Tiangong ипак конвергирао ка сличним протоколима комуникације."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.3",
+  "en": "Tiangong's crew dynamics are constructed differently. Single-agency means all crew are PLA-officer-status with similar military-rank backgrounds; the hierarchy is more vertical than ISS, with the commander having more unilateral authority. Shenzhou 13 (Zhai-Wang-Ye, 2021-22, Tiangong's first 6-month crew) reported in post-mission debriefs that the unified operational language + shared training background + same-agency authority chain reduced the international-translation friction that ISS crews experience but added a different friction (peer-conflict resolution between same-rank colleagues was reportedly harder than peer-conflict resolution between cross-agency colleagues with different bosses). The CMSA-internal psychological screening criteria emphasise collaborative behaviour even more strongly than NASA's, partially because the architecture's vertical authority doesn't have the cross-agency safety-valve that ISS provides.",
+  "cur": "Динамика посаде на станици Tiangong устројена је другачије. Један-једини оператер значи да су сви чланови посаде у статусу официра PLA, са сличним војним чиновима и искуством; хијерархија је вертикалнија него на МСС, а командант има више самосталних овлашћења. Посада мисије Shenzhou 13 (Zhai-Wang-Ye, 2021–22, прва шестомесечна посада станице Tiangong) у разговорима после мисије навела је да су јединствен радни језик, заједничка обука и ланац одговорности унутар исте агенције смањили трење због међународног превођења које доживљавају посаде на МСС, али да су унели другачију врсту трења (решавање сукоба међу колегама истог чина било је, како се наводи, теже него решавање сукоба међу колегама из различитих агенција које имају различите надређене). Критеријуми психолошке селекције унутар CMSA још снажније истичу сарадничко понашање него NASA-ини, делимично зато што вертикални ланац овлашћења у овој архитектури нема вентил за растерећење између агенција какав пружа МСС."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.4",
+  "en": "Mars-class missions are the open psychological problem. The 26-month minimum-energy mission profile means crews are in confinement for ~33 months including transit + surface + return. The ground-to-vehicle round-trip-light-time grows from <0.1 second (Moon) to 4-24 minutes (Mars); real-time conversation with family + mission control is impossible for most of the journey. The cumulative stress modelling is largely extrapolated from analog campaigns (HI-SEAS Hawaii, Roscosmos SIRIUS in Moscow, MARS-500 in Moscow — the latter was 520 simulated days of crew isolation, with notable interpersonal conflict patterns by day ~200). The conservative architecture assumption is that a Mars crew needs ~7 people (not 6) for redundancy under acute behavioural-health events; the lossy assumption is that AI / autonomous medical support + procedural-skill expansion can compensate for loss of real-time ground psychological support. Neither has been validated. The first crewed Mars mission will be the first long-distance space-isolation experiment ever conducted with stakes high enough that failure is non-recoverable.",
+  "cur": "Мисије класе Марс представљају отворен психолошки проблем. Профил мисије са минималном енергијом од 26 месеци значи да су посаде у затворености ~33 месеца, укључујући лет до циља, боравак на површини и повратак. Време путовања светлости у оба смера између тла и летелице расте од <0,1 секунде (Месец) до 4–24 минута (Марс); разговор у реалном времену са породицом и контролом мисије немогућ је током већег дела путовања. Моделирање кумулативног стреса углавном је екстраполирано из аналогних кампања (HI-SEAS на Хавајима, Roscosmos SIRIUS у Москви, MARS-500 у Москви — последња је обухватала 520 симулираних дана изолације посаде, са уочљивим обрасцима међуљудских сукоба већ око ~200. дана). Конзервативна претпоставка архитектуре јесте да је посади на Марсу потребно ~7 људи (не 6) ради редундантности у случају акутних догађаја по менталано здравље; претпоставка са губицима јесте да вештачка интелигенција / аутономна медицинска подршка и проширење процедуралних вештина могу надокнадити одсуство психолошке подршке са тла у реалном времену. Ниједна није потврђена. Прва мисија са посадом на Марсу биће први експеримент свемирске изолације на велику удаљеност икада изведен са толико високим улогом да неуспех није надокнадив."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "diagram_caption",
+  "en": "Mir 1997 (fire + Spektr collision) is the canonical case study; ISS protocols (daily uplink schedule + PPCs + multi-national authority chain) are the operational response; Tiangong (single-agency hierarchy) is the contrast case; Mars (33 months + 4-24 min ground delay + no resupply) is the unsolved next-generation problem.",
+  "cur": "Mir 1997. (пожар + судар са модулом Spektr) јесте канонска студија случаја; протоколи на МСС (дневни распоред преноса података + PPC + вишенационални ланац овлашћења) представљају оперативни одговор; Tiangong (хијерархија једног оператера) је контрастни случај; Марс (33 месеца + кашњење везе са тлом од 4 до 24 минута + без допреме залиха) јесте нерешен проблем следеће генерације."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "title",
+  "en": "Crew selection — the funnel from applicant to astronaut",
+  "cur": "Избор посаде — левак од кандидата до астронаута"
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "intro_sentence",
+  "en": "Every space agency runs roughly the same selection funnel — physical, cognitive, psychological, operational — narrowing ~10,000 applicants to ~10 selectees. The bottleneck is crew dynamics under stress.",
+  "cur": "Свака свемирска агенција спроводи отприлике исти левак за избор — физички, когнитивни, психолошки, оперативни — који сужава ~10.000 кандидата на ~10 одабраних. Уско грло је динамика посаде под стресом."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.0",
+  "en": "The first generation of selection was driven by hardware constraints. Mercury (NASA, 1959) accepted only military jet test pilots under 5'11\" (180 cm — the Mercury capsule cabin limit), under 40 years old, with engineering degrees, and parachute-jump experience. The Soviet Vostok program (1959-60) accepted only fighter pilots under 5'7\" (170 cm — the Vostok hatch), under 30, under 70 kg. The reasoning was that the vehicle didn't have enough margin to fly someone larger or older, and a test pilot already had the airmanship + stress-tolerance the program needed. Of the original 20-person Soviet cosmonaut group (1960), only 12 ever flew; of the Mercury Seven, all seven flew. Both numbers tell you the selection bar was set very high relative to mission availability.",
+  "cur": "Прву генерацију одабира диктирала су ограничења технике. Mercury (NASA, 1959) примао је само војне пробне пилоте млазних авиона ниже од 5'11\" (180 cm — граница кабине капсуле Mercury), млађе од 40 година, са инжењерском дипломом и искуством скакања падобраном. Совјетски програм Vostok (1959-60) примао је само пилоте ловаца ниже од 5'7\" (170 cm — отвор летелице Vostok), млађе од 30 година и лакше од 70 kg. Образложење је било да летелица нема довољно резерве да понесе некога вишег или старијег, а пробни пилот је већ имао пилотско умеће и отпорност на стрес какве је програм захтевао. Од првобитне групе од 20 совјетских космонаута (1960) летело их је само 12; од Mercury Seven летело је свих седам. Оба броја говоре да је лествица одабира била постављена веома високо у односу на број доступних мисија."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.1",
+  "en": "Modern selection looks for different things. NASA's 2017 class accepted 12 from 18,300 applicants (0.07% acceptance — significantly lower than Harvard). Education requirement: STEM master's degree or equivalent operational experience (test pilot, MD, PhD). Height window: 4'9\"–6'4\" (149-193 cm — Crew Dragon and Soyuz both accommodate this range). No vision restriction beyond correctable. No upper age limit. Two years of related professional experience minimum, but actual selectees average 13 years. The fitness bar has shifted from 'jet-pilot G tolerance' to 'will not develop a serious illness on a 6-month ISS expedition' — different problem, different test.",
+  "cur": "Савремени одабир тражи друге ствари. Класа NASA из 2017. примила је 12 од 18.300 кандидата (0,07% пријема — знатно строже од Harvard-а). Услов образовања: мастер из природних или техничких наука или одговарајуће оперативно искуство (пробни пилот, лекар, доктор наука). Распон висине: 4'9\"–6'4\" (149-193 cm — и Crew Dragon и Soyuz примају тај распон). Нема ограничења вида осим да је исправљив. Нема горње старосне границе. Најмање две године сродног професионалног искуства, али изабрани у просеку имају 13 година. Физичка лествица се померила са „отпорности на G силе пилота млазњака“ на „неће се озбиљно разболети током шестомесечне експедиције на МСС“ — други проблем, други тест."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.2",
+  "en": "The medical phase is the single largest filter. Lovelace Clinic (Mercury, 1959) ran ~30 separate tests over a week, including the iconic ice-water-in-the-ear vestibular shock and the 'how long can you sit in a dark sensory-deprivation tank' isolation screen. Modern medicals still run isolation chambers (NASA uses a 12-hour confined-space evaluation; Roscosmos uses a longer 5-day Звезда isolation chamber session) but the medical workup is more sophisticated: comprehensive metabolic profile, full cardiology with stress echo, neurological imaging, dental clearance (a tooth abscess on orbit is a mission-loss event), and a psychiatric screen done by panel interview. Soyuz qualification adds centrifuge tolerance to 8g and 14-day quarantine to confirm the immune profile.",
+  "cur": "Медицинска фаза је највећи појединачни филтер. Lovelace Clinic (Mercury, 1959) спроводила је ~30 различитих тестова током једне недеље, укључујући чувени вестибуларни шок леденом водом у уху и проверу изолације „колико можеш да издржиш у мрачном резервоару сензорне депривације“. Савремени прегледи и даље користе изолационе коморе (NASA 12-часовну процену у скученом простору; Roscosmos дужу петодневну сесију у изолационој комори Звезда), али медицинска обрада је софистициранија: потпун метаболички профил, потпуна кардиологија са стрес-ехом, неуролошко снимање, стоматолошко одобрење (апсцес зуба у орбити може да кошта мисију) и психијатријски преглед кроз разговор пред комисијом. Квалификација за Soyuz додаје подношење центрифуге до 8 g и карантин од 14 дана ради потврде имунолошког профила."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.3",
+  "en": "Psychological screening is the part that's hardest to evaluate but disqualifies the most candidates relative to its visibility. The selection psychologists are looking for what JSC calls 'expedition behaviour' — the ability to work productively in a confined multinational team for 6+ months with no escape. Disqualifiers include rigid thinking, conflict-avoidance, score-keeping, perfectionism (counterintuitively — the trait is associated with crew-friction in long missions), and the specific cluster called 'right-stuff syndrome' that the early astronaut corps prized. The Apollo psychologist Patricia Santy's 1994 book *Choosing the Right Stuff* documents how the personality profile that wins selection in the test-pilot era is partially the profile that fails in long-duration missions; modern selection has shifted toward the temperament profile that succeeds in Antarctic-winter scientific bases and submarine deployments — calmer, more collaborative, less individually-aggressive.",
+  "cur": "Психолошки преглед је најтеже проценити, али он искључује највише кандидата у односу на то колико је мало видљив. Психолози за одабир траже оно што JSC назива „експедиционим понашањем“ — способност да се продуктивно ради у затвореном мултинационалном тиму више од 6 месеци без излаза. Дисквалификују круто размишљање, избегавање сукоба, бројање увреда, перфекционизам (супротно очекивању — та особина се повезује са трвењима у посади на дугим мисијама) и посебан скуп особина назван „синдром right stuff“ који је рани астронаутски корпус толико ценио. Књига психолога програма Apollo Patricia Santy *Choosing the Right Stuff* (1994) показује како је профил личности који је побеђивао на одабиру у ери пробних пилота делимично управо профил који подбацује на дуготрајним мисијама; савремени одабир се померио ка темпераменту који успева у научним базама на Антарктику током зиме и на подморницама — смиренијем, кооперативнијем, мање појединачно агресивном."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.4",
+  "en": "Non-NASA programs follow parallel logic with national variation. Roscosmos cosmonaut selection inherits the Soviet preference for engineering-heavy backgrounds and longer quarantine windows; the typical Soyuz commander has flown two or three previous missions before the assignment. CSA, ESA, and JAXA each select small cohorts (typically 1-2 per generation) through agency-specific medical + psychological standards but increasingly use shared training infrastructure — every modern ISS crew member trains in Houston, Star City, and either Tsukuba or Cologne. China's astronaut selection, run by the China Manned Space Agency (CMSA), took only PLAAF pilots for its first two groups (1998, 2010); the third group, selected in 2020, added flight engineers and payload specialists, mirroring NASA's 1965 expansion beyond test pilots. India's Gaganyaan crew (4 selected, 2022) all came from the IAF test-pilot pool — the program is following Mercury's 1959 playbook because, like Mercury, this is India's first crewed effort.",
+  "cur": "Програми ван NASA прате паралелну логику уз националне разлике. Одабир космонаута у Roscosmos-у наслеђује совјетску склоност ка изразито инжењерским профилима и дужим карантинима; типичан командант Soyuz-а пре именовања је већ летео две или три мисије. CSA, ESA и JAXA бирају мале групе (обично 1-2 по генерацији) по сопственим медицинским и психолошким стандардима, али све више користе заједничку инфраструктуру за обуку — сваки савремени члан посаде МСС обучава се у Хјустону, у Star City и у Цукуби или Келну. Одабир тајконаута, који спроводи China Manned Space Agency (CMSA), у прве две групе (1998. и 2010) обухватио је само пилоте PLAAF; трећа група, изабрана 2020, додала је инжењере лета и специјалисте за корисни терет, баш као што се NASA 1965. отворила и за друге осим пробних пилота. Индијска посада Gaganyaan (4 изабрана, 2022) потиче у целини из групе пробних пилота IAF — програм прати Mercury-јев приручник из 1959. јер је, као и Mercury, први индијски подухват са посадом."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "diagram_caption",
+  "en": "Selection funnel circa 2024: ~10,000 applicants → medical screen → physical fitness → cognitive testing → psychological screening → centrifuge / isolation → panel interview → ~10 selectees. The 99.9% drop-off is split roughly: 70% on the medical, 15% cognitive, 15% psychological/expedition-behaviour.",
+  "cur": "Левак за избор око 2024. године: ~10.000 кандидата → лекарски преглед → физичка спремност → когнитивно тестирање → психолошка провера → центрифуга / изолација → разговор пред комисијом → ~10 одабраних. Отпад од 99,9% распоређен је отприлике овако: 70% на лекарском прегледу, 15% на когнитивном делу, 15% на психолошком делу/понашању у експедицији."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "title",
+  "en": "Crewed-station design — Salyut to ISS to Tiangong",
+  "cur": "Дизајн станица са посадом — од Salyut-а преко МСС-а до Tiangong-а"
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "intro_sentence",
+  "en": "Six decades of crewed stations, six generations of architecture — the answer to 'how do you keep humans alive in orbit for months' got refined every time the previous answer broke.",
+  "cur": "Шест деценија станица са посадом, шест генерација архитектуре — одговор на питање „како одржати људе у животу у орбити месецима“ усавршаван је сваки пут када би се претходни одговор покварио."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.0",
+  "en": "A space station is four problems stacked: a pressurised hull strong enough to hold 1 atm against vacuum, a docking system that lets crew + cargo arrive, a life-support stack that recycles air/water/heat, and crew quarters that don't drive the occupants to mutiny. Every station ever flown made a different trade-off on those four. Salyut 1 (Soviet, 1971) was essentially a tin can with a docking port and one airlock; its first long-duration crew (Soyuz 11, 1971) died on the return because the IVA suit problem hadn't been solved yet. Skylab (US, 1973) was a converted Saturn V third stage — enormous interior volume (~360 m³) and one shot at it; the micrometeoroid shield tore off on launch and the first crew had to deploy a parasol from outside to keep the workshop from cooking. Each station's first crew is the one that finds the design flaws.",
+  "cur": "Свемирска станица је четири проблема наслагана један на други: херметички труп довољно чврст да задржи 1 atm наспрам вакуума, систем за пристајање преко којег стижу посада и терет, систем за одржавање живота који рециклира ваздух, воду и топлоту, и одаје за посаду које станаре не терају на побуну. Свака станица која је летела направила је другачији компромис између та четири. Salyut 1 (СССР, 1971) била је у суштини лимена конзерва са прикључком за пристајање и једном ваздушном комором; њена прва дуготрајна посада (Soyuz 11, 1971) погинула је при повратку јер проблем IVA скафандера још није био решен. Skylab (САД, 1973) био је преуређени трећи степен ракете Saturn V — огромна унутрашња запремина (~360 m³) и само један покушај; заштитни штит од микрометеорита откинуо се при лансирању, па је прва посада морала споља да рашири сунцобран како се радионица не би прегрејала. Прва посада сваке станице је она која открије грешке у пројекту."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.1",
+  "en": "Modular construction was the breakthrough that made permanent crewing possible. Mir (Soviet→Russian, 1986–2001) was the first multi-module station: a Salyut-derived core plus six attached modules added over a decade. The architecture proved you could keep humans aboard *continuously*, swap crews, and grow the station while it was occupied. Mir also taught everyone what happens when the docking architecture breaks: the 1997 Progress collision punctured Spektr, and the crew sealed it off rather than abandon ship. That lesson — every module has to be isolatable — is wired into every station since.",
+  "cur": "Модуларна градња била је продор који је омогућио сталну посаду. Mir (СССР→Русија, 1986–2001) била је прва станица од више модула: језгро изведено из Salyut-а и шест модула додатих током једне деценије. Та архитектура је доказала да људи могу да буду на броду *непрекидно*, да се посаде смењују и да станица расте док је насељена. Mir је такође свима показао шта се дешава када архитектура пристајања откаже: судар летелице Progress 1997. пробио је Spektr, а посада га је изоловала уместо да напусти станицу. Та лекција — сваки модул мора моћи да се изолује — уграђена је у сваку станицу од тада."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.2",
+  "en": "The ISS (1998–) inherited Mir's modular logic and scaled it: 16 pressurised elements built by NASA, Roscosmos, ESA, JAXA, and CSA, joined through a small number of standardised docking ports (CBM for berthing, IDSS for autonomous dock). The American segment (Unity, Destiny, Tranquility, Harmony, Columbus, Kibo, etc.) is hung off the truss with utilities running through Harmony; the Russian segment (Zarya, Zvezda, Nauka, Poisk, Rassvet, Prichal) operates on its own ECLSS and power loop and can theoretically survive segment isolation. The redundancy is doubled because the two halves were never quite trusted to fail together. The cost was complexity — ISS assembly took 13 years, 30+ assembly flights, and over 160 spacewalks.",
+  "cur": "МСС (1998–) наследила је модуларну логику станице Mir и проширила је: 16 херметичких елемената које су изградили NASA, Roscosmos, ESA, JAXA и CSA, повезаних малим бројем стандардизованих прикључака за пристајање (CBM за привез, IDSS за аутономно пристајање). Амерички сегмент (Unity, Destiny, Tranquility, Harmony, Columbus, Kibo итд.) окачен је о решеткасту конструкцију, а инсталације пролазе кроз Harmony; руски сегмент (Zarya, Zvezda, Nauka, Poisk, Rassvet, Prichal) ради на сопственом ECLSS-у и сопственом енергетском кругу и теоретски може да преживи раздвајање сегмената. Редундантност је двострука јер се две половине никада нису сасвим сматрале поузданим да откажу заједно. Цена је била сложеност — склапање МСС трајало је 13 година, уз више од 30 летова за склапање и преко 160 излазака у свемир."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.3",
+  "en": "Tiangong (CMSA, 2021–) is the deliberate counter-design: smaller (3 modules vs ISS's 16), tighter (single-agency, single supplier, single docking standard), and faster to build (core + two labs in under 24 months). The architecture borrows Salyut/Mir's core+module idea but lands closer to Skylab in scope — large interior volumes, fewer joints, less assembly EVA. The trade-off is no international redundancy: a problem in Tianhe's ECLSS isn't backed by a separate segment, and Wentian's airlock is the only EVA path. Tiangong's lessons will inform whoever builds the next station, which is now plausibly Axiom Station (commercial, attaches to ISS first then detaches) or a Chinese Mars-bound design — both are pencilled in for the 2030s.",
+  "cur": "Tiangong (CMSA, 2021–) је намерно супротан пројекат: мања (3 модула наспрам 16 на МСС), збијенија (једна агенција, један испоручилац, један стандард пристајања) и бржа за изградњу (језгро и две лабораторије за мање од 24 месеца). Архитектура позајмљује идеју језгра са модулима од Salyut/Mir, али је по обиму ближа Skylab-у — велике унутрашње запремине, мање спојева, мање излазака ради склапања. Цена је одсуство међународне редундантности: проблем у ECLSS-у модула Tianhe не покрива засебан сегмент, а ваздушна комора модула Wentian је једини пут напоље. Лекције станице Tiangong усмериће онога ко буде градио следећу станицу, а то је сада вероватно Axiom Station (комерцијална, прво прикључена на МСС, а затим одвојена) или кинески пројекат усмерен ка Марсу — обе су предвиђене за 2030-е."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.4",
+  "en": "What's invariant across all of them: every crewed station ever flown has had bigger problems with water, fire, and crew dynamics than with vacuum or radiation. Salyut 7 (1985) was almost lost when its onboard systems failed and Leonov + Savinykh had to dock manually with a dead station and reboot it in the cold. Mir had a fire (1997) bad enough that the crew put on respirators. ISS Expedition 1 had its toilet break in week one. The hull engineering is the part that's been solved since Salyut; the human-system engineering keeps revealing new ways to go wrong, which is what makes the encyclopedia's Life-in-Space section a moving target.",
+  "cur": "Оно што је непромењиво код свих: свака станица са посадом која је летела имала је веће проблеме са водом, ватром и односима у посади него са вакуумом или зрачењем. Salyut 7 (1985) замало је изгубљена када су отказали системи на броду, па су Леонов + Savinykh морали ручно да пристану уз мртву станицу и поново је покрену на хладноћи. На станици Mir избио је пожар (1997) толико озбиљан да је посада ставила респираторе. На МСС Expedition 1 тоалет се покварио већ прве недеље. Инжењерство трупа решено је још од Salyut-а; инжењерство људског система и даље открива нове начине да нешто крене наопако, и управо зато је одељак енциклопедије Живот у свемиру покретна мета."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "diagram_caption",
+  "en": "Six decades, six architectures: Salyut 1 (single can) → Skylab (single big can) → Mir (core + attached modules) → ISS (US + Russian segments + international truss) → Tiangong (compact tri-module) → next generation (commercial / Mars-precursor).",
+  "cur": "Шест деценија, шест архитектура: Salyut 1 (једна цилиндрична кабина) → Skylab (једна велика кабина) → Mir (језгро + прикључени модули) → МСС (амерички и руски сегмент + међународна решеткаста конструкција) → Tiangong (компактна тромодулна станица) → следећа генерација (комерцијална / претходница мисија на Марс)."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "title",
+  "en": "Life support — ECLSS, the air and water loop",
+  "cur": "Одржавање живота — ECLSS, круг ваздуха и воде"
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "intro_sentence",
+  "en": "Six people breathe 6 kg of oxygen a day, drink 18 L of water, and exhale 7 kg of CO₂. None of it is launched from Earth if the station can help it — every gram has to be recovered.",
+  "cur": "Шесторо људи дневно удише 6 kg кисеоника, попије 18 L воде и издахне 7 kg CO₂. Ништа од тога се не лансира са Земље ако станица то може да избегне — сваки грам мора да се поврати."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.0",
+  "en": "Environmental Control and Life Support System — ECLSS — is the part of a station that nobody sees and everybody depends on. Its job is to keep four numbers inside the green band: oxygen partial pressure (~21 kPa, like sea level), carbon dioxide partial pressure (<0.7 kPa nominal; humans get headaches above 1 kPa), cabin temperature (~22 °C), and relative humidity (40-60%). Get any of those wrong and the crew gets sick within hours. Get oxygen or CO₂ wrong badly enough and the crew dies. The system is engineered with at least one redundant subsystem for every function, and the US segment + Russian segment of ISS each run their own complete ECLSS so a fault on one side doesn't take both.",
+  "cur": "Систем за контролу околине и одржавање живота — ECLSS — онај је део станице који нико не види, а од кога сви зависе. Његов задатак је да четири вредности држи унутар зелене зоне: парцијални притисак кисеоника (~21 kPa, као на нивоу мора), парцијални притисак угљен-диоксида (<0,7 kPa номинално; изнад 1 kPa људима се јавља главобоља), температуру кабине (~22 °C) и релативну влажност (40–60%). Ако било која од њих измакне контроли, посада се разболи у року од неколико сати. Ако се довољно грубо омаши са кисеоником или CO₂, посада гине. Систем је пројектован тако да за сваку функцију постоји најмање један редундантни подсистем, а амерички и руски сегмент МСС-а раде сваки са својим потпуним ECLSS-ом, па квар на једној страни не обара обе."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.1",
+  "en": "Oxygen comes from electrolysis. The ISS Oxygen Generation System (OGS, in the Tranquility node) electrolyses water — pumped from the Water Recovery System — into O₂ (vented into the cabin) and H₂ (vented to space until 2010, then routed to the Sabatier reactor; see below). At nominal load OGS produces about 9 kg of O₂ per day, which covers 6 crew at 1.5 kg each plus losses. Russian Elektron-VM does the same thing on the other side, plus solid-fuel oxygen candles as a backup (essentially smoke grenades that release O₂ when ignited — used during Mir's 1997 fire-stricken weeks, where they were also the cause of the fire). Tiangong's Tianhe module runs a similar electrolyser; the Chinese architecture explicitly mirrors the ISS Sabatier-electrolysis closed loop.",
+  "cur": "Кисеоник потиче из електролизе. Систем за производњу кисеоника на МСС-у (OGS, у модулу Tranquility) електролизом раздваја воду — коју доводи Систем за рекуперацију воде — на O₂ (који се испушта у кабину) и H₂ (који се до 2010. испуштао у свемир, а потом се усмерава у Sabatier-ов реактор; види доле). При номиналном оптерећењу OGS производи око 9 kg O₂ дневно, што покрива 6 чланова посаде са по 1,5 kg плус губитке. Руски Elektron-VM ради исто то на другој страни станице, а као резерву користи и свеће са чврстим горивом за кисеоник (у суштини димне бомбе које при паљењу ослобађају O₂ — коришћене су током недеља 1997. које је станица Mir провела погођена пожаром, а оне су биле и његов узрок). Модул Tianhe станице Tiangong користи сличан електролизер; кинеска архитектура изричито опонаша затворену Sabatier-ову петљу електролизе са МСС-а."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.2",
+  "en": "CO₂ removal evolved more than any other ECLSS function. Apollo and early Shuttle used lithium-hydroxide canisters (LiOH absorbs CO₂ irreversibly; the Apollo 13 'square peg in a round hole' improvisation was a LiOH canister adapter). Modern ISS uses two regenerable systems: the US-side CDRA (Carbon Dioxide Removal Assembly), which uses zeolite molecular sieves that adsorb CO₂ then thermally desorb it for venting, and the Russian Vozdukh, which uses amine swing beds. The Sabatier reactor (Hamilton Sundstrand, installed on ISS in 2010) takes that vented CO₂ and combines it with the electrolysis-generated H₂ to make methane and water — closing the loop. The methane is currently vented; future Mars-bound architectures (Moxie on Perseverance is a related demo) intend to use it as propellant.",
+  "cur": "Уклањање CO₂ развило се више од било које друге функције система ECLSS. Apollo и први Shuttle користили су патроне с литијум-хидроксидом (LiOH неповратно апсорбује CO₂; импровизација са „квадратним клином у округлој рупи“ на мисији Apollo 13 била је управо адаптер за LiOH патрону). Савремени МСС користи два регенеративна система: CDRA (Carbon Dioxide Removal Assembly) на америчкој страни, који се служи молекулским ситима од зеолита што CO₂ адсорбују, а затим га термички десорбују ради испуштања, и руски Vozdukh, који користи амински слој с наизменичним циклусима. Sabatier-ов реактор (Hamilton Sundstrand, инсталиран на МСС-у 2010. године) узима тај испуштени CO₂ и спаја га са H₂ добијеним електролизом да би настали метан и вода — чиме се круг затвара. Метан се за сада испушта; будуће архитектуре за мисије ка Марсу (Moxie на Perseverance-у сродан је демонстрациони пројекат) намеравају да га користе као погонско гориво."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.3",
+  "en": "Water recovery is the most engineered subsystem. The ISS Water Recovery System (WRS, also in Tranquility) takes urine, humidity condensate from the air conditioning, EVA suit water (which is small), and waste from hygiene, and runs them through a urine processor (vacuum distillation to remove water from brine) and a water processor (multi-filtration, catalytic oxidation, ion exchange). The output is potable water cleaner than most municipal supplies. US-segment recovery was ~93–94% before the Brine Processor Assembly (added 2021); with the BPA, NASA demonstrated ~98% in 2023. The remaining losses are launched up from Earth as resupply water in disposable bags, mostly because the brine that comes out of urine processing still contains 15–20% water that can't be economically recovered — the BPA closes most but not all of that gap. The target for Mars-class missions is >98% continuously.",
+  "cur": "Рекуперација воде је технички најсложенији подсистем. Систем за рекуперацију воде на МСС-у (WRS, такође у модулу Tranquility) прима урин, кондензат влаге из климатизације, воду из EVA одела (које је мало) и отпадне воде од хигијене, и пропушта их кроз процесор урина (вакуумска дестилација којом се вода издваја из сланог раствора) и процесор воде (вишестепена филтрација, каталитичка оксидација, јонска измена). Резултат је пијаћа вода чистија од већине градских водовода. Рекуперација у америчком сегменту износила је ~93–94% пре Brine Processor Assembly (додат 2021); уз BPA, NASA је 2023. показала ~98%. Преостали губици се са Земље допремају као резервна вода у једнократним врећама, углавном зато што слани раствор који заостаје после обраде урина и даље садржи 15–20% воде коју није економично повратити — BPA премошћује већину тог јаза, али не и цео. Циљ за мисије до Марса је >98% непрекидно."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.4",
+  "en": "Thermal control is the last and largest subsystem — the ISS dumps about 75 kW of waste heat through external ammonia loops feeding 14 deployable radiators. The internal heat-transport loop uses water (non-toxic); the external loop uses ammonia (excellent thermal properties, but a leak inside the station would kill the crew, hence the two-loop design with heat exchangers at the segment boundary). The Russian segment uses an ethylene-glycol-based internal loop and a different external arrangement. Every ammonia leak on ISS (there have been several over 25 years) becomes a major operational event because of the cross-contamination risk; the suit-side EVA procedure for handling an ammonia leak is one of the longer training units in the astronaut curriculum.",
+  "cur": "Термална контрола је последњи и највећи подсистем — МСС одводи око 75 kW отпадне топлоте кроз спољне амонијачне кругове који напајају 14 развијајућих радијатора. Унутрашњи круг за пренос топлоте користи воду (нетоксичну), а спољни амонијак (одлична термичка својства, али би цурење унутар станице усмртило посаду, па отуда решење са два круга и измењивачима топлоте на граници сегмената). Руски сегмент има унутрашњи круг на бази етилен-гликола и другачији распоред спољног круга. Свако цурење амонијака на МСС-у (било их је неколико током 25 година) постаје велики оперативни догађај због ризика од унакрсне контаминације; поступак за рад у оделу током EVA при цурењу амонијака једна је од дужих јединица обуке у програму астронаута."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "diagram_caption",
+  "en": "Air: O₂ from electrolysis of recycled water → cabin → CO₂ scrubbed by zeolite (US) / amine (Russia) → Sabatier converts CO₂ + H₂ to methane + water → back into the water loop. Water: urine + condensate → distillation + multi-filtration → potable water → drink + electrolyse. Heat: internal water loop → ammonia external loop → 14 radiators.",
+  "cur": "Ваздух: O₂ из електролизе рециклиране воде → кабина → CO₂ се уклања цеолитом (САД) / амином (Русија) → Sabatier-ов процес претвара CO₂ + H₂ у метан + воду → назад у круг воде. Вода: урин + кондензат → дестилација + вишестепена филтрација → пијаћа вода → пиће + електролиза. Топлота: унутрашњи круг воде → спољни амонијачни круг → 14 радијатора."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "title",
+  "en": "EVA operations — the spacewalk procedure end to end",
+  "cur": "EVA операције — поступак свемирске шетње од почетка до краја"
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "intro_sentence",
+  "en": "Crack the airlock and 6–8 hours later you've put a payload on the truss. In between is the most procedural activity in spaceflight — 50+ choreographed steps, every one a chance to fail safely.",
+  "cur": "Отвориш ваздушну комору и за 6–8 сати терет је на решеткастој конструкцији. Између је најпрецизније прописана активност у свемирским летовима — 50+ кореографисаних корака, сваки прилика за безбедан пропуст."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.0",
+  "en": "A modern EVA starts about 24 hours before egress. The crew reviews the procedure binder (now a tablet) — every tether transfer, every bolt torque, every contingency. Tools are pre-staged on the airlock wall in the order they'll be needed. The night before, the crew sleeps at reduced cabin pressure (10.2 psi on the US side; the Russian Orlan side skips this step because of suit-pressure differences — see the `eva-physiology` article). At T-minus 4 hours the crew is in-suit, mask-breathing pure oxygen to wash nitrogen out of body tissues — the prebreathe protocol. Pre-breathe is non-negotiable; skipping it causes decompression sickness ('the bends') from N₂ bubbling out as the suit depressurises.",
+  "cur": "Савремени излазак у свемир почиње око 24 сата пре изласка. Посада прелази фасциклу са процедурама (сада таблет) — сваку промену сигурносног ужета, сваки момент притезања, сваку ванредну ситуацију. Алат се унапред распоређује на зиду ваздушне коморе редом којим ће бити потребан. Ноћ пре тога посада спава при сниженом притиску у кабини (10,2 psi на америчкој страни; руска страна са скафандером Orlan прескаче овај корак због разлике у притиску скафандера — видети чланак `eva-physiology`). Четири сата пре изласка посада је у скафандерима и кроз маску удише чист кисеоник да би из ткива избацила азот — протокол претходног дисања. О њему се не преговара; ко га прескочи, добија декомпресиону болест („the bends“), јер N₂ ствара мехуриће када притисак у скафандеру падне."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.1",
+  "en": "Egress is the riskiest 15 minutes. The airlock depressurises to 5.0 psi for a leak check (no audible whoosh = no suit puncture), then to vacuum. The crew member opens the outer hatch, attaches a primary safety tether to a station handrail, attaches a secondary local tether, and steps out. Every modern EVA uses two-tether discipline by default: the body tether to the station, and a local fixed-point tether at the worksite. The third backup is SAFER — a small jet-pack worn over the suit. SAFER's only job is to fly an untethered astronaut back to the structure if both primary tethers fail. It's been carried on every US EVA since 1994 and used in anger zero times.",
+  "cur": "Излазак је најризичнијих 15 минута. Притисак у ваздушној комори спушта се на 5,0 psi ради провере заптивености (нема чујног шиштања = скафандер није пробушен), а затим до вакуума. Члан посаде отвара спољни поклопац, качи главно сигурносно уже за рукохват станице, качи друго, локално уже и излази. Сваки савремени излазак подразумевано поштује правило два ужета: уже од тела до станице и локално уже за фиксну тачку на радном месту. Трећа резерва је SAFER — мали ранац на млазни погон који се носи преко скафандера. Његов једини задатак је да астронаута који се откачио врати до конструкције ако оба главна ужета откажу. Ношен је на сваком америчком изласку од 1994. и стварно употребљен нула пута."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.2",
+  "en": "Most of the actual work happens at a foot restraint, called an APFR (Articulating Portable Foot Restraint). The crew clips their feet in, leaving both hands free; without it, every motion requires expending grip strength to counter Newton's third law. EVA tasks are arm-fatigue-limited long before they're metabolic-limited. The EMU glove (the US suit's pressure glove) is the single most physiologically demanding piece of equipment ever flown — fingernail damage is so common NASA tracks it as a known injury, and crews routinely tape their fingertips before egress. The Russian Orlan glove is slightly less rigid (lower suit pressure trade-off) and the Chinese Feitian glove is a re-engineering of Orlan's design.",
+  "cur": "Највећи део правог посла обавља се са држача за стопала, APFR (Articulating Portable Foot Restraint). Посада закачи стопала и има обе руке слободне; без њега сваки покрет захтева снагу стиска да би се супротставио трећем Newton-овом закону. Послови при изласку ограничени су замором руку много пре него метаболизмом. Рукавица EMU (херметичка рукавица америчког скафандера) је физиолошки најзахтевнији комад опреме који је икада летео — оштећења ноктију су толико честа да их NASA води као познату повреду, а посаде пре изласка редовно облепе врхове прстију траком. Рукавица руског Orlan-а је нешто мање крута (цена нижег притиска у скафандеру), а кинеска рукавица Feitian је прерада конструкције Orlan-а."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.3",
+  "en": "While the crew works, ground controllers track three numbers in real-time: suit metabolic rate (heat the suit's sublimator is dumping), CO₂ in the suit (LiOH canister saturation), and suit consumables remaining (battery, water for cooling, oxygen). A typical 6-hour EVA budget is ~5 kg of water for cooling and ~1 kg of oxygen for breathing + leak make-up. If any of those track high, the EVA gets shortened. The longest EVA in history is STS-49's 8h 29min (1992); the typical ISS construction EVA was 6h 30min ± 30min.",
+  "cur": "Док посада ради, контролори на Земљи у реалном времену прате три вредности: метаболизам у скафандеру (топлоту коју избацује сублиматор), CO₂ у скафандеру (засићеност LiOH патроне) и преостали потрошни материјал (батерија, вода за хлађење, кисеоник). Типичан шесточасовни излазак рачуна на ~5 kg воде за хлађење и ~1 kg кисеоника за дисање и надокнаду цурења. Ако било која од тих вредности порасте превише, излазак се скраћује. Најдужи излазак у историји је онај са STS-49, 8 h 29 min (1992); типичан излазак ради склапања МСС трајао је 6 h 30 min ± 30 min."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.4",
+  "en": "Ingress is the reverse of egress: untether (last tether comes off last), repressurise the airlock to station pressure, doff suit, drink lots of water, sleep. The day after an EVA the crew is in negative water balance, has lost 2-3 kg of mass (mostly sweat), and has muscle soreness comparable to a marathon. Apollo lunar EVAs added a separate consideration: lunar dust. The Apollo suit gaskets clogged with lunar regolith, the suits couldn't be re-used after 2-3 EVAs, and crew members reported a sharp burnt-gunpowder smell after every ingress. The Artemis-program AxEMU suit attempts to engineer this problem out with redesigned gaskets + a dust-tolerant rear-entry hatch — borrowed from the Russian Orlan family, which never went to the Moon but did spend decades dealing with similar gasket-life issues.",
+  "cur": "Повратак је излазак обрнутим редом: откачити се (последње уже последње), подићи притисак у ваздушној комори на притисак станице, скинути скафандер, попити много воде, спавати. Дан после изласка посада има негативан биланс течности, изгубила је 2-3 kg масе (углавном зној) и има упалу мишића као после маратона. Месечеви изласци програма Apollo додали су још један проблем: месечеву прашину. Заптивке скафандера Apollo зачепљивале су се реголитом, скафандери нису могли поново да се користе после 2-3 изласка, а чланови посаде су после сваког повратка пријављивали оштар мирис изгорелог барута. Скафандер AxEMU програма Artemis покушава да тај проблем отклони пројектом — новим заптивкама и задњим улазом отпорним на прашину, преузетим од руске породице Orlan, која никада није била на Месецу, али се деценијама борила са сличним проблемима века трајања заптивки."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "diagram_caption",
+  "en": "T-24h: review procedure → T-12h: stage tools → T-4h: prebreathe + suit-up → T-0: depress to vacuum, two-tether egress → 6-8h work at foot restraint, SAFER as last backup → ingress, repress, doff. 50+ procedural steps, every one a chance to fail safely.",
+  "cur": "T-24h: преглед процедуре → T-12h: распоређивање алата → T-4h: дисање чистог кисеоника + облачење одела → T-0: смањење притиска до вакуума, излазак са две везице → 6–8h рада на ножном држачу, SAFER као последња резерва → повратак, повећање притиска, скидање одела. Више од 50 процедуралних корака, а сваки је прилика да се нешто деси без последица."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "intro_sentence",
+  "en": "A spacewalk is a 6–8 hour endurance event in a 1/3-atmosphere oxygen-pressurised suit — preceded by hours of pre-breathe to keep the bends at bay.",
+  "cur": "Шетња свемиром је тест издржљивости од 6–8 сати у оделу под притиском кисеоника од 1/3 атмосфере — а претходе јој сати претходног удисања кисеоника ради спречавања декомпресионе болести."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "body_paragraphs.0",
+  "en": "The fundamental EVA problem is that the human body wants Earth-sealevel atmosphere — 1 atm of mixed N₂/O₂ — and the spacesuit can't deliver it without becoming so rigid the astronaut can't move. So the suit runs at about 4.3 psi (0.29 atm) of pure oxygen. That's enough partial pressure of O₂ to breathe comfortably, but the abrupt drop from station pressure (14.7 psi, ~80% N₂) to suit pressure (4.3 psi, 100% O₂) would cause decompression sickness — the bends — exactly the way scuba divers get them on a fast ascent.",
+  "cur": "Основни проблем при EVA је то што људско тело захтева атмосферу као на нивоу мора на Земљи — 1 atm мешавине N₂/O₂ — а свемирско одело не може да је обезбеди а да не постане толико круто да се астронаут не може кретати. Зато одело ради на око 4,3 psi (0,29 atm) чистог кисеоника. То је довољан парцијални притисак O₂ за удобно дисање, али нагли пад са притиска у станици (14,7 psi, ~80% N₂) на притисак у оделу (4,3 psi, 100% O₂) изазвао би декомпресијску болест — „кесонску болест“ — на потпуно исти начин на који је добијају рониоци при брзом изрону."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "body_paragraphs.1",
+  "en": "The countermeasure is pre-breathe: hours of breathing pure oxygen at gradually lower pressures before egress, washing nitrogen out of body tissues. The current US-side ISS protocol uses an in-suit pre-breathe + the Campout protocol (overnight at 10.2 psi) totalling about 4 hours before the airlock depressurises. Russian Orlan suits run at 5.7 psi, which shortens pre-breathe substantially — different trade-off.",
+  "cur": "Противмера је пре-бриз: сати удисања чистог кисеоника при постепено нижем притиску пре изласка, чиме се азот испира из телесних ткива. Садашњи протокол америчког сегмента МСС користи пре-бриз у оделу + протокол Campout (преко ноћи при 10,2 psi), што укупно траје око 4 сата пре него што се притисак у ваздушној комори спусти. Руска одела Orlan раде на 5,7 psi, што знатно скраћује пре-бриз — другачији компромис."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "body_paragraphs.2",
+  "en": "Once outside, the work is physically harder than it looks. Even small motions require constant arm and grip strength against suit rigidity; experienced spacewalkers describe the EMU gloves as the single most fatiguing piece of equipment ever flown. Fingernail damage is common. Hand cramps and shoulder strain limit EVA duration before metabolic budget does. Modern EVAs cap around 7 hours nominal, 8.5 hours with extension; longer than that and crew error rates rise sharply.",
+  "cur": "Када се једном изађе напоље, рад је физички напорнији него што изгледа. Чак и мали покрети захтевају сталну снагу руку и хвата да би се савладала крутост одела; искусни астронаути који су излазили у свемир описују рукавице EMU као најумарајући део опреме који је икада летео. Оштећење ноктију је уобичајено. Грчеви у шаци и напрезање рамена ограничавају трајање EVA пре него што то учини метаболички буџет. Савремене EVA трају највише око 7 сати по плану, односно 8,5 сати уз продужетак; дуже од тога стопа грешака посаде нагло расте."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "body_paragraphs.3",
+  "en": "Suit risks also include thermal management (the suit dumps about 250 W of metabolic heat into a sublimator that vents water vapour to space), CO₂ scrubbing (lithium-hydroxide canister or amine swing bed), and the constant risk of a glove or visor puncture. Astronauts train the same EVA in the Neutral Buoyancy Laboratory pool roughly 7–10 hours of training per 1 hour of flight EVA — the cost-per-hour of spacewalking is the highest of any astronaut activity.",
+  "cur": "Ризици у вези са оделом обухватају и управљање топлотом (одело одаје око 250 W метаболичке топлоте у сублиматор који испушта водену пару у свемир), уклањање CO₂ (кертриџ са литијум-хидроксидом или амински систем с наизменичним слојевима) и стални ризик од пробијања рукавице или визира. Астронаути исти EVA увежбавају у базену Neutral Buoyancy Laboratory, отприлике 7–10 сати тренинга за 1 сат стварног EVA у лету — цена по сату шетње свемиром највећа је од свих активности астронаута."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "diagram_caption",
+  "en": "Pre-breathe O₂ to wash out nitrogen → step into 4.3 psi pure-O₂ suit → 6–8 hour metabolic-budgeted walk → fingernail damage and shoulder fatigue. Russian Orlan at 5.7 psi shortens pre-breathe.",
+  "cur": "Пре-бриз O₂ ради испирања азота → улазак у одело са чистим O₂ при 4,3 psi → 6–8 сати дуга шетња уз прорачунат метаболички буџет → оштећење ноктију и умор рамена. Руски Orlan при 5,7 psi скраћује пре-бриз."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "intro_sentence",
+  "en": "An EVA suit is a one-person spacecraft — pressure shell, closed-loop life support, thermal control, sun visor, and a thruster pack — built so a human can spend 6–8 hours outside in vacuum.",
+  "cur": "EVA скафандер је свемирска летелица за једну особу — притисна љуска, затворени систем за одржавање живота, термичка контрола, сунчани визир и погонски модул с млазницама — направљена тако да човек може провести 6–8 сати напољу, у вакууму."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "body_paragraphs.0",
+  "en": "The EVA suit's central problem is **closed-loop rebreathing**. Outside the airlock there is no atmosphere to vent CO₂ into, so the suit must scrub it from the astronaut's exhalation and recycle the remaining oxygen. The current US EMU runs a **lithium hydroxide (LiOH) canister** in the backpack that absorbs CO₂ irreversibly — replaced ground-side after every EVA. The Russian Orlan and the latest US METOX canister use a **regenerable amine swing-bed**: it adsorbs CO₂ during the EVA, then is baked out in the airlock between walks and reused. The station-side equivalent inside the ISS (the CDRA, Carbon Dioxide Removal Assembly) does the same thing on a regenerative cycle, while the OGS (Oxygen Generation System) electrolyses water to replenish O₂. The suit is a miniature, hand-portable version of station ECLSS, running for 8 hours on its own power and supplies.",
+  "cur": "Централни проблем EVA скафандера је **поновно удисање у затвореном кругу**. Изван ваздушне коморе нема атмосфере у коју би се CO₂ могао испустити, па скафандер мора да га уклони из астронаутовог издаха и да рециклира преостали кисеоник. Садашњи амерички EMU у ранцу има **кертриџ са литијум-хидроксидом (LiOH)** који апсорбује CO₂ неповратно — и мења се на Земљи после сваког EVA. Руски Orlan и најновији амерички METOX кертриџ користе **регенеративни амински адсорбер са наизменичним слојевима**: он адсорбује CO₂ током EVA, а затим се у ваздушној комори, између два излаза, загрејавањем чисти и поново користи. Еквивалент унутар МСС-а (CDRA, склоп за уклањање угљен-диоксида) ради исто то у регенеративном циклусу, док OGS (систем за стварање кисеоника) електролизом воде обнавља O₂. Скафандер је минијатурна, ручно преносива верзија станичног ECLSS-а, која осам сати ради на сопствено напајање и залихама."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "body_paragraphs.1",
+  "en": "The Primary Life Support System (**PLSS**) backpack carries oxygen at ~6800 kPa (1000 psi) in two tanks, a battery, the LiOH canister, a fan to circulate air through the helmet, a water tank for cooling, and a sublimator — a porous plate that lets liquid water boil into vacuum, dumping ~250 W of metabolic heat to space as water vapour. A liquid-cooling garment is worn against the skin: water threading through tubes against the body picks up heat and returns to the sublimator. The arms and gloves get pressurised gloves; the body gets a Hard Upper Torso (HUT) made of fibreglass or composite; the legs articulate through soft fabric joints. Operating pressure is 4.3 psi (US EMU, pure O₂) or 5.7 psi (Russian Orlan, pure O₂). Lower pressure = easier to move; higher pressure = less pre-breathe time.",
+  "cur": "Ранац Primary Life Support System (**PLSS**) носи кисеоник под притиском од ~6800 kPa (1000 psi) у два резервоара, батерију, кертриџ са LiOH, вентилатор који кружи ваздух кроз шлем, резервоар воде за хлађење и сублиматор — порозну плочу кроз коју течна вода кључа у вакууму и тако одводи ~250 W метаболичке топлоте у свемир у облику водене паре. Уз кожу се носи одело са течним хлађењем: вода која струји кроз цевчице уз тело преузима топлоту и враћа се у сублиматор. Руке и рукавице добијају рукавице под притиском; труп добија Hard Upper Torso (HUT) од стаклених влакана или композита; ноге се савијају кроз меке зглобове од тканине. Радни притисак износи 4,3 psi (амерички EMU, чист O₂) или 5,7 psi (руски Orlan, чист O₂). Нижи притисак = лакше кретање; виши притисак = краће време претходног дисања чистог кисеоника."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "body_paragraphs.2",
+  "en": "Two specialised details. **Sun visor**: the gold-plated outer visor on every EVA helmet is gold for a reason — a thin vapour-deposited gold film reflects ~98% of infrared radiation while letting visible light through. With the Sun in the suit's field of view (about half the orbit on the ISS), direct sunlight on a clear polycarbonate visor would heat the helmet beyond tolerable. The astronaut flips the gold visor down when looking sunward and back up when working in shadow. **EVA thrusters**: the SAFER (Simplified Aid For EVA Rescue) backpack on every modern US EVA carries 1.4 kg of compressed nitrogen and 24 small thrusters, giving the astronaut about 3 m/s of total Δv — enough to fly back to the station if a tether breaks and no more. The earlier **MMU** (Manned Maneuvering Unit, 1984–1985) carried ~12 kg of nitrogen and ~25 m/s; Bruce McCandless and Robert Stewart famously flew untethered with it on STS-41B. After Challenger, NASA grounded the MMU as too risky and reverted to tethered EVA with SAFER as backup only.",
+  "cur": "Два специјализована детаља. **Сунчани визир**: позлаћени спољни визир на сваком EVA шлему није случајно златан — танак златни филм, нанесен таложењем из паре, одбија ~98% инфрацрвеног зрачења, а пропушта видљиву светлост. Када је Сунце у видном пољу скафандера (око половине орбите на МСС), директна сунчева светлост на провидном поликарбонатном визиру загрејала би шлем преко подношљивог. Астронаут спушта златни визир када гледа ка Сунцу, а подиже га када ради у сенци. **EVA погонски модули**: ранац SAFER (Simplified Aid For EVA Rescue) на свакој савременој америчкој EVA носи 1,4 kg компримованог азота и 24 мале млазнице, што астронауту даје укупно око 3 m/s Δv — довољно да се врати до станице ако се уже прекине, и ништа више. Ранији **MMU** (Manned Maneuvering Unit, 1984–1985) носио је ~12 kg азота и омогућавао ~25 m/s; Bruce McCandless и Robert Stewart су њиме чувено летели без ужета на мисији STS-41B. После Challenger-а, NASA је MMU повукла из употребе као превише ризичан и вратила се EVA са ужетом, а SAFER је остао само као резерва."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "body_paragraphs.3",
+  "en": "Four EVA suit families fly today — see /fleet for each: EMU (US Shuttle/ISS, 1981 to present), Orlan-MKS (Russia, latest of the rear-entry family flying since 1977), Feitian (China, Tiangong + Shenzhou), and AxEMU (Axiom, qualifying for Artemis III). The architectural choice that splits them most cleanly is entry geometry — US EMU is front-entry (HUT + LTA assembled), Orlan and Feitian are rear-entry (PLSS hatch on the back) — and operating pressure (4.3 vs 5.7 psi), which decides how much pre-breathe each program requires.",
+  "cur": "Данас лете четири породице EVA скафандера — за сваку погледајте /fleet: EMU (амерички, Shuttle/МСС, од 1981. до данас), Orlan-MKS (Русија, најновији из породице са уласком отпозади, која лети од 1977), Feitian (Кина, Tiangong + Shenzhou) и AxEMU (Axiom, у квалификацији за Artemis III). Архитектонски избор који их најчистије раздваја јесте геометрија уласка — амерички EMU се облачи спреда (састављају се HUT и LTA), док се Orlan и Feitian облаче отпозади (отвор PLSS-а на леђима) — као и радни притисак (4,3 наспрам 5,7 psi), који одређује колико је претходног удисања чистог кисеоника потребно сваком програму."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "diagram_caption",
+  "en": "PLSS backpack on the back · gold sun visor · hard upper torso · liquid-cooling garment underneath · LiOH or amine CO₂ scrubber · sublimator dumps ~250 W of metabolic heat as water vapour · SAFER mini-thruster pack with ~3 m/s of nitrogen Δv for rescue.",
+  "cur": "Ранац PLSS на леђима · златни сунчани визир · круто горње torso одело · гарнитура с течним хлађењем испод · LiOH или амински уклањач CO₂ · сублиматор одводи ~250 W метаболичке топлоте у виду водене паре · погонски модул SAFER с малим млазницама и ~3 m/s Δv од азота за спасавање."
+ },
+ {
+  "rel": "science/life-in-space/food-production-off-world.json",
+  "at": "title",
+  "en": "Food production off-world — from Veggie to greenhouses on Mars",
+  "cur": "Производња хране ван Земље — од Veggie до стакленика на Марсу"
+ },
+ {
+  "rel": "science/life-in-space/food-production-off-world.json",
+  "at": "intro_sentence",
+  "en": "ISS crew have been eating food they grew themselves since 2015. The leap from 'salad supplement' to 'closed-loop daily diet' is the open frontier between the ISS today and any Mars settlement worth the name.",
+  "cur": "Посада на МСС једе храну коју је сама узгојила још од 2015. године. Корак од „додатка салати“ до „дневне исхране у затвореном циклусу“ представља отворену границу између МСС-а данас и сваког марсовског насеља које заслужује то име."
+ },
+ {
+  "rel": "science/life-in-space/food-production-off-world.json",
+  "at": "body_paragraphs.0",
+  "en": "ISS started its food-from-orbit programme in 2014 with Veggie, a small chamber bolted into the Destiny lab with red and blue LED lighting and pillow-style root modules. The first crop the crew was cleared to eat was 'Outredgeous' red romaine lettuce, in August 2015 — half the harvest eaten on-orbit, half returned for analysis. Since then Veggie has cycled mizuna, pak choi, mustard greens, tatsoi, kale, peppers, and zinnia flowers (the flowers were a deliberate test for crops with reproductive structures), plus the Advanced Plant Habitat (APH, installed 2017) adding a closed-environment 0.4 m² growing volume with sensor-monitored CO₂, humidity, and light. The contribution to crew nutrition is small — measured in handfuls per crew per month — but the psychological contribution is large, and validated against the recommendations from the Mir 1980s isolation studies which flagged 'connection with growing things' as a core countermeasure against asthenia.",
+  "cur": "МСС је свој програм производње хране у орбити започела 2014. године уређајем Veggie, малом комором причвршћеном у лабораторију Destiny, с црвеним и плавим LED осветљењем и коренским модулима у облику јастучића. Прва биљка коју је посада добила дозволу да поједе била је црвена зелена салата ромен сорте „Outredgeous“, у августу 2015. — половина жетве поједена је у орбити, а друга половина враћена на Земљу ради анализе. Од тада је у уређају Veggie узгајано још и мизуна, пак чој, сенф-зеље, тацој, кељ, паприке и цинија (цвеће је било намерни тест за биљке с репродуктивним структурама), а од 2017. њему се придружио и Advanced Plant Habitat (APH), који додаје затворену средину за узгој запремине 0,4 m² са сензорима за праћење CO₂, влажности и светлости. Допринос исхрани посаде је мали — мери се шакама по посади месечно — али је психолошки допринос велики, и потврђен је препорукама из студија изолације на станици Mir из 1980-их, које су „везу са растињем“ издвојиле као кључну противмеру против астеније."
+ }
+]

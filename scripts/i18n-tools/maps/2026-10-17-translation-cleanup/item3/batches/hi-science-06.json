@@ -1,0 +1,674 @@
+[
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "body_paragraphs.1",
+  "en": "Andromeda is approaching the Milky Way at 110 km/s in the radial direction. This was known from Doppler-shift measurements since Vesto Slipher's 1912 work at Lowell Observatory — Andromeda was the first galaxy ever measured to have a blueshift (most galaxies are receding due to cosmic expansion; Andromeda's mutual gravitation with the Milky Way overrides the Hubble flow at our distance). Until Hubble Space Telescope's high-precision proper-motion measurements in 2012, it was unclear whether Andromeda's transverse velocity would steer it past us or into us. HST measurements (2012) and Gaia DR2/DR3 (2019) suggested a near-head-on trajectory. However, a 2024 analysis by Sawala et al. (Nature Astronomy, 2025) — one of the first to include M33 and the LMC in the orbit integration — found only roughly even odds of a merger within the next 10 Gyr, with less than a 2% chance within the originally predicted ~4–5 Gyr window. If the merger does happen, tidal disruption would begin around 4.5 billion years from now, with the central coalescence taking another ~2 billion years to settle into an elliptical remnant nicknamed 'Milkomeda'.",
+  "cur": "Andromeda, रेडियल दिशा में आकाशगंगा की ओर 110 km/s की गति से समीप आ रहा है। वेस्टो स्लिफर के Lowell Observatory में 1912 के कार्य से Doppler-shift मापों के माध्यम से यह ज्ञात था — Andromeda ब्लूशिफ्ट दिखाने वाली पहली गैलेक्सी थी (अधिकांश गैलेक्सियाँ ब्रह्मांडीय विस्तार के कारण पीछे की ओर जा रही हैं; Andromeda का आकाशगंगा के साथ परस्पर गुरुत्वाकर्षण हमारी दूरी पर Hubble प्रवाह को अधिक महत्व देता है)। Hubble Space Telescope के 2012 के उच्च-सटीकता उचित-गति मापों तक, यह अस्पष्ट था कि Andromeda का अनुप्रस्थ वेग इसे हमारे पास से आगे ले जाएगा या हमारे में। HST मापों (2012) और Gaia DR2/DR3 (2019) ने लगभग सिर-पहले टकराव वाली कक्षा का संकेत दिया। हालाँकि, Sawala et al. द्वारा 2024 विश्लेषण (Nature Astronomy, 2025) — कक्षा समाकलन में M33 और LMC को शामिल करने वाली पहली विश्लेषणों में से एक — ने अगले 10 Gyr के भीतर विलय की मात्र लगभग समान संभावना पाई, मूल रूप से अनुमानित ~4–5 Gyr विंडो के भीतर 2% से कम संभावना के साथ। यदि विलय होता है, तो ज्वारीय विघटन लगभग 4.5 अरब वर्षों में शुरू होगा, केंद्रीय संमिश्रण को एक दीर्घवृत्तीय अवशेष में बसने के लिए एक और ~2 अरब वर्षों तक लगेंगे, जिसे 'Milkomeda' का उपनाम दिया गया है।"
+ },
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "body_paragraphs.2",
+  "en": "Andromeda has its own satellite system. The most prominent members are M32 (a compact elliptical companion, possibly the stripped core of a once-larger galaxy disrupted by tidal interaction with M31), M110 (a dwarf elliptical companion), and a population of about 20 known dwarf spheroidals and irregulars (M31's group). M32's high central stellar density and the existence of stellar streams in Andromeda's halo are evidence of past accretion events — Andromeda has eaten dwarfs in the past, the same way the Milky Way is eating Sagittarius today. The two great spirals plus M33 plus their dwarf retinues are the heart of the Local Group.",
+  "cur": "Andromeda के अपने उपग्रह तंत्र हैं। सबसे प्रमुख सदस्य M32 (एक संक्षिप्त दीर्घवृत्ताकार साथी, संभवतः एक पहले बड़ी गैलेक्सी का नष्ट किया गया कोर जिसे M31 के साथ ज्वारीय अंतःक्रिया से विघ्न हुआ), M110 (एक बौनी दीर्घवृत्ताकार साथी), और लगभग 20 ज्ञात बौनी गोलाकार और अनियमित गैलेक्सियों की आबादी (M31 का समूह) हैं। M32 का उच्च केंद्रीय तारकीय घनत्व और Andromeda के प्रभामंडल में तारकीय धाराओं का अस्तित्व पिछली अवशोषण घटनाओं का प्रमाण हैं — Andromeda ने अतीत में बौनी गैलेक्सियों को ग्रहण किया है, उसी तरह जैसे आकाशगंगा आज Sagittarius को ग्रहण कर रही है। दोनों महान सर्पिल जनक के साथ M33 और उनके बौने अनुचर स्थानीय समूह के हृदय हैं।"
+ },
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "body_paragraphs.3",
+  "en": "Observing Andromeda. Bortle-class-3 or darker skies make Andromeda visible to the naked eye as a smudge slightly elongated north-northeast. The standard pointing trick: find the Great Square of Pegasus, then trace the chain of stars eastward (β-And, μ-And, ν-And) and look just south-west of ν-And. Binoculars show the bright nuclear bulge clearly; a 4-inch telescope at low power shows the elongated disc and the brightest companion M32 as a small fuzzy patch. The dust lanes that show so clearly in long-exposure photography are visible to the eye only in larger telescopes (>8 inch). Andromeda is best observed in autumn (September-December) in the northern hemisphere, when it climbs nearly overhead at mid-northern latitudes.",
+  "cur": "एंड्रोमेडा का अवलोकन। Bortle-class-3 या अंधकारमय आकाश एंड्रोमेडा को नग्न नेत्र से दिखाते हैं जो उत्तर-पूर्वोत्तर की ओर थोड़ा लम्बा धब्बा है। मानक pointing trick: Great Square of Pegasus खोजें, फिर तारों की श्रृंखला को पूर्व की ओर ट्रेस करें (β-And, μ-And, ν-And) और ν-And के दक्षिण-पश्चिम को देखें। दूरबीन उज्ज्वल nuclear bulge को स्पष्ट रूप से दिखाती हैं; 4-inch दूरबीन कम शक्ति पर लम्बी disc और brightest companion M32 को एक छोटे fuzzy patch के रूप में दिखाती है। dust lanes जो long-exposure photography में स्पष्ट रूप से दिखाई देते हैं केवल बड़ी दूरबीनों (>8 inch) में eye को दिखाई देते हैं। एंड्रोमेडा का अवलोकन सर्वश्रेष्ठ है शरद ऋतु में (September-December) उत्तरी गोलार्ध में, जब यह mid-northern अक्षांशों पर लगभग overhead पर चढ़ता है।"
+ },
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "diagram_caption",
+  "en": "M31 / Andromeda: 2.5 Mly distant, ~1.5 × 10¹² M☉, trillion stars, spiral (formal type SA(s)b; weak bar debated). Approaching Milky Way at 110 km/s. A merger is possible but not certain — Sawala et al. (2025) put odds at ~50/50; if it occurs, tidal disruption begins ~4.5 Gyr from now. Naked-eye visible from dark sites. Satellites: M32, M110, ~20 dwarf companions.",
+  "cur": "M31 / एंड्रोमेडा: 2.5 Mly दूर, ~1.5 × 10¹² M☉, ट्रिलियन तारे, सर्पिल (औपचारिक प्रकार SA(s)b; कमजोर बार विवादास्पद)। मिल्की वे की ओर 110 km/s पर आ रही है। विलय संभव है लेकिन निश्चित नहीं — Sawala et al. (2025) संभावनाएं ~50/50 पर रखते हैं; यदि यह होता है, tidal विघ्न ~4.5 Gyr से शुरू होगा। अंधकार स्थलों से नग्न-नेत्र दिखाई देती है। उपग्रह: M32, M110, ~20 बौने साथी।"
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "intro_sentence",
+  "en": "A region of spacetime where mass is so compressed that even light can't climb out — and we've now imaged the shadows of two of them.",
+  "cur": "अंतरिक्ष समय का एक क्षेत्र जहां द्रव्यमान इतना संकुचित है कि यहां तक कि प्रकाश चढ़ाई नहीं कर सकता है - और हमने अब उनमें से दो की छाया को देखा है।"
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "body_paragraphs.0",
+  "en": "A black hole forms when a sufficient mass collapses to inside its Schwarzschild radius — the size at which the escape velocity equals the speed of light. The formula on the right says it directly: for any mass M, there's a radius r_s = 2GM/c² inside which nothing escapes. The Sun's Schwarzschild radius is 3 km. The Earth's is 9 mm. Compress either to that size and you've made one.",
+  "cur": "जब एक पर्याप्त द्रव्यमान अपने Schwarzschild त्रिज्या के अंदर गिर जाता है, तो एक काला छेद बनाता है - जिस आकार पर बच का वेग प्रकाश की गति के बराबर होता है। सही पर सूत्र यह सीधे कहता है: किसी भी द्रव्यमान एम के लिए, एक त्रिज्या r s = 2GM/c2 है जिसके अंदर कोई भाग नहीं है। सूर्य की Schwarzschild त्रिज्या 3 किमी है। पृथ्वी का 9 मिमी है। या तो उस आकार को संपीड़ित करें और आपने एक बनाया है।"
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "body_paragraphs.1",
+  "en": "Real black holes form by stellar collapse (a massive star running out of fusion fuel; the core falls inside its own Schwarzschild radius) or by accretion of mass onto seed black holes in the early universe (the supermassive black holes at galaxy centres, 10⁶ to 10¹⁰ solar masses). They aren't holes — they're points with a one-way membrane. Outside the event horizon spacetime is well-behaved and orbits work normally. Inside, all timelike paths point toward the singularity.",
+  "cur": "स्टेलर पतन (एक बड़े पैमाने पर स्टार जो फ्यूजन ईंधन से बाहर निकलता है); कोर अपने स्वयं के Schwarzschild त्रिज्या के अंदर गिर जाता है) या प्रारंभिक ब्रह्मांड में बीज काले छेद पर द्रव्यमान के अधिग्रहण के द्वारा ( आकाशगंगा केंद्रों पर सुपरमासिव ब्लैक होल, 106 से 1010 सौर द्रव्यमान)। वे छेद नहीं हैं - वे एक-तरफा झिल्ली के साथ अंकित हैं। घटना के बाहर क्षितिज अंतरिक्ष समय अच्छी तरह से माना जाता है और कक्षाएं सामान्य रूप से काम करती हैं। अंदर, सभी समयबद्ध पथ विलक्षणता की ओर इशारा करते हैं।"
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "body_paragraphs.2",
+  "en": "We detect them three ways. **Stellar dynamics**: stars orbiting an invisible mass concentration imply a black hole — that's how Sgr A* (4 × 10⁶ M☉ at the centre of the Milky Way) was confirmed, by tracking stars whipping around the central darkness for 30 years (Nobel 2020). **X-ray emission from accretion discs**: gas spiralling in heats to 10⁶ K and glows in X-rays — Chandra's specialty. **Direct shadow imaging**: the Event Horizon Telescope ([interferometry](observation/interferometry) across 8 sub-mm observatories) imaged the shadow of M87's black hole in 2019 and Sgr A* in 2022. Two black holes, photographed.",
+  "cur": "हम उन्हें तीन तरीकों से खोजते हैं। **तारकीय गतिविज्ञान**: एक अदृश्य द्रव्यमान सांद्रण की परिक्रमा करने वाले तारे एक कृष्ण विवर का संकेत देते हैं — यही तरीका है जिससे Sgr A* (आकाशगंगा के केंद्र में 4 × 10⁶ M☉) की पुष्टि की गई, 30 साल तक केंद्रीय अंधकार के चारों ओर तारों को घूमते हुए देखकर (Nobel 2020)। **अभिवृद्धि चकती से एक्स-रे उत्सर्जन**: गैस अंदर की ओर घूमती है और 10⁶ K तक गर्म होकर एक्स-रे में प्रकाशमान होती है — यह Chandra की विशेषता है। **प्रत्यक्ष छाया प्रतिबिंबन**: Event Horizon Telescope (8 सब-मिमी वेधशालाओं के पार [सूक्ष्मतरंग दूरदर्शिता](observation/interferometry)) ने 2019 में M87 के कृष्ण विवर की छाया को प्रतिबिंबित किया और 2022 में Sgr A* को। दो कृष्ण विवर, फोटोग्राफ किए गए।"
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "body_paragraphs.3",
+  "en": "What black holes do NOT do: lead anywhere useful for spaceflight. They're the most extreme energy regimes in the universe and we observe them with great enthusiasm; they're also the worst places to fly a spacecraft. Tidal forces near a stellar-mass black hole would shred a vehicle long before any \"event horizon crossing\" became a question. Supermassive black holes are calmer (lower curvature at the horizon) but tens of thousands of light-years away. They are a thing to look at, not a thing to visit.",
+  "cur": "कृष्ण विवर जो नहीं करते: अंतरिक्ष यात्रा के लिए कोई उपयोगी मार्ग नहीं देते। ये ब्रह्मांड में सबसे चरम ऊर्जा व्यवस्थाएँ हैं और हम उन्हें बहुत उत्साह के साथ देखते हैं; ये अंतरिक्षयान उड़ाने के लिए सबसे खराब स्थान भी हैं। एक तारकीय-द्रव्यमान कृष्ण विवर के निकट ज्वारीय बल किसी भी \"घटना क्षितिज पार करने\" का सवाल उठने से बहुत पहले एक वाहन को टुकड़े-टुकड़े कर देंगे। अतिविशाल कृष्ण विवर शांत होते हैं (क्षितिज पर कम वक्रता) किंतु दसियों हज़ार प्रकाश-वर्ष दूर हैं। ये देखने के लिए एक चीज़ हैं, न कि जाने के लिए एक चीज़।"
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "formula_caption",
+  "en": "Schwarzschild radius — the size at which any mass becomes a black hole. G = 6.674×10⁻¹¹ N·m²/kg². For the Sun: 3.0 km. For 1 kg: 1.5 × 10⁻²⁷ m, smaller than a proton.",
+  "cur": "Schwarzschild त्रिज्या - जिस आकार पर किसी भी बड़े पैमाने पर एक काले छेद बन जाता है। G = 6.674 × 10-11 N·m2/kg2. सूर्य के लिए: 3.0 किमी। 1 किलो के लिए: 1.5 × 10-27 मीटर, एक प्रोटॉन से छोटा।"
+ },
+ {
+  "rel": "science/observation/black-holes.json",
+  "at": "diagram_caption",
+  "en": "Event horizon (one-way membrane) + accretion disc (10⁶ K, X-ray glow) + photon sphere (light orbits at r = 1.5 r_s) + shadow (what EHT imaged). Real, mapped, weighed.",
+  "cur": "घटना क्षितिज (एकतरफा झिल्ली) + अभिवृद्धि डिस्क (10⁶ K, एक्स-रे चमक) + फोटॉन क्षेत्र (प्रकाश r = 1.5 r_s पर परिक्रमा करता है) + छाया (जो EHT ने प्रतिबिम्बित किया)। वास्तविक, मानचित्रित, तौला गया।"
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "intro_sentence",
+  "en": "An occulting disc inside the telescope blocks the host star so the planet next to it — a billion times fainter — becomes visible.",
+  "cur": "दूरबीन के अंदर एक occulting डिस्क मेजबान स्टार को अवरुद्ध करता है इसलिए इसके बगल में ग्रह - एक अरब बार fainter - दिखाई देता है।"
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "body_paragraphs.0",
+  "en": "A Sun-like star outshines its planets by a factor of about 10⁹ at visible wavelengths and 10⁶ in the infrared. The planet's photons aren't missing — they're drowning in the diffraction wings of the star's point-spread function. Direct imaging of an exoplanet is only possible if you can suppress that PSF by many orders of magnitude. A coronagraph does exactly that.",
+  "cur": "एक सूर्य जैसा तारा दृश्य तरंगदैर्ध्य पर अपने ग्रहों को लगभग 10⁹ गुना अधिक चमकदार बनाता है और अवरक्त में 10⁶ गुना। ग्रह के फोटॉन गायब नहीं हैं — वे तारे के बिंदु-प्रसार फलन के विवर्तन पंखों में डूब रहे हैं। किसी बहिर्ग्रह की सीधी इमेजिंग तभी संभव है जब आप उस PSF को कई परिमाण के क्रम से दबा सकें। एक कोरोनाग्राफ बिल्कुल वही करता है।"
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "body_paragraphs.1",
+  "en": "The classical Lyot coronagraph (1930, invented by Bernard Lyot for solar photography) places an opaque disc at the telescope's focal plane to block the star, then a second mask further down to block the diffracted light from the first mask's edge. Modern apodised pupil coronagraphs and vortex coronagraphs use intricate phase patterns to push the suppression to 10⁻⁹ or better in narrow regions of the image.",
+  "cur": "चिरंतन Lyot कोरोनाग्राफ (1930, बेर्नार ल्यो द्वारा सौर फोटोग्राफी के लिए आविष्कृत) दूरबीन के फोकल प्लेन पर एक अपारदर्शी डिस्क रखता है जो तारे को ब्लॉक करता है, फिर पहले मुखौटे के किनारे से विवर्तित प्रकाश को ब्लॉक करने के लिए आगे एक दूसरा मुखौटा रखता है। आधुनिक apodised पुतली कोरोनाग्राफ और भंवर कोरोनाग्राफ चित्र के संकीर्ण क्षेत्रों में दमन को 10⁻⁹ या बेहतर तक धकेलने के लिए जटिल प्रावस्था पैटर्न का उपयोग करते हैं।"
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "body_paragraphs.2",
+  "en": "JWST carries coronagraphs on both NIRCam and MIRI; they've directly imaged several gas giant exoplanets around nearby stars. The Nancy Grace Roman telescope (launching mid-2020s) carries a coronagraph instrument designed to image gas giants around bright stars at unprecedented contrast — and to demonstrate the technology for the larger Habitable Worlds Observatory, which will aim at Earth-mass planets.",
+  "cur": "JWST NIRCam और MIRI दोनों पर कोरोनाग्राफ ले जाता है; इन्होंने पास के तारों के चारों ओर कई गैस जायंट बहिर्ग्रहों की सीधी इमेजिंग की है। Nancy Grace Roman दूरबीन (2020 के दशक के मध्य में लॉन्च होने वाली) एक कोरोनाग्राफ उपकरण ले जाती है जो चमकीले तारों के चारों ओर गैस जायंटों को अभूतपूर्व कंट्रास्ट पर इमेज करने के लिए डिज़ाइन किया गया है — और बड़ी Habitable Worlds Observatory के लिए प्रौद्योगिकी का प्रदर्शन करने के लिए, जो पृथ्वी-द्रव्यमान वाले ग्रहों का लक्ष्य रखेगी।"
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "body_paragraphs.3",
+  "en": "An alternative architecture is the **starshade**: a 30+ metre opaque shape flown thousands of km in front of the telescope, blocking the star without any optics inside the instrument. Starshades are mechanically harder (the formation-flying alignment is brutal) but reach higher contrast. None has flown yet; concept studies for direct Earth-twin imaging always include a starshade in the mix.",
+  "cur": "एक वैकल्पिक वास्तुकला ** स्टारशेड ** है: एक 30+ मीटर अपारदर्शी आकार ने दूरबीन के सामने हजारों किलोमीटर की दूरी पर प्रवाहित किया, जो उपकरण के अंदर किसी भी प्रकाशिकी के बिना स्टार को अवरुद्ध करता है। स्टारशेड यांत्रिक रूप से कठिन हैं (निर्माण-फ्लाइंग संरेखण क्रूर है) लेकिन उच्च विपरीत तक पहुंचता है। कोई भी अभी तक बह रहा है; प्रत्यक्ष पृथ्वी-जुड़वां इमेजिंग के लिए अवधारणा अध्ययन हमेशा मिश्रण में एक starshade शामिल है।"
+ },
+ {
+  "rel": "science/observation/coronagraphs.json",
+  "at": "diagram_caption",
+  "en": "Block the star at the focal plane → diffraction wings sneak around → second mask kills those → 10⁻⁹ suppression, planet emerges. Vortex coronagraphs replace the disc with a phase pattern.",
+  "cur": "फोकल प्लेन में स्टार को ब्लॉक करें → विवर्तन पंख चारों ओर घूमते हैं → दूसरा मुखौटा उन → 10-9 दमन को मारता है, ग्रह उभरता है। Vortex coronagraphs एक चरण पैटर्न के साथ डिस्क की जगह है।"
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "title",
+  "en": "Dwarf spheroidals — small, faint, and almost entirely dark matter",
+  "cur": "बौने गोलाकार — छोटे, मंद, और लगभग पूरी तरह से डार्क मैटर"
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "intro_sentence",
+  "en": "Dwarf spheroidal galaxies are the most numerous galaxies in the Local Group and the most dark-matter-dominated objects we have ever measured — mass-to-light ratios of 100, 500, even 1000 — far higher than any spiral.",
+  "cur": "बौनी गोलाकार आकाशगंगाएँ स्थानीय समूह में सबसे अधिक संख्या में आकाशगंगाएँ हैं और उन वस्तुओं में सबसे डार्क मैटर-प्रभुत्व वाली जिन्हें हमने कभी मापा है — द्रव्यमान-से-प्रकाश अनुपात 100, 500, यहाँ तक कि 1000 — किसी भी सर्पिल से कहीं अधिक।"
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "body_paragraphs.0",
+  "en": "Dwarf spheroidals (often abbreviated dSph) are small, faint, gas-poor, roughly elliptical satellites of larger galaxies. Around the Milky Way, the brighter members are Sagittarius, Sculptor, Fornax, Draco, Ursa Minor, Leo I, Leo II, Sextans, Carina, Canes Venatici I, plus a long tail of ultra-faint dwarfs discovered by SDSS, DES, Pan-STARRS, and now the Vera C. Rubin Observatory's LSST. The total count of known Milky Way dSph satellites is now over 60 and rising. Each typically has only millions to tens of millions of stars — compared to the Milky Way's hundreds of billions — and was for decades dismissed as boring stragglers. The picture changed in the 1980s when stellar-velocity-dispersion measurements showed they were anything but boring.",
+  "cur": "बौने गोलाकार (आमतौर पर dSph संक्षिप्त) बड़ी आकाशगंगाओं के छोटे, मंद, गैस-गरीब, मोटे तौर पर अण्डाकार उपग्रह हैं। आकाशगंगा के चारों ओर, उज्ज्वल सदस्य Sagittarius, Sculptor, Fornax, Draco, Ursa Minor, Leo I, Leo II, Sextans, Carina, Canes Venatici I हैं, साथ ही SDSS, DES, Pan-STARRS, और अब Vera C. Rubin Observatory के LSST द्वारा खोजे गए अति-मंद बौनों की लंबी पूंछ। ज्ञात आकाशगंगा dSph उपग्रहों की कुल गिनती अब 60 से अधिक है और बढ़ रही है। प्रत्येक में आमतौर पर केवल लाखों से दसियों लाखों तारे होते हैं — आकाशगंगा के सैकड़ों अरबों की तुलना में — और दशकों तक उबाऊ पिछड़े के रूप में खारिज कर दिया गया। तस्वीर 1980 के दशक में बदल गई जब तारकीय-वेग-फैलाव माप ने दिखाया कि वे उबाऊ कुछ भी नहीं थे।"
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "body_paragraphs.1",
+  "en": "The story of dwarf-spheroidal dark matter starts with Marc Aaronson at the Lowell Observatory in 1983. He measured the velocity dispersion of red giants in Draco and Ursa Minor and found they moved much faster than the visible stellar mass could gravitationally bind. To hold the stars together, each system needed mass roughly 100× greater than the visible stellar mass. Subsequent decades of measurement (Walker, Mateo, Kleyna, McConnachie, Battaglia, and many others) confirmed and extended this: the brightest dSphs have mass-to-light ratios around 30, the dimmer ones around 100-300, and the ultra-faint dwarfs (Segue 1, Boötes II, Reticulum II) have mass-to-light ratios of 500-3000. These objects are essentially balls of dark matter with a sprinkling of stars trapped at the bottom of the potential well.",
+  "cur": "बौने-गोलाकार डार्क मैटर की कहानी 1983 में Lowell Observatory में मार्क आरोनसन से शुरू होती है। उन्होंने Draco और Ursa Minor में लाल दानवों के वेग फैलाव को मापा और पाया कि वे दृश्यमान तारकीय द्रव्यमान के गुरुत्वाकर्षण से बँध सकने से बहुत तेज़ चल रहे थे। तारों को एक साथ रखने के लिए, प्रत्येक प्रणाली को दृश्यमान तारकीय द्रव्यमान से लगभग 100× अधिक द्रव्यमान की आवश्यकता थी। माप के बाद के दशकों (Walker, Mateo, Kleyna, McConnachie, Battaglia, और कई अन्य) ने इसकी पुष्टि की और विस्तार किया: सबसे उज्ज्वल dSph के पास लगभग 30 का द्रव्यमान-से-प्रकाश अनुपात है, सबसे मंद के पास लगभग 100-300, और अति-मंद बौनों (Segue 1, Boötes II, Reticulum II) के पास 500-3000 का द्रव्यमान-से-प्रकाश अनुपात है। ये वस्तुएँ अनिवार्य रूप से डार्क मैटर की गेंदें हैं जिनमें संभावित कुएँ के तल पर फँसे तारों का छिड़काव है।"
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "body_paragraphs.2",
+  "en": "Why this matters cosmologically. Standard ΛCDM cosmology predicts that galaxy formation proceeds hierarchically: small dark-matter halos form first, then merge into larger ones. The Milky Way's halo formed by accreting hundreds of smaller dark-matter clumps over its lifetime. Most of those clumps had little or no baryonic mass attached and remain dark and undetectable. But the ones that did acquire and retain some stars are exactly the dwarf spheroidals we see today — sub-halo remnants that the Milky Way has eaten but not fully digested. The dwarfs are direct evidence for the existence of dark matter at sub-galactic scales, AND they are the empirical test for whether dark matter behaves as cold and collisionless as ΛCDM assumes. Several dSph properties (the 'core-cusp problem', the 'too-big-to-fail problem') still don't fit ΛCDM neatly — they are at the centre of every alternative-dark-matter discussion today (warm DM, self-interacting DM, fuzzy DM, primordial-black-hole DM).",
+  "cur": "यह ब्रह्मांडीय रूप से क्यों मायने रखता है। मानक ΛCDM ब्रह्माण्ड विज्ञान भविष्यवाणी करता है कि आकाशगंगा निर्माण पदानुक्रमिक रूप से आगे बढ़ता है: छोटे डार्क-मैटर हेलो पहले बनते हैं, फिर बड़े में विलय करते हैं। आकाशगंगा का हेलो अपने जीवनकाल में सैकड़ों छोटे डार्क-मैटर गुच्छों को संचित करके बना है। उन गुच्छों में से अधिकांश के पास बहुत कम या कोई बैरियोनिक द्रव्यमान नहीं था और वे अंधेरे और अनडिटेक्टेबल रहते हैं। लेकिन जिन्होंने कुछ तारे प्राप्त किए और बनाए रखे, वे ठीक वही बौने गोलाकार हैं जिन्हें हम आज देखते हैं — सब-हेलो अवशेष जिन्हें आकाशगंगा ने खाया है लेकिन पूरी तरह से पचा नहीं है। बौने उप-गांगेय पैमाने पर डार्क मैटर के अस्तित्व के लिए प्रत्यक्ष प्रमाण हैं, और वे अनुभवजन्य परीक्षण हैं कि क्या डार्क मैटर ठंडा और टकराव-रहित व्यवहार करता है जैसा कि ΛCDM मानता है। कई dSph गुण ('core-cusp समस्या', 'too-big-to-fail समस्या') अभी भी ΛCDM के साथ साफ-सुथरे नहीं बैठते — वे आज हर वैकल्पिक-डार्क-मैटर चर्चा के केंद्र में हैं (गर्म DM, स्व-अंतःक्रिया DM, फजी DM, आदिकालीन-ब्लैक-होल DM)।"
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "body_paragraphs.3",
+  "en": "Some dSphs are actively being torn apart by Milky Way tides. The Sagittarius Dwarf Galaxy at 22 kpc is the canonical example: its stellar stream wraps around the Milky Way more than once, mapped star by star using SDSS + 2MASS + Gaia data. The Sagittarius stream is the strongest single piece of evidence we have for the Milky Way's potential shape (you can fit the stream's 3D path against models of Milky Way mass distribution and constrain whether the dark halo is spherical, oblate, or triaxial). The disrupted galaxy is being slowly digested over the next ~1 Gyr; the Milky Way has done this to dozens of dwarfs over cosmic time, and the Andromeda Stream and other tidal features in M31's halo show Andromeda has done the same. Galactic cannibalism is how spirals grow.",
+  "cur": "कुछ dSph आकाशगंगा ज्वार से सक्रिय रूप से फाड़े जा रहे हैं। 22 kpc पर Sagittarius Dwarf Galaxy विहित उदाहरण है: इसकी तारकीय धारा आकाशगंगा के चारों ओर एक से अधिक बार लपेटी जाती है, SDSS + 2MASS + Gaia डेटा का उपयोग करके तारा-दर-तारा मानचित्रित। Sagittarius धारा आकाशगंगा के संभावित आकार के लिए हमारे पास सबसे मजबूत एकल प्रमाण है (आप धारा के 3D पथ को आकाशगंगा द्रव्यमान वितरण के मॉडलों के विरुद्ध फिट कर सकते हैं और बाधित कर सकते हैं कि क्या डार्क हेलो गोलाकार, चपटा, या त्रिअक्षीय है)। बाधित आकाशगंगा अगले ~1 Gyr में धीरे-धीरे पच रही है; आकाशगंगा ने ब्रह्मांडीय समय में दर्जनों बौनों के साथ ऐसा किया है, और M31 के प्रभामंडल में Andromeda Stream और अन्य ज्वारीय विशेषताएँ दिखाती हैं कि Andromeda ने भी ऐसा किया है। गांगेय नरभक्षण है कैसे सर्पिलें बढ़ती हैं।"
+ },
+ {
+  "rel": "science/observation/dwarf-spheroidals.json",
+  "at": "diagram_caption",
+  "en": "Dwarf spheroidals: small (millions of stars), gas-poor, ~roughly elliptical satellites. Mass-to-light ratios 30-1000 (highest among galaxies). Direct evidence for dark matter at sub-galactic scales. Sagittarius dSph is being torn apart by Milky Way tides — its stream is the strongest probe of Milky Way halo shape. ΛCDM open problems (core-cusp, too-big-to-fail) live here.",
+  "cur": "बौने गोलाकार: छोटे (लाखों तारे), गैस-गरीब, ~मोटे तौर पर अण्डाकार उपग्रह। द्रव्यमान-से-प्रकाश अनुपात 30-1000 (आकाशगंगाओं में सर्वोच्च)। उप-गांगेय पैमानों पर डार्क मैटर के लिए प्रत्यक्ष प्रमाण। Sagittarius dSph आकाशगंगा ज्वार से फाड़ी जा रही है — इसकी धारा आकाशगंगा हेलो आकार की सबसे मजबूत जाँच है। ΛCDM खुली समस्याएँ (core-cusp, too-big-to-fail) यहाँ रहती हैं।"
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "title",
+  "en": "Galaxy types — spirals, ellipticals, irregulars, dwarfs",
+  "cur": "आकाशगंगा के प्रकार — सर्पिल, दीर्घवृत्ताकार, अनियमित, बौनी"
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "intro_sentence",
+  "en": "Galaxies fall into a handful of structural families: spirals (Milky Way, Andromeda), ellipticals (M87, NGC 4889), irregulars (Magellanic Clouds), and dwarfs of several sub-classes. The taxonomy is Hubble's 1936 framework, refined.",
+  "cur": "आकाशगंगाएँ कुछ ही संरचनात्मक परिवारों में विभाजित होती हैं: सर्पिल (मिल्की वे, Andromeda), दीर्घवृत्ताकार (M87, NGC 4889), अनियमित (मॅजलॅनिक बादल), और कई उप-वर्गों की बौनी। यह वर्गीकरण Hubble की 1936 की रूपरेखा से परिष्कृत है।"
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.0",
+  "en": "Spiral galaxies are flat rotating discs of stars and gas surrounding a central bulge, with one or more prominent spiral arms wrapping outward. The arms are not rigid structures — they are density waves where star formation is currently elevated, plus young blue stars and pink HII regions that make the arms look brighter than the inter-arm disc. About two-thirds of bright nearby galaxies are spirals. The Milky Way is a barred spiral (SBbc — its central bulge is elongated into a bar 'cigar' shape that funnels gas inward, fuelling central star formation and feeding the supermassive black hole). Andromeda's bar status is unsettled: the formal RC3 classification is SA(s)b (unbarred), though kinematic and photometric studies point to a weak inner non-axisymmetry. The Triangulum Galaxy M33 in the Local Group is an unbarred spiral. The third Hubble category — Sc / SBc — has loose, well-separated spiral arms; the Milky Way is type SBbc or SBc.",
+  "cur": "सर्पिल आकाशगंगाएँ तारों और गैस की समतल घूर्णनशील चक्रिकाएँ हैं जो एक केंद्रीय उभार को घेरती हैं, जिनके साथ एक या अधिक प्रमुख सर्पिल भुजाएँ बाहर की ओर लपेटी हुई होती हैं। ये भुजाएँ कठोर संरचनाएँ नहीं हैं — ये घनत्व तरंगें हैं जहाँ तारा निर्माण वर्तमान में ऊँचा है, साथ ही युवा नीले तारे और गुलाबी HII क्षेत्र हैं जो भुजाओं को अंतर-भुजा चक्रिका की तुलना में अधिक चमकीला दिखाते हैं। उज्ज्वल निकटवर्ती आकाशगंगाओं का लगभग दो-तिहाई हिस्सा सर्पिल हैं। आकाशगंगा एक दंडित सर्पिल है (SBbc — इसका केंद्रीय उभार एक दंड में लंबा है जो एक सिगार जैसा आकार बनाता है जो गैस को अंदर की ओर प्रवाहित करता है, केंद्रीय तारा निर्माण को ईंधन देता है और अतिविशाल ब्लैक होल को खिलाता है)। एंड्रोमेडा की दंडित स्थिति अनिर्णीत है: औपचारिक RC3 वर्गीकरण SA(s)b (निर्दंडित) है, हालाँकि गतिविज्ञान और प्रकाशमापी अध्ययन एक कमजोर आंतरिक गैर-अक्षसममितता की ओर इशारा करते हैं। स्थानीय समूह में त्रिकोण आकाशगंगा M33 एक निर्दंडित सर्पिल है। तीसरी Hubble श्रेणी — Sc / SBc — में ढीली, अच्छी तरह से अलग की गई सर्पिल भुजाएँ होती हैं; आकाशगंगा प्रकार SBbc या SBc है।"
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.1",
+  "en": "Elliptical galaxies are dispersion-supported balls of mostly old stars with little gas, little dust, and almost no ongoing star formation. They range from small (M32, the compact dwarf elliptical companion to Andromeda) to enormous (M87 at the heart of the Virgo Cluster, the host of the first imaged supermassive black hole; cD-class brightest cluster galaxies like NGC 4889 in Coma which contain trillions of stars). Most ellipticals are the products of past major mergers — when two spirals collide, the disc structure is disrupted, gas is consumed in a starburst, and the merged remnant settles into an elliptical. The Milky Way is destined to become an elliptical once it merges with Andromeda. There are essentially no ellipticals in the Local Group except M32, M110, NGC 147, and NGC 185 — small companions to M31. The big ellipticals all live in dense cluster environments.",
+  "cur": "दीर्घवृत्ताकार आकाशगंगाएँ मुख्य रूप से पुराने तारों की विक्षिप्तता-समर्थित गेंदें हैं, जिनमें बहुत कम गैस, बहुत कम धूल और लगभग कोई चल रहा तारा निर्माण नहीं है। ये छोटे (M32, Andromeda का कॉम्पैक्ट बौना दीर्घवृत्ताकार साथी) से विशाल (M87 Virgo Cluster के केंद्र में, पहली इमेजित सुपरमैसिव ब्लैक होल का मेजबान; cD-वर्ग सबसे उज्ज्वल समूह आकाशगंगाएँ जैसे Coma में NGC 4889 जिनमें ट्रिलियन तारे हैं) तक होती हैं। अधिकांश दीर्घवृत्ताकार अतीत के प्रमुख विलयन के परिणाम हैं — जब दो सर्पिलें टकराती हैं, तो डिस्क संरचना बाधित होती है, गैस एक तारकाबाजी में खपत होती है, और विलीन अवशेष एक दीर्घवृत्ताकार में शांत हो जाता है। मिल्की वे एक दीर्घवृत्ताकार बनने के लिए नियत है जब वह Andromeda के साथ विलय करेगी। स्थानीय समूह में M32, M110, NGC 147 और NGC 185 को छोड़कर अनिवार्य रूप से कोई दीर्घवृत्ताकार नहीं हैं — ये M31 के छोटे साथी हैं। बड़ी दीर्घवृत्ताकार सभी घने समूह वातावरण में रहती हैं।"
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.2",
+  "en": "Irregulars are everything that doesn't fit. The Magellanic Clouds are the prototypes — gas-rich, actively star-forming, no clear spiral arms or central bulge, often elongated or distorted by tidal interactions with larger neighbours. Most low-mass star-forming galaxies are irregular. Many were once classified as spiral-like but have been so tidally disrupted that the structure is no longer recognisable; others are too small to have ever developed a self-supporting disc. Irregulars dominate the count of galaxies at the low-mass end of the galactic mass function — there are far more dwarf irregulars than spirals, but they are individually faint so spirals dominate the night sky and the historical record.",
+  "cur": "अनियमित वे सब कुछ हैं जो फिट नहीं होते। मॅजलॅनिक बादल प्रोटोटाइप हैं — गैस-समृद्ध, सक्रिय रूप से तारा-निर्माण कर रहे, कोई स्पष्ट सर्पिल भुजाएँ या केंद्रीय उभार नहीं, अक्सर बड़े पड़ोसियों के साथ ज्वारीय अंतःक्रिया से लंबे या विकृत। अधिकांश कम-द्रव्यमान तारा-निर्माण आकाशगंगाएँ अनियमित हैं। कई को पहले सर्पिल-जैसे के रूप में वर्गीकृत किया गया था लेकिन ज्वारीय रूप से इतना बाधित किया गया है कि संरचना अब पहचानने योग्य नहीं है; अन्य बहुत छोटी हैं कि कभी एक आत्मनिर्भर डिस्क विकसित की हो। अनियमित आकाशगंगाओं के गैलेक्टिक द्रव्यमान फलन के कम-द्रव्यमान अंत में आकाशगंगाओं की गिनती में प्रभुत्व रखते हैं — बौनी अनियमितों की तुलना में बहुत अधिक सर्पिलें हैं, लेकिन वे व्यक्तिगत रूप से मंद हैं इसलिए सर्पिलें रात के आकाश और ऐतिहासिक रिकॉर्ड पर प्रभुत्व रखते हैं।"
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.3",
+  "en": "Dwarf galaxies subdivide further. Dwarf spheroidals (Sagittarius, Fornax, Sculptor) — gas-poor, ~elliptical, dark-matter-dominated, see the separate /science article. Dwarf irregulars (NGC 6822, IC 1613, WLM in the Local Group) — gas-rich, star-forming, no defined morphology. Dwarf ellipticals (M32 is the type example) — small versions of large ellipticals, often companions to large galaxies. Ultra-faint dwarfs — discovered only since 2005 via deep SDSS / DES / LSST surveys, with luminosities below 10⁵ solar luminosities and stellar masses comparable to a single globular cluster but with mass-to-light ratios in the hundreds (i.e., still dominated by dark matter, not by stars). These ultra-faints are probably the dimmest galaxies in existence — at lower masses, no galaxy is detectable because there are no stars at all, only dark-matter halos.",
+  "cur": "बौनी आकाशगंगाएँ और आगे विभाजित होती हैं। बौनी गोलाकार (Sagittarius, Fornax, Sculptor) — गैस-विरल, ~दीर्घवृत्ताकार, गहरे पदार्थ-प्रभुत्व वाली, अलग /विज्ञान लेख देखें। बौनी अनियमित (NGC 6822, IC 1613, WLM स्थानीय समूह में) — गैस-समृद्ध, तारा-निर्माण, कोई परिभाषित रूपविज्ञान नहीं। बौनी दीर्घवृत्ताकार (M32 प्रकार उदाहरण है) — बड़ी दीर्घवृत्ताकारों के छोटे संस्करण, अक्सर बड़ी आकाशगंगाओं के साथी। अल्ट्रा-मंद बौनी — 2005 के बाद से गहरे SDSS / DES / LSST सर्वेक्षणों के माध्यम से ही खोजे गए, 10⁵ सौर चमकदारिता से नीचे की चमकदारिता और एकल गोलाकार समूह तुलनीय तारकीय द्रव्यमान के साथ लेकिन सैकड़ों में द्रव्यमान-प्रकाश अनुपात के साथ (अर्थात्, अभी भी गहरे पदार्थ द्वारा प्रभुत्व है, तारों द्वारा नहीं)। ये अल्ट्रा-मंद संभवतः अस्तित्व में सबसे मंद आकाशगंगाएँ हैं — कम द्रव्यमान पर, कोई आकाशगंगा पहचानने योग्य नहीं है क्योंकि बिल्कुल भी कोई तारे नहीं हैं, केवल गहरे पदार्थ की हलकाएँ हैं।"
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "body_paragraphs.4",
+  "en": "Beyond the Hubble framework. Modern surveys have added several galaxy types that didn't fit Hubble's 1936 scheme: starburst galaxies (M82) where star formation is many times higher than normal due to a recent merger or tidal interaction; AGN-hosting galaxies (Seyferts, quasars, radio galaxies) where the central black hole is actively accreting and dominating the light output; ring galaxies (Hoag's Object) formed by head-on bullet-collisions; and the ultra-diffuse galaxies (NGC 1052-DF2, Dragonfly 44) discovered in the 2010s, with sizes of full-sized galaxies but stellar densities so low you can almost see through them. The classification scheme keeps being extended as observations improve; Hubble's tuning fork remains the backbone of how astronomers talk about morphology, even when individual galaxies refuse to fit.",
+  "cur": "Hubble ढाँचे से परे। आधुनिक सर्वेक्षणों ने कई आकाशगंगा प्रकार जोड़े हैं जो Hubble की 1936 की योजना में फिट नहीं हुए: विस्फोटक तारा निर्माण आकाशगंगाएँ (M82) जहाँ तारा निर्माण एक हाल के विलय या ज्वारीय अंतःक्रिया के कारण सामान्य से कई गुना अधिक है; AGN-संचालक आकाशगंगाएँ (Seyferts, quasars, radio galaxies) जहाँ केंद्रीय ब्लैक होल सक्रिय रूप से पदार्थ संचय कर रहा है और प्रकाश उत्पादन पर हावी है; वलय आकाशगंगाएँ (होआग्स ऑब्जेक्ट) जो सिर-भिड़ंत गोली-टकराव से बनी हैं; और अति-विसरित आकाशगंगाएँ (NGC 1052-DF2, Dragonfly 44) जो 2010 के दशक में खोजी गईं, जिनका आकार पूर्ण आकार की आकाशगंगाओं जैसा है लेकिन तारकीय घनत्व इतना कम है कि आप लगभग उनके माध्यम से देख सकते हैं। वर्गीकरण योजना अवलोकनों के सुधरने के साथ लगातार विस्तारित की जाती रहती है; Hubble की ट्यूनिंग कांटी आकारिकी के बारे में खगोलविदों की बातचीत की रीढ़ बनी रहती है, भले ही व्यक्तिगत आकाशगंगाएँ फिट होने से इंकार करें।"
+ },
+ {
+  "rel": "science/observation/galaxy-types.json",
+  "at": "diagram_caption",
+  "en": "Hubble tuning fork: ellipticals (E0-E7) on the left, spirals (S/SB, types a/b/c) on the right, irregulars off to the side. Plus dwarf sub-classes (dSph / dE / dIrr / ultra-faint) and modern additions (starburst, AGN, ring, ultra-diffuse). Local Group spans almost all categories — useful pedagogical microcosm.",
+  "cur": "Hubble ट्यूनिंग कांटा: बाईं ओर दीर्घवृत्ताकार (E0-E7), दाईं ओर सर्पिलें (S/SB, प्रकार a/b/c), किनारे पर अनियमित। साथ ही बौनी उप-वर्ग (dSph / dE / dIrr / अल्ट्रा-मंद) और आधुनिक जोड़ (तारकाबाजी, AGN, रिंग, अल्ट्रा-विसारित)। स्थानीय समूह लगभग सभी श्रेणियों में फैला हुआ है — उपयोगी शैक्षणिक सूक्ष्मदर्शन।"
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "title",
+  "en": "Stars — colour, class, and the H–R diagram",
+  "cur": "तारे — रंग, वर्ग, और H–R आरेख"
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "intro_sentence",
+  "en": "A star's colour is a thermometer, and its brightness is a life story. Plot the two against each other and almost every star falls onto a single diagonal band — the Hertzsprung–Russell diagram, the most important graph in stellar astronomy.",
+  "cur": "तारे का रंग एक थर्मामीटर है, और इसकी चमक एक जीवन कथा है। दोनों को एक दूसरे के विरुद्ध प्लॉट करें और लगभग हर तारा एक ही विकर्ण पट्टी पर गिरता है — Hertzsprung–Russell आरेख, तारकीय खगोल विज्ञान का सबसे महत्वपूर्ण ग्राफ।"
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.0",
+  "en": "Colour comes first. A star radiates as a near-perfect blackbody, so its colour is set almost entirely by its surface temperature: hot stars glow blue-white (~30,000 K), the Sun is yellow-white (~5,800 K), and cool stars burn deep red (~3,000 K). Astronomers measure that colour as the B–V index — the difference between a star's brightness through a blue and a visual filter — and it maps cleanly onto temperature. Sort stars left-to-right by colour and you have the spectral sequence O, B, A, F, G, K, M, hottest to coolest (mnemonic: “Oh Be A Fine Girl/Guy, Kiss Me”).",
+  "cur": "रंग पहले आता है। एक तारा लगभग पूर्ण काली वस्तु के रूप में विकिरण करता है, इसलिए इसका रंग लगभग पूरी तरह से इसके सतह के तापमान द्वारा निर्धारित होता है: गर्म तारे नीले-सफेद (~30,000 K) में चमकते हैं, सूर्य पीला-सफेद (~5,800 K) है, और ठंडे तारे गहरे लाल (~3,000 K) में जलते हैं। खगोलविद उस रंग को B–V सूचकांक के रूप में मापते हैं — एक तारे की चमक में नीले और दृश्य फिल्टर के माध्यम से अंतर — और यह तापमान पर स्वच्छ रूप से मानचित्र करता है। तारों को रंग के अनुसार बाएँ से दाएँ सॉर्ट करें और आपके पास वर्णक्रमीय अनुक्रम O, B, A, F, G, K, M, सबसे गर्म से सबसे ठंडा है (स्मरणीय: \"Oh Be A Fine Girl/Guy, Kiss Me\")।"
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.1",
+  "en": "Brightness is the second axis — but you have to be careful which brightness. A star can look bright because it is genuinely luminous or merely because it is close. To compare stars fairly you convert apparent magnitude m to absolute magnitude M, the brightness it would have at a standard 10 parsecs, using the distance: M = m − 5(log₁₀ d − 1). Only then does luminosity mean intrinsic power output, and only then does the diagram work.",
+  "cur": "चमक दूसरा अक्ष है — लेकिन आपको सावधान रहना होगा कि कौन सी चमक है। एक तारा चमकदार लग सकता है क्योंकि यह वास्तव में प्रकाशमान है या केवल इसलिए कि यह करीब है। तारों की निष्पक्ष तुलना करने के लिए आप आभासी परिमाण m को निरपेक्ष परिमाण M में परिवर्तित करते हैं, जो चमक है कि यह एक मानक 10 पारसेक पर होगा, दूरी का उपयोग करके: M = m − 5(log₁₀ d − 1)। केवल तभी चमकदारता अंतर्निहित शक्ति आउटपुट का मतलब है, और केवल तभी आरेख काम करता है।"
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.2",
+  "en": "Now plot temperature (hot on the left, by convention) against luminosity (bright at the top). The stars do not scatter randomly. Roughly 90% of them land on a single sweeping diagonal — the main sequence — running from hot, luminous, massive O and B stars at the top-left down to cool, faint red dwarfs at the bottom-right. A star sits on the main sequence for as long as it fuses hydrogen in its core, which is most of its life. The Sun is a G-type main-sequence star, sitting unremarkably near the middle.",
+  "cur": "अब तापमान (परंपरा के अनुसार बाईं ओर गर्म) को चमकदारता के विरुद्ध (शीर्ष पर उज्ज्वल) प्लॉट करें। तारे यादृच्छिक रूप से बिखरे हुए नहीं हैं। लगभग 90% उनमें से एक ही व्यापक विकर्ण पर उतरते हैं — मुख्य अनुक्रम — शीर्ष-बाईं ओर गर्म, प्रकाशमान, विशाल O और B तारों से नीचे-दाईं ओर ठंडे, मंद लाल बौनों तक चल रहे हैं। एक तारा मुख्य अनुक्रम पर तब तक बैठता है जब तक वह अपने कोर में हाइड्रोजन का संलयन करता है, जो इसके जीवन का अधिकांश है। सूर्य एक G-प्रकार का मुख्य-अनुक्रम तारा है, बीच के पास अप्रासंगिक रूप से बैठा है।"
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.3",
+  "en": "The interesting stars are the ones off the main sequence. Top-right: the red giants and supergiants — cool but enormous and hugely luminous, stars that have exhausted their core hydrogen and swollen up (Betelgeuse, Aldebaran, Arcturus live here). Bottom-left: the white dwarfs — hot but tiny and faint, the exposed cores left when a Sun-like star dies. Where a star lands, and how it moves across the diagram over time, is the whole narrative of stellar evolution written in two coordinates.",
+  "cur": "दिलचस्प तारे वे हैं जो मुख्य अनुक्रम से दूर हैं। शीर्ष-दाईं ओर: लाल विशाल और अति-विशाल — ठंडे लेकिन विशाल और अत्यंत प्रकाशमान, तारे जिन्होंने अपने कोर हाइड्रोजन को समाप्त कर दिया है और सूज गए हैं (आर्द्रा तारा, रोहिणी, स्वाति तारा यहाँ रहते हैं)। नीचे-बाईं ओर: सफेद बौने — गर्म लेकिन छोटे और मंद, जब सूर्य जैसा तारा मर जाता है तो उजागर किए गए कोर। एक तारा कहाँ उतरता है, और समय के साथ आरेख में कैसे चलता है, यह तारकीय विकास की पूरी कथा दो निर्देशांकों में लिखी है।"
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "body_paragraphs.4",
+  "en": "The H–R diagram is also a distance ladder and a clock. Because a star's position fixes its true luminosity, comparing that to how bright it appears gives its distance (“spectroscopic parallax”). And because more massive stars burn out faster, the point where a star cluster's main sequence bends toward the giants — the “turn-off” — tells you the cluster's age. One graph, and you can read a star's temperature, size, power, distance, and remaining lifetime.",
+  "cur": "H–R आरेख एक दूरी सीढ़ी और एक घड़ी भी है। क्योंकि एक तारे की स्थिति इसकी वास्तविक चमकदारता को ठीक करती है, इसकी तुलना यह करते हुए कि यह कितना उज्ज्वल दिखाई देता है, इसकी दूरी देता है (\"स्पेक्ट्रोस्कोपिक लंबन\")। और क्योंकि अधिक विशाल तारे तेजी से जल जाते हैं, जो बिंदु एक तारा समूह के मुख्य अनुक्रम को विशालकायों की ओर मोड़ता है — \"बंद\"-बिंदु — आपको समूह की आयु बताता है। एक ग्राफ, और आप एक तारे का तापमान, आकार, शक्ति, दूरी, और शेष जीवन काल पढ़ सकते हैं।"
+ },
+ {
+  "rel": "science/observation/hertzsprung-russell.json",
+  "at": "diagram_caption",
+  "en": "The Hertzsprung–Russell diagram: temperature (hot O-stars left, cool M-stars right) against luminosity (bright top, faint bottom). The main sequence runs corner to corner; red giants sit top-right, white dwarfs bottom-left. The Sun is a G-type main-sequence star, marked near the centre — the same axes the /explore HR-lens re-plots the real neighbourhood stars onto.",
+  "cur": "Hertzsprung–Russell आरेख: तापमान (गर्म O-तारे बाईं ओर, ठंडे M-तारे दाईं ओर) चमकदारता के विरुद्ध (शीर्ष पर उज्ज्वल, नीचे मंद)। मुख्य अनुक्रम कोने से कोने तक चलता है; लाल विशाल शीर्ष-दाईं ओर बैठते हैं, सफेद बौने नीचे-बाईं ओर। सूर्य एक G-प्रकार का मुख्य-अनुक्रम तारा है, केंद्र के पास चिह्नित है — वही अक्ष जो /explore HR-lens वास्तविक पड़ोस के तारों को फिर से प्लॉट करता है।"
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "intro_sentence",
+  "en": "Stitch separate telescopes into one virtual aperture larger than any of them — the Event Horizon Telescope is an Earth-sized radio interferometer built from antennas on four continents.",
+  "cur": "अलग-अलग दूरबीनों को उनमें से किसी की तुलना में एक आभासी एपर्चर में सिलाई करें - Event Horizon Telescope चार महाद्वीपों पर एंटेना से निर्मित पृथ्वी के आकार का रेडियो इंटरफेरोमीटर है।"
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "body_paragraphs.0",
+  "en": "A single telescope's resolving power depends on its aperture (diameter / wavelength). A radio antenna 30 m across imaging at 1 mm wavelength has an angular resolution of about 7 arcseconds — too coarse to see most things. But two antennas 1000 km apart, observing the same source simultaneously and combining their signals, behave like a single telescope **1000 km across** at that resolution — milliarcseconds.",
+  "cur": "एक एकल दूरबीन की निराकरण शक्ति अपने एपर्चर (व्यास / तरंग दैर्ध्य) पर निर्भर करती है। 1 मिमी तरंग दैर्ध्य पर इमेजिंग में एक रेडियो एंटीना 30 मीटर में लगभग 7 आर्कसेकेंड का कोणीय रिज़ॉल्यूशन है - अधिकांश चीजों को देखने के लिए बहुत मोटे। लेकिन दो एंटेना 1000 किमी के अलावा, एक ही स्रोत को एक साथ देखते हुए और अपने संकेतों को जोड़ते हुए, एक एकल दूरबीन की तरह व्यवहार करते हैं।"
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "body_paragraphs.1",
+  "en": "The trick is correlation: the radio waves arriving at antenna A and antenna B differ by a tiny phase delay that depends on the source direction and the antenna baseline. Cross-correlate the two signals over time, and you measure that phase delay. Do it with N antennas in different positions and the combined signal samples N×(N-1)/2 baselines simultaneously, filling in the Fourier components of the source brightness distribution. An iterative deconvolution then recovers the image.",
+  "cur": "चाल यह है कि सहसंबंध: रेडियो तरंगें जो ऐंटीना A और ऐंटीना B पर आती हैं, वे एक छोटी फ़ेज़ देरी से भिन्न होती हैं जो स्रोत की दिशा और ऐंटीना बेसलाइन पर निर्भर करती है। दोनों सिग्नलों को समय के साथ प्रतिसंबद्ध करें, और आप उस फ़ेज़ देरी को मापते हैं। इसे विभिन्न स्थितियों में N ऐंटीना के साथ करें और संयुक्त सिग्नल एक साथ N×(N-1)/2 बेसलाइनों को नमूने देता है, स्रोत चमक वितरण के फ़ूरिए घटकों को भरता है। एक पुनरावृत्तिमूलक विपरिवर्तन तब छवि को पुनः प्राप्त करता है।"
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "body_paragraphs.2",
+  "en": "**VLA** (27 antennas in New Mexico) does this at radio wavelengths. **ALMA** (66 antennas in Chile) does it at sub-mm wavelengths, where atmospheric water absorption is brutal but the dust-thermal-continuum lights up. **Event Horizon Telescope** linked 8 sub-mm observatories across 4 continents to image M87's black hole at 1.3 mm — Earth-diameter aperture, 20 microarcsecond resolution, the shadow of an event horizon.",
+  "cur": "**VLA** (न्यू मेक्सिको में 27 ऐंटीना) इसे रेडियो तरंग दैर्ध्य पर करता है। **ALMA** (चिली में 66 ऐंटीना) इसे सब-मिमी तरंग दैर्ध्य पर करता है, जहाँ वायुमंडलीय जल अवशोषण निर्मम है लेकिन धूल-तापीय-सतत प्रकाशित होती है। **Event Horizon Telescope** ने M87 के ब्लैक होल को 1.3 मिमी पर प्रतिबिंबित करने के लिए 4 महाद्वीपों में 8 सब-मिमी वेधशालाओं को जोड़ा — पृथ्वी-व्यास द्वारक, 20 माइक्रोआर्कसेकंड रिज़ॉल्यूशन, एक घटना क्षितिज की छाया।"
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "body_paragraphs.3",
+  "en": "Optical/IR interferometry exists but is much harder because optical wavelengths are 6+ orders of magnitude shorter than radio, requiring laser-stabilised path matching to nanometre accuracy. CHARA, NPOI, and the VLTI are the survivors. Space interferometers like LISA (gravitational-wave detection via laser arms between three free-flying spacecraft) are the future architecture — both for gravity-wave astronomy and for the long-term goal of imaging Earth-twin exoplanets at high contrast.",
+  "cur": "ऑप्टिकल/अवरक्त सूक्ष्मदर्शिता मौजूद है लेकिन बहुत कठिन है क्योंकि ऑप्टिकल तरंग दैर्ध्य रेडियो की तुलना में 6+ परिमाण के क्रम से कम हैं, जिसके लिए नैनोमीटर सटीकता के लिए लेजर-स्थिर पथ मेल की आवश्यकता है। CHARA, NPOI, और VLTI ही जीवित हैं। LISA जैसे अंतरिक्ष सूक्ष्मदर्शी (तीन स्वतंत्र-गतिमान अंतरिक्ष यान के बीच लेजर आर्मों के माध्यम से गुरुत्वीय-तरंग संसूचन) भविष्य की वास्तुकला हैं — गुरुत्वीय-तरंग खगोल विज्ञान दोनों के लिए और पृथ्वी-जुड़वां बहिर्ग्रहों को उच्च विपरीतता पर प्रतिबिंबित करने के दीर्घकालीन लक्ष्य के लिए।"
+ },
+ {
+  "rel": "science/observation/interferometry.json",
+  "at": "diagram_caption",
+  "en": "Two antennas + cross-correlation → effective aperture = the baseline between them. Earth-sized → EHT M87 black hole. Space-sized → LISA gravitational waves.",
+  "cur": "दो एंटेना + क्रॉस-correlation → प्रभावी एपर्चर = उनके बीच बेसलाइन। पृथ्वी आकार → EHT M87 काला छेद। अंतरिक्ष-आकार → LISA गुरुत्वाकर्षण तरंगें।"
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "title",
+  "en": "The Local Group — our gravitationally bound neighbourhood",
+  "cur": "स्थानीय समूह — गुरुत्वाकर्षण से बँधा हमारा पड़ोस"
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "intro_sentence",
+  "en": "The Local Group is the small cluster of ~80 known galaxies bound to the Milky Way and Andromeda by mutual gravity. It is about 3 megaparsecs across and contains essentially every galaxy close enough to study individual stars in.",
+  "cur": "स्थानीय समूह आकाशगंगा और Andromeda से परस्पर गुरुत्व से जुड़ी ~80 ज्ञात आकाशगंगाओं का छोटा समूह है। यह लगभग 3 मेगापार्सेक व्यास का है और इसमें सभी आकाशगंगाएँ शामिल हैं जो अलग-अलग तारों का अध्ययन करने के लिए पर्याप्त निकट हैं।"
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "body_paragraphs.0",
+  "en": "The Local Group is dominated by three spiral galaxies — the Milky Way, Andromeda (M31), and the Triangulum Galaxy (M33). Around the Milky Way and Andromeda are clouds of satellite galaxies, mostly small and faint — the Magellanic Clouds, Sagittarius Dwarf, Sculptor, Fornax, Draco, the Leo dwarfs, and many more. Total members known today: about 80, and the count keeps rising as deep imaging surveys (DES, LSST, Euclid) find ultra-faint dwarfs missed by earlier searches. The whole structure is gravitationally bound — it is not expanding with the Hubble flow, and the Milky Way and Andromeda are actually approaching each other at about 110 km/s.",
+  "cur": "The स्थानीय समूह तीन spiral आकाशगंगाओं द्वारा प्रभावित है — आकाशगंगा, Andromeda (M31), और ट्राऐन्गुलम गैलेक्सी (M33)। आकाशगंगा और Andromeda के चारों ओर छोटी और हल्की satellite आकाशगंगाओं के बादल हैं — मॅजलॅनिक बादल, Sagittarius Dwarf, Sculptor, Fornax, Draco, Leo dwarfs, और कई अन्य। आज ज्ञात कुल सदस्य: लगभग 80, और यह संख्या बढ़ती रहती है क्योंकि deep imaging surveys (DES, LSST, Euclid) पहली खोजों में छूटी ultra-faint dwarfs खोजते हैं। पूरी संरचना गुरुत्वाकर्षणीय रूप से बद्ध है — यह Hubble flow के साथ विस्तारित नहीं हो रहा है, और आकाशगंगा और Andromeda एक दूसरे की ओर लगभग 110 km/s की गति से आ रहे हैं।"
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "body_paragraphs.1",
+  "en": "The boundary of the Local Group is not sharp. The conventional outer edge is the zero-velocity surface, the imaginary surface at which a test galaxy would have just enough kinetic energy to escape the group's gravity but no more — roughly 1.5 Mpc from the Milky Way / Andromeda barycentre. Inside that radius, members are bound; outside it, galaxies belong to the broader Local Sheet and feel the Hubble expansion. The Sculptor Group, the Maffei Group, the M81 Group, and the Centaurus A Group are all within 4 Mpc of the Milky Way — close neighbours, but not Local Group members.",
+  "cur": "स्थानीय समूह की सीमा तीक्ष्ण नहीं है। परंपरागत बाहरी किनारा शून्य-वेग सतह है, एक काल्पनिक सतह जिस पर एक परीक्षण आकाशगंगा गुरुत्वीय बल से बचने के लिए ठीक पर्याप्त गतिज ऊर्जा रखती है परंतु अधिक नहीं — आकाशगंगा और Andromeda के केंद्रभार से लगभग 1.5 Mpc की दूरी पर। उस त्रिज्या के अंदर सदस्य बद्ध हैं; इसके बाहर, आकाशगंगाएँ व्यापक Local Sheet का भाग हैं और Hubble प्रसारण को अनुभव करती हैं। Sculptor Group, Maffei Group, M81 Group, और Centaurus A Group सभी आकाशगंगा के 4 Mpc के अंदर हैं — निकट पड़ोसी, परंतु स्थानीय समूह के सदस्य नहीं।"
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "body_paragraphs.2",
+  "en": "The Local Group matters out of proportion to its size. Because everything in it is within a few million light-years, individual stars in Local Group members can be resolved with HST, JWST, and the largest ground-based telescopes. This is where almost all stellar-population science gets done: variable-star distance calibration (the Hubble constant ladder starts with Cepheids in M31, M33, and the LMC), dwarf-galaxy dark-matter measurements (Draco, Fornax, the Leo dwarfs have stellar velocity dispersions consistent with mass-to-light ratios of 100+ — meaning they are dominated by dark matter), and galactic archaeology (the stellar streams of Sagittarius being torn apart by the Milky Way tide are mapped star-by-star). Galaxies further out have to be studied as ensembles; Local Group galaxies are studied star by star.",
+  "cur": "The स्थानीय समूह अपने आकार से अधिक महत्व रखता है। चूँकि इसमें सब कुछ कुछ लाख light-years के भीतर है, स्थानीय समूह सदस्यों की अलग-अलग तारे HST, JWST, और सबसे बड़ी ground-based telescopes के साथ हल किए जा सकते हैं। यह वह है जहाँ लगभग सभी stellar-population विज्ञान किया जाता है: variable-star distance calibration (Hubble constant ladder M31, M33, और LMC में Cepheids से शुरू होता है), dwarf-galaxy dark-matter measurements (Draco, Fornax, Leo dwarfs के stellar velocity dispersions 100+ के mass-to-light ratios के अनुरूप हैं — जिसका अर्थ है कि वे dark matter द्वारा प्रभावित हैं), और galactic archaeology (Sagittarius के stellar streams जो आकाशगंगा tide द्वारा अलग किए जा रहे हैं, तारे-दर-तारे mapped हैं)। दूर की आकाशगंगाओं का अध्ययन ensembles के रूप में किया जाना चाहिए; स्थानीय समूह आकाशगंगाओं का अध्ययन तारे-दर-तारे किया जाता है।"
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "body_paragraphs.3",
+  "en": "Long-term trajectory: gravity has the last word. The so-called 'Milkomeda' collision — first predicted in detail by Cox & Loeb (2008) and supported by van der Marel et al. (2019) using Gaia DR3 proper motions — was long considered a near-certainty. However, Sawala et al. (Nature Astronomy, 2025), incorporating M33 and the LMC into the orbit integration, found only roughly even odds of a merger within the next 10 Gyr. If a close pass does occur, tidal disruption might begin around 4.5 billion years from now, with the merger taking perhaps 2 billion years to complete and settling into a single elliptical galaxy. By the time it finishes, the Sun (still a main-sequence star, only ~6 Gyr old at the merger) will likely be ejected to a much larger orbit or remain in a thick disc remnant. The remaining Local Group galaxies will continue merging into the new central elliptical over the next ~100 Gyr, leaving 'Milkomeda' as the only galaxy visible from Earth's eventual successor planet, the cosmic-web filaments having long since carried other groups away in the accelerating Hubble flow.",
+  "cur": "दीर्घकालीन प्रक्षेपवक्र: गुरुत्वाकर्षण का अंतिम शब्द है। तथाकथित 'Milkomeda' टक्कर — जिसकी भविष्यवाणी पहली बार Cox और Loeb (2008) द्वारा विस्तार से की गई थी और Gaia DR3 उचित गतियों का उपयोग करके van der Marel et al. (2019) द्वारा समर्थित — को लंबे समय तक लगभग निश्चित माना जाता था। हालांकि, Sawala et al. (Nature Astronomy, 2025), M33 और LMC को कक्षा एकीकरण में शामिल करके, अगले 10 Gyr के भीतर विलय की केवल लगभग समान संभावना पाई गई है। यदि कोई निकट संपर्क होता है, तो ज्वारीय विघटन लगभग अब से 4.5 अरब वर्ष पहले शुरू हो सकता है, विलय को पूर्ण होने में शायद 2 अरब वर्ष लग सकते हैं और एक एकल दीर्घवृत्ताकार आकाशगंगा में स्थिर हो सकते हैं। जब तक यह समाप्त होता है, सूर्य (अभी भी एक मुख्य-अनुक्रम तारा, विलय के समय केवल ~6 Gyr पुराना) संभवतः एक बहुत बड़ी कक्षा में निष्कासित हो जाएगा या एक मोटी डिस्क अवशेष में रहेगा। शेष स्थानीय समूह आकाशगंगाएँ अगले ~100 Gyr में नई केंद्रीय दीर्घवृत्ताकार में विलय करती रहेंगी, 'Milkomeda' को पृथ्वी के अंतिम उत्तराधिकारी ग्रह से दृश्यमान एकमात्र आकाशगंगा के रूप में छोड़ते हुए, ब्रह्मांडीय-जाली तंतु दूसरे समूहों को त्वरण करने वाली Hubble प्रवाह में लंबे समय से दूर ले जा चुके हैं।"
+ },
+ {
+  "rel": "science/observation/local-group.json",
+  "at": "diagram_caption",
+  "en": "Local Group: ~80 galaxies, ~3 Mpc across, gravitationally bound. Dominated by Milky Way + Andromeda spirals plus M33 third. Most members are dwarf satellites of one of the two large spirals. Boundary at zero-velocity surface (~1.5 Mpc). Future: Milkomeda merger possible (~50/50 per Sawala et al. 2025) if it occurs, ~4.5 Gyr hence.",
+  "cur": "स्थानीय समूह: ~80 आकाशगंगाएँ, ~3 Mpc व्यास, गुरुत्वीय रूप से बद्ध। आकाशगंगा + Andromeda सर्पिल और तीसरे स्थान पर M33 द्वारा प्रभावित। अधिकांश सदस्य दोनों बड़ी सर्पिल आकाशगंगाओं में से एक के बौने उपग्रह हैं। सीमा शून्य-वेग सतह पर (~1.5 Mpc)। भविष्य: Milkomeda विलय संभव (~50/50 प्रति Sawala et al. 2025) यदि यह घटित होता है, तो ~4.5 Gyr बाद।"
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "title",
+  "en": "The Magellanic Clouds — LMC and SMC, our nearest galactic neighbours",
+  "cur": "मैजेलानिक क्लाउड्स — LMC और SMC, हमारे निकटतम गैलेक्टिक पड़ोसी"
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "intro_sentence",
+  "en": "The Large and Small Magellanic Clouds are the closest galaxies large enough to see with the naked eye — irregular dwarf galaxies trailing the Milky Way's south-galactic pole, ~50 and ~62 kpc away.",
+  "cur": "लार्ज और स्मॉल मैजेलानिक क्लाउड्स सबसे निकट की गैलेक्सियाँ हैं जिन्हें नंगी आँखों से देखा जा सकता है — अनियमित बौनी गैलेक्सियाँ जो मिल्की वे के दक्षिण-गैलेक्टिक ध्रुव का अनुसरण करती हैं, लगभग 50 और 62 kpc दूर।"
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "body_paragraphs.0",
+  "en": "The Magellanic Clouds dominate the southern hemisphere sky from any reasonably dark site below about +20° latitude. They look exactly as they sound — two detached fuzzy patches in the night sky, the LMC about 5° across and the SMC about 3°. They are catalogued under several names, but Magellanic comes from Ferdinand Magellan's 1519-1522 circumnavigation, during which the clouds were the most reliable navigation reference his crew had in the South Atlantic. The clouds have been continuously observed by humanity for as long as humans have lived in the southern hemisphere; rock art and oral traditions from Aboriginal Australia, the Khoisan, and Andean cultures reference them by name in ways that long predate European contact.",
+  "cur": "मैजेलानिक क्लाउड्स +20° अक्षांश के नीचे किसी भी उचित रूप से अंधेरी जगह से दक्षिणी गोलार्ध के आकाश पर हावी रहते हैं। वे बिल्कुल वैसे दिखते हैं जैसे वे लगते हैं — रात के आकाश में दो अलग-अलग धुंधले पैच, LMC लगभग 5° चौड़ा और SMC लगभग 3° चौड़ा। इन्हें कई नामों से सूचीबद्ध किया जाता है, लेकिन मैजेलानिक नाम फ़र्दिनान्द मैगलन के 1519-1522 के परिक्रमा अभियान से आता है, जिसके दौरान ये क्लाउड्स उसके दल के लिए दक्षिण अटलांटिक में सबसे विश्वसनीय नेविगेशन संदर्भ थे। ये क्लाउड्स उतने समय से मानवता द्वारा निरंतर देखे जाते रहे हैं जितने समय से मनुष्य दक्षिणी गोलार्ध में रहते आए हैं; ऑस्ट्रेलियाई आदिवासियों, खोइसान और एंडीन संस्कृतियों की शैल कला और मौखिक परंपराएँ उनका संदर्भ यूरोपीय संपर्क से बहुत पहले से देती आई हैं।"
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "body_paragraphs.1",
+  "en": "Both are irregular galaxies rather than spirals — chaotic, dust-rich, actively forming stars. The LMC has about 10 billion solar masses (about 1% of the Milky Way), the SMC about a tenth of that. The LMC hosts the Tarantula Nebula (30 Doradus), one of the most prolific star-formation regions in the Local Group and the site of supernova 1987A — the brightest supernova since Kepler's in 1604 and the first visible to the naked eye since SN 1885A in Andromeda, and the first supernova whose neutrinos were detected (Kamiokande, IMB, Baksan detectors caught about 25 neutrinos within seconds of each other, hours before the optical light arrived). The Tarantula's central star cluster R136 contains some of the most massive known stars (R136a1 is around 200 solar masses).",
+  "cur": "दोनों ही सर्पिल गैलेक्सियों की बजाय अनियमित गैलेक्सियाँ हैं — अव्यवस्थित, धूल-भरी, सक्रिय रूप से तारे बनाने वाली। LMC का द्रव्यमान लगभग 10 अरब सौर द्रव्यमान है (मिल्की वे का लगभग 1%), SMC का इसका लगभग दसवाँ हिस्सा। LMC में Tarantula Nebula (30 Doradus) है, जो लोकल ग्रुप में सबसे अधिक प्रचुर तारा-निर्माण क्षेत्रों में से एक है और 1987A की जगह है — 1604 में केप्लर के सुपरनोवा के बाद का सबसे उज्ज्वल सुपरनोवा और Andromeda में 1885A के बाद से नंगी आँखों को दिखाई देने वाला पहला सुपरनोवा, और पहला सुपरनोवा जिसके न्यूट्रिनो का पता चला (Kamiokande, IMB, Baksan डिटेक्टर्स ने एक-दूसरे के कुछ सेकंड के अंदर लगभग 25 न्यूट्रिनो पकड़े, जो प्रकाशीय प्रकाश के आने से कई घंटे पहले)। Tarantula के केंद्रीय तारा समूह R136 में कुछ सबसे विशाल ज्ञात तारे हैं (R136a1 लगभग 200 सौर द्रव्यमान का है)।"
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "body_paragraphs.2",
+  "en": "Until recently it was assumed the Clouds were long-term gravitationally-bound satellites of the Milky Way, on bound orbits that had taken them around our galaxy multiple times. Hubble Space Telescope proper-motion measurements (Kallivayalil et al. 2013, refined with Gaia DR2/DR3) overturned this picture: the Clouds are moving too fast to be bound on a long-term orbit, suggesting they are on first-passage — falling in toward the Milky Way for the first time from the Local Group's outer regions, having only recently arrived in the last ~1-2 Gyr. This re-frames a great deal of Magellanic Cloud research: their star-formation histories, their gas content (the Magellanic Stream — a vast hydrogen tail trailing behind them — was being torn out by Milky Way tides during the recent close passage), and their long-term fate (probably eventual merger with the Milky Way, but on Gyr timescales).",
+  "cur": "हाल ही तक यह माना जाता था कि ये क्लाउड्स मिल्की वे के दीर्घकालीन गुरुत्वाकर्षणीय रूप से बँधे हुए उपग्रह थे, बँधी हुई कक्षाओं पर हमारी गैलेक्सी के चारों ओर कई बार घूम चुके थे। Hubble Space Telescope के उचित-गति मापन (Kallivayalil et al. 2013, Gaia DR2/DR3 से परिष्कृत) ने इस तस्वीर को उलट दिया: ये क्लाउड्स दीर्घकालीन कक्षा पर बँधे रहने के लिए बहुत तेजी से गतिमान हैं, जिससे पता चलता है कि वे पहली बार गिरावट पर हैं — मिल्की वे की ओर पहली बार लोकल ग्रुप के बाहरी क्षेत्रों से पड़ रहे हैं, केवल पिछले ~1-2 Gyr में ही यहाँ पहुँचे हैं। यह मैजेलानिक क्लाउड्स के अनुसंधान का पुनर्ढांचा करता है: उनका तारा-निर्माण इतिहास, उनकी गैस सामग्री (Magellanic Stream — एक विशाल हाइड्रोजन पूँछ जो उनके पीछे घिसटती है — हाल के करीबी संपर्क के दौरान मिल्की वे की ज्वारीय शक्तियों से खींची जा रही थी), और उनका दीर्घकालीन भाग्य (शायद मिल्की वे के साथ विलय, लेकिन Gyr समयमानों पर)।"
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "body_paragraphs.3",
+  "en": "Observing the Clouds requires being in or visiting the southern hemisphere. From mid-southern latitudes (Sydney, Cape Town, Santiago, Auckland) they are circumpolar — never set, visible every clear night. From the equator they rise low in the south during southern summer. From the northern hemisphere they are invisible: even from Hawaii at 19°N latitude, the SMC barely clears the horizon. Astronomers historically had to travel south to study them — the major southern observatories at Cerro Pachón, Paranal, La Silla, Sutherland, and Siding Spring were sited specifically to give continuous access to the Magellanic Clouds plus the galactic centre. The Vera C. Rubin Observatory at Cerro Pachón, which started science operations in 2025, will image the LMC and SMC every few nights for the duration of its decade-long LSST survey.",
+  "cur": "Clouds को देखना दक्षिणी गोलार्ध में होने या जाने की आवश्यकता है। मध्य-दक्षिणी अक्षांशों (Sydney, Cape Town, Santiago, Auckland) से वे परिध्रुवीय हैं — कभी अस्त नहीं होते, हर स्पष्ट रात को दिखाई देते हैं। भूमध्य रेखा से वे दक्षिणी गर्मी के दौरान दक्षिण में निम्न उन्नयन पर उदित होते हैं। उत्तरी गोलार्ध से वे अदृश्य हैं: यहाँ तक कि 19°N अक्षांश पर Hawaii से भी, SMC मुश्किल से क्षितिज को पार करता है। ऐतिहासिक रूप से खगोलविदों को उनका अध्ययन करने के लिए दक्षिण की ओर यात्रा करनी पड़ी — Cerro Pachón, Paranal, La Silla, Sutherland, और Siding Spring पर प्रमुख दक्षिणी वेधशालाएँ विशेष रूप से मॅजलॅनिक बादल और आकाशगंगा के केंद्र तक निरंतर पहुँच प्रदान करने के लिए स्थापित की गई थीं। Cerro Pachón पर Vera C. Rubin Observatory, जिसने 2025 में विज्ञान संचालन शुरू किए, अपने दशक-लंबे LSST सर्वेक्षण की अवधि के लिए हर कुछ रातों में LMC और SMC को चित्रित करेगी।"
+ },
+ {
+  "rel": "science/observation/magellanic-clouds.json",
+  "at": "diagram_caption",
+  "en": "LMC: 49.97 kpc distant, ~10¹⁰ M☉, irregular, southern naked-eye visible. SMC: 62.1 kpc, ~10⁹ M☉, irregular. Both on first-passage orbits (Gaia DR3, Kallivayalil et al.), not long-term-bound. Magellanic Stream: hydrogen tail trailing their recent close pass through the Milky Way's tides. SN 1987A in LMC: brightest supernova since Kepler 1604; first naked-eye supernova since SN 1885A (Andromeda).",
+  "cur": "LMC: 49.97 kpc दूर, ~10¹⁰ M☉, अनियमित, दक्षिणी नंगी आँखों से दिखाई देने वाला। SMC: 62.1 kpc, ~10⁹ M☉, अनियमित। दोनों ही पहली-बार की कक्षाओं पर (Gaia DR3, Kallivayalil et al.), दीर्घकालीन-बँधी नहीं। Magellanic Stream: हाइड्रोजन पूँछ जो उनके हाल के मिल्की वे की ज्वारीय शक्तियों के माध्यम से करीबी गुजरने को घिसटती है। LMC में SN 1987A: 1604 में केप्लर के बाद से सबसे उज्ज्वल सुपरनोवा; Andromeda में SN 1885A के बाद से पहला नंगी आँखों को दिखाई देने वाला सुपरनोवा।"
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "title",
+  "en": "Our galaxy — the Milky Way from the inside",
+  "cur": "हमारी आकाशगंगा — अंदर से मिल्की वे"
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "intro_sentence",
+  "en": "We live inside a barred spiral galaxy of a few hundred billion stars, and we have never seen it from the outside. Everything we know about the Milky Way's shape is reconstructed from within the disc, looking through it.",
+  "cur": "हम कुछ सौ अरब तारों वाली एक छड़ाकार सर्पिल आकाशगंगा के अंदर रहते हैं, और हमने इसे कभी बाहर से नहीं देखा। मिल्की वे के आकार के बारे में जो कुछ भी हम जानते हैं वह डिस्क के भीतर से, इसके आर-पार देखते हुए पुनर्निर्मित किया गया है।"
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.0",
+  "en": "The Milky Way is a flat, rotating disc about 100,000 light-years across but only ~1,000 light-years thick — a cosmic vinyl record. Its stars, gas, and dust are wound into spiral arms (Perseus, Sagittarius, Scutum-Centaurus, Norma, plus our own minor Orion Spur), trailing from a central bar of older stars. Wrapping all of it is a spherical halo of ancient globular clusters and the invisible dark-matter that dominates the galaxy's mass. Estimates of the star count run from 100 to 400 billion.",
+  "cur": "मिल्की वे एक समतल, घूर्णनशील डिस्क है जो लगभग 100,000 प्रकाश-वर्ष चौड़ी है लेकिन केवल ~1,000 प्रकाश-वर्ष मोटी है — एक ब्रह्मांडीय विनाइल रिकॉर्ड। इसके तारे, गैस और धूल सर्पिल भुजाओं (Perseus, Sagittarius, स्कूटम तारामंडल-Centaurus, Norma, साथ ही हमारा अपना छोटा Orion Spur) में घाव हैं, पुराने तारों की केंद्रीय पट्टी से पीछे हटते हैं। इसके सभी को एक गोलाकार प्रभामंडल में लपेटा जाता है जिसमें प्राचीन गोलाकार समूह और अदृश्य डार्क मैटर हैं जो आकाशगंगा के द्रव्यमान पर हावी होते हैं। तारों की संख्या के अनुमान 100 से 400 बिलियन तक हैं।"
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.1",
+  "en": "The Sun is not special and not central. It sits about 26,000 light-years — roughly halfway — out from the core, on the inner edge of the Orion Spur, orbiting the galactic centre at about 230 km/s. Even at that speed one lap — a “galactic year” — takes ~230 million years; the Sun has completed only about 20 orbits in its entire existence. The last time it was here, dinosaurs were just beginning.",
+  "cur": "सूर्य विशेष नहीं है और केंद्रीय नहीं है। यह कोर से लगभग 26,000 प्रकाश-वर्ष दूर — मोटे तौर पर आधा रास्ता — बाहर की ओर बैठा है, Orion Spur के आंतरिक किनारे पर, लगभग 230 किमी/सेकंड की गति से आकाशगंगा के केंद्र की परिक्रमा कर रहा है। उस गति पर भी एक चक्कर — एक \"आकाशगंगा वर्ष\" — लगभग 230 मिलियन वर्षों का है; सूर्य ने अपने पूरे अस्तित्व में केवल लगभग 20 परिक्रमाएं पूरी की हैं। आखिरी बार जब यह यहां था, तब डायनोसौर अभी शुरू हो रहे थे।"
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.2",
+  "en": "At the very centre, 26,000 light-years away in the direction of Sagittarius, lies Sagittarius A* — a supermassive black hole of about 4.3 million solar masses. We know its mass precisely because we have watched individual stars whip around it on decades-long orbits, and in 2022 the Event Horizon Telescope imaged its shadow directly. Every star in the galaxy, the Sun included, orbits this one point.",
+  "cur": "बिल्कुल केंद्र में, धनु राशि की दिशा में 26,000 प्रकाश-वर्ष दूर, Sagittarius A* स्थित है — एक अति विशाल ब्लैक होल जिसका द्रव्यमान लगभग 43 लाख सौर द्रव्यमान है। हम इसके द्रव्यमान को सटीक रूप से जानते हैं क्योंकि हमने व्यक्तिगत तारों को दशकों लंबी कक्षाओं में इसके चारों ओर घूमते हुए देखा है, और 2022 में Event Horizon Telescope ने इसकी परछाई को सीधे चित्रित किया था। आकाशगंगा के प्रत्येक तारे, सूर्य सहित, इसी एक बिंदु के चारों ओर परिक्रमा करते हैं।"
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.3",
+  "en": "Seeing the whole thing from inside is hard: interstellar dust blocks visible light toward the centre, so the disc's structure is mapped in infrared and radio, which pass through. The band of light we call “the Milky Way” in a dark sky is simply the combined glow of the disc's billions of stars, viewed edge-on from our seat within it — the plane of our own galaxy, seen the long way.",
+  "cur": "पूरी चीज़ को अंदर से देखना मुश्किल है: तारकीय धूल केंद्र की ओर दृश्यमान प्रकाश को अवरुद्ध करती है, इसलिए डिस्क की संरचना अवरक्त और रेडियो में मानचित्रित की जाती है, जो इसके माध्यम से गुजरते हैं। अंधेरे आसमान में जिस प्रकाश की पट्टी को हम \"मिल्की वे\" कहते हैं, वह सरलतः डिस्क के अरबों सितारों की संयुक्त चमक है, जिसे हम इसके अंदर अपनी स्थिति से किनारे की ओर से देखते हैं — हमारी अपनी आकाशगंगा का विमान, लंबे रास्ते से देखा गया।"
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "body_paragraphs.4",
+  "en": "Mapping it is the great project of modern astrometry. ESA's Gaia mission has measured precise distances and motions for nearly two billion stars, turning a fuzzy impression of spiral arms into a moving three-dimensional model — and revealing that the Milky Way is still digesting smaller galaxies it has swallowed, its disc gently warped and rippling from the collisions.",
+  "cur": "इसे मैप करना आधुनिक खगोल विज्ञान की महान परियोजना है। ESA के Gaia मिशन ने लगभग दो अरब तारों के लिए सटीक दूरियां और गति मापी हैं, सर्पिल भुजाओं के धुंधले प्रभाव को एक गतिशील त्रि-आयामी मॉडल में बदल दिया है — और यह पता चला है कि मिल्की वे अभी भी छोटी आकाशगंगाओं को पचा रही है जिन्हें उसने निगल लिया है, इसकी डिस्क टकराव से धीरे-धीरे विकृत और लहरदार हो रही है।"
+ },
+ {
+  "rel": "science/observation/our-galaxy.json",
+  "at": "diagram_caption",
+  "en": "The Milky Way face-on (a schematic — we cannot photograph it from outside): a central bar, four major spiral arms plus the Orion Spur, and the Sun ~26,000 light-years out, about halfway to the edge. Sagittarius A*, the 4-million-solar-mass central black hole, sits at the core — the same layout the /explore Milky Way view renders.",
+  "cur": "मिल्की वे का मुखाभिमुख दृश्य (एक योजनाबद्ध — हम इसे बाहर से फोटो नहीं खींच सकते): एक केंद्रीय छड़, चार प्रमुख सर्पिल भुजाएँ और Orion Spur, और सूर्य ~26,000 प्रकाश-वर्ष बाहर, किनारे तक लगभग आधे रास्ते पर। Sagittarius A*, 4-मिलियन-सौर-द्रव्यमान केंद्रीय ब्लैक होल, केंद्र में स्थित है — वही लेआउट जो /explore आकाशगंगा दृश्य प्रस्तुत करता है।"
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "intro_sentence",
+  "en": "Every famous \"telescope picture\" is a stack of long exposures through narrow-band filters, calibrated, registered, false-colour mapped — the image is what humans make of the count.",
+  "cur": "हर प्रसिद्ध \"telescope चित्र\" संकीर्ण बैंड फिल्टर, कैलिब्रेटेड, पंजीकृत, झूठे रंग के नक्शे के माध्यम से लंबे एक्सपोज़र का एक ढेर है - छवि क्या मनुष्य गिनती का बना है।"
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "narrative_101.0",
+  "en": "Hubble didn't take a photo of the Pillars of Creation. Hubble took a few dozen photos — each through a different filter, each minutes long — and a team of imaging scientists stacked them, aligned them sub-pixel, calibrated out the bad pixels and cosmic-ray hits, then assigned colours by what physics the filter captured. The thing you see on the poster is real data and real interpretation, in equal parts. Telescope imagery isn't dishonest — it's just not what your phone camera does.",
+  "cur": "Hubble ने निर्माण के स्तंभों की तस्वीर नहीं ली। Hubble ने कुछ दर्जन तस्वीरें ली - प्रत्येक को एक अलग फिल्टर के माध्यम से, प्रत्येक मिनट लंबे - और इमेजिंग वैज्ञानिकों की एक टीम ने उन्हें स्टैक किया, उन्हें उप-पिक्सेल को संरेखित किया, जिसने खराब पिक्सेल और कॉस्मिक-रे हिट को कैलिब्रेट किया, फिर फ़िल्टर कैप्चर किए गए भौतिकी द्वारा रंगों को सौंपा गया। जो चीज़ आपको पोस्टर पर देखना है वह वास्तविक डेटा और वास्तविक व्याख्या है, समान भागों में। टेलीस्कोप इमेजरी बेईमान नहीं है - यह सिर्फ वही नहीं है जो आपका फोन कैमरा करता है।"
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "narrative_101.1",
+  "en": "Below this section the Observatory Showcase strip pulls one signature image from each of the twelve observatories in Orrery's fleet — Hubble, JWST, Chandra, Spitzer, Kepler, TESS, Gaia, Euclid, XMM-Newton, Spektr-RG, Compton GRO, and Hitomi. Click any of them to drop into that observatory's full gallery + technical panel.",
+  "cur": "इस खंड के नीचे ऑब्जर्वेटरी शोकेस स्ट्रिप Orrery के बेड़े में प्रत्येक बारह पर्यवेक्षकों से एक हस्ताक्षर छवि खींचती है - Hubble, JWST, Chandra, Spitzer, Kepler, TESS, Gaia, Euclid, XMM-Newton, Spektr-RG, Compton GRO, और Hitomi। उनमें से किसी को भी उस पर्यवेक्षक की पूर्ण गैलरी + तकनीकी पैनल में छोड़ने के लिए क्लिक करें।"
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "body_paragraphs.0",
+  "en": "A space telescope's image sensor is a CCD or CMOS chip — a grid of photon-counters. Each pixel sits on the focal plane for an exposure (anywhere from milliseconds to multiple hours), accumulating electron counts. The output is a number per pixel: how many photons of which narrow-band filter hit there. Multiple exposures are stacked to beat down read noise, registered to sub-pixel alignment, and median-combined to reject cosmic-ray hits.",
+  "cur": "एक अंतरिक्ष दूरबीन की छवि संवेदक एक CCD या CMOS चिप है - फोटोन-काउंटर का एक ग्रिड। प्रत्येक पिक्सेल एक जोखिम के लिए फोकल प्लेन पर बैठता है (किसी भी जगह मिलीसेकेंड से एकाधिक घंटे तक), इलेक्ट्रॉन गिनती जमा करता है। आउटपुट प्रति पिक्सेल एक संख्या है: कितने फोटॉन जिनमें से संकीर्ण बैंड फिल्टर वहाँ मारा। एकाधिक एक्सपोजर को पढ़ने वाले शोर को हराने के लिए स्टैक किया जाता है, जो उप-पिक्सेल संरेखण में पंजीकृत होता है, और मध्यम-संयुक्त ब्रह्मांडीय-रे हिट को अस्वीकार करने के लिए।"
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "body_paragraphs.1",
+  "en": "Colour is the most-misunderstood part. Telescope filters are narrow-band — they pass a specific 10–100 nm slice of the spectrum: hydrogen-alpha at 656.3 nm, doubly-ionised oxygen at 500.7 nm, infrared bands at 2 µm or 12 µm. The Hubble Palette assigns those filters to RGB channels in non-physical ways (S-II red, H-α green, O-III blue) to maximise contrast between physical processes. JWST's mid-infrared images map 21 µm, 11 µm, and 7 µm to RGB — colours your eye couldn't see if you were there.",
+  "cur": "रंग सबसे अधिक गलतफहमी वाला हिस्सा है। दूरदर्शी फ़िल्टर संकीर्ण-बैंड होते हैं — वे स्पेक्ट्रम के एक विशिष्ट 10–100 nm स्लाइस को गुजारते हैं: हाइड्रोजन-अल्फा 656.3 nm पर, द्विगुणित-आयनित ऑक्सीजन 500.7 nm पर, 2 µm या 12 µm पर अवरक्त बैंड। Hubble Palette उन फ़िल्टरों को भौतिक प्रक्रियाओं के बीच विपरीतता को अधिकतम करने के लिए गैर-भौतिक तरीकों से RGB चैनलों को निर्दिष्ट करता है (S-II लाल, H-α हरा, O-III नीला)। JWST की मध्य-अवरक्त छवियां 21 µm, 11 µm और 7 µm को RGB के साथ मैप करती हैं — ऐसे रंग जो आपकी आंख नहीं देख सकती अगर आप वहां होते।"
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "body_paragraphs.2",
+  "en": "The processing pipeline is open-source for most NASA / ESA observatories. Raw exposures land in MAST (Mikulski Archive for Space Telescopes) or ESA Datalabs the moment they hit the ground; image-pipeline tutorials show exactly how a final composite is assembled. The pictures aren't manufactured — they're documented to the byte.",
+  "cur": "प्रोसेसिंग पाइपलाइन अधिकांश NASA / ESA वेधशालाओं के लिए ओपन-सोर्स है। कच्चे एक्सपोजर उसी क्षण MAST (Mikulski Archive for Space Telescopes) या ESA Datalabs में आते हैं जब वे जमीन पर पहुँचते हैं; इमेज-पाइपलाइन ट्यूटोरियल बिल्कुल दिखाते हैं कि अंतिम समग्र कैसे एकत्रित किया जाता है। तस्वीरें बनाई नहीं गई हैं — वे बाइट तक प्रलेखित हैं।"
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "body_paragraphs.3",
+  "en": "For ground-based imaging the additional challenge is the atmosphere. [Adaptive optics](observation/adaptive-optics) corrects it in real time by sensing the turbulence with a laser guide star and counter-bending a deformable mirror. JWST and Hubble are in space partly to skip this problem entirely; the atmosphere is also opaque at most infrared and UV bands, which is the other reason.",
+  "cur": "जमीन-आधारित इमेजिंग के लिए अतिरिक्त चुनौती वायुमंडल है। [अनुकूली प्रकाशिकी](observation/adaptive-optics) इसे रीयल टाइम में सुधारती है — एक लेजर गाइड स्टार के साथ अशांति को संवेदनशील करके और एक विकृत दर्पण को प्रतिलोम-झुकाकर। JWST और Hubble अंतरिक्ष में हैं आंशिक रूप से इस समस्या को पूरी तरह छोड़ने के लिए; वायुमंडल अधिकांश अवरक्त और पराबैंगनी बैंडों पर भी अपारदर्शी है, जो दूसरा कारण है।"
+ },
+ {
+  "rel": "science/observation/space-photography.json",
+  "at": "diagram_caption",
+  "en": "Filter → CCD → stack → register → calibrate → composite → colour-map. Six steps, hours of compute, real data the whole way through.",
+  "cur": "फ़िल्टर → CCD → स्टैक → रजिस्टर → कैलिब्रेट → समग्र → रंग-मैप। छह चरणों, गणना के घंटे, वास्तविक डेटा के माध्यम से पूरी तरह से।"
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "intro_sentence",
+  "en": "Pass starlight through a prism or diffraction grating and the spectrum tells you what the star is made of — every element prints a unique fingerprint of absorption lines.",
+  "cur": "एक प्रिज्म या विवर्तन झंझरी के माध्यम से स्टारलाइट पास करें और स्पेक्ट्रम आपको बताता है कि स्टार क्या है - हर तत्व अवशोषण लाइनों का एक अद्वितीय फिंगरप्रिंट प्रिंट करता है।"
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "body_paragraphs.0",
+  "en": "Each chemical element absorbs light at a unique set of wavelengths corresponding to its electronic transitions. Pass starlight through a prism and you see a rainbow with thin dark lines at exactly those wavelengths — Joseph Fraunhofer mapped 574 of them across the solar spectrum in 1814. Each line is an element in the star's atmosphere stealing photons.",
+  "cur": "प्रत्येक रासायनिक तत्व अपने इलेक्ट्रॉनिक संक्रमण के अनुरूप तरंग दैर्ध्य के एक अद्वितीय सेट पर प्रकाश को अवशोषित करता है। एक प्रिज्म के माध्यम से स्टारलाइट पास करें और आप उन तरंगदैर्ध्यों में पतली अंधेरे रेखाओं के साथ एक इंद्रधनुष देखते हैं - योसेफ़ फ़्राउनहोफ़र ने 1814 में सौर स्पेक्ट्रम के पार उनमें से 574 को मैप किया। प्रत्येक पंक्ति स्टार के वायुमंडल में एक तत्व है जो फोटोन चोरी करती है।"
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "body_paragraphs.1",
+  "en": "Astronomy reverses Fraunhofer's process: catalogue the lines, match them to elements, and you know what the star is made of. The Sun is 73% hydrogen, 25% helium, 2% heavier elements — that came from spectroscopy, no sample needed. The same technique applied to galaxies gave us the redshift-distance relation and ultimately the expanding universe; applied to molecular clouds it gave us interstellar organic chemistry; applied to exoplanet atmospheres (via transit transmission spectroscopy) it now gives us oxygen / methane / water signatures from worlds we'll never visit.",
+  "cur": "खगोल विज्ञान Fraunhofer की प्रक्रिया को उलट देता है: रेखाओं की सूची बनाओ, उन्हें तत्वों से मेल खाओ, और तुम्हें पता चल जाता है कि तारा किससे बना है। सूर्य 73% हाइड्रोजन, 25% हीलियम, 2% भारी तत्वों से बना है — यह सब वर्णक्रम विश्लेषण से आया है, कोई नमूना लेने की जरूरत नहीं। यही तकनीक जब आकाशगंगाओं पर लागू की गई तो हमें लाल विस्थापन-दूरी संबंध मिला और अंततः विस्तृत होने वाला ब्रह्मांड; जब इसे आणविक मेघों पर लागू किया गया तो हमें अंतरतारकीय कार्बनिक रसायन विज्ञान मिला; जब इसे बहिग्रह वायुमंडलों पर (संक्रमण संप्रेषण वर्णक्रम विश्लेषण के माध्यम से) लागू किया गया तो अब यह हमें उन संसारों से ऑक्सीजन / मीथेन / जल के संकेत देता है जिन्हें हम कभी नहीं देख पाएंगे।"
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "body_paragraphs.2",
+  "en": "Modern spectrographs split light with a diffraction grating (a finely-ruled reflective surface, often with thousands of lines per millimetre) and feed the dispersed spectrum onto a CCD. Resolution is measured by R = λ/Δλ; consumer kit hits R~1000, JWST NIRSpec hits R~2700, the ESPRESSO spectrograph on the VLT hits R~140,000 — enough to detect a planet's reflex velocity of just centimetres per second.",
+  "cur": "आधुनिक स्पेक्ट्रोग्राफ एक विवर्तन झंझरी (एक बारीक-ruled चिंतनशील सतह, अक्सर प्रति मिलीमीटर हजारों लाइनों के साथ) के साथ विभाजित प्रकाश और एक CCD पर बिखरे स्पेक्ट्रम फ़ीड। संकल्प को R = λ / Δλ द्वारा मापा जाता है; उपभोक्ता किट R ~ 1000 हिट करता है, JWST NIRSpec R ~ 2700 हिट करता है, VLT पर ESPRESSO स्पेक्ट्रोग्राफ R ~ 140,000 हिट करता है - प्रति सेकंड सिर्फ सेंटीमीटर के ग्रह के पलटाव वेग का पता लगाने के लिए पर्याप्त है।"
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "body_paragraphs.3",
+  "en": "Spectroscopy is the **most informative** astronomical observation. A single image tells you what's there; a single spectrum tells you what it's made of, how fast it's moving toward or away from you (Doppler shift), how hot it is (continuum shape), how strong its magnetic field is (Zeeman splitting), and how dense its source region is (line profile shape). Most major facilities — Hubble, JWST, VLT, Keck, ALMA — spend the majority of their time taking spectra, not pictures.",
+  "cur": "स्पेक्ट्रोस्कोपी ** सबसे अधिक जानकारीपूर्ण* * खगोलीय अवलोकन है। एक एकल छवि आपको बताती है कि क्या है; एक एकल स्पेक्ट्रम आपको बताता है कि यह क्या है, यह कितनी तेज़ है, यह आपके (डॉपलर शिफ्ट) की ओर या दूर चल रहा है, यह कितना गर्म है (निरंतर आकार), इसके चुंबकीय क्षेत्र कितना मजबूत है (ज़ीमन स्प्लिटिंग), और इसका स्रोत क्षेत्र कितना घनी है (लाइन प्रोफाइल आकार)। अधिकांश प्रमुख सुविधाएं - Hubble, JWST, VLT, Keck, ALMA - अपने अधिकांश समय को स्पेक्ट्रा लेने में खर्च करते हैं, चित्र नहीं।"
+ },
+ {
+  "rel": "science/observation/spectroscopy.json",
+  "at": "diagram_caption",
+  "en": "Starlight → grating → spectrum → dark lines at element-specific wavelengths → composition + velocity + temperature + magnetic field. The most-informative observation in astronomy.",
+  "cur": "स्टारलाइट → झंझरी → स्पेक्ट्रम → तत्व-विशिष्ट तरंगदैर्ध्य पर अंधेरे रेखाएँ → रचना + वेग + तापमान + चुंबकीय क्षेत्र। खगोल विज्ञान में सबसे प्रभावशाली अवलोकन।"
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "intro_sentence",
+  "en": "Mathematical solutions to general relativity that connect distant regions of spacetime. None has ever been observed. Included for completeness — they are NOT used for spaceflight.",
+  "cur": "सामान्य सापेक्षता के लिए गणितीय समाधान जो अंतरिक्ष समय के दूर के क्षेत्रों को जोड़ता है। कभी नहीं देखा गया है। पूर्णता के लिए शामिल - वे अंतरिक्ष उड़ान के लिए इस्तेमाल नहीं कर रहे हैं।"
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "body_paragraphs.0",
+  "en": "A wormhole — formally an Einstein-Rosen bridge — is a topological feature of spacetime that the equations of general relativity permit but the universe has never been observed to actually instantiate. The mathematics is real (Einstein and Rosen worked it out in 1935); the physics is uncertain (no candidate has been seen); the engineering does not exist (and may be physically impossible). Treat them the way you'd treat tachyons or time-travel paradoxes: interesting puzzles in the equations, not flight hardware.",
+  "cur": "एक वर्महोल — औपचारिक रूप से एक Einstein-Rosen bridge — समष्टिकाल की एक सांस्थितिक विशेषता है जिसे सामान्य सापेक्षता के समीकरण अनुमति देते हैं, लेकिन ब्रह्मांड को इसे वास्तव में प्रकट करते हुए कभी देखा नहीं गया है। गणित वास्तविक है (Einstein और Rosen ने इसे 1935 में काम किया); भौतिकी अनिश्चित है (कोई प्रत्याशी देखा नहीं गया है); इंजीनियरिंग अस्तित्व में नहीं है (और भौतिक रूप से असंभव हो सकती है)। उन्हें उसी तरह मानें जैसे आप tachyons या time-travel paradoxes को मानते हैं: समीकरणों में दिलचस्प पहेलियाँ, उड़ान संबंधी उपकरण नहीं।"
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "body_paragraphs.1",
+  "en": "The original Schwarzschild solution to Einstein's equations describes a non-rotating black hole, and inside the geometry there's a second \"universe\" connected by a tube of spacetime. The catch: the tube isn't traversable. To cross it you'd have to move faster than light. Kip Thorne and others worked out in the 1980s that adding \"exotic matter\" — material with negative energy density, of which we have no examples — could in principle hold a wormhole open long enough to cross. Stephen Hawking pushed back: quantum effects probably destroy any traversable wormhole as soon as you try to use one.",
+  "cur": "Einstein के समीकरणों के मूल Schwarzschild समाधान एक गैर घूर्णन काले छेद का वर्णन करता है, और ज्यामिति के अंदर अंतरिक्ष समय की एक ट्यूब द्वारा जुड़े एक दूसरा \"अनिवर्स\" है। पकड़: ट्यूब पारगम्य नहीं है। इसे पार करने के लिए आपको प्रकाश की तुलना में तेज़ी से स्थानांतरित करना होगा। किप थोर्न और दूसरों ने 1980 के दशक में काम किया जो \"विदेशी पदार्थ\" - नकारात्मक ऊर्जा घनत्व वाली सामग्री को जोड़ती है, जिनमें से हमारे पास कोई उदाहरण नहीं है - सिद्धांत रूप में एक wormhole खुला हो सकता है, जो क्रॉस करने के लिए काफी लंबा हो सकता है। स्टीफन हॉकिंग ने वापस धक्का दिया: क्वांटम प्रभाव शायद किसी भी तरह के प्रतिकूल wormhole को नष्ट कर देते हैं जैसे ही आप एक का उपयोग करने की कोशिश करते हैं।"
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "body_paragraphs.2",
+  "en": "Observationally, we have no candidates. No gravitational-lensing signature, no astrophysical source has yet been identified that requires a wormhole interpretation. If they exist in nature, they're either very small (sub-atomic, quantum gravity domain) or very far away. The popular-culture wormhole — a stable, traversable, instant-shortcut between solar systems — would require physics we have no example of, and would carry the same causality-violation paradoxes that make time travel philosophically uncomfortable.",
+  "cur": "आम तौर पर, हमारे पास कोई उम्मीदवार नहीं है। कोई gravitational लेंसिंग हस्ताक्षर नहीं, कोई खगोलीय स्रोत अभी तक पहचाना गया है कि एक wormhole व्याख्या की आवश्यकता है। यदि वे प्रकृति में मौजूद हैं, तो वे या तो बहुत छोटे (उप परमाणु, क्वांटम ग्रेविटी डोमेन) या बहुत दूर हैं। लोकप्रिय-संस्कृति wormhole - सौर प्रणालियों के बीच एक स्थिर, traversable, तत्काल-shortcut - भौतिकी की आवश्यकता होगी, हमारे पास कोई उदाहरण नहीं है, और एक ही कारण-violation paradoxes जो समय यात्रा दार्शनिक रूप से असहज बनाते हैं।"
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "body_paragraphs.3",
+  "en": "So why include them in a science encyclopedia at all? Because they're a beautiful illustration of the limits of general relativity: the equations admit solutions that the universe doesn't seem to use, and figuring out *why* is one of the live frontiers of theoretical physics. Quantum gravity, AdS/CFT correspondence, the ER=EPR conjecture — all of it touches wormhole geometry. They are real mathematics. They are not real spacecraft.",
+  "cur": "तो फिर उन्हें एक विज्ञान विश्वकोश में बिल्कुल क्यों शामिल करें? क्योंकि वे सामान्य सापेक्षता की सीमाओं का एक सुंदर चित्रण हैं: समीकरण ऐसे समाधान स्वीकार करते हैं जिन्हें ब्रह्मांड उपयोग नहीं करता प्रतीत होता है, और यह पता लगाना कि *क्यों* है, सैद्धांतिक भौतिकी की सक्रिय सीमाओं में से एक है। क्वांटम गुरुत्व, AdS/CFT correspondence, ER=EPR conjecture — यह सब कुछ वर्महोल ज्यामिति को छूता है। वे वास्तविक गणित हैं। वे वास्तविक अंतरिक्ष यान नहीं हैं।"
+ },
+ {
+  "rel": "science/observation/wormholes.json",
+  "at": "diagram_caption",
+  "en": "Einstein-Rosen bridge — a topological tube connecting distant regions of spacetime. Requires negative-energy \"exotic matter\" to be traversable. None observed; none flyable.",
+  "cur": "Einstein-Rosen bridge — समष्टिकाल के दूरस्थ क्षेत्रों को जोड़ने वाली एक सांस्थितिक सुरंग। गमनशील होने के लिए नकारात्मक-ऊर्जा \"विदेशी पदार्थ\" की आवश्यकता है। कोई नहीं देखा गया; कोई भी गमनीय नहीं।"
+ },
+ {
+  "rel": "science/orbits/_intro.json",
+  "at": "headline",
+  "en": "Orbits — gravity is the only physics that matters.",
+  "cur": "कक्षाएँ — गुरुत्वाकर्षण ही एकमात्र भौतिकी है जो मायने रखती है।"
+ },
+ {
+  "rel": "science/orbits/_intro.json",
+  "at": "paragraphs.0",
+  "en": "An orbit is what happens when you fall toward something but keep missing it. Throw a ball off a tower hard enough and the ground curves away faster than the ball drops — the ball never lands. Every spacecraft, every moon, every planet is doing exactly that trick around something heavier.",
+  "cur": "एक कक्षा तब बनती है जब आप किसी चीज़ की ओर गिरते हैं लेकिन उसे छूने से चूकते रहते हैं। एक टॉवर से पर्याप्त जोर से गेंद फेंकें और ज़मीन गेंद के गिरने से तेज़ी से मुड़ जाती है — गेंद कभी नहीं गिरती। हर अंतरिक्ष यान, हर चंद्रमा, हर ग्रह बिल्कुल यही तरकीब किसी भारी चीज़ के चारों ओर कर रहा है।"
+ },
+ {
+  "rel": "science/orbits/_intro.json",
+  "at": "paragraphs.1",
+  "en": "All orbits are ellipses, every single one. The Sun (or Earth, or whatever you're orbiting) sits at one focal point of the ellipse, never the centre. Six numbers — size, shape, three angles, and a clock position — describe any orbit perfectly. The eight sections in this tab unpack each of those numbers, and the master equation (vis-viva) that ties them all together.",
+  "cur": "सभी कक्षाएँ दीर्घवृत्त होती हैं, हर एक। सूर्य (या पृथ्वी, या जो भी आप परिक्रमा कर रहे हैं) दीर्घवृत्त के एक नाभि बिंदु पर स्थित होता है, कभी केंद्र में नहीं। छह संख्याएँ — आकार, रूप, तीन कोण, और एक घड़ी की स्थिति — किसी भी कक्षा को पूरी तरह से वर्णित करती हैं। इस टैब में आठ अनुभाग इनमें से प्रत्येक संख्या और मुख्य समीकरण (vis-viva) को समझाते हैं जो उन सभी को एक साथ जोड़ता है।"
+ },
+ {
+  "rel": "science/orbits/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Pick where you want to start. If physics is new to you, start with the Keplerian orbit — that's the whole concept in one section. If you want the workhorse equation, jump to vis-viva. If you want the historical drama, go to Kepler's three laws — a German astronomer in 1609 figured all this out from raw eyeball data.",
+  "cur": "चुनें कि आप कहाँ से शुरू करना चाहते हैं। यदि भौतिकी आपके लिए नई है, तो Keplerian कक्षा से शुरू करें — वह पूरी अवधारणा एक अनुभाग में है। यदि आप मुख्य समीकरण चाहते हैं, तो vis-viva पर जाएं। यदि आप ऐतिहासिक नाटक चाहते हैं, तो केप्लर के तीन नियमों पर जाएं — 1609 में एक जर्मन खगोलशास्त्री ने कच्चे आँखों के डेटा से यह सब समझ लिया था।"
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "title",
+  "en": "Apsides — Perihelion, Aphelion, Perigee, Apogee",
+  "cur": "अपसाइड्स — उपसौर, अपसौर, उपभू, अपभू"
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "intro_sentence",
+  "en": "The two extreme points on every elliptical orbit: closest approach, and farthest.",
+  "cur": "हर दीर्घवृत्ताकार कक्षा के दो चरम बिंदु: निकटतम दृष्टिकोण और सबसे दूर का बिंदु।"
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "narrative_101.0",
+  "en": "Every elliptical orbit has a high point and a low point. That's all an apsis is — one of those two extremes. The closest approach to whatever you're orbiting; or the farthest. Spacecraft people obsess over these two spots because almost every important burn happens at one of them.",
+  "cur": "हर दीर्घवृत्ताकार कक्षा का एक उच्च बिंदु और एक निम्न बिंदु होता है। यही एक अपसाइड है — वे दोनों चरमताएं। जिस चीज की आप परिक्रमा कर रहे हैं उसके निकटतम दृष्टिकोण; या सबसे दूर। अंतरिक्षयान के लोग इन दोनों स्थानों पर ध्यान केंद्रित करते हैं क्योंकि लगभग हर महत्वपूर्ण बर्न इनमें से किसी एक पर होता है।"
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "narrative_101.1",
+  "en": "Why? Two reasons. First, your speed is at its extremes there too — fastest at the close end, slowest at the far end. The Oberth effect (which we'll get to in propulsion) says you get the most bang for your fuel when you burn fast — so departure burns happen near the close end. Second, raising or lowering the OPPOSITE side of an orbit is cheapest when you push at the extreme — so to raise your orbit you fire at the low point.",
+  "cur": "क्यों? दो कारण। पहला, आपकी गति भी वहां चरम पर है — निकट के अंत में सबसे तेज, दूर के अंत में सबसे धीमी। Oberth प्रभाव (जिसे हम प्रणोदन में देखेंगे) कहता है कि जब आप तेजी से बर्न करते हैं तो आपको अपने ईंधन से सबसे अधिक लाभ मिलता है — इसलिए प्रस्थान बर्न निकट के अंत के पास होता है। दूसरा, कक्षा के विपरीत पक्ष को बढ़ाना या कम करना सबसे सस्ता होता है जब आप चरम पर धक्का देते हैं — इसलिए अपनी कक्षा बढ़ाने के लिए आप निम्न बिंदु पर फायर करते हैं।"
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "narrative_101.2",
+  "en": "Annoying naming convention warning: every planet gets its own pair of words. Around the Sun: perihelion / aphelion. Around the Earth: perigee / apogee. Around the Moon: perilune / apolune. Same physics, just Greek roots glued to whichever body you're circling. Don't let it intimidate you — it's just one word for 'low' and one for 'high'.",
+  "cur": "परिक्रमा करने वाले पिंड के अनुसार नामकरण परंपरा में परेशानी का चेतावनी: हर ग्रह के लिए शब्दों की अपनी जोड़ी होती है। सूर्य के चारों ओर: perihelion / aphelion। पृथ्वी के चारों ओर: perigee / apogee। चंद्रमा के चारों ओर: perilune / apolune। भौतिकी सब जगह एक समान है, बस ग्रीक मूल को जिस पिंड के चारों ओर परिक्रमा कर रहे हैं उसके साथ जोड़ दिया जाता है। इससे डरने की कोई बात नहीं है — यह सिर्फ 'निम्न' के लिए एक शब्द और 'उच्च' के लिए एक शब्द है।"
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "body_paragraphs.0",
+  "en": "An apsis is one of the two points on an elliptical orbit where the body is at minimum or maximum distance from its focus. The line connecting them — passing through both foci — is the line of apsides. Every Keplerian orbit has exactly two: closest, and farthest.",
+  "cur": "एक अपसाइड एक दीर्घवृत्ताकार कक्षा पर दो बिंदुओं में से एक है जहां पिंड अपने फोकस से न्यूनतम या अधिकतम दूरी पर होता है। उन्हें जोड़ने वाली रेखा — दोनों फोकि से होकर गुजरने वाली — अपसाइड्स की रेखा है। हर Keplerian कक्षा के ठीक दो होते हैं: निकटतम, और सबसे दूर।"
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "body_paragraphs.1",
+  "en": "The names depend on what you're orbiting. Around the Sun: perihelion (closest) and aphelion (farthest), from Greek `peri` (near) and `apo` (far) plus `helios` (Sun). Around Earth: perigee and apogee. Around the Moon: periselene and aposelene, or perilune and apolune. Around any star: periastron and apastron. The ground truth is identical; only the suffix changes.",
+  "cur": "नाम इस पर निर्भर करते हैं कि आप किस की परिक्रमा कर रहे हैं। सूर्य के चारों ओर: पेरिहेलियन (निकटतम) और अपहेलियन (सबसे दूर), ग्रीक `peri` (निकट), `apo` (दूर) और `helios` (सूर्य) से। पृथ्वी के चारों ओर: पेरिजी और अपोजी। चंद्रमा के चारों ओर: पेरिसिलीन और अपोसिलीन, या पेरिलून और अपोलून। किसी भी तारे के चारों ओर: पेरिएस्ट्रॉन और अपेस्ट्रॉन। मूल सत्य समान है; केवल प्रत्यय बदलता है।"
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "body_paragraphs.2",
+  "en": "Apsides anchor mission timelines. The Voyager flybys were timed at closest approach (periapsis) to each target planet — peri-jove for Jupiter, peri-saturnium for Saturn. ISS reboost burns add energy to fight atmospheric drag, consistent with the rule of firing at the low point to raise the orbit. Rendezvous and docking phasing burns are placed for phasing efficiency, often near perigee (Oberth effect). The Sun's perihelion passage by Parker Solar Probe is the closest a human-made object has ever been to a star.",
+  "cur": "खगोल विज्ञान अध्ययन समय सारणी को आधार देते हैं। Voyager उड़ान-भ्रमण सबसे निकटतम दृष्टिकोण (periapsis) पर प्रत्येक लक्ष्य ग्रह के लिए समयबद्ध किए गए थे — बृहस्पति के लिए peri-jove, शनि के लिए peri-saturnium। आईएसएस रीबूस्ट बर्न्स वायुमंडलीय ड्रैग से लड़ने के लिए ऊर्जा जोड़ते हैं, कक्षा को बढ़ाने के लिए निम्न बिंदु पर प्रज्वलन के नियम के अनुरूप। मिलन और डॉकिंग चरण बर्न्स चरण दक्षता के लिए रखे जाते हैं, अक्सर perigee के पास (Oberth effect)। Parker Solar Probe द्वारा सूर्य का perihelion प्रक्रण मानव-निर्मित वस्तु द्वारा एक तारे के सबसे निकट है।"
+ },
+ {
+  "rel": "science/orbits/apsides.json",
+  "at": "diagram_caption",
+  "en": "Line of apsides through both foci, connecting perihelion (closest) and aphelion (farthest).",
+  "cur": "दोनों फोकि से होकर गुजरने वाली अपसाइड्स की रेखा, पेरिहेलियन (निकटतम) और अपहेलियन (सबसे दूर) को जोड़ती है।"
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "title",
+  "en": "Cislunar orbits — DRO, NRHO, halo, lunar frozen",
+  "cur": "सिसलूनार कक्षाएँ — DRO, NRHO, हेलो, चंद्र जमी हुई कक्षाएँ"
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "intro_sentence",
+  "en": "Between Earth and the Moon's surface lies a zoo of carefully-engineered orbits — none of them obvious from two-body physics, all of them exploited by the modern lunar architecture from Gateway to robotic probes.",
+  "cur": "पृथ्वी और चंद्रमा की सतह के बीच सावधानीपूर्वक डिज़ाइन की गई कक्षाओं का एक विविध संग्रह है — कोई भी द्विपिंड भौतिकी से स्पष्ट नहीं है, सभी का उपयोग Gateway से रोबोटिक प्रोब तक आधुनिक चंद्र आर्किटेक्चर द्वारा किया जाता है।"
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.0",
+  "en": "Near-Rectilinear Halo Orbit (NRHO) is the orbit class NASA chose for the Lunar Gateway. Geometrically: a six-day-period halo orbit around the Earth-Moon L2 Lagrange point, with perilune ≈1,500 km altitude (perilune radius ~3,200 km) over the lunar north pole and apolune ≈70,000 km over the lunar south pole. The 'near-rectilinear' name comes from the orbit's shape in the Earth-Moon rotating frame — it sweeps a long, narrow loop perpendicular to the Earth-Moon line, almost like a rectangle. Three properties made it the winning choice for Gateway. First, station-keeping ΔV is extraordinarily low (~5 m/s/year) compared to lunar low orbits (>100 m/s/year). Second, Earth communication is unobstructed because the orbit stays out of the Moon's radio shadow. Third, the long dwell near apolune over the south pole gives near-continuous coverage of the Artemis south-polar sites at Shackleton crater rim. The trade is that descent from NRHO to lunar surface is harder than from a low circular lunar orbit (~2.5 km/s vs ~1.8 km/s) — but for a programme that needs an enduring staging point, the trade is worth it.",
+  "cur": "निकट-सरेखीय हेलो कक्षा (NRHO) वह कक्षा वर्ग है जो NASA ने Lunar Gateway के लिए चुना है। ज्यामितीय रूप से: पृथ्वी-चंद्रमा L2 लग्रेंज बिंदु के चारों ओर छः दिन की अवधि वाली हेलो कक्षा, जिसमें चंद्रमा के उत्तरी ध्रुव के ऊपर पेरिलुन ≈1,500 किमी ऊंचाई (पेरिलुन त्रिज्या ~3,200 किमी) और चंद्रमा के दक्षिणी ध्रुव के ऊपर अपोलुन ≈70,000 किमी है। 'निकट-सरेखीय' नाम पृथ्वी-चंद्रमा घूर्णशील फ्रेम में कक्षा के आकार से आता है — यह पृथ्वी-चंद्रमा रेखा के लंबवत एक लंबी, संकीर्ण लूप को समेटता है, लगभग एक आयत की तरह। तीन गुणों ने इसे Gateway के लिए विजयी विकल्प बनाया। पहला, स्टेशन-कीपिंग ΔV असाधारण रूप से कम है (~5 m/s/वर्ष) चंद्र निम्न कक्षाओं की तुलना में (>100 m/s/वर्ष)। दूसरा, पृथ्वी संचार बाधित नहीं है क्योंकि कक्षा चंद्रमा की रेडियो छाया से बाहर रहती है। तीसरा, दक्षिणी ध्रुव के ऊपर अपोलुन के निकट लंबी रहने की अवधि शैकलटन क्रेटर रिम पर Artemis दक्षिण-ध्रुवीय स्थलों का लगभग निरंतर कवरेज देती है। व्यापार यह है कि NRHO से चंद्र सतह तक अवतरण निम्न वृत्ताकार चंद्र कक्षा से कठिन है (~2.5 किमी/से बनाम ~1.8 किमी/से) — लेकिन एक कार्यक्रम के लिए जिसे एक स्थायी मंचन बिंदु की आवश्यकता है, यह व्यापार इसके योग्य है।"
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.1",
+  "en": "Distant Retrograde Orbit (DRO). A large, circular-leaning orbit around the Moon in retrograde direction relative to the Moon's orbit around Earth. Distance: typically 60,000-80,000 km from the Moon. The retrograde motion plus the large radius makes DROs unusually stable — there's no station-keeping ΔV required (essentially zero, on multi-year timescales), because the orbit exploits a quirk of the three-body problem where the Earth's gravity acts as a restoring force when the spacecraft tries to drift. The Artemis-1 Orion (uncrewed flight test, November 2022) inserted into a DRO around the Moon for a 6-day stay before returning to Earth, demonstrating both the manoeuvre stack and the orbit's stability. DROs are the long-term-storage parking orbit of choice for cislunar architecture — you can park a propellant depot or a backup vehicle there and not worry about it drifting for years.",
+  "cur": "Distant Retrograde Orbit (DRO)। चंद्रमा के चारों ओर एक बड़ी, गोलाकार-झुकी हुई कक्षा पृथ्वी के चारों ओर चंद्रमा की कक्षा के सापेक्ष प्रतिगामी दिशा में। दूरी: आम तौर पर चंद्रमा से 60,000-80,000 km। प्रतिगामी गति साथ ही बड़ी त्रिज्या DROs को असामान्य रूप से स्थिर बनाती है — कोई स्टेशन-कीपिंग ΔV आवश्यक नहीं है (अनिवार्य रूप से शून्य, बहु-वर्षीय समयस्केल पर), क्योंकि कक्षा त्रि-पिंड समस्या की एक विशिष्टता का उपयोग करती है जहाँ पृथ्वी का गुरुत्वाकर्षण एक बहाली बल के रूप में कार्य करता है जब अंतरिक्ष यान बहाव करने का प्रयास करता है। Artemis-1 Orion (अनमानवीय उड़ान परीक्षण, नवंबर 2022) चंद्रमा के चारों ओर एक DRO में डाला गया था 6 दिन की रुकावट के लिए पृथ्वी पर लौटने से पहले, पैंतरेबाज़ी स्टैक और कक्षा की स्थिरता दोनों को प्रदर्शित करते हुए। DROs सिसलूनार आर्किटेक्चर की दीर्घकालीन-भंडारण पार्किंग कक्षा है — आप एक प्रणोदक डिपो या बैकअप वाहन को वहाँ पार्क कर सकते हैं और वर्षों के लिए बहाव के बारे में चिंता नहीं कर सकते।"
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.2",
+  "en": "Halo orbits at EML1 and EML2. Halo orbits are periodic 3-D families around the collinear Lagrange points (L1, L2, L3) — and around the Sun-Earth collinear points too (JWST, Gaia, Euclid all sit in Sun-Earth L2 halos). EML1 halos (between Earth and Moon) are useful for lunar gateway concepts that need continuous Earth visibility from the front side. EML2 halos (beyond the Moon from Earth's perspective) are useful for far-side observation; the proposed Lunar Crater Radio Telescope and the Chinese Queqiao relay satellite (supporting Chang'e-4 farside landing) both used variations on EML2 halo orbits. Compared to NRHO, traditional halos require more station-keeping ΔV but offer geometrically simpler orbits.",
+  "cur": "EML1 और EML2 पर हेलो कक्षाएँ। हेलो कक्षाएँ सहरेखीय लाग्रांज बिंदुओं (L1, L2, L3) के चारों ओर आवधिक 3-D परिवार हैं — और सूर्य-पृथ्वी सहरेखीय बिंदुओं के चारों ओर भी (JWST, Gaia, Euclid सभी सूर्य-पृथ्वी L2 हेलो में बैठते हैं)। EML1 हेलो (पृथ्वी और चंद्रमा के बीच) चंद्र गेटवे अवधारणाओं के लिए उपयोगी हैं जिन्हें सामने की ओर से निरंतर पृथ्वी दृश्यमानता की आवश्यकता है। EML2 हेलो (पृथ्वी के दृष्टिकोण से चंद्रमा के परे) सुदूर-पक्ष अवलोकन के लिए उपयोगी हैं; प्रस्तावित Lunar Crater Radio Telescope और चीनी Queqiao रिले उपग्रह (Chang'e-4 दूरस्थ पक्ष लैंडिंग का समर्थन) दोनों EML2 हेलो कक्षाओं पर भिन्नता का उपयोग करते हैं। NRHO की तुलना में, पारंपरिक हेलो को अधिक स्टेशन-कीपिंग ΔV की आवश्यकता होती है लेकिन ज्यामितीय रूप से सरल कक्षाएँ प्रदान करते हैं।"
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.3",
+  "en": "Lunar frozen orbits. The Moon's gravity field is highly non-spherical because its crust is uneven (mascons — mass concentrations under the maria) and the Moon has no atmosphere to damp orbital perturbations. A satellite in a circular low lunar orbit at most inclinations will see its orbit get progressively more eccentric over months until it crashes into the surface. Lunar Prospector (1999) was deliberately deorbited at end of mission because mission planners couldn't keep it stable. The 'frozen' lunar inclinations — 27°, 50°, 76°, and 86° — are the ones where the various perturbations cancel and a satellite can stay in approximate circular orbit for years without station-keeping. The Lunar Reconnaissance Orbiter (LRO, 2009-) uses a near-frozen polar orbit at ~50 km altitude that requires only modest station-keeping. The Chinese Queqiao-2 relay satellite (2024) uses a frozen elliptical orbit at L2.",
+  "cur": "चंद्र जमी हुई कक्षाएँ। चंद्रमा का गुरुत्वाकर्षण क्षेत्र अत्यधिक गैर-गोलाकार है क्योंकि इसकी परत असमान है (mascons — मरिया के नीचे द्रव्यमान सांद्रण) और चंद्रमा के पास कक्षीय विक्षोभ को कम करने के लिए कोई वातावरण नहीं है। अधिकांश झुकाव में चंद्र निम्न कक्षा में एक उपग्रह अपनी कक्षा को महीनों में क्रमशः अधिक विलक्षण होते हुए देखेगा जब तक कि यह सतह में दुर्घटनाग्रस्त न हो जाए। Lunar Prospector (1999) को मिशन के अंत में जानबूझकर डीऑर्बिट किया गया था क्योंकि मिशन योजनाकार इसे स्थिर नहीं रख सकते थे। 'जमी हुई' चंद्र झुकाव — 27°, 50°, 76°, और 86° — वह हैं जहाँ विभिन्न विक्षोभ रद्द हो जाते हैं और एक उपग्रह बिना स्टेशन-कीपिंग के वर्षों के लिए लगभग गोलाकार कक्षा में रह सकता है। Lunar Reconnaissance Orbiter (LRO, 2009-) ~50 km ऊँचाई पर एक निकट-जमी हुई ध्रुवीय कक्षा का उपयोग करता है जिसमें केवल मामूली स्टेशन-कीपिंग की आवश्यकता होती है। चीनी Queqiao-2 रिले उपग्रह (2024) L2 पर एक जमी हुई अण्डाकार कक्षा का उपयोग करता है।"
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.4",
+  "en": "Why this matters operationally. The 1960s-style 'circular lunar orbit at 100 km' approach used by Apollo Command Modules was acceptable because crews were only there for days and re-entry was guaranteed. Modern multi-mission cislunar architecture (Artemis, ILRS, multiple crewed and robotic missions over decades) demands orbits that are cheap to maintain and don't require constant attention. NRHO + DRO + frozen lunar are the carefully-engineered solutions to that constraint. The 'cislunar economy' (DARPA's term for the projected commercial activity in Earth-Moon space) lives or dies by these orbital choices — and 5 m/s/year station-keeping vs 100 m/s/year is the difference between a viable commercial venture and a money pit.",
+  "cur": "यह परिचालन दृष्टि से क्यों महत्वपूर्ण है। 1960 के दशक की शैली 'सर्कुलर चंद्र कक्षा 100 km पर' दृष्टिकोण Apollo Command Modules द्वारा उपयोग की जाने वाली स्वीकार्य थी क्योंकि दल वहाँ केवल दिनों के लिए थे और पुनः प्रवेश गारंटीकृत था। आधुनिक बहु-मिशन सिसलूनार आर्किटेक्चर (Artemis, ILRS, दशकों में एकाधिक चालक दल और रोबोटिक मिशन) ऐसी कक्षाओं की मांग करता है जो बनाए रखने के लिए सस्ती हैं और निरंतर ध्यान की आवश्यकता नहीं होती है। NRHO + DRO + जमी हुई चंद्र उस बाधा के सावधानीपूर्वक-इंजीनियर समाधान हैं। 'सिसलूनार अर्थव्यवस्था' (DARPA का शब्द पृथ्वी-चंद्रमा अंतरिक्ष में अनुमानित वाणिज्यिक गतिविधि के लिए) इन कक्षीय विकल्पों पर निर्भर करती है — और 5 m/s/year स्टेशन-कीपिंग बनाम 100 m/s/year एक व्यवहार्य वाणिज्यिक उद्यम और एक money pit के बीच का अंतर है।"
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "diagram_caption",
+  "en": "NRHO: halo around Earth-Moon L2, 6-day period, perilune (~1,500 km) over lunar north pole, apolune (~70,000 km) over south pole for south-polar coverage, 5 m/s/yr station-keeping. DRO: large retrograde lunar orbit, essentially zero station-keeping. Halo orbits at EML1/EML2: continuous Earth/farside comms. Frozen lunar orbits: 27°/50°/76°/86° inclinations where mascon-driven perturbations cancel.",
+  "cur": "NRHO: पृथ्वी-चंद्रमा L2 के चारों ओर हेलो, 6 दिन की अवधि, lunar north pole के ऊपर perilune (~1,500 km), दक्षिण-ध्रुवीय कवरेज के लिए south pole के ऊपर apolune (~70,000 km), 5 m/s/yr स्टेशन-कीपिंग। DRO: बड़ी प्रतिगामी चंद्र कक्षा, अनिवार्य रूप से शून्य स्टेशन-कीपिंग। EML1/EML2 पर हेलो कक्षाएँ: निरंतर पृथ्वी/दूरस्थ पक्ष comms। जमी हुई चंद्र कक्षाएँ: 27°/50°/76°/86° झुकाव जहाँ mascon-संचालित विक्षोभ रद्द हो जाते हैं।"
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "title",
+  "en": "End-of-life disposal — graveyard orbits, controlled deorbit, the 25-year rule",
+  "cur": "जीवन-अंत निपटान — कब्रिस्तान कक्षाएँ, नियंत्रित डीऑर्बिट, 25-वर्ष नियम"
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "intro_sentence",
+  "en": "Every satellite must have an end-of-life disposal plan to launch — either deorbit into the atmosphere, or boost to a stable graveyard orbit. Mismanaged disposal is what produces the orbital-debris problem covered in the next article.",
+  "cur": "हर उपग्रह को प्रक्षेपण के समय जीवन-अंत निपटान योजना होनी चाहिए — या तो वायुमंडल में डीऑर्बिट, या स्थिर कब्रिस्तान कक्षा में बूस्ट। ख़राब प्रबंधित निपटान वह है जो अगले लेख में कवर की गई कक्षीय-मलबे की समस्या पैदा करता है।"
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.0",
+  "en": "LEO disposal: deorbit. Spacecraft in LEO are dragged down by residual atmospheric density (negligible per orbit, accumulative over years). A satellite at 400 km decays naturally within a year if propulsion fails; at 800 km the natural decay time is ~50 years; at 1500 km it's centuries. The international standard codified by the IADC (Inter-Agency Space Debris Coordination Committee) in 2002 and adopted by every spacefaring nation: LEO objects must be deorbited within 25 years of end of mission. The FCC tightened this for US-licensed satellites to 5 years in 2022. Mechanism: at end of life, the spacecraft uses its remaining propellant to lower perigee into the upper atmosphere (typically 200-300 km perigee), guaranteeing rapid drag-driven decay within months. Large objects (ISS modules, Hubble, retired LEO comsats) are targeted at SPOUA — the South Pacific Ocean Uninhabited Area, a remote stretch of open ocean centred near Point Nemo, the official 'spacecraft cemetery' since the Soviet Salyut deorbits in the 1970s. Mir was deorbited there in 2001 (130 tonnes); the ISS is scheduled for controlled deorbit there in 2031.",
+  "cur": "LEO निपटान: डीऑर्बिट। LEO में अंतरिक्षयान अवशिष्ट वायुमंडलीय घनत्व द्वारा नीचे खींचे जाते हैं (प्रति कक्षा नगण्य, वर्षों में संचयी)। प्रोपल्शन विफल होने पर 400 किमी पर एक उपग्रह स्वाभाविक रूप से एक वर्ष के भीतर क्षय हो जाता है; 800 किमी पर प्राकृतिक क्षय समय ~50 वर्ष है; 1500 किमी पर यह सदियाँ है। 2002 में IADC (Inter-Agency Space Debris Coordination Committee) द्वारा संहिताबद्ध और हर अंतरिक्ष-यात्रा राष्ट्र द्वारा अपनाया गया अंतरराष्ट्रीय मानक: LEO वस्तुओं को मिशन के अंत के 25 वर्षों के भीतर डीऑर्बिट किया जाना चाहिए। FCC ने 2022 में US-लाइसेंस वाले उपग्रहों के लिए इसे 5 साल तक कस दिया। तंत्र: जीवन के अंत में, अंतरिक्षयान अपने शेष प्रणोदक का उपयोग उपभू को ऊपरी वायुमंडल (आमतौर पर 200-300 किमी उपभू) तक नीचे लाने के लिए करता है, महीनों के भीतर तीव्र खिंचाव-संचालित क्षय की गारंटी देता है। बड़ी वस्तुएँ (आईएसएस मॉड्यूल, Hubble, सेवानिवृत्त LEO comsats) SPOUA — दक्षिणी प्रशांत महासागर निर्जन क्षेत्र, Point Nemo के निकट केंद्रित खुले महासागर का दूरस्थ खंड, 1970 के दशक में सोवियत Salyut डीऑर्बिट्स के बाद से आधिकारिक 'अंतरिक्षयान कब्रिस्तान' — पर लक्षित होती हैं। Mir को वहाँ 2001 में डीऑर्बिट किया गया (130 टन); आईएसएस को 2031 में वहाँ नियंत्रित डीऑर्बिट के लिए निर्धारित किया गया है।"
+ }
+]

@@ -1,0 +1,536 @@
+[
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "dek",
+  "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+  "cur": "समाचार शीर्षक कहते हैं कि क्षुद्रग्रहों में सोने और प्लैटिनम के चतुर्भुज डॉलर हैं। शीर्षक गलत है — धातु के बारे में नहीं, बल्कि पैसे के बारे में। क्षुद्रग्रह संसाधनों के लिए वास्तविक तर्क पूरी तरह विपरीत दिशा में चलता है।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.0.md",
+  "en": "Every few years, someone does the arithmetic on asteroid 16 Psyche and announces, in a breathless press release, that the metal-rich body orbiting in the [asteroid belt](/science/planets/asteroid-belt) contains iron, nickel, and precious metals worth something in the range of ten quintillion dollars. The figure is always staggering. It is also, in any meaningful economic sense, meaningless — and understanding why it is meaningless leads directly to what the genuine argument for asteroid resources actually is, which is almost the opposite of the headline version.",
+  "cur": "हर कुछ सालों में, कोई व्यक्ति क्षुद्रग्रह 16 Psyche पर अंकगणित करता है और एक उत्साहपूर्ण प्रेस विज्ञप्ति में घोषणा करता है कि [क्षुद्रग्रह बेल्ट](/science/planets/asteroid-belt) में परिक्रमा करने वाले धातु से समृद्ध पिंड में लोहा, निकल और कीमती धातुएँ हैं जिनकी कीमत दस क्विंटिलियन डॉलर के आसपास है। यह आँकड़ा हमेशा चकित करने वाला होता है। यह भी, किसी भी सार्थक आर्थिक अर्थ में, अर्थहीन है — और समझना कि यह अर्थहीन क्यों है, सीधे इस बात तक पहुँचता है कि क्षुद्रग्रह संसाधनों के लिए वास्तविक तर्क वास्तव में क्या है, जो शीर्षक संस्करण के लगभग विपरीत है।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.1.md",
+  "en": "Start with the number itself. The global platinum market is worth, in a given year, roughly $5 billion. If you could deliver the platinum-group-metal content of even a modest metallic asteroid to Earth and sell it tomorrow, you would not make a fortune. You would collapse the market. The price of platinum derives entirely from its scarcity; remove the scarcity, and you remove the price. Value, for a commodity, is set at the margin — by the last unit sold, not the total volume in existence. The $10-quintillion asteroid, successfully mined and delivered to Earth's surface, would be worth roughly what iron ore is worth: not much per kilogram. But this market-collapse argument is almost beside the point, because it assumes delivery to Earth — and delivery to Earth is where the arithmetic goes wrong long before the market enters the picture. This is where the [rocket equation](/science/propulsion/tsiolkovsky) closes the discussion.",
+  "cur": "संख्या से ही शुरू करें। वैश्विक प्लैटिनम बाजार किसी दिए गए वर्ष में लगभग 5 बिलियन डॉलर मूल्य का है। यदि आप किसी भी मामूली धातु क्षुद्रग्रह की प्लैटिनम-समूह-धातु सामग्री को पृथ्वी पर पहुंचा सकते हैं और इसे कल बेच सकते हैं, तो आप एक भाग्य नहीं बनाएंगे। आप बाजार को ढहा देंगे। प्लैटिनम की कीमत पूरी तरह इसकी दुर्लभता से उत्पन्न होती है; दुर्लभता को हटाएँ, और आप कीमत को हटाएँगे। एक वस्तु के लिए मूल्य सीमांत पर निर्धारित होता है — बेची गई अंतिम इकाई द्वारा, मौजूद कुल मात्रा द्वारा नहीं। 10-क्विंटिलियन डॉलर का क्षुद्रग्रह, सफलतापूर्वक खनन और पृथ्वी की सतह तक पहुंचाया गया, लगभग उतना ही मूल्यवान होगा जितना लौह अयस्क है: प्रति किलोग्राम बहुत कुछ नहीं। लेकिन यह बाजार-पतन तर्क लगभग बिंदु के बगल में है, क्योंकि यह पृथ्वी को वितरण मान लेता है — और पृथ्वी को वितरण वह है जहाँ अंकगणित बाजार में प्रवेश करने से पहले ही गलत हो जाता है। यह वह है जहाँ [रॉकेट समीकरण](/science/propulsion/tsiolkovsky) चर्चा को बंद करता है।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.2.text",
+  "en": "Gravity is the accountant",
+  "cur": "गुरुत्वाकर्षण लेखाकार है"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.3.md",
+  "en": "The [delta-v budget](/science/propulsion/dv-budget) for a mission from Earth to a near-Earth asteroid is, for a favourable target, somewhere around 6 km/s — comparable to reaching Mars. Getting material back from that asteroid to Earth orbit costs more still, and getting it from Earth orbit to Earth's surface requires surviving the atmosphere. This is all before you have done any mining. The [rocket equation](/science/propulsion/tsiolkovsky) does not grade on a curve: every kilogram of payload you want to return home from deep space must be matched, at launch, by enough propellant to carry it back, which must itself be matched by propellant to carry that propellant, and so on down the regress the equation describes. The [Tsiolkovsky constraint](/science/propulsion/tsiolkovsky), which has not been repealed since 1903, makes the numbers brutal.",
+  "cur": "पृथ्वी से एक निकट-पृथ्वी क्षुद्रग्रह तक एक मिशन के लिए [डेल्टा-वी बजट](/science/propulsion/dv-budget) एक अनुकूल लक्ष्य के लिए कहीं 6 किमी/सेकंड के आसपास है — मंगल तक पहुँचने के तुलनीय। उस क्षुद्रग्रह से सामग्री को पृथ्वी की कक्षा में वापस लाने में अधिक लागत होती है, और इसे पृथ्वी की कक्षा से पृथ्वी की सतह तक लाने के लिए वायुमंडल से बचना आवश्यक है। यह सब इससे पहले है कि आपने कोई खनन किया हो। [रॉकेट समीकरण](/science/propulsion/tsiolkovsky) वक्र पर ग्रेड नहीं देता है: आप गहरे अंतरिक्ष से घर वापस लाने के लिए जो भी पेलोड चाहते हैं, उसे शुरुआत में काफी प्रणोदक के साथ मेल खाना चाहिए जो इसे वापस ले जाए, जिसे बदले में उस प्रणोदक को ले जाने के लिए प्रणोदक के साथ मेल खाना चाहिए, और समीकरण जो वर्णन करता है उसके नीचे प्रतिगमन जारी रहता है। [त्सोलकोवस्की बाधा](/science/propulsion/tsiolkovsky), जिसे 1903 के बाद से निरस्त नहीं किया गया है, संख्याओं को क्रूर बनाता है।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.4.md",
+  "en": "Put plainly: you are pulling material out of a gravity well — not Earth's, but the solar system's. The asteroid is, admittedly, tiny, with a surface gravity a thousandth of Earth's. Getting off it costs almost nothing in [delta-v](/essays/delta-v). But you are then in interplanetary space, and Earth is at the bottom of a very large gravity well, and arriving there with any significant velocity means spending fuel to slow down, or accepting the violence of aerobraking, or both. The economic cost of transporting mass across interplanetary distances and then decelerating it safely is, at current and foreseeable propulsion technologies, so far above the market value of any commodity that the business case for returning bulk materials to Earth cannot close. This is not a pessimistic reading. It is what the [specific impulse](/science/propulsion/specific-impulse) numbers say when you run them honestly.",
+  "cur": "स्पष्ट रूप से कहें: आप गुरुत्वाकर्षण कुएँ से सामग्री निकाल रहे हैं — पृथ्वी का नहीं, बल्कि सौर मंडल का। क्षुद्रग्रह, निस्संदेह, छोटा है, पृथ्वी के एक हजारवें हिस्से का सतह गुरुत्वाकर्षण। इससे दूर जाने में [डेल्टा-वी](/essays/delta-v) में लगभग कुछ भी खर्च नहीं होता है। लेकिन आप तब अंतग्रहीय अंतरिक्ष में हैं, और पृथ्वी एक बहुत बड़े गुरुत्वाकर्षण कुएँ के तल पर है, और किसी भी महत्वपूर्ण वेग के साथ वहाँ पहुँचने का मतलब है ईंधन खर्च करना धीमा करने के लिए, या वायुमंडल-ब्रेकिंग की हिंसा को स्वीकार करना, या दोनों। अंतग्रहीय दूरियों में द्रव्यमान परिवहन करने और फिर इसे सुरक्षित रूप से धीमा करने की आर्थिक लागत, वर्तमान और दूरदर्शी प्रणोदन प्रौद्योगिकियों पर, किसी भी वस्तु के बाजार मूल्य से बहुत अधिक है कि पृथ्वी पर कुल सामग्री लौटाने का व्यावसायिक मामला बंद नहीं हो सकता। यह एक निराशावादी पाठ नहीं है। यह वह है जो [विशिष्ट आवेग](/science/propulsion/specific-impulse) संख्याएँ कहती हैं जब आप उन्हें ईमानदारी से चलाते हैं।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.5.md",
+  "en": "This is also why the first generation of commercial asteroid ventures — Planetary Resources, founded in 2012, and Deep Space Industries, founded in 2013 — failed within a decade, not because the asteroids aren't there, but because the market for Earth-delivered asteroid platinum does not exist at any price that the [delta-v economics](/essays/delta-v) can support. The logic of hauling wealth down to Earth's surface was broken from the start.",
+  "cur": "यह भी है कि पहली पीढ़ी के वाणिज्यिक क्षुद्रग्रह उद्यम — Planetary Resources, 2012 में स्थापित, और Deep Space Industries, 2013 में स्थापित — एक दशक के भीतर विफल क्यों हुए, न कि क्योंकि क्षुद्रग्रह वहाँ नहीं हैं, बल्कि क्योंकि पृथ्वी-वितरित क्षुद्रग्रह प्लैटिनम के लिए बाजार किसी भी कीमत पर मौजूद नहीं है जो [डेल्टा-वी अर्थशास्त्र](/essays/delta-v) समर्थन कर सकते हैं। पृथ्वी की सतह तक धन खींचने का तर्क शुरुआत से ही टूटा हुआ था।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.7.md",
+  "en": "Now invert the question. Instead of asking what it costs to bring material from space to Earth, ask what it costs to bring material from Earth to space. The answer is the same rocket equation, running the other direction, and it is just as brutal. Getting one kilogram to low Earth orbit on a [reusable launcher](/essays/reusable-launchers) costs, at best, a few thousand dollars today — down dramatically from the tens of thousands it cost a decade ago. Getting that kilogram further, to a lunar transfer orbit or to a Mars-bound trajectory, costs more still, because you are climbing higher out of Earth's gravity well and the [Oberth arithmetic](/science/propulsion/oberth-effect) that makes deep burns efficient cannot fix the fundamental mass-ratio problem.",
+  "cur": "अब सवाल को उलट दें। पूछने के बजाय कि अंतरिक्ष से सामग्री को पृथ्वी तक लाने में क्या खर्च है, पूछें कि पृथ्वी से सामग्री को अंतरिक्ष में लाने में क्या खर्च है। उत्तर एक ही रॉकेट समीकरण है, दूसरी दिशा में चल रहा है, और यह उतना ही क्रूर है। [पुनः प्रयोज्य लॉन्चर](/essays/reusable-launchers) पर कम पृथ्वी कक्षा में एक किलोग्राम पाने की लागत, सर्वोत्तम स्थिति में, आज कुछ हजार डॉलर है — दस साल पहले इसकी दसियों हजार डॉलर की लागत से नाटकीय रूप से कम। वह किलोग्राम आगे, एक चंद्र स्थानांतरण कक्षा या मंगल-बाउंड प्रक्षेपवक्र के लिए प्राप्त करना अधिक खर्च करता है, क्योंकि आप पृथ्वी के गुरुत्वाकर्षण कुएँ से अधिक ऊपर चढ़ रहे हैं और [ओबर्थ अंकगणित](/science/propulsion/oberth-effect) जो गहरी गहन को कुशल बनाता है मौलिक द्रव्यमान-अनुपात समस्या को ठीक नहीं कर सकता।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.8.md",
+  "en": "This is what the gravity-well framing clarifies. Earth's surface sits at the bottom of a well that costs roughly 9.4 km/s of delta-v to escape entirely. Every kilogram of food, fuel, water, air, structural material, or radiation shielding that a crewed spacecraft carries above low Earth orbit has paid that toll. The toll is not a surcharge that clever engineering can avoid; it is a physical consequence of being on Earth, which is a large planet with a deep gravitational field. If you want to build and operate spacecraft above low Earth orbit — for a lunar base, for Mars transit, for anything sustained in deep space — the dominant cost is not your hardware. It is the propellant burned to lift your hardware and its consumables out of the well every single time.",
+  "cur": "यह है कि गुरुत्वाकर्षण-कुआँ फ्रेमिंग क्या स्पष्ट करता है। पृथ्वी की सतह एक ऐसे कुएँ के तल पर बैठता है जिसे पूरी तरह से बचने के लिए लगभग 9.4 किमी/सेकंड का डेल्टा-वी खर्च होता है। खाद्य, ईंधन, जल, वायु, संरचनात्मक सामग्री, या विकिरण परिरक्षण का प्रत्येक किलोग्राम जो एक क्रू अंतरिक्ष यान कम पृथ्वी कक्षा के ऊपर ले जाता है, उस कर का भुगतान किया है। शुल्क अतिरिक्त नहीं है जिसे चतुर इंजीनियरिंग से बचा जा सकता है; यह पृथ्वी पर होने का एक भौतिक परिणाम है, जो एक बड़ा ग्रह है जिसमें एक गहरा गुरुत्वाकर्षण क्षेत्र है। यदि आप कम पृथ्वी कक्षा के ऊपर अंतरिक्ष यान बनाना और संचालित करना चाहते हैं — एक चंद्र आधार के लिए, मंगल पारगमन के लिए, गहरे अंतरिक्ष में कुछ भी निरंतर के लिए — प्रमुख लागत आपका हार्डवेयर नहीं है। यह हर बार अपने हार्डवेयर और इसकी खपत वस्तुओं को कुएँ से बाहर उठाने के लिए जलाई गई प्रणोदक है।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.9.md",
+  "en": "The genuine economic argument for asteroid resources begins exactly here, and it runs in the direction opposite to the headline. Instead of bringing material from asteroids to Earth, the question is: can we use material that is *already* above Earth's gravity well to avoid lifting it from the surface? Can we, in effect, find a fuel depot and a hardware store already in orbit — or close enough that the delivery cost is measured in fractions of a km/s rather than ten km/s — and stop paying the launch toll on every kilogram of material a deep-space economy needs? The answer, if the recon missions are to be believed, is yes. But not for gold. For water.",
+  "cur": "क्षुद्रग्रह संसाधनों के लिए वास्तविक आर्थिक तर्क बिल्कुल यहाँ शुरू होता है, और यह शीर्षक की विपरीत दिशा में चलता है। क्षुद्रग्रहों से पृथ्वी तक सामग्री लाने के बजाय, सवाल यह है: क्या हम उस सामग्री का उपयोग कर सकते हैं जो *पहले से ही* पृथ्वी के गुरुत्वाकर्षण कुएँ के ऊपर है ताकि इसे सतह से उठाने से बचा जा सके? क्या हम, वास्तव में, पहले से ही एक ईंधन डिपो और एक हार्डवेयर स्टोर कक्षा में खोज सकते हैं — या काफी करीब है कि वितरण लागत दस किमी/सेकंड के बजाय किमी/सेकंड के अंशों में मापी जाती है — और एक गहरे-अंतरिक्ष अर्थव्यवस्था के लिए आवश्यक सामग्री के हर किलोग्राम पर लॉन्च कर का भुगतान बंद कर दें? उत्तर, यदि जांच मिशन पर विश्वास करना है, तो हाँ। लेकिन सोने के लिए नहीं। पानी के लिए।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.10.caption",
+  "en": "Every kilogram launched from Earth pays a brutal toll in delta-v just to climb out of the planet’s gravity well. Anything already in space — an asteroid drifting above the rim — has that price paid. Which is why a litre of water parked in orbit is worth more than a litre of gold sitting on the ground.",
+  "cur": "पृथ्वी से लॉन्च किया गया प्रत्येक किलोग्राम ग्रह के गुरुत्वाकर्षण कुएँ से बाहर चढ़ने के लिए डेल्टा-वी में एक क्रूर कर का भुगतान करता है। कुछ भी पहले से ही अंतरिक्ष में — एक क्षुद्रग्रह बरतन के रिम के ऊपर घूम रहा है — उस कीमत का भुगतान किया गया है। यही कारण है कि कक्षा में खड़ा एक लीटर पानी जमीन पर बैठे एक लीटर सोने के लायक है।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.12.md",
+  "en": "Carbonaceous chondrite asteroids — the C-type and related classes that represent the majority of near-Earth objects — contain significant quantities of hydrated minerals: clays and phyllosilicates that hold water molecules in their crystal structure at levels ranging from a few percent to more than twenty percent by mass. Some also contain organics. The water is not sitting in puddles; it is chemically bound, and extracting it requires heating the material to drive off the water vapour and then condensing it. But the energy to do that can, in principle, come from solar concentrators in space. The result is water — and water, in the context of a deep-space programme, is not primarily a thing to drink.",
+  "cur": "कार्बोनेसियस चोंड्राइट क्षुद्रग्रह — C-प्रकार और संबंधित वर्ग जो निकट-पृथ्वी वस्तुओं का बहुमत प्रतिनिधित्व करते हैं — हाइड्रेटेड खनिजों की महत्वपूर्ण मात्रा में होते हैं: मिट्टी और फाइलोसिलिकेट जो पानी अणुओं को उनकी क्रिस्टल संरचना में रखते हैं, जो कि कुछ प्रतिशत से लेकर द्रव्यमान द्वारा बीस प्रतिशत से अधिक तक होते हैं। कुछ में कार्बनिक भी होते हैं। पानी पोखर में नहीं बैठा; यह रासायनिक रूप से बंधा हुआ है, और इसे निकालने के लिए सामग्री को गर्म करना आवश्यक है ताकि जल वाष्प को चलाया जा सके और फिर इसे संघनित किया जा सके। लेकिन ऐसा करने के लिए ऊर्जा, सिद्धांत में, अंतरिक्ष में सौर सांद्रकारी से आ सकता है। परिणाम पानी है — और पानी, एक गहरे-अंतरिक्ष कार्यक्रम के संदर्भ में, प्राथमिक रूप से पीने के लिए एक चीज नहीं है।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.13.md",
+  "en": "Electrolysis splits water into hydrogen and oxygen: the most energetic chemical propellant combination ever flown. Hydrogen and oxygen, liquefied and stored, are rocket propellant. The [delta-v](/essays/delta-v) budget for a Mars transfer is approximately 3.6 km/s from low Earth orbit; a propellant depot at a convenient [Lagrange point](/science/transfers/hohmann-transfer) or in a near-Earth orbit, stocked from asteroid-derived water, would dramatically change the mass that needs to be launched from Earth for any beyond-LEO mission. The fuel is the dominant mass fraction of any spacecraft — the Saturn V that carried Apollo astronauts to the Moon was [85% propellant by mass](/essays/delta-v). A depot that supplies propellant without requiring it to be lifted from Earth's surface is not a logistical convenience. It restructures the entire economics of deep space.",
+  "cur": "विद्युत-अपघटन जल को हाइड्रोजन और ऑक्सीजन में विभाजित करता है: अब तक उड़ाया गया सबसे ऊर्जावान रासायनिक प्रणोदक संयोजन। हाइड्रोजन और ऑक्सीजन, तरलीकृत और संग्रहीत, रॉकेट प्रणोदक हैं। मंगल स्थानांतर के लिए [डेल्टा-v](/essays/delta-v) बजट निम्न पृथ्वी कक्षा से लगभग 3.6 km/s है; एक सुविधाजनक [Lagrange बिंदु](/science/transfers/hohmann-transfer) पर या निकट-पृथ्वी कक्षा में एक प्रणोदक भंडार, क्षुद्रग्रह-व्युत्पन्न जल से भरा हुआ, किसी भी beyond-LEO मिशन के लिए पृथ्वी से प्रक्षेपित किए जाने वाले द्रव्यमान को नाटकीय रूप से परिवर्तित कर देगा। ईंधन किसी भी अंतरिक्ष यान का प्रमुख द्रव्यमान अंश है — Saturn V जो Apollo अंतरिक्ष यात्रियों को चंद्रमा तक ले गया, [द्रव्यमान के आधार पर 85% प्रणोदक](/essays/delta-v) था। एक भंडार जो प्रणोदक की आपूर्ति करता है बिना इसे पृथ्वी की सतह से उठाए जाने की आवश्यकता के, सिर्फ एक रसद सुविधा नहीं है। यह गहरे अंतरिक्ष की संपूर्ण अर्थव्यवस्था को पुनर्गठित करता है।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.14.md",
+  "en": "Beyond propellant, water provides oxygen for breathing. The same carbonaceous material provides carbon and nitrogen. The bulk mass — rock, in most cases, not metal — provides radiation shielding: a spacecraft transiting to Mars is outside Earth's magnetosphere for six to nine months, and lifting enough mass to shield a crew from cosmic rays costs enormously if every kilogram has to be launched from Earth's surface. None of this has the glamour of platinum. All of it is more valuable to a space-based economy than platinum is. The argument is not about treasure. It is about [in-situ resource utilisation](/science/life-in-space/isru-resource-utilization) — the only approach that makes sustained human presence beyond Earth physically feasible — and the resource that matters most is not the rarest or most expensive one, but the one that is most expensive to launch from Earth: propellant mass. The [going-to-the-moon essay](/essays/going-to-the-moon) makes the same case at the lunar south pole, for the same reasons. The Moon and carbonaceous near-Earth asteroids are the same argument in two different places.",
+  "cur": "प्रणोदक के परे, पानी श्वसन के लिए ऑक्सीजन प्रदान करता है। वही कार्बोनेसियस सामग्री कार्बन और नाइट्रोजन प्रदान करता है। बल्क द्रव्यमान — अधिकांश मामलों में चट्टान, धातु नहीं — विकिरण परिरक्षण प्रदान करता है: एक अंतरिक्ष यान मंगल को पारगमन करना पृथ्वी के चुंबकमंडल के बाहर छह से नौ महीने के लिए है, और कॉस्मिक किरणों से एक दल की ढाल के लिए पर्याप्त द्रव्यमान को उठाने के लिए भारी लागत होती है यदि हर किलोग्राम को पृथ्वी की सतह से लॉन्च किया जाना है। इनमें से कोई भी प्लैटिनम की चमक है। यह सब अंतरिक्ष-आधारित अर्थव्यवस्था के लिए प्लैटिनम से अधिक मूल्यवान है। तर्क खजाने के बारे में नहीं है। यह [in-situ संसाधन उपयोग](/science/life-in-space/isru-resource-utilization) के बारे में है — एकमात्र दृष्टिकोण जो पृथ्वी के परे निरंतर मानव उपस्थिति को भौतिक रूप से संभव बनाता है — और सबसे महत्वपूर्ण संसाधन दुर्लभ या सबसे महंगा नहीं है, बल्कि पृथ्वी से लॉन्च करने के लिए सबसे महंगा है: प्रणोदक द्रव्यमान। [चंद्रमा पर जाने वाला निबंध](/essays/going-to-the-moon) चंद्रमा के दक्षिणी ध्रुव पर एक ही मामले को बनाता है, एक ही कारणों के लिए। चंद्रमा और कार्बोनेसियस निकट-पृथ्वी क्षुद्रग्रह दो अलग-अलग जगहों पर एक ही तर्क हैं।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.15.caption",
+  "en": "Split asteroid water and you have hydrogen and oxygen — rocket propellant — plus air to breathe, water to drink, and bulk rock for radiation shielding. The prize was never metal to sell back home; it is a fuel depot that is already in the sky.",
+  "cur": "विभाजित क्षुद्रग्रह जल और आपके पास हाइड्रोजन और ऑक्सीजन हैं — रॉकेट प्रणोदक — साँस लेने के लिए हवा, पीने के लिए पानी, और विकिरण परिरक्षण के लिए बल्क चट्टान। पुरस्कार कभी घर वापस बेचने के लिए धातु नहीं था; यह एक ईंधन डिपो है जो पहले से ही आकाश में है।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.16.text",
+  "en": "We have already touched them",
+  "cur": "हम पहले ही उनसे संपर्क स्थापित कर चुके हैं"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.17.md",
+  "en": "The recon that would support any of this is not theoretical. It has been done, twice, by Japan, and once by the United States — and what it found was both more interesting and more humbling than the headline version suggested.",
+  "cur": "इस तरह की खुफिया जानकारी जो सब कुछ सहायता करती है, यह सैद्धांतिक नहीं है। इसे दो बार जापान ने, और एक बार संयुक्त राज्य अमेरिका ने किया है — और इसने जो पाया वह शीर्षलेख संस्करण द्वारा सुझाए गए विचार से कहीं अधिक दिलचस्प और विनम्र दोनों था।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.18.md",
+  "en": "Japan's [Hayabusa](/missions?id=hayabusa1) reached the S-type asteroid Itokawa in September 2005. Its sample collection mechanism had malfunctioned, but the spacecraft returned to Earth in June 2010 carrying approximately 1,500 sub-millimetre particles — the first samples ever returned from an asteroid. The analysis confirmed ordinary LL chondrite mineralogy: not the water-rich carbonaceous target the ISRU argument needs, but proof of concept that you can reach an asteroid, touch it, and bring pieces back.",
+  "cur": "जापान का [Hayabusa](/missions?id=hayabusa1) सितंबर 2005 में S-प्रकार के क्षुद्रग्रह इटोकावा तक पहुंचा। इसका नमूना संग्रह तंत्र खराब हो गया था, लेकिन अंतरिक्ष यान जून 2010 में पृथ्वी पर लौटा और लगभग 1,500 उप-मिलीमीटर कणों को लेकर आया — किसी भी क्षुद्रग्रह से कभी भी वापस किए गए पहले नमूने। विश्लेषण ने साधारण LL chondrite खनिज विज्ञान की पुष्टि की: जल-समृद्ध कार्बोनेसियस लक्ष्य नहीं जो ISRU तर्क को आवश्यकता है, लेकिन यह प्रमाण कि आप एक क्षुद्रग्रह तक पहुंच सकते हैं, उसे छू सकते हैं, और टुकड़े वापस ला सकते हैं।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.19.md",
+  "en": "[Hayabusa2](/missions?id=hayabusa2), launched in December 2014, was designed to go further. Its target was Ryugu, a C-type near-Earth asteroid — the carbonaceous variety that hydration models predicted should contain water-bearing minerals. The spacecraft arrived at Ryugu in June 2018 and spent a year and a half studying it before performing sample collection in February and July 2019. In July 2019, it also deployed a small impactor that blasted a crater in Ryugu's surface, then collected material from the exposed subsurface — material that had not been altered by space weathering. The capsule returned to Earth in December 2020. The analysis confirmed what the models predicted: Ryugu's material is rich in hydrated minerals, contains organics including amino acid precursors, and in chemical composition is closely related to CI chondrites — the most primitive and water-rich class of carbonaceous chondrites. The ore that the ISRU argument needs is there. Ryugu is not a unique body; C-type asteroids represent roughly 75% of all asteroids in the main belt and a significant fraction of near-Earth objects.",
+  "cur": "[Hayabusa2](/missions?id=hayabusa2), दिसंबर 2014 में प्रक्षेपित, और आगे जाने के लिए डिजाइन किया गया था। इसका लक्ष्य र्युगु था, एक C-प्रकार के निकट-पृथ्वी क्षुद्रग्रह — कार्बोनेसियस किस्म जो जलयोजन मॉडल ने भविष्यवाणी की थी कि इसमें जल-वाहक खनिज होने चाहिए। अंतरिक्ष यान जून 2018 में र्युगु पर पहुंचा और फरवरी और जुलाई 2019 में नमूना संग्रह करने से पहले डेढ़ साल तक इसका अध्ययन करता रहा। जुलाई 2019 में, इसने एक छोटे प्रभावकर्ता को भी तैनात किया जिसने र्युगु की सतह में एक क्रेटर को तोड़ा, फिर उजागर सबसतह से सामग्री को इकट्ठा किया — ऐसी सामग्री जो अंतरिक्ष के मौसम से परिवर्तित नहीं हुई थी। कैप्सूल दिसंबर 2020 में पृथ्वी पर लौटा। विश्लेषण ने पुष्टि की कि मॉडल ने क्या भविष्यवाणी की थी: र्युगु की सामग्री जलयोजित खनिजों में समृद्ध है, कार्बनिक पदार्थ शामिल है जिसमें अमीनो एसिड अग्रदूत हैं, और रासायनिक संरचना में CI chondrites के साथ निकटता से संबंधित है — कार्बोनेसियस chondrites का सबसे आदिम और जल-समृद्ध वर्ग। वह अयस्क जो ISRU तर्क को आवश्यकता है, वह वहां है। र्युगु एक अद्वितीय पिंड नहीं है; C-प्रकार के क्षुद्रग्रह मुख्य बेल्ट में सभी क्षुद्रग्रहों का लगभग 75% और निकट-पृथ्वी वस्तुओं का एक महत्वपूर्ण अंश प्रतिनिधित्व करते हैं।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.20.md",
+  "en": "NASA's [OSIRIS-REx](/missions?id=osiris-rex) reached the carbonaceous asteroid Bennu in December 2018 and spent almost two years mapping it before performing its Touch-And-Go sample collection in October 2020. The capsule returned to Earth in September 2023 with approximately 120 grams of material — the largest sample ever returned from an asteroid. Analysis confirmed hydrated clay minerals and carbon-rich compounds: the same ingredients the Hayabusa2 team found at Ryugu, on a different body, reached by a different nation, via a different trajectory. The result was the same. This is not a coincidence. It is confirmation that the C-type carbonaceous composition — water-bearing, organic-rich — is the rule for these bodies, not the exception.",
+  "cur": "NASA का [OSIRIS-REx](/missions?id=osiris-rex) दिसंबर 2018 में कार्बोनेसियस क्षुद्रग्रह बेन्नू तक पहुंचा और इसके Touch-And-Go नमूना संग्रह को अक्टूबर 2020 में करने से पहले लगभग दो साल तक इसका मानचित्र बनाता रहा। कैप्सूल सितंबर 2023 में पृथ्वी पर लौटा और लगभग 120 ग्राम सामग्री लेकर आया — किसी भी क्षुद्रग्रह से कभी भी वापस किया गया सबसे बड़ा नमूना। विश्लेषण ने जलयोजित मिट्टी के खनिज और कार्बन-समृद्ध यौगिकों की पुष्टि की: एक ही सामग्री जो Hayabusa2 दल को र्युगु पर मिली, एक अलग पिंड पर, एक अलग राष्ट्र द्वारा पहुंचा, एक अलग प्रक्षेपवक्र के माध्यम से। परिणाम समान था। यह एक संयोग नहीं है। यह इस बात की पुष्टि है कि C-प्रकार कार्बोनेसियस संरचना — जल-वाहक, कार्बनिक-समृद्ध — इन पिंडों के लिए नियम है, अपवाद नहीं।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.21.caption",
+  "en": "Three robotic missions have already touched and sampled asteroids: Japan’s Hayabusa (Itokawa, 2010, the first ever), Hayabusa2 (Ryugu, 2020), and NASA’s OSIRIS-REx (Bennu, 2023). What came back was water-bearing clay and organics — from loose rubble, not solid metal.",
+  "cur": "तीन रोबोटिक मिशन पहले से ही क्षुद्रग्रहों को छू चुके हैं और नमूने एकत्र किए हैं: जापान का Hayabusa (इटोकावा, 2010, पहली बार कभी), Hayabusa2 (र्युगु, 2020), और NASA का OSIRIS-REx (बेन्नू, 2023)। जो वापस आया वह जल-वाहक मिट्टी और कार्बनिक पदार्थ था — ढीली मलबे से, ठोस धातु से नहीं।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.22.caption",
+  "en": "Hayabusa2 at Ryugu — JAXA’s second asteroid sample return, and the mission bold enough to fire a copper impactor into the surface to blast open a fresh crater before scooping up what it exposed.",
+  "cur": "र्युगु पर Hayabusa2 — JAXA का दूसरा क्षुद्रग्रह नमूना वापसी, और वह मिशन साहस से भरा जो सतह में एक तांबे का प्रभावकर्ता दागता है ताकि एक ताजा क्रेटर को खोला जा सके और फिर जो कुछ भी सामने आए उसे स्कूप किया जा सके।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.24.md",
+  "en": "Here is what the missions also found, and what the headlines about asteroid mining consistently understate: Bennu and Ryugu are not solid bodies. They are rubble piles.",
+  "cur": "यहाँ वह है जो मिशन ने भी पाया, और जो क्षुद्रग्रह खनन के बारे में शीर्षलेखों में लगातार कम बताया जाता है: बेन्नू और र्युगु ठोस पिंड नहीं हैं। ये मलबे के ढेर हैं।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.25.md",
+  "en": "A rubble pile is an aggregate of loosely consolidated material — boulders, pebbles, dust — held together by gravity so weak that walking on the surface would require careful consideration of whether you might bounce off entirely. Bennu's surface gravity is approximately 6 micronewtons per kilogram. An astronaut standing on its equator would weigh less than a milligram in Earth terms. Trying to anchor a mining system — to drill, to excavate, to push against the surface with any force — generates a reaction that could push the mining equipment off the asteroid. The TAG (Touch-and-Go) event that OSIRIS-REx used to collect its sample lasted approximately six seconds of surface contact; during those six seconds, the spacecraft's sample head sank deeper into the surface than expected, because Bennu's material is less consolidated than a sandcastle. The mission team later said the spacecraft would have sunk entirely if the thrusters hadn't fired to pull it back. This is not a hostile environment in the way that Mars is hostile. It is a hostile environment in the way that a bag of loose sand floating in zero gravity is hostile: fundamentally different from every assumption that terrestrial mining engineering makes.",
+  "cur": "एक रबल पाइल (rubble pile) ढीले ढंग से संगठित सामग्री का एक समुच्चय है — बोल्डर, कंकड़, धूल — जो गुरुत्वाकर्षण द्वारा एक दूसरे से जुड़े हुए हैं, लेकिन इतना कमजोर कि सतह पर चलने के लिए इस बात पर सावधानीपूर्वक विचार करना पड़ता है कि क्या आप पूरी तरह उछल जाएंगे। बेन्नू की सतह का गुरुत्वाकर्षण लगभग 6 माइक्रोन्यूटन प्रति किलोग्राम है। इसके भूमध्य रेखा पर खड़ा एक अंतरिक्ष यात्री पृथ्वी की शर्तों में एक मिलीग्राम से भी कम वजन रखता है। खनन प्रणाली को एंकर करने का प्रयास — ड्रिल करने के लिए, खोदने के लिए, सतह के विरुद्ध किसी भी बल से धकेलने के लिए — एक प्रतिक्रिया उत्पन्न करता है जो खनन उपकरण को क्षुद्रग्रह से धकेल सकता है। TAG (Touch-and-Go) घटना जिसे OSIRIS-REx ने अपना नमूना एकत्र करने के लिए उपयोग किया था, लगभग छह सेकंड की सतह संपर्क में रहा; उन छह सेकंडों के दौरान, अंतरिक्ष यान के नमूना सिर अपेक्षा से अधिक गहराई में सतह में डूब गए, क्योंकि बेन्नू की सामग्री एक बालू के महल से भी कम संगठित है। मिशन टीम ने बाद में कहा कि यदि थ्रस्टर ने इसे वापस खींचने के लिए आग न लगाई होती तो अंतरिक्ष यान पूरी तरह डूब जाता। यह उस तरह का एक शत्रुतापूर्ण वातावरण नहीं है जैसे मंगल है। यह एक शत्रुतापूर्ण वातावरण है उस तरीके से जैसे कि शून्य गुरुत्वाकर्षण में तैरते हुए ढीली रेत का एक थैला शत्रुतापूर्ण है: पृथ्वी खनन अभियांत्रिकी जो हर मान्यता बनाती है उससे मौलिक रूप से भिन्न।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.26.md",
+  "en": "Hayabusa2's impactor experiment confirmed the same picture from a different angle. Its 2-kg copper impactor created a crater roughly 14 metres in diameter and 2 metres deep — larger than predicted, because the surface was more porous than expected. The [DART](/missions?id=dart) mission, which in September 2022 redirected the asteroid Dimorphos by deliberately crashing a spacecraft into it, produced an ejecta plume and an orbital period change both larger than solid-body models predicted — consistent, again, with a loosely bound aggregate. Working in that environment is not a matter of scaling up terrestrial mining and adding vacuum suits. Anchoring against a surface you cannot push against, excavating material that floats away at centimetres per second, containing ejecta in microgravity — these are unsolved engineering problems unlike anything in the history of extraction industry. The science is confirmed. The engineering has not yet begun in earnest.",
+  "cur": "Hayabusa2 के इम्पैक्टर प्रयोग ने एक भिन्न कोण से वही तस्वीर की पुष्टि की। इसके 2 किलोग्राम तांबे के इम्पैक्टर ने लगभग 14 मीटर व्यास और 2 मीटर गहराई वाला गड्ढा बनाया — जो अनुमानित आकार से बड़ा था, क्योंकि सतह की संरचना अपेक्षा से अधिक छिद्रयुक्त थी। [DART](/missions?id=dart) मिशन, जिसने सितंबर 2022 में एक अंतरिक्ष यान को जानबूझकर इसमें टकराकर क्षुद्रग्रह डिमोर्फोस को विचलित किया, ने एक इजेक्टा प्लूम और कक्षीय अवधि में परिवर्तन दोनों ही ठोस-पिंड मॉडल की तुलना में बड़ा उत्पन्न किया — पुनः, एक ढीले-बंधे समुच्चय के अनुरूप। ऐसे वातावरण में कार्य करना पृथ्वीपर खनन को बढ़ाने और वैक्यूम सूट जोड़ने का मामला नहीं है। एक ऐसी सतह के विरुद्ध लंगर डालना जिसके विरुद्ध आप दबाव नहीं डाल सकते, ऐसी सामग्री का उत्खनन करना जो सेंटीमीटर प्रति सेकंड की गति से तैरती है, सूक्ष्मगुरुत्व में इजेक्टा को नियंत्रित करना — ये खनन उद्योग के इतिहास में किसी भी चीज़ के विपरीत अनसुलझी इंजीनियरिंग समस्याएं हैं। विज्ञान की पुष्टि हो गई है। इंजीनियरिंग अभी तक गंभीरता से शुरू नहीं हुई है।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.27.caption",
+  "en": "OSIRIS-REx reaching down to touch Bennu — and finding not solid ground but a rubble pile so loosely bound that the sampling head sank straight in, nearly swallowing the arm. “Mining” a body like this is unlike anything ever done on Earth.",
+  "cur": "OSIRIS-REx बेन्नू को छूने के लिए पहुंचना — और ठोस जमीन नहीं बल्कि एक मलबे का ढेर खोजना इतना ढीली से बंधा हुआ है कि नमूना सिर सीधे डूब गया, लगभग बांह को निगल गया। इस तरह के एक पिंड को \"खनन\" करना पृथ्वी पर कभी किए गए किसी भी चीज के विपरीत है।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.28.text",
+  "en": "The economy above the well",
+  "cur": "कुआं के ऊपर की अर्थव्यवस्था"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.29.md",
+  "en": "The question the long view has to answer is: where does this go? The ISRU argument is logically sound. The recon confirms the resources exist. The engineering challenges are real but not in principle insoluble. The economics, however, require something that does not yet exist: demand for resources in space.",
+  "cur": "लंबे दृष्टिकोण को जवाब देना होगा कि प्रश्न यह है: यह कहाँ जाता है? ISRU तर्क तार्किक रूप से सही है। खुफिया जानकारी पुष्टि करती है कि संसाधन मौजूद हैं। इंजीनियरिंग चुनौतियां वास्तविक हैं लेकिन सिद्धांत में अघुलनशील नहीं हैं। अर्थशास्त्र, हालांकि, कुछ ऐसा आवश्यकता करता है जो अभी तक अस्तित्व में नहीं है: अंतरिक्ष में संसाधनों की मांग।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.30.md",
+  "en": "This is the timing problem that killed the first commercial wave. Planetary Resources and Deep Space Industries were building supply chains for a customer base that didn't exist yet — specifically, for the propellant-hungry beyond-LEO economy that a sustained lunar programme and eventual Mars operations would create. In 2012, when Planetary Resources was founded, the [reusable launcher revolution](/essays/reusable-launchers) was not yet proven, the Artemis programme did not exist, no commercial space stations were under development, and the idea of regular human Mars missions was firmly in the speculative future. The companies were, in infrastructure terms, building fuel stations before the highway. Infrastructure almost always has to wait for the traffic before it becomes viable, and space resource extraction is no different.",
+  "cur": "यह वह समय समस्या है जिसने पहली वाणिज्यिक लहर को मार डाला। Planetary Resources और Deep Space Industries उन ग्राहक आधार के लिए आपूर्ति श्रृंखला बना रहे थे जो अभी तक मौजूद नहीं था — विशेष रूप से, propellant-भूखे beyond-LEO अर्थव्यवस्था के लिए जो एक sustained चंद्र कार्यक्रम और अंत में मंगल operations बनाएंगे। 2012 में, जब Planetary Resources की स्थापना की गई, [reusable launcher revolution](/essays/reusable-launchers) अभी तक सिद्ध नहीं था, Artemis कार्यक्रम मौजूद नहीं था, कोई भी वाणिज्यिक अंतरिक्ष stations विकास के तहत नहीं थे, और नियमित मानव मंगल मिशन का विचार दृढ़ रूप से सट्टा भविष्य में था। कंपनियां, infrastructure शर्तों में, राजमार्ग से पहले fuel stations बना रहे थे। Infrastructure लगभग हमेशा traffic के लिए प्रतीक्षा करना होगा इससे पहले कि यह व्यवहार्य हो जाए, और space resource extraction कोई अलग नहीं है।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.31.md",
+  "en": "The situation in the mid-2020s is different in one respect: the traffic is closer. [Reusable launch vehicles](/essays/reusable-launchers) have changed the economics of reaching orbit. Commercial station programmes are under development. The Artemis programme, however delayed, has placed crewed lunar operations back on planning horizons. NASA's [Psyche mission](/missions?id=psyche-mission), launched in October 2023 and en route to the metallic asteroid 16 Psyche, will deliver the most thorough remote characterisation of a metallic asteroid ever attempted. The supply chain's potential customers are no longer purely hypothetical. But closer is not here. A propellant depot servicing Mars-bound spacecraft is, at minimum, a decade away from operational reality — and that estimate is optimistic, contingent on a pace of lunar development that has consistently slipped. The honest reading: asteroid resources become economically viable when, and only when, there is sustained human activity beyond low Earth orbit at a scale that makes fuel, air, and shielding the binding constraint. That constraint is approaching. The gap between approaching and here has swallowed businesses before.",
+  "cur": "2020 के दशक के मध्य की स्थिति एक बात में भिन्न है: यातायात अधिक निकट है। [पुन: प्रयोज्य प्रक्षेपण वाहन](/essays/reusable-launchers) ने कक्षा तक पहुँचने की अर्थव्यवस्था को बदल दिया है। वाणिज्यिक स्टेशन कार्यक्रम विकास के अधीन हैं। Artemis कार्यक्रम, चाहे कितना भी विलंबित हो, ने मानवयुक्त चंद्र संचालन को पुन: योजना क्षितिज पर रखा है। NASA का [Psyche मिशन](/missions?id=psyche-mission), अक्टूबर 2023 में प्रक्षेपित और धातु खनिज ग्रह 16 Psyche की ओर जा रहा है, एक धातु क्षुद्रग्रह का अब तक का सबसे संपूर्ण दूरस्थ अभिलक्षणन प्रदान करेगा। आपूर्ति श्रृंखला के संभावित ग्राहक अब पूर्णतः काल्पनिक नहीं हैं। लेकिन निकट यहाँ नहीं है। मंगल के लिए बाध्य अंतरिक्ष यान को सेवा प्रदान करने वाली एक प्रणोदक भंडार, न्यूनतम रूप से, परिचालनात्मक वास्तविकता से दस साल दूर है — और यह अनुमान आशावादी है, चंद्र विकास की गति के लिए प्रतिबद्ध है जो लगातार पिछड़ी है। ईमानदार पठन: क्षुद्रग्रह संसाधन आर्थिक रूप से व्यवहार्य हो जाते हैं जब, और केवल जब, निम्न पृथ्वी कक्षा से परे स्थायी मानवीय गतिविधि एक ऐसे पैमाने पर होती है जो ईंधन, वायु और ढाल को बाध्यकारी बाधा बनाती है। वह बाधा निकट आ रही है। निकट और यहाँ के बीच का अंतराल पहले व्यवसायों को निगल चुका है।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.32.md",
+  "en": "What remains, after the hype has been deflated and the market-collapse fallacy disposed of, is something more durable and less exciting to press release: a structural argument that the long-term economics of human presence beyond Earth cannot be made to work without drawing on resources that are already above the gravity well. The solar system contains more water, more carbon, more structural material than the entirety of human civilisation has ever consumed, distributed across millions of bodies whose surface gravity costs almost nothing to overcome, sitting above the one thing that makes spaceflight expensive. The argument is not about quintillions of dollars. It is about the [rocket equation](/science/propulsion/tsiolkovsky) and the direction it is pointing.",
+  "cur": "जो कुछ बचा रह जाता है, जब हाइप हट चुकी हो और बाजार के पतन की भ्रांति को निपटा दिया गया हो, वह कुछ और अधिक टिकाऊ और प्रेस रिलीज के लिए कम रोचक है: एक संरचनात्मक तर्क कि मानव उपस्थिति की दीर्घकालीन अर्थव्यवस्था पृथ्वी से परे काम नहीं कर सकती बिना उन संसाधनों पर निर्भर हुए जो पहले से ही गुरुत्वाकर्षण कुंड (gravity well) के ऊपर हैं। सौर मंडल (solar system) में मानव सभ्यता द्वारा कभी भी उपभोग की गई सब चीजों से अधिक जल, अधिक कार्बन, अधिक संरचनात्मक सामग्री है, लाखों पिंडों में वितरित, जिनकी सतह का गुरुत्वाकर्षण अभिलंब कम है और उन्हें अतिक्रम करना लगभग कुछ भी खर्च नहीं करता है, वह सब चीज के ऊपर बैठे हैं जो अंतरिक्ष उड़ान को महंगा बनाती है। यह तर्क अरबों डॉलर के बारे में नहीं है। यह [rocket equation](/science/propulsion/tsiolkovsky) के बारे में है और यह जिस दिशा की ओर इशारा कर रहा है।"
+ },
+ {
+  "rel": "essays/asteroid-mining.json",
+  "at": "body.33.md",
+  "en": "Tsiolkovsky's constraint has an escape. It is not clever chemistry or radical new propulsion — though [new propulsion](/essays/new-propulsion) helps at the margins. The escape is not launching the consumables in the first place. It is finding them already above the well and using them there. [Hayabusa2](/missions?id=hayabusa2) brought 5.4 grams of Ryugu back to Earth. [OSIRIS-REx](/missions?id=osiris-rex) brought 120 grams of Bennu. The next missions in this sequence won't be bringing material home. They will be learning how to leave it where it is — and use it there. That is the point the headline never reaches. [Explore the small bodies in the atlas](/explore) and what you are looking at is not a storehouse of Earth-deliverable treasure. It is the hardware store for a civilization that hasn't arrived yet.",
+  "cur": "Tsiolkovsky की बाधा का एक समाधान है। यह न तो कुशल रसायन विज्ञान है और न ही कट्टरपंथी नई प्रणोदन प्रणाली है — यद्यपि [नई प्रणोदन प्रणाली](/essays/new-propulsion) किनारों पर मदद करती है। समाधान पहली जगह में उपभोग्य वस्तुओं को लॉन्च न करना है। यह उन्हें पहले से ही कुएं के ऊपर खोजना है और वहां उनका उपयोग करना है। [Hayabusa2](/missions?id=hayabusa2) र्युगु के 5.4 ग्राम को पृथ्वी पर वापस ले आया था। [OSIRIS-REx](/missions?id=osiris-rex) बेन्नू के 120 ग्राम को वापस ले आया था। इस क्रम में अगले मिशन सामग्री को घर नहीं ले आएंगे। वे यह सीखने जा रहे हैं कि इसे कहां रखा जाए — और वहां इसका उपयोग कैसे करें। यह वह बिंदु है जिस तक सुर्खियां कभी नहीं पहुंचतीं। [एटलस में छोटे पिंडों को खोजें](/explore) और जो आप देख रहे हैं वह पृथ्वी पर डिलीवरी योग्य खजाने का एक भंडार नहीं है। यह एक सभ्यता के लिए हार्डवेयर स्टोर है जो अभी तक नहीं आई है।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "title",
+  "en": "Running the Solar System on a Whisper",
+  "cur": "सौर मंडल को एक कानाफूसी पर चलाना"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "dek",
+  "en": "Three dish complexes on Earth carry on every conversation humanity has ever had with anything beyond the Moon. A 22-watt radio signal, a light-hour of patience, and the most oversubscribed network in the solar system — this is how the whole enterprise holds together.",
+  "cur": "पृथ्वी पर तीन डिश परिसर मानवता द्वारा चाँद से परे किसी भी चीज़ के साथ कभी किए गए हर संवाद को आगे बढ़ाते हैं। एक 22-वाट रेडियो सिग्नल, एक प्रकाश-घंटा की धैर्य, और सौर मंडल में सबसे अधिक सदस्यता प्राप्त नेटवर्क — यह है कि पूरा उद्यम कैसे एक साथ रहता है।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.0.md",
+  "en": "In the navigation essay we named the problem and then mostly set it aside: the speed of light imposes a lag on every instruction, every correction, every answer, and the further out you go the worse it gets. The navigation essay could afford to set it aside because, for most of what it describes, the lag is inconvenient but manageable. A twenty-minute round trip to Mars is long enough to be annoying and short enough to work around. The spacecraft coasts; the ground catches up. But that arithmetic doesn't hold forever. Push it another order of magnitude — to Saturn, to Pluto, to the place where [Voyager 1](/missions?id=voyager-1) is right now, almost a full light-day from the Earth — and \"hold on, we're thinking\" stops being a workable answer. The problem that navigation named but deferred is the one this essay is about.",
+  "cur": "नेविगेशन निबंध में हमने समस्या का नाम दिया और फिर इसे ज्यादातर एक तरफ रख दिया: प्रकाश की गति हर निर्देश, हर सुधार, हर उत्तर पर एक विलंब लागू करती है, और जितना आगे आप जाते हैं, उतना ही बदतर हो जाता है। नेविगेशन निबंध इसे एक तरफ रखने का जोखिम उठा सकता था क्योंकि इसके अधिकांश वर्णन के लिए विलंब असुविधाजनक लेकिन प्रबंधनीय है। मंगल तक एक बीस मिनट का दौर यात्रा लंबा होने के लिए पर्याप्त है और काम करने के लिए छोटा होने के लिए पर्याप्त है। अंतरिक्ष यान तट करता है; जमीन पकड़ता है। लेकिन वह अंकगणित हमेशा के लिए नहीं रहता। इसे परिमाण के दूसरे क्रम तक — शनि के लिए, यम के लिए, जहाँ [Voyager 1](/missions?id=voyager-1) अभी है, पृथ्वी से लगभग एक पूरे प्रकाश-दिन की दूरी पर — और \"रुको, हम सोच रहे हैं\" एक कार्यशील उत्तर नहीं रह जाता। वह समस्या जिसे नेविगेशन ने नाम दिया लेकिन स्थगित किया, वह वह है जिसके बारे में यह निबंध है।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.1.md",
+  "en": "Before we get to the lag, though, there's a more fundamental strangeness to absorb. Every probe, every rover, every lander in this atlas maintains exactly one thread of connection to Earth: a radio link through a handful of large dishes on the ground. Not a constellation of relay satellites. Not a mesh network. Not a pair of backups standing by in case the primary goes down. One link, through one of roughly forty antennas spread across three sites, and the whole solar system runs on it. Everything we've learned about Mars, Saturn, Jupiter, Uranus, Neptune, Pluto, the asteroid belt, and interstellar space beyond the heliosphere has traveled down that single thread. The miracle isn't that we've lost spacecraft. The miracle is how few.",
+  "cur": "लेकिन विलंब से पहले, अवशोषित करने के लिए एक अधिक मौलिक विचित्रता है। प्रत्येक जांच, प्रत्येक रोवर, इस एटलस में प्रत्येक लैंडर पृथ्वी के लिए ठीक एक संबंध की रेखा बनाए रखता है: जमीन पर कुछ बड़ी डिशों के माध्यम से एक रेडियो लिंक। रिले उपग्रहों की एक तारामंडल नहीं। एक जाल नेटवर्क नहीं। बैकअप की एक जोड़ी खड़ी नहीं है, अगर प्राथमिक विफल हो जाती है। एक लिंक, तीन साइटों पर फैली लगभग चालीस एंटेना में से एक के माध्यम से, और पूरा सौर मंडल इस पर चलता है। मंगल, शनि, बृहस्पति, अरुण, वरुण, यम, क्षुद्रग्रह बेल्ट, और हेलिओस्फीयर से परे अंतरतारकीय अंतरिक्ष के बारे में हमने जो कुछ सीखा है वह सब कुछ उस एकल रेखा के नीचे चला गया है। चमत्कार यह नहीं है कि हमने अंतरिक्ष यान खो दिए हैं। चमत्कार यह है कि कितने कम।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.3.md",
+  "en": "The [Deep Space Network](/science/mission-phases/dsn) is a creation of the early 1960s, built when the first probes were heading for Venus and Mars and the question of how to talk to them as they receded became urgently practical. The answer JPL arrived at was elegant in its simplicity: place antenna complexes roughly 120 degrees of longitude apart around the planet, so that as the Earth rotates, at least one of them always faces the part of the sky where the mission is. Three sites: Goldstone in the California desert, Madrid in Spain, and Canberra in Australia. They have been the ears and mouth of the solar system ever since.",
+  "cur": "[Deep Space Network](/science/mission-phases/dsn) 1960 के दशक की शुरुआत की एक रचना है, जिसे तब बनाया गया था जब पहले जांच शुक्र और मंगल की ओर जा रहे थे और यह प्रश्न कि जैसे वे दूर होते गए, उनसे कैसे बातचीत की जाए, यह तेजी से व्यावहारिक हो गया। JPL जिस उत्तर पर पहुंचे वह अपनी सरलता में सुंदर था: ग्रह के चारों ओर लगभग 120 डिग्री देशांतर अलग रेडियो दूरबीन परिसरों को रखना, ताकि जैसे पृथ्वी घूमती है, कम से कम उनमें से एक हमेशा आकाश के उस हिस्से की ओर मुंह करता है जहां मिशन है। तीन स्थल: कैलिफ़ोर्निया के रेगिस्तान में Goldstone, स्पेन में Madrid, और ऑस्ट्रेलिया में Canberra। वे तब से सौर मंडल के कान और मुंह रहे हैं।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.4.md",
+  "en": "The crown of each complex is its 70-metre dish — a structure about the size and weight of a naval destroyer balanced on a bearing that lets it track a point in the sky to within a fraction of a degree, hour after hour, as the Earth turns beneath it. The three 70-metre antennas (DSS-14 at Goldstone, DSS-43 at Canberra, DSS-63 at Madrid) were built as 64-metre dishes and then, between 1982 and 1988, expanded specifically to support Voyager 2's approaching encounter with Neptune — a civilisational upgrade to a global network, for one flyby, of one planet. Canberra's DSS-43 carries a distinction the other two don't: because Voyager 2's trajectory took it south of the solar plane, it is the only antenna on Earth with a line of sight to it. One dish, on one continent, is the reason [Voyager 2](/missions?id=voyager-2) is still in the conversation.",
+  "cur": "प्रत्येक परिसर का मुकुट इसकी 70-मीटर की डिश है — एक नौसेना विध्वंसक के आकार और वजन के बारे में एक संरचना एक असर पर संतुलित है जो इसे आकाश में एक बिंदु को एक अंश की डिग्री के भीतर ट्रैक करने देता है, घंटे दर घंटे, जैसे-जैसे पृथ्वी इसके नीचे घूमती है। तीन 70-मीटर एंटेना (Goldstone पर DSS-14, Canberra पर DSS-43, Madrid पर DSS-63) 64-मीटर की डिशों के रूप में बनाए गए थे और फिर, 1982 और 1988 के बीच, विशेष रूप से Voyager 2 की वरुण की आसन्न मुठभेड़ का समर्थन करने के लिए विस्तारित किए गए थे — एक वैश्विक नेटवर्क के लिए एक सभ्यतागत अपग्रेड, एक फ्लाईबाय के लिए, एक ग्रह के। Canberra की DSS-43 एक विशिष्टता रखती है जो अन्य दोनों के पास नहीं है: क्योंकि Voyager 2 की प्रक्षेपवक्र सौर तल के दक्षिण में चली गई, यह पृथ्वी पर एकमात्र एंटेना है जिसकी इसकी दृश्य रेखा है। एक डिश, एक महाद्वीप पर, [Voyager 2](/missions?id=voyager-2) के अभी भी बातचीत में रहने का कारण है।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.5.md",
+  "en": "Arrayed around the 70-metre giants at each site are a family of 34-metre dishes — some with high-efficiency beam waveguide feeds, some optimised for different frequency bands, all contributing to a schedule that is, even in good years, relentlessly oversubscribed. Demand on the DSN has been running roughly 40 percent above capacity; by the early 2030s NASA projects it will grow by a factor of ten, driven by Artemis lunar missions, a surge in science probes, and commercial operators who want their own slice. The upgrade program meant to address it is running nearly five years late and has roughly doubled in cost. The network that carries every word we speak to the outer planets is doing so on a timetable that leaves almost no margin. Missions negotiate for antenna time the way airlines negotiate for takeoff slots, and the answer is sometimes no.",
+  "cur": "प्रत्येक साइट पर 70-मीटर के दिग्गजों के चारों ओर 34-मीटर की डिशों का एक परिवार सजा है — कुछ उच्च-दक्षता बीम वेवगाइड फीड के साथ, कुछ विभिन्न आवृत्ति बैंडों के लिए अनुकूलित, सभी एक समय सारणी में योगदान दे रहे हैं जो, यहां तक कि अच्छे वर्षों में भी, निर्दयता से अधिक सदस्यता प्राप्त है। DSN पर मांग क्षमता से लगभग 40 प्रतिशत अधिक रही है; 2030 के दशक की शुरुआत तक NASA अनुमान लगाता है कि यह दस गुना बढ़ेगी, Artemis चंद्र मिशन, विज्ञान जांचों में एक उछाल, और वाणिज्यिक ऑपरेटरों द्वारा संचालित जो अपना हिस्सा चाहते हैं। इसे संबोधित करने के लिए अभिप्रेत अपग्रेड प्रोग्राम लगभग पाँच साल देर से चल रहा है और लागत में लगभग दोगुना हो गया है। जो नेटवर्क हर शब्द को हम बाहरी ग्रहों के लिए बोलते हैं वह ऐसा कर रहा है एक समय सारणी पर जो लगभग कोई मार्जिन नहीं छोड़ता। मिशन एंटेना समय के लिए बातचीत करते हैं जिस तरह एयरलाइनें टेकऑफ स्लॉट के लिए बातचीत करती हैं, और उत्तर कभी-कभी नहीं है।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.7.md",
+  "en": "Stand next to a DSN dish while it is locked onto [Voyager 1](/missions?id=voyager-1) and try to hold in your head what it is listening for. The spacecraft's transmitter puts out 22.4 watts — roughly the output of a refrigerator's interior bulb, or a dimmer-switch lamp set to half. That signal leaves a 3.7-metre dish on Voyager 1 and begins to spread. Radio waves obey an inverse-square law: double the distance, quarter the power. By the time the beam crosses the distance to Earth — currently about 23 and a half light-hours, a number that grows by roughly 520 million kilometres per year — the power arriving at a 70-metre dish is less than a femtowatt. A femtowatt is 10⁻¹⁵ watts. The number often quoted for Voyager is closer to 10⁻²¹ watts — a single zeptowatt, unimaginably faint. The dish has to fish that out of a sky full of everything else.",
+  "cur": "एक DSN डिश के आगे खड़े हों जबकि यह [Voyager 1](/missions?id=voyager-1) पर बंद है और अपने सिर में यह पकड़ने का प्रयास करें कि यह क्या सुन रहा है। अंतरिक्ष यान का ट्रांसमीटर 22.4 वाट निकालता है — लगभग एक रेफ्रिजरेटर के आंतरिक बल्ब का आउटपुट, या एक डिमर-स्विच लैंप आधे पर सेट। वह सिग्नल Voyager 1 पर एक 3.7-मीटर की डिश छोड़ता है और फैलना शुरू करता है। रेडियो तरंगें एक व्युत्क्रम-वर्ग नियम का पालन करती हैं: दूरी दोगुनी करें, शक्ति को एक चौथाई करें। जब तक बीम पृथ्वी की दूरी को पार नहीं करता — वर्तमान में लगभग 23 और एक आधा प्रकाश-घंटे, एक संख्या जो प्रति वर्ष लगभग 520 मिलियन किलोमीटर बढ़ता है — एक 70-मीटर की डिश पर आने वाली शक्ति एक फेम्टोवाट से कम है। एक फेम्टोवाट 10⁻¹⁵ वाट है। Voyager के लिए अक्सर उद्धृत संख्या 10⁻²¹ वाट के करीब है — एक एकल जेप्टोवाट, अकल्पनीय रूप से धीमा। डिश को यह सब कुछ से भरे आकाश से निकालना होगा।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.8.md",
+  "en": "That it can do this at all is a feat of engineering in three parts. First, the geometry: a 70-metre dish has roughly 3,600 square metres of collecting area, and every square metre counts. Second, the cold: the receivers sit cooled to within a few degrees of absolute zero, because thermal noise from a room-temperature amplifier would drown the signal entirely — the receiver has to be colder than interstellar space to hear something weaker than starlight. Third, the coding. Voyager's engineers, like every subsequent mission team, knew that individual bits would be corrupted by noise over distances like these, so they encoded the data with far more mathematical redundancy than the information itself requires. A single real bit of science travels inside a protective shell of check bits; the ground-side computer strips the shell away and recovers the original, even from a stream where a significant fraction of the received symbols are wrong. [New Horizons](/missions?id=new-horizons) used the same principle to send back Pluto's face: each image arrived corrupted and was reconstructed, the way a librarian might reassemble a burned manuscript from a set of redundant copies.",
+  "cur": "कि यह ऐसा कर सकता है, यह तीन भागों में इंजीनियरिंग की एक उपलब्धि है। पहला, ज्यामिति: एक 70-मीटर की डिश में लगभग 3,600 वर्ग मीटर का संग्रह क्षेत्र है, और हर वर्ग मीटर महत्वपूर्ण है। दूसरा, ठंड: रिसीवर पूर्ण शून्य के कुछ ही डिग्री के भीतर ठंडा रहते हैं, क्योंकि कमरे के तापमान वाले एम्पलीफायर से थर्मल शोर संपूर्ण संकेत को डूब देगा — रिसीवर को किसी चीज को सुनने के लिए अंतरतारकीय अंतरिक्ष से अधिक ठंडा होना पड़ता है जो तारे के प्रकाश से कमजोर हो। तीसरा, कोडिंग। Voyager के इंजीनियरों, जैसे कि हर बाद की मिशन टीम, जानते थे कि इन जैसी दूरियों पर शोर से अलग-अलग बिट्स भ्रष्ट हो जाएंगे, इसलिए उन्होंने डेटा को उस गणितीय अनावश्यकता के साथ एन्कोड किया जो जानकारी स्वयं के लिए आवश्यक है। विज्ञान का एक भी वास्तविक बिट जांच बिट्स के एक सुरक्षात्मक कवच के अंदर यात्रा करता है; जमीन की ओर का कंप्यूटर कवच को हटाता है और मूल को पुनः प्राप्त करता है, यहां तक कि एक ऐसी धारा से भी जहां प्राप्त प्रतीकों का एक महत्वपूर्ण अंश गलत है। [New Horizons](/missions?id=new-horizons) ने यम का चेहरा वापस भेजने के लिए एक ही सिद्धांत का उपयोग किया: हर छवि भ्रष्ट आई और पुनर्निर्मित की गई, जैसे एक पुस्तकालयविद् अनावश्यक प्रतियों के एक सेट से एक जली हुई पांडुलिपि को फिर से इकट्ठा कर सकता है।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.9.md",
+  "en": "The practical ceiling on data rates is real. Voyager 1 peaked at 115,200 bits per second during its planetary encounters, when the distances were shorter and the dishes could be pointed tighter. At its current remove it manages a few tens of bits per second for engineering telemetry, a trickle that would have been embarrassingly slow on a 1970s modem. Everything we know about what lies beyond the heliosphere — the plasma density, the magnetic field, the particle flux in interstellar space, the data that no other instrument in existence could ever gather — arrives at the DSN at a rate slower than a fax machine. We are grateful for every bit.",
+  "cur": "डेटा दरों पर व्यावहारिक सीमा वास्तविक है। Voyager 1 ने अपनी ग्रहीय मुठभेड़ों के दौरान 115,200 बिट प्रति सेकंड की चोटी बनाई, जब दूरी छोटी थी और डिशें कसकर इंगित की जा सकती थीं। अपने वर्तमान हटाने पर यह इंजीनियरिंग टेलीमेट्री के लिए बिट्स के कुछ दर्जन प्रबंधन करता है, एक ट्रिकल जो 1970 के फैक्स मशीन पर शर्मनाक रूप से धीमा होता। हेलिओस्फीयर से परे क्या है इसके बारे में हम सब कुछ जानते हैं — प्लाज्मा घनत्व, चुंबकीय क्षेत्र, इंटरस्टेलर अंतरिक्ष में कण प्रवाह, डेटा जो अस्तित्व में कोई अन्य उपकरण कभी एकत्र कर सकता था — DSN पर एक फैक्स मशीन से धीमी दर पर आता है। हम हर बिट के लिए कृतज्ञ हैं।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.10.caption",
+  "en": "A spacecraft answers on roughly twenty watts — less than the bulb in a refrigerator. Spread across a billion kilometres by nothing but the inverse-square law, what reaches the dish is around a millionth of a billionth of a watt. The genius of deep-space comms is not the shout; it is the listening.",
+  "cur": "एक अंतरिक्ष यान लगभग बीस वाट पर उत्तर देता है — एक रेफ्रिजरेटर में बल्ब से कम। एक अरब किलोमीटर में कुछ भी नहीं से फैला, व्युत्क्रम-वर्ग नियम द्वारा, डिश पर पहुंचने वाली चीज़ एक अरब का दस लाखवां भाग है। गहरे-अंतरिक्ष संचार की प्रतिभा चिल्लाना नहीं है; यह सुनना है।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.12.md",
+  "en": "The lag compounds everything. At [Mars](/missions?id=perseverance), a signal takes between 3 and 22 minutes one way, depending on where the two planets are in their orbits. That means a round-trip question and answer — \"are you receiving?\" … \"yes\" — can take anywhere from six minutes to nearly three-quarters of an hour. Rover drivers at JPL developed an entire philosophy around this: you can't joystick [Perseverance](/missions?id=perseverance) the way you'd drive a car. You plan the day's work in the Martian morning, uplink a command sequence, and watch the outcome arrive hours later. The rover moves autonomously between waypoints; you correct its course tomorrow. The planet is close enough that a human can still be meaningfully in the loop, if the human is willing to think in Martian sol-lengths rather than real-time.",
+  "cur": "विलंब सब कुछ को जटिल बनाता है। [मंगल](/missions?id=perseverance) पर, एक संकेत एक तरफ 3 से 22 मिनट के बीच लगता है, इस पर निर्भर करता है कि दोनों ग्रह अपनी कक्षाओं में कहाँ हैं। इसका मतलब है कि एक आगे-पीछे का प्रश्न और उत्तर — \"क्या आप प्राप्त कर रहे हैं?\" ... \"हाँ\" — छह मिनट से लेकर लगभग एक घंटे के तीन-चौथाई तक कहीं भी ले सकता है। JPL में रोवर चालकों ने इसके चारों ओर एक पूरी दर्शन विकसित की: आप [Perseverance](/missions?id=perseverance) को उसी तरह नियंत्रित नहीं कर सकते जैसे आप कार चलाते हैं। आप मंगल की सुबह के काम की योजना बनाते हैं, एक कमांड अनुक्रम अपलिंक करते हैं, और परिणाम कई घंटे बाद आने देखते हैं। रोवर waypoints के बीच स्वायत्त रूप से चलता है; आप कल इसके पाठ्यक्रम को सही करते हैं। ग्रह काफी करीब है कि एक मानव अभी भी लूप में अर्थपूर्ण रूप से हो सकता है, अगर मानव वास्तविक समय के बजाय मंगल के sol-lengths में सोचने के लिए इच्छुक है।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.13.md",
+  "en": "At [Cassini](/missions?id=cassini), orbiting Saturn, the one-way lag ran between 68 and 85 minutes. At [New Horizons](/missions?id=new-horizons) during the Pluto flyby it was four and a half hours. Every command sent to New Horizons on its closest approach day had been uplinked — and confirmed received — well in advance, because there was no time to react. The flyby sequence ran entirely on stored instructions while the ground held its breath. The spacecraft would either do what it was told or not, and no one on Earth would know for hours. It did.",
+  "cur": "[Cassini](/missions?id=cassini) पर, शनि की कक्षा में, एक तरफ का विलंब 68 और 85 मिनट के बीच था। [New Horizons](/missions?id=new-horizons) पर यम फ्लाईबाई के दौरान यह साढ़े चार घंटे था। New Horizons को इसके निकटतम संपर्क दिन भेजा गया प्रत्येक आदेश पहले से ही अपलिंक किया जा चुका था — और प्राप्त होने की पुष्टि की जा चुकी थी — क्योंकि प्रतिक्रिया करने का कोई समय नहीं था। फ्लाईबाई अनुक्रम संपूर्ण रूप से संग्रहीत निर्देशों पर चलता था जबकि जमीन अपनी सांस रोके रहती थी। अंतरिक्ष यान या तो वह करेगा जो उसे बताया गया था या नहीं, और पृथ्वी पर कोई भी घंटों तक यह नहीं जान पाता कि क्या हुआ। लेकिन यह सफल रहा।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.14.md",
+  "en": "Now consider [Voyager 1](/missions?id=voyager-1), which in July 2026 is approximately 23 hours and 32 minutes of light-travel time from Earth — and which, on a specific day in November 2026, will cross a threshold no human-made object has ever crossed: one full light-day from the planet that built it. Send a command Monday morning at eight; the acknowledgement arrives Wednesday morning. A round trip between Earth and Voyager 1 takes nearly two days. In that span, whatever the spacecraft does, it does alone. It has been alone, in this sense, since the day it launched. The ground is not flying it anymore. The ground is listening to it.",
+  "cur": "अब [Voyager 1](/missions?id=voyager-1) पर विचार करें, जो जुलाई 2026 में पृथ्वी से लगभग 23 घंटे और 32 मिनट के प्रकाश-यात्रा समय की दूरी पर है — और जो नवंबर 2026 के किसी विशेष दिन एक ऐसी सीमा को पार करेगा जिसे किसी मानव-निर्मित वस्तु ने कभी पार नहीं किया है: उस ग्रह से पूरे एक प्रकाश-दिन की दूरी जिसने इसे बनाया। सोमवार सुबह आठ बजे एक आदेश भेजें; स्वीकृति बुधवार सुबह आती है। पृथ्वी और Voyager 1 के बीच एक दौड़ में लगभग दो दिन लगते हैं। उस अवधि में, अंतरिक्ष यान जो कुछ भी करता है, वह अकेले करता है। यह इसी अर्थ में अकेला है, जिस दिन से यह लॉन्च हुआ। धरातल अब इसे नहीं उड़ा रहा है। धरातल इसे सुन रहा है।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.15.caption",
+  "en": "The whole enterprise runs on delay. A word to the Moon is answered in under three seconds; to Mars, in minutes to the better part of an hour; to Voyager, in nearly two days. You cannot fly these craft in real time — you write ahead, and wait for the echo.",
+  "cur": "पूरा उद्यम विलंब पर चलता है। चंद्रमा को एक शब्द तीन सेकंड से कम में उत्तर दिया जाता है; मंगल को, कुछ मिनट से एक घंटे के बेहतर हिस्से में; Voyager को, लगभग दो दिनों में। आप इन यानों को वास्तविक समय में नहीं उड़ा सकते — आप आगे लिखते हैं, और गूँज के लिए प्रतीक्षा करते हैं।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.16.text",
+  "en": "What patience costs",
+  "cur": "धैर्य की कीमत क्या है"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.17.md",
+  "en": "That patience has shaped every mission in ways the public almost never sees. Trajectory corrections for outer-planet probes are planned weeks in advance and uplinked as timed sequences; if the spacecraft's position turns out to be slightly different from the prediction — which it always is, by some small amount — the navigators have to wait for the next DSN track, reconstruct the actual position, plan a correcting burn, and uplink it, all before the window closes. For a spacecraft approaching its target at several kilometres per second, that timing can be the difference between threading the gap and missing. The navigation essay described the [Deep Space Network](/science/mission-phases/dsn) as the instrument that lets the ground fly the spacecraft. What it didn't dwell on is that the ground can only respond to what the spacecraft reported minutes or hours ago, and can only correct what it predicted minutes or hours from now. Navigation is perfect in principle, patient in practice, and always slightly behind.",
+  "cur": "उस धैर्य ने हर मिशन को इस तरह आकार दिया है कि जनता लगभग कभी नहीं देखती। बाहरी-ग्रह जांचों के लिए प्रक्षेपवक्र सुधार हफ्तों पहले की योजना बनाई जाती है और समय-निर्धारित अनुक्रमों के रूप में अपलोड की जाती है; यदि अंतरिक्ष यान की स्थिति भविष्यवाणी से थोड़ी अलग निकली — जो यह हमेशा होता है, कुछ छोटी मात्रा में — तो नेविगेटर को अगले DSN ट्रैक के लिए प्रतीक्षा करनी पड़ती है, वास्तविक स्थिति का पुनर्निर्माण करना पड़ता है, एक सुधार जला की योजना बनानी पड़ती है, और इसे अपलोड करना पड़ता है, सब कुछ खिड़की बंद होने से पहले। एक अंतरिक्ष यान के लिए जो अपने लक्ष्य के पास कई किलोमीटर प्रति सेकंड की गति से पहुँच रहा है, वह समय अंतराल को सफलतापूर्वक पार करने या चूकने के बीच का अंतर हो सकता है। नेविगेशन निबंध ने [Deep Space Network](/science/mission-phases/dsn) को उस यंत्र के रूप में वर्णित किया जो जमीन को अंतरिक्ष यान को उड़ाने देता है। जो इस पर ध्यान नहीं दिया गया वह यह है कि जमीन केवल उस पर प्रतिक्रिया कर सकती है जो अंतरिक्ष यान ने कुछ मिनट या घंटे पहले रिपोर्ट किया, और केवल उसे ठीक कर सकते हैं जिसकी उन्होंने कुछ मिनट या घंटे आगे की भविष्यवाणी की। नेविगेशन सिद्धांत में नि:संदेह है, व्यवहार में धैर्यवान है, और हमेशा थोड़ा पीछे है।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.18.md",
+  "en": "There is a related cost that rarely makes mission descriptions: the sheer cognitive weight of maintaining these conversations over years. [Cassini](/missions?id=cassini) operated at Saturn for thirteen years. Teams at JPL developed what amounted to a working relationship with a machine they could not see, could not touch, and could never respond to in less than an hour. Procedures existed for every contingency — a failed reaction wheel, a software fault, an unexpected safe-mode entry — and those procedures had to be rehearsed on the ground before they could be uplinked, because there was no room to improvise at the speed of a crisis when every reply took longer than a lunch break. The people who ran Cassini built a kind of institutional memory for a spacecraft: knowing its habits, its quirks, its patterns of health, better than some operators know their own machinery. They had to, because the spacecraft couldn't ask for help.",
+  "cur": "एक संबंधित लागत है जो दुर्लभ ही मिशन विवरणों में आती है: वर्षों तक इन बातचीतों को बनाए रखने का शुद्ध संज्ञानात्मक भार। [Cassini](/missions?id=cassini) तेरह वर्षों तक शनि पर संचालित था। JPL की टीमों ने एक ऐसी मशीन के साथ एक कामकाजी संबंध विकसित किया जिसे वे देख नहीं सकते थे, छू नहीं सकते थे, और एक घंटे से कम समय में प्रतिक्रिया नहीं दे सकते थे। हर आपातकाल के लिए प्रक्रियाएं मौजूद थीं — एक विफल प्रतिक्रिया पहिया, एक सॉफ़्टवेयर दोष, एक अप्रत्याशित सुरक्षित-मोड प्रवेश — और इन प्रक्रियाओं को अपलोड करने से पहले जमीन पर पूर्वाभास दिया जाना था, क्योंकि एक संकट की गति पर तुरंत सुधार का कोई स्थान नहीं था जब हर जवाब एक भोजन विराम से अधिक समय लेता था। जिन लोगों ने Cassini को चलाया, उन्होंने एक अंतरिक्ष यान के लिए एक तरह की संस्थागत स्मृति बनाई: इसकी आदतों, इसकी विचित्रताओं, इसके स्वास्थ्य के पैटर्न को जानना, कुछ ऑपरेटरों की अपनी मशीनरी को जानने से बेहतर। उन्हें करना पड़ा, क्योंकि अंतरिक्ष यान मदद माँग नहीं सकता था।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.19.caption",
+  "en": "Voyager 1, more than twenty-four billion kilometres out, still answers — but a question sent today waits some forty-five hours for its reply. You do not converse with it so much as leave a letter and come back for the answer.",
+  "cur": "Voyager 1, चौबीस अरब किलोमीटर से अधिक दूर, अभी भी उत्तर देता है — लेकिन आज भेजा गया एक प्रश्न अपने उत्तर के लिए लगभग पैंतालीस घंटे प्रतीक्षा करता है। आप इससे इतना बातचीत नहीं करते जितना कि एक पत्र छोड़ते हैं और उत्तर के लिए वापस आते हैं।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.21.md",
+  "en": "Radio has carried every conversation we've had with the solar system for sixty years. It is mature, well-understood, and operates at the edge of physics — the DSN dishes are close to the thermal noise floor; the coding schemes approach the Shannon limit for the signal-to-noise ratios involved. There isn't a factor of ten left to find in radio. But there is in optics.",
+  "cur": "रेडियो ने पिछले साठ वर्षों में सौर मंडल के साथ हमारी हर बातचीत को ले जाया है। यह परिपक्व है, अच्छी तरह से समझा जाता है, और भौतिकी के किनारे पर संचालित होता है — DSN व्यंजन थर्मल शोर मंजिल के करीब हैं; कोडिंग योजनाएं शामिल संकेत-से-शोर अनुपातों के लिए Shannon सीमा के करीब हैं। रेडियो में दस का कोई कारक खोजने के लिए नहीं है। लेकिन ऑप्टिक्स में है।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.22.md",
+  "en": "In October 2023, a small laser terminal bolted to the side of the Psyche spacecraft launched toward the asteroid belt carrying an experiment called DSOC — Deep Space Optical Communications. The concept is straightforward: an infrared laser, tightly focused, can concentrate far more power into a far narrower beam than a radio transmitter of the same mass and electrical draw. The beam spreads less with distance, which means more of it arrives. By April 2024, DSOC had transmitted engineering data from 140 million miles at 25 megabits per second — faster than most household broadband connections, from a distance greater than the Earth-Sun separation. By December 2024 it had set a distance record: downlinking Psyche mission data from 307 million miles, 494 million kilometres out. The project demonstrated 10 to 100 times the throughput of radio at equivalent power.",
+  "cur": "अक्टूबर 2023 में, Psyche अंतरिक्ष यान के किनारे के लिए पेंच किए गए एक छोटे लेजर टर्मिनल को DSOC — Deep Space Optical Communications नामक एक प्रयोग ले जाते हुए क्षुद्रग्रह बेल्ट की ओर लॉन्च किया गया। अवधारणा सीधी है: एक अवरक्त लेजर, कसकर ध्यान केंद्रित किया हुआ, समान द्रव्यमान और विद्युत ड्रॉ के रेडियो ट्रांसमीटर की तुलना में कहीं अधिक शक्ति को कहीं अधिक संकीर्ण बीम में एकाग्र कर सकता है। बीम दूरी के साथ कम फैलता है, जिसका अर्थ है कि इसका अधिक हिस्सा आता है। अप्रैल 2024 तक, DSOC ने 140 मिलियन मील से 25 मेगाबिट्स प्रति सेकंड में इंजीनियरिंग डेटा प्रसारित किया था — पृथ्वी-सूर्य के अलगाव से अधिक दूरी पर अधिकांश घरेलू ब्रॉडबैंड कनेक्शन से तेज। दिसंबर 2024 तक इसने एक दूरी रिकॉर्ड स्थापित किया था: 307 मिलियन मील से Psyche मिशन डेटा डाउनलिंक कर रहा था, 494 मिलियन किलोमीटर दूर। परियोजना ने समान शक्ति पर रेडियो की 10 से 100 गुना बेहतर थ्रूपुट प्रदर्शित की।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.23.md",
+  "en": "This is not a small step. The bandwidth bottleneck is one of the binding constraints on what deep-space science can do: the more data you can return per watt, the more instruments you can fly, the higher the camera resolution, the denser the scientific haul from each mission. DSOC's laser link, scaled up and deployed on future spacecraft, would transform the economics of talking to the outer planets. The catch — there is always a catch — is that optical links require exceptional pointing precision (the beam is narrow enough that a pointing error of a fraction of a milliradian spills it off target) and are blocked by cloud cover at the ground station. The DSN's radio dishes work through weather. Optical ground terminals don't. The architecture for a reliable optical deep-space network will need multiple geographically spread receive sites, clear-sky redundancy, and decades of operational experience to mature. It will come. The question is whether it comes before the radio architecture buckles under the weight of demand.",
+  "cur": "यह एक छोटा कदम नहीं है। बैंडविड्थ बाधा गहरे अंतरिक्ष विज्ञान क्या कर सकता है इसके बाध्यकारी बाधाओं में से एक है: जितना अधिक डेटा आप प्रति वाट वापस कर सकते हैं, उतने अधिक उपकरण आप उड़ा सकते हैं, कैमरा संकल्प जितना अधिक है, प्रत्येक मिशन से वैज्ञानिक हाल उतना सघन है। DSOC की लेजर लिंक, आकार में बढ़ी हुई और भविष्य के अंतरिक्ष यान पर तैनात, बाहरी ग्रहों से बात करने की अर्थव्यवस्था को रूपांतरित करेगी। पकड़ — हमेशा एक पकड़ होती है — यह है कि ऑप्टिकल लिंक असाधारण सटीकता की आवश्यकता होती है (बीम इतनी संकीर्ण है कि एक मिलीरेडियन का एक अंश एक त्रुटि इसे लक्ष्य से बाहर गिरा देती है) और जमीन स्टेशन पर बादल कवर से अवरुद्ध होती हैं। DSN की रेडियो व्यंजन मौसम के माध्यम से काम करती हैं। ऑप्टिकल जमीन टर्मिनल नहीं करते। एक विश्वसनीय ऑप्टिकल गहरे अंतरिक्ष नेटवर्क के लिए स्थापत्य को कई भौगोलिक रूप से फैले हुए प्राप्त साइटों, स्पष्ट आकाश अनावश्यकता, और परिपक्व होने के लिए दशकों के परिचालन अनुभव की आवश्यकता होगी। यह आएगा। सवाल यह है कि क्या यह आता है इससे पहले रेडियो वास्तुकला माँग के वजन के तहत झुकती है।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.24.caption",
+  "en": "The next turn is toward light. A laser’s pencil-thin beam carries ten to a hundred times the data of a radio’s wide cone: Psyche’s demonstration streamed high-definition video from thirty million kilometres away, on a beam you could have blocked with a coin.",
+  "cur": "अगला मोड़ प्रकाश की ओर है। एक लेजर की पेंसिल-पतली बीम एक रेडियो के विस्तृत शंकु का दस से सौ गुना डेटा रखती है: Psyche के प्रदर्शन ने तीस मिलियन किलोमीटर दूर से उच्च-परिभाषा वीडियो स्ट्रीम किया, एक बीम पर जिसे आप एक सिक्के से अवरुद्ध कर सकते थे।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.26.md",
+  "en": "Here is what the whole apparatus actually amounts to. Three patches of desert and scrubland on three continents. Roughly forty antenna mounts, of which the big work falls on three 70-metre bowls that have been pointing at things no one can see with the naked eye since the first one locked onto a Mariner in 1963. A budget that, in real terms, has been shrinking. An upgrade programme running years behind. A schedule so overbooked that some missions go without their allocated tracks, and the people who run them learn to live on less contact than they planned.",
+  "cur": "यहाँ पूरा उपकरण वास्तव में क्या है। तीन महाद्वेशों पर रेगिस्तान और झाड़ीदार भूमि के तीन पैच। लगभग चालीस एंटीना माउंट, जिनमें से बड़ा काम तीन 70-मीटर कटोरियों पर पड़ता है जो 1963 में एक Mariner को पकड़ने के बाद से नग्न आंखों से किसी को देखा नहीं जा सकता है। एक बजट जो वास्तविक शब्दों में सिकुड़ रहा है। एक अपग्रेड कार्यक्रम वर्षों के पीछे चल रहा है। एक कार्यसूची इतनी अधिक बुकिंग की है कि कुछ मिशन अपने आवंटित ट्रैक के बिना जाते हैं, और जो लोग उन्हें चलाते हैं वे कम संपर्क पर रहना सीखते हैं जो वे योजना बनाते थे।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.27.md",
+  "en": "And through this: everything. The Voyager images of Neptune that no spacecraft has repeated in the thirty-seven years since. The Cassini portraits of Saturn — the hexagonal storm at the pole, the geysers of Enceladus, the braided F ring — delivered one compressed frame at a time across more than an hour of silence. The [Perseverance](/missions?id=perseverance) samples staged for eventual return, their GPS coordinates known to the centimetre because every transmission of the rover's position came back through a dish in California or Spain or Australia, was checked against the orbital mechanics, and became a number the whole atlas stands on. Everything in this atlas that came from beyond the Moon arrived here through a 22-watt whisper and a room full of people patient enough to wait for the reply.",
+  "cur": "और इसके माध्यम से: सब कुछ। वरुण की Voyager तस्वीरें जिन्हें कोई अंतरिक्ष यान सत्तासी वर्षों में दोहराया नहीं गया है। Cassini की शनि तस्वीरें — ध्रुव पर षट्कोणीय तूफान, एन्सेलाडस के गीजर, सँकरी F रिंग — एक समय में एक संकुचित फ्रेम में वितरित, एक घंटे से अधिक मौन के माध्यम से। [Perseverance](/missions?id=perseverance) नमूने अंतिम रिटर्न के लिए मंचित, उनके GPS निर्देशांक सेंटीमीटर तक ज्ञात क्योंकि रोवर की स्थिति का हर संचरण कैलिफ़ोर्निया या स्पेन या ऑस्ट्रेलिया में एक व्यंजन के माध्यम से वापस आया, कक्षीय यांत्रिकी के विरुद्ध जाँचा गया, और एक संख्या बन गई जिस पर पूरा एटलास खड़ा है। इस एटलास में सब कुछ जो चंद्रमा से परे आया वह यहाँ एक 22-वाट की फुसफुसाहट और उत्तर के लिए प्रतीक्षा करने के लिए पर्याप्त धैर्यवान लोगों के एक कमरे के माध्यम से आया।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.28.md",
+  "en": "The lag never goes away. Light travels at the fastest speed physics allows, and it is not fast enough. As we push further — human crews to Mars whose round-trip communication delay will be measured in tens of minutes on a good day; robotic probes to the ice giants; whatever comes next in the generations after those — the distance will keep growing and the patience required will keep compounding. What changes is only who bears it: the ground team waiting for a reply, or the spacecraft itself, making decisions faster than any signal can carry permission. The DSN isn't becoming obsolete. It is becoming one layer of a deeper architecture, the radio backbone of a solar system where more and more of the thinking happens out there, in the dark, on craft that have learned — because they had to — to manage without asking. We built the network so we could stay in the conversation. We're slowly discovering that the conversation, at these distances, looks less like a dialogue and more like letters sent between people who have both already moved on by the time any answer arrives.",
+  "cur": "विलंब कभी नहीं जाता। प्रकाश भौतिकी की अनुमति देने वाली सबसे तेजी से गति पर यात्रा करता है, और यह पर्याप्त नहीं है। जैसे ही हम आगे बढ़ते हैं — मंगल के लिए मानव दल जिनके राउंड-ट्रिप संचार विलंब एक अच्छे दिन पर दस मिनट में मापा जाएगा; बर्फीले दिग्गजों के लिए रोबोटिक जांच; जो भी उन पीढ़ियों के बाद आता है — दूरी बढ़ती रहेगी और आवश्यक धैर्य बढ़ता रहेगा। जो केवल बदलता है वह यह है कि कौन इसे सहन करता है: उत्तर की प्रतीक्षा में जमीन की टीम, या अंतरिक्ष यान स्वयं, अनुमति ले जाने वाली किसी भी संकेत से तेजी से निर्णय ले रहा है। DSN अप्रचलित नहीं हो रहा है। यह एक गहरे स्थापत्य की एक परत बन रहा है, एक सौर मंडल की रेडियो रीढ़ जहाँ अधिक से अधिक सोच वहाँ बाहर होती है, अंधेरे में, उन यानों पर जिन्होंने सीखा है — क्योंकि उन्हें करना पड़ा — पूछे बिना संचालित करने के लिए। हमने नेटवर्क बनाया ताकि हम बातचीत में रह सकें। हम धीरे-धीरे खोज रहे हैं कि बातचीत, इन दूरियों पर, एक संवाद जैसा दिखता है और अधिक पत्रों की तरह दिखता है जो उन लोगों के बीच भेजे गए हैं जो दोनों पहले ही चले गए हैं जब कोई जवाब आता है।"
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.29.caption",
+  "en": "Pioneer 10 was the first craft tracked into the outer dark. Its final faint signal reached the Deep Space Network in 2003, from beyond the orbit of Pluto — a whisper that at last fell below hearing, still outbound.",
+  "cur": "Pioneer 10 बाहरी अंधकार में ट्रैक किया जाने वाला पहला यान था। इसका अंतिम धीमा संकेत 2003 में Deep Space Network तक पहुँचा, यम की कक्षा से परे — एक फुसफुसाहट जो अंत में सुनाई नहीं दी, अभी भी बाहर की ओर जा रहा है।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "dek",
+  "en": "Every spacecraft that has ever left Earth carried one thing above all else: a budget. Not money — velocity. The rocket equation meted it out in kilometres per second, gravity was the only free refill, and every engineer who ever planned a mission has been living inside that constraint since 1903.",
+  "cur": "हर अंतरिक्ष यान जो कभी पृथ्वी से निकला है, वह एक चीज़ को सब से अधिक महत्व दे कर ले गया है: एक बजट। पैसा नहीं — वेग। रॉकेट समीकरण ने इसे किलोमीटर प्रति सेकंड में मापा, गुरुत्वाकर्षण ही एकमात्र मुफ़्त रीफिल था, और 1903 से लेकर हर इंजीनियर जिसने कभी किसी मिशन की योजना बनाई है, उसी बाधा के भीतर रह रहा है।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.0.md",
+  "en": "Imagine you are handed a chequebook with a fixed balance. You can spend it however you like — but every purchase is final, there are no deposits, and when the balance reaches zero you are done. That is the situation every spacecraft faces from the moment it clears the launch tower. The currency is not fuel. It is not thrust. It is **velocity** — more precisely, the *change* in velocity, measured in kilometres per second, that the spacecraft can accumulate over its entire mission. Engineers call it delta-v, and the account opens, once, at launch.",
+  "cur": "कल्पना करें कि आप को एक चेकबुक सौंपा गया है जिसका बैलेंस निश्चित है। आप इसे जैसे चाहें खर्च कर सकते हैं — लेकिन हर खरीद अंतिम है, कोई जमा नहीं है, और जब बैलेंस शून्य तक पहुँच जाता है तो आप समाप्त हो जाते हैं। यही स्थिति हर अंतरिक्ष यान की है जिस क्षण वह लॉन्च टावर को साफ़ करता है। मुद्रा ईंधन नहीं है। यह जोर नहीं है। यह **वेग** है — अधिक सटीक रूप से, वेग में *परिवर्तन*, किलोमीटर प्रति सेकंड में मापा जाता है, जो अंतरिक्ष यान अपने पूरे मिशन में जमा कर सकता है। इंजीनियर इसे डेल्टा-वी कहते हैं, और यह खाता एक बार लॉन्च पर खुलता है।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.1.md",
+  "en": "The rule that wrote this constraint was published in 1903, by a self-taught Russian schoolteacher named Konstantin Tsiolkovsky, working alone in a small provincial town. His [rocket equation](/science/propulsion/tsiolkovsky) has not been repealed since: **∆v = Isp · g₀ · ln(m₀/mf)**. Read it in English: the velocity you can buy equals the efficiency of your engine — measured in seconds of [specific impulse](/science/propulsion/specific-impulse) and multiplied by a gravitational constant of 9.807 m/s² — times the natural logarithm of how much heavier the rocket was at the start than at the end. That logarithm is the villain. Because *ln* is the slowest-growing function in mathematics, it means that every extra kilometre per second you want to add costs you an exponentially larger bite of propellant mass — and propellant has to be lifted too, which means it needs its own propellant, which has to be lifted too, and so on down a regress that has no floor.",
+  "cur": "इस बाधा को लिखने वाला नियम 1903 में प्रकाशित हुआ था, एक स्व-सिखाए हुए रूसी शिक्षक कॉन्स्टेंटिन त्सिओल्कोव्स्की द्वारा, जो एक छोटे प्रांतीय शहर में अकेले काम कर रहे थे। उनकी [रॉकेट समीकरण](/science/propulsion/tsiolkovsky) तब से निरस्त नहीं हुई है: **∆v = Isp · g₀ · ln(m₀/mf)**। अंग्रेज़ी में पढ़ें: आप जो वेग खरीद सकते हैं वह आपके इंजन की क्षमता के बराबर है — [विशिष्ट आवेग](/science/propulsion/specific-impulse) के सेकंड में मापा जाता है और गुरुत्वाकर्षण स्थिरांक 9.807 m/s² से गुणा किया जाता है — गुणा शुरुआत में रॉकेट कितना भारी था अंत में कितना भारी था इसका प्राकृतिक लॉगरिदम। वह लॉगरिदम खलनायक है। क्योंकि *ln* गणित में सबसे धीरे बढ़ने वाला फलन है, इसका मतलब है कि हर अतिरिक्त किलोमीटर प्रति सेकंड जो आप जोड़ना चाहते हैं, उसे प्रणोदक द्रव्यमान का एक तीव्र गुणातमक काटा पड़ता है — और प्रणोदक को भी उठाया जाना पड़ता है, जिसका मतलब है कि इसे अपने प्रणोदक की आवश्यकता है, जिसे भी उठाया जाना पड़ता है, और यह सिलसिला उतरता रहता है जिसके नीचे कोई तल नहीं है।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.2.md",
+  "en": "Astronaut Don Pettit called this *the tyranny of the rocket equation* in a 2012 essay written aboard the ISS, and the word tyranny is exactly right. The Saturn V that carried Apollo astronauts to the Moon stood thirty stories tall on the pad and was **85% propellant by mass**; its payload — everything that actually went anywhere — never exceeded about 4% of that wet mass. The rest was a controlled explosion in slow motion, consumed step by step just to get the remainder a little faster, a little higher. Everything else in spaceflight — the missions, the trajectories, the waiting for launch windows, the obsessive trimming of instrument mass — flows from that single, merciless denominator.",
+  "cur": "अंतरिक्ष यात्री डॉन पेटिट ने 2012 में आईएसएस पर लिखे एक निबंध में इसे *रॉकेट समीकरण का अत्याचार* कहा, और शब्द अत्याचार बिल्कुल सही है। शनि V जो Apollo अंतरिक्ष यात्रियों को चाँद तक ले गया, वह पैड पर तीस मंजिलें ऊँचा था और द्रव्यमान के हिसाब से **85% प्रणोदक** था; इसका पेलोड — जो कुछ भी वास्तव में कहीं गया — उस गीले द्रव्यमान के 4% से अधिक कभी नहीं था। बाकी सब कुछ धीरे-धीरे एक नियंत्रित विस्फोट था, जो बाकी को थोड़ा तेज़, थोड़ा ऊँचा करने के लिए धीरे-धीरे खपत किया जाता था। अंतरिक्ष उड़ान में बाकी सब कुछ — मिशन, प्रक्षेपवक्र, लॉन्च विंडो के लिए प्रतीक्षा, उपकरण द्रव्यमान की जुनूनी काट-छाँट — उसी एक, निर्दयी भाजक से निकलता है।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.3.caption",
+  "en": "The rocket equation’s exponential wall: at chemical efficiency, each extra kilometre per second demands a wildly larger propellant fraction — and the closer you push toward a real destination, the steeper the price climbs.",
+  "cur": "रॉकेट समीकरण की घातीय दीवार: रासायनिक क्षमता पर, हर अतिरिक्त किलोमीटर प्रति सेकंड प्रणोदक अंश का एक अत्यधिक बड़ा अनुपात माँगता है — और जितना अधिक आप एक वास्तविक गंतव्य की ओर धकेलते हैं, उतनी अधिक खड़ी कीमत चढ़ती है।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.5.md",
+  "en": "A [delta-v budget](/science/propulsion/dv-budget) is what mission planners call the spreadsheet that accounts for every velocity change a mission must perform, from Earth parking orbit to final destination. It is the most consequential document in mission design: it decides whether the mission is possible at all. Getting a spacecraft from a low Earth orbit to, say, a Hohmann transfer toward Mars and into Martian orbit costs roughly **5.6 km/s** total — a figure that sounds modest until you remember that every decimal place is paid for in tonnes of propellant, and the rocket equation means the exchange rate gets worse the more you spend.",
+  "cur": "[डेल्टा-वी बजट](/science/propulsion/dv-budget) वह स्प्रेडशीट है जिसे मिशन योजनाकार कहते हैं जो एक मिशन द्वारा किए जाने वाले हर वेग परिवर्तन के लिए खाता देता है, पृथ्वी पार्किंग कक्षा से अंतिम गंतव्य तक। यह मिशन डिज़ाइन में सबसे महत्वपूर्ण दस्तावेज़ है: यह तय करता है कि मिशन संभव है या नहीं। अंतरिक्ष यान को निम्न पृथ्वी कक्षा से, मान लीजिए, मंगल की ओर Hohmann स्थानांतरण और मंगल कक्षा में लाने की लागत कुल **5.6 km/s** लगभग है — एक आँकड़ा जो मामूली लगता है जब तक आप याद रखते हैं कि हर दशमलव स्थान प्रणोदक के टन में भुगतान की जाती है, और रॉकेट समीकरण का मतलब है कि विनिमय दर उतनी ही खराब हो जाती है जितना अधिक आप खर्च करते हैं।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.6.md",
+  "en": "A [Hohmann transfer](/science/transfers/hohmann-transfer) is the minimum-energy arc between two orbits — the path that costs the least delta-v to get from A to B. It is not straight; it is an ellipse that brushes the inner orbit at one end and the outer at the other, coasting the entire way on nothing but inertia. The trick is that you fire the engine twice: once to leave the departure orbit, once to match the arrival orbit. Between those two burns — typically 259 days in the Earth-to-Mars case — you spend nothing. The solar system's gravity does the carrying for free, as long as you had the sense to aim the right way at the start.",
+  "cur": "[होहमैन स्थानांतरण](/science/transfers/hohmann-transfer) दो कक्षाओं के बीच न्यूनतम-ऊर्जा चाप है — वह पथ जो A से B जाने के लिए सबसे कम डेल्टा-वी की लागत करता है। यह सीधा नहीं है; यह एक दीर्घवृत्त है जो एक छोर पर आंतरिक कक्षा को स्पर्श करता है और दूसरे पर बाहरी कक्षा को, पूरे रास्ते में कुछ नहीं बल्कि जड़ता पर तटस्थ रहता है। चाल यह है कि आप इंजन को दो बार चलाते हैं: एक बार प्रस्थान कक्षा को छोड़ने के लिए, एक बार आगमन कक्षा से मेल खाने के लिए। उन दोनों बर्न के बीच — आमतौर पर पृथ्वी-से-मंगल मामले में 259 दिन — आप कुछ नहीं खर्च करते। सौर मंडल का गुरुत्वाकर्षण मुफ़्त में ले जाता है, जब तक कि आप के पास शुरुआत में सही तरीके से लक्ष्य करने की समझ थी।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.7.caption",
+  "en": "The cheapest path between two orbits is never the straight line — a Hohmann transfer coasts along an ellipse that just grazes each orbit, firing the engine only twice: once to leave, once to arrive.",
+  "cur": "दो कक्षाओं के बीच सबसे सस्ता पथ कभी सीधी रेखा नहीं है — एक Hohmann स्थानांतरण एक दीर्घवृत्त के साथ तटस्थ रहता है जो प्रत्येक कक्षा को केवल ग्रेज़ करता है, इंजन को केवल दो बार चलाता है: एक बार प्रस्थान करने के लिए, एक बार आगमन के लिए।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.8.md",
+  "en": "This is what *navigation* hands off to delta-v planning. The [navigation essay](/essays/navigation) opened with the problem of aiming at a moving planet — the Lambert problem, the long arc, the correction burns that close the gap between plan and reality. But choosing that arc in the first place was a budget decision. The Hohmann minimum-energy path was chosen because it spends the least; a faster trajectory exists, but it costs more delta-v than most missions can afford, and delta-v is the one thing you cannot borrow.",
+  "cur": "यही वह है जो *नेविगेशन* डेल्टा-वी योजना को सौंपता है। [नेविगेशन निबंध](/essays/navigation) एक चलती हुई ग्रह को लक्ष्य करने की समस्या के साथ शुरू होता है — Lambert समस्या, लंबा चाप, सुधार बर्न जो योजना और वास्तविकता के बीच के अंतर को बंद करते हैं। लेकिन पहली जगह उस चाप को चुनना एक बजट निर्णय था। Hohmann न्यूनतम-ऊर्जा पथ चुना गया था क्योंकि यह सबसे कम खर्च करता है; एक तेज़ प्रक्षेपवक्र मौजूद है, लेकिन इसकी लागत अधिकांश मिशनों से अधिक डेल्टा-वी खर्च करती है, और डेल्टा-वी वह एक चीज़ है जिसे आप उधार नहीं ले सकते।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.10.md",
+  "en": "Given the equation's tyranny, any trick that adds delta-v for free is not merely useful — it is transformative. There is exactly one: **gravity**.",
+  "cur": "समीकरण के अत्याचार को देखते हुए, कोई भी चाल जो मुफ़्त में डेल्टा-वी जोड़ता है वह सिर्फ उपयोगी नहीं है — यह रूपांतरकारी है। ठीक एक है: **गुरुत्वाकर्षण**।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.11.md",
+  "en": "A spacecraft that swings close past a planet enters the planet's gravitational field fast, curves around it, and leaves faster than it arrived — because the planet is itself moving, and the craft has stolen a whisper of that motion. The [gravity assist](/science/transfers/gravity-assist) costs no propellant at all. The planet loses an unmeasurably tiny amount of its own orbital velocity; the spacecraft gains a great deal. For most interplanetary probes, this is not a bonus — it is the entire business model.",
+  "cur": "एक अंतरिक्ष यान जो किसी ग्रह के पास से गुज़रता है, वह ग्रह के गुरुत्वाकर्षण क्षेत्र में तेज़ी से प्रवेश करता है, इसके चारों ओर घूमता है, और जिस तरह से आया था उससे तेज़ी से निकलता है — क्योंकि ग्रह स्वयं गतिशील है, और उपकरण ने उस गति का एक फुसफुसा चोरी किया है। [गुरुत्वाकर्षण सहायता](/science/transfers/gravity-assist) कोई प्रणोदक नहीं लगता। ग्रह अपने स्वयं की कक्षीय वेग का एक अनुपयोगी रूप से छोटा अंश खो देता है; अंतरिक्ष यान बहुत अधिक लाभ उठाता है। अधिकांश अंतरग्रहीय जांच के लिए, यह एक बोनस नहीं है — यह पूरा व्यवसाय मॉडल है।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.12.md",
+  "en": "In the mid-1960s, a JPL mathematician named Gary Flandro was doing summer calculations when he noticed something. The outer planets — Jupiter, Saturn, Uranus, Neptune — were drifting toward a once-in-175-years alignment. A probe launched in 1977 and aimed right could use Jupiter's gravity to reach Saturn, Saturn's to reach Uranus, Uranus's to reach Neptune: a four-planet bank shot, each flyby adding delta-v for free and redirecting the trajectory to the next target. The flight time to Neptune would fall from thirty years to twelve. That observation became the Grand Tour — and [Voyager 2](/missions?id=voyager-2) made it real, gaining roughly **10 km/s** from the Jupiter flyby alone, enough to reach the outer system in the time originally budgeted for a Saturn-only mission. Neptune, today, has been visited once. The reason is that the window closed in the 1980s and won't open again until the 2150s.",
+  "cur": "1960 के मध्य में, JPL के एक गणितज्ञ गैरी फ़्लैंड्रो गर्मियों की गणना कर रहे थे जब उन्होंने कुछ देखा। बाहरी ग्रह — बृहस्पति, शनि, अरुण, वरुण — 175 साल में एक बार की संरेखता की ओर बढ़ रहे थे। 1977 में लॉन्च किया गया और सही तरीके से लक्षित एक जांच बृहस्पति के गुरुत्वाकर्षण का उपयोग करके शनि तक पहुँच सकता था, शनि का अरुण तक, अरुण का वरुण तक: एक चार-ग्रह बैंक शॉट, हर फ्लाईबाई मुफ़्त में डेल्टा-वी जोड़ता है और अगले लक्ष्य को प्रक्षेपवक्र को पुनः निर्देशित करता है। वरुण तक की उड़ान का समय तीस साल से बारह तक गिर जाएगा। वह टिप्पणी Grand Tour बन गई — और [Voyager 2](/missions?id=voyager-2) इसे वास्तविक बनाया, अकेले बृहस्पति फ्लाईबाई से लगभग **10 km/s** हासिल किया, जो बाहरी प्रणाली तक पहुँचने के लिए पर्याप्त था मूलतः शनि-केवल मिशन के लिए बजट में समय में। वरुण, आज, एक बार सहारा दिया गया है। कारण यह है कि विंडो 1980 के दशक में बंद हुई और 2150 के दशक तक फिर से खुलेगी।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.13.caption",
+  "en": "Voyager 2 took the free refill four times over — Jupiter to Saturn to Uranus to Neptune — banking each planet’s motion into the next, on a route that will not line up again for 175 years.",
+  "cur": "Voyager 2 ने चार बार निःशुल्क रिफिल लिया — बृहस्पति से शनि से अरुण से वरुण तक — प्रत्येक ग्रह की गति को अगले के लिए जमा करते हुए, एक ऐसे मार्ग पर जो 175 वर्षों तक फिर से संरेखित नहीं होगा।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.14.md",
+  "en": "The same arithmetic is why [Cassini](/missions?id=cassini) looped through Venus — twice — and past Earth and past Jupiter before heading outward to Saturn: not the scenic route, but the cheap one. And why [Mangalyaan](/missions?id=mangalyaan), India's first interplanetary mission, reached Mars in 2014 on a budget of roughly US$74 million — a fraction of what comparable missions have cost — in part because its trajectory was designed to extract maximum value from every kilogram of its 852-kilogram propellant load, the largest single component of a spacecraft that weighed 1,340 kg on the pad. The delta-v budget was 1,350 m/s for the entire mission after escape. Every gram was accounted for.",
+  "cur": "यही अंकगणित है कि क्यों [कैसिनी](/missions?id=cassini) शुक्र के माध्यम से घूमा — दो बार — और पृथ्वी के पास और बृहस्पति के पास शनि की ओर बाहर की ओर जाने से पहले: भव्य मार्ग नहीं, बल्कि सस्ता। और क्यों [मंगलयान](/missions?id=mangalyaan), भारत का पहला अंतरग्रहीय मिशन, 2014 में मंगल तक पहुँचा लगभग US$74 मिलियन के बजट पर — जो तुलनीय मिशनों की कीमत करते हैं उसका एक अंश — आंशिक रूप से क्योंकि इसका प्रक्षेपवक्र अपने 852-किलोग्राम प्रणोदक लोड के हर किलोग्राम से अधिकतम मूल्य निकालने के लिए डिज़ाइन किया गया था, एक अंतरिक्ष यान का सबसे बड़ा एकल घटक जो पैड पर 1,340 kg वजन का था। डेल्टा-वी बजट पलायन के बाद पूरे मिशन के लिए 1,350 m/s था। हर ग्राम की गिनती की गई थी।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.15.caption",
+  "en": "Cassini reached Saturn on borrowed speed, swinging past Venus twice, Earth, and Jupiter along the way — a seven-year detour that cost less fuel than aiming straight at it ever could.",
+  "cur": "कैसिनी शनि तक उधार दिए गए गति पर पहुँचा, शुक्र को दो बार, पृथ्वी, और बृहस्पति को स्विंग करते हुए — एक सात साल की खोज जिसकी लागत इसे सीधे निशाना बनाने की तुलना में कभी अधिक ईंधन थी।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.17.md",
+  "en": "Gravity offers a second trick, subtler than the first. It was described in 1929 by Hermann Oberth, and it turns on a fact about kinetic energy that is not obvious until you write it out: energy grows as the *square* of velocity. A burn that adds 1 km/s at 10 km/s adds far more kinetic energy than the same burn at 1 km/s — because the work done equals force times distance, and a rocket moving fast covers more distance during the burn.",
+  "cur": "गुरुत्वाकर्षण एक दूसरी चाल देता है, पहली से अधिक सूक्ष्म। इसका वर्णन हरमन ओबर्थ ने 1929 में किया था, और यह गतिज ऊर्जा के बारे में एक तथ्य पर निर्भर करता है जो जब तक आप इसे लिखकर न देखें तब तक स्पष्ट नहीं होता: ऊर्जा वेग के *वर्ग* के रूप में बढ़ती है। एक दहन जो 10 किमी/से पर 1 किमी/से जोड़ता है, 1 किमी/से पर समान दहन की तुलना में कहीं अधिक गतिज ऊर्जा जोड़ता है — क्योंकि किया गया कार्य बल गुणा दूरी के बराबर होता है, और तेजी से चलने वाली रॉकेट दहन के दौरान अधिक दूरी तय करती है।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.18.md",
+  "en": "The consequence, called the [Oberth effect](/science/propulsion/oberth-effect), is that burns deep in a gravity well — at the lowest point of an orbit, *periapsis*, where a spacecraft is moving fastest — are drastically more efficient than burns performed at altitude. The same delta-v, spent at the right moment in the right place, delivers more final energy to the craft. Missions that can arrange to fire their engines at periapsis — arriving planets, close passes, deliberately engineered low-point maneuvers — get, in effect, a multiplier on whatever delta-v they spend. [New Horizons](/missions?id=new-horizons) used a Jupiter flyby not just for the gravity-assist velocity boost but timed its burn to coincide with closest approach, stacking the Oberth dividend on top of the assist. The combination shaved three years from its flight to Pluto.",
+  "cur": "इसके परिणाम को [Oberth effect](/science/propulsion/oberth-effect) कहा जाता है — जब किसी गुरुत्व कुआं में गहरे जलन होते हैं — किसी कक्षा के निम्नतम बिंदु पर, *periapsis*, जहां अंतरिक्ष यान सबसे तेज़ गति से चल रहा होता है — ये ऊँचाई पर किए गए जलन से कहीं अधिक प्रभावी होते हैं। वही delta-v, सही समय पर सही स्थान पर खर्च किया जाए, तो यान को अधिक अंतिम ऊर्जा प्रदान करता है। ऐसे मिशन जो अपने इंजन को periapsis पर फायर करने की व्यवस्था कर सकते हैं — ग्रहों पर पहुँचना, निकट गुज़रना, जानबूझकर तैयार किए गए निम्न-बिंदु युद्धाभ्यास — प्रभावी रूप से, जो भी delta-v वे खर्च करते हैं उस पर एक गुणक प्राप्त करते हैं। [New Horizons](/missions?id=new-horizons) ने बृहस्पति की उड़ान को केवल गुरुत्व-सहायता वेग वृद्धि के लिए ही नहीं, बल्कि अपने जलन को निकटतम दृष्टिकोण के साथ संपाती करने के समय के लिए उपयोग किया, Oberth लाभ को सहायता के ऊपर जोड़ा। इस संयोजन ने यम के लिए इसकी उड़ान से तीन वर्ष घटा दिए।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.19.caption",
+  "en": "Burn low, gain more: deep in a gravity well a spacecraft is moving fastest, and the same engine burn there buys far more energy than it would out at the slow, distant top of the orbit.",
+  "cur": "कम जलाएं, अधिक लाभ पाएं: गुरुत्वाकर्षण कुएं में गहरे, एक अंतरिक्ष यान सबसे तेजी से चलता है, और वहीं एक समान इंजन दहन कक्षा के धीमे, दूर के शीर्ष पर जितनी ऊर्जा खरीद सकता है उससे कहीं अधिक खरीद सकता है।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.20.md",
+  "en": "These are not hacks or loopholes. They are the mathematics of moving through a gravitational landscape that, if you read it right, is not hostile to motion but is in fact riddled with chutes and ramps. The budget does not disappear — but the skilled reader of that landscape can stretch it, sometimes enormously.",
+  "cur": "ये हैक या खामियां नहीं हैं। ये एक गुरुत्वाकर्षणीय परिदृश्य के माध्यम से चलने का गणित है जो, यदि आप इसे सही तरीके से पढ़ते हैं, तो गति के प्रति शत्रुतापूर्ण नहीं है बल्कि वास्तव में स्लाइड और रैंप से भरा हुआ है। बजट गायब नहीं होता — लेकिन उस परिदृश्य का कुशल पाठक इसे खिंचाव कर सकता है, कभी-कभी बहुत अधिक।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.21.text",
+  "en": "What the equation erases",
+  "cur": "समीकरण क्या मिटाता है"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.22.md",
+  "en": "The delta-v budget is ruthlessly indifferent to almost everything that feels important about a mission — the science, the prestige, the geopolitics. It does not care who built the spacecraft or what flag is painted on it. It cares only about mass, exhaust velocity, and the logarithm.",
+  "cur": "डेल्टा-v बजट लगभग हर उस चीज के प्रति निर्ममता से उदासीन है जो एक मिशन के बारे में महत्वपूर्ण महसूस होता है — विज्ञान, प्रतिष्ठा, भू-राजनीति। इसे परवाह नहीं है कि किसने अंतरिक्ष यान बनाया या इस पर कौन सा झंडा खींचा गया है। यह केवल द्रव्यमान, निकास वेग, और लघुगणक की परवाह करता है।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.23.md",
+  "en": "This creates a discipline unlike any other in engineering. The camera added to a Mars rover, the extra redundancy in a computer, the additional science instrument a team lobbied years for — every one of them comes with a delta-v price. If the instrument is heavier than the margin allows, either something else is removed or the entire mission becomes infeasible. Mission planning is an exercise in continuous, painful arbitrage between what you want and what you can carry, and the equation is the judge of every dispute.",
+  "cur": "यह इंजीनियरिंग में किसी और के विपरीत एक अनुशासन बनाता है। मंगल रोवर में जोड़ा गया कैमरा, कंप्यूटर में अतिरिक्त अतिरेक, अतिरिक्त विज्ञान उपकरण जो एक दल ने वर्षों से लॉबी किया — उनमें से हर एक के साथ डेल्टा-v मूल्य आता है। यदि उपकरण के रूप में भारी मार्जिन से अधिक है, तो या तो कुछ और हटा दिया जाता है या पूरा मिशन अव्यवहार्य हो जाता है। मिशन योजना आप जो चाहते हैं और आप क्या ले जा सकते हैं के बीच निरंतर, दर्दनाक मध्यस्थता का एक अभ्यास है, और समीकरण हर विवाद का न्यायाधीश है।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.24.md",
+  "en": "The budget also erases the margin for error in a way that land-based engineering rarely does. A bridge that is slightly overloaded still stands. A spacecraft that runs out of delta-v before completing orbital insertion becomes a piece of uncontrolled debris. There is no partial credit. Every mission in this atlas that succeeded did so because someone, somewhere, kept an honest accounting and never spent more than was there. The anonymous room of people who did that math — who watched the budget, checked the astrodynamics, ran the correction-burn sequences — carried every mission that ever arrived.",
+  "cur": "बजट त्रुटि के लिए मार्जिन को इस तरह से मिटाता है जो जमीन-आधारित इंजीनियरिंग में शायद ही कभी करता है। एक पुल जो थोड़ा अधिक लोड किया गया है अभी भी खड़ा है। एक अंतरिक्ष यान जो कक्षीय प्रविष्टि को पूरा करने से पहले डेल्टा-v से बाहर निकल जाता है, अनियंत्रित मलबे का एक टुकड़ा बन जाता है। कोई आंशिक श्रेय नहीं है। इस एटलस में हर मिशन जो सफल रहा वह इसलिए था क्योंकि कोई, कहीं, ईमानदारी से लेखा रखता था और कभी भी जो वहां था उससे अधिक खर्च नहीं करता था। उन लोगों का नाम न छपा कमरा जिन्होंने वह गणित की — जिन्होंने बजट देखा, एस्ट्रोडायनामिक्स की जांच की, सुधार-दहन अनुक्रम चलाया — हर मिशन को ले गया जो कभी पहुंचा।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.25.text",
+  "en": "The reuse argument, stated plainly",
+  "cur": "पुनः उपयोग तर्क, स्पष्ट रूप से कहा गया"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.26.md",
+  "en": "For sixty years, the tyranny of the rocket equation produced a particular answer to the problem of getting to orbit: build a machine optimized for the task, burn it on the way up, throw it away. The structural mass savings from designing a single-use first stage were real, and the delta-v was real, and the math closed. The problem was that you were throwing away an engine worth tens of millions of dollars after using it once.",
+  "cur": "साठ वर्षों के लिए, रॉकेट समीकरण का अत्याचार कक्षा में जाने की समस्या का एक विशेष उत्तर दिया: एक ऐसी मशीन बनाएं जो कार्य के लिए अनुकूलित हो, इसे ऊपर जाते समय जलाएं, इसे फेंक दें। एक एकल-उपयोग पहले चरण को डिजाइन करने से संरचनात्मक द्रव्यमान बचत वास्तविक थी, और डेल्टा-v वास्तविक था, और गणित बंद हो गई। समस्या यह थी कि आप दसियों लाख डॉलर मूल्य का एक इंजन एक बार उपयोग करने के बाद फेंक रहे थे।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.27.md",
+  "en": "Landing a rocket stage and flying it again changes the denominator, but not in the way the equation predicts. Structurally, a reusable stage is slightly heavier — it needs landing legs, grid fins, thermal protection, residual propellant reserves for the return burn — which means the [specific impulse](/science/propulsion/specific-impulse) advantage narrows and the mass ratio shrinks. The equation, strictly read, says reuse costs you delta-v. What the equation doesn't model is that you can fly the stage again next week, at a fraction of the cost of building a new one, which means you can afford to fly more missions, which means the budget that matters — dollars per kilogram to orbit — collapses. The delta-v logic didn't change. The economic logic that runs alongside it did.",
+  "cur": "एक रॉकेट चरण को उतारना और इसे फिर से उड़ाना हर को बदलता है, लेकिन उस तरीके से नहीं जो समीकरण भविष्यवाणी करता है। संरचनात्मक रूप से, एक पुन: प्रयोज्य चरण थोड़ा भारी होता है — इसे लैंडिंग लेग्स, ग्रिड फिन्स, थर्मल सुरक्षा, रिटर्न दहन के लिए अवशिष्ट प्रणोदक भंडार की आवश्यकता होती है — जिसका अर्थ है कि [विशिष्ट आवेग](/science/propulsion/specific-impulse) लाभ कम हो जाता है और द्रव्यमान अनुपात सिकुड़ जाता है। समीकरण, कड़ाई से पढ़ने के लिए, कहता है कि पुन: उपयोग आपको डेल्टा-v खर्च करता है। जो समीकरण मॉडल नहीं करता है वह यह है कि आप अगले हफ्ते चरण को फिर से उड़ा सकते हैं, एक नया बनाने की लागत के अंश में, जिसका अर्थ है कि आप अधिक मिशन उड़ा सकते हैं, जिसका अर्थ है कि बजट जो मायने रखता है — कक्षा तक प्रति किलोग्राम डॉलर — गिर जाता है। डेल्टा-v तर्क नहीं बदला। इसके साथ चलने वाला आर्थिक तर्क बदल गया।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.28.md",
+  "en": "This is the tension that has defined the last decade of launch vehicle development, and it is not yet resolved. The rocket equation still sets the hard physical floor. What changes is how much it costs to stand on it. [Fly a trajectory in the atlas](/fly) and watch what happens to the delta-v budget as each stage separates — the mass ratio snapshots at each cut are what the equation is actually enforcing, invisibly, on every flight.",
+  "cur": "यह तनाव है जिसने लॉन्च वाहन विकास के पिछले दशक को परिभाषित किया है, और यह अभी तक हल नहीं हुआ है। रॉकेट समीकरण अभी भी कठोर भौतिक तल निर्धारित करता है। जो बदलता है वह यह है कि इस पर खड़े होने में कितना खर्च होता है। [एटलस में एक प्रक्षेप पथ उड़ाएं](/fly) और देखें कि जैसे-जैसे हर चरण अलग हो जाता है डेल्टा-v बजट का क्या होता है — हर कट में द्रव्यमान अनुपात स्नैपशॉट वह है जो समीकरण वास्तव में हर उड़ान पर अदृश्य रूप से लागू कर रहा है।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.29.text",
+  "en": "The ledger closes",
+  "cur": "बही खाता बंद हो जाता है"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.30.md",
+  "en": "There is something clarifying about a constraint with no exceptions. The rocket equation does not yield for political reasons or budget increases or engineering heroics. Every mission that has ever left this planet — [Voyager](/missions?id=voyager-2), [Cassini](/missions?id=cassini), [New Horizons](/missions?id=new-horizons), [Mangalyaan](/missions?id=mangalyaan) — did so because someone reconciled a column of delta-v requirements against a column of what the propellant could provide, and the second number was at least as large as the first. Every mission that never left — and there have been many, killed quietly in planning — failed that test.",
+  "cur": "कुछ चीजें हैं जो बिना किसी अपवाद के एक बाधा के बारे में स्पष्ट करती हैं। रॉकेट समीकरण राजनीतिक कारणों या बजट में वृद्धि या इंजीनियरिंग वीरता के लिए नहीं झुकता है। हर मिशन जो कभी इस ग्रह को छोड़ गया है — [Voyager](/missions?id=voyager-2), [Cassini](/missions?id=cassini), [New Horizons](/missions?id=new-horizons), [मंगलयान](/missions?id=mangalyaan) — ऐसा इसलिए हुआ क्योंकि किसी ने delta-v की आवश्यकताओं के एक कॉलम को प्रणोदक द्वारा प्रदान किए जा सकने वाली चीज़ के एक कॉलम के विरुद्ध समेटा था, और दूसरी संख्या पहली के कम से कम बराबर थी। हर मिशन जो कभी नहीं गया — और कई हुए हैं, योजना में चुप-चाप समाप्त किए गए — इस परीक्षा में विफल रहे।"
+ },
+ {
+  "rel": "essays/delta-v.json",
+  "at": "body.31.md",
+  "en": "What the equation also does, less obviously, is make gravity precious. Not as a hazard to overcome — every rocket is burning upward against it — but as a free account. A planet's gravity well, threaded correctly, is a source. Jupiter's gravity gave Voyager 2 a velocity it could never have bought with propellant. The Oberth effect makes deep periapsis passes worth engineering deliberately. The solar system's entire orbital architecture is, from a delta-v perspective, a landscape of free refills scattered across a mostly empty map — and every [trajectory you can explore here](/science/transfers/hohmann-transfer) is a record of someone finding one.",
+  "cur": "समीकरण जो कम स्पष्टता से करता है, वह गुरुत्वाकर्षण को कीमती बनाता है। एक खतरे के रूप में नहीं जिसे दूर करना है — हर रॉकेट इसके विरुद्ध ऊपर की ओर जल रहा है — बल्कि एक मुक्त खाते के रूप में। एक ग्रह का गुरुत्वाकर्षण कुआं, सही तरीके से थ्रेड किया, एक स्रोत है। बृहस्पति की गुरुत्वाकर्षण ने Voyager 2 को एक वेग दिया जो इसने कभी प्रणोदक के साथ नहीं खरीद सकता था। Oberth प्रभाव गहरे पेरिएप्सिस मार्ग को जानबूझकर इंजीनियर करने के लायक बनाता है। सौर मंडल की पूरी कक्षीय वास्तुकला, डेल्टा-v दृष्टिकोण से, एक मुक्त भरण का परिदृश्य है जो अधिकतर खाली मानचित्र में बिखरा हुआ है — और हर [प्रक्षेप पथ जिसे आप यहां अन्वेषण कर सकते हैं](/science/transfers/hohmann-transfer) किसी के एक खोज का एक रिकॉर्ड है।"
+ }
+]

@@ -1,0 +1,710 @@
+[
+ {
+  "rel": "science/porkchop/what-is-a-porkchop.json",
+  "at": "narrative_101.2",
+  "en": "Open /plan in this simulator. Pick a destination. Pick a launch year. The thing you're looking at is a porkchop, computed live. Each pixel is one Lambert problem — \"leave Earth on day X, arrive on day Y, what does it cost?\" Hover any pixel and the simulator tells you the exact dates and ∆v. Click and the trajectory loads into /fly. The next four sections explain how to read it.",
+  "cur": "Open /plan in deze simulator. Kies een bestemming. Kies een startjaar. Wat je ziet is een porkchop, live berekend. Elk pixel is één Lambert-probleem — 'verlaat Aarde op dag X, arriveer op dag Y, wat kost het?' Beweeg over een pixel en de simulator vertelt je de exacte datums en ∆v. Klik en de trajectory wordt in /fly geladen. De volgende vier secties leggen uit hoe je het leest."
+ },
+ {
+  "rel": "science/porkchop/what-is-a-porkchop.json",
+  "at": "body_paragraphs.0",
+  "en": "Pick a departure date on the X axis. Pick a transit time on the Y axis. The colour of that cell tells you how much ∆v it would cost to fly that mission. Cool teal: cheap. Yellow: moderate. Red: very expensive. Repeat for every pixel and you get a porkchop plot — named for the way the cheap-zone contours form a pork-chop-shaped lobe.",
+  "cur": "Kies een vertrekdatum op de X-as. Kies een transitduur op de Y-as. De kleur van die cel vertelt je hoeveel ∆v het zou kosten om die missie uit te voeren. Koel getint: goedkoop. Geel: gemiddeld. Rood: erg duur. Herhaal voor elke pixel en je krijgt een porkchop plot — genoemd naar de manier waarop de goedkope-zone contourlijnen een varkenskotelet-vormed lob vormen."
+ },
+ {
+  "rel": "science/porkchop/what-is-a-porkchop.json",
+  "at": "body_paragraphs.1",
+  "en": "Each cell is the answer to a Lambert problem: 'leave Earth on date X, arrive at the destination on date X + Y, what's the ∆v required?' Solve Lambert millions of times across a date grid and the contours emerge naturally. The natural minima are launch windows — the cheap zones where Hohmann-like transfers exist.",
+  "cur": "Elke cel is het antwoord op een Lambert-probleem: 'verlaat Aarde op datum X, arriveer op de bestemming op datum X + Y, wat is de vereiste ∆v?' Los Lambert miljoen keer op over een datagrooster en de contourlijnen ontstaan van nature. De natuurlijke minima zijn lanceringsvensters — de goedkope zones waar Hohmann-achtige overdrachten bestaan."
+ },
+ {
+  "rel": "science/porkchop/what-is-a-porkchop.json",
+  "at": "body_paragraphs.2",
+  "en": "Orrery's `/plan` route shows you the porkchop for any of nine destinations (Mars, Mercury, Venus, the gas giants, Pluto, Ceres). Hover any cell to see the exact dates and ∆v. Click to load that mission into `/fly`.",
+  "cur": "De `/plan` route van Orrery toont je de porkchop voor negen mogelijke bestemmingen (Mars, Mercurius, Venus, de gasgiganten, Pluto, Ceres). Beweeg over een cel om de exacte datums en ∆v te zien. Klik om die missie in `/fly` te laden."
+ },
+ {
+  "rel": "science/porkchop/what-is-a-porkchop.json",
+  "at": "diagram_caption",
+  "en": "Porkchop plot: X = departure date, Y = transit time, colour = ∆v cost (Orrery's simplified scale; standard plots show C3 / arrival V∞). Cheap zones cluster around natural Hohmann windows.",
+  "cur": "Porkchop plot: X = vertrekdatum, Y = transitduur, kleur = ∆v-kost (vereenvoudigde schaal van Orrery; standaardplots tonen C3/aankomstsnelheid). Goedkope zones clusteren rond natuurlijke Hohmann-vensters."
+ },
+ {
+  "rel": "science/propulsion/_intro.json",
+  "at": "headline",
+  "en": "Propulsion — the rocket equation is the boss fight.",
+  "cur": "Voortstuwing — de raketvergelijking is de eindbaas."
+ },
+ {
+  "rel": "science/propulsion/_intro.json",
+  "at": "paragraphs.0",
+  "en": "Spaceflight has one universal currency: ∆v, pronounced \"delta-v,\" measured in kilometres per second. Every burn costs you some. Every move on a trajectory has a price tag. The mission's ∆v budget — sum of everything you'll spend, end to end — is the single number that says whether the mission can fly.",
+  "cur": "Ruimtevaart heeft één universele valuta: ∆v, uitgesproken als 'delta-v', gemeten in kilometers per seconde. Elke ontsteking kost je wat. Elke beweging op een baan heeft een prijskaartje. Het ∆v-budget van de missie — de som van alles wat je van begin tot eind uitgeeft — is het ene getal dat zegt of de missie kan vliegen."
+ },
+ {
+  "rel": "science/propulsion/_intro.json",
+  "at": "paragraphs.1",
+  "en": "The cruel constraint is the rocket equation, written down by Konstantin Tsiolkovsky in 1903. It says ∆v scales LOGARITHMICALLY with how much of your rocket is fuel. Want twice the ∆v? You need exponentially more fuel. This is why a Saturn V is 90% propellant. It's why landing on Mars and coming back is so much harder than landing on the Moon. Every gram of mass that isn't fuel gets fought over.",
+  "cur": "De wrede beperking is de raketvergelijking, opgeschreven door Konstantin Tsiolkovski in 1903. Deze zegt dat ∆v LOGARITMISCH schaalt met hoeveel van je raket brandstof is. Wil je twee keer zoveel ∆v? Dan heb je exponentieel meer brandstof nodig. Daarom bestaat een Saturn V voor 90% uit stuwstof. Daarom is landen op Mars en terugkomen zoveel moeilijker dan landen op de maan. Om elk gram massa dat geen brandstof is wordt gevochten."
+ },
+ {
+  "rel": "science/propulsion/_intro.json",
+  "at": "paragraphs.2",
+  "en": "Six sections here. Start with ∆v as mission budget — that's the framing for everything. Then Tsiolkovsky to see why the math is so unforgiving. Specific impulse explains the engine side; C3 and V∞ are the launch-energy and arrival-energy numbers you'll see all over the FLIGHT tab in /missions. The Oberth effect at the end is a rare piece of free magic — burn deep in a gravity well and your fuel does more work.",
+  "cur": "Zes secties hier. Begin met ∆v als missiebudget — dat is het raamwerk voor alles. Dan Tsiolkovsky om te zien waarom de wiskunde zo meedogenloos is. Specifieke impuls legt de motorkant uit; C3 en V∞ zijn de lanceerenergie- en aankomstenergie-getallen die je overal in het FLIGHT-tabblad in /missions zult zien. Het Oberth-effect aan het eind is een zeldzaam stukje gratis magie — ontsteek diep in een zwaartekrachtput en je brandstof doet meer werk."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "title",
+  "en": "Antimatter — the perfect fuel we cannot make",
+  "cur": "Antimaterie — de perfecte brandstof die we niet kunnen maken"
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "intro_sentence",
+  "en": "Matter meeting antimatter annihilates completely, releasing energy no other reaction matches — a few milligrams could in principle drive an interstellar probe, yet humanity has made less than a nanogram of it in total.",
+  "cur": "Materie die antimaterie ontmoet vernietigt volledig en geeft energie vrij die geen andere reactie evenaart — in theorie zou een paar milligram een interstellaire sonde kunnen aandrijven."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "body_paragraphs.0",
+  "en": "The energy case is exact, not approximate. When a proton meets an antiproton they convert entirely into pions, gamma rays, and lighter particles — E = mc² applied in full, with no chemical or nuclear residue. The energy density is roughly 10 billion times that of the best chemical propellant and roughly 1,000 times that of fission or fusion. A matter-antimatter annihilation drive with a magnetic nozzle to direct the charged pion exhaust could, in theory, reach specific impulse values in the millions of seconds and accelerate a spacecraft to a significant fraction of the speed of light.",
+  "cur": "De energiebalans is exact, niet benaderd. Wanneer een proton een antiproton ontmoet, converteren ze volledig naar pionen, gammastralen en lichtere deeltjes — E = mc² volledig toegepast, zonder chemisch of nucleair residu. De energiedichtheid is ongeveer 10 miljard keer die van de beste chemische stuwstof en ongeveer 1.000 keer die van fissie of fusie. Een materie-antimaterie-annihilatie-aandrijving met een magnetische straalbuis om de geladen pion-uitstoot te richten zou in theorie specifieke impulswaarden in de miljoenen seconden kunnen bereiken en een ruimtevaartuig naar een aanzienlijke fractie van de lichtsnelheid kunnen accelereren."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "body_paragraphs.1",
+  "en": "Two problems make this theoretical perfection effectively unreachable with foreseeable technology. The first is production. Antimatter does not exist in useful quantities anywhere accessible — the observable universe appears overwhelmingly matter-dominated, and the reason for that asymmetry is one of the open questions in physics. Antimatter must be manufactured, atom by atom, in particle accelerators. CERN's Antiproton Decelerator produces roughly 10 to 15 nanograms of antiprotons per year at full operation. Scaling current production to the milligrams a probe would need, at current energy costs, yields estimates in the range of tens to hundreds of trillions of dollars per gram — and that assumes the energy is available, not that it is affordable.",
+  "cur": "Twee problemen maken deze theoretische perfectie effectief onbereikbaar met hedendaagse technologie. Het eerste is productie. Antimaterie bestaat niet in bruikbare hoeveelheden op toegankelijke plaatsen — het waarneembare universum lijkt overwegend materie-gedomineerd, en de reden voor die asymmetrie is een van de openstaande vragen in de natuurkunde. Antimaterie moet atoom voor atoom worden gefabriceerd in deeltjesversnellers. De Antiproton Decelerator van CERN produceert bij volledig bedrijf ongeveer 10 tot 15 nanogram antiprotonen per jaar. Opschaling van de huidige productie naar de milligrammen die een sonde nodig zou hebben, tegen de huidige energiekosten, levert schattingen op in de orde van tientallen tot honderden biljoen dollar per gram — en dat gaat ervan uit dat de energie beschikbaar is, niet dat deze betaalbaar is."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "body_paragraphs.2",
+  "en": "The second problem is storage. Antimatter annihilates on contact with ordinary matter, which means it cannot touch any wall, any container, any trace of residual gas. The only known approach is magnetic or electromagnetic trapping — holding antiprotons in a Penning trap or antihydrogen in a magnetic bottle. The record for stored antihydrogen is measured in minutes to hours for small numbers of atoms. Storing milligrams for years-long transit, aboard a spacecraft that must survive launch vibration and radiation, is not a solved problem in any engineering sense.",
+  "cur": "Het tweede probleem is opslag. Antimaterie vernietigt bij contact met gewone materie, wat betekent dat het geen wand, geen container, geen spoor van residueel gas mag aanraken. De enige bekende benadering is magnetische of elektromagnetische opsluiting — antiprotonen vasthouden in een Penning-trap of antihydrogeen in een magnetische fles. Het record voor opgeslagen antihydrogeen wordt gemeten in minuten tot uren voor kleine aantallen atomen. Het opslaan van milligrammen voor jarenlange transit, aan boord van een ruimtevaartuig dat lanceervibratie en straling moet overleven, is in geen enkele technische zin een opgelost probleem."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "body_paragraphs.3",
+  "en": "Partial antimatter schemes — using antiprotons to catalyse fission or fusion reactions rather than fully annihilate — reduce the quantity required, but those concepts still need nanograms or micrograms and still face the same storage constraints. They have been studied on paper at NASA's Marshall Space Flight Center and elsewhere; none has progressed to hardware.",
+  "cur": "Gedeeltelijke antimaterieconcepten — het gebruik van antiprotonen om fissie- of fusiereacties te katalyseren in plaats van volledig te vernietigen — verminderen de benodigde hoeveelheid, maar die concepten hebben nog steeds nanogrammen of microgrammen nodig en hebben te maken met dezelfde opslagbeperkingen. Ze zijn op papier bestudeerd bij NASA's Marshall Space Flight Center en elders; geen ervan is gevorderd tot hardware."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "body_paragraphs.4",
+  "en": "Antimatter propulsion is the limiting case of what physics permits. It sets the ceiling on how efficiently mass can be converted to thrust. It is worth understanding for exactly that reason — it tells you the best that thermodynamics will ever allow. But it is not a technology on any credible roadmap. The production problem alone puts it in a category closer to 'requires a different civilisation' than 'requires more funding'.",
+  "cur": "Antimaterie-aandrijving is het limietgeval van wat de natuurkunde toestaat. Het stelt het plafond vast voor hoe efficiënt massa kan worden omgezet in stuwkracht. Het is juist om die reden de moeite waard om te begrijpen — het vertelt je het beste dat de thermodynamica ooit zal toestaan. Maar het is geen technologie op enige geloofwaardige roadmap. Alleen al het productieprobleem plaatst het in een categorie die dichter bij 'vereist een andere beschaving' ligt dan bij 'vereist meer financiering'."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "diagram_caption",
+  "en": "Energy density comparison: chemical propellant (kerosene/LOX) at roughly 10 MJ/kg, nuclear fission at ~80,000 MJ/kg, fusion at ~300,000 MJ/kg, and matter-antimatter annihilation at ~90,000,000 MJ/kg — each step up is not incremental but a change of kind.",
+  "cur": "Energiedichteheidsvergelijking: chemische stuwstof (kerosine/LOX) bij ongeveer 10 MJ/kg, kernfissie bij ~80.000 MJ/kg, fusie bij ~300.000 MJ/kg, en materie-antimaterie-annihilatie bij ~90.000.000 MJ/kg — elke stap omhoog is niet incrementeel maar een verandering van aard."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "title",
+  "en": "C3 — Characteristic Energy",
+  "cur": "C3 — Karakteristieke energie"
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "intro_sentence",
+  "en": "How much energy per unit mass a rocket needs to leave Earth's gravity well with leftover speed — the standard launch-energy metric.",
+  "cur": "Hoeveel energie per massa-eenheid een raket nodig heeft om uit de zwaartekrachtput van de aarde te ontsnappen met overgebleven snelheid — de standaard lanceringsenergiemaat."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "narrative_101.0",
+  "en": "C3 is mission-engineer slang for one specific question: how hard does the rocket have to throw the spacecraft? It's the energy that's left over once you've climbed out of Earth's gravity well. C3 = 0 means you exactly escape Earth, arriving at infinity with zero speed left. C3 above zero means you got out with extra speed to spare — and that extra speed is what carries you toward Mars or Jupiter or wherever.",
+  "cur": "C3 is missie-ingenieurs-jargon voor één specifieke vraag: hoe hard moet de raket het ruimtevaartuig wegslingeren? Het is de energie die overblijft zodra je uit de zwaartekrachtput van de aarde bent geklommen. C3 = 0 betekent dat je precies aan de aarde ontsnapt, en op oneindig met nul snelheid aankomt. C3 boven nul betekent dat je eruit bent gekomen met extra snelheid over — en die extra snelheid is wat je naar Mars of Jupiter of waar dan ook draagt."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "narrative_101.1",
+  "en": "It's measured in km²/s² (which looks weird but is just velocity squared) so the numbers stay manageable. Mars typically wants C3 = 8 to 12. Direct flights to Jupiter need C3 around 80. New Horizons launched with C3 = 158 — the highest ever — to reach Pluto in nine and a half years instead of decades.",
+  "cur": "Het wordt gemeten in km²/s² (wat vreemd lijkt maar gewoon snelheid in het kwadraat is) zodat de getallen beheersbaar blijven. Mars wil doorgaans C3 = 8 tot 12. Directe vluchten naar Jupiter hebben C3 rond de 80 nodig. New Horizons werd gelanceerd met C3 = 158 — de hoogste ooit — om Pluto in negen en een half jaar te bereiken in plaats van decennia."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "narrative_101.2",
+  "en": "Why does this number matter so much? Because every rocket has a published C3-vs-payload curve. As C3 climbs, the rocket can deliver less mass. Falcon Heavy can throw 16 tonnes at C3 = 10, but only 5 tonnes at C3 = 80. The very first decision in mission design is matching the destination's C3 requirement to a rocket that can lift your spacecraft at that energy. Get this wrong and the mission can't fly.",
+  "cur": "Waarom is dit getal zo belangrijk? Omdat elke raket een gepubliceerde C3-versus-payload-curve heeft. Naarmate C3 stijgt, kan de raket minder massa leveren. Falcon Heavy kan 16 ton wegslingeren bij C3 = 10, maar slechts 5 ton bij C3 = 80. De allereerste beslissing in missieontwerp is het matchen van de C3-vereiste van de bestemming met een raket die je ruimtevaartuig bij die energie kan tillen. Als je dit verkeerd doet, kan de missie niet vliegen."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "body_paragraphs.0",
+  "en": "C3 is the square of the hyperbolic excess velocity. Units: km²/s². It tells you how much energy beyond escape your launch vehicle has to deliver. C3 = 0 means you barely escape Earth's gravity, arriving at infinity with zero speed. C3 = 25 km²/s² means you arrive with V∞ = 5 km/s of leftover heliocentric velocity.",
+  "cur": "C3 is het kwadraat van de hyperbolische excessnelheid. Eenheden: km²/s². Het vertelt je hoeveel energie boven ontsnapping je lanceervoertuig moet leveren. C3 = 0 betekent dat je ternauwernood aan de zwaartekracht van de aarde ontsnapt, en op oneindig met nul snelheid aankomt. C3 = 25 km²/s² betekent dat je aankomt met V∞ = 5 km/s aan overgebleven heliocentrische snelheid."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "body_paragraphs.1",
+  "en": "Launch vehicles are characterised by their C3-vs-payload curve. Falcon Heavy can throw ~16 tonnes to C3=10, but only ~5 tonnes to C3=80. Mars typically wants C3 around 8-12. Jupiter direct: C3 around 80. New Horizons launched with C3 = 158 km²/s² — the highest of any mission ever — to make the trip to Pluto in just 9.5 years.",
+  "cur": "Lanceervoertuigen worden gekarakteriseerd door hun C3-versus-payload-curve. Falcon Heavy kan ~16 ton wegslingeren naar C3=10, maar slechts ~5 ton naar C3=80. Mars wil doorgaans C3 rond de 8-12. Jupiter direct: C3 rond de 80. New Horizons werd gelanceerd met C3 = 158 km²/s² — de hoogste van elke missie ooit — om de reis naar Pluto in slechts 9,5 jaar te maken."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "body_paragraphs.2",
+  "en": "On Orrery's `/missions` FLIGHT tab the C3 of each interplanetary mission is the canonical first-row data point. It's the single number that captures 'how hard was it to launch.'",
+  "cur": "Op de `/missions` FLIGHT-tab van Orrery is de C3 van elke interplanetaire missie het canonieke datapunt op de eerste rij. Het is het enkele getal dat vastlegt 'hoe moeilijk was het om te lanceren.'"
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "formula_caption",
+  "en": "C3 is just V∞ squared. Same physics, different units.",
+  "cur": "C3 is gewoon V∞ in het kwadraat. Dezelfde fysica, verschillende eenheden."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "intro_sentence",
+  "en": "The single number that says whether a mission is possible — total velocity change you need to spend, summed over every burn.",
+  "cur": "Het getal dat bepaalt of een missie mogelijk is — de totale snelheidsverandering die je nodig hebt, opgeteld voor elke manoeuvre."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "narrative_101.0",
+  "en": "Money for spaceflight isn't dollars. It's ∆v — pronounced \"delta-v\" — and it's measured in kilometres per second. Every burn your rocket does costs some ∆v. Every move you make on a trajectory has a price tag in km/s. The mission's ∆v budget is just the running total: launch + injection + course corrections + arrival + landing. Add it up, that's your bill.",
+  "cur": "Geld voor spaceflight zijn geen dollar's. Het is ∆v — uitgesproken als \"delta-v\" — gemeten in kilometer per seconde. Elke motorbrand van je raket kost wat ∆v. Elke beweging op een baan heeft een prijskaartje in km/s. Het ∆v-budget van de missie is gewoon het lopend totaal: lancering + injectie + baanverbeteringen + aankomst + landing. Tel het op, en dat is je rekening."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "narrative_101.1",
+  "en": "Now here's the killer twist. Your rocket doesn't have unlimited ∆v. It has a hard ceiling, set by the Tsiolkovsky equation, dictated entirely by how much of your rocket is fuel and how good your engines are. If your bill exceeds the ceiling, the mission is impossible. Throwing more money at it doesn't fix it. The math wins.",
+  "cur": "Nu komt de zware slag. Je raket heeft niet onbeperkt ∆v. Het heeft een harde plafond, bepaald door de Tsiolkovsky-vergelijking, volledig afhankelijk van hoeveel van je raket uit brandstof bestaat en hoe goed je motoren zijn. Als je rekening het plafond overschrijdt, is de missie onmogelijk. Er meer geld aan uitgeven helpt niet. De wiskunde wint."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "narrative_101.2",
+  "en": "Quick reference numbers to internalise: getting off Earth into orbit takes ~9.4 km/s. From orbit to a Hohmann to Mars adds ~3.6. Insertion at Mars adds another ~2. That’s around 15 km/s to reach the Mars system and brake into orbit — Mars’s thin atmosphere then does most of the landing. This is why landing on Mars is so much harder than landing on the Moon, and why every gram of mass on a Mars lander gets fought over.",
+  "cur": "Referentiecijfers om te onthouden: van de aarde naar een baan gaat ~9,4 km/s. Van baan naar een Hohmann-overdracht naar Mars voegt ~3,6 toe. Inbrenging in de baan rond Mars voegt nog eens ~2 toe. Dat is ongeveer 15 km/s om het Mars-systeem te bereiken en in een baan af te remmen — Mars' dunne atmosfeer doet het meeste van de landing. Daarom is landen op Mars veel moeilijker dan op de maan, en waarom elk gram massa op een Mars-lander zo zwaar wordt bevochten."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "body_paragraphs.0",
+  "en": "∆v (delta-v) is the bookkeeping currency of spaceflight. Every engine burn — getting off Earth, leaving orbit, correcting course, slowing down at the destination — costs you some change in velocity. Add them all up and you have the mission's ∆v budget.",
+  "cur": "∆v (delta-v) is de boekhoudkundige munteenheid van spaceflight. Elke motorbrand — van aarde wegkomen, baan verlaten, koers corrigeren, afremmen bij de bestemming — kost je wat snelheidsverandering. Tel ze allemaal op en je hebt het ∆v-budget van de missie."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "body_paragraphs.1",
+  "en": "On the supply side: your rocket's ∆v capability comes from the Tsiolkovsky equation — engine `Isp` and propellant fraction set the ceiling. On the demand side: trajectory design picks the path with the cheapest summed cost. A mission flies if budget supply ≥ demand. It doesn't if it doesn't, no matter how much money you throw at the problem.",
+  "cur": "Aan de voorzijde: de ∆v-capaciteit van je raket komt uit de Tsiolkovsky-vergelijking — motor `Isp` en brandstoffractie bepalen het plafond. Aan de vraagzijde: trajectoryontwerp kiest het pad met de goedkoopste opgetelde kosten. Een missie vliegt als budgetaanbod ≥ vraag. Het doet niet als het niet doet, ongeacht hoeveel geld je aan het probleem gooit."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "body_paragraphs.2",
+  "en": "Some reference numbers: Earth surface to LEO costs ~9.4 km/s of ∆v (most of it fighting gravity and atmosphere). LEO to a Hohmann transfer to Mars adds ~3.6 km/s. Mars orbit insertion adds another ~2 km/s. That’s around 15 km/s to reach the Mars system and capture into orbit — Mars’s thin atmosphere handles the descent, not additional propulsion.",
+  "cur": "Enkele referentiecijfers: Aardoppervlak naar LEO kost ~9,4 km/s ∆v (het meeste ervan tegen zwaartekracht en atmosfeer). LEO naar een Hohmann-overdracht naar Mars voegt ~3,6 km/s toe. Inbrenging in Mars-baan voegt nog ~2 km/s toe. Dat is ongeveer 15 km/s om het Mars-systeem te bereiken en vast te leggen in een baan — Mars' dunne atmosfeer verzorgt de afdaling, niet aanvullende voortstuwing."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "diagram_caption",
+  "en": "Stacked bars: launch ∆v + injection + cruise corrections + arrival = total mission budget.",
+  "cur": "Gestapelde balken: lancering ∆v + injectie + rondvaartcorrecties + aankomst = totaal missiebudget."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "title",
+  "en": "Engine clustering — Saturn V's 5 vs Starship's 33",
+  "cur": "Motorclustering — Saturn V's 5 vs Starships 33"
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "intro_sentence",
+  "en": "Two opposite philosophies for getting megaton-class thrust: build one giant engine and use a few of them (F-1, RS-25), or build a medium engine and use a lot of them (Merlin, Raptor). The second won.",
+  "cur": "Twee tegengestelde filosofieën om megaton-klasse stuwkracht te halen: bouw één gigantische motor en gebruik er een paar (F-1, RS-25), of bouw een middelgrote en gebruik er veel (Merlin, Raptor). De tweede won."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "body_paragraphs.0",
+  "en": "Saturn V's first stage clustered five F-1 engines. Each F-1 produced 6.77 MN of thrust at sea level — at the time and for fifty years afterwards, the largest liquid engine ever flown. The development arc was long and painful: combustion instability nearly killed the programme through the early 1960s; Rocketdyne ultimately solved it by tuning the injector plate to interrupt resonant modes. The Apollo programme's bet was that fewer, larger engines meant fewer points of failure during a 165-second first-stage burn. The Soviet response was the opposite: the N1's first stage clustered *thirty* NK-15 engines. Without an F-1-class engine in their inventory and with NK-15s small and cheap to produce, the Soviets chose engine count over engine size. All four N1 flights failed — though the failures were as much about plumbing and KORD shutdown-controller software as the cluster itself.",
+  "cur": "Saturn V's eerste trap clusterde vijf F-1's. Elke F-1 leverde 6,77 MN op zeeniveau — destijds en vijftig jaar daarna de grootste vloeibare motor ooit gevlogen. De ontwikkelingsboog was lang en pijnlijk: verbrandingsinstabiliteit doodde bijna het programma in de vroege jaren 1960; Rocketdyne loste het uiteindelijk op door de injectorplaat zo af te stemmen dat resonante modi werden onderbroken. Apollo's gok: minder grotere motoren betekent minder faalpunten tijdens een 165-seconden eerste-trap burn. Het Sovjet-antwoord was tegengesteld: de eerste trap van de N1 clusterde *dertig* NK-15. Zonder F-1-klasse motor in voorraad en met kleine, goedkoop te produceren NK-15s kozen de Sovjets aantal boven grootte. Alle vier N1-vluchten faalden — al lagen de mislukkingen evenzeer aan leidingwerk en KORD-shutdown-controllersoftware als aan het cluster zelf."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "body_paragraphs.1",
+  "en": "The modern verdict is the opposite of Saturn V's. Falcon 9 clusters nine Merlin 1Ds in a 3-3-3 grid (later an 'octaweb' — 8 around the perimeter, 1 centre) for ~7.6 MN at lift-off. Falcon Heavy stacks three Falcon 9 first stages side by side: 27 Merlins, 22.8 MN. Super Heavy carries 33 Raptor 2 engines (13 in a central cluster, 20 around the outer ring) for ~76 MN at lift-off, double Saturn V's stage thrust. Three things changed since 1969 that swung the argument toward many-small. First, modern thrust-vector and engine-shutdown control can compensate for an engine failure mid-flight: Falcon 9 has lost engines on ascent (CRS-1, October 2012) and still inserted payload. Second, mass production of one engine across hundreds of vehicles drives unit cost down — economics that Saturn V's nine-flight career could never achieve. Third, computational fluid dynamics now lets you predict and damp the acoustic and base-heating interactions that historically made clusters fragile.",
+  "cur": "Het moderne oordeel is tegenovergesteld aan Saturn V. Falcon 9 clustert negen Merlin 1D's in een 3-3-3-rooster (later een 'octaweb' — 8 perimeter, 1 centraal) voor ~7,6 MN bij liftoff. Falcon Heavy stapelt drie Falcon 9 eerste trappen naast elkaar: 27 Merlins, 22,8 MN. Super Heavy draagt 33 Raptor 2-motoren (13 in centraal cluster, 20 in buitenring) voor ~76 MN bij liftoff, dubbel de trapstuwkracht van Saturn V. Drie dingen veranderden sinds 1969 die het argument naar veel-klein verschoven. Eén: moderne stuwkracht-vectoring + motor-uitschakelregeling kan een motorstoring tijdens vlucht compenseren — Falcon 9 heeft motoren verloren tijdens stijging (CRS-1, oktober 2012) en de payload toch ingebracht. Twee: massaproductie van één motor over honderden voertuigen drukt stuksprijs — economie die de negen vluchten van Saturn V nooit konden bereiken. Drie: CFD laat nu toe akoestische + basis-verhitting-interacties te voorspellen + dempen die clusters historisch fragiel maakten."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "body_paragraphs.2",
+  "en": "Engine clusters fail differently from single engines. With five F-1s, losing one means you cannot finish the mission — Apollo 6 lost two J-2s on its S-II stage and limped to a degraded orbit, ultimately a non-mission. With 33 Raptors, losing one (or three, or six) on Super Heavy is designed-for: the avionics shut down the failed engine plus its symmetric partner to keep the thrust vector through the centre of mass, then redistributes throttle across the survivors. Falcon 9 can lose up to two of nine engines after a critical altitude and still complete the primary mission. The cluster-vs-monolith trade has shifted: clustering used to mean fragility because one engine's plumbing rupture could cascade; modern compartmentalisation (Raptor's individual shields, fast-acting isolation valves) means a single engine RUD is contained, not catastrophic.",
+  "cur": "Motorclusters falen anders dan enkele motoren. Met vijf F-1s betekent één verliezen dat je de missie niet kunt afmaken — Apollo 6 verloor twee J-2s op zijn S-II trap en wist met moeite een gedegradeerde baan te bereiken, uiteindelijk niet-missie. Met 33 Raptors is één verliezen (of drie, of zes) op Super Heavy ontworpen-voor: de avionica schakelt de gefaalde motor + zijn symmetrische partner uit om de stuwkrachtvector door het massamiddelpunt te houden, en herverdeelt dan smoring over de overlevenden. Falcon 9 kan tot twee van negen motoren verliezen na een kritische hoogte en alsnog de primaire missie voltooien. De cluster-vs-monoliet afweging is verschoven: clusteren betekende ooit fragiliteit omdat één leidingbreuk kon cascaderen; moderne compartimentering (Raptors individuele schilden, snelwerkende isolatieventielen) maakt dat een enkele motor-RUD ingedamd is, niet catastrofaal."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "body_paragraphs.3",
+  "en": "There is a remaining argument for the monolithic approach. Hydrolox upper stages and core stages still prefer a few large engines: SLS uses 4 RS-25s, Ariane 6 uses 1 Vulcain 2.1, Long March 5 uses 2 YF-77. Hydrogen plumbing is so volumetrically large and so cold that multiplying engine count multiplies tank-bottom complexity. The all-staged-combustion Russian RD-170 generation (and its descendant the RD-180 / RD-191) also stayed at one to four big chambers. The pattern: kerolox and methalox have gone many-small; hydrolox has stayed few-large. The Raptor's full-flow staged combustion at engine-cluster scale is what made Super Heavy possible — that combination of cycle, propellant, and clustering had not previously been attempted.",
+  "cur": "Een resterend argument voor de monolithische aanpak. Hydrolox bovenste trappen + kerntrappen verkiezen nog steeds een paar grote motoren: SLS gebruikt 4 RS-25s, Ariane 6 gebruikt 1 Vulcain 2.1, Long March 5 gebruikt 2 YF-77. Waterstofleidingwerk is volumetrisch zo groot en zo koud dat het vermenigvuldigen van motoraantal de complexiteit aan de tankbodem vermenigvuldigt. De volledig-staged-combustion Russische RD-170 generatie (en haar afstammelingen RD-180 / RD-191) bleef ook op één tot vier grote kamers. Het patroon: kerolox + methalox gingen veel-klein; hydrolox bleef weinig-groot. Raptors volle-stroom staged combustion op cluster-schaal is wat Super Heavy mogelijk maakte — die combinatie van cyclus, drijfgas + clustering was eerder niet geprobeerd."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "diagram_caption",
+  "en": "Saturn V S-IC: 5 × F-1 = 33.9 MN. Soviet N1: 30 × NK-15 = 45 MN (4 failures). Falcon 9: 9 × Merlin = 7.6 MN. Falcon Heavy: 27 × Merlin = 22.8 MN. Super Heavy: 33 × Raptor = 76 MN. The historical trend: more engines, smaller each, with modern avionics absorbing single-engine failures.",
+  "cur": "Saturn V S-IC: 5 × F-1 = 33,9 MN. Sovjet N1: 30 × NK-15 = 45 MN (4 mislukkingen). Falcon 9: 9 × Merlin = 7,6 MN. Falcon Heavy: 27 × Merlin = 22,8 MN. Super Heavy: 33 × Raptor = 76 MN. Historische trend: meer motoren, elk kleiner, met moderne avionica die enkelvoudige storingen opvangt."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "title",
+  "en": "Engine types — chemical, electric, nuclear",
+  "cur": "Motortypen — chemisch, elektrisch, kernenergie"
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "intro_sentence",
+  "en": "There are three families of rocket engine that have ever flown: chemical (everything that gets things off Earth), electric (everything that does long deep-space cruise), and nuclear thermal (NERVA tested, none yet operational).",
+  "cur": "Er zijn drie families raketmotoren die ooit hebben gevlogen: chemisch (alles wat dingen van de aarde afbrengt), elektrisch (alles wat lang diepruimtevaartkruist), en nucleair thermisch (NERVA getest, nog geen operationeel)."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "body_paragraphs.0",
+  "en": "Chemical engines are the only family with enough thrust to lift their own weight against Earth's gravity, so every launcher in history has been chemical. They split into three sub-families. Solid motors are basically a steel tube filled with rubbery propellant cast around a hollow core — you light one end, it burns at a controlled rate, and you cannot turn it off. Cheap, simple, reliable, but no throttling and no shut-down: the Space Shuttle SRBs, Ariane 5 / Ariane 6 boosters, SLS boosters, Indian PSLV stages, every ICBM, and most military missiles are solid. Liquid bipropellant engines pump a fuel and an oxidiser separately into a combustion chamber — far more flexible (throttling, restart, shutdown, throttling deep) but mechanically intricate: the Saturn V F-1, Falcon 9 Merlin, RS-25, Vulcain, Raptor, YF-100. Hybrid engines (solid fuel + liquid or gaseous oxidiser) are a quiet third path used by SpaceShipTwo and a handful of sounding rockets — they trade liquid's complexity for solid's lack of shutdown.",
+  "cur": "Chemische motoren zijn de enige familie met voldoende stuwkracht om hun eigen gewicht tegen de zwaartekracht van de aarde op te heffen, dus elke lanceerder in de geschiedenis is chemisch geweest. Ze splitsen zich in drie subfamilies. Vaste motoren zijn in principe een stalen buis gevuld met rubbery brandstof gegoten rond een hol hart — je steekt één uiteinde aan, het brandt met een gecontroleerde snelheid, en je kunt het niet uitschakelen. Goedkoop, eenvoudig, betrouwbaar, maar geen throttling en geen afsluiting: de Space Shuttle SRBs, Ariane 5 / Ariane 6 boosters, SLS boosters, Indiase PSLV-trappen, elke ICBM, en de meeste militaire raketten zijn vast. Vloeibare tweecomponentmotoren pompen een brandstof en een oxidator apart in een verbrandingskamer — veel flexibeler (throttling, herstart, afsluiting, diep drosselen) maar mechanisch ingewikkeld: de Saturn V F-1, Falcon 9 Merlin, RS-25, Vulcain, Raptor, YF-100. Hybridmotoren (vaste brandstof + vloeibare of gasvormige oxidator) zijn een stille derde weg gebruikt door SpaceShipTwo en een handvol onderzoeksraketten — ze ruilen de complexiteit van vloeistof voor het gebrek aan afsluiting van vast."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "body_paragraphs.1",
+  "en": "Inside the liquid family, the engine *cycle* matters as much as the propellants. Gas-generator (Merlin, F-1): a small fraction of propellant burns in a side chamber to drive the turbopump, then dumps overboard — wasteful but simple. Expander (RL10): the cryogenic fuel cools the nozzle, vaporises, and the resulting gas drives the turbopump — elegant but limited to small engines. Staged combustion (RS-25, NK-33, Raptor): all the propellant goes through the preburner-then-main-chamber path, capturing all the energy. Full-flow staged combustion (Raptor, the first ever flown): two preburners, one oxidiser-rich and one fuel-rich, driving two turbopumps — the highest-performance arrangement ever attempted. Each step up the cycle ladder buys you 20-40 seconds of specific impulse but adds plumbing, mass, and development cost.",
+  "cur": "Binnen de vloeibare familie is de motor *cyclus* net zo belangrijk als de drijfstoffen. Gas-generator (Merlin, F-1): een kleine fractie van brandstof brandt in een zijkamer om de turbopump aan te drijven, en wordt dan overboord gegoten — verspillend maar eenvoudig. Expander (RL10): de cryogene brandstof koelt de mondstuk, verdampt, en het resulterende gas drijft de turbopump aan — elegant maar beperkt tot kleine motoren. Staged combustion (RS-25, NK-33, Raptor): alle brandstof gaat door de preburner-dan-hoofdkamer-weg, waarbij alle energie wordt opgevangen. Full-flow staged combustion (Raptor, de eerste ooit gevlogen): twee preburners, een oxidator-rijk en een brandstof-rijk, die twee turbopumpen aandrijven — de best presterende rangschikking ooit geprobeerd. Elke stap omhoog op de cyclus-ladder geeft je 20-40 seconden specifiek impuls maar voegt leidingen, massa en ontwikkelingskosten toe."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "body_paragraphs.2",
+  "en": "Electric propulsion (ion drives, Hall-effect thrusters) does not lift anything off a planet, but once you are in space its specific impulse is 10-30× higher than any chemical engine. The trade is thrust: a chemical first stage produces millions of newtons; a state-of-the-art Hall thruster (NASA Glenn AEPS, 12 kW) produces about 0.6 N — less than the weight of an apple. You make it up in time: BepiColombo's four T6 gridded-ion thrusters have been firing nearly continuously for years to brake into Mercury orbit, where a chemical-only mission would need an impossibly large fuel load. Dawn used the same approach to orbit two asteroids on one launch. The power source is solar in inner solar system, RTG-driven for outer-planet concepts.",
+  "cur": "Elektrische voortstuwing (ionenmotoren, Hall-effect thrusters) heft niets van een planeet af, maar zodra je in de ruimte bent is het specifieke impuls 10-30× hoger dan elke chemische motor. De ruilhandel is stuwkracht: een chemische eerste trap produceert miljoenen newton; een geavanceerde Hall thruster (NASA Glenn AEPS, 12 kW) produceert ongeveer 0,6 N — minder dan het gewicht van een appel. Je maakt het goed in de tijd: de vier T6 roosterkracht-ionmotoren van BepiColombo zijn al jaren bijna continu aan het werk om af te remmen in een Mercuriusbaan, waarbij een chemisch-enig missie een onmogelijk grote brandstoftank zou nodig hebben. Dawn gebruikte dezelfde benadering om twee asteroïden op één lancering in een baan om zich heen te brengen. De stroombron is zonne-energie in het binnenste zonnestelsel, RTG-aangedreven voor concepten van de buitenplaneten."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "body_paragraphs.3",
+  "en": "Nuclear thermal propulsion (NTP) is the family that has been almost-ready since 1965. The principle: hydrogen flows past a hot nuclear reactor, heats to 2500-3000 K, and expands through a nozzle. Isp is 800-1000 seconds — double a hydrolox engine — with thrust in the 50-250 kN range (lower than chemical but vastly higher than electric). NASA's NERVA programme test-fired full-scale engines through the 1960s; the more recent DRACO demonstrator (NASA + DARPA) targeted a ~2027 in-orbit test but was cancelled in the 2026 budget. As of 2026 no NTP engine has flown. The blocker has always been political and regulatory rather than technical: launching a nuclear reactor, even an unfuelled one designed to go critical only in orbit, sits in a category of public-acceptance and treaty constraint that has historically killed the programme every decade or so.",
+  "cur": "Nucleair thermische voortstuwing (NTP) is de familie die sinds 1965 bijna klaar is. Het principe: waterstof stroomt langs een hete kernreactor, verwarmt tot 2500-3000 K, en expandeert door een mondstuk. Isp is 800-1000 seconden — het dubbele van een hydrolox-motor — met stuwkracht in het bereik van 50-250 kN (lager dan chemisch maar veel hoger dan elektrisch). NASA's NERVA-programma voerde in de jaren zestig volledige motoren uit; de recentere DRACO-demonstrator (NASA + DARPA) richtte zich op een test in een baan rond ~2027 maar werd in de begroting van 2026 geannuleerd. Vanaf 2026 is geen NTP-motor gevlogen. De blokkade is altijd eerder politiek en regelgevend dan technisch geweest: het lanceren van een kernreactor, zelfs een zonder brandstof ontworpen om alleen in een baan kritiek te worden, valt in een categorie van publieke aanvaarding en verdragbeperkingen die het programma historisch elke tien jaar of zo hebben gedood."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "diagram_caption",
+  "en": "Chemical (solid / liquid gas-generator / liquid staged / full-flow staged) for lift-off and ascent. Electric (Hall / gridded ion) for long deep-space cruise. Nuclear thermal (NERVA tested 1960s; no NTP engine has flown) for high-thrust + high-Isp transit.",
+  "cur": "Chemisch (vast / vloeibaar gas-generator / vloeibaar staged / full-flow staged) voor lancering en opstijging. Elektrisch (Hall / roosterkracht-ion) voor lange diepruimtekruisen. Nucleair thermisch (NERVA getest 1960s; geen NTP-motor heeft gevlogen) voor hoge stuwkracht + hoog Isp transit."
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "title",
+  "en": "Expander cycle — powered by heat, not fire",
+  "cur": "Expander cycle — aangedreven door warmte, niet door vuur"
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "intro_sentence",
+  "en": "Let the cryogenic fuel soak up heat off the engine's own nozzle, flash to gas, and spin the turbopump with it. No gas generator, no preburner — the engine's waste heat is the power source. Clean and reliable, but it cannot scale up.",
+  "cur": "Laat het cryogene brandstof de hitte van de engine-uitlaat opnemen, verdampen tot gas onder hoge druk, en dat gas gebruik voor de turbinepomp."
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "body_paragraphs.0",
+  "en": "A rocket chamber and nozzle are ferociously hot, and a cryogenic engine already pumps its freezing fuel through channels in the chamber walls to keep them from melting — regenerative cooling. The expander cycle turns that cooling job into the engine's power plant. Liquid hydrogen (or methane) enters the wall channels near the nozzle, absorbs a huge amount of heat, and flashes into a hot, high-pressure gas. That gas is expanded through the turbine to drive the turbopump, and only then is it delivered to the main chamber to burn. No propellant is set on fire just to run the pumps, so the turbine gas is benign, soot-free, and gentle on the hardware — which is why expander engines are famously reliable and restartable.",
+  "cur": "Een raketmotor en uitlaat zijn verschrikkelijk heet, en een cryogene engine pompt al zijn bevroren brandstof door kanalen in de motorwanden om te voorkomen dat ze smelten — regeneratieve koeling. De expander cycle maakt die koeltaak tot de energiecentrale van de engine. Vloeibare waterstof (of methaan) komt de wandkanalen in bij de uitlaat, neemt een enorme hoeveelheid warmte op, en verdampt tot heet, hogedruk gas. Dat gas wordt uitgebreid door de turbine om de turbinepomp aan te drijven, en pas dan wordt het naar de hoofdmotor gebracht om te verbranden. Geen brandstof wordt alleen maar aangestoken om de pompen te laten draaien, dus het turbinegas is onschadelijk, roetvrij, en voorzichtig voor het materiaal — daarom zijn expander engines beroemd betrouwbaar en opnieuw startbaar."
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "body_paragraphs.1",
+  "en": "The catch is a hard physical ceiling. The power you can extract depends on how much heat the walls can hand to the fuel, and that scales with the *surface area* of the chamber and nozzle. But the thrust — and therefore the propellant flow the pumps must move — scales with chamber *volume*. As you make the engine bigger, volume grows faster than surface area, so at some point the walls simply cannot heat enough gas to drive pumps large enough for the flow. In practice a closed expander tops out around a few hundred kilonewtons of thrust. That makes it perfect for upper stages and impossible for a big first stage.",
+  "cur": "Het probleem is een harde fysische grens. Het vermogen dat je kunt uitpakken hangt af van hoeveel warmte de wanden aan de brandstof kunnen afgeven, en dat schaalt met het *oppervlak* van de motor en uitlaat. Maar de stuwkracht — en dus de brandstofstroom die de pompen moeten verplaatsen — schaalt met het *volume* van de kamer. Naarmate je de engine groter maakt, groeit het volume sneller dan het oppervlak, dus op een gegeven moment kunnen de wanden simpelweg niet genoeg gas opwarmen om pompen groot genoeg aan te drijven. In de praktijk bereikt een gesloten expander ongeveer enkele honderden kilonewton stuwkracht. Dat maakt het perfect voor bovenstadia en onmogelijk voor een grote eerste trap."
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "body_paragraphs.2",
+  "en": "The classic is the RL10, which first flew on Centaur in 1962 and is still in production — one of the longest careers of any engine. That thrust ceiling applies to the fully closed cycle; switching to the expander-bleed variant breaks it. Bleed taps off a portion of the heated gas to drive the turbine and then dumps it overboard rather than routing all of it to the chamber — giving up a little Isp in exchange for far more power. Japan's LE-9 shows how far it can go: an expander-bleed engine producing 1,471 kN, it powers the first stage of the H3, something a closed expander could never do. Its sibling the LE-5B and Europe's Vinci on Ariane 6 use the same bleed approach for upper stages. Where staged combustion chases raw performance, the expander cycle chases reliability and restartability for the quiet, precise work of putting a payload exactly where it belongs.",
+  "cur": "De klassieker is de RL10, die voor het eerst in 1962 op Centaur vloog en nog steeds in productie is — één van de langste carrières van alle engines. Die stuwkrachtgrens geldt voor de volledig gesloten cycle; overschakelen naar de expander-bleed variant doorbreekt het. Bleed takt een gedeelte van het verhitte gas af om de turbine aan te drijven en gooit het dan overboord in plaats van alles naar de kamer te leiden — je geeft wat Isp op voor veel meer vermogen. Japans LE-9 laat zien hoe ver het kan gaan: een expander-bleed engine met 1.471 kN, het voedert de eerste trap van de H3 — iets wat een gesloten expander nooit kon doen. Zijn broer de LE-5B en Europas Vinci op Ariane 6 gebruiken dezelfde bleed-aanpak voor bovenstadia. Waar staged combustion naar rauw vermogen jaagt, jaagt de expander cycle naar betrouwbaarheid en opnieuw startbaarheid voor het stille, nauwkeurige werk van een lading precies op de plaats te zetten waar het hoort."
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "diagram_caption",
+  "en": "The cryogenic fuel is heated to gas in the nozzle's cooling channels, drives the turbopump, then burns in the chamber. Closed (RL10) keeps all the gas; expander-bleed (LE-5B, LE-9) dumps a fraction to lift the thrust ceiling.",
+  "cur": "De cryogene brandstof wordt in de koelkanalen van de uitlaat tot gas verhit, drijft de turbinepomp aan, en brandt dan in de kamer. Gesloten (RL10) houdt al het gas; expander-bleed (LE-5B, LE-9) gooit een fractie overboord om de stuwkrachtgrens op te tillen."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "title",
+  "en": "Fuels and oxidisers — kerolox, hydrolox, methalox, hypergolics, solids",
+  "cur": "Brandstoffen en oxidatoren — kerolox, hydrolox, methalox, hypergolen, vaste"
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "intro_sentence",
+  "en": "Five propellant combinations cover almost every orbital flight ever flown. Each one is a trade between specific impulse, density, storability, handling, and what you can make on Mars.",
+  "cur": "Vijf drijfgascombinaties dekken bijna elke ooit gevlogen baanvlucht. Elk is een afweging tussen Isp, dichtheid, opslag, hantering en wat je op Mars kunt maken."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "body_paragraphs.0",
+  "en": "Kerolox (kerosene + liquid oxygen) is the workhorse of orbital launch. The kerosene is a tightly specified grade called RP-1 (Rocket Propellant 1) — ordinary jet fuel, refined to remove the wax and sulphur that would coke a rocket engine and stripped of the alkenes that polymerise under heat. LOX is loaded chilled. The combination gives moderate Isp (~300 s sea level, ~340 vacuum), high density (so the tanks stay small), and clean ground handling. Saturn V first stage, Falcon 9, Atlas V, Soyuz, Long March 2/3/4, India's PSLV upper stages are all kerolox. The downside is soot: kerosene burns dirty, coking the engine internally and limiting reusability — Merlin works around this with sea-level chamber pressures kept well below the staged-combustion sweet spot.",
+  "cur": "Kerolox (kerosine + vloeibaar zuurstof) is het werkpaard van de baanlancering. De kerosine is een strak gespecifieerde kwaliteit genaamd RP-1 (Rocket Propellant 1) — gewone luchtvaartkerosine, geraffineerd om was + zwavel te verwijderen die een motor zouden verkooksen, en ontdaan van alkenen die onder hitte polymeriseren. LOX onderkoeld geladen. De combinatie geeft gematigde Isp (~300 s zeeniveau, ~340 vacuüm), hoge dichtheid (tanks blijven klein), schone grondafhandeling. Saturn V eerste trap, Falcon 9, Atlas V, Soyuz, Long March 2/3/4, bovenste trappen van de Indiase PSLV zijn allemaal kerolox. Nadeel: roet — kerosine brandt vuil, verkooksingt motor van binnen en beperkt herbruikbaarheid. Merlin omzeilt dit door kamerdruk ruim onder de staged-combustion sweet-spot te houden."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "body_paragraphs.1",
+  "en": "Hydrolox (liquid hydrogen + liquid oxygen) is the highest-Isp chemical pair humanity flies (~450 s vacuum on RS-25). Hydrogen burns to water, no soot. The penalty is density: liquid H₂ is about 70 kg/m³ versus kerosene's 800 kg/m³, so the fuel tank is enormous and most of the rocket becomes insulation. Hydrolox is therefore an *upper-stage* propellant for almost all launchers (Centaur, DCSS, ICPS, the upper stages of Ariane 5/6, Long March 5, H-IIA) and only used at booster scale where extreme Isp is paid for in vehicle size — Saturn V S-II + S-IVB, Space Shuttle external tank + RS-25, SLS core stage, Ariane 5 Vulcain core. Boil-off is the operational headache: liquid H₂ at 20 K cannot sit on the pad for long.",
+  "cur": "Hydrolox (vloeibare waterstof + vloeibare zuurstof) is het chemische paar met de hoogste soortelijke impuls dat de mensheid gebruikt (~450 s vacuüm bij RS-25). Waterstof brandt af tot water, geen roet. Het nadeel is de dichtheid: vloeibare H₂ heeft een dichtheid van ongeveer 70 kg/m³ tegenover kerosine's 800 kg/m³, dus de brandstoftank is enorm en het grootste deel van de raket wordt isolatie. Hydrolox is daarom een *boventraps*-brandstof voor bijna alle lanceervoertuigen (Centaur, DCSS, ICPS, de bovenstadia van Ariane 5/6, Long March 5, H-IIA) en wordt alleen op boosterscale gebruikt waar extreme soortelijke impuls wordt betaald met voertuiggrootte — Saturn V S-II + S-IVB, Space Shuttle externe tank + RS-25, SLS kernstadium, Ariane 5 Vulcain kernstadium. Verdamping is de operationele hoofdpijn: vloeibare H₂ op 20 K kan niet lang op de lanceerbaan staan."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "body_paragraphs.2",
+  "en": "Methalox (liquid methane + LOX) is the new arrival, operational with Raptor on Starship (2023) and Zhuque-2 (2023, first to orbit), and coming on Vulcan (BE-4), Neutron, and Terran R. Three properties make it interesting. First, methane density is ~420 kg/m³ — about 6× hydrogen, so the tank is sane. Second, it burns clean enough to be reusable (no coking like RP-1). Third, methane and oxygen can both be made on Mars from atmospheric CO₂ and ice via the Sabatier reaction — the entire SpaceX Mars architecture rests on this. Isp is between kerolox and hydrolox (~330 s sea level, ~380 vacuum), which is a sweet-spot value for a single-stage-to-orbit-class vehicle.",
+  "cur": "Methalox (vloeibaar methaan + LOX) is de nieuwkomer, operationeel met Raptor op Starship (2023) en Zhuque-2 (2023, eerste in baan), en op komst op Vulcan (BE-4), Neutron en Terran R. Drie eigenschappen maken het interessant. Eén: methaan-dichtheid ~420 kg/m³ — ~6× waterstof, redelijke tank. Twee: brandt schoon genoeg om herbruikbaar te zijn (geen verkooksing als RP-1). Drie: methaan + zuurstof kunnen beide op Mars worden gemaakt uit atmosferisch CO₂ + ijs via Sabatier-reactie — de hele SpaceX-Mars-architectuur leunt daarop. Isp tussen kerolox en hydrolox (~330 s zeeniveau, ~380 vacuüm), sweet-spot waarde voor een voertuig van klasse single-stage-to-orbit."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "body_paragraphs.3",
+  "en": "Hypergolic propellants (the storable family) ignite spontaneously on contact — no spark, no preburner. The canonical pair is UDMH (unsymmetrical dimethylhydrazine) or MMH (monomethylhydrazine) as fuel with N₂O₄ (dinitrogen tetroxide) as oxidiser. They are filthy: UDMH is a carcinogen, N₂O₄ is acutely toxic, both can sit in a sealed tank for years. The combination ran every Apollo Service Module, every Apollo LM ascent + descent engine, every Space Shuttle OMS burn, Soyuz / Progress orbital manoeuvring, and almost every Chinese / Russian / Indian deep-space probe's main engine. The reason: instant ignition every time, decade-long shelf life, no cryogenic plumbing. Modern Western missions have tried to phase them out (Dragon's Draco runs on safer monopropellant blends, JWST cold-gas thrusters use hydrazine alone) but the bulk of deep-space propulsion is still hypergolic.",
+  "cur": "Hyperbolische drijfstoffen (de opslagbare familie) ontsteken spontaan bij contact — geen vonk, geen voorbrander. Het canonieke paar is UDMH (ongelijke dimethylhydrazine) of MMH (monometylhydrazine) als brandstof met N₂O₄ (distikstoftetroxide) als oxidator. Ze zijn vies: UDMH is een carcinogeen, N₂O₄ is acuut toxisch, beide kunnen jaren in een gesloten tank zitten. De combinatie dreef elke Apollo Service Module aan, elke Apollo LM opstijg- en daalmottor, elke Space Shuttle OMS-verbranding, Soyuz / Progress baanmanoeuvres, en vrijwel elke hoofdmotor van Chinese / Russische / Indiase dieptesondes. De reden: onmiddellijke ontsteking elke keer, decennia durende houdbaarheid, geen cryogene leidingen. Moderne westerse missies hebben geprobeerd ze uit te faseren (Dragon's Draco werkt op veiliger monodrijfstofmengsels, JWST koudgasthrusters gebruiken alleen hydrazine) maar het gros van de diepruntepropulsie is nog steeds hyperbolisch."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "body_paragraphs.4",
+  "en": "Solid propellants are a single cast slug of rubbery binder (HTPB, polybutadiene-based) loaded with ammonium perchlorate (the oxidiser) and aluminium powder (a high-energy fuel additive). The grain is cast around a hollow core whose cross-section sets the burn-rate profile — a star-shaped core gives a long even thrust, a cylindrical core gives a regressive (declining) profile. Once lit, you cannot stop or throttle it; you can only choose how the grain was originally cast. Isp is low (~250 s) but thrust is enormous and the hardware is simple: SLS boosters produce 16 MN each, more than four Merlin Vacuums. The Space Shuttle SRBs, Ariane 6 P120C, every ICBM, India's PSLV first stage, every air-to-air missile, and most CubeSat kick stages are solid.",
+  "cur": "Vaste drijfgassen zijn één enkel gegoten blok rubberachtige binder (HTPB, polybutadieen-basis) geladen met ammoniumperchloraat (oxidator) en aluminiumpoeder (hoog-energie brandstofadditief). Het korrel is gegoten rond een holle kern waarvan de dwarsdoorsnede het brandsnelheidprofiel bepaalt — sterkern geeft lange gelijkmatige stuwkracht, cilinderkern geeft regressief (afnemend) profiel. Eenmaal aangestoken, niet te stoppen of te smoren; je kiest alleen hoe het korrel oorspronkelijk is gegoten. Isp laag (~250 s) maar stuwkracht enorm en hardware simpel: SLS-boosters leveren elk 16 MN, meer dan vier Merlin Vacuum. Space Shuttle-SRBs, Ariane 6 P120C, elke ICBM, eerste trap van Indiase PSLV, elke lucht-luchtraket, en de meeste CubeSat kick-trappen zijn vast."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "diagram_caption",
+  "en": "Five families: kerolox (workhorse first stages), hydrolox (high-Isp upper stages + heavy-lift cores), methalox (reusable + Mars-makeable), hypergolics (long-shelf-life deep-space + manoeuvring), solids (cheap simple boosters with no throttle).",
+  "cur": "Vijf families: kerolox (werkpaard eerste trap), hydrolox (hoog-Isp bovenste trappen + zware kernen), methalox (herbruikbaar + Mars-maakbaar), hypergolen (lange houdbaarheid voor diepe ruimte + manoeuvre), vaste (goedkope eenvoudige boosters zonder smoring)."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "title",
+  "en": "Fusion Propulsion — the star we cannot yet light",
+  "cur": "Fusion Propulsion — de ster die we nog niet kunnen ontsteken"
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "intro_sentence",
+  "en": "Fusing light atomic nuclei releases far more energy per kilogram than any chemical reaction, making fusion propulsion the most credible path to high-speed interstellar transit — if anyone can build a working fusion engine, which no one has.",
+  "cur": "Fusie van lichte atoomkernen levert veel meer energie per kilogram dan chemische reacties, waardoor fusievoortstuwing de beste route naar snelle interstellaire reizen is — als iemand het bouwt."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "body_paragraphs.0",
+  "en": "The physics is straightforward. Fusing deuterium and tritium (or deuterium and helium-3) converts a small fraction of their mass directly into energy. The yield per kilogram is roughly ten million times that of the best chemical propellant. Translated into specific impulse, a fusion drive could reach tens of thousands to hundreds of thousands of seconds — compare the best chemical engine at 450 s and the best ion drive at 9,000 s. That gap is the difference between a centuries-long interstellar trip and one measured in decades.",
+  "cur": "De fysica is eenvoudig. Fusie van deuterium en tritium (of deuterium en helium-3) zet een klein deel van hun massa rechtstreeks om in energie. De opbrengst per kilogram is ruwweg tien miljoen keer die van de beste chemische brandstof. Vertaald naar specifieke impuls kan een fusieaandrijving tienduizenden tot honderdduizenden seconden bereiken — vergelijk de beste chemische motor op 450 s en de beste ionenaandrijving op 9.000 s. Dat verschil bepaalt of een interstellaire reis eeuwen of decennia duurt."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "body_paragraphs.1",
+  "en": "The most detailed engineering study to date is Project Daedalus, carried out by the British Interplanetary Society in the 1970s. The design used inertial-confinement fusion: pellets of deuterium and helium-3 ignited by electron beams, roughly 250 times per second, in a magnetic reaction chamber. The resulting spacecraft would have massed about 54,000 tonnes at launch — nearly all propellant — and reached approximately 12% of the speed of light, arriving at Barnard's Star (5.9 light-years away) in about 50 years, as an undecelerated flyby. Project Icarus, a follow-on study begun in 2009, revisited the design with the constraint of allowing deceleration on arrival; it found the mass requirements still harder to close.",
+  "cur": "De meest gedetailleerde technische studie tot nu toe is Project Daedalus, uitgevoerd door de British Interplanetary Society in de jaren 1970. Het ontwerp gebruikte inertial-confinement fusie: pellets van deuterium en helium-3 ontstoken door elektronenbundels, ongeveer 250 keer per seconde, in een magnetische reactiekamer. Het resulterende ruimtevaartuig zou bij lancering ongeveer 54.000 ton hebben gewogen — vrijwel geheel brandstof — en ongeveer 12% van de lichtsnelheid hebben bereikt, en de Ster van Barnard (5,9 lichtjaar ver) in ongeveer 50 jaar hebben bereikt, als een niet-vertraagde passeervlucht. Project Icarus, een vervolgstudie begonnen in 2009, herzag het ontwerp met de eis dat remmen bij aankomst mogelijk was; de massa-eisen bleken nog moeilijker te realiseren."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "body_paragraphs.2",
+  "en": "The wall is fundamental, not incremental. No fusion reactor anywhere on Earth has yet produced more energy than it consumed — the long-sought 'ignition' threshold was crossed at the National Ignition Facility in December 2022 for laser-driven inertial confinement, but sustained net-positive output at useful scale remains unsolved. Scaling that to a flight-weight engine that fires hundreds of times per second is a different problem again. The helium-3 fuel Daedalus required does not exist in useful quantities on Earth and would need to be mined from the outer planets — itself a civilisation-scale project.",
+  "cur": "De muur is fundamenteel, niet incrementeel. Geen enkele fusiereactor op aarde heeft nog meer energie geproduceerd dan verbruikt — de langverwachte 'ontstekingsdrempel' werd bereikt bij de National Ignition Facility in december 2022 voor laser-gedreven inertial confinement, maar duurzame netto-positieve output op bruikbare schaal blijft onopgelost. Dit opschalen naar een vlieggewicht motor die honderden keren per seconde afvuurt is weer een ander probleem. De helium-3 brandstof die Daedalus nodig had bestaat niet in bruikbare hoeveelheden op aarde en zou moeten worden gewonnen uit de buitenplaneten — op zichzelf een project van beschavingsschaal."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "body_paragraphs.3",
+  "en": "The two main confinement approaches each have their difficulties. Magnetic confinement (tokamaks, stellarators) requires superconducting magnets and sustained plasma control; ITER, the international tokamak under construction in France, is designed to demonstrate net energy but will not produce electricity. Inertial confinement requires drivers — lasers or particle beams — powerful enough to compress the fuel to stellar conditions; the ignition achieved at NIF required a precisely engineered capsule and is nowhere near the repetition rate a propulsion system needs. Neither approach has a clear engineering path to a propulsion application.",
+  "cur": "De twee belangrijkste opsluitmethoden hebben elk hun moeilijkheden. Magnetische opsluiting (tokamaks, stellarators) vereist supergeleidende magneten en aanhoudende plasmacontrole; ITER, de internationale tokamak in aanbouw in Frankrijk, is ontworpen om netto energie te demonstreren maar zal geen elektriciteit produceren. Inertial confinement vereist drivers — lasers of deeltjesbundels — krachtig genoeg om de brandstof tot stellaire condities te comprimeren; de ontsteking bereikt bij NIF vereiste een nauwkeurig geconstrueerde capsule en benadert niet de herhalingsfrequentie die een voortstuwingssysteem nodig heeft. Geen van beide benaderingen heeft een duidelijk technisch pad naar een voortstuwingstoepassing."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "body_paragraphs.4",
+  "en": "Fusion propulsion is physically sound and mathematically attractive. It is not engineering fiction — the numbers work on paper — but it has no working hardware, no demonstrated net-energy source to draw from, and no timeline. Any mission concept that relies on it is, honestly, a study of what becomes possible if the fusion problem is ever solved.",
+  "cur": "Fusievoortstuwing is fysisch solide en wiskundig aantrekkelijk. Het is geen technische fictie — de getallen kloppen op papier — maar het heeft geen werkende hardware, geen aangetoonde netto-energiebron om uit te putten, en geen tijdschema. Elk missieconcept dat erop vertrouwt is, eerlijk gezegd, een studie van wat mogelijk wordt als het fusieprobleem ooit wordt opgelost."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "diagram_caption",
+  "en": "Specific impulse ladder from solid rockets (250 s) to chemical LH2/LOX (450 s) to ion drives (9,000 s) to projected fusion drives (tens of thousands to hundreds of thousands of seconds) — each rung a qualitative jump in what interplanetary and interstellar distances cost in propellant mass.",
+  "cur": "Specifieke impuls ladder van vaste raketten (250 s) tot chemische LH2/LOX (450 s) tot ionenaandrijvingen (9.000 s) tot geprojecteerde fusieaandrijvingen (tienduizenden tot honderdduizenden seconden) — elke trede een kwalitatieve sprong in wat interplanetaire en interstellaire afstanden kosten aan brandstofmassa."
+ },
+ {
+  "rel": "science/propulsion/gas-generator.json",
+  "at": "title",
+  "en": "Gas-generator cycle — the workhorse",
+  "cur": "Gas-generator cycle — de werkpaard"
+ },
+ {
+  "rel": "science/propulsion/gas-generator.json",
+  "at": "intro_sentence",
+  "en": "Burn a sliver of the propellant in a small side chamber, use the hot gas to spin the turbopumps, then throw it overboard. It costs a little performance, but it is simple, robust, and the most widely flown way to build a rocket engine.",
+  "cur": "Brand een klein deel van de drijfstof in een aparte kamer, gebruik het hete gas om turbopompen aan te drijven, gooi dat gas dan overboord. Het is de eenvoudigste en meest gebruikte manier om een raketmotor te bouwen."
+ },
+ {
+  "rel": "science/propulsion/gas-generator.json",
+  "at": "body_paragraphs.0",
+  "en": "Every pump-fed engine has the same problem: to force propellant into a combustion chamber at hundreds of atmospheres, you need turbopumps, and to spin those pumps you need a power source. The gas-generator cycle solves it the blunt way. A few percent of the fuel and oxidiser are tapped off and burned in a separate small chamber — the gas generator — producing a stream of hot gas that drives a turbine on the pump shaft. Because that gas has done its job before it ever reaches the main chamber, it is simply dumped overboard, usually through a separate exhaust duct or fed into the nozzle skirt where the pressure is already low. This makes it an *open* cycle: some propellant leaves the engine without passing through the main combustion chamber.",
+  "cur": "Elke pomp-gevoede motor heeft hetzelfde probleem: om drijfstof in een verbrandingskamer op honderden bar te persen, heb je turbopompen nodig, en om die pompen aan te drijven heb je een krachtbron nodig. De gas-generator cycle lost het op de directe manier op. Een klein percentage van brandstof en oxidator wordt afgetapt en verbrand in een aparte kleine kamer — de gas generator — en produceert een stroom heet gas die een turbine op de pompas aandrijft. Omdat dat gas zijn werk al heeft gedaan voordat het ooit de hoofdkamer bereikt, wordt het simpelweg overboord gegooid, meestal via een afzonderlijke uitlaatleiding of toegevoerd aan de mondingssokkel waar de druk al laag is. Dit maakt het een *open* cycle: wat drijfstof verlaat de motor zonder door de hoofdverbrandingskamer te gaan."
+ },
+ {
+  "rel": "science/propulsion/gas-generator.json",
+  "at": "body_paragraphs.1",
+  "en": "Most gas generators run deliberately fuel-rich, because a stoichiometric flame would melt the turbine blades; a few early Soviet engines, including the RD-107 and RD-108, instead spin their turbines on steam from catalytically decomposed hydrogen peroxide. Either way, turbine-inlet temperature is the limiting design number — it caps how hard you can drive the pumps, and therefore the chamber pressure the engine can reach. The overboard dump costs a few seconds of specific impulse versus a closed cycle, since that propellant produces little useful thrust. For a first stage, where raw thrust and low cost matter more than the last few seconds of Isp, that trade is almost always worth it.",
+  "cur": "De meeste gas generators draaien opzettelijk brandstofrijk, omdat een stoichiometrische vlam de turbineschoepen zou smelten; een paar vroege Sovjetmotoren, waaronder de RD-107 en RD-108, drijven hun turbines in plaats daarvan aan met stoom uit katalytisch ontbonden waterstofperoxide. Hoe dan ook, turbine-inlaattemperatuur is het beperkende ontwerpgetal — het bepaalt hoe hard je de pompen kunt aandrijven en dus welke verbrandingskamerdruk de motor kan bereiken. Het overboord gooien kost enkele seconden specifieke impuls ten opzichte van een gesloten cycle, omdat die drijfstof weinig nuttige stuwkracht produceert. Voor een eerste trap, waar ruwe stuwkracht en lage kosten belangrijker zijn dan de laatste seconden Isp, is die afweging bijna altijd de moeite waard."
+ },
+ {
+  "rel": "science/propulsion/gas-generator.json",
+  "at": "body_paragraphs.2",
+  "en": "The result is the cycle that has flown more hardware than any other: the Saturn V's F-1, the Falcon 9's Merlin 1D, the R-7 / Soyuz family's RD-107 and RD-108, India's Vikas, Europe's Viking, and NASA's RS-68 are all gas-generator engines. Its virtues are exactly the ones a launch operator cares about — fewer failure modes, lower development cost, gentle turbine conditions, and easy restart and throttling. When engineers want maximum performance instead they close the cycle, which is the story of staged combustion and the expander cycle.",
+  "cur": "Het resultaat is de cycle die meer hardware heeft gevlogen dan enig ander: de F-1 van de Saturn V, de Merlin 1D van de Falcon 9, de RD-107 en RD-108 van de R-7/Soyuz-familie, Indias Vikas, Europas Viking en NASAs RS-68 zijn allemaal gas-generator motoren. De voordelen ervan zijn precies de dingen waar een lanceertoperator om geeft — minder faalmodi, lagere ontwikkelingskost, zachte turbinecondities en gemakkelijk herstarten en throttelen. Wanneer ingenieurs maximale prestaties willen, sluiten ze de cycle, wat het verhaal is van staged combustion en de expander cycle."
+ },
+ {
+  "rel": "science/propulsion/gas-generator.json",
+  "at": "diagram_caption",
+  "en": "Open cycle: a fuel-rich gas generator (GG) drives the turbopump, then its exhaust is dumped overboard — that dumped propellant is the small Isp price paid for a simple, robust engine.",
+  "cur": "Open cycle: een brandstofrijke gas generator (GG) drijft de turbopump aan, dan wordt de uitlaatgassen overboord gegooid — die gestuurde drijfstof is de kleine Isp-prijs betaald voor een eenvoudige, robuuste motor."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "title",
+  "en": "Ion Drives — the slow push that never stops",
+  "cur": "Ionmotoren — de traag voortduwing zonder einde"
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "intro_sentence",
+  "en": "Ion drives achieve specific impulses 10–30 times higher than chemical rockets by accelerating ionised gas electrically rather than burning it — at the cost of very low thrust that is measured in millinewtons, not meganewtons.",
+  "cur": "Ionmotoren bereiken specifieke impulsen 10–30 keer hoger dan chemische raketten door geïoniseerd gas elektrisch te versnellen in plaats van te verbranden."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "body_paragraphs.0",
+  "en": "All rocket engines exchange propellant mass for velocity. The faster the exhaust leaves the nozzle, the less propellant you need for a given velocity change — which is what specific impulse (Isp) measures. Chemical engines are limited by flame temperature: the hottest practical propellant combination, liquid hydrogen and oxygen, reaches around 450 seconds of Isp. Ion drives sidestep that limit entirely. They ionise a propellant — typically xenon, chosen for its heavy atomic mass and chemical inertness — and accelerate the ions electrically or magnetically to exhaust velocities of 20–100 km/s, giving Isp values of roughly 3,000 to 10,000 seconds.",
+  "cur": "Alle raketmotoren ruillen stuwstofmassa in voor snelheid. Hoe sneller het uitlaatgas uit de mondstuk komt, hoe minder stuwstof je nodig hebt voor een bepaalde snelheidsverandering — dit is wat specifieke impuls (Isp) meet. Chemische motoren worden beperkt door vlamtemperatuur: de heetste praktische stuwstofcombinatie, vloeibare waterstof en zuurstof, bereikt ongeveer 450 seconden Isp. Ionmotoren omzeilen die limiet volledig. Ze ioniseren een stuwstof — meestal xenon, gekozen vanwege zijn zware atoommassa en chemische inertiteit — en versnellen de ionen elektrisch of magnetisch tot uitlaatsnelheden van 20–100 km/s, wat Isp-waarden van ongeveer 3.000 tot 10.000 seconden oplevert."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "body_paragraphs.1",
+  "en": "Two designs dominate flight use. Gridded ion engines (such as NASA's NSTAR) use a pair of charged metal grids to accelerate ions in a beam; the beam is neutralised by an electron gun to prevent the spacecraft from accumulating charge. Hall-effect thrusters confine electrons in a magnetic ring near the exit, and those electrons ionise and accelerate the propellant — a simpler arrangement with no grids to erode, which is why Hall thrusters have become the standard for commercial satellite station-keeping. NSTAR flew on Deep Space 1 and on Dawn; NASA's NEXT-C, a larger gridded engine, flew on the DART mission in 2021.",
+  "cur": "Twee ontwerpen domineren het vliegtuiggebruik. Gerasterde ionmotoren (zoals NASA's NSTAR) gebruiken een paar geladen metalen roosters om ionen in een bundel te versnellen; de bundel wordt geneutraliseerd door een elektronenkanon om te voorkomen dat het ruimtevaartuig lading accumuleert. Hall-effectthrusters beperken elektronen in een magnetische ring bij de uitgang, en die elektronen ioniseren en versnellen de stuwstof — een eenvoudiger opstelling zonder roosters die slijten, daarom zijn Hall-thrusters de standaard geworden voor commerciële satellietsatiesbehoud. NSTAR vloog op Deep Space 1 en op Dawn; NASA's NEXT-C, een groter gerasterd motor, vloog op de DART-missie in 2021."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "body_paragraphs.2",
+  "en": "The thrust numbers are sobering. A state-of-the-art 12 kW Hall thruster produces about 0.6 newtons — roughly the weight of a small apple. You cannot lift a pencil off a desk with an ion engine. What you can do is run it continuously for months or years, because the propellant load is small and the power comes from solar arrays. Dawn's three NSTAR engines ran for a total of 2,009 days in flight, accumulating a velocity change of roughly 11.5 km/s — more than any previous spacecraft by propellant fraction alone. That was enough to brake into orbit around Vesta, escape it, and then brake into orbit around Ceres: a feat chemically possible only with a prohibitively large propellant load.",
+  "cur": "De stuwkrachtnummers zijn onthutsend. Een state-of-the-art 12 kW Hall-thruster produceert ongeveer 0,6 newtons — ruwweg het gewicht van een klein appel. Je kunt een potlood niet van een bureau tillen met een ionmotor. Wat je wel kunt doen is het maanden of jaren achtereen laten draaien, omdat de stuwstofbelasting klein is en de stroom van zonnepanelen komt. De drie NSTAR-motoren van Dawn draaiden in totaal 2.009 dagen in vlucht, wat een snelheidsverandering van ongeveer 11,5 km/s oplevert — meer dan enig ander ruimtevaartuig naar stuwstoffractie toe. Dat was voldoende om in een baan rond Vesta in te remmen, eraan te ontsnappen en dan in een baan rond Ceres in te remmen: een prestatie die chemisch slechts mogelijk is met een belachelijk grote stuwstofbelasting."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "body_paragraphs.3",
+  "en": "The constraint is power. In the inner solar system, large solar arrays can feed tens of kilowatts to a thruster. Beyond Jupiter, sunlight is too weak for solar-powered ion propulsion at useful thrust levels; the alternative is a nuclear reactor, which no electric-propulsion mission has yet used in deep space. At high thrust levels, ion drives are also slower to respond than chemical thrusters, which limits their use for attitude control or abort manoeuvres. They are a cruise engine, not a launch engine — every ion-propelled spacecraft in history rode a chemical rocket to orbit or escape velocity first. See also: /science/propulsion/specific-impulse for the numbers in context, and /science/propulsion/tsiolkovsky for why high exhaust velocity reduces propellant mass so dramatically.",
+  "cur": "De beperking is vermogen. In het binnenste zonnestelstel kunnen grote zonnepanelen tientallen kilowatt aan een thruster voeden. Voorbij Jupiter is zonlicht te zwak voor zonnepaneel-aangedreven ionvoortstuwing op bruikbare stuwkrachtniveaus; het alternatief is een kernreactor, die geen elektrische-voortstuwingsmissie tot nu toe in diepe ruimte heeft gebruikt. Bij hoge stuwkrachtniveaus reageren ionmotoren ook langzamer dan chemische thrusters, wat hun gebruik voor houding control of abortmanoeuvres beperkt. Ze zijn een cruisemotor, geen startmotor — elk door ionen voortgestuwd ruimtevaartuig in de geschiedenis reed eerst een chemische raket naar baan of ontsnappingssnelheid."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "diagram_caption",
+  "en": "Gridded ion engine schematic: xenon ionised in a discharge chamber, accelerated through charged grids, beam neutralised by an electron gun — thrust in millinewtons, Isp 3,000–10,000 s.",
+  "cur": "Gerasterd ionmotor schema: xenon geïoniseerd in een ontladingskamer, versneld door geladen roosters, bundel geneutraliseerd door elektronenkanon — stuwkracht in millinewtons, Isp 3.000–10.000 s."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "title",
+  "en": "Laser Sails — pushing a probe with a beam from home",
+  "cur": "Laser Sails — een sonde voortstuwen met een bundel vanaf huis"
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "intro_sentence",
+  "en": "Beamed propulsion inverts the usual logic: instead of carrying fuel, the spacecraft carries only a reflective sail, and all the energy is supplied by a laser or microwave array left behind on Earth or in orbit.",
+  "cur": "Bij bundelvoortstuwing draagt het ruimtevaartuig slechts een reflecterend zeil; alle energie komt van een laser- of microgolfbundel die op aarde of in een baan blijft."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "body_paragraphs.0",
+  "en": "The core idea is momentum transfer. Light carries momentum, and when it reflects off a surface it transfers twice that momentum to the sail. A powerful enough beam can accelerate a lightweight sail to high speed without the spacecraft carrying any propellant at all. The Tsiolkovsky rocket equation — which punishes every gram of fuel you must first lift and then accelerate — does not apply; there is no exhaust, no fuel tank, no mass fraction problem. The energy bill stays at home.",
+  "cur": "De kern is impulsoverdracht. Licht draagt impuls, en wanneer het van een oppervlak reflecteert, draagt het tweemaal die impuls over op het zeil. Een voldoende krachtige bundel kan een lichtgewicht zeil tot hoge snelheid versnellen zonder dat het ruimtevaartuig stuwstof draagt. De raket-vergelijking van Tsiolkovsky — die elk gram brandstof dat je eerst moet tillen en vervolgens versnellen afstraft — is niet van toepassing; er is geen uitlaatstroom, geen brandstoftank, geen massafractieprobleem. De energierekening blijft thuis."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "body_paragraphs.1",
+  "en": "Robert Forward worked out the mathematics in detail in the 1980s, proposing laser-driven sails for interstellar probes and the 'Starwisp' concept — a microwave-driven mesh sail carrying gram-scale electronics to the nearest stars. The best-known current version is Breakthrough Starshot, announced in 2016 by Yuri Milner and backed by Stephen Hawking among others. The design calls for 'StarChip' probes of about a gram on sails roughly four metres across, accelerated by a ground-based laser array of approximately 100 gigawatts to about 20% of the speed of light over a few minutes. At that speed, Proxima Centauri — 4.24 light-years away — would be reached in roughly 20 years.",
+  "cur": "Robert Forward werkte in de jaren 1980 de wiskunde in detail uit en stelde lasergedreven zeilschepen voor interstellaire sondes voor, evenals het 'Starwisp'-concept — een door microgolven aangedreven mesh-zeil dat elektronica op gramschaal naar de dichtstbijzijnde sterren vervoert. De bekendste huidige versie is Breakthrough Starshot, aangekondigd in 2016 door Yuri Milner en ondersteund door Stephen Hawking en anderen. Het ontwerp voorziet in 'StarChip'-sondes van ongeveer een gram op zeilschepen van ruwweg vier meter in doorsnede, versneld door een grondgestelde laserreeks van ongeveer 100 gigawatt tot ongeveer 20% van de lichtsnelheid in enkele minuten. Bij die snelheid zou Proxima Centauri — 4,24 lichtjaar verderop — in ongeveer 20 jaar bereikt kunnen worden."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "body_paragraphs.2",
+  "en": "The constraints are severe and honest. First, deceleration: a laser sail accelerated to 20% of light speed has no way to slow down at the destination. Breakthrough Starshot is designed explicitly as a flyby mission — a few hours of data collection at Proxima, no orbit insertion, no return. Forward's own proposals for decelerating used a second, larger sail left behind to reflect the beam forward onto a smaller braking sail; the engineering mass scales unfavourably. Second, communication: a gram-scale transmitter at 4 light-years must send a signal detectable by Earth's largest receivers. The link budget is marginal and requires the full 4-metre sail to double as a phased-array antenna. Third, survival: the sail must survive the acceleration phase (thousands of g over minutes), interstellar dust impacts at relativistic speed, and radiation over a 20-year cruise.",
+  "cur": "De beperkingen zijn zwaar en eerlijk. Ten eerste, vertraging: een laserzeil versneld tot 20% van de lichtsnelheid heeft geen manier om bij bestemming af te remmen. Breakthrough Starshot is expliciet ontworpen als een fly-by-missie — enkele uren gegevensverzameling bij Proxima, geen orbitaal invoegen, geen terugkeer. Forwards eigen voorstellen voor vertragen gebruikten een tweede, groter zeil dat achterbleef om de bundel vooruit te reflecteren op een kleiner remzeil; de technische massaschaal valt ongunstig uit. Ten tweede, communicatie: een zender van gramschaal op 4 lichtjaar moet een signaal zenden dat detecteerbaar is voor de grootste ontvangers op aarde. Het linkbudget is marginaal en vereist dat het volledige 4 meter zeil ook als phased-array-antenne fungeert. Ten derde, overleven: het zeil moet de versnellingsfase overleven (duizenden g gedurende minuten), botsingen met interstellair stof op relativistische snelheid, en straling gedurende een 20 jaar durende vlucht."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "body_paragraphs.3",
+  "en": "The laser array itself is the most immediate engineering challenge. 100 gigawatts is roughly the output of 100 large nuclear power plants, focused to diffraction-limited precision over a distance of millions of kilometres and held there for minutes without thermal distortion of the optics. No existing or funded facility approaches this. Breakthrough Starshot has produced detailed technical studies and funded relevant research (laser coherence, sail materials, chip design), but the programme is explicitly described as a 30-year technology development effort, not a near-term mission.",
+  "cur": "De laserarray zelf is de meest directe technische uitdaging. 100 gigawatt is ruwweg de output van 100 grote kerncentrales, gefocust met diffractiegelimiteerde precisie over een afstand van miljoenen kilometers en daar gedurende minuten gehouden zonder thermische vervorming van de optica. Geen enkele bestaande of gefinancierde faciliteit benadert dit. Breakthrough Starshot heeft gedetailleerde technische studies gemaakt en relevant onderzoek gefinancierd (lasercoherentie, zeilmaterialen, chipdesign), maar het programma wordt expliciet beschreven als een 30 jaar durende technologie-ontwikkelingsinspanning, geen missie voor de nabije toekomst."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "body_paragraphs.4",
+  "en": "Of the three far-horizon propulsion concepts covered in this atlas, laser sails are the most studied, the least dependent on unsolved physics, and the closest to having a credible (if enormously ambitious) engineering path. The physics requires nothing beyond what is understood. The engineering requires a laser array, sail materials, and chip technology that do not yet exist at the required scale. It is the most honest candidate for 'hardest thing humanity might actually build someday' rather than 'requires a miracle'.",
+  "cur": "Van de drie concepten voor voortstuwing aan de verre horizon die in deze atlas behandeld worden, zijn laservezeilen het meest bestudeerd, het minst afhankelijk van onopgeloste natuurkunde, en het dichtst bij een geloofwaardig (zij het enorm ambitieus) technisch pad. De natuurkunde vereist niets buiten wat begrepen wordt. De techniek vereist een laserarray, zeilmaterialen en chiptechnologie die nog niet op de vereiste schaal bestaan. Het is de meest eerlijke kandidaat voor 'het moeilijkste dat de mensheid ooit zou kunnen bouwen' in plaats van 'vereist een wonder'."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "diagram_caption",
+  "en": "Sail acceleration profile: a 100 GW laser pushes a 4 g sail from rest to 0.2c over roughly 10 minutes across ~2 million km — after that the beam diverges past useful intensity and the probe coasts for 20 years to Proxima Centauri, arriving with no way to slow down.",
+  "cur": "Zeilversnellingsprofiel: een 100 GW laser stuwt een 4 g zeil van rust naar 0,2c in ongeveer 10 minuten over ~2 miljoen km — daarna divergeert de bundel voorbij bruikbare intensiteit en de sonde glijdt 20 jaar naar Proxima Centauri, waar ze aankomt zonder te kunnen afremmen."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "title",
+  "en": "Nuclear-Thermal Rockets — heat, not flame",
+  "cur": "Nuclear-Thermal Rockets — hitte, geen vlam"
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "intro_sentence",
+  "en": "A nuclear-thermal rocket swaps the combustion chamber for a fission reactor: hydrogen heats in the core past any chemical flame and expands through a nozzle — roughly twice the specific impulse of the best chemical engines, at real thrust.",
+  "cur": "Een nucleair-thermische raket vervangt de verbrandingskamer door een splijtingsreactor: waterstof wordt in de kern heter dan elke chemische vlam en zet uit door een straalbuis — ongeveer dubbele specifieke impuls."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "body_paragraphs.0",
+  "en": "Chemical rocket engines are limited by how hot their propellants can burn. The hydrogen-oxygen reaction peaks around 3,500 K in the combustion chamber — already close to the melting point of most materials — producing a specific impulse of roughly 450 seconds in a vacuum. A nuclear-thermal rocket (NTR) is not limited by a chemical reaction. Liquid hydrogen flows through channels in a solid nuclear reactor core operating at 2,500–3,000 K, absorbs heat, and exits through a nozzle as a very hot, very light gas. Because hydrogen is the lightest element, its heated molecules move fast and produce high exhaust velocity. The resulting Isp is 800–1,000 seconds — more than double chemical — while thrust remains in the 50–250 kN range, far above any electric propulsion system.",
+  "cur": "Chemische raketmotoren worden beperkt door hoe heet hun drijfgassen kunnen branden. De waterstof-zuurstof-reactie piekt rond 3.500 K in de verbrandingskamer — al dicht bij het smeltpunt van de meeste materialen — en levert een specifieke impuls van ongeveer 450 seconden in vacuüm. Een nucleair-thermische raket (NTR) wordt niet beperkt door een chemische reactie. Vloeibare waterstof stroomt door kanalen in een vaste kernreactorkern die werkt bij 2.500–3.000 K, absorbeert warmte en verlaat via een straalbuis als een zeer heet, zeer licht gas. Omdat waterstof het lichtste element is, bewegen de verhitte moleculen snel en produceren een hoge uitlaatsnelheid. De resulterende Isp is 800–1.000 seconden — meer dan het dubbele van chemisch — terwijl de stuwkracht in het bereik van 50–250 kN blijft, ver boven elk elektrisch voortstuwingssysteem."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "body_paragraphs.1",
+  "en": "That combination — high Isp with high thrust — is the gap NTR fills. Ion drives offer higher Isp but thrust measured in millinewtons; chemical engines offer high thrust but half the Isp. For missions requiring large velocity changes quickly — particularly a crewed transit to Mars — NTR's combination means a substantially smaller propellant load, a shorter trip, or both. A shorter Mars transit matters medically: less time in deep space means less accumulated radiation dose, which is one of the harder constraints on a crewed Mars architecture (see /essays/going-to-mars).",
+  "cur": "Die combinatie — hoge Isp met hoge stuwkracht — is de kloof die NTR vult. Ionenmotoren bieden hogere Isp maar stuwkracht gemeten in millinewtons; chemische motoren bieden hoge stuwkracht maar de helft van de Isp. Voor missies die grote snelheidsveranderingen snel vereisen — met name een bemande reis naar Mars — betekent de combinatie van NTR een aanzienlijk kleinere drijfgaslading, een kortere reis, of beide. Een kortere Mars-reis is medisch belangrijk: minder tijd in de diepe ruimte betekent minder geaccumuleerde stralingsdosis, wat een van de moeilijkere beperkingen is voor een bemande Mars-architectuur (zie /essays/going-to-mars)."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "body_paragraphs.2",
+  "en": "The engineering history is unusually complete for a technology that has never flown. The US NERVA/Rover programme (1955–1973) built and ground-tested 22 reactor configurations at Jackass Flats, Nevada. The Phoebus-2A engine in 1968 ran at 4,100 MW thermal for over 12 minutes — enough to lift the engine off the stand under its own thrust. NERVA XE-Prime demonstrated a flight-weight engine configuration. Programme management estimated that a flight-ready engine was within two years of the programme's 1973 cancellation. The Soviet Union ran a parallel programme (RD-0410, also called IRGIT) that similarly produced working test hardware without flying.",
+  "cur": "De technische geschiedenis is ongewoon volledig voor een technologie die nooit heeft gevlogen. Het Amerikaanse NERVA/Rover-programma (1955–1973) bouwde en testte 22 reactorconfiguraties op de grond bij Jackass Flats, Nevada. De Phoebus-2A-motor draaide in 1968 bij 4.100 MW thermisch gedurende meer dan 12 minuten — genoeg om de motor van de standaard te tillen onder zijn eigen stuwkracht. NERVA XE-Prime demonstreerde een vlieggewicht motorconfiguratie. Programmabeheer schatte dat een vliegklare motor binnen twee jaar na de annulering van het programma in 1973 mogelijk was. De Sovjet-Unie voerde een parallel programma uit (RD-0410, ook wel IRGIT genoemd) dat eveneens werkende testhardware produceerde zonder te vliegen."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "body_paragraphs.3",
+  "en": "DARPA and NASA's DRACO (Demonstration Rocket for Agile Cislunar Operations) programme aimed to demonstrate an NTR engine in orbit by the late 2020s, using a Low-Enriched Uranium (LEU) design to sidestep some of the regulatory constraints that surrounded the highly enriched uranium in NERVA. The programme was cancelled in the 2026 US federal budget. As of 2026, no nuclear-thermal engine has flown. The technical obstacles are real but manageable: reactor mass, hydrogen storage and handling, nozzle erosion at high temperature. The persistent blocker has been political — public acceptance of launching a nuclear reactor, treaty obligations under the Outer Space Treaty, and the cost of testing that cannot be done on a standard engine stand.",
+  "cur": "DARPA en NASA's DRACO (Demonstration Rocket for Agile Cislunar Operations) programma had tot doel om tegen het einde van de jaren 2020 een NTR-motor in een baan om de aarde te demonstreren, gebruikmakend van een Low-Enriched Uranium (LEU) ontwerp om enkele regelgevende beperkingen te omzeilen die het sterk verrijkte uranium in NERVA omringden. Het programma werd geannuleerd in de Amerikaanse federale begroting van 2026. Vanaf 2026 heeft geen enkele nucleair-thermische motor gevlogen. De technische obstakels zijn reëel maar beheersbaar: reactormassa, waterstofopslag en -hantering, straalbuis-erosie bij hoge temperatuur. De aanhoudende blokkade is politiek geweest — publieke acceptatie van het lanceren van een kernreactor, verdragsverplichtingen onder het Outer Space Treaty, en de kosten van tests die niet op een standaard motorstandaard kunnen worden uitgevoerd."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "body_paragraphs.4",
+  "en": "For uncrewed deep-space missions, NTR competes with increasingly capable ion drives, which are cheaper to develop and carry no nuclear regulatory burden. The niche where NTR is hardest to replace is a crewed Mars mission with a tight launch window and a crew that cannot spend three years in transit. Whether that mission ever happens, and whether NTR is chosen for it over other options, remains open. See also: /science/propulsion/specific-impulse for how 800 s compares across engine types, and /science/propulsion/tsiolkovsky for why doubling Isp has such a dramatic effect on the required propellant fraction.",
+  "cur": "Voor onbemande deep-space-missies concurreert NTR met steeds capabelere ionenmotoren, die goedkoper te ontwikkelen zijn en geen nucleaire regelgevende last dragen. De niche waar NTR het moeilijkst te vervangen is, is een bemande Mars-missie met een krap lanceringvenster en een bemanning die niet drie jaar in transit kan doorbrengen. Of die missie ooit plaatsvindt, en of NTR daarvoor boven andere opties wordt gekozen, blijft open. Zie ook: /science/propulsion/specific-impulse voor hoe 800 s zich verhoudt tot andere motortypes, en /science/propulsion/tsiolkovsky voor waarom het verdubbelen van Isp zo'n dramatisch effect heeft op de vereiste drijfgasfractie."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "diagram_caption",
+  "en": "NTR schematic: liquid hydrogen pumped through solid-core fission reactor at 2,500–3,000 K, expelled through nozzle — Isp ~800–1,000 s, thrust 50–250 kN, no combustion.",
+  "cur": "NTR-schema: vloeibare waterstof gepompt door vaste-kern-splijtingsreactor bij 2.500–3.000 K, uitgestoten door straalbuis — Isp ~800–1.000 s, stuwkracht 50–250 kN, geen verbranding."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "intro_sentence",
+  "en": "Burn deep in a gravity well and your fuel does more work — physically the same engine produces more orbital energy when it's moving fast.",
+  "cur": "Brand diep in een zwaartekrachtput en je brandstof verricht meer werk — fysisch gezien produceert dezelfde motor meer baanenergie wanneer hij snel beweegt."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "narrative_101.0",
+  "en": "Here's a free magic trick from physics. Imagine you have one specific amount of fuel to burn. You can light it whenever you want. Where should you do it? Common sense says it shouldn't matter — same fuel, same engine, same push. Common sense is wrong.",
+  "cur": "Hier is een gratis goocheltruc uit de natuurkunde. Stel je voor dat je een bepaalde hoeveelheid brandstof hebt om te verbranden. Je kunt het ontsteken wanneer je maar wilt. Waar zou je het moeten doen? Het gezond verstand zegt dat het niet uitmaakt — dezelfde brandstof, dezelfde motor, dezelfde stuwkracht. Het gezond verstand heeft het mis."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "narrative_101.1",
+  "en": "Burn it when you're going FAST and the same fuel gives you way more useful energy than the same burn when you're going slow. The reason hides in the fact that kinetic energy goes as v² — when you're already moving, a small ∆v on top adds proportionally more energy than when you're standing still. So a 1 km/s burn at perigee (going 11 km/s) gives you more orbital boost than the same 1 km/s burn at apogee (going 1 km/s).",
+  "cur": "Brand het wanneer je SNEL gaat en dezelfde brandstof geeft je veel meer bruikbare energie dan dezelfde verbranding wanneer je langzaam gaat. De reden verbergt zich in het feit dat kinetische energie gaat met v² — wanneer je al beweegt, voegt een kleine ∆v erbovenop proportioneel meer energie toe dan wanneer je stilstaat. Dus een 1 km/s verbranding bij perigeum (gaande met 11 km/s) geeft je meer baanverhoging dan dezelfde 1 km/s verbranding bij apogeum (gaande met 1 km/s)."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "narrative_101.2",
+  "en": "Hermann Oberth pointed this out in 1929 and mission designers have been exploiting it ever since. Apollo's trans-lunar injection happened at perigee, hugging Earth, going as fast as possible. Parker Solar Probe burns at the closest pass to the Sun on every loop to dive deeper next time. It's not free energy — the planet you're hugging is doing the donation — but it's the closest thing to a free lunch you'll ever find in spaceflight.",
+  "cur": "Hermann Oberth wees hier in 1929 op en missieontwerpers maken er sindsdien misbruik van. Apollo's translunaire injectie vond plaats bij perigeum, dicht bij de aarde, zo snel mogelijk gaand. Parker Solar Probe brandt bij de dichtste passage bij de zon tijdens elke lus om de volgende keer dieper te duiken. Het is geen gratis energie — de planeet waaraan je vastklampt doet de donatie — maar het is het dichtst bij een gratis lunch dat je ooit in ruimtevaart zult vinden."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "body_paragraphs.0",
+  "en": "The kinetic energy of a moving body goes as `½ m v²`. A small ∆v at high speed produces a much larger change in kinetic energy than the same ∆v at low speed. Apply this to a rocket burn: do the burn at periapsis (where you're moving fastest) and the same propellant produces more orbital-energy gain than it would at apoapsis.",
+  "cur": "De kinetische energie van een bewegend lichaam gaat met `½ m v²`. Een kleine ∆v bij hoge snelheid produceert een veel grotere verandering in kinetische energie dan dezelfde ∆v bij lage snelheid. Pas dit toe op een raketverbranding: doe de verbranding bij periapsis (waar je het snelst beweegt) en dezelfde brandstof produceert meer baanenergie-toename dan bij apoapsis."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "body_paragraphs.1",
+  "en": "Hermann Oberth pointed this out in 1929. The implication for mission design: schedule your big ∆v burns where you're already moving fast — at perihelion of the cruise ellipse, at periapsis of a flyby. Parker Solar Probe burns at perihelion of each Sun-passing arc to drop deeper toward the Sun on the next loop. Juno fires at jovian periapsis to control its science orbit.",
+  "cur": "Hermann Oberth wees hier in 1929 op. De implicatie voor missieontwerp: plan je grote ∆v verbrandingen waar je al snel beweegt — bij perihelium van de cruise-ellips, bij periapsis van een fly-by. Parker Solar Probe brandt bij perihelium van elke zonpassage-boog om dieper naar de zon te zakken tijdens de volgende lus. Juno vuurt bij joviale periapsis om zijn wetenschappelijke baan te controleren."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "body_paragraphs.2",
+  "en": "The trade-off: deep-well burns are short and intense; the spacecraft has to be ready to handle the heat, the dynamic pressure, and the precision timing. There's no free lunch — but Oberth shows you which lunches are cheaper.",
+  "cur": "De afweging: verbrandingen diep in de put zijn kort en intens; het ruimtevaartuig moet klaar zijn om de hitte, de dynamische druk en de precisietiming aan te kunnen. Er is geen gratis lunch — maar Oberth laat je zien welke lunches goedkoper zijn."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "diagram_caption",
+  "en": "Same ∆v at periapsis (high v) yields more energy gain than at apoapsis (low v).",
+  "cur": "Dezelfde ∆v bij periapsis (hoge v) levert meer energietoename op dan bij apoapsis (lage v)."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "title",
+  "en": "Stages — why no rocket has ever flown single-stage to orbit",
+  "cur": "Trappen — waarom geen raket ooit eentraps naar baan is gevlogen"
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "intro_sentence",
+  "en": "Tsiolkovsky's equation makes single-stage-to-orbit possible only with impossibly light dry mass. Every orbital launcher in history has dropped at least one stage. Most drop two or three.",
+  "cur": "Tsiolkovsky's vergelijking maakt single-stage-to-orbit alleen mogelijk met onmogelijk lichte droge massa. Elke baan-lanceerder in de geschiedenis heeft minstens één trap afgeworpen. De meeste werpen twee of drie af."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "body_paragraphs.0",
+  "en": "The mass ratio for orbit (~9.4 km/s of ∆v from a coastal launch site) is roughly 12-15 with the best chemical engines. That means 92-93% of a notional single-stage-to-orbit (SSTO) vehicle is propellant; the dry mass — tanks, engines, avionics, payload, recovery hardware — must fit inside the remaining 7-8%. No one has ever built one. The X-33 / VentureStar SSTO programme of the 1990s shut down when the composite hydrogen tank failed pressure-test. Skylon (UK, SABRE-based) is still on paper. Starship is sometimes described as SSTO-capable but flies as a two-stage vehicle for very good reasons: dropping the booster saves dry mass and lets the upper stage continue with much higher TWR-fed acceleration. Staging is the trick that turns the logarithmic rocket equation from impossible to merely difficult.",
+  "cur": "De massaverhouding voor baan (~9,4 km/s ∆v vanaf een kustlanceersite) is met de beste chemische motoren ongeveer 12–15. Dat betekent dat 92–93 % van een hypothetisch SSTO-voertuig drijfgas is; de droge massa — tanks, motoren, avionica, payload, terugkeerhardware — moet in de resterende 7–8 % passen. Niemand heeft er ooit één gebouwd. Het X-33 / VentureStar SSTO-programma van de jaren 1990 ging dicht toen de composiet waterstoftank de druktest niet doorstond. Skylon (UK, SABRE-gebaseerd) staat nog op papier. Starship wordt soms als SSTO-capabel omschreven maar vliegt om uitstekende redenen als tweetraps voertuig: de booster afwerpen scheelt droge massa en laat de bovenste trap met veel hogere TWR-gedreven versnelling doorgaan. Trapscheiding is de truc die de logaritmische raketvergelijking van onmogelijk naar slechts moeilijk omzet."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "body_paragraphs.1",
+  "en": "Two-stage architecture is the modern minimum. Falcon 9 (booster + second stage), Falcon Heavy (three-core booster + second stage), Starship (Super Heavy + Starship), Electron (kerolox first + kerolox second + sometimes a Curie kick stage), Neutron (planned), Terran R (planned). The booster does the heavy lifting through the dense lower atmosphere where high thrust matters more than Isp; the upper stage runs at lower TWR in vacuum where high Isp pays off. Why not three stages? Because each staging event is a discrete failure mode (separation pyrotechnics, hot-staging plume management, interstage debris) and modern engines are good enough to do the upper-stage burn in one go. The exceptions are usually GTO or interplanetary missions where a kick stage (Star 48, Briz-M, Fregat, YZ-1/2, Centaur as a third stage) gives a final precise burn — Voyager, New Horizons, Solar Orbiter, JUICE, every Mars rover.",
+  "cur": "Tweetrapse architectuur is het moderne minimum. Falcon 9 (booster + tweede trap), Falcon Heavy (drie-kern booster + tweede trap), Starship (Super Heavy + Starship), Electron (kerolox eerste + kerolox tweede + soms een Curie kick-trap), Neutron (gepland), Terran R (gepland). De booster doet het zware tillen door de dichte lage atmosfeer waar hoge stuwkracht boven Isp gaat; de bovenste trap loopt op lagere TWR in vacuüm waar hoge Isp loont. Waarom niet drie trappen? Omdat elke trapscheiding een aparte faalmodus is (separatiepyrotechniek, hot-staging plume management, tussentrap-puin) en moderne motoren goed genoeg zijn om de bovenste burn in één keer te doen. De uitzonderingen zijn meestal GTO- of interplanetaire missies waar een kick-trap (Star 48, Briz-M, Fregat, YZ-1/2, Centaur als derde trap) een laatste precieze burn levert — Voyager, New Horizons, Solar Orbiter, JUICE, elke Mars-rover."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "body_paragraphs.2",
+  "en": "Three-stage architecture was standard for the Apollo era because the engines of the day could not produce enough Isp or thrust to drop straight to two. Saturn V: S-IC kerolox booster (5 × F-1, ~2.5 minutes), S-II hydrolox sustainer (5 × J-2, ~6 minutes), S-IVB hydrolox upper (1 × J-2, two burns — one to circularise, one for trans-lunar injection). Soyuz still flies three stages plus four strap-on first-stage boosters in a 1957 architecture that is older than human spaceflight itself. China's Long March 3B/E and Long March 5 are 2.5-stage (core + strap-ons + upper) with a separate kick stage for GEO/escape. India's PSLV is uniquely four-stage with alternating solid and liquid — heritage from a 1970s programme that lacked any single propellant family capable of doing the whole job.",
+  "cur": "Drietrapse architectuur was standaard in de Apollo-era omdat de motoren van toen niet genoeg Isp of stuwkracht leverden om direct naar twee te zakken. Saturn V: S-IC kerolox booster (5 × F-1, ~2,5 min), S-II hydrolox sustainer (5 × J-2, ~6 min), S-IVB hydrolox bovenste trap (1 × J-2, twee burns — één om te circulariseren, één voor maan-injectie). Soyuz vliegt nog altijd drie trappen plus vier strap-on eerste-trap boosters in een architectuur uit 1957 ouder dan de bemande ruimtevaart zelf. China's Long March 3B/E en Long March 5 zijn 2,5-trap (kern + strap-ons + bovenste) met aparte kick-trap voor GEO/escape. India's PSLV is uniek vier-traps met afwisselend vast en vloeibaar — erfenis van een jaren 1970-programma dat geen enkele drijfgasfamilie had die de hele klus aankon."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "body_paragraphs.3",
+  "en": "Staging happens in one of three ways. Pyro-bolt separation: explosive bolts fire, springs push the spent stage clear, then the upper stage ignites in the resulting gap. Used by almost everyone (Soyuz, Atlas, Ariane, Long March). Fire-in-the-hole / hot staging: the upper stage ignites *before* separation, blowing the booster away with its exhaust. Soviet (Soyuz, Proton) and now SpaceX (Starship) — it loses 1-2% Isp from the upper stage exhausting against the interstage but eliminates the dead-time during separation where gravity drag eats velocity. Pushed staging: the lower stage gives a small retro-burn to back out before the upper stage ignites — Falcon 9 between MECO and second-stage ignition is essentially this, plus a boost-back manoeuvre if the booster is being recovered. Each is a different trade between mechanical risk, gravity losses, and operational simplicity.",
+  "cur": "Trapscheiding gebeurt op een van drie manieren. Pyro-bout scheiding: explosieve bouten vuren, veren duwen de uitgebrande trap weg, dan ontsteekt de bovenste trap in de ontstane spleet. Gebruikt door bijna iedereen (Soyuz, Atlas, Ariane, Long March). Fire-in-the-hole / hot staging: de bovenste trap ontsteekt *voor* de scheiding, blaast de booster weg met zijn uitlaat. Sovjet (Soyuz, Proton) en nu SpaceX (Starship) — verliest 1–2 % Isp van de bovenste trap die tegen de tussentrap uitlaat maar elimineert de dode tijd in separatie waar zwaartekrachtsleep snelheid opvreet. Pushed staging: de onderste trap geeft een kleine retro-burn om terug te wijken voor de bovenste ontsteekt — Falcon 9 tussen MECO en tweede-trap-ontsteking is in wezen dit, plus een boost-back-manoeuvre als de booster wordt teruggehaald. Elk is een andere afweging tussen mechanisch risico, zwaartekrachtverlies en operationele eenvoud."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "diagram_caption",
+  "en": "Two stages: modern minimum (Falcon 9, Starship, Electron). Three stages: Apollo-era + Soyuz heritage (Saturn V, Soyuz, Long March 3B). 2.5 stages: core + strap-on boosters (Long March 5, Ariane 5/6, Delta IV Heavy, SLS). Plus optional kick stage for precise final orbits (Star 48, Centaur, Fregat, Briz-M, YZ-1).",
+  "cur": "Twee trappen: modern minimum (Falcon 9, Starship, Electron). Drie trappen: Apollo-era + Soyuz-erfenis (Saturn V, Soyuz, Long March 3B). 2,5 trappen: kern + strap-on boosters (Long March 5, Ariane 5/6, Delta IV Heavy, SLS). Plus optionele kick-trap voor precieze eindbanen (Star 48, Centaur, Fregat, Briz-M, YZ-1)."
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "title",
+  "en": "Solar Sails — the only free push",
+  "cur": "Zonnezeil — de enige gratis stuwkracht"
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "intro_sentence",
+  "en": "A solar sail carries no propellant: it is pushed by the momentum of photons, making it the only propulsion system with an effectively unbounded specific impulse — and the only one that gets cheaper to run the longer it flies.",
+  "cur": "Een zonnezeil voert geen drijfstof mee: het wordt voortgestuwd door fotonenmomentum en is het enige voortstuwingssysteem met onbeperkte impuls."
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "body_paragraphs.0",
+  "en": "Light carries momentum. When a photon reflects off a mirror, it imparts twice its momentum to the mirror — a pressure called radiation pressure. In everyday life that force is negligible, but in space, where there is no air resistance, even a tiny continuous force accumulates into a real velocity change. A perfectly reflective 800 m² sail at 1 AU (Earth's distance from the Sun) receives about 5 millinewtons of force — the weight of a small grape. That is less than any ion engine produces, but it requires no propellant, no power system beyond basic housekeeping, and it never stops as long as the Sun shines.",
+  "cur": "Licht draagt momentum. Wanneer een foton van een spiegel afkaatst, geeft het tweemaal zijn momentum aan de spiegel — een druk die stralingdruk wordt genoemd. In het dagelijks leven is deze kracht verwaarloosbaar, maar in de ruimte, waar geen luchtweerstand heerst, accumuleert zelfs een minuscule continue kracht tot een werkelijke snelheidsverandering. Een volkomen reflecterende zeil van 800 m² op 1 AU (de afstand van de Aarde tot de Zon) ondervindt ongeveer 5 millinewton kracht — het gewicht van een kleine druif. Dit is minder dan wat ionmotoren produceren, maar vereist geen drijfstof, geen energiesysteem buiten basisonderhoud, en stopt nooit zolang de Zon schijnt."
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "body_paragraphs.1",
+  "en": "Because the craft carries no propellant, the concept of specific impulse becomes mathematically infinite: there is no propellant mass-flow rate to divide the thrust by. A more useful figure is the sail's characteristic acceleration — thrust divided by total spacecraft mass. Current demonstration missions achieve fractions of a millimetre per second squared; scaling to large, lightweight sails could reach values competitive with ion drives for certain trajectory types. A solar sail can also tack: by tilting the sail at an angle, the component of thrust perpendicular to the Sun-spacecraft line can raise or lower the orbit, or spiral the spacecraft inward toward the Sun for a close solar flyby before heading outward on a hyperbolic trajectory.",
+  "cur": "Omdat het ruimtevaartuig geen drijfstof meevoert, wordt het concept van impuls mathematisch oneindig: er is geen drijfstofmasastroom om de stuwkracht door te delen. Een bruikbaarder getal is de karakteristieke versnelling van de zeil — stuwkracht gedeeld door totale massa van het ruimtevaartuig. Huidige demonstratiemissies bereiken fracties van een millimeter per seconde kwadraat; vergroting naar grote, lichte zeiien zou waarden kunnen bereiken die concurrerend zijn met ionmotoren voor bepaalde trajecttypen. Een zonnezeil kan ook laveren: door de zeil onder een hoek te kantelen, kan de stuwkrachtcomponent loodrecht op de Zon-ruimtevaartuiglijn de baan verhogen of verlagen, of het ruimtevaartuig spiraalvormig naar binnenwaarts voeren richting de Zon voor een dichte zonnvoorbijvlucht voordat het uitwaarts op een hyperbolische baan vertrekt."
+ }
+]

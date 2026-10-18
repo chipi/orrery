@@ -69,3 +69,4 @@ Still open: bare Hubble (homonym with the telescope — needs a person-only guar
 (city, ESA mission), Van Allen (two-word surname), Goldstone (no clean short form), Nathan
 Rosen (ru Розен used by hand in two strings), Scott Kelly bare (QID mismatch), plus the
 place/feature lists above.
+- sr places left Latin after item 2 (no glossary form): Karaganda, Perm Oblast, Saratov Oblast, Smelovka, Altai Krai, Bayevo, Midway, Hutchinson KS — native forms need a glossary lookup.

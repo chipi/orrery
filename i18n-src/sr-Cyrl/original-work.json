@@ -367,7 +367,7 @@
       "title": "Space Shuttle Orbiter"
     },
     "/images/anatomy/space-shuttle-stack_webp": {
-      "title": "Склоп Space Shuttle-а"
+      "title": "Склоп летелице Space Shuttle"
     },
     "/images/anatomy/spektr-rg_webp": {
       "title": "Spektr-RG"
@@ -964,7 +964,7 @@
   "models3d": {
     "/images/colophon/craft-cassini_webp": {
       "title": "Cassini–Huygens",
-      "what": "Антена високог појачања, носачи RTG-а и сонда Huygens — орбитер Сатурна.",
+      "what": "Антена високог појачања, носачи генератора RTG и сонда Huygens — орбитер Сатурна.",
       "where": "Лети + истражуј"
     },
     "/images/colophon/craft-voyager-1_webp": {
@@ -1079,7 +1079,7 @@
     },
     "/images/colophon/model-launcher-starship_webp": {
       "title": "Starship / Super Heavy",
-      "what": "Потпуно поновљиво употребљив склоп од голог нерђајућег челика — 33 Raptor-а на Super Heavy-ју, 6 на Starship-у, предња и задња крилца и огивални нос.",
+      "what": "Потпуно поновљиво употребљив склоп од голог нерђајућег челика — 33 мотора Raptor на ракети Super Heavy, 6 на летелици Starship, предња и задња крилца и огивални нос.",
       "where": "Лет · лансирање/успон"
     },
     "/images/colophon/model-launcher-atlas-v_webp": {
@@ -1129,17 +1129,17 @@
     },
     "/images/colophon/model-launcher-lvm3_webp": {
       "title": "LVM3 / GSLV Mk III",
-      "what": "ISRO-ова тешка ракета-носач — централни степен са два велика бустера S200 на чврсто гориво (Chandrayaan-3).",
+      "what": "Тешка ракета-носач агенције ISRO — централни степен са два велика бустера S200 на чврсто гориво (Chandrayaan-3).",
       "where": "Fly · лансирање/успон"
     },
     "/images/colophon/model-launcher-m-v_webp": {
       "title": "M-V",
-      "what": "JAXA-ина тространа ракета-носач на чврсто гориво у свим степенима (Hayabusa).",
+      "what": "Тространа ракета-носач агенције JAXA на чврсто гориво у свим степенима (Hayabusa).",
       "where": "Fly · лансирање/успон"
     },
     "/images/colophon/model-launcher-h3_webp": {
       "title": "H3",
-      "what": "JAXA-ин нови криогени централни степен са помоћним бустерима на чврсто гориво.",
+      "what": "Нови криогени централни степен агенције JAXA са помоћним бустерима на чврсто гориво.",
       "where": "Лет · лансирање/успон"
     },
     "/images/colophon/model-launcher-ariane-1_webp": {
@@ -1174,7 +1174,7 @@
     },
     "/images/colophon/model-moon-chang-e-lander_webp": {
       "title": "Chang’e лендер",
-      "what": "CNSA-ин спуштајући степен са узлетном капсулом (Chang’e 5 / 6).",
+      "what": "Спуштајући степен агенције CNSA са узлетном капсулом (Chang’e 5 / 6).",
       "where": "Места слетања на Месец"
     },
     "/images/colophon/model-moon-yutu_webp": {
@@ -1184,12 +1184,12 @@
     },
     "/images/colophon/model-moon-chandrayaan-3-vikram_webp": {
       "title": "Chandrayaan-3 Vikram",
-      "what": "ISRO-ов лендер са четири ноге који је допремио ровер Pragyan.",
+      "what": "Лендер агенције ISRO са четири ноге који је допремио ровер Pragyan.",
       "where": "Места слетања на Месец"
     },
     "/images/colophon/model-moon-slim_webp": {
       "title": "SLIM",
-      "what": "JAXA-ин прецизни спусни степен са два мотора, „Снајпер за Месец“.",
+      "what": "Прецизни спусни степен агенције JAXA са два мотора, „Снајпер за Месец“.",
       "where": "Места слетања на Месец"
     },
     "/images/colophon/model-moon-beresheet_webp": {
@@ -1199,7 +1199,7 @@
     },
     "/images/colophon/model-mars-viking_webp": {
       "title": "Viking",
-      "what": "NASA-ин лендер на три ноге са RTG-ом и руком за узимање узорака.",
+      "what": "Лендер агенције NASA на три ноге са генератором RTG и руком за узимање узорака.",
       "where": "Места слетања на Марс"
     },
     "/images/colophon/model-mars-pathfinder-sojourner_webp": {
@@ -1214,7 +1214,7 @@
     },
     "/images/colophon/model-mars-curiosity_webp": {
       "title": "Curiosity",
-      "what": "Ровер класе MSL са RTG-ом, јарболом и руком.",
+      "what": "Ровер класе MSL са генератором RTG, јарболом и руком.",
       "where": "Места слетања на Марс"
     },
     "/images/colophon/model-mars-perseverance-rover_webp": {
@@ -1244,12 +1244,12 @@
     },
     "/images/colophon/model-mars-schiaparelli_webp": {
       "title": "Schiaparelli",
-      "what": "ESA-ина капсула за демонстрацију уласка, спуштања и слетања.",
+      "what": "Капсула агенције ESA за демонстрацију уласка, спуштања и слетања.",
       "where": "Места слетања на Марс"
     },
     "/images/colophon/model-mars-beagle-2_webp": {
       "title": "Beagle 2",
-      "what": "ESA-ин lander у облику шкољке са соларним панелима у облику латица.",
+      "what": "Лендер агенције ESA у облику шкољке са соларним панелима у облику латица.",
       "where": "Места слетања на Марс"
     },
     "/images/colophon/model-venus-venera_webp": {
@@ -1308,33 +1308,33 @@
       "where": "Лет · крстарење/приближавање"
     },
     "/images/colophon/model-cruise-perseverance_webp": {
-      "title": "Крузни степен Perseverance-а",
+      "title": "Крузни степен ровера Perseverance",
       "what": "Крузни степен мисије Mars 2020 + аеро-штит (унутра су запечаћени rover и Ingenuity).",
       "where": "Лет · крстарење/приближавање"
     },
     "/images/colophon/model-cruise-insight_webp": {
-      "title": "Крузни степен InSight-а",
+      "title": "Крузни степен лендера InSight",
       "what": "Диск крузног степена изнад аеро-штита који носи lander.",
       "where": "Лет · крстарење/приближавање"
     },
     "/images/colophon/model-cruise-phoenix_webp": {
-      "title": "Крузни степен Phoenix-а",
+      "title": "Крузни степен лендера Phoenix",
       "what": "Крузни степен + аеро-штит за поларни lander.",
       "where": "Лет · крстарење/приближавање"
     },
     "/images/colophon/model-cruise-mars-pathfinder_webp": {
-      "title": "Крузни степен Pathfinder-а",
+      "title": "Крузни степен летелице Pathfinder",
       "what": "Крузни степен + аеро-штит (lander са ваздушним јастуцима + Sojourner унутра).",
       "where": "Лет · крстарење/приближавање"
     },
     "/images/colophon/model-cruise-spirit_webp": {
-      "title": "Крузни степен Spirit-а",
-      "what": "Крузни степен MER-а + аеро-штит.",
+      "title": "Крузни степен ровера Spirit",
+      "what": "Крузни степен ровера MER + аеро-штит.",
       "where": "Лет · крстарење/приближавање"
     },
     "/images/colophon/model-cruise-opportunity_webp": {
-      "title": "Крузни степен Opportunity-ја",
-      "what": "Крузни степен MER-а + аеро-штит.",
+      "title": "Крузни степен ровера Opportunity",
+      "what": "Крузни степен ровера MER + аеро-штит.",
       "where": "Лет · крстарење/приближавање"
     },
     "/images/colophon/model-cruise-schiaparelli_webp": {
@@ -1344,7 +1344,7 @@
     },
     "/images/colophon/model-cruise-viking1_webp": {
       "title": "Viking орбитер + лендер",
-      "what": "Viking orbiter са lander-ом у капсули са биоштитом испод.",
+      "what": "Viking orbiter са лендером у капсули са биоштитом испод.",
       "where": "Лет · крстарење/приближавање"
     },
     "/images/colophon/model-cruise-mars3_webp": {
@@ -1378,7 +1378,7 @@
       "where": "Лет · крстарење/приближавање"
     },
     "/images/colophon/model-cruise-luna17_webp": {
-      "title": "Носач Lunokhod-а",
+      "title": "Носач ровера Lunokhod",
       "what": "Модул спусног степена који носи ровер Lunokhod (Luna 17 / 21).",
       "where": "Лет · крстарење/приближавање"
     },
@@ -1394,27 +1394,27 @@
     },
     "/images/colophon/model-cruise-chandrayaan3_webp": {
       "title": "Chandrayaan-3",
-      "what": "ISRO-ов погонски модул који носи лендер Vikram.",
+      "what": "Погонски модул агенције ISRO који носи лендер Vikram.",
       "where": "Лет · крстарење/приближавање"
     },
     "/images/colophon/model-cruise-slim_webp": {
       "title": "SLIM",
-      "what": "JAXA-ин компактни крсташки модул „Moon Sniper“.",
+      "what": "Компактни крсташки модул агенције JAXA „Moon Sniper“.",
       "where": "Лет · крстарење/приближавање"
     },
     "/images/colophon/model-cruise-beresheet_webp": {
       "title": "Beresheet",
-      "what": "SpaceIL-ов мали округли лендер на четири ноге током путовања.",
+      "what": "Мали округли лендер организације SpaceIL на четири ноге током путовања.",
       "where": "Лет · крстарење/приближавање"
     },
     "/images/colophon/model-cruise-blue-moon-mk1_webp": {
       "title": "Blue Moon MK1",
-      "what": "Blue Origin-ов висок лендер — централни резервоар на оквиру са четири ноге.",
+      "what": "Висок лендер компаније Blue Origin — централни резервоар на оквиру са четири ноге.",
       "where": "Лет · крстарење/приближавање"
     },
     "/images/colophon/model-cruise-hayabusa1_webp": {
       "title": "Hayabusa на крстарењу",
-      "what": "JAXA-ин модул за повратак узорака — соларна крила, рог за узимање узорака и јонски мотори.",
+      "what": "Модул агенције JAXA за повратак узорака — соларна крила, рог за узимање узорака и јонски мотори.",
       "where": "Лет · крстарење/приближавање"
     },
     "/images/colophon/model-cruise-osiris-rex_webp": {
@@ -1449,12 +1449,12 @@
     },
     "/images/colophon/model-sat-xmm_webp": {
       "title": "XMM-Newton",
-      "what": "Дуга цев ESA-иног рендгенског телескопа.",
+      "what": "Дуга цев рендгенског телескопа агенције ESA.",
       "where": "Орбиталне означке Земље"
     },
     "/images/colophon/model-sat-gaia_webp": {
       "title": "Gaia",
-      "what": "ESA-ина астрометријска опсерваторија са сенилом у облику сукње.",
+      "what": "Астрометријска опсерваторија агенције ESA са сенилом у облику сукње.",
       "where": "Орбиталне означке Земље"
     },
     "/images/colophon/model-sat-lro_webp": {
@@ -1469,7 +1469,7 @@
     },
     "/images/colophon/model-sat-nav-constellation_webp": {
       "title": "Навигациона констелација",
-      "what": "Група сателита класе GPS-а (GPS / Galileo / GLONASS / BeiDou).",
+      "what": "Група сателита класе GPS (GPS / Galileo / GLONASS / BeiDou).",
       "where": "Орбиталне означке Земље"
     },
     "/images/colophon/model-sat-generic-orbiter_webp": {

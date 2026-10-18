@@ -1,15 +1,15 @@
 {
   "title": "C3 — Energia caratteristica",
-  "intro_sentence": "Quanta energia per massa il razzo serve per lasciare il pozzo gravitazionale terrestre con velocità residua.",
+  "intro_sentence": "Energia per unità di massa che serve a un razzo per lasciare il pozzo gravitazionale terrestre con velocità residua: la misura standard.",
   "narrative_101": [
     "C3 è il gergo degli ingegneri di missione per una domanda specifica: con quale forza il razzo deve lanciare l'astronave? È l'energia che rimane una volta usciti dal pozzo gravitazionale terrestre. C3 = 0 significa che sfuggi esattamente alla Terra, arrivando all'infinito con velocità residua zero. C3 superiore a zero significa che sei uscito con una velocità aggiuntiva di riserva — e questa velocità aggiuntiva è quella che ti porta verso Marte o Giove o dovunque.",
     "Si misura in km²/s² (che sembra strano ma è semplicemente la velocità al quadrato) così i numeri rimangono gestibili. Marte tipicamente richiede C3 = 8–12. I voli diretti a Giove hanno bisogno di C3 intorno a 80. New Horizons è stato lanciato con C3 = 158 — il più alto mai raggiunto — per raggiungere Plutone in nove anni e mezzo invece di decenni.",
-    "Perché questo numero importa così tanto? Perché ogni razzo ha una curva C3-vs-carico pubblicata. Man mano che C3 aumenta, il razzo può consegnare meno massa. Falcon Heavy può lanciare 16 tonnellate a C3 = 10, ma solo 5 tonnellate a C3 = 80. La prima decisione nel progetto di una missione è far coincidere il fabbisogno di C3 della destinazione con un razzo che possa sollevare l'astronave a quella energia. Se sbagli e la missione non può decollare."
+    "Perché questo numero importa così tanto? Perché ogni razzo ha una curva pubblicata C3-carico utile. Man mano che C3 aumenta, il razzo può portare meno massa. Falcon Heavy può lanciare 16 tonnellate a C3 = 10, ma solo 5 tonnellate a C3 = 80. La prima decisione nel progetto di una missione è far coincidere il fabbisogno di C3 della destinazione con un razzo che possa sollevare l'astronave a quella energia. Se sbagli, la missione non può volare."
   ],
   "body_paragraphs": [
     "C3 è il quadrato della velocità iperbolica in eccesso. Unità: km²/s². Ti dice quanta energia oltre la velocità di fuga il tuo vettore di lancio deve fornire. C3 = 0 significa che sfuggi appena alla gravità della Terra, arrivando all'infinito con velocità residua zero. C3 = 25 km²/s² significa che arrivi con V∞ = 5 km/s di velocità eliocentrica residua.",
-    "I vettori di lancio sono caratterizzati dalla loro curva C3-vs-carico. Falcon Heavy può lanciare ~16 tonnellate a C3=10, ma solo ~5 tonnellate a C3=80. Marte tipicamente richiede C3 intorno a 8-12. Giove diretto: C3 intorno a 80. New Horizons è stato lanciato con C3 = 158 km²/s² — il più alto di qualunque missione mai realizzata — per fare il viaggio a Plutone in soli 9,5 anni.",
-    "Nel tab FLIGHT di `/missions` di Orrery, il C3 di ogni missione interplanetaria è il punto dati canonico della prima riga. È il singolo numero che cattura \"quanto è stato difficile lanciarla\"."
+    "I vettori di lancio sono caratterizzati dalla loro curva C3-carico utile. Falcon Heavy può lanciare ~16 tonnellate a C3=10, ma solo ~5 tonnellate a C3=80. Marte tipicamente richiede C3 intorno a 8-12. Giove con volo diretto: C3 intorno a 80. New Horizons è stato lanciato con C3 = 158 km²/s² — il più alto di qualunque missione mai realizzata — per fare il viaggio a Plutone in soli 9,5 anni.",
+    "Nella scheda FLIGHT di `/missions` di Orrery, il C3 di ogni missione interplanetaria è il dato canonico della prima riga. È l'unico numero che racchiude «quanto è stato difficile lanciarla»."
   ],
   "formula_caption": "C3 è semplicemente V∞ al quadrato. Stessa fisica, unità diverse."
 }

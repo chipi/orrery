@@ -1,15 +1,15 @@
 {
-  "title": "Variazioni del Tempo di Transito",
+  "title": "Variazioni dei tempi di transito",
   "intro_sentence": "In un sistema affollato, i pianeti si attraggono a vicenda e arrivano in anticipo o in ritardo; la deriva nei tempi di transito rivela mondi invisibili e pesa quelli che vediamo.",
   "narrative_101": [
-    "Un pianeta in transito isolato arriva come un orologio — stesso intervallo, ogni orbita. Ma metti diversi pianeti in un unico sistema e la loro gravità reciproca si spinge a vicenda, così i transiti slittano un po' in anticipo o un po' in ritardo in uno schema ripetuto.",
+    "Un pianeta isolato che transita arriva puntuale come un orologio — stesso intervallo, a ogni orbita. Ma se in un sistema ci sono più pianeti, la loro gravità reciproca li perturba a vicenda, così i transiti slittano un po' in anticipo o un po' in ritardo secondo uno schema che si ripete.",
     "Quelle derive di pochi minuti sono una firma gravitazionale. Modellale e puoi pesare i pianeti dai loro soli strattoni — nessuno spettrografo necessario — e a volte dedurre un pianeta che non transita affatto, percepito solo attraverso la sua attrazione sugli altri.",
-    "È così che i sette piccoli mondi di TRAPPIST-1 sono stati pesati: troppo deboli per la velocità radiale, le loro masse sono arrivate dal modo in cui si affrettano e si ritardano a vicenda attraverso la stella."
+    "È così che sono stati pesati i sette piccoli mondi di TRAPPIST-1: troppo deboli per la velocità radiale, le loro masse sono state ricavate dal modo in cui si anticipano e si ritardano a vicenda mentre attraversano la stella."
   ],
   "body_paragraphs": [
-    "Le variazioni del tempo di transito (TTVs) sfruttano le interazioni gravitazionali tra pianeti nello stesso sistema. Un pianeta perfettamente isolato transita con un periodo costante; i pianeti interagenti mostrano deviazioni periodiche la cui ampiezza e schema codificano le masse e le orbite dei pianeti.",
-    "Le TTVs brillano esattamente dove la velocità radiale fatica — attorno a stelle deboli e piccole il cui oscillamento Doppler è sepolto nel rumore — e possono rivelare pianeti non transitanti solo attraverso la loro influenza. Sono più sensibili vicino alle risonanze orbitali, dove incontri ravvicinati ripetuti amplificano gli strattoni.",
-    "Le masse ottenute con questo metodo integrano i raggi di transito per dare densità, motivo per cui i sistemi risonanti compatti come TRAPPIST-1 e le catene multi-pianeta di Kepler sono così ben caratterizzati nonostante orbitino stelle deboli."
+    "Le variazioni dei tempi di transito (TTV) sfruttano le interazioni gravitazionali tra pianeti dello stesso sistema. Un pianeta perfettamente isolato transita con periodo costante; i pianeti che interagiscono mostrano deviazioni periodiche, la cui ampiezza e il cui andamento codificano le masse e le orbite dei pianeti.",
+    "Le TTV danno il meglio proprio dove la velocità radiale fatica — attorno a stelle deboli e piccole, la cui oscillazione Doppler è sepolta nel rumore — e possono rivelare pianeti che non transitano, solo attraverso la loro influenza. Sono più sensibili vicino alle risonanze orbitali, dove i ripetuti incontri ravvicinati amplificano le spinte.",
+    "Le masse ottenute con questo metodo integrano i raggi di transito per dare le densità, motivo per cui sistemi risonanti compatti come TRAPPIST-1 e le catene multiplanetarie di Kepler sono così ben caratterizzati pur orbitando attorno a stelle deboli."
   ],
   "diagram_caption": "Gli strattoni gravitazionali reciproci fanno arrivare i transiti in anticipo o in ritardo; lo schema della deriva codifica le masse dei pianeti."
 }

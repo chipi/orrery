@@ -1,16 +1,16 @@
 {
-  "title": "Periodo siderale vs sinodico",
-  "intro_sentence": "Due modi di chiedere \"quanto spesso?\" — stesso corpo, frame diverso.",
+  "title": "Periodo siderale e periodo sinodico",
+  "intro_sentence": "Ogni quanto ritorna? Stesso corpo, altro sistema di riferimento, altra risposta.",
   "narrative_101": [
     "Ci sono due risposte diverse alla domanda «quanto dura un anno su Marte?» — e quale ti serve dipende da cosa stai cercando di fare.",
-    "Se vuoi sapere quanto impiega Marte a fare UN GIRO attorno al Sole, la risposta è 687 giorni terrestri. Quello è il periodo siderale — misurato rispetto alle stelle lontane e immobili. È la verità geometrica dell'orbita. Vis-viva e la terza legge di Keplero lavorano entrambe in tempo siderale.",
+    "Se vuoi sapere quanto impiega Marte a fare UN GIRO attorno al Sole, la risposta è 687 giorni terrestri. Quello è il periodo siderale — misurato rispetto alle stelle lontane e immobili. È la verità geometrica dell'orbita. Vis-viva e la terza legge di Keplero funzionano entrambe in tempo siderale.",
     "Ma se vuoi sapere ogni quanto Terra e Marte SI ALLINEANO ALLO STESSO MODO (per poter lanciare una missione), la risposta è 780 giorni — circa 26 mesi. Quello è il periodo sinodico. Perché più lungo? Perché mentre Marte gira una volta attorno al Sole, la Terra ci gira quasi due volte — entrambi i pianeti continuano a muoversi. L'allineamento si ripete solo quando la Terra ha doppiato Marte nella danza.",
     "Ecco perché le finestre di lancio per Marte si aprono ogni 26 mesi. Se ne perdi una, aspetti due anni. Ogni missione su Marte di cui hai sentito parlare ha dovuto sincronizzarsi con una finestra sinodica — Curiosity nel 2011, Perseverance nel 2020, la prossima nel 2026. Il periodo sinodico è il battito cardiaco della pianificazione delle missioni interplanetarie."
   ],
   "body_paragraphs": [
-    "Periodo siderale: tempo per un'orbita completa rispetto alle stelle fisse. È il periodo geometrico della legge di Keplero — l'anno siderale di Marte è di 687 giorni terrestri. Periodo sinodico: tempo affinché un corpo ritorni nella stessa posizione rispetto a un altro corpo, solitamente visto da un terzo. Il periodo sinodico di Marte — il tempo tra gli allineamenti Terra-Marte — è di 780 giorni, ovvero circa 26 mesi.",
-    "Il periodo sinodico è quello che interessa ai pianificatori di missioni. I trasferimenti di Hohmann Terra-Marte funzionano solo quando Marte si trova nel posto giusto. La prossima finestra di lancio praticabile appare ogni 26 mesi. Se la perdi, aspetta due anni per un'altra. Questo è il ritmo di ogni missione su Marte mai condotta.",
-    "Matematicamente: `1/T_sin = 1/T_interno − 1/T_esterno`. Se l'anno terrestre è 1,0 yr e quello di Marte è 1,88 yr: `1/T_sin = 1 − 1/1,88 = 0,468`, quindi `T_sin = 2,14 yr ≈ 26 mesi`. La matematica è semplice; la conseguenza operativa — ogni cronologia di missione deve rispettarla — è dove acquista importanza nella pianificazione delle missioni."
+    "Periodo siderale: tempo impiegato per compiere un'orbita completa rispetto alle stelle fisse. È il periodo geometrico, quello della terza legge di Keplero — l'anno siderale di Marte è di 687 giorni terrestri. Periodo sinodico: tempo che un corpo impiega a tornare nella stessa posizione rispetto a un altro corpo, di solito visto da un terzo. Il periodo sinodico di Marte — il tempo tra gli allineamenti Terra-Marte — è di 780 giorni, ovvero circa 26 mesi.",
+    "Il periodo sinodico è quello che interessa ai pianificatori di missioni. I trasferimenti di Hohmann Terra-Marte funzionano solo quando Marte si trova nel posto giusto. La prossima finestra di lancio praticabile si apre ogni 26 mesi. Se ne perdi una, devi aspettarne un'altra per due anni. Questo è il ritmo di ogni missione su Marte mai effettuata.",
+    "Matematicamente: `1/T_syn = 1/T_inner − 1/T_outer`. Se l'anno della Terra è di 1,0 anni e quello di Marte di 1,88 anni: `1/T_syn = 1 − 1/1.88 = 0.468`, quindi `T_syn = 2.14 yr ≈ 26 months`. La matematica è semplice; la conseguenza operativa — ogni cronoprogramma di missione deve rispettarla — è ciò che pesa davvero nella pianificazione delle missioni."
   ],
-  "diagram_caption": "Siderale vs sinodico."
+  "diagram_caption": "Siderale: stesso allineamento con la stella. Sinodico: stesso allineamento Terra-Marte-Sole, più lungo perché entrambi i pianeti si sono mossi."
 }

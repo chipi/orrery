@@ -1,0 +1,650 @@
+[
+  {
+    "rel": "science/exoplanets/transit.json",
+    "at": "body_paragraphs.1",
+    "old": "Il suo bias è geometrico — cattura solo la minoranza di sistemi le cui orbite vediamo quasi di taglio — e favorisce pianeti grandi con periodi brevi, che transitano più spesso e più profondamente. I falsi positivi dovuti a binarie eclissanti e attività stellare fanno sì che i transiti vengano solitamente confermati da un secondo metodo.",
+    "new": "La sua distorsione di selezione è geometrica — coglie solo la minoranza di sistemi le cui orbite vediamo quasi di taglio — e favorisce i pianeti grandi con periodi brevi, che transitano più spesso e in modo più marcato. I falsi positivi dovuti alle binarie a eclisse e all'attività stellare fanno sì che i transiti vengano di solito confermati con un secondo metodo."
+  },
+  {
+    "rel": "science/exoplanets/transit.json",
+    "at": "diagram_caption",
+    "old": "Mentre il pianeta attraversa il disco della stella, la luminosità misurata cala del rapporto delle loro aree, poi si riprende.",
+    "new": "Mentre il pianeta attraversa il disco della stella, la luminosità misurata cala di una frazione pari al rapporto tra le loro aree, poi risale."
+  },
+  {
+    "rel": "science/exoplanets/trappist-1-system.json",
+    "at": "title",
+    "old": "TRAPPIST-1: Sette Mondi delle Dimensioni della Terra",
+    "new": "TRAPPIST-1: sette mondi grandi quanto la Terra"
+  },
+  {
+    "rel": "science/exoplanets/trappist-1-system.json",
+    "at": "intro_sentence",
+    "old": "Una debole nana rossa a 40 anni luce di distanza ospita sette pianeti di dimensioni simili alla Terra — il sistema compatto più ricco conosciuto e un territorio di caccia privilegiato per la ricerca di abitabilità.",
+    "new": "Una debole nana rossa a 40 anni luce ospita sette pianeti grandi più o meno come la Terra — il sistema compatto più ricco che si conosca e un terreno di caccia privilegiato per cercare l'abitabilità."
+  },
+  {
+    "rel": "science/exoplanets/trappist-1-system.json",
+    "at": "narrative_101.2",
+    "old": "I sette si muovono in una catena quasi perfetta di risonanze orbitali — un metronomo cosmico — che ha permesso agli astronomi di pesarli attraverso le loro attrazioni reciproche e li ha resi i principali obiettivi tra i piccoli pianeti per il James Webb Space Telescope.",
+    "new": "I sette si muovono in una catena quasi perfetta di risonanze orbitali — un metronomo cosmico — che ha permesso agli astronomi di pesarli dalle loro reciproche attrazioni e li ha resi i bersagli principali tra i piccoli pianeti per il James Webb Space Telescope."
+  },
+  {
+    "rel": "science/exoplanets/trappist-1-system.json",
+    "at": "body_paragraphs.0",
+    "old": "TRAPPIST-1 (una nana M8 a ~40 anni luce di distanza in Aquario) ospita sette pianeti in transito, da b a h, con raggi da circa 0,75 a 1,13 volte quello terrestre. Scoperti da survey di transito da terra e da Spitzer e annunciati completamente nel 2017, le loro masse sono state determinate dalle variazioni dei tempi di transito — i pianeti sono troppo deboli per la velocità radiale.",
+    "new": "TRAPPIST-1 (una nana M8 a ~40 anni luce, nell'Acquario) ospita sette pianeti in transito, da b a h, con raggi da circa 0,75 a 1,13 volte quello terrestre. Scoperti da campagne di rilevamento dei transiti da terra e dal telescopio Spitzer e annunciati per intero nel 2017, hanno avuto le masse determinate dalle variazioni dei tempi di transito: i pianeti sono troppo deboli per usare la velocità radiale."
+  },
+  {
+    "rel": "science/exoplanets/trappist-1-system.json",
+    "at": "body_paragraphs.1",
+    "old": "I pianeti sono disposti in una catena di risonanze di primo ordine, una forte evidenza che siano migrati verso l'interno insieme attraverso il disco di nascita. I pianeti e, f e g si trovano nella zona abitabile conservativa; tutti sono probabilmente in rotazione sincrona.",
+    "new": "I pianeti formano una catena di risonanze di primo ordine, una prova solida che siano migrati insieme verso l'interno attraverso il disco in cui sono nati. I pianeti e, f e g si trovano nella zona abitabile conservativa; con ogni probabilità tutti sono in rotazione sincrona."
+  },
+  {
+    "rel": "science/exoplanets/trappist-1-system.json",
+    "at": "body_paragraphs.2",
+    "old": "JWST sta sondando sistematicamente le loro atmosfere. I primi risultati indicano che i mondi più interni (b, c) sono in gran parte privi di atmosfera — il tributo previsto delle eruzioni stellari delle nane rosse — mentre i pianeti esterni temperati rimangono il test di punta del settore per verificare se le zone abitabili più comuni della galassia possano mantenere un'atmosfera.",
+    "new": "JWST sta sondando sistematicamente le loro atmosfere. I primi risultati indicano che i mondi più interni (b, c) sono in gran parte privi di atmosfera — il tributo previsto dei brillamenti delle nane rosse — mentre i pianeti esterni temperati restano il test di punta del settore per verificare se le zone abitabili più comuni della galassia possano mantenere un'atmosfera."
+  },
+  {
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.0",
+    "old": "Il volo spaziale non è apparso dal nulla. Si basa su una serie di scoperte — le ellissi di Keplero, la gravità di Newton, l'equazione dei razzi di Tsiolkovsky, il primo accensione a combustibile liquido di Goddard, l'R-7 di Korolëv — ognuna costruita sulla precedente. Questa scheda ripercorre le tappe fondamentali in ordine cronologico, nomina le persone che le hanno raggiunte, e rimanda al resto di [/science](tab/science) dove vive la matematica.",
+    "new": "Il volo spaziale non è nato dal nulla. Poggia su una pila di scoperte — le ellissi di Keplero, la gravità di Newton, l'equazione del razzo di Ciolkovskij, la prima accensione a propellente liquido di Goddard, l'R-7 di Korolëv — ognuna costruita sulla precedente. Questa scheda ripercorre le tappe fondamentali in ordine cronologico, dice chi le ha raggiunte e rimanda al resto di [/science](tab/science), dove vive la matematica."
+  },
+  {
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.1",
+    "old": "Abbiamo selezionato sei momenti cruciali: le ellissi di Keplero, la gravità di Newton, l'equazione dei razzi di Tsiolkovsky, il primo accensione a combustibile liquido di Goddard, l'R-7 di Korolëv e l'Apollo 11. Centinaia di altri meriterebbero un posto; le revisioni future li inseriranno (i telescopi di Galileo, l'articolo sul trasferimento di Hohmann, la moglie di Goddard che ha scattato la maggior parte delle foto, gli ingegneri sovietici che Korolëv non poteva nominare in pubblico, la passeggiata spaziale di Ed White, la linea di altitudine di von Kármán). La storia non appartiene a una sola nazione — ogni capitolo ha persone di cui non hai mai sentito parlare che l'hanno resa possibile.",
+    "new": "Abbiamo scelto sei momenti cruciali: le ellissi di Keplero, la gravità di Newton, l'equazione del razzo di Ciolkovskij, la prima accensione a propellente liquido di Goddard, l'R-7 di Korolëv e l'Apollo 11. Centinaia di altri meriterebbero un posto; le revisioni future li inseriranno (i telescopi di Galileo, l'articolo sul trasferimento di Hohmann, la moglie di Goddard che scattò la maggior parte delle foto, gli ingegneri sovietici che Korolëv non poteva nominare in pubblico, la passeggiata spaziale di Ed White, la linea di Kármán). La storia non appartiene a una sola nazione — ogni capitolo ha persone di cui non hai mai sentito parlare e che l'hanno resa possibile."
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "narrative_101.0",
+    "old": "Il 25 maggio 1961, John F. Kennedy disse al Congresso: \"questa nazione dovrebbe impegnarsi a raggiungere l'obiettivo, entro questo decennio, di far atterrare un uomo sulla Luna e farlo tornare sano e salvo sulla Terra.\" Otto anni dopo, quasi al mese, Neil Armstrong mise piede su Mare Tranquillitatis. 400.000 persone lavoravano ad Apollo al picco; il programma costò circa 25,4 miliardi di dollari in totale (1960–1973, nominali); il budget della NASA raggiunse il picco di circa il 4,4% del bilancio federale nel 1966.",
+    "new": "Il 25 maggio 1961 John F. Kennedy disse al Congresso: \"questa nazione dovrebbe impegnarsi a raggiungere l'obiettivo, entro questo decennio, di far atterrare un uomo sulla Luna e farlo tornare sano e salvo sulla Terra.\" Otto anni dopo, quasi al mese, Neil Armstrong mise piede sul Mare della Tranquillità. Al culmine, 400.000 persone lavoravano ad Apollo; il programma costò in tutto circa 25,4 miliardi di dollari (1960–1973, in dollari correnti); il bilancio della NASA toccò il suo massimo, circa il 4,4% del bilancio federale, nel 1966."
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.0",
+    "old": "Il Saturn V era un mostro a tre stadi a propellente liquido di 110 metri, progettato sotto Wernher von Braun (il progettista tedesco del V-2, portato negli USA sotto Operation Paperclip nel 1945). Primo stadio: 5× motori F-1, spinta di 7,6 milioni di lbf. Ancora il razzo con la spinta più alta a volare una missione con equipaggio completamente riuscita (SLS Block 1 e Starship superano la sua spinta al lancio grezza; nulla ha ancora eguagliato il suo carico utile con equipaggio verso TLI).",
+    "new": "Il Saturn V era un mostro a tre stadi a propellente liquido di 110 metri, progettato sotto la guida di Wernher von Braun (il progettista tedesco del V-2, portato negli USA nel 1945 con l'Operation Paperclip). Primo stadio: 5 motori F-1, spinta di 7,6 milioni di lbf. È ancora il razzo con la spinta più alta ad aver compiuto una missione con equipaggio pienamente riuscita (SLS Block 1 e Starship superano la sua spinta grezza al decollo; nulla ha ancora eguagliato il suo carico utile con equipaggio verso la TLI)."
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.1",
+    "old": "Traiettoria: orbita a ritorno libero, la \"figura-8\" Terra-Luna-Terra. Se l'accensione dell'inserimento in orbita lunare fosse fallita, Apollo 11 avrebbe fatto un loop attorno alla Luna e sarebbe tornato sulla Terra sullo stesso arco — un aborto integrato. Apollo 13 utilizzò esattamente questa proprietà quando il suo modulo di servizio fallì, facendo un loop dietro la Luna e tornando a casa.",
+    "new": "Traiettoria: a ritorno libero, un «otto» Terra-Luna-Terra. Se la manovra di inserimento in orbita lunare fosse fallita, Apollo 11 avrebbe girato intorno alla Luna e sarebbe tornato sulla Terra lungo lo stesso arco — un'interruzione di missione già incorporata nella traiettoria. Apollo 13 sfruttò proprio questa proprietà quando il suo modulo di servizio ebbe un guasto: aggirò la Luna e tornò a casa."
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.3",
+    "old": "Cose che avrebbero potuto ucciderli: allarmi AGC 1201 e 1202 durante la discesa (overflow esecutivo — il design robusto del software di Hamilton si riprese automaticamente); atterraggio manuale perché l'obiettivo automatico era un campo di massi (Armstrong atterrò con circa 25 secondi di carburante rimasto); il motore di risalita del LM aveva UNA sola possibilità di accensione ed era stato testato senza successo a piena durata durante il volo.",
+    "new": "Cose che avrebbero potuto ucciderli: gli allarmi AGC 1201 e 1202 durante la discesa (sovraccarico dell'esecutivo — la solida progettazione del software di Hamilton permise il recupero automatico); atterraggio manuale, perché il punto di atterraggio automatico era un campo di massi (Armstrong atterrò con circa 25 secondi di carburante rimasti); il motore di risalita del LM aveva UNA sola possibilità di accensione e non era mai stato provato in volo a piena durata."
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.4",
+    "old": "Apollo ha completato sei allunaggi riusciti: 11, 12, 14, 15, 16, 17 (1969-1972). Apollo 13 ha mancato la Luna (LOI annullato), ha fatto un loop dietro di essa, è tornata sana e salva. 12 umani hanno camminato sulla Luna; l'ultimo (Gene Cernan, Apollo 17) ha lasciato il suolo il 14 dicembre 1972.",
+    "new": "Apollo realizzò sei allunaggi riusciti: 11, 12, 14, 15, 16, 17 (1969-1972). Apollo 13 non raggiunse la Luna (LOI annullata), girò dietro di essa e tornò sana e salva. Dodici esseri umani hanno camminato sulla Luna; l'ultimo, Gene Cernan (Apollo 17), la lasciò il 14 dicembre 1972."
+  },
+  {
+    "rel": "science/history/goddard-liquid-rocket-1926.json",
+    "at": "title",
+    "old": "Il primo razzo a carburante liquido di Goddard · 1926",
+    "new": "Il primo razzo a propellente liquido di Goddard · 1926"
+  },
+  {
+    "rel": "science/history/goddard-liquid-rocket-1926.json",
+    "at": "intro_sentence",
+    "old": "16 marzo 1926: una fragile struttura di 3 metri si innalza per 12 metri nel cielo del Massachusetts. Il primo volo di un razzo a carburante liquido della storia.",
+    "new": "16 marzo 1926: una fragile struttura di 3 metri si innalza per 12 metri nel cielo del Massachusetts. Il primo volo di un razzo a propellente liquido della storia."
+  },
+  {
+    "rel": "science/history/goddard-liquid-rocket-1926.json",
+    "at": "narrative_101.0",
+    "old": "Robert Goddard era professore di fisica all'Università Clark di Worcester, Massachusetts, con un articolo del 1919 per lo Smithsonian che proponeva che i razzi potessero raggiungere la Luna — motivo per cui il New York Times lo prese in giro in un editoriale del 1920 affermando che non comprendeva nemmeno la fisica delle scuole superiori. (Il Times si rettificò il 17 luglio 1969 — il giorno dopo il lancio di Apollo 11, mentre il veicolo spaziale era in viaggio verso la Luna.)",
+    "new": "Robert Goddard era professore di fisica alla Clark University di Worcester, Massachusetts, e nel 1919 pubblicò con lo Smithsonian uno scritto in cui sosteneva che i razzi potessero raggiungere la Luna — per questo il New York Times lo derise in un editoriale del 1920, sostenendo che non capisse nemmeno la fisica del liceo. (Il Times ritrattò il 17 luglio 1969 — il giorno dopo il lancio dell'Apollo 11, mentre la navicella era in viaggio verso la Luna.)"
+  },
+  {
+    "rel": "science/history/goddard-liquid-rocket-1926.json",
+    "at": "narrative_101.1",
+    "old": "Nel nevoso 16 marzo 1926, nella fattoria della zia Effie Ward ad Auburn, Goddard lanciò un razzo di 2 kg circa, lungo 3 metri, alimentato da ossigeno liquido e benzina. Volò per 2,5 secondi, raggiunse 12,5 metri di altitudine e si schiantò nel campo di cavoli 56 metri più lontano. Sua moglie Esther Goddard lo fotografò. Questo breve volo è l'inizio di ogni stirpe di razzi moderni.",
+    "new": "Il 16 marzo 1926, in un giorno di neve, nella fattoria della zia Effie Ward ad Auburn, Goddard lanciò un razzo di circa 2 kg, lungo 3 metri, alimentato a ossigeno liquido e benzina. Volò per 2,5 secondi, raggiunse 12,5 metri di quota e cadde in un campo di cavoli 56 metri più in là. Lo fotografò sua moglie Esther. Quel breve balzo è l'inizio di ogni discendenza di razzi moderni."
+  },
+  {
+    "rel": "science/history/goddard-liquid-rocket-1926.json",
+    "at": "narrative_101.2",
+    "old": "Goddard era riservato — paranoico riguardo ai competitor, rifiutava la maggior parte delle collaborazioni. I suoi brevetti coprivano praticamente tutto: motori con ugello orientabile, pompe, guida giroscopica, configurazioni a più stadi. I tedeschi del dopoguerra avevano letto i suoi brevetti; gli americani del dopoguerra dovettero reimparare gran parte del suo lavoro perché non lo aveva condiviso.",
+    "new": "Goddard era riservato — ossessionato dai concorrenti, rifiutava la maggior parte delle collaborazioni. I suoi brevetti coprivano praticamente tutto: motori con ugello orientabile, pompe, guida giroscopica, configurazioni a più stadi. I tedeschi del dopoguerra avevano letto i suoi brevetti; gli americani del dopoguerra dovettero reimparare gran parte del suo lavoro perché non lo aveva condiviso."
+  },
+  {
+    "rel": "science/history/goddard-liquid-rocket-1926.json",
+    "at": "body_paragraphs.0",
+    "old": "Sito di lancio del 16 marzo 1926: la fattoria della zia Effie Ward, Auburn, Massachusetts. Veicolo: \"Nell\" — 3 metri di lunghezza, ~3 m di struttura, del peso di circa 6 kg asciutto. Propellenti: ossigeno liquido + benzina, raffreddati rigenerativamente, ugello orientabile.",
+    "new": "Sito di lancio (16 marzo 1926): la fattoria della zia Effie Ward, Auburn, Massachusetts. Veicolo: \"Nell\" — struttura alta 10 piedi (~3 m), del peso di circa 6 kg a vuoto. Propellenti: ossigeno liquido + benzina, con raffreddamento rigenerativo e ugello orientabile."
+  },
+  {
+    "rel": "science/history/goddard-liquid-rocket-1926.json",
+    "at": "body_paragraphs.2",
+    "old": "Esther Goddard scattò la maggior parte delle fotografie. Il suo lavoro è sottovalutato nelle storie standard — l'immagine iconica del lancio del 1926 è sua.",
+    "new": "Esther Goddard scattò la maggior parte delle fotografie. Il suo lavoro è poco riconosciuto nelle ricostruzioni storiche correnti — l'immagine iconica del lancio del 1926 è sua."
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "intro_sentence",
+    "old": "I dati sulla posizione di Marte, raccolti da Tycho Brahe a occhio nudo in una vita intera e sintetizzati da Keplero nelle tre leggi che ogni orbita obbedisce.",
+    "new": "I dati di una vita di osservazioni di Marte a occhio nudo, raccolti da Tycho Brahe e condensati da Keplero nelle tre leggi a cui obbedisce ogni orbita."
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "narrative_101.0",
+    "old": "Tycho Brahe trascorse ~20 anni presso l'osservatorio di Uraniborg su Hven, misurando la posizione di Marte con quadranti costruiti in ottone e quercia — precisione migliore dell'arcminuto, tutto con soli occhi nudi. Morì nel 1601 avendo pubblicato poco dei suoi risultati planetari.",
+    "new": "Tycho Brahe trascorse circa 20 anni presso l'osservatorio di Uraniborg su Hven, misurando la posizione di Marte con quadranti costruiti in ottone e quercia — una precisione migliore del minuto d'arco, tutto a occhio nudo. Morì nel 1601 avendo pubblicato poco dei suoi risultati planetari."
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "narrative_101.1",
+    "old": "Keplero ereditò i quaderni su Marte. Trascorse un altro decennio cercando di adattarli a cerchi e fallì. La svolta arrivò quando tentò un'ellisse — Marte corrispondere immediatamente. Da questo scaturirono tre leggi: le orbite sono ellissi con il Sole in uno dei fuochi; aree uguali sono percorse in tempi uguali; il quadrato del periodo è proporzionale al cubo del semiasse maggiore.",
+    "new": "Keplero ereditò i quaderni su Marte. Trascorse un altro decennio cercando di farli rientrare in orbite circolari, senza riuscirci. La svolta arrivò quando provò con un'ellisse — Marte combaciò subito. Da questo scaturirono tre leggi: le orbite sono ellissi con il Sole in uno dei fuochi; aree uguali vengono spazzate in tempi uguali; il quadrato del periodo è proporzionale al cubo del semiasse maggiore."
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "narrative_101.2",
+    "old": "Senza queste tre leggi, nessuna traiettoria di veicolo spaziale in questa app potrebbe essere calcolata. Ogni cella porkchop, ogni arco di trasferimento, ogni pianeta in /explore è una soluzione kepleriana.",
+    "new": "Senza queste tre leggi, nessuna traiettoria di veicolo spaziale in questa app si potrebbe calcolare. Ogni cella porkchop, ogni arco di trasferimento, ogni pianeta su /explore è una soluzione kepleriana."
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "body_paragraphs.1",
+    "old": "Keplero non aveva alcuna giustificazione teorica — le leggi erano schemi empirici estratti dai dati. Newton avrebbe fornito la spiegazione 70 anni dopo (la gravità varia come 1/r²; le orbite vincolate sono sezioni coniche; la Legge 3 discende dalla conservazione dell'energia).",
+    "new": "Keplero non aveva alcuna giustificazione teorica — le leggi erano regolarità empiriche ricavate dai dati. Newton avrebbe fornito la spiegazione 70 anni dopo (la gravità varia come 1/r²; le orbite legate sono sezioni coniche; la Legge 3 discende dalla conservazione dell'energia)."
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "body_paragraphs.2",
+    "old": "Il contributo di Brahe non era solo i dati: era uno strumentista meticoloso che spinse la misurazione a occhio nudo al suo limite fisico. La precisione a livello di telescopio arrivò solo dopo il telescopio di Galileo del 1609 — troppo tardi per sovrapporsi alla carriera di Brahe.",
+    "new": "Il contributo di Brahe non si limitò ai dati: era uno strumentista meticoloso che spinse la misura a occhio nudo al suo limite fisico. La precisione da telescopio arrivò solo dopo il telescopio di Galileo del 1609 — troppo tardi per sovrapporsi alla carriera di Brahe."
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "body_paragraphs.3",
+    "old": "Rianalisi moderna: i residui di Marte di Keplero sono subarcminuto. Ha individuato un'ellisse con eccentricità 0,0934 da dati che avevano un'incertezza di misurazione irriducibile di ~1 arcminuto. L'adattamento era reale.",
+    "new": "Rianalisi moderna: i residui di Keplero su Marte sono inferiori al minuto d'arco. Individuò con precisione un'ellisse di eccentricità 0,0934 a partire da dati con un'incertezza di misura irriducibile di circa 1 minuto d'arco. L'adattamento era reale."
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "diagram_caption",
+    "old": "Posizioni di Marte di Tycho (punti) rispetto all'adattamento ellittico di Keplero (curva). Sole in uno dei fuochi.",
+    "new": "Posizioni di Marte secondo Tycho (punti) a confronto con la curva ellittica di Keplero. Sole in uno dei fuochi."
+  },
+  {
+    "rel": "science/history/newton-principia-1687.json",
+    "at": "intro_sentence",
+    "old": "Un libro, tre leggi del moto e la legge dell'inverso del quadrato della gravità — il fondamento su cui riposa ancora tutto lo spaceflight.",
+    "new": "Un libro, tre leggi del moto e la legge di gravità dell'inverso del quadrato — il fondamento su cui poggia ancora tutto ciò che fa il volo spaziale."
+  },
+  {
+    "rel": "science/history/newton-principia-1687.json",
+    "at": "narrative_101.0",
+    "old": "Nel 1684 Halley chiedeva ai giusti interlocutori quale forma avrebbe assunto un'orbita se la trazione del Sole andasse come 1/r². Christopher Wren scommesse un libro di quaranta scellini che nessuno potesse provarlo; Hooke rivendicò una prova che non aveva. Halley chiese a Newton — Newton disse «un'ellisse» senza esitazione, recuperò la prova da appunti vecchi di anni, e tre anni dopo pubblicò i Principia.",
+    "new": "Nel 1684 Halley interpellava le persone giuste per sapere quale forma avrebbe assunto un'orbita se l'attrazione del Sole variasse come 1/r². Christopher Wren scommise un libro da quaranta scellini che nessuno sarebbe riuscito a dimostrarlo; Hooke rivendicò una dimostrazione che non aveva. Halley si rivolse a Newton — Newton rispose «un'ellisse» senza esitazione, recuperò la dimostrazione da appunti vecchi di anni e tre anni dopo pubblicò i Principia."
+  },
+  {
+    "rel": "science/history/newton-principia-1687.json",
+    "at": "narrative_101.1",
+    "old": "Tre leggi del moto (inerzia, F = ma, azione-reazione) più la legge della gravità dell'inverso del quadrato (F = Gm₁m₂/r²) più il calcolo per farla funzionare — un libro, tre anni, nessuna revisione paritaria. Halley pagò i costi di stampa di tasca sua quando la Royal Society rimase senza soldi a causa di un libro di anatomia dei pesci.",
+    "new": "Tre leggi del moto (inerzia, F = ma, azione-reazione) più la legge di gravità dell'inverso del quadrato (F = Gm₁m₂/r²) più il calcolo infinitesimale per far tornare tutto — un libro, tre anni, nessuna revisione paritaria. Halley pagò di tasca propria le spese di stampa quando la Royal Society finì i fondi con un libro di anatomia dei pesci."
+  },
+  {
+    "rel": "science/history/newton-principia-1687.json",
+    "at": "narrative_101.2",
+    "old": "Da quelle equazioni: le tre leggi di Keplero derivano chiaramente. Le maree, il moto dei proiettili, la precessione degli equinozi, la forma della Terra — tutte conseguenze. Lo spaceflight 280 anni dopo è meccanica newtoniana diretta con motori aggiunti.",
+    "new": "Da quelle equazioni: le tre leggi di Keplero ne discendono con chiarezza. Le maree, il moto dei proiettili, la precessione degli equinozi, la forma della Terra — tutte conseguenze. Il volo spaziale, 280 anni dopo, è semplice meccanica newtoniana con l'aggiunta dei motori."
+  },
+  {
+    "rel": "science/history/newton-principia-1687.json",
+    "at": "body_paragraphs.0",
+    "old": "Philosophiæ Naturalis Principia Mathematica fu pubblicato nel luglio 1687 in latino. Tre libri: il moto nel vuoto, il moto attraverso mezzi resistenti, il sistema del mondo. Il terzo libro applica le leggi al cosmo reale e riproduce tutti i dati di Keplero dai primi principi.",
+    "new": "Philosophiæ Naturalis Principia Mathematica fu pubblicato nel luglio 1687 in latino. Tre libri: il moto nel vuoto, il moto attraverso mezzi resistenti, il sistema del mondo. Il terzo libro applica le leggi al cosmo reale e riproduce tutti i dati di Keplero a partire dai princìpi primi."
+  },
+  {
+    "rel": "science/history/newton-principia-1687.json",
+    "at": "body_paragraphs.1",
+    "old": "Il calcolo era l'invenzione di Newton specificamente per fare questo. Lo chiamò «flussioni» — Leibniz inventò indipendentemente essenzialmente la stessa macchina in Germania più o meno nello stesso periodo, e la rivalità sulla priorità durò decenni.",
+    "new": "Newton inventò il calcolo infinitesimale proprio per questo scopo. Lo chiamò «flussioni» — Leibniz inventò in modo indipendente, in Germania, sostanzialmente lo stesso apparato più o meno nello stesso periodo, e la rivalità sulla priorità durò decenni."
+  },
+  {
+    "rel": "science/history/newton-principia-1687.json",
+    "at": "body_paragraphs.3",
+    "old": "I moderni propagatori di orbite numeriche eseguono essenzialmente le equazioni di Newton con aritmetica in virgola mobile. L'arco eliocentrico di /fly, il porkchop di /plan, ogni soluzione kepleriana — gravità newtoniana fino in fondo.",
+    "new": "I moderni propagatori numerici di orbite eseguono in sostanza le equazioni di Newton con aritmetica in virgola mobile. L'arco eliocentrico di /fly, il porkchop di /plan, ogni soluzione kepleriana — gravità newtoniana fino in fondo."
+  },
+  {
+    "rel": "science/history/newton-principia-1687.json",
+    "at": "formula_caption",
+    "old": "Legge di Newton della gravitazione universale. G ≈ 6.674 × 10⁻¹¹ N·m²/kg².",
+    "new": "Legge di gravitazione universale di Newton. G ≈ 6.674 × 10⁻¹¹ N·m²/kg²."
+  },
+  {
+    "rel": "science/history/sputnik-1957.json",
+    "at": "intro_sentence",
+    "old": "Una sfera di alluminio sovietica di 84 kg entra in un'orbita di 96 minuti. Lo spazio è reale ora — per tutti, simultaneamente.",
+    "new": "Una sfera di alluminio sovietica di 84 kg entra in un'orbita di 96 minuti. Ora il volo spaziale è una realtà — per tutti, tutto in una volta."
+  },
+  {
+    "rel": "science/history/sputnik-1957.json",
+    "at": "narrative_101.0",
+    "old": "4 ottobre 1957, Bajkonur, Repubblica Socialista Sovietica del Kazakistan: il razzo R-7 di Sergej Korolëv lancia una sfera di alluminio di 58 cm con quattro antenne a frusta in orbita bassa terrestre. La sfera trasmette un singolo beep ogni 0,4 secondi a 20 e 40 MHz. Chiunque sulla Terra con una radio onde corte può sentirla — e lo hanno fatto. L'era spaziale inizia quella notte.",
+    "new": "4 ottobre 1957, cosmodromo di Bajkonur, Repubblica Socialista Sovietica del Kazakistan: il razzo R-7 di Sergej Korolëv lancia una sfera di alluminio di 58 cm con quattro antenne a frusta in orbita bassa terrestre. La sfera trasmette un solo bip ogni 0,4 secondi a 20 e 40 MHz. Chiunque sulla Terra avesse una radio a onde corte poteva sentirlo — e infatti lo fecero. L'era spaziale inizia quella notte."
+  },
+  {
+    "rel": "science/history/sputnik-1957.json",
+    "at": "narrative_101.1",
+    "old": "Sergej Korolëv, il capo progettista sovietico, gestì il programma R-7 come progetto ICBM — il satellite era una cosa secondaria. Il suo team di ingegneria lanciò un satellite biologico di ~500 kg (Sputnik 2, con il cane Laika) un mese dopo. Il nome di Korolëv rimase un segreto di stato per tutta la vita; fu accreditato solo come \"Capo Progettista\" fino all'obituario nel 1966.",
+    "new": "Sergej Korolëv, il capo progettista sovietico, gestì il programma R-7 come progetto ICBM — il satellite era un'attività secondaria. La sua squadra di ingegneri lanciò un satellite biologico di ~500 kg (Sputnik 2, con la cagnetta Laika) un mese dopo. Il nome di Korolëv rimase un segreto di stato per tutta la vita; fu citato solo come «Capo Progettista» fino al necrologio del 1966."
+  },
+  {
+    "rel": "science/history/sputnik-1957.json",
+    "at": "narrative_101.2",
+    "old": "L'America non aveva alcun razzo operativo capace di raggiungere l'orbita nel 1957 — Vanguard esplose sulla rampa di lancio in dicembre. Explorer 1 raggiunse infine l'orbita il 31 gennaio 1958, su un derivato Redstone di von Braun. Lo \"shock Sputnik\" lanciò la NASA (1958), il National Defense Education Act, e l'intera corsa allo spazio che avrebbe definito il decennio successivo.",
+    "new": "Gli Stati Uniti non avevano alcun razzo operativo capace di raggiungere l'orbita nel 1957 — il Vanguard esplose sulla rampa di lancio in dicembre. Explorer 1 raggiunse infine l'orbita il 31 gennaio 1958, su un derivato del Redstone di von Braun. Lo «shock Sputnik» diede vita alla NASA (1958), al National Defense Education Act e all'intera corsa allo spazio che avrebbe definito il decennio successivo."
+  },
+  {
+    "rel": "science/history/sputnik-1957.json",
+    "at": "body_paragraphs.0",
+    "old": "Veicolo: R-7 Semyorka, il primo ICBM del mondo, riadattato. Cinque booster di primo stadio fissati attorno a un nucleo sostentatore. La stessa famiglia di razzi (fortemente evoluta) lancia gli equipaggi Soyuz verso l'SSI oggi — continuità hardware diretto da Sputnik.",
+    "new": "Veicolo: R-7 Semyorka, il primo ICBM del mondo, riadattato. Cinque booster del primo stadio fissati attorno a uno stadio centrale. La stessa famiglia di razzi (molto evoluta) lancia oggi gli equipaggi Soyuz verso l'SSI — una discendenza diretta di hardware da Sputnik."
+  },
+  {
+    "rel": "science/history/sputnik-1957.json",
+    "at": "body_paragraphs.1",
+    "old": "Orbita Sputnik: perigeo 215 km, apogeo 939 km, inclinazione 65°, periodo 96 minuti. Rientrò il 4 gennaio 1958, dopo 92 giorni e 1440 orbite.",
+    "new": "Orbita di Sputnik: perigeo 215 km, apogeo 939 km, inclinazione 65°, periodo 96 minuti. Rientrò il 4 gennaio 1958, dopo 92 giorni e 1440 orbite."
+  },
+  {
+    "rel": "science/history/sputnik-1957.json",
+    "at": "body_paragraphs.2",
+    "old": "Personale chiave oltre Korolëv: Tichonravov (progettista di razzi), Keldyš (matematico — calcoli orbitali), Gluško (progettista di motori a razzo per i booster R-7). L'ingegneria russa aveva assorbito il lavoro V-2 tedesco dopo la Seconda Guerra Mondiale (i sovietici catturarono l'impianto Mittelwerk) ma l'R-7 era sostanzialmente nativo.",
+    "new": "Personale chiave oltre a Korolëv: Tichonravov (progettista di razzi), Keldyš (matematico — calcoli orbitali), Gluško (progettista dei motori a razzo per i booster dell'R-7). L'ingegneria russa aveva assimilato il lavoro tedesco sul V-2 dopo la seconda guerra mondiale (i sovietici si impadronirono dell'impianto di Mittelwerk), ma l'R-7 era in sostanza di concezione autoctona."
+  },
+  {
+    "rel": "science/history/sputnik-1957.json",
+    "at": "body_paragraphs.3",
+    "old": "La reazione americana fu spropositata: Sputnik era tecnicamente semplice (un faro radio) ma politicamente enorme. Il fatto che l'URSS potesse mettere 84 kg in orbita significava che potevano portare una testata termonucleare ovunque sulla Terra mediante lo stesso razzo. Il panico ICBM guidò un decennio di accelerazione R&S americana.",
+    "new": "La reazione americana fu spropositata: Sputnik era tecnicamente semplice (un faro radio) ma politicamente enorme. Il fatto che l'URSS potesse mettere 84 kg in orbita significava che poteva portare una testata termonucleare ovunque sulla Terra con lo stesso razzo. Il panico per gli ICBM spinse a un decennio di accelerazione della ricerca e sviluppo statunitense."
+  },
+  {
+    "rel": "science/history/sputnik-1957.json",
+    "at": "body_paragraphs.4",
+    "old": "L'eredità di Sputnik: NASA fondata il 29 luglio 1958. ARPA (successivamente DARPA) fondata lo stesso anno. Il programma spaziale civile degli USA era una risposta diretta.",
+    "new": "L'eredità di Sputnik: la NASA fu fondata il 29 luglio 1958, e nello stesso anno l'ARPA (poi DARPA). Il programma spaziale civile statunitense fu una risposta diretta."
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "title",
+    "old": "L'equazione di Tsiolkovsky · 1903",
+    "new": "Equazione di Ciolkovskij · 1903"
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "intro_sentence",
+    "old": "Un insegnante sordo di provincia lavora sull'equazione del razzo 50 anni prima che qualcuno potesse costruirne uno.",
+    "new": "Un insegnante russo sordo ricava l'equazione del razzo 50 anni prima che qualcuno potesse costruire un razzo per usarla."
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "narrative_101.0",
+    "old": "Konstantin Ciolkovskij era un insegnante provinciale autodidatta a Kaluga, sordo dall'infanzia a causa della scarlattina, che trascorreva le serate disegnando razzi multistadio mentre insegnava aritmetica di giorno. Nel 1903 pubblicò \"L'Investigazione dello Spazio per Mezzo di Dispositivi Reattivi\" su un oscuro giornale russo — e ricavò l'equazione che avrebbe governato ogni razzo mai costruito.",
+    "new": "Konstantin Ciolkovskij era un insegnante di provincia autodidatta a Kaluga, sordo dall'infanzia a causa della scarlattina, che trascorreva le serate disegnando razzi multistadio mentre di giorno insegnava aritmetica. Nel 1903 pubblicò «L'indagine dello spazio per mezzo di dispositivi reattivi» su una rivista russa poco nota — e ricavò l'equazione che avrebbe governato ogni razzo mai costruito."
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "narrative_101.1",
+    "old": "L'equazione di Tsiolkovsky: ∆v = vₑ × ln(m₀/m₁). Il cambiamento di velocità che un razzo può produrre è uguale alla sua velocità di scarico moltiplicata per il logaritmo naturale del suo rapporto di massa. Quel termine di logaritmo naturale è brutale — ottenere più ∆v richiede esponenzialmente più carburante. La maggior parte di ogni razzo è carburante. Il Saturn V era l'85% propellente per massa.",
+    "new": "L'equazione di Ciolkovskij: ∆v = vₑ × ln(m₀/m₁). La variazione di velocità che un razzo può produrre è uguale alla sua velocità di scarico moltiplicata per il logaritmo naturale del suo rapporto di massa. Quel logaritmo naturale è spietato — ottenere più ∆v richiede esponenzialmente più propellente. La maggior parte di ogni razzo è propellente. Il Saturn V era per l'85% propellente, in massa."
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "narrative_101.2",
+    "old": "Tsiolkovsky capì anche: i propellenti liquidi avrebbero battuto quelli solidi; lo stadio multiplo era necessario per sfuggire alla Terra; le stazioni orbitali potevano ospitare permanentemente gli umani. Morì nel 1935, due anni prima che i razzi di Goddard raggiungessero un'altitudine considerevole.",
+    "new": "Ciolkovskij intuì anche che i propellenti liquidi avrebbero battuto quelli solidi, che per sfuggire alla Terra servivano più stadi e che le stazioni orbitali potevano ospitare esseri umani in modo permanente. Morì nel 1935, due anni prima che i razzi di Goddard raggiungessero un'altitudine considerevole."
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "body_paragraphs.0",
+    "old": "Tsiolkovsky pubblicò l'equazione, il concetto di razzo multistadio e il concetto di stazione orbitale anni prima che l'ingegneria dei razzi serio esistesse. Goddard costruì il primo razzo a combustibile liquido nel 1926 (USA); il V-2 di von Braun nel 1942 (Germania); l'R-7 di Korolëv nel 1957 (URSS).",
+    "new": "Ciolkovskij pubblicò l'equazione, il concetto di razzo multistadio e quello di stazione orbitale anni prima che esistesse un'ingegneria dei razzi seria. Goddard costruì il primo razzo a propellente liquido nel 1926 (USA); il V-2 di von Braun nel 1942 (Germania); l'R-7 di Korolëv nel 1957 (URSS)."
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "body_paragraphs.1",
+    "old": "L'equazione è l'inverso della terza legge di Newton: ogni chilogrammo di propellente espulso a velocità vₑ spinge il veicolo di 1 kg × vₑ. Integrando su massa decrescente si ottiene la dipendenza dal logaritmo naturale.",
+    "new": "L'equazione è l'inverso della terza legge di Newton: ogni chilogrammo di propellente espulso a velocità vₑ spinge il veicolo di 1 kg × vₑ. Integrando mentre la massa diminuisce si ottiene la dipendenza dal logaritmo naturale."
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "body_paragraphs.2",
+    "old": "Perché la scala logaritmica è importante: raddoppiare ∆v richiede il rapporto di massa al quadrato. Triplicare richiede il cubo. Per andare da 0 a velocità di fuga (~11,2 km/s) con una tipica velocità di scarico chimico di 4,4 km/s, rapporto di massa = e^(11,2/4,4) ≈ 13. Quindi un payload di 1 tonnellata richiede 12 tonnellate di propellente, più la struttura che lo contiene.",
+    "new": "Perché conta la scala logaritmica: raddoppiare ∆v richiede il quadrato del rapporto di massa; triplicarlo, il cubo. Per passare da 0 alla velocità di fuga (~11,2 km/s) con una tipica velocità di scarico chimica di 4,4 km/s serve un rapporto di massa e^(11,2/4,4) ≈ 13. Quindi un carico utile di 1 tonnellata richiede 12 tonnellate di propellente, più la struttura che le contiene."
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "body_paragraphs.3",
+    "old": "Tsiolkovsky non ha mai testato nulla. Non era un ingegnere — era un teorico con il gesso. Il programma spaziale sovietico lo canonizzò postumamente; la sua casa a Kaluga è ora un museo e il suo nome è sul cratere del lato nascosto della Luna a cui i sovietici puntavano.",
+    "new": "Ciolkovskij non collaudò mai nulla. Non era un ingegnere, ma un teorico col gesso in mano. Il programma spaziale sovietico lo canonizzò postumo; la sua casa a Kaluga è oggi un museo e il suo nome è sul cratere della faccia nascosta della Luna verso cui puntavano i sovietici."
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "formula_caption",
+    "old": "L'equazione del razzo. m₀ = massa a pieno carico (piena); m₁ = massa vuota (vuota); vₑ = velocità di scarico.",
+    "new": "L'equazione del razzo. m₀ = massa iniziale (piena); m₁ = massa a secco (vuota); vₑ = velocità di scarico."
+  },
+  {
+    "rel": "science/life-in-space/_intro.json",
+    "at": "headline",
+    "old": "La vita nello spazio — ciò che il corpo umano fa quando la gravità va via.",
+    "new": "La vita nello spazio — ciò che fa il corpo umano quando la gravità viene a mancare."
+  },
+  {
+    "rel": "science/life-in-space/_intro.json",
+    "at": "paragraphs.0",
+    "old": "Spaceflight è un lento esperimento medico che l'umanità sta correndo su se stessa per 65 anni. Il corpo si è evoluto in 1 g, in un'atmosfera spessa, dietro un campo magnetico. Prendere uno qualsiasi di quelli via e fisiologia re-wires — fluidi ridistribuzione, ossa sottili, muscoli sbiadire, occhi cambiare forma, il sistema immunitario diventa strano, l'orecchio interno si arrende cercando di dire quale modo è giù.",
+    "new": "Il volo spaziale è un lento esperimento medico che l'umanità conduce su se stessa da 65 anni. Il corpo si è evoluto a 1 g, in un'atmosfera densa, al riparo di un campo magnetico. Se si toglie uno qualsiasi di questi elementi, la fisiologia si riconfigura: i fluidi si ridistribuiscono, le ossa si assottigliano, i muscoli si indeboliscono, gli occhi cambiano forma, il sistema immunitario si comporta in modo strano, l'orecchio interno rinuncia a capire dove sia il basso."
+  },
+  {
+    "rel": "science/life-in-space/_intro.json",
+    "at": "paragraphs.1",
+    "old": "Questa scheda passa attraverso gli effetti titolo e ciò che gli astronauti fanno per combatterli. La microgravità è quella grande — ogni altra sezione della scheda ritrae a esso. La radiazione è l'altra che non sappiamo ancora come sconfiggere per un viaggio su Marte. EVA è il suo problema fisiologico: un vuoto duro dall'altra parte di una tuta di pressione sottile cambia tutto.",
+    "new": "Questa scheda passa in rassegna gli effetti principali e ciò che gli astronauti fanno per contrastarli. La microgravità è la causa maggiore: ogni altra sezione della scheda vi risale. La radiazione è l'altro problema che ancora non sappiamo come sconfiggere per un viaggio su Marte. L'EVA è un problema fisiologico a sé: un vuoto assoluto al di là di una sottile tuta pressurizzata cambia tutto."
+  },
+  {
+    "rel": "science/life-in-space/_intro.json",
+    "at": "paragraphs.2",
+    "old": "Le contromisure sono reali: macchine di esercizio ARED sull'SSI, programmi di sonno calibrati contro l'alba orbitale, protocolli pre-breathe prima di ogni passerella spaziale. Nessuno di loro è perfetto. Più voliamo, più impariamo a ciò che dà il via prima.",
+    "new": "Le contromisure sono reali: le macchine per l'esercizio ARED sull'SSI, orari di sonno calibrati sulle albe orbitali, protocolli di prerespirazione prima di ogni passeggiata spaziale. Nessuna è perfetta. Quanto più a lungo voliamo, tanto più impariamo che cosa cede per primo."
+  },
+  {
+    "rel": "science/life-in-space/bone-density-loss.json",
+    "at": "intro_sentence",
+    "old": "Gli astronomi perdono approssimativamente 1–2% della massa ossea al mese in microgravità — lo stesso tasso di osteoporosi anziani, ma compressa e reversibile-ish.",
+    "new": "Gli astronauti perdono circa l'1–2% di massa ossea al mese in microgravità — lo stesso ritmo dell'osteoporosi senile, ma in tempi compressi e solo in parte reversibile."
+  },
+  {
+    "rel": "science/life-in-space/bone-density-loss.json",
+    "at": "body_paragraphs.0",
+    "old": "Bone è un tessuto vivente che si rimodella costantemente: gli osteoblasti posano l'osso nuovo giù, gli osteoclasti dissolvono l'osso vecchio lontano, e sulla Terra il carico da camminare, sollevamento, e solo in piedi mantiene i due approssimativamente equilibrati. Portate via quel carico in orbita e i consigli di equilibrio. Il riassorbimento continua ad andare al suo tasso normale; la deposizione di nuovo osso rallenta. Il risultato è una perdita netta di circa 1–2% al mese, concentrata nelle strutture portanti: colonna vertebrale lombare, pelvi, collo femorale, calcaneus.",
+    "new": "L'osso è un tessuto vivo che si rimodella di continuo: gli osteoblasti depongono osso nuovo, gli osteoclasti dissolvono osso vecchio, e sulla Terra il carico di camminare, sollevare pesi e perfino stare in piedi mantiene i due processi più o meno in equilibrio. In orbita, senza quel carico, l'equilibrio si rompe. Il riassorbimento prosegue al ritmo normale; la deposizione di osso nuovo rallenta. Il risultato è una perdita netta di circa l'1–2% al mese, concentrata nelle strutture che sostengono il peso: colonna lombare, bacino, collo del femore, calcagno."
+  },
+  {
+    "rel": "science/life-in-space/bone-density-loss.json",
+    "at": "body_paragraphs.1",
+    "old": "Per il confronto, l'osteoporosi post-menopausa sulla Terra corre a circa 1–2% per **anno**. Una missione SSI di sei mesi comprime circa un decennio di perdita legata all'età in mezzo anno. Alcuni tornano dopo il volo; altri no. Gli studi dell'equipaggio di lunga durata suggeriscono che i deficit misurabili di densità ossea-minerale persistono per anni dopo il volo anche dopo la riabilitazione dedicata.",
+    "new": "Per confronto, l'osteoporosi post-menopausale sulla Terra procede a circa l'1–2% all'**anno**. Una missione di sei mesi sulla SSI comprime in mezzo anno circa un decennio di perdita legata all'età. Una parte viene recuperata dopo il volo, una parte no. Gli studi sugli equipaggi di lunga durata indicano che deficit misurabili di densità minerale ossea persistono per anni dopo il volo, anche con una riabilitazione dedicata."
+  },
+  {
+    "rel": "science/life-in-space/bone-density-loss.json",
+    "at": "body_paragraphs.2",
+    "old": "Lo stack di contromisure sull'SSI è ARED (Advanced Resistive Exercise Device - un rack falso a vuoto-piston-caricato), il tapis roulant T2 (corsa mentre si è abbassato), e l'ergometro del ciclo. I protocolli moderni hanno colpito ~1100 N carico assiale su ARED — abbastanza alto da essere osteogenico. Con i regimi di droga ARED + bisfosfonate, l'equipaggio di sei mesi ritorna con perdite ossee intorno allo 0,5%/mese piuttosto che l'1,5% pre-ARED/mese. Meglio, non risolto.",
+    "new": "L'insieme di contromisure sulla SSI comprende l'ARED (Advanced Resistive Exercise Device — una finta rastrelliera per squat a carico generato da pistoni a vuoto), il tapis roulant T2 (si corre trattenuti da cavi elastici) e il cicloergometro. I protocolli moderni raggiungono un carico assiale di ~1100 N sull'ARED — abbastanza alto da stimolare la formazione ossea. Con l'ARED e regimi farmacologici a base di bisfosfonati, gli equipaggi di sei mesi rientrano oggi con perdite ossee intorno allo 0,5% al mese anziché all'1,5% al mese dell'epoca pre-ARED. Meglio, ma non risolto."
+  },
+  {
+    "rel": "science/life-in-space/bone-density-loss.json",
+    "at": "body_paragraphs.3",
+    "old": "Per un viaggio di tre anni di classe Marte, anche le migliori contromisure attuali implicano un astronauta di atterraggio a rischio frattura. Le linee di ricerca attive includono piattaforme di vibrazione, tute di carico meccanico, e l'esplorazione se la gravità artificiale (un habitat lentamente rotante) è l'unica risposta durevole.",
+    "new": "Per un viaggio di andata e ritorno di tre anni di classe Marte, anche le migliori contromisure attuali implicano che l'astronauta arrivi a destinazione con un rischio di fratture. Le linee di ricerca attive comprendono piattaforme vibranti, tute a carico meccanico e la verifica se la gravità artificiale (un habitat in lenta rotazione) sia l'unica risposta duratura."
+  },
+  {
+    "rel": "science/life-in-space/bone-density-loss.json",
+    "at": "diagram_caption",
+    "old": "ARED + tapis roulant + ciclo continua a caricare sullo scheletro porta pesi; con contromisure, l'equipaggio moderno perde ~0,5%/mese rispetto al pre-ARED 1,5%/mese.",
+    "new": "ARED + tapis roulant + cicloergometro mantengono il carico sullo scheletro portante; con le contromisure gli equipaggi moderni perdono ~0,5%/mese contro l'1,5%/mese dell'epoca pre-ARED."
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "title",
+    "old": "Dinamica e psicologia dell'equipaggio — Crisi su Mir, protocolli SSI, isolamento",
+    "new": "Dinamica e psicologia dell'equipaggio — crisi su Mir, protocolli SSI, isolamento"
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "intro_sentence",
+    "old": "La maggior parte delle nostre conoscenze sulla psicologia umana nello spazio proviene da Mir tra 1986 e 2001: 15 anni, 28 spedizioni, 4 situazioni critiche e un cambio fondamentale nel pensiero di ogni agenzia spaziale.",
+    "new": "Gran parte di ciò che sappiamo sulla psicologia umana nello spazio nasce su Mir tra il 1986 e il 2001: quindici anni, 28 spedizioni, quattro quasi-perdite e un cambio permanente nel modo in cui ogni agenzia pensa agli equipaggi."
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.0",
+    "old": "Salyut 6 (sovietica, 1977-82) fu la prima stazione con equipaggi intenzionali a lunga durata e la prima a incontrare il problema psicologico che ogni successiva stazione a lunga missione ha affrontato: dopo circa 4-6 settimane, anche gli equipaggi accuratamente selezionati entrano in una fase che gli psicologi sovietici chiamavano *asthenia* — affaticamento, irritabilità, ritiro dalla comunicazione con terra, motivazione calante. Inizialmente fu attribuita al decondizionamento fisico ma durante Salyut 7 e Mir divenne chiaro che è principalmente psicologica — la novità dell'orbita svanisce, il lavoro diventa routine, l'equipaggio è acutamente consapevole di non poter partire per altri 5 mesi, e il rapporto con il controllo di terra diventa avversariale. I controllori di terra sovietici erano soliti programmare deliberatamente tempo personale non strutturato + videochiamate familiari + occasionali regali sorpresa nei rifornimenti (cioccolato, frutta fresca) come contromisure; la pratica è ora standard su SSI, Tiangong e ogni stazione analoga.",
+    "new": "Salyut 6 (sovietica, 1977-82) fu la prima stazione con equipaggi di lunga permanenza programmati fin dall'inizio, e la prima a incontrare il problema psicologico che ogni stazione successiva per missioni lunghe ha dovuto affrontare: dopo circa 4-6 settimane di missione, anche equipaggi selezionatissimi entrano in una fase che gli psicologi sovietici chiamavano *astenia* — stanchezza, irritabilità, chiusura nelle comunicazioni con la Terra, motivazione in calo. All'inizio fu attribuita al decondizionamento fisico, ma durante Salyut 7 e Mir apparve chiaro che è soprattutto psicologica: la novità dell'orbita svanisce, il lavoro diventa routine, l'equipaggio sa bene di non poter andarsene per altri 5 mesi e il rapporto con il controllo a terra si fa conflittuale. I controllori sovietici erano soliti programmare di proposito tempo personale non strutturato, videochiamate con i familiari e qualche regalo a sorpresa nei rifornimenti (cioccolato, frutta fresca) come contromisure; oggi la pratica è standard sull'SSI, su Tiangong e in ogni stazione analoga di simulazione."
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.1",
+    "old": "Il 1997 di Mir fu l'anno formativo. A febbraio, una candela di generazione di ossigeno Vika prese fuoco nel modulo Kvant-1 — le fiamme che Linenger ha descritto come brucianti per ~14 minuti (i resoconti russi parlano di fiamma attiva più vicina a 90 secondi) attraversarono il corridoio che collega i moduli di Mir alle capsule Soyuz di salvataggio, bloccando il percorso di fuga. L'equipaggio di due cosmonauti + un astronauta NASA (Tsibliyev, Lazutkin, Linenger) indossò respiratori e combatté l'incendio con estintori in microgravità (più difficile di quanto sembri; la massa di reazione dell'estintore spinge l'operatore indietro). Prevalero ma la cabina fu piena di fumo tossico per giorni. Quattro mesi dopo (giugno 1997), un attracco Progress pilotato manualmente da remoto andò male — la nave cargo senza equipaggio colpì il modulo Spektr a 1 m/s, perforando lo scafo. Tsibliyev e Lazutkin sigillarono Spektr in 11 minuti (il portello dovette essere chiuso con fili perché i cavi passavano attraverso il setto), prevenendo la perdita totale della stazione. Dopo entrambi gli eventi lo stesso equipaggio rimase sulla stazione fino alla rotazione regolare. Le memorie di Linenger e i debriefing psichiatrici post-missione documentarono stress cumulativo severo, ritiro e conflitto tra i cosmonauti e il controllo di terra sulle decisioni operative.",
+    "new": "Il 1997 fu per Mir l'anno decisivo. A febbraio una candela generatrice di ossigeno Vika prese fuoco nel modulo Kvant-1 — fiamme che Linenger descrisse come durate fino a circa 14 minuti (i resoconti russi parlano di circa 90 secondi di fiamma attiva) invasero il corridoio che collega i moduli di Mir alle navette di salvataggio Soyuz, bloccando la via di fuga. L'equipaggio, formato da due cosmonauti e un astronauta della NASA (Tsibliyev, Lazutkin, Linenger), indossò i respiratori e combatté l'incendio con gli estintori in assenza di peso (più difficile di quanto sembri: la massa di reazione dell'estintore spinge l'operatore all'indietro). Ebbero la meglio, ma la cabina rimase piena di fumo tossico per giorni. Quattro mesi dopo (giugno 1997) un attracco manuale telecomandato di una Progress andò male — la nave cargo senza equipaggio colpì il modulo Spektr a 1 m/s, perforando lo scafo. Tsibliyev e Lazutkin sigillarono Spektr in 11 minuti (il portello dovette essere chiuso con del filo, perché dei cavi passavano attraverso la paratia), evitando la perdita totale della stazione. Dopo entrambi gli eventi lo stesso equipaggio restò a bordo fino all'avvicendamento regolare. Le memorie di Linenger e i debriefing psichiatrici dopo la missione documentarono uno stress cumulativo severo, isolamento e conflitto tra i cosmonauti e il controllo a terra sulle decisioni operative."
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.2",
+    "old": "L'Expedition 1 dell'SSI (Shepherd-Krikalëv-Gidzenko, 2000-01) fu il primo vero equipaggio internazionale a lunga durata. Lo stack protocollare — programma uplink giornaliero, periodi di riposo obbligatori, conferenze psichiatriche private settimanali (PPCs) con un chirurgo di volo, videochiamate familiari obbligatorie — fu progettato dalle lezioni di Mir. Il modello interpersonale è più simile a un piccolo team di sottomarino che a un ufficio aziendale: autorità chiara ma processo decisionale piatto in contesti non emergenziali; risoluzione strutturata dei conflitti (un problema è discusso, votato se persiste il disaccordo, rimandato al comandante se ancora disaccordo); gestione attiva dell'attrito personale da parte di terra (un membro equipaggio che non si intende con un altro può essere accoppiato nei compiti con un terzo). Ogni equipaggio multinazionale dalla Expedition 1 ha avuto l'inglese come lingua operativa comune (gli equipaggi NASA-russi usano il russo per le operazioni dei segmenti russi, inglese per le operazioni congiunte); la cooperazione diretta sino-americana rimane operazionalmente vincolata dal Wolf Amendment, ma il profilo operativo ISS-Tiangong ha comunque convergito su protocolli di comunicazione simili.",
+    "new": "L'Expedition 1 dell'SSI (Shepherd-Krikalëv-Gidzenko, 2000-01) fu il primo vero equipaggio internazionale di lunga durata. L'insieme di protocolli — programma giornaliero trasmesso da terra, periodi di riposo obbligatori, conferenze psichiatriche private (PPC) settimanali con un medico di volo, videochiamate familiari obbligatorie — fu progettato a partire dalle lezioni di Mir. Il modello interpersonale è più simile a quello dell'equipaggio di un sottomarino che a un ufficio aziendale: autorità chiara, ma decisioni prese in modo orizzontale nei contesti non emergenziali; risoluzione strutturata dei conflitti (un problema viene discusso, votato se il disaccordo persiste, rimesso al comandante se il disaccordo resta); gestione attiva da parte di terra degli attriti di personalità (un membro dell'equipaggio che non va d'accordo con un altro può essere affiancato a un terzo nei compiti). Ogni equipaggio multinazionale dall'Expedition 1 in poi ha avuto l'inglese come lingua operativa comune (gli equipaggi NASA-russi usano il russo per le operazioni del segmento russo e l'inglese per quelle congiunte); la cooperazione diretta tra Cina e Stati Uniti resta limitata sul piano operativo dall'emendamento Wolf, ma il profilo operativo SSI-Tiangong è comunque convergito su protocolli di comunicazione simili."
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.3",
+    "old": "La dinamica dell'equipaggio di Tiangong è costruita diversamente. Agenzia singola significa che tutto l'equipaggio ha lo status di ufficiale PLA con background di grado militare simile; la gerarchia è più verticale di SSI, con il comandante che ha più autorità unilaterale. Shenzhou 13 (Zhai-Wang-Ye, 2021-22, primo equipaggio di 6 mesi di Tiangong) ha riferito nei debriefing post-missione che la lingua operativa unificata + lo stesso background di addestramento + la stessa catena di autorità dell'agenzia hanno ridotto l'attrito della traduzione internazionale che gli equipaggi SSI sperimentano ma hanno aggiunto un attrito diverso (la risoluzione dei conflitti tra colleghi dello stesso grado era apparentemente più difficile che tra colleghi tra agenzie diverse con capi diversi). I criteri di screening psicologico interno della CMSA enfatizzano il comportamento collaborativo ancora più fortemente di NASA, in parte perché l'architettura verticale di autorità non ha la valvola di sicurezza tra agenzie che SSI fornisce.",
+    "new": "La dinamica dell'equipaggio di Tiangong è costruita in modo diverso. Con un'unica agenzia, tutto l'equipaggio ha lo status di ufficiale del PLA, con un percorso militare simile; la gerarchia è più verticale che sull'SSI, e il comandante ha più autorità unilaterale. Shenzhou 13 (Zhai-Wang-Ye, 2021-22, il primo equipaggio di 6 mesi di Tiangong) ha riferito nei debriefing dopo la missione che la lingua operativa unica, la formazione comune e la catena di autorità della stessa agenzia hanno ridotto l'attrito dovuto alla traduzione internazionale che vivono gli equipaggi dell'SSI, ma ne hanno aggiunto uno diverso (la risoluzione dei conflitti tra colleghi dello stesso grado sarebbe stata più difficile che tra colleghi di agenzie diverse con capi diversi). I criteri di selezione psicologica interni alla CMSA enfatizzano il comportamento collaborativo ancora più di quelli della NASA, in parte perché l'autorità verticale dell'architettura non ha la valvola di sfogo tra agenzie diverse che l'SSI offre."
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.4",
+    "old": "Le missioni classe Marte sono il problema psicologico aperto. Il profilo di missione minima energia di 26 mesi significa che gli equipaggi sono in confinamento per ~33 mesi includendo transito + superficie + ritorno. Il tempo di andata-ritorno terra-veicolo cresce da <0,1 secondo (Luna) a 4-24 minuti (Marte); la conversazione in tempo reale con la famiglia e il controllo missione è impossibile per la maggior parte del viaggio. La modellazione dello stress cumulativo è largamente estrapolata da campagne analoghe (HI-SEAS Hawaii, Roscosmos SIRIUS a Mosca, MARS-500 a Mosca — quest'ultima fu 520 giorni simulati di isolamento equipaggio, con notevoli schemi di conflitto interpersonale intorno al giorno ~200). L'assunto di architettura conservativo è che un equipaggio Marte ha bisogno di ~7 persone (non 6) per ridondanza sotto eventi acuti di salute comportamentale; l'assunto lossy è che AI / supporto medico autonomo + espansione abilità procedurale possono compensare la perdita di supporto psicologico terra in tempo reale. Nessuno è stato validato. La prima missione Marte con equipaggio sarà il primo esperimento di isolamento spaziale a lunga distanza mai condotto con puntate abbastanza alte che il fallimento è non-recuperabile.",
+    "new": "Le missioni di classe Marte sono il problema psicologico ancora aperto. Il profilo di missione a minima energia di 26 mesi comporta per gli equipaggi circa 33 mesi di confinamento tra transito, permanenza in superficie e ritorno. Il tempo di andata e ritorno della luce tra terra e veicolo passa da <0,1 secondi (Luna) a 4-24 minuti (Marte); la conversazione in tempo reale con la famiglia e il controllo missione è impossibile per gran parte del viaggio. La modellazione dello stress cumulativo è in gran parte estrapolata da campagne analoghe (HI-SEAS alle Hawaii, SIRIUS di Roscosmos a Mosca, MARS-500 a Mosca — quest'ultimo con 520 giorni simulati di isolamento dell'equipaggio e schemi di conflitto interpersonale evidenti intorno al giorno ~200). L'ipotesi architetturale prudente è che un equipaggio per Marte abbia bisogno di ~7 persone (non 6) per avere ridondanza in caso di eventi acuti di salute comportamentale; l'ipotesi meno cautelativa è che IA e supporto medico autonomo, insieme a un ampliamento delle competenze procedurali, possano compensare la perdita del supporto psicologico a terra in tempo reale. Nessuna delle due è stata convalidata. La prima missione con equipaggio su Marte sarà il primo esperimento di isolamento spaziale a lunga distanza mai condotto con una posta in gioco tale che un fallimento non sarebbe recuperabile."
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "diagram_caption",
+    "old": "Mir 1997 (incendio + collisione Spektr) è il case study canonico; protocolli SSI (programma uplink giornaliero + PPCs + catena di autorità multinazionale) sono la risposta operativa; Tiangong (gerarchia agenzia singola) è il caso contrasto; Marte (33 mesi + 4-24 min ritardo terra + nessun rifornimento) è il prossimo problema irrisolto generazionale.",
+    "new": "Mir 1997 (incendio e collisione con Spektr) è il caso di studio canonico; i protocolli SSI (programma giornaliero trasmesso da terra + PPC + catena di autorità multinazionale) sono la risposta operativa; Tiangong (gerarchia di un'unica agenzia) è il caso di contrasto; Marte (33 mesi + 4-24 min di ritardo con la Terra + nessun rifornimento) è il problema irrisolto della prossima generazione."
+  },
+  {
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "title",
+    "old": "Selezione equipaggio — l'imbuto dal candidato all'astronauta",
+    "new": "Selezione degli equipaggi — l'imbuto dal candidato all'astronauta"
+  },
+  {
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "body_paragraphs.2",
+    "old": "La fase medica è il filtro più grande. La Lovelace Clinic (Mercury, 1959) eseguiva ~30 test diversi in una settimana, tra cui l'iconico shock vestibolare con acqua gelata nell'orecchio e la prova di isolamento «quanto resisti in una vasca buia di deprivazione sensoriale». Le visite moderne usano ancora camere di isolamento (NASA una valutazione di 12 ore in spazio confinato; Roscosmos una sessione più lunga di 5 giorni nella camera di isolamento Звезда), ma gli accertamenti sono più sofisticati: profilo metabolico completo, cardiologia completa con ecocardiogramma da sforzo, neuroimaging, idoneità dentale (un ascesso dentale in orbita può far perdere la missione) e una valutazione psichiatrica con colloquio davanti a una commissione. La qualifica per la Soyuz aggiunge la tolleranza in centrifuga fino a 8 g e una quarantena di 14 giorni per confermare il profilo immunitario.",
+    "new": "La fase medica è il filtro più grande. La Lovelace Clinic (Mercury, 1959) eseguiva ~30 test diversi in una settimana, tra cui l'iconico shock vestibolare con acqua gelata nell'orecchio e la prova di isolamento «quanto resisti in una vasca buia di deprivazione sensoriale». Le visite moderne usano ancora camere di isolamento (NASA una valutazione di 12 ore in spazio confinato; Roscosmos una sessione più lunga di 5 giorni nella camera di isolamento Zvezda), ma gli accertamenti sono più sofisticati: profilo metabolico completo, cardiologia completa con ecocardiogramma da sforzo, neuroimaging, idoneità dentale (un ascesso dentale in orbita può far perdere la missione) e una valutazione psichiatrica con colloquio davanti a una commissione. La qualifica per la Soyuz aggiunge la tolleranza in centrifuga fino a 8 g e una quarantena di 14 giorni per confermare il profilo immunitario."
+  },
+  {
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "diagram_caption",
+    "old": "Imbuto selezione c. 2024: ~10.000 candidati → medico → fisico → cognitivo → psicologico → centrifuga / isolamento → colloquio panel → ~10 selezionati. 99,9% scartato: 70% medico, 15% cognitivo, 15% psicologico.",
+    "new": "Imbuto di selezione (2024 circa): ~10.000 candidati → medico → fisico → cognitivo → psicologico → centrifuga / isolamento → colloquio → ~10 selezionati. Scarto del 99,9%: circa 70% alla fase medica, 15% a quella cognitiva, 15% a quella psicologica."
+  },
+  {
+    "rel": "science/life-in-space/crewed-station-design.json",
+    "at": "title",
+    "old": "Progettazione stazioni con equipaggio — da Saljut all'SSI a Tiangong",
+    "new": "Progettazione delle stazioni con equipaggio — da Salyut alla SSI a Tiangong"
+  },
+  {
+    "rel": "science/life-in-space/crewed-station-design.json",
+    "at": "intro_sentence",
+    "old": "Sei decenni di stazioni con equipaggio, sei generazioni di architettura — la risposta a 'come tenere umani vivi in orbita per mesi' si è raffinata ogni volta che la precedente si è rotta.",
+    "new": "Sei decenni di stazioni con equipaggio, sei generazioni di architettura: la risposta alla domanda «come si tengono in vita gli esseri umani in orbita per mesi» si è affinata ogni volta che la precedente è saltata."
+  },
+  {
+    "rel": "science/life-in-space/crewed-station-design.json",
+    "at": "diagram_caption",
+    "old": "Sei decenni, sei architetture: Salyut 1 (lattina singola) → Skylab (lattina grande) → Mir (nucleo + moduli) → SSI (segmenti US + russo + traliccio internazionale) → Tiangong (tri-modulo compatto) → prossima generazione (commerciale / precursore Marte).",
+    "new": "Sei decenni, sei architetture: Salyut 1 (una sola lattina) → Skylab (una sola lattina grande) → Mir (nucleo + moduli collegati) → SSI (segmenti statunitense e russo + traliccio internazionale) → Tiangong (compatta, a tre moduli) → prossima generazione (commerciale / precursore di Marte)."
+  },
+  {
+    "rel": "science/life-in-space/eclss-life-support.json",
+    "at": "title",
+    "old": "Life support — ECLSS, il ciclo dell'aria e dell'acqua",
+    "new": "Supporto vitale — ECLSS, il ciclo dell'aria e dell'acqua"
+  },
+  {
+    "rel": "science/life-in-space/eclss-life-support.json",
+    "at": "body_paragraphs.0",
+    "old": "Environmental Control and Life Support System — ECLSS — è la parte di una stazione che nessuno vede e da cui tutti dipendono. Il suo compito è mantenere quattro numeri nella banda verde: pressione parziale di ossigeno (~21 kPa, come al livello del mare), pressione parziale di anidride carbonica (<0,7 kPa nominale; gli umani soffrono di mal di testa sopra 1 kPa), temperatura della cabina (~22 °C) e umidità relativa (40-60%). Se uno di questi è sbagliato, l'equipaggio si ammala entro ore. Se l'ossigeno o la CO₂ sono errati abbastanza gravemente, l'equipaggio muore. Il sistema è progettato con almeno un sottosistema ridondante per ogni funzione, e il segmento US + segmento russo dell'SSI gestiscono ciascuno il proprio ECLSS completo in modo che un guasto da un lato non comprometta entrambi.",
+    "new": "Il sistema di controllo ambientale e supporto vitale (ECLSS, Environmental Control and Life Support System) è la parte di una stazione che nessuno vede e da cui tutti dipendono. Il suo compito è mantenere quattro valori nella fascia verde: pressione parziale di ossigeno (~21 kPa, come al livello del mare), pressione parziale di anidride carbonica (<0,7 kPa nominale; sopra 1 kPa gli esseri umani hanno mal di testa), temperatura della cabina (~22 °C) e umidità relativa (40-60%). Se uno di questi è sbagliato, l'equipaggio si ammala entro poche ore. Se l'ossigeno o la CO₂ sono sbagliati in modo abbastanza grave, l'equipaggio muore. Il sistema è progettato con almeno un sottosistema ridondante per ogni funzione, e il segmento statunitense e quello russo dell'SSI hanno ciascuno un proprio ECLSS completo, così che un guasto da un lato non comprometta entrambi."
+  },
+  {
+    "rel": "science/life-in-space/eclss-life-support.json",
+    "at": "body_paragraphs.1",
+    "old": "L'ossigeno proviene dall'elettrolisi. L'SSI Oxygen Generation System (OGS, nel nodo Tranquility) elettrolizza l'acqua — pompata dal Water Recovery System — in O₂ (rilasciato nella cabina) e H₂ (rilasciato nello spazio fino al 2010, poi instradato al reattore Sabatier; vedi sotto). Con carico nominale, l'OGS produce circa 9 kg di O₂ al giorno, che copre 6 equipaggi a 1,5 kg ciascuno più perdite. Il russo Elektron-VM fa lo stesso dall'altro lato, più candele di ossigeno a combustibile solido come backup (essenzialmente granate fumogene che rilasciano O₂ quando innescate — utilizzate durante le settimane disastrose della Mir del 1997, dove erano anche la causa dell'incendio). Il modulo Tianhe di Tiangong gestisce un elettrolizzatore simile; l'architettura cinese rispecchia esplicitamente il ciclo chiuso Sabatier-elettrolisi dell'SSI.",
+    "new": "L'ossigeno proviene dall'elettrolisi. L'Oxygen Generation System (OGS, nel nodo Tranquility) dell'SSI elettrolizza l'acqua — pompata dal Water Recovery System — in O₂ (rilasciato in cabina) e H₂ (rilasciato nello spazio fino al 2010, poi inviato al reattore Sabatier; vedi sotto). A carico nominale l'OGS produce circa 9 kg di O₂ al giorno, sufficienti per 6 membri dell'equipaggio a 1,5 kg ciascuno più le perdite. Il russo Elektron-VM fa lo stesso dall'altro lato, con in più le candele di ossigeno a combustibile solido come riserva (in sostanza granate fumogene che rilasciano O₂ quando vengono innescate — usate nelle settimane tormentate di Mir nel 1997, quando furono anche la causa dell'incendio). Il modulo Tianhe di Tiangong ha un elettrolizzatore simile; l'architettura cinese ricalca esplicitamente il ciclo chiuso elettrolisi-Sabatier dell'SSI."
+  },
+  {
+    "rel": "science/life-in-space/eclss-life-support.json",
+    "at": "body_paragraphs.2",
+    "old": "La rimozione di CO₂ ha subito più evoluzione di qualsiasi altra funzione ECLSS. Apollo e gli shuttle iniziali utilizzavano cartucce di idrossido di litio (il LiOH assorbe la CO₂ irreversibilmente; l'improvvisazione dell'Apollo 13 'pioli quadrati in buchi rotondi' era un adattatore per cartuccia di LiOH). L'SSI moderno utilizza due sistemi rigenerabili: il CDRA lato US (Carbon Dioxide Removal Assembly), che utilizza setacci molecolari di zeolite che adsorbono la CO₂ e poi la desorbono termicamente per il rilascio, e il Vozdukh russo, che utilizza letti a oscillazione di amina. Il reattore Sabatier (Hamilton Sundstrand, installato sull'SSI nel 2010) prende quella CO₂ rilasciata e la combina con l'H₂ generato dall'elettrolisi per produrre metano e acqua — chiudendo il ciclo. Il metano è attualmente rilasciato; le architetture future dirette a Marte (Moxie su Perseverance è una demo correlata) intendono utilizzarlo come propellente.",
+    "new": "La rimozione della CO₂ è la funzione dell'ECLSS che si è evoluta di più. Apollo e i primi Shuttle usavano cartucce di idrossido di litio (il LiOH assorbe la CO₂ in modo irreversibile; il celebre espediente dell'Apollo 13, il «piolo quadrato in un buco tondo», era un adattatore per cartucce di LiOH). L'SSI moderna usa due sistemi rigenerabili: il CDRA (Carbon Dioxide Removal Assembly) sul lato statunitense, con setacci molecolari di zeolite che adsorbono la CO₂ e poi la desorbono per via termica per scaricarla, e il Vozdukh russo, con letti oscillanti ad ammine. Il reattore Sabatier (Hamilton Sundstrand, installato sull'SSI nel 2010) prende quella CO₂ scaricata e la combina con l'H₂ prodotto dall'elettrolisi per ottenere metano e acqua — chiudendo il ciclo. Il metano oggi viene scaricato; le future architetture dirette a Marte (Moxie su Perseverance è un dimostratore affine) intendono usarlo come propellente."
+  },
+  {
+    "rel": "science/life-in-space/eclss-life-support.json",
+    "at": "body_paragraphs.3",
+    "old": "Il recupero dell'acqua è il sottosistema più progettato. L'SSI Water Recovery System (WRS, anch'esso in Tranquility) raccoglie urina, condensato di umidità dall'aria condizionata, acqua delle tute EVA (che è poca) e scarti dall'igiene, e li fa passare attraverso un processore di urina (distillazione sottovuoto per rimuovere l'acqua dalla salamoia) e un processore d'acqua (multi-filtrazione, ossidazione catalitica, scambio ionico). L'output è acqua potabile più pulita della maggior parte degli approvvigionamenti municipali. Il recupero del segmento US era ~93–94% prima del Brine Processor Assembly (aggiunto nel 2021); con il BPA, la NASA ha dimostrato ~98% nel 2023. Le perdite rimanenti vengono lanciate dalla Terra come acqua di rifornimento in sacchetti monouso, principalmente perché la salamoia che esce dal trattamento dell'urina contiene ancora il 15–20% di acqua che non può essere economicamente recuperata — il BPA colma la maggior parte ma non tutto quel divario. L'obiettivo per le missioni di classe Marte è >98% continuamente.",
+    "new": "Il recupero dell'acqua è il sottosistema più sofisticato. Il Water Recovery System (WRS, anch'esso in Tranquility) dell'SSI raccoglie urina, condensa di umidità dall'impianto di condizionamento, acqua delle tute EVA (poca) e acque di scarto dell'igiene, e le fa passare attraverso un processore dell'urina (distillazione sotto vuoto per separare l'acqua dalla salamoia) e un processore dell'acqua (filtrazione multipla, ossidazione catalitica, scambio ionico). L'acqua prodotta è potabile e più pulita di quella della maggior parte degli acquedotti municipali. Il recupero del segmento statunitense era di ~93–94% prima del Brine Processor Assembly (aggiunto nel 2021); con il BPA la NASA ha dimostrato ~98% nel 2023. Le perdite residue vengono compensate con acqua di rifornimento lanciata dalla Terra in sacche monouso, soprattutto perché la salamoia che esce dal trattamento dell'urina contiene ancora il 15–20% di acqua che non si può recuperare in modo economico — il BPA colma gran parte di quel divario, ma non tutto. L'obiettivo per le missioni di classe Marte è >98% in modo continuo."
+  },
+  {
+    "rel": "science/life-in-space/eclss-life-support.json",
+    "at": "body_paragraphs.4",
+    "old": "Il controllo termico è l'ultimo e il più grande sottosistema — l'SSI scarica circa 75 kW di calore disperso attraverso anelli di ammoniaca esterna alimentando 14 radiatori dispiegabili. L'anello di trasporto del calore interno utilizza acqua (non tossica); l'anello esterno utilizza ammoniaca (eccellenti proprietà termiche, ma una perdita all'interno della stazione ucciderebbe l'equipaggio, da cui il design a due cicli con scambiatori di calore al confine del segmento). Il segmento russo utilizza un anello interno a base di etilenglicole e un diverso assetto esterno. Ogni perdita di ammoniaca sull'SSI (ce ne sono state diverse in 25 anni) diventa un evento operativo importante per il rischio di contaminazione incrociata; la procedura EVA sul lato della tuta per affrontare una perdita di ammoniaca è una delle unità di allenamento più lunghe nel curriculum degli astronauti.",
+    "new": "Il controllo termico è l'ultimo e il più grande dei sottosistemi — l'SSI smaltisce circa 75 kW di calore di scarto attraverso circuiti esterni ad ammoniaca che alimentano 14 radiatori dispiegabili. Il circuito interno di trasporto del calore usa acqua (non tossica); quello esterno usa ammoniaca (ottime proprietà termiche, ma una perdita all'interno della stazione ucciderebbe l'equipaggio, da cui la configurazione a due circuiti con scambiatori di calore al confine tra i segmenti). Il segmento russo usa un circuito interno a base di glicole etilenico e una diversa soluzione esterna. Ogni perdita di ammoniaca sull'SSI (ce ne sono state diverse in 25 anni) diventa un evento operativo importante per il rischio di contaminazione incrociata; la procedura EVA, lato tuta, per gestire una perdita di ammoniaca è una delle unità di addestramento più lunghe del curriculum degli astronauti."
+  },
+  {
+    "rel": "science/life-in-space/eclss-life-support.json",
+    "at": "diagram_caption",
+    "old": "Aria: O₂ dall'elettrolisi dell'acqua riciclata → cabina → CO₂ assorbita da zeolite (US) / amina (Russia) → Sabatier converte CO₂ + H₂ in metano + acqua → di nuovo nel ciclo dell'acqua. Acqua: urina + condensato → distillazione + multi-filtrazione → acqua potabile → bere + elettrolizzare. Calore: anello di acqua interno → anello di ammoniaca esterno → 14 radiatori.",
+    "new": "Aria: O₂ dall'elettrolisi dell'acqua riciclata → cabina → CO₂ rimossa con zeolite (sistema statunitense) / ammina (Russia) → il reattore Sabatier converte CO₂ + H₂ in metano + acqua → di nuovo nel ciclo dell'acqua. Acqua: urina + condensa → distillazione + filtrazione multipla → acqua potabile → da bere + elettrolisi. Calore: circuito interno ad acqua → circuito esterno ad ammoniaca → 14 radiatori."
+  },
+  {
+    "rel": "science/life-in-space/eva-operations.json",
+    "at": "intro_sentence",
+    "old": "Aprire la camera stagna, e 6–8 ore dopo un carico utile è sulla traliccio. Nel mezzo, l'attività più procedurale dello spazio — 50+ passi coreografati, ognuno una possibilità di fallire in sicurezza.",
+    "new": "Si apre il portello della camera di equilibrio e 6–8 ore dopo un carico utile è sul traliccio. In mezzo c'è l'attività più procedurale del volo spaziale — oltre 50 passaggi coreografati, ciascuno un'occasione per sbagliare in sicurezza."
+  },
+  {
+    "rel": "science/life-in-space/eva-operations.json",
+    "at": "body_paragraphs.0",
+    "old": "Un'EVA moderna inizia circa 24 ore prima dell'uscita. L'equipaggio ripassa il raccoglitore delle procedure (oggi un tablet): ogni passaggio di cavo di sicurezza, ogni coppia di serraggio, ogni imprevisto. Gli attrezzi vengono predisposti sulla parete della camera di equilibrio nell'ordine in cui serviranno. La notte prima l'equipaggio dorme a pressione di cabina ridotta (10,2 psi sul lato americano; il lato russo dell'Orlan salta questo passaggio per via delle diverse pressioni delle tute — vedi l'articolo `eva-physiology`). A T meno 4 ore l'equipaggio è in tuta e respira ossigeno puro dalla maschera per eliminare l'azoto dai tessuti: il protocollo di prerespirazione. Non è negoziabile; saltarlo provoca la malattia da decompressione («the bends») perché l'N₂ forma bolle quando la tuta si depressurizza.",
+    "new": "Un'EVA moderna inizia circa 24 ore prima dell'uscita. L'equipaggio ripassa il raccoglitore delle procedure (oggi un tablet): ogni passaggio di cavo di sicurezza, ogni coppia di serraggio, ogni imprevisto. Gli attrezzi vengono predisposti sulla parete della camera di equilibrio nell'ordine in cui serviranno. La notte prima l'equipaggio dorme a pressione di cabina ridotta (10,2 psi sul lato americano; il lato russo dell'Orlan salta questo passaggio per via delle diverse pressioni delle tute — vedi l'articolo `eva-physiology`). A T meno 4 ore l'equipaggio è in tuta e respira ossigeno puro dalla maschera per eliminare l'azoto dai tessuti: il protocollo di prerespirazione. Non è negoziabile; saltarlo provoca la malattia da decompressione (il «mal dei cassoni») perché l'N₂ forma bolle quando la tuta si depressurizza."
+  },
+  {
+    "rel": "science/life-in-space/eva-operations.json",
+    "at": "body_paragraphs.1",
+    "old": "L'uscita è il quarto d'ora più rischioso. La camera di equilibrio viene depressurizzata a 5,0 psi per una prova di tenuta (nessun sibilo udibile = tuta integra), poi fino al vuoto. Il membro dell'equipaggio apre il portello esterno, aggancia un cavo di sicurezza principale a un corrimano della stazione, aggancia un secondo cavo locale ed esce. Ogni EVA moderna applica di default la disciplina dei due cavi: il cavo corporeo verso la stazione e un cavo locale fissato al punto di lavoro. La terza riserva è SAFER, un piccolo zaino a getto indossato sopra la tuta. Il suo unico compito è riportare alla struttura un astronauta slegato se entrambi i cavi principali cedono. È stato portato in ogni EVA americana dal 1994 e usato davvero zero volte.",
+    "new": "L'uscita è il quarto d'ora più rischioso. La camera di equilibrio viene depressurizzata a 5,0 psi per una prova di tenuta (nessun sibilo udibile = tuta integra), poi fino al vuoto. Il membro dell'equipaggio apre il portello esterno, aggancia un cavo di sicurezza principale a un corrimano della stazione, aggancia un secondo cavo locale ed esce. Ogni EVA moderna applica di default la disciplina dei due cavi: il cavo corporeo verso la stazione e un cavo locale fissato al punto di lavoro. La terza riserva è SAFER, un piccolo zaino a getto indossato sopra la tuta. Il suo unico compito è riportare alla struttura un astronauta slegato se entrambi i cavi principali cedono. È stato portato in ogni EVA americana dal 1994 e non è mai stato usato in una vera emergenza."
+  },
+  {
+    "rel": "science/life-in-space/eva-operations.json",
+    "at": "body_paragraphs.2",
+    "old": "Gran parte del lavoro vero si svolge su un fermapiedi chiamato APFR (Articulating Portable Foot Restraint). L'equipaggio vi blocca i piedi e lascia libere entrambe le mani; senza, ogni movimento richiede forza di presa per contrastare la terza legge di Newton. I compiti in EVA sono limitati dalla fatica delle braccia molto prima che dal metabolismo. Il guanto dell'EMU (il guanto pressurizzato della tuta americana) è l'equipaggiamento fisiologicamente più impegnativo mai volato: i danni alle unghie sono così comuni che NASA li registra come lesione nota, e gli equipaggi si fasciano abitualmente i polpastrelli prima di uscire. Il guanto dell'Orlan russo è un po' meno rigido (contropartita della minore pressione della tuta) e il guanto cinese del Feitian è una riprogettazione di quello dell'Orlan.",
+    "new": "Gran parte del lavoro vero si svolge su un fermapiedi chiamato APFR (Articulating Portable Foot Restraint). L'equipaggio vi blocca i piedi e lascia libere entrambe le mani; senza, ogni movimento richiede forza di presa per contrastare la terza legge di Newton. I compiti in EVA sono limitati dalla fatica delle braccia molto prima che dal metabolismo. Il guanto dell'EMU (il guanto pressurizzato della tuta americana) è l'equipaggiamento fisiologicamente più impegnativo mai volato: i danni alle unghie sono così comuni che la NASA li registra come lesione nota, e gli equipaggi si fasciano abitualmente i polpastrelli prima di uscire. Il guanto dell'Orlan russo è un po' meno rigido (contropartita della minore pressione della tuta) e il guanto cinese del Feitian è una riprogettazione di quello dell'Orlan."
+  },
+  {
+    "rel": "science/life-in-space/eva-operations.json",
+    "at": "diagram_caption",
+    "old": "T-24h: revisione procedura → T-12h: preparazione attrezzi → T-4h: prebreathe + indosso tuta → T-0: depressurizzazione al vuoto, uscita con doppio cavo di sicurezza → 6-8h di lavoro al piede di sostegno, SAFER come ultima salvaguardia → rientro, ripressurizzazione, svestizione. 50+ fasi procedurali, ognuna un'occasione per fallire in sicurezza.",
+    "new": "T-24h: revisione della procedura → T-12h: predisposizione degli attrezzi → T-4h: prerespirazione + vestizione → T-0: depressurizzazione fino al vuoto, uscita con doppio cavo di sicurezza → 6-8h di lavoro sul fermapiedi, SAFER come ultima riserva → rientro, ripressurizzazione, svestizione. Oltre 50 passaggi procedurali, ciascuno un'occasione per sbagliare in sicurezza."
+  },
+  {
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "intro_sentence",
+    "old": "Una passeggiata spaziale è un'attività di resistenza di 6–8 ore in una tuta pressurizzata a ossigeno puro a 1/3 di atmosfera — preceduta da ore di pre-respirazione per evitare i disturbi della decompressione.",
+    "new": "Una passeggiata spaziale è una prova di resistenza di 6–8 ore in una tuta pressurizzata a ossigeno a 1/3 di atmosfera, preceduta da ore di prerespirazione per tenere lontano il mal dei cassoni."
+  },
+  {
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "body_paragraphs.0",
+    "old": "Il problema fondamentale dell'EVA è che il corpo umano vuole l'atmosfera a livello del mare terrestre — 1 atm di N₂/O₂ miscelati — e la tuta spaziale non può fornirla senza diventare così rigida che l'astronauta non riesce a muoversi. Quindi la tuta funziona a circa 4,3 psi (0,29 atm) di ossigeno puro. È una pressione parziale di O₂ sufficiente a respirare comodamente, ma la caduta improvvisa dalla pressione della stazione (14,7 psi, ~80% N₂) alla pressione della tuta (4,3 psi, 100% O₂) causerebbe malattia da decompressione — i disturbi della decompressione — esattamente come accade ai subacquei in risalita rapida.",
+    "new": "Il problema fondamentale dell'EVA è che il corpo umano vuole l'atmosfera a livello del mare terrestre — 1 atm di N₂/O₂ miscelati — e la tuta spaziale non può fornirla senza diventare così rigida che l'astronauta non riesce a muoversi. Quindi la tuta funziona a circa 4,3 psi (0,29 atm) di ossigeno puro. È una pressione parziale di O₂ sufficiente a respirare comodamente, ma la caduta improvvisa dalla pressione della stazione (14,7 psi, ~80% N₂) alla pressione della tuta (4,3 psi, 100% O₂) causerebbe la malattia da decompressione — il «mal dei cassoni» — esattamente come accade ai subacquei in risalita rapida."
+  },
+  {
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "body_paragraphs.1",
+    "old": "La contromisura è la pre-respirazione: ore di respirazione di ossigeno puro a pressioni gradualmente più basse prima dell'uscita, per eliminare l'azoto dai tessuti corporei. L'attuale protocollo SSI lato USA prevede una pre-respirazione in tuta + il protocollo Campout (una notte a 10,2 psi) per un totale di circa 4 ore prima della depressurizzazione del portello stagno. Le tute russe Orlan funzionano a 5,7 psi, il che riduce sensibilmente la pre-respirazione — un diverso compromesso.",
+    "new": "La contromisura è la prerespirazione: ore di respirazione di ossigeno puro a pressioni gradualmente più basse prima dell'uscita, per eliminare l'azoto dai tessuti corporei. L'attuale protocollo SSI lato USA prevede una prerespirazione in tuta + il protocollo Campout (una notte a 10,2 psi) per un totale di circa 4 ore prima della depressurizzazione della camera di equilibrio. Le tute russe Orlan funzionano a 5,7 psi, il che riduce sensibilmente la prerespirazione — un diverso compromesso."
+  },
+  {
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "body_paragraphs.2",
+    "old": "Una volta all'esterno, il lavoro è fisicamente più difficile di quanto sembri. Anche piccoli movimenti richiedono una forza costante dei muscoli del braccio e della presa contro la rigidità della tuta; gli spacewalker esperti descrivono i guanti EMU come il singolo pezzo di equipaggiamento più faticoso mai volato. Il danno alle unghie è comune. I crampi alle mani e il dolore alle spalle limitano la durata dell'EVA prima che lo sia il bilancio metabolico. Le EVA moderne si attestano intorno alle 7 ore nominali, 8,5 ore con estensione; più a lungo di così e i tassi di errore dell'equipaggio aumentano notevolmente.",
+    "new": "Una volta all'esterno, il lavoro è fisicamente più difficile di quanto sembri. Anche i movimenti più piccoli richiedono una forza costante delle braccia e della presa contro la rigidità della tuta; gli astronauti più esperti descrivono i guanti EMU come il singolo pezzo di equipaggiamento più faticoso mai volato. I danni alle unghie sono comuni. I crampi alle mani e il dolore alle spalle limitano la durata dell'EVA prima del bilancio metabolico. Le EVA moderne si attestano intorno alle 7 ore nominali, 8,5 ore con estensione; oltre questo limite i tassi di errore dell'equipaggio aumentano notevolmente."
+  },
+  {
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "body_paragraphs.3",
+    "old": "I rischi della tuta includono anche la gestione termica (la tuta dissipa circa 250 W di calore metabolico in un sublimatore che emette vapore acqueo nello spazio), la depurazione della CO₂ (cartuccia di idrossido di litio o letto oscillante di amina), e il costante rischio di una puntura al guanto o alla visiera. Gli astronauti si allenano per la stessa EVA nel Neutral Buoyancy Laboratory pool approssimativamente 7–10 ore di allenamento per 1 ora di EVA in volo — il costo orario della passeggiata spaziale è il più alto di qualsiasi attività astronautica.",
+    "new": "I rischi della tuta includono anche la gestione termica (la tuta scarica circa 250 W di calore metabolico in un sublimatore che emette vapore acqueo nello spazio), la depurazione della CO₂ (cartuccia di idrossido di litio o letto oscillante ad ammine) e il rischio costante di una foratura del guanto o della visiera. Gli astronauti si allenano alla stessa EVA nella piscina del Neutral Buoyancy Laboratory, con circa 7–10 ore di addestramento per ogni ora di EVA in volo — il costo orario della passeggiata spaziale è il più alto fra tutte le attività degli astronauti."
+  },
+  {
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "diagram_caption",
+    "old": "Pre-respirazione O₂ per lavare l'azoto → inserimento in tuta a ossigeno puro a 4,3 psi → passeggiata metabolica di 6–8 ore → danno alle unghie e affaticamento alle spalle. Orlan russo a 5,7 psi accorcia la pre-respirazione.",
+    "new": "Prerespirazione di O₂ per eliminare l'azoto → ingresso in una tuta a ossigeno puro a 4,3 psi → passeggiata di 6–8 ore entro il budget metabolico → danni alle unghie e affaticamento delle spalle. L'Orlan russo, a 5,7 psi, accorcia la prerespirazione."
+  },
+  {
+    "rel": "science/life-in-space/eva-suits.json",
+    "at": "intro_sentence",
+    "old": "Una tuta EVA è un'astronave monoplace — guscio di pressione, supporto vitale a ciclo chiuso, controllo termico, visiera solare e propulsore — costruita per consentire a un umano di stare 6–8 ore nel vuoto.",
+    "new": "Una tuta EVA è un veicolo spaziale per una sola persona — guscio pressurizzato, supporto vitale a ciclo chiuso, controllo termico, visiera parasole e zaino di propulsori — costruito perché un essere umano possa passare 6–8 ore nel vuoto."
+  },
+  {
+    "rel": "science/life-in-space/eva-suits.json",
+    "at": "body_paragraphs.0",
+    "old": "Il problema centrale della tuta EVA è la **riespirazione a ciclo chiuso**. Fuori dall'airlock non c'è atmosfera dove espellere la CO₂, quindi la tuta deve eliminarla dall'esalazione dell'astronauta e riciclare l'ossigeno residuo. L'attuale EMU statunitense utilizza una **cartuccia di idrossido di litio (LiOH)** nello zaino che assorbe la CO₂ irreversibilmente — sostituita a terra dopo ogni EVA. L'Orlan russo e l'ultimo canister METOX statunitense utilizzano un **letto oscillante a amina rigenerabile**: adsorbono la CO₂ durante l'EVA, quindi vengono rigenerati nell'airlock tra le passeggiate e riutilizzati. L'equivalente a bordo della stazione all'interno dell'SSI (il CDRA, Carbon Dioxide Removal Assembly) fa la stessa cosa in ciclo rigenerativo, mentre l'OGS (Oxygen Generation System) sottopone l'acqua a elettrolisi per ricostituire O₂. La tuta è una versione in miniatura e portatile dell'ECLSS della stazione, che funziona per 8 ore con le proprie batterie e provviste.",
+    "new": "Il problema centrale della tuta EVA è la **riespirazione a ciclo chiuso**. Fuori dalla camera di equilibrio non c'è atmosfera in cui scaricare la CO₂, quindi la tuta deve eliminarla dall'espirazione dell'astronauta e riciclare l'ossigeno rimasto. L'attuale EMU statunitense usa nello zaino una **cartuccia di idrossido di litio (LiOH)** che assorbe la CO₂ in modo irreversibile — sostituita a terra dopo ogni EVA. L'Orlan russo e il più recente canister METOX statunitense usano un **letto oscillante ad ammine rigenerabile**: adsorbe la CO₂ durante l'EVA, poi viene rigenerato per riscaldamento nella camera di equilibrio tra una passeggiata e l'altra e riutilizzato. L'equivalente a bordo della stazione all'interno dell'SSI (il CDRA, Carbon Dioxide Removal Assembly) fa la stessa cosa con un ciclo rigenerativo, mentre l'OGS (Oxygen Generation System) sottopone l'acqua a elettrolisi per ricostituire l'O₂. La tuta è una versione in miniatura e portatile dell'ECLSS della stazione, che funziona per 8 ore con le proprie batterie e provviste."
+  },
+  {
+    "rel": "science/life-in-space/eva-suits.json",
+    "at": "body_paragraphs.1",
+    "old": "Lo zaino Primary Life Support System (**PLSS**) trasporta ossigeno a ~6800 kPa (1000 psi) in due serbatoi, una batteria, la cartuccia LiOH, una ventola per far circolare l'aria attraverso l'elmetto, un serbatoio d'acqua per il raffreddamento e un sublimatore — una piastra porosa che permette all'acqua liquida di evaporare nel vuoto, scaricando ~250 W di calore metabolico nello spazio come vapore acqueo. Una tuta di raffreddamento a liquido viene indossata contro la pelle: acqua che scorre attraverso tubi intorno al corpo assorbe il calore e ritorna al sublimatore. Le braccia e i guanti ricevono guanti pressurizzati; il corpo riceve un Hard Upper Torso (HUT) in fibra di vetro o composito; le gambe si articolano attraverso giunti in tessuto morbido. La pressione operativa è 4,3 psi (EMU statunitense, O₂ puro) o 5,7 psi (Orlan russo, O₂ puro). Pressione più bassa = movimento più facile; pressione più alta = tempo di pre-respirazione minore.",
+    "new": "Lo zaino Primary Life Support System (**PLSS**) trasporta ossigeno a ~6800 kPa (1000 psi) in due serbatoi, una batteria, la cartuccia LiOH, una ventola per far circolare l'aria attraverso l'elmetto, un serbatoio d'acqua per il raffreddamento e un sublimatore — una piastra porosa che lascia bollire l'acqua liquida nel vuoto, scaricando nello spazio ~250 W di calore metabolico sotto forma di vapore acqueo. A contatto con la pelle si indossa un indumento a raffreddamento a liquido: l'acqua che scorre in tubicini sul corpo assorbe il calore e ritorna al sublimatore. Per braccia e mani ci sono guanti pressurizzati; il tronco ha un Hard Upper Torso (HUT) in fibra di vetro o composito; le gambe si articolano con giunti in tessuto morbido. La pressione operativa è 4,3 psi (EMU statunitense, O₂ puro) o 5,7 psi (Orlan russo, O₂ puro). Pressione più bassa = movimento più facile; pressione più alta = meno tempo di prerespirazione."
+  },
+  {
+    "rel": "science/life-in-space/eva-suits.json",
+    "at": "body_paragraphs.2",
+    "old": "Due dettagli specializzati. **Visiera solare**: la visiera esterna placcata in oro su ogni elmetto EVA è d'oro per una ragione — un sottile film di oro depositato per evaporazione riflette ~98% della radiazione infrarossa lasciando passare la luce visibile. Con il Sole nel campo visivo della tuta (circa metà dell'orbita sull'SSI), la luce solare diretta su una visiera in policarbonato trasparente riscalderebbe l'elmetto oltre il tollerabile. L'astronauta abbassa la visiera dorata quando guarda verso il Sole e la risolleva quando lavora in ombra. **Propulsori EVA**: lo zaino SAFER (Simplified Aid For EVA Rescue) su ogni EVA statunitense moderno trasporta 1,4 kg di azoto compresso e 24 piccoli propulsori, fornendo all'astronauta circa 3 m/s di Δv totale — abbastanza per volare di nuovo verso la stazione se un cavo si spezza e nient'altro. L'**MMU** precedente (Manned Maneuvering Unit, 1984–1985) trasportava ~12 kg di azoto e ~25 m/s; Bruce McCandless e Robert Stewart lo utilizzarono famosamente senza tether su STS-41B. Dopo il Challenger, la NASA ha messo a terra l'MMU come troppo rischioso e ha reintrodotto l'EVA con tether e SAFER come backup solamente.",
+    "new": "Due dettagli tecnici. **Visiera parasole**: la visiera esterna placcata in oro su ogni elmetto EVA è dorata per una ragione — un sottile film d'oro depositato da vapore riflette ~98% della radiazione infrarossa lasciando passare la luce visibile. Con il Sole nel campo visivo della tuta (circa metà dell'orbita sull'SSI), la luce solare diretta su una visiera trasparente in policarbonato riscalderebbe l'elmetto oltre il tollerabile. L'astronauta abbassa la visiera dorata quando guarda verso il Sole e la rialza quando lavora in ombra. **Propulsori EVA**: lo zaino SAFER (Simplified Aid For EVA Rescue) su ogni EVA statunitense moderna trasporta 1,4 kg di azoto compresso e 24 piccoli propulsori, dando all'astronauta circa 3 m/s di Δv totale — abbastanza per tornare alla stazione se un cavo si spezza, e nient'altro. Il precedente **MMU** (Manned Maneuvering Unit, 1984–1985) portava ~12 kg di azoto e ~25 m/s; Bruce McCandless e Robert Stewart lo usarono, celebremente, volando senza cavi di sicurezza su STS-41B. Dopo il Challenger la NASA mise a terra l'MMU perché troppo rischioso e tornò all'EVA con cavi di sicurezza, lasciando il SAFER solo come riserva."
+  },
+  {
+    "rel": "science/life-in-space/eva-suits.json",
+    "at": "body_paragraphs.3",
+    "old": "Quattro famiglie di tute EVA volano oggi — vedi /fleet per ognuna: EMU (US Shuttle/SSI, 1981 a oggi), Orlan-MKS (Russia, ultima della famiglia rear-entry che vola dal 1977), Feitian (Cina, Tiangong + Shenzhou), e AxEMU (Axiom, in qualificazione per Artemis III). La scelta architettonica che le divide più chiaramente è la geometria di accesso — EMU statunitense è front-entry (HUT + LTA assemblati), Orlan e Feitian sono rear-entry (sportello PLSS sul retro) — e la pressione operativa (4,3 vs 5,7 psi), che determina quanto pre-respiro richiede ogni programma.",
+    "new": "Oggi volano quattro famiglie di tute EVA — vedi /fleet per ciascuna: EMU (Shuttle statunitense/SSI, dal 1981 a oggi), Orlan-MKS (Russia, l'ultima della famiglia a ingresso posteriore in volo dal 1977), Feitian (Cina, Tiangong + Shenzhou) e AxEMU (Axiom, in qualificazione per Artemis III). La scelta architettonica che le divide più nettamente è la geometria di accesso — l'EMU statunitense è a ingresso anteriore (HUT + LTA assemblati), Orlan e Feitian sono a ingresso posteriore (portello del PLSS sul retro) — e la pressione operativa (4,3 contro 5,7 psi), che determina quanta prerespirazione richiede ciascun programma."
+  },
+  {
+    "rel": "science/life-in-space/eva-suits.json",
+    "at": "diagram_caption",
+    "old": "Zaino PLSS sulla schiena · visiera solare dorata · hard upper torso · tuta di raffreddamento a liquido sottostante · scrubber CO₂ LiOH o amina · sublimatore scarica ~250 W di calore metabolico come vapore acqueo · mini-propulsore SAFER con ~3 m/s di azoto Δv per il soccorso.",
+    "new": "Zaino PLSS sulla schiena · visiera parasole dorata · torso superiore rigido (HUT) · indumento a raffreddamento a liquido sotto la tuta · depuratore di CO₂ a LiOH o ad ammine · il sublimatore scarica ~250 W di calore metabolico sotto forma di vapore acqueo · minizaino propulsore SAFER con ~3 m/s di Δv a azoto per il soccorso."
+  },
+  {
+    "rel": "science/life-in-space/food-production-off-world.json",
+    "at": "title",
+    "old": "Produzione alimentare fuori dal mondo — da Veggie alle serre su Marte",
+    "new": "Produzione di cibo fuori dalla Terra — da Veggie alle serre su Marte"
+  },
+  {
+    "rel": "science/life-in-space/food-production-off-world.json",
+    "at": "intro_sentence",
+    "old": "Gli equipaggi SSI mangiano cibo coltivato da loro stessi dal 2015. Il salto da 'supplemento di insalata' a 'dieta quotidiana a ciclo chiuso' è la frontiera aperta tra l'SSI di oggi e qualsiasi insediamento marziano degno del nome.",
+    "new": "Gli equipaggi della SSI mangiano cibo coltivato da loro stessi dal 2015. Il salto dal «contorno d'insalata» alla «dieta quotidiana a ciclo chiuso» è la frontiera aperta tra la SSI di oggi e qualsiasi insediamento su Marte degno del nome."
+  },
+  {
+    "rel": "science/life-in-space/food-production-off-world.json",
+    "at": "body_paragraphs.0",
+    "old": "L'SSI ha avviato il suo programma cibo-da-orbita nel 2014 con Veggie, una piccola camera imbullonata nel laboratorio Destiny con illuminazione LED rossa e blu e moduli radicali tipo cuscino. Il primo raccolto che l'equipaggio è stato autorizzato a mangiare è stata la lattuga romana rossa 'Outredgeous', nell'agosto 2015 — metà mangiata in orbita, metà restituita per analisi. Da allora Veggie ha ciclato mizuna, pak choi, foglie di senape, tatsoi, cavolo riccio, peperoni e fiori di zinnia (i fiori erano un test deliberato per colture con strutture riproduttive), più l'Advanced Plant Habitat (APH, installato nel 2017) che aggiunge un volume di crescita in ambiente chiuso di 0,4 m² con CO₂, umidità e luce monitorate da sensori. Il contributo alla nutrizione dell'equipaggio è piccolo — misurato in manciate per equipaggio al mese — ma il contributo psicologico è grande, validato rispetto alle raccomandazioni degli studi di isolamento Mir degli anni '80 che segnalavano la 'connessione con cose che crescono' come contromisura centrale contro l'astenia.",
+    "new": "La SSI ha avviato il suo programma di produzione di cibo in orbita nel 2014 con Veggie, una piccola camera imbullonata nel laboratorio Destiny, con illuminazione LED rossa e blu e contenitori radicali a cuscino. Il primo raccolto che l'equipaggio fu autorizzato a mangiare fu la lattuga romana rossa «Outredgeous», nell'agosto 2015 — metà mangiata in orbita, metà riportata a terra per le analisi. Da allora Veggie ha coltivato a rotazione mizuna, pak choi, senape, tatsoi, cavolo riccio, peperoni e fiori di zinnia (i fiori erano un test deliberato per colture con strutture riproduttive), cui si aggiunge l'Advanced Plant Habitat (APH, installato nel 2017), con un volume di coltivazione in ambiente chiuso di 0,4 m² e CO₂, umidità e luce monitorate da sensori. Il contributo alla nutrizione dell'equipaggio è piccolo — si misura in manciate per equipaggio al mese — ma quello psicologico è grande, e convalidato dalle raccomandazioni degli studi di isolamento svolti su Mir negli anni Ottanta, che indicavano il «contatto con ciò che cresce» come contromisura centrale contro l'astenia."
+  }
+]

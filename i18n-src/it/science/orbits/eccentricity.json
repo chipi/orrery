@@ -1,10 +1,10 @@
 {
   "title": "Eccentricità",
-  "intro_sentence": "Quanto stirata è l'orbita — zero è cerchio perfetto, uno è fuga parabolica.",
+  "intro_sentence": "Quanto è allungata l'orbita: zero è un cerchio perfetto, uno è una fuga parabolica.",
   "narrative_101": [
-    "Se la dimensione è la prima manopola di un'orbita, l'eccentricità è la seconda. Scegli un numero da 0 a quasi 1. A 0 l'orbita è un cerchio perfetto — noiosa, prevedibile, stessa velocità ovunque. Spingila verso 1 e l'ellisse si allunga in un lungo uovo, poi in un sigaro, poi quasi in una linea retta.",
+    "Se la dimensione è la prima manopola di un'orbita, l'eccentricità è la seconda. Scegli un numero da 0 a quasi 1. A 0 l'orbita è un cerchio perfetto — noiosa, prevedibile, stessa velocità ovunque. Spingila verso 1 e l'ellisse si allunga fino a diventare un uovo, poi un sigaro, poi quasi una linea retta.",
     "Cosa cambia fisicamente? La velocità. Un'orbita circolare è tranquilla. Una allungata no. Il corpo sfreccia all'estremità vicina dell'ellisse e poi bighellona all'estremità lontana per gran parte dell'orbita. La cometa di Halley resta nei nostri paraggi meno di un anno ogni 76 — il resto del tempo si trascina lentamente attorno all'afelio. Stessa orbita, ritmi completamente diversi.",
-    "I pianeti veri sono molto più tranquilli delle comete — quasi tutto ciò che vedrai in /explore ha eccentricità inferiore a 0,1. Ma appena inizi a progettare la traiettoria di una missione, scegli ellissi di trasferimento con eccentricità di ogni tipo. I trasferimenti di Hohmann verso Marte stanno intorno a 0,21. L'accensione TLI dell'Apollo metteva il veicolo su un'ellisse con e ≈ 0,97 — quasi una fuga."
+    "I pianeti veri sono molto più tranquilli delle comete — quasi tutto ciò che vedrai in /explore ha un'eccentricità inferiore a 0,1. Ma appena inizi a progettare la traiettoria di una missione, scegli ellissi di trasferimento con eccentricità di ogni tipo. I trasferimenti di Hohmann verso Marte stanno intorno a 0,21. L'accensione TLI dell'Apollo mise il veicolo su un'ellisse con e ≈ 0,97 — quasi una fuga."
   ],
   "body_paragraphs": [
     "L'eccentricità (`e`) è il numero della forma. Impostala a 0 e ottieni un cerchio — i fuochi collassano in un unico centro e il corpo in orbita resta sempre alla stessa distanza. Portala verso 1 e l'ellisse si allunga come un sigaro — il corpo sfreccia accanto al fuoco al perielio, poi indugia all'afelio per gran parte dell'orbita.",

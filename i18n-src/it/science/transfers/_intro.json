@@ -1,8 +1,8 @@
 {
   "headline": "Trasferimenti — una volta in orbita, sei a metà strada verso ovunque.",
   "paragraphs": [
-    "Robert Heinlein l'ha scritto. Aveva ragione. Raggiungere l'orbita bassa terrestre costa circa 9,4 km/s di ∆v — la parte più difficile di qualsiasi viaggio. L'iniezione per la rotta verso Marte aggiunge solo ~3,6 km/s. Una volta libero dall'atmosfera del pianeta e in un'orbita corretta, il resto del sistema solare è principalmente geometria.",
-    "Le sette sezioni di questa scheda coprono la geometria. Il trasferimento di Hohmann è il viaggio più economico possibile tra due orbite — due accensioni, otto mesi di deriva. Il problema di Lambert generalizza Hohmann a date di partenza e arrivo arbitrarie. Gli assistenze gravitazionali ti permettono di rubare velocità da un pianeta (essenzialmente) gratuitamente, ed è così che il Voyager 2 ha raggiunto Nettuno. Le traiettorie di ritorno libero sono la rete di sicurezza che ha riportato a casa l'Apollo 13. Le coniche raccordate sono l'approssimazione di lavoro che ci consente di calcolare tutto questo in un browser.",
+    "Robert Heinlein l'ha scritto. Aveva ragione. Raggiungere l'orbita bassa terrestre costa circa 9,4 km/s di ∆v — la parte più difficile di qualsiasi viaggio. L'iniezione trans-marziana aggiunge solo ~3,6 km/s. Una volta liberi dall'atmosfera del pianeta e in un'orbita come si deve, il resto del sistema solare è soprattutto geometria.",
+    "Le sette sezioni di questa scheda coprono la geometria. Il trasferimento di Hohmann è il viaggio più economico possibile tra due orbite — due accensioni, otto mesi di deriva. Il problema di Lambert generalizza il trasferimento di Hohmann a date di partenza e di arrivo qualsiasi. Le fionde gravitazionali ti permettono di rubare velocità a un pianeta (di fatto) gratis, ed è così che il Voyager 2 ha raggiunto Nettuno. Le traiettorie di ritorno libero sono la rete di sicurezza che ha riportato a casa l'Apollo 13. Le coniche raccordate sono l'approssimazione di lavoro che ci permette di calcolare tutto questo in un browser.",
     "Se leggi una sola sezione: trasferimento di Hohmann. Tutto il resto si basa su di esso."
   ]
 }

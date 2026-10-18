@@ -1,15 +1,15 @@
 {
   "title": "Inclinazione",
-  "intro_sentence": "L'inclinazione del piano orbitale rispetto a un piano di riferimento.",
+  "intro_sentence": "Inclinazione del piano orbitale rispetto a un riferimento, di norma eclittica o equatore.",
   "narrative_101": [
     "Tieni un piatto piano davanti a te — quello è il piano di riferimento. Ora inclinalo. L'angolo di cui l'hai inclinato è l'inclinazione. Tutto qui. Ogni orbita vive sul proprio piatto inclinato.",
-    "Conta perché cambiare inclinazione costa una quantità brutale di carburante. Se lanci un razzo dalla Florida, la Terra lì ruota già verso est a 0,4 km/s — lo ottieni gratis se la tua orbita va verso est. Prova invece a lanciare in orbita polare e non solo perdi il regalo, devi anche combatterlo. Scegliere l'inclinazione al lancio è una delle decisioni più importanti di una missione; quasi mai vorrai cambiarla dopo.",
+    "Conta perché cambiare inclinazione costa moltissimo carburante. Se lanci un razzo dalla Florida, la Terra ruota già verso est a 0,4 km/s — e lo ottieni gratis se la tua orbita va verso est. Prova invece a lanciare in orbita polare: non solo perdi il regalo, ma devi anche andarci contro. Scegliere l'inclinazione al lancio è una delle decisioni più importanti di una missione; quasi mai vorrai cambiarla dopo.",
     "Ecco perché la SSI sta a 51,6° — è l'angolo con cui devi lanciare per raggiungerla dalla base russa di Bajkonur. Perché i satelliti per immagini vanno in orbita polare — devono sorvolare ogni latitudine. Perché i satelliti di comunicazione GEO stanno sull'equatore — per restare per sempre sopra lo stesso pezzo di terra. Ogni inclinazione è una scelta deliberata con un conto del carburante allegato."
   ],
   "body_paragraphs": [
     "L'inclinazione (`i`) è l'angolo tra il piano orbitale e un riferimento scelto. Per un'orbita eliocentrica, il riferimento è l'eclittica — il piano in cui orbita la Terra. Per gli oggetti in orbita terrestre, è solitamente l'equatore. L'angolo è misurato nel nodo ascendente, dove l'orbita attraversa il piano di riferimento dirigendosi verso nord.",
     "La maggior parte dei pianeti si trova vicino all'eclittica — la Terra la definisce (`i = 0°` per costruzione), e gli altri restano entro pochi gradi. Mercurio a 7° è l'eccezione. L'inclinazione selvaggia di Plutone di 17° è uno dei motivi per cui è stato retrocesso: i veri pianeti rimangono quasi complanari.",
-    "Per i satelliti terrestri la storia dell'inclinazione è diversa e pragmatica. Equatoriale (0°) per i satelliti geostazionari di telecomunicazioni. ~28° per i lanci da Cape Canaveral che devono sfruttare la rotazione della Terra. ~51,6° per la SSI — scelta per permettere ai cosmonauti russi di lanciare da Bajkonur. Polare (~90°) per i satelliti di osservazione terrestre che hanno bisogno di coprire ogni latitudine. Sincrona al Sole (~98°) per le piattaforme scientifiche che vogliono un'illuminazione coerente ad ogni passaggio."
+    "Per i satelliti terrestri la storia dell'inclinazione è diversa e pragmatica. Equatoriale (0°) per i satelliti geostazionari di telecomunicazioni. ~28° per i lanci da Cape Canaveral che devono sfruttare la rotazione della Terra. ~51,6° per la SSI — scelta per permettere ai cosmonauti russi di lanciare da Bajkonur. Polare (~90°) per i satelliti di osservazione terrestre che hanno bisogno di coprire ogni latitudine. Eliosincrona (~98°) per le piattaforme scientifiche che vogliono un'illuminazione costante a ogni passaggio."
   ],
   "diagram_caption": "Piano orbitale inclinato di angolo i. Nodo ascendente N."
 }

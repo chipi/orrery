@@ -1,6 +1,6 @@
 {
   "title": "Equazione vis-viva",
-  "intro_sentence": "Quanto velocemente un corpo si muove — dal raggio attuale e dal semiasse maggiore.",
+  "intro_sentence": "Quanto veloce si muove un corpo in ogni punto dell'orbita, noti raggio e semiasse maggiore.",
   "narrative_101": [
     "Se dovessi imparare una sola equazione della meccanica orbitale, sia questa. Fornisci a vis-viva tre informazioni — quello che stai orbitando, quanto sei lontano attualmente, e le dimensioni della tua orbita — e ti dice esattamente quanto velocemente ti stai muovendo. Niente tempo, niente integrazione, niente trucco intelligente. Tre input, una radice quadrata, fatto.",
     "Il motivo per cui funziona è la conservazione dell'energia. Un veicolo spaziale che scambia quota per velocità (o viceversa) mantiene la sua energia totale costante su una determinata orbita. Quindi se sai dove si trova lungo l'ellisse, sai come quella energia si divide tra potenziale e cinetica — e una volta che conosci la parte cinetica hai la velocità.",
@@ -12,5 +12,5 @@
     "In Orrery, vis-viva è ciò che calcola le letture di velocità che vedi sull'HUD di `/fly` mentre un veicolo spaziale passa vicino a un pianeta — e i numeri di energia di partenza e velocità di arrivo che alimentano la mappa di calore porkchop su `/plan`."
   ],
   "formula_caption": "v da μ, r, a.",
-  "diagram_caption": "Velocità varia: alta perielio, bassa afelio."
+  "diagram_caption": "Velocità variabile: alta al perielio, bassa all'afelio."
 }

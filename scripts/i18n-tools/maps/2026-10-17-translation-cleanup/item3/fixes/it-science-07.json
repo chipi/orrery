@@ -1,0 +1,542 @@
+[
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.1",
+  "old": "Smaltimento in GEO: orbita cimitero. I satelliti GEO non possono essere rientrati economicamente perché il costo ΔV per scendere dalla GEO (35.786 km) fino all'impatto con la Terra è enorme (~1,5 km/s) e il satellite dovrebbe comunque attraversare la densa fascia di detriti LEO nel descenso. Invece, le linee guida IADC (e la maggior parte dei regolatori nazionali) richiedono agli operatori GEO di spingere i loro veicoli spaziali in un'«orbita cimitero» almeno 235 km al di sopra della GEO prima di esaurire il propellente per il mantenimento della posizione. La cifra di 235 km combina un buffer di 200 km al di sopra della regione GEO protetta con ~35 km di discesa del perigeo che un relitto può subire a causa della gravità lunisolare e dell'oblità della Terra; gli effetti della pressione da radiazione solare, che si scalano con il rapporto area-massa del satellite, vengono sommati tramite la formula IADC. La spinta al di là di quella quota combinata garantisce che il satellite morto non ritorni nella fascia GEO. Ogni spinta verso l'orbita cimitero consuma tipicamente 5-10 kg di propellente, equivalente a diversi mesi di margine per il mantenimento della posizione. Gli operatori che non eseguono la manovra verso l'orbita cimitero (tipicamente perché il satellite si è guastato troppo rapidamente per risparmiare il carburante) lasciano un relitto in o vicino alla GEO che minaccerà i comsats operativi per un futuro indefinito — i cosiddetti «relitti cimitero GEO».",
+  "new": "Smaltimento in GEO: orbita cimitero. I satelliti GEO non possono essere fatti rientrare in modo economico, perché il costo in ΔV per scendere dalla GEO (35.786 km) fino all'impatto con la Terra è enorme (~1,5 km/s) e il satellite dovrebbe comunque attraversare, durante la discesa, la densa fascia di detriti della LEO. Per questo le linee guida dell'IADC (e la maggior parte dei regolatori nazionali) impongono agli operatori GEO di portare i loro veicoli spaziali in un'«orbita cimitero» ad almeno 235 km sopra la GEO, prima di esaurire il propellente per il mantenimento della posizione. La cifra di 235 km somma un margine di 200 km sopra la regione GEO protetta a ~35 km di abbassamento del perigeo che un relitto può subire per la gravità lunisolare e lo schiacciamento della Terra; gli effetti della pressione di radiazione solare, che crescono con il rapporto area/massa del satellite, si aggiungono secondo la formula IADC. Una spinta che superi questa quota complessiva garantisce che il satellite morto non rientri nella fascia GEO. Ogni manovra verso l'orbita cimitero consuma in genere 5-10 kg di propellente, pari a diversi mesi di margine per il mantenimento della posizione. Gli operatori che non eseguono la manovra (di solito perché il satellite si è guastato troppo in fretta per risparmiare il carburante) lasciano in GEO o nei pressi un relitto che minaccerà i satelliti di comunicazione operativi per un futuro indefinito — i cosiddetti «relitti dell'orbita cimitero GEO»."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.2",
+  "old": "Smaltimento MEO e HEO. Casi più difficili di LEO o GEO. Le costellazioni di navigazione MEO (GPS, Galileo, GLONASS, BeiDou MEO) a ~20 000 km hanno tempi naturali molto lunghi (migliaia di anni) e nessun cimitero equivalente conveniente sopra; la pratica attuale è lasciare i satelliti ritirati in orbita operativa e affidarsi a fasatura attenta della costellazione. Con popolazioni MEO in crescita questo diventa un problema noto. I satelliti HEO (Molniya, Tundra) tipicamente hanno perigeo abbastanza basso che l'attrito atmosferico li deorbiterà infine — Molniya con perigeo 600 km decadono in decenni. HEO con perigeo più alto necessitano accensioni di deorbita esplicite.",
+  "new": "Smaltimento MEO e HEO. Casi più difficili sia della LEO sia della GEO. Le costellazioni di navigazione in MEO (GPS, Galileo, GLONASS, BeiDou MEO) a ~20.000 km hanno tempi di decadimento naturale molto lunghi (migliaia di anni) e non dispongono di un'orbita cimitero equivalente più in alto; la pratica attuale è lasciare i satelliti dismessi nella loro orbita operativa e affidarsi a un'attenta fasatura della costellazione per evitare collisioni. Con la crescita delle popolazioni in MEO, questo sta diventando un problema noto per il futuro. I satelliti in HEO (Molniya, Tundra) hanno in genere un perigeo abbastanza basso perché l'attrito atmosferico finisca per farli rientrare — i Molniya con perigeo a 600 km decadono nel giro di decenni. Le HEO con perigeo più alto richiedono manovre di deorbita esplicite."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.3",
+  "old": "Smaltimento cislunare. Ancora nessuna regolamentazione formale, ma pratica emergente per sonde era Artemis: fine vita di Lunar Reconnaissance Orbiter, Chang'e-1, Chandrayaan-1 sono finiti tutti per impattare la superficie lunare (a volte deliberatamente per scienza — LCROSS ha impattato Cabeo per cercare acqua; a volte incidentalmente per esaurimento). Lo smaltimento pianificato di Lunar Gateway a fine vita è deorbita controllata sulla superficie lunare, simile allo smaltimento SPOUA di Mir ma sulla Luna. Diverse proposte esistono per parcheggiare asset cislunari ritirati a Terra-Luna L4 / L5, estremamente stabili e tolleranti di derelitti indefinitamente — ma non è stato formalizzato internazionalmente.",
+  "new": "Smaltimento cislunare. Ancora nessuna regolamentazione formale, ma sta emergendo una prassi per i veicoli dell'era Artemis: a fine vita Lunar Reconnaissance Orbiter, Chang'e-1 e Chandrayaan-1 sono finiti tutti per impattare la superficie lunare (a volte deliberatamente per scienza — LCROSS ha colpito Cabeo per cercare acqua; a volte per caso, per esaurimento del propellente di mantenimento orbitale). Lo smaltimento previsto per il Lunar Gateway a fine vita è una deorbita controllata sulla superficie lunare, simile allo smaltimento di Mir nella SPOUA ma sulla Luna. Esistono diverse proposte per parcheggiare i veicoli cislunari dismessi nei punti Terra-Luna L4 / L5, estremamente stabili, che tollererebbero relitti a tempo indefinito — ma la cosa non è stata formalizzata in alcun accordo internazionale."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.4",
+  "old": "Lo smaltimento non è più opzionale. Fino a ~2015 era tecnicamente richiesto ma fiaccamente applicato. Vari cambi normativi da allora hanno cambiato il calcolo: la regola FCC 5 anni LEO (2022) richiede deorbita entro 5 anni dalla fine missione per ogni satellite USA-licenziato; la Zero Debris Charter di ESA (2023) impegna i firmatari a non lasciare detriti in orbita; le Long-Term Sustainability Guidelines UN (2019) rendono lo smaltimento precondizione di licenza. I progetti satellitari moderni ora includono il propellente di smaltimento come voce dura di budget di massa, con riserva di margine imposta da revisioni di progetto. L'articolo sui detriti orbitali copre cosa succede quando lo smaltimento fallisce.",
+  "new": "Lo smaltimento non è più facoltativo. Fino al 2015 circa lo smaltimento a fine vita era tecnicamente obbligatorio ma applicato con scarso rigore. Da allora diversi cambiamenti normativi hanno modificato il quadro: la regola dei 5 anni in LEO della FCC (2022) impone a tutti i satelliti con licenza statunitense di rientrare entro 5 anni dalla fine della missione; la Zero Debris Charter dell'ESA (2023) impegna i firmatari a non lasciare detriti in orbita; le Long-Term Sustainability Guidelines dell'ONU (2019) fanno dello smaltimento una condizione per ottenere la licenza. I progetti dei satelliti moderni includono ormai il propellente per lo smaltimento come voce rigida del budget di massa, con la riserva di margine imposta dalle revisioni di progetto della missione. L'articolo sui detriti orbitali spiega cosa succede quando lo smaltimento fallisce."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "diagram_caption",
+  "old": "LEO: deorbita entro 25 anni (IADC) / 5 anni (FCC 2022). Brucia perigeo a ~200 km → rientro atmosferico. Oggetti grandi mirati a SPOUA (Point Nemo). GEO: spingi ≥235 km sopra anello GEO in orbita cimitero. MEO: nessuno smaltimento formale — tempi naturali lunghi, fasatura operativa attenta. Cislunar: pratica emergente, impatto controllato superficie lunare.",
+  "new": "LEO: deorbita entro 25 anni (IADC) / 5 anni (FCC 2022). Abbassamento del perigeo a ~200 km → rientro atmosferico. Oggetti grandi diretti alla SPOUA (Point Nemo). GEO: spinta di ≥235 km sopra l'anello GEO, in orbita cimitero. MEO: nessuno smaltimento formale — lunghi tempi di decadimento naturale, attenta fasatura operativa. Cislunare: prassi emergente, impatto controllato sulla superficie lunare."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "intro_sentence",
+  "old": "Quanto stirata è l'orbita — zero è cerchio perfetto, uno è fuga parabolica.",
+  "new": "Quanto è allungata l'orbita: zero è un cerchio perfetto, uno è una fuga parabolica."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "narrative_101.0",
+  "old": "Se la dimensione è la prima manopola di un'orbita, l'eccentricità è la seconda. Scegli un numero da 0 a quasi 1. A 0 l'orbita è un cerchio perfetto — noiosa, prevedibile, stessa velocità ovunque. Spingila verso 1 e l'ellisse si allunga in un lungo uovo, poi in un sigaro, poi quasi in una linea retta.",
+  "new": "Se la dimensione è la prima manopola di un'orbita, l'eccentricità è la seconda. Scegli un numero da 0 a quasi 1. A 0 l'orbita è un cerchio perfetto — noiosa, prevedibile, stessa velocità ovunque. Spingila verso 1 e l'ellisse si allunga fino a diventare un uovo, poi un sigaro, poi quasi una linea retta."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "narrative_101.2",
+  "old": "I pianeti veri sono molto più tranquilli delle comete — quasi tutto ciò che vedrai in /explore ha eccentricità inferiore a 0,1. Ma appena inizi a progettare la traiettoria di una missione, scegli ellissi di trasferimento con eccentricità di ogni tipo. I trasferimenti di Hohmann verso Marte stanno intorno a 0,21. L'accensione TLI dell'Apollo metteva il veicolo su un'ellisse con e ≈ 0,97 — quasi una fuga.",
+  "new": "I pianeti veri sono molto più tranquilli delle comete — quasi tutto ciò che vedrai in /explore ha un'eccentricità inferiore a 0,1. Ma appena inizi a progettare la traiettoria di una missione, scegli ellissi di trasferimento con eccentricità di ogni tipo. I trasferimenti di Hohmann verso Marte stanno intorno a 0,21. L'accensione TLI dell'Apollo mise il veicolo su un'ellisse con e ≈ 0,97 — quasi una fuga."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "intro_sentence",
+  "old": "Lancia qualsiasi cosa verso l'alto abbastanza veloce e non cadrà mai — la velocità di fuga è la velocità esatta in cui l'energia cinetica di un corpo bilancia esattamente la buca gravitazionale da cui sta fuggendo.",
+  "new": "Lancia qualsiasi cosa verso l'alto abbastanza velocemente e non ricadrà mai: la velocità di fuga è la velocità esatta a cui l'energia cinetica di un corpo bilancia il pozzo gravitazionale da cui sta risalendo."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "narrative_101.0",
+  "old": "La gravità non molla mai la presa — la sua attrazione raggiunge l'infinito, indebolendosi solo con la distanza. Quindi \"sfuggire\" a un pianeta non significa superare la gravità; significa avere esattamente tanta energia che, mentre sali e rallenti, tu rallenti verso velocità zero solo quando raggiungi distanza infinita. Se arrivi anche di poco corto e la gravità alla fine vince, ti ferma e ti tira indietro. La velocità di fuga è il filo del rasoio tra questi due destini.",
+  "new": "La gravità non molla mai la presa — la sua attrazione arriva fino all'infinito, indebolendosi soltanto con la distanza. Quindi «sfuggire» a un pianeta non significa superare la gravità, ma avere esattamente l'energia sufficiente perché, salendo e rallentando, la tua velocità si annulli solo all'infinito. Se ti manca anche solo un soffio, la gravità alla fine vince, ti ferma e ti riporta indietro. La velocità di fuga è il filo del rasoio tra questi due destini."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "narrative_101.1",
+  "old": "Dalla superficie terrestre quella velocità è circa 11,2 chilometri al secondo — approssimativamente 40.000 km/h. Non dipende dalla direzione in cui lanci l'oggetto o da quanto pesa: un sassolino e un'astronave hanno bisogno della stessa velocità. Ed è legata alla velocità orbitale circolare da un fattore elegante — la velocità di fuga è esattamente la radice quadrata di due (circa 1,41) volte la velocità di un'orbita circolare alla stessa altitudine. Raggiungi l'orbita, poi vai circa il 41% più veloce, e sei via.",
+  "new": "Dalla superficie terrestre quella velocità è circa 11,2 chilometri al secondo — all'incirca 40.000 km/h. Non dipende dalla direzione in cui lanci l'oggetto né da quanto pesa: un sassolino e un'astronave hanno bisogno della stessa velocità. Ed è legata alla velocità orbitale circolare da un fattore semplice — la velocità di fuga è esattamente la radice quadrata di due (circa 1,41) volte la velocità di un'orbita circolare alla stessa altitudine. Raggiungi l'orbita, poi vai circa il 41% più veloce, e te ne vai."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "narrative_101.2",
+  "old": "Il numero che conta per lasciare l'intero Sistema Solare è più grande: sfuggire al Sole dalla distanza terrestre richiede circa 42 km/s. La Terra ci trasporta già intorno al Sole a circa 30, quindi una sonda ha bisogno solo della differenza — ma è comunque più di quanto la maggior parte dei razzi chimici riescano ad aggiungere da soli, motivo per cui i veicoli che lasciano il Sistema Solare si sono affidati agli assisti gravitazionali: decisivi per Voyager e Pioneer, e una spinta aggiuntiva per New Horizons, che il lanciatore più grande del suo tempo aveva già scagliato su una traiettoria di fuga.",
+  "new": "Il numero che conta per lasciare l'intero Sistema Solare è più grande: sfuggire al Sole dalla distanza della Terra richiede circa 42 km/s. La Terra ci trasporta già intorno al Sole a circa 30, quindi una sonda ha bisogno solo della differenza — ma è comunque più di quanto la maggior parte dei razzi chimici riesca ad aggiungere da sola, motivo per cui i veicoli che lasciano il Sistema Solare si sono affidati alle fionde gravitazionali: decisive per Voyager e Pioneer, e una spinta in più per New Horizons, che il lanciatore più grande del suo tempo aveva già scagliato su una traiettoria di fuga."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "body_paragraphs.0",
+  "old": "La velocità di fuga segue dalla conservazione dell'energia: poni l'energia totale (cinetica più potenziale gravitazionale) uguale a zero, e v_escape = √(2μ / r), dove μ è il parametro gravitazionale del corpo e r la distanza dal suo centro. Poiché la velocità orbitale circolare è √(μ / r), la velocità di fuga è esattamente √2 volte — lo stesso fattore a ogni altitudine. Una traiettoria lanciata esattamente alla velocità di fuga è una parabola (energia orbitale zero); sopra di essa, un'iperbole che arriva all'infinito con velocità residua, l'\"eccesso iperbolico\" v∞.",
+  "new": "La velocità di fuga segue dalla conservazione dell'energia: poni l'energia totale (cinetica più potenziale gravitazionale) uguale a zero, e v_escape = √(2μ / r), dove μ è il parametro gravitazionale del corpo e r la distanza dal suo centro. Poiché la velocità orbitale circolare è √(μ / r), la velocità di fuga è esattamente √2 volte quella — lo stesso fattore a ogni altitudine. Una traiettoria lanciata esattamente alla velocità di fuga è una parabola (energia orbitale zero); sopra di essa, un'iperbole che arriva all'infinito con una velocità residua, l'«eccesso iperbolico» v∞."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "body_paragraphs.1",
+  "old": "I valori meritano di essere conosciuti: ~11,2 km/s dalla superficie terrestre, ~2,4 km/s dalla Luna, ~5,0 km/s da Marte, ~618 km/s dalla superficie solare, e ~42,1 km/s per sfuggire al Sole dall'orbita terrestre di 1 AU. La velocità di fuga diminuisce con l'altitudine (r più grande), quindi lasciare da un'orbita alta è più economico che da terra — uno dei motivi per cui le missioni accumulano velocità per stadi.",
+  "new": "Vale la pena conoscere questi valori: ~11,2 km/s dalla superficie terrestre, ~2,4 km/s dalla Luna, ~5,0 km/s da Marte, ~618 km/s dalla superficie del Sole e ~42,1 km/s per sfuggire al Sole dall'orbita terrestre di 1 UA. La velocità di fuga diminuisce con l'altitudine (r più grande), quindi partire da un'orbita alta costa meno che partire dal suolo — uno dei motivi per cui le missioni accumulano velocità a stadi."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "body_paragraphs.2",
+  "old": "Raggiungere la fuga solare è il motivo per cui le missioni nello spazio profondo si affidano all'effetto Oberth e agli assisti gravitazionali. Il moto orbitale terrestre di ~30 km/s è una partenza gratuita, ma il rimanente Δv verso 42 km/s, applicato dall'orbita terrestre bassa, supera il budget di uno stadio chimico; un flyby planetario dona il resto senza propellente. La velocità di fuga è l'obiettivo che la lezione \"lasciare il Sistema Solare\" del Physics Lab deve raggiungere.",
+  "new": "Raggiungere la fuga solare è il motivo per cui le missioni nello spazio profondo si affidano all'effetto Oberth e alle fionde gravitazionali. Il moto orbitale terrestre di ~30 km/s è una partenza in vantaggio gratuita, ma il Δv restante fino a 42 km/s, applicato dall'orbita terrestre bassa, supera ciò che può fornire uno stadio chimico; un sorvolo planetario regala il resto senza propellente. La velocità di fuga è l'obiettivo che la lezione «lasciare il Sistema Solare» del Physics Lab deve superare."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "narrative_101.0",
+  "old": "All'orbita della Terra, la gravità del Sole eserciterebbe su di te una forza circa 46.000× più debole che sulla superficie del Sole — ma è comunque forte. Allora perché la Luna orbita attorno alla Terra e non intorno al Sole? Perché proprio vicino alla Terra sei COSÌ vicino che la sua massa, 80 volte più piccola, vince comunque. Il confine dove questo si capovolge — dove sei abbastanza lontano che il Sole torna in comando — è la sfera di Hill.",
+  "new": "All'orbita della Terra, la gravità del Sole eserciterebbe su di te una forza circa 46.000× più debole che sulla superficie del Sole — ma è comunque forte. Allora perché la Luna orbita attorno alla Terra e non intorno al Sole? Perché proprio vicino alla Terra sei COSÌ vicino che la sua massa, 80 volte più piccola, vince comunque. Il confine in cui questo si capovolge — dove sei abbastanza lontano perché torni a comandare il Sole — è la sfera di Hill."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "narrative_101.1",
+  "old": "Dentro la sfera di Hill della Terra (una regione grosso modo sferica di circa 1,5 milioni di km), un oggetto può mantenere un'orbita stabile attorno alla Terra. Al di fuori di essa, la gravità del Sole penetra con troppa forza e strappa via l'oggetto. La Luna, a 384.000 km di distanza, si trova a circa un quarto della strada verso quel confine — comodamente stabile. Il James Webb Space Telescope orbita intorno al punto Sole–Terra L2, anch'esso a circa 1,5 milioni di km di distanza, e necessita di piccole accensioni di mantenimento dell'orbita (~2,5 m/s per anno) perché L2 è un punto di sella dinamicamente instabile — non perché si trovi al margine della sfera di Hill della Terra.",
+  "new": "Dentro la sfera di Hill della Terra (una regione grosso modo sferica di circa 1,5 milioni di km di diametro), un oggetto può mantenere un'orbita stabile attorno alla Terra. Al di fuori di essa, la gravità del Sole penetra con troppa forza e strappa via l'oggetto. La Luna, a 384.000 km di distanza, si trova a circa un quarto della strada verso quel confine — comodamente stabile. Il James Webb Space Telescope orbita intorno al punto Sole–Terra L2, anch'esso a circa 1,5 milioni di km di distanza, e necessita di piccole accensioni di mantenimento dell'orbita (~2,5 m/s all'anno) perché L2 è un punto di sella dinamicamente instabile — non perché si trovi al margine della sfera di Hill della Terra."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "narrative_101.2",
+  "old": "Ogni pianeta ne ha una. Scalano con la massa del pianeta e la sua distanza dal Sole. Mercurio — piccolo e vicino — ha una sfera di Hill di circa 90 raggi di Mercurio di diametro, è per questo che Mercurio non ha lune (qualsiasi oggetto catturato verrebbe strappato via). Giove — enorme e lontano — ha una sfera di Hill di circa 740 raggi di Giove di diametro, abbastanza grande da contenere 95 lune conosciute più vasti sciami di asteroidi troiani.",
+  "new": "Ogni pianeta ne ha una. Le dimensioni dipendono dalla massa del pianeta e dalla sua distanza dal Sole. Mercurio — piccolo e vicino — ha una sfera di Hill di soli 90 raggi di Mercurio di diametro, ed è per questo che Mercurio non ha lune (qualsiasi oggetto catturato verrebbe strappato via). Giove — enorme e lontano — ha una sfera di Hill di circa 740 raggi di Giove di diametro, abbastanza grande da contenere 95 lune note più vasti sciami di asteroidi troiani."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "body_paragraphs.0",
+  "old": "La formula del raggio di Hill approssima il confine come r_H ≈ a × (1−e) × (m / 3M)^(1/3), dove `a` è il semiasse maggiore dell'orbita del pianeta, `e` la sua eccentricità, `m` la sua massa e `M` la massa del Sole. Il fattore (1−e) tiene conto della contrazione al perielio — un'orbita più eccentrica significa che il pianeta si avvicina di più al Sole e la sua influenza gravitazionale si riduce di conseguenza. La radice cubica significa che raddoppiare la massa di un pianeta ingrandisce la sua sfera di Hill di solo ~26%; raddoppiare la sua distanza orbitale l'ingrandisce del 100%.",
+  "new": "La formula del raggio di Hill approssima il confine come r_H ≈ a × (1−e) × (m / 3M)^(1/3), dove `a` è il semiasse maggiore dell'orbita del pianeta, `e` la sua eccentricità, `m` la sua massa e `M` la massa del Sole. Il fattore (1−e) tiene conto della contrazione al perielio — un'orbita più eccentrica significa che il pianeta si avvicina di più al Sole e la sua influenza gravitazionale si riduce di conseguenza. Per via della radice cubica, raddoppiare la massa di un pianeta ingrandisce la sua sfera di Hill di appena ~26%; raddoppiare la sua distanza orbitale la ingrandisce del 100%."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "intro_sentence",
+  "old": "L'inclinazione del piano orbitale rispetto a un piano di riferimento.",
+  "new": "Inclinazione del piano orbitale rispetto a un riferimento, di norma eclittica o equatore."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "narrative_101.1",
+  "old": "Conta perché cambiare inclinazione costa una quantità brutale di carburante. Se lanci un razzo dalla Florida, la Terra lì ruota già verso est a 0,4 km/s — lo ottieni gratis se la tua orbita va verso est. Prova invece a lanciare in orbita polare e non solo perdi il regalo, devi anche combatterlo. Scegliere l'inclinazione al lancio è una delle decisioni più importanti di una missione; quasi mai vorrai cambiarla dopo.",
+  "new": "Conta perché cambiare inclinazione costa moltissimo carburante. Se lanci un razzo dalla Florida, la Terra ruota già verso est a 0,4 km/s — e lo ottieni gratis se la tua orbita va verso est. Prova invece a lanciare in orbita polare: non solo perdi il regalo, ma devi anche andarci contro. Scegliere l'inclinazione al lancio è una delle decisioni più importanti di una missione; quasi mai vorrai cambiarla dopo."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "body_paragraphs.2",
+  "old": "Per i satelliti terrestri la storia dell'inclinazione è diversa e pragmatica. Equatoriale (0°) per i satelliti geostazionari di telecomunicazioni. ~28° per i lanci da Cape Canaveral che devono sfruttare la rotazione della Terra. ~51,6° per la SSI — scelta per permettere ai cosmonauti russi di lanciare da Bajkonur. Polare (~90°) per i satelliti di osservazione terrestre che hanno bisogno di coprire ogni latitudine. Sincrona al Sole (~98°) per le piattaforme scientifiche che vogliono un'illuminazione coerente ad ogni passaggio.",
+  "new": "Per i satelliti terrestri la storia dell'inclinazione è diversa e pragmatica. Equatoriale (0°) per i satelliti geostazionari di telecomunicazioni. ~28° per i lanci da Cape Canaveral che devono sfruttare la rotazione della Terra. ~51,6° per la SSI — scelta per permettere ai cosmonauti russi di lanciare da Bajkonur. Polare (~90°) per i satelliti di osservazione terrestre che hanno bisogno di coprire ogni latitudine. Eliosincrona (~98°) per le piattaforme scientifiche che vogliono un'illuminazione costante a ogni passaggio."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "intro_sentence",
+  "old": "Un'ellisse con il Sole a un fuoco — l'orbita più semplice possibile.",
+  "new": "Ellisse con il Sole in un fuoco: l'orbita più semplice di un corpo attorno a un altro."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "body_paragraphs.0",
+  "old": "Quando cadi verso qualcosa di massiccio ma lo manci, ottieni una Keplerian orbit. Il percorso è un'ellisse — un cerchio allungato — e il corpo verso cui stai cadendo si trova in uno dei due fuochi, mai al centro. La Terra intorno al Sole, la Luna intorno alla Terra, ogni veicolo spaziale che vedrai in Orrery: tutto Keplerian con una prima approssimazione.",
+  "new": "Quando cadi verso qualcosa di massiccio ma lo manchi, ottieni un'orbita kepleriana. Il percorso è un'ellisse — un cerchio allungato — e il corpo verso cui stai cadendo si trova in uno dei due fuochi, mai al centro. La Terra intorno al Sole, la Luna intorno alla Terra, ogni veicolo spaziale che vedrai in Orrery: tutto kepleriano in prima approssimazione."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "body_paragraphs.1",
+  "old": "Sei numeri descrivono completamente una di queste orbite: la dimensione (semi-major axis), l'allungamento (eccentricity), tre angoli che orientano l'ellisse nello spazio (inclination, longitude of ascending node, argument of periapsis), e dove si trova il corpo lungo il percorso proprio ora (true anomaly). Questi sono gli elementi Kepleriani — il linguaggio che ogni altra sezione in questa scheda traduce in qualcosa che puoi visualizzare.",
+  "new": "Sei numeri descrivono completamente una di queste orbite: la dimensione (semiasse maggiore), l'allungamento (eccentricità), tre angoli che orientano l'ellisse nello spazio (inclinazione, longitudine del nodo ascendente, argomento del pericentro) e dove si trova il corpo lungo il percorso proprio ora (anomalia vera). Sono gli elementi kepleriani — il linguaggio che ogni altra sezione di questa scheda traduce in qualcosa che puoi visualizzare."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "body_paragraphs.2",
+  "old": "Il modello si rompe ogni volta che la gravità di un terzo corpo è importante: veicoli spaziali vicino alla Luna, satelliti in orbita terrestre bassa che sentono il rigonfiamento dell'equatore, qualsiasi cosa passi attraverso l'ombra di Giove. Orrery utilizza Keplerian orbits per la storia eliocentrica e approssimazioni coniche applicate per il resto.",
+  "new": "Il modello non regge ogni volta che conta la gravità di un terzo corpo: veicoli spaziali vicino alla Luna, satelliti in orbita terrestre bassa che risentono del rigonfiamento dell'equatore, qualsiasi cosa passi attraverso l'ombra di Giove. Orrery usa orbite kepleriane per la parte eliocentrica e l'approssimazione delle coniche raccordate per il resto."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "intro_sentence",
+  "old": "Tre regole osservazionali che fecero del moto planetario una scienza chiusa un secolo prima di Newton.",
+  "new": "Tre regole osservative che resero il moto planetario una scienza in forma chiusa un secolo prima che Newton ne spiegasse il perché."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "narrative_101.0",
+  "old": "Keplero non aveva il calcolo infinitesimale. Non aveva la gravità di Newton. Non aveva un computer. Aveva vent'anni di osservazioni di Marte del suo capo Tycho Brahe, fatte a occhio nudo con un quadrante con una cura meticolosa, e aveva pazienza. Da lì scrisse tre regole che sono ancora esattamente corrette oggi, quattrocento anni dopo.",
+  "new": "Keplero non aveva il calcolo infinitesimale. Non aveva la gravità di Newton. Non aveva un computer. Aveva vent'anni di meticolose osservazioni di Marte, fatte a occhio con un quadrante dal suo capo Tycho Brahe, e aveva pazienza. Da lì scrisse tre regole che sono ancora esattamente corrette oggi, quattrocento anni dopo."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "narrative_101.2",
+  "old": "Newton arrivò settant'anni dopo e dimostrò che tutte e tre le leggi discendono da un'unica, semplice equazione della gravità. Ma Keplero ci arrivò per primo, senza teoria — solo fissando i numeri finché non confessarono. È il genere di mossa che puoi ancora fare nella scienza moderna, se hai la pazienza.",
+  "new": "Newton arrivò settant'anni dopo e dimostrò che tutte e tre le leggi discendono da un'unica, semplice equazione della gravità. Ma Keplero ci arrivò per primo, senza teoria — solo fissando i numeri finché non confessassero. È il genere di mossa che puoi ancora fare nella scienza moderna, se hai la pazienza."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "body_paragraphs.0",
+  "old": "Prima legge: i pianeti orbitano su ellissi con il Sole in uno dei fuochi. Prima di Keplero, ogni modello utilizzava cerchi — a volte annidati, a volte sfalsati, ma sempre circolari. Keplero utilizzò venti anni di osservazioni di Marte di Tycho Brahe e si arrese: i dati non si adattavano ai cerchi, e nulla di quello che potesse fare li avrebbe fatti adattare. Le ellissi si adattavano al primo tentativo.",
+  "new": "Prima legge: i pianeti orbitano su ellissi con il Sole in uno dei fuochi. Prima di Keplero, ogni modello utilizzava cerchi — a volte annidati, a volte sfalsati, ma sempre circolari. Keplero utilizzò venti anni di osservazioni di Marte di Tycho Brahe e si arrese: i dati non si adattavano ai cerchi, e nulla di ciò che tentò riuscì a farceli adattare. Le ellissi funzionarono al primo colpo."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "body_paragraphs.2",
+  "old": "Terza legge: `T² ∝ a³`. Il quadrato del periodo orbitale è proporzionale al cubo del semiasse maggiore. Con la Terra posta a T = 1 anno e a = 1 UA, puoi leggere il periodo di qualsiasi pianeta dalla sua distanza — o la sua distanza dal suo periodo. Newton successivamente derivò questo dalla gravità; Keplero ci arrivò attraverso il puro riconoscimento di pattern nei dati di Tycho Brahe.",
+  "new": "Terza legge: `T² ∝ a³`. Il quadrato del periodo orbitale è proporzionale al cubo del semiasse maggiore. Con la Terra posta a T = 1 anno e a = 1 UA, puoi ricavare il periodo di qualsiasi pianeta dalla sua distanza — o la sua distanza dal suo periodo. Newton l'avrebbe poi derivata dalla gravità; Keplero ci arrivò riconoscendo puri schemi nei dati di Brahe."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "intro_sentence",
+  "old": "Cinque punti gravitazionalmente bilanciati in ogni sistema a due corpi in cui una piccola sonda può accumularsi con quasi nessun combustibile, e dove la maggior parte dei moderni osservatori dello spazio profondo vivono.",
+  "new": "Cinque punti di equilibrio gravitazionale in ogni sistema a due corpi in cui una piccola sonda può restare ferma con pochissimo carburante — e dove vive in realtà la maggior parte degli osservatori moderni dello spazio profondo."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "narrative_101.0",
+  "old": "Prendere qualsiasi due corpi orbitanti l'un l'altro — Sole e Terra, Terra e Luna, Sole e Giove — e ci sono esattamente cinque punti nel piano orbitale dove un terzo, corpo molto più piccolo può rimanere messo rispetto ai due grandi. Joseph-Louis Lagrange li lavorò nel 1772. Due secoli e mezzo più tardi sono i beni immobili più preziosi nello spazio cislunar.",
+  "new": "Prendi due corpi qualsiasi che orbitano l'uno attorno all'altro — Sole e Terra, Terra e Luna, Sole e Giove — e ci sono esattamente cinque punti nel piano orbitale in cui un terzo corpo, molto più piccolo, può restare fermo rispetto ai due grandi. Joseph-Louis Lagrange li calcolò nel 1772. Due secoli e mezzo dopo, sono i terreni più preziosi dello spazio cislunare."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "narrative_101.1",
+  "old": "JWST siede al Sole-Terra L2. SOHO siede al Sole-Terra L1. Il gateway vivrà vicino a Terra-Luna L2. Queqiao relays Chang'e segnali da oltre la Luna a Terra-Luna L2 troppo. La lista denominata Spacecraft è breve e quasi interamente Lagrange-stationed.",
+  "new": "JWST sta nel punto L2 Sole-Terra. SOHO nel punto L1 Sole-Terra. Gateway si troverà vicino al punto L2 Terra-Luna. Anche Queqiao ritrasmette i segnali di Chang'e da oltre la Luna, nel punto L2 Terra-Luna. L'elenco dei veicoli con un nome proprio è breve e quasi tutto stazionato nei punti di Lagrange."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "body_paragraphs.0",
+  "old": "I cinque punti siedono in specifiche geometrie. **L1** si trova tra i due corpi sulla linea che li collegano — per Sole-Terra, che è ~1,5 milioni di km verso il sole della Terra, dove l'attrazione del Sole e l'equilibrio di tiro della Terra il requisito centripetale. **L2** è sulla stessa linea ma sul lato FAR del corpo più piccolo — per Sole-Terra, ~1,5 milioni di km anti-sunward della Terra. **L3** è sul lato opposto del corpo più grande, nascosto dietro il Sole dalla prospettiva terrestre. **L4** e **L5** sono ai vertici dei triangoli equilateri formati con i due corpi - 60° avanti e 60° dietro l'orbita del corpo più piccolo.",
+  "new": "I cinque punti hanno geometrie ben precise. **L1** si trova tra i due corpi, sulla retta che li congiunge — per Sole-Terra, a ~1,5 milioni di km dalla Terra verso il Sole, dove l'attrazione del Sole e quella della Terra si bilanciano con la forza centripeta richiesta. **L2** è sulla stessa retta ma dalla parte OPPOSTA rispetto al corpo più piccolo — per Sole-Terra, a ~1,5 milioni di km dalla Terra in direzione opposta al Sole. **L3** è dal lato opposto del corpo più grande, nascosto dietro il Sole dal punto di vista della Terra. **L4** e **L5** sono ai vertici dei triangoli equilateri formati con i due corpi — 60° davanti e 60° dietro rispetto all'orbita del corpo più piccolo."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "body_paragraphs.1",
+  "old": "La stabilità differisce nettamente. L1, L2 e L3 sono **punti di sella** — in equilibrio gravitazionale lungo l'asse interno-esterno ma instabili su assi perpendicolari. Un'astronave parcheggiata lì si allontanerà entro mesi a meno che non effettui piccoli assestamenti di stazione. L4 e L5 sono **stabili** — sono pozzi di energia potenziale. La polvere si accumula ai punti L4/L5 del sistema Terra-Sole (le nubi di Kordylewski, sfocate ma reali); gli asteroidi Troiani librano intorno ai punti L4 e L5 del sistema Sole-Giove in milioni.",
+  "new": "La stabilità differisce nettamente. L1, L2 e L3 sono **punti di sella** — in equilibrio gravitazionale lungo l'asse interno-esterno ma instabili sugli assi perpendicolari. Un veicolo spaziale parcheggiato lì si allontana nel giro di mesi se non esegue piccole correzioni di mantenimento della posizione. L4 e L5 sono **stabili** — sono pozzi di energia potenziale. La polvere si accumula nei punti L4/L5 del sistema Terra-Sole (le nubi di Kordylewski, tenui ma reali); milioni di asteroidi troiani librano attorno ai punti L4 e L5 del sistema Sole-Giove."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "body_paragraphs.2",
+  "old": "**Sole-Terra Lagrange punti** sono dove vivono grandi osservatori: SEL1 ospita SOHO (Sun-watching dal 1996) e DSCOVR (Earth-watching); SEL2 ospita JWST, Spektr-RG, Euclid, Gaia, e in precedenza Herschel + Planck — anti-sunward in modo che il Sole + Terra + Luna sono tutti da un lato, facile a SEL2 è ~6 mesi di coast libero lontano dalla Terra, con un ~5 m / s alo-orbit-inserzione bruciato all'arrivo; nessun carburante per il mantenimento della stazione più di ~2 m/s/yr.",
+  "new": "**I punti di Lagrange Sole-Terra** sono la sede dei grandi osservatori: SEL1 ospita SOHO (che osserva il Sole dal 1996) e DSCOVR (che osserva la Terra); SEL2 ospita JWST, Spektr-RG, Euclid, Gaia e, in passato, Herschel e Planck — in direzione opposta al Sole, così che Sole, Terra e Luna stiano tutti da un lato e la schermatura dalla loro luce sia facile. SEL2 dista circa 6 mesi di volo libero dalla Terra, con un'unica accensione di inserzione in orbita alone di ~5 m/s all'arrivo; il mantenimento della posizione richiede non più di ~2 m/s all'anno di propellente."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "body_paragraphs.3",
+  "old": "**I punti di Lagrange Terra-Luna** sono la risorsa strategica per il programma Artemis. EML2 (~64.500 km oltre la Luna) è il punto di transito per la stazione Gateway in NRHO (un'orbita alone quasi-rettilinea attorno a essa). Offre visibilità diretta sia al lato nascosto della Luna (dove Chang'e-4 ha allunato; Queqiao fa da relè da EML2) sia verso la Terra. EML1, fra Terra e Luna, rappresenta un nodo naturale per qualsiasi architettura cislunar che intenda scendere e salire ripetutamente senza consumare ∆v nei trasferimenti. Il prossimo decennio di operazioni umane sulla Luna è in larga misura una storia di punti di Lagrange.",
+  "new": "**I punti di Lagrange Terra-Luna** sono la risorsa strategica per il programma Artemis. EML2 (~64.500 km oltre la Luna) è il punto di sosta per la stazione Gateway in NRHO (un'orbita alone quasi rettilinea attorno a esso). Offre visibilità diretta sia al lato nascosto della Luna (dove Chang'e-4 ha allunato; Queqiao fa da relè da EML2) sia verso la Terra. EML1, fra Terra e Luna, rappresenta un nodo naturale per qualsiasi architettura cislunare che intenda scendere e salire ripetutamente senza consumare ∆v nei trasferimenti. Il prossimo decennio di operazioni umane sulla Luna è in larga misura una storia di punti di Lagrange."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "diagram_caption",
+  "old": "Cinque punti bilanciati a gravità per sistema a due corpi. L1/L2/L3 punti di sella (manutenzione richiesta); L4/L5 pozzi stabili. Sole-Terra L2 ospita JWST + Euclid + Spektr-RG; Terra-Luna L2 ospita Gateway + Queqiao.",
+  "new": "Cinque punti di equilibrio gravitazionale per ogni sistema a due corpi. L1/L2/L3 punti di sella (richiedono il mantenimento della posizione); L4/L5 pozzi stabili. Sole-Terra L2 ospita JWST + Euclid + Spektr-RG; Terra-Luna L2 ospita Gateway + Queqiao."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "title",
+  "old": "Regimi Orbitali — LEO, MEO, GEO, HEO",
+  "new": "Regimi orbitali — LEO, MEO, GEO, HEO"
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.0",
+  "old": "Prendi un satellite. La cosa più importante non è ciò che fa — è l'altitudine a cui orbita. L'altitudine determina ogni quanto può osservare la stessa zona di terreno, quanto tempo impiega un segnale radio a raggiungerlo, quanta energia ha bisogno per mantenere l'orbita, e quale è la sua durata utile. Gli ingegneri aerospaziali raggruppano le orbite in quattro bande — LEO, MEO, GEO, HEO — perché gli equilibri cambiano discretamente man mano che sali.",
+  "new": "Prendi un satellite. La cosa più importante non è ciò che fa — è l'altitudine a cui orbita. L'altitudine determina ogni quanto può osservare la stessa zona di terreno, quanto tempo impiega un segnale radio a raggiungerlo, quanto carburante serve per mantenere l'orbita e quale sia la sua durata utile. Gli ingegneri aerospaziali raggruppano le orbite in quattro bande — LEO, MEO, GEO, HEO — perché i compromessi cambiano a salti man mano che sali."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.1",
+  "old": "LEO arriva fino a ~2.000 km. La SSI orbita a 408 km. Hubble a 540 km. Starlink di SpaceX a ~550 km. Economico da raggiungere (la maggior parte dei razzi può portarvi un carico), ma completi il giro del pianeta ogni 90 minuti, l'atmosfera ti trascina verso il basso (durata: anni senza rifornimento), e vedi qualunque punto del terreno per solo ~10 minuti per passaggio.",
+  "new": "LEO arriva fino a ~2.000 km. La SSI orbita a 408 km. Hubble a 540 km. Starlink di SpaceX a ~550 km. Economica da raggiungere (la maggior parte dei razzi può portarvi un carico), ma completi il giro del pianeta ogni 90 minuti, l'atmosfera ti trascina verso il basso (durata: anni senza spinte di riporto in quota) e vedi qualunque punto del terreno per solo ~10 minuti a ogni passaggio."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.2",
+  "old": "MEO è 2.000–35.786 km — la banda di GPS / Galileo / Beidou, più alcune comunicazioni. I periodi sono 2-12 ore; copri il globo con meno satelliti rispetto a LEO, e sei al di sopra delle zone peggiori delle fasce di radiazione (scelto con cura). GEO è esattamente a 35.786 km — periodo esattamente 24 ore — così un satellite lì rimane sospeso sopra lo stesso punto sulla Terra per sempre, per questo ogni satellite meteorologico e di broadcast è lassù.",
+  "new": "MEO va da 2.000 a 35.786 km — la banda di GPS / Galileo / BeiDou, più alcune comunicazioni. I periodi sono di 2-12 ore; copri il globo con meno satelliti rispetto alla LEO e stai sopra le zone peggiori delle fasce di radiazione (altitudini scelte con cura). La GEO si trova esattamente a 35.786 km — periodo esattamente di 24 ore — così un satellite lì rimane sospeso per sempre sopra lo stesso punto della Terra, per questo ogni satellite meteorologico e di trasmissione televisiva è lassù."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.0",
+  "old": "LEO (Orbita Terrestre Bassa, < 2.000 km di altitudine): più economica da raggiungere, periodo più veloce (~90 minuti per la SSI a 408 km), ritardo del collegamento col terreno più breve (alcuni ms), durata più breve a causa del trascinamento atmosferico residuo. Ospita la SSI, Hubble, Starlink, la maggior parte dei satelliti di osservazione della Terra, tutte le attività umane al di là dell'Apollo.",
+  "new": "LEO (orbita terrestre bassa, < 2.000 km di altitudine): la più economica da raggiungere, periodo più breve (~90 minuti per la SSI a 408 km), ritardo del collegamento con terra più breve (alcuni ms), durata più breve a causa della resistenza atmosferica residua. Ospita la SSI, Hubble, Starlink, la maggior parte dei satelliti di osservazione della Terra, tutte le attività con equipaggio tranne le missioni Apollo."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.1",
+  "old": "MEO (Orbita Terrestre Media, 2.000–35.786 km): la banda della navigazione. GPS a 20.200 km, GLONASS a 19.100 km, Galileo a 23.222 km, Beidou MEO a 21.500 km. Periodi ~11–14 ore nella banda di navigazione; costellazioni di 24-30 satelliti forniscono copertura globale. Al di sopra della fascia di Van Allen interna, al di sotto della maggior parte di quella esterna.",
+  "new": "MEO (orbita terrestre media, 2.000–35.786 km): la banda della navigazione. GPS a 20.200 km, GLONASS a 19.100 km, Galileo a 23.222 km, BeiDou MEO a 21.500 km. Periodi di ~11–14 ore nella banda di navigazione; costellazioni di 24-30 satelliti forniscono copertura globale. Al di sopra della fascia di Van Allen interna, al di sotto della maggior parte di quella esterna."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.2",
+  "old": "GEO (Orbita Terrestre Geostazionaria, 35.786 km di altitudine esatti, inclinazione 0°): il periodo è uguale al giorno sidereo terrestre (23h 56m 4s) quindi il satellite appare fermo sopra una longitudine sull'equatore. Ospita la TV broadcast mondiale, le immagini meteo (GOES, Himawari, Meteosat) e i tradizionali comsats. Tempo luce round-trip ~240 ms — percettibile nelle chiamate vocali.",
+  "new": "GEO (orbita terrestre geostazionaria, esattamente a 35.786 km di altitudine, inclinazione 0°): il periodo è uguale al giorno sidereo terrestre (23h 56m 4s), quindi il satellite appare fermo sopra una longitudine sull'equatore. Ospita la televisione via satellite di tutto il mondo, le immagini meteorologiche (GOES, Himawari, Meteosat) e i tradizionali satelliti per telecomunicazioni. Tempo di andata e ritorno della luce ~240 ms — percettibile nelle chiamate vocali."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.3",
+  "old": "HEO (Orbita Altamente Ellittica): perigeo basso + apogeo alto. Le orbite Molniya (Russia) hanno perigeo ~600 km, apogeo ~40.000 km, inclinazione 63,4° — scelta in modo che la permanenza all'apogeo avvenga sull'emisfero settentrionale dove i comsats GEO non riescono a raggiungere. Critica per le comunicazioni ad alte latitudini e alcune costellazioni di preallarme.",
+  "new": "HEO (orbita altamente ellittica): perigeo basso + apogeo alto. Le orbite Molniya (Russia) hanno perigeo ~600 km, apogeo ~40.000 km, inclinazione 63,4° — scelta in modo che la permanenza all'apogeo avvenga sull'emisfero settentrionale, dove i satelliti GEO non arrivano. Fondamentale per le comunicazioni ad alte latitudini e per alcune costellazioni di preallarme."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.4",
+  "old": "Cambiare regime è costoso. ∆v da LEO a GEO è circa 3,9 km/s. Da LEO a escape / TLI è circa 3,2 km/s — controintuitivamente più economico di raggiungere GEO da LEO, perché non devi circolarizzare all'arrivo (TMI per Marte richiede ~3,6+ km/s).",
+  "new": "Cambiare regime è costoso. Il ∆v da LEO a GEO è circa 3,9 km/s. Da LEO alla fuga / TLI è circa 3,2 km/s — controintuitivamente più economico che raggiungere la GEO dalla LEO, perché non devi circolarizzare all'arrivo (la TMI per Marte richiede ~3,6+ km/s)."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "narrative_101.0",
+  "old": "Prendi un pezzo di spago, due puntine e una matita. Fissa le puntine su una tavola, avvolgi lo spago intorno a loro ad anello, tendilo con la matita e traccia il giro. Hai disegnato un'ellisse. Il semiasse maggiore è metà della linea più lunga che puoi tracciare attraverso quella forma — la dimensione dell'orbita.",
+  "new": "Prendi un pezzo di spago, due puntine e una matita. Fissa le puntine su una tavola, fai passare lo spago attorno a entrambe formando un anello, tendilo con la matita e traccia la curva. Hai disegnato un'ellisse. Il semiasse maggiore è metà della linea più lunga che puoi tracciare attraverso quella forma — la dimensione dell'orbita."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "body_paragraphs.0",
+  "old": "Se appiattisci un'ellisse kepleriana nella sua dimensione più lunga, la linea che hai tracciato è l'asse maggiore. Dividila a metà e otterrai l'asse semi-maggiore — scritto `a`. È la distanza media dal corpo orbitante al fuoco, in un certo senso: la media aritmetica tra il perielio (il punto più vicino) e l'afelio (il punto più lontano).",
+  "new": "Se misuri un'ellisse kepleriana lungo la sua dimensione maggiore, il segmento che hai tracciato è l'asse maggiore. Dividilo a metà e otterrai il semiasse maggiore — scritto `a`. È la distanza media dal corpo orbitante al fuoco, in un certo senso: la media aritmetica tra il perielio (il punto più vicino) e l'afelio (il punto più lontano)."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "body_paragraphs.1",
+  "old": "Perché importa? A causa della terza legge di Keplero: `T² ∝ a³`. Il periodo orbitale dipende solo dal semiasse maggiore. La forma non importa. L'inclinazione non importa. Deforma un'orbita così da farla diventare un sigaro e un'altra così da farla diventare un cerchio — se entrambe hanno lo stesso `a`, entrambe impiegano esattamente lo stesso tempo per tornare al punto di partenza.",
+  "new": "Perché importa? Per la terza legge di Keplero: `T² ∝ a³`. Il periodo orbitale dipende solo dal semiasse maggiore. La forma non importa. L'inclinazione non importa. Stira un'orbita fino a farne un sigaro e un'altra fino a farne un cerchio: se hanno lo stesso `a`, entrambe impiegano esattamente lo stesso tempo per tornare al punto di partenza."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "body_paragraphs.2",
+  "old": "Negli `/explore` panel di Orrery vedrai questo numero in unità astronomiche. Terra: a ≈ 1,0 AU. Marte: 1,52 AU. Giove: 5,2 AU. Inserisci nella formula del periodo e avrai riprodotto l'orologio dell'orrery: 1 anno, 687 giorni, 11,86 anni.",
+  "new": "Nei pannelli di `/explore` di Orrery vedrai questo numero in unità astronomiche. Terra: a ≈ 1,0 UA. Marte: 1,52 UA. Giove: 5,2 UA. Inseriscilo nella formula del periodo e avrai riprodotto l'orologio dell'orrery: 1 anno, 687 giorni, 11,86 anni."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "formula_caption",
+  "old": "Semiasse maggiore come media dei raggi perielio e afelio.",
+  "new": "Semiasse maggiore come media dei raggi del perielio e dell'afelio."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "diagram_caption",
+  "old": "Asse maggiore da perielio a afelio. Semiasse a è la metà.",
+  "new": "Asse maggiore da perielio ad afelio. Semiasse a è la metà."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "intro_sentence",
+  "old": "L'orbita terrestre contiene ~36.000 oggetti di detriti tracciati più grandi di 10 cm e un milione+ di pezzi più piccoli. Due eventi ASAT e una collisione accidentale ne hanno creato la maggior parte. La pulizia inizia solo ora.",
+  "new": "L'orbita terrestre ospita ~36.000 detriti tracciati oltre i 10 cm e oltre 100 milioni di frammenti più piccoli stimati. Due eventi ASAT e una collisione accidentale ne hanno prodotto la maggior parte. La pulizia sta appena partendo."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.0",
+  "old": "I numeri sono netti. L'Ufficio Detriti Spaziali dell'ESA, l'Ufficio Detriti Orbitali della NASA e lo 18° Space Defense Squadron dell'US Space Force mantengono stime convergenti della popolazione orbitale (a partire dal 2024-2025): ~36.000 oggetti catalogati con diametro ≥10 cm, di cui ~9.000 sono veicoli spaziali attivi e il resto sono detriti. ~1 milione di pezzi stimati tra 1 cm e 10 cm, per lo più non tracciati. >100 milioni di pezzi tra 1 mm e 1 cm, completamente non tracciati ma individualmente capaci di disabilitare un veicolo spaziale all'impatto (un frammento di alluminio di 1 cm a velocità di chiusura di 14 km/s fornisce l'energia cinetica di una granata a mano). Massa totale in orbita terrestre: circa 11.000 tonnellate. Di questa, forse 8.000 tonnellate rappresentano la frazione di detriti — relitti, stadi superiori esauriti, frammenti da frammentazioni, scaglie di vernice, scorie di motori a razzo.",
+  "new": "I numeri sono netti. L'Ufficio Detriti Spaziali dell'ESA, l'Ufficio Detriti Orbitali della NASA e il 18th Space Defense Squadron della US Space Force mantengono stime convergenti sulla popolazione orbitale (al 2024-2025): ~36.000 oggetti catalogati con diametro ≥10 cm, di cui ~9.000 sono veicoli spaziali attivi e il resto detriti. ~1 milione di frammenti stimati tra 1 cm e 10 cm, per lo più non tracciati. >100 milioni di frammenti tra 1 mm e 1 cm, del tutto non tracciati ma capaci singolarmente di mettere fuori uso un veicolo spaziale all'impatto (un frammento di alluminio di 1 cm a una velocità relativa di 14 km/s libera l'energia cinetica di una granata a mano). Massa totale in orbita terrestre: circa 11.000 tonnellate. Di queste, forse 8.000 tonnellate sono la frazione di detriti — relitti, stadi superiori esauriti, frammenti da disintegrazioni, scaglie di vernice, scorie di motori a razzo."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.1",
+  "old": "Tre eventi rappresentano la maggior parte della popolazione di detriti tracciabili. **Fengyun-1C** (Cina, gennaio 2007): la Cina ha condotto un test di arma anti-satellite contro il suo proprio satellite meteorologico dismesso a 865 km di altitudine in un'orbita polare deliberatamente scelta per massimizzare la longevità dei detriti. L'impatto cinetico ha frammentato il bersaglio di ~880 kg in 3.500+ pezzi tracciabili, che rimarranno in orbita per secoli. **Collisione Iridium 33 + Cosmos 2251** (febbraio 2009): la prima collisione accidentale tra satelliti conosciuta nella storia. Il satellite commerciale operativo di Iridium ha colliso con il defunto Cosmos della Russia a 789 km di altitudine, generando ~2.300 frammenti tracciabili. **Test ASAT russo** (novembre 2021): la Russia ha colpito ceneticamente il suo proprio satellite Tselina-D dismesso, producendo 1.500+ frammenti tracciabili a ~480 km — abbastanza vicino all'SSI che l'equipaggio si è rifugiato nelle loro capsule di ritorno Soyuz durante le prime 24 ore di incontro con la nuvola di detriti. Combinati, questi tre eventi hanno generato circa il 25% di tutti i detriti LEO attualmente catalogati.",
+  "new": "Tre eventi sono all'origine della maggior parte della popolazione di detriti tracciabili. **Fengyun-1C** (Cina, gennaio 2007): la Cina ha condotto un test di arma anti-satellite contro un suo stesso satellite meteorologico dismesso, a 865 km di altitudine, in un'orbita deliberatamente polare scelta per massimizzare la longevità dei detriti. L'impatto cinetico ha frammentato il bersaglio di ~880 kg in oltre 3.500 pezzi tracciabili, che in gran parte resteranno in orbita per secoli. **Collisione Iridium 33 + Cosmos 2251** (febbraio 2009): la prima collisione accidentale tra satelliti nota nella storia. Un satellite per telecomunicazioni operativo di Iridium si è scontrato con un Cosmos russo ormai inattivo a 789 km di altitudine, generando ~2.300 frammenti tracciabili. **Test ASAT russo** (novembre 2021): la Russia ha distrutto con un impatto cinetico un suo stesso satellite Tselina-D dismesso, producendo oltre 1.500 frammenti tracciabili a ~480 km — abbastanza vicino alla SSI che l'equipaggio si è rifugiato nelle capsule di rientro Soyuz durante le prime 24 ore dell'incontro con la nube di detriti. Insieme, questi tre eventi hanno generato circa il 25% di tutti i detriti LEO attualmente catalogati."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.2",
+  "old": "La sindrome di Kessler è lo scenario a cascata incontrollata, intitolato a Donald Kessler della NASA che l'ha modellato nel 1978. Una volta che la densità dei detriti LEO supera una soglia critica, ogni collisione genera abbastanza nuovi frammenti per causare ulteriori collisioni, e la cascata può svolgersi nel corso di secoli. Al di sopra di quella soglia, l'ambiente LEO diventa effettivamente inaccessibile — anche i lanci attenti non possono evitare di essere colpiti durante il passaggio. Il modello Kessler del 1978 ha posto la soglia critica a circa 5× la popolazione del 1978; l'attuale LEO sta avvicinandosi a quella soglia in alcuni gusci di altitudine (soprattutto 750-1000 km, che ha la più alta densità della sezione trasversale di collisione). L'assunto operativo attuale dell'IADC è che senza uno smaltimento aggressivo continuato, alcune bande di altitudine LEO raggiungeranno densità critiche per Kessler entro 2050-2080.",
+  "new": "La sindrome di Kessler è lo scenario di una cascata incontrollata, che prende il nome da Donald Kessler della NASA, che la modellò nel 1978. Una volta che la densità dei detriti in LEO supera una soglia critica, ogni collisione genera abbastanza nuovi frammenti da causare ulteriori collisioni, e la cascata può richiedere secoli per esaurirsi. Oltre quella soglia, l'ambiente LEO diventa di fatto inaccessibile — nemmeno lanci accurati possono evitare di essere colpiti durante l'attraversamento. Il modello di Kessler del 1978 poneva la soglia critica a circa 5× la popolazione del 1978; la LEO attuale si sta avvicinando a quella soglia in alcune fasce di quota (soprattutto 750-1000 km, dove la densità di sezione d'urto per collisione è massima). L'ipotesi operativa attuale dell'IADC è che, senza uno smaltimento aggressivo e continuato, alcune fasce di quota in LEO raggiungeranno densità critiche per Kessler entro il 2050-2080."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.3",
+  "old": "Infrastruttura di tracciamento. La Space Surveillance Network (SSN) dell'US Space Force è la fonte primaria del catalogo mondiale — una flotta di ~30 radar e telescopi terrestri in tutto il mondo (Eglin FPS-85 phased-array in Florida, Globus II in Norvegia, Maui Space Surveillance Site alle Hawaii) più il satellite Space Based Space Surveillance. L'SSN traccia ogni oggetto ≥10 cm in LEO e ≥1 m in GEO, con aggiornamenti orbitali giornalieri disponibili pubblicamente tramite Space-Track.org. I concorrenti privati (LeoLabs, con la sua propria rete di radar a phased-array in sei siti a livello mondiale, dal 2018) e i partner (consorzio EU Space Surveillance and Tracking, dal 2014; rete SSA della Cina a Xinjiang dagli anni 2010) hanno aggiunto tracciamento ridondante — pre-2010 il mondo aveva effettivamente un singolo punto di guasto in SSN.",
+  "new": "Infrastruttura di tracciamento. La Space Surveillance Network (SSN) della US Space Force è la fonte primaria del catalogo mondiale — una flotta di ~30 radar e telescopi a terra in tutto il mondo (il radar a schiera di fase Eglin FPS-85 in Florida, Globus II in Norvegia, il Maui Space Surveillance Site alle Hawaii) più il satellite Space Based Space Surveillance. L'SSN traccia ogni oggetto ≥10 cm in LEO e ≥1 m in GEO, con aggiornamenti orbitali giornalieri disponibili pubblicamente tramite Space-Track.org. Concorrenti privati (LeoLabs, con una propria rete di radar a schiera di fase in sei siti nel mondo, dal 2018) e partner (il consorzio EU Space Surveillance and Tracking, dal 2014; la rete SSA cinese nello Xinjiang dagli anni 2010) hanno aggiunto un tracciamento ridondante — prima del 2010 il mondo aveva di fatto un unico punto di guasto nell'SSN."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.4",
+  "old": "Pulizia e mitigazione nelle operazioni quotidiane. La rimozione attiva di detriti (ADR) — missioni che visitano veicoli spaziali morti e li deorbita — sta iniziando a aumentare. **ELSA-d** (Astroscale, 2021) ha dimostrato l'attracco con grapple magnetico. **ClearSpace-1** (ESA, programmato 2026) deorbiterà un adattatore Vega Secondary Payload di ~100 kg da 660 km. **ELSA-M** (Astroscale-Japan, 2025-26) e la serie Salvage classificata dell'Ufficio di Ricognizione Nazionale degli Stati Uniti seguono. L'analisi dell'ESA suggerisce che rimuovere 5 oggetti LEO principali all'anno è il minimo per arrestare la crescita; la cadenza attuale è ~0/anno — l'orologio di Kessler sta ticchettando. Nel frattempo, ogni operatore esegue Conjunction Assessment Risk Avoidance (CARA): l'SSN pubblica avvisi giornalieri di congiunzione 7 giorni prima dei passaggi ravvicinati entro ~1 km. SSI esegue ~25 burn di elusione/anno; il sistema autonomo di Starlink esegue ~50.000 ogni sei mesi (~100.000/anno) attraverso la costellazione; Tiangong ne esegue diversi all'anno. Hubble (senza propulsione) è stato colpito da piccoli detriti decine di volte ed è stato quasi colpito da un frammento di Cosmos-1408 nel novembre 2021. L'onere operativo di elusione dei detriti sta aumentando rapidamente.",
+  "new": "Pulizia e mitigazione nelle operazioni quotidiane. La rimozione attiva dei detriti (ADR) — missioni che raggiungono veicoli spaziali defunti e li fanno rientrare — sta iniziando a decollare. **ELSA-d** (Astroscale, 2021) ha dimostrato l'aggancio magnetico. **ClearSpace-1** (ESA, previsto per il 2026) farà rientrare un Vega Secondary Payload Adapter di ~100 kg da 660 km. Seguono **ELSA-M** (Astroscale Japan, 2025-26) e la Salvage Series classificata del National Reconnaissance Office statunitense. L'analisi dell'ESA indica che rimuovere 5 grandi oggetti LEO all'anno è il minimo per fermare la crescita; la cadenza attuale è ~0 all'anno — l'orologio di Kessler corre. Nel frattempo ogni operatore esegue la Conjunction Assessment Risk Avoidance (CARA): l'SSN pubblica ogni giorno avvisi di congiunzione 7 giorni prima di avvicinamenti entro ~1 km. La SSI compie ~25 manovre di evitamento all'anno; il sistema autonomo di Starlink ne compie ~50.000 ogni sei mesi (~100.000 all'anno) sull'intera costellazione; Tiangong ne compie diverse all'anno. Hubble (privo di propulsione) è stato colpito da piccoli detriti decine di volte ed è stato sfiorato da un frammento di Cosmos-1408 nel novembre 2021. L'onere operativo dell'evitamento dei detriti cresce rapidamente."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "diagram_caption",
+  "old": "Popolazione: 36k tracciati ≥10 cm + 1M stim 1-10 cm + 100M+ stim <1 cm. Origine: Fengyun-1C (2007 ASAT Cina, +3500), Iridium-Cosmos (2009 accidentale, ~2300), Tselina-D Russia (2021 ASAT, +1500). Soglia Kessler si avvicina nella banda LEO 750-1000 km entro 2050-2080. ADR: ClearSpace-1 (2026), ELSA-M (2025-26), e pochi altri — ben al di sotto dei 5/anno necessari per arrestare la crescita.",
+  "new": "Popolazione: 36k tracciati ≥10 cm + 1M stimati tra 1 e 10 cm + 100M+ stimati <1 cm. Origine: Fengyun-1C (2007, ASAT cinese, +3500), Iridium-Cosmos (2009, accidentale, ~2300), Tselina-D russo (2021, ASAT, +1500). Soglia di Kessler in avvicinamento nella fascia LEO 750-1000 km entro il 2050-2080. ADR: ClearSpace-1 (2026), ELSA-M (2025-26) e pochi altri — ben al di sotto dei 5 all'anno necessari per fermare la crescita."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "intro_sentence",
+  "old": "Oltre LEO / MEO / GEO / HEO, poche orbite speciali nominate svolgono compiti specifici: comunicazioni oltre 70° latitudine, trasferimento geostazionario, stazione fissa senza deriva.",
+  "new": "Oltre LEO / MEO / GEO / HEO, poche orbite speciali con un nome svolgono compiti precisi: comunicazioni oltre i 70° di latitudine, trasferimento geostazionario, mantenimento della posizione senza deriva."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.0",
+  "old": "Orbita Molniya (Russia, dal 1965). Alta eccentricità (e ≈ 0,74), perigeo basso (~600 km), apogeo alto (~40.000 km), inclinazione 63,4°, periodo esattamente 12 ore. Due scelte progettuali la rendono funzionante. Innanzitutto, l'inclinazione di 63,4° è l'«inclinazione critica» alla quale la perturbazione J2 della Terra NON causa la rotazione della linea degli apsidi (a qualunque altra inclinazione il perigeo deriverebbe intorno all'orbita in mesi); l'apogeo rimane bloccato sull'emisfero settentrionale dove lo desideriamo. In secondo luogo, con un periodo di 12 ore il satellite trascorre circa 8 ore vicino all'apogeo, tracciando lentamente il cielo settentrionale, poi attraversa il perigeo in 4 ore. Una costellazione di tre satelliti Molniya a angoli di fase sfalsati fornisce copertura continua delle latitudini nord di 70°, dove i comsatGEO non riescono a raggiungere perché si trovano sull'equatore. Utilizzata dalla Russia per telefonia civile + TV (serie Molniya I/II/III), comunicazioni militari (Meridian) e satelliti di allarme precoce Oko che vigilano su lanci ICBM statunitensi.",
+  "new": "Orbita Molniya (Russia, dal 1965). Alta eccentricità (e ≈ 0,74), perigeo basso (~600 km), apogeo alto (~40.000 km), inclinazione 63,4°, periodo esattamente di 12 ore. Due scelte progettuali la fanno funzionare. Primo: l'inclinazione di 63,4° è l'«inclinazione critica» alla quale la perturbazione J2 della Terra NON fa ruotare la linea degli apsidi (a qualunque altra inclinazione il perigeo, nell'arco di mesi, migrerebbe lungo l'orbita); l'apogeo resta bloccato sull'emisfero settentrionale, dove serve. Secondo: con un periodo di 12 ore il satellite trascorre circa 8 ore vicino all'apogeo, attraversando lentamente il cielo boreale, e poi sfreccia al perigeo in 4 ore. Una costellazione di tre satelliti Molniya con fasi sfalsate garantisce una copertura continua delle latitudini a nord di 70°, dove i satelliti GEO per telecomunicazioni non arrivano perché stanno sull'equatore. È usata dalla Russia per telefonia e TV civili (serie Molniya I/II/III), comunicazioni militari (Meridian) e satelliti di allerta precoce Oko, che sorvegliano i lanci di ICBM statunitensi."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.1",
+  "old": "Orbita Tundra. Stessa idea di inclinazione critica + periodo di 24 ore della Molniya ma quasi circolare piuttosto che altamente eccentrica (e ≈ 0,25). Apogeo all'altitudine GEO (~35.786 km), perigeo a ~25.000 km. Periodo esattamente 24 ore quindi la traccia al suolo si ripete una volta al giorno in forma di figura-otto allungata sulla banda di latitudine scelta. Utilizzata da Sirius XM Satellite Radio per la copertura nord-americana (la figura-otto consente alle antenne negli USA continentali di vedere un satellite continuamente ad elevazione alta), dai comsatRussi Yamal-200 e altri, e dai sensori SBIRS-HEO statunitensi di allarme precoce che necessitano principalmente di permanenza lunga sull'Artico. Tundra scambia l'elevazione di picco più alta di Molniya con una ripetizione completa di 24 ore (Molniya ha due apogei al giorno, entrambi sull'emisfero settentrionale — uno sulla Russia, uno sul Nord America, 180° separati in longitudine).",
+  "new": "Orbita Tundra. Stessa idea dell'inclinazione critica e del periodo di 24 ore della Molniya, ma più vicina alla circolare che a una forte eccentricità (e ≈ 0,25). Apogeo all'altitudine GEO (~35.786 km), perigeo a ~25.000 km. Periodo esattamente di 24 ore, per cui la traccia al suolo si ripete una volta al giorno in una lunga figura a otto allungata sulla fascia di latitudine scelta. Usata da Sirius XM Satellite Radio per la copertura nordamericana (la figura a otto permette alle antenne degli Stati Uniti continentali di vedere un satellite in modo continuo ad alta elevazione), dai satelliti per telecomunicazioni russi Yamal-200 e altri, e dai sensori di allerta precoce statunitensi SBIRS-HEO, che richiedono soprattutto una lunga permanenza sull'Artico. La Tundra rinuncia alla maggiore elevazione di picco della Molniya in cambio di una ripetizione completa ogni 24 ore (la Molniya ha due apogei al giorno, entrambi sull'emisfero settentrionale — uno sulla Russia, uno sul Nord America, a 180° di longitudine l'uno dall'altro)."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.2",
+  "old": "Orbita di trasferimento geostazionario (GTO). L'orbita di allestimento standard per quasi ogni comsatGEO commerciale. Altamente ellittica: perigeo a ~200-400 km altitudine LEO, apogeo all'altitudine GEO (35.786 km), inclinazione solitamente pari alla latitudine del sito di lancio (28,5° da Cape Canaveral, 5,2° da Kourou il che è il motivo per cui i lanci Ariane dominano il GEO commerciale). Il vettore di lancio posiziona il carico utile su GTO; il veicolo spaziale esegue quindi un'accensione del motore di spinta all'apogeo per circolarizzare a GEO e annullare l'inclinazione. L'accensione del motore di spinta è la manovra singola più intensiva di carburante che la maggior parte dei comsatfà mai — tipicamente 1,5-1,8 km/s di ΔV, consumando la maggior parte del propellente ipergolico del veicolo spaziale per questo evento. I comsatmoderni a propulsione elettrica utilizzano un'ascesa a spirale da GTO a GEO alimentata da propulsori a ioni della durata di settimane al posto di un'accensione chimica di spinta, scambiando il tempo per ~40% di carico utile utilizzabile in più in orbita.",
+  "new": "Orbita di trasferimento geostazionario (GTO). L'orbita di sosta standard per quasi tutti i satelliti commerciali per telecomunicazioni in GEO. Fortemente ellittica: perigeo a ~200-400 km di quota LEO, apogeo all'altitudine GEO (35.786 km), inclinazione di solito pari alla latitudine del sito di lancio (28,5° da Cape Canaveral, 5,2° da Kourou, ed è per questo che i lanci Ariane dominano il mercato commerciale GEO). Il lanciatore porta il carico utile in GTO; il veicolo spaziale esegue poi, all'apogeo, l'accensione del motore di apogeo per circolarizzare in GEO e annullare l'inclinazione. L'accensione del motore di apogeo è la singola manovra più dispendiosa in carburante che la maggior parte dei satelliti per telecomunicazioni compia mai — in genere 1,5-1,8 km/s di ΔV, che consuma la maggior parte del propellente ipergolico del veicolo in quell'unico evento. I moderni satelliti a propulsione elettrica usano invece una salita a spirale da GTO a GEO con propulsori ionici, della durata di settimane, al posto dell'accensione chimica, scambiando tempo per circa il 40% in più di carico utile utilizzabile in orbita."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.3",
+  "old": "Orbite congelate. Orbite nelle quali l'altitudine del perigeo non deriva nel tempo nonostante le varie forze perturbanti (J2, J3, trascinamento atmosferico, gravità lunare/solare). La prescrizione classica dell'orbita congelata: argomento del perigeo = 90° (quindi il perigeo è all'apice meridionale dell'orbita), eccentricità abbinata all'inclinazione e all'altitudine per equazione di bilancio J2-vs-J3. Utilizzata da missioni di osservazione terrestre che necessitano che la loro altitudine di imaging rimanga precisa per anni (altimetria del ghiaccio ICESat-2, campo di gravità GRACE-FO). Il congelamento è approssimativo — il trascinamento e le perturbazioni di terzi corpi alla fine deflettono l'orbita, richiedendo piccole accensioni di mantenimento della stazione ogni pochi mesi — ma la deriva guidata da J2, che altrimenti dominerebbe, è annullata.",
+  "new": "Orbite congelate. Orbite in cui l'altitudine del perigeo non deriva nel tempo nonostante le varie forze perturbatrici (J2, J3, resistenza atmosferica, gravità lunare/solare). La prescrizione classica dell'orbita congelata: argomento del perigeo = 90° (quindi il perigeo si trova all'apice meridionale dell'orbita), eccentricità calibrata sull'inclinazione e sull'altitudine secondo un'equazione di equilibrio tra J2 e J3. Usata da missioni di osservazione terrestre che hanno bisogno che la loro quota di ripresa resti esattamente fissa per anni (altimetria del ghiaccio di ICESat-2, campo gravitazionale di GRACE-FO). Il congelamento è approssimato — la resistenza e le perturbazioni di un terzo corpo finiscono per deviare l'orbita, richiedendo piccole accensioni di mantenimento della posizione ogni pochi mesi — ma la deriva dovuta a J2, che altrimenti dominerebbe, è annullata."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.4",
+  "old": "Altre orbite speciali nominate degne di nota: Orbita di trasferimento sub-sincrona (SSTO — non single-stage to orbit, ma un'orbita di allestimento a bassa altitudine utilizzata dai lanci Soyuz verso SSI); orbita di trasferimento super-sincrona (apogeo sopra GEO, utilizzato su alcuni lanci GEO (Ariane, Proton) per minimizzare il ΔV del cambio di inclinazione); orbita di ripetizione della traccia al suolo (altitudine accordata al rapporto intero tra il periodo orbitale e la rotazione terrestre, quindi il satellite sorpassa lo stesso pezzo di terreno ogni N giorni esattamente — utilizzato da missioni oceanografiche come Jason / TOPEX-Poseidon); orbite ciscelustrali (DRO, NRHO, halo — trattate separatamente in /science/orbits/cislunar-orbits).",
+  "new": "Altre orbite speciali con un nome, da conoscere: l'orbita di trasferimento sub-sincrona (SSTO — non nel senso di «single-stage to orbit», ma un'orbita di sosta a bassa quota usata dai lanci Soyuz verso la SSI); l'orbita di trasferimento super-sincrona (apogeo sopra la GEO, usata in alcuni lanci verso la GEO (Ariane, Proton) per ridurre al minimo il ΔV del cambio di inclinazione); l'orbita a traccia al suolo ripetuta (quota regolata in modo che il rapporto tra periodo orbitale e rotazione terrestre sia un numero intero, così il satellite passa esattamente sullo stesso tratto di terra ogni N giorni — usata da missioni oceanografiche come Jason / TOPEX-Poseidon); le orbite cislunari (DRO, NRHO, halo — trattate a parte in /science/orbits/cislunar-orbits)."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "diagram_caption",
+  "old": "Molniya: e=0,74, periodo 12 ore, inclinazione 63,4° (critica, apsidi bloccati). Tundra: e=0,25, periodo 24 ore, 63,4°. GTO: perigeo LEO + apogeo GEO, allestimento per comsatGEO. Orbita congelata: l'altitudine del perigeo non deriva (bilancio J2/J3 + argomento del perigeo = 90°).",
+  "new": "Molniya: e=0,74, periodo 12 ore, inclinazione 63,4° (critica, linea degli apsidi bloccata). Tundra: e=0,25, periodo 24 ore, 63,4°. GTO: perigeo LEO + apogeo GEO, orbita di sosta per i satelliti per telecomunicazioni. Orbita congelata: l'altitudine del perigeo non deriva (equilibrio J2/J3 + argomento del perigeo = 90°)."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "intro_sentence",
+  "old": "Le orbite eliocentriche attraversano ogni punto della Terra alla stessa ora locale solare ogni giorno. Quasi polari, retrograde, regolate dal rigonfiamento equatoriale terrestre — il segreto dell'osservazione costante della Terra.",
+  "new": "Le orbite eliosincrone passano su ogni punto della Terra alla stessa ora solare locale. Quasi polari, retrograde, tarate per usare il rigonfiamento equatoriale terrestre come motore di precessione: il trucco dell'osservazione costante."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.0",
+  "old": "Un'orbita eliocentricha (SSO) è un'orbita quasi polare (inclinazione solitamente 96-99°) a bassa-media altitudine LEO (600-900 km) il cui piano orbitale ruota verso est esattamente alla velocità con cui la Terra orbita il Sole — 360°/anno, o circa 0,9856°/giorno. L'effetto: l'angolo tra il piano orbitale del satellite e il Sole rimane costante tutto l'anno, quindi il satellite attraversa sempre una data latitudine alla stessa ora locale solare. Un satellite Sentinel-2, ad esempio, attraversa l'equatore al nodo discendente alle 10:30 ora locale ogni singolo giorno; questo è ciò che consente di confrontare un'immagine Landsat di una foresta del 2010 con una del 2025 e sapere che le condizioni di illuminazione sono simili.",
+  "new": "Un'orbita eliosincrona (SSO) è un'orbita quasi polare (inclinazione di solito 96-99°) a quota LEO medio-bassa (600-900 km) il cui piano orbitale ruota verso est esattamente alla stessa velocità con cui la Terra gira attorno al Sole — 360°/anno, ovvero circa 0,9856°/giorno. L'effetto: l'angolo tra il piano orbitale del satellite e il Sole resta costante tutto l'anno, quindi il satellite attraversa sempre una data latitudine alla stessa ora solare locale. Un satellite Sentinel-2, ad esempio, attraversa l'equatore al nodo discendente alle 10:30 ora locale ogni singolo giorno; è questo che permette di confrontare un'immagine Landsat di una foresta del 2010 con una del 2025 sapendo che le condizioni di illuminazione sono simili."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.1",
+  "old": "Il meccanismo è gravitazionale. La Terra non è una sfera perfetta — il rigonfiamento equatoriale (circa 21 km di raggio extra all'equatore rispetto ai poli) crea un campo gravitazionale non centrale. Per un satellite in un'orbita non equatoriale, questa asimmetria esercita una coppia che precessa gradualmente il piano orbitale. La velocità di precessione dipende dall'altitudine e dall'inclinazione: altitudini inferiori precessionano più velocemente; inclinazioni tra 90° e 180° (orbite retrograde) precessionano verso est. Esiste esattamente una combinazione di altitudine + inclinazione per qualsiasi altitudine data che dà una precessione di 0,9856°/giorno — queste sono le orbite eliocentriche. A 800 km di altitudine, l'inclinazione SSO è 98,6° (8,6° oltre il polo, retrograda). A 600 km è 97,8°. A 400 km è 97,0°.",
+  "new": "Il meccanismo è gravitazionale. La Terra non è una sfera perfetta — il rigonfiamento equatoriale (circa 21 km di raggio in più all'equatore rispetto ai poli) crea un campo gravitazionale non centrale. Per un satellite in un'orbita non equatoriale, questa asimmetria esercita un momento torcente che imprime al piano orbitale una lenta precessione. La velocità di precessione dipende dall'altitudine e dall'inclinazione: ad altitudini inferiori la precessione è più rapida; con inclinazioni tra 90° e 180° (orbite retrograde) la precessione è verso est. Per ogni altitudine data esiste una sola inclinazione che produce una precessione di 0,9856°/giorno — queste sono le orbite eliosincrone. A 800 km di altitudine, l'inclinazione SSO è 98,6° (8,6° oltre il polo, retrograda). A 600 km è 97,8°. A 400 km è 97,0°."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.2",
+  "old": "Quasi tutti i satelliti di osservazione della Terra attivi oggi operano in SSO. Il programma Copernicus dell'ESA (radar imaging Sentinel-1A/B/C/D, imaging ottico Sentinel-2A/B/C/D, monitoraggio oceanico Sentinel-3A/B, atmosfera Sentinel-5P) — tutto in SSO. Landsat 8 e Landsat 9 di NASA/USGS — SSO, 705 km, 98,2°, nodo discendente 10:00 locali. Le previsioni meteorologiche polari della NOAA (NOAA-20, NOAA-21, Suomi NPP) — SSO. La flotta PlanetScope di Planet Labs (~150 CubeSats attivi) — SSO a 475 km. GCOM-W1 del Giappone, la serie Gaofen della Cina, Resourcesat dell'India. Il motivo per cui ogni operatore sceglie SSO è lo stesso: una geometria di illuminazione coerente vi permette di costruire prodotti di dati in serie temporale (indici di vegetazione, estensione della neve, colore oceanico) che abbiano significato nel corso degli anni.",
+  "new": "Quasi tutti i satelliti di osservazione della Terra attivi oggi operano in SSO. Il programma Copernicus dell'ESA (immagini radar con Sentinel-1A/B/C/D, immagini ottiche con Sentinel-2A/B/C/D, monitoraggio degli oceani con Sentinel-3A/B, atmosfera con Sentinel-5P) — tutto in SSO. Landsat 8 e Landsat 9 di NASA/USGS — SSO, 705 km, 98,2°, nodo discendente alle 10:00 ora locale. I satelliti meteorologici polari della NOAA (NOAA-20, NOAA-21, Suomi NPP) — SSO. La flotta PlanetScope di Planet Labs (~150 CubeSat attivi) — SSO a 475 km. GCOM-W1 del Giappone, la serie Gaofen della Cina, Resourcesat dell'India. Il motivo per cui ogni operatore sceglie l'SSO è lo stesso: una geometria di illuminazione costante permette di costruire prodotti di dati in serie temporale (indici di vegetazione, estensione della neve, colore dell'oceano) che hanno un significato nel corso degli anni."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.3",
+  "old": "Le orbite polari senza eliocenticità sono rare e speciali. Un'orbita veramente polare (90,0°) è un caso specifico; sotto 90° è prograda, sopra 90° è retrograda. Alcuni satelliti di ricognizione militare (KH-11 / EVOLVED ENHANCED CRYSTAL — NRO) utilizzano orbite polari quasi-non-SSO per variare deliberatamente il loro angolo di illuminazione. ICESat-2 (NASA, inclinazione 92°, 488 km) è quasi-polare ma a un'altitudine leggermente non-SSO per fornire una migliore copertura delle calotte glaciali ad alte latitudini che è progettata per misurare. Il regime polare non-SSO scambia illuminazione costante per una migliore varietà di traccia al suolo.",
+  "new": "Le orbite polari non eliosincrone sono rare e particolari. Un'orbita davvero polare (90,0°) è un caso specifico; sotto i 90° è prograda, sopra i 90° è retrograda. Alcuni satelliti di ricognizione militare (KH-11 / EVOLVED ENHANCED CRYSTAL — NRO) usano orbite quasi polari non eliosincrone per variare deliberatamente l'angolo di illuminazione. ICESat-2 (NASA, inclinazione 92°, 488 km) è quasi polare ma a una quota leggermente diversa da quella eliosincrona, per coprire meglio le calotte glaciali alle alte latitudini che ha il compito di misurare. Il regime polare non eliosincrono rinuncia all'illuminazione costante in cambio di una maggiore varietà di tracce al suolo."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.4",
+  "old": "Svantaggio SSO: energia di lancio. Raggiungere SSO a 98,6° di inclinazione da qualsiasi luogo al di sotto di circa 45° di latitudine richiede un sostanziale cambio di inclinazione dal sito di lancio naturale. Il lancio verso sud da Vandenberg Space Force Base (34,7°N) o Pleseck (62,9°N) o Wenchang (19,6°N per lanci verso sud su acque aperte) è l'approccio standard. Il costo ΔV del cambio di inclinazione in LEO è approssimativamente 130 m/s per grado per piccoli angoli; il costo esatto per un grande cambio di piano utilizza 2v·sin(Δi/2), che per un cambio di circa 70° dà ≈ 8,9 km/s — quindi una tipica salita SSO da Florida (Cape Canaveral, 28,5°N) costerebbe approssimativamente ~9 km/s di ΔV cambio di inclinazione — completamente impraticabile. Questo è il motivo per cui Vandenberg esiste come sito di lancio dedicato sulla costa ovest, e perché Pleseck e Sriharikota e Hammaguir (primi francesi) sono stati scelti per lanci ad alta inclinazione.",
+  "new": "Svantaggio dell'SSO: l'energia di lancio. Raggiungere l'SSO a 98,6° di inclinazione da un punto qualsiasi sotto i ~45° di latitudine richiede un cambio di inclinazione sostanziale rispetto a quella naturale del sito di lancio. L'approccio standard è lanciare verso sud da Vandenberg Space Force Base (34,7°N), da Pleseck (62,9°N) o da Wenchang (19,6°N, per lanci verso sud su mare aperto). Il costo in ΔV di un cambio di inclinazione in LEO è di circa 130 m/s per grado per angoli piccoli; il costo esatto di un grande cambio di piano si calcola con 2v·sin(Δi/2), che per un cambio di ~70° dà ≈ 8,9 km/s — quindi una tipica salita SSO dalla Florida (Cape Canaveral, 28,5°N) costerebbe circa ~9 km/s di ΔV per il cambio di inclinazione — del tutto impraticabile. Per questo Vandenberg esiste come sito di lancio dedicato sulla costa occidentale, e per questo Pleseck, Sriharikota e Hammaguir (il sito francese delle origini) sono stati scelti per i lanci ad alta inclinazione."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "diagram_caption",
+  "old": "SSO: quasi-polare (96-99°), retrograda, LEO (600-900 km). La perturbazione J2 dal rigonfiamento equatoriale terrestre precessa il piano orbitale est a 0,9856°/giorno — esattamente corrispondente al moto orbitale terrestre attorno al Sole. Risultato: il satellite attraversa qualsiasi latitudine alla stessa ora locale solare ogni giorno. Cavallo da tiro di Sentinel, Landsat, NOAA polare, PlanetScope, GCOM.",
+  "new": "SSO: quasi polare (96-99°), retrograda, LEO (600-900 km). La perturbazione J2 dovuta al rigonfiamento equatoriale terrestre produce una precessione del piano orbitale verso est di 0,9856°/giorno — esattamente il moto orbitale della Terra attorno al Sole. Risultato: il satellite attraversa qualsiasi latitudine alla stessa ora solare locale ogni giorno. Cavallo di battaglia di Sentinel, Landsat, dei satelliti polari NOAA, di PlanetScope, GCOM."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "intro_sentence",
+  "old": "Due pianeti su orbite diverse si allineano e si disallineano secondo un orologio proprio — il periodo sinodico — che decide quando la strada a buon mercato tra loro è aperta.",
+  "new": "Due pianeti su orbite diverse entrano ed escono dall'allineamento secondo un orologio tutto loro — il periodo sinodico — ed è quell'orologio a decidere quando la via economica tra di loro è aperta."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "narrative_101.0",
+  "old": "Un viaggio economico verso un altro pianeta non è una linea retta — è una lunga ellisse di deriva che parte dalla Terra e tocca appena l'orbita del bersaglio mezza orbita più tardi. Perché funzioni, il pianeta bersaglio deve trovarsi all'estremità dell'ellisse quando il veicolo spaziale arriva, non da qualche altra parte della sua orbita. Poiché i due pianeti si muovono a velocità diverse, quella geometria fortunata si allinea solo ogni tanto. Il tempo tra un allineamento e il successivo è il periodo sinodico.",
+  "new": "Un viaggio economico verso un altro pianeta non è una linea retta — è una lunga ellisse percorsa per inerzia, che parte dalla Terra e sfiora appena l'orbita del bersaglio mezzo giro dopo. Perché funzioni, il pianeta bersaglio deve trovarsi all'estremità dell'ellisse quando il veicolo spaziale arriva, non da qualche altra parte della sua orbita. Poiché i due pianeti si muovono a velocità diverse, quella geometria fortunata si presenta solo ogni tanto. Il tempo tra un allineamento e il successivo è il periodo sinodico."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "narrative_101.2",
+  "old": "L'allineamento necessario non è \"pianeti uno accanto all'altro\" ma un angolo di anticipo specifico — Marte deve trovarsi un numero di gradi determinato davanti alla Terra al lancio in modo che arrivi al punto di incontro esattamente nello stesso momento del veicolo spaziale. L'orologio sinodico è semplicemente quanto spesso quell'angolo di anticipo esatto si ripresenta.",
+  "new": "L'allineamento necessario non è «pianeti uno accanto all'altro» ma un angolo di anticipo specifico — Marte deve trovarsi un numero di gradi determinato davanti alla Terra al lancio, in modo da arrivare al punto di incontro esattamente nello stesso momento del veicolo spaziale. L'orologio sinodico indica semplicemente con quale frequenza quell'esatto angolo di anticipo si ripresenta."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "body_paragraphs.1",
+  "old": "La finestra di lancio stessa è determinata dal phasing. Un trasferimento di Hohmann richiede un tempo fisso (circa 259 giorni Terra→Marte), durante il quale il bersaglio spazza un arco noto; così alla partenza il bersaglio deve precedere il pianeta di partenza di un angolo di fase specifico (all'incirca 44° per Terra→Marte) in modo che raggiunga l'apoapside del trasferimento esattamente quando il veicolo spaziale arriva. Quella geometria si ripete ogni periodo sinodico — per questo la finestra è periodica.",
+  "new": "La finestra di lancio è determinata dalla fasatura. Un trasferimento di Hohmann richiede un tempo fisso (circa 259 giorni Terra→Marte), durante il quale il bersaglio percorre un arco noto; perciò alla partenza il bersaglio deve precedere il pianeta di partenza di uno specifico angolo di fase (all'incirca 44° per Terra→Marte), così da raggiungere l'apside lontano del trasferimento proprio quando vi arriva il veicolo spaziale. Questa geometria si ripete a ogni periodo sinodico — per questo la finestra è periodica."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "body_paragraphs.2",
+  "old": "Le finestre reali hanno larghezza e struttura di costi: la curva porkchop mappa la data di partenza rispetto al tempo di volo e colora il Δv totale, e l'orologio sinodico è quello che fa apparire una nuova valle porkchop fresca ogni ciclo. La lezione di launch-window del Physics Lab calcola S dai due periodi e l'angolo di anticipo richiesto dal tempo di trasferimento — la stessa aritmetica che schedula ogni missione interplanetaria.",
+  "new": "Le finestre reali hanno una larghezza e una struttura di costi: il diagramma porkchop riporta la data di partenza rispetto al tempo di volo e colora il Δv totale, ed è l'orologio sinodico a far comparire una nuova valle porkchop a ogni ciclo. La lezione sulla finestra di lancio del Physics Lab calcola S dai due periodi e l'angolo di anticipo necessario dal tempo di trasferimento — la stessa aritmetica con cui viene pianificata ogni missione interplanetaria."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "intro_sentence",
+  "old": "L'angolo che dice dove un corpo è sull'orbita ora, misurato dal perielio.",
+  "new": "L'angolo che dice dove si trova ora un corpo sull'orbita, misurato dal perielio."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "body_paragraphs.0",
+  "old": "Gli elementi kepleriani descrivono la forma e l'orientamento di un'orbita; l'anomalia vera (`ν`) ti dice dove si trova il corpo lungo quell'orbita in un dato istante. Posizionati al fuoco (il Sole, per un pianeta), punta verso il periielio e ruota il dito per seguire il corpo lungo la sua traiettoria. L'angolo che descriverai è l'anomalia vera.",
+  "new": "Gli elementi kepleriani descrivono la forma e l'orientamento di un'orbita; l'anomalia vera (`ν`) ti dice dove si trova il corpo lungo quell'orbita in un dato istante. Posizionati al fuoco (il Sole, per un pianeta), punta verso il perielio e ruota il dito per seguire il corpo lungo la sua traiettoria. L'angolo che descriverai è l'anomalia vera."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "body_paragraphs.1",
+  "old": "Va da 0 al perielio (avvicinamento più vicino) passando per 90° (un quarto del percorso) fino a 180° all'afelio (il più lontano), e poi ritorna. A differenza di un orologio, non scorre uniformemente — la seconda legge di Keplero ti dice che il corpo corre veloce vicino al perielio e striscia vicino all'afelio. Quindi l'anomalia vera al secondo cambia continuamente lungo l'orbita.",
+  "new": "Va da 0 al perielio (massimo avvicinamento) passando per 90° (un quarto del percorso) fino a 180° all'afelio (il punto più lontano), e poi ritorna. A differenza di un orologio, non scorre in modo uniforme — la seconda legge di Keplero ti dice che il corpo corre veloce vicino al perielio e striscia vicino all'afelio. Quindi la variazione dell'anomalia vera al secondo cambia continuamente lungo l'orbita."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "body_paragraphs.2",
+  "old": "Angoli sorella che incontrerai: l'anomalia media (`M`), che avanza uniformemente nel tempo ma è geometricamente priva di significato; e l'anomalia eccentrica (`E`), il ponte tra loro. `M` progredisce a velocità costante, risolvi l'equazione di Keplero `M = E - e·sin(E)` per ottenere `E`, poi converti a `ν`. La catena è il battito cardiaco di ogni simulatore orbitale, incluso Orrery's.",
+  "new": "Gli angoli «sorelle» che incontrerai: l'anomalia media (`M`), che avanza uniformemente nel tempo ma è geometricamente priva di significato; e l'anomalia eccentrica (`E`), il ponte tra le due. `M` progredisce a velocità costante, risolvi l'equazione di Keplero `M = E - e·sin(E)` per ottenere `E`, poi la converti in `ν`. La catena è il battito cardiaco di ogni simulatore orbitale, incluso quello di Orrery."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "intro_sentence",
+  "old": "Quanto velocemente un corpo si muove — dal raggio attuale e dal semiasse maggiore.",
+  "new": "Quanto veloce si muove un corpo in ogni punto dell'orbita, noti raggio e semiasse maggiore."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "diagram_caption",
+  "old": "Velocità varia: alta perielio, bassa afelio.",
+  "new": "Velocità variabile: alta al perielio, bassa all'afelio."
+ },
+ {
+  "rel": "science/planets/_intro.json",
+  "at": "paragraphs.0",
+  "old": "I corpi del sistema solare non sono intercambiabili. Marte ha perso la sua atmosfera perché la sua dinamo si è esaurita. Venere ruota al contrario. L'asse magnetico di Saturno è unicamente allineato con il suo asse di rotazione. Urano si è rovesciato su un lato. La Terra ha luci cittadine che puoi vedere dall'orbita, e Marte no. Ciascuno di questi è un fatto reale, osservato, con una spiegazione reale e dibattuta. Questa scheda è il posto dove leggere quelle spiegazioni.",
+  "new": "I corpi del sistema solare non sono intercambiabili. Marte ha perso la sua atmosfera perché la sua dinamo si è spenta. Venere ruota al contrario. L'asse magnetico di Saturno è l'unico allineato con il suo asse di rotazione. Urano si è rovesciato su un fianco. La Terra ha luci cittadine che si vedono dall'orbita, e Marte no. Ciascuno di questi è un fatto reale, osservato, con una spiegazione reale e dibattuta. Questa scheda è il posto dove leggere quelle spiegazioni."
+ },
+ {
+  "rel": "science/planets/_intro.json",
+  "at": "paragraphs.1",
+  "old": "Sei sezioni. Le prime tre riguardano i pianeti stessi — inclinazione assiale, campi magnetici e la geometria del giorno e della notte. Le due successive riguardano il sistema: i satelliti che orbitano ogni pianeta (Galileans, Titano, Tritone, Caronte), e le statistiche di confronto che ti permettono di vedere a colpo d'occhio come Giove differisce dalla Terra. L'ultima sezione è un'indagine dei veicoli spaziali che studiano attivamente ogni pianeta in questo momento, nel 2026 — cosa c'è su Marte (sei orbiter attivi, più agenzie), su Giove (Juno), su Venere (Akatsuki), e le lunghe assenze altrove.",
+  "new": "Sei sezioni. Le prime tre riguardano i pianeti stessi — inclinazione assiale, campi magnetici e la geometria del giorno e della notte. Le due successive riguardano il sistema: le lune che orbitano attorno a ciascun pianeta (galileiane, Titano, Tritone, Caronte) e le statistiche di confronto che ti permettono di vedere a colpo d'occhio come Giove differisce dalla Terra. L'ultima sezione è una rassegna dei veicoli spaziali che studiano attivamente ogni pianeta in questo momento, nel 2026 — cosa c'è su Marte (sei orbiter attivi, di più agenzie), su Giove (Juno), su Venere (Akatsuki), e le lunghe assenze altrove."
+ },
+ {
+  "rel": "science/planets/_intro.json",
+  "at": "paragraphs.2",
+  "old": "Ogni sezione è abbinata a una visualizzazione su /explore. L'asse di rotazione giallo che vedi quando ingrandisci un pianeta ↔ l'articolo sull'inclinazione assiale. L'asse magnetico ciano (con gate-lens) ↔ l'articolo sui campi magnetici. I glifi degli orbiter attivi ↔ l'articolo sull'indagine dei veicoli spaziali. Attiva la lens su /explore per vedere gli overlay di fisica, quindi torna qui per leggere cosa significano.",
+  "new": "Ogni sezione è abbinata a una visualizzazione su /explore. L'asse di rotazione giallo che vedi quando ingrandisci un pianeta ↔ l'articolo sull'inclinazione assiale. L'asse magnetico ciano (visibile solo con la lente attiva) ↔ l'articolo sui campi magnetici. I glifi degli orbiter attivi ↔ l'articolo sulla rassegna dei veicoli spaziali. Attiva la lente su /explore per vedere le sovrapposizioni di fisica, quindi torna qui per leggere cosa significano."
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "title",
+  "old": "Rilevamento Veicoli Spaziali Attivi",
+  "new": "Rassegna dei veicoli spaziali attivi"
+ }
+]

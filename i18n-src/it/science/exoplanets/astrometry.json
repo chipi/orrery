@@ -2,13 +2,13 @@
   "title": "Astrometria",
   "intro_sentence": "Tracciando la posizione esatta di una stella nel cielo è possibile osservarla descrivere un piccolo anello mentre un pianeta invisibile la fa oscillare attorno al loro centro di massa comune.",
   "narrative_101": [
-    "La velocità radiale cattura il movimento della stella verso e lontano da noi. L'astrometria cattura l'altra componente — l'oscillazione laterale della stella attraverso il cielo mentre un pianeta la trascina nel suo movimento orbitale.",
-    "L'anello che la stella descrive è incredibilmente piccolo, misurato in milionesimi di grado, ed è per questo che l'astrometria è stata a lungo il grande quasi-successo della caccia ai pianeti: promessa per decenni, con risultati scarsi, perché semplicemente non c'era la precisione necessaria.",
+    "La velocità radiale coglie il moto della stella verso di noi e in allontanamento. L'astrometria coglie l'altra componente — l'oscillazione laterale della stella sul cielo mentre un pianeta la tira intorno a sé.",
+    "L'anello che la stella descrive è incredibilmente piccolo, misurato in milionesimi di grado, ed è per questo che l'astrometria è stata a lungo il grande 'quasi' della caccia ai pianeti: promessa per decenni, con scarsi risultati, perché semplicemente la precisione non c'era.",
     "L'astrometria spaziale ha cambiato la situazione. La missione Gaia dell'ESA ha mappato le posizioni di quasi due miliardi di stelle con la precisione necessaria per rilevare l'attrazione di un pianeta gigante — e sta iniziando a scoprire pianeti da queste oscillazioni."
   ],
   "body_paragraphs": [
     "L'astrometria misura lo spostamento periodico di una stella sul piano del cielo mentre orbita attorno al centro di massa del sistema. A differenza della velocità radiale, rileva l'intera orbita indipendentemente dall'orientamento, quindi fornisce una massa reale (non solo un limite inferiore) e funziona bene per pianeti su orbite ampie, dove il segnale astrometrico aumenta.",
-    "Storicamente ha prodotto più ritiri che pianeti — la Stella di Barnard è il classico racconto di avvertimento, i suoi famosi \"pianeti\" dall'astrometria degli anni Sessanta tutti spuri. Il segnale è semplicemente minuscolo, e la deriva strumentale lo contraffà facilmente.",
+    "Storicamente ha prodotto più ritrattazioni che pianeti — la Stella di Barnard è l'esempio classico di cautela: i suoi famosi 'pianeti' degli anni Sessanta, scoperti con l'astrometria, erano tutti spuri. Il segnale è semplicemente minuscolo, e la deriva strumentale lo simula con facilità.",
     "L'astrometria ad alta precisione su tutto il cielo di Gaia sta ora fornendo rilevamenti autentici e, cosa fondamentale, masse reali per pianeti scoperti con altri metodi — chiudendo un capitolo rimasto aperto per gran parte di un secolo."
   ],
   "diagram_caption": "La stella descrive un piccolo anello nel cielo mentre un pianeta invisibile la fa oscillare attorno al loro centro di massa comune."

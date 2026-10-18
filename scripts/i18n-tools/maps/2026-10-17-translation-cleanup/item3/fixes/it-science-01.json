@@ -1,0 +1,782 @@
+[
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.0.paragraphs.0",
+  "old": "Dimentica i razzi per un secondo. Stai sulla Terra, lancia una palla da baseball più forte che puoi. Ritorna giù. Lanciala più forte, atterra più lontano. Lanciala così forte che il suolo si curva via più velocemente di quanto la palla cada, e la palla manca il pianeta — per sempre. Questa è un'[orbita](orbits/keplerian-orbit). Ogni veicolo spaziale, ogni pianeta, ogni roccia nella fascia degli asteroidi sta facendo questo trucco attorno a qualcosa di più pesante.",
+  "new": "Dimentica i razzi per un momento. Stai in piedi sulla Terra e lancia una palla da baseball con tutta la forza che hai. Ricade a terra. Lanciala più forte e cadrà più lontano. Lanciala così forte che il suolo si incurva più in fretta di quanto la palla cada, e la palla manca il pianeta — per sempre. Questa è un'[orbita](orbits/keplerian-orbit). Ogni veicolo spaziale, ogni pianeta, ogni roccia della fascia degli asteroidi compie questo trucco attorno a qualcosa di più massiccio."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.0.paragraphs.1",
+  "old": "Un'orbita è un'ellisse. Ha una [dimensione](orbits/semi-major-axis), una [forma](orbits/eccentricity) (rotonda vs. allungata), un'[inclinazione](orbits/inclination), e una fase che ti dice dove sull'ellisse si trova il veicolo spaziale in questo momento ([anomalia vera](orbits/true-anomaly)). Cinque numeri e puoi predire la posizione di qualsiasi oggetto nel sistema solare, per sempre, senza alcun altro dato. Queste sono [le tre leggi di Keplero](orbits/keplers-laws), scritte nel 1609 — funzionano ancora.",
+  "new": "Un'orbita è un'ellisse. Ha una [dimensione](orbits/semi-major-axis), una [forma](orbits/eccentricity) (tonda o allungata), un'[inclinazione](orbits/inclination), e una fase che ti dice dove si trova in questo momento il veicolo spaziale sull'ellisse ([anomalia vera](orbits/true-anomaly)). Cinque numeri e puoi prevedere la posizione di qualsiasi oggetto del sistema solare, per sempre, senza alcun altro dato. Sono [le tre leggi di Keplero](orbits/keplers-laws), messe per iscritto nel 1609 — e funzionano ancora."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.0.paragraphs.2",
+  "old": "L'equazione singola più utile che incontrerai qui è [vis-viva](orbits/vis-viva). Inserisci il tuo raggio, la dimensione della tua orbita, e ne esce la tua velocità. Tutto qui. La Terra al perielio: 30,3 km/s. La Terra all'afelio: 29,3 km/s. Stessa orbita, stessa energia, velocità diversa.",
+  "new": "L'equazione più utile che incontrerai qui è la [vis-viva](orbits/vis-viva). Inserisci il tuo raggio e la dimensione della tua orbita, e ne esce la tua velocità. Tutto qui. La Terra al perielio: 30,3 km/s. La Terra all'afelio: 29,3 km/s. Stessa orbita, stessa energia, velocità diversa."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.heading",
+  "old": "2 — L'equazione del razzo è il boss fight.",
+  "new": "2 — L'equazione del razzo è il boss finale."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.diagram_caption",
+  "old": "La cruda verità: raddoppiare il tuo ∆v significa bruciare molto più che 2× il carburante.",
+  "new": "La cruda verità: raddoppiare il ∆v significa bruciare molto più di 2× il carburante."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.paragraphs.0",
+  "old": "Ora: come cambi orbita? Bruci carburante. Il [∆v](propulsion/dv-budget) (\"delta-v\") è la valuta universale del volo spaziale — il cambiamento totale di velocità di cui una missione ha bisogno. Ogni mossa che fai su una traiettoria ha un cartellino del prezzo in km/s.",
+  "new": "Ora: come cambi orbita? Bruci carburante. Il [∆v](propulsion/dv-budget) (\"delta-v\") è la valuta universale del volo spaziale — la variazione totale di velocità di cui una missione ha bisogno. Ogni manovra che fai su una traiettoria ha un prezzo, in km/s."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.paragraphs.1",
+  "old": "E quel prezzo è brutale. L'[equazione del razzo di Tsiolkovsky](propulsion/tsiolkovsky) dice che il ∆v scala con il logaritmo di quanto del tuo razzo è carburante. Vuoi il doppio del ∆v? Non porti il doppio del carburante — ne porti esponenzialmente di più. Ecco perché un Saturn V era propellente al 90%. La maggior parte del razzo è il carburante che solleva il carburante che solleva il carburante che solleva il veicolo spaziale.",
+  "new": "E quel prezzo è brutale. L'[equazione del razzo di Ciolkovskij](propulsion/tsiolkovsky) dice che il ∆v cresce con il logaritmo della frazione di razzo che è carburante. Vuoi il doppio del ∆v? Non porti il doppio del carburante — ne porti esponenzialmente di più. Ecco perché un Saturn V era per il 90% propellente. La maggior parte del razzo è il carburante che solleva il carburante che solleva il carburante che solleva il veicolo spaziale."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.paragraphs.2",
+  "old": "Due numeri combattono questa tassa gravitazionale. La spinta ti dice quanto duramente spinge il motore — è il numero a cui nessuno tiene davvero dopo il lancio. L'[impulso specifico](propulsion/specific-impulse) ti dice quanto efficientemente spinge il motore — ed è quello che conta. Un razzo chimico ottiene ~450 secondi. Un propulsore ionico ottiene 4.000+ — sorseggia carburante per mesi e supera qualsiasi motore chimico per le crociere nello spazio profondo.",
+  "new": "Due numeri contrastano questa tassa gravitazionale. La spinta ti dice con quanta forza spinge il motore — ed è il numero che a nessuno interessa davvero dopo il lancio. L'[impulso specifico](propulsion/specific-impulse) ti dice con quanta efficienza spinge il motore — ed è quello che conta. Un razzo chimico arriva a ~450 secondi. Un propulsore ionico arriva a oltre 4.000 — sorseggia carburante per mesi e supera qualsiasi motore chimico nelle crociere nello spazio profondo."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.paragraphs.3",
+  "old": "Il miglior trucco magico di tutti: l'[effetto Oberth](propulsion/oberth-effect). Bruciare il tuo motore quando ti stai già muovendo veloce (basso e vicino a un pianeta) ti dà molto più colpo per lo stesso carburante. Ecco perché ogni missione interplanetaria fa la sua grande accensione di partenza al perigeo, abbracciando la Terra, andando il più veloce possibile consentito dalla fisica. Energia gratuita dalla geometria.",
+  "new": "Il miglior trucco di tutti: l'[effetto Oberth](propulsion/oberth-effect). Accendere il motore quando ti stai già muovendo veloce (in basso e vicino a un pianeta) rende molto di più a parità di carburante. Ecco perché ogni missione interplanetaria esegue la grande accensione di partenza al perigeo, rasentando la Terra, alla massima velocità che la fisica consente. Energia gratis dalla geometria."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.2.paragraphs.2",
+  "old": "Vuoi andare più veloce? Risolvi un [problema di Lambert](transfers/lambert-problem) — scegli la tua data di partenza e il tuo tempo di transito, e Lambert ti dice l'[ellisse di trasferimento](transfers/transfer-ellipse) unica che li collega. È esattamente quello che fa la schermata [/plan](app:/plan) di Orrery, diecimila volte in parallelo, per disegnare un grafico porkchop.",
+  "new": "Vuoi andare più veloce? Risolvi un [problema di Lambert](transfers/lambert-problem) — scegli la data di partenza e il tempo di transito, e Lambert ti dà l'unica [ellisse di trasferimento](transfers/transfer-ellipse) che li collega. È esattamente ciò che fa la schermata [/plan](app:/plan) di Orrery, diecimila volte in parallelo, per disegnare un grafico porkchop."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.2.paragraphs.3",
+  "old": "Hai bisogno di andare ancora più lontano? Ruba velocità da un pianeta. Un'[assistenza gravitazionale](transfers/gravity-assist) usa un passaggio ravvicinato per cambiare la tua traiettoria a costo zero di carburante — Voyager 2 ne ha usate quattro per raggiungere Nettuno. L'intero sistema solare si cuce insieme come [coniche raccordate](transfers/patched-conics): una serie di archi di [sezioni coniche](transfers/conic-sections) passati tra quartieri gravitazionali come testimoni in una staffetta.",
+  "new": "Hai bisogno di andare ancora più lontano? Ruba velocità a un pianeta. Una [fionda gravitazionale](transfers/gravity-assist) sfrutta un sorvolo per cambiare traiettoria a costo zero di carburante — Voyager 2 ne ha usate quattro per raggiungere Nettuno. L'intero sistema solare si cuce insieme come [coniche raccordate](transfers/patched-conics): una serie di archi di [sezioni coniche](transfers/conic-sections) passati di mano in mano tra zone di influenza gravitazionale come testimoni in una staffetta."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.3.paragraphs.0",
+  "old": "La Terra e Marte non stanno fermi. La Terra corre attorno al Sole ogni 365 giorni, Marte ogni 687. La loro geometria relativa si ripete solo ogni ~26 mesi — e per la maggior parte di quei mesi, i pianeti sono troppo distanti, sui lati sbagliati del Sole, per essere raggiunti economicamente. La progettazione di missione inizia con un calendario, non con un razzo.",
+  "new": "La Terra e Marte non stanno fermi. La Terra corre attorno al Sole ogni 365 giorni, Marte ogni 687. La loro geometria relativa si ripete solo ogni ~26 mesi — e per la maggior parte di quei mesi i pianeti sono troppo distanti, dalla parte sbagliata del Sole, per essere raggiunti a basso costo. La progettazione di una missione parte da un calendario, non da un razzo."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.3.paragraphs.1",
+  "old": "Il [grafico porkchop](porkchop/what-is-a-porkchop) è come gli ingegneri vedono questo. Data di partenza lungo [un asse](porkchop/departure-axis), [tempo di volo](porkchop/tof-axis) lungo l'altro, ∆v come [mappa di calore a colori](porkchop/dv-heatmap). Le zone economiche appaiono come lobi ovali — le finestre di lancio. Fuori dal lobo: rosso, costoso, impossibile-con-i-razzi-attuali. [Leggere i contorni](porkchop/contour-reading) è metà del lavoro di un dinamicista di volo.",
+  "new": "Il [grafico porkchop](porkchop/what-is-a-porkchop) è il modo in cui gli ingegneri vedono tutto questo. Data di partenza lungo [un asse](porkchop/departure-axis), [tempo di volo](porkchop/tof-axis) lungo l'altro, ∆v come [mappa di calore a colori](porkchop/dv-heatmap). Le zone convenienti appaiono come lobi ovali — le finestre di lancio. Fuori dal lobo: rosso, costoso, impossibile con i razzi attuali. [Leggere i contorni](porkchop/contour-reading) è metà del lavoro di un esperto di dinamica del volo."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.4.heading",
+  "old": "5 — Il volo è solo cinque fasi ripetute.",
+  "new": "5 — Il volo è fatto di cinque fasi in ripetizione."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.4.diagram_alt",
+  "old": "Entrata atmosferica, apertura del paracadute, retropropulsione, atterraggio.",
+  "new": "Ingresso atmosferico, apertura del paracadute, retropropulsione, atterraggio."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.4.diagram_caption",
+  "old": "Entrata, discesa, atterraggio. Sei minuti di puro terrore.",
+  "new": "Ingresso, discesa, atterraggio. Sei minuti di puro terrore."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.4.paragraphs.1",
+  "old": "[Lancio](mission-phases/launch) — uscire dall'atmosfera e raggiungere l'orbita terrestre bassa. [Iniezione Trans-X](mission-phases/trans-x-injection) — una singola accensione potente al perigeo che ti catapulta sull'ellisse di trasferimento verso la Luna (TLI), Marte (TMI), Venere (TVI) o Giove (TJI). [Manovre di Correzione Traiettoria](mission-phases/tcm) — piccole accensioni durante la crociera per correggere gli errori di dispersione. Di solito 1–3. [Inserimento Orbitale](mission-phases/orbit-insertion) — un'accensione di frenata alla destinazione per inserirvi un'orbita catturata. [EDL](mission-phases/edl) — Entry, Descent, Landing — per il lander. Sei minuti di caos atmosferico supersonico.",
+  "new": "[Lancio](mission-phases/launch) — uscire dall'atmosfera e raggiungere l'orbita terrestre bassa. [Iniezione trans-X](mission-phases/trans-x-injection) — un'unica accensione decisa al perigeo che ti lancia sull'ellisse di trasferimento verso la Luna (TLI), Marte (TMI), Venere (TVI) o Giove (TJI). [Manovre di correzione della traiettoria](mission-phases/tcm) — piccole accensioni durante la crociera per correggere gli errori di dispersione. Di solito 1–3. [Inserimento in orbita](mission-phases/orbit-insertion) — un'accensione di frenata a destinazione che ti fa entrare in un'orbita di cattura. [EDL](mission-phases/edl) — ingresso, discesa, atterraggio (Entry, Descent, Landing) — per il lander. Sei minuti di caos atmosferico supersonico."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.4.paragraphs.2",
+  "old": "Le missioni lunari a volte deviano attraverso un'[Orbita ad Alone Quasi-Rettilinea](mission-phases/nrho) (Gateway vivrà in una), e i voli Apollo con equipaggio volavano [traiettorie di ritorno libero](transfers/free-return) — percorsi a otto che ti riportano sulla Terra automaticamente se ogni motore sul veicolo spaziale muore. Apollo 13 deve la sua vita a questa geometria.",
+  "new": "Le missioni lunari a volte fanno una deviazione attraverso un'[orbita ad alone quasi rettilinea](mission-phases/nrho) (Gateway ne ospiterà una), e i voli Apollo con equipaggio percorsero [traiettorie di ritorno libero](transfers/free-return) — percorsi a forma di 8 che ti riportano automaticamente sulla Terra se tutti i motori del veicolo spaziale si guastano. Apollo 13 deve la vita a questa geometria."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.5.heading",
+  "old": "6 — Distanze e tempo, visto che niente di tutto questo è delle dimensioni della Terra.",
+  "new": "6 — Distanze e tempi, dato che niente di tutto questo ha le dimensioni della Terra."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.5.diagram_caption",
+  "old": "Un AU = una distanza Terra-Sole. Marte è ~1,5 AU. Giove è ~5,2.",
+  "new": "Una UA = una distanza Terra-Sole. Marte è ~1,5 UA. Giove è ~5,2."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.5.paragraphs.0",
+  "old": "Tre unità compaiono ovunque. L'[unità astronomica](scales-time/au) (AU) è la distanza media Terra-Sole — 150 milioni di km. Misuriamo il sistema solare in AU perché i chilometri diventano difficili da gestire rapidamente. Il [minuto-luce](scales-time/light-minute) ti dice quanto tempo impiega un segnale radio a raggiungere un veicolo spaziale. Marte: da 4 a 24 minuti di sola andata. Non puoi controllare un rover dalla Terra con un joystick. Tutto ciò che è importante è autonomo.",
+  "new": "Tre unità compaiono ovunque. L'[unità astronomica](scales-time/au) (UA) è la distanza media Terra-Sole — 150 milioni di km. Misuriamo il sistema solare in UA perché i chilometri diventano presto ingestibili. Il [minuto-luce](scales-time/light-minute) ti dice quanto tempo impiega un segnale radio a raggiungere un veicolo spaziale. Marte: da 4 a 24 minuti di sola andata. Non puoi guidare un rover dalla Terra con un joystick. Tutto ciò che è importante è autonomo."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.5.paragraphs.1",
+  "old": "L'[epoca J2000](scales-time/j2000) è lo zero del calendario che ogni astrodinamico usa. [Periodi siderali vs. sinodici](scales-time/sidereal-synodic) spiegano perché le finestre per Marte si ripetono ogni 26 mesi invece che ogni 23. Il [piano dell'eclittica](scales-time/ecliptic-plane) è il disco piatto su cui giacciono (per lo più) tutti i pianeti. I [sistemi di riferimento](scales-time/frames) sono i sistemi di coordinate tra cui il controllo missione si destreggia tra viste geocentriche, eliocentriche e corpo-centriche.",
+  "new": "L'[epoca J2000](scales-time/j2000) è lo zero del calendario che usano tutti gli astrodinamici. [Periodi siderali e sinodici](scales-time/sidereal-synodic) spiegano perché le finestre per Marte si ripetono ogni 26 mesi invece che ogni 23. Il [piano dell'eclittica](scales-time/ecliptic-plane) è il disco piatto su cui giacciono (per lo più) tutti i pianeti. I [sistemi di riferimento](scales-time/frames) sono i sistemi di coordinate tra cui il controllo missione passa di continuo: vista geocentrica, eliocentrica o centrata sul corpo."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.6.paragraphs.1",
+  "old": "La [radiazione](life-in-space/radiation-exposure) è il problema più difficile. La SSI riceve ~200 mSv/anno (vs 3 mSv di fondo sulla Terra); lo spazio profondo fuori dalla magnetosfera è 600+ mSv/anno, senza ancora una buona strategia di schermatura. Un viaggio di classe marziana metterebbe un membro dell'equipaggio vicino al limite di carriera per il rischio di cancro in un solo viaggio di andata e ritorno.",
+  "new": "La [radiazione](life-in-space/radiation-exposure) è il problema più difficile. La SSI riceve ~200 mSv/anno (contro i 3 mSv di fondo sulla Terra); lo spazio profondo fuori dalla magnetosfera supera i 600 mSv/anno, senza ancora una buona strategia di schermatura. Un viaggio di classe marziana porterebbe un membro dell'equipaggio vicino al limite di rischio di cancro dell'intera carriera in un solo viaggio di andata e ritorno."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.6.paragraphs.2",
+  "old": "Poi c'è l'[EVA](life-in-space/eva-physiology) (una prova di resistenza di 6 ore in una tuta a ossigeno puro a 4,3 psi) e gli [effetti della lunga durata](life-in-space/long-duration-effects) come la SANS — Space-Associated Neuro-ocular Syndrome — dove il 60% dell'equipaggio in voli lunghi sviluppa cambiamenti oculari misurabili che non si risolvono completamente. Questi sono i problemi irrisolti che si frappongono tra l'umanità e Marte.",
+  "new": "Poi c'è l'[EVA](life-in-space/eva-physiology) (una prova di resistenza di 6 ore in una tuta a ossigeno puro a 4,3 psi) e gli [effetti della lunga durata](life-in-space/long-duration-effects) come la SANS — sindrome neuro-oculare associata ai voli spaziali (Space-Associated Neuro-ocular Syndrome) — per cui il 60% degli equipaggi nei voli lunghi sviluppa cambiamenti oculari misurabili che non si risolvono del tutto. Questi sono i problemi irrisolti che si frappongono tra l'umanità e Marte."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.7.diagram_alt",
+  "old": "Un telescopio spaziale puntato verso una galassia distante con uno spettro di emissione rappresentativo sotto.",
+  "new": "Un telescopio spaziale puntato su una galassia lontana, con sotto uno spettro di emissione rappresentativo."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.7.paragraphs.0",
+  "old": "La [fotografia spaziale](observation/space-photography) non è quello che la gente pensa. Non c'è nessun clic dell'otturatore; ogni immagine dell'osservatorio che hai visto è una sovrapposizione di esposizioni lunghe attraverso filtri a banda stretta, calibrata, registrata, con colori falsi assegnati. L'hardware è un sensore CCD o CMOS — una griglia di contatori di fotoni — e i dati sono il conteggio, non l'immagine. L'immagine è ciò che gli umani fanno del conteggio.",
+  "new": "La [fotografia spaziale](observation/space-photography) non è quello che la gente pensa. Non c'è nessun clic dell'otturatore; ogni immagine di osservatorio che hai visto è una somma di lunghe esposizioni attraverso filtri a banda stretta, calibrate, allineate e a falsi colori. L'hardware è un sensore CCD o CMOS — una griglia di contatori di fotoni — e i dati sono il conteggio, non l'immagine. L'immagine è ciò che gli esseri umani fanno del conteggio."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.7.paragraphs.1",
+  "old": "L'[ottica adattiva](observation/adaptive-optics) sconfigge l'atmosfera misurando la sua distorsione in tempo reale e piegando lo specchio per annullarla. I [coronografi](observation/coronagraphs) bloccano la stella centrale per vedere i pianeti che le orbitano attorno. La [spettroscopia](observation/spectroscopy) legge la composizione chimica di una stella dalle linee di assorbimento nella sua luce. L'[interferometria](observation/interferometry) cuce telescopi separati in un'apertura virtuale più grande di qualsiasi di essi.",
+  "new": "L'[ottica adattiva](observation/adaptive-optics) sconfigge l'atmosfera misurando la sua distorsione in tempo reale e piegando lo specchio per annullarla. I [coronografi](observation/coronagraphs) bloccano la stella centrale per vedere i pianeti che le orbitano attorno. La [spettroscopia](observation/spectroscopy) legge la composizione chimica di una stella dalle linee di assorbimento nella sua luce. L'[interferometria](observation/interferometry) cuce telescopi separati in un'apertura virtuale più grande di ciascuno di essi."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.7.paragraphs.2",
+  "old": "E gli oggetti più strani che questi metodi hanno trovato: [buchi neri](observation/black-holes) (reali, mappati, con ombra fotografata al centro di due galassie) e [wormhole](observation/wormholes) (matematica pura, inclusi così sai cosa farne quando ne vedi uno in un film). La categoria /fleet ↦ Observatory ha le macchine reali — Hubble, JWST, Chandra, Spitzer, Kepler, TESS — ognuna con la propria galleria di ciò che ha visto.",
+  "new": "E gli oggetti più strani che questi metodi hanno trovato: i [buchi neri](observation/black-holes) (reali, mappati, di cui è stata fotografata l'ombra al centro di due galassie) e i [wormhole](observation/wormholes) (matematica pura, inclusi perché tu sappia cosa farne quando ne vedi uno in un film). La categoria /fleet ↦ Observatory contiene le macchine vere — Hubble, JWST, Chandra, Spitzer, Kepler, TESS — ognuna con la propria galleria di ciò che ha visto."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "tools.3.text",
+  "old": "36 veicoli spaziali reali, da Luna 9 ad Artemis II. La scheda FLIGHT di ognuno scompone il suo bilancio ∆v reale attraverso le fasi sopra.",
+  "new": "36 veicoli spaziali reali, da Luna 9 ad Artemis II. La scheda FLIGHT di ognuno scompone il suo reale bilancio di ∆v lungo le fasi descritte sopra."
+ },
+ {
+  "rel": "science/cosmology/_intro.json",
+  "at": "paragraphs.0",
+  "old": "Allontanati abbastanza e la singola galassia smette di avere importanza. Quello che emerge è la struttura: galassie raccolte in gruppi, gruppi in ammassi, ammassi allineati lungo filamenti e fogli che si avvolgono attorno a vuoti quasi vuoti — la ragnatela cosmica. Questa scheda riguarda quella scala più grande, e la catena di misurazione che ci consente di assegnare distanze oneste ad essa.",
+  "new": "Allontanati abbastanza e la singola galassia smette di avere importanza. Quello che emerge è la struttura: galassie raccolte in gruppi, gruppi in ammassi, ammassi allineati lungo filamenti e pareti che avvolgono vuoti quasi privi di materia — la ragnatela cosmica. Questa scheda riguarda quella scala maggiore e la catena di misure che ci permette di attribuirle distanze affidabili."
+ },
+ {
+  "rel": "science/cosmology/_intro.json",
+  "at": "paragraphs.1",
+  "old": "Si abbina ai gusci esterni della [scala della distanza](/explore). Quando sali oltre il Gruppo Locale nel Local Sheet, il Superammasso Locale e oltre, questi sono gli articoli che spiegano cosa stai guardando e come chiunque potrebbe mai sapere quanto lontano si trova.",
+  "new": "Si abbina ai gusci esterni della [scala delle distanze](/explore). Quando sali oltre il Gruppo Locale verso il Local Sheet, il Superammasso Locale e oltre, questi sono gli articoli che spiegano cosa stai guardando e come si possa mai sapere quanto sia lontano."
+ },
+ {
+  "rel": "science/cosmology/_intro.json",
+  "at": "paragraphs.2",
+  "old": "L'insieme cresce con la scala: la struttura su larga scala e la scala delle distanze arrivano per primi, con il Superammasso Locale; la cosmologia più profonda — redshift e legge di Hubble, materia oscura ed energia oscura, il fondo a microonde, il Big Bang stesso — arriva insieme ai livelli che ne hanno bisogno.",
+  "new": "L'insieme cresce con la scala: la struttura su larga scala e la scala delle distanze arrivano per prime, insieme al Superammasso Locale; la cosmologia più profonda — spostamento verso il rosso e legge di Hubble, materia oscura ed energia oscura, il fondo cosmico a microonde, il Big Bang stesso — arriva insieme ai livelli che ne hanno bisogno."
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "body_paragraphs.0",
+  "old": "Il gradino inferiore è la geometria. Rimbalzate un radar su un pianeta e conoscerete direttamente l'unità astronomica. Osservate una stella vicina spostarsi avanti e indietro sullo sfondo nel corso di un anno — parallasse — e la semplice trigonometria fornisce la sua distanza; la missione Gaia dell'ESA ha fatto questo per quasi due miliardi di stelle, raggiungendo decine di migliaia di anni luce con precisione.",
+  "new": "Il gradino più basso è la geometria. Fate rimbalzare un segnale radar su un pianeta e conoscerete direttamente l'unità astronomica. Osservate una stella vicina spostarsi avanti e indietro sullo sfondo nel corso di un anno — la parallasse — e la semplice trigonometria ne dà la distanza; la missione Gaia dell'ESA lo ha fatto per quasi due miliardi di stelle, spingendosi con precisione fino a decine di migliaia di anni luce."
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "body_paragraphs.1",
+  "old": "Oltre la parallasse, la geometria si esaurisce e si passa alle candele standard — oggetti la cui luminosità intrinseca è nota, cosicché la loro debolezza apparente rivela la loro distanza. Le stelle variabili Cepheid pulsano con un periodo che traccia la loro luminosità: misurate il periodo, leggete la luminosità intrinseca, confrontatela con quanto sembra luminosa. Le Cepheid, calibrate dalla parallasse, estendono la scala fino agli ammassi di galassie vicini — così è stato fissato l'Ammasso della Vergine a circa 16,5 megaparsec.",
+  "new": "Oltre la parallasse la geometria si esaurisce e si passa alle candele standard — oggetti di cui conosciamo la vera luminosità, così che la loro debolezza apparente rivela la distanza. Le stelle variabili Cefeidi pulsano con un periodo legato alla loro luminosità: misurate il periodo, ricavatene la luminosità intrinseca, confrontatela con quanto appare luminosa. Le Cefeidi, calibrate con la parallasse, portano la scala fino agli ammassi di galassie vicini — è così che l'Ammasso della Vergine viene collocato a circa 16,5 megaparsec."
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "body_paragraphs.2",
+  "old": "Per i gradini più alti avete bisogno di una candela più luminosa. Le supernovae di tipo Ia — l'esplosione termonucleare di una nana bianca — raggiungono tutte quasi la stessa luminosità di picco e possono brevemente rivaleggiare con la luce totale della loro galassia ospite, quindi sono visibili per miliardi di anni luce. Calibrate dalle Cepheids in galassie dove entrambe appaiono, estendono la scala profondamente nell'universo in espansione.",
+  "new": "Per i gradini più lontani serve una candela più luminosa. Le supernovae di tipo Ia — l'esplosione termonucleare di una nana bianca — raggiungono tutte quasi la stessa luminosità di picco e possono brevemente rivaleggiare con la luce totale della loro galassia ospite, perciò sono visibili attraverso miliardi di anni luce. Calibrate con le Cefeidi nelle galassie in cui compaiono entrambe, estendono la scala in profondità nell'universo in espansione."
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "diagram_caption",
+  "old": "La scala, gradino per gradino: radar e parallasse (geometria) → variabili Cepheid (calibrate dalla parallasse) → supernovae di tipo Ia (calibrate dalle Cepheid) → spostamento verso il rosso e legge di Hubble. Ogni metodo passa al successivo; le distanze in megaparsec sui gusci esterni /explore poggiano tutti su questa catena.",
+  "new": "La scala, gradino per gradino: radar e parallasse (geometria) → variabili Cefeidi (calibrate con la parallasse) → supernovae di tipo Ia (calibrate con le Cefeidi) → spostamento verso il rosso e legge di Hubble. Ogni metodo passa il testimone al successivo; le distanze in megaparsec sui gusci esterni di /explore poggiano tutte su questa catena."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "intro_sentence",
+  "old": "Nel 2014 gli astronomi hanno ridisegnato la mappa del nostro indirizzo cosmico tracciando come le galassie fluiscono. La risposta è Laniakea, un superammasso molto più grande del Superammasso Locale che credevamo fosse casa nostra.",
+  "new": "Nel 2014 gli astronomi hanno ridisegnato il nostro indirizzo cosmico, non mappando dove stanno le galassie ma dove scorrono: Laniakea, un superammasso ben più grande del Superammasso Locale che credevamo casa nostra."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "body_paragraphs.0",
+  "old": "L'idea è rivoluzionaria. Sulla Terra, un bacino idrografico è definito non da una recinzione ma dal percorso dell'acqua piovana: ogni goccia che scorre verso la stessa foce di fiume appartiene allo stesso bacino. Il team di Brent Tully ha applicato la stessa logica alle galassie. Usando il sondaggio Cosmicflows delle velocità galattiche, hanno mappato la direzione in cui ogni galassia si muove dopo aver sottratto l'espansione complessiva dell'universo, tracciando il confine dove i flussi divergono.",
+  "new": "L'idea è quella dello spartiacque. Sulla Terra un bacino idrografico è definito non da un recinto ma dal verso in cui scorre la pioggia: ogni goccia che arriva alla stessa foce appartiene allo stesso bacino. Il gruppo di Brent Tully ha applicato la stessa logica alle galassie. Usando la raccolta di dati Cosmicflows sulle velocità delle galassie, ha mappato la direzione in cui ciascuna si muove una volta sottratta l'espansione complessiva dell'universo, e ha tracciato il confine dove i flussi divergono."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "body_paragraphs.1",
+  "old": "Il risultato è Laniakea — hawaiano per 'cielo immenso' — circa 160 megaparsec (500 milioni di anni luce) di diametro e casa di approssimativamente 100.000 galassie. Il nostro Superammasso Locale, un tempo considerato l'intero vicinato, si rivela essere un singolo lobo periferico. Tutto dentro Laniakea scorre lentamente verso un unico punto di minimo gravitazionale.",
+  "new": "Il risultato è Laniakea — in hawaiano 'cielo immenso' — larga circa 160 megaparsec (500 milioni di anni luce) e sede di circa 100.000 galassie. Il nostro Superammasso Locale, un tempo ritenuto l'intero vicinato, si rivela essere un lobo periferico. Tutto ciò che si trova dentro Laniakea scorre lentamente verso un unico punto di minimo gravitazionale."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "body_paragraphs.2",
+  "old": "Questo centro è il Grande Attrattore, una concentrazione di massa intorno all'Ammasso Norma (Abell 3627), a circa 65 megaparsec di distanza. È difficile da osservare perché si trova dietro le dense nubi stellari e la polvere del disco della nostra Via Lattea — la 'Zona di Esclusione' — quindi la maggior parte di ciò che sappiamo proviene da indagini radio e infrarosse che penetrano l'oscuramento, oltre che dai movimenti delle galassie stesse.",
+  "new": "Quel fuoco è il Grande Attrattore, una concentrazione di massa attorno all'Ammasso del Regolo (Abell 3627), a circa 65 megaparsec di distanza. È difficile da studiare perché si trova dietro le dense nubi stellari e la polvere del disco della nostra stessa Via Lattea — la 'zona di evitamento' — perciò gran parte di ciò che sappiamo viene da rilevamenti radio e infrarossi che vedono attraverso l'oscuramento, oltre che dai moti delle galassie stesse."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "body_paragraphs.3",
+  "old": "Non finisce qui. Laniakea stessa non è in quiete: l'intero superammasso, insieme ai suoi vicini, è coinvolto in un flusso più ampio verso una concentrazione di massa ancora più grande al di là dei suoi confini — il Superammasso di Shapley, la più densa raccolta conosciuta di ammassi galattici nell'universo vicino. Un bacino dentro una pendenza.",
+  "new": "Non finisce qui. Laniakea stessa non è ferma: l'intero superammasso, insieme ai suoi vicini, è trascinato in un flusso più ampio verso una concentrazione di massa ancora maggiore oltre i suoi confini — il Superammasso di Shapley, la più densa raccolta nota di ammassi di galassie nell'universo vicino. Un bacino dentro un pendio."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "body_paragraphs.4",
+  "old": "E c'è una piega finale. Questi flussi si sono sviluppati nel corso di miliardi di anni, ma l'energia oscura ora spinge l'universo ad espandersi accelerando. Nel tempo cosmico quell'accelerazione prevale: Laniakea non è legata gravitazionalmente e non collasserà in un oggetto unico. È un'istantanea di un flusso, non una struttura che durerà — un modo utile per denominare il nostro posto, non una dimora permanente.",
+  "new": "E c'è un colpo di scena finale. Questi flussi si sono formati nel corso di miliardi di anni, ma ora l'energia oscura fa accelerare l'espansione dell'universo. Nel tempo cosmico quell'accelerazione vince: Laniakea non è legata gravitazionalmente e non collasserà in un unico oggetto. È un'istantanea di un flusso, non una struttura destinata a durare — un modo utile per indicare il nostro posto, non una dimora permanente."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "diagram_caption",
+  "old": "Laniakea come bacino idrografico dei flussi galattici: le linee di corrente convergono sul Grande Attrattore presso l'Ammasso del Regolo, con il Superammasso Locale (il nostro lobo e la nostra posizione) sul bordo. La shell Laniakea /explore rende questi membri schematicamente — distanze reali, layout illustrativo.",
+  "new": "Laniakea come bacino idrografico dei flussi galattici: le linee di corrente convergono sul Grande Attrattore presso l'Ammasso del Regolo, con il Superammasso Locale (il nostro lobo e la nostra posizione) sul bordo. Il guscio Laniakea di /explore rappresenta questi membri in modo schematico — distanze reali, disposizione illustrativa."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "intro_sentence",
+  "old": "Su scale cosmiche, le galassie non sono sparse a caso, ma si riuniscono in gruppi e ammassi lungo filamenti e fogli che circondano vasti vuoti: un motivo schiumoso chiamato ragnatela cosmica.",
+  "new": "Alle scale maggiori le galassie non sono sparse a caso: si riuniscono in gruppi e ammassi lungo filamenti e pareti che avvolgono vasti vuoti quasi privi di materia — una struttura schiumosa detta ragnatela cosmica."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "body_paragraphs.0",
+  "old": "La gerarchia si annida. Le stelle si raccolgono in galassie; le galassie cadono insieme in gruppi (come il nostro Gruppo Locale) e in ammassi ricchi (come l'Ammasso della Vergine, oltre mille galassie legate in un unico pozzo gravitazionale). Gruppi e ammassi sono a loro volta attratti in superammassi — concentrazioni sparse e dall'estensione irregolare, larghe decine di megaparsec. Il nostro Gruppo Locale si trova alla periferia del Superammasso della Vergine, largo ~33 megaparsec (circa 110 milioni di anni luce) e centrato sull'Ammasso della Vergine.",
+  "new": "La gerarchia è annidata. Le stelle si raccolgono in galassie; le galassie cadono insieme in gruppi (come il nostro Gruppo Locale) e in ammassi ricchi (come l'Ammasso della Vergine, oltre mille galassie legate in un unico pozzo gravitazionale). Gruppi e ammassi sono a loro volta attratti in superammassi — concentrazioni sparse e irregolari, larghe decine di megaparsec. Il nostro Gruppo Locale si trova alla periferia del Superammasso Locale, largo ~33 megaparsec (circa 110 milioni di anni luce) e centrato sull'Ammasso della Vergine."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "body_paragraphs.1",
+  "old": "I superammassi non sono il vertice. Mappando i movimenti delle galassie piuttosto che le loro sole posizioni, il Superammasso della Vergine risulta essere uno dei lobi di un bacino di attrazione molto più vasto — Laniakea, che si estende per circa 160 megaparsec, definito nel 2014 come la regione verso cui i flussi galattici scorrono tutti concentrandosi verso un comune fuoco gravitazionale vicino al Grande Attrattore. Laniakea a sua volta confina con superammassi vicini attraverso il cielo.",
+  "new": "I superammassi non sono il livello più alto. Se si mappano i moti delle galassie e non solo le loro posizioni, il Superammasso Locale risulta essere un lobo di un bacino di attrazione molto più vasto — Laniakea, circa 160 megaparsec di diametro, definito nel 2014 come la regione in cui tutti i flussi di galassie convergono verso un comune fuoco gravitazionale vicino al Grande Attrattore. A sua volta Laniakea confina con altri superammassi in tutto il cielo."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "body_paragraphs.2",
+  "old": "Tra i brillanti filamenti si trovano i vuoti — enormi regioni approssimativamente sferiche, larghe decine di megaparsec, quasi vuote di galassie. La maggior parte del volume dell'universo è vuoto; la maggior parte delle galassie vive nelle pareti sottili e nei filamenti tra di essi. Vista alla più grande scala, la distribuzione somiglia a una spugna o a una rete di fili luminosi attorno a bolle buie.",
+  "new": "Tra i filamenti luminosi si trovano i vuoti — enormi regioni approssimativamente sferiche, larghe decine di megaparsec, quasi prive di galassie. La maggior parte del volume dell'universo è vuoto; la maggior parte delle galassie vive nelle pareti sottili e nei filamenti che li separano. Vista alla scala più grande, la distribuzione somiglia a una spugna o a una rete di fili luminosi attorno a bolle buie."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "body_paragraphs.3",
+  "old": "Questo motivo non è decorativo — è il fossile dell'universo primordiale. Minuscole increspature di densità presenti quando l'universo aveva 380.000 anni, impresse sulla radiazione cosmica di fondo, furono amplificate nel corso di miliardi di anni dalla gravità: le regioni dense attrassero più materia e crebbero, le regioni vuote si svuotarono ulteriormente. La materia oscura, che supera la materia ordinaria di circa cinque a uno, fece la maggior parte dell'attrazione e creò l'impalcatura che le galassie visibili illuminarono successivamente.",
+  "new": "Questa struttura non è decorativa — è il fossile dell'universo primordiale. Minuscole increspature di densità presenti quando l'universo aveva 380.000 anni, impresse nel fondo cosmico a microonde, furono amplificate dalla gravità nel corso di miliardi di anni: le regioni dense attrassero più materia e crebbero, le regioni vuote si svuotarono ulteriormente. La materia oscura, che supera la materia ordinaria di circa cinque a uno, fece la maggior parte del lavoro di attrazione e gettò l'impalcatura che le galassie visibili illuminarono in seguito."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "body_paragraphs.4",
+  "old": "La ragnatela cosmica è anche la frontiera della mappa onesta. A queste distanze le posizioni provengono da redshift, non da un metro a nastro, e la struttura più fine dipende dal modello — per questo Orrery rappresenta i gusci della scala esterna come schemi espliciti, distanze reali su un layout illustrativo, anziché pretendere una precisione che nessun sondaggio ancora possiede.",
+  "new": "La ragnatela cosmica è anche la frontiera della mappa onesta. A queste distanze le posizioni derivano dallo spostamento verso il rosso, non da un metro a nastro, e la struttura più fine dipende dal modello — per questo Orrery rappresenta i gusci della scala esterna come schemi espliciti, distanze reali su una disposizione illustrativa, anziché fingere una precisione che nessun rilevamento possiede ancora."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "diagram_caption",
+  "old": "La gerarchia annida che la scala /explore sale: Gruppo Locale → Local Sheet → Superammasso Locale → Laniakea → la ragnatela cosmica di filamenti e vuoti. Ogni guscio è uno schema — distanze reali da catalogo su un layout illustrativo, non una fotografia di una struttura che nessun telescopio può inquadrare.",
+  "new": "La gerarchia annidata che la scala /explore risale: Gruppo Locale → Local Sheet → Superammasso Locale → Laniakea → la ragnatela cosmica di filamenti e vuoti. Ogni guscio è uno schema — distanze reali da catalogo su una disposizione illustrativa, non la fotografia di una struttura che nessun telescopio può inquadrare."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "intro_sentence",
+  "old": "Migliaia di mondi più tardi, la domanda più antica è più vicina a un test che mai — ma l'onestà su ciò che sappiamo e non sappiamo è l'intera disciplina.",
+  "new": "Migliaia di mondi dopo, la domanda più antica è più vicina che mai a diventare un test — ma l'onestà su ciò che sappiamo e su ciò che non sappiamo è l'essenza stessa della disciplina."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "narrative_101.0",
+  "old": "Il conteggio degli esopianeti si estende ora a migliaia, e le statistiche dicono che circa ogni stella ospita pianeti, con piccoli mondi rocciosi nelle zone abitabili che si contano a miliardi nell'intera galassia. Il palcoscenico per la vita, almeno, è vasto.",
+  "new": "Il numero di esopianeti è ormai nell'ordine delle migliaia, e le statistiche dicono che all'incirca ogni stella ospita pianeti, con piccoli mondi rocciosi nelle zone abitabili che si contano a miliardi nell'intera galassia. Il palcoscenico per la vita, almeno, è vasto."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "narrative_101.1",
+  "old": "Questo è ciò che rende il silenzio assordante. Se gli immobili abitabili sono ovunque, dove sono tutti? — la domanda che Enrico Fermi formulò durante un pranzo, ancora senza risposta.",
+  "new": "Ecco ciò che rende il silenzio assordante. Se i luoghi abitabili sono ovunque, dove sono tutti? — la domanda che Enrico Fermi formulò a pranzo, ancora senza risposta."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "narrative_101.2",
+  "old": "Siamo passati da 'esistono altri mondi?' — risolto, sì — a 'qualcuno di essi è vivo?', una domanda che finalmente possiamo iniziare a testare piuttosto che solo dibattere.",
+  "new": "Siamo passati da 'esistono altri mondi?' — risolto, sì — a 'qualcuno di essi è vivo?', una domanda che finalmente possiamo cominciare a verificare invece di limitarci a discuterne."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "body_paragraphs.0",
+  "old": "L'equazione di Drake inquadra le probabilità come una catena di fattori — quante stelle, quante con pianeti, quante abitabili, quante che sviluppano vita, e così via. La scienza degli esopianeti ha ora fissato i primi fattori osservativamente: i pianeti sono comuni, e i mondi rocciosi nella zona abitabile sono abbondanti. I fattori successivi rimangono sconosciuti.",
+  "new": "L'equazione di Drake inquadra le probabilità come una catena di fattori — quante stelle, quante con pianeti, quante abitabili, quante sviluppano la vita, e così via. La scienza degli esopianeti ha ormai determinato per via osservativa i primi fattori: i pianeti sono comuni, e i mondi rocciosi nella zona abitabile sono abbondanti. I fattori successivi restano ignoti."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "body_paragraphs.1",
+  "old": "Il prossimo passo è empirico, non filosofico. Leggere le atmosfere dei mondi rocciosi temperati alla ricerca di biosignature — pazientemente, con strumenti e standard costruiti per sopravvivere al controllo — è il modo in cui la domanda si sposta dalle congetture dell'equazione di Drake verso una misurazione.",
+  "new": "Il prossimo passo è empirico, non filosofico. Leggere le atmosfere dei mondi rocciosi temperati alla ricerca di biosegnature — con pazienza, con strumenti e standard costruiti per reggere al vaglio critico — è il modo in cui la domanda passa dalle congetture dell'equazione di Drake a una misura."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "body_paragraphs.2",
+  "old": "Lo stato onesto dell'arte: nessuna vita al di là della Terra è stata rilevata, nessuna biosignatura confermata. Ma per la prima volta, gli strumenti per cercare sono reali — e questa è la rivoluzione silenziosa che l'era degli esopianeti ha consegnato.",
+  "new": "Lo stato dell'arte, senza abbellimenti: nessuna vita al di là della Terra è stata rilevata, nessuna biosegnatura è stata confermata. Ma per la prima volta gli strumenti per cercare sono reali — ed è questa la rivoluzione silenziosa portata dall'era degli esopianeti."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "narrative_101.0",
+  "old": "La velocità radiale cattura il movimento della stella verso e lontano da noi. L'astrometria cattura l'altra componente — l'oscillazione laterale della stella attraverso il cielo mentre un pianeta la trascina nel suo movimento orbitale.",
+  "new": "La velocità radiale coglie il moto della stella verso di noi e in allontanamento. L'astrometria coglie l'altra componente — l'oscillazione laterale della stella sul cielo mentre un pianeta la tira intorno a sé."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "narrative_101.1",
+  "old": "L'anello che la stella descrive è incredibilmente piccolo, misurato in milionesimi di grado, ed è per questo che l'astrometria è stata a lungo il grande quasi-successo della caccia ai pianeti: promessa per decenni, con risultati scarsi, perché semplicemente non c'era la precisione necessaria.",
+  "new": "L'anello che la stella descrive è incredibilmente piccolo, misurato in milionesimi di grado, ed è per questo che l'astrometria è stata a lungo il grande 'quasi' della caccia ai pianeti: promessa per decenni, con scarsi risultati, perché semplicemente la precisione non c'era."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "body_paragraphs.1",
+  "old": "Storicamente ha prodotto più ritiri che pianeti — la Stella di Barnard è il classico racconto di avvertimento, i suoi famosi \"pianeti\" dall'astrometria degli anni Sessanta tutti spuri. Il segnale è semplicemente minuscolo, e la deriva strumentale lo contraffà facilmente.",
+  "new": "Storicamente ha prodotto più ritrattazioni che pianeti — la Stella di Barnard è l'esempio classico di cautela: i suoi famosi 'pianeti' degli anni Sessanta, scoperti con l'astrometria, erano tutti spuri. Il segnale è semplicemente minuscolo, e la deriva strumentale lo simula con facilità."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "narrative_101.2",
+  "old": "Il test onesto è il contesto e la combinazione: i gas giusti insieme, fuori dall'equilibrio chimico, su un mondo dove la geologia e la luce stellare non possono spiegarli facilmente. È un livello molto alto, e raggiungerlo è l'obiettivo.",
+  "new": "Il test onesto è il contesto e la combinazione: i gas giusti insieme, fuori dall'equilibrio chimico, su un mondo dove la geologia e la luce stellare non possono spiegarli facilmente. È un'asticella molto alta, e arrivarci è proprio lo scopo."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "body_paragraphs.0",
+  "old": "Una biosegnatura è un osservabile — un gas, una caratteristica superficiale, un ciclo stagionale — la cui spiegazione più plausibile è la vita. I casi più forti si basano sul disequilibrio chimico: combinazioni di gas (come ossigeno con metano) che reagiscono scomparendo a meno che non vengano continuamente reintegrati, idealmente insieme a segni che escludono fonti abiotiche.",
+  "new": "Una biosegnatura è un osservabile — un gas, una caratteristica superficiale, un ciclo stagionale — la cui spiegazione più plausibile è la vita. I casi più solidi si basano sul disequilibrio chimico: combinazioni di gas (come ossigeno e metano) che reagiscono tra loro e scompaiono se non vengono continuamente rifornite, idealmente accompagnate da indizi che escludono fonti abiotiche."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "body_paragraphs.1",
+  "old": "Ogni biosegnatura proposta ha falsi positivi noti. L'ossigeno può accumularsi dalla fotolisi dell'acqua su alcuni mondi; il metano ha abbondanti fonti geologiche. Quindi il campo enfatizza linee di evidenza multiple e che si rafforzano reciprocamente, e una modellazione accurata del pianeta e della sua stella prima di qualsiasi affermazione.",
+  "new": "Ogni biosegnatura proposta ha falsi positivi noti. L'ossigeno può accumularsi per fotolisi dell'acqua su alcuni mondi; il metano ha abbondanti fonti geologiche. Per questo la disciplina insiste su più linee di evidenza che si rafforzano a vicenda e su una modellazione accurata del pianeta e della sua stella prima di qualsiasi affermazione."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "body_paragraphs.2",
+  "old": "Nessuna biosegnatura di esopianeti è stata confermata. Rilevarne una richiederebbe prove straordinarie — ed è esattamente per questo che la ricerca viene costruita pazientemente, su strumenti e standard progettati per resistere al controllo che una tale affermazione dovrebbe affrontare.",
+  "new": "Nessuna biosegnatura esoplanetaria è stata confermata. Rilevarne una richiederebbe prove straordinarie — ed è esattamente per questo che la ricerca viene costruita con pazienza, su strumenti e standard progettati per resistere al vaglio a cui una simile affermazione sarebbe sottoposta."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "body_paragraphs.0",
+  "old": "L'imaging diretto blocca o annulla la luce stellare (con un coronografo o un interferometro) per rivelare pianeti e dischi che altrimenti andrebbero persi nel bagliore. Poiché rileva la luce propria del pianeta, consente in modo unico la spettroscopia del mondo in isolamento — una lettura diretta della sua temperatura e atmosfera.",
+  "new": "L'imaging diretto blocca o annulla la luce stellare (con un coronografo o un interferometro) per rivelare pianeti e dischi che altrimenti andrebbero persi nel bagliore. Poiché rileva la luce propria del pianeta, è l'unico metodo che permette la spettroscopia di un mondo isolato dalla sua stella — una lettura diretta della sua temperatura e della sua atmosfera."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "body_paragraphs.1",
+  "old": "La sua distorsione è l'immagine speculare delle altre: favorisce pianeti grandi e autoluminosi lontani dalle loro stelle (orbite ampie facilitano il problema del contrasto, e la giovinezza mantiene il pianeta caldo e luminoso). Sistemi come HR 8799 — quattro pianeti giganti fotografati contemporaneamente — e l'anello di detriti scolpito di Fomalhaut sono esempi emblematici.",
+  "new": "Il suo effetto di selezione è l'immagine speculare di quello degli altri metodi: favorisce pianeti grandi e autoluminosi, lontani dalle loro stelle (orbite ampie attenuano il problema del contrasto, e la giovane età mantiene il pianeta caldo e luminoso). Sistemi come HR 8799 — quattro pianeti giganti ripresi insieme — e l'anello di detriti scolpito di Fomalhaut ne sono esempi emblematici."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "body_paragraphs.2",
+  "old": "Il metodo guida la prossima generazione di strumenti di punta, il cui obiettivo è fotografare e acquisire lo spettro di un pianeta roccioso nella zona abitabile di una stella simile al Sole — e cercare nell'aria segni di vita.",
+  "new": "Il metodo è alla base della prossima generazione di strumenti di punta, il cui obiettivo è fotografare e acquisire lo spettro di un pianeta roccioso nella zona abitabile di una stella simile al Sole — e cercare nella sua aria segni di vita."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "diagram_caption",
+  "old": "Un coronografo maschera il bagliore della stella così il debole pianeta vicino diventa visibile.",
+  "new": "Un coronografo maschera il bagliore della stella, così che il debole pianeta vicino diventi visibile."
+ },
+ {
+  "rel": "science/exoplanets/exoplanet-atmospheres.json",
+  "at": "narrative_101.2",
+  "old": "Finora JWST ha rilevato anidride carbonica e altre molecole su pianeti giganti, e ha iniziato il compito molto più difficile di testare se piccoli mondi rocciosi attorno a nane rosse abbiano un'atmosfera.",
+  "new": "Finora JWST ha rilevato anidride carbonica e altre molecole su pianeti giganti, e ha iniziato il compito molto più difficile di verificare se piccoli mondi rocciosi attorno a nane rosse abbiano un'atmosfera, di qualunque tipo."
+ },
+ {
+  "rel": "science/exoplanets/exoplanet-atmospheres.json",
+  "at": "body_paragraphs.1",
+  "old": "JWST ha spinto il campo dai giganti caldi al limite delle atmosfere dei mondi rocciosi: rilevazioni chiare di anidride carbonica su pianeti gassosi, e ricerche sensibili attorno a TRAPPIST-1 che finora suggeriscono che i suoi pianeti più interni siano in gran parte privi di atmosfera. Le eruzioni delle nane rosse rendono difficile mantenere un'atmosfera, e quel verdetto è esattamente ciò che queste osservazioni testano.",
+  "new": "JWST ha spinto la disciplina dai giganti caldi fino alla soglia delle atmosfere dei mondi rocciosi: rilevazioni nette di anidride carbonica su pianeti gassosi, e ricerche sensibili attorno a TRAPPIST-1 che finora suggeriscono che i suoi pianeti più interni siano in gran parte privi di atmosfera. I brillamenti delle nane rosse rendono difficile conservare un'atmosfera, e proprio questo verdetto è ciò che le osservazioni mettono alla prova."
+ },
+ {
+  "rel": "science/exoplanets/exoplanet-atmospheres.json",
+  "at": "body_paragraphs.2",
+  "old": "L'obiettivo a lungo termine è un pianeta roccioso nella zona abitabile di una stella simile al Sole la cui atmosfera possa essere esaminata alla ricerca di gas che la vita potrebbe produrre — il ponte tecnico dal trovare mondi al caratterizzarli.",
+  "new": "L'obiettivo a lungo termine è un pianeta roccioso nella zona abitabile di una stella simile al Sole, la cui atmosfera possa essere esaminata alla ricerca dei gas che la vita potrebbe produrre — il ponte tecnico che porta dalla scoperta dei mondi alla loro caratterizzazione."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "title",
+  "old": "51 Pegasi b: Il Primo",
+  "new": "51 Pegasi b: il primo"
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "intro_sentence",
+  "old": "Nel 1995 fu scoperto un pianeta gigante che orbita attorno a una stella simile al Sole ogni quattro giorni — la scoperta che ha aperto l'era degli esopianeti e ha vinto un Premio Nobel.",
+  "new": "Nel 1995 fu scoperto un pianeta gigante che sfiora una stella simile al Sole compiendo un'orbita ogni quattro giorni — la scoperta che ha aperto l'era degli esopianeti e che è valsa un Premio Nobel."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "narrative_101.0",
+  "old": "Per secoli altri sistemi solari erano pura speculazione. Questo finì nell'ottobre 1995, quando Michel Mayor e Didier Queloz annunciarono un pianeta attorno a 51 Pegasi, una stella ordinaria simile al Sole a 50 anni luce di distanza.",
+  "new": "Per secoli gli altri sistemi solari sono stati pura speculazione. Tutto ciò finì nell'ottobre 1995, quando Michel Mayor e Didier Queloz annunciarono un pianeta attorno a 51 Pegasi, una stella ordinaria simile al Sole a 50 anni luce di distanza."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "narrative_101.1",
+  "old": "Il pianeta — 51 Pegasi b, informalmente Dimidium — fu uno shock: un mondo con massa gioviana che orbita attorno alla sua stella in soli 4,2 giorni, molto più vicino di quanto si pensasse possibile per un gigante formarsi. Il primo esopianeta attorno a una stella normale non era ciò che nessuno aveva previsto.",
+  "new": "Il pianeta — 51 Pegasi b, informalmente Dimidium — fu una sorpresa sconvolgente: un mondo con massa gioviana che orbita attorno alla sua stella in soli 4,2 giorni, molto più vicino di quanto si ritenesse possibile per la formazione di un gigante. Il primo esopianeta attorno a una stella normale non somigliava a nulla di ciò che chiunque avesse previsto."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "narrative_101.2",
+  "old": "Aprì le porte. Nel giro di anni, decine di altri 'Giove caldi' furono scoperti, la teoria della formazione planetaria acquisì un capitolo sulla migrazione, e nel 2019 Mayor e Queloz condivisero il Premio Nobel per la Fisica.",
+  "new": "Fece cadere ogni argine. Nel giro di pochi anni emersero decine di altri 'Giovi caldi', la teoria della formazione planetaria si arricchì di un capitolo sulla migrazione, e nel 2019 Mayor e Queloz condivisero il Premio Nobel per la Fisica."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "body_paragraphs.0",
+  "old": "51 Pegasi b fu scoperto tramite velocità radiale: una chiara oscillazione Doppler di ~4,2 giorni rivelava un pianeta di almeno metà della massa di Giove in orbita pericolosamente vicino alla sua stella. Fu il primo pianeta confermato attorno a una stella di sequenza principale diversa dal Sole.",
+  "new": "51 Pegasi b fu scoperto con il metodo della velocità radiale: una chiara oscillazione Doppler di ~4,2 giorni rivelava un pianeta con almeno metà della massa di Giove, in orbita pericolosamente vicina alla sua stella. Fu il primo pianeta confermato attorno a una stella di sequenza principale diversa dal Sole."
+ },
+ {
+  "rel": "science/exoplanets/habitable-zone.json",
+  "at": "narrative_101.2",
+  "old": "'Zona abitabile' è una scorciatoia speranzosa, non una promessa. Un mondo lì potrebbe comunque essere una roccia priva d'aria o una serra incontrollata — la posizione è necessaria, non sufficiente.",
+  "new": "La 'zona abitabile' è una formula sintetica e ottimistica, non una promessa. Un mondo lì potrebbe comunque essere una roccia priva d'aria o una serra incontrollata — la posizione è necessaria, non sufficiente."
+ },
+ {
+  "rel": "science/exoplanets/habitable-zone.json",
+  "at": "body_paragraphs.0",
+  "old": "La zona abitabile circumstellare è definita dal flusso stellare: il bordo interno è dove un effetto serra incontrollato farebbe bollire gli oceani (il destino di Venere), il bordo esterno dove nemmeno un forte effetto serra da biossido di carbonio può impedire il congelamento globale (oltre Marte). La sua distanza scala con la radice quadrata della luminosità della stella, quindi si colloca lontano dalle stelle luminose e vicino a quelle deboli.",
+  "new": "La zona abitabile circumstellare è definita dal flusso stellare: il bordo interno è dove un effetto serra incontrollato farebbe bollire gli oceani (il destino di Venere), il bordo esterno dove nemmeno un forte effetto serra da anidride carbonica può impedire il congelamento globale (oltre Marte). La sua distanza cresce con la radice quadrata della luminosità della stella, quindi si colloca lontano dalle stelle luminose e vicino a quelle deboli."
+ },
+ {
+  "rel": "science/exoplanets/habitable-zone.json",
+  "at": "body_paragraphs.1",
+  "old": "Poiché le piccole nane rosse sono di gran lunga le stelle più comuni, la maggior parte dei pianeti in zona abitabile conosciuti orbitano attorno a esse — mondi come TOI-700 d e diversi dei pianeti TRAPPIST-1. Le loro orbite strette portano complicazioni: rotazione sincrona ed esposizione a brillamenti stellari che possono strappare via un'atmosfera.",
+  "new": "Poiché le piccole nane rosse sono di gran lunga le stelle più comuni, la maggior parte dei pianeti in zona abitabile finora noti orbita attorno a esse — mondi come TOI-700 d e diversi pianeti di TRAPPIST-1. Le loro orbite strette portano complicazioni: la rotazione sincrona e l'esposizione ai brillamenti stellari, che possono strappare via un'atmosfera."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "intro_sentence",
+  "old": "Pianeti giganti che orbitano incredibilmente vicini alle loro stelle — la sorpresa che ha accolto le primissime scoperte di esopianeti e ha riscritto il modo in cui pensiamo si formino i pianeti.",
+  "new": "Pianeti giganti in orbita a ridosso delle loro stelle, in un calore rovente — la sorpresa che ha accolto le primissime scoperte di esopianeti e ha riscritto il modo in cui pensiamo si formino i pianeti."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "narrative_101.0",
+  "old": "I primi esopianeti trovati attorno a stelle simili al Sole non somigliavano affatto ai nostri giganti. Invece di un Giove parcheggiato lontano, nel freddo, erano Giove arroventati a pochi raggi stellari dalle loro stelle, che li percorrevano in giorni.",
+  "new": "I primi esopianeti trovati attorno a stelle simili al Sole non somigliavano affatto ai nostri giganti. Invece di un Giove parcheggiato lontano, al freddo, erano Giovi arroventati a pochi raggi stellari dalle loro stelle, che compivano un giro in pochi giorni."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "narrative_101.1",
+  "old": "Nessuno se li aspettava. I giganti gassosi dovevano formarsi lontano, oltre la 'linea della neve' dove il ghiaccio può condensare. Un pianeta gigante che sfiora la sua stella violava i libri di testo — e ha imposto una nuova idea: i pianeti possono migrare verso l'interno dopo essersi formati.",
+  "new": "Nessuno se li aspettava. Si pensava che i giganti gassosi si formassero lontano, oltre la 'linea della neve' dove il ghiaccio può condensare. Un pianeta gigante che sfiora la sua stella contraddiceva i manuali — e costrinse a una nuova idea: i pianeti possono migrare verso l'interno dopo essersi formati."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "narrative_101.2",
+  "old": "Gli Hot Jupiters sono rari in termini assoluti ma facili da trovare — enormi, vicini e con transiti profondi — quindi hanno dominato i primi anni e rimangono gli esopianeti più studiati in assoluto.",
+  "new": "I Giovi caldi sono rari in termini assoluti ma facili da trovare — enormi, vicini e con transiti profondi — perciò hanno dominato i primi anni e restano gli esopianeti più studiati in assoluto."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "body_paragraphs.0",
+  "old": "Gli Hot Jupiters sono giganti gassosi su orbite di soli pochi giorni, con temperature sul lato diurno che spesso superano i 1.000 gradi. La loro esistenza implica una migrazione orbitale su larga scala: probabilmente si sono formati oltre la linea della neve e sono spiralizzati verso l'interno attraverso interazioni con il disco protoplanetario o con altri corpi, finendo dove nessun gigante avrebbe potuto assemblarsi in loco.",
+  "new": "I Giovi caldi sono giganti gassosi su orbite di pochi giorni appena, con temperature sul lato diurno che spesso superano i 1.000 gradi. La loro esistenza implica una migrazione orbitale su larga scala: probabilmente si sono formati oltre la linea della neve e sono scesi a spirale verso l'interno per interazione con il disco protoplanetario o con altri corpi, finendo dove nessun gigante avrebbe potuto formarsi sul posto."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "body_paragraphs.1",
+  "old": "Le loro dimensioni e vicinanza li rendono i cavalli di battaglia della scienza delle atmosfere degli esopianeti. Gonfiati dal calore delle loro stelle, producono transiti profondi e segnali forti, e sono stati i primi mondi ad avere le loro atmosfere, venti e persino code in fuga rilevate.",
+  "new": "Le loro dimensioni e la loro vicinanza ne fanno i cavalli di battaglia della scienza delle atmosfere esoplanetarie. Gonfiati dal calore delle loro stelle, producono transiti profondi e segnali forti, e sono stati i primi mondi di cui sono stati rilevati atmosfera, venti e perfino code in fuga."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "title",
+  "old": "Microlensing Gravitazionale",
+  "new": "Microlensing gravitazionale"
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "intro_sentence",
+  "old": "Quando una stella passa precisamente davanti a un'altra, la sua gravità ingrandisce la stella sullo sfondo — e un pianeta aggiunge un breve lampo extra.",
+  "new": "Quando una stella passa esattamente davanti a un'altra, la sua gravità amplifica la luce della stella sullo sfondo — e un pianeta aggiunge un ulteriore, breve lampo."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "narrative_101.2",
+  "old": "Poiché si basa su un allineamento casuale e unico, ogni evento di microlensing avviene una sola volta e non si ripete mai. Ma il metodo raggiunge dove altri non possono: pianeti freddi lontani dalle loro stelle, e persino mondi fluttuanti liberi non legati ad alcuna stella.",
+  "new": "Poiché dipende da un allineamento casuale e irripetibile, ogni evento di microlensing avviene una sola volta e non si ripete mai. Ma il metodo arriva dove gli altri non riescono: pianeti freddi lontani dalle loro stelle, e perfino mondi alla deriva, non legati ad alcuna stella."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "body_paragraphs.1",
+  "old": "Il compromesso è che gli eventi sono singolari e irripetibili, la stella ospite e il pianeta sono spesso troppo distanti per essere studiati ulteriormente, e la massa e la separazione risultano in qualche modo degeneri. È uno strumento statistico: misura quanto siano comuni i pianeti freddi e fluttuanti liberi, più che catalogare singoli mondi.",
+  "new": "Il compromesso è che gli eventi sono singolari e irripetibili, la stella ospite e il pianeta sono spesso troppo distanti per essere studiati ulteriormente, e massa e separazione risultano in parte degeneri. È uno strumento statistico: misura quanto siano comuni i pianeti freddi e quelli vaganti, più che catalogare singoli mondi."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "body_paragraphs.2",
+  "old": "Il Nancy Grace Roman Space Telescope della NASA condurrà un'ampia indagine di microlensing che si prevede troverà migliaia di questi pianeti altrimenti invisibili, colmando le regioni esterne e fredde del censimento degli esopianeti.",
+  "new": "Il Nancy Grace Roman Space Telescope della NASA condurrà una vasta survey di microlensing che dovrebbe trovare migliaia di questi pianeti altrimenti invisibili, colmando le regioni esterne e fredde del censimento degli esopianeti."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "intro_sentence",
+  "old": "Quando i periodi orbitali dei pianeti formano rapporti semplici di numeri interi, i loro allineamenti ripetuti bloccano il sistema in un ritmo autorinforzante.",
+  "new": "Quando i periodi orbitali dei pianeti formano rapporti semplici tra numeri interi, i loro allineamenti ripetuti agganciano il sistema in un ritmo che si autorinforza."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "narrative_101.2",
+  "old": "Le risonanze sono impronte di come si è formato un sistema — emergono quando i pianeti migrano verso l'interno insieme attraverso il disco di nascita e si catturano a vicenda in sincronia.",
+  "new": "Le risonanze sono impronte del modo in cui si è formato un sistema — emergono quando i pianeti migrano insieme verso l'interno attraverso il disco in cui sono nati e si agganciano a vicenda al passo."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "body_paragraphs.1",
+  "old": "Catene di risonanze, come quella di TRAPPIST-1, sono una forte evidenza di migrazione convergente: pianeti che si formano più lontano e derivano verso l'interno attraverso il disco di gas, rimanendo intrappolati in risonanze successive man mano che procedono. La delicata disposizione rende anche misurabili le spinte reciproche dei pianeti come variazioni nei tempi di transito, ed è così che sono state determinate le loro masse.",
+  "new": "Le catene di risonanze, come quella di TRAPPIST-1, sono una solida prova di migrazione convergente: pianeti che si formano più lontano e derivano verso l'interno attraverso il disco di gas, rimanendo intrappolati in risonanze successive man mano che procedono. La delicata disposizione rende inoltre misurabili le spinte reciproche dei pianeti come variazioni nei tempi di transito, ed è così che ne sono state pesate le masse."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "diagram_caption",
+  "old": "I pianeti in rapporti di periodo quasi interi si allineano ripetutamente, così le loro spinte gravitazionali si rinforzano.",
+  "new": "I pianeti con rapporti di periodo quasi interi si allineano ripetutamente, così che le loro spinte gravitazionali si rinforzano."
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "title",
+  "old": "Formazione e Migrazione",
+  "new": "Formazione e migrazione"
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "narrative_101.1",
+  "old": "Dove si forma un pianeta dipende dalla temperatura: roccia e metallo si condensano vicino, il ghiaccio solo oltre la 'linea della neve'. Ecco perché il Sistema Solare ha piccoli mondi rocciosi all'interno e giganti all'esterno.",
+  "new": "Dove si forma un pianeta dipende dalla temperatura: roccia e metallo condensano vicino alla stella, il ghiaccio solo oltre la 'linea della neve'. Ecco perché il Sistema solare ha piccoli mondi rocciosi all'interno e giganti all'esterno."
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "narrative_101.2",
+  "old": "Ma lo zoo degli esopianeti — Giove caldi, catene in risonanza — ha dimostrato che i pianeti migrano. Essi scambiano momento angolare con il disco e tra loro e possono spiralare lontano da dove sono nati, sconvolgendo il quadro ordinato.",
+  "new": "Ma lo zoo degli esopianeti — Giovi caldi, catene in risonanza — ha dimostrato che i pianeti migrano. Scambiano quantità di moto con il disco e tra loro e possono spostarsi a spirale lontano da dove sono nati, scompigliando il quadro ordinato."
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "body_paragraphs.1",
+  "old": "La migrazione rimescola il risultato. Le coppie gravitazionali tra un pianeta e il gas del disco possono causare una grande deriva radiale, portando i Giove caldi nelle loro orbite roventi e spingendo pianeti più piccoli in catene risonanti. Successivamente, lo scattering tra pianeti può inclinare e allungare ulteriormente le orbite.",
+  "new": "La migrazione rimescola il risultato. Le coppie gravitazionali tra un pianeta e il gas del disco possono causare una grande deriva radiale, portando i Giovi caldi sulle loro orbite roventi e spingendo pianeti più piccoli in catene di risonanze. In seguito, lo scattering tra pianeti può inclinare e allungare ulteriormente le orbite."
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "body_paragraphs.2",
+  "old": "La demografia degli esopianeti — l'abbondanza di giganti vicini, l'ubiquità delle super-Earths, i sistemi multipli in risonanza — sono i vincoli osservativi che qualsiasi teoria di formazione e migrazione deve ora riprodurre.",
+  "new": "La demografia degli esopianeti — l'abbondanza di giganti vicini, l'ubiquità delle super-Terre, i sistemi multipli in risonanza — fornisce i vincoli osservativi che qualsiasi teoria di formazione e migrazione deve ora riprodurre."
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "title",
+  "old": "Proxima Centauri: I Pianeti Più Vicini",
+  "new": "Proxima Centauri: i pianeti più vicini"
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "intro_sentence",
+  "old": "Intorno alla stella più vicina al Sole orbita un pianeta con massa circa simile a quella della Terra nella zona abitabile — il mondo potenzialmente abitabile più vicino, a 4,24 anni luce di distanza.",
+  "new": "Intorno alla stella più vicina al Sole orbita un pianeta di massa all'incirca terrestre nella zona abitabile — il mondo potenzialmente abitabile più vicino, a 4,24 anni luce di distanza."
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "narrative_101.0",
+  "old": "La stella più vicina al Sole, Proxima Centauri, è una piccola nana rossa a soli 4,24 anni luce di distanza — e nel 2016 gli astronomi hanno scoperto un pianeta con massa circa simile a quella della Terra, Proxima b, in orbita intorno ad essa nella sua zona abitabile.",
+  "new": "La stella più vicina al Sole, Proxima Centauri, è una piccola nana rossa a soli 4,24 anni luce di distanza — e nel 2016 gli astronomi hanno scoperto un pianeta di massa all'incirca terrestre, Proxima b, che le orbita attorno nella sua zona abitabile."
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "narrative_101.1",
+  "old": "È il mondo potenzialmente abitabile più vicino che conosciamo, il che lo rende il primo obiettivo naturale per qualsiasi sogno di raggiungere un'altra stella. Il progetto Breakthrough Starshot immagina sonde a vela solare di massa nell'ordine dei grammi che potrebbero raggiungerlo nell'arco di una vita umana.",
+  "new": "È il mondo potenzialmente abitabile più vicino che conosciamo, il che lo rende il primo obiettivo naturale per qualsiasi sogno di raggiungere un'altra stella. Il progetto Breakthrough Starshot immagina sonde a vela leggera dell'ordine del grammo che potrebbero raggiungerlo nell'arco di una vita umana."
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "body_paragraphs.1",
+  "old": "La prossimità è l'intera storia. A 4,24 anni luce il sistema è alla base di esperimenti mentali interstellari, dalle vele solari di Breakthrough Starshot a generazioni di fantascienza, ed è un obiettivo prioritario per future ricerche di imaging diretto.",
+  "new": "Tutto ruota attorno alla vicinanza. A 4,24 anni luce il sistema è alla base di esperimenti mentali interstellari, dalle vele leggere di Breakthrough Starshot a generazioni di fantascienza, ed è un obiettivo prioritario per future ricerche di imaging diretto."
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "body_paragraphs.2",
+  "old": "L'abitabilità è genuinamente incerta. I brillamenti delle nane rosse, la rotazione sincrona e la difficoltà di confermare la presenza di un'atmosfera dalla Terra mantengono Proxima b nella colonna delle ipotesi allettanti ma non provate — il caso di studio più vicino per capire se i mondi delle nane rosse possano ospitare la vita.",
+  "new": "L'abitabilità è davvero incerta. I brillamenti delle nane rosse, la rotazione sincrona e la difficoltà di confermare un'atmosfera dalla Terra mantengono Proxima b nella colonna delle ipotesi allettanti ma non provate — il caso di studio più vicino per capire se i mondi delle nane rosse possano ospitare la vita."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "title",
+  "old": "Il Metodo delle Velocità Radiali",
+  "new": "Il metodo della velocità radiale"
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "intro_sentence",
+  "old": "La gravità di un pianeta spinge la sua stella in una minuscola oscillazione avanti e indietro; uno spettrografo rileva quel movimento come uno spostamento Doppler nella luce stellare.",
+  "new": "La gravità di un pianeta tira la sua stella in una minuscola oscillazione avanti e indietro; uno spettrografo legge quel movimento come uno spostamento Doppler nella luce stellare."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "narrative_101.0",
+  "old": "Un pianeta non orbita semplicemente attorno alla sua stella — i due ruotano intorno al loro centro di massa comune, così la stella traccia un piccolo cerchio a sua volta. Dal nostro punto di osservazione ciò si manifesta come un movimento della stella leggermente verso di noi, poi leggermente lontano, ripetutamente.",
+  "new": "Un pianeta non si limita a orbitare attorno alla sua stella — i due ruotano attorno al loro centro di massa comune, così anche la stella descrive un piccolo cerchio. Dal nostro punto di osservazione ciò appare come un movimento della stella leggermente verso di noi, poi leggermente in allontanamento, ripetutamente."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "narrative_101.2",
+  "old": "L'oscillazione è minuscola: Giove spinge il Sole a circa 12 metri al secondo, la Terra a malapena 9 centimetri al secondo. Raggiungere queste velocità è una storia strumentale di decenni che continua ancora oggi.",
+  "new": "L'oscillazione è minuscola: Giove imprime al Sole un moto di circa 12 metri al secondo, la Terra appena 9 centimetri al secondo. Raggiungere queste velocità è una storia di strumenti lunga decenni e ancora in corso."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "body_paragraphs.0",
+  "old": "La velocità radiale è stato il primo metodo a dare risultati, confermando 51 Pegasi b nel 1995 e dominando il conteggio iniziale degli esopianeti. Misura la velocità della stella lungo la linea di vista dagli spostamenti Doppler nel suo spettro; l'ampiezza di quella velocità (K) scala con la massa del pianeta e diminuisce con la distanza orbitale, quindi favorisce pianeti massicci su orbite brevi — la ragione per cui le prime scoperte furono i 'Giove caldi'.",
+  "new": "La velocità radiale è stato il primo metodo a dare risultati, confermando 51 Pegasi b nel 1995 e dominando il conteggio iniziale degli esopianeti. Misura la velocità della stella lungo la linea di vista dagli spostamenti Doppler nel suo spettro; l'ampiezza di quella velocità (K) cresce con la massa del pianeta e diminuisce con la distanza orbitale, quindi favorisce pianeti massicci su orbite brevi — la ragione per cui le prime scoperte furono i 'Giovi caldi'."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "body_paragraphs.2",
+  "old": "Gli spettrografi moderni come ESPRESSO raggiungono una precisione inferiore al metro per secondo, sufficiente per rilevare i pianeti sub-terrestri trovati di recente intorno alla Stella di Barnard. Abbinata a un transito, la velocità radiale trasforma una dimensione in una densità — e una densità in un'ipotesi su di che cosa un pianeta sia costituito.",
+  "new": "Gli spettrografi moderni come ESPRESSO raggiungono una precisione inferiore al metro per secondo, sufficiente per rilevare i pianeti sub-terrestri trovati di recente intorno alla Stella di Barnard. Abbinata a un transito, la velocità radiale trasforma una dimensione in una densità — e una densità in un'ipotesi su ciò di cui è fatto un pianeta."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "intro_sentence",
+  "old": "I pianeti più comuni della galassia hanno dimensioni che il Sistema Solare ha completamente saltato — più grandi della Terra, più piccoli di Nettuno.",
+  "new": "I pianeti più comuni della galassia hanno dimensioni che il Sistema solare ha completamente saltato — più grandi della Terra, più piccoli di Nettuno."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "narrative_101.0",
+  "old": "Il nostro sistema presenta un vuoto: nulla tra la Terra e Nettuno, un fattore di quasi quattro in dimensione senza membri. La galassia, si scopre, ama quel vuoto — i pianeti al suo interno sono il tipo più comune che abbiamo trovato.",
+  "new": "Il nostro sistema presenta un vuoto: nulla tra la Terra e Nettuno, un intervallo di quasi un fattore quattro nelle dimensioni senza alcun membro. La galassia, si scopre, ama quel vuoto — i pianeti al suo interno sono il tipo più comune che abbiamo trovato."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "narrative_101.1",
+  "old": "Si presentano in due varianti che sfumano l'una nell'altra: super-Terre rocciose fino a circa 1,5 volte la dimensione della Terra, e sub-Nettuni avvolti in gas sopra circa il doppio della dimensione della Terra. Nel mezzo si trova una vera scarsità — la 'valle del raggio' — che suggerisce come questi mondi perdono o mantengono le loro atmosfere.",
+  "new": "Si presentano in due varianti che sfumano l'una nell'altra: super-Terre rocciose fino a circa 1,5 volte la dimensione della Terra, e sub-Nettuni avvolti in gas oltre circa il doppio della dimensione della Terra. In mezzo si trova una vera carenza — la 'valle del raggio' — che suggerisce come questi mondi perdano o conservino le loro atmosfere."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "narrative_101.2",
+  "old": "Poiché non abbiamo alcun esempio locale, questi mondi sono territorio genuinamente alieno: stiamo ancora imparando di cosa sono fatti e se qualcuno potrebbe essere abitabile.",
+  "new": "Poiché non abbiamo alcun esempio locale, questi mondi sono un territorio davvero alieno: stiamo ancora imparando di cosa sono fatti e se qualcuno possa essere abitabile."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "body_paragraphs.0",
+  "old": "Statisticamente, le super-Earths e i sub-Neptunes sono i pianeti più abbondanti della galassia, eppure il Sistema Solare non ne contiene nessuno. La 'valle del raggio' — un calo nel numero di pianeti intorno a 1,5–2 raggi terrestri — sembra dividere i nuclei rocciosi nudi dai mondi che hanno trattenuto un denso involucro di idrogeno-elio o vapore.",
+  "new": "Statisticamente, le super-Terre e i sub-Nettuni sono i pianeti più abbondanti della galassia, eppure il Sistema solare non ne contiene nessuno. La 'valle del raggio' — un calo nel numero di pianeti intorno a 1,5–2 raggi terrestri — sembra dividere i nuclei rocciosi nudi dai mondi che hanno trattenuto un denso involucro di idrogeno-elio o vapore."
+ },
+ {
+  "rel": "science/exoplanets/tidal-locking.json",
+  "at": "narrative_101.1",
+  "old": "Per un mondo roccioso nella zona abitabile di una nana rossa — in orbita in giorni, raccolto vicino — il blocco di marea è quasi inevitabile. Un emisfero cuoce sotto una luce diurna infinita; l'altro congela in una notte infinita; un anello di crepuscolo perpetuo corre in mezzo.",
+  "new": "Per un mondo roccioso nella zona abitabile di una nana rossa — in orbita di pochi giorni, a ridosso della stella — il blocco di marea è quasi inevitabile. Un emisfero cuoce sotto una luce diurna senza fine; l'altro congela in una notte senza fine; in mezzo corre un anello di crepuscolo perpetuo."
+ },
+ {
+  "rel": "science/exoplanets/tidal-locking.json",
+  "at": "body_paragraphs.0",
+  "old": "Il blocco di marea (sincronizzazione spin-orbita) si verifica quando l'attrazione mareale di una stella frena la rotazione di un pianeta vicino finché il suo giorno non eguaglia il suo anno. Poiché l'effetto si intensifica bruscamente con la vicinanza, essenzialmente ogni pianeta roccioso nella zona abitabile di una nana rossa dovrebbe essere bloccato o in uno stato di rotazione risonante correlato.",
+  "new": "Il blocco di marea (sincronizzazione spin-orbita) si verifica quando l'attrazione mareale di una stella frena la rotazione di un pianeta vicino finché il suo giorno non eguaglia il suo anno. Poiché l'effetto si intensifica bruscamente con la vicinanza, praticamente ogni pianeta roccioso nella zona abitabile di una nana rossa dovrebbe essere bloccato o in uno stato di rotazione risonante affine."
+ },
+ {
+  "rel": "science/exoplanets/tidal-locking.json",
+  "at": "body_paragraphs.2",
+  "old": "Poiché le nane rosse ospitano la maggior parte dello spazio immobiliare nella zona abitabile della galassia, il destino dei mondi tidalmente bloccati come Proxima b è centrale per stabilire se le zone abitabili più comuni siano effettivamente abitabili.",
+  "new": "Poiché le nane rosse ospitano la maggior parte delle zone abitabili della galassia, il destino dei mondi in blocco di marea come Proxima b è decisivo per stabilire se le zone abitabili più comuni siano davvero abitabili."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "title",
+  "old": "Variazioni del Tempo di Transito",
+  "new": "Variazioni dei tempi di transito"
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "narrative_101.0",
+  "old": "Un pianeta in transito isolato arriva come un orologio — stesso intervallo, ogni orbita. Ma metti diversi pianeti in un unico sistema e la loro gravità reciproca si spinge a vicenda, così i transiti slittano un po' in anticipo o un po' in ritardo in uno schema ripetuto.",
+  "new": "Un pianeta isolato che transita arriva puntuale come un orologio — stesso intervallo, a ogni orbita. Ma se in un sistema ci sono più pianeti, la loro gravità reciproca li perturba a vicenda, così i transiti slittano un po' in anticipo o un po' in ritardo secondo uno schema che si ripete."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "narrative_101.2",
+  "old": "È così che i sette piccoli mondi di TRAPPIST-1 sono stati pesati: troppo deboli per la velocità radiale, le loro masse sono arrivate dal modo in cui si affrettano e si ritardano a vicenda attraverso la stella.",
+  "new": "È così che sono stati pesati i sette piccoli mondi di TRAPPIST-1: troppo deboli per la velocità radiale, le loro masse sono state ricavate dal modo in cui si anticipano e si ritardano a vicenda mentre attraversano la stella."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "body_paragraphs.0",
+  "old": "Le variazioni del tempo di transito (TTVs) sfruttano le interazioni gravitazionali tra pianeti nello stesso sistema. Un pianeta perfettamente isolato transita con un periodo costante; i pianeti interagenti mostrano deviazioni periodiche la cui ampiezza e schema codificano le masse e le orbite dei pianeti.",
+  "new": "Le variazioni dei tempi di transito (TTV) sfruttano le interazioni gravitazionali tra pianeti dello stesso sistema. Un pianeta perfettamente isolato transita con periodo costante; i pianeti che interagiscono mostrano deviazioni periodiche, la cui ampiezza e il cui andamento codificano le masse e le orbite dei pianeti."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "body_paragraphs.1",
+  "old": "Le TTVs brillano esattamente dove la velocità radiale fatica — attorno a stelle deboli e piccole il cui oscillamento Doppler è sepolto nel rumore — e possono rivelare pianeti non transitanti solo attraverso la loro influenza. Sono più sensibili vicino alle risonanze orbitali, dove incontri ravvicinati ripetuti amplificano gli strattoni.",
+  "new": "Le TTV danno il meglio proprio dove la velocità radiale fatica — attorno a stelle deboli e piccole, la cui oscillazione Doppler è sepolta nel rumore — e possono rivelare pianeti che non transitano, solo attraverso la loro influenza. Sono più sensibili vicino alle risonanze orbitali, dove i ripetuti incontri ravvicinati amplificano le spinte."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "body_paragraphs.2",
+  "old": "Le masse ottenute con questo metodo integrano i raggi di transito per dare densità, motivo per cui i sistemi risonanti compatti come TRAPPIST-1 e le catene multi-pianeta di Kepler sono così ben caratterizzati nonostante orbitino stelle deboli.",
+  "new": "Le masse ottenute con questo metodo integrano i raggi di transito per dare le densità, motivo per cui sistemi risonanti compatti come TRAPPIST-1 e le catene multiplanetarie di Kepler sono così ben caratterizzati pur orbitando attorno a stelle deboli."
+ },
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "intro_sentence",
+  "old": "Quando un pianeta attraversa davanti alla sua stella, blocca una piccola frazione di luce; quel calo periodico di luminosità rivela il pianeta e ne misura le dimensioni.",
+  "new": "Quando un pianeta passa davanti alla sua stella, blocca una piccola frazione di luce; quel calo periodico di luminosità rivela il pianeta e ne misura le dimensioni."
+ },
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "narrative_101.1",
+  "old": "La profondità di quel calo è semplicemente il rapporto delle aree: un pianeta più grande blocca più luce. Una Terra che attraversa il Sole lo attenua di circa una parte su diecimila; un Giove, dell'uno percento. Cattura i cali che si ripetono con regolarità e avrai le dimensioni del pianeta e il suo periodo orbitale.",
+  "new": "La profondità di quel calo è semplicemente il rapporto tra le aree: un pianeta più grande blocca più luce. Una Terra che attraversa il Sole lo attenua di circa una parte su diecimila; un Giove, dell'uno per cento. Individua i cali che si ripetono puntuali come un orologio e avrai le dimensioni del pianeta e il suo periodo orbitale."
+ },
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "narrative_101.2",
+  "old": "Solo una piccola frazione di sistemi è allineata in modo che possiamo vedere i transiti — ma osservando abbastanza stelle i numeri vincono. È esattamente ciò che hanno fatto le missioni Kepler e TESS della NASA, dallo spazio, fissando centinaia di migliaia di stelle contemporaneamente.",
+  "new": "Solo una piccola frazione dei sistemi è allineata in modo da farci vedere i transiti — ma osservando abbastanza stelle i numeri vincono. È esattamente ciò che hanno fatto le missioni Kepler e TESS della NASA, dallo spazio, tenendo sotto osservazione centinaia di migliaia di stelle contemporaneamente."
+ },
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "body_paragraphs.0",
+  "old": "La fotometria di transito è di gran lunga il metodo più produttivo, responsabile della grande maggioranza degli esopianeti conosciuti. Misura direttamente il raggio di un pianeta (dal calo frazionario della luce stellare) e il suo periodo orbitale (dalla spaziatura dei cali); combinato con una massa ottenuta tramite velocità radiale, fornisce una densità media.",
+  "new": "La fotometria di transito è di gran lunga il metodo più produttivo, responsabile della grande maggioranza degli esopianeti noti. Misura direttamente il raggio di un pianeta (dal calo frazionario della luce stellare) e il suo periodo orbitale (dalla distanza tra i cali); combinata con una massa ottenuta dalla velocità radiale, fornisce una densità media."
+ }
+]

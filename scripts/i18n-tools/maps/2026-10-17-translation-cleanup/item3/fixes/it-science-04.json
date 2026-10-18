@@ -1,0 +1,596 @@
+[
+  {
+    "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+    "at": "body_paragraphs.2",
+    "old": "L'ingegneria del cibo è un problema più strano di quanto sembri. La microgravità cambia la deglutizione (il bolo va spinto attivamente; gli astronauti masticano ogni boccone più volte che sulla Terra), cambia il gusto (lo spostamento dei fluidi verso la testa riduce di ~30% la percezione degli odori, e quindi anche del gusto — gli astronauti descrivono tutto come insipido nelle prime 2 settimane), cambia l'appetito (quasi tutti perdono il 5-10% del peso nel primo mese di spedizione; il corpo è in uno stato metabolico diverso rispetto a 1 g) e cambia il rischio di soffocamento (nessuna gravità che porti un boccone deviato nel condotto giusto). La risposta dell'SSI Food System sono cibi che non si sbriciolano (niente pane; si mangiano tortillas), cibi che si tengono insieme (molte salse e sughi che legano il pasto), sapori forti (la salsa piccante è leggendariamente consumata in eccesso sulla SSI) e assolutamente niente bevande gassate (le bollicine non si separano dal liquido in microgravità, il che rende bere acqua frizzante in assenza di peso un'esperienza unicamente sgradevole).",
+    "new": "L'ingegneria del cibo è un problema più strano di quanto sembri. La microgravità cambia la deglutizione (il bolo va spinto attivamente; gli astronauti masticano ogni boccone più volte che sulla Terra), cambia il gusto (lo spostamento dei fluidi verso la testa riduce di ~30% la percezione degli odori, e quindi anche del gusto — gli astronauti descrivono tutto come insipido nelle prime 2 settimane), cambia l'appetito (quasi tutti perdono il 5-10% del peso corporeo nel primo mese di spedizione; il corpo è in uno stato metabolico diverso rispetto a 1 g) e cambia il rischio di soffocamento (non c'è gravità che porti un boccone deviato nel condotto giusto). La risposta ingegneristica dell'ISS Food System consiste in cibi che non si sbriciolano (niente pane; si mangiano tortillas), cibi che si tengono insieme (molte salse e sughi che legano il pasto), sapori forti (la salsa piccante è proverbialmente la più consumata sulla SSI) e assolutamente niente bevande gassate (le bollicine non si separano dal liquido in microgravità, il che rende bere acqua frizzante in assenza di peso un'esperienza particolarmente sgradevole)."
+  },
+  {
+    "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+    "at": "body_paragraphs.3",
+    "old": "Il fabbisogno calorico è più alto nello spazio che sulla Terra — tipicamente 2800-3000 kcal/giorno per un astronauta maschio sulla SSI, contro 2400-2600 a 1 g. In parte è dovuto all'esercizio (2 ore al giorno di forza e cardio, ne parliamo nell'articolo sulla perdita di densità ossea), in parte alla maggiore richiesta metabolica delle continue microcorrezioni contro la deriva. Lo Space Food Systems Laboratory della NASA al Johnson gestisce circa 200 piatti per ogni rotazione dell'equipaggio; Roscosmos ha un programma di menu parallelo; la CMSA cinese ha costruito un proprio menu orientato alla cucina cinese (maiale sfilacciato yuxiang, pollo kung pao, tutto adattato alla microgravità). Le missioni internazionali si contaminano: i membri dell'equipaggio SSI di qualsiasi nazionalità possono chiedere cibo a qualunque agenzia partner. Il programma Apollo usava buste cucchiaio-ciotola e reidratazione di liofilizzati; lo Shuttle passò alle buste termostabilizzate; la SSI usa un mix; i menu per i viaggi verso Marte sono ancora in fase di progetto — il problema di conservazione del cibo più lungo dell'intero progetto.",
+    "new": "Il fabbisogno calorico è più alto nello spazio che sulla Terra — tipicamente 2800-3000 kcal/giorno per un astronauta maschio sulla SSI, contro 2400-2600 a 1 g. In parte è dovuto all'esercizio (2 ore al giorno di forza e cardio, ne parliamo nell'articolo sulla perdita di densità ossea), in parte alla maggiore richiesta metabolica delle continue microcorrezioni contro la deriva. Lo Space Food Systems Laboratory della NASA al Johnson gestisce circa 200 piatti per ogni rotazione dell'equipaggio; Roscosmos ha un programma di menu parallelo; la CMSA cinese ha costruito un proprio menu orientato alla cucina cinese (maiale sfilacciato yuxiang, pollo kung pao, tutto adattato alla microgravità). Le missioni internazionali si fecondano a vicenda: i membri dell'equipaggio della SSI di qualsiasi nazionalità possono chiedere cibo a qualunque agenzia partner. Il programma Apollo usava buste cucchiaio-ciotola e reidratazione di liofilizzati; lo Shuttle passò alle buste termostabilizzate; la SSI usa un mix; i menu per i viaggi verso Marte sono ancora in fase di progetto — il problema di conservazione del cibo più lungo dell'intero progetto."
+  },
+  {
+    "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+    "at": "diagram_caption",
+    "old": "Corpo vuole: una alba, gravità per deglutire, gravità per separare bolle, 7–8 h sonno. SSI dà: 16 albe/giorno, 0 g, niente gasata, ~6 h sonno. Contromisure: orario GMT + illuminazione circadiana + cabine sigillate + cibo ingegnerizzato + acqua riciclata.",
+    "new": "Il corpo vuole: un'unica alba, la gravità per deglutire, la gravità per far depositare le bolle, 7–8 h di sonno. La SSI offre: 16 albe al giorno, 0 g, niente bevande gassate, ~6 h di sonno. Contromisure: orario rigido su GMT + illuminazione circadiana + cabine di riposo sigillate + cibo ingegnerizzato + acqua riciclata."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "title",
+    "old": "Genealogia delle tute — Sokol a Orlan a Feitian, A7L a AxEMU",
+    "new": "Genealogia delle tute — dal Sokol all'Orlan al Feitian, dall'A7L all'AxEMU"
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "intro_sentence",
+    "old": "Ogni tuta spaziale moderna discende da una di tre famiglie: americana derivata da Apollo, sovietica/russa Sokol + Orlan, e cinese Feitian (derivata da Orlan). Sei decenni, tre stirpi, molti scambi tecnologici.",
+    "new": "Ogni tuta spaziale moderna discende da una di tre famiglie: americana derivata da Apollo, sovietica/russa Sokol + Orlan e cinese Feitian (a sua volta derivata dall'Orlan). Sei decenni, tre stirpi, molti scambi tecnologici."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "body_paragraphs.0",
+    "old": "**Genealogia delle tute — Sokol verso Orlan verso Feitian, A7L verso AxEMU**\n\nIl problema originario della tuta IVA era semplice e terribile: mantenere in vita l'equipaggio se il veicolo spaziale perdeva pressione. I cosmonauti di Vostok e Voskhod indossavano tute SK-1 / Berkut. Mercury utilizzava una Mark IV modificata della Marina. Gemini usava la G3C / G4C. Nessuna di queste fu testata come salvavita in caso di decompressione totale perché nessun volo aveva mai subito una perdita di pressione della cabina. Poi nel giugno 1971 la Soyuz 11 tornò con l'equipaggio morto per decompressione rapida durante la separazione — Dobrovol'skij, Volkov, Pacaev indossavano solo magliette perché la cabina della Soyuz non poteva contenere tre cosmonauti in tuta. La risposta sovietica fu la Sokol K-V (1973), una tuta pressurizzata leggera in tessuto elastomerizzato progettata specificamente per adattarsi alla sedia della Soyuz e gonfiarsi in pochi secondi se la cabina cedeva. Ogni equipaggio della Soyuz da allora indossa un discendente della Sokol — l'attuale Sokol-M è la sua variante modernizzata più recente.",
+    "new": "Il problema originario della tuta IVA era semplice e terribile: mantenere in vita l'equipaggio se il veicolo spaziale perdeva pressione. I cosmonauti di Vostok e Voskhod indossavano tute SK-1 / Berkut. Mercury utilizzava una Mark IV modificata della Marina. Gemini usava la G3C / G4C. Nessuna di queste fu testata come salvavita in caso di decompressione totale, perché nessun volo aveva mai subito una perdita di pressione della cabina. Poi, nel giugno 1971, la Soyuz 11 tornò con l'equipaggio morto per decompressione rapida durante la separazione — Dobrovol'skij, Volkov e Pacaev erano in maniche di camicia perché la cabina della Soyuz non poteva contenere tre cosmonauti in tuta. La risposta sovietica fu la Sokol K-V (1973), una tuta pressurizzata leggera in tessuto gommato, progettata appositamente per entrare nel sedile della Soyuz e gonfiarsi in pochi secondi se la cabina cedeva. Da allora ogni equipaggio della Soyuz indossa un discendente della Sokol — l'attuale Sokol-M è la sua variante modernizzata più recente."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "body_paragraphs.1",
+    "old": "La stirpe IVA americana ha subito più iterazioni. Apollo usava la Block I stagno alla pressione (che uccise Grissom-White-Chaffee nell'incendio del 1967) poi Block II (redesign post-incendio). Lo Shuttle usò la Launch Entry Suit (LES arancione, 1988-94) poi l'ACES — Advanced Crew Escape Suit (1994-2011). Quando lo Shuttle si ritirò e i voli americani ripresero nel 2020, sia SpaceX che Boeing produssero le proprie tute IVA da zero — la SpaceX Crew Dragon IVA (adattata su misura, entrata a zip singola, progettata da Jose Fernandez con background da costumista hollywoodiano) e la Boeing Starliner IVA (linea di design NASA più convenzionale). Nessuna è certificata per EVA. Entrambe ereditano il contratto funzionale Sokol — protezione contro la decompressione rapida, adattamento a singolo occupante, integrazione con il seggiolino — ma nessuna condivide la lista delle parti Sokol.",
+    "new": "La stirpe IVA americana ha attraversato più iterazioni. Apollo usava la Block I a tenuta di pressione (che uccise Grissom, White e Chaffee nell'incendio del 1967) e poi la Block II (riprogettata dopo l'incendio). Lo Shuttle usò la Launch Entry Suit (LES arancione, 1988-94) e poi l'ACES — Advanced Crew Escape Suit (1994-2011). Quando lo Shuttle andò in pensione e i voli americani ripresero nel 2020, sia SpaceX sia Boeing produssero le proprie tute IVA da zero — la SpaceX Crew Dragon IVA (su misura, in un unico pezzo con ingresso a cerniera, progettata da Jose Fernandez con un passato da costumista a Hollywood) e la Boeing Starliner IVA (di impostazione NASA più convenzionale). Nessuna delle due è certificata per l'EVA. Entrambe ereditano il compito funzionale della Sokol — proteggere dalla decompressione rapida, vestire un solo occupante, integrarsi con il sedile — ma nessuna condivide la lista dei componenti della Sokol."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "body_paragraphs.2",
+    "old": "La stirpe EVA americana inizia con A7L (Apollo, 1969-72) e A7LB (Apollo successivo, 1971-72), poi l'EMU (Extravehicular Mobility Unit, 1981-presente), che è la celebre tuta bianca modulare usata per ogni EVA americana su Skylab, Shuttle e SSI. L'EMU è ormai nei suoi 40+ anni di servizio — più nuova della maggior parte degli aerei, più vecchia della maggior parte dell'hardware operativo in stazione. I suoi componenti includono l'HUT (Hard Upper Torso, il guscio bianco), l'LCVG (Liquid Cooling and Ventilation Garment — tubi d'acqua sulla pelle), l'LTA (Lower Torso Assembly), il PLSS (Portable Life Support System, lo zaino — scrubbing CO₂ + raffreddamento ad acqua + ossigeno + radio), e il MAG (Maximum Absorbency Garment — pannolone dell'astronauta, un'acquisizione Lockheed-Martin degli anni '80). La produzione EMU si fermò dopo il programma Shuttle; le tute attualmente in volo sono ricondizionate da costruzioni anni '80-'90, con parti cannibalizzate da unità ritirate. L'AxEMU (Axiom Space EMU, per EVA lunare Artemis III) è la prima nuova tuta EVA americana dai tempi dell'originale; eredita la filosofia modulare ma ricostruisce ogni sottosistema.",
+    "new": "La stirpe EVA americana inizia con la A7L (Apollo, 1969-72) e la A7LB (Apollo successivo, 1971-72), poi l'EMU (Extravehicular Mobility Unit, 1981-oggi), la celebre tuta bianca modulare usata per ogni EVA americana su Skylab, Shuttle e SSI. L'EMU è ormai oltre i 40 anni di servizio — più recente della maggior parte degli aerei, più vecchia della maggior parte dell'hardware operativo in stazione. I suoi componenti includono l'HUT (Hard Upper Torso, il guscio bianco), l'LCVG (Liquid Cooling and Ventilation Garment — tubi d'acqua a contatto con la pelle), l'LTA (Lower Torso Assembly), il PLSS (Portable Life Support System, lo zaino — rimozione della CO₂ + raffreddamento ad acqua + ossigeno + radio) e il MAG (Maximum Absorbency Garment — il pannolone dell'astronauta, un'acquisizione Lockheed-Martin degli anni '80). La produzione dell'EMU si fermò dopo il programma Shuttle; le tute attualmente in volo sono ricondizionate da esemplari costruiti negli anni '80-'90, con parti recuperate da unità ritirate. L'AxEMU (Axiom Space EMU, per l'EVA lunare di Artemis III) è la prima nuova tuta EVA americana dai tempi dell'originale; eredita la filosofia modulare ma ricostruisce ogni sottosistema."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "body_paragraphs.3",
+    "old": "La stirpe EVA russa è Orlan ('aquila di mare'), continua dal 1977. A differenza dell'EMU americano semi-modulare, Orlan è una tuta monoblocco con entrata posteriore — l'astronauta entra attraverso un portello posteriore, chiude il portello, ed è vestito. Preparazione di cinque minuti contro i 30 minuti di vestizione stratificata dell'EMU. Orlan funziona anche a pressione più alta (5,8 psi contro i 4,3 psi dell'EMU) che consente finestre di pre-respiro più brevi in cambio di maggiore rigidità. L'attuale Orlan-MKS (introdotta 2017) è la settima generazione; utilizzata in ogni EVA russa dal 2017 e nelle prime EVA con equipaggio di Tiangong nel 2021-22 prima che diventasse disponibile il Feitian cinese.",
+    "new": "La stirpe EVA russa è l'Orlan ('aquila di mare'), in uso continuo dal 1977. A differenza dell'EMU americano semimodulare, l'Orlan è una tuta monoblocco con ingresso posteriore — l'astronauta entra attraverso un portello sulla schiena, chiude il portello ed è pronto. Preparazione di cinque minuti contro i 30 minuti di vestizione a strati dell'EMU. L'Orlan funziona anche a pressione più alta (5,8 psi contro i 4,3 psi dell'EMU), il che consente tempi di pre-respirazione più brevi in cambio di maggiore rigidità. L'attuale Orlan-MKS (introdotta nel 2017) è la settima generazione; è stata usata in ogni EVA russa dal 2017 e nelle prime EVA con equipaggio di Tiangong nel 2021-22, prima che la Feitian cinese diventasse disponibile."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "body_paragraphs.4",
+    "old": "Feitian ('cielo volante') è la tuta EVA cinese, debuttata su Shenzhou 7 (2008) per la prima EVA del paese, e ora nella variante seconda-generazione Feitian-2 su Tiangong. Feitian è derivata da Orlan — entrata posteriore monoblocco, geometria interna simile, pressione di funzionamento simile — ma costruita localmente con materiali di provenienza cinese e controllo termico sviluppato in Cina. La genealogia è ammessa apertamente: l'ACC (Centro Astronauti cinese) aveva ingegneri addestrati da Roscosmos come consulenti sul primo Feitian, e la tuta seconda-gen ha ulteriormente personalizzato il design per l'airlock Wentian di Tiangong. L'ironia geopolitica è che Feitian — una tuta di stirpe russa — rappresenta l'unica capacità EVA attualmente operativa al di fuori della partnership SSI USA-Russia. AxEMU (americana, orientata lunare) è in sviluppo. Al di là di questi tre, non esiste nessun'altra tuta EVA operativa al mondo oggi; il mercato IVA è più diversificato (Sokol-M, Crew Dragon IVA, Starliner IVA, Shenzhou IVA, Gaganyaan IVA pianificato dall'India), ma EVA rimane un mondo di tre tute.",
+    "new": "La Feitian ('cielo volante') è la tuta EVA cinese, debuttata su Shenzhou 7 (2008) per la prima EVA del paese e ora nella variante di seconda generazione Feitian-2 su Tiangong. La Feitian deriva dall'Orlan — monoblocco con ingresso posteriore, geometria interna simile, pressione di funzionamento simile — ma è costruita in Cina con materiali di provenienza cinese e un controllo termico sviluppato in Cina. La parentela è ammessa apertamente: l'ACC (Centro astronauti cinese) ebbe come consulenti sulla prima Feitian ingegneri addestrati da Roscosmos, e la tuta di seconda generazione ha adattato ulteriormente il progetto alla camera di equilibrio Wentian di Tiangong. L'ironia geopolitica è che la Feitian — una tuta di stirpe russa — rappresenta l'unica capacità EVA attualmente operativa al di fuori della partnership della SSI tra Stati Uniti e Russia. L'AxEMU (americana, destinata alla Luna) è in sviluppo. Oltre a queste tre, oggi al mondo non esiste nessun'altra tuta EVA operativa; il mercato delle tute IVA è più diversificato (Sokol-M, Crew Dragon IVA, Starliner IVA, Shenzhou IVA, la tuta IVA pianificata per il Gaganyaan indiano), ma per l'EVA resta un mondo a tre tute."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "diagram_caption",
+    "old": "Tre stirpi: IVA americana (Mercury Mark IV → ACES → SpaceX / Starliner) + EVA americana (A7L/A7LB → EMU → AxEMU). IVA russa (Sokol K → Sokol-M) + EVA russa (Orlan → Orlan-MKS). EVA cinese (Feitian, derivata da Orlan, seconda-gen su Tiangong). Lo scambio tecnologico è la regola, non l'eccezione — ogni tuta moderna prende in prestito da almeno un antenato in un'altra stirpe.",
+    "new": "Tre stirpi: IVA americana (Mercury Mark IV → ACES → SpaceX / Starliner) + EVA americana (A7L/A7LB → EMU → AxEMU). IVA russa (Sokol K → Sokol-M) + EVA russa (Orlan → Orlan-MKS). EVA cinese (Feitian, derivata dall'Orlan, di seconda generazione su Tiangong). Lo scambio tecnologico è la regola, non l'eccezione — ogni tuta moderna prende in prestito qualcosa da almeno un antenato di un'altra stirpe."
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "title",
+    "old": "Polvere superficiale — il pericolo lunare + marziano che tutti hanno sottovalutato",
+    "new": "La polvere in superficie — il pericolo lunare e marziano che tutti hanno sottovalutato"
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "intro_sentence",
+    "old": "Equipaggi Apollo tornarono con tute abrase dopo 10 EVA e camere d'aria bloccate da polvere. La regolite marziana è chimicamente tossica. Ogni architettura lunga è costruita attorno a protocolli di polvere — pericolo operativo persistente.",
+    "new": "Gli equipaggi Apollo tornarono con tute abrase dopo 10 EVA e camere di equilibrio bloccate. La regolite marziana è chimicamente tossica. Ogni architettura di lunga permanenza ruota attorno ai protocolli antipolvere."
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.0",
+    "old": "La polvere lunare è meccanicamente pericolosa in un modo per cui nessuna polvere terrestre ti prepara. La superficie è una regolite fine — dimensioni delle particelle dal sub-micron alla sabbia grossolana, mediana 70 µm — creata da 4 miliardi di anni di impatti di micrometeoriti. Ogni impatto è una piccola esplosione che frammenta la roccia esistente; i frammenti si raffreddano nel vuoto senza acqua per arrotondare i loro bordi. Il risultato è una polvere di schegge di vetro angolari, più affilate del vetro polverizzato. Si aggiunge al pericolo: la regolite lunare è caricata elettrostaticamente da fotoionizzazione UV sul lato diurno e da esposizione al plasma nella zona del terminator lunare. La polvere caricata aderisce a tutto — si attacca al tessuto della tuta tramite adesione elettrostatica a un livello che la spazzolatura da sola non può rimuovere. Gli equipaggi Apollo hanno riportato che la polvere lunare degradava le guarnizioni di articolazione della tuta EVA dopo circa 10 EVA (Apollo 17 è stata l'unica missione a fare tre EVA consecutivi, e la cerniera della tuta di Cernan mostrava usura al terzo).",
+    "new": "La polvere lunare è meccanicamente pericolosa in un modo per cui nessuna polvere terrestre ti prepara. La superficie è una regolite fine — dimensioni delle particelle dal submicrometrico alla sabbia grossolana, mediana 70 µm — creata da 4 miliardi di anni di impatti di micrometeoriti. Ogni impatto è una piccola esplosione che frammenta la roccia esistente; i frammenti si raffreddano nel vuoto, senza acqua che ne arrotondi i bordi. Il risultato è una polvere di schegge di vetro angolari, più affilate del vetro macinato. A peggiorare le cose, la regolite lunare è carica elettrostaticamente per fotoionizzazione UV sul lato diurno e per l'esposizione al plasma nella zona del terminatore lunare. La polvere carica aderisce a tutto — si attacca al tessuto della tuta per adesione elettrostatica con una forza che la sola spazzolatura non riesce a rimuovere. Gli equipaggi Apollo hanno riferito che la polvere lunare degradava le guarnizioni delle articolazioni delle tute EVA dopo circa 10 EVA (Apollo 17 è stata l'unica missione a compiere tre EVA consecutive, e la cerniera della tuta di Cernan mostrava segni di usura già alla terza)."
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.1",
+    "old": "Impatti operativi su Apollo: le tenute delle camere d'aria si bloccavano quando la polvere contaminava le interfacce delle guarnizioni; le linee del refrigerante sul PLSS (Portable Life Support System) del LM si intasavano con polvere entrata attraverso l'ombelicale della tuta; le telecamere e gli strumenti necessitavano di costante spazzolatura; i contenitori di ritorno campioni non potevano sigillarsi correttamente contro l'intrusione di polvere; e l'atmosfera della cabina LM dopo il terzo EVA aveva un odore che tutti i 12 astronauti che hanno camminato sulla luna hanno descritto come 'polvere da sparo' o 'fuochi d'artificio esausti' (la causa effettiva è ancora dibattuta — possibilmente particelle di nano-ferro che si riossidano al contatto con l'O₂ della cabina). Diversi membri dell'equipaggio Apollo hanno riportato sintomi tipo febbre da fieno nella cabina LM durante i periodi di riposo tra gli EVA. Nessuno è stato un blocco per missioni di 12-72 ore; tutti diventerebbero blocchi per una presenza sostenuta.",
+    "new": "Effetti operativi su Apollo: le guarnizioni della camera di equilibrio si bloccavano quando la polvere contaminava le superfici di tenuta; le linee del refrigerante del PLSS (Portable Life Support System) del LM si intasavano con la polvere entrata attraverso l'ombelicale della tuta; telecamere e strumenti richiedevano una spazzolatura costante; i contenitori per il rientro dei campioni non si sigillavano bene a causa della polvere; e l'atmosfera della cabina del LM dopo la terza EVA aveva un odore che tutti i 12 astronauti che hanno camminato sulla Luna hanno descritto come «polvere da sparo» o «fuochi d'artificio appena esplosi» (la causa effettiva è ancora dibattuta — forse particelle di nanoferro che si riossidano a contatto con l'O₂ della cabina). Diversi membri degli equipaggi Apollo hanno riferito sintomi simili alla febbre da fieno nella cabina del LM durante i periodi di riposo tra le EVA. Nessuno di questi problemi era insormontabile per missioni di 12-72 ore; tutti lo diventerebbero per una presenza prolungata."
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.2",
+    "old": "La polvere su Marte è chimicamente pericolosa in un modo che la Luna non è. Phoenix lander (2008) ha confermato tramite chimica umida che la regolite marziana contiene 0,5-1% in massa di sali di perclorato (ClO₄⁻), più clorato e clorito. I perclorati sono disruttori endocrini tiroidei a concentrazioni superiori a ~25 ppb; ingerire polvere marziana non filtrata fornirebbe dosi di ordini di grandezza sopra il limite OSHA per il posto di lavoro in pochi minuti. Curiosity e Perseverance hanno confermato la distribuzione di perclorato sia su siti equatoriali che ad alta latitudine — è globale. La polvere marziana è anche significativamente più alterata della polvere lunare (l'acqua ha agito su di essa durante il passato più umido del pianeta), con forme di particella più rotonde e minore caricamento elettrostatico, quindi il pericolo meccanico è inferiore. Ma il pericolo chimico significa che l'ingresso di polvere marziana nell'habitat è un'emergenza medica, non solo un fastidio operativo.",
+    "new": "La polvere su Marte è chimicamente pericolosa in un modo che la Luna non conosce. Il lander Phoenix (2008) ha confermato con la chimica per via umida che la regolite marziana contiene lo 0,5-1% in massa di sali di perclorato (ClO₄⁻), oltre a clorato e clorito. I perclorati sono interferenti endocrini che agiscono sulla tiroide a concentrazioni superiori a ~25 ppb; ingerire polvere marziana non filtrata darebbe in pochi minuti dosi superiori di ordini di grandezza al limite OSHA per i luoghi di lavoro. Curiosity e Perseverance hanno confermato la presenza di perclorato sia in siti equatoriali sia ad alta latitudine — è globale. La polvere marziana è anche molto più alterata di quella lunare (l'acqua ha agito su di essa durante il passato più umido del pianeta), con particelle di forma più arrotondata e una carica elettrostatica minore, quindi il pericolo meccanico è inferiore. Ma il pericolo chimico fa sì che l'ingresso di polvere marziana nell'habitat sia un'emergenza medica, non solo un fastidio operativo."
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.3",
+    "old": "L'architettura di mitigazione che è emersa è la camera d'aria suitlock. Invece di ciclare le tute attraverso una camera d'aria pressurizzata (approccio Apollo, Shuttle, SSI), il suitlock mantiene la tuta permanentemente all'esterno, attaccata allo scafo esterno dell'habitat tramite una porta-zaino. L'equipaggio sale nella tuta dall'interno dell'habitat senza portare polvere nel volume pressurizzato. Il prototipo Mars Z-2, la tuta EVA Artemis di Boeing-Collins Aerospace, la tuta ILRS derivata dall'Orlan russo e la tuta EVA lunare cinese derivata dal Feitian sono tutte progettate attorno all'attacco suitlock. Tecnologia supplementare: Electrostatic Dust Shield (ESD), un'invenzione NASA Kennedy che mette tensioni AC attraverso rivestimenti superficiali per sollevare la polvere caricata via forze elettroidrodinamiche, dimostrata a scala lab + piccolo volo (esperimenti CubeSat). Filtrazione HEPA interna ad ogni ciclo di camera d'aria. Doccia di decontaminazione (risciacquo con acqua) prima del rientro in zone più profonde dell'habitat. Tutte sono necessarie; nessuna da sola è sufficiente. La polvere sarà il rischio operativo quotidiano più gestito di qualsiasi permanenza in superficie superiore a 30 giorni.",
+    "new": "L'architettura di mitigazione emersa è la camera di equilibrio di tipo suitlock. Invece di far passare le tute attraverso una camera di equilibrio pressurizzata (l'approccio di Apollo, Shuttle e SSI), il suitlock tiene la tuta permanentemente all'esterno, agganciata allo scafo esterno dell'habitat tramite una porta di collegamento dello zaino. L'equipaggio entra nella tuta dall'interno dell'habitat senza portare polvere nel volume pressurizzato. Il prototipo Mars Z-2, la tuta EVA Artemis di Boeing-Collins Aerospace, la tuta ILRS derivata dall'Orlan russo e la tuta EVA lunare cinese derivata dalla Feitian sono tutte progettate attorno all'attacco suitlock. Tecnologie complementari: l'Electrostatic Dust Shield (ESD), un'invenzione del Kennedy della NASA che applica tensioni in corrente alternata ai rivestimenti delle superfici per sollevare la polvere carica tramite forze elettroidrodinamiche, dimostrata in laboratorio e in voli su piccola scala (esperimenti con CubeSat). Filtrazione HEPA interna a ogni ciclo della camera di equilibrio. Doccia di decontaminazione (risciacquo con acqua) prima di rientrare nelle zone più interne dell'habitat. Tutte sono necessarie; nessuna da sola è sufficiente. La polvere sarà il rischio operativo quotidiano più gestito in qualsiasi permanenza in superficie superiore a 30 giorni."
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "diagram_caption",
+    "old": "Polvere lunare: schegge di vetro angolari, caricate elettrostaticamente, meccanicamente distruttive (usura delle tenute tuta Apollo a 10 EVA). Polvere marziana: chimicamente tossica (0,5-1% perclorato in massa, disruptore endocrino tiroideo). Mitigazione: camere d'aria suitlock (la tuta vive fuori, nessun ingresso polvere), Electrostatic Dust Shield, filtrazione HEPA, docce di decontaminazione. Tutte e quattro sono necessarie insieme.",
+    "new": "Polvere lunare: schegge di vetro angolari, cariche elettrostaticamente, meccanicamente distruttive (usura delle guarnizioni delle tute Apollo dopo 10 EVA). Polvere marziana: chimicamente tossica (0,5-1% di perclorato in massa, interferente endocrino sulla tiroide). Mitigazione: camere di equilibrio suitlock (la tuta resta fuori, nessuna polvere in ingresso), Electrostatic Dust Shield, filtrazione HEPA, docce di decontaminazione. Servono tutte e quattro insieme."
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "body_paragraphs.0",
+    "old": "Il Lunar Roving Vehicle (LRV) di Apollo volò sulle ultime tre missioni Apollo (15, 16, 17, 1971-72). Prima del LRV, le traverse in superficie erano limitate dai consumabili della tuta a circa 1 km di raggio dal LM — e la fatica EVA derivante dal camminare a 1/6-g indossando una tuta pressurizzata rendeva anche quella distanza un limite estremo. Il LRV fu deliberatamente progettato per entrare ripiegato nel vano di stoccaggio Quad-1 del LM (un involucro di 0,7 × 0,7 m), pesava solo 210 kg a vuoto e funzionava con due batterie argento-zinco da 36 V (senza ricarica — il LRV era una risorsa monouso). Velocità massima: 18 km/h. Autonomia totale con quelle batterie: ~92 km (57 mi), con un limite rigido di rientro a piedi pari a metà dei consumabili rimanenti (quindi le traverse pratiche erano 5-10 km andata + 5-10 km ritorno). Apollo 17 registrò 35,7 km totali in tre EVA, il record assoluto di guida in superficie da parte di esseri umani. Il modello di design del LRV — telaio aperto, non pressurizzato, solo-tuta, monouso — è quello che Artemis sta ricostruendo ora come LTV.",
+    "new": "Il Lunar Roving Vehicle (LRV) di Apollo volò sulle ultime tre missioni Apollo (15, 16, 17, 1971-72). Prima dell'LRV, gli spostamenti in superficie erano limitati dai consumabili della tuta a circa 1 km di raggio dal LM — e la fatica dell'EVA, camminando a 1/6 g con una tuta pressurizzata addosso, rendeva faticoso anche quel limite. L'LRV fu deliberatamente progettato per entrare ripiegato nel vano di stoccaggio Quad-1 del LM (un ingombro di 0,7 × 0,7 m), pesava solo 210 kg a vuoto e funzionava con due batterie argento-zinco da 36 V (senza ricarica — l'LRV era una risorsa monouso). Velocità massima: 18 km/h. Autonomia totale con quelle batterie: ~92 km (57 mi), con un limite rigido di rientro a piedi pari a metà dei consumabili rimasti (quindi gli spostamenti pratici erano di 5-10 km all'andata + 5-10 km al ritorno). Apollo 17 registrò 35,7 km in tre EVA, il record assoluto di guida umana in superficie. Lo schema progettuale dell'LRV — telaio aperto, non pressurizzato, per astronauti in tuta, monouso — è quello che Artemis sta ricostruendo ora come LTV."
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "body_paragraphs.1",
+    "old": "L'Artemis Lunar Terrain Vehicle (LTV) è il discendente diretto del LRV: telaio aperto, non pressurizzato, progettato per due membri dell'equipaggio in tuta, raggio di traversata di ~20 km. Tre contratti furono assegnati dalla NASA nell'aprile 2024 — Intuitive Machines, Lunar Outpost e Astrolab — per progettazione + consegna, con una selezione finale attesa per l'ordine di produzione. Differenze rispetto al LRV: batterie ricaricabili con ricarica solare a gocciolamento (il LTV rimane sul sito tra le missioni Artemis, supportando equipaggi successivi e operando come rover telecomandata durante le notti lunari e gli intervalli in cui non è presente equipaggio), autonomia parziale per auto-posizionamento ed evitamento ostacoli, progettato per una durata operativa sul campo di ~10 anni invece che monouso. IOC prevista: Artemis V (attualmente programmata metà 2030).",
+    "new": "L'Artemis Lunar Terrain Vehicle (LTV) è il discendente diretto dell'LRV: telaio aperto, non pressurizzato, progettato per due membri dell'equipaggio in tuta, raggio di spostamento di ~20 km. La NASA ha assegnato tre contratti nell'aprile 2024 — Intuitive Machines, Lunar Outpost e Astrolab — per progettazione e consegna, con un'unica selezione finale attesa per l'ordine di produzione. Differenze rispetto all'LRV: batterie ricaricabili con ricarica solare lenta (l'LTV resta sul sito tra una missione Artemis e l'altra, sostiene gli equipaggi successivi e opera come rover teleguidato durante le notti lunari e quando non c'è equipaggio), autonomia parziale per il posizionamento e l'evitamento degli ostacoli, vita operativa prevista di ~10 anni sul campo invece dell'uso singolo. Capacità operativa iniziale (IOC) obiettivo: Artemis V (attualmente prevista a metà 2030)."
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "body_paragraphs.2",
+    "old": "I rover pressurizzati sono il passo successivo qualitativamente diverso. Il concept Toyota / JAXA Lunar Cruiser (il nome del progetto per quello che JAXA chiama Manned Pressurised Rover) è un veicolo da 6 tonnellate, 6 × 5 × 4 m con volume pressurizzato interno di ~13 m³ — circa le dimensioni di un piccolo autobus o di un camper Winnebago. Due membri dell'equipaggio vivono all'interno in maniche di camicia per un massimo di 30 giorni alla volta, uscendo in tuta attraverso camere di equilibrio suitlock. Il ciclo fuel cell + rigenerativo offre 1000 km di autonomia. Il programma ILRS cinese ha un rover pressurizzato simile in sviluppo. Implicazioni pratiche: una coppia di rover pressurizzati può supportare spedizioni di più mesi lontano dal campo base, trasformando le ops in superficie da 'alcuni giorni di attività all'aperto da casa' a 'traverse in stile spedizione di centinaia di km' — più vicine alla logistica dei campi antartici che ad Apollo. Il piano della NASA utilizza il Toyota Lunar Cruiser come rover pressurizzato di base dell'agenzia a partire da Artemis VII circa.",
+    "new": "I rover pressurizzati sono il passo successivo, qualitativamente diverso. Il concept Toyota / JAXA Lunar Cruiser (il nome del progetto per quello che la JAXA chiama Manned Pressurised Rover) è un veicolo da 6 tonnellate, di 6 × 5 × 4 m, con un volume pressurizzato interno di ~13 m³ — circa le dimensioni di un piccolo autobus o di un camper Winnebago. Due membri dell'equipaggio vivono all'interno in maniche di camicia per un massimo di 30 giorni alla volta, uscendo in tuta attraverso camere di equilibrio suitlock. La cella a combustibile rigenerativa garantisce 1000 km di autonomia. Il programma ILRS cinese ha in sviluppo un rover pressurizzato simile. Implicazioni pratiche: una coppia di rover pressurizzati può sostenere spedizioni di più mesi lontano dal campo base, trasformando le operazioni in superficie da «qualche giorno di attività all'aperto vicino a casa» a «spedizioni con spostamenti di centinaia di km» — più simili alla logistica dei campi base antartici che ad Apollo. Il piano della NASA adotta il Toyota Lunar Cruiser come rover pressurizzato di riferimento dell'agenzia a partire da Artemis VII circa."
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "body_paragraphs.3",
+    "old": "L'eredità dei rover marziani è puramente robotica finora — Sojourner (1997), Spirit + Opportunity (2004-2010 e 2004-2018), Curiosity (2012-presente), Perseverance (2021-presente), Zhurong (2021-2022), Pragyan (2023). Tutti a quattro o sei ruote, tutti non pressurizzati, tutti autonomi con supervisione terrestre. Le architetture marziane con equipaggio si basano pesantemente su questa eredità: il software di navigazione autonoma di Perseverance (AutoNav 2.0, che può percorrere oltre 200 m per Sol senza intervento) viene maturato nello stack di navigazione per rover pressurizzati con equipaggio. Il rover pressurizzato per Marte è qualitativamente la stessa macchina di quello lunare, ma con due richieste extra: deve gestire tempeste di polvere (scenari di classe tifone che possono durare settimane) e deve affrontare il problema della contaminazione da perclorato / polvere ad ogni ciclo di camera di equilibrio. Entrambi sono irrisolti a livello ingegneristico oggi; entrambi sono il tipo di problema che viene risolto con 5-10 anni di test sul campo di rover pressurizzati lunari prima di Marte.",
+    "new": "L'eredità dei rover marziani è finora puramente robotica — Sojourner (1997), Spirit + Opportunity (2004-2010 e 2004-2018), Curiosity (2012-oggi), Perseverance (2021-oggi), Zhurong (2021-2022), Pragyan (2023). Tutti a quattro o sei ruote, tutti non pressurizzati, tutti autonomi con la supervisione da Terra. Le architetture marziane con equipaggio poggiano molto su questa eredità: il software di navigazione autonoma di Perseverance (AutoNav 2.0, che può percorrere oltre 200 m per Sol senza intervento) viene sviluppato fino a diventare lo stack di navigazione dei rover pressurizzati con equipaggio. Il rover pressurizzato per Marte è qualitativamente la stessa macchina di quello lunare, ma con due richieste in più: deve resistere alle tempeste di polvere (scenari di classe tifone che possono durare settimane) e deve affrontare il problema della contaminazione da perclorato e polvere a ogni ciclo della camera di equilibrio. Entrambi i problemi sono oggi irrisolti a livello ingegneristico; entrambi sono del tipo che si risolve con 5-10 anni di prove sul campo di rover pressurizzati lunari prima di Marte."
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "diagram_caption",
+    "old": "LRV di Apollo (1971-72): 210 kg, non pressurizzato, monouso, record 35,7 km (Apollo 17). LTV Artemis (~2030): non pressurizzato, ricaricabile, risorsa sul campo, raggio ~20 km. Rover pressurizzati (Toyota Lunar Cruiser, equivalente ILRS, fine anni 2030+): 6 t, 13 m³ pressurizzati, autonomia 30 giorni, autonomia 1000 km — inviluppo di mobilità qualitativamente diverso.",
+    "new": "LRV di Apollo (1971-72): 210 kg, non pressurizzato, monouso, record di 35,7 km (Apollo 17). LTV di Artemis (~2030): non pressurizzato, ricaricabile, risorsa lasciata sul posto, raggio di ~20 km. Rover pressurizzati (Toyota Lunar Cruiser, equivalente ILRS, fine anni 2030+): 6 t, 13 m³ pressurizzati, permanenza di 30 giorni, autonomia di 1000 km — una capacità di mobilità qualitativamente diversa."
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "intro_sentence",
+    "old": "Il sensore di gravità dell'orecchio interno si disattiva in orbita — circa il 60–80% degli astronauti soffre di nausea nei primi 2–4 giorni mentre il cervello ricalibra gli indizi vestibolari rispetto a quelli visivi.",
+    "new": "Il sensore di gravità dell'orecchio interno si zittisce in orbita — circa il 60–80% degli astronauti soffre di nausea nei primi 2–4 giorni, mentre il cervello ricalibra il peso dei segnali vestibolari rispetto a quelli visivi."
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "body_paragraphs.1",
+    "old": "Circa il 60–80% degli astronauti sviluppa la Space Adaptation Syndrome nelle prime 24–72 ore: nausea, vomito, sudorazione, mal di testa. Non è l'unico conflitto sensoriale del corpo (gli occhi ancora riferiscono alto/basso attraverso l'orizzonte visivo della cabina, la propriocezione ancora riferisce la posizione degli arti) ma è il più evidente, e di solito si risolve entro 2–4 giorni mentre il cervello impara a ridurre il peso del canale vestibolare ormai inaffidabile.",
+    "new": "Circa il 60–80% degli astronauti sviluppa la sindrome da adattamento allo spazio nelle prime 24–72 ore: nausea, vomito, sudorazione, mal di testa. Non è l'unico conflitto sensoriale del corpo (gli occhi continuano a segnalare alto e basso attraverso l'orizzonte visivo della cabina, la propriocezione continua a segnalare la posizione degli arti), ma è il più evidente, e di solito si risolve entro 2–4 giorni, mentre il cervello impara a dare meno peso al canale vestibolare, ormai inaffidabile."
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "body_paragraphs.2",
+    "old": "La riduzione del peso non si inverte istantaneamente al ritorno. Nel post-volo, gli astronauti camminano in un mondo a 1 g con un cervello che ha passato mesi ignorando l'input vestibolare — e i risultati sono disturbi dell'andatura, deficit di equilibrio e nausea innescata dai movimenti della testa che impiegano giorni-settimane per scomparire. L'equipaggio di lunga durata mostra cambiamenti misurabili nel tracciamento oculare e nei test di postura per mesi dopo l'atterraggio.",
+    "new": "Il peso ridotto attribuito al canale vestibolare non torna indietro all'istante dopo il rientro. Dopo il volo, gli astronauti si muovono in un mondo a 1 g con un cervello che ha passato mesi a ignorare l'input vestibolare — e ne risultano disturbi dell'andatura, deficit di equilibrio e nausea scatenata dai movimenti della testa, che richiedono da giorni a settimane per scomparire. Chi ha compiuto missioni di lunga durata mostra cambiamenti misurabili nel tracciamento oculare e nei test di postura per mesi dopo l'atterraggio."
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "body_paragraphs.3",
+    "old": "Per una missione verso Marte, la domanda aperta è se l'ambiente vestibolare sulla superficie (0,38 g) sia sufficiente a re-ancorare il sistema all'arrivo, o se l'equipaggio esca dal lander in uno stato di equilibrio ibrido — parzialmente adattato allo spazio, parzialmente in riadattamento alla gravità. La ricerca in centrifuga sull'SSI e gli studi di rotazione umana sulla Terra suggeriscono che la risposta sia da qualche parte nel mezzo; la pianificazione presume alcuni giorni di mobilità ridotta sulla superficie immediatamente dopo l'atterraggio.",
+    "new": "Per una missione verso Marte, la domanda aperta è se l'ambiente vestibolare in superficie (0,38 g) basti a riancorare il sistema all'arrivo, o se l'equipaggio esca dal lander in uno stato di equilibrio ibrido — in parte adattato allo spazio, in parte alle prese con il riapprendimento della gravità. La ricerca in centrifuga sulla SSI e gli studi di rotazione umana sulla Terra suggeriscono che la risposta stia nel mezzo; la pianificazione prevede alcuni giorni di mobilità ridotta in superficie subito dopo l'atterraggio."
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "diagram_caption",
+    "old": "I cristalli otolitici galleggiano in microgravità → segnale \\\"verso il basso\\\" ambiguo → il cervello riduce il peso dei segnali vestibolari → il rientro in 1 g richiede giorni-settimane di ricalibratura.",
+    "new": "I cristalli otolitici galleggiano in microgravità → segnale «verso il basso» ambiguo → il cervello riduce il peso dei segnali vestibolari → il rientro in 1 g richiede da giorni a settimane di ricalibrazione."
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "headline",
+    "old": "Fasi di missione — il volo sono cinque fasi in ripetizione.",
+    "new": "Fasi di missione — il volo è fatto di cinque fasi che si ripetono."
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "paragraphs.0",
+    "old": "Praticamente ogni missione interplanetaria, da Voyager a Perseverance, segue lo stesso schema. Lancio dall'atmosfera terrestre in orbita bassa. Iniezione trans-X — la grande accensione unica che ti catapulta sull'ellisse di trasferimento verso la Luna (TLI), Marte (TMI), Venere, Giove, o quello che sia. Fase di inerzia per mesi, con alcuni piccoli manovre di correzione della traiettoria nel frattempo. Inserimento orbitale — l'accensione di frenata a destinazione. EDL — entrata, discesa e atterraggio — per i lander.",
+    "new": "Praticamente ogni missione interplanetaria, da Voyager a Perseverance, segue lo stesso copione. Lancio dall'atmosfera terrestre in orbita bassa. Iniezione trans-X — la grande accensione unica che ti catapulta sull'ellisse di trasferimento verso la Luna (TLI), Marte (TMI), Venere, Giove o qualunque altra meta. Crociera per inerzia per mesi, con alcune piccole manovre di correzione della traiettoria lungo il percorso. Inserimento orbitale — l'accensione di frenata a destinazione. EDL — ingresso, discesa e atterraggio — per i lander."
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "paragraphs.1",
+    "old": "Apollo ha volato secondo questo copione verso la Luna in tre giorni. Curiosity lo ha volato verso Marte in otto mesi. Voyager lo ha volato tre volte — una prima volta per lasciare la Terra, poi ancora due volte per gravity-assist che l'hanno fatto saltellare oltre Giove e Saturno. Le fasi si scalano; la sequenza delle fasi no.",
+    "new": "Apollo ha seguito questo copione verso la Luna in tre giorni. Curiosity l'ha seguito verso Marte in otto mesi. Voyager l'ha seguito tre volte — una per lasciare la Terra, poi altre due per i balzi con fionda gravitazionale oltre Giove e Saturno. Le fasi cambiano scala; la sequenza delle fasi no."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "intro_sentence",
+    "old": "Ridurre un'ampia orbita di cattura a un'orbita di lavoro per quasi nulla di carburante — immergendosi nella parte superiore dell'atmosfera di un pianeta un po' ad ogni passaggio.",
+    "new": "Ridurre un'ampia orbita di cattura a un'orbita di lavoro con un consumo di carburante quasi nullo — sfiorando a ogni passaggio gli strati più alti dell'atmosfera di un pianeta."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "narrative_101.0",
+    "old": "Quando un orbiter arriva su un pianeta, accende il motore di cattura per entrare in orbita — ma fermarsi completamente in un'orbita stretta e utile costerebbe una quantità enorme di carburante. Così i pianificatori della missione ingannano la fisica con l'atmosfera: catturano in una grande ellisse ampia e lascia che il veicolo spaziale sfiorare la parte superiore dell'aria nel punto più basso di ogni orbita. Ogni contatto con l'aria sottile ruba un po' di velocità, e il lato opposto dell'orbita si abbassa un po' più basso.",
+    "new": "Quando un orbiter arriva su un pianeta, accende il motore di cattura per entrare in orbita — ma fermarsi del tutto in un'orbita stretta e utile costerebbe una quantità enorme di carburante. Così i pianificatori della missione aggirano la fisica con l'atmosfera: catturano il veicolo in una grande ellisse ampia, poi lo lasciano sfiorare gli strati più alti dell'aria nel punto più basso di ogni orbita. Ogni contatto con l'aria sottile sottrae un po' di velocità, e il lato opposto dell'orbita si abbassa un poco."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "narrative_101.1",
+    "old": "Fai questo un paio di cento volte nel corso di settimane o mesi e l'ampia ellisse di cattura si contrae nell'orbita quasi circolare di osservazione scientifica che la missione effettivamente desidera — tutto al prezzo del piccolo burn di cattura, non dell'enorme one che l'inserimento propulsivo completo richiederebbe. È uno dei grandi affari di carburante nel volo spaziale.",
+    "new": "Ripetendo l'operazione qualche centinaio di volte nell'arco di settimane o mesi, l'ampia ellisse di cattura si contrae fino all'orbita scientifica quasi circolare che la missione desidera davvero — tutto al prezzo della piccola accensione di cattura, non di quella enorme che richiederebbe un inserimento interamente propulsivo. È uno dei grandi affari di carburante del volo spaziale."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "narrative_101.2",
+    "old": "Il rovescio della medaglia è che è lento e delicato. Immergiti troppo basso e non succede nulla; immergiti troppo in profondità e il riscaldamento o le forze aerodinamiche possono danneggiare o far roteare il veicolo spaziale. I controllori spingono il punto più basso su e giù passaggio per passaggio, cavalcando un corridoio stretto tra 'troppo poco' e 'troppo' per mesi interi.",
+    "new": "Il rovescio della medaglia è che è lento e delicato. Se ci si immerge troppo poco non succede nulla; troppo a fondo, e il riscaldamento o le forze aerodinamiche possono danneggiare il veicolo o farlo ruotare in modo incontrollato. I controllori spostano il punto più basso su e giù passaggio dopo passaggio, percorrendo per mesi interi uno stretto corridoio tra «troppo poco» e «troppo»."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "body_paragraphs.0",
+    "old": "L'aerobraking scambia propellente per tempo e pazienza. Mars Global Surveyor, Mars Odyssey, Mars Reconnaissance Orbiter, MAVEN e Venere Magellan lo hanno usato per raggiungere le loro orbite finali, risparmiando centinaia di chilogrammi di carburante che altrimenti avrebbero dovuto essere lanciati dalla Terra — spesso più della massa secca del veicolo spaziale stesso.",
+    "new": "L'aerobraking scambia propellente con tempo e pazienza. Mars Global Surveyor, Mars Odyssey, Mars Reconnaissance Orbiter, MAVEN e Magellan, a Venere, lo hanno usato per raggiungere le orbite finali, risparmiando centinaia di chilogrammi di carburante che altrimenti sarebbero dovuti partire dalla Terra — spesso più della massa a secco del veicolo stesso."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "body_paragraphs.1",
+    "old": "La fisica è la stessa resistenza che atterra una sonda, applicata in dosi minuscole e ripetute alla velocità orbitale invece di un'unica discesa feroce. Poiché il veicolo spaziale sfiora solo l'aria più esterna e più sottile, ogni passaggio perde solo pochi metri al secondo — ma le orbite si ripetono, e l'effetto si accumula. I pannelli solari, girati di taglio o usati come superfici di frenata, spesso sopportano il carico.",
+    "new": "La fisica è la stessa resistenza aerodinamica che fa atterrare una sonda, applicata in dosi minuscole e ripetute alla velocità orbitale invece che in un unico ingresso violento. Poiché il veicolo sfiora solo l'aria più esterna e più sottile, ogni passaggio sottrae solo pochi metri al secondo — ma le orbite si ripetono, e l'effetto si accumula. Spesso a sopportare il carico sono i pannelli solari, girati di taglio o usati come superfici frenanti."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "body_paragraphs.2",
+    "old": "L'aerocattura è la cugina più audace: frenare abbastanza su UN singolo passaggio profondo per passare direttamente dall'arrivo a un'orbita catturata, niente capture burn affatto. Risparmierebbe ancora più carburante, ma richiede uno scudo termico e una guida al secondo, e nessuna missione l'ha ancora volata — la versione paziente e a basso rischio dell'aerobraking rimane la spina dorsale.",
+    "new": "L'aerocattura è la cugina più audace: frenare abbastanza in un UNICO passaggio profondo da passare direttamente dall'arrivo a un'orbita di cattura, senza alcuna accensione di cattura. Risparmierebbe ancora più carburante, ma richiede uno scudo termico e una guida precisa al frammento di secondo, e nessuna missione l'ha ancora effettuata — la versione paziente e a basso rischio dell'aerobraking resta il cavallo di battaglia."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "diagram_caption",
+    "old": "Aerobraking: cattura in un'ampia ellisse, poi sfioramento dell'atmosfera superiore al periapsi passaggio dopo passaggio; ogni immersione abbassa l'apoapsi fino a quando l'orbita è circolare.",
+    "new": "Aerobraking: cattura in un'ampia ellisse, poi sfioramento dell'atmosfera superiore alla periapsi, passaggio dopo passaggio; ogni immersione abbassa l'apoapsi finché l'orbita diventa circolare."
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "title",
+    "old": "Interferometria — molti piccoli ricevitori invece di uno gigante",
+    "new": "Arraying — molte piccole antenne invece di una gigante"
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "intro_sentence",
+    "old": "Combinare i segnali di multiple antenne in tempo reale crea un'apertura virtuale singola più grande di qualsiasi singolo piatto, catturando segnali più deboli dai veicoli spaziali senza costruire strutture sempre più grandi.",
+    "new": "Combinare in tempo reale i segnali di più antenne crea un'unica apertura virtuale più grande di qualsiasi singolo piatto, catturando segnali più deboli dai veicoli spaziali senza costruire strutture sempre più grandi."
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "body_paragraphs.0",
+    "old": "Un'antenna grande singola è il modo ovvio per rilevare un segnale debole da un veicolo spaziale a miliardi di chilometri di distanza. I piatti da 70 m della DSN — a Goldstone, Madrid e Canberra — sono vicini al limite pratico per riflettori completamente orientabili e basati a terra. Costruire qualcosa di dimensioni apprezzabilmente maggiori richiederebbe una struttura fissa (limitando la copertura del cielo) o un'ingegneria che non esiste ancora. L'alternativa è combinare molte antenne più piccole: l'interferometria.",
+    "new": "Una sola grande antenna è il modo ovvio per ascoltare il debole segnale di un veicolo spaziale a miliardi di chilometri di distanza. I piatti da 70 m della DSN — a Goldstone, Madrid e Canberra — sono vicini al limite pratico per riflettori a terra completamente orientabili. Costruire qualcosa di sensibilmente più grande richiederebbe una struttura fissa (con una copertura del cielo limitata) o un'ingegneria che ancora non esiste. L'alternativa è combinare molte antenne più piccole: l'arraying."
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "body_paragraphs.1",
+    "old": "Quando multiple antenne osservano lo stesso veicolo spaziale simultaneamente e i loro segnali sono combinati con i corretti offset di fase e tempo, il risultato è l'addizione coerente. Il rumore di ogni antenna si somma incoerentemente (scala con la radice quadrata del numero di antenne) mentre il segnale si somma coerentemente (scala con il numero di antenne). L'area di raccolta effettiva di una serie di N piatti identici è N volte quella di un singolo piatto. Non è un'approssimazione — è lo stesso principio dietro i radiotelescopi in serie come il Very Large Array e ALMA.",
+    "new": "Quando più antenne osservano contemporaneamente lo stesso veicolo spaziale e i loro segnali vengono combinati con gli sfasamenti e i ritardi temporali corretti, il risultato è una somma coerente. Il rumore di ciascuna antenna si somma in modo incoerente (cresce con la radice quadrata del numero di antenne) mentre il segnale si somma in modo coerente (cresce con il numero di antenne). L'area di raccolta effettiva di un array di N piatti identici è N volte quella di un singolo piatto. Non è un'approssimazione — è lo stesso principio su cui si basano array di radiotelescopi come il Very Large Array e ALMA."
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "body_paragraphs.2",
+    "old": "La dimostrazione più famosa nelle operazioni di spazio profondo arrivò durante il flyby di Nettuno del Voyager 2 nell'agosto 1989. A 4,4 miliardi di chilometri, il segnale del Voyager era così debole che catturarlo a piena velocità dati scientifici richiedeva l'interferometria di piatti su quattro continenti contemporaneamente — i 70 m di Goldstone e il Very Large Array negli Stati Uniti, l'antenna DSN da 64 m di Canberra e il radiotelescopi da 64 m Parkes in Australia, e il piatto Usuda da 64 m del Giappone. L'accordo di interferometria della NASA con strutture non-NASA come Parkes (gestito da CSIRO) ha stabilito che la rete di comunicazioni dello spazio profondo può essere ampliata internazionalmente in momenti critici della missione.",
+    "new": "La dimostrazione più famosa nelle operazioni nello spazio profondo avvenne durante il sorvolo di Nettuno della Voyager 2 nell'agosto 1989. A 4,4 miliardi di chilometri, il segnale della Voyager era così debole che per riceverlo alla piena velocità dei dati scientifici fu necessario combinare piatti su quattro continenti contemporaneamente — i 70 m di Goldstone e il Very Large Array negli Stati Uniti, l'antenna DSN da 64 m di Canberra e il radiotelescopio Parkes da 64 m in Australia, e il piatto da 64 m di Usuda in Giappone. L'accordo di arraying della NASA con strutture non NASA come Parkes (gestito dal CSIRO) stabilì che la rete di comunicazioni dello spazio profondo può essere ampliata a livello internazionale nei momenti critici delle missioni."
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "body_paragraphs.3",
+    "old": "L'interferometria ha costi e limiti reali. L'interferometria di downlink (ricezione da un veicolo spaziale) è trattabile perché ogni antenna cattura indipendentemente il segnale e la combinazione avviene nella post-elaborazione o in tempo reale con tempistica precisa. L'interferometria di uplink (trasmissione verso un veicolo spaziale) è più difficile: i segnali da multiple antenne devono combinarsi coerentemente nella posizione del veicolo spaziale, lontano, richiedendo una sincronizzazione di fase estremamente precisa tra i siti. Il Programma Aperture Enhancement della DSN della NASA sta investendo in array più distribuiti specificamente perché è più economico aggiungere piatti da 34 m che costruire nuovi da 70 m — e un array di piatti più piccoli è anche più tollerante ai guasti: perdere un'antenna degrada le prestazioni gradualmente piuttosto che perdere un bene unico e insostituibile.",
+    "new": "L'arraying ha costi e limiti reali. L'arraying in downlink (ricezione da un veicolo spaziale) è fattibile perché ogni antenna cattura il segnale in modo indipendente e la combinazione avviene in post-elaborazione o in tempo reale con una temporizzazione precisa. L'arraying in uplink (trasmissione verso un veicolo spaziale) è più difficile: i segnali di più piatti devono combinarsi in modo coerente nella posizione del veicolo, lontanissima, il che richiede una sincronizzazione di fase estremamente precisa tra i siti. Il DSN Aperture Enhancement Program della NASA sta investendo in array più distribuiti proprio perché aggiungere piatti da 34 m costa meno che costruirne di nuovi da 70 m — e un array di piatti più piccoli è anche più tollerante ai guasti: perdere un'antenna degrada le prestazioni in modo graduale invece di far perdere un bene unico e insostituibile."
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "diagram_caption",
+    "old": "N piatti osservano lo stesso veicolo spaziale → segnali allineati in fase e sommati coerentemente → area effettiva = N × area singolo piatto → soglia segnale più debole raggiungibile, o stessa soglia con piatti individuali più piccoli.",
+    "new": "N piatti osservano lo stesso veicolo spaziale → segnali allineati in fase e sommati in modo coerente → area effettiva = N × area di un singolo piatto → si raggiunge una soglia di segnale più debole, oppure la stessa soglia con piatti singoli più piccoli."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "intro_sentence",
+    "old": "Raggiungere l'orbita non è uno script fisso — è un problema ai limiti risolto ogni secondo, per questo il volo spaziale ha dovuto attendere il computer digitale.",
+    "new": "Raggiungere l'orbita non è un copione fisso — è un problema ai valori al contorno risolto da capo ogni secondo, per questo il volo spaziale ha dovuto attendere il computer digitale."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "narrative_101.0",
+    "old": "Un razzo che sale verso l'orbita deve soddisfare una condizione finale esatta: allo spegnimento del motore deve trovarsi all'altitudine giusta, muovendosi orizzontalmente, a velocità orbitale precisa. Se la velocità è leggermente errata, l'orbita è sbagliata o il veicolo ricade. Ma il razzo diventa sempre più leggero ogni secondo mentre brucia il propellente, l'aria si rarefà, la gravità tira, i venti spingono — così il \"modo giusto\" di puntare il motore è diverso a ogni istante e dipende da tutto ciò che è accaduto finora. Nessun profilo di beccheggio fisso può colpire il bersaglio esattamente.",
+    "new": "Un razzo che sale verso l'orbita deve soddisfare una condizione finale esatta: allo spegnimento del motore deve trovarsi all'altitudine giusta, muoversi in orizzontale e a velocità orbitale precisa. Se la velocità è anche solo leggermente errata, l'orbita è sbagliata o il veicolo ricade. Ma il razzo diventa più leggero a ogni secondo mentre brucia propellente, l'aria si rarefà, la gravità tira, i venti spingono — così il modo «giusto» di puntare il motore è diverso a ogni istante e dipende da tutto ciò che è accaduto finora. Nessun profilo di beccheggio fisso può centrare esattamente il bersaglio."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "narrative_101.1",
+    "old": "All'inizio del volo, basso nell'atmosfera, il razzo segue davvero un programma in anello aperto pre-pianificato: un leggero beccheggio subito dopo il decollo avvia una gravity turn, e il veicolo mantiene un assetto pre-calcolato uniforme per mantenere i carichi aerodinamici bassi nell'aria densa. Ma una volta al di sopra dell'atmosfera, la guida passa ad anello chiuso — misura dove si trova e quanto veloce, calcola la correzione di rotta che rispetterà la condizione di spegnimento esatta, e aggiorna quella risposta molte volte al secondo fino all'orbita.",
+    "new": "All'inizio del volo, nei bassi strati dell'atmosfera, il razzo segue davvero un programma pianificato in anello aperto: un leggero beccheggio subito dopo il decollo avvia una gravity turn, e il veicolo mantiene un assetto uniforme calcolato in anticipo per contenere i carichi aerodinamici nell'aria densa. Ma una volta sopra l'atmosfera la guida passa ad anello chiuso — misura dove si trova davvero e a che velocità, calcola la sterzata che centrerà l'esatta condizione di spegnimento e aggiorna quella risposta molte volte al secondo fino all'orbita."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "narrative_101.2",
+    "old": "Questo schema ad anello chiuso ha un nome — Powered Explicit Guidance (PEG) — e un predecessore nel Saturn V, l'Iterative Guidance Mode (IGM) — ed è la ragione per cui uno stadio superiore a basso spinta può sollevare la sua traiettoria sotto l'orizzonte e comunque raggiungere la velocità orbitale in tempo. È, letteralmente, il motivo per cui il volo spaziale ha avuto bisogno di computer a bordo: un umano non può risolvere il problema ogni secondo, ma il computer di volo lo fa.",
+    "new": "Questo schema ad anello chiuso ha un nome — Powered Explicit Guidance (PEG) — e un predecessore sul Saturn V, l'Iterative Guidance Mode (IGM) — ed è la ragione per cui uno stadio superiore a bassa spinta può far salire la propria traiettoria fin sotto l'orizzonte e comunque arrivare puntuale alla velocità orbitale. È, letteralmente, il motivo per cui il volo spaziale ha avuto bisogno di computer di bordo: un essere umano non può risolvere di nuovo il problema ogni secondo, ma il computer di volo sì."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.0",
+    "old": "La guida di salita è un'operazione in due fasi. Nella fase atmosferica il veicolo vola in anello aperto: un leggero beccheggio subito dopo lo sgancio dalla torre avvia una gravity turn, e poi mantiene un profilo di beccheggio pre-calcolato che mantiene l'angolo di attacco vicino a zero così i carichi aerodinamici e strutturali rimangono limitati attraverso il max-Q. C'è poca libertà qui — l'aria detta il percorso.",
+    "new": "La guida in salita avviene in due fasi. Nella prima fase, atmosferica, il veicolo vola in anello aperto: un leggero beccheggio subito dopo aver liberato la torre avvia una gravity turn, e da lì segue un profilo di beccheggio calcolato in anticipo che tiene l'angolo di attacco vicino a zero, così i carichi aerodinamici e strutturali restano contenuti attraverso la max-Q. Qui c'è poca libertà — è l'aria a dettare il percorso."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.1",
+    "old": "Al di sopra dell'atmosfera la guida passa ad anello chiuso ed esplicita. La Powered Explicit Guidance tratta il resto della combustione come un problema ai limiti: dato lo stato attuale (posizione, velocità, massa, spinta) e lo stato di spegnimento desiderato (altitudine target, angolo di rampa di volo, velocità orbitale), calcola la correzione di rotta ottimale — essenzialmente una legge di beccheggio lineare-tangente — e il tempo rimanente, poi ri-risolve il tutto ogni ciclo di guida. Man mano che la combustione procede, la soluzione converge e i comandi si attenuano; lo stadio può anche sollevarsi (beccheggiare sopra l'orizzonte locale) presto per guadagnare altitudine, poi beccheggiare verso il basso per scambiarla con velocità.",
+    "new": "Sopra l'atmosfera la guida passa ad anello chiuso ed esplicita. La Powered Explicit Guidance tratta il resto dell'accensione come un problema ai valori al contorno: dato lo stato attuale (posizione, velocità, massa, spinta) e lo stato desiderato allo spegnimento (quota obiettivo, angolo della traiettoria di volo, velocità orbitale), calcola la sterzata ottimale — in sostanza una legge di beccheggio a tangente lineare — e il tempo residuo, poi risolve di nuovo tutto a ogni ciclo di guida. Man mano che l'accensione procede la soluzione converge e i comandi si fanno più dolci; lo stadio può persino sollevarsi presto (beccheggiare sopra l'orizzonte locale) per accumulare quota, e poi picchiare per scambiarla con velocità."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.2",
+    "old": "Questo è il compito del computer di volo, ed è implacabile con uno stadio superiore a basso rapporto spinta-peso, dove la combustione è lunga e la condizione ai limiti è un bersaglio mobile per tutto il tempo. Il Saturn V ha volato con IGM; lo Space Shuttle e l'SLS volano con PEG, e la maggior parte degli stadi superiori moderni usa guida di classe PEG (SpaceX non ha pubblicato l'algoritmo esatto del Falcon 9). La lezione \"flying computer\" del Physics Lab esegue esattamente questo — un programma in anello aperto che cede il controllo al PEG ad anello chiuso che solleva l'arco verso l'orbita.",
+    "new": "Questo è il compito del computer di volo, ed è spietato con uno stadio superiore a basso rapporto spinta-peso, dove l'accensione è lunga e la condizione al contorno è un bersaglio mobile per tutto il tempo. Il Saturn V usava l'IGM; lo Space Shuttle e l'SLS usano il PEG, e la maggior parte degli stadi superiori moderni usa una guida di classe PEG (SpaceX non ha pubblicato l'algoritmo esatto del Falcon 9). La lezione «flying computer» del Physics Lab esegue esattamente questo — un programma in anello aperto che passa il comando al PEG ad anello chiuso, che porta l'arco di salita fino all'orbita."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "diagram_caption",
+    "old": "Ascent guidance: un profilo di beccheggio in anello aperto attraverso l'atmosfera cede il controllo al PEG ad anello chiuso, che ri-risolve la correzione di rotta verso lo spegnimento orbitale esatto ogni secondo.",
+    "new": "Guida di salita: un profilo di beccheggio in anello aperto attraverso l'atmosfera passa il comando al PEG ad anello chiuso, che ricalcola a ogni secondo la sterzata verso l'esatto spegnimento orbitale."
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "title",
+    "old": "Coefficiente Balistico",
+    "new": "Coefficiente balistico"
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "intro_sentence",
+    "old": "Il numero singolo — massa divisa per l'area di resistenza — che determina la velocità di caduta di un veicolo spaziale nell'atmosfera e se riuscirà a fermarsi in tempo.",
+    "new": "L'unico numero — massa divisa per area di resistenza — che decide con quale velocità un veicolo spaziale cade attraverso un'atmosfera e se riuscirà a fermarsi in tempo."
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "narrative_101.0",
+    "old": "Lascia cadere una piuma e un martello nell'aria e la piuma scende lentamente mentre il martello precipita. La differenza è il coefficiente balistico: quanta massa ogni oggetto trasporta rispetto all'area di resistenza. Un basso coefficiente balistico (molta resistenza, poca massa) cade lentamente; uno alto (compatto e pesante) cade velocemente. È l'unico numero che determina principalmente il modo in cui un veicolo spaziale scende.",
+    "new": "Lascia cadere una piuma e un martello nell'aria: la piuma scende lentamente, il martello precipita. La differenza è il coefficiente balistico: quanta massa ciascuno porta dietro di sé rispetto all'area di resistenza. Un coefficiente balistico basso (molta resistenza, poca massa) fa cadere lentamente; uno alto (compatto e pesante) fa cadere in fretta. È il numero che più di ogni altro determina come scende un veicolo spaziale."
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "narrative_101.1",
+    "old": "Gli ingegneri di atterraggio dedicano enormi sforzi a mantenere il coefficiente balistico basso. Uno scudo termico smussato, un paracadute gigantesco, un deceleratore gonfiabile — sono tutti modi per aggiungere area di resistenza senza aggiungere molta massa, in modo che il veicolo perda velocità a quote più alte dove rimane più colonna d'aria con cui lavorare. Più grande e pesante è il carico, più difficile diventa questa battaglia.",
+    "new": "Gli ingegneri che progettano gli atterraggi si impegnano enormemente per tenere basso il coefficiente balistico. Uno scudo termico smussato, un paracadute gigantesco, un deceleratore gonfiabile — sono tutti modi per aggiungere area di resistenza senza aggiungere molta massa, in modo che il veicolo perda velocità a quote più alte, dove resta più colonna d'aria su cui lavorare. Più il carico è grande e pesante, più questa battaglia si fa dura."
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "narrative_101.2",
+    "old": "Questa è la ragione silenziosa per cui Marte è così difficile. La sua aria è rarefatta, quindi anche un grande paracadute su un modesto lander riduce la velocità solo fino a un certo punto — il coefficiente balistico è troppo alto per fermarsi con la sola resistenza. Ogni lander su Marte ha bisogno di un secondo atto (razzi di retrospinta, airbag, una sky-crane), mentre una sonda leggera su Venere, in aria densa, può scendere solo con la resistenza.",
+    "new": "Questa è la ragione nascosta per cui Marte è così difficile. La sua aria è rarefatta, quindi anche un grande paracadute su un lander di massa modesta riduce la velocità solo fino a un certo punto — il coefficiente balistico è troppo alto per fermarsi con la sola resistenza. Ogni lander su Marte ha bisogno di un secondo atto (retrorazzi, airbag, una sky-crane), mentre una sonda leggera su Venere, in aria densa, può scendere con la sola resistenza."
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "body_paragraphs.0",
+    "old": "Formalmente il coefficiente balistico è massa ÷ (coefficiente di resistenza × area di riferimento). La velocità terminale scala con la sua radice quadrata, quindi dimezzare il coefficiente balistico rallenta la caduta di circa il 30%. Sia la decelerazione di picco che il riscaldamento di picco aumentano con esso — un ingresso più pesante e compatto colpisce l'atmosfera più duramente e più caldo, motivo per cui i grandi veicoli affrontano il peggio di entrambi.",
+    "new": "Formalmente il coefficiente balistico è massa ÷ (coefficiente di resistenza × area di riferimento). La velocità terminale cresce con la sua radice quadrata, quindi dimezzare il coefficiente balistico rallenta la caduta di circa il 30%. Anche la decelerazione di picco e il riscaldamento di picco aumentano con esso — un ingresso più pesante e compatto colpisce l'atmosfera con più violenza e più calore, ed è per questo che i grandi veicoli subiscono il peggio di entrambi."
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "body_paragraphs.1",
+    "old": "Stabilisce anche DOVE nella discesa accade l'azione. Un veicolo a basso coefficiente balistico decelera in alto, in aria rarefatta, concedendo più tempo e altitudine per le fasi finali. Uno alto mantiene la sua velocità profondamente nell'atmosfera prima che la resistenza lo raggiunga, comprimendo l'intera sequenza negli ultimi chilometri — esattamente la pressione che rende l'atterraggio pesante su Marte una corsa contro il suolo.",
+    "new": "Stabilisce anche DOVE, nella discesa, avviene l'azione. Un veicolo a basso coefficiente balistico decelera in alto, in aria rarefatta, concedendo più tempo e quota per le fasi finali. Uno ad alto coefficiente conserva la velocità fin nel profondo dell'atmosfera prima che la resistenza lo raggiunga, comprimendo l'intera sequenza negli ultimi chilometri — esattamente la morsa che rende l'atterraggio di un veicolo pesante su Marte una corsa contro il suolo."
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "body_paragraphs.2",
+    "old": "Su `/fly`, il contrasto è visibile tra i corpi in `?descent=1`. Un lander leggero su Marte sotto un grande paracadute (basso coefficiente balistico) scende dolcemente; una Starship da 100 tonnellate (molto alto) deve frenare in modo propulsivo; una sonda su Venere in aria densa scende lentamente su una piccola piastra di resistenza. Stessa fisica, tre coefficienti balistici, tre discese molto diverse.",
+    "new": "Su `/fly`, il contrasto tra i corpi è visibile in `?descent=1`. Un lander leggero su Marte sotto un grande paracadute (basso coefficiente balistico) si posa con dolcezza; una Starship da 100 tonnellate (molto alto) deve frenare con la propulsione; una sonda su Venere in aria densa scende lentamente su una piccola piastra di resistenza. Stessa fisica, tre coefficienti balistici, tre discese molto diverse."
+  },
+  {
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "title",
+    "old": "Blackout delle Comunicazioni",
+    "new": "Blackout delle comunicazioni"
+  },
+  {
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "narrative_101.1",
+    "old": "La capsula si avvolge così in uno specchio dal quale non riesce a vedere fuori. I segnali radio che salgono dal suolo rimbalzano sul plasma; i segnali che scendono dalla capsula non riescono a passarci nemmeno loro. Per i pochi minuti in cui il riscaldamento è più intenso, il veicolo spaziale è isolato — nessuna voce, nessuna telemetria, niente. Il Controllo Missione guarda un orologio e una traiettoria prevista, e aspetta che la capsula rallenti abbastanza da far svanire il plasma e riportare la voce dell'equipaggio. Glenn, Apollo, ogni equipaggio Soyuz ha attraversato quel silenzio.",
+    "new": "La capsula si avvolge così in uno specchio da cui non riesce a vedere fuori. I segnali radio che salgono da terra rimbalzano sul plasma; nemmeno quelli che scendono dalla capsula riescono ad attraversarlo. Per i pochi minuti in cui il riscaldamento è più intenso, il veicolo spaziale è tagliato fuori — nessuna voce, nessuna telemetria, niente. Il Controllo Missione guarda un orologio e una traiettoria prevista, e aspetta che la capsula rallenti abbastanza da far svanire il plasma e riportare la voce dell'equipaggio. Glenn, gli Apollo e ogni equipaggio Soyuz hanno attraversato quel silenzio."
+  },
+  {
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "narrative_101.2",
+    "old": "Il blackout termina da solo: mentre la capsula decelera e scende in aria più densa e fresca più in basso, lo strato di shock smette di ionizzare, la nuvola di elettroni si dirada, e il collegamento radio si ristabilisce di scatto. Lo Space Shuttle ha aggirato il problema — comunicava verso l'alto attraverso il plasma più sottile sul suo lato superiore verso satellite relè in orbita, mantenendo un collegamento quando un segnale verso il basso sarebbe stato bloccato.",
+    "new": "Il blackout finisce da solo: mentre la capsula decelera e scende in aria più densa e più fresca, lo strato d'urto smette di ionizzarsi, la nuvola di elettroni si dirada e il collegamento radio si ristabilisce di colpo. Lo Space Shuttle aggirò il problema — comunicava verso l'alto, attraverso il plasma più sottile sul lato superiore, con i satelliti relè in orbita, mantenendo un collegamento quando un segnale verso il basso, a terra, sarebbe stato bloccato."
+  },
+  {
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "body_paragraphs.2",
+    "old": "La mitigazione classica è geometrica: lo Space Shuttle trasmetteva attraverso i satellite TDRS in orbita superiore, inviando il segnale attraverso il plasma più sottile sulla sua superficie superiore anziché verso il basso attraverso la guaina densa verso una stazione a terra. Su `/fly`, l'HUD di rientro segnala esplicitamente la finestra di blackout — la spia del plasma si accende durante la fase di picco di riscaldamento, l'unico tratto della discesa in cui la telemetria che si sta osservando, in una missione reale, sarebbe andata nel buio.",
+    "new": "La mitigazione classica è geometrica: lo Space Shuttle comunicava tramite i satelliti TDRS sopra di sé, trasmettendo attraverso il plasma più sottile sulla superficie superiore invece che verso il basso attraverso la guaina densa, fino a una stazione a terra. Su `/fly`, l'HUD di rientro segna esplicitamente la finestra di blackout — la spia del plasma si accende durante la fase di picco di riscaldamento, l'unico tratto della discesa in cui la telemetria che si sta osservando, in una missione reale, sarebbe sparita."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "intro_sentence",
+    "old": "Integrare gli accelerometers per ottenere velocità, integrarsi di nuovo per ottenere la posizione — funziona per ore, si allontana notevolmente nei giorni, ed è esattamente il motivo per cui ogni crociera ha bisogno di correzioni periodi…",
+    "new": "Integrare gli accelerometri per ottenere la velocità, integrare ancora per ottenere la posizione — funziona per ore, deriva sensibilmente in giorni, ed è il motivo per cui ogni crociera ha bisogno di correzioni periodiche da terra."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.0",
+    "old": "Tra ustioni e al di fuori della gamma di utili punti di riferimento celesti, un veicolo spaziale traccia il proprio stato integrando l'uscita della sua unità di misura inerziale (IMU): tre accelerometers che misurano l'accelerazione lineare, tre giroscopi che misurano il tasso di rotazione. Integrare l'accelerazione una volta → velocità. Integrare nuovamente → posizione. In combinazione con l'orientamento da [inseguitori stellari] (in fase di trasmissione/star-trackers), la sonda può propagare il suo vettore di stato completo in avanti nel tempo senza alcun aiuto esterno.",
+    "new": "Tra una accensione e l'altra e al di fuori della portata di utili punti di riferimento celesti, un veicolo spaziale tiene traccia del proprio stato integrando l'uscita della sua unità di misura inerziale (IMU): tre accelerometri che misurano l'accelerazione lineare, tre giroscopi che misurano la velocità di rotazione. Integrare l'accelerazione una volta → velocità. Integrare di nuovo → posizione. In combinazione con l'orientamento fornito dagli [inseguitori stellari](mission-phases/star-trackers), il veicolo può propagare nel tempo il proprio vettore di stato completo senza alcun aiuto esterno."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.1",
+    "old": "Il problema fondamentale è la **deriva**. Ogni accelerometro ha un piccolo offset (~10⁻⁵ m/s² su un IMU di grado navigazione); nel corso di 1 giorno, questo offset integrato due volte contribuisce a circa 3,7 km di errore di posizione. Nel corso di una crociera di 6 mesi verso Marte, l'errore di dead-reckoning si accumula fino a migliaia di km anche con i migliori IMU certificati per lo spazio (che sono di gran lunga superiori a quelli di qualità consumer nel tuo telefono). Ecco perché ogni missione interplanetaria prevede delle [manovre di correzione della traiettoria](mission-phases/tcm) nel suo budget: la dispersione durante la crociera deve essere misurata tramite il tracking da terra e l'astronave deve fisicamente aggiustare la sua rotta.",
+    "new": "Il problema fondamentale è la **deriva**. Ogni accelerometro ha un piccolo errore sistematico (~10⁻⁵ m/s² su una IMU di grado navigazione); nell'arco di 1 giorno, quell'errore integrato due volte contribuisce a circa 3,7 km di errore di posizione. Su una crociera di 6 mesi verso Marte, l'errore di dead-reckoning si accumula fino a migliaia di km anche con le migliori IMU qualificate per lo spazio (di gran lunga superiori a quelle di qualità consumer del tuo telefono). Ecco perché ogni missione interplanetaria prevede nel proprio budget delle [manovre di correzione della traiettoria](mission-phases/tcm): la dispersione in crociera va misurata con il tracciamento da terra e il veicolo deve correggere fisicamente la propria rotta."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.2",
+    "old": "La migliore pratica moderna si combina con l'organizzazione periodica di Deep Space Network (vedi [DSN](mission-phases/dsn)): il terreno misura la posizione a ~1 km di accuratezza attraverso il giro della luce e Doppler, uplinks a stato corretto, e l'astronave riavvia la sua propagazione da una buona soluzione. Il sistema combinato è molto più preciso di entrambi i componenti da soli. I tracker stellari dicono alla sonda in quale modo punta; l'IMU dice che cosa sta succedendo tra le correzioni; il DSN dice dove è realmente.",
+    "new": "La migliore pratica moderna combina il dead-reckoning con misure periodiche di distanza della Deep Space Network (vedi [DSN](mission-phases/dsn)): da terra si misura la posizione con un'accuratezza di ~1 km tramite il tempo di andata e ritorno della luce e il Doppler, si invia in uplink uno stato corretto e il veicolo riavvia la propagazione da un punto noto e affidabile. Il sistema combinato è molto più accurato di ciascuna delle due componenti da sola. Gli inseguitori stellari dicono al veicolo dove sta puntando; l'IMU gli dice che cosa succede tra una correzione e l'altra; la DSN gli dice dove si trova davvero."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.3",
+    "old": "Il reckoning è più importante quando il DSN non è disponibile — durante un blackout di comunicazioni Marte-EDL, durante il ritardo di luce di una strada di 22 minuti a Giove e oltre, o durante una crisi di controllo dell'atteggiamento. Ogni sistema di autonomia della sonda è essenzialmente un propagatore di stato-vettore in esecuzione su dead-reckoning mentre le operazioni di terra funzionano sul recupero.",
+    "new": "Il dead-reckoning conta di più quando la DSN non è disponibile — durante un blackout delle comunicazioni nell'EDL su Marte, con il ritardo della luce di ~22 minuti in un solo senso fino a Giove e oltre, o durante una crisi del controllo d'assetto. Ogni sistema di autonomia di un veicolo spaziale è in sostanza un propagatore del vettore di stato che gira sul dead-reckoning mentre le operazioni a terra lavorano al recupero."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "diagram_caption",
+    "old": "Accelerometro + gyro → integrare → vettore di stato → deriva nei giorni senza correzione esterna → perché TCMs esistono. DSN range + Doppler resetta la deriva.",
+    "new": "Accelerometro + giroscopio → integrazione → vettore di stato → deriva nell'arco di giorni senza una correzione esterna → perché esistono le TCM. Il ranging DSN + il Doppler azzerano la deriva."
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "title",
+    "old": "Deorbit & il Corridoio di Rientro",
+    "new": "Deorbitamento e corridoio di rientro"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "narrative_101.1",
+    "old": "Il problema è l'angolo di arrivo. Entrare con un angolo troppo basso fa sì che la capsula sfiori l'atmosfera come un sasso fatto rimbalzare sull'acqua — rimbalza nello spazio, e l'equipaggio compie un altro giro che potrebbe non avere aria o energia per sostenere. Entrare con un angolo troppo ripido fa sì che l'aria freni il veicolo così violentemente da schiacciare l'equipaggio e impedire allo scudo termico di dissipare il calore abbastanza rapidamente. Tra questi due scenari di fallimento c'è una banda sicura — il corridoio di rientro — e per una capsula che torna dalla Luna era celebremente largo meno di due gradi.",
+    "new": "Il problema è l'angolo di arrivo. Entrare con un angolo troppo basso fa sì che la capsula sfiori l'atmosfera come un sasso lanciato a rimbalzare sull'acqua — rimbalza nello spazio, e l'equipaggio compie un altro giro per il quale potrebbe non avere aria o energia. Entrare con un angolo troppo ripido fa sì che l'aria freni il veicolo con tale violenza da schiacciare l'equipaggio e impedire allo scudo termico di smaltire il calore abbastanza in fretta. Tra questi due scenari di fallimento c'è una fascia sicura — il corridoio di rientro — e per una capsula di ritorno dalla Luna era notoriamente larga meno di due gradi."
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "body_paragraphs.0",
+    "old": "Il deorbitamento è un impulso retrogrado che abbassa il perigeo dall'altitudine orbitale a dentro l'atmosfera sensibile — per una capsula in orbita terrestre bassa, abbassare il perigeo a circa 40–60 km con una bruciata di soli ~100 m/s. Il veicolo poi plana, senza propulsione, fino all'interfaccia di entrata a circa 122 km, dove le forze aerodinamiche prendono il sopravvento. Il singolo numero che ne decide il destino è l'angolo del percorso di volo di entrata: quanto al di sotto dell'orizzontale locale punta il vettore velocità mentre attraversa quell'interfaccia.",
+    "new": "Il deorbitamento è un impulso retrogrado che abbassa il perigeo dall'altitudine orbitale fin dentro l'atmosfera sensibile — per una capsula in orbita terrestre bassa, portando il perigeo a circa 40–60 km con un'accensione di soli ~100 m/s. Il veicolo poi procede per inerzia, senza spinta, fino all'interfaccia di ingresso a circa 122 km, dove prendono il sopravvento le forze aerodinamiche. Il numero che ne decide il destino è l'angolo della traiettoria di volo all'ingresso: di quanto il vettore velocità punta al di sotto dell'orizzontale locale quando attraversa quell'interfaccia."
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "body_paragraphs.1",
+    "old": "Il corridoio è delimitato su entrambi i lati. Il limite di superamento (angolo basso) è stabilito dal rimbalzo: viene intercettata troppo poca atmosfera, la resistenza non riesce a catturare il veicolo, e questo ritorna nello spazio. Il limite di sottotiro (angolo ripido) è stabilito dai limiti di sopravvivenza — il picco di decelerazione e il picco di riscaldamento salgono entrambi bruscamente con l'angolo di entrata. Una capsula balistica che entra dalla LEO a qualche grado raggiunge circa 8 g; un rientro lunare puramente balistico supererebbe 20 g, ecco perché Apollo effettuava un rientro planante, usando il baricentro sfalsato della capsula per generare un po' di portanza e allargare il corridoio a circa 6–7 g sopravvivibili. Più ripido è più breve e più caldo; più basso è più lungo e più dolce, ma rischia il rimbalzo.",
+    "new": "Il corridoio è delimitato su entrambi i lati. Il limite di overshoot (angolo basso) è fissato dal rimbalzo: viene intercettata troppa poca atmosfera, la resistenza non riesce a catturare il veicolo e questo torna nello spazio. Il limite di undershoot (angolo ripido) è fissato dai limiti di sopravvivenza — la decelerazione di picco e il flusso termico di picco salgono entrambi bruscamente con l'angolo di ingresso. Una capsula balistica che entra dalla LEO con qualche grado di angolo subisce circa 8 g; un rientro lunare puramente balistico supererebbe i 20 g, ed è per questo che Apollo volò con un rientro a portanza, usando il baricentro sfalsato della capsula per generare un po' di portanza e allargare il corridoio fino a circa 6–7 g sopportabili. Più ripido è più breve e più caldo; più basso è più lungo e più dolce, ma rischia il rimbalzo."
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "body_paragraphs.2",
+    "old": "Su `/fly`, la fase di rientro lo mette in scena: l'angolo del percorso di volo di entrata è integrato nel profilo di ogni missione, e il layer Science-Lens della resistenza mostra il picco di decelerazione che cresce e svanisce mentre la capsula attraversa il picco di riscaldamento e il picco di g. Confrontando un rientro planante e basso con uno balistico e ripido, la logica del corridoio è visibile nella traccia del carico-g — lo stesso compromesso che ogni equipaggio di rientro ha affrontato da Gagarin in poi.",
+    "new": "Su `/fly`, la fase di rientro lo mette in scena: l'angolo della traiettoria di volo all'ingresso è incorporato nel profilo di ogni missione, e il layer Science-Lens della resistenza mostra il picco di decelerazione che cresce e si smorza mentre la capsula attraversa il picco di riscaldamento e il picco di g. Confrontando un rientro a portanza e ad angolo basso con uno balistico e ripido, la logica del corridoio è visibile nella traccia del carico di g — lo stesso compromesso che ogni equipaggio di ritorno ha affrontato da Gagarin in poi."
+  },
+  {
+    "rel": "science/mission-phases/dsn.json",
+    "at": "intro_sentence",
+    "old": "Tre complessi antenne giganti distanziati 120° intorno alla Terra — Goldstone, Madrid, Canberra — fornendo una copertura continua di qualsiasi veicolo spaziale oltre l'orbita bassa della Terra.",
+    "new": "Tre grandi complessi di antenne distanziati di 120° attorno alla Terra — Goldstone, Madrid, Canberra — che garantiscono una copertura continua di qualsiasi veicolo spaziale oltre l'orbita terrestre bassa."
+  },
+  {
+    "rel": "science/mission-phases/dsn.json",
+    "at": "body_paragraphs.0",
+    "old": "Il Deep Space Network è ciò che rende leggibile il volo spaziale interplanetario. Senza di esso l'astronave sarebbe ancora volare (dead-reckoning + nav autonomo può tenere una missione insieme per settimane) ma nessuno sulla Terra avrebbe saputo dove era, che cosa stava facendo, o che cosa stava imparando. Il DSN è l'ombelicale per ogni missione della NASA oltre la Luna e un partner contratto per le missioni ESA, JAXA e ISRO.",
+    "new": "La Deep Space Network è ciò che rende leggibile il volo spaziale interplanetario. Senza di essa il veicolo continuerebbe comunque a volare (dead-reckoning + navigazione autonoma possono tenere insieme una missione per settimane), ma nessuno sulla Terra saprebbe dove si trova, che cosa sta facendo o che cosa sta scoprendo. La DSN è il cordone ombelicale di ogni missione NASA oltre la Luna e un partner a contratto per le missioni nello spazio profondo di ESA, JAXA e ISRO."
+  },
+  {
+    "rel": "science/mission-phases/dsn.json",
+    "at": "body_paragraphs.1",
+    "old": "Tre complessi antenne distanziati 120° in tutto il mondo — Goldstone (California), Madrid (Spagna), Canberra (Australia) — assicurano che qualsiasi veicolo spaziale oltre GEO sia in linea di almeno un complesso in ogni momento come la Terra ruota. Ogni complesso ha antenne multiple, il marchese è il 70 m \"piatti grandi\" (DSS-14, DSS-43, DSS-63). Più piccole antenne 34 m gestire il traffico più moderno.",
+    "new": "Tre complessi di antenne distanziati di 120° sul globo — Goldstone (California), Madrid (Spagna), Canberra (Australia) — assicurano che, mentre la Terra ruota, qualsiasi veicolo spaziale oltre la GEO sia sempre in vista di almeno un complesso. Ogni complesso ha più antenne, le più celebri sono i «grandi piatti» da 70 m (DSS-14, DSS-43, DSS-63). Le antenne più piccole, da 34 m, gestiscono la maggior parte del traffico moderno."
+  },
+  {
+    "rel": "science/mission-phases/dsn.json",
+    "at": "body_paragraphs.2",
+    "old": "Tre operazioni contano. **Telemetria**: ricevere i dati scientifici e di gestione dalla sonda spaziale (il collegamento lento, da megabit a alcune centinaia di Mbit da Marte; decine di bit/s da Voyager a 24 miliardi di km). **Comandi**: inviare in salita le istruzioni alla sonda spaziale (codificate per resistenza alle radiazioni; firmate per la sicurezza). **Inseguimento**: misurare il tempo di andata e ritorno della luce e lo spostamento Doppler sul segnale portante — questi insieme rivelano la distanza della sonda spaziale e la velocità radiale con una precisione di ~1 m e ~0,1 mm/s. È qui che si trova la sonda spaziale, con una precisione di qualche chilometro attraverso centinaia di milioni di km di spazio vuoto.",
+    "new": "Contano tre operazioni. **Telemetria**: ricevere dal veicolo i dati scientifici e di servizio (il collegamento lento: da megabit a qualche centinaio di Mbit da Marte; decine di bit/s dalla Voyager a 24 miliardi di km). **Comandi**: inviare in uplink le istruzioni al veicolo (codificate per resistere alle radiazioni; firmate per la sicurezza). **Tracciamento**: misurare il tempo di andata e ritorno della luce e lo spostamento Doppler della portante — insieme rivelano la distanza e la velocità radiale del veicolo con una precisione di ~1 m e ~0,1 mm/s. Così si sa dove si trova il veicolo, con un'accuratezza dell'ordine del chilometro attraverso centinaia di milioni di km di spazio vuoto."
+  },
+  {
+    "rel": "science/mission-phases/dsn.json",
+    "at": "body_paragraphs.3",
+    "old": "Strato di tecniche avanzate in cima. **Delta-DOR** (Delta-Differential One-way Range) utilizza due antenne che visualizzano la stessa navicella spaziale + un quasar vicino contemporaneamente; il tempismo differenziale dà una posizione angolare ai nanoradiani. La navigazione EDL di Marte ora colpisce di routine ~100 m atterraggio-ellisse precisione su quello che è essenzialmente una costa multi-mese a 30.000 km/h. Il DSN è il motivo.",
+    "new": "In cima si aggiungono tecniche avanzate. Il **Delta-DOR** (Delta-Differential One-way Range) usa due antenne che osservano contemporaneamente lo stesso veicolo e un quasar vicino; la differenza di temporizzazione dà la posizione angolare al nanoradiante. La navigazione EDL su Marte ottiene ormai di routine un'accuratezza dell'ellisse di atterraggio di ~100 m al termine di quella che è essenzialmente una crociera di diversi mesi a 30.000 km/h. Il merito è della DSN."
+  },
+  {
+    "rel": "science/mission-phases/dsn.json",
+    "at": "diagram_caption",
+    "old": "Goldstone + Madrid + Canberra a intervalli di 120° → copertura continua come la Terra ruota → intervallo + Doppler + delta-DOR → posizione veicolo spaziale di classe chilometro attraverso il sistema solare.",
+    "new": "Goldstone + Madrid + Canberra a intervalli di 120° → copertura continua mentre la Terra ruota → ranging + Doppler + delta-DOR → posizione del veicolo con accuratezza chilometrica in tutto il sistema solare."
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "title",
+    "old": "EDL — Ingresso, Discesa, Atterraggio",
+    "new": "EDL — ingresso, discesa, atterraggio"
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "intro_sentence",
+    "old": "Sette minuti dal cima dell'atmosfera a ruote-a-terra — la fase più automatizzata.",
+    "new": "Sette minuti dalla cima dell'atmosfera al contatto con il suolo — la fase più automatizzata e con meno margine di ogni missione planetaria."
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "narrative_101.2",
+    "old": "Missioni diverse, trucchi diversi. Apollo ha semplicemente acceso il suo motore di discesa fino al suolo. Curiosity e Perseverance hanno utilizzato lo Sky Crane davvero pazzesco: una piattaforma alimentata da razzi che stava in bilico a 20 metri dal suolo e abbassava il rover con tre cavi, poi si allontanava volando da sola. Lo Zhurong cinese ha fatto un ibrido. I sette minuti sono chiamati \"i sette minuti di terrore\" dentro JPL perché non c'è nulla che chiunque possa fare durante loro. Il simulatore ha fatto i calcoli; ti fidi del simulatore.",
+    "new": "Missioni diverse, trucchi diversi. Apollo ha semplicemente tenuto acceso il motore di discesa fino a terra. Curiosity e Perseverance hanno usato lo Sky Crane, una soluzione davvero folle: una piattaforma a razzo che stava in sospensione a 20 metri dal suolo e calava il rover su tre cavi, per poi allontanarsi in volo da sola. Lo Zhurong cinese ha adottato una soluzione ibrida. I sette minuti sono detti «i sette minuti di terrore» al JPL perché durante quel tempo nessuno può farci nulla. Il simulatore ha fatto i calcoli; ci si fida del simulatore."
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "body_paragraphs.1",
+    "old": "La discesa inizia quando i paracadute supersonici si dispiegano, intorno a Mach 1,5-2. Eliminano un'altra enorme porzione di velocità — ma i paracadute da soli non possono assicurare un atterraggio morbido su un'atmosfera sottile. Su Marte si passa da supersonico a subsonico con il paracadute, poi si transita verso la discesa con propulsione: lo scudo termico si libera, i retrorazzi sparano, il lander scende gli ultimi cento metri circa solo sulle colonne di spinta del motore.",
+    "new": "La discesa comincia quando si aprono i paracadute supersonici, intorno a Mach 1,5-2. Eliminano un'altra enorme quota di velocità — ma i paracadute da soli non bastano per un atterraggio morbido in un'atmosfera sottile. Su Marte si passa da supersonico a subsonico sotto paracadute, poi si passa alla discesa propulsa: lo scudo termico si sgancia, i retrorazzi si accendono e il lander percorre le ultime centinaia di metri solo sulla spinta dei motori."
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "body_paragraphs.2",
+    "old": "Curiosity e Perseverance utilizzarono lo sky-crane: restare in sospensione a ~20 m, abbassare il rover tramite cavi fino a ruote a terra, allontanare con i motori la fase di discesa. Apollo utilizzò un'accensione diretta dei motori fino alla superficie. Lo Zhurong della Cina utilizzò uno schema ibrido di sospensione e abbassamento. Pianeti diversi, atmosfere diverse, schemi diversi — gli stessi sette minuti.",
+    "new": "Curiosity e Perseverance hanno usato la sky-crane: restare in sospensione a ~20 m, calare il rover su cavi fino al contatto delle ruote col suolo e far allontanare in volo lo stadio di discesa. Apollo ha usato un'accensione diretta fino alla superficie. Lo Zhurong cinese ha usato uno schema ibrido di sospensione e calata. Pianeti diversi, atmosfere diverse, schemi diversi — gli stessi sette minuti."
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "diagram_caption",
+    "old": "EDL: ingresso → paracadute → discesa propulsa → touchdown.",
+    "new": "Sequenza EDL: ingresso (scudo termico) → paracadute → discesa propulsa → atterraggio."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "narrative_101.0",
+    "old": "Una volta che una capsula si impegna nel rientro non può aggiungere energia — niente motori, niente manovre di recupero. Ma non è impotente su DOVE scenderà. Inclinandosi per puntare la portanza verso l'alto allunga la planata e vola lontano; inclinandola verso il basso si tuffa e atterra vicino; inclinandosi a sinistra o a destra si sposta lateralmente. L'insieme di tutti i posti che potrebbe raggiungere, data la sua velocità e la sua portanza, è una zona al suolo a forma di lacrima allungata — l'impronta di atterraggio.",
+    "new": "Una volta che una capsula si impegna nel rientro non può aggiungere energia — niente motori, niente riattacco. Ma non è impotente su DOVE scenderà. Ruotando per puntare la portanza verso l'alto allunga la planata e arriva lontano; con la portanza verso il basso si tuffa e atterra vicino; inclinandosi a sinistra o a destra si sposta di lato. L'insieme di tutti i luoghi che può raggiungere, data la sua velocità e la sua portanza, è una zona al suolo a forma di goccia allungata — l'impronta di atterraggio."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "narrative_101.1",
+    "old": "Raggiungere il bordo lontano dell'impronta costa qualcosa: volare con portanza verso l'alto per andare lontano significa una discesa più dolce e un picco-g inferiore, mentre tuffarsi vicino significa una più ripida e severa. Quindi c'è un compromesso inscritto nell'impronta — i bersagli più lontani sono quelli a basso-g, quelli più vicini ad alto-g — e la guida deve trovare un piano di inclinazione che atterra sul punto scelto senza mai superare i limiti di g o di riscaldamento lungo il percorso.",
+    "new": "Raggiungere il bordo lontano dell'impronta ha un prezzo: volare con la portanza verso l'alto per andare lontano significa una discesa più dolce e un picco di g inferiore, mentre tuffarsi per atterrare vicino significa una discesa più ripida e più dura. Nell'impronta è dunque scritto un compromesso — i bersagli più lontani sono quelli a basso g, quelli più vicini sono quelli ad alto g — e la guida deve trovare un piano di inclinazione che atterri sul punto scelto senza mai superare i limiti di g o di riscaldamento lungo il percorso."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "narrative_101.2",
+    "old": "Questo è esattamente il motivo per cui l'Apollo poteva ammarare vicino al suo vettore di recupero e perché Perseverance poteva colpire un'ellisse di atterraggio di meno di 8 chilometri di larghezza (circa 7,7 per 6,6 km) su Marte da milioni di chilometri di distanza. Il computer non sta guidando verso un punto ma sceglie un punto all'interno dell'impronta e poi vola la portanza per raggiungerlo.",
+    "new": "È esattamente per questo che Apollo poteva ammarare vicino alla nave di recupero e che Perseverance ha potuto centrare su Marte, da milioni di chilometri di distanza, un'ellisse di atterraggio larga meno di 8 chilometri (circa 7,7 per 6,6 km). Il computer non guida verso un punto: sceglie un punto all'interno dell'impronta e poi usa la portanza per raggiungerlo."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "body_paragraphs.1",
+    "old": "Il compromesso tra gittata e carico-g è il fatto decisivo. Poiché una traiettoria lunga con portanza verso l'alto perde velocità in alto nell'aria sottile nel tempo, la sua decelerazione di picco è bassa; una traiettoria corta con portanza verso il basso concentra la frenata e raggiunge picchi più alti. Un diagramma dell'impronta quindi funge anche da menu: ogni gittata raggiungibile viene con il picco-g che costa, e il bersaglio deve stare sia nella banda di gittata che nel limite di g.",
+    "new": "Il compromesso tra gittata e carico di g è il fatto decisivo. Poiché una traiettoria lunga con portanza verso l'alto perde velocità in alto, nell'aria sottile, e in un tempo lungo, la sua decelerazione di picco è bassa; una traiettoria corta con portanza verso il basso concentra la frenata e raggiunge un picco più alto. Un diagramma dell'impronta funge quindi anche da menu: a ogni gittata raggiungibile corrisponde il picco di g che costa, e il bersaglio deve stare sia nella fascia di gittata sia entro il limite di g."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "body_paragraphs.2",
+    "old": "Un anello di controllo di guida per il controllo della gittata chiude questo. Dato un bersaglio di gittata risolve l'angolo di inclinazione (davvero un piano di inclinazione) che atterra lì, poi lo vola, invertendo l'inclinazione sinistra/destra per annullare l'errore di crossrange. Se il bersaglio si trova al di fuori dell'impronta la risposta onesta è che non può essere raggiunto — la guida si blocca al bordo più vicino — motivo per cui la progettazione della missione sceglie condizioni di entrata che mantengono il bersaglio comodamente all'interno dell'impronta.",
+    "new": "Un anello di guida per il controllo della gittata chiude il cerchio. Dato un bersaglio di gittata, risolve l'angolo di inclinazione (in realtà un piano di inclinazione) che porta ad atterrare lì, poi lo esegue, invertendo l'inclinazione a sinistra e a destra per annullare l'errore di gittata laterale. Se il bersaglio è fuori dall'impronta la risposta onesta è che non si può raggiungere — la guida si limita al bordo più vicino — ed è per questo che la progettazione della missione sceglie condizioni di ingresso che tengano il bersaglio comodamente dentro l'impronta."
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "narrative_101.1",
+    "old": "È un mito diffuso che questo calore provenga dall'attrito. Quasi tutto proviene dalla compressione: il veicolo spaziale non riesce a spingere l'aria sufficientemente velocemente, così si forma un'onda d'urto appena davanti a esso e il gas intrappolato si surriscalda. Più veloce l'ingresso, più caldo l'urto — ecco perché Venere, con gli ingressi più veloci e l'aria più densa, è l'ambiente di ingresso più severo del sistema solare.",
+    "new": "È un mito diffuso che questo calore venga dall'attrito. Quasi tutto viene dalla compressione: il veicolo spaziale non riesce a spostare l'aria abbastanza in fretta, così subito davanti a esso si forma un'onda d'urto e il gas intrappolato si surriscalda. Più veloce è l'ingresso, più caldo è l'urto — ecco perché Venere, con gli ingressi più veloci e l'aria più densa, è l'ambiente di ingresso più severo del sistema solare."
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "narrative_101.2",
+    "old": "Il veicolo sopravvive dietro uno scudo termico — un guscio smussato e ablativo rivolto verso il flusso. Lo smussamento è deliberato: un naso appuntito concentrerebbe il calore, mentre uno scudo ampio tiene l'onda d'urto a distanza e distribuisce il carico. La superficie dello scudo si annerisce e si stacca di proposito, portando via il calore con sé, così il veicolo spaziale dietro rimane fresco.",
+    "new": "Il veicolo sopravvive dietro uno scudo termico — un guscio smussato e ablativo rivolto verso il flusso. Lo smussamento è voluto: un muso appuntito concentrerebbe il calore, mentre uno scudo ampio tiene l'onda d'urto a distanza e distribuisce il carico. La superficie dello scudo si carbonizza e si stacca di proposito, portando via il calore con sé, così il veicolo spaziale al riparo dietro resta freddo."
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "body_paragraphs.0",
+    "old": "Due picchi sono importanti durante l'ingresso e non coincidono. Il picco di riscaldamento avviene in alto, dove il veicolo è ancora veloce e il tasso di riscaldamento (che scala approssimativamente con il cubo della velocità) è enorme anche in aria sottile. Il picco di decelerazione avviene più in basso, in aria più densa, dove la forza sul veicolo è massima — gli ingressi su Marte raggiungono il picco intorno a 8–15 g, gli ingressi su Venere a 100–350 g. La struttura di un lander è dimensionata per il picco di g; il suo scudo termico è dimensionato per il picco di calore.",
+    "new": "Durante l'ingresso contano due picchi, e non coincidono. Il picco di riscaldamento si ha in alto, dove il veicolo è ancora veloce e l'intensità del riscaldamento (che cresce approssimativamente con il cubo della velocità) è enorme anche nell'aria sottile. Il picco di decelerazione si ha più in basso, in aria più densa, dove la forza sul veicolo è massima — gli ingressi su Marte raggiungono il picco intorno a 8–15 g, quelli su Venere a 100–350 g. La struttura di un lander è dimensionata sul picco di g; il suo scudo termico, sul picco di calore."
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "body_paragraphs.1",
+    "old": "La guaina di plasma che brilla intorno al veicolo blocca anche le radio: per uno o due minuti al picco di riscaldamento, il gas ionizzato avvolge il veicolo spaziale e interrompe le comunicazioni — il famoso blackout da ingresso. I controllori semplicemente aspettano; il veicolo sta seguendo una sequenza pre-caricata, da solo, attraverso la parte più calda della traiettoria.",
+    "new": "La guaina di plasma che brilla intorno al veicolo blocca anche le comunicazioni radio: per uno o due minuti al picco di riscaldamento, il gas ionizzato avvolge il veicolo spaziale e interrompe il collegamento — il famoso blackout d'ingresso. I controllori semplicemente aspettano; il veicolo segue una sequenza precaricata, da solo, attraverso la parte più calda della traiettoria."
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "body_paragraphs.2",
+    "old": "Su `/fly`, il gauge di riscaldamento aerodinamico dell'HUD di discesa è un proxy relativo per questo — sale mentre il veicolo morde l'atmosfera e raggiunge il picco ben prima dell'atterraggio, poi cala mentre il veicolo rallenta. Attiva il layer Science-Lens della resistenza durante qualsiasi ingresso su Marte o Venere con `?descent=1` per vedere la decelerazione aumentare man mano che l'aria si addensa.",
+    "new": "Su `/fly`, l'indicatore di riscaldamento aerodinamico dell'HUD di discesa è un riferimento relativo di tutto questo — sale mentre il veicolo morde l'atmosfera e raggiunge il picco ben prima del contatto con il suolo, poi cala mentre il veicolo rallenta. Attiva il layer Science-Lens della resistenza durante qualsiasi ingresso su Marte o Venere con `?descent=1` per vedere la decelerazione crescere man mano che l'aria si addensa."
+  }
+]

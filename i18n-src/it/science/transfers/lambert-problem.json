@@ -1,15 +1,15 @@
 {
   "title": "Problema di Lambert",
-  "intro_sentence": "Date due posizioni e un tempo di transito, trova l'orbita che le connette.",
+  "intro_sentence": "Date due posizioni e un tempo di transito, trova l'orbita che le collega — il problema centrale di ogni traiettoria interplanetaria.",
   "narrative_101": [
-    "Il trasferimento di Hohmann è il percorso più economico da un'orbita a un'altra, ma la maggior parte delle missioni non vola davvero un Hohmann. Vogliono partire in una data precisa — ad esempio quando un certo razzo è pronto, o quando una certa rampa è libera — e vogliono arrivare in una data precisa — ad esempio quando una tempesta di sabbia su Marte si è placata. Hohmann non ti lascia scegliere. Lambert sì.",
-    "La domanda di Lambert sembra più semplice della sua matematica: sono nel punto A, voglio essere nel punto B, e voglio impiegare esattamente questo numero di giorni. Quale orbita devo volare? Lambert scrisse la risposta nel 1761 — c'è esattamente un'ellisse (o a volte due, a seconda del verso in cui giri) che collega due punti in un tempo dato.",
+    "Il trasferimento di Hohmann è il percorso più economico da un'orbita a un'altra, ma la maggior parte delle missioni non segue davvero un trasferimento di Hohmann. Vogliono partire in una data precisa — ad esempio quando un certo razzo è pronto, o quando una certa rampa è libera — e vogliono arrivare in una data precisa — ad esempio quando una tempesta di sabbia su Marte si è placata. Con Hohmann non puoi scegliere. Con Lambert sì.",
+    "La domanda di Lambert sembra più semplice della sua matematica: sono nel punto A, voglio essere nel punto B, e voglio impiegare esattamente questo numero di giorni. Quale orbita devo percorrere? Lambert scrisse la risposta nel 1761 — c'è esattamente un'ellisse (o a volte due, a seconda del verso in cui giri) che collega due punti in un tempo dato.",
     "È il cuore di ogni grafico porkchop che vedrai. Ogni pixel del porkchop in /plan è un problema di Lambert: «parti dalla Terra il giorno X, arrivi su Marte il giorno Y — quanto costa?». Il colore è la risposta. Risolvilo diecimila volte in parallelo e ottieni l'intera mappa in un colpo. Orrery lo fa in un Web Worker, così l'interfaccia non si blocca mentre pensa."
   ],
   "body_paragraphs": [
-    "Il problema di Lambert chiede: sono qui, voglio essere là, e ho questo tempo a disposizione. Quale ellisse dovrei seguire? Due vettori di posizione e un tempo di volo, e l'equazione produce l'orbita di trasferimento unica (o due — c'è una strada lunga e una strada corta intorno al corpo centrale).",
+    "Il problema di Lambert chiede: sono qui, voglio essere là, e ho questo tempo a disposizione. Quale ellisse dovrei seguire? Due vettori di posizione e un tempo di volo, e l'equazione produce un'unica orbita di trasferimento (o due — c'è un percorso lungo e uno corto attorno al corpo centrale).",
     "Il trasferimento di Hohmann è una soluzione di Lambert specifica: posizioni agli apsidi opposti, tempo di volo pari a metà del periodo dell'ellisse di trasferimento. Sposta uno qualsiasi dei due parametri — posizioni diverse, tempo diverso — e ottieni un'ellisse diversa. Tempo più breve, ellisse più eccentrica, energia di partenza maggiore. La matematica non cambia; cambiano solo le condizioni al contorno.",
     "Orrery risolve il problema di Lambert in un Web Worker ogni volta che passi il mouse su una cella porkchop in `/plan`. Ogni cella chiede: \"partire dalla Terra nella data X, arrivare su Marte nella data Y — qual è il costo in ∆v?\" Il colore che vedi è la risposta a quella domanda, calcolata una volta per pixel."
   ],
-  "diagram_caption": "Due vettori r₁ e r₂; il solver Lambert trova l'ellisse unica."
+  "diagram_caption": "Due vettori posizione r₁ e r₂; il risolutore di Lambert trova l'unica ellisse di trasferimento che li unisce nel tempo di volo dato."
 }

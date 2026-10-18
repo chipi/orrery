@@ -1,16 +1,16 @@
 {
-  "title": "L'equazione di Tsiolkovsky · 1903",
-  "intro_sentence": "Un insegnante sordo di provincia lavora sull'equazione del razzo 50 anni prima che qualcuno potesse costruirne uno.",
+  "title": "Equazione di Ciolkovskij · 1903",
+  "intro_sentence": "Un insegnante russo sordo ricava l'equazione del razzo 50 anni prima che qualcuno potesse costruire un razzo per usarla.",
   "narrative_101": [
-    "Konstantin Ciolkovskij era un insegnante provinciale autodidatta a Kaluga, sordo dall'infanzia a causa della scarlattina, che trascorreva le serate disegnando razzi multistadio mentre insegnava aritmetica di giorno. Nel 1903 pubblicò \"L'Investigazione dello Spazio per Mezzo di Dispositivi Reattivi\" su un oscuro giornale russo — e ricavò l'equazione che avrebbe governato ogni razzo mai costruito.",
-    "L'equazione di Tsiolkovsky: ∆v = vₑ × ln(m₀/m₁). Il cambiamento di velocità che un razzo può produrre è uguale alla sua velocità di scarico moltiplicata per il logaritmo naturale del suo rapporto di massa. Quel termine di logaritmo naturale è brutale — ottenere più ∆v richiede esponenzialmente più carburante. La maggior parte di ogni razzo è carburante. Il Saturn V era l'85% propellente per massa.",
-    "Tsiolkovsky capì anche: i propellenti liquidi avrebbero battuto quelli solidi; lo stadio multiplo era necessario per sfuggire alla Terra; le stazioni orbitali potevano ospitare permanentemente gli umani. Morì nel 1935, due anni prima che i razzi di Goddard raggiungessero un'altitudine considerevole."
+    "Konstantin Ciolkovskij era un insegnante di provincia autodidatta a Kaluga, sordo dall'infanzia a causa della scarlattina, che trascorreva le serate disegnando razzi multistadio mentre di giorno insegnava aritmetica. Nel 1903 pubblicò «L'indagine dello spazio per mezzo di dispositivi reattivi» su una rivista russa poco nota — e ricavò l'equazione che avrebbe governato ogni razzo mai costruito.",
+    "L'equazione di Ciolkovskij: ∆v = vₑ × ln(m₀/m₁). La variazione di velocità che un razzo può produrre è uguale alla sua velocità di scarico moltiplicata per il logaritmo naturale del suo rapporto di massa. Quel logaritmo naturale è spietato — ottenere più ∆v richiede esponenzialmente più propellente. La maggior parte di ogni razzo è propellente. Il Saturn V era per l'85% propellente, in massa.",
+    "Ciolkovskij intuì anche che i propellenti liquidi avrebbero battuto quelli solidi, che per sfuggire alla Terra servivano più stadi e che le stazioni orbitali potevano ospitare esseri umani in modo permanente. Morì nel 1935, due anni prima che i razzi di Goddard raggiungessero un'altitudine considerevole."
   ],
   "body_paragraphs": [
-    "Tsiolkovsky pubblicò l'equazione, il concetto di razzo multistadio e il concetto di stazione orbitale anni prima che l'ingegneria dei razzi serio esistesse. Goddard costruì il primo razzo a combustibile liquido nel 1926 (USA); il V-2 di von Braun nel 1942 (Germania); l'R-7 di Korolëv nel 1957 (URSS).",
-    "L'equazione è l'inverso della terza legge di Newton: ogni chilogrammo di propellente espulso a velocità vₑ spinge il veicolo di 1 kg × vₑ. Integrando su massa decrescente si ottiene la dipendenza dal logaritmo naturale.",
-    "Perché la scala logaritmica è importante: raddoppiare ∆v richiede il rapporto di massa al quadrato. Triplicare richiede il cubo. Per andare da 0 a velocità di fuga (~11,2 km/s) con una tipica velocità di scarico chimico di 4,4 km/s, rapporto di massa = e^(11,2/4,4) ≈ 13. Quindi un payload di 1 tonnellata richiede 12 tonnellate di propellente, più la struttura che lo contiene.",
-    "Tsiolkovsky non ha mai testato nulla. Non era un ingegnere — era un teorico con il gesso. Il programma spaziale sovietico lo canonizzò postumamente; la sua casa a Kaluga è ora un museo e il suo nome è sul cratere del lato nascosto della Luna a cui i sovietici puntavano."
+    "Ciolkovskij pubblicò l'equazione, il concetto di razzo multistadio e quello di stazione orbitale anni prima che esistesse un'ingegneria dei razzi seria. Goddard costruì il primo razzo a propellente liquido nel 1926 (USA); il V-2 di von Braun nel 1942 (Germania); l'R-7 di Korolëv nel 1957 (URSS).",
+    "L'equazione è l'inverso della terza legge di Newton: ogni chilogrammo di propellente espulso a velocità vₑ spinge il veicolo di 1 kg × vₑ. Integrando mentre la massa diminuisce si ottiene la dipendenza dal logaritmo naturale.",
+    "Perché conta la scala logaritmica: raddoppiare ∆v richiede il quadrato del rapporto di massa; triplicarlo, il cubo. Per passare da 0 alla velocità di fuga (~11,2 km/s) con una tipica velocità di scarico chimica di 4,4 km/s serve un rapporto di massa e^(11,2/4,4) ≈ 13. Quindi un carico utile di 1 tonnellata richiede 12 tonnellate di propellente, più la struttura che le contiene.",
+    "Ciolkovskij non collaudò mai nulla. Non era un ingegnere, ma un teorico col gesso in mano. Il programma spaziale sovietico lo canonizzò postumo; la sua casa a Kaluga è oggi un museo e il suo nome è sul cratere della faccia nascosta della Luna verso cui puntavano i sovietici."
   ],
-  "formula_caption": "L'equazione del razzo. m₀ = massa a pieno carico (piena); m₁ = massa vuota (vuota); vₑ = velocità di scarico."
+  "formula_caption": "L'equazione del razzo. m₀ = massa iniziale (piena); m₁ = massa a secco (vuota); vₑ = velocità di scarico."
 }

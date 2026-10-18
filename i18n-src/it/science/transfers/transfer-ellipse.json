@@ -3,13 +3,13 @@
   "intro_sentence": "L'arco kepleriano che trasporta un'astronave da un'orbita all'altra — il Sole a uno dei fuochi, proprio come ogni altra orbita.",
   "narrative_101": [
     "La pianificazione di una missione sembra una questione di motori e razzi. Per lo più è una questione di scegliere un'ellisse. Ogni crociera interplanetaria — Apollo verso la Luna, Voyager verso Nettuno, Perseverance verso Marte — è solo un veicolo spaziale che percorre un'orbita ellittica tra il punto di partenza e quello di arrivo. Il nome tecnico di quell'ellisse è orbita di trasferimento.",
-    "Segue le stesse regole di ogni altra orbita di Keplero. Il Sole sta in un fuoco. Il veicolo è lento all'estremità lontana e veloce a quella vicina. Vis-viva continua a funzionare per calcolarne la velocità. La terza legge di Keplero continua a darti il tempo di volo a partire dalla dimensione. Niente di esotico.",
+    "Segue le stesse regole di ogni altra orbita kepleriana. Il Sole sta in uno dei fuochi. Il veicolo è lento all'estremità lontana e veloce a quella vicina. L'equazione vis-viva continua a funzionare per calcolarne la velocità. La terza legge di Keplero continua a darti il tempo di volo a partire dalla dimensione. Niente di esotico.",
     "L'unica cosa che distingue un'ellisse di trasferimento dall'orbita di un pianeta è che il veicolo ne percorre solo METÀ. Sale a un capo, viaggia fino all'altro e scende. Per questo il budget di ∆v ha sempre due grandi accensioni — una per entrare nell'ellisse, una per lasciarla. La parte centrale, gli otto mesi di crociera, non costa assolutamente nulla."
   ],
   "body_paragraphs": [
     "Una volta che sei uscito dall'orbita terrestre, sei su un'ellisse attorno al Sole. Questa ellisse è l'orbita di trasferimento e ha tutte le stesse proprietà di qualsiasi altra: semiasse maggiore, eccentricità, perielio, afelio. Il fatto che tu stia andando da qualche parte non cambia la geometria — la gravità non si cura della tua destinazione.",
     "Due punti di ancoraggio definiscono un'ellisse di trasferimento: il luogo da cui sei partito (perielio se stai andando verso l'esterno) e il luogo dove arriverai (afelio). Il semiasse maggiore è la media di quei due raggi. Modifica uno dei due ancoraggi e l'intera ellisse si rimodella — vai più lontano, l'ellisse si allunga, il viaggio diventa più lungo.",
-    "Su Orrery nell'HUD `/fly` vedrai l'astronave tracciare questa ellisse in tempo reale. L'arco di trasferimento sullo schermo è una rappresentazione visiva della stessa sezione conica che la matematica dice che sia — il Sole a uno dei fuochi, il perielio dietro di te, l'afelio davanti a te."
+    "Nell'HUD `/fly` di Orrery vedrai il veicolo tracciare questa ellisse in tempo reale. L'arco di trasferimento sullo schermo è una rappresentazione visiva della stessa conica descritta dalla matematica — il Sole a uno dei fuochi, il perielio dietro di te, l'afelio davanti a te."
   ],
-  "diagram_caption": "Due orbite coplanari connesse da ellisse con Sole al fuoco."
+  "diagram_caption": "Due orbite coplanari (partenza interna, destinazione esterna) collegate da un'ellisse di trasferimento con il Sole in un fuoco."
 }

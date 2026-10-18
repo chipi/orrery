@@ -1,0 +1,260 @@
+[
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "body_paragraphs.1",
+  "old": "Ogni orbita Keplerian è una di queste quattro. Le orbite legate — pianeti, lune, satelliti, qualsiasi cosa che ritorna — sono cerchi o ellissi. Le traiettorie non legate — flyby, fughe, catture iperboliche — sono parabole o iperbole. Il confine è esatto: a `e = 1` ti stai muovendo esattamente alla velocità di fuga locale.",
+  "new": "Ogni orbita kepleriana è una di queste quattro. Le orbite legate — pianeti, lune, satelliti, tutto ciò che ritorna — sono cerchi o ellissi. Le traiettorie non legate — sorvoli, fughe, catture iperboliche — sono parabole o iperboli. Il confine è netto: a `e = 1` ti muovi esattamente alla velocità di fuga locale."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "body_paragraphs.2",
+  "old": "I progettisti di missioni sfruttano tutti e quattro. Naviga su un'ellisse, effettua un flyby di un pianeta su un'iperbole (rispetto a quel pianeta), inserisciti in orbita di nuovo su un'ellisse. Il percorso `/fly` del simulatore fa questo naturalmente — la stessa equazione di traiettoria gestisce ogni caso, l'eccentricità ti dice quale conica stai volando.",
+  "new": "I progettisti di missioni sfruttano tutte e quattro. Percorri la crociera su un'ellisse, sorvoli un pianeta su un'iperbole (rispetto a quel pianeta), ti inserisci di nuovo in orbita su un'ellisse. Il percorso `/fly` del simulatore lo fa in modo naturale — la stessa equazione di traiettoria gestisce ogni caso, e l'eccentricità ti dice quale conica stai percorrendo."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "diagram_caption",
+  "old": "Quattro coniche dall'affettamento di un cono: cerchio, ellisse, parabola, iperbole. L'eccentricità determina quale.",
+  "new": "Quattro coniche ottenute sezionando un cono: cerchio, ellisse, parabola, iperbole. L'eccentricità stabilisce quale."
+ },
+ {
+  "rel": "science/transfers/coplanar-trajectories.json",
+  "at": "intro_sentence",
+  "old": "Il Sistema Solare è un disco, e il propellente è limitato — quindi le missioni non lasciano il disco a meno che non debbano.",
+  "new": "Il Sistema solare è un disco, e il propellente è limitato — quindi le missioni non lasciano il disco a meno che non sia necessario."
+ },
+ {
+  "rel": "science/transfers/coplanar-trajectories.json",
+  "at": "narrative_101.0",
+  "old": "Mettiti al centro del Sistema Solare e guarda i pianeti — vedrai una frittella, non una sfera. Mercurio, Venere, Terra, Marte, Giove, Saturno — tutti orbitano entro circa 7° dallo stesso piano piatto (l'eclittica). I pianeti si sono formati da una singola nube rotante di gas e polvere, e quella rotazione ha collassato tutto in un disco sottile. Tutto da allora è rimasto in quel disco.",
+  "new": "Mettiti al centro del Sistema solare e guarda i pianeti — vedrai una frittella, non una sfera. Mercurio, Venere, Terra, Marte, Giove, Saturno — tutti orbitano entro circa 7° dallo stesso piano piatto (l'eclittica). I pianeti si sono formati da un'unica nube rotante di gas e polvere, e quella rotazione ha appiattito tutto in un disco sottile. Da allora tutto è rimasto in quel disco."
+ },
+ {
+  "rel": "science/transfers/coplanar-trajectories.json",
+  "at": "narrative_101.2",
+  "old": "Quindi i pianificatori di missione non combattono il disco. Aspettano che la geometria orbitale si allinei (è ciò che significa \"finestra di lancio\"), puntano il razzo lungo l'eclittica e lasciano che i pianeti gestiscano lo sterzo. Il risultato, quando guardi ogni traiettoria di veicolo spaziale che abbiamo, è una pila di curve tutte abbracciate allo stesso piano — come guardare auto correre su una pista piatta.",
+  "new": "Quindi i pianificatori di missione non lottano contro il disco. Aspettano che la geometria orbitale si allinei (è ciò che significa «finestra di lancio»), puntano il razzo lungo l'eclittica e lasciano che siano i pianeti a fare da guida. Il risultato, se guardi tutte le traiettorie dei veicoli spaziali che abbiamo, è un fascio di curve tutte aderenti allo stesso piano — come guardare auto correre su una pista piatta."
+ },
+ {
+  "rel": "science/transfers/coplanar-trajectories.json",
+  "at": "body_paragraphs.0",
+  "old": "Il prezzo da pagare per lasciare il piano è brutale. Cambiare l'inclinazione di una traiettoria eliocentrica anche solo di 1° alla velocità orbitale terrestre (~30 km/s) costa circa 0,5 km/s di `∆v`. Fare il cambio di piano di 80° di cui Ulysses aveva bisogno — per sorvolare i poli solari — sarebbe costato ~38 km/s se fatto con spinta chimica. Nessun razzo reale può fornirlo. Quindi gli ingegneri non pagano per i cambi di piano; progettano attorno ad essi.",
+  "new": "Il prezzo da pagare per lasciare il piano è brutale. Cambiare l'inclinazione di una traiettoria eliocentrica anche solo di 1° alla velocità orbitale terrestre (~30 km/s) costa circa 0,5 km/s di `∆v`. Eseguire il cambio di piano di 80° di cui Ulysses aveva bisogno — per sorvolare i poli solari — sarebbe costato ~38 km/s con una spinta chimica. Nessun razzo reale può fornirlo. Quindi gli ingegneri non pagano per i cambi di piano; progettano aggirandoli."
+ },
+ {
+  "rel": "science/transfers/coplanar-trajectories.json",
+  "at": "body_paragraphs.1",
+  "old": "Le assistenze gravitazionali obbediscono allo stesso vincolo. Quando un veicolo spaziale fa una fionda attorno a Giove o Venere, il pianeta sta nell'eclittica, quindi il vettore di deflessione — che passa sempre attraverso il pianeta — mantiene anche la traiettoria vicina all'eclittica. La crociera di sei anni di Cassini sembra uno scarabocchio 2D nella vista /explore perché ogni corpo di assistenza che ha visitato era 2D piatto.",
+  "new": "Le fionde gravitazionali obbediscono allo stesso vincolo. Quando un veicolo spaziale sfrutta la fionda di Giove o di Venere, il pianeta si trova nell'eclittica, quindi il vettore di deflessione — che passa sempre attraverso il pianeta — mantiene anche la traiettoria vicina all'eclittica. La crociera di sei anni di Cassini sembra uno scarabocchio 2D nella vista /explore perché ogni corpo da cui ha ricevuto una fionda giace sullo stesso piano."
+ },
+ {
+  "rel": "science/transfers/coplanar-trajectories.json",
+  "at": "body_paragraphs.2",
+  "old": "Ulysses è l'unico veicolo spaziale che ha rotto il disco di proposito. Il suo obiettivo scientifico erano i poli del Sole, ma raggiungerli richiedeva ~80° di inclinazione — chimicamente impossibile. Quindi la missione ha fatto l'unica cosa che funzionava: lanciata verso l'esterno verso Giove, ha usato la gravità di Giove come \"razzo\" gratuito per deviare il veicolo fuori dall'eclittica, poi ha orbitato il Sole da polo a polo per 18 anni. La grande deviazione era il percorso più economico. Ogni altra missione di spazio profondo che vedi in /explore è rimasta nel disco perché il disco è dove sono le destinazioni — e dove il propellente ti permette di andare.",
+  "new": "Ulysses è l'unico veicolo spaziale che ha lasciato il disco di proposito. Il suo obiettivo scientifico erano i poli del Sole, ma raggiungerli richiedeva ~80° di inclinazione — chimicamente impossibile. Quindi la missione ha fatto l'unica cosa che funzionava: è stata lanciata verso Giove, ha usato la gravità di Giove come «razzo» gratuito per deviare il veicolo fuori dall'eclittica, poi ha orbitato intorno al Sole da polo a polo per 18 anni. La grande deviazione era il percorso più economico. Ogni altra missione nello spazio profondo che vedi in /explore è rimasta nel disco perché il disco è dove si trovano le destinazioni — e dove il propellente ti permette di andare."
+ },
+ {
+  "rel": "science/transfers/coplanar-trajectories.json",
+  "at": "diagram_caption",
+  "old": "Il Sistema solare è quasi piatto perché i pianeti si sono formati da un unico disco in rotazione. Le partenze restano su quel piano perché i cambi di piano costano un propellente proibitivo.",
+  "new": "Il Sistema solare giace su un unico piano perché i pianeti si sono formati da un unico disco in rotazione. Le partenze restano su quel piano perché i cambi di piano richiedono quantità proibitive di propellente."
+ },
+ {
+  "rel": "science/transfers/free-return.json",
+  "at": "intro_sentence",
+  "old": "Una traiettoria che vola oltre la destinazione e piega la gravità stessa in un biglietto di ritorno — nessun accensione del motore richiesta.",
+  "new": "Una traiettoria che passa oltre la destinazione e piega la gravità stessa in un biglietto di ritorno — senza bisogno di accendere il motore."
+ },
+ {
+  "rel": "science/transfers/free-return.json",
+  "at": "narrative_101.0",
+  "old": "Immagina di volare verso la Luna. Sei preoccupato — e se il motore si guasta durante il viaggio? Saresti bloccato, alla deriva per sempre. Ecco la risposta geniale: scegli un percorso dove, anche se ogni motore della tua navicella muore nel momento in cui lasci l'orbita terrestre, la sola gravità ti farà girare attorno alla Luna e ti getterà a casa automaticamente. Quella è una traiettoria di ritorno libero.",
+  "new": "Immagina di volare verso la Luna. Sei preoccupato — e se il motore si guasta durante il viaggio? Resteresti bloccato, alla deriva per sempre. Ecco la risposta geniale: scegli un percorso in cui, anche se ogni motore della tua navicella si spegne nel momento in cui lasci l'orbita terrestre, la sola gravità ti fa girare attorno alla Luna e ti rimanda a casa automaticamente. Questa è una traiettoria di ritorno libero."
+ },
+ {
+  "rel": "science/transfers/free-return.json",
+  "at": "narrative_101.1",
+  "old": "È un vero otto nel spazio. Lasci la Terra, sali verso la Luna, la gravità della Luna piega il tuo percorso di 180 gradi, e cadi di nuovo verso la Terra, colpendo l'atmosfera al rimbalzo. Nessun motore richiesto. La Luna fa tutto il lavoro. La geometria deve solo essere giusta.",
+  "new": "È un vero otto nello spazio. Lasci la Terra, sali verso la Luna, la gravità della Luna piega il tuo percorso di 180 gradi, e ricadi verso la Terra, incontrando l'atmosfera sulla via del ritorno. Non serve alcun motore. La Luna fa tutto il lavoro. Basta che la geometria sia giusta."
+ },
+ {
+  "rel": "science/transfers/free-return.json",
+  "at": "narrative_101.2",
+  "old": "Apollo 8 è stata la prima missione con equipaggio a volare su una. Apollo 13 — la famosa missione \"Houston, abbiamo un problema\" — deve la sua sopravvivenza ad essa. Quando il loro motore principale divenne inutilizzabile, cavalcarono il ritorno libero verso casa, accendendo solo il motore del modulo lunare per le correzioni di rotta — mai il motore principale danneggiato. Lo scenario predefinito /fly di Orrery fa esattamente questo per Marte: Terra → passaggio ravvicinato di Marte → Terra, nessuna accensione di rotta richiesta. Il viaggio verso Marte più economico possibile che tu possa volare con umani a bordo.",
+  "new": "Apollo 8 è stata la prima missione con equipaggio a volarne una. Apollo 13 — la famosa missione «Houston, abbiamo un problema» — deve la propria salvezza a questa traiettoria. Quando il motore principale divenne inutilizzabile, percorsero il ritorno libero verso casa, accendendo solo il motore del modulo lunare per le correzioni di rotta — mai il motore principale danneggiato. Lo scenario predefinito /fly di Orrery fa esattamente questo per Marte: Terra → sorvolo di Marte → Terra, senza accensioni a metà percorso. Il viaggio verso Marte più economico possibile con un equipaggio a bordo."
+ },
+ {
+  "rel": "science/transfers/free-return.json",
+  "at": "body_paragraphs.0",
+  "old": "Il trucco principale: lascia la Terra, vola oltre la Luna (o Marte), e lascia che la gravità di quel corpo pieghi il tuo percorso verso la Terra. Se hai ottenuto la giusta geometria, rientri nell'atmosfera terrestre al rimbalzo. L'equipaggio non deve mai accendere un motore per tornare a casa.",
+  "new": "Il trucco principale: lascia la Terra, vola oltre la Luna (o Marte), e lascia che la gravità di quel corpo riporti il tuo percorso verso la Terra. Se hai calcolato bene la geometria, rientri nell'atmosfera terrestre sulla via del ritorno. L'equipaggio non deve mai accendere un motore per tornare a casa."
+ },
+ {
+  "rel": "science/transfers/free-return.json",
+  "at": "body_paragraphs.1",
+  "old": "Apollo 8 è stata la prima traiettoria di ritorno libero con equipaggio. Apollo 13 ha famosamente fatto affidamento sulla tecnica quando il suo modulo di servizio si è danneggiato — cavalcando il ritorno libero verso casa, accendendo solo il motore del modulo lunare per le correzioni di rotta, mai il motore principale danneggiato. Per Marte la geometria è più difficile — hai bisogno di un anello a due passaggi di 500 giorni — ma il concetto è lo stesso: la geometria del passaggio ravvicinato che fa il lavoro della spinta di ritorno.",
+  "new": "Apollo 8 è stata la prima traiettoria di ritorno libero con equipaggio. Apollo 13 ricorse a questa tecnica, com'è noto, quando il suo modulo di servizio fu danneggiato — percorrendo il ritorno libero verso casa, accendendo solo il motore del modulo lunare per le correzioni di rotta, mai il motore principale danneggiato. Per Marte la geometria è più difficile — serve un anello a due passaggi di 500 giorni — ma il concetto è lo stesso: la geometria del sorvolo che fa il lavoro dell'accensione di ritorno."
+ },
+ {
+  "rel": "science/transfers/free-return.json",
+  "at": "diagram_caption",
+  "old": "Terra → passaggio ravvicinato di Marte → Terra. La gravità della Luna (o di Marte) fa la virata a U gratuitamente.",
+  "new": "Terra → sorvolo di Marte → Terra. La gravità della Luna (o di Marte) fa l'inversione a U gratis."
+ },
+ {
+  "rel": "science/transfers/gravity-assist.json",
+  "at": "title",
+  "old": "Assistenza gravitazionale",
+  "new": "Fionda gravitazionale"
+ },
+ {
+  "rel": "science/transfers/gravity-assist.json",
+  "at": "intro_sentence",
+  "old": "Ruba il momento orbitale di un pianeta in un flyby — la cosa più vicina a un pranzo gratis nello spazio.",
+  "new": "Ruba la quantità di moto orbitale di un pianeta durante un sorvolo — la cosa più vicina a un pranzo gratis nello spazio."
+ },
+ {
+  "rel": "science/transfers/gravity-assist.json",
+  "at": "narrative_101.1",
+  "old": "Dal punto di vista del pianeta, il veicolo entra ed esce esattamente alla stessa velocità — la gravità è conservativa, nessuna energia guadagnata o persa. Ma dal punto di vista del Sole, il veicolo eredita parte del moto orbitale del pianeta in uscita e arriva da qualche altra parte con velocità in più (o in meno). Non è una violazione della fisica; il pianeta paga il conto rallentando — di una quantità troppo minuscola per essere misurata.",
+  "new": "Dal punto di vista del pianeta, il veicolo entra ed esce esattamente alla stessa velocità — la gravità è conservativa, nessuna energia guadagnata o persa. Ma dal punto di vista del Sole, il veicolo eredita parte del moto orbitale del pianeta in uscita e arriva altrove con una velocità maggiore (o minore). Non è una violazione della fisica; il pianeta paga il conto rallentando — di una quantità troppo minuscola per essere rilevata."
+ },
+ {
+  "rel": "science/transfers/gravity-assist.json",
+  "at": "body_paragraphs.0",
+  "old": "Avvicinati a un pianeta in movimento da dietro su una traiettoria iperbolica. La gravità del pianeta piega il tuo percorso, tu passi accanto, e esci con la stessa velocità relativa al pianeta — ma il pianeta si stava muovendo tutto il tempo, e porti con te quel moto. Risultato netto: esci con una velocità maggiore relativa al Sole di quella con cui sei arrivato. Il pianeta, in cambio, si rallenta di una quantità immisurabilmente minuscola.",
+  "new": "Avvicinati a un pianeta in movimento da dietro su una traiettoria iperbolica. La gravità del pianeta piega il tuo percorso, tu passi accanto ed esci con la stessa velocità rispetto al pianeta — ma il pianeta si stava muovendo per tutto il tempo, e porti con te quel moto. Risultato netto: esci con una velocità maggiore, rispetto al Sole, di quella con cui sei arrivato. Il pianeta, in cambio, rallenta di una quantità impercettibilmente piccola."
+ },
+ {
+  "rel": "science/transfers/gravity-assist.json",
+  "at": "body_paragraphs.1",
+  "old": "Inverti la geometria — avvicinati da davanti — e rallenti. Pioneer 11 usò Giove per spingersi verso Saturno. Voyager 2 concatenò Giove, Saturno, Urano, Nettuno in uno dei più raffinati tour di fionda gravitazionale mai compiuti. Cassini rimbalzò su Venere due volte e sulla Terra una volta prima di raggiungere Saturno. New Horizons colpì Giove per risparmiare tre anni nel viaggio verso Plutone.",
+  "new": "Inverti la geometria — avvicinati da davanti — e rallenti. Pioneer 11 usò Giove per spingersi verso Saturno. Voyager 2 concatenò Giove, Saturno, Urano, Nettuno in uno dei più raffinati tour di fionda gravitazionale mai compiuti. Cassini rimbalzò su Venere due volte e sulla Terra una volta prima di raggiungere Saturno. New Horizons sfruttò Giove per accorciare di tre anni il viaggio verso Plutone."
+ },
+ {
+  "rel": "science/transfers/gravity-assist.json",
+  "at": "body_paragraphs.2",
+  "old": "Senza gravity assist, metà delle missioni nel catalogo di Orrery non avrebbero potuto volare. I pianeti esterni sono semplicemente troppo lontani per traiettorie dirette con razzi chimici — i loro costi in `∆v` supererebbero quello che qualsiasi razzo può fornire. I gravity assist trasformano quell'aritmetica da impossibile a difficile ma fattibile.",
+  "new": "Senza le fionde gravitazionali, metà delle missioni nel catalogo di Orrery non avrebbero potuto volare. I pianeti esterni sono semplicemente troppo lontani per traiettorie dirette con razzi chimici — i loro costi in `∆v` supererebbero ciò che qualsiasi razzo può fornire. Le fionde gravitazionali trasformano quell'aritmetica da impossibile a difficile ma fattibile."
+ },
+ {
+  "rel": "science/transfers/gravity-assist.json",
+  "at": "diagram_caption",
+  "old": "Sonda entra ed esce dal sistema planetario alla stessa velocità.",
+  "new": "Velocità invariata nel sistema del pianeta; il suo moto aggiunge velocità eliocentrica."
+ },
+ {
+  "rel": "science/transfers/hohmann-transfer.json",
+  "at": "narrative_101.1",
+  "old": "La risposta, sviluppata da Walter Hohmann nel 1925, è sorprendentemente elegante. Trova un'ellisse che tocca appena l'orbita della Terra da un lato e appena l'orbita di Marte dall'altro. Accendi il motore brevemente per lasciare la Terra e unirti a quell'ellisse. Procedi in costa per circa 8,5 mesi senza accendere il motore — la gravità fa il lavoro. Quando arrivi all'estremità opposta, accendi di nuovo per stabilizzarti nell'orbita di Marte. Due accensioni, totale. Fatto.",
+  "new": "La risposta, sviluppata da Walter Hohmann nel 1925, è sorprendentemente elegante. Trova un'ellisse che tocca appena l'orbita della Terra da un lato e appena l'orbita di Marte dall'altro. Accendi il motore brevemente per lasciare la Terra e unirti a quell'ellisse. Prosegui per inerzia per circa 8,5 mesi senza accendere il motore — la gravità fa il lavoro. Quando arrivi all'estremità opposta, accendi di nuovo per inserirti nell'orbita di Marte. In tutto, due accensioni. Fatto."
+ },
+ {
+  "rel": "science/transfers/hohmann-transfer.json",
+  "at": "narrative_101.2",
+  "old": "È il viaggio più economico possibile — ma è anche il più lento. L'attesa di 8,5 mesi è non negoziabile; la fisica fissa il cronometro. Vuoi andare più veloce? Puoi, ma lo paghi: un'ellisse più ripida, un attraversamento più veloce, un'accensione di frenata molto più grande all'altra estremità. Questo è il compromesso che vedrai attuarsi in ogni porkchop plot in /plan.",
+  "new": "È il viaggio più economico possibile — ma è anche il più lento. L'attesa di 8,5 mesi non è negoziabile; la fisica fissa il cronometro. Vuoi andare più veloce? Puoi, ma lo paghi: un'ellisse più ripida, un attraversamento più rapido, un'accensione di frenata molto più intensa all'altra estremità. Questo è il compromesso che vedrai svolgersi in ogni grafico porkchop in /plan."
+ },
+ {
+  "rel": "science/transfers/hohmann-transfer.json",
+  "at": "body_paragraphs.0",
+  "old": "Immagina di essere in un'orbita circolare attorno al Sole e di voler raggiungere una più alta — diciamo da Terra a Marte. Il modo più economico è un trasferimento di Hohmann: un'ellisse il cui perielio sfiora l'orbita di partenza e il cui afelio sfiora l'orbita di destinazione. Due accensioni del motore ti portano lì. Una al perielio per lasciare l'orbita della Terra e entrare nell'ellisse. Una all'afelio per circolarizzarsi nell'orbita di destinazione.",
+  "new": "Immagina di essere in un'orbita circolare attorno al Sole e di voler raggiungerne una più alta — diciamo da Terra a Marte. Il modo più economico è un trasferimento di Hohmann: un'ellisse il cui perielio sfiora l'orbita di partenza e il cui afelio sfiora l'orbita di destinazione. Bastano due accensioni del motore. Una al perielio per lasciare l'orbita della Terra ed entrare nell'ellisse. Una all'afelio per circolarizzare l'orbita di destinazione."
+ },
+ {
+  "rel": "science/transfers/hohmann-transfer.json",
+  "at": "body_paragraphs.1",
+  "old": "È il percorso a impulso fisso più economico, ma è anche il più lento. Da Terra a Marte richiede circa 259 giorni con un trasferimento di Hohmann. Vuoi andare più veloce? Accendi più forte, vola un'ellisse allungata con velocità al perielio più alta. La V∞ di arrivo aumenta, l'accensione di ingresso alla destinazione è più grande, il costo totale ∆v sale ripidamente.",
+  "new": "È il percorso a impulso fisso più economico, ma è anche il più lento. Il viaggio dalla Terra a Marte richiede circa 259 giorni con un trasferimento di Hohmann. Vuoi andare più veloce? Spingi di più, percorri un'ellisse allungata con velocità al perielio più alta. La V∞ di arrivo aumenta, l'accensione di inserimento alla destinazione è più grande, il costo totale in ∆v sale rapidamente."
+ },
+ {
+  "rel": "science/transfers/hohmann-transfer.json",
+  "at": "body_paragraphs.2",
+  "old": "Nel porkchop `/plan` di Orrery vedrai questo direttamente: c'è una tranquilla conca di celle blu teal intorno alla finestra naturale di Hohmann, ogni 26 mesi per Marte, e contorni sempre più costosi mentre spingi verso tempi di transito più brevi.",
+  "new": "Nel porkchop `/plan` di Orrery vedrai questo direttamente: c'è una tranquilla conca di celle verde acqua intorno alla finestra naturale di Hohmann, ogni 26 mesi per Marte, e contorni sempre più costosi mentre spingi verso tempi di transito più brevi."
+ },
+ {
+  "rel": "science/transfers/lambert-problem.json",
+  "at": "intro_sentence",
+  "old": "Date due posizioni e un tempo di transito, trova l'orbita che le connette.",
+  "new": "Date due posizioni e un tempo di transito, trova l'orbita che le collega — il problema centrale di ogni traiettoria interplanetaria."
+ },
+ {
+  "rel": "science/transfers/lambert-problem.json",
+  "at": "narrative_101.0",
+  "old": "Il trasferimento di Hohmann è il percorso più economico da un'orbita a un'altra, ma la maggior parte delle missioni non vola davvero un Hohmann. Vogliono partire in una data precisa — ad esempio quando un certo razzo è pronto, o quando una certa rampa è libera — e vogliono arrivare in una data precisa — ad esempio quando una tempesta di sabbia su Marte si è placata. Hohmann non ti lascia scegliere. Lambert sì.",
+  "new": "Il trasferimento di Hohmann è il percorso più economico da un'orbita a un'altra, ma la maggior parte delle missioni non segue davvero un trasferimento di Hohmann. Vogliono partire in una data precisa — ad esempio quando un certo razzo è pronto, o quando una certa rampa è libera — e vogliono arrivare in una data precisa — ad esempio quando una tempesta di sabbia su Marte si è placata. Con Hohmann non puoi scegliere. Con Lambert sì."
+ },
+ {
+  "rel": "science/transfers/lambert-problem.json",
+  "at": "narrative_101.1",
+  "old": "La domanda di Lambert sembra più semplice della sua matematica: sono nel punto A, voglio essere nel punto B, e voglio impiegare esattamente questo numero di giorni. Quale orbita devo volare? Lambert scrisse la risposta nel 1761 — c'è esattamente un'ellisse (o a volte due, a seconda del verso in cui giri) che collega due punti in un tempo dato.",
+  "new": "La domanda di Lambert sembra più semplice della sua matematica: sono nel punto A, voglio essere nel punto B, e voglio impiegare esattamente questo numero di giorni. Quale orbita devo percorrere? Lambert scrisse la risposta nel 1761 — c'è esattamente un'ellisse (o a volte due, a seconda del verso in cui giri) che collega due punti in un tempo dato."
+ },
+ {
+  "rel": "science/transfers/lambert-problem.json",
+  "at": "body_paragraphs.0",
+  "old": "Il problema di Lambert chiede: sono qui, voglio essere là, e ho questo tempo a disposizione. Quale ellisse dovrei seguire? Due vettori di posizione e un tempo di volo, e l'equazione produce l'orbita di trasferimento unica (o due — c'è una strada lunga e una strada corta intorno al corpo centrale).",
+  "new": "Il problema di Lambert chiede: sono qui, voglio essere là, e ho questo tempo a disposizione. Quale ellisse dovrei seguire? Due vettori di posizione e un tempo di volo, e l'equazione produce un'unica orbita di trasferimento (o due — c'è un percorso lungo e uno corto attorno al corpo centrale)."
+ },
+ {
+  "rel": "science/transfers/lambert-problem.json",
+  "at": "diagram_caption",
+  "old": "Due vettori r₁ e r₂; il solver Lambert trova l'ellisse unica.",
+  "new": "Due vettori posizione r₁ e r₂; il risolutore di Lambert trova l'unica ellisse di trasferimento che li unisce nel tempo di volo dato."
+ },
+ {
+  "rel": "science/transfers/patched-conics.json",
+  "at": "narrative_101.0",
+  "old": "Ecco un piccolo segreto sporco della meccanica orbitale: la fisica completa — ogni corpo del Sistema solare che attira ogni altro — è matematicamente irrisolvibile in modo pulito. NON abbiamo una soluzione in forma chiusa per il problema dei tre corpi, figuriamoci per la versione reale con decine di corpi. Allora come fanno i progettisti di missioni a combinare qualcosa?",
+  "new": "Ecco uno scomodo segreto della meccanica orbitale: la fisica completa — ogni corpo del Sistema solare che attira ogni altro — è matematicamente irrisolvibile in modo pulito. NON abbiamo una soluzione in forma chiusa per il problema dei tre corpi, figuriamoci per la versione reale con decine di corpi. Allora come fanno i progettisti di missioni a combinare qualcosa?"
+ },
+ {
+  "rel": "science/transfers/patched-conics.json",
+  "at": "narrative_101.1",
+  "old": "Barano. Fingono che, in ogni momento, conti la gravità di UN SOLO corpo. Vicino alla Terra, tira solo la Terra. Durante la crociera, solo il Sole. Vicino a Marte, solo Marte. Ciascuna di queste regioni si chiama sfera d'influenza, e al suo interno il veicolo vola una conica di Keplero pulita. Quando il veicolo attraversa un confine, cambi sistema di coordinate e inizi una nuova conica. Cucite insieme, formano la traiettoria. Queste sono le coniche raccordate.",
+  "new": "Barano. Fingono che, in ogni momento, conti la gravità di UN SOLO corpo. Vicino alla Terra, tira solo la Terra. Durante la crociera, solo il Sole. Vicino a Marte, solo Marte. Ciascuna di queste regioni si chiama sfera d'influenza, e al suo interno il veicolo percorre una conica di Keplero pulita. Quando il veicolo attraversa un confine, cambi sistema di coordinate e inizi una nuova conica. Cucite insieme, formano la traiettoria. Queste sono le coniche raccordate."
+ },
+ {
+  "rel": "science/transfers/patched-conics.json",
+  "at": "body_paragraphs.0",
+  "old": "La gravità reale è caotica. Un'astronave in trasferimento tra la Terra e Marte sente la gravità della Terra, la gravità del Sole, la gravità di Marte, più tutto il resto, tutto insieme. La matematica completa (il problema degli n-corpi) non ha alcuna soluzione in forma chiusa — soltanto integrazione numerica. Questo è lento, fragile, difficile da pianificare.",
+  "new": "La gravità reale è complicata. Un veicolo spaziale in crociera tra la Terra e Marte risente della gravità della Terra, della gravità del Sole, della gravità di Marte, più tutto il resto, tutto insieme. La matematica completa (il problema degli n corpi) non ha alcuna soluzione in forma chiusa — soltanto integrazione numerica. È lento, fragile, difficile da usare per pianificare."
+ },
+ {
+  "rel": "science/transfers/patched-conics.json",
+  "at": "body_paragraphs.1",
+  "old": "Le coniche frammentate rappresentano il compromesso operativo: si dichiara una sfera di influenza intorno a ogni corpo celeste. Nella sfera di influenza terrestre, conta solo la gravità della Terra; si vola seguendo un arco Keplero intorno alla Terra. Oltrepassando il confine nella regione eliocentrica, si passa a un arco Keplero centrato sul Sole. Entrando nella sfera di Marte, si passa di nuovo. Tre problemi Keplero, raccordati insieme ai confini.",
+  "new": "Le coniche raccordate sono il compromesso operativo: si dichiara una sfera d'influenza intorno a ogni corpo celeste. Nella sfera d'influenza terrestre, conta solo la gravità della Terra; si percorre un arco kepleriano intorno alla Terra. Oltrepassando il confine nella regione eliocentrica, si passa a un arco kepleriano centrato sul Sole. Entrando nella sfera di Marte, si cambia di nuovo. Tre problemi di Keplero, raccordati ai confini."
+ },
+ {
+  "rel": "science/transfers/patched-conics.json",
+  "at": "body_paragraphs.2",
+  "old": "È sbagliato ma utile. Gli errori ai confini sono piccoli — pochi punti percentuali di ∆v al massimo per il lavoro cislunar, ancora meno per l'eliocentric — e la matematica diventa sufficientemente trattabile da adattarsi in un Web Worker. I diagrammi di portata (`porkchops`) di Orrery sono calcolati in questo modo; lo sono anche le traiettorie su `/fly`. La pianificazione del volo reale alla NASA usa la stessa approssimazione come primo tentativo, poi la affina numericamente prima del lancio.",
+  "new": "È sbagliato ma utile. Gli errori ai confini sono piccoli — pochi punti percentuali di ∆v al massimo per il lavoro cislunare, ancora meno per quello eliocentrico — e la matematica diventa abbastanza trattabile da girare in un Web Worker. I porkchop di `/plan` di Orrery sono calcolati in questo modo; lo sono anche le traiettorie su `/fly`. La pianificazione reale dei voli alla NASA usa la stessa approssimazione come prima stima, poi la affina numericamente prima del lancio."
+ },
+ {
+  "rel": "science/transfers/patched-conics.json",
+  "at": "diagram_caption",
+  "old": "Tre frame, tre coniche, raccordate alle sfere d'influenza.",
+  "new": "Tre sistemi di riferimento, tre coniche: geocentrico → eliocentrico → centrato su Marte, raccordati ai confini delle sfere d'influenza."
+ },
+ {
+  "rel": "science/transfers/transfer-ellipse.json",
+  "at": "narrative_101.1",
+  "old": "Segue le stesse regole di ogni altra orbita di Keplero. Il Sole sta in un fuoco. Il veicolo è lento all'estremità lontana e veloce a quella vicina. Vis-viva continua a funzionare per calcolarne la velocità. La terza legge di Keplero continua a darti il tempo di volo a partire dalla dimensione. Niente di esotico.",
+  "new": "Segue le stesse regole di ogni altra orbita kepleriana. Il Sole sta in uno dei fuochi. Il veicolo è lento all'estremità lontana e veloce a quella vicina. L'equazione vis-viva continua a funzionare per calcolarne la velocità. La terza legge di Keplero continua a darti il tempo di volo a partire dalla dimensione. Niente di esotico."
+ },
+ {
+  "rel": "science/transfers/transfer-ellipse.json",
+  "at": "body_paragraphs.2",
+  "old": "Su Orrery nell'HUD `/fly` vedrai l'astronave tracciare questa ellisse in tempo reale. L'arco di trasferimento sullo schermo è una rappresentazione visiva della stessa sezione conica che la matematica dice che sia — il Sole a uno dei fuochi, il perielio dietro di te, l'afelio davanti a te.",
+  "new": "Nell'HUD `/fly` di Orrery vedrai il veicolo tracciare questa ellisse in tempo reale. L'arco di trasferimento sullo schermo è una rappresentazione visiva della stessa conica descritta dalla matematica — il Sole a uno dei fuochi, il perielio dietro di te, l'afelio davanti a te."
+ },
+ {
+  "rel": "science/transfers/transfer-ellipse.json",
+  "at": "diagram_caption",
+  "old": "Due orbite coplanari connesse da ellisse con Sole al fuoco.",
+  "new": "Due orbite coplanari (partenza interna, destinazione esterna) collegate da un'ellisse di trasferimento con il Sole in un fuoco."
+ }
+]

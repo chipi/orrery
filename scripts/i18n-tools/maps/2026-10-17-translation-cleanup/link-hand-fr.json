@@ -1,0 +1,26 @@
+[
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.2.l",
+    "old": "Arrokoth's gentle origins (NASA / Stern et al., Science 2020)",
+    "new": "Les origines paisibles d'Arrokoth (NASA / Stern et al., Science 2020)"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "links.2.l",
+    "old": "Daly et al. (2023) — Successful kinetic impact (Nature)",
+    "new": "Daly et al. (2023) — Impact cinétique réussi (Nature)"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "links.2.l",
+    "old": "Mueller et al. (2010) — Patroclus-Menoetius shape (Icarus)",
+    "new": "Mueller et al. (2010) — Forme de Patrocle et Ménétios (Icarus)"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.3.l",
+    "old": "Orbiteur et sonde Uranus — Enquête décennale",
+    "new": "Uranus Orbiter and Probe — Enquête décennale"
+  }
+]

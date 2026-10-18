@@ -1,0 +1,44 @@
+[
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.2.l",
+    "old": "Arrokoth's gentle origins (NASA / Stern et al., Science 2020)",
+    "new": "De rustige oorsprong van Arrokoth (NASA / Stern et al., Science 2020)"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "links.2.l",
+    "old": "Daly et al. (2023) — Successful kinetic impact (Nature)",
+    "new": "Daly et al. (2023) — Geslaagde kinetische inslag (Nature)"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "links.2.l",
+    "old": "Mueller et al. (2010) — Patroclus-Menoetius shape (Icarus)",
+    "new": "Mueller et al. (2010) — Vorm van Patroclus en Menoetius (Icarus)"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.3.l",
+    "old": "Why Earth has seasons (NASA Climate Kids)",
+    "new": "Waarom de Aarde seizoenen heeft (NASA Climate Kids)"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.4.l",
+    "old": "Pale Blue Dot — Carl Sagan reflection (Planetary Society)",
+    "new": "Pale Blue Dot — beschouwing van Carl Sagan (Planetary Society)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.4.l",
+    "old": "Mercury's molten core (Nature Geoscience 2019)",
+    "new": "De gesmolten kern van Mercurius (Nature Geoscience 2019)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.4.l",
+    "old": "Venus's runaway greenhouse (Nature Astronomy 2020)",
+    "new": "Het op hol geslagen broeikaseffect van Venus (Nature Astronomy 2020)"
+  }
+]

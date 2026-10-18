@@ -1,0 +1,62 @@
+[
+  {
+    "rel": "planets/earth.json",
+    "at": "links.1.l",
+    "old": "Terra (NASA Esplorazione del sistema solare)",
+    "new": "Terra (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.1.l",
+    "old": "Giove (NASA Esplorazione del Sistema Solare)",
+    "new": "Giove (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.4.l",
+    "old": "L'interno profondo di Giove (Natura 2018)",
+    "new": "L'interno profondo di Giove (Nature 2018)"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "links.1.l",
+    "old": "Marte (NASA Esplorazione del Sistema Solare)",
+    "new": "Marte (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.1.l",
+    "old": "Mercurio (NASA Esplorazione del Sistema Solare)",
+    "new": "Mercurio (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.1.l",
+    "old": "Nettuno (NASA Esplorazione del Sistema Solare)",
+    "new": "Nettuno (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.1.l",
+    "old": "Urano (NASA Esplorazione del Sistema Solare)",
+    "new": "Urano (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.1.l",
+    "old": "Venere (NASA Esplorazione del Sistema Solare)",
+    "new": "Venere (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.1.l",
+    "old": "Il Sole (NASA Esplorazione del Sistema Solare)",
+    "new": "Il Sole (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.4.l",
+    "old": "Modello solare standard (revisione annuale dell'astronomia 2022)",
+    "new": "Modello solare standard (Annual Review of Astronomy 2022)"
+  }
+]

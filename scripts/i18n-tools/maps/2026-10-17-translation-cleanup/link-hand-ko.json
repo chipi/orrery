@@ -1,0 +1,50 @@
+[
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.2.l",
+    "old": "Arrokoth's gentle origins (NASA / Stern et al., Science 2020)",
+    "new": "아로코트의 온화한 기원 (NASA / Stern et al., Science 2020)"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "links.2.l",
+    "old": "Daly et al. (2023) — Successful kinetic impact (Nature)",
+    "new": "Daly et al. (2023) — 성공적인 운동 충돌 (Nature)"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "links.2.l",
+    "old": "Mueller et al. (2010) — Patroclus-Menoetius shape (Icarus)",
+    "new": "Mueller et al. (2010) — 파트로클로스와 메노이티오스의 형태 (Icarus)"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.3.l",
+    "old": "Uranus Orbiter and Probe — Decadal Survey",
+    "new": "Uranus Orbiter and Probe — 10년 조사"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.3.l",
+    "old": "Why Earth has seasons (NASA Climate Kids)",
+    "new": "지구에 계절이 있는 이유 (NASA Climate Kids)"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.4.l",
+    "old": "Pale Blue Dot — Carl Sagan reflection (Planetary Society)",
+    "new": "창백한 푸른 점 — 칼 세이건의 성찰 (Planetary Society)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.4.l",
+    "old": "Mercury's molten core (Nature Geoscience 2019)",
+    "new": "수성의 녹은 핵 (Nature Geoscience 2019)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.4.l",
+    "old": "Venus's runaway greenhouse (Nature Astronomy 2020)",
+    "new": "금성의 폭주 온실 효과 (Nature Astronomy 2020)"
+  }
+]

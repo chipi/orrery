@@ -1,0 +1,68 @@
+[
+  {
+    "rel": "planets/earth.json",
+    "at": "links.1.l",
+    "old": "Terre (NASA Exploration du système solaire)",
+    "new": "Terre (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.1.l",
+    "old": "Jupiter (NASA Exploration du système solaire)",
+    "new": "Jupiter (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "links.1.l",
+    "old": "Mars (NASA Exploration du système solaire)",
+    "new": "Mars (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.1.l",
+    "old": "Mercure (NASA Exploration du système solaire)",
+    "new": "Mercure (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.1.l",
+    "old": "Neptune (NASA Exploration du système solaire)",
+    "new": "Neptune (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.4.l",
+    "old": "Modèle intérieur de Neptune (Icare 2021)",
+    "new": "Modèle intérieur de Neptune (Icarus 2021)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.1.l",
+    "old": "Saturne (NASA Exploration du système solaire)",
+    "new": "Saturne (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.1.l",
+    "old": "Uranus (NASA Exploration du système solaire)",
+    "new": "Uranus (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.1.l",
+    "old": "Vénus (NASA Exploration du système solaire)",
+    "new": "Vénus (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.1.l",
+    "old": "Le Soleil (NASA Exploration du système solaire)",
+    "new": "Le Soleil (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.4.l",
+    "old": "Modèle solaire standard (Revue annuelle de l'astronomie 2022)",
+    "new": "Modèle solaire standard (Annual Review of Astronomy 2022)"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "rel": "planets/earth.json",
+    "at": "links.1.l",
+    "old": "地球（NASA 太阳系探索）",
+    "new": "地球（NASA Solar System Exploration）"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.4.l",
+    "old": "暗淡蓝点 — 卡尔·萨根（行星学会）",
+    "new": "暗淡蓝点 — 卡尔·萨根（Planetary Society）"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.1.l",
+    "old": "木星（NASA 太阳系探索）",
+    "new": "木星（NASA Solar System Exploration）"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "links.1.l",
+    "old": "火星（NASA 太阳系探索）",
+    "new": "火星（NASA Solar System Exploration）"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.1.l",
+    "old": "水星（NASA 太阳系探索）",
+    "new": "水星（NASA Solar System Exploration）"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.1.l",
+    "old": "海王星（NASA 太阳系探索）",
+    "new": "海王星（NASA Solar System Exploration）"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.1.l",
+    "old": "土星（NASA 太阳系探索）",
+    "new": "土星（NASA Solar System Exploration）"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.1.l",
+    "old": "天王星（NASA 太阳系探索）",
+    "new": "天王星（NASA Solar System Exploration）"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.1.l",
+    "old": "金星（NASA 太阳系探索）",
+    "new": "金星（NASA Solar System Exploration）"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.1.l",
+    "old": "太阳（NASA 太阳系探索）",
+    "new": "太阳（NASA Solar System Exploration）"
+  }
+]

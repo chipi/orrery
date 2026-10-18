@@ -1,0 +1,98 @@
+[
+  {
+    "rel": "planets/earth.json",
+    "at": "links.1.l",
+    "old": "الأرض (استكشاف النظام الشمسي في NASA)",
+    "new": "الأرض (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.4.l",
+    "old": "النقطة الزرقاء الشاحبة — تأمل كارل ساغان (مجتمع الكواكب)",
+    "new": "النقطة الزرقاء الشاحبة — تأمل كارل ساغان (Planetary Society)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.1.l",
+    "old": "المشتري (استكشاف النظام الشمسي في NASA)",
+    "new": "المشتري (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.4.l",
+    "old": "باطن المشتري العميق (نيتشر 2018)",
+    "new": "باطن المشتري العميق (Nature 2018)"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "links.1.l",
+    "old": "المريخ (استكشاف النظام الشمسي في NASA)",
+    "new": "المريخ (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.1.l",
+    "old": "عطارد (استكشاف النظام الشمسي في NASA)",
+    "new": "عطارد (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.4.l",
+    "old": "لبّ عطارد المنصهر (نيتشر جيوساينس 2019)",
+    "new": "لبّ عطارد المنصهر (Nature Geoscience 2019)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.1.l",
+    "old": "نبتون (استكشاف النظام الشمسي في NASA)",
+    "new": "نبتون (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.4.l",
+    "old": "نموذج باطن نبتون (إيكاروس 2021)",
+    "new": "نموذج باطن نبتون (Icarus 2021)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.1.l",
+    "old": "زحل (استكشاف النظام الشمسي في NASA)",
+    "new": "زحل (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.4.l",
+    "old": "حلقات زحل صغيرة السن (ساينس 2019)",
+    "new": "حلقات زحل صغيرة السن (Science 2019)"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.1.l",
+    "old": "أورانوس (استكشاف النظام الشمسي في NASA)",
+    "new": "أورانوس (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.1.l",
+    "old": "الزهرة (استكشاف النظام الشمسي في NASA)",
+    "new": "الزهرة (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.4.l",
+    "old": "احتباس حراري انهداري للزهرة (نيتشر أسترونومي 2020)",
+    "new": "احتباس حراري انهداري للزهرة (Nature Astronomy 2020)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.1.l",
+    "old": "الشمس (استكشاف النظام الشمسي في NASA)",
+    "new": "الشمس (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.4.l",
+    "old": "النموذج الشمسي القياسي (مراجعة سنوية لعلم الفلك 2022)",
+    "new": "النموذج الشمسي القياسي (Annual Review of Astronomy 2022)"
+  }
+]

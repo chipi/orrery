@@ -50,6 +50,23 @@ for (const s of sources) {
       if (typeof out !== 'string' || out === src || ALLOW.has(`${s.rel}:${at}`)) continue;
       for (const p of problems(loc, src, out))
         if (NAME_PROBLEM.test(p)) hits.push({ loc, rel: s.rel, at, problem: p, src, out });
+      // A reference link's source in parentheses (journal, site, society) stays as in
+      // English: "Nature" translated as "Природа" or "Natura" breaks the citation.
+      const cited = /(^|\.)links\.\d+\.l$/.test(at) && (src.match(/\(([^)]*)\)\s*$/) ?? [])[1];
+      if (cited) {
+        const lost = (cited.match(/[A-Za-z][A-Za-z.'-]+/g) ?? []).filter(
+          (w) => !/^(et|al\.?|and)$/.test(w) && !out.includes(w),
+        );
+        if (lost.length)
+          hits.push({
+            loc,
+            rel: s.rel,
+            at,
+            problem: `link source changed: ${lost.join(' ')}`,
+            src,
+            out,
+          });
+      }
     }
   }
 }

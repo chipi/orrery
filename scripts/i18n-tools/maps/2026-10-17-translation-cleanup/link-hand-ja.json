@@ -1,0 +1,32 @@
+[
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.2.l",
+    "old": "Arrokoth's gentle origins (NASA / Stern et al., Science 2020)",
+    "new": "アロコスの穏やかな起源（NASA / Stern et al., Science 2020）"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "links.2.l",
+    "old": "Daly et al. (2023) — Successful kinetic impact (Nature)",
+    "new": "Daly et al. (2023) — 成功した運動エネルギー衝突（Nature）"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "links.2.l",
+    "old": "Mueller et al. (2010) — Patroclus-Menoetius shape (Icarus)",
+    "new": "Mueller et al. (2010) — パトロクロスとメノイティオスの形状（Icarus）"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.3.l",
+    "old": "Uranus Orbiter and Probe — Decadal Survey",
+    "new": "Uranus Orbiter and Probe — 10年調査"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.3.label",
+    "old": "Psyche到着",
+    "new": "PSYCHE 到着"
+  }
+]

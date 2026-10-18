@@ -1,0 +1,68 @@
+[
+  {
+    "rel": "planets/earth.json",
+    "at": "links.1.l",
+    "old": "Erde (NASA Erforschung des Sonnensystems)",
+    "new": "Erde (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.1.l",
+    "old": "Jupiter (NASA Erforschung des Sonnensystems)",
+    "new": "Jupiter (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "links.1.l",
+    "old": "Mars (NASA Erforschung des Sonnensystems)",
+    "new": "Mars (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.1.l",
+    "old": "Merkur (NASA Erforschung des Sonnensystems)",
+    "new": "Merkur (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.1.l",
+    "old": "Neptun (NASA Erforschung des Sonnensystems)",
+    "new": "Neptun (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.4.l",
+    "old": "Neptuns Innenmodell (Ikarus 2021)",
+    "new": "Neptuns Innenmodell (Icarus 2021)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.1.l",
+    "old": "Saturn (NASA Erforschung des Sonnensystems)",
+    "new": "Saturn (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.1.l",
+    "old": "Uranus (NASA Erforschung des Sonnensystems)",
+    "new": "Uranus (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.1.l",
+    "old": "Venus (NASA Erforschung des Sonnensystems)",
+    "new": "Venus (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.1.l",
+    "old": "Die Sonne (NASA Erforschung des Sonnensystems)",
+    "new": "Die Sonne (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.4.l",
+    "old": "Standard-Sonnenmodell (Jahresbericht der Astronomie 2022)",
+    "new": "Standard-Sonnenmodell (Annual Review of Astronomy 2022)"
+  }
+]

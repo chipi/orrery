@@ -1,0 +1,80 @@
+[
+  {
+    "rel": "planets/earth.json",
+    "at": "links.1.l",
+    "old": "Terra (NASA Exploração do Sistema Solar)",
+    "new": "Terra (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.4.l",
+    "old": "Ponto Azul Pálido - reflexão de Carl Sagan (Sociedade Planetária)",
+    "new": "Ponto Azul Pálido - reflexão de Carl Sagan (Planetary Society)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.1.l",
+    "old": "Júpiter (NASA Exploração do Sistema Solar)",
+    "new": "Júpiter (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "links.1.l",
+    "old": "Marte (NASA Exploração do Sistema Solar)",
+    "new": "Marte (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.1.l",
+    "old": "Mercúrio (NASA Exploração do Sistema Solar)",
+    "new": "Mercúrio (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.1.l",
+    "old": "Netuno (NASA Exploração do Sistema Solar)",
+    "new": "Netuno (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.4.l",
+    "old": "Modelo interior de Netuno (Ícaro 2021)",
+    "new": "Modelo interior de Netuno (Icarus 2021)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.1.l",
+    "old": "Saturno (NASA Exploração do Sistema Solar)",
+    "new": "Saturno (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.4.l",
+    "old": "Os anéis de Saturno são jovens (Ciência 2019)",
+    "new": "Os anéis de Saturno são jovens (Science 2019)"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.1.l",
+    "old": "Urano (NASA Exploração do Sistema Solar)",
+    "new": "Urano (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.1.l",
+    "old": "Vênus (NASA Exploração do Sistema Solar)",
+    "new": "Vênus (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.1.l",
+    "old": "O Sol (NASA Exploração do Sistema Solar)",
+    "new": "O Sol (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.4.l",
+    "old": "Modelo Solar Padrão (Revisão Anual de Astronomia 2022)",
+    "new": "Modelo Solar Padrão (Annual Review of Astronomy 2022)"
+  }
+]

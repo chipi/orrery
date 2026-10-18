@@ -1,0 +1,56 @@
+[
+  {
+    "rel": "planets/earth.json",
+    "at": "links.1.l",
+    "old": "पृथ्वी (NASA सौर मंडल अन्वेषण)",
+    "new": "पृथ्वी (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.1.l",
+    "old": "बृहस्पति (NASA सौर मंडल अन्वेषण)",
+    "new": "बृहस्पति (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "links.1.l",
+    "old": "मंगल (NASA सौर मंडल अन्वेषण)",
+    "new": "मंगल (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.1.l",
+    "old": "बुध (NASA सौर मंडल अन्वेषण)",
+    "new": "बुध (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.1.l",
+    "old": "वरुण (NASA सौर मंडल अन्वेषण)",
+    "new": "वरुण (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.1.l",
+    "old": "शनि (NASA सौर मंडल अन्वेषण)",
+    "new": "शनि (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.1.l",
+    "old": "अरुण (NASA सौर मंडल अन्वेषण)",
+    "new": "अरुण (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.1.l",
+    "old": "शुक्र (NASA सौर मंडल अन्वेषण)",
+    "new": "शुक्र (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.1.l",
+    "old": "सूर्य (NASA सौर मंडल अन्वेषण)",
+    "new": "सूर्य (NASA Solar System Exploration)"
+  }
+]

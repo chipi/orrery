@@ -1,0 +1,578 @@
+[
+ {
+  "rel": "science/porkchop/what-is-a-porkchop.json",
+  "at": "body_paragraphs.1",
+  "old": "Jede Zelle ist die Antwort auf ein Lambert-Problem: »verlasse die Erde am Datum X, komme am Ziel am Datum X + Y an, wie viel Δv ist erforderlich?« Löse Lambert millionenfach über einem Datumsgitter und die Konturen entstehen von selbst. Die natürlichen Minima sind Startfenster — die günstigen Zonen, in denen Hohmann-ähnliche Transfers existieren.",
+  "new": "Jede Zelle ist die Antwort auf ein Lambert-Problem: »verlasse die Erde am Datum X, komme am Ziel am Datum X + Y an, wie viel Δv ist erforderlich?« Löse das Lambert-Problem millionenfach über einem Datumsgitter, und die Konturen entstehen von selbst. Die natürlichen Minima sind Startfenster — die günstigen Zonen, in denen Hohmann-ähnliche Transfers existieren."
+ },
+ {
+  "rel": "science/porkchop/what-is-a-porkchop.json",
+  "at": "body_paragraphs.2",
+  "old": "Orreeys `/plan`-Route zeigt dir den Porkchop für eines von neun Zielen (Mars, Merkur, Venus, Gasriesen, Pluto, Ceres). Fahre über eine Zelle, um die genauen Daten und Δv zu sehen. Klicke, um diese Mission in `/fly` zu laden.",
+  "new": "Orrerys `/plan`-Route zeigt dir den Porkchop für eines von neun Zielen (Mars, Merkur, Venus, die Gasriesen, Pluto, Ceres). Fahre mit der Maus über eine Zelle, um die genauen Daten und Δv zu sehen. Klicke, um diese Mission in `/fly` zu laden."
+ },
+ {
+  "rel": "science/porkchop/what-is-a-porkchop.json",
+  "at": "diagram_caption",
+  "old": "Porkchop-Plot: X = Abflugdatum, Y = Flugdauer, Farbe = Δv-Kosten (Orreeys vereinfachte Skala; Standardplots zeigen C3/Ankunfts-V∞). Günstige Zonen clustern um natürliche Hohmann-Fenster.",
+  "new": "Porkchop-Plot: X = Abflugdatum, Y = Flugdauer, Farbe = Δv-Kosten (Orrerys vereinfachte Skala; Standardplots zeigen C3 / Ankunfts-V∞). Günstige Zonen häufen sich um die natürlichen Hohmann-Fenster."
+ },
+ {
+  "rel": "science/propulsion/_intro.json",
+  "at": "paragraphs.0",
+  "old": "Raumfahrt hat eine Währung: Δv, in km/s. Jede Brennphase kostet was. Jeder Zug auf einer Trajektorie hat einen Preis. Das Δv-Budget ist die einzige Zahl, die sagt, ob die Mission fliegen kann.",
+  "new": "Die Raumfahrt hat eine universelle Währung: Δv, gemessen in km/s. Jedes Zündmanöver kostet etwas davon, jede Bahnänderung hat ihren Preis. Das Δv-Budget — die Summe aller Ausgaben von Anfang bis Ende — entscheidet, ob die Mission fliegen kann."
+ },
+ {
+  "rel": "science/propulsion/_intro.json",
+  "at": "paragraphs.1",
+  "old": "Die grausame Beschränkung ist die Raketengleichung, die Konstantin Ziolkowski 1903 aufgeschrieben hat. Sie besagt, dass ∆v LOGARITHMISCH mit dem Treibstoffanteil deiner Rakete skaliert. Du wünschst dir doppelte ∆v? Dann brauchst du exponentiell mehr Treibstoff. Darum besteht eine Saturn V zu 90% aus Treibstoff. Darum ist eine Landung auf dem Mars und die Rückkehr so viel schwärer als eine Landung auf dem Mond. Um jedes Gramm Masse, das kein Treibstoff ist, wird erbittert gekämpft.",
+  "new": "Die grausame Einschränkung ist die Raketengleichung, die Konstantin Ziolkowski 1903 aufgeschrieben hat. Sie besagt, dass ∆v LOGARITHMISCH davon abhängt, wie viel deiner Rakete Treibstoff ist. Du willst doppelt so viel ∆v? Dann brauchst du exponentiell mehr Treibstoff. Darum besteht eine Saturn V zu 90% aus Treibstoff. Darum ist eine Landung auf dem Mars samt Rückkehr so viel schwerer als eine Mondlandung. Um jedes Gramm Masse, das kein Treibstoff ist, wird erbittert gekämpft."
+ },
+ {
+  "rel": "science/propulsion/_intro.json",
+  "at": "paragraphs.2",
+  "old": "Sechs Abschnitte hier. Beginne mit ∆v als Missionsbudget — das ist der Rahmen für alles. Dann Tsiolkovsky, um zu verstehen, warum die Mathematik so unbarmherzig ist. Spezifischer Impuls erklärt die Engine-Seite; C3 und V∞ sind die Startenergie- und Ankunftsenergiezahlen, die du überall im FLIGHT-Tab in /missions siehst. Der Oberth-Effekt am Ende ist ein seltenes Stück kostenlose Magie — brenne tief in einem Gravitationsfeld und dein Treibstoff leistet mehr Arbeit.",
+  "new": "Sechs Abschnitte erwarten dich hier. Beginne mit ∆v als Missionsbudget — das ist der Rahmen für alles. Dann Ziolkowski, um zu verstehen, warum die Mathematik so unbarmherzig ist. Der spezifische Impuls erklärt die Triebwerksseite; C3 und V∞ sind die Zahlen für Startenergie und Ankunftsenergie, die du überall im FLIGHT-Tab unter /missions siehst. Der Oberth-Effekt am Ende ist ein seltenes Stück kostenloser Magie — brenne tief in einem Gravitationsfeld, und dein Treibstoff leistet mehr Arbeit."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "intro_sentence",
+  "old": "Materie trifft auf Antimaterie und annihiliert vollständig — ein paar Milligramm könnten theoretisch eine interstellare Sonde antreiben, doch die Menschheit hat bisher weniger als ein Nanogramm erzeugt.",
+  "new": "Trifft Materie auf Antimaterie, zerstrahlen beide vollständig und setzen unerreichte Energie frei — wenige Milligramm könnten prinzipiell eine interstellare Sonde antreiben, doch bisher entstand insgesamt weniger als ein Nanogramm."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "body_paragraphs.2",
+  "old": "Das zweite Problem ist die Lagerung. Antimaterie annihiliert bei Kontakt mit gewöhnlicher Materie, weshalb sie keine Wand, keinen Behälter, keine Spur von Restgas berühren darf. Der einzige bekannte Ansatz ist magnetische oder elektromagnetische Einfangung — Antiprotonen in einer Penning-Falle oder Antihydrogen in einer Magnetflasche. Der Rekord für gelagertes Antihydrogen wird in Minuten bis Stunden für kleine Atommengen gemessen. Milligramm für Jahre lange Transits an Bord eines Raumschiffs, das Startvibrationen und Strahlung standhalten muss, ist in keinem ingenieurwissenschaftlichen Sinne ein gelöstes Problem.",
+  "new": "Das zweite Problem ist die Lagerung. Antimaterie annihiliert bei Kontakt mit gewöhnlicher Materie, weshalb sie keine Wand, keinen Behälter, keine Spur von Restgas berühren darf. Der einzige bekannte Ansatz ist magnetischer oder elektromagnetischer Einschluss — Antiprotonen werden in einer Penning-Falle gehalten, Antiwasserstoff in einer Magnetflasche. Der Rekord für gespeicherten Antiwasserstoff liegt bei Minuten bis Stunden, und das bei wenigen Atomen. Milligramm über jahrelange Flüge an Bord eines Raumfahrzeugs zu speichern, das Startvibrationen und Strahlung überstehen muss, ist in keinem ingenieurwissenschaftlichen Sinne ein gelöstes Problem."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "body_paragraphs.3",
+  "old": "Teilweise Antimaterie-Konzepte — Antiprotonen zur Katalyse von Spaltungs- oder Fusionsreaktionen nutzen, anstatt vollständig zu annihilieren — reduzieren die benötigte Menge, aber diese Konzepte benötigen immer noch Nanogramm oder Mikrogramm und haben die gleichen Lagerbeschränkungen. Sie wurden theoretisch am Marshall Space Flight Center der NASA und anderswo untersucht; keines hat es zur Hardware gebracht.",
+  "new": "Partielle Antimaterie-Konzepte — Antiprotonen dienen dazu, Spaltungs- oder Fusionsreaktionen zu katalysieren, statt vollständig zu annihilieren — verringern die benötigte Menge, doch auch diese Konzepte brauchen noch Nanogramm oder Mikrogramm und stoßen auf dieselben Speicherprobleme. Sie wurden auf dem Papier am Marshall Space Flight Center der NASA und andernorts untersucht; keines ist bis zur Hardware gelangt."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "body_paragraphs.4",
+  "old": "Antimaterie-Antrieb ist der Grenzfall dessen, was die Physik erlaubt. Er setzt die Obergrenze, wie effizient Masse in Schub umgewandelt werden kann. Es lohnt sich, ihn genau aus diesem Grund zu verstehen — er zeigt dir das Beste, das die Thermodynamik je erlauben wird. Aber er ist keine Technologie auf irgendeinem glaubwürdigen Entwicklungsplan. Das Produktionsproblem allein ordnet ihn eher in die Kategorie ‚erfordert eine andere Zivilisation' als ‚erfordert mehr Finanzierung' ein.",
+  "new": "Antimaterie-Antrieb ist der Grenzfall dessen, was die Physik erlaubt. Er legt die Obergrenze dafür fest, wie effizient Masse in Schub umgewandelt werden kann. Es lohnt sich, ihn genau aus diesem Grund zu verstehen — er zeigt dir das Beste, das die Thermodynamik je erlauben wird. Aber er ist keine Technologie auf irgendeinem glaubwürdigen Entwicklungsplan. Das Produktionsproblem allein rückt ihn eher in die Kategorie ‚erfordert eine andere Zivilisation‘ als ‚erfordert mehr Finanzierung‘."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "diagram_caption",
+  "old": "Energiedichtevergleich: chemischer Treibstoff (Kerosin/LOX) mit etwa 10 MJ/kg, Kernspaltung mit etwa 80.000 MJ/kg, Fusion mit etwa 300.000 MJ/kg und Materie-Antimaterie-Annihilation mit etwa 90.000.000 MJ/kg — jeder Schritt nach oben ist nicht inkrementell, sondern eine Änderung der Art.",
+  "new": "Vergleich der Energiedichten: chemischer Treibstoff (Kerosin/LOX) mit etwa 10 MJ/kg, Kernspaltung mit etwa 80.000 MJ/kg, Fusion mit etwa 300.000 MJ/kg und Materie-Antimaterie-Annihilation mit etwa 90.000.000 MJ/kg — jeder Schritt nach oben ist keine bloße Steigerung, sondern ein Wechsel der Kategorie."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "intro_sentence",
+  "old": "Wieviel Energie pro Masse die Rakete braucht, um die Erdgravitation mit Restgeschwindigkeit zu verlassen — die Standard-Startenergie-Metrik.",
+  "new": "Wie viel Energie pro Masse eine Rakete braucht, um das Gravitationsfeld der Erde mit Restgeschwindigkeit zu verlassen — die gängige Kennzahl für die Startenergie."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "narrative_101.0",
+  "old": "C3 ist Fachslang der Missionsplaner für eine ganz bestimmte Frage: Wie hart muss die Rakete das Raumschiff abschießen? Es ist die Energie, die übrig bleibt, nachdem du aus Earths Gravitationsfeld entkommen bist. C3 = 0 bedeutet, du entkommst Erde genau, kommst in der Unendlichkeit mit Nullgeschwindigkeit an. C3 über null bedeutet, du bist mit Übergeschwindigkeit rausgekommen – und diese Übergeschwindigkeit ist das, was dich zu Mars oder Jupiter oder wohin auch immer trägt.",
+  "new": "C3 ist Jargon der Missionsplaner für eine ganz bestimmte Frage: Wie kräftig muss die Rakete das Raumfahrzeug wegschleudern? Es ist die Energie, die übrig bleibt, nachdem du dem Gravitationsfeld der Erde entkommen bist. C3 = 0 heißt: Du entkommst der Erde gerade eben und kommst im Unendlichen mit der Geschwindigkeit null an. C3 über null heißt: Du bist mit Geschwindigkeit im Überschuss herausgekommen — und genau dieser Überschuss trägt dich zum Mars, zum Jupiter oder wohin auch immer."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "narrative_101.1",
+  "old": "Sie wird in km²/s² gemessen (was seltsam aussieht, aber nur das Quadrat der Geschwindigkeit ist), damit die Zahlen handlich bleiben. Mars braucht typischerweise C3 = 8 bis 12. Direktflüge zum Jupiter benötigen C3 um die 80. New Horizons startete mit C3 = 158 – dem höchsten Wert aller Zeiten – um Pluto in neun einhalb Jahren statt in Jahrzehnten zu erreichen.",
+  "new": "Sie wird in km²/s² gemessen (was seltsam aussieht, aber nur das Quadrat der Geschwindigkeit ist), damit die Zahlen handlich bleiben. Mars braucht typischerweise C3 = 8 bis 12. Direktflüge zum Jupiter benötigen C3 um die 80. New Horizons startete mit C3 = 158 — dem höchsten je erreichten Wert —, um Pluto in neuneinhalb Jahren statt in Jahrzehnten zu erreichen."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "narrative_101.2",
+  "old": "Warum ist diese Zahl so wichtig? Weil jede Rakete eine veröffentlichte C3-zu-Nutzlast-Kurve hat. Mit steigendem C3 kann die Rakete weniger Masse liefern. Falcon Heavy kann 16 Tonnen bei C3 = 10 abwerfen, aber nur 5 Tonnen bei C3 = 80. Die erste Entscheidung im Missionsdesign ist, die C3-Anforderung des Ziels mit einer Rakete abzugleichen, die dein Raumschiff bei dieser Energie heben kann. Wenn du das falsch machst, kann die Mission nicht abheben.",
+  "new": "Warum ist diese Zahl so wichtig? Weil jede Rakete eine veröffentlichte C3-Nutzlast-Kurve hat. Mit steigendem C3 kann die Rakete weniger Masse liefern. Falcon Heavy kann 16 Tonnen auf C3 = 10 schleudern, aber nur 5 Tonnen auf C3 = 80. Die erste Entscheidung im Missionsdesign ist, die C3-Anforderung des Ziels mit einer Rakete abzugleichen, die dein Raumfahrzeug bei dieser Energie heben kann. Wenn du das falsch machst, kann die Mission nicht fliegen."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "body_paragraphs.0",
+  "old": "C3 ist das Quadrat der hyperbolischen Exzessgeschwindigkeit. Einheiten: km²/s². Es sagt dir, wie viel Energie jenseits der Fluchtgeschwindigkeit dein Trägerrakete liefern muss. C3 = 0 bedeutet, du entkommst Earths Gravitationsfeld gerade noch, kommst in der Unendlichkeit mit Nullgeschwindigkeit an. C3 = 25 km²/s² bedeutet, du kommst mit V∞ = 5 km/s überschüssiger heliozentrischer Geschwindigkeit an.",
+  "new": "C3 ist das Quadrat der hyperbolischen Exzessgeschwindigkeit. Einheit: km²/s². Es sagt dir, wie viel Energie über die Fluchtenergie hinaus deine Trägerrakete liefern muss. C3 = 0 bedeutet, du entkommst dem Gravitationsfeld der Erde gerade noch und kommst im Unendlichen mit der Geschwindigkeit null an. C3 = 25 km²/s² bedeutet, du kommst mit V∞ = 5 km/s überschüssiger heliozentrischer Geschwindigkeit an."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "body_paragraphs.1",
+  "old": "Trägerraketen werden durch ihre C3-zu-Nutzlast-Kurve charakterisiert. Falcon Heavy kann ~16 Tonnen zu C3=10 abwerfen, aber nur ~5 Tonnen zu C3=80. Mars braucht typischerweise C3 um die 8-12. Jupiter direkt: C3 um die 80. New Horizons startete mit C3 = 158 km²/s² – dem höchsten Wert aller Missionen – um die Reise zu Pluto in nur 9,5 Jahren zu bewältigen.",
+  "new": "Trägerraketen werden durch ihre C3-Nutzlast-Kurve charakterisiert. Falcon Heavy kann ~16 Tonnen auf C3 = 10 schleudern, aber nur ~5 Tonnen auf C3 = 80. Mars braucht typischerweise C3 um die 8-12. Jupiter direkt: C3 um die 80. New Horizons startete mit C3 = 158 km²/s² — dem höchsten Wert aller Missionen — und legte so die Reise zu Pluto in nur 9,5 Jahren zurück."
+ },
+ {
+  "rel": "science/propulsion/c3.json",
+  "at": "body_paragraphs.2",
+  "old": "Im `/missions` FLIGHT Tab von Orrery ist die C3 jeder interplanetaren Mission der kanonische Datenpunkt in der ersten Zeile. Es ist die einzelne Zahl, die erfasst, „wie schwierig der Start war.\"",
+  "new": "Im FLIGHT-Tab unter `/missions` ist der C3-Wert jeder interplanetaren Mission von Orrery der kanonische erste Datenpunkt. Er ist die eine Zahl, die erfasst, »wie schwer der Start war«."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "narrative_101.0",
+  "old": "Geld für Raumfahrt sind keine Dollar. Es ist ∆v – gesprochen »delta-v« – und wird in Kilometern pro Sekunde gemessen. Jedes Manöver Ihrer Rakete kostet ∆v. Jeder Schritt auf einer Flugbahn hat einen Preis in km/s. Das ∆v-Budget der Mission ist einfach die Laufende Summe: Start + Einschuss + Kurskorektionen + Ankunft + Landung. Addieren Sie alles, das ist Ihre Rechnung.",
+  "new": "Das Geld der Raumfahrt sind keine Dollar. Es ist ∆v — gesprochen »delta-v« — und wird in Kilometern pro Sekunde gemessen. Jedes Triebwerksmanöver Ihrer Rakete kostet etwas ∆v. Jeder Schritt auf einer Flugbahn hat einen Preis in km/s. Das ∆v-Budget der Mission ist einfach die laufende Summe: Start + Einschuss + Kurskorrekturen + Ankunft + Landung. Addieren Sie alles, das ist Ihre Rechnung."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "narrative_101.1",
+  "old": "Und jetzt kommt der Haken. Ihre Rakete hat nicht unbegrenzt ∆v. Sie hat eine harte Obergrenze, gesetzt durch die Tsiolkovsky-Gleichung, bestimmt einzig davon, wie viel Ihrer Rakete Treibstoff ist und wie gut Ihre Triebwerke sind. Wenn Ihre Rechnung die Obergrenze überschreitet, ist die Mission unmöglich. Mehr Geld hineinzuwerfen hilft nicht. Die Mathematik gewinnt.",
+  "new": "Und jetzt kommt der Haken. Ihre Rakete hat nicht unbegrenzt ∆v. Sie hat eine harte Obergrenze, gesetzt durch die Ziolkowski-Gleichung, bestimmt allein davon, wie viel Ihrer Rakete Treibstoff ist und wie gut Ihre Triebwerke sind. Wenn Ihre Rechnung die Obergrenze überschreitet, ist die Mission unmöglich. Mehr Geld hineinzuwerfen hilft nicht. Die Mathematik gewinnt."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "narrative_101.2",
+  "old": "Richtwerte zum Verinnerlichen: von der Erde in die Umlaufbahn braucht man ~9,4 km/s. Von der Umlaufbahn zu einer Hohmann-Bahn zum Mars kommen ~3,6 dazu. Die Einschwenkung beim Mars addiert noch ~2. Das sind etwa 15 km/s, um das Mars-System zu erreichen und in die Umlaufbahn zu bremsen – die dünne Atmosphäre des Mars macht dann den Großteil des Abstiegs. Das ist der Grund, warum eine Landung auf dem Mars viel schwieriger ist als auf dem Mond, und warum jedes Gramm Masse auf einem Mars-Lander erbittert umstritten ist.",
+  "new": "Richtwerte zum Verinnerlichen: Von der Erde in die Umlaufbahn braucht man ~9,4 km/s. Von der Umlaufbahn auf einen Hohmann-Transfer zum Mars kommen ~3,6 dazu. Die Einschwenkung beim Mars addiert noch ~2. Das sind etwa 15 km/s, um das Mars-System zu erreichen und in die Umlaufbahn zu bremsen — die dünne Atmosphäre des Mars übernimmt dann den Großteil der Landung. Darum ist eine Landung auf dem Mars viel schwieriger als auf dem Mond, und darum wird um jedes Gramm Masse eines Mars-Landers erbittert gerungen."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "body_paragraphs.0",
+  "old": "∆v (delta-v) ist die Buchhaltungswährung der Raumfahrt. Jeder Triebwerkseinsatz – von der Erde abheben, die Umlaufbahn verlassen, die Bahn korrigieren, am Ziel abbremsen – kostet Sie einen Betrag der Geschwindigkeitsänderung. Addieren Sie alle zusammen und Sie haben das ∆v-Budget der Mission.",
+  "new": "∆v (delta-v) ist die Buchhaltungswährung der Raumfahrt. Jeder Triebwerkseinsatz — von der Erde abheben, die Umlaufbahn verlassen, die Bahn korrigieren, am Ziel abbremsen — kostet Sie ein Stück Geschwindigkeitsänderung. Addieren Sie alle zusammen, und Sie haben das ∆v-Budget der Mission."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "body_paragraphs.1",
+  "old": "Auf der Angebotsseite: Die ∆v-Fähigkeit Ihrer Rakete ergibt sich aus der Tsiolkovsky-Gleichung – der Engine-`Isp` und der Treibstoffanteil setzen die Obergrenze. Auf der Nachfrageseite: Das Flugbahndesign wählt den Weg mit den niedrigsten summierten Kosten. Eine Mission fliegt, wenn Angebot ≥ Nachfrage. Sie fliegt nicht, wenn nicht – egal wie viel Geld Sie an das Problem werfen.",
+  "new": "Auf der Angebotsseite: Die ∆v-Leistungsfähigkeit Ihrer Rakete ergibt sich aus der Ziolkowski-Gleichung — der Triebwerks-`Isp` und der Treibstoffanteil setzen die Obergrenze. Auf der Nachfrageseite: Das Flugbahndesign wählt den Weg mit den niedrigsten summierten Kosten. Eine Mission fliegt, wenn Angebot ≥ Nachfrage. Sie fliegt nicht, wenn nicht — egal, wie viel Geld Sie an das Problem werfen."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "body_paragraphs.2",
+  "old": "Einige Referenzzahlen: Von der Erdoberfläche in LEO kostet ~9,4 km/s ∆v (das meiste davon gegen Schwerkraft und Atmosphäre). LEO zu einer Hohmann-Transferbahn zum Mars addiert ~3,6 km/s. Die Einschwenkung in die Mars-Umlaufbahn addiert weitere ~2 km/s. Das sind zusammen etwa 15 km/s, um das Mars-System zu erreichen und in die Umlaufbahn einzufangen – die dünne Atmosphäre des Mars bewältigt den Abstieg, keine zusätzlichen Antriebe.",
+  "new": "Einige Referenzzahlen: Von der Erdoberfläche in den LEO kostet ~9,4 km/s ∆v (das meiste davon gegen Schwerkraft und Atmosphäre). Vom LEO auf einen Hohmann-Transfer zum Mars kommen ~3,6 km/s hinzu. Die Einschwenkung in die Mars-Umlaufbahn addiert weitere ~2 km/s. Das sind zusammen etwa 15 km/s, um das Mars-System zu erreichen und in die Umlaufbahn einzuschwenken — die dünne Atmosphäre des Mars bewältigt den Abstieg, es braucht keinen zusätzlichen Antrieb."
+ },
+ {
+  "rel": "science/propulsion/dv-budget.json",
+  "at": "diagram_caption",
+  "old": "Stapelbalken: Start-∆v + Einschuss + Reisekorektionen + Ankunft = Gesamtmissionsbudget.",
+  "new": "Gestapelte Balken: Start-∆v + Einschuss + Reisekorrekturen + Ankunft = Gesamtbudget der Mission."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "title",
+  "old": "Triebwerksclusterung — Saturn V's 5 vs. Starships 33",
+  "new": "Triebwerksclusterung — 5 der Saturn V gegen 33 der Starship"
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "intro_sentence",
+  "old": "Zwei entgegengesetzte Philosophien für Megatonnenschub: ein riesiges Triebwerk bauen und wenige davon nutzen (F-1, RS-25), oder ein mittleres bauen und viele davon nutzen (Merlin, Raptor). Das zweite gewann.",
+  "new": "Zwei entgegengesetzte Philosophien für Schub der Megatonnen-Klasse: ein riesiges Triebwerk bauen und nur wenige davon nutzen (F-1, RS-25) oder ein mittelgroßes und sehr viele (Merlin, Raptor). Das zweite Konzept gewann."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "body_paragraphs.0",
+  "old": "Die erste Stufe der Saturn V clusterte fünf F-1-Triebwerke. Jedes F-1 erzeugte auf Meereshöhe 6,77 MN Schub — zum damaligen Zeitpunkt und noch fünfzig Jahre danach das stärkste flüssige Triebwerk, das je geflogen war. Der Entwicklungsweg war lang und schmerzhaft: Verbrennungsinstabilität hätte das Programm in den frühen 1960er Jahren beinahe zerstört; Rocketdyne löste das Problem letztendlich durch Abstimmung der Injektorplatte, um Resonanzmoden zu unterbrechen. Das Apollo-Programm setzte darauf, dass weniger, aber größere Triebwerke weniger Fehlerpunkte während eines 165-sekündigen Brennens der ersten Stufe bedeuteten. Die sowjetische Antwort war das Gegenteil: Die erste Stufe der N1 clusterte *dreißig* NK-15-Triebwerke. Ohne ein F-1-Klasse-Triebwerk in ihrem Bestand und da NK-15s klein und billig herzustellen waren, wählten die Sowjets Triebwerkanzahl über Triebwerkgröße. Alle vier N1-Flüge schlugen fehl — obwohl die Ausfälle ebenso sehr auf Rohrleitungen und die Software des KORD-Abschaltreglers zurückzuführen waren wie auf das Cluster selbst.",
+  "new": "Die erste Stufe der Saturn V bündelte fünf F-1-Triebwerke. Jedes F-1-Triebwerk erzeugte auf Meereshöhe 6,77 MN Schub — damals und noch fünfzig Jahre danach das stärkste Flüssigkeitstriebwerk, das je geflogen war. Der Entwicklungsweg war lang und schmerzhaft: Verbrennungsinstabilität hätte das Programm in den frühen 1960er Jahren beinahe zerstört; Rocketdyne löste das Problem letztendlich durch Abstimmung der Injektorplatte, um Resonanzmoden zu unterbrechen. Das Apollo-Programm setzte darauf, dass weniger, aber größere Triebwerke weniger Ausfallstellen während eines 165-sekündigen Brennens der ersten Stufe bedeuteten. Die sowjetische Antwort war das Gegenteil: Die erste Stufe der N1 bündelte *dreißig* NK-15-Triebwerke. Ohne ein Triebwerk der F-1-Klasse im Bestand und da NK-15 klein und billig herzustellen waren, wählten die Sowjets Triebwerkszahl statt Triebwerksgröße. Alle vier N1-Flüge schlugen fehl — obwohl die Ausfälle ebenso sehr auf Rohrleitungen und die Software des KORD-Abschaltreglers zurückzuführen waren wie auf das Cluster selbst."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "body_paragraphs.1",
+  "old": "Das moderne Urteil ist das Gegenteil von Saturn V. Falcon 9 clustert neun Merlin 1Ds in einem 3-3-3-Raster (später ein „Octaweb“ — 8 außen, 1 mittig) für ~7,6 MN beim Liftoff. Falcon Heavy stapelt drei Falcon-9-Erststufen nebeneinander: 27 Merlins, 22,8 MN. Super Heavy trägt 33 Raptor-2-Triebwerke (13 zentral, 20 am Außenring) für ~76 MN beim Liftoff, doppelt Saturn V's Stufenschub. Drei Dinge änderten sich seit 1969, die das Pendel zu „viele kleine“ schwingen ließen. Erstens: moderne Schubvektor- + Triebwerksabschaltkontrolle kann einen Triebwerksausfall in der Luft kompensieren — Falcon 9 hat im Aufstieg Triebwerke verloren (CRS-1, Oktober 2012) und dennoch die Nutzlast eingesetzt. Zweitens: Massenproduktion eines Triebwerks über hunderte Fahrzeuge senkt Stückkosten — Ökonomie, die Saturn V's neunflüge nie erreichen konnten. Drittens: CFD erlaubt heute, akustische + Bodenhitze-Interaktionen vorherzusagen + zu dämpfen, die Cluster historisch fragil machten.",
+  "new": "Das moderne Urteil ist das Gegenteil von dem der Saturn V. Die Falcon 9 bündelt neun Merlin 1D in einem 3-3-3-Raster (später ein „Octaweb“ — 8 außen, 1 mittig) für ~7,6 MN beim Abheben. Die Falcon Heavy stapelt drei Falcon-9-Erststufen nebeneinander: 27 Merlin, 22,8 MN. Die Super Heavy trägt 33 Raptor-2-Triebwerke (13 in einem zentralen Cluster, 20 im äußeren Ring) für ~76 MN beim Abheben, doppelt so viel wie der Stufenschub der Saturn V. Seit 1969 haben sich drei Dinge geändert, die das Pendel zugunsten von „viele kleine“ ausschlagen ließen. Erstens: Moderne Schubvektor- und Triebwerksabschaltsteuerung kann einen Triebwerksausfall mitten im Flug ausgleichen — die Falcon 9 hat im Aufstieg Triebwerke verloren (CRS-1, Oktober 2012) und die Nutzlast dennoch abgesetzt. Zweitens: Die Massenproduktion eines einzigen Triebwerks für Hunderte von Fahrzeugen senkt die Stückkosten — eine Ökonomie, die die Saturn V mit ihren neun Flügen nie erreichen konnte. Drittens: Strömungssimulation (CFD) erlaubt es heute, akustische Wechselwirkungen und die Erwärmung am Stufenheck vorherzusagen und zu dämpfen, die Cluster historisch fragil machten."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "body_paragraphs.2",
+  "old": "Triebwerkscluster scheitern anders als Einzeltriebwerke. Mit fünf F-1s heißt der Verlust eines, dass die Mission nicht beendbar ist — Apollo 6 verlor zwei J-2s auf seiner S-II-Stufe und schlich in einen degradierten Orbit, letztlich keine Mission. Mit 33 Raptors ist der Verlust eines (oder drei, oder sechs) auf Super Heavy designed-for: die Avionik schaltet das ausgefallene Triebwerk + seinen symmetrischen Partner ab, um den Schubvektor durchs Massenzentrum zu halten, und verteilt dann den Schub auf die Überlebenden. Falcon 9 kann bis zu zwei von neun Triebwerken nach einer kritischen Höhe verlieren und trotzdem die Hauptmission absolvieren. Der Cluster-vs-Monolith-Trade hat sich verschoben: Clusterung bedeutete früher Fragilität, weil ein Rohrleitungsbruch kaskadieren konnte; moderne Abschottung (Raptors individuelle Schilde, schnellschließende Absperrventile) macht ein einzelnes Triebwerks-RUD eingedämmt, nicht katastrophal.",
+  "new": "Triebwerkscluster scheitern anders als Einzeltriebwerke. Bei fünf F-1 bedeutet der Verlust eines Triebwerks, dass sich die Mission nicht zu Ende fliegen lässt — Apollo 6 verlor zwei J-2 an seiner S-II-Stufe und schleppte sich in eine beeinträchtigte Umlaufbahn, letztlich keine Mission. Bei 33 Raptor ist der Verlust eines Triebwerks (oder dreier, oder sechs) bei der Super Heavy von vornherein eingeplant: Die Avionik schaltet das ausgefallene Triebwerk samt seinem symmetrischen Partner ab, damit der Schubvektor durch den Massenschwerpunkt verläuft, und verteilt die Drosselung dann neu auf die übrigen Triebwerke. Die Falcon 9 kann nach Erreichen einer kritischen Höhe bis zu zwei von neun Triebwerken verlieren und trotzdem die Hauptmission abschließen. Die Abwägung zwischen Cluster und Monolith hat sich verschoben: Clusterung bedeutete früher Fragilität, weil der Bruch einer Rohrleitung sich kaskadenartig ausbreiten konnte; moderne Kompartimentierung (die einzelnen Schutzschilde der Raptor, schnell wirkende Absperrventile) sorgt dafür, dass ein einzelnes Triebwerks-RUD eingedämmt bleibt und nicht katastrophal ist."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "body_paragraphs.3",
+  "old": "Es gibt ein verbleibendes Argument für den monolithischen Ansatz. Hydrolox-Oberstufen + Kernstufen bevorzugen weiterhin wenige große Triebwerke: SLS nutzt 4 RS-25s, Ariane 6 nutzt 1 Vulcain 2.1, Long March 5 nutzt 2 YF-77. Wasserstoffverrohrung ist volumetrisch so groß + so kalt, dass Triebwerkszahl-Multiplikation Tankbodenkomplexität multipliziert. Die voll-staged-combustion russische RD-170-Generation (und ihre Abkömmlinge RD-180 / RD-191) blieb auch bei ein bis vier großen Kammern. Das Muster: Kerolox + Methalox gingen viele-klein; Hydrolox blieb wenige-groß. Raptors Vollstrom-Staged-Combustion in Cluster-Skala ist, was Super Heavy möglich machte — diese Kombi aus Zyklus, Treibstoff + Clusterung war zuvor nicht versucht.",
+  "new": "Für den monolithischen Ansatz bleibt ein Argument. Hydrolox-Oberstufen und -Kernstufen bevorzugen weiterhin wenige große Triebwerke: Die SLS nutzt 4 RS-25, die Ariane 6 ein Vulcain 2.1, die Long March 5 zwei YF-77. Wasserstoffleitungen sind volumenmäßig so groß und so kalt, dass mehr Triebwerke auch die Komplexität am Tankboden vervielfachen. Auch die russische RD-170-Generation mit durchgehend gestufter Verbrennung (und ihre Abkömmlinge RD-180 / RD-191) blieb bei einer bis vier großen Brennkammern. Das Muster: Kerolox und Methalox sind zu „viele kleine“ übergegangen; Hydrolox ist bei „wenige große“ geblieben. Die Vollstrom-Stufenverbrennung der Raptor im Maßstab eines Triebwerksclusters hat die Super Heavy erst möglich gemacht — diese Kombination aus Kreislauf, Treibstoff und Clusterung war zuvor nie versucht worden."
+ },
+ {
+  "rel": "science/propulsion/engine-clustering.json",
+  "at": "diagram_caption",
+  "old": "Saturn V S-IC: 5 × F-1 = 33,9 MN. Sowjet N1: 30 × NK-15 = 45 MN (4 Fehlflüge). Falcon 9: 9 × Merlin = 7,6 MN. Falcon Heavy: 27 × Merlin = 22,8 MN. Super Heavy: 33 × Raptor = 76 MN. Historischer Trend: mehr Triebwerke, jedes kleiner, mit moderner Avionik die Einzelausfälle abfängt.",
+  "new": "Saturn V S-IC: 5 × F-1 = 33,9 MN. Sowjetische N1: 30 × NK-15 = 45 MN (4 Fehlflüge). Falcon 9: 9 × Merlin = 7,6 MN. Falcon Heavy: 27 × Merlin = 22,8 MN. Super Heavy: 33 × Raptor = 76 MN. Der historische Trend: mehr Triebwerke, jedes kleiner, wobei moderne Avionik Einzelausfälle abfängt."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "title",
+  "old": "Motortypen — chemisch, elektrisch, nuklear",
+  "new": "Triebwerkstypen — chemisch, elektrisch, nuklear"
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "intro_sentence",
+  "old": "Es gibt drei Familien von Raketenmotoren, die je geflogen sind: chemisch (alles, was Objekte von der Erde abheben lässt), elektrisch (alles, das lange Tiefraum-Missionen fliegt), und nuklear-thermisch (NERVA getestet, noch keine operativ).",
+  "new": "Es gibt drei Familien von Raketentriebwerken, die je geflogen sind: chemisch (alles, was etwas von der Erde abhebt), elektrisch (alles für lange Tiefraumreisen) und nuklear-thermisch (NERVA getestet, noch keines im Einsatz)."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "body_paragraphs.0",
+  "old": "Chemische Motoren sind die einzige Familie mit genügend Schub, um ihr eigenes Gewicht gegen die Erdgravitation zu heben, daher war jede Trägerrakete in der Geschichte chemisch. Sie zerfallen in drei Unterfamilien. Feststoffmotoren sind im Grunde ein Stahlrohr, das mit gummiartiger Treibstoff um einen hohlen Kern gegossen ist — man zündet ein Ende, es brennt mit kontrollierter Geschwindigkeit, und man kann es nicht ausschalten. Preiswert, einfach, zuverlässig, aber keine Schubdrosselung und kein Abschalten: Space Shuttle SRBs, Ariane 5 / Ariane 6 Booster, SLS Booster, indische PSLV-Stufen, jede ICBM und die meisten Militärmissilen sind Feststoff. Flüssig-Zweistoff-Motoren pumpen Brennstoff und Oxidationsmittel getrennt in eine Brennkammer — weit flexibler (Schubdrosselung, Neustart, Abschaltung, Drosselung im Tiefraum), aber mechanisch komplex: Saturn V F-1, Falcon 9 Merlin, RS-25, Vulcain, Raptor, YF-100. Hybrid-Motoren (Feststoffbrennstoff + flüssiges oder gasförmiges Oxidationsmittel) sind ein ruhiger dritter Weg, den SpaceShipTwo und eine Handvoll Höhenforschungsraketen nutzen — sie tauschen die Komplexität des Flüssigen gegen das fehlende Abschalten des Feststoffs ein.",
+  "new": "Chemische Triebwerke sind die einzige Familie mit genug Schub, um ihr eigenes Gewicht gegen die Schwerkraft der Erde zu heben; deshalb war jede Trägerrakete der Geschichte chemisch. Sie teilen sich in drei Unterfamilien. Feststofftriebwerke sind im Grunde ein Stahlrohr, in das gummiartiger Treibstoff um einen hohlen Kern gegossen wurde — man zündet ein Ende, es brennt mit kontrollierter Geschwindigkeit, und man kann es nicht abschalten. Preiswert, einfach, zuverlässig, aber ohne Drosselung und ohne Abschaltung: Die SRBs des Space Shuttle, die Booster der Ariane 5 / Ariane 6, die Booster der SLS, indische PSLV-Stufen, jede Interkontinentalrakete (ICBM) und die meisten Militärraketen sind Feststoffantriebe. Flüssige Zweistofftriebwerke pumpen Brennstoff und Oxidator getrennt in eine Brennkammer — weit flexibler (Drosselung, Neustart, Abschaltung, tiefe Drosselung), aber mechanisch aufwendig: F-1 der Saturn V, Merlin der Falcon 9, RS-25, Vulcain, Raptor, YF-100. Hybridtriebwerke (fester Brennstoff + flüssiger oder gasförmiger Oxidator) sind ein stiller dritter Weg, den SpaceShipTwo und eine Handvoll Höhenforschungsraketen nutzen — sie nehmen die fehlende Abschaltbarkeit des Feststoffs in Kauf, um die Komplexität des Flüssigantriebs zu vermeiden."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "body_paragraphs.1",
+  "old": "Innerhalb der Flüssigfamilie ist der Motor-*Prozess* genauso wichtig wie die Treibstoffe. Gasgenerator (Merlin, F-1): Ein kleiner Treibstoffanteil brennt in einer Nebenkammer, um die Turbopumpe anzutreiben, dann wird er ins Freie geleitet — verschwenderisch, aber einfach. Expandier-Prozess (RL10): Der kryogene Brennstoff kühlt die Düse, verdampft, und das entstehende Gas treibt die Turbopumpe an — elegant, aber begrenzt auf kleine Motoren. Stufenverbrennung (RS-25, NK-33, Raptor): Der gesamte Treibstoff durchläuft den Vorbrenner-dann-Hauptkammer-Weg, erfasst alle Energie. Volldurchsatz-Stufenverbrennung (Raptor, das erste je geflogen): zwei Vorbrenner, einer oxidatorreich und einer brennstoffreich, die zwei Turbopumpen antreiben — das leistungsfähigste je versuchte Arrangement. Jeder Schritt auf der Prozessleiter bringt 20–40 Sekunden spezifischen Impuls, fügt aber Rohre, Masse und Entwicklungskosten hinzu.",
+  "new": "Innerhalb der Flüssigfamilie ist der *Kreislauf* des Triebwerks ebenso wichtig wie der Treibstoff. Gasgenerator (Merlin, F-1): Ein kleiner Teil des Treibstoffs verbrennt in einer Nebenkammer, um die Turbopumpe anzutreiben, und wird dann ins Freie abgelassen — verschwenderisch, aber einfach. Expander (RL10): Der kryogene Brennstoff kühlt die Düse, verdampft, und das entstehende Gas treibt die Turbopumpe an — elegant, aber auf kleine Triebwerke beschränkt. Stufenverbrennung (RS-25, NK-33, Raptor): Der gesamte Treibstoff durchläuft den Weg über den Vorbrenner zur Hauptkammer und nutzt so die gesamte Energie. Volldurchsatz-Stufenverbrennung (Raptor, die erste je geflogene): zwei Vorbrenner, einer oxidatorreich und einer brennstoffreich, die zwei Turbopumpen antreiben — die leistungsfähigste Anordnung, die je versucht wurde. Jede Stufe auf der Kreislaufleiter bringt 20–40 Sekunden spezifischen Impuls, kostet aber zusätzliche Leitungen, Masse und Entwicklungsaufwand."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "body_paragraphs.2",
+  "old": "Elektrische Antriebe (Ionentriebwerke, Hall-Effekt-Thruster) heben nichts von einem Planeten ab, aber sobald man im Raum ist, ist der spezifische Impuls 10–30× höher als bei chemischen Motoren. Der Preis ist Schub: Eine chemische erste Stufe erzeugt Millionen Newton; ein modernes Hall-Triebwerk (NASA Glenn AEPS, 12 kW) erzeugt etwa 0,6 N — weniger als das Gewicht eines Apfels. Man macht es mit Zeit wett: BepiColombo's vier T6-Gitter-Ionentriebwerke feuern seit Jahren fast kontinuierlich, um in die Merkurumlaufbahn zu bremsen, wo eine rein chemische Mission einen unmöglich großen Treibstoffvorrat bräuchte. Dawn nutzte den gleichen Ansatz, um zwei Asteroiden mit einem Start zu umkreisen. Die Energiequelle ist Solarenergie im inneren Sonnensystem, RTG-betrieben für Konzepte der äußeren Planeten.",
+  "new": "Elektrische Antriebe (Ionentriebwerke, Hall-Effekt-Triebwerke) heben nichts von einem Planeten ab, aber sobald man im Weltraum ist, ist ihr spezifischer Impuls 10–30× höher als bei chemischen Triebwerken. Der Preis ist der Schub: Eine chemische erste Stufe erzeugt Millionen Newton; ein modernes Hall-Triebwerk (NASA Glenn AEPS, 12 kW) erzeugt etwa 0,6 N — weniger als das Gewicht eines Apfels. Man macht es mit Zeit wett: Die vier T6-Gitter-Ionentriebwerke von BepiColombo arbeiten seit Jahren fast durchgehend, um in die Merkurumlaufbahn zu bremsen, wo eine rein chemische Mission einen unmöglich großen Treibstoffvorrat bräuchte. Dawn nutzte denselben Ansatz, um mit einem Start zwei Asteroiden zu umkreisen. Die Energiequelle ist im inneren Sonnensystem die Sonne, bei Konzepten für die äußeren Planeten ein RTG."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "body_paragraphs.3",
+  "old": "Nuklear-thermischer Antrieb (NTP) ist die Familie, die seit 1965 fast einsatzbereit ist. Das Prinzip: Wasserstoff fließt an einem heißen Kernreaktor vorbei, wird auf 2500–3000 K erhitzt und expandiert durch eine Düse. Isp beträgt 800–1000 Sekunden — doppelt so viel wie ein Hydrolox-Motor — mit Schub im Bereich von 50–250 kN (niedriger als chemisch, aber weitaus höher als elektrisch). NASAs NERVA-Programm führte in den 1960er Jahren Vollskala-Motortests durch; der neuere DRACO-Demonstrator (NASA + DARPA) zielte auf einen ~2027er Orbitaltest ab, wurde aber im 2026er Budget gestrichen. Seit 2026 ist noch kein NTP-Motor geflogen. Das Hindernis war schon immer eher politisch und regulatorisch als technisch: Den Start eines Kernreaktors, auch eines nicht beladenen, das nur in der Umlaufbahn kritisch werden soll, zu genehmigen, fällt in eine Kategorie von Öffentlichakzeptanz und Vertragseinschränkungen, die das Programm historisch etwa alle zehn Jahre getötet haben.",
+  "new": "Der nuklear-thermische Antrieb (NTP) ist die Familie, die seit 1965 fast einsatzbereit ist. Das Prinzip: Wasserstoff strömt an einem heißen Kernreaktor vorbei, erhitzt sich auf 2500–3000 K und expandiert durch eine Düse. Der Isp beträgt 800–1000 Sekunden — doppelt so viel wie bei einem Hydrolox-Triebwerk — bei einem Schub von 50–250 kN (weniger als chemisch, aber weitaus mehr als elektrisch). NASAs NERVA-Programm testete in den 1960er Jahren Triebwerke in voller Größe; der jüngere Demonstrator DRACO (NASA und DARPA) zielte auf einen Test im Orbit um 2027 ab, wurde aber im Haushalt 2026 gestrichen. Stand 2026 ist noch kein NTP-Triebwerk geflogen. Das Hindernis war schon immer eher politisch und regulatorisch als technisch: Der Start eines Kernreaktors — selbst eines unbeladenen, der erst in der Umlaufbahn kritisch werden soll — fällt in eine Kategorie aus öffentlicher Akzeptanz und vertraglichen Beschränkungen, die das Programm historisch etwa alle zehn Jahre zum Erliegen gebracht hat."
+ },
+ {
+  "rel": "science/propulsion/engine-types.json",
+  "at": "diagram_caption",
+  "old": "Chemisch (Feststoff / Flüssig-Gasgenerator / Flüssig-Stufenverbrennung / Volldurchsatz-Stufenverbrennung) für Start und Aufstieg. Elektrisch (Hall / Gitter-Ion) für lange Tiefraum-Missionen. Nuklear-thermisch (NERVA getestet 1960er; kein NTP-Motor ist geflogen) für hohen Schub + hohen Isp-Transit.",
+  "new": "Chemisch (Feststoff / Flüssig mit Gasgenerator / Flüssig mit Stufenverbrennung / Flüssig mit Volldurchsatz-Stufenverbrennung) für Start und Aufstieg. Elektrisch (Hall / Gitter-Ionen) für lange Flüge durch den Tiefraum. Nuklear-thermisch (NERVA in den 1960ern getestet; kein NTP-Triebwerk ist je geflogen) für Transfers mit hohem Schub und hohem Isp."
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "intro_sentence",
+  "old": "Der kryogene Treibstoff absorbiert die Wärme der Düse, verdampft zu hochdruckhaltigem Gas und treibt damit die Turbopumpe an — ohne Gasgenerator oder Vorbrenner.",
+  "new": "Der kryogene Treibstoff nimmt Wärme von der Düse auf, verdampft und treibt damit die Turbopumpe an — ohne Gasgenerator oder Vorbrenner. Die Abwärme ist die Energiequelle; sauber, aber nicht skalierbar."
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "body_paragraphs.0",
+  "old": "Eine Raketenkammer und Düse sind glühend heiß, und ein kryogenes Triebwerk pumpt seinen eiskalten Treibstoff bereits durch Kanäle in den Kammerwänden, um sie vor dem Schmelzen zu bewahren – regenerative Kühlung. Der Expander-Zyklus macht diese Kühlaufgabe zur Energiequelle des Triebwerks. Flüssigwasserstoff (oder Methan) strömt in die Wandkanäle nahe der Düse, absorbiert eine große Wärmemenge und wird zu einem heißen, hochdruck­gaseigenen Gas. Dieses Gas wird durch die Turbine expandiert, um die Turbopumpe anzutreiben, und wird erst dann in die Hauptkammer geleitet. Da kein Treibstoff allein zum Betreiben der Pumpen verbrannt wird, ist das Turbinengas ungiftig, rußfrei und schonend für die Hardware – deshalb sind Expander-Triebwerke berüchtigt zuverlässig und neu zündbar.",
+  "new": "Brennkammer und Düse einer Rakete sind glühend heiß, und ein kryogenes Triebwerk pumpt seinen eiskalten Treibstoff bereits durch Kanäle in den Kammerwänden, damit diese nicht schmelzen – regenerative Kühlung. Der Expander-Zyklus macht aus dieser Kühlaufgabe die Energiequelle des Triebwerks. Flüssigwasserstoff (oder Methan) strömt nahe der Düse in die Wandkanäle, nimmt eine gewaltige Wärmemenge auf und verdampft schlagartig zu einem heißen Hochdruckgas. Dieses Gas wird in der Turbine entspannt, um die Turbopumpe anzutreiben, und erst dann in die Hauptkammer geleitet, wo es verbrennt. Da kein Treibstoff allein zum Betrieb der Pumpen verbrannt wird, ist das Turbinengas harmlos, rußfrei und schonend für die Hardware – deshalb gelten Expander-Triebwerke als besonders zuverlässig und wiederzündbar."
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "body_paragraphs.1",
+  "old": "Die Grenze liegt in einem hart physikalischen Limit. Die nutzbare Leistung hängt ab von der Wärmemenge, die die Wände an den Treibstoff abgeben – das skaliert mit der *Oberfläche* der Kammer und Düse. Der Schub – und damit der Treibstoffstrom, den die Pumpen bewegen – skaliert jedoch mit dem *Volumen* der Kammer. Mit wachsendem Triebwerk wächst das Volumen schneller als die Oberfläche, sodass die Wände irgendwann nicht mehr genug Gas aufheizen können. In der Praxis ist ein geschlossener Expander-Zyklus auf einige hundert Kilonewton Schub begrenzt. Das macht ihn ideal für Oberstufen und unmöglich für eine große Unterstufe.",
+  "new": "Der Haken ist eine harte physikalische Obergrenze. Die nutzbare Leistung hängt davon ab, wie viel Wärme die Wände an den Treibstoff abgeben können – und das skaliert mit der *Oberfläche* von Kammer und Düse. Der Schub – und damit der Treibstoffstrom, den die Pumpen bewegen müssen – skaliert jedoch mit dem *Volumen* der Kammer. Wird das Triebwerk größer, wächst das Volumen schneller als die Oberfläche, sodass die Wände irgendwann nicht mehr genug Gas aufheizen können, um Pumpen anzutreiben, die für diesen Durchsatz groß genug sind. In der Praxis ist ein geschlossener Expander bei einigen hundert Kilonewton Schub am Ende. Das macht ihn ideal für Oberstufen und unmöglich für eine große erste Stufe."
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "body_paragraphs.2",
+  "old": "Der Klassiker ist die RL10, die 1962 auf Centaur erstmals flog und noch immer in Produktion ist – eine der längsten Karrieren eines Triebwerks. Diese Schubgrenze gilt für den vollständig geschlossenen Zyklus; die Expander-Bleed-Variante durchbricht sie. Bleed zapft einen Teil des erhitzten Gases ab, um die Turbine anzutreiben, und bläst es dann ab, statt alles in die Kammer zu leiten – eine geringe Einbuße beim Isp für deutlich mehr Leistung. Japans LE-9 zeigt, wie weit das reicht: Mit 1.471 kN treibt dieses Expander-Bleed-Triebwerk die erste Stufe der H3 an, etwas, das ein geschlossener Expander nie könnte. Seine Schwester LE-5B und Europas Vinci auf Ariane 6 nutzen den gleichen Bleed-Ansatz für Oberstufen. Während Staged Combustion die rohe Leistung anstrebt, verfolgt der Expander-Zyklus Zuverlässigkeit und Wiederzündbarkeit für die präzise, ruhige Arbeit, eine Nutzlast genau dorthin zu bringen, wo sie hingehört.",
+  "new": "Der Klassiker ist die RL10, die 1962 erstmals auf der Centaur flog und noch immer gebaut wird – eine der längsten Karrieren eines Triebwerks. Diese Schubgrenze gilt für den vollständig geschlossenen Kreislauf; die Expander-Bleed-Variante durchbricht sie. Bleed zapft einen Teil des erhitzten Gases ab, um die Turbine anzutreiben, und bläst es dann ab, statt alles in die Kammer zu leiten – ein kleiner Verlust beim Isp für deutlich mehr Leistung. Japans LE-9 zeigt, wie weit das reicht: Mit 1.471 kN treibt dieses Expander-Bleed-Triebwerk die erste Stufe der H3 an, etwas, das ein geschlossener Expander nie könnte. Sein Schwestertriebwerk LE-5B und Europas Vinci auf der Ariane 6 nutzen denselben Bleed-Ansatz für Oberstufen. Während die Stufenverbrennung nach reiner Leistung strebt, zielt der Expander-Zyklus auf Zuverlässigkeit und Wiederzündbarkeit für die ruhige, präzise Arbeit, eine Nutzlast genau dorthin zu bringen, wo sie hingehört."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "intro_sentence",
+  "old": "Fünf Treibstoffkombinationen decken fast jeden je geflogenen Orbitalflug ab. Jede ist ein Trade zwischen Isp, Dichte, Lagerfähigkeit, Handhabung und dem, was sich auf dem Mars herstellen lässt.",
+  "new": "Fünf Treibstoffkombinationen decken fast jeden je geflogenen Orbitalflug ab. Jede ist ein Kompromiss zwischen Isp, Dichte, Lagerfähigkeit, Handhabung und dem, was sich auf dem Mars herstellen lässt."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "body_paragraphs.0",
+  "old": "Kerolox (Kerosin + flüssiger Sauerstoff) ist das Arbeitspferd des Orbitalstarts. Das Kerosin ist eine streng spezifizierte Sorte namens RP-1 (Rocket Propellant 1) — gewöhnlicher Düsentreibstoff, raffiniert von Wachsen + Schwefel, die einen Raketenmotor verkoken würden, und befreit von Alkenen, die unter Hitze polymerisieren. LOX wird unterkühlt geladen. Die Kombination liefert moderaten Isp (~300 s Meereshöhe, ~340 Vakuum), hohe Dichte (Tanks bleiben klein) und sauberes Bodenhandling. Saturn V Erststufe, Falcon 9, Atlas V, Soyuz, Long March 2/3/4 + indische PSLV-Oberstufen sind alle Kerolox. Nachteil: Ruß — Kerosin brennt schmutzig, verkokt das Triebwerk innen und limitiert Wiederverwendbarkeit. Merlin umgeht das mit Brennkammerdrücken weit unter dem Staged-Combustion-Sweet-Spot.",
+  "new": "Kerolox (Kerosin + flüssiger Sauerstoff) ist das Arbeitspferd des Orbitalstarts. Das Kerosin ist eine streng spezifizierte Sorte namens RP-1 (Rocket Propellant 1) — gewöhnlicher Düsentreibstoff, raffiniert, um Wachse und Schwefel zu entfernen, die ein Raketentriebwerk verkoken würden, und befreit von Alkenen, die unter Hitze polymerisieren. LOX wird tiefgekühlt geladen. Die Kombination liefert einen mäßigen Isp (~300 s auf Meereshöhe, ~340 im Vakuum), hohe Dichte (die Tanks bleiben klein) und eine saubere Handhabung am Boden. Erststufe der Saturn V, Falcon 9, Atlas V, Soyuz, Long March 2/3/4 und die Oberstufen der indischen PSLV sind alle Kerolox. Der Nachteil ist Ruß: Kerosin verbrennt schmutzig, verkokt das Triebwerk innen und begrenzt die Wiederverwendbarkeit — die Merlin umgeht das mit Brennkammerdrücken auf Meereshöhe, die weit unter dem Optimum der Stufenverbrennung liegen."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "body_paragraphs.1",
+  "old": "Hydrolox (flüssiger Wasserstoff + LOX) ist das Chemiepaar mit dem höchsten Isp, das die Menschheit fliegt (~450 s Vakuum auf RS-25). Wasserstoff verbrennt zu Wasser, kein Ruß. Die Strafe: Dichte. Flüssiger H₂ ist etwa 70 kg/m³ gegenüber 800 kg/m³ Kerosin — der Tank wird riesig und das meiste der Rakete wird Isolation. Hydrolox ist daher für fast alle Träger ein *Oberstufen*-Treibstoff (Centaur, DCSS, ICPS, Oberstufen von Ariane 5/6, Long March 5, H-IIA) und nur dort im Booster-Maßstab eingesetzt, wo extremer Isp mit Fahrzeuggröße bezahlt wird — Saturn V S-II + S-IVB, Space Shuttle Außentank + RS-25, SLS Kernstufe, Ariane 5 Vulcain Kern. Boil-off ist das operative Kopfweh: H₂ bei 20 K kann nicht lange auf der Rampe stehen.",
+  "new": "Hydrolox (flüssiger Wasserstoff + flüssiger Sauerstoff) ist die chemische Paarung mit dem höchsten Isp, die die Menschheit fliegt (~450 s im Vakuum bei der RS-25). Wasserstoff verbrennt zu Wasser, kein Ruß. Der Preis ist die Dichte: Flüssiger H₂ hat etwa 70 kg/m³ gegenüber 800 kg/m³ bei Kerosin, der Tank wird also riesig und der größte Teil der Rakete besteht aus Isolation. Hydrolox ist deshalb bei fast allen Trägerraketen ein *Oberstufen*-Treibstoff (Centaur, DCSS, ICPS, die Oberstufen von Ariane 5/6, Long March 5, H-IIA) und wird im Booster-Maßstab nur dort verwendet, wo extremer Isp mit der Größe des Fahrzeugs bezahlt wird — S-II und S-IVB der Saturn V, Außentank und RS-25 des Space Shuttle, Kernstufe der SLS, Vulcain-Kernstufe der Ariane 5. Das Abdampfen (Boil-off) ist das betriebliche Kopfzerbrechen: Flüssiger H₂ mit 20 K kann nicht lange auf der Rampe stehen."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "body_paragraphs.2",
+  "old": "Methalox (flüssiges Methan + LOX) ist der Neuling, operativ mit Raptor auf Starship (2023) und Zhuque-2 (2023, erstes zur Umlaufbahn), und kommt auf Vulcan (BE-4), Neutron + Terran R. Drei Eigenschaften machen es interessant. Erstens: Methandichte ~420 kg/m³ — etwa 6× Wasserstoff, also vernünftige Tankgröße. Zweitens: brennt sauber genug für Wiederverwendung (kein Verkoken wie RP-1). Drittens: Methan + Sauerstoff lassen sich beide auf dem Mars aus atmosphärischem CO₂ + Eis via Sabatier-Reaktion herstellen — die ganze SpaceX-Mars-Architektur ruht darauf. Isp liegt zwischen Kerolox und Hydrolox (~330 s Meereshöhe, ~380 Vakuum) — ein Sweet-Spot für ein Single-Stage-to-Orbit-Klasse-Fahrzeug.",
+  "new": "Methalox (flüssiges Methan + LOX) ist der Neuling, im Einsatz mit der Raptor auf Starship (2023) und der Zhuque-2 (2023, als erste im Orbit), und bald auch mit Vulcan (BE-4), Neutron und Terran R. Drei Eigenschaften machen es interessant. Erstens: Die Dichte von Methan beträgt ~420 kg/m³ — etwa das Sechsfache von Wasserstoff, die Tanks bleiben also vernünftig groß. Zweitens: Es verbrennt sauber genug für die Wiederverwendung (kein Verkoken wie bei RP-1). Drittens: Methan und Sauerstoff lassen sich beide auf dem Mars aus atmosphärischem CO₂ und Eis über die Sabatier-Reaktion herstellen — die gesamte Mars-Architektur von SpaceX ruht darauf. Der Isp liegt zwischen Kerolox und Hydrolox (~330 s auf Meereshöhe, ~380 im Vakuum) — ein Optimum für ein Fahrzeug der Einstufen-Orbit-Klasse (SSTO)."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "body_paragraphs.3",
+  "old": "Hypergole Treibstoffe (die lagerfähige Familie) entzünden sich spontan bei Kontakt — kein Funke, kein Vorbrenner. Das kanonische Paar ist UDMH (unsymmetrisches Dimethylhydrazin) oder MMH (Monomethylhydrazin) als Brennstoff mit N₂O₄ (Distickstofftetroxid) als Oxidator. Sie sind schmutzig: UDMH ist krebserregend, N₂O₄ akut toxisch, beide können jahrelang in versiegelten Tanks bleiben. Die Kombination trieb jedes Apollo Service Module, jedes Apollo LM Aufstiegs- + Abstiegstriebwerk, jeden Space Shuttle OMS-Burn, Soyuz / Progress Bahnmanöver und fast jedes Hauptzielwerk chinesischer / russischer / indischer Tiefenraumsonden an. Grund: zuverlässige Sofortzündung, jahrzehntelange Lagerfähigkeit, keine kryogene Verrohrung. Moderne westliche Missionen versuchen Verzicht (Draco läuft auf sicherer Monopropellant-Mischung, JWST-Kaltgasdüsen nutzen Hydrazin allein), aber die Masse der Tiefenraumantriebe ist immer noch hypergol.",
+  "new": "Hypergole Treibstoffe (die lagerfähige Familie) entzünden sich bei Kontakt von selbst — kein Funke, kein Vorbrenner. Das klassische Paar ist UDMH (unsymmetrisches Dimethylhydrazin) oder MMH (Monomethylhydrazin) als Brennstoff mit N₂O₄ (Distickstofftetroxid) als Oxidator. Sie sind dreckig: UDMH ist krebserregend, N₂O₄ akut giftig, beide können jahrelang in einem verschlossenen Tank lagern. Diese Kombination trieb jedes Apollo Service Module an, jedes Aufstiegs- und Abstiegstriebwerk des Apollo LM, jede Zündung des OMS des Space Shuttle, die Bahnmanöver von Soyuz und Progress und das Haupttriebwerk fast jeder chinesischen, russischen und indischen Tiefraumsonde. Der Grund: sofortige Zündung jedes Mal, jahrzehntelange Lagerfähigkeit, keine kryogene Verrohrung. Moderne westliche Missionen haben versucht, sie auslaufen zu lassen (Dragons Draco läuft mit sichereren Einstoff-Mischungen, die Kaltgasdüsen des JWST nutzen allein Hydrazin), doch der Großteil des Tiefraumantriebs ist weiterhin hypergol."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "body_paragraphs.4",
+  "old": "Feststofftreibstoffe sind ein einziger gegossener Block aus gummiartigem Binder (HTPB, Polybutadien-Basis) mit Ammoniumperchlorat (Oxidator) + Aluminiumpulver (energiereicher Brennstoffzusatz). Der Block wird um einen hohlen Kern gegossen, dessen Querschnitt das Brennratenprofil setzt — sternförmiger Kern gibt langen gleichmäßigen Schub, zylindrischer Kern gibt regressives (abfallendes) Profil. Einmal gezündet, kein Stopp + kein Drosseln; man wählt nur, wie der Block ursprünglich gegossen wurde. Isp ist niedrig (~250 s) aber Schub ist enorm und die Hardware einfach: SLS-Booster liefern je 16 MN, mehr als vier Merlin Vacuums. Space Shuttle SRBs, Ariane 6 P120C, jede ICBM, indische PSLV Erststufe, jede Luft-Luft-Rakete und die meisten CubeSat-Kickstufen sind Feststoff.",
+  "new": "Feststofftreibstoffe sind ein einziger gegossener Block aus gummiartigem Binder (HTPB, auf Polybutadien-Basis), beladen mit Ammoniumperchlorat (dem Oxidator) und Aluminiumpulver (einem energiereichen Brennstoffzusatz). Der Block wird um einen hohlen Kern gegossen, dessen Querschnitt das Abbrandprofil bestimmt — ein sternförmiger Kern liefert langen, gleichmäßigen Schub, ein zylindrischer Kern ein regressives (abnehmendes) Profil. Einmal gezündet, lässt er sich weder stoppen noch drosseln; man kann nur wählen, wie der Block ursprünglich gegossen wurde. Der Isp ist niedrig (~250 s), der Schub aber enorm und die Hardware einfach: Die SLS-Booster liefern je 16 MN, mehr als vier Merlin Vacuum. Die SRBs des Space Shuttle, die P120C der Ariane 6, jede ICBM, die erste Stufe der indischen PSLV, jede Luft-Luft-Rakete und die meisten CubeSat-Kickstufen sind Feststoffantriebe."
+ },
+ {
+  "rel": "science/propulsion/fuels-and-oxidizers.json",
+  "at": "diagram_caption",
+  "old": "Fünf Familien: Kerolox (Erststufen-Arbeitspferd), Hydrolox (Hoch-Isp-Oberstufen + Schwerlastkerne), Methalox (wiederverwendbar + Mars-herstellbar), Hypergole (Langzeit-Tiefenraum + Manövrierung), Feststoffe (billige einfache Booster ohne Drossel).",
+  "new": "Fünf Familien: Kerolox (Arbeitspferd der ersten Stufen), Hydrolox (Oberstufen mit hohem Isp und Schwerlast-Kernstufen), Methalox (wiederverwendbar und auf dem Mars herstellbar), Hypergole (lange Lagerfähigkeit für Tiefraum und Manöver), Feststoffe (billige, einfache Booster ohne Drosselung)."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "title",
+  "old": "Fusion Propulsion — der Stern, den wir noch nicht zünden können",
+  "new": "Fusionsantrieb — der Stern, den wir noch nicht zünden können"
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "intro_sentence",
+  "old": "Fusion leichter Atomkerne setzt pro Kilogramm weit mehr Energie frei als jede chemische Reaktion und ist der aussichtsreichste Weg zu schnellen interstellaren Reisen — falls je ein funktionierender Fusionsmotor gebaut wird.",
+  "new": "Die Fusion leichter Atomkerne setzt pro Kilogramm weit mehr Energie frei als jede chemische Reaktion — der aussichtsreichste Weg zu schnellen interstellaren Reisen, falls je jemand ein Fusionstriebwerk baut, was bisher keinem gelang."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "body_paragraphs.0",
+  "old": "Die Physik ist eindeutig. Die Fusion von Deuterium und Tritium (oder Deuterium und Helium-3) wandelt einen kleinen Bruchteil ihrer Masse direkt in Energie um. Die Ausbeute pro Kilogramm liegt etwa zehn Millionen Mal höher als bei den besten chemischen Treibstoffen. Übersetzt in spezifischen Impuls könnte ein Fusionsantrieb Zehntausende bis Hunderttausende Sekunden erreichen — zum Vergleich: der beste chemische Antrieb liegt bei 450 s, der beste Ionenantrieb bei 9.000 s. Diese Differenz entscheidet, ob eine interstellare Reise Jahrhunderte oder nur Jahrzehnte dauert.",
+  "new": "Die Physik ist einfach. Die Fusion von Deuterium und Tritium (oder Deuterium und Helium-3) wandelt einen kleinen Bruchteil ihrer Masse direkt in Energie um. Die Ausbeute pro Kilogramm liegt etwa zehn Millionen Mal höher als bei den besten chemischen Treibstoffen. Übersetzt in spezifischen Impuls könnte ein Fusionsantrieb Zehntausende bis Hunderttausende Sekunden erreichen — zum Vergleich: der beste chemische Antrieb liegt bei 450 s, der beste Ionenantrieb bei 9.000 s. Diese Lücke entscheidet, ob eine interstellare Reise Jahrhunderte oder nur Jahrzehnte dauert."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "body_paragraphs.1",
+  "old": "Die detaillierteste Ingenieurstudie ist Project Daedalus, durchgeführt von der British Interplanetary Society in den 1970er Jahren. Der Entwurf nutzte Trägheitsfusion: Pellets aus Deuterium und Helium-3, gezündet durch Elektronenstrahlen, etwa 250 Mal pro Sekunde, in einer magnetischen Reaktionskammer. Das resultierende Raumschiff hätte beim Start etwa 54.000 Tonnen gewogen — nahezu alles Treibstoff — und ungefähr 12 % der Lichtgeschwindigkeit erreicht, um Barnards Pfeilstern (5,9 Lichtjahre entfernt) in etwa 50 Jahren als Vorbeiflug ohne Abbremsen zu erreichen. Project Icarus, eine Folgestudie ab 2009, überarbeitete das Design mit der Vorgabe, am Ziel abbremsen zu können; die Massenanforderungen erwiesen sich als noch schwieriger zu erfüllen.",
+  "new": "Die bislang detaillierteste Ingenieurstudie ist Project Daedalus, durchgeführt von der British Interplanetary Society in den 1970er Jahren. Der Entwurf nutzte Trägheitsfusion: Pellets aus Deuterium und Helium-3, gezündet durch Elektronenstrahlen, etwa 250 Mal pro Sekunde, in einer magnetischen Reaktionskammer. Das resultierende Raumfahrzeug hätte beim Start etwa 54.000 Tonnen gewogen — nahezu alles Treibstoff — und ungefähr 12 % der Lichtgeschwindigkeit erreicht, um Barnards Pfeilstern (5,9 Lichtjahre entfernt) in etwa 50 Jahren als Vorbeiflug ohne Abbremsen zu erreichen. Project Icarus, eine Folgestudie ab 2009, überarbeitete das Design mit der Vorgabe, am Ziel abbremsen zu können; die Massenanforderungen erwiesen sich als noch schwieriger zu erfüllen."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "body_paragraphs.2",
+  "old": "Die Barriere ist fundamental, nicht inkrementell. Kein Fusionsreaktor auf der Erde hat bisher mehr Energie erzeugt als verbraucht — die lang ersehnte Zündschwelle wurde am National Ignition Facility im Dezember 2022 für lasergetriebene Trägheitsfusion überschritten, doch eine dauerhafte Netto-Energieausbeute im nutzbaren Maßstab bleibt ungelöst. Dies zu einem flugfähigen Triebwerk zu skalieren, das Hunderte Male pro Sekunde feuert, ist nochmals ein anderes Problem. Der von Daedalus benötigte Helium-3-Brennstoff existiert in nützlichen Mengen nicht auf der Erde und müsste von den äußeren Planeten abgebaut werden — selbst ein zivilisationsskaliges Projekt.",
+  "new": "Die Barriere ist fundamental, nicht graduell. Kein Fusionsreaktor auf der Erde hat bisher mehr Energie erzeugt als verbraucht — die lang ersehnte Zündschwelle wurde an der National Ignition Facility im Dezember 2022 für lasergetriebene Trägheitsfusion überschritten, doch eine dauerhafte Netto-Energieausbeute im nutzbaren Maßstab bleibt ungelöst. Dies zu einem flugfähigen Triebwerk zu skalieren, das Hunderte Male pro Sekunde zündet, ist nochmals ein anderes Problem. Der von Daedalus benötigte Helium-3-Brennstoff existiert auf der Erde nicht in nutzbaren Mengen und müsste von den äußeren Planeten abgebaut werden — selbst ein Projekt von zivilisatorischem Ausmaß."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "body_paragraphs.3",
+  "old": "Die beiden Hauptansätze für Plasmaeinschluss haben jeweils ihre Schwierigkeiten. Magnetischer Einschluss (Tokamaks, Stellaratoren) erfordert supraleitende Magnete und dauerhaften Plasmakontrolle; ITER, der internationale Tokamak im Bau in Frankreich, soll Netto-Energie demonstrieren, wird aber keinen Strom erzeugen. Trägheitseinschluss erfordert Treiber — Laser oder Teilchenstrahlen — die stark genug sind, den Brennstoff auf stellare Bedingungen zu komprimieren; die am NIF erreichte Zündung erforderte eine präzise gefertigte Kapsel und liegt weit unter der Wiederholrate, die ein Antriebssystem benötigt. Kein Ansatz hat einen klaren Ingenieursweg zu einer Antriebsanwendung.",
+  "new": "Die beiden Hauptansätze für den Plasmaeinschluss haben jeweils ihre Schwierigkeiten. Magnetischer Einschluss (Tokamaks, Stellaratoren) erfordert supraleitende Magnete und eine dauerhafte Plasmakontrolle; ITER, der internationale Tokamak im Bau in Frankreich, soll Netto-Energie demonstrieren, wird aber keinen Strom erzeugen. Trägheitseinschluss erfordert Treiber — Laser oder Teilchenstrahlen — die stark genug sind, den Brennstoff auf stellare Bedingungen zu komprimieren; die an der NIF erreichte Zündung erforderte eine präzise gefertigte Kapsel und liegt weit unter der Wiederholrate, die ein Antriebssystem benötigt. Kein Ansatz hat einen klaren technischen Weg zu einer Antriebsanwendung."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "diagram_caption",
+  "old": "Spezifischer-Impuls-Leiter von Feststoffraketen (250 s) über chemisch LH2/LOX (450 s) zu Ionenantrieben (9.000 s) zu projektierten Fusionsantrieben (Zehntausende bis Hunderttausende Sekunden) — jede Stufe ein qualitativer Sprung in den Treibstoffmassenkosten für interplanetare und interstellare Distanzen.",
+  "new": "Leiter des spezifischen Impulses von Feststoffraketen (250 s) über chemisches LH2/LOX (450 s) und Ionenantriebe (9.000 s) bis zu projektierten Fusionsantrieben (Zehntausende bis Hunderttausende Sekunden) — jede Sprosse ein qualitativer Sprung bei dem, was interplanetare und interstellare Distanzen an Treibstoffmasse kosten."
+ },
+ {
+  "rel": "science/propulsion/gas-generator.json",
+  "at": "title",
+  "old": "Gasgenerator-Zyklus — das Arbeitstier",
+  "new": "Gasgenerator-Zyklus — das Arbeitspferd"
+ },
+ {
+  "rel": "science/propulsion/gas-generator.json",
+  "at": "intro_sentence",
+  "old": "Ein Gasgenerator verbrennt einen kleinen Teil des Treibstoffs und treibt damit die Turbopumpen an. Das heiße Gas wird dann abgeleitet — ein einfaches, robustes und weit verbreitetes Konzept für Raketentriebwerke.",
+  "new": "Ein kleiner Teil des Treibstoffs verbrennt in einer Nebenkammer, das heiße Gas treibt die Turbopumpen an und wird dann über Bord geworfen. Das kostet etwas Leistung, ist aber einfach, robust und die verbreitetste Bauweise."
+ },
+ {
+  "rel": "science/propulsion/gas-generator.json",
+  "at": "body_paragraphs.0",
+  "old": "Jedes pumpengespeiste Triebwerk hat das gleiche Problem: Um Treibstoff mit Hunderten von Atmosphären in eine Brennkammer zu drücken, braucht man Turbopumpen. Und um diese Pumpen anzutreiben, braucht man eine Energiequelle. Der Gasgenerator-Zyklus löst dies auf direktem Wege. Ein kleiner Teil des Treibstoffs und des Oxidizers werden abgezweigt und in einer separaten Kammer — dem Gasgenerator — verbrannt. Der erzeugte heiße Gas treibt eine Turbine auf der Pumpenwelle an. Da dieses Gas seine Aufgabe erfüllt hat, bevor es die Hauptbrennkammer erreicht, wird es einfach über Bord abgelassen, normalerweise durch einen separaten Auslasskanal oder in die Düsenschürze, wo der Druck bereits niedrig ist. Dies macht es zu einem *offenen* Zyklus: Ein Teil des Treibstoffs verlässt das Triebwerk, ohne die Hauptbrennkammer zu durchlaufen.",
+  "new": "Jedes pumpengespeiste Triebwerk hat dasselbe Problem: Um Treibstoff mit Hunderten von Atmosphären in eine Brennkammer zu drücken, braucht man Turbopumpen. Und um diese Pumpen anzutreiben, braucht man eine Energiequelle. Der Gasgenerator-Zyklus löst dies auf die direkte Art. Einige Prozent des Brennstoffs und des Oxidators werden abgezweigt und in einer separaten kleinen Kammer — dem Gasgenerator — verbrannt. Das erzeugte heiße Gas treibt eine Turbine auf der Pumpenwelle an. Da dieses Gas seine Aufgabe erfüllt hat, bevor es die Hauptbrennkammer erreicht, wird es einfach über Bord abgelassen, normalerweise durch einen separaten Auslasskanal oder in die Düsenschürze, wo der Druck bereits niedrig ist. Dies macht es zu einem *offenen* Zyklus: Ein Teil des Treibstoffs verlässt das Triebwerk, ohne die Hauptbrennkammer zu durchlaufen."
+ },
+ {
+  "rel": "science/propulsion/gas-generator.json",
+  "at": "body_paragraphs.1",
+  "old": "Die meisten Gasgeneratoren arbeiten absichtlich treibstoffreich, weil eine stöchiometrische Flamme die Turbinenschaufeln schmelzen würde. Einige frühe sowjetische Triebwerke wie die RD-107 und RD-108 nutzen stattdessen Dampf aus katalytisch zerlegtem Wasserstoffperoxid, um ihre Turbinen anzutreiben. In beiden Fällen ist die Turbinen-Eintrittstemperatur die entscheidende Auslegungsgröße — sie begrenzt, wie stark die Pumpen angetrieben werden können und damit den Kammerdruck, den das Triebwerk erreichen kann. Der Überboard-Auslass kostet einige Sekunden spezifischer Impuls gegenüber einem geschlossenen Zyklus, da dieser Treibstoff wenig nutzbaren Schub erzeugt. Für eine erste Stufe, wo Rohschub und niedrige Kosten wichtiger sind als die letzten Sekunden Isp, ist dieser Kompromiss fast immer sinnvoll.",
+  "new": "Die meisten Gasgeneratoren arbeiten absichtlich treibstoffreich, weil eine stöchiometrische Flamme die Turbinenschaufeln schmelzen würde. Einige frühe sowjetische Triebwerke wie die RD-107 und RD-108 nutzen stattdessen Dampf aus katalytisch zerlegtem Wasserstoffperoxid, um ihre Turbinen anzutreiben. In beiden Fällen ist die Turbineneintrittstemperatur die entscheidende Auslegungsgröße — sie begrenzt, wie stark die Pumpen angetrieben werden können, und damit den Kammerdruck, den das Triebwerk erreichen kann. Das Ablassen über Bord kostet gegenüber einem geschlossenen Zyklus einige Sekunden spezifischen Impuls, da dieser Treibstoff kaum nutzbaren Schub erzeugt. Für eine erste Stufe, bei der Rohschub und niedrige Kosten wichtiger sind als die letzten Sekunden Isp, lohnt sich dieser Kompromiss fast immer."
+ },
+ {
+  "rel": "science/propulsion/gas-generator.json",
+  "at": "body_paragraphs.2",
+  "old": "Das Ergebnis ist der Zyklus, der mehr Hardware geflogen hat als jeder andere: Die F-1 der Saturn V, das Merlin 1D der Falcon 9, die RD-107 und RD-108 der R-7/Soyuz-Familie, Indiens Vikas, Europas Viking und NASAs RS-68 sind alle Gasgenerator-Triebwerke. Seine Vorzüge sind genau die, die ein Startoperator schätzt — weniger Ausfallmodi, geringere Entwicklungskosten, milde Turbinenbedingungen und einfache Zündung und Schubdrosselung. Wenn Ingenieure maximale Leistung wollen, schließen sie den Zyklus — das ist die Geschichte der gestuften Verbrennung und des Expander-Zyklus.",
+  "new": "Das Ergebnis ist der Zyklus, mit dem mehr Hardware geflogen ist als mit jedem anderen: Die F-1 der Saturn V, die Merlin 1D der Falcon 9, die RD-107 und RD-108 der R-7/Soyuz-Familie, Indiens Vikas, Europas Viking und NASAs RS-68 sind alle Gasgenerator-Triebwerke. Seine Vorzüge sind genau die, die ein Raketenbetreiber schätzt — weniger Fehlermöglichkeiten, geringere Entwicklungskosten, milde Turbinenbedingungen sowie einfacher Neustart und einfache Schubdrosselung. Wenn Ingenieure stattdessen maximale Leistung wollen, schließen sie den Zyklus — das ist die Geschichte der Stufenverbrennung und des Expander-Zyklus."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "title",
+  "old": "Ion Drives — der stetige Schub, der nie endet",
+  "new": "Ionentriebwerke — der langsame Schub, der nie aufhört"
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "intro_sentence",
+  "old": "Ionentriebwerke erreichen spezifische Impulse 10–30-mal höher als chemische Raketen durch elektrische Beschleunigung ionisierter Gase — bei sehr geringem Schub von wenigen Millinewton.",
+  "new": "Ionentriebwerke erreichen einen 10- bis 30-mal höheren spezifischen Impuls als chemische Raketen, da sie ionisiertes Gas elektrisch beschleunigen statt zu verbrennen — bei einem Schub von nur Millinewton, nicht Meganewton."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "body_paragraphs.0",
+  "old": "Alle Raketentriebwerke tauschen Treibstoffmasse gegen Geschwindigkeit. Je schneller das Abgas die Düse verlässt, desto weniger Treibstoff braucht man für eine gegebene Geschwindigkeitsänderung — das ist das spezifische Impuls-Maß (Isp). Chemische Triebwerke sind durch die Flammentemperatur begrenzt: die heißeste praktische Treibstoffkombination, flüssiger Wasserstoff und Sauerstoff, erreicht etwa 450 Sekunden Isp. Ionentriebwerke umgehen diese Grenze vollständig. Sie ionisieren einen Treibstoff — typischerweise Xenon, gewählt wegen seiner hohen Atommasse und chemischen Inertheit — und beschleunigen die Ionen elektrisch oder magnetisch auf Abgasgeschwindigkeiten von 20–100 km/s, was Isp-Werte von etwa 3.000 bis 10.000 Sekunden ergibt.",
+  "new": "Alle Raketentriebwerke tauschen Treibstoffmasse gegen Geschwindigkeit. Je schneller das Abgas die Düse verlässt, desto weniger Treibstoff braucht man für eine gegebene Geschwindigkeitsänderung — und genau das misst der spezifische Impuls (Isp). Chemische Triebwerke sind durch die Flammentemperatur begrenzt: Die heißeste praktische Treibstoffkombination, flüssiger Wasserstoff und Sauerstoff, erreicht etwa 450 Sekunden Isp. Ionentriebwerke umgehen diese Grenze vollständig. Sie ionisieren einen Treibstoff — typischerweise Xenon, gewählt wegen seiner hohen Atommasse und chemischen Inertheit — und beschleunigen die Ionen elektrisch oder magnetisch auf Abgasgeschwindigkeiten von 20–100 km/s, was Isp-Werte von etwa 3.000 bis 10.000 Sekunden ergibt."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "body_paragraphs.1",
+  "old": "Zwei Designs dominieren den praktischen Einsatz. Gitterionentriebwerke (wie NASAs NSTAR) verwenden ein Paar geladener Metallgitter, um Ionen in einem Strahl zu beschleunigen; der Strahl wird durch eine Elektronenkanone neutralisiert, um Ladungsaufbau am Raumschiff zu verhindern. Hall-Effekt-Triebwerke beschränken Elektronen in einem magnetischen Ring nahe dem Austritt, wobei diese Elektronen den Treibstoff ionisieren und beschleunigen — eine einfachere Anordnung ohne erosionsanfällige Gitter, weshalb Hall-Triebwerke zum Standard für die kommerzielle Bahnhaltung von Satelliten wurden. NSTAR flog auf Deep Space 1 und Dawn; NASAs größeres Gittermodul NEXT-C flog 2021 auf der DART-Mission.",
+  "new": "Zwei Bauarten dominieren den praktischen Einsatz. Gitterionentriebwerke (wie NASAs NSTAR) verwenden ein Paar geladener Metallgitter, um Ionen in einem Strahl zu beschleunigen; der Strahl wird durch eine Elektronenkanone neutralisiert, damit sich am Raumfahrzeug keine Ladung aufbaut. Hall-Effekt-Triebwerke halten Elektronen in einem magnetischen Ring nahe dem Austritt fest, und diese Elektronen ionisieren und beschleunigen den Treibstoff — eine einfachere Anordnung ohne erosionsanfällige Gitter, weshalb Hall-Triebwerke zum Standard für die kommerzielle Lagehaltung von Satelliten wurden. NSTAR flog auf Deep Space 1 und Dawn; das größere Gitterionentriebwerk NEXT-C der NASA flog 2021 auf der DART-Mission."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "body_paragraphs.2",
+  "old": "Die Schubleistung ist ernüchternd. Ein modernes 12-kW-Hall-Triebwerk erzeugt etwa 0,6 Newton — grob das Gewicht eines kleinen Apfels. Man kann mit einem Ionentriebwerk keinen Bleistift vom Tisch heben. Was man tun kann: es monatelang oder jahrelang kontinuierlich betreiben, weil die Treibstoffmenge klein ist und die Energie von Solarpanelen kommt. Dawns drei NSTAR-Triebwerke liefen insgesamt 2.009 Tage im Flug und sammelten eine Geschwindigkeitsänderung von etwa 11,5 km/s — mehr als jedes frühere Raumschiff durch Treibstoffanteil allein. Das reichte aus, um in eine Umlaufbahn um Vesta zu bremsen, sie zu verlassen und dann in eine Umlaufbahn um Ceres zu bremsen: ein chemisch nur mit unrentabel großer Treibstoffmenge erreichbares Ziel.",
+  "new": "Die Schubwerte sind ernüchternd. Ein modernes 12-kW-Hall-Triebwerk erzeugt etwa 0,6 Newton — grob das Gewicht eines kleinen Apfels. Mit einem Ionentriebwerk kann man keinen Bleistift vom Tisch heben. Was man kann: es monatelang oder jahrelang ununterbrochen betreiben, weil die Treibstoffmenge klein ist und die Energie von Solarzellenflächen kommt. Die drei NSTAR-Triebwerke von Dawn liefen insgesamt 2.009 Tage im Flug und summierten eine Geschwindigkeitsänderung von etwa 11,5 km/s auf — mehr, als je ein Raumfahrzeug allein mit seinem Treibstoffanteil erreicht hatte. Das reichte aus, um in eine Umlaufbahn um Vesta zu bremsen, sie zu verlassen und dann in eine Umlaufbahn um Ceres zu bremsen: ein Kunststück, das chemisch nur mit einer unvertretbar großen Treibstoffmenge möglich wäre."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "body_paragraphs.3",
+  "old": "Die Grenze ist Energie. Im inneren Sonnensystem können große Solarpanels Zehner-Kilowatt an ein Triebwerk liefern. Jenseits des Jupiter ist Sonnenlicht für ionengesteuerte Raumschiffe mit nützlichem Schub zu schwach; die Alternative ist ein Kernreaktor, den noch keine Tiefraummission mit Ionenantrieb nutzte. Bei hohem Schub reagieren Ionentriebwerke auch langsamer als chemische Triebwerke, was ihren Einsatz für Lageregelung oder Ausweichmanöver einschränkt. Sie sind ein Cruise-Triebwerk, kein Start-Triebwerk — jedes ionengetriebene Raumschiff der Geschichte brauchte zuerst eine chemische Rakete zur Umlaufbahn oder Fluchtgeschwindigkeit.",
+  "new": "Die Grenze ist die Energie. Im inneren Sonnensystem können große Solarflächen Dutzende kW an ein Triebwerk liefern. Jenseits des Jupiter ist das Sonnenlicht für solarbetriebenen Ionenantrieb mit nützlichem Schub zu schwach; die Alternative: ein Kernreaktor, den noch keine elektrisch angetriebene Tiefraummission nutzte. Bei hohem Schub reagieren Ionentriebwerke zudem langsamer als chemische Triebwerke, was ihren Einsatz für Lageregelung oder Ausweichmanöver einschränkt. Sie sind ein Reisetriebwerk, kein Starttriebwerk — jedes ionengetriebene Raumfahrzeug der Geschichte brauchte zuerst eine chemische Rakete bis zur Umlaufbahn oder Fluchtgeschwindigkeit. Siehe auch: /science/propulsion/specific-impulse (Zahlen im Kontext) und /science/propulsion/tsiolkovsky (warum hohe Abgasgeschwindigkeit die Treibstoffmasse so stark senkt)."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "title",
+  "old": "Lasersegel — eine Sonde mit einem Strahl von zu Hause antreiben",
+  "new": "Lasersegel — eine Sonde mit einem Strahl von zu Hause aus antreiben"
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "body_paragraphs.0",
+  "old": "Die Kernidee ist Impulsübertragung. Licht trägt Impuls, und wenn es von einer Oberfläche reflektiert wird, überträgt es das Doppelte dieses Impulses auf das Segel. Ein ausreichend leistungsstarker Strahl kann ein leichtes Segel auf hohe Geschwindigkeit beschleunigen, ohne dass das Raumfahrzeug überhaupt Treibstoff mitführt. Die Tsiolkovsky-Raketengleichung — die jedes Gramm Treibstoff bestraft, das man erst heben und dann beschleunigen muss — gilt nicht; es gibt keinen Ausstoß, keinen Treibstofftank, kein Massenverhältnis-Problem. Die Energierechnung bleibt zu Hause.",
+  "new": "Die Kernidee ist Impulsübertragung. Licht trägt Impuls, und wenn es von einer Oberfläche reflektiert wird, überträgt es das Doppelte dieses Impulses auf das Segel. Ein ausreichend leistungsstarker Strahl kann ein leichtes Segel auf hohe Geschwindigkeit beschleunigen, ohne dass das Raumfahrzeug überhaupt Treibstoff mitführt. Die Ziolkowski-Raketengleichung — die jedes Gramm Treibstoff bestraft, das man erst heben und dann beschleunigen muss — gilt nicht; es gibt keinen Abgasstrahl, keinen Treibstofftank, kein Problem mit dem Massenverhältnis. Die Energierechnung bleibt zu Hause."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "body_paragraphs.1",
+  "old": "Robert Forward arbeitete in den 1980er Jahren die Mathematik im Detail aus und schlug lasergetriebene Segel für interstellare Sonden und das Konzept „Starwisp\" vor – ein mikrowellengetriebenes Gitttersegel, das Elektronik im Gramm-Bereich zu den nächsten Sternen trägt. Die bekannteste aktuelle Version ist Breakthrough Starshot, das 2016 von Yuri Milner angekündigt und unter anderem von Stephen Hawking unterstützt wurde. Das Design sieht „StarChip\"-Sonden von etwa einem Gramm auf Segeln mit ungefähr vier Metern Durchmesser vor, beschleunigt durch ein bodengestütztes Laser-Array von etwa 100 Gigawatt auf etwa 20% der Lichtgeschwindigkeit im Verlauf weniger Minuten. Mit dieser Geschwindigkeit würde Proxima Centauri – 4,24 Lichtjahre entfernt – in etwa 20 Jahren erreicht.",
+  "new": "Robert Forward arbeitete in den 1980er Jahren die Mathematik im Detail aus und schlug lasergetriebene Segel für interstellare Sonden sowie das Konzept „Starwisp“ vor – ein mikrowellengetriebenes Gittersegel, das Elektronik im Gramm-Bereich zu den nächsten Sternen trägt. Die bekannteste aktuelle Version ist Breakthrough Starshot, das 2016 von Yuri Milner angekündigt und unter anderem von Stephen Hawking unterstützt wurde. Das Design sieht „StarChip“-Sonden von etwa einem Gramm auf Segeln mit ungefähr vier Metern Durchmesser vor, beschleunigt durch ein bodengestütztes Laser-Array von etwa 100 Gigawatt auf etwa 20 % der Lichtgeschwindigkeit im Verlauf weniger Minuten. Mit dieser Geschwindigkeit würde Proxima Centauri – 4,24 Lichtjahre entfernt – in etwa 20 Jahren erreicht."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "body_paragraphs.2",
+  "old": "Die Einschränkungen sind gravierend und ehrlich. Erstens Abbremsung: Ein Lasersegel, das auf 20 % der Lichtgeschwindigkeit beschleunigt wurde, hat keine Möglichkeit, am Ziel abzubremsen. Breakthrough Starshot ist explizit als Vorbeiflug-Mission konzipiert — einige Stunden Datensammlung bei Proxima, kein Einschwenken in eine Umlaufbahn, keine Rückkehr. Forwards eigene Vorschläge zum Abbremsen nutzten ein zweites, größeres Segel, das zurückgelassen wurde, um den Strahl vorwärts auf ein kleineres Bremssegel zu reflektieren; die Ingenieurs-Massenskalierung ist ungünstig. Zweitens Kommunikation: Ein Sender im Grammbereich in 4 Lichtjahren Entfernung muss ein Signal senden, das von den größten Empfängern der Erde detektierbar ist. Das Linkbudget ist knapp und erfordert, dass das volle 4-Meter-Segel zusätzlich als Phased-Array-Antenne dient. Drittens Überleben: Das Segel muss die Beschleunigungsphase (Tausende g über Minuten), Einschläge interstellaren Staubs bei relativistischer Geschwindigkeit und Strahlung über einen 20-jährigen Flug überstehen.",
+  "new": "Die Einschränkungen sind gravierend und ehrlich. Erstens Abbremsung: Ein Lasersegel, das auf 20 % der Lichtgeschwindigkeit beschleunigt wurde, hat keine Möglichkeit, am Ziel abzubremsen. Breakthrough Starshot ist ausdrücklich als Vorbeiflug-Mission konzipiert — einige Stunden Datensammlung bei Proxima, kein Einschwenken in eine Umlaufbahn, keine Rückkehr. Forwards eigene Vorschläge zum Abbremsen nutzten ein zweites, größeres Segel, das zurückgelassen wurde, um den Strahl nach vorn auf ein kleineres Bremssegel zu reflektieren; die benötigte Masse skaliert dabei ungünstig. Zweitens Kommunikation: Ein Sender im Grammbereich in 4 Lichtjahren Entfernung muss ein Signal senden, das von den größten Empfängern der Erde nachweisbar ist. Das Linkbudget ist knapp und erfordert, dass das volle 4-Meter-Segel zusätzlich als Phased-Array-Antenne dient. Drittens Überleben: Das Segel muss die Beschleunigungsphase (Tausende g über Minuten), Einschläge interstellaren Staubs bei relativistischer Geschwindigkeit und Strahlung über einen 20-jährigen Flug überstehen."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "body_paragraphs.4",
+  "old": "Von den drei hier im Atlas behandelten Antriebskonzepten am fernen Horizont sind Lasersegel die am besten untersuchten, am wenigsten von ungelöster Physik abhängigen und am nächsten an einem glaubwürdigen (wenn auch enorm ambitionierten) technischen Pfad. Die Physik erfordert nichts, was nicht bereits verstanden ist. Die Technik erfordert ein Laserarray, Segelmaterialien und Chip-Technologie, die in der erforderlichen Größenordnung noch nicht existieren. Es ist der ehrlichste Kandidat für ‚das Schwierigste, was die Menschheit vielleicht eines Tages tatsächlich bauen könnte' statt ‚erfordert ein Wunder'.",
+  "new": "Von den drei hier im Atlas behandelten Antriebskonzepten am fernen Horizont sind Lasersegel die am besten untersuchten, am wenigsten von ungelöster Physik abhängigen und am nächsten an einem glaubwürdigen (wenn auch enorm ambitionierten) technischen Pfad. Die Physik erfordert nichts, was nicht bereits verstanden ist. Die Technik erfordert ein Laserarray, Segelmaterialien und Chip-Technologie, die in der erforderlichen Größenordnung noch nicht existieren. Es ist der ehrlichste Kandidat für ‚das Schwierigste, was die Menschheit vielleicht eines Tages tatsächlich bauen könnte‘ statt für ‚erfordert ein Wunder‘."
+ },
+ {
+  "rel": "science/propulsion/laser-sail.json",
+  "at": "diagram_caption",
+  "old": "Segel-Beschleunigungsprofil: Ein 100-GW-Laser schiebt ein 4-g-Segel aus dem Stand auf 0,2c über etwa 10 Minuten und ~2 Millionen km — danach divergiert der Strahl über nutzbare Intensität hinaus und die Sonde gleitet 20 Jahre zu Proxima Centauri, wo sie ohne Möglichkeit zum Abbremsen ankommt.",
+  "new": "Beschleunigungsprofil des Segels: Ein 100-GW-Laser schiebt ein 4-g-Segel aus dem Stand auf 0,2c, über etwa 10 Minuten und ~2 Millionen km — danach ist der Strahl so weit aufgefächert, dass seine Intensität nicht mehr ausreicht, und die Sonde driftet 20 Jahre zu Proxima Centauri, wo sie ohne Möglichkeit zum Abbremsen ankommt."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "title",
+  "old": "Nuclear-Thermal Rockets — Hitze, nicht Flamme",
+  "new": "Nuklearthermische Raketen — Hitze, nicht Flamme"
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "intro_sentence",
+  "old": "Eine nuklearthermische Rakete ersetzt die Brennkammer durch einen Spaltreaktor: Wasserstoff erhitzt im Kern über jede chemische Flamme hinaus und expandiert durch eine Düse — etwa doppelter Isp bei realem Schub.",
+  "new": "Eine nuklearthermische Rakete ersetzt die Brennkammer durch einen Spaltreaktor: Wasserstoff heizt sich im Kern über jede chemische Flamme hinaus auf und expandiert durch eine Düse — etwa doppelter Isp bei echtem Schub."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "body_paragraphs.1",
+  "old": "Diese Kombination — hoher Isp bei hohem Schub — ist die Lücke, die NTR füllt. Ionentriebwerke bieten höheren Isp, aber Schub im Millinewton-Bereich; chemische Triebwerke bieten hohen Schub, aber nur die Hälfte des Isp. Für Missionen, die schnell große Geschwindigkeitsänderungen erfordern — insbesondere einen bemannten Transit zum Mars — bedeutet die Kombination von NTR eine erheblich kleinere Treibstoffladung, eine kürzere Reise oder beides. Ein kürzerer Mars-Transit ist medizinisch wichtig: weniger Zeit im Weltraum bedeutet weniger akkumulierte Strahlendosis, was eine der schwereren Beschränkungen für eine bemannte Mars-Architektur darstellt (siehe /essays/going-to-mars).",
+  "new": "Diese Kombination — hoher Isp bei hohem Schub — ist die Lücke, die NTR füllt. Ionentriebwerke bieten höheren Isp, aber Schub im Millinewton-Bereich; chemische Triebwerke bieten hohen Schub, aber nur die Hälfte des Isp. Für Missionen, die schnell große Geschwindigkeitsänderungen erfordern — insbesondere einen bemannten Flug zum Mars —, bedeutet die Kombination von NTR eine erheblich kleinere Treibstoffladung, eine kürzere Reise oder beides. Ein kürzerer Marsflug ist medizinisch wichtig: weniger Zeit im Weltraum bedeutet weniger angesammelte Strahlendosis, eine der härteren Randbedingungen für eine bemannte Mars-Architektur (siehe /essays/going-to-mars)."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "body_paragraphs.2",
+  "old": "Die ingenieurtechnische Geschichte ist für eine Technologie, die nie geflogen ist, ungewöhnlich vollständig. Das US-amerikanische NERVA/Rover-Programm (1955–1973) baute und testete 22 Reaktorkonfigurationen in Jackass Flats, Nevada, am Boden. Das Phoebus-2A-Triebwerk lief 1968 über 12 Minuten bei 4.100 MW thermisch — genug, um das Triebwerk durch seinen eigenen Schub vom Teststand abzuheben. NERVA XE-Prime demonstrierte eine flugtaugliche Triebwerkskonfiguration. Das Programmmanagement schätzte, dass ein flugfertiges Triebwerk innerhalb von zwei Jahren nach der Programmeinstellung 1973 verfügbar gewesen wäre. Die Sowjetunion führte ein paralleles Programm durch (RD-0410, auch IRGIT genannt), das ebenfalls funktionierende Testhardware ohne Flug produzierte.",
+  "new": "Die technische Geschichte ist für eine Technologie, die nie geflogen ist, ungewöhnlich vollständig. Das US-amerikanische NERVA/Rover-Programm (1955–1973) baute 22 Reaktorkonfigurationen und testete sie am Boden in Jackass Flats, Nevada. Das Triebwerk Phoebus-2A lief 1968 über 12 Minuten bei 4.100 MW thermisch — genug, um das Triebwerk durch seinen eigenen Schub vom Teststand abzuheben. NERVA XE-Prime demonstrierte eine flugtaugliche Triebwerkskonfiguration. Das Programmmanagement schätzte, ein flugfertiges Triebwerk sei von der Programmeinstellung 1973 nur zwei Jahre entfernt gewesen. Die Sowjetunion führte ein paralleles Programm durch (RD-0410, auch IRGIT genannt), das ebenfalls funktionierende Testhardware hervorbrachte, ohne je zu fliegen."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "body_paragraphs.3",
+  "old": "Das DRACO-Programm (Demonstration Rocket for Agile Cislunar Operations) von DARPA und NASA zielte darauf ab, bis Ende der 2020er Jahre ein NTR-Triebwerk im Orbit zu demonstrieren, wobei ein LEU-Design (Low-Enriched Uranium) verwendet werden sollte, um einige der regulatorischen Beschränkungen zu umgehen, die das hochangereicherte Uran in NERVA umgaben. Das Programm wurde im US-Bundeshaushalt 2026 gestrichen. Stand 2026 ist kein nuklearthermisches Triebwerk geflogen. Die technischen Hindernisse sind real, aber beherrschbar: Reaktormasse, Wasserstoffspeicherung und -handhabung, Düsenerosion bei hohen Temperaturen. Das anhaltende Hindernis war politisch — öffentliche Akzeptanz des Starts eines Kernreaktors, vertragliche Verpflichtungen im Rahmen des Outer Space Treaty und die Kosten für Tests, die nicht auf einem Standard-Triebwerksprüfstand durchgeführt werden können.",
+  "new": "Das DRACO-Programm (Demonstration Rocket for Agile Cislunar Operations) von DARPA und NASA zielte darauf ab, bis Ende der 2020er Jahre ein NTR-Triebwerk im Orbit zu demonstrieren, wobei ein Design mit schwach angereichertem Uran (LEU) verwendet werden sollte, um einige der regulatorischen Beschränkungen zu umgehen, die das hochangereicherte Uran in NERVA umgaben. Das Programm wurde im US-Bundeshaushalt 2026 gestrichen. Stand 2026 ist noch kein nuklearthermisches Triebwerk geflogen. Die technischen Hindernisse sind real, aber beherrschbar: Reaktormasse, Wasserstoffspeicherung und -handhabung, Düsenerosion bei hohen Temperaturen. Das anhaltende Hindernis war politisch — die öffentliche Akzeptanz des Starts eines Kernreaktors, vertragliche Verpflichtungen aus dem Weltraumvertrag und die Kosten für Tests, die nicht auf einem Standard-Triebwerksprüfstand durchgeführt werden können."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "body_paragraphs.4",
+  "old": "Für unbemannte Tiefraummissionen konkurriert NTR mit zunehmend leistungsfähigen Ionentriebwerken, die kostengünstiger zu entwickeln sind und keine nukleare Regulierungslast tragen. Die Nische, in der NTR am schwersten zu ersetzen ist, ist eine bemannte Mars-Mission mit einem engen Startfenster und einer Besatzung, die nicht drei Jahre im Transit verbringen kann. Ob diese Mission jemals stattfindet und ob NTR dafür gegenüber anderen Optionen gewählt wird, bleibt offen. Siehe auch: /science/propulsion/specific-impulse für einen Vergleich von 800 s über verschiedene Triebwerkstypen und /science/propulsion/tsiolkovsky dafür, warum die Verdopplung des Isp einen so dramatischen Effekt auf die erforderliche Treibstofffraktion hat.",
+  "new": "Für unbemannte Tiefraummissionen konkurriert NTR mit zunehmend leistungsfähigen Ionentriebwerken, die kostengünstiger zu entwickeln sind und keine nukleare Regulierungslast tragen. Die Nische, in der NTR am schwersten zu ersetzen ist, ist eine bemannte Mars-Mission mit einem engen Startfenster und einer Besatzung, die nicht drei Jahre unterwegs sein kann. Ob diese Mission jemals stattfindet und ob NTR dafür gegenüber anderen Optionen gewählt wird, bleibt offen. Siehe auch: /science/propulsion/specific-impulse für einen Vergleich von 800 s über verschiedene Triebwerkstypen und /science/propulsion/tsiolkovsky dafür, warum die Verdopplung des Isp einen so dramatischen Effekt auf den erforderlichen Treibstoffanteil hat."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "diagram_caption",
+  "old": "NTR-Schema: Flüssiger Wasserstoff durch Festkern-Spaltreaktor bei 2.500–3.000 K gepumpt, durch Düse ausgestoßen — Isp ~800–1.000 s, Schub 50–250 kN, keine Verbrennung.",
+  "new": "NTR-Schema: Flüssiger Wasserstoff wird durch einen Festkern-Spaltreaktor bei 2.500–3.000 K gepumpt und durch die Düse ausgestoßen — Isp ~800–1.000 s, Schub 50–250 kN, keine Verbrennung."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "intro_sentence",
+  "old": "Brenne tief im Schwerkrafttopf und dein Treibstoff arbeitet mehr — physikalisch erzeugt der Motor mehr Bahnenergie bei hoher Geschwindigkeit.",
+  "new": "Brenne tief in einem Gravitationsfeld, und dein Treibstoff leistet mehr Arbeit — dasselbe Triebwerk erzeugt mehr Bahnenergie, wenn es sich schnell bewegt."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "narrative_101.1",
+  "old": "Verbrennst du ihn, wenn du SCHNELL bist, liefert derselbe Treibstoff viel mehr nutzbare Energie als derselbe Burn bei langsamer Fahrt. Der Grund steckt darin, dass die kinetische Energie mit v² wächst — wenn du dich schon bewegst, fügt ein kleines ∆v obendrauf verhältnismäßig mehr Energie hinzu als im Stand. Ein Burn von 1 km/s im Perigäum (bei 11 km/s) bringt dir also mehr Bahnenergie als derselbe Burn von 1 km/s im Apogäum (bei 1 km/s).",
+  "new": "Zündest du den Treibstoff, wenn du SCHNELL bist, liefert dieselbe Menge viel mehr nutzbare Energie als bei langsamer Fahrt. Der Grund liegt darin, dass die kinetische Energie mit v² wächst — wenn du dich schon bewegst, fügt ein kleines ∆v obendrauf verhältnismäßig mehr Energie hinzu als im Stand. Ein Brennvorgang von 1 km/s im Perigäum (bei 11 km/s) bringt dir also mehr Bahnenergie als derselbe Brennvorgang von 1 km/s im Apogäum (bei 1 km/s)."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "body_paragraphs.0",
+  "old": "Kinetische Energie geht mit ½mv². Kleines Δv bei hoher Geschwindigkeit ändert KE viel mehr als bei niedriger. Auf eine Brennphase angewandt: in Periapsis (schnellster Punkt) erzeugt der gleiche Treibstoff mehr Bahnenergiezuwachs als im Apoapsis.",
+  "new": "Die kinetische Energie eines bewegten Körpers wächst mit `½ m v²`. Dasselbe kleine Δv ändert sie bei hoher Geschwindigkeit viel stärker als bei niedriger. Zündest du in der Periapsis (am schnellsten Punkt), liefert derselbe Treibstoff mehr Bahnenergie als in der Apoapsis."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "body_paragraphs.1",
+  "old": "Hermann Oberth wies darauf 1929 hin. Die Konsequenz für die Missionsplanung: Planen Sie Ihre großen ∆v-Abbrandphasen dorthin, wo Sie bereits schnell unterwegs sind — am Perihel der Transferellipse, am Periapsis eines Vorbeiflugs. Parker Solar Probe führt Abbrände am Perihel jedes Sonnendurchgangsbogens durch, um bei der nächsten Schleife tiefer in Richtung der Sonne zu sinken. Juno zündet am jovianischen Periapsis, um seine Wissenschaftsumlaufbahn zu kontrollieren.",
+  "new": "Hermann Oberth wies darauf 1929 hin. Die Konsequenz für die Missionsplanung: Lege deine großen ∆v-Zündungen dorthin, wo du dich bereits schnell bewegst — ins Perihel der Transferellipse, in die Periapsis eines Vorbeiflugs. Parker Solar Probe zündet im Perihel jedes Sonnenbogens, um in der nächsten Schleife noch tiefer zur Sonne zu fallen. Juno zündet im Perijovum, um ihre wissenschaftliche Umlaufbahn zu steuern."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "body_paragraphs.2",
+  "old": "Der Kompromiss: Brennvorgänge in tiefem Gravitationspotential sind kurz und intensiv; das Raumschiff muss bereit sein, die Hitze, den Staudruck und die präzise Timing zu bewältigen. Es gibt kein kostenloses Essen – aber der Oberth-Effekt zeigt dir, welche Mahlzeiten billiger sind.",
+  "new": "Der Kompromiss: Zündungen tief im Gravitationsfeld sind kurz und intensiv; das Raumfahrzeug muss Hitze, Staudruck und eine präzise Zeitsteuerung bewältigen. Es gibt kein Gratis-Mittagessen — aber der Oberth-Effekt zeigt dir, welche Mittagessen billiger sind."
+ },
+ {
+  "rel": "science/propulsion/oberth-effect.json",
+  "at": "diagram_caption",
+  "old": "Gleiches Δv bei Periapsis (hohes v) liefert mehr Energiezuwachs als bei Apoapsis (niedriges v).",
+  "new": "Dasselbe Δv in der Periapsis (hohes v) bringt mehr Energiezuwachs als in der Apoapsis (niedriges v)."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "intro_sentence",
+  "old": "Tsiolkovskys Gleichung macht Single-Stage-to-Orbit nur mit unmöglich leichter Trockenmasse möglich. Jeder Orbital-Träger der Geschichte hat mindestens eine Stufe abgeworfen. Die meisten zwei oder drei.",
+  "new": "Die Gleichung von Ziolkowski macht den Flug in den Orbit mit nur einer Stufe nur mit unmöglich leichter Trockenmasse möglich. Jede Orbitalrakete der Geschichte hat mindestens eine Stufe abgeworfen. Die meisten zwei oder drei."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "body_paragraphs.0",
+  "old": "Das Massenverhältnis für den Orbit (~9,4 km/s ∆v von einem Küstenstartplatz) liegt mit den besten Chemietriebwerken bei etwa 12–15. Das heißt 92–93 % eines theoretischen SSTO-Fahrzeugs sind Treibmittel; die Trockenmasse — Tanks, Triebwerke, Avionik, Nutzlast, Rückführhardware — muss in die restlichen 7–8 % passen. Niemand hat je eines gebaut. Das X-33 / VentureStar-SSTO-Programm der 1990er wurde eingestellt, als der Kompositwasserstofftank den Drucktest nicht bestand. Skylon (UK, SABRE-basiert) ist immer noch auf dem Papier. Starship wird manchmal als SSTO-fähig beschrieben, fliegt aber aus guten Gründen als Zweistufler: den Booster abzuwerfen spart Trockenmasse und lässt die Oberstufe mit viel höherer TWR-getriebener Beschleunigung weitermachen. Stufung ist der Trick, der die logarithmische Raketengleichung von unmöglich zu nur schwierig macht.",
+  "new": "Das Massenverhältnis für den Orbit (~9,4 km/s ∆v von einem Küstenstartplatz) liegt mit den besten chemischen Triebwerken bei etwa 12–15. Das heißt, 92–93 % eines theoretischen Einstufenfahrzeugs (SSTO) sind Treibmittel; die Trockenmasse — Tanks, Triebwerke, Avionik, Nutzlast, Rückführhardware — muss in die restlichen 7–8 % passen. Niemand hat je eines gebaut. Das SSTO-Programm X-33 / VentureStar der 1990er wurde eingestellt, als der Wasserstofftank aus Verbundwerkstoff den Drucktest nicht bestand. Skylon (Großbritannien, auf SABRE-Basis) existiert weiterhin nur auf dem Papier. Starship wird manchmal als SSTO-fähig beschrieben, fliegt aber aus guten Gründen als Zweistufler: Das Abwerfen des Boosters spart Trockenmasse und lässt die Oberstufe mit deutlich höherer, vom Schub-Gewichts-Verhältnis (TWR) getragener Beschleunigung weiterfliegen. Die Stufentrennung ist der Trick, der die logarithmische Raketengleichung von unmöglich zu bloß schwierig macht."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "body_paragraphs.1",
+  "old": "Zweistufige Architektur ist das moderne Minimum. Falcon 9 (Booster + zweite Stufe), Falcon Heavy (3-Kern-Booster + zweite Stufe), Starship (Super Heavy + Starship), Electron (Kerolox erste + Kerolox zweite + manchmal eine Curie-Kickstufe), Neutron (geplant), Terran R (geplant). Der Booster macht das schwere Heben durch die dichte untere Atmosphäre, wo hoher Schub wichtiger als Isp ist; die Oberstufe läuft bei niedrigerem TWR im Vakuum, wo hoher Isp sich auszahlt. Warum nicht drei Stufen? Weil jedes Stufungsereignis ein eigener Fehlermodus ist (Trennungspyros, Hot-Staging-Strahlenmanagement, Interstage-Debris) und moderne Triebwerke gut genug sind, den Oberstufenbrand in einem Durchgang zu schaffen. Ausnahmen sind meist GTO- oder interplanetare Missionen, bei denen eine Kickstufe (Star 48, Briz-M, Fregat, YZ-1/2, Centaur als dritte Stufe) eine letzte präzise Verbrennung gibt — Voyager, New Horizons, Solar Orbiter, JUICE, jeder Mars-Rover.",
+  "new": "Eine zweistufige Architektur ist das moderne Minimum. Falcon 9 (Booster + zweite Stufe), Falcon Heavy (Booster aus drei Kernen + zweite Stufe), Starship (Super Heavy + Starship), Electron (Kerolox-Erststufe + Kerolox-Zweitstufe + manchmal eine Curie-Kickstufe), Neutron (geplant), Terran R (geplant). Der Booster übernimmt die Schwerarbeit durch die dichte untere Atmosphäre, wo hoher Schub wichtiger ist als der Isp; die Oberstufe läuft im Vakuum mit niedrigerem TWR, wo sich ein hoher Isp auszahlt. Warum nicht drei Stufen? Weil jede Stufentrennung eine eigene Fehlerquelle ist (Trennungspyrotechnik, Beherrschung des Abgasstrahls beim Hot Staging, Trümmer an der Zwischenstufe) und moderne Triebwerke gut genug sind, den Oberstufenbrand in einem Zug zu leisten. Die Ausnahmen sind meist GTO- oder interplanetare Missionen, bei denen eine Kickstufe (Star 48, Briz-M, Fregat, YZ-1/2, Centaur als dritte Stufe) eine letzte präzise Zündung liefert — Voyager, New Horizons, Solar Orbiter, JUICE, jeder Mars-Rover."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "body_paragraphs.2",
+  "old": "Dreistufige Architektur war Standard der Apollo-Ära, weil die damaligen Triebwerke nicht genug Isp oder Schub für nur zwei lieferten. Saturn V: S-IC Kerolox-Booster (5 × F-1, ~2,5 Minuten), S-II Hydrolox-Sustainer (5 × J-2, ~6 Minuten), S-IVB Hydrolox-Oberstufe (1 × J-2, zwei Brände — einer zum Zirkulieren, einer für die Mondinjektion). Sojus fliegt immer noch drei Stufen plus vier Strap-on-Erststufenbooster in einer 1957er-Architektur, älter als die bemannte Raumfahrt selbst. Chinas Long March 3B/E und Long March 5 sind 2,5-stufig (Kern + Strap-ons + Oberstufe) mit separater Kickstufe für GEO/Escape. Indiens PSLV ist einmalig vierstufig mit abwechselnd Festtreibstoff und flüssig — Erbe eines 1970er-Programms, dem jede einzelne Treibstofffamilie für die ganze Aufgabe fehlte.",
+  "new": "Die dreistufige Architektur war in der Apollo-Ära Standard, weil die Triebwerke der Zeit nicht genug Isp oder Schub lieferten, um direkt auf zwei Stufen zu kommen. Saturn V: S-IC-Kerolox-Booster (5 × F-1, ~2,5 Minuten), S-II-Hydrolox-Hauptstufe (5 × J-2, ~6 Minuten), S-IVB-Hydrolox-Oberstufe (1 × J-2, zwei Zündungen — eine zum Zirkularisieren, eine für die translunare Injektion). Die Soyuz fliegt noch heute mit drei Stufen plus vier Strap-on-Boostern der ersten Stufe, in einer Architektur von 1957, die älter ist als die bemannte Raumfahrt selbst. Chinas Long March 3B/E und Long March 5 sind 2,5-stufig (Kern + Strap-ons + Oberstufe) mit einer separaten Kickstufe für GEO und Fluchtbahnen. Indiens PSLV ist als einzige vierstufig, abwechselnd mit festem und flüssigem Treibstoff — das Erbe eines Programms aus den 1970er Jahren, dem eine einzelne Treibstofffamilie fehlte, die die ganze Aufgabe hätte leisten können."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "body_paragraphs.3",
+  "old": "Stufung passiert auf eine von drei Weisen. Pyro-Bolzen-Trennung: Sprengbolzen feuern, Federn drücken die ausgebrannte Stufe weg, die Oberstufe zündet in der entstehenden Lücke. Genutzt von fast allen (Sojus, Atlas, Ariane, Long March). Fire-in-the-Hole / Hot Staging: die Oberstufe zündet *vor* der Trennung und bläst den Booster mit ihrem Abgas weg. Sowjetisch (Sojus, Proton) und jetzt SpaceX (Starship) — verliert 1–2 % Isp durch Abgas gegen die Interstage, eliminiert aber die Totzeit der Trennung, wo Gravitationsdrag Geschwindigkeit frisst. Pushed Staging: die untere Stufe gibt einen kleinen Retro-Burn zum Wegschieben, bevor die Oberstufe zündet — Falcon 9 zwischen MECO und Zweitstufenzündung ist im Grunde das, plus Boost-back-Manöver wenn der Booster geborgen wird. Jeder Modus ist ein anderer Trade zwischen mechanischem Risiko, Gravitationsverlusten und operativer Einfachheit.",
+  "new": "Die Stufentrennung läuft auf eine von drei Arten ab. Trennung mit Sprengbolzen: Die Sprengbolzen zünden, Federn drücken die ausgebrannte Stufe weg, dann zündet die Oberstufe in der entstandenen Lücke. Von fast allen genutzt (Soyuz, Atlas, Ariane, Long March). Fire-in-the-Hole / Hot Staging: Die Oberstufe zündet *vor* der Trennung und bläst den Booster mit ihrem Abgas weg. Sowjetisch (Soyuz, Proton) und jetzt SpaceX (Starship) — das kostet 1–2 % Isp, weil das Abgas der Oberstufe gegen die Zwischenstufe strömt, beseitigt aber die Totzeit der Trennung, in der der Gravitationsverlust Geschwindigkeit frisst. Pushed Staging: Die untere Stufe gibt einen kleinen Rückwärtsschub ab, um wegzurücken, bevor die Oberstufe zündet — die Falcon 9 zwischen MECO und Zündung der zweiten Stufe macht im Grunde das, plus ein Boost-back-Manöver, wenn der Booster geborgen wird. Jedes Verfahren ist ein anderer Kompromiss zwischen mechanischem Risiko, Gravitationsverlusten und betrieblicher Einfachheit."
+ },
+ {
+  "rel": "science/propulsion/rocket-stages.json",
+  "at": "diagram_caption",
+  "old": "Zwei Stufen: modernes Minimum (Falcon 9, Starship, Electron). Drei Stufen: Apollo-Ära + Soyuz-Erbe (Saturn V, Soyuz, Long March 3B). 2,5 Stufen: Kern + Strap-on-Booster (Long March 5, Ariane 5/6, Delta IV Heavy, SLS). Plus optionale Kickstufe für präzise Endorbits (Star 48, Centaur, Fregat, Briz-M, YZ-1).",
+  "new": "Zwei Stufen: modernes Minimum (Falcon 9, Starship, Electron). Drei Stufen: Apollo-Ära und Soyuz-Erbe (Saturn V, Soyuz, Long March 3B). 2,5 Stufen: Kern + Strap-on-Booster (Long March 5, Ariane 5/6, Delta IV Heavy, SLS). Dazu optional eine Kickstufe für präzise Endbahnen (Star 48, Centaur, Fregat, Briz-M, YZ-1)."
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "intro_sentence",
+  "old": "Ein Sonnensegel führt keinen Treibstoff mit sich: Es wird durch den Impuls von Photonen angetrieben und bietet daher unbegrenzte spezifische Impulsleistung — und wird mit jeder Flugstunde günstiger.",
+  "new": "Ein Sonnensegel führt keinen Treibstoff mit sich: Der Impuls der Photonen treibt es an, sein spezifischer Impuls ist praktisch unbegrenzt — und als einziger Antrieb wird es im Betrieb umso günstiger, je länger es fliegt."
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "body_paragraphs.0",
+  "old": "Licht trägt Impuls. Wenn ein Photon von einem Spiegel reflektiert wird, überträgt es den doppelten Impuls auf den Spiegel — ein Druck namens Strahlungsdruck. Im Alltag ist diese Kraft vernachlässigbar, aber im Weltall, wo es keinen Luftwiderstand gibt, sammelt sich sogar eine winzige kontinuierliche Kraft zu einer echten Geschwindigkeitsänderung an. Ein vollkommen reflektierendes 800 m²-Segel in 1 AU (Entfernung der Erde von der Sonne) erhält etwa 5 Millinewton Kraft — das Gewicht einer kleinen Traube. Das ist weniger als jeder Ionenantrieb, aber es erfordert keinen Treibstoff, kein Energiesystem außer grundlegenden Wartungsaufgaben, und es hört nie auf, solange die Sonne scheint.",
+  "new": "Licht trägt Impuls. Wenn ein Photon von einem Spiegel reflektiert wird, überträgt es den doppelten Impuls auf den Spiegel — ein Druck namens Strahlungsdruck. Im Alltag ist diese Kraft vernachlässigbar, aber im Weltall, wo es keinen Luftwiderstand gibt, summiert sich selbst eine winzige, kontinuierliche Kraft zu einer echten Geschwindigkeitsänderung. Ein vollkommen reflektierendes 800-m²-Segel erhält in 1 AE (Entfernung der Erde von der Sonne) etwa 5 Millinewton Kraft — das Gewicht einer kleinen Traube. Das ist weniger, als jedes Ionentriebwerk erzeugt, aber es braucht keinen Treibstoff, kein Energiesystem über die Grundversorgung hinaus, und es hört nie auf, solange die Sonne scheint."
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "body_paragraphs.1",
+  "old": "Da das Raumfahrzeug keinen Treibstoff mitführt, wird das Konzept der spezifischen Impulsleistung mathematisch unendlich: Es gibt keine Treibstoff-Massenflussrate, durch die der Schub dividiert werden könnte. Eine nützlichere Größe ist die charakteristische Beschleunigung des Segels — Schub dividiert durch die Gesamtmasse des Raumfahrzeugs. Aktuelle Demonstrationsmissionen erreichen Bruchteile eines Millimeters pro Sekunde zum Quadrat; Skalierung auf große, leichte Segel könnte Werte erreichen, die für bestimmte Bahntypen mit Ionenantrieben konkurrenzfähig sind. Ein Sonnensegel kann auch kreuzen: Durch Neigung des Segels in einem Winkel kann die senkrechte Komponente des Schubs zur Sonne-Raumfahrzeug-Linie die Umlaufbahn erhöhen oder senken oder das Raumfahrzeug spiralförmig zur Sonne hineinziehen für einen engen Sonnenvorbeiflug, bevor es auf einer hyperbolischen Bahn nach außen führt.",
+  "new": "Da das Raumfahrzeug keinen Treibstoff mitführt, wird der spezifische Impuls mathematisch unendlich: Es gibt keinen Treibstoff-Massenstrom, durch den der Schub dividiert werden könnte. Eine nützlichere Größe ist die charakteristische Beschleunigung des Segels — Schub dividiert durch die Gesamtmasse des Raumfahrzeugs. Aktuelle Demonstrationsmissionen erreichen Bruchteile eines Millimeters pro Sekunde zum Quadrat; die Skalierung auf große, leichte Segel könnte für bestimmte Bahntypen Werte erreichen, die mit Ionentriebwerken konkurrieren. Ein Sonnensegel kann auch kreuzen: Durch Neigen des Segels kann die Schubkomponente senkrecht zur Verbindungslinie Sonne–Raumfahrzeug die Umlaufbahn anheben oder absenken oder das Raumfahrzeug spiralförmig nach innen zur Sonne führen, für einen nahen Sonnenvorbeiflug, bevor es auf einer hyperbolischen Bahn nach außen fliegt."
+ }
+]

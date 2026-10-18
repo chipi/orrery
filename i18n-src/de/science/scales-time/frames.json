@@ -1,14 +1,14 @@
 {
-  "title": "Heliozentrisch · Geozentrisch · Körperzentriert",
-  "intro_sentence": "Drei Bezugsrahmen für drei verschiedene Fragen: wo ist es relativ zu Sonne, Erde oder Studienkörper?",
+  "title": "Helio-, geo- und körperzentrische Bezugssysteme",
+  "intro_sentence": "Drei Bezugssysteme für drei Fragen: Wo befindet es sich relativ zur Sonne, zur Erde oder zu dem Körper, den du untersuchst?",
   "narrative_101": [
-    "Wo ist der Mond? Die ehrliche Antwort lautet „das kommt darauf an, wo DU bist.\" Von der Erdoberfläche aus ist er um 1 Uhr nachts über dir. Von der Sonne aus ist er ein winziger Punkt 1 AE weit entfernt, nah bei der Erde. Vom Mars aus ist er ein irrelevanter Fleck. Keine dieser Antworten ist falsch – sie sind nur von verschiedenen Ursprüngen aus gemessen. Diese Wahl des Ursprungs ist das, was „Bezugssystem\" bedeutet.",
+    "Wo ist der Mond? Die ehrliche Antwort lautet: „Das kommt darauf an, wo DU bist.“ Von der Erdoberfläche aus ist er heute Nacht um 1 Uhr über dir. Von der Sonne aus ist er ein winziger Punkt 1 AE weit entfernt, nah bei der Erde. Vom Mars aus ist er ein irrelevanter Fleck. Keine dieser Antworten ist falsch – sie sind nur von verschiedenen Ursprüngen aus gemessen. Diese Wahl des Ursprungs ist das, was „Bezugssystem“ bedeutet.",
     "Raumfahrt jongliert ständig mit dreien davon. Heliozentrisch (Ursprung bei der Sonne) ist das natürliche Bezugssystem für Reiseflüge – alles zwischen Erde und Mars spielt sich hier ab. Geozentrisch (Ursprung bei der Erde) ist das natürliche Bezugssystem für Satelliten und den Mond. Körperzentrisch (Ursprung beim jeweiligen Planeten, an dem man vorbeifliegt oder den man umkreist) ist das natürliche Bezugssystem für Bremsmanöver bei der Ankunft und Operationen auf der Oberfläche.",
-    "Wechseln meist Arithmetik. Aber konzeptuell wichtig: Transferellipse heliozentrisch. Mars-Vorbeiflug körperzentriert. Übergang ist Patched Conics. Jeder Screen wählt einen Rahmen: /explore heliozentrisch, /earth geozentrisch, /moon und /mars körperzentriert."
+    "Der Wechsel ist meist Arithmetik: Ursprung verschieben, Achsen drehen. Wichtig ist der Standpunkt: Eine Transferellipse ist heliozentrisch, ein Vorbeiflug am Mars körperzentriert; dazwischen vermittelt Patched Conics. Jeder Bildschirm wählt ein System: /explore heliozentrisch, /earth geozentrisch, /moon und /mars körperzentriert."
   ],
   "body_paragraphs": [
-    "Heliozentrisch: Ursprung Sonne, Achsen mit Ekliptik. Natürlicher Rahmen für Sonnensystembewegung. Planetenpositionen, Transferbahnen, Cruises. Orrerys `/explore` ist fundamental heliozentrisch.",
-    "Geozentrisch: Ursprung Erde. Nützlich für Satelliten, Mond und Sonden in Erd-SoI. `/earth` arbeitet hier. Geozentrisch zu heliozentrisch durch Translation (Erdposition) und Rotation (Achsneigung).",
-    "Körperzentrisch (Marszentrisch, Saturnzentrisch, Mondzentrisch etc.): Ursprung beim Körper, um den Sie kreisen oder an dem Sie vorbeiflegen. Wird verwendet für Bahneinschüsse, Oberflächeneinsätze, Vorbeiflugsgeometrie – alles, wo die Gravitation des Körpers überwiegt. Patched-Conic-Missionsdesign wechselt die Bezugssysteme an den Grenzen der Einflusssphäre: Sie beschreiben einen Bogen in dem Bezugssystem, das die Mathematik lokal hält."
+    "Heliozentrisch: Ursprung in der Sonne, Achsen an der Ekliptik. Das natürliche Bezugssystem für Bewegungen im Sonnensystem: Planetenpositionen, Transferbahnen, Reiseflüge. Orrerys `/explore` ist grundlegend heliozentrisch.",
+    "Geozentrisch: Ursprung in der Erde. Nützlich für Satelliten, Mond und Raumfahrzeuge in der Einflusssphäre der Erde; `/earth` arbeitet so. Zum Heliozentrischen führen eine Verschiebung (Erdposition) und womöglich eine Drehung (Achsneigung).",
+    "Körperzentrisch (marszentrisch, saturnzentrisch, mondzentrisch usw.): Ursprung im Körper, den du umkreist oder an dem du vorbeifliegst. Genutzt für das Einschwenken in Umlaufbahnen, Oberflächeneinsätze und die Geometrie von Vorbeiflügen – überall dort, wo die Gravitation des Körpers überwiegt. Der Entwurf mit Patched Conics wechselt die Bezugssysteme an den Grenzen der Einflusssphären: Du beschreibst einen Bogen in dem Bezugssystem, das die Mathematik lokal hält."
   ]
 }

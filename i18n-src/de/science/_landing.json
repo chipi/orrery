@@ -1,8 +1,8 @@
 {
   "intro_heading": "Sie wollen also eine Rakete zum Mars fliegen.",
   "intro_paragraphs": [
-    "Willkommen. Dies ist der Teil von Orrery, in dem die Knöpfe aufhören, magisch zu sein. Jede Beschriftung im HUD, jede farbige Kontur im Porkchop, jeder Brennmarker auf der Flugbahn – dieser Abschnitt erklärt, woher sie kommen. Lesen Sie es wie einen Comic: Die Diagramme erledigen den Großteil der Arbeit, und jeder kursivierte Begriff ist ein Link, dem Sie so weit folgen können, wie Sie möchten.",
-    "Wir werden zusammen eine Rakete bauen. Keine echte – Orrery ist ein Simulator –, aber dieselbe Kette von Entscheidungen, die ein echtes Flugteam trifft, in der Reihenfolge, in der es sie treffen würde. Am Ende werden Sie wissen, warum Startfenster alle 26 Monate für den Mars und jeden Monat für den Mond auftreten, warum es eine Free-Return-Flugbahn gibt und warum Schub der billigste Teil einer Mission ist und Treibstoff der gesamte Kampf."
+    "Willkommen. Dies ist der Teil von Orrery, in dem die Knöpfe aufhören, Magie zu sein. Jede Beschriftung im HUD, jede farbige Kontur im Porkchop, jede Manövermarkierung auf der Flugbahn – dieser Abschnitt erklärt, woher sie kommen. Lesen Sie ihn wie einen Comic: Die Diagramme leisten den Großteil der Arbeit, und jeder kursiv gesetzte Begriff ist ein Link, dem Sie so tief folgen können, wie Sie möchten.",
+    "Wir bauen gemeinsam eine Rakete. Keine echte – Orrery ist ein Simulator –, aber mit derselben Kette von Entscheidungen, die ein echtes Flugteam trifft, und in derselben Reihenfolge. Am Ende wissen Sie, warum Startfenster zum Mars nur alle 26 Monate und zum Mond jeden Monat auftreten, warum es eine Free-Return-Flugbahn gibt und warum der Schub der billigste Teil einer Mission ist, während der Treibstoff der eigentliche Kampf ist."
   ],
   "chapters": [
     {
@@ -11,55 +11,55 @@
       "diagram_alt": "Eine Ellipse mit der Sonne in einem Brennpunkt.",
       "diagram_caption": "Ein Körper, ein Brennpunkt, eine Ellipse. Das ist das gesamte Sonnensystem.",
       "paragraphs": [
-        "Vergessen Sie Raketen für eine Sekunde. Stehen Sie auf der Erde, werfen Sie einen Baseball so hart Sie können. Er kommt zurück. Werfen Sie ihn härter, er landet weiter weg. Werfen Sie ihn so hart, dass sich der Boden schneller wegkrümmt als der Ball fällt, und der Ball verfehlt den Planeten – für immer. Das ist eine [Umlaufbahn](orbits/keplerian-orbit). Jedes Raumfahrzeug, jeder Planet, jeder Felsen im Asteroidengürtel führt diesen Trick um etwas Schwereres herum aus.",
-        "Eine Umlaufbahn ist eine Ellipse. Sie hat eine [Größe](orbits/semi-major-axis), eine [Form](orbits/eccentricity) (rund vs. gestreckt), eine [Neigung](orbits/inclination) und eine Phase, die Ihnen sagt, wo auf der Ellipse sich das Raumfahrzeug gerade befindet ([wahre Anomalie](orbits/true-anomaly)). Fünf Zahlen, und Sie können die Position jedes Objekts im Sonnensystem vorhersagen, für immer, ohne weitere Daten. Das sind [Keplers drei Gesetze](orbits/keplers-laws), niedergeschrieben 1609 – sie funktionieren immer noch.",
-        "Die einzelne nützlichste Gleichung, die Sie hier treffen werden, ist [Vis-Viva](orbits/vis-viva). Geben Sie Ihren Radius und die Größe Ihrer Umlaufbahn ein, und heraus kommt Ihre Geschwindigkeit. Das ist alles. Erde im Perihel: 30,3 km/s. Erde im Aphel: 29,3 km/s. Dieselbe Umlaufbahn, dieselbe Energie, unterschiedliche Geschwindigkeit."
+        "Vergessen Sie für einen Moment die Raketen. Stellen Sie sich auf die Erde und werfen Sie einen Baseball, so fest Sie können. Er fällt wieder herunter. Werfen Sie ihn fester, landet er weiter weg. Werfen Sie ihn so fest, dass sich der Boden schneller wegkrümmt, als der Ball fällt, und der Ball verfehlt den Planeten – für immer. Das ist eine [Umlaufbahn](orbits/keplerian-orbit). Jedes Raumfahrzeug, jeder Planet, jeder Felsbrocken im Asteroidengürtel vollführt diesen Trick um etwas Schwereres.",
+        "Eine Umlaufbahn ist eine Ellipse. Sie hat eine [Größe](orbits/semi-major-axis), eine [Form](orbits/eccentricity) (rund oder gestreckt), eine [Neigung](orbits/inclination) und eine Phase, die Ihnen sagt, wo auf der Ellipse sich das Raumfahrzeug gerade befindet ([wahre Anomalie](orbits/true-anomaly)). Fünf Zahlen, und Sie können die Position jedes Objekts im Sonnensystem für alle Zeit vorhersagen, ohne weitere Daten. Das sind [Keplers drei Gesetze](orbits/keplers-laws), 1609 niedergeschrieben – und sie funktionieren bis heute.",
+        "Die nützlichste Gleichung, der Sie hier begegnen werden, ist [Vis-Viva](orbits/vis-viva). Geben Sie Ihren Radius und die Größe Ihrer Umlaufbahn ein, und heraus kommt Ihre Geschwindigkeit. Das ist alles. Die Erde im Perihel: 30,3 km/s. Die Erde im Aphel: 29,3 km/s. Dieselbe Umlaufbahn, dieselbe Energie, unterschiedliche Geschwindigkeit."
       ]
     },
     {
       "heading": "2 – Die Raketengleichung ist der Endgegner.",
       "diagram": "tsiolkovsky.svg",
       "diagram_alt": "Massenverhältnis-Kurve: ∆v steigt logarithmisch mit der Menge an verbranntem Treibstoff.",
-      "diagram_caption": "Die grausame Wahrheit: Das Verdoppeln Ihres ∆v bedeutet, viel mehr als das 2-fache an Treibstoff zu verbrennen.",
+      "diagram_caption": "Die grausame Wahrheit: Wer sein ∆v verdoppeln will, muss weit mehr als 2× so viel Treibstoff verbrennen.",
       "paragraphs": [
-        "Nun: Wie ändert man Umlaufbahnen? Man verbrennt Treibstoff. [∆v](propulsion/dv-budget) (\"Delta-v\") ist die universelle Währung der Raumfahrt – die gesamte Geschwindigkeitsänderung, die eine Mission benötigt. Jede Bewegung, die Sie auf einer Flugbahn machen, hat einen Preis in km/s.",
-        "Und dieser Preis ist brutal. Die [Tsiolkovsky-Raketengleichung](propulsion/tsiolkovsky) besagt, dass ∆v mit dem Logarithmus skaliert, wie viel von Ihrer Rakete Treibstoff ist. Wollen Sie das doppelte ∆v? Sie tragen nicht das Doppelte an Treibstoff – Sie tragen exponentiell mehr. Deshalb bestand eine Saturn V zu 90 % aus Treibstoff. Der Großteil der Rakete ist der Treibstoff, der den Treibstoff hebt, der den Treibstoff hebt, der das Raumfahrzeug hebt.",
-        "Zwei Zahlen bekämpfen diese Gravitationssteuer. Der Schub sagt Ihnen, wie stark das Triebwerk drückt – das ist die Zahl, die nach dem Start wirklich niemanden interessiert. Der [spezifische Impuls](propulsion/specific-impulse) sagt Ihnen, wie effizient das Triebwerk schiebt – und das ist die Zahl, die zählt. Eine chemische Rakete erreicht ~450 Sekunden. Ein Ionentriebwerk erreicht 4.000+ – nippt monatelang am Treibstoff und übertrifft alles Chemische für Tiefraumflüge.",
-        "Der beste Zaubertrick von allen: der [Oberth-Effekt](propulsion/oberth-effect). Das Zünden Ihres Triebwerks, wenn Sie bereits schnell unterwegs sind (tief und nah an einem Planeten), gibt Ihnen viel mehr für denselben Treibstoff. Deshalb führt jede interplanetare Mission ihr großes Abflugmanöver im Perigäum durch, nah an der Erde, so schnell wie die Physik erlaubt. Freie Energie aus Geometrie."
+        "Nun: Wie wechselt man die Umlaufbahn? Man verbrennt Treibstoff. [∆v](propulsion/dv-budget) („Delta-v“) ist die universelle Währung der Raumfahrt – die gesamte Geschwindigkeitsänderung, die eine Mission benötigt. Jedes Manöver auf einer Flugbahn hat einen Preis in km/s.",
+        "Und dieser Preis ist brutal. Die [Tsiolkovsky-Raketengleichung](propulsion/tsiolkovsky) besagt, dass ∆v mit dem Logarithmus des Treibstoffanteils Ihrer Rakete wächst. Wollen Sie ein doppelt so großes ∆v? Dann tragen Sie nicht doppelt so viel Treibstoff mit – sondern exponentiell mehr. Deshalb bestand eine Saturn V zu 90 % aus Treibstoff. Der Großteil der Rakete ist der Treibstoff, der den Treibstoff hebt, der den Treibstoff hebt, der das Raumfahrzeug hebt.",
+        "Zwei Zahlen bekämpfen diese Gravitationssteuer. Der Schub sagt Ihnen, wie kräftig das Triebwerk schiebt – diese Zahl interessiert nach dem Start eigentlich niemanden mehr. Der [spezifische Impuls](propulsion/specific-impulse) sagt Ihnen, wie effizient das Triebwerk schiebt – und er ist es, der zählt. Eine chemische Rakete erreicht ~450 Sekunden. Ein Ionentriebwerk erreicht 4.000+ – es nippt monatelang am Treibstoff und schlägt bei Flügen durch den Tiefraum alles Chemische.",
+        "Der beste Zaubertrick von allen: der [Oberth-Effekt](propulsion/oberth-effect). Zündet man das Triebwerk, wenn man bereits schnell unterwegs ist (tief und nah an einem Planeten), bringt dieselbe Treibstoffmenge viel mehr. Deshalb führt jede interplanetare Mission ihr großes Abflugmanöver im Perigäum durch, dicht über der Erde, so schnell, wie die Physik es erlaubt. Freie Energie aus Geometrie."
       ]
     },
     {
       "heading": "3 – Sobald Sie im Orbit sind, sind Sie auf halbem Weg zu überall.",
       "diagram": "hohmann-transfer.svg",
       "diagram_alt": "Eine Ellipse, die die Erdumlaufbahn und die Marsumlaufbahn tangiert.",
-      "diagram_caption": "Zwei Brennmanöver, eine Ellipse. Der billigste Weg, Umlaufbahnen zu wechseln.",
+      "diagram_caption": "Zwei Zündungen, eine Ellipse. Der billigste Weg, die Umlaufbahn zu wechseln.",
       "paragraphs": [
-        "Robert Heinlein schrieb es: \"Sobald Sie im Orbit sind, sind Sie auf halbem Weg zu überall im Sonnensystem.\" Er scherzte nicht. Den niedrigen Erdorbit zu erreichen kostet ~9,4 km/s an ∆v. Von dort zum Mars zu gelangen kostet weitere ~3,6 km/s. Der schwierigste Teil liegt bereits hinter Ihnen.",
-        "Die billigste interplanetare Route ist ein [Hohmann-Transfer](transfers/hohmann-transfer): eine Ellipse, die gerade eben die Erdumlaufbahn an einem Ende und die Umlaufbahn des Ziels am anderen Ende küsst. Zwei Brennmanöver, kein verschwendeter Treibstoff. Zum Mars dauert es ~8,5 Monate. Langsam, aber optimal.",
-        "Wollen Sie schneller sein? Lösen Sie ein [Lambert-Problem](transfers/lambert-problem) – wählen Sie Ihr Abflugdatum und Ihre Transferzeit, und Lambert sagt Ihnen die eindeutige [Transferellipse](transfers/transfer-ellipse), die sie verbindet. Genau das macht Orrery's [/plan](app:/plan)-Bildschirm, zehntausend Mal parallel, um einen Porkchop-Plot zu zeichnen.",
-        "Müssen Sie noch weiter gehen? Stehlen Sie Geschwindigkeit von einem Planeten. Ein [Gravity-Assist](transfers/gravity-assist) nutzt einen Vorbeiflug, um Ihre Flugbahn ohne Treibstoffkosten zu ändern – Voyager 2 nutzte vier davon, um Neptun zu erreichen. Das gesamte Sonnensystem fügt sich zu [Patched Conics](transfers/patched-conics) zusammen: eine Reihe von [Kegelschnitt](transfers/conic-sections)-Bögen, die zwischen Gravitationsnachbarschaften wie Staffelstäbe in einem Staffellauf übergeben werden."
+        "Robert Heinlein hat es so formuliert: „Sobald Sie im Orbit sind, sind Sie auf halbem Weg zu überall im Sonnensystem.“ Er scherzte nicht. Den niedrigen Erdorbit zu erreichen kostet ~9,4 km/s an ∆v. Von dort zum Mars zu gelangen kostet weitere ~3,6 km/s. Der schwierigste Teil liegt bereits hinter Ihnen.",
+        "Die billigste interplanetare Route ist ein [Hohmann-Transfer](transfers/hohmann-transfer): eine Ellipse, die an einem Ende die Erdumlaufbahn und am anderen die Umlaufbahn des Ziels gerade eben berührt. Zwei Zündungen, kein verschwendeter Treibstoff. Bis zum Mars dauert sie ~8,5 Monate. Langsam, aber optimal.",
+        "Wollen Sie schneller sein? Lösen Sie ein [Lambert-Problem](transfers/lambert-problem) – wählen Sie Ihr Abflugdatum und Ihre Transferzeit, und Lambert liefert Ihnen die eindeutige [Transferellipse](transfers/transfer-ellipse), die beide verbindet. Genau das erledigt die [/plan](app:/plan)-Ansicht von Orrery zehntausendmal parallel, um einen Porkchop-Plot zu zeichnen.",
+        "Sie wollen noch weiter hinaus? Dann stehlen Sie einem Planeten Geschwindigkeit. Ein [Swing-by](transfers/gravity-assist) nutzt einen Vorbeiflug, um Ihre Flugbahn ohne Treibstoffkosten zu ändern – Voyager 2 nutzte vier davon, um Neptun zu erreichen. Das gesamte Sonnensystem fügt sich zu [Patched Conics](transfers/patched-conics) zusammen: einer Reihe von [Kegelschnitt](transfers/conic-sections)-Bögen, die zwischen den Gravitationsbereichen wie Staffelstäbe in einem Staffellauf weitergereicht werden."
       ]
     },
     {
       "heading": "4 – Wählen Sie ein Startfenster oder warten Sie zwei Jahre.",
       "diagram": "porkchop.svg",
       "diagram_alt": "Der klassische Porkchop-Konturplot – Abflugdatum auf der x-Achse, Flugzeit auf der y-Achse.",
-      "diagram_caption": "Ein Porkchop. Jede Kontur ist konstantes ∆v; der Lappen ist, wenn die Natur Mars günstig macht.",
+      "diagram_caption": "Ein Porkchop. Jede Kontur markiert ein konstantes ∆v; im Lappen macht die Natur den Mars günstig.",
       "paragraphs": [
-        "Erde und Mars stehen nicht still. Die Erde rast alle 365 Tage um die Sonne, der Mars alle 687. Ihre relative Geometrie wiederholt sich nur alle ~26 Monate – und die meisten dieser Monate sind die Planeten zu weit auseinander, auf den falschen Seiten der Sonne, um günstig erreicht zu werden. Missionsdesign beginnt mit einem Kalender, nicht mit einer Rakete.",
-        "Der [Porkchop-Plot](porkchop/what-is-a-porkchop) ist, wie Ingenieure dies sehen. Abflugdatum entlang [einer Achse](porkchop/departure-axis), [Flugzeit](porkchop/tof-axis) entlang der anderen, ∆v als [Farb-Heatmap](porkchop/dv-heatmap). Günstige Zonen erscheinen als ovale Lappen – die Startfenster. Außerhalb des Lappens: rot, teuer, unmöglich mit aktuellen Raketen. [Das Lesen der Konturen](porkchop/contour-reading) ist die halbe Arbeit eines Flugdynamikers.",
-        "Zwei Fachbegriffe, die Sie überall sehen werden: [C3](propulsion/c3) ist die Startenergie, die Ihre Rakete benötigt, um dem Gravitationsfeld der Erde zu entkommen. [V∞](propulsion/v-infinity) (\"v-unendlich\") ist Ihre Geschwindigkeit relativ zum Ziel in dem Moment, in dem Sie ankommen. Beide stammen direkt aus der Porkchop-Mathematik."
+        "Erde und Mars stehen nicht still. Die Erde rast alle 365 Tage um die Sonne, der Mars alle 687. Ihre relative Geometrie wiederholt sich nur alle ~26 Monate – und in den meisten dieser Monate stehen die Planeten zu weit auseinander, auf den falschen Seiten der Sonne, um sie günstig zu erreichen. Die Missionsplanung beginnt mit einem Kalender, nicht mit einer Rakete.",
+        "Im [Porkchop-Plot](porkchop/what-is-a-porkchop) sehen Ingenieure das. Das Abflugdatum liegt auf [einer Achse](porkchop/departure-axis), die [Flugzeit](porkchop/tof-axis) auf der anderen, ∆v als [Farb-Heatmap](porkchop/dv-heatmap). Günstige Zonen erscheinen als ovale Lappen – die Startfenster. Außerhalb des Lappens: rot, teuer, mit heutigen Raketen unmöglich. [Das Lesen der Konturen](porkchop/contour-reading) ist die halbe Arbeit eines Flugdynamikers.",
+        "Zwei Fachbegriffe, die Ihnen überall begegnen werden: [C3](propulsion/c3) ist die Startenergie, die Ihre Rakete benötigt, um dem Gravitationsfeld der Erde zu entkommen. [V∞](propulsion/v-infinity) („V-unendlich“) ist Ihre Geschwindigkeit relativ zum Ziel in dem Moment, in dem Sie ankommen. Beide ergeben sich direkt aus der Porkchop-Mathematik."
       ]
     },
     {
-      "heading": "5 – Der Flug besteht nur aus fünf Phasen in Wiederholung.",
+      "heading": "5 – Ein Flug besteht nur aus fünf Phasen, die sich immer wiederholen.",
       "diagram": "edl.svg",
-      "diagram_alt": "Atmosphärischer Eintritt, Fallschirm-Entfaltung, Retroantrieb, Landung.",
+      "diagram_alt": "Atmosphärischer Eintritt, Fallschirmöffnung, Bremsantrieb, Landung.",
       "diagram_caption": "Eintritt, Abstieg, Landung. Sechs Minuten purer Schrecken.",
       "paragraphs": [
         "So ziemlich jede interplanetare Mission, von Voyager bis Perseverance, folgt demselben Drehbuch:",
-        "[Start](mission-phases/launch) — aus der Atmosphäre hinaus und in die niedrige Erdumlaufbahn. [Trans-X-Injektion](mission-phases/trans-x-injection) — ein kraftvoller Manöverschub im Perigäum, der dich auf die Transferellipse zum Mond (TLI), zum Mars (TMI), zur Venus (TVI) oder zum Jupiter (TJI) schleudert. [Bahnkorrekturen](mission-phases/tcm) — kleine Schübe während der Reiseflugphase, um Streuungsfehler zu korrigieren. Normalerweise 1–3 davon. [Umlaufbahneinschuss](mission-phases/orbit-insertion) — ein Bremsmanöver am Ziel, um dich in eine Einfangbahn zu lenken. [EDL](mission-phases/edl) — Eintritt, Abstieg, Landung — für den Lander. Sechs Minuten überschallschnelles atmosphärisches Chaos.",
-        "Mondmissionen machen manchmal einen Umweg durch eine [Near-Rectilinear Halo Orbit](mission-phases/nrho) (Gateway wird in einer solchen leben), und bemannte Apollo-Flüge flogen [Free-Return-Flugbahnen](transfers/free-return) – Achter-Pfade, die Sie automatisch zur Erde zurückbringen, wenn jedes Triebwerk am Raumfahrzeug ausfällt. Apollo 13 verdankt dieser Geometrie sein Leben."
+        "[Start](mission-phases/launch) — aus der Atmosphäre hinaus und in die niedrige Erdumlaufbahn. [Trans-X-Injektion](mission-phases/trans-x-injection) — eine einzige kräftige Zündung im Perigäum, die Sie auf die Transferellipse zum Mond (TLI), zum Mars (TMI), zur Venus (TVI) oder zum Jupiter (TJI) schleudert. [Bahnkorrekturmanöver](mission-phases/tcm) — winzige Zündungen im Reiseflug, um Streuungsfehler zu beheben. Meist 1–3 davon. [Einschwenken in die Umlaufbahn](mission-phases/orbit-insertion) — ein Bremsmanöver am Ziel, das Sie in eine Einfangbahn lenkt. [EDL](mission-phases/edl) — Eintritt, Abstieg, Landung — für den Lander. Sechs Minuten überschallschnelles atmosphärisches Chaos.",
+        "Mondmissionen nehmen manchmal einen Umweg über eine [nahezu geradlinige Halo-Bahn](mission-phases/nrho) (NRHO; Gateway wird auf einer solchen kreisen), und bemannte Apollo-Flüge folgten [Free-Return-Flugbahnen](transfers/free-return) – achtförmigen Bahnen, die Sie automatisch zur Erde zurückbringen, wenn jedes Triebwerk des Raumfahrzeugs ausfällt. Apollo 13 verdankt dieser Geometrie sein Leben."
       ]
     },
     {
@@ -69,18 +69,18 @@
       "diagram_caption": "Eine AU = eine Erde-Sonne-Entfernung. Mars ist ~1,5 AU. Jupiter ist ~5,2.",
       "paragraphs": [
         "Drei Einheiten tauchen überall auf. Die [astronomische Einheit](scales-time/au) (AU) ist die durchschnittliche Entfernung Erde-Sonne – 150 Millionen km. Wir messen das Sonnensystem in AU, weil Kilometer schnell unhandlich werden. Die [Lichtminute](scales-time/light-minute) sagt Ihnen, wie lange ein Funksignal braucht, um ein Raumfahrzeug zu erreichen. Mars: 4 bis 24 Minuten in eine Richtung. Sie können keinen Rover von der Erde aus mit dem Joystick steuern. Alles Wichtige ist autonom.",
-        "Die [J2000-Epoche](scales-time/j2000) ist die Kalender-Null, die jeder Astrodynamiker verwendet. [Siderische vs. synodische Perioden](scales-time/sidereal-synodic) erklären, warum sich Mars-Fenster alle 26 Monate wiederholen statt alle 23. Die [Ekliptikebene](scales-time/ecliptic-plane) ist die flache Scheibe, auf der die Planeten alle (meistens) liegen. [Bezugssysteme](scales-time/frames) sind die Koordinatensysteme, zwischen denen die Missionskontrolle jongliert: erdzentriert, sonnenzentriert und körperzentriert."
+        "Die [J2000-Epoche](scales-time/j2000) ist der Kalendernullpunkt, den jeder Astrodynamiker verwendet. [Siderische und synodische Umlaufzeiten](scales-time/sidereal-synodic) erklären, warum sich die Marsfenster alle 26 Monate wiederholen statt alle 23. Die [Ekliptikebene](scales-time/ecliptic-plane) ist die flache Scheibe, in der (meistens) alle Planeten liegen. [Bezugssysteme](scales-time/frames) sind die Koordinatensysteme, zwischen denen die Missionskontrolle wechselt: erdzentriert, sonnenzentriert und körperzentriert."
       ]
     },
     {
       "heading": "7 – Menschen sind dafür nicht gebaut.",
       "diagram": "_cover-life-in-space.svg",
-      "diagram_alt": "Ein stilisierter Astronaut, der in Mikrogravitation schwebt, mit Knochen-/Muskel-/Gegenmaßnahmen-Indikatorbalken.",
-      "diagram_caption": "Knochen, Muskeln, Sehvermögen, Gleichgewicht, Immunsystem – alles verdrahtet sich in Mikrogravitation neu, und nicht in Richtung Erde.",
+      "diagram_alt": "Ein stilisierter Astronaut, der in Mikrogravitation schwebt, mit Anzeigebalken für Knochen, Muskeln und Gegenmaßnahmen.",
+      "diagram_caption": "Knochen, Muskeln, Sehvermögen, Gleichgewichtssinn, Immunsystem – in der Mikrogravitation stellt sich alles um, und zwar nicht in Richtung Erde.",
       "paragraphs": [
-        "Verbringen Sie sechs Monate im Orbit und Sie kommen kleiner, leichter und kürzer zurück, als Sie gegangen sind. [Mikrogravitation](life-in-space/microgravity-physiology) ist die Grundursache: Flüssigkeiten verteilen sich kopfwärts um, die Haltemuskeln werden entlastet, die [Knochen](life-in-space/bone-density-loss) verlieren 1–2 % ihrer Mineralien pro Monat, das [vestibuläre System](life-in-space/vestibular-adaptation) gibt auf, \"unten\" zu finden. Die [Gegenmaßnahmen](life-in-space/muscle-atrophy) – zwei Stunden Widerstands- und Ausdauertraining pro Tag auf ARED + dem Laufband – verlangsamen es, ohne es zu lösen.",
-        "[Strahlung](life-in-space/radiation-exposure) ist das schwierigere Problem. Die ISS bekommt ~200 mSv/Jahr (vs. 3 mSv Hintergrundstrahlung auf der Erde); der Tiefraum außerhalb der Magnetosphäre ist 600+ mSv/Jahr, ohne bisher gute Abschirmungsstrategie. Eine Mars-Reise würde ein Besatzungsmitglied bei einer einzigen Hin- und Rückreise nahe an die Karriere-Grenze des Krebsrisikos bringen.",
-        "Dann gibt es [EVA](life-in-space/eva-physiology) (ein 6-Stunden-Ausdauerereignis in einem 4,3 psi Reinsauerstoff-Anzug) und [Langzeiteffekte](life-in-space/long-duration-effects) wie SANS – Space-Associated Neuro-ocular Syndrome –, bei dem 60 % der Langzeitbesatzung messbare Augenveränderungen entwickeln, die sich nicht vollständig umkehren. Dies sind die ungelösten Probleme, die zwischen der Menschheit und dem Mars stehen."
+        "Verbringen Sie sechs Monate im Orbit, und Sie kommen kleiner, leichter und kürzer zurück, als Sie aufgebrochen sind. [Mikrogravitation](life-in-space/microgravity-physiology) ist die Grundursache: Flüssigkeiten verlagern sich kopfwärts, die Haltemuskeln werden entlastet, die [Knochen](life-in-space/bone-density-loss) verlieren pro Monat 1–2 % ihrer Mineralsubstanz, das [Gleichgewichtsorgan](life-in-space/vestibular-adaptation) gibt es auf, ein „Unten“ zu finden. Die [Gegenmaßnahmen](life-in-space/muscle-atrophy) – täglich zwei Stunden Kraft- und Ausdauertraining am ARED und auf dem Laufband – bremsen den Abbau, lösen das Problem aber nicht.",
+        "[Strahlung](life-in-space/radiation-exposure) ist das schwierigere Problem. Auf der ISS kommen ~200 mSv/Jahr zusammen (gegenüber 3 mSv natürlicher Hintergrundstrahlung auf der Erde); im Tiefraum außerhalb der Magnetosphäre sind es 600+ mSv/Jahr, und eine gute Abschirmungsstrategie gibt es bisher nicht. Eine Reise in der Größenordnung einer Marsmission würde ein Besatzungsmitglied schon bei einer einzigen Hin- und Rückreise nahe an die Grenze des Krebsrisikos für ein ganzes Berufsleben bringen.",
+        "Dazu kommen [EVA](life-in-space/eva-physiology) (ein sechsstündiger Ausdauereinsatz in einem Reinsauerstoff-Anzug mit 4,3 psi) und [Langzeiteffekte](life-in-space/long-duration-effects) wie SANS – Space-Associated Neuro-ocular Syndrome –, bei dem 60 % der Besatzungsmitglieder auf Langzeitflügen messbare Augenveränderungen entwickeln, die sich nicht vollständig zurückbilden. Das sind die ungelösten Probleme, die zwischen der Menschheit und dem Mars stehen."
       ]
     },
     {
@@ -89,9 +89,9 @@
       "diagram_alt": "Ein Weltraumteleskop, das auf eine ferne Galaxie gerichtet ist, mit einem repräsentativen Emissionsspektrum darunter.",
       "diagram_caption": "Teleskop + Filter + Spektrograf + Mathematik. Fast jede Tatsache über den Kosmos wurde aus Licht rekonstruiert.",
       "paragraphs": [
-        "[Weltraumfotografie](observation/space-photography) ist nicht das, was die Leute denken. Es gibt kein Klicken des Verschlusses; jedes Observatoriumsbild, das Sie gesehen haben, ist ein Stapel von Langzeitbelichtungen durch Schmalbandfilter, kalibriert, registriert, mit Falschfarben versehen. Die Hardware ist ein CCD- oder CMOS-Sensor – ein Raster von Photonenzählern – und die Daten sind die Zählung, nicht das Bild. Das Bild ist das, was Menschen aus der Zählung machen.",
+        "[Weltraumfotografie](observation/space-photography) ist nicht das, was die Leute denken. Kein Verschluss klickt; jede Observatoriumsaufnahme, die Sie je gesehen haben, ist ein Stapel von Langzeitbelichtungen durch Schmalbandfilter – kalibriert, ausgerichtet, mit Falschfarben versehen. Die Hardware ist ein CCD- oder CMOS-Sensor, ein Raster aus Photonenzählern, und die Daten sind die Zählwerte, nicht das Bild. Das Bild ist das, was Menschen aus den Zählwerten machen.",
         "[Adaptive Optik](observation/adaptive-optics) besiegt die Atmosphäre, indem sie ihre Verzerrung in Echtzeit misst und den Spiegel biegt, um sie aufzuheben. [Koronografen](observation/coronagraphs) blockieren den Zentralstern, um die Planeten zu sehen, die ihn umkreisen. [Spektroskopie](observation/spectroscopy) liest die chemische Zusammensetzung eines Sterns aus den Absorptionslinien in seinem Licht. [Interferometrie](observation/interferometry) fügt separate Teleskope zu einer virtuellen Apertur zusammen, die größer ist als jedes einzelne von ihnen.",
-        "Und die seltsamsten Objekte, die diese Methoden gefunden haben: [Schwarze Löcher](observation/black-holes) (real, kartiert, Schatten im Zentrum zweier Galaxien abgebildet) und [Wurmlöcher](observation/wormholes) (reine Mathematik, enthalten, damit Sie wissen, was Sie damit tun sollen, wenn Sie eines in einem Film sehen). Die Kategorie /fleet ↦ Observatory hat die tatsächlichen Maschinen – Hubble, JWST, Chandra, Spitzer, Kepler, TESS – jede mit ihrer eigenen Galerie dessen, was sie gesehen hat."
+        "Und die seltsamsten Objekte, die diese Methoden gefunden haben: [Schwarze Löcher](observation/black-holes) (real, kartiert, ihr Schatten im Zentrum zweier Galaxien abgebildet) und [Wurmlöcher](observation/wormholes) (reine Mathematik, aufgenommen, damit Sie wissen, was davon zu halten ist, wenn Sie eines in einem Film sehen). Die Kategorie /fleet ↦ Observatory enthält die echten Maschinen – Hubble, JWST, Chandra, Spitzer, Kepler, TESS –, jede mit einer eigenen Galerie dessen, was sie gesehen hat."
       ]
     }
   ],
@@ -120,7 +120,7 @@
       "paths": [
         "/missions"
       ],
-      "text": "36 echte Raumfahrzeuge, von Luna 9 bis Artemis II. Der FLIGHT-Tab jedes einzelnen zerlegt sein tatsächliches ∆v-Budget über die oben genannten Phasen."
+      "text": "36 echte Raumfahrzeuge, von Luna 9 bis Artemis II. Der FLIGHT-Tab jedes einzelnen schlüsselt das tatsächliche ∆v-Budget auf die oben genannten Phasen auf."
     },
     {
       "paths": [
@@ -128,7 +128,7 @@
         "/moon",
         "/mars"
       ],
-      "text": "Grundwahrheit. Wo jeder Apollo, jeder Rover, jeder aktive Satellit tatsächlich sitzt."
+      "text": "Die Wirklichkeit. Wo jede Apollo-Mission, jeder Rover und jeder aktive Satellit tatsächlich steht."
     },
     {
       "paths": [

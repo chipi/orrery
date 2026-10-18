@@ -1,0 +1,638 @@
+[
+ {
+  "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+  "at": "body_paragraphs.2",
+  "old": "Die Technik der Ernährung ist ein seltsameres Problem, als es klingt. Schwerelosigkeit verändert das Schlucken (der Bissen muss aktiv weitergeschoben werden; Crewmitglieder kauen jeden Bissen öfter als auf der Erde), den Geschmack (die Verlagerung von Körperflüssigkeit zum Kopf senkt die Geruchswahrnehmung um ~30 %, damit auch den Geschmack — Astronauten beschreiben in den ersten 2 Wochen alles als fade), den Appetit (die meisten verlieren im ersten Expeditionsmonat 5-10 % Körpergewicht; der Körper ist in einem anderen Stoffwechselzustand als bei 1 g) und das Erstickungsrisiko (keine Schwerkraft, die einen fehlgeleiteten Schluck in die richtige Röhre zieht). Die Antwort des ISS Food System: Lebensmittel, die nicht krümeln (kein Brot; die Crews essen Tortillas), Lebensmittel, die zusammenhalten (viele Soßen, die das Essen binden), kräftige Aromen (scharfe Soße wird auf der ISS legendär übermäßig verbraucht) und auf keinen Fall kohlensäurehaltige Getränke (die Bläschen trennen sich in Schwerelosigkeit nicht von der Flüssigkeit, was Sprudelwasser in der Schwerelosigkeit zu einem einzigartig unangenehmen Erlebnis macht).",
+  "new": "Lebensmitteltechnik ist ein seltsameres Problem, als es klingt. Schwerelosigkeit verändert das Schlucken (der Bissen muss aktiv weitergeschoben werden; Crewmitglieder kauen jeden Bissen öfter als auf der Erde), den Geschmack (die Verlagerung von Körperflüssigkeit zum Kopf senkt die Geruchswahrnehmung um ~30 %, damit auch den Geschmack — Astronauten beschreiben in den ersten 2 Wochen alles als fade), den Appetit (die meisten verlieren im ersten Expeditionsmonat 5-10 % Körpergewicht; der Körper ist in einem anderen Stoffwechselzustand als bei 1 g) und das Erstickungsrisiko (keine Schwerkraft, die einen verschluckten Bissen in die richtige Röhre zieht). Die technische Antwort des ISS Food System: Lebensmittel, die nicht krümeln (kein Brot; die Crews essen Tortillas), Lebensmittel, die zusammenhalten (viele Soßen, die das Essen binden), kräftige Aromen (scharfe Soße wird auf der ISS sprichwörtlich im Übermaß verbraucht) und auf keinen Fall kohlensäurehaltige Getränke (die Bläschen trennen sich in der Schwerelosigkeit nicht von der Flüssigkeit, was Sprudelwasser zu einem einzigartig unangenehmen Erlebnis macht)."
+ },
+ {
+  "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+  "at": "body_paragraphs.3",
+  "old": "Der Kalorienbedarf ist im All höher als auf der Erde — typischerweise 2800-3000 kcal/Tag für einen männlichen Astronauten auf der ISS gegenüber 2400-2600 bei 1 g. Ein Teil davon ist Training (2 Stunden täglich Kraft und Ausdauer, mehr dazu im Artikel über den Verlust an Knochendichte), ein Teil der erhöhte Stoffwechselbedarf ständiger Mikrokorrekturen gegen das Abdriften. Das Space Food Systems Laboratory der NASA am Johnson verarbeitet etwa 200 Menüpunkte pro Crewwechsel; Roscosmos hat ein paralleles Menüprogramm; Chinas CMSA hat ihr eigenes, an der chinesischen Küche orientiertes Menü aufgebaut (Yuxiang-Schweinestreifen, Kung-Pao-Hühnchen, alles für Schwerelosigkeit angepasst). Internationale Missionen befruchten sich gegenseitig: ISS-Crewmitglieder jeder Nationalität können Essen von jeder Partneragentur anfordern. Das Apollo-Programm nutzte Löffel-Schalen-Beutel und gefriergetrocknete Rehydrierung; das Shuttle wechselte zu thermostabilisierten Beuteln; die ISS nutzt eine Mischung; Menüs für Marsflüge werden noch entworfen — das längste Problem der Lebensmittellagerung im ganzen Vorhaben.",
+  "new": "Der Kalorienbedarf ist im All höher als auf der Erde — typischerweise 2800-3000 kcal/Tag für einen männlichen Astronauten auf der ISS gegenüber 2400-2600 bei 1 g. Ein Teil davon ist Training (2 Stunden täglich Kraft und Ausdauer, mehr dazu im Artikel über den Verlust an Knochendichte), ein Teil der erhöhte Stoffwechselbedarf ständiger Mikrokorrekturen gegen das Abdriften. Das Space Food Systems Laboratory der NASA am Johnson geht pro Crewwechsel etwa 200 Menüpunkte durch; Roscosmos hat ein paralleles Menüprogramm; Chinas CMSA hat ein eigenes, an der chinesischen Küche orientiertes Menü aufgebaut (Yuxiang-Schweinestreifen, Kung-Pao-Hühnchen, alles für die Schwerelosigkeit angepasst). Internationale Missionen befruchten sich gegenseitig: ISS-Crewmitglieder jeder Nationalität können Essen von jeder Partneragentur anfordern. Das Apollo-Programm nutzte Löffel-Schalen-Beutel und gefriergetrocknete Nahrung zum Rehydrieren; das Shuttle wechselte zu thermostabilisierten Beuteln; die ISS nutzt eine Mischung; Menüs für Marsflüge werden noch entworfen — mit dem Problem der längsten Lebensmittellagerung im ganzen Vorhaben."
+ },
+ {
+  "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+  "at": "diagram_caption",
+  "old": "Körper will: einen Sonnenaufgang, Schwerkraft zum Schlucken, Schwerkraft zum Sedimentieren von Bläschen, 7–8 Stunden Schlaf. ISS liefert: 16 Sonnenaufgänge/Tag, 0 g, keine Kohlensäure, ~6 Stunden Schlaf. Gegenmaßnahmen: harter GMT-Zeitplan + zirkadiane Beleuchtung + versiegelte Booths + Engineered Food + recyceltes Wasser.",
+  "new": "Der Körper will: einen Sonnenaufgang, Schwerkraft zum Schlucken, Schwerkraft, damit sich Bläschen von der Flüssigkeit trennen, 7–8 Stunden Schlaf. Die ISS liefert: 16 Sonnenaufgänge/Tag, 0 g, keine Kohlensäure, ~6 Stunden Schlaf. Gegenmaßnahmen: strikter GMT-Zeitplan + zirkadiane Beleuchtung + abgeschlossene Schlafkabinen + technisch entwickelte Nahrung + recyceltes Wasser."
+ },
+ {
+  "rel": "science/life-in-space/suit-lineage.json",
+  "at": "title",
+  "old": "Raumanzuglinien — Sokol zu Orlan zu Feitian, A7L zu AxEMU",
+  "new": "Anzuglinien — von Sokol über Orlan zu Feitian, von A7L zu AxEMU"
+ },
+ {
+  "rel": "science/life-in-space/suit-lineage.json",
+  "at": "intro_sentence",
+  "old": "Jeder moderne Raumanzug stammt von einer von drei Familien ab: amerikanisch (Apollo-abgeleitet), sowjetisch/russisch (Sokol + Orlan) und chinesisch (Feitian). Sechs Jahrzehnte, drei Linien, gegenseitige Beeinflussung.",
+  "new": "Jeder moderne Raumanzug geht auf eine von drei Familien zurück: amerikanisch (Apollo-Linie), sowjetisch/russisch (Sokol + Orlan) und chinesisch (Feitian, selbst von Orlan abgeleitet). Sechs Jahrzehnte, drei Linien, viel Wechselwirkung."
+ },
+ {
+  "rel": "science/life-in-space/suit-lineage.json",
+  "at": "body_paragraphs.0",
+  "old": "Das ursprüngliche IVA-Anzug-Problem war einfach und furchtbar: die Besatzung am Leben halten, wenn das Raumschiff den Druck verliert. Kosmonauten der Vostok und Voskhod trugen SK-1-/Berkut-Anzüge. Mercury nutzte einen modifizierten Navy Mark IV. Gemini nutzte den G3C/G4C. Keiner dieser Anzüge wurde als vollständiges Dekompressionsrettungssystem getestet, da noch kein Flug einen Kabinendruckabfall erlebt hatte. Dann kehrte im Juni 1971 Soyuz 11 mit toten Besatzungsmitgliedern zurück — Dobrowolski, Wolkow, Pazajew starben an schneller Dekompression während der Trennung und trugen nur Hemden, da die Soyuz-Kabine drei Kosmonauten im Anzug nicht aufnehmen konnte. Die sowjetische Antwort war der Sokol K-V (1973), ein leichter Druckanzug aus Gummistoff, der speziell dafür entworfen wurde, in den Soyuz-Sitz zu passen und sich in Sekunden aufzublasen, wenn die Kabine ausfiel. Jede Soyuz-Besatzung seitdem trägt einen Nachfahren des Sokol — der aktuelle Sokol-M ist seine neueste modernisierte Variante.",
+  "new": "Das ursprüngliche IVA-Anzug-Problem war einfach und furchtbar: die Besatzung am Leben halten, wenn das Raumschiff den Druck verliert. Kosmonauten auf Vostok und Voskhod trugen SK-1-/Berkut-Anzüge. Mercury nutzte einen modifizierten Navy Mark IV. Gemini nutzte den G3C/G4C. Keiner dieser Anzüge wurde als vollwertiger Lebensretter bei Dekompression getestet, da noch kein Flug einen Kabinendruckabfall erlebt hatte. Dann kehrte im Juni 1971 Soyuz 11 mit toter Besatzung zurück, gestorben an rascher Dekompression bei der Trennung — Dobrowolski, Wolkow und Pazajew trugen nur Hemden, weil in der Soyuz-Kabine drei Kosmonauten in Anzügen keinen Platz hatten. Die sowjetische Antwort war der Sokol K-V (1973), ein leichter Druckanzug aus gummiertem Stoff, der speziell dafür entworfen wurde, in den Soyuz-Sitz zu passen und sich in Sekunden aufzublasen, wenn die Kabine ausfiel. Jede Soyuz-Besatzung seitdem trägt einen Nachfahren des Sokol — der aktuelle Sokol-M ist seine neueste modernisierte Variante."
+ },
+ {
+  "rel": "science/life-in-space/suit-lineage.json",
+  "at": "body_paragraphs.1",
+  "old": "Die amerikanische IVA-Linie durchlief mehr Varianten. Apollo nutzte druckdichten Block I (der 1967 Grissom, White und Chaffee beim Brand tötete) und dann Block II (Überarbeitung nach dem Brand). Shuttle verwendete den Launch Entry Suit (orangener LES, 1988–94) und dann den ACES — Advanced Crew Escape Suit (1994–2011). Als Shuttle in den Ruhestand ging und US-Flüge 2020 wieder begannen, entwickelten SpaceX und Boeing jeweils eigene IVA-Anzüge — SpaceX Crew Dragon IVA (maßgefertigt, einteiliger Reißverschlusseingang, entworfen von Jose Fernandez mit Kostüm-Hintergrund) und Boeing Starliner IVA (konventionelleres NASA-Design). Keiner ist für EVA zugelassen. Beide erben Sokols funktionales Konzept — Schutz vor schneller Dekompression, einzelner Insasse, sitzbezogen — teilen aber nicht Sokols Teileliste.",
+  "new": "Die amerikanische IVA-Linie durchlief mehr Varianten. Apollo nutzte zunächst den druckdichten Block I (in dem 1967 Grissom, White und Chaffee beim Brand starben), dann den Block II (Überarbeitung nach dem Brand). Das Shuttle verwendete den Launch Entry Suit (orangefarbener LES, 1988–94) und dann den ACES — Advanced Crew Escape Suit (1994–2011). Als das Shuttle ausgemustert wurde und die US-Flüge 2020 wieder begannen, entwickelten SpaceX und Boeing jeweils völlig neue eigene IVA-Anzüge — den SpaceX Crew Dragon IVA (maßgefertigt, einteilig, Einstieg über einen Reißverschluss, entworfen von Jose Fernandez, der aus dem Hollywood-Kostümdesign kommt) und den Boeing Starliner IVA (konventionellere NASA-Linie). Keiner ist für EVA zugelassen. Beide erben Sokols funktionalen Grundsatz — Schutz vor schneller Dekompression, Passform für eine Person, in den Sitz integriert —, teilen aber keine Teile mit dem Sokol."
+ },
+ {
+  "rel": "science/life-in-space/suit-lineage.json",
+  "at": "body_paragraphs.2",
+  "old": "Die amerikanische EVA-Linie beginnt mit A7L (Apollo, 1969–72) und A7LB (spätereres Apollo, 1971–72), dann EMU (Extravehicular Mobility Unit, 1981-heute), der ikonische weiße modulare Anzug für alle US-EVAs auf Skylab, Shuttle und ISS. Der EMU ist jetzt über 40 Jahre im Dienst — neuer als die meisten Flugzeuge, älter als die meisten operativen Systeme auf der Station. Seine Komponenten sind HUT (Hard Upper Torso, weiße Schale), LCVG (Liquid Cooling and Ventilation Garment — Wasserschläuche an der Haut), LTA (Lower Torso Assembly), PLSS (Portable Life Support System, Rucksack — CO₂-Wäscher + Wasserkühlung + Sauerstoff + Funk) und MAG (Maximum Absorbency Garment — Astronautenwindel, eine Lockheed-Martin-Übernahme aus den 1980ern). Die EMU-Fertigung endete mit Shuttles Programm; die fliegenden Anzüge sind Überholungen aus den 1980ern–1990ern, mit Teilen aus stillgelegten Einheiten. Der AxEMU (Axiom Space EMU, für Artemis III Mond-EVA) ist der erste neue amerikanische EVA-Anzug seit dem Original; er erbt die modulare Philosophie, baut aber jedes Subsystem neu.",
+  "new": "Die amerikanische EVA-Linie beginnt mit dem A7L (Apollo, 1969–72) und dem A7LB (späteres Apollo, 1971–72), dann folgt der EMU (Extravehicular Mobility Unit, 1981 bis heute), der ikonische weiße modulare Anzug für alle US-EVAs auf Skylab, Shuttle und ISS. Der EMU ist inzwischen über 40 Jahre im Dienst — neuer als die meisten Flugzeuge, älter als die meiste operative Hardware auf der Station. Seine Komponenten sind HUT (Hard Upper Torso, die weiße Schale), LCVG (Liquid Cooling and Ventilation Garment — Wasserschläuche an der Haut), LTA (Lower Torso Assembly), PLSS (Portable Life Support System, der Rucksack — CO₂-Wäscher + Wasserkühlung + Sauerstoff + Funk) und MAG (Maximum Absorbency Garment — die Astronautenwindel, eine Anschaffung bei Lockheed Martin aus den 1980ern). Die EMU-Fertigung endete mit dem Shuttle-Programm; die heute fliegenden Anzüge sind überholte Exemplare aus den 1980ern und 1990ern, mit Teilen aus ausgemusterten Einheiten. Der AxEMU (Axiom Space EMU, für die Mond-EVA von Artemis III) ist der erste neue amerikanische EVA-Anzug seit dem Original; er erbt die modulare Philosophie, baut aber jedes Subsystem neu."
+ },
+ {
+  "rel": "science/life-in-space/suit-lineage.json",
+  "at": "body_paragraphs.3",
+  "old": "Die russische EVA-Linie ist Orlan (Orlan, „Seeeadler\"), seit 1977 kontinuierlich im Einsatz. Anders als das amerikanische halbmodulare EMU ist Orlan ein begehbarer Anzug in einem Stück – der Astronaut steigt durch eine Öffnung im Rücken ein, schließt die Klappe und ist angezogen. Fünf Minuten Vorbereitung gegenüber den 30 Minuten des EMU beim schichtweisen Anlegen. Orlan arbeitet auch bei höherem Druck (5,8 psi gegenüber 4,3 psi des EMU), was kürzere Entatmungsfenster ermöglicht, allerdings mit größerer Steifheit. Der aktuelle Orlan-MKS (Einführung 2017) ist die siebte Generation; geflogen bei jedem russischen EVA seit 2017 und bei den ersten bemannten EVAs auf Tiangong 2021–22, bevor Chinas eigenständiger Feitian verfügbar wurde.",
+  "new": "Die russische EVA-Linie ist Orlan (Орлан, „Seeadler“), seit 1977 kontinuierlich im Einsatz. Anders als der amerikanische halbmodulare EMU ist Orlan ein einteiliger Anzug mit Rückeneinstieg — der Astronaut steigt durch eine Luke im Rücken ein, schließt sie und ist angezogen. Fünf Minuten Vorbereitung gegenüber den 30 Minuten des EMU beim schichtweisen Anlegen. Orlan arbeitet auch bei höherem Druck (5,8 psi gegenüber 4,3 psi beim EMU), was kürzere Voratmungszeiten ermöglicht, dafür aber mehr Steifheit bedeutet. Der aktuelle Orlan-MKS (Einführung 2017) ist die siebte Generation; er wird seit 2017 bei jedem russischen EVA geflogen, und bei den ersten bemannten EVAs auf Tiangong 2021–22 kam er zum Einsatz, bevor Chinas eigener Feitian zur Verfügung stand."
+ },
+ {
+  "rel": "science/life-in-space/suit-lineage.json",
+  "at": "body_paragraphs.4",
+  "old": "Feitian ('Fliegender Himmel') ist Chinas EVA-Anzug, Premiere auf Shenzhou 7 (2008) für Chinas erste EVA, jetzt in zweiter Generation Feitian-2 auf Tiangong. Feitian stammt von Orlan ab — Heckzugang, einteilig, ähnliche innere Geometrie, ähnlicher Betriebsdruck — aber inländisch mit chinesischen Materialien und chinesischer Wärmeregelung gebaut. Die Abstammung ist offen zugegeben: ACC (Chinas Astronautenzentrum) hatte Roscosmos-geschulte Ingenieure als Berater beim ersten Feitian, und die zweite Generation passte das Design weiter für Tiangongs Wentian-Schleuse an. Die geopolitische Ironie: Feitian — ein russisch-abstammender Anzug — ist die einzige operationale EVA-Fähigkeit außerhalb der US-russischen ISS-Partnerschaft. AxEMU (amerikanisch, mondorientiert) ist in Entwicklung. Darüber hinaus gibt es heute keinen anderen operationalen EVA-Anzug der Welt; der IVA-Markt ist vielfältiger (Sokol-M, Crew Dragon IVA, Starliner IVA, Shenzhou IVA, Indiens geplanter Gaganyaan IVA), aber EVA bleibt eine Drei-Anzug-Welt.",
+  "new": "Feitian (飞天, „fliegender Himmel“) ist Chinas EVA-Anzug; er debütierte auf Shenzhou 7 (2008) bei Chinas erster EVA und fliegt jetzt als Feitian-2 der zweiten Generation auf Tiangong. Feitian stammt von Orlan ab — Rückeneinstieg, einteilig, ähnliche innere Geometrie, ähnlicher Betriebsdruck — wurde aber im Inland mit chinesischen Materialien und einer in China entwickelten Wärmeregelung gebaut. Die Abstammung wird offen eingeräumt: Das ACC (Chinas Astronautenzentrum) hatte beim ersten Feitian von Roscosmos geschulte Ingenieure als Berater, und der Anzug der zweiten Generation wurde für Tiangongs Wentian-Schleuse weiter angepasst. Die geopolitische Ironie: Feitian — ein Anzug russischer Abstammung — ist die einzige derzeit einsatzfähige EVA-Fähigkeit außerhalb der US-russischen ISS-Partnerschaft. Der AxEMU (amerikanisch, auf den Mond ausgerichtet) ist in Entwicklung. Darüber hinaus gibt es heute auf der Welt keinen anderen einsatzfähigen EVA-Anzug; der IVA-Markt ist vielfältiger (Sokol-M, Crew Dragon IVA, Starliner IVA, Shenzhou IVA, Indiens geplanter Gaganyaan IVA), aber bei EVA gibt es weiterhin nur drei Anzüge."
+ },
+ {
+  "rel": "science/life-in-space/suit-lineage.json",
+  "at": "diagram_caption",
+  "old": "Drei Linien: Amerikanisch IVA (Mercury Mark IV → ACES → SpaceX / Starliner) + Amerikanisch EVA (A7L/A7LB → EMU → AxEMU). Russisch IVA (Sokol K → Sokol-M) + Russisch EVA (Orlan → Orlan-MKS). Chinesisch EVA (Feitian, von Orlan abgeleitet, zweite Gen. auf Tiangong). Gegenseitige Beeinflussung ist die Regel, nicht die Ausnahme — jeder moderne Anzug borgt von mindestens einem Vorgänger einer anderen Linie.",
+  "new": "Drei Linien: amerikanisches IVA (Mercury Mark IV → ACES → SpaceX / Starliner) + amerikanisches EVA (A7L/A7LB → EMU → AxEMU). Russisches IVA (Sokol K → Sokol-M) + russisches EVA (Orlan → Orlan-MKS). Chinesisches EVA (Feitian, von Orlan abgeleitet, zweite Generation auf Tiangong). Gegenseitige Beeinflussung ist die Regel, nicht die Ausnahme — jeder moderne Anzug übernimmt etwas von mindestens einem Vorgänger aus einer anderen Linie."
+ },
+ {
+  "rel": "science/life-in-space/surface-dust-mitigation.json",
+  "at": "title",
+  "old": "Oberflächenstaub — die Mond- + Mars-Gefahr, die alle unterschätzten",
+  "new": "Oberflächenstaub — die Gefahr auf Mond und Mars, die alle unterschätzten"
+ },
+ {
+  "rel": "science/life-in-space/surface-dust-mitigation.json",
+  "at": "intro_sentence",
+  "old": "Apollo-Crews kehrten mit nach 10 EVAs abgeschmirgelten Anzügen und blockierten Schleusen zurück. Marsregolith ist chemisch toxisch. Jede Langzeit-Architektur dreht sich um Staubprotokolle — die operative Gefahr, die nicht verschwindet.",
+  "new": "Apollo-Crews kehrten mit nach 10 EVAs abgeschliffenen Anzügen und staubverklemmten Schleusen zurück. Marsregolith ist chemisch giftig. Jede Langzeit-Architektur baut auf Staubprotokolle — die Gefahr, die nichts beseitigt."
+ },
+ {
+  "rel": "science/life-in-space/surface-dust-mitigation.json",
+  "at": "body_paragraphs.0",
+  "old": "Mondstaub ist mechanisch gefährlich auf eine Weise, auf die kein terrestrischer Staub vorbereitet. Die Oberfläche ist ein feiner Regolith — Partikelgrößen von sub-Mikrometer bis Grobsand, Median 70 µm — geschaffen von 4 Milliarden Jahren Mikrometeoriten-Einschlägen. Jeder Einschlag ist eine winzige Explosion, die existierenden Stein fragmentiert; die Fragmente kühlen im Vakuum ohne Wasser, das ihre Kanten rundet. Das Ergebnis ist ein Pulver aus eckigen Glasscherben, schärfer als zerstoßenes Glas. Hinzu kommt: Mondregolith ist elektrostatisch geladen durch UV-Photoionisation auf der Tagseite und durch Plasma-Exposition in der lunaren Terminator-Zone. Geladener Staub klebt an allem — haftet an Anzugsstoff durch elektrostatische Adhäsion auf einem Niveau, das Bürsten allein nicht entfernen kann. Apollo-Crews berichteten, dass Mondstaub EVA-Anzug-Gelenkdichtungen nach etwa 10 EVAs degradierte (Apollo 17 war die einzige Mission mit drei aufeinanderfolgenden EVAs, und Cernans Anzugreißverschluss zeigte beim dritten Verschleiß).",
+  "new": "Mondstaub ist mechanisch gefährlich auf eine Weise, auf die kein irdischer Staub vorbereitet. Die Oberfläche ist ein feiner Regolith — Partikelgrößen von unter einem Mikrometer bis zu grobem Sand, Median 70 µm —, entstanden durch 4 Milliarden Jahre Mikrometeoriteneinschläge. Jeder Einschlag ist eine winzige Explosion, die vorhandenes Gestein zertrümmert; die Bruchstücke kühlen im Vakuum ab, ohne Wasser, das ihre Kanten abrunden würde. Das Ergebnis ist ein Pulver aus eckigen Glasscherben, schärfer als gemahlenes Glas. Hinzu kommt: Der Mondregolith ist elektrostatisch aufgeladen, auf der Tagseite durch UV-Photoionisation und in der Terminatorzone des Mondes durch Plasma. Geladener Staub klebt an allem — er haftet durch elektrostatische Adhäsion so stark am Anzugstoff, dass Bürsten allein ihn nicht entfernt. Apollo-Crews berichteten, dass Mondstaub die Gelenkdichtungen der EVA-Anzüge nach etwa 10 EVAs angriff (Apollo 17 war die einzige Mission mit drei aufeinanderfolgenden EVAs, und Cernans Anzugreißverschluss zeigte beim dritten bereits Verschleiß)."
+ },
+ {
+  "rel": "science/life-in-space/surface-dust-mitigation.json",
+  "at": "body_paragraphs.1",
+  "old": "Operative Auswirkungen auf Apollo: Schleusendichtungen verklemmten, wenn Staub die Dichtungs-Schnittstellen kontaminierte; Kühlleitungen am LM PLSS (Portable Life Support System) verstopften mit Staub, der durch den Anzug-Umbilical eindrang; Kameras und Instrumente brauchten ständiges Abbürsten; Proben-Rückführbehälter konnten gegen das Staub-Eindringen nicht richtig dichten; und die LM-Kabinen-Atmosphäre nach der dritten EVA hatte einen Geruch, den alle 12 Mondspaziergänger als 'Schießpulver' oder 'verbrauchtes Feuerwerk' beschrieben (die tatsächliche Ursache ist noch umstritten — möglicherweise Nano-Eisen-Partikel, die bei Kontakt mit Kabinen-O₂ reoxidieren). Mehrere Apollo-Crewmitglieder berichteten von heuschnupfen-ähnlichen Symptomen in der LM-Kabine während der Ruhepausen zwischen EVAs. Keines davon war ein Show-Stopper für Missionen, die 12-72 Stunden dauerten; alle würden Show-Stopper für anhaltende Präsenz werden.",
+  "new": "Betriebliche Auswirkungen bei Apollo: Schleusendichtungen verklemmten, wenn Staub die Dichtflächen verschmutzte; Kühlleitungen am PLSS (Portable Life Support System) der LM verstopften mit Staub, der durch den Versorgungsschlauch des Anzugs eingedrungen war; Kameras und Instrumente mussten ständig abgebürstet werden; Behälter für Proben, die zur Erde zurückkehren sollten, ließen sich wegen des eindringenden Staubs nicht richtig verschließen; und die Kabinenluft der LM roch nach der dritten EVA so, dass alle 12 Astronauten, die auf dem Mond liefen, von „Schießpulver“ oder „abgebranntem Feuerwerk“ sprachen (die tatsächliche Ursache ist noch umstritten — möglicherweise Nano-Eisenpartikel, die bei Kontakt mit dem O₂ der Kabine erneut oxidieren). Mehrere Apollo-Crewmitglieder berichteten in den Ruhepausen zwischen den EVAs von heuschnupfenartigen Symptomen in der LM-Kabine. Keines davon war für Missionen von 12-72 Stunden Dauer ein K.-o.-Kriterium; für einen dauerhaften Aufenthalt würden sie es alle."
+ },
+ {
+  "rel": "science/life-in-space/surface-dust-mitigation.json",
+  "at": "body_paragraphs.2",
+  "old": "Marsstaub ist chemisch gefährlich auf eine Weise, auf die der Mond es nicht ist. Phoenix Lander (2008) bestätigte durch Nasschemie, dass marsianischer Regolith 0,5-1% Massenanteil an Perchlorat (ClO₄⁻) Salzen enthält, plus Chlorat und Chlorit. Perchlorate sind Schilddrüsen-endokrine Disruptoren bei Konzentrationen über ~25 ppb; ungefiltertes Einatmen von Marsstaub würde Dosen Größenordnungen über dem OSHA-Arbeitsplatzlimit innerhalb von Minuten liefern. Curiosity und Perseverance haben Perchlorat-Verteilung sowohl an äquatorialen als auch hochbreitigen Standorten bestätigt — es ist global. Marsstaub ist auch deutlich stärker verwittert als Mondstaub (Wasser hat ihn während der nasseren Vergangenheit des Planeten beeinflusst), mit runderen Partikelformen und geringerer elektrostatischer Aufladung, sodass die mechanische Gefahr kleiner ist. Aber die chemische Gefahr bedeutet, dass Marsstaub-Eindringen ins Habitat ein medizinischer Notfall ist, kein bloßes operatives Ärgernis.",
+  "new": "Marsstaub ist chemisch gefährlich auf eine Weise, auf die der Mond es nicht ist. Der Phoenix Lander (2008) bestätigte durch Nasschemie, dass marsianischer Regolith 0,5-1 Massenprozent Perchlorat-(ClO₄⁻)-Salze enthält, dazu Chlorat und Chlorit. Perchlorate sind endokrine Disruptoren der Schilddrüse bei Konzentrationen über ~25 ppb; würde man ungefilterten Marsstaub aufnehmen, läge die Dosis innerhalb von Minuten um Größenordnungen über dem OSHA-Grenzwert für den Arbeitsplatz. Curiosity und Perseverance haben die Verbreitung von Perchlorat sowohl an äquatorialen als auch an hochbreitigen Standorten bestätigt — es ist global. Marsstaub ist außerdem deutlich stärker verwittert als Mondstaub (Wasser hat in der feuchteren Vergangenheit des Planeten auf ihn eingewirkt), mit runderen Partikelformen und geringerer elektrostatischer Aufladung, sodass die mechanische Gefahr kleiner ist. Aber die chemische Gefahr bedeutet, dass Marsstaub, der ins Habitat gelangt, ein medizinischer Notfall ist, nicht nur ein betriebliches Ärgernis."
+ },
+ {
+  "rel": "science/life-in-space/surface-dust-mitigation.json",
+  "at": "body_paragraphs.3",
+  "old": "Die Minderungs-Architektur, die sich herausgebildet hat, ist die Suitlock-Schleuse. Anstatt Anzüge durch eine Druckschleuse zu zyklen (Apollo, Shuttle, ISS-Ansatz), hält die Suitlock den Anzug dauerhaft außen, befestigt an der Außenhülle des Habitats über einen Rucksack-Anschluss. Crew klettert von innen in den Anzug, ohne Staub ins Druckvolumen zu bringen. Der Mars Z-2 Prototyp, der Boeing-Collins Aerospace Artemis EVA-Anzug, der russische Orlan-abgeleitete ILRS-Anzug und der chinesische Feitian-abgeleitete lunare EVA-Anzug sind alle um Suitlock-Befestigung herum konstruiert. Ergänzende Tech: Electrostatic Dust Shield (ESD), eine Erfindung der NASA Kennedy, die Wechselspannungen über Oberflächenbeschichtungen legt, um geladenen Staub durch elektrohydrodynamische Kräfte abzuheben, demonstriert in Labor- + Klein-Flugmaßstab (CubeSat-Experimente). Interne HEPA-Filtration bei jedem Schleusenzyklus. Dekontaminationsdusche (Wasserspülung) vor Wiedereintritt in tiefere Habitat-Zonen. All das ist notwendig; keines davon ist allein ausreichend. Staub wird das am meisten gemanagte operative Tagesrisiko jedes Oberflächenaufenthalts über 30 Tagen sein.",
+  "new": "Als Gegenmaßnahme hat sich die Suitlock-Schleuse herausgebildet. Statt die Anzüge durch eine Druckschleuse zu schleusen (Ansatz von Apollo, Shuttle und ISS), hält die Suitlock den Anzug dauerhaft außen, über einen Rucksack-Anschluss an der Außenhülle des Habitats befestigt. Die Crew steigt von innen in den Anzug, ohne Staub in das Druckvolumen zu bringen. Der Mars-Z-2-Prototyp, der EVA-Anzug von Boeing und Collins Aerospace für Artemis, der vom Orlan abgeleitete russische ILRS-Anzug und der vom Feitian abgeleitete chinesische Mond-EVA-Anzug sind alle um die Suitlock-Befestigung herum konstruiert. Ergänzende Technik: der Electrostatic Dust Shield (ESD), eine Erfindung der NASA Kennedy, der Wechselspannungen über Oberflächenbeschichtungen legt, um geladenen Staub durch elektrohydrodynamische Kräfte abzuheben, demonstriert im Labor und im kleinen Flugmaßstab (CubeSat-Experimente). Interne HEPA-Filterung bei jedem Schleusenzyklus. Eine Dekontaminationsdusche (Wasserspülung), bevor man tiefer liegende Zonen des Habitats betritt. All das ist notwendig; keines davon reicht allein aus. Staub wird das am stärksten zu beherrschende betriebliche Tagesrisiko jedes Oberflächenaufenthalts von mehr als 30 Tagen sein."
+ },
+ {
+  "rel": "science/life-in-space/surface-dust-mitigation.json",
+  "at": "diagram_caption",
+  "old": "Mondstaub: glasscherben-eckig, elektrostatisch geladen, mechanisch zerstörerisch (Apollo-Anzug-Dichtungsverschleiß bei 10 EVAs). Marsstaub: chemisch toxisch (0,5-1% Perchlorat nach Masse, Schilddrüsen-endokriner Disruptor). Minderung: Suitlock-Schleusen (Anzug lebt draußen, kein Staub-Eindringen), Electrostatic Dust Shield, HEPA-Filtration, Dekontaminationsduschen. Alle vier sind zusammen notwendig.",
+  "new": "Mondstaub: eckig wie Glasscherben, elektrostatisch geladen, mechanisch zerstörerisch (Verschleiß der Anzugdichtungen bei Apollo nach 10 EVAs). Marsstaub: chemisch giftig (0,5-1 Massenprozent Perchlorat, endokriner Disruptor der Schilddrüse). Gegenmaßnahmen: Suitlock-Schleusen (der Anzug bleibt draußen, kein Staub dringt ein), Electrostatic Dust Shield, HEPA-Filterung, Dekontaminationsduschen. Alle vier sind zusammen notwendig."
+ },
+ {
+  "rel": "science/life-in-space/surface-mobility-rovers.json",
+  "at": "intro_sentence",
+  "old": "Bemannte Oberflächenaufenthalte stehen und fallen mit der Reichweite der Crew. Apollos LRV erhöhte die Traverse-Reichweite von 1 km auf 35,7 km. Die nächste Generation — Druckrover — erreicht mehrwöchige Expeditionen über Hunderte km.",
+  "new": "Bemannte Oberflächenaufenthalte stehen und fallen mit der Reichweite der Crew. Apollos LRV dehnte sie von 1 km auf 35,7 km aus. Die nächste Generation, Druckrover, ermöglicht mehrwöchige Expeditionen über Hunderte km."
+ },
+ {
+  "rel": "science/life-in-space/surface-mobility-rovers.json",
+  "at": "body_paragraphs.0",
+  "old": "Apollos Lunar Roving Vehicle (LRV) flog bei den letzten drei Apollo-Missionen (15, 16, 17, 1971-72). Vor dem LRV waren Oberflächentraverse durch Anzugverbrauchsmaterialien auf etwa 1 km Radius vom LM beschränkt — und EVA-Ermüdung durch Gehen in 1/6-g mit einem unter Druck stehenden Anzug machte selbst diese Distanz zur Belastungsprobe. Das LRV war bewusst so dimensioniert, dass es zusammengefaltet in die LM-Quad-1-Lagerkammer passte (0,7 × 0,7 m Bauraum), wog unbeladen nur 210 kg und lief mit zwei 36-V-Silber-Zink-Batterien (keine Aufladung — das LRV war ein Einmal-Asset). Höchstgeschwindigkeit: 18 km/h. Gesamtreichweite mit diesen Batterien: ~92 km (57 mi), mit einer harten Rücklauf-Grenze bei halbem Restverbrauch (praktische Traversen waren also 5-10 km hin + 5-10 km zurück). Apollo 17 legte über drei EVAs insgesamt 35,7 km zurück, der bisherige Rekord für menschliche Oberflächenfahrten. Das LRV-Designkonzept — offener Rahmen, ohne Druck, nur im Anzug, Einweg-Einmalmission — wird jetzt von Artemis als LTV neu aufgelegt.",
+  "new": "Apollos Lunar Roving Vehicle (LRV) flog bei den letzten drei Apollo-Missionen (15, 16, 17, 1971-72). Vor dem LRV waren die Exkursionen an der Oberfläche durch die Verbrauchsgüter des Anzugs auf etwa 1 km Radius um die LM beschränkt — und die EVA-Ermüdung durch das Gehen bei 1/6 g in einem unter Druck stehenden Anzug machte schon diese Entfernung zur Belastungsprobe. Das LRV wurde bewusst so ausgelegt, dass es zusammengefaltet in die Lagerkammer Quad 1 der LM passte (0,7 × 0,7 m Bauraum), wog unbeladen nur 210 kg und lief mit zwei 36-V-Silber-Zink-Batterien (ohne Wiederaufladung — das LRV war ein Einwegfahrzeug für eine einzige Mission). Höchstgeschwindigkeit: 18 km/h. Gesamtreichweite mit diesen Batterien: ~92 km (57 mi), mit einer strikten Rückmarsch-Grenze bei der Hälfte der verbleibenden Verbrauchsgüter (praktische Exkursionen waren also 5-10 km hin + 5-10 km zurück). Apollo 17 legte über drei EVAs insgesamt 35,7 km zurück, bis heute der Rekord für menschliche Fahrten auf einer Oberfläche. Das Konstruktionsmuster des LRV — offener Rahmen, ohne Druck, nur im Anzug, Einwegfahrzeug für eine Mission — wird jetzt von Artemis als LTV neu aufgelegt."
+ },
+ {
+  "rel": "science/life-in-space/surface-mobility-rovers.json",
+  "at": "body_paragraphs.1",
+  "old": "Das Artemis Lunar Terrain Vehicle (LTV) ist der direkte LRV-Nachfolger: offener Rahmen, ohne Druck, ausgelegt für zwei Besatzungsmitglieder im Anzug, ~20 km Traverse-Radius. Drei Verträge wurden von NASA im April 2024 vergeben — Intuitive Machines, Lunar Outpost und Astrolab — für Design + Lieferung, mit einer späteren Einzelauswahl für den Produktionsauftrag. Unterschiede zum LRV: wiederaufladbare Batterien mit Solar-Erhaltungsladung (das LTV verbleibt zwischen Artemis-Missionen am Standort, unterstützt nachfolgende Crews und arbeitet während der Mondnächte und Intervallen ohne Crew als ferngesteuerter Rover), teilautonome Funktionen für Selbstpositionierung und Hinderniserkennung, ausgelegt für ~10 Jahre Einsatzlebensdauer statt Einmalnutzung. Angestrebtes IOC: Artemis V (derzeit Mitte 2030 geplant).",
+  "new": "Das Artemis Lunar Terrain Vehicle (LTV) ist der direkte LRV-Nachfolger: offener Rahmen, ohne Druck, ausgelegt für zwei Besatzungsmitglieder im Anzug, ~20 km Aktionsradius. Die NASA vergab im April 2024 drei Verträge — an Intuitive Machines, Lunar Outpost und Astrolab — für Entwurf und Lieferung; für den Produktionsauftrag wird später ein einziger Anbieter ausgewählt. Unterschiede zum LRV: wiederaufladbare Batterien mit solarer Erhaltungsladung (das LTV bleibt zwischen den Artemis-Missionen am Standort, unterstützt nachfolgende Crews und arbeitet in den Mondnächten und in Zeiträumen ohne Crew als ferngesteuerter Rover), teilautonome Funktionen für Selbstpositionierung und Hindernisvermeidung, ausgelegt auf ~10 Jahre Einsatzdauer statt Einmalnutzung. Angestrebte erste Einsatzfähigkeit (IOC): Artemis V (derzeit für Mitte 2030 geplant)."
+ },
+ {
+  "rel": "science/life-in-space/surface-mobility-rovers.json",
+  "at": "body_paragraphs.2",
+  "old": "Druckrover sind der qualitativ unterschiedliche nächste Schritt. Das Toyota / JAXA Lunar Cruiser-Konzept (der Projektname für das, was JAXA Manned Pressurised Rover nennt) ist ein 6-Tonnen-Fahrzeug von 6 × 5 × 4 m mit einem unter Druck stehenden Innenvolumen von ~13 m³ — etwa die Größe eines Kleinbusses oder Wohnmobils. Zwei Besatzungsmitglieder leben darin in Hemdärmeln für bis zu 30 Tage am Stück und verlassen es in Anzügen durch Suitlock-Luftschleusen. Die Brennstoffzellen-Regenerativzyklen ergeben eine Reichweite von 1000 km. Das chinesische ILRS-Programm entwickelt einen ähnlichen Druckrover. Praktische Folgen: ein Paar Druckrover kann mehrmonatige Expeditionen weit vom Basislager unterstützen und verwandelt Oberflächenoperationen von 'ein paar Tage Outdoor-Aktivität von zu Hause' in 'expeditionsartige Traversen über Hunderte km' — näher an antarktischer Feldlager-Logistik als an Apollo. NASAs Plan nutzt den Toyota Lunar Cruiser als behördeninterne Basis-Druckrover ab etwa Artemis VII.",
+  "new": "Druckrover sind der qualitativ andere nächste Schritt. Das Lunar-Cruiser-Konzept von Toyota und JAXA (der Projektname für das, was die JAXA als Manned Pressurised Rover bezeichnet) ist ein 6-Tonnen-Fahrzeug von 6 × 5 × 4 m mit einem unter Druck stehenden Innenvolumen von ~13 m³ — etwa die Größe eines Kleinbusses oder Wohnmobils. Zwei Besatzungsmitglieder leben darin in Hemdärmeln für bis zu 30 Tage am Stück und verlassen es in Anzügen durch Suitlock-Schleusen. Brennstoffzelle und regenerativer Kreislauf ergeben eine Reichweite von 1000 km. Das chinesische ILRS-Programm entwickelt einen ähnlichen Druckrover. Praktische Folgen: Ein Paar Druckrover kann mehrmonatige Expeditionen weit vom Basislager unterstützen und verwandelt den Oberflächenbetrieb von „ein paar Tagen Aktivität im Freien, von zu Hause aus“ in „expeditionsartige Fahrten über Hunderte km“ — näher an der Logistik antarktischer Feldlager als an Apollo. Der Plan der NASA sieht den Toyota Lunar Cruiser ab etwa Artemis VII als Basis-Druckrover der Behörde vor."
+ },
+ {
+  "rel": "science/life-in-space/surface-mobility-rovers.json",
+  "at": "body_paragraphs.3",
+  "old": "Mars-Rover-Erbe ist bisher rein robotisch — Sojourner (1997), Spirit + Opportunity (2004-2010 und 2004-2018), Curiosity (2012-heute), Perseverance (2021-heute), Zhurong (2021-2022), Pragyan (2023). Alle vier- oder sechsrädrig, alle ohne Druck, alle autonom-mit-Erdüberwachung. Bemannte Mars-Architekturen stützen sich stark auf dieses Erbe: Perseverances autonome Navigationssoftware (AutoNav 2.0, die ohne Eingriff über 200 m pro Sol fahren kann) wird zur Navigationsstapel für bemannte Druckrover ausgereift. Der Druckrover für Mars ist qualitativ dieselbe Maschine wie der lunare, aber mit zwei zusätzlichen Anforderungen: er muss Staubstürme bewältigen (Taifun-Szenarien, die wochenlang dauern können), und er muss bei jedem Schleusenzyklus das Perchlorat-/Staubkontaminationsproblem handhaben. Beide sind heute auf ingenieurtechnischer Ebene ungelöst; beide sind die Art von Problem, die durch 5-10 Jahre lunare Druckrover-Feldtests vor Mars gelöst wird.",
+  "new": "Das Erbe der Mars-Rover ist bisher rein robotisch — Sojourner (1997), Spirit + Opportunity (2004-2010 und 2004-2018), Curiosity (2012-heute), Perseverance (2021-heute), Zhurong (2021-2022), Pragyan (2023). Alle vier- oder sechsrädrig, alle ohne Druck, alle autonom unter Aufsicht von der Erde. Bemannte Mars-Architekturen stützen sich stark auf dieses Erbe: Perseverances autonome Navigationssoftware (AutoNav 2.0, die ohne Eingriff über 200 m pro Sol fahren kann) wird zum Navigations-Stack für bemannte Druckrover weiterentwickelt. Der Druckrover für den Mars ist qualitativ dieselbe Maschine wie der für den Mond, aber mit zwei zusätzlichen Anforderungen: Er muss Staubstürme bewältigen (Szenarien von der Stärke eines Taifuns, die wochenlang dauern können), und er muss bei jedem Schleusenzyklus das Problem der Perchlorat- und Staubkontamination handhaben. Beide sind heute auf ingenieurtechnischer Ebene ungelöst; beide sind die Art von Problem, die durch 5-10 Jahre Feldtests mit Druckrovern auf dem Mond gelöst wird, bevor es zum Mars geht."
+ },
+ {
+  "rel": "science/life-in-space/surface-mobility-rovers.json",
+  "at": "diagram_caption",
+  "old": "Apollo LRV (1971-72): 210 kg, ohne Druck, Einmalmission, 35,7 km Rekord (Apollo 17). Artemis LTV (~2030): ohne Druck, wiederaufladbar, Einsatz-Asset, ~20 km Radius. Druckrover (Toyota Lunar Cruiser, ILRS-Äquivalent, späte 2030er+): 6 t, 13 m³ unter Druck, 30-Tage-Ausdauer, 1000-km-Reichweite — qualitativ andere Mobilitätshülle.",
+  "new": "Apollo LRV (1971-72): 210 kg, ohne Druck, Einmalmission, 35,7 km Rekord (Apollo 17). Artemis LTV (~2030): ohne Druck, wiederaufladbar, dauerhaft vor Ort stationiert, ~20 km Radius. Druckrover (Toyota Lunar Cruiser, ILRS-Äquivalent, späte 2030er+): 6 t, 13 m³ unter Druck, 30 Tage Einsatzdauer, 1000 km Reichweite — ein qualitativ anderer Mobilitätsspielraum."
+ },
+ {
+  "rel": "science/life-in-space/vestibular-adaptation.json",
+  "at": "body_paragraphs.0",
+  "old": "Das Vestibularsystem in Ihrem Innenohr besteht aus drei Bogengängen (Rotation) und zwei Otolithenorganen (lineare Beschleunigung + Schwerkraft). Auf der Erde sitzen diese Otolithen in einem 1-g-Feld; ihre Sinneszellen werden ständig durch die nach unten drückenden Kalziumkarbonat-Kristalle (Otolithen) gekrümmt. Das Gehirn liest diese Krümmung als \"unten\". In der Schwerelosigkeit schweben die Otolithen frei. Das Signal wird mehrdeutig.",
+  "new": "Das Vestibularsystem in Ihrem Innenohr besteht aus drei Bogengängen (Rotation) und zwei Otolithenorganen (lineare Beschleunigung + Schwerkraft). Auf der Erde sitzen diese Otolithenorgane in einem 1-g-Feld; ihre Haarzellen werden ständig von den nach unten drückenden Kalziumkarbonat-Kristallen (Otokonien) gebogen. Das Gehirn liest diese Biegung als „unten“. In der Schwerelosigkeit schweben die Otokonien frei. Das Signal wird mehrdeutig."
+ },
+ {
+  "rel": "science/life-in-space/vestibular-adaptation.json",
+  "at": "body_paragraphs.1",
+  "old": "Etwa 60–80% der Astronauten entwickeln in den ersten 24–72 Stunden das Space Adaptation Syndrome: Übelkeit, Erbrechen, Schwitzen, Kopfschmerzen. Es ist nicht der einzige sensorische Konflikt des Körpers (die Augen melden immer noch oben/unten über den visuellen Horizont der Kabine, die Propriozeption meldet immer noch die Gliedmaßenposition) aber es ist der auffälligste, und er löst sich normalerweise innerhalb von 2–4 Tagen auf, wenn das Gehirn lernt, den nun unzuverlässigen Vestibularkanal zu ignorieren.",
+  "new": "Etwa 60–80% der Astronauten entwickeln in den ersten 24–72 Stunden die Weltraumkrankheit (Space Adaptation Syndrome): Übelkeit, Erbrechen, Schwitzen, Kopfschmerzen. Es ist nicht der einzige sensorische Konflikt des Körpers (die Augen melden über den visuellen Horizont der Kabine weiterhin oben/unten, die Propriozeption meldet weiterhin die Lage der Gliedmaßen), aber der auffälligste, und er klingt normalerweise innerhalb von 2–4 Tagen ab, wenn das Gehirn lernt, den nun unzuverlässigen vestibulären Kanal geringer zu gewichten."
+ },
+ {
+  "rel": "science/life-in-space/vestibular-adaptation.json",
+  "at": "body_paragraphs.2",
+  "old": "Die Herabgewichtung kehrt bei der Rückkehr nicht sofort um. Nach dem Flug betreten Astronauten eine 1-g-Welt mit einem Gehirn, das monatelang vestibuläre Eingaben ignoriert hat — und die Ergebnisse sind Gangstörungen, Gleichgewichtsstörungen und kopfbewegungsausgelöste Übelkeit, die Tage bis Wochen brauchen, um abzuklingen. Besatzungen mit langer Missionsdauer zeigen messbare Veränderungen in der Augenverfolgung und Haltungstests noch Monate nach der Landung.",
+  "new": "Die Herabgewichtung kehrt sich bei der Rückkehr nicht sofort um. Nach dem Flug betreten Astronauten eine 1-g-Welt mit einem Gehirn, das monatelang vestibuläre Eingaben ausgeblendet hat — und die Folgen sind Gangstörungen, Gleichgewichtsstörungen und durch Kopfbewegungen ausgelöste Übelkeit, die Tage bis Wochen brauchen, um abzuklingen. Bei Langzeitbesatzungen lassen sich in Tests der Augenfolgebewegungen und der Körperhaltung noch Monate nach der Landung messbare Veränderungen feststellen."
+ },
+ {
+  "rel": "science/life-in-space/vestibular-adaptation.json",
+  "at": "body_paragraphs.3",
+  "old": "Für eine Mars-Mission ist die offene Frage, ob die Oberflächenumgebung mit Schwerkraft (0,38 g) ausreicht, um das System bei der Ankunft neu zu verankern, oder ob die Besatzung die Landefähre in einem hybriden Gleichgewichtszustand verlässt — teilweise an Raum adaptiert, teilweise Schwerkraft neu erlernend. Zentrifugen-Forschung auf der ISS und menschliche Rotationsstudien auf der Erde deuten darauf hin, dass die Antwort irgendwo dazwischen liegt; die Planung geht von einigen Tagen reduzierter Oberflächenmobilität unmittelbar nach der Landung aus.",
+  "new": "Für eine Marsmission ist die offene Frage, ob die vestibuläre Umgebung an der Oberfläche (0,38 g) ausreicht, um das System bei der Ankunft neu zu verankern, oder ob die Besatzung die Landefähre in einem hybriden Gleichgewichtszustand verlässt — teilweise an den Weltraum angepasst, teilweise die Schwerkraft neu erlernend. Zentrifugenforschung auf der ISS und Rotationsstudien mit Menschen auf der Erde deuten darauf hin, dass die Antwort irgendwo dazwischen liegt; die Planung geht von einigen Tagen eingeschränkter Beweglichkeit an der Oberfläche unmittelbar nach der Landung aus."
+ },
+ {
+  "rel": "science/life-in-space/vestibular-adaptation.json",
+  "at": "diagram_caption",
+  "old": "Otolithen-Kristalle schweben in Schwerelosigkeit → mehdeudiges \\\"unten\\\"-Signal → Gehirn gewichtet vestibuläre Hinweise herab → Wiedereintritt in 1 g erfordert Tage bis Wochen Neuanpassung.",
+  "new": "Otolithen-Kristalle schweben in der Schwerelosigkeit → mehrdeutiges „unten“-Signal → das Gehirn gewichtet vestibuläre Hinweise herab → die Rückkehr in 1 g erfordert Tage bis Wochen der Neugewichtung."
+ },
+ {
+  "rel": "science/mission-phases/_intro.json",
+  "at": "headline",
+  "old": "Missionsphasen — der Flug sind fünf Phasen in Wiederholung.",
+  "new": "Missionsphasen — der Flug besteht nur aus fünf Phasen, die sich wiederholen."
+ },
+ {
+  "rel": "science/mission-phases/_intro.json",
+  "at": "paragraphs.0",
+  "old": "Praktisch jede interplanetare Mission, von Voyager bis Perseverance, folgt demselben Drehbuch. Start aus der Erdatmosphäre in eine niedrige Umlaufbahn. Trans-X-Injektion — der große einzelne Bremsmanöver, der dich auf die Transferellipse zum Mond (TLI), zum Mars (TMI), zur Venus, zum Jupiter, was auch immer, schleudert. Monatelang gleiten, mit ein paar kleinen Trajektorienkorrekturmanövern unterwegs. Bahneinschuss — der Bremsmanöver am Ziel. EDL — Eintritt, Abstieg und Landung — für Lander.",
+  "new": "Praktisch jede interplanetare Mission, von Voyager bis Perseverance, folgt demselben Drehbuch. Start durch die Erdatmosphäre in eine niedrige Umlaufbahn. Trans-X-Injektion — das eine große Triebwerksmanöver, das dich auf die Transferellipse zum Mond (TLI), zum Mars (TMI), zur Venus, zum Jupiter oder wohin auch immer schleudert. Monatelanger antriebsloser Flug, mit ein paar kleinen Bahnkorrekturmanövern unterwegs. Bahneinschuss — das Bremsmanöver am Ziel. EDL — Eintritt, Abstieg und Landung — bei Landern."
+ },
+ {
+  "rel": "science/mission-phases/_intro.json",
+  "at": "paragraphs.1",
+  "old": "Apollo flog das Skript zum Mond in drei Tagen. Curiosity zum Mars in acht Monaten. Voyager dreimal — einmal Erde, dann zwei Swing-bys. Die Phasen skalieren; die Reihenfolge nicht.",
+  "new": "Apollo flog dieses Drehbuch in drei Tagen zum Mond, Curiosity in acht Monaten zum Mars, Voyager dreimal — einmal zum Verlassen der Erde, zweimal für Swing-bys an Jupiter und Saturn. Die Phasen skalieren, die Reihenfolge nicht."
+ },
+ {
+  "rel": "science/mission-phases/_intro.json",
+  "at": "paragraphs.2",
+  "old": "Hier werden sieben Abschnitte alles abgedeckt, plus zwei spezialisierte Phasen — MET (Mission Elapsed Time, die universelle Stoppuhr) und NRHO (die Umlaufbahn, in der das Lunar Gateway der NASA leben wird). Lies sie als Flugprotokoll: Start zuerst, EDL zuletzt.",
+  "new": "Sieben Abschnitte hier decken alles ab, dazu zwei spezialisierte Phasen — MET (Mission Elapsed Time, die universelle Stoppuhr) und NRHO (die Umlaufbahn, in der das Lunar Gateway der NASA angesiedelt sein wird). Lies sie wie ein Flugprotokoll: Start zuerst, EDL zuletzt."
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "intro_sentence",
+  "old": "Eine breite Einfangorbit auf eine funktionierende Umlaufbahn mit fast keinem Treibstoff reduzieren — indem das Raumschiff bei jedem Durchgang in die oberste Schicht der Planetatmosphäre eintaucht.",
+  "new": "Eine weite Einfangbahn mit fast keinem Treibstoff zu einer Arbeitsbahn verkleinern — indem man bei jedem Durchgang ein Stück in die oberste Schicht der Planetenatmosphäre eintaucht."
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "narrative_101.0",
+  "old": "Wenn ein Orbiter bei einem Planeten ankommt, führt er ein Bremsmanöver durch, um in die Umlaufbahn einzutreten — aber ein vollständiges Abbremsen in eine enge, nützliche Umlaufbahn würde enorme Mengen Treibstoff kosten. Also tricksen Missionsplaner die Physik mit der Atmosphäre aus: Sie fangen in einer großen, lockeren Ellipse ein und lassen das Raumschiff dann bei jedem Umlauf an der sehr obersten Luftschicht am tiefsten Punkt der Bahn entlanggleiten. Jeder Kontakt mit der dünnen Luft nimmt ein wenig Geschwindigkeit weg, und die Fernapoapsis des Orbits sinkt ein wenig tiefer.",
+  "new": "Wenn ein Orbiter an einem Planeten ankommt, zündet er ein Einfangmanöver, um in die Umlaufbahn zu gelangen — aber ein vollständiges Abbremsen in eine enge, nützliche Umlaufbahn würde enorme Mengen Treibstoff kosten. Also überlisten Missionsplaner die Physik mit der Atmosphäre: Sie fangen in einer großen, lockeren Ellipse ein und lassen das Raumschiff dann im tiefsten Punkt jeder Umlaufbahn die oberste Schicht der Luft streifen. Jede Berührung mit der dünnen Luft nimmt ein wenig Geschwindigkeit weg, und die gegenüberliegende Seite der Bahn sinkt ein wenig tiefer."
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "narrative_101.1",
+  "old": "Wenn man dies ein paar hundert Mal über Wochen oder Monate hinweg wiederholt, schrumpft die breite Einfangsellipse in die fast kreisförmige Wissenschaftsorbit zusammen, die die Mission tatsächlich benötigt — alles zum Preis des kleinen Bremsmanövers, nicht des enormen Manövers, das ein vollständiger Treibstoffantrieb erfordern würde. Dies ist einer der großen Treibstoffersparnisse in der Raumfahrt.",
+  "new": "Wiederholt man das einige hundert Mal über Wochen oder Monate, schrumpft die weite Einfangellipse zu der nahezu kreisförmigen Wissenschaftsbahn zusammen, die die Mission eigentlich haben will — alles zum Preis des kleinen Einfangmanövers, nicht des enormen Manövers, das ein vollständiges Abbremsen mit dem Triebwerk erfordern würde. Es ist eines der besten Treibstoffgeschäfte der Raumfahrt."
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "narrative_101.2",
+  "old": "Der Haken ist, dass es langsam und empfindlich ist. Wenn man zu flach eintaucht, passiert nichts; wenn man zu tief eintaucht, können die Hitze oder die aerodynamischen Kräfte das Raumschiff beschädigen oder zum Taumeln bringen. Die Flugleitung schiebt den tiefsten Punkt Pass für Pass nach oben und unten und navigiert monatelang durch einen engen Korridor zwischen ‚zu wenig' und ‚zu viel'.",
+  "new": "Der Haken: Es ist langsam und heikel. Taucht man zu flach ein, passiert nichts; taucht man zu tief ein, können die Hitze oder die aerodynamischen Kräfte das Raumschiff beschädigen oder ins Taumeln bringen. Die Flugleitung schiebt den tiefsten Punkt Durchgang für Durchgang nach oben und unten und fährt monatelang durch einen engen Korridor zwischen „zu wenig“ und „zu viel“."
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "body_paragraphs.0",
+  "old": "Aerobraking tauscht Treibstoff gegen Zeit und Geduld. Mars Global Surveyor, Mars Odyssey, Mars Reconnaissance Orbiter, MAVEN und Venus' Magellan nutzten es alle, um ihre endgültigen Umlaufbahnen zu erreichen und ersparten dabei Hunderte von Kilogramm Treibstoff, der sonst von der Erde hätte mitgenommen werden müssen — oft mehr als die eigene Trockenmasse des Raumschiffs.",
+  "new": "Aerobraking tauscht Treibstoff gegen Zeit und Geduld. Mars Global Surveyor, Mars Odyssey, Mars Reconnaissance Orbiter, MAVEN und Magellan an der Venus nutzten alle diese Technik, um ihre endgültigen Umlaufbahnen zu erreichen, und ersparten dabei Hunderte Kilogramm Treibstoff, der sonst von der Erde hätte mitgestartet werden müssen — oft mehr als die eigene Trockenmasse des Raumschiffs."
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "body_paragraphs.1",
+  "old": "Die Physik ist derselbe Luftwiderstand, der eine Sonde beim Eintritt abbremst, aber in winzigen, wiederholten Dosen bei Orbitalgeschwindigkeit statt eines einzigen heftigen Eintritts angewendet. Da das Raumschiff nur die äußerste, dünnste Luft berührt, verliert es bei jedem Durchgang nur einige wenige Meter pro Sekunde — aber Umlaufbahnen wiederholen sich, und der Effekt verstärkt sich. Solarpanels, die seitlich orientiert oder als Bremsflügel genutzt werden, tragen oft die Last.",
+  "new": "Die Physik ist derselbe Luftwiderstand, der eine Sonde beim Eintritt abbremst, nur in winzigen, wiederholten Dosen bei Orbitalgeschwindigkeit statt in einem einzigen heftigen Eintritt angewendet. Da das Raumschiff nur die äußerste, dünnste Luft streift, verliert es bei jedem Durchgang nur einige wenige Meter pro Sekunde — aber Umlaufbahnen wiederholen sich, und der Effekt summiert sich. Solarmodule, die mit der Kante zur Strömung gestellt oder als Bremsflächen genutzt werden, nehmen oft die Belastung auf."
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "body_paragraphs.2",
+  "old": "Aerocapture ist der kühnere Cousin: Abbremsen auf einem EINZIGEN tiefen Durchgang genug, um direkt vom Ankunftsflug in eine eingefangene Umlaufbahn zu gehen — ohne Bremsmanöver. Es würde noch mehr Treibstoff sparen, aber es erfordert einen Hitzeschild und Split-Second-Steuerung, und keine Mission hat es bisher geflogen — Aerobrakings geduldigere, risikoarme Version bleibt das Arbeitstier.",
+  "new": "Aerocapture ist die kühnere Verwandte: auf einem EINZIGEN tiefen Durchgang so stark abbremsen, dass man direkt von der Ankunft in eine Umlaufbahn eingefangen wird — ganz ohne Einfangmanöver. Das würde noch mehr Treibstoff sparen, erfordert aber einen Hitzeschild und eine Lenkung im Sekundenbruchteil, und bisher ist keine Mission damit geflogen — die geduldige, risikoarme Variante des Aerobraking bleibt das Arbeitspferd."
+ },
+ {
+  "rel": "science/mission-phases/aerobraking.json",
+  "at": "diagram_caption",
+  "old": "Aerobraking: Einfang in eine breite Ellipse, dann bei jedem Durchgang an der Periapsis in die obere Atmosphäre hineinfahren; jedes Eintauchen senkt die Apoapsis, bis die Umlaufbahn zirkulär ist.",
+  "new": "Aerobraking: Einfang in eine weite Ellipse, dann bei jedem Durchgang an der Periapsis die obere Atmosphäre streifen; jedes Eintauchen senkt die Apoapsis, bis die Umlaufbahn kreisförmig ist."
+ },
+ {
+  "rel": "science/mission-phases/antenna-arrays.json",
+  "at": "intro_sentence",
+  "old": "Die gleichzeitige Kombination von Signalen mehrerer Antennen erzeugt eine virtuelle Apertur, die größer ist als jede einzelne Schüssel und fängt schwächere Raumfahrzeugsignale ein.",
+  "new": "Werden Signale mehrerer Antennen in Echtzeit kombiniert, entsteht eine virtuelle Apertur, größer als jede Einzelschüssel — schwächere Signale lassen sich empfangen, ohne immer größere Bauwerke zu errichten."
+ },
+ {
+  "rel": "science/mission-phases/antenna-arrays.json",
+  "at": "body_paragraphs.0",
+  "old": "Eine einzelne große Antenne ist der offensichtliche Weg, um ein schwaches Raumfahrzeugsignal aus Milliarden Kilometern Entfernung zu empfangen. Die 70-m-Schüsseln des DSN — in Goldstone, Madrid und Canberra — sind an der praktischen Grenze für vollständig steuerbare, bodengestützte Reflektoren. Etwas deutlich Größeres würde eine feste Struktur (was die Himmelabdeckung einschränkt) oder noch nicht existierende Technik erfordern. Die Alternative ist die Kombination vieler kleinerer Antennen: Arraying.",
+  "new": "Eine einzelne große Antenne ist der naheliegende Weg, um ein schwaches Raumfahrzeugsignal aus Milliarden Kilometern Entfernung zu empfangen. Die 70-m-Schüsseln des DSN — in Goldstone, Madrid und Canberra — liegen nahe an der praktischen Grenze für vollständig steuerbare, bodengestützte Reflektoren. Etwas deutlich Größeres würde eine feste Struktur (was die Himmelsabdeckung einschränkt) oder noch nicht existierende Technik erfordern. Die Alternative ist die Kombination vieler kleinerer Antennen: Arraying."
+ },
+ {
+  "rel": "science/mission-phases/antenna-arrays.json",
+  "at": "body_paragraphs.2",
+  "old": "Die berühmteste Demonstration im Deep-Space-Betrieb ereignete sich während Voyager 2 Neptun-Vorbeiflug im August 1989. Bei 4,4 Milliarden Kilometern war Voyager Signal so schwach, dass sein Empfang mit voller wissenschaftlicher Datenrate das Arraying von Schüsseln auf vier Kontinenten gleichzeitig erforderte — die Goldstone 70 m und das Very Large Array in den USA, die 64-m-Antenne Canberra des DSN und das 64-m-Radioteleskop Parkes in Australien sowie Japans 64-m-Antenne Usuda. NASAs Arraying-Vereinbarung mit Nicht-NASA-Einrichtungen wie Parkes (betrieben von CSIRO) zeigte, dass das Deep-Space-Kommunikationsnetz bei kritischen Missionsmomente international ergänzt werden kann.",
+  "new": "Die berühmteste Demonstration im Deep-Space-Betrieb gelang beim Neptun-Vorbeiflug von Voyager 2 im August 1989. Bei 4,4 Milliarden Kilometern war das Signal von Voyager so schwach, dass sein Empfang mit voller wissenschaftlicher Datenrate das gleichzeitige Arraying von Schüsseln auf vier Kontinenten erforderte — die 70-m-Antenne in Goldstone und das Very Large Array in den USA, die 64-m-Antenne des DSN in Canberra und das 64-m-Radioteleskop Parkes in Australien sowie Japans 64-m-Antenne Usuda. NASAs Arraying-Vereinbarung mit Einrichtungen außerhalb der NASA wie Parkes (betrieben von der CSIRO) zeigte, dass das Deep-Space-Kommunikationsnetz in kritischen Missionsmomenten international erweitert werden kann."
+ },
+ {
+  "rel": "science/mission-phases/antenna-arrays.json",
+  "at": "diagram_caption",
+  "old": "N Schüsseln beobachten dasselbe Raumfahrzeug → Signale phasenausgerichtet und kohärent summiert → effektive Fläche = N × Einzelschüssel-Fläche → schwächere Signalschwelle erreichbar oder gleiche Schwelle mit kleineren Einzelschüsseln.",
+  "new": "N Schüsseln beobachten dasselbe Raumfahrzeug → Signale phasengleich ausgerichtet und kohärent summiert → effektive Fläche = N × Fläche einer Einzelschüssel → schwächere Signale nachweisbar, oder dieselbe Nachweisschwelle mit kleineren Einzelschüsseln."
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "title",
+  "old": "Aufstiegslenkung — der Computer, der eine Rakete zur Umlaufbahn fliegt",
+  "new": "Aufstiegslenkung — der Computer, der eine Rakete in die Umlaufbahn steuert"
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "intro_sentence",
+  "old": "Ins All zu kommen ist kein festes Programm, das man vorher schreiben kann – es ist ein Randwertproblem, das jede Sekunde neu gelöst wird, weshalb Raumfahrt auf den digitalen Computer warten musste.",
+  "new": "Der Weg in die Umlaufbahn ist kein festes Programm, das man vorab schreiben kann – er ist ein Randwertproblem, das jede Sekunde neu gelöst wird, weshalb die Raumfahrt auf den Digitalrechner warten musste."
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "narrative_101.0",
+  "old": "Eine zur Umlaufbahn aufsteigende Rakete muss eine exakte Endbedingung erfüllen: Bei Triebwerksabschaltung muss sie in der richtigen Höhe sein, sich horizontal bewegen und genau mit Orbitalgeschwindigkeit fliegen. Verfehle die Geschwindigkeit um wenig und die Bahn ist falsch oder das Fahrzeug fällt zurück. Aber die Rakete wird jede Sekunde leichter, während sie Treibstoff verbrennt, die Luft wird dünner, die Schwerkraft zieht, Winde stoßen – daher ist die »richtige« Richtung für das Triebwerk in jedem Moment anders und hängt von allem ab, was bisher geschah. Kein festes Anstellwinkel-Programm kann das Ziel exakt treffen.",
+  "new": "Eine zur Umlaufbahn aufsteigende Rakete muss eine exakte Endbedingung erfüllen: Bei Triebwerksabschaltung muss sie in der richtigen Höhe sein, sich horizontal bewegen und genau mit Orbitalgeschwindigkeit fliegen. Verfehlt sie die Geschwindigkeit nur wenig, ist die Bahn falsch oder das Fahrzeug fällt zurück. Aber die Rakete wird jede Sekunde leichter, weil sie Treibstoff verbrennt, die Luft wird dünner, die Schwerkraft zieht, Winde drücken – daher ist die „richtige“ Richtung für das Triebwerk in jedem Moment eine andere und hängt von allem ab, was bisher geschah. Kein fester Nickplan kann das Ziel exakt treffen."
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "narrative_101.1",
+  "old": "Früh im Flug, tief in der Atmosphäre, folgt die Rakete noch einem vorher geplanten Programm ohne Rückkopplung: Ein sanftes Nicken kurz nach dem Abheben beginnt eine Gravitationskurve, und das Fahrzeug hält eine glatte, vorher berechnete Fluglage, um die Aeroelastischen Lasten durch die dichte Luft gering zu halten. Doch sobald sie über der Atmosphäre ist, schaltet die Lenkung auf Rückkopplung um – sie misst, wo sie wirklich ist und wie schnell, berechnet die Lenkung, die die exakte Abschaltbedingung erfüllt, und aktualisiert diese Antwort viele Male pro Sekunde bis zur Umlaufbahn.",
+  "new": "Früh im Flug, tief in der Atmosphäre, folgt die Rakete tatsächlich einem vorab geplanten Programm ohne Rückkopplung: Eine sanfte Nickbewegung kurz nach dem Abheben leitet einen Gravity-Turn ein, und das Fahrzeug hält eine glatte, vorab berechnete Fluglage, um die aerodynamischen Lasten in der dichten Luft gering zu halten. Doch sobald sie über der Atmosphäre ist, schaltet die Lenkung auf Rückkopplung um – sie misst, wo sie tatsächlich ist und wie schnell, berechnet die Lenkung, die die exakte Abschaltbedingung erfüllt, und aktualisiert diese Antwort viele Male pro Sekunde bis zur Umlaufbahn."
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "narrative_101.2",
+  "old": "Dieses Rückkopplungsschema hat einen Namen – Powered Explicit Guidance (PEG) – und einen Vorgänger auf der Saturn V, den Iterative Guidance Mode (IGM) – und es ist der Grund, warum eine schwach schubende Oberstufe ihre Bahn unter den Horizont senken und dennoch rechtzeitig Orbitalgeschwindigkeit erreichen kann. Es ist buchstäblich der Grund, warum Raumfahrt bordeigene Computer brauchte: Ein Mensch kann das Problem nicht jede Sekunde neu lösen, aber der Bordcomputer tut es.",
+  "new": "Dieses rückgekoppelte Verfahren hat einen Namen – Powered Explicit Guidance (PEG) – und einen Vorgänger auf der Saturn V, den Iterative Guidance Mode (IGM) –, und es ist der Grund, warum eine schubschwache Oberstufe ihre Bahn unter den Horizont senken und dennoch rechtzeitig Orbitalgeschwindigkeit erreichen kann. Es ist buchstäblich der Grund, warum die Raumfahrt Bordcomputer brauchte: Ein Mensch kann das Problem nicht jede Sekunde neu lösen, aber der Bordcomputer tut es."
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "body_paragraphs.0",
+  "old": "Aufstiegslenkung ist eine zweiphasige Angelegenheit. In der atmosphärischen ersten Phase fliegt das Fahrzeug ohne Rückkopplung: Ein kleines Nicken kurz nach dem Freigeben des Turms leitet eine Gravitationskurve ein, danach hält es ein vorher berechnetes Anstellwinkel-Programm, das den Anstellwinkel nahe null hält, damit die aerodynamischen und strukturellen Lasten durch das Maximum der dynamischen Verschärfung begrenzt bleiben. Es gibt hier wenig Freiheit – die Luft bestimmt den Weg.",
+  "new": "Aufstiegslenkung ist eine zweiphasige Angelegenheit. In der ersten Phase in der Atmosphäre fliegt das Fahrzeug ohne Rückkopplung: Eine kleine Nickbewegung kurz nachdem es den Turm freigeflogen hat, leitet einen Gravity-Turn ein, danach hält es ein vorab berechnetes Nickprogramm, das den Anstellwinkel nahe null hält, damit die aerodynamischen und strukturellen Lasten bis zum maximalen Staudruck (Max-Q) begrenzt bleiben. Hier gibt es wenig Spielraum – die Luft bestimmt den Weg."
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "body_paragraphs.1",
+  "old": "Über der Atmosphäre wird die Lenkung geschlossen und explizit. Powered Explicit Guidance behandelt den verbleibenden Brennvorgang als Randwertproblem: Gegeben der aktuelle Zustand (Position, Geschwindigkeit, Masse, Schub) und der gewünschte Abschaltezustand (Zielflughöhe, Flugbahnwinkel, Orbitalgeschwindigkeit) berechnet es die optimale Lenkung – im Wesentlichen ein lineares Nickengesetz – und die verbleibende Zeit, dann löst das ganze Problem jeden Lenkungszyklus neu. Mit Fortschreiten des Brennvorgangs konvergiert die Lösung und die Befehle glätten sich; die Stufe kann sogar früh nach oben nicken, um Höhe zu gewinnen, dann nach unten nicken, um diese gegen Geschwindigkeit einzutauschen.",
+  "new": "Über der Atmosphäre wird die Lenkung rückgekoppelt und explizit. Powered Explicit Guidance behandelt den verbleibenden Brennvorgang als Randwertproblem: Aus dem aktuellen Zustand (Position, Geschwindigkeit, Masse, Schub) und dem gewünschten Abschaltzustand (Zielhöhe, Bahnneigungswinkel, Orbitalgeschwindigkeit) berechnet sie die optimale Lenkung – im Wesentlichen ein lineares Tangens-Nickgesetz – und die verbleibende Brennzeit und löst dann das ganze Problem in jedem Lenkungszyklus neu. Mit fortschreitendem Brennvorgang konvergiert die Lösung und die Befehle glätten sich; die Stufe kann sogar früh über die lokale Horizontale hinaus aufnicken, um Höhe anzusparen, und dann abnicken, um diese gegen Geschwindigkeit einzutauschen."
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "body_paragraphs.2",
+  "old": "Dies ist die Aufgabe des Bordcomputers, und sie erlaubt kein niedriges Schub-Gewichtsverhältnis einer Oberstufe, wo der Brennvorgang lang ist und die Randbedingung ein sich bewegendes Ziel während der ganzen Zeit ist. Die Saturn V flog IGM; Space Shuttle und SLS fliegen PEG, und die meisten modernen Oberstufen nutzen PEG-ähnliche Lenkung (SpaceX hat Falcon 9s exakten Algorithmus nicht veröffentlicht). Die »fliegende Computer«-Lektion der Physics Lab führt genau das aus – ein Programm ohne Rückkopplung übergeben an geschlossene-Schleifen-PEG, die den Bogen zur Umlaufbahn hochzieht.",
+  "new": "Das ist die Aufgabe des Bordcomputers, und sie ist besonders anspruchsvoll bei einer Oberstufe mit niedrigem Schub-Gewicht-Verhältnis, bei der der Brennvorgang lang ist und die Randbedingung die ganze Zeit ein bewegliches Ziel bleibt. Die Saturn V flog IGM; Space Shuttle und SLS fliegen PEG, und die meisten modernen Oberstufen nutzen Lenkung der PEG-Klasse (SpaceX hat den genauen Algorithmus der Falcon 9 nicht veröffentlicht). Die Lektion „fliegender Computer“ im Physics Lab führt genau das aus – ein Programm ohne Rückkopplung, das an die geschlossene PEG-Regelschleife übergibt, die den Bogen zur Umlaufbahn hochzieht."
+ },
+ {
+  "rel": "science/mission-phases/ascent-guidance.json",
+  "at": "diagram_caption",
+  "old": "Aufstiegslenkung: Ein Anstellwinkel-Programm ohne Rückkopplung durch die Atmosphäre übergeben an Rückkopplungs-PEG, die die Lenkung zur exakten Orbitalabschaltung jede Sekunde neu löst.",
+  "new": "Aufstiegslenkung: Ein Nickprogramm ohne Rückkopplung durch die Atmosphäre übergibt an die rückgekoppelte PEG, die die Lenkung zur exakten Orbitalabschaltung jede Sekunde neu löst."
+ },
+ {
+  "rel": "science/mission-phases/ballistic-coefficient.json",
+  "at": "intro_sentence",
+  "old": "Die eine Zahl — Masse geteilt durch Widerstandsfläche — die entscheidet, wie schnell ein Raumfahrzeug durch die Atmosphäre fällt und ob es rechtzeitig bremsen kann.",
+  "new": "Die eine Zahl — Masse geteilt durch Widerstandsfläche —, die entscheidet, wie schnell ein Raumfahrzeug durch eine Atmosphäre fällt und ob es rechtzeitig bremsen kann."
+ },
+ {
+  "rel": "science/mission-phases/ballistic-coefficient.json",
+  "at": "narrative_101.1",
+  "old": "Landeingenieure setzen enorme Anstrengungen darauf, den ballistischen Koeffizienten niedrig zu halten. Ein stumpfes Hitzeschild, ein riesiger Fallschirm, ein aufblasbarer Bremskörper — alle sind Wege, Widerstandsfläche hinzuzufügen, ohne viel Masse zu addieren, damit das Fahrzeug in größerer Höhe an Geschwindigkeit verliert, wo noch mehr Luftsäule zur Verfügung steht. Je größer und schwerer die Nutzlast, desto schwieriger wird dieser Kampf.",
+  "new": "Landeingenieure stecken enormen Aufwand in die Aufgabe, den ballistischen Koeffizienten niedrig zu halten. Ein stumpfer Hitzeschild, ein riesiger Fallschirm, ein aufblasbarer Bremskörper — alle sind Wege, die Widerstandsfläche zu vergrößern, ohne viel Masse hinzuzufügen, damit das Fahrzeug weiter oben an Geschwindigkeit verliert, wo noch mehr Luftsäule zur Verfügung steht. Je größer und schwerer die Nutzlast, desto schwieriger wird dieser Kampf."
+ },
+ {
+  "rel": "science/mission-phases/ballistic-coefficient.json",
+  "at": "narrative_101.2",
+  "old": "Das ist der stille Grund, warum Mars so schwierig ist. Seine Luft ist dünn, daher kann selbst ein großer Fallschirm an einem bescheidenen Lander die Geschwindigkeit nur begrenzt reduzieren — der ballistischer Koeffizient ist zu hoch, um nur durch Luftwiderstand zu bremsen. Jeder Mars-Lander braucht einen zweiten Akt (Retro-Raketen, Airbags, einen Sky-Crane), während eine leichte Sonde bei Venus in dichter Luft einfach auf dem Luftwiderstand herabschweben kann.",
+  "new": "Das ist der stille Grund, warum der Mars so schwierig ist. Seine Luft ist dünn, daher kann selbst ein großer Fallschirm an einem bescheidenen Lander die Geschwindigkeit nur begrenzt abbauen — der ballistische Koeffizient ist zu hoch, um allein durch Luftwiderstand zu bremsen. Jeder Mars-Lander braucht einen zweiten Akt (Bremsraketen, Airbags, einen Sky-Crane), während eine leichte Sonde an der Venus in dichter Luft allein durch den Luftwiderstand herabschweben kann."
+ },
+ {
+  "rel": "science/mission-phases/ballistic-coefficient.json",
+  "at": "body_paragraphs.0",
+  "old": "Formal ist der ballistischer Koeffizient Masse ÷ (Widerstandsbeiwert × Referenzfläche). Die Endgeschwindigkeit skaliert mit der Quadratwurzel, daher verringert eine Halbierung des ballistischen Koeffizienten die Fallgeschwindigkeit um etwa 30%. Sowohl Spitzenverzögerung als auch Spitzenerwärmung steigen damit — ein schwereres, kompakteres Eintrittsfahrzeug trifft die Atmosphäre härter und heißer, weshalb große Fahrzeuge das Schlimmste aus beiden Szenarien erleben.",
+  "new": "Formal ist der ballistische Koeffizient die Masse ÷ (Widerstandsbeiwert × Referenzfläche). Die Endgeschwindigkeit skaliert mit seiner Quadratwurzel, daher verringert eine Halbierung des ballistischen Koeffizienten die Fallgeschwindigkeit um etwa 30%. Sowohl Spitzenverzögerung als auch Spitzenerwärmung steigen mit ihm — ein schwereres, kompakteres Eintrittsfahrzeug trifft die Atmosphäre härter und heißer, weshalb große Fahrzeuge das Schlimmste aus beidem zu spüren bekommen."
+ },
+ {
+  "rel": "science/mission-phases/ballistic-coefficient.json",
+  "at": "body_paragraphs.1",
+  "old": "Er bestimmt auch WANN in der Abstiegsphasenablauf sich die Aktion ereignet. Ein Fahrzeug mit niedrigem ballistischen Koeffizienten verzögert hoch oben in dünner Luft, was mehr Zeit und Höhe für die Endphasen gibt. Ein hohes trägt seine Geschwindigkeit tief in die Atmosphäre, bis Luftwiderstand aufgeholt wird, was die gesamte Sequenz auf die letzten Kilometer komprimiert — exakt der Druck, der eine schwere Mars-Landung zu einem Wettlauf gegen den Boden macht.",
+  "new": "Er legt auch fest, WO im Abstieg sich das Geschehen abspielt. Ein Fahrzeug mit niedrigem ballistischem Koeffizienten verzögert hoch oben in dünner Luft, was mehr Zeit und Höhe für die Endphasen lässt. Eines mit hohem Koeffizienten trägt seine Geschwindigkeit tief in die Atmosphäre hinein, bevor der Luftwiderstand aufholt, und drängt die gesamte Sequenz auf die letzten Kilometer zusammen — genau die Zwickmühle, die eine schwere Marslandung zu einem Wettlauf gegen den Boden macht."
+ },
+ {
+  "rel": "science/mission-phases/ballistic-coefficient.json",
+  "at": "body_paragraphs.2",
+  "old": "Auf `/fly` ist der Unterschied über Körper hinweg sichtbar unter `?descent=1`. Ein leichter Mars-Lander unter einem großen Fallschirm (niedriger ballistischer Koeffizient) senkt sich sanft ab; ein 100-Tonnen-Starship (sehr hoch) muss propulsiv bremsen; eine Venus-Sonde in dichter Luft schwebt auf einer kleinen Widerstandsplatte herab. Gleiche Physik, drei ballististische Koeffizienten, drei völlig unterschiedliche Abstiege.",
+  "new": "Auf `/fly` ist der Unterschied zwischen den Himmelskörpern unter `?descent=1` sichtbar. Ein leichter Mars-Lander unter einem großen Fallschirm (niedriger ballistischer Koeffizient) setzt sanft auf; ein 100-Tonnen-Starship (sehr hoch) muss mit Triebwerken bremsen; eine Venus-Sonde in dichter Luft schwebt an einer kleinen Widerstandsplatte herab. Gleiche Physik, drei ballistische Koeffizienten, drei völlig unterschiedliche Abstiege."
+ },
+ {
+  "rel": "science/mission-phases/comms-blackout.json",
+  "at": "narrative_101.0",
+  "old": "Wenn eine Kapsel mit Orbitalgeschwindigkeit in die Atmosphäre schlägt, schiebt sie die Luft nicht zur Seite — dafür ist keine Zeit. Die Luft staut sich vor dem Hitzeschutzschild auf, wird komprimiert und auf tausende Grad erhitzt und beginnt zu leuchten. Diese leuchtende Hülle ist der Feuerball, den man am Himmel aufleuchten sieht. Aber sie ist nicht nur heiß: Sie ist ionisiert. Die Hitze reißt Elektronen aus den Luftmolekülen heraus, und eine Wolke freier Elektronen ist genau das, was eine Funkwelle nicht durchdringen kann.",
+  "new": "Wenn eine Kapsel mit Orbitalgeschwindigkeit in die Atmosphäre schlägt, schiebt sie die Luft nicht zur Seite — dafür ist keine Zeit. Die Luft staut sich vor dem Hitzeschutzschild auf, wird komprimiert, auf Tausende Grad erhitzt und beginnt zu leuchten. Diese leuchtende Hülle ist der Feuerball, den man über den Himmel ziehen sieht. Aber sie ist nicht nur heiß: Sie ist ionisiert. Die Hitze reißt Elektronen aus den Luftmolekülen heraus, und eine Wolke freier Elektronen ist genau das, was eine Funkwelle nicht durchdringen kann."
+ },
+ {
+  "rel": "science/mission-phases/comms-blackout.json",
+  "at": "narrative_101.2",
+  "old": "Der Blackout endet von allein: Wenn die Kapsel abbremst und in dichtere, kühlere Luft in größerer Tiefe sinkt, hört die Stoßschicht auf zu ionisieren, die Elektronenwolke lichtet sich, und die Funkverbindung schnellt zurück. Die Space Shuttle umging das Problem — sie funkte nach oben durch das dünnere Plasma auf ihrer Oberseite zu Relais­satelliten in der Umlaufbahn und hielt so eine Verbindung aufrecht, wenn ein nach unten gerichtetes Signal zur Bodenstation blockiert gewesen wäre.",
+  "new": "Der Blackout endet von allein: Wenn die Kapsel abbremst und weiter unten in dichtere, kühlere Luft sinkt, hört die Stoßschicht auf zu ionisieren, die Elektronenwolke lichtet sich, und die Funkverbindung ist schlagartig wieder da. Das Space Shuttle umging das Problem — es funkte nach oben durch das dünnere Plasma auf seiner Oberseite zu Relaissatelliten in der Umlaufbahn und hielt so eine Verbindung aufrecht, wo ein Signal nach unten zum Boden blockiert gewesen wäre."
+ },
+ {
+  "rel": "science/mission-phases/comms-blackout.json",
+  "at": "body_paragraphs.0",
+  "old": "Der Kommunikationsausfall wird durch die Plasmaschicht verursacht: Die Bugwelle vor einem stumpfen Eintrittskörper komprimiert und erhitzt das Gas so stark, dass es ionisiert wird und eine Schicht freier Elektronen um das Raumfahrzeug entsteht. Eine Funkwelle kann sich durch Plasma nur oberhalb der lokalen Plasmafrequenz ausbreiten, die mit der Elektronendichte skaliert; während des Erhitzungsspitzenwerts ist die Elektronendichte hoch genug, dass diese Grenzfrequenz über die Kommunikationsfrequenzen des Raumfahrzeugs ansteigt — das Signal wird reflektiert und gedämpft statt übertragen. Die Verbindung ist in beiden Richtungen unterbrochen.",
+  "new": "Der Kommunikationsausfall wird durch die Plasmaschicht verursacht: Die Bugwelle vor einem stumpfen Eintrittskörper komprimiert und erhitzt das Gas so stark, dass es ionisiert wird und eine Schicht freier Elektronen um das Raumfahrzeug entsteht. Eine Funkwelle kann sich durch Plasma nur oberhalb der lokalen Plasmafrequenz ausbreiten, die mit der Elektronendichte skaliert; bei der Spitzenerhitzung ist die Elektronendichte hoch genug, dass diese Grenzfrequenz über die Kommunikationsfrequenzen des Raumfahrzeugs ansteigt — das Signal wird reflektiert und gedämpft statt durchgelassen. Die Verbindung ist in beiden Richtungen unterbrochen."
+ },
+ {
+  "rel": "science/mission-phases/comms-blackout.json",
+  "at": "body_paragraphs.1",
+  "old": "Bei Kapseln, die zur Erde zurückkehren, umfasst der Blackout typischerweise das Höhenband von etwa 90 km bis auf etwa 40 km, dauert in der Größenordnung von 3–4 min und fällt mit der Spitzenerhitzung und der nahezu maximalen Verzögerung zusammen. Dauer und Stärke hängen von der Eintrittsgeschwindigkeit, der Fahrzeugform und der verwendeten Funkfrequenz ab — höhere Frequenzen dringen bei einer gegebenen Plasmadichte besser durch, und der Nachlauf hinter dem Raumfahrzeug ist weniger ionisiert als der Stagnationsbereich vor dem Schild. Schnellere Mondwiedereintrittsflüge erzeugten längere, vollständigere Blackouts als flachere LEO-Wiedereintrittsflüge.",
+  "new": "Bei Kapseln, die zur Erde zurückkehren, umfasst der Blackout typischerweise das Höhenband von etwa 90 km bis hinunter auf etwa 40 km, dauert in der Größenordnung von drei bis vier Minuten und fällt mit der Spitzenerhitzung und der nahezu maximalen Verzögerung zusammen. Dauer und Stärke hängen von der Eintrittsgeschwindigkeit, der Fahrzeugform und der verwendeten Funkfrequenz ab — höhere Frequenzen dringen bei einer gegebenen Plasmadichte besser durch, und der Nachlauf hinter dem Fahrzeug ist weniger ionisiert als der Staupunktbereich vor dem Schild. Die schnelleren Wiedereintritte bei der Rückkehr vom Mond erzeugten längere, vollständigere Blackouts als flache Rückkehren aus dem LEO."
+ },
+ {
+  "rel": "science/mission-phases/comms-blackout.json",
+  "at": "body_paragraphs.2",
+  "old": "Die klassische Gegenmaßnahme ist geometrischer Natur: Die Space Shuttle leitete die Kommunikation über TDRS-Satelliten im Zenit weiter und sendete durch das dünnere Plasma auf ihrer Oberseite, statt durch die dichte Hülle nach unten zu einer Bodenstation. In `/fly` markiert das Wiedereintritts-HUD das Blackout-Fenster explizit — die Plasma-Kontrollleuchte leuchtet während der Phase maximaler Erhitzung auf, dem einzigen Abschnitt des Abstiegs, in dem die Telemetrie, die man gerade beobachtet, bei einer echten Mission dunkel gewesen wäre.",
+  "new": "Die klassische Gegenmaßnahme ist geometrischer Natur: Das Space Shuttle leitete die Kommunikation über TDRS-Satelliten über sich weiter und sendete durch das dünnere Plasma über seiner Oberseite, statt durch die dichte Hülle nach unten zu einer Bodenstation. Auf `/fly` markiert das Wiedereintritts-HUD das Blackout-Fenster ausdrücklich — die Plasma-Kontrollleuchte leuchtet während der Phase der Spitzenerhitzung auf, dem einzigen Abschnitt des Abstiegs, in dem die Telemetrie, die man gerade beobachtet, bei einer echten Mission dunkel gewesen wäre."
+ },
+ {
+  "rel": "science/mission-phases/dead-reckoning.json",
+  "at": "intro_sentence",
+  "old": "Integrieren Sie die Beschleunigungsmesser, um Geschwindigkeit zu erhalten, wieder in Position zu integrieren — arbeitet für Stunden, driftet spürbar über Tage, und ist genau, warum jede Kreuzfahrt regelmäßige bodenbasierte Fixes benötigt.",
+  "new": "Beschleunigungsmesser integrieren ergibt die Geschwindigkeit, nochmals integrieren die Position — das trägt über Stunden, driftet über Tage spürbar und ist der Grund, warum jeder Reiseflug regelmäßig Positionsfixes vom Boden braucht."
+ },
+ {
+  "rel": "science/mission-phases/dead-reckoning.json",
+  "at": "body_paragraphs.0",
+  "old": "Zwischen Verbrennungen und außerhalb des Bereichs der nützlichen himmlischen Landmarken verfolgt ein Raumfahrzeug seinen eigenen Zustand, indem es die Leistung seiner inertialen Messeinheit (IMU) integriert: drei Beschleunigungsmesser, die lineare Beschleunigung messen, drei Gyroskope die Drehrate. Integration der Beschleunigung einmal → Geschwindigkeit. Wieder integrieren → Position. Kombiniert mit der Orientierung von [Sterne-Trackern](Missionsphasen/Stern-Trackern) kann das Raumfahrzeug seinen vollen Zustandsvektor zeitweise ohne externe Hilfe propagieren.",
+  "new": "Zwischen den Triebwerkszündungen und außerhalb der Reichweite brauchbarer Orientierungspunkte am Himmel verfolgt ein Raumfahrzeug seinen eigenen Zustand, indem es die Ausgabe seiner inertialen Messeinheit (IMU) integriert: drei Beschleunigungsmesser, die die lineare Beschleunigung messen, und drei Gyroskope, die die Drehrate messen. Die Beschleunigung einmal integrieren → Geschwindigkeit. Nochmals integrieren → Position. Zusammen mit der Ausrichtung von den [Star-Trackern](mission-phases/star-trackers) kann das Raumfahrzeug seinen vollständigen Zustandsvektor ohne jede äußere Hilfe in der Zeit vorwärts fortschreiben."
+ },
+ {
+  "rel": "science/mission-phases/dead-reckoning.json",
+  "at": "body_paragraphs.1",
+  "old": "Das grundlegende Problem ist **drift*. Jedes Beschleunigungsmesser hat eine kleine Vorspannung (~10-5 m/s2 auf einer Navigationsklasse IMU); über 1 Tag, dass Bias integriert zweimal trägt ~3,7 km Positionsfehler. Über eine 6-monatige Kreuzfahrt zum Mars baut sich der tödliche Fehler bis zu Tausenden von Kilometern auch mit den besten raumbewerteten IMUs (die weit besser sind als die verbrauchergerechten in Ihrem Telefon). Deshalb trägt jede interplanetäre Mission [Trajektorienkorrekturmanöver](Missionsphasen/tcm) auf ihrem Budget: die Kreuzfahrtdispersion muss gegen Bodenverfolgung gemessen werden und das Raumfahrzeug muss seinen Kurs physisch anpassen.",
+  "new": "Das grundlegende Problem ist die **Drift**. Jeder Beschleunigungsmesser hat einen kleinen Bias (~10⁻⁵ m/s² bei einer IMU der Navigationsklasse); über 1 Tag zweimal integriert, ergibt dieser Bias ~3,7 km Positionsfehler. Auf einem 6-monatigen Reiseflug zum Mars wächst der Koppelnavigationsfehler selbst mit den besten weltraumtauglichen IMUs (die weit besser sind als die handelsüblichen in Ihrem Telefon) auf Tausende Kilometer an. Deshalb hat jede interplanetare Mission [Bahnkorrekturmanöver](mission-phases/tcm) in ihrem Budget: Die Abweichung auf dem Reiseflug muss gegen die Bodenverfolgung gemessen werden, und das Raumfahrzeug muss seinen Kurs tatsächlich korrigieren."
+ },
+ {
+  "rel": "science/mission-phases/dead-reckoning.json",
+  "at": "body_paragraphs.2",
+  "old": "Moderne bewährte Praxis kombiniert Totschlag mit periodischem Deep Space Network (siehe [DSN](Mission-Phasen/dsn)): Der Boden misst die Position auf ~1 km Genauigkeit über Rundweg-Lichtzeit und Doppler, erhöht einen korrigierten Zustand, und das Raumfahrzeug startet seine Ausbreitung von einer bekannten guten Fixierung. Das kombinierte System ist viel genauer als jede Komponente allein. Star-Tracker erzählen dem Raumschiff, wie es zeigt; die IMU sagt es, was zwischen Fixes passiert; die DSN sagt es, wo es tatsächlich ist.",
+  "new": "Die heutige bewährte Praxis kombiniert Koppelnavigation mit regelmäßiger Entfernungsmessung über das Deep Space Network (siehe [DSN](mission-phases/dsn)): Der Boden misst die Position über die Hin-und-Rück-Lichtlaufzeit und den Doppler-Effekt auf ~1 km genau, sendet einen korrigierten Zustand per Uplink, und das Raumfahrzeug beginnt seine Fortschreibung von einer verlässlichen Positionsbestimmung neu. Das kombinierte System ist weit genauer als jede Komponente allein. Die Star-Tracker sagen dem Raumfahrzeug, wohin es zeigt; die IMU sagt ihm, was zwischen den Positionsbestimmungen geschieht; das DSN sagt ihm, wo es tatsächlich ist."
+ },
+ {
+  "rel": "science/mission-phases/dead-reckoning.json",
+  "at": "body_paragraphs.3",
+  "old": "Totschlag ist am meisten, wenn die DSN nicht verfügbar ist — während einer Mars-EDL-Kommunikation Blackout, während der ~22-minütigen Einweg-Lichtverzögerung nach Jupiter und darüber hinaus, oder während einer Haltungskontrollkrise. Jedes Raumfahrzeug-Autonomiesystem ist im Wesentlichen ein staatlicher Propagator, der auf dem Absturz läuft, während Bodenoperationen an der Erholung arbeiten.",
+  "new": "Koppelnavigation ist dann am wichtigsten, wenn das DSN nicht verfügbar ist — während eines Kommunikations-Blackouts bei der Mars-EDL, während der ~22-minütigen einfachen Lichtlaufzeit nach Jupiter und darüber hinaus oder bei einer Krise der Lageregelung. Jedes Autonomiesystem eines Raumfahrzeugs ist im Wesentlichen ein Zustandsvektor-Propagator, der auf Koppelnavigation läuft, während der Bodenbetrieb an der Wiederherstellung arbeitet."
+ },
+ {
+  "rel": "science/mission-phases/dead-reckoning.json",
+  "at": "diagram_caption",
+  "old": "Beschleunigungsmesser + Gyro → integrieren → Zustandsvektor → Drift über Tage ohne externe Fix → warum TCMs existieren. DSN-Bereich + Doppler setzt die Drift zurück.",
+  "new": "Beschleunigungsmesser + Gyro → integrieren → Zustandsvektor → driftet über Tage ohne äußere Positionsbestimmung → deshalb gibt es TCMs. DSN-Entfernungsmessung + Doppler setzt die Drift zurück."
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "title",
+  "old": "Deorbit & der Wiedereintritts-Korridor",
+  "new": "Deorbit und der Wiedereintrittskorridor"
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "narrative_101.0",
+  "old": "Im Orbit zu sein bedeutet, schnell genug seitwärts zu fliegen, dass man den Boden immer verfehlt. Um heimzukehren, zielt man nicht nach unten und taucht — man bremst. Ein kurzer retrograder Zündimpuls, bei dem das Triebwerk entgegen der Flugrichtung feuert, reduziert die Geschwindigkeit um nur etwa hundert Meter pro Sekunde. Das genügt: der untere Scheitelpunkt der Umlaufbahn taucht nun in die obere Atmosphäre ein, und ab dort übernimmt die Luft das weitere Abbremsen.",
+  "new": "Im Orbit zu sein bedeutet, so schnell seitwärts zu fliegen, dass man den Boden immer verfehlt. Um heimzukehren, zielt man nicht nach unten und taucht — man bremst. Ein kurzer retrograder Zündimpuls, bei dem das Triebwerk entgegen der Flugrichtung feuert, reduziert die Geschwindigkeit um nur etwa hundert Meter pro Sekunde. Das genügt: Der tiefste Punkt der Umlaufbahn taucht nun in die obere Atmosphäre ein, und von dort übernimmt die Luft das weitere Abbremsen."
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "narrative_101.1",
+  "old": "Das Problem ist der Ankunftswinkel. Tritt man zu flach ein, streift die Kapsel die Atmosphäre wie ein über einen Teich geworfener Stein — sie springt zurück ins All, und die Besatzung dreht eine weitere Runde, für die Luft und Strom womöglich nicht mehr reichen. Tritt man zu steil ein, bremst die Luft so heftig, dass die Verzögerung die Besatzung niederdrückt und der Hitzeschutzschild die Wärme nicht schnell genug ableiten kann. Zwischen diesen beiden Versagensmodi liegt ein sicheres Band — der Wiedereintritts-Korridor — der bei Kapseln, die vom Mond zurückkehren, berühmt weniger als zwei Grad breit war.",
+  "new": "Das Problem ist der Ankunftswinkel. Tritt man zu flach ein, streift die Kapsel die Atmosphäre wie ein über einen Teich geworfener Stein — sie springt zurück ins All, und die Besatzung dreht eine weitere Runde, für die Luft und Strom womöglich nicht mehr reichen. Tritt man zu steil ein, bremst die Luft so heftig, dass die Verzögerung die Besatzung zerquetscht und der Hitzeschild die Wärme nicht schnell genug ableiten kann. Zwischen diesen beiden Versagensfällen liegt ein sicheres Band — der Wiedereintrittskorridor —, und bei einer Kapsel, die vom Mond zurückkehrt, war es bekanntermaßen weniger als zwei Grad breit."
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "narrative_101.2",
+  "old": "Die gesamte Heimkehr ist daher ein Zielproblem, das noch vor dem Zündimpuls gelöst sein muss. Werden Größe und Timing des Deorbit-Burns richtig bestimmt, fädelt die Kapsel den Korridor ein: steil genug, um nicht abzuhüpfen, flach genug, um zu überleben. Alles nach der Eintrittsschnittstelle — der Feuerball, der Kommunikationsausfall, die Fallschirme — ist nur noch Physik, die eine Bahn abarbeitet, die in dem Moment festgeschrieben wurde, als das Triebwerk ausging.",
+  "new": "Die gesamte Heimkehr ist also ein Zielproblem, das gelöst wird, bevor die Zündung überhaupt stattfindet. Stimmen Größe und Zeitpunkt der Deorbit-Zündung, fädelt die Kapsel durch den Korridor: steil genug, um nicht abzuhüpfen, flach genug, um zu überleben. Alles nach der Eintrittsschnittstelle — der Feuerball, der Blackout, die Fallschirme — ist nur noch Physik, die einen Weg abarbeitet, der in dem Moment festgelegt wurde, als das Triebwerk abschaltete."
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "body_paragraphs.0",
+  "old": "Der Deorbit ist ein retrograder Impuls, der das Perigäum von der Orbithöhe bis in die spürbare Atmosphäre absenkt — bei einer Kapsel im niedrigen Erdorbit wird das Perigäum mit einem Brennstoßdelta von nur ~100 m/s auf etwa 40–60 km abgesenkt. Das Raumfahrzeug gleitet dann antriebslos bis zur Eintrittsschnittstelle bei etwa 122 km, wo aerodynamische Kräfte übernehmen. Die einzige Zahl, die über sein Schicksal entscheidet, ist der Eintrittsfluggradwinkel γ: wie weit unterhalb der lokalen Horizontalen der Geschwindigkeitsvektor beim Überschreiten dieser Schnittstelle zeigt.",
+  "new": "Der Deorbit ist ein retrograder Impuls, der das Perigäum von der Orbithöhe bis in die nennenswerte Atmosphäre absenkt — bei einer Kapsel in einer niedrigen Erdumlaufbahn sinkt das Perigäum durch ein Manöver von nur ~100 m/s auf etwa 40–60 km. Das Fahrzeug gleitet dann antriebslos bis zur Eintrittsschnittstelle bei etwa 122 km, wo die aerodynamischen Kräfte übernehmen. Die eine Zahl, die über sein Schicksal entscheidet, ist der Eintrittsbahnwinkel: wie weit unterhalb der lokalen Horizontalen der Geschwindigkeitsvektor beim Überschreiten dieser Schnittstelle zeigt."
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "body_paragraphs.1",
+  "old": "Der Korridor ist auf beiden Seiten begrenzt. Die obere (flache) Grenze wird durch den Abprallfall bestimmt: Es wird zu wenig Atmosphäre durchdrungen, der Luftwiderstand kann das Raumfahrzeug nicht einfangen, und es kehrt ins All zurück. Die untere (steile) Grenze ist durch die überlebbaren Grenzwerte gesetzt — sowohl die Spitzenverzögerung als auch die Spitzenheiztrate steigen mit dem Eintrittwinkel stark an. Eine ballistische Kapsel beim LEO-Wiedereintritt bei einigen Grad zieht etwa 8 g; ein rein ballistischer Wiedereintritt von einem Mondflug würde 20 g überschreiten, weshalb Apollo einen auftriebserzeugenden Wiedereintritt flog, bei dem der versetzte Schwerpunkt der Kapsel leichten Auftrieb erzeugte und den Korridor auf überlebbare ~6–7 g ausdehnte. Steiler ist kürzer und heißer; flacher ist länger und sanfter, birgt aber das Risiko des Abprallens.",
+  "new": "Der Korridor ist auf beiden Seiten begrenzt. Die obere (flache) Grenze wird durch das Abprallen (Skip-out) bestimmt: Es wird zu wenig Atmosphäre durchquert, der Luftwiderstand kann das Fahrzeug nicht einfangen, und es kehrt ins All zurück. Die untere (steile) Grenze wird durch das Überlebbare bestimmt — sowohl die Spitzenverzögerung als auch die Spitzen-Heizrate steigen mit dem Eintrittswinkel stark an. Eine ballistische Kapsel beim Eintritt aus dem LEO mit einigen Grad zieht etwa 8 g; ein rein ballistischer Wiedereintritt bei der Rückkehr vom Mond würde 20 g überschreiten, weshalb Apollo einen Eintritt mit Auftrieb flog, bei dem der versetzte Schwerpunkt der Kapsel etwas Auftrieb erzeugte und den Korridor auf überlebbare ~6–7 g aufweitete. Steiler ist kürzer und heißer; flacher ist länger und sanfter, birgt aber das Risiko des Abprallens."
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "body_paragraphs.2",
+  "old": "In `/fly` spielt der Wiedereintritts-Akt dies nach: Der Eintrittsfluggradwinkel ist im Profil jeder Mission hinterlegt, und die Drag-Science-Lens-Ebene zeigt den Verzögerungsspitzenwert, der ansteigt und wieder abfällt, wenn die Kapsel den Höhepunkt der Erhitzung und der maximalen Verzögerung durchquert. Vergleiche einen flachen, auftriebserzeugenden Wiedereintritt mit einem steilen ballistischen — der Korridor-Trade-off ist im g-Last-Verlauf sichtbar: derselbe Kompromiss, den jede heimkehrende Besatzung seit Gagarin geritten hat.",
+  "new": "Auf `/fly` spielt der Wiedereintritts-Akt dies durch: Der Eintrittsbahnwinkel ist im Profil jeder Mission festgelegt, und die Widerstandsebene der Science-Lens zeigt, wie die Verzögerungsspitze anwächst und wieder abklingt, wenn die Kapsel Spitzenerhitzung und Spitzen-g durchquert. Vergleiche einen flachen Eintritt mit Auftrieb mit einem steilen ballistischen — die Logik des Korridors ist im Verlauf der g-Last sichtbar: derselbe Zielkonflikt, den jede heimkehrende Besatzung seit Gagarin durchlebt hat."
+ },
+ {
+  "rel": "science/mission-phases/deorbit-corridor.json",
+  "at": "diagram_caption",
+  "old": "Der Wiedereintritts-Korridor: ein retrograder Deorbit-Brennstoß senkt das Perigäum in die Atmosphäre; zu flach springt zurück ins All, zu steil überschreitet die g-Last- und Erhitzungsgrenzwerte, und ein schmales Band dazwischen ist überlebbar.",
+  "new": "Der Wiedereintrittskorridor: Eine retrograde Deorbit-Zündung senkt das Perigäum in die Atmosphäre; zu flach springt zurück ins All, zu steil überschreitet die Grenzen für g-Last und Erhitzung, und ein schmales Band dazwischen ist überlebbar."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "intro_sentence",
+  "old": "Drei riesige Antennenkomplexe, die 120° um die Erde verteilt sind — Goldstone, Madrid, Canberra — bieten ständige Abdeckung jedes Raumfahrzeugs jenseits der niedrigen Erdorbit.",
+  "new": "Drei riesige Antennenkomplexe, die im Abstand von 120° rund um die Erde verteilt sind — Goldstone, Madrid, Canberra — sorgen für lückenlose Abdeckung jedes Raumfahrzeugs jenseits der niedrigen Erdumlaufbahn."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "body_paragraphs.0",
+  "old": "Das Deep Space Network macht interplanetäre Raumflight lesbar. Ohne sie würde das Raumschiff noch fliegen (tot-reckoning + autonom nav kann eine Mission zusammen für Wochen halten), aber niemand auf der Erde würde wissen, wo es war, was es tat, oder was es lernte. Das DSN ist das Nabel für jede NASA-Mission am Mond und ein Vertragspartner für ESA, JAXA und ISRO-Tiefraummissionen.",
+  "new": "Das Deep Space Network macht interplanetare Raumfahrt erst nachvollziehbar. Ohne es würde das Raumfahrzeug zwar weiterfliegen (Koppelnavigation + autonome Navigation können eine Mission wochenlang zusammenhalten), aber niemand auf der Erde wüsste, wo es ist, was es tut oder was es lernt. Das DSN ist die Nabelschnur für jede NASA-Mission jenseits des Mondes und ein Vertragspartner für die Tiefraummissionen von ESA, JAXA und ISRO."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "body_paragraphs.1",
+  "old": "Drei Antennenkomplexe mit einem Abstand von 120° rund um den Globus — Goldstone (Kalifornien), Madrid (Spanien), Canberra (Australien) — sorgen dafür, dass jedes Raumschiff jenseits von GEO in Übereinstimmung mit mindestens einem Komplex zu jeder Zeit steht, wenn die Erde dreht. Jeder Komplex verfügt über mehrere Antennen, der Marquee ist die 70 m \"großen Gerichte\" (DSS-14, DSS-43, DSS-63). Kleinere 34 m Antennen behandeln den modernsten Verkehr.",
+  "new": "Drei Antennenkomplexe im Abstand von 120° rund um den Globus — Goldstone (Kalifornien), Madrid (Spanien), Canberra (Australien) — stellen sicher, dass jedes Raumfahrzeug jenseits von GEO, während sich die Erde dreht, zu jeder Zeit in Sichtverbindung mit mindestens einem Komplex steht. Jeder Komplex verfügt über mehrere Antennen, die Paradestücke sind die 70-m-„großen Schüsseln“ (DSS-14, DSS-43, DSS-63). Kleinere 34-m-Antennen wickeln den Großteil des heutigen Datenverkehrs ab."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "body_paragraphs.2",
+  "old": "Drei Operationen sind wichtig. **Telemetrie**: erhalten wissenschaftliche Daten aus dem Raumfahrzeug (die langsame Verbindung, Megabits zu einigen hundert Mbits vom Mars; Zehn Bits/s von Voyager bei 24 Milliarden km). **Befehle**: Uplink-Anweisungen an das Raumfahrzeug (codiert für Strahlungshärte; für Sicherheit signiert). **Tracking**: Messen Sie die Rundstreifenlichtzeit und die Dopplerverschiebung auf dem Trägersignal – diese zeigen gemeinsam die Raumfahrzeuge auf eine Genauigkeit von ~1 m und ~0,1 mm/s. Dort ist das Raumschiff mit Kilometer-Klassengenauigkeit über Hunderte von Millionen Kilometern leeren Raums.",
+  "new": "Drei Aufgaben sind wichtig. **Telemetrie**: wissenschaftliche Daten und Betriebsdaten vom Raumfahrzeug empfangen (die langsame Verbindung, Megabit bis einige hundert Mbit vom Mars; Zehner-Bit/s von Voyager in 24 Milliarden km Entfernung). **Befehle**: Anweisungen per Uplink an das Raumfahrzeug senden (strahlungsfest codiert; zur Sicherheit signiert). **Tracking**: die Hin-und-Rück-Lichtlaufzeit und die Dopplerverschiebung des Trägersignals messen — zusammen verraten sie Entfernung und Entfernungsänderung des Raumfahrzeugs auf ~1 m und ~0,1 mm/s genau. So weiß man, wo das Raumfahrzeug ist, auf Kilometer genau über Hunderte Millionen Kilometer leeren Raums."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "body_paragraphs.3",
+  "old": "Erweiterte Techniken Schicht oben. **Delta-DOR** (Delta-Differential One-way Range) verwendet zwei Antennen, die das gleiche Raumfahrzeug + einen nahe gelegenen Quasar gleichzeitig betrachten; das differentielle Timing gibt Winkelposition zu Nanoradianern. Mars EDL Navigation trifft jetzt routinemäßig auf ~100 m Landing-ellipse Genauigkeit auf was im Wesentlichen eine mehrmonatige Küste bei 30.000 km/h ist. Das DSN ist der Grund.",
+  "new": "Darauf bauen fortgeschrittene Verfahren auf. **Delta-DOR** (Delta-Differential One-way Range) nutzt zwei Antennen, die gleichzeitig dasselbe Raumfahrzeug und einen nahen Quasar anpeilen; aus der Differenz der Laufzeiten ergibt sich die Winkelposition auf Nanoradiant genau. Die Mars-EDL-Navigation erreicht inzwischen routinemäßig eine Genauigkeit der Landeellipse von ~100 m, bei einem im Wesentlichen mehrmonatigen antriebslosen Flug mit 30.000 km/h. Das DSN ist der Grund dafür."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "diagram_caption",
+  "old": "Goldstone + Madrid + Canberra in 120 Intervallen → kontinuierliche Abdeckung, da die Erde sich dreht → Bereich + Doppler + delta-DOR → Kilometer-Klasse Raumfahrzeug Position über das Sonnensystem.",
+  "new": "Goldstone + Madrid + Canberra im Abstand von 120° → lückenlose Abdeckung, während sich die Erde dreht → Entfernungsmessung + Doppler + Delta-DOR → kilometergenaue Position von Raumfahrzeugen im ganzen Sonnensystem."
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "intro_sentence",
+  "old": "Sieben Minuten von Atmosphärenoberkante zu Räder-am-Boden — die automatisierteste, geringste-Marge-Phase jeder Planetenmission.",
+  "new": "Sieben Minuten von der Atmosphärenobergrenze bis zum Aufsetzen — die am stärksten automatisierte Phase einer Planetenmission, mit den geringsten Reserven."
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "narrative_101.0",
+  "old": "Mars ist 14 Lichtminuten weg. Bis das Signal des Rovers Mission Control erreicht, ist der Rover seit 14 Minuten am Boden — lebt oder tot. Niemand auf der Erde fliegt eine Marslandung. Die Sonde tut es allein, autonom, in ~7 Minuten, hunderte beweglicher Teile, null zweite Chancen.",
+  "new": "Der Mars ist 14 Lichtminuten entfernt. Bis das Signal des Rovers Mission Control erreicht, steht der Rover schon seit 14 Minuten am Boden — lebendig oder tot. Niemand auf der Erde fliegt eine Marslandung. Das Raumfahrzeug erledigt das selbst, autonom, in ~7 Minuten, mit Hunderten beweglicher Teile und ohne zweite Chance."
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "narrative_101.1",
+  "old": "Schritt 1: Atmosphäre treffen mit ~5,8 km/s. Hitzeschild handhabt glühende Temperaturen. Schritt 2: Überschall-Fallschirm bei Mach 2 deployen. Schritt 3: Schild ab, Schirm ab, Retroraketen feuern. Schritt 4: Touchdown.",
+  "new": "Schritt eins: mit ~5,8 km/s auf die Atmosphäre treffen; der Hitzeschild hält glühende Temperaturen aus. Schritt zwei: bei Mach 2 einen Fallschirm entfalten — ja, bei Überschall. Schritt drei: Schild und Schirm abwerfen, Bremsraketen zünden. Schritt vier: Aufsetzen."
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "narrative_101.2",
+  "old": "Verschiedene Missionen, verschiedene Tricks. Apollo schoss seine Abstiegsrakete einfach die ganze Strecke hinunter. Curiosity und Perseverance setzten auf den wirklich verrückten Sky Crane: eine raketenbetriebene Plattform, die 20 Meter über dem Boden schwebte und den Rover an drei Kabeln herabließ, um sich dann selbst davonzumachen. Chinas Zhurong machte eine Hybrid-Variante. Die sieben Minuten heißen bei JPL „die sieben Minuten des Terrors\", weil in dieser Zeit niemand etwas tun kann. Der Simulator hat die Mathematik durchgerechnet; man vertraut dem Simulator.",
+  "new": "Andere Missionen, andere Tricks. Apollo zündete einfach sein Abstiegstriebwerk die ganze Strecke nach unten. Curiosity und Perseverance setzten auf den wirklich verrückten Sky Crane: eine raketengetriebene Plattform, die 20 Meter über dem Boden schwebte und den Rover an drei Kabeln herabließ, um sich dann selbst davonzufliegen. Chinas Zhurong wählte eine Mischform. Die sieben Minuten heißen im JPL „die sieben Minuten des Terrors“, weil in dieser Zeit niemand etwas tun kann. Der Simulator hat die Mathematik durchgerechnet; man vertraut dem Simulator."
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "body_paragraphs.0",
+  "old": "Entry beginnt bei spürbarer Atmosphäre — ~125 km am Mars, 100 km Erde. Atmosphärenwiderstand bremst; Motoren aus. Hitzeschild ertragen tausend Grad, Aeroshell hält Form, Trajektorie ballistisch.",
+  "new": "Der Eintritt beginnt an nennenswerter Atmosphäre — am Mars in etwa 125 km, an der Erde in 100 km Höhe. Ab da bremst der Luftwiderstand, die Triebwerke schweigen. Der Hitzeschild hält Tausende Grad aus, die Aeroshell die Form, die Bahn ist ballistisch."
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "body_paragraphs.1",
+  "old": "Descent: Überschallfallschirme bei Mach 1,5-2. Großer Geschwindigkeitsabbau. Aber Fallschirme allein nicht weich. Mars: supersonisch zu subsonisch per Schirm, dann powered descent: Schild ab, Retros zünden, letzte hundert Meter auf Triebwerksstrahlen.",
+  "new": "Der Abstieg beginnt, wenn sich bei etwa Mach 1,5-2 Überschallfallschirme öffnen. Sie nehmen viel Geschwindigkeit weg, doch allein reichen sie in dünner Luft nicht für eine weiche Landung. Am Mars folgt der Antriebsabstieg: Schild ab, Bremsraketen zünden, die letzten paar hundert Meter fällt der Lander auf Triebwerksstrahlen."
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "body_paragraphs.2",
+  "old": "Curiosity und Perseverance setzten den Sky Crane ein: schwebend in ~20 m Höhe, den Rover an Kabeln bis zur Bodenberührung hinablassen, die Abstiegsstufe dann wegfliegen. Apollo verbrannte seinen Treibstoff direkt bis zur Oberfläche. Chinas Zhurong verwendete ein Hybrid-Hover-/Absinkverfahren. Verschiedene Planeten, verschiedene Atmosphären, verschiedene Verfahren – dieselben sieben Minuten.",
+  "new": "Curiosity und Perseverance setzten den Sky Crane ein: in ~20 m Höhe schweben, den Rover an Kabeln bis zur Bodenberührung hinablassen und die Abstiegsstufe dann wegfliegen. Apollo flog mit direktem Raketenschub bis zur Oberfläche. Chinas Zhurong nutzte ein hybrides Schwebe-und-Absenk-Verfahren. Andere Planeten, andere Atmosphären, andere Verfahren – dieselben sieben Minuten."
+ },
+ {
+  "rel": "science/mission-phases/edl.json",
+  "at": "diagram_caption",
+  "old": "EDL-Sequenz: Entry (Hitzeschild) → Fallschirm → Powered Descent → Touchdown.",
+  "new": "EDL-Sequenz: Eintritt (Hitzeschild) → Fallschirm → Antriebsabstieg → Aufsetzen."
+ },
+ {
+  "rel": "science/mission-phases/entry-footprint.json",
+  "at": "intro_sentence",
+  "old": "Eine wiedereintretende Kapsel wird nicht wie ein Pfeil auf einen Punkt gezielt — ihr Auftrieb gibt ihr eine ganze erreichbare Fläche, den „Fußabdruck\", und der Bordcomputer wählt eine Landestelle darin.",
+  "new": "Eine wiedereintretende Kapsel wird nicht wie ein Pfeil auf einen Punkt gezielt — ihr Auftrieb verschafft ihr eine erreichbare Fläche am Boden, den „Fußabdruck“; der Bordcomputer wählt darin eine Landestelle, indem er den Auftrieb einteilt."
+ },
+ {
+  "rel": "science/mission-phases/entry-footprint.json",
+  "at": "narrative_101.0",
+  "old": "Sobald eine Kapsel sich zum Wiedereintritt verpflichtet, kann sie keine Energie mehr hinzufügen — keine Triebwerke, kein Durchstarten. Aber sie ist nicht hilflos bezüglich des ORTES, wo sie herunterkommt. Indem sie rollt, um ihren Auftrieb nach oben zu richten, verlängert sie den Gleitflug und fliegt weit; indem sie den Auftrieb nach unten richtet, stürzt sie ab und landet kurz; durch Querneigung nach links oder rechts bewegt sie sich seitlich. Die Menge aller Orte, die sie erreichen könnte, gegeben ihre Geschwindigkeit und ihren Auftrieb, ist ein Fleck am Boden in Form einer gestreckten Träne — der Landefußabdruck.",
+  "new": "Sobald sich eine Kapsel zum Wiedereintritt entschlossen hat, kann sie keine Energie mehr hinzufügen — keine Triebwerke, kein Durchstarten. Aber sie ist nicht hilflos, was den ORT betrifft, an dem sie herunterkommt. Indem sie so rollt, dass ihr Auftrieb nach oben zeigt, verlängert sie den Gleitflug und fliegt weit; rollt sie mit dem Auftrieb nach unten, taucht sie steil ab und landet kurz; durch Querneigung nach links oder rechts bewegt sie sich seitlich. Die Menge aller Orte, die sie bei gegebener Geschwindigkeit und gegebenem Auftrieb erreichen könnte, ist ein Fleck am Boden in Form eines gestreckten Tropfens — der Landefußabdruck."
+ },
+ {
+  "rel": "science/mission-phases/entry-footprint.json",
+  "at": "body_paragraphs.0",
+  "old": "Der Footprint ist die erreichbare Menge im Downrange-Crossrange-Raum. Downrange wird hauptsächlich dadurch bestimmt, wie das Fahrzeug seinen vertikalen Auftrieb einsetzt: vollständiger Auftrieb nach oben maximiert die Reichweite (die Kapsel „schwebt“, bremst langsam ab und legt eine große Strecke zurück), vollständiger Auftrieb nach unten minimiert sie (eine steile, schnelle Ankunft). Crossrange entsteht durch seitliches Kippen des Auftriebs, und ihr Umfang wächst mit L/D. Bei einer Kapsel mit niedrigem L/D ist der Footprint bescheiden; bei einem Lifting Body oder einem geflügelten Fahrzeug ist er riesig.",
+  "new": "Der Fußabdruck ist die erreichbare Menge im Raum aus Längsreichweite (Downrange) und Querreichweite (Crossrange). Die Längsreichweite wird hauptsächlich dadurch bestimmt, wie das Fahrzeug seinen vertikalen Auftrieb einsetzt: voller Auftrieb nach oben maximiert die Reichweite (die Kapsel „schwebt“, bremst langsam ab und legt eine große Strecke zurück), voller Auftrieb nach unten minimiert sie (eine steile, schnelle Ankunft). Die Querreichweite entsteht durch seitliches Kippen des Auftriebs, und ihr Umfang wächst mit L/D. Bei einer Kapsel mit niedrigem L/D ist der Fußabdruck bescheiden; bei einem Auftriebskörper oder einem geflügelten Fahrzeug ist er riesig."
+ },
+ {
+  "rel": "science/mission-phases/entry-footprint.json",
+  "at": "body_paragraphs.1",
+  "old": "Der Kompromiss zwischen Reichweite und G-Belastung ist die tragende Tatsache. Da eine lange, nach oben weisende Flugbahn die Geschwindigkeit über lange Zeit in dünner Luft abbaut, ist ihre maximale Verzögerung gering; eine kurze, nach unten weisende Flugbahn konzentriert das Bremsmanöver und erzeugt höhere Spitzenwerte. Ein Aufschlagdiagramm dient daher gleichzeitig als Menü: Jede erreichbare Reichweite ist mit der Spitzen-G verbunden, die sie kostet, und das Ziel muss innerhalb sowohl des Reichweitenbandes als auch der G-Grenze liegen.",
+  "new": "Der Kompromiss zwischen Reichweite und g-Last ist die tragende Tatsache. Da eine lange Flugbahn mit Auftrieb nach oben die Geschwindigkeit über lange Zeit in dünner Luft abbaut, ist ihre maximale Verzögerung gering; eine kurze Flugbahn mit Auftrieb nach unten konzentriert das Bremsen und erreicht höhere Spitzenwerte. Ein Fußabdruck-Diagramm dient daher zugleich als Speisekarte: Jede erreichbare Reichweite hat ihre Spitzen-g als Preis, und das Ziel muss sowohl innerhalb des Reichweitenbands als auch innerhalb der g-Grenze liegen."
+ },
+ {
+  "rel": "science/mission-phases/entry-footprint.json",
+  "at": "body_paragraphs.2",
+  "old": "Eine Bereichsregelschleife schließt dies ab. Bei einem gegebenen Zielbereich werden der Rollwinkel (wirklich ein Rollplan) berechnet, der dort landet, dann wird dieser geflogen, wobei die Rolle nach links/rechts umgekehrt wird, um den Querlageabweichungsfehler auszugleichen. Wenn das Ziel außerhalb des Bereichs liegt, ist die ehrliche Antwort, dass es nicht erreicht werden kann — die Regelung klemmt auf die nächste Grenze fest — deshalb wählt das Missionsdesign Eintrittsgegebenheiten, die das Ziel bequem innerhalb des Bereichs halten.",
+  "new": "Eine Regelschleife für die Reichweite schließt den Kreis. Aus einer vorgegebenen Zielreichweite berechnet sie den Rollwinkel (genauer: einen Rollplan), der dort landet, und fliegt ihn dann, wobei sie die Rolle nach links/rechts umkehrt, um den Querreichweitenfehler auszugleichen. Liegt das Ziel außerhalb des Fußabdrucks, lautet die ehrliche Antwort, dass es nicht erreichbar ist — die Lenkung begrenzt auf den nächstgelegenen Rand —, weshalb der Missionsentwurf Eintrittsbedingungen wählt, die das Ziel bequem innerhalb des Fußabdrucks halten."
+ },
+ {
+  "rel": "science/mission-phases/entry-footprint.json",
+  "at": "diagram_caption",
+  "old": "Der erreichbare Landefußabdruck: Auftrieb nach oben erreicht weit bei niedriger Spitzen-g-Belastung, Auftrieb nach unten landet kurz bei hoher g; die Steuerung löst einen Rollplan zu einem Ziel innerhalb des Bands.",
+  "new": "Der erreichbare Landefußabdruck: Auftrieb nach oben reicht weit bei niedriger Spitzen-g-Last, Auftrieb nach unten landet kurz bei hoher g-Last; die Lenkung löst einen Rollplan zu einem Ziel innerhalb des Bands."
+ },
+ {
+  "rel": "science/mission-phases/entry-heating.json",
+  "at": "intro_sentence",
+  "old": "Warum ein Raumfahrzeug beim Eintritt in eine Atmosphäre mit Kilometergeschwindigkeit pro Sekunde auf tausende Grad erhitzt wird — und wie ein Hitzeschutzschild diesen Extrembelastungen standhält.",
+  "new": "Warum das Auftreffen auf eine Atmosphäre mit mehreren Kilometern pro Sekunde ein Raumfahrzeug auf Tausende Grad erhitzt — und wie ein Hitzeschild diese Belastung aushält."
+ },
+ {
+  "rel": "science/mission-phases/entry-heating.json",
+  "at": "narrative_101.0",
+  "old": "Ein Raumfahrzeug, das an einem Planeten ankommt, bewegt sich sehr schnell — 5 bis 6 km/s beim Mars, fast 11 km/s bei der Venus. Wenn es in die obere Atmosphäre schlägt, reibt es nicht so sehr gegen die Luft, sondern zerstampft sie. Das Gas, das sich vor dem Fahrzeug aufstaut, wird so heftig komprimiert, dass es sich auf tausende Grad erhitzt und zu leuchten beginnt — der Feuerball, den man um jede zurückkehrende Kapsel sieht.",
+  "new": "Ein Raumfahrzeug, das an einem Planeten ankommt, bewegt sich sehr schnell — 5 bis 6 km/s am Mars, fast 11 km/s an der Venus. Wenn es auf die obere Atmosphäre schlägt, reibt es nicht so sehr an der Luft, sondern staucht sie zusammen. Das Gas, das sich vor dem Fahrzeug aufstaut, wird so heftig komprimiert, dass es sich auf Tausende Grad erhitzt und zu leuchten beginnt — der Feuerball, den man um jede zurückkehrende Kapsel sieht."
+ },
+ {
+  "rel": "science/mission-phases/entry-heating.json",
+  "at": "narrative_101.1",
+  "old": "Es ist ein verbreiteter Mythos, dass diese Hitze durch Reibung entsteht. Fast die gesamte Hitze entsteht durch Kompression: Das Raumfahrzeug kann die Luft nicht schnell genug aus dem Weg drücken, daher bildet sich eine Stoßwelle direkt vor ihm und das eingeschlossene Gas wird übererhitzt. Je schneller der Eintritt, desto heißer die Stoßwelle — das ist der Grund, warum die Venus mit den schnellsten Einträgen und der dichtesten Atmosphäre die härteste Eintrittsumgebung im Sonnensystem ist.",
+  "new": "Es ist ein verbreiteter Mythos, dass diese Hitze durch Reibung entsteht. Fast die gesamte Hitze entsteht durch Kompression: Das Raumfahrzeug kann die Luft nicht schnell genug aus dem Weg drücken, daher bildet sich direkt vor ihm eine Stoßwelle, und das eingeschlossene Gas wird extrem überhitzt. Je schneller der Eintritt, desto heißer die Stoßwelle — deshalb ist die Venus mit den schnellsten Eintritten und der dichtesten Luft die härteste Eintrittsumgebung im Sonnensystem."
+ },
+ {
+  "rel": "science/mission-phases/entry-heating.json",
+  "at": "narrative_101.2",
+  "old": "Das Fahrzeug bleibt hinter einem Hitzeschutzschild geschützt — einer stumpfen, ablativen Hülle, die der Strömung zugewandt ist. Die stumpfe Form ist Absicht: Eine spitze Nase würde die Wärme konzentrieren, während ein breiter Schild die Stoßwelle in Abstand hält und die Last verteilt. Die Oberflächenschicht des Schildes verkohlt und blättert absichtlich ab und trägt dabei die Wärme mit sich fort, so dass das dahinter verborgende Raumfahrzeug kühl bleibt.",
+  "new": "Das Fahrzeug überlebt hinter einem Hitzeschild — einer stumpfen, ablativen Hülle, die der Strömung zugewandt ist. Die stumpfe Form ist Absicht: Eine spitze Nase würde die Wärme konzentrieren, während ein breiter Schild die Stoßwelle auf Abstand hält und die Last verteilt. Die Oberfläche des Schildes verkohlt und blättert absichtlich ab und trägt dabei die Wärme mit sich fort, sodass das dahinter geborgene Raumfahrzeug kühl bleibt."
+ },
+ {
+  "rel": "science/mission-phases/entry-heating.json",
+  "at": "body_paragraphs.0",
+  "old": "Zwei Höhepunkte sind während des Eintritts relevant und sie fallen nicht zusammen. Die maximale Erhitzung findet hoch oben statt, wo das Fahrzeug immer noch schnell unterwegs ist und die Heizleistung (die etwa mit der dritten Potenz der Geschwindigkeit skaliert) enorm ist, selbst in dünner Luft. Die maximale Verzögerung tritt tiefer unten, in dichterer Luft auf, wo die Kraft auf das Fahrzeug am größten ist — Marseintritt erreichen Spitzenwerte von 8–15 g, Venus-Einträge von 100–350 g. Die Struktur eines Landers ist für den g-Spitzenwert ausgelegt; sein Hitzeschutzschild ist für den Wärme-Spitzenwert ausgelegt.",
+  "new": "Zwei Spitzen sind beim Eintritt wichtig, und sie fallen nicht zusammen. Die Spitzenerhitzung tritt weit oben auf, wo das Fahrzeug noch schnell ist und die Heizrate (die ungefähr mit der dritten Potenz der Geschwindigkeit skaliert) selbst in dünner Luft enorm ist. Die Spitzenverzögerung tritt weiter unten in dichterer Luft auf, wo die Kraft auf das Fahrzeug am größten ist — Eintritte am Mars erreichen etwa 8–15 g, Eintritte an der Venus 100–350 g. Die Struktur eines Landers ist auf die g-Spitze ausgelegt; sein Hitzeschild ist auf die Hitzespitze ausgelegt."
+ },
+ {
+  "rel": "science/mission-phases/entry-heating.json",
+  "at": "body_paragraphs.1",
+  "old": "Die Plasmaschicht, die um das Fahrzeug glüht, blockiert auch Funkübertragungen: Für eine bis zwei Minuten beim maximalen Erhitzen umhüllt ionisiertes Gas das Raumfahrzeug und unterbricht die Kommunikation — der berühmte Eintritt-Blackout. Die Flugleitung wartet einfach ab; das Fahrzeug fliegt eine vorgeladene Sequenz, allein, durch den heißesten Teil der Flugbahn.",
+  "new": "Die Plasmaschicht, die um das Fahrzeug glüht, blockiert auch den Funk: Für ein bis zwei Minuten bei der Spitzenerhitzung umhüllt ionisiertes Gas das Raumfahrzeug und unterbricht die Kommunikation — der berühmte Blackout beim Eintritt. Die Flugleitung wartet ihn einfach ab; das Fahrzeug fliegt eine vorab geladene Sequenz, allein, durch den heißesten Teil der Flugbahn."
+ },
+ {
+  "rel": "science/mission-phases/entry-heating.json",
+  "at": "body_paragraphs.2",
+  "old": "Auf `/fly` ist das Aero-Heiz-Messgerät im Abstiegs-HUD ein relatives Näherungsmaß dafür — es steigt an, wenn das Fahrzeug in die Atmosphäre eindringt, und erreicht seinen Höhepunkt lange vor der Landung, fällt dann ab, wenn das Fahrzeug abbremst. Schalte die Drag-Science-Lens-Ebene während eines beliebigen `?descent=1` Mars- oder Venus-Eintritts ein, um zu sehen, wie die Verzögerung anwächst, wenn die Luft dichter wird.",
+  "new": "Auf `/fly` ist die Anzeige für aerodynamische Erwärmung im Abstiegs-HUD ein relativer Näherungswert dafür — sie steigt, wenn das Fahrzeug in die Atmosphäre eindringt, erreicht ihren Höhepunkt lange vor der Landung und fällt dann ab, wenn das Fahrzeug abbremst. Schalte bei einem beliebigen Eintritt am Mars oder an der Venus mit `?descent=1` die Widerstandsebene der Science-Lens ein, um zu sehen, wie die Verzögerung anwächst, wenn die Luft dichter wird."
+ }
+]

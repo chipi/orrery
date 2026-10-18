@@ -8,8 +8,8 @@
   ],
   "body_paragraphs": [
     "Die Inklination (`i`) ist der Winkel zwischen der Bahnebene und einer gewählten Referenz. Für eine heliozentrische Umlaufbahn ist die Referenz die Ekliptik – die Ebene, in der die Erde die Sonne umkreist. Für Erdumlaufbahnen ist es normalerweise der Äquator. Der Winkel wird im aufsteigenden Knoten gemessen, wo die Umlaufbahn die Referenzebene Richtung Norden durchquert.",
-    "Die meisten Planeten liegen nah bei der Ekliptik – die Erde definiert sie (`i = 0°` per Konstruktion), und die übrigen bleiben innerhalb weniger Grad. Der Merkur mit 7° ist der Ausreißer. Plutos wildes 17° war einer der Gründe für seine Herabstufung: echte Planeten bleiben fast koplanar.",
-    "Für Erdsatelliten ist die Inklinationsgeschichte anders und pragmatisch. Äquatorial (0°) für geostationäre Kommunikationssatelliten. ~28° für Starts vom Cape Canaveral, die die Erdrotation nutzen müssen. ~51,6° für die ISS – gewählt, damit russische Besatzungen von Baikonur starten können. Polar (~90°) für Erdbeobachtungssatelliten, die jeden Breitengrad brauchen. Sonnensynchron (~98°) für Wissenschaftsplattformen, die bei jedem Durchgang gleichmäßige Beleuchtung wünschen."
+    "Die meisten Planeten liegen nah bei der Ekliptik – die Erde definiert sie (`i = 0°` per Konstruktion), und die übrigen bleiben innerhalb weniger Grad. Merkur mit 7° ist der Ausreißer. Plutos wilde 17° waren einer der Gründe für seine Herabstufung: Echte Planeten bleiben fast koplanar.",
+    "Bei Erdsatelliten sieht die Inklination anders und pragmatischer aus. Äquatorial (0°) für geostationäre Kommunikationssatelliten. ~28° für Starts vom Cape Canaveral, die die Erdrotation mitnehmen müssen. ~51,6° für die ISS – gewählt, damit russische Besatzungen von Baikonur starten können. Polar (~90°) für Erdbeobachtungssatelliten, die jeden Breitengrad brauchen. Sonnensynchron (~98°) für wissenschaftliche Plattformen, die bei jedem Überflug gleichmäßige Beleuchtung wollen."
   ],
-  "diagram_caption": "Bahnebene um Winkel i gegen die Referenz geneigt. Aufsteigender Knoten N markiert den Nordkreuzungspunkt."
+  "diagram_caption": "Bahnebene, um den Winkel i gegen die Referenzebene geneigt. Der aufsteigende Knoten N markiert, wo die Bahn nach Norden kreuzt."
 }

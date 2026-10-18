@@ -1,15 +1,15 @@
 {
   "title": "Transferellipse",
-  "intro_sentence": "Der Keplersche Bogen, der eine Sonde zwischen Bahnen trägt — Sonne im Brennpunkt, wie jede Bahn.",
+  "intro_sentence": "Der Kepler-Bogen, der eine Sonde von einer Bahn zur anderen trägt — Sonne im Brennpunkt, wie bei jeder Bahn.",
   "narrative_101": [
-    "Missionsplanung klingt nach Triebwerken und Raketen. Meistens geht es aber darum, eine Ellipse auszuwählen. Jeder interplanetare Flug — Apollo zum Mond, Voyager zum Neptun, Perseverance zum Mars — ist nur ein Raumfahrzeug, das auf einer elliptischen Bahn zwischen Start- und Zielort reitet. Das schicke Wort für diese Ellipse ist Transferbahn.",
+    "Missionsplanung klingt nach Triebwerken und Raketen. Meistens geht es aber darum, eine Ellipse auszuwählen. Jeder interplanetare Flug — Apollo zum Mond, Voyager zu Neptun, Perseverance zum Mars — ist nur ein Raumfahrzeug, das auf einer elliptischen Bahn zwischen Start- und Zielort fährt. Das Fachwort für diese Ellipse lautet Transferbahn.",
     "Sie folgt denselben Regeln wie jede andere Kepler-Bahn. Die Sonne sitzt in einem Brennpunkt. Das Raumfahrzeug ist am fernen Ende langsam und am nahen Ende schnell. Mit der Vis-viva-Gleichung lässt sich weiterhin seine Geschwindigkeit berechnen. Keplers drittes Gesetz liefert weiterhin die Flugzeit aus der Größe. Nichts Exotisches.",
-    "Das Einzige, was eine Transferellipse von einer Planetenbahn unterscheidet: Das Raumfahrzeug fliegt nur die HÄLFTE davon. Es steigt an einem Ende auf, fährt zum anderen und steigt aus. Deshalb hat das ∆v-Budget immer zwei große Burns — einen zum Eintritt in die Ellipse, einen zum Verlassen. Der Teil dazwischen, die achtmonatige Freiflugphase, kostet absolut nichts."
+    "Das Einzige, was eine Transferellipse von einer Planetenbahn unterscheidet: Das Raumfahrzeug fliegt nur die HÄLFTE davon. Es steigt an einem Ende auf, fährt zum anderen und steigt aus. Deshalb hat das ∆v-Budget immer zwei große Zündungen — eine zum Eintritt in die Ellipse, eine zum Verlassen. Der Teil dazwischen, die achtmonatige Freiflugphase, kostet absolut nichts."
   ],
   "body_paragraphs": [
-    "Sobald du aus der Erdumlaufbahn hinausgebrannt bist, befindest du dich auf einer Ellipse um die Sonne. Diese Ellipse ist die Transferbahn, und sie hat alle dieselben Eigenschaften wie jede andere: große Halbachse, Exzentrizität, Perihel, Aphel. Die Tatsache, dass du irgendwohin gehst, ändert nichts an der Geometrie – Schwerkraft kümmert sich nicht um dein Ziel.",
-    "Zwei Ankerpunkte definieren eine Transferellipse: wo du startest (Perihel, wenn du nach außen gehst) und wo du landen wirst (Aphel). Die große Halbachse ist der Durchschnitt dieser beiden Radien. Verstelle einen der Ankerpunkte, und die ganze Ellipse verformt sich neu – geh weiter nach außen, die Ellipse dehnt sich, die Reise wird länger.",
-    "Auf Orrery's `/fly` HUD sehen Sie das Raumschiff diese Ellipse in Echtzeit zeichnen. Der Transfer-Arc auf dem Bildschirm ist eine visuelle Darstellung desselben Kegelschnitts, den die Mathematik vorgibt – die Sonne in einem Brennpunkt, das Perihel hinter dir, das Aphel vor dir."
+    "Sobald du die Erdumlaufbahn per Zündung verlassen hast, befindest du dich auf einer Ellipse um die Sonne. Diese Ellipse ist die Transferbahn, und sie hat alle dieselben Eigenschaften wie jede andere: große Halbachse, Exzentrizität, Perihel, Aphel. Dass du irgendwohin fliegst, ändert nichts an der Geometrie – die Schwerkraft kümmert sich nicht um dein Ziel.",
+    "Zwei Ankerpunkte definieren eine Transferellipse: wo du startest (Perihel, wenn du nach außen fliegst) und wo du ankommst (Aphel). Die große Halbachse ist der Mittelwert dieser beiden Radien. Verschiebst du einen der Ankerpunkte, ändert sich die ganze Ellipse – geh weiter nach außen, dann dehnt sie sich, und die Reise wird länger.",
+    "Auf Orrerys `/fly`-HUD siehst du, wie das Raumschiff diese Ellipse in Echtzeit nachzeichnet. Der Transferbogen auf dem Bildschirm ist die visuelle Darstellung desselben Kegelschnitts, den die Mathematik vorgibt – die Sonne in einem Brennpunkt, das Perihel hinter dir, das Aphel vor dir."
   ],
-  "diagram_caption": "Zwei koplanare Bahnen verbunden durch eine Transferellipse mit der Sonne im Brennpunkt."
+  "diagram_caption": "Zwei koplanare Bahnen (innen Start, außen Ziel), verbunden durch eine Transferellipse; Sonne im Brennpunkt."
 }

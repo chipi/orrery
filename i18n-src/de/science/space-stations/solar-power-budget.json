@@ -1,17 +1,17 @@
 {
   "title": "Solarstrombudget",
-  "intro_sentence": "Wie viel Strom die Solarpanels erzeugen — die primäre Begrenzung aller Systeme, die die Besatzung betreiben kann.",
+  "intro_sentence": "Wie viel Strom die Solarpaneele erzeugen — die grundlegende Grenze für jedes System, das die Besatzung betreiben kann.",
   "narrative_101": [
     "Eine Raumstation wird mit Solarstrom betrieben. Die Solarflügel erstrecken sich über die Länge des ~109 m-Fachwerks der ISS — größer als ein Fußballfeld — weil alles andere von den Watt abhängt, die sie aus dem Sonnenlicht ziehen: Lebenserhaltung, Kommunikation, wissenschaftliche Instrumente, das Trainingsgerät der Besatzung, der Lüftungsventilator der Toilette.",
     "Die acht ursprünglichen 35 m × 12 m ISS-Panelgruppen lieferten ~160 kW Spitzenleistung im Sonnenlicht am Anfang ihrer Einsatzdauer, mit altersbedingt sinkender Leistung; ergänzt durch sechs iROSA-Ausfahrpanelgruppen (die sechs der acht ursprünglichen Flügel abdecken, jede mit >20 kW Zusatzleistung), erreichte die installierte Gesamterzeugungskapazität ~215 kW. Die orbitalgemittelte Leistung, die an Verbraucher geliefert wird — unter Berücksichtigung des ~0,6-Sonnenlicht-Anteils und Batterie-/Regelungsverluste — beträgt etwa 84–120 kW. Tiangong läuft leichter mit etwa 27 kW Spitzenleistung — weniger Besatzung, weniger Experimente, einfachere thermische Last.",
     "Stromleistung bestimmt die Ambitionen. Möchte man ein Zentrifugen-Biologie-Experiment betreiben? Einfach anschließen — es kostet 1,5 kW. Möchte man zehn weitere Racks mit Nutzlasten hinzufügen? Man braucht ein Strombudget, und entweder man vergrößert die Panelgruppe (teuer — neue Mission) oder man reduziert die Last anderswo."
   ],
   "body_paragraphs": [
-    "Solarstrombudget = Spitzenleistung × Betriebszyklus (Sonnenlicht-Anteil der Umlaufbahn) × nachgelagerte Effizienz (Batterie- + Reglerverluste). Für LEO-Stationen beträgt der Betriebszyklus etwa 0,6 — ungefähr 35 Minuten Sonnenlicht pro 92-Minuten-Umlaufbahn.",
+    "Solarstrombudget = Spitzenleistung × Tastverhältnis (Sonnenanteil des Umlaufs) × nachgelagerter Wirkungsgrad (Batterie- + Reglerverluste). Für LEO-Stationen beträgt das Tastverhältnis etwa 0,6 — ungefähr 35 Minuten Sonnenlicht pro 92-Minuten-Umlauf.",
     "ISS-Solarpanelgruppen: 8 Haupt-IEA-Flügel (4× P3/P4, P6 + 4× S3/S4, S6) mit ~160 kW Spitzenleistung am Anfang (BOL), auf ~84 kW am Ende (EOL) nach 15 Jahren herabgesetzt. Sechs iROSA-Ausfahrpanelgruppen (decken 6 der 8 ursprünglichen Flügel ab), jede mit >20 kW, bringen die installierte Gesamterzeugung auf ~215 kW im Sonnenlicht. Orbitalgemittelte Leistung an Verbraucher (×~0,6 Sonnenlicht-Anteil, minus Speicher-/Regelungsverluste) ≈ 84–120 kW.",
-    "Tiangong-Solarpanelgruppen: 4 Flügel auf Tianhe (je 2 ausfahrbar pro Seite) plus 4 große Flügel auf Wentian und Mengtian. Insgesamt ~30 kW am Anfang (BOL) × Betriebszyklus = ~18 kW kontinuierlich, mit 27 kW Spitzenleistung während des Sonnenlicht-Durchgangs.",
-    "Batteriespeicher: Die ISS verwendet Lithium-Ionen-Batterie-ORUs (orbital replacement units) mit ~50 kWh Kapazität pro Paar. Jede Batterie deckt die Nacht-Seiten-Last eines Haupt-Flügels. Tiangong verwendet ähnliche Li-Ionen-Blöcke, dimensioniert für die kleinere Last.",
+    "Tiangong-Solarpanelgruppen: 4 Flügel auf Tianhe (je 2 ausfahrbar pro Seite) plus 4 große Flügel auf Wentian und Mengtian. Insgesamt ~30 kW am Anfang (BOL) × Tastverhältnis = ~18 kW kontinuierlich, mit 27 kW Spitzenleistung während der Sonnenphase.",
+    "Batteriespeicher: Die ISS verwendet Lithium-Ionen-Batterie-ORUs (im Orbit austauschbare Einheiten) mit ~50 kWh Kapazität pro Paar. Jede Batterie versorgt in der Nachtphase die Last eines Haupt-Flügels. Tiangong verwendet ähnliche Li-Ionen-Batteriebänke, dimensioniert für die kleinere Last.",
     "Mir erzielte dagegen einen Spitzenwert von ~30 kW aus 1500 m² Paneloberfläche — vergleichbar pro Volumen mit Tiangong, aber mit älteren Nickel-Cadmium-Batterien, die während ihrer 15-jährigen Betriebsdauer tiefere Überholungen brauchten."
   ],
-  "diagram_caption": "Solareingang → Panelgruppe → Gleichstrombus → Batterie + Verbraucher. Der Betriebszyklus-Balken zeigt den 60%-Sonnenlicht-Anteil pro 92-Minuten-Umlaufbahn."
+  "diagram_caption": "Solareingang → Panelgruppe → Gleichstrombus → Batterie + Verbraucher. Der Balken für das Tastverhältnis zeigt den Sonnenanteil von 60 % pro 92-Minuten-Umlauf."
 }

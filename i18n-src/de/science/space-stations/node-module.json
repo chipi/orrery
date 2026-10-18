@@ -1,17 +1,17 @@
 {
-  "title": "Verbindungsknoten-Modul",
-  "intro_sentence": "Ein druckbelüfteter Hub mit mehreren Andockplätzen — der Strukturverbinder, der eine Station verzweigt.",
+  "title": "Knotenmodul",
+  "intro_sentence": "Ein Druckmodul als Knotenpunkt mit mehreren Andockstellen — das Verbindungsstück, mit dem eine Station sich verzweigen kann.",
   "narrative_101": [
-    "Ein Node ist eine spezielle Art von druckbelüftetem Modul: Es beherbergt keine Experimente oder Besatzungsquartiere, sondern verbindet einfach andere Module miteinander. Stellen Sie sich eine sechseckige Box vor, bei der jede Fläche einen Andockplatz hat. Befestigen Sie einen Node an einer Startrakete, schicken Sie ihn hoch, dann koppeln Sie fünf weitere Module an die fünf verbleibenden Anschlüsse an und Ihre Station ist von einem Modul auf sechs gewachsen.",
-    "Die ISS hat drei: Unity (Node 1), Harmony (Node 2) und Tranquility (Node 3). Jeder dient als Zentralknoten für ein Stationssegment — Unity verbindet die russische und US-Seite; Harmony verbindet den US-Laborkomplex mit den japanischen und europäischen Modulen; Tranquility trägt die Cupola-Beobachtungskuppel.",
-    "Tiangong wählte einen anderen Ansatz: Statt dedizierter Nodes fungiert das zentrale Tianhe-Modul sowohl als Wohnquartier als auch als Hub mit mehreren Andockplätzen, die direkt an seinen vorderen und hinteren Enden eingebaut sind. Es ist ein kompakteres Design, das weniger Startmasse erfordert, aber die Anzahl der Module, die abzweigen können, begrenzt."
+    "Ein Knoten ist eine besondere Art von Druckmodul: Er beherbergt weder Experimente noch Besatzungsquartiere, sondern verbindet andere Module miteinander. Stellen Sie sich einen sechseckigen Kasten vor, bei dem jede Fläche eine Andockstelle hat. Setzen Sie einen Knoten auf eine Startrakete, schicken Sie ihn hoch, koppeln Sie dann fünf weitere Module an die fünf verbleibenden Anschlüsse an, und Ihre Station ist von einem Modul auf sechs gewachsen.",
+    "Die ISS hat drei: Unity (Node 1), Harmony (Node 2) und Tranquility (Node 3). Jeder ist der zentrale Verbindungspunkt eines Stationsabschnitts — Unity verbindet die russische mit der US-Seite; Harmony verbindet den US-Laborkomplex mit den japanischen und europäischen Modulen; Tranquility trägt die Cupola-Beobachtungskuppel.",
+    "Tiangong wählte einen anderen Ansatz: Statt eigener Knotenmodule fungiert das zentrale Tianhe-Modul sowohl als Wohnquartier als auch als Knotenpunkt mit mehreren Andockstellen, die direkt an seinem vorderen und hinteren Ende eingebaut sind. Es ist ein kompakteres Design, das weniger Startmasse erfordert, aber die Zahl der Module, die abzweigen können, begrenzt."
   ],
   "body_paragraphs": [
-    "Nodes sind Verbindermodule — druckbelüftete Hubs mit mehreren Common-Berthing-Mechanism(CBM)- oder Andockplätzen — die es einer Station ermöglichen, sich in eine Baumtopologie zu verzweigen, anstatt eine lineare Kette zu bilden.",
+    "Knoten sind Verbindermodule — Druckmodule als Knotenpunkte mit mehreren Anschlüssen für den Common Berthing Mechanism (CBM) oder Andockstellen —, die es einer Station ermöglichen, sich in eine Baumtopologie zu verzweigen, anstatt eine lineare Kette zu bilden.",
     "ISS Unity (Node 1) startete 1998 an Bord von STS-88. Sechs CBM-Häfen: vorne → Destiny, hinten → Zarya, Steuerbord → Quest-Luftschleuse, Zenit → Z1-Fachwerk, Backbord → Tranquility (2010), Nadir → PMA/Frachtandockung (ehemals Leonardo PMM 2011–2015). Das erste von den USA gebaute ISS-Modul.",
     "ISS Harmony (Node 2) startete 2007. Sechs Häfen: verbindet Destiny mit Columbus (Backbord), Kibo (Steuerbord) und den beiden Andockhülsen (IDA-2 vorne, IDA-3 Zenit) für Crew Dragon / Starliner.",
     "ISS Tranquility (Node 3) startete 2010. Beherbergt die Cupola-Beobachtungskuppel (Nadir-Hafen), das Permanent Multipurpose Module Leonardo (vorne) und BEAM (hinten).",
-    "Tiangongs Tianhe-Kern verbindet Knotenpunkt + Besatzungsquartiere + Antrieb + Kontrolle. Das Knotenpunkt-Drehkreuz hat einen achsialen Bug-Anschlussanker (Shenzhou), zwei laterale radiale Anschlussanker (Wentian an Steuerbord, Mengtian an Backbord, beide durch den Manipulator dorthin verlagert) und einen nadir-Anschlussanker; der achsiale Heck-Anschlussanker nimmt Tianzhou-Versorgung auf. Die Anschlussanker verwenden den Chinese Docking Mechanism und nicht den amerikanischen CBM."
+    "Das Kernmodul Tianhe von Tiangong vereint Knoten, Besatzungsquartiere, Antrieb und Steuerung. Der Knotenbereich trägt einen axialen Anschluss am Bug (Shenzhou), zwei seitliche radiale Anschlüsse (Wentian an Steuerbord, Mengtian an Backbord, beide mit dem Roboterarm dorthin verlegt) und einen Nadir-Anschluss; der axiale Anschluss am Heck nimmt Tianzhou-Frachter auf. Die Anschlüsse nutzen den Chinese Docking Mechanism und nicht den amerikanischen CBM."
   ],
-  "diagram_caption": "Sechseckiges Node-Modul mit sechs beschrifteten Andockplätzen: vorne / hinten / Backbord / Steuerbord / Zenit / Nadir."
+  "diagram_caption": "Sechseckiges Knotenmodul mit sechs beschrifteten Andockstellen: vorne / hinten / Backbord / Steuerbord / Zenit / Nadir."
 }

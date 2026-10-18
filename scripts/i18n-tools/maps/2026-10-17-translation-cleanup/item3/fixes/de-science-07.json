@@ -1,0 +1,674 @@
+[
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.1",
+  "old": "GEO-Entsorgung: Friedhofsorbit. GEO-Satelliten können wirtschaftlich nicht deorbitiert werden, da die ΔV-Kosten für den Abstieg von der GEO (35.786 km) bis zum Aufprall auf der Erde enorm sind (~1,5 km/s) und der Satellit zudem den dichten LEO-Trümmerring auf dem Weg nach unten durchqueren müsste. Stattdessen verlangen die IADC-Richtlinien (und die meisten nationalen Regulierungsbehörden) von GEO-Betreibern, ihre Raumfahrzeuge vor dem Aufbrauchen des Stationshaltungs-Treibstoffs in einen „Friedhofsorbit\" mindestens 235 km über der GEO zu bringen. Die 235-km-Grenze ergibt sich aus einem 200-km-Puffer über dem geschützten GEO-Bereich plus etwa 35 km Perigäumsabsenkung, die ein Satellitentrümmer durch Mond- und Sonnengravitation sowie die Abplattung der Erde erleiden kann; Effekte des Solarstrahlungsdrucks, die mit dem Flächenmasse-Verhältnis eines Satelliten skalieren, werden zusätzlich über die IADC-Formel berücksichtigt. Ein Manöver über diese kombinierte Höhe hinaus garantiert, dass der tote Satellit nicht in den GEO-Ring zurückdriftet. Jedes Friedhofsorbit-Manöver verbraucht üblicherweise 5–10 kg Treibstoff, was mehreren Monaten Stationshaltungs-Reserve entspricht. Betreiber, die das Friedhofsorbit-Manöver nicht durchführen (typischerweise weil der Satellit zu schnell ausfiel, um Treibstoff zu sparen), hinterlassen einen Trümmer in oder in der Nähe der GEO, der operationelle Kommunikationssatelliten auf unbestimmte Zeit gefährden wird – die sogenannten „GEO-Friedhofsderelikt­ten\".",
+  "new": "GEO-Entsorgung: Friedhofsorbit. GEO-Satelliten lassen sich wirtschaftlich nicht deorbitieren, weil die ΔV-Kosten für den Abstieg aus der GEO (35.786 km) bis zum Aufprall auf die Erde enorm sind (~1,5 km/s) und der Satellit auf dem Weg nach unten zudem den dichten Trümmergürtel der LEO durchqueren müsste. Stattdessen verlangen die IADC-Richtlinien (und die meisten nationalen Regulierungsbehörden) von GEO-Betreibern, ihre Raumfahrzeuge in einen „Friedhofsorbit“ mindestens 235 km oberhalb der GEO anzuheben, bevor der Treibstoff für die Stationshaltung aufgebraucht ist. Die 235 km setzen sich aus einem 200-km-Puffer über dem geschützten GEO-Bereich und etwa 35 km Perigäumsabsenkung zusammen, die ein ausgedienter Satellit durch die Schwerkraft von Mond und Sonne sowie die Abplattung der Erde erfahren kann; Effekte des Strahlungsdrucks der Sonne, die mit dem Verhältnis von Fläche zu Masse des Satelliten skalieren, werden über die IADC-Formel zusätzlich aufgeschlagen. Ein Manöver über diese kombinierte Höhe hinaus garantiert, dass der tote Satellit nicht in den GEO-Ring zurückdriftet. Jedes Friedhofsmanöver verbraucht üblicherweise 5–10 kg Treibstoff, was mehreren Monaten Reserve für die Stationshaltung entspricht. Betreiber, die das Manöver nicht durchführen (meist, weil der Satellit zu schnell ausfiel, um noch Treibstoff abzuzweigen), hinterlassen ein Wrack in oder nahe der GEO, das betriebene Kommunikationssatelliten auf unbestimmte Zeit gefährdet — die sogenannten „GEO-Friedhofswracks“."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.2",
+  "old": "MEO- und HEO-Entsorgung. Schwerere Fälle als LEO oder GEO. MEO-Navigationskonstellationen (GPS, Galileo, GLONASS, BeiDou MEO) bei ~20.000 km haben sehr lange natürliche Zerfallszeiten (Tausende Jahre) und kein bequemes Friedhofsäquivalent darüber; aktuelle Praxis ist, ausgemusterte Satelliten in der Operationsbahn zu belassen und auf sorgfältige Konstellationsphasung zu setzen. Mit wachsenden MEO-Populationen wird das zum Problem. HEO-Satelliten (Molniya, Tundra) haben meist niedriges Perigäum, sodass Atmosphärenwiderstand sie schließlich deorbitiert — Molniya mit 600 km Perigäum zerfallen in Jahrzehnten. Höhere HEOs brauchen explizite Deorbit-Zündungen.",
+  "new": "MEO- und HEO-Entsorgung. Schwierigere Fälle als LEO oder GEO. MEO-Navigationskonstellationen (GPS, Galileo, GLONASS, BeiDou MEO) in ~20.000 km Höhe haben sehr lange natürliche Zerfallszeiten (Tausende Jahre) und darüber kein bequemes Friedhofsäquivalent; derzeit lässt man ausgemusterte Satelliten in ihrer Betriebsbahn und setzt auf eine sorgfältige Phasenlage der Konstellation, um Kollisionen zu vermeiden. Mit wachsender Zahl von MEO-Satelliten wird das zu einem absehbaren Problem. HEO-Satelliten (Molniya, Tundra) haben meist ein so niedriges Perigäum, dass der Luftwiderstand sie irgendwann zum Absturz bringt — Molniya-Satelliten mit 600 km Perigäum zerfallen innerhalb von Jahrzehnten. HEOs mit höherem Perigäum brauchen eigene Zündungen zum Abbremsen."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.3",
+  "old": "Cislunar-Entsorgung. Noch keine formalen Vorschriften, aber sich abzeichnende Praxis für Artemis-Raumfahrzeuge: Das Lunar Reconnaissance Orbiter, Chang'e-1 und Chandrayaan-1 am Ende ihres Lebens sind alle letztendlich auf der Mondoberfläche aufgeschlagen (manchmal absichtlich für wissenschaftliche Zwecke — LCROSS ist in Cabeus eingeschlagen, um nach Wasser zu suchen; manchmal versehentlich durch Erschöpfung der Bahnhaltungsmittel). Die geplante Entsorgung des Lunar Gateway am Ende seines Lebens ist eine kontrollierte Deorbitation in die Mondoberfläche, ähnlich wie Mirs SPOUA-Entsorgung, aber auf dem Mond. Es gibt mehrere Vorschläge für das Abstellen ausrangierter Cislunar-Objekte an den Lagrange-Punkten Erde-Mond L4/L5, die äußerst stabil sind und derelikt gelassene Satelliten auf unbestimmte Zeit aufnehmen würden – aber dies wurde noch nicht in internationalen Vereinbarungen formalisiert.",
+  "new": "Cislunare Entsorgung. Es gibt noch keine formalen Vorschriften, aber eine sich abzeichnende Praxis für Raumfahrzeuge der Artemis-Ära: Der Lunar Reconnaissance Orbiter, Chang'e-1 und Chandrayaan-1 sind am Ende ihrer Laufzeit alle auf der Mondoberfläche eingeschlagen (manchmal absichtlich für die Wissenschaft — LCROSS schlug im Krater Cabeus ein, um nach Wasser zu suchen; manchmal zufällig, weil die Mittel zur Bahnhaltung erschöpft waren). Die geplante Entsorgung des Lunar Gateway am Ende seiner Lebensdauer ist ein kontrollierter Absturz auf die Mondoberfläche, ähnlich der SPOUA-Entsorgung der Mir, nur auf dem Mond. Es gibt mehrere Vorschläge, ausgediente cislunare Objekte an den Lagrange-Punkten L4/L5 des Systems Erde–Mond abzustellen, die äußerst stabil sind und ausgediente Satelliten auf unbestimmte Zeit aufnehmen würden — doch das ist in keiner internationalen Vereinbarung festgeschrieben."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "body_paragraphs.4",
+  "old": "Entsorgung ist nicht mehr optional. Bis ~2015 war End-of-Life-Entsorgung technisch erforderlich, aber lax durchgesetzt. Mehrere Regulierungsverschiebungen änderten das: FCCs 5-Jahres-LEO-Regel (2022) verlangt Deorbit binnen 5 Jahren nach Missionsende für alle US-lizenzierten Satelliten; ESAs Zero Debris Charter (2023) verpflichtet Unterzeichner, keinen Müll im Orbit zu lassen; UN Long-Term Sustainability Guidelines (2019) machen Entsorgung zur Lizenzbedingung. Moderne Satellitendesigns enthalten Entsorgungstreibstoff als feste Massebudget-Position mit durch Missionsdesignreviews durchgesetzter Margenreserve. Der Orbitalmüll-Artikel beschreibt, was passiert, wenn Entsorgung scheitert.",
+  "new": "Entsorgung ist nicht mehr optional. Bis etwa 2015 war die Entsorgung am Lebensende technisch vorgeschrieben, wurde aber lax durchgesetzt. Mehrere Änderungen der Vorschriften seither haben die Rechnung verändert: Die 5-Jahres-LEO-Regel der FCC (2022) verlangt von allen in den USA lizenzierten Satelliten, binnen 5 Jahren nach Missionsende zu deorbitieren; die Zero Debris Charter der ESA (2023) verpflichtet die Unterzeichner, keinen Müll im Orbit zu hinterlassen; die Leitlinien der UN zur langfristigen Nachhaltigkeit (2019) machen die Entsorgung zur Voraussetzung für eine Lizenz. Moderne Satelliten haben Treibstoff für die Entsorgung fest im Massenbudget eingeplant, und die Reserve wird in Prüfungen des Missionsentwurfs durchgesetzt. Der Artikel zum Weltraummüll beschreibt, was passiert, wenn die Entsorgung scheitert."
+ },
+ {
+  "rel": "science/orbits/disposal-end-of-life.json",
+  "at": "diagram_caption",
+  "old": "LEO: Deorbit binnen 25 Jahren (IADC) / 5 Jahren (FCC 2022). Perigäum auf ~200 km absenken → atmosphärischer Wiedereintritt. Große Objekte nach SPOUA (Point Nemo). GEO: Anschub ≥235 km über GEO-Ring in Friedhofsbahn. MEO: keine formelle Entsorgung — lange natürliche Zerfallszeiten, sorgfältige Operationsphasung. Cislunar: aufkommende Praxis, kontrollierter Mondoberflächenaufschlag.",
+  "new": "LEO: Deorbit binnen 25 Jahren (IADC) bzw. 5 Jahren (FCC 2022). Perigäum auf ~200 km absenken → Wiedereintritt in die Atmosphäre. Große Objekte gezielt nach SPOUA (Point Nemo). GEO: mindestens 235 km über den GEO-Ring in einen Friedhofsorbit anheben. MEO: keine formale Entsorgung — lange natürliche Zerfallszeiten, sorgfältige Phasenlage im Betrieb. Cislunar: sich abzeichnende Praxis, kontrollierter Einschlag auf der Mondoberfläche."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "intro_sentence",
+  "old": "Wie gestreckt die Bahn ist — null ist ein perfekter Kreis, eins ist ein parabolisches Entkommen.",
+  "new": "Wie gestreckt die Bahn ist — null ist ein perfekter Kreis, eins eine parabolische Fluchtbahn."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "narrative_101.1",
+  "old": "Was ändert sich physikalisch? Die Geschwindigkeit. Eine Kreisbahn ist ruhig. Eine gestreckte nicht. Der Körper rast am nahen Ende der Ellipse vorbei und trödelt dann den größten Teil des Umlaufs am fernen Ende herum. Der Halleysche Komet ist in jedem 76-jährigen Umlauf weniger als ein Jahr hier in der Nähe — den Rest der Zeit kriecht er um das Aphel herum. Gleiche Bahn, völlig unterschiedliches Tempo.",
+  "new": "Was ändert sich physikalisch? Die Geschwindigkeit. Eine Kreisbahn ist ruhig. Eine gestreckte nicht. Der Körper rast am nahen Ende der Ellipse vorbei und trödelt dann den größten Teil des Umlaufs am fernen Ende herum. Der Halleysche Komet hält sich von jedem 76-jährigen Umlauf weniger als ein Jahr im inneren Sonnensystem auf — die übrige Zeit kriecht er um das Aphel herum. Dieselbe Bahn, ein völlig anderes Tempo."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "narrative_101.2",
+  "old": "Echte Planeten sind viel langweiliger als Kometen — fast alles, was du in /explore siehst, hat eine Exzentrizität unter 0,1. Aber sobald du eine Missionsbahn entwirfst, wählst du Transferellipsen mit Exzentrizitäten aller Art. Hohmann-Transfers zum Mars liegen bei etwa 0,21. Der TLI-Burn von Apollo brachte das Raumschiff auf eine Ellipse mit e ≈ 0,97 — fast eine Fluchtbahn.",
+  "new": "Echte Planeten sind viel langweiliger als Kometen — fast alles, was du in /explore siehst, hat eine Exzentrizität unter 0,1. Aber sobald du eine Missionsbahn entwirfst, wählst du Transferellipsen mit Exzentrizitäten aller Art. Hohmann-Transfers zum Mars liegen bei etwa 0,21. Die TLI-Zündung von Apollo brachte das Raumschiff auf eine Ellipse mit e ≈ 0,97 — fast eine Fluchtbahn."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "body_paragraphs.0",
+  "old": "Exzentrizität (`e`) ist die Formzahl. Setzen Sie sie auf 0, und Sie haben einen Kreis — die Brennpunkte fallen auf einen einzelnen Mittelpunkt zusammen, und der umkreisende Körper bleibt für immer im gleichen Abstand. Drehen Sie sie gegen 1 auf, und die Ellipse streckt sich in eine Zigarre — der Körper rast beim Perihel durch den Brennpunkt, verweilt dann beim Aphel den größten Teil der Umlaufbahn über.",
+  "new": "Die Exzentrizität (`e`) ist die Formzahl. Setz sie auf 0, und du hast einen Kreis — die Brennpunkte fallen in einem einzigen Mittelpunkt zusammen, und der umlaufende Körper behält für immer denselben Abstand. Dreh sie gegen 1 auf, und die Ellipse streckt sich zur Zigarre — der Körper rast im Perihel am Brennpunkt vorbei und trödelt dann den größten Teil des Umlaufs am Aphel herum."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "body_paragraphs.1",
+  "old": "Über `e = 1` bist du nicht länger gebunden. `e = 1` genau ist eine parabolische Flugbahn (Flucht, gerade noch). Alles Höhere ist hyperbolisch — ein Vorbeiflug, der nie zurückkehrt. Die meisten Raumfahrzeugflugbahnen, die Orrery zeigt, sind heliozentrische Ellipsen mit `e < 1`. Die Ausnahme: Gravity-Assist-Arme, die um Jupiter oder Saturn gezogen sind, reichen in hyperbolisches Gebiet.",
+  "new": "Oberhalb von `e = 1` bist du nicht mehr gebunden. Genau `e = 1` ist eine parabolische Bahn (gerade noch entkommen). Alles darüber ist hyperbolisch — ein Vorbeiflug, der nie zurückkehrt. Die meisten Flugbahnen, die Orrery zeigt, sind heliozentrische Ellipsen mit `e < 1`. Die Ausnahme: Die Swing-by-Bögen um Jupiter oder Saturn reichen in hyperbolisches Gebiet hinein."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "body_paragraphs.2",
+  "old": "Echte Planeten konzentrieren sich auf niedrige Exzentrizität. Erde: 0,0167 — fast kreisförmig. Mars: 0,093 — deutlich elongiert. Merkur: 0,205 — der exzentrischste der acht Planeten. Pluto und die Kometen sitzen viel höher, weshalb ihre Besuche im Perihel die aufsehenerregendsten Ereignisse des äußeren Sonnensystems sind.",
+  "new": "Echte Planeten häufen sich bei niedriger Exzentrizität. Erde: 0,0167 — fast kreisförmig. Mars: 0,093 — sichtbar gestreckt. Merkur: 0,205 — der exzentrischste der acht Planeten. Pluto und die Kometen liegen deutlich höher, weshalb ihre Periheldurchgänge die spektakulärsten Ereignisse des äußeren Sonnensystems sind."
+ },
+ {
+  "rel": "science/orbits/eccentricity.json",
+  "at": "diagram_caption",
+  "old": "Drei Bahnen mit gleicher großer Halbachse aber e = 0, 0,4, 0,8. Form ändert sich; Periode nicht.",
+  "new": "Drei Bahnen mit gleicher großer Halbachse, aber mit e = 0, 0,4 und 0,8. Die Form ändert sich, die Umlaufzeit nicht."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "intro_sentence",
+  "old": "Werfe einen Gegenstand schnell genug nach oben und er fällt nie zurück — Fluchtgeschwindigkeit ist genau jene Geschwindigkeit, bei der die kinetische Energie eines Körpers seine Gravitationspotentialenergie genau ausgleicht.",
+  "new": "Wirf etwas schnell genug nach oben, und es fällt nie zurück: Die Fluchtgeschwindigkeit ist genau die Geschwindigkeit, bei der die kinetische Energie eines Körpers das Gravitationspotenzial ausgleicht, aus dem er hinaufklettert."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "narrative_101.0",
+  "old": "Gravitation lässt niemals los — ihre Anziehung reicht bis ins Unendliche und wird nur mit der Entfernung schwächer. \"Escape\" eines Planeten bedeutet also nicht, der Gravitation zu entkommen; es bedeutet, genau so viel Energie zu haben, dass man beim Aufstieg und Verlangsamen nur dann die Geschwindigkeit Null erreicht, wenn man unendlich weit entfernt ist. Kommt man auch nur um ein Haar zu kurz, gewinnt die Gravitation schließlich, bremst einen ab und zieht einen zurück. Fluchtgeschwindigkeit ist die scharfe Grenze zwischen diesen beiden Schicksalen.",
+  "new": "Die Gravitation lässt nie ganz los — ihre Anziehung reicht bis ins Unendliche und wird mit der Entfernung nur schwächer. Einen Planeten zu „verlassen“ heißt also nicht, der Gravitation davonzulaufen, sondern genau so viel Energie zu haben, dass man beim Steigen und Langsamerwerden erst im Unendlichen bei der Geschwindigkeit null ankommt. Fehlt auch nur ein Hauch, gewinnt die Gravitation schließlich, hält einen an und zieht einen zurück. Die Fluchtgeschwindigkeit ist die Schneide zwischen diesen beiden Schicksalen."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "narrative_101.1",
+  "old": "Von Erdoberfläche beträgt diese Geschwindigkeit etwa 11,2 Kilometer pro Sekunde — grob 40.000 km/h. Sie hängt nicht davon ab, in welche Richtung man den Gegenstand wirft oder wie schwer er ist: ein Kieselstein und ein Raumschiff brauchen die gleiche Geschwindigkeit. Und sie ist mit der Bahngeschwindigkeit einer zirkulären Umlaufbahn durch einen sauberen Faktor verknüpft — Fluchtgeschwindigkeit ist genau die Quadratwurzel von zwei (etwa 1,41) mal die Geschwindigkeit einer zirkulären Umlaufbahn in gleicher Höhe. Erreiche eine Umlaufbahn, dann fahre etwa 41 % schneller, und du bist weg.",
+  "new": "Von der Erdoberfläche aus beträgt diese Geschwindigkeit etwa 11,2 Kilometer pro Sekunde — rund 40.000 km/h. Sie hängt nicht davon ab, in welche Richtung man den Gegenstand wirft oder wie schwer er ist: Ein Kieselstein und ein Raumschiff brauchen dieselbe Geschwindigkeit. Und sie ist über einen glatten Faktor mit der Geschwindigkeit einer Kreisbahn verknüpft — die Fluchtgeschwindigkeit ist genau die Quadratwurzel aus zwei (etwa 1,41) mal die Kreisbahngeschwindigkeit in derselben Höhe. Erreiche eine Umlaufbahn, werde dann etwa 41 % schneller, und du bist weg."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "narrative_101.2",
+  "old": "Die Zahl, die für das Verlassen des ganzen Sonnensystems zählt, ist größer: Das Sonnensystem von Erds Entfernung aus zu verlassen erfordert etwa 42 km/s. Die Erde trägt uns bereits mit etwa 30 km/s um die Sonne herum, daher braucht eine Sonde nur die Differenz — aber das ist immer noch mehr, als die meisten chemischen Raketen allein hinzufügen können, weshalb die Raumsonden, die das Sonnensystem verließen, sich auf Gravitationsunterstützung stützten: entscheidend für Voyager und Pioneer, und ein zusätzlicher Schub für New Horizons, die der größte Träger seiner Zeit bereits auf eine Fluchtbahn geworfen hatte.",
+  "new": "Die Zahl, auf die es beim Verlassen des gesamten Sonnensystems ankommt, ist größer: Um der Sonne aus dem Abstand der Erde zu entkommen, braucht man etwa 42 km/s. Die Erde trägt uns bereits mit etwa 30 km/s um die Sonne, eine Sonde braucht also nur die Differenz — doch das ist immer noch mehr, als die meisten chemischen Raketen allein hinzufügen können. Deshalb stützten sich die Raumsonden, die das Sonnensystem verlassen, auf Swing-by-Manöver: entscheidend bei Voyager und Pioneer, ein zusätzlicher Schub bei New Horizons, die die größte Trägerrakete ihrer Zeit bereits auf eine Fluchtbahn geschleudert hatte."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "body_paragraphs.0",
+  "old": "Fluchtgeschwindigkeit folgt aus der Energieerhaltung: Setzt man die Gesamtenergie (kinetisch plus Gravitationspotential) auf Null, erhält man v_escape = √(2μ / r), wobei μ der Gravitationsparameter des Körpers ist und r der Abstand von seinem Mittelpunkt. Da die zirkuläre Bahngeschwindigkeit √(μ / r) ist, ist Fluchtgeschwindigkeit genau √2 mal größer — der gleiche Faktor in jeder Höhe. Eine Flugbahn, die genau mit Fluchtgeschwindigkeit gestartet wird, ist eine Parabel (Bahnenergie Null); oberhalb davon eine Hyperbel, die mit überschüssiger Geschwindigkeit ins Unendliche gelangt — dem \"hyperbolischen Überschuss\" v∞.",
+  "new": "Die Fluchtgeschwindigkeit folgt aus der Energieerhaltung: Setzt man die Gesamtenergie (kinetische plus potenzielle Gravitationsenergie) gleich null, erhält man v_escape = √(2μ / r), wobei μ der Gravitationsparameter des Körpers und r der Abstand von seinem Mittelpunkt ist. Da die Kreisbahngeschwindigkeit √(μ / r) beträgt, ist die Fluchtgeschwindigkeit genau √2 mal so groß — in jeder Höhe derselbe Faktor. Eine Bahn, die genau mit Fluchtgeschwindigkeit gestartet wird, ist eine Parabel (Bahnenergie null); darüber ist sie eine Hyperbel, die mit Restgeschwindigkeit im Unendlichen ankommt — der „hyperbolischen Exzessgeschwindigkeit“ v∞."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "body_paragraphs.1",
+  "old": "Die Werte sind es wert, sie zu kennen: ~11,2 km/s von Erdoberfläche, ~2,4 km/s vom Mond, ~5,0 km/s vom Mars, ~618 km/s von der Sonnenoberfläche, und ~42,1 km/s um die Sonne von Erds 1-AU-Umlaufbahn aus zu verlassen. Fluchtgeschwindigkeit fällt mit der Höhe (größer r), daher ist das Verlassen aus einer hohen Umlaufbahn billiger als vom Boden — einer der Gründe, warum Missionen die Geschwindigkeit in Stufen aufbauen.",
+  "new": "Diese Werte sollte man kennen: ~11,2 km/s von der Erdoberfläche, ~2,4 km/s vom Mond, ~5,0 km/s vom Mars, ~618 km/s von der Sonnenoberfläche und ~42,1 km/s, um der Sonne aus der 1-AE-Bahn der Erde zu entkommen. Die Fluchtgeschwindigkeit sinkt mit der Höhe (größeres r), daher ist der Start aus einer hohen Umlaufbahn billiger als vom Boden — einer der Gründe, warum Missionen die Geschwindigkeit in Stufen aufbauen."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "body_paragraphs.2",
+  "old": "Das Erreichen der Sonnenfluchgeschwindigkeit ist der Grund, warum Tiefraum-Missionen sich auf den Oberth-Effekt und Gravitationsunterstützung verlassen. Erds ~30 km/s Orbitalbewegung ist ein kostenloser Start, aber das verbleibende Δv bis 42 km/s, angewendet aus niedriger Erdumlaufbahn, übersteigt das Budget einer chemischen Stufe; ein Planetenorbitalvorbeiflug steuert den Rest bei ohne Treibstoff. Fluchtgeschwindigkeit ist das Ziel, das die Lektion \"das Sonnensystem verlassen\" des Physics Lab überschreiten muss.",
+  "new": "Die Flucht aus dem Schwerefeld der Sonne ist der Grund, warum Missionen in den tiefen Raum auf den Oberth-Effekt und Swing-by-Manöver setzen. Die Bahnbewegung der Erde von ~30 km/s ist ein kostenloser Vorsprung, aber das verbleibende Δv bis 42 km/s, aus einer niedrigen Erdumlaufbahn aufgebracht, sprengt das Budget einer chemischen Stufe; ein Planetenvorbeiflug steuert den Rest ohne Treibstoff bei. Die Fluchtgeschwindigkeit ist das Ziel, das die Lektion „das Sonnensystem verlassen“ im Physics Lab überwinden muss."
+ },
+ {
+  "rel": "science/orbits/escape-velocity.json",
+  "at": "diagram_caption",
+  "old": "Fluchtgeschwindigkeit v = √(2μ/r) = √2 × Bahngeschwindigkeit: unterhalb davon ist die Bahn eine gebundene Ellipse, bei ihr eine Parabel, oberhalb davon eine Hyperbel, die Unendlich mit überschüssiger Geschwindigkeit erreicht.",
+  "new": "Fluchtgeschwindigkeit v = √(2μ/r) = √2 × Kreisbahngeschwindigkeit: Darunter ist die Bahn eine gebundene Ellipse, genau bei ihr eine Parabel, darüber eine Hyperbel, die das Unendliche mit Geschwindigkeit im Überschuss erreicht."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "narrative_101.0",
+  "old": "Auf der Erdbahn ist die Sonnenkraft auf dich etwa 46.000-mal schwächer als auf der Sonnenoberfläche — aber dennoch sehr stark. Warum umkreist der Mond die Erde und nicht die Sonne? Weil du unmittelbar neben der Erde bist — SO nah dran —, dass deren 80-mal kleinere Masse trotzdem gewinnt. Die Grenze, wo sich das umkehrt — wo du weit genug weg bist, dass die Sonne wieder dominiert — ist die Hill-Sphäre.",
+  "new": "Auf der Erdbahn ist die Anziehung der Sonne auf dich etwa 46.000-mal schwächer als an der Sonnenoberfläche — aber immer noch stark. Warum umkreist der Mond dann die Erde und nicht die Sonne? Weil du direkt neben der Erde SO nah an ihr bist, dass ihre 80-mal kleinere Masse trotzdem gewinnt. Die Grenze, an der das kippt — wo du weit genug weg bist, dass wieder die Sonne das Sagen hat — ist die Hill-Sphäre."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "narrative_101.1",
+  "old": "Innerhalb der Hill-Sphäre der Erde (eine ungefähr kugelförmige Region mit einem Durchmesser von etwa 1,5 Millionen km) kann ein Objekt eine stabile Umlaufbahn um die Erde halten. Außerhalb davon erreicht die Schwerkraft der Sonne zu stark herein und reißt das Objekt weg. Der Mond befindet sich in etwa 384.000 km Entfernung etwa ein Viertel des Weges bis zu dieser Grenze – angenehm stabil. Das James Webb Space Telescope umkreist den Sonne–Erde L2-Punkt, auch etwa 1,5 Millionen km entfernt, und benötigt kleine Bahnkorrekturmanöver (~2,5 m/s pro Jahr), weil L2 ein dynamisch instabiler Sattelpunkt ist – nicht, weil er sich am Rand der Hill-Sphäre der Erde befindet.",
+  "new": "Innerhalb der Hill-Sphäre der Erde (eine ungefähr kugelförmige Region von etwa 1,5 Millionen km Durchmesser) kann ein Objekt eine stabile Bahn um die Erde halten. Außerhalb greift die Schwerkraft der Sonne zu stark herein und reißt das Objekt weg. Der Mond, 384.000 km entfernt, liegt etwa ein Viertel des Weges bis zu diesem Rand — komfortabel stabil. Das James Webb Space Telescope umkreist den Lagrange-Punkt L2 des Systems Sonne–Erde, ebenfalls ~1,5 Millionen km entfernt, und braucht kleine Bahnhaltungsmanöver (~2,5 m/s pro Jahr), weil L2 ein dynamisch instabiler Sattelpunkt ist — nicht, weil er am Rand der Hill-Sphäre der Erde liegt."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "narrative_101.2",
+  "old": "Jeder Planet hat eine. Sie skalieren mit der Masse des Planeten und seiner Entfernung von der Sonne. Merkur — klein und nah — hat eine Hill-Sphäre nur etwa 90 Merkur-Radii durchmesser, weshalb Merkur keinen Mond hat (jedes eingefangene Objekt würde weggerissen). Jupiter — riesig und weit weg — hat eine Hill-Sphäre etwa 740 Jupiter-Radii durchmesser, groß genug, um 95 bekannte Monde plus umfangreiche Asteroiden-Schwärme der Trojaner zu halten.",
+  "new": "Jeder Planet hat eine. Sie wachsen mit der Masse des Planeten und seinem Abstand von der Sonne. Merkur — klein und nah — hat eine Hill-Sphäre von nur etwa 90 Merkurradien Durchmesser, weshalb Merkur keinen Mond hat (jedes eingefangene Objekt würde weggerissen). Jupiter — riesig und weit weg — hat eine Hill-Sphäre von etwa 740 Jupiterradien Durchmesser, groß genug für 95 bekannte Monde und ausgedehnte Schwärme von Trojaner-Asteroiden."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "body_paragraphs.0",
+  "old": "Die Hill-Radiusformel approximiert die Grenze als r_H ≈ a × (1−e) × (m / 3M)^(1/3), wobei `a` die Halbgroßachse des Planeten, `e` seine Exzentrizität, `m` seine Masse und `M` die Sonnenmasse ist. Der Faktor (1−e) berücksichtigt die Perihelschrumpfung — eine exzentrischere Umlaufbahn bedeutet, dass der Planet näher zur Sonne schwingert und seine Autorität entsprechend schrumpft. Die Kubikwurzel bedeutet, dass eine Verdoppelung der Planetenmasse seine Hill-Sphäre nur um ~26 % vergrößert; eine Verdoppelung seiner Umlaufbahnentfernung vergrößert sie um 100 %.",
+  "new": "Die Formel für den Hill-Radius nähert die Grenze an als r_H ≈ a × (1−e) × (m / 3M)^(1/3), wobei `a` die große Halbachse des Planeten, `e` seine Exzentrizität, `m` seine Masse und `M` die Masse der Sonne ist. Der Faktor (1−e) trägt der Verkleinerung im Perihel Rechnung — eine exzentrischere Bahn bedeutet, dass der Planet näher an die Sonne heranschwingt und sein Einfluss entsprechend schrumpft. Wegen der dritten Wurzel vergrößert eine Verdopplung der Planetenmasse seine Hill-Sphäre nur um ~26 %; eine Verdopplung seines Bahnabstands vergrößert sie um 100 %."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "body_paragraphs.1",
+  "old": "Echte Zahlen für das Sonnensystem: Merkur 220.000 km (90 R_Merkur). Venus 1,0 M km (170 R_Venus). Erde 1,5 M km (236 R_Erde). Mars 1,1 M km (320 R_Mars — größer als Erdes in Radien, weil Mars klein ist und weiter von der Sonne entfernt). Jupiter 53 M km (740 R_Jupiter — bei Weitem die größte im System). Saturn 65 M km (1100 R_Saturn). Uranus 70 M km. Neptun 116 M km. Pluto ~6,0 M km (~5000 R_Pluto — die größte Hill-Sphäre im Sonnensystem, gemessen in ihren eigenen Körperradien, weil Pluto weit von der Sonne entfernt und winzig ist).",
+  "new": "Reale Zahlen für das Sonnensystem: Merkur 220.000 km (90 R_Merkur). Venus 1,0 M km (170 R_Venus). Erde 1,5 M km (236 R_Erde). Mars 1,1 M km (320 R_Mars — in Radien gemessen größer als die der Erde, weil der Mars klein ist und weiter von der Sonne entfernt). Jupiter 53 M km (740 R_Jupiter — mit Abstand die größte im System). Saturn 65 M km (1100 R_Saturn). Uranus 70 M km. Neptun 116 M km. Pluto ~6,0 M km (~5000 R_Pluto — die größte Hill-Sphäre im Sonnensystem, gemessen in den Radien des jeweiligen Körpers, weil Pluto weit von der Sonne entfernt und winzig ist)."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "body_paragraphs.2",
+  "old": "Die Hill-Sphäre ist die äußere Grenze; die innere Grenze ist die Roche-Grenze, wo die Gezeitenkräfte des Planeten einen Satelliten zerreißen würden. Stabile Monde befinden sich im Band zwischen den beiden. Merkurs Fall ist der strenge — seine Hill-Sphäre ist klein genug, dass jeder eingefangene Körper in die Roche-Distanz hineingezogen und zerstört würde, daher ist Merkur seit 4,5 Milliarden Jahren mondlos geblieben.",
+  "new": "Die Hill-Sphäre ist die äußere Grenze; die innere ist die Roche-Grenze, an der die Gezeitenkräfte des Planeten einen Satelliten zerreißen würden. Stabile Monde leben im Bereich zwischen beiden. Merkur ist der strengste Fall — seine Hill-Sphäre ist so klein, dass jeder eingefangene Körper bis in den Roche-Abstand hineingezogen und zerrissen würde, weshalb Merkur seit 4,5 Milliarden Jahren mondlos geblieben ist."
+ },
+ {
+  "rel": "science/orbits/hill-sphere.json",
+  "at": "diagram_caption",
+  "old": "Hill-Sphäre eines Planeten auf einer nahezu kreisförmigen Umlaufbahn. Die L1 + L2 Lagrange-Punkte sitzen an der Grenze entlang der Planet→Sonne-Linie; Monde umkreisen stabil im Innern, alles außerhalb wird von der Sonne zurückgefordert.",
+  "new": "Hill-Sphäre eines Planeten auf einer nahezu kreisförmigen Umlaufbahn. Die Lagrange-Punkte L1 und L2 liegen an der Grenze auf der Linie Planet–Sonne; Monde umkreisen im Innern stabil, alles außerhalb holt sich die Sonne zurück."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "body_paragraphs.1",
+  "old": "Die meisten Planeten liegen nah bei der Ekliptik – die Erde definiert sie (`i = 0°` per Konstruktion), und die übrigen bleiben innerhalb weniger Grad. Der Merkur mit 7° ist der Ausreißer. Plutos wildes 17° war einer der Gründe für seine Herabstufung: echte Planeten bleiben fast koplanar.",
+  "new": "Die meisten Planeten liegen nah bei der Ekliptik – die Erde definiert sie (`i = 0°` per Konstruktion), und die übrigen bleiben innerhalb weniger Grad. Merkur mit 7° ist der Ausreißer. Plutos wilde 17° waren einer der Gründe für seine Herabstufung: Echte Planeten bleiben fast koplanar."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "body_paragraphs.2",
+  "old": "Für Erdsatelliten ist die Inklinationsgeschichte anders und pragmatisch. Äquatorial (0°) für geostationäre Kommunikationssatelliten. ~28° für Starts vom Cape Canaveral, die die Erdrotation nutzen müssen. ~51,6° für die ISS – gewählt, damit russische Besatzungen von Baikonur starten können. Polar (~90°) für Erdbeobachtungssatelliten, die jeden Breitengrad brauchen. Sonnensynchron (~98°) für Wissenschaftsplattformen, die bei jedem Durchgang gleichmäßige Beleuchtung wünschen.",
+  "new": "Bei Erdsatelliten sieht die Inklination anders und pragmatischer aus. Äquatorial (0°) für geostationäre Kommunikationssatelliten. ~28° für Starts vom Cape Canaveral, die die Erdrotation mitnehmen müssen. ~51,6° für die ISS – gewählt, damit russische Besatzungen von Baikonur starten können. Polar (~90°) für Erdbeobachtungssatelliten, die jeden Breitengrad brauchen. Sonnensynchron (~98°) für wissenschaftliche Plattformen, die bei jedem Überflug gleichmäßige Beleuchtung wollen."
+ },
+ {
+  "rel": "science/orbits/inclination.json",
+  "at": "diagram_caption",
+  "old": "Bahnebene um Winkel i gegen die Referenz geneigt. Aufsteigender Knoten N markiert den Nordkreuzungspunkt.",
+  "new": "Bahnebene, um den Winkel i gegen die Referenzebene geneigt. Der aufsteigende Knoten N markiert, wo die Bahn nach Norden kreuzt."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "narrative_101.0",
+  "old": "Stell dir vor, du wirfst einen Ball von einem hohen Turm. Er fällt zur Erde. Wirfst du stärker, fliegt er weiter. So stark, dass der Boden schneller wegfällt, als der Ball — und der Ball landet nie. Das ist eine Bahn. Jede Sonde, jeder Planet macht diesen Trick.",
+  "new": "Stell dir vor, du wirfst einen Ball vom hohen Turm. Er fällt im Bogen. Fester geworfen, wird der Bogen länger. Wirf so hart, dass der Boden so schnell wegfällt, wie der Ball sinkt — er landet nie. Er fällt ewig weiter, in geschlossener Schleife. Das ist eine Umlaufbahn. Jedes Raumfahrzeug, jeder Mond, jeder Planet macht diesen Trick."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "narrative_101.1",
+  "old": "Was die Schleife spezifisch zu einer Keplerschen Umlaufbahn macht, ist, dass wir die Gravitation als einen einzigen, sauberen Zug zu einem schweren Objekt behandeln — die Sonne für Planeten, die Erde für Satelliten, Mars für InSight. Zwei Körper, eine Kraft, keine Komplikationen. Das Ergebnis ist immer eine Ellipse, und der schwere Körper sitzt immer in einem der beiden Brennpunkte, niemals in der Mitte. Dieses eine Bild steckt hinter jeder Zahl, die du in dieser ganzen Enzyklopädie sehen wirst.",
+  "new": "Zu einer Keplerschen Umlaufbahn wird die Schleife dadurch, dass wir die Gravitation als einen einzigen, sauberen Zug zu einem schweren Objekt hin behandeln — die Sonne bei den Planeten, die Erde bei den Satelliten, der Mars bei InSight. Zwei Körper, eine Kraft, keine Komplikationen. Das Ergebnis ist immer eine Ellipse, und der schwere Körper sitzt immer in einem der beiden Brennpunkte, niemals in der Mitte. Dieses eine Bild steht hinter jeder Zahl, die du in dieser ganzen Enzyklopädie sehen wirst."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "narrative_101.2",
+  "old": "Die Realität ist ungeordneter — Monde stören Planeten, die Ausbuchtung der Erde zieht an Satelliten, die Sonne zieht an Mondbahnen — aber die Ungeordnetheit ist meist eine kleine Korrektur auf einer Keplerschen Umlaufbahn. Also fangen wir hier an. Bringt die Ellipse in Ordnung und alles andere ist Dekoration.",
+  "new": "Die Wirklichkeit ist unordentlicher — Monde stören Planeten, die Ausbuchtung der Erde zieht an Satelliten, die Sonne zerrt an Mondbahnen —, aber die Unordnung ist meist nur eine kleine Korrektur auf einer Keplerschen Umlaufbahn. Also fangen wir hier an. Bring die Ellipse richtig hin, und alles andere ist Dekoration."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "body_paragraphs.0",
+  "old": "Wenn du auf etwas Massives zufällst, es aber verfehlst, bekommst du eine Keplersche Umlaufbahn. Der Pfad ist eine Ellipse — ein gestreckter Kreis — und der Körper, auf den du zufällst, sitzt an einem der beiden Brennpunkte, niemals in der Mitte. Erde um die Sonne, Mond um die Erde, jede Raumsonde, die du in Orrery sehen wirst: alle sind Keplersch bis zu einer ersten Näherung.",
+  "new": "Wenn du auf etwas Massereiches zufällst, es aber verfehlst, bekommst du eine Keplersche Umlaufbahn. Die Bahn ist eine Ellipse — ein gestreckter Kreis —, und der Körper, auf den du zufällst, sitzt in einem der beiden Brennpunkte, niemals in der Mitte. Erde um die Sonne, Mond um die Erde, jedes Raumfahrzeug, das du in Orrery sehen wirst: alle sind in erster Näherung keplersch."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "body_paragraphs.1",
+  "old": "Sechs Zahlen beschreiben eine dieser Bahnen vollständig: die Größe (Große Halbachse), die Exzentrizität (Exzentrizität), drei Winkel, die die Ellipse im Raum ausrichten (Inklination, Länge des aufsteigenden Knotens, Argument der Periapsis), und wo sich der Körper gerade auf der Bahn befindet (Wahre Anomalie). Dies sind die Keplerian-Elemente – die Sprache, in die jeder andere Abschnitt auf dieser Registerkarte übersetzt wird, um etwas zu zeigen, das man sich vorstellen kann.",
+  "new": "Sechs Zahlen beschreiben eine solche Bahn vollständig: die Größe (große Halbachse), die Streckung (Exzentrizität), drei Winkel, die die Ellipse im Raum ausrichten (Inklination, Länge des aufsteigenden Knotens, Argument der Periapsis), und wo sich der Körper gerade auf der Bahn befindet (wahre Anomalie). Das sind die Kepler-Bahnelemente — die Sprache, in die jeder andere Abschnitt dieses Reiters übersetzt wird, damit man sich etwas darunter vorstellen kann."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "body_paragraphs.2",
+  "old": "Das Modell versagt, wann immer die Gravitation eines dritten Körpers relevant ist: Raumsonden in der Nähe des Mondes, Satelliten in niedriger Erdumlaufbahn, die die Ausbuchtung des Äquators spüren, alles, das durch Jupiters Schatten geht. Orrery verwendet Keplersche Umlaufbahnen für die heliozentrische Geschichte und geflickte Kegelschnittnäherungen für den Rest.",
+  "new": "Das Modell versagt, sobald die Gravitation eines dritten Körpers ins Gewicht fällt: bei Raumfahrzeugen in der Nähe des Mondes, bei Satelliten in niedriger Erdumlaufbahn, die den Äquatorwulst spüren, bei allem, was durch Jupiters Schatten zieht. Orrery verwendet Keplersche Umlaufbahnen für die heliozentrische Geschichte und Patched-Conic-Näherungen für den Rest."
+ },
+ {
+  "rel": "science/orbits/keplerian-orbit.json",
+  "at": "diagram_caption",
+  "old": "Ellipse mit Brennpunkt F₁ in der Sonne. Große Halbachse a · Perihel und Aphel auf der Apsidenlinie.",
+  "new": "Ellipse mit Brennpunkt F₁ in der Sonne. Große Halbachse a · Perihel (nah) und Aphel (fern) auf der Apsidenlinie."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "intro_sentence",
+  "old": "Drei Beobachtungsregeln, die Planetenbewegung ein Jahrhundert vor Newton zu einer geschlossenen Wissenschaft machten.",
+  "new": "Drei empirische Regeln, die die Planetenbewegung zu einer exakt formelhaften Wissenschaft machten, ein Jahrhundert bevor Newton das Warum erklärte."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "narrative_101.0",
+  "old": "Kepler hatte keinen Calculus, keine Newton-Gravitation, keinen Computer. Er hatte zwanzig Jahre Tycho Brahes mühsamer Marsbeobachtungen — und Geduld. Daraus drei Regeln, die nach 400 Jahren immer noch exakt richtig sind.",
+  "new": "Kepler hatte keine Infinitesimalrechnung, keine Newtonsche Gravitation, keinen Computer. Er hatte zwanzig Jahre Marsbeobachtungen seines Chefs Tycho Brahe, mühsam per Quadrant gemessen — und Geduld. Daraus entstanden drei Regeln, die nach 400 Jahren immer noch exakt stimmen."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "narrative_101.1",
+  "old": "Erstes Gesetz: Umlaufbahnen sind Ellipsen, keine Kreise. Zu dieser Zeit ketzerisch. Zweites Gesetz: die Linie von einem Planeten zur Sonne überstreicht in gleichen Zeiten gleiche Flächen – eine raffinierte Art zu sagen, dass Planeten schneller werden, wenn sie der Sonne nahe sind, und langsamer, wenn sie weit weg sind. Drittes Gesetz: je größer die Umlaufbahn, desto länger das Jahr, auf präzise Weise (T² skaliert als a³).",
+  "new": "Erstes Gesetz: Umlaufbahnen sind Ellipsen, keine Kreise. Damals ketzerisch. Zweites Gesetz: Die Linie von einem Planeten zur Sonne überstreicht in gleichen Zeiten gleiche Flächen – eine raffinierte Art zu sagen, dass Planeten schneller werden, wenn sie der Sonne nahe sind, und langsamer, wenn sie weit weg sind. Drittes Gesetz: Je größer die Umlaufbahn, desto länger das Jahr, und zwar auf genau bestimmte Weise (T² wächst wie a³)."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "narrative_101.2",
+  "old": "Newton kam siebzig Jahre später und bewies, dass alle drei Gesetze aus einer einzigen, einfachen Gravitationsgleichung folgen. Aber Kepler war zuerst da, ohne Theorie – nur indem er auf Zahlen starrte, bis sie gestanden. Das ist die Art von Ansatz, die man noch in der modernen Wissenschaft verfolgen kann, wenn man die Geduld dafür aufbringt.",
+  "new": "Newton kam siebzig Jahre später und bewies, dass alle drei Gesetze aus einer einzigen, einfachen Gravitationsgleichung folgen. Aber Kepler war zuerst da, ohne Theorie – nur indem er auf Zahlen starrte, bis sie gestanden. Das ist ein Kunststück, das man in der modernen Wissenschaft immer noch fertigbringen kann, wenn man die Geduld dafür hat."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "body_paragraphs.0",
+  "old": "Erstes Gesetz: Planeten bewegen sich auf Ellipsen um die Sonne, die sich in einem Brennpunkt befindet. Vor Kepler verwendete jedes Modell Kreise — manchmal verschachtelt, manchmal versetzt, aber immer kreisförmig. Kepler nutzte zwanzig Jahre von Tycho Brahe's Marsbeobachtungen und gab auf: Die Daten passten nicht zu Kreisen, und nichts, das er tun konnte, machte es möglich. Ellipsen passten beim ersten Versuch.",
+  "new": "Erstes Gesetz: Planeten bewegen sich auf Ellipsen, in deren einem Brennpunkt die Sonne steht. Vor Kepler arbeitete jedes Modell mit Kreisen — mal verschachtelt, mal versetzt, aber immer kreisförmig. Kepler nahm Tycho Brahes zwanzig Jahre Marsbeobachtungen und gab auf: Die Daten passten nicht zu Kreisen, was er auch versuchte. Ellipsen passten auf Anhieb."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "body_paragraphs.1",
+  "old": "Zweites Gesetz: die Linie von der Sonne zum Planeten überstreicht gleiche Flächen in gleichen Zeiten. Das ist Drehimpulserhaltung in verkleideter Form. In der Nähe des Perihels ist der Planet der Sonne nah, die Linie ist kurz – daher muss er schnell schwingen, um die gleiche Fläche wie eine lange, langsame Linie beim Aphel zu überstreichen. Das ist der Grund, warum die Orbitalgeschwindigkeit nicht konstant ist.",
+  "new": "Zweites Gesetz: Die Linie von der Sonne zum Planeten überstreicht in gleichen Zeiten gleiche Flächen. Das ist die Drehimpulserhaltung in Verkleidung. Nahe dem Perihel ist der Planet der Sonne nah, die Linie ist kurz — also muss sie schnell schwenken, um dieselbe Fläche zu überstreichen wie eine lange, langsame Linie nahe dem Aphel. Darum ist die Bahngeschwindigkeit nicht konstant."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "body_paragraphs.2",
+  "old": "Drittes Gesetz: `T² ∝ a³`. Das Quadrat der Umlaufzeit ist proportional zur dritten Potenz der großen Halbachse. Mit der Erde auf T = 1 Jahr und a = 1 AU kann man die Umlaufzeit jedes Planeten aus seiner Entfernung ablesen — oder seine Entfernung aus seiner Umlaufzeit. Newton würde dies später aus der Gravitation herleiten; Kepler kam dorthin durch reines Mustererkennen in Brahe's Daten.",
+  "new": "Drittes Gesetz: `T² ∝ a³`. Das Quadrat der Umlaufzeit ist proportional zur dritten Potenz der großen Halbachse. Setzt man die Erde auf T = 1 Jahr und a = 1 AE, kann man die Umlaufzeit jedes Planeten an seinem Abstand ablesen — oder seinen Abstand an seiner Umlaufzeit. Newton leitete das später aus der Gravitation her; Kepler kam dorthin durch reines Mustererkennen in Brahes Daten."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "formula_caption",
+  "old": "Keplers drittes Gesetz modern: T² hängt nur von a (und μ) ab.",
+  "new": "Keplers drittes Gesetz: T² hängt nur von a (und μ des Zentralkörpers) ab."
+ },
+ {
+  "rel": "science/orbits/keplers-laws.json",
+  "at": "diagram_caption",
+  "old": "Gleiche Flächen in gleicher Zeit: kurzer Bogen am Perihel überstreicht dieselbe Fläche wie der lange am Aphel.",
+  "new": "Gleiche Flächen in gleichen Zeiten: Der kürzere Bogen nahe dem Perihel überstreicht dieselbe Fläche wie der längere Bogen nahe dem Aphel."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "intro_sentence",
+  "old": "Fünf gravitationsausgeglichene Spots in jedem Zwei-Körper-System, in dem ein kleines Raumfahrzeug mit fast keinem Kraftstoff schweben kann – und wo die meisten modernen Tief-Raum-Observatorien tatsächlich leben.",
+  "new": "Fünf Gleichgewichtspunkte der Gravitation in jedem Zweikörpersystem, an denen ein kleines Raumfahrzeug mit fast keinem Treibstoff schweben kann — und an denen die meisten modernen Observatorien im tiefen Raum tatsächlich zu Hause sind."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "narrative_101.0",
+  "old": "Nehmen Sie alle zwei Körper, die sich umkreisen - Sonne und Erde, Erde und Mond, Sonne und Jupiter - und es gibt genau fünf Flecken in der Orbit-Ebene, wo ein dritter, viel kleinerer Körper relativ zu den beiden großen. Joseph-Louis Lagrange arbeitete sie 1772 aus. Zweieinhalb Jahrhunderte später sind sie die wertvollsten Immobilien in cislunar Raum.",
+  "new": "Nimm zwei beliebige Körper, die einander umkreisen — Sonne und Erde, Erde und Mond, Sonne und Jupiter —, und es gibt in der Bahnebene genau fünf Punkte, an denen ein dritter, viel kleinerer Körper relativ zu den beiden großen an Ort und Stelle bleiben kann. Joseph-Louis Lagrange rechnete sie 1772 aus. Zweieinhalb Jahrhunderte später sind sie die wertvollste Immobilie im cislunaren Raum."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "narrative_101.1",
+  "old": "JWST sitzt bei Sonne-Erde L2. SOHO sitzt bei Sonne-Erde L1. Gateway wird in der Nähe von Erde-Mond L2 leben. Queqiao Relais Chang'e Signale von jenseits des Mondes auf der Erde-Mond L2 auch. Die benannte Raumschiffsliste ist kurz und fast vollständig Lagrange-stationiert.",
+  "new": "JWST sitzt am Sonne–Erde-Punkt L2, SOHO am Sonne–Erde-Punkt L1. Gateway wird in der Nähe von Erde–Mond-L2 stehen. Auch Queqiao leitet die Signale von Chang'e jenseits des Mondes im Erde–Mond-Punkt L2 weiter. Die Liste der namhaften Raumfahrzeuge ist kurz und fast ausschließlich an Lagrange-Punkten stationiert."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "body_paragraphs.0",
+  "old": "Die fünf Punkte sitzen in bestimmten Geometrien. **L1*** liegt zwischen den beiden Körpern auf der Linie, die sie verbindet – für Sonne-Erde, das ist ~1,5 Millionen km sunward of Erde, wo der Zug der Sonne und der Zug der Erde den zentristischen Bedarf ausgleichen. **L2** ist auf der gleichen Linie, aber auf der FAR Seite des kleineren Körpers — für Sonne-Erde, ~1,5 Millionen km anti-sunward der Erde. **L3*** ist auf der gegenüberliegenden Seite des größeren Körpers, versteckt hinter der Sonne aus der Erdperspektive. **L4* und **L5** befinden sich an den Ecken von gleichseitigen Dreiecken, die mit den beiden Körpern gebildet werden - 60° vor und 60° hinter der kleineren Körperbahn.",
+  "new": "Die fünf Punkte liegen in bestimmten Geometrien. **L1** liegt zwischen den beiden Körpern auf der Verbindungslinie — bei Sonne–Erde ~1,5 Millionen km von der Erde in Richtung Sonne, wo sich die Anziehung der Sonne und die der Erde so ausgleichen, dass die nötige Zentripetalkraft stimmt. **L2** liegt auf derselben Linie, aber auf der ABGEWANDTEN Seite des kleineren Körpers — bei Sonne–Erde ~1,5 Millionen km von der Erde aus von der Sonne weg. **L3** liegt auf der gegenüberliegenden Seite des größeren Körpers, von der Erde aus hinter der Sonne verborgen. **L4** und **L5** liegen an den Spitzen gleichseitiger Dreiecke, die mit den beiden Körpern gebildet werden — 60° vor und 60° hinter dem kleineren Körper auf dessen Bahn."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "body_paragraphs.1",
+  "old": "Die Stabilität unterscheidet sich erheblich. L1, L2 und L3 sind **Sattelunkte** — gravitativ auf der Ein-Aus-Achse ausgeglichen, aber instabil auf senkrechten Achsen. Ein dort stationiertes Raumschiff wird innerhalb weniger Monate abdriften, es sei denn, es führt kleine Stationshaltemanöver durch. L4 und L5 sind **stabil** — sie sind Potenzialenergietöpfe. Staub sammelt sich bei der Erde-Sonne L4/L5 an (die Kordylewski-Wolken, schwach, aber real); Trojaner-Asteroiden librieren in Millionen um die Sonne-Jupiter L4 und L5.",
+  "new": "Die Stabilität unterscheidet sich erheblich. L1, L2 und L3 sind **Sattelpunkte** — gravitativ im Gleichgewicht auf der Achse nach innen und außen, aber instabil auf den senkrechten Achsen. Ein dort geparktes Raumfahrzeug driftet innerhalb weniger Monate ab, wenn es nicht kleine Stationshaltemanöver durchführt. L4 und L5 sind **stabil** — sie sind Potenzialmulden. An den Punkten L4/L5 des Systems Sonne–Erde sammelt sich Staub (die Kordylewski-Wolken, schwach, aber real); Trojaner-Asteroiden librieren zu Millionen um die Punkte L4 und L5 des Systems Sonne–Jupiter."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "body_paragraphs.2",
+  "old": "**Sonne-Erde Lagrange Punkte** sind dort, wo große Observatorien leben: SEL1 beherbergt SOHO (Sun-watching seit 1996) und DSCOVR (Earth-watching); SEL2 beherbergt JWST, Spektr-RG, Euclid, Gaia und zuvor Herschel + Planck – anti-sunward, so dass die Sonne + Erde + Mond sind alle auf einer Seite leicht, SEL2 ist ~6 Monate freier Koast weg von der Erde, mit einem ~5 m/s Halo-orbit-Insertion verbrennen bei der Ankunft; kein Brennstoff für die Stationshaltung mehr als ~2 m/s/yr.",
+  "new": "**Die Lagrange-Punkte des Systems Sonne–Erde** sind der Wohnort großer Observatorien: SEL1 beherbergt SOHO (beobachtet die Sonne seit 1996) und DSCOVR (beobachtet die Erde); SEL2 beherbergt JWST, Spektr-RG, Euclid, Gaia und früher Herschel und Planck — von der Sonne abgewandt, sodass Sonne, Erde und Mond alle auf einer Seite stehen und sich leicht abschirmen lassen. SEL2 ist etwa 6 Monate Freiflug von der Erde entfernt, mit einem Einschussmanöver in die Halo-Bahn von ~5 m/s bei der Ankunft; für die Stationshaltung ist nicht mehr als ~2 m/s pro Jahr nötig."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "body_paragraphs.3",
+  "old": "**Lagrange-Punkte Erde-Mond** sind die strategischen Liegenschaften für das Artemis-Programm. EML2 (~64.500 km hinter dem Mond) ist der Bereitstellungspunkt für Gateway in einer NRHO (ein quasi-geradliniger Halo um ihn). Es bietet Sichtlinie sowohl zur Mondrückseite (wo Chang'e-4 landete; Queqiao leitet von EML2 weiter) als auch zur Erde. EML1, zwischen Erde und Mond, ist ein natürlicher Wendepunkt für jede cislunar orientierte Architektur, die wiederholt ab- und aufsteigen möchte, ohne ∆v bei Transfers zu verschwenden. Das kommende Jahrzehnt bemannter Mondbetrieb ist weitgehend eine Geschichte der Lagrange-Punkte.",
+  "new": "**Die Lagrange-Punkte des Systems Erde–Mond** sind die strategische Immobilie für das Artemis-Programm. EML2 (~64.500 km hinter dem Mond) ist der Bereitstellungspunkt für Gateway in einer NRHO (eine nahezu geradlinige Halo-Bahn um ihn). Er bietet Sichtverbindung sowohl zur Mondrückseite (wo Chang'e-4 landete; Queqiao leitet von EML2 aus weiter) als auch zur Erde. EML1, zwischen Erde und Mond, ist ein natürlicher Wegpunkt für jede cislunare Architektur, die wiederholt ab- und aufsteigen will, ohne bei Transfers ∆v zu verschwenden. Das nächste Jahrzehnt bemannter Mondoperationen ist größtenteils eine Geschichte um Lagrange-Punkte."
+ },
+ {
+  "rel": "science/orbits/lagrange-points.json",
+  "at": "diagram_caption",
+  "old": "Fünf Schwerkraft-ausgeglichene Punkte pro Zweikörpersystem. L1/L2/L3 Sattelpunkte (stationär); L4/L5 stabile Brunnen. Sonne-Erde L2 beherbergt JWST + Euclid + Spektr-RG; Erde-Mond L2 beherbergt Gateway + Queqiao.",
+  "new": "Fünf Gleichgewichtspunkte der Gravitation pro Zweikörpersystem. L1/L2/L3 Sattelpunkte (Stationshaltung nötig); L4/L5 stabile Potenzialmulden. Sonne–Erde-L2 beherbergt JWST + Euclid + Spektr-RG; Erde–Mond-L2 beherbergt Gateway + Queqiao."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "title",
+  "old": "Orbitale Regimes — LEO, MEO, GEO, HEO",
+  "new": "Orbitregime — LEO, MEO, GEO, HEO"
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.0",
+  "old": "Nehmen Sie einen beliebigen Satelliten. Das Wichtigste an ihm ist nicht, was er tut — sondern in welcher Höhe er sich aufhält. Die Höhe bestimmt, wie oft er denselben Punkt der Erdoberfläche sehen kann, wie lange ein Funksignal braucht, um ihn zu erreichen, wie viel Treibstoff er benötigt, um die Umlaufbahn zu halten, und wie lange seine praktische Lebensdauer ist. Raumfahrtingenieure unterteilen Umlaufbahnen in vier Bänder — LEO, MEO, GEO, HEO — weil sich die Kompromisse bei jedem Aufstieg deutlich verändern.",
+  "new": "Nimm einen Satelliten. Das Wichtigste an ihm ist nicht, was er tut — sondern in welcher Höhe er lebt. Die Höhe bestimmt, wie oft er denselben Fleck am Boden sehen kann, wie lange ein Funksignal bis zu ihm braucht, wie viel Treibstoff er zum Halten der Bahn benötigt und wie lang seine nutzbare Lebensdauer ist. Raumfahrtingenieure fassen Umlaufbahnen in vier Bändern zusammen — LEO, MEO, GEO, HEO —, weil sich die Kompromisse beim Aufsteigen sprunghaft ändern."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.1",
+  "old": "LEO reicht bis etwa 2.000 km. Die ISS kreist in 408 km Höhe. Hubble in 540 km. SpaceX' Starlink in etwa 550 km. Billig erreichbar (die meisten Raketen können eine Nutzlast hierhin bringen), aber man umrundet den Planeten alle 90 Minuten, die Atmosphäre bremst einen ab (Lebensdauer: Jahre ohne Nachschub), und man sieht jeden Punkt der Erdoberfläche nur etwa 10 Minuten pro Überflug.",
+  "new": "LEO reicht bis etwa 2.000 km. Die ISS kreist in 408 km Höhe, Hubble in 540 km, Starlink von SpaceX in etwa 550 km. Billig zu erreichen (die meisten Raketen schaffen eine Nutzlast bis hierher), aber man umrundet den Planeten alle 90 Minuten, die Atmosphäre bremst einen ab (Lebensdauer: Jahre ohne Bahnanhebung), und man sieht jeden Punkt am Boden nur etwa 10 Minuten pro Überflug."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.2",
+  "old": "MEO liegt zwischen 2.000 und 35.786 km — das GPS- / Galileo- / Beidou-Band, plus einige Kommunikationsdienste. Die Umlaufperioden betragen 2–12 Stunden; mit weniger Satelliten als bei LEO lässt sich der gesamte Globus abdecken, und man befindet sich oberhalb der gefährlichsten Strahlungsgürtel (sorgfältig gewählt). GEO sitzt genau bei 35.786 km — Periode genau 24 Stunden — sodass ein Satellit dort für immer über demselben Punkt der Erde schwebt, weshalb sich dort alle Wetter- und Rundfunksatelliten befinden.",
+  "new": "MEO reicht von 2.000 bis 35.786 km — das Band von GPS, Galileo und Beidou, dazu einige Kommunikationssatelliten. Die Umlaufzeiten betragen 2–12 Stunden; mit weniger Satelliten als in LEO deckt man den ganzen Globus ab, und man liegt über den schlimmsten Zonen der Strahlungsgürtel (sorgfältig gewählt). GEO liegt genau bei 35.786 km — Umlaufzeit genau 24 Stunden —, sodass ein Satellit dort für immer über demselben Punkt der Erde schwebt, weshalb alle Wetter- und Rundfunksatelliten dort oben stehen."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.3",
+  "old": "HEO (Highly-Elliptical Orbit – hochelliptische Umlaufbahn) ist die Wildcard — hohe Apogäum, niedriges Perigäum, lange Verweilzeit über einer gewählten Breite. Russlands Molniya-Umlaufbahnen sind HEO, optimiert für Hochbreitensabdeckung, die GEO nicht erreicht. Jedes Regime verkörpert eine andere Missionsphilosophie, codiert als eine Zahl auf der y-Achse.",
+  "new": "HEO (hochelliptische Umlaufbahn) ist der Sonderfall — hohes Apogäum, niedriges Perigäum, lange Verweilzeit über einer gewählten Breite. Russlands Molniya-Bahnen sind HEO, optimiert für die Abdeckung hoher Breiten, die GEO nicht erreicht. Jedes Regime ist eine andere Missionsphilosophie, kodiert als Zahl auf der y-Achse."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.0",
+  "old": "LEO (Low Erde Orbit, < 2.000 km Höhe): am billigsten erreichbar, kürzeste Umlaufperiode (~90 Minuten für ISS in 408 km), kürzeste Bodenverbindungsverzögerung (einige Millisekunden), kürzeste Lebensdauer aufgrund von Atmosphärenbremsung. Beherbergt die ISS, Hubble, Starlink, die meisten Erdbeobachtungssatelliten und alle bemannte Aktivität jenseits von Apollo.",
+  "new": "LEO (Low Earth Orbit, niedrige Erdumlaufbahn, < 2.000 km Höhe): am billigsten zu erreichen, kürzeste Umlaufzeit (~90 Minuten für die ISS in 408 km), kürzeste Signallaufzeit zum Boden (wenige Millisekunden), kürzeste Lebensdauer wegen des Restluftwiderstands. Beherbergt die ISS, Hubble, Starlink, die meisten Erdbeobachtungssatelliten und die gesamte bemannte Raumfahrt außer Apollo."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.1",
+  "old": "MEO (Medium Erde Orbit, 2.000–35.786 km): das Navigationsfunkband. GPS in 20.200 km, GLONASS in 19.100 km, Galileo in 23.222 km, Beidou MEO in 21.500 km. Umlaufperioden ~11–14 Stunden im Navigationsfunkband; Konstellationen mit 24–30 Satelliten gewährleisten globale Abdeckung. Oberhalb des inneren Van-Allen-Gürtels, unterhalb des größten Teils des äußeren.",
+  "new": "MEO (Medium Earth Orbit, mittlere Erdumlaufbahn, 2.000–35.786 km): das Navigationsband. GPS in 20.200 km, GLONASS in 19.100 km, Galileo in 23.222 km, Beidou MEO in 21.500 km. Umlaufzeiten ~11–14 Stunden im Navigationsband; Konstellationen aus 24–30 Satelliten gewährleisten globale Abdeckung. Oberhalb des inneren Van-Allen-Gürtels, unterhalb des größten Teils des äußeren."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.2",
+  "old": "GEO (Geostationary Erde Orbit, 35.786 km Höhe genau, 0° Inklination): Die Umlaufperiode gleicht dem Siderischen Tag der Erde (23h 56m 4s), sodass der Satellit über einer Länge am Äquator stationär erscheint. Beherbergt Fernsehfunksatelliten weltweit, Wettersatelliten (GOES, Himawari, Meteosat) und traditionelle Kommunikationssatelliten. Signallaufzeit Hin- und Rückweg ~240 ms — spürbar in Sprachanrufen.",
+  "new": "GEO (Geostationary Earth Orbit, geostationäre Bahn, genau 35.786 km Höhe, 0° Inklination): Die Umlaufzeit entspricht dem Sterntag der Erde (23 h 56 min 4 s), sodass der Satellit über einem Längengrad am Äquator stillzustehen scheint. Beherbergt das weltweite Satellitenfernsehen, Wetterbilder (GOES, Himawari, Meteosat) und klassische Kommunikationssatelliten. Signallaufzeit hin und zurück ~240 ms — in Telefongesprächen spürbar."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.3",
+  "old": "HEO (Highly-Elliptical Orbit – hochelliptische Umlaufbahn): niedriges Perigäum + hohes Apogäum. Molniya-Umlaufbahnen (Russland) liegen bei Perigäum ~600 km, Apogäum ~40.000 km, Inklination 63,4° — gewählt, damit die Apogäum-Verweilzeit über der nördlichen Hemisphäre stattfindet, wo GEO-Comsats nicht hinreichen. Entscheidend für Kommunikation in hohen Breitengraden und einige Frühwarnkonstellationen.",
+  "new": "HEO (Highly-Elliptical Orbit, hochelliptische Umlaufbahn): niedriges Perigäum + hohes Apogäum. Molniya-Bahnen (Russland) haben ein Perigäum von ~600 km, ein Apogäum von ~40.000 km und eine Inklination von 63,4° — so gewählt, dass die Verweilzeit im Apogäum über der Nordhalbkugel liegt, die GEO-Kommunikationssatelliten nicht erreichen. Entscheidend für Kommunikation in hohen Breiten und einige Frühwarnkonstellationen."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.4",
+  "old": "Den Wechsel zwischen Regimen ist teuer. Δv von LEO zu GEO beträgt etwa 3,9 km/s. Von LEO zu Escape / TLI etwa 3,2 km/s — kontraintuitiv billiger als von LEO zu GEO zu gehen, weil man bei der Ankunft nicht zirkularisieren muss (TMI zu Mars erfordert ~3,6+ km/s).",
+  "new": "Der Wechsel zwischen Regimen ist teuer. Δv von LEO nach GEO beträgt etwa 3,9 km/s. Von LEO auf Fluchtbahn / TLI sind es etwa 3,2 km/s — entgegen der Intuition billiger als von LEO nach GEO, weil man bei der Ankunft nicht zirkularisieren muss (TMI zum Mars erfordert ~3,6+ km/s)."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "diagram_caption",
+  "old": "Konzentrische Erde-Ringe: LEO (Cyan, niedrige Höhe), MEO (Blau, GPS-Region), GEO (Gold, geostatischer Ring), HEO (Orange, asymmetrische Ellipse).",
+  "new": "Konzentrische Bänder um die Erde: LEO (Cyan, niedrige Höhe), MEO (Blau, GPS-Bereich), GEO (Gold, geostationärer Ring), HEO (Orange, einseitig verzerrte Ellipse)."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "body_paragraphs.1",
+  "old": "Warum wichtig? Wegen Keplers drittem Gesetz: `T² ∝ a³`. Die Umlaufzeit hängt nur von der Halbachse ab. Streckung egal. Inklination egal. Streck eine Bahn und runde eine andere — gleiche `a`, gleiche Periode.",
+  "new": "Warum wichtig? Wegen Keplers drittem Gesetz: `T² ∝ a³`. Die Umlaufzeit hängt nur von der großen Halbachse ab. Form egal, Inklination egal. Streck eine Bahn zur Zigarre, eine andere zum Kreis — haben beide dasselbe `a`, kommen beide nach exakt gleicher Zeit zurück."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "body_paragraphs.2",
+  "old": "In den `/explore`-Feldern von Orrery wirst du diese Zahl in astronomischen Einheiten sehen. Erde: a ≈ 1,0 AU. Mars: 1,52 AU. Jupiter: 5,2 AU. Setzt du das in die Periodenformel ein, hast du die Orrery-Uhr reproduziert: 1 Jahr, 687 Tage, 11,86 Jahre.",
+  "new": "In den `/explore`-Feldern von Orrery siehst du diese Zahl in astronomischen Einheiten. Erde: a ≈ 1,0 AE. Mars: 1,52 AE. Jupiter: 5,2 AE. Setzt du sie in die Formel für die Umlaufzeit ein, hast du die Orrery-Uhr nachgebaut: 1 Jahr, 687 Tage, 11,86 Jahre."
+ },
+ {
+  "rel": "science/orbits/semi-major-axis.json",
+  "at": "diagram_caption",
+  "old": "Hauptachse von Perihel zu Aphel durch beide Brennpunkte. Die große Halbachse a ist die halbe Spanne.",
+  "new": "Die Hauptachse reicht vom Perihel zum Aphel durch beide Brennpunkte. Die große Halbachse a ist die Hälfte dieser Strecke."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "intro_sentence",
+  "old": "Die Erdumlaufbahn enthält ~36.000 katalogisierte Trümmerobjekte >10 cm und geschätzt 100+ Millionen kleinere Teile. Zwei ASAT-Tests und eine zufällige Kollision verursachten die meisten. Aufräumarbeiten beginnen gerade zu starten.",
+  "new": "In der Erdumlaufbahn kreisen ~36.000 verfolgte Trümmerobjekte über 10 cm und geschätzt über 100 Millionen kleinere Teile. Zwei ASAT-Ereignisse und eine Kollision erzeugten das meiste davon. Das Aufräumen kommt erst in Gang."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.0",
+  "old": "Die Zahlen sind deutlich. Das Space Debris Office der ESA, das Orbital Debris Program Office der NASA und das 18th Space Defense Squadron der US Space Force führen konvergierende Schätzungen der Orbitalverteilung (Stand 2024–2025): ~36.000 katalogisierte Objekte mit Durchmesser ≥10 cm, davon ~9.000 aktive Raumfahrzeuge und der Rest Trümmer. ~1 Million Teile geschätzt zwischen 1 cm und 10 cm, meist unverfolgt. >100 Millionen Teile zwischen 1 mm und 1 cm, völlig unverfolgt aber einzeln in der Lage, ein Raumfahrzeug bei Aufprall zu beschädigen (ein 1-cm-Aluminium-Fragment bei 14 km/s Schließgeschwindigkeit liefert die kinetische Energie einer Handgranate). Gesamtmasse in der Erdumlaufbahn: etwa 11.000 Tonnen. Davon sind vielleicht 8.000 Tonnen die Trümmerfraktion — Wracks, verbrauchte Oberstufen, Fragmente aus Bruchstücken, Farbflocken, Raketentriebwerkschlacke.",
+  "new": "Die Zahlen sind ernüchternd. Das Space Debris Office der ESA, das Orbital Debris Program Office der NASA und die 18th Space Defense Squadron der US Space Force führen übereinstimmende Schätzungen der Population in der Umlaufbahn (Stand 2024–2025): ~36.000 katalogisierte Objekte mit einem Durchmesser von ≥10 cm, davon ~9.000 aktive Raumfahrzeuge, der Rest Trümmer. Geschätzt ~1 Million Teile zwischen 1 cm und 10 cm, meist unverfolgt. Über 100 Millionen Teile zwischen 1 mm und 1 cm, völlig unverfolgt, aber jedes einzelne in der Lage, ein Raumfahrzeug beim Aufprall außer Gefecht zu setzen (ein 1-cm-Aluminiumfragment mit 14 km/s Annäherungsgeschwindigkeit liefert die kinetische Energie einer Handgranate). Gesamtmasse in der Erdumlaufbahn: etwa 11.000 Tonnen. Davon sind vielleicht 8.000 Tonnen Trümmeranteil — ausgediente Satelliten, verbrauchte Oberstufen, Bruchstücke aus Zerfallsereignissen, Farbflocken, Schlacke aus Raketentriebwerken."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.1",
+  "old": "Drei Ereignisse machen die Mehrheit der verfolgbaren Trümmerpopulation aus. **Fengyun-1C** (China, Januar 2007): China führte einen Antisatelliten-Waffentest gegen seinen eigenen stillgelegten Wettersatelliten in 865 km Höhe in einer bewusst polaren Umlaufbahn durch, um die Trümmerhaltbarkeit zu maximieren. Der kinetische Aufprall zerlegte das ~880-kg-Ziel in 3.500+ verfolgbare Teile, die weitgehend für Jahrhunderte im Orbit bleiben werden. **Iridium 33 + Cosmos 2251 Kollision** (Februar 2009): die erste bekannte zufällige Satellitenkollision der Geschichte. Iridiums operativer Komsat kollidierte mit Russlands defunktem Cosmos in 789 km Höhe und erzeugte ~2.300 verfolgbare Fragmente. **Russischer ASAT-Test** (November 2021): Russland beseitigte kinetisch seinen eigenen stillgelegten Tselina-D-Satelliten und produzierte 1.500+ verfolgbare Fragmente in ~480 km — nah genug an der ISS, dass die Besatzung sich in den ersten 24 Stunden der Trümmerwolkenkonvergenz in ihren Soyuz-Rückkehrkapseln unterstellte. Zusammen erzeugten diese drei Ereignisse etwa 25 % aller derzeit katalogisierten LEO-Trümmer.",
+  "new": "Drei Ereignisse machen den Großteil der verfolgbaren Trümmerpopulation aus. **Fengyun-1C** (China, Januar 2007): China führte einen Antisatelliten-Waffentest gegen seinen eigenen ausgedienten Wettersatelliten in 865 km Höhe durch, auf einer bewusst polaren Bahn, gewählt, um die Lebensdauer der Trümmer zu maximieren. Der kinetische Treffer zerlegte das ~880 kg schwere Ziel in über 3.500 verfolgbare Teile, die größtenteils Jahrhunderte im Orbit bleiben werden. **Kollision von Iridium 33 und Cosmos 2251** (Februar 2009): die erste bekannte unbeabsichtigte Satellitenkollision der Geschichte. Der betriebsfähige Kommunikationssatellit von Iridium kollidierte in 789 km Höhe mit dem ausgedienten russischen Cosmos und erzeugte ~2.300 verfolgbare Fragmente. **Russischer ASAT-Test** (November 2021): Russland zerstörte mit einem kinetischen Treffer seinen eigenen ausgedienten Satelliten Tselina-D und erzeugte über 1.500 verfolgbare Fragmente in ~480 km Höhe — nah genug an der ISS, dass die Besatzung in den ersten 24 Stunden der Begegnung mit der Trümmerwolke in ihren Soyuz-Rückkehrkapseln Schutz suchte. Zusammen erzeugten diese drei Ereignisse etwa 25 % aller derzeit katalogisierten LEO-Trümmer."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.2",
+  "old": "Das Kessler-Syndrom ist das Kaskadenphänomen, benannt nach NASAs Donald Kessler, der es 1978 modellierte. Sobald die LEO-Trümmerdichte einen kritischen Schwellwert überschreitet, erzeugt jede Kollision genug neue Fragmente, um weitere Kollisionen auszulösen, und die Kaskade kann sich über Jahrhunderte abspielen. Über diesem Schwellwert wird die LEO-Umgebung effektiv unzugänglich — selbst sorgfältige Starts können nicht vermeiden, beim Durchflug getroffen zu werden. Das Kessler-Modell von 1978 setzte den kritischen Schwellwert auf grob das 5-fache der 1978er-Population; das aktuelle LEO nähert sich diesem Schwellwert in einigen Höhenschalen (besonders 750–1000 km, welche die höchste Kollisionsquerschnittsdichte hat). Die aktuelle Betriebsannahme des IADC ist, dass bestimmte LEO-Höhenzonen ohne weiteres aggressives Ausrangieren bis 2050–2080 Kessler-kritische Dichten erreichen werden.",
+  "new": "Das Kessler-Syndrom ist das Szenario einer außer Kontrolle geratenden Kaskade, benannt nach Donald Kessler von der NASA, der es 1978 modellierte. Sobald die Trümmerdichte in der LEO einen kritischen Schwellenwert überschreitet, erzeugt jede Kollision genug neue Fragmente, um weitere Kollisionen auszulösen, und die Kaskade kann sich über Jahrhunderte abspielen. Oberhalb dieser Schwelle wird die LEO-Umgebung praktisch unzugänglich — selbst sorgfältige Starts können nicht vermeiden, beim Durchflug getroffen zu werden. Das Kessler-Modell von 1978 setzte den kritischen Schwellenwert auf etwa das Fünffache der Population von 1978; die heutige LEO nähert sich diesem Wert in einigen Höhenschalen (besonders bei 750–1000 km, wo die Dichte des Kollisionsquerschnitts am höchsten ist). Die aktuelle Arbeitsannahme des IADC lautet, dass bestimmte LEO-Höhenbänder ohne anhaltend konsequente Entsorgung bis 2050–2080 Kessler-kritische Dichten erreichen."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.3",
+  "old": "Verfolgungsinfrastruktur. Das Space Surveillance Network (SSN) der US Space Force ist die primäre Katalogquelle der Welt — eine Flotte von etwa 30 bodengestützten Radaren und Teleskopen weltweit (das Phased-Array-Radar Eglin FPS-85 in Florida, Globus II in Norwegen, die Maui Space Surveillance Site in Hawaii) plus den Satelliten Space Based Space Surveillance. Das SSN verfolgt jedes Objekt ≥10 cm in der LEO und ≥1 m in der GEO, mit täglichen Bahnupdates, die öffentlich über Space-Track.org verfügbar sind. Private Konkurrenten (LeoLabs, mit seinem eigenen Phased-Array-Radarnetzwerk an sechs Standorten weltweit seit 2018) und Partner (EU Space Surveillance and Tracking-Konsortium seit 2014; Chinas SSA-Netzwerk in Xinjiang seit den 2010er Jahren) haben redundante Verfolgung hinzugefügt — vor 2010 hatte die Welt faktisch einen einzelnen Fehlerpunkt im SSN.",
+  "new": "Verfolgungsinfrastruktur. Das Space Surveillance Network (SSN) der US Space Force ist die wichtigste Katalogquelle der Welt — ein Netz aus rund 30 bodengestützten Radaren und Teleskopen weltweit (das Phased-Array-Radar Eglin FPS-85 in Florida, Globus II in Norwegen, die Maui Space Surveillance Site auf Hawaii) sowie der Satellit Space Based Space Surveillance. Das SSN verfolgt jedes Objekt ≥10 cm in der LEO und ≥1 m in der GEO; tägliche Bahnaktualisierungen sind öffentlich über Space-Track.org abrufbar. Private Konkurrenten (LeoLabs, mit einem eigenen Phased-Array-Radarnetz an sechs Standorten weltweit seit 2018) und Partner (das Konsortium EU Space Surveillance and Tracking seit 2014; Chinas SSA-Netz in Xinjiang seit den 2010er Jahren) haben redundante Verfolgung hinzugefügt — vor 2010 hatte die Welt im SSN faktisch eine einzige Schwachstelle."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.4",
+  "old": "Aufräumarbeiten + tägliche Mitigationsbetriebe. Active Debris Removal (ADR) — Missionen, die tote Raumfahrzeuge besuchen und sie deorbitieren — beginnt zu beschleunigen. **ELSA-d** (Astroscale, 2021) demonstrierte magnetisches Greifer-Andocken. **ClearSpace-1** (ESA, geplant 2026) wird einen ~100-kg-Vega-Secondary-Payload-Adapter von 660 km deorbitieren. **ELSA-M** (Astroscale-Japan, 2025–26) und die klassifizierte Salvage Series des US National Reconnaissance Office folgen. ESAs eigene Analysen legen nahe, dass das Entfernen von 5 großen LEO-Objekten pro Jahr das Minimum ist, um das Wachstum zu stoppen; die aktuelle Kadenz ist ~0/Jahr — die Kessler-Uhr läuft. Unterdessen führt jeder Betreiber Conjunction Assessment Risk Avoidance (CARA) durch: SSN veröffentlicht tägliche Konjunktionswarnungen 7 Tage vor enger werdenden Annäherungen im Bereich von ~1 km. Die ISS führt ~25 Ausweichmanöver/Jahr durch; Starlinks autonomes System führt ~50.000 alle sechs Monate (~100.000/Jahr) über die Konstellation durch; Tiangong führt mehrere pro Jahr durch. Hubble (keine Triebwerke) wurde dutzende Male von kleinen Trümmern getroffen und war im November 2021 fast von einem Cosmos-1408-Fragment getroffen worden. Die operative Trümmerausweichlast steigt schnell.",
+  "new": "Aufräumen + tägliche Risikominderung. Active Debris Removal (ADR) — Missionen, die ausgediente Raumfahrzeuge anfliegen und deorbitieren — kommt allmählich in Gang. **ELSA-d** (Astroscale, 2021) demonstrierte das Andocken per magnetischem Greifer. **ClearSpace-1** (ESA, für 2026 geplant) soll einen ~100 kg schweren Vega Secondary Payload Adapter aus 660 km Höhe deorbitieren. **ELSA-M** (Astroscale Japan, 2025–26) und die klassifizierte Salvage Series des US National Reconnaissance Office folgen. Die eigene Analyse der ESA legt nahe, dass das Entfernen von 5 großen LEO-Objekten pro Jahr das Minimum ist, um das Wachstum zu stoppen; die aktuelle Rate liegt bei ~0 pro Jahr — die Kessler-Uhr läuft. Unterdessen führt jeder Betreiber Conjunction Assessment Risk Avoidance (CARA) durch: Das SSN veröffentlicht täglich Annäherungswarnungen, 7 Tage im Voraus für Begegnungen unter ~1 km. Die ISS führt ~25 Ausweichmanöver pro Jahr durch; das autonome System von Starlink führt über die Konstellation ~50.000 pro sechs Monate (~100.000 pro Jahr) durch; Tiangong mehrere pro Jahr. Hubble (ohne Antrieb) wurde Dutzende Male von kleinen Trümmern getroffen und im November 2021 beinahe von einem Fragment von Cosmos 1408. Der betriebliche Aufwand für Trümmerausweichmanöver wächst rasch."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "diagram_caption",
+  "old": "Population: 36k verfolgbar ≥10 cm + 1M geschätzt 1–10 cm + 100M+ geschätzt <1 cm. Ursprung: Fengyun-1C (2007 China ASAT, +3500), Iridium-Cosmos (2009 zufällig, ~2300), Russland Tselina-D (2021 ASAT, +1500). Kessler-Schwellwert nähert sich in 750–1000 km LEO-Band bis 2050–2080. ADR: ClearSpace-1 (2026), ELSA-M (2025–26) und wenige andere — weit unter dem 5/Jahr, das notwendig ist, um das Wachstum zu stoppen.",
+  "new": "Population: 36.000 verfolgt ≥10 cm + 1 Mio. geschätzt 1–10 cm + über 100 Mio. geschätzt <1 cm. Ursprung: Fengyun-1C (2007, ASAT-Test Chinas, +3500), Iridium–Cosmos (2009, unbeabsichtigt, ~2300), Tselina-D (2021, ASAT-Test Russlands, +1500). Kessler-Schwelle rückt im LEO-Band 750–1000 km bis 2050–2080 näher. ADR: ClearSpace-1 (2026), ELSA-M (2025–26) und wenige andere — weit unter den 5 pro Jahr, die zum Stoppen des Wachstums nötig sind."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "title",
+  "old": "Spezielle Bahnen — Molniya, Tundra, GTO, Gefrierbahn",
+  "new": "Spezielle Bahnen — Molniya, Tundra, GTO, eingefrorene Bahn"
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "intro_sentence",
+  "old": "Jenseits von LEO/MEO/GEO/HEO gibt es einige benannte Spezialbahnen für spezifische Aufgaben: Kommunikation oberhalb von 70° Breite, Geostationaire Transferbahn, driftfreie Bahnerhaltung. Jede nutzt die Bahnmechanik clever aus.",
+  "new": "Jenseits von LEO, MEO, GEO und HEO erledigen einige benannte Spezialbahnen besondere Aufgaben: Kommunikation oberhalb von 70° Breite, geostationärer Transfer, driftfreie Bahnhaltung. Jede ist ein geschickter Kniff der Bahnmechanik."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.0",
+  "old": "Molniya-Bahn (Russland, seit 1965). Hohe Exzentrizität (e ≈ 0,74), niedriges Perigäum (~600 km), hohes Apogäum (~40.000 km), Inklination 63,4°, Umlaufperiode exakt 12 Stunden. Zwei Designentscheidungen machen es funktionieren. Erstens ist die 63,4°-Inklination die 'kritische Inklination', bei der Erdstörung J2 NICHT die Apsidenlinie rotieren lässt (bei jeder anderen Inklination würde sich das Perigäum über Monate um die Bahn verschieben); das Apogäum bleibt über der Nordhemisphäre fixiert, wo man es haben möchte. Zweitens verbringt der Satellit bei 12-Stunden-Periode etwa 8 Stunden in Apogäumsnähe, zieht langsam über den nördlichen Himmel und durchfliegt Perigäum dann in 4 Stunden. Ein Verbund aus drei Molniya-Satelliten mit gestaffelten Phasenwinkeln bietet kontinuierliche Abdeckung von Breiten nördlich 70°, wo Geo-Funksatelliten nicht hinreichen, da sie am Äquator sitzen. Genutzt von Russland für zivile Telefonie + TV (Molniya I/II/III Serie), militärische Kommunikation (Meridian) und Oko-Frühwarnsatelliten, die auf US-ICBM-Starts überwachen.",
+  "new": "Molniya-Bahn (Russland, seit 1965). Hohe Exzentrizität (e ≈ 0,74), niedriges Perigäum (~600 km), hohes Apogäum (~40.000 km), Inklination 63,4°, Umlaufzeit genau 12 Stunden. Zwei Konstruktionsentscheidungen machen sie funktionsfähig. Erstens ist die Inklination von 63,4° die „kritische Inklination“, bei der die J2-Störung durch die Erdabplattung die Apsidenlinie NICHT rotieren lässt (bei jeder anderen Inklination wandert das Perigäum im Lauf von Monaten um die Bahn); das Apogäum bleibt über der Nordhalbkugel fixiert, wo man es haben will. Zweitens verbringt der Satellit bei 12 Stunden Umlaufzeit etwa 8 Stunden nahe dem Apogäum und zieht langsam über den nördlichen Himmel, um dann in 4 Stunden durch das Perigäum zu rasen. Ein Verbund aus drei Molniya-Satelliten mit gestaffelten Phasenwinkeln deckt Breiten nördlich von 70° durchgehend ab, die GEO-Kommunikationssatelliten nicht erreichen, weil sie über dem Äquator stehen. Genutzt von Russland für zivile Telefonie + TV (Serien Molniya I/II/III), militärische Kommunikation (Meridian) und die Oko-Frühwarnsatelliten, die nach Starts von US-Interkontinentalraketen Ausschau halten."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.1",
+  "old": "Tundra-Bahn. Gleiche kritische-Inklinations- + 24-Stunden-Perioden-Idee wie Molniya, aber eher kreisförmig als stark exzentrisch (e ≈ 0,25). Apogäum in GEO-Höhe (~35.786 km), Perigäum ~25.000 km. Periode exakt 24 Stunden, daher wiederholt sich die Bodenspur einmal täglich in einer achterförmigen Gestalt, verlängert über der gewünschten Breitenbande. Genutzt von Sirius XM Satellite Radio für nordamerikanische Abdeckung (die Achterform ermöglicht Antennen in den kontinentalen USA, einen Satelliten kontinuierlich bei hohem Elevationswinkel zu sehen), russische Yamal-200 und andere Funksatelliten sowie US-SBIRS-HEO-Frühwarnsensoren, die überwiegend lange Sichtbarkeit über der Arktis benötigen. Tundra verzichtet auf die höhere maximale Erhebung von Molniya zugunsten voller 24-Stunden-Wiederholung (Molniya hat zwei Apogäen pro Tag, beide über der Nordhemisphäre — eines über Russland, eines über Nordamerika, 180° Längendifferenz auseinander).",
+  "new": "Tundra-Bahn. Dieselbe Idee wie bei Molniya — kritische Inklination + 24-Stunden-Umlaufzeit —, aber eher kreisnah als stark exzentrisch (e ≈ 0,25). Apogäum in GEO-Höhe (~35.786 km), Perigäum bei ~25.000 km. Umlaufzeit genau 24 Stunden, daher wiederholt sich die Bodenspur einmal täglich als lange Acht, die über dem gewählten Breitenband gestreckt ist. Genutzt von Sirius XM Satellite Radio für die Abdeckung Nordamerikas (dank der Acht sehen Antennen in den kontinentalen USA einen Satelliten durchgehend unter hohem Elevationswinkel), von den russischen Yamal-200 und anderen Kommunikationssatelliten sowie von den US-Frühwarnsensoren SBIRS-HEO, die vor allem lange Verweilzeit über der Arktis brauchen. Tundra tauscht die größere maximale Elevation von Molniya gegen volle 24-Stunden-Wiederholung (Molniya hat zwei Apogäen pro Tag, beide über der Nordhalbkugel — eines über Russland, eines über Nordamerika, in der Länge 180° auseinander)."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.2",
+  "old": "Geostationaire Transferbahn (GTO). Standardstaging-Bahn für nahezu jeden kommerziellen GEO-Funksatelliten. Stark elliptisch: Perigäum bei ~200–400 km LEO-Höhe, Apogäum bei GEO-Höhe (35.786 km), Inklination normalerweise gleich der Startplatzbreite (28,5° von Cape Canaveral, 5,2° von Kourou — deshalb dominiert Ariane bei kommerziellen GEO-Starts). Die Trägerrakete bringt die Nutzlast auf GTO; das Raumfahrzeug führt dann ein Apogäums-Zündmanöver am Apogäum aus, um bei GEO zu zirkularisieren und die Inklination zu nullen. Das Zündmanöver ist die treibstoffintensivste Einzeloperation, die die meisten Funksatelliten je durchführen — typischerweise 1,5–1,8 km/s ΔV, verbraucht den Großteil des Hypergol-Treibstoffs des Raumfahrzeugs für diesen einen Einsatz. Moderne Ionentriebwerk-Funksatelliten nutzen statt chemischer Zündung eine Wochenlange Ion-Thruster-Spiralauffahrt von GTO zu GEO, opfern Zeit für etwa 40 % mehr nutzbarer Nutzlast in der Bahn.",
+  "new": "Geostationäre Transferbahn (GTO). Die Standard-Übergangsbahn für nahezu jeden kommerziellen GEO-Kommunikationssatelliten. Stark elliptisch: Perigäum in ~200–400 km LEO-Höhe, Apogäum in GEO-Höhe (35.786 km), Inklination meist gleich der geografischen Breite des Startplatzes (28,5° von Cape Canaveral, 5,2° von Kourou — deshalb dominiert Ariane bei kommerziellen GEO-Starts). Die Trägerrakete bringt die Nutzlast auf die GTO; das Raumfahrzeug zündet dann im Apogäum seinen Apogäumsmotor, um in der GEO zu zirkularisieren und die Inklination auf null zu bringen. Dieses Zündmanöver ist das treibstoffintensivste Einzelmanöver, das die meisten Kommunikationssatelliten je ausführen — typischerweise 1,5–1,8 km/s ΔV, wofür der Großteil des hypergolen Treibstoffs des Raumfahrzeugs für dieses eine Ereignis draufgeht. Moderne Kommunikationssatelliten mit elektrischem Antrieb nutzen statt einer chemischen Zündung einen wochenlangen Spiralaufstieg mit Ionentriebwerken von der GTO in die GEO und tauschen Zeit gegen etwa 40 % mehr nutzbare Nutzlast in der Zielbahn."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.3",
+  "old": "Gefrierbahnen. Bahnen, in denen sich die Perigäumshöhe trotz verschiedener Störkräfte (J2, J3, atmosphärischer Widerstand, Mond-/Sonnengraviton) nicht über die Zeit verschiebt. Die klassische Gefrierrezept: Argument des Perigäums = 90° (sodass Perigäum am südlichen Scheitelpunkt der Bahn liegt), Exzentrizität abgestimmt auf Inklination und Höhe via J2-gegen-J3-Bilanzgleichung. Genutzt von Erdbeobachtungsmissionen, die ihre Abbildungshöhe jahrelang präzise fixiert halten müssen (ICESat-2 Eismessung, GRACE-FO Gravitationsfeldmessung). Das Gefrieren ist annähernde — Widerstand und Drittkörperstörungen lenken die Bahn schließlich ab, erfordern kleine Bahnerhaltungsmanöver alle paar Monate — aber die J2-gesteuerte Abweichung, die sonst vorherrschen würde, wird aufgehoben.",
+  "new": "Eingefrorene Bahnen. Bahnen, bei denen die Perigäumshöhe trotz der verschiedenen Störkräfte (J2, J3, Luftwiderstand, Schwerkraft von Mond und Sonne) im Lauf der Zeit nicht driftet. Das klassische Rezept für eine eingefrorene Bahn: Argument des Perigäums = 90° (das Perigäum liegt am südlichen Scheitelpunkt der Bahn), Exzentrizität abgestimmt auf Inklination und Höhe über eine Gleichgewichtsgleichung zwischen J2 und J3. Genutzt von Erdbeobachtungsmissionen, die ihre Beobachtungshöhe über Jahre präzise konstant halten müssen (ICESat-2 zur Eishöhenmessung, GRACE-FO zur Messung des Schwerefelds). Das Einfrieren ist nur näherungsweise — Luftwiderstand und Störungen durch dritte Körper lenken die Bahn schließlich doch ab, sodass alle paar Monate kleine Bahnhaltungsmanöver nötig sind —, aber die von J2 getriebene Drift, die sonst dominieren würde, ist aufgehoben."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.4",
+  "old": "Weitere benannte Spezialbahnen, die es zu kennen lohnt: Untersynchrone Transferbahn (SSTO — nicht Single-Stage-to-Orbit, sondern eine Niedrig-Höhen-Staging-Bahn von Soyuz-Starts zur ISS); Übersynchrone Transferbahn (Apogäum oberhalb GEO, auf manchen GEO-Starts (Ariane, Proton) genutzt zur Minimierung von Inklinations-ΔV); Wiederholbodenspur-Bahn (Höhe auf ganzzahliges Verhältnis von Bahnperiode zu Erdrotation abgestimmt, sodass der Satellit alle N Tage exakt über denselben Bodenfleck fährt — genutzt von ozeanografischen Missionen wie Jason/TOPEX-Poseidon); Zislunarorbits (DRO, NRHO, Halo — separat in /science/orbits/cislunar-orbits behandelt).",
+  "new": "Weitere benannte Spezialbahnen, die man kennen sollte: untersynchrone Transferbahn (SSTO — nicht Single-Stage-to-Orbit, sondern eine niedrige Übergangsbahn, die bei Soyuz-Starts zur ISS genutzt wird); übersynchrone Transferbahn (Apogäum oberhalb der GEO, bei manchen GEO-Starts (Ariane, Proton) genutzt, um das ΔV für die Inklinationsänderung zu minimieren); Bahn mit wiederkehrender Bodenspur (Höhe so abgestimmt, dass Umlaufzeit und Erdrotation in einem ganzzahligen Verhältnis stehen und der Satellit alle N Tage exakt über denselben Bodenfleck zieht — genutzt von ozeanografischen Missionen wie Jason und TOPEX-Poseidon); cislunare Bahnen (DRO, NRHO, Halo — gesondert in /science/orbits/cislunar-orbits behandelt)."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "diagram_caption",
+  "old": "Molniya: e=0,74, 12-Stunden-Periode, 63,4° Inklination (kritisch, Apsiden gesperrt). Tundra: e=0,25, 24-Stunden-Periode, 63,4°. GTO: LEO-Perigäum + GEO-Apogäum, Staging für Funksatelliten. Gefrierbahn: Perigäumshöhe driftet nicht (J2/J3-Bilanz + Argument Perigäum = 90°).",
+  "new": "Molniya: e=0,74, 12 Stunden Umlaufzeit, 63,4° Inklination (kritisch, Apsidenlinie fixiert). Tundra: e=0,25, 24 Stunden Umlaufzeit, 63,4°. GTO: LEO-Perigäum + GEO-Apogäum, Übergangsbahn für Kommunikationssatelliten. Eingefrorene Bahn: Perigäumshöhe driftet nicht (J2/J3-Gleichgewicht + Argument des Perigäums = 90°)."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "intro_sentence",
+  "old": "Sonnensynchrone Orbits überqueren jeden Punkt der Erde täglich zur gleichen Lokalzeit. Fast polar, retrograd, abgestimmt auf Erdrotation — der Trick konsistenter Erdbeobachtung.",
+  "new": "Sonnensynchrone Bahnen überqueren jeden Punkt der Erde täglich zur gleichen Ortssonnenzeit. Fast polar, retrograd, mit dem Äquatorwulst der Erde als Präzessionsmotor — der Trick hinter gleichmäßiger Erdbeobachtung."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.0",
+  "old": "Eine sonnensynchrone Bahn (SSO) ist eine quasi-polare Bahn (Inklination typisch 96–99°) in niedriger bis mittlerer LEO-Höhe (600–900 km), deren Bahnebene genau mit der Geschwindigkeit nach Osten rotiert, mit der die Erde die Sonne umkreist — 360°/Jahr oder etwa 0,9856°/Tag. Effekt: Der Winkel zwischen Bahnebene und Sonne bleibt das ganze Jahr konstant, daher überquert der Satellit jeden Breitengrad immer zur gleichen Lokalzeit. Ein Sentinel-2-Raumfahrzeug überquert beispielsweise täglich um 10:30 Ortszeit den Äquator im absteigenden Knoten; dies ermöglicht es, ein Landsatbild eines Waldes von 2010 mit einem von 2025 zu vergleichen und zu wissen, dass die Lichtverhältnisse ähnlich sind.",
+  "new": "Eine sonnensynchrone Bahn (SSO) ist eine nahezu polare Bahn (Inklination meist 96–99°) in niedriger bis mittlerer LEO-Höhe (600–900 km), deren Bahnebene genau so schnell nach Osten dreht, wie die Erde die Sonne umkreist — 360° pro Jahr oder etwa 0,9856° pro Tag. Die Wirkung: Der Winkel zwischen der Bahnebene des Satelliten und der Sonne bleibt das ganze Jahr konstant, daher überquert der Satellit jeden Breitengrad immer zur gleichen Ortssonnenzeit. Ein Sentinel-2-Raumfahrzeug überquert beispielsweise jeden Tag um 10:30 Uhr Ortszeit den Äquator im absteigenden Knoten; deshalb kann man ein Landsat-Bild eines Waldes von 2010 mit einem von 2025 vergleichen und weiß, dass die Lichtverhältnisse ähnlich sind."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.1",
+  "old": "Der Mechanismus ist gravitativ. Die Erde ist keine perfekte Kugel — die Äquatorbeule (etwa 21 km zusätzlicher Radius am Äquator gegenüber den Polen) erzeugt ein nicht-zentrales Gravitationsfeld. Für einen Satelliten in einer nicht-äquatorialen Bahn erzeugt diese Asymmetrie ein Drehmoment, das die Bahnebene allmählich präzediert. Die Präzessionsrate hängt von Höhe und Inklination ab: Niedrigere Höhen präzedieren schneller; Inklinationen zwischen 90° und 180° (retrograde Bahnen) präzedieren nach Osten. Es gibt genau eine Kombination von Höhe + Inklination für jede gegebene Höhe, die 0,9856°/Tag Präzession ergibt — das sind die sonnensynchronen Orbits. Bei 800 km Höhe beträgt die SSO-Inklination 98,6° (8,6° über polar, retrograd). Bei 600 km sind es 97,8°. Bei 400 km sind es 97,0°.",
+  "new": "Der Mechanismus ist gravitativ. Die Erde ist keine perfekte Kugel — der Äquatorwulst (am Äquator etwa 21 km mehr Radius als an den Polen) erzeugt ein nicht-zentrales Gravitationsfeld. Bei einem Satelliten auf einer nicht-äquatorialen Bahn übt diese Asymmetrie ein Drehmoment aus, das die Bahnebene allmählich zur Präzession bringt. Die Präzessionsrate hängt von Höhe und Inklination ab: Niedrigere Bahnen präzedieren schneller; Inklinationen zwischen 90° und 180° (retrograde Bahnen) lassen die Ebene nach Osten präzedieren. Für jede Höhe gibt es genau eine Inklination, die 0,9856° pro Tag Präzession ergibt — das sind die sonnensynchronen Bahnen. Bei 800 km Höhe beträgt die SSO-Inklination 98,6° (8,6° jenseits der Polarbahn, retrograd). Bei 600 km sind es 97,8°. Bei 400 km sind es 97,0°."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.2",
+  "old": "Fast jeder heute betriebene Erdbeobachtungssatellit befindet sich in einer SSO. ESAs Copernicus-Programm (Sentinel-1A/B/C/D Radarbildgebung, Sentinel-2A/B/C/D optische Bildgebung, Sentinel-3A/B Ozeanbeobachtung, Sentinel-5P Atmosphäre) — alle SSO. NASA/USGS Landsat 8 + Landsat 9 — SSO, 705 km, 98,2°, absteigender Knoten 10:00 Ortszeit. NOAAs Polarwetter (NOAA-20, NOAA-21, Suomi NPP) — SSO. Planet Labs' PlanetScope-Flotte (∼150 aktive CubeSats) — SSO bei 475 km. Japans GCOM-W1, Chinas Gaofen-Serie, Indiens Resourcesat. Der Grund, warum jeder Betreiber SSO wählt, ist der gleiche: konsistente Beleuchtungsgeometrie ermöglicht es, Zeitreihen-Datenprodukte (Vegetationsindizes, Schneebedeckung, Ozeanfarbe) zu erstellen, die über Jahre hinweg aussagekräftig sind.",
+  "new": "Fast jeder heute betriebene Erdbeobachtungssatellit befindet sich in einer SSO. Das Copernicus-Programm der ESA (Sentinel-1A/B/C/D Radarbildgebung, Sentinel-2A/B/C/D optische Bildgebung, Sentinel-3A/B Ozeanbeobachtung, Sentinel-5P Atmosphäre) — alle SSO. NASA/USGS Landsat 8 + Landsat 9 — SSO, 705 km, 98,2°, absteigender Knoten 10:00 Uhr Ortszeit. Die polarbahnigen Wettersatelliten der NOAA (NOAA-20, NOAA-21, Suomi NPP) — SSO. Die PlanetScope-Flotte von Planet Labs (∼150 aktive CubeSats) — SSO in 475 km. Japans GCOM-W1, Chinas Gaofen-Serie, Indiens Resourcesat. Der Grund, warum jeder Betreiber die SSO wählt, ist derselbe: Die gleichbleibende Beleuchtungsgeometrie erlaubt Zeitreihen-Datenprodukte (Vegetationsindizes, Schneebedeckung, Ozeanfarbe), die über Jahre hinweg aussagekräftig sind."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.3",
+  "old": "Polarbahnen ohne Sonnensynchronität sind selten und besonders. Eine echte Polarbahn (90,0°) ist ein spezifischer Fall; unter 90° ist sie retrograd, über 90° ist sie retrograd. Einige Militäraufklärungssatelliten (KH-11 / EVOLVED ENHANCED CRYSTAL — NRO) nutzen quasi-polare nicht-SSO-Bahnen, um ihren Beleuchtungswinkel absichtlich zu variieren. ICESat-2 (NASA, 92° Inklination, 488 km) ist quasi-polar, aber in einer leicht nicht-SSO-Höhe, um eine bessere Abdeckung der Eispanzer in hohen Breiten zu erreichen, die es messen soll. Das nicht-SSO-Polar-Regime handelt konsistente Beleuchtung gegen bessere Bodenspurvielfalt ein.",
+  "new": "Polarbahnen ohne Sonnensynchronität sind selten und besonders. Eine echte Polarbahn (90,0°) ist ein Sonderfall; unter 90° ist die Bahn prograd, über 90° retrograd. Einige militärische Aufklärungssatelliten (KH-11 / EVOLVED ENHANCED CRYSTAL — NRO) nutzen nahezu polare Nicht-SSO-Bahnen, um ihren Beleuchtungswinkel gezielt zu variieren. ICESat-2 (NASA, 92° Inklination, 488 km) ist nahezu polar, liegt aber bewusst etwas abseits der sonnensynchronen Höhe, um die Eisschilde in hohen Breiten, die es vermessen soll, besser abzudecken. Das Regime der Nicht-SSO-Polarbahnen tauscht gleichmäßige Beleuchtung gegen größere Vielfalt der Bodenspuren."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "body_paragraphs.4",
+  "old": "SSO-Nachteil: Startenergie. Um SSO bei 98,6° Inklination von überall unterhalb von etwa 45° Breite zu erreichen, ist eine erhebliche Inklinationsänderung vom natürlichen Startplatz-Inklination erforderlich. Südwärtsstart vom Vandenberg Space Force Base (34,7°N) oder Plessezk (62,9°N) oder Wenchang (19,6°N für südliche Starts über offenes Wasser) ist der Standardansatz. Die ΔV-Kosten für Inklinationsänderung in LEO betragen grob 130 m/s pro Grad bei kleinen Winkeln; die exakte Kosten für eine große Bahnebenenänderung verwenden 2v·sin(Δi/2), was für eine ∼70°-Änderung ≈ 8,9 km/s ergibt — daher würde ein typischer SSO-Aufstieg aus Florida (Cape Canaveral, 28,5°N) ungefähr ∼9 km/s Inklinationsänderungs-ΔV kosten — völlig unpraktisch. Dies ist der Grund, warum Vandenberg als eigener westlicher Startplatz existiert, und warum Plessezk, Sriharikota und Hammaguir (frühes französisches Raumfahrtprogramm) für hochinklinierte Starts gewählt wurden.",
+  "new": "Nachteil der SSO: Startenergie. Um die SSO mit 98,6° Inklination von irgendwo unterhalb von etwa 45° Breite zu erreichen, ist eine erhebliche Inklinationsänderung gegenüber der natürlichen Inklination des Startplatzes nötig. Der Standardansatz ist ein Start Richtung Süden von der Vandenberg Space Force Base (34,7°N), von Plessezk (62,9°N) oder von Wenchang (19,6°N, für Starts nach Süden über offenes Wasser). Die ΔV-Kosten einer Inklinationsänderung in der LEO betragen bei kleinen Winkeln grob 130 m/s pro Grad; die exakten Kosten einer großen Bahnebenenänderung folgen 2v·sin(Δi/2), was für eine Änderung um ∼70° ≈ 8,9 km/s ergibt — ein typischer SSO-Aufstieg aus Florida (Cape Canaveral, 28,5°N) würde also grob ∼9 km/s Inklinationsänderungs-ΔV kosten — völlig unpraktikabel. Deshalb gibt es Vandenberg als eigenen Startplatz an der Westküste und deshalb wurden Plessezk, Sriharikota und Hammaguir (der frühe französische Startplatz) für Starts in hohe Inklinationen gewählt."
+ },
+ {
+  "rel": "science/orbits/sun-synchronous.json",
+  "at": "diagram_caption",
+  "old": "SSO: quasi-polar (96–99°), retrograd, LEO (600–900 km). J2-Störung durch Erdäquatorbeule präzediert Bahnebene täglich um 0,9856° nach Osten — genau passend zu Erdorbit um Sonne. Resultat: Satellit überquert jeden Breitengrad jeden Tag zur gleichen Lokalzeit. Arbeitspferd von Sentinel, Landsat, NOAA-Polar, PlanetScope, GCOM.",
+  "new": "SSO: nahezu polar (96–99°), retrograd, LEO (600–900 km). Die J2-Störung durch den Äquatorwulst der Erde dreht die Bahnebene täglich um 0,9856° nach Osten — genau passend zur Bahnbewegung der Erde um die Sonne. Ergebnis: Der Satellit überquert jeden Breitengrad täglich zur gleichen Ortssonnenzeit. Arbeitspferd von Sentinel, Landsat, den NOAA-Polarbahnern, PlanetScope, GCOM."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "intro_sentence",
+  "old": "Zwei Planeten auf unterschiedlichen Bahnen driften in und aus ihrer Ausrichtung nach einer eigenen Uhr — der synodischen Periode — und diese Uhr bestimmt, wann die kostengünstige Route zwischen ihnen offen ist.",
+  "new": "Zwei Planeten auf verschiedenen Bahnen laufen nach einer eigenen Uhr in eine Ausrichtung hinein und wieder heraus — der synodischen Periode —, und diese Uhr bestimmt, wann der günstige Weg zwischen ihnen offen ist."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "narrative_101.0",
+  "old": "Eine kostengünstige Reise zu einem anderen Planeten ist keine gerade Linie — es ist eine lange gleitende Ellipse, die die Erde verlässt und die Bahn des Ziels eine halbe Umlaufbahn später nur gerade streift. Damit dies funktioniert, muss sich der Zielplanet am fernen Ende der Ellipse befinden, wenn das Raumschiff ankommt, nicht irgendwo anders auf seiner Bahn. Da sich die beiden Planeten mit unterschiedlichen Geschwindigkeiten bewegen, passt diese glückliche Geometrie nur ab und zu zusammen. Die Zeit zwischen einer Ausrichtung und der nächsten ist die synodische Periode.",
+  "new": "Eine günstige Reise zu einem anderen Planeten ist keine gerade Linie — sie ist eine lange, antriebslos durchflogene Ellipse, die die Erde verlässt und die Bahn des Ziels einen halben Umlauf später nur eben streift. Damit das funktioniert, muss der Zielplanet am fernen Ende der Ellipse stehen, wenn das Raumfahrzeug ankommt, und nicht irgendwo anders auf seiner Bahn. Da sich die beiden Planeten unterschiedlich schnell bewegen, passt diese glückliche Geometrie nur ab und zu zusammen. Die Zeit zwischen einer Ausrichtung und der nächsten ist die synodische Periode."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "narrative_101.1",
+  "old": "Für Erde und Mars beträgt sie etwa 780 Tage — grob 26 Monate. Deshalb kommen Mars-Missionen in Schüben: Verpasst man das Fenster, muss man mehr als zwei Jahre auf die nächste Ausrichtung der Planeten warten. 2020 öffnete sich das Fenster für alle gleichzeitig, und NASAs Perseverance, Chinas Tianwen-1 und der UAE Hope starteten alle innerhalb von drei Wochen nacheinander.",
+  "new": "Für Erde und Mars beträgt sie etwa 780 Tage — rund 26 Monate. Deshalb kommen Marsmissionen in Schüben: Verpasst man das Fenster, wartet man mehr als zwei Jahre, bis die Planeten wieder passend stehen. 2020 öffnete sich das Fenster für alle zugleich, und Perseverance der NASA, Tianwen-1 aus China und Hope der Vereinigten Arabischen Emirate starteten alle innerhalb von drei Wochen."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "narrative_101.2",
+  "old": "Die erforderliche Ausrichtung ist nicht \"Planeten nebeneinander\" sondern ein spezifischer Führungswinkel — Mars muss zum Startzeitpunkt um eine bestimmte Anzahl von Grad vor der Erde liegen, damit es zum Treffpunkt genau dann ankommt, wenn auch das Raumschiff ankommt. Die synodische Uhr ist einfach, wie oft dieser exakte Führungswinkel wiederkehrt.",
+  "new": "Nötig ist nicht „Planeten nebeneinander“, sondern ein bestimmter Vorlaufwinkel — der Mars muss beim Start um eine feste Zahl von Grad vor der Erde stehen, damit er am Treffpunkt genau dann ankommt, wenn auch das Raumfahrzeug dort ankommt. Die synodische Uhr gibt einfach an, wie oft genau dieser Vorlaufwinkel wiederkehrt."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "body_paragraphs.0",
+  "old": "Die synodische Periode S wird durch die beiden Umlaufperioden definiert: 1/S = |1/T₁ − 1/T₂| — die Rate, mit der der schnellere Planet den langsameren überholt. Für Erde (365,25 d) und Mars (687 d) ergibt das ~780 Tage; für Erde und Venus ~584 Tage; für Erde und Jupiter ~399 Tage (Jupiter ist so langsam, dass die synodische Periode kaum länger als Erdjahr ist). Je näher sich zwei Bahnperioden sind, desto LÄNGER ist die synodische Periode — benachbarte Planeten brauchen ewig, um sich gegenseitig zu überholen.",
+  "new": "Die synodische Periode S ergibt sich aus den beiden Umlaufzeiten über 1/S = |1/T₁ − 1/T₂|: die Rate, mit der der schnellere Planet den langsameren überrundet. Für Erde (365,25 d) und Mars (687 d) ergibt das ~780 Tage; für Erde und Venus ~584 Tage; für Erde und Jupiter ~399 Tage (Jupiter ist so langsam, dass die synodische Periode kaum länger ist als das Erdjahr). Je ähnlicher die Umlaufzeiten zweier Bahnen sind, desto LÄNGER ist die synodische Periode — benachbarte Planeten brauchen ewig, um einander zu überrunden."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "body_paragraphs.1",
+  "old": "Das Startfenster selbst wird durch die Phaseneinstellung bestimmt. Eine Hohmann-Transferbahn dauert eine feste Zeit (etwa 259 Tage Erde→Mars), während der das Ziel einen bekannten Bogen durchläuft; beim Start muss das Ziel also um einen spezifischen Phasenwinkel vor dem Abgangsplaneten liegen (grob 44° für Erde→Mars), damit es das Apozentrum der Transferbahn genau erreicht, wenn das Raumschiff ankommt. Diese Geometrie wiederholt sich jede synodische Periode — deshalb ist das Fenster periodisch.",
+  "new": "Das Startfenster selbst ergibt sich aus der Phasenlage. Ein Hohmann-Transfer dauert eine feste Zeit (etwa 259 Tage Erde→Mars), in der das Ziel einen bekannten Bogen zurücklegt; beim Start muss das Ziel also um einen bestimmten Phasenwinkel vor dem Startplaneten stehen (rund 44° für Erde→Mars), damit es den fernen Scheitelpunkt der Transferbahn genau dann erreicht, wenn das Raumfahrzeug dort ankommt. Diese Geometrie kehrt mit jeder synodischen Periode wieder — deshalb ist das Fenster periodisch."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "body_paragraphs.2",
+  "old": "Echte Fenster haben Breite und Kostenstruktur: Das Porkchop-Diagramm zeigt das Abfahrtsdatum gegen die Flugzeit und schattiert das gesamte Δv; die synodische Uhr ist das, was jede Periode ein neues Porkchop-Tal entstehen lässt. Die Launch-Window-Lektion des Physics Lab berechnet S aus den beiden Perioden und den erforderlichen Führungswinkel aus der Transferzeit — die gleiche Arithmetik, nach der jede interplanetare Mission geplant wird.",
+  "new": "Echte Fenster haben Breite und eine Kostenstruktur: Das Porkchop-Diagramm trägt das Startdatum gegen die Flugzeit auf und färbt das gesamte Δv ein; die synodische Uhr lässt in jedem Zyklus ein neues Porkchop-Tal entstehen. Die Lektion zum Startfenster im Physics Lab berechnet S aus den beiden Umlaufzeiten und den erforderlichen Vorlaufwinkel aus der Transferzeit — dieselbe Arithmetik, nach der jede interplanetare Mission geplant wird."
+ },
+ {
+  "rel": "science/orbits/synodic-period.json",
+  "at": "diagram_caption",
+  "old": "Synodische Geometrie: Das Ziel muss um einen bestimmten Phasenwinkel führen, damit es die Transferellipse bei Ankunft trifft; diese Ausrichtung wiederholt sich jede synodische Periode 1/S = |1/T₁ − 1/T₂|.",
+  "new": "Synodische Geometrie: Das Ziel muss um einen bestimmten Phasenwinkel vorauslaufen, damit es bei der Ankunft die Transferellipse trifft; diese Ausrichtung kehrt mit jeder synodischen Periode wieder, 1/S = |1/T₁ − 1/T₂|."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "body_paragraphs.0",
+  "old": "Die Bahnelemente beschreiben Form und Orientierung; die wahre Anomalie (`ν`) sagt dir, wo der Körper gerade ist. Vom Brennpunkt zum Perihel zeigen, dann zum Körper drehen — der Winkel ist die wahre Anomalie.",
+  "new": "Die Kepler-Bahnelemente beschreiben Form und Lage der Bahn; die wahre Anomalie (`ν`) sagt, wo der Körper gerade steht. Stell dich in den Brennpunkt (bei Planeten die Sonne), zeig aufs Perihel und dreh den Finger dem Körper nach. Dieser Winkel ist die wahre Anomalie."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "body_paragraphs.1",
+  "old": "Sie verläuft von 0° beim Perihel (nächste Annäherung) über 90° (ein Viertel der Bahn) bis zu 180° beim Aphel (größte Entfernung) und zurück. Anders als eine Uhr tickt sie nicht gleichmäßig — Keplers zweites Gesetz besagt, dass der Himmelskörper beim Perihel rast und beim Aphel kriecht. Die wahre Anomalie pro Sekunde ändert sich daher während der gesamten Umlaufbahn.",
+  "new": "Sie verläuft von 0° beim Perihel (nächste Annäherung) über 90° (ein Viertel der Bahn) bis zu 180° beim Aphel (größte Entfernung) und zurück. Anders als eine Uhr tickt sie nicht gleichmäßig — Keplers zweites Gesetz besagt, dass der Körper beim Perihel rast und beim Aphel kriecht. Die wahre Anomalie pro Sekunde ändert sich daher während des gesamten Umlaufs."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "body_paragraphs.2",
+  "old": "Schwesterwinkel, die du treffen wirst: die mittlere Anomalie (`M`), die sich zwar gleichmäßig mit der Zeit verändert, geometrisch aber bedeutungslos ist; und die exzentrische Anomalie (`E`), die Brücke zwischen ihnen. `M` nimmt mit konstanter Rate zu, du löst Keplers Gleichung `M = E - e·sin(E)`, um `E` zu erhalten, und konvertierst dann zu `ν`. Diese Verkettung ist der Herzschlag eines jeden Orbitalsimulators, einschließlich Orrery's.",
+  "new": "Verwandte Winkel, denen du begegnen wirst: die mittlere Anomalie (`M`), die zwar gleichmäßig mit der Zeit wächst, geometrisch aber bedeutungslos ist; und die exzentrische Anomalie (`E`), die Brücke zwischen beiden. `M` nimmt mit konstanter Rate zu, du löst Keplers Gleichung `M = E - e·sin(E)`, um `E` zu erhalten, und rechnest dann in `ν` um. Diese Kette ist der Herzschlag jedes Bahnsimulators, auch von Orrery."
+ },
+ {
+  "rel": "science/orbits/true-anomaly.json",
+  "at": "diagram_caption",
+  "old": "Wahre Anomalie ν gemessen am Brennpunkt, vom Perihel zur aktuellen Position.",
+  "new": "Wahre Anomalie ν, am Brennpunkt vom Perihel bis zur aktuellen Position des Körpers gemessen."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "intro_sentence",
+  "old": "Wie schnell ein Körper an jedem Punkt seiner Bahn ist — nur aus aktuellem Radius und großer Halbachse.",
+  "new": "Wie schnell sich ein Körper an jedem Punkt seiner Bahn bewegt — allein aus aktuellem Radius und großer Halbachse."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "narrative_101.0",
+  "old": "Wenn du nur jemals eine Gleichung der Orbitalmechanik lernen sollst, dann diese. Teile der Vis-Viva-Gleichung drei Dinge mit – was du umkreist, wie weit du gerade entfernt bist und die Größe deiner Bahn – und sie sagt dir genau, wie schnell du dich bewegst. Keine Zeit, keine Integration, kein cleverer Trick. Drei Eingaben, eine Quadratwurzel, fertig.",
+  "new": "Wenn du nur eine einzige Gleichung der Bahnmechanik lernst, dann diese. Nenne der Vis-Viva-Gleichung drei Dinge — was du umkreist, wie weit du gerade entfernt bist und wie groß deine Bahn ist — und sie sagt dir genau, wie schnell du bist. Keine Zeit, keine Integration, kein cleverer Trick. Drei Eingaben, eine Quadratwurzel, fertig."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "narrative_101.2",
+  "old": "Öffne den /fly-Bildschirm und beobachte die Geschwindigkeitsanzeige, während ein Raumfahrzeug an einem Planeten vorbeischwenkt. Das ist Vis-Viva, jeden Frame neu berechnet. Die Abfluggeschwindigkeit und Ankunftsgeschwindigkeit auf jedem Porkchop in /plan? Vis-Viva, abgetastet im Startradius und Ankunftsradius. Es ist überall.",
+  "new": "Öffne den Bildschirm /fly und beobachte die Geschwindigkeitsanzeige, während ein Raumfahrzeug an einem Planeten vorbeischwenkt. Das ist Vis-Viva, in jedem Frame neu berechnet. Die Zahlen für Abflug- und Ankunftsgeschwindigkeit in jedem Porkchop-Diagramm unter /plan? Vis-Viva, ausgewertet beim Start- und beim Ankunftsradius. Sie steckt überall."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "body_paragraphs.0",
+  "old": "Vis-Viva ist die Arbeitspferdegleichung der Orbitalmechanik. Sie verbindet drei Zahlen – den Gravitationsparameter `μ` von dem, was du umkreist, deine aktuelle Entfernung `r` vom Fokus und die Semi-Major-Axis `a` der Bahn – und gibt die Geschwindigkeit `v` aus. Das ist alles. Keine Zeitintegration, keine Anomalienkette, nur eine Quadratwurzel und du weißt, wie schnell du dich bewegst.",
+  "new": "Vis-Viva ist die Arbeitspferd-Gleichung der Bahnmechanik. Sie verbindet drei Zahlen — den Gravitationsparameter `μ` dessen, was du umkreist, deine aktuelle Entfernung `r` vom Brennpunkt und die große Halbachse `a` der Bahn — und gibt die Geschwindigkeit `v` aus. Das ist alles. Keine Zeitintegration, keine Anomalienkette, nur eine Quadratwurzel, und du weißt, wie schnell du bist."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "body_paragraphs.2",
+  "old": "In Orrery wird die Vis-Viva-Gleichung verwendet, um die Geschwindigkeitswerte zu berechnen, die auf dem HUD von `/fly` angezeigt werden, wenn ein Raumfahrzeug an einem Planeten vorbeifliegt — und auch die Start-Energie und Ankunftsgeschwindigkeit, die die Wärmekarte des Porkchop-Diagramms auf `/plan` speisen.",
+  "new": "In Orrery berechnet die Vis-Viva-Gleichung die Geschwindigkeitsanzeigen, die du im HUD von `/fly` siehst, wenn ein Raumfahrzeug an einem Planeten vorbeischwenkt — und die Werte für Startenergie und Ankunftsgeschwindigkeit, die die Porkchop-Heatmap unter `/plan` speisen."
+ },
+ {
+  "rel": "science/orbits/vis-viva.json",
+  "at": "diagram_caption",
+  "old": "Geschwindigkeit variiert: hoch im Perihel, niedrig im Aphel. Vis-viva verknüpft Geschwindigkeit mit Radius.",
+  "new": "Die Geschwindigkeit ändert sich entlang der Bahn: hoch im Perihel, niedrig im Aphel. Vis-Viva verknüpft die Geschwindigkeit mit dem Radius."
+ },
+ {
+  "rel": "science/planets/_intro.json",
+  "at": "paragraphs.0",
+  "old": "Körper des Sonnensystems sind nicht austauschbar. Der Mars verlor seine Atmosphäre, weil sein Dynamo zusammenbrach. Die Venus rotiert rückwärts. Saturns magnetische Achse ist auf einzigartige Weise mit seiner Rotationsachse ausgerichtet. Der Uranus ist zur Seite gekippt. Die Erde hat Stadtlichter, die man von der Umlaufbahn aus sehen kann, und der Mars nicht. Jede dieser Beobachtungen ist ein reales, nachgewiesenes Faktum mit einer realen, umstrittenen Erklärung. Dieser Tab ist der Ort, um diese Erklärungen zu lesen.",
+  "new": "Körper des Sonnensystems sind nicht austauschbar. Mars verlor seine Atmosphäre, weil sein Dynamo erlosch. Venus rotiert rückwärts. Saturns magnetische Achse ist als einzige mit seiner Rotationsachse ausgerichtet. Uranus ist auf die Seite gekippt. Die Erde hat Stadtlichter, die man von der Umlaufbahn aus sehen kann, Mars nicht. Jede dieser Beobachtungen ist eine echte Tatsache mit einer echten, umstrittenen Erklärung. In diesem Bereich kannst du diese Erklärungen lesen."
+ },
+ {
+  "rel": "science/planets/_intro.json",
+  "at": "paragraphs.1",
+  "old": "Sechs Abschnitte. Die ersten drei behandeln die Planeten selbst — Achsenneigung, Magnetfelder und die Geometrie von Tag und Nacht. Die nächsten zwei behandeln das System: die Monde, die jeden Planeten umkreisen (Galileische Monde, Titan, Triton, Charon), und die Vergleichswerte, mit denen du auf einen Blick sehen kannst, wie Jupiter sich von der Erde unterscheidet. Der letzte Abschnitt ist eine Übersicht der Raumfahrzeuge, die derzeit 2026 jeden Planeten aktiv erforschen — was sich auf dem Mars befindet (sechs aktive Orbiter, mehrere Agenturen), bei Jupiter (Juno), bei Venus (Akatsuki), und die langen Abwesenheiten anderswo.",
+  "new": "Sechs Abschnitte. Die ersten drei behandeln die Planeten selbst — Achsenneigung, Magnetfelder und die Geometrie von Tag und Nacht. Die nächsten zwei behandeln das System: die Monde, die jeden Planeten umkreisen (Galileische Monde, Titan, Triton, Charon), und die Vergleichswerte, an denen du auf einen Blick siehst, wie sich Jupiter von der Erde unterscheidet. Der letzte Abschnitt ist eine Übersicht der Raumfahrzeuge, die heute, im Jahr 2026, jeden Planeten aktiv erforschen — was beim Mars ist (sechs aktive Orbiter, mehrere Raumfahrtagenturen), bei Jupiter (Juno), bei der Venus (Akatsuki) und die lange Leere anderswo."
+ },
+ {
+  "rel": "science/planets/_intro.json",
+  "at": "paragraphs.2",
+  "old": "Jeder Abschnitt ist mit einer Visualisierung auf /explore gekoppelt. Die gelbe Rotationsachse, die du siehst, wenn du in einen Planeten hineinzoomst ↔ der Artikel über Achsenneigung. Die cyan-farbene magnetische Achse (Linsen-gesteuert) ↔ der Artikel über Magnetfelder. Die Glyphen der aktiven Orbiter ↔ der Artikel zur Raumfahrzeug-Übersicht. Schalte die Linse auf /explore ein, um die Physik-Overlays zu sehen, und komm dann hierher zurück, um zu lesen, was sie bedeuten.",
+  "new": "Jeder Abschnitt ist mit einer Visualisierung auf /explore gekoppelt. Die gelbe Rotationsachse, die du siehst, wenn du in einen Planeten hineinzoomst ↔ der Artikel über Achsenneigung. Die cyanfarbene magnetische Achse (nur über die Linse sichtbar) ↔ der Artikel über Magnetfelder. Die Glyphen der aktiven Orbiter ↔ der Artikel zur Übersicht aktiver Raumsonden. Schalte die Linse auf /explore ein, um die Physik-Overlays zu sehen, und komm dann hierher zurück, um zu lesen, was sie bedeuten."
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "intro_sentence",
+  "old": "Was gerade bei jedem Planeten ist: von MRO auf dem Mars bis Juno bei Jupiter bis Akatsuki auf der Venus.",
+  "new": "Was gerade bei welchem Planeten arbeitet: von MRO am Mars über Juno am Jupiter bis Akatsuki an der Venus."
+ }
+]

@@ -107,6 +107,10 @@ const GUARD = {
     // the Soviet Mars probe series, beside Venera
     path: /site-stories\/mars3\.json:chapters\.0\.images\.1\./,
   },
+  // inside an English acronym's expansion: LEO (Low Earth Orbit), MEO, GEO
+  Earth: { after: /^\s?Orbit\b/ },
+  // German 'Sub-Neptune' is already the plural of Sub-Neptun
+  Neptune: { before: /Sub-$/, locs: /^de$/ },
   // inside SLIM's English expansion and the quoted title 'The Last Man on the Moon'
   Moon: { before: /(Investigating|on the)\s?$/ },
   // the colophon's Vega probe models; the laser and solar sail (it 'Vela'), not the stars

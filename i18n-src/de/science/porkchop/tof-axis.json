@@ -1,14 +1,14 @@
 {
   "title": "Flugzeit-Achse",
-  "intro_sentence": "Wie lang die Reise dauert — entlang Y-Achse, in Tagen für innere Planeten und Jahren für äußere.",
+  "intro_sentence": "Wie lang die Reise dauert — entlang der Y-Achse, in Tagen für innere Planeten und Jahren für äußere.",
   "narrative_101": [
-    "Wenn dir die X-Achse WANN du aufbrichst verrät, verrät dir die Y-Achse WIE LANGE die Reise dauert. Unten im Diagramm: schnelle, kurze Reisen. Oben im Diagramm: langsame, lange Reisen. Bei Mars-ähnlichen Zielen erstreckt sich die Achse grob über 100 bis 500 Tage. Bei Jupiter sind es Jahre.",
-    "Jetzt kannst du den gesamten Kompromiss auf einen Blick erfassen. Gehe senkrecht eine Spalte im Diagramm hinauf – das ist DASSELBE Startdatum, aber unterschiedliche Reisezeiten. Unten (schnelle Reise) werden die Zellen rot – schnelle Reisen sind teuer, weil du eine steile Transferellipse erzwingst. Weiter oben (langsamere Reise) werden die Zellen kühl blau – das ist das natürliche Hohmann-Band, wo die Mathematik möchte, dass die Reise diese Zeit dauert.",
-    "Darum dauert eine Hohmann-Transferbahn zum Mars immer ungefähr 8,5 Monate. Gehe darunter und du zahlst steil für die Geschwindigkeit. Gehe weit darüber und du verweilst ohne Grund. Das Diagramm stellt diesen Kompromiss als Farbverlauf in jeder Spalte dar. Frachtmissionen können es sich leisten, langsam zu fahren; Crewmissionen in der Regel nicht, denn jeden zusätzlichen Monat bedeutet mehr Nahrung, Wasser, Sauerstoff und Strahlenbelastung."
+    "Sagt dir die X-Achse, WANN du aufbrichst, so sagt dir die Y-Achse, WIE LANGE die Reise dauert. Unten im Diagramm: schnelle, kurze Reisen. Oben im Diagramm: langsame, lange Reisen. Bei Mars-ähnlichen Zielen erstreckt sich die Achse grob über 100 bis 500 Tage. Bei Jupiter sind es Jahre.",
+    "Jetzt kannst du den gesamten Kompromiss auf einen Blick erfassen. Geh in einer Spalte des Plots senkrecht nach oben – das ist DASSELBE Startdatum, aber unterschiedliche Reisezeiten. Unten (schnelle Reise) werden die Zellen rot – schnelle Reisen sind teuer, weil du eine steile Transferellipse erzwingst. Weiter oben (langsamere Reise) werden die Zellen kühlblau – das ist das natürliche Hohmann-Band, in dem die Mathematik die Reise haben will.",
+    "Darum dauert eine Hohmann-Transferbahn zum Mars immer ungefähr 8,5 Monate. Gehst du darunter, zahlst du kräftig für die Geschwindigkeit. Gehst du weit darüber, trödelst du ohne Grund. Der Plot stellt diesen Kompromiss als Farbverlauf in jeder Spalte dar. Frachtmissionen können es sich leisten, langsam zu sein; Crewmissionen in der Regel nicht, denn jeder zusätzliche Monat bedeutet mehr Nahrung, Wasser, Sauerstoff und Strahlenbelastung."
   ],
   "body_paragraphs": [
     "Die Y-Achse ist die Reisedauer. Bei Mars-ähnlichen Zielen beträgt die natürliche Hohmann-Transferbahn ungefähr 250 Tage, daher erstreckt sich die Y-Spanne von Orrery grob über 100–500 Tage. Bei Jupiter oder Saturn dauert die Hohmann-Transferbahn Jahre, daher ist die Achse in Jahren.",
     "Verschiedene Reihen im Diagramm stellen Reisezeit gegen ∆v-Kosten gegenüber. Die billigsten Zellen (Hohmann-Band) liegen bei der natürlichen Hohmann-Reisezeit. Reduziere die Reisezeit (schnellere Reise) und die ∆v-Kosten steigen steil an. Erhöhe sie (langsamere Reise) und du bekommst günstigere, aber langsamere Optionen – manchmal lohnt es sich für Fracht oder zeitunkritische Nutzlasten.",
-    "Form der billigen Zone zeigt Trade-offs. Schmales Band: scharfes Optimum. Breite billige Zone: Flexibilität. Mars-Porkchop schmales Optimum. Jupiter breiter (Swing-by-Landschaft)."
+    "Die Form der günstigen Zone zeigt die Kompromisse. Schmales Hohmann-Band: scharfes Optimum. Breite günstige Zone: Spielraum. Der Mars-Porkchop hat ein schmales Optimum, der für Jupiter ein breiteres (Swing-by-Landschaft)."
   ]
 }

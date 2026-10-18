@@ -46,3 +46,6 @@ zh titles partly traditional (中途島, 哈欽森, 堅忍, 卡門線, 科羅廖
 - Places with no glossary form, left Latin on the ko site: Goldstone, Madrid, Canberra (DSN), Parkes, Usuda, Mauna Kea, Padua, Cologne, Tsukuba, Krasnoyarsk, Hawthorne, Star City, Hammaguir
 - Features/people: Shackleton, de Gerlache, Haworth, Faustini, Shoemaker (craters), Carrington, Sabatier, Penning, Hall (effect), Yarkovsky, Milankovitch, Epstein–Barr, Kornienko, Kononenko, Frank Rubio, Vande Hei, Mark Kelly, Jose Fernandez, Robert Forward, Yuri Milner, Brent Tully, Laniakea, Albion, Dinkinesh
 - English source (reviewers): planetary-stats says Saturn has "lower-than-Earth gravity" next to 1.07 g; active-spacecraft-survey says Europa Clipper "launches 2024" (launched Oct 2024).
+
+## From group 24 (de science)
+- German unit symbol: AE, not AU (the 2026-10-18 grader flags "AU" in de; de.wikipedia uses AE). Group 24 outputs use AE; the rest of the de site still has ~99 "<number> AU" — sweep after item 3 (de only, digits + AU only; "AU Mic" etc. are names).

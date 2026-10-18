@@ -8,9 +8,9 @@
   ],
   "body_paragraphs": [
     "Wenn du eine Keplersche Ellipse in ihre längste Dimension abflachst, ist die Linie, die du gezeichnet hast, die große Achse. Halbiere diese, und du hast die große Halbachse – geschrieben `a`. Sie ist gewissermaßen die durchschnittliche Entfernung vom umkreisenden Körper zum Brennpunkt: das arithmetische Mittel aus Perihel (nächster Punkt) und Aphel (fernster Punkt).",
-    "Warum wichtig? Wegen Keplers drittem Gesetz: `T² ∝ a³`. Die Umlaufzeit hängt nur von der Halbachse ab. Streckung egal. Inklination egal. Streck eine Bahn und runde eine andere — gleiche `a`, gleiche Periode.",
-    "In den `/explore`-Feldern von Orrery wirst du diese Zahl in astronomischen Einheiten sehen. Erde: a ≈ 1,0 AU. Mars: 1,52 AU. Jupiter: 5,2 AU. Setzt du das in die Periodenformel ein, hast du die Orrery-Uhr reproduziert: 1 Jahr, 687 Tage, 11,86 Jahre."
+    "Warum wichtig? Wegen Keplers drittem Gesetz: `T² ∝ a³`. Die Umlaufzeit hängt nur von der großen Halbachse ab. Form egal, Inklination egal. Streck eine Bahn zur Zigarre, eine andere zum Kreis — haben beide dasselbe `a`, kommen beide nach exakt gleicher Zeit zurück.",
+    "In den `/explore`-Feldern von Orrery siehst du diese Zahl in astronomischen Einheiten. Erde: a ≈ 1,0 AE. Mars: 1,52 AE. Jupiter: 5,2 AE. Setzt du sie in die Formel für die Umlaufzeit ein, hast du die Orrery-Uhr nachgebaut: 1 Jahr, 687 Tage, 11,86 Jahre."
   ],
   "formula_caption": "Große Halbachse als Mittel von Perihel- und Aphelradius.",
-  "diagram_caption": "Hauptachse von Perihel zu Aphel durch beide Brennpunkte. Die große Halbachse a ist die halbe Spanne."
+  "diagram_caption": "Die Hauptachse reicht vom Perihel zum Aphel durch beide Brennpunkte. Die große Halbachse a ist die Hälfte dieser Strecke."
 }

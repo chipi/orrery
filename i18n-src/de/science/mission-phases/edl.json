@@ -1,15 +1,15 @@
 {
   "title": "EDL — Eintritt, Abstieg, Landung",
-  "intro_sentence": "Sieben Minuten von Atmosphärenoberkante zu Räder-am-Boden — die automatisierteste, geringste-Marge-Phase jeder Planetenmission.",
+  "intro_sentence": "Sieben Minuten von der Atmosphärenobergrenze bis zum Aufsetzen — die am stärksten automatisierte Phase einer Planetenmission, mit den geringsten Reserven.",
   "narrative_101": [
-    "Mars ist 14 Lichtminuten weg. Bis das Signal des Rovers Mission Control erreicht, ist der Rover seit 14 Minuten am Boden — lebt oder tot. Niemand auf der Erde fliegt eine Marslandung. Die Sonde tut es allein, autonom, in ~7 Minuten, hunderte beweglicher Teile, null zweite Chancen.",
-    "Schritt 1: Atmosphäre treffen mit ~5,8 km/s. Hitzeschild handhabt glühende Temperaturen. Schritt 2: Überschall-Fallschirm bei Mach 2 deployen. Schritt 3: Schild ab, Schirm ab, Retroraketen feuern. Schritt 4: Touchdown.",
-    "Verschiedene Missionen, verschiedene Tricks. Apollo schoss seine Abstiegsrakete einfach die ganze Strecke hinunter. Curiosity und Perseverance setzten auf den wirklich verrückten Sky Crane: eine raketenbetriebene Plattform, die 20 Meter über dem Boden schwebte und den Rover an drei Kabeln herabließ, um sich dann selbst davonzumachen. Chinas Zhurong machte eine Hybrid-Variante. Die sieben Minuten heißen bei JPL „die sieben Minuten des Terrors\", weil in dieser Zeit niemand etwas tun kann. Der Simulator hat die Mathematik durchgerechnet; man vertraut dem Simulator."
+    "Der Mars ist 14 Lichtminuten entfernt. Bis das Signal des Rovers Mission Control erreicht, steht der Rover schon seit 14 Minuten am Boden — lebendig oder tot. Niemand auf der Erde fliegt eine Marslandung. Das Raumfahrzeug erledigt das selbst, autonom, in ~7 Minuten, mit Hunderten beweglicher Teile und ohne zweite Chance.",
+    "Schritt eins: mit ~5,8 km/s auf die Atmosphäre treffen; der Hitzeschild hält glühende Temperaturen aus. Schritt zwei: bei Mach 2 einen Fallschirm entfalten — ja, bei Überschall. Schritt drei: Schild und Schirm abwerfen, Bremsraketen zünden. Schritt vier: Aufsetzen.",
+    "Andere Missionen, andere Tricks. Apollo zündete einfach sein Abstiegstriebwerk die ganze Strecke nach unten. Curiosity und Perseverance setzten auf den wirklich verrückten Sky Crane: eine raketengetriebene Plattform, die 20 Meter über dem Boden schwebte und den Rover an drei Kabeln herabließ, um sich dann selbst davonzufliegen. Chinas Zhurong wählte eine Mischform. Die sieben Minuten heißen im JPL „die sieben Minuten des Terrors“, weil in dieser Zeit niemand etwas tun kann. Der Simulator hat die Mathematik durchgerechnet; man vertraut dem Simulator."
   ],
   "body_paragraphs": [
-    "Entry beginnt bei spürbarer Atmosphäre — ~125 km am Mars, 100 km Erde. Atmosphärenwiderstand bremst; Motoren aus. Hitzeschild ertragen tausend Grad, Aeroshell hält Form, Trajektorie ballistisch.",
-    "Descent: Überschallfallschirme bei Mach 1,5-2. Großer Geschwindigkeitsabbau. Aber Fallschirme allein nicht weich. Mars: supersonisch zu subsonisch per Schirm, dann powered descent: Schild ab, Retros zünden, letzte hundert Meter auf Triebwerksstrahlen.",
-    "Curiosity und Perseverance setzten den Sky Crane ein: schwebend in ~20 m Höhe, den Rover an Kabeln bis zur Bodenberührung hinablassen, die Abstiegsstufe dann wegfliegen. Apollo verbrannte seinen Treibstoff direkt bis zur Oberfläche. Chinas Zhurong verwendete ein Hybrid-Hover-/Absinkverfahren. Verschiedene Planeten, verschiedene Atmosphären, verschiedene Verfahren – dieselben sieben Minuten."
+    "Der Eintritt beginnt an nennenswerter Atmosphäre — am Mars in etwa 125 km, an der Erde in 100 km Höhe. Ab da bremst der Luftwiderstand, die Triebwerke schweigen. Der Hitzeschild hält Tausende Grad aus, die Aeroshell die Form, die Bahn ist ballistisch.",
+    "Der Abstieg beginnt, wenn sich bei etwa Mach 1,5-2 Überschallfallschirme öffnen. Sie nehmen viel Geschwindigkeit weg, doch allein reichen sie in dünner Luft nicht für eine weiche Landung. Am Mars folgt der Antriebsabstieg: Schild ab, Bremsraketen zünden, die letzten paar hundert Meter fällt der Lander auf Triebwerksstrahlen.",
+    "Curiosity und Perseverance setzten den Sky Crane ein: in ~20 m Höhe schweben, den Rover an Kabeln bis zur Bodenberührung hinablassen und die Abstiegsstufe dann wegfliegen. Apollo flog mit direktem Raketenschub bis zur Oberfläche. Chinas Zhurong nutzte ein hybrides Schwebe-und-Absenk-Verfahren. Andere Planeten, andere Atmosphären, andere Verfahren – dieselben sieben Minuten."
   ],
-  "diagram_caption": "EDL-Sequenz: Entry (Hitzeschild) → Fallschirm → Powered Descent → Touchdown."
+  "diagram_caption": "EDL-Sequenz: Eintritt (Hitzeschild) → Fallschirm → Antriebsabstieg → Aufsetzen."
 }

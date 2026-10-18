@@ -1,16 +1,16 @@
 {
   "title": "Newtons Principia · 1687",
-  "intro_sentence": "Ein Buch, drei Bewegungsgesetze und das Gravitationsgesetz mit Quadratabstand — die Grundlage, auf der die Raumfahrt noch heute ruht.",
+  "intro_sentence": "Ein Buch, drei Bewegungsgesetze und das Gravitationsgesetz mit dem umgekehrten Abstandsquadrat — die Grundlage, auf der die Raumfahrt noch heute ruht.",
   "narrative_101": [
-    "1684 fragte Halley die richtigen Leute, welche Form eine Umlaufbahn hätte, wenn die Sonne mit 1/r² zieht. Christopher Wren setzte ein Buch mit vierzig Schilling darauf, dass niemand es beweisen könnte; Hooke behauptete, einen Beweis zu haben, den er nicht besaß. Halley fragte Newton — Newton sagte ohne Zögern »eine Ellipse«, grub den Beweis aus Jahre alten Notizen aus und veröffentlichte drei Jahre später die Principia.",
-    "Drei Bewegungsgesetze (Trägheit, F = ma, Wechselwirkung) plus das Gravitationsgesetz mit Quadratabstand (F = Gm₁m₂/r²) plus die Infinitesimalrechnung, um alles zu tun — ein Buch, drei Jahre, keine Peer Review. Halley zahlte die Druckkosten selbst, als die Royal Society das Geld für ein Fisch-Anatomie-Buch aufgebraucht hatte.",
-    "Aus diesen Gleichungen leiten sich Keplers drei Gesetze sauber ab. Gezeiten, Projektilbewegung, die Präzession der Tagundnachtgleichen, die Form der Erde — alles Folgerungen. Die Raumfahrt 280 Jahre später ist geradlinige Newtonsche Mechanik mit Triebwerken hinzugefügt."
+    "1684 fragte Halley die richtigen Leute, welche Form eine Umlaufbahn hätte, wenn die Anziehung der Sonne mit 1/r² abnähme. Christopher Wren setzte ein Buch im Wert von vierzig Schilling darauf, dass niemand es beweisen könne; Hooke behauptete, einen Beweis zu haben, den er nicht besaß. Halley fragte Newton — Newton sagte ohne Zögern „eine Ellipse“, grub den Beweis aus jahrealten Notizen aus und veröffentlichte drei Jahre später die Principia.",
+    "Drei Bewegungsgesetze (Trägheit, F = ma, Wechselwirkung) plus das Gravitationsgesetz mit dem umgekehrten Abstandsquadrat (F = Gm₁m₂/r²) plus die Infinitesimalrechnung, um das alles zu berechnen — ein Buch, drei Jahre, ohne Peer-Review. Halley zahlte die Druckkosten selbst, als der Royal Society das Geld für ein Buch über Fischanatomie ausgegangen war.",
+    "Aus diesen Gleichungen leiten sich Keplers drei Gesetze sauber ab. Gezeiten, Wurfbewegung, die Präzession der Tagundnachtgleichen, die Form der Erde — alles Folgerungen. Die Raumfahrt 280 Jahre später ist schlichte Newtonsche Mechanik, ergänzt um Triebwerke."
   ],
   "body_paragraphs": [
-    "Philosophiæ Naturalis Principia Mathematica wurde im Juli 1687 auf Lateinisch veröffentlicht. Drei Bücher: Bewegung im Vakuum, Bewegung in widerstehenden Medien, das System der Welt. Das dritte Buch wendet die Gesetze auf das eigentliche Universum an und reproduziert alle Daten von Kepler aus ersten Prinzipien.",
-    "Die Infinitesimalrechnung war Newtons Erfindung speziell dafür. Er nannte sie »Fluxionen« — Leibniz erfand unabhängig im gleichen Zeitraum in Deutschland im Wesentlichen die gleiche Maschinerie, und der Streit um die Priorität dauerte Jahrzehnte.",
-    "Was Newton NICHT erklärte: WARUM die Gravitation 1/r² folgt. Sein eigener berühmter Kommentar — hinzugefügt zur zweiten Ausgabe von 1713: »Hypotheses non fingo« — »Ich stelle keine Hypothesen auf.« Der Mechanismus würde auf Einstein 1915 warten.",
-    "Moderne numerische Orbitpropagators führen im Wesentlichen Newtons Gleichungen mit Fließkomma-Arithmetik aus. /fly's heliozentrische Bahn, /plan's Porkchop, jede Keplersche Lösung — Newtonsche Gravitation den ganzen Weg hinunter."
+    "Philosophiæ Naturalis Principia Mathematica erschien im Juli 1687 auf Lateinisch. Drei Bücher: Bewegung im Vakuum, Bewegung in Medien mit Widerstand, das Weltsystem. Das dritte Buch wendet die Gesetze auf den tatsächlichen Kosmos an und reproduziert alle Daten Keplers aus Grundprinzipien.",
+    "Die Infinitesimalrechnung war Newtons Erfindung, eigens dafür. Er nannte sie „Fluxionen“ — Leibniz entwickelte in Deutschland etwa zur selben Zeit unabhängig davon im Wesentlichen denselben Kalkül, und der Streit um die Priorität dauerte Jahrzehnte.",
+    "Was Newton NICHT erklärte: WARUM die Gravitation dem 1/r²-Gesetz folgt. Sein eigener berühmter Kommentar — in der zweiten Auflage von 1713 ergänzt: „Hypotheses non fingo“ — „Ich erfinde keine Hypothesen.“ Der Mechanismus musste bis zu Einstein 1915 warten.",
+    "Moderne numerische Bahnpropagatoren lösen im Wesentlichen Newtons Gleichungen in Fließkomma-Arithmetik. Die heliozentrische Bahn in /fly, das Porkchop-Diagramm in /plan, jede keplersche Lösung — Newtonsche Gravitation bis ganz nach unten."
   ],
   "formula_caption": "Newtons Gravitationsgesetz. G ≈ 6.674 × 10⁻¹¹ N·m²/kg²."
 }

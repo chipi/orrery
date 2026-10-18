@@ -1,0 +1,398 @@
+[
+ {
+  "rel": "belts/asteroid.json",
+  "at": "location",
+  "old": "Zwischen Mars und Jupiter · 2,2–3,2 AU von der Sonne",
+  "new": "Zwischen Mars und Jupiter · 2,2–3,2 AE von der Sonne"
+ },
+ {
+  "rel": "belts/asteroid.json",
+  "at": "science_sections.1.why",
+  "old": "Der Gürtel erstreckt sich über die 2,2–3,2 AU Annulus. Kirkwood-Lücken — leere Umlaufbahnen bei Jupiter-Mittelbewegungs-Resonanzen — prägen die Bevölkerung.",
+  "new": "Der Gürtel erstreckt sich über die 2,2–3,2 AE Annulus. Kirkwood-Lücken — leere Umlaufbahnen bei Jupiter-Mittelbewegungs-Resonanzen — prägen die Bevölkerung."
+ },
+ {
+  "rel": "belts/kuiper.json",
+  "at": "location",
+  "old": "Jenseits von Neptun · 30–50 AU von der Sonne",
+  "new": "Jenseits von Neptun · 30–50 AE von der Sonne"
+ },
+ {
+  "rel": "belts/kuiper.json",
+  "at": "science_sections.0.why",
+  "old": "Der Kuipergürtel ist das transneptunische Relikt der Protoplanetaren Scheibe — 30 bis 50 AU, dominiert von Eis. Pluto, Eris, Haumea und Makemake leben hier.",
+  "new": "Der Kuipergürtel ist das transneptunische Relikt der Protoplanetaren Scheibe — 30 bis 50 AE, dominiert von Eis. Pluto, Eris, Haumea und Makemake leben hier."
+ },
+ {
+  "rel": "belts/kuiper.json",
+  "at": "science_sections.1.why",
+  "old": "Die klassischen KBOs umkreisen zwischen 42 und 48 AU in Bahnen mit niedriger Exzentrizität und niedriger Inklination — sie sind seit dem frühen System weitgehend ungestört.",
+  "new": "Die klassischen KBOs umkreisen zwischen 42 und 48 AE in Bahnen mit niedriger Exzentrizität und niedriger Inklination — sie sind seit dem frühen System weitgehend ungestört."
+ },
+ {
+  "rel": "fleet/orbiter/parker-solar-probe.json",
+  "at": "description",
+  "old": "Die Mission der NASA, die der Sonne extrem nahe kommt. Gestartet am 2018-08-12 auf einem Delta IV Heavy + Star 48BV-Stack mit dem höchsten je für eine wissenschaftliche Nutzlast erreichten C3 (154 km²/s²). Sieben Swing-by-Manöver an der Venus über sechs Jahre senkten das Perihel von 0,16 AU (P1) auf 0,046 AU (P22, 2024-12-24) — 9,86 Sonnenradien, 6,1 Millionen km von der Sonnenoberfläche. Bei P8 (2021-04-28) tauchte Parker unter die kritische Alfvén-Fläche — das erste Raumfahrzeug, das in die Korona der Sonne eindrang. Höchstgeschwindigkeit im Perihel: 192,22 km/s, das schnellste von Menschen gebaute Objekt aller Zeiten.",
+  "new": "Die Mission der NASA, die der Sonne extrem nahe kommt. Gestartet am 2018-08-12 auf einem Delta IV Heavy + Star 48BV-Stack mit dem höchsten je für eine wissenschaftliche Nutzlast erreichten C3 (154 km²/s²). Sieben Swing-by-Manöver an der Venus über sechs Jahre senkten das Perihel von 0,16 AE (P1) auf 0,046 AE (P22, 2024-12-24) — 9,86 Sonnenradien, 6,1 Millionen km von der Sonnenoberfläche. Bei P8 (2021-04-28) tauchte Parker unter die kritische Alfvén-Fläche — das erste Raumfahrzeug, das in die Korona der Sonne eindrang. Höchstgeschwindigkeit im Perihel: 192,22 km/s, das schnellste von Menschen gebaute Objekt aller Zeiten."
+ },
+ {
+  "rel": "fleet/orbiter/pioneer-11.json",
+  "at": "description",
+  "old": "Drehstabilisierte RTG-Sonde (~259 kg), Schwestersonde von Pioneer 10 mit gleichem Bus und der Pioneer Plaque, einer Botschaft an die Sterne. Start am 1973-04-06 mit Atlas SLV-3D Centaur D-1A + Star-37E von Cape Canaveral. Jupiter-Vorbeiflug am 1974-12-03 in 43 000 km — die engste Pioneer-Begegnung; erste Bilder der Polarregionen und der Swing-by zum Saturn. Saturn-Begegnung am 1979-09-01 in 21 000 km über den Wolkenobergrenzen — erste detaillierte Bilder des Ringsystems, Entdeckung eines neuen Rings (F-Ring) und eines neuen Mondes, Bestätigung des nahezu ausgerichteten Saturn-Magnetfelds. Beobachtungen auf dem Weg nach außen bis zum letzten Kontakt am 1995-11-24. Jetzt ~93 AU von der Sonne entfernt, Richtung Sternbild Adler.",
+  "new": "Drehstabilisierte RTG-Sonde (~259 kg), Schwestersonde von Pioneer 10 mit gleichem Bus und der Pioneer Plaque, einer Botschaft an die Sterne. Start am 1973-04-06 mit Atlas SLV-3D Centaur D-1A + Star-37E von Cape Canaveral. Jupiter-Vorbeiflug am 1974-12-03 in 43 000 km — die engste Pioneer-Begegnung; erste Bilder der Polarregionen und der Swing-by zum Saturn. Saturn-Begegnung am 1979-09-01 in 21 000 km über den Wolkenobergrenzen — erste detaillierte Bilder des Ringsystems, Entdeckung eines neuen Rings (F-Ring) und eines neuen Mondes, Bestätigung des nahezu ausgerichteten Saturn-Magnetfelds. Beobachtungen auf dem Weg nach außen bis zum letzten Kontakt am 1995-11-24. Jetzt ~93 AE von der Sonne entfernt, Richtung Sternbild Adler."
+ },
+ {
+  "rel": "fleet/orbiter/solar-orbiter.json",
+  "at": "description",
+  "old": "Die von der ESA geleitete Solar Orbiter ist das erste Raumfahrzeug, das die Polarregionen der Sonne im Detail abbilden soll — über ein Jahrzehnt hinweg steigt sie mit wiederholten Venus-Swing-by-Manövern aus der Ekliptik auf eine heliografische Neigung von ~33°. Sie trägt zehn Instrumente, die Fernerkundung (PHI-Magnetograph, EUI-Abbildungsgerät für extremes Ultraviolett, SPICE-Spektrometer, STIX-Röntgenabbildungsgerät, METIS-Koronograf, SoloHI-Heliosphärenkamera) mit In-situ-Messungen (Magnetometer, energiereiche Teilchen, Sonnenwindplasma, Radio- und Plasmawellen) verbinden. Gestartet am 2020-02-10 von Cape Canaveral auf einer Atlas V 411 der NASA. Erstes Perihel am 2020-06-15 bei 0,51 AU. Betriebs-Perihel 0,28 AU (~62 R☉), innerhalb der Perihelentfernung des Merkur.",
+  "new": "Die von der ESA geleitete Solar Orbiter ist das erste Raumfahrzeug, das die Polarregionen der Sonne im Detail abbilden soll — über ein Jahrzehnt hinweg steigt sie mit wiederholten Venus-Swing-by-Manövern aus der Ekliptik auf eine heliografische Neigung von ~33°. Sie trägt zehn Instrumente, die Fernerkundung (PHI-Magnetograph, EUI-Abbildungsgerät für extremes Ultraviolett, SPICE-Spektrometer, STIX-Röntgenabbildungsgerät, METIS-Koronograf, SoloHI-Heliosphärenkamera) mit In-situ-Messungen (Magnetometer, energiereiche Teilchen, Sonnenwindplasma, Radio- und Plasmawellen) verbinden. Gestartet am 2020-02-10 von Cape Canaveral auf einer Atlas V 411 der NASA. Erstes Perihel am 2020-06-15 bei 0,51 AE. Betriebs-Perihel 0,28 AE (~62 R☉), innerhalb der Perihelentfernung des Merkur."
+ },
+ {
+  "rel": "fleet/orbiter/ulysses.json",
+  "at": "description",
+  "old": "Gemeinsame Sonnen- und Heliosphärenmission von ESA + NASA, gebaut von Dornier mit wissenschaftlichen Beiträgen aus den USA. Gestartet am 1990-10-06 von STS-41 Discovery auf einer energiereichen Direktbahn zum Jupiter — der einzige Weg, ein Raumfahrzeug ohne unerschwinglichen Δv-Aufwand aus der Ekliptikebene zu schleudern. Der Jupiter-Vorbeiflug am 1992-02-08 lenkte die Sonde auf eine heliozentrische Bahn mit 80° Neigung (1,3 × 5,4 AU, Umlaufzeit 6,2 Jahre) — das erste und bis heute einzige Raumfahrzeug, das über die Pole der Sonne flog. Drei vollständige Polarumläufe lieferten uns die 3D-Struktur der heliosphärischen Stromschicht, den schnelleren polaren und langsameren äquatorialen Sonnenwind und die einzige mehrjahrzehntelange Aufzeichnung des Verhaltens polarer koronaler Löcher über einen vollständigen Sonnenzyklus. Die Mission endete 2009.",
+  "new": "Gemeinsame Sonnen- und Heliosphärenmission von ESA + NASA, gebaut von Dornier mit wissenschaftlichen Beiträgen aus den USA. Gestartet am 1990-10-06 von STS-41 Discovery auf einer energiereichen Direktbahn zum Jupiter — der einzige Weg, ein Raumfahrzeug ohne unerschwinglichen Δv-Aufwand aus der Ekliptikebene zu schleudern. Der Jupiter-Vorbeiflug am 1992-02-08 lenkte die Sonde auf eine heliozentrische Bahn mit 80° Neigung (1,3 × 5,4 AE, Umlaufzeit 6,2 Jahre) — das erste und bis heute einzige Raumfahrzeug, das über die Pole der Sonne flog. Drei vollständige Polarumläufe lieferten uns die 3D-Struktur der heliosphärischen Stromschicht, den schnelleren polaren und langsameren äquatorialen Sonnenwind und die einzige mehrjahrzehntelange Aufzeichnung des Verhaltens polarer koronaler Löcher über einen vollständigen Sonnenzyklus. Die Mission endete 2009."
+ },
+ {
+  "rel": "missions/saturn/pioneer-11.json",
+  "at": "description",
+  "old": "Zwilling von Pioneer 10, ein Jahr später gestartet. Pioneer 11 nutzte Jupiters Schwerkraft, um seine Flugbahn zum Saturn umzulenken — der kanonische Beweis für Swing-by-Propulsion, die Technik, die später die Voyager Grand Tour ermöglichte. Beim Saturn entdeckte es den F-Ring und einen kleinen inneren Mond, der sich später als das koorbital umlaufende Paar Janus/Epimetheus entpuppte. Trägt die gleiche Pioneer-Plakette wie sein Zwilling. Signalverlust am 1995-09-30 aus einer heliozentrischen Entfernung von ~43 AU; das Raumschiff fliegt nun auf das Sternbild Adler zu.",
+  "new": "Zwilling von Pioneer 10, ein Jahr später gestartet. Pioneer 11 nutzte Jupiters Schwerkraft, um seine Flugbahn zum Saturn umzulenken — der kanonische Beweis für Swing-by-Propulsion, die Technik, die später die Voyager Grand Tour ermöglichte. Beim Saturn entdeckte es den F-Ring und einen kleinen inneren Mond, der sich später als das koorbital umlaufende Paar Janus/Epimetheus entpuppte. Trägt die gleiche Pioneer-Plakette wie sein Zwilling. Signalverlust am 1995-09-30 aus einer heliozentrischen Entfernung von ~43 AE; das Raumschiff fliegt nun auf das Sternbild Adler zu."
+ },
+ {
+  "rel": "missions/saturn/voyager-1.json",
+  "at": "first",
+  "old": "Das entfernteste von Menschen geschaffene Objekt — derzeit ~170 AU von der Sonne im interstellaren Raum entfernt",
+  "new": "Das entfernteste von Menschen geschaffene Objekt — derzeit ~170 AE von der Sonne im interstellaren Raum entfernt"
+ },
+ {
+  "rel": "missions/sun/parker-solar-probe.json",
+  "at": "description",
+  "old": "Parker Solar Probe führte den höchsten Energiestart durch, der jemals für eine Wissenschaftsmission geflogen wurde — C3 von 154 km²/s², was eine speziell angepasste Star 48BV-Feststoffoberstufe auf einer Delta IV Heavy erforderte, um die Erde zu verlassen und in eine Sonnenfallbahn zu gelangen. Sieben Venusgravitationsassistenten über sechs Jahre senkten das Perihel schrittweise von 0,16 AU (P1, 2018-11-05) auf 0,046 AU (P22, 2024-12-24 — 9,86 Sonnenradien, 6,1 Millionen km von der Oberfläche). Bei P8 am 2021-04-28 drang Parker unter die kritische Alfvén-Oberfläche — das erste Raumfahrzeug, das jemals die Korona der Sonne betreten hat. Bei P22 erreichte es ~191 km/s und wurde damit das schnellste von Menschen geschaffene Objekt überhaupt. Das 11,43 cm dicke Kohlenstoff-Kohlenstoff-Wärmeschutzschild hielt 1.377 °C aus, während das Raumfahrzeugbus 1 Meter dahinter Raumtemperatur behielt.",
+  "new": "Parker Solar Probe führte den höchsten Energiestart durch, der jemals für eine Wissenschaftsmission geflogen wurde — C3 von 154 km²/s², was eine speziell angepasste Star 48BV-Feststoffoberstufe auf einer Delta IV Heavy erforderte, um die Erde zu verlassen und in eine Sonnenfallbahn zu gelangen. Sieben Venusgravitationsassistenten über sechs Jahre senkten das Perihel schrittweise von 0,16 AE (P1, 2018-11-05) auf 0,046 AE (P22, 2024-12-24 — 9,86 Sonnenradien, 6,1 Millionen km von der Oberfläche). Bei P8 am 2021-04-28 drang Parker unter die kritische Alfvén-Oberfläche — das erste Raumfahrzeug, das jemals die Korona der Sonne betreten hat. Bei P22 erreichte es ~191 km/s und wurde damit das schnellste von Menschen geschaffene Objekt überhaupt. Das 11,43 cm dicke Kohlenstoff-Kohlenstoff-Wärmeschutzschild hielt 1.377 °C aus, während das Raumfahrzeugbus 1 Meter dahinter Raumtemperatur behielt."
+ },
+ {
+  "rel": "missions/sun/parker-solar-probe.json",
+  "at": "events.2.note",
+  "old": "2018-11-05, 0,16 AU. Nähe zur Sonne wie nie zuvor, Helios 2 übertreffend.",
+  "new": "2018-11-05, 0,16 AE. Nähe zur Sonne wie nie zuvor, Helios 2 übertreffend."
+ },
+ {
+  "rel": "missions/sun/solar-orbiter.json",
+  "at": "description",
+  "old": "Von der ESA geleitete Mission mit NASA-Start und einem Instrumentenbeitrag. Während die Parker Solar Probe näher herankommt als je zuvor, fliegt Solar Orbiter höher — mit wiederholten Venus-Swing-by-Manövern über ein Jahrzehnt, um aus der Ekliptik auf ~33° heliografische Inklination zu steigen. Von diesem Aussichtspunkt aus bildet die Instrumentenausstattung (PHI, EUI, SPICE, STIX, METIS, SoloHI + vier In-situ-Pakete) die polaren Magnetfelder der Sonne ab, verfolgt die Beschleunigung des Sonnenwinds in Echtzeit und verknüpft Fern- und In-situ-Messungen simultan. Erstes Perihel am 15.06.2020 bei 0,51 AU. Bisher engste Perihelpassage am 12.10.2022 bei 0,29 AU (innerhalb des Perihels des Merkur).",
+  "new": "Von der ESA geleitete Mission mit NASA-Start und einem Instrumentenbeitrag. Während die Parker Solar Probe näher herankommt als je zuvor, fliegt Solar Orbiter höher — mit wiederholten Venus-Swing-by-Manövern über ein Jahrzehnt, um aus der Ekliptik auf ~33° heliografische Inklination zu steigen. Von diesem Aussichtspunkt aus bildet die Instrumentenausstattung (PHI, EUI, SPICE, STIX, METIS, SoloHI + vier In-situ-Pakete) die polaren Magnetfelder der Sonne ab, verfolgt die Beschleunigung des Sonnenwinds in Echtzeit und verknüpft Fern- und In-situ-Messungen simultan. Erstes Perihel am 15.06.2020 bei 0,51 AE. Bisher engste Perihelpassage am 12.10.2022 bei 0,29 AE (innerhalb des Perihels des Merkur)."
+ },
+ {
+  "rel": "missions/sun/solar-orbiter.json",
+  "at": "events.2.note",
+  "old": "15.06.2020, 0,51 AU. Beginn der wissenschaftlichen Messungen.",
+  "new": "15.06.2020, 0,51 AE. Beginn der wissenschaftlichen Messungen."
+ },
+ {
+  "rel": "missions/sun/solar-orbiter.json",
+  "at": "events.4.note",
+  "old": "12.10.2022, 0,29 AU. Innerhalb des Perihels des Merkur.",
+  "new": "12.10.2022, 0,29 AE. Innerhalb des Perihels des Merkur."
+ },
+ {
+  "rel": "orbit-regimes-explore/BELT.json",
+  "at": "story",
+  "old": "Ein Ring aus felsigen Überresten zwischen Mars und Jupiter — 2,2 bis 3,2 AU. Hunderttausende von Körpern katalogisiert; die geschätzte Gesamtmasse beträgt weniger als 4% der Mondmasse. Nicht das dicht gepackte Asteroidenfeld aus Science-Fiction: Der typische Abstand zwischen Objekten beträgt etwa 1 Million Kilometer. Der Gürtel hat sich nie zu einem Planeten zusammengeballt, weil Jupiters Gravitation die Umlaufbahnen ständig durcheinanderbrachte und verhinderte, dass Kollisionen zur Akkretion führten. Drei Kirkwood-Lücken markieren Resonanzen mit Jupiter, wo Asteroiden herausgeräumt werden.",
+  "new": "Ein Ring aus felsigen Überresten zwischen Mars und Jupiter — 2,2 bis 3,2 AE. Hunderttausende von Körpern katalogisiert; die geschätzte Gesamtmasse beträgt weniger als 4% der Mondmasse. Nicht das dicht gepackte Asteroidenfeld aus Science-Fiction: Der typische Abstand zwischen Objekten beträgt etwa 1 Million Kilometer. Der Gürtel hat sich nie zu einem Planeten zusammengeballt, weil Jupiters Gravitation die Umlaufbahnen ständig durcheinanderbrachte und verhinderte, dass Kollisionen zur Akkretion führten. Drei Kirkwood-Lücken markieren Resonanzen mit Jupiter, wo Asteroiden herausgeräumt werden."
+ },
+ {
+  "rel": "orbit-regimes-explore/GIANTS.json",
+  "at": "story",
+  "old": "Der äußere Planetenbereich — 5 bis 30 AU. Zwei Gasriesen (Jupiter, Saturn) mit Wasserstoff-Helium-Hüllen von Tausenden Kilometern Tiefe über kleinen felsigen Kernen; zwei Eisriesen (Uranus, Neptun) mit Wasser-/Ammoniak-/Methanmänteln unter dünneren Gashüllen. Zusammen vereinen sie 99 % der gesamten Planetenmasse im Sonnensystem. Jeder besitzt sein eigenes Mondsystem, das wie ein Miniatur-Sonnensystem für sich funktioniert — allein Jupiter hat 95 bekannte Monde, darunter vier, die größer sind als Pluto.",
+  "new": "Der äußere Planetenbereich — 5 bis 30 AE. Zwei Gasriesen (Jupiter, Saturn) mit Wasserstoff-Helium-Hüllen von Tausenden Kilometern Tiefe über kleinen felsigen Kernen; zwei Eisriesen (Uranus, Neptun) mit Wasser-/Ammoniak-/Methanmänteln unter dünneren Gashüllen. Zusammen vereinen sie 99 % der gesamten Planetenmasse im Sonnensystem. Jeder besitzt sein eigenes Mondsystem, das wie ein Miniatur-Sonnensystem für sich funktioniert — allein Jupiter hat 95 bekannte Monde, darunter vier, die größer sind als Pluto."
+ },
+ {
+  "rel": "orbit-regimes-explore/GIANTS.json",
+  "at": "residents.0.label",
+  "old": "Jupiter — 5,20 AU",
+  "new": "Jupiter — 5,20 AE"
+ },
+ {
+  "rel": "orbit-regimes-explore/GIANTS.json",
+  "at": "residents.1.label",
+  "old": "Saturn — 9,58 AU, Ringsystem",
+  "new": "Saturn — 9,58 AE, Ringsystem"
+ },
+ {
+  "rel": "orbit-regimes-explore/GIANTS.json",
+  "at": "residents.2.label",
+  "old": "Uranus — 19,18 AU, um 97° geneigt",
+  "new": "Uranus — 19,18 AE, um 97° geneigt"
+ },
+ {
+  "rel": "orbit-regimes-explore/GIANTS.json",
+  "at": "residents.3.label",
+  "old": "Neptun — 30,07 AU, schnellste Winde im System",
+  "new": "Neptun — 30,07 AE, schnellste Winde im System"
+ },
+ {
+  "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+  "at": "story",
+  "old": "Die Grenze, an der der Sonnenwind der Sonne seinen Kampf gegen das interstellare Medium verliert — etwa 120 AU entfernt. Im Inneren liegt die Heliosphäre, eine Blase aus geladenen Sonnenpartikeln, die mit Hunderten von km/s nach außen strömen. Jenseits davon: das kalte, dichte Gas und die kosmische Strahlung der Galaxie selbst. Die Voyager-Sonden sind die einzigen Artefakte, die die Menschheit jemals über diese Grenze hinaus platziert hat — Voyager 1 überquerte sie 2012, Voyager 2 im Jahr 2018. Beide senden noch immer schwache Daten aus dem interstellaren Raum.",
+  "new": "Die Grenze, an der der Sonnenwind der Sonne seinen Kampf gegen das interstellare Medium verliert — etwa 120 AE entfernt. Im Inneren liegt die Heliosphäre, eine Blase aus geladenen Sonnenpartikeln, die mit Hunderten von km/s nach außen strömen. Jenseits davon: das kalte, dichte Gas und die kosmische Strahlung der Galaxie selbst. Die Voyager-Sonden sind die einzigen Artefakte, die die Menschheit jemals über diese Grenze hinaus platziert hat — Voyager 1 überquerte sie 2012, Voyager 2 im Jahr 2018. Beide senden noch immer schwache Daten aus dem interstellaren Raum."
+ },
+ {
+  "rel": "orbit-regimes-explore/KUIPER.json",
+  "at": "residents.0.label",
+  "old": "Pluto — 39,5 AU, größter bekannter",
+  "new": "Pluto — 39,5 AE, größter bekannter"
+ },
+ {
+  "rel": "orbit-regimes-explore/KUIPER.json",
+  "at": "residents.1.label",
+  "old": "Eris — 96,4 AU (Scattered Disc)",
+  "new": "Eris — 96,4 AE (Scattered Disc)"
+ },
+ {
+  "rel": "orbit-regimes-explore/KUIPER.json",
+  "at": "residents.2.label",
+  "old": "Makemake — 45,8 AU",
+  "new": "Makemake — 45,8 AE"
+ },
+ {
+  "rel": "orbit-regimes-explore/KUIPER.json",
+  "at": "residents.3.label",
+  "old": "Haumea — 43,3 AU, schneller Rotator",
+  "new": "Haumea — 43,3 AE, schneller Rotator"
+ },
+ {
+  "rel": "orbit-regimes-explore/KUIPER.json",
+  "at": "residents.4.label",
+  "old": "Quaoar — 43,4 AU, hat Ringe",
+  "new": "Quaoar — 43,4 AE, hat Ringe"
+ },
+ {
+  "rel": "orbit-regimes-explore/KUIPER.json",
+  "at": "residents.5.label",
+  "old": "Arrokoth — 44,6 AU, Kontaktbinär",
+  "new": "Arrokoth — 44,6 AE, Kontaktbinär"
+ },
+ {
+  "rel": "orbit-regimes-explore/OORT.json",
+  "at": "story",
+  "old": "Eine hypothetische kugelförmige Schale aus eisigen Körpern, die das gesamte Sonnensystem umgibt — sie erstreckt sich von etwa 2.000 bis 100.000 AU. Niemals direkt beobachtet, nur abgeleitet: Die langperiodischen Kometen, die wir sehen, haben Bahnen, die so weit sind, dass sie von hier draußen kommen müssen. Geschätzte Population: Billionen von Körpern. Die Oortsche Wolke repräsentiert die Überreste der Geburtswolke des Sonnensystems, dynamisch stabil seit Milliarden von Jahren in dieser Entfernung von der Sonne. Vorbeiziehende Sterne können einzelne Objekte nach innen stören, die dann zu den Kometen werden, die wir beobachten.",
+  "new": "Eine hypothetische kugelförmige Schale aus eisigen Körpern, die das gesamte Sonnensystem umgibt — sie erstreckt sich von etwa 2.000 bis 100.000 AE. Niemals direkt beobachtet, nur abgeleitet: Die langperiodischen Kometen, die wir sehen, haben Bahnen, die so weit sind, dass sie von hier draußen kommen müssen. Geschätzte Population: Billionen von Körpern. Die Oortsche Wolke repräsentiert die Überreste der Geburtswolke des Sonnensystems, dynamisch stabil seit Milliarden von Jahren in dieser Entfernung von der Sonne. Vorbeiziehende Sterne können einzelne Objekte nach innen stören, die dann zu den Kometen werden, die wir beobachten."
+ },
+ {
+  "rel": "orbit-regimes-explore/SCATTERED.json",
+  "at": "story",
+  "old": "Himmelskörper auf stark elliptischen Bahnen jenseits des Kuipergürtels — 50 bis 1.000 AU. Sie wurden wahrscheinlich durch gravitative Wechselwirkungen mit Neptun vor langer Zeit hierher gestreut. Sedna ist der prototypische Sednoid: 76 AU im Perihel, 937 AU im Aphel, eine Umlaufzeit von 11.400 Jahren. Ihre Bahnen sind zu weit entfernt, als dass Neptun sie aktuell hätte platzieren können, was auf Einflüsse vorbeiziehender Sterne, eines hypothetischen Planet Neun oder der verlorenen Geschwister der Sonne aus ihrem Geburtshaufen hindeutet. Noch nie hat ein Raumfahrzeug diese Region besucht.",
+  "new": "Himmelskörper auf stark elliptischen Bahnen jenseits des Kuipergürtels — 50 bis 1.000 AE. Sie wurden wahrscheinlich durch gravitative Wechselwirkungen mit Neptun vor langer Zeit hierher gestreut. Sedna ist der prototypische Sednoid: 76 AE im Perihel, 937 AE im Aphel, eine Umlaufzeit von 11.400 Jahren. Ihre Bahnen sind zu weit entfernt, als dass Neptun sie aktuell hätte platzieren können, was auf Einflüsse vorbeiziehender Sterne, eines hypothetischen Planet Neun oder der verlorenen Geschwister der Sonne aus ihrem Geburtshaufen hindeutet. Noch nie hat ein Raumfahrzeug diese Region besucht."
+ },
+ {
+  "rel": "orbit-regimes-explore/SCATTERED.json",
+  "at": "residents.0.label",
+  "old": "Sedna — 76–937 AU, 11.400-jährige Umlaufbahn",
+  "new": "Sedna — 76–937 AE, 11.400-jährige Umlaufbahn"
+ },
+ {
+  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+  "at": "story",
+  "old": "Das felsige innere Sonnensystem — 0,4 bis 1,5 AU von der Sonne entfernt. Vier kleine Welten mit metallischen Kernen, Silikatmänteln und dünnen oder fehlenden Atmosphären. Sie entstanden innerhalb der Frostgrenze, wo es zu heiß war, damit flüchtige Eise kondensieren konnten, sodass nur feuerfeste Materialien (Silikate, Eisen, Nickel) fest blieben. Drei der vier waren Ziele bemannter Erkundung (Erde, Mond, Mars-gebunden).",
+  "new": "Das felsige innere Sonnensystem — 0,4 bis 1,5 AE von der Sonne entfernt. Vier kleine Welten mit metallischen Kernen, Silikatmänteln und dünnen oder fehlenden Atmosphären. Sie entstanden innerhalb der Frostgrenze, wo es zu heiß war, damit flüchtige Eise kondensieren konnten, sodass nur feuerfeste Materialien (Silikate, Eisen, Nickel) fest blieben. Drei der vier waren Ziele bemannter Erkundung (Erde, Mond, Mars-gebunden)."
+ },
+ {
+  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+  "at": "residents.0.label",
+  "old": "Merkur — 0,39 AU",
+  "new": "Merkur — 0,39 AE"
+ },
+ {
+  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+  "at": "residents.1.label",
+  "old": "Venus — 0,72 AU",
+  "new": "Venus — 0,72 AE"
+ },
+ {
+  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+  "at": "residents.2.label",
+  "old": "Erde — 1,00 AU",
+  "new": "Erde — 1,00 AE"
+ },
+ {
+  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+  "at": "residents.3.label",
+  "old": "Mars — 1,52 AU",
+  "new": "Mars — 1,52 AE"
+ },
+ {
+  "rel": "planets/neptune.json",
+  "at": "science_sections.0.why",
+  "old": "In einer mittleren Entfernung von 30,07 AU ist Neptun so weit entfernt, dass ein einfaches Lichtsignal 4 Stunden pro Richtung benötigt. Voyager 2 brauchte 12 Jahre, um ihn zu erreichen.",
+  "new": "In einer mittleren Entfernung von 30,07 AE ist Neptun so weit entfernt, dass ein einfaches Lichtsignal 4 Stunden pro Richtung benötigt. Voyager 2 brauchte 12 Jahre, um ihn zu erreichen."
+ },
+ {
+  "rel": "planets/saturn.json",
+  "at": "science_sections.3.why",
+  "old": "Saturns Umlaufbahn ist sanft (Exzentrizität 0,054), aber seine mittlere Distanz von 9,6 AU bedeutet, dass sich Perihel und Aphel um 100 Millionen km unterscheiden — Cassini zeitete seine Ankunft, um die Eingangsgeschwindigkeit zu nutzen.",
+  "new": "Saturns Umlaufbahn ist sanft (Exzentrizität 0,054), aber seine mittlere Distanz von 9,6 AE bedeutet, dass sich Perihel und Aphel um 100 Millionen km unterscheiden — Cassini zeitete seine Ankunft, um die Eingangsgeschwindigkeit zu nutzen."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.5.diagram_caption",
+  "old": "Eine AU = eine Erde-Sonne-Entfernung. Mars ist ~1,5 AU. Jupiter ist ~5,2.",
+  "new": "Eine AU = eine Erde-Sonne-Entfernung. Mars ist ~1,5 AE. Jupiter ist ~5,2."
+ },
+ {
+  "rel": "science/planets/asteroid-belt.json",
+  "at": "body_paragraphs.0",
+  "old": "Der Gürtel hat eine innere Struktur. Spektroskopie teilt ihn in drei grobe Zonen: den inneren Gürtel (2,1–2,5 AU), der von steinigen S-Typ-Körpern dominiert wird; den mittleren Gürtel (2,5–3,2 AU), wo kohlenstoffhaltige C-Typen übernehmen (Ceres + Hygiea leben hier); und den äußeren Gürtel, der in die trojanischen Asteroiden übergeht, die Jupiters Umlaufbahn an den Lagrange-Punkten L4 und L5 teilen. Unterschiedliche Ursprungspopulationen, unterschiedliche Entstehungstemperaturen, unterschiedliche Geschichten — erhalten im selben Gürtel, weil Jupiters Resonanzen sie eingepfercht haben.",
+  "new": "Der Gürtel hat eine innere Struktur. Spektroskopie teilt ihn in drei grobe Zonen: den inneren Gürtel (2,1–2,5 AE), der von steinigen S-Typ-Körpern dominiert wird; den mittleren Gürtel (2,5–3,2 AE), wo kohlenstoffhaltige C-Typen übernehmen (Ceres + Hygiea leben hier); und den äußeren Gürtel, der in die trojanischen Asteroiden übergeht, die Jupiters Umlaufbahn an den Lagrange-Punkten L4 und L5 teilen. Unterschiedliche Ursprungspopulationen, unterschiedliche Entstehungstemperaturen, unterschiedliche Geschichten — erhalten im selben Gürtel, weil Jupiters Resonanzen sie eingepfercht haben."
+ },
+ {
+  "rel": "small-bodies/arrokoth.json",
+  "at": "science_sections.1.why",
+  "old": "Arrokoth umkreist die Sonne in 44,6 AU — klassischer Kuipergürtel, jenseits des Pluto, in einer Region, in der Körper seit der frühen Entwicklungsphase des Sonnensystems weitgehend ungestört geblieben sind.",
+  "new": "Arrokoth umkreist die Sonne in 44,6 AE — klassischer Kuipergürtel, jenseits des Pluto, in einer Region, in der Körper seit der frühen Entwicklungsphase des Sonnensystems weitgehend ungestört geblieben sind."
+ },
+ {
+  "rel": "small-bodies/ceres.json",
+  "at": "science_sections.1.why",
+  "old": "Ceres umkreist die Sonne in 2,77 AU — genau innerhalb des Asteroidengürtels und wird als kanonische Referenzdistanz für die \"Mitte des Gürtels\" verwendet.",
+  "new": "Ceres umkreist die Sonne in 2,77 AE — genau innerhalb des Asteroidengürtels und wird als kanonische Referenzdistanz für die \"Mitte des Gürtels\" verwendet."
+ },
+ {
+  "rel": "small-bodies/didymos.json",
+  "at": "science_sections.0.why",
+  "old": "Didymos ist ein binärer erdnaher Asteroid (große Halbachse 1,64 AU). DART (NASA, 2022) traf seinen kleinen Begleiter Dimorphos, um die Physik der Asteroidenablenkung zu testen.",
+  "new": "Didymos ist ein binärer erdnaher Asteroid (große Halbachse 1,64 AE). DART (NASA, 2022) traf seinen kleinen Begleiter Dimorphos, um die Physik der Asteroidenablenkung zu testen."
+ },
+ {
+  "rel": "small-bodies/eris.json",
+  "at": "science_sections.1.why",
+  "old": "Eris bewegt sich von 38 AU beim Perihel bis 97 AU beim Aphel — eine mittlere Umlaufbahn von ~68 AU (große Halbachse). Es durchlief das Aphel um 1977 und bewegt sich nun langsam zurück zur Sonne.",
+  "new": "Eris bewegt sich von 38 AE beim Perihel bis 97 AE beim Aphel — eine mittlere Umlaufbahn von ~68 AE (große Halbachse). Es durchlief das Aphel um 1977 und bewegt sich nun langsam zurück zur Sonne."
+ },
+ {
+  "rel": "small-bodies/halley.json",
+  "at": "science_sections.1.why",
+  "old": "Halleys enormer Perihelium-Aphelium-Unterschied (35 zu 0,59 AU) treibt die Oberflächeneise in der Nähe des Periheliums zur heftigen Sublimation und erzeugt die Koma und den Schweif. Nächstes Perihelium: 2061.",
+  "new": "Halleys enormer Perihelium-Aphelium-Unterschied (35 zu 0,59 AE) treibt die Oberflächeneise in der Nähe des Periheliums zur heftigen Sublimation und erzeugt die Koma und den Schweif. Nächstes Perihelium: 2061."
+ },
+ {
+  "rel": "small-bodies/itokawa.json",
+  "at": "science_sections.0.why",
+  "old": "Itokawa ist ein erdnaher Apollo-Asteroid — große Halbachse 1,32 AU. Hayabusas Rendezvous 2005 + Probenrückführung 2010 war die erste NEA-Hin- und Rückfahrtmission.",
+  "new": "Itokawa ist ein erdnaher Apollo-Asteroid — große Halbachse 1,32 AE. Hayabusas Rendezvous 2005 + Probenrückführung 2010 war die erste NEA-Hin- und Rückfahrtmission."
+ },
+ {
+  "rel": "small-bodies/vesta.json",
+  "at": "science_sections.1.why",
+  "old": "Vesta umkreist die Sonne in 2,36 AU — innerer Gürtel. Seine Nähe führte dazu, dass Dawn Vesta zuerst besuchte (2011), um dann zu Ceres zu reisen (2015).",
+  "new": "Vesta umkreist die Sonne in 2,36 AE — innerer Gürtel. Seine Nähe führte dazu, dass Dawn Vesta zuerst besuchte (2011), um dann zu Ceres zu reisen (2015)."
+ },
+ {
+  "rel": "sun.json",
+  "at": "bio",
+  "old": "Ein 4,6 Milliarden Jahre alter Hauptreihenstern vom G-Typ, der die Hälfte seines 10 Milliarden Jahre langen Lebens hinter sich hat. Die Sonne dreht sich unterschiedlich – ihr Äquator benötigt 25 Tage, ihre Pole 35. In etwa 5 Milliarden Jahren wird sie ihren Kernwasserstoff erschöpfen, sich zu einem Roten Riesen ausdehnen und die inneren Planeten verschlingen. Der Gravitationseinfluss der Sonne definiert die Heliosphäre bis etwa 120 AU.",
+  "new": "Ein 4,6 Milliarden Jahre alter Hauptreihenstern vom G-Typ, der die Hälfte seines 10 Milliarden Jahre langen Lebens hinter sich hat. Die Sonne dreht sich unterschiedlich – ihr Äquator benötigt 25 Tage, ihre Pole 35. In etwa 5 Milliarden Jahren wird sie ihren Kernwasserstoff erschöpfen, sich zu einem Roten Riesen ausdehnen und die inneren Planeten verschlingen. Der Gravitationseinfluss der Sonne definiert die Heliosphäre bis etwa 120 AE."
+ },
+ {
+  "rel": "trajectories/bepicolombo.json",
+  "at": "current_distance_label",
+  "old": "0,48 AU · auf dem Weg zur Merkur-Orbiteintritt 2026-12-05",
+  "new": "0,48 AE · auf dem Weg zur Merkur-Orbiteintritt 2026-12-05"
+ },
+ {
+  "rel": "trajectories/dawn.json",
+  "at": "current_distance_label",
+  "old": "2,8 AU · seit Ende Oktober 2018 in stabiler Ceres-Umlaufbahn (~20 Jahre Umlauflebensdauer)",
+  "new": "2,8 AE · seit Ende Oktober 2018 in stabiler Ceres-Umlaufbahn (~20 Jahre Umlauflebensdauer)"
+ },
+ {
+  "rel": "trajectories/galileo.json",
+  "at": "current_distance_label",
+  "old": "5,4 AU · 2003-09-21 in Jupiter gestürzt (Schutz Europas)",
+  "new": "5,4 AE · 2003-09-21 in Jupiter gestürzt (Schutz Europas)"
+ },
+ {
+  "rel": "trajectories/hayabusa2.json",
+  "at": "current_distance_label",
+  "old": "1,24 AU · auf dem Weg zu Vorbeiflug an (98943) 2001 CC21 Juli 2026 (erweiterte Mission)",
+  "new": "1,24 AE · auf dem Weg zu Vorbeiflug an (98943) 2001 CC21 Juli 2026 (erweiterte Mission)"
+ },
+ {
+  "rel": "trajectories/juice.json",
+  "at": "current_distance_label",
+  "old": "0,94 AU · auf dem Weg zum Erde-#2-Vorbeiflug 2026-09-29 (Reiseabschnitt 2 von 5)",
+  "new": "0,94 AE · auf dem Weg zum Erde-#2-Vorbeiflug 2026-09-29 (Reiseabschnitt 2 von 5)"
+ },
+ {
+  "rel": "trajectories/juno.json",
+  "at": "current_distance_label",
+  "old": "5,5 AU · umkreist den Jupiter seit 2016-07-05 in polarer Umlaufbahn — erweitertes Missionsende 2025",
+  "new": "5,5 AE · umkreist den Jupiter seit 2016-07-05 in polarer Umlaufbahn — erweitertes Missionsende 2025"
+ },
+ {
+  "rel": "trajectories/new-horizons.json",
+  "at": "current_distance_label",
+  "old": "66 AU · In erweiterter Mission — unterwegs zur Stagnationsregion der Heliosphäre",
+  "new": "66 AE · In erweiterter Mission — unterwegs zur Stagnationsregion der Heliosphäre"
+ },
+ {
+  "rel": "trajectories/pioneer-10.json",
+  "at": "current_distance_label",
+  "old": "135 AU · ~18,8 Lichtstunden von der Sonne entfernt (letzter Kontakt am 23.1.2003)",
+  "new": "135 AE · ~18,8 Lichtstunden von der Sonne entfernt (letzter Kontakt am 23.1.2003)"
+ },
+ {
+  "rel": "trajectories/pioneer-11.json",
+  "at": "current_distance_label",
+  "old": "89 AU · ~12,3 Lichtstunden von der Sonne entfernt (Signalverlust 1995-09-30)",
+  "new": "89 AE · ~12,3 Lichtstunden von der Sonne entfernt (Signalverlust 1995-09-30)"
+ },
+ {
+  "rel": "trajectories/rosetta.json",
+  "at": "current_distance_label",
+  "old": "4,1 AU · kontrollierter Abstieg zur Oberfläche von 67P am 30.09.2016 (Ende der Mission)",
+  "new": "4,1 AE · kontrollierter Abstieg zur Oberfläche von 67P am 30.09.2016 (Ende der Mission)"
+ },
+ {
+  "rel": "trajectories/ulysses.json",
+  "at": "current_distance_label",
+  "old": "5,2 AU · Mission beendet 2009-06-30 (Düsenleitungen gefroren) — Hardware in polarer heliozentrische Umlaufbahn",
+  "new": "5,2 AE · Mission beendet 2009-06-30 (Düsenleitungen gefroren) — Hardware in polarer heliozentrische Umlaufbahn"
+ },
+ {
+  "rel": "trajectories/vega-1.json",
+  "at": "current_distance_label",
+  "old": "0,98 AU · Raumfahrzeug in heliozentricher Umlaufbahn seit Halley-Vorbeiflug 1986-03-06",
+  "new": "0,98 AE · Raumfahrzeug in heliozentricher Umlaufbahn seit Halley-Vorbeiflug 1986-03-06"
+ },
+ {
+  "rel": "trajectories/vega-2.json",
+  "at": "current_distance_label",
+  "old": "0,95 AU · Raumflugkörper in helizentrischer Umlaufbahn seit Halley-Vorbeiflug 1986-03-09",
+  "new": "0,95 AE · Raumflugkörper in helizentrischer Umlaufbahn seit Halley-Vorbeiflug 1986-03-09"
+ },
+ {
+  "rel": "trajectories/venera-13.json",
+  "at": "current_distance_label",
+  "old": "0,74 AU · landete am 01.03.1982 auf der Venus (127 Minuten Oberflächenüberleben)",
+  "new": "0,74 AE · landete am 01.03.1982 auf der Venus (127 Minuten Oberflächenüberleben)"
+ },
+ {
+  "rel": "trajectories/voyager-1.json",
+  "at": "current_distance_label",
+  "old": "172 AU · ~23,8 Lichtstunden von der Sonne entfernt",
+  "new": "172 AE · ~23,8 Lichtstunden von der Sonne entfernt"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lss_escape",
+  "old": "Um die Sonne endgültig zu verlassen, muss man ihre Fluchtgeschwindigkeit erreichen. In der Entfernung der Erde — 1 AU — beträgt sie etwa 42 km/s. Schieben Sie die Distanz nach außen und beobachten Sie, wie sie fällt: Flucht ist leichter, wenn man bereits weiter draußen ist.",
+  "new": "Um die Sonne endgültig zu verlassen, muss man ihre Fluchtgeschwindigkeit erreichen. In der Entfernung der Erde — 1 AE — beträgt sie etwa 42 km/s. Schieben Sie die Distanz nach außen und beobachten Sie, wie sie fällt: Flucht ist leichter, wenn man bereits weiter draußen ist."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_maxelong_glossary",
+  "old": "Ein innerer Planet kann nur so weit von der Sonne abschwingen: ε_max = arcsin(a(1+e)) — der Arkussinus seiner APHELION-Entfernung in AU, der weitesten Reichweite seiner Umlaufbahn. Venus maximal etwa 47° (Aphelium 0,73 AU), Merkur etwa 28° (Aphelium 0,47 AU) — darum sind beide ewig Morgen- oder Abendsterne.",
+  "new": "Ein innerer Planet kann nur so weit von der Sonne abschwingen: ε_max = arcsin(a(1+e)) — der Arkussinus seiner APHELION-Entfernung in AU, der weitesten Reichweite seiner Umlaufbahn. Venus maximal etwa 47° (Aphelium 0,73 AE), Merkur etwa 28° (Aphelium 0,47 AE) — darum sind beide ewig Morgen- oder Abendsterne."
+ }
+]

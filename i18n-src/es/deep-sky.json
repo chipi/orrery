@@ -4,7 +4,7 @@
     "caption": "El borde de una guardería estelar en la Nebulosa de Carina (NGC 3324), esculpido por estrellas jóvenes.",
     "subject": "Nebulosa",
     "type": "Región de formación estelar",
-    "distance": "~7.600 años luz",
+    "distance": "~7600 años luz",
     "taken": "Publicada el 12 de julio de 2022"
   },
   "jwst-southern-ring": {
@@ -12,7 +12,7 @@
     "caption": "Una estrella moribunda (NGC 3132) que derrama capas de gas y polvo a lo largo de medio año luz.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetaria",
-    "distance": "~2.500 años luz",
+    "distance": "~2500 años luz",
     "taken": "Publicada el 12 de julio de 2022"
   },
   "jwst-stephans": {
@@ -28,7 +28,7 @@
     "caption": "Torres de gas frío y polvo en la Nebulosa del Águila (M16), iluminadas desde adentro por estrellas recién nacidas.",
     "subject": "Nebulosa",
     "type": "Nebulosa de emisión / región de formación estelar (M16)",
-    "distance": "~6.500 años luz",
+    "distance": "~6500 años luz",
     "taken": "Publicada el 19 de octubre de 2022"
   },
   "jwst-tarantula": {
@@ -36,7 +36,7 @@
     "caption": "30 Doradus — la región de formación estelar más activa conocida en nuestro vecindario galáctico.",
     "subject": "Nebulosa",
     "type": "Región de formación estelar (30 Dor)",
-    "distance": "~161.000 años luz",
+    "distance": "~161 000 años luz",
     "taken": "Publicada el 6 de septiembre de 2022"
   },
   "jwst-cartwheel": {
@@ -60,7 +60,7 @@
     "caption": "La icónica vista de Hubble de 2014 de las torres de gas de formación estelar de la Nebulosa del Águila.",
     "subject": "Nebulosa",
     "type": "Nebulosa de emisión / región de formación estelar (M16)",
-    "distance": "~6.500 años luz",
+    "distance": "~6500 años luz",
     "taken": "2014"
   },
   "hst-mystic-mountain": {
@@ -68,15 +68,15 @@
     "caption": "Un pilar de tres años luz en la Nebulosa de Carina, del 20 aniversario de Hubble.",
     "subject": "Nebulosa",
     "type": "Pilar de formación estelar",
-    "distance": "~7.500 años luz",
+    "distance": "~7500 años luz",
     "taken": "2010 · 20 aniversario del Hubble"
   },
   "hst-butterfly": {
     "title": "Nebulosa Mariposa",
-    "caption": "NGC 6302 — alas de gas calentadas más allá de 20.000 °C, expulsadas por una estrella moribunda.",
+    "caption": "NGC 6302 — alas de gas calentadas más allá de 20 000 °C, expulsadas por una estrella moribunda.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetaria (NGC 6302)",
-    "distance": "~3.400 años luz",
+    "distance": "~3400 años luz",
     "taken": "2009"
   },
   "hst-antennae": {
@@ -92,7 +92,7 @@
     "caption": "NGC 7635 — una burbuja de siete años luz de diámetro expulsada por el feroz viento de una estrella masiva.",
     "subject": "Nebulosa",
     "type": "Nebulosa de emisión (NGC 7635)",
-    "distance": "~7.100 años luz",
+    "distance": "~7100 años luz",
     "taken": "2016 · 26 aniversario del Hubble"
   },
   "hst-westerlund2": {
@@ -129,10 +129,10 @@
   },
   "hst-veil": {
     "title": "Nebulosa del Velo",
-    "caption": "Un jirón del Bucle de Cygnus — una onda de choque de supernova aún en expansión después de 10.000 años.",
+    "caption": "Un jirón del Bucle de Cygnus — una onda de choque de supernova aún en expansión después de 10 000 años.",
     "subject": "Nebulosa",
     "type": "Remanente de supernova · Bucle de Cygnus",
-    "distance": "~2.400 años luz",
+    "distance": "~2400 años luz",
     "taken": "2015"
   },
   "hst-sombrero": {
@@ -145,10 +145,10 @@
   },
   "hst-eskimo": {
     "title": "Nebulosa Esquimal",
-    "caption": "NGC 2392 — una estrella similar al Sol envuelta en capas de gas que expulsó hace 10.000 años.",
+    "caption": "NGC 2392 — una estrella similar al Sol envuelta en capas de gas que expulsó hace 10 000 años.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetaria (NGC 2392)",
-    "distance": "~3.000 años luz",
+    "distance": "~3000 años luz",
     "taken": "2000"
   },
   "chandra-crab": {
@@ -156,14 +156,14 @@
     "caption": "La mirada de rayos X de Chandra sobre el púlsar que impulsa la Nebulosa del Cangrejo, azotando la materia en anillos y chorros.",
     "subject": "Nebulosa",
     "type": "Remanente de supernova · Rayos X (M1)",
-    "distance": "~6.500 años luz"
+    "distance": "~6500 años luz"
   },
   "chandra-tycho": {
     "title": "Remanente de Supernova de Tycho",
     "caption": "La envoltura de rayos X de una estrella que Tycho Brahe vio explotar en 1572.",
     "subject": "Supernova",
     "type": "Remanente de supernova · Rayos X (SN 1572)",
-    "distance": "~10.000 años luz"
+    "distance": "~10 000 años luz"
   },
   "spitzer-helix": {
     "title": "Nebulosa Hélice (infrarroja)",
@@ -175,7 +175,7 @@
   },
   "euclid-perseus": {
     "title": "Cúmulo de Perseo",
-    "caption": "Euclid captura 1.000 galaxias en el cúmulo y 100.000 más dispersas tras él.",
+    "caption": "Euclid captura 1000 galaxias en el cúmulo y 100 000 más dispersas tras él.",
     "subject": "Campo profundo",
     "type": "Cúmulo de galaxias",
     "distance": "~240 millones de años luz",
@@ -186,7 +186,7 @@
     "caption": "La vista panorámica de Euclid de la icónica nube oscura en Orión.",
     "subject": "Nebulosa",
     "type": "Nebulosa oscura (Barnard 33)",
-    "distance": "~1.375 años luz",
+    "distance": "~1375 años luz",
     "taken": "Publicado el 7 de noviembre de 2023"
   },
   "pale-blue-dot": {
@@ -194,7 +194,7 @@
     "caption": "La Tierra como un único píxel, fotografiada por Voyager 1 a seis mil millones de kilómetros.",
     "subject": "Sistema Solar",
     "type": "La Tierra como un único píxel",
-    "distance": "~40,5 UA (6.000 millones de km)",
+    "distance": "~40,5 UA (6000 millones de km)",
     "taken": "14 de febrero de 1990"
   },
   "pluto-nh": {
@@ -215,10 +215,10 @@
   },
   "jwst-orion": {
     "title": "Nebulosa de Orión",
-    "caption": "La nebulosa interior de Orión —una cuna estelar a 1.350 años luz de distancia, en NIRCam de Webb.",
+    "caption": "La nebulosa interior de Orión —una cuna estelar a 1350 años luz de distancia, en NIRCam de Webb.",
     "subject": "Nebulosa",
     "type": "Nebulosa de emisión (M42)",
-    "distance": "~1.350 años luz",
+    "distance": "~1350 años luz",
     "taken": "Publicada el 12 sep 2022"
   },
   "jwst-ring": {
@@ -226,7 +226,7 @@
     "caption": "M57 —una estrella similar al Sol al final de su vida, con sus capas exteriores brillando en delicado detalle.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetaria (M57)",
-    "distance": "~2.600 años luz",
+    "distance": "~2600 años luz",
     "taken": "Publicada el 21 ago 2023"
   },
   "jwst-serpens": {
@@ -234,7 +234,7 @@
     "caption": "Un nido de estrellas en formación, expulsando polvo cristalino hacia una nube oscura en Serpens.",
     "subject": "Nebulosa",
     "type": "Región de formación estelar",
-    "distance": "~1.300 años luz",
+    "distance": "~1300 años luz",
     "taken": "Publicada 2024"
   },
   "hst-lagoon": {
@@ -242,7 +242,7 @@
     "caption": "M8 — una guardería estelar de gas y polvo, del 28º aniversario del Hubble.",
     "subject": "Nebulosa",
     "type": "Nebulosa de emisión (M8)",
-    "distance": "~4.000 años luz",
+    "distance": "~4000 años luz",
     "taken": "2018 · Hubble 28º"
   },
   "hst-orion": {
@@ -250,7 +250,7 @@
     "caption": "M42 — el mosaico más nítido del Hubble de la región de formación estelar masiva más cercana.",
     "subject": "Nebulosa",
     "type": "Nebulosa de emisión (M42)",
-    "distance": "~1.344 años luz",
+    "distance": "~1344 años luz",
     "taken": "2006"
   },
   "hst-carina-pano": {
@@ -258,7 +258,7 @@
     "caption": "Un panorama de 50 años luz de ancho de una de las mayores fábricas estelares de la galaxia.",
     "subject": "Nebulosa",
     "type": "Región de formación estelar",
-    "distance": "~7.500 años luz",
+    "distance": "~7500 años luz",
     "taken": "2007 · Hubble 17º"
   },
   "jwst-casa": {
@@ -266,7 +266,7 @@
     "caption": "La visión infrarroja de Webb sobre el remanente de supernova más joven conocido en la galaxia.",
     "subject": "Supernova",
     "type": "Remanente de supernova",
-    "distance": "~11.000 años luz",
+    "distance": "~11 000 años luz",
     "taken": "Publicada en 2023"
   },
   "hst-cone-nebula": {
@@ -274,7 +274,7 @@
     "caption": "Una torre de gas frío de siete años luz en una guardería estelar lejana.",
     "subject": "Nebulosa",
     "type": "Nebulosa de emisión",
-    "distance": "~2.700 años luz",
+    "distance": "~2700 años luz",
     "taken": "2002 · Primera luz del ACS"
   },
   "hst-omega-centauri": {
@@ -282,7 +282,7 @@
     "caption": "El cúmulo globular más brillante del cielo: millones de estrellas unidas por la gravedad.",
     "subject": "Cúmulo",
     "type": "Cúmulo globular",
-    "distance": "~17.000 años luz",
+    "distance": "~17 000 años luz",
     "taken": "2009"
   },
   "jwst-ngc1365": {
@@ -298,7 +298,7 @@
     "caption": "Un joven cúmulo estelar que excava una cavidad luminosa en la Nube de Magallanes Menor.",
     "subject": "Cúmulo",
     "type": "Cúmulo estelar",
-    "distance": "~200.000 años luz",
+    "distance": "~200 000 años luz",
     "taken": "2007 · Hubble 17º aniversario"
   },
   "jwst-rho-ophiuchi": {
@@ -338,7 +338,7 @@
     "caption": "NGC 2174 — pilares de polvo esculpidos por la radiación de estrellas recién nacidas.",
     "subject": "Nebulosa",
     "type": "Nebulosa de emisión",
-    "distance": "~6.400 años luz",
+    "distance": "~6400 años luz",
     "taken": "2014 · Hubble 24º aniversario"
   },
   "hst-andromeda": {
@@ -359,7 +359,7 @@
   },
   "hst-ngc1300": {
     "title": "NGC 1300",
-    "caption": "Una espiral barrada de manual, con brazos enrollados alrededor de una barra de 200.000 años luz.",
+    "caption": "Una espiral barrada de manual, con brazos enrollados alrededor de una barra de 200 000 años luz.",
     "subject": "Galaxia",
     "type": "Galaxia espiral barrada",
     "distance": "~61 millones de años luz",

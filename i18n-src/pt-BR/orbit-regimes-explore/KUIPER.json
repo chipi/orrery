@@ -1,37 +1,37 @@
 {
   "name": "Kuiper Belt",
   "short": "KUIPER",
-  "story": "Um anel de corpos gelados além de Netuno — 30 a 50 AU. O análogo congelado do cinturão de asteroides: centenas de milhares de corpos dos quais apenas os poucos maiores foram resolvidos. Composto de metano, amônia, gelo de água + rocha. Plutão foi o primeiro membro identificado, em 1930, embora o cinturão não tenha sido reconhecido como uma população até os anos 1990, quando Jewitt + Luu encontraram o segundo membro (1992 QB1). New Horizons deu à humanidade suas primeiras visões próximas de DOIS objetos Kuiper — Plutão em 2015 e Arrokoth em 2019.",
+  "story": "Um anel de corpos gelados além de Netuno — 30 a 50 UA. O análogo congelado do cinturão de asteroides: centenas de milhares de corpos dos quais apenas os poucos maiores foram resolvidos. Composto de metano, amônia, gelo de água + rocha. Plutão foi o primeiro membro identificado, em 1930, embora o cinturão não tenha sido reconhecido como uma população até os anos 1990, quando Jewitt + Luu encontraram o segundo membro (1992 QB1). New Horizons deu à humanidade suas primeiras visões próximas de DOIS objetos Kuiper — Plutão em 2015 e Arrokoth em 2019.",
   "comparison": "Se o cinturão de asteroides é um anel fino ao redor do sistema solar interior, o cinturão de Kuiper é 1.000× mais amplo e contém dezenas de vezes mais massa (~50×+). A luz solar em Plutão é 1/1.600ª de sua intensidade na Terra.",
   "residents": [
     {
       "id": "pluto",
-      "label": "Plutão — 39,5 AU, maior conhecido",
+      "label": "Plutão — 39,5 UA, maior conhecido",
       "agency": "NATURAL"
     },
     {
       "id": "eris",
-      "label": "Éris — 96,4 AU (disco disperso)",
+      "label": "Éris — 96,4 UA (disco disperso)",
       "agency": "NATURAL"
     },
     {
       "id": "makemake",
-      "label": "Makemake — 45,8 AU",
+      "label": "Makemake — 45,8 UA",
       "agency": "NATURAL"
     },
     {
       "id": "haumea",
-      "label": "Haumea — 43,3 AU, rotação rápida",
+      "label": "Haumea — 43,3 UA, rotação rápida",
       "agency": "NATURAL"
     },
     {
       "id": "quaoar",
-      "label": "Quaoar — 43,4 AU, possui anéis",
+      "label": "Quaoar — 43,4 UA, possui anéis",
       "agency": "NATURAL"
     },
     {
       "id": "arrokoth",
-      "label": "Arrokoth — 44,6 AU, binário de contato",
+      "label": "Arrokoth — 44,6 UA, binário de contato",
       "agency": "NATURAL"
     }
   ],

@@ -1,7 +1,7 @@
 {
   "name": "Kuipergürtel",
   "kind": "Transneptunisch — eisige Population",
-  "location": "Jenseits von Neptun · 30–50 AU von der Sonne",
+  "location": "Jenseits von Neptun · 30–50 AE von der Sonne",
   "population_estimate": "Über 100.000 Körper größer als 100 km; geschätzte 10⁹–10¹⁰ kometengroße Objekte",
   "total_mass_relative": "≈ 4–10 % der Erde (200× die Masse des Asteroidengürtels)",
   "largest_members": [
@@ -27,12 +27,12 @@
     {
       "tab": "planets",
       "section": "kuiper-belt",
-      "why": "Der Kuipergürtel ist das transneptunische Relikt der Protoplanetaren Scheibe — 30 bis 50 AU, dominiert von Eis. Pluto, Eris, Haumea und Makemake leben hier."
+      "why": "Der Kuipergürtel ist das transneptunische Relikt der Protoplanetaren Scheibe — 30 bis 50 AE, dominiert von Eis. Pluto, Eris, Haumea und Makemake leben hier."
     },
     {
       "tab": "orbits",
       "section": "semi-major-axis",
-      "why": "Die klassischen KBOs umkreisen zwischen 42 und 48 AU in Bahnen mit niedriger Exzentrizität und niedriger Inklination — sie sind seit dem frühen System weitgehend ungestört."
+      "why": "Die klassischen KBOs umkreisen zwischen 42 und 48 AE in Bahnen mit niedriger Exzentrizität und niedriger Inklination — sie sind seit dem frühen System weitgehend ungestört."
     },
     {
       "tab": "orbits",

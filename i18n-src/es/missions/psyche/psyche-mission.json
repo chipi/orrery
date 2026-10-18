@@ -2,7 +2,7 @@
   "name": "Psyche",
   "type": "ORBITADOR · ACTIVO",
   "first": "Primera misión a un asteroide de clase M rico en metal; primer uso de propulsores iónicos de efecto Hall como propulsión principal de crucero",
-  "description": "Psyche apunta hacia el núcleo de níquel-hierro expuesto de un protoplaneta diferenciado — un cuerpo metálico de 226 km que podría ser el análogo más cercano al núcleo de la Tierra accesible en el espacio. Lanzado 2023-10-13 en un Falcon Heavy desde Kennedy LC-39A. Cuatro propulsores iónicos de efecto Hall SPT-140 espiralizan la trayectoria hacia afuera; una asistencia gravitatoria de Marte en mayo de 2026 (4.609 km de máxima aproximación) aportó la energía que el impulso iónico solo no podría entregar a tiempo. Llegada prevista 2029-08, seguida de un descenso de 26 meses en cuatro fases de órbita (A → B → C → D) cartografiando la gravedad, magnetismo, topografía y composición del asteroide. Si la hipótesis del núcleo metálico es correcta, Psyche se verá diferente a cualquier otro lugar que hayamos visitado — superficie de metal desnudo, depósitos de sulfuro de hierro, nada del caos de escombros típico de los asteroides.",
+  "description": "Psyche apunta hacia el núcleo de níquel-hierro expuesto de un protoplaneta diferenciado — un cuerpo metálico de 226 km que podría ser el análogo más cercano al núcleo de la Tierra accesible en el espacio. Lanzado 2023-10-13 en un Falcon Heavy desde Kennedy LC-39A. Cuatro propulsores iónicos de efecto Hall SPT-140 espiralizan la trayectoria hacia afuera; una asistencia gravitatoria de Marte en mayo de 2026 (4609 km de máxima aproximación) aportó la energía que el impulso iónico solo no podría entregar a tiempo. Llegada prevista 2029-08, seguida de un descenso de 26 meses en cuatro fases de órbita (A → B → C → D) cartografiando la gravedad, magnetismo, topografía y composición del asteroide. Si la hipótesis del núcleo metálico es correcta, Psyche se verá diferente a cualquier otro lugar que hayamos visitado — superficie de metal desnudo, depósitos de sulfuro de hierro, nada del caos de escombros típico de los asteroides.",
   "events": [
     {
       "met": 0,
@@ -19,7 +19,7 @@
     {
       "met": 945,
       "label": "ASISTENCIA GRAVITATORIA DE MARTE",
-      "note": "2026-05-15. Máxima aproximación 4.609 km — sobrevuelo de Marte completado.",
+      "note": "2026-05-15. Máxima aproximación 4609 km — sobrevuelo de Marte completado.",
       "type": "info"
     },
     {

@@ -1,7 +1,7 @@
 {
   "name": "Fascia Principale degli Asteroidi",
   "kind": "Fascia principale — popolazione rocciosa",
-  "location": "Tra Marte e Giove · 2,2–3,2 AU dal Sole",
+  "location": "Tra Marte e Giove · 2,2–3,2 UA dal Sole",
   "population_estimate": "1,1–1,9 milioni di corpi più grandi di 1 km, centinaia di milioni più grandi di 100 m",
   "total_mass_relative": "≈ 4 % della Luna (≈ 3 % di Plutone)",
   "largest_members": [
@@ -33,7 +33,7 @@
     {
       "tab": "orbits",
       "section": "orbit-regimes",
-      "why": "La fascia occupa l'anello 2.2–3.2 AU. I vuoti di Kirkwood — zone orbitali vuote alle risonanze di mean-motion di Giove — caratterizzano la popolazione."
+      "why": "La fascia occupa l'anello 2.2–3.2 UA. I vuoti di Kirkwood — zone orbitali vuote alle risonanze di mean-motion di Giove — caratterizzano la popolazione."
     },
     {
       "tab": "orbits",

@@ -2,7 +2,7 @@
   "name": "Hayabusa2",
   "type": "SAMPLE RETURN + LANDERS · ACTIVE (esteso)",
   "first": "Secondo ritorno di campioni da asteroide (Ryugu, 2020); primo cratere da impatto artificiale su un asteroide; primo materiale subsuperficiale asteroidale riportato sulla Terra",
-  "description": "Follow-on della JAXA al primo Hayabusa. Lanciato il 2014-12-03, Hayabusa2 ha raggiunto l'asteroide carbonaceo vicino alla Terra (162173) Ryugu il 2018-06-27 dopo una navigazione di 3,5 anni a bassa spinta con ioni e assistenza gravitazionale terrestre. Operazioni sulla superficie 2018–2019: due campionamenti touch-and-go delimitanti l'esperimento Small Carry-on Impactor (2019-04-05) che ha scavato un cratere di 14 m per il secondo campione. Tre rover MINERVA-II hanno restituito le prime immagini della superficie di un asteroide; il lander MASCOT della DLR/CNES ha operato per 17 ore. La capsula di ritorno con i campioni è rientrata sopra Woomera il 2020-12-05 (UTC; recuperata il 2020-12-06 ora locale/JST) con 5,4 g di materiale pristino da Ryugu — il primo campione di asteroide con stratigrafia subsuperficiale. Missione estesa: sorvolo di 98943 Torifune (2001 CC21) nel 2026-07; rendezvous con l'asteroide in rotazione veloce (1998 KY26) previsto per il 2031-07.",
+  "description": "Follow-on della JAXA al primo Hayabusa. Lanciato il 2014-12-03, Hayabusa2 ha raggiunto l'asteroide carbonaceo vicino alla Terra (162173) Ryugu il 2018-06-27 dopo una navigazione di 3,5 anni a bassa spinta con ioni e fionda gravitazionale terrestre. Operazioni sulla superficie 2018–2019: due campionamenti touch-and-go delimitanti l'esperimento Small Carry-on Impactor (2019-04-05) che ha scavato un cratere di 14 m per il secondo campione. Tre rover MINERVA-II hanno restituito le prime immagini della superficie di un asteroide; il lander MASCOT della DLR/CNES ha operato per 17 ore. La capsula di ritorno con i campioni è rientrata sopra Woomera il 2020-12-05 (UTC; recuperata il 2020-12-06 ora locale/JST) con 5,4 g di materiale pristino da Ryugu — il primo campione di asteroide con stratigrafia subsuperficiale. Missione estesa: sorvolo di 98943 Torifune (2001 CC21) nel 2026-07; rendezvous con l'asteroide in rotazione veloce (1998 KY26) previsto per il 2031-07.",
   "events": [
     {
       "met": 0,
@@ -13,7 +13,7 @@
     {
       "met": 366,
       "label": "SORVOLO TERRESTRE",
-      "note": "L'assistenza gravitazionale terrestre fase l'orbita di rendezvous.",
+      "note": "La fionda gravitazionale terrestre fase l'orbita di rendezvous.",
       "type": "nominal"
     },
     {

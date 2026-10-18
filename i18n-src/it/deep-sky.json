@@ -194,7 +194,7 @@
     "caption": "La Terra come un singolo pixel, fotografata da Voyager 1 a sei miliardi di chilometri.",
     "subject": "Sistema solare",
     "type": "La Terra come un singolo pixel",
-    "distance": "~40,5 AU (6 miliardi di km)",
+    "distance": "~40,5 UA (6 miliardi di km)",
     "taken": "14 feb 1990"
   },
   "pluto-nh": {
@@ -202,7 +202,7 @@
     "caption": "Il primo primo piano a colori veri di Plutone e il suo cuore di ghiaccio di azoto di New Horizons.",
     "subject": "Sistema solare",
     "type": "Pianeta nano",
-    "distance": "~34 AU (5 miliardi di km)",
+    "distance": "~34 UA (5 miliardi di km)",
     "taken": "14 lug 2015"
   },
   "sun-sdo": {
@@ -210,7 +210,7 @@
     "caption": "La vista del Solar Dynamics Observatory della nostra stella nell'ultravioletto estremo.",
     "subject": "Il Sole",
     "type": "Il Sole · ultravioletto estremo",
-    "distance": "1 AU",
+    "distance": "1 UA",
     "taken": "2010–presente"
   },
   "jwst-orion": {

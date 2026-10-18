@@ -1,5 +1,5 @@
 {
-  "description": "El único satélite natural de la Tierra y el único mundo aparte de la Tierra sobre el que los humanos han caminado. Su bloqueo de marea 1:1 mantiene el mismo hemisferio orientado hacia la Tierra en todo momento: el lado cercano dominado por cuencas de mares inundadas de lava, el lado lejano un antiguo terreno de tierras altas craterizado coronado por la cuenca del Polo Sur–Aitken, la estructura de impacto más grande del sistema solar (~2.500 km de ancho, ~13 km de profundidad). El lento alejamiento de la Luna de la Tierra (~3,8 cm/año) está alargando gradualmente el día terrestre; en el pasado distante aparecía casi tres veces su tamaño angular actual en el cielo.",
+  "description": "El único satélite natural de la Tierra y el único mundo aparte de la Tierra sobre el que los humanos han caminado. Su bloqueo de marea 1:1 mantiene el mismo hemisferio orientado hacia la Tierra en todo momento: el lado cercano dominado por cuencas de mares inundadas de lava, el lado lejano un antiguo terreno de tierras altas craterizado coronado por la cuenca del Polo Sur–Aitken, la estructura de impacto más grande del sistema solar (~2500 km de ancho, ~13 km de profundidad). El lento alejamiento de la Luna de la Tierra (~3,8 cm/año) está alargando gradualmente el día terrestre; en el pasado distante aparecía casi tres veces su tamaño angular actual en el cielo.",
   "science_sections": [
     {
       "tab": "orbits",
@@ -9,7 +9,7 @@
     {
       "tab": "orbits",
       "section": "eccentricity",
-      "why": "La excentricidad de 0.055 de la Luna es pequeña pero importante — en el perigeo el disco se ve 12 % más grande y brillante que en el apogeo ('superluna')."
+      "why": "La excentricidad de 0,055 de la Luna es pequeña pero importante — en el perigeo el disco se ve 12 % más grande y brillante que en el apogeo ('superluna')."
     },
     {
       "tab": "orbits",

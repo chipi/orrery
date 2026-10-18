@@ -1,0 +1,1058 @@
+[
+ {
+  "rel": "deep-sky.json",
+  "at": "jwst-carina.distance",
+  "old": "~7.600 años luz",
+  "new": "~7600 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "jwst-southern-ring.distance",
+  "old": "~2.500 años luz",
+  "new": "~2500 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "jwst-pillars.distance",
+  "old": "~6.500 años luz",
+  "new": "~6500 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "jwst-tarantula.distance",
+  "old": "~161.000 años luz",
+  "new": "~161 000 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-pillars.distance",
+  "old": "~6.500 años luz",
+  "new": "~6500 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-mystic-mountain.distance",
+  "old": "~7.500 años luz",
+  "new": "~7500 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-butterfly.caption",
+  "old": "NGC 6302 — alas de gas calentadas más allá de 20.000 °C, expulsadas por una estrella moribunda.",
+  "new": "NGC 6302 — alas de gas calentadas más allá de 20 000 °C, expulsadas por una estrella moribunda."
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-butterfly.distance",
+  "old": "~3.400 años luz",
+  "new": "~3400 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-bubble.distance",
+  "old": "~7.100 años luz",
+  "new": "~7100 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-veil.caption",
+  "old": "Un jirón del Bucle de Cygnus — una onda de choque de supernova aún en expansión después de 10.000 años.",
+  "new": "Un jirón del Bucle de Cygnus — una onda de choque de supernova aún en expansión después de 10 000 años."
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-veil.distance",
+  "old": "~2.400 años luz",
+  "new": "~2400 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-eskimo.caption",
+  "old": "NGC 2392 — una estrella similar al Sol envuelta en capas de gas que expulsó hace 10.000 años.",
+  "new": "NGC 2392 — una estrella similar al Sol envuelta en capas de gas que expulsó hace 10 000 años."
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-eskimo.distance",
+  "old": "~3.000 años luz",
+  "new": "~3000 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "chandra-crab.distance",
+  "old": "~6.500 años luz",
+  "new": "~6500 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "chandra-tycho.distance",
+  "old": "~10.000 años luz",
+  "new": "~10 000 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "euclid-perseus.caption",
+  "old": "Euclid captura 1.000 galaxias en el cúmulo y 100.000 más dispersas tras él.",
+  "new": "Euclid captura 1000 galaxias en el cúmulo y 100 000 más dispersas tras él."
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "euclid-horsehead.distance",
+  "old": "~1.375 años luz",
+  "new": "~1375 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "pale-blue-dot.distance",
+  "old": "~40,5 UA (6.000 millones de km)",
+  "new": "~40,5 UA (6000 millones de km)"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "jwst-orion.caption",
+  "old": "La nebulosa interior de Orión —una cuna estelar a 1.350 años luz de distancia, en NIRCam de Webb.",
+  "new": "La nebulosa interior de Orión —una cuna estelar a 1350 años luz de distancia, en NIRCam de Webb."
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "jwst-orion.distance",
+  "old": "~1.350 años luz",
+  "new": "~1350 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "jwst-ring.distance",
+  "old": "~2.600 años luz",
+  "new": "~2600 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "jwst-serpens.distance",
+  "old": "~1.300 años luz",
+  "new": "~1300 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-lagoon.distance",
+  "old": "~4.000 años luz",
+  "new": "~4000 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-orion.distance",
+  "old": "~1.344 años luz",
+  "new": "~1344 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-carina-pano.distance",
+  "old": "~7.500 años luz",
+  "new": "~7500 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "jwst-casa.distance",
+  "old": "~11.000 años luz",
+  "new": "~11 000 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-cone-nebula.distance",
+  "old": "~2.700 años luz",
+  "new": "~2700 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-omega-centauri.distance",
+  "old": "~17.000 años luz",
+  "new": "~17 000 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-ngc602.distance",
+  "old": "~200.000 años luz",
+  "new": "~200 000 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-monkey-head.distance",
+  "old": "~6.400 años luz",
+  "new": "~6400 años luz"
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-ngc1300.caption",
+  "old": "Una espiral barrada de manual, con brazos enrollados alrededor de una barra de 200.000 años luz.",
+  "new": "Una espiral barrada de manual, con brazos enrollados alrededor de una barra de 200 000 años luz."
+ },
+ {
+  "rel": "earth-objects/gps.json",
+  "at": "description",
+  "old": "31 satélites activos a 20.200 km. Toda aplicación de navegación, todo dron, todo barco en el mar depende de esta constelación. Originalmente militar, abierta a civiles en 1983. Precisión de la señal: ~3 m para uso civil, ~1 m para militar —la precisión centimétrica requiere aumentación RTK.",
+  "new": "31 satélites activos a 20 200 km. Toda aplicación de navegación, todo dron, todo barco en el mar depende de esta constelación. Originalmente militar, abierta a civiles en 1983. Precisión de la señal: ~3 m para uso civil, ~1 m para militar —la precisión centimétrica requiere aumentación RTK."
+ },
+ {
+  "rel": "earth-objects/kuiper.json",
+  "at": "description",
+  "old": "La respuesta de Amazon al Starlink en banda ancha LEO: 3.236 satélites previstos a 590-630 km en 98 planos orbitales. El primer prototipo se lanzó en 2023; los lanzamientos de producción comenzaron en 2025; la licencia de la FCC requiere un 50% de despliegue en 2026 y un 100% en 2029.",
+  "new": "La respuesta de Amazon al Starlink en banda ancha LEO: 3236 satélites previstos a 590-630 km en 98 planos orbitales. El primer prototipo se lanzó en 2023; los lanzamientos de producción comenzaron en 2025; la licencia de la FCC requiere un 50% de despliegue en 2026 y un 100% en 2029."
+ },
+ {
+  "rel": "earth-objects/luna10.json",
+  "at": "scale_fact",
+  "old": "Órbita lunar ~350 km de altitud. La Luna dista 384.400 km —tres órdenes de magnitud más lejos que la EEI—, pero Luna 10 fue el primer objeto puesto en órbita allí.",
+  "new": "Órbita lunar ~350 km de altitud. La Luna dista 384 400 km —tres órdenes de magnitud más lejos que la EEI—, pero Luna 10 fue el primer objeto puesto en órbita allí."
+ },
+ {
+  "rel": "earth-objects/o3b.json",
+  "at": "description",
+  "old": "20 satélites a 8.063 km en MEO ecuatorial — la única banda ancha comercial MEO operativa. Los sucesores O3b mPOWER se están lanzando desde 2022 con asignación de haz definida por software. Menor latencia que GEO, más cobertura que LEO; dirigido a los «otros 3.000 millones» (origen del nombre).",
+  "new": "20 satélites a 8063 km en MEO ecuatorial — la única banda ancha comercial MEO operativa. Los sucesores O3b mPOWER se están lanzando desde 2022 con asignación de haz definida por software. Menor latencia que GEO, más cobertura que LEO; dirigido a los «otros 3000 millones» (origen del nombre)."
+ },
+ {
+  "rel": "earth-objects/starlink.json",
+  "at": "description",
+  "old": "~6.000 satélites activos a 550 km en capas de 53° / 70° / 97,6° — la mayor constelación LEO jamás desplegada. Internet de banda ancha de SpaceX, operativa desde 2019. Evitación autónoma de colisiones + enlaces láser entre satélites. Visibles como un tren de puntos brillantes cruzando el cielo en los días posteriores a cada lanzamiento.",
+  "new": "~6000 satélites activos a 550 km en capas de 53° / 70° / 97,6° — la mayor constelación LEO jamás desplegada. Internet de banda ancha de SpaceX, operativa desde 2019. Evitación autónoma de colisiones + enlaces láser entre satélites. Visibles como un tren de puntos brillantes cruzando el cielo en los días posteriores a cada lanzamiento."
+ },
+ {
+  "rel": "earth-objects/starlink.json",
+  "at": "scale_fact",
+  "old": "Starlink realiza más de 50.000 maniobras autónomas de evitación al año en toda la constelación — más que todos los demás operadores combinados.",
+  "new": "Starlink realiza más de 50 000 maniobras autónomas de evitación al año en toda la constelación — más que todos los demás operadores combinados."
+ },
+ {
+  "rel": "earth-objects/tundra-molniya.json",
+  "at": "description",
+  "old": "Órbitas de alta excentricidad a 63,4° de inclinación crítica. Molniya (12 horas, 600 × 40.000 km) — comunicaciones de altas latitudes rusas + sistemas de alerta temprana Oko/Meridian desde 1965. Tundra (24 horas, ~25.000 × ~47.000 km) — Sirius XM Satellite Radio + sensores SBIRS-HEO estadounidenses.",
+  "new": "Órbitas de alta excentricidad a 63,4° de inclinación crítica. Molniya (12 horas, 600 × 40 000 km) — comunicaciones de altas latitudes rusas + sistemas de alerta temprana Oko/Meridian desde 1965. Tundra (24 horas, ~25 000 × ~47 000 km) — Sirius XM Satellite Radio + sensores SBIRS-HEO estadounidenses."
+ },
+ {
+  "rel": "fleet/constellation/galileo-gnss.json",
+  "at": "description",
+  "old": "GNSS civil europeo — 34 satélites lanzados (4 IOV + 30 FOC); 27 operacionales + 1 en comisionamiento a mayo de 2026; la constelación objetivo es de 30 en órbita MEO a 23.222 km en 3 planos orbitales inclinados 56°. Primer servicio operacional en 2016; la declaración de capacidad operacional completa está pendiente del anuncio oficial de ESA/EUSPA. A diferencia de GPS (operador militar) y GLONASS (operador militar), Galileo está gestionado por EUSPA, una agencia civil de la UE. Diseñado para posicionamiento submétrico con capas de servicio abierto + comercial + Servicio Público Regulado. Carga de utilidad de Búsqueda y Rescate integrada para la detección de balizas de emergencia.",
+  "new": "GNSS civil europeo — 34 satélites lanzados (4 IOV + 30 FOC); 27 operacionales + 1 en comisionamiento a mayo de 2026; la constelación objetivo es de 30 en órbita MEO a 23 222 km en 3 planos orbitales inclinados 56°. Primer servicio operacional en 2016; la declaración de capacidad operacional completa está pendiente del anuncio oficial de ESA/EUSPA. A diferencia de GPS (operador militar) y GLONASS (operador militar), Galileo está gestionado por EUSPA, una agencia civil de la UE. Diseñado para posicionamiento submétrico con capas de servicio abierto + comercial + Servicio Público Regulado. Carga de utilidad de Búsqueda y Rescate integrada para la detección de balizas de emergencia."
+ },
+ {
+  "rel": "fleet/constellation/glonass.json",
+  "at": "description",
+  "old": "GNSS ruso — 24 satélites activos a 19.130 km en MEO en 3 planos inclinados 64,8° (la inclinación elevada es deliberada para mejorar la cobertura en altas latitudes respecto a GPS). Primer lanzamiento en 1982; alcanzó constelación completa en 1995, luego colapsó a finales de los años 1990 y principios de los 2000 tras el fin de la financiación soviética; restaurado a estado operacional de 24 satélites completos alrededor de 2010-2011 con la reanudación de la financiación. Continúa operacional en 2026. Operado por Roscosmos en coordinación con el Ministerio de Defensa ruso.",
+  "new": "GNSS ruso — 24 satélites activos a 19 130 km en MEO en 3 planos inclinados 64,8° (la inclinación elevada es deliberada para mejorar la cobertura en altas latitudes respecto a GPS). Primer lanzamiento en 1982; alcanzó constelación completa en 1995, luego colapsó a finales de los años 1990 y principios de los 2000 tras el fin de la financiación soviética; restaurado a estado operacional de 24 satélites completos alrededor de 2010-2011 con la reanudación de la financiación. Continúa operacional en 2026. Operado por Roscosmos en coordinación con el Ministerio de Defensa ruso."
+ },
+ {
+  "rel": "fleet/constellation/gps-gnss.json",
+  "at": "description",
+  "old": "Sistema de Posicionamiento Global — el GNSS original y todavía el más utilizado. 31 satélites activos a 20.180 km en 6 planos orbitales inclinados 55°. Operado por la Fuerza Espacial de EE. UU.; originalmente por el Departamento de Defensa. La directiva de 1983 del presidente Reagan prometió acceso futuro al GPS civil después del derribo del vuelo 007 de Korean Air Lines, pero el acceso a la señal L1 C/A sin encriptar no estuvo disponible hasta que Disponibilidad Selectiva se desactivó en mayo de 2000, mejorando drásticamente la precisión civil. Señales modernizadas L1C, L2C, L5 en satélites Block IIF e III.",
+  "new": "Sistema de Posicionamiento Global — el GNSS original y todavía el más utilizado. 31 satélites activos a 20 180 km en 6 planos orbitales inclinados 55°. Operado por la Fuerza Espacial de EE. UU.; originalmente por el Departamento de Defensa. La directiva de 1983 del presidente Reagan prometió acceso futuro al GPS civil después del derribo del vuelo 007 de Korean Air Lines, pero el acceso a la señal L1 C/A sin encriptar no estuvo disponible hasta que Disponibilidad Selectiva se desactivó en mayo de 2000, mejorando drásticamente la precisión civil. Señales modernizadas L1C, L2C, L5 en satélites Block IIF e III."
+ },
+ {
+  "rel": "fleet/constellation/kuiper.json",
+  "at": "tagline",
+  "old": "Banda ancha LEO de Amazon — 3.236 satélites previstos, beta comercial 2026",
+  "new": "Banda ancha LEO de Amazon — 3236 satélites previstos, beta comercial 2026"
+ },
+ {
+  "rel": "fleet/constellation/kuiper.json",
+  "at": "description",
+  "old": "La respuesta de Amazon a Starlink — 3.236 satélites a 590-630 km en 98 planos orbitales. Primer lanzamiento de prototipo en octubre de 2023 (lanzamiento de prueba de KuiperSat-1 y -2); primeros 27 satélites de producción lanzados en abril de 2025 en Atlas V. A mediados de 2026, ~230+ satélites de producción están operativos. La licencia de la FCC requiere el 50% del despliegue (1.618 satélites) antes de julio de 2026 y el 100% antes de julio de 2029; Amazon ha solicitado una prórroga de dos años debido al déficit actual. Si se despliega completamente, la constelación aproximadamente duplicaría la población de satélites activos en LEO.",
+  "new": "La respuesta de Amazon a Starlink — 3236 satélites a 590-630 km en 98 planos orbitales. Primer lanzamiento de prototipo en octubre de 2023 (lanzamiento de prueba de KuiperSat-1 y -2); primeros 27 satélites de producción lanzados en abril de 2025 en Atlas V. A mediados de 2026, ~230+ satélites de producción están operativos. La licencia de la FCC requiere el 50% del despliegue (1618 satélites) antes de julio de 2026 y el 100% antes de julio de 2029; Amazon ha solicitado una prórroga de dos años debido al déficit actual. Si se despliega completamente, la constelación aproximadamente duplicaría la población de satélites activos en LEO."
+ },
+ {
+  "rel": "fleet/constellation/kuiper.json",
+  "at": "best_known_for",
+  "old": "Banda ancha Amazon Leo — 3.236 satélites previstos, beta comercial 2026",
+  "new": "Banda ancha Amazon Leo — 3236 satélites previstos, beta comercial 2026"
+ },
+ {
+  "rel": "fleet/constellation/molniya.json",
+  "at": "description",
+  "old": "Constelación rusa de órbita altamente excéntrica. La órbita Molniya de 12 horas (~600 × 40.000 km) con inclinación crítica de 63,4° aprovecha la perturbación J2 de la Tierra para fijar la línea de ápsides — el apogeo permanece estacionado sobre el hemisferio norte, proporcionando a los usuarios de altas latitudes ángulos de elevación que un satélite geoestacionario nunca puede ofrecer. Molniya-1 se lanzó en 1965; la línea continuó con Molniya-1/2/3, los satélites de alerta temprana Oko, y el sucesor de comunicaciones Meridian en servicio hoy.",
+  "new": "Constelación rusa de órbita altamente excéntrica. La órbita Molniya de 12 horas (~600 × 40 000 km) con inclinación crítica de 63,4° aprovecha la perturbación J2 de la Tierra para fijar la línea de ápsides — el apogeo permanece estacionado sobre el hemisferio norte, proporcionando a los usuarios de altas latitudes ángulos de elevación que un satélite geoestacionario nunca puede ofrecer. Molniya-1 se lanzó en 1965; la línea continuó con Molniya-1/2/3, los satélites de alerta temprana Oko, y el sucesor de comunicaciones Meridian en servicio hoy."
+ },
+ {
+  "rel": "fleet/constellation/o3b-mpower.json",
+  "at": "description",
+  "old": "La única constelación comercial de banda ancha MEO operativa — O3b original desplegada 2013-2019, segunda generación O3b mPOWER desde 2022 en adelante. Más de 20 satélites en órbita ecuatorial a 8.063 km. Latencia entre GEO y LEO, base de clientes centrada en backhaul de telecomunicaciones, marítimo y empresas remotas. Operada por SES (Luxemburgo). Nombrada por los 'otros 3 mil millones' — la misión original era llevar conectividad a áreas no cubiertas por banda ancha terrestre.",
+  "new": "La única constelación comercial de banda ancha MEO operativa — O3b original desplegada 2013-2019, segunda generación O3b mPOWER desde 2022 en adelante. Más de 20 satélites en órbita ecuatorial a 8063 km. Latencia entre GEO y LEO, base de clientes centrada en backhaul de telecomunicaciones, marítimo y empresas remotas. Operada por SES (Luxemburgo). Nombrada por los 'otros 3 mil millones' — la misión original era llevar conectividad a áreas no cubiertas por banda ancha terrestre."
+ },
+ {
+  "rel": "fleet/constellation/oneweb.json",
+  "at": "description",
+  "old": "Constelación de banda ancha LEO de primera generación, 648 satélites a 1.200 km en 12 planos polares. Las órbitas polares proporcionan cobertura completa de polo a polo que las capas de Starlink de inclinación media no pueden alcanzar. Adquirida por Eutelsat en 2023 para formar Eutelsat OneWeb; el servicio comercial ahora se combina con activos GEO de Eutelsat. Mayor altitud que Starlink significa latencia ligeramente mayor pero menos satélites necesarios.",
+  "new": "Constelación de banda ancha LEO de primera generación, 648 satélites a 1200 km en 12 planos polares. Las órbitas polares proporcionan cobertura completa de polo a polo que las capas de Starlink de inclinación media no pueden alcanzar. Adquirida por Eutelsat en 2023 para formar Eutelsat OneWeb; el servicio comercial ahora se combina con activos GEO de Eutelsat. Mayor altitud que Starlink significa latencia ligeramente mayor pero menos satélites necesarios."
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "best_known_for",
+  "old": "Mayor constelación LEO de banda ancha — ~6.500–7.000 satélites activos",
+  "new": "Mayor constelación LEO de banda ancha — ~6500–7000 satélites activos"
+ },
+ {
+  "rel": "fleet/constellation/tundra-sirius.json",
+  "at": "description",
+  "old": "Constelación histórica de satélites de radio en la órbita Tundra de 24 horas (~25.000 × 35.786 km) con inclinación crítica de 63,4°. Los tres satélites Sirius FM originales (FM-1, FM-2, FM-3) se posicionaban sobre CONUS durante aproximadamente dos tercios de cada órbita, ofreciendo a los receptores en cañones urbanos ángulos de elevación que una señal geoestacionaria no podía igualar. Sirius FM-1 se lanzó desde Baikonur en 2000 en un Proton-K; FM-2 y FM-3 siguieron después. La empresa se fusionó con XM Radio en 2008 para formar Sirius XM. La constelación en órbita Tundra fue desmantelada en 2016, y Sirius XM ahora opera una flota de ~7 satélites geoestacionarios.",
+  "new": "Constelación histórica de satélites de radio en la órbita Tundra de 24 horas (~25 000 × 35 786 km) con inclinación crítica de 63,4°. Los tres satélites Sirius FM originales (FM-1, FM-2, FM-3) se posicionaban sobre CONUS durante aproximadamente dos tercios de cada órbita, ofreciendo a los receptores en cañones urbanos ángulos de elevación que una señal geoestacionaria no podía igualar. Sirius FM-1 se lanzó desde Baikonur en 2000 en un Proton-K; FM-2 y FM-3 siguieron después. La empresa se fusionó con XM Radio en 2008 para formar Sirius XM. La constelación en órbita Tundra fue desmantelada en 2016, y Sirius XM ahora opera una flota de ~7 satélites geoestacionarios."
+ },
+ {
+  "rel": "fleet/lander/change-5.json",
+  "at": "description",
+  "old": "El primer retorno de muestras lunares desde Luna 24 en 1976. Retornó 1,731 kg de basalto de una región 1.200 millones de años más joven que las muestras de Apollo y Luna — ampliando la línea de tiempo del vulcanismo lunar reciente.",
+  "new": "El primer retorno de muestras lunares desde Luna 24 en 1976. Retornó 1,731 kg de basalto de una región 1200 millones de años más joven que las muestras de Apollo y Luna — ampliando la línea de tiempo del vulcanismo lunar reciente."
+ },
+ {
+  "rel": "fleet/lander/insight.json",
+  "at": "description",
+  "old": "La misión sismómetro marciano de la NASA de 2018–2022. Detectó más de 1.300 martemotos, mapeó por primera vez la estructura interna del planeta y confirmó la existencia de un gran núcleo fundido. Terminó cuando la acumulación de polvo en sus paneles solares finalmente le dejó sin energía.",
+  "new": "La misión sismómetro marciano de la NASA de 2018–2022. Detectó más de 1300 martemotos, mapeó por primera vez la estructura interna del planeta y confirmó la existencia de un gran núcleo fundido. Terminó cuando la acumulación de polvo en sus paneles solares finalmente le dejó sin energía."
+ },
+ {
+  "rel": "fleet/lander/viking2-lander.json",
+  "at": "description",
+  "old": "La mitad superficial de la misión Viking 2 de la NASA y el segundo módulo de aterrizaje estadounidense exitoso en Marte, 47 días después de Viking 1. Lanzado el 1975-09-09 en un Titan IIIE-Centaur, aterrizó en Utopia Planitia (47,97° N, 134,04° E) el 1976-09-03 — mucho más al norte que Viking 1, en un tipo diferente de llanura para ampliar los resultados científicos. Ejecutó el mismo conjunto de instrumentos que Viking 1: un paquete de biología (experimentos de Liberación Pirrolítica / Liberación Etiquetada / Intercambio de Gases buscando metabolismo microbiano — el famosamente ambiguo resultado positivo de Liberación Etiquetada que sigue siendo debatido), CG-EM para materia orgánica del suelo (ninguna detectada), cámaras facsímil que devolvieron más de 1.400 imágenes, fluorescencia de rayos X para química del suelo, meteorología y sismómetro (uno de dos jamás operados en Marte — incapaz de detectar terremotos a través del ruido de la cabina). Operó hasta el 1980-04-11 cuando fallaron las baterías.",
+  "new": "La mitad superficial de la misión Viking 2 de la NASA y el segundo módulo de aterrizaje estadounidense exitoso en Marte, 47 días después de Viking 1. Lanzado el 1975-09-09 en un Titan IIIE-Centaur, aterrizó en Utopia Planitia (47,97° N, 134,04° E) el 1976-09-03 — mucho más al norte que Viking 1, en un tipo diferente de llanura para ampliar los resultados científicos. Ejecutó el mismo conjunto de instrumentos que Viking 1: un paquete de biología (experimentos de Liberación Pirrolítica / Liberación Etiquetada / Intercambio de Gases buscando metabolismo microbiano — el famosamente ambiguo resultado positivo de Liberación Etiquetada que sigue siendo debatido), CG-EM para materia orgánica del suelo (ninguna detectada), cámaras facsímil que devolvieron más de 1400 imágenes, fluorescencia de rayos X para química del suelo, meteorología y sismómetro (uno de dos jamás operados en Marte — incapaz de detectar terremotos a través del ruido de la cabina). Operó hasta el 1980-04-11 cuando fallaron las baterías."
+ },
+ {
+  "rel": "fleet/observatory/gaia.json",
+  "at": "tagline",
+  "old": "Cartografió 1.800 millones de estrellas en 3D",
+  "new": "Cartografió 1800 millones de estrellas en 3D"
+ },
+ {
+  "rel": "fleet/observatory/gaia.json",
+  "at": "best_known_for",
+  "old": "Cartografió 1.800 millones de estrellas en 3D",
+  "new": "Cartografió 1800 millones de estrellas en 3D"
+ },
+ {
+  "rel": "fleet/observatory/kepler.json",
+  "at": "tagline",
+  "old": "Descubrió más de 2.700 exoplanetas",
+  "new": "Descubrió más de 2700 exoplanetas"
+ },
+ {
+  "rel": "fleet/observatory/kepler.json",
+  "at": "description",
+  "old": "Cazador de exoplanetas de la NASA (2009–2018). Observó una única zona del cielo y detectó exoplanetas mediante fotometría de tránsito — la breve caída en la luz de una estrella cuando un planeta pasa frente a ella. Descubrió más de 2.700 exoplanetas confirmados y demostró que los mundos del tamaño de la Tierra son comunes.",
+  "new": "Cazador de exoplanetas de la NASA (2009–2018). Observó una única zona del cielo y detectó exoplanetas mediante fotometría de tránsito — la breve caída en la luz de una estrella cuando un planeta pasa frente a ella. Descubrió más de 2700 exoplanetas confirmados y demostró que los mundos del tamaño de la Tierra son comunes."
+ },
+ {
+  "rel": "fleet/observatory/kepler.json",
+  "at": "best_known_for",
+  "old": "Descubrió más de 2.700 exoplanetas",
+  "new": "Descubrió más de 2700 exoplanetas"
+ },
+ {
+  "rel": "mars-sites/insight.json",
+  "at": "fact",
+  "old": "Primer sismógrafo planetario dedicado en Marte. Detectó más de 1.300 maremotos, incluido un terremoto récord de magnitud 4,7 (S1222a) en mayo de 2022. La sonda de flujo de calor (HP³) no logró penetrar el regolito inesperadamente cohesivo. La misión terminó en diciembre de 2022 cuando la acumulación de polvo en los paneles solares redujo la potencia por debajo del umbral de funcionamiento.",
+  "new": "Primer sismógrafo planetario dedicado en Marte. Detectó más de 1300 maremotos, incluido un terremoto récord de magnitud 4,7 (S1222a) en mayo de 2022. La sonda de flujo de calor (HP³) no logró penetrar el regolito inesperadamente cohesivo. La misión terminó en diciembre de 2022 cuando la acumulación de polvo en los paneles solares redujo la potencia por debajo del umbral de funcionamiento."
+ },
+ {
+  "rel": "mars-sites/maven.json",
+  "at": "site_name",
+  "old": "Órbita nominal ~150 × 6.200 km, inclinación ~75°",
+  "new": "Órbita nominal ~150 × 6200 km, inclinación ~75°"
+ },
+ {
+  "rel": "mars-sites/maven.json",
+  "at": "fact",
+  "old": "Mars Atmosphere and Volatile EvolutioN. Cuantificó la velocidad a la que Marte pierde atmósfera hacia el espacio — aproximadamente 100 g/s de oxígeno y CO₂ despojados por el viento solar. Demostró que el adelgazamiento atmosférico de Marte fue impulsado por la pérdida de su campo magnético global hace ~4.000 millones de años.",
+  "new": "Mars Atmosphere and Volatile EvolutioN. Cuantificó la velocidad a la que Marte pierde atmósfera hacia el espacio — aproximadamente 100 g/s de oxígeno y CO₂ despojados por el viento solar. Demostró que el adelgazamiento atmosférico de Marte fue impulsado por la pérdida de su campo magnético global hace ~4000 millones de años."
+ },
+ {
+  "rel": "mars-sites/opportunity.json",
+  "at": "fact",
+  "old": "Mars Exploration Rover B — el róver maratón. 5.111 sols de operación activa (más de 14 años), 45,16 km recorridos (la mayor distancia de cualquier vehículo en otro mundo hasta que Curiosity rompió el récord acumulado). Confirmó agua líquida pasada en los cráteres Endurance, Victoria y Endeavour. Durante la tormenta de polvo final de 2018, la última telemetría del róver mostró un suministro eléctrico agotado — un momento parafraseado poéticamente como «mi batería está baja y se está oscureciendo».",
+  "new": "Mars Exploration Rover B — el róver maratón. 5111 sols de operación activa (más de 14 años), 45,16 km recorridos (la mayor distancia de cualquier vehículo en otro mundo hasta que Curiosity rompió el récord acumulado). Confirmó agua líquida pasada en los cráteres Endurance, Victoria y Endeavour. Durante la tormenta de polvo final de 2018, la última telemetría del róver mostró un suministro eléctrico agotado — un momento parafraseado poéticamente como «mi batería está baja y se está oscureciendo»."
+ },
+ {
+  "rel": "mars-sites/viking2-lander.json",
+  "at": "fact",
+  "old": "Operó 1.281 días a 48°N — la misión de superficie marciana de mayor latitud hasta Phoenix. Detectó la primera escarcha en Marte en septiembre de 1977 — hielo de agua confirmado — con una imagen icónica de alta resolución capturada en mayo de 1979. Los experimentos biológicos del módulo arrojaron los mismos resultados ambiguos que los del Viking 1: una química que imitaba el metabolismo, pero sin biología inequívoca.",
+  "new": "Operó 1281 días a 48°N — la misión de superficie marciana de mayor latitud hasta Phoenix. Detectó la primera escarcha en Marte en septiembre de 1977 — hielo de agua confirmado — con una imagen icónica de alta resolución capturada en mayo de 1979. Los experimentos biológicos del módulo arrojaron los mismos resultados ambiguos que los del Viking 1: una química que imitaba el metabolismo, pero sin biología inequívoca."
+ },
+ {
+  "rel": "missions/asteroid/near-shoemaker.json",
+  "at": "description",
+  "old": "Misión del programa Discovery de la NASA, dirigida por Johns Hopkins University APL. Lanzada el 17-02-1996, NEAR Shoemaker pasó volando cerca del asteroide 253 Mathilde (27-06-1997) antes de un asistencia de gravedad terrestre (23-01-1998) que ajustó su órbita para coincidir con Eros. La inserción orbital alrededor de 433 Eros el 14-02-2000 comenzó un estudio de 12 meses que devolvió 160.000 imágenes y mapas completos espectrales, composicionales y gravitacionales del cuerpo tipo S de 34 × 11 × 11 km. El 12-02-2001, cinco quemadas de descenso orbital llevaron la nave a 5 km de altitud; el descenso controlado a ~1.7 m/s terminó con un aterrizaje suave cerca de la silla de montar de Himeros (35°N, 280°W), devolviendo imágenes hasta 125 m de la superficie. La nave sobrevivió y transmitió desde la superficie durante ~16 días.",
+  "new": "Misión del programa Discovery de la NASA, dirigida por Johns Hopkins University APL. Lanzada el 17-02-1996, NEAR Shoemaker pasó volando cerca del asteroide 253 Mathilde (27-06-1997) antes de un asistencia de gravedad terrestre (23-01-1998) que ajustó su órbita para coincidir con Eros. La inserción orbital alrededor de 433 Eros el 14-02-2000 comenzó un estudio de 12 meses que devolvió 160 000 imágenes y mapas completos espectrales, composicionales y gravitacionales del cuerpo tipo S de 34 × 11 × 11 km. El 12-02-2001, cinco quemadas de descenso orbital llevaron la nave a 5 km de altitud; el descenso controlado a ~1.7 m/s terminó con un aterrizaje suave cerca de la silla de montar de Himeros (35°N, 280°W), devolviendo imágenes hasta 125 m de la superficie. La nave sobrevivió y transmitió desde la superficie durante ~16 días."
+ },
+ {
+  "rel": "missions/asteroid/near-shoemaker.json",
+  "at": "events.1.note",
+  "old": "27-06-1997: sobrevuelo a 1.212 km del asteroide carbonáceo Mathilde; 500 imágenes.",
+  "new": "27-06-1997: sobrevuelo a 1212 km del asteroide carbonáceo Mathilde; 500 imágenes."
+ },
+ {
+  "rel": "missions/bennu/osiris-rex.json",
+  "at": "events.1.note",
+  "old": "2017-09-22, 17.237 km sobre la Antártida — rota el plano orbital hacia la inclinación de 6° de Bennu.",
+  "new": "2017-09-22, 17 237 km sobre la Antártida — rota el plano orbital hacia la inclinación de 6° de Bennu."
+ },
+ {
+  "rel": "missions/earth/otv-7.json",
+  "at": "events.1.note",
+  "old": "Apogeo HEO ~38.800 km × ~320 km (primer vuelo OTV en órbita altamente elíptica); operaciones de carga clasificadas.",
+  "new": "Apogeo HEO ~38 800 km × ~320 km (primer vuelo OTV en órbita altamente elíptica); operaciones de carga clasificadas."
+ },
+ {
+  "rel": "missions/earth/sputnik1.json",
+  "at": "description",
+  "old": "La esfera de aluminio pulido de Koroliov — 58 cm de ancho, 83,6 kg, dos transmisores en 20.005 y 40.002 MHz — se convirtió en el primer objeto creado por el ser humano en alcanzar la órbita el 1957-10-04 19:28 UTC. La trayectoria de 215 × 939 km con 65,1° emitió pitidos sobre América aquella noche y volvió a hacerlo cada 96 minutos, audible en onda corta para cualquiera que sintonizara. Las baterías se agotaron el 1957-10-26 (tras 21 días, ~315 órbitas); el satélite decayó y se desintegró durante la reentrada el 1958-01-04 después de aproximadamente 1440 órbitas. El vuelo fue un proyecto paralelo de OKB-1: Koroliov necesitaba una carga útil ligera para su ICBM R-7 aún en desarrollo y le presentó a Jrushchov el 'PS-1' (Prosteyshiy Sputnik — 'satélite más simple') como un golpe propagandístico. Funcionó. La conmoción en Washington desencadenó ARPA (fundada en 1958-02), la Ley Nacional de Aeronáutica y del Espacio (firmada en 1958-07) y la promesa de Kennedy de llegar a la Luna cuatro años después. Sputnik 1 también devolvió los primeros datos orbitales ionosféricos y de densidad atmosférica — los ingenieros usaron el desplazamiento Doppler en las portadoras de 20 / 40 MHz para cartografiar la densidad del aire a 215 km, un trabajo que alimentó todos los cálculos posteriores de reentrada.",
+  "new": "La esfera de aluminio pulido de Koroliov — 58 cm de ancho, 83,6 kg, dos transmisores en 20,005 y 40,002 MHz — se convirtió en el primer objeto creado por el ser humano en alcanzar la órbita el 1957-10-04 19:28 UTC. La trayectoria de 215 × 939 km con 65,1° emitió pitidos sobre América aquella noche y volvió a hacerlo cada 96 minutos, audible en onda corta para cualquiera que sintonizara. Las baterías se agotaron el 1957-10-26 (tras 21 días, ~315 órbitas); el satélite decayó y se desintegró durante la reentrada el 1958-01-04 después de aproximadamente 1440 órbitas. El vuelo fue un proyecto paralelo de OKB-1: Koroliov necesitaba una carga útil ligera para su ICBM R-7 aún en desarrollo y le presentó a Jrushchov el 'PS-1' (Prosteyshiy Sputnik — 'satélite más simple') como un golpe propagandístico. Funcionó. La conmoción en Washington desencadenó ARPA (fundada en 1958-02), la Ley Nacional de Aeronáutica y del Espacio (firmada en 1958-07) y la promesa de Kennedy de llegar a la Luna cuatro años después. Sputnik 1 también devolvió los primeros datos orbitales ionosféricos y de densidad atmosférica — los ingenieros usaron el desplazamiento Doppler en las portadoras de 20 / 40 MHz para cartografiar la densidad del aire a 215 km, un trabajo que alimentó todos los cálculos posteriores de reentrada."
+ },
+ {
+  "rel": "missions/itokawa/hayabusa1.json",
+  "at": "first",
+  "old": "Primer retorno de muestras de asteroide a la Tierra (~1.500 granos de polvo de Itokawa, menos de un miligramo en total)",
+  "new": "Primer retorno de muestras de asteroide a la Tierra (~1500 granos de polvo de Itokawa, menos de un miligramo en total)"
+ },
+ {
+  "rel": "missions/itokawa/hayabusa1.json",
+  "at": "description",
+  "old": "El Hayabusa de JAXA (halcón en japonés) realizó la misión de salvamento más heroica de la historia de la astronáutica. Lanzado el 2003-05-09 con un M-V-5 y cuatro propulsores iónico μ10 — el subsistema de propulsión iónica más potente volado hasta ese momento. Llegó al asteroide cercano a la Tierra 25143 Itokawa el 2005-09-12 — un montículo de escombros de 540×270×210 m. Dos contactos con la superficie (2005-11-20 y 25), ambos con fallos en los proyectiles de recolección de muestras, aunque el regolito fue desplazado hacia la campana de recolección de todas formas. Luego, una fuga de hidracina incapacitó el control de actitud, dos de sus tres ruedas de reacción fallaron, la comunicación se perdió durante siete semanas, y la ventana de retorno a la Tierra se retrasó tres años. Los ingenieros ensamblaron un único motor iónico funcional a partir de las mitades supervivientes de dos motores dañados y devolvieron Hayabusa a la Tierra. La cápsula de muestras recuperada en Woomera AUS el 2010-06-13 contenía ~1.500 granos de polvo de Itokawa (menos de un miligramo en total) — confirmando la composición tipo S del asteroide y su estructura de montículo de escombros, y demostrando que el retorno de muestras de asteroides era posible.",
+  "new": "El Hayabusa de JAXA (halcón en japonés) realizó la misión de salvamento más heroica de la historia de la astronáutica. Lanzado el 2003-05-09 con un M-V-5 y cuatro propulsores iónico μ10 — el subsistema de propulsión iónica más potente volado hasta ese momento. Llegó al asteroide cercano a la Tierra 25143 Itokawa el 2005-09-12 — un montículo de escombros de 540×270×210 m. Dos contactos con la superficie (2005-11-20 y 25), ambos con fallos en los proyectiles de recolección de muestras, aunque el regolito fue desplazado hacia la campana de recolección de todas formas. Luego, una fuga de hidracina incapacitó el control de actitud, dos de sus tres ruedas de reacción fallaron, la comunicación se perdió durante siete semanas, y la ventana de retorno a la Tierra se retrasó tres años. Los ingenieros ensamblaron un único motor iónico funcional a partir de las mitades supervivientes de dos motores dañados y devolvieron Hayabusa a la Tierra. La cápsula de muestras recuperada en Woomera AUS el 2010-06-13 contenía ~1500 granos de polvo de Itokawa (menos de un miligramo en total) — confirmando la composición tipo S del asteroide y su estructura de montículo de escombros, y demostrando que el retorno de muestras de asteroides era posible."
+ },
+ {
+  "rel": "missions/itokawa/hayabusa1.json",
+  "at": "events.6.note",
+  "old": "2010-06-13. ~1.500 granos de polvo de Itokawa (menos de un miligramo en total) recuperados en Woomera. Primer retorno de muestras de asteroide.",
+  "new": "2010-06-13. ~1500 granos de polvo de Itokawa (menos de un miligramo en total) recuperados en Woomera. Primer retorno de muestras de asteroide."
+ },
+ {
+  "rel": "missions/jupiter/juno.json",
+  "at": "description",
+  "old": "Juno entró en órbita de Júpiter el 05-07-2016 en una trayectoria polar muy elíptica de 53 días que la lleva desde el interior de los cinturones de radiación (perijove ~4.200 km sobre las cimas de las nubes) hasta más allá de Calisto. Alimentada por energía solar — sus paneles triple-junction de ~50 m² entregan 14 kW en la Tierra pero sólo ~500 W en Júpiter, la primera vez que se usa energía solar a esa distancia. Confirmó que Júpiter tiene un núcleo rocoso diluido (sin frontera nítida), midió la disposición de los ciclones polares (ocho tormentas circumpolares en torno a cada polo) y en 2023 fotografió el vulcanismo de Ío con un detalle sin precedentes. La misión extendida incluye sobrevuelos de las cuatro lunas galileanas hasta 2025.",
+  "new": "Juno entró en órbita de Júpiter el 05-07-2016 en una trayectoria polar muy elíptica de 53 días que la lleva desde el interior de los cinturones de radiación (perijove ~4200 km sobre las cimas de las nubes) hasta más allá de Calisto. Alimentada por energía solar — sus paneles triple-junction de ~50 m² entregan 14 kW en la Tierra pero sólo ~500 W en Júpiter, la primera vez que se usa energía solar a esa distancia. Confirmó que Júpiter tiene un núcleo rocoso diluido (sin frontera nítida), midió la disposición de los ciclones polares (ocho tormentas circumpolares en torno a cada polo) y en 2023 fotografió el vulcanismo de Ío con un detalle sin precedentes. La misión extendida incluye sobrevuelos de las cuatro lunas galileanas hasta 2025."
+ },
+ {
+  "rel": "missions/jupiter/pioneer-10.json",
+  "at": "events.1.note",
+  "old": "Sobrevuelo a ~132.000 km — primeras imágenes cercanas del planeta.",
+  "new": "Sobrevuelo a ~132 000 km — primeras imágenes cercanas del planeta."
+ },
+ {
+  "rel": "missions/mars/mariner9.json",
+  "at": "description",
+  "old": "Mariner 9 hizo posible cada orbitador que la siguió. Tras un encendido de inyección en órbita de 15 minutos que la colocó en órbita marciana el 1971-11-14, el planeta bajo resultaba irreconocible — una tormenta de polvo global había ocultado todo excepto las cuatro cimas del volcán Tharsis. El JPL esperó pacientemente. A lo largo de enero de 1972 el polvo se asentó y Mariner 9 devolvió 7.329 imágenes cubriendo ~85% de la superficie marciana, revelando Olympus Mons (el volcán más grande del sistema solar), Valles Marineris (el sistema de cañones que lleva su nombre), canales fluviales secos que sugieren una era antigua con líquidos, y los primeros planos de Fobos y Deimos. La misión finalizó el 1972-10-27 cuando se agotó el gas de control de actitud; la nave sigue en órbita, decayendo lentamente.",
+  "new": "Mariner 9 hizo posible cada orbitador que la siguió. Tras un encendido de inyección en órbita de 15 minutos que la colocó en órbita marciana el 1971-11-14, el planeta bajo resultaba irreconocible — una tormenta de polvo global había ocultado todo excepto las cuatro cimas del volcán Tharsis. El JPL esperó pacientemente. A lo largo de enero de 1972 el polvo se asentó y Mariner 9 devolvió 7329 imágenes cubriendo ~85% de la superficie marciana, revelando Olympus Mons (el volcán más grande del sistema solar), Valles Marineris (el sistema de cañones que lleva su nombre), canales fluviales secos que sugieren una era antigua con líquidos, y los primeros planos de Fobos y Deimos. La misión finalizó el 1972-10-27 cuando se agotó el gas de control de actitud; la nave sigue en órbita, decayendo lentamente."
+ },
+ {
+  "rel": "missions/mars/mariner9.json",
+  "at": "events.3.note",
+  "old": "Encendido del motor sólido de 15 min coloca a Mariner 9 en una órbita de 1398 × 17.917 km, inclinación de 64,4° — primera órbita de otro planeta.",
+  "new": "Encendido del motor sólido de 15 min coloca a Mariner 9 en una órbita de 1398 × 17 917 km, inclinación de 64,4° — primera órbita de otro planeta."
+ },
+ {
+  "rel": "missions/mars/opportunity.json",
+  "at": "description",
+  "old": "Opportunity (MER-B) logró un premio mayor planetario — su módulo de aterrizaje envuelto en bolsas de aire rebotó 26 veces a lo largo de Meridiani Planum e inmediatamente se introdujo en un cráter de 22 m (Eagle) por pura suerte, rodeado de roca de lecho expuesta que un rover podía analizar sin necesidad de desplazarse. Las primeras imágenes mostraron jarosita y concreciones de hematita «arándano», la evidencia mineral más sólida hasta ese momento de agua líquida permanente en el Marte primitivo. Durante 14 años 138 días (5.111 soles) Opportunity recorrió 45,16 km — el récord de maratón de rovers en Marte — visitando los cráteres Endurance, Victoria y Endeavour. Una tormenta de polvo a escala planetaria en junio de 2018 bloqueó la luz solar de sus paneles solares; la transmisión final fue 2018-06-10, y la NASA declaró el fin de la misión el 2019-02-13.",
+  "new": "Opportunity (MER-B) logró un premio mayor planetario — su módulo de aterrizaje envuelto en bolsas de aire rebotó 26 veces a lo largo de Meridiani Planum e inmediatamente se introdujo en un cráter de 22 m (Eagle) por pura suerte, rodeado de roca de lecho expuesta que un rover podía analizar sin necesidad de desplazarse. Las primeras imágenes mostraron jarosita y concreciones de hematita «arándano», la evidencia mineral más sólida hasta ese momento de agua líquida permanente en el Marte primitivo. Durante 14 años 138 días (5111 soles) Opportunity recorrió 45,16 km — el récord de maratón de rovers en Marte — visitando los cráteres Endurance, Victoria y Endeavour. Una tormenta de polvo a escala planetaria en junio de 2018 bloqueó la luz solar de sus paneles solares; la transmisión final fue 2018-06-10, y la NASA declaró el fin de la misión el 2019-02-13."
+ },
+ {
+  "rel": "missions/mars/spirit.json",
+  "at": "description",
+  "old": "Spirit (MER-A) rebotó 28 veces sobre el suelo del cráter Gusev el 2004-01-04 y se detuvo a 250 m del primer impacto. Diseñado para una misión primaria de 90 soles, sobreviviría 2.208 soles. Recorrió 7,7 km por las llanuras de Gusev, escaló las colinas Columbia y descubrió rocas portadoras de hematita que señalaban agua antigua persistente. En 2009-04 una rueda atravesó una costra de sulfato en \"Troy\" y Spirit se detuvo en suelo blando; el equipo lo convirtió en una plataforma estacionaria. Última transmisión 2010-03-22; misión declarada finalizada 2011-05-25. Hermanado con Opportunity, que aterrizó tres semanas después en el lado opuesto de Marte.",
+  "new": "Spirit (MER-A) rebotó 28 veces sobre el suelo del cráter Gusev el 2004-01-04 y se detuvo a 250 m del primer impacto. Diseñado para una misión primaria de 90 soles, sobreviviría 2208 soles. Recorrió 7,7 km por las llanuras de Gusev, escaló las colinas Columbia y descubrió rocas portadoras de hematita que señalaban agua antigua persistente. En 2009-04 una rueda atravesó una costra de sulfato en \"Troy\" y Spirit se detuvo en suelo blando; el equipo lo convirtió en una plataforma estacionaria. Última transmisión 2010-03-22; misión declarada finalizada 2011-05-25. Hermanado con Opportunity, que aterrizó tres semanas después en el lado opuesto de Marte."
+ },
+ {
+  "rel": "missions/moon/apollo13.json",
+  "at": "events.5.note",
+  "old": "Máxima aproximación a 254 km de altitud sobre Mare Cognitum — a 400.171 km, la distancia más lejana que los humanos habían viajado desde la Tierra (récord mantenido 1970–2026, superado por Artemis II en abril de 2026).",
+  "new": "Máxima aproximación a 254 km de altitud sobre Mare Cognitum — a 400 171 km, la distancia más lejana que los humanos habían viajado desde la Tierra (récord mantenido 1970–2026, superado por Artemis II en abril de 2026)."
+ },
+ {
+  "rel": "missions/psyche/psyche-mission.json",
+  "at": "description",
+  "old": "Psyche apunta hacia el núcleo de níquel-hierro expuesto de un protoplaneta diferenciado — un cuerpo metálico de 226 km que podría ser el análogo más cercano al núcleo de la Tierra accesible en el espacio. Lanzado 2023-10-13 en un Falcon Heavy desde Kennedy LC-39A. Cuatro propulsores iónicos de efecto Hall SPT-140 espiralizan la trayectoria hacia afuera; una asistencia gravitatoria de Marte en mayo de 2026 (4.609 km de máxima aproximación) aportó la energía que el impulso iónico solo no podría entregar a tiempo. Llegada prevista 2029-08, seguida de un descenso de 26 meses en cuatro fases de órbita (A → B → C → D) cartografiando la gravedad, magnetismo, topografía y composición del asteroide. Si la hipótesis del núcleo metálico es correcta, Psyche se verá diferente a cualquier otro lugar que hayamos visitado — superficie de metal desnudo, depósitos de sulfuro de hierro, nada del caos de escombros típico de los asteroides.",
+  "new": "Psyche apunta hacia el núcleo de níquel-hierro expuesto de un protoplaneta diferenciado — un cuerpo metálico de 226 km que podría ser el análogo más cercano al núcleo de la Tierra accesible en el espacio. Lanzado 2023-10-13 en un Falcon Heavy desde Kennedy LC-39A. Cuatro propulsores iónicos de efecto Hall SPT-140 espiralizan la trayectoria hacia afuera; una asistencia gravitatoria de Marte en mayo de 2026 (4609 km de máxima aproximación) aportó la energía que el impulso iónico solo no podría entregar a tiempo. Llegada prevista 2029-08, seguida de un descenso de 26 meses en cuatro fases de órbita (A → B → C → D) cartografiando la gravedad, magnetismo, topografía y composición del asteroide. Si la hipótesis del núcleo metálico es correcta, Psyche se verá diferente a cualquier otro lugar que hayamos visitado — superficie de metal desnudo, depósitos de sulfuro de hierro, nada del caos de escombros típico de los asteroides."
+ },
+ {
+  "rel": "missions/psyche/psyche-mission.json",
+  "at": "events.2.note",
+  "old": "2026-05-15. Máxima aproximación 4.609 km — sobrevuelo de Marte completado.",
+  "new": "2026-05-15. Máxima aproximación 4609 km — sobrevuelo de Marte completado."
+ },
+ {
+  "rel": "missions/saturn/voyager-1.json",
+  "at": "events.1.note",
+  "old": "Sobrevuelo a ~349.000 km; descubrimiento del vulcanismo en Ío, cartografiado de la superficie de Europa.",
+  "new": "Sobrevuelo a ~349 000 km; descubrimiento del vulcanismo en Ío, cartografiado de la superficie de Europa."
+ },
+ {
+  "rel": "missions/sun/parker-solar-probe.json",
+  "at": "description",
+  "old": "Parker Solar Probe realizó el lanzamiento de mayor energía jamás ejecutado en una misión científica — C3 de 154 km²/s², requiriendo una etapa sólida Star 48BV personalizada sobre un Delta IV Heavy solo para escapar de la Tierra hacia una trayectoria de caída solar. Siete asistencias gravitatorias de Venus durante seis años redujeron progresivamente el perihelio de 0,16 UA (P1, 2018-11-05) a 0,046 UA (P22, 2024-12-24 — 9,86 radios solares, 6,1 millones de km de la superficie). En P8 el 2021-04-28, Parker se sumergió por debajo de la superficie crítica de Alfvén — la primera nave en entrar en la corona del Sol. En P22 alcanzó ~191 km/s, convirtiéndose en el objeto hecho por humanos más rápido jamás registrado. El escudo térmico de carbono-carbono de 11,43 cm sostuvo 1.377 °C mientras que el autobús espacial 1 metro detrás permanecía a temperatura ambiente.",
+  "new": "Parker Solar Probe realizó el lanzamiento de mayor energía jamás ejecutado en una misión científica — C3 de 154 km²/s², requiriendo una etapa sólida Star 48BV personalizada sobre un Delta IV Heavy solo para escapar de la Tierra hacia una trayectoria de caída solar. Siete asistencias gravitatorias de Venus durante seis años redujeron progresivamente el perihelio de 0,16 UA (P1, 2018-11-05) a 0,046 UA (P22, 2024-12-24 — 9,86 radios solares, 6,1 millones de km de la superficie). En P8 el 2021-04-28, Parker se sumergió por debajo de la superficie crítica de Alfvén — la primera nave en entrar en la corona del Sol. En P22 alcanzó ~191 km/s, convirtiéndose en el objeto hecho por humanos más rápido jamás registrado. El escudo térmico de carbono-carbono de 11,43 cm sostuvo 1377 °C mientras que el autobús espacial 1 metro detrás permanecía a temperatura ambiente."
+ },
+ {
+  "rel": "missions/sun/parker-solar-probe.json",
+  "at": "events.5.note",
+  "old": "2024-12-24. 9,86 R☉ (6,1 M km del Sol). ~191 km/s. Escudo térmico 1.377 °C.",
+  "new": "2024-12-24. 9,86 R☉ (6,1 M km del Sol). ~191 km/s. Escudo térmico 1377 °C."
+ },
+ {
+  "rel": "missions/venus/akatsuki.json",
+  "at": "description",
+  "old": "Akatsuki —«amanecer»— fue la primera misión de Japón a Venus. Lanzado el 2010-05-20 desde Tanegashima en un H-IIA 202, junto con el demostradores de velas solares IKAROS. La inserción en órbita de Venus planeada para el 2010-12-07 falló cuando la acumulación de cristales de sal en una válvula de comprobación del oxidante sacó del eje el motor principal 152 segundos después del inicio de la maniobra. JAXA mantuvo la sonda viva en órbita solar durante cinco años, doce maniobras de corrección, hasta la siguiente ventana de encuentro con Venus. El 2015-12-07 una maniobra de 1228 segundos usando cuatro propulsores de control de actitud —nunca diseñados para inserción orbital— colocó Akatsuki en una órbita altamente elíptica de 400 × 440.000 km con inclinación de 3°. Uno de los salvamentos de misión más dramáticos en la historia de la exploración espacial. Se perdió el contacto en 2024; JAXA declaró las operaciones completadas el 2025-09-18.",
+  "new": "Akatsuki —«amanecer»— fue la primera misión de Japón a Venus. Lanzado el 2010-05-20 desde Tanegashima en un H-IIA 202, junto con el demostradores de velas solares IKAROS. La inserción en órbita de Venus planeada para el 2010-12-07 falló cuando la acumulación de cristales de sal en una válvula de comprobación del oxidante sacó del eje el motor principal 152 segundos después del inicio de la maniobra. JAXA mantuvo la sonda viva en órbita solar durante cinco años, doce maniobras de corrección, hasta la siguiente ventana de encuentro con Venus. El 2015-12-07 una maniobra de 1228 segundos usando cuatro propulsores de control de actitud —nunca diseñados para inserción orbital— colocó Akatsuki en una órbita altamente elíptica de 400 × 440 000 km con inclinación de 3°. Uno de los salvamentos de misión más dramáticos en la historia de la exploración espacial. Se perdió el contacto en 2024; JAXA declaró las operaciones completadas el 2025-09-18."
+ },
+ {
+  "rel": "missions/venus/akatsuki.json",
+  "at": "events.4.note",
+  "old": "2015-12-07. Maniobra de propulsores RCS de 1228 s hacia órbita de 400 × 440.000 km, 3°.",
+  "new": "2015-12-07. Maniobra de propulsores RCS de 1228 s hacia órbita de 400 × 440 000 km, 3°."
+ },
+ {
+  "rel": "orbit-regimes/GEO.json",
+  "at": "story",
+  "old": "Exactamente 35.786 km de altitud — la altura a la que una órbita tarda un día sidéreo (23 h 56 min), de modo que el satélite permanece inmóvil sobre una longitud fija en el ecuador. Los satélites meteorológicos contemplan el mismo continente eternamente; los satélites de comunicaciones proyectan una huella del tamaño de una antena parabólica y nunca se desplazan. No hay espacios de estacionamiento, solo ranuras de estacionamiento — cada operador recibe una banda de longitud asignada por la UIT.",
+  "new": "Exactamente 35 786 km de altitud — la altura a la que una órbita tarda un día sidéreo (23 h 56 min), de modo que el satélite permanece inmóvil sobre una longitud fija en el ecuador. Los satélites meteorológicos contemplan el mismo continente eternamente; los satélites de comunicaciones proyectan una huella del tamaño de una antena parabólica y nunca se desplazan. No hay espacios de estacionamiento, solo ranuras de estacionamiento — cada operador recibe una banda de longitud asignada por la UIT."
+ },
+ {
+  "rel": "orbit-regimes/MEO.json",
+  "at": "story",
+  "old": "La banda de navegación — aproximadamente a 20.000 km de altura, donde una constelación de 24+ satélites puede cubrir cada punto de la Tierra con al menos cuatro naves espaciales visibles simultáneamente (el mínimo para una posición 3D). Los cuatro principales sistemas globales de posicionamiento residen aquí, intencionadamente distribuidos en cuatro regímenes independientes por sus agencias operadoras. Por encima del cinturón interior de Van Allen, por debajo del exterior — una órbita alta y tranquila.",
+  "new": "La banda de navegación — aproximadamente a 20 000 km de altura, donde una constelación de 24+ satélites puede cubrir cada punto de la Tierra con al menos cuatro naves espaciales visibles simultáneamente (el mínimo para una posición 3D). Los cuatro principales sistemas globales de posicionamiento residen aquí, intencionadamente distribuidos en cuatro regímenes independientes por sus agencias operadoras. Por encima del cinturón interior de Van Allen, por debajo del exterior — una órbita alta y tranquila."
+ },
+ {
+  "rel": "orbit-regimes/MOON.json",
+  "at": "story",
+  "old": "La Luna es el único satélite natural de la Tierra — a 384.400 km de distancia, bloqueada por marea para mostrar siempre la misma cara, y orbitando una vez cada 27,3 días. Las naves espaciales la visitan de camino a alunizajes (NASA Apollo, CNSA Chang'e, ISRO Chandrayaan, JAXA SLIM) o para cartografiar la superficie para futuros retornos. La Lunar Gateway, cuando vuele, será el primer puesto avanzado tripulado permanente más allá de LEO.",
+  "new": "La Luna es el único satélite natural de la Tierra — a 384 400 km de distancia, bloqueada por marea para mostrar siempre la misma cara, y orbitando una vez cada 27,3 días. Las naves espaciales la visitan de camino a alunizajes (NASA Apollo, CNSA Chang'e, ISRO Chandrayaan, JAXA SLIM) o para cartografiar la superficie para futuros retornos. La Lunar Gateway, cuando vuele, será el primer puesto avanzado tripulado permanente más allá de LEO."
+ },
+ {
+  "rel": "orbit-regimes/MOON.json",
+  "at": "comparison",
+  "old": "1.200× más lejos que la EEI. Una señal de radio Tierra → Luna → Tierra tarda ~2,6 segundos — lo suficiente para que los controladores de misión en Houston hablen con frases lentas y deliberadas.",
+  "new": "1200× más lejos que la EEI. Una señal de radio Tierra → Luna → Tierra tarda ~2,6 segundos — lo suficiente para que los controladores de misión en Houston hablen con frases lentas y deliberadas."
+ },
+ {
+  "rel": "orbit-regimes-explore/SCATTERED.json",
+  "at": "story",
+  "old": "Cuerpos en órbitas muy elípticas más allá del Cinturón de Kuiper — de 50 a 1.000 UA. Probablemente fueron dispersados hacia aquí por interacciones gravitacionales con Neptuno hace mucho tiempo. Sedna es el Sednoid prototípico: 76 UA en el perihelio, 937 UA en el afelio, una órbita de 11.400 años. Sus órbitas están demasiado lejos como para que Neptuno las haya colocado actualmente, lo que sugiere influencias de estrellas de paso, un hipotético Planeta Nueve, o los hermanos perdidos del Sol de su cúmulo de nacimiento. Ninguna nave espacial los ha visitado nunca.",
+  "new": "Cuerpos en órbitas muy elípticas más allá del Cinturón de Kuiper — de 50 a 1000 UA. Probablemente fueron dispersados hacia aquí por interacciones gravitacionales con Neptuno hace mucho tiempo. Sedna es el Sednoid prototípico: 76 UA en el perihelio, 937 UA en el afelio, una órbita de 11 400 años. Sus órbitas están demasiado lejos como para que Neptuno las haya colocado actualmente, lo que sugiere influencias de estrellas de paso, un hipotético Planeta Nueve, o los hermanos perdidos del Sol de su cúmulo de nacimiento. Ninguna nave espacial los ha visitado nunca."
+ },
+ {
+  "rel": "orbit-regimes-explore/SCATTERED.json",
+  "at": "comparison",
+  "old": "Sedna en el afelio se encuentra a 1/53 del camino hacia la estrella vecina más cercana al Sol, Próxima Centauri. La luz que llega a Sedna desde el Sol es 1/350.000 de la que alcanza la Tierra.",
+  "new": "Sedna en el afelio se encuentra a 1/53 del camino hacia la estrella vecina más cercana al Sol, Próxima Centauri. La luz que llega a Sedna desde el Sol es 1/350 000 de la que alcanza la Tierra."
+ },
+ {
+  "rel": "orbit-regimes-explore/SCATTERED.json",
+  "at": "residents.0.label",
+  "old": "Sedna — órbita de 76-937 UA, 11.400 años",
+  "new": "Sedna — órbita de 76-937 UA, 11 400 años"
+ },
+ {
+  "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+  "at": "story",
+  "old": "El equivalente marciano de la geoestacionaria — a 17.031 km de altitud, donde una órbita tarda exactamente un día sidéreo marciano (24 h 37 min 22 s), de modo que una nave espacial permanecería inmóvil sobre una longitud marciana fija. Ninguna nave espacial ha utilizado jamás esta órbita. Es el objetivo de diseño para futuras constelaciones de retransmisión marcianas: a medida que crezcan las misiones tripuladas y las bases de superficie, colocar satélites de comunicaciones en posiciones areostacionarias reflejaría la red de satélites de comunicaciones GEO de la Tierra, eliminando los cortes diarios de comunicaciones que los relés en órbita baja de hoy en día imponen a cada misión de superficie.",
+  "new": "El equivalente marciano de la geoestacionaria — a 17 031 km de altitud, donde una órbita tarda exactamente un día sidéreo marciano (24 h 37 min 22 s), de modo que una nave espacial permanecería inmóvil sobre una longitud marciana fija. Ninguna nave espacial ha utilizado jamás esta órbita. Es el objetivo de diseño para futuras constelaciones de retransmisión marcianas: a medida que crezcan las misiones tripuladas y las bases de superficie, colocar satélites de comunicaciones en posiciones areostacionarias reflejaría la red de satélites de comunicaciones GEO de la Tierra, eliminando los cortes diarios de comunicaciones que los relés en órbita baja de hoy en día imponen a cada misión de superficie."
+ },
+ {
+  "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+  "at": "comparison",
+  "old": "Justo por debajo de Deimos, la luna exterior de Marte (23.460 km). Tres satélites areostacionarios espaciados 120° cubrirían todo el disco marciano — el mismo truco que usan los satélites de comunicaciones GEO para la televisión por difusión terrestre.",
+  "new": "Justo por debajo de Deimos, la luna exterior de Marte (23 460 km). Tres satélites areostacionarios espaciados 120° cubrirían todo el disco marciano — el mismo truco que usan los satélites de comunicaciones GEO para la televisión por difusión terrestre."
+ },
+ {
+  "rel": "orbit-regimes-mars/DMO.json",
+  "at": "story",
+  "old": "Por encima de la órbita areoestacionaria, en la banda elíptica de 20.000-43.000 km. La sonda Hope de los EAU es la única nave espacial aquí: su órbita de 55 horas sigue una trayectoria elíptica amplia diseñada para la ciencia atmosférica global; permanecer cerca del apoápside le permite observar sistemas meteorológicos completos que se desarrollan y decaen a través del terminador día-noche del planeta. Deimos, la luna marciana exterior, también orbita dentro de esta banda a 23.460 km.",
+  "new": "Por encima de la órbita areoestacionaria, en la banda elíptica de 20 000-43 000 km. La sonda Hope de los EAU es la única nave espacial aquí: su órbita de 55 horas sigue una trayectoria elíptica amplia diseñada para la ciencia atmosférica global; permanecer cerca del apoápside le permite observar sistemas meteorológicos completos que se desarrollan y decaen a través del terminador día-noche del planeta. Deimos, la luna marciana exterior, también orbita dentro de esta banda a 23 460 km."
+ },
+ {
+  "rel": "orbit-regimes-mars/DMO.json",
+  "at": "comparison",
+  "old": "El apoápside de Hope a 43.000 km es aproximadamente 1/9 del camino hacia la distancia de Fobos desde la Luna de la Tierra. La órbita fue deliberadamente elegida para ser ÚNICA en la flota marciana: ninguna otra nave espacial ve el planeta desde este ángulo.",
+  "new": "El apoápside de Hope a 43 000 km es aproximadamente 1/9 del camino hacia la distancia de Fobos desde la Luna de la Tierra. La órbita fue deliberadamente elegida para ser ÚNICA en la flota marciana: ninguna otra nave espacial ve el planeta desde este ángulo."
+ },
+ {
+  "rel": "orbit-regimes-moon/L2.json",
+  "at": "story",
+  "old": "El punto de Lagrange ubicado aproximadamente 61.000 km detrás de la Luna visto desde la Tierra — la silla de montar gravitatoria donde se equilibran las fuerzas de la Tierra, la Luna y la centrífuga. La Luna siempre se interpone entre la nave y la Tierra, por lo que las comunicaciones directas son imposibles — pero un satélite estacionado aquí en una órbita de halo ALREDEDOR de L2 tiene línea de visión tanto hacia la CARA OCULTA lunar COMO hacia la Tierra. Así es como China logró hacer descender el Chang'e 4 en la cara oculta en 2019: el satélite relé Queqiao, estacionado en un halo alrededor de L2 Tierra-Luna, transmite cada comando e imagen.",
+  "new": "El punto de Lagrange ubicado aproximadamente 61 000 km detrás de la Luna visto desde la Tierra — la silla de montar gravitatoria donde se equilibran las fuerzas de la Tierra, la Luna y la centrífuga. La Luna siempre se interpone entre la nave y la Tierra, por lo que las comunicaciones directas son imposibles — pero un satélite estacionado aquí en una órbita de halo ALREDEDOR de L2 tiene línea de visión tanto hacia la CARA OCULTA lunar COMO hacia la Tierra. Así es como China logró hacer descender el Chang'e 4 en la cara oculta en 2019: el satélite relé Queqiao, estacionado en un halo alrededor de L2 Tierra-Luna, transmite cada comando e imagen."
+ },
+ {
+  "rel": "orbit-regimes-moon/LLO.json",
+  "at": "comparison",
+  "old": "Aproximadamente 1/3.800 del camino de regreso a la Tierra. Desde LLO el horizonte de la Luna está marcadamente curvado — puedes ver 30-40 km en cualquier dirección antes de que la superficie desaparezca.",
+  "new": "Aproximadamente 1/3800 del camino de regreso a la Tierra. Desde LLO el horizonte de la Luna está marcadamente curvado — puedes ver 30-40 km en cualquier dirección antes de que la superficie desaparezca."
+ },
+ {
+  "rel": "orbit-regimes-moon/NRHO.json",
+  "at": "story",
+  "old": "No es realmente una órbita alrededor de la Luna, sino más bien un largo trazado en forma de ocho alrededor de los puntos de Lagrange L1 y L2 del sistema Tierra-Luna, acercándose al polo sur lunar en el perilunar (~3.000 km) y extendiéndose muy por encima del polo norte en el apolunar (~70.000 km). La geometría ofrece dos ventajas: línea de visión continua hacia la Tierra (sin interrupción de comunicaciones) y un consumo de combustible para mantenimiento de estación muy bajo, unos pocos m/s al año. La Lunar Gateway de la NASA, cuando vuele, estará en NRHO. CAPSTONE voló allí en 2022 como precursor.",
+  "new": "No es realmente una órbita alrededor de la Luna, sino más bien un largo trazado en forma de ocho alrededor de los puntos de Lagrange L1 y L2 del sistema Tierra-Luna, acercándose al polo sur lunar en el perilunar (~3000 km) y extendiéndose muy por encima del polo norte en el apolunar (~70 000 km). La geometría ofrece dos ventajas: línea de visión continua hacia la Tierra (sin interrupción de comunicaciones) y un consumo de combustible para mantenimiento de estación muy bajo, unos pocos m/s al año. La Lunar Gateway de la NASA, cuando vuele, estará en NRHO. CAPSTONE voló allí en 2022 como precursor."
+ },
+ {
+  "rel": "planets/mercury.json",
+  "at": "science_sections.0.why",
+  "old": "La excentricidad de 0.206 de Mercurio es la más alta de los 8 planetas — en el perihelio el Sol aparece 1.5× más grande en su cielo que en el afelio.",
+  "new": "La excentricidad de 0,206 de Mercurio es la más alta de los 8 planetas — en el perihelio el Sol aparece 1.5× más grande en su cielo que en el afelio."
+ },
+ {
+  "rel": "planets/mercury.json",
+  "at": "science_sections.3.why",
+  "old": "La inclinación axial de Mercurio es esencialmente cero (0.034°), por lo que los fondos de los cráteres polares nunca reciben luz solar — y hielo de agua sobrevive allí a pesar del calor del planeta.",
+  "new": "La inclinación axial de Mercurio es esencialmente cero (0,034°), por lo que los fondos de los cráteres polares nunca reciben luz solar — y hielo de agua sobrevive allí a pesar del calor del planeta."
+ },
+ {
+  "rel": "planets/orus.json",
+  "at": "fact",
+  "old": "Un asteroide troyano de tipo D de 51 km en el enjambre L4 delantero de Júpiter. Se cree que los asteroides de tipo D son entre los cuerpos más primitivos del sistema solar, con una composición superficial que preserva la química del disco protoplanetario exterior prácticamente inalterada durante 4.500 millones de años.",
+  "new": "Un asteroide troyano de tipo D de 51 km en el enjambre L4 delantero de Júpiter. Se cree que los asteroides de tipo D son entre los cuerpos más primitivos del sistema solar, con una composición superficial que preserva la química del disco protoplanetario exterior prácticamente inalterada durante 4500 millones de años."
+ },
+ {
+  "rel": "planets/pluto.json",
+  "at": "bio",
+  "old": "La órbita de Plutón de 248 años es altamente excéntrica (e = 0.249) e inclinada 17° respecto a la eclíptica — por lo que su órbita se sumerge dentro de la de Neptuno durante 20 años por ciclo y se eleva muy por encima del plano planetario. Las temperaturas superficiales varían lo suficiente como para que la delgada atmósfera de nitrógeno se espese cerca del perihelio y se congele de nuevo sobre la superficie cerca del afelio. El bloqueo de marea mutuo con Caronte hace de este par un verdadero sistema binario.",
+  "new": "La órbita de Plutón de 248 años es altamente excéntrica (e = 0,249) e inclinada 17° respecto a la eclíptica — por lo que su órbita se sumerge dentro de la de Neptuno durante 20 años por ciclo y se eleva muy por encima del plano planetario. Las temperaturas superficiales varían lo suficiente como para que la delgada atmósfera de nitrógeno se espese cerca del perihelio y se congele de nuevo sobre la superficie cerca del afelio. El bloqueo de marea mutuo con Caronte hace de este par un verdadero sistema binario."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "goals.0.caption",
+  "old": "El Saturn V — 111 metros de altura, unas 3.000 toneladas en la plataforma, y el cohete más potente jamás utilizado para transportar humanos — y, durante más de cincuenta años, el más potente jamás lanzado, hasta el Super Heavy de SpaceX en 2023. Existió por una razón exactamente: cumplir un plazo.",
+  "new": "El Saturn V — 111 metros de altura, unas 3000 toneladas en la plataforma, y el cohete más potente jamás utilizado para transportar humanos — y, durante más de cincuenta años, el más potente jamás lanzado, hasta el Super Heavy de SpaceX en 2023. Existió por una razón exactamente: cumplir un plazo."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "goals.1.md",
+  "old": "El objetivo era estrecho y absoluto: poner astronautas estadounidenses en la superficie lunar y traerlos de vuelta con vida, por delante de la URSS, antes de 1970. Todo lo demás se diseñó hacia atrás a partir de esa única frase — los cohetes Saturn, una nave espacial de tres partes que debía volar en piezas a un cuarto de millón de millas de cualquier ayuda, trajes presurizados certificados para vacío absoluto, una red de seguimiento mundial, y una fuerza laboral que llegó a aproximadamente 400.000 personas entre la NASA, sus contratistas y las universidades.",
+  "new": "El objetivo era estrecho y absoluto: poner astronautas estadounidenses en la superficie lunar y traerlos de vuelta con vida, por delante de la URSS, antes de 1970. Todo lo demás se diseñó hacia atrás a partir de esa única frase — los cohetes Saturn, una nave espacial de tres partes que debía volar en piezas a un cuarto de millón de millas de cualquier ayuda, trajes presurizados certificados para vacío absoluto, una red de seguimiento mundial, y una fuerza laboral que llegó a aproximadamente 400 000 personas entre la NASA, sus contratistas y las universidades."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "legacy.1.md",
+  "old": "El retorno de inversión de Apollo todavía se discute, pero su forma está clara. El programa costó unos 25.800 millones de dólares en moneda de la época — cómodamente por encima de 250.000 millones actuales — y en su pico puso a trabajar a unas 400.000 personas entre la NASA, sus contratistas y las universidades. Aquello fue un despliegue industrial y educativo deliberado, no solo un cohete, y la mayor parte sobrevivió a los lanzamientos lunares.",
+  "new": "El retorno de inversión de Apollo todavía se discute, pero su forma está clara. El programa costó unos 25 800 millones de dólares en moneda de la época — cómodamente por encima de 250 000 millones actuales — y en su pico puso a trabajar a unas 400 000 personas entre la NASA, sus contratistas y las universidades. Aquello fue un despliegue industrial y educativo deliberado, no solo un cohete, y la mayor parte sobrevivió a los lanzamientos lunares."
+ },
+ {
+  "rel": "programs/apollo.json",
+  "at": "lessons.0.md",
+  "old": "La lección más portable de Apollo no tiene nada que ver con cohetería. Se trata de cómo apuntas a un número muy grande de personas hacia la misma cosa difícil. Kennedy entregó al programa un objetivo que era específico, audaz y acotado en el tiempo — posad una tripulación en la Luna y traedla de vuelta sana y salva, antes de que acabe la década — y esa única frase hizo lo que ningún organigrama podía. Alineó a 400.000 personas que nunca se conocerían, e hizo legible cada decisión: ¿esto nos lleva a la Luna en 1970, o no? Un objetivo claro, fechado, no negociable que cualquiera puede verificar con su propio trabajo coordinará mejor que cualquier jerarquía.",
+  "new": "La lección más portable de Apollo no tiene nada que ver con cohetería. Se trata de cómo apuntas a un número muy grande de personas hacia la misma cosa difícil. Kennedy entregó al programa un objetivo que era específico, audaz y acotado en el tiempo — posad una tripulación en la Luna y traedla de vuelta sana y salva, antes de que acabe la década — y esa única frase hizo lo que ningún organigrama podía. Alineó a 400 000 personas que nunca se conocerían, e hizo legible cada decisión: ¿esto nos lleva a la Luna en 1970, o no? Un objetivo claro, fechado, no negociable que cualquiera puede verificar con su propio trabajo coordinará mejor que cualquier jerarquía."
+ },
+ {
+  "rel": "programs/new-horizons.json",
+  "at": "goals.1.caption",
+  "old": "New Horizons fue construida ligera y rápida, con un único conjunto de instrumentos y sin combustible para frenar. Tuvo un único paso por Plutón, a casi 50.000 kilómetros por hora, con sus creadores esperando horas para que cada señal cruzara el sistema solar.",
+  "new": "New Horizons fue construida ligera y rápida, con un único conjunto de instrumentos y sin combustible para frenar. Tuvo un único paso por Plutón, a casi 50 000 kilómetros por hora, con sus creadores esperando horas para que cada señal cruzara el sistema solar."
+ },
+ {
+  "rel": "programs/starlink.json",
+  "at": "the_land.1.md",
+  "old": "La razón para volar tantos, tan bajos, es la física. El internet de los satélites de comunicaciones tradicionales en órbita geoestacionaria es lento, porque la señal tiene que recorrer 36.000 kilómetros en cada dirección. Los satélites de Starlink orbitan a unos 550 kilómetros, lo suficientemente cerca como para que el retardo del viaje de ida y vuelta se sienta como banda ancha terrestre, pero mantenerse tan bajo significa que cada satélite cubre solo un pequeño parche de terreno durante unos minutos cada vez, así que se necesita un enjambre de ellos, traspasándote constantemente de uno al siguiente, para cubrir cualquier lugar.",
+  "new": "La razón para volar tantos, tan bajos, es la física. El internet de los satélites de comunicaciones tradicionales en órbita geoestacionaria es lento, porque la señal tiene que recorrer 36 000 kilómetros en cada dirección. Los satélites de Starlink orbitan a unos 550 kilómetros, lo suficientemente cerca como para que el retardo del viaje de ida y vuelta se sienta como banda ancha terrestre, pero mantenerse tan bajo significa que cada satélite cubre solo un pequeño parche de terreno durante unos minutos cada vez, así que se necesita un enjambre de ellos, traspasándote constantemente de uno al siguiente, para cubrir cualquier lugar."
+ },
+ {
+  "rel": "satellites/callisto.json",
+  "at": "surface_composition",
+  "old": "Aproximadamente un 40 % de hielo de agua y un 60 % de roca silicatada; su superficie es la más densamente craterizada del sistema solar, casi saturada y sin haber sufrido renovación geológica. Característica destacada: la cuenca de impacto multianillo de Valhalla, de 3.800 km.",
+  "new": "Aproximadamente un 40 % de hielo de agua y un 60 % de roca silicatada; su superficie es la más densamente craterizada del sistema solar, casi saturada y sin haber sufrido renovación geológica. Característica destacada: la cuenca de impacto multianillo de Valhalla, de 3800 km."
+ },
+ {
+  "rel": "satellites/europa.json",
+  "at": "science_sections.1.why",
+  "old": "La diminuta excentricidad de 0.009 de Europa es forzada por las perturbaciones de Ío — sin ella el océano subsuperficial se congelaría. Europa Clipper (NASA, 2024–) se lanzará para estudiarlo.",
+  "new": "La diminuta excentricidad de 0,009 de Europa es forzada por las perturbaciones de Ío — sin ella el océano subsuperficial se congelaría. Europa Clipper (NASA, 2024–) se lanzará para estudiarlo."
+ },
+ {
+  "rel": "satellites/moon.json",
+  "at": "description",
+  "old": "El único satélite natural de la Tierra y el único mundo aparte de la Tierra sobre el que los humanos han caminado. Su bloqueo de marea 1:1 mantiene el mismo hemisferio orientado hacia la Tierra en todo momento: el lado cercano dominado por cuencas de mares inundadas de lava, el lado lejano un antiguo terreno de tierras altas craterizado coronado por la cuenca del Polo Sur–Aitken, la estructura de impacto más grande del sistema solar (~2.500 km de ancho, ~13 km de profundidad). El lento alejamiento de la Luna de la Tierra (~3,8 cm/año) está alargando gradualmente el día terrestre; en el pasado distante aparecía casi tres veces su tamaño angular actual en el cielo.",
+  "new": "El único satélite natural de la Tierra y el único mundo aparte de la Tierra sobre el que los humanos han caminado. Su bloqueo de marea 1:1 mantiene el mismo hemisferio orientado hacia la Tierra en todo momento: el lado cercano dominado por cuencas de mares inundadas de lava, el lado lejano un antiguo terreno de tierras altas craterizado coronado por la cuenca del Polo Sur–Aitken, la estructura de impacto más grande del sistema solar (~2500 km de ancho, ~13 km de profundidad). El lento alejamiento de la Luna de la Tierra (~3,8 cm/año) está alargando gradualmente el día terrestre; en el pasado distante aparecía casi tres veces su tamaño angular actual en el cielo."
+ },
+ {
+  "rel": "satellites/moon.json",
+  "at": "science_sections.1.why",
+  "old": "La excentricidad de 0.055 de la Luna es pequeña pero importante — en el perigeo el disco se ve 12 % más grande y brillante que en el apogeo ('superluna').",
+  "new": "La excentricidad de 0,055 de la Luna es pequeña pero importante — en el perigeo el disco se ve 12 % más grande y brillante que en el apogeo ('superluna')."
+ },
+ {
+  "rel": "satellites/phobos.json",
+  "at": "science_sections.0.why",
+  "old": "Fobos orbita Marte a solo 9.377 km — por debajo de la altitud síncrona, por lo que es acelerado marealmente HACIA ADENTRO e impactará Marte en ~40 millones de años.",
+  "new": "Fobos orbita Marte a solo 9377 km — por debajo de la altitud síncrona, por lo que es acelerado marealmente HACIA ADENTRO e impactará Marte en ~40 millones de años."
+ },
+ {
+  "rel": "satellites/titania.json",
+  "at": "description",
+  "old": "La luna más grande de Urano y la octava más grande del sistema solar. Las imágenes de Voyager 2 revelaron una superficie surcada por enormes sistemas de cañones — Messina Chasma por sí sola se extiende 1.500 km a través del hemisferio sur— junto con grandes cuencas de impacto y el pequeño cráter Ursula de aspecto reciente. Una ocultación estelar en 2017 detectó tentativamente una fina atmósfera de dióxido de carbono, que sería la primera atmósfera encontrada en una luna uraniana.",
+  "new": "La luna más grande de Urano y la octava más grande del sistema solar. Las imágenes de Voyager 2 revelaron una superficie surcada por enormes sistemas de cañones — Messina Chasma por sí sola se extiende 1500 km a través del hemisferio sur— junto con grandes cuencas de impacto y el pequeño cráter Ursula de aspecto reciente. Una ocultación estelar en 2017 detectó tentativamente una fina atmósfera de dióxido de carbono, que sería la primera atmósfera encontrada en una luna uraniana."
+ },
+ {
+  "rel": "satellites/titania.json",
+  "at": "surface_composition",
+  "old": "Hielo de agua + roca silicatada; terreno antiguo craterizado surcado por vastos sistemas de cañones de cientos de kilómetros de longitud —Messina Chasma se extiende ~1.500 km a través de la luna.",
+  "new": "Hielo de agua + roca silicatada; terreno antiguo craterizado surcado por vastos sistemas de cañones de cientos de kilómetros de longitud —Messina Chasma se extiende ~1500 km a través de la luna."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "narrative_101.0",
+  "old": "El 25 de mayo de 1961, John F. Kennedy le dijo al Congreso «esta nación debe comprometerse a lograr, antes de que termine esta década, el objetivo de posar a un hombre en la Luna y devolverlo sano y salvo a la Tierra». Ocho años después, casi al mes, Neil Armstrong pisó Mare Tranquillitatis. 400.000 personas trabajaron en Apollo en el momento álgido; el programa costó ~25.400 millones de dólares en total (1960–1973, nominal); el presupuesto de la NASA alcanzó su máximo, ~4,4 % del presupuesto federal, en 1966.",
+  "new": "El 25 de mayo de 1961, John F. Kennedy le dijo al Congreso «esta nación debe comprometerse a lograr, antes de que termine esta década, el objetivo de posar a un hombre en la Luna y devolverlo sano y salvo a la Tierra». Ocho años después, casi al mes, Neil Armstrong pisó Mare Tranquillitatis. 400 000 personas trabajaron en Apollo en el momento álgido; el programa costó ~25 400 millones de dólares en total (1960–1973, nominal); el presupuesto de la NASA alcanzó su máximo, ~4,4 % del presupuesto federal, en 1966."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "intro_sentence",
+  "old": "Cada agencia espacial aplica más o menos el mismo embudo de selección — físico, cognitivo, psicológico, operativo — que reduce ~10.000 solicitantes a ~10 seleccionados. El cuello de botella es la dinámica de tripulación bajo estrés.",
+  "new": "Cada agencia espacial aplica más o menos el mismo embudo de selección — físico, cognitivo, psicológico, operativo — que reduce ~10 000 solicitantes a ~10 seleccionados. El cuello de botella es la dinámica de tripulación bajo estrés."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.1",
+  "old": "La selección moderna busca otras cosas. La promoción de 2017 de la NASA aceptó a 12 de 18.300 aspirantes (0,07 % de admisión — bastante menos que Harvard). Requisito académico: máster en un campo STEM o experiencia operativa equivalente (piloto de pruebas, médico, doctorado). Rango de estatura: 4'9\"–6'4\" (149-193 cm — Crew Dragon y Soyuz admiten ambos ese rango). Sin restricciones de visión más allá de que sea corregible. Sin edad máxima. Un mínimo de dos años de experiencia profesional relacionada, aunque los seleccionados tienen de media 13 años. El listón físico ha pasado de «tolerancia a las G de un piloto de reactor» a «no desarrollará una enfermedad grave en una expedición de 6 meses en la EEI» — otro problema, otra prueba.",
+  "new": "La selección moderna busca otras cosas. La promoción de 2017 de la NASA aceptó a 12 de 18 300 aspirantes (0,07 % de admisión — bastante menos que Harvard). Requisito académico: máster en un campo STEM o experiencia operativa equivalente (piloto de pruebas, médico, doctorado). Rango de estatura: 4'9\"–6'4\" (149-193 cm — Crew Dragon y Soyuz admiten ambos ese rango). Sin restricciones de visión más allá de que sea corregible. Sin edad máxima. Un mínimo de dos años de experiencia profesional relacionada, aunque los seleccionados tienen de media 13 años. El listón físico ha pasado de «tolerancia a las G de un piloto de reactor» a «no desarrollará una enfermedad grave en una expedición de 6 meses en la EEI» — otro problema, otra prueba."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "diagram_caption",
+  "old": "Embudo de selección c. 2024: ~10.000 solicitantes → examen médico → forma física → pruebas cognitivas → evaluación psicológica → centrifugadora / aislamiento → entrevista ante un panel → ~10 seleccionados. El 99,9 % de descarte se reparte: 70 % médico, 15 % cognitivo, 15 % psicológico/conducta de expedición.",
+  "new": "Embudo de selección c. 2024: ~10 000 solicitantes → examen médico → forma física → pruebas cognitivas → evaluación psicológica → centrifugadora / aislamiento → entrevista ante un panel → ~10 seleccionados. El 99,9 % de descarte se reparte: 70 % médico, 15 % cognitivo, 15 % psicológico/conducta de expedición."
+ },
+ {
+  "rel": "science/life-in-space/surface-dust-mitigation.json",
+  "at": "body_paragraphs.0",
+  "old": "El polvo lunar es mecánicamente peligroso de un modo para el que ningún polvo terrestre te prepara. La superficie es un regolito fino — tamaños de partícula desde submicrónicos hasta arena gruesa, con una mediana de 70 µm — creado por 4.000 millones de años de impactos de micrometeoritos. Cada impacto es una pequeña explosión que fragmenta la roca existente; los fragmentos se enfrían en el vacío sin agua que les redondee los bordes. El resultado es un polvo de fragmentos de vidrio angulosos, más afilados que el vidrio molido. A ello se suma que el regolito lunar está cargado electrostáticamente por fotoionización UV en el lado diurno y por exposición al plasma en la zona del terminador lunar. El polvo cargado se adhiere a todo: se pega a la tela del traje por adhesión electrostática con una fuerza que el cepillado por sí solo no puede vencer. Las tripulaciones del Apollo informaron de que el polvo lunar degradó los sellos de las articulaciones de los trajes EVA tras unas 10 EVA (el Apollo 17 fue la única misión con tres EVA seguidas, y la cremallera del traje de Cernan mostraba desgaste a la tercera).",
+  "new": "El polvo lunar es mecánicamente peligroso de un modo para el que ningún polvo terrestre te prepara. La superficie es un regolito fino — tamaños de partícula desde submicrónicos hasta arena gruesa, con una mediana de 70 µm — creado por 4000 millones de años de impactos de micrometeoritos. Cada impacto es una pequeña explosión que fragmenta la roca existente; los fragmentos se enfrían en el vacío sin agua que les redondee los bordes. El resultado es un polvo de fragmentos de vidrio angulosos, más afilados que el vidrio molido. A ello se suma que el regolito lunar está cargado electrostáticamente por fotoionización UV en el lado diurno y por exposición al plasma en la zona del terminador lunar. El polvo cargado se adhiere a todo: se pega a la tela del traje por adhesión electrostática con una fuerza que el cepillado por sí solo no puede vencer. Las tripulaciones del Apollo informaron de que el polvo lunar degradó los sellos de las articulaciones de los trajes EVA tras unas 10 EVA (el Apollo 17 fue la única misión con tres EVA seguidas, y la cremallera del traje de Cernan mostraba desgaste a la tercera)."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.0",
+  "old": "La órbita de halo casi rectilínea (NRHO, por Near-Rectilinear Halo Orbit) es la clase de órbita que la NASA eligió para el Lunar Gateway. Geométricamente es una órbita de halo de seis días de período alrededor del punto de Lagrange L2 Tierra-Luna, con un perilunio a ≈1.500 km de altitud (radio de perilunio de ~3.200 km) sobre el polo norte lunar y un apolunio de ≈70.000 km sobre el polo sur lunar. El nombre «casi rectilínea» procede de la forma de la órbita en el sistema de referencia giratorio Tierra-Luna: describe un bucle largo y estrecho perpendicular a la línea Tierra-Luna, casi como un rectángulo. Tres propiedades la convirtieron en la opción ganadora para Gateway. Primero, el ΔV de mantenimiento orbital es extraordinariamente bajo (~5 m/s/año) en comparación con las órbitas lunares bajas (>100 m/s/año). Segundo, la comunicación con la Tierra no tiene obstrucciones, porque la órbita se mantiene fuera de la sombra de radio de la Luna. Tercero, la larga permanencia cerca del apolunio sobre el polo sur ofrece una cobertura casi continua de los sitios polares australes de Artemis, en el borde del cráter Shackleton. A cambio, el descenso desde la NRHO a la superficie lunar es más difícil que desde una órbita lunar circular baja (~2,5 km/s frente a ~1,8 km/s), pero para un programa que necesita un punto de escala duradero, el compromiso merece la pena.",
+  "new": "La órbita de halo casi rectilínea (NRHO, por Near-Rectilinear Halo Orbit) es la clase de órbita que la NASA eligió para el Lunar Gateway. Geométricamente es una órbita de halo de seis días de período alrededor del punto de Lagrange L2 Tierra-Luna, con un perilunio a ≈1500 km de altitud (radio de perilunio de ~3200 km) sobre el polo norte lunar y un apolunio de ≈70 000 km sobre el polo sur lunar. El nombre «casi rectilínea» procede de la forma de la órbita en el sistema de referencia giratorio Tierra-Luna: describe un bucle largo y estrecho perpendicular a la línea Tierra-Luna, casi como un rectángulo. Tres propiedades la convirtieron en la opción ganadora para Gateway. Primero, el ΔV de mantenimiento orbital es extraordinariamente bajo (~5 m/s/año) en comparación con las órbitas lunares bajas (>100 m/s/año). Segundo, la comunicación con la Tierra no tiene obstrucciones, porque la órbita se mantiene fuera de la sombra de radio de la Luna. Tercero, la larga permanencia cerca del apolunio sobre el polo sur ofrece una cobertura casi continua de los sitios polares australes de Artemis, en el borde del cráter Shackleton. A cambio, el descenso desde la NRHO a la superficie lunar es más difícil que desde una órbita lunar circular baja (~2,5 km/s frente a ~1,8 km/s), pero para un programa que necesita un punto de escala duradero, el compromiso merece la pena."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "body_paragraphs.1",
+  "old": "Órbita retrógrada distante (DRO). Una órbita grande, de forma casi circular, alrededor de la Luna en sentido retrógrado respecto a la órbita de la Luna alrededor de la Tierra. Distancia: normalmente de 60.000 a 80.000 km de la Luna. El movimiento retrógrado, junto con el gran radio, hace que las DRO sean inusualmente estables: no requieren ΔV de mantenimiento orbital (esencialmente cero, en escalas de varios años), porque la órbita aprovecha una peculiaridad del problema de los tres cuerpos, en la que la gravedad de la Tierra actúa como fuerza restauradora cuando la nave intenta derivar. La nave Orion de Artemis-1 (vuelo de prueba sin tripulación, noviembre de 2022) se insertó en una DRO alrededor de la Luna para una estancia de 6 días antes de volver a la Tierra, lo que demostró tanto la secuencia de maniobras como la estabilidad de la órbita. Las DRO son la órbita de estacionamiento preferida para el almacenamiento a largo plazo en la arquitectura cislunar: allí se puede estacionar un depósito de propelente o un vehículo de reserva sin preocuparse de que derive durante años.",
+  "new": "Órbita retrógrada distante (DRO). Una órbita grande, de forma casi circular, alrededor de la Luna en sentido retrógrado respecto a la órbita de la Luna alrededor de la Tierra. Distancia: normalmente de 60 000 a 80 000 km de la Luna. El movimiento retrógrado, junto con el gran radio, hace que las DRO sean inusualmente estables: no requieren ΔV de mantenimiento orbital (esencialmente cero, en escalas de varios años), porque la órbita aprovecha una peculiaridad del problema de los tres cuerpos, en la que la gravedad de la Tierra actúa como fuerza restauradora cuando la nave intenta derivar. La nave Orion de Artemis-1 (vuelo de prueba sin tripulación, noviembre de 2022) se insertó en una DRO alrededor de la Luna para una estancia de 6 días antes de volver a la Tierra, lo que demostró tanto la secuencia de maniobras como la estabilidad de la órbita. Las DRO son la órbita de estacionamiento preferida para el almacenamiento a largo plazo en la arquitectura cislunar: allí se puede estacionar un depósito de propelente o un vehículo de reserva sin preocuparse de que derive durante años."
+ },
+ {
+  "rel": "science/orbits/cislunar-orbits.json",
+  "at": "diagram_caption",
+  "old": "NRHO: halo alrededor del L2 Tierra-Luna, período de 6 días, perilunio (~1.500 km) sobre el polo norte lunar, apolunio (~70.000 km) sobre el polo sur para cobertura polar sur, mantenimiento orbital de 5 m/s/año. DRO: gran órbita lunar retrógrada, con mantenimiento orbital esencialmente nulo. Órbitas de halo en EML1/EML2: comunicaciones continuas con la Tierra y con la cara oculta. Órbitas lunares congeladas: inclinaciones de 27°/50°/76°/86°, donde se anulan las perturbaciones causadas por los mascons.",
+  "new": "NRHO: halo alrededor del L2 Tierra-Luna, período de 6 días, perilunio (~1500 km) sobre el polo norte lunar, apolunio (~70 000 km) sobre el polo sur para cobertura polar sur, mantenimiento orbital de 5 m/s/año. DRO: gran órbita lunar retrógrada, con mantenimiento orbital esencialmente nulo. Órbitas de halo en EML1/EML2: comunicaciones continuas con la Tierra y con la cara oculta. Órbitas lunares congeladas: inclinaciones de 27°/50°/76°/86°, donde se anulan las perturbaciones causadas por los mascons."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.1",
+  "old": "LEO llega hasta ~2.000 km. La EEI orbita a 408 km. Hubble a 540 km. Starlink de SpaceX a ~550 km. Es barato alcanzarla (la mayoría de cohetes pueden lanzar una carga aquí), pero das la vuelta al planeta cada 90 minutos, la atmósfera te frena (vida útil: años sin reimpulso), y solo ves cualquier punto de terreno durante ~10 minutos por pasada.",
+  "new": "LEO llega hasta ~2000 km. La EEI orbita a 408 km. Hubble a 540 km. Starlink de SpaceX a ~550 km. Es barato alcanzarla (la mayoría de cohetes pueden lanzar una carga aquí), pero das la vuelta al planeta cada 90 minutos, la atmósfera te frena (vida útil: años sin reimpulso), y solo ves cualquier punto de terreno durante ~10 minutos por pasada."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "narrative_101.2",
+  "old": "MEO va de 2.000 a 35.786 km — la banda de GPS / Galileo / Beidou, más algunas comunicaciones. Los períodos son de 2 a 12 horas; cubres el globo con menos satélites que en LEO y estás por encima de las peores zonas de los cinturones de radiación (cuidadosamente elegidas). GEO se sitúa exactamente a 35.786 km — período de exactamente 24 horas — así que un satélite allí se mantiene sobre el mismo punto de la Tierra para siempre, y por eso todos los satélites meteorológicos y de radiodifusión están allí.",
+  "new": "MEO va de 2000 a 35 786 km — la banda de GPS / Galileo / Beidou, más algunas comunicaciones. Los períodos son de 2 a 12 horas; cubres el globo con menos satélites que en LEO y estás por encima de las peores zonas de los cinturones de radiación (cuidadosamente elegidas). GEO se sitúa exactamente a 35 786 km — período de exactamente 24 horas — así que un satélite allí se mantiene sobre el mismo punto de la Tierra para siempre, y por eso todos los satélites meteorológicos y de radiodifusión están allí."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.0",
+  "old": "LEO (órbita terrestre baja, < 2.000 km de altitud): la más barata de alcanzar, el período más corto (~90 minutos para la EEI a 408 km), el menor retardo del enlace con tierra (unos pocos ms) y la menor vida útil, por la fricción atmosférica residual. Alberga la EEI, Hubble, Starlink, la mayoría de los satélites de observación de la Tierra y toda la actividad tripulada salvo la de Apollo.",
+  "new": "LEO (órbita terrestre baja, < 2000 km de altitud): la más barata de alcanzar, el período más corto (~90 minutos para la EEI a 408 km), el menor retardo del enlace con tierra (unos pocos ms) y la menor vida útil, por la fricción atmosférica residual. Alberga la EEI, Hubble, Starlink, la mayoría de los satélites de observación de la Tierra y toda la actividad tripulada salvo la de Apollo."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.1",
+  "old": "MEO (órbita terrestre media, 2.000–35.786 km): la banda de navegación. GPS a 20.200 km, GLONASS a 19.100 km, Galileo a 23.222 km, Beidou MEO a 21.500 km. Períodos ~11–14 horas en toda la banda de navegación; constelaciones de 24-30 satélites proporcionan cobertura global. Por encima del cinturón de Van Allen interior, por debajo de la mayoría del exterior.",
+  "new": "MEO (órbita terrestre media, 2000–35 786 km): la banda de navegación. GPS a 20 200 km, GLONASS a 19 100 km, Galileo a 23 222 km, Beidou MEO a 21 500 km. Períodos ~11–14 horas en toda la banda de navegación; constelaciones de 24-30 satélites proporcionan cobertura global. Por encima del cinturón de Van Allen interior, por debajo de la mayoría del exterior."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.2",
+  "old": "GEO (órbita geoestacionaria, exactamente a 35.786 km de altitud, inclinación 0°): el período es igual al día sidéreo terrestre (23h 56m 4s), así que el satélite parece inmóvil sobre una longitud del ecuador. Alberga la televisión de difusión del mundo entero, las imágenes meteorológicas (GOES, Himawari, Meteosat) y los satélites de comunicaciones tradicionales. Tiempo de ida y vuelta de la luz ~240 ms — perceptible en las llamadas de voz.",
+  "new": "GEO (órbita geoestacionaria, exactamente a 35 786 km de altitud, inclinación 0°): el período es igual al día sidéreo terrestre (23h 56m 4s), así que el satélite parece inmóvil sobre una longitud del ecuador. Alberga la televisión de difusión del mundo entero, las imágenes meteorológicas (GOES, Himawari, Meteosat) y los satélites de comunicaciones tradicionales. Tiempo de ida y vuelta de la luz ~240 ms — perceptible en las llamadas de voz."
+ },
+ {
+  "rel": "science/orbits/orbit-regimes.json",
+  "at": "body_paragraphs.3",
+  "old": "HEO (órbita muy elíptica): perigeo bajo + apogeo alto. Las órbitas Molniya (Rusia) tienen un perigeo de ~600 km, un apogeo de ~40.000 km y una inclinación de 63,4° — elegidas para que la permanencia en el apogeo ocurra sobre el hemisferio norte, adonde los satélites de comunicaciones GEO no llegan. Fundamentales para las comunicaciones en latitudes altas y para algunas constelaciones de alerta temprana.",
+  "new": "HEO (órbita muy elíptica): perigeo bajo + apogeo alto. Las órbitas Molniya (Rusia) tienen un perigeo de ~600 km, un apogeo de ~40 000 km y una inclinación de 63,4° — elegidas para que la permanencia en el apogeo ocurra sobre el hemisferio norte, adonde los satélites de comunicaciones GEO no llegan. Fundamentales para las comunicaciones en latitudes altas y para algunas constelaciones de alerta temprana."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "intro_sentence",
+  "old": "La órbita terrestre contiene ~36.000 objetos de basura rastreados mayores de 10 cm y se estima >100 millones de piezas más pequeñas. Dos eventos ASAT y una colisión accidental generaron la mayor parte. La limpieza apenas está comenzando.",
+  "new": "La órbita terrestre contiene ~36 000 objetos de basura rastreados mayores de 10 cm y se estima >100 millones de piezas más pequeñas. Dos eventos ASAT y una colisión accidental generaron la mayor parte. La limpieza apenas está comenzando."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.0",
+  "old": "Las cifras son contundentes. La Oficina de Basura Espacial de la ESA, la Oficina del Programa de Basura Orbital de la NASA y el 18.º Escuadrón de Defensa Espacial de la Fuerza Espacial estadounidense mantienen estimaciones convergentes de la población orbital (a 2024-2025): ~36.000 objetos catalogados con un diámetro ≥10 cm, de los cuales ~9.000 son naves activas y el resto, basura. Se estima que hay ~1 millón de piezas de entre 1 cm y 10 cm, en su mayoría sin rastrear. Más de 100 millones de piezas de entre 1 mm y 1 cm, completamente sin rastrear pero capaces, cada una, de inutilizar una nave al impactar (un fragmento de aluminio de 1 cm con una velocidad de cierre de 14 km/s libera la energía cinética de una granada de mano). Masa total en órbita terrestre: unas 11.000 toneladas. De ellas, quizá 8.000 toneladas son basura: satélites abandonados, etapas superiores agotadas, fragmentos de desintegraciones, escamas de pintura, escoria de motores de cohete.",
+  "new": "Las cifras son contundentes. La Oficina de Basura Espacial de la ESA, la Oficina del Programa de Basura Orbital de la NASA y el 18.º Escuadrón de Defensa Espacial de la Fuerza Espacial estadounidense mantienen estimaciones convergentes de la población orbital (a 2024-2025): ~36 000 objetos catalogados con un diámetro ≥10 cm, de los cuales ~9000 son naves activas y el resto, basura. Se estima que hay ~1 millón de piezas de entre 1 cm y 10 cm, en su mayoría sin rastrear. Más de 100 millones de piezas de entre 1 mm y 1 cm, completamente sin rastrear pero capaces, cada una, de inutilizar una nave al impactar (un fragmento de aluminio de 1 cm con una velocidad de cierre de 14 km/s libera la energía cinética de una granada de mano). Masa total en órbita terrestre: unas 11 000 toneladas. De ellas, quizá 8000 toneladas son basura: satélites abandonados, etapas superiores agotadas, fragmentos de desintegraciones, escamas de pintura, escoria de motores de cohete."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.1",
+  "old": "Tres sucesos explican la mayor parte de la población de basura rastreable. **Fengyun-1C** (China, enero de 2007): China realizó una prueba de arma antisatélite contra su propio satélite meteorológico retirado, a 865 km de altitud, en una órbita polar elegida deliberadamente para maximizar la permanencia de los restos. El impacto cinético fragmentó el blanco, de ~880 kg, en más de 3.500 piezas rastreables, que en su mayoría seguirán en órbita durante siglos. **Colisión de Iridium 33 y Cosmos 2251** (febrero de 2009): la primera colisión accidental de satélites conocida de la historia. Un satélite de comunicaciones operativo de Iridium chocó con el inactivo Cosmos ruso a 789 km de altitud y generó ~2.300 fragmentos rastreables. **Prueba ASAT rusa** (noviembre de 2021): Rusia destruyó por impacto cinético su propio satélite retirado Tselina-D y produjo más de 1.500 fragmentos rastreables a ~480 km — tan cerca de la EEI que la tripulación se refugió en sus cápsulas de regreso Soyuz durante las primeras 24 horas del encuentro con la nube de restos. Combinados, estos tres sucesos generaron aproximadamente el 25% de toda la basura catalogada actualmente en LEO.",
+  "new": "Tres sucesos explican la mayor parte de la población de basura rastreable. **Fengyun-1C** (China, enero de 2007): China realizó una prueba de arma antisatélite contra su propio satélite meteorológico retirado, a 865 km de altitud, en una órbita polar elegida deliberadamente para maximizar la permanencia de los restos. El impacto cinético fragmentó el blanco, de ~880 kg, en más de 3500 piezas rastreables, que en su mayoría seguirán en órbita durante siglos. **Colisión de Iridium 33 y Cosmos 2251** (febrero de 2009): la primera colisión accidental de satélites conocida de la historia. Un satélite de comunicaciones operativo de Iridium chocó con el inactivo Cosmos ruso a 789 km de altitud y generó ~2300 fragmentos rastreables. **Prueba ASAT rusa** (noviembre de 2021): Rusia destruyó por impacto cinético su propio satélite retirado Tselina-D y produjo más de 1500 fragmentos rastreables a ~480 km — tan cerca de la EEI que la tripulación se refugió en sus cápsulas de regreso Soyuz durante las primeras 24 horas del encuentro con la nube de restos. Combinados, estos tres sucesos generaron aproximadamente el 25% de toda la basura catalogada actualmente en LEO."
+ },
+ {
+  "rel": "science/orbits/space-debris.json",
+  "at": "body_paragraphs.4",
+  "old": "Limpieza + mitigación de las operaciones diarias. La retirada activa de basura (ADR) — misiones que visitan naves muertas y las desorbitan — empieza a cobrar impulso. **ELSA-d** (Astroscale, 2021) demostró el acoplamiento por captura magnética. **ClearSpace-1** (ESA, prevista para 2026) desorbitará un adaptador de carga útil secundaria de Vega de ~100 kg desde 660 km. Le siguen **ELSA-M** (Astroscale Japón, 2025-26) y la serie Salvage, clasificada, de la Oficina Nacional de Reconocimiento estadounidense. El propio análisis de la ESA sugiere que retirar cada año 5 objetos grandes de LEO es el mínimo para frenar el crecimiento; el ritmo actual es de ~0 al año: el reloj de Kessler corre. Mientras tanto, todos los operadores aplican la Evaluación de Riesgo de Conjunción y Evasión (CARA): la SSN publica diariamente avisos de conjunción con 7 días de antelación para aproximaciones de menos de ~1 km. La EEI realiza ~25 maniobras de evasión al año; el sistema autónomo de Starlink realiza ~50.000 cada seis meses (~100.000 al año) en toda la constelación; Tiangong, varias al año. Hubble (sin propulsión) ha sido alcanzado por pequeños restos decenas de veces y estuvo a punto de ser alcanzado por un fragmento de Cosmos-1408 en noviembre de 2021. La carga que supone esquivar basura en las operaciones aumenta con rapidez.",
+  "new": "Limpieza + mitigación de las operaciones diarias. La retirada activa de basura (ADR) — misiones que visitan naves muertas y las desorbitan — empieza a cobrar impulso. **ELSA-d** (Astroscale, 2021) demostró el acoplamiento por captura magnética. **ClearSpace-1** (ESA, prevista para 2026) desorbitará un adaptador de carga útil secundaria de Vega de ~100 kg desde 660 km. Le siguen **ELSA-M** (Astroscale Japón, 2025-26) y la serie Salvage, clasificada, de la Oficina Nacional de Reconocimiento estadounidense. El propio análisis de la ESA sugiere que retirar cada año 5 objetos grandes de LEO es el mínimo para frenar el crecimiento; el ritmo actual es de ~0 al año: el reloj de Kessler corre. Mientras tanto, todos los operadores aplican la Evaluación de Riesgo de Conjunción y Evasión (CARA): la SSN publica diariamente avisos de conjunción con 7 días de antelación para aproximaciones de menos de ~1 km. La EEI realiza ~25 maniobras de evasión al año; el sistema autónomo de Starlink realiza ~50 000 cada seis meses (~100 000 al año) en toda la constelación; Tiangong, varias al año. Hubble (sin propulsión) ha sido alcanzado por pequeños restos decenas de veces y estuvo a punto de ser alcanzado por un fragmento de Cosmos-1408 en noviembre de 2021. La carga que supone esquivar basura en las operaciones aumenta con rapidez."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.0",
+  "old": "Órbita Molniya (Rusia, desde 1965). Excentricidad alta (e ≈ 0,74), perigeo bajo (~600 km), apogeo alto (~40.000 km), inclinación de 63,4° y período de exactamente 12 horas. Dos decisiones de diseño la hacen funcionar. Primera: los 63,4° de inclinación son la «inclinación crítica» a la que la perturbación J2 de la Tierra NO hace rotar la línea de ápsides (con cualquier otra inclinación, el perigeo se desplaza a lo largo de la órbita en el curso de meses); el apogeo permanece fijo sobre el hemisferio norte, donde se desea. Segunda: con un período de 12 horas, el satélite pasa unas 8 horas cerca del apogeo, recorriendo lentamente el cielo del norte, y luego atraviesa el perigeo a toda velocidad en 4 horas. Una constelación de tres satélites Molniya con ángulos de fase escalonados proporciona cobertura continua de las latitudes superiores a 70°, adonde los satélites de comunicaciones GEO no llegan porque están sobre el ecuador. Rusia la ha usado para telefonía y televisión civiles (series Molniya I/II/III), comunicaciones militares (Meridian) y los satélites de alerta temprana Oko, que vigilan los lanzamientos de ICBM estadounidenses.",
+  "new": "Órbita Molniya (Rusia, desde 1965). Excentricidad alta (e ≈ 0,74), perigeo bajo (~600 km), apogeo alto (~40 000 km), inclinación de 63,4° y período de exactamente 12 horas. Dos decisiones de diseño la hacen funcionar. Primera: los 63,4° de inclinación son la «inclinación crítica» a la que la perturbación J2 de la Tierra NO hace rotar la línea de ápsides (con cualquier otra inclinación, el perigeo se desplaza a lo largo de la órbita en el curso de meses); el apogeo permanece fijo sobre el hemisferio norte, donde se desea. Segunda: con un período de 12 horas, el satélite pasa unas 8 horas cerca del apogeo, recorriendo lentamente el cielo del norte, y luego atraviesa el perigeo a toda velocidad en 4 horas. Una constelación de tres satélites Molniya con ángulos de fase escalonados proporciona cobertura continua de las latitudes superiores a 70°, adonde los satélites de comunicaciones GEO no llegan porque están sobre el ecuador. Rusia la ha usado para telefonía y televisión civiles (series Molniya I/II/III), comunicaciones militares (Meridian) y los satélites de alerta temprana Oko, que vigilan los lanzamientos de ICBM estadounidenses."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.1",
+  "old": "Órbita Tundra. La misma idea de inclinación crítica + período de 24 horas que Molniya, pero más próxima a la circular que a la muy excéntrica (e ≈ 0,25). Apogeo a la altitud de GEO (~35.786 km), perigeo a ~25.000 km. Período de exactamente 24 horas, de modo que la traza sobre el suelo se repite una vez al día en forma de un ocho alargado sobre la banda de latitud elegida. La usan Sirius XM Satellite Radio para cubrir Norteamérica (el ocho permite que las antenas del territorio continental de EE. UU. vean un satélite de forma continua y a gran elevación), el satélite ruso Yamal-200 y otros de comunicaciones, y los sensores de alerta temprana estadounidenses SBIRS-HEO, que sobre todo necesitan una larga permanencia sobre el Ártico. Tundra cambia la mayor elevación máxima de Molniya por una repetición completa cada 24 horas (Molniya tiene dos apogeos al día, ambos sobre el hemisferio norte —uno sobre Rusia y otro sobre Norteamérica, separados 180° de longitud—).",
+  "new": "Órbita Tundra. La misma idea de inclinación crítica + período de 24 horas que Molniya, pero más próxima a la circular que a la muy excéntrica (e ≈ 0,25). Apogeo a la altitud de GEO (~35 786 km), perigeo a ~25 000 km. Período de exactamente 24 horas, de modo que la traza sobre el suelo se repite una vez al día en forma de un ocho alargado sobre la banda de latitud elegida. La usan Sirius XM Satellite Radio para cubrir Norteamérica (el ocho permite que las antenas del territorio continental de EE. UU. vean un satélite de forma continua y a gran elevación), el satélite ruso Yamal-200 y otros de comunicaciones, y los sensores de alerta temprana estadounidenses SBIRS-HEO, que sobre todo necesitan una larga permanencia sobre el Ártico. Tundra cambia la mayor elevación máxima de Molniya por una repetición completa cada 24 horas (Molniya tiene dos apogeos al día, ambos sobre el hemisferio norte —uno sobre Rusia y otro sobre Norteamérica, separados 180° de longitud—)."
+ },
+ {
+  "rel": "science/orbits/special-orbits.json",
+  "at": "body_paragraphs.2",
+  "old": "Órbita de transferencia geoestacionaria (GTO). La órbita de preparación estándar para casi todos los satélites de comunicaciones comerciales en GEO. Muy elíptica: perigeo a ~200-400 km de altitud (LEO), apogeo a la altitud de GEO (35.786 km), con una inclinación normalmente igual a la latitud del lugar de lanzamiento (28,5° desde Cabo Cañaveral, 5,2° desde Kourou, razón por la que los lanzamientos Ariane dominan el mercado comercial de GEO). El lanzador deja la carga útil en GTO; después la nave enciende en el apogeo su motor de apogeo para circularizar en GEO y anular la inclinación. Ese encendido es la maniobra individual que más combustible consume de todas las que realiza la mayoría de los satélites de comunicaciones — normalmente 1,5-1,8 km/s de ΔV, con la mayor parte del propelente hipergólico de la nave gastada en ese único evento. Los satélites de comunicaciones modernos de propulsión eléctrica usan, en lugar de un encendido químico, una espiral de semanas con propulsores iónicos desde GTO hasta GEO, cambiando tiempo por ~40% más de carga útil aprovechable en órbita.",
+  "new": "Órbita de transferencia geoestacionaria (GTO). La órbita de preparación estándar para casi todos los satélites de comunicaciones comerciales en GEO. Muy elíptica: perigeo a ~200-400 km de altitud (LEO), apogeo a la altitud de GEO (35 786 km), con una inclinación normalmente igual a la latitud del lugar de lanzamiento (28,5° desde Cabo Cañaveral, 5,2° desde Kourou, razón por la que los lanzamientos Ariane dominan el mercado comercial de GEO). El lanzador deja la carga útil en GTO; después la nave enciende en el apogeo su motor de apogeo para circularizar en GEO y anular la inclinación. Ese encendido es la maniobra individual que más combustible consume de todas las que realiza la mayoría de los satélites de comunicaciones — normalmente 1,5-1,8 km/s de ΔV, con la mayor parte del propelente hipergólico de la nave gastada en ese único evento. Los satélites de comunicaciones modernos de propulsión eléctrica usan, en lugar de un encendido químico, una espiral de semanas con propulsores iónicos desde GTO hasta GEO, cambiando tiempo por ~40% más de carga útil aprovechable en órbita."
+ },
+ {
+  "rel": "science/planets/axial-tilt-and-seasons.json",
+  "at": "body_paragraphs.2",
+  "old": "La inclinación de la Tierra en sí no es constante — oscila entre 22,1° y 24,5° (aproximadamente ±1,2° alrededor de la media) durante ~41.000 años, uno de los ciclos de Milankovitch que marcan el ritmo de las edades de hielo. La inclinación de Marte es mucho más variable: las simulaciones muestran que la oblicuidad de Marte ha variado caóticamente entre 0° y 60° a lo largo del tiempo geológico, en parte porque Marte carece de una luna grande (la Luna de la Tierra estabiliza nuestra inclinación). Sin la Luna, la inclinación de la Tierra también podría variar caóticamente — un recordatorio aleccionador de lo frágil que puede ser un clima estable.",
+  "new": "La inclinación de la Tierra en sí no es constante — oscila entre 22,1° y 24,5° (aproximadamente ±1,2° alrededor de la media) durante ~41 000 años, uno de los ciclos de Milankovitch que marcan el ritmo de las edades de hielo. La inclinación de Marte es mucho más variable: las simulaciones muestran que la oblicuidad de Marte ha variado caóticamente entre 0° y 60° a lo largo del tiempo geológico, en parte porque Marte carece de una luna grande (la Luna de la Tierra estabiliza nuestra inclinación). Sin la Luna, la inclinación de la Tierra también podría variar caóticamente — un recordatorio aleccionador de lo frágil que puede ser un clima estable."
+ },
+ {
+  "rel": "science/planets/kuiper-belt.json",
+  "at": "narrative_101.1",
+  "old": "En 1992 David Jewitt y Jane Luu, observando desde Mauna Kea con un detector CCD entonces novedoso, encontraron 1992 QB1 (posteriormente nombrado Albion). Un cuerpo helado de ~160 km en una órbita circular estable a 44 UA. En menos de un año encontraron un segundo. En cinco años había docenas. Hoy los catálogos contienen más de 3.000 objetos del cinturón de Kuiper confirmados y los modelos dinámicos predicen más de 100.000 cuerpos mayores de 100 km —y en torno a mil millones de objetos del tamaño de cometas. La masa total es pequeña (~2% de la Tierra) pero aun así es ~50× el cinturón de asteroides.",
+  "new": "En 1992 David Jewitt y Jane Luu, observando desde Mauna Kea con un detector CCD entonces novedoso, encontraron 1992 QB1 (posteriormente nombrado Albion). Un cuerpo helado de ~160 km en una órbita circular estable a 44 UA. En menos de un año encontraron un segundo. En cinco años había docenas. Hoy los catálogos contienen más de 3000 objetos del cinturón de Kuiper confirmados y los modelos dinámicos predicen más de 100 000 cuerpos mayores de 100 km —y en torno a mil millones de objetos del tamaño de cometas. La masa total es pequeña (~2% de la Tierra) pero aun así es ~50× el cinturón de asteroides."
+ },
+ {
+  "rel": "science/planets/kuiper-belt.json",
+  "at": "body_paragraphs.2",
+  "old": "New Horizons sigue siendo la única nave espacial que ha visitado directamente el cinturón. El sobrevuelo de Plutón y Caronte el 14 de julio de 2015 obtuvo las primeras imágenes de cerca de un objeto clásico del cinturón de Kuiper, y reveló Sputnik Planitia (una llanura de hielo de nitrógeno de 1.000 km), montañas de hielo de agua y depósitos de tolinas rojo oscuro en el polo de Caronte. En enero de 2019 New Horizons llegó a su objetivo de misión extendida en el cinturón de Kuiper, Arrokoth —un objeto bilobulado de 36 km que parece dos tortitas pegadas, el planetesimal más prístino que se haya fotografiado jamás. Voyager 1 + 2 pasaron por el borde interior del cinturón en los años 80 en camino hacia el espacio interestelar, pero no tuvieron encuentros dirigidos.",
+  "new": "New Horizons sigue siendo la única nave espacial que ha visitado directamente el cinturón. El sobrevuelo de Plutón y Caronte el 14 de julio de 2015 obtuvo las primeras imágenes de cerca de un objeto clásico del cinturón de Kuiper, y reveló Sputnik Planitia (una llanura de hielo de nitrógeno de 1000 km), montañas de hielo de agua y depósitos de tolinas rojo oscuro en el polo de Caronte. En enero de 2019 New Horizons llegó a su objetivo de misión extendida en el cinturón de Kuiper, Arrokoth —un objeto bilobulado de 36 km que parece dos tortitas pegadas, el planetesimal más prístino que se haya fotografiado jamás. Voyager 1 + 2 pasaron por el borde interior del cinturón en los años 80 en camino hacia el espacio interestelar, pero no tuvieron encuentros dirigidos."
+ },
+ {
+  "rel": "science/planets/magnetic-fields.json",
+  "at": "body_paragraphs.1",
+  "old": "Las magnetosferas se extienden mucho más allá del planeta en sí. La de la Tierra alcanza unos 65.000 km en dirección al Sol (donde se comprime contra el viento solar) y se prolonga en una larga cola en el lado nocturno. La magnetosfera de Júpiter es la estructura física más grande dentro del sistema solar que no es la heliosfera del Sol: su cola magnética llega hasta la órbita de Saturno, con una longitud de unos 1.400 millones de km. La cola está conformada por el viento solar, que empuja el campo corriente abajo; la parte delantera, en dirección al Sol, queda comprimida.",
+  "new": "Las magnetosferas se extienden mucho más allá del planeta en sí. La de la Tierra alcanza unos 65 000 km en dirección al Sol (donde se comprime contra el viento solar) y se prolonga en una larga cola en el lado nocturno. La magnetosfera de Júpiter es la estructura física más grande dentro del sistema solar que no es la heliosfera del Sol: su cola magnética llega hasta la órbita de Saturno, con una longitud de unos 1400 millones de km. La cola está conformada por el viento solar, que empuja el campo corriente abajo; la parte delantera, en dirección al Sol, queda comprimida."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "body_paragraphs.0",
+  "old": "El caso energético es exacto, no aproximado. Cuando un protón se encuentra con un antiprotón se convierten enteramente en piones, rayos gamma y partículas más ligeras — E = mc² aplicado íntegramente, sin residuos químicos ni nucleares. La densidad energética es aproximadamente 10 mil millones de veces la del mejor propelente químico, y aproximadamente 1.000 veces la de la fisión o fusión. Un motor de aniquilación materia-antimateria con una tobera magnética para dirigir el escape de piones cargados podría, en teoría, alcanzar valores de impulso específico en los millones de segundos y acelerar una nave espacial a una fracción significativa de la velocidad de la luz.",
+  "new": "El caso energético es exacto, no aproximado. Cuando un protón se encuentra con un antiprotón se convierten enteramente en piones, rayos gamma y partículas más ligeras — E = mc² aplicado íntegramente, sin residuos químicos ni nucleares. La densidad energética es aproximadamente 10 mil millones de veces la del mejor propelente químico, y aproximadamente 1000 veces la de la fisión o fusión. Un motor de aniquilación materia-antimateria con una tobera magnética para dirigir el escape de piones cargados podría, en teoría, alcanzar valores de impulso específico en los millones de segundos y acelerar una nave espacial a una fracción significativa de la velocidad de la luz."
+ },
+ {
+  "rel": "science/propulsion/antimatter-propulsion.json",
+  "at": "diagram_caption",
+  "old": "Comparación de densidad energética: propelente químico (queroseno/LOX) en aproximadamente 10 MJ/kg, fisión nuclear en ~80.000 MJ/kg, fusión en ~300.000 MJ/kg, y aniquilación materia-antimateria en ~90.000.000 MJ/kg — cada paso no es incremental sino un cambio de naturaleza.",
+  "new": "Comparación de densidad energética: propelente químico (queroseno/LOX) en aproximadamente 10 MJ/kg, fisión nuclear en ~80 000 MJ/kg, fusión en ~300 000 MJ/kg, y aniquilación materia-antimateria en ~90 000 000 MJ/kg — cada paso no es incremental sino un cambio de naturaleza."
+ },
+ {
+  "rel": "science/propulsion/expander-cycle.json",
+  "at": "body_paragraphs.2",
+  "old": "El clásico es el RL10, que voló por primera vez en Centaur en 1962 y sigue en producción — una de las trayectorias más largas de cualquier motor. Ese techo de empuje se aplica al ciclo totalmente cerrado; pasar a la variante de expansor con sangrado lo rompe. El sangrado toma una parte del gas calentado para mover la turbina y luego la expulsa por la borda en lugar de dirigirlo todo a la cámara — se renuncia a un poco de Isp a cambio de mucha más potencia. El LE-9 de Japón muestra hasta dónde se puede llegar: un motor de expansor con sangrado que produce 1.471 kN e impulsa la primera etapa del H3, algo que un expansor cerrado nunca podría hacer. Su hermano LE-5B y el Vinci europeo del Ariane 6 usan el mismo enfoque de sangrado para etapas superiores. Donde la combustión en etapas persigue el rendimiento puro, el ciclo expansor persigue la fiabilidad y la capacidad de reinicio para el trabajo discreto y preciso de dejar una carga útil exactamente donde debe estar.",
+  "new": "El clásico es el RL10, que voló por primera vez en Centaur en 1962 y sigue en producción — una de las trayectorias más largas de cualquier motor. Ese techo de empuje se aplica al ciclo totalmente cerrado; pasar a la variante de expansor con sangrado lo rompe. El sangrado toma una parte del gas calentado para mover la turbina y luego la expulsa por la borda en lugar de dirigirlo todo a la cámara — se renuncia a un poco de Isp a cambio de mucha más potencia. El LE-9 de Japón muestra hasta dónde se puede llegar: un motor de expansor con sangrado que produce 1471 kN e impulsa la primera etapa del H3, algo que un expansor cerrado nunca podría hacer. Su hermano LE-5B y el Vinci europeo del Ariane 6 usan el mismo enfoque de sangrado para etapas superiores. Donde la combustión en etapas persigue el rendimiento puro, el ciclo expansor persigue la fiabilidad y la capacidad de reinicio para el trabajo discreto y preciso de dejar una carga útil exactamente donde debe estar."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "body_paragraphs.0",
+  "old": "La física es directa. La fusión de deuterio y tritio (o de deuterio y helio-3) convierte directamente en energía una pequeña fracción de su masa. El rendimiento por kilogramo es aproximadamente diez millones de veces el del mejor propelente químico. Traducido a impulso específico, un motor de fusión podría alcanzar de decenas a cientos de miles de segundos, frente a los 450 s del mejor motor químico y los 9.000 s del mejor motor iónico. Esa diferencia separa un viaje interestelar de siglos de uno medido en décadas.",
+  "new": "La física es directa. La fusión de deuterio y tritio (o de deuterio y helio-3) convierte directamente en energía una pequeña fracción de su masa. El rendimiento por kilogramo es aproximadamente diez millones de veces el del mejor propelente químico. Traducido a impulso específico, un motor de fusión podría alcanzar de decenas a cientos de miles de segundos, frente a los 450 s del mejor motor químico y los 9000 s del mejor motor iónico. Esa diferencia separa un viaje interestelar de siglos de uno medido en décadas."
+ },
+ {
+  "rel": "science/propulsion/fusion-propulsion.json",
+  "at": "diagram_caption",
+  "old": "Escalera de impulso específico, desde los cohetes sólidos (250 s) hasta los químicos LH2/LOX (450 s), los motores iónicos (9.000 s) y los motores de fusión proyectados (de decenas a cientos de miles de segundos): cada peldaño es un salto cualitativo en lo que cuestan, en masa de propelente, las distancias interplanetarias e interestelares.",
+  "new": "Escalera de impulso específico, desde los cohetes sólidos (250 s) hasta los químicos LH2/LOX (450 s), los motores iónicos (9000 s) y los motores de fusión proyectados (de decenas a cientos de miles de segundos): cada peldaño es un salto cualitativo en lo que cuestan, en masa de propelente, las distancias interplanetarias e interestelares."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "body_paragraphs.0",
+  "old": "Todos los motores cohete intercambian masa de propelente por velocidad. Cuanto más rápido sale el escape por la tobera, menos propelente necesitas para un cambio de velocidad dado, y eso es lo que mide el impulso específico (Isp). Los motores químicos están limitados por la temperatura de la llama: la combinación práctica de propelentes más caliente, hidrógeno y oxígeno líquidos, alcanza unos 450 segundos de Isp. Los motores iónicos esquivan por completo ese límite. Ionizan un propelente —por lo general xenón, elegido por su elevada masa atómica y su inercia química— y aceleran los iones eléctrica o magnéticamente hasta velocidades de escape de 20–100 km/s, lo que da valores de Isp de aproximadamente 3.000 a 10.000 segundos.",
+  "new": "Todos los motores cohete intercambian masa de propelente por velocidad. Cuanto más rápido sale el escape por la tobera, menos propelente necesitas para un cambio de velocidad dado, y eso es lo que mide el impulso específico (Isp). Los motores químicos están limitados por la temperatura de la llama: la combinación práctica de propelentes más caliente, hidrógeno y oxígeno líquidos, alcanza unos 450 segundos de Isp. Los motores iónicos esquivan por completo ese límite. Ionizan un propelente —por lo general xenón, elegido por su elevada masa atómica y su inercia química— y aceleran los iones eléctrica o magnéticamente hasta velocidades de escape de 20–100 km/s, lo que da valores de Isp de aproximadamente 3000 a 10 000 segundos."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "body_paragraphs.2",
+  "old": "Las cifras de empuje son aleccionadoras. Un propulsor Hall de última generación de 12 kW produce unos 0,6 newtons, aproximadamente el peso de una manzana pequeña. Con un motor iónico no puedes levantar un lápiz de un escritorio. Lo que sí puedes hacer es mantenerlo en funcionamiento sin pausa durante meses o años, porque la carga de propelente es pequeña y la energía procede de paneles solares. Los tres motores NSTAR de Dawn funcionaron en total 2.009 días en vuelo y acumularon un cambio de velocidad de aproximadamente 11,5 km/s —más que ninguna nave anterior, solo por la fracción de propelente—. Fue suficiente para frenar y entrar en órbita alrededor de Vesta, escapar de ella y luego frenar y entrar en órbita alrededor de Ceres: una hazaña que con propulsión química solo sería posible con una carga de propelente prohibitiva.",
+  "new": "Las cifras de empuje son aleccionadoras. Un propulsor Hall de última generación de 12 kW produce unos 0,6 newtons, aproximadamente el peso de una manzana pequeña. Con un motor iónico no puedes levantar un lápiz de un escritorio. Lo que sí puedes hacer es mantenerlo en funcionamiento sin pausa durante meses o años, porque la carga de propelente es pequeña y la energía procede de paneles solares. Los tres motores NSTAR de Dawn funcionaron en total 2009 días en vuelo y acumularon un cambio de velocidad de aproximadamente 11,5 km/s —más que ninguna nave anterior, solo por la fracción de propelente—. Fue suficiente para frenar y entrar en órbita alrededor de Vesta, escapar de ella y luego frenar y entrar en órbita alrededor de Ceres: una hazaña que con propulsión química solo sería posible con una carga de propelente prohibitiva."
+ },
+ {
+  "rel": "science/propulsion/ion-drive.json",
+  "at": "diagram_caption",
+  "old": "Esquema del motor iónico con rejilla: xenón ionizado en una cámara de descarga, acelerado a través de rejillas cargadas, haz neutralizado por un cañón de electrones — empuje en milinewtons, Isp 3.000–10.000 s.",
+  "new": "Esquema del motor iónico con rejilla: xenón ionizado en una cámara de descarga, acelerado a través de rejillas cargadas, haz neutralizado por un cañón de electrones — empuje en milinewtons, Isp 3000–10 000 s."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "body_paragraphs.0",
+  "old": "Los motores cohete químicos están limitados por la temperatura a la que pueden arder sus propelentes. La reacción hidrógeno-oxígeno alcanza su máximo en torno a 3.500 K en la cámara de combustión —ya cerca del punto de fusión de la mayoría de los materiales— y produce un impulso específico de aproximadamente 450 segundos en el vacío. Un cohete nucleotérmico (NTR) no está limitado por una reacción química. El hidrógeno líquido fluye por canales de un núcleo de reactor nuclear sólido que funciona a 2.500–3.000 K, absorbe calor y sale por una tobera como un gas muy caliente y muy ligero. Como el hidrógeno es el elemento más ligero, sus moléculas calentadas se mueven rápido y producen una velocidad de escape alta. El Isp resultante es de 800–1.000 segundos —más del doble que el químico—, mientras que el empuje se mantiene en el rango de 50–250 kN, muy por encima de cualquier sistema de propulsión eléctrica.",
+  "new": "Los motores cohete químicos están limitados por la temperatura a la que pueden arder sus propelentes. La reacción hidrógeno-oxígeno alcanza su máximo en torno a 3500 K en la cámara de combustión —ya cerca del punto de fusión de la mayoría de los materiales— y produce un impulso específico de aproximadamente 450 segundos en el vacío. Un cohete nucleotérmico (NTR) no está limitado por una reacción química. El hidrógeno líquido fluye por canales de un núcleo de reactor nuclear sólido que funciona a 2500–3000 K, absorbe calor y sale por una tobera como un gas muy caliente y muy ligero. Como el hidrógeno es el elemento más ligero, sus moléculas calentadas se mueven rápido y producen una velocidad de escape alta. El Isp resultante es de 800–1000 segundos —más del doble que el químico—, mientras que el empuje se mantiene en el rango de 50–250 kN, muy por encima de cualquier sistema de propulsión eléctrica."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "body_paragraphs.2",
+  "old": "La historia de ingeniería es inusualmente completa para una tecnología que nunca ha volado. El programa estadounidense NERVA/Rover (1955–1973) construyó y probó en tierra 22 configuraciones de reactor en Jackass Flats, Nevada. El motor Phoebus-2A funcionó en 1968 a 4.100 MW térmicos durante más de 12 minutos: suficiente para levantar el motor del soporte con su propio empuje. NERVA XE-Prime demostró una configuración de motor con peso de vuelo. La dirección del programa calculó que un motor listo para volar estaba a menos de dos años de distancia cuando se canceló el programa en 1973. La Unión Soviética llevó un programa paralelo (RD-0410, también llamado IRGIT) que igualmente produjo componentes de prueba operativos sin llegar a volar.",
+  "new": "La historia de ingeniería es inusualmente completa para una tecnología que nunca ha volado. El programa estadounidense NERVA/Rover (1955–1973) construyó y probó en tierra 22 configuraciones de reactor en Jackass Flats, Nevada. El motor Phoebus-2A funcionó en 1968 a 4100 MW térmicos durante más de 12 minutos: suficiente para levantar el motor del soporte con su propio empuje. NERVA XE-Prime demostró una configuración de motor con peso de vuelo. La dirección del programa calculó que un motor listo para volar estaba a menos de dos años de distancia cuando se canceló el programa en 1973. La Unión Soviética llevó un programa paralelo (RD-0410, también llamado IRGIT) que igualmente produjo componentes de prueba operativos sin llegar a volar."
+ },
+ {
+  "rel": "science/propulsion/nuclear-thermal.json",
+  "at": "diagram_caption",
+  "old": "Esquema del NTR: hidrógeno líquido bombeado a través de un reactor de fisión de núcleo sólido a 2.500–3.000 K y expulsado por una tobera — Isp ~800–1.000 s, empuje 50–250 kN, sin combustión.",
+  "new": "Esquema del NTR: hidrógeno líquido bombeado a través de un reactor de fisión de núcleo sólido a 2500–3000 K y expulsado por una tobera — Isp ~800–1000 s, empuje 50–250 kN, sin combustión."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "narrative_101.2",
+  "old": "El rango es enorme. Cohetes de combustible sólido (los propulsores auxiliares del Space Shuttle): ~250 segundos. Hidrógeno-oxígeno líquido (lo mejor que se puede lograr con química): ~450 segundos. Hipergólicos almacenables (baratos, fiables, lo que usan la mayoría de las naves para correcciones de rumbo): ~310 segundos. Motores iónicos (muy eficientes, pero con muy poco empuje): 3.000-9.000 segundos. La regla práctica: para despegar de un planeta necesitas mucho empuje; para navegar por el espacio profundo, un Isp alto. Las misiones reales reparten la elección por etapas — química para escapar de la Tierra, propulsión iónica para el crucero.",
+  "new": "El rango es enorme. Cohetes de combustible sólido (los propulsores auxiliares del Space Shuttle): ~250 segundos. Hidrógeno-oxígeno líquido (lo mejor que se puede lograr con química): ~450 segundos. Hipergólicos almacenables (baratos, fiables, lo que usan la mayoría de las naves para correcciones de rumbo): ~310 segundos. Motores iónicos (muy eficientes, pero con muy poco empuje): 3000-9000 segundos. La regla práctica: para despegar de un planeta necesitas mucho empuje; para navegar por el espacio profundo, un Isp alto. Las misiones reales reparten la elección por etapas — química para escapar de la Tierra, propulsión iónica para el crucero."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "body_paragraphs.1",
+  "old": "El valor abarca varios órdenes de magnitud. Cohetes de combustible sólido: 250 s. Líquidos hidrógeno/oxígeno (Space Shuttle Main Engine): 452 s. Hipergólicos almacenables (Apollo Service Module): 314 s. Motores iónicos (Dawn, BepiColombo): 3.000-9.000 s. Propulsión térmica nuclear (NERVA, nunca voló): 800-1.000 s en teoría.",
+  "new": "El valor abarca varios órdenes de magnitud. Cohetes de combustible sólido: 250 s. Líquidos hidrógeno/oxígeno (Space Shuttle Main Engine): 452 s. Hipergólicos almacenables (Apollo Service Module): 314 s. Motores iónicos (Dawn, BepiColombo): 3000-9000 s. Propulsión térmica nuclear (NERVA, nunca voló): 800-1000 s en teoría."
+ },
+ {
+  "rel": "science/scales-time/_intro.json",
+  "at": "paragraphs.0",
+  "old": "El sistema solar es más grande de lo que tu intuición está preparada para asimilar. Marte está a 200 millones de km. Saturno, a 1.400 millones. Plutón, a 6.000 millones. Los números en kilómetros dejan de ser útiles. Así que los astrónomos eligieron una regla más humana: una distancia Tierra-Sol, llamada unidad astronómica (UA). Marte está a 1,5 UA. Júpiter, a 5. Plutón orbita entre 30 y 50.",
+  "new": "El sistema solar es más grande de lo que tu intuición está preparada para asimilar. Marte está a 200 millones de km. Saturno, a 1400 millones. Plutón, a 6000 millones. Los números en kilómetros dejan de ser útiles. Así que los astrónomos eligieron una regla más humana: una distancia Tierra-Sol, llamada unidad astronómica (UA). Marte está a 1,5 UA. Júpiter, a 5. Plutón orbita entre 30 y 50."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "intro_sentence",
+  "old": "La distancia media de la Tierra al Sol, fijada exactamente en 149.597.870.700 metros — la regla natural para las distancias del sistema solar.",
+  "new": "La distancia media de la Tierra al Sol, fijada exactamente en 149 597 870 700 metros — la regla natural para las distancias del sistema solar."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "narrative_101.0",
+  "old": "Una vez que empiezas a medir distancias en el espacio, los kilómetros se vuelven enseguida inmanejables. Marte está a 200 millones de km. Saturno, a 1.400 millones de km. Plutón, a 6.000 millones de km. Tu cerebro deja de procesar esos números como algo más que «grande». Así que los astrónomos eligieron una regla más humana: una distancia Tierra-Sol. Esa es la unidad astronómica, abreviada UA.",
+  "new": "Una vez que empiezas a medir distancias en el espacio, los kilómetros se vuelven enseguida inmanejables. Marte está a 200 millones de km. Saturno, a 1400 millones de km. Plutón, a 6000 millones de km. Tu cerebro deja de procesar esos números como algo más que «grande». Así que los astrónomos eligieron una regla más humana: una distancia Tierra-Sol. Esa es la unidad astronómica, abreviada UA."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "narrative_101.1",
+  "old": "La unidad está anclada a un número entero concreto de metros — 149.597.870.700, fijado en 2012 —, pero la idea práctica es más simple. Marte está a 1,5 UA del Sol. Júpiter, a 5 UA. Plutón orbita entre 30 y 50 UA. Voyager 1, el objeto fabricado por el ser humano más lejano, ya ha superado las 170 UA y sigue avanzando. Cifras que de verdad caben en la cabeza.",
+  "new": "La unidad está anclada a un número entero concreto de metros — 149 597 870 700, fijado en 2012 —, pero la idea práctica es más simple. Marte está a 1,5 UA del Sol. Júpiter, a 5 UA. Plutón orbita entre 30 y 50 UA. Voyager 1, el objeto fabricado por el ser humano más lejano, ya ha superado las 170 UA y sigue avanzando. Cifras que de verdad caben en la cabeza."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "body_paragraphs.0",
+  "old": "Hasta 2012, la UA se definía a partir de la órbita de la Tierra. Como esa órbita evoluciona lentamente bajo las perturbaciones planetarias, técnicamente la UA también cambiaba. La UAI la fijó en 2012 en un número entero preciso de metros — 149.597.870.700 — y la definición es estable desde entonces. La UA ya no es «la órbita de la Tierra»; es una regla métrica que casualmente coincide, más o menos, con ella.",
+  "new": "Hasta 2012, la UA se definía a partir de la órbita de la Tierra. Como esa órbita evoluciona lentamente bajo las perturbaciones planetarias, técnicamente la UA también cambiaba. La UAI la fijó en 2012 en un número entero preciso de metros — 149 597 870 700 — y la definición es estable desde entonces. La UA ya no es «la órbita de la Tierra»; es una regla métrica que casualmente coincide, más o menos, con ella."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "body_paragraphs.2",
+  "old": "¿Por qué UA en lugar de metros? Porque los números en metros son engorrosos a escala del sistema solar. Los 1.400 millones de km de Saturno son ilegibles. 9,58 UA es un número que cabe en la cabeza. Los paneles y el HUD de Orrery usan la UA para las posiciones del sistema solar — y solo convierten a km, minutos luz y otras unidades donde el lector necesita la conversión.",
+  "new": "¿Por qué UA en lugar de metros? Porque los números en metros son engorrosos a escala del sistema solar. Los 1400 millones de km de Saturno son ilegibles. 9,58 UA es un número que cabe en la cabeza. Los paneles y el HUD de Orrery usan la UA para las posiciones del sistema solar — y solo convierten a km, minutos luz y otras unidades donde el lector necesita la conversión."
+ },
+ {
+  "rel": "small-bodies/halley.json",
+  "at": "science_sections.0.why",
+  "old": "La excentricidad de 0.967 del Halley es la órbita de cometa de período corto del libro de texto — casi parabólica, con perihelio 0.59 UA y afelio 35 UA.",
+  "new": "La excentricidad de 0,967 del Halley es la órbita de cometa de período corto del libro de texto — casi parabólica, con perihelio 0.59 UA y afelio 35 UA."
+ },
+ {
+  "rel": "small-bodies/pluto.json",
+  "at": "science_sections.0.why",
+  "old": "La excentricidad de 0.249 de Plutón sumerge su órbita dentro de la de Neptuno durante 20 años por cada ciclo de 248 años.",
+  "new": "La excentricidad de 0,249 de Plutón sumerge su órbita dentro de la de Neptuno durante 20 años por cada ciclo de 248 años."
+ },
+ {
+  "rel": "sun.json",
+  "at": "fact",
+  "old": "El Sol contiene el 99,86 % de toda la masa del Sistema Solar. Su gravedad mantiene todo en órbita, desde Mercurio hasta la Nube de Oort. Cada segundo, fusiona 600 millones de toneladas de hidrógeno en helio, liberando la energía que ha sustentado la vida en la Tierra durante 4.500 millones de años.",
+  "new": "El Sol contiene el 99,86 % de toda la masa del Sistema Solar. Su gravedad mantiene todo en órbita, desde Mercurio hasta la Nube de Oort. Cada segundo, fusiona 600 millones de toneladas de hidrógeno en helio, liberando la energía que ha sustentado la vida en la Tierra durante 4500 millones de años."
+ },
+ {
+  "rel": "universe/named-stars/wezen.json",
+  "at": "bio",
+  "old": "Wezen (Delta Canis Majoris) es una supergigante blanco-amarillenta situada a unos 1.600 años luz de distancia. Para aparecer tan brillante desde esa distancia, debe emitir decenas de miles de veces la luz del Sol: una estrella que se acerca al final de su vida.",
+  "new": "Wezen (Delta Canis Majoris) es una supergigante blanco-amarillenta situada a unos 1600 años luz de distancia. Para aparecer tan brillante desde esa distancia, debe emitir decenas de miles de veces la luz del Sol: una estrella que se acerca al final de su vida."
+ },
+ {
+  "rel": "messages",
+  "at": "why_solar_mass_body",
+  "old": "La masa fija la gravedad, la gravedad fija toda órbita. El Sol tiene 333.000 veces la masa de la Tierra y domina el sistema solar; ese único número, con las leyes de Kepler, predice dónde está cada planeta en cada momento.",
+  "new": "La masa fija la gravedad, la gravedad fija toda órbita. El Sol tiene 333 000 veces la masa de la Tierra y domina el sistema solar; ese único número, con las leyes de Kepler, predice dónde está cada planeta en cada momento."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_sar_starship",
+  "old": "El más grande jamás construido: el Starship de SpaceX sobre su propulsor Super Heavy. Treinta y tres motores Raptor se encienden a la vez — unos 76 meganewtons, el doble de un Saturno V — para elevar un conjunto de ~5.000 toneladas con una relación empuje-peso cercana a 1,5. Y a diferencia de cualquier otro, está construido en acero inoxidable: más pesado que el aluminio aeronáutico (un ε peor — la penalización del primer tramo, hecha de metal), pero barato, resistente y capaz de sobrevivir a la reentrada y volar de nuevo. Esa es la apuesta completa: volar un cohete más pesado para conseguir uno totalmente reutilizable.",
+  "new": "El más grande jamás construido: el Starship de SpaceX sobre su propulsor Super Heavy. Treinta y tres motores Raptor se encienden a la vez — unos 76 meganewtons, el doble de un Saturno V — para elevar un conjunto de ~5000 toneladas con una relación empuje-peso cercana a 1,5. Y a diferencia de cualquier otro, está construido en acero inoxidable: más pesado que el aluminio aeronáutico (un ε peor — la penalización del primer tramo, hecha de metal), pero barato, resistente y capaz de sobrevivir a la reentrada y volar de nuevo. Esa es la apuesta completa: volar un cohete más pesado para conseguir uno totalmente reutilizable."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g10_regime",
+  "old": "Todo satélite comienza con una elección: ¿a qué altura? La altitud determina todo lo demás. La velocidad circular DISMINUYE conforme subes (v = √(µ/r)), y el período AUMENTA (T = 2π√(r³/µ)): un Starlink de 550 km orbita la Tierra cada ~96 minutos, un satélite GPS de 20.000 km tarda aproximadamente 12 horas. Bajo significa rápido, cercano y pasos cortos; alto significa lento, distante y prolongado.",
+  "new": "Todo satélite comienza con una elección: ¿a qué altura? La altitud determina todo lo demás. La velocidad circular DISMINUYE conforme subes (v = √(µ/r)), y el período AUMENTA (T = 2π√(r³/µ)): un Starlink de 550 km orbita la Tierra cada ~96 minutos, un satélite GPS de 20 000 km tarda aproximadamente 12 horas. Bajo significa rápido, cercano y pasos cortos; alto significa lento, distante y prolongado."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g10_geo",
+  "old": "Aumenta la altitud hasta que el período coincida con el día del planeta — 23,93 horas para la Tierra — y ocurre algo ingenioso: el satélite se mantiene al ritmo del terreno que gira debajo, suspendido sobre un punto fijo. Esa es la órbita geoestacionaria, aproximadamente 35.786 km de altitud. Es por eso que un plato de TV nunca tiene que moverse y un satélite meteorológico puede vigilar un hemisferio completo.",
+  "new": "Aumenta la altitud hasta que el período coincida con el día del planeta — 23,93 horas para la Tierra — y ocurre algo ingenioso: el satélite se mantiene al ritmo del terreno que gira debajo, suspendido sobre un punto fijo. Esa es la órbita geoestacionaria, aproximadamente 35 786 km de altitud. Es por eso que un plato de TV nunca tiene que moverse y un satélite meteorológico puede vigilar un hemisferio completo."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_g10_gps",
+  "old": "GPS — un par de docenas a ~20.200 km de MEO para cubrir el globo",
+  "new": "GPS — un par de docenas a ~20 200 km de MEO para cubrir el globo"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g9_track",
+  "old": "Por eso no puedes simplemente mirar a la misma hora cada noche: en los ~92 minutos que tarda en dar una vuelta, la Tierra gira por debajo unos 23° (~2.500 km en el ecuador), así que cada paso traza un camino nuevo, avanzando hacia el oeste. La huella en sí es una sinusoide — la latitud oscila hasta la inclinación de la órbita (±51,6°) y no más allá, por eso la EEI solo alcanza tu latitud si vives dentro de esa banda.",
+  "new": "Por eso no puedes simplemente mirar a la misma hora cada noche: en los ~92 minutos que tarda en dar una vuelta, la Tierra gira por debajo unos 23° (~2500 km en el ecuador), así que cada paso traza un camino nuevo, avanzando hacia el oeste. La huella en sí es una sinusoide — la latitud oscila hasta la inclinación de la órbita (±51,6°) y no más allá, por eso la EEI solo alcanza tu latitud si vives dentro de esa banda."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_g8_distance",
+  "old": "La órbita de la Luna es una elipse, así que no siempre está a la misma distancia — oscila entre unos 356.500 km en el perigeo y 406.700 km en el apogeo cada mes. El tamaño aparente va como 1/distancia, así que una luna llena en perigeo (una superluna) se ve aproximadamente un 14% más ancha y un 30% más brillante que una en apogeo. La misma Luna, una variación de tamaño real que puedes fotografiar.",
+  "new": "La órbita de la Luna es una elipse, así que no siempre está a la misma distancia — oscila entre unos 356 500 km en el perigeo y 406 700 km en el apogeo cada mes. El tamaño aparente va como 1/distancia, así que una luna llena en perigeo (una superluna) se ve aproximadamente un 14% más ancha y un 30% más brillante que una en apogeo. La misma Luna, una variación de tamaño real que puedes fotografiar."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_sso_err_altitude",
+  "old": "No hay órbita heliosíncrona a esta altitud (por encima de ~5.970 km la geometría deja de ser viable).",
+  "new": "No hay órbita heliosíncrona a esta altitud (por encima de ~5970 km la geometría deja de ser viable)."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_molniya_reference",
+  "old": "Órbita de referencia Molniya (a≈26.600 km, e≈0,74)",
+  "new": "Órbita de referencia Molniya (a≈26 600 km, e≈0,74)"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lot_why",
+  "old": "Huygens sigue siendo el aterrizaje más distante jamás realizado — 1.200 millones de kilómetros de la Tierra, transportada durante siete años bajo el vientre de Cassini, luego dejada sola en la bruma. Su descenso de 2 h 27 min devolvió las primeras imágenes de la superficie de Titán: cantos rodados redondeados de hielo de agua en un delta de río congelado. Una sonda alimentada por batería, un paracaídas pequeño, un mundo completamente nuevo.",
+  "new": "Huygens sigue siendo el aterrizaje más distante jamás realizado — 1200 millones de kilómetros de la Tierra, transportada durante siete años bajo el vientre de Cassini, luego dejada sola en la bruma. Su descenso de 2 h 27 min devolvió las primeras imágenes de la superficie de Titán: cantos rodados redondeados de hielo de agua en un delta de río congelado. Una sonda alimentada por batería, un paracaídas pequeño, un mundo completamente nuevo."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_assume_target_geo",
+  "old": "Objetivo: la altitud geoestacionaria de 35.786 km",
+  "new": "Objetivo: la altitud geoestacionaria de 35 786 km"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_geo_glossary",
+  "old": "Fija el período T a un día sidéreo y resuelve Kepler: a = ∛(μT²/4π²) — 35.786 km arriba, la órbita mantiene el paso con la Tierra que gira. Cuelga ahí y permaneces quieto en el cielo.",
+  "new": "Fija el período T a un día sidéreo y resuelve Kepler: a = ∛(μT²/4π²) — 35 786 km arriba, la órbita mantiene el paso con la Tierra que gira. Cuelga ahí y permaneces quieto en el cielo."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_latency_glossary",
+  "old": "La velocidad de la luz es el peaje: Δt = 2h/c para el viaje de ida y vuelta. LEO responde en milisegundos; los 36.000 km de GEO cuestan un cuarto de segundo — por eso la voz por GEO suena lenta.",
+  "new": "La velocidad de la luz es el peaje: Δt = 2h/c para el viaje de ida y vuelta. LEO responde en milisegundos; los 36 000 km de GEO cuestan un cuarto de segundo — por eso la voz por GEO suena lenta."
+ }
+]

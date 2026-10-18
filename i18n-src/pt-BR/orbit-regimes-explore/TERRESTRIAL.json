@@ -1,27 +1,27 @@
 {
   "name": "Planetas Terrestres Internos",
   "short": "TERRA",
-  "story": "O sistema solar interno rochoso — 0,4 a 1,5 AU do Sol. Quatro pequenos mundos com núcleos metálicos, mantos de silicato e atmosferas finas ou ausentes. Eles se formaram dentro da linha de congelamento, onde estava quente demais para que gelos voláteis condensassem, então apenas materiais refratários (silicatos, ferro, níquel) permaneceram sólidos. Três dos quatro foram alvos de exploração tripulada (Terra, Lua, direção a Marte).",
+  "story": "O sistema solar interno rochoso — 0,4 a 1,5 UA do Sol. Quatro pequenos mundos com núcleos metálicos, mantos de silicato e atmosferas finas ou ausentes. Eles se formaram dentro da linha de congelamento, onde estava quente demais para que gelos voláteis condensassem, então apenas materiais refratários (silicatos, ferro, níquel) permaneceram sólidos. Três dos quatro foram alvos de exploração tripulada (Terra, Lua, direção a Marte).",
   "comparison": "Os quatro planetas terrestres caberiam dentro da Grande Mancha Vermelha de Júpiter. Juntos, os quatro detêm menos de 0,5% da massa planetária do sistema.",
   "residents": [
     {
       "id": "mercury",
-      "label": "Mercúrio — 0,39 AU",
+      "label": "Mercúrio — 0,39 UA",
       "agency": "NATURAL"
     },
     {
       "id": "venus",
-      "label": "Vênus — 0,72 AU",
+      "label": "Vênus — 0,72 UA",
       "agency": "NATURAL"
     },
     {
       "id": "earth",
-      "label": "Terra — 1,00 AU",
+      "label": "Terra — 1,00 UA",
       "agency": "NATURAL"
     },
     {
       "id": "mars",
-      "label": "Marte — 1,52 AU",
+      "label": "Marte — 1,52 UA",
       "agency": "NATURAL"
     }
   ],

@@ -66,7 +66,7 @@
       "heading": "6 – Entfernungen und Zeit, da nichts davon erdgroß ist.",
       "diagram": "au.svg",
       "diagram_alt": "Die astronomische Einheit, markiert entlang des Erdbahnradius.",
-      "diagram_caption": "Eine AU = eine Erde-Sonne-Entfernung. Mars ist ~1,5 AU. Jupiter ist ~5,2.",
+      "diagram_caption": "Eine AU = eine Erde-Sonne-Entfernung. Mars ist ~1,5 AE. Jupiter ist ~5,2.",
       "paragraphs": [
         "Drei Einheiten tauchen überall auf. Die [astronomische Einheit](scales-time/au) (AU) ist die durchschnittliche Entfernung Erde-Sonne – 150 Millionen km. Wir messen das Sonnensystem in AU, weil Kilometer schnell unhandlich werden. Die [Lichtminute](scales-time/light-minute) sagt Ihnen, wie lange ein Funksignal braucht, um ein Raumfahrzeug zu erreichen. Mars: 4 bis 24 Minuten in eine Richtung. Sie können keinen Rover von der Erde aus mit dem Joystick steuern. Alles Wichtige ist autonom.",
         "Die [J2000-Epoche](scales-time/j2000) ist der Kalendernullpunkt, den jeder Astrodynamiker verwendet. [Siderische und synodische Umlaufzeiten](scales-time/sidereal-synodic) erklären, warum sich die Marsfenster alle 26 Monate wiederholen statt alle 23. Die [Ekliptikebene](scales-time/ecliptic-plane) ist die flache Scheibe, in der (meistens) alle Planeten liegen. [Bezugssysteme](scales-time/frames) sind die Koordinatensysteme, zwischen denen die Missionskontrolle wechselt: erdzentriert, sonnenzentriert und körperzentriert."

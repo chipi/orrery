@@ -1,27 +1,27 @@
 {
   "name": "Pianeti terrestri interni",
   "short": "TERRA",
-  "story": "Il sistema solare interno roccioso — da 0,4 a 1,5 AU dal Sole. Quattro piccoli mondi con nuclei metallici, mantelli di silicati e atmosfere sottili o assenti. Si sono formati all'interno della linea del gelo, dove faceva troppo caldo perché i ghiacci volatili si condensassero, così solo i materiali refrattari (silicati, ferro, nichel) rimanevano solidi. Tre dei quattro sono stati obiettivi dell'esplorazione umana (Terra, Luna, destinazione Marte).",
+  "story": "Il sistema solare interno roccioso — da 0,4 a 1,5 UA dal Sole. Quattro piccoli mondi con nuclei metallici, mantelli di silicati e atmosfere sottili o assenti. Si sono formati all'interno della linea del gelo, dove faceva troppo caldo perché i ghiacci volatili si condensassero, così solo i materiali refrattari (silicati, ferro, nichel) rimanevano solidi. Tre dei quattro sono stati obiettivi dell'esplorazione umana (Terra, Luna, destinazione Marte).",
   "comparison": "Tutti e quattro i pianeti terrestri entrerebbero all'interno della Grande Macchia Rossa di Giove. I quattro insieme detengono meno dello 0,5% della massa planetaria del sistema.",
   "residents": [
     {
       "id": "mercury",
-      "label": "Mercurio — 0,39 AU",
+      "label": "Mercurio — 0,39 UA",
       "agency": "NATURAL"
     },
     {
       "id": "venus",
-      "label": "Venere — 0,72 AU",
+      "label": "Venere — 0,72 UA",
       "agency": "NATURAL"
     },
     {
       "id": "earth",
-      "label": "Terra — 1,00 AU",
+      "label": "Terra — 1,00 UA",
       "agency": "NATURAL"
     },
     {
       "id": "mars",
-      "label": "Marte — 1,52 AU",
+      "label": "Marte — 1,52 UA",
       "agency": "NATURAL"
     }
   ],

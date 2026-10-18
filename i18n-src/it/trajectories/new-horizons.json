@@ -1,6 +1,6 @@
 {
   "name": "New Horizons",
-  "current_distance_label": "66 AU · in missione estesa — in rotta verso la regione di stagnazione dell'eliosfera",
+  "current_distance_label": "66 UA · in missione estesa — in rotta verso la regione di stagnazione dell'eliosfera",
   "interstellar_since_label": "Attraverserà l'eliopausa intorno al 2040 — terza sonda destinata a raggiungere lo spazio interstellare",
   "waypoints": [
     {
@@ -12,7 +12,7 @@
     null,
     null,
     {
-      "label": "Assistenza gravitazionale da Giove"
+      "label": "Fionda gravitazionale da Giove"
     },
     null,
     null,

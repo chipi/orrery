@@ -1,7 +1,7 @@
 {
   "name": "Cinturão de Asteroides",
   "kind": "Cinturão principal — população rochosa",
-  "location": "Entre Marte e Júpiter · 2,2–3,2 AU do Sol",
+  "location": "Entre Marte e Júpiter · 2,2–3,2 UA do Sol",
   "population_estimate": "1,1–1,9 milhão de corpos maiores que 1 km, centenas de milhões maiores que 100 m",
   "total_mass_relative": "≈ 4 % da Lua (≈ 3 % de Plutão)",
   "largest_members": [
@@ -33,7 +33,7 @@
     {
       "tab": "orbits",
       "section": "orbit-regimes",
-      "why": "O cinturão ocupa o anel de 2.2–3.2 AU. Os hiatos de Kirkwood — zonas orbitais vazias nas ressonâncias de movimento médio de Júpiter — definem o padrão da população."
+      "why": "O cinturão ocupa o anel de 2.2–3.2 UA. Os hiatos de Kirkwood — zonas orbitais vazias nas ressonâncias de movimento médio de Júpiter — definem o padrão da população."
     },
     {
       "tab": "orbits",

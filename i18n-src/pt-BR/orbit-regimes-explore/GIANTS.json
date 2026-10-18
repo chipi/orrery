@@ -1,27 +1,27 @@
 {
   "name": "Gas + Ice Giants",
   "short": "GIANTS",
-  "story": "O reino planetário exterior — 5 a 30 AU. Dois gigantes gasosos (Júpiter, Saturno) com envoltórios de hidrogênio-hélio de milhares de quilômetros de profundidade sobre pequenos núcleos rochosos; dois gigantes de gelo (Urano, Netuno) com mantos de água/amônia/metano sob camadas gasosas mais finas. Juntos, eles concentram 99% de toda a massa planetária do sistema solar. Cada um possui seu próprio sistema de luas que funciona como um sistema solar em miniatura — somente Júpiter tem 95 luas conhecidas, incluindo quatro maiores que Plutão.",
+  "story": "O reino planetário exterior — 5 a 30 UA. Dois gigantes gasosos (Júpiter, Saturno) com envoltórios de hidrogênio-hélio de milhares de quilômetros de profundidade sobre pequenos núcleos rochosos; dois gigantes de gelo (Urano, Netuno) com mantos de água/amônia/metano sob camadas gasosas mais finas. Juntos, eles concentram 99% de toda a massa planetária do sistema solar. Cada um possui seu próprio sistema de luas que funciona como um sistema solar em miniatura — somente Júpiter tem 95 luas conhecidas, incluindo quatro maiores que Plutão.",
   "comparison": "Júpiter tem massa 318× maior que a Terra. Os quatro gigantes juntos formariam um sistema com diâmetro 25× maior que o dos planetas interiores combinados.",
   "residents": [
     {
       "id": "jupiter",
-      "label": "Júpiter — 5,20 AU",
+      "label": "Júpiter — 5,20 UA",
       "agency": "NATURAL"
     },
     {
       "id": "saturn",
-      "label": "Saturno — 9,58 AU, sistema de anéis",
+      "label": "Saturno — 9,58 UA, sistema de anéis",
       "agency": "NATURAL"
     },
     {
       "id": "uranus",
-      "label": "Urano — 19,18 AU, inclinado 97°",
+      "label": "Urano — 19,18 UA, inclinado 97°",
       "agency": "NATURAL"
     },
     {
       "id": "neptune",
-      "label": "Netuno — 30,07 AU, ventos mais rápidos do sistema",
+      "label": "Netuno — 30,07 UA, ventos mais rápidos do sistema",
       "agency": "NATURAL"
     }
   ],

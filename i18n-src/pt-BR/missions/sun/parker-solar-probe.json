@@ -2,7 +2,7 @@
   "name": "Parker Solar Probe",
   "type": "ORBITADOR SOLAR · ATIVO",
   "first": "Nave mais próxima do Sol já lançada (6,1 M km, 9,86 R☉); primeira nave a entrar na coroa solar (2021-04-28); objeto feito pelo homem mais rápido (~191 km/s)",
-  "description": "Parker Solar Probe executou o lançamento de maior energia já realizado para uma missão científica — C3 de 154 km²/s², exigindo um terceiro estágio sólido Star 48BV personalizado no topo de um Delta IV Heavy apenas para escapar da Terra em uma trajetória de queda para o Sol. Sete assistências gravitacionais de Vênus ao longo de seis anos reduziram progressivamente o periélio de 0,16 AU (P1, 2018-11-05) para 0,046 AU (P22, 2024-12-24 — 9,86 raios solares, 6,1 milhões de km da superfície). No P8 em 2021-04-28, Parker mergulhou abaixo da superfície crítica de Alfvén — a primeira nave a entrar na coroa do Sol. No P22 alcançou ~191 km/s, tornando-se o objeto feito pelo homem mais rápido de todos os tempos. O escudo térmico de carbono-carbono de 11,43 cm sustentou 1.377 °C enquanto o barco da nave 1 metro atrás permanecia à temperatura ambiente.",
+  "description": "Parker Solar Probe executou o lançamento de maior energia já realizado para uma missão científica — C3 de 154 km²/s², exigindo um terceiro estágio sólido Star 48BV personalizado no topo de um Delta IV Heavy apenas para escapar da Terra em uma trajetória de queda para o Sol. Sete assistências gravitacionais de Vênus ao longo de seis anos reduziram progressivamente o periélio de 0,16 UA (P1, 2018-11-05) para 0,046 UA (P22, 2024-12-24 — 9,86 raios solares, 6,1 milhões de km da superfície). No P8 em 2021-04-28, Parker mergulhou abaixo da superfície crítica de Alfvén — a primeira nave a entrar na coroa do Sol. No P22 alcançou ~191 km/s, tornando-se o objeto feito pelo homem mais rápido de todos os tempos. O escudo térmico de carbono-carbono de 11,43 cm sustentou 1.377 °C enquanto o barco da nave 1 metro atrás permanecia à temperatura ambiente.",
   "events": [
     {
       "met": 0,
@@ -19,7 +19,7 @@
     {
       "met": 85,
       "label": "P1 — PRIMEIRO PERIÉLIO",
-      "note": "2018-11-05, 0,16 AU. Mais próximo do Sol já alcançado, superando Helios 2.",
+      "note": "2018-11-05, 0,16 UA. Mais próximo do Sol já alcançado, superando Helios 2.",
       "type": "info"
     },
     {

@@ -1,27 +1,27 @@
 {
   "name": "Gas + Ice Giants",
   "short": "GIANTS",
-  "story": "Le royaume planétaire extérieur — de 5 à 30 AU. Deux géantes gazeuses (Jupiter, Saturne) avec des enveloppes d'hydrogène-hélium de plusieurs milliers de kilomètres d'épaisseur au-dessus de petits noyaux rocheux ; deux géantes glacées (Uranus, Neptune) avec des manteaux d'eau/ammoniac/méthane sous une atmosphère gazeuse plus fine. Ensemble, elles concentrent 99 % de toute la masse planétaire du système solaire. Chacune possède son propre système de lunes qui s'apparente à un système solaire miniature — Jupiter seule compte 95 lunes connues, dont quatre plus grandes que Pluton.",
+  "story": "Le royaume planétaire extérieur — de 5 à 30 UA. Deux géantes gazeuses (Jupiter, Saturne) avec des enveloppes d'hydrogène-hélium de plusieurs milliers de kilomètres d'épaisseur au-dessus de petits noyaux rocheux ; deux géantes glacées (Uranus, Neptune) avec des manteaux d'eau/ammoniac/méthane sous une atmosphère gazeuse plus fine. Ensemble, elles concentrent 99 % de toute la masse planétaire du système solaire. Chacune possède son propre système de lunes qui s'apparente à un système solaire miniature — Jupiter seule compte 95 lunes connues, dont quatre plus grandes que Pluton.",
   "comparison": "Jupiter est 318× plus massive que la Terre. Les quatre géantes réunies formeraient un système de 25× le diamètre des planètes intérieures combinées.",
   "residents": [
     {
       "id": "jupiter",
-      "label": "Jupiter — 5,20 AU",
+      "label": "Jupiter — 5,20 UA",
       "agency": "NATURAL"
     },
     {
       "id": "saturn",
-      "label": "Saturne — 9,58 AU, système d'anneaux",
+      "label": "Saturne — 9,58 UA, système d'anneaux",
       "agency": "NATURAL"
     },
     {
       "id": "uranus",
-      "label": "Uranus — 19,18 AU, incliné de 97°",
+      "label": "Uranus — 19,18 UA, incliné de 97°",
       "agency": "NATURAL"
     },
     {
       "id": "neptune",
-      "label": "Neptune — 30,07 AU, vents les plus rapides du système",
+      "label": "Neptune — 30,07 UA, vents les plus rapides du système",
       "agency": "NATURAL"
     }
   ],

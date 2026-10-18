@@ -42,13 +42,13 @@
     {
       "met": 259,
       "label": "MARTE FLYBY",
-      "note": "Avvicinamento più vicino: ~300 km di altitudine. L'assistenza gravitazionale avvia il ritorno.",
+      "note": "Avvicinamento più vicino: ~300 km di altitudine. La fionda gravitazionale avvia il ritorno.",
       "type": "nominal"
     },
     {
       "met": 260,
       "label": "TRAIETTORIA DI RITORNO",
-      "note": "Assistenza gravitazionale con ritorno libero completata. Veicolo spaziale sulla traiettoria della Terra.",
+      "note": "Fionda gravitazionale con ritorno libero completata. Veicolo spaziale sulla traiettoria della Terra.",
       "type": "nominal"
     },
     {

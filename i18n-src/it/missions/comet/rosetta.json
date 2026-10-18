@@ -2,7 +2,7 @@
   "name": "Rosetta",
   "type": "ORBITER + LANDER · MISSIONE CONCLUSA",
   "first": "Primo veicolo spaziale a orbitare una cometa — e ad atterrare su una (Philae, 2014-11-12)",
-  "description": "La missione di punta dell'ESA per l'incontro con una cometa. Dopo un viaggio di 10 anni che ha incluso tre assistenze gravitazionali dalla Terra, un'assistenza da Marte, due sorvoli di asteroidi e 957 giorni di ibernazione nello spazio profondo, Rosetta ha raggiunto la cometa 67P/Churyumov–Gerasimenko nell'agosto 2014 e l'ha orbitata per oltre due anni passando attraverso il perielio e uscendo dal lato opposto. Il lander Philae ha raggiunto la superficie di 67P il 2014-11-12 — il primo atterraggio morbido su una cometa — e ha trasmesso ~64 ore di dati scientifici nonostante il fallimento dell'arpione lo abbia lasciato nell'ombra di una scogliera. La stessa Rosetta ha concluso la missione con una discesa controllata sulla superficie di 67P il 2016-09-30. Risultati principali: molecole organiche e glicina nella chioma; il rapporto D/H misurato inizialmente in 67P (≈3× terrestre) aveva contraddetto l'ipotesi che le comete della famiglia gioviana fossero la fonte dell'acqua terrestre — un risultato che una ri-analisi del 2024 ha messo in discussione dopo aver trovato un errore di misurazione; le prime mappe dettagliate della geometria del degassamento cometario.",
+  "description": "La missione di punta dell'ESA per l'incontro con una cometa. Dopo un viaggio di 10 anni che ha incluso tre fionde gravitazionali dalla Terra, una fionda da Marte, due sorvoli di asteroidi e 957 giorni di ibernazione nello spazio profondo, Rosetta ha raggiunto la cometa 67P/Churyumov–Gerasimenko nell'agosto 2014 e l'ha orbitata per oltre due anni passando attraverso il perielio e uscendo dal lato opposto. Il lander Philae ha raggiunto la superficie di 67P il 2014-11-12 — il primo atterraggio morbido su una cometa — e ha trasmesso ~64 ore di dati scientifici nonostante il fallimento dell'arpione lo abbia lasciato nell'ombra di una scogliera. La stessa Rosetta ha concluso la missione con una discesa controllata sulla superficie di 67P il 2016-09-30. Risultati principali: molecole organiche e glicina nella chioma; il rapporto D/H misurato inizialmente in 67P (≈3× terrestre) aveva contraddetto l'ipotesi che le comete della famiglia gioviana fossero la fonte dell'acqua terrestre — un risultato che una ri-analisi del 2024 ha messo in discussione dopo aver trovato un errore di misurazione; le prime mappe dettagliate della geometria del degassamento cometario.",
   "events": [
     {
       "met": 0,
@@ -13,13 +13,13 @@
     {
       "met": 367,
       "label": "SORVOLO DELLA TERRA #1",
-      "note": "Primo dei tre assistenza gravitazionali dalla Terra per acquisire velocità per il rendez-vous cometario.",
+      "note": "Primo dei tre fionde gravitazionali dalla Terra per acquisire velocità per il rendez-vous cometario.",
       "type": "nominal"
     },
     {
       "met": 1090,
       "label": "SORVOLO DI MARTE",
-      "note": "Singola assistenza gravitazionale da Marte + prime immagini ravvicinate di Fobos e Marte a 250 km.",
+      "note": "Singola fionda gravitazionale da Marte + prime immagini ravvicinate di Fobos e Marte a 250 km.",
       "type": "nominal"
     },
     {

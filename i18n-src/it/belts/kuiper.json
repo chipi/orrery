@@ -1,7 +1,7 @@
 {
   "name": "Fascia di Kuiper",
   "kind": "Trans-nettuniana — popolazione ghiacciata",
-  "location": "Oltre Nettuno · 30–50 AU dal Sole",
+  "location": "Oltre Nettuno · 30–50 UA dal Sole",
   "population_estimate": "Oltre 100.000 corpi più grandi di 100 km; stimati 10⁹–10¹⁰ oggetti di dimensioni cometarie",
   "total_mass_relative": "≈ 4–10 % della Terra (200× la massa della fascia degli asteroidi)",
   "largest_members": [
@@ -27,12 +27,12 @@
     {
       "tab": "planets",
       "section": "kuiper-belt",
-      "why": "La Fascia di Kuiper è il residuo transnettuniano del disco protoplanetario — 30-50 AU, dominato dal ghiaccio. Plutone, Eris, Haumea, Makemake vi risiedono."
+      "why": "La Fascia di Kuiper è il residuo transnettuniano del disco protoplanetario — 30-50 UA, dominato dal ghiaccio. Plutone, Eris, Haumea, Makemake vi risiedono."
     },
     {
       "tab": "orbits",
       "section": "semi-major-axis",
-      "why": "I KBO classici orbitano tra 42 e 48 AU su orbite a bassa eccentricità e bassa inclinazione — sono rimasti sostanzialmente indisturbati dalla fase iniziale del sistema."
+      "why": "I KBO classici orbitano tra 42 e 48 UA su orbite a bassa eccentricità e bassa inclinazione — sono rimasti sostanzialmente indisturbati dalla fase iniziale del sistema."
     },
     {
       "tab": "orbits",

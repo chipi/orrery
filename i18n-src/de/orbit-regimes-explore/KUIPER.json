@@ -6,32 +6,32 @@
   "residents": [
     {
       "id": "pluto",
-      "label": "Pluto — 39,5 AU, größter bekannter",
+      "label": "Pluto — 39,5 AE, größter bekannter",
       "agency": "NATURAL"
     },
     {
       "id": "eris",
-      "label": "Eris — 96,4 AU (Scattered Disc)",
+      "label": "Eris — 96,4 AE (Scattered Disc)",
       "agency": "NATURAL"
     },
     {
       "id": "makemake",
-      "label": "Makemake — 45,8 AU",
+      "label": "Makemake — 45,8 AE",
       "agency": "NATURAL"
     },
     {
       "id": "haumea",
-      "label": "Haumea — 43,3 AU, schneller Rotator",
+      "label": "Haumea — 43,3 AE, schneller Rotator",
       "agency": "NATURAL"
     },
     {
       "id": "quaoar",
-      "label": "Quaoar — 43,4 AU, hat Ringe",
+      "label": "Quaoar — 43,4 AE, hat Ringe",
       "agency": "NATURAL"
     },
     {
       "id": "arrokoth",
-      "label": "Arrokoth — 44,6 AU, Kontaktbinär",
+      "label": "Arrokoth — 44,6 AE, Kontaktbinär",
       "agency": "NATURAL"
     }
   ],

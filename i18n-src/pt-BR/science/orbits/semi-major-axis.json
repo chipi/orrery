@@ -9,7 +9,7 @@
   "body_paragraphs": [
     "Se você achatar uma elipse Keplerian em sua dimensão mais longa, a linha que você traçou é o eixo maior. Corte-a ao meio e você tem o semieixo maior — escrito `a`. É a distância média do corpo em órbita ao foco, mais ou menos: uma média aritmética do periélio (mais próximo) e afélio (mais distante).",
     "Por que se importar? Por causa da terceira lei de Kepler: `T² ∝ a³`. O período orbital depende apenas do semieixo maior. A forma não importa. A inclinação não importa. Estique uma órbita para que seja um charuto e outra para que seja um círculo — se ambas têm o mesmo `a`, ambas levam exatamente o mesmo tempo para dar a volta.",
-    "Nos painéis `/explore` do Orrery você verá este número em unidades astronômicas. Terra: a ≈ 1.0 AU. Marte: 1.52 AU. Júpiter: 5.2 AU. Aplique na fórmula do período e você reproduziu o relógio do orrery: 1 ano, 687 dias, 11,86 anos."
+    "Nos painéis `/explore` do Orrery você verá este número em unidades astronômicas. Terra: a ≈ 1.0 UA. Marte: 1.52 UA. Júpiter: 5.2 UA. Aplique na fórmula do período e você reproduziu o relógio do orrery: 1 ano, 687 dias, 11,86 anos."
   ],
   "formula_caption": "Semieixo maior como a média dos raios de periélio e afélio.",
   "diagram_caption": "O eixo maior se estende do periélio ao afélio através de ambos os focos. O semieixo maior a é metade dessa extensão."

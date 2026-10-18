@@ -1,27 +1,27 @@
 {
   "name": "Innere Terrestrische Planeten",
   "short": "TERRA",
-  "story": "Das felsige innere Sonnensystem — 0,4 bis 1,5 AU von der Sonne entfernt. Vier kleine Welten mit metallischen Kernen, Silikatmänteln und dünnen oder fehlenden Atmosphären. Sie entstanden innerhalb der Frostgrenze, wo es zu heiß war, damit flüchtige Eise kondensieren konnten, sodass nur feuerfeste Materialien (Silikate, Eisen, Nickel) fest blieben. Drei der vier waren Ziele bemannter Erkundung (Erde, Mond, Mars-gebunden).",
+  "story": "Das felsige innere Sonnensystem — 0,4 bis 1,5 AE von der Sonne entfernt. Vier kleine Welten mit metallischen Kernen, Silikatmänteln und dünnen oder fehlenden Atmosphären. Sie entstanden innerhalb der Frostgrenze, wo es zu heiß war, damit flüchtige Eise kondensieren konnten, sodass nur feuerfeste Materialien (Silikate, Eisen, Nickel) fest blieben. Drei der vier waren Ziele bemannter Erkundung (Erde, Mond, Mars-gebunden).",
   "comparison": "Alle vier terrestrischen Planeten würden in Jupiters Großen Roten Fleck passen. Die vier zusammen besitzen weniger als 0,5 % der planetaren Masse des Systems.",
   "residents": [
     {
       "id": "mercury",
-      "label": "Merkur — 0,39 AU",
+      "label": "Merkur — 0,39 AE",
       "agency": "NATURAL"
     },
     {
       "id": "venus",
-      "label": "Venus — 0,72 AU",
+      "label": "Venus — 0,72 AE",
       "agency": "NATURAL"
     },
     {
       "id": "earth",
-      "label": "Erde — 1,00 AU",
+      "label": "Erde — 1,00 AE",
       "agency": "NATURAL"
     },
     {
       "id": "mars",
-      "label": "Mars — 1,52 AU",
+      "label": "Mars — 1,52 AE",
       "agency": "NATURAL"
     }
   ],

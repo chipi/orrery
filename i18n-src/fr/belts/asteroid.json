@@ -1,7 +1,7 @@
 {
   "name": "Ceinture d'astéroïdes",
   "kind": "Ceinture principale — population rocheuse",
-  "location": "Entre Mars et Jupiter · 2,2–3,2 AU du Soleil",
+  "location": "Entre Mars et Jupiter · 2,2–3,2 UA du Soleil",
   "population_estimate": "1,1–1,9 million de corps de plus de 1 km, des centaines de millions de plus de 100 m",
   "total_mass_relative": "≈ 4 % de la Lune (≈ 3 % de Pluton)",
   "largest_members": [
@@ -33,7 +33,7 @@
     {
       "tab": "orbits",
       "section": "orbit-regimes",
-      "why": "La ceinture occupe l'anneau 2,2–3,2 AU. Les lacunes de Kirkwood — zones orbitales vides aux résonances de moyen mouvement de Jupiter — structurent la population."
+      "why": "La ceinture occupe l'anneau 2,2–3,2 UA. Les lacunes de Kirkwood — zones orbitales vides aux résonances de moyen mouvement de Jupiter — structurent la population."
     },
     {
       "tab": "orbits",

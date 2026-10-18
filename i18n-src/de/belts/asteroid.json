@@ -1,7 +1,7 @@
 {
   "name": "Asteroidengürtel",
   "kind": "Hauptgürtel — Gesteinspopulation",
-  "location": "Zwischen Mars und Jupiter · 2,2–3,2 AU von der Sonne",
+  "location": "Zwischen Mars und Jupiter · 2,2–3,2 AE von der Sonne",
   "population_estimate": "1,1–1,9 Millionen Körper größer als 1 km, Hunderte Millionen größer als 100 m",
   "total_mass_relative": "≈ 4 % des Mondes (≈ 3 % von Pluto)",
   "largest_members": [
@@ -33,7 +33,7 @@
     {
       "tab": "orbits",
       "section": "orbit-regimes",
-      "why": "Der Gürtel erstreckt sich über die 2,2–3,2 AU Annulus. Kirkwood-Lücken — leere Umlaufbahnen bei Jupiter-Mittelbewegungs-Resonanzen — prägen die Bevölkerung."
+      "why": "Der Gürtel erstreckt sich über die 2,2–3,2 AE Annulus. Kirkwood-Lücken — leere Umlaufbahnen bei Jupiter-Mittelbewegungs-Resonanzen — prägen die Bevölkerung."
     },
     {
       "tab": "orbits",

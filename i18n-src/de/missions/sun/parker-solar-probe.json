@@ -2,7 +2,7 @@
   "name": "Parker Solar Probe",
   "type": "SONNEN-ORBITER · AKTIV",
   "first": "Raumfahrzeug in größter Nähe zur Sonne je geflogen (6,1 M km, 9,86 R☉); erstes Raumfahrzeug, das die Sonnenkorona betreten hat (2021-04-28); schnellstes von Menschen geschaffenes Objekt (~191 km/s)",
-  "description": "Parker Solar Probe führte den höchsten Energiestart durch, der jemals für eine Wissenschaftsmission geflogen wurde — C3 von 154 km²/s², was eine speziell angepasste Star 48BV-Feststoffoberstufe auf einer Delta IV Heavy erforderte, um die Erde zu verlassen und in eine Sonnenfallbahn zu gelangen. Sieben Venusgravitationsassistenten über sechs Jahre senkten das Perihel schrittweise von 0,16 AU (P1, 2018-11-05) auf 0,046 AU (P22, 2024-12-24 — 9,86 Sonnenradien, 6,1 Millionen km von der Oberfläche). Bei P8 am 2021-04-28 drang Parker unter die kritische Alfvén-Oberfläche — das erste Raumfahrzeug, das jemals die Korona der Sonne betreten hat. Bei P22 erreichte es ~191 km/s und wurde damit das schnellste von Menschen geschaffene Objekt überhaupt. Das 11,43 cm dicke Kohlenstoff-Kohlenstoff-Wärmeschutzschild hielt 1.377 °C aus, während das Raumfahrzeugbus 1 Meter dahinter Raumtemperatur behielt.",
+  "description": "Parker Solar Probe führte den höchsten Energiestart durch, der jemals für eine Wissenschaftsmission geflogen wurde — C3 von 154 km²/s², was eine speziell angepasste Star 48BV-Feststoffoberstufe auf einer Delta IV Heavy erforderte, um die Erde zu verlassen und in eine Sonnenfallbahn zu gelangen. Sieben Venusgravitationsassistenten über sechs Jahre senkten das Perihel schrittweise von 0,16 AE (P1, 2018-11-05) auf 0,046 AE (P22, 2024-12-24 — 9,86 Sonnenradien, 6,1 Millionen km von der Oberfläche). Bei P8 am 2021-04-28 drang Parker unter die kritische Alfvén-Oberfläche — das erste Raumfahrzeug, das jemals die Korona der Sonne betreten hat. Bei P22 erreichte es ~191 km/s und wurde damit das schnellste von Menschen geschaffene Objekt überhaupt. Das 11,43 cm dicke Kohlenstoff-Kohlenstoff-Wärmeschutzschild hielt 1.377 °C aus, während das Raumfahrzeugbus 1 Meter dahinter Raumtemperatur behielt.",
   "events": [
     {
       "met": 0,
@@ -19,7 +19,7 @@
     {
       "met": 85,
       "label": "P1 — ERSTES PERIHEL",
-      "note": "2018-11-05, 0,16 AU. Nähe zur Sonne wie nie zuvor, Helios 2 übertreffend.",
+      "note": "2018-11-05, 0,16 AE. Nähe zur Sonne wie nie zuvor, Helios 2 übertreffend.",
       "type": "info"
     },
     {

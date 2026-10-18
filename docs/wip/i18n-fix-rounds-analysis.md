@@ -183,6 +183,11 @@ Item 3 change rate per locale, where available: zh-CN 76.0% (universe), sr-Cyrl 
 
 ## 5. Hebrew from the start (he, Modern Hebrew, RTL, non-Latin)
 
+**Sequencing (operator, 2026-10-18):** Hebrew (9c) is phase 3. Phase 2 comes first: the
+item-3 backlog (glossary names, Cyrillic case endings, unit and separator sweeps, the
+English source errors) plus the review passes those fixes need, so the 13 existing
+locales are stable before a new one is translated against them.
+
 What exists for `he` (grep results):
 
 - `translate-quality.mjs:21` language name, `:72` rules (no niqqud; names Latin "except Israeli names"), `:97` script test; `NAME_POLICY` line 35 names Israeli names.

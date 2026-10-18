@@ -1,0 +1,308 @@
+[
+ {
+  "rel": "fleet/orbiter/bepicolombo.json",
+  "at": "description",
+  "old": "Missione congiunta ESA + JAXA. Lanciata il 2018-10-20 su un Ariane 5 ECA. Il Mercury Transfer Module trasporta lo stack durante una crociera di 7 anni con flyby (1 Terra + 2 Venere + 6 assistenze gravitazionali da Mercurio) prima dell'inserimento in orbita su Mercurio il 2026-11-21. All'arrivo i due orbiter scientifici si separano: Mercury Planetary Orbiter (MPO) dell'ESA vola un'orbita polare 480 × 1500 km con 11 strumenti per la composizione della superficie, topografia, gravità ed esosfera; Mio della JAXA (Mercury Magnetospheric Orbiter) vola un'orbita polare 590 × 11 640 km con 5 strumenti per la magnetosfera e il plasma. Insieme sono i primi spacecraft europei + giapponesi mai in orbita attorno a Mercurio.",
+  "new": "Missione congiunta ESA + JAXA. Lanciata il 2018-10-20 su un Ariane 5 ECA. Il Mercury Transfer Module trasporta lo stack durante una crociera di 7 anni con flyby (1 Terra + 2 Venere + 6 fionde gravitazionali da Mercurio) prima dell'inserimento in orbita su Mercurio il 2026-11-21. All'arrivo i due orbiter scientifici si separano: Mercury Planetary Orbiter (MPO) dell'ESA vola un'orbita polare 480 × 1500 km con 11 strumenti per la composizione della superficie, topografia, gravità ed esosfera; Mio della JAXA (Mercury Magnetospheric Orbiter) vola un'orbita polare 590 × 11 640 km con 5 strumenti per la magnetosfera e il plasma. Insieme sono i primi spacecraft europei + giapponesi mai in orbita attorno a Mercurio."
+ },
+ {
+  "rel": "fleet/orbiter/juice.json",
+  "at": "description",
+  "old": "Esploratore delle lune ghiacciate di Giove. Lanciato il 14-04-2023 su Ariane 5 ECA+ da Kourou per una crociera di 8,5 anni con assistenze gravitazionali Terra-Venere-Terra-Terra fino all'arrivo a Giove a luglio 2031. Nel sistema gioviano JUICE compie ~35 flyby di Europa, Ganimede e Callisto prima di entrare in orbita attorno a Ganimede nel 2034 — primo veicolo in assoluto a orbitare una luna diversa dalla Luna terrestre. Carico di dieci strumenti incluso il radar penetrante di ghiaccio RIME.",
+  "new": "Esploratore delle lune ghiacciate di Giove. Lanciato il 14-04-2023 su Ariane 5 ECA+ da Kourou per una crociera di 8,5 anni con fionde gravitazionali Terra-Venere-Terra-Terra fino all'arrivo a Giove a luglio 2031. Nel sistema gioviano JUICE compie ~35 flyby di Europa, Ganimede e Callisto prima di entrare in orbita attorno a Ganimede nel 2034 — primo veicolo in assoluto a orbitare una luna diversa dalla Luna terrestre. Carico di dieci strumenti incluso il radar penetrante di ghiaccio RIME."
+ },
+ {
+  "rel": "fleet/orbiter/messenger.json",
+  "at": "tagline",
+  "old": "Primo orbiter di Mercurio — 6 assistenze gravitazionali planetarie in 6,6 anni prima dell'inserimento nel 2011",
+  "new": "Primo orbiter di Mercurio — 6 fionde gravitazionali planetarie in 6,6 anni prima dell'inserimento nel 2011"
+ },
+ {
+  "rel": "fleet/orbiter/messenger.json",
+  "at": "description",
+  "old": "Missione Discovery NASA (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). Lanciata il 03/08/2004 su Delta II 7925H-9.5. La crociera di 6,6 anni ha usato 6 assistenze gravitazionali (1 Terra, 2 Venere, 3 Mercurio) per perdere ~5 km/s di energia eliocentrica. Inserimento in orbita mercuriana il 18/03/2011. Scoperte: ghiaccio d'acqua in crateri polari in ombra permanente, materiale scuro ricco di organici ai poli, campo magnetico spostato dal centro planetario. Ha impattato Mercurio il 30/04/2015 dopo aver esaurito il propellente.",
+  "new": "Missione Discovery NASA (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). Lanciata il 03/08/2004 su Delta II 7925H-9.5. La crociera di 6,6 anni ha usato 6 fionde gravitazionali (1 Terra, 2 Venere, 3 Mercurio) per perdere ~5 km/s di energia eliocentrica. Inserimento in orbita mercuriana il 18/03/2011. Scoperte: ghiaccio d'acqua in crateri polari in ombra permanente, materiale scuro ricco di organici ai poli, campo magnetico spostato dal centro planetario. Ha impattato Mercurio il 30/04/2015 dopo aver esaurito il propellente."
+ },
+ {
+  "rel": "fleet/orbiter/pioneer-11.json",
+  "at": "tagline",
+  "old": "Prima sonda a incontrare Saturno — sorvolo di Giove 1974 poi assistenza gravitazionale a Saturno 1979",
+  "new": "Prima sonda a incontrare Saturno — sorvolo di Giove 1974 poi fionda gravitazionale a Saturno 1979"
+ },
+ {
+  "rel": "fleet/orbiter/pioneer-11.json",
+  "at": "description",
+  "old": "Sonda stabilizzata dalla rotazione e alimentata da RTG (~259 kg), gemella di Pioneer 10 con lo stesso bus e il messaggio Pioneer Plaque diretto alle stelle. Lanciata il 1973-04-06 su un Atlas SLV-3D Centaur D-1A + Star-37E da Cape Canaveral. Sorvolo di Giove il 1974-12-03 a 43 000 km — il più ravvicinato di qualsiasi incontro Pioneer, ha restituito le prime immagini delle regioni polari e l'assistenza gravitazionale necessaria per raggiungere Saturno. Incontro con Saturno il 1979-09-01 a 21 000 km dalle nuvole superficiali — prime immagini dettagliate del sistema di anelli, scoperta di un nuovo anello (anello F) e di una nuova luna, conferma del campo magnetico quasi perfettamente allineato di Saturno. Ha continuato le osservazioni verso l'esterno fino all'ultimo contatto il 1995-11-24. Ora si trova a ~93 UA dal Sole, diretta verso Aquila.",
+  "new": "Sonda stabilizzata dalla rotazione e alimentata da RTG (~259 kg), gemella di Pioneer 10 con lo stesso bus e il messaggio Pioneer Plaque diretto alle stelle. Lanciata il 1973-04-06 su un Atlas SLV-3D Centaur D-1A + Star-37E da Cape Canaveral. Sorvolo di Giove il 1974-12-03 a 43 000 km — il più ravvicinato di qualsiasi incontro Pioneer, ha restituito le prime immagini delle regioni polari e la fionda gravitazionale necessaria per raggiungere Saturno. Incontro con Saturno il 1979-09-01 a 21 000 km dalle nuvole superficiali — prime immagini dettagliate del sistema di anelli, scoperta di un nuovo anello (anello F) e di una nuova luna, conferma del campo magnetico quasi perfettamente allineato di Saturno. Ha continuato le osservazioni verso l'esterno fino all'ultimo contatto il 1995-11-24. Ora si trova a ~93 UA dal Sole, diretta verso Aquila."
+ },
+ {
+  "rel": "fleet/orbiter/psyche-spacecraft.json",
+  "at": "description",
+  "old": "La missione NASA verso un asteroide di tipo M di ~230 km ritenuto essere il nucleo metallico esposto di un proto-pianeta differenziato. Lanciato il 2023-10-13 da un Falcon Heavy da Kennedy LC-39A; utilizza quattro propulsori ionici ad effetto Hall SPT-140 come propulsione principale di crociera e un assistenza gravitazionale di Marte nel 2026 per raggiungere il rendezvous con Psyche nel 2029. Trasporta un magnetometro, un imaging multispettrale e uno spettrometro a raggi gamma e neutroni.",
+  "new": "La missione NASA verso un asteroide di tipo M di ~230 km ritenuto essere il nucleo metallico esposto di un proto-pianeta differenziato. Lanciato il 2023-10-13 da un Falcon Heavy da Kennedy LC-39A; utilizza quattro propulsori ionici ad effetto Hall SPT-140 come propulsione principale di crociera e una fionda gravitazionale di Marte nel 2026 per raggiungere il rendezvous con Psyche nel 2029. Trasporta un magnetometro, un imaging multispettrale e uno spettrometro a raggi gamma e neutroni."
+ },
+ {
+  "rel": "fleet/orbiter/ulysses.json",
+  "at": "tagline",
+  "old": "Prima sonda a osservare i poli del Sole da sopra e sotto l'eclittica — assistenza gravitazionale di Giove 1992",
+  "new": "Prima sonda a osservare i poli del Sole da sopra e sotto l'eclittica — fionda gravitazionale di Giove 1992"
+ },
+ {
+  "rel": "missions/asteroid/hayabusa2.json",
+  "at": "description",
+  "old": "Follow-on della JAXA al primo Hayabusa. Lanciato il 2014-12-03, Hayabusa2 ha raggiunto l'asteroide carbonaceo vicino alla Terra (162173) Ryugu il 2018-06-27 dopo una navigazione di 3,5 anni a bassa spinta con ioni e assistenza gravitazionale terrestre. Operazioni sulla superficie 2018–2019: due campionamenti touch-and-go delimitanti l'esperimento Small Carry-on Impactor (2019-04-05) che ha scavato un cratere di 14 m per il secondo campione. Tre rover MINERVA-II hanno restituito le prime immagini della superficie di un asteroide; il lander MASCOT della DLR/CNES ha operato per 17 ore. La capsula di ritorno con i campioni è rientrata sopra Woomera il 2020-12-05 (UTC; recuperata il 2020-12-06 ora locale/JST) con 5,4 g di materiale pristino da Ryugu — il primo campione di asteroide con stratigrafia subsuperficiale. Missione estesa: sorvolo di 98943 Torifune (2001 CC21) nel 2026-07; rendezvous con l'asteroide in rotazione veloce (1998 KY26) previsto per il 2031-07.",
+  "new": "Follow-on della JAXA al primo Hayabusa. Lanciato il 2014-12-03, Hayabusa2 ha raggiunto l'asteroide carbonaceo vicino alla Terra (162173) Ryugu il 2018-06-27 dopo una navigazione di 3,5 anni a bassa spinta con ioni e fionda gravitazionale terrestre. Operazioni sulla superficie 2018–2019: due campionamenti touch-and-go delimitanti l'esperimento Small Carry-on Impactor (2019-04-05) che ha scavato un cratere di 14 m per il secondo campione. Tre rover MINERVA-II hanno restituito le prime immagini della superficie di un asteroide; il lander MASCOT della DLR/CNES ha operato per 17 ore. La capsula di ritorno con i campioni è rientrata sopra Woomera il 2020-12-05 (UTC; recuperata il 2020-12-06 ora locale/JST) con 5,4 g di materiale pristino da Ryugu — il primo campione di asteroide con stratigrafia subsuperficiale. Missione estesa: sorvolo di 98943 Torifune (2001 CC21) nel 2026-07; rendezvous con l'asteroide in rotazione veloce (1998 KY26) previsto per il 2031-07."
+ },
+ {
+  "rel": "missions/asteroid/hayabusa2.json",
+  "at": "events.1.note",
+  "old": "L'assistenza gravitazionale terrestre fase l'orbita di rendezvous.",
+  "new": "La fionda gravitazionale terrestre fase l'orbita di rendezvous."
+ },
+ {
+  "rel": "missions/asteroid/near-shoemaker.json",
+  "at": "description",
+  "old": "Missione del programma Discovery della NASA, guidata dall'APL dell'Università Johns Hopkins. Lanciata il 17-02-1996, NEAR Shoemaker ha volato vicino all'asteroide 253 Mathilde (27-06-1997) prima di un assistenza gravitazionale terrestre (23-01-1998) che ha messo in fase la sua orbita per corrispondere a Eros. L'inserimento orbitale attorno a 433 Eros il 14-02-2000 ha iniziato un sondaggio di 12 mesi che ha restituito 160.000 immagini e mappe complete spettrali, composizionali e gravitazionali del corpo di tipo S di 34 × 11 × 11 km. Il 12-02-2001, cinque bruciature di abbassamento orbitale hanno portato il veicolo a 5 km di altitudine; la discesa controllata a ~1,7 m/s si è conclusa con un allunaggio dolce vicino alla sella di Himeros (35°N, 280°O), restituendo immagini fino a 125 m dalla superficie. Il veicolo spaziale è sopravvissuto e ha trasmesso dalla superficie per ~16 giorni.",
+  "new": "Missione del programma Discovery della NASA, guidata dall'APL dell'Università Johns Hopkins. Lanciata il 17-02-1996, NEAR Shoemaker ha volato vicino all'asteroide 253 Mathilde (27-06-1997) prima di una fionda gravitazionale terrestre (23-01-1998) che ha messo in fase la sua orbita per corrispondere a Eros. L'inserimento orbitale attorno a 433 Eros il 14-02-2000 ha iniziato un sondaggio di 12 mesi che ha restituito 160.000 immagini e mappe complete spettrali, composizionali e gravitazionali del corpo di tipo S di 34 × 11 × 11 km. Il 12-02-2001, cinque bruciature di abbassamento orbitale hanno portato il veicolo a 5 km di altitudine; la discesa controllata a ~1,7 m/s si è conclusa con un allunaggio dolce vicino alla sella di Himeros (35°N, 280°O), restituendo immagini fino a 125 m dalla superficie. Il veicolo spaziale è sopravvissuto e ha trasmesso dalla superficie per ~16 giorni."
+ },
+ {
+  "rel": "missions/asteroid/near-shoemaker.json",
+  "at": "events.2.label",
+  "old": "ASSISTENZA GRAVITAZIONALE TERRESTRE",
+  "new": "FIONDA GRAVITAZIONALE TERRESTRE"
+ },
+ {
+  "rel": "missions/comet/rosetta.json",
+  "at": "description",
+  "old": "La missione di punta dell'ESA per l'incontro con una cometa. Dopo un viaggio di 10 anni che ha incluso tre assistenze gravitazionali dalla Terra, un'assistenza da Marte, due sorvoli di asteroidi e 957 giorni di ibernazione nello spazio profondo, Rosetta ha raggiunto la cometa 67P/Churyumov–Gerasimenko nell'agosto 2014 e l'ha orbitata per oltre due anni passando attraverso il perielio e uscendo dal lato opposto. Il lander Philae ha raggiunto la superficie di 67P il 2014-11-12 — il primo atterraggio morbido su una cometa — e ha trasmesso ~64 ore di dati scientifici nonostante il fallimento dell'arpione lo abbia lasciato nell'ombra di una scogliera. La stessa Rosetta ha concluso la missione con una discesa controllata sulla superficie di 67P il 2016-09-30. Risultati principali: molecole organiche e glicina nella chioma; il rapporto D/H misurato inizialmente in 67P (≈3× terrestre) aveva contraddetto l'ipotesi che le comete della famiglia gioviana fossero la fonte dell'acqua terrestre — un risultato che una ri-analisi del 2024 ha messo in discussione dopo aver trovato un errore di misurazione; le prime mappe dettagliate della geometria del degassamento cometario.",
+  "new": "La missione di punta dell'ESA per l'incontro con una cometa. Dopo un viaggio di 10 anni che ha incluso tre fionde gravitazionali dalla Terra, una fionda da Marte, due sorvoli di asteroidi e 957 giorni di ibernazione nello spazio profondo, Rosetta ha raggiunto la cometa 67P/Churyumov–Gerasimenko nell'agosto 2014 e l'ha orbitata per oltre due anni passando attraverso il perielio e uscendo dal lato opposto. Il lander Philae ha raggiunto la superficie di 67P il 2014-11-12 — il primo atterraggio morbido su una cometa — e ha trasmesso ~64 ore di dati scientifici nonostante il fallimento dell'arpione lo abbia lasciato nell'ombra di una scogliera. La stessa Rosetta ha concluso la missione con una discesa controllata sulla superficie di 67P il 2016-09-30. Risultati principali: molecole organiche e glicina nella chioma; il rapporto D/H misurato inizialmente in 67P (≈3× terrestre) aveva contraddetto l'ipotesi che le comete della famiglia gioviana fossero la fonte dell'acqua terrestre — un risultato che una ri-analisi del 2024 ha messo in discussione dopo aver trovato un errore di misurazione; le prime mappe dettagliate della geometria del degassamento cometario."
+ },
+ {
+  "rel": "missions/comet/rosetta.json",
+  "at": "events.1.note",
+  "old": "Primo dei tre assistenza gravitazionali dalla Terra per acquisire velocità per il rendez-vous cometario.",
+  "new": "Primo dei tre fionde gravitazionali dalla Terra per acquisire velocità per il rendez-vous cometario."
+ },
+ {
+  "rel": "missions/comet/rosetta.json",
+  "at": "events.2.note",
+  "old": "Singola assistenza gravitazionale da Marte + prime immagini ravvicinate di Fobos e Marte a 250 km.",
+  "new": "Singola fionda gravitazionale da Marte + prime immagini ravvicinate di Fobos e Marte a 250 km."
+ },
+ {
+  "rel": "missions/didymos/hera.json",
+  "at": "description",
+  "old": "Hera è il contributo dell'Agenzia Spaziale Europea al primo esperimento di difesa planetaria dell'umanità. Nel 2022 la sonda DART della NASA si è deliberatamente schiantata su Dimorphos — la piccola luna dell'asteroide Didymos — e ne ha accorciato misurabilmente l'orbita. Hera, lanciata nell'ottobre 2024 su un Falcon 9, sta volando verso lo stesso asteroide binario (con un'assistenza gravitazionale marziana nel 2025 lungo il percorso) per condurre l'indagine dettagliata post-impatto che DART non ha potuto effettuare: le dimensioni del cratere, la massa e la struttura interna di Dimorphos, e con precisione quanto momento l'impatto ha trasferito. Insieme, DART e Hera trasformano una dimostrazione una tantum in una tecnica di deflessione ripetibile e ben caratterizzata. Hera trasporta due CubeSats, Juventas e Milani, per sondaggio radar ravvicinato e mineralogia.",
+  "new": "Hera è il contributo dell'Agenzia Spaziale Europea al primo esperimento di difesa planetaria dell'umanità. Nel 2022 la sonda DART della NASA si è deliberatamente schiantata su Dimorphos — la piccola luna dell'asteroide Didymos — e ne ha accorciato misurabilmente l'orbita. Hera, lanciata nell'ottobre 2024 su un Falcon 9, sta volando verso lo stesso asteroide binario (con una fionda gravitazionale marziana nel 2025 lungo il percorso) per condurre l'indagine dettagliata post-impatto che DART non ha potuto effettuare: le dimensioni del cratere, la massa e la struttura interna di Dimorphos, e con precisione quanto momento l'impatto ha trasferito. Insieme, DART e Hera trasformano una dimostrazione una tantum in una tecnica di deflessione ripetibile e ben caratterizzata. Hera trasporta due CubeSats, Juventas e Milani, per sondaggio radar ravvicinato e mineralogia."
+ },
+ {
+  "rel": "missions/itokawa/hayabusa1.json",
+  "at": "events.1.label",
+  "old": "ASSISTENZA GRAVITAZIONALE TERRESTRE",
+  "new": "FIONDA GRAVITAZIONALE TERRESTRE"
+ },
+ {
+  "rel": "missions/jupiter/europa-clipper.json",
+  "at": "description",
+  "old": "Europa Clipper si dirige verso Giove per studiare Europa — una luna ghiacciata di 3.121 km ritenuta ospitare un oceano di acqua liquida globale sotto un guscio di ghiaccio di 15-25 km, l'ambiente potenzialmente abitabile più accessibile del sistema solare. Lanciato il 2024-10-14 su un Falcon Heavy a C3 41,7. Un'assistenza gravitazionale da Marte a marzo 2025 ha curvato la traiettoria verso la Terra; un'assistenza gravitazionale da Terra nel 2026-12 fornisce la spinta finale verso l'esterno; arriva a Giove il 2030-04-11 per l'inserimento orbitale. Il tour orbitale esegue 49 fly-by ravvicinati di Europa nel corso di quattro anni — passando entro 25 km dalla superficie di Europa nei passaggi più vicini, progettato per mappare l'intera luna limitando la dose di radiazione del veicolo spaziale nelle brutali fasce di radiazione di Giove. Strumenti: radar REASON per penetrare il ghiaccio, spettrometro di massa MASPEX (campiona il materiale del pennacchio se presente), termocamera E-THEMIS (individua i geyser attivi), magnetometro + strumenti al plasma confermano la profondità dell'oceano dalla risposta magnetica indotta.",
+  "new": "Europa Clipper si dirige verso Giove per studiare Europa — una luna ghiacciata di 3.121 km ritenuta ospitare un oceano di acqua liquida globale sotto un guscio di ghiaccio di 15-25 km, l'ambiente potenzialmente abitabile più accessibile del sistema solare. Lanciato il 2024-10-14 su un Falcon Heavy a C3 41,7. Una fionda gravitazionale da Marte a marzo 2025 ha curvato la traiettoria verso la Terra; una fionda gravitazionale da Terra nel 2026-12 fornisce la spinta finale verso l'esterno; arriva a Giove il 2030-04-11 per l'inserimento orbitale. Il tour orbitale esegue 49 fly-by ravvicinati di Europa nel corso di quattro anni — passando entro 25 km dalla superficie di Europa nei passaggi più vicini, progettato per mappare l'intera luna limitando la dose di radiazione del veicolo spaziale nelle brutali fasce di radiazione di Giove. Strumenti: radar REASON per penetrare il ghiaccio, spettrometro di massa MASPEX (campiona il materiale del pennacchio se presente), termocamera E-THEMIS (individua i geyser attivi), magnetometro + strumenti al plasma confermano la profondità dell'oceano dalla risposta magnetica indotta."
+ },
+ {
+  "rel": "missions/jupiter/europa-clipper.json",
+  "at": "events.1.label",
+  "old": "ASSISTENZA GRAVITAZIONALE DA MARTE",
+  "new": "FIONDA GRAVITAZIONALE DA MARTE"
+ },
+ {
+  "rel": "missions/jupiter/europa-clipper.json",
+  "at": "events.2.label",
+  "old": "ASSISTENZA GRAVITAZIONALE DA TERRA",
+  "new": "FIONDA GRAVITAZIONALE DA TERRA"
+ },
+ {
+  "rel": "missions/jupiter/juice.json",
+  "at": "description",
+  "old": "JUICE — ammiraglia di classe L dell'ESA, lanciata il 2023-04-14. La crociera di 8 anni utilizza una delle sequenze di fionda gravitazionale più complesse mai realizzate: un'assistenza gravitazionale Luna-Terra il 2024-08-19, Venere 2025-08-31, seguito da due ulteriori passaggi ravvicinati della Terra nel 2026 e nel 2029. L'inserimento in orbita gioviana è previsto per il 2031-07-21. Dopo 35 sorvoli ravvicinati di Europa, Ganimede e Callisto nel corso di 3,5 anni, JUICE eseguirà una manovra verso un'orbita dedicata intorno a Ganimede il 2034-12-31 — il primo veicolo spaziale mai messo in orbita attorno a una luna di un altro pianeta. La missione termina nel 2035 con l'impatto su Ganimede. Scienza primaria: esistenza e proprietà degli oceani subsuperficiali attraverso le lune galileiane ghiacciate, composizione della calotta di ghiaccio e riscaldamento mareale, e struttura della magnetosfera gioviana.",
+  "new": "JUICE — ammiraglia di classe L dell'ESA, lanciata il 2023-04-14. La crociera di 8 anni utilizza una delle sequenze di fionda gravitazionale più complesse mai realizzate: una fionda gravitazionale Luna-Terra il 2024-08-19, Venere 2025-08-31, seguito da due ulteriori passaggi ravvicinati della Terra nel 2026 e nel 2029. L'inserimento in orbita gioviana è previsto per il 2031-07-21. Dopo 35 sorvoli ravvicinati di Europa, Ganimede e Callisto nel corso di 3,5 anni, JUICE eseguirà una manovra verso un'orbita dedicata intorno a Ganimede il 2034-12-31 — il primo veicolo spaziale mai messo in orbita attorno a una luna di un altro pianeta. La missione termina nel 2035 con l'impatto su Ganimede. Scienza primaria: esistenza e proprietà degli oceani subsuperficiali attraverso le lune galileiane ghiacciate, composizione della calotta di ghiaccio e riscaldamento mareale, e struttura della magnetosfera gioviana."
+ },
+ {
+  "rel": "missions/jupiter/juice.json",
+  "at": "events.1.note",
+  "old": "Prima assistenza gravitazionale Luna-Terra — Luna e Terra in un'unica manovra.",
+  "new": "Prima fionda gravitazionale Luna-Terra — Luna e Terra in un'unica manovra."
+ },
+ {
+  "rel": "missions/jupiter/juice.json",
+  "at": "events.2.note",
+  "old": "Assistenza gravitazionale di Venere nel ritorno verso due ulteriori passaggi della Terra.",
+  "new": "Fionda gravitazionale di Venere nel ritorno verso due ulteriori passaggi della Terra."
+ },
+ {
+  "rel": "missions/jupiter/juno.json",
+  "at": "events.1.label",
+  "old": "ASSISTENZA GRAVITAZIONALE TERRESTRE",
+  "new": "FIONDA GRAVITAZIONALE TERRESTRE"
+ },
+ {
+  "rel": "missions/mercury/mariner10.json",
+  "at": "first",
+  "old": "Primo flyby di Mercurio; primo flyby a doppio pianeta; prima missione con assistenza gravitazionale",
+  "new": "Primo flyby di Mercurio; primo flyby a doppio pianeta; prima missione con fionda gravitazionale"
+ },
+ {
+  "rel": "missions/mercury/mariner10.json",
+  "at": "description",
+  "old": "Prima sonda a visitare Mercurio, prima a sorvolare due pianeti e prima a utilizzare un'assistenza gravitazionale per raggiungere la sua destinazione. Lanciata il 1973-11-03 alle 05:45 UTC da Cape Canaveral LC-36B su un Atlas SLV-3D Centaur AC-34. Mariner 10 ha sorvolato Venere il 1974-02-05 (5768 km di massima approssimazione, prima imaging UV delle bande nuvolose di Venere) usando l'incontro per abbassare il suo perielio fino al dominio orbitale di Mercurio — la prima traiettoria di assistenza gravitazionale deliberata della storia spaziale. Ha effettuato tre flyby di Mercurio: 1974-03-29 (703 km), 1974-09-21 (48069 km) e 1975-03-16 (327 km). Ha fotografato circa il 45 % della superficie di Mercurio — le uniche immagini risolte disponibili fino a MESSENGER (2008-2015). Ha scoperto il campo magnetico intrinseco di Mercurio e la sottile esosfera di sodio-elio. La gestione termica dei pannelli solari era un problema di ingegneria di missione aperto: gli scienziati del progetto inclinarono i pannelli e fecero ruotare la sonda per mantenerli sotto i 115 °C. La missione si è conclusa il 1975-03-24 quando il propellente di azoto per il controllo d'assetto si è esaurito; si presume che la sonda sia in orbita eliocentrica, passando periodicamente vicino a Mercurio.",
+  "new": "Prima sonda a visitare Mercurio, prima a sorvolare due pianeti e prima a utilizzare una fionda gravitazionale per raggiungere la sua destinazione. Lanciata il 1973-11-03 alle 05:45 UTC da Cape Canaveral LC-36B su un Atlas SLV-3D Centaur AC-34. Mariner 10 ha sorvolato Venere il 1974-02-05 (5768 km di massima approssimazione, prima imaging UV delle bande nuvolose di Venere) usando l'incontro per abbassare il suo perielio fino al dominio orbitale di Mercurio — la prima traiettoria di fionda gravitazionale deliberata della storia spaziale. Ha effettuato tre flyby di Mercurio: 1974-03-29 (703 km), 1974-09-21 (48069 km) e 1975-03-16 (327 km). Ha fotografato circa il 45 % della superficie di Mercurio — le uniche immagini risolte disponibili fino a MESSENGER (2008-2015). Ha scoperto il campo magnetico intrinseco di Mercurio e la sottile esosfera di sodio-elio. La gestione termica dei pannelli solari era un problema di ingegneria di missione aperto: gli scienziati del progetto inclinarono i pannelli e fecero ruotare la sonda per mantenerli sotto i 115 °C. La missione si è conclusa il 1975-03-24 quando il propellente di azoto per il controllo d'assetto si è esaurito; si presume che la sonda sia in orbita eliocentrica, passando periodicamente vicino a Mercurio."
+ },
+ {
+  "rel": "missions/psyche/psyche-mission.json",
+  "at": "description",
+  "old": "Psyche si spinge verso il nucleo di nickel-ferro esposto di un proto-pianeta differenziato — un corpo metallico di 226 km che potrebbe essere l'analogo più prossimo al nucleo terrestre tra quelli accessibili. Lanciato il 2023-10-13 con un Falcon Heavy da Kennedy LC-39A. Quattro propulsori ionici SPT-140 a effetto Hall spiralizzano la traiettoria verso l'esterno; un'assistenza gravitazionale di Marte nel maggio 2026 (distanza minima 4.609 km) ha fornito l'energia che la sola spinta ionica non avrebbe potuto consegnare in tempo. Arrivo pianificato agosto 2029, seguito da una discesa a quattro fasi orbitali di 26 mesi (A → B → C → D) che mapperà la gravità, il magnetismo, la topografia e la composizione dell'asteroide. Se l'ipotesi del nucleo metallico è corretta, Psyche apparirà diverso da qualsiasi altro corpo celeste visitato — superficie di metallo nudo, depositi di solfuro di ferro, nessun del caos di asteroidi pile di macerie tipici.",
+  "new": "Psyche si spinge verso il nucleo di nickel-ferro esposto di un proto-pianeta differenziato — un corpo metallico di 226 km che potrebbe essere l'analogo più prossimo al nucleo terrestre tra quelli accessibili. Lanciato il 2023-10-13 con un Falcon Heavy da Kennedy LC-39A. Quattro propulsori ionici SPT-140 a effetto Hall spiralizzano la traiettoria verso l'esterno; una fionda gravitazionale di Marte nel maggio 2026 (distanza minima 4.609 km) ha fornito l'energia che la sola spinta ionica non avrebbe potuto consegnare in tempo. Arrivo pianificato agosto 2029, seguito da una discesa a quattro fasi orbitali di 26 mesi (A → B → C → D) che mapperà la gravità, il magnetismo, la topografia e la composizione dell'asteroide. Se l'ipotesi del nucleo metallico è corretta, Psyche apparirà diverso da qualsiasi altro corpo celeste visitato — superficie di metallo nudo, depositi di solfuro di ferro, nessun del caos di asteroidi pile di macerie tipici."
+ },
+ {
+  "rel": "missions/psyche/psyche-mission.json",
+  "at": "events.2.label",
+  "old": "ASSISTENZA GRAVITAZIONALE DI MARTE",
+  "new": "FIONDA GRAVITAZIONALE DI MARTE"
+ },
+ {
+  "rel": "missions/saturn/cassini.json",
+  "at": "description",
+  "old": "Missione congiunta NASA-ESA-ASI. Dopo una crociera di 7 anni con assistenze gravitazionali a Venere, Terra e Giove, Cassini è entrata in orbita attorno a Saturno il 01-07-2004 e ha operato per 13 anni, compiendo 294 orbite e 162 sorvoli ravvicinati di lune. Ha scoperto i pennacchi al polo sud di Encelado (geyser attivi di ghiaccio d'acqua), mappato col radar i laghi di metano di Titano e risolto la tempesta polare esagonale di Saturno. Il Gran Finale (aprile–settembre 2017) ha intrecciato 22 orbite nello spazio tra anelli e cime nuvolose, terminando con una rientrata atmosferica controllata per evitare di contaminare Encelado o Titano con microbi terrestri.",
+  "new": "Missione congiunta NASA-ESA-ASI. Dopo una crociera di 7 anni con fionde gravitazionali a Venere, Terra e Giove, Cassini è entrata in orbita attorno a Saturno il 01-07-2004 e ha operato per 13 anni, compiendo 294 orbite e 162 sorvoli ravvicinati di lune. Ha scoperto i pennacchi al polo sud di Encelado (geyser attivi di ghiaccio d'acqua), mappato col radar i laghi di metano di Titano e risolto la tempesta polare esagonale di Saturno. Il Gran Finale (aprile–settembre 2017) ha intrecciato 22 orbite nello spazio tra anelli e cime nuvolose, terminando con una rientrata atmosferica controllata per evitare di contaminare Encelado o Titano con microbi terrestri."
+ },
+ {
+  "rel": "missions/saturn/cassini.json",
+  "at": "events.1.label",
+  "old": "ASSISTENZA GRAVITAZIONALE DI VENERE",
+  "new": "FIONDA GRAVITAZIONALE DI VENERE"
+ },
+ {
+  "rel": "missions/sun/parker-solar-probe.json",
+  "at": "description",
+  "old": "Parker Solar Probe ha eseguito il lancio a più alta energia mai realizzato per una missione scientifica — C3 di 154 km²/s², richiedendo uno stadio solido Star 48BV personalizzato sopra un Delta IV Heavy soltanto per sfuggire alla Terra in una traiettoria di caduta verso il Sole. Sette assistenze gravitazionali di Venere nel corso di sei anni hanno progressivamente abbassato il perielio da 0,16 UA (P1, 2018-11-05) a 0,046 UA (P22, 2024-12-24 — 9,86 raggi solari, 6,1 milioni di km dalla superficie). Al P8 il 2021-04-28 Parker è scesa al di sotto della superficie critica di Alfvén — il primo veicolo spaziale mai entrato nella corona solare. Al P22 ha raggiunto ~191 km/s, diventando l'oggetto fatto dall'uomo più veloce mai costruito. Lo scudo termico in carbonio-carbonio di 11,43 cm ha sostenuto 1.377 °C mentre il corpo del veicolo spaziale 1 metro dietro di esso è rimasto a temperatura ambiente.",
+  "new": "Parker Solar Probe ha eseguito il lancio a più alta energia mai realizzato per una missione scientifica — C3 di 154 km²/s², richiedendo uno stadio solido Star 48BV personalizzato sopra un Delta IV Heavy soltanto per sfuggire alla Terra in una traiettoria di caduta verso il Sole. Sette fionde gravitazionali di Venere nel corso di sei anni hanno progressivamente abbassato il perielio da 0,16 UA (P1, 2018-11-05) a 0,046 UA (P22, 2024-12-24 — 9,86 raggi solari, 6,1 milioni di km dalla superficie). Al P8 il 2021-04-28 Parker è scesa al di sotto della superficie critica di Alfvén — il primo veicolo spaziale mai entrato nella corona solare. Al P22 ha raggiunto ~191 km/s, diventando l'oggetto fatto dall'uomo più veloce mai costruito. Lo scudo termico in carbonio-carbonio di 11,43 cm ha sostenuto 1.377 °C mentre il corpo del veicolo spaziale 1 metro dietro di esso è rimasto a temperatura ambiente."
+ },
+ {
+  "rel": "missions/sun/parker-solar-probe.json",
+  "at": "events.1.note",
+  "old": "Prima assistenza gravitazionale di Venere 2018-10-03.",
+  "new": "Prima fionda gravitazionale di Venere 2018-10-03."
+ },
+ {
+  "rel": "missions/sun/parker-solar-probe.json",
+  "at": "events.4.note",
+  "old": "Sesta assistenza gravitazionale di Venere 2023-08-21.",
+  "new": "Sesta fionda gravitazionale di Venere 2023-08-21."
+ },
+ {
+  "rel": "missions/sun/ulysses.json",
+  "at": "description",
+  "old": "Missione congiunta ESA/NASA. Lanciata il 1990-10-06 dal Discovery STS-41 con gli stadi superiori IUS e PAM-S, Ulysses ha utilizzato un'assistenza gravitazionale di Giove il 1992-02-08 per deflettere se stessa di ~80° fuori dall'eclittica — l'unico modo per raggiungere un'orbita quasi polare rispetto al Sole dal piano orbitale quasi equatoriale della Terra. Tre orbite polari complete del Sole nel corso di 18,5 anni hanno mappato il vento solare, il campo magnetico eliosferica e le particelle energetiche a tutte le latitudini eliografiche — misurazioni dirette che hanno rivelato come la struttura del vento solare varia tra le regioni equatoriali di vento lento e i flussi di vento veloce ad alta latitudine provenienti dai buchi coronali. La missione è terminata il 2009-06-30 quando l'idrazina del propellente si è congelata nelle linee. L'hardware rimane in un'orbita polare eliocentrica.",
+  "new": "Missione congiunta ESA/NASA. Lanciata il 1990-10-06 dal Discovery STS-41 con gli stadi superiori IUS e PAM-S, Ulysses ha utilizzato una fionda gravitazionale di Giove il 1992-02-08 per deflettere se stessa di ~80° fuori dall'eclittica — l'unico modo per raggiungere un'orbita quasi polare rispetto al Sole dal piano orbitale quasi equatoriale della Terra. Tre orbite polari complete del Sole nel corso di 18,5 anni hanno mappato il vento solare, il campo magnetico eliosferica e le particelle energetiche a tutte le latitudini eliografiche — misurazioni dirette che hanno rivelato come la struttura del vento solare varia tra le regioni equatoriali di vento lento e i flussi di vento veloce ad alta latitudine provenienti dai buchi coronali. La missione è terminata il 2009-06-30 quando l'idrazina del propellente si è congelata nelle linee. L'hardware rimane in un'orbita polare eliocentrica."
+ },
+ {
+  "rel": "missions/sun/ulysses.json",
+  "at": "events.1.note",
+  "old": "L'assistenza gravitazionale devia Ulysses ~80° fuori dall'eclittica in un'orbita polare rispetto al Sole.",
+  "new": "La fionda gravitazionale devia Ulysses ~80° fuori dall'eclittica in un'orbita polare rispetto al Sole."
+ },
+ {
+  "rel": "missions/venus/vega-1.json",
+  "at": "description",
+  "old": "Ammiraglia sovietico-ESA dell'armata di Halley. Vega 1 fu lanciato il 1984-12-15 con un lander della linea Venera più un innovativo pallone di elio costruito da ESA/CNES che si addentrò nella coltre nuvolosa di Venere a 54 km di altitudine per 46,5 ore, trasmettendo dati di vento e temperatura attraverso una rete radiofonica globale di 20 stazioni. Dopo aver rilasciato il modulo di discesa, il bus utilizzò l'assistenza gravitazionale di Venere per riorientarsi verso la cometa 1P/Halley, raggiungendo il massimo avvicinamento di 8890 km il 1986-03-06 — il primo incontro con un nucleo cometario, e il fix di posizione che la Giotto dell'ESA utilizzò per navigare il suo proprio avvicinamento a Halley molto più ravvicinato una settimana dopo.",
+  "new": "Ammiraglia sovietico-ESA dell'armata di Halley. Vega 1 fu lanciato il 1984-12-15 con un lander della linea Venera più un innovativo pallone di elio costruito da ESA/CNES che si addentrò nella coltre nuvolosa di Venere a 54 km di altitudine per 46,5 ore, trasmettendo dati di vento e temperatura attraverso una rete radiofonica globale di 20 stazioni. Dopo aver rilasciato il modulo di discesa, il bus utilizzò la fionda gravitazionale di Venere per riorientarsi verso la cometa 1P/Halley, raggiungendo il massimo avvicinamento di 8890 km il 1986-03-06 — il primo incontro con un nucleo cometario, e il fix di posizione che la Giotto dell'ESA utilizzò per navigare il suo proprio avvicinamento a Halley molto più ravvicinato una settimana dopo."
+ },
+ {
+  "rel": "original-work.json",
+  "at": "diagrams_science./diagrams/science/gravity-assist_webp.title",
+  "old": "Assistenza gravitazionale",
+  "new": "Fionda gravitazionale"
+ },
+ {
+  "rel": "planets/jupiter.json",
+  "at": "science_sections.2.why",
+  "old": "Giove è il bersaglio preferito di assistenza gravitazionale per missioni al sistema esterno — Voyager 1, Voyager 2, Cassini, Galileo, New Horizons, Juno, Europa Clipper e JUICE hanno utilizzato o utilizzano un flyby gioviano per il guadagno di velocità.",
+  "new": "Giove è il bersaglio preferito di fionda gravitazionale per missioni al sistema esterno — Voyager 1, Voyager 2, Cassini, Galileo, New Horizons, Juno, Europa Clipper e JUICE hanno utilizzato o utilizzano un flyby gioviano per il guadagno di velocità."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "narrative.1.md",
+  "old": "È anche la storia di come l'esplorazione planetaria imparò le sue mosse fondamentali. Mariner 4 dimostrò che si poteva volare attraverso il sistema solare e fotografare un pianeta; Mariner 9 dimostrò che si poteva fermarsi e studiarne uno; Mariner 10 dimostrò che si poteva usare la gravità di un pianeta per raggiungerne un altro gratuitamente. Quelle tre capacità — il sorvolo, l'orbitante e l'assistenza gravitazionale — sono la grammatica di ogni missione successiva, e le Mariner sono il luogo dove ciascuna fu scritta per la prima volta.",
+  "new": "È anche la storia di come l'esplorazione planetaria imparò le sue mosse fondamentali. Mariner 4 dimostrò che si poteva volare attraverso il sistema solare e fotografare un pianeta; Mariner 9 dimostrò che si poteva fermarsi e studiarne uno; Mariner 10 dimostrò che si poteva usare la gravità di un pianeta per raggiungerne un altro gratuitamente. Quelle tre capacità — il sorvolo, l'orbitante e la fionda gravitazionale — sono la grammatica di ogni missione successiva, e le Mariner sono il luogo dove ciascuna fu scritta per la prima volta."
+ },
+ {
+  "rel": "programs/mariner.json",
+  "at": "lessons.1.md",
+  "old": "La lezione più profonda è che le capacità si sommano. Mariner non si propose di inventare l'assistenza gravitazionale o l'orbitante planetario come fini a sé stessi — risolse il problema che aveva davanti, e ogni soluzione divenne uno strumento permanente che la missione successiva poteva dare per scontato. Il progresso su frontiere difficili è spesso meno una questione di trionfi singoli che di costruzione di una grammatica di mosse che tutti coloro che vengono dopo possono usare gratuitamente.",
+  "new": "La lezione più profonda è che le capacità si sommano. Mariner non si propose di inventare la fionda gravitazionale o l'orbitante planetario come fini a sé stessi — risolse il problema che aveva davanti, e ogni soluzione divenne uno strumento permanente che la missione successiva poteva dare per scontato. Il progresso su frontiere difficili è spesso meno una questione di trionfi singoli che di costruzione di una grammatica di mosse che tutti coloro che vengono dopo possono usare gratuitamente."
+ },
+ {
+  "rel": "scenarios/orrery-1.json",
+  "at": "events.6.note",
+  "old": "Avvicinamento più vicino: ~300 km di altitudine. L'assistenza gravitazionale avvia il ritorno.",
+  "new": "Avvicinamento più vicino: ~300 km di altitudine. La fionda gravitazionale avvia il ritorno."
+ },
+ {
+  "rel": "scenarios/orrery-1.json",
+  "at": "events.7.note",
+  "old": "Assistenza gravitazionale con ritorno libero completata. Veicolo spaziale sulla traiettoria della Terra.",
+  "new": "Fionda gravitazionale con ritorno libero completata. Veicolo spaziale sulla traiettoria della Terra."
+ },
+ {
+  "rel": "small-bodies/67p.json",
+  "at": "science_sections.1.why",
+  "old": "Rosetta ha richiesto tre assistenze gravitazionali terrestri e un sorvolo di Marte per raggiungere 67P — un viaggio di 10 anni per intercettare una cometa che si muove sulla propria traiettoria ellittica.",
+  "new": "Rosetta ha richiesto tre fionde gravitazionali terrestri e un sorvolo di Marte per raggiungere 67P — un viaggio di 10 anni per intercettare una cometa che si muove sulla propria traiettoria ellittica."
+ },
+ {
+  "rel": "trajectories/juno.json",
+  "at": "waypoints.5.label",
+  "old": "Assistenza gravitazionale dalla Terra",
+  "new": "Fionda gravitazionale dalla Terra"
+ },
+ {
+  "rel": "trajectories/new-horizons.json",
+  "at": "waypoints.4.label",
+  "old": "Assistenza gravitazionale da Giove",
+  "new": "Fionda gravitazionale da Giove"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_grav_title",
+  "old": "Assistenza gravitazionale",
+  "new": "Fionda gravitazionale"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_escverd_assist",
+  "old": "Incremento da assistenza gravitazionale",
+  "new": "Incremento da fionda gravitazionale"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_conn_lss_why",
+  "old": "L'abbandono del Sole si trova proprio al limite dei razzi chimici: dall'orbita bassa l'effetto Oberth rende l'escape solare costare solo ~8,7 km/s, così i maggiori lanci (New Horizons) possono appena farcela da soli. Ma per raggiungere i pianeti esterni entro una vita umana — e visitarne diversi in una missione sola — hai bisogno della velocità che un'assistenza gravitazionale aggiunge. Per questo motivo tutte le sonde del Grand Tour sorvolano Giove.",
+  "new": "L'abbandono del Sole si trova proprio al limite dei razzi chimici: dall'orbita bassa l'effetto Oberth rende l'escape solare costare solo ~8,7 km/s, così i maggiori lanci (New Horizons) possono appena farcela da soli. Ma per raggiungere i pianeti esterni entro una vita umana — e visitarne diversi in una missione sola — hai bisogno della velocità che una fionda gravitazionale aggiunge. Per questo motivo tutte le sonde del Grand Tour sorvolano Giove."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_goal_lss_challenge",
+  "old": "Versa più Δv in un singolo razzo — riesce a superare il Sole solo con il carburante, o hai ancora bisogno della catena di assistenza gravitazionale?",
+  "new": "Versa più Δv in un singolo razzo — riesce a superare il Sole solo con il carburante, o hai ancora bisogno della catena di fionda gravitazionale?"
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_escverd_glossary",
+  "old": "margine = v_cap + v_assist − v_req: il budget del razzo più ciò che i fly-by donano (carta di assistenza gravitazionale), contro il prezzo di lasciare il Sole. Il bilancio del Voyager in una riga.",
+  "new": "margine = v_cap + v_assist − v_req: il budget del razzo più ciò che i fly-by donano (carta di fionda gravitazionale), contro il prezzo di lasciare il Sole. Il bilancio del Voyager in una riga."
+ },
+ {
+  "rel": "messages",
+  "at": "lab_f_assistchain_glossary",
+  "old": "Concatena i fly-by e le donazioni si sommano: Δv_max ≤ Σ 2v∞ᵢ — ogni pianeta contribuisce il suo 2v∞ (carta di assistenza gravitazionale). Questa somma è come i veicoli spaziali raggiungono velocità che nessun razzo da solo potrebbe comprare.",
+  "new": "Concatena i fly-by e le donazioni si sommano: Δv_max ≤ Σ 2v∞ᵢ — ogni pianeta contribuisce il suo 2v∞ (carta di fionda gravitazionale). Questa somma è come i veicoli spaziali raggiungono velocità che nessun razzo da solo potrebbe comprare."
+ }
+]

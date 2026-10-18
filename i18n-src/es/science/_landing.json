@@ -66,7 +66,7 @@
       "heading": "6 — Distancias y tiempo, porque nada de esto tiene el tamaño de la Tierra.",
       "diagram": "au.svg",
       "diagram_alt": "La unidad astronómica, marcada a lo largo del radio orbital de la Tierra.",
-      "diagram_caption": "Una AU = una distancia Tierra-Sol. Marte está a ~1,5 AU. Júpiter está a ~5,2.",
+      "diagram_caption": "Una AU = una distancia Tierra-Sol. Marte está a ~1,5 UA. Júpiter está a ~5,2.",
       "paragraphs": [
         "Tres unidades aparecen en todas partes. La [unidad astronómica](scales-time/au) (AU) es la distancia media entre la Tierra y el Sol: 150 millones de km. Medimos el sistema solar en AU porque los kilómetros se vuelven inmanejables enseguida. El [minuto-luz](scales-time/light-minute) te dice cuánto tarda una señal de radio en llegar a una nave espacial. Marte: de 4 a 24 minutos en un solo sentido. No puedes manejar un róver desde la Tierra con un joystick. Todo lo importante es autónomo.",
         "La [época J2000](scales-time/j2000) es el cero del calendario que usa cada astrodinamicista. Los [periodos sidéreo y sinódico](scales-time/sidereal-synodic) explican por qué las ventanas de Marte se repiten cada 26 meses en lugar de cada 23. El [plano eclíptico](scales-time/ecliptic-plane) es el disco plano sobre el que (en su mayoría) se encuentran todos los planetas. Los [marcos de referencia](scales-time/frames) son los sistemas de coordenadas que el control de misión maneja entre vistas centradas en la Tierra, centradas en el Sol y centradas en el cuerpo."

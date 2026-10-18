@@ -14,3 +14,10 @@ langlinks request per ≤50 titles) and added to native-terms.json, then glossar
 - Features: Himeros (Eros), Nightingale (Bennu), Occator (Ceres), Torifune, Eagle /
   Endurance / Victoria / Troy (Mars), Hadley–Apennine, Great Dark Spot, Selam, Queta
 - Terms: Kármán line, Churyumov–Gerasimenko (comet 67P)
+
+Looked up 2026-10-18 (one request): item3/names-g8-langlinks.json. Not merged yet:
+homonyms need guards (Eagle = Apollo 11 LM, Endurance = Crew Dragon, Victoria, Brand),
+zh titles partly traditional (中途島, 哈欽森, 堅忍, 卡門線, 科羅廖夫) need simplified forms.
+
+## From group 9 (hi missions)
+- New: Dinkinesh, Selam, Queta, Geographos, 253 Mathilde, 2867 Steins, Le Monnier (hi), Endeavour crater, Taurus, Urals, Comet Kohoutek, Doppler; Karaganda (set to Latin pending a glossary form)

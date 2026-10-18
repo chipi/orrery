@@ -1,0 +1,30 @@
+{
+  "name": "Ulysses",
+  "current_distance_label": "5.2 AU · 任务于 2009-06-30 结束（推进器管路冻结）— 硬件在极地日心轨道上",
+  "waypoints": [
+    {
+      "label": "发射（STS-41）"
+    },
+    null,
+    {
+      "label": "木星掠过"
+    },
+    null,
+    {
+      "label": "南极通过"
+    },
+    {
+      "label": "北极通过"
+    },
+    null,
+    {
+      "label": "南极 #2"
+    },
+    {
+      "label": "南极 #3"
+    },
+    {
+      "label": "任务结束"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "intro": "Beagle 2 foi um pequeno módulo de pouso da ESA, liderado pelo Reino Unido, liberado da Mars Express em 19 de dezembro de 2003 — e que silenciou seis dias depois, presumivelmente destruído em uma queda. Por 12 anos, seu destino permaneceu desconhecido. Em 16 de janeiro de 2015, a câmera HiRISE, da NASA, avistou o módulo de pouso na superfície, intacto, mas com os painéis solares apenas parcialmente abertos, bloqueando a antena. Um pouso bem-sucedido, só que sem como ligar para casa. A descoberta reabilitou a missão como um sucesso parcial.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "33 kg, o menor módulo de pouso interplanetário já tentado",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/01.webp",
+          "caption": "Representação do módulo de pouso Beagle 2 — painéis solares que se abrem como pétalas + Pillinger Lab + instrumentos atmosféricos dentro da carcaça em forma de concha."
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/03.webp",
+          "caption": "Réplica terrestre do Beagle 2 em exposição — dá uma ideia da forma compacta do módulo de pouso, semelhante a um frisbee."
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/05.webp",
+          "caption": "Modelo de engenharia do Beagle 2 no Spaceport, em Seacombe — pétalas solares totalmente abertas, como projetado."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "2 de junho de 2003 — Soyuz/Fregat a partir de Baikonur, como carona na Mars Express",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/02.webp",
+          "caption": "Separação do Beagle 2 da Mars Express, em 19 de dezembro de 2003 — seis dias antes do pouso previsto, em uma trajetória de entrada balística."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Isidis Planitia — pouso (sem comunicação) em 25 de dezembro de 2003",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/04.webp",
+          "caption": "Beagle 2 encontrado! Imagem do HiRISE, a bordo da MRO (janeiro de 2015) — abertura parcial dos painéis solares visível, antena bloqueada, hardware intacto. Mistério de 12 anos resolvido."
+        },
+        {
+          "src": "/images/hotspots/mars/beagle2/tier2-hirise.jpg",
+          "caption": "Detalhe do HiRISE do local de pouso do Beagle 2 em Isidis Planitia — nessa escala, o módulo de pouso é um ponto menor que um pixel; a descoberta exige a correspondência de várias cenas e várias condições de iluminação."
+        }
+      ]
+    }
+  ]
+}

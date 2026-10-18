@@ -1,0 +1,38 @@
+{
+  "name": "Voyager 1",
+  "current_distance_label": "172天文单位·距太阳约23.8光小时",
+  "interstellar_since_label": "穿过日球顶层（2012年8月）——人类制造的第一个星际空间物体",
+  "waypoints": [
+    {
+      "label": "发射"
+    },
+    null,
+    null,
+    {
+      "label": "木星"
+    },
+    null,
+    null,
+    {
+      "label": "土星和泰坦"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "暗淡蓝点"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "日球顶层"
+    },
+    null,
+    null,
+    {
+      "label": "今天"
+    }
+  ]
+}

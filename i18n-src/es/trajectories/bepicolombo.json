@@ -1,0 +1,41 @@
+{
+  "name": "BepiColombo",
+  "current_distance_label": "0,48 UA · en ruta hacia la inserción en órbita de Mercurio el 2026-12-05",
+  "waypoints": [
+    {
+      "label": "Lanzamiento (Ariane 5)"
+    },
+    null,
+    {
+      "label": "Tierra"
+    },
+    {
+      "label": "Venus n.º 1"
+    },
+    {
+      "label": "Venus n.º 2"
+    },
+    {
+      "label": "Mercurio #1"
+    },
+    {
+      "label": "Mercurio #2"
+    },
+    {
+      "label": "Mercurio #3"
+    },
+    {
+      "label": "Mercurio #4"
+    },
+    {
+      "label": "Mercurio #5"
+    },
+    {
+      "label": "Mercurio #6"
+    },
+    null,
+    {
+      "label": "Inserción en órbita de Mercurio"
+    }
+  ]
+}

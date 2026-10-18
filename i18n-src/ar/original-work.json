@@ -1,0 +1,1664 @@
+{
+  "anatomy_art": {
+    "/images/anatomy/akatsuki_webp": {
+      "title": "Akatsuki"
+    },
+    "/images/anatomy/antares_webp": {
+      "title": "Antares"
+    },
+    "/images/anatomy/apollo-csm-block-ii_webp": {
+      "title": "Apollo CSM Block II"
+    },
+    "/images/anatomy/apollo-lm_webp": {
+      "title": "وحدة Apollo القمرية"
+    },
+    "/images/anatomy/ariane-1_webp": {
+      "title": "Ariane 1"
+    },
+    "/images/anatomy/ariane-5_webp": {
+      "title": "Ariane 5"
+    },
+    "/images/anatomy/ariane-6_webp": {
+      "title": "Ariane 6"
+    },
+    "/images/anatomy/atlas-lv-3b_webp": {
+      "title": "Atlas LV-3B"
+    },
+    "/images/anatomy/atlas-v_webp": {
+      "title": "Atlas V"
+    },
+    "/images/anatomy/atv_webp": {
+      "title": "وسيلة النقل المؤتمتة (ATV)"
+    },
+    "/images/anatomy/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/anatomy/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/anatomy/blue-moon-mk1_webp": {
+      "title": "Blue Moon Mk1"
+    },
+    "/images/anatomy/buran_webp": {
+      "title": "Buran"
+    },
+    "/images/anatomy/cargo-dragon-2_webp": {
+      "title": "Cargo Dragon 2"
+    },
+    "/images/anatomy/cargo-dragon-v1_webp": {
+      "title": "Cargo Dragon v1"
+    },
+    "/images/anatomy/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/anatomy/chandra_webp": {
+      "title": "مرصد Chandra للأشعة السينية"
+    },
+    "/images/anatomy/chandrayaan1_webp": {
+      "title": "Chandrayaan-1"
+    },
+    "/images/anatomy/change-3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/anatomy/change-4_webp": {
+      "title": "Chang'e 4"
+    },
+    "/images/anatomy/change-5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/anatomy/compton-gro_webp": {
+      "title": "Compton Gamma Ray Observatory"
+    },
+    "/images/anatomy/crew-dragon_webp": {
+      "title": "Crew Dragon"
+    },
+    "/images/anatomy/curiosity_webp": {
+      "title": "Curiosity (MSL)"
+    },
+    "/images/anatomy/cygnus-enhanced_webp": {
+      "title": "Cygnus المحسّن"
+    },
+    "/images/anatomy/dart_webp": {
+      "title": "DART"
+    },
+    "/images/anatomy/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/anatomy/delta-ii_webp": {
+      "title": "Delta II"
+    },
+    "/images/anatomy/energia_webp": {
+      "title": "Energia"
+    },
+    "/images/anatomy/euclid_webp": {
+      "title": "Euclid"
+    },
+    "/images/anatomy/europa-clipper_webp": {
+      "title": "Europa Clipper"
+    },
+    "/images/anatomy/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin (جوال ExoMars)"
+    },
+    "/images/anatomy/exomars-tgo_webp": {
+      "title": "ExoMars TGO"
+    },
+    "/images/anatomy/falcon-9_webp": {
+      "title": "Falcon 9 Block 5"
+    },
+    "/images/anatomy/falcon-heavy_webp": {
+      "title": "Falcon Heavy"
+    },
+    "/images/anatomy/gaganyaan_webp": {
+      "title": "Gaganyaan"
+    },
+    "/images/anatomy/gaia_webp": {
+      "title": "Gaia"
+    },
+    "/images/anatomy/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/anatomy/gemini_webp": {
+      "title": "Gemini"
+    },
+    "/images/anatomy/h-iia_webp": {
+      "title": "H-IIA"
+    },
+    "/images/anatomy/h3_webp": {
+      "title": "H3"
+    },
+    "/images/anatomy/hakuto-r_webp": {
+      "title": "برنامج Hakuto-R"
+    },
+    "/images/anatomy/hayabusa-2_webp": {
+      "title": "Hayabusa2"
+    },
+    "/images/anatomy/hayabusa_webp": {
+      "title": "Hayabusa"
+    },
+    "/images/anatomy/hitomi_webp": {
+      "title": "Hitomi (ASTRO-H)"
+    },
+    "/images/anatomy/hope_webp": {
+      "title": "Hope (EMM)"
+    },
+    "/images/anatomy/htv-x_webp": {
+      "title": "HTV-X"
+    },
+    "/images/anatomy/htv_webp": {
+      "title": "HTV (Kounotori)"
+    },
+    "/images/anatomy/hubble_webp": {
+      "title": "تلسكوب Hubble الفضائي"
+    },
+    "/images/anatomy/im-1-odysseus_webp": {
+      "title": "IM-1 Odysseus"
+    },
+    "/images/anatomy/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/anatomy/iss_webp": {
+      "title": "محطة الفضاء الدولية"
+    },
+    "/images/anatomy/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/anatomy/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/anatomy/jwst_webp": {
+      "title": "تلسكوب James Webb الفضائي"
+    },
+    "/images/anatomy/kepler_webp": {
+      "title": "Kepler"
+    },
+    "/images/anatomy/long-march-2f_webp": {
+      "title": "Long March 2F"
+    },
+    "/images/anatomy/long-march-3b_webp": {
+      "title": "Long March 3B"
+    },
+    "/images/anatomy/long-march-5_webp": {
+      "title": "Long March 5 / 5B"
+    },
+    "/images/anatomy/long-march-7_webp": {
+      "title": "Long March 7"
+    },
+    "/images/anatomy/lro_webp": {
+      "title": "مدار استطلاع القمر (LRO)"
+    },
+    "/images/anatomy/lrv-apollo_webp": {
+      "title": "مركبة استطلاع القمر"
+    },
+    "/images/anatomy/lucy_webp": {
+      "title": "Lucy"
+    },
+    "/images/anatomy/luna-16_webp": {
+      "title": "فئة Luna 16"
+    },
+    "/images/anatomy/luna-9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/anatomy/lunar-prospector_webp": {
+      "title": "Lunar Prospector"
+    },
+    "/images/anatomy/lunokhod-1_webp": {
+      "title": "Lunokhod 1"
+    },
+    "/images/anatomy/lunokhod-2_webp": {
+      "title": "Lunokhod 2"
+    },
+    "/images/anatomy/lvm3_webp": {
+      "title": "LVM3 (GSLV Mk III)"
+    },
+    "/images/anatomy/m-v_webp": {
+      "title": "M V"
+    },
+    "/images/anatomy/magellan_webp": {
+      "title": "Magellan"
+    },
+    "/images/anatomy/mangalyaan_webp": {
+      "title": "Mangalyaan (MOM)"
+    },
+    "/images/anatomy/mariner-4_webp": {
+      "title": "Mariner 4"
+    },
+    "/images/anatomy/mariner-9_webp": {
+      "title": "Mariner 9"
+    },
+    "/images/anatomy/mars-3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/anatomy/mars-express_webp": {
+      "title": "Mars Express"
+    },
+    "/images/anatomy/mars-odyssey_webp": {
+      "title": "2001 Mars Odyssey"
+    },
+    "/images/anatomy/maven_webp": {
+      "title": "MAVEN"
+    },
+    "/images/anatomy/mercury-capsule_webp": {
+      "title": "كبسولة ميركوري"
+    },
+    "/images/anatomy/mercury-redstone_webp": {
+      "title": "Mercury-Redstone"
+    },
+    "/images/anatomy/messenger_webp": {
+      "title": "MESSENGER"
+    },
+    "/images/anatomy/mir_webp": {
+      "title": "Mir"
+    },
+    "/images/anatomy/mro_webp": {
+      "title": "Mars Reconnaissance Orbiter"
+    },
+    "/images/anatomy/n1_webp": {
+      "title": "N1"
+    },
+    "/images/anatomy/new-glenn_webp": {
+      "title": "New Glenn"
+    },
+    "/images/anatomy/new-shepard_webp": {
+      "title": "New Shepard"
+    },
+    "/images/anatomy/opportunity_webp": {
+      "title": "Opportunity (MER-B)"
+    },
+    "/images/anatomy/orion_webp": {
+      "title": "Orion"
+    },
+    "/images/anatomy/osiris-rex_webp": {
+      "title": "OSIRIS-REx"
+    },
+    "/images/anatomy/parker-solar-probe_webp": {
+      "title": "Parker Solar Probe"
+    },
+    "/images/anatomy/perseverance_webp": {
+      "title": "Perseverance (Mars 2020)"
+    },
+    "/images/anatomy/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/anatomy/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/anatomy/pioneer-11_webp": {
+      "title": "Pioneer 11"
+    },
+    "/images/anatomy/pragyan_webp": {
+      "title": "Pragyan"
+    },
+    "/images/anatomy/progress-m_webp": {
+      "title": "Progress M"
+    },
+    "/images/anatomy/progress-ms_webp": {
+      "title": "Progress MS"
+    },
+    "/images/anatomy/proton-k_webp": {
+      "title": "Proton-K"
+    },
+    "/images/anatomy/proton-m_webp": {
+      "title": "Proton-M"
+    },
+    "/images/anatomy/pslv-xl_webp": {
+      "title": "PSLV-XL"
+    },
+    "/images/anatomy/pslv_webp": {
+      "title": "بي إس إل في"
+    },
+    "/images/anatomy/psyche-spacecraft_webp": {
+      "title": "Psyche"
+    },
+    "/images/anatomy/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/anatomy/salyut-1_webp": {
+      "title": "Salyut 1"
+    },
+    "/images/anatomy/salyut-6_webp": {
+      "title": "Salyut 6"
+    },
+    "/images/anatomy/salyut-7_webp": {
+      "title": "Salyut 7"
+    },
+    "/images/anatomy/saturn-ib_webp": {
+      "title": "Saturn IB"
+    },
+    "/images/anatomy/saturn-v_webp": {
+      "title": "Saturn V"
+    },
+    "/images/anatomy/schiaparelli_webp": {
+      "title": "Schiaparelli"
+    },
+    "/images/anatomy/shenzhou_webp": {
+      "title": "Shenzhou"
+    },
+    "/images/anatomy/skylab_webp": {
+      "title": "Skylab"
+    },
+    "/images/anatomy/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/anatomy/sls-block-1_webp": {
+      "title": "SLS Block 1"
+    },
+    "/images/anatomy/smart-1_webp": {
+      "title": "SMART-1"
+    },
+    "/images/anatomy/sojourner_webp": {
+      "title": "Sojourner"
+    },
+    "/images/anatomy/solar-orbiter_webp": {
+      "title": "Solar Orbiter"
+    },
+    "/images/anatomy/soyuz-2_webp": {
+      "title": "Soyuz-2"
+    },
+    "/images/anatomy/soyuz-ms_webp": {
+      "title": "Soyuz MS"
+    },
+    "/images/anatomy/soyuz-tma_webp": {
+      "title": "Soyuz TMA"
+    },
+    "/images/anatomy/soyuz_webp": {
+      "title": "Soyuz (11A511)"
+    },
+    "/images/anatomy/space-shuttle-orbiter_webp": {
+      "title": "Space Shuttle Orbiter"
+    },
+    "/images/anatomy/space-shuttle-stack_webp": {
+      "title": "Space Shuttle stack"
+    },
+    "/images/anatomy/spektr-rg_webp": {
+      "title": "Spektr-RG"
+    },
+    "/images/anatomy/spirit_webp": {
+      "title": "Spirit (MER-A)"
+    },
+    "/images/anatomy/spitzer_webp": {
+      "title": "تلسكوب Spitzer الفضائي"
+    },
+    "/images/anatomy/starliner_webp": {
+      "title": "Starliner (CST-100)"
+    },
+    "/images/anatomy/starship_webp": {
+      "title": "Starship"
+    },
+    "/images/anatomy/surveyor-3_webp": {
+      "title": "Surveyor 3"
+    },
+    "/images/anatomy/tess_webp": {
+      "title": "TESS"
+    },
+    "/images/anatomy/tiangong-1_webp": {
+      "title": "Tiangong-1"
+    },
+    "/images/anatomy/tiangong-2_webp": {
+      "title": "Tiangong-2"
+    },
+    "/images/anatomy/tiangong_webp": {
+      "title": "Tiangong"
+    },
+    "/images/anatomy/tianwen-1_webp": {
+      "title": "Tianwen-1"
+    },
+    "/images/anatomy/tianzhou_webp": {
+      "title": "Tianzhou"
+    },
+    "/images/anatomy/titan-ii-glv_webp": {
+      "title": "Titan II GLV"
+    },
+    "/images/anatomy/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/anatomy/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/anatomy/venera-7_webp": {
+      "title": "Venera 7-class"
+    },
+    "/images/anatomy/viking-1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/anatomy/vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-3)"
+    },
+    "/images/anatomy/voskhod-11a57_webp": {
+      "title": "Voskhod (11A57)"
+    },
+    "/images/anatomy/vostok-k_webp": {
+      "title": "Vostok-K (8K72K)"
+    },
+    "/images/anatomy/vostok_webp": {
+      "title": "Vostok"
+    },
+    "/images/anatomy/voyager-1_webp": {
+      "title": "Voyager 1"
+    },
+    "/images/anatomy/voyager-2_webp": {
+      "title": "Voyager 2"
+    },
+    "/images/anatomy/vulcan_webp": {
+      "title": "Vulcan Centaur"
+    },
+    "/images/anatomy/x37b_webp": {
+      "title": "X-37B OTV"
+    },
+    "/images/anatomy/xmm-newton_webp": {
+      "title": "XMM-Newton"
+    },
+    "/images/anatomy/yutu-2_webp": {
+      "title": "Yutu-2"
+    },
+    "/images/anatomy/yutu_webp": {
+      "title": "Yutu"
+    },
+    "/images/anatomy/zhurong_webp": {
+      "title": "Zhurong"
+    }
+  },
+  "lab_illustrations": {
+    "/images/lab/goals/apollo-round-trip_webp": {
+      "title": "رحلة Apollo ذهاباً وإياباً"
+    },
+    "/images/lab/goals/catch-the-iss_webp": {
+      "title": "اقتناص محطة الفضاء الدولية"
+    },
+    "/images/lab/goals/choose-an-orbit_webp": {
+      "title": "اختيار مدار"
+    },
+    "/images/lab/goals/engines-of-the-world_webp": {
+      "title": "محركات العالم"
+    },
+    "/images/lab/goals/entry-computer_webp": {
+      "title": "حاسوب الدخول"
+    },
+    "/images/lab/goals/flying-computer_webp": {
+      "title": "حاسوب الطيران"
+    },
+    "/images/lab/goals/get-to-mars_webp": {
+      "title": "الوصول إلى المريخ"
+    },
+    "/images/lab/goals/land-on-earth_webp": {
+      "title": "الهبوط على الأرض"
+    },
+    "/images/lab/goals/land-on-mars_webp": {
+      "title": "الهبوط على المريخ"
+    },
+    "/images/lab/goals/land-on-mercury_webp": {
+      "title": "الهبوط على عطارد"
+    },
+    "/images/lab/goals/land-on-the-moon_webp": {
+      "title": "الهبوط على القمر"
+    },
+    "/images/lab/goals/land-on-titan_webp": {
+      "title": "الهبوط على تيتان"
+    },
+    "/images/lab/goals/land-on-venus_webp": {
+      "title": "الهبوط على الزهرة"
+    },
+    "/images/lab/goals/landing-computer_webp": {
+      "title": "حاسوب الهبوط"
+    },
+    "/images/lab/goals/launch-a-rocket_webp": {
+      "title": "إطلاق صاروخ"
+    },
+    "/images/lab/goals/leave-the-solar-system_webp": {
+      "title": "مغادرة النظام الشمسي"
+    },
+    "/images/lab/goals/moon-phases_webp": {
+      "title": "أطوار القمر"
+    },
+    "/images/lab/goals/motion-first-principles_webp": {
+      "title": "مبادئ الحركة الأولى"
+    },
+    "/images/lab/goals/observe-the-sky_webp": {
+      "title": "رصد السماء"
+    },
+    "/images/lab/goals/plan-a-mission_webp": {
+      "title": "التخطيط لمهمة"
+    },
+    "/images/lab/goals/probe-jupiter_webp": {
+      "title": "مسبار جوبيتر"
+    },
+    "/images/lab/goals/reach-orbit_webp": {
+      "title": "الوصول إلى مدار"
+    },
+    "/images/lab/goals/reach-the-moon_webp": {
+      "title": "الوصول إلى القمر"
+    },
+    "/images/lab/goals/scale-a-rocket_webp": {
+      "title": "تحجيم صاروخ"
+    },
+    "/images/lab/goals/touch-small-world_webp": {
+      "title": "لمس عالم صغير"
+    }
+  },
+  "diagrams_science": {
+    "/diagrams/science/_cover-cosmology_svg": {
+      "title": "علم الكونيات"
+    },
+    "/diagrams/science/_cover-exoplanets_svg": {
+      "title": "الكواكب الخارجية"
+    },
+    "/images/science-covers-v2/_cover-history_webp": {
+      "title": "التاريخ"
+    },
+    "/images/science-covers-v2/_cover-life-in-space_webp": {
+      "title": "الحياة في الفضاء"
+    },
+    "/images/science-covers-v2/_cover-mission-phases_webp": {
+      "title": "مراحل المهمة"
+    },
+    "/images/science-covers-v2/_cover-observation_webp": {
+      "title": "الرصد"
+    },
+    "/diagrams/science/_cover-orbits_svg": {
+      "title": "المدارات"
+    },
+    "/diagrams/science/_cover-planets_svg": {
+      "title": "الكواكب"
+    },
+    "/diagrams/science/_cover-porkchop_svg": {
+      "title": "مخطط بوركتشوب"
+    },
+    "/images/science-covers-v2/_cover-propulsion_webp": {
+      "title": "الدفع"
+    },
+    "/diagrams/science/_cover-scales-time_svg": {
+      "title": "مقاييس الزمن"
+    },
+    "/images/science-covers-v2/_cover-space-stations_webp": {
+      "title": "محطات الفضاء"
+    },
+    "/diagrams/science/_cover-transfers_svg": {
+      "title": "النقلات المدارية"
+    },
+    "/diagrams/science/aerobraking_webp": {
+      "title": "كبح الهواء"
+    },
+    "/diagrams/science/antenna-arrays_webp": {
+      "title": "مصفوفات الهوائيات"
+    },
+    "/diagrams/science/antimatter-propulsion_webp": {
+      "title": "الدفع بالمادة المضادة"
+    },
+    "/diagrams/science/apsides_webp": {
+      "title": "نقاط الأوج والحضيض"
+    },
+    "/diagrams/science/ascent-guidance_webp": {
+      "title": "توجيه الصعود"
+    },
+    "/diagrams/science/asteroid-belt_webp": {
+      "title": "حزام الكويكبات"
+    },
+    "/diagrams/science/au_webp": {
+      "title": "وحدة فلكية"
+    },
+    "/diagrams/science/ballistic-coefficient_webp": {
+      "title": "معامل المسار الباليستي"
+    },
+    "/diagrams/science/black-holes_webp": {
+      "title": "الثقوب السوداء"
+    },
+    "/diagrams/science/c3_webp": {
+      "title": "C3"
+    },
+    "/diagrams/science/comms-blackout_webp": {
+      "title": "انقطاع الاتصالات"
+    },
+    "/diagrams/science/conic-sections_webp": {
+      "title": "المقاطع المخروطية"
+    },
+    "/diagrams/science/contour-reading_webp": {
+      "title": "قراءة الخطوط الكنتورية"
+    },
+    "/diagrams/science/deorbit-corridor_webp": {
+      "title": "ممر إلغاء المدار"
+    },
+    "/diagrams/science/departure-axis_webp": {
+      "title": "محور المغادرة"
+    },
+    "/diagrams/science/dv-budget_webp": {
+      "title": "ميزانية دلتا السرعة"
+    },
+    "/diagrams/science/dv-heatmap_webp": {
+      "title": "خريطة حرارية لدلتا السرعة"
+    },
+    "/diagrams/science/eccentricity_webp": {
+      "title": "الاختلاف المركزي"
+    },
+    "/diagrams/science/ecliptic-plane_webp": {
+      "title": "مستوى البروج"
+    },
+    "/diagrams/science/edl_webp": {
+      "title": "الهبوط والدخول والهبوط"
+    },
+    "/diagrams/science/entry-footprint_webp": {
+      "title": "بصمة الدخول"
+    },
+    "/diagrams/science/entry-heating_webp": {
+      "title": "تسخين الدخول"
+    },
+    "/diagrams/science/escape-velocity_webp": {
+      "title": "سرعة الهروب"
+    },
+    "/diagrams/science/eva_webp": {
+      "title": "النشاط خارج المحطة"
+    },
+    "/diagrams/science/eva-suits_webp": {
+      "title": "بدلات النشاط خارج المحطة"
+    },
+    "/diagrams/science/exo-astrometry_webp": {
+      "title": "قياس المواقع للكواكب الخارجية"
+    },
+    "/diagrams/science/exo-direct-imaging_webp": {
+      "title": "التصوير المباشر للكواكب الخارجية"
+    },
+    "/diagrams/science/exo-habitable-zone_webp": {
+      "title": "منطقة الصلاحية للعيش حول الكواكب الخارجية"
+    },
+    "/diagrams/science/exo-microlensing_webp": {
+      "title": "عدسة الكواكب الخارجية الدقيقة"
+    },
+    "/diagrams/science/exo-radial-velocity_webp": {
+      "title": "السرعة الشعاعية للكواكب الخارجية"
+    },
+    "/diagrams/science/exo-resonance_webp": {
+      "title": "رنين الكواكب الخارجية"
+    },
+    "/diagrams/science/exo-transit_webp": {
+      "title": "عبور الكواكب الخارجية"
+    },
+    "/diagrams/science/exo-transit-timing_webp": {
+      "title": "توقيت عبور الكواكب الخارجية"
+    },
+    "/diagrams/science/expander-cycle_webp": {
+      "title": "دورة الممدد"
+    },
+    "/diagrams/science/expedition-cadence_webp": {
+      "title": "وتيرة البعثات"
+    },
+    "/diagrams/science/frames_webp": {
+      "title": "الإطارات"
+    },
+    "/diagrams/science/free-return_webp": {
+      "title": "العودة الحرة"
+    },
+    "/diagrams/science/fusion-propulsion_webp": {
+      "title": "دفع الاندماج"
+    },
+    "/diagrams/science/gas-generator_webp": {
+      "title": "مولد الغاز"
+    },
+    "/diagrams/science/gravity-assist_webp": {
+      "title": "المساعدة الجاذبية"
+    },
+    "/diagrams/science/hertzsprung-russell_webp": {
+      "title": "مخطط هرتزشبرونغ-راسل"
+    },
+    "/diagrams/science/history-apollo-11_webp": {
+      "title": "التاريخ Apollo 11"
+    },
+    "/diagrams/science/history-goddard-rocket_webp": {
+      "title": "التاريخ روكيت Goddard"
+    },
+    "/diagrams/science/history-keplers-laws_webp": {
+      "title": "التاريخ قوانين Kepler"
+    },
+    "/diagrams/science/history-newton-principia_webp": {
+      "title": "التاريخ Newton Principia"
+    },
+    "/diagrams/science/history-sputnik_webp": {
+      "title": "التاريخ Sputnik"
+    },
+    "/diagrams/science/history-tsiolkovsky_webp": {
+      "title": "التاريخ: تسيولكوفسكي"
+    },
+    "/diagrams/science/hohmann-transfer_webp": {
+      "title": "نقل Hohmann"
+    },
+    "/diagrams/science/inclination_webp": {
+      "title": "الميل المداري"
+    },
+    "/diagrams/science/interplanetary-internet_webp": {
+      "title": "الإنترنت بين الكواكب"
+    },
+    "/diagrams/science/ion-drive_webp": {
+      "title": "محرك الأيونات"
+    },
+    "/diagrams/science/iva-suits_webp": {
+      "title": "بدلات IVA"
+    },
+    "/diagrams/science/j2000_webp": {
+      "title": "J2000"
+    },
+    "/diagrams/science/keplerian-orbit_webp": {
+      "title": "المدار الكبلري"
+    },
+    "/diagrams/science/keplers-laws_webp": {
+      "title": "قوانين Kepler"
+    },
+    "/diagrams/science/kuiper-belt_webp": {
+      "title": "حزام Kuiper"
+    },
+    "/diagrams/science/lagrange-points_webp": {
+      "title": "نقاط Lagrange"
+    },
+    "/diagrams/science/lambert-problem_webp": {
+      "title": "مشكلة Lambert"
+    },
+    "/diagrams/science/laser-sail_webp": {
+      "title": "الشراع الليزري"
+    },
+    "/diagrams/science/launch_webp": {
+      "title": "الإطلاق"
+    },
+    "/diagrams/science/lifting-entry_webp": {
+      "title": "الدخول برفع (Lifting Entry)"
+    },
+    "/diagrams/science/light-minute_webp": {
+      "title": "دقيقة ضوئية"
+    },
+    "/diagrams/science/long-duration_webp": {
+      "title": "المدة الطويلة"
+    },
+    "/diagrams/science/lunar-ice_webp": {
+      "title": "جليد القمر"
+    },
+    "/diagrams/science/lunar-suits_webp": {
+      "title": "بدلات القمر"
+    },
+    "/diagrams/science/met_webp": {
+      "title": "وقت انقضاء المهمة"
+    },
+    "/diagrams/science/microgravity-physiology_webp": {
+      "title": "فسيولوجيا انعدام الجاذبية"
+    },
+    "/diagrams/science/mission-types_webp": {
+      "title": "أنواع المهام"
+    },
+    "/diagrams/science/node-module_webp": {
+      "title": "وحدة العقدة"
+    },
+    "/diagrams/science/nrho_webp": {
+      "title": "مدار هالو القمري"
+    },
+    "/diagrams/science/nuclear-thermal_webp": {
+      "title": "الدفع الحراري النووي"
+    },
+    "/diagrams/science/oberth-effect_webp": {
+      "title": "تأثير أوبرث"
+    },
+    "/diagrams/science/optical-comms_webp": {
+      "title": "الاتصالات البصرية"
+    },
+    "/diagrams/science/orbit-insertion_webp": {
+      "title": "إدراج المدار"
+    },
+    "/diagrams/science/orbit-regimes_webp": {
+      "title": "أنظمة المدارات"
+    },
+    "/diagrams/science/our-galaxy_webp": {
+      "title": "مجرتنا"
+    },
+    "/diagrams/science/patched-conics_webp": {
+      "title": "المخروطيات المرقعة"
+    },
+    "/diagrams/science/porkchop_webp": {
+      "title": "رسم بياني فراغي المسار"
+    },
+    "/diagrams/science/pressurized-volume_webp": {
+      "title": "الحجم المضغوط"
+    },
+    "/diagrams/science/propulsive-landing_webp": {
+      "title": "الهبوط بالدفع"
+    },
+    "/diagrams/science/regolith_webp": {
+      "title": "التربة السطحية"
+    },
+    "/diagrams/science/semi-major-axis_webp": {
+      "title": "نصف المحور الرئيسي"
+    },
+    "/diagrams/science/sidereal-synodic_webp": {
+      "title": "الفترة الفلكية والفترة الاقترانية"
+    },
+    "/diagrams/science/skip-entry_webp": {
+      "title": "دخول بقفزة"
+    },
+    "/diagrams/science/skycrane_webp": {
+      "title": "رافعة السماء"
+    },
+    "/diagrams/science/solar-power-budget_webp": {
+      "title": "ميزانية الطاقة الشمسية"
+    },
+    "/diagrams/science/solar-sail_webp": {
+      "title": "الشراع الشمسي"
+    },
+    "/diagrams/science/space-photography_webp": {
+      "title": "التصوير الفضائي"
+    },
+    "/diagrams/science/specific-impulse_webp": {
+      "title": "الدفع النوعي"
+    },
+    "/diagrams/science/staged-combustion_webp": {
+      "title": "الاحتراق المرحلي"
+    },
+    "/diagrams/science/synodic-period_webp": {
+      "title": "الفترة الاقترانية"
+    },
+    "/diagrams/science/tcm_webp": {
+      "title": "مناورة تصحيح المسار"
+    },
+    "/diagrams/science/terminal-velocity_webp": {
+      "title": "السرعة الطرفية"
+    },
+    "/diagrams/science/tof-axis_webp": {
+      "title": "محور وقت الوصول"
+    },
+    "/diagrams/science/trans-x-injection_webp": {
+      "title": "حقن التحويل العابر"
+    },
+    "/diagrams/science/transfer-ellipse_webp": {
+      "title": "إهليلج التحويل"
+    },
+    "/diagrams/science/true-anomaly_webp": {
+      "title": "الشذوذ الحقيقي"
+    },
+    "/diagrams/science/tsiolkovsky_webp": {
+      "title": "تسيولكوفسكي"
+    },
+    "/diagrams/science/v-infinity_webp": {
+      "title": "سرعة اللانهاية"
+    },
+    "/diagrams/science/viability_webp": {
+      "title": "الجدوى"
+    },
+    "/diagrams/science/vis-viva_webp": {
+      "title": "معادلة الطاقة الحية"
+    }
+  },
+  "posters": {
+    "/images/posters/solar-system-orrery_jpg": {
+      "title": "النظام الشمسي"
+    },
+    "/images/posters/solar-system-procession_jpg": {
+      "title": "النظام الشمسي"
+    },
+    "/images/posters/earth_jpg": {
+      "title": "الأرض"
+    },
+    "/images/posters/moon_jpg": {
+      "title": "القمر"
+    },
+    "/images/posters/mars_jpg": {
+      "title": "المريخ"
+    },
+    "/images/posters/saturn-v_jpg": {
+      "title": "Saturn V"
+    },
+    "/images/posters/mir_jpg": {
+      "title": "Mir"
+    },
+    "/images/posters/sputnik_jpg": {
+      "title": "Sputnik"
+    },
+    "/images/posters/soyuz_jpg": {
+      "title": "Soyuz"
+    },
+    "/images/posters/voyager_jpg": {
+      "title": "Voyager"
+    },
+    "/images/posters/sojourner_jpg": {
+      "title": "Sojourner"
+    },
+    "/images/posters/footprints_jpg": {
+      "title": "بصمات"
+    },
+    "/images/posters/gagarin_jpg": {
+      "title": "جاجارين"
+    },
+    "/images/posters/rosetta_jpg": {
+      "title": "Rosetta"
+    },
+    "/images/posters/huygens_jpg": {
+      "title": "Huygens"
+    },
+    "/images/posters/hayabusa2_jpg": {
+      "title": "Hayabusa2"
+    },
+    "/images/posters/artemis-ii_jpg": {
+      "title": "Artemis II"
+    },
+    "/images/posters/iss_jpg": {
+      "title": "محطة الفضاء الدولية"
+    },
+    "/images/posters/tiangong_jpg": {
+      "title": "Tiangong"
+    },
+    "/images/posters/perseverance_jpg": {
+      "title": "Perseverance"
+    },
+    "/images/posters/space-shuttle_jpg": {
+      "title": "Space Shuttle"
+    },
+    "/images/posters/solar-sail_jpg": {
+      "title": "الشراع الشمسي"
+    },
+    "/images/posters/nuclear-drive_jpg": {
+      "title": "محرك نووي"
+    },
+    "/images/posters/jwst_jpg": {
+      "title": "James Webb"
+    },
+    "/images/posters/hubble_jpg": {
+      "title": "Hubble"
+    },
+    "/images/posters/cassini_jpg": {
+      "title": "Cassini"
+    },
+    "/images/posters/starship_jpg": {
+      "title": "Starship"
+    }
+  },
+  "models3d": {
+    "/images/colophon/craft-cassini_webp": {
+      "title": "Cassini–Huygens",
+      "what": "طبق الكسب العالي، أذرع مولدات الطاقة الحرارية الإشعاعية، ومسبار Huygens — مدار حول زحل.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/craft-voyager-1_webp": {
+      "title": "Voyager",
+      "what": "طبق بقطر 3.7 م، ذراع مغناطيسي، وهيكل مولدات الطاقة الحرارية الإشعاعية — حافلة الجولة الكبرى.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/craft-galileo_webp": {
+      "title": "Galileo",
+      "what": "ناقلة ثنائية الدوران بهيكل أنتينا عالية الكسب مطوية محررة.",
+      "where": "الطيران والاستكشاف"
+    },
+    "/images/colophon/craft-new-horizons_webp": {
+      "title": "New Horizons",
+      "what": "ناقلة مثلثة الشكل مضغوطة مع طبق واحد — مسبار الطيران السريع حول بلوتو.",
+      "where": "الطيران والاستكشاف"
+    },
+    "/images/colophon/craft-pioneer-10_webp": {
+      "title": "Pioneer",
+      "what": "طبق مستقر بالدوران مع أذرع مولدات ديناميكية حرارية نووية واللوحة المنقوشة.",
+      "where": "الطيران والاستكشاف"
+    },
+    "/images/colophon/craft-juno_webp": {
+      "title": "Juno",
+      "what": "ثلاث أجنحة شمسية ضخمة حول ناقلة سادسة الأضلاع — مسبار المدار القطبي لكوكب المشتري.",
+      "where": "الطيران والاستكشاف"
+    },
+    "/images/colophon/craft-bepicolombo_webp": {
+      "title": "BepiColombo",
+      "what": "وحدة نقل مكدسة مع مسبري مدار عطارد مزودة بمحركات أيونية.",
+      "where": "الطيران والاستكشاف"
+    },
+    "/images/colophon/craft-dawn_webp": {
+      "title": "Dawn",
+      "what": "ناقلة بمحرك أيوني مع أجنحة شمسية واسعة — مسبار المدار حول فيستا وسيريس.",
+      "where": "الطيران والاستكشاف"
+    },
+    "/images/colophon/craft-giotto_webp": {
+      "title": "Giotto",
+      "what": "مغزل أسطواني الشكل بدرع حماية من الغبار — الطيران السريع حول مذنب هالي.",
+      "where": "الطيران والاستكشاف"
+    },
+    "/images/colophon/craft-hayabusa2_webp": {
+      "title": "Hayabusa2",
+      "what": "ناقلة صندوقية الشكل مع ألواح شمسية وقرن جامع عينات — كويكب ريوغو.",
+      "where": "الطيران والاستكشاف"
+    },
+    "/images/colophon/craft-juice_webp": {
+      "title": "JUICE",
+      "what": "مصفوفات شمسية على شكل صليب على ناقلة مضغوطة — مسبار المدار حول أقمار المشتري الجليدية.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/craft-rosetta_webp": {
+      "title": "Rosetta",
+      "what": "أجنحة شمسية بطول 14 متر حول حافلة صيد مذنب + مسبار Philae.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/craft-ulysses_webp": {
+      "title": "Ulysses",
+      "what": "مسبار قطبي مدفوع بمولد حراري كهربائي مع طبق واحد.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/craft-vega-1_webp": {
+      "title": "Vega",
+      "what": "حافلة سوفييتية لتحية الزهرة + طبق توجيهي لأم الحافلة الكروية.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/craft-venera-13_webp": {
+      "title": "Venera 13",
+      "what": "مسبار سوفييتي هابط على الزهرة — فرملة هوائية حلقية الشكل وحلقة هبوط.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-launcher-generic_webp": {
+      "title": "حاملة إطلاق عامة",
+      "what": "هيكل ذو مرحلتين على غرار Falcon-9 — الصورة الظلية الاحتياطية المرتبطة بالوكالة.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-saturn-v_webp": {
+      "title": "Saturn V",
+      "what": "مكدس ثلاثي المراحل مدبب، خمس فوهات F-1، تصميم الألوان على شكل دوامة، وبرج الهروب.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-saturn-ib_webp": {
+      "title": "Saturn IB",
+      "what": "حصان عمل الدورة المنخفضة حول الأرض التابع لبرنامج Apollo — مرحلة S-IB الأولى ذات المحركات المجمعة بثمانية محركات H-1 تحت نفس S-IVB + CSM.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-vostok-k_webp": {
+      "title": "Soyuz / R-7",
+      "what": "نواة كوروليوف المتقاطعة مع أربعة معززات جانبية مدببة.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-ariane-5_webp": {
+      "title": "Ariane 5",
+      "what": "نواة مبردة بين معززين صاروخيين صلبين طويلين تحت حماية انسيابية منتفخة.",
+      "where": "طيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-h-iia_webp": {
+      "title": "H-IIA",
+      "what": "نواة يابانية مبردة مع معززات صاروخية صلبة مزدوجة.",
+      "where": "طيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-space-shuttle-stack_webp": {
+      "title": "Space Shuttle",
+      "what": "الخزان الخارجي، معززا الصواريخ الصلبة، والمكوك الفضائي ذو الأجنحة الثلاثية.",
+      "where": "طيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-falcon-9_webp": {
+      "title": "Falcon 9",
+      "what": "جسم رفيع ثنائي المرحلة — تسعة محركات في تكوين ثماني الأضلاع، وأجنحة شبكية، وأرجل هبوط.",
+      "where": "طيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-starship_webp": {
+      "title": "Starship / Super Heavy",
+      "what": "مكدس معاد الاستخدام بالكامل من الفولاذ المقاوم للصدأ الخام — 33 محرك Raptor على Super Heavy، و6 على Starship، وأجنحة أمامية وخلفية، والرأس الأوجيفي.",
+      "where": "طيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-atlas-v_webp": {
+      "title": "Atlas V",
+      "what": "نواة عريضة بمحرك RD-180 مع حماية انسيابية للحمولة منتفخة واختياري لأجنحة صلبة مرتبطة.",
+      "where": "طيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-proton-k_webp": {
+      "title": "Proton-K",
+      "what": "ثقيل سوفياتي — نواة مركزية محاطة بستة خزانات وقود خارجية.",
+      "where": "طيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-titan-ii-glv_webp": {
+      "title": "Titan II GLV",
+      "what": "صاروخ رفيع منتظم ثنائي المرحلة أطلق مركبات Gemini المأهولة بالطاقم.",
+      "where": "طيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-atlas-lv-3b_webp": {
+      "title": "Atlas LV-3B",
+      "what": "ركيزة Mercury-Atlas سعة نصفين مع تنورة محرك معزز وبرج هروب.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-mercury-redstone_webp": {
+      "title": "Mercury-Redstone",
+      "what": "أول مركبة إطلاق مأهولة بالبشر في أمريكا — روكيت Redstone رفيع أحادي المحرك مزود بأربع زعانف ذيلية، وكبسولة Mercury وبرج هروب (Freedom 7).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-long-march-2f_webp": {
+      "title": "Long March 2F",
+      "what": "مركبة الإطلاق المأهولة بالبشر الصينية — النواة الأساسية وأربع محركات سائلة مرفقة، وبرج إطلاق هروب (Shenzhou).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-long-march-3b_webp": {
+      "title": "Long March 3B",
+      "what": "حصان العمل الصيني للمدار الثابت الأرضي — نواة أساسية مع أربع محركات سائلة مرفقة (مهام Chang'e القمرية).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-long-march-5_webp": {
+      "title": "Long March 5",
+      "what": "حصان العمل الثقيل الصيني \"الخمسة البدينة\" — نواة تبريد فراغي واسعة مع أربع معززات كبيرة.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-pslv_webp": {
+      "title": "PSLV",
+      "what": "حصان عمل ISRO — نواة رفيعة محاطة بستة محركات معززة صلبة مرفقة.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-lvm3_webp": {
+      "title": "LVM3 / GSLV Mk III",
+      "what": "رفع ثقيل من ISRO — نواة محاطة بمحركي S200 صلبين كبيرين (Chandrayaan-3).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-m-v_webp": {
+      "title": "M-V",
+      "what": "مركبة الإطلاق الثلاثية المراحل الصلبة بالكامل من JAXA (Hayabusa).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-h3_webp": {
+      "title": "H3",
+      "what": "النواة التبريد الفراغي الجديدة من JAXA مع محركات معززة صلبة مرفقة.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-ariane-1_webp": {
+      "title": "Ariane 1",
+      "what": "أول حامل أوروبي — تصميم رقيق ثلاثي المراحل من سنة 1979 (Giotto).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-moon-apollo-lm_webp": {
+      "title": "وحدة Apollo القمرية",
+      "what": "مرحلة النزول والصعود، رقائق عازل حراري ذهبية، وثنائيات الدفع الاتجاهي.",
+      "where": "مواقع الهبوط على القمر"
+    },
+    "/images/colophon/model-moon-apollo-lm-extended_webp": {
+      "title": "Apollo LM (بعثة من الفئة J + LRV)",
+      "what": "وحدة قمرية معدلة للإقامة الطويلة مقترنة بمركبة Lunar Roving Vehicle.",
+      "where": "مواقع الهبوط على القمر"
+    },
+    "/images/colophon/model-moon-luna-9_webp": {
+      "title": "Luna 9",
+      "what": "كرة سوفيتية أرسلت أول صور من سطح القمر.",
+      "where": "مواقع الهبوط على القمر"
+    },
+    "/images/colophon/model-moon-luna-sample-return_webp": {
+      "title": "Luna 16 لاسترجاع العينات",
+      "what": "صاروخ صعود فوق منصة نزول (Luna 16 / 20 / 24).",
+      "where": "مواقع الهبوط على القمر"
+    },
+    "/images/colophon/model-moon-lunokhod_webp": {
+      "title": "جوّالة Lunokhod",
+      "what": "مركبة قمرية سوفيتية ثمانية العجلات بغطاء شمسي قابل للطي.",
+      "where": "مواقع الهبوط على القمر"
+    },
+    "/images/colophon/model-moon-chang-e-lander_webp": {
+      "title": "Chang'e lander",
+      "what": "مرحلة النزول التابعة لـ CNSA مع كبسولة الصعود (Chang'e 5 / 6).",
+      "where": "مواقع الهبوط على القمر"
+    },
+    "/images/colophon/model-moon-yutu_webp": {
+      "title": "جوّالة Yutu",
+      "what": "مركبة قمرية صينية سادسة العجلات بألواح شمسية قابلة للطي.",
+      "where": "مواقع الهبوط على القمر"
+    },
+    "/images/colophon/model-moon-chandrayaan-3-vikram_webp": {
+      "title": "Chandrayaan-3 Vikram",
+      "what": "هابط ISRO ذو أربع أرجل قام بإيصال مركبة Pragyan القمرية.",
+      "where": "مواقع الهبوط على القمر"
+    },
+    "/images/colophon/model-moon-slim_webp": {
+      "title": "SLIM",
+      "what": "مرحلة النزول ثنائية المحرك \"Moon Sniper\" للدقة من JAXA.",
+      "where": "مواقع الهبوط على القمر"
+    },
+    "/images/colophon/model-moon-beresheet_webp": {
+      "title": "Beresheet",
+      "what": "هبوط رباعي الأرجل صغير الحجم من SpaceIL.",
+      "where": "مواقع الهبوط على القمر"
+    },
+    "/images/colophon/model-mars-viking_webp": {
+      "title": "Viking",
+      "what": "هبوط ثلاثي الأرجل من NASA مزود بمولد حراري نووي وذراع أخذ عينات.",
+      "where": "مواقع الهبوط على المريخ"
+    },
+    "/images/colophon/model-mars-pathfinder-sojourner_webp": {
+      "title": "Pathfinder + Sojourner",
+      "what": "هبوط رباعي الأوجه بأكياس هوائية ومركبة المريخ الأولى.",
+      "where": "مواقع الهبوط على المريخ"
+    },
+    "/images/colophon/model-mars-mer_webp": {
+      "title": "MER (Spirit / Opportunity)",
+      "what": "مركبة بنظام الرافعة المتوازنة وأجنحة شمسية فراشية.",
+      "where": "مواقع الهبوط على المريخ"
+    },
+    "/images/colophon/model-mars-curiosity_webp": {
+      "title": "Curiosity",
+      "what": "مركبة فئة MSL مزودة بمولد حراري نووي وذراع وحامل ماست.",
+      "where": "مواقع الهبوط على المريخ"
+    },
+    "/images/colophon/model-mars-perseverance-rover_webp": {
+      "title": "Perseverance + Ingenuity",
+      "what": "مركبة Mars 2020 مزودة بماست Mastcam-Z وحجرة تخزين العينات ومروحية Ingenuity.",
+      "where": "مواقع الهبوط على المريخ"
+    },
+    "/images/colophon/model-mars-phoenix_webp": {
+      "title": "Phoenix",
+      "what": "مَهْبِط ثابتٌ بالطاقة الشمسية مع ذراع روبوتية",
+      "where": "مواقع الهبوط على المريخ"
+    },
+    "/images/colophon/model-mars-insight-lander_webp": {
+      "title": "InSight",
+      "what": "مَهْبِط جيوفيزيائي ثماني الأضلاع بألواح شمسية، يحمل مقياس الزلازل SEIS والمثقاب HP3",
+      "where": "مواقع الهبوط على المريخ"
+    },
+    "/images/colophon/model-mars-mars-3_webp": {
+      "title": "Mars 3",
+      "what": "مَهْبِط سوفييتي بتصميم بتلاتي - أول هبوط سَلِس على المريخ",
+      "where": "مواقع الهبوط على المريخ"
+    },
+    "/images/colophon/model-mars-zhurong_webp": {
+      "title": "Tianwen-1 Zhurong",
+      "what": "مسيّار صيني مع صفائف فراشة وعمود",
+      "where": "مواقع الهبوط على المريخ"
+    },
+    "/images/colophon/model-mars-schiaparelli_webp": {
+      "title": "Schiaparelli",
+      "what": "كبسولة عرض تقني ESA للدخول والهبوط بالمظلة.",
+      "where": "مواقع الهبوط على المريخ"
+    },
+    "/images/colophon/model-mars-beagle-2_webp": {
+      "title": "Beagle 2",
+      "what": "مَهْبِط ESA بتصميم محارة مع ألواح شمسية بتلاتية",
+      "where": "مواقع الهبوط على المريخ"
+    },
+    "/images/colophon/model-venus-venera_webp": {
+      "title": "مركبة هبوط Venera / Vega",
+      "what": "مَهْبِط سوفييتي على سطح الزهرة - كرة ضغط على حلقة تحطّم حلقي",
+      "where": "علامات سطح الزهرة"
+    },
+    "/images/colophon/model-descent-lunar-powered_webp": {
+      "title": "الهبوط المُحرّك القمري",
+      "what": "مرحلة نزول ارتجاعي فراغي - لا غلاف هوائي ولا مظلة (Apollo / Chang'e / Luna)",
+      "where": "الطيران - الهبوط والنزول"
+    },
+    "/images/colophon/model-descent-mars-retro_webp": {
+      "title": "مظلة المريخ + ارتجاعي",
+      "what": "درع هوائي ومظلة فوق صوتية وصواريخ ارتجاعية نهائية (Viking / Phoenix / InSight)",
+      "where": "الرحلة · الهبوط/الهبوط على السطح"
+    },
+    "/images/colophon/model-descent-airbag_webp": {
+      "title": "وسادة الهواء المتحركة على المريخ",
+      "what": "كيس وسادة هوائية رباعي الوجوه يتحرك بالارتداد حتى التوقف (Pathfinder / Spirit / Opportunity).",
+      "where": "الرحلة · الهبوط/الهبوط على السطح"
+    },
+    "/images/colophon/model-descent-skycrane_webp": {
+      "title": "رافعة سماوية على المريخ",
+      "what": "مرحلة نزول مدفوعة بالصواريخ تخفّض المركبة على حبال (Curiosity / Perseverance).",
+      "where": "الرحلة · الهبوط/الهبوط على السطح"
+    },
+    "/images/colophon/model-descent-venus-aeroshell_webp": {
+      "title": "الغلاف الديناميكي الهوائي للزهرة",
+      "what": "كبسولة دخول كروية-مخروطية وقرص فرملة للغلاف الجوي الكثيف (فينيرا / فيجا).",
+      "where": "الرحلة · الهبوط/الهبوط على السطح"
+    },
+    "/images/colophon/model-descent-asteroid-sampler_webp": {
+      "title": "لمس المويهة والذهاب",
+      "what": "حافلة جمع عينات مع قرن جمع — لمس المويهة والذهاب في الجاذبية الضئيلة (Hayabusa / OSIRIS-REx).",
+      "where": "الرحلة · الهبوط/الهبوط على السطح"
+    },
+    "/images/colophon/model-descent-comet-lander_webp": {
+      "title": "هابط المذنب برمح",
+      "what": "هابط جاذبية دقيقة ثلاثي الأرجل مزود بحراب تثبيت (فيليه عند المذنب 67P).",
+      "where": "الرحلة · الهبوط/الهبوط على السطح"
+    },
+    "/images/colophon/model-descent-jupiter-probe_webp": {
+      "title": "مجس الغلاف الجوي للمشتري",
+      "what": "غلاف ديناميكي هوائي كروي-مخروطي وميشة هبوط لدخول الغلاف الجوي العميق (مسبار Galileo).",
+      "where": "الرحلة · الهبوط/الهبوط على السطح"
+    },
+    "/images/colophon/model-descent-titan-parachute_webp": {
+      "title": "هبوط المظلة على تيتان",
+      "what": "غلاف ديناميكي هوائي ومظلة كبيرة للهبوط البطيء عبر الضباب على تيتان (Huygens).",
+      "where": "الرحلة · الهبوط/الهبوط على السطح"
+    },
+    "/images/colophon/model-cruise-curiosity_webp": {
+      "title": "مرحلة المرحلة البينية من Curiosity",
+      "what": "قرص مرحلة الرحلة البينكوكبية MSL فوق الغلاف الديناميكي الهوائي الذي يحيط بالمستكشف.",
+      "where": "الرحلة · الرحلة البينكوكبية/الاقتراب"
+    },
+    "/images/colophon/model-cruise-perseverance_webp": {
+      "title": "مرحلة الرحلة البينية لـ Perseverance",
+      "what": "مرحلة الرحلة في مهمة المريخ 2020 + الدرع الحراري (المسبار وإنجينيويتي محصورة بداخله).",
+      "where": "الرحلة · مرحلة الرحلة/الاقتراب"
+    },
+    "/images/colophon/model-cruise-insight_webp": {
+      "title": "مرحلة الرحلة البينية لـ InSight",
+      "what": "قرص مرحلة الرحلة فوق الدرع الحراري الذي يحمل الهابط.",
+      "where": "الرحلة · مرحلة الرحلة/الاقتراب"
+    },
+    "/images/colophon/model-cruise-phoenix_webp": {
+      "title": "مرحلة الرحلة البينية لـ Phoenix",
+      "what": "مرحلة الرحلة + الدرع الحراري للهابط القطبي.",
+      "where": "الرحلة · مرحلة الرحلة/الاقتراب"
+    },
+    "/images/colophon/model-cruise-mars-pathfinder_webp": {
+      "title": "مرحلة الرحلة لباثفايندر",
+      "what": "مرحلة الرحلة + الدرع الحراري (الهابط المزود بأكياس الهواء وSojourner بداخله).",
+      "where": "الرحلة · مرحلة الرحلة/الاقتراب"
+    },
+    "/images/colophon/model-cruise-spirit_webp": {
+      "title": "مرحلة الرحلة البينية لـ Spirit",
+      "what": "مرحلة الرحلة في مهمة المريخ الاستكشافية + الدرع الحراري.",
+      "where": "الرحلة · مرحلة الرحلة/الاقتراب"
+    },
+    "/images/colophon/model-cruise-opportunity_webp": {
+      "title": "مرحلة الرحلة البينية لـ Opportunity",
+      "what": "مرحلة الرحلة في مهمة المريخ الاستكشافية + الدرع الحراري.",
+      "where": "الرحلة · مرحلة الرحلة/الاقتراب"
+    },
+    "/images/colophon/model-cruise-schiaparelli_webp": {
+      "title": "Schiaparelli و TGO",
+      "what": "ExoMars Trace Gas Orbiter يحمل كبسولة الدخول Schiaparelli.",
+      "where": "الرحلة · مرحلة الرحلة/الاقتراب"
+    },
+    "/images/colophon/model-cruise-viking1_webp": {
+      "title": "مدار Viking + مركبة الهبوط",
+      "what": "مدار Viking مع مركبة الهبوط المحاطة بالغلاف البيولوجي أسفله.",
+      "where": "الرحلة · مرحلة الرحلة/الاقتراب"
+    },
+    "/images/colophon/model-cruise-mars3_webp": {
+      "title": "وحدة المريخ 3",
+      "what": "حافلة سوفيتية من طراز M-71 مع كبسولة النزول والأجنحة الشمسية.",
+      "where": "الطيران · المرحلة الانتقالية/الاقتراب"
+    },
+    "/images/colophon/model-cruise-tianwen1_webp": {
+      "title": "مدار Tianwen-1",
+      "what": "حافلة المدار التي تحمل كبسولة الدخول (Zhurong في الداخل).",
+      "where": "الطيران · المرحلة الانتقالية/الاقتراب"
+    },
+    "/images/colophon/model-cruise-apollo11_webp": {
+      "title": "وحدة Apollo الأمرية + الحمولة القمرية",
+      "what": "وحدة القيادة/الخدمة المرتبطة بالمركبة القمرية — المكدس عبر القمري (Apollo 11–17).",
+      "where": "الطيران · المرحلة الانتقالية/الاقتراب"
+    },
+    "/images/colophon/model-cruise-artemis3_webp": {
+      "title": "Orion (Artemis)",
+      "what": "كبسولة Orion للطاقم + وحدة الخدمة الأوروبية مع أربعة أجنحة شمسية (Artemis III / IV).",
+      "where": "الطيران · المرحلة الانتقالية/الاقتراب"
+    },
+    "/images/colophon/model-cruise-luna9_webp": {
+      "title": "Luna 9 بالصعود المباشر",
+      "what": "حافلة سوفيتية مباشرة مع كبسولة الهبوط الكروية في الأعلى.",
+      "where": "الطيران · المرحلة الانتقالية/الاقتراب"
+    },
+    "/images/colophon/model-cruise-luna16_webp": {
+      "title": "Luna 16 لاسترجاع العينات",
+      "what": "مرحلة النزول بخزانات كروية، ومرحلة الصعود، وكبسولة العودة (Luna 16 / 24).",
+      "where": "الطيران · المرحلة الانتقالية/الاقتراب"
+    },
+    "/images/colophon/model-cruise-luna17_webp": {
+      "title": "ناقل Lunokhod",
+      "what": "حافلة مرحلة النزول التي تحمل مركبة Lunokhod القمرية (Luna 17 / 21).",
+      "where": "الطيران · المرحلة الانتقالية/الاقتراب"
+    },
+    "/images/colophon/model-cruise-change3_webp": {
+      "title": "Chang'e 3 / 4",
+      "what": "مرحلة نزول مركبة CNSA مع مركبة Yutu القمرية مخزنة في الأعلى.",
+      "where": "الطيران · المرحلة الانتقالية/الاقتراب"
+    },
+    "/images/colophon/model-cruise-change5_webp": {
+      "title": "Chang'e 5 / 6",
+      "what": "مكدس استرجاع العينات الرباعي — مدار، ومعيد الإرجاع، والصاعد، والهابط.",
+      "where": "الطيران · المرحلة البينية/المقاربة"
+    },
+    "/images/colophon/model-cruise-chandrayaan3_webp": {
+      "title": "Chandrayaan-3",
+      "what": "وحدة الدفع من ISRO تحمل مَهْبِط Vikram",
+      "where": "الطيران · المرحلة البينية/المقاربة"
+    },
+    "/images/colophon/model-cruise-slim_webp": {
+      "title": "SLIM",
+      "what": "حافلة المرحلة البينية المدمجة من JAXA بكنية «صياد القمر».",
+      "where": "الطيران · المرحلة البينية/المقاربة"
+    },
+    "/images/colophon/model-cruise-beresheet_webp": {
+      "title": "Beresheet",
+      "what": "مركبة الهبوط الصغيرة ذات الأرجل الأربع المستديرة من SpaceIL قيد الانتقال.",
+      "where": "الطيران · المرحلة البينية/المقاربة"
+    },
+    "/images/colophon/model-cruise-blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1",
+      "what": "المركبة الهابطة الطويلة من Blue Origin — خزان مركزي على هيكل بأربع أرجل.",
+      "where": "الطيران · المرحلة البينية/المقاربة"
+    },
+    "/images/colophon/model-cruise-hayabusa1_webp": {
+      "title": "طور المرحلة البينية من Hayabusa",
+      "what": "حافلة إعادة العينات من JAXA — أجنحة شمسية وقرن جمع عينات ومحركات أيونية.",
+      "where": "الطيران · المرحلة البينية/المقاربة"
+    },
+    "/images/colophon/model-cruise-osiris-rex_webp": {
+      "title": "طور المرحلة البينية من OSIRIS-REx",
+      "what": "حافلة صندوقية الشكل ذات أجنحة شمسية بزاوية V وذراع جمع عينات TAGSAM الممدودة.",
+      "where": "الطيران · المرحلة البينية/المقاربة"
+    },
+    "/images/colophon/model-cruise-near-shoemaker_webp": {
+      "title": "NEAR Shoemaker",
+      "what": "حافلة المدار مع أربعة ألواح شمسية ثابتة في شكل صليب وهوائي ثابت.",
+      "where": "الطيران · المرحلة البينية/المقاربة"
+    },
+    "/images/colophon/model-cruise-starship-demo_webp": {
+      "title": "Starship",
+      "what": "المرحلة العليا من الفولاذ المقاوم للصدأ — مخروط أنفي وزعانف أمامية/خلفية وحزمة محركات Raptor (الانتقال إلى المريخ).",
+      "where": "الطيران · المرحلة البينية/المقاربة"
+    },
+    "/images/colophon/model-sat-hubble_webp": {
+      "title": "Hubble",
+      "what": "مرصد أسطواني بفتحة باب وأجنحة شمسية.",
+      "where": "علامات المدار الأرضي"
+    },
+    "/images/colophon/model-sat-jwst_webp": {
+      "title": "JWST",
+      "what": "درع واقي من الشمس على شكل ملعب تنس تحته مرآة ذهبية مقسمة.",
+      "where": "علامات المدار الأرضي"
+    },
+    "/images/colophon/model-sat-chandra_webp": {
+      "title": "Chandra",
+      "what": "مرصد أشعة سينية مستطيل الشكل مع أجنحة شمسية.",
+      "where": "علامات المدار الأرضي"
+    },
+    "/images/colophon/model-sat-xmm_webp": {
+      "title": "XMM-Newton",
+      "what": "أنبوب تلسكوب ESA للأشعة السينية الطويل.",
+      "where": "علامات المدار الأرضي"
+    },
+    "/images/colophon/model-sat-gaia_webp": {
+      "title": "Gaia",
+      "what": "مرصد ESA لقياس المواضع مزود بتنورة واقية من الشمس.",
+      "where": "علامات المدار الأرضي"
+    },
+    "/images/colophon/model-sat-lro_webp": {
+      "title": "LRO",
+      "what": "مستكشف الاستطلاع القمري مع هيكل أساسي وطبق.",
+      "where": "علامات المدار الأرضي"
+    },
+    "/images/colophon/model-sat-geo-comsat_webp": {
+      "title": "قمر اتصالات ثابت",
+      "what": "هيكل صندوقي مع أجنحة شمسية وهوائيات مفتوشة.",
+      "where": "علامات المدار الأرضي"
+    },
+    "/images/colophon/model-sat-nav-constellation_webp": {
+      "title": "كوكبة الملاحة",
+      "what": "مجموعة أقمار من فئة GPS (GPS / Galileo / GLONASS / BeiDou).",
+      "where": "علامات المدار الأرضي"
+    },
+    "/images/colophon/model-sat-generic-orbiter_webp": {
+      "title": "هيكل مدار عام",
+      "what": "ناقل سدادي + أجنحة شمسية + هوائي، ببناء احتياطي مفتاح الوكالة.",
+      "where": "علامات المدار الأرضي"
+    },
+    "/images/colophon/model-earth-launchpad_webp": {
+      "title": "منشأة الإطلاق",
+      "what": "منصة ثمانية الأضلاع مع أربعة أبراج مانعة للصواعق — كينيدي وبايكونور وجيوتشيوان وغيرها.",
+      "where": "علامات سطح الأرض"
+    },
+    "/images/colophon/model-station-iss_webp": {
+      "title": "نموذج وكيل محطة الفضاء الدولية",
+      "what": "جسم الشبكة الكامل والوحدات المضغوطة والزائرون الراسيون والمصفوفات القابلة للتوجيه.",
+      "where": "مشهد مداري محطة الفضاء الدولية"
+    },
+    "/images/colophon/model-station-tiangong_webp": {
+      "title": "نموذج وكيل Tiangong",
+      "what": "تكوين T للنوى + وحدات المختبرات، و Shenzhou و Tianzhou الراسيون والمصفوفات.",
+      "where": "مشهد مداري Tiangong"
+    },
+    "/images/colophon/model-microgravity_webp": {
+      "title": "محاور الجاذبية الضعيفة",
+      "what": "ستة أسهم معنونة تحدد الإطار المحلي للمحطة (zenith/nadir...).",
+      "where": "عدسة العلوم محطة الفضاء الدولية + Tiangong"
+    },
+    "/images/colophon/model-orbit-rings_webp": {
+      "title": "حلقات الناقل + هالات العلامات",
+      "what": "حلقات الارتفاع المائلة بالميل وهالات مضيئة للاختيار.",
+      "where": "الأرض · القمر · المريخ"
+    },
+    "/images/colophon/model-trajectories_webp": {
+      "title": "مسارات المهام الأيقونية",
+      "what": "مسارات الرحلات Voyager و Pioneer و New Horizons و Cassini و Juno و Dawn.",
+      "where": "استكشاف"
+    }
+  },
+  "capsules": {
+    "/images/colophon/model-capsule-mercury-capsule_webp": {
+      "title": "كبسولة Mercury",
+      "what": "درع حراري بليد قابل للاستئصال، مخروط مغطى بالقوباع، وقسم الاسترجاع والهوائي (Freedom 7 … Faith 7).",
+      "where": "إعادة دخول المدار الأرضي"
+    },
+    "/images/colophon/model-capsule-gemini-capsule_webp": {
+      "title": "كبسولة Gemini",
+      "what": "مقياس جيميني ذو المقعدين مرتفع من Mercury مع أنف رادار المقابلة ووحدة المحول.",
+      "where": "إعادة الدخول في مدار الأرض"
+    },
+    "/images/colophon/model-capsule-vostok-sphere_webp": {
+      "title": "Vostok",
+      "what": "وحدة الهبوط الكروية شاريك — حزم الهوائيات وطوق المعدات؛ قذف رائد الفضاء بالمظلة بشكل منفصل.",
+      "where": "إعادة الدخول في مدار الأرض"
+    },
+    "/images/colophon/model-capsule-voskhod-sphere_webp": {
+      "title": "Voskhod",
+      "what": "نفس كرة شاريك، تحمل الآن حزمة الهبوط الناعم بالوقود الصلب على هيكل دعم — ركبت الطاقم معها إلى الأرض.",
+      "where": "إعادة الدخول في مدار الأرض"
+    },
+    "/images/colophon/model-capsule-apollo-cm_webp": {
+      "title": "وحدة قيادة Apollo",
+      "what": "المخروط الحاد الكلاسيكي مع نفق الرسو الأمامي (Apollo 7/9 و Skylab و ASTP).",
+      "where": "إعادة الدخول في مدار الأرض"
+    },
+    "/images/colophon/model-capsule-soyuz-sa_webp": {
+      "title": "وحدة الهبوط سويوز",
+      "what": "جرس \"المصباح الأمامي\" — درع حراري كروي من الأسفل مع قمة طاقم مخروطية.",
+      "where": "إعادة الدخول في مدار الأرض"
+    },
+    "/images/colophon/model-capsule-dragon-capsule_webp": {
+      "title": "Crew Dragon",
+      "what": "جسم مخروطي أنيق مع وحدات SuperDraco ودرع الحماية من الحرارة PICA-X (Inspiration4 و Polaris Dawn).",
+      "where": "إعادة الدخول في مدار الأرض"
+    },
+    "/images/colophon/model-capsule-shenzhou-reentry_webp": {
+      "title": "وحدة الهبوط سيتشو Shenzhou",
+      "what": "جرس شاسع من نسب سويوز — بهيكل فضي أخف من تلقاء نفسه مع حزام معدات رمادي (Shenzhou-1 فما بعده).",
+      "where": "إعادة الدخول في مدار الأرض"
+    }
+  },
+  "canvas2d": {
+    "/images/app-landing-hero_webp": {
+      "title": "بطل صفحة الهبوط",
+      "what": "ملصق نظام شمسي عائلي مسطح — شمس متوهجة وحلقات مدار مائلة وقوس نقل سماوي واحد مسلط عليه.",
+      "where": "الصفحة الرئيسية"
+    },
+    "/images/colophon/viz-system-map_webp": {
+      "title": "خريطة النظام الشمسي ثنائية الأبعاد",
+      "what": "نظام شمسي من أعلى مع كواكب مظللة وتوهج وحلقات مدارية وحلقات زحل.",
+      "where": "استكشاف الوضع ثنائي الأبعاد"
+    },
+    "/images/colophon/viz-porkchop_webp": {
+      "title": "خريطة حرارية لـ Porkchop Δv",
+      "what": "شبكة الإقلاع × مدة الرحلة المرسومة بألوان من حل Lambert.",
+      "where": "خطط لعملية نقل"
+    },
+    "/images/colophon/viz-blueprint_webp": {
+      "title": "رسومات المحطة",
+      "what": "الإسقاطات المتعامدة من الأعلى / الجانب لكل وحدة محطة.",
+      "where": "محطة الفضاء الدولية + Tiangong"
+    },
+    "/images/colophon/viz-nation-legend_webp": {
+      "title": "وسيلة إيضاح خريطة السطح",
+      "what": "مفتاح ألوان الوكالة ذو التباعد التلقائي المرسوم على خرائط السطح المسطحة.",
+      "where": "القمر + المريخ ثنائي الأبعاد"
+    },
+    "/images/colophon/model-textlabels_webp": {
+      "title": "رسومات تسميات النصوص ثلاثية الأبعاد",
+      "what": "بطاقات أسماء معروضة على Canvas ومرسومة على الأجسام في كل منظر.",
+      "where": "الأرض · القمر · المريخ · استكشف"
+    }
+  },
+  "ui": {
+    "Science info-chips": {
+      "title": "شرائح معلومات العلوم",
+      "what": "رمز \"i\" مضمّن يربط أي شكل بشارحه في قسم /العلوم.",
+      "where": "في جميع أنحاء"
+    },
+    "Panorama compass rose": {
+      "title": "وردة البوصلة للبانوراما",
+      "what": "علامة دوارة شمال/شرق/جنوب/غرب موجهة نحو انحراف البانوراما.",
+      "where": "بانوراما القمر + المريخ"
+    },
+    "Conic-section icons": {
+      "title": "رموز المقاطع المخروطية",
+      "what": "رموز دائرة / قطع ناقص / قطع مكافئ / قطع زائد لطبقة المدار.",
+      "where": "اطر"
+    },
+    "Navigation + control glyphs": {
+      "title": "الملاحة + رموز التحكم",
+      "what": "رموز القائمة والعدسة العلمية والتباين والجودة وملء الشاشة.",
+      "where": "كل مسار"
+    }
+  },
+  "writing": {
+    "Mission briefings": {
+      "title": "إحاطات المهام",
+      "what": "114 سردية لمهام — سجل الإطلاق والمركبات الفضائية وملف الرحلة والنتائج — مكتوبة للبطاقات التعريفية للمهام وإيجازات Fly.",
+      "where": "المهام + Fly"
+    },
+    "Fleet catalogue entries": {
+      "title": "إدخالات فهرس الأسطول",
+      "what": "251 مركبة فضائية وأجهزة إطلاق وبدلات وأسطح إطلاق ومكونات محطات، لكل منها سطر «الأشهر له» ووصف كامل بالنثر.",
+      "where": "الأسطول"
+    },
+    "Landing-site stories": {
+      "title": "قصص مواقع الهبوط",
+      "what": "55 تاريخ سردي متعدد الفصول لمواقع الهبوط على القمر والمريخ، مع تعليقات توضيحية أصلية على كل صورة فوتوغرافية.",
+      "where": "مواقع القمر + المريخ"
+    },
+    "Science encyclopedia": {
+      "title": "موسوعة العلوم",
+      "what": "117 شارحًا أصليًا عبر الميكانيكا المدارية والدفع والحياة في الفضاء والأرض من الفضاء وسجل الرحلات الفضائية — بالإضافة إلى كل تعليق توضيحي للشكل.",
+      "where": "العلوم"
+    },
+    "World profiles": {
+      "title": "ملفات تعريف العوالم",
+      "what": "نسخة وصفية للكواكب التسعة و22 جسمًا صغيرًا — مذنبات وكويكبات وأجسام حزام كايبر — الموضحة على الكرة السماوية.",
+      "where": "استكشف"
+    },
+    "Station module notes": {
+      "title": "ملاحظات وحدات المحطة",
+      "what": "ملاحظات تشغيلية وتاريخية لجميع وحدات محطة الفضاء الدولية و Tiangong البالغ عددها 22 وحدة، مكتوبة لألواح المخططات.",
+      "where": "محطة الفضاء الدولية + Tiangong"
+    },
+    "Surface + panorama captions": {
+      "title": "تعليقات توضيحية للسطح + البانوراما",
+      "what": "تسميات النقاط الساخنة والتعليقات التوضيحية للبانوراما المشروحة التي تسمي ما تنظر إليه في كل منظر للقمر والمريخ.",
+      "where": "بانوراما القمر + المريخ"
+    },
+    "Audio tour scripts": {
+      "title": "سيناريوهات جولة صوتية",
+      "what": "كل حلقة جولة موجهة وممتدة مكتوبة أصلًا لـ Orrery؛ فقط أصوات تحويل النص إلى كلام هي من طرف ثالث (معترف بها في صفحة الاستعارات).",
+      "where": "خذ الجولة"
+    },
+    "Physics Lab formula registry": {
+      "title": "سجل صيغ مختبر الفيزياء",
+      "what": "تم بناء مختبر الفيزياء على 64 تعريفًا صيغيًا أصليًا — لكل منها معادلتها ونطاقات معاملاتها والمنطق الصريح والافتراضات المعلنة وموصفات الأشكال المحسوبة — تم تأليفها داخليًا على الفيزياء الحقيقية. تم الاستشهاد بثوابت المرجع التي تحسب منها (JPL/IAU/EGM96) على صفحة الاستعارات.",
+      "where": "مختبر الفيزياء"
+    },
+    "Physics Lab goals": {
+      "title": "أهداف مختبر الفيزياء",
+      "what": "25 درجة من أهداف التعلم الأصلية تربط الصيغ الرياضية في رحلات مروية — من إطلاق صاروخ إلى لمس مذنب — مع لوحة اتصال عملية مكتوبة لكل منها.",
+      "where": "مختبر الفيزياء"
+    },
+    "Physics Lab interface, in 14 languages": {
+      "title": "واجهة مختبر الفيزياء بـ 14 لغة",
+      "what": "كل نص في المختبر — عناوين الصيغ، تسميات المعاملات، الافتراضات، السرد، حالات الخطأ — تم تأليفه أصليًا وترجمته بآلية عبر جميع الـ 14 لغة مدعومة.",
+      "where": "مختبر الفيزياء"
+    }
+  }
+}

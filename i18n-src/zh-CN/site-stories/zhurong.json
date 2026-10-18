@@ -1,0 +1,61 @@
+{
+  "intro": "祝融号于2021年5月14日降落在乌托邦平原——这是中国首次成功登陆火星,也是各国火星任务中首次通过一次发射同时实现环绕器、着陆器和火星车组合的任务(天问一号)。祝融号以中国火神命名,在乌托邦平原南部行驶了1.92公里,于2022年5月沙尘季期间进入休眠。中国国家航天局(CNSA)尚未确认其已唤醒。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "中国首个火星着陆器与火星车",
+      "images": [
+        {
+          "src": "/images/missions/tianwen1/01.webp",
+          "caption": "祝融号火星车在北京进行发射前集成——重240千克,以太阳能供电,搭载用于探测地下结构的探地雷达。"
+        },
+        {
+          "src": "/images/missions/tianwen1/02.webp",
+          "caption": "天问一号发射组合体——环绕器、着陆器与火星车合为一体,是迄今首次尝试便最具雄心的火星任务。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "2020年7月23日——长征五号从文昌升空",
+      "images": [
+        {
+          "src": "/images/missions/tianwen1/03.webp",
+          "caption": "长征五号从海南文昌航天发射场发射天问一号——前往火星的飞行历时7个月。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "乌托邦平原——2021年5月14日着陆",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/zhurong/tier3-pan.jpg",
+          "caption": "祝融号导航相机拍摄的全景图,画面包含着陆器甲板及远处的火星地表——这是 NASA 和苏联之外的火星任务传回的首张地面视角图像。"
+        },
+        {
+          "src": "/images/hotspots/mars/zhurong/tier2-hirise.jpg",
+          "caption": "NASA 的 MRO HiRISE 从轨道上拍摄的祝融号火星车与着陆器——档案影像中的国际合作。"
+        },
+        {
+          "src": "/images/fleet-galleries/zhurong/01.webp",
+          "caption": "火星上的祝融号与着陆器——由火星车自行部署的远程相机拍摄,随后火星车驶离并为其拍照。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "探地雷达探测乌托邦平原地下结构",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/zhurong/03.webp",
+          "caption": "探地雷达剖面显示地下约80米深处的分层结构——这是乌托邦平原南部古代洪水事件的证据。"
+        }
+      ]
+    }
+  ]
+}

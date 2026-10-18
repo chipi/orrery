@@ -1,0 +1,46 @@
+{
+  "name": "Voyager 2",
+  "current_distance_label": "143 AU · 距太阳约19.8光时",
+  "interstellar_since_label": "2018年11月穿越太阳风层顶",
+  "waypoints": [
+    {
+      "label": "发射"
+    },
+    null,
+    null,
+    {
+      "label": "木星"
+    },
+    null,
+    null,
+    {
+      "label": "土星"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "天王星"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "海王星"
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "太阳风层顶"
+    },
+    null,
+    {
+      "label": "今天"
+    }
+  ]
+}

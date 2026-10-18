@@ -1,0 +1,53 @@
+{
+  "intro": "嫦娥六号于2024年6月1日降落在南极—艾特肯盆地，这是人类首次从月球背面采样返回的任务；该盆地是内太阳系中最深、最古老、最大的撞击构造。2024年6月25日，嫦娥六号将1,935克月背物质带回地球——这些样品中可能含有来自42亿年前形成该盆地的那次撞击的月幔碎片。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "在嫦娥五号基础上重新设计，用于月背采样返回",
+      "images": [
+        {
+          "src": "/images/missions/change6/01.webp",
+          "caption": "嫦娥六号组合体——新增鹊桥二号中继星以实现月背通信，其余基本沿用嫦娥五号的架构。"
+        },
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "国际合作载荷——ESA NILS探测仪、法国DORN氡探测仪、意大利INRRI后向反射器、巴基斯坦ICUBE-Q纳卫星。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "2024年5月3日——长征五号，文昌发射场",
+      "images": [
+        {
+          "src": "/images/missions/change6/03.webp",
+          "caption": "长征五号发射嫦娥六号——往返月球背面共28天，其中包括等待合适中继通信窗口的14天。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "Apollo撞击坑（位于南极—艾特肯盆地内）——2024年6月1日降落",
+      "images": [
+        {
+          "src": "/images/missions/change6/04.webp",
+          "caption": "嫦娥六号着陆器在月球背面——不依靠月球车的定点采样返回，由释放的微型巡视器拍摄。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "1,935克南极—艾特肯盆地物质",
+      "images": [
+        {
+          "src": "/images/missions/change6/05.webp",
+          "caption": "返回舱在内蒙古草原上，2024年6月25日——有史以来第一批抵达地球的月球背面样品。"
+        }
+      ]
+    }
+  ]
+}

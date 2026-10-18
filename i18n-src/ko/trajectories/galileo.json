@@ -1,0 +1,37 @@
+{
+  "name": "Galileo",
+  "current_distance_label": "5.4 AU · 목성 처분됨 2003-09-21 (유로파 보호)",
+  "waypoints": [
+    {
+      "label": "발사 (STS-34)"
+    },
+    null,
+    {
+      "label": "금성"
+    },
+    null,
+    {
+      "label": "지구 #1"
+    },
+    null,
+    {
+      "label": "가스프라"
+    },
+    null,
+    {
+      "label": "지구 #2"
+    },
+    null,
+    {
+      "label": "이다 + 닥틸"
+    },
+    null,
+    null,
+    {
+      "label": "목성 궤도 진입"
+    },
+    {
+      "label": "목성에 처분됨"
+    }
+  ]
+}

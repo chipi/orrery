@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 15 landete am 30. Juli 1971 bei der Hadley Rille und den Apennine Mountains – die erste „J-Mission“ mit verlängertem Aufenthalt auf der Oberfläche, mit dem Lunar Roving Vehicle (LRV) und mit einem wissenschaftlich geschulten Piloten (David Scott). Scott und Irwin legten bei drei Außenbordeinsätzen (EVAs) insgesamt 28 km zurück, fanden den Genesis Rock (Anorthosit, ca. 4,1 Mrd. Jahre alt, Urkruste) und ließen live im Fernsehen eine Feder und einen Hammer fallen, um Galileos Fallversuch zur Schwerkraft zu demonstrieren.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Endeavour + Falcon + LRV-1 (das erste Mondauto)",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/01.webp",
+          "caption": "Die Crew von Apollo 15 + das Lunar Roving Vehicle im Training vor der Mission – Scott + Irwin sollten die ersten Räder auf dem Mond steuern."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Hadley-Apennine – gelandet am 30. Juli 1971",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/02.webp",
+          "caption": "Jim Irwin salutiert neben dem LRV, hinter ihm Mt Hadley Delta – die ersten Bilder der Apennine Mountains von der Oberfläche aus."
+        },
+        {
+          "src": "/images/missions/apollo15/03.webp",
+          "caption": "David Scott am Rand der Hadley Rille – zum ersten Mal standen Astronauten an der Kante eines uralten Lavakanals auf einer anderen Welt."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
+          "caption": "Panorama der Hadley Plain – Falcon-Abstiegsstufe + LRV + Mt Hadley Delta am Horizont."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wissenschaft",
+      "subtitle": "Genesis Rock + Galileo-Experiment",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/04.webp",
+          "caption": "Probe 15415 „Genesis Rock“ – reiner eisenreicher Anorthosit, ca. 4,1 Milliarden Jahre alt. Ein Fragment der ursprünglichen Magmaozean-Kruste des Mondes."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "intro": "Luna 21 landde op 15 januari 1973 in de krater Le Monnier en zette Lunokhod 2 af, de opvolger van de eerste maanrover ter wereld. Lunokhod 2 legde in 4 maanden 42,1 km af — een record dat bleef staan tot NASA's Opportunity het in juli 2014, 41 jaar later, op Mars verbrak. De rover stuurde 80.000 tv-beelden en 86 panorama-opnamen terug, tot een hoop regoliet op de radiator viel en de rover oververhitte.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Lunokhod 2 — het record voor rijden op de maanterra (42 km)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/01.webp",
+          "caption": "Lunokhod 2 — verbeterd ten opzichte van Lunokhod 1: meer camera's, nauwkeurigere stuurbesturing, een manipulator op de derde as en grotere zonnepanelen."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/02.webp",
+          "caption": "Het chassis van Lunokhod 2 wordt klaargemaakt voor verzending — acht onafhankelijke wielmotoren, elk met een eigen regelkring met koppelterugkoppeling."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Krater Le Monnier — geland op 15 januari 1973",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/03.webp",
+          "caption": "Lunokhod 2, gefotografeerd met zijn eigen panoramacamera — een lange schaduw strekt zich uit over het maanoppervlak."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/04.webp",
+          "caption": "Kaart van het traject van 42,1 km — de rover stak mare-basalt over, beklom kraterwanden en onderzocht tientallen rotsblokken, verspreid over vier maandagen."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/05.webp",
+          "caption": "Eindpositie, in 2010 vastgelegd door LRO — Lunokhod 2 kwam tot stilstand nadat regoliet van een steile kraterwand zijn radiatorpaneel had bedolven."
+        }
+      ]
+    }
+  ]
+}

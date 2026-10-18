@@ -1,0 +1,24 @@
+{
+  "name": "Hayabusa2",
+  "current_distance_label": "1,24 AU · onderweg naar (98943) 2001 CC21 voorbijvlucht juli 2026 (verlengde missie)",
+  "waypoints": [
+    {
+      "label": "Lancering (H-IIA)"
+    },
+    null,
+    {
+      "label": "Aardvoorbijvlucht"
+    },
+    null,
+    {
+      "label": "Aankomst bij Ryugu"
+    },
+    {
+      "label": "SCI-impactor"
+    },
+    {
+      "label": "Terugkeer naar aarde (monster)"
+    },
+    null
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "intro": "NASAの火星探査車 Curiosity は、2011年11月26日、ケープ・カナベラルから Atlas V ロケットに載せられて打ち上げられた。254日間の巡航を経て、Mars Science Laboratory は、重さ899 kgの原子力電池駆動のこの探査車を、2012年8月6日、今や有名になったスカイクレーン方式の着陸でゲール・クレーターに届けた。それから10年以上がたった今も、Curiosity はシャープ山を登り続け、かつて火星が居住可能だったころの記録を宿す岩石を掘削している。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "ゲール・クレーターのための探査車づくり",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/01.webp",
+          "caption": "JPL で組み立てられた Mars Science Laboratory。Curiosity、降下段、バックシェル、ヒートシールドが、フロリダへの輸送に向けて積み重ねられている。"
+        },
+        {
+          "src": "/images/missions/curiosity/02.webp",
+          "caption": "MMRTG原子力電源(右下のオレンジ色の円盤)は、約110 Wを14年以上にわたり連続して供給する。太陽電池パネルは不要で、冬の運用停止もない。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "2011年11月26日 — ケープ・カナベラルから Atlas V で",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/03.webp",
+          "caption": "Mars Science Laboratory と Curiosity を載せ、SLC-41 から離昇する Atlas V 541。2011年11月26日、10:02 EST。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "ゲール・クレーター — 2012年8月6日着陸",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
+          "caption": "Mont Mercou のパノラマ、ソル3070(2021年3月)。Mastcam-Z による360°の撮影で、探査車、Mt Mercou の層状の崖、そして地平線上のシャープ山が写っている。"
+        },
+        {
+          "src": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
+          "caption": "Mars Reconnaissance Orbiter が1ピクセルあたり25 cmで撮影した、Curiosity の走行経路の HiRISE 真上からの画像。"
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/01.webp",
+          "caption": "ソル1126、掘削地点 \"Big Sky\" での自撮り写真。MAHLI で撮影した数十枚のクローズアップを1枚の画像につなぎ合わせた合成画像。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "古代の火星が居住可能だった証拠",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/02.webp",
+          "caption": "Yellowknife Bay の掘削孔。火星のかつての湖底環境から採取された初のサンプル。2013年1月。"
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/03.webp",
+          "caption": "ベラ・ルービン尾根の堆積岩。縞状鉄鉱床と粘土鉱物は、古代に液体の水が存在し、居住可能な化学環境があったことを示している。"
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "title": "人々",
+      "subtitle": "Curiosity を支えるエンジニアと科学者たち",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/04.webp",
+          "caption": "2012年8月5日〜6日、「恐怖の7分間」のスカイクレーン着陸を祝う JPL の管制室。ゲール・クレーターからの最初の信号を受け取った後のアダム・ステルツナーとチーム。"
+        }
+      ]
+    }
+  ]
+}

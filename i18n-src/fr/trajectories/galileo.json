@@ -1,0 +1,37 @@
+{
+  "name": "Galileo",
+  "current_distance_label": "5,4 UA · envoyé dans Jupiter le 2003-09-21 (protection d'Europe)",
+  "waypoints": [
+    {
+      "label": "Lancement (STS-34)"
+    },
+    null,
+    {
+      "label": "Vénus"
+    },
+    null,
+    {
+      "label": "Terre n°1"
+    },
+    null,
+    {
+      "label": "Gaspra"
+    },
+    null,
+    {
+      "label": "Terre n°2"
+    },
+    null,
+    {
+      "label": "Ida + Dactyl"
+    },
+    null,
+    null,
+    {
+      "label": "Insertion en orbite de Jupiter"
+    },
+    {
+      "label": "Envoyé dans Jupiter"
+    }
+  ]
+}

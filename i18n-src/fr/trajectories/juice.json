@@ -1,0 +1,29 @@
+{
+  "name": "JUICE",
+  "current_distance_label": "0,94 UA · en route vers le survol terrestre n°2 le 2026-09-29 (jambe de croisière 2 sur 5)",
+  "waypoints": [
+    {
+      "label": "Lancement (Ariane 5)"
+    },
+    null,
+    {
+      "label": "Survol Lune-Terre"
+    },
+    null,
+    {
+      "label": "Survol de Vénus"
+    },
+    null,
+    {
+      "label": "Terre n°2"
+    },
+    null,
+    {
+      "label": "Terre n°3"
+    },
+    null,
+    {
+      "label": "Insertion en orbite de Jupiter"
+    }
+  ]
+}

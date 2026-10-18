@@ -1,0 +1,41 @@
+{
+  "name": "BepiColombo",
+  "current_distance_label": "0.48 AU · 2026年12月5日の水星軌道投入に向けて航行中",
+  "waypoints": [
+    {
+      "label": "打ち上げ (Ariane 5)"
+    },
+    null,
+    {
+      "label": "地球"
+    },
+    {
+      "label": "金星 #1"
+    },
+    {
+      "label": "金星 #2"
+    },
+    {
+      "label": "水星 #1"
+    },
+    {
+      "label": "水星 #2"
+    },
+    {
+      "label": "水星 #3"
+    },
+    {
+      "label": "水星 #4"
+    },
+    {
+      "label": "水星 #5"
+    },
+    {
+      "label": "水星 #6"
+    },
+    null,
+    {
+      "label": "水星軌道投入"
+    }
+  ]
+}

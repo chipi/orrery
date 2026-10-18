@@ -1,0 +1,50 @@
+{
+  "intro": "Phoenix landete am 25. Mai 2008 bei 68,22° N – als erster NASA-Lander, der in der hohen Marsarktis aufsetzte. Binnen weniger Tage hatte er die erste Probe von Wassereis des Mars aufgeschaufelt und beobachtet, wie sie im Kamerabild sublimierte. Der Lander arbeitete 157 Sols lang, bis ihn der Polarwinter tötete: Die Bildung von CO₂-Reif begrub die Solarpaneele und beendete die Mission.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Wiederaufgebaut aus dem gestrichenen Mars-Surveyor-2001-Lander",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/01.webp",
+          "caption": "Der Phoenix-Lander vor dem Versand – 350 kg, Roboterarm, Eisschaufel, TEGA und das Nasschemie-Labor."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Vastitas Borealis – gelandet am 25. Mai 2008",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/phoenix/tier3-pan.jpg",
+          "caption": "360°-Panorama der Landestelle von Phoenix, Sol 14 – Arbeitsbereich, Landefuß und das vom Triebwerksstrahl freigelegte Eis sind unten rechts zu sehen."
+        },
+        {
+          "src": "/images/hotspots/mars/phoenix/tier2-hirise.jpg",
+          "caption": "Der Phoenix-Lander, sein Fallschirm und die Rückschale – alle von MRO HiRISE nach der Landung aufgenommen."
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/02.webp",
+          "caption": "Der Roboterarm hebt den Graben „Snow White“ aus – helles Wassereis, nur wenige Zentimeter unter der Oberfläche freigelegt und danach beobachtet, wie es im Lauf von vier Sols sublimierte."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wissenschaft",
+      "subtitle": "Wasser, Perchlorate und das erste Marswetter",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/03.webp",
+          "caption": "Nachweis von Perchloratsalzen im Marsboden – eine Chemie, die jede spätere Diskussion über die Bewohnbarkeit des Mars prägen sollte."
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/04.webp",
+          "caption": "Lidar-Profile fallenden Schnees über der Phoenix-Landestelle, spät in der Mission – der erste direkt beobachtete Niederschlag auf dem Mars."
+        }
+      ]
+    }
+  ]
+}

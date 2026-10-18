@@ -1,0 +1,27 @@
+{
+  "name": "Juno",
+  "current_distance_label": "5,5 UA · in orbita polare intorno a Giove dal 2016-07-05 — missione estesa fino al 2025",
+  "waypoints": [
+    {
+      "label": "Lancio"
+    },
+    null,
+    null,
+    {
+      "label": "Manovra in spazio profondo"
+    },
+    null,
+    {
+      "label": "Assistenza gravitazionale dalla Terra"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Inserimento in orbita gioviana"
+    },
+    {
+      "label": "Oggi (orbita gioviana)"
+    }
+  ]
+}

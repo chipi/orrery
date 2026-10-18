@@ -1,0 +1,57 @@
+{
+  "intro": "Apollo 17 landde op 11 december 1972 in de Taurus-Littrowvallei — de laatste bemande maanmissie en de enige met een professionele geoloog (Harrison Schmitt) op het oppervlak. Cernan en Schmitt brachten verspreid over drie EVA's 22 uur buiten door, reden 35 km en brachten 110 kg aan monsters mee terug, waaronder de beroemde Orange Soil (vulkanische glaskorrels uit een vuurfontein van 3,5 Ga geleden). Cernans voetafdruk is het meest recente menselijke spoor op een andere wereld.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "America + Challenger + LRV-3",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/01.webp",
+          "caption": "Portret van de bemanning van Apollo 17 — Gene Cernan (CDR), Ron Evans (CMP), Harrison \"Jack\" Schmitt (LMP, wetenschapper-astronaut)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "7 december 1972 — de laatste vlucht van de Saturn V",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/02.webp",
+          "caption": "Eerste nachtelijke lancering van een Saturn V, 05:33 UTC op 7 december 1972 — zichtbaar vanaf 700 km afstand. De laatste Apollo en de laatste Saturn V."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Taurus-Littrowvallei — geland op 11 december 1972",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/03.webp",
+          "caption": "Cernan + de vlag met de Aarde erboven — \"The Last Man on the Moon\"."
+        },
+        {
+          "src": "/images/missions/apollo17/04.webp",
+          "caption": "Schmitt ontdekt bij Shorty-krater de Orange Soil — vulkanische glasbolletjes uit een vuurfontein-uitbarsting van 3,5 Ga geleden."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo17/tier3-pan.jpg",
+          "caption": "Panorama van Taurus-Littrow — de afdaaltrap van Challenger + LRV + Tortilla Flat in de verte."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "De eerste opgeleide geoloog op de Maan",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/05.webp",
+          "caption": "Monster 70017 — het laatste maanmonster dat door mensen is verzameld, Cernans laatste taak voor de lancering op 14 december 1972."
+        }
+      ]
+    }
+  ]
+}

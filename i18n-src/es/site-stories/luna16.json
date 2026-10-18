@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 16 aterrizó en Mare Fecunditatis el 20 de septiembre de 1970: fue el primer retorno robótico de muestras de otro mundo. Perforó 35 cm en el regolito lunar, selló 101 g en la cápsula de regreso y despegó 26 horas después del alunizaje. La cápsula aterrizó en Kazajistán tres días más tarde. Demostró que la ingeniería soviética podía traer material lunar sin vuelo tripulado, un año y dos meses después del Apollo 11.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Módulo de aterrizaje soviético E-8-5: el primer equipo robótico de retorno de muestras",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/01.webp",
+          "caption": "Maqueta de la nave Luna 16: etapa de descenso (primer plano) y etapa de ascenso con la cápsula de regreso (arriba)."
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/02.webp",
+          "caption": "Diagrama del mecanismo de recogida de muestras: núcleo de perforación con transferencia sellada a la cápsula de regreso."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "12 de septiembre de 1970: Proton-K desde Baikonur",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/03.webp",
+          "caption": "Proton-K con la etapa superior Blok-D en la plataforma del cosmódromo de Baikonur."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Mare Fecunditatis: alunizaje el 20 de septiembre de 1970",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/04.webp",
+          "caption": "Luna 16 perforando el regolito: selló 101 g de material en la cápsula de regreso esférica para el despegue."
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/05.webp",
+          "caption": "Cápsula de regreso en la estepa kazaja, 24 de septiembre de 1970: el primer retorno robótico de muestras interplanetarias de la historia."
+        }
+      ]
+    }
+  ]
+}

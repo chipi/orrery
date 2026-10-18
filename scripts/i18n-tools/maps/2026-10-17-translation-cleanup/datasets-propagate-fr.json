@@ -1,0 +1,134 @@
+[
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.title",
+    "old": "Surface",
+    "new": "La surface"
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.2.title",
+    "old": "Science",
+    "new": "La science"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.title",
+    "old": "Surface",
+    "new": "La surface"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.2.title",
+    "old": "Science",
+    "new": "La science"
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.2.title",
+    "old": "Surface",
+    "new": "La surface"
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.1.title",
+    "old": "Surface",
+    "new": "La surface"
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.2.title",
+    "old": "Science",
+    "new": "La science"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.2.title",
+    "old": "Surface",
+    "new": "La surface"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.3.title",
+    "old": "Science",
+    "new": "La science"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.2.title",
+    "old": "Surface",
+    "new": "La surface"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.3.title",
+    "old": "Science",
+    "new": "La science"
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.2.title",
+    "old": "Surface",
+    "new": "La surface"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.title",
+    "old": "Surface",
+    "new": "La surface"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.3.title",
+    "old": "Science",
+    "new": "La science"
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "chapters.1.title",
+    "old": "Surface",
+    "new": "La surface"
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "chapters.2.title",
+    "old": "Science",
+    "new": "La science"
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.2.title",
+    "old": "Surface",
+    "new": "La surface"
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.3.title",
+    "old": "Science",
+    "new": "La science"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.title",
+    "old": "Surface",
+    "new": "La surface"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.2.title",
+    "old": "Science",
+    "new": "La science"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-cassini_webp.where",
+    "old": "Fly + Explore",
+    "new": "Voler + Explorer"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-voyager-1_webp.where",
+    "old": "Fly + Explore",
+    "new": "Voler + Explorer"
+  }
+]

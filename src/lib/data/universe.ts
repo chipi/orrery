@@ -8,7 +8,7 @@
  */
 
 import { get, type FetchLike } from './core';
-import type { DeepSkyImage } from '$lib/deep-sky';
+import { localizeDeepSky, type DeepSkyImage, type DeepSkyOverlay } from '$lib/deep-sky';
 
 // ─── Named stars (PRD-030 / RFC-032 — /explore v2 Slice 1) ─────────────────
 // The curated ~60 stars that get a marker + label + Panel in the stellar
@@ -213,14 +213,27 @@ export async function getDeepSkyObject(
   const objs = await getDeepSkyObjects(fetchFn);
   return objs.find((o) => o.id === idOrDesignation || o.designation === idOrDesignation) ?? null;
 }
-let deepSkyGalleryCache: Promise<DeepSkyImage[]> | null = null;
-/** The curated deep-sky gallery images (cached) — the caption/credit/telescope
- *  source joined to deep-sky objects via photoKey. */
-export async function getDeepSkyGallery(fetchFn: FetchLike = fetch): Promise<DeepSkyImage[]> {
-  if (!deepSkyGalleryCache) {
-    deepSkyGalleryCache = get<DeepSkyImage[]>('deep-sky.json', fetchFn).catch(() => []);
+const deepSkyGalleryCache = new Map<string, Promise<DeepSkyImage[]>>();
+/** The curated deep-sky gallery images (cached per locale) — the caption/credit/
+ *  telescope source joined to deep-sky objects via photoKey. A locale's overlay
+ *  (i18n-src/<locale>/deep-sky.json) carries the translated text. */
+export async function getDeepSkyGallery(
+  fetchFn: FetchLike = fetch,
+  locale = 'en-US',
+): Promise<DeepSkyImage[]> {
+  let p = deepSkyGalleryCache.get(locale);
+  if (!p) {
+    p = (async () => {
+      const images = await get<DeepSkyImage[]>('deep-sky.json', fetchFn).catch(() => []);
+      if (locale === 'en-US') return images;
+      const overlay = await get<DeepSkyOverlay>(`i18n/${locale}/deep-sky.json`, fetchFn).catch(
+        () => null,
+      );
+      return localizeDeepSky(images, overlay);
+    })();
+    deepSkyGalleryCache.set(locale, p);
   }
-  return deepSkyGalleryCache;
+  return p;
 }
 
 // Milky Way schematic (Slice 5) — a face-on galactocentric MODEL (not to scale).

@@ -1,0 +1,1664 @@
+{
+  "anatomy_art": {
+    "/images/anatomy/akatsuki_webp": {
+      "title": "Akatsuki"
+    },
+    "/images/anatomy/antares_webp": {
+      "title": "Antares"
+    },
+    "/images/anatomy/apollo-csm-block-ii_webp": {
+      "title": "Apollo CSM Block II"
+    },
+    "/images/anatomy/apollo-lm_webp": {
+      "title": "Apollo Lunar Module"
+    },
+    "/images/anatomy/ariane-1_webp": {
+      "title": "Ariane 1"
+    },
+    "/images/anatomy/ariane-5_webp": {
+      "title": "Ariane 5"
+    },
+    "/images/anatomy/ariane-6_webp": {
+      "title": "Ariane 6"
+    },
+    "/images/anatomy/atlas-lv-3b_webp": {
+      "title": "Atlas LV-3B"
+    },
+    "/images/anatomy/atlas-v_webp": {
+      "title": "Atlas V"
+    },
+    "/images/anatomy/atv_webp": {
+      "title": "ATV (Automated Transfer Vehicle)"
+    },
+    "/images/anatomy/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/anatomy/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/anatomy/blue-moon-mk1_webp": {
+      "title": "Blue Moon Mk1"
+    },
+    "/images/anatomy/buran_webp": {
+      "title": "Buran"
+    },
+    "/images/anatomy/cargo-dragon-2_webp": {
+      "title": "Cargo Dragon 2"
+    },
+    "/images/anatomy/cargo-dragon-v1_webp": {
+      "title": "Cargo Dragon v1"
+    },
+    "/images/anatomy/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/anatomy/chandra_webp": {
+      "title": "Chandra X-ray Observatory"
+    },
+    "/images/anatomy/chandrayaan1_webp": {
+      "title": "Chandrayaan-1"
+    },
+    "/images/anatomy/change-3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/anatomy/change-4_webp": {
+      "title": "Chang'e 4"
+    },
+    "/images/anatomy/change-5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/anatomy/compton-gro_webp": {
+      "title": "Compton Gamma Ray Observatory"
+    },
+    "/images/anatomy/crew-dragon_webp": {
+      "title": "Crew Dragon"
+    },
+    "/images/anatomy/curiosity_webp": {
+      "title": "Curiosity (MSL)"
+    },
+    "/images/anatomy/cygnus-enhanced_webp": {
+      "title": "Cygnus Enhanced"
+    },
+    "/images/anatomy/dart_webp": {
+      "title": "DART"
+    },
+    "/images/anatomy/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/anatomy/delta-ii_webp": {
+      "title": "Delta II"
+    },
+    "/images/anatomy/energia_webp": {
+      "title": "Energia"
+    },
+    "/images/anatomy/euclid_webp": {
+      "title": "Euclid"
+    },
+    "/images/anatomy/europa-clipper_webp": {
+      "title": "Europa Clipper"
+    },
+    "/images/anatomy/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin (ExoMars-rover)"
+    },
+    "/images/anatomy/exomars-tgo_webp": {
+      "title": "ExoMars TGO"
+    },
+    "/images/anatomy/falcon-9_webp": {
+      "title": "Falcon 9 Block 5"
+    },
+    "/images/anatomy/falcon-heavy_webp": {
+      "title": "Falcon Heavy"
+    },
+    "/images/anatomy/gaganyaan_webp": {
+      "title": "Gaganyaan"
+    },
+    "/images/anatomy/gaia_webp": {
+      "title": "Gaia"
+    },
+    "/images/anatomy/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/anatomy/gemini_webp": {
+      "title": "Gemini"
+    },
+    "/images/anatomy/h-iia_webp": {
+      "title": "H-IIA"
+    },
+    "/images/anatomy/h3_webp": {
+      "title": "H3"
+    },
+    "/images/anatomy/hakuto-r_webp": {
+      "title": "Hakuto-R-programma"
+    },
+    "/images/anatomy/hayabusa-2_webp": {
+      "title": "Hayabusa2"
+    },
+    "/images/anatomy/hayabusa_webp": {
+      "title": "Hayabusa"
+    },
+    "/images/anatomy/hitomi_webp": {
+      "title": "Hitomi (ASTRO-H)"
+    },
+    "/images/anatomy/hope_webp": {
+      "title": "Hope (EMM)"
+    },
+    "/images/anatomy/htv-x_webp": {
+      "title": "HTV-X"
+    },
+    "/images/anatomy/htv_webp": {
+      "title": "HTV (Kounotori)"
+    },
+    "/images/anatomy/hubble_webp": {
+      "title": "Hubble-ruimtetelescoop"
+    },
+    "/images/anatomy/im-1-odysseus_webp": {
+      "title": "IM-1 Odysseus"
+    },
+    "/images/anatomy/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/anatomy/iss_webp": {
+      "title": "Internationaal ruimtestation"
+    },
+    "/images/anatomy/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/anatomy/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/anatomy/jwst_webp": {
+      "title": "James Webb Space Telescope"
+    },
+    "/images/anatomy/kepler_webp": {
+      "title": "Kepler"
+    },
+    "/images/anatomy/long-march-2f_webp": {
+      "title": "Long March 2F"
+    },
+    "/images/anatomy/long-march-3b_webp": {
+      "title": "Long March 3B"
+    },
+    "/images/anatomy/long-march-5_webp": {
+      "title": "Long March 5 / 5B"
+    },
+    "/images/anatomy/long-march-7_webp": {
+      "title": "Long March 7"
+    },
+    "/images/anatomy/lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter (LRO)"
+    },
+    "/images/anatomy/lrv-apollo_webp": {
+      "title": "Lunar Roving Vehicle"
+    },
+    "/images/anatomy/lucy_webp": {
+      "title": "Lucy"
+    },
+    "/images/anatomy/luna-16_webp": {
+      "title": "Luna 16-klasse"
+    },
+    "/images/anatomy/luna-9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/anatomy/lunar-prospector_webp": {
+      "title": "Lunar Prospector"
+    },
+    "/images/anatomy/lunokhod-1_webp": {
+      "title": "Lunokhod 1"
+    },
+    "/images/anatomy/lunokhod-2_webp": {
+      "title": "Lunokhod 2"
+    },
+    "/images/anatomy/lvm3_webp": {
+      "title": "LVM3 (GSLV Mk III)"
+    },
+    "/images/anatomy/m-v_webp": {
+      "title": "M V"
+    },
+    "/images/anatomy/magellan_webp": {
+      "title": "Magellan"
+    },
+    "/images/anatomy/mangalyaan_webp": {
+      "title": "Mangalyaan (MOM)"
+    },
+    "/images/anatomy/mariner-4_webp": {
+      "title": "Mariner 4"
+    },
+    "/images/anatomy/mariner-9_webp": {
+      "title": "Mariner 9"
+    },
+    "/images/anatomy/mars-3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/anatomy/mars-express_webp": {
+      "title": "Mars Express"
+    },
+    "/images/anatomy/mars-odyssey_webp": {
+      "title": "2001 Mars Odyssey"
+    },
+    "/images/anatomy/maven_webp": {
+      "title": "MAVEN"
+    },
+    "/images/anatomy/mercury-capsule_webp": {
+      "title": "Mercury-capsule"
+    },
+    "/images/anatomy/mercury-redstone_webp": {
+      "title": "Mercury-Redstone"
+    },
+    "/images/anatomy/messenger_webp": {
+      "title": "MESSENGER"
+    },
+    "/images/anatomy/mir_webp": {
+      "title": "Mir"
+    },
+    "/images/anatomy/mro_webp": {
+      "title": "Mars Reconnaissance Orbiter"
+    },
+    "/images/anatomy/n1_webp": {
+      "title": "N1"
+    },
+    "/images/anatomy/new-glenn_webp": {
+      "title": "New Glenn"
+    },
+    "/images/anatomy/new-shepard_webp": {
+      "title": "New Shepard"
+    },
+    "/images/anatomy/opportunity_webp": {
+      "title": "Opportunity (MER-B)"
+    },
+    "/images/anatomy/orion_webp": {
+      "title": "Orion"
+    },
+    "/images/anatomy/osiris-rex_webp": {
+      "title": "OSIRIS-REx"
+    },
+    "/images/anatomy/parker-solar-probe_webp": {
+      "title": "Parker Solar Probe"
+    },
+    "/images/anatomy/perseverance_webp": {
+      "title": "Perseverance (Mars 2020)"
+    },
+    "/images/anatomy/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/anatomy/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/anatomy/pioneer-11_webp": {
+      "title": "Pioneer 11"
+    },
+    "/images/anatomy/pragyan_webp": {
+      "title": "Pragyan"
+    },
+    "/images/anatomy/progress-m_webp": {
+      "title": "Progress M"
+    },
+    "/images/anatomy/progress-ms_webp": {
+      "title": "Progress MS"
+    },
+    "/images/anatomy/proton-k_webp": {
+      "title": "Proton-K"
+    },
+    "/images/anatomy/proton-m_webp": {
+      "title": "Proton-M"
+    },
+    "/images/anatomy/pslv-xl_webp": {
+      "title": "PSLV-XL"
+    },
+    "/images/anatomy/pslv_webp": {
+      "title": "PSLV"
+    },
+    "/images/anatomy/psyche-spacecraft_webp": {
+      "title": "Psyche"
+    },
+    "/images/anatomy/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/anatomy/salyut-1_webp": {
+      "title": "Salyut 1"
+    },
+    "/images/anatomy/salyut-6_webp": {
+      "title": "Salyut 6"
+    },
+    "/images/anatomy/salyut-7_webp": {
+      "title": "Salyut 7"
+    },
+    "/images/anatomy/saturn-ib_webp": {
+      "title": "Saturn IB"
+    },
+    "/images/anatomy/saturn-v_webp": {
+      "title": "Saturn V"
+    },
+    "/images/anatomy/schiaparelli_webp": {
+      "title": "Schiaparelli"
+    },
+    "/images/anatomy/shenzhou_webp": {
+      "title": "Shenzhou"
+    },
+    "/images/anatomy/skylab_webp": {
+      "title": "Skylab"
+    },
+    "/images/anatomy/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/anatomy/sls-block-1_webp": {
+      "title": "SLS Block 1"
+    },
+    "/images/anatomy/smart-1_webp": {
+      "title": "SMART-1"
+    },
+    "/images/anatomy/sojourner_webp": {
+      "title": "Sojourner"
+    },
+    "/images/anatomy/solar-orbiter_webp": {
+      "title": "Solar Orbiter"
+    },
+    "/images/anatomy/soyuz-2_webp": {
+      "title": "Soyuz-2"
+    },
+    "/images/anatomy/soyuz-ms_webp": {
+      "title": "Soyuz MS"
+    },
+    "/images/anatomy/soyuz-tma_webp": {
+      "title": "Soyuz TMA"
+    },
+    "/images/anatomy/soyuz_webp": {
+      "title": "Soyuz (11A511)"
+    },
+    "/images/anatomy/space-shuttle-orbiter_webp": {
+      "title": "Space Shuttle Orbiter"
+    },
+    "/images/anatomy/space-shuttle-stack_webp": {
+      "title": "Space Shuttle stack"
+    },
+    "/images/anatomy/spektr-rg_webp": {
+      "title": "Spektr-RG"
+    },
+    "/images/anatomy/spirit_webp": {
+      "title": "Spirit (MER-A)"
+    },
+    "/images/anatomy/spitzer_webp": {
+      "title": "Spitzer Space Telescope"
+    },
+    "/images/anatomy/starliner_webp": {
+      "title": "Starliner (CST-100)"
+    },
+    "/images/anatomy/starship_webp": {
+      "title": "Starship"
+    },
+    "/images/anatomy/surveyor-3_webp": {
+      "title": "Surveyor 3"
+    },
+    "/images/anatomy/tess_webp": {
+      "title": "TESS"
+    },
+    "/images/anatomy/tiangong-1_webp": {
+      "title": "Tiangong-1"
+    },
+    "/images/anatomy/tiangong-2_webp": {
+      "title": "Tiangong-2"
+    },
+    "/images/anatomy/tiangong_webp": {
+      "title": "Tiangong"
+    },
+    "/images/anatomy/tianwen-1_webp": {
+      "title": "Tianwen-1"
+    },
+    "/images/anatomy/tianzhou_webp": {
+      "title": "Tianzhou"
+    },
+    "/images/anatomy/titan-ii-glv_webp": {
+      "title": "Titan II GLV"
+    },
+    "/images/anatomy/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/anatomy/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/anatomy/venera-7_webp": {
+      "title": "Venera 7-class"
+    },
+    "/images/anatomy/viking-1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/anatomy/vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-3)"
+    },
+    "/images/anatomy/voskhod-11a57_webp": {
+      "title": "Voskhod (11A57)"
+    },
+    "/images/anatomy/vostok-k_webp": {
+      "title": "Vostok-K (8K72K)"
+    },
+    "/images/anatomy/vostok_webp": {
+      "title": "Vostok"
+    },
+    "/images/anatomy/voyager-1_webp": {
+      "title": "Voyager 1"
+    },
+    "/images/anatomy/voyager-2_webp": {
+      "title": "Voyager 2"
+    },
+    "/images/anatomy/vulcan_webp": {
+      "title": "Vulcan Centaur"
+    },
+    "/images/anatomy/x37b_webp": {
+      "title": "X-37B OTV"
+    },
+    "/images/anatomy/xmm-newton_webp": {
+      "title": "XMM-Newton"
+    },
+    "/images/anatomy/yutu-2_webp": {
+      "title": "Yutu-2"
+    },
+    "/images/anatomy/yutu_webp": {
+      "title": "Yutu"
+    },
+    "/images/anatomy/zhurong_webp": {
+      "title": "Zhurong"
+    }
+  },
+  "lab_illustrations": {
+    "/images/lab/goals/apollo-round-trip_webp": {
+      "title": "Apollo: heen en terug"
+    },
+    "/images/lab/goals/catch-the-iss_webp": {
+      "title": "Vang de ISS"
+    },
+    "/images/lab/goals/choose-an-orbit_webp": {
+      "title": "Kies een baan"
+    },
+    "/images/lab/goals/engines-of-the-world_webp": {
+      "title": "Motoren van de wereld"
+    },
+    "/images/lab/goals/entry-computer_webp": {
+      "title": "Inzinkingscomputer"
+    },
+    "/images/lab/goals/flying-computer_webp": {
+      "title": "Vliegcomputer"
+    },
+    "/images/lab/goals/get-to-mars_webp": {
+      "title": "Naar Mars"
+    },
+    "/images/lab/goals/land-on-earth_webp": {
+      "title": "Land op aarde"
+    },
+    "/images/lab/goals/land-on-mars_webp": {
+      "title": "Land op Mars"
+    },
+    "/images/lab/goals/land-on-mercury_webp": {
+      "title": "Land op Mercurius"
+    },
+    "/images/lab/goals/land-on-the-moon_webp": {
+      "title": "Land op de maan"
+    },
+    "/images/lab/goals/land-on-titan_webp": {
+      "title": "Land op Titan"
+    },
+    "/images/lab/goals/land-on-venus_webp": {
+      "title": "Land op Venus"
+    },
+    "/images/lab/goals/landing-computer_webp": {
+      "title": "Landingscomputer"
+    },
+    "/images/lab/goals/launch-a-rocket_webp": {
+      "title": "Lanceer een raket"
+    },
+    "/images/lab/goals/leave-the-solar-system_webp": {
+      "title": "Verlaat het zonnestelsel"
+    },
+    "/images/lab/goals/moon-phases_webp": {
+      "title": "Maanfasen"
+    },
+    "/images/lab/goals/motion-first-principles_webp": {
+      "title": "Beweging eerste principes"
+    },
+    "/images/lab/goals/observe-the-sky_webp": {
+      "title": "Observeer de hemel"
+    },
+    "/images/lab/goals/plan-a-mission_webp": {
+      "title": "Plan een missie"
+    },
+    "/images/lab/goals/probe-jupiter_webp": {
+      "title": "Verken Jupiter"
+    },
+    "/images/lab/goals/reach-orbit_webp": {
+      "title": "Bereik een baan"
+    },
+    "/images/lab/goals/reach-the-moon_webp": {
+      "title": "Bereik de maan"
+    },
+    "/images/lab/goals/scale-a-rocket_webp": {
+      "title": "Een raket schalen"
+    },
+    "/images/lab/goals/touch-small-world_webp": {
+      "title": "Raak een kleine wereld aan"
+    }
+  },
+  "diagrams_science": {
+    "/diagrams/science/_cover-cosmology_svg": {
+      "title": "Kosmologie"
+    },
+    "/diagrams/science/_cover-exoplanets_svg": {
+      "title": "Exoplaneten"
+    },
+    "/images/science-covers-v2/_cover-history_webp": {
+      "title": "Geschiedenis"
+    },
+    "/images/science-covers-v2/_cover-life-in-space_webp": {
+      "title": "Leven in de ruimte"
+    },
+    "/images/science-covers-v2/_cover-mission-phases_webp": {
+      "title": "Fasen van missies"
+    },
+    "/images/science-covers-v2/_cover-observation_webp": {
+      "title": "Waarneming"
+    },
+    "/diagrams/science/_cover-orbits_svg": {
+      "title": "Banen"
+    },
+    "/diagrams/science/_cover-planets_svg": {
+      "title": "Planeten"
+    },
+    "/diagrams/science/_cover-porkchop_svg": {
+      "title": "Porkchopdiagram"
+    },
+    "/images/science-covers-v2/_cover-propulsion_webp": {
+      "title": "Voortstuwing"
+    },
+    "/diagrams/science/_cover-scales-time_svg": {
+      "title": "Schalen in de tijd"
+    },
+    "/images/science-covers-v2/_cover-space-stations_webp": {
+      "title": "Ruimtestations"
+    },
+    "/diagrams/science/_cover-transfers_svg": {
+      "title": "Overdrachten"
+    },
+    "/diagrams/science/aerobraking_webp": {
+      "title": "Aeroremiging"
+    },
+    "/diagrams/science/antenna-arrays_webp": {
+      "title": "Antennearrays"
+    },
+    "/diagrams/science/antimatter-propulsion_webp": {
+      "title": "Antimaterie-voortstuwing"
+    },
+    "/diagrams/science/apsides_webp": {
+      "title": "Apsiden"
+    },
+    "/diagrams/science/ascent-guidance_webp": {
+      "title": "Opstijggeleiding"
+    },
+    "/diagrams/science/asteroid-belt_webp": {
+      "title": "Asterö̈denriem"
+    },
+    "/diagrams/science/au_webp": {
+      "title": "Astronomische eenheid"
+    },
+    "/diagrams/science/ballistic-coefficient_webp": {
+      "title": "Ballistische coëfficiënt"
+    },
+    "/diagrams/science/black-holes_webp": {
+      "title": "Zwarte gaten"
+    },
+    "/diagrams/science/c3_webp": {
+      "title": "C3"
+    },
+    "/diagrams/science/comms-blackout_webp": {
+      "title": "Communicatieuitval"
+    },
+    "/diagrams/science/conic-sections_webp": {
+      "title": "Kegelsneden"
+    },
+    "/diagrams/science/contour-reading_webp": {
+      "title": "Contourlezing"
+    },
+    "/diagrams/science/deorbit-corridor_webp": {
+      "title": "Deorbit-corridor"
+    },
+    "/diagrams/science/departure-axis_webp": {
+      "title": "Vertrekasnas"
+    },
+    "/diagrams/science/dv-budget_webp": {
+      "title": "ΔV-begroting"
+    },
+    "/diagrams/science/dv-heatmap_webp": {
+      "title": "ΔV-hittemap"
+    },
+    "/diagrams/science/eccentricity_webp": {
+      "title": "Excentriciteit"
+    },
+    "/diagrams/science/ecliptic-plane_webp": {
+      "title": "Eclipticavlak"
+    },
+    "/diagrams/science/edl_webp": {
+      "title": "EDL"
+    },
+    "/diagrams/science/entry-footprint_webp": {
+      "title": "Intredevoetstap"
+    },
+    "/diagrams/science/entry-heating_webp": {
+      "title": "Intredeverwarming"
+    },
+    "/diagrams/science/escape-velocity_webp": {
+      "title": "Ontsnappingssnelheid"
+    },
+    "/diagrams/science/eva_webp": {
+      "title": "EVA"
+    },
+    "/diagrams/science/eva-suits_webp": {
+      "title": "EVA-pakken"
+    },
+    "/diagrams/science/exo-astrometry_webp": {
+      "title": "Exo Astrometrie"
+    },
+    "/diagrams/science/exo-direct-imaging_webp": {
+      "title": "Exo Directe beeldvorming"
+    },
+    "/diagrams/science/exo-habitable-zone_webp": {
+      "title": "Exo Leefbare zone"
+    },
+    "/diagrams/science/exo-microlensing_webp": {
+      "title": "Exo-microlensing"
+    },
+    "/diagrams/science/exo-radial-velocity_webp": {
+      "title": "Exo Radiale snelheid"
+    },
+    "/diagrams/science/exo-resonance_webp": {
+      "title": "Exo Resonantie"
+    },
+    "/diagrams/science/exo-transit_webp": {
+      "title": "Exo Transitie"
+    },
+    "/diagrams/science/exo-transit-timing_webp": {
+      "title": "Exo Transittiming"
+    },
+    "/diagrams/science/expander-cycle_webp": {
+      "title": "Expandercyclus"
+    },
+    "/diagrams/science/expedition-cadence_webp": {
+      "title": "Expeditiecadence"
+    },
+    "/diagrams/science/frames_webp": {
+      "title": "Referentiestelsels"
+    },
+    "/diagrams/science/free-return_webp": {
+      "title": "Vrij-retourkurs"
+    },
+    "/diagrams/science/fusion-propulsion_webp": {
+      "title": "Fusievoortstuwing"
+    },
+    "/diagrams/science/gas-generator_webp": {
+      "title": "Gasgenerator"
+    },
+    "/diagrams/science/gravity-assist_webp": {
+      "title": "Zwaartekrachtassistentie"
+    },
+    "/diagrams/science/hertzsprung-russell_webp": {
+      "title": "Hertzsprung-Russell"
+    },
+    "/diagrams/science/history-apollo-11_webp": {
+      "title": "Geschiedenis Apollo 11"
+    },
+    "/diagrams/science/history-goddard-rocket_webp": {
+      "title": "Geschiedenis Goddard-raket"
+    },
+    "/diagrams/science/history-keplers-laws_webp": {
+      "title": "Geschiedenis Wetten van Kepler"
+    },
+    "/diagrams/science/history-newton-principia_webp": {
+      "title": "Geschiedenis Newton Principia"
+    },
+    "/diagrams/science/history-sputnik_webp": {
+      "title": "Geschiedenis Spoetnik"
+    },
+    "/diagrams/science/history-tsiolkovsky_webp": {
+      "title": "Geschiedenis Tsiolkovski"
+    },
+    "/diagrams/science/hohmann-transfer_webp": {
+      "title": "Hohmann-transfer"
+    },
+    "/diagrams/science/inclination_webp": {
+      "title": "Inclinatie"
+    },
+    "/diagrams/science/interplanetary-internet_webp": {
+      "title": "Interplanetair Internet"
+    },
+    "/diagrams/science/ion-drive_webp": {
+      "title": "Ionenmotor"
+    },
+    "/diagrams/science/iva-suits_webp": {
+      "title": "IVA-pakken"
+    },
+    "/diagrams/science/j2000_webp": {
+      "title": "J2000"
+    },
+    "/diagrams/science/keplerian-orbit_webp": {
+      "title": "Kepleriaanse baan"
+    },
+    "/diagrams/science/keplers-laws_webp": {
+      "title": "Wetten van Kepler"
+    },
+    "/diagrams/science/kuiper-belt_webp": {
+      "title": "Kuipergordel"
+    },
+    "/diagrams/science/lagrange-points_webp": {
+      "title": "Lagrangepunten"
+    },
+    "/diagrams/science/lambert-problem_webp": {
+      "title": "Lambertprobleem"
+    },
+    "/diagrams/science/laser-sail_webp": {
+      "title": "Lasertzeil"
+    },
+    "/diagrams/science/launch_webp": {
+      "title": "Start"
+    },
+    "/diagrams/science/lifting-entry_webp": {
+      "title": "Terugkeer met lift"
+    },
+    "/diagrams/science/light-minute_webp": {
+      "title": "Lichtminuut"
+    },
+    "/diagrams/science/long-duration_webp": {
+      "title": "Langdurige vluchten"
+    },
+    "/diagrams/science/lunar-ice_webp": {
+      "title": "Maanijs"
+    },
+    "/diagrams/science/lunar-suits_webp": {
+      "title": "Maanpakken"
+    },
+    "/diagrams/science/met_webp": {
+      "title": "MET"
+    },
+    "/diagrams/science/microgravity-physiology_webp": {
+      "title": "Fysiologie in microzwaartekracht"
+    },
+    "/diagrams/science/mission-types_webp": {
+      "title": "Missietypen"
+    },
+    "/diagrams/science/node-module_webp": {
+      "title": "Knooppuntmodule"
+    },
+    "/diagrams/science/nrho_webp": {
+      "title": "NRHO"
+    },
+    "/diagrams/science/nuclear-thermal_webp": {
+      "title": "Nucleair-thermische aandrijving"
+    },
+    "/diagrams/science/oberth-effect_webp": {
+      "title": "Oberth-effect"
+    },
+    "/diagrams/science/optical-comms_webp": {
+      "title": "Optische communicatie"
+    },
+    "/diagrams/science/orbit-insertion_webp": {
+      "title": "Intrede in de baan"
+    },
+    "/diagrams/science/orbit-regimes_webp": {
+      "title": "Baanregimes"
+    },
+    "/diagrams/science/our-galaxy_webp": {
+      "title": "Ons Melkwegstelsel"
+    },
+    "/diagrams/science/patched-conics_webp": {
+      "title": "Aaneengeschakelde kegelsneden"
+    },
+    "/diagrams/science/porkchop_webp": {
+      "title": "Porkchopdiagram"
+    },
+    "/diagrams/science/pressurized-volume_webp": {
+      "title": "Drukvolume"
+    },
+    "/diagrams/science/propulsive-landing_webp": {
+      "title": "Aangedreven landing"
+    },
+    "/diagrams/science/regolith_webp": {
+      "title": "Regoliet"
+    },
+    "/diagrams/science/semi-major-axis_webp": {
+      "title": "Halve lange as"
+    },
+    "/diagrams/science/sidereal-synodic_webp": {
+      "title": "Siderisch en synodisch"
+    },
+    "/diagrams/science/skip-entry_webp": {
+      "title": "Skip-terugkeer"
+    },
+    "/diagrams/science/skycrane_webp": {
+      "title": "Skycrane"
+    },
+    "/diagrams/science/solar-power-budget_webp": {
+      "title": "Zonneënergiebegroting"
+    },
+    "/diagrams/science/solar-sail_webp": {
+      "title": "Zonzeil"
+    },
+    "/diagrams/science/space-photography_webp": {
+      "title": "Ruimtefotografie"
+    },
+    "/diagrams/science/specific-impulse_webp": {
+      "title": "Soortelijke Impuls"
+    },
+    "/diagrams/science/staged-combustion_webp": {
+      "title": "Gefaseerde Verbranding"
+    },
+    "/diagrams/science/synodic-period_webp": {
+      "title": "Synodische Periode"
+    },
+    "/diagrams/science/tcm_webp": {
+      "title": "TCM"
+    },
+    "/diagrams/science/terminal-velocity_webp": {
+      "title": "Terminalsnelheid"
+    },
+    "/diagrams/science/tof-axis_webp": {
+      "title": "Tof-as"
+    },
+    "/diagrams/science/trans-x-injection_webp": {
+      "title": "Trans X-injectie"
+    },
+    "/diagrams/science/transfer-ellipse_webp": {
+      "title": "Overbrengingsellips"
+    },
+    "/diagrams/science/true-anomaly_webp": {
+      "title": "Ware Anomalie"
+    },
+    "/diagrams/science/tsiolkovsky_webp": {
+      "title": "Tsiolkovsky"
+    },
+    "/diagrams/science/v-infinity_webp": {
+      "title": "V Oneindig"
+    },
+    "/diagrams/science/viability_webp": {
+      "title": "Levensvatbaarheid"
+    },
+    "/diagrams/science/vis-viva_webp": {
+      "title": "Vis Viva"
+    }
+  },
+  "posters": {
+    "/images/posters/solar-system-orrery_jpg": {
+      "title": "Zonnestelsel"
+    },
+    "/images/posters/solar-system-procession_jpg": {
+      "title": "Zonnestelsel"
+    },
+    "/images/posters/earth_jpg": {
+      "title": "Aarde"
+    },
+    "/images/posters/moon_jpg": {
+      "title": "Maan"
+    },
+    "/images/posters/mars_jpg": {
+      "title": "Mars"
+    },
+    "/images/posters/saturn-v_jpg": {
+      "title": "Saturn V"
+    },
+    "/images/posters/mir_jpg": {
+      "title": "Mir"
+    },
+    "/images/posters/sputnik_jpg": {
+      "title": "Sputnik"
+    },
+    "/images/posters/soyuz_jpg": {
+      "title": "Soyuz"
+    },
+    "/images/posters/voyager_jpg": {
+      "title": "Voyager"
+    },
+    "/images/posters/sojourner_jpg": {
+      "title": "Sojourner"
+    },
+    "/images/posters/footprints_jpg": {
+      "title": "Voetafdrukken"
+    },
+    "/images/posters/gagarin_jpg": {
+      "title": "Gagarin"
+    },
+    "/images/posters/rosetta_jpg": {
+      "title": "Rosetta"
+    },
+    "/images/posters/huygens_jpg": {
+      "title": "Huygens"
+    },
+    "/images/posters/hayabusa2_jpg": {
+      "title": "Hayabusa2"
+    },
+    "/images/posters/artemis-ii_jpg": {
+      "title": "Artemis II"
+    },
+    "/images/posters/iss_jpg": {
+      "title": "ISS"
+    },
+    "/images/posters/tiangong_jpg": {
+      "title": "Tiangong"
+    },
+    "/images/posters/perseverance_jpg": {
+      "title": "Perseverance"
+    },
+    "/images/posters/space-shuttle_jpg": {
+      "title": "Space Shuttle"
+    },
+    "/images/posters/solar-sail_jpg": {
+      "title": "Zonnevaren"
+    },
+    "/images/posters/nuclear-drive_jpg": {
+      "title": "Kernvoortstuwing"
+    },
+    "/images/posters/jwst_jpg": {
+      "title": "James Webb"
+    },
+    "/images/posters/hubble_jpg": {
+      "title": "Hubble"
+    },
+    "/images/posters/cassini_jpg": {
+      "title": "Cassini"
+    },
+    "/images/posters/starship_jpg": {
+      "title": "Starship"
+    }
+  },
+  "models3d": {
+    "/images/colophon/craft-cassini_webp": {
+      "title": "Cassini–Huygens",
+      "what": "Antenneschotel met hoge winst, RTG-booms en de Huygens-sonde — Saturnus-orbiter.",
+      "where": "Vliegen + Verkennen"
+    },
+    "/images/colophon/craft-voyager-1_webp": {
+      "title": "Voyager",
+      "what": "Schotel van 3,7 m, magnetometerboem en RTG-truss — de Grand Tour-bus.",
+      "where": "Vliegen + Verkennen"
+    },
+    "/images/colophon/craft-galileo_webp": {
+      "title": "Galileo",
+      "what": "Tweespin-bus met de opgerichte hogevinst-paraplumantenne.",
+      "where": "Vliegen + Verkennen"
+    },
+    "/images/colophon/craft-new-horizons_webp": {
+      "title": "New Horizons",
+      "what": "Compacte driehoekige bus met één schotel — de Pluto voorbijvlieg sonde.",
+      "where": "Vliegen + Verkennen"
+    },
+    "/images/colophon/craft-pioneer-10_webp": {
+      "title": "Pioneer",
+      "what": "Spin-gestabiliseerde schotel, RTG-booms en de gegraveerde plaquette.",
+      "where": "Vliegen + Verkennen"
+    },
+    "/images/colophon/craft-juno_webp": {
+      "title": "Juno",
+      "what": "Drie enorme zonnepanelen rond een zeshoekige bus — Jupiter polaire omloopbaan.",
+      "where": "Vliegen + Verkennen"
+    },
+    "/images/colophon/craft-bepicolombo_webp": {
+      "title": "BepiColombo",
+      "what": "Gestapelde overdrachtsmodule + Mercurius omloopbanen met ionenthrustors.",
+      "where": "Vliegen + Verkennen"
+    },
+    "/images/colophon/craft-dawn_webp": {
+      "title": "Dawn",
+      "what": "Ionenaandrijving-bus met brede zonnepanelen — Vesta + Ceres omloopbaan.",
+      "where": "Vliegen + Verkennen"
+    },
+    "/images/colophon/craft-giotto_webp": {
+      "title": "Giotto",
+      "what": "Trommelvormige spinner met een stofschild — Komeet Halley voorbijvlieg.",
+      "where": "Vliegen + Verkennen"
+    },
+    "/images/colophon/craft-hayabusa2_webp": {
+      "title": "Hayabusa2",
+      "what": "Blokachtige bus met zonnepanelen en monsterhoorn — asteroïde Ryugu.",
+      "where": "Vliegen + Verkennen"
+    },
+    "/images/colophon/craft-juice_webp": {
+      "title": "JUICE",
+      "what": "Kruis-vormige zonnepanelen op een compacte bus — Jupiter ijsmaanomloopbaan.",
+      "where": "Vliegen + Verkennen"
+    },
+    "/images/colophon/craft-rosetta_webp": {
+      "title": "Rosetta",
+      "what": "14 m zonnewingen rond een kometenjager-bus + Philae-lander.",
+      "where": "Vliegen + Verkennen"
+    },
+    "/images/colophon/craft-ulysses_webp": {
+      "title": "Ulysses",
+      "what": "RTG-aangedreven zonnepoolsonde met een enkele schotel.",
+      "where": "Vliegen + Verkennen"
+    },
+    "/images/colophon/craft-vega-1_webp": {
+      "title": "Vega",
+      "what": "Sovjetse Venus-flyby + ballonmoederschip met een stuurbare schotel.",
+      "where": "Vliegen + Verkennen"
+    },
+    "/images/colophon/craft-venera-13_webp": {
+      "title": "Venera 13",
+      "what": "Sovjetse Venus-lander — toroïdale aeromisvorming en landingsring.",
+      "where": "Vliegen + Verkennen"
+    },
+    "/images/colophon/model-launcher-generic_webp": {
+      "title": "Generieke lanceerder",
+      "what": "Falcon-9-achtig tweeëtappig lichaam — de agentschapssleutel-reserve-silhouet.",
+      "where": "Vliegen · opstarten/opstijgen"
+    },
+    "/images/colophon/model-launcher-saturn-v_webp": {
+      "title": "Saturn V",
+      "what": "Verjongde drieëtappige stapel, vijf F-1-mondstukken, rolmotief-livering, en de ontsnappingstoren.",
+      "where": "Vliegen · opstarten/opstijgen"
+    },
+    "/images/colophon/model-launcher-saturn-ib_webp": {
+      "title": "Saturn IB",
+      "what": "Het Apollo LEO-werkhuis — een geclusterde S-IB-eerste trap met acht H-1-motoren onder dezelfde S-IVB + CSM.",
+      "where": "Vliegen · opstarten/opstijgen"
+    },
+    "/images/colophon/model-launcher-vostok-k_webp": {
+      "title": "Soyuz / R-7",
+      "what": "Koroljov-kruis-kern met vier verjongde hulpraketten.",
+      "where": "Vliegen · opstarten/opstijgen"
+    },
+    "/images/colophon/model-launcher-ariane-5_webp": {
+      "title": "Ariane 5",
+      "what": "Cryogenische kern tussen twee grote vaste boosters onder een bolronde behuizing.",
+      "where": "Vliegen · lancering/opstijging"
+    },
+    "/images/colophon/model-launcher-h-iia_webp": {
+      "title": "H-IIA",
+      "what": "Japanse cryogenische kern met gepaarde vaste raketboosters.",
+      "where": "Vliegen · lancering/opstijging"
+    },
+    "/images/colophon/model-launcher-space-shuttle-stack_webp": {
+      "title": "Space Shuttle",
+      "what": "Externe tank, twee SRB's en de delta-vleugelige orbiter.",
+      "where": "Vliegen · lancering/opstijging"
+    },
+    "/images/colophon/model-launcher-falcon-9_webp": {
+      "title": "Falcon 9",
+      "what": "Slanke tweetraps constructie — een octaweb van negen motoren, gridvins en landingspoten.",
+      "where": "Vliegen · lancering/opstijging"
+    },
+    "/images/colophon/model-launcher-starship_webp": {
+      "title": "Starship / Super Heavy",
+      "what": "Volledig herbruikbare roestvrijstalen constructie — 33 Raptors op Super Heavy, 6 op Starship, voor- en achtervleugels en de ogive neus.",
+      "where": "Vliegen · lancering/opstijging"
+    },
+    "/images/colophon/model-launcher-atlas-v_webp": {
+      "title": "Atlas V",
+      "what": "Brede RD-180-kern met een bolronde laadbehuizing en optionele vaste zijmontages.",
+      "where": "Vliegen · lancering/opstijging"
+    },
+    "/images/colophon/model-launcher-proton-k_webp": {
+      "title": "Proton-K",
+      "what": "Sovjetische zware drager — een centrale kern omringd door zes buitengeplaatste brandstoftanks.",
+      "where": "Vliegen · lancering/opstijging"
+    },
+    "/images/colophon/model-launcher-titan-ii-glv_webp": {
+      "title": "Titan II GLV",
+      "what": "Slanke uniforme tweetraps drager die de bemande Gemini-capsules lanceerde.",
+      "where": "Vliegen · lancering/opstijging"
+    },
+    "/images/colophon/model-launcher-atlas-lv-3b_webp": {
+      "title": "Atlas LV-3B",
+      "what": "Mercury-Atlas trap-en-een-half met een boostermotor-rok en ontsnappingstoren.",
+      "where": "Vliegen · lancering/opgang"
+    },
+    "/images/colophon/model-launcher-mercury-redstone_webp": {
+      "title": "Mercury-Redstone",
+      "what": "Amerika's eerste bemande raket — een slanke eenmotor Redstone met vier staartvinnen, de Mercury-capsule en ontsnappingstoren (Freedom 7).",
+      "where": "Vliegen · lancering/opgang"
+    },
+    "/images/colophon/model-launcher-long-march-2f_webp": {
+      "title": "Long March 2F",
+      "what": "Chinees bemande raket — kern, vier vloeibare strapon-boosters en een lancerings-ontsnappingstoren (Shenzhou).",
+      "where": "Vliegen · lancering/opgang"
+    },
+    "/images/colophon/model-launcher-long-march-3b_webp": {
+      "title": "Long March 3B",
+      "what": "Chinese GTO-werkpaard — een kern met vier vloeibare strapon-boosters (Chang'e maanmissies).",
+      "where": "Vliegen · lancering/opgang"
+    },
+    "/images/colophon/model-launcher-long-march-5_webp": {
+      "title": "Long March 5",
+      "what": "Chinees zwaar 'Dikke Vijf' — een brede cryogene kern met vier grote boosters.",
+      "where": "Vliegen · lancering/opgang"
+    },
+    "/images/colophon/model-launcher-pslv_webp": {
+      "title": "PSLV",
+      "what": "Werkpaard van ISRO — een slanke kern omringd door zes solide strapon-boosters.",
+      "where": "Vliegen · lancering/opgang"
+    },
+    "/images/colophon/model-launcher-lvm3_webp": {
+      "title": "LVM3 / GSLV Mk III",
+      "what": "ISRO heavy-lift — een kern geflankeerd door twee grote S200-solide boosters (Chandrayaan-3).",
+      "where": "Vliegen · lancering/opgang"
+    },
+    "/images/colophon/model-launcher-m-v_webp": {
+      "title": "M-V",
+      "what": "JAXA's drietraps volledig-solide raket (Hayabusa).",
+      "where": "Vliegen · lancering/opgang"
+    },
+    "/images/colophon/model-launcher-h3_webp": {
+      "title": "H3",
+      "what": "JAXA's nieuwe cryogene kern met solide strapon-boosters.",
+      "where": "Vlucht · lancering/opstijging"
+    },
+    "/images/colophon/model-launcher-ariane-1_webp": {
+      "title": "Ariane 1",
+      "what": "Europese eerste draagraket — een slanke drietraps ontwerp uit 1979 (Giotto).",
+      "where": "Vlucht · lancering/opstijging"
+    },
+    "/images/colophon/model-moon-apollo-lm_webp": {
+      "title": "Apollo Lunar Module",
+      "what": "Afdaal- en opstijgstage, gouden MLI-folie en RCS-kwads.",
+      "where": "Maanlandingsplaatsen"
+    },
+    "/images/colophon/model-moon-apollo-lm-extended_webp": {
+      "title": "Apollo LM (J-missie + LRV)",
+      "what": "Langdurig verblijf LM gekoppeld aan het Lunar Roving Vehicle.",
+      "where": "Maanlandingsplaatsen"
+    },
+    "/images/colophon/model-moon-luna-9_webp": {
+      "title": "Luna 9",
+      "what": "Sovjetse bol die de eerste beelden van het maanoppervlak terugbracht.",
+      "where": "Maanlandingsplaatsen"
+    },
+    "/images/colophon/model-moon-luna-sample-return_webp": {
+      "title": "Luna monsteropname",
+      "what": "Opstijgraket bovenop een afdaalplatform (Luna 16 / 20 / 24).",
+      "where": "Maanlandingsplaatsen"
+    },
+    "/images/colophon/model-moon-lunokhod_webp": {
+      "title": "Lunokhod-rover",
+      "what": "Achtwielige Sovjetse rover met een schelpvormig zonnepaneel-deksel.",
+      "where": "Maanlandingsplaatsen"
+    },
+    "/images/colophon/model-moon-chang-e-lander_webp": {
+      "title": "Chang'e-lander",
+      "what": "CNSA-afdaalstage met opstijgcapsule (Chang'e 5 / 6).",
+      "where": "Maanlandingsplaatsen"
+    },
+    "/images/colophon/model-moon-yutu_webp": {
+      "title": "Yutu-rover",
+      "what": "Chinese zeswielige rover met opvouwbare zonnepanelen.",
+      "where": "Maanlandingsplaatsen"
+    },
+    "/images/colophon/model-moon-chandrayaan-3-vikram_webp": {
+      "title": "Chandrayaan-3 Vikram",
+      "what": "ISRO-lander met vier poten die de Pragyan-rover aan het maanoppervlak bracht.",
+      "where": "Maanlandingsplaatsen"
+    },
+    "/images/colophon/model-moon-slim_webp": {
+      "title": "SLIM",
+      "what": "JAXA-precisielander 'Moon Sniper' met twee motoren voor de daalfase.",
+      "where": "Maanlandingsplaatsen"
+    },
+    "/images/colophon/model-moon-beresheet_webp": {
+      "title": "Beresheet",
+      "what": "Compacte lander van SpaceIL met vier poten.",
+      "where": "Maanlandingsplaatsen"
+    },
+    "/images/colophon/model-mars-viking_webp": {
+      "title": "Viking",
+      "what": "NASA-lander op drie poten, uitgerust met RTG en boorarm.",
+      "where": "Marsllandingsplaatsen"
+    },
+    "/images/colophon/model-mars-pathfinder-sojourner_webp": {
+      "title": "Pathfinder + Sojourner",
+      "what": "Tetraëdrische airbag-lander en de eerste Marsrover.",
+      "where": "Marslandingsplaatsen"
+    },
+    "/images/colophon/model-mars-mer_webp": {
+      "title": "MER (Spirit / Opportunity)",
+      "what": "Rocker-bogie-rover met vlindervormige zonnepanelen.",
+      "where": "Marslandingsplaatsen"
+    },
+    "/images/colophon/model-mars-curiosity_webp": {
+      "title": "Curiosity",
+      "what": "MSL-klasse RTG-rover met mast en arm.",
+      "where": "Marslandingsplaatsen"
+    },
+    "/images/colophon/model-mars-perseverance-rover_webp": {
+      "title": "Perseverance + Ingenuity",
+      "what": "Mars 2020-rover met Mastcam-Z-mast, sample-cachingmodule en de Ingenuity-helikopter.",
+      "where": "Marslandingsplaatsen"
+    },
+    "/images/colophon/model-mars-phoenix_webp": {
+      "title": "Phoenix",
+      "what": "Stationair ingestelde lander op zonnepanelen met een robottarm.",
+      "where": "Marslanding-locaties"
+    },
+    "/images/colophon/model-mars-insight-lander_webp": {
+      "title": "InSight",
+      "what": "Tienhoekige lander op zonnepanelen voor geofysica met seismometer SEIS en mole HP3.",
+      "where": "Marslanding-locaties"
+    },
+    "/images/colophon/model-mars-mars-3_webp": {
+      "title": "Mars 3",
+      "what": "Sovjetbloem-lander — eerste zachte Marslanding.",
+      "where": "Marslanding-locaties"
+    },
+    "/images/colophon/model-mars-zhurong_webp": {
+      "title": "Tianwen-1 Zhurong",
+      "what": "Chinese rover met vlinderarray's en een mast.",
+      "where": "Marslanding-locaties"
+    },
+    "/images/colophon/model-mars-schiaparelli_webp": {
+      "title": "Schiaparelli",
+      "what": "ESA-demonstratiorcapsule voor entry-descent-landing.",
+      "where": "Marslanding-locaties"
+    },
+    "/images/colophon/model-mars-beagle-2_webp": {
+      "title": "Beagle 2",
+      "what": "Klamshell-lander van ESA met bloem-zonnepanelen.",
+      "where": "Marslanding-locaties"
+    },
+    "/images/colophon/model-venus-venera_webp": {
+      "title": "Venera / Vega-lander",
+      "what": "Sovjetlander voor Venusoppervlak — een drukvat op een toroïdale kussenbalk.",
+      "where": "Opvallende punten op het Venusoppervlak"
+    },
+    "/images/colophon/model-descent-lunar-powered_webp": {
+      "title": "Maan met aangedreven daling",
+      "what": "Vacuum-retro-daalstadium — geen aeroshell of parachute (Apollo / Chang'e / Luna).",
+      "where": "Vliegen · daling/landing"
+    },
+    "/images/colophon/model-descent-mars-retro_webp": {
+      "title": "Marsparachute + retro",
+      "what": "Aeroshell, supersonische parachute en noodrem-retrorockets (Viking / Phoenix / InSight).",
+      "where": "Vliegen · daling/landing"
+    },
+    "/images/colophon/model-descent-airbag_webp": {
+      "title": "Mars airbag-stuit",
+      "what": "Tetraëdrische airbag-cocon die tot stilstand stuitert (Pathfinder / Spirit / Opportunity).",
+      "where": "Vliegen · daling/landing"
+    },
+    "/images/colophon/model-descent-skycrane_webp": {
+      "title": "Mars-skycrane",
+      "what": "Raketaangedreven dalingsmodule die de rover aan kabels laat zakken (Curiosity / Perseverance).",
+      "where": "Vliegen · daling/landing"
+    },
+    "/images/colophon/model-descent-venus-aeroshell_webp": {
+      "title": "Venus-hitteschild",
+      "what": "Bol-kegelvormige entry-capsule en remschijf voor de dichte atmosfeer (Venera / Vega).",
+      "where": "Vliegen · daling/landing"
+    },
+    "/images/colophon/model-descent-asteroid-sampler_webp": {
+      "title": "Asteroïde touch-and-go",
+      "what": "Sampler-bus met een verzamelingshoren — nul-zwaartekracht touch-and-go (Hayabusa / OSIRIS-REx).",
+      "where": "Vliegen · daling/landing"
+    },
+    "/images/colophon/model-descent-comet-lander_webp": {
+      "title": "Komeet-harpoen lander",
+      "what": "Driepotige nul-zwaartekracht lander met ankerharpoen (Philae bij komeet 67P).",
+      "where": "Vliegen · daling/landing"
+    },
+    "/images/colophon/model-descent-jupiter-probe_webp": {
+      "title": "Jupiter atmosferische probe",
+      "what": "Bol-kegelvormige aeroshell en parachute voor entry in diepe atmosfeer (Galileo probe).",
+      "where": "Vliegen · daling/landing"
+    },
+    "/images/colophon/model-descent-titan-parachute_webp": {
+      "title": "Titan parachutedaling",
+      "what": "Aeroshell en grote parachute voor langzame daling door Titans nevel (Huygens).",
+      "where": "Vliegen · daling/landing"
+    },
+    "/images/colophon/model-cruise-curiosity_webp": {
+      "title": "Curiosity cruise-stage",
+      "what": "MSL cruise-stage schijf boven de aeroshell die de rover omsluit.",
+      "where": "Vliegen · cruise/benadering"
+    },
+    "/images/colophon/model-cruise-perseverance_webp": {
+      "title": "Perseverance cruisefase",
+      "what": "Mars 2020 cruisefase + aeroshell (rover + Ingenuity verzegeld binnenin).",
+      "where": "Vliegen · cruise/nadering"
+    },
+    "/images/colophon/model-cruise-insight_webp": {
+      "title": "InSight cruisefase",
+      "what": "Cruisefase-schijf boven de aeroshell met de lander.",
+      "where": "Vliegen · cruise/nadering"
+    },
+    "/images/colophon/model-cruise-phoenix_webp": {
+      "title": "Phoenix cruisefase",
+      "what": "Cruisefase + aeroshell voor de poollander.",
+      "where": "Vliegen · cruise/nadering"
+    },
+    "/images/colophon/model-cruise-mars-pathfinder_webp": {
+      "title": "Pathfinder cruisefase",
+      "what": "Cruisefase + aeroshell (airbag-lander + Sojourner binnenin).",
+      "where": "Vliegen · cruise/nadering"
+    },
+    "/images/colophon/model-cruise-spirit_webp": {
+      "title": "Spirit cruisefase",
+      "what": "MER cruisefase + aeroshell.",
+      "where": "Vliegen · cruise/nadering"
+    },
+    "/images/colophon/model-cruise-opportunity_webp": {
+      "title": "Opportunity cruisefase",
+      "what": "MER cruisefase + aeroshell.",
+      "where": "Vliegen · cruise/nadering"
+    },
+    "/images/colophon/model-cruise-schiaparelli_webp": {
+      "title": "Schiaparelli + TGO",
+      "what": "ExoMars Trace Gas Orbiter die de Schiaparelli-intredecapsule meevoert.",
+      "where": "Vliegen · cruise/nadering"
+    },
+    "/images/colophon/model-cruise-viking1_webp": {
+      "title": "Viking-orbiter + lander",
+      "what": "Viking orbiter met de bioshield-capsule lander eronder.",
+      "where": "Vliegen · cruise/nadering"
+    },
+    "/images/colophon/model-cruise-mars3_webp": {
+      "title": "Mars 3-bus",
+      "what": "Sovjetische M-71-bus met afdalingscapsule en zonnepanelen",
+      "where": "Vlucht · cruise/nadering"
+    },
+    "/images/colophon/model-cruise-tianwen1_webp": {
+      "title": "Tianwen-1-orbiter",
+      "what": "Orbiter-bus met de afdalingscapsule (Zhurong binnen)",
+      "where": "Vlucht · cruise/nadering"
+    },
+    "/images/colophon/model-cruise-apollo11_webp": {
+      "title": "Apollo CSM + LM",
+      "what": "Command/Service Module gekoppeld aan de Maanlandingsmodule — de translunairestack (Apollo 11–17)",
+      "where": "Vlucht · cruise/nadering"
+    },
+    "/images/colophon/model-cruise-artemis3_webp": {
+      "title": "Orion (Artemis)",
+      "what": "Orion-bemande capsule + Europese Service Module met vier zonnepanelen (Artemis III / IV)",
+      "where": "Vlucht · cruise/nadering"
+    },
+    "/images/colophon/model-cruise-luna9_webp": {
+      "title": "Luna 9 directe opstijging",
+      "what": "Sovjetische directe bus met de bolvormige landercapsule bovenop",
+      "where": "Vlucht · cruise/nadering"
+    },
+    "/images/colophon/model-cruise-luna16_webp": {
+      "title": "Luna-monsterreternatuur",
+      "what": "Afdalingstrap met bolvormige tanks, opstijgingstap en returncapsule (Luna 16 / 24)",
+      "where": "Vlucht · cruise/nadering"
+    },
+    "/images/colophon/model-cruise-luna17_webp": {
+      "title": "Lunokhod-drager",
+      "what": "Afdalingstrap-bus met de Lunokhod-rover (Luna 17 / 21)",
+      "where": "Vlucht · cruise/nadering"
+    },
+    "/images/colophon/model-cruise-change3_webp": {
+      "title": "Chang'e 3 / 4",
+      "what": "CNSA-lander met afdalingstrap en de Yutu-rover ingeklapt bovenop",
+      "where": "Vlucht · cruise/nadering"
+    },
+    "/images/colophon/model-cruise-change5_webp": {
+      "title": "Chang'e 5 / 6",
+      "what": "Viermoulige monsterreternatuurstack — orbiter, returner, opstijger en lander",
+      "where": "Vliegen · cruise/benadering"
+    },
+    "/images/colophon/model-cruise-chandrayaan3_webp": {
+      "title": "Chandrayaan-3",
+      "what": "ISRO-voortstuwingsmodule met de Vikram-lander.",
+      "where": "Vliegen · cruise/benadering"
+    },
+    "/images/colophon/model-cruise-slim_webp": {
+      "title": "SLIM",
+      "what": "JAXA's compacte 'Moon Sniper'-cruisevaartuig.",
+      "where": "Vliegen · cruise/benadering"
+    },
+    "/images/colophon/model-cruise-beresheet_webp": {
+      "title": "Beresheet",
+      "what": "SpaceIL's kleine ronde vierpotelige lander in transit.",
+      "where": "Vliegen · cruise/benadering"
+    },
+    "/images/colophon/model-cruise-blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1",
+      "what": "Blue Origin's hoge lander — centrale tank op een vierpotelig frame.",
+      "where": "Vliegen · cruise/benadering"
+    },
+    "/images/colophon/model-cruise-hayabusa1_webp": {
+      "title": "Hayabusa-kruisfase",
+      "what": "JAXA's monsterverzamelaarvaartuig — zonnewingen, een samplerhoorn en ionaandrijvingen.",
+      "where": "Vliegen · cruise/benadering"
+    },
+    "/images/colophon/model-cruise-osiris-rex_webp": {
+      "title": "OSIRIS-REx-kruisfase",
+      "what": "Blokachtig vaartuig met V-hoekige zonnewingen en de uitgestrekte TAGSAM-samplerarm.",
+      "where": "Vliegen · cruise/benadering"
+    },
+    "/images/colophon/model-cruise-near-shoemaker_webp": {
+      "title": "NEAR Shoemaker",
+      "what": "Orbitervaartuig met vier vaste zonnepanelen in een kruis en een vaste schotel.",
+      "where": "Vliegen · cruise/benadering"
+    },
+    "/images/colophon/model-cruise-starship-demo_webp": {
+      "title": "Starship",
+      "what": "Roestvrijstalen bovenstap — neuskegel, voor-/achterkleppen en een Raptor-cluster (Marstransit).",
+      "where": "Vliegen · cruise/benadering"
+    },
+    "/images/colophon/model-sat-hubble_webp": {
+      "title": "Hubble",
+      "what": "Cilindrisch observatorium met apertuurluik en zonnepanelen.",
+      "where": "Markeringen van aardbanen"
+    },
+    "/images/colophon/model-sat-jwst_webp": {
+      "title": "JWST",
+      "what": "Zonnescherm ter grootte van een tennisbaan onder een gesegmenteerde gouden spiegel.",
+      "where": "Markeringen van aardbanen"
+    },
+    "/images/colophon/model-sat-chandra_webp": {
+      "title": "Chandra",
+      "what": "Langwerpig röntgenobservatorium met zonnepanelen.",
+      "where": "Markeringen van aardbanen"
+    },
+    "/images/colophon/model-sat-xmm_webp": {
+      "title": "XMM-Newton",
+      "what": "Lange ESA-röntgentelescoop.",
+      "where": "Markeringen van aardbanen"
+    },
+    "/images/colophon/model-sat-gaia_webp": {
+      "title": "Gaia",
+      "what": "ESA-astrometrie-observatorium met zonnescherm.",
+      "where": "Markeringen van aardbanen"
+    },
+    "/images/colophon/model-sat-lro_webp": {
+      "title": "LRO",
+      "what": "Lunar Reconnaissance Orbiter-bus en schotel.",
+      "where": "Markeringen van aardbanen"
+    },
+    "/images/colophon/model-sat-geo-comsat_webp": {
+      "title": "GEO-communicatiesatelliet",
+      "what": "Doosbus met uitgeklapte zonnepanelen en antennes.",
+      "where": "Markeringen van aardbanen"
+    },
+    "/images/colophon/model-sat-nav-constellation_webp": {
+      "title": "Navigatieconstellation",
+      "what": "Satellietgroep van GPS-klasse (GPS / Galileo / GLONASS / BeiDou).",
+      "where": "Markeringen van aardbanen"
+    },
+    "/images/colophon/model-sat-generic-orbiter_webp": {
+      "title": "Generieke orbiter-bus",
+      "what": "Hexagonale bus + zonnepanelen + antenne, agency-keyed fallback-ontwerp.",
+      "where": "Aardse baanmarkeringen"
+    },
+    "/images/colophon/model-earth-launchpad_webp": {
+      "title": "Lanceerfaciliteit",
+      "what": "Octagonaal landingsplatform met vier bliksemafleiders — Kennedy, Bajkonoer, Jiuquan en anderen.",
+      "where": "Markeringen op het aardoppervlak"
+    },
+    "/images/colophon/model-station-iss_webp": {
+      "title": "ISS-proxymodel",
+      "what": "Volledige truss, onder druk staande modules, aangekoppelde bezoekers en stuurbare arrays.",
+      "where": "ISS-baanscène"
+    },
+    "/images/colophon/model-station-tiangong_webp": {
+      "title": "Tiangong-proxymodel",
+      "what": "T-configuratie kernmodule + laboratoriummodules, aangekoppelde Shenzhou / Tianzhou en arrays.",
+      "where": "Tiangong-baanscène"
+    },
+    "/images/colophon/model-microgravity_webp": {
+      "title": "Microzwaartekrachtassen",
+      "what": "Zes gelabelde pijlen die het lokale referentiekader van het station aanduiden (zenith/nadir…).",
+      "where": "ISS + Tiangong-wetenschapslens"
+    },
+    "/images/colophon/model-orbit-rings_webp": {
+      "title": "Banen + markeringshalo's",
+      "what": "Naar helling gekantelde hoogtebanen en selectie-gloedhalo's.",
+      "where": "Aarde · Maan · Mars"
+    },
+    "/images/colophon/model-trajectories_webp": {
+      "title": "Iconische missietrajecten",
+      "what": "Voyager, Pioneer, New Horizons, Cassini, Juno, Dawn-vliegpaden.",
+      "where": "Verkennen"
+    }
+  },
+  "capsules": {
+    "/images/colophon/model-capsule-mercury-capsule_webp": {
+      "title": "Mercury-capsule",
+      "what": "Stomp ablatief hittesch ild, geschaalde kegel en de bergings- en antennasectie (Freedom 7 … Faith 7).",
+      "where": "Aardse hertoetredingsfase"
+    },
+    "/images/colophon/model-capsule-gemini-capsule_webp": {
+      "title": "Gemini-capsule",
+      "what": "Twee-persoonscapsule op schaal van Mercury met de rendezvous-radar-neus en adaptermodule.",
+      "where": "Herkerintreding in aardbaan"
+    },
+    "/images/colophon/model-capsule-vostok-sphere_webp": {
+      "title": "Vostok",
+      "what": "De bolvormige Sharik-afdaalmodule — antennebanden en uitrustingshalsband; de kosmonaut catapulteerde en daalde apart per parachute af.",
+      "where": "Herkerintreding in aardbaan"
+    },
+    "/images/colophon/model-capsule-voskhod-sphere_webp": {
+      "title": "Voskhod",
+      "what": "De zelfde Sharik-bol, nu met het gasesvormige retroremspaket voor zachte landing op een strut-vakwerk — de bemanning reed ermee naar de grond.",
+      "where": "Herkerintreding in aardbaan"
+    },
+    "/images/colophon/model-capsule-apollo-cm_webp": {
+      "title": "Apollo-commandomodule",
+      "what": "De klassieke steil afgestompte kegel met de voorwaartse docking-tunnel (Apollo 7/9, Skylab, ASTP).",
+      "where": "Herkerintreding in aardbaan"
+    },
+    "/images/colophon/model-capsule-soyuz-sa_webp": {
+      "title": "Soyuz-afdaalmodule",
+      "what": "De \"koplampenklok\" — bolvormige hitteschild aan de basis met een conische bemande bovenkant.",
+      "where": "Herkerintreding in aardbaan"
+    },
+    "/images/colophon/model-capsule-dragon-capsule_webp": {
+      "title": "Crew Dragon",
+      "what": "Slanke conische romp met de SuperDraco-podiums en de PICA-X-hitteschild (Inspiration4, Polaris Dawn).",
+      "where": "Herkerintreding in aardbaan"
+    },
+    "/images/colophon/model-capsule-shenzhou-reentry_webp": {
+      "title": "Shenzhou-herkeintredingsmodule",
+      "what": "Een brede klok naar Soyuz-lijn — eigen lichter-zilveren romp met een grijze uitrustingsbanden (Shenzhou-1 en daarna).",
+      "where": "Herkerintreding in aardbaan"
+    }
+  },
+  "canvas2d": {
+    "/images/app-landing-hero_webp": {
+      "title": "Startpagina-hoofdafbeelding",
+      "what": "Platfamilieplaneetsterrenstelsel-poster — gloeiende zon, gekantelde baanringen en één gemarkeerde cyaan-overbrengingsboog.",
+      "where": "Start"
+    },
+    "/images/colophon/viz-system-map_webp": {
+      "title": "2D-systeemkaart",
+      "what": "Bovenaanzicht-planeetsterrenstelsel met gearceerde planeten, gloed, baanringen en Saturnus' ringen.",
+      "where": "Verken 2D-modus"
+    },
+    "/images/colophon/viz-porkchop_webp": {
+      "title": "Porkchop Δv-heatmap",
+      "what": "Vertrektijd × vluchtduur-raster kleurgecodeerd van een Lambert-solver.",
+      "where": "Plan een transfer"
+    },
+    "/images/colophon/viz-blueprint_webp": {
+      "title": "Stationblueprinten",
+      "what": "Orthografische boven- en zijaanzichten van elke stationmodule.",
+      "where": "ISS + Tiangong"
+    },
+    "/images/colophon/viz-nation-legend_webp": {
+      "title": "Legenda landkaarten naties",
+      "what": "Automatisch gespatieerde agentuuraanduidingssleutel getekend op vlakke oppervlaktekaarten.",
+      "where": "Maan + Mars 2D"
+    },
+    "/images/colophon/model-textlabels_webp": {
+      "title": "3D-tekstlabel-sprites",
+      "what": "Canvas-gegenereerde naambadges billboarded op objecten in elke scène.",
+      "where": "Aarde · Maan · Mars · Verkennen"
+    }
+  },
+  "ui": {
+    "Science info-chips": {
+      "title": "Wetenschaps-infochips",
+      "what": "Ingebedde \"i\"-glyph die elke afbeelding koppelt aan de /science-uitlegger.",
+      "where": "Overal"
+    },
+    "Panorama compass rose": {
+      "title": "Panorama-windstreek",
+      "what": "Draaiende N/O/Z/W-aanwijzing georiënteerd naar de panorama-gier.",
+      "where": "Panorama's Maan + Mars"
+    },
+    "Conic-section icons": {
+      "title": "Kegelsnede-pictogrammen",
+      "what": "Cirkel / ellips / parabool / hyperbool-glyphs voor de baanoverlay.",
+      "where": "Vliegen"
+    },
+    "Navigation + control glyphs": {
+      "title": "Navigatie- en bedieningspictogrammen",
+      "what": "Hamburger-, wetenschap-lens-, contrast-, kwaliteits- en volledigscherm-pictogrammen.",
+      "where": "Elke route"
+    }
+  },
+  "writing": {
+    "Mission briefings": {
+      "title": "Missiebriefiings",
+      "what": "114 missie-narratieven — lanceersgeschiedenis, ruimtevaartuigen, vliegprofiel en resultaten — geschreven voor de missiekaarten en Fly-briefingteksten.",
+      "where": "Missies + Fly"
+    },
+    "Fleet catalogue entries": {
+      "title": "Vlootvoyageningsvermeldingen",
+      "what": "251 ruimtevaartuigen, lanceervoertuigen, ruimtepakken, lanceerbases en stationonderdelen, elk met een 'best known for'-regel en volledig proza-profiel.",
+      "where": "Vloot"
+    },
+    "Landing-site stories": {
+      "title": "Landingslokaties verhalen",
+      "what": "55 multi-hoofdstuk narratieve historieën van maanlanding- en Marsianse landingslokaties, met originele onderschriften op elke foto.",
+      "where": "Maan- + Marslandingen"
+    },
+    "Science encyclopedia": {
+      "title": "Wetenschapsencyclopedie",
+      "what": "117 originele uitleggers over baan-mechanica, aandrijving, leven in de ruimte, Aarde-vanuit-de-ruimte en ruimtevaartgeschiedenis — plus elk figuuronderschrift.",
+      "where": "Wetenschap"
+    },
+    "World profiles": {
+      "title": "Wereldprofielen",
+      "what": "Beschrijvende tekst voor de 9 planeten en 22 kleine hemellichamen — kometen, asteroïden en Kuipergordel-objecten — getoond op de mechanische planetariummodel.",
+      "where": "Verkennen"
+    },
+    "Station module notes": {
+      "title": "Stationmodulnotities",
+      "what": "Operationele en historische notities voor alle 22 ISS- en Tiangong-modules, geschreven voor de blauwdrukpanelen.",
+      "where": "ISS + Tiangong"
+    },
+    "Surface + panorama captions": {
+      "title": "Oppervlakte- + panoramaonderschriften",
+      "what": "Hotspot-labels en geannoteerde panoramaonderschriften die aangeven wat je ziet op elke Maan- en Marsscène.",
+      "where": "Maan- + Marpanorama's"
+    },
+    "Audio tour scripts": {
+      "title": "Audiotoerrondschriften",
+      "what": "Elk geleide + uitgebreide rondletaflevering is oorspronkelijk voor Orrery geschreven; alleen de tekst-naar-spraak-stemmen zijn van derden (erkend op de Creditspagina).",
+      "where": "Maak de rondleiding"
+    },
+    "Physics Lab formula registry": {
+      "title": "Natuurkundige Lab formuleregister",
+      "what": "Het Physics Lab is gebouwd op 64 originele formuledefiniëringen — elk met zijn vergelijking, parameterbereiken, eerlijke faallogica, gestelde aannames en berekende figurenspecificatie — in-house geschreven over echte natuurkunde. De referentieconstanten waaruit zij worden berekend (JPL/IAU/EGM96) zijn vermeld op de Creditspagina.",
+      "where": "Fysica Lab"
+    },
+    "Physics Lab goals": {
+      "title": "Doelstellingen Fysica Lab",
+      "what": "25 originele leerdoelladders die de formules in vertelde verhalen ketenen — van het lanceren van een raket tot het aanraken van een komeet — elk met een geschreven praktijk-verbindingspaneel.",
+      "where": "Fysica Lab"
+    },
+    "Physics Lab interface, in 14 languages": {
+      "title": "Fysica Lab-interface, in 14 talen",
+      "what": "Elke Lab-tekenreeks — formule titels, parameterlabels, aannames, vertelling, fouttoestanden — is oorspronkelijk geschreven en machinaal vertaald in alle 14 ondersteunde talen.",
+      "where": "Fysica Lab"
+    }
+  }
+}

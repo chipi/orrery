@@ -1,0 +1,46 @@
+{
+  "intro": "Chang'e 4 è atterrata nel cratere Von Kármán il 3 gennaio 2019: il primo atterraggio morbido sul lato nascosto della Luna, dove la Terra non è mai visibile. Le comunicazioni sono state inoltrate tramite il satellite Queqiao, posizionato in L2. Ha schierato il rover Yutu-2, che ha percorso oltre 1,5 km ed è ancora operativo nel 2026: la missione sulla superficie lunare rimasta attiva più a lungo di sempre. Ha individuato materiale incontaminato del mantello nel bacino del Polo Sud-Aitken.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Il primo lander lunare sul lato nascosto + il satellite relè in L2 (Queqiao)",
+      "images": [
+        {
+          "src": "/images/missions/change4/01.webp",
+          "caption": "Il lander Chang'e 4 + il rover Yutu-2 durante l'integrazione pre-lancio a Pechino."
+        },
+        {
+          "src": "/images/missions/change4/02.webp",
+          "caption": "Il satellite relè Queqiao in L2: senza di esso, Chang'e 4 non avrebbe alcun contatto con la Terra. La Cina ha costruito l'infrastruttura di comunicazione lunare prima di spingersi sul lato nascosto."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "cratere Von Kármán, lato nascosto — atterraggio il 3 gennaio 2019",
+      "images": [
+        {
+          "src": "/images/missions/change4/03.webp",
+          "caption": "Il rover Yutu-2 fotografato dal lander Chang'e 4: le prime ruote sul lato nascosto della Luna."
+        },
+        {
+          "src": "/images/missions/change4/04.webp",
+          "caption": "Yutu-2 ispeziona una sferula vetrosa sulla superficie: probabilmente un frammento di fusione da impatto proveniente da un lontano evento di craterizzazione."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Scienza",
+      "subtitle": "Materiale del mantello nel bacino del Polo Sud-Aitken",
+      "images": [
+        {
+          "src": "/images/missions/change4/05.webp",
+          "caption": "Gli spettri di VNIS hanno rivelato olivina + pirosseno povero di calcio: minerali del mantello lunare, esposti dall'impatto che ha formato il bacino SPA circa 4,2 miliardi di anni fa."
+        }
+      ]
+    }
+  ]
+}

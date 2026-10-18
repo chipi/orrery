@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 24 landde op 18 augustus 1976 in Mare Crisium — de laatste Sovjet-missie (en de laatste robotmissie) van de 20e eeuw die maanmonsters naar de aarde terugbracht, en tot Chang'e 3 van China in 2013 de laatste maanlander van welke soort dan ook. Het toestel boorde 2 m diep in het regoliet en bracht 170,1 g aan monsters naar de aarde, met aanwijzingen voor waterijs op de Maan (decennia later opnieuw bevestigd door SOFIA en LCROSS). Hier eindigde het Sovjet-maanprogramma.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Sovjetlander E-8-5M — verbeterde installatie voor het terugbrengen van monsters",
+      "images": [
+        {
+          "src": "/images/missions/luna24/01.webp",
+          "caption": "Het ruimtevaartuig Luna 24 in een Sovjet-ruimtevaartmuseum — afdaaltrap + opstijgvoertuig + terugkeercapsule."
+        },
+        {
+          "src": "/images/missions/luna24/02.webp",
+          "caption": "Het boormechanisme — drong 2 m diep door, drie keer dieper dan de 35 cm van Luna 16. Het bracht de diepste monsters terug die ooit van een andere wereld zijn gehaald."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Mare Crisium — geland op 18 augustus 1976",
+      "images": [
+        {
+          "src": "/images/missions/luna24/03.webp",
+          "caption": "De landingsplaats in Mare Crisium — Luna 24 zette ~2 km verwijderd neer van de mislukte landing van Luna 23 in 1974, in dezelfde regio."
+        },
+        {
+          "src": "/images/missions/luna24/04.webp",
+          "caption": "De terugkeercapsule in Siberië, 22 augustus 1976 — de laatste Sovjetmissie die monsters van buiten de baan om de aarde terugbracht, tot de VKS-programma's van de jaren 2020."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "Water in het regoliet — vooraf bevestigd",
+      "images": [
+        {
+          "src": "/images/missions/luna24/05.webp",
+          "caption": "Een heranalyse van de monsters van Luna 24 meldde in 1978 een watergehalte van 0,1% — aanvankelijk verworpen, in 2020 bevestigd door de inslag van LCROSS en door SOFIA."
+        }
+      ]
+    }
+  ]
+}

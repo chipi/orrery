@@ -1,0 +1,224 @@
+[
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-veil.caption",
+    "old": "Uma pluma do Cygnus Loop — uma onda de choque de supernova ainda expandindo após 10.000 anos.",
+    "new": "Uma pluma do Laço do cisne — uma onda de choque de supernova ainda expandindo após 10.000 anos."
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-veil.type",
+    "old": "Remanescente de supernova · Cygnus Loop",
+    "new": "Remanescente de supernova · Laço do cisne"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Landing-site stories.where",
+    "old": "Moon + Mars sites",
+    "new": "Locais na Lua e em Marte"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Surface + panorama captions.where",
+    "old": "Moon + Mars panoramas",
+    "new": "Panoramas da Lua e de Marte"
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.1.subtitle",
+    "old": "16 de julho de 1969 — Saturn V a partir do Kennedy Space Center",
+    "new": "16 de julho de 1969 — Saturn V a partir do Centro Espacial Kennedy"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "intro",
+    "old": "A Apollo 14 pousou nas terras altas de Fra Mauro em 5 de fevereiro de 1971 — o alvo original da Apollo 13, cumprido após a explosão a bordo da 13. Shepard e Mitchell puxaram o Modular Equipment Transporter (uma espécie de riquixá) pelos flancos do Cone Crater e trouxeram de volta 43 kg de brecha — fragmentos do gigantesco impacto que formou o Mare Imbrium há 3,9 bilhões de anos. Shepard ficou famoso por acertar duas bolas de golfe antes da decolagem.",
+    "new": "A Apollo 14 pousou nas terras altas de Fra Mauro em 5 de fevereiro de 1971 — o alvo original da Apollo 13, cumprido após a explosão a bordo da 13. Shepard e Mitchell puxaram o Modular Equipment Transporter (uma espécie de riquixá) pelos flancos do cratera Cone e trouxeram de volta 43 kg de brecha — fragmentos do gigantesco impacto que formou o Mare Imbrium há 3,9 bilhões de anos. Shepard ficou famoso por acertar duas bolas de golfe antes da decolagem."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Mitchell com o Modular Equipment Transporter (MET) — o \"riquixá\" que levava ferramentas e amostras pela encosta em direção ao Cone Crater.",
+    "new": "Mitchell com o Modular Equipment Transporter (MET) — o \"riquixá\" que levava ferramentas e amostras pela encosta em direção ao cratera Cone."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Borda do Cone Crater — a tripulação subiu até cerca de 30 m da borda, mas foi forçada a recuar pelo cansaço e pelos limites de comunicação.",
+    "new": "Borda do cratera Cone — a tripulação subiu até cerca de 30 m da borda, mas foi forçada a recuar pelo cansaço e pelos limites de comunicação."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "intro",
+    "old": "A Apollo 15 pousou em Hadley Rille / Apennine Mountains em 30 de julho de 1971 — a primeira missão \"classe J\", com permanência prolongada na superfície, o Lunar Roving Vehicle (LRV) e um piloto treinado como cientista (David Scott). Scott e Irwin percorreram 28 km no total ao longo de três EVAs, encontraram a Genesis Rock (anortosito de ~4,1 Ga, crosta primária) e, em transmissão ao vivo pela TV, soltaram uma pena e um martelo para demonstrar o teste de gravidade de Galileo.",
+    "new": "A Apollo 15 pousou junto ao sulco Hadley, nos montes Apeninos em 30 de julho de 1971 — a primeira missão \"classe J\", com permanência prolongada na superfície, o Lunar Roving Vehicle (LRV) e um piloto treinado como cientista (David Scott). Scott e Irwin percorreram 28 km no total ao longo de três EVAs, encontraram a Genesis Rock (anortosito de ~4,1 Ga, crosta primária) e, em transmissão ao vivo pela TV, soltaram uma pena e um martelo para demonstrar o teste de gravidade de Galileo."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "David Scott à beira de Hadley Rille — a primeira vez que astronautas estiveram na borda de um antigo canal de lava em outro mundo.",
+    "new": "David Scott à beira do sulco Hadley — a primeira vez que astronautas estiveram na borda de um antigo canal de lava em outro mundo."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "intro",
+    "old": "A Apollo 16 pousou nas Descartes Highlands em 21 de abril de 1972 — a única missão Apollo a um sítio de planalto (e não de mare), escolhido para coletar amostras do que se acreditava ser terreno vulcânico. Young e Duke NÃO encontraram rochas vulcânicas — apenas brechas de impacto e anortosito —, derrubando o modelo geológico e demonstrando que os planaltos da Lua são uma crosta antiga estilhaçada por impactos, e não resultado de vulcanismo posterior. Três EVAs, 27 km de percurso com o LRV, 95 kg de amostras trazidas de volta.",
+    "new": "A Apollo 16 pousou nas Terras Altas de Descartes em 21 de abril de 1972 — a única missão Apollo a um sítio de planalto (e não de mare), escolhido para coletar amostras do que se acreditava ser terreno vulcânico. Young e Duke NÃO encontraram rochas vulcânicas — apenas brechas de impacto e anortosito —, derrubando o modelo geológico e demonstrando que os planaltos da Lua são uma crosta antiga estilhaçada por impactos, e não resultado de vulcanismo posterior. Três EVAs, 27 km de percurso com o LRV, 95 kg de amostras trazidas de volta."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.subtitle",
+    "old": "Descartes Highlands — pouso em 21 de abril de 1972",
+    "new": "Terras Altas de Descartes — pouso em 21 de abril de 1972"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Panorama das Descartes Highlands — estágio de descida do Orion + LRV + Stone Mountain ao fundo.",
+    "new": "Panorama das Terras Altas de Descartes — estágio de descida do Orion + LRV + Stone Mountain ao fundo."
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.1.subtitle",
+    "old": "22 de fevereiro de 2019 — Falcon 9 a partir de Cape Canaveral (carona compartilhada)",
+    "new": "22 de fevereiro de 2019 — Falcon 9 a partir de Cabo Canaveral (carona compartilhada)"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "intro",
+    "old": "O rover Curiosity, da NASA, foi lançado em 26 de novembro de 2011 a bordo de um Atlas V, a partir de Cape Canaveral. Após 254 dias de cruzeiro, o Mars Science Laboratory entregou o rover de 899 kg, movido a energia nuclear, à Cratera Gale em 6 de agosto de 2012, por meio da hoje famosa descida com guindaste aéreo (sky crane). Mais de uma década depois, o Curiosity continua a escalar o Mount Sharp, perfurando rochas que guardam o registro de um passado em que Marte já foi habitável.",
+    "new": "O rover Curiosity, da NASA, foi lançado em 26 de novembro de 2011 a bordo de um Atlas V, a partir de Cabo Canaveral. Após 254 dias de cruzeiro, o Mars Science Laboratory entregou o rover de 899 kg, movido a energia nuclear, à Cratera Gale em 6 de agosto de 2012, por meio da hoje famosa descida com guindaste aéreo (sky crane). Mais de uma década depois, o Curiosity continua a escalar o Monte Sharp, perfurando rochas que guardam o registro de um passado em que Marte já foi habitável."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.1.subtitle",
+    "old": "26 de novembro de 2011 — Atlas V a partir de Cape Canaveral",
+    "new": "26 de novembro de 2011 — Atlas V a partir de Cabo Canaveral"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Panorama de Mont Mercou, sol 3070 (março de 2021). Varredura de 360° da Mastcam-Z mostrando o rover, os penhascos estratificados de Mt Mercou e o Mount Sharp no horizonte.",
+    "new": "Panorama de Mont Mercou, sol 3070 (março de 2021). Varredura de 360° da Mastcam-Z mostrando o rover, os penhascos estratificados de Mt Mercou e o Monte Sharp no horizonte."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.3.images.1.caption",
+    "old": "Rochas sedimentares em Vera Rubin Ridge — formações ferríferas bandadas e minerais de argila indicam água líquida antiga e um ambiente químico habitável.",
+    "new": "Rochas sedimentares em cume Vera Rubin — formações ferríferas bandadas e minerais de argila indicam água líquida antiga e um ambiente químico habitável."
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.1.subtitle",
+    "old": "5 de maio de 2018 — Atlas V a partir da Vandenberg AFB",
+    "new": "5 de maio de 2018 — Atlas V a partir da Base da Força Aérea de Vandenberg"
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.1.subtitle",
+    "old": "4 de dezembro de 1996 — Delta II a partir de Cape Canaveral",
+    "new": "4 de dezembro de 1996 — Delta II a partir de Cabo Canaveral"
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "intro",
+    "old": "Mars 3 pousou em Terra Sirenum em 2 de dezembro de 1971 — foi o primeiro módulo de pouso a sobreviver à entrada na atmosfera marciana e a alcançar a superfície, cinco dias depois de a sua irmã Mars 2 se espatifar. As comunicações cessaram após 14,5 segundos, devolvendo um único fragmento parcial e degradado de imagem em tons de cinza. O módulo provavelmente chegou no meio de uma tempestade de poeira que envolvia todo o planeta. O local exato de repouso de Mars 3 ainda é debatido; em 2013, a HiRISE fotografou um possível equipamento candidato.",
+    "new": "Mars 3 pousou na Terra Sirenum em 2 de dezembro de 1971 — foi o primeiro módulo de pouso a sobreviver à entrada na atmosfera marciana e a alcançar a superfície, cinco dias depois de a sua irmã Mars 2 se espatifar. As comunicações cessaram após 14,5 segundos, devolvendo um único fragmento parcial e degradado de imagem em tons de cinza. O módulo provavelmente chegou no meio de uma tempestade de poeira que envolvia todo o planeta. O local exato de repouso de Mars 3 ainda é debatido; em 2013, a HiRISE fotografou um possível equipamento candidato."
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Detalhe da HiRISE do possível local do equipamento de Mars 3 em Terra Sirenum — divulgado em 2013 pela equipe HiRISE da NASA/UA, identificado por historiadores espaciais amadores russos.",
+    "new": "Detalhe da HiRISE do possível local do equipamento de Mars 3 na Terra Sirenum — divulgado em 2013 pela equipe HiRISE da NASA/UA, identificado por historiadores espaciais amadores russos."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Legacy Pan, sols 5084-5111 (maio-junho de 2018) — o último panorama de 360° de Opportunity antes da tempestade de poeira. Perseverance Valley desce em direção a Endeavour Crater.",
+    "new": "Legacy Pan, sols 5084-5111 (maio-junho de 2018) — o último panorama de 360° de Opportunity antes da tempestade de poeira. Perseverance Valley desce em direção a cratera Endeavour."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Borda de Endeavour Crater, onde Opportunity passou seus últimos anos. O local de repouso do rover fica em Perseverance Valley, à direita.",
+    "new": "Borda da cratera Endeavour, onde Opportunity passou seus últimos anos. O local de repouso do rover fica em Perseverance Valley, à direita."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Local de impacto do escudo térmico em Endurance Crater — Opportunity voltou para inspecionar o próprio equipamento de entrada atmosférica descartado.",
+    "new": "Local de impacto do escudo térmico na cratera Endurance — Opportunity voltou para inspecionar o próprio equipamento de entrada atmosférica descartado."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Afloramentos em camadas de Burns Cliff dentro de Endurance Crater — registro sedimentar de um antigo corpo de água salgada e ácida.",
+    "new": "Afloramentos em camadas de Burns Cliff dentro da cratera Endurance — registro sedimentar de um antigo corpo de água salgada e ácida."
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.1.subtitle",
+    "old": "30 de julho de 2020 — Atlas V a partir de Cape Canaveral",
+    "new": "30 de julho de 2020 — Atlas V a partir de Cabo Canaveral"
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "intro",
+    "old": "A SLIM (Smart Lander for Investigating Moon) pousou na Shioli Crater em 20 de janeiro de 2024 — o primeiro pouso suave do Japão na Lua e um demonstrador de tecnologia de pouso de precisão. A SLIM tocou o solo a menos de 100 m do alvo (o melhor resultado anterior era de mais de 1 km), mas tombou de lado e operou de cabeça para baixo, com as células solares que lhe restavam, até a energia acabar. Dois micro-rovers de superfície, o LEV-1 e o LEV-2 (Sora-Q), foram lançados antes da incômoda orientação final.",
+    "new": "A SLIM (Smart Lander for Investigating Moon) pousou na cratera Shioli em 20 de janeiro de 2024 — o primeiro pouso suave do Japão na Lua e um demonstrador de tecnologia de pouso de precisão. A SLIM tocou o solo a menos de 100 m do alvo (o melhor resultado anterior era de mais de 1 km), mas tombou de lado e operou de cabeça para baixo, com as células solares que lhe restavam, até a energia acabar. Dois micro-rovers de superfície, o LEV-1 e o LEV-2 (Sora-Q), foram lançados antes da incômoda orientação final."
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.2.subtitle",
+    "old": "Shioli Crater — pouso em 20 de janeiro de 2024",
+    "new": "cratera Shioli — pouso em 20 de janeiro de 2024"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Winter Haven em McMurdo, sóis 814-980 (2006) — panorama de 360° da Pancam. As Columbia Hills, batizadas em homenagem à tripulação perdida do STS-107, dominam o horizonte.",
+    "new": "Winter Haven em McMurdo, sóis 814-980 (2006) — panorama de 360° da Pancam. As Colinas Columbia, batizadas em homenagem à tripulação perdida do STS-107, dominam o horizonte."
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.2.subtitle",
+    "old": "Escalando Husband Hill e encontrando sílica em Home Plate",
+    "new": "Escalando colina Husband e encontrando sílica em Home Plate"
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.1.subtitle",
+    "old": "20 de agosto de 1975 — Titan IIIE, de Cape Canaveral",
+    "new": "20 de agosto de 1975 — Titan IIIE, de Cabo Canaveral"
+  },
+  {
+    "rel": "trajectories/pioneer-10.json",
+    "at": "interstellar_since_label",
+    "old": "Último contato em 2003 — em coast em direção a Taurus, passará perto de Aldebaran em ~2 milhões de anos",
+    "new": "Último contato em 2003 — em coast em direção a Taurus, passará perto de Aldebarã em ~2 milhões de anos"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-112fee55fa9f.caption",
+    "old": "Yuri Gagarin lança de Baikonur — 12 abr 1961.",
+    "new": "Iuri Gagarin lança de Baikonur — 12 abr 1961."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-4ba1c691d9d4.caption",
+    "old": "Os 12 minutos de Alexei Leonov fora da cápsula — 18 mar 1965.",
+    "new": "Os 12 minutos de Aleksei Leonov fora da cápsula — 18 mar 1965."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ac1902ff67f1.title",
+    "old": "DART — impacto com o asteroide Dimorphos",
+    "new": "DART — impacto com o asteroide Dimorfos"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-b6068838acb1.caption",
+    "old": "Segundo pouso lunar tripulado, Ocean of Storms — 14 nov 1969.",
+    "new": "Segundo pouso lunar tripulado, oceano das Tempestades — 14 nov 1969."
+  }
+]

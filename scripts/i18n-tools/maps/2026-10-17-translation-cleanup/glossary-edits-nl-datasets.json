@@ -1,0 +1,374 @@
+[
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-carina.caption",
+    "old": "De rand van een stellaire kinderkamer in de Carina Nebula (NGC 3324), uitgegraven door jonge sterren.",
+    "new": "De rand van een stellaire kinderkamer in de Carinanevel (NGC 3324), uitgegraven door jonge sterren."
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-stephans.title",
+    "old": "Stephan's Quintet",
+    "new": "Kwintet van Stephan"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-pillars.caption",
+    "old": "Torens van koude gas en stof in de Eagle Nebula (M16), van binnenuit verlicht door pasgeboren sterren.",
+    "new": "Torens van koude gas en stof in de Adelaarsnevel (M16), van binnenuit verlicht door pasgeboren sterren."
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-tarantula.title",
+    "old": "Tarantula Nebula",
+    "new": "Tarantulanevel"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-mystic-mountain.caption",
+    "old": "Een drie-lichtjaar-pilaar in de Carina Nebula, van Hubbles 20ste verjaardag.",
+    "new": "Een drie-lichtjaar-pilaar in de Carinanevel, van Hubbles 20ste verjaardag."
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-sombrero.title",
+    "old": "Sombrero Galaxy",
+    "new": "Sombrerostelsel"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-eskimo.title",
+    "old": "Eskimo Nebula",
+    "new": "Eskimo-nevel"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "chandra-crab.title",
+    "old": "Crab Nebula (röntgenstraling)",
+    "new": "Krabnevel (röntgenstraling)"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "spitzer-helix.title",
+    "old": "Helix Nebula (infrarood)",
+    "new": "Helixnevel (infrarood)"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "euclid-horsehead.title",
+    "old": "Horsehead Nebula",
+    "new": "Paardenkopnevel"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/iss_webp.title",
+    "old": "International Space Station",
+    "new": "Internationaal ruimtestation"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-giotto_webp.what",
+    "old": "Trommelvormige spinner met een stofschild — Halley's Comet voorbijvlieg.",
+    "new": "Trommelvormige spinner met een stofschild — Komeet Halley voorbijvlieg."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-launcher-vostok-k_webp.what",
+    "old": "Korolev-kruis-kern met vier verjongde hulpraketten.",
+    "new": "Koroljov-kruis-kern met vier verjongde hulpraketten."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-earth-launchpad_webp.what",
+    "old": "Octagonaal landingsplatform met vier bliksemafleiders — Kennedy, Baikonur, Jiuquan en anderen.",
+    "new": "Octagonaal landingsplatform met vier bliksemafleiders — Kennedy, Bajkonoer, Jiuquan en anderen."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "intro",
+    "old": "Apollo 14 landde op 5 februari 1971 in het Fra Mauro-hoogland — het oorspronkelijke doel van Apollo 13, alsnog bereikt na de explosie aan boord van Apollo 13. Shepard en Mitchell sleepten de Modular Equipment Transporter (een soort riksja) over de flanken van Cone Crater omhoog en brachten 43 kg breccia mee terug — brokstukken van de reusachtige inslag die 3,9 miljard jaar geleden Mare Imbrium vormde. Shepard sloeg vlak voor de lancering, naar het heet, twee golfballen weg.",
+    "new": "Apollo 14 landde op 5 februari 1971 in het Fra Mauro-hoogland — het oorspronkelijke doel van Apollo 13, alsnog bereikt na de explosie aan boord van Apollo 13. Shepard en Mitchell sleepten de Modular Equipment Transporter (een soort riksja) over de flanken van Cone-krater omhoog en brachten 43 kg breccia mee terug — brokstukken van de reusachtige inslag die 3,9 miljard jaar geleden Mare Imbrium vormde. Shepard sloeg vlak voor de lancering, naar het heet, twee golfballen weg."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Mitchell met de Modular Equipment Transporter (MET) — de 'riksja' vervoerde gereedschap + monsters over de helling omhoog richting Cone Crater.",
+    "new": "Mitchell met de Modular Equipment Transporter (MET) — de 'riksja' vervoerde gereedschap + monsters over de helling omhoog richting Cone-krater."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Rand van Cone Crater — de bemanning klom tot op ~30 m van de rand, maar werd door uitputting + beperkingen in de communicatie gedwongen terug te keren.",
+    "new": "Rand van Cone-krater — de bemanning klom tot op ~30 m van de rand, maar werd door uitputting + beperkingen in de communicatie gedwongen terug te keren."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "intro",
+    "old": "Apollo 15 landde op 30 juli 1971 bij Hadley Rille / Apennine Mountains — de eerste \"J-class\"-missie, met een verlengd verblijf op het oppervlak, de Lunar Roving Vehicle (LRV) en een piloot met wetenschappelijke training (David Scott). Scott en Irwin legden tijdens drie EVA's in totaal 28 km af met de rover, vonden de Genesis Rock (~4,1 Ga anorthosiet, oerkorst) en lieten live op tv een veer en een hamer vallen om Galileo's zwaartekrachtproef na te doen.",
+    "new": "Apollo 15 landde op 30 juli 1971 bij Hadley-rille / Apennine Mountains — de eerste \"J-class\"-missie, met een verlengd verblijf op het oppervlak, de Lunar Roving Vehicle (LRV) en een piloot met wetenschappelijke training (David Scott). Scott en Irwin legden tijdens drie EVA's in totaal 28 km af met de rover, vonden de Genesis Rock (~4,1 Ga anorthosiet, oerkorst) en lieten live op tv een veer en een hamer vallen om Galileo's zwaartekrachtproef na te doen."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "David Scott aan de rand van Hadley Rille — voor het eerst stonden astronauten op de oever van een eeuwenoud lavakanaal op een andere wereld.",
+    "new": "David Scott aan de rand van Hadley-rille — voor het eerst stonden astronauten op de oever van een eeuwenoud lavakanaal op een andere wereld."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "intro",
+    "old": "Apollo 16 landde op 21 april 1972 in de Descartes Highlands — de enige Apollo-missie naar een hooglandgebied (geen mare), gekozen om te bemonsteren wat voor vulkanisch terrein werd gehouden. Young en Duke vonden GEEN vulkanisch gesteente — alleen inslagbreccies en anorthosiet — waarmee het geologische model werd omvergeworpen en bleek dat de hooglanden van de Maan een eeuwenoude, door inslagen versplinterde korst zijn en niet het resultaat van later vulkanisme. Drie EVA's, 27 km aan LRV-tochten, 95 kg aan monsters teruggebracht.",
+    "new": "Apollo 16 landde op 21 april 1972 in de Descartes-hoogland — de enige Apollo-missie naar een hooglandgebied (geen mare), gekozen om te bemonsteren wat voor vulkanisch terrein werd gehouden. Young en Duke vonden GEEN vulkanisch gesteente — alleen inslagbreccies en anorthosiet — waarmee het geologische model werd omvergeworpen en bleek dat de hooglanden van de Maan een eeuwenoude, door inslagen versplinterde korst zijn en niet het resultaat van later vulkanisme. Drie EVA's, 27 km aan LRV-tochten, 95 kg aan monsters teruggebracht."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.subtitle",
+    "old": "Descartes Highlands — geland op 21 april 1972",
+    "new": "Descartes-hoogland — geland op 21 april 1972"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Panorama van de Descartes Highlands — afdaaltrap van Orion + LRV, met Stone Mountain op de achtergrond.",
+    "new": "Panorama van de Descartes-hoogland — afdaaltrap van Orion + LRV, met Stone Mountain op de achtergrond."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "intro",
+    "old": "Apollo 17 landde op 11 december 1972 in de Taurus-Littrow Valley — de laatste bemande maanmissie en de enige met een professionele geoloog (Harrison Schmitt) op het oppervlak. Cernan en Schmitt brachten verspreid over drie EVA's 22 uur buiten door, reden 35 km en brachten 110 kg aan monsters mee terug, waaronder de beroemde Orange Soil (vulkanische glaskorrels uit een vuurfontein van 3,5 Ga geleden). Cernans voetafdruk is het meest recente menselijke spoor op een andere wereld.",
+    "new": "Apollo 17 landde op 11 december 1972 in de Taurus-Littrowvallei — de laatste bemande maanmissie en de enige met een professionele geoloog (Harrison Schmitt) op het oppervlak. Cernan en Schmitt brachten verspreid over drie EVA's 22 uur buiten door, reden 35 km en brachten 110 kg aan monsters mee terug, waaronder de beroemde Orange Soil (vulkanische glaskorrels uit een vuurfontein van 3,5 Ga geleden). Cernans voetafdruk is het meest recente menselijke spoor op een andere wereld."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.subtitle",
+    "old": "Taurus-Littrow Valley — geland op 11 december 1972",
+    "new": "Taurus-Littrowvallei — geland op 11 december 1972"
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Schmitt ontdekt bij Shorty Crater de Orange Soil — vulkanische glasbolletjes uit een vuurfontein-uitbarsting van 3,5 Ga geleden.",
+    "new": "Schmitt ontdekt bij Shorty-krater de Orange Soil — vulkanische glasbolletjes uit een vuurfontein-uitbarsting van 3,5 Ga geleden."
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.1.subtitle",
+    "old": "2 juni 2003 — Soyuz/Fregat vanaf Baikonur, als bijlader met Mars Express",
+    "new": "2 juni 2003 — Soyuz/Fregat vanaf Bajkonoer, als bijlader met Mars Express"
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.2.subtitle",
+    "old": "Shiv Shakti Point, nabij de zuidpool van de Maan — geland op 23 augustus 2023",
+    "new": "Statio Shiv Shakti, nabij de zuidpool van de Maan — geland op 23 augustus 2023"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "intro",
+    "old": "Chang'e 6 landde op 1 juni 2024 in het South Pole-Aitken-bekken — de eerste monsterretourmissie vanaf de achterkant van de Maan, en de diepste, oudste en grootste inslagstructuur in het binnenste Zonnestelsel. Op 25 juni 2024 bracht de sonde 1.935 g materiaal van de achterkant naar de Aarde terug — monsters die mogelijk fragmenten van de mantel bevatten uit de inslag van 4,2 miljard jaar geleden die het bekken vormde.",
+    "new": "Chang'e 6 landde op 1 juni 2024 in het Zuidpool-Aitken-bekken — de eerste monsterretourmissie vanaf de achterkant van de Maan, en de diepste, oudste en grootste inslagstructuur in het binnenste Zonnestelsel. Op 25 juni 2024 bracht de sonde 1.935 g materiaal van de achterkant naar de Aarde terug — monsters die mogelijk fragmenten van de mantel bevatten uit de inslag van 4,2 miljard jaar geleden die het bekken vormde."
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.2.subtitle",
+    "old": "Apollo Crater (binnen South Pole-Aitken) — geland op 1 juni 2024",
+    "new": "Apollo-krater (binnen Zuidpool-Aitken) — geland op 1 juni 2024"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.3.subtitle",
+    "old": "1.935 g materiaal uit het South Pole-Aitken-bekken",
+    "new": "1.935 g materiaal uit het Zuidpool-Aitken-bekken"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "intro",
+    "old": "NASA's Curiosity-rover werd op 26 november 2011 gelanceerd op een Atlas V vanaf Cape Canaveral. Na 254 dagen vlucht bracht Mars Science Laboratory de 899 kg zware, nucleair aangedreven rover op 6 augustus 2012 naar Gale Crater, via de inmiddels beroemde sky-crane-landing. Ruim tien jaar later klimt Curiosity nog altijd op Mount Sharp en boort de rover in gesteenten die een geschiedenis bewaren van het eens bewoonbare verleden van Mars.",
+    "new": "NASA's Curiosity-rover werd op 26 november 2011 gelanceerd op een Atlas V vanaf Cape Canaveral. Na 254 dagen vlucht bracht Mars Science Laboratory de 899 kg zware, nucleair aangedreven rover op 6 augustus 2012 naar Gale-krater, via de inmiddels beroemde sky-crane-landing. Ruim tien jaar later klimt Curiosity nog altijd op Mount Sharp en boort de rover in gesteenten die een geschiedenis bewaren van het eens bewoonbare verleden van Mars."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.0.subtitle",
+    "old": "Een rover bouwen voor Gale Crater",
+    "new": "Een rover bouwen voor Gale-krater"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.2.subtitle",
+    "old": "Gale Crater — geland op 6 augustus 2012",
+    "new": "Gale-krater — geland op 6 augustus 2012"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.4.images.0.caption",
+    "old": "De JPL-missiecontrole viert de sky-crane-landing van de zeven minuten van terreur, 5/6 augustus 2012 — Adam Steltzner en zijn team na de eerste signalen vanuit Gale Crater.",
+    "new": "De JPL-missiecontrole viert de sky-crane-landing van de zeven minuten van terreur, 5/6 augustus 2012 — Adam Steltzner en zijn team na de eerste signalen vanuit Gale-krater."
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.1.subtitle",
+    "old": "5 mei 2018 — Atlas V vanaf Vandenberg AFB",
+    "new": "5 mei 2018 — Atlas V vanaf Vandenberg Air Force Base"
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.1.subtitle",
+    "old": "12 september 1970 — Proton-K vanaf Baikonur",
+    "new": "12 september 1970 — Proton-K vanaf Bajkonoer"
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Proton-K met bovenste trap Blok-D op het lanceerplatform van Baikonur Cosmodrome.",
+    "new": "Proton-K met bovenste trap Blok-D op het lanceerplatform van kosmodroom Bajkonoer."
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.1.subtitle",
+    "old": "31 januari 1966 — Molniya-M vanaf Baikonur",
+    "new": "31 januari 1966 — Molniya-M vanaf Bajkonoer"
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Een Molniya-M-raket wordt voorbereid op Baikonur — Luna 9 werd gelanceerd te midden van een felle Sovjet-Amerikaanse race naar de eerste zachte landing.",
+    "new": "Een Molniya-M-raket wordt voorbereid op Bajkonoer — Luna 9 werd gelanceerd te midden van een felle Sovjet-Amerikaanse race naar de eerste zachte landing."
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.1.subtitle",
+    "old": "28 mei 1971 — Proton-K vanaf Baikonur",
+    "new": "28 mei 1971 — Proton-K vanaf Bajkonoer"
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Proton-K met Blok-D-boventrap, klaargemaakt op kosmodroom Baikonur — zes maanden onderweg naar Mars.",
+    "new": "Proton-K met Blok-D-boventrap, klaargemaakt op kosmodroom Bajkonoer — zes maanden onderweg naar Mars."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Legacy Pan, sols 5084-5111 (mei-juni 2018) — het laatste 360°-panorama van Opportunity vóór de stofstorm. Perseverance Valley daalt af naar Endeavour Crater.",
+    "new": "Legacy Pan, sols 5084-5111 (mei-juni 2018) — het laatste 360°-panorama van Opportunity vóór de stofstorm. Perseverance Valley daalt af naar Endeavour-krater."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "De rand van Endeavour Crater, waar Opportunity zijn laatste jaren doorbracht. De rustplaats van de rover ligt rechts in Perseverance Valley.",
+    "new": "De rand van Endeavour-krater, waar Opportunity zijn laatste jaren doorbracht. De rustplaats van de rover ligt rechts in Perseverance Valley."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Inslagplek van het hitteschild bij Endurance Crater — Opportunity reed terug om zijn eigen afgeworpen entryhardware te inspecteren.",
+    "new": "Inslagplek van het hitteschild bij Endurance-krater — Opportunity reed terug om zijn eigen afgeworpen entryhardware te inspecteren."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "De gelaagde ontsluitingen van Burns Cliff in Endurance Crater — sedimentair archief van een oude, zure, zoute watermassa.",
+    "new": "De gelaagde ontsluitingen van Burns Cliff in de Endurance-krater — sedimentair archief van een oude, zure, zoute watermassa."
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "intro",
+    "old": "Perseverance landde op 18 februari 2021 in Jezero Crater — een 3,8 miljard jaar oude riviervlakte (delta), gekozen omdat die de grootste kans bood om sporen van oud Marsleven te bewaren. De rover draagt de eerste Marshelikopter (Ingenuity), de eerste geluidsrecorder voor Mars en het eerste systeem voor het opslaan van monsters. Monsterbuizen die op het oppervlak achterblijven, worden in de jaren 2030 door de missie Mars Sample Return naar de aarde gebracht.",
+    "new": "Perseverance landde op 18 februari 2021 in de Jezero-krater — een 3,8 miljard jaar oude riviervlakte (delta), gekozen omdat die de grootste kans bood om sporen van oud Marsleven te bewaren. De rover draagt de eerste Marshelikopter (Ingenuity), de eerste geluidsrecorder voor Mars en het eerste systeem voor het opslaan van monsters. Monsterbuizen die op het oppervlak achterblijven, worden in de jaren 2030 door de missie Mars Sample Return naar de aarde gebracht."
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.subtitle",
+    "old": "Jezero Crater — geland op 18 februari 2021",
+    "new": "Jezero-krater — geland op 18 februari 2021"
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.1.subtitle",
+    "old": "14 maart 2016 — Proton-M vanaf Baikonur",
+    "new": "14 maart 2016 — Proton-M vanaf Bajkonoer"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "intro",
+    "old": "Spirit landde op 4 januari 2004 in de krater Gusev Crater — drie weken voordat zijn tweelingbroer Opportunity aan de andere kant van Mars neerkwam. Spirit was ontworpen voor 90 sols, maar bleef 6 jaar in bedrijf en legde 7,7 km af, tot zijn wielen definitief vastliepen in los zand bij \"Troy\". Vanaf die gestrande rover ging hij door als stationair wetenschappelijk platform, tot het contact in maart 2010 verloren ging.",
+    "new": "Spirit landde op 4 januari 2004 in de Gusev-krater — drie weken voordat zijn tweelingbroer Opportunity aan de andere kant van Mars neerkwam. Spirit was ontworpen voor 90 sols, maar bleef 6 jaar in bedrijf en legde 7,7 km af, tot zijn wielen definitief vastliepen in los zand bij \"Troy\". Vanaf die gestrande rover ging hij door als stationair wetenschappelijk platform, tot het contact in maart 2010 verloren ging."
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.1.subtitle",
+    "old": "Gusev Crater — geland op 4 januari 2004",
+    "new": "Gusev-krater — geland op 4 januari 2004"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Silicarijke bodem, blootgelegd door Spirits kapotte rechtervoorwiel bij Home Plate — bewijs van vroegere hydrothermale activiteit in Gusev Crater.",
+    "new": "Silicarijke bodem, blootgelegd door Spirits kapotte rechtervoorwiel bij Home Plate — bewijs van vroegere hydrothermale activiteit in de Gusev-krater."
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Zonsondergang boven Gusev Crater, gefotografeerd door Pancam, sol 489 (19 mei 2005). Een van de iconische, blauwgetinte Marsavondbeelden.",
+    "new": "Zonsondergang boven Gusev-krater, gefotografeerd door Pancam, sol 489 (19 mei 2005). Een van de iconische, blauwgetinte Marsavondbeelden."
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Een Long March 5 lanceert Tianwen-1 vanaf Wenchang Space Launch Site op Hainan — een reis van 7 maanden naar Mars.",
+    "new": "Een Long March 5 lanceert Tianwen-1 vanaf lanceerbasis Wenchang op Hainan — een reis van 7 maanden naar Mars."
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "current_distance_label",
+    "old": "0,94 AU · onderweg naar Earth #2 flyby 2026-09-29 (cruisefase 2 van 5)",
+    "new": "0,94 AU · onderweg naar Aarde #2 flyby 2026-09-29 (cruisefase 2 van 5)"
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "waypoints.6.label",
+    "old": "Earth #2",
+    "new": "Aarde #2"
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "waypoints.8.label",
+    "old": "Earth #3",
+    "new": "Aarde #3"
+  },
+  {
+    "rel": "trajectories/juno.json",
+    "at": "waypoints.5.label",
+    "old": "Earth assist",
+    "new": "Aarde assist"
+  },
+  {
+    "rel": "trajectories/pioneer-11.json",
+    "at": "interstellar_since_label",
+    "old": "Signaal verloren in 1995 — vaart in de richting van Aquila, bereikt rond 2027 de interstellaire ruimte",
+    "new": "Signaal verloren in 1995 — vaart in de richting van Arend, bereikt rond 2027 de interstellaire ruimte"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-112fee55fa9f.caption",
+    "old": "Yuri Gagarin wordt gelanceerd vanaf Baikonur — 12 apr. 1961.",
+    "new": "Joeri Gagarin wordt gelanceerd vanaf Bajkonoer — 12 apr. 1961."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-4ba1c691d9d4.caption",
+    "old": "Alexei Leonov's 12 minuten buiten de capsule — 18 maart 1965.",
+    "new": "Aleksej Leonovs 12 minuten buiten de capsule — 18 maart 1965."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-54cee894b509.caption",
+    "old": "De eerste echte video van een landing op een ander hemellichaam — Jezero Crater, 18 februari 2021.",
+    "new": "De eerste echte video van een landing op een ander hemellichaam — Jezero-krater, 18 februari 2021."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-b6068838acb1.caption",
+    "old": "Tweede bemande maanlanding, Ocean of Storms — 14 nov 1969.",
+    "new": "Tweede bemande maanlanding, Oceaan der Stormen — 14 nov 1969."
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "name": "Giotto",
+  "current_distance_label": "1.04 AU · 그리그-셸레루프 혜성 근접비행 이후 1992-07-10부터 태양 중심 궤도 진행 중",
+  "waypoints": [
+    {
+      "label": "발사 (Ariane 1)"
+    },
+    null,
+    {
+      "label": "Halley 근접비행"
+    },
+    null,
+    {
+      "label": "지구 #1"
+    },
+    null,
+    {
+      "label": "그리그-셸레루프 혜성"
+    },
+    null
+  ]
+}

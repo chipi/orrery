@@ -1,0 +1,46 @@
+{
+  "intro": "Schiaparelli – Europas zweiter Versuch einer Mars-Landung – trennte sich am 16. Oktober 2016 vom ExoMars Trace Gas Orbiter und schlug drei Tage später mit rund 540 km/h in Meridiani Planum auf. Ein Softwarefehler führte dazu, dass Fallschirm und Bremstriebwerke 50 Sekunden zu früh abgetrennt bzw. abgeschaltet wurden, als der Lander noch 3,7 km über der Oberfläche schwebte. Die Trümmer wurden binnen einer Woche von MRO HiRISE entdeckt. Die gewonnenen Erkenntnisse prägten den ExoMars-Rover Rosalind Franklin, dessen Start nun für 2028 vorgesehen ist.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "EDM – Entry, Descent and Landing Demonstrator Module",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/01.webp",
+          "caption": "Der Lander Schiaparelli vor dem Start – 577 kg, konzipiert als einmaliger Technologiedemonstrator für das EDL-System des ExoMars-Rovers."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "14. März 2016 – Proton-M von Baikonur",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/02.webp",
+          "caption": "Proton-M hebt mit dem ExoMars-2016-Verbund ab – TGO + Schiaparelli, gemeinsame Mission von ESA und Roscosmos."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Meridiani Planum – Aufschlag am 19. Oktober 2016",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/03.webp",
+          "caption": "MRO-HiRISE-Aufnahme der Aufschlagstelle von Schiaparelli – der Hauptkrater oben sichtbar; Fallschirm + Rückschale unten rechts."
+        },
+        {
+          "src": "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg",
+          "caption": "HiRISE-Detailaufnahme der Absturzstelle von Schiaparelli – dunkle Spur, die der Aufprall der Hardware hinterlassen hat, umgeben von der Auswurfdecke."
+        },
+        {
+          "src": "/images/fleet-galleries/schiaparelli/04.webp",
+          "caption": "Computergrafik-Rekonstruktion des Fehlerablaufs – die Sättigung der IMU beim Öffnen des Fallschirms führte in 3,7 km Höhe zur vorzeitigen Abtrennung des Landers."
+        }
+      ]
+    }
+  ]
+}

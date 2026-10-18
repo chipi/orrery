@@ -1,0 +1,46 @@
+{
+  "intro": "Mars 3は1971年12月2日、シレーン陸地に着陸した。火星の大気圏突入を生き延びて地表に到達した初のランダーであり、姉妹機Mars 2が墜落した5日後のことだった。通信は14.5秒で途絶え、送られてきたのは、一部しかなく劣化したグレースケール画像の断片が1枚だけだった。ランダーは、惑星全体を覆う砂嵐のさなかに到着した可能性が高い。Mars 3が実際にどこに眠っているのかは、今も議論が続いている。2013年にはHiRISEが、それらしき機体の候補を撮影した。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "ソ連の4MS級ランダー、あらゆる種類を通じて火星への初の着陸",
+      "images": [
+        {
+          "src": "/images/missions/mars3/01.webp",
+          "caption": "NPO Lavochkinの宇宙史博物館に展示されているMars 3ランダーの実物大模型。総質量は1,210 kgで、4.5 kgのProp-Mローバーを搭載していた(展開されることはなかった)。"
+        },
+        {
+          "src": "/images/missions/mars3/02.webp",
+          "caption": "Mars 3ランダーの機体の断面図。この基本設計の系譜は、のちのソ連時代のVeneraや火星探査機のハードウェアにも受け継がれた。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "1971年5月28日 — バイコヌールからProton-Kで",
+      "images": [
+        {
+          "src": "/images/missions/mars3/03.webp",
+          "caption": "バイコヌール宇宙基地で準備されるBlok-D上段付きのProton-K。火星までの航行期間は6か月。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "シレーン陸地 — 1971年12月2日着陸",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars3/tier2-hirise.jpg",
+          "caption": "シレーン陸地にある、Mars 3の機体とみられる候補地のHiRISE詳細画像。2013年にNASA/UA HiRISEチームが公開し、ロシアのアマチュア宇宙史研究家が特定した。"
+        },
+        {
+          "src": "/images/missions/mars3/04.webp",
+          "caption": "Mars 3が送ってきた唯一の断片的な画像。79ライン、地平線もなく、細部も写っていない。どれほどかすかであっても、これが他の惑星の地表から届いた最初の1枚である。"
+        }
+      ]
+    }
+  ]
+}

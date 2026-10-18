@@ -1,0 +1,61 @@
+{
+  "intro": "Zhurong은 2021년 5월 14일 유토피아 평원에 착륙했습니다. 중국 최초의 화성 착륙 성공이자, 궤도선·착륙선·로버를 단일 발사로 결합한 세계 최초의 화성 탐사 임무(Tianwen-1)였습니다. 중국의 불의 신 이름을 딴 Zhurong은 유토피아 평원 남부 1.92km를 주행한 뒤, 먼지 계절이던 2022년 5월 휴면 상태에 들어갔습니다. CNSA는 재가동 여부를 확인하지 않았습니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "중국 최초의 화성 착륙선 + 로버",
+      "images": [
+        {
+          "src": "/images/missions/tianwen1/01.webp",
+          "caption": "베이징에서 발사 전 통합 작업 중인 Zhurong 로버. 무게 240kg, 태양광 구동이며 지하를 탐사하는 지하투과레이더를 갖추고 있습니다."
+        },
+        {
+          "src": "/images/missions/tianwen1/02.webp",
+          "caption": "Tianwen-1 발사체 조립 상태. 궤도선, 착륙선, 로버를 하나로 결합한, 첫 도전으로는 역대 가장 야심 찬 화성 탐사 임무였습니다."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "2020년 7월 23일 — 원창에서 발사된 Long March 5",
+      "images": [
+        {
+          "src": "/images/missions/tianwen1/03.webp",
+          "caption": "Long March 5가 중국 하이난의 원창 위성발사센터에서 Tianwen-1을 발사하는 모습. 화성까지 7개월간 비행했습니다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "유토피아 평원 — 2021년 5월 14일 착륙",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/zhurong/tier3-pan.jpg",
+          "caption": "Zhurong의 항법 카메라가 촬영한 파노라마. 착륙선 갑판과 그 너머의 화성 표면이 보입니다. NASA도 소련도 아닌 나라의 화성 탐사 임무가 보내온 최초의 지상 시점 영상입니다."
+        },
+        {
+          "src": "/images/hotspots/mars/zhurong/tier2-hirise.jpg",
+          "caption": "NASA의 MRO HiRISE가 궤도에서 촬영한 Zhurong 로버와 착륙선. 기록 영상에서 이루어진 국제 협력의 사례입니다."
+        },
+        {
+          "src": "/images/fleet-galleries/zhurong/01.webp",
+          "caption": "화성 위의 Zhurong과 착륙선. 로버가 직접 설치한 뒤 멀리 이동해 촬영한 원격 카메라로 찍은 사진입니다."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "유토피아 평원 지하를 탐사한 지하투과레이더",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/zhurong/03.webp",
+          "caption": "지하 약 80m 깊이까지의 층상 구조를 보여 주는 지하투과레이더 단면. 유토피아 평원 남부에서 일어난 고대 홍수 사건의 증거입니다."
+        }
+      ]
+    }
+  ]
+}

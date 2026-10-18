@@ -1,0 +1,46 @@
+{
+  "intro": "Schiaparelli는 유럽의 두 번째 화성 착륙 시도였습니다. 2016년 10월 16일 ExoMars Trace Gas Orbiter에서 분리된 Schiaparelli는 사흘 뒤 시속 약 540km로 메리디아니 평원에 추락했습니다. 소프트웨어 오류로 낙하산과 제동 추력기가 50초 일찍 분리되었고, 그때 착륙선은 아직 지표면 위 3.7km에 있었습니다. 잔해는 일주일 안에 MRO HiRISE에 포착되었습니다. 이 사고에서 얻은 교훈은 2028년 발사를 목표로 하는 ExoMars Rosalind Franklin 로버의 설계에 반영되었습니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "EDM — 진입·하강·착륙 시범 모듈",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/01.webp",
+          "caption": "발사 전의 Schiaparelli 착륙선 — 무게 577kg으로, ExoMars 로버의 진입·하강·착륙(EDL) 시스템을 위한 일회성 기술 시범기로 설계되었습니다."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "2016년 3월 14일 — 바이코누르에서 발사된 Proton-M",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/02.webp",
+          "caption": "ExoMars 2016 결합체(TGO + Schiaparelli)를 싣고 이륙하는 Proton-M — ESA와 Roscosmos의 공동 임무입니다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "지표면",
+      "subtitle": "메리디아니 평원 — 2016년 10월 19일 충돌",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/03.webp",
+          "caption": "MRO HiRISE가 촬영한 Schiaparelli 충돌 지점 — 위쪽에 주 크레이터가, 오른쪽 아래에 낙하산과 백셸이 보입니다."
+        },
+        {
+          "src": "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg",
+          "caption": "HiRISE로 촬영한 Schiaparelli 추락 지점의 세부 모습 — 기체 충돌로 생긴 검은 줄무늬와 주변을 덮은 분출물 층이 보입니다."
+        },
+        {
+          "src": "/images/fleet-galleries/schiaparelli/04.webp",
+          "caption": "실패 과정을 컴퓨터 그래픽으로 재현한 영상 — 낙하산 전개 중 IMU가 포화되면서 고도 3.7km에서 착륙선이 너무 일찍 분리되었습니다."
+        }
+      ]
+    }
+  ]
+}

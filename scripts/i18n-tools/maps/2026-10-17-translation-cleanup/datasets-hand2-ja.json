@@ -1,0 +1,56 @@
+[
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-serpens.title",
+    "old": "Serpens Nebula",
+    "new": "へび座星雲"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/au_webp.title",
+    "old": "AU",
+    "new": "天文単位"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-moon-lunokhod_webp.title",
+    "old": "Lunokhod rover",
+    "new": "Lunokhod 月面車"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-moon-yutu_webp.title",
+    "old": "Yutu rover",
+    "new": "Yutu 月面車"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-venus-venera_webp.title",
+    "old": "Venera / Vega lander",
+    "new": "Venera / Vega 着陸機"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "ui.Conic-section icons.where",
+    "old": "Fly",
+    "new": "フライ"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Mission briefings.where",
+    "old": "Missions + Fly",
+    "new": "ミッション + フライ"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Fleet catalogue entries.where",
+    "old": "Fleet",
+    "new": "フリート"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Audio tour scripts.where",
+    "old": "Take the tour",
+    "new": "ツアーを始める"
+  }
+]

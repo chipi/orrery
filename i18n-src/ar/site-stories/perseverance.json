@@ -1,0 +1,65 @@
+{
+  "intro": "هبطت Perseverance في فوهة جيزيرو في 18 فبراير 2021، وهي دلتا نهرية يبلغ عمرها 3.8 مليار سنة، اختيرت لأنها تحمل أفضل فرصة للحفاظ على أدلة الحياة المريخية القديمة. تحمل المركبة الجوّالة أول مروحية على المريخ (Ingenuity)، وأول جهاز تسجيل صوتي على المريخ، وأول منظومة لتخزين العيّنات. أما أنابيب العيّنات التي تُترك على السطح فستعيدها إلى الأرض مهمة Mars Sample Return في ثلاثينيات هذا القرن.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "العتاد",
+      "subtitle": "الشقيقة الأثقل والأذكى لـ Curiosity",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/01.webp",
+          "caption": "Perseverance أثناء التجميع في JPL — كتلتها 1025 كغ، وتعمل بمولّد MMRTG، وتحمل 23 كاميرا وميكروفونين وبرجًا دوّارًا لتخزين العيّنات."
+        },
+        {
+          "src": "/images/missions/perseverance/02.webp",
+          "caption": "المروحية Ingenuity مثبّتة أسفل بطن Perseverance — أول مركبة أثقل من الهواء تحلّق على كوكب آخر."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "الإطلاق",
+      "subtitle": "30 يوليو 2020 — صاروخ Atlas V من رأس كانافيرال",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/03.webp",
+          "caption": "إطلاق Atlas V 541 لمهمة Mars 2020 من منصة SLC-41 في 30 يوليو 2020 الساعة 07:50 بتوقيت EDT — رحلة عبور تستغرق 203 أيام إلى جيزيرو."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "السطح",
+      "subtitle": "فوهة جيزيرو — الهبوط في 18 فبراير 2021",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
+          "caption": "Van Zyl Overlook — أول بانوراما بزاوية 360° من Mastcam-Z، اليوم المريخي 3 (21 فبراير 2021). تظهر دلتا جيزيرو في الغرب."
+        },
+        {
+          "src": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
+          "caption": "Perseverance ومسارها على السطح، بعدسة كاميرا HiRISE التابعة للمركبة Mars Reconnaissance Orbiter من المدار بدقة 25 سم للبكسل."
+        },
+        {
+          "src": "/images/missions/perseverance/04.webp",
+          "caption": "أول رحلة لـ Ingenuity في 19 أبريل 2021 — تحليق ثابت لمدة 3 ثوانٍ على ارتفاع 3 أمتار. حملت المروحية قطعة صغيرة من قماش طائرة Flyer للأخوين رايت من أجل هذه اللحظة بالذات."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "العلوم",
+      "subtitle": "أخذ عيّنات من دلتا نهرية عمرها 3.8 مليار سنة",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/perseverance/02.webp",
+          "caption": "أول أنبوب عيّنات يُختم ويُخزَّن على سطح المريخ — لبّ \"Roubion\" المستخرج بالحفر من صخرة Rochette، سبتمبر 2021."
+        },
+        {
+          "src": "/images/fleet-galleries/perseverance/03.webp",
+          "caption": "رصد جهاز SHERLOC جزيئات عضوية في الحجر الطيني في Wildcat Ridge — بصمة كيميائية لمرشّحات محتملة لحياة مريخية قديمة."
+        }
+      ]
+    }
+  ]
+}

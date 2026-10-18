@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 9 toccò il suolo in Oceanus Procellarum il 3 febbraio 1966: il primo atterraggio morbido su un altro mondo. La capsula sferica da 99 kg sopravvisse a un impatto a 22 km/h grazie a cuscini gonfiabili, poi dischiuse dei petali per raddrizzarsi e trasmise le prime fotografie della superficie lunare. Rimase operativa per 3 giorni, fino all'esaurimento delle batterie.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Capsula sovietica E-6, pioniera dell'atterraggio morbido",
+      "images": [
+        {
+          "src": "/images/missions/luna9/01.webp",
+          "caption": "Modello della capsula di Luna 9: 99 kg, forma sferica, con fotocamera protetta da airbag e quattro antenne a petalo."
+        },
+        {
+          "src": "/images/missions/luna9/02.webp",
+          "caption": "Diagramma in sezione dell'hardware di Luna 9: gli ingegneri sovietici risolsero il problema dell'atterraggio morbido prima della NASA."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "31 gennaio 1966 — Molniya-M da Bajkonur",
+      "images": [
+        {
+          "src": "/images/missions/luna9/03.webp",
+          "caption": "Razzo Molniya-M preparato a Bajkonur: Luna 9 fu lanciata nella corsa sovietico-americana, da un capo all'altro del mondo, verso il primo atterraggio morbido."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Oceanus Procellarum — atterraggio il 3 febbraio 1966",
+      "images": [
+        {
+          "src": "/images/missions/luna9/04.webp",
+          "caption": "Le prime immagini della superficie lunare: panorami grezzi, a bassa velocità di trasmissione, che mostrano un regolite roccioso. Il radiotelescopio di Jodrell Bank, a Manchester, intercettò la trasmissione e la pubblicò prima dei sovietici."
+        },
+        {
+          "src": "/images/missions/luna9/05.webp",
+          "caption": "Mosaico panoramico di Luna 9: la prima prova che la superficie lunare era abbastanza solida da sostenere un lander, ponendo fine ad anni di congetture su profonde distese di polvere."
+        }
+      ]
+    }
+  ]
+}

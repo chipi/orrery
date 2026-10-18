@@ -1,0 +1,46 @@
+{
+  "name": "Voyager 2",
+  "current_distance_label": "143 AU · ~19,8 светлосних сати од Сунца",
+  "interstellar_since_label": "Прешао хелиопаузу у новембру 2018.",
+  "waypoints": [
+    {
+      "label": "Лансирање"
+    },
+    null,
+    null,
+    {
+      "label": "Јупитер"
+    },
+    null,
+    null,
+    {
+      "label": "Сатурн"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Уран"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Нептун"
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Хелиопауза"
+    },
+    null,
+    {
+      "label": "Данас"
+    }
+  ]
+}

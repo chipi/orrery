@@ -1,0 +1,80 @@
+[
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-pillars.title",
+    "old": "Pillars of Creation",
+    "new": "Pilaren van Schepping"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-ngc346.subject",
+    "old": "Cluster",
+    "new": "Sterrenhoop"
+  },
+  {
+    "rel": "trajectories/new-horizons.json",
+    "at": "waypoints.0.label",
+    "old": "Launch",
+    "new": "Lancering"
+  },
+  {
+    "rel": "trajectories/new-horizons.json",
+    "at": "waypoints.12.label",
+    "old": "Today",
+    "new": "Vandaag"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/mercury-capsule_webp.title",
+    "old": "Mercury capsule",
+    "new": "Mercury-capsule"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-galileo_webp.where",
+    "old": "Fly + Explore",
+    "new": "Vliegen + Verkennen"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-new-horizons_webp.where",
+    "old": "Fly + Explore",
+    "new": "Vliegen + Verkennen"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-pioneer-10_webp.where",
+    "old": "Fly + Explore",
+    "new": "Vliegen + Verkennen"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-juno_webp.where",
+    "old": "Fly + Explore",
+    "new": "Vliegen + Verkennen"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-bepicolombo_webp.where",
+    "old": "Fly + Explore",
+    "new": "Vliegen + Verkennen"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-dawn_webp.where",
+    "old": "Fly + Explore",
+    "new": "Vliegen + Verkennen"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-giotto_webp.where",
+    "old": "Fly + Explore",
+    "new": "Vliegen + Verkennen"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-hayabusa2_webp.where",
+    "old": "Fly + Explore",
+    "new": "Vliegen + Verkennen"
+  }
+]

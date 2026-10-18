@@ -1,0 +1,41 @@
+{
+  "name": "BepiColombo",
+  "current_distance_label": "0,48 AU · auf dem Weg zur Merkur-Orbiteintritt 2026-12-05",
+  "waypoints": [
+    {
+      "label": "Start (Ariane 5)"
+    },
+    null,
+    {
+      "label": "Erde"
+    },
+    {
+      "label": "Venus #1"
+    },
+    {
+      "label": "Venus #2"
+    },
+    {
+      "label": "Merkur #1"
+    },
+    {
+      "label": "Merkur #2"
+    },
+    {
+      "label": "Merkur #3"
+    },
+    {
+      "label": "Merkur #4"
+    },
+    {
+      "label": "Merkur #5"
+    },
+    {
+      "label": "Merkur #6"
+    },
+    null,
+    {
+      "label": "Merkur-Orbiteintritt"
+    }
+  ]
+}

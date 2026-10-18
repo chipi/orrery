@@ -1,0 +1,34 @@
+{
+  "name": "Pioneer 11",
+  "current_distance_label": "89 وحدة فلكية · ~12.3 ساعة ضوئية من الشمس (فقدت الإشارة 1995-09-30)",
+  "interstellar_since_label": "فقدت الإشارة 1995 — في رحلة نحو العقاب، ستدخل الفضاء بين النجوم حوالي 2027",
+  "waypoints": [
+    {
+      "label": "الإطلاق"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "مساعدة المشتري"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "زحل + حلقة F"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "آخر إشارة"
+    },
+    null,
+    null,
+    {
+      "label": "اليوم"
+    }
+  ]
+}

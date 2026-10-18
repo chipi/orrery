@@ -1,0 +1,53 @@
+{
+  "intro": "Chang'e 6 landde op 1 juni 2024 in het Zuidpool-Aitken-bekken — de eerste monsterretourmissie vanaf de achterkant van de Maan, en de diepste, oudste en grootste inslagstructuur in het binnenste Zonnestelsel. Op 25 juni 2024 bracht de sonde 1.935 g materiaal van de achterkant naar de Aarde terug — monsters die mogelijk fragmenten van de mantel bevatten uit de inslag van 4,2 miljard jaar geleden die het bekken vormde.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Herontwerp van Chang'e 5 voor monsterretour vanaf de achterkant",
+      "images": [
+        {
+          "src": "/images/missions/change6/01.webp",
+          "caption": "De Chang'e 6-stack — met als toevoeging het relaissatelliet Queqiao-2 voor communicatie met de achterkant, verder gebaseerd op de architectuur van Chang'e 5."
+        },
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "Internationale instrumenten — de ESA-detector NILS, de Franse radondetector DORN, de Italiaanse retroreflector INRRI en de Pakistaanse nanosatelliet ICUBE-Q."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "3 mei 2024 — Long March 5 vanaf Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/change6/03.webp",
+          "caption": "Long March 5 lanceert Chang'e 6 — een retourreis van 28 dagen naar de achterkant van de Maan, inclusief 14 dagen wachten op het juiste communicatievenster via het relaissatelliet."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Apollo-krater (binnen Zuidpool-Aitken) — geland op 1 juni 2024",
+      "images": [
+        {
+          "src": "/images/missions/change6/04.webp",
+          "caption": "De Chang'e 6-lander op de achterkant — de monsterretour zonder rover, vanaf een stilstaande positie, vastgelegd door een uitgezette mini-rover."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "1.935 g materiaal uit het Zuidpool-Aitken-bekken",
+      "images": [
+        {
+          "src": "/images/missions/change6/05.webp",
+          "caption": "De monsterretourcapsule op het grasland van Binnen-Mongolië, 25 juni 2024 — de eerste maanmonsters van de achterkant op Aarde, ooit."
+        }
+      ]
+    }
+  ]
+}

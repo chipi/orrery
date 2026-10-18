@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 12 landete am 19. November 1969 im Oceanus Procellarum – eine Punktlandung in Gehweite der Roboter-Landesonde Surveyor 3, die dort 2½ Jahre zuvor aufgesetzt hatte. Conrad und Bean verbrachten bei zwei Außenbordeinsätzen (EVAs) insgesamt 31 Stunden auf der Oberfläche und brachten 34 kg Proben sowie Teile von Surveyor 3 zur Analyse zur Erde zurück. Die Mission zeigte, dass ein bemannter Apollo-Flug ein bestimmtes Ziel auf der Mondoberfläche ansteuern konnte.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Yankee Clipper + Intrepid",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/01.webp",
+          "caption": "Besatzungsporträt von Apollo 12 – Pete Conrad (CDR), Dick Gordon (CMP), Al Bean (LMP)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "14. November 1969 – in der ersten Minute zweimal vom Blitz getroffen",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/02.webp",
+          "caption": "Die Saturn V SA-507 hebt durch einen Regenschauer ab. Blitze schlugen bei T+36 s und T+52 s in die Rakete ein und legten die Stromversorgung der Brennstoffzellen lahm; der Befehl „SCE to AUX“ rettete die Mission."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Oceanus Procellarum – gelandet am 19. November 1969",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/03.webp",
+          "caption": "Conrad an der Landesonde Surveyor 3 – Apollo 12 landete nur 163 m entfernt, die erste Präzisionslandung auf dem Mond."
+        },
+        {
+          "src": "/images/missions/apollo12/04.webp",
+          "caption": "Die ALSEP-Forschungsstation ist aufgebaut – das erste geophysikalische Langzeit-Observatorium auf dem Mond."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo12/tier3-pan.jpg",
+          "caption": "Panorama der Landestelle von Apollo 12 – Intrepid-Abstiegsstufe, ALSEP und Surveyor 3 im Bild."
+        }
+      ]
+    }
+  ]
+}

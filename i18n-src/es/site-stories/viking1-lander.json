@@ -1,0 +1,61 @@
+{
+  "intro": "Viking 1 aterrizó en Chryse Planitia el 20 de julio de 1976, el primer módulo de aterrizaje estadounidense que logró posarse con éxito en Marte, exactamente siete años después del Apollo 11. Su misión en la superficie, de 2245 soles (6,3 años), incluyó las primeras imágenes en color de Marte, los primeros experimentos de biología in situ (con resultados ambiguos) y un registro meteorológico diario. La última transmisión se produjo en noviembre de 1982, después de que una carga de comandos sobrescribiera por accidente los parámetros de orientación de la antena.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Pareja de módulo de aterrizaje y orbitador, alimentada por RTG, de unos 600 kg",
+      "images": [
+        {
+          "src": "/images/missions/viking1/01.webp",
+          "caption": "El módulo de aterrizaje Viking 1 durante las pruebas previas al vuelo: se aprecia el RTG en la parte trasera y el brazo recolector de muestras extendido."
+        },
+        {
+          "src": "/images/missions/viking1/02.webp",
+          "caption": "Despliegue de una maqueta del brazo recolector de muestras en el entorno de pruebas del JPL."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "20 de agosto de 1975: un Titan IIIE desde Cabo Cañaveral",
+      "images": [
+        {
+          "src": "/images/missions/viking1/03.webp",
+          "caption": "El Titan IIIE / Centaur lanza la Viking 1: tránsito de 10 meses, inserción en órbita marciana en junio de 1976 y aterrizaje del módulo el 20 de julio."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Chryse Planitia: aterrizaje el 20 de julio de 1976",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier3-pan.jpg",
+          "caption": "Panorámica de 360° de Chryse Planitia: el primer paisaje en color desde la superficie de otro planeta."
+        },
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier2-hirise.jpg",
+          "caption": "El módulo de aterrizaje Viking 1, fotografiado desde la órbita más de 30 años después por la cámara HiRISE de la MRO: la primera imagen de arqueología de hardware de una misión a Marte de los años setenta."
+        },
+        {
+          "src": "/images/missions/viking1/04.webp",
+          "caption": "Primera vista de la superficie marciana, captada por la Cámara 2 pocos minutos después del aterrizaje."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciencia",
+      "subtitle": "Experimentos de biología, meteorología y la búsqueda de vida",
+      "images": [
+        {
+          "src": "/images/missions/viking1/05.webp",
+          "caption": "Zanja excavada por el brazo recolector de muestras: los experimentos de biología de las Viking buscaron compuestos orgánicos (no se detectó ninguno; el resultado aún se debate)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "JUICE",
+  "current_distance_label": "0,94 UA · en ruta hacia el segundo paso cercano por la Tierra 2026-09-29 (etapa de crucero 2 de 5)",
+  "waypoints": [
+    {
+      "label": "Lanzamiento (Ariane 5)"
+    },
+    null,
+    {
+      "label": "Paso cercano combinado Luna-Tierra"
+    },
+    null,
+    {
+      "label": "Paso cercano por Venus"
+    },
+    null,
+    {
+      "label": "Tierra #2"
+    },
+    null,
+    {
+      "label": "Tierra #3"
+    },
+    null,
+    {
+      "label": "Inserción en órbita de Júpiter"
+    }
+  ]
+}

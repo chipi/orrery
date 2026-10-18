@@ -1,0 +1,32 @@
+{
+  "name": "New Horizons",
+  "current_distance_label": "66 AU · 확장 임무 중 — 태양권의 정체 영역을 향해 이동 중",
+  "interstellar_since_label": "2040년경 태양권 경계면을 넘을 예정 — 성간 우주에 도달할 운명의 세 번째 탐사선",
+  "waypoints": [
+    {
+      "label": "발사"
+    },
+    {
+      "label": "소행성 APL"
+    },
+    null,
+    null,
+    {
+      "label": "목성 중력 보조"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "명왕성"
+    },
+    null,
+    {
+      "label": "아로콧"
+    },
+    null,
+    {
+      "label": "오늘"
+    }
+  ]
+}

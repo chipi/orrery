@@ -1,0 +1,46 @@
+{
+  "intro": "Beresheet는 히브리어로 \"태초에\"를 뜻하며, 이스라엘 최초의 달 착륙 시도였습니다. 민간 단체 SpaceIL이 1억 달러의 빠듯한 예산으로 제작했습니다. 2019년 2월 22일 발사되어 4월 4일 달 궤도에 진입했고, 하강 도중 IMU와 탑재 컴퓨터가 재설정되면서 2019년 4월 11일 평온의 바다에 추락했습니다. 잔해에는 완보동물이 담긴 타임캡슐이 실려 있었습니다. 비록 충돌이라는 방식이었지만, 이스라엘은 달에 도달한 일곱 번째 국가가 되었습니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "당시까지 시도된 행성 간 착륙선 중 가장 작은 585 kg",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/01.webp",
+          "caption": "발사 전 통합 작업 중인 Beresheet 우주선 — SpaceIL이 Israel Aerospace Industries와 함께 제작한, 민간 자금으로 추진된 최초의 달 착륙 시도입니다."
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/02.webp",
+          "caption": "타임캡슐 탑재물 — 이스라엘 기념품, 니켈 판에 새긴 3천만 페이지 분량의 인류 지식, 그리고 (논란 속에) 세계에서 가장 강인한 미세 동물인 완보동물이 담겨 있었습니다."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "2019년 2월 22일 — 케이프 커내버럴에서 Falcon 9 발사(합승 발사)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/03.webp",
+          "caption": "Falcon 9이 통신위성 PSN-6와 함께 Beresheet를 합승 발사합니다. 달 궤도까지는 여러 차례 궤도를 돌며 6주가 걸리는 여정입니다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "평온의 바다 — 2019년 4월 11일 충돌",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/04.webp",
+          "caption": "추진 하강 중 Beresheet가 보낸 마지막 셀카 — \"작은 나라, 큰 꿈\"이라고 적힌 명판이 보입니다. 고도 약 150 m에서 교신이 끊겼습니다."
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/05.webp",
+          "caption": "NASA의 LRO가 촬영한 충돌 지점 — 레골리스가 흩어지며 생긴 밝은 후광이 보입니다. 일부 완보동물은 충돌에도 온전히 살아남았을 수 있습니다."
+        }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,7 @@
  * audit (docs/wip/2026-10-17-post-v1-arc-plan.md, item 9b).
  *
  *   set -a; . ./.env; set +a
- *   node scripts/retranslate-fields.mjs --manifest=<file.json> [--concurrency=6] [--limits=tagline:140,…] [--chunk=15] [--dry-run]
+ *   node scripts/retranslate-fields.mjs --manifest=<file.json> [--concurrency=6] [--limits=tagline:140,…] [--chunk=15] [--batch] [--dry-run]
  *
  * Manifest: [{ "loc": "sr-Cyrl", "file": "missions/moon/apollo12", "paths": ["description", "events.3.note"] },
  *            { "loc": "de", "file": "messages", "paths": ["landing_card_mars_desc"] }]
@@ -121,6 +121,22 @@ async function main() {
   );
   if (args['dry-run']) return;
 
+  // Every new kind of API error is printed once, so a log watcher sees it; an account
+  // limit or empty balance ends the run at once (2026-10-18: a run hit the account's
+  // usage limit and spent two hours failing every field silently, then reporting).
+  const seenErrors = new Set();
+  function apiError(e) {
+    const msg = String(e?.message ?? e);
+    const kind = msg.replace(/req_[A-Za-z0-9]+/g, '').slice(0, 160);
+    if (!seenErrors.has(kind)) {
+      seenErrors.add(kind);
+      console.error(`  API error: ${msg.slice(0, 300)}`);
+    }
+    if (/usage limits|credit balance|billing/i.test(msg)) {
+      console.error('FATAL: the API account is out of quota; stopping (written chunks are kept).');
+      process.exit(3);
+    }
+  }
   const failed = [];
   const perLoc = {};
   let done = 0;
@@ -136,7 +152,8 @@ async function main() {
             .slice(-4000)}`
         : '';
     let feedback = '';
-    let result = null;
+    // a field the batch call already translated and that passed the checks
+    let result = u.preset ?? null;
     let lastProblems = [];
     for (let attempt = 0; attempt < 4 && !result; attempt++) {
       try {
@@ -194,6 +211,7 @@ async function main() {
           // somewhere else (observed: "savladivo", then "Letelica", on the same field).
           feedback = `\nYour previous translation was rejected: ${lastProblems.join('; ')}.\nPrevious translation:\n${JSON.stringify(unq ?? '')}\nReturn that same translation with ONLY those problems fixed; change nothing else.`;
       } catch (e) {
+        apiError(e);
         lastProblems = [`API error: ${e.message.slice(0, 80)}`];
         await new Promise((res) => setTimeout(res, 2000 * (attempt + 1)));
       }
@@ -238,10 +256,75 @@ async function main() {
       for (const u of part) u.chunk = chunk;
       items.push(part);
     }
+  // --batch: one call per chunk for all its fields (the system prompt and context are
+  // paid once, not once per field). Each answer is checked like a single-field one;
+  // a field that fails, or a reply of the wrong length, falls back to the per-field
+  // path below with its retries.
+  async function batch(part) {
+    const u0 = part[0];
+    const d = docs.get(u0.tgtPath);
+    const ctxTitle = u0.file === 'messages' ? 'UI strings' : d.en.title || d.en.name || u0.file;
+    const list = part
+      .map(
+        (u, k) =>
+          `${k + 1}. field \`${u.at}\`${limitFor(u.at) ? ` (at most ${limitFor(u.at)} characters)` : ''}:\n${JSON.stringify(u.src)}`,
+      )
+      .join('\n\n');
+    try {
+      const r = await client.messages.create({
+        model: translationModel(u0.loc, {
+          editorial: part.some((u) => isEditorial(u.file, u.src)),
+        }),
+        _locale: u0.loc,
+        max_tokens: 16000,
+        system: system(u0.loc),
+        tools: [
+          {
+            name: 'submit_translations',
+            description: 'Submit the translations, one per field, in the same order.',
+            input_schema: {
+              type: 'object',
+              properties: { translations: { type: 'array', items: { type: 'string' } } },
+              required: ['translations'],
+            },
+          },
+        ],
+        tool_choice: { type: 'tool', name: 'submit_translations' },
+        messages: [
+          {
+            role: 'user',
+            content: `Context: "${ctxTitle}" (${u0.file}). Translate each of these ${part.length} fields into ${LANGUAGE_NAMES[u0.loc]}, keeping names and terms consistent across them. Return exactly ${part.length} translations, in order, one per field.\n\n${list}`,
+          },
+        ],
+      });
+      const arr = r.content.find((c) => c.type === 'tool_use')?.input?.translations;
+      if (!Array.isArray(arr) || arr.length !== part.length) return;
+      part.forEach((u, k) => {
+        const t = arr[k];
+        const unq = fixHomoglyphs(
+          u.loc,
+          typeof t === 'string' && /^".*"$/s.test(t.trim()) && !/^".*"$/s.test(u.src.trim())
+            ? t.trim().slice(1, -1)
+            : t,
+        );
+        const p = problems(u.loc, u.src, unq);
+        const lim = limitFor(u.at);
+        if (lim && typeof unq === 'string' && unq.length > lim) p.push('over the limit');
+        if (!p.length) u.preset = unq;
+      });
+    } catch (e) {
+      apiError(e);
+      // the per-field path retries every field of this chunk
+    }
+  }
   let i = 0;
   await Promise.all(
     Array.from({ length: conc }, async () => {
-      while (i < items.length) for (const u of items[i++]) await one(u);
+      while (i < items.length) {
+        const part = items[i++];
+        if (args.batch) await batch(part);
+        for (const u of part) await one(u);
+      }
     }),
   );
   for (const [loc, c] of Object.entries(perLoc))
@@ -251,6 +334,10 @@ async function main() {
     for (const f of failed) console.log(`  ✗ ${f}`);
   }
   console.log(`Done — ${units.length - failed.length}/${units.length}.`);
+  for (const [model, u] of Object.entries(client.usage))
+    console.log(
+      `  usage ${model}: ${u.calls} calls, ${u.input} input + ${u.cacheWrite} cache-write + ${u.cacheRead} cache-read tokens, ${u.output} output tokens`,
+    );
   process.exitCode = failed.length ? 1 : 0;
 }
 

@@ -1,0 +1,65 @@
+{
+  "intro": "Perseverance a atterri dans le cratère Jezero le 18 février 2021 — un delta fluvial vieux de 3,8 milliards d'années, choisi parce qu'il offrait les meilleures chances de conserver des traces d'une vie martienne ancienne. Le rover embarque le premier hélicoptère martien (Ingenuity), le premier enregistreur audio sur Mars et le premier système de mise en cache d'échantillons. Les tubes d'échantillons laissés à la surface seront rapportés sur la Terre par la mission Mars Sample Return dans les années 2030.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Équipement",
+      "subtitle": "Le cadet plus lourd et plus intelligent de Curiosity",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/01.webp",
+          "caption": "Perseverance pendant son assemblage au JPL — 1 025 kg, alimenté par un MMRTG, équipé de 23 caméras, de 2 microphones et d'une tourelle de mise en cache d'échantillons."
+        },
+        {
+          "src": "/images/missions/perseverance/02.webp",
+          "caption": "L'hélicoptère Ingenuity fixé sous le ventre de Perseverance — le premier engin plus lourd que l'air à voler sur une autre planète."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancement",
+      "subtitle": "30 juillet 2020 — Atlas V depuis Cap Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/03.webp",
+          "caption": "Atlas V 541 lance Mars 2020 depuis SLC-41, le 30 juillet 2020 à 07 h 50 EDT — 203 jours de transit jusqu'à Jezero."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Cratère Jezero — atterrissage le 18 février 2021",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
+          "caption": "Van Zyl Overlook — premier panorama à 360° de Mastcam-Z, sol 3 (21 févr. 2021). Le delta de Jezero est visible à l'ouest."
+        },
+        {
+          "src": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
+          "caption": "Perseverance et son itinéraire, photographiés depuis l'orbite par la caméra HiRISE de Mars Reconnaissance Orbiter, à 25 cm/pixel."
+        },
+        {
+          "src": "/images/missions/perseverance/04.webp",
+          "caption": "Premier vol d'Ingenuity, le 19 avril 2021 — un vol stationnaire de 3 secondes à 3 m d'altitude. Un morceau de toile du Flyer des frères Wright était fixé sur l'hélicoptère pour cet instant précis."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "La science",
+      "subtitle": "Échantillonner un delta fluvial vieux de 3,8 milliards d'années",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/perseverance/02.webp",
+          "caption": "Premier tube d'échantillon scellé et mis en cache à la surface de Mars — carotte « Roubion », prélevée dans le rocher Rochette, septembre 2021."
+        },
+        {
+          "src": "/images/fleet-galleries/perseverance/03.webp",
+          "caption": "Molécules organiques détectées dans la mudstone de Wildcat Ridge par l'instrument SHERLOC — une empreinte chimique de possibles candidats à une biologie martienne ancienne."
+        }
+      ]
+    }
+  ]
+}

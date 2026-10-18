@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 12 landde op 19 november 1969 in Oceanus Procellarum — een millimeterprecieze landing op loopafstand van de robotlander Surveyor 3, die ruim twee en een half jaar eerder was neergekomen. Conrad en Bean brachten 31 uur door op het oppervlak, verdeeld over twee EVA's, en namen 34 kg aan monsters mee terug, plus onderdelen van Surveyor 3 voor analyse. Het bewees dat een Apollo met bemanning een specifiek doel op het maanoppervlak kon bereiken.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Yankee Clipper + Intrepid",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/01.webp",
+          "caption": "Portret van de bemanning van Apollo 12 — Pete Conrad (CDR), Dick Gordon (CMP), Al Bean (LMP)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "14 november 1969 — in de eerste minuut tweemaal door de bliksem getroffen",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/02.webp",
+          "caption": "De Saturn V SA-507 stijgt op door een regenbui. De bliksem sloeg in het voertuig na T+36 s en T+52 s en schakelde de stroomvoorziening van de brandstofcellen uit; het commando SCE naar AUX redde de missie."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Oceanus Procellarum — geland op 19 november 1969",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/03.webp",
+          "caption": "Conrad bij de Surveyor 3-lander — Apollo 12 landde op 163 m afstand, de eerste precisielanding op de Maan."
+        },
+        {
+          "src": "/images/missions/apollo12/04.webp",
+          "caption": "Het wetenschappelijke station ALSEP uitgezet — het eerste geofysische maanobservatorium voor langdurig gebruik."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo12/tier3-pan.jpg",
+          "caption": "Panorama van de landingsplaats van Apollo 12 — afdaaltrap van Intrepid + ALSEP + Surveyor 3 in beeld."
+        }
+      ]
+    }
+  ]
+}

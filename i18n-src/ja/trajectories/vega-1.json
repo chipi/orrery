@@ -1,0 +1,18 @@
+{
+  "name": "Vega 1",
+  "current_distance_label": "0.98 AU · ハレー彗星フライバイ（1986-03-06）以来、太陽中心軌道上にある探査機",
+  "waypoints": [
+    {
+      "label": "打ち上げ（Proton-K）"
+    },
+    null,
+    {
+      "label": "金星 + 気球"
+    },
+    null,
+    {
+      "label": "ハレー彗星フライバイ"
+    },
+    null
+  ]
+}

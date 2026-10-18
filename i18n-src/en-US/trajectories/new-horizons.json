@@ -1,0 +1,32 @@
+{
+  "name": "New Horizons",
+  "current_distance_label": "66 AU · in extended mission — heading toward the stagnation region of the heliosphere",
+  "interstellar_since_label": "Will cross the heliopause around 2040 — third probe destined to reach interstellar space",
+  "waypoints": [
+    {
+      "label": "Launch"
+    },
+    {
+      "label": "Asteroid APL"
+    },
+    null,
+    null,
+    {
+      "label": "Jupiter assist"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Pluto"
+    },
+    null,
+    {
+      "label": "Arrokoth"
+    },
+    null,
+    {
+      "label": "Today"
+    }
+  ]
+}

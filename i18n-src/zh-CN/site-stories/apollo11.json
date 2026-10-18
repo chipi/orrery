@@ -1,0 +1,57 @@
+{
+  "intro": "阿波罗11号（Apollo 11）于1969年7月20日20:17 UTC降落在静海——这是人类首次在另一个世界上的载人着陆。阿姆斯特朗和奥尔德林在登月舱Eagle外度过了2小时31分钟；柯林斯则驾驶Columbia号在头顶的轨道上环绕飞行。机组人员带回了21.5千克月球样品，并留下了脚印、一组后向反射器阵列（地面激光至今仍在使用）以及一块饰板，上面写着：“我们为全人类的和平而来”。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "Saturn V + Columbia 指令舱 + Eagle 登月舱",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/01.webp",
+          "caption": "Saturn V SA-506 搭载 Apollo 11 矗立在39A发射台——高110.6米，是迄今执行实际任务的最强大运载火箭。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "1969年7月16日——Saturn V 自肯尼迪航天中心升空",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/02.webp",
+          "caption": "1969年7月16日13:32 UTC点火升空——2小时44分钟后的TLI点火将 Apollo 11 以11千米/秒的速度送往月球。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "静海——1969年7月20日着陆",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/03.webp",
+          "caption": "巴兹·奥尔德林走下登月舱梯子，由阿姆斯特朗拍摄。“壮丽的荒凉”——这是奥尔德林踏上月面后说的第一句话。"
+        },
+        {
+          "src": "/images/missions/apollo11/04.webp",
+          "caption": "奥尔德林在静海基地留下的靴印——在真空中原封不动地保存了半个多世纪。"
+        },
+        {
+          "src": "/images/hotspots/moon/apollo11/tier3-pan.jpg",
+          "caption": "静海基地全景——Eagle 登月舱下降级、EASEP 科学实验包、美国国旗，以及月球上最著名的脚印。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "21.5千克玄武岩样品、后向反射器阵列、地震仪",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/05.webp",
+          "caption": "月球样品10072——多气孔月海玄武岩，年龄37亿年。这是第一块在地球上被研究的来自另一个世界的岩石。"
+        }
+      ]
+    }
+  ]
+}

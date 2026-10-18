@@ -1,0 +1,39 @@
+{
+  "intro": "Luna 17 atterrò nel Mare Imbrium il 17 novembre 1970 e mise in opera Lunokhod 1, il primo veicolo a ruote a operare su un altro mondo, anticipando di sette mesi l'LRV della NASA. Lunokhod 1 percorse 10,5 km nell'arco di 11 giorni lunari, guidato da una squadra di cinque persone in Crimea. Inviò 25.000 fotografie e 211 panorami prima di tacere nel settembre 1971.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Le prime ruote sulla Luna — Lunokhod 1",
+      "images": [
+        {
+          "src": "/images/missions/luna17/01.webp",
+          "caption": "Lunokhod 1 — telaio a 8 ruote, 756 kg, alimentato a energia solare, con un RTG al polonio-210 per scaldarsi durante la notte. Progettato per durare 3 mesi, ne durò 10."
+        },
+        {
+          "src": "/images/missions/luna17/02.webp",
+          "caption": "Il lander di Luna 17 con le rampe per il dispiegamento di Lunokhod 1. La squadra sovietica di controllo remoto operava da un sottomarino riconvertito sulla costa della Crimea."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Mare Imbrium — atterraggio il 17 novembre 1970",
+      "images": [
+        {
+          "src": "/images/missions/luna17/03.webp",
+          "caption": "Lunokhod 1 in marcia sul Mare Imbrium — guidato in tempo reale da una squadra di cinque persone, nonostante il ritardo di 2,5 secondi per ogni tratta dovuto alla velocità della luce."
+        },
+        {
+          "src": "/images/missions/luna17/04.webp",
+          "caption": "Mappa del percorso di Lunokhod 1 — 10,5 km a zigzag attraverso il Mare Imbrium, con soste scientifiche presso rocce e crateri."
+        },
+        {
+          "src": "/images/missions/luna17/05.webp",
+          "caption": "Il retroriflettore di Lunokhod 1 — ancora oggi utilizzato dalle stazioni terrestri di misurazione laser della distanza lunare, a oltre 50 anni di distanza."
+        }
+      ]
+    }
+  ]
+}

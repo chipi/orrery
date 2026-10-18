@@ -1,0 +1,76 @@
+{
+  "intro": "El rover Curiosity de la NASA despegó el 26 de noviembre de 2011 a bordo de un Atlas V desde Cabo Cañaveral. Tras 254 días de crucero, Mars Science Laboratory depositó el 6 de agosto de 2012 al rover de 899 kg y propulsión nuclear en el cráter Gale, mediante el ya célebre aterrizaje con grúa celeste. Más de una década después, Curiosity sigue ascendiendo por el monte Sharp y perforando rocas que guardan el registro de un pasado en el que Marte fue habitable.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Construir un rover para el cráter Gale",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/01.webp",
+          "caption": "Mars Science Laboratory ensamblado en el JPL: Curiosity, la etapa de descenso, la cubierta trasera y el escudo térmico apilados para su envío a Florida."
+        },
+        {
+          "src": "/images/missions/curiosity/02.webp",
+          "caption": "La fuente de energía nuclear MMRTG (disco naranja, abajo a la derecha) proporciona unos 110 W de forma continua durante al menos 14 años: sin paneles solares ni paradas invernales."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "26 de noviembre de 2011: un Atlas V desde Cabo Cañaveral",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/03.webp",
+          "caption": "Un Atlas V 541 despega desde SLC-41 con Mars Science Laboratory y Curiosity a bordo. 10:02 EST, 26 de noviembre de 2011."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Cráter Gale: aterrizaje el 6 de agosto de 2012",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
+          "caption": "Panorámica de Mont Mercou, sol 3070 (marzo de 2021). Barrido de 360° de Mastcam-Z que muestra el rover, los acantilados estratificados de Mt Mercou y el monte Sharp en el horizonte."
+        },
+        {
+          "src": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
+          "caption": "Vista cenital de HiRISE del recorrido de Curiosity, captada por Mars Reconnaissance Orbiter a 25 cm por píxel."
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/01.webp",
+          "caption": "Autorretrato en el emplazamiento de perforación «Big Sky», sol 1126: composición de decenas de primeros planos de MAHLI unidos en una sola imagen."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciencia",
+      "subtitle": "Pruebas de un antiguo Marte habitable",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/02.webp",
+          "caption": "Orificio de perforación en Yellowknife Bay: la primera muestra del entorno de un antiguo lecho lacustre de Marte, enero de 2013."
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/03.webp",
+          "caption": "Rocas sedimentarias en cresta Vera Rubin: formaciones de hierro bandeado y minerales de arcilla indican la existencia de agua líquida en el pasado y de un entorno químico habitable."
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "title": "Personas",
+      "subtitle": "Los ingenieros y científicos detrás de Curiosity",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/04.webp",
+          "caption": "El centro de control de la misión en el JPL celebra el aterrizaje con grúa celeste de los «siete minutos de terror», 5 y 6 de agosto de 2012: Adam Steltzner y su equipo tras recibir las primeras señales desde el cráter Gale."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Giotto",
+  "current_distance_label": "1,04 UA · in orbita eliocentrica dal sorvolo di Grigg-Skjellerup 1992-07-10",
+  "waypoints": [
+    {
+      "label": "Lancio (Ariane 1)"
+    },
+    null,
+    {
+      "label": "Sorvolo di Halley"
+    },
+    null,
+    {
+      "label": "Terra #1"
+    },
+    null,
+    {
+      "label": "Grigg-Skjellerup"
+    },
+    null
+  ]
+}

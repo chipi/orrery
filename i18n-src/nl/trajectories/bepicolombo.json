@@ -1,0 +1,41 @@
+{
+  "name": "BepiColombo",
+  "current_distance_label": "0,48 AU · onderweg naar Mercurius-baansinvoering 2026-12-05",
+  "waypoints": [
+    {
+      "label": "Lancering (Ariane 5)"
+    },
+    null,
+    {
+      "label": "Aarde"
+    },
+    {
+      "label": "Venus #1"
+    },
+    {
+      "label": "Venus #2"
+    },
+    {
+      "label": "Mercurius #1"
+    },
+    {
+      "label": "Mercurius #2"
+    },
+    {
+      "label": "Mercurius #3"
+    },
+    {
+      "label": "Mercurius #4"
+    },
+    {
+      "label": "Mercurius #5"
+    },
+    {
+      "label": "Mercurius #6"
+    },
+    null,
+    {
+      "label": "Mercurius-baansinvoering"
+    }
+  ]
+}

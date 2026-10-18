@@ -1,0 +1,46 @@
+{
+  "intro": "Beresheet —«En el principio» en hebreo— fue el primer intento de alunizaje de Israel, construido de forma privada por SpaceIL con un presupuesto ajustado de 100 millones de dólares. Se lanzó el 22 de febrero de 2019, fue capturada en órbita lunar el 4 de abril y se estrelló en Mare Serenitatis el 11 de abril de 2019, después de que la IMU y el ordenador de a bordo se reiniciaran durante el descenso. Los restos llevaban una cápsula del tiempo repleta de tardígrados. Israel se convirtió en la séptima nación en llegar a la Luna, aunque solo fuera de forma cinética.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "La nave de aterrizaje interplanetaria más pequeña intentada hasta esa fecha: 585 kg",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/01.webp",
+          "caption": "La nave Beresheet durante la integración previa al lanzamiento: construida por SpaceIL junto con Israel Aerospace Industries, fue el primer intento de alunizaje financiado con fondos privados."
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/02.webp",
+          "caption": "Carga útil de la cápsula del tiempo: recuerdos israelíes, 30 millones de páginas del saber humano grabadas en placas de níquel y, de forma controvertida, tardígrados, los microanimales más resistentes del mundo."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "22 de febrero de 2019: Falcon 9 desde Cabo Cañaveral (lanzamiento compartido)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/03.webp",
+          "caption": "Un Falcon 9 lanza Beresheet en un lanzamiento compartido con el satélite de comunicaciones PSN-6: un tránsito de seis semanas, con varias vueltas, hasta la órbita lunar."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Mare Serenitatis: impacto el 11 de abril de 2019",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/04.webp",
+          "caption": "Último selfi enviado por Beresheet durante el descenso propulsado: se aprecia la placa «Small country, big dreams» («País pequeño, grandes sueños»). Se perdió la comunicación a unos 150 m de altitud."
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/05.webp",
+          "caption": "El lugar del impacto, fotografiado por la LRO de la NASA: un halo brillante causado por la alteración del regolito. Es posible que algunos tardígrados sobrevivieran intactos al impacto."
+        }
+      ]
+    }
+  ]
+}

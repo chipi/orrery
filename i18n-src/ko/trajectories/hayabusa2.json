@@ -1,0 +1,24 @@
+{
+  "name": "Hayabusa2",
+  "current_distance_label": "1.24 AU · (98943) 2001 CC21 플라이바이를 향해 진행 중 2026-07 (확장 미션)",
+  "waypoints": [
+    {
+      "label": "발사 (H-IIA)"
+    },
+    null,
+    {
+      "label": "지구 플라이바이"
+    },
+    null,
+    {
+      "label": "류구 도착"
+    },
+    {
+      "label": "SCI 충돌체"
+    },
+    {
+      "label": "지구 귀환 (샘플)"
+    },
+    null
+  ]
+}

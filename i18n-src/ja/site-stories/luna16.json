@@ -1,0 +1,46 @@
+{
+  "intro": "1970年9月20日、Luna 16 は豊かの海に着陸した。これは別の天体から初めて実現したロボットによるサンプルリターンである。月のレゴリスを35cm掘削し、101gを帰還カプセルに密封して、着陸から26時間後に離陸した。カプセルは3日後にカザフスタンへ着陸した。Apollo 11 から1年2か月後、ソビエトの技術が有人飛行なしで月の物質を持ち帰れることを実証した。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "ソビエトの E-8-5 着陸機 ― 初のロボット式サンプルリターン装置",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/01.webp",
+          "caption": "Luna 16 探査機の実物大モックアップ ― 降下段(手前)と、帰還カプセルを載せた上昇段(上部)。"
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/02.webp",
+          "caption": "サンプル採取機構の図 ― ドリルによるコア採取と、帰還カプセルへの密封移送。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "1970年9月12日 ― バイコヌールから Proton-K で打ち上げ",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/03.webp",
+          "caption": "バイコヌール宇宙基地の発射台に据えられた、Blok-D 上段付きの Proton-K。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "豊かの海 ― 1970年9月20日に着陸",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/04.webp",
+          "caption": "Luna 16 がレゴリスを掘削する様子 ― 離陸に備え、101gの試料を球形の帰還カプセルに密封した。"
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/05.webp",
+          "caption": "カザフスタンの草原に着地した帰還カプセル(1970年9月24日)― 史上初となる、ロボットによる他天体からのサンプルリターン。"
+        }
+      ]
+    }
+  ]
+}

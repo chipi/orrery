@@ -1,0 +1,46 @@
+{
+  "intro": "A Apollo 12 pousou em Oceanus Procellarum em 19 de novembro de 1969 — um pouso de precisão, a uma distância que se podia percorrer a pé do módulo de pouso robótico Surveyor 3, que havia tocado o solo dois anos e meio antes. Conrad e Bean passaram 31 horas na superfície, em duas EVAs, e trouxeram de volta 34 kg de amostras, além de peças da Surveyor 3 para análise. A missão demonstrou que uma Apollo tripulada podia alcançar um alvo específico na superfície lunar.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamentos",
+      "subtitle": "Yankee Clipper + Intrepid",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/01.webp",
+          "caption": "Retrato da tripulação da Apollo 12 — Pete Conrad (CDR), Dick Gordon (CMP), Al Bean (LMP)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "14 de novembro de 1969 — atingida por raios duas vezes no primeiro minuto",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/02.webp",
+          "caption": "O Saturn V SA-507 decola sob um aguaceiro. Raios atingiram o veículo em T+36 s e T+52 s, desligando a energia das células de combustível; o comando SCE para AUX salvou a missão."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Oceanus Procellarum — pouso em 19 de novembro de 1969",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/03.webp",
+          "caption": "Conrad junto ao módulo de pouso Surveyor 3 — a Apollo 12 pousou a 163 m de distância, o primeiro pouso lunar de precisão."
+        },
+        {
+          "src": "/images/missions/apollo12/04.webp",
+          "caption": "Estação científica ALSEP instalada — o primeiro observatório geofísico lunar de longa duração."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo12/tier3-pan.jpg",
+          "caption": "Panorama do local de pouso da Apollo 12 — estágio de descida do Intrepid + ALSEP + Surveyor 3 no mesmo enquadramento."
+        }
+      ]
+    }
+  ]
+}

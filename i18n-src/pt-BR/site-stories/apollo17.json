@@ -1,0 +1,57 @@
+{
+  "intro": "A Apollo 17 pousou no Vale Taurus-Littrow em 11 de dezembro de 1972 — a última missão lunar tripulada e a única com um geólogo profissional (Harrison Schmitt) na superfície. Cernan e Schmitt passaram 22 h fora do módulo em três EVAs, percorreram 35 km e trouxeram de volta 110 kg de amostras, entre elas o famoso Solo Laranja (esférulas de vidro vulcânico de uma fonte de fogo de 3,5 Ga). A pegada de Cernan é a marca humana mais recente em outro mundo.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamentos",
+      "subtitle": "America + Challenger + LRV-3",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/01.webp",
+          "caption": "Retrato da tripulação da Apollo 17 — Gene Cernan (CDR), Ron Evans (CMP), Harrison \"Jack\" Schmitt (LMP, astronauta-cientista)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "7 de dezembro de 1972 — último voo da Saturn V",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/02.webp",
+          "caption": "Primeiro lançamento noturno de uma Saturn V, às 05h33 UTC de 7 de dezembro de 1972 — visível a 700 km de distância. A última Apollo e a última Saturn V."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Vale Taurus-Littrow — pouso em 11 de dezembro de 1972",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/03.webp",
+          "caption": "Cernan e a bandeira, com a Terra no alto — \"O Último Homem na Lua\"."
+        },
+        {
+          "src": "/images/missions/apollo17/04.webp",
+          "caption": "Schmitt, na Cratera Shorty, descobre o Solo Laranja — esférulas de vidro vulcânico de uma erupção de fonte de fogo de 3,5 Ga."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo17/tier3-pan.jpg",
+          "caption": "Panorama de Taurus-Littrow — o estágio de descida do Challenger, o LRV e Tortilla Flat ao longe."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciência",
+      "subtitle": "O primeiro geólogo treinado na Lua",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/05.webp",
+          "caption": "Amostra 70017 — a última amostra lunar coletada por seres humanos, a tarefa final de Cernan antes da decolagem em 14 de dezembro de 1972."
+        }
+      ]
+    }
+  ]
+}

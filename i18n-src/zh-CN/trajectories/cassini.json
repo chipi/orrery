@@ -1,0 +1,33 @@
+{
+  "name": "Cassini-Huygens",
+  "current_distance_label": "9.5 AU·2004–2017年环绕土星轨道——2017年9月15日坠入土星大气层",
+  "waypoints": [
+    {
+      "label": "发射"
+    },
+    null,
+    {
+      "label": "金星 #1"
+    },
+    null,
+    {
+      "label": "金星 #2"
+    },
+    {
+      "label": "地球"
+    },
+    null,
+    {
+      "label": "木星"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "土星轨道插入"
+    },
+    {
+      "label": "大结局（今日）"
+    }
+  ]
+}

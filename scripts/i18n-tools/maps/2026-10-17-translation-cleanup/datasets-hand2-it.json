@@ -1,0 +1,44 @@
+[
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-mystic-mountain.title",
+    "old": "Mystic Mountain",
+    "new": "Montagna Mistica"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-3fe77da86ce8.title",
+    "old": "Hubble — Servicing Mission 1",
+    "new": "Hubble — Missione di manutenzione 1"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-be542e537390.title",
+    "old": "Apollo 8 — Earthrise",
+    "new": "Apollo 8 — Il sorgere della Terra"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/luna-16_webp.title",
+    "old": "Luna 16-class",
+    "new": "Classe Luna 16"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Mission briefings.where",
+    "old": "Missions + Fly",
+    "new": "Missioni + Volo"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Fleet catalogue entries.where",
+    "old": "Fleet",
+    "new": "Flotta"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Audio tour scripts.where",
+    "old": "Take the tour",
+    "new": "Fai il tour"
+  }
+]

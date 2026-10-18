@@ -18,7 +18,10 @@ import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
 
 export interface IconicTrajectoryWaypoint {
   date: string;
+  /** English label: code matches on it ('Launch', 'Today'), so it never changes. */
   label?: string;
+  /** Translated label for display (a locale overlay), when there is one. */
+  display_label?: string;
   x: number;
   y: number;
   z: number;
@@ -466,7 +469,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
       kind: isLaunch ? 'iconic-trajectory-launch' : 'iconic-trajectory-marker',
       id: data.id,
       missionId: data.mission_id,
-      label: wp.label,
+      label: wp.display_label ?? wp.label,
       date: wp.date,
     };
     group.add(markerSprite);
@@ -475,7 +478,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
     hoverTargets.push(markerSprite);
 
     if (wp.label) {
-      const sprite = buildLabelSprite(data.name, wp.label, wp.date, data.color);
+      const sprite = buildLabelSprite(data.name, wp.display_label ?? wp.label, wp.date, data.color);
       // Offset the sprite slightly off the line so it doesn't sit on
       // top of the marker. Use the ecliptic-up direction (+Y) so the
       // label floats above the line at typical viewing angles.

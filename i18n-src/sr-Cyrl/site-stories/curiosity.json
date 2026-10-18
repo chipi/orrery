@@ -1,0 +1,76 @@
+{
+  "intro": "NASA-ин ровер Curiosity лансиран је 26. новембра 2011. на ракети Atlas V са Кејп Канаверала. Након 254 дана крстарења, Mars Science Laboratory доставила је ровер тежак 899 kg, са нуклеарним напајањем, у кратер Гејл 6. августа 2012, чувеним спуштањем помоћу небеске дизалице. Више од деценије касније, Curiosity се и даље пење уз планину Шарп и буши стене које чувају запис о некада настањивој прошлости Марса.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Опрема",
+      "subtitle": "Градња ровера за кратер Гејл",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/01.webp",
+          "caption": "Mars Science Laboratory склопљена у JPL-у — Curiosity, степен за спуштање, задњи омотач и топлотни штит сложени за транспорт на Флориду."
+        },
+        {
+          "src": "/images/missions/curiosity/02.webp",
+          "caption": "Нуклеарни извор енергије MMRTG (наранџасти диск, доле десно) непрекидно даје ~110 W најмање 14 година — без соларних панела и без зимских застоја."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Лансирање",
+      "subtitle": "26. новембар 2011. — Atlas V са Кејп Канаверала",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/03.webp",
+          "caption": "Ракета Atlas V 541 полеће са лансирне рампе SLC-41 и носи Mars Science Laboratory са ровером Curiosity. Било је 10:02 по источном стандардном времену (EST), 26. новембра 2011."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Површина",
+      "subtitle": "Кратер Gale — слетање 6. августа 2012.",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
+          "caption": "Панорама Mont Mercou, сол 3070 (март 2021). Кружни снимак од 360° камером Mastcam-Z приказује ровер, слојевите литице Mt Mercou и планина Шарп на хоризонту."
+        },
+        {
+          "src": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
+          "caption": "Поглед одозго на путању ровера Curiosity снимљен камером HiRISE са сонде Mars Reconnaissance Orbiter, при резолуцији од 25 cm по пикселу."
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/01.webp",
+          "caption": "Аутопортрет на месту бушења „Big Sky“, сол 1126 — склоп од десетина блиских снимака камере MAHLI спојених у једну слику."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Наука",
+      "subtitle": "Докази о древном, настањивом Марсу",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/02.webp",
+          "caption": "Рупа избушена у Yellowknife Bay — први узорак из некадашњег окружења језерског дна на Марсу, јануар 2013."
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/03.webp",
+          "caption": "Седиментне стене на гребену Вера Рубин — тракасте формације гвожђа и глинени минерали указују на древну течну воду и настањиво хемијско окружење."
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "title": "Људи",
+      "subtitle": "Инжењери и научници иза Curiosity",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/04.webp",
+          "caption": "Контролни центар мисије у JPL-у слави спуштање помоћу небеске дизалице, чувених седам минута страха, 5/6. август 2012 — Адам Стелцнер и тим након првих сигнала из кратера Гејл."
+        }
+      ]
+    }
+  ]
+}

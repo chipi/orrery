@@ -1,0 +1,53 @@
+{
+  "intro": "Chang'e 6는 2024년 6월 1일 남극-에이트켄 분지에 착륙했습니다. 달 뒷면에서 표본을 가져온 최초의 임무이며, 이 분지는 내태양계에서 가장 깊고 가장 오래되었으며 가장 큰 충돌 구조입니다. 2024년 6월 25일 달 뒷면 물질 1,935 g을 지구로 가져왔고, 이 표본에는 42억 년 전 분지를 만든 충돌로 생긴 맨틀 파편이 들어 있을 수 있습니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "달 뒷면 표본 귀환을 위해 Chang'e 5를 재설계하다",
+      "images": [
+        {
+          "src": "/images/missions/change6/01.webp",
+          "caption": "Chang'e 6 결합체 — 달 뒷면 통신을 위해 Queqiao-2 중계위성을 추가했을 뿐, 나머지는 Chang'e 5의 구조를 그대로 이어받았습니다."
+        },
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "국제 탑재체 — ESA의 NILS 검출기, 프랑스의 DORN 라돈 검출기, 이탈리아의 INRRI 역반사체, 파키스탄의 ICUBE-Q 초소형 위성."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "2024년 5월 3일 — 원창에서 발사된 Long March 5",
+      "images": [
+        {
+          "src": "/images/missions/change6/03.webp",
+          "caption": "Long March 5가 Chang'e 6를 발사합니다 — 달 뒷면까지 왕복 28일이 걸리는 여정이며, 여기에는 알맞은 중계 통신 시간대를 기다리는 14일이 포함됩니다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "아폴로 분화구(남극-에이트켄 내부) — 2024년 6월 1일 착륙",
+      "images": [
+        {
+          "src": "/images/missions/change6/04.webp",
+          "caption": "달 뒷면의 Chang'e 6 착륙선 — 로버 없이 제자리에 머문 채 표본을 채취한 임무로, 전개된 소형 로버가 촬영했습니다."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "남극-에이트켄 분지 물질 1,935 g",
+      "images": [
+        {
+          "src": "/images/missions/change6/05.webp",
+          "caption": "2024년 6월 25일 내몽골 초원에 내려앉은 표본 귀환 캡슐 — 지구에 도착한 사상 최초의 달 뒷면 표본입니다."
+        }
+      ]
+    }
+  ]
+}

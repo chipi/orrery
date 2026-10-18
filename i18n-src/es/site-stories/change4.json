@@ -1,0 +1,46 @@
+{
+  "intro": "Chang'e 4 aterrizó en el cráter Von Kármán el 3 de enero de 2019: el primer aterrizaje suave en la cara oculta de la Luna, desde donde la Tierra nunca es visible. Las comunicaciones se retransmitieron a través del satélite Queqiao, situado en L2. Desplegó el rover Yutu-2, que ha recorrido más de 1,5 km y sigue en funcionamiento en 2026, la misión en la superficie lunar con más tiempo activa de la historia. Halló material prístino del manto en la cuenca del Polo Sur-Aitken.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipo",
+      "subtitle": "Primer módulo de aterrizaje lunar en la cara oculta + satélite de retransmisión en L2 (Queqiao)",
+      "images": [
+        {
+          "src": "/images/missions/change4/01.webp",
+          "caption": "El módulo de aterrizaje Chang'e 4 y el rover Yutu-2 durante la integración previa al lanzamiento, en Pekín."
+        },
+        {
+          "src": "/images/missions/change4/02.webp",
+          "caption": "El satélite de retransmisión Queqiao en L2: sin él, Chang'e 4 no habría tenido contacto con la Tierra. China construyó la infraestructura de comunicaciones lunares antes de ir a la cara oculta."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Cráter Von Kármán, cara oculta — aterrizaje el 3 de enero de 2019",
+      "images": [
+        {
+          "src": "/images/missions/change4/03.webp",
+          "caption": "El rover Yutu-2, fotografiado por el módulo de aterrizaje Chang'e 4: las primeras ruedas en la cara oculta de la Luna."
+        },
+        {
+          "src": "/images/missions/change4/04.webp",
+          "caption": "Yutu-2 inspecciona una pequeña esfera vítrea en la superficie, probablemente un fragmento de roca fundida por impacto procedente de un cráter lejano."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciencia",
+      "subtitle": "Material del manto en la cuenca del Polo Sur-Aitken",
+      "images": [
+        {
+          "src": "/images/missions/change4/05.webp",
+          "caption": "Los espectros de VNIS mostraron olivino + piroxeno pobre en calcio: minerales del manto lunar, expuestos por el impacto que formó la cuenca SPA hace unos 4200 millones de años."
+        }
+      ]
+    }
+  ]
+}

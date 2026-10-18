@@ -1,0 +1,30 @@
+{
+  "name": "Dawn",
+  "current_distance_label": "2.8 AU · 2018-10-31 말(말기) 이후 세레스 궤도 안정 상태 유지 (~20년 궤도 수명)",
+  "waypoints": [
+    {
+      "label": "발사"
+    },
+    null,
+    null,
+    {
+      "label": "화성 도움닫기"
+    },
+    null,
+    null,
+    {
+      "label": "베스타 궤도"
+    },
+    {
+      "label": "베스타 출발"
+    },
+    null,
+    null,
+    {
+      "label": "세레스 궤도 진입"
+    },
+    {
+      "label": "임무 종료 (오늘)"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-butterfly.taken",
+    "old": "2009",
+    "new": "2009."
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-antennae.taken",
+    "old": "2006",
+    "new": "2006."
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-cats-eye.taken",
+    "old": "2004",
+    "new": "2004."
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-pinwheel.taken",
+    "old": "2006",
+    "new": "2006."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-moon-luna-sample-return_webp.title",
+    "old": "Luna sample-return",
+    "new": "Luna за повратак узорака"
+  }
+]

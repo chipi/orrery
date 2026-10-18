@@ -1,0 +1,34 @@
+{
+  "name": "Pioneer 11",
+  "current_distance_label": "89 AU · सूर्य से ~12.3 प्रकाश-घंटे (सिग्नल 1995-09-30 को खो गया)",
+  "interstellar_since_label": "सिग्नल 1995 में खो गया — गरुड़ तारामंडल की ओर कोस्ट कर रहे हैं, लगभग 2027 के आसपास अंतरतारकीय अंतरिक्ष तक पहुँचेंगे",
+  "waypoints": [
+    {
+      "label": "प्रक्षेपण"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "बृहस्पति सहायता"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "शनि + F-वलय"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "अंतिम सिग्नल"
+    },
+    null,
+    null,
+    {
+      "label": "आज"
+    }
+  ]
+}

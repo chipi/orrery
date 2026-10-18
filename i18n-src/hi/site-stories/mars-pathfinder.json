@@ -1,0 +1,50 @@
+{
+  "intro": "Mars Pathfinder 4 जुलाई 1997 को एरेस घाटी में उतरा — यह 21 साल पहले Viking अभियानों के बाद मंगल ग्रह पर अमेरिका का पहला अभियान था। लैंडर ने Sojourner को तैनात किया, जो मंगल पर पहले पहिये थे। इस अभियान ने एयरबैग-लैंडिंग और रोविंग, दोनों का प्रदर्शन किया। 265 मिलियन डॉलर के इस कम लागत वाले \"तेज़, बेहतर, सस्ते\" अभियान ने लगभग 16,500 चित्र भेजे। लैंडर के निष्क्रिय होने से पहले Sojourner की 100 मीटर की यात्रा ने कार्टून पात्रों के नाम पर रखी गई बारह चट्टानों (Yogi, Barnacle Bill, Scooby Doo) का मानचित्रण किया।",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "हार्डवेयर",
+      "subtitle": "पहला मंगल रोवर — और Viking के बाद मंगल पर अमेरिका का पहला लैंडर",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/01.webp",
+          "caption": "प्रक्षेपण से पहले परीक्षण के दौरान Pathfinder — आधार स्टेशन और Sojourner के लिए पंखुड़ी की तरह खुलने वाले रैम्प।"
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/02.webp",
+          "caption": "Sojourner माइक्रोरोवर — 11.5 किग्रा, 6 पहिये, सौर ऊर्जा से चलने वाला, जिसे 7 सोल तक काम करने के लिए बनाया गया था (यह 83 सोल चला)।"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "प्रक्षेपण",
+      "subtitle": "4 दिसंबर 1996 — केप केनवरल से Delta II",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/03.webp",
+          "caption": "Delta II 7925 Pathfinder को मंगल तक की उसकी 7 महीने की यात्रा पर रवाना करता हुआ।"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "सतह",
+      "subtitle": "एरेस घाटी — 4 जुलाई 1997 को उतरा",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg",
+          "caption": "बेहतर किया गया Presidential Panorama — एरेस घाटी का 360° रंगीन दृश्य। क्षितिज पर Twin Peaks दिखाई दे रही हैं (जिनका नाम टीवी शो के नाम पर रखा गया)।"
+        },
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg",
+          "caption": "दशकों बाद MRO HiRISE द्वारा कक्षा से खींचा गया Pathfinder लैंडर का चित्र — पंखुड़ियाँ और Sojourner की अंतिम ज्ञात स्थिति दिखाई दे रही हैं।"
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/04.webp",
+          "caption": "Sojourner, Yogi चट्टान का निरीक्षण करता हुआ — मंगल की भूमि का पहला नज़दीकी रासायनिक विश्लेषण।"
+        }
+      ]
+    }
+  ]
+}

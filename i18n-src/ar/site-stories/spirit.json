@@ -1,0 +1,50 @@
+{
+  "intro": "هبطت Spirit في فوهة غوسيف في 4 يناير 2004، أي قبل ثلاثة أسابيع من هبوط توأمها Opportunity على الجانب المقابل من المريخ. صُمّمت Spirit لتعمل 90 يوماً مريخياً (sol)، لكنها عملت 6 سنوات وقطعت 7.7 كم إلى أن غاصت عجلاتها غوصاً دائماً في تربة رخوة في موقع «Troy». ومن مركبة جوّالة عالقة، واصلت عملها منصةً علمية ثابتة إلى أن انقطع الاتصال بها في مارس 2010.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "العتاد",
+      "subtitle": "مركبة جوّالة تعمل بالطاقة الشمسية، توأم Opportunity",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/01.webp",
+          "caption": "مركبة Mars Exploration Rover أثناء التجميع — 185 كغ، 6 عجلات، كاميرا الصاري Pancam، وأداة كشط الصخور RAT."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "السطح",
+      "subtitle": "فوهة غوسيف — الهبوط في 4 يناير 2004",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/spirit/tier3-pan.jpg",
+          "caption": "Winter Haven في McMurdo، من اليوم المريخي 814 إلى 980 (2006) — بانوراما Pancam بزاوية 360°. وتهيمن تلال كولومبيا، التي سُمّيت تكريماً لطاقم STS-107 الذي فُقد، على الأفق."
+        },
+        {
+          "src": "/images/hotspots/mars/spirit/tier2-hirise.jpg",
+          "caption": "موقع Troy حيث علقت المركبة Spirit، صورته كاميرا HiRISE على المركبة MRO بعد غوص العجلات في مايو 2009."
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/02.webp",
+          "caption": "الحفر في صخرة Adirondack في اليوم المريخي 34 — أول استخدام لأداة كشط الصخور على المريخ."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "العلوم",
+      "subtitle": "تسلّق تل هزبند والعثور على السيليكا في Home Plate",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/03.webp",
+          "caption": "تربة غنية بالسيليكا كشفتها العجلة الأمامية اليمنى المعطوبة للمركبة Spirit في Home Plate — دليل على نشاط حراري مائي قديم في فوهة غوسيف."
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/04.webp",
+          "caption": "غروب الشمس فوق فوهة غوسيف كما التقطته كاميرا Pancam في اليوم المريخي 489 (19 مايو 2005). إحدى صور الغسق المريخي الشهيرة ذات المسحة الزرقاء."
+        }
+      ]
+    }
+  ]
+}

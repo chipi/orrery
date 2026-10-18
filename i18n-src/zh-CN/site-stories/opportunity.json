@@ -1,0 +1,50 @@
+{
+  "intro": "Opportunity 于2004年1月25日降落在子午线高原——这是一次一杆进洞般的着陆：借助气囊弹跳的火星车径直滚入一个小型撞击坑（鹰撞击坑），坑壁上嵌着人类首次在火星上近距离见到的富含赤铁矿的“蓝莓”。Opportunity 的设计寿命仅为90个火星日，却在14年间行驶了45.16 km，直到2018年6月一场覆盖全球的沙尘暴切断了太阳能供电。最后一次传回的信息是：“我的电量不足，天也越来越黑了。”",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "Spirit 的孪生兄弟，降落在火星另一侧的着陆器",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/opportunity/01.webp",
+          "caption": "集成测试期间的 MER-B——硬件与 Spirit 完全相同，并针对火星平原地形进行了优化。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "子午线高原——2004年1月25日着陆",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/opportunity/tier3-pan.jpg",
+          "caption": "Legacy Pan，第5084–5111火星日（2018年5月至6月）——Opportunity 在沙尘暴来临前拍摄的最后一幅360°全景图。Perseverance Valley 向下延伸至奋斗撞击坑。"
+        },
+        {
+          "src": "/images/hotspots/mars/opportunity/tier2-hirise.jpg",
+          "caption": "奋斗撞击坑的边缘，Opportunity 在此度过了最后的岁月。这辆火星车的长眠之处位于右侧的 Perseverance Valley 中。"
+        },
+        {
+          "src": "/images/fleet-galleries/opportunity/02.webp",
+          "caption": "赤铁矿“蓝莓”——嵌在子午线高原基岩中的毫米级球粒，是火星上存在长期液态水的首个直接证据。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "从鹰撞击坑到 Endeavour——14年的证据",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/opportunity/03.webp",
+          "caption": "坚忍撞击坑中的隔热罩撞击点——Opportunity 驶回此处，查看自己当年抛下的进入段硬件。"
+        },
+        {
+          "src": "/images/fleet-galleries/opportunity/04.webp",
+          "caption": "坚忍撞击坑内 Burns Cliff 的层状露头——记录着一片远古酸性咸水水体的沉积岩层。"
+        }
+      ]
+    }
+  ]
+}

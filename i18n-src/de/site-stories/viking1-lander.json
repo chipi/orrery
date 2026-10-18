@@ -1,0 +1,61 @@
+{
+  "intro": "Viking 1 setzte am 20. Juli 1976 in Chryse Planitia auf – als erster erfolgreicher US-amerikanischer Lander auf dem Mars, auf den Tag genau sieben Jahre nach Apollo 11. Seine Mission auf der Oberfläche dauerte 2.245 Sol (6,3 Jahre) und umfasste die ersten Farbaufnahmen vom Mars, die ersten biologischen In-situ-Experimente (mit mehrdeutigen Ergebnissen) sowie eine tägliche Wetteraufzeichnung. Die letzte Übertragung erfolgte im November 1982, nachdem ein hochgeladener Befehl versehentlich die Parameter zur Ausrichtung der Antenne überschrieben hatte.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Lander-Orbiter-Paar, RTG-betrieben, ca. 600 kg",
+      "images": [
+        {
+          "src": "/images/missions/viking1/01.webp",
+          "caption": "Der Lander Viking 1 bei Tests vor dem Start – hinten ist der RTG zu sehen, der Arm der Oberflächenprobenschaufel ist ausgefahren."
+        },
+        {
+          "src": "/images/missions/viking1/02.webp",
+          "caption": "Probeweises Ausfahren des Arms der Oberflächenprobenschaufel an einem Modell in der JPL-Testumgebung."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "20. August 1975 – Titan IIIE von Cape Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/viking1/03.webp",
+          "caption": "Titan IIIE / Centaur startet Viking 1 – zehn Monate Flugzeit, Einschwenken in die Marsumlaufbahn im Juni 1976, Landung des Landers am 20. Juli."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Chryse Planitia – gelandet am 20. Juli 1976",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier3-pan.jpg",
+          "caption": "360°-Panorama von Chryse Planitia – die erste Farbaufnahme einer Landschaft von der Oberfläche eines anderen Planeten."
+        },
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier2-hirise.jpg",
+          "caption": "Der Lander Viking 1, mehr als 30 Jahre später von der HiRISE-Kamera des MRO aus dem Orbit aufgenommen – die erste „Hardware-Archäologie“-Ansicht einer Marsmission der 1970er-Jahre."
+        },
+        {
+          "src": "/images/missions/viking1/04.webp",
+          "caption": "Erster Blick auf die Marsoberfläche, wenige Minuten nach der Landung von Kamera 2 aufgenommen."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wissenschaft",
+      "subtitle": "Biologie-Experimente, Wetter und die Suche nach Leben",
+      "images": [
+        {
+          "src": "/images/missions/viking1/05.webp",
+          "caption": "Von der Oberflächenprobenschaufel ausgehobener Graben – die Biologie-Experimente von Viking untersuchten auf organische Verbindungen (keine nachgewiesen; das Ergebnis ist bis heute umstritten)."
+        }
+      ]
+    }
+  ]
+}

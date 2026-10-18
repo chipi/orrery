@@ -1,0 +1,34 @@
+{
+  "name": "Pioneer 11",
+  "current_distance_label": "89 UA · ~12,3 ore-luce dal Sole (segnale perso il 1995-09-30)",
+  "interstellar_since_label": "Segnale perso nel 1995 — in fase di coast verso l'Aquila, raggiungerà lo spazio interstellare attorno al 2027",
+  "waypoints": [
+    {
+      "label": "Lancio"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Assistenza di Giove"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Saturno + anello F"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Ultimo segnale"
+    },
+    null,
+    null,
+    {
+      "label": "Oggi"
+    }
+  ]
+}

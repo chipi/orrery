@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 16은 1970년 9월 20일 풍요의 바다에 착륙했다. 다른 천체에서 이루어진 최초의 무인 시료 회수였다. 달 표토를 35cm 깊이까지 뚫어 101g을 회수 캡슐에 밀봉했고, 착륙 26시간 뒤 이륙했다. 캡슐은 사흘 뒤 카자흐스탄에 착륙했다. Apollo 11으로부터 1년 2개월 뒤, 소련의 공학 기술이 유인 비행 없이도 달 물질을 가져올 수 있음을 입증한 임무였다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "소련의 E-8-5 착륙선 — 최초의 무인 시료 회수 장비",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/01.webp",
+          "caption": "Luna 16 우주선 목업 — 하강 단계(전경)와 회수 캡슐을 실은 상승 단계(상단)."
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/02.webp",
+          "caption": "시료 채취 장치 도해 — 드릴 코어와 회수 캡슐로 이어지는 밀봉 이송 구조."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "1970년 9월 12일 — 바이코누르에서 발사된 Proton-K",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/03.webp",
+          "caption": "바이코누르 우주 기지 발사대에 선 Proton-K와 Blok-D 상단 로켓."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "풍요의 바다 — 1970년 9월 20일 착륙",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/04.webp",
+          "caption": "Luna 16이 표토를 뚫고 있다. 이륙에 앞서 채취한 물질 101g을 구형 회수 캡슐에 밀봉했다."
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/05.webp",
+          "caption": "카자흐 초원에 놓인 회수 캡슐, 1970년 9월 24일 — 역사상 최초의 무인 행성간 시료 회수."
+        }
+      ]
+    }
+  ]
+}

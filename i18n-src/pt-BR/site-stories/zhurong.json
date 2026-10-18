@@ -1,0 +1,61 @@
+{
+  "intro": "Zhurong pousou em Utopia Planitia em 14 de maio de 2021 — o primeiro pouso bem-sucedido da China em Marte e a primeira missão a Marte de qualquer nação a combinar orbitador, módulo de pouso e rover em um único lançamento (Tianwen-1). Batizado em homenagem ao deus chinês do fogo, Zhurong percorreu 1,92 km pelas planícies do sul de Utopia antes de ser colocado em hibernação, em maio de 2022, durante a estação de poeira. A CNSA não confirmou que ele tenha despertado.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Primeiro módulo de pouso + rover da China em Marte",
+      "images": [
+        {
+          "src": "/images/missions/tianwen1/01.webp",
+          "caption": "O rover Zhurong durante a integração pré-lançamento em Pequim — 240 kg, movido a energia solar, equipado com radar de penetração no solo para sondar o subsolo."
+        },
+        {
+          "src": "/images/missions/tianwen1/02.webp",
+          "caption": "Conjunto de lançamento da Tianwen-1 — orbitador + módulo de pouso + rover combinados, a missão a Marte mais ambiciosa já realizada em uma primeira tentativa."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "23 de julho de 2020 — Long March 5 a partir de Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/tianwen1/03.webp",
+          "caption": "O Long March 5 lança a Tianwen-1 do Centro de Lançamento Espacial de Wenchang, em Hainan — 7 meses de trânsito até Marte."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Utopia Planitia — pouso em 14 de maio de 2021",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/zhurong/tier3-pan.jpg",
+          "caption": "Panorama da câmera de navegação do Zhurong mostrando o convés do módulo de pouso + a superfície de Marte além dele — a primeira vista do solo de uma missão a Marte que não é da NASA nem soviética."
+        },
+        {
+          "src": "/images/hotspots/mars/zhurong/tier2-hirise.jpg",
+          "caption": "O rover Zhurong + o módulo de pouso, fotografados de órbita pela HiRISE da MRO, da NASA — colaboração internacional em imagens de arquivo."
+        },
+        {
+          "src": "/images/fleet-galleries/zhurong/01.webp",
+          "caption": "Zhurong + módulo de pouso em Marte — foto feita por uma câmera remota que o próprio rover instalou e, depois, se afastou para fotografar."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciência",
+      "subtitle": "Radar de penetração no solo do subsolo de Utopia",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/zhurong/03.webp",
+          "caption": "Perfil do radar de penetração no solo mostrando camadas do subsolo até ~80 m de profundidade — evidência de antigas inundações no sul de Utopia."
+        }
+      ]
+    }
+  ]
+}

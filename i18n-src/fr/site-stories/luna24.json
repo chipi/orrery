@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 24 s'est posée dans Mare Crisium le 18 août 1976. Ce fut la dernière mission soviétique (et la dernière mission robotique) de retour d'échantillons lunaires du XXe siècle, et le dernier atterrisseur lunaire, tous types confondus, jusqu'à Chang'e 3 de la Chine en 2013. Elle a foré le régolithe sur 2 m de profondeur et rapporté sur Terre 170,1 g d'échantillons, dont des indices de glace d'eau lunaire (reconfirmés des décennies plus tard par SOFIA et LCROSS). Le programme lunaire soviétique s'est achevé là.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Atterrisseur soviétique E-8-5M : un dispositif de retour d'échantillons amélioré",
+      "images": [
+        {
+          "src": "/images/missions/luna24/01.webp",
+          "caption": "Le vaisseau Luna 24 exposé dans un musée soviétique de l'espace : étage de descente, véhicule d'ascension et capsule de retour."
+        },
+        {
+          "src": "/images/missions/luna24/02.webp",
+          "caption": "Le mécanisme de forage : il est descendu à 2 m de profondeur, trois fois plus loin que les 35 cm de Luna 16. Il a rapporté les échantillons les plus profonds jamais ramenés d'un autre monde."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Mare Crisium : atterrissage le 18 août 1976",
+      "images": [
+        {
+          "src": "/images/missions/luna24/03.webp",
+          "caption": "Site d'atterrissage de Mare Crisium : Luna 24 s'est posée à environ 2 km de l'endroit où Luna 23 avait connu un atterrissage manqué en 1974, dans la même région."
+        },
+        {
+          "src": "/images/missions/luna24/04.webp",
+          "caption": "La capsule de retour en Sibérie, le 22 août 1976 : dernier retour d'échantillons soviétique depuis un point situé au-delà de l'orbite terrestre, jusqu'aux programmes VKS des années 2020."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "La science",
+      "subtitle": "De l'eau dans le régolithe : une confirmation avant l'heure",
+      "images": [
+        {
+          "src": "/images/missions/luna24/05.webp",
+          "caption": "La nouvelle analyse des échantillons de Luna 24 en 1978 avait révélé une teneur en eau de 0,1 % : d'abord écartée, elle a été confirmée par l'impact de LCROSS et par SOFIA en 2020."
+        }
+      ]
+    }
+  ]
+}

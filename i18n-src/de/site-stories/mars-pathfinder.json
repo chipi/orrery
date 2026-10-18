@@ -1,0 +1,50 @@
+{
+  "intro": "Mars Pathfinder landete am 4. Juli 1997 in Ares Vallis – es war die erste US-Mission zum Mars seit den Viking-Sonden 21 Jahre zuvor. Der Lander setzte Sojourner aus, die ersten Räder auf dem Mars, und bewies damit, dass sich Airbag-Landung und Fahrbetrieb auf der Oberfläche verbinden lassen – in einer kostengünstigen „faster, better, cheaper“-Mission für 265 Mio. US-Dollar, die rund 16.500 Bilder zur Erde schickte. Auf ihrer 100 Meter langen Strecke kartierte Sojourner zwölf Felsen, die nach Comicfiguren benannt waren (Yogi, Barnacle Bill, Scooby Doo), bevor der Lander ausfiel.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Der erste Mars-Rover – und der erste US-Lander auf dem Mars seit Viking",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/01.webp",
+          "caption": "Pathfinder bei den Tests vor dem Start – Basisstation und Rampen an den aufklappbaren Landeplatten für Sojourner."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/02.webp",
+          "caption": "Mikro-Rover Sojourner – 11,5 kg, 6 Räder, solarbetrieben, ausgelegt für 7 Sols (er hielt 83 durch)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "4. Dezember 1996 – Delta II von Cape Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/03.webp",
+          "caption": "Eine Delta II 7925 bringt Pathfinder auf den Weg zum Mars – sieben Monate dauert der Flug."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Ares Vallis – gelandet am 4. Juli 1997",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg",
+          "caption": "Verbessertes Presidential Panorama – 360°-Farbansicht von Ares Vallis. Am Horizont sind die Twin Peaks zu sehen (benannt nach der TV-Serie)."
+        },
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg",
+          "caption": "Der Pathfinder-Lander, Jahrzehnte später aus dem Orbit von MRO HiRISE aufgenommen – die Landeplatten und Sojourners letzte bekannte Position sind zu erkennen."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/04.webp",
+          "caption": "Sojourner untersucht den Felsen Yogi – die erste chemische Analyse aus nächster Nähe an Marsgelände."
+        }
+      ]
+    }
+  ]
+}

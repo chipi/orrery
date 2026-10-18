@@ -1,0 +1,34 @@
+{
+  "name": "Pioneer 10",
+  "current_distance_label": "135 UA · ~18,8 ore-luce dal Sole (ultimo contatto il 23 gennaio 2003)",
+  "interstellar_since_label": "Ultimo contatto 2003 — in coast verso il Toro, passerà vicino ad Aldebaran tra ~2 milioni di anni",
+  "waypoints": [
+    {
+      "label": "Lancio"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Giove"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Oltre l'orbita di Plutone"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Ultimo contatto"
+    },
+    null,
+    null,
+    {
+      "label": "Oggi"
+    }
+  ]
+}

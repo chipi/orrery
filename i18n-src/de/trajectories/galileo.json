@@ -1,0 +1,37 @@
+{
+  "name": "Galileo",
+  "current_distance_label": "5,4 AU · 2003-09-21 in Jupiter gestürzt (Schutz Europas)",
+  "waypoints": [
+    {
+      "label": "Start (STS-34)"
+    },
+    null,
+    {
+      "label": "Venus"
+    },
+    null,
+    {
+      "label": "Erde #1"
+    },
+    null,
+    {
+      "label": "Gaspra"
+    },
+    null,
+    {
+      "label": "Erde #2"
+    },
+    null,
+    {
+      "label": "Ida + Dactyl"
+    },
+    null,
+    null,
+    {
+      "label": "Eintritt in Jupiters Orbit"
+    },
+    {
+      "label": "In Jupiter gestürzt"
+    }
+  ]
+}

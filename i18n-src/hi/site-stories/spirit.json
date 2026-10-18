@@ -1,0 +1,50 @@
+{
+  "intro": "Spirit 4 जनवरी 2004 को गुसेव क्रेटर में उतरा — अपने जुड़वां Opportunity के मंगल के दूसरी ओर उतरने से तीन सप्ताह पहले। इसे 90 सोल के लिए बनाया गया था, पर Spirit 6 वर्ष तक चलता रहा और 7.7 किमी की दूरी तय की, जब तक कि उसके पहिये \"Troy\" नामक स्थान पर नरम मिट्टी में हमेशा के लिए धँस नहीं गए। फँसे हुए रोवर के रूप में भी वह मार्च 2010 में संपर्क टूटने तक एक स्थिर विज्ञान मंच की तरह काम करता रहा।",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "हार्डवेयर",
+      "subtitle": "सौर ऊर्जा से चलने वाला रोवर, Opportunity का जुड़वां",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/01.webp",
+          "caption": "एकीकरण के दौरान Mars Exploration Rover — 185 किग्रा, 6 पहिये, Pancam मास्ट कैमरा, RAT चट्टान-घर्षण उपकरण।"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "सतह",
+      "subtitle": "गुसेव क्रेटर — 4 जनवरी 2004 को उतरा",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/spirit/tier3-pan.jpg",
+          "caption": "Winter Haven at McMurdo, सोल 814-980 (2006) — Pancam का 360° पैनोरमा। खोए हुए STS-107 दल के नाम पर रखी गई कोलंबिया पहाड़ियाँ क्षितिज पर छाई हुई हैं।"
+        },
+        {
+          "src": "/images/hotspots/mars/spirit/tier2-hirise.jpg",
+          "caption": "Spirit का Troy स्थित फँसा-रोवर स्थल, मई 2009 में पहिये धँसने के बाद MRO HiRISE द्वारा लिया गया चित्र।"
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/02.webp",
+          "caption": "सोल 34 पर Adirondack चट्टान में ड्रिलिंग — मंगल पर चट्टान-घर्षण उपकरण का पहला उपयोग।"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "विज्ञान",
+      "subtitle": "हसबैंड हिल पर चढ़ाई, Home Plate पर सिलिका की खोज",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/03.webp",
+          "caption": "Home Plate पर Spirit के टूटे दाएँ-अगले पहिये से उघड़ी सिलिका-समृद्ध मिट्टी — गुसेव क्रेटर में अतीत की जलतापीय गतिविधि का प्रमाण।"
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/04.webp",
+          "caption": "Pancam द्वारा खींचा गया गुसेव क्रेटर पर सूर्यास्त, सोल 489 (19 मई 2005)। मंगल की नीली आभा वाली साँझ की प्रतिष्ठित तस्वीरों में से एक।"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Cassini-Huygens",
+  "current_distance_label": "9.5 AU · 2004～2017年土星軌道上 — 2017年9月15日に土星の大気に投棄",
+  "waypoints": [
+    {
+      "label": "打ち上げ"
+    },
+    null,
+    {
+      "label": "金星 #1"
+    },
+    null,
+    {
+      "label": "金星 #2"
+    },
+    {
+      "label": "地球"
+    },
+    null,
+    {
+      "label": "木星"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "土星軌道挿入"
+    },
+    {
+      "label": "グランド・フィナーレ（現在）"
+    }
+  ]
+}

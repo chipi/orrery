@@ -1,0 +1,32 @@
+{
+  "name": "New Horizons",
+  "current_distance_label": "66 天文单位·执行延伸任务——朝向日球层停滞区前进",
+  "interstellar_since_label": "约在2040年穿过日球层顶——第三个注定到达星际空间的探测器",
+  "waypoints": [
+    {
+      "label": "发射"
+    },
+    {
+      "label": "小行星APL"
+    },
+    null,
+    null,
+    {
+      "label": "木星引力助推"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "冥王星"
+    },
+    null,
+    {
+      "label": "阿罗科斯"
+    },
+    null,
+    {
+      "label": "今天"
+    }
+  ]
+}

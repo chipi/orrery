@@ -1,0 +1,50 @@
+{
+  "intro": "Phoenix는 2008년 5월 25일 북위 68.22°에 착륙했습니다. 화성의 고위도 북극 지역에 내린 최초의 NASA 착륙선이었습니다. 며칠 만에 화성 물얼음 시료를 처음으로 퍼 올렸고, 그 얼음이 카메라 화면 안에서 승화하는 모습을 지켜보았습니다. 착륙선은 극지의 겨울이 닥쳐 작동을 멈출 때까지 157솔 동안 운용되었습니다. CO₂ 서리가 쌓여 태양 전지판을 뒤덮으면서 임무는 막을 내렸습니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "취소된 Mars Surveyor 2001 착륙선을 재구성하다",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/01.webp",
+          "caption": "발사 전 Phoenix 착륙선 — 350kg, 로봇 팔, 얼음 채취 삽, TEGA 습식 화학 실험실."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "바스티타스 보레알리스 — 2008년 5월 25일 착륙",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/phoenix/tier3-pan.jpg",
+          "caption": "Phoenix 착륙 지점 360° 파노라마, 14솔 — 작업 공간, 착륙 다리 받침, 역추진으로 드러난 얼음층이 오른쪽 아래에 보입니다."
+        },
+        {
+          "src": "/images/hotspots/mars/phoenix/tier2-hirise.jpg",
+          "caption": "Phoenix 착륙선, 낙하산, 백셸 — 모두 착륙 후 MRO HiRISE가 촬영했습니다."
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/02.webp",
+          "caption": "로봇 팔이 \"Snow White\" 도랑을 파는 모습 — 표면 아래 수 센티미터에서 밝은 물얼음이 드러났고, 이후 나흘에 걸쳐 승화하는 모습이 관측되었습니다."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "물, 과염소산염, 그리고 최초의 화성 날씨",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/03.webp",
+          "caption": "화성 토양에서 과염소산염 검출 — 이후 화성 거주 가능성을 둘러싼 모든 논의의 방향을 결정지은 화학 성분입니다."
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/04.webp",
+          "caption": "임무 후반 Phoenix 착륙 지점 상공에 내리는 눈의 라이다 프로파일 — 화성에서 직접 관측된 최초의 강수입니다."
+        }
+      ]
+    }
+  ]
+}

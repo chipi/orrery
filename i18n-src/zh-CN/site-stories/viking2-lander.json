@@ -1,0 +1,54 @@
+{
+  "intro": "Viking 2 于1976年9月3日降落在乌托邦平原——它是双子 Viking 着陆器中的第二台，与 Viking 1 分处火星的两侧。它执行了长达1,316个火星日的任务，其间首次观测到火星上的水冰霜（出现在极地冬季），并在一个更寒冷、纬度更高的着陆点重复了 Viking 1 的生物实验。1980年4月，它因电池故障而终结。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "与 Viking 1 的孪生兄弟，仪器完全相同",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/01.webp",
+          "caption": "位于火星乌托邦平原地表上的 Viking 2 着陆器。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "乌托邦平原——1976年9月3日着陆",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier3-pan.jpg",
+          "caption": "乌托邦平原的360°相机全景拼图——这里的地形比 Viking 1 所在的克律塞平原着陆点更平坦，岩石也更多。"
+        },
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier2-hirise.jpg",
+          "caption": "任务结束数十年后，由 MRO 的 HiRISE 相机在轨道上拍到的 Viking 2 着陆器。"
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/02.webp",
+          "caption": "乌托邦平原的彩色视图——由安德烈娅·勒克根据 NASA 档案底片，对 Viking 2 的图像重新处理而成。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "霜、沙尘暴，以及火星上的第一个冬天",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/03.webp",
+          "caption": "覆盖在 Viking 2 着陆器周围岩石上的水冰霜——这是人类在火星北极冬季首次观测到此类现象（第1230火星日）。"
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/04.webp",
+          "caption": "乌托邦平原的日出（PIA00576）——Viking 2 的相机捕捉到了北半球高纬度地区黎明前的微光。"
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/05.webp",
+          "caption": "乌托邦平原的霜冻（NASA 的 Viking 2 着陆器）——由安德烈娅·勒克重新处理。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "intro": "Schiaparelli——欧洲第二次尝试火星着陆——于2016年10月16日与 ExoMars Trace Gas Orbiter 分离,三天后以约540公里/时的速度撞向子午线高原。一次软件故障导致降落伞和制动推进器提前50秒脱离,而此时着陆器距离地表仍有3.7公里。一周之内,MRO HiRISE 就发现了残骸。从中汲取的经验教训,塑造了 ExoMars Rosalind Franklin 火星车,该火星车目前计划于2028年发射。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "EDM——进入、下降与着陆演示器模块",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/01.webp",
+          "caption": "发射前的 Schiaparelli 着陆器——重577公斤,被设计为一次性技术演示器,用于验证 ExoMars 火星车的进入、下降与着陆(EDL)系统。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "2016年3月14日——Proton-M 自拜科努尔升空",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/02.webp",
+          "caption": "Proton-M 载着 ExoMars 2016 组合体升空——TGO 加 Schiaparelli,是 ESA 与 Roscosmos 的联合任务。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "子午线高原——2016年10月19日撞击",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/03.webp",
+          "caption": "MRO HiRISE 拍摄的 Schiaparelli 撞击地点——主撞击坑位于画面上方;降落伞与后罩位于右下方。"
+        },
+        {
+          "src": "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg",
+          "caption": "HiRISE 拍摄的 Schiaparelli 坠毁地点细节——硬件撞击留下的黑色痕迹,周围环绕着溅射覆盖层。"
+        },
+        {
+          "src": "/images/fleet-galleries/schiaparelli/04.webp",
+          "caption": "故障序列的计算机图形重建——降落伞展开期间 IMU 饱和,导致着陆器在3.7公里高度过早分离。"
+        }
+      ]
+    }
+  ]
+}

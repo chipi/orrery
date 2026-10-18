@@ -1,0 +1,46 @@
+{
+  "intro": "Chang'e 4 landete am 3. Januar 2019 im Krater Von Kármán – die erste weiche Landung auf der Mondrückseite, von der aus die Erde nie zu sehen ist. Die Kommunikation lief über den Satelliten Queqiao, der am Punkt L2 positioniert ist. Die Mission setzte den Rover Yutu-2 aus, der mehr als 1,5 km zurückgelegt hat und 2026 noch immer in Betrieb ist – die am längsten aktive Mondoberflächenmission aller Zeiten. Im Becken Südpol-Aitken fand sie unverändertes Mantelmaterial.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Erster Lander auf der Mondrückseite + Relaissatellit am Punkt L2 (Queqiao)",
+      "images": [
+        {
+          "src": "/images/missions/change4/01.webp",
+          "caption": "Chang'e 4 Lander + Yutu-2 Rover bei der Integration vor dem Start in Peking."
+        },
+        {
+          "src": "/images/missions/change4/02.webp",
+          "caption": "Der Relaissatellit Queqiao am Punkt L2 – ohne ihn hätte Chang'e 4 keinen Kontakt zur Erde. China baute die Kommunikationsinfrastruktur am Mond auf, bevor es zur Mondrückseite aufbrach."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Krater Von Kármán, Mondrückseite – Landung am 3. Januar 2019",
+      "images": [
+        {
+          "src": "/images/missions/change4/03.webp",
+          "caption": "Der Rover Yutu-2, fotografiert vom Lander Chang'e 4 – die ersten Räder auf der Mondrückseite."
+        },
+        {
+          "src": "/images/missions/change4/04.webp",
+          "caption": "Yutu-2 untersucht eine glasige Kugel auf der Oberfläche – vermutlich ein Impaktschmelzfragment eines weit entfernten Einschlagsereignisses."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wissenschaft",
+      "subtitle": "Mantelmaterial im Südpol-Aitken-Becken",
+      "images": [
+        {
+          "src": "/images/missions/change4/05.webp",
+          "caption": "VNIS-Spektren zeigten Olivin + kalziumarmen Pyroxen – Minerale aus dem Mondmantel, freigelegt durch den Einschlag des SPA-Beckens vor rund 4,2 Milliarden Jahren."
+        }
+      ]
+    }
+  ]
+}

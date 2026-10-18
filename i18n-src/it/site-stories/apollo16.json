@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 16 allunò negli Altopiani di Descartes (Altopiano Descartes) il 21 aprile 1972: l'unica missione Apollo verso un sito di altopiano (e non di mare lunare), scelto per campionare quello che si credeva fosse un terreno vulcanico. Young e Duke NON trovarono rocce vulcaniche, ma solo brecce da impatto e anortosite, ribaltando il modello geologico e dimostrando che gli altopiani lunari sono una crosta antica frantumata dagli impatti, e non il prodotto di un vulcanismo successivo. Tre EVA, 27 km di percorso con il LRV, 95 kg di campioni riportati a Terra.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Casper + Orion + LRV-2",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/01.webp",
+          "caption": "Ritratto dell'equipaggio di Apollo 16: John Young (CDR), Ken Mattingly (CMP, sostituito rispetto ad Apollo 13) e Charlie Duke (LMP)."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Altopiani di Descartes (Altopiano Descartes): allunaggio il 21 aprile 1972",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/02.webp",
+          "caption": "John Young mentre salta durante le \"Olimpiadi lunari\": il primo salto in alto lunare con equipaggio, a dimostrazione della gravità pari a 1/6 g."
+        },
+        {
+          "src": "/images/missions/apollo16/03.webp",
+          "caption": "Duke a \"Big Muley\": campione 61016, la più grande singola roccia riportata dalla Luna (11,7 kg)."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo16/tier3-pan.jpg",
+          "caption": "Panorama degli Altopiani di Descartes (Altopiano Descartes): lo stadio di discesa di Orion + il LRV, con sullo sfondo Stone Mountain."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Scienza",
+      "subtitle": "Le brecce degli altopiani ribaltano l'ipotesi del vulcanismo",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/04.webp",
+          "caption": "La foto di famiglia di Charlie Duke, lasciata sulla superficie lunare: l'unico ritratto noto di una famiglia terrestre lasciato su un altro mondo."
+        }
+      ]
+    }
+  ]
+}

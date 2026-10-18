@@ -1,0 +1,65 @@
+{
+  "intro": "Perseverance landde op 18 februari 2021 in de Jezero-krater — een 3,8 miljard jaar oude riviervlakte (delta), gekozen omdat die de grootste kans bood om sporen van oud Marsleven te bewaren. De rover draagt de eerste Marshelikopter (Ingenuity), de eerste geluidsrecorder voor Mars en het eerste systeem voor het opslaan van monsters. Monsterbuizen die op het oppervlak achterblijven, worden in de jaren 2030 door de missie Mars Sample Return naar de aarde gebracht.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Het zwaardere, slimmere zusje van Curiosity",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/01.webp",
+          "caption": "Perseverance tijdens de assemblage bij JPL — 1025 kg, aangedreven door een MMRTG, met 23 camera's, 2 microfoons en een draaikop voor het opslaan van monsters."
+        },
+        {
+          "src": "/images/missions/perseverance/02.webp",
+          "caption": "De helikopter Ingenuity, bevestigd aan de onderkant van Perseverance — het eerste voertuig zwaarder dan lucht dat op een andere planeet vloog."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "30 juli 2020 — Atlas V vanaf Cape Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/03.webp",
+          "caption": "Een Atlas V 541 lanceert Mars 2020 vanaf SLC-41, 30 juli 2020 om 07:50 EDT — een reis van 203 dagen naar Jezero."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Jezero-krater — geland op 18 februari 2021",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
+          "caption": "Van Zyl Overlook — het eerste 360°-panorama van Mastcam-Z, sol 3 (21 feb 2021). De delta van Jezero is in het westen te zien."
+        },
+        {
+          "src": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
+          "caption": "Perseverance + zijn route, gefotografeerd vanuit een baan om Mars door de HiRISE-camera van Mars Reconnaissance Orbiter, met 25 cm per pixel."
+        },
+        {
+          "src": "/images/missions/perseverance/04.webp",
+          "caption": "Eerste vlucht van Ingenuity, 19 april 2021 — 3 seconden zweven op 3 m hoogte. De Flyer van de gebroeders Wright droeg een stukje stof mee op de helikopter voor precies dit moment."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "Monsters nemen van een 3,8 miljard jaar oude riviervlakte (delta)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/perseverance/02.webp",
+          "caption": "De eerste monsterbuis, verzegeld en opgeslagen op het Marsoppervlak — de kern \"Roubion\", geboord uit de rotsblok Rochette, september 2021."
+        },
+        {
+          "src": "/images/fleet-galleries/perseverance/03.webp",
+          "caption": "Organische moleculen, door het instrument SHERLOC aangetroffen in de moddersteen van Wildcat Ridge — een chemische vingerafdruk van mogelijke kandidaten voor oud Mars-leven."
+        }
+      ]
+    }
+  ]
+}

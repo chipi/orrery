@@ -1,0 +1,46 @@
+{
+  "intro": "Chang'e 3 aterrizó en Mare Imbrium el 14 de diciembre de 2013: el primer alunizaje suave de China y el primer alunizaje de cualquier tipo en 37 años (desde Luna 24). Desplegó el rover Yutu, que recorrió unos 114 m antes de que un fallo de control lo dejara inmovilizado durante los ~30 días lunares restantes de su supervivencia. Confirmó a China como la tercera nación con medios en la superficie de la Luna.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Primer módulo de aterrizaje lunar chino + rover Yutu",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/01.webp",
+          "caption": "Módulo de aterrizaje de Chang'e 3 expuesto: unidad de calor de tipo RTG, cuatro patas y rampas para el despliegue de Yutu."
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/02.webp",
+          "caption": "Rover Yutu: 140 kg, 6 ruedas y un radar de penetración del suelo montado bajo el chasis."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "1 de diciembre de 2013: Long March 3B desde Xichang",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/03.webp",
+          "caption": "Long March 3B despega con Chang'e 3: 5 días de tránsito hasta la Luna y alunizaje suave el 14 de diciembre."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Mare Imbrium: alunizaje el 14 de diciembre de 2013",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/04.webp",
+          "caption": "El módulo de aterrizaje Chang'e 3 y el rover Yutu se fotografían mutuamente sobre la superficie lunar: el primer retrato mutuo de este tipo de hardware chino en la Luna."
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/05.webp",
+          "caption": "Perfil del radar de penetración del suelo de Yutu del subsuelo de Mare Imbrium: coladas de basalto en múltiples capas hasta unos 330 m."
+        }
+      ]
+    }
+  ]
+}

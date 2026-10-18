@@ -1,0 +1,61 @@
+{
+  "intro": "InSight s’est posé sur Elysium Planitia le 26 novembre 2018 — premier observatoire géophysique installé sur Mars. Pendant quatre ans, la mission a guetté les séismes martiens grâce au sismomètre SEIS, enregistrant plus de 1 300 secousses qui ont révélé le noyau, le manteau et la croûte de la planète avec une précision sans précédent. La taupe foreuse (HP³) n’est jamais parvenue à s’enfouir, mais SEIS a largement compensé cette déception. La mission s’est achevée en décembre 2022, lorsque l’accumulation de poussière a fini par priver les panneaux solaires de toute énergie.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Première mission martienne consacrée à l’intérieur de la planète",
+      "images": [
+        {
+          "src": "/images/missions/insight/01.webp",
+          "caption": "InSight pendant son intégration chez Lockheed Martin — la même plateforme d’atterrisseur que Phoenix, réaffectée à la géophysique."
+        },
+        {
+          "src": "/images/missions/insight/02.webp",
+          "caption": "Sismomètre SEIS + bouclier anti-vent et thermique WTS, déposés à la surface par le bras robotisé — premier sismomètre installé sur une autre planète."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Le lancement",
+      "subtitle": "5 mai 2018 — Atlas V depuis la base aérienne de Vandenberg",
+      "images": [
+        {
+          "src": "/images/missions/insight/03.webp",
+          "caption": "Atlas V 401 décolle du pas de tir SLC-3E de Vandenberg — premier lancement interplanétaire depuis la côte ouest des États-Unis. Les CubeSats MarCO l’ont accompagné en vol et ont servi de relais de communication."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Elysium Planitia — atterrissage le 26 novembre 2018",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/insight/tier3-pan.jpg",
+          "caption": "Zone de travail de Homestead Hollow, sol 14 — panorama à 290° pris par l’Instrument Deployment Camera. SEIS est déjà posé au sol, en bas à gauche."
+        },
+        {
+          "src": "/images/fleet-galleries/insight/02.webp",
+          "caption": "Premier selfie composite de Mars — le pont d’InSight après le déploiement de SEIS et de HP³, sol 110."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "La science",
+      "subtitle": "1 319 séismes martiens — l’intérieur de la planète mis à nu",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/insight/03.webp",
+          "caption": "Sismogramme du séisme martien de magnitude 4,7 survenu le 4 mai 2022 — le plus puissant jamais enregistré, dont l’origine se situe dans le système de failles de Cerberus Fossae."
+        },
+        {
+          "src": "/images/fleet-galleries/insight/04.webp",
+          "caption": "Dernier selfie d'InSight, sol 1211 : les panneaux solaires sont recouverts de poussière. Dernière transmission le 15 décembre 2022."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "intro": "Beagle 2 war ein kleiner, unter britischer Leitung gebauter Lander der ESA, der am 19. Dezember 2003 von Mars Express ausgesetzt wurde – und sechs Tage später verstummte; man hielt ihn für abgestürzt. Zwölf Jahre lang blieb sein Schicksal ungeklärt. Am 16. Januar 2015 entdeckte die HiRISE-Kamera der NASA den Lander auf der Oberfläche: unversehrt, doch mit nur teilweise entfalteten Solarpaneelen, die die Antenne blockierten. Eine geglückte Landung – nur ohne die Möglichkeit, nach Hause zu funken. Der Fund rehabilitierte die Mission als Teilerfolg.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "33 kg – der kleinste interplanetare Lander, der je versucht wurde",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/01.webp",
+          "caption": "Beagle 2 Lander, Darstellung – Solarpaneele, die sich wie Blütenblätter entfalten, dazu das Pillinger Lab und die atmosphärischen Instrumente im Inneren der Muschelschale."
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/03.webp",
+          "caption": "Nachbau von Beagle 2 auf der Erde, ausgestellt – er vermittelt einen Eindruck von der kompakten, frisbeeartigen Form des Landers."
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/05.webp",
+          "caption": "Technisches Modell von Beagle 2 im Spaceport, Seacombe – die Solarblätter vollständig geöffnet, wie vorgesehen."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "2. Juni 2003 – Sojus/Fregat von Baikonur, als Huckepack-Nutzlast auf Mars Express",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/02.webp",
+          "caption": "Abtrennung von Beagle 2 von Mars Express am 19. Dezember 2003 – sechs Tage vor der geplanten Landung, auf ballistischer Eintrittsbahn."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Isidis Planitia – gelandet (ohne Funkverbindung) am 25. Dezember 2003",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/04.webp",
+          "caption": "Beagle 2 gefunden! MRO-HiRISE-Aufnahme (Januar 2015) – die Solarpaneele sind nur teilweise entfaltet, die Antenne ist blockiert, die Hardware intakt. Das zwölfjährige Rätsel ist gelöst."
+        },
+        {
+          "src": "/images/hotspots/mars/beagle2/tier2-hirise.jpg",
+          "caption": "HiRISE-Detailaufnahme der Landestelle von Beagle 2 in Isidis Planitia – der Lander selbst ist in diesem Maßstab nur ein Fleck unterhalb der Pixelgröße; für den Fund waren der Abgleich mehrerer Aufnahmen und mehrerer Beleuchtungssituationen nötig."
+        }
+      ]
+    }
+  ]
+}

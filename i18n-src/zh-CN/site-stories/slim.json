@@ -1,0 +1,46 @@
+{
+  "intro": "SLIM(Smart Lander for Investigating Moon,月球探测智能着陆器)于2024年1月20日降落在希奥利撞击坑——这是日本首次在月球上实现软着陆,也是一次精准着陆技术验证任务。SLIM 在距目标点 100 米以内着陆(此前的最佳纪录为 1 公里以上),但随后翻倒侧卧,依靠剩余的太阳能电池片倒置运行,直至电力耗尽。两台表面微型月球车 LEV-1 和 LEV-2(Sora-Q)在这一尴尬的最终姿态出现之前就已完成部署。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "翻倒的精准着陆器 + 2 台微型月球车",
+      "images": [
+        {
+          "src": "/images/missions/slim/01.webp",
+          "caption": "发射前的 SLIM 着陆器——重 200 千克,呈铅笔形,专为低质量精准着陆演示而设计。"
+        },
+        {
+          "src": "/images/missions/slim/02.webp",
+          "caption": "LEV-2“Sora-Q”——棒球大小的变形球形月球车,由玩具公司 TOMY、JAXA 与 Sony 共同研制。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "2023年9月6日——H-IIA 火箭,自种子岛发射",
+      "images": [
+        {
+          "src": "/images/missions/slim/03.webp",
+          "caption": "H-IIA-47 号火箭升空,同时搭载 SLIM 与 XRISM 观测卫星——这是与一项大型 X 射线科学任务的联合发射。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "希奥利撞击坑——2024年1月20日着陆",
+      "images": [
+        {
+          "src": "/images/missions/slim/04.webp",
+          "caption": "Sora-Q 在月面拍摄的 SLIM——着陆时机头朝下,太阳能电池板朝向了错误的方向。"
+        },
+        {
+          "src": "/images/missions/slim/05.webp",
+          "caption": "尽管姿态出乎意料,SLIM 仍先后运行了三次——月球日出时,倒置朝外的电池板接收到了斜射的阳光,使它短暂苏醒。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Cassini-Huygens",
+  "current_distance_label": "9.5 AU · 토성 궤도 2004-2017 — 2017-09-15 토성 대기로 투기됨",
+  "waypoints": [
+    {
+      "label": "발사"
+    },
+    null,
+    {
+      "label": "금성 #1"
+    },
+    null,
+    {
+      "label": "금성 #2"
+    },
+    {
+      "label": "지구"
+    },
+    null,
+    {
+      "label": "목성"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "토성 궤도 진입"
+    },
+    {
+      "label": "그랜드 피날레 (오늘)"
+    }
+  ]
+}

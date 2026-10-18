@@ -1,0 +1,50 @@
+{
+  "intro": "Beagle 2 was een kleine, door het Verenigd Koninkrijk geleide ESA-lander die op 19 december 2003 door Mars Express werd losgelaten — en zes dagen later verstomde, vermoedelijk neergestort. Twaalf jaar lang bleef het lot ervan onbekend. Op 16 januari 2015 zag de HiRISE-camera van NASA de lander op het oppervlak: intact, maar met zonnepanelen die slechts gedeeltelijk waren uitgeklapt en zo de antenne blokkeerden. Een geslaagde landing, alleen zonder enige mogelijkheid om naar huis te bellen. De vondst maakte van de missie alsnog een gedeeltelijk succes.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "33 kg, de kleinste interplanetaire lander die ooit is geprobeerd",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/01.webp",
+          "caption": "Beagle 2-lander als weergave — uitklapbare zonnepanelen in bloemblaadjesvorm + Pillinger Lab + atmosferische instrumenten binnenin de schelp."
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/03.webp",
+          "caption": "Aardse replica van Beagle 2 op een tentoonstelling — geeft een indruk van de compacte, frisbeeachtige vorm van de lander."
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/05.webp",
+          "caption": "Technisch model van Beagle 2 bij Spaceport, Seacombe — de zonnepanelen staan volledig open, zoals ontworpen."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "2 juni 2003 — Soyuz/Fregat vanaf Bajkonoer, als bijlader met Mars Express",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/02.webp",
+          "caption": "Scheiding van Beagle 2 en Mars Express, 19 december 2003 — zes dagen vóór de geplande landing, op een ballistisch entrytraject."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Isidis Planitia — geland (zonder communicatie) op 25 december 2003",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/04.webp",
+          "caption": "Beagle 2 gevonden! HiRISE-opname van MRO (januari 2015) — gedeeltelijk uitgeklapte zonnepanelen zichtbaar, antenne geblokkeerd, hardware intact. Twaalf jaar oud mysterie opgelost."
+        },
+        {
+          "src": "/images/hotspots/mars/beagle2/tier2-hirise.jpg",
+          "caption": "HiRISE-detail van de landingsplaats van Beagle 2 in Isidis Planitia — de lander zelf is op deze schaal een stipje kleiner dan een pixel; voor de vondst was het vergelijken van meerdere opnamen onder verschillende belichting nodig."
+        }
+      ]
+    }
+  ]
+}

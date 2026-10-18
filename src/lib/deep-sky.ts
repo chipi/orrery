@@ -29,6 +29,30 @@ export type DeepSkyImage = {
   fullscope: string;
 };
 
+/** The fields a locale overlay may carry, keyed by image `key`
+ *  (`i18n-src/<locale>/deep-sky.json`). Names, telescopes and credits stay shared. */
+export type DeepSkyOverlay = Record<
+  string,
+  Partial<Pick<DeepSkyImage, 'title' | 'caption' | 'subject' | 'type' | 'distance' | 'taken'>>
+>;
+
+/** Merge a locale overlay onto the curated images; fields the overlay lacks keep
+ *  the English. */
+export function localizeDeepSky(
+  images: DeepSkyImage[],
+  overlay: DeepSkyOverlay | null | undefined,
+): DeepSkyImage[] {
+  if (!overlay) return images;
+  return images.map((img) => {
+    const o = overlay[img.key];
+    if (!o) return img;
+    const out = { ...img };
+    for (const k of ['title', 'caption', 'subject', 'type', 'distance', 'taken'] as const)
+      if (typeof o[k] === 'string' && o[k]) out[k] = o[k];
+    return out;
+  });
+}
+
 /**
  * Join helper (/explore v2 Slice 4). Resolve a deep-sky object's `photoKey`
  * to its curated gallery entry, so the in-sky DeepSkyPanel can show the same

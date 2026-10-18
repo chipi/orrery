@@ -1,0 +1,46 @@
+{
+  "name": "Voyager 2",
+  "current_distance_label": "태양으로부터 143 AU · 약 19.8 광시간",
+  "interstellar_since_label": "2018년 11월 태양권 경계(헬리오포즈) 통과",
+  "waypoints": [
+    {
+      "label": "발사"
+    },
+    null,
+    null,
+    {
+      "label": "목성"
+    },
+    null,
+    null,
+    {
+      "label": "토성"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "천왕성"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "해왕성"
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "헬리오포즈"
+    },
+    null,
+    {
+      "label": "오늘"
+    }
+  ]
+}

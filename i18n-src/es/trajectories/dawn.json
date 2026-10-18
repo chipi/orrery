@@ -1,0 +1,30 @@
+{
+  "name": "Dawn",
+  "current_distance_label": "2,8 AU · en órbita estable de Ceres desde fin de octubre de 2018 (~20 años de vida orbital)",
+  "waypoints": [
+    {
+      "label": "Lanzamiento"
+    },
+    null,
+    null,
+    {
+      "label": "Asistencia de Marte"
+    },
+    null,
+    null,
+    {
+      "label": "Órbita de Vesta"
+    },
+    {
+      "label": "Salida de Vesta"
+    },
+    null,
+    null,
+    {
+      "label": "Inserción en órbita de Ceres"
+    },
+    {
+      "label": "Fin de operaciones (hoy)"
+    }
+  ]
+}

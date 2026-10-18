@@ -1,0 +1,46 @@
+{
+  "intro": "SLIM(Smart Lander for Investigating Moon)은 2024년 1월 20일 시오리 분화구에 착륙했습니다. 일본 최초의 달 연착륙이자 정밀 착륙 기술 실증기였습니다. SLIM은 목표 지점에서 100m 이내에 착지했습니다(이전 최고 기록은 1km 이상). 그러나 옆으로 넘어져, 남은 태양전지만으로 거꾸로 뒤집힌 채 전력이 바닥날 때까지 작동했습니다. 표면 초소형 로버 LEV-1과 LEV-2(Sora-Q) 두 대는 어색한 최종 자세가 되기 전에 이미 분리되어 전개되었습니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "넘어진 정밀 착륙선 + 초소형 로버 2대",
+      "images": [
+        {
+          "src": "/images/missions/slim/01.webp",
+          "caption": "발사 전의 SLIM 착륙선 — 무게 200kg, 연필 모양이며 저질량 정밀 착륙 시연을 위해 설계되었습니다."
+        },
+        {
+          "src": "/images/missions/slim/02.webp",
+          "caption": "LEV-2 \"Sora-Q\" — 야구공 크기의 변신 볼형 로버로, TOMY(완구 회사) + JAXA + Sony가 개발했습니다."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "2023년 9월 6일 — 다네가시마에서 H-IIA 발사",
+      "images": [
+        {
+          "src": "/images/missions/slim/03.webp",
+          "caption": "H-IIA-47이 SLIM과 XRISM 관측위성을 싣고 이륙합니다. 주요 X선 과학 임무와 함께한 동시 발사였습니다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "시오리 분화구 — 2024년 1월 20일 착륙",
+      "images": [
+        {
+          "src": "/images/missions/slim/04.webp",
+          "caption": "달 표면의 SLIM을 Sora-Q가 촬영한 모습 — 기체 앞부분이 아래를 향한 채 착륙했고, 태양전지판은 엉뚱한 방향을 향하고 있었습니다."
+        },
+        {
+          "src": "/images/missions/slim/05.webp",
+          "caption": "의도치 않은 자세에도 SLIM은 세 차례 작동했습니다. 달의 일출 때 거꾸로 뒤집힌 쪽을 향한 패널에 비스듬한 햇빛을 받아 잠시 깨어났습니다."
+        }
+      ]
+    }
+  ]
+}

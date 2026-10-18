@@ -1,0 +1,76 @@
+{
+  "intro": "Der Rover Curiosity der NASA startete am 26. November 2011 auf einer Atlas V von Cape Canaveral. Nach 254 Tagen Flug durch den Raum setzte das Mars Science Laboratory den 899 Kilogramm schweren, nuklear betriebenen Rover am 6. August 2012 im Gale-Krater ab – mit dem inzwischen berühmten Sky-Crane-Manöver. Mehr als ein Jahrzehnt später steigt Curiosity noch immer den Mount Sharp hinauf und bohrt Gesteine an, die Zeugnis von der einst lebensfreundlichen Vergangenheit des Mars ablegen.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Ein Rover für den Gale-Krater",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/01.webp",
+          "caption": "Das Mars Science Laboratory, montiert am JPL – Curiosity, Abstiegsstufe, Rückschale und Hitzeschild, gestapelt für den Transport nach Florida."
+        },
+        {
+          "src": "/images/missions/curiosity/02.webp",
+          "caption": "Die nukleare Energiequelle MMRTG (orangefarbene Scheibe, unten rechts) liefert über mindestens 14 Jahre kontinuierlich rund 110 W – keine Solarmodule, keine Winterpausen."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "26. November 2011 – Atlas V von Cape Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/03.webp",
+          "caption": "Die Atlas V 541 hebt vom SLC-41 ab und trägt das Mars Science Laboratory samt Curiosity. 10:02 Uhr EST, 26. November 2011."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Gale-Krater – gelandet am 6. August 2012",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
+          "caption": "Panorama des Mont Mercou, Sol 3070 (März 2021). 360°-Schwenk der Mastcam-Z, der den Rover, die geschichteten Steilwände des Mt Mercou und den Mount Sharp am Horizont zeigt."
+        },
+        {
+          "src": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
+          "caption": "HiRISE-Aufnahme von Curiositys Fahrtroute aus der Vogelperspektive, aufgenommen vom Mars Reconnaissance Orbiter mit 25 cm/Pixel."
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/01.webp",
+          "caption": "Selbstporträt am Bohrplatz „Big Sky“, Sol 1126 – Komposit aus Dutzenden MAHLI-Nahaufnahmen, zu einem einzigen Bild zusammengefügt."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wissenschaft",
+      "subtitle": "Hinweise auf einen einstigen lebensfreundlichen Mars",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/02.webp",
+          "caption": "Bohrloch in der Yellowknife Bay – die erste Probe aus der einstigen Seebett-Umgebung des Mars, Januar 2013."
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/03.webp",
+          "caption": "Sedimentgesteine am Vera Rubin Ridge – gebänderte Eisenformationen und Tonminerale deuten auf uraltes flüssiges Wasser und eine lebensfreundliche chemische Umgebung hin."
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "title": "Menschen",
+      "subtitle": "Die Ingenieure und Wissenschaftler hinter Curiosity",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/04.webp",
+          "caption": "Die Missionskontrolle am JPL feiert die Sky-Crane-Landung der „sieben Schreckensminuten“, 5./6. August 2012 – Adam Steltzner und sein Team nach den ersten Signalen aus dem Gale-Krater."
+        }
+      ]
+    }
+  ]
+}

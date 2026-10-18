@@ -1,0 +1,32 @@
+{
+  "name": "New Horizons",
+  "current_distance_label": "66 AU · 拡張ミッション中 — 太陽圏の停滞領域に向かって進行中",
+  "interstellar_since_label": "2040年頃にヘリオポーズを通過予定 — 星間空間に到達する予定の3番目の探査機",
+  "waypoints": [
+    {
+      "label": "打ち上げ"
+    },
+    {
+      "label": "小惑星 APL"
+    },
+    null,
+    null,
+    {
+      "label": "木星スイングバイ"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "冥王星"
+    },
+    null,
+    {
+      "label": "アロコス"
+    },
+    null,
+    {
+      "label": "現在"
+    }
+  ]
+}

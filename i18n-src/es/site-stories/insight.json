@@ -1,0 +1,61 @@
+{
+  "intro": "InSight aterrizó en Elysium Planitia el 26 de noviembre de 2018: fue el primer observatorio geofísico en Marte. Durante cuatro años, la misión escuchó los terremotos marcianos con el sismómetro SEIS y registró más de 1300 sismos que revelaron el núcleo, el manto y la corteza del planeta con un detalle sin precedentes. El taladro topo (HP³) no logró enterrarse, pero SEIS compensó con creces la decepción. La misión terminó en diciembre de 2022, cuando la acumulación de polvo dejó sin energía los paneles solares.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "La primera misión a Marte centrada en el interior",
+      "images": [
+        {
+          "src": "/images/missions/insight/01.webp",
+          "caption": "InSight durante su integración en Lockheed Martin: la misma plataforma de módulo de aterrizaje que Phoenix, reutilizada para la geofísica."
+        },
+        {
+          "src": "/images/missions/insight/02.webp",
+          "caption": "El sismómetro SEIS y el escudo contra el viento y el calor WTS, depositados en la superficie por el brazo robótico: el primer sismómetro en otro planeta."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "5 de mayo de 2018: un Atlas V desde la Base de la Fuerza Aérea Vandenberg",
+      "images": [
+        {
+          "src": "/images/missions/insight/03.webp",
+          "caption": "Un Atlas V 401 despega desde SLC-3E, en Vandenberg: el primer lanzamiento interplanetario desde la costa oeste de EE. UU. Los CubeSats MarCO volaron a su lado como relés de comunicaciones."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Elysium Planitia: aterrizaje el 26 de noviembre de 2018",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/insight/tier3-pan.jpg",
+          "caption": "Zona de trabajo de Homestead Hollow, sol 14: panorámica de 290° de la cámara de despliegue de instrumentos. SEIS ya está colocado sobre el suelo, abajo a la izquierda."
+        },
+        {
+          "src": "/images/fleet-galleries/insight/02.webp",
+          "caption": "Primer autorretrato compuesto en Marte: la cubierta de InSight tras el despliegue de SEIS y HP³, sol 110."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciencia",
+      "subtitle": "1319 terremotos marcianos: el interior del planeta, al descubierto",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/insight/03.webp",
+          "caption": "Sismograma del terremoto marciano de magnitud 4,7 del 4 de mayo de 2022, el mayor evento registrado, originado en el sistema de fallas Cerberus Fossae."
+        },
+        {
+          "src": "/images/fleet-galleries/insight/04.webp",
+          "caption": "El último autorretrato de InSight, sol 1211: los paneles solares, cubiertos de polvo. Última transmisión el 15 de diciembre de 2022."
+        }
+      ]
+    }
+  ]
+}

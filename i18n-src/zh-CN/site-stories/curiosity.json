@@ -1,0 +1,76 @@
+{
+  "intro": "NASA 的 Curiosity 火星车于 2011 年 11 月 26 日由 Atlas V 运载火箭从卡纳维拉尔角发射升空。经过 254 天的巡航飞行，Mars Science Laboratory 任务于 2012 年 8 月 6 日借助如今闻名遐迩的“空中吊车”着陆方式，把这辆重 899 千克、以核能供电的火星车送入盖尔撞击坑。十多年过去，Curiosity 依然在攀登夏普山，钻取岩石，而这些岩石记录着火星曾经宜居的过往。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "为盖尔撞击坑打造的火星车",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/01.webp",
+          "caption": "火星车在 JPL 组装完成：Curiosity 火星车、下降级、后壳与隔热罩叠放就位，准备运往美国佛罗里达州。该任务名为 Mars Science Laboratory。"
+        },
+        {
+          "src": "/images/missions/curiosity/02.webp",
+          "caption": "MMRTG 核动力源（右下方的橙色圆盘）可连续提供约 110 瓦电力，持续时间不少于 14 年——不需要太阳能电池板，也没有冬季停机。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "2011 年 11 月 26 日——Atlas V 运载火箭自卡纳维拉尔角升空",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/03.webp",
+          "caption": "Atlas V 541 运载火箭从 SLC-41 发射台起飞，搭载 Mars Science Laboratory 任务的 Curiosity 火星车。美国东部标准时间 2011 年 11 月 26 日 10:02。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "表面",
+      "subtitle": "盖尔撞击坑着陆区——2012 年 8 月 6 日着陆",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
+          "caption": "Mont Mercou 全景图，第 3070 个火星日（2021 年 3 月）。Mastcam-Z 相机进行 360° 环视扫描，画面中可见火星车、Mt Mercou 的层状悬崖，以及地平线上的夏普山。"
+        },
+        {
+          "src": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
+          "caption": "HiRISE 相机俯瞰 Curiosity 火星车的行进路线，由 Mars Reconnaissance Orbiter 轨道器以每像素 25 厘米的分辨率拍摄。"
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/01.webp",
+          "caption": "在“Big Sky”钻取点拍摄的自拍照，第 1126 个火星日——由数十张 MAHLI 相机特写照片拼接而成的一幅完整图像。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "远古火星曾经宜居的证据",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/02.webp",
+          "caption": "Yellowknife Bay 的钻孔——这是取自火星往昔湖床环境的第一份样品，2013 年 1 月。"
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/03.webp",
+          "caption": "薇拉·鲁宾山脊的沉积岩——条带状铁矿构造与黏土矿物表明，这里曾有液态水，并具备宜居的化学环境。"
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "title": "人物",
+      "subtitle": "Curiosity 火星车背后的工程师与科学家",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/04.webp",
+          "caption": "JPL 任务控制中心欢庆“恐怖七分钟”空中吊车着陆成功，2012 年 8 月 5 日/6 日——亚当·施特尔茨纳与团队在收到来自盖尔撞击坑的第一批信号之后。"
+        }
+      ]
+    }
+  ]
+}

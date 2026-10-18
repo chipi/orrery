@@ -1,0 +1,54 @@
+{
+  "intro": "Viking 2 setzte am 3. September 1976 in Utopia Planitia auf – als zweiter der beiden Viking-Lander, auf der gegenüberliegenden Seite des Mars von Viking 1. Die 1.316 Sol dauernde Mission umfasste die erste Beobachtung von Wassereisfrost auf dem Mars (im Polarwinter) und wiederholte die Biologieexperimente von Viking 1 an einem deutlich kälteren Standort in höherer Breite. Im April 1980 setzte ein Batterieausfall ihrem Betrieb ein Ende.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Zwilling von Viking 1, identische Instrumente",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/01.webp",
+          "caption": "Der Lander Viking 2 auf der Marsoberfläche in Utopia Planitia."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Utopia Planitia – Landung am 3. September 1976",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier3-pan.jpg",
+          "caption": "360°-Kameramosaik von Utopia Planitia – flacheres, felsigeres Terrain als an Viking 1s Landestelle in Chryse."
+        },
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier2-hirise.jpg",
+          "caption": "Der Lander Viking 2, Jahrzehnte nach dem Ende der Mission aus dem Orbit von MRO HiRISE fotografiert."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/02.webp",
+          "caption": "Utopia Planitia in Farbe – Andrea Luck hat Aufnahmen von Viking 2 aus den Bildplatten des NASA-Archivs neu aufbereitet."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wissenschaft",
+      "subtitle": "Frost, Staubstürme und der erste Marswinter",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/03.webp",
+          "caption": "Wassereisfrost überzieht die Felsen rund um den Lander Viking 2 – die erste derartige Beobachtung im arktischen Marswinter (Sol 1230)."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/04.webp",
+          "caption": "Sonnenaufgang über Utopia Planitia (PIA00576) – die Kamera von Viking 2 hielt das Glühen vor der Morgendämmerung in hohen nördlichen Breiten fest."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/05.webp",
+          "caption": "Frost in Utopia Planitia (NASA Viking Lander 2) – neu aufbereitet von Andrea Luck."
+        }
+      ]
+    }
+  ]
+}

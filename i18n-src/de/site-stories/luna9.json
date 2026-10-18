@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 9 setzte am 3. Februar 1966 im Oceanus Procellarum auf – die erste weiche Landung auf einer anderen Welt. Die kugelförmige Kapsel mit 99 kg Masse überstand den Aufprall mit 22 km/h, indem sie aufblasbare Polster entfaltete. Anschließend klappte sie Blütenblätter auf, um sich aufzurichten, und übertrug die ersten Fotografien von der Mondoberfläche. Sie war drei Tage in Betrieb, bis die Batterien erschöpft waren.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Sowjetische E-6-Kapsel, Pionier der weichen Landung",
+      "images": [
+        {
+          "src": "/images/missions/luna9/01.webp",
+          "caption": "Modell der Kapsel von Luna 9 – 99 kg, kugelförmig, mit durch Airbags geschützter Kamera und vier Blütenblatt-Antennen."
+        },
+        {
+          "src": "/images/missions/luna9/02.webp",
+          "caption": "Schnittzeichnung der Technik von Luna 9 – sowjetische Ingenieure lösten das Problem der weichen Landung vor der NASA."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "31. Januar 1966 – Molniya-M von Baikonur",
+      "images": [
+        {
+          "src": "/images/missions/luna9/03.webp",
+          "caption": "Molniya-M-Rakete bei der Vorbereitung in Baikonur – Luna 9 startete in einem sowjetisch-amerikanischen Wettlauf von Küste zu Küste um die erste weiche Landung."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Oceanus Procellarum – gelandet am 3. Februar 1966",
+      "images": [
+        {
+          "src": "/images/missions/luna9/04.webp",
+          "caption": "Erste Bilder der Mondoberfläche – grobe Panoramen mit geringer Bitrate, die felsigen Regolith zeigen. Das Radioteleskop Jodrell Bank bei Manchester fing die Übertragung ab und veröffentlichte die Bilder noch vor den Sowjets."
+        },
+        {
+          "src": "/images/missions/luna9/05.webp",
+          "caption": "Panoramamosaik von Luna 9 – erster Beweis dafür, dass die Mondoberfläche fest genug war, um einen Lander zu tragen, und das Ende jahrelanger Spekulationen über tiefe Staubverwehungen."
+        }
+      ]
+    }
+  ]
+}

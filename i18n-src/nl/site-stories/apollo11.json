@@ -1,0 +1,57 @@
+{
+  "intro": "Apollo 11 landde op 20 juli 1969 om 20:17 UTC in Mare Tranquillitatis — de eerste bemande landing op een andere wereld. Armstrong en Aldrin brachten 2 uur en 31 minuten buiten de maanlander Eagle door; Collins cirkelde intussen in Columbia boven hun hoofd rond de Maan. De bemanning bracht 21,5 kg maanmonsters mee terug en liet voetafdrukken achter, een retroreflectorveld (dat nog steeds met lasers vanaf de Aarde wordt gebruikt) en een plaquette: \"We came in peace for all mankind\".",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Saturn V + commandomodule Columbia + maanlander Eagle",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/01.webp",
+          "caption": "Saturn V SA-506 met Apollo 11 op Pad 39A — 110,6 m hoog, het krachtigste draagraket dat ooit in een operationele missie is gevlogen."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "16 juli 1969 — Saturn V vanaf Kennedy Space Center",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/02.webp",
+          "caption": "Lancering om 13:32 UTC, 16 juli 1969 — de TLI-burn, 2 uur en 44 minuten later, stuurde Apollo 11 met 11 km/s richting de Maan."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Mare Tranquillitatis — geland op 20 juli 1969",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/03.webp",
+          "caption": "Buzz Aldrin daalt de ladder van de maanlander af, gefotografeerd door Armstrong. \"Magnificent desolation\" — Aldrins eerste woorden op het maanoppervlak."
+        },
+        {
+          "src": "/images/missions/apollo11/04.webp",
+          "caption": "Aldrins laarsafdruk bij Tranquility Base — meer dan een halve eeuw onveranderd bewaard in het vacuüm."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo11/tier3-pan.jpg",
+          "caption": "Panorama van Tranquility Base — de afdaaltrap van de maanlander Eagle, het wetenschappelijke EASEP-pakket, de Amerikaanse vlag en de beroemdste voetafdrukken van de Maan."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "21,5 kg basaltmonsters, retroreflectorveld, seismometer",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/05.webp",
+          "caption": "Maanmonster 10072 — blaasjesrijk mare-basalt, 3,7 miljard jaar oud. Het eerste gesteente van een andere wereld dat op Aarde werd onderzocht."
+        }
+      ]
+    }
+  ]
+}

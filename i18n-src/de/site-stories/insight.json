@@ -1,0 +1,61 @@
+{
+  "intro": "InSight landete am 26. November 2018 in Elysium Planitia – als erstes geophysikalisches Observatorium auf dem Mars. Vier Jahre lang horchte die Mission mit dem Seismometer SEIS auf Marsbeben und zeichnete über 1.300 Beben auf, die Kern, Mantel und Kruste des Planeten in beispielloser Detailtiefe offenlegten. Der Maulwurfbohrer (HP³) schaffte es nicht, sich selbst im Boden zu vergraben, doch SEIS machte die Enttäuschung mehr als wett. Die Mission endete im Dezember 2022, als sich so viel Staub auf den Solarpaneelen ablagerte, dass sie keinen Strom mehr lieferten.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Die erste Marsmission, die dem Inneren des Planeten galt",
+      "images": [
+        {
+          "src": "/images/missions/insight/01.webp",
+          "caption": "InSight während der Integration bei Lockheed Martin – dieselbe Lander-Plattform wie Phoenix, für die Geophysik umgewidmet."
+        },
+        {
+          "src": "/images/missions/insight/02.webp",
+          "caption": "Seismometer SEIS mit Wind- und Wärmeschild WTS, vom Roboterarm auf der Oberfläche abgesetzt – das erste Seismometer auf einem anderen Planeten."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "5. Mai 2018 – Atlas V von der Vandenberg Air Force Base",
+      "images": [
+        {
+          "src": "/images/missions/insight/03.webp",
+          "caption": "Atlas V 401 hebt vom Startkomplex SLC-3E in Vandenberg ab – der erste interplanetare Start von der Westküste der USA. Die MarCO-CubeSats flogen als Kommunikationsrelais mit."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Elysium Planitia – gelandet am 26. November 2018",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/insight/tier3-pan.jpg",
+          "caption": "Arbeitsbereich Homestead Hollow, Sol 14 – 290°-Panorama der Instrument Deployment Camera. SEIS steht unten links bereits auf dem Marsboden."
+        },
+        {
+          "src": "/images/fleet-galleries/insight/02.webp",
+          "caption": "Das erste Selfie-Komposit von InSight auf dem Mars – das Deck des Landers nach dem Absetzen von SEIS und HP³, Sol 110."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wissenschaft",
+      "subtitle": "1.319 Marsbeben – das Innere des Planeten, enthüllt",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/insight/03.webp",
+          "caption": "Seismogramm des Marsbebens der Magnitude 4,7 vom 4. Mai 2022 – das größte aufgezeichnete Ereignis, dessen Ursprung im Verwerfungssystem Cerberus Fossae lag."
+        },
+        {
+          "src": "/images/fleet-galleries/insight/04.webp",
+          "caption": "InSights letztes Selfie, Sol 1211 – die Solarpaneele sind von Staub überzogen. Letzte Übertragung am 15. Dezember 2022."
+        }
+      ]
+    }
+  ]
+}

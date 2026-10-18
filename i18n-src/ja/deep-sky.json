@@ -1,0 +1,400 @@
+{
+  "jwst-carina": {
+    "title": "コズミック・クリフス",
+    "caption": "カリーナ星雲（NGC 3324）の星形成領域の端。若い星によって削り出された。",
+    "subject": "星雲",
+    "type": "星形成領域",
+    "distance": "約7,600光年",
+    "taken": "2022年7月12日公開"
+  },
+  "jwst-southern-ring": {
+    "title": "南のリング星雲",
+    "caption": "垂死の星（NGC 3132）が、光年の半分の距離にわたってガスとダストの殻を放出している。",
+    "subject": "星雲",
+    "type": "惑星状星雲",
+    "distance": "約2,500光年",
+    "taken": "2022年7月12日公開"
+  },
+  "jwst-stephans": {
+    "title": "ステファンの五つ子銀河",
+    "caption": "5つの銀河が宇宙の舞踊に絡み合い、4つが潮汐力で互いに引き裂かれている。",
+    "subject": "銀河",
+    "type": "コンパクト銀河群",
+    "distance": "約2億9,000万光年",
+    "taken": "2022年7月12日公開"
+  },
+  "jwst-pillars": {
+    "title": "創造の柱",
+    "caption": "鷲星雲（M16）の冷たいガスとダストの塔。新生の星に内部から照らされている。",
+    "subject": "星雲",
+    "type": "輝線星雲／星形成領域（M16）",
+    "distance": "約6,500光年",
+    "taken": "2022年10月19日公開"
+  },
+  "jwst-tarantula": {
+    "title": "タランチュラ星雲",
+    "caption": "30 Doradus — わが銀河系近傍で最も活発なスターバースト領域。",
+    "subject": "星雲",
+    "type": "星形成領域（30 Dor）",
+    "distance": "約161,000光年",
+    "taken": "2022年9月6日公開"
+  },
+  "jwst-cartwheel": {
+    "title": "カートホイール・ギャラクシー",
+    "caption": "まれなリング銀河で、数億年前の正面衝突の余波がいまだに続いている。",
+    "subject": "銀河",
+    "type": "リング銀河",
+    "distance": "約5億光年",
+    "taken": "2022年8月2日公開"
+  },
+  "jwst-phantom": {
+    "title": "ファントム・ギャラクシー",
+    "caption": "M74 — 壮大な設計の渦巻銀河で、ガスと塵の骨組みが赤外線で露わになっている。",
+    "subject": "銀河",
+    "type": "渦巻銀河（M74）",
+    "distance": "約3,200万光年",
+    "taken": "2022年"
+  },
+  "hst-pillars": {
+    "title": "創造の柱",
+    "caption": "Hubble による象徴的な2014年の鷲星雲の塔の画像。",
+    "subject": "星雲",
+    "type": "放射星雲／星形成領域（M16）",
+    "distance": "約6,500光年",
+    "taken": "2014年"
+  },
+  "hst-mystic-mountain": {
+    "title": "ミスティック・マウンテン",
+    "caption": "カリーナ星雲にある3光年の柱で、Hubble の20周年記念画像。",
+    "subject": "星雲",
+    "type": "星形成ピラー",
+    "distance": "約7,500光年",
+    "taken": "2010年・Hubble 20周年"
+  },
+  "hst-butterfly": {
+    "title": "バタフライ星雲",
+    "caption": "NGC 6302 — 死にゆく星によって放出された、20,000°Cを超える温度に加熱されたガスの翼。",
+    "subject": "星雲",
+    "type": "惑星状星雲（NGC 6302）",
+    "distance": "約3,400光年",
+    "taken": "2009年"
+  },
+  "hst-antennae": {
+    "title": "アンテナ銀河",
+    "caption": "2つの銀河（NGC 4038/4039）が衝突し、数十億個の新しい星が誕生している。",
+    "subject": "銀河",
+    "type": "衝突銀河",
+    "distance": "約4,500万～6,500万光年",
+    "taken": "2006年"
+  },
+  "hst-bubble": {
+    "title": "バブル星雲",
+    "caption": "NGC 7635 — 巨大な星の激しい恒星風によって吹き飛ばされた、7光年の泡。",
+    "subject": "星雲",
+    "type": "放射状星雲（NGC 7635）",
+    "distance": "約7,100光年",
+    "taken": "2016年·Hubble 26周年"
+  },
+  "hst-westerlund2": {
+    "title": "Westerlund 2",
+    "caption": "Hubbleの25周年記念による、若い星の巨大な星団。",
+    "subject": "星団",
+    "type": "星団（Gum 29）",
+    "distance": "約20,000光年",
+    "taken": "2015年·Hubble 25周年"
+  },
+  "hst-cats-eye": {
+    "title": "猫の眼星雲",
+    "caption": "NGC 6543—これまでに観測された最も複雑な惑星状星雲の一つです。",
+    "subject": "星雲",
+    "type": "惑星状星雲（NGC 6543）",
+    "distance": "約3,300光年",
+    "taken": "2004年"
+  },
+  "hst-whirlpool": {
+    "title": "子持ち銀河",
+    "caption": "M51—紡錘状銀河の典型例で、新しく誕生した星によってピンク色に輝く腕を持っています。",
+    "subject": "銀河",
+    "type": "渦巻き銀河（M51）",
+    "distance": "約3,100万光年",
+    "taken": "2005年"
+  },
+  "hst-crab": {
+    "title": "かに星雲",
+    "caption": "M1—1054年に爆発したのが観測された星の破片です。",
+    "subject": "星雲",
+    "type": "超新星残骸（M1）",
+    "distance": "約6,500光年",
+    "taken": "2005年"
+  },
+  "hst-veil": {
+    "title": "ベール星雲",
+    "caption": "Cygnus Loop の一部—1万年後もなお膨張を続ける超新星爆発の衝撃波。",
+    "subject": "星雲",
+    "type": "超新星残骸 · Cygnus Loop",
+    "distance": "約2,400光年",
+    "taken": "2015年"
+  },
+  "hst-sombrero": {
+    "title": "ソンブレロ銀河",
+    "caption": "M104 — 暗い塵の輪に包まれた輝く白い核。",
+    "subject": "銀河",
+    "type": "渦巻銀河（M104）",
+    "distance": "約2,800万光年",
+    "taken": "2003年"
+  },
+  "hst-eskimo": {
+    "title": "エスキモー星雲",
+    "caption": "NGC 2392 — 10,000年前に放出したガスの殻に包まれた太陽のような星。",
+    "subject": "星雲",
+    "type": "惑星状星雲（NGC 2392）",
+    "distance": "約3,000光年",
+    "taken": "2000年"
+  },
+  "chandra-crab": {
+    "title": "カニ星雲（X線）",
+    "caption": "Chandra のX線観測による、カニ星雲のパルサーとそれが駆動する物質が環と噴流を形成する様子。",
+    "subject": "星雲",
+    "type": "超新星残骸 · X線（M1）",
+    "distance": "約6,500光年"
+  },
+  "chandra-tycho": {
+    "title": "ティコの超新星残骸",
+    "caption": "ティコ・ブラーエが1572年に爆発するのを観測した星のX線殻。",
+    "subject": "超新星",
+    "type": "超新星残骸 · X線（SN 1572）",
+    "distance": "約10,000光年"
+  },
+  "spitzer-helix": {
+    "title": "ヘリックス星雲（赤外線）",
+    "caption": "Spitzerが捉えた、700光年先の垂死の星の塵まみれの繭の赤外線像。",
+    "subject": "星雲",
+    "type": "惑星状星雲・赤外線",
+    "distance": "約700光年",
+    "taken": "2007年"
+  },
+  "euclid-perseus": {
+    "title": "ペルセウス銀河団",
+    "caption": "Euclidが銀河団内の1,000個の銀河と、その背後に散在する100,000個の銀河をさらに捉えた。",
+    "subject": "深宇宙領域",
+    "type": "銀河団",
+    "distance": "約2億4,000万光年",
+    "taken": "2023年11月7日公開"
+  },
+  "euclid-horsehead": {
+    "title": "馬頭星雲",
+    "caption": "Euclidによるオリオン座のOrionの象徴的な暗黒星雲のパノラマビュー。",
+    "subject": "星雲",
+    "type": "暗黒星雲（バーナード33）",
+    "distance": "約1,375光年",
+    "taken": "2023年11月7日公開"
+  },
+  "pale-blue-dot": {
+    "title": "ペイル・ブルー・ドット",
+    "caption": "Voyager 1が60億キロメートル先から撮影した、1つのピクセルとして映る地球。",
+    "subject": "太陽系",
+    "type": "1つのピクセルとして映る地球",
+    "distance": "約40.5 AU（60億km）",
+    "taken": "1990年2月14日"
+  },
+  "pluto-nh": {
+    "title": "冥王星",
+    "caption": "New Horizonsが撮影した冥王星と窒素氷の心臓の初の真正色接近画像。",
+    "subject": "太陽系",
+    "type": "準惑星",
+    "distance": "～34 AU（50億 km）",
+    "taken": "2015年7月14日"
+  },
+  "sun-sdo": {
+    "title": "太陽",
+    "caption": "Solar Dynamics Observatoryが捉えた我が星の極紫外線像。",
+    "subject": "太陽",
+    "type": "太陽・極紫外線",
+    "distance": "1 AU",
+    "taken": "2010年～現在"
+  },
+  "jwst-orion": {
+    "title": "オリオン大星雲",
+    "caption": "内側のオリオン大星雲 — 1,350光年離れた恒星の揺りかごで、Webb NIRCamで撮影。",
+    "subject": "星雲",
+    "type": "発光星雲（M42）",
+    "distance": "～1,350光年",
+    "taken": "2022年9月12日公開"
+  },
+  "jwst-ring": {
+    "title": "環状星雲",
+    "caption": "M57 — 太陽に似た恒星が人生の終わりを迎え、その外層が繊細な詳細で輝いている。",
+    "subject": "星雲",
+    "type": "惑星状星雲（M57）",
+    "distance": "～2,600光年",
+    "taken": "2023年8月21日公開"
+  },
+  "jwst-serpens": {
+    "title": "へび座星雲",
+    "caption": "形成中の恒星の巣で、結晶性のダストをSerpensの暗黒星雲に噴き出している。",
+    "subject": "星雲",
+    "type": "星生成領域",
+    "distance": "約1,300光年",
+    "taken": "2024年公開"
+  },
+  "hst-lagoon": {
+    "title": "ラグーン星雲",
+    "caption": "M8 — ガスと塵からなる恒星の産房で、Hubbleの28周年記念による。",
+    "subject": "星雲",
+    "type": "発光星雲（M8）",
+    "distance": "約4,000光年",
+    "taken": "2018年·Hubble 28周年"
+  },
+  "hst-orion": {
+    "title": "オリオン大星雲",
+    "caption": "M42 — 最も近い巨大な星生成領域のHubbleによる最高解像度モザイク。",
+    "subject": "星雲",
+    "type": "発光星雲（M42）",
+    "distance": "約1,344光年",
+    "taken": "2006年"
+  },
+  "hst-carina-pano": {
+    "title": "カリーナ星雲",
+    "caption": "銀河の最大級の星生成工場の一つをとらえた、幅50光年のパノラマ。",
+    "subject": "星雲",
+    "type": "星生成領域",
+    "distance": "約7,500光年",
+    "taken": "2007年·Hubble 17周年"
+  },
+  "jwst-casa": {
+    "title": "カシオペヤA",
+    "caption": "ウェッブ宇宙望遠鏡が赤外線でとらえた、銀河で最も若い超新星残骸。",
+    "subject": "超新星",
+    "type": "超新星残骸",
+    "distance": "約11,000光年",
+    "taken": "2023年公開"
+  },
+  "hst-cone-nebula": {
+    "title": "コーン星雲",
+    "caption": "遠い星形成領域にそびえる、7光年の冷たいガスの塔。",
+    "subject": "星雲",
+    "type": "輝線星雲",
+    "distance": "約2,700光年",
+    "taken": "2002年・ACS初光"
+  },
+  "hst-omega-centauri": {
+    "title": "オメガ・ケンタウリ",
+    "caption": "空で最も明るい球状星団—重力に束縛された数百万の星。",
+    "subject": "星団",
+    "type": "球状星団",
+    "distance": "約17,000光年",
+    "taken": "2009年"
+  },
+  "jwst-ngc1365": {
+    "title": "NGC 1365",
+    "caption": "巨大な棒渦巻銀河で、その棒がガスを飢えた超大質量ブラックホールへと流し込んでいる。",
+    "subject": "銀河",
+    "type": "棒渦巻銀河",
+    "distance": "約5,600万光年",
+    "taken": "2023年"
+  },
+  "hst-ngc602": {
+    "title": "NGC 602",
+    "caption": "小マゼラン雲の中で発光する空洞を掘る若い星団。",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "約200,000光年",
+    "taken": "2007年·Hubble 17周年"
+  },
+  "jwst-rho-ophiuchi": {
+    "title": "ロー・オフィウキ雲",
+    "caption": "地球にもっとも近い星形成領域が、若き太陽たちで燃え上がっている——ウェッブの1周年記念画像。",
+    "subject": "星雲",
+    "type": "星形成領域",
+    "distance": "約430光年",
+    "taken": "2023年7月12日公開"
+  },
+  "jwst-wr124": {
+    "title": "ウォルフ・ライエ124",
+    "caption": "質量の大きな稀有な星が、超新星爆発を起こすわずかな時間の間に外層を放出している。",
+    "subject": "恒星",
+    "type": "ウォルフ・ライエ星",
+    "distance": "約15,000光年",
+    "taken": "2023年3月14日公開"
+  },
+  "hst-cosmic-reef": {
+    "title": "宇宙礁",
+    "caption": "NGC 2014とNGC 2020 — 発光する水素の礁で、Hubbleの30周年記念による。",
+    "subject": "星雲",
+    "type": "輝線星雲",
+    "distance": "約163,000光年",
+    "taken": "2020年·Hubble 30周年"
+  },
+  "hst-hen2104": {
+    "title": "南のカニ星雲",
+    "caption": "死にゆく星とその伴星から放出された、ネストした砂時計形のガス。",
+    "subject": "星雲",
+    "type": "惑星状星雲",
+    "distance": "約7,000光年",
+    "taken": "2019年·Hubble 29周年"
+  },
+  "hst-monkey-head": {
+    "title": "モンキーヘッド星雲",
+    "caption": "NGC 2174 — 新生星からの放射によって彫刻された塵の柱。",
+    "subject": "星雲",
+    "type": "放射星雲",
+    "distance": "約6,400光年",
+    "taken": "2014年·Hubble 24周年"
+  },
+  "hst-andromeda": {
+    "title": "アンドロメダ銀河",
+    "caption": "最も近い大型銀河の隣人を捉えたHubbleによる最高解像度のパノラマ――1億個を超える星。",
+    "subject": "銀河",
+    "type": "渦巻銀河",
+    "distance": "約250万光年",
+    "taken": "2015年 · PHAT"
+  },
+  "hst-pinwheel": {
+    "title": "ピンホイール銀河",
+    "caption": "M101 — ピンク色の星形成領域が連なる腕を持つ、正面を向いた巨大な渦巻き銀河。",
+    "subject": "銀河",
+    "type": "渦巻銀河",
+    "distance": "約2,100万光年",
+    "taken": "2006年"
+  },
+  "hst-ngc1300": {
+    "title": "NGC 1300",
+    "caption": "その腕が20万光年のバーの周りに巻かれた、教科書的な棒渦巻銀河。",
+    "subject": "銀河",
+    "type": "棒渦巻銀河",
+    "distance": "約6,100万光年",
+    "taken": "2005年"
+  },
+  "jwst-ngc604": {
+    "title": "NGC 604",
+    "caption": "三角形銀河にある、200個以上の高温若星によって刻まれたガスと塵の空洞。",
+    "subject": "星雲",
+    "type": "星形成領域",
+    "distance": "約270万光年",
+    "taken": "2024年公開"
+  },
+  "jwst-ngc346": {
+    "title": "NGC 346",
+    "caption": "小マゼラン雲を照らす若星の輝く集団。",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "約20万光年",
+    "taken": "2023年公開"
+  },
+  "euclid-ic342": {
+    "title": "隠れた銀河",
+    "caption": "IC 342――銀河系の塵の背後に隠れた渦巻銀河が、Euclidによって明かされた。",
+    "subject": "銀河",
+    "type": "渦巻銀河",
+    "distance": "約1,100万光年",
+    "taken": "2024年公開"
+  },
+  "hst-v838": {
+    "title": "V838 Monocerotis",
+    "caption": "突然輝き出した星の周囲の塵を通じて外側へ波紋を広げる光エコー。",
+    "subject": "星雲",
+    "type": "光エコー",
+    "distance": "約2万光年",
+    "taken": "2004年"
+  }
+}

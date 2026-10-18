@@ -16,6 +16,8 @@
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
   import { getAudioProvenanceManifest } from '$lib/data';
+  import { get } from '$lib/data/core';
+  import { localizeOriginalWork, type OriginalWorkOverlay } from '$lib/original-work';
   import { ICON_SHOWCASE } from '$lib/components/icons';
 
   type Diagram = { title: string; file: string; cover: boolean };
@@ -49,8 +51,15 @@
   $effect(() => {
     void fetch(`${base}/data/original-work.json`)
       .then((r) => r.json())
-      .then((j: Manifest) => {
-        data = j;
+      .then(async (j: Manifest) => {
+        const loc = getLocale();
+        data =
+          loc === 'en-US'
+            ? j
+            : localizeOriginalWork(
+                j,
+                await get<OriginalWorkOverlay>(`i18n/${loc}/original-work.json`).catch(() => null),
+              );
       })
       .catch(() => {
         data = null;

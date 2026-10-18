@@ -1,0 +1,30 @@
+{
+  "name": "Ulysses",
+  "current_distance_label": "5,2 UA · missione conclusa 2009-06-30 (conduttori del propulsore congelati) — hardware in orbita eliocentrica polare",
+  "waypoints": [
+    {
+      "label": "Lancio (STS-41)"
+    },
+    null,
+    {
+      "label": "Sorvolo di Giove"
+    },
+    null,
+    {
+      "label": "Passaggio al polo sud"
+    },
+    {
+      "label": "Passaggio al polo nord"
+    },
+    null,
+    {
+      "label": "Polo sud #2"
+    },
+    {
+      "label": "Polo sud #3"
+    },
+    {
+      "label": "Fine della missione"
+    }
+  ]
+}

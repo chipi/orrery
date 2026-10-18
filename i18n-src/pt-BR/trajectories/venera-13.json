@@ -1,0 +1,14 @@
+{
+  "name": "Venera 13",
+  "current_distance_label": "0,74 UA · pousou em Vênus em 1º de março de 1982 (127 min de sobrevivência na superfície)",
+  "waypoints": [
+    {
+      "label": "Lançamento (Proton-K)"
+    },
+    null,
+    null,
+    {
+      "label": "Pouso na superfície de Vênus"
+    }
+  ]
+}

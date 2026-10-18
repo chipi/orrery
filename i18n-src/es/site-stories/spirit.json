@@ -1,0 +1,50 @@
+{
+  "intro": "Spirit aterrizó en el cráter Gusev el 4 de enero de 2004, tres semanas antes de que su gemelo Opportunity se posara en el lado opuesto de Marte. Diseñado para durar 90 soles, Spirit estuvo operativo durante 6 años y recorrió 7,7 km, hasta que sus ruedas quedaron atrapadas de forma permanente en suelo blando en «Troy». Convertido en un róver inmovilizado, siguió funcionando como plataforma científica estacionaria hasta que se perdió el contacto en marzo de 2010.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Róver alimentado por energía solar, gemelo de Opportunity",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/01.webp",
+          "caption": "Mars Exploration Rover durante su integración: 185 kg, 6 ruedas, la cámara de mástil Pancam y la herramienta de abrasión de rocas RAT."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Cráter Gusev: aterrizaje el 4 de enero de 2004",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/spirit/tier3-pan.jpg",
+          "caption": "Winter Haven en McMurdo, soles 814-980 (2006): panorámica de 360° de la Pancam. Las colinas Columbia, bautizadas en honor de la tripulación perdida del STS-107, dominan el horizonte."
+        },
+        {
+          "src": "/images/hotspots/mars/spirit/tier2-hirise.jpg",
+          "caption": "El lugar donde quedó atrapado Spirit, «Troy», captado por la cámara HiRISE de la MRO tras el atasco de las ruedas en mayo de 2009."
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/02.webp",
+          "caption": "Perforación de la roca Adirondack, sol 34: primer uso de la herramienta de abrasión de rocas en Marte."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciencia",
+      "subtitle": "Escalada a Husband Hill y hallazgo de sílice en Home Plate",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/03.webp",
+          "caption": "Suelo rico en sílice dejado al descubierto por la rueda delantera derecha averiada de Spirit en Home Plate: prueba de actividad hidrotermal pasada en el cráter Gusev."
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/04.webp",
+          "caption": "Puesta de sol sobre el cráter Gusev fotografiada por la Pancam, sol 489 (19 de mayo de 2005). Una de las icónicas imágenes del crepúsculo marciano de tonos azulados."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "intro": "Luna 21 s'est posée dans le cratère Le Monnier le 15 janvier 1973 et a déployé Lunokhod 2, successeur du tout premier rover lunaire au monde. Lunokhod 2 a parcouru 42,1 km en 4 mois, un record qui a tenu jusqu'à ce que l'Opportunity de la NASA le surpasse sur Mars en juillet 2014, 41 ans plus tard. Il a transmis 80 000 images de télévision et 86 panoramas avant qu'un amas de régolithe ne tombe sur le radiateur et ne fasse surchauffer le rover.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Lunokhod 2 : le record de distance sur les terres lunaires (42 km)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/01.webp",
+          "caption": "Lunokhod 2, une version améliorée de Lunokhod 1 : davantage de caméras, une commande de direction plus fine, un manipulateur sur le troisième axe, des panneaux solaires plus grands."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/02.webp",
+          "caption": "Le châssis de Lunokhod 2 en préparation pour l'expédition : huit moteurs de roue indépendants, chacun doté de sa propre boucle de régulation à retour de couple."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Le cratère Le Monnier : atterrissage le 15 janvier 1973",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/03.webp",
+          "caption": "Lunokhod 2 photographié par sa caméra panoramique : une longue ombre s'étire sur la surface lunaire."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/04.webp",
+          "caption": "Carte du parcours de 42,1 km : le rover a traversé des basaltes de mer lunaire, gravi des parois de cratères et inspecté des dizaines de roches au fil de quatre jours lunaires."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/05.webp",
+          "caption": "Position finale imagée par LRO en 2010 : Lunokhod 2 s'est immobilisé après que du régolithe provenant de la paroi abrupte d'un cratère a recouvert son panneau radiateur."
+        }
+      ]
+    }
+  ]
+}

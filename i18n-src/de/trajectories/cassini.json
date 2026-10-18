@@ -1,0 +1,33 @@
+{
+  "name": "Cassini-Huygens",
+  "current_distance_label": "9,5 AE · in Saturn-Umlaufbahn 2004–2017 — in Saturns Atmosphäre 2017-09-15 versenkt",
+  "waypoints": [
+    {
+      "label": "Start"
+    },
+    null,
+    {
+      "label": "Venus #1"
+    },
+    null,
+    {
+      "label": "Venus #2"
+    },
+    {
+      "label": "Erde"
+    },
+    null,
+    {
+      "label": "Jupiter"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Saturneintritt in die Umlaufbahn"
+    },
+    {
+      "label": "Grand Finale (heute)"
+    }
+  ]
+}

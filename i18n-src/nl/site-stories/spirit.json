@@ -1,0 +1,50 @@
+{
+  "intro": "Spirit landde op 4 januari 2004 in de Gusev-krater — drie weken voordat zijn tweelingbroer Opportunity aan de andere kant van Mars neerkwam. Spirit was ontworpen voor 90 sols, maar bleef 6 jaar in bedrijf en legde 7,7 km af, tot zijn wielen definitief vastliepen in los zand bij \"Troy\". Vanaf die gestrande rover ging hij door als stationair wetenschappelijk platform, tot het contact in maart 2010 verloren ging.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Rover op zonne-energie, tweelingbroer van Opportunity",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/01.webp",
+          "caption": "Mars Exploration Rover tijdens de integratie — 185 kg, 6 wielen, Pancam-mastcamera, RAT-gesteenteschuurgereedschap."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Gusev-krater — geland op 4 januari 2004",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/spirit/tier3-pan.jpg",
+          "caption": "Winter Haven bij McMurdo, sols 814-980 (2006) — Pancam-panorama van 360°. De Columbia Hills, vernoemd naar de omgekomen bemanning van STS-107, domineren de horizon."
+        },
+        {
+          "src": "/images/hotspots/mars/spirit/tier2-hirise.jpg",
+          "caption": "De plek Troy waar Spirit vastzat, vastgelegd door MRO HiRISE nadat de wielen in mei 2009 waren ingezakt."
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/02.webp",
+          "caption": "Boren in de rots Adirondack, sol 34 — de eerste keer dat het gesteenteschuurgereedschap op Mars werd gebruikt."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "De beklimming van Husband Hill en de ontdekking van silica bij Home Plate",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/03.webp",
+          "caption": "Silicarijke bodem, blootgelegd door Spirits kapotte rechtervoorwiel bij Home Plate — bewijs van vroegere hydrothermale activiteit in de Gusev-krater."
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/04.webp",
+          "caption": "Zonsondergang boven Gusev-krater, gefotografeerd door Pancam, sol 489 (19 mei 2005). Een van de iconische, blauwgetinte Marsavondbeelden."
+        }
+      ]
+    }
+  ]
+}

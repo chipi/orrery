@@ -1,0 +1,212 @@
+[
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-carina.title",
+    "old": "Cosmic Cliffs",
+    "new": "Космичке литице"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-southern-ring.title",
+    "old": "Southern Ring Nebula",
+    "new": "Јужна прстенаста маглина"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-stephans.title",
+    "old": "Stephan's Quintet",
+    "new": "Стефанов квинтет"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-pillars.title",
+    "old": "Pillars of Creation",
+    "new": "Стубови стварања"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-pillars.title",
+    "old": "Pillars of Creation",
+    "new": "Стубови стварања"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-cartwheel.title",
+    "old": "Cartwheel Galaxy",
+    "new": "Галаксија Точак"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-phantom.title",
+    "old": "Phantom Galaxy",
+    "new": "Галаксија Фантом"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-mystic-mountain.title",
+    "old": "Mystic Mountain",
+    "new": "Мистична планина"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-butterfly.title",
+    "old": "Butterfly Nebula",
+    "new": "Маглина Лептир"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-antennae.title",
+    "old": "Antennae Galaxies",
+    "new": "Галаксије Антене"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-bubble.title",
+    "old": "Bubble Nebula",
+    "new": "Маглина Мехур"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-cats-eye.title",
+    "old": "Cat's Eye Nebula",
+    "new": "Маглина Мачје око"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-veil.title",
+    "old": "Veil Nebula",
+    "new": "Маглина Вео"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "euclid-perseus.title",
+    "old": "Perseus Cluster",
+    "new": "Персејево јато"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-serpens.title",
+    "old": "Serpens Nebula",
+    "new": "Маглина у Змији"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-cone-nebula.title",
+    "old": "Cone Nebula",
+    "new": "Маглина Конус"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-monkey-head.title",
+    "old": "Monkey Head Nebula",
+    "new": "Маглина Мајмунска глава"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-pinwheel.title",
+    "old": "Pinwheel Galaxy",
+    "new": "Галаксија Вртешка"
+  },
+  {
+    "rel": "trajectories/new-horizons.json",
+    "at": "waypoints.1.label",
+    "old": "Asteroid APL",
+    "new": "Астероид APL"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-be542e537390.title",
+    "old": "Apollo 8 — Earthrise",
+    "new": "Apollo 8 — Излазак Земље"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/lrv-apollo_webp.title",
+    "old": "Lunar Roving Vehicle",
+    "new": "Лунарно возило"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/luna-16_webp.title",
+    "old": "Luna 16-class",
+    "new": "Класа Luna 16"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/_cover-porkchop_svg.title",
+    "old": "Porkchop",
+    "new": "Поркчоп дијаграм"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/porkchop_webp.title",
+    "old": "Porkchop",
+    "new": "Поркчоп дијаграм"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/au_webp.title",
+    "old": "AU",
+    "new": "Астрономска јединица"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-moon-apollo-lm-extended_webp.title",
+    "old": "Apollo LM (J-mission + LRV)",
+    "new": "Apollo LM (J-мисија + LRV)"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-moon-lunokhod_webp.title",
+    "old": "Lunokhod rover",
+    "new": "Lunokhod ровер"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-moon-chang-e-lander_webp.title",
+    "old": "Chang’e lander",
+    "new": "Chang’e лендер"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-moon-yutu_webp.title",
+    "old": "Yutu rover",
+    "new": "Yutu ровер"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-venus-venera_webp.title",
+    "old": "Venera / Vega lander",
+    "new": "Venera / Vega лендер"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-cruise-viking1_webp.title",
+    "old": "Viking orbiter + lander",
+    "new": "Viking орбитер + лендер"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "capsules./images/colophon/model-capsule-apollo-cm_webp.title",
+    "old": "Apollo Command Module",
+    "new": "Командни модул Apollo"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Physics Lab formula registry.where",
+    "old": "Physics Lab",
+    "new": "Лабораторија физике"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Physics Lab goals.where",
+    "old": "Physics Lab",
+    "new": "Лабораторија физике"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Physics Lab interface, in 14 languages.where",
+    "old": "Physics Lab",
+    "new": "Лабораторија физике"
+  }
+]

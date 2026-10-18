@@ -1,0 +1,400 @@
+{
+  "jwst-carina": {
+    "title": "Scogliere cosmiche",
+    "caption": "Il bordo di una nursery stellare nella Nebulosa Carina (NGC 3324), scolpito da stelle giovani.",
+    "subject": "Nebulosa",
+    "type": "Regione di formazione stellare",
+    "distance": "~7.600 anni luce",
+    "taken": "Pubblicato 12 lug 2022"
+  },
+  "jwst-southern-ring": {
+    "title": "Nebulosa dell'Anello Meridionale",
+    "caption": "Una stella morente (NGC 3132) che espelle gusci di gas e polvere per mezzo anno luce.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa planetaria",
+    "distance": "~2.500 anni luce",
+    "taken": "Pubblicato 12 lug 2022"
+  },
+  "jwst-stephans": {
+    "title": "Quintetto di Stephan",
+    "caption": "Cinque galassie bloccate in un ballo cosmico, quattro di loro strappate l'una dall'altra dalle maree.",
+    "subject": "Galassie",
+    "type": "Gruppo compatto di galassie",
+    "distance": "~290 milioni di anni luce",
+    "taken": "Pubblicato 12 lug 2022"
+  },
+  "jwst-pillars": {
+    "title": "Pilastri della Creazione",
+    "caption": "Torri di gas freddo e polvere nella Nebulosa Aquila (M16), illuminate dall'interno da stelle neonati.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa a emissione / regione di formazione stellare (M16)",
+    "distance": "~6.500 anni luce",
+    "taken": "Pubblicato 19 ott 2022"
+  },
+  "jwst-tarantula": {
+    "title": "Nebulosa Tarantola",
+    "caption": "30 Doradus — la regione di formazione stellare più attiva conosciuta nel nostro vicinato galattico.",
+    "subject": "Nebulosa",
+    "type": "Regione di formazione stellare (30 Dor)",
+    "distance": "~161.000 anni luce",
+    "taken": "Pubblicata il 6 set 2022"
+  },
+  "jwst-cartwheel": {
+    "title": "Galassia Cartwheel",
+    "caption": "Una rara galassia ad anello, ancora vibrante per una collisione frontale avvenuta centinaia di milioni di anni fa.",
+    "subject": "Galassie",
+    "type": "Galassia ad anello",
+    "distance": "~500 milioni di anni luce",
+    "taken": "Pubblicata il 2 ago 2022"
+  },
+  "jwst-phantom": {
+    "title": "Galassia Phantom",
+    "caption": "M74 — una spirale di grand-design, il suo scheletro di gas e polvere esposto nudo nell'infrarosso.",
+    "subject": "Galassie",
+    "type": "Galassia a spirale (M74)",
+    "distance": "~32 milioni di anni luce",
+    "taken": "2022"
+  },
+  "hst-pillars": {
+    "title": "Pilastri della Creazione",
+    "caption": "La visione iconica di Hubble del 2014 delle torri di gas che forma stelle nella Nebulosa dell'Aquila.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa a emissione / regione di formazione stellare (M16)",
+    "distance": "~6.500 anni luce",
+    "taken": "2014"
+  },
+  "hst-mystic-mountain": {
+    "title": "Montagna Mistica",
+    "caption": "Un pilastro di tre anni luce nella Nebulosa Carina, dall'anniversario ventesimo di Hubble.",
+    "subject": "Nebulosa",
+    "type": "Pilastro in formazione stellare",
+    "distance": "~7.500 anni luce",
+    "taken": "2010 · 20º anniversario dell'Hubble"
+  },
+  "hst-butterfly": {
+    "title": "Nebulosa Farfalla",
+    "caption": "NGC 6302 — ali di gas riscaldato oltre i 20.000 °C, espulse da una stella morente.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa planetaria (NGC 6302)",
+    "distance": "~3.400 anni luce",
+    "taken": "2009"
+  },
+  "hst-antennae": {
+    "title": "Galassie Antennae",
+    "caption": "Due galassie (NGC 4038/4039) in collisione, che innescano miliardi di nuove stelle.",
+    "subject": "Galassie",
+    "type": "Galassie in collisione",
+    "distance": "~45–65 milioni di anni luce",
+    "taken": "2006"
+  },
+  "hst-bubble": {
+    "title": "Nebulosa Bolla",
+    "caption": "NGC 7635 — una bolla di sette anni luce di diametro soffiata dal violento vento di una stella massiccia.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa a emissione (NGC 7635)",
+    "distance": "~7.100 anni luce",
+    "taken": "2016 · 26º anniversario dell'Hubble"
+  },
+  "hst-westerlund2": {
+    "title": "Westerlund 2",
+    "caption": "Un ammasso gigante di stelle giovani, dal 25º anniversario dell'Hubble.",
+    "subject": "Ammasso stellare",
+    "type": "Ammasso stellare (Gum 29)",
+    "distance": "~20.000 anni luce",
+    "taken": "2015 · 25º anniversario Hubble"
+  },
+  "hst-cats-eye": {
+    "title": "Nebulosa Occhio di Gatto",
+    "caption": "NGC 6543 — una delle nebulose planetarie più intricate mai osservate.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa planetaria (NGC 6543)",
+    "distance": "~3.300 anni luce",
+    "taken": "2004"
+  },
+  "hst-whirlpool": {
+    "title": "Galassia Vortice",
+    "caption": "M51 — una spirale da manuale, i bracci splendenti di rosa con stelle appena nate.",
+    "subject": "Galassie",
+    "type": "Galassia a spirale (M51)",
+    "distance": "~31 milioni di anni luce",
+    "taken": "2005"
+  },
+  "hst-crab": {
+    "title": "Nebulosa del Granchio",
+    "caption": "M1 — i resti frantumati di una stella il cui scoppio fu osservato nel 1054 d.C.",
+    "subject": "Nebulosa",
+    "type": "Resto di supernova (M1)",
+    "distance": "~6.500 anni luce",
+    "taken": "2005"
+  },
+  "hst-veil": {
+    "title": "Nebulosa del Velo",
+    "caption": "Una scia del Cygnus Loop — un'onda d'urto di supernova ancora in espansione dopo 10.000 anni.",
+    "subject": "Nebulosa",
+    "type": "Resto di supernova · Cygnus Loop",
+    "distance": "~2.400 anni luce",
+    "taken": "2015"
+  },
+  "hst-sombrero": {
+    "title": "Galassia Sombrero",
+    "caption": "M104 — un brillante nucleo bianco avvolto in un anello scuro di polvere.",
+    "subject": "Galassie",
+    "type": "Galassia a spirale (M104)",
+    "distance": "~28 milioni di anni luce",
+    "taken": "2003"
+  },
+  "hst-eskimo": {
+    "title": "Nebulosa Eskimo",
+    "caption": "NGC 2392 — una stella simile al Sole avvolta in gusci di gas che ha espulso 10.000 anni fa.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa planetaria (NGC 2392)",
+    "distance": "~3.000 anni luce",
+    "taken": "2000"
+  },
+  "chandra-crab": {
+    "title": "Nebulosa Granchio (raggi X)",
+    "caption": "Lo sguardo ai raggi X di Chandra sulla pulsar che alimenta la Nebulosa Granchio, scagliando la materia in anelli e getti.",
+    "subject": "Nebulosa",
+    "type": "Residuo di supernova · raggi X (M1)",
+    "distance": "~6.500 anni luce"
+  },
+  "chandra-tycho": {
+    "title": "Residuo di Supernova di Tycho",
+    "caption": "Il guscio ai raggi X di una stella che Tycho Brahe osservò esplodere nel 1572.",
+    "subject": "Supernova",
+    "type": "Residuo di supernova · raggi X (SN 1572)",
+    "distance": "~10.000 anni luce"
+  },
+  "spitzer-helix": {
+    "title": "Nebulosa Helix (infrarossi)",
+    "caption": "La visione infrarossa di Spitzer della polverosa crisalide di una stella morente, a 700 anni luce di distanza.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa planetaria · infrarosso",
+    "distance": "~700 anni luce",
+    "taken": "2007"
+  },
+  "euclid-perseus": {
+    "title": "Ammasso di Perseo",
+    "caption": "Euclid cattura 1.000 galassie nell'ammasso e 100.000 altre sparse dietro di esso.",
+    "subject": "Campo profondo",
+    "type": "Ammasso di galassie",
+    "distance": "~240 milioni di anni luce",
+    "taken": "Pubblicato 7 nov 2023"
+  },
+  "euclid-horsehead": {
+    "title": "Nebulosa Testa di Cavallo",
+    "caption": "La visione panoramica di Euclid dell'iconica nuvola scura in Orione.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa scura (Barnard 33)",
+    "distance": "~1.375 anni luce",
+    "taken": "Pubblicato 7 nov 2023"
+  },
+  "pale-blue-dot": {
+    "title": "Pale Blue Dot",
+    "caption": "La Terra come un singolo pixel, fotografata da Voyager 1 a sei miliardi di chilometri.",
+    "subject": "Sistema solare",
+    "type": "La Terra come un singolo pixel",
+    "distance": "~40,5 AU (6 miliardi di km)",
+    "taken": "14 feb 1990"
+  },
+  "pluto-nh": {
+    "title": "Plutone",
+    "caption": "Il primo primo piano a colori veri di Plutone e il suo cuore di ghiaccio di azoto di New Horizons.",
+    "subject": "Sistema solare",
+    "type": "Pianeta nano",
+    "distance": "~34 AU (5 miliardi di km)",
+    "taken": "14 lug 2015"
+  },
+  "sun-sdo": {
+    "title": "Il Sole",
+    "caption": "La vista del Solar Dynamics Observatory della nostra stella nell'ultravioletto estremo.",
+    "subject": "Il Sole",
+    "type": "Il Sole · ultravioletto estremo",
+    "distance": "1 AU",
+    "taken": "2010–presente"
+  },
+  "jwst-orion": {
+    "title": "Nebulosa di Orione",
+    "caption": "La nebulosa interna di Orione — una culla stellare a 1.350 anni luce di distanza, nel NIRCam di Webb.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa a emissione (M42)",
+    "distance": "~1.350 anni luce",
+    "taken": "Pubblicata il 12 set 2022"
+  },
+  "jwst-ring": {
+    "title": "Nebulosa Anello",
+    "caption": "M57 — una stella simile al Sole alla fine della sua vita, i suoi strati esterni che brillano in dettagli delicati.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa planetaria (M57)",
+    "distance": "~2.600 anni luce",
+    "taken": "Pubblicata il 21 ago 2023"
+  },
+  "jwst-serpens": {
+    "title": "Nebulosa del Serpente",
+    "caption": "Un nido di stelle in formazione, che spargono polvere cristallina in una nuvola scura nel Serpente.",
+    "subject": "Nebulosa",
+    "type": "Regione di formazione stellare",
+    "distance": "~1.300 anni luce",
+    "taken": "Pubblicato 2024"
+  },
+  "hst-lagoon": {
+    "title": "Nebulosa Lagoon",
+    "caption": "M8 — una nursery stellare di gas e polvere, dal 28º anniversario di Hubble.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa a emissione (M8)",
+    "distance": "~4.000 anni luce",
+    "taken": "2018 · 28º anniversario di Hubble"
+  },
+  "hst-orion": {
+    "title": "Nebulosa di Orione",
+    "caption": "M42 — il mosaico più nitido di Hubble della regione di formazione stellare massiccia più vicina.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa a emissione (M42)",
+    "distance": "~1.344 anni luce",
+    "taken": "2006"
+  },
+  "hst-carina-pano": {
+    "title": "Nebulosa Carina",
+    "caption": "Un panorama largo 50 anni luce di una delle più grandi fabbriche di stelle della galassia.",
+    "subject": "Nebulosa",
+    "type": "Regione di formazione stellare",
+    "distance": "~7.500 anni luce",
+    "taken": "2007 · 17º anniversario di Hubble"
+  },
+  "jwst-casa": {
+    "title": "Cassiopeia A",
+    "caption": "Lo sguardo infrarosso di Webb sul più giovane residuo di supernova conosciuto nella galassia.",
+    "subject": "Supernova",
+    "type": "Residuo di supernova",
+    "distance": "~11.000 anni luce",
+    "taken": "Rilasciato nel 2023"
+  },
+  "hst-cone-nebula": {
+    "title": "Nebulosa Cono",
+    "caption": "Una torre di gas freddo alta sette anni luce in una lontana nursery stellare.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa a emissione",
+    "distance": "~2.700 anni luce",
+    "taken": "2002 · First light dell'ACS"
+  },
+  "hst-omega-centauri": {
+    "title": "Omega Centauri",
+    "caption": "L'ammasso globulare più luminoso del cielo — milioni di stelle legate dalla gravità.",
+    "subject": "Ammasso",
+    "type": "Ammasso globulare",
+    "distance": "~17.000 anni luce",
+    "taken": "2009"
+  },
+  "jwst-ngc1365": {
+    "title": "NGC 1365",
+    "caption": "Una gigantesca spirale barrata il cui bar canalizza il gas verso un buco nero affamato.",
+    "subject": "Galassia",
+    "type": "Galassia spirale barrata",
+    "distance": "~56 milioni di anni luce",
+    "taken": "2023"
+  },
+  "hst-ngc602": {
+    "title": "NGC 602",
+    "caption": "Un giovane ammasso stellare che scava una cavità luminosa nella Piccola Nube di Magellano.",
+    "subject": "Ammasso",
+    "type": "Ammasso stellare",
+    "distance": "~200.000 anni luce",
+    "taken": "2007 · 17° anno di Hubble"
+  },
+  "jwst-rho-ophiuchi": {
+    "title": "Nube di Rho Ophiuchi",
+    "caption": "La regione di formazione stellare più vicina alla Terra, illuminata da giovani soli — immagine dell'anniversario di Webb.",
+    "subject": "Nebulosa",
+    "type": "Regione di formazione stellare",
+    "distance": "~430 anni luce",
+    "taken": "Pubblicata il 12 lug 2023"
+  },
+  "jwst-wr124": {
+    "title": "Wolf–Rayet 124",
+    "caption": "Una stella massiccia e rara che getta i suoi strati esterni nei momenti precedenti la sua esplosione in supernova.",
+    "subject": "Stella",
+    "type": "Stella Wolf–Rayet",
+    "distance": "~15.000 anni luce",
+    "taken": "Pubblicata il 14 mar 2023"
+  },
+  "hst-cosmic-reef": {
+    "title": "La Barriera Cosmica",
+    "caption": "NGC 2014 e NGC 2020 — una barriera di idrogeno brillante, dal 30º anniversario di Hubble.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa a emissione",
+    "distance": "~163.000 anni luce",
+    "taken": "2020 · 30º anno di Hubble"
+  },
+  "hst-hen2104": {
+    "title": "Nebulosa del Granchio Australe",
+    "caption": "Clessidre annidate di gas espulso da una stella morente e dalla sua compagna.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa planetaria",
+    "distance": "~7.000 anni luce",
+    "taken": "2019 · 29º anno di Hubble"
+  },
+  "hst-monkey-head": {
+    "title": "Nebulosa Testa di Scimmia",
+    "caption": "NGC 2174 — pilastri di polvere scolpiti dalla radiazione di stelle appena nate.",
+    "subject": "Nebulosa",
+    "type": "Nebulosa di emissione",
+    "distance": "~6.400 anni luce",
+    "taken": "2014 · Hubble 24°"
+  },
+  "hst-andromeda": {
+    "title": "Galassia di Andromeda",
+    "caption": "Il panorama Hubble più nitido di sempre della nostra più vicina grande vicina — oltre 100 milioni di stelle.",
+    "subject": "Galassia",
+    "type": "Galassia a spirale",
+    "distance": "~2,5 milioni di anni luce",
+    "taken": "2015 · PHAT"
+  },
+  "hst-pinwheel": {
+    "title": "Galassia Mulinello",
+    "caption": "M101 — una gigantesca spirale vista di fronte, i suoi bracci costellati di regioni rosa di formazione stellare.",
+    "subject": "Galassia",
+    "type": "Galassia a spirale",
+    "distance": "~21 milioni di anni luce",
+    "taken": "2006"
+  },
+  "hst-ngc1300": {
+    "title": "NGC 1300",
+    "caption": "Una galassia a spirale barrata da manuale, i suoi bracci avvolti attorno a una barra di 200.000 anni luce.",
+    "subject": "Galassia",
+    "type": "Galassia a spirale barrata",
+    "distance": "~61 milioni di anni luce",
+    "taken": "2005"
+  },
+  "jwst-ngc604": {
+    "title": "NGC 604",
+    "caption": "Una caverna di gas e polvere nella Galassia del Triangolo, scavata da più di 200 giovani stelle incandescenti.",
+    "subject": "Nebulosa",
+    "type": "Regione di formazione stellare",
+    "distance": "~2,7 milioni di anni luce",
+    "taken": "Pubblicato 2024"
+  },
+  "jwst-ngc346": {
+    "title": "NGC 346",
+    "caption": "Un brillante agglomerato di giovani stelle che illuminano la Piccola Nube di Magellano.",
+    "subject": "Ammasso",
+    "type": "Ammasso stellare",
+    "distance": "~200.000 anni luce",
+    "taken": "Pubblicato 2023"
+  },
+  "euclid-ic342": {
+    "title": "La Galassia Nascosta",
+    "caption": "IC 342 — una spirale celata dietro la polvere della Via Lattea, rivelata da Euclid.",
+    "subject": "Galassia",
+    "type": "Galassia spirale",
+    "distance": "~11 milioni di anni luce",
+    "taken": "Pubblicato 2024"
+  },
+  "hst-v838": {
+    "title": "V838 Monocerotis",
+    "caption": "Un'eco luminosa che increspa verso l'esterno attraverso la polvere attorno a una stella che ha improvvisamente brillato.",
+    "subject": "Nebulosa",
+    "type": "Eco luminosa",
+    "distance": "~20.000 anni luce",
+    "taken": "2004"
+  }
+}

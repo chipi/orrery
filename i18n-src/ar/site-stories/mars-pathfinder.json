@@ -1,0 +1,50 @@
+{
+  "intro": "هبطت المركبة Mars Pathfinder في أريس فاليس في 4 يوليو 1997، في أول مهمة أمريكية إلى المريخ منذ مهمتي Viking قبل 21 عامًا. فقد نشرت المركبة الهابطة المركبة Sojourner، أولى العجلات التي دارت على سطح المريخ، لتُثبت نجاح الهبوط بالوسائد الهوائية إلى جانب التجوال على السطح، ضمن مهمة منخفضة الكلفة بلغت 265 مليون دولار، جاءت وفق شعار «أسرع وأفضل وأرخص»، وأعادت نحو 16,500 صورة. ورسمت رحلة Sojourner التي بلغ طولها 100 متر خريطةً لاثنتي عشرة صخرة سُمّيت بأسماء شخصيات كرتونية (Yogi وBarnacle Bill وScooby Doo) قبل أن تفنى المركبة الهابطة.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "المعدّات",
+      "subtitle": "أول مركبة جوّالة على المريخ، وأول مركبة أمريكية تهبط على المريخ منذ Viking",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/01.webp",
+          "caption": "المركبة Pathfinder أثناء الاختبارات قبل الإطلاق: المحطة القاعدية ومنحدرات البتلات التي تنزل عليها Sojourner."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/02.webp",
+          "caption": "المركبة الجوّالة الصغيرة Sojourner: وزنها 11.5 كغ، ولها 6 عجلات، وتعمل بالطاقة الشمسية، وصُمّمت للعمل 7 أيام مريخية (واستمرت 83)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "الإطلاق",
+      "subtitle": "4 ديسمبر 1996: صاروخ Delta II من رأس كانافيرال",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/03.webp",
+          "caption": "الصاروخ Delta II 7925 يُطلق Pathfinder في رحلتها إلى المريخ التي استغرقت 7 أشهر."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "السطح",
+      "subtitle": "أريس فاليس: الهبوط في 4 يوليو 1997",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg",
+          "caption": "Improved Presidential Panorama: منظر بانورامي ملوّن بزاوية 360° لأريس فاليس. ويظهر Twin Peaks عند الأفق (سُمّي تيمّنًا بالمسلسل التلفزيوني)."
+        },
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg",
+          "caption": "المركبة الهابطة Pathfinder مصوّرةً من المدار بعد عقود بواسطة كاميرا HiRISE على المركبة MRO: تظهر البتلات وآخر موقع معروف لـ Sojourner."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/04.webp",
+          "caption": "Sojourner تفحص صخرة Yogi: أول تحليل كيميائي عن قرب لتضاريس مريخية."
+        }
+      ]
+    }
+  ]
+}

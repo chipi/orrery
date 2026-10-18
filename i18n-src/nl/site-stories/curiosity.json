@@ -1,0 +1,76 @@
+{
+  "intro": "NASA's Curiosity-rover werd op 26 november 2011 gelanceerd op een Atlas V vanaf Cape Canaveral. Na 254 dagen vlucht bracht Mars Science Laboratory de 899 kg zware, nucleair aangedreven rover op 6 augustus 2012 naar Gale-krater, via de inmiddels beroemde sky-crane-landing. Ruim tien jaar later klimt Curiosity nog altijd op Mount Sharp en boort de rover in gesteenten die een geschiedenis bewaren van het eens bewoonbare verleden van Mars.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Een rover bouwen voor Gale-krater",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/01.webp",
+          "caption": "Mars Science Laboratory gemonteerd bij JPL — Curiosity, descent stage, backshell en hitteschild op elkaar gestapeld voor verzending naar Florida."
+        },
+        {
+          "src": "/images/missions/curiosity/02.webp",
+          "caption": "De nucleaire MMRTG-energiebron (oranje schijf, rechtsonder) levert continu ~110 W gedurende ≥14 jaar — geen zonnepanelen, geen winterse uitschakelperiodes."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "26 november 2011 — Atlas V vanaf Cape Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/03.webp",
+          "caption": "Een Atlas V 541 stijgt op vanaf SLC-41 met Mars Science Laboratory + Curiosity. 10:02 uur EST, 26 november 2011."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Gale-krater — geland op 6 augustus 2012",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
+          "caption": "Panorama van Mont Mercou, sol 3070 (maart 2021). Een Mastcam-Z-opname van 360° met de rover, de gelaagde kliffen van Mt Mercou en Mount Sharp aan de horizon."
+        },
+        {
+          "src": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
+          "caption": "HiRISE-overzichtsbeeld van de route van Curiosity, vastgelegd door de Mars Reconnaissance Orbiter met 25 cm per pixel."
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/01.webp",
+          "caption": "Zelfportret bij de boorlocatie \"Big Sky\", sol 1126 — samengesteld uit tientallen MAHLI-close-ups, aaneengevoegd tot één beeld."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "Bewijs voor een oud, bewoonbaar Mars",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/02.webp",
+          "caption": "Boorgat bij Yellowknife Bay — het eerste monster uit de voormalige meerbodemomgeving van Mars, januari 2013."
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/03.webp",
+          "caption": "Sedimentaire gesteenten bij Vera Rubin Ridge — gebande ijzerformaties + kleimineralen wijzen op oeroud vloeibaar water en een bewoonbare chemische omgeving."
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "title": "Mensen",
+      "subtitle": "Ingenieurs + wetenschappers achter Curiosity",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/04.webp",
+          "caption": "De JPL-missiecontrole viert de sky-crane-landing van de zeven minuten van terreur, 5/6 augustus 2012 — Adam Steltzner en zijn team na de eerste signalen vanuit Gale-krater."
+        }
+      ]
+    }
+  ]
+}

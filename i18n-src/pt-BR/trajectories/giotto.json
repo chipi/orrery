@@ -1,0 +1,22 @@
+{
+  "name": "Giotto",
+  "current_distance_label": "1,04 UA · em órbita heliocêntrica desde o sobrevoo de Grigg-Skjellerup em 10/07/1992",
+  "waypoints": [
+    {
+      "label": "Lançamento (Ariane 1)"
+    },
+    null,
+    {
+      "label": "Sobrevoo de Halley"
+    },
+    null,
+    {
+      "label": "Terra #1"
+    },
+    null,
+    {
+      "label": "Grigg-Skjellerup"
+    },
+    null
+  ]
+}

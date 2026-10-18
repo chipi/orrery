@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-launcher-generic_webp.what",
+    "old": "类似 Falcon-9 的两级箭体——按机构选用的备用轮廓。",
+    "new": "类似 Falcon-9 的两级箭体——按机构选用的备用轮廓。"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "euclid-horsehead.caption",
+    "old": "Euclid's panoramic view of the iconic dark cloud in Orion.",
+    "new": "Euclid 拍摄的猎户座（Orion）中那片标志性暗云的全景图。"
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "name": "Voyager 1",
+  "current_distance_label": "172 AU · ~23,8 ore luce dal Sole",
+  "interstellar_since_label": "Attraversato l'eliopausa nell'agosto 2012 — primo oggetto costruito dall'uomo nello spazio interstellare",
+  "waypoints": [
+    {
+      "label": "Lancio"
+    },
+    null,
+    null,
+    {
+      "label": "Giove"
+    },
+    null,
+    null,
+    {
+      "label": "Saturno + Titano"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Pale Blue Dot"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Eliopausa"
+    },
+    null,
+    null,
+    {
+      "label": "Oggi"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Voyager 2",
+  "current_distance_label": "143 AU · सूर्य से ~19.8 प्रकाश-घंटे",
+  "interstellar_since_label": "नवंबर 2018 में हेलिओपॉज पार किया",
+  "waypoints": [
+    {
+      "label": "प्रक्षेपण"
+    },
+    null,
+    null,
+    {
+      "label": "बृहस्पति"
+    },
+    null,
+    null,
+    {
+      "label": "शनि"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "अरुण"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "वरुण"
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "हेलिओपॉज"
+    },
+    null,
+    {
+      "label": "आज"
+    }
+  ]
+}

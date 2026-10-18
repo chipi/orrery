@@ -1,0 +1,37 @@
+{
+  "name": "Galileo",
+  "current_distance_label": "5.4 AU · 2003年9月21日に木星に廃棄（エウロパ保護）",
+  "waypoints": [
+    {
+      "label": "打上げ（STS-34）"
+    },
+    null,
+    {
+      "label": "金星"
+    },
+    null,
+    {
+      "label": "地球 #1"
+    },
+    null,
+    {
+      "label": "ガスプラ"
+    },
+    null,
+    {
+      "label": "地球 #2"
+    },
+    null,
+    {
+      "label": "イダ + ダクティル"
+    },
+    null,
+    null,
+    {
+      "label": "木星軌道投入"
+    },
+    {
+      "label": "木星に廃棄"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "intro": "El Apollo 12 alunizó en Oceanus Procellarum el 19 de noviembre de 1969, en un aterrizaje de precisión a una distancia que se podía recorrer a pie del módulo de aterrizaje robótico Surveyor 3, posado dos años y medio antes. Conrad y Bean pasaron 31 h en la superficie a lo largo de dos EVA y trajeron de vuelta 34 kg de muestras, además de piezas del Surveyor 3 para su análisis. Demostró que el Apollo con tripulación podía alcanzar un objetivo concreto de la superficie lunar.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipo",
+      "subtitle": "Yankee Clipper + Intrepid",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/01.webp",
+          "caption": "Retrato de la tripulación del Apollo 12: Pete Conrad (CDR), Dick Gordon (CMP) y Al Bean (LMP)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "14 de noviembre de 1969: alcanzado por dos rayos en el primer minuto",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/02.webp",
+          "caption": "El Saturn V SA-507 despega a través de un chubasco. Los rayos golpearon el vehículo en T+36 s y T+52 s y dejaron sin energía las pilas de combustible; la orden SCE a AUX salvó la misión."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Oceanus Procellarum: alunizaje el 19 de noviembre de 1969",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/03.webp",
+          "caption": "Conrad junto al módulo de aterrizaje Surveyor 3. El Apollo 12 alunizó a 163 m de distancia, el primer alunizaje de precisión."
+        },
+        {
+          "src": "/images/missions/apollo12/04.webp",
+          "caption": "Estación científica ALSEP desplegada: el primer observatorio geofísico lunar de larga duración."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo12/tier3-pan.jpg",
+          "caption": "Panorámica del lugar de alunizaje del Apollo 12: etapa de descenso del Intrepid, ALSEP y Surveyor 3 dentro del encuadre."
+        }
+      ]
+    }
+  ]
+}

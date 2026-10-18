@@ -1,0 +1,53 @@
+{
+  "intro": "Chang'e 6 s'est posée dans le bassin du pôle Sud-Aitken le 1er juin 2024 — première mission de retour d'échantillons depuis la face cachée de la Lune, au cœur de la structure d'impact la plus profonde, la plus ancienne et la plus vaste du Système solaire interne. Elle a rapporté sur Terre, le 25 juin 2024, 1 935 g de matériaux de la face cachée — des échantillons susceptibles de contenir des fragments du manteau lunaire issus de l'impact vieux de 4,2 milliards d'années qui a creusé le bassin.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Matériel",
+      "subtitle": "Chang'e 5 repensée pour le retour d'échantillons depuis la face cachée",
+      "images": [
+        {
+          "src": "/images/missions/change6/01.webp",
+          "caption": "Ensemble Chang'e 6 — ajout du relais Queqiao-2 pour les communications avec la face cachée, mais architecture héritée pour l'essentiel de Chang'e 5."
+        },
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "Charges utiles internationales — détecteur NILS de l'ESA, détecteur de radon français DORN, rétroréflecteur italien INRRI, nanosatellite pakistanais ICUBE-Q."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancement",
+      "subtitle": "3 mai 2024 — Long March 5 depuis Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/change6/03.webp",
+          "caption": "Long March 5 lance Chang'e 6 — un aller-retour de 28 jours vers la face cachée de la Lune, dont 14 jours d'attente pour obtenir la bonne fenêtre de communication par relais."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Cratère Apollo (dans le bassin du pôle Sud-Aitken) — alunissage le 1er juin 2024",
+      "images": [
+        {
+          "src": "/images/missions/change6/04.webp",
+          "caption": "Le lander Chang'e 6 sur la face cachée — un retour d'échantillons sans rover, depuis un site fixe, immortalisé par un minirover déployé."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "La science",
+      "subtitle": "1 935 g de matériaux du bassin du pôle Sud-Aitken",
+      "images": [
+        {
+          "src": "/images/missions/change6/05.webp",
+          "caption": "Capsule de retour d'échantillons sur la prairie de Mongolie-Intérieure, 25 juin 2024 — les tout premiers échantillons de la face cachée de la Lune jamais parvenus sur Terre."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Galileo",
+  "current_distance_label": "5.4 AU · disposed into Jupiter 2003-09-21 (Europa protection)",
+  "waypoints": [
+    {
+      "label": "Launch (STS-34)"
+    },
+    null,
+    {
+      "label": "Venus"
+    },
+    null,
+    {
+      "label": "Earth #1"
+    },
+    null,
+    {
+      "label": "Gaspra"
+    },
+    null,
+    {
+      "label": "Earth #2"
+    },
+    null,
+    {
+      "label": "Ida + Dactyl"
+    },
+    null,
+    null,
+    {
+      "label": "Jupiter orbit insertion"
+    },
+    {
+      "label": "Disposed into Jupiter"
+    }
+  ]
+}

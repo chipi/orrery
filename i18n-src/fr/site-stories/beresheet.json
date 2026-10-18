@@ -1,0 +1,46 @@
+{
+  "intro": "Beresheet — « Au commencement » en hébreu — fut la première tentative d'alunissage d'Israël, conçue par SpaceIL, une structure privée, avec un budget de 100 millions de dollars à peine. La sonde a été lancée le 22 février 2019, s'est placée en orbite lunaire le 4 avril, puis s'est écrasée dans la mer de la Sérénité le 11 avril 2019, après la réinitialisation de l'IMU et de l'ordinateur de bord pendant la descente. Son épave transportait une capsule témoin remplie de tardigrades. Israël est devenu la septième nation à atteindre la Lune, ne serait-ce que par l'impact.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Le plus petit atterrisseur interplanétaire jamais tenté jusqu'alors — 585 kg",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/01.webp",
+          "caption": "La sonde Beresheet lors de l'intégration avant le lancement — conçue par SpaceIL avec Israel Aerospace Industries, il s'agissait de la première tentative d'alunissage financée par des fonds privés."
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/02.webp",
+          "caption": "Charge utile « capsule témoin » — souvenirs israéliens + 30 millions de pages du savoir humain gravées sur des plaques de nickel + (non sans polémique) des tardigrades, les micro-animaux les plus résistants au monde."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Le lancement",
+      "subtitle": "22 février 2019 — Falcon 9 depuis Cap Canaveral (lancement partagé)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/03.webp",
+          "caption": "Falcon 9 lance Beresheet en lancement partagé avec le satellite de communications PSN-6 — un transit de 6 semaines, en plusieurs boucles, jusqu'à l'orbite lunaire."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Mer de la Sérénité — impact le 11 avril 2019",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/04.webp",
+          "caption": "Dernier selfie envoyé par Beresheet pendant la descente propulsée — la plaque « Small country, big dreams » est visible. La communication a été perdue à environ 150 m d'altitude."
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/05.webp",
+          "caption": "Site d'impact photographié par le LRO de la NASA — halo clair dû au bouleversement du régolithe. Certains tardigrades ont peut-être survécu intacts à l'impact."
+        }
+      ]
+    }
+  ]
+}

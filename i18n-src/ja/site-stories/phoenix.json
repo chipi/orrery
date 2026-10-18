@@ -1,0 +1,50 @@
+{
+  "intro": "Phoenix は2008年5月25日、北緯68.22°に着陸した。火星の高緯度北極圏に降り立った、NASA初のランダーである。数日のうちに火星の水氷の最初の試料をすくい取り、それがカメラの視野の中で昇華していく様子を見届けた。ランダーは157ソルにわたって稼働したが、極地の冬に力尽きた。CO₂の霜が太陽電池パネルを覆い尽くし、ミッションは終わりを迎えた。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "中止された Mars Surveyor 2001 ランダーから再構成された機体",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/01.webp",
+          "caption": "出荷前の Phoenix ランダー。重量350 kg、ロボットアーム、氷用スコップ、TEGA 湿式化学分析装置を備える。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "ボレアリス荒野 — 2008年5月25日着陸",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/phoenix/tier3-pan.jpg",
+          "caption": "Phoenix 着陸地点の360°パノラマ(ソル14)。右下に、作業領域、フットパッド、そしてスラスターの噴射で表土が吹き払われて露出した氷が見える。"
+        },
+        {
+          "src": "/images/hotspots/mars/phoenix/tier2-hirise.jpg",
+          "caption": "Phoenix ランダー、パラシュート、バックシェル。いずれも着陸後に MRO の HiRISE が撮影した。"
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/02.webp",
+          "caption": "ロボットアームが「Snow White」トレンチを掘削する様子。地表の数センチ下から明るい水氷が現れ、その後4ソルをかけて昇華していくのが観測された。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "水、過塩素酸塩、そして初めての火星の気象",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/03.webp",
+          "caption": "火星の土壌における過塩素酸塩の検出。この化学的発見は、その後のあらゆる火星の居住可能性をめぐる議論を方向づけることになった。"
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/04.webp",
+          "caption": "ミッション後期における Phoenix 着陸地点上空の降雪のライダー・プロファイル。火星の降水が直接観測されたのは、これが初めてである。"
+        }
+      ]
+    }
+  ]
+}

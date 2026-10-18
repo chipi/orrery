@@ -1,0 +1,46 @@
+{
+  "intro": "Chang'e 4 landde op 3 januari 2019 in de krater Von Kármán — de eerste zachte landing op de achterzijde van de Maan, waar de Aarde nooit zichtbaar is. De communicatie liep via de satelliet Queqiao, die op L2 geparkeerd staat. Chang'e 4 zette de rover Yutu-2 uit, die ruim 1,5 km heeft afgelegd en in 2026 nog altijd actief is: de langst actieve missie op het maanoppervlak ooit. In het Zuidpool-Aitken-bekken vond de lander ongerept mantelmateriaal.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Eerste maanlander op de achterzijde van de Maan + relaissatelliet op L2 (Queqiao)",
+      "images": [
+        {
+          "src": "/images/missions/change4/01.webp",
+          "caption": "De lander Chang'e 4 + de rover Yutu-2 tijdens de integratie vóór de lancering in Beijing."
+        },
+        {
+          "src": "/images/missions/change4/02.webp",
+          "caption": "De relaissatelliet Queqiao op L2 — zonder hem zou Chang'e 4 geen contact met de Aarde hebben. China bouwde communicatie-infrastructuur voor de Maan voordat het naar de achterzijde ging."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Krater Von Kármán, achterzijde — geland op 3 januari 2019",
+      "images": [
+        {
+          "src": "/images/missions/change4/03.webp",
+          "caption": "De rover Yutu-2, gefotografeerd door de lander Chang'e 4 — de eerste wielen op de achterzijde van de Maan."
+        },
+        {
+          "src": "/images/missions/change4/04.webp",
+          "caption": "Yutu-2 onderzoekt een glazig bolletje op het oppervlak — waarschijnlijk een fragment van inslagsmelt van een verre kratervormende inslag."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "Mantelmateriaal in het Zuidpool-Aitken-bekken",
+      "images": [
+        {
+          "src": "/images/missions/change4/05.webp",
+          "caption": "VNIS-spectra toonden olivijn + calciumarm pyroxeen — mineralen uit de maanmantel, blootgelegd door de inslag die het SPA-bekken vormde, ~4,2 miljard jaar geleden."
+        }
+      ]
+    }
+  ]
+}

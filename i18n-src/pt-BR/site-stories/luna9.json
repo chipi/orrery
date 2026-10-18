@@ -1,0 +1,46 @@
+{
+  "intro": "A Luna 9 pousou em Oceanus Procellarum em 3 de fevereiro de 1966 — o primeiro pouso suave em outro mundo. A cápsula esférica de 99 kg sobreviveu a um impacto de 22 km/h graças a almofadas infláveis e, em seguida, abriu pétalas para se endireitar e transmitiu as primeiras fotografias da superfície lunar. Operou por 3 dias, até a exaustão das baterias.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Cápsula soviética E-6, pioneira do pouso suave",
+      "images": [
+        {
+          "src": "/images/missions/luna9/01.webp",
+          "caption": "Maquete da cápsula da Luna 9 — 99 kg, esférica, com câmera protegida por airbag e quatro antenas em pétala."
+        },
+        {
+          "src": "/images/missions/luna9/02.webp",
+          "caption": "Diagrama em corte do hardware da Luna 9 — os engenheiros soviéticos resolveram o problema do pouso suave antes da NASA."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "31 de janeiro de 1966 — Molniya-M a partir de Baikonur",
+      "images": [
+        {
+          "src": "/images/missions/luna9/03.webp",
+          "caption": "Foguete Molniya-M preparado em Baikonur — a Luna 9 foi lançada em meio a uma corrida soviético-americana, de costa a costa, pelo primeiro pouso suave."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Oceanus Procellarum — pouso em 3 de fevereiro de 1966",
+      "images": [
+        {
+          "src": "/images/missions/luna9/04.webp",
+          "caption": "As primeiras imagens da superfície lunar — panoramas grosseiros, de baixa taxa de bits, mostrando um regolito rochoso. O radiotelescópio de Jodrell Bank, de Manchester, interceptou a transmissão e a publicou antes dos soviéticos."
+        },
+        {
+          "src": "/images/missions/luna9/05.webp",
+          "caption": "Mosaico panorâmico da Luna 9 — a primeira prova de que a superfície lunar era sólida o bastante para sustentar uma sonda de pouso, pondo fim a anos de especulação sobre profundas camadas de poeira."
+        }
+      ]
+    }
+  ]
+}

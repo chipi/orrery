@@ -1,0 +1,27 @@
+{
+  "name": "Juno",
+  "current_distance_label": "5,5 UA · en orbite polaire de Jupiter depuis 2016-07-05 — mission prolongée jusqu'en 2025",
+  "waypoints": [
+    {
+      "label": "Lancement"
+    },
+    null,
+    null,
+    {
+      "label": "Manœuvre en espace lointain"
+    },
+    null,
+    {
+      "label": "Assistance gravitationnelle terrestre"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Insertion en orbite jupitérienne"
+    },
+    {
+      "label": "Aujourd'hui (orbite de Jupiter)"
+    }
+  ]
+}

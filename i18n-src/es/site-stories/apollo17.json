@@ -1,0 +1,57 @@
+{
+  "intro": "El Apollo 17 alunizó en el valle de Taurus-Littrow el 11 de diciembre de 1972: fue la última misión lunar tripulada y la única que llevó a un geólogo profesional (Harrison Schmitt) a la superficie. Cernan y Schmitt pasaron 22 h en el exterior a lo largo de tres EVA, recorrieron 35 km en el vehículo y trajeron de vuelta 110 kg de muestras, entre ellas el célebre Suelo Naranja (cuentas de vidrio volcánico procedentes de una fuente de fuego de hace 3,5 Ga). La huella de Cernan es la marca humana más reciente en otro mundo.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipo",
+      "subtitle": "America + Challenger + LRV-3",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/01.webp",
+          "caption": "Retrato de la tripulación del Apollo 17: Gene Cernan (comandante), Ron Evans (piloto del módulo de mando) y Harrison «Jack» Schmitt (piloto del módulo lunar, científico-astronauta)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "7 de diciembre de 1972: el último vuelo del Saturn V",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/02.webp",
+          "caption": "Primer lanzamiento nocturno de un Saturn V, a las 05:33 UTC del 7 de diciembre de 1972; visible desde 700 km de distancia. El último Apollo y el último Saturn V."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Valle de Taurus-Littrow: alunizaje el 11 de diciembre de 1972",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/03.webp",
+          "caption": "Cernan junto a la bandera, con la Tierra en lo alto: «El último hombre en la Luna»."
+        },
+        {
+          "src": "/images/missions/apollo17/04.webp",
+          "caption": "Schmitt, en el cráter Shorty, descubre el Suelo Naranja: esférulas de vidrio volcánico de una erupción de fuente de fuego de hace 3,5 Ga."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo17/tier3-pan.jpg",
+          "caption": "Panorama de Taurus-Littrow: la etapa de descenso del Challenger, el LRV y, al fondo, Tortilla Flat."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciencia",
+      "subtitle": "El primer geólogo formado como tal en la Luna",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/05.webp",
+          "caption": "Muestra 70017: la última muestra lunar recogida por seres humanos, la tarea final de Cernan antes del despegue el 14 de diciembre de 1972."
+        }
+      ]
+    }
+  ]
+}

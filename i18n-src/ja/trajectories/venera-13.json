@@ -1,0 +1,14 @@
+{
+  "name": "Venera 13",
+  "current_distance_label": "0.74 AU · 1982年3月1日金星に着陸（地表生存時間127分）",
+  "waypoints": [
+    {
+      "label": "打ち上げ（Proton-K）"
+    },
+    null,
+    null,
+    {
+      "label": "金星表面着陸"
+    }
+  ]
+}

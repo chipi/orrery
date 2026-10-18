@@ -1,0 +1,29 @@
+{
+  "name": "JUICE",
+  "current_distance_label": "0.94 AU · en route to Earth #2 flyby 2026-09-29 (cruise leg 2 of 5)",
+  "waypoints": [
+    {
+      "label": "Launch (Ariane 5)"
+    },
+    null,
+    {
+      "label": "Lunar-Earth flyby"
+    },
+    null,
+    {
+      "label": "Venus flyby"
+    },
+    null,
+    {
+      "label": "Earth #2"
+    },
+    null,
+    {
+      "label": "Earth #3"
+    },
+    null,
+    {
+      "label": "Jupiter orbit insertion"
+    }
+  ]
+}

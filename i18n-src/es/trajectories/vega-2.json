@@ -1,0 +1,18 @@
+{
+  "name": "Vega 2",
+  "current_distance_label": "0,95 UA · sonda espacial en órbita heliocéntrica desde el sobrevuelo de Halley del 1986-03-09",
+  "waypoints": [
+    {
+      "label": "Lanzamiento (Proton-K)"
+    },
+    null,
+    {
+      "label": "Venus + globo sonda"
+    },
+    null,
+    {
+      "label": "Sobrevuelo de Halley"
+    },
+    null
+  ]
+}

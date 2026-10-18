@@ -1,0 +1,42 @@
+{
+  "name": "Rosetta",
+  "current_distance_label": "4,1 AU · gecontroleerde afdaling naar oppervlak 67P op 2016-09-30 (einde missie)",
+  "waypoints": [
+    {
+      "label": "Lancering (Ariane 5)"
+    },
+    {
+      "label": "Aarde #1"
+    },
+    null,
+    {
+      "label": "Mars"
+    },
+    {
+      "label": "Aarde #2"
+    },
+    {
+      "label": "Asteroïde Šteins"
+    },
+    {
+      "label": "Aarde #3"
+    },
+    {
+      "label": "Asteroïde Lutetia"
+    },
+    null,
+    null,
+    {
+      "label": "Ontmoeting met 67P"
+    },
+    {
+      "label": "Landing Philae"
+    },
+    {
+      "label": "67P perihelium"
+    },
+    {
+      "label": "Gestort op 67P"
+    }
+  ]
+}

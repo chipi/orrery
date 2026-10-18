@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 16 se pose dans Mare Fecunditatis le 20 septembre 1970 — premier retour d'échantillons robotique depuis un autre monde : forage de 35 cm dans le régolithe lunaire, 101 g scellés dans la capsule de retour, décollage 26 heures après l'atterrissage. La capsule a atterri au Kazakhstan trois jours plus tard. Elle a démontré que l'ingénierie soviétique pouvait rapporter de la matière lunaire sans vol habité, un an et deux mois après Apollo 11.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Matériel",
+      "subtitle": "Atterrisseur soviétique E-8-5 — premier dispositif robotique de retour d'échantillons",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/01.webp",
+          "caption": "Maquette de la sonde Luna 16 — étage de descente (au premier plan) et étage d'ascension portant la capsule de retour (en haut)."
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/02.webp",
+          "caption": "Schéma du mécanisme de prélèvement des échantillons — carotte de forage avec transfert scellé vers la capsule de retour."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancement",
+      "subtitle": "12 septembre 1970 — Proton-K depuis Baïkonour",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/03.webp",
+          "caption": "Proton-K avec son étage supérieur Blok-D sur le pas de tir du cosmodrome de Baïkonour."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Mare Fecunditatis — atterrissage le 20 septembre 1970",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/04.webp",
+          "caption": "Luna 16 forant le régolithe — 101 g de matière scellés dans la capsule de retour sphérique avant le décollage."
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/05.webp",
+          "caption": "La capsule de retour sur la steppe kazakhe, 24 septembre 1970 — premier retour d'échantillons interplanétaire robotique de l'histoire."
+        }
+      ]
+    }
+  ]
+}

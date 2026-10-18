@@ -1,0 +1,76 @@
+{
+  "intro": "Il rover Curiosity della NASA è stato lanciato il 26 novembre 2011 a bordo di un Atlas V da Cape Canaveral. Dopo 254 giorni di crociera, Mars Science Laboratory ha portato il rover da 899 kg, alimentato a energia nucleare, nel cratere Gale il 6 agosto 2012, grazie al celebre atterraggio con sky crane. Più di dieci anni dopo, Curiosity continua a scalare il monte Sharp, perforando rocce che custodiscono la testimonianza di un passato in cui Marte era abitabile.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Costruire un rover per il cratere Gale",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/01.webp",
+          "caption": "Mars Science Laboratory assemblato al JPL: Curiosity, stadio di discesa, backshell e scudo termico impilati in vista della spedizione in Florida."
+        },
+        {
+          "src": "/images/missions/curiosity/02.webp",
+          "caption": "La fonte di energia nucleare MMRTG (disco arancione, in basso a destra) fornisce circa 110 W in modo continuo per almeno 14 anni: niente pannelli solari, niente interruzioni invernali."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "26 novembre 2011: Atlas V da Cape Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/03.webp",
+          "caption": "L'Atlas V 541 si solleva dalla SLC-41 con a bordo Mars Science Laboratory e Curiosity. Ore 10:02 EST, 26 novembre 2011."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Cratere Gale: atterraggio il 6 agosto 2012",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
+          "caption": "Panorama di Mont Mercou, sol 3070 (marzo 2021). Rotazione a 360° della Mastcam-Z che mostra il rover, le pareti stratificate di Mt Mercou e monte Sharp all'orizzonte."
+        },
+        {
+          "src": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
+          "caption": "Veduta dall'alto di HiRISE del percorso di Curiosity, ripresa da Mars Reconnaissance Orbiter a 25 cm/pixel."
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/01.webp",
+          "caption": "Autoritratto nel sito di perforazione \"Big Sky\", sol 1126: composizione di decine di primi piani della MAHLI uniti in un'unica immagine."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Scienza",
+      "subtitle": "Prove di un antico Marte abitabile",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/02.webp",
+          "caption": "Foro di perforazione a Yellowknife Bay: il primo campione di un ambiente di antico fondale lacustre di Marte, gennaio 2013."
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/03.webp",
+          "caption": "Rocce sedimentarie a cresta Vera Rubin: formazioni di ferro a bande e minerali argillosi indicano la presenza di acqua liquida antica e di un ambiente chimico abitabile."
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "title": "Persone",
+      "subtitle": "Gli ingegneri e gli scienziati dietro Curiosity",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/04.webp",
+          "caption": "Il controllo missione del JPL festeggia l'atterraggio con sky crane dei «sette minuti di terrore», 5/6 agosto 2012: Adam Steltzner e il suo team dopo i primi segnali dal cratere Gale."
+        }
+      ]
+    }
+  ]
+}

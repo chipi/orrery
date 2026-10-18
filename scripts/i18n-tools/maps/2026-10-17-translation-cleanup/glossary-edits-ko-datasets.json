@@ -1,0 +1,956 @@
+[
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-westerlund2.title",
+    "old": "Westerlund 2",
+    "new": "웨스터룬드 2"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "chandra-tycho.caption",
+    "old": "Tycho Brahe가 1572년에 폭발하는 것을 목격한 별의 X선 껍질.",
+    "new": "티코 브라헤가 1572년에 폭발하는 것을 목격한 별의 X선 껍질."
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "pluto-nh.title",
+    "old": "Pluto",
+    "new": "명왕성"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "pluto-nh.caption",
+    "old": "New Horizons가 촬영한 Pluto와 질소 얼음으로 이루어진 심장 부분의 최초 실제 색상 확대 사진입니다.",
+    "new": "New Horizons가 촬영한 명왕성과 질소 얼음으로 이루어진 심장 부분의 최초 실제 색상 확대 사진입니다."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/antares_webp.title",
+    "old": "Antares",
+    "new": "안타레스"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "lab_illustrations./images/lab/goals/probe-jupiter_webp.title",
+    "old": "Jupiter 탐사",
+    "new": "목성 탐사"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-cassini_webp.what",
+    "old": "고이득 안테나, RTG 붐, 그리고 Huygens 탐사선 — Saturn 궤도선.",
+    "new": "고이득 안테나, RTG 붐, 그리고 Huygens 탐사선 — 토성 궤도선."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-vega-1_webp.title",
+    "old": "Vega",
+    "new": "베가"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-launcher-vostok-k_webp.what",
+    "old": "Korolev 십자 코어와 4개의 테이퍼 처리된 부스터",
+    "new": "코롤료프 십자 코어와 4개의 테이퍼 처리된 부스터"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-venus-venera_webp.title",
+    "old": "Venera / Vega 착륙선",
+    "new": "Venera / 베가 착륙선"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-venus-aeroshell_webp.what",
+    "old": "조밀한 대기용 구-원뿔형 진입 캡슐 및 제동 디스크 (Venera / Vega).",
+    "new": "조밀한 대기용 구-원뿔형 진입 캡슐 및 제동 디스크 (Venera / 베가)."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-earth-launchpad_webp.what",
+    "old": "8각형 발사대와 4개의 낙뢰 방지탑 — Kennedy, Baikonur, Jiuquan 등.",
+    "new": "8각형 발사대와 4개의 낙뢰 방지탑 — Kennedy, 바이코누르, 주취안 등."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Landing-site stories.where",
+    "old": "Moon + Mars sites",
+    "new": "달 + 화성 sites"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Surface + panorama captions.where",
+    "old": "Moon + Mars panoramas",
+    "new": "달 + 화성 panoramas"
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "intro",
+    "old": "Apollo 11은 1969년 7월 20일 20:17 UTC에 Mare Tranquillitatis에 착륙했습니다. 다른 천체에 사람이 탄 우주선이 착륙한 것은 이번이 처음이었습니다. Armstrong과 Aldrin은 달 착륙선 Eagle 밖에서 2시간 31분을 보냈고, Collins는 머리 위 궤도에서 Columbia를 타고 돌았습니다. 승무원들은 21.5kg의 달 시료를 가지고 돌아왔고, 발자국과 레트로리플렉터 배열(지금도 지구에서 쏘는 레이저에 쓰입니다), 그리고 명판 하나를 남겼습니다. 명판에는 이렇게 적혀 있습니다. \"우리는 全 인류를 위해 평화롭게 왔다.\"",
+    "new": "Apollo 11은 1969년 7월 20일 20:17 UTC에 고요의 바다에 착륙했습니다. 다른 천체에 사람이 탄 우주선이 착륙한 것은 이번이 처음이었습니다. 암스트롱과 올드린은 달 착륙선 Eagle 밖에서 2시간 31분을 보냈고, 콜린스는 머리 위 궤도에서 Columbia를 타고 돌았습니다. 승무원들은 21.5kg의 달 시료를 가지고 돌아왔고, 발자국과 레트로리플렉터 배열(지금도 지구에서 쏘는 레이저에 쓰입니다), 그리고 명판 하나를 남겼습니다. 명판에는 이렇게 적혀 있습니다. \"우리는 全 인류를 위해 평화롭게 왔다.\""
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.1.subtitle",
+    "old": "1969년 7월 16일 — Kennedy Space Center에서 발사된 Saturn V",
+    "new": "1969년 7월 16일 — 케네디 우주 센터에서 발사된 Saturn V"
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.subtitle",
+    "old": "Mare Tranquillitatis — 1969년 7월 20일 착륙",
+    "new": "고요의 바다 — 1969년 7월 20일 착륙"
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "달 착륙선 사다리를 내려오는 Buzz Aldrin. Armstrong이 촬영했습니다. \"웅장한 황량함\"은 Aldrin이 달 표면에서 남긴 첫마디였습니다.",
+    "new": "달 착륙선 사다리를 내려오는 버즈 올드린. 암스트롱이 촬영했습니다. \"웅장한 황량함\"은 올드린이 달 표면에서 남긴 첫마디였습니다."
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Tranquility Base에 남은 Aldrin의 발자국. 진공 속에서 반세기가 넘도록 변함없이 보존되어 있습니다.",
+    "new": "Tranquility Base에 남은 올드린의 발자국. 진공 속에서 반세기가 넘도록 변함없이 보존되어 있습니다."
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "intro",
+    "old": "Apollo 12는 1969년 11월 19일 Oceanus Procellarum에 착륙했다. 2년 반 전에 내려앉은 무인 착륙선 Surveyor 3에서 걸어갈 수 있는 거리에 정확히 내려앉은 정밀 착륙이었다. Conrad와 Bean은 두 차례의 선외활동(EVA)으로 31시간 동안 달 표면에 머물렀고, 34kg의 시료와 분석용 Surveyor 3 부품을 가져왔다. 유인 Apollo가 달 표면의 특정 목표 지점에 도달할 수 있음을 입증했다.",
+    "new": "Apollo 12는 1969년 11월 19일 폭풍의 대양에 착륙했다. 2년 반 전에 내려앉은 무인 착륙선 Surveyor 3에서 걸어갈 수 있는 거리에 정확히 내려앉은 정밀 착륙이었다. 콘래드와 빈은 두 차례의 선외활동(EVA)으로 31시간 동안 달 표면에 머물렀고, 34kg의 시료와 분석용 Surveyor 3 부품을 가져왔다. 유인 Apollo가 달 표면의 특정 목표 지점에 도달할 수 있음을 입증했다."
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "Apollo 12 승무원 단체 사진 — Pete Conrad(선장, CDR), Dick Gordon(사령선 조종사, CMP), Al Bean(달 착륙선 조종사, LMP).",
+    "new": "Apollo 12 승무원 단체 사진 — 피트 콘래드(선장, CDR), Dick Gordon(사령선 조종사, CMP), Al 빈(달 착륙선 조종사, LMP)."
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.2.subtitle",
+    "old": "Oceanus Procellarum — 1969년 11월 19일 착륙",
+    "new": "폭풍의 대양 — 1969년 11월 19일 착륙"
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Conrad가 Surveyor 3 착륙선 곁에 서 있다. Apollo 12는 163m 떨어진 곳에 착륙했으며, 최초의 정밀 달 착륙이었다.",
+    "new": "콘래드가 Surveyor 3 착륙선 곁에 서 있다. Apollo 12는 163m 떨어진 곳에 착륙했으며, 최초의 정밀 달 착륙이었다."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "intro",
+    "old": "Apollo 14는 1971년 2월 5일 Fra Mauro 고지에 착륙했습니다. 원래 Apollo 13의 목표 지점이었던 이곳은 13호의 폭발 사고 이후에야 임무가 완수되었습니다. Shepard와 Mitchell은 모듈형 장비 운반차(Modular Equipment Transporter, 일명 인력거)를 끌고 Cone Crater의 비탈을 올랐고, 39억 년 전 Mare Imbrium을 만든 거대 충돌의 파편인 각력암 43kg을 가져왔습니다. Shepard가 이륙 전에 골프공 두 개를 친 일화는 유명합니다.",
+    "new": "Apollo 14는 1971년 2월 5일 프라 마우로 고지 고지에 착륙했습니다. 원래 Apollo 13의 목표 지점이었던 이곳은 13호의 폭발 사고 이후에야 임무가 완수되었습니다. 셰퍼드와 미첼은 모듈형 장비 운반차(Modular Equipment Transporter, 일명 인력거)를 끌고 콘 분화구의 비탈을 올랐고, 39억 년 전 비의 바다를 만든 거대 충돌의 파편인 각력암 43kg을 가져왔습니다. 셰퍼드가 이륙 전에 골프공 두 개를 친 일화는 유명합니다."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.0.subtitle",
+    "old": "Kitty Hawk + Antares + 인력거",
+    "new": "Kitty Hawk + 안타레스 + 인력거"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "Apollo 14 승무원: Alan Shepard(선장 — 10년 전 미국인 최초로 우주에 간 인물), Stuart Roosa(사령선 조종사), Ed Mitchell(달착륙선 조종사).",
+    "new": "Apollo 14 승무원: 앨런 셰퍼드(선장 — 10년 전 미국인 최초로 우주에 간 인물), Stuart Roosa(사령선 조종사), Ed Mitchell(달착륙선 조종사)."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.subtitle",
+    "old": "Fra Mauro 고지 — 1971년 2월 5일 착륙",
+    "new": "프라 마우로 고지 — 1971년 2월 5일 착륙"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Mitchell과 모듈형 장비 운반차(MET) — \"인력거\"로 불린 이 수레는 도구와 시료를 싣고 Cone Crater 방향의 비탈을 올랐습니다.",
+    "new": "미첼과 모듈형 장비 운반차(MET) — \"인력거\"로 불린 이 수레는 도구와 시료를 싣고 콘 분화구 방향의 비탈을 올랐습니다."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Cone Crater 가장자리 — 승무원들은 가장자리에서 약 30m 앞까지 올랐지만, 체력 소진과 통신 제약 때문에 되돌아와야 했습니다.",
+    "new": "콘 분화구 가장자리 — 승무원들은 가장자리에서 약 30m 앞까지 올랐지만, 체력 소진과 통신 제약 때문에 되돌아와야 했습니다."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Apollo 14 착륙 지점 파노라마 — Antares 하강단과 ALSEP이 보입니다.",
+    "new": "Apollo 14 착륙 지점 파노라마 — 안타레스 하강단과 ALSEP이 보입니다."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "intro",
+    "old": "Apollo 15는 1971년 7월 30일 Hadley Rille / Apennine Mountains에 착륙했습니다. 장기 표면 체류, Lunar Roving Vehicle(LRV), 그리고 과학 훈련을 받은 조종사(David Scott)를 갖춘 최초의 \"J급\" 임무였습니다. Scott과 Irwin은 세 차례의 선외활동(EVA) 동안 총 28km를 주행했고, Genesis Rock(약 41억 년 된 회장암, 원시 지각)을 발견했으며, 생방송 중 깃털과 망치를 떨어뜨려 Galileo의 중력 실험을 재현했습니다.",
+    "new": "Apollo 15는 1971년 7월 30일 해들리 열구 / Apennine Mountains에 착륙했습니다. 장기 표면 체류, Lunar Roving Vehicle(LRV), 그리고 과학 훈련을 받은 조종사(데이비드 스콧)를 갖춘 최초의 \"J급\" 임무였습니다. 스콧과 어윈은 세 차례의 선외활동(EVA) 동안 총 28km를 주행했고, Genesis Rock(약 41억 년 된 회장암, 원시 지각)을 발견했으며, 생방송 중 깃털과 망치를 떨어뜨려 Galileo의 중력 실험을 재현했습니다."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "임무 전 훈련 중인 Apollo 15 승무원과 Lunar Roving Vehicle — Scott과 Irwin은 달 위를 달린 최초의 바퀴를 몰게 됩니다.",
+    "new": "임무 전 훈련 중인 Apollo 15 승무원과 Lunar Roving Vehicle — 스콧과 어윈은 달 위를 달린 최초의 바퀴를 몰게 됩니다."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "David Scott가 Hadley Rille의 가장자리에 서 있습니다. 우주비행사가 다른 천체에서 고대 용암 수로의 끝자락에 선 것은 이번이 처음이었습니다.",
+    "new": "데이비드 스콧이 해들리 열구의 가장자리에 서 있습니다. 우주비행사가 다른 천체에서 고대 용암 수로의 끝자락에 선 것은 이번이 처음이었습니다."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "intro",
+    "old": "Apollo 16호는 1972년 4월 21일 Descartes Highlands에 착륙했다. 바다(mare)가 아닌 고지대에 내린 유일한 Apollo 임무로, 화산 지형으로 믿어지던 곳의 시료를 채취하기 위해 선정된 착륙지였다. 그러나 Young과 Duke가 발견한 화산암은 단 하나도 없었다. 나온 것은 충돌 각력암과 회장암뿐이었다. 이 발견은 기존의 지질학 모델을 뒤집었고, 달의 고지대가 후대의 화산 활동이 아니라 충돌로 부서진 고대의 지각임을 보여 주었다. 세 차례의 선외 활동(EVA), 월면차(LRV)로 27km 주행, 95kg의 시료를 가져왔다.",
+    "new": "Apollo 16호는 1972년 4월 21일 데카르트 고지에 착륙했다. 바다(mare)가 아닌 고지대에 내린 유일한 Apollo 임무로, 화산 지형으로 믿어지던 곳의 시료를 채취하기 위해 선정된 착륙지였다. 그러나 영과 듀크가 발견한 화산암은 단 하나도 없었다. 나온 것은 충돌 각력암과 회장암뿐이었다. 이 발견은 기존의 지질학 모델을 뒤집었고, 달의 고지대가 후대의 화산 활동이 아니라 충돌로 부서진 고대의 지각임을 보여 주었다. 세 차례의 선외 활동(EVA), 월면차(LRV)로 27km 주행, 95kg의 시료를 가져왔다."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "Apollo 16 승무원 단체 사진 — John Young(선장), Ken Mattingly(사령선 조종사, Apollo 13에서 교체됨), Charlie Duke(착륙선 조종사).",
+    "new": "Apollo 16 승무원 단체 사진 — 존 영(선장), Ken Mattingly(사령선 조종사, Apollo 13에서 교체됨), 찰리 듀크(착륙선 조종사)."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.subtitle",
+    "old": "Descartes Highlands — 1972년 4월 21일 착륙",
+    "new": "데카르트 고지 — 1972년 4월 21일 착륙"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "\"달 올림픽\" 중 도약하는 John Young — 유인 탐사 최초의 달 높이뛰기로, 6분의 1 중력을 보여 주었다.",
+    "new": "\"달 올림픽\" 중 도약하는 존 영 — 유인 탐사 최초의 달 높이뛰기로, 6분의 1 중력을 보여 주었다."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "\"Big Muley\"에 선 Duke — 시료 61016은 달에서 가져온 단일 암석 중 가장 큰 것이다(11.7kg).",
+    "new": "\"Big Muley\"에 선 듀크 — 시료 61016은 달에서 가져온 단일 암석 중 가장 큰 것이다(11.7kg)."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Descartes Highlands 파노라마 — Orion 하강 단계, 월면차(LRV), 그리고 배경의 Stone Mountain.",
+    "new": "데카르트 고지 파노라마 — Orion 하강 단계, 월면차(LRV), 그리고 배경의 Stone Mountain."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "달 표면에 남겨진 Charlie Duke의 가족사진 — 다른 세계에 남겨진 지구 가족의 유일하게 알려진 사진이다.",
+    "new": "달 표면에 남겨진 찰리 듀크의 가족사진 — 다른 세계에 남겨진 지구 가족의 유일하게 알려진 사진이다."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "intro",
+    "old": "Apollo 17호는 1972년 12월 11일 Taurus-Littrow Valley에 착륙했습니다. 유인 달 탐사로는 마지막이었고, 전문 지질학자(Harrison Schmitt)가 달 표면에 선 유일한 임무였습니다. Cernan과 Schmitt는 세 차례의 선외 활동(EVA)으로 22시간을 밖에서 보내며 35km를 주행했고, 35억 년 전 용암 분수에서 생긴 화산 유리 구슬인 유명한 오렌지 토양을 포함해 110kg의 시료를 가져왔습니다. Cernan의 발자국은 다른 세계에 남은 인류의 가장 최근 흔적입니다.",
+    "new": "Apollo 17호는 1972년 12월 11일 타우루스-리트로 계곡에 착륙했습니다. 유인 달 탐사로는 마지막이었고, 전문 지질학자(해리슨 슈미트)가 달 표면에 선 유일한 임무였습니다. 서넌과 슈미트는 세 차례의 선외 활동(EVA)으로 22시간을 밖에서 보내며 35km를 주행했고, 35억 년 전 용암 분수에서 생긴 화산 유리 구슬인 유명한 오렌지 토양을 포함해 110kg의 시료를 가져왔습니다. 서넌의 발자국은 다른 세계에 남은 인류의 가장 최근 흔적입니다."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "Apollo 17 승무원 단체 사진 — Gene Cernan(사령관), Ron Evans(사령선 조종사), Harrison \"Jack\" Schmitt(달착륙선 조종사, 과학자 우주비행사).",
+    "new": "Apollo 17 승무원 단체 사진 — 유진 서넌(사령관), Ron Evans(사령선 조종사), Harrison \"Jack\" Schmitt(달착륙선 조종사, 과학자 우주비행사)."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.subtitle",
+    "old": "Taurus-Littrow Valley — 1972년 12월 11일 착륙",
+    "new": "타우루스-리트로 계곡 — 1972년 12월 11일 착륙"
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Cernan과 깃발, 그 위로 떠 있는 지구 — \"달 위의 마지막 사람\".",
+    "new": "서넌과 깃발, 그 위로 떠 있는 지구 — \"달 위의 마지막 사람\"."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Schmitt가 Shorty Crater에서 오렌지 토양을 발견하는 모습 — 35억 년 전 용암 분수 분출로 생긴 화산 유리 구슬입니다.",
+    "new": "슈미트가 쇼티 분화구에서 오렌지 토양을 발견하는 모습 — 35억 년 전 용암 분수 분출로 생긴 화산 유리 구슬입니다."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.images.2.caption",
+    "old": "Taurus-Littrow 파노라마 — Challenger 하강단, LRV, 멀리 보이는 Tortilla Flat.",
+    "new": "타우루스-리트로 계곡 파노라마 — Challenger 하강단, LRV, 멀리 보이는 Tortilla Flat."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.3.images.0.caption",
+    "old": "시료 70017 — 인류가 마지막으로 채취한 달 시료로, 1972년 12월 14일 이륙 전 Cernan의 마지막 임무였습니다.",
+    "new": "시료 70017 — 인류가 마지막으로 채취한 달 시료로, 1972년 12월 14일 이륙 전 서넌의 마지막 임무였습니다."
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.1.subtitle",
+    "old": "2003년 6월 2일 — Baikonur에서 Soyuz/Fregat로 발사, Mars Express에 얹혀 가는 방식",
+    "new": "2003년 6월 2일 — 바이코누르에서 Soyuz/Fregat로 발사, Mars Express에 얹혀 가는 방식"
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.2.subtitle",
+    "old": "Isidis Planitia — 2003년 12월 25일 착륙(교신 없이)",
+    "new": "이시디스 평원 — 2003년 12월 25일 착륙(교신 없이)"
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Isidis Planitia에 있는 Beagle 2 착륙 지점의 HiRISE 상세 영상 — 이 축척에서 착륙선 자체는 한 픽셀에도 못 미치는 작은 점일 뿐이며, 이를 찾아내려면 여러 장면과 여러 조명 조건의 영상을 대조해야 합니다.",
+    "new": "이시디스 평원에 있는 Beagle 2 착륙 지점의 HiRISE 상세 영상 — 이 축척에서 착륙선 자체는 한 픽셀에도 못 미치는 작은 점일 뿐이며, 이를 찾아내려면 여러 장면과 여러 조명 조건의 영상을 대조해야 합니다."
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "intro",
+    "old": "Beresheet는 히브리어로 \"태초에\"를 뜻하며, 이스라엘 최초의 달 착륙 시도였습니다. 민간 단체 SpaceIL이 1억 달러의 빠듯한 예산으로 제작했습니다. 2019년 2월 22일 발사되어 4월 4일 달 궤도에 진입했고, 하강 도중 IMU와 탑재 컴퓨터가 재설정되면서 2019년 4월 11일 Mare Serenitatis에 추락했습니다. 잔해에는 완보동물이 담긴 타임캡슐이 실려 있었습니다. 비록 충돌이라는 방식이었지만, 이스라엘은 달에 도달한 일곱 번째 국가가 되었습니다.",
+    "new": "Beresheet는 히브리어로 \"태초에\"를 뜻하며, 이스라엘 최초의 달 착륙 시도였습니다. 민간 단체 SpaceIL이 1억 달러의 빠듯한 예산으로 제작했습니다. 2019년 2월 22일 발사되어 4월 4일 달 궤도에 진입했고, 하강 도중 IMU와 탑재 컴퓨터가 재설정되면서 2019년 4월 11일 평온의 바다에 추락했습니다. 잔해에는 완보동물이 담긴 타임캡슐이 실려 있었습니다. 비록 충돌이라는 방식이었지만, 이스라엘은 달에 도달한 일곱 번째 국가가 되었습니다."
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.1.subtitle",
+    "old": "2019년 2월 22일 — Cape Canaveral에서 Falcon 9 발사(합승 발사)",
+    "new": "2019년 2월 22일 — 케이프 커내버럴에서 Falcon 9 발사(합승 발사)"
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.2.subtitle",
+    "old": "Mare Serenitatis — 2019년 4월 11일 충돌",
+    "new": "평온의 바다 — 2019년 4월 11일 충돌"
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "ISRO Sriharikota에서 발사 전 통합 작업 중인 Chandrayaan-3 우주선 결합체.",
+    "new": "ISRO 스리하리코타에서 발사 전 통합 작업 중인 Chandrayaan-3 우주선 결합체."
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.2.subtitle",
+    "old": "Shiv Shakti Point, 달 남극 부근 — 2023년 8월 23일 착륙",
+    "new": "시브샥티 지점, 달 남극 부근 — 2023년 8월 23일 착륙"
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "intro",
+    "old": "Chang'e 3는 2013년 12월 14일 Mare Imbrium에 착륙했다. 중국 최초의 달 연착륙이자, (Luna 24 이후) 37년 만에 이루어진 첫 달 착륙이었다. Yutu 로버를 내보냈으며, Yutu는 약 114m를 주행한 뒤 제어 계통 고장으로 그 자리에 멈춰 선 채 남은 약 30 달의 하루를 버텼다. 이로써 중국은 달 표면에 자산을 둔 세 번째 국가가 되었다.",
+    "new": "Chang'e 3는 2013년 12월 14일 비의 바다에 착륙했다. 중국 최초의 달 연착륙이자, (Luna 24 이후) 37년 만에 이루어진 첫 달 착륙이었다. Yutu 로버를 내보냈으며, Yutu는 약 114m를 주행한 뒤 제어 계통 고장으로 그 자리에 멈춰 선 채 남은 약 30 달의 하루를 버텼다. 이로써 중국은 달 표면에 자산을 둔 세 번째 국가가 되었다."
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.1.subtitle",
+    "old": "2013년 12월 1일 — Xichang에서 Long March 3B 발사",
+    "new": "2013년 12월 1일 — 시창에서 Long March 3B 발사"
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.2.subtitle",
+    "old": "Mare Imbrium — 2013년 12월 14일 착륙",
+    "new": "비의 바다 — 2013년 12월 14일 착륙"
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Yutu의 지하 탐사 레이더로 얻은 Mare Imbrium 지하 단면 — 약 330m 깊이까지 여러 겹으로 쌓인 현무암 용암류.",
+    "new": "Yutu의 지하 탐사 레이더로 얻은 비의 바다 지하 단면 — 약 330m 깊이까지 여러 겹으로 쌓인 현무암 용암류."
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "intro",
+    "old": "Chang'e 4는 2019년 1월 3일 Von Kármán 크레이터에 착륙했다. 지구가 결코 보이지 않는 달 뒷면에 최초로 연착륙한 사례다. 통신은 L2에 자리 잡은 Queqiao 위성을 통해 중계되었다. 탐사 로버 Yutu-2를 내보냈으며, 이 로버는 1.5km 이상을 주행했고 2026년 현재도 작동 중으로, 역대 가장 오래 활동한 달 표면 임무다. South Pole-Aitken 분지에서 원시 상태의 맨틀 물질을 발견했다.",
+    "new": "Chang'e 4는 2019년 1월 3일 Von Kármán 크레이터에 착륙했다. 지구가 결코 보이지 않는 달 뒷면에 최초로 연착륙한 사례다. 통신은 L2에 자리 잡은 Queqiao 위성을 통해 중계되었다. 탐사 로버 Yutu-2를 내보냈으며, 이 로버는 1.5km 이상을 주행했고 2026년 현재도 작동 중으로, 역대 가장 오래 활동한 달 표면 임무다. 남극-에이트켄 분지에서 원시 상태의 맨틀 물질을 발견했다."
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.2.subtitle",
+    "old": "South Pole-Aitken 분지의 맨틀 물질",
+    "new": "남극-에이트켄 분지의 맨틀 물질"
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "intro",
+    "old": "Chang'e 5는 2020년 12월 1일 Mons Rümker에 착륙했다. 중국 최초의 달 시료 귀환 임무이자, 44년 전 Luna 24(1976) 이후 어느 나라도 해내지 못한 달 시료 귀환이었다. 젊은 화산 지형(약 20억 년 전, 약 3.5 Ga의 Apollo 시료와 비교)에서 채취한 시료 1,731 g을 가져왔으며, 달의 화산 활동이 기존에 알려진 것보다 훨씬 늦게까지 이어졌음을 입증했다.",
+    "new": "Chang'e 5는 2020년 12월 1일 륌케르산에 착륙했다. 중국 최초의 달 시료 귀환 임무이자, 44년 전 Luna 24(1976) 이후 어느 나라도 해내지 못한 달 시료 귀환이었다. 젊은 화산 지형(약 20억 년 전, 약 3.5 Ga의 Apollo 시료와 비교)에서 채취한 시료 1,731 g을 가져왔으며, 달의 화산 활동이 기존에 알려진 것보다 훨씬 늦게까지 이어졌음을 입증했다."
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.1.subtitle",
+    "old": "2020년 11월 23일 — Wenchang에서 발사된 Long March 5",
+    "new": "2020년 11월 23일 — 원창에서 발사된 Long March 5"
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.2.subtitle",
+    "old": "Mons Rümker — 2020년 12월 1일 착륙",
+    "new": "륌케르산 — 2020년 12월 1일 착륙"
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Mons Rümker 인근 표면의 Chang'e 5 — 상승단이 이륙하기까지 19시간 동안 작업을 수행했다.",
+    "new": "륌케르산 인근 표면의 Chang'e 5 — 상승단이 이륙하기까지 19시간 동안 작업을 수행했다."
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "intro",
+    "old": "Chang'e 6는 2024년 6월 1일 South Pole-Aitken 분지에 착륙했습니다. 달 뒷면에서 표본을 가져온 최초의 임무이며, 이 분지는 내태양계에서 가장 깊고 가장 오래되었으며 가장 큰 충돌 구조입니다. 2024년 6월 25일 달 뒷면 물질 1,935 g을 지구로 가져왔고, 이 표본에는 42억 년 전 분지를 만든 충돌로 생긴 맨틀 파편이 들어 있을 수 있습니다.",
+    "new": "Chang'e 6는 2024년 6월 1일 남극-에이트켄 분지에 착륙했습니다. 달 뒷면에서 표본을 가져온 최초의 임무이며, 이 분지는 내태양계에서 가장 깊고 가장 오래되었으며 가장 큰 충돌 구조입니다. 2024년 6월 25일 달 뒷면 물질 1,935 g을 지구로 가져왔고, 이 표본에는 42억 년 전 분지를 만든 충돌로 생긴 맨틀 파편이 들어 있을 수 있습니다."
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.1.subtitle",
+    "old": "2024년 5월 3일 — Wenchang에서 발사된 Long March 5",
+    "new": "2024년 5월 3일 — 원창에서 발사된 Long March 5"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.2.subtitle",
+    "old": "Apollo Crater(South Pole-Aitken 내부) — 2024년 6월 1일 착륙",
+    "new": "아폴로 분화구(남극-에이트켄 내부) — 2024년 6월 1일 착륙"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.3.subtitle",
+    "old": "South Pole-Aitken 분지 물질 1,935 g",
+    "new": "남극-에이트켄 분지 물질 1,935 g"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "intro",
+    "old": "NASA의 로버 Curiosity는 2011년 11월 26일 Cape Canaveral에서 Atlas V에 실려 발사되었습니다. 254일간의 순항 끝에 Mars Science Laboratory는 2012년 8월 6일, 이제는 유명해진 스카이크레인 방식의 착륙으로 899킬로그램의 원자력 로버를 Gale Crater에 내려놓았습니다. 10년이 넘게 지난 지금도 Curiosity는 Mount Sharp를 오르며, 한때 생명이 살 수 있었던 화성의 과거 기록을 간직한 암석에 구멍을 뚫고 있습니다.",
+    "new": "NASA의 로버 Curiosity는 2011년 11월 26일 케이프 커내버럴에서 Atlas V에 실려 발사되었습니다. 254일간의 순항 끝에 Mars Science Laboratory는 2012년 8월 6일, 이제는 유명해진 스카이크레인 방식의 착륙으로 899킬로그램의 원자력 로버를 게일 분화구에 내려놓았습니다. 10년이 넘게 지난 지금도 Curiosity는 샤프 산을 오르며, 한때 생명이 살 수 있었던 화성의 과거 기록을 간직한 암석에 구멍을 뚫고 있습니다."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.0.subtitle",
+    "old": "Gale Crater를 위한 로버 제작",
+    "new": "게일 분화구를 위한 로버 제작"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.1.subtitle",
+    "old": "2011년 11월 26일 — Cape Canaveral에서 발사된 Atlas V",
+    "new": "2011년 11월 26일 — 케이프 커내버럴에서 발사된 Atlas V"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.2.subtitle",
+    "old": "Gale Crater — 2012년 8월 6일 착륙",
+    "new": "게일 분화구 — 2012년 8월 6일 착륙"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Mont Mercou 파노라마, 3070솔(2021년 3월). Mastcam-Z로 360° 훑어 촬영한 이 사진에는 로버와 Mt Mercou의 층층이 쌓인 절벽, 지평선 위의 Mount Sharp가 담겨 있습니다.",
+    "new": "Mont Mercou 파노라마, 3070솔(2021년 3월). Mastcam-Z로 360° 훑어 촬영한 이 사진에는 로버와 Mt Mercou의 층층이 쌓인 절벽, 지평선 위의 샤프 산이 담겨 있습니다."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.3.images.1.caption",
+    "old": "Vera Rubin Ridge의 퇴적암 — 줄무늬 철 광층과 점토 광물은 고대의 액체 상태 물과 생명이 살 수 있는 화학 환경을 보여 줍니다.",
+    "new": "베라 루빈 능선의 퇴적암 — 줄무늬 철 광층과 점토 광물은 고대의 액체 상태 물과 생명이 살 수 있는 화학 환경을 보여 줍니다."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.4.images.0.caption",
+    "old": "JPL 관제센터가 '공포의 7분'으로 불린 스카이크레인 착륙의 성공을 축하하는 모습, 2012년 8월 5일/6일 — Gale Crater에서 첫 신호가 들어온 직후의 Adam Steltzner와 팀.",
+    "new": "JPL 관제센터가 '공포의 7분'으로 불린 스카이크레인 착륙의 성공을 축하하는 모습, 2012년 8월 5일/6일 — 게일 분화구에서 첫 신호가 들어온 직후의 Adam Steltzner와 팀."
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "intro",
+    "old": "InSight는 2018년 11월 26일 Elysium Planitia에 착륙했습니다. 화성에 놓인 최초의 지구물리 관측소였습니다. 이 임무는 4년 동안 SEIS 지진계로 화성의 지진에 귀를 기울였고, 1,300개가 넘는 지진을 기록하며 행성의 핵, 맨틀, 지각을 전례 없이 상세하게 드러냈습니다. 두더지형 굴착기(HP³)는 스스로 땅속에 묻히지 못했지만, SEIS가 그 아쉬움을 충분히 만회했습니다. 임무는 먼지가 쌓여 태양 전지판이 작동을 멈춘 2022년 12월에 끝났습니다.",
+    "new": "InSight는 2018년 11월 26일 엘리시움 평원에 착륙했습니다. 화성에 놓인 최초의 지구물리 관측소였습니다. 이 임무는 4년 동안 SEIS 지진계로 화성의 지진에 귀를 기울였고, 1,300개가 넘는 지진을 기록하며 행성의 핵, 맨틀, 지각을 전례 없이 상세하게 드러냈습니다. 두더지형 굴착기(HP³)는 스스로 땅속에 묻히지 못했지만, SEIS가 그 아쉬움을 충분히 만회했습니다. 임무는 먼지가 쌓여 태양 전지판이 작동을 멈춘 2022년 12월에 끝났습니다."
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.1.subtitle",
+    "old": "2018년 5월 5일 — Vandenberg AFB에서 Atlas V 발사",
+    "new": "2018년 5월 5일 — 반덴버그 공군기지에서 Atlas V 발사"
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Atlas V 401이 Vandenberg의 SLC-3E에서 이륙합니다. 미국 서부 해안에서 이루어진 최초의 행성 간 발사였습니다. MarCO CubeSats가 통신 중계기로 함께 비행했습니다.",
+    "new": "Atlas V 401이 반덴버그의 SLC-3E에서 이륙합니다. 미국 서부 해안에서 이루어진 최초의 행성 간 발사였습니다. MarCO CubeSats가 통신 중계기로 함께 비행했습니다."
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.2.subtitle",
+    "old": "Elysium Planitia — 2018년 11월 26일 착륙",
+    "new": "엘리시움 평원 — 2018년 11월 26일 착륙"
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "intro",
+    "old": "Luna 16은 1970년 9월 20일 Mare Fecunditatis에 착륙했다. 다른 천체에서 이루어진 최초의 무인 시료 회수였다. 달 표토를 35cm 깊이까지 뚫어 101g을 회수 캡슐에 밀봉했고, 착륙 26시간 뒤 이륙했다. 캡슐은 사흘 뒤 카자흐스탄에 착륙했다. Apollo 11으로부터 1년 2개월 뒤, 소련의 공학 기술이 유인 비행 없이도 달 물질을 가져올 수 있음을 입증한 임무였다.",
+    "new": "Luna 16은 1970년 9월 20일 풍요의 바다에 착륙했다. 다른 천체에서 이루어진 최초의 무인 시료 회수였다. 달 표토를 35cm 깊이까지 뚫어 101g을 회수 캡슐에 밀봉했고, 착륙 26시간 뒤 이륙했다. 캡슐은 사흘 뒤 카자흐스탄에 착륙했다. Apollo 11으로부터 1년 2개월 뒤, 소련의 공학 기술이 유인 비행 없이도 달 물질을 가져올 수 있음을 입증한 임무였다."
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.1.subtitle",
+    "old": "1970년 9월 12일 — Baikonur에서 발사된 Proton-K",
+    "new": "1970년 9월 12일 — 바이코누르에서 발사된 Proton-K"
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Baikonur Cosmodrome 발사대에 선 Proton-K와 Blok-D 상단 로켓.",
+    "new": "바이코누르 우주 기지 발사대에 선 Proton-K와 Blok-D 상단 로켓."
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.2.subtitle",
+    "old": "Mare Fecunditatis — 1970년 9월 20일 착륙",
+    "new": "풍요의 바다 — 1970년 9월 20일 착륙"
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "intro",
+    "old": "Luna 17은 1970년 11월 17일 Mare Imbrium에 착륙해 다른 천체에서 작동한 최초의 바퀴 달린 탐사 차량 Lunokhod 1을 내려놓았다. NASA의 LRV보다 7개월 앞선 기록이다. Lunokhod 1은 크림반도에 있던 5인 팀의 조종을 받으며 달의 하루 11번에 걸쳐 10.5km를 주행했다. 사진 25,000장과 파노라마 211장을 보낸 뒤 1971년 9월 교신이 끊겼다.",
+    "new": "Luna 17은 1970년 11월 17일 비의 바다에 착륙해 다른 천체에서 작동한 최초의 바퀴 달린 탐사 차량 Lunokhod 1을 내려놓았다. NASA의 LRV보다 7개월 앞선 기록이다. Lunokhod 1은 크림반도에 있던 5인 팀의 조종을 받으며 달의 하루 11번에 걸쳐 10.5km를 주행했다. 사진 25,000장과 파노라마 211장을 보낸 뒤 1971년 9월 교신이 끊겼다."
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.1.subtitle",
+    "old": "Mare Imbrium — 1970년 11월 17일 착륙",
+    "new": "비의 바다 — 1970년 11월 17일 착륙"
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Mare Imbrium 위를 달리는 Lunokhod 1 — 빛의 속도 때문에 각 방향으로 2.5초의 지연이 있었지만, 5인 팀이 실시간으로 조종했다.",
+    "new": "비의 바다 위를 달리는 Lunokhod 1 — 빛의 속도 때문에 각 방향으로 2.5초의 지연이 있었지만, 5인 팀이 실시간으로 조종했다."
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Lunokhod 1의 주행 경로 지도 — Mare Imbrium을 가로지르는 10.5km의 지그재그 경로와 바위와 크레이터에서 이루어진 과학 관측 정차 지점.",
+    "new": "Lunokhod 1의 주행 경로 지도 — 비의 바다를 가로지르는 10.5km의 지그재그 경로와 바위와 크레이터에서 이루어진 과학 관측 정차 지점."
+  },
+  {
+    "rel": "site-stories/luna24.json",
+    "at": "intro",
+    "old": "Luna 24는 1976년 8월 18일 Mare Crisium에 착륙했습니다. 20세기 소련의 마지막 달 시료 귀환 임무이자 마지막 무인 탐사 임무였고, 2013년 중국의 Chang'e 3가 착륙하기 전까지 어떤 종류로든 달에 착륙한 마지막 착륙선이었습니다. 레골리스를 2m 깊이까지 시추해 시료 170.1g을 지구로 가져왔으며, 여기에는 달의 물 얼음의 증거도 포함되어 있었습니다(수십 년 뒤 SOFIA와 LCROSS로 다시 확인되었습니다). 소련의 달 탐사 계획은 이곳에서 막을 내렸습니다.",
+    "new": "Luna 24는 1976년 8월 18일 위난의 바다에 착륙했습니다. 20세기 소련의 마지막 달 시료 귀환 임무이자 마지막 무인 탐사 임무였고, 2013년 중국의 Chang'e 3가 착륙하기 전까지 어떤 종류로든 달에 착륙한 마지막 착륙선이었습니다. 레골리스를 2m 깊이까지 시추해 시료 170.1g을 지구로 가져왔으며, 여기에는 달의 물 얼음의 증거도 포함되어 있었습니다(수십 년 뒤 SOFIA와 LCROSS로 다시 확인되었습니다). 소련의 달 탐사 계획은 이곳에서 막을 내렸습니다."
+  },
+  {
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.1.subtitle",
+    "old": "Mare Crisium — 1976년 8월 18일 착륙",
+    "new": "위난의 바다 — 1976년 8월 18일 착륙"
+  },
+  {
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Mare Crisium 착륙 지점 — Luna 24는 같은 지역에서 1974년에 착륙에 실패한 Luna 23에서 약 2km 떨어진 곳에 착륙했습니다.",
+    "new": "위난의 바다 착륙 지점 — Luna 24는 같은 지역에서 1974년에 착륙에 실패한 Luna 23에서 약 2km 떨어진 곳에 착륙했습니다."
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "intro",
+    "old": "Luna 9는 1966년 2월 3일 Oceanus Procellarum에 착륙했습니다. 다른 천체에 이루어진 최초의 연착륙이었습니다. 무게 99kg의 구형 캡슐은 팽창식 쿠션을 펼쳐 시속 22km의 충격을 견뎌냈고, 이어 꽃잎 모양의 덮개를 펼쳐 자세를 바로잡은 뒤 달 표면에서 찍은 최초의 사진을 전송했습니다. 배터리가 소진될 때까지 3일간 작동했습니다.",
+    "new": "Luna 9는 1966년 2월 3일 폭풍의 대양에 착륙했습니다. 다른 천체에 이루어진 최초의 연착륙이었습니다. 무게 99kg의 구형 캡슐은 팽창식 쿠션을 펼쳐 시속 22km의 충격을 견뎌냈고, 이어 꽃잎 모양의 덮개를 펼쳐 자세를 바로잡은 뒤 달 표면에서 찍은 최초의 사진을 전송했습니다. 배터리가 소진될 때까지 3일간 작동했습니다."
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.1.subtitle",
+    "old": "1966년 1월 31일 — Baikonur에서 발사된 Molniya-M",
+    "new": "1966년 1월 31일 — 바이코누르에서 발사된 Molniya-M"
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Baikonur에서 준비 중인 Molniya-M 로켓 — Luna 9는 두 대륙에 걸친 소련과 미국의 최초 연착륙 경쟁 속에서 발사되었습니다.",
+    "new": "바이코누르에서 준비 중인 Molniya-M 로켓 — Luna 9는 두 대륙에 걸친 소련과 미국의 최초 연착륙 경쟁 속에서 발사되었습니다."
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.2.subtitle",
+    "old": "Oceanus Procellarum — 1966년 2월 3일 착륙",
+    "new": "폭풍의 대양 — 1966년 2월 3일 착륙"
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "intro",
+    "old": "Mars Pathfinder는 1997년 7월 4일 Ares Vallis에 착륙했습니다. 21년 전 Viking 이후 처음으로 이루어진 미국의 화성 탐사 임무였습니다. 착륙선은 화성 최초의 바퀴인 Sojourner를 내보냈고, 에어백 착륙과 로버 주행을 함께 입증했습니다. 2억 6,500만 달러가 투입된 \"더 빠르게, 더 낫게, 더 저렴하게\" 방식의 저비용 임무였으며, 약 16,500장의 이미지를 보내왔습니다. Sojourner는 약 100미터를 이동하며, 만화 캐릭터의 이름을 딴 바위 열두 개(Yogi, Barnacle Bill, Scooby Doo)를 조사해 지도로 남겼고, 그 후 착륙선은 작동을 멈췄습니다.",
+    "new": "Mars Pathfinder는 1997년 7월 4일 아레스 계곡에 착륙했습니다. 21년 전 Viking 이후 처음으로 이루어진 미국의 화성 탐사 임무였습니다. 착륙선은 화성 최초의 바퀴인 Sojourner를 내보냈고, 에어백 착륙과 로버 주행을 함께 입증했습니다. 2억 6,500만 달러가 투입된 \"더 빠르게, 더 낫게, 더 저렴하게\" 방식의 저비용 임무였으며, 약 16,500장의 이미지를 보내왔습니다. Sojourner는 약 100미터를 이동하며, 만화 캐릭터의 이름을 딴 바위 열두 개(Yogi, Barnacle Bill, Scooby Doo)를 조사해 지도로 남겼고, 그 후 착륙선은 작동을 멈췄습니다."
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.1.subtitle",
+    "old": "1996년 12월 4일, Cape Canaveral에서 발사된 Delta II",
+    "new": "1996년 12월 4일, 케이프 커내버럴에서 발사된 Delta II"
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.2.subtitle",
+    "old": "Ares Vallis, 1997년 7월 4일 착륙",
+    "new": "아레스 계곡, 1997년 7월 4일 착륙"
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Improved Presidential Panorama. Ares Vallis를 360°로 담은 컬러 전경입니다. 지평선에 Twin Peaks가 보입니다(TV 드라마에서 이름을 따왔습니다).",
+    "new": "Improved Presidential Panorama. 아레스 계곡을 360°로 담은 컬러 전경입니다. 지평선에 Twin Peaks가 보입니다(TV 드라마에서 이름을 따왔습니다)."
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.1.subtitle",
+    "old": "1971년 5월 28일 — Baikonur에서 발사된 Proton-K",
+    "new": "1971년 5월 28일 — 바이코누르에서 발사된 Proton-K"
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Baikonur Cosmodrome에서 Blok-D 상단과 함께 발사를 준비 중인 Proton-K. 화성까지는 6개월이 걸렸다.",
+    "new": "바이코누르 우주 기지에서 Blok-D 상단과 함께 발사를 준비 중인 Proton-K. 화성까지는 6개월이 걸렸다."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "intro",
+    "old": "Opportunity는 2004년 1월 25일 Meridiani Planum에 착륙했습니다. 에어백을 터뜨리며 튀어 오르던 로버가 곧바로 작은 크레이터(Eagle Crater) 안으로 굴러 들어간, 그야말로 홀인원이었습니다. 그 크레이터의 벽에는 화성에서 가까이서 관찰된 최초의 적철석이 풍부한 \"블루베리\"가 박혀 있었습니다. 90솔을 목표로 설계된 Opportunity는 14년 동안 45.16km를 주행하다가, 2018년 6월 행성 전체를 뒤덮은 먼지 폭풍으로 태양광 전력이 끊기면서 활동을 멈췄습니다. 마지막 교신은 이렇습니다. \"배터리가 얼마 남지 않았고, 점점 어두워지고 있어요.\"",
+    "new": "Opportunity는 2004년 1월 25일 메리디아니 평원에 착륙했습니다. 에어백을 터뜨리며 튀어 오르던 로버가 곧바로 작은 크레이터(Eagle Crater) 안으로 굴러 들어간, 그야말로 홀인원이었습니다. 그 크레이터의 벽에는 화성에서 가까이서 관찰된 최초의 적철석이 풍부한 \"블루베리\"가 박혀 있었습니다. 90솔을 목표로 설계된 Opportunity는 14년 동안 45.16km를 주행하다가, 2018년 6월 행성 전체를 뒤덮은 먼지 폭풍으로 태양광 전력이 끊기면서 활동을 멈췄습니다. 마지막 교신은 이렇습니다. \"배터리가 얼마 남지 않았고, 점점 어두워지고 있어요.\""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.subtitle",
+    "old": "Meridiani Planum — 2004년 1월 25일 착륙",
+    "new": "메리디아니 평원 — 2004년 1월 25일 착륙"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Legacy Pan, 5084~5111솔(2018년 5~6월) — 먼지 폭풍이 닥치기 전 Opportunity가 촬영한 마지막 360° 파노라마입니다. Perseverance Valley는 Endeavour Crater 안쪽으로 내려갑니다.",
+    "new": "Legacy Pan, 5084~5111솔(2018년 5~6월) — 먼지 폭풍이 닥치기 전 Opportunity가 촬영한 마지막 360° 파노라마입니다. Perseverance Valley는 인데버 분화구 안쪽으로 내려갑니다."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Opportunity가 마지막 몇 해를 보낸 Endeavour Crater의 가장자리. 로버가 멈춰 선 자리는 오른쪽의 Perseverance Valley에 있습니다.",
+    "new": "Opportunity가 마지막 몇 해를 보낸 인데버 분화구의 가장자리. 로버가 멈춰 선 자리는 오른쪽의 Perseverance Valley에 있습니다."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Endurance Crater의 열차폐막 충돌 지점 — Opportunity는 자신이 버리고 온 진입 하드웨어를 직접 살펴보려고 되돌아갔습니다.",
+    "new": "인듀어런스 분화구의 열차폐막 충돌 지점 — Opportunity는 자신이 버리고 온 진입 하드웨어를 직접 살펴보려고 되돌아갔습니다."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Endurance Crater 안쪽 Burns Cliff의 층층이 드러난 단면 — 고대에 존재했던 산성의 짠 물웅덩이가 남긴 퇴적 기록입니다.",
+    "new": "인듀어런스 분화구 안쪽 Burns Cliff의 층층이 드러난 단면 — 고대에 존재했던 산성의 짠 물웅덩이가 남긴 퇴적 기록입니다."
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "intro",
+    "old": "Perseverance는 2021년 2월 18일 Jezero Crater에 착륙했다. 38억 년 전에 형성된 이 강 삼각주는 고대 화성 생명의 흔적을 간직하고 있을 가능성이 가장 높다는 이유로 선정되었다. 이 로버는 최초의 화성 헬리콥터(Ingenuity)와 최초의 화성 녹음 장치, 그리고 최초의 시료 저장 시스템을 싣고 있다. 표면에 남겨진 시료 튜브는 2030년대에 Mars Sample Return 임무를 통해 지구로 가져올 예정이다.",
+    "new": "Perseverance는 2021년 2월 18일 예제로 분화구에 착륙했다. 38억 년 전에 형성된 이 강 삼각주는 고대 화성 생명의 흔적을 간직하고 있을 가능성이 가장 높다는 이유로 선정되었다. 이 로버는 최초의 화성 헬리콥터(Ingenuity)와 최초의 화성 녹음 장치, 그리고 최초의 시료 저장 시스템을 싣고 있다. 표면에 남겨진 시료 튜브는 2030년대에 Mars Sample Return 임무를 통해 지구로 가져올 예정이다."
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.1.subtitle",
+    "old": "2020년 7월 30일 — Cape Canaveral에서 발사된 Atlas V",
+    "new": "2020년 7월 30일 — 케이프 커내버럴에서 발사된 Atlas V"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.subtitle",
+    "old": "Jezero Crater — 2021년 2월 18일 착륙",
+    "new": "예제로 분화구 — 2021년 2월 18일 착륙"
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "chapters.1.subtitle",
+    "old": "Vastitas Borealis — 2008년 5월 25일 착륙",
+    "new": "바스티타스 보레알리스 — 2008년 5월 25일 착륙"
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "intro",
+    "old": "Schiaparelli는 유럽의 두 번째 화성 착륙 시도였습니다. 2016년 10월 16일 ExoMars Trace Gas Orbiter에서 분리된 Schiaparelli는 사흘 뒤 시속 약 540km로 Meridiani Planum에 추락했습니다. 소프트웨어 오류로 낙하산과 제동 추력기가 50초 일찍 분리되었고, 그때 착륙선은 아직 지표면 위 3.7km에 있었습니다. 잔해는 일주일 안에 MRO HiRISE에 포착되었습니다. 이 사고에서 얻은 교훈은 2028년 발사를 목표로 하는 ExoMars Rosalind Franklin 로버의 설계에 반영되었습니다.",
+    "new": "Schiaparelli는 유럽의 두 번째 화성 착륙 시도였습니다. 2016년 10월 16일 ExoMars Trace Gas Orbiter에서 분리된 Schiaparelli는 사흘 뒤 시속 약 540km로 메리디아니 평원에 추락했습니다. 소프트웨어 오류로 낙하산과 제동 추력기가 50초 일찍 분리되었고, 그때 착륙선은 아직 지표면 위 3.7km에 있었습니다. 잔해는 일주일 안에 MRO HiRISE에 포착되었습니다. 이 사고에서 얻은 교훈은 2028년 발사를 목표로 하는 ExoMars Rosalind Franklin 로버의 설계에 반영되었습니다."
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.1.subtitle",
+    "old": "2016년 3월 14일 — Baikonur에서 발사된 Proton-M",
+    "new": "2016년 3월 14일 — 바이코누르에서 발사된 Proton-M"
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.2.subtitle",
+    "old": "Meridiani Planum — 2016년 10월 19일 충돌",
+    "new": "메리디아니 평원 — 2016년 10월 19일 충돌"
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "intro",
+    "old": "SLIM(Smart Lander for Investigating Moon)은 2024년 1월 20일 Shioli Crater에 착륙했습니다. 일본 최초의 달 연착륙이자 정밀 착륙 기술 실증기였습니다. SLIM은 목표 지점에서 100m 이내에 착지했습니다(이전 최고 기록은 1km 이상). 그러나 옆으로 넘어져, 남은 태양전지만으로 거꾸로 뒤집힌 채 전력이 바닥날 때까지 작동했습니다. 표면 초소형 로버 LEV-1과 LEV-2(Sora-Q) 두 대는 어색한 최종 자세가 되기 전에 이미 분리되어 전개되었습니다.",
+    "new": "SLIM(Smart Lander for Investigating Moon)은 2024년 1월 20일 시오리 분화구에 착륙했습니다. 일본 최초의 달 연착륙이자 정밀 착륙 기술 실증기였습니다. SLIM은 목표 지점에서 100m 이내에 착지했습니다(이전 최고 기록은 1km 이상). 그러나 옆으로 넘어져, 남은 태양전지만으로 거꾸로 뒤집힌 채 전력이 바닥날 때까지 작동했습니다. 표면 초소형 로버 LEV-1과 LEV-2(Sora-Q) 두 대는 어색한 최종 자세가 되기 전에 이미 분리되어 전개되었습니다."
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.1.subtitle",
+    "old": "2023년 9월 6일 — Tanegashima에서 H-IIA 발사",
+    "new": "2023년 9월 6일 — 다네가시마에서 H-IIA 발사"
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.2.subtitle",
+    "old": "Shioli Crater — 2024년 1월 20일 착륙",
+    "new": "시오리 분화구 — 2024년 1월 20일 착륙"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "intro",
+    "old": "Spirit은 2004년 1월 4일 Gusev Crater에 착륙했습니다. 화성 반대편에 쌍둥이 탐사 로버 Opportunity가 착륙하기 3주 전이었습니다. 90솔(sol)을 목표로 설계된 Spirit은 6년 동안 활동하며 7.7km를 주행했고, 결국 \"Troy\"의 부드러운 토양에 바퀴가 완전히 빠져 움직일 수 없게 되었습니다. 발이 묶인 로버가 된 뒤에도 Spirit은 2010년 3월 교신이 끊길 때까지 고정형 과학 플랫폼으로서 임무를 이어갔습니다.",
+    "new": "Spirit은 2004년 1월 4일 구세프 분화구에 착륙했습니다. 화성 반대편에 쌍둥이 탐사 로버 Opportunity가 착륙하기 3주 전이었습니다. 90솔(sol)을 목표로 설계된 Spirit은 6년 동안 활동하며 7.7km를 주행했고, 결국 \"Troy\"의 부드러운 토양에 바퀴가 완전히 빠져 움직일 수 없게 되었습니다. 발이 묶인 로버가 된 뒤에도 Spirit은 2010년 3월 교신이 끊길 때까지 고정형 과학 플랫폼으로서 임무를 이어갔습니다."
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.1.subtitle",
+    "old": "Gusev Crater — 2004년 1월 4일 착륙",
+    "new": "구세프 분화구 — 2004년 1월 4일 착륙"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "McMurdo의 Winter Haven, 814~980솔(2006년) — Pancam 360° 파노라마. 사고로 희생된 STS-107 승무원들을 기려 이름 붙인 Columbia Hills가 지평선을 압도합니다.",
+    "new": "McMurdo의 Winter Haven, 814~980솔(2006년) — Pancam 360° 파노라마. 사고로 희생된 STS-107 승무원들을 기려 이름 붙인 컬럼비아 힐스가 지평선을 압도합니다."
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.2.subtitle",
+    "old": "Husband Hill을 오르고 Home Plate에서 실리카를 발견하다",
+    "new": "허즈번드 언덕을 오르고 Home Plate에서 실리카를 발견하다"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Home Plate에서 Spirit의 고장 난 오른쪽 앞바퀴가 파헤쳐 드러낸 실리카가 풍부한 토양 — Gusev Crater에 과거 열수 활동이 있었다는 증거입니다.",
+    "new": "Home Plate에서 Spirit의 고장 난 오른쪽 앞바퀴가 파헤쳐 드러낸 실리카가 풍부한 토양 — 구세프 분화구에 과거 열수 활동이 있었다는 증거입니다."
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "489솔(2005년 5월 19일) Pancam이 촬영한 Gusev Crater의 일몰. 푸른빛이 감도는 화성 황혼을 담은 대표적인 이미지 중 하나입니다.",
+    "new": "489솔(2005년 5월 19일) Pancam이 촬영한 구세프 분화구의 일몰. 푸른빛이 감도는 화성 황혼을 담은 대표적인 이미지 중 하나입니다."
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "intro",
+    "old": "Viking 1은 1976년 7월 20일 Chryse Planitia에 착륙했습니다. 아폴로 11호(Apollo 11)의 달 착륙으로부터 정확히 7년 뒤였고, 미국이 화성에 성공적으로 착륙시킨 최초의 착륙선이었습니다. 2,245솔(6.3년)에 걸친 지표 임무 동안 화성 최초의 컬러 영상을 촬영했고, 최초의 현지 생물학 실험을 수행했으며(결과는 모호했습니다), 매일의 기상 기록도 남겼습니다. 1982년 11월, 명령 업로드 과정에서 안테나 지향 매개변수가 실수로 덮어쓰이면서 마지막 교신이 이루어졌습니다.",
+    "new": "Viking 1은 1976년 7월 20일 크리세 평원에 착륙했습니다. 아폴로 11호(Apollo 11)의 달 착륙으로부터 정확히 7년 뒤였고, 미국이 화성에 성공적으로 착륙시킨 최초의 착륙선이었습니다. 2,245솔(6.3년)에 걸친 지표 임무 동안 화성 최초의 컬러 영상을 촬영했고, 최초의 현지 생물학 실험을 수행했으며(결과는 모호했습니다), 매일의 기상 기록도 남겼습니다. 1982년 11월, 명령 업로드 과정에서 안테나 지향 매개변수가 실수로 덮어쓰이면서 마지막 교신이 이루어졌습니다."
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.1.subtitle",
+    "old": "1975년 8월 20일 — Cape Canaveral에서 Titan IIIE 발사",
+    "new": "1975년 8월 20일 — 케이프 커내버럴에서 Titan IIIE 발사"
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.2.subtitle",
+    "old": "Chryse Planitia — 1976년 7월 20일 착륙",
+    "new": "크리세 평원 — 1976년 7월 20일 착륙"
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Chryse Planitia 360° 파노라마 — 다른 행성 표면에서 촬영한 최초의 컬러 풍경.",
+    "new": "크리세 평원 360° 파노라마 — 다른 행성 표면에서 촬영한 최초의 컬러 풍경."
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "intro",
+    "old": "Viking 2는 1976년 9월 3일 Utopia Planitia에 착륙했습니다. 쌍둥이 Viking 착륙선 가운데 두 번째 기체로, 화성에서 Viking 1과 정반대편에 내려앉았습니다. 1,316솔에 걸친 임무 동안 (극지방의 겨울에) 화성에서 물얼음 서리를 처음으로 관측했으며, 훨씬 춥고 위도가 높은 지점에서 Viking 1의 생물학 실험을 되풀이했습니다. 1980년 4월 배터리 고장으로 임무를 마쳤습니다.",
+    "new": "Viking 2는 1976년 9월 3일 유토피아 평원에 착륙했습니다. 쌍둥이 Viking 착륙선 가운데 두 번째 기체로, 화성에서 Viking 1과 정반대편에 내려앉았습니다. 1,316솔에 걸친 임무 동안 (극지방의 겨울에) 화성에서 물얼음 서리를 처음으로 관측했으며, 훨씬 춥고 위도가 높은 지점에서 Viking 1의 생물학 실험을 되풀이했습니다. 1980년 4월 배터리 고장으로 임무를 마쳤습니다."
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "화성 Utopia Planitia 표면에 있는 Viking 2 착륙선.",
+    "new": "화성 유토피아 평원 표면에 있는 Viking 2 착륙선."
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.subtitle",
+    "old": "Utopia Planitia — 1976년 9월 3일 착륙",
+    "new": "유토피아 평원 — 1976년 9월 3일 착륙"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Utopia Planitia 360° 카메라 모자이크 — Viking 1의 Chryse 착륙지보다 더 평탄하고 바위가 많은 지형.",
+    "new": "유토피아 평원 360° 카메라 모자이크 — Viking 1의 Chryse 착륙지보다 더 평탄하고 바위가 많은 지형."
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Utopia Planitia 컬러 영상 — Andrea Luck이 NASA 아카이브 원판에서 Viking 2 영상을 다시 처리했습니다.",
+    "new": "유토피아 평원 컬러 영상 — Andrea Luck이 NASA 아카이브 원판에서 Viking 2 영상을 다시 처리했습니다."
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Utopia Planitia의 일출(PIA00576) — Viking 2의 카메라가 북반구 고위도 지역의 동트기 전 여명을 포착했습니다.",
+    "new": "유토피아 평원의 일출(PIA00576) — Viking 2의 카메라가 북반구 고위도 지역의 동트기 전 여명을 포착했습니다."
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.2.images.2.caption",
+    "old": "Utopia Planitia의 서리(NASA Viking Lander 2) — Andrea Luck이 다시 처리했습니다.",
+    "new": "유토피아 평원의 서리(NASA Viking Lander 2) — Andrea Luck이 다시 처리했습니다."
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "intro",
+    "old": "Zhurong은 2021년 5월 14일 Utopia Planitia에 착륙했습니다. 중국 최초의 화성 착륙 성공이자, 궤도선·착륙선·로버를 단일 발사로 결합한 세계 최초의 화성 탐사 임무(Tianwen-1)였습니다. 중국의 불의 신 이름을 딴 Zhurong은 Utopia 남부 평원 1.92km를 주행한 뒤, 먼지 계절이던 2022년 5월 휴면 상태에 들어갔습니다. CNSA는 재가동 여부를 확인하지 않았습니다.",
+    "new": "Zhurong은 2021년 5월 14일 유토피아 평원에 착륙했습니다. 중국 최초의 화성 착륙 성공이자, 궤도선·착륙선·로버를 단일 발사로 결합한 세계 최초의 화성 탐사 임무(Tianwen-1)였습니다. 중국의 불의 신 이름을 딴 Zhurong은 Utopia 남부 평원 1.92km를 주행한 뒤, 먼지 계절이던 2022년 5월 휴면 상태에 들어갔습니다. CNSA는 재가동 여부를 확인하지 않았습니다."
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.1.subtitle",
+    "old": "2020년 7월 23일 — Wenchang에서 발사된 Long March 5",
+    "new": "2020년 7월 23일 — 원창에서 발사된 Long March 5"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Long March 5가 중국 하이난의 Wenchang Space Launch Site에서 Tianwen-1을 발사하는 모습. 화성까지 7개월간 비행했습니다.",
+    "new": "Long March 5가 중국 하이난의 원창 위성발사센터에서 Tianwen-1을 발사하는 모습. 화성까지 7개월간 비행했습니다."
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.2.subtitle",
+    "old": "Utopia Planitia — 2021년 5월 14일 착륙",
+    "new": "유토피아 평원 — 2021년 5월 14일 착륙"
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "current_distance_label",
+    "old": "0.94 AU · Earth #2 플라이바이를 향해 이동 중 2026-09-29 (항해 레그 2/5)",
+    "new": "0.94 AU · 지구 #2 플라이바이를 향해 이동 중 2026-09-29 (항해 레그 2/5)"
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "waypoints.6.label",
+    "old": "Earth #2",
+    "new": "지구 #2"
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "waypoints.8.label",
+    "old": "Earth #3",
+    "new": "지구 #3"
+  },
+  {
+    "rel": "trajectories/pioneer-10.json",
+    "at": "interstellar_since_label",
+    "old": "마지막 신호 수신 2003 — 황소자리 방향으로 코스팅 중, 약 200만 년 후 Aldebaran 근처를 통과할 예정",
+    "new": "마지막 신호 수신 2003 — 황소자리 방향으로 코스팅 중, 약 200만 년 후 알데바란 근처를 통과할 예정"
+  },
+  {
+    "rel": "trajectories/pioneer-11.json",
+    "at": "interstellar_since_label",
+    "old": "1995년 신호 두절 — Aquila 방향으로 항행 중, 약 2027년경 성간 우주에 도달할 예정",
+    "new": "1995년 신호 두절 — 독수리자리 방향으로 항행 중, 약 2027년경 성간 우주에 도달할 예정"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-04d455fe481f.title",
+    "old": "Gemini 4 — Ed White의 첫 미국 우주유영",
+    "new": "Gemini 4 — 에드 화이트의 첫 미국 우주유영"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-04d455fe481f.caption",
+    "old": "Ed White가 Gemini 4 밖에서 떠다니며 첫 미국 우주유영을 수행 — 1965년 6월 3일.",
+    "new": "에드 화이트가 Gemini 4 밖에서 떠다니며 첫 미국 우주유영을 수행 — 1965년 6월 3일."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-112fee55fa9f.caption",
+    "old": "Yuri Gagarin이 바이코누르에서 발사 — 1961년 4월 12일.",
+    "new": "유리 가가린이 바이코누르에서 발사 — 1961년 4월 12일."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-28fc9267360f.title",
+    "old": "Juno — Ganymede와 Jupiter의 근접 비행",
+    "new": "Juno — 가니메데와 목성의 근접 비행"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-396445a74b9f.caption",
+    "old": "Zhurong 로버 표면 영상의 CGTN 방송, Utopia Planitia — 2021년 7월.",
+    "new": "Zhurong 로버 표면 영상의 CGTN 방송, 유토피아 평원 — 2021년 7월."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-40955744b738.title",
+    "old": "Voyager 1 at Saturn",
+    "new": "Voyager 1 at 토성"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-4ba1c691d9d4.title",
+    "old": "Voskhod 2 — Leonov, 최초의 우주유영",
+    "new": "Voskhod 2 — 레오노프, 최초의 우주유영"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-4ba1c691d9d4.caption",
+    "old": "Alexei Leonov의 캡슐 밖에서의 12분 — 1965년 3월 18일",
+    "new": "알렉세이 레오노프의 캡슐 밖에서의 12분 — 1965년 3월 18일"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-612cd0489c9c.caption",
+    "old": "Neil Armstrong이 Eagle의 사다리를 내려가다 — \"한 인간으로서 한 작은 발걸음\", 1969년 7월 20일",
+    "new": "닐 암스트롱이 Eagle의 사다리를 내려가다 — \"한 인간으로서 한 작은 발걸음\", 1969년 7월 20일"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-681dfc9a2920.caption",
+    "old": "InSight가 Elysium Planitia에 착륙하는 실시간 미션 컨트롤 — 2018년 11월 26일",
+    "new": "InSight가 엘리시움 평원에 착륙하는 실시간 미션 컨트롤 — 2018년 11월 26일"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-7581f1522f30.caption",
+    "old": "Vesta와 Ceres에서의 Dawn에 대한 JPL 회고",
+    "new": "베스타와 세레스에서의 Dawn에 대한 JPL 회고"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-8690fe1ee080.caption",
+    "old": "Bennu 샘플 캡슐의 지구 귀환 — 2023년 9월 24일.",
+    "new": "베누 샘플 캡슐의 지구 귀환 — 2023년 9월 24일."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ab8824f79806.caption",
+    "old": "JWST가 Kourou에서 Ariane 5로 발사 — 2021년 12월 25일.",
+    "new": "JWST가 쿠루에서 Ariane 5로 발사 — 2021년 12월 25일."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ac1902ff67f1.title",
+    "old": "DART — 소행성 Dimorphos와의 충돌",
+    "new": "DART — 소행성 디모르포스와의 충돌"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ddd21b3aecd3.title",
+    "old": "Hayabusa2 — 소행성 Ryugu에 착륙",
+    "new": "Hayabusa2 — 소행성 류구에 착륙"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ddd21b3aecd3.caption",
+    "old": "Ryugu에 대한 첫 착륙의 선상 영상 — 2019년 2월 22일",
+    "new": "류구에 대한 첫 착륙의 선상 영상 — 2019년 2월 22일"
+  }
+]

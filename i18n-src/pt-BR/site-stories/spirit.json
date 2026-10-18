@@ -1,0 +1,50 @@
+{
+  "intro": "Spirit pousou na Cratera Gusev em 4 de janeiro de 2004 — três semanas antes de sua gêmea Opportunity tocar o solo no lado oposto de Marte. Projetado para durar 90 sóis, Spirit operou por 6 anos e percorreu 7,7 km, até que suas rodas ficaram presas de forma permanente no solo fofo de \"Troy\". Imobilizado, o rover seguiu atuando como plataforma científica estacionária até a perda de contato, em março de 2010.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Rover movido a energia solar, gêmeo de Opportunity",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/01.webp",
+          "caption": "Mars Exploration Rover durante a integração — 185 kg, 6 rodas, câmera de mastro Pancam, ferramenta de abrasão de rochas RAT."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Cratera Gusev — pouso em 4 de janeiro de 2004",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/spirit/tier3-pan.jpg",
+          "caption": "Winter Haven em McMurdo, sóis 814-980 (2006) — panorama de 360° da Pancam. As Colinas Columbia, batizadas em homenagem à tripulação perdida do STS-107, dominam o horizonte."
+        },
+        {
+          "src": "/images/hotspots/mars/spirit/tier2-hirise.jpg",
+          "caption": "O local de Troy, onde Spirit ficou preso, registrado pela HiRISE da MRO após o atolamento das rodas em maio de 2009."
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/02.webp",
+          "caption": "Perfuração da rocha Adirondack, sol 34 — primeiro uso da ferramenta de abrasão de rochas em Marte."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciência",
+      "subtitle": "Escalando colina Husband e encontrando sílica em Home Plate",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/03.webp",
+          "caption": "Solo rico em sílica exposto pela roda dianteira direita quebrada de Spirit em Home Plate — evidência de atividade hidrotermal passada na Cratera Gusev."
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/04.webp",
+          "caption": "Pôr do sol sobre a Cratera Gusev fotografado pela Pancam, sol 489 (19 de maio de 2005). Uma das icônicas imagens do entardecer marciano, com tons azulados."
+        }
+      ]
+    }
+  ]
+}

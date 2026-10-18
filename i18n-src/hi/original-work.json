@@ -1,0 +1,1664 @@
+{
+  "anatomy_art": {
+    "/images/anatomy/akatsuki_webp": {
+      "title": "Akatsuki"
+    },
+    "/images/anatomy/antares_webp": {
+      "title": "Antares"
+    },
+    "/images/anatomy/apollo-csm-block-ii_webp": {
+      "title": "Apollo CSM Block II"
+    },
+    "/images/anatomy/apollo-lm_webp": {
+      "title": "Apollo Lunar Module"
+    },
+    "/images/anatomy/ariane-1_webp": {
+      "title": "Ariane 1"
+    },
+    "/images/anatomy/ariane-5_webp": {
+      "title": "Ariane 5"
+    },
+    "/images/anatomy/ariane-6_webp": {
+      "title": "Ariane 6"
+    },
+    "/images/anatomy/atlas-lv-3b_webp": {
+      "title": "Atlas LV-3B"
+    },
+    "/images/anatomy/atlas-v_webp": {
+      "title": "Atlas V"
+    },
+    "/images/anatomy/atv_webp": {
+      "title": "ATV (Automated Transfer Vehicle)"
+    },
+    "/images/anatomy/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/anatomy/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/anatomy/blue-moon-mk1_webp": {
+      "title": "Blue Moon Mk1"
+    },
+    "/images/anatomy/buran_webp": {
+      "title": "Buran"
+    },
+    "/images/anatomy/cargo-dragon-2_webp": {
+      "title": "Cargo Dragon 2"
+    },
+    "/images/anatomy/cargo-dragon-v1_webp": {
+      "title": "Cargo Dragon v1"
+    },
+    "/images/anatomy/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/anatomy/chandra_webp": {
+      "title": "Chandra X-ray Observatory"
+    },
+    "/images/anatomy/chandrayaan1_webp": {
+      "title": "Chandrayaan-1"
+    },
+    "/images/anatomy/change-3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/anatomy/change-4_webp": {
+      "title": "Chang'e 4"
+    },
+    "/images/anatomy/change-5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/anatomy/compton-gro_webp": {
+      "title": "Compton Gamma Ray Observatory"
+    },
+    "/images/anatomy/crew-dragon_webp": {
+      "title": "Crew Dragon"
+    },
+    "/images/anatomy/curiosity_webp": {
+      "title": "Curiosity (MSL)"
+    },
+    "/images/anatomy/cygnus-enhanced_webp": {
+      "title": "Cygnus Enhanced"
+    },
+    "/images/anatomy/dart_webp": {
+      "title": "DART"
+    },
+    "/images/anatomy/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/anatomy/delta-ii_webp": {
+      "title": "Delta II"
+    },
+    "/images/anatomy/energia_webp": {
+      "title": "Energia"
+    },
+    "/images/anatomy/euclid_webp": {
+      "title": "Euclid"
+    },
+    "/images/anatomy/europa-clipper_webp": {
+      "title": "Europa Clipper"
+    },
+    "/images/anatomy/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin (ExoMars रोवर)"
+    },
+    "/images/anatomy/exomars-tgo_webp": {
+      "title": "ExoMars TGO"
+    },
+    "/images/anatomy/falcon-9_webp": {
+      "title": "Falcon 9 Block 5"
+    },
+    "/images/anatomy/falcon-heavy_webp": {
+      "title": "Falcon Heavy"
+    },
+    "/images/anatomy/gaganyaan_webp": {
+      "title": "Gaganyaan"
+    },
+    "/images/anatomy/gaia_webp": {
+      "title": "Gaia"
+    },
+    "/images/anatomy/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/anatomy/gemini_webp": {
+      "title": "Gemini"
+    },
+    "/images/anatomy/h-iia_webp": {
+      "title": "H-IIA"
+    },
+    "/images/anatomy/h3_webp": {
+      "title": "H3"
+    },
+    "/images/anatomy/hakuto-r_webp": {
+      "title": "Hakuto-R कार्यक्रम"
+    },
+    "/images/anatomy/hayabusa-2_webp": {
+      "title": "Hayabusa2"
+    },
+    "/images/anatomy/hayabusa_webp": {
+      "title": "Hayabusa"
+    },
+    "/images/anatomy/hitomi_webp": {
+      "title": "Hitomi (ASTRO-H)"
+    },
+    "/images/anatomy/hope_webp": {
+      "title": "Hope (EMM)"
+    },
+    "/images/anatomy/htv-x_webp": {
+      "title": "HTV-X"
+    },
+    "/images/anatomy/htv_webp": {
+      "title": "HTV (Kounotori)"
+    },
+    "/images/anatomy/hubble_webp": {
+      "title": "Hubble अंतरिक्ष दूरबीन"
+    },
+    "/images/anatomy/im-1-odysseus_webp": {
+      "title": "IM-1 Odysseus"
+    },
+    "/images/anatomy/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/anatomy/iss_webp": {
+      "title": "अंतर्राष्ट्रीय अंतरिक्ष स्टेशन"
+    },
+    "/images/anatomy/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/anatomy/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/anatomy/jwst_webp": {
+      "title": "James Webb Space Telescope"
+    },
+    "/images/anatomy/kepler_webp": {
+      "title": "Kepler"
+    },
+    "/images/anatomy/long-march-2f_webp": {
+      "title": "Long March 2F"
+    },
+    "/images/anatomy/long-march-3b_webp": {
+      "title": "Long March 3B"
+    },
+    "/images/anatomy/long-march-5_webp": {
+      "title": "Long March 5 / 5B"
+    },
+    "/images/anatomy/long-march-7_webp": {
+      "title": "Long March 7"
+    },
+    "/images/anatomy/lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter (LRO)"
+    },
+    "/images/anatomy/lrv-apollo_webp": {
+      "title": "चंद्र रोविंग वाहन"
+    },
+    "/images/anatomy/lucy_webp": {
+      "title": "Lucy"
+    },
+    "/images/anatomy/luna-16_webp": {
+      "title": "Luna 16-श्रेणी"
+    },
+    "/images/anatomy/luna-9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/anatomy/lunar-prospector_webp": {
+      "title": "Lunar Prospector"
+    },
+    "/images/anatomy/lunokhod-1_webp": {
+      "title": "Lunokhod 1"
+    },
+    "/images/anatomy/lunokhod-2_webp": {
+      "title": "Lunokhod 2"
+    },
+    "/images/anatomy/lvm3_webp": {
+      "title": "LVM3 (GSLV Mk III)"
+    },
+    "/images/anatomy/m-v_webp": {
+      "title": "M V"
+    },
+    "/images/anatomy/magellan_webp": {
+      "title": "Magellan"
+    },
+    "/images/anatomy/mangalyaan_webp": {
+      "title": "Mangalyaan (MOM)"
+    },
+    "/images/anatomy/mariner-4_webp": {
+      "title": "Mariner 4"
+    },
+    "/images/anatomy/mariner-9_webp": {
+      "title": "Mariner 9"
+    },
+    "/images/anatomy/mars-3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/anatomy/mars-express_webp": {
+      "title": "Mars Express"
+    },
+    "/images/anatomy/mars-odyssey_webp": {
+      "title": "2001 Mars Odyssey"
+    },
+    "/images/anatomy/maven_webp": {
+      "title": "MAVEN"
+    },
+    "/images/anatomy/mercury-capsule_webp": {
+      "title": "Mercury कैप्सूल"
+    },
+    "/images/anatomy/mercury-redstone_webp": {
+      "title": "Mercury-Redstone"
+    },
+    "/images/anatomy/messenger_webp": {
+      "title": "MESSENGER"
+    },
+    "/images/anatomy/mir_webp": {
+      "title": "Mir"
+    },
+    "/images/anatomy/mro_webp": {
+      "title": "Mars Reconnaissance Orbiter"
+    },
+    "/images/anatomy/n1_webp": {
+      "title": "N1"
+    },
+    "/images/anatomy/new-glenn_webp": {
+      "title": "New Glenn"
+    },
+    "/images/anatomy/new-shepard_webp": {
+      "title": "New Shepard"
+    },
+    "/images/anatomy/opportunity_webp": {
+      "title": "Opportunity (MER-B)"
+    },
+    "/images/anatomy/orion_webp": {
+      "title": "Orion"
+    },
+    "/images/anatomy/osiris-rex_webp": {
+      "title": "OSIRIS-REx"
+    },
+    "/images/anatomy/parker-solar-probe_webp": {
+      "title": "Parker Solar Probe"
+    },
+    "/images/anatomy/perseverance_webp": {
+      "title": "Perseverance (Mars 2020)"
+    },
+    "/images/anatomy/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/anatomy/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/anatomy/pioneer-11_webp": {
+      "title": "Pioneer 11"
+    },
+    "/images/anatomy/pragyan_webp": {
+      "title": "Pragyan"
+    },
+    "/images/anatomy/progress-m_webp": {
+      "title": "Progress M"
+    },
+    "/images/anatomy/progress-ms_webp": {
+      "title": "Progress MS"
+    },
+    "/images/anatomy/proton-k_webp": {
+      "title": "Proton-K"
+    },
+    "/images/anatomy/proton-m_webp": {
+      "title": "Proton-M"
+    },
+    "/images/anatomy/pslv-xl_webp": {
+      "title": "PSLV-XL"
+    },
+    "/images/anatomy/pslv_webp": {
+      "title": "Pslv"
+    },
+    "/images/anatomy/psyche-spacecraft_webp": {
+      "title": "Psyche"
+    },
+    "/images/anatomy/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/anatomy/salyut-1_webp": {
+      "title": "Salyut 1"
+    },
+    "/images/anatomy/salyut-6_webp": {
+      "title": "Salyut 6"
+    },
+    "/images/anatomy/salyut-7_webp": {
+      "title": "Salyut 7"
+    },
+    "/images/anatomy/saturn-ib_webp": {
+      "title": "Saturn IB"
+    },
+    "/images/anatomy/saturn-v_webp": {
+      "title": "Saturn V"
+    },
+    "/images/anatomy/schiaparelli_webp": {
+      "title": "Schiaparelli"
+    },
+    "/images/anatomy/shenzhou_webp": {
+      "title": "Shenzhou"
+    },
+    "/images/anatomy/skylab_webp": {
+      "title": "Skylab"
+    },
+    "/images/anatomy/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/anatomy/sls-block-1_webp": {
+      "title": "SLS Block 1"
+    },
+    "/images/anatomy/smart-1_webp": {
+      "title": "SMART-1"
+    },
+    "/images/anatomy/sojourner_webp": {
+      "title": "Sojourner"
+    },
+    "/images/anatomy/solar-orbiter_webp": {
+      "title": "Solar Orbiter"
+    },
+    "/images/anatomy/soyuz-2_webp": {
+      "title": "Soyuz-2"
+    },
+    "/images/anatomy/soyuz-ms_webp": {
+      "title": "Soyuz MS"
+    },
+    "/images/anatomy/soyuz-tma_webp": {
+      "title": "Soyuz TMA"
+    },
+    "/images/anatomy/soyuz_webp": {
+      "title": "Soyuz (11A511)"
+    },
+    "/images/anatomy/space-shuttle-orbiter_webp": {
+      "title": "Space Shuttle Orbiter"
+    },
+    "/images/anatomy/space-shuttle-stack_webp": {
+      "title": "Space Shuttle stack"
+    },
+    "/images/anatomy/spektr-rg_webp": {
+      "title": "Spektr-RG"
+    },
+    "/images/anatomy/spirit_webp": {
+      "title": "Spirit (MER-A)"
+    },
+    "/images/anatomy/spitzer_webp": {
+      "title": "Spitzer Space Telescope"
+    },
+    "/images/anatomy/starliner_webp": {
+      "title": "Starliner (CST-100)"
+    },
+    "/images/anatomy/starship_webp": {
+      "title": "Starship"
+    },
+    "/images/anatomy/surveyor-3_webp": {
+      "title": "Surveyor 3"
+    },
+    "/images/anatomy/tess_webp": {
+      "title": "TESS"
+    },
+    "/images/anatomy/tiangong-1_webp": {
+      "title": "Tiangong-1"
+    },
+    "/images/anatomy/tiangong-2_webp": {
+      "title": "Tiangong-2"
+    },
+    "/images/anatomy/tiangong_webp": {
+      "title": "Tiangong"
+    },
+    "/images/anatomy/tianwen-1_webp": {
+      "title": "Tianwen-1"
+    },
+    "/images/anatomy/tianzhou_webp": {
+      "title": "Tianzhou"
+    },
+    "/images/anatomy/titan-ii-glv_webp": {
+      "title": "Titan II GLV"
+    },
+    "/images/anatomy/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/anatomy/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/anatomy/venera-7_webp": {
+      "title": "Venera 7-class"
+    },
+    "/images/anatomy/viking-1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/anatomy/vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-3)"
+    },
+    "/images/anatomy/voskhod-11a57_webp": {
+      "title": "Voskhod (11A57)"
+    },
+    "/images/anatomy/vostok-k_webp": {
+      "title": "Vostok-K (8K72K)"
+    },
+    "/images/anatomy/vostok_webp": {
+      "title": "Vostok"
+    },
+    "/images/anatomy/voyager-1_webp": {
+      "title": "Voyager 1"
+    },
+    "/images/anatomy/voyager-2_webp": {
+      "title": "Voyager 2"
+    },
+    "/images/anatomy/vulcan_webp": {
+      "title": "Vulcan Centaur"
+    },
+    "/images/anatomy/x37b_webp": {
+      "title": "X-37B OTV"
+    },
+    "/images/anatomy/xmm-newton_webp": {
+      "title": "XMM-Newton"
+    },
+    "/images/anatomy/yutu-2_webp": {
+      "title": "Yutu-2"
+    },
+    "/images/anatomy/yutu_webp": {
+      "title": "Yutu"
+    },
+    "/images/anatomy/zhurong_webp": {
+      "title": "Zhurong"
+    }
+  },
+  "lab_illustrations": {
+    "/images/lab/goals/apollo-round-trip_webp": {
+      "title": "Apollo: वहाँ और वापसी"
+    },
+    "/images/lab/goals/catch-the-iss_webp": {
+      "title": "ISS को पकड़ें"
+    },
+    "/images/lab/goals/choose-an-orbit_webp": {
+      "title": "कक्षा चुनें"
+    },
+    "/images/lab/goals/engines-of-the-world_webp": {
+      "title": "दुनिया के इंजन"
+    },
+    "/images/lab/goals/entry-computer_webp": {
+      "title": "प्रवेश कंप्यूटर"
+    },
+    "/images/lab/goals/flying-computer_webp": {
+      "title": "उड़ान कंप्यूटर"
+    },
+    "/images/lab/goals/get-to-mars_webp": {
+      "title": "मंगल तक पहुँचें"
+    },
+    "/images/lab/goals/land-on-earth_webp": {
+      "title": "पृथ्वी पर उतरें"
+    },
+    "/images/lab/goals/land-on-mars_webp": {
+      "title": "मंगल पर उतरें"
+    },
+    "/images/lab/goals/land-on-mercury_webp": {
+      "title": "बुध पर उतरें"
+    },
+    "/images/lab/goals/land-on-the-moon_webp": {
+      "title": "चंद्रमा पर उतरें"
+    },
+    "/images/lab/goals/land-on-titan_webp": {
+      "title": "टाइटन पर उतरें"
+    },
+    "/images/lab/goals/land-on-venus_webp": {
+      "title": "शुक्र पर उतरें"
+    },
+    "/images/lab/goals/landing-computer_webp": {
+      "title": "लैंडिंग कंप्यूटर"
+    },
+    "/images/lab/goals/launch-a-rocket_webp": {
+      "title": "राकेट प्रक्षेपित करें"
+    },
+    "/images/lab/goals/leave-the-solar-system_webp": {
+      "title": "सौर मंडल से बाहर निकलें"
+    },
+    "/images/lab/goals/moon-phases_webp": {
+      "title": "चंद्रमा की कलाएँ"
+    },
+    "/images/lab/goals/motion-first-principles_webp": {
+      "title": "गति के प्रथम सिद्धांत"
+    },
+    "/images/lab/goals/observe-the-sky_webp": {
+      "title": "आकाश का अवलोकन करें"
+    },
+    "/images/lab/goals/plan-a-mission_webp": {
+      "title": "मिशन की योजना बनाएँ"
+    },
+    "/images/lab/goals/probe-jupiter_webp": {
+      "title": "बृहस्पति की जाँच करें"
+    },
+    "/images/lab/goals/reach-orbit_webp": {
+      "title": "कक्षा तक पहुँचें"
+    },
+    "/images/lab/goals/reach-the-moon_webp": {
+      "title": "चंद्रमा तक पहुँचें"
+    },
+    "/images/lab/goals/scale-a-rocket_webp": {
+      "title": "रॉकेट को स्केल करें"
+    },
+    "/images/lab/goals/touch-small-world_webp": {
+      "title": "छोटी दुनिया को छुएं"
+    }
+  },
+  "diagrams_science": {
+    "/diagrams/science/_cover-cosmology_svg": {
+      "title": "ब्रह्मांड विज्ञान"
+    },
+    "/diagrams/science/_cover-exoplanets_svg": {
+      "title": "बहिर्ग्रह"
+    },
+    "/images/science-covers-v2/_cover-history_webp": {
+      "title": "इतिहास"
+    },
+    "/images/science-covers-v2/_cover-life-in-space_webp": {
+      "title": "अंतरिक्ष में जीवन"
+    },
+    "/images/science-covers-v2/_cover-mission-phases_webp": {
+      "title": "मिशन के चरण"
+    },
+    "/images/science-covers-v2/_cover-observation_webp": {
+      "title": "अवलोकन"
+    },
+    "/diagrams/science/_cover-orbits_svg": {
+      "title": "कक्षाएं"
+    },
+    "/diagrams/science/_cover-planets_svg": {
+      "title": "ग्रह"
+    },
+    "/diagrams/science/_cover-porkchop_svg": {
+      "title": "पोर्कचॉप"
+    },
+    "/images/science-covers-v2/_cover-propulsion_webp": {
+      "title": "प्रणोदन"
+    },
+    "/diagrams/science/_cover-scales-time_svg": {
+      "title": "समय के पैमाने"
+    },
+    "/images/science-covers-v2/_cover-space-stations_webp": {
+      "title": "अंतरिक्ष स्टेशन"
+    },
+    "/diagrams/science/_cover-transfers_svg": {
+      "title": "स्थानांतरण"
+    },
+    "/diagrams/science/aerobraking_webp": {
+      "title": "वायुमंडलीय ब्रेकिंग"
+    },
+    "/diagrams/science/antenna-arrays_webp": {
+      "title": "एंटीना सरणियाँ"
+    },
+    "/diagrams/science/antimatter-propulsion_webp": {
+      "title": "प्रतिद्रव्य प्रणोदन"
+    },
+    "/diagrams/science/apsides_webp": {
+      "title": "एप्सिड्स"
+    },
+    "/diagrams/science/ascent-guidance_webp": {
+      "title": "आरोहण निर्देशन"
+    },
+    "/diagrams/science/asteroid-belt_webp": {
+      "title": "क्षुद्रग्रह बेल्ट"
+    },
+    "/diagrams/science/au_webp": {
+      "title": "खगोलीय इकाई"
+    },
+    "/diagrams/science/ballistic-coefficient_webp": {
+      "title": "बैलिस्टिक गुणांक"
+    },
+    "/diagrams/science/black-holes_webp": {
+      "title": "कृष्ण विवर"
+    },
+    "/diagrams/science/c3_webp": {
+      "title": "C3"
+    },
+    "/diagrams/science/comms-blackout_webp": {
+      "title": "संचार विच्छेद"
+    },
+    "/diagrams/science/conic-sections_webp": {
+      "title": "शांकव खंड"
+    },
+    "/diagrams/science/contour-reading_webp": {
+      "title": "समोच्च पठन"
+    },
+    "/diagrams/science/deorbit-corridor_webp": {
+      "title": "कक्षा से अवरोहण गलियारा"
+    },
+    "/diagrams/science/departure-axis_webp": {
+      "title": "प्रस्थान अक्ष"
+    },
+    "/diagrams/science/dv-budget_webp": {
+      "title": "डेल्टा-वी बजट"
+    },
+    "/diagrams/science/dv-heatmap_webp": {
+      "title": "डेल्टा-वी ऊष्मा मानचित्र"
+    },
+    "/diagrams/science/eccentricity_webp": {
+      "title": "विकेंद्रता"
+    },
+    "/diagrams/science/ecliptic-plane_webp": {
+      "title": "क्रांति तल"
+    },
+    "/diagrams/science/edl_webp": {
+      "title": "प्रवेश, अवतरण और पुनः प्रवेश"
+    },
+    "/diagrams/science/entry-footprint_webp": {
+      "title": "प्रवेश पदचिह्न"
+    },
+    "/diagrams/science/entry-heating_webp": {
+      "title": "प्रवेश ऊष्मण"
+    },
+    "/diagrams/science/escape-velocity_webp": {
+      "title": "पलायन वेग"
+    },
+    "/diagrams/science/eva_webp": {
+      "title": "बाह्य अंतरिक्ष गतिविधि"
+    },
+    "/diagrams/science/eva-suits_webp": {
+      "title": "बाह्य अंतरिक्ष गतिविधि सूट"
+    },
+    "/diagrams/science/exo-astrometry_webp": {
+      "title": "बाह्य ग्रह मापन"
+    },
+    "/diagrams/science/exo-direct-imaging_webp": {
+      "title": "बाह्य ग्रह प्रत्यक्ष चित्रकरण"
+    },
+    "/diagrams/science/exo-habitable-zone_webp": {
+      "title": "बाह्य ग्रह रहने योग्य क्षेत्र"
+    },
+    "/diagrams/science/exo-microlensing_webp": {
+      "title": "बाह्य ग्रह सूक्ष्मदर्शी लेंसन"
+    },
+    "/diagrams/science/exo-radial-velocity_webp": {
+      "title": "बाह्य ग्रह रेडियल वेग"
+    },
+    "/diagrams/science/exo-resonance_webp": {
+      "title": "बाह्य ग्रह प्रतिध्वनि"
+    },
+    "/diagrams/science/exo-transit_webp": {
+      "title": "बाह्य ग्रह संक्रमण"
+    },
+    "/diagrams/science/exo-transit-timing_webp": {
+      "title": "बाह्य ग्रह संक्रमण समय"
+    },
+    "/diagrams/science/expander-cycle_webp": {
+      "title": "विस्तारक चक्र"
+    },
+    "/diagrams/science/expedition-cadence_webp": {
+      "title": "अभियान अंतराल"
+    },
+    "/diagrams/science/frames_webp": {
+      "title": "फ़्रेम"
+    },
+    "/diagrams/science/free-return_webp": {
+      "title": "मुक्त वापसी"
+    },
+    "/diagrams/science/fusion-propulsion_webp": {
+      "title": "संलयन प्रणोदन"
+    },
+    "/diagrams/science/gas-generator_webp": {
+      "title": "गैस जनरेटर"
+    },
+    "/diagrams/science/gravity-assist_webp": {
+      "title": "गुरुत्व सहायता"
+    },
+    "/diagrams/science/hertzsprung-russell_webp": {
+      "title": "हर्ट्ज़स्प्रंग-रसेल आरेख"
+    },
+    "/diagrams/science/history-apollo-11_webp": {
+      "title": "इतिहास Apollo 11"
+    },
+    "/diagrams/science/history-goddard-rocket_webp": {
+      "title": "इतिहास Goddard रॉकेट"
+    },
+    "/diagrams/science/history-keplers-laws_webp": {
+      "title": "इतिहास Kepler के नियम"
+    },
+    "/diagrams/science/history-newton-principia_webp": {
+      "title": "इतिहास Newton Principia"
+    },
+    "/diagrams/science/history-sputnik_webp": {
+      "title": "इतिहास Sputnik"
+    },
+    "/diagrams/science/history-tsiolkovsky_webp": {
+      "title": "इतिहास त्सिओल्कोव्स्की"
+    },
+    "/diagrams/science/hohmann-transfer_webp": {
+      "title": "Hohmann स्थानांतरण"
+    },
+    "/diagrams/science/inclination_webp": {
+      "title": "झुकाव"
+    },
+    "/diagrams/science/interplanetary-internet_webp": {
+      "title": "अंतर्ग्रहीय इंटरनेट"
+    },
+    "/diagrams/science/ion-drive_webp": {
+      "title": "आयन ड्राइव"
+    },
+    "/diagrams/science/iva-suits_webp": {
+      "title": "IVA सूट"
+    },
+    "/diagrams/science/j2000_webp": {
+      "title": "J2000"
+    },
+    "/diagrams/science/keplerian-orbit_webp": {
+      "title": "Keplerian कक्षा"
+    },
+    "/diagrams/science/keplers-laws_webp": {
+      "title": "Kepler के नियम"
+    },
+    "/diagrams/science/kuiper-belt_webp": {
+      "title": "Kuiper बेल्ट"
+    },
+    "/diagrams/science/lagrange-points_webp": {
+      "title": "Lagrange बिंदु"
+    },
+    "/diagrams/science/lambert-problem_webp": {
+      "title": "Lambert समस्या"
+    },
+    "/diagrams/science/laser-sail_webp": {
+      "title": "लेजर पाल"
+    },
+    "/diagrams/science/launch_webp": {
+      "title": "प्रक्षेपण"
+    },
+    "/diagrams/science/lifting-entry_webp": {
+      "title": "उत्थापन प्रवेश"
+    },
+    "/diagrams/science/light-minute_webp": {
+      "title": "प्रकाश मिनट"
+    },
+    "/diagrams/science/long-duration_webp": {
+      "title": "दीर्घकालिक"
+    },
+    "/diagrams/science/lunar-ice_webp": {
+      "title": "चंद्र बर्फ"
+    },
+    "/diagrams/science/lunar-suits_webp": {
+      "title": "चंद्र पोशाकें"
+    },
+    "/diagrams/science/met_webp": {
+      "title": "MET"
+    },
+    "/diagrams/science/microgravity-physiology_webp": {
+      "title": "सूक्ष्मगुरुत्व शरीरविज्ञान"
+    },
+    "/diagrams/science/mission-types_webp": {
+      "title": "मिशन प्रकार"
+    },
+    "/diagrams/science/node-module_webp": {
+      "title": "नोड मॉड्यूल"
+    },
+    "/diagrams/science/nrho_webp": {
+      "title": "NRHO"
+    },
+    "/diagrams/science/nuclear-thermal_webp": {
+      "title": "नाभिकीय तापीय"
+    },
+    "/diagrams/science/oberth-effect_webp": {
+      "title": "Oberth प्रभाव"
+    },
+    "/diagrams/science/optical-comms_webp": {
+      "title": "प्रकाशीय संचार"
+    },
+    "/diagrams/science/orbit-insertion_webp": {
+      "title": "कक्षा प्रविष्टि"
+    },
+    "/diagrams/science/orbit-regimes_webp": {
+      "title": "कक्षा शासन"
+    },
+    "/diagrams/science/our-galaxy_webp": {
+      "title": "हमारी आकाशगंगा"
+    },
+    "/diagrams/science/patched-conics_webp": {
+      "title": "पैच किए गए शंकु"
+    },
+    "/diagrams/science/porkchop_webp": {
+      "title": "पोर्कचॉप"
+    },
+    "/diagrams/science/pressurized-volume_webp": {
+      "title": "दबाव युक्त मात्रा"
+    },
+    "/diagrams/science/propulsive-landing_webp": {
+      "title": "प्रणोदक लैंडिंग"
+    },
+    "/diagrams/science/regolith_webp": {
+      "title": "मिट्टी का ढेर"
+    },
+    "/diagrams/science/semi-major-axis_webp": {
+      "title": "अर्ध-दीर्घ अक्ष"
+    },
+    "/diagrams/science/sidereal-synodic_webp": {
+      "title": "नाक्षत्र तुल्यकालिक"
+    },
+    "/diagrams/science/skip-entry_webp": {
+      "title": "छोड़ प्रवेश"
+    },
+    "/diagrams/science/skycrane_webp": {
+      "title": "स्काईक्रेन"
+    },
+    "/diagrams/science/solar-power-budget_webp": {
+      "title": "सौर ऊर्जा बजट"
+    },
+    "/diagrams/science/solar-sail_webp": {
+      "title": "सौर पाल"
+    },
+    "/diagrams/science/space-photography_webp": {
+      "title": "अंतरिक्ष फोटोग्राफी"
+    },
+    "/diagrams/science/specific-impulse_webp": {
+      "title": "विशिष्ट आवेग"
+    },
+    "/diagrams/science/staged-combustion_webp": {
+      "title": "चरणबद्ध दहन"
+    },
+    "/diagrams/science/synodic-period_webp": {
+      "title": "सिनॉडिक अवधि"
+    },
+    "/diagrams/science/tcm_webp": {
+      "title": "TCM"
+    },
+    "/diagrams/science/terminal-velocity_webp": {
+      "title": "टर्मिनल वेग"
+    },
+    "/diagrams/science/tof-axis_webp": {
+      "title": "Tof अक्ष"
+    },
+    "/diagrams/science/trans-x-injection_webp": {
+      "title": "Trans X इंजेक्शन"
+    },
+    "/diagrams/science/transfer-ellipse_webp": {
+      "title": "स्थानांतरण दीर्घवृत्त"
+    },
+    "/diagrams/science/true-anomaly_webp": {
+      "title": "सत्य विसंगति"
+    },
+    "/diagrams/science/tsiolkovsky_webp": {
+      "title": "त्सिओल्कोव्स्की"
+    },
+    "/diagrams/science/v-infinity_webp": {
+      "title": "V अनंत"
+    },
+    "/diagrams/science/viability_webp": {
+      "title": "व्यवहार्यता"
+    },
+    "/diagrams/science/vis-viva_webp": {
+      "title": "Vis Viva"
+    }
+  },
+  "posters": {
+    "/images/posters/solar-system-orrery_jpg": {
+      "title": "सौर मंडल"
+    },
+    "/images/posters/solar-system-procession_jpg": {
+      "title": "सौर मंडल"
+    },
+    "/images/posters/earth_jpg": {
+      "title": "पृथ्वी"
+    },
+    "/images/posters/moon_jpg": {
+      "title": "चंद्रमा"
+    },
+    "/images/posters/mars_jpg": {
+      "title": "मंगल"
+    },
+    "/images/posters/saturn-v_jpg": {
+      "title": "Saturn V"
+    },
+    "/images/posters/mir_jpg": {
+      "title": "Mir"
+    },
+    "/images/posters/sputnik_jpg": {
+      "title": "Sputnik"
+    },
+    "/images/posters/soyuz_jpg": {
+      "title": "Soyuz"
+    },
+    "/images/posters/voyager_jpg": {
+      "title": "Voyager"
+    },
+    "/images/posters/sojourner_jpg": {
+      "title": "Sojourner"
+    },
+    "/images/posters/footprints_jpg": {
+      "title": "फुटप्रिंट्स"
+    },
+    "/images/posters/gagarin_jpg": {
+      "title": "गगारिन"
+    },
+    "/images/posters/rosetta_jpg": {
+      "title": "Rosetta"
+    },
+    "/images/posters/huygens_jpg": {
+      "title": "Huygens"
+    },
+    "/images/posters/hayabusa2_jpg": {
+      "title": "Hayabusa2"
+    },
+    "/images/posters/artemis-ii_jpg": {
+      "title": "Artemis II"
+    },
+    "/images/posters/iss_jpg": {
+      "title": "ISS"
+    },
+    "/images/posters/tiangong_jpg": {
+      "title": "Tiangong"
+    },
+    "/images/posters/perseverance_jpg": {
+      "title": "Perseverance"
+    },
+    "/images/posters/space-shuttle_jpg": {
+      "title": "Space Shuttle"
+    },
+    "/images/posters/solar-sail_jpg": {
+      "title": "सौर पाल"
+    },
+    "/images/posters/nuclear-drive_jpg": {
+      "title": "परमाणु ड्राइव"
+    },
+    "/images/posters/jwst_jpg": {
+      "title": "James Webb"
+    },
+    "/images/posters/hubble_jpg": {
+      "title": "Hubble"
+    },
+    "/images/posters/cassini_jpg": {
+      "title": "Cassini"
+    },
+    "/images/posters/starship_jpg": {
+      "title": "Starship"
+    }
+  },
+  "models3d": {
+    "/images/colophon/craft-cassini_webp": {
+      "title": "Cassini–Huygens",
+      "what": "उच्च-लाभ डिश, RTG बूम और Huygens जांच — शनि परिक्रमाकारी।",
+      "where": "उड़ें + अन्वेषण करें"
+    },
+    "/images/colophon/craft-voyager-1_webp": {
+      "title": "Voyager",
+      "what": "३.७ मीटर डिश, चुंबकत्वमापी बूम और RTG ट्रस — ग्रैंड टूर बस।",
+      "where": "उड़ें + अन्वेषण करें"
+    },
+    "/images/colophon/craft-galileo_webp": {
+      "title": "Galileo",
+      "what": "तह की हुई उच्च-लाभ छतरी एंटीना के साथ द्वि-स्पिन बस।",
+      "where": "उड़ें + अन्वेषण करें"
+    },
+    "/images/colophon/craft-new-horizons_webp": {
+      "title": "New Horizons",
+      "what": "एकल डिश के साथ कॉम्पैक्ट त्रिकोणीय बस — प्लूटो फ्लाईबाय प्रोब।",
+      "where": "उड़ें + अन्वेषण करें"
+    },
+    "/images/colophon/craft-pioneer-10_webp": {
+      "title": "Pioneer",
+      "what": "स्पिन-स्थिरीकृत डिश, RTG बूम, और उत्कीर्ण पट्टिका।",
+      "where": "उड़ें + अन्वेषण करें"
+    },
+    "/images/colophon/craft-juno_webp": {
+      "title": "Juno",
+      "what": "षट्भुज बस के चारों ओर तीन विशाल सौर पंख — बृहस्पति ध्रुवीय कक्षीय।",
+      "where": "उड़ें + अन्वेषण करें"
+    },
+    "/images/colophon/craft-bepicolombo_webp": {
+      "title": "BepiColombo",
+      "what": "आयन थ्रस्टर के साथ स्टैक किए गए ट्रांसफर मॉड्यूल + बुध ऑर्बिटर।",
+      "where": "उड़ें + अन्वेषण करें"
+    },
+    "/images/colophon/craft-dawn_webp": {
+      "title": "Dawn",
+      "what": "चौड़े सौर पंखों के साथ आयन-ड्राइव बस — वेस्टा + सेरेस ऑर्बिटर।",
+      "where": "उड़ें + अन्वेषण करें"
+    },
+    "/images/colophon/craft-giotto_webp": {
+      "title": "Giotto",
+      "what": "धूल ढाल के साथ ड्रम के आकार का स्पिनर — हैली धूमकेतु फ्लाईबाय।",
+      "where": "उड़ें + अन्वेषण करें"
+    },
+    "/images/colophon/craft-hayabusa2_webp": {
+      "title": "Hayabusa2",
+      "what": "सौर पैनल और सैंपलर हॉर्न के साथ बॉक्स जैसी बस — क्षुद्रग्रह रियुगु।",
+      "where": "उड़ें + अन्वेषण करें"
+    },
+    "/images/colophon/craft-juice_webp": {
+      "title": "JUICE",
+      "what": "कॉम्पैक्ट बस पर क्रॉस-आकार के सौर सरणी — बृहस्पति हिमीय-चंद्रमा ऑर्बिटर।",
+      "where": "उड़ें + अन्वेषण करें"
+    },
+    "/images/colophon/craft-rosetta_webp": {
+      "title": "Rosetta",
+      "what": "धूमकेतु का पीछा करने वाली बस के चारों ओर 14 मीटर सौर पंख + Philae लैंडर।",
+      "where": "उड़ें + अन्वेषण करें"
+    },
+    "/images/colophon/craft-ulysses_webp": {
+      "title": "Ulysses",
+      "what": "RTG-संचालित सौर ध्रुवीय जांच एक एकल डिश के साथ।",
+      "where": "उड़ें + अन्वेषण करें"
+    },
+    "/images/colophon/craft-vega-1_webp": {
+      "title": "Vega",
+      "what": "सोवियत शुक्र उड़ान + बैलून माता-जहाज एक स्टीयरेबल डिश के साथ।",
+      "where": "उड़ें + अन्वेषण करें"
+    },
+    "/images/colophon/craft-venera-13_webp": {
+      "title": "Venera 13",
+      "what": "सोवियत शुक्र लैंडर — टोरॉयडल एरोब्रेक और लैंडिंग रिंग।",
+      "where": "उड़ें + अन्वेषण करें"
+    },
+    "/images/colophon/model-launcher-generic_webp": {
+      "title": "सामान्य प्रक्षेपक",
+      "what": "Falcon-9-जैसा दो-चरण निकाय — एजेंसी-कुंजीयुक्त फॉलबैक सिल्हूट।",
+      "where": "उड़ें · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-saturn-v_webp": {
+      "title": "Saturn V",
+      "what": "शंकु के आकार का तीन-चरण स्टैक, पाँच F-1 बेल, रोल-पैटर्न लिवरी, और पलायन टावर।",
+      "where": "उड़ें · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-saturn-ib_webp": {
+      "title": "Saturn IB",
+      "what": "Apollo LEO कार्यशील घोड़ा — आठ H-1 इंजन के साथ क्लस्टर्ड S-IB पहला चरण समान S-IVB + CSM के अधीन।",
+      "where": "उड़ें · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-vostok-k_webp": {
+      "title": "Soyuz / R-7",
+      "what": "कोरोल्योव-क्रॉस कोर चार शंकु के आकार की स्ट्रैप-ऑन बूस्टर के साथ।",
+      "where": "उड़ें · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-ariane-5_webp": {
+      "title": "Ariane 5",
+      "what": "क्रायोजेनिक कोर दो ऊंचे ठोस बूस्टर के बीच एक गोलाकार फेयरिंग के नीचे।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-h-iia_webp": {
+      "title": "H-IIA",
+      "what": "जापानी क्रायोजेनिक कोर युग्मित ठोस रॉकेट बूस्टर के साथ।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-space-shuttle-stack_webp": {
+      "title": "Space Shuttle",
+      "what": "बाह्य टैंक, जुड़वां SRB, और डेल्टा-विंग ऑर्बिटर।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-falcon-9_webp": {
+      "title": "Falcon 9",
+      "what": "सुदृढ़ दो-चरणीय शरीर — नौ इंजनों का एक ऑक्टावेब, ग्रिड फिन, और लैंडिंग पैर।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-starship_webp": {
+      "title": "Starship / Super Heavy",
+      "what": "नंगा-स्टेनलेस पूर्णतः पुन: प्रयोज्य स्टैक — Super Heavy पर 33 Raptors, Starship पर 6, अग्र + पश्च फ्लैप, और ओजिव नोज़।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-atlas-v_webp": {
+      "title": "Atlas V",
+      "what": "चौड़ा RD-180 कोर एक गोलाकार पेलोड फेयरिंग और वैकल्पिक ठोस स्ट्रैप-ऑन के साथ।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-proton-k_webp": {
+      "title": "Proton-K",
+      "what": "सोवियत भारी — एक केंद्रीय कोर छः बाहरी ईंधन टैंकों से घिरा हुआ।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-titan-ii-glv_webp": {
+      "title": "Titan II GLV",
+      "what": "सुदृढ़ एकसमान दो-चरणीय जो crewed Gemini कैप्सूल को प्रक्षेपित किया।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-atlas-lv-3b_webp": {
+      "title": "Atlas LV-3B",
+      "what": "Mercury-Atlas स्टेज-एंड-ए-हाफ एक बूस्टर-इंजन स्कर्ट और एस्केप टावर के साथ।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-mercury-redstone_webp": {
+      "title": "Mercury-Redstone",
+      "what": "अमेरिका का पहला crewed लॉन्चर — एक पतला एकल-इंजन Redstone चार पूँछ पंख, Mercury कैप्सूल और एस्केप टावर (Freedom 7) के साथ।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-long-march-2f_webp": {
+      "title": "Long March 2F",
+      "what": "चीन का crewed लॉन्चर — कोर, चार तरल strap-ons, और एक लॉन्च-एस्केप टावर (Shenzhou)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-long-march-3b_webp": {
+      "title": "Long March 3B",
+      "what": "चीनी GTO कार्यहरण — एक कोर चार तरल strap-ons के साथ (Chang'e चंद्र मिशन)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-long-march-5_webp": {
+      "title": "Long March 5",
+      "what": "चीन का भारी \"Fat Five\" — एक चौड़ा cryogenic कोर चार बड़े बूस्टरों के साथ।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-pslv_webp": {
+      "title": "PSLV",
+      "what": "ISRO का कार्यहरण — एक सुंदर कोर छह ठोस strap-on बूस्टरों से घिरा हुआ।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-lvm3_webp": {
+      "title": "LVM3 / GSLV Mk III",
+      "what": "ISRO भारी-लिफ्ट — एक कोर दो बड़े S200 ठोस बूस्टरों से घिरा हुआ (Chandrayaan-3)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-m-v_webp": {
+      "title": "M-V",
+      "what": "JAXA का सर्व-ठोस तीन-स्टेज लॉन्चर (Hayabusa)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-h3_webp": {
+      "title": "H3",
+      "what": "JAXA का नया cryogenic कोर ठोस strap-on बूस्टरों के साथ।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-ariane-1_webp": {
+      "title": "Ariane 1",
+      "what": "यूरोप का पहला प्रक्षेपण यान — एक पतला तीन-चरण 1979 डिजाइन (Giotto)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-moon-apollo-lm_webp": {
+      "title": "Apollo Lunar Module",
+      "what": "अवतरण + आरोहण चरण, सोने की MLI पन्नी, और RCS चतुष्पाद।",
+      "where": "चंद्रमा अवतरण स्थल"
+    },
+    "/images/colophon/model-moon-apollo-lm-extended_webp": {
+      "title": "Apollo LM (J-मिशन + LRV)",
+      "what": "विस्तारित-प्रवास LM, Lunar Roving Vehicle के साथ जोड़ा गया।",
+      "where": "चंद्रमा अवतरण स्थल"
+    },
+    "/images/colophon/model-moon-luna-9_webp": {
+      "title": "Luna 9",
+      "what": "सोवियत गोला जिसने चंद्र सतह से पहली छवियाँ लौटाईं।",
+      "where": "चंद्रमा अवतरण स्थल"
+    },
+    "/images/colophon/model-moon-luna-sample-return_webp": {
+      "title": "Luna नमूना-वापसी",
+      "what": "अवतरण मंच के शीर्ष पर आरोहण रॉकेट (Luna 16 / 20 / 24)।",
+      "where": "चंद्रमा अवतरण स्थल"
+    },
+    "/images/colophon/model-moon-lunokhod_webp": {
+      "title": "Lunokhod रोवर",
+      "what": "एक खोल जैसे सौर ढक्कन वाला आठ-पहिया सोवियत रोवर।",
+      "where": "चंद्रमा अवतरण स्थल"
+    },
+    "/images/colophon/model-moon-chang-e-lander_webp": {
+      "title": "Chang'e अवतरणकारी",
+      "what": "आरोहण कैप्सूल के साथ CNSA अवतरण मंच (Chang'e 5 / 6)।",
+      "where": "चंद्रमा अवतरण स्थल"
+    },
+    "/images/colophon/model-moon-yutu_webp": {
+      "title": "Yutu रोवर",
+      "what": "तह करने वाली सौर पैनलों वाला छह-पहिया चीनी रोवर।",
+      "where": "चंद्रमा अवतरण स्थल"
+    },
+    "/images/colophon/model-moon-chandrayaan-3-vikram_webp": {
+      "title": "चंद्रयान-3 विक्रम",
+      "what": "ISRO चार-पैर वाला अवतरणकारी जिसने Pragyan रोवर को पहुँचाया।",
+      "where": "चंद्रमा पर लैंडिंग साइटें"
+    },
+    "/images/colophon/model-moon-slim_webp": {
+      "title": "SLIM",
+      "what": "JAXA सटीकता \"Moon Sniper\" दो-इंजन अवतरण चरण।",
+      "where": "चंद्रमा पर लैंडिंग साइटें"
+    },
+    "/images/colophon/model-moon-beresheet_webp": {
+      "title": "Beresheet",
+      "what": "SpaceIL का कॉम्पैक्ट चार-पैर वाला लैंडर।",
+      "where": "चंद्रमा पर लैंडिंग साइटें"
+    },
+    "/images/colophon/model-mars-viking_webp": {
+      "title": "Viking",
+      "what": "तीन-पैर वाला NASA लैंडर RTG और नमूना लेने वाली भुजा के साथ।",
+      "where": "मंगल ग्रह पर लैंडिंग साइटें"
+    },
+    "/images/colophon/model-mars-pathfinder-sojourner_webp": {
+      "title": "Pathfinder + Sojourner",
+      "what": "टेट्राहेड्रल एयरबैग लैंडर और पहला मंगल ग्रह रोवर।",
+      "where": "मंगल ग्रह पर लैंडिंग साइटें"
+    },
+    "/images/colophon/model-mars-mer_webp": {
+      "title": "MER (Spirit / Opportunity)",
+      "what": "रॉकर-बॉगी रोवर जिसके पंख जैसे सोलर पैनल हैं।",
+      "where": "मंगल ग्रह पर लैंडिंग साइटें"
+    },
+    "/images/colophon/model-mars-curiosity_webp": {
+      "title": "Curiosity",
+      "what": "MSL-क्लास RTG रोवर जिसमें मास्ट और आर्म है।",
+      "where": "मंगल ग्रह पर लैंडिंग साइटें"
+    },
+    "/images/colophon/model-mars-perseverance-rover_webp": {
+      "title": "Perseverance + Ingenuity",
+      "what": "Mars 2020 रोवर जिसमें Mastcam-Z मास्ट, सैंपल-कैशिंग बे और Ingenuity हेलीकॉप्टर है।",
+      "where": "मंगल ग्रह पर लैंडिंग साइटें"
+    },
+    "/images/colophon/model-mars-phoenix_webp": {
+      "title": "Phoenix",
+      "what": "सौर स्थिर लैंडर एक रोबोटिक बाहु के साथ।",
+      "where": "मंगल लैंडिंग साइटें"
+    },
+    "/images/colophon/model-mars-insight-lander_webp": {
+      "title": "InSight",
+      "what": "दशभुज सौर पैनल वाला भूभौतिकी लैंडर SEIS भूकंपमापी और HP3 मोल के साथ।",
+      "where": "मंगल लैंडिंग साइटें"
+    },
+    "/images/colophon/model-mars-mars-3_webp": {
+      "title": "Mars 3",
+      "what": "सोवियत पंखुड़ी लैंडर — मंगल पर पहली कोमल लैंडिंग।",
+      "where": "मंगल लैंडिंग साइटें"
+    },
+    "/images/colophon/model-mars-zhurong_webp": {
+      "title": "Tianwen-1 Zhurong",
+      "what": "तितली सरणियों और एक मस्तूल वाला चीनी रोवर।",
+      "where": "मंगल लैंडिंग साइटें"
+    },
+    "/images/colophon/model-mars-schiaparelli_webp": {
+      "title": "Schiaparelli",
+      "what": "ESA प्रवेश-अवरोहण-लैंडिंग प्रदर्शक कैप्सूल।",
+      "where": "मंगल लैंडिंग साइटें"
+    },
+    "/images/colophon/model-mars-beagle-2_webp": {
+      "title": "Beagle 2",
+      "what": "पंखुड़ी सौर पैनल वाला कवच ESA लैंडर।",
+      "where": "मंगल लैंडिंग साइटें"
+    },
+    "/images/colophon/model-venus-venera_webp": {
+      "title": "Venera / Vega लैंडर",
+      "what": "सोवियत शुक्र सतह लैंडर — एक दबाव गोला एक टोरॉइडल क्रश-रिंग पर।",
+      "where": "शुक्र सतह मार्कर"
+    },
+    "/images/colophon/model-descent-lunar-powered_webp": {
+      "title": "चंद्र संचालित अवरोहण",
+      "what": "निर्वात रेट्रो-अवरोहण चरण — कोई वायु कवच या पैराशूट नहीं (Apollo / Chang'e / Luna)।",
+      "where": "उड़ान · अवरोहण/लैंडिंग"
+    },
+    "/images/colophon/model-descent-mars-retro_webp": {
+      "title": "मंगल पैराशूट + रेट्रो",
+      "what": "वायु कवच, अतिध्वनिक पैराशूट, और टर्मिनल रेट्रो-रॉकेट (Viking / Phoenix / InSight)।",
+      "where": "उड़ान · अवतरण/लैंडिंग"
+    },
+    "/images/colophon/model-descent-airbag_webp": {
+      "title": "मंगल ग्रह एयरबैग बाउंस",
+      "what": "चतुष्फलकीय एयरबैग कोकून जो आराम करने के लिए उछलता है (Pathfinder / Spirit / Opportunity)।",
+      "where": "उड़ान · अवतरण/लैंडिंग"
+    },
+    "/images/colophon/model-descent-skycrane_webp": {
+      "title": "मंगल ग्रह स्काईक्रेन",
+      "what": "रॉकेट-संचालित अवतरण चरण जो रोवर को तारों से नीचे करता है (Curiosity / Perseverance)।",
+      "where": "उड़ान · अवतरण/लैंडिंग"
+    },
+    "/images/colophon/model-descent-venus-aeroshell_webp": {
+      "title": "शुक्र एरोशेल",
+      "what": "गोलाकार-शंकु प्रवेश कैप्सूल और घने वायुमंडल के लिए ब्रेकिंग डिस्क (Venera / Vega)।",
+      "where": "उड़ान · अवतरण/लैंडिंग"
+    },
+    "/images/colophon/model-descent-asteroid-sampler_webp": {
+      "title": "क्षुद्रग्रह टच-एंड-गो",
+      "what": "संग्रह सींग के साथ सैंपलर बस — सूक्ष्म गुरुत्वाकर्षण टच-एंड-गो (Hayabusa / OSIRIS-REx)।",
+      "where": "उड़ान · अवतरण/लैंडिंग"
+    },
+    "/images/colophon/model-descent-comet-lander_webp": {
+      "title": "धूमकेतु हार्पून लैंडर",
+      "what": "तीन-पैर सूक्ष्म गुरुत्वाकर्षण लैंडर जिसमें एंकरिंग हार्पून हैं (Philae at comet 67P)।",
+      "where": "उड़ान · अवतरण/लैंडिंग"
+    },
+    "/images/colophon/model-descent-jupiter-probe_webp": {
+      "title": "बृहस्पति वायुमंडलीय प्रोब",
+      "what": "गोलाकार-शंकु एरोशेल और गहरे वायुमंडल प्रवेश के लिए पैराशूट (Galileo probe)।",
+      "where": "उड़ान · अवतरण/लैंडिंग"
+    },
+    "/images/colophon/model-descent-titan-parachute_webp": {
+      "title": "शनि के चंद्रमा टाइटन पैराशूट अवतरण",
+      "what": "एरोशेल और टाइटन के धुंध के माध्यम से धीमे अवतरण के लिए बड़ा पैराशूट (Huygens)।",
+      "where": "उड़ान · अवतरण/लैंडिंग"
+    },
+    "/images/colophon/model-cruise-curiosity_webp": {
+      "title": "Curiosity क्रूज़ चरण",
+      "what": "रोवर को घेरने वाले एरोशेल पर MSL क्रूज़-स्टेज डिस्क।",
+      "where": "उड़ान · क्रूज़/दृष्टिकोण"
+    },
+    "/images/colophon/model-cruise-perseverance_webp": {
+      "title": "Perseverance की यात्रा अवस्था",
+      "what": "Mars 2020 यात्रा अवस्था + वायु-आवरण (रोवर + Ingenuity सील किए गए अंदर)।",
+      "where": "उड़ान · यात्रा/संपर्क"
+    },
+    "/images/colophon/model-cruise-insight_webp": {
+      "title": "InSight की यात्रा अवस्था",
+      "what": "लैंडर को ले जाने वाली वायु-आवरण के ऊपर यात्रा-अवस्था डिस्क।",
+      "where": "उड़ान · यात्रा/संपर्क"
+    },
+    "/images/colophon/model-cruise-phoenix_webp": {
+      "title": "Phoenix की यात्रा अवस्था",
+      "what": "ध्रुवीय लैंडर के लिए यात्रा अवस्था + वायु-आवरण।",
+      "where": "उड़ान · यात्रा/संपर्क"
+    },
+    "/images/colophon/model-cruise-mars-pathfinder_webp": {
+      "title": "Pathfinder की यात्रा अवस्था",
+      "what": "यात्रा अवस्था + वायु-आवरण (वायु-थैली लैंडर + Sojourner अंदर)।",
+      "where": "उड़ान · यात्रा/संपर्क"
+    },
+    "/images/colophon/model-cruise-spirit_webp": {
+      "title": "Spirit की यात्रा अवस्था",
+      "what": "MER यात्रा अवस्था + वायु-आवरण।",
+      "where": "उड़ान · यात्रा/संपर्क"
+    },
+    "/images/colophon/model-cruise-opportunity_webp": {
+      "title": "Opportunity की यात्रा अवस्था",
+      "what": "MER यात्रा अवस्था + वायु-आवरण।",
+      "where": "उड़ान · यात्रा/संपर्क"
+    },
+    "/images/colophon/model-cruise-schiaparelli_webp": {
+      "title": "Schiaparelli + TGO",
+      "what": "ExoMars Trace Gas Orbiter जो Schiaparelli प्रवेश कैप्सूल को ले जा रहा है।",
+      "where": "उड़ान · यात्रा/संपर्क"
+    },
+    "/images/colophon/model-cruise-viking1_webp": {
+      "title": "Viking कक्षीय यान + लैंडर",
+      "what": "जैविक-ढाल-कैप्सूल लैंडर के साथ Viking कक्षीय यान नीचे।",
+      "where": "उड़ान · यात्रा/संपर्क"
+    },
+    "/images/colophon/model-cruise-mars3_webp": {
+      "title": "Mars 3 बस",
+      "what": "सोवियत M-71 बस और अवतरण कैप्सूल तथा सौर पंखों के साथ।",
+      "where": "उड़ान · परिक्रमा/निकटता"
+    },
+    "/images/colophon/model-cruise-tianwen1_webp": {
+      "title": "Tianwen-1 परिक्रमाकार",
+      "what": "परिक्रमाकार बस जो प्रवेश कैप्सूल (अंदर Zhurong) को ले जा रही है।",
+      "where": "उड़ान · परिक्रमा/निकटता"
+    },
+    "/images/colophon/model-cruise-apollo11_webp": {
+      "title": "Apollo CSM + LM",
+      "what": "कमांड/सेवा मॉड्यूल चंद्र मॉड्यूल से डॉक किया गया — ट्रांस-चंद्र स्टैक (Apollo 11–17)।",
+      "where": "उड़ान · परिक्रमा/निकटता"
+    },
+    "/images/colophon/model-cruise-artemis3_webp": {
+      "title": "Orion (Artemis)",
+      "what": "Orion चालक दल कैप्सूल + यूरोपीय सेवा मॉड्यूल चार सौर पंखों के साथ (Artemis III / IV)।",
+      "where": "उड़ान · परिक्रमा/निकटता"
+    },
+    "/images/colophon/model-cruise-luna9_webp": {
+      "title": "Luna 9 प्रत्यक्ष-आरोहण",
+      "what": "सोवियत प्रत्यक्ष बस शीर्ष पर गोलाकार लैंडर कैप्सूल के साथ।",
+      "where": "उड़ान · परिक्रमा/निकटता"
+    },
+    "/images/colophon/model-cruise-luna16_webp": {
+      "title": "Luna नमूना-वापसी",
+      "what": "अवतरण चरण गोलाकार टैंकों के साथ, आरोहण चरण, और वापसी कैप्सूल (Luna 16 / 24)।",
+      "where": "उड़ान · परिक्रमा/निकटता"
+    },
+    "/images/colophon/model-cruise-luna17_webp": {
+      "title": "Lunokhod वाहक",
+      "what": "अवतरण-चरण बस Lunokhod रोवर को ले जा रही है (Luna 17 / 21)।",
+      "where": "उड़ान · परिक्रमा/निकटता"
+    },
+    "/images/colophon/model-cruise-change3_webp": {
+      "title": "Chang'e 3 / 4",
+      "what": "CNSA लैंडर अवतरण चरण Yutu रोवर के साथ ऊपर संरक्षित है।",
+      "where": "उड़ान · परिक्रमा/निकटता"
+    },
+    "/images/colophon/model-cruise-change5_webp": {
+      "title": "Chang'e 5 / 6",
+      "what": "चार-मॉड्यूल नमूना-वापसी स्टैक — परिक्रमाकार, प्रत्यावर्तक, आरोहक, और लैंडर।",
+      "where": "उड़ान · क्रूज़/दृष्टिकोण"
+    },
+    "/images/colophon/model-cruise-chandrayaan3_webp": {
+      "title": "चंद्रयान-3",
+      "what": "ISRO प्रणोदन मॉड्यूल जो Vikram लैंडर को ले जा रहा है।",
+      "where": "उड़ान · क्रूज़/दृष्टिकोण"
+    },
+    "/images/colophon/model-cruise-slim_webp": {
+      "title": "SLIM",
+      "what": "JAXA का कॉम्पैक्ट \"चंद्रमा निशानेबाज़\" क्रूज़ बस।",
+      "where": "उड़ान · क्रूज़/दृष्टिकोण"
+    },
+    "/images/colophon/model-cruise-beresheet_webp": {
+      "title": "Beresheet",
+      "what": "SpaceIL का छोटा गोल चार-पैर वाला लैंडर पारगमन में।",
+      "where": "उड़ान · क्रूज़/दृष्टिकोण"
+    },
+    "/images/colophon/model-cruise-blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1",
+      "what": "Blue Origin का लंबा लैंडर — एक चार-पैर के फ्रेम पर केंद्रीय टैंक।",
+      "where": "उड़ान · क्रूज़/दृष्टिकोण"
+    },
+    "/images/colophon/model-cruise-hayabusa1_webp": {
+      "title": "Hayabusa क्रूज़",
+      "what": "JAXA नमूना-प्रत्यावर्तन बस — सौर पंख, एक नमूना कलेक्टर हॉर्न, और आयन इंजन।",
+      "where": "उड़ान · क्रूज़/दृष्टिकोण"
+    },
+    "/images/colophon/model-cruise-osiris-rex_webp": {
+      "title": "OSIRIS-REx क्रूज़",
+      "what": "V-कोण वाले सौर पंखों और विस्तारित TAGSAM नमूना कलेक्टर बाहु वाली बॉक्स जैसी बस।",
+      "where": "उड़ान · क्रूज़/दृष्टिकोण"
+    },
+    "/images/colophon/model-cruise-near-shoemaker_webp": {
+      "title": "NEAR Shoemaker",
+      "what": "चार स्थिर सौर पैनलों को क्रॉस आकार में और एक स्थिर डिश वाली ऑर्बिटर बस।",
+      "where": "उड़ान · क्रूज़/दृष्टिकोण"
+    },
+    "/images/colophon/model-cruise-starship-demo_webp": {
+      "title": "Starship",
+      "what": "स्टेनलेस ऊपरी चरण — नोज़ शंकु, आगे/पीछे के फ्लैप्स, और एक Raptor क्लस्टर (मंगल पारगमन)।",
+      "where": "उड़ान · क्रूज़/दृष्टिकोण"
+    },
+    "/images/colophon/model-sat-hubble_webp": {
+      "title": "Hubble",
+      "what": "बेलनाकार वेधशाला जिसमें छिद्र द्वार और सौर पंख हैं।",
+      "where": "पृथ्वी की कक्षीय पटियाँ"
+    },
+    "/images/colophon/model-sat-jwst_webp": {
+      "title": "JWST",
+      "what": "टेनिस कोर्ट सूर्य ढाल जिसके नीचे खंडित सोने का दर्पण है।",
+      "where": "पृथ्वी की कक्षीय पटियाँ"
+    },
+    "/images/colophon/model-sat-chandra_webp": {
+      "title": "Chandra",
+      "what": "एक्स-रे वेधशाला जिसमें लंबा आकार और सौर पंख हैं।",
+      "where": "पृथ्वी की कक्षीय पटियाँ"
+    },
+    "/images/colophon/model-sat-xmm_webp": {
+      "title": "XMM-Newton",
+      "what": "लंबी ESA एक्स-रे दूरदर्शी ट्यूब।",
+      "where": "पृथ्वी की कक्षीय पटियाँ"
+    },
+    "/images/colophon/model-sat-gaia_webp": {
+      "title": "Gaia",
+      "what": "सूर्य ढाल से सजी ESA मापन वेधशाला।",
+      "where": "पृथ्वी की कक्षीय पटियाँ"
+    },
+    "/images/colophon/model-sat-lro_webp": {
+      "title": "LRO",
+      "what": "चंद्र टोही परिक्रमणकारी बस और डिश।",
+      "where": "पृथ्वी की कक्षीय पटियाँ"
+    },
+    "/images/colophon/model-sat-geo-comsat_webp": {
+      "title": "भूस्थिर संचार उपग्रह",
+      "what": "तैनात सौर पंख और एंटेना के साथ बॉक्स बस।",
+      "where": "पृथ्वी की कक्षीय पटियाँ"
+    },
+    "/images/colophon/model-sat-nav-constellation_webp": {
+      "title": "नेविगेशन नक्षत्र",
+      "what": "GPS-श्रेणी के उपग्रह समूह (GPS / Galileo / GLONASS / BeiDou)।",
+      "where": "पृथ्वी की कक्षीय पटियाँ"
+    },
+    "/images/colophon/model-sat-generic-orbiter_webp": {
+      "title": "सामान्य परिक्रमणकारी बस",
+      "what": "हेक्स बस + सौर पंख + एंटीना, एजेंसी-कुंजी मतलब बिल्ड।",
+      "where": "पृथ्वी कक्षीय चिह्न"
+    },
+    "/images/colophon/model-earth-launchpad_webp": {
+      "title": "लॉन्च सुविधा",
+      "what": "आठ भुजाओं वाला पैड चार बिजली के टावरों के साथ — कैनेडी, बायकोनूर, जिउकुआन, और अन्य।",
+      "where": "पृथ्वी की सतह के चिह्न"
+    },
+    "/images/colophon/model-station-iss_webp": {
+      "title": "ISS प्रॉक्सी मॉडल",
+      "what": "पूर्ण ट्रस, दबाबरोधी मॉड्यूल, डॉक किए गए आगंतुक, और निर्देश्य सरणियां।",
+      "where": "ISS कक्षीय दृश्य"
+    },
+    "/images/colophon/model-station-tiangong_webp": {
+      "title": "Tiangong प्रॉक्सी मॉडल",
+      "what": "टी-विन्यास कोर + लैब मॉड्यूल, डॉक किए गए Shenzhou / Tianzhou, और सरणियां।",
+      "where": "Tiangong कक्षीय दृश्य"
+    },
+    "/images/colophon/model-microgravity_webp": {
+      "title": "सूक्ष्मगुरुत्व अक्ष",
+      "what": "छह लेबल वाले तीर स्टेशन स्थानीय फ्रेम (शीर्ष/तल…) को चिह्नित करते हैं।",
+      "where": "ISS + Tiangong विज्ञान लेंस"
+    },
+    "/images/colophon/model-orbit-rings_webp": {
+      "title": "कक्षीय वलय + चिह्न हेलो",
+      "what": "झुकाव-झुका हुआ ऊंचाई वलय और चयन दीप्ति हेलो।",
+      "where": "पृथ्वी · चंद्रमा · मंगल"
+    },
+    "/images/colophon/model-trajectories_webp": {
+      "title": "प्रतिष्ठित मिशन प्रक्षेपवक्र",
+      "what": "Voyager, Pioneer, New Horizons, Cassini, Juno, Dawn उड़ान पथ।",
+      "where": "अन्वेषण"
+    }
+  },
+  "capsules": {
+    "/images/colophon/model-capsule-mercury-capsule_webp": {
+      "title": "Mercury कैप्सूल",
+      "what": "कुंद तापहारी ढाल, शिंगल शंकु, और पुनः प्राप्ति + एंटीना अनुभाग (Freedom 7 … Faith 7)।",
+      "where": "पृथ्वी-कक्षा पुनः प्रवेश"
+    },
+    "/images/colophon/model-capsule-gemini-capsule_webp": {
+      "title": "Gemini कैप्सूल",
+      "what": "दो-सीट स्केल-अप Mercury रेंडेज़्वस-राडार नाक और अडैप्टर मॉड्यूल के साथ।",
+      "where": "पृथ्वी-कक्षा पुनः-प्रवेश"
+    },
+    "/images/colophon/model-capsule-vostok-sphere_webp": {
+      "title": "Vostok",
+      "what": "गोलाकार Sharik अवरोहण मॉड्यूल — एंटीना पट्टियाँ और उपकरण कॉलर; अंतरिक्ष यात्री अलग से इजेक्ट हुआ और पैराशूट से उतरा।",
+      "where": "पृथ्वी-कक्षा पुनः-प्रवेश"
+    },
+    "/images/colophon/model-capsule-voskhod-sphere_webp": {
+      "title": "Voskhod",
+      "what": "वही Sharik गोला, अब ठोस-प्रणोदक मृदु-लैंडिंग रेट्रो पैकेज को एक स्ट्रट ट्रस पर ले जा रहा है — दल इसे जमीन पर सवारी करते हैं।",
+      "where": "पृथ्वी-कक्षा पुनः-प्रवेश"
+    },
+    "/images/colophon/model-capsule-apollo-cm_webp": {
+      "title": "Apollo कमांड मॉड्यूल",
+      "what": "शास्त्रीय तीव्र कुंद शंकु अग्रगामी डॉकिंग सुरंग के साथ (Apollo 7/9, Skylab, ASTP)।",
+      "where": "पृथ्वी-कक्षा पुनः-प्रवेश"
+    },
+    "/images/colophon/model-capsule-soyuz-sa_webp": {
+      "title": "Soyuz अवरोहण मॉड्यूल",
+      "what": "\"हेडलैंप\" घंटी — गोलाकार आधार ताप ढाल एक शंकु चालक दल के शीर्ष के साथ।",
+      "where": "पृथ्वी-कक्षा पुनः-प्रवेश"
+    },
+    "/images/colophon/model-capsule-dragon-capsule_webp": {
+      "title": "Crew Dragon",
+      "what": "मनोरम शंकु निकाय SuperDraco पॉड्स और PICA-X ताप ढाल के साथ (Inspiration4, Polaris Dawn)।",
+      "where": "पृथ्वी-कक्षा पुनः-प्रवेश"
+    },
+    "/images/colophon/model-capsule-shenzhou-reentry_webp": {
+      "title": "Shenzhou पुनः-प्रवेश मॉड्यूल",
+      "what": "एक विस्तृत Soyuz-वंशानुक्रम घंटी — इसका अपना हल्का-चाँदी का पतवार एक धूसर उपकरण बैंड के साथ (Shenzhou-1 आगे)।",
+      "where": "पृथ्वी-कक्षा पुनः-प्रवेश"
+    }
+  },
+  "canvas2d": {
+    "/images/app-landing-hero_webp": {
+      "title": "लैंडिंग-पृष्ठ नायक",
+      "what": "समतल-परिवार orrery पोस्टर — दीप्तिमान सूर्य, झुकी कक्षा वलय, और एक हाइलाइट किया गया साइयन स्थानांतरण चाप।",
+      "where": "घर"
+    },
+    "/images/colophon/viz-system-map_webp": {
+      "title": "2D प्रणाली मानचित्र",
+      "what": "ऊपर-नीचे orrery छायांकित ग्रहों के साथ, चमक, कक्षा वलय, और शनि की वलय।",
+      "where": "2D मोड अन्वेषण करें"
+    },
+    "/images/colophon/viz-porkchop_webp": {
+      "title": "पोर्कचॉप Δv ताप-मानचित्र",
+      "what": "प्रस्थान × उड़ान-अवधि ग्रिड एक Lambert समाधान से रंग-मानचित्रित।",
+      "where": "स्थानांतरण की योजना बनाएँ"
+    },
+    "/images/colophon/viz-blueprint_webp": {
+      "title": "स्टेशन खाके",
+      "what": "प्रत्येक स्टेशन मॉड्यूल का आर्थोग्राफिक शीर्ष / पार्श्व प्रक्षेपण।",
+      "where": "ISS + Tiangong"
+    },
+    "/images/colophon/viz-nation-legend_webp": {
+      "title": "सतह-मानचित्र देश की किंवदंती",
+      "what": "समतल सतह मानचित्रों पर खींचा गया स्वचालित-रिक्ति एजेंसी रंग कुंजी।",
+      "where": "चंद्रमा + मंगल 2D"
+    },
+    "/images/colophon/model-textlabels_webp": {
+      "title": "3D पाठ-लेबल स्प्राइट्स",
+      "what": "प्रत्येक दृश्य में वस्तुओं पर कैनवास-प्रदान किए गए नाम टैग।",
+      "where": "पृथ्वी · चंद्रमा · मंगल · अन्वेषण"
+    }
+  },
+  "ui": {
+    "Science info-chips": {
+      "title": "विज्ञान सूचना-चिप्स",
+      "what": "किसी भी आकृति को उसके /science व्याख्याकार से जोड़ने वाली इनलाइन \"i\" ग्लिफ।",
+      "where": "पूरे में"
+    },
+    "Panorama compass rose": {
+      "title": "पैनोरमा कम्पास गुलाब",
+      "what": "पैनोरमा yaw के अनुसार उन्मुख घूर्णन N/E/S/W मार्कर।",
+      "where": "चंद्रमा + मंगल पैनोरमा"
+    },
+    "Conic-section icons": {
+      "title": "शांकव-खंड आइकन",
+      "what": "कक्षा ओवरले के लिए वृत्त / दीर्घवृत्त / परवलय / अतिपरवलय ग्लिफ।",
+      "where": "उड़ान भरें"
+    },
+    "Navigation + control glyphs": {
+      "title": "नेविगेशन + नियंत्रण ग्लिफ",
+      "what": "हैम्बर्गर, विज्ञान-लेंस, कंट्रास्ट, गुणवत्ता, और पूर्णस्क्रीन आइकन।",
+      "where": "प्रत्येक मार्ग"
+    }
+  },
+  "writing": {
+    "Mission briefings": {
+      "title": "मिशन ब्रीफिंग",
+      "what": "११४ मिशन आख्यान — प्रक्षेपण इतिहास, अंतरिक्ष यान, उड़ान प्रोफ़ाइल, और परिणाम — मिशन कार्ड और Fly ब्रीफिंग के लिए लिखे गए।",
+      "where": "मिशन + Fly"
+    },
+    "Fleet catalogue entries": {
+      "title": "फ्लीट कैटलॉग प्रविष्टियाँ",
+      "what": "२५१ अंतरिक्ष यान, प्रक्षेपक, सूट, पैड और स्टेशन घटक, प्रत्येक के साथ एक \"यह किसलिए सबसे प्रसिद्ध है\" पंक्ति और पूर्ण गद्य प्रोफ़ाइल।",
+      "where": "फ्लीट"
+    },
+    "Landing-site stories": {
+      "title": "लैंडिंग-साइट आख्यान",
+      "what": "चंद्रमा और मंगल लैंडिंग साइटों के ५५ बहु-अध्याय आख्यान इतिहास, प्रत्येक फ़ोटोग्राफ़ पर मूल कैप्शन के साथ।",
+      "where": "चंद्रमा + मंगल साइटें"
+    },
+    "Science encyclopedia": {
+      "title": "विज्ञान विश्वकोश",
+      "what": "कक्षीय यांत्रिकी, प्रणोदन, अंतरिक्ष में जीवन, पृथ्वी-से-अंतरिक्ष और अंतरिक्ष उड़ान इतिहास में ११७ मूल व्याख्याएँ — साथ ही हर आकृति कैप्शन।",
+      "where": "विज्ञान"
+    },
+    "World profiles": {
+      "title": "विश्व प्रोफ़ाइलें",
+      "what": "orrery पर दिखाए गए ९ ग्रहों और २२ लघु पिंडों — धूमकेतु, क्षुद्रग्रह, और Kuiper-पेटी वस्तुओं के लिए वर्णनात्मक प्रति।",
+      "where": "खोजें"
+    },
+    "Station module notes": {
+      "title": "स्टेशन मॉड्यूल नोट्स",
+      "what": "सभी २२ ISS और Tiangong मॉड्यूल के लिए परिचालनात्मक और ऐतिहासिक नोट्स, ब्लूप्रिंट पैनलों के लिए लिखे गए।",
+      "where": "ISS + Tiangong"
+    },
+    "Surface + panorama captions": {
+      "title": "सतह + पैनोरमा कैप्शन",
+      "what": "हॉटस्पॉट लेबल और व्याख्यायित पैनोरमा कैप्शन जो प्रत्येक चंद्रमा और मंगल दृश्य पर आप जो देख रहे हैं उसका नाम बताते हैं।",
+      "where": "चंद्रमा + मंगल पैनोरमा"
+    },
+    "Audio tour scripts": {
+      "title": "ऑडियो टूर स्क्रिप्ट",
+      "what": "प्रत्येक निर्देशित + विस्तारित टूर एपिसोड मूल रूप से Orrery के लिए लिखा गया है; केवल पाठ-से-भाषण वाणी तीसरे पक्ष की हैं (Credits पृष्ठ पर श्रेय दिया गया)।",
+      "where": "टूर लें"
+    },
+    "Physics Lab formula registry": {
+      "title": "Physics Lab फॉर्मुला रजिस्ट्री",
+      "what": "Physics Lab ६४ मूल फॉर्मुला परिभाषाओं पर बनाया गया है — प्रत्येक अपने समीकरण, पैरामीटर श्रेणियों, असफल-ईमानदार तर्क, कथित मान्यताओं, और गणित-आकृति विनिर्देश के साथ — वास्तविक भौतिकी पर घर में लेखक। संदर्भ स्थिरांक जो वे गणना करते हैं (JPL/IAU/EGM96) Credits पृष्ठ पर उद्धृत हैं।",
+      "where": "भौतिकी लैब"
+    },
+    "Physics Lab goals": {
+      "title": "Physics Lab लक्ष्य",
+      "what": "25 मूल शिक्षण-लक्ष्य सीढ़ियाँ जो सूत्रों को वर्णित यात्राओं में श्रृंखलाबद्ध करती हैं — एक रॉकेट लॉन्च करने से लेकर एक धूमकेतु को छूने तक — प्रत्येक के लिए एक लिखित व्यावहारिक-संबंध पैनल के साथ।",
+      "where": "भौतिकी लैब"
+    },
+    "Physics Lab interface, in 14 languages": {
+      "title": "Physics Lab इंटरफ़ेस, 14 भाषाओं में",
+      "what": "हर Lab स्ट्रिंग — सूत्र शीर्षक, पैरामीटर लेबल, मान्यताएँ, वर्णन, त्रुटि अवस्थाएँ — मूलतः लेखक द्वारा तैयार की जाती हैं और सभी 14 समर्थित स्थानीय भाषाओं में यंत्र-अनुवादित की जाती हैं।",
+      "where": "भौतिकी लैब"
+    }
+  }
+}

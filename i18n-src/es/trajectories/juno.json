@@ -1,0 +1,27 @@
+{
+  "name": "Juno",
+  "current_distance_label": "5,5 UA · en órbita polar de Júpiter desde 2016-07-05 — misión extendida hasta 2025",
+  "waypoints": [
+    {
+      "label": "Lanzamiento"
+    },
+    null,
+    null,
+    {
+      "label": "Maniobra de espacio profundo"
+    },
+    null,
+    {
+      "label": "Asistencia gravitatoria terrestre"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Inserción en órbita de Júpiter"
+    },
+    {
+      "label": "Hoy (órbita de Júpiter)"
+    }
+  ]
+}

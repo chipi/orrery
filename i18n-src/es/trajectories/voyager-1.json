@@ -1,0 +1,38 @@
+{
+  "name": "Voyager 1",
+  "current_distance_label": "172 UA · ~23,8 horas luz desde el Sol",
+  "interstellar_since_label": "Atravesó la heliopausa en agosto de 2012 — primer objeto creado por el ser humano en el espacio interestelar",
+  "waypoints": [
+    {
+      "label": "Lanzamiento"
+    },
+    null,
+    null,
+    {
+      "label": "Júpiter"
+    },
+    null,
+    null,
+    {
+      "label": "Saturno + Titán"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Pale Blue Dot"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Heliopausa"
+    },
+    null,
+    null,
+    {
+      "label": "Hoy"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "intro": "Opportunity atterrò su Meridiani Planum il 25 gennaio 2004: una buca in uno, con il rover che, dopo i rimbalzi sugli airbag, rotolò dritto in un piccolo cratere (Eagle Crater) le cui pareti custodivano i primi \"mirtilli\" ricchi di ematite mai osservati da vicino su Marte. Progettato per durare 90 sol, Opportunity percorse 45,16 km in 14 anni, finché una tempesta di polvere su scala planetaria, nel giugno 2018, non gli tolse l'energia solare. Ultima trasmissione: \"La mia batteria è scarica e sta calando il buio.\"",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Gemello di Spirit, lander sul lato opposto di Marte",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/opportunity/01.webp",
+          "caption": "MER-B durante l'integrazione: hardware identico a quello di Spirit, ottimizzato per il terreno pianeggiante di Marte."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Meridiani Planum — atterraggio il 25 gennaio 2004",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/opportunity/tier3-pan.jpg",
+          "caption": "Legacy Pan, sol 5084-5111 (maggio-giugno 2018): l'ultimo panorama a 360° di Opportunity prima della tempesta di polvere. Perseverance Valley scende verso cratere Endeavour."
+        },
+        {
+          "src": "/images/hotspots/mars/opportunity/tier2-hirise.jpg",
+          "caption": "Il bordo del cratere Endeavour, dove Opportunity trascorse i suoi ultimi anni. Il punto di riposo del rover si trova in Perseverance Valley, sulla destra."
+        },
+        {
+          "src": "/images/fleet-galleries/opportunity/02.webp",
+          "caption": "I \"mirtilli\" di ematite: sferule millimetriche incastonate nel substrato roccioso di Meridiani. La prima prova diretta della presenza prolungata di acqua liquida su Marte."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Scienza",
+      "subtitle": "Da Eagle Crater a Endeavour: 14 anni di prove",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/opportunity/03.webp",
+          "caption": "Il punto d'impatto dello scudo termico al cratere Endurance: Opportunity tornò indietro per ispezionare il proprio hardware di rientro scartato."
+        },
+        {
+          "src": "/images/fleet-galleries/opportunity/04.webp",
+          "caption": "Gli affioramenti stratificati di Burns Cliff all'interno del cratere Endurance: la testimonianza sedimentaria di un antico specchio d'acqua salato e acido."
+        }
+      ]
+    }
+  ]
+}

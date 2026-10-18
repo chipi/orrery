@@ -1,0 +1,22 @@
+{
+  "name": "Giotto",
+  "current_distance_label": "1.04 AU · グリッグ・シェレルップ彗星フライバイ 1992-07-10 以来、太陽中心軌道に存在",
+  "waypoints": [
+    {
+      "label": "打ち上げ（Ariane 1）"
+    },
+    null,
+    {
+      "label": "Halley フライバイ"
+    },
+    null,
+    {
+      "label": "地球 #1"
+    },
+    null,
+    {
+      "label": "グリッグ・シェレルップ彗星"
+    },
+    null
+  ]
+}

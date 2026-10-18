@@ -1,0 +1,50 @@
+{
+  "intro": "Phoenix aterrizó a 68,22° N el 25 de mayo de 2008: fue el primer módulo de aterrizaje de la NASA en posarse en el alto ártico marciano. En cuestión de días recogió la primera muestra de hielo de agua marciano y vio cómo se sublimaba ante la cámara. El módulo funcionó durante 157 soles, hasta que el invierno polar acabó con él: la formación de escarcha de CO₂ sepultó los paneles solares y puso fin a la misión.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipo",
+      "subtitle": "Reconstruido a partir del módulo de aterrizaje cancelado Mars Surveyor 2001",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/01.webp",
+          "caption": "El módulo de aterrizaje Phoenix antes de su envío: 350 kg, brazo robótico, cuchara para hielo y el laboratorio de química húmeda TEGA."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Vastitas Borealis — aterrizaje el 25 de mayo de 2008",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/phoenix/tier3-pan.jpg",
+          "caption": "Panorama de 360° del lugar de aterrizaje de Phoenix, sol 14: se ven la zona de trabajo, la plataforma de apoyo y, abajo a la derecha, el hielo dejado al descubierto por los propulsores."
+        },
+        {
+          "src": "/images/hotspots/mars/phoenix/tier2-hirise.jpg",
+          "caption": "El módulo de aterrizaje Phoenix, su paracaídas y su cubierta trasera, todos fotografiados por la HiRISE de la MRO tras el aterrizaje."
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/02.webp",
+          "caption": "El brazo robótico excavando la zanja «Snow White»: un hielo de agua brillante quedó expuesto a pocos centímetros bajo la superficie y se observó cómo se sublimaba a lo largo de cuatro soles."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciencia",
+      "subtitle": "Agua, percloratos y el primer tiempo atmosférico marciano",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/03.webp",
+          "caption": "Detección de sales de perclorato en el suelo marciano: una química que marcaría todos los debates posteriores sobre la habitabilidad de Marte."
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/04.webp",
+          "caption": "Perfiles lidar de nieve cayendo sobre el emplazamiento de Phoenix, al final de la misión: la primera precipitación marciana observada directamente."
+        }
+      ]
+    }
+  ]
+}

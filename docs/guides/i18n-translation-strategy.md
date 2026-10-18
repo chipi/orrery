@@ -184,6 +184,12 @@ already in the text.
 | Wikidata labels in a non-Latin language were sometimes the English name copied in ("michael collins", "John Glenn" as Hindi labels), or carried a zero-width space or a direction mark. | `name-forms.mjs` drops a Latin-script label in a non-Latin locale and strips those characters; a lowercase English name in the text is the tell. |
 | A bare surname key hit a facility, a company or a first name ("NASA Glenn AEPS", "Glenn Visitor Center", "Collins Aerospace", "Scott Kelly"). | GUARD rows take `before` as well as `after`; a bare surname followed by a capitalised Latin name is a first name and is left alone. |
 | Keys added to the glossary after a locale's pass never reached that locale. | A catch-up run per locale after the glossary grows, read like any pass; a catch-up that would undo a hand correction is not applied. |
+| A paid run went on for about two hours after the API account hit its usage limit: every call failed, the retries counted as quality failures, and nothing was written. | `retranslate-fields.mjs` stops on the first quota or billing error (exit 3). Watch a run for API errors and for files written, not only for its end. |
+| The batch runs left whole groups in English in one locale while the others translated them (all 23 ru colophon goal titles, 24 de and 25 nl diagram titles, 17 sr-Cyrl deep-sky titles), because the checker accepts a field kept as English. | After every run, list the fields one locale left identical to the English while most locales changed them; fill them from that locale's own translation of the same string where one exists, else by hand. |
+| Overlay keys made from file paths kept their dots, so the dotted field paths broke (8,931 "not a string" fields). | Overlay keys are dot-free (`originalWorkKey` in `src/lib/original-work.ts`). |
+| The glossary swap hit names that only look like a body or a star: the Antares rocket, the Vega probes, the "Snow White" trench, the "Moon" inside SLIM's English expansion, a quoted English title. | Read every edit; drop these by hand (`datasets-glossary-review.json`). |
+| A glossary key spelled differently from the text ("Tranquillity Base" vs "Tranquility Base") silently matched nothing. | After a pass, list the Latin-script runs left in each non-Latin locale and check them against the glossary by hand. |
+| A translation carried a wrong number (ar: Hubble's "50th" anniversary for the 25th). | Read dates and ordinals in `taken`-style fields against the English. |
 
 ## 8. Status (2026-10-17)
 
@@ -206,6 +212,23 @@ Hindi source; the star
 index and sky labels still show the English proper name (needs a UI change); sr-Cyrl
 star bios keep Latin designations ("Alpha Orionis"), because Wikidata has no
 Cyrillic ones for Serbian; Venus and some Mars and Moon features without a native
-form (Aphrodite Terra, Aeolis Palus, Le Monnier); then the remaining content items
-(videos, colophon, trajectories, deep-sky, site stories, alt text) in
-`docs/wip/2026-10-17-post-v1-arc-plan.md`.
+form (Aphrodite Terra, Aeolis Palus, Le Monnier).
+
+**Data sets (2026-10-18).** Site stories, deep-sky captions, trajectory labels, video
+titles and captions, and the colophon's original-work entries are now translated in all
+thirteen locales. Their English lives in `static/data`; `build-en-overlays.mjs` writes it
+as en-US overlays, and each loader merges the locale's overlay (`src/lib/deep-sky.ts`,
+`iconic-trajectory.ts`, `video-provenance.ts`, `original-work.ts`; site stories through
+the existing overlay path). The paid run used `retranslate-fields.mjs --batch` (one call
+per chunk returns an array; a field that fails the checks falls back to the per-field
+path) and a cached system prompt, about $17 at list prices. After it: the names glossary
+over the new files, read per locale; propagation of each locale's own translation to the
+fields it left English; hand fixes; and the crew, places and small bodies the glossary
+did not key, written by hand in the non-Latin locales (maps `datasets-*`).
+
+Not done for the data sets: alt text (declined); vehicle and mission names stay as the
+origin rule says, so Latin script remains in every locale; Serbian keeps Latin
+vehicle and agency names with hyphenated endings ("NASA-ин", "Hubble-а"), and the
+checker refused two Cyrillic forms ("Galileo-в тест", "Cygnus Loop-а"), which stay Latin;
+the new names were not added to `native-terms.json`, so a later glossary run will not know
+them; informal rover target names (Yogi, Home Plate, Burns Cliff) stay in English.

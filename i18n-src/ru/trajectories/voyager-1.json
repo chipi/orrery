@@ -1,0 +1,38 @@
+{
+  "name": "Voyager 1",
+  "current_distance_label": "172 а.е. · примерно 23,8 световых часа от Солнца",
+  "interstellar_since_label": "Пересекла гелиопаузу в августе 2012 г. — первый созданный человеком объект в межзвёздном пространстве",
+  "waypoints": [
+    {
+      "label": "Запуск"
+    },
+    null,
+    null,
+    {
+      "label": "Юпитер"
+    },
+    null,
+    null,
+    {
+      "label": "Сатурн + Титан"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Бледная голубая точка"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Гелиопауза"
+    },
+    null,
+    null,
+    {
+      "label": "Сегодня"
+    }
+  ]
+}

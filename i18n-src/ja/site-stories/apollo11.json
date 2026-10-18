@@ -1,0 +1,57 @@
+{
+  "intro": "Apollo 11は1969年7月20日20時17分(UTC)、静かの海に着陸しました。人類が初めて別の天体に降り立った有人着陸です。アームストロングとオルドリンは月着陸船Eagleの外で2時間31分を過ごし、コリンズは頭上の軌道でColumbiaに乗って周回しました。クルーは21.5 kgの月試料を持ち帰り、足跡と、レトロリフレクター・アレイ(地上からのレーザーで今も使われています)、そして銘板を残しました。銘板にはこう刻まれています。「われわれは全人類のために平和のうちにやって来た」。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "Saturn V + 司令船Columbia + 月着陸船Eagle",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/01.webp",
+          "caption": "第39A発射台に立つ、Apollo 11を搭載したSaturn V SA-506。全高110.6 mは、実運用ミッションに飛んだ打ち上げ機として史上最強です。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "1969年7月16日 — ケネディ宇宙センターからのSaturn V",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/02.webp",
+          "caption": "1969年7月16日13時32分(UTC)にリフトオフ。2時間44分後のTLI噴射で、Apollo 11は秒速11 kmで月へ向かいました。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "静かの海 — 1969年7月20日着陸",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/03.webp",
+          "caption": "月着陸船のはしごを降りるバズ・オルドリン。撮影はアームストロング。「荘厳なる荒涼」— オルドリンが月面で最初に発した言葉です。"
+        },
+        {
+          "src": "/images/missions/apollo11/04.webp",
+          "caption": "静かの基地に残るオルドリンのブーツの足跡。真空の中で、半世紀以上そのままの姿を保っています。"
+        },
+        {
+          "src": "/images/hotspots/moon/apollo11/tier3-pan.jpg",
+          "caption": "静かの基地のパノラマ。月着陸船Eagleの降下段、EASEP科学実験パッケージ、アメリカ国旗、そして月面で最も有名な足跡が写っています。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "21.5 kgの玄武岩試料、レトロリフレクター・アレイ、地震計",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/05.webp",
+          "caption": "月試料10072 — 37億年前の、多孔質の海の玄武岩。地球で研究された、別の天体から来た最初の岩石です。"
+        }
+      ]
+    }
+  ]
+}

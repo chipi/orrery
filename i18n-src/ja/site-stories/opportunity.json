@@ -1,0 +1,50 @@
+{
+  "intro": "Opportunityは2004年1月25日、メリディアニ平原に着陸しました。まさにホールインワンでした。エアバッグで弾みながら転がった探査車は、そのまま小さなクレーター（イーグル・クレーター）の中に収まりました。その壁面には、火星で初めて間近に観察された、赤鉄鉱に富む「ブルーベリー」が残されていました。設計寿命は90ソルでしたが、Opportunityは14年かけて45.16キロメートルを走破しました。2018年6月、惑星規模のダストストームによって太陽光発電が途絶えるまでのことです。最後の送信はこうでした。「バッテリー残量が少なくなり、暗くなってきました。」",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "Spiritの双子機、火星の反対側に着陸した探査機",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/opportunity/01.webp",
+          "caption": "組み立て中のMER-B。Spiritと同一のハードウェアで、火星の平原地形に合わせて最適化されています。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "メリディアニ平原――2004年1月25日着陸",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/opportunity/tier3-pan.jpg",
+          "caption": "Legacy Pan、ソル5084〜5111（2018年5〜6月）。ダストストームの前にOpportunityが撮影した、最後の360°パノラマです。Perseverance Valleyはエンデバー・クレーターへと下っています。"
+        },
+        {
+          "src": "/images/hotspots/mars/opportunity/tier2-hirise.jpg",
+          "caption": "エンデバー・クレーターの縁。Opportunityが最後の数年間を過ごした場所です。探査車が停止した地点は、右側のPerseverance Valleyにあります。"
+        },
+        {
+          "src": "/images/fleet-galleries/opportunity/02.webp",
+          "caption": "赤鉄鉱の「ブルーベリー」。メリディアニ平原の岩盤に埋め込まれた、ミリメートル規模の球状粒子です。火星に長期間液体の水が存在したことを示す、初めての直接的な証拠です。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "イーグル・クレーターからEndeavourへ――14年にわたる証拠",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/opportunity/03.webp",
+          "caption": "エンデュランス・クレーターの耐熱シールド落下地点。Opportunityは、自らが切り離した大気圏突入用ハードウェアを調べるため、そこまで引き返しました。"
+        },
+        {
+          "src": "/images/fleet-galleries/opportunity/04.webp",
+          "caption": "エンデュランス・クレーター内部のBurns Cliffに露出した地層。酸性で塩分を含む古代の水域が残した堆積記録です。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dawn",
+  "current_distance_label": "2,8 AU · in orbita stabile intorno a Cerere dal fine di ottobre 2018 (~durata orbitale di 20 anni)",
+  "waypoints": [
+    {
+      "label": "Lancio"
+    },
+    null,
+    null,
+    {
+      "label": "Assistenza di Marte"
+    },
+    null,
+    null,
+    {
+      "label": "Orbita di Vesta"
+    },
+    {
+      "label": "Partenza da Vesta"
+    },
+    null,
+    null,
+    {
+      "label": "Inserimento in orbita di Cerere"
+    },
+    {
+      "label": "Fine missione (Oggi)"
+    }
+  ]
+}

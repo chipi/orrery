@@ -1,0 +1,34 @@
+{
+  "name": "Pioneer 11",
+  "current_distance_label": "89 AU · 太陽からおよそ12.3光時間（1995年9月30日に通信喪失）",
+  "interstellar_since_label": "通信喪失1995年—わし座方向に航行中、2027年頃に星間空間に到達する予定",
+  "waypoints": [
+    {
+      "label": "打ち上げ"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "木星スイングバイ"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "土星 + F環"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "最後の通信"
+    },
+    null,
+    null,
+    {
+      "label": "現在"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "intro": "Luna 17 s'est posée dans la Mer des Pluies le 17 novembre 1970 et a déployé Lunokhod 1, le premier véhicule à roues à fonctionner sur un autre monde, devançant de sept mois le LRV de la NASA. Lunokhod 1 a parcouru 10,5 km en 11 jours lunaires, piloté depuis la Crimée par une équipe de cinq personnes. Il a renvoyé 25 000 photographies et 211 panoramas avant de se taire en septembre 1971.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Les premières roues sur la Lune — Lunokhod 1",
+      "images": [
+        {
+          "src": "/images/missions/luna17/01.webp",
+          "caption": "Lunokhod 1 : un châssis à 8 roues de 756 kg, alimenté par l'énergie solaire, avec un générateur thermoélectrique à radio-isotopes au polonium-210 pour le chauffer pendant la nuit. Conçu pour durer 3 mois, il en a tenu 10."
+        },
+        {
+          "src": "/images/missions/luna17/02.webp",
+          "caption": "L'atterrisseur Luna 17 et ses rampes pour le déploiement de Lunokhod 1. L'équipe soviétique de télépilotage opérait depuis un sous-marin reconverti, sur la côte de Crimée."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "À la surface",
+      "subtitle": "Mer des Pluies : atterrissage le 17 novembre 1970",
+      "images": [
+        {
+          "src": "/images/missions/luna17/03.webp",
+          "caption": "Lunokhod 1 roulant sur la Mer des Pluies, piloté en temps réel par une équipe de cinq personnes malgré le délai de 2,5 secondes imposé par la vitesse de la lumière à chaque sens."
+        },
+        {
+          "src": "/images/missions/luna17/04.webp",
+          "caption": "Carte du parcours de Lunokhod 1 : 10,5 km en zigzag à travers la Mer des Pluies, avec des arrêts scientifiques près de rochers et de cratères."
+        },
+        {
+          "src": "/images/missions/luna17/05.webp",
+          "caption": "Le rétroréflecteur de Lunokhod 1, que les stations terrestres de télémétrie laser sur la Lune utilisent encore aujourd'hui, plus de 50 ans après."
+        }
+      ]
+    }
+  ]
+}

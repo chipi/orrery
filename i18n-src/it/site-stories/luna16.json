@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 16 si posò nel Mare Fecunditatis il 20 settembre 1970: il primo ritorno di campioni robotico da un altro mondo. La sonda perforò il regolite lunare per 35 cm, sigillò 101 g nella capsula di rientro e decollò 26 ore dopo l'atterraggio. La capsula atterrò in Kazakhstan tre giorni più tardi. Dimostrò che l'ingegneria sovietica era in grado di riportare a terra materiale lunare senza un volo con equipaggio, un anno e due mesi dopo l'Apollo 11.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Lander sovietico E-8-5 — il primo sistema robotico per il ritorno di campioni",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/01.webp",
+          "caption": "Modello al vero della sonda Luna 16 — stadio di discesa (in primo piano) e stadio di risalita con la capsula di rientro (in alto)."
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/02.webp",
+          "caption": "Schema del meccanismo di raccolta dei campioni — carota di perforazione con trasferimento sigillato alla capsula di rientro."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "12 settembre 1970 — Proton-K da Bajkonur",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/03.webp",
+          "caption": "Il Proton-K con lo stadio superiore Blok-D sulla rampa del cosmodromo di Bajkonur."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Mare Fecunditatis — atterraggio il 20 settembre 1970",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/04.webp",
+          "caption": "Luna 16 mentre perfora il regolite — 101 g di materiale sigillati nella capsula di rientro sferica in vista del decollo."
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/05.webp",
+          "caption": "La capsula di rientro sulla steppa kazaka, 24 settembre 1970 — il primo ritorno robotico di campioni interplanetari della storia."
+        }
+      ]
+    }
+  ]
+}

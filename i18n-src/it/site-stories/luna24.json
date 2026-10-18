@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 24 atterrò nel Mare Crisium il 18 agosto 1976: fu l'ultima missione sovietica (e l'ultima missione robotica) di recupero di campioni lunari del XX secolo, nonché l'ultimo lander lunare di qualsiasi tipo fino al Chang'e 3 cinese nel 2013. Perforò il regolite per 2 m e riportò sulla Terra 170,1 g di campioni, tra cui indizi di ghiaccio d'acqua lunare (riconfermati decenni dopo da SOFIA + LCROSS). Il programma lunare sovietico si concluse qui.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Lander sovietico E-8-5M — sistema migliorato per il recupero di campioni",
+      "images": [
+        {
+          "src": "/images/missions/luna24/01.webp",
+          "caption": "La navicella Luna 24 esposta in un museo spaziale sovietico: stadio di discesa + veicolo di risalita + capsula di rientro."
+        },
+        {
+          "src": "/images/missions/luna24/02.webp",
+          "caption": "Il meccanismo di perforazione: scese a 2 m di profondità, tre volte più di Luna 16, che si era fermata a 35 cm. Riportò i campioni più profondi mai portati sulla Terra da un altro mondo."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Mare Crisium — atterraggio il 18 agosto 1976",
+      "images": [
+        {
+          "src": "/images/missions/luna24/03.webp",
+          "caption": "Il sito di atterraggio nel Mare Crisium: Luna 24 si posò a circa 2 km dal punto in cui, nel 1974, era fallito l'atterraggio di Luna 23 nella stessa regione."
+        },
+        {
+          "src": "/images/missions/luna24/04.webp",
+          "caption": "La capsula di rientro in Siberia, 22 agosto 1976: l'ultimo recupero sovietico di campioni da oltre l'orbita terrestre fino ai programmi VKS degli anni 2020."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Scienza",
+      "subtitle": "Acqua nel regolite — confermata in anticipo",
+      "images": [
+        {
+          "src": "/images/missions/luna24/05.webp",
+          "caption": "La rianalisi dei campioni di Luna 24 nel 1978 riportò un contenuto d'acqua dello 0,1%: inizialmente respinta, fu confermata nel 2020 dall'impatto di LCROSS + SOFIA."
+        }
+      ]
+    }
+  ]
+}

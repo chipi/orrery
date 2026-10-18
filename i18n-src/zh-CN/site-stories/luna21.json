@@ -1,0 +1,39 @@
+{
+  "intro": "Luna 21 于 1973 年 1 月 15 日降落在勒莫尼耶环形山，并释放了 Lunokhod 2——世界首辆月球车的后继者。Lunokhod 2 在 4 个月内行驶了 42.1 公里，这一纪录一直保持到 41 年后的 2014 年 7 月，才被 NASA 的 Opportunity 在火星上超越。它传回了 8 万幅电视图像和 86 次全景扫描，最终一堆月壤落到散热器上，导致月球车过热失效。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "Lunokhod 2——刷新月面行驶纪录（42 公里）",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/01.webp",
+          "caption": "Lunokhod 2 在 Lunokhod 1 的基础上改进：摄像机更多，转向控制更精细，配备第三轴机械臂，太阳能电池板更大。"
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/02.webp",
+          "caption": "正在准备运输的 Lunokhod 2 底盘——八个独立的车轮电机，每个都有自己的扭矩反馈控制回路。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "勒莫尼耶环形山——1973 年 1 月 15 日着陆",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/03.webp",
+          "caption": "Lunokhod 2 的全景相机为自己拍下的照片——长长的影子横贯月球表面。"
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/04.webp",
+          "caption": "42.1 公里行驶路线图——月球车穿越月海玄武岩地带，攀爬撞击坑壁，并在四个月昼中查看了数十块岩石。"
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/05.webp",
+          "caption": "LRO 于 2010 年拍摄的最终位置——陡峭的撞击坑壁上滑落的月壤掩埋了散热板，Lunokhod 2 就此停驻。"
+        }
+      ]
+    }
+  ]
+}

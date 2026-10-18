@@ -1,0 +1,61 @@
+{
+  "intro": "Viking 1은 1976년 7월 20일 크리세 평원에 착륙했습니다. 아폴로 11호(Apollo 11)의 달 착륙으로부터 정확히 7년 뒤였고, 미국이 화성에 성공적으로 착륙시킨 최초의 착륙선이었습니다. 2,245솔(6.3년)에 걸친 지표 임무 동안 화성 최초의 컬러 영상을 촬영했고, 최초의 현지 생물학 실험을 수행했으며(결과는 모호했습니다), 매일의 기상 기록도 남겼습니다. 1982년 11월, 명령 업로드 과정에서 안테나 지향 매개변수가 실수로 덮어쓰이면서 마지막 교신이 이루어졌습니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "착륙선과 궤도선 한 쌍, RTG 전원, 약 600kg",
+      "images": [
+        {
+          "src": "/images/missions/viking1/01.webp",
+          "caption": "비행 전 시험 중인 Viking 1 착륙선 — 뒤쪽에 RTG가 보이고 표면 시료 채취 팔이 펼쳐져 있습니다."
+        },
+        {
+          "src": "/images/missions/viking1/02.webp",
+          "caption": "JPL 시험 환경에서 표면 시료 채취 팔의 전개를 모형으로 시험하는 모습."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "1975년 8월 20일 — 케이프 커내버럴에서 Titan IIIE 발사",
+      "images": [
+        {
+          "src": "/images/missions/viking1/03.webp",
+          "caption": "Titan IIIE / Centaur가 Viking 1을 발사합니다. 10개월간의 항행 후 1976년 6월 화성 궤도에 진입했고, 7월 20일 착륙선이 착륙했습니다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "지표",
+      "subtitle": "크리세 평원 — 1976년 7월 20일 착륙",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier3-pan.jpg",
+          "caption": "크리세 평원 360° 파노라마 — 다른 행성 표면에서 촬영한 최초의 컬러 풍경."
+        },
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier2-hirise.jpg",
+          "caption": "30여 년 뒤 MRO의 HiRISE가 궤도에서 촬영한 Viking 1 착륙선 — 1970년대 화성 탐사 임무의 장비를 고고학처럼 확인한 최초의 영상입니다."
+        },
+        {
+          "src": "/images/missions/viking1/04.webp",
+          "caption": "착륙 몇 분 뒤 Camera 2가 포착한 화성 표면의 첫 모습."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "생물학 실험, 기상 관측, 그리고 생명 탐색",
+      "images": [
+        {
+          "src": "/images/missions/viking1/05.webp",
+          "caption": "표면 시료 채취기가 판 도랑 — Viking 생물학 실험에서는 유기 화합물을 검사했습니다(검출되지 않았으나, 결과는 여전히 논쟁 중입니다)."
+        }
+      ]
+    }
+  ]
+}

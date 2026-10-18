@@ -1,0 +1,37 @@
+{
+  "name": "Galileo",
+  "current_distance_label": "5,4 UA · desintegrada en Júpiter 2003-09-21 (protección de Europa)",
+  "waypoints": [
+    {
+      "label": "Lanzamiento (STS-34)"
+    },
+    null,
+    {
+      "label": "Venus"
+    },
+    null,
+    {
+      "label": "Tierra #1"
+    },
+    null,
+    {
+      "label": "Gaspra"
+    },
+    null,
+    {
+      "label": "Tierra #2"
+    },
+    null,
+    {
+      "label": "Ida + Dactyl"
+    },
+    null,
+    null,
+    {
+      "label": "Inserción en órbita de Júpiter"
+    },
+    {
+      "label": "Desintegrada en Júpiter"
+    }
+  ]
+}

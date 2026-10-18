@@ -1,0 +1,50 @@
+{
+  "intro": "Spirit landete am 4. Januar 2004 im Gusev-Krater – drei Wochen bevor ihr Zwilling Opportunity auf der gegenüberliegenden Seite des Mars aufsetzte. Ausgelegt für 90 Sols, arbeitete Spirit sechs Jahre lang und legte 7,7 km zurück, bis sich ihre Räder bei „Troy“ endgültig im weichen Boden festfuhren. Als gestrandeter Rover diente sie weiter als stationäre Forschungsplattform, bis im März 2010 der Kontakt abbrach.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Solarbetriebener Rover, Zwilling von Opportunity",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/01.webp",
+          "caption": "Mars Exploration Rover während der Integration – 185 kg, 6 Räder, Pancam-Mastkamera, RAT-Gesteinsschleifwerkzeug."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Gusev-Krater – gelandet am 4. Januar 2004",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/spirit/tier3-pan.jpg",
+          "caption": "Winter Haven bei McMurdo, Sol 814–980 (2006) – Pancam-360°-Panorama. Die Columbia Hills, benannt nach der verunglückten Besatzung von STS-107, beherrschen den Horizont."
+        },
+        {
+          "src": "/images/hotspots/mars/spirit/tier2-hirise.jpg",
+          "caption": "Spirits festgefahrener Standort bei „Troy“, aufgenommen von MRO HiRISE nach dem Einsinken der Räder im Mai 2009."
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/02.webp",
+          "caption": "Bohrung am Felsen Adirondack, Sol 34 – erster Einsatz des Gesteinsschleifwerkzeugs auf dem Mars."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wissenschaft",
+      "subtitle": "Aufstieg auf Husband Hill, Fund von Silica bei Home Plate",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/03.webp",
+          "caption": "Silica-reicher Boden, freigelegt durch Spirits defektes rechtes Vorderrad bei Home Plate – Hinweis auf frühere hydrothermale Aktivität im Gusev-Krater."
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/04.webp",
+          "caption": "Sonnenuntergang über dem Gusev-Krater, aufgenommen von Pancam, Sol 489 (19. Mai 2005). Eines der ikonischen, bläulich getönten Bilder der marsianischen Abenddämmerung."
+        }
+      ]
+    }
+  ]
+}

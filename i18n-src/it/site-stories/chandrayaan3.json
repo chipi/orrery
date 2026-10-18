@@ -1,0 +1,46 @@
+{
+  "intro": "Chandrayaan-3 è atterrato vicino al polo sud lunare il 23 agosto 2023: il primo allunaggio morbido dell'India e l'atterraggio più vicino al polo sud mai compiuto da una nazione. Il lander Vikram ha dispiegato il rover Pragyan, che nell'arco di 14 giorni ha percorso circa 100 m alla ricerca di ghiaccio d'acqua in un terreno perennemente in ombra. L'India è diventata così la quarta nazione ad allunare in modo morbido, dopo URSS, USA e Cina.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Lander Vikram + rover Pragyan",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/01.webp",
+          "caption": "Il complesso della sonda Chandrayaan-3 durante l'integrazione pre-lancio presso l'ISRO a Sriharikota."
+        },
+        {
+          "src": "/images/missions/chandrayaan3/02.webp",
+          "caption": "Il rover Pragyan: 26 kg, alimentato a energia solare, a 6 ruote. Progettato per muoversi sul regolite del polo sud lunare alla ricerca di sostanze volatili."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "14 luglio 2023 — LVM3 dal Satish Dhawan Space Centre",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/03.webp",
+          "caption": "LVM3 («Bahubali») lancia Chandrayaan-3: 40 giorni di transito, con una cattura lunare a più anelli e una traiettoria volutamente lenta per massimizzare il margine di carburante."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Shiv Shakti Point, vicino al polo sud lunare — allunaggio il 23 agosto 2023",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/04.webp",
+          "caption": "Il lander Vikram sulla superficie del polo sud: touchdown a 69,37° S, l'allunaggio alla latitudine più alta mai realizzato."
+        },
+        {
+          "src": "/images/missions/chandrayaan3/05.webp",
+          "caption": "Il rover Pragyan scende lungo la rampa: le prime ruote al polo sud lunare, fotografate dalle fotocamere di bordo di Vikram."
+        }
+      ]
+    }
+  ]
+}

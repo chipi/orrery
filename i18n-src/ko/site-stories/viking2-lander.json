@@ -1,0 +1,54 @@
+{
+  "intro": "Viking 2는 1976년 9월 3일 유토피아 평원에 착륙했습니다. 쌍둥이 Viking 착륙선 가운데 두 번째 기체로, 화성에서 Viking 1과 정반대편에 내려앉았습니다. 1,316솔에 걸친 임무 동안 (극지방의 겨울에) 화성에서 물얼음 서리를 처음으로 관측했으며, 훨씬 춥고 위도가 높은 지점에서 Viking 1의 생물학 실험을 되풀이했습니다. 1980년 4월 배터리 고장으로 임무를 마쳤습니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "Viking 1의 쌍둥이, 동일한 관측 장비",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/01.webp",
+          "caption": "화성 유토피아 평원 표면에 있는 Viking 2 착륙선."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "유토피아 평원 — 1976년 9월 3일 착륙",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier3-pan.jpg",
+          "caption": "유토피아 평원 360° 카메라 모자이크 — Viking 1의 크리세 평원 착륙지보다 더 평탄하고 바위가 많은 지형."
+        },
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier2-hirise.jpg",
+          "caption": "임무가 끝나고 수십 년 뒤 MRO HiRISE가 궤도에서 촬영한 Viking 2 착륙선."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/02.webp",
+          "caption": "유토피아 평원 컬러 영상 — 안드레아 럭이 NASA 아카이브 원판에서 Viking 2 영상을 다시 처리했습니다."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "서리, 먼지 폭풍, 그리고 화성에서 맞은 첫 겨울",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/03.webp",
+          "caption": "Viking 2 착륙선 주변의 암석을 뒤덮은 물얼음 서리 — 화성 북극권의 겨울에 이루어진 최초의 관측입니다(1230솔)."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/04.webp",
+          "caption": "유토피아 평원의 일출(PIA00576) — Viking 2의 카메라가 북반구 고위도 지역의 동트기 전 여명을 포착했습니다."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/05.webp",
+          "caption": "유토피아 평원의 서리(NASA Viking Lander 2) — 안드레아 럭이 다시 처리했습니다."
+        }
+      ]
+    }
+  ]
+}

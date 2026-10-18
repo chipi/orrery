@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 16 landete am 21. April 1972 im Descartes-Hochland – als einzige Apollo-Mission in einem Hochland (nicht in einem Mare), ausgewählt, um Gestein aus einem Gelände zu beproben, das man für vulkanisch hielt. Young und Duke fanden KEINE vulkanischen Gesteine – nur Impaktbreccien und Anorthosit. Damit stürzten sie das geologische Modell und zeigten, dass das Hochland des Mondes eine uralte, durch Einschläge zertrümmerte Kruste ist und nicht das Ergebnis späteren Vulkanismus. Drei Außenbordeinsätze (EVAs), 27 km Fahrt mit dem LRV, 95 kg zur Erde gebrachte Proben.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Casper + Orion + LRV-2",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/01.webp",
+          "caption": "Besatzungsporträt von Apollo 16 – John Young (CDR), Ken Mattingly (CMP – von Apollo 13 abgezogen), Charlie Duke (LMP)."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Descartes-Hochland – gelandet am 21. April 1972",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/02.webp",
+          "caption": "John Young springt bei den „Lunar Olympics“ – der ersten bemannten Hochsprung-Einlage auf dem Mond, die die geringe Schwerkraft von 1/6 g demonstriert."
+        },
+        {
+          "src": "/images/missions/apollo16/03.webp",
+          "caption": "Duke am „Big Muley“ – Probe 61016, der größte einzelne Gesteinsbrocken, der vom Mond zur Erde gebracht wurde (11,7 kg)."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo16/tier3-pan.jpg",
+          "caption": "Panorama der Descartes-Hochland – Orion-Landestufe + LRV + Stone Mountain im Hintergrund."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wissenschaft",
+      "subtitle": "Hochlandbreccien widerlegen die Vulkanismus-Hypothese",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/04.webp",
+          "caption": "Charlie Dukes Familienfoto, zurückgelassen auf der Mondoberfläche – das einzige bekannte Porträt einer irdischen Familie auf einer anderen Welt."
+        }
+      ]
+    }
+  ]
+}

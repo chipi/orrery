@@ -1,0 +1,30 @@
+{
+  "name": "Dawn",
+  "current_distance_label": "2.8 AU · セレス周回軌道上にあり、2018-10-31までの終了時点から安定軌道を維持中（軌道寿命 約20年）",
+  "waypoints": [
+    {
+      "label": "打ち上げ"
+    },
+    null,
+    null,
+    {
+      "label": "火星スイングバイ"
+    },
+    null,
+    null,
+    {
+      "label": "ベスタ周回軌道"
+    },
+    {
+      "label": "ベスタ離脱"
+    },
+    null,
+    null,
+    {
+      "label": "セレス軌道投入"
+    },
+    {
+      "label": "終了時点（現在）"
+    }
+  ]
+}

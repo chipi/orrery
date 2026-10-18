@@ -1,0 +1,50 @@
+{
+  "intro": "Opportunity는 2004년 1월 25일 메리디아니 평원에 착륙했습니다. 에어백을 터뜨리며 튀어 오르던 로버가 곧바로 작은 크레이터(이글 분화구) 안으로 굴러 들어간, 그야말로 홀인원이었습니다. 그 크레이터의 벽에는 화성에서 가까이서 관찰된 최초의 적철석이 풍부한 \"블루베리\"가 박혀 있었습니다. 90솔을 목표로 설계된 Opportunity는 14년 동안 45.16km를 주행하다가, 2018년 6월 행성 전체를 뒤덮은 먼지 폭풍으로 태양광 전력이 끊기면서 활동을 멈췄습니다. 마지막 교신은 이렇습니다. \"배터리가 얼마 남지 않았고, 점점 어두워지고 있어요.\"",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "Spirit의 쌍둥이, 화성 반대편에 내린 착륙선",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/opportunity/01.webp",
+          "caption": "조립 중인 MER-B. Spirit과 동일한 하드웨어로, 화성의 평원 지형에 맞게 최적화되었습니다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "메리디아니 평원 — 2004년 1월 25일 착륙",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/opportunity/tier3-pan.jpg",
+          "caption": "Legacy Pan, 5084~5111솔(2018년 5~6월) — 먼지 폭풍이 닥치기 전 Opportunity가 촬영한 마지막 360° 파노라마입니다. Perseverance Valley는 인데버 분화구 안쪽으로 내려갑니다."
+        },
+        {
+          "src": "/images/hotspots/mars/opportunity/tier2-hirise.jpg",
+          "caption": "Opportunity가 마지막 몇 해를 보낸 인데버 분화구의 가장자리. 로버가 멈춰 선 자리는 오른쪽의 Perseverance Valley에 있습니다."
+        },
+        {
+          "src": "/images/fleet-galleries/opportunity/02.webp",
+          "caption": "적철석 \"블루베리\" — 메리디아니 평원의 기반암에 박혀 있는 밀리미터 크기의 구형 알갱이입니다. 화성에 액체 상태의 물이 오래 존재했음을 보여 주는 최초의 직접적인 증거입니다."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "이글 분화구에서 Endeavour까지 — 14년에 걸친 증거",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/opportunity/03.webp",
+          "caption": "인듀어런스 분화구의 열차폐막 충돌 지점 — Opportunity는 자신이 버리고 온 진입 하드웨어를 직접 살펴보려고 되돌아갔습니다."
+        },
+        {
+          "src": "/images/fleet-galleries/opportunity/04.webp",
+          "caption": "인듀어런스 분화구 안쪽 Burns Cliff의 층층이 드러난 단면 — 고대에 존재했던 산성의 짠 물웅덩이가 남긴 퇴적 기록입니다."
+        }
+      ]
+    }
+  ]
+}

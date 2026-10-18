@@ -1,0 +1,248 @@
+[
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Tranquility Baseに残るオルドリンのブーツの足跡。真空の中で、半世紀以上そのままの姿を保っています。",
+    "new": "静かの基地に残るオルドリンのブーツの足跡。真空の中で、半世紀以上そのままの姿を保っています。"
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.2.caption",
+    "old": "Tranquility Baseのパノラマ。月着陸船Eagleの降下段、EASEP科学実験パッケージ、アメリカ国旗、そして月面で最も有名な足跡が写っています。",
+    "new": "静かの基地のパノラマ。月着陸船Eagleの降下段、EASEP科学実験パッケージ、アメリカ国旗、そして月面で最も有名な足跡が写っています。"
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "Apollo 12の乗組員の肖像 — ピート・コンラッド(船長)、Dick Gordon(司令船操縦士)、Al ビーン(月着陸船操縦士)。",
+    "new": "Apollo 12の乗組員の肖像 — ピート・コンラッド(船長)、リチャード・ゴードン(司令船操縦士)、アラン・ビーン(月着陸船操縦士)。"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "Apollo 14のクルー:アラン・シェパード(船長 — 10年前に初のアメリカ人として宇宙へ)、Stuart Roosa(司令船操縦士)、Ed ミッチェル(月着陸船操縦士)。",
+    "new": "Apollo 14のクルー:アラン・シェパード(船長 — 10年前に初のアメリカ人として宇宙へ)、スチュアート・ルーサ(司令船操縦士)、エドガー・ミッチェル(月着陸船操縦士)。"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.2.subtitle",
+    "old": "Imbrium衝突の角礫岩試料",
+    "new": "雨の海衝突の角礫岩試料"
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "intro",
+    "old": "Apollo 15は1971年7月30日、ハドリー谷 / Apennine Mountainsに着陸した。滞在期間を延長した初の「J-class」ミッションであり、月面ローバー(Lunar Roving Vehicle、LRV)を初めて搭載し、科学者としての訓練を受けたパイロット(デイヴィッド・スコット)が参加した。スコットとアーウィンは3回の船外活動で合計28 kmを走行し、Genesis Rock(約4.1 Ga、すなわち約41億年前の斜長岩で、原初の地殻の一部)を発見。さらに生中継のテレビ映像の中で、羽根とハンマーを同時に落とし、Galileoの重力実験を再現してみせた。",
+    "new": "Apollo 15は1971年7月30日、ハドリー谷 / アペニン山脈に着陸した。滞在期間を延長した初の「J-class」ミッションであり、月面ローバー(Lunar Roving Vehicle、LRV)を初めて搭載し、科学者としての訓練を受けたパイロット(デイヴィッド・スコット)が参加した。スコットとアーウィンは3回の船外活動で合計28 kmを走行し、Genesis Rock(約4.1 Ga、すなわち約41億年前の斜長岩で、原初の地殻の一部)を発見。さらに生中継のテレビ映像の中で、羽根とハンマーを同時に落とし、Galileoの重力実験を再現してみせた。"
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "LRVのそばで敬礼するJim アーウィン。背後にはMt Hadley Delta。月面からとらえた初のApennine Mountainsの映像である。",
+    "new": "LRVのそばで敬礼するジェームズ・アーウィン。背後にはハドリー・デルタ山。月面からとらえた初のアペニン山脈の映像である。"
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Hadley Plainのパノラマ。Falconの降下段とLRV、そして地平線上のMt Hadley Delta。",
+    "new": "ハドリー平原のパノラマ。Falconの降下段とLRV、そして地平線上のハドリー・デルタ山。"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "Apollo 16のクルーの肖像写真。船長のジョン・ヤング、司令船操縦士のKen Mattingly(Apollo 13の搭乗から外された)、月着陸船操縦士のチャーリー・デューク。",
+    "new": "Apollo 16のクルーの肖像写真。船長のジョン・ヤング、司令船操縦士のケン・マッティングリー(Apollo 13の搭乗から外された)、月着陸船操縦士のチャーリー・デューク。"
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "Apollo 17のクルーの肖像 — ユージン・サーナン（船長、CDR）、Ron Evans（司令船操縦士、CMP）、Harrison \"Jack\" Schmitt（月着陸船操縦士、LMP、科学者宇宙飛行士）。",
+    "new": "Apollo 17のクルーの肖像 — ユージン・サーナン（船長、CDR）、ロナルド・エヴァンス（司令船操縦士、CMP）、ハリソン・\"ジャック\"・シュミット（月着陸船操縦士、LMP、科学者宇宙飛行士）。"
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.1.subtitle",
+    "old": "2023年7月14日 — Satish Dhawan Space CentreからLVM3で打ち上げ",
+    "new": "2023年7月14日 — サティシュ・ダワン宇宙センターからLVM3で打ち上げ"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.4.images.0.caption",
+    "old": "2012年8月5日〜6日、「恐怖の7分間」のスカイクレーン着陸を祝う JPL の管制室。ゲール・クレーターからの最初の信号を受け取った後の Adam Steltzner とチーム。",
+    "new": "2012年8月5日〜6日、「恐怖の7分間」のスカイクレーン着陸を祝う JPL の管制室。ゲール・クレーターからの最初の信号を受け取った後のアダム・ステルツナーとチーム。"
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.3.images.0.caption",
+    "old": "2022年5月4日に発生したマグニチュード4.7の火星地震の地震波形。観測された中で最大の地震で、震源はCerberus Fossae断層系である。",
+    "new": "2022年5月4日に発生したマグニチュード4.7の火星地震の地震波形。観測された中で最大の地震で、震源はケルベルス地溝帯断層系である。"
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "intro",
+    "old": "Luna 21は1973年1月15日にLe Monnier クレーターへ着陸し、世界初の月面ローバーの後継機であるLunokhod 2を展開した。Lunokhod 2は4か月間で42.1 kmを走破した。この記録は、41年後の2014年7月に火星でNASAのOpportunityが上回るまで破られなかった。8万枚のテレビ画像と86回のパノラマ撮影を送り届けたが、レゴリスの小山がラジアターに崩れ落ち、ローバーは過熱して機能を失った。",
+    "new": "Luna 21は1973年1月15日にル・モニエ・クレーターへ着陸し、世界初の月面ローバーの後継機であるLunokhod 2を展開した。Lunokhod 2は4か月間で42.1 kmを走破した。この記録は、41年後の2014年7月に火星でNASAのOpportunityが上回るまで破られなかった。8万枚のテレビ画像と86回のパノラマ撮影を送り届けたが、レゴリスの小山がラジアターに崩れ落ち、ローバーは過熱して機能を失った。"
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.1.subtitle",
+    "old": "Le Monnier クレーター — 1973年1月15日着陸",
+    "new": "ル・モニエ・クレーター — 1973年1月15日着陸"
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "月面の最初の画像 — 岩だらけのレゴリスを捉えた、粗くビットレートの低いパノラマ。マンチェスターのJodrell Bank電波望遠鏡がこの送信を傍受し、ソ連より先に公表した。",
+    "new": "月面の最初の画像 — 岩だらけのレゴリスを捉えた、粗くビットレートの低いパノラマ。マンチェスターのジョドレルバンク電波望遠鏡がこの送信を傍受し、ソ連より先に公表した。"
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "intro",
+    "old": "Mars 3は1971年12月2日、Terra Sirenumに着陸した。火星の大気圏突入を生き延びて地表に到達した初のランダーであり、姉妹機Mars 2が墜落した5日後のことだった。通信は14.5秒で途絶え、送られてきたのは、一部しかなく劣化したグレースケール画像の断片が1枚だけだった。ランダーは、惑星全体を覆う砂嵐のさなかに到着した可能性が高い。Mars 3が実際にどこに眠っているのかは、今も議論が続いている。2013年にはHiRISEが、それらしき機体の候補を撮影した。",
+    "new": "Mars 3は1971年12月2日、シレーン陸地に着陸した。火星の大気圏突入を生き延びて地表に到達した初のランダーであり、姉妹機Mars 2が墜落した5日後のことだった。通信は14.5秒で途絶え、送られてきたのは、一部しかなく劣化したグレースケール画像の断片が1枚だけだった。ランダーは、惑星全体を覆う砂嵐のさなかに到着した可能性が高い。Mars 3が実際にどこに眠っているのかは、今も議論が続いている。2013年にはHiRISEが、それらしき機体の候補を撮影した。"
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.2.subtitle",
+    "old": "Terra Sirenum — 1971年12月2日着陸",
+    "new": "シレーン陸地 — 1971年12月2日着陸"
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Terra Sirenumにある、Mars 3の機体とみられる候補地のHiRISE詳細画像。2013年にNASA/UA HiRISEチームが公開し、ロシアのアマチュア宇宙史研究家が特定した。",
+    "new": "シレーン陸地にある、Mars 3の機体とみられる候補地のHiRISE詳細画像。2013年にNASA/UA HiRISEチームが公開し、ロシアのアマチュア宇宙史研究家が特定した。"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "intro",
+    "old": "Opportunityは2004年1月25日、メリディアニ平原に着陸しました。まさにホールインワンでした。エアバッグで弾みながら転がった探査車は、そのまま小さなクレーター（Eagle Crater）の中に収まりました。その壁面には、火星で初めて間近に観察された、赤鉄鉱に富む「ブルーベリー」が残されていました。設計寿命は90ソルでしたが、Opportunityは14年かけて45.16キロメートルを走破しました。2018年6月、惑星規模のダストストームによって太陽光発電が途絶えるまでのことです。最後の送信はこうでした。「バッテリー残量が少なくなり、暗くなってきました。」",
+    "new": "Opportunityは2004年1月25日、メリディアニ平原に着陸しました。まさにホールインワンでした。エアバッグで弾みながら転がった探査車は、そのまま小さなクレーター（イーグル・クレーター）の中に収まりました。その壁面には、火星で初めて間近に観察された、赤鉄鉱に富む「ブルーベリー」が残されていました。設計寿命は90ソルでしたが、Opportunityは14年かけて45.16キロメートルを走破しました。2018年6月、惑星規模のダストストームによって太陽光発電が途絶えるまでのことです。最後の送信はこうでした。「バッテリー残量が少なくなり、暗くなってきました。」"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "赤鉄鉱の「ブルーベリー」。Meridianiの岩盤に埋め込まれた、ミリメートル規模の球状粒子です。火星に長期間液体の水が存在したことを示す、初めての直接的な証拠です。",
+    "new": "赤鉄鉱の「ブルーベリー」。メリディアニ平原の岩盤に埋め込まれた、ミリメートル規模の球状粒子です。火星に長期間液体の水が存在したことを示す、初めての直接的な証拠です。"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.subtitle",
+    "old": "Eagle CraterからEndeavourへ――14年にわたる証拠",
+    "new": "イーグル・クレーターからEndeavourへ――14年にわたる証拠"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "2020年7月30日 07:50 EDT、SLC-41からAtlas V 541がMars 2020を打ち上げた — Jezeroまでは203日の道のり。",
+    "new": "2020年7月30日 07:50 EDT、SLC-41からAtlas V 541がMars 2020を打ち上げた — ジェゼロまでは203日の道のり。"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Van Zyl Overlook — Mastcam-Zによる初の360°パノラマ、ソル3(2021年2月21日)。西にJezeroのデルタが見える。",
+    "new": "Van Zyl Overlook — Mastcam-Zによる初の360°パノラマ、ソル3(2021年2月21日)。西にジェゼロのデルタが見える。"
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.2.subtitle",
+    "old": "Shioliクレーター — 2024年1月20日着陸",
+    "new": "シオリ・クレーター — 2024年1月20日着陸"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "ユートピア平原の360°カメラモザイク。Viking 1 の Chryse の着陸地点よりも平坦で、岩の多い地形。",
+    "new": "ユートピア平原の360°カメラモザイク。Viking 1 のクリュセ平原の着陸地点よりも平坦で、岩の多い地形。"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "ユートピア平原のカラー画像。Andrea Luck が NASA のアーカイブ原板から Viking 2 の画像を再処理した。",
+    "new": "ユートピア平原のカラー画像。アンドレア・ラックが NASA のアーカイブ原板から Viking 2 の画像を再処理した。"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.2.images.2.caption",
+    "old": "ユートピア平原の霜(NASA Viking Lander 2)。Andrea Luck による再処理画像。",
+    "new": "ユートピア平原の霜(NASA Viking Lander 2)。アンドレア・ラックによる再処理画像。"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "intro",
+    "old": "Zhurong は2021年5月14日、ユートピア平原に着陸しました。中国初の火星着陸成功であり、周回機・着陸機・ローバーを一度の打ち上げで組み合わせた、あらゆる国で初めての火星ミッション(Tianwen-1)でもあります。名前は中国の火の神に由来します。Zhurong は Utopia 平原南部を1.92 km走行した後、砂塵の季節にあたる2022年5月に休眠に入りました。CNSA は、その後の再起動を確認していません。",
+    "new": "Zhurong は2021年5月14日、ユートピア平原に着陸しました。中国初の火星着陸成功であり、周回機・着陸機・ローバーを一度の打ち上げで組み合わせた、あらゆる国で初めての火星ミッション(Tianwen-1)でもあります。名前は中国の火の神に由来します。Zhurong はユートピア平原南部を1.92 km走行した後、砂塵の季節にあたる2022年5月に休眠に入りました。CNSA は、その後の再起動を確認していません。"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.3.subtitle",
+    "old": "Utopia の地下を探る地中レーダー",
+    "new": "ユートピア平原の地下を探る地中レーダー"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.3.images.0.caption",
+    "old": "約80 mの深さまでの地下の層構造を示す地中レーダーのプロファイル。Utopia 南部で古代に洪水が起きていた証拠です。",
+    "new": "約80 mの深さまでの地下の層構造を示す地中レーダーのプロファイル。ユートピア平原南部で古代に洪水が起きていた証拠です。"
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "waypoints.10.label",
+    "old": "Ida + Dactyl",
+    "new": "イダ + ダクティル"
+  },
+  {
+    "rel": "trajectories/giotto.json",
+    "at": "current_distance_label",
+    "old": "1.04 AU · Grigg-Skjellerup フライバイ 1992-07-10 以来、太陽中心軌道に存在",
+    "new": "1.04 AU · グリッグ・シェレルップ彗星フライバイ 1992-07-10 以来、太陽中心軌道に存在"
+  },
+  {
+    "rel": "trajectories/giotto.json",
+    "at": "waypoints.6.label",
+    "old": "Grigg-Skjellerup",
+    "new": "グリッグ・シェレルップ彗星"
+  },
+  {
+    "rel": "trajectories/rosetta.json",
+    "at": "waypoints.7.label",
+    "old": "小惑星Lutetia",
+    "new": "小惑星ルテティア"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-28fc9267360f.caption",
+    "old": "JunoCamのフライオーバー、Vangelisのスコア付き。",
+    "new": "JunoCamのフライオーバー、ヴァンゲリスのスコア付き。"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-37cb7096799f.caption",
+    "old": "Chris Hadfield司令官がISS船内でDavid BowieのSpace Oddityを演奏 — 2013年5月。",
+    "new": "クリス・ハドフィールド司令官がISS船内でデヴィッド・ボウイのSpace Oddityを演奏 — 2013年5月。"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-46ec373795e7.title",
+    "old": "Mars Express — Nili Fossaeを横断するフライト",
+    "new": "Mars Express — ニリ谷を横断するフライト"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-46ec373795e7.caption",
+    "old": "ESA Mars ExpressのNili Fossaeフライオーバー。",
+    "new": "ESA Mars Expressのニリ谷フライオーバー。"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-5fd25a75da64.caption",
+    "old": "月の裏側への初の軟着陸 — Von Kármán クレーター、2019年1月3日。",
+    "new": "月の裏側への初の軟着陸 — フォン・カルマン・クレーター、2019年1月3日。"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-earth-launchpad_webp.what",
+    "old": "八角形パッドと4本の避雷塔 — Kennedy、バイコヌール、酒泉、その他。",
+    "new": "八角形パッドと4本の避雷塔 — ケネディ、バイコヌール、酒泉、その他。"
+  }
+]

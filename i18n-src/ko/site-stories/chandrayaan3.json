@@ -1,0 +1,46 @@
+{
+  "intro": "Chandrayaan-3는 2023년 8월 23일 달 남극 부근에 착륙했습니다. 인도 최초의 달 연착륙이자, 어느 나라든 남극에 가장 가깝게 착륙한 기록입니다. Vikram 착륙선은 Pragyan 탐사차를 내보냈고, Pragyan은 14일 동안 약 100m를 주행하며 영구 음영 지역에서 물 얼음을 찾았습니다. 인도는 소련, 미국, 중국에 이어 달에 연착륙한 네 번째 나라가 되었습니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "Vikram 착륙선 + Pragyan 탐사차",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/01.webp",
+          "caption": "ISRO 스리하리코타에서 발사 전 통합 작업 중인 Chandrayaan-3 우주선 결합체."
+        },
+        {
+          "src": "/images/missions/chandrayaan3/02.webp",
+          "caption": "Pragyan 탐사차 — 무게 26kg, 태양광 구동, 6륜. 달 남극의 레골리스 위를 주행하며 휘발성 물질을 찾도록 설계되었습니다."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "2023년 7월 14일 — 사티시 다완 우주센터에서 발사된 LVM3",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/03.webp",
+          "caption": "LVM3(\"Bahubali\")가 Chandrayaan-3를 발사합니다. 여러 차례 선회하며 달 궤도에 포획되는 과정을 포함해 40일이 걸린 이동이었으며, 연료 여유를 최대화하기 위해 일부러 느린 궤적을 택했습니다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "시브샥티 지점, 달 남극 부근 — 2023년 8월 23일 착륙",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/04.webp",
+          "caption": "남극 지표면 위의 Vikram 착륙선 — 착륙 지점은 남위 69.37°로, 지금까지 이루어진 달 착륙 중 가장 높은 위도입니다."
+        },
+        {
+          "src": "/images/missions/chandrayaan3/05.webp",
+          "caption": "경사로를 내려오는 Pragyan 탐사차 — 달 남극에 처음 닿은 바퀴로, Vikram에 탑재된 카메라가 촬영했습니다."
+        }
+      ]
+    }
+  ]
+}

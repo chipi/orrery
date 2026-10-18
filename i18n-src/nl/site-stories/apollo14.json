@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 14 landde op 5 februari 1971 in het Fra Mauro-hoogland — het oorspronkelijke doel van Apollo 13, alsnog bereikt na de explosie aan boord van Apollo 13. Shepard en Mitchell sleepten de Modular Equipment Transporter (een soort riksja) over de flanken van Cone-krater omhoog en brachten 43 kg breccia mee terug — brokstukken van de reusachtige inslag die 3,9 miljard jaar geleden Mare Imbrium vormde. Shepard sloeg vlak voor de lancering, naar het heet, twee golfballen weg.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Kitty Hawk + Antares + de riksja",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/01.webp",
+          "caption": "De bemanning van Apollo 14: Alan Shepard (CDR — tien jaar eerder de eerste Amerikaan in de ruimte), Stuart Roosa (CMP), Ed Mitchell (LMP)."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Fra Mauro-hoogland — geland op 5 februari 1971",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/02.webp",
+          "caption": "Mitchell met de Modular Equipment Transporter (MET) — de 'riksja' vervoerde gereedschap + monsters over de helling omhoog richting Cone-krater."
+        },
+        {
+          "src": "/images/missions/apollo14/03.webp",
+          "caption": "Rand van Cone-krater — de bemanning klom tot op ~30 m van de rand, maar werd door uitputting + beperkingen in de communicatie gedwongen terug te keren."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo14/tier3-pan.jpg",
+          "caption": "Panorama van de landingsplaats van Apollo 14 — de afdaaltrap van Antares + ALSEP zichtbaar."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "Monsters van breccia uit de Imbrium-inslag",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/04.webp",
+          "caption": "\"Big Bertha\" — monster 14321, een breccia van 8,99 kg met het oudste aardgesteente dat ooit is gevonden (zirkoon van 4,1 Ga), door een vroege inslag op aarde naar de Maan geslingerd."
+        }
+      ]
+    }
+  ]
+}

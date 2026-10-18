@@ -1,0 +1,46 @@
+{
+  "intro": "Schiaparelli — de tweede Europese poging om op Mars te landen — koppelde op 16 oktober 2016 los van de ExoMars Trace Gas Orbiter en stortte drie dagen later met ~540 km/u neer op Meridiani Planum. Door een softwarefout werden de parachute en de remraketten 50 seconden te vroeg losgekoppeld, terwijl de lander zich nog 3,7 km boven het oppervlak bevond. Binnen een week werd het wrak opgespoord door MRO HiRISE. De opgedane lessen bepaalden het ontwerp van de ExoMars-rover Rosalind Franklin, waarvan de lancering nu gepland staat voor 2028.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "EDM — Entry, Descent, and Landing Demonstrator Module (demonstratiemodule voor binnenkomst, afdaling en landing)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/01.webp",
+          "caption": "De Schiaparelli-lander vóór de lancering — 577 kg, ontworpen als eenmalige technologiedemonstrator voor het EDL-systeem van de ExoMars-rover."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "14 maart 2016 — Proton-M vanaf Bajkonoer",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/02.webp",
+          "caption": "Een Proton-M stijgt op met de ExoMars 2016-stack — TGO + Schiaparelli, een gezamenlijke missie van ESA en Roscosmos."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Meridiani Planum — inslag op 19 oktober 2016",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/03.webp",
+          "caption": "MRO HiRISE legt de inslagplek van Schiaparelli vast — de hoofdkrater is bovenaan zichtbaar; parachute + achterste beschermkap rechtsonder."
+        },
+        {
+          "src": "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg",
+          "caption": "HiRISE-detail van de crashlocatie van Schiaparelli — zwarte veeg door de inslag van de hardware, omgeven door een deken van uitgeworpen materiaal."
+        },
+        {
+          "src": "/images/fleet-galleries/schiaparelli/04.webp",
+          "caption": "Computergegenereerde reconstructie van de foutenreeks — verzadiging van de IMU tijdens het uitklappen van de parachute leidde tot voortijdig loskoppelen van de lander op 3,7 km hoogte."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "intro": "A Luna 21 pousou na Cratera Le Monnier em 15 de janeiro de 1973 — e lançou o Lunokhod 2, sucessor do primeiro rover lunar do mundo. O Lunokhod 2 percorreu 42,1 km ao longo de 4 meses — um recorde que se manteve até que o Opportunity, da NASA, o superasse em Marte, em julho de 2014, 41 anos depois. Enviou 80.000 imagens de TV e 86 varreduras panorâmicas antes que um monte de regolito caísse sobre o radiador e superaquecesse o rover.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Lunokhod 2 — o recorde de condução na terra lunar (42 km)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/01.webp",
+          "caption": "Lunokhod 2 — aprimorado em relação ao Lunokhod 1: mais câmeras, controle de direção mais refinado, manipulador de terceiro eixo, painéis solares maiores."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/02.webp",
+          "caption": "Chassi do Lunokhod 2 sendo preparado para embarque — oito motores de roda independentes, cada um com seu próprio circuito de controle com realimentação de torque."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Cratera Le Monnier — pouso em 15 de janeiro de 1973",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/03.webp",
+          "caption": "O Lunokhod 2 fotografado por sua câmera panorâmica — uma longa sombra se estende pela superfície lunar."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/04.webp",
+          "caption": "Mapa do percurso de 42,1 km — o rover atravessou basalto de mare, subiu paredes de crateras e inspecionou dezenas de rochas ao longo de quatro dias lunares."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/05.webp",
+          "caption": "Posição final registrada pela LRO em 2010 — o Lunokhod 2 parou depois que o regolito de uma parede íngreme de cratera soterrou o painel do seu radiador."
+        }
+      ]
+    }
+  ]
+}

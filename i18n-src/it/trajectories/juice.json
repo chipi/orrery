@@ -1,0 +1,29 @@
+{
+  "name": "JUICE",
+  "current_distance_label": "0,94 UA · in viaggio verso il flyby terrestre #2 il 2026-09-29 (gamba di crociera 2 di 5)",
+  "waypoints": [
+    {
+      "label": "Lancio (Ariane 5)"
+    },
+    null,
+    {
+      "label": "Flyby Luna-Terra"
+    },
+    null,
+    {
+      "label": "Flyby di Venere"
+    },
+    null,
+    {
+      "label": "Terra #2"
+    },
+    null,
+    {
+      "label": "Terra #3"
+    },
+    null,
+    {
+      "label": "Inserimento in orbita di Giove"
+    }
+  ]
+}

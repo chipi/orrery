@@ -1,0 +1,57 @@
+{
+  "intro": "Apollo 11 s'est posé dans la mer de la Tranquillité à 20 h 17 UTC le 20 juillet 1969 — le premier atterrissage avec équipage sur un autre monde. Armstrong et Aldrin ont passé 2 h 31 min hors du Lunar Module Eagle, tandis que Collins tournait en orbite au-dessus d'eux à bord de Columbia. L'équipage a rapporté 21,5 kg d'échantillons lunaires et laissé derrière lui des empreintes de pas, un réseau de rétroréflecteurs (toujours utilisé par des lasers basés sur la Terre) et une plaque : « Nous sommes venus en paix au nom de toute l'humanité »<br>.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Saturn V + module de commande Columbia + module lunaire Eagle",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/01.webp",
+          "caption": "Saturn V SA-506 avec Apollo 11 sur le Pad 39A — 110,6 m de haut, le lanceur le plus puissant jamais utilisé pour une mission opérationnelle."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Le lancement",
+      "subtitle": "16 juillet 1969 — Saturn V depuis le Centre spatial Kennedy",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/02.webp",
+          "caption": "Décollage à 13 h 32 UTC, le 16 juillet 1969 — la combustion TLI, 2 h 44 min plus tard, a envoyé Apollo 11 vers la Lune à 11 km/s."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Mer de la Tranquillité — alunissage le 20 juillet 1969",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/03.webp",
+          "caption": "Buzz Aldrin descendant l'échelle du LM, photographié par Armstrong. « Magnifique désolation » — les premiers mots d'Aldrin sur la surface."
+        },
+        {
+          "src": "/images/missions/apollo11/04.webp",
+          "caption": "L'empreinte de botte d'Aldrin à Tranquility Base — préservée intacte dans le vide depuis plus d'un demi-siècle."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo11/tier3-pan.jpg",
+          "caption": "Panorama de Tranquility Base — l'étage de descente du LM Eagle, le module scientifique EASEP, le drapeau américain et les empreintes les plus célèbres de la Lune."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "La science",
+      "subtitle": "21,5 kg d'échantillons de basalte, réseau de rétroréflecteurs, sismomètre",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/05.webp",
+          "caption": "Échantillon lunaire 10072 — basalte de mare vésiculaire, vieux de 3,7 milliards d'années. La première roche d'un autre monde étudiée sur Terre."
+        }
+      ]
+    }
+  ]
+}

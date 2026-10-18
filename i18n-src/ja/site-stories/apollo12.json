@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 12は1969年11月19日、嵐の大洋に着陸した。2年半前に着陸した無人探査機Surveyor 3から徒歩圏内という、ピンポイントの着陸だった。コンラッドとビーンは2回のEVAで計31時間を月面で過ごし、34 kgの試料とSurveyor 3の部品を分析用に持ち帰った。有人のApolloが月面の特定の目標地点に到達できることを実証した。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "Yankee Clipper + Intrepid",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/01.webp",
+          "caption": "Apollo 12の乗組員の肖像 — ピート・コンラッド(船長)、リチャード・ゴードン(司令船操縦士)、アラン・ビーン(月着陸船操縦士)。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "1969年11月14日 — 最初の1分間に2度の落雷",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/02.webp",
+          "caption": "Saturn V SA-507が降りしきる雨の中を上昇していく。雷は打ち上げ後36秒と52秒の2度、機体を直撃し、燃料電池の電力が途絶した。SCEをAUXに切り替えるコマンドがミッションを救った。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "嵐の大洋 — 1969年11月19日着陸",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/03.webp",
+          "caption": "Surveyor 3着陸機のそばに立つコンラッド。Apollo 12はそこからわずか163 m の地点に着陸した。月面への精密着陸は、これが初めてだった。"
+        },
+        {
+          "src": "/images/missions/apollo12/04.webp",
+          "caption": "設置されたALSEP科学観測装置 — 初の長期運用型の月面地球物理観測所。"
+        },
+        {
+          "src": "/images/hotspots/moon/apollo12/tier3-pan.jpg",
+          "caption": "Apollo 12着陸地点のパノラマ — Intrepidの降下段、ALSEP、Surveyor 3が一枚の画面に収まっている。"
+        }
+      ]
+    }
+  ]
+}

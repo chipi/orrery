@@ -1,0 +1,50 @@
+{
+  "intro": "Beagle 2は、英国主導で開発されたESAの小型着陸機で、2003年12月19日にMars Expressから分離されました。そしてその6日後、交信が途絶え、墜落したものと見られていました。その後12年間、行方は分からないままでした。2015年1月16日、NASAのHiRISEカメラが火星表面にこの着陸機を捉えました。機体は無傷でしたが、太陽電池パネルは一部しか展開しておらず、アンテナをふさいでいました。着陸は成功していたのに、地球へ連絡する手段だけがなかったのです。この発見により、このミッションは部分的な成功として名誉を回復しました。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "33 kg、惑星間着陸機として史上最小の挑戦",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/01.webp",
+          "caption": "Beagle 2着陸機のレンダリング図。花びら状に展開する太陽電池アレイ、Pillinger Lab、大気観測機器が、二枚貝のような筐体の内側に収められている。"
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/03.webp",
+          "caption": "展示されているBeagle 2の地球上のレプリカ。フリスビーのようなコンパクトな着陸機の形状がよく分かる。"
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/05.webp",
+          "caption": "Spaceport(シーコム)に展示されているBeagle 2のエンジニアリングモデル。太陽電池の花びらが設計どおり完全に開いている。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "2003年6月2日 — バイコヌールからSoyuz/Fregatで打ち上げ、Mars Expressに相乗り",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/02.webp",
+          "caption": "2003年12月19日、Mars ExpressからのBeagle 2の分離。着陸予定の6日前で、弾道進入軌道に投入された。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "イシディス平原 — 2003年12月25日に着陸(ただし通信なし)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/04.webp",
+          "caption": "Beagle 2発見!MRO搭載HiRISEの画像(2015年1月)。太陽電池パネルが一部だけ展開してアンテナをふさいでいるが、機体は無傷であることが分かる。12年来の謎が解けた。"
+        },
+        {
+          "src": "/images/hotspots/mars/beagle2/tier2-hirise.jpg",
+          "caption": "イシディス平原にあるBeagle 2着陸地点のHiRISE拡大画像。このスケールでは着陸機自体は1ピクセルに満たない点にすぎず、発見には複数の画像と異なる照明条件での照合が必要だった。"
+        }
+      ]
+    }
+  ]
+}

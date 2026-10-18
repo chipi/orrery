@@ -1,0 +1,53 @@
+{
+  "intro": "Chang'e 5 alunizó en Mons Rümker el 1 de diciembre de 2020: fue la primera misión china de retorno de muestras lunares y el primer retorno de muestras lunares de cualquier nación desde Luna 24 (1976), 44 años antes. Trajo a la Tierra 1731 g de muestras de un terreno volcánico joven (~2000 millones de años, frente a los ~3,5 Ga de las muestras del Apollo), lo que demostró que el vulcanismo lunar se prolongó mucho más tiempo de lo que se creía.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Módulo de aterrizaje + módulo de ascenso + orbitador + cápsula de reentrada",
+      "images": [
+        {
+          "src": "/images/missions/change5/01.webp",
+          "caption": "Conjunto de Chang'e 5: vehículo de cuatro elementos: módulo de aterrizaje y ascenso (superficie), orbitador (encuentro en órbita lunar) y cápsula de reentrada (regreso a la Tierra)."
+        },
+        {
+          "src": "/images/missions/change5/02.webp",
+          "caption": "Subsistema de perforación y cuchara: recogió muestras tanto de la superficie como a más de 1 m de profundidad."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "23 de noviembre de 2020: Long March 5 desde Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/change5/03.webp",
+          "caption": "Long March 5 lanza Chang'e 5, la misión lunar más ambiciosa de China hasta entonces, un viaje de ida y vuelta de 23 días totalmente automatizado."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Mons Rümker: alunizaje el 1 de diciembre de 2020",
+      "images": [
+        {
+          "src": "/images/missions/change5/04.webp",
+          "caption": "Chang'e 5 sobre la superficie cerca de Mons Rümker: 19 horas de operaciones antes del despegue de la etapa de ascenso."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciencia",
+      "subtitle": "Un vulcanismo lunar de hace 2000 millones de años reescribe la historia térmica de la Luna",
+      "images": [
+        {
+          "src": "/images/missions/change5/05.webp",
+          "caption": "Cápsula de retorno de muestras sobre la nieve en Mongolia Interior, 17 de diciembre de 2020: 1731 g de basalto joven de vuelta en la Tierra."
+        }
+      ]
+    }
+  ]
+}

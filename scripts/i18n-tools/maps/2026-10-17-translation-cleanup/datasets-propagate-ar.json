@@ -1,0 +1,20 @@
+[
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-ngc602.taken",
+    "old": "2007 · Hubble 17th",
+    "new": "2007 · Hubble السابعة عشرة"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-moon-apollo-lm_webp.title",
+    "old": "Apollo Lunar Module",
+    "new": "وحدة Apollo القمرية"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-moon-luna-sample-return_webp.title",
+    "old": "Luna sample-return",
+    "new": "Luna 16 لاسترجاع العينات"
+  }
+]

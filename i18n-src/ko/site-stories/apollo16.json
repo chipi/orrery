@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 16호는 1972년 4월 21일 데카르트 고지에 착륙했다. 바다(mare)가 아닌 고지대에 내린 유일한 Apollo 임무로, 화산 지형으로 믿어지던 곳의 시료를 채취하기 위해 선정된 착륙지였다. 그러나 영과 듀크가 발견한 화산암은 단 하나도 없었다. 나온 것은 충돌 각력암과 회장암뿐이었다. 이 발견은 기존의 지질학 모델을 뒤집었고, 달의 고지대가 후대의 화산 활동이 아니라 충돌로 부서진 고대의 지각임을 보여 주었다. 세 차례의 선외 활동(EVA), 월면차(LRV)로 27km 주행, 95kg의 시료를 가져왔다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "Casper(사령선) + Orion(착륙선) + LRV-2(월면차)",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/01.webp",
+          "caption": "Apollo 16 승무원 단체 사진 — 존 영(선장), 켄 매팅리(사령선 조종사, Apollo 13에서 교체됨), 찰리 듀크(착륙선 조종사)."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "데카르트 고지 — 1972년 4월 21일 착륙",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/02.webp",
+          "caption": "\"달 올림픽\" 중 도약하는 존 영 — 유인 탐사 최초의 달 높이뛰기로, 6분의 1 중력을 보여 주었다."
+        },
+        {
+          "src": "/images/missions/apollo16/03.webp",
+          "caption": "\"Big Muley\"에 선 듀크 — 시료 61016은 달에서 가져온 단일 암석 중 가장 큰 것이다(11.7kg)."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo16/tier3-pan.jpg",
+          "caption": "데카르트 고지 파노라마 — Orion 하강 단계, 월면차(LRV), 그리고 배경의 Stone Mountain."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "고지대 각력암이 화산 활동 가설을 뒤집다",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/04.webp",
+          "caption": "달 표면에 남겨진 찰리 듀크의 가족사진 — 다른 세계에 남겨진 지구 가족의 유일하게 알려진 사진이다."
+        }
+      ]
+    }
+  ]
+}

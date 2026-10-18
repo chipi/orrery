@@ -1,0 +1,61 @@
+{
+  "intro": "Zhurong è atterrato su Utopia Planitia il 14 maggio 2021: il primo atterraggio riuscito della Cina su Marte e la prima missione marziana di una qualsiasi nazione a combinare orbiter, lander e rover in un unico lancio (Tianwen-1). Preso il nome dal dio cinese del fuoco, Zhurong ha percorso 1,92 km sulle pianure meridionali di Utopia prima di essere messo in ibernazione nel maggio 2022, durante la stagione delle polveri. La CNSA non ha confermato il risveglio.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Il primo lander + rover cinese su Marte",
+      "images": [
+        {
+          "src": "/images/missions/tianwen1/01.webp",
+          "caption": "Il rover Zhurong durante l'integrazione pre-lancio a Pechino: 240 kg, alimentazione solare, strumentato con un radar a penetrazione del suolo per sondare il sottosuolo."
+        },
+        {
+          "src": "/images/missions/tianwen1/02.webp",
+          "caption": "Lo stack di lancio di Tianwen-1: orbiter, lander e rover combinati, la missione marziana al primo tentativo più ambiziosa mai realizzata."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "23 luglio 2020: Long March 5 da Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/tianwen1/03.webp",
+          "caption": "Un Long March 5 lancia Tianwen-1 dal Centro spaziale di Wenchang, a Hainan: sette mesi di viaggio verso Marte."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Utopia Planitia: atterraggio il 14 maggio 2021",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/zhurong/tier3-pan.jpg",
+          "caption": "Panorama di Zhurong ripreso dalla camera di navigazione, con il ponte del lander e la superficie di Marte oltre: la prima veduta dal suolo di una missione marziana né NASA né sovietica."
+        },
+        {
+          "src": "/images/hotspots/mars/zhurong/tier2-hirise.jpg",
+          "caption": "Il rover Zhurong e il lander, ripresi dall'orbita da HiRISE a bordo del MRO della NASA: collaborazione internazionale nelle immagini d'archivio."
+        },
+        {
+          "src": "/images/fleet-galleries/zhurong/01.webp",
+          "caption": "Zhurong e il lander su Marte: scatto di una camera remota che il rover ha rilasciato da sé, per poi allontanarsi e fotografarli."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Scienza",
+      "subtitle": "Radar a penetrazione del suolo sul sottosuolo di Utopia",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/zhurong/03.webp",
+          "caption": "Profilo del radar a penetrazione del suolo con la stratificazione del sottosuolo fino a circa 80 m di profondità: prove di antiche inondazioni nella parte meridionale di Utopia."
+        }
+      ]
+    }
+  ]
+}

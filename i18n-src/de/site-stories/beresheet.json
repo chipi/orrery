@@ -1,0 +1,46 @@
+{
+  "intro": "Beresheet – hebräisch für „Im Anfang“ – war Israels erster Versuch einer Mondlandung, privat von SpaceIL gebaut, mit einem knappen Budget von 100 Millionen Dollar. Die Sonde startete am 22. Februar 2019, wurde am 4. April in eine Mondumlaufbahn eingefangen und stürzte am 11. April 2019 im Mare Serenitatis ab, nachdem die IMU und der Bordcomputer während des Abstiegs zurückgesetzt worden waren. Die Trümmer bargen eine Zeitkapsel voller Bärtierchen. Israel wurde zur siebten Nation, die den Mond erreichte – wenn auch nur kinetisch.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Der kleinste Lander, der bis dahin für eine Mission im Weltraum jenseits der Erdumlaufbahn versucht wurde – 585 kg",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/01.webp",
+          "caption": "Die Raumsonde Beresheet bei der Integration vor dem Start – von SpaceIL gemeinsam mit Israel Aerospace Industries gebaut, der erste privat finanzierte Versuch einer Mondlandung."
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/02.webp",
+          "caption": "Zeitkapsel-Nutzlast – israelische Erinnerungsstücke + 30 Millionen Seiten menschlichen Wissens, eingeätzt in Nickelplatten + (umstritten) Bärtierchen, die widerstandsfähigsten Kleinstlebewesen der Welt."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "22. Februar 2019 – Falcon 9 von Cape Canaveral (Mitfluggelegenheit)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/03.webp",
+          "caption": "Falcon 9 startet Beresheet als Mitfluggelegenheit zusammen mit dem Kommunikationssatelliten PSN-6 – ein sechswöchiger Transfer zur Mondumlaufbahn in mehreren Schleifen."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Mare Serenitatis – Einschlag am 11. April 2019",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/04.webp",
+          "caption": "Letztes Selfie, das Beresheet während des Bremsmanövers im Triebwerksflug sendete – die Plakette „Small country, big dreams“ ist zu sehen. Der Funkkontakt brach in rund 150 m Höhe ab."
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/05.webp",
+          "caption": "Die Einschlagstelle, aufgenommen von NASAs LRO – heller Hof durch aufgewirbeltes Regolith. Einige Bärtierchen könnten den Einschlag unbeschadet überstanden haben."
+        }
+      ]
+    }
+  ]
+}

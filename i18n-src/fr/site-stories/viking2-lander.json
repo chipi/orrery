@@ -1,0 +1,54 @@
+{
+  "intro": "Viking 2 s'est posé sur Utopia Planitia le 3 septembre 1976 : second des deux atterrisseurs jumeaux Viking, il se trouvait de l'autre côté de Mars par rapport à Viking 1. Sa mission de 1 316 sols a compris la première observation de givre de glace d'eau sur Mars (pendant l'hiver polaire), tout en répétant les expériences de biologie de Viking 1 sur un site bien plus froid, situé à plus haute latitude. Il a été mis hors service en avril 1980 par une défaillance de batterie.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Matériel",
+      "subtitle": "Jumeau de Viking 1, instruments identiques",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/01.webp",
+          "caption": "L'atterrisseur Viking 2 à la surface de Mars, sur Utopia Planitia."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Utopia Planitia — atterrissage le 3 septembre 1976",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier3-pan.jpg",
+          "caption": "Mosaïque de la caméra à 360° d'Utopia Planitia — un terrain plus plat et plus rocheux que le site de Viking 1 à Chryse."
+        },
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier2-hirise.jpg",
+          "caption": "L'atterrisseur Viking 2 photographié depuis l'orbite par HiRISE, à bord de MRO, des décennies après la fin de la mission."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/02.webp",
+          "caption": "Vue en couleur d'Utopia Planitia — Andrea Luck a retraité des images de Viking 2 issues des plaques des archives de la NASA."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "La science",
+      "subtitle": "Givre, tempêtes de poussière et premier hiver martien",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/03.webp",
+          "caption": "Givre de glace d'eau recouvrant les roches autour de l'atterrisseur Viking 2 — première observation de ce type durant l'hiver arctique martien (sol 1230)."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/04.webp",
+          "caption": "Lever de soleil sur Utopia Planitia (PIA00576) — la caméra de Viking 2 a saisi la lueur d'avant l'aube à haute latitude nord."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/05.webp",
+          "caption": "Givre sur Utopia Planitia (NASA Viking Lander 2) — image retraitée par Andrea Luck."
+        }
+      ]
+    }
+  ]
+}

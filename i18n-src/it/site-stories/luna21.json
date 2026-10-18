@@ -1,0 +1,39 @@
+{
+  "intro": "Luna 21 atterrò nel cratere Le Monnier il 15 gennaio 1973 — e dispiegò il Lunokhod 2, il successore del primo rover lunare al mondo. Il Lunokhod 2 percorse 42,1 km in 4 mesi — un record che resistette fino a quando l'Opportunity della NASA lo superò su Marte nel luglio 2014, 41 anni dopo. Trasmise 80.000 immagini televisive e 86 panoramiche a scansione, prima che un cumulo di regolite cadesse sul radiatore e facesse surriscaldare il rover.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Lunokhod 2 — il record di percorrenza sulla terra lunare (42 km)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/01.webp",
+          "caption": "Lunokhod 2 — migliorato rispetto al Lunokhod 1: più telecamere, controllo dello sterzo più fine, manipolatore sul terzo asse, pannelli solari più grandi."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/02.webp",
+          "caption": "Il telaio del Lunokhod 2 in preparazione per la spedizione — otto motori indipendenti, uno per ruota, ciascuno con il proprio anello di controllo a retroazione di coppia."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "cratere Le Monnier — atterraggio il 15 gennaio 1973",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/03.webp",
+          "caption": "Il Lunokhod 2 fotografato dalla sua telecamera panoramica — una lunga ombra si allunga sulla superficie lunare."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/04.webp",
+          "caption": "Mappa del percorso di 42,1 km — il rover attraversò basalti di mare, risalì le pareti dei crateri e ispezionò decine di rocce nell'arco di quattro giorni lunari."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/05.webp",
+          "caption": "La posizione finale ripresa da LRO nel 2010 — il Lunokhod 2 si fermò per sempre dopo che la regolite caduta da una ripida parete di cratere seppellì il suo pannello radiatore."
+        }
+      ]
+    }
+  ]
+}

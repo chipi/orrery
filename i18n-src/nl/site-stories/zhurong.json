@@ -1,0 +1,61 @@
+{
+  "intro": "Zhurong landde op 14 mei 2021 in Utopia Planitia — China's eerste geslaagde Marslanding en de eerste Marsmissie van welk land ook die orbiter, lander en rover combineerde in één enkele lancering (Tianwen-1). Zhurong, vernoemd naar de Chinese god van het vuur, legde 1,92 km af over de zuidelijke vlakten van Utopia, voordat hij in mei 2022 tijdens het stofseizoen in winterslaap werd gebracht. CNSA heeft nog niet bevestigd dat hij is ontwaakt.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "China's eerste Marslander + rover",
+      "images": [
+        {
+          "src": "/images/missions/tianwen1/01.webp",
+          "caption": "De Zhurong-rover tijdens de integratie voor de lancering in Peking — 240 kg, op zonne-energie, uitgerust met grondpenetrerende radar voor onderzoek van de ondergrond."
+        },
+        {
+          "src": "/images/missions/tianwen1/02.webp",
+          "caption": "De lanceerstack van Tianwen-1 — orbiter + lander + rover in één, de meest ambitieuze Marsmissie bij een eerste poging die ooit is gevlogen."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "23 juli 2020 — Long March 5 vanaf Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/tianwen1/03.webp",
+          "caption": "Een Long March 5 lanceert Tianwen-1 vanaf lanceerbasis Wenchang op Hainan — een reis van 7 maanden naar Mars."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Utopia Planitia — geland op 14 mei 2021",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/zhurong/tier3-pan.jpg",
+          "caption": "Panorama van de navigatiecamera van Zhurong, met het dek van de lander en daarachter het Marsoppervlak — de eerste grondopname van een Marsmissie die niet van NASA of de Sovjet-Unie is."
+        },
+        {
+          "src": "/images/hotspots/mars/zhurong/tier2-hirise.jpg",
+          "caption": "De Zhurong-rover + lander, vanuit een baan om Mars gefotografeerd door HiRISE van NASA's MRO — internationale samenwerking in archiefbeeldmateriaal."
+        },
+        {
+          "src": "/images/fleet-galleries/zhurong/01.webp",
+          "caption": "Zhurong + lander op Mars — genomen door een externe camera die de rover zelf had neergezet, waarna hij wegreed om een foto te maken."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "Grondpenetrerende radar van de ondergrond van Utopia",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/zhurong/03.webp",
+          "caption": "Profiel van de grondpenetrerende radar met ggelaagdheid in de ondergrond tot ~80 m diep — bewijs van oeroude overstromingen in het zuidelijke Utopia."
+        }
+      ]
+    }
+  ]
+}

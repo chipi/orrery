@@ -1,0 +1,34 @@
+{
+  "name": "Pioneer 11",
+  "current_distance_label": "89 AU·太阳以外约12.3光小时处（1995年9月30日信号丢失）",
+  "interstellar_since_label": "信号丢失于1995年——正在向天鹰座方向滑行，将于2027年左右进入星际空间",
+  "waypoints": [
+    {
+      "label": "发射"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "木星借力"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "土星+F环"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "最后信号"
+    },
+    null,
+    null,
+    {
+      "label": "今日"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Ulysses",
+  "current_distance_label": "5,2 UA · mission terminée le 30 juin 2009 (gélification des tuyauteries d'attitude) — matériel en orbite héliocentriquepolaire",
+  "waypoints": [
+    {
+      "label": "Lancement (STS-41)"
+    },
+    null,
+    {
+      "label": "Survol de Jupiter"
+    },
+    null,
+    {
+      "label": "Passage du pôle sud"
+    },
+    {
+      "label": "Passage du pôle nord"
+    },
+    null,
+    {
+      "label": "Pôle sud n° 2"
+    },
+    {
+      "label": "Pôle sud n° 3"
+    },
+    {
+      "label": "Fin de mission"
+    }
+  ]
+}

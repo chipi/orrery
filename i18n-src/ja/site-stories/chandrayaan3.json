@@ -1,0 +1,46 @@
+{
+  "intro": "Chandrayaan-3は2023年8月23日、月の南極付近に着陸しました。インド初の月面軟着陸であり、どの国よりも南極に近い着陸でもあります。着陸機Vikramは探査車Pragyanを展開し、Pragyanは14日間でおよそ100 mを走行して、永久影の地形に眠る水の氷を探しました。インドは、ソ連、アメリカ、中国に続いて、月面に軟着陸した4番目の国となりました。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "着陸機Vikram+探査車Pragyan",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/01.webp",
+          "caption": "ISRO シュリーハリコータでの打ち上げ前の統合作業中のChandrayaan-3探査機スタック。"
+        },
+        {
+          "src": "/images/missions/chandrayaan3/02.webp",
+          "caption": "探査車Pragyan:質量26 kg、太陽電池駆動、6輪。揮発性物質を探して月の南極のレゴリス上を走行するよう設計されています。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "2023年7月14日 — サティシュ・ダワン宇宙センターからLVM3で打ち上げ",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/03.webp",
+          "caption": "LVM3(「Bahubali」)がChandrayaan-3を打ち上げました。月周回軌道への捕獲に向けた複数回の周回を含む40日間の航行で、燃料の余裕を最大限に確保するため、意図的にゆっくりとした軌道を取りました。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "シヴ・シャクティ・ポイント、月の南極付近 — 2023年8月23日着陸",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/04.webp",
+          "caption": "南極域の月面に立つ着陸機Vikram。着地点は南緯69.37°で、これまでに行われた月面着陸のなかで最も高緯度です。"
+        },
+        {
+          "src": "/images/missions/chandrayaan3/05.webp",
+          "caption": "スロープを下りる探査車Pragyan。月の南極に刻まれた初めての車輪の跡を、Vikram搭載のカメラが撮影しました。"
+        }
+      ]
+    }
+  ]
+}

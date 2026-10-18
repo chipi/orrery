@@ -1,0 +1,30 @@
+{
+  "name": "Ulysses",
+  "current_distance_label": "5.2 AU · mission ended 2009-06-30 (thruster lines froze) — hardware in polar heliocentric orbit",
+  "waypoints": [
+    {
+      "label": "Launch (STS-41)"
+    },
+    null,
+    {
+      "label": "Jupiter flyby"
+    },
+    null,
+    {
+      "label": "South pole pass"
+    },
+    {
+      "label": "North pole pass"
+    },
+    null,
+    {
+      "label": "South pole #2"
+    },
+    {
+      "label": "South pole #3"
+    },
+    {
+      "label": "Mission end"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Galileo",
+  "current_distance_label": "5,4 UA · desativada em Júpiter em 2003-09-21 (proteção de Europa)",
+  "waypoints": [
+    {
+      "label": "Lançamento (STS-34)"
+    },
+    null,
+    {
+      "label": "Vênus"
+    },
+    null,
+    {
+      "label": "Terra #1"
+    },
+    null,
+    {
+      "label": "Gaspra"
+    },
+    null,
+    {
+      "label": "Terra #2"
+    },
+    null,
+    {
+      "label": "Ida + Dactyl"
+    },
+    null,
+    null,
+    {
+      "label": "Inserção em órbita de Júpiter"
+    },
+    {
+      "label": "Desativada em Júpiter"
+    }
+  ]
+}

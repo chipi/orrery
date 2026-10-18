@@ -1,0 +1,29 @@
+{
+  "name": "JUICE",
+  "current_distance_label": "0.94 AU·在前往地球第2次飞掠的途中 2026-09-29（巡航段2/5）",
+  "waypoints": [
+    {
+      "label": "发射（Ariane 5）"
+    },
+    null,
+    {
+      "label": "月地飞掠"
+    },
+    null,
+    {
+      "label": "金星飞掠"
+    },
+    null,
+    {
+      "label": "地球第2次"
+    },
+    null,
+    {
+      "label": "地球第3次"
+    },
+    null,
+    {
+      "label": "木星轨道插入"
+    }
+  ]
+}

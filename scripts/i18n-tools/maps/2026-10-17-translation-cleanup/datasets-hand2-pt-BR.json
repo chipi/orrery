@@ -1,0 +1,26 @@
+[
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/hertzsprung-russell_webp.title",
+    "old": "Hertzsprung Russell",
+    "new": "Hertzsprung-Russell"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Mission briefings.where",
+    "old": "Missions + Fly",
+    "new": "Missões + Voar"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Fleet catalogue entries.where",
+    "old": "Fleet",
+    "new": "Frota"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Audio tour scripts.where",
+    "old": "Take the tour",
+    "new": "Fazer o tour"
+  }
+]

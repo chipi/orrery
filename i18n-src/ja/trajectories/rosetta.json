@@ -1,0 +1,42 @@
+{
+  "name": "Rosetta",
+  "current_distance_label": "4.1 AU · 2016年9月30日に67P表面への制御された降下（ミッション終了）",
+  "waypoints": [
+    {
+      "label": "打ち上げ（Ariane 5）"
+    },
+    {
+      "label": "地球第1号"
+    },
+    null,
+    {
+      "label": "火星"
+    },
+    {
+      "label": "地球第2号"
+    },
+    {
+      "label": "小惑星Šteins"
+    },
+    {
+      "label": "地球第3号"
+    },
+    {
+      "label": "小惑星ルテティア"
+    },
+    null,
+    null,
+    {
+      "label": "67Pランデブー"
+    },
+    {
+      "label": "フィラエ着陸"
+    },
+    {
+      "label": "67P近日点"
+    },
+    {
+      "label": "67Pへの落下"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Vega 1",
+  "current_distance_label": "0,98 UA · sonda espacial en órbita heliocéntrica desde el encuentro con el cometa Halley el 6 de marzo de 1986",
+  "waypoints": [
+    {
+      "label": "Lanzamiento (Proton-K)"
+    },
+    null,
+    {
+      "label": "Venus + globo sonda"
+    },
+    null,
+    {
+      "label": "Encuentro con el cometa Halley"
+    },
+    null
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Vega 1",
+  "current_distance_label": "0.98 AU · 自哈雷彗星1986-03-06飞掠后，飞行器一直在日心轨道运行",
+  "waypoints": [
+    {
+      "label": "发射（质子-K运载火箭）"
+    },
+    null,
+    {
+      "label": "金星 + 气球"
+    },
+    null,
+    {
+      "label": "哈雷彗星飞掠"
+    },
+    null
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "intro": "Phoenix landde op 25 mei 2008 op 68,22° noorderbreedte — de eerste NASA-lander die neerstreek in het hoge noorden van Mars. Binnen enkele dagen had hij het eerste monster Marswaterijs opgeschept en zag hij het in beeld van de camera sublimeren. De lander was 157 sols in bedrijf, tot de poolwinter hem velde: de vorming van CO₂-rijp begroef de zonnepanelen en maakte een einde aan de missie.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Hergebruikt uit de geannuleerde Mars Surveyor 2001-lander",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/01.webp",
+          "caption": "De Phoenix-lander vóór verscheping — 350 kg, robotarm, ijsschep, TEGA, het natchemisch lab."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Vastitas Borealis — geland op 25 mei 2008",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/phoenix/tier3-pan.jpg",
+          "caption": "360°-panorama van de landingsplaats van Phoenix, sol 14 — werkgebied, voetplaat en door de stuwraketten blootgelegd ijs zichtbaar rechtsonder."
+        },
+        {
+          "src": "/images/hotspots/mars/phoenix/tier2-hirise.jpg",
+          "caption": "De Phoenix-lander, de parachute en de backshell — allemaal na de landing vastgelegd door MRO HiRISE."
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/02.webp",
+          "caption": "De robotarm graaft de geul \"Snow White\": helder waterijs, enkele centimeters onder het oppervlak blootgelegd, dat daarna vier sols lang werd gevolgd terwijl het sublimeerde."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "Water, perchloraten en het eerste weer op Mars",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/03.webp",
+          "caption": "Detectie van perchloraatzouten in Marsbodem — scheikunde die elke latere discussie over de bewoonbaarheid van Mars zou bepalen."
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/04.webp",
+          "caption": "Lidarprofielen van vallende sneeuw boven de Phoenix-locatie, laat in de missie — de eerste rechtstreeks waargenomen neerslag op Mars."
+        }
+      ]
+    }
+  ]
+}

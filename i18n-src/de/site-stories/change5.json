@@ -1,0 +1,53 @@
+{
+  "intro": "Chang'e 5 landete am 1. Dezember 2020 im Mons Rümker – Chinas erste Mondmission mit Probenrückführung und die erste Rückführung von Mondproben durch irgendeine Nation seit Luna 24 (1976), also seit 44 Jahren. Die Mission brachte 1.731 g Proben aus jungem vulkanischem Gelände zur Erde zurück (ca. 2 Milliarden Jahre alt, verglichen mit ca. 3,5 Ga bei den Apollo-Proben) und bewies damit, dass der Mondvulkanismus weit länger andauerte, als man bisher wusste.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Lander + Aufstiegsstufe + Orbiter + Rückkehrkapsel",
+      "images": [
+        {
+          "src": "/images/missions/change5/01.webp",
+          "caption": "Chang'e 5 im Verbund – Fahrzeug aus vier Elementen: Lander/Aufstiegsstufe (Oberfläche), Orbiter (Rendezvous im Mondorbit), Rückkehrkapsel (Rückkehr zur Erde)."
+        },
+        {
+          "src": "/images/missions/change5/02.webp",
+          "caption": "Bohrer- und Schaufel-Subsystem – entnahm Proben sowohl von der Oberfläche als auch aus über 1 m Tiefe."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "23. November 2020 – Long March 5 von Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/change5/03.webp",
+          "caption": "Long March 5 startet Chang'e 5 – Chinas bis dahin ehrgeizigste Mondmission, eine vollautomatische Hin- und Rückreise von 23 Tagen."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Mons Rümker – Landung am 1. Dezember 2020",
+      "images": [
+        {
+          "src": "/images/missions/change5/04.webp",
+          "caption": "Chang'e 5 auf der Oberfläche nahe dem Mons Rümker – 19 Stunden Betrieb bis zum Abheben der Aufstiegsstufe."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wissenschaft",
+      "subtitle": "Zwei Milliarden Jahre alter Mondvulkanismus schreibt die thermische Geschichte des Mondes neu",
+      "images": [
+        {
+          "src": "/images/missions/change5/05.webp",
+          "caption": "Rückkehrkapsel mit den Proben im Schnee der Inneren Mongolei, 17. Dezember 2020 – 1.731 g junger Basalt zurück auf der Erde."
+        }
+      ]
+    }
+  ]
+}

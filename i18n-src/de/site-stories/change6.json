@@ -1,0 +1,53 @@
+{
+  "intro": "Chang'e 6 landete am 1. Juni 2024 im Südpol-Aitken-Becken – die erste Probenrückführungsmission von der Mondrückseite, aus der tiefsten, ältesten und größten Einschlagsstruktur des inneren Sonnensystems. Am 25. Juni 2024 brachte sie 1.935 g Material der Mondrückseite zur Erde – Proben, die möglicherweise Fragmente des Mantels aus dem beckenbildenden Einschlag vor 4,2 Milliarden Jahren enthalten.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Chang'e 5 neu konzipiert für die Probenrückführung von der Mondrückseite",
+      "images": [
+        {
+          "src": "/images/missions/change6/01.webp",
+          "caption": "Chang'e 6 Gespann – ergänzt um das Relais Queqiao-2 für die Kommunikation mit der Mondrückseite, ansonsten mit der Architektur von Chang'e 5."
+        },
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "Internationale Nutzlasten – der ESA-Detektor NILS, der französische Radondetektor DORN, der italienische Retroreflektor INRRI und der pakistanische Nanosatellit ICUBE-Q."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "3. Mai 2024 – Long March 5 von Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/change6/03.webp",
+          "caption": "Long March 5 startet Chang'e 6 – 28 Tage dauert die Reise zur Mondrückseite und zurück, darunter 14 Tage Wartezeit auf das passende Zeitfenster für die Relaiskommunikation."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Apollo-Krater (innerhalb des Südpol-Aitken-Beckens) – Landung am 1. Juni 2024",
+      "images": [
+        {
+          "src": "/images/missions/change6/04.webp",
+          "caption": "Der Lander von Chang'e 6 auf der Mondrückseite – die stationäre Probenrückführung ohne Rover, festgehalten von einem ausgesetzten Minirover."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wissenschaft",
+      "subtitle": "1.935 g Material aus dem Südpol-Aitken-Becken",
+      "images": [
+        {
+          "src": "/images/missions/change6/05.webp",
+          "caption": "Rückkehrkapsel mit den Proben auf dem Grasland der Inneren Mongolei, 25. Juni 2024 – die ersten Mondproben von der Rückseite, die je auf der Erde angekommen sind."
+        }
+      ]
+    }
+  ]
+}

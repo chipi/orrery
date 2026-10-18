@@ -1,0 +1,57 @@
+{
+  "intro": "El Apollo 11 aluniza en Mare Tranquillitatis a las 20:17 UTC del 20 de julio de 1969: el primer alunizaje tripulado en otro mundo. Armstrong y Aldrin pasaron 2 h 31 min fuera del módulo lunar Eagle, mientras Collins orbitaba sobre ellos en el Columbia. La tripulación trajo a la Tierra 21,5 kg de muestras lunares y dejó atrás huellas, una matriz de retrorreflectores (que aún se utiliza con láseres desde la Tierra) y una placa: «Vinimos en son de paz en nombre de toda la humanidad».",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Saturn V + módulo de mando Columbia + módulo lunar Eagle",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/01.webp",
+          "caption": "El Saturn V SA-506 con el Apollo 11 en la plataforma 39A: 110,6 m de altura, el vehículo de lanzamiento más potente que ha volado jamás en una misión operativa."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "16 de julio de 1969: el Saturn V despega desde el Centro Espacial Kennedy",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/02.webp",
+          "caption": "Despegue a las 13:32 UTC del 16 de julio de 1969. La combustión TLI, 2 h 44 min después, envió al Apollo 11 hacia la Luna a 11 km/s."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Mare Tranquillitatis: alunizaje el 20 de julio de 1969",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/03.webp",
+          "caption": "Buzz Aldrin descendiendo por la escalerilla del módulo lunar, fotografiado por Armstrong. «Magnífica desolación»: las primeras palabras de Aldrin en la superficie."
+        },
+        {
+          "src": "/images/missions/apollo11/04.webp",
+          "caption": "La huella de la bota de Aldrin en Tranquility Base, conservada intacta en el vacío durante más de medio siglo."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo11/tier3-pan.jpg",
+          "caption": "Panorámica de Tranquility Base: la etapa de descenso del módulo lunar Eagle, el paquete científico EASEP, la bandera de Estados Unidos y las huellas más famosas de la Luna."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciencia",
+      "subtitle": "21,5 kg de muestras de basalto, matriz de retrorreflectores, sismómetro",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/05.webp",
+          "caption": "Muestra lunar 10072: basalto mare vesicular de 3700 millones de años. La primera roca de otro mundo estudiada en la Tierra."
+        }
+      ]
+    }
+  ]
+}

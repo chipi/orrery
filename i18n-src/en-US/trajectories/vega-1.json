@@ -1,0 +1,18 @@
+{
+  "name": "Vega 1",
+  "current_distance_label": "0.98 AU · spacecraft in heliocentric orbit since Halley flyby 1986-03-06",
+  "waypoints": [
+    {
+      "label": "Launch (Proton-K)"
+    },
+    null,
+    {
+      "label": "Venus + balloon"
+    },
+    null,
+    {
+      "label": "Halley flyby"
+    },
+    null
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Hayabusa2",
+  "current_distance_label": "1.24 天文单位·正在前往(98943) 2001 CC21,计划于2026年7月进行近距离飞行(延伸任务)",
+  "waypoints": [
+    {
+      "label": "发射(H-IIA火箭)"
+    },
+    null,
+    {
+      "label": "地球近距离飞行"
+    },
+    null,
+    {
+      "label": "龙宫抵达"
+    },
+    {
+      "label": "撞击器(SCI)"
+    },
+    {
+      "label": "返回地球(样本)"
+    },
+    null
+  ]
+}

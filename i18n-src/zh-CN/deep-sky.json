@@ -1,0 +1,400 @@
+{
+  "jwst-carina": {
+    "title": "宇宙悬崖",
+    "caption": "卡里娜星云（NGC 3324）边缘的恒星托儿所，被年轻恒星雕刻而成。",
+    "subject": "星云",
+    "type": "恒星形成区",
+    "distance": "约7,600光年",
+    "taken": "发布于2022年7月12日"
+  },
+  "jwst-southern-ring": {
+    "title": "南环星云",
+    "caption": "一颗垂死的恒星（NGC 3132）向半光年外抛出气体和尘埃壳层。",
+    "subject": "星云",
+    "type": "行星状星云",
+    "distance": "约2,500光年",
+    "taken": "发布于2022年7月12日"
+  },
+  "jwst-stephans": {
+    "title": "史蒂芬五重星系",
+    "caption": "五个星系被锁定在宇宙舞蹈中，其中四个因潮汐力互相撕裂。",
+    "subject": "星系",
+    "type": "紧凑星系群",
+    "distance": "约2.9亿光年",
+    "taken": "发布于2022年7月12日"
+  },
+  "jwst-pillars": {
+    "title": "创生之柱",
+    "caption": "鹰形星云（M16）中的冷气体和尘埃塔，由内部新生的恒星照亮。",
+    "subject": "星云",
+    "type": "发射星云/恒星形成区（M16）",
+    "distance": "约6,500光年",
+    "taken": "发布于2022年10月19日"
+  },
+  "jwst-tarantula": {
+    "title": "狼蛛星云",
+    "caption": "30 Doradus — 我们银河系邻域中已知最活跃的星暴区。",
+    "subject": "星云",
+    "type": "恒星形成区（30 Dor）",
+    "distance": "约161,000光年",
+    "taken": "发布于2022年9月6日"
+  },
+  "jwst-cartwheel": {
+    "title": "大风车星系",
+    "caption": "一个罕见的环形星系，仍在经历数亿年前一次迎面碰撞的余波中摇动。",
+    "subject": "星系",
+    "type": "环形星系",
+    "distance": "约5亿光年",
+    "taken": "发布于2022年8月2日"
+  },
+  "jwst-phantom": {
+    "title": "幻影星系",
+    "caption": "M74 — 一个大设计旋涡星系，其气体和尘埃的骨架在红外波段被完全揭示。",
+    "subject": "星系",
+    "type": "旋涡星系（M74）",
+    "distance": "约3,200万光年",
+    "taken": "2022年"
+  },
+  "hst-pillars": {
+    "title": "创生之柱",
+    "caption": "Hubble标志性的2014年鹰形星云恒星形成气体塔的影像。",
+    "subject": "星云",
+    "type": "发射星云/恒星形成区（M16）",
+    "distance": "约6,500光年",
+    "taken": "2014年"
+  },
+  "hst-mystic-mountain": {
+    "title": "神秘山",
+    "caption": "卡里娜星云中的一根三光年高的柱状结构，摄自Hubble的20周年纪念影像。",
+    "subject": "星云",
+    "type": "恒星形成柱",
+    "distance": "约7,500光年",
+    "taken": "2010年·Hubble 20周年"
+  },
+  "hst-butterfly": {
+    "title": "蝴蝶星云",
+    "caption": "NGC 6302——由濒死恒星抛出的气体翅膀，温度高达20,000°C以上。",
+    "subject": "星云",
+    "type": "行星状星云（NGC 6302）",
+    "distance": "约3,400光年",
+    "taken": "2009年"
+  },
+  "hst-antennae": {
+    "title": "触角星系",
+    "caption": "两个星系（NGC 4038/4039）碰撞，引发数十亿颗新恒星的诞生。",
+    "subject": "星系",
+    "type": "相碰撞星系",
+    "distance": "约4,500万至6,500万光年",
+    "taken": "2006年"
+  },
+  "hst-bubble": {
+    "title": "气泡星云",
+    "caption": "NGC 7635——一个直径七光年的气泡，由一颗大质量恒星强劲的恒星风吹出。",
+    "subject": "星云",
+    "type": "发射星云（NGC 7635）",
+    "distance": "约7,100光年",
+    "taken": "2016年·Hubble 26周年"
+  },
+  "hst-westerlund2": {
+    "title": "韦斯特伦德2",
+    "caption": "年轻恒星的巨大星团，摄自Hubble的25周年纪念影像。",
+    "subject": "星团",
+    "type": "星团（Gum 29）",
+    "distance": "约 20,000 光年",
+    "taken": "2015年·Hubble 25周年"
+  },
+  "hst-cats-eye": {
+    "title": "猫眼星云",
+    "caption": "NGC 6543 — 迄今观测到的最复杂的行星状星云之一。",
+    "subject": "星云",
+    "type": "行星状星云（NGC 6543）",
+    "distance": "约 3,300 光年",
+    "taken": "2004年"
+  },
+  "hst-whirlpool": {
+    "title": "涡旋星系",
+    "caption": "M51 — 教科书般完美的旋涡星系，星臂闪烁着新生恒星的粉色光芒。",
+    "subject": "星系",
+    "type": "旋涡星系（M51）",
+    "distance": "约 3,100 万光年",
+    "taken": "2005"
+  },
+  "hst-crab": {
+    "title": "蟹状星云",
+    "caption": "M1 — 公元 1054 年被观测到爆炸的恒星碎裂的遗骸。",
+    "subject": "星云",
+    "type": "超新星遗迹（M1）",
+    "distance": "约 6,500 光年",
+    "taken": "2005"
+  },
+  "hst-veil": {
+    "title": "面纱星云",
+    "caption": "天鹅圈的一缕——一股超新星爆炸冲击波，经过10,000年后仍在膨胀。",
+    "subject": "星云",
+    "type": "超新星遗迹·天鹅圈",
+    "distance": "~2,400光年",
+    "taken": "2015"
+  },
+  "hst-sombrero": {
+    "title": "索姆布雷罗星系",
+    "caption": "M104——中心是耀眼的白色，外围被一圈黑暗的尘埃环绕。",
+    "subject": "星系",
+    "type": "螺旋星系（M104）",
+    "distance": "~2,800万光年",
+    "taken": "2003"
+  },
+  "hst-eskimo": {
+    "title": "爱斯基摩星云",
+    "caption": "NGC 2392——一颗类太阳恒星被它10,000年前喷射出的气壳环绕。",
+    "subject": "星云",
+    "type": "行星星云（NGC 2392）",
+    "distance": "~3,000光年",
+    "taken": "2000"
+  },
+  "chandra-crab": {
+    "title": "蟹状星云（X射线）",
+    "caption": "Chandra的X射线观测捕捉了驱动蟹状星云的脉冲星，它将物质鞭打成环和射流。",
+    "subject": "星云",
+    "type": "超新星遗迹·X射线（M1）",
+    "distance": "~6,500光年"
+  },
+  "chandra-tycho": {
+    "title": "第谷超新星遗迹",
+    "caption": "第谷·布拉赫在1572年亲眼观测到爆炸的恒星的X射线壳层。",
+    "subject": "超新星",
+    "type": "超新星遗迹·X射线（SN 1572）",
+    "distance": "~10,000光年"
+  },
+  "spitzer-helix": {
+    "title": "螺旋星云（红外）",
+    "caption": "Spitzer 的红外视图捕捉了一颗濒死恒星的尘埃茧，距离我们 700 光年。",
+    "subject": "星云",
+    "type": "行星星云·红外",
+    "distance": "约 700 光年",
+    "taken": "2007 年"
+  },
+  "euclid-perseus": {
+    "title": "英仙座星系团",
+    "caption": "Euclid 在该星系团中捕捉到 1,000 个星系，其后方还有 100,000 个星系。",
+    "subject": "深空",
+    "type": "星系团",
+    "distance": "约 2.4 亿光年",
+    "taken": "发布于 2023 年 11 月 7 日"
+  },
+  "euclid-horsehead": {
+    "title": "马头星云",
+    "caption": "Euclid 拍摄的猎户座（Orion）中那片标志性暗云的全景图。",
+    "subject": "星云",
+    "type": "暗星云（巴纳德 33）",
+    "distance": "约 1,375 光年",
+    "taken": "发布于 2023 年 11 月 7 日"
+  },
+  "pale-blue-dot": {
+    "title": "淡蓝色圆点",
+    "caption": "地球成为一个单独像素，由 Voyager 1 从 60 亿公里外拍摄。",
+    "subject": "太阳系",
+    "type": "地球作为单独像素",
+    "distance": "约 40.5 天文单位（60 亿公里）",
+    "taken": "1990 年 2 月 14 日"
+  },
+  "pluto-nh": {
+    "title": "冥王星",
+    "caption": "New Horizons 首次拍摄的冥王星真彩色特写，及其氮冰心脏。",
+    "subject": "太阳系",
+    "type": "矮行星",
+    "distance": "约34天文单位（50亿公里）",
+    "taken": "2015年7月14日"
+  },
+  "sun-sdo": {
+    "title": "太阳",
+    "caption": "太阳动力学天文台拍摄的我们这颗恒星在极端紫外波段的图像。",
+    "subject": "太阳",
+    "type": "太阳·极端紫外",
+    "distance": "1天文单位",
+    "taken": "2010年至今"
+  },
+  "jwst-orion": {
+    "title": "Orion 星云",
+    "caption": "内部 Orion 星云——一个距离 1,350 光年的恒星摇篮，由 Webb 的 NIRCam 拍摄。",
+    "subject": "星云",
+    "type": "发射星云（M42）",
+    "distance": "约1,350光年",
+    "taken": "发布于2022年9月12日"
+  },
+  "jwst-ring": {
+    "title": "环状星云",
+    "caption": "M57——一颗类日恒星走向生命终点，其外层在精细的细节中闪烁发光。",
+    "subject": "星云",
+    "type": "行星状星云（M57）",
+    "distance": "约2,600光年",
+    "taken": "发布于2023年8月21日"
+  },
+  "jwst-serpens": {
+    "title": "蛇夫座星云",
+    "caption": "一个形成中的恒星巢穴，向蛇夫座的暗云中喷出结晶尘埃。",
+    "subject": "星云",
+    "type": "恒星形成区",
+    "distance": "约1,300光年",
+    "taken": "2024年发布"
+  },
+  "hst-lagoon": {
+    "title": "拉古恩星云",
+    "caption": "M8 — 一个气体和尘埃组成的恒星摇篮，摄自Hubble的28周年纪念影像。",
+    "subject": "星云",
+    "type": "发射星云（M8）",
+    "distance": "约4,000光年",
+    "taken": "2018年·Hubble 28周年"
+  },
+  "hst-orion": {
+    "title": "Orion 星云",
+    "caption": "M42 — Hubble 拍摄的最近的大规模恒星形成区的最清晰马赛克图像。",
+    "subject": "星云",
+    "type": "发射星云（M42）",
+    "distance": "约1,344光年",
+    "taken": "2006年"
+  },
+  "hst-carina-pano": {
+    "title": "船底座星云",
+    "caption": "50光年宽的全景图，展示银河系最大的恒星工厂之一。",
+    "subject": "星云",
+    "type": "恒星形成区",
+    "distance": "约7,500光年",
+    "taken": "2007年·Hubble 17周年"
+  },
+  "jwst-casa": {
+    "title": "仙后座A",
+    "caption": "Webb望远镜观测到的银河系内已知最年轻的超新星遗迹的红外影像。",
+    "subject": "超新星",
+    "type": "超新星遗迹",
+    "distance": "~11,000 光年",
+    "taken": "2023 年发布"
+  },
+  "hst-cone-nebula": {
+    "title": "锥形星云",
+    "caption": "一座在遥远恒星托儿所中的七光年高的冷气塔。",
+    "subject": "星云",
+    "type": "发射星云",
+    "distance": "~2,700 光年",
+    "taken": "2002 年·ACS 首次成像"
+  },
+  "hst-omega-centauri": {
+    "title": "半人马座 Omega",
+    "caption": "天空中最明亮的球状星团——数百万颗恒星被重力束缚在一起。",
+    "subject": "星团",
+    "type": "球状星团",
+    "distance": "~17,000 光年",
+    "taken": "2009 年"
+  },
+  "jwst-ngc1365": {
+    "title": "NGC 1365",
+    "caption": "一个巨大的棒旋星系，其棒将气体导向一个贪婪的黑洞。",
+    "subject": "星系",
+    "type": "棒旋星系",
+    "distance": "~5,600 万光年",
+    "taken": "2023 年"
+  },
+  "hst-ngc602": {
+    "title": "NGC 602",
+    "caption": "一个年轻的星团在小麦哲伦云中雕凿出一个发光的空洞。",
+    "subject": "星团",
+    "type": "星团",
+    "distance": "~200,000 光年",
+    "taken": "2007年·Hubble 17周年"
+  },
+  "jwst-rho-ophiuchi": {
+    "title": "人马座ρ云",
+    "caption": "距地球最近的恒星形成区，在众多年轻太阳的照耀下熠熠生辉——韦伯太空望远镜周年纪念图像。",
+    "subject": "星云",
+    "type": "恒星形成区",
+    "distance": "~430 光年",
+    "taken": "发布于 2023 年 7 月 12 日"
+  },
+  "jwst-wr124": {
+    "title": "沃尔夫-瑞叶星 124",
+    "caption": "一颗罕见的超大质量星体正在抛散外层物质，即将发生超新星爆炸的一刹那。",
+    "subject": "恒星",
+    "type": "沃尔夫-瑞叶星",
+    "distance": "~15,000 光年",
+    "taken": "发布于 2023 年 3 月 14 日"
+  },
+  "hst-cosmic-reef": {
+    "title": "宇宙礁",
+    "caption": "NGC 2014 和 NGC 2020——一片发光的氢气礁，摄自Hubble的30周年纪念影像。",
+    "subject": "星云",
+    "type": "发射星云",
+    "distance": "~163,000 光年",
+    "taken": "2020年·Hubble 30周年"
+  },
+  "hst-hen2104": {
+    "title": "南方蟹状星云",
+    "caption": "垂死恒星及其伴星抛出的嵌套沙漏形气体结构。",
+    "subject": "星云",
+    "type": "行星状星云",
+    "distance": "~7,000 光年",
+    "taken": "2019年·Hubble 29周年"
+  },
+  "hst-monkey-head": {
+    "title": "猴头星云",
+    "caption": "NGC 2174 —— 由新生恒星的辐射雕刻而成的尘埃柱。",
+    "subject": "星云",
+    "type": "发射星云",
+    "distance": "约6,400光年",
+    "taken": "2014年·Hubble 24周年"
+  },
+  "hst-andromeda": {
+    "title": "仙女星系",
+    "caption": "Hubble有史以来最清晰的我们最近的大星系邻居全景 —— 超过1亿颗恒星。",
+    "subject": "星系",
+    "type": "螺旋星系",
+    "distance": "约250万光年",
+    "taken": "2015 · PHAT"
+  },
+  "hst-pinwheel": {
+    "title": "风车星系",
+    "caption": "M101 —— 一个巨大的面向螺旋星系，其旋臂点缀着粉红色的恒星形成区。",
+    "subject": "星系",
+    "type": "螺旋星系",
+    "distance": "约2,100万光年",
+    "taken": "2006年"
+  },
+  "hst-ngc1300": {
+    "title": "NGC 1300",
+    "caption": "一个教科书般的棒旋星系，其旋臂围绕着一个20万光年长的棒缠绕。",
+    "subject": "星系",
+    "type": "棒旋星系",
+    "distance": "约6,100万光年",
+    "taken": "2005"
+  },
+  "jwst-ngc604": {
+    "title": "NGC 604",
+    "caption": "三角星系中的气体和尘埃洞穴，由200多颗炽热的年轻恒星雕刻而成。",
+    "subject": "星云",
+    "type": "恒星形成区",
+    "distance": "约270万光年",
+    "taken": "发布于2024年"
+  },
+  "jwst-ngc346": {
+    "title": "NGC 346",
+    "caption": "一束璀璨的年轻恒星照亮小麦哲伦星云。",
+    "subject": "星团",
+    "type": "星团",
+    "distance": "约20万光年",
+    "taken": "发布于2023年"
+  },
+  "euclid-ic342": {
+    "title": "隐藏的星系",
+    "caption": "IC 342——一个隐藏在银河系尘埃后面的螺旋星系，由Euclid揭示。",
+    "subject": "星系",
+    "type": "螺旋星系",
+    "distance": "约1100万光年",
+    "taken": "发布于2024年"
+  },
+  "hst-v838": {
+    "title": "V838 Monocerotis",
+    "caption": "一道光回声在围绕突然爆发的恒星的尘埃中向外涟漪般扩散。",
+    "subject": "星云",
+    "type": "光回声",
+    "distance": "约2万光年",
+    "taken": "2004年"
+  }
+}

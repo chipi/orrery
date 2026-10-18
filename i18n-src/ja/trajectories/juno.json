@@ -1,0 +1,27 @@
+{
+  "name": "Juno",
+  "current_distance_label": "5.5 AU · 2016年7月5日からの木星極軌道 — ミッション延長は2025年まで",
+  "waypoints": [
+    {
+      "label": "打ち上げ"
+    },
+    null,
+    null,
+    {
+      "label": "深宇宙機動"
+    },
+    null,
+    {
+      "label": "地球スイングバイ"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "木星軌道投入"
+    },
+    {
+      "label": "現在（木星軌道）"
+    }
+  ]
+}

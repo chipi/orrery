@@ -1,0 +1,61 @@
+{
+  "intro": "Viking 1 于 1976 年 7 月 20 日降落在克律塞平原,是美国首个成功登陆火星的着陆器,恰好比 Apollo 11 晚七年。它长达 2,245 个火星日(6.3 年)的地表任务,包括拍摄首批火星彩色图像、开展首批原位生物实验(结果含糊不明),以及留下每日天气记录。1982 年 11 月,一次指令上传意外覆盖了天线指向参数,Viking 1 就此发出最后一次传输。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "着陆器与轨道器组合,放射性同位素热电发电机(RTG)供电,约 600 千克",
+      "images": [
+        {
+          "src": "/images/missions/viking1/01.webp",
+          "caption": "Viking 1 着陆器正在进行飞行前测试——后部可见 RTG,地表采样臂已伸出。"
+        },
+        {
+          "src": "/images/missions/viking1/02.webp",
+          "caption": "在 JPL 测试环境中,对地表采样臂进行的模型展开试验。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "1975 年 8 月 20 日——Titan IIIE 自卡纳维拉尔角升空",
+      "images": [
+        {
+          "src": "/images/missions/viking1/03.webp",
+          "caption": "Titan IIIE / Centaur 火箭发射 Viking 1——飞行历时 10 个月,1976 年 6 月进入火星轨道,7 月 20 日着陆器着陆。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "克律塞平原——1976 年 7 月 20 日着陆",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier3-pan.jpg",
+          "caption": "克律塞平原 360° 全景图——首幅从另一颗行星表面拍摄的彩色地貌图像。"
+        },
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier2-hirise.jpg",
+          "caption": "30 多年后,MRO 的 HiRISE 从轨道上拍摄到 Viking 1 着陆器——这是首次以“硬件考古”的视角,看到一项 1970 年代的火星任务遗留的设备。"
+        },
+        {
+          "src": "/images/missions/viking1/04.webp",
+          "caption": "着陆数分钟后由 2 号相机拍下的首幅火星表面图像。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "生物实验、天气观测与生命探索",
+      "images": [
+        {
+          "src": "/images/missions/viking1/05.webp",
+          "caption": "地表采样器挖出的沟槽——Viking 生物实验在此检测有机化合物(未检测到,结果至今仍有争议)。"
+        }
+      ]
+    }
+  ]
+}

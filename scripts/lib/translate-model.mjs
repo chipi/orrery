@@ -37,7 +37,8 @@ export function translationModel(locale, { editorial = false } = {}) {
 /** Is this field editorial? `file` as in the manifests (overlay path or "messages"). */
 export function isEditorial(file, src = '') {
   if (file === 'messages') return src.length > 120; // long UI text: help, panels, goal prose
-  return /^(essays|programs|science)\//.test(file);
+  // site stories are chaptered narrative with long captions: editorial by that ruling
+  return /^(essays|programs|science|site-stories)\//.test(file);
 }
 
 // Models that reject a forced tool_choice (400 "type tool and any are not
@@ -58,7 +59,19 @@ const QUALITY_RETRIES = 2;
  *   caller's own validation decides (nothing is silently "fixed").
  */
 export function translationClient(client) {
+  // Token usage per model, every API call counted (quality retries included), so a
+  // run can be sized from a measured sample before the rest is launched.
+  const usage = {};
+  const count = (model, r) => {
+    const u = (usage[model] ??= { calls: 0, input: 0, cacheWrite: 0, cacheRead: 0, output: 0 });
+    u.calls++;
+    u.input += r?.usage?.input_tokens ?? 0;
+    u.cacheWrite += r?.usage?.cache_creation_input_tokens ?? 0;
+    u.cacheRead += r?.usage?.cache_read_input_tokens ?? 0;
+    u.output += r?.usage?.output_tokens ?? 0;
+  };
   return {
+    usage,
     messages: {
       async create(params) {
         const { _locale: locale, ...rest } = params;
@@ -69,6 +82,11 @@ export function translationClient(client) {
           p.system += `\n\nAnswer ONLY by calling the ${p.tool_choice.name} tool.`;
           p.tool_choice = { type: 'auto' };
         }
+        // The system prompt is the same on every call of a run (one per field): cache it,
+        // so repeated calls read it at the cache price (operator 2026-10-17, after a
+        // measured run where it was ~90% of the input tokens). Below the model's minimum
+        // cacheable length the API just does not cache it.
+        p.system = [{ type: 'text', text: p.system, cache_control: { type: 'ephemeral' } }];
         let r;
         let why = [];
         for (let attempt = 0; attempt <= QUALITY_RETRIES; attempt++) {
@@ -102,6 +120,7 @@ export function translationClient(client) {
               }
             : p;
           r = await client.messages.create(call);
+          count(call.model, r);
           const answer = r.content
             .filter((c) => c.type === 'tool_use')
             .flatMap((c) => stringsIn(c.input));

@@ -1,0 +1,39 @@
+{
+  "intro": "Luna 17は1970年11月17日に雨の海へ着陸し、Lunokhod 1を送り出した。Lunokhod 1は、地球以外の天体で稼働した初の車輪式車両であり、NASAのLRVより7か月早かった。Lunokhod 1は月の昼夜11回分にわたって10.5 km走行し、クリミアの5人編成のチームが操縦した。2万5000枚の写真と211枚のパノラマを送り届けたのち、1971年9月に沈黙した。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "月面に刻まれた最初の車輪 — Lunokhod 1",
+      "images": [
+        {
+          "src": "/images/missions/luna17/01.webp",
+          "caption": "Lunokhod 1 — 8輪、重量756 kg、太陽電池駆動のシャーシで、夜間の保温用にポロニウム210のRTGを搭載。設計寿命は3か月だったが、実際には10か月稼働した。"
+        },
+        {
+          "src": "/images/missions/luna17/02.webp",
+          "caption": "Luna 17の着陸機と、Lunokhod 1を降ろすためのスロープ。ソ連の遠隔操縦チームは、クリミア沿岸に置かれた改造潜水艦から操縦を行った。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "雨の海 — 1970年11月17日着陸",
+      "images": [
+        {
+          "src": "/images/missions/luna17/03.webp",
+          "caption": "雨の海を走行するLunokhod 1 — 光速による片道2.5秒の通信遅延がありながら、5人のチームがリアルタイムで操縦した。"
+        },
+        {
+          "src": "/images/missions/luna17/04.webp",
+          "caption": "Lunokhod 1の走行ルート図 — 雨の海を横切る10.5 kmのジグザグの軌跡と、岩石やクレーターでの科学観測地点。"
+        },
+        {
+          "src": "/images/missions/luna17/05.webp",
+          "caption": "Lunokhod 1のレトロリフレクター — 50年以上を経た今も、地上の月レーザー測距局で使われている。"
+        }
+      ]
+    }
+  ]
+}

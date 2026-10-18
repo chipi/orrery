@@ -1,0 +1,34 @@
+{
+  "name": "Pioneer 10",
+  "current_distance_label": "135 UA · ~18,8 heures-lumière du Soleil (dernier contact le 23 janvier 2003)",
+  "interstellar_since_label": "Dernier contact en 2003 — en phase de coast vers le Taureau, passera près d'Aldébaran dans ~2 millions d'années",
+  "waypoints": [
+    {
+      "label": "Lancement"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Jupiter"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Au-delà de l'orbite de Pluton"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Dernier contact"
+    },
+    null,
+    null,
+    {
+      "label": "Aujourd'hui"
+    }
+  ]
+}

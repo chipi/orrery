@@ -1,0 +1,42 @@
+{
+  "name": "Rosetta",
+  "current_distance_label": "4,1 UA · descenso controlado a la superficie de 67P el 2016-09-30 (fin de la misión)",
+  "waypoints": [
+    {
+      "label": "Lanzamiento (Ariane 5)"
+    },
+    {
+      "label": "Tierra #1"
+    },
+    null,
+    {
+      "label": "Marte"
+    },
+    {
+      "label": "Tierra #2"
+    },
+    {
+      "label": "Asteroide Šteins"
+    },
+    {
+      "label": "Tierra #3"
+    },
+    {
+      "label": "Asteroide Lutetia"
+    },
+    null,
+    null,
+    {
+      "label": "Encuentro con 67P"
+    },
+    {
+      "label": "Aterrizaje de Philae"
+    },
+    {
+      "label": "Perihelio de 67P"
+    },
+    {
+      "label": "Depositado en 67P"
+    }
+  ]
+}

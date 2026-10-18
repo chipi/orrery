@@ -1,0 +1,46 @@
+{
+  "intro": "Mars 3는 1971년 12월 2일 테라 시레눔에 착륙했다. 화성 대기 진입을 견뎌 내고 표면에 도달한 최초의 착륙선으로, 자매기 Mars 2가 추락한 지 닷새 뒤였다. 교신은 14.5초 만에 끊겼고, 심하게 열화된 회색조 이미지의 일부 한 장만 전송되었다. 착륙선은 행성 전체를 뒤덮은 먼지 폭풍의 한가운데에 도착했을 가능성이 크다. Mars 3가 정확히 어디에 놓여 있는지는 지금도 논쟁 중이며, 2013년 HiRISE가 후보 지점의 잔해로 보이는 물체를 촬영했다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "소련 4MS급 착륙선, 어떤 형태로든 최초의 화성 착륙",
+      "images": [
+        {
+          "src": "/images/missions/mars3/01.webp",
+          "caption": "NPO Lavochkin 우주 역사 박물관에 전시된 Mars 3 착륙선 모형. 총질량은 1,210 kg이었고, 4.5 kg짜리 Prop-M 로버를 실었다(끝내 전개되지 못했다)."
+        },
+        {
+          "src": "/images/missions/mars3/02.webp",
+          "caption": "Mars 3 착륙선 하드웨어의 단면도. 이 기본 설계의 계보는 이후 소련 시대의 Venera와 Mars 하드웨어에도 영향을 주었다."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "1971년 5월 28일 — 바이코누르에서 발사된 Proton-K",
+      "images": [
+        {
+          "src": "/images/missions/mars3/03.webp",
+          "caption": "바이코누르 우주 기지에서 Blok-D 상단과 함께 발사를 준비 중인 Proton-K. 화성까지는 6개월이 걸렸다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "테라 시레눔 — 1971년 12월 2일 착륙",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars3/tier2-hirise.jpg",
+          "caption": "테라 시레눔에 있는 Mars 3 후보 하드웨어 지점의 HiRISE 확대 이미지. 2013년 NASA/UA HiRISE 팀이 공개했으며, 러시아의 아마추어 우주 역사가들이 찾아냈다."
+        },
+        {
+          "src": "/images/missions/mars3/04.webp",
+          "caption": "Mars 3가 보내온 단 한 장의 단편적인 이미지. 79개 줄에 지평선도, 세부 형상도 없다. 아무리 희미해도, 다른 행성 표면에서 온 최초의 사진이다."
+        }
+      ]
+    }
+  ]
+}

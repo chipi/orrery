@@ -1,0 +1,50 @@
+{
+  "intro": "A Mars Pathfinder pousou em Ares Vallis em 4 de julho de 1997 — a primeira missão dos EUA a Marte desde as Viking, 21 anos antes. O módulo de pouso lançou o Sojourner, as primeiras rodas em Marte, demonstrando pouso com airbags + exploração móvel em uma missão de baixo custo \"mais rápida, melhor e mais barata\", de US$ 265 milhões, que devolveu cerca de 16.500 imagens. Em um trajeto de 100 metros, o Sojourner mapeou doze rochas batizadas com nomes de personagens de desenhos animados (Yogi, Barnacle Bill, Scooby Doo) antes de o módulo de pouso parar de funcionar.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "O primeiro rover em Marte — e o primeiro módulo de pouso dos EUA em Marte desde a Viking",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/01.webp",
+          "caption": "A Pathfinder durante os testes pré-lançamento — estação base + rampas de abertura das pétalas para o Sojourner."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/02.webp",
+          "caption": "Microrrover Sojourner — 11,5 kg, 6 rodas, movido a energia solar, projetado para operar por 7 sóis (durou 83)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "4 de dezembro de 1996 — Delta II a partir de Cabo Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/03.webp",
+          "caption": "Um Delta II 7925 lança a Pathfinder em sua viagem de 7 meses até Marte."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Ares Vallis — pouso em 4 de julho de 1997",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg",
+          "caption": "Improved Presidential Panorama — vista colorida de 360° de Ares Vallis. Os Twin Peaks aparecem no horizonte (batizados em homenagem à série de TV)."
+        },
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg",
+          "caption": "O módulo de pouso da Pathfinder fotografado da órbita décadas depois pela HiRISE da MRO — as pétalas + a última posição conhecida do Sojourner são visíveis."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/04.webp",
+          "caption": "O Sojourner inspecionando a rocha Yogi — a primeira análise química de perto do terreno marciano."
+        }
+      ]
+    }
+  ]
+}

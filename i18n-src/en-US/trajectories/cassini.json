@@ -1,0 +1,33 @@
+{
+  "name": "Cassini-Huygens",
+  "current_distance_label": "9.5 AU · in Saturn orbit 2004-2017 — disposed into Saturn's atmosphere 2017-09-15",
+  "waypoints": [
+    {
+      "label": "Launch"
+    },
+    null,
+    {
+      "label": "Venus #1"
+    },
+    null,
+    {
+      "label": "Venus #2"
+    },
+    {
+      "label": "Earth"
+    },
+    null,
+    {
+      "label": "Jupiter"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Saturn orbit insertion"
+    },
+    {
+      "label": "Grand Finale (today)"
+    }
+  ]
+}

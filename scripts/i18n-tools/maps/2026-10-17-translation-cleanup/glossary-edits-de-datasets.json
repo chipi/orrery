@@ -1,0 +1,224 @@
+[
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-veil.caption",
+    "old": "Ein Hauch der Cygnus Loop — eine Supernova-Stoßwelle, die sich noch nach 10.000 Jahren ausdehnt.",
+    "new": "Ein Hauch des Cygnusbogens — eine Supernova-Stoßwelle, die sich noch nach 10.000 Jahren ausdehnt."
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-veil.type",
+    "old": "Supernova-Überrest · Cygnus Loop",
+    "new": "Supernova-Überrest · Cygnusbogen"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "intro",
+    "old": "Apollo 14 landete am 5. Februar 1971 im Hochland von Fra Mauro – dem ursprünglichen Ziel von Apollo 13, das nach der Explosion an Bord von Apollo 13 nun doch noch erreicht wurde. Shepard und Mitchell zogen den Modular Equipment Transporter (eine Art Rikscha) die Hänge des Cone Crater hinauf und brachten 43 kg Brekzie zurück – Bruchstücke jenes gewaltigen Einschlags, der vor 3,9 Milliarden Jahren das Mare Imbrium formte. Berühmt wurde Shepard dafür, dass er vor dem Start noch zwei Golfbälle schlug.",
+    "new": "Apollo 14 landete am 5. Februar 1971 im Hochland von Fra Mauro – dem ursprünglichen Ziel von Apollo 13, das nach der Explosion an Bord von Apollo 13 nun doch noch erreicht wurde. Shepard und Mitchell zogen den Modular Equipment Transporter (eine Art Rikscha) die Hänge des Cone-Kraters hinauf und brachten 43 kg Brekzie zurück – Bruchstücke jenes gewaltigen Einschlags, der vor 3,9 Milliarden Jahren das Mare Imbrium formte. Berühmt wurde Shepard dafür, dass er vor dem Start noch zwei Golfbälle schlug."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Mitchell mit dem Modular Equipment Transporter (MET) – die „Rikscha“ beförderte Werkzeuge und Proben den Hang hinauf in Richtung Cone Crater.",
+    "new": "Mitchell mit dem Modular Equipment Transporter (MET) – die „Rikscha“ beförderte Werkzeuge und Proben den Hang hinauf in Richtung Cone-Krater."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Rand des Cone Crater – die Besatzung stieg bis auf ca. 30 m an den Rand heran, musste aber wegen Erschöpfung + Funkverbindungsgrenzen umkehren.",
+    "new": "Rand des Cone-Kraters – die Besatzung stieg bis auf ca. 30 m an den Rand heran, musste aber wegen Erschöpfung + Funkverbindungsgrenzen umkehren."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "intro",
+    "old": "Apollo 16 landete am 21. April 1972 im Descartes Highlands – als einzige Apollo-Mission in einem Hochland (nicht in einem Mare), ausgewählt, um Gestein aus einem Gelände zu beproben, das man für vulkanisch hielt. Young und Duke fanden KEINE vulkanischen Gesteine – nur Impaktbreccien und Anorthosit. Damit stürzten sie das geologische Modell und zeigten, dass das Hochland des Mondes eine uralte, durch Einschläge zertrümmerte Kruste ist und nicht das Ergebnis späteren Vulkanismus. Drei Außenbordeinsätze (EVAs), 27 km Fahrt mit dem LRV, 95 kg zur Erde gebrachte Proben.",
+    "new": "Apollo 16 landete am 21. April 1972 im Descartes-Hochland – als einzige Apollo-Mission in einem Hochland (nicht in einem Mare), ausgewählt, um Gestein aus einem Gelände zu beproben, das man für vulkanisch hielt. Young und Duke fanden KEINE vulkanischen Gesteine – nur Impaktbreccien und Anorthosit. Damit stürzten sie das geologische Modell und zeigten, dass das Hochland des Mondes eine uralte, durch Einschläge zertrümmerte Kruste ist und nicht das Ergebnis späteren Vulkanismus. Drei Außenbordeinsätze (EVAs), 27 km Fahrt mit dem LRV, 95 kg zur Erde gebrachte Proben."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.subtitle",
+    "old": "Descartes Highlands – gelandet am 21. April 1972",
+    "new": "Descartes-Hochland – gelandet am 21. April 1972"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Panorama der Descartes Highlands – Orion-Landestufe + LRV + Stone Mountain im Hintergrund.",
+    "new": "Panorama der Descartes-Hochland – Orion-Landestufe + LRV + Stone Mountain im Hintergrund."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "intro",
+    "old": "Apollo 17 landete am 11. Dezember 1972 im Taurus-Littrow Valley – die letzte bemannte Mondmission und die einzige mit einem professionellen Geologen (Harrison Schmitt) auf der Oberfläche. Cernan und Schmitt verbrachten bei drei Ausstiegen (EVAs) insgesamt 22 Stunden im Freien, legten 35 km mit dem Rover zurück und brachten 110 kg Proben zur Erde, darunter den berühmten Orange Soil (Glasperlen vulkanischen Ursprungs aus einer Lavafontäne vor 3,5 Milliarden Jahren). Cernans Fußabdruck ist die jüngste menschliche Spur auf einer anderen Welt.",
+    "new": "Apollo 17 landete am 11. Dezember 1972 im Taurus-Littrow-Tal – die letzte bemannte Mondmission und die einzige mit einem professionellen Geologen (Harrison Schmitt) auf der Oberfläche. Cernan und Schmitt verbrachten bei drei Ausstiegen (EVAs) insgesamt 22 Stunden im Freien, legten 35 km mit dem Rover zurück und brachten 110 kg Proben zur Erde, darunter den berühmten Orange Soil (Glasperlen vulkanischen Ursprungs aus einer Lavafontäne vor 3,5 Milliarden Jahren). Cernans Fußabdruck ist die jüngste menschliche Spur auf einer anderen Welt."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.subtitle",
+    "old": "Taurus-Littrow Valley – Landung am 11. Dezember 1972",
+    "new": "Taurus-Littrow-Tal – Landung am 11. Dezember 1972"
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Schmitt am Shorty Crater entdeckt den Orange Soil – vulkanische Glaskügelchen aus einer Lavafontänen-Eruption vor 3,5 Milliarden Jahren.",
+    "new": "Schmitt am Shorty-Krater entdeckt den Orange Soil – vulkanische Glaskügelchen aus einer Lavafontänen-Eruption vor 3,5 Milliarden Jahren."
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.2.subtitle",
+    "old": "Shiv Shakti Point, nahe dem lunaren Südpol – gelandet am 23. August 2023",
+    "new": "Statio Shiv Shakti, nahe dem lunaren Südpol – gelandet am 23. August 2023"
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.2.subtitle",
+    "old": "Mantelmaterial im South Pole-Aitken-Becken",
+    "new": "Mantelmaterial im Südpol-Aitken-Becken"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.2.subtitle",
+    "old": "Apollo Crater (innerhalb des Südpol-Aitken-Beckens) – Landung am 1. Juni 2024",
+    "new": "Apollo-Krater (innerhalb des Südpol-Aitken-Beckens) – Landung am 1. Juni 2024"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "intro",
+    "old": "Der Rover Curiosity der NASA startete am 26. November 2011 auf einer Atlas V von Cape Canaveral. Nach 254 Tagen Flug durch den Raum setzte das Mars Science Laboratory den 899 Kilogramm schweren, nuklear betriebenen Rover am 6. August 2012 im Gale Crater ab – mit dem inzwischen berühmten Sky-Crane-Manöver. Mehr als ein Jahrzehnt später steigt Curiosity noch immer den Mount Sharp hinauf und bohrt Gesteine an, die Zeugnis von der einst lebensfreundlichen Vergangenheit des Mars ablegen.",
+    "new": "Der Rover Curiosity der NASA startete am 26. November 2011 auf einer Atlas V von Cape Canaveral. Nach 254 Tagen Flug durch den Raum setzte das Mars Science Laboratory den 899 Kilogramm schweren, nuklear betriebenen Rover am 6. August 2012 im Gale-Krater ab – mit dem inzwischen berühmten Sky-Crane-Manöver. Mehr als ein Jahrzehnt später steigt Curiosity noch immer den Mount Sharp hinauf und bohrt Gesteine an, die Zeugnis von der einst lebensfreundlichen Vergangenheit des Mars ablegen."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.0.subtitle",
+    "old": "Ein Rover für den Gale Crater",
+    "new": "Ein Rover für den Gale-Krater"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.2.subtitle",
+    "old": "Gale Crater – gelandet am 6. August 2012",
+    "new": "Gale-Krater – gelandet am 6. August 2012"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.4.images.0.caption",
+    "old": "Die Missionskontrolle am JPL feiert die Sky-Crane-Landung der „sieben Schreckensminuten“, 5./6. August 2012 – Adam Steltzner und sein Team nach den ersten Signalen aus dem Gale Crater.",
+    "new": "Die Missionskontrolle am JPL feiert die Sky-Crane-Landung der „sieben Schreckensminuten“, 5./6. August 2012 – Adam Steltzner und sein Team nach den ersten Signalen aus dem Gale-Krater."
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.1.subtitle",
+    "old": "5. Mai 2018 – Atlas V von der Vandenberg AFB",
+    "new": "5. Mai 2018 – Atlas V von der Vandenberg Air Force Base"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Legacy Pan, Sols 5084–5111 (Mai–Juni 2018) – Opportunitys letztes 360°-Panorama vor dem Staubsturm. Perseverance Valley fällt in den Endeavour Crater ab.",
+    "new": "Legacy Pan, Sols 5084–5111 (Mai–Juni 2018) – Opportunitys letztes 360°-Panorama vor dem Staubsturm. Perseverance Valley fällt in den Endeavour-Krater ab."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Der Rand des Endeavour Crater, wo Opportunity seine letzten Jahre verbrachte. Die letzte Ruhestätte des Rovers liegt rechts im Perseverance Valley.",
+    "new": "Der Rand des Endeavour-Kraters, wo Opportunity seine letzten Jahre verbrachte. Die letzte Ruhestätte des Rovers liegt rechts im Perseverance Valley."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Aufprallstelle des Hitzeschilds am Endurance Crater – Opportunity fuhr zurück, um seine eigene abgeworfene Eintrittshardware zu untersuchen.",
+    "new": "Aufprallstelle des Hitzeschilds am Endurance-Krater – Opportunity fuhr zurück, um seine eigene abgeworfene Eintrittshardware zu untersuchen."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Burns Cliff: geschichtete Aufschlüsse im Endurance Crater – Sedimentarchiv eines uralten sauren, salzhaltigen Gewässers.",
+    "new": "Burns Cliff: geschichtete Aufschlüsse im Endurance-Krater – Sedimentarchiv eines uralten sauren, salzhaltigen Gewässers."
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "intro",
+    "old": "Perseverance landete am 18. Februar 2021 im Jezero Crater – einem 3,8 Milliarden Jahre alten Flussdelta, das ausgewählt wurde, weil es die besten Aussichten bot, Spuren früheren Lebens auf dem Mars zu bewahren. Der Rover führt den ersten Mars-Hubschrauber (Ingenuity), das erste Audiogerät für den Mars und das erste System zur Probenlagerung mit sich. Die auf der Oberfläche zurückgelassenen Probenröhrchen soll die Mission Mars Sample Return in den 2030er-Jahren zur Erde bringen.",
+    "new": "Perseverance landete am 18. Februar 2021 im Jezero-Krater – einem 3,8 Milliarden Jahre alten Flussdelta, das ausgewählt wurde, weil es die besten Aussichten bot, Spuren früheren Lebens auf dem Mars zu bewahren. Der Rover führt den ersten Mars-Hubschrauber (Ingenuity), das erste Audiogerät für den Mars und das erste System zur Probenlagerung mit sich. Die auf der Oberfläche zurückgelassenen Probenröhrchen soll die Mission Mars Sample Return in den 2030er-Jahren zur Erde bringen."
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.subtitle",
+    "old": "Jezero Crater – gelandet am 18. Februar 2021",
+    "new": "Jezero-Krater – gelandet am 18. Februar 2021"
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "intro",
+    "old": "SLIM (Smart Lander for Investigating Moon) landete am 20. Januar 2024 im Shioli Crater – Japans erste weiche Landung auf dem Mond und zugleich ein Technologiedemonstrator für präzises Landen. SLIM setzte weniger als 100 m von seinem Ziel entfernt auf (die bisherige Bestmarke lag bei über 1 km), kippte jedoch auf die Seite und arbeitete kopfüber mit den verbliebenen Solarzellen weiter, bis die Energie aufgebraucht war. Zwei Mikro-Rover für die Oberfläche, LEV-1 und LEV-2 (Sora-Q), wurden noch vor der unglücklichen Endlage ausgesetzt.",
+    "new": "SLIM (Smart Lander for Investigating Moon) landete am 20. Januar 2024 im Shioli-Krater – Japans erste weiche Landung auf dem Mond und zugleich ein Technologiedemonstrator für präzises Landen. SLIM setzte weniger als 100 m von seinem Ziel entfernt auf (die bisherige Bestmarke lag bei über 1 km), kippte jedoch auf die Seite und arbeitete kopfüber mit den verbliebenen Solarzellen weiter, bis die Energie aufgebraucht war. Zwei Mikro-Rover für die Oberfläche, LEV-1 und LEV-2 (Sora-Q), wurden noch vor der unglücklichen Endlage ausgesetzt."
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.2.subtitle",
+    "old": "Shioli Crater – gelandet am 20. Januar 2024",
+    "new": "Shioli-Krater – gelandet am 20. Januar 2024"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Long March 5 startet Tianwen-1 vom Wenchang Space Launch Site auf Hainan – sieben Monate Flug zum Mars.",
+    "new": "Long March 5 startet Tianwen-1 vom Kosmodrom Wenchang auf Hainan – sieben Monate Flug zum Mars."
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "current_distance_label",
+    "old": "0,94 AU · auf dem Weg zum Earth-#2-Vorbeiflug 2026-09-29 (Reiseabschnitt 2 von 5)",
+    "new": "0,94 AU · auf dem Weg zum Erde-#2-Vorbeiflug 2026-09-29 (Reiseabschnitt 2 von 5)"
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "waypoints.6.label",
+    "old": "Earth #2",
+    "new": "Erde #2"
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "waypoints.8.label",
+    "old": "Earth #3",
+    "new": "Erde #3"
+  },
+  {
+    "rel": "trajectories/pioneer-11.json",
+    "at": "interstellar_since_label",
+    "old": "Signalverlust 1995 — schwebt zum Aquila hin, wird den interstellaren Raum um 2027 erreichen",
+    "new": "Signalverlust 1995 — schwebt zum Adler hin, wird den interstellaren Raum um 2027 erreichen"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-112fee55fa9f.caption",
+    "old": "Yuri Gagarin startet vom Baikonur – 12. Apr. 1961.",
+    "new": "Juri Gagarin startet vom Baikonur – 12. Apr. 1961."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-4ba1c691d9d4.title",
+    "old": "Voskhod 2 — Leonov, der erste Spacewalk",
+    "new": "Voskhod 2 — Leonow, der erste Spacewalk"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-4ba1c691d9d4.caption",
+    "old": "Alexei Leonov's 12 Minuten außerhalb der Kapsel — 18. März 1965.",
+    "new": "Alexei Leonows 12 Minuten außerhalb der Kapsel — 18. März 1965."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-5a095b00a9dc.title",
+    "old": "Live vom International Space Station",
+    "new": "Live von der Internationalen Raumstation"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-b6068838acb1.caption",
+    "old": "Zweite bemannte Mondlandung, Ocean of Storms – 14. Nov. 1969.",
+    "new": "Zweite bemannte Mondlandung, Ozean der Stürme – 14. Nov. 1969."
+  }
+]

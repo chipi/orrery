@@ -1,0 +1,27 @@
+{
+  "name": "Juno",
+  "current_distance_label": "5.5 AU · in polar Jupiter orbit since 2016-07-05 — extended mission through 2025",
+  "waypoints": [
+    {
+      "label": "Launch"
+    },
+    null,
+    null,
+    {
+      "label": "Deep-space mvr"
+    },
+    null,
+    {
+      "label": "Earth assist"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Jupiter orbit insertion"
+    },
+    {
+      "label": "Today (Jupiter orbit)"
+    }
+  ]
+}

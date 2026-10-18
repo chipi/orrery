@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 15 landde op 30 juli 1971 bij Hadley-rille / Apennine Mountains — de eerste \"J-class\"-missie, met een verlengd verblijf op het oppervlak, de Lunar Roving Vehicle (LRV) en een piloot met wetenschappelijke training (David Scott). Scott en Irwin legden tijdens drie EVA's in totaal 28 km af met de rover, vonden de Genesis Rock (~4,1 Ga anorthosiet, oerkorst) en lieten live op tv een veer en een hamer vallen om Galileo's zwaartekrachtproef na te doen.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Endeavour + Falcon + LRV-1 (de eerste maanauto)",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/01.webp",
+          "caption": "De bemanning van Apollo 15 en de Lunar Roving Vehicle tijdens de training vóór de missie — Scott en Irwin zouden de eerste wielen op de Maan besturen."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Hadley-Apennine — geland op 30 juli 1971",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/02.webp",
+          "caption": "Jim Irwin salueert naast de LRV, met Mt Hadley Delta op de achtergrond — de eerste beelden van de Apennine Mountains vanaf het oppervlak."
+        },
+        {
+          "src": "/images/missions/apollo15/03.webp",
+          "caption": "David Scott aan de rand van Hadley-rille — voor het eerst stonden astronauten op de oever van een eeuwenoud lavakanaal op een andere wereld."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
+          "caption": "Panorama van Hadley Plain — de afdaaltrap van Falcon, de LRV en Mt Hadley Delta aan de horizon."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "Genesis Rock + Galileo-experiment",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/04.webp",
+          "caption": "Monster 15415 \"Genesis Rock\" — zuivere ferroane anorthosiet, ~4,1 miljard jaar oud. Een fragment van de oerkorst van de Maan, gevormd uit de magma-oceaan."
+        }
+      ]
+    }
+  ]
+}

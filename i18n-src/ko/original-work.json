@@ -1,0 +1,1664 @@
+{
+  "anatomy_art": {
+    "/images/anatomy/akatsuki_webp": {
+      "title": "Akatsuki"
+    },
+    "/images/anatomy/antares_webp": {
+      "title": "안타레스"
+    },
+    "/images/anatomy/apollo-csm-block-ii_webp": {
+      "title": "Apollo CSM Block II"
+    },
+    "/images/anatomy/apollo-lm_webp": {
+      "title": "Apollo 달 착륙선"
+    },
+    "/images/anatomy/ariane-1_webp": {
+      "title": "Ariane 1"
+    },
+    "/images/anatomy/ariane-5_webp": {
+      "title": "Ariane 5"
+    },
+    "/images/anatomy/ariane-6_webp": {
+      "title": "Ariane 6"
+    },
+    "/images/anatomy/atlas-lv-3b_webp": {
+      "title": "Atlas LV-3B"
+    },
+    "/images/anatomy/atlas-v_webp": {
+      "title": "Atlas V"
+    },
+    "/images/anatomy/atv_webp": {
+      "title": "ATV (자동 수송 우주선)"
+    },
+    "/images/anatomy/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/anatomy/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/anatomy/blue-moon-mk1_webp": {
+      "title": "Blue Moon Mk1"
+    },
+    "/images/anatomy/buran_webp": {
+      "title": "Buran"
+    },
+    "/images/anatomy/cargo-dragon-2_webp": {
+      "title": "Cargo Dragon 2"
+    },
+    "/images/anatomy/cargo-dragon-v1_webp": {
+      "title": "Cargo Dragon v1"
+    },
+    "/images/anatomy/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/anatomy/chandra_webp": {
+      "title": "Chandra X-ray Observatory"
+    },
+    "/images/anatomy/chandrayaan1_webp": {
+      "title": "Chandrayaan-1"
+    },
+    "/images/anatomy/change-3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/anatomy/change-4_webp": {
+      "title": "Chang'e 4"
+    },
+    "/images/anatomy/change-5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/anatomy/compton-gro_webp": {
+      "title": "Compton Gamma Ray Observatory"
+    },
+    "/images/anatomy/crew-dragon_webp": {
+      "title": "Crew Dragon"
+    },
+    "/images/anatomy/curiosity_webp": {
+      "title": "Curiosity (MSL)"
+    },
+    "/images/anatomy/cygnus-enhanced_webp": {
+      "title": "Cygnus Enhanced"
+    },
+    "/images/anatomy/dart_webp": {
+      "title": "DART"
+    },
+    "/images/anatomy/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/anatomy/delta-ii_webp": {
+      "title": "Delta II"
+    },
+    "/images/anatomy/energia_webp": {
+      "title": "Energia"
+    },
+    "/images/anatomy/euclid_webp": {
+      "title": "Euclid"
+    },
+    "/images/anatomy/europa-clipper_webp": {
+      "title": "Europa Clipper"
+    },
+    "/images/anatomy/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin (ExoMars 로버)"
+    },
+    "/images/anatomy/exomars-tgo_webp": {
+      "title": "ExoMars TGO"
+    },
+    "/images/anatomy/falcon-9_webp": {
+      "title": "Falcon 9 Block 5"
+    },
+    "/images/anatomy/falcon-heavy_webp": {
+      "title": "Falcon Heavy"
+    },
+    "/images/anatomy/gaganyaan_webp": {
+      "title": "Gaganyaan"
+    },
+    "/images/anatomy/gaia_webp": {
+      "title": "Gaia"
+    },
+    "/images/anatomy/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/anatomy/gemini_webp": {
+      "title": "Gemini"
+    },
+    "/images/anatomy/h-iia_webp": {
+      "title": "H-IIA"
+    },
+    "/images/anatomy/h3_webp": {
+      "title": "H3"
+    },
+    "/images/anatomy/hakuto-r_webp": {
+      "title": "Hakuto-R 프로그램"
+    },
+    "/images/anatomy/hayabusa-2_webp": {
+      "title": "Hayabusa2"
+    },
+    "/images/anatomy/hayabusa_webp": {
+      "title": "Hayabusa"
+    },
+    "/images/anatomy/hitomi_webp": {
+      "title": "Hitomi (ASTRO-H)"
+    },
+    "/images/anatomy/hope_webp": {
+      "title": "Hope (EMM)"
+    },
+    "/images/anatomy/htv-x_webp": {
+      "title": "HTV-X"
+    },
+    "/images/anatomy/htv_webp": {
+      "title": "HTV (Kounotori)"
+    },
+    "/images/anatomy/hubble_webp": {
+      "title": "Hubble 우주 망원경"
+    },
+    "/images/anatomy/im-1-odysseus_webp": {
+      "title": "IM-1 Odysseus"
+    },
+    "/images/anatomy/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/anatomy/iss_webp": {
+      "title": "국제우주정거장"
+    },
+    "/images/anatomy/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/anatomy/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/anatomy/jwst_webp": {
+      "title": "James Webb 우주망원경"
+    },
+    "/images/anatomy/kepler_webp": {
+      "title": "Kepler"
+    },
+    "/images/anatomy/long-march-2f_webp": {
+      "title": "Long March 2F"
+    },
+    "/images/anatomy/long-march-3b_webp": {
+      "title": "Long March 3B"
+    },
+    "/images/anatomy/long-march-5_webp": {
+      "title": "Long March 5 / 5B"
+    },
+    "/images/anatomy/long-march-7_webp": {
+      "title": "Long March 7"
+    },
+    "/images/anatomy/lro_webp": {
+      "title": "달 정찰 궤도선(LRO)"
+    },
+    "/images/anatomy/lrv-apollo_webp": {
+      "title": "달 탐사차량"
+    },
+    "/images/anatomy/lucy_webp": {
+      "title": "Lucy"
+    },
+    "/images/anatomy/luna-16_webp": {
+      "title": "Luna 16급"
+    },
+    "/images/anatomy/luna-9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/anatomy/lunar-prospector_webp": {
+      "title": "Lunar Prospector"
+    },
+    "/images/anatomy/lunokhod-1_webp": {
+      "title": "Lunokhod 1"
+    },
+    "/images/anatomy/lunokhod-2_webp": {
+      "title": "Lunokhod 2"
+    },
+    "/images/anatomy/lvm3_webp": {
+      "title": "LVM3(GSLV Mk III)"
+    },
+    "/images/anatomy/m-v_webp": {
+      "title": "M V"
+    },
+    "/images/anatomy/magellan_webp": {
+      "title": "Magellan"
+    },
+    "/images/anatomy/mangalyaan_webp": {
+      "title": "Mangalyaan(MOM)"
+    },
+    "/images/anatomy/mariner-4_webp": {
+      "title": "Mariner 4"
+    },
+    "/images/anatomy/mariner-9_webp": {
+      "title": "Mariner 9"
+    },
+    "/images/anatomy/mars-3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/anatomy/mars-express_webp": {
+      "title": "Mars Express"
+    },
+    "/images/anatomy/mars-odyssey_webp": {
+      "title": "2001 Mars Odyssey"
+    },
+    "/images/anatomy/maven_webp": {
+      "title": "MAVEN"
+    },
+    "/images/anatomy/mercury-capsule_webp": {
+      "title": "머큐리 캡슐"
+    },
+    "/images/anatomy/mercury-redstone_webp": {
+      "title": "머큐리-레드스톤"
+    },
+    "/images/anatomy/messenger_webp": {
+      "title": "MESSENGER"
+    },
+    "/images/anatomy/mir_webp": {
+      "title": "Mir"
+    },
+    "/images/anatomy/mro_webp": {
+      "title": "Mars Reconnaissance Orbiter"
+    },
+    "/images/anatomy/n1_webp": {
+      "title": "N1"
+    },
+    "/images/anatomy/new-glenn_webp": {
+      "title": "New Glenn"
+    },
+    "/images/anatomy/new-shepard_webp": {
+      "title": "New Shepard"
+    },
+    "/images/anatomy/opportunity_webp": {
+      "title": "Opportunity (MER-B)"
+    },
+    "/images/anatomy/orion_webp": {
+      "title": "Orion"
+    },
+    "/images/anatomy/osiris-rex_webp": {
+      "title": "OSIRIS-REx"
+    },
+    "/images/anatomy/parker-solar-probe_webp": {
+      "title": "Parker Solar Probe"
+    },
+    "/images/anatomy/perseverance_webp": {
+      "title": "Perseverance (Mars 2020)"
+    },
+    "/images/anatomy/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/anatomy/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/anatomy/pioneer-11_webp": {
+      "title": "Pioneer 11"
+    },
+    "/images/anatomy/pragyan_webp": {
+      "title": "Pragyan"
+    },
+    "/images/anatomy/progress-m_webp": {
+      "title": "Progress M"
+    },
+    "/images/anatomy/progress-ms_webp": {
+      "title": "Progress MS"
+    },
+    "/images/anatomy/proton-k_webp": {
+      "title": "Proton-K"
+    },
+    "/images/anatomy/proton-m_webp": {
+      "title": "Proton-M"
+    },
+    "/images/anatomy/pslv-xl_webp": {
+      "title": "PSLV-XL"
+    },
+    "/images/anatomy/pslv_webp": {
+      "title": "피에스엘브이"
+    },
+    "/images/anatomy/psyche-spacecraft_webp": {
+      "title": "Psyche"
+    },
+    "/images/anatomy/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/anatomy/salyut-1_webp": {
+      "title": "Salyut 1"
+    },
+    "/images/anatomy/salyut-6_webp": {
+      "title": "Salyut 6"
+    },
+    "/images/anatomy/salyut-7_webp": {
+      "title": "Salyut 7"
+    },
+    "/images/anatomy/saturn-ib_webp": {
+      "title": "Saturn IB"
+    },
+    "/images/anatomy/saturn-v_webp": {
+      "title": "Saturn V"
+    },
+    "/images/anatomy/schiaparelli_webp": {
+      "title": "Schiaparelli"
+    },
+    "/images/anatomy/shenzhou_webp": {
+      "title": "Shenzhou"
+    },
+    "/images/anatomy/skylab_webp": {
+      "title": "Skylab"
+    },
+    "/images/anatomy/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/anatomy/sls-block-1_webp": {
+      "title": "SLS Block 1"
+    },
+    "/images/anatomy/smart-1_webp": {
+      "title": "SMART-1"
+    },
+    "/images/anatomy/sojourner_webp": {
+      "title": "Sojourner"
+    },
+    "/images/anatomy/solar-orbiter_webp": {
+      "title": "Solar Orbiter"
+    },
+    "/images/anatomy/soyuz-2_webp": {
+      "title": "Soyuz-2"
+    },
+    "/images/anatomy/soyuz-ms_webp": {
+      "title": "Soyuz MS"
+    },
+    "/images/anatomy/soyuz-tma_webp": {
+      "title": "Soyuz TMA"
+    },
+    "/images/anatomy/soyuz_webp": {
+      "title": "Soyuz (11A511)"
+    },
+    "/images/anatomy/space-shuttle-orbiter_webp": {
+      "title": "Space Shuttle Orbiter"
+    },
+    "/images/anatomy/space-shuttle-stack_webp": {
+      "title": "Space Shuttle stack"
+    },
+    "/images/anatomy/spektr-rg_webp": {
+      "title": "Spektr-RG"
+    },
+    "/images/anatomy/spirit_webp": {
+      "title": "Spirit (MER-A)"
+    },
+    "/images/anatomy/spitzer_webp": {
+      "title": "Spitzer 우주 망원경"
+    },
+    "/images/anatomy/starliner_webp": {
+      "title": "Starliner (CST-100)"
+    },
+    "/images/anatomy/starship_webp": {
+      "title": "Starship"
+    },
+    "/images/anatomy/surveyor-3_webp": {
+      "title": "Surveyor 3"
+    },
+    "/images/anatomy/tess_webp": {
+      "title": "TESS"
+    },
+    "/images/anatomy/tiangong-1_webp": {
+      "title": "Tiangong-1"
+    },
+    "/images/anatomy/tiangong-2_webp": {
+      "title": "Tiangong-2"
+    },
+    "/images/anatomy/tiangong_webp": {
+      "title": "Tiangong"
+    },
+    "/images/anatomy/tianwen-1_webp": {
+      "title": "Tianwen-1"
+    },
+    "/images/anatomy/tianzhou_webp": {
+      "title": "Tianzhou"
+    },
+    "/images/anatomy/titan-ii-glv_webp": {
+      "title": "Titan II GLV"
+    },
+    "/images/anatomy/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/anatomy/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/anatomy/venera-7_webp": {
+      "title": "Venera 7-class"
+    },
+    "/images/anatomy/viking-1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/anatomy/vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-3)"
+    },
+    "/images/anatomy/voskhod-11a57_webp": {
+      "title": "Voskhod (11A57)"
+    },
+    "/images/anatomy/vostok-k_webp": {
+      "title": "Vostok-K (8K72K)"
+    },
+    "/images/anatomy/vostok_webp": {
+      "title": "Vostok"
+    },
+    "/images/anatomy/voyager-1_webp": {
+      "title": "Voyager 1"
+    },
+    "/images/anatomy/voyager-2_webp": {
+      "title": "Voyager 2"
+    },
+    "/images/anatomy/vulcan_webp": {
+      "title": "Vulcan Centaur"
+    },
+    "/images/anatomy/x37b_webp": {
+      "title": "X-37B OTV"
+    },
+    "/images/anatomy/xmm-newton_webp": {
+      "title": "XMM-Newton"
+    },
+    "/images/anatomy/yutu-2_webp": {
+      "title": "Yutu-2"
+    },
+    "/images/anatomy/yutu_webp": {
+      "title": "Yutu"
+    },
+    "/images/anatomy/zhurong_webp": {
+      "title": "Zhurong"
+    }
+  },
+  "lab_illustrations": {
+    "/images/lab/goals/apollo-round-trip_webp": {
+      "title": "Apollo 왕복 비행"
+    },
+    "/images/lab/goals/catch-the-iss_webp": {
+      "title": "ISS 추격하기"
+    },
+    "/images/lab/goals/choose-an-orbit_webp": {
+      "title": "궤도 선택하기"
+    },
+    "/images/lab/goals/engines-of-the-world_webp": {
+      "title": "세계의 엔진"
+    },
+    "/images/lab/goals/entry-computer_webp": {
+      "title": "진입 컴퓨터"
+    },
+    "/images/lab/goals/flying-computer_webp": {
+      "title": "비행 컴퓨터"
+    },
+    "/images/lab/goals/get-to-mars_webp": {
+      "title": "화성으로 가기"
+    },
+    "/images/lab/goals/land-on-earth_webp": {
+      "title": "지구에 착륙하기"
+    },
+    "/images/lab/goals/land-on-mars_webp": {
+      "title": "화성에 착륙하기"
+    },
+    "/images/lab/goals/land-on-mercury_webp": {
+      "title": "수성에 착륙하기"
+    },
+    "/images/lab/goals/land-on-the-moon_webp": {
+      "title": "달에 착륙하기"
+    },
+    "/images/lab/goals/land-on-titan_webp": {
+      "title": "타이탄에 착륙하기"
+    },
+    "/images/lab/goals/land-on-venus_webp": {
+      "title": "금성에 착륙하기"
+    },
+    "/images/lab/goals/landing-computer_webp": {
+      "title": "착륙 컴퓨터"
+    },
+    "/images/lab/goals/launch-a-rocket_webp": {
+      "title": "로켓 발사하기"
+    },
+    "/images/lab/goals/leave-the-solar-system_webp": {
+      "title": "태양계를 떠나기"
+    },
+    "/images/lab/goals/moon-phases_webp": {
+      "title": "달의 위상"
+    },
+    "/images/lab/goals/motion-first-principles_webp": {
+      "title": "운동의 기본 원리"
+    },
+    "/images/lab/goals/observe-the-sky_webp": {
+      "title": "하늘 관측하기"
+    },
+    "/images/lab/goals/plan-a-mission_webp": {
+      "title": "임무 계획하기"
+    },
+    "/images/lab/goals/probe-jupiter_webp": {
+      "title": "목성 탐사"
+    },
+    "/images/lab/goals/reach-orbit_webp": {
+      "title": "궤도에 도달하기"
+    },
+    "/images/lab/goals/reach-the-moon_webp": {
+      "title": "달에 도달하기"
+    },
+    "/images/lab/goals/scale-a-rocket_webp": {
+      "title": "로켓 축척"
+    },
+    "/images/lab/goals/touch-small-world_webp": {
+      "title": "작은 세계에 닿기"
+    }
+  },
+  "diagrams_science": {
+    "/diagrams/science/_cover-cosmology_svg": {
+      "title": "우주론"
+    },
+    "/diagrams/science/_cover-exoplanets_svg": {
+      "title": "외계행성"
+    },
+    "/images/science-covers-v2/_cover-history_webp": {
+      "title": "역사"
+    },
+    "/images/science-covers-v2/_cover-life-in-space_webp": {
+      "title": "우주의 생명"
+    },
+    "/images/science-covers-v2/_cover-mission-phases_webp": {
+      "title": "미션 단계"
+    },
+    "/images/science-covers-v2/_cover-observation_webp": {
+      "title": "관찰"
+    },
+    "/diagrams/science/_cover-orbits_svg": {
+      "title": "궤도"
+    },
+    "/diagrams/science/_cover-planets_svg": {
+      "title": "행성"
+    },
+    "/diagrams/science/_cover-porkchop_svg": {
+      "title": "포크촉"
+    },
+    "/images/science-covers-v2/_cover-propulsion_webp": {
+      "title": "추진"
+    },
+    "/diagrams/science/_cover-scales-time_svg": {
+      "title": "시간 척도"
+    },
+    "/images/science-covers-v2/_cover-space-stations_webp": {
+      "title": "우주정거장"
+    },
+    "/diagrams/science/_cover-transfers_svg": {
+      "title": "전이"
+    },
+    "/diagrams/science/aerobraking_webp": {
+      "title": "공기역학제동"
+    },
+    "/diagrams/science/antenna-arrays_webp": {
+      "title": "안테나 배열"
+    },
+    "/diagrams/science/antimatter-propulsion_webp": {
+      "title": "반물질 추진"
+    },
+    "/diagrams/science/apsides_webp": {
+      "title": "근점과 원점"
+    },
+    "/diagrams/science/ascent-guidance_webp": {
+      "title": "상승 유도"
+    },
+    "/diagrams/science/asteroid-belt_webp": {
+      "title": "소행성대"
+    },
+    "/diagrams/science/au_webp": {
+      "title": "천문단위"
+    },
+    "/diagrams/science/ballistic-coefficient_webp": {
+      "title": "탄도 계수"
+    },
+    "/diagrams/science/black-holes_webp": {
+      "title": "검은 구멍"
+    },
+    "/diagrams/science/c3_webp": {
+      "title": "C3"
+    },
+    "/diagrams/science/comms-blackout_webp": {
+      "title": "통신 두절"
+    },
+    "/diagrams/science/conic-sections_webp": {
+      "title": "원뿔 곡선"
+    },
+    "/diagrams/science/contour-reading_webp": {
+      "title": "등고선 읽기"
+    },
+    "/diagrams/science/deorbit-corridor_webp": {
+      "title": "감속궤도 복도"
+    },
+    "/diagrams/science/departure-axis_webp": {
+      "title": "출발 축"
+    },
+    "/diagrams/science/dv-budget_webp": {
+      "title": "DV 예산"
+    },
+    "/diagrams/science/dv-heatmap_webp": {
+      "title": "DV 열지도"
+    },
+    "/diagrams/science/eccentricity_webp": {
+      "title": "이심률"
+    },
+    "/diagrams/science/ecliptic-plane_webp": {
+      "title": "황도면"
+    },
+    "/diagrams/science/edl_webp": {
+      "title": "진입·하강·착륙"
+    },
+    "/diagrams/science/entry-footprint_webp": {
+      "title": "진입 영역"
+    },
+    "/diagrams/science/entry-heating_webp": {
+      "title": "진입 가열"
+    },
+    "/diagrams/science/escape-velocity_webp": {
+      "title": "탈출 속도"
+    },
+    "/diagrams/science/eva_webp": {
+      "title": "선외활동"
+    },
+    "/diagrams/science/eva-suits_webp": {
+      "title": "선외활동 우주복"
+    },
+    "/diagrams/science/exo-astrometry_webp": {
+      "title": "외계행성 천체측량"
+    },
+    "/diagrams/science/exo-direct-imaging_webp": {
+      "title": "외계행성 직접 촬영"
+    },
+    "/diagrams/science/exo-habitable-zone_webp": {
+      "title": "외계행성 거주 가능 영역"
+    },
+    "/diagrams/science/exo-microlensing_webp": {
+      "title": "외계행성 미세중력렌즈"
+    },
+    "/diagrams/science/exo-radial-velocity_webp": {
+      "title": "외계행성 방사 속도"
+    },
+    "/diagrams/science/exo-resonance_webp": {
+      "title": "외계행성 궤명공명"
+    },
+    "/diagrams/science/exo-transit_webp": {
+      "title": "외계행성 통과"
+    },
+    "/diagrams/science/exo-transit-timing_webp": {
+      "title": "외계행성 통과 타이밍"
+    },
+    "/diagrams/science/expander-cycle_webp": {
+      "title": "팽창 사이클"
+    },
+    "/diagrams/science/expedition-cadence_webp": {
+      "title": "탐사 주기"
+    },
+    "/diagrams/science/frames_webp": {
+      "title": "틀"
+    },
+    "/diagrams/science/free-return_webp": {
+      "title": "자유귀환궤적"
+    },
+    "/diagrams/science/fusion-propulsion_webp": {
+      "title": "핵융합 추진"
+    },
+    "/diagrams/science/gas-generator_webp": {
+      "title": "가스 발생기"
+    },
+    "/diagrams/science/gravity-assist_webp": {
+      "title": "중력 보조"
+    },
+    "/diagrams/science/hertzsprung-russell_webp": {
+      "title": "Hertzsprung Russell 도표"
+    },
+    "/diagrams/science/history-apollo-11_webp": {
+      "title": "역사: Apollo 11"
+    },
+    "/diagrams/science/history-goddard-rocket_webp": {
+      "title": "역사: Goddard 로켓"
+    },
+    "/diagrams/science/history-keplers-laws_webp": {
+      "title": "역사: Kepler의 법칙"
+    },
+    "/diagrams/science/history-newton-principia_webp": {
+      "title": "역사: Newton의 Principia"
+    },
+    "/diagrams/science/history-sputnik_webp": {
+      "title": "역사: Sputnik"
+    },
+    "/diagrams/science/history-tsiolkovsky_webp": {
+      "title": "역사: 치올콥스키"
+    },
+    "/diagrams/science/hohmann-transfer_webp": {
+      "title": "Hohmann 전이"
+    },
+    "/diagrams/science/inclination_webp": {
+      "title": "궤도 경사각"
+    },
+    "/diagrams/science/interplanetary-internet_webp": {
+      "title": "행성간 인터넷"
+    },
+    "/diagrams/science/ion-drive_webp": {
+      "title": "이온 엔진"
+    },
+    "/diagrams/science/iva-suits_webp": {
+      "title": "선외활동 우주복"
+    },
+    "/diagrams/science/j2000_webp": {
+      "title": "J2000"
+    },
+    "/diagrams/science/keplerian-orbit_webp": {
+      "title": "Keplerian 궤도"
+    },
+    "/diagrams/science/keplers-laws_webp": {
+      "title": "Kepler의 법칙"
+    },
+    "/diagrams/science/kuiper-belt_webp": {
+      "title": "Kuiper 대"
+    },
+    "/diagrams/science/lagrange-points_webp": {
+      "title": "Lagrange 포인트"
+    },
+    "/diagrams/science/lambert-problem_webp": {
+      "title": "Lambert 문제"
+    },
+    "/diagrams/science/laser-sail_webp": {
+      "title": "레이저 돛"
+    },
+    "/diagrams/science/launch_webp": {
+      "title": "발사"
+    },
+    "/diagrams/science/lifting-entry_webp": {
+      "title": "양력을 이용한 대기권 진입"
+    },
+    "/diagrams/science/light-minute_webp": {
+      "title": "광분"
+    },
+    "/diagrams/science/long-duration_webp": {
+      "title": "장기 지속"
+    },
+    "/diagrams/science/lunar-ice_webp": {
+      "title": "달의 얼음"
+    },
+    "/diagrams/science/lunar-suits_webp": {
+      "title": "달 우주복"
+    },
+    "/diagrams/science/met_webp": {
+      "title": "임무 경과 시간"
+    },
+    "/diagrams/science/microgravity-physiology_webp": {
+      "title": "미소중력 생리학"
+    },
+    "/diagrams/science/mission-types_webp": {
+      "title": "임무 유형"
+    },
+    "/diagrams/science/node-module_webp": {
+      "title": "노드 모듈"
+    },
+    "/diagrams/science/nrho_webp": {
+      "title": "거의 원형 극지궤도"
+    },
+    "/diagrams/science/nuclear-thermal_webp": {
+      "title": "핵열 추진"
+    },
+    "/diagrams/science/oberth-effect_webp": {
+      "title": "오베르트 효과"
+    },
+    "/diagrams/science/optical-comms_webp": {
+      "title": "광학 통신"
+    },
+    "/diagrams/science/orbit-insertion_webp": {
+      "title": "궤도 삽입"
+    },
+    "/diagrams/science/orbit-regimes_webp": {
+      "title": "궤도 영역"
+    },
+    "/diagrams/science/our-galaxy_webp": {
+      "title": "우리 은하"
+    },
+    "/diagrams/science/patched-conics_webp": {
+      "title": "패치 원뿔 곡선"
+    },
+    "/diagrams/science/porkchop_webp": {
+      "title": "돼지갈비 궤적"
+    },
+    "/diagrams/science/pressurized-volume_webp": {
+      "title": "가압 부피"
+    },
+    "/diagrams/science/propulsive-landing_webp": {
+      "title": "추진 착륙"
+    },
+    "/diagrams/science/regolith_webp": {
+      "title": "레골리스"
+    },
+    "/diagrams/science/semi-major-axis_webp": {
+      "title": "장반경"
+    },
+    "/diagrams/science/sidereal-synodic_webp": {
+      "title": "항성월 회합월"
+    },
+    "/diagrams/science/skip-entry_webp": {
+      "title": "스킵 진입"
+    },
+    "/diagrams/science/skycrane_webp": {
+      "title": "하늘 크레인"
+    },
+    "/diagrams/science/solar-power-budget_webp": {
+      "title": "태양 전력 예산"
+    },
+    "/diagrams/science/solar-sail_webp": {
+      "title": "태양돛"
+    },
+    "/diagrams/science/space-photography_webp": {
+      "title": "우주 사진"
+    },
+    "/diagrams/science/specific-impulse_webp": {
+      "title": "비추력"
+    },
+    "/diagrams/science/staged-combustion_webp": {
+      "title": "단계 연소"
+    },
+    "/diagrams/science/synodic-period_webp": {
+      "title": "회합 주기"
+    },
+    "/diagrams/science/tcm_webp": {
+      "title": "TCM"
+    },
+    "/diagrams/science/terminal-velocity_webp": {
+      "title": "말단 속도"
+    },
+    "/diagrams/science/tof-axis_webp": {
+      "title": "비행 시간 축"
+    },
+    "/diagrams/science/trans-x-injection_webp": {
+      "title": "Trans X 주입"
+    },
+    "/diagrams/science/transfer-ellipse_webp": {
+      "title": "이동 타원"
+    },
+    "/diagrams/science/true-anomaly_webp": {
+      "title": "진 근점각"
+    },
+    "/diagrams/science/tsiolkovsky_webp": {
+      "title": "치올콥스키"
+    },
+    "/diagrams/science/v-infinity_webp": {
+      "title": "V 무한대"
+    },
+    "/diagrams/science/viability_webp": {
+      "title": "실행 가능성"
+    },
+    "/diagrams/science/vis-viva_webp": {
+      "title": "Vis Viva"
+    }
+  },
+  "posters": {
+    "/images/posters/solar-system-orrery_jpg": {
+      "title": "태양계"
+    },
+    "/images/posters/solar-system-procession_jpg": {
+      "title": "태양계"
+    },
+    "/images/posters/earth_jpg": {
+      "title": "지구"
+    },
+    "/images/posters/moon_jpg": {
+      "title": "달"
+    },
+    "/images/posters/mars_jpg": {
+      "title": "화성"
+    },
+    "/images/posters/saturn-v_jpg": {
+      "title": "Saturn V"
+    },
+    "/images/posters/mir_jpg": {
+      "title": "Mir"
+    },
+    "/images/posters/sputnik_jpg": {
+      "title": "Sputnik"
+    },
+    "/images/posters/soyuz_jpg": {
+      "title": "Soyuz"
+    },
+    "/images/posters/voyager_jpg": {
+      "title": "보이저"
+    },
+    "/images/posters/sojourner_jpg": {
+      "title": "Sojourner"
+    },
+    "/images/posters/footprints_jpg": {
+      "title": "발자국"
+    },
+    "/images/posters/gagarin_jpg": {
+      "title": "가가린"
+    },
+    "/images/posters/rosetta_jpg": {
+      "title": "Rosetta"
+    },
+    "/images/posters/huygens_jpg": {
+      "title": "Huygens"
+    },
+    "/images/posters/hayabusa2_jpg": {
+      "title": "Hayabusa2"
+    },
+    "/images/posters/artemis-ii_jpg": {
+      "title": "Artemis II"
+    },
+    "/images/posters/iss_jpg": {
+      "title": "ISS"
+    },
+    "/images/posters/tiangong_jpg": {
+      "title": "Tiangong"
+    },
+    "/images/posters/perseverance_jpg": {
+      "title": "Perseverance"
+    },
+    "/images/posters/space-shuttle_jpg": {
+      "title": "Space Shuttle"
+    },
+    "/images/posters/solar-sail_jpg": {
+      "title": "태양돛"
+    },
+    "/images/posters/nuclear-drive_jpg": {
+      "title": "핵연료 추진기관"
+    },
+    "/images/posters/jwst_jpg": {
+      "title": "James Webb"
+    },
+    "/images/posters/hubble_jpg": {
+      "title": "Hubble"
+    },
+    "/images/posters/cassini_jpg": {
+      "title": "카시니"
+    },
+    "/images/posters/starship_jpg": {
+      "title": "Starship"
+    }
+  },
+  "models3d": {
+    "/images/colophon/craft-cassini_webp": {
+      "title": "Cassini–Huygens",
+      "what": "고이득 안테나, RTG 붐, 그리고 Huygens 탐사선 — 토성 궤도선.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/craft-voyager-1_webp": {
+      "title": "보이저",
+      "what": "3.7 m 접시 안테나, 자기장계 붐, RTG 구조재 — 그랜드 투어 탐사선.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/craft-galileo_webp": {
+      "title": "Galileo",
+      "what": "이중 회전 모듈과 펼쳐진 고이득 우산형 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/craft-new-horizons_webp": {
+      "title": "New Horizons",
+      "what": "냉각 삼각형 모듈과 단일 접시 — 명왕성 근처 비행 탐사선.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/craft-pioneer-10_webp": {
+      "title": "Pioneer",
+      "what": "회전 안정화 접시, RTG 붐, 그리고 새겨진 명판.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/craft-juno_webp": {
+      "title": "Juno",
+      "what": "육각형 모듈 주위에 세 개의 거대한 태양 전지판 — 목성 극궤도 궤도선.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/craft-bepicolombo_webp": {
+      "title": "BepiColombo",
+      "what": "적층된 이동 모듈 + 이온 추진기가 장착된 수성 궤도선.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/craft-dawn_webp": {
+      "title": "Dawn",
+      "what": "이온 추진기가 장착된 모듈과 넓은 태양 전지판 — 베스타 + 세레스 궤도선.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/craft-giotto_webp": {
+      "title": "Giotto",
+      "what": "먼지 방패를 가진 드럼 모양 회전체 — 할리 혜성 근처 비행.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/craft-hayabusa2_webp": {
+      "title": "Hayabusa2",
+      "what": "태양 전지판과 샘플러 혼이 있는 상자형 모듈 — 소행성 류우구.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/craft-juice_webp": {
+      "title": "JUICE",
+      "what": "컴팩트 모듈 위의 십자형 태양 전지판 배열 — 목성 얼음 위성 궤도선.",
+      "where": "날다 + 탐사"
+    },
+    "/images/colophon/craft-rosetta_webp": {
+      "title": "Rosetta",
+      "what": "혜성 추적 버스 주변의 14 m 태양광 날개 + Philae 착륙선",
+      "where": "날다 + 탐사"
+    },
+    "/images/colophon/craft-ulysses_webp": {
+      "title": "Ulysses",
+      "what": "RTG 구동 태양 극궤도 탐사선 및 단일 접시 안테나",
+      "where": "날다 + 탐사"
+    },
+    "/images/colophon/craft-vega-1_webp": {
+      "title": "베가",
+      "what": "소비에트 금성 스윙바이 + 조향식 접시를 갖춘 풍선 모선",
+      "where": "날다 + 탐사"
+    },
+    "/images/colophon/craft-venera-13_webp": {
+      "title": "Venera 13",
+      "what": "소비에트 금성 착륙선 — 토로이드 공기제동 장치 및 착륙 링",
+      "where": "날다 + 탐사"
+    },
+    "/images/colophon/model-launcher-generic_webp": {
+      "title": "범용 발사체",
+      "what": "Falcon-9 같은 2단계 몸체 — 기관 지정 대체 실루엣.",
+      "where": "날다 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-saturn-v_webp": {
+      "title": "Saturn V",
+      "what": "테이퍼 처리된 3단 구성, 5개의 F-1 엔진, 롤 패턴 도색, 그리고 탈출 타워",
+      "where": "날다 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-saturn-ib_webp": {
+      "title": "Saturn IB",
+      "what": "Apollo 근지구궤도 주력선 — S-IB 첫 단계에 8개의 H-1 엔진이 집단 배치되고 동일한 S-IVB + CSM 위에 위치",
+      "where": "날다 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-vostok-k_webp": {
+      "title": "Soyuz / R-7",
+      "what": "코롤료프 십자 코어와 4개의 테이퍼 처리된 부스터",
+      "where": "날다 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-ariane-5_webp": {
+      "title": "Ariane 5",
+      "what": "극저온 코어와 두 개의 높은 고체 부스터, 그리고 둥근 페어링.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-h-iia_webp": {
+      "title": "H-IIA",
+      "what": "쌍을 이룬 고체 로켓 부스터를 갖춘 일본식 극저온 코어.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-space-shuttle-stack_webp": {
+      "title": "Space Shuttle",
+      "what": "외부 탱크, 쌍둥이 SRB, 그리고 델타익 오비터.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-falcon-9_webp": {
+      "title": "Falcon 9",
+      "what": "날씬한 2단 구조 — 9개 엔진의 옥타웹, 격자 핀, 착륙 다리.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-starship_webp": {
+      "title": "Starship / Super Heavy",
+      "what": "무광택 스테인리스 완전 재사용 가능 스택 — Super Heavy에 33개 Raptor, Starship에 6개, 전방 및 후방 플랩, 그리고 첨각 노즈.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-atlas-v_webp": {
+      "title": "Atlas V",
+      "what": "넓은 RD-180 코어, 둥근 페이로드 페어링, 선택 가능한 고체 스트랩-온.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-proton-k_webp": {
+      "title": "Proton-K",
+      "what": "소련식 중형 발사체 — 6개의 바깥쪽 연료 탱크로 둘러싸인 중앙 코어.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-titan-ii-glv_webp": {
+      "title": "Titan II GLV",
+      "what": "유인 Gemini 캡슐을 발사한 날씬한 균일 2단 발사체.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-atlas-lv-3b_webp": {
+      "title": "Atlas LV-3B",
+      "what": "Mercury-Atlas 반토락식 부스터 엔진 스커트와 탈출탑이 갖춰진 단계.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-mercury-redstone_webp": {
+      "title": "Mercury-Redstone",
+      "what": "미국의 첫 유인 발사체 — 네 개의 꼬리 날개와 Mercury 캡슐, 탈출탑을 갖춘 가늘고 단일 엔진의 Redstone (Freedom 7).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-long-march-2f_webp": {
+      "title": "Long March 2F",
+      "what": "중국의 유인 발사체 — 코어, 액체 스트랩온 부스터 4개, 발사 탈출탑 (Shenzhou).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-long-march-3b_webp": {
+      "title": "Long March 3B",
+      "what": "중국의 정지 궤도 이전 주력 발사체 — 액체 스트랩온 부스터 4개가 붙은 코어 (Chang'e 달 탐사선).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-long-march-5_webp": {
+      "title": "Long March 5",
+      "what": "중국의 대형 '팻 파이브' — 넓은 극저온 코어와 대형 부스터 4개.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-pslv_webp": {
+      "title": "PSLV",
+      "what": "ISRO의 주력 발사체 — 고체 스트랩온 부스터 6개로 둘러싼 가늘고 긴 코어.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-lvm3_webp": {
+      "title": "LVM3 / GSLV Mk III",
+      "what": "ISRO 중형 발사 능력 — 대형 S200 고체 부스터 2개가 옆에 붙은 코어 (Chandrayaan-3).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-m-v_webp": {
+      "title": "M-V",
+      "what": "JAXA의 전고체 3단 발사체 (Hayabusa).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-h3_webp": {
+      "title": "H3",
+      "what": "JAXA의 새로운 극저온 코어에 고체 스트랩온 부스터가 붙은 발사체.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-ariane-1_webp": {
+      "title": "아리안 1",
+      "what": "유럽의 첫 발사체 — 1979년 설계의 날씬한 3단식 로켓 (Giotto).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-moon-apollo-lm_webp": {
+      "title": "Apollo 달 착륙선",
+      "what": "하강 단계와 상승 단계, 금색 MLI 호일, RCS 추진제 패키지.",
+      "where": "달 착륙지"
+    },
+    "/images/colophon/model-moon-apollo-lm-extended_webp": {
+      "title": "Apollo LM (J-임무 + LRV)",
+      "what": "장기 체류용 LM으로 달 탐사차량(Lunar Roving Vehicle)과 함께 운영.",
+      "where": "달 착륙지"
+    },
+    "/images/colophon/model-moon-luna-9_webp": {
+      "title": "Luna 9",
+      "what": "달 표면에서 처음으로 이미지를 촬영하고 돌려보낸 소련의 구체형 탐사선.",
+      "where": "달 착륙지"
+    },
+    "/images/colophon/model-moon-luna-sample-return_webp": {
+      "title": "Luna 샘플 반환 탐사선",
+      "what": "하강 플랫폼 위의 상승 로켓 (Luna 16 / 20 / 24).",
+      "where": "달 착륙지"
+    },
+    "/images/colophon/model-moon-lunokhod_webp": {
+      "title": "Lunokhod 탐사차량",
+      "what": "조개껍데기 모양 태양전지판이 있는 8바퀴식 소련 탐사차량.",
+      "where": "달 착륙지"
+    },
+    "/images/colophon/model-moon-chang-e-lander_webp": {
+      "title": "Chang'e 착륙선",
+      "what": "CNSA 하강 단계와 상승 캡슐 (Chang'e 5 / 6).",
+      "where": "달 착륙지"
+    },
+    "/images/colophon/model-moon-yutu_webp": {
+      "title": "Yutu 탐사차량",
+      "what": "접이식 태양전지판이 있는 6바퀴식 중국 탐사차량.",
+      "where": "달 착륙지"
+    },
+    "/images/colophon/model-moon-chandrayaan-3-vikram_webp": {
+      "title": "Chandrayaan-3 Vikram",
+      "what": "Pragyan 탐사차량을 착륙시킨 ISRO의 4다리 착륙선.",
+      "where": "달 착륙 지역"
+    },
+    "/images/colophon/model-moon-slim_webp": {
+      "title": "SLIM",
+      "what": "JAXA 정밀 '달 저격수' 이원 엔진 강하 단계.",
+      "where": "달 착륙 지역"
+    },
+    "/images/colophon/model-moon-beresheet_webp": {
+      "title": "Beresheet",
+      "what": "SpaceIL의 컴팩트 4다리 착륙선.",
+      "where": "달 착륙 지역"
+    },
+    "/images/colophon/model-mars-viking_webp": {
+      "title": "Viking",
+      "what": "3다리 NASA 착륙선(RTG 및 샘플링 팔).",
+      "where": "화성 착륙 지역"
+    },
+    "/images/colophon/model-mars-pathfinder-sojourner_webp": {
+      "title": "Pathfinder + Sojourner",
+      "what": "사면체 에어백 착륙선과 첫 화성 로버.",
+      "where": "화성 착륙 지역"
+    },
+    "/images/colophon/model-mars-mer_webp": {
+      "title": "MER (Spirit / Opportunity)",
+      "what": "로커-보기 로버(나비 모양 태양광 날개).",
+      "where": "화성 착륙 지역"
+    },
+    "/images/colophon/model-mars-curiosity_webp": {
+      "title": "Curiosity",
+      "what": "MSL급 RTG 로버(돛대 + 팔).",
+      "where": "화성 착륙 지역"
+    },
+    "/images/colophon/model-mars-perseverance-rover_webp": {
+      "title": "Perseverance + Ingenuity",
+      "what": "Mars 2020 로버(Mastcam-Z 돛대, 샘플 캐싱 베이, Ingenuity 헬리콥터).",
+      "where": "화성 착륙 지역"
+    },
+    "/images/colophon/model-mars-phoenix_webp": {
+      "title": "Phoenix",
+      "what": "태양 에너지 착륙선(로봇 팔 탑재).",
+      "where": "화성 착륙지"
+    },
+    "/images/colophon/model-mars-insight-lander_webp": {
+      "title": "InSight",
+      "what": "십각형 태양전지판을 갖춘 지구물리 착륙선으로, SEIS 지진계와 HP3 두더지를 탑재하고 있다.",
+      "where": "화성 착륙지"
+    },
+    "/images/colophon/model-mars-mars-3_webp": {
+      "title": "Mars 3",
+      "what": "소비에트 꽃잎형 착륙선 — 화성 최초의 부드러운 착륙.",
+      "where": "화성 착륙지"
+    },
+    "/images/colophon/model-mars-zhurong_webp": {
+      "title": "Tianwen-1 Zhurong",
+      "what": "나비 모양 배열과 마스트를 갖춘 중국 로버.",
+      "where": "화성 착륙지"
+    },
+    "/images/colophon/model-mars-schiaparelli_webp": {
+      "title": "Schiaparelli",
+      "what": "ESA 진입-강하-착륙 시연용 캡슐.",
+      "where": "화성 착륙지"
+    },
+    "/images/colophon/model-mars-beagle-2_webp": {
+      "title": "Beagle 2",
+      "what": "조개껍질 모양의 ESA 착륙선으로 꽃잎형 태양전지판을 갖추고 있다.",
+      "where": "화성 착륙지"
+    },
+    "/images/colophon/model-venus-venera_webp": {
+      "title": "Venera / 베가 착륙선",
+      "what": "소비에트 금성 표면 착륙선 — 토로이드형 충격 흡수 고리 위의 압력 구체.",
+      "where": "금성 표면 표지"
+    },
+    "/images/colophon/model-descent-lunar-powered_webp": {
+      "title": "달 동력 강하",
+      "what": "진공 역추진 강하 단계 — 에어셸이나 낙하산이 없음(Apollo / Chang'e / Luna).",
+      "where": "비행 · 강하/착륙"
+    },
+    "/images/colophon/model-descent-mars-retro_webp": {
+      "title": "화성 낙하산 + 역추진",
+      "what": "에어셸, 초음속 낙하산, 그리고 말기 역추진 로켓(Viking / Phoenix / InSight).",
+      "where": "비행 · 하강/착륙"
+    },
+    "/images/colophon/model-descent-airbag_webp": {
+      "title": "화성 에어백 반동",
+      "what": "사면체 에어백 보호막으로 반동하며 정지함 (Pathfinder / Spirit / Opportunity).",
+      "where": "비행 · 하강/착륙"
+    },
+    "/images/colophon/model-descent-skycrane_webp": {
+      "title": "화성 스카이크레인",
+      "what": "로버를 와이어로 내려놓는 로켓 동력 하강 단계 (Curiosity / Perseverance).",
+      "where": "비행 · 하강/착륙"
+    },
+    "/images/colophon/model-descent-venus-aeroshell_webp": {
+      "title": "금성 에어로셸",
+      "what": "조밀한 대기용 구-원뿔형 진입 캡슐 및 제동 디스크 (Venera / 베가).",
+      "where": "비행 · 하강/착륙"
+    },
+    "/images/colophon/model-descent-asteroid-sampler_webp": {
+      "title": "소행성 터치앤고",
+      "what": "미소 중력 터치앤고용 수집 뿔이 있는 샘플러 버스 (Hayabusa / OSIRIS-REx).",
+      "where": "비행 · 하강/착륙"
+    },
+    "/images/colophon/model-descent-comet-lander_webp": {
+      "title": "혜성 작살 착륙선",
+      "what": "앵커링 작살을 갖춘 세다리 미소 중력 착륙선 (Philae at comet 67P).",
+      "where": "비행 · 하강/착륙"
+    },
+    "/images/colophon/model-descent-jupiter-probe_webp": {
+      "title": "목성 대기 프로브",
+      "what": "심층 대기 진입용 구-원뿔형 에어로셸 및 낙하산 (Galileo probe).",
+      "where": "비행 · 하강/착륙"
+    },
+    "/images/colophon/model-descent-titan-parachute_webp": {
+      "title": "타이탄 낙하산 하강",
+      "what": "타이탄의 안개를 통한 천천한 하강을 위한 에어로셸 및 대형 낙하산 (Huygens).",
+      "where": "비행 · 하강/착륙"
+    },
+    "/images/colophon/model-cruise-curiosity_webp": {
+      "title": "Curiosity 크루즈 단계",
+      "what": "로버를 감싸는 에어로셸 위의 MSL 크루즈 단계 디스크.",
+      "where": "비행 · 크루즈/접근"
+    },
+    "/images/colophon/model-cruise-perseverance_webp": {
+      "title": "Perseverance 순항 단계",
+      "what": "Mars 2020 순항 단계 + 에어로셸(로버 + Ingenuity 내부 밀폐).",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-cruise-insight_webp": {
+      "title": "InSight 순항 단계",
+      "what": "착륙선을 운반하는 에어로셸 위의 순항 단계 원판.",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-cruise-phoenix_webp": {
+      "title": "Phoenix 순항 단계",
+      "what": "극지 착륙선용 순항 단계 + 에어로셸.",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-cruise-mars-pathfinder_webp": {
+      "title": "Pathfinder 순항 단계",
+      "what": "순항 단계 + 에어로셸(에어백 착륙선 + Sojourner 내부).",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-cruise-spirit_webp": {
+      "title": "Spirit 순항 단계",
+      "what": "MER 순항 단계 + 에어로셸.",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-cruise-opportunity_webp": {
+      "title": "Opportunity 순항 단계",
+      "what": "MER 순항 단계 + 에어로셸.",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-cruise-schiaparelli_webp": {
+      "title": "Schiaparelli + TGO",
+      "what": "ExoMars Trace Gas Orbiter가 Schiaparelli 진입 캡슐을 운반합니다.",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-cruise-viking1_webp": {
+      "title": "Viking 궤도선 + 착륙선",
+      "what": "생물 차폐 캡슐 착륙선이 아래에 있는 Viking 궤도선.",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-cruise-mars3_webp": {
+      "title": "Mars 3 버스",
+      "what": "소비에트 M-71 버스와 강하 캡슐, 태양광 날개.",
+      "where": "비행 · 항주/접근"
+    },
+    "/images/colophon/model-cruise-tianwen1_webp": {
+      "title": "Tianwen-1 궤도선",
+      "what": "진입 캡슐(Zhurong 탑재)을 운반하는 궤도선 버스.",
+      "where": "비행 · 항주/접근"
+    },
+    "/images/colophon/model-cruise-apollo11_webp": {
+      "title": "Apollo CSM + LM",
+      "what": "달 전이 스택(Apollo 11–17)을 이루는 커맨드/서비스 모듈과 도킹된 달 착륙선.",
+      "where": "비행 · 항주/접근"
+    },
+    "/images/colophon/model-cruise-artemis3_webp": {
+      "title": "Orion (Artemis)",
+      "what": "4개의 태양광 날개가 있는 Orion 승무원 캡슐과 유럽 서비스 모듈(Artemis III / IV).",
+      "where": "비행 · 항주/접근"
+    },
+    "/images/colophon/model-cruise-luna9_webp": {
+      "title": "Luna 9 직접 상승",
+      "what": "구형 착륙선 캡슐이 탑재된 소비에트 직접 버스.",
+      "where": "비행 · 항주/접근"
+    },
+    "/images/colophon/model-cruise-luna16_webp": {
+      "title": "Luna 표본 반환",
+      "what": "구형 탱크, 상승 단계 및 반환 캡슐이 있는 강하 단계(Luna 16 / 24).",
+      "where": "비행 · 항주/접근"
+    },
+    "/images/colophon/model-cruise-luna17_webp": {
+      "title": "루노호드 운반선",
+      "what": "루노호드 로버를 운반하는 강하 단계 버스(Luna 17 / 21).",
+      "where": "비행 · 항주/접근"
+    },
+    "/images/colophon/model-cruise-change3_webp": {
+      "title": "Chang'e 3 / 4",
+      "what": "Yutu 로버가 탑재된 CNSA 착륙선 강하 단계.",
+      "where": "비행 · 항주/접근"
+    },
+    "/images/colophon/model-cruise-change5_webp": {
+      "title": "Chang'e 5 / 6",
+      "what": "궤도선, 반환기, 상승기, 착륙선으로 이루어진 4단계 표본 반환 스택.",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-cruise-chandrayaan3_webp": {
+      "title": "Chandrayaan-3",
+      "what": "Vikram 착륙선을 운반하는 ISRO 추진 모듈.",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-cruise-slim_webp": {
+      "title": "SLIM",
+      "what": "JAXA의 소형 '문 스나이퍼' 순항 버스.",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-cruise-beresheet_webp": {
+      "title": "Beresheet",
+      "what": "SpaceIL의 소형 원형 네 다리 착륙선(운항 중).",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-cruise-blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1",
+      "what": "Blue Origin의 높은 착륙선 — 네 다리 프레임 위의 중앙 탱크.",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-cruise-hayabusa1_webp": {
+      "title": "Hayabusa 순항",
+      "what": "JAXA 샘플 반환 버스 — 태양 전지판, 샘플러 혼(horn), 이온 엔진.",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-cruise-osiris-rex_webp": {
+      "title": "OSIRIS-REx 순항",
+      "what": "V자 각도의 태양 전지판과 확장된 TAGSAM 샘플러 팔을 가진 상자형 버스.",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-cruise-near-shoemaker_webp": {
+      "title": "NEAR Shoemaker",
+      "what": "십자형의 네 개 고정 태양 전지판과 고정 접시 안테나를 가진 궤도선 버스.",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-cruise-starship-demo_webp": {
+      "title": "Starship",
+      "what": "스테인리스 상단부 — 노즈콘, 전방/후방 플랩, Raptor 클러스터(화성 운항).",
+      "where": "비행 · 순항/접근"
+    },
+    "/images/colophon/model-sat-hubble_webp": {
+      "title": "Hubble",
+      "what": "개구부 문과 태양 윙을 가진 원통형 관측소.",
+      "where": "지구 궤도 마커"
+    },
+    "/images/colophon/model-sat-jwst_webp": {
+      "title": "JWST",
+      "what": "분할된 금색 거울 아래의 테니스 코트 크기 태양 차폐막.",
+      "where": "지구 궤도 마커"
+    },
+    "/images/colophon/model-sat-chandra_webp": {
+      "title": "Chandra",
+      "what": "태양 윙을 가진 길쭉한 X선 관측소.",
+      "where": "지구 궤도 마커"
+    },
+    "/images/colophon/model-sat-xmm_webp": {
+      "title": "XMM-Newton",
+      "what": "긴 ESA X선 망원경 튜브.",
+      "where": "지구 궤도 마커"
+    },
+    "/images/colophon/model-sat-gaia_webp": {
+      "title": "Gaia",
+      "what": "태양 차폐 스커트를 가진 ESA 천체 측정 관측소.",
+      "where": "지구 궤도 마커"
+    },
+    "/images/colophon/model-sat-lro_webp": {
+      "title": "LRO",
+      "what": "달 정찰 궤도선 버스와 접시.",
+      "where": "지구 궤도 마커"
+    },
+    "/images/colophon/model-sat-geo-comsat_webp": {
+      "title": "정지궤도 통신위성",
+      "what": "펼쳐진 태양 윙과 안테나가 있는 박스형 버스.",
+      "where": "지구 궤도 마커"
+    },
+    "/images/colophon/model-sat-nav-constellation_webp": {
+      "title": "항법 성군",
+      "what": "GPS급 위성 성군(GPS / Galileo / GLONASS / BeiDou).",
+      "where": "지구 궤도 마커"
+    },
+    "/images/colophon/model-sat-generic-orbiter_webp": {
+      "title": "일반형 궤도선 버스",
+      "what": "육각형 모선 + 태양전지판 날개 + 안테나, 기관별 대체 구성.",
+      "where": "지구 궤도 마커"
+    },
+    "/images/colophon/model-earth-launchpad_webp": {
+      "title": "발사 시설",
+      "what": "8각형 발사대와 4개의 낙뢰 방지탑 — 케네디, 바이코누르, 주취안 등.",
+      "where": "지구 표면 마커"
+    },
+    "/images/colophon/model-station-iss_webp": {
+      "title": "ISS 대체 모델",
+      "what": "완전한 트러스, 가압 모듈, 도킹된 방문 우주선, 조향 가능한 배열.",
+      "where": "ISS 궤도 장면"
+    },
+    "/images/colophon/model-station-tiangong_webp": {
+      "title": "Tiangong 대체 모델",
+      "what": "T자형 구성의 핵심 모듈 + 실험실 모듈, 도킹된 Shenzhou / Tianzhou, 배열.",
+      "where": "Tiangong 궤도 장면"
+    },
+    "/images/colophon/model-microgravity_webp": {
+      "title": "미중력 축",
+      "what": "6개의 표지된 화살표로 표시되는 우주정거장 국부 좌표계 (천저/지저…).",
+      "where": "ISS + Tiangong 과학 렌즈"
+    },
+    "/images/colophon/model-orbit-rings_webp": {
+      "title": "궤도선 고리 + 마커 후광",
+      "what": "경사각이 기울어진 고도 고리와 선택 발광 후광.",
+      "where": "지구 · 달 · 화성"
+    },
+    "/images/colophon/model-trajectories_webp": {
+      "title": "상징적인 임무 궤적",
+      "what": "Voyager, Pioneer, New Horizons, Cassini, Juno, Dawn 비행 경로.",
+      "where": "탐사"
+    }
+  },
+  "capsules": {
+    "/images/colophon/model-capsule-mercury-capsule_webp": {
+      "title": "머큐리 캡슐",
+      "what": "무딘 제거식 단열 방패, 비늘 모양의 원뿔, 회수 + 안테나 섹션 (Freedom 7 … Faith 7).",
+      "where": "지구 궤도 재진입"
+    },
+    "/images/colophon/model-capsule-gemini-capsule_webp": {
+      "title": "Gemini 캡슐",
+      "what": "2인 승무원 확대형 머큐리로서 근접 레이더 노즈와 어댑터 모듈 포함.",
+      "where": "지구 궤도 재진입"
+    },
+    "/images/colophon/model-capsule-vostok-sphere_webp": {
+      "title": "Vostok",
+      "what": "구형의 샤릭 하강 모듈 — 안테나 스트랩과 장비 칼라; 우주비행사는 따로 분출되어 낙하산으로 착지했다.",
+      "where": "지구 궤도 재진입"
+    },
+    "/images/colophon/model-capsule-voskhod-sphere_webp": {
+      "title": "Voskhod",
+      "what": "같은 샤릭 구형이지만, 이제 지주 트러스에 고체 추진제 연착 레트로 패키지를 장착했다 — 승무원이 지면까지 탔다.",
+      "where": "지구 궤도 재진입"
+    },
+    "/images/colophon/model-capsule-apollo-cm_webp": {
+      "title": "Apollo 사령선",
+      "what": "전형적인 가파른 뭉툭한 원뿔형, 전방 도킹 터널 포함(Apollo 7/9, Skylab, ASTP).",
+      "where": "지구 궤도 재진입"
+    },
+    "/images/colophon/model-capsule-soyuz-sa_webp": {
+      "title": "Soyuz 하강 모듈",
+      "what": "\"헤드램프\" 벨 모양 — 구형 기저 방열막에 원뿔형 승무원 상부.",
+      "where": "지구 궤도 재진입"
+    },
+    "/images/colophon/model-capsule-dragon-capsule_webp": {
+      "title": "Crew Dragon",
+      "what": "SuperDraco 포드와 PICA-X 방열막이 있는 매끈한 원뿔형 동체(Inspiration4, Polaris Dawn).",
+      "where": "지구 궤도 재진입"
+    },
+    "/images/colophon/model-capsule-shenzhou-reentry_webp": {
+      "title": "Shenzhou 재진입 모듈",
+      "what": "넓은 Soyuz 계열 벨 모양 — 자체 밝은 은색 선체와 회색 장비 밴드(Shenzhou-1 이후).",
+      "where": "지구 궤도 재진입"
+    }
+  },
+  "canvas2d": {
+    "/images/app-landing-hero_webp": {
+      "title": "랜딩 페이지 히어로",
+      "what": "납작한 계열의 오르페리 포스터 — 빛나는 태양, 기울어진 궤도 고리, 그리고 강조된 청록색 전이 호.",
+      "where": "홈"
+    },
+    "/images/colophon/viz-system-map_webp": {
+      "title": "2D 시스템 지도",
+      "what": "음영 처리된 행성, 글로우, 궤도 고리, 그리고 토성의 고리가 있는 위에서 본 오르페리.",
+      "where": "2D 모드 탐색"
+    },
+    "/images/colophon/viz-porkchop_webp": {
+      "title": "Porkchop Δv 히트맵",
+      "what": "출발 × 비행 시간 격자를 Lambert 솔버로 색상 매핑한 것.",
+      "where": "전이 계획하기"
+    },
+    "/images/colophon/viz-blueprint_webp": {
+      "title": "스테이션 설계도",
+      "what": "모든 스테이션 모듈의 직교 투영 상단/측면 도면.",
+      "where": "ISS + Tiangong"
+    },
+    "/images/colophon/viz-nation-legend_webp": {
+      "title": "표면 지도 기관 범례",
+      "what": "표면 지도에 그려진 자동 간격 기관 색상 키.",
+      "where": "달 + 화성 2D"
+    },
+    "/images/colophon/model-textlabels_webp": {
+      "title": "3D 텍스트 라벨 스프라이트",
+      "what": "모든 장면의 객체에 빌보드된 캔버스 렌더링 이름 태그.",
+      "where": "지구 · 달 · 화성 · 탐사"
+    }
+  },
+  "ui": {
+    "Science info-chips": {
+      "title": "과학 정보 칩",
+      "what": "모든 도형을 /science 설명으로 연결하는 인라인 \"i\" 글리프.",
+      "where": "전체"
+    },
+    "Panorama compass rose": {
+      "title": "파노라마 나침반 로즈",
+      "what": "파노라마 방향에 맞춰진 회전식 N/E/S/W 마커.",
+      "where": "달 + 화성 파노라마"
+    },
+    "Conic-section icons": {
+      "title": "원추 곡선 아이콘",
+      "what": "궤도 오버레이용 원 / 타원 / 포물선 / 쌍곡선 글리프.",
+      "where": "비행"
+    },
+    "Navigation + control glyphs": {
+      "title": "네비게이션 + 제어 글리프",
+      "what": "햄버거, 과학 렌즈, 명암, 품질, 전체 화면 아이콘.",
+      "where": "모든 경로"
+    }
+  },
+  "writing": {
+    "Mission briefings": {
+      "title": "임무 브리핑",
+      "what": "114개 미션 내러티브 — 발사 역사, 우주선, 비행 프로필 및 결과 — 미션 카드와 Fly 브리핑용으로 작성됨.",
+      "where": "임무 + 비행"
+    },
+    "Fleet catalogue entries": {
+      "title": "함대 카탈로그 항목",
+      "what": "251개의 우주선, 발사체, 우주복, 발사대 및 정거장 부품. 각각 '가장 유명한 점' 한 줄과 전체 설명이 포함됨.",
+      "where": "함대"
+    },
+    "Landing-site stories": {
+      "title": "착륙지 이야기",
+      "what": "달과 화성의 착륙지에 대한 55개 다중 장 서사 역사. 모든 사진에 원본 캡션 포함.",
+      "where": "달 + 화성 sites"
+    },
+    "Science encyclopedia": {
+      "title": "과학 백과사전",
+      "what": "궤도역학, 추진, 우주의 생명, 우주에서의 지구, 우주 비행 역사에 걸친 117개 원본 설명자 — 그리고 모든 그림 캡션.",
+      "where": "과학"
+    },
+    "World profiles": {
+      "title": "천체 프로필",
+      "what": "공전 모형에 표시된 9개 행성과 22개 소행성체(혜성, 소행성, 카이퍼 벨트 천체)에 대한 설명.",
+      "where": "탐사"
+    },
+    "Station module notes": {
+      "title": "정거장 모듈 노트",
+      "what": "모든 22개의 ISS 및 Tiangong 모듈의 운영 및 역사 노트. 청사진 패널용으로 작성됨.",
+      "where": "ISS + Tiangong"
+    },
+    "Surface + panorama captions": {
+      "title": "표면 + 파노라마 캡션",
+      "what": "각 달과 화성 장면에서 무엇을 보고 있는지 이름 지은 핫스팟 레이블과 주석이 달린 파노라마 캡션.",
+      "where": "달 + 화성 panoramas"
+    },
+    "Audio tour scripts": {
+      "title": "오디오 투어 스크립트",
+      "what": "모든 가이드 + 확장 투어 에피소드는 Orrery용으로 원본 작성됨. 음성 합성 목소리만 타사 제공(크레딧 페이지에 표시됨).",
+      "where": "투어 시작"
+    },
+    "Physics Lab formula registry": {
+      "title": "Physics Lab 공식 레지스트리",
+      "what": "Physics Lab은 64개의 원본 공식 정의 위에 구축됨 — 각각 방정식, 매개변수 범위, 실패 방지 추론, 명시된 가정, 계산된 수치 사양 포함 — 실제 물리학에 대해 사내에서 작성됨. 이들이 계산하는 기준 상수(JPL/IAU/EGM96)는 크레딧 페이지에 표시됨.",
+      "where": "물리학 실험실"
+    },
+    "Physics Lab goals": {
+      "title": "물리학 실험실 목표",
+      "what": "25개의 원본 학습 목표 단계가 공식들을 이야기 여행으로 연결합니다. 로켓 발사에서부터 혜성 접촉까지 — 각각에 대해 작성된 실용적 연결 패널과 함께.",
+      "where": "물리학 실험실"
+    },
+    "Physics Lab interface, in 14 languages": {
+      "title": "14개 언어로 제공되는 물리학 실험실 인터페이스",
+      "what": "모든 실험실 문자열 — 공식 제목, 매개변수 레이블, 가정, 내레이션, 오류 상태 — 는 모든 14개 지원 로케일에 걸쳐 원문 작성되고 기계 번역됩니다.",
+      "where": "물리학 실험실"
+    }
+  }
+}

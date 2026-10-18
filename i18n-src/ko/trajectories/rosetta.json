@@ -1,0 +1,42 @@
+{
+  "name": "Rosetta",
+  "current_distance_label": "4.1 AU · 67P 표면으로 제어된 강하 2016-09-30 (임무 종료)",
+  "waypoints": [
+    {
+      "label": "발사 (Ariane 5)"
+    },
+    {
+      "label": "지구 #1"
+    },
+    null,
+    {
+      "label": "화성"
+    },
+    {
+      "label": "지구 #2"
+    },
+    {
+      "label": "소행성 Šteins"
+    },
+    {
+      "label": "지구 #3"
+    },
+    {
+      "label": "소행성 루테티아"
+    },
+    null,
+    null,
+    {
+      "label": "67P 랑데부"
+    },
+    {
+      "label": "Philae 착륙"
+    },
+    {
+      "label": "67P 근일점"
+    },
+    {
+      "label": "67P에 낙하"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Voyager 1",
+  "current_distance_label": "172 AU · 約23.8光時間（太陽からの距離）",
+  "interstellar_since_label": "1982年8月にヘリオポーズを越える — 人類が製造した初の星間空間の物体",
+  "waypoints": [
+    {
+      "label": "打ち上げ"
+    },
+    null,
+    null,
+    {
+      "label": "木星"
+    },
+    null,
+    null,
+    {
+      "label": "土星＋タイタン"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "ペールブルードット"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "ヘリオポーズ"
+    },
+    null,
+    null,
+    {
+      "label": "現在"
+    }
+  ]
+}

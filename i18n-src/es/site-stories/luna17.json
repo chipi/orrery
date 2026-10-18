@@ -1,0 +1,39 @@
+{
+  "intro": "Luna 17 alunizó en Mare Imbrium el 17 de noviembre de 1970 y desplegó el Lunokhod 1, el primer vehículo con ruedas que operó en otro mundo, adelantándose siete meses al LRV de la NASA. El Lunokhod 1 recorrió 10,5 km a lo largo de 11 días lunares, controlado por un equipo de cinco personas en Crimea. Envió 25 000 fotografías y 211 panorámicas antes de enmudecer en septiembre de 1971.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Las primeras ruedas sobre la Luna: el Lunokhod 1",
+      "images": [
+        {
+          "src": "/images/missions/luna17/01.webp",
+          "caption": "Lunokhod 1: chasis de 8 ruedas y 756 kg, alimentado por energía solar y con un RTG de polonio-210 para mantener el calor durante la noche. Diseñado para durar 3 meses, funcionó 10."
+        },
+        {
+          "src": "/images/missions/luna17/02.webp",
+          "caption": "Módulo de aterrizaje de Luna 17 y rampas para el despliegue del Lunokhod 1. El equipo soviético de control remoto trabajaba desde un submarino reconvertido en la costa de Crimea."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Mare Imbrium: alunizaje el 17 de noviembre de 1970",
+      "images": [
+        {
+          "src": "/images/missions/luna17/03.webp",
+          "caption": "El Lunokhod 1 avanza por Mare Imbrium, controlado en tiempo real por un equipo de cinco personas pese al retardo de 2,5 segundos que la velocidad de la luz impone en cada sentido."
+        },
+        {
+          "src": "/images/missions/luna17/04.webp",
+          "caption": "Mapa del recorrido del Lunokhod 1: un zigzag de 10,5 km por Mare Imbrium, con paradas científicas junto a rocas y cráteres."
+        },
+        {
+          "src": "/images/missions/luna17/05.webp",
+          "caption": "Retrorreflector del Lunokhod 1: las estaciones terrestres de telemetría láser lunar lo siguen utilizando hoy, más de 50 años después."
+        }
+      ]
+    }
+  ]
+}

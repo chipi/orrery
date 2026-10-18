@@ -1,0 +1,50 @@
+{
+  "intro": "Opportunity aterrizó en Meridiani Planum el 25 de enero de 2004: un hoyo en uno que hizo rodar al rover, aún rebotando sobre sus airbags, directamente hasta un pequeño cráter (Eagle Crater) cuyas paredes albergaban los primeros «arándanos» ricos en hematita vistos de cerca en Marte. Diseñado para durar 90 soles, Opportunity recorrió 45,16 km a lo largo de 14 años, hasta que una tormenta de polvo planetaria en junio de 2018 cortó su suministro de energía solar. Última transmisión: «Mi batería está baja y se está haciendo de noche».",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Gemelo de Spirit, aterrizado en el lado opuesto de Marte",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/opportunity/01.webp",
+          "caption": "MER-B durante su integración: un hardware idéntico al de Spirit, optimizado para el terreno llano de Marte."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Meridiani Planum — aterrizaje el 25 de enero de 2004",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/opportunity/tier3-pan.jpg",
+          "caption": "Legacy Pan, soles 5084-5111 (mayo-junio de 2018): el último panorama de 360° de Opportunity antes de la tormenta de polvo. Perseverance Valley desciende hacia el cráter Endeavour."
+        },
+        {
+          "src": "/images/hotspots/mars/opportunity/tier2-hirise.jpg",
+          "caption": "El borde del cráter Endeavour, donde Opportunity pasó sus últimos años. El lugar de reposo del rover se encuentra en Perseverance Valley, a la derecha."
+        },
+        {
+          "src": "/images/fleet-galleries/opportunity/02.webp",
+          "caption": "«Arándanos» de hematita: esférulas de escala milimétrica incrustadas en el lecho rocoso de Meridiani. La primera prueba directa de la presencia prolongada de agua líquida en Marte."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciencia",
+      "subtitle": "De Eagle Crater a Endeavour: 14 años de pruebas",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/opportunity/03.webp",
+          "caption": "Lugar del impacto del escudo térmico en el cráter Endurance: Opportunity regresó para inspeccionar su propio material de entrada desechado."
+        },
+        {
+          "src": "/images/fleet-galleries/opportunity/04.webp",
+          "caption": "Afloramientos estratificados de Burns Cliff en el interior del cráter Endurance: registro sedimentario de una antigua masa de agua salada y ácida."
+        }
+      ]
+    }
+  ]
+}

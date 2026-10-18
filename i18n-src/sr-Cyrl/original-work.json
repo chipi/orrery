@@ -1,0 +1,1664 @@
+{
+  "anatomy_art": {
+    "/images/anatomy/akatsuki_webp": {
+      "title": "Akatsuki"
+    },
+    "/images/anatomy/antares_webp": {
+      "title": "Антарес"
+    },
+    "/images/anatomy/apollo-csm-block-ii_webp": {
+      "title": "Apollo CSM Block II"
+    },
+    "/images/anatomy/apollo-lm_webp": {
+      "title": "Apollo Lunar Module"
+    },
+    "/images/anatomy/ariane-1_webp": {
+      "title": "Ariane 1"
+    },
+    "/images/anatomy/ariane-5_webp": {
+      "title": "Ariane 5"
+    },
+    "/images/anatomy/ariane-6_webp": {
+      "title": "Ariane 6"
+    },
+    "/images/anatomy/atlas-lv-3b_webp": {
+      "title": "Atlas LV-3B"
+    },
+    "/images/anatomy/atlas-v_webp": {
+      "title": "Atlas V"
+    },
+    "/images/anatomy/atv_webp": {
+      "title": "ATV (Automated Transfer Vehicle)"
+    },
+    "/images/anatomy/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/anatomy/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/anatomy/blue-moon-mk1_webp": {
+      "title": "Blue Moon Mk1"
+    },
+    "/images/anatomy/buran_webp": {
+      "title": "Buran"
+    },
+    "/images/anatomy/cargo-dragon-2_webp": {
+      "title": "Cargo Dragon 2"
+    },
+    "/images/anatomy/cargo-dragon-v1_webp": {
+      "title": "Cargo Dragon v1"
+    },
+    "/images/anatomy/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/anatomy/chandra_webp": {
+      "title": "Chandra X-ray Observatory"
+    },
+    "/images/anatomy/chandrayaan1_webp": {
+      "title": "Chandrayaan-1"
+    },
+    "/images/anatomy/change-3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/anatomy/change-4_webp": {
+      "title": "Chang'e 4"
+    },
+    "/images/anatomy/change-5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/anatomy/compton-gro_webp": {
+      "title": "Compton Gamma Ray Observatory"
+    },
+    "/images/anatomy/crew-dragon_webp": {
+      "title": "Crew Dragon"
+    },
+    "/images/anatomy/curiosity_webp": {
+      "title": "Curiosity (MSL)"
+    },
+    "/images/anatomy/cygnus-enhanced_webp": {
+      "title": "Cygnus Enhanced"
+    },
+    "/images/anatomy/dart_webp": {
+      "title": "DART"
+    },
+    "/images/anatomy/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/anatomy/delta-ii_webp": {
+      "title": "Delta II"
+    },
+    "/images/anatomy/energia_webp": {
+      "title": "Energia"
+    },
+    "/images/anatomy/euclid_webp": {
+      "title": "Euclid"
+    },
+    "/images/anatomy/europa-clipper_webp": {
+      "title": "Europa Clipper"
+    },
+    "/images/anatomy/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin (ровер мисије ExoMars)"
+    },
+    "/images/anatomy/exomars-tgo_webp": {
+      "title": "ExoMars TGO"
+    },
+    "/images/anatomy/falcon-9_webp": {
+      "title": "Falcon 9 Block 5"
+    },
+    "/images/anatomy/falcon-heavy_webp": {
+      "title": "Falcon Heavy"
+    },
+    "/images/anatomy/gaganyaan_webp": {
+      "title": "Gaganyaan"
+    },
+    "/images/anatomy/gaia_webp": {
+      "title": "Gaia"
+    },
+    "/images/anatomy/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/anatomy/gemini_webp": {
+      "title": "Gemini"
+    },
+    "/images/anatomy/h-iia_webp": {
+      "title": "H-IIA"
+    },
+    "/images/anatomy/h3_webp": {
+      "title": "H3"
+    },
+    "/images/anatomy/hakuto-r_webp": {
+      "title": "Програм Hakuto-R"
+    },
+    "/images/anatomy/hayabusa-2_webp": {
+      "title": "Hayabusa2"
+    },
+    "/images/anatomy/hayabusa_webp": {
+      "title": "Hayabusa"
+    },
+    "/images/anatomy/hitomi_webp": {
+      "title": "Hitomi (ASTRO-H)"
+    },
+    "/images/anatomy/hope_webp": {
+      "title": "Hope (EMM)"
+    },
+    "/images/anatomy/htv-x_webp": {
+      "title": "HTV-X"
+    },
+    "/images/anatomy/htv_webp": {
+      "title": "HTV (Kounotori)"
+    },
+    "/images/anatomy/hubble_webp": {
+      "title": "Свемирски телескоп Hubble"
+    },
+    "/images/anatomy/im-1-odysseus_webp": {
+      "title": "IM-1 Odysseus"
+    },
+    "/images/anatomy/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/anatomy/iss_webp": {
+      "title": "Међународна свемирска станица"
+    },
+    "/images/anatomy/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/anatomy/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/anatomy/jwst_webp": {
+      "title": "James Webb Space Telescope"
+    },
+    "/images/anatomy/kepler_webp": {
+      "title": "Kepler"
+    },
+    "/images/anatomy/long-march-2f_webp": {
+      "title": "Long March 2F"
+    },
+    "/images/anatomy/long-march-3b_webp": {
+      "title": "Long March 3B"
+    },
+    "/images/anatomy/long-march-5_webp": {
+      "title": "Long March 5 / 5B"
+    },
+    "/images/anatomy/long-march-7_webp": {
+      "title": "Long March 7"
+    },
+    "/images/anatomy/lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter (LRO)"
+    },
+    "/images/anatomy/lrv-apollo_webp": {
+      "title": "Лунарно возило"
+    },
+    "/images/anatomy/lucy_webp": {
+      "title": "Lucy"
+    },
+    "/images/anatomy/luna-16_webp": {
+      "title": "Класа Luna 16"
+    },
+    "/images/anatomy/luna-9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/anatomy/lunar-prospector_webp": {
+      "title": "Lunar Prospector"
+    },
+    "/images/anatomy/lunokhod-1_webp": {
+      "title": "Lunokhod 1"
+    },
+    "/images/anatomy/lunokhod-2_webp": {
+      "title": "Lunokhod 2"
+    },
+    "/images/anatomy/lvm3_webp": {
+      "title": "LVM3 (GSLV Mk III)"
+    },
+    "/images/anatomy/m-v_webp": {
+      "title": "M V"
+    },
+    "/images/anatomy/magellan_webp": {
+      "title": "Magellan"
+    },
+    "/images/anatomy/mangalyaan_webp": {
+      "title": "Mangalyaan (MOM)"
+    },
+    "/images/anatomy/mariner-4_webp": {
+      "title": "Mariner 4"
+    },
+    "/images/anatomy/mariner-9_webp": {
+      "title": "Mariner 9"
+    },
+    "/images/anatomy/mars-3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/anatomy/mars-express_webp": {
+      "title": "Mars Express"
+    },
+    "/images/anatomy/mars-odyssey_webp": {
+      "title": "2001 Mars Odyssey"
+    },
+    "/images/anatomy/maven_webp": {
+      "title": "MAVEN"
+    },
+    "/images/anatomy/mercury-capsule_webp": {
+      "title": "Капсула Mercury"
+    },
+    "/images/anatomy/mercury-redstone_webp": {
+      "title": "Mercury-Redstone"
+    },
+    "/images/anatomy/messenger_webp": {
+      "title": "MESSENGER"
+    },
+    "/images/anatomy/mir_webp": {
+      "title": "Mir"
+    },
+    "/images/anatomy/mro_webp": {
+      "title": "Mars Reconnaissance Orbiter"
+    },
+    "/images/anatomy/n1_webp": {
+      "title": "N1"
+    },
+    "/images/anatomy/new-glenn_webp": {
+      "title": "New Glenn"
+    },
+    "/images/anatomy/new-shepard_webp": {
+      "title": "New Shepard"
+    },
+    "/images/anatomy/opportunity_webp": {
+      "title": "Opportunity (MER-B)"
+    },
+    "/images/anatomy/orion_webp": {
+      "title": "Orion"
+    },
+    "/images/anatomy/osiris-rex_webp": {
+      "title": "OSIRIS-REx"
+    },
+    "/images/anatomy/parker-solar-probe_webp": {
+      "title": "Parker Solar Probe"
+    },
+    "/images/anatomy/perseverance_webp": {
+      "title": "Perseverance (Mars 2020)"
+    },
+    "/images/anatomy/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/anatomy/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/anatomy/pioneer-11_webp": {
+      "title": "Pioneer 11"
+    },
+    "/images/anatomy/pragyan_webp": {
+      "title": "Pragyan"
+    },
+    "/images/anatomy/progress-m_webp": {
+      "title": "Progress M"
+    },
+    "/images/anatomy/progress-ms_webp": {
+      "title": "Progress MS"
+    },
+    "/images/anatomy/proton-k_webp": {
+      "title": "Proton-K"
+    },
+    "/images/anatomy/proton-m_webp": {
+      "title": "Proton-M"
+    },
+    "/images/anatomy/pslv-xl_webp": {
+      "title": "PSLV-XL"
+    },
+    "/images/anatomy/pslv_webp": {
+      "title": "Pslv"
+    },
+    "/images/anatomy/psyche-spacecraft_webp": {
+      "title": "Psyche"
+    },
+    "/images/anatomy/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/anatomy/salyut-1_webp": {
+      "title": "Salyut 1"
+    },
+    "/images/anatomy/salyut-6_webp": {
+      "title": "Salyut 6"
+    },
+    "/images/anatomy/salyut-7_webp": {
+      "title": "Salyut 7"
+    },
+    "/images/anatomy/saturn-ib_webp": {
+      "title": "Saturn IB"
+    },
+    "/images/anatomy/saturn-v_webp": {
+      "title": "Saturn V"
+    },
+    "/images/anatomy/schiaparelli_webp": {
+      "title": "Schiaparelli"
+    },
+    "/images/anatomy/shenzhou_webp": {
+      "title": "Shenzhou"
+    },
+    "/images/anatomy/skylab_webp": {
+      "title": "Skylab"
+    },
+    "/images/anatomy/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/anatomy/sls-block-1_webp": {
+      "title": "SLS Block 1"
+    },
+    "/images/anatomy/smart-1_webp": {
+      "title": "SMART-1"
+    },
+    "/images/anatomy/sojourner_webp": {
+      "title": "Sojourner"
+    },
+    "/images/anatomy/solar-orbiter_webp": {
+      "title": "Solar Orbiter"
+    },
+    "/images/anatomy/soyuz-2_webp": {
+      "title": "Soyuz-2"
+    },
+    "/images/anatomy/soyuz-ms_webp": {
+      "title": "Soyuz MS"
+    },
+    "/images/anatomy/soyuz-tma_webp": {
+      "title": "Soyuz TMA"
+    },
+    "/images/anatomy/soyuz_webp": {
+      "title": "Soyuz (11A511)"
+    },
+    "/images/anatomy/space-shuttle-orbiter_webp": {
+      "title": "Space Shuttle Orbiter"
+    },
+    "/images/anatomy/space-shuttle-stack_webp": {
+      "title": "Склоп Space Shuttle-а"
+    },
+    "/images/anatomy/spektr-rg_webp": {
+      "title": "Spektr-RG"
+    },
+    "/images/anatomy/spirit_webp": {
+      "title": "Spirit (MER-A)"
+    },
+    "/images/anatomy/spitzer_webp": {
+      "title": "Spitzer Space Telescope"
+    },
+    "/images/anatomy/starliner_webp": {
+      "title": "Starliner (CST-100)"
+    },
+    "/images/anatomy/starship_webp": {
+      "title": "Starship"
+    },
+    "/images/anatomy/surveyor-3_webp": {
+      "title": "Surveyor 3"
+    },
+    "/images/anatomy/tess_webp": {
+      "title": "TESS"
+    },
+    "/images/anatomy/tiangong-1_webp": {
+      "title": "Tiangong-1"
+    },
+    "/images/anatomy/tiangong-2_webp": {
+      "title": "Tiangong-2"
+    },
+    "/images/anatomy/tiangong_webp": {
+      "title": "Tiangong"
+    },
+    "/images/anatomy/tianwen-1_webp": {
+      "title": "Tianwen-1"
+    },
+    "/images/anatomy/tianzhou_webp": {
+      "title": "Tianzhou"
+    },
+    "/images/anatomy/titan-ii-glv_webp": {
+      "title": "Titan II GLV"
+    },
+    "/images/anatomy/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/anatomy/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/anatomy/venera-7_webp": {
+      "title": "Venera 7-class"
+    },
+    "/images/anatomy/viking-1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/anatomy/vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-3)"
+    },
+    "/images/anatomy/voskhod-11a57_webp": {
+      "title": "Voskhod (11A57)"
+    },
+    "/images/anatomy/vostok-k_webp": {
+      "title": "Vostok-K (8K72K)"
+    },
+    "/images/anatomy/vostok_webp": {
+      "title": "Vostok"
+    },
+    "/images/anatomy/voyager-1_webp": {
+      "title": "Voyager 1"
+    },
+    "/images/anatomy/voyager-2_webp": {
+      "title": "Voyager 2"
+    },
+    "/images/anatomy/vulcan_webp": {
+      "title": "Vulcan Centaur"
+    },
+    "/images/anatomy/x37b_webp": {
+      "title": "X-37B OTV"
+    },
+    "/images/anatomy/xmm-newton_webp": {
+      "title": "XMM-Newton"
+    },
+    "/images/anatomy/yutu-2_webp": {
+      "title": "Yutu-2"
+    },
+    "/images/anatomy/yutu_webp": {
+      "title": "Yutu"
+    },
+    "/images/anatomy/zhurong_webp": {
+      "title": "Zhurong"
+    }
+  },
+  "lab_illustrations": {
+    "/images/lab/goals/apollo-round-trip_webp": {
+      "title": "Apollo – путовање до Месеца и назад"
+    },
+    "/images/lab/goals/catch-the-iss_webp": {
+      "title": "Ухвати МСС"
+    },
+    "/images/lab/goals/choose-an-orbit_webp": {
+      "title": "Изабери орбиту"
+    },
+    "/images/lab/goals/engines-of-the-world_webp": {
+      "title": "Мотори света"
+    },
+    "/images/lab/goals/entry-computer_webp": {
+      "title": "Рачунар за улазак у атмосферу"
+    },
+    "/images/lab/goals/flying-computer_webp": {
+      "title": "Рачунар за летење"
+    },
+    "/images/lab/goals/get-to-mars_webp": {
+      "title": "Стигни до Марса"
+    },
+    "/images/lab/goals/land-on-earth_webp": {
+      "title": "Слети на Земљу"
+    },
+    "/images/lab/goals/land-on-mars_webp": {
+      "title": "Слети на Марс"
+    },
+    "/images/lab/goals/land-on-mercury_webp": {
+      "title": "Слети на Меркур"
+    },
+    "/images/lab/goals/land-on-the-moon_webp": {
+      "title": "Слети на Месец"
+    },
+    "/images/lab/goals/land-on-titan_webp": {
+      "title": "Слети на Титан"
+    },
+    "/images/lab/goals/land-on-venus_webp": {
+      "title": "Слети на Венеру"
+    },
+    "/images/lab/goals/landing-computer_webp": {
+      "title": "Рачунар за слетање"
+    },
+    "/images/lab/goals/launch-a-rocket_webp": {
+      "title": "Лансирај ракету"
+    },
+    "/images/lab/goals/leave-the-solar-system_webp": {
+      "title": "Напусти Сунчев систем"
+    },
+    "/images/lab/goals/moon-phases_webp": {
+      "title": "Мене Месеца"
+    },
+    "/images/lab/goals/motion-first-principles_webp": {
+      "title": "Кретање: основни принципи"
+    },
+    "/images/lab/goals/observe-the-sky_webp": {
+      "title": "Посматрај небо"
+    },
+    "/images/lab/goals/plan-a-mission_webp": {
+      "title": "Планирај мисију"
+    },
+    "/images/lab/goals/probe-jupiter_webp": {
+      "title": "Истражи Јупитер сондом"
+    },
+    "/images/lab/goals/reach-orbit_webp": {
+      "title": "Достигни орбиту"
+    },
+    "/images/lab/goals/reach-the-moon_webp": {
+      "title": "Стигни до Месеца"
+    },
+    "/images/lab/goals/scale-a-rocket_webp": {
+      "title": "Размера ракете"
+    },
+    "/images/lab/goals/touch-small-world_webp": {
+      "title": "Додирни мали свет"
+    }
+  },
+  "diagrams_science": {
+    "/diagrams/science/_cover-cosmology_svg": {
+      "title": "Космологија"
+    },
+    "/diagrams/science/_cover-exoplanets_svg": {
+      "title": "Егзопланете"
+    },
+    "/images/science-covers-v2/_cover-history_webp": {
+      "title": "Историја"
+    },
+    "/images/science-covers-v2/_cover-life-in-space_webp": {
+      "title": "Живот у свемиру"
+    },
+    "/images/science-covers-v2/_cover-mission-phases_webp": {
+      "title": "Фазе мисије"
+    },
+    "/images/science-covers-v2/_cover-observation_webp": {
+      "title": "Посматрање"
+    },
+    "/diagrams/science/_cover-orbits_svg": {
+      "title": "Орбите"
+    },
+    "/diagrams/science/_cover-planets_svg": {
+      "title": "Планете"
+    },
+    "/diagrams/science/_cover-porkchop_svg": {
+      "title": "Поркчоп дијаграм"
+    },
+    "/images/science-covers-v2/_cover-propulsion_webp": {
+      "title": "Погон"
+    },
+    "/diagrams/science/_cover-scales-time_svg": {
+      "title": "Размере времена"
+    },
+    "/images/science-covers-v2/_cover-space-stations_webp": {
+      "title": "Свемирске станице"
+    },
+    "/diagrams/science/_cover-transfers_svg": {
+      "title": "Трансфери"
+    },
+    "/diagrams/science/aerobraking_webp": {
+      "title": "Аеро-кочење"
+    },
+    "/diagrams/science/antenna-arrays_webp": {
+      "title": "Антенски низови"
+    },
+    "/diagrams/science/antimatter-propulsion_webp": {
+      "title": "Погон на антиматерију"
+    },
+    "/diagrams/science/apsides_webp": {
+      "title": "Апсиде"
+    },
+    "/diagrams/science/ascent-guidance_webp": {
+      "title": "Навођење при успону"
+    },
+    "/diagrams/science/asteroid-belt_webp": {
+      "title": "Астероидни појас"
+    },
+    "/diagrams/science/au_webp": {
+      "title": "Астрономска јединица"
+    },
+    "/diagrams/science/ballistic-coefficient_webp": {
+      "title": "Балистички коефицијент"
+    },
+    "/diagrams/science/black-holes_webp": {
+      "title": "Црне рупе"
+    },
+    "/diagrams/science/c3_webp": {
+      "title": "C3"
+    },
+    "/diagrams/science/comms-blackout_webp": {
+      "title": "Прекид везе"
+    },
+    "/diagrams/science/conic-sections_webp": {
+      "title": "Конусни пресеци"
+    },
+    "/diagrams/science/contour-reading_webp": {
+      "title": "Читање контура"
+    },
+    "/diagrams/science/deorbit-corridor_webp": {
+      "title": "Коридор за силазак из орбите"
+    },
+    "/diagrams/science/departure-axis_webp": {
+      "title": "Оса поласка"
+    },
+    "/diagrams/science/dv-budget_webp": {
+      "title": "Буџет DV"
+    },
+    "/diagrams/science/dv-heatmap_webp": {
+      "title": "Топлотна карта DV"
+    },
+    "/diagrams/science/eccentricity_webp": {
+      "title": "Ексцентричност"
+    },
+    "/diagrams/science/ecliptic-plane_webp": {
+      "title": "Раван еклиптике"
+    },
+    "/diagrams/science/edl_webp": {
+      "title": "EDL"
+    },
+    "/diagrams/science/entry-footprint_webp": {
+      "title": "Подручје уласка"
+    },
+    "/diagrams/science/entry-heating_webp": {
+      "title": "Загревање при уласку"
+    },
+    "/diagrams/science/escape-velocity_webp": {
+      "title": "Брзина бекства"
+    },
+    "/diagrams/science/eva_webp": {
+      "title": "EVA"
+    },
+    "/diagrams/science/eva-suits_webp": {
+      "title": "Одела за EVA"
+    },
+    "/diagrams/science/exo-astrometry_webp": {
+      "title": "Егзо астрометрија"
+    },
+    "/diagrams/science/exo-direct-imaging_webp": {
+      "title": "Егзо директно снимање"
+    },
+    "/diagrams/science/exo-habitable-zone_webp": {
+      "title": "Егзо настањива зона"
+    },
+    "/diagrams/science/exo-microlensing_webp": {
+      "title": "Егзо микросочивање"
+    },
+    "/diagrams/science/exo-radial-velocity_webp": {
+      "title": "Егзо радијална брзина"
+    },
+    "/diagrams/science/exo-resonance_webp": {
+      "title": "Егзо резонанца"
+    },
+    "/diagrams/science/exo-transit_webp": {
+      "title": "Егзо транзит"
+    },
+    "/diagrams/science/exo-transit-timing_webp": {
+      "title": "Егзо мерење времена транзита"
+    },
+    "/diagrams/science/expander-cycle_webp": {
+      "title": "Експандерски циклус"
+    },
+    "/diagrams/science/expedition-cadence_webp": {
+      "title": "Ритам експедиција"
+    },
+    "/diagrams/science/frames_webp": {
+      "title": "Координатни системи"
+    },
+    "/diagrams/science/free-return_webp": {
+      "title": "Слободан повратак"
+    },
+    "/diagrams/science/fusion-propulsion_webp": {
+      "title": "Фузијски погон"
+    },
+    "/diagrams/science/gas-generator_webp": {
+      "title": "Генератор гаса"
+    },
+    "/diagrams/science/gravity-assist_webp": {
+      "title": "Гравитациона праћка"
+    },
+    "/diagrams/science/hertzsprung-russell_webp": {
+      "title": "Hertzsprung-Russell"
+    },
+    "/diagrams/science/history-apollo-11_webp": {
+      "title": "Историја: Apollo 11"
+    },
+    "/diagrams/science/history-goddard-rocket_webp": {
+      "title": "Историја: Годардова ракета"
+    },
+    "/diagrams/science/history-keplers-laws_webp": {
+      "title": "Историја: Кеплерови закони"
+    },
+    "/diagrams/science/history-newton-principia_webp": {
+      "title": "Историја: Њутнови Principia"
+    },
+    "/diagrams/science/history-sputnik_webp": {
+      "title": "Историја: Sputnik"
+    },
+    "/diagrams/science/history-tsiolkovsky_webp": {
+      "title": "Историја: Циолковски"
+    },
+    "/diagrams/science/hohmann-transfer_webp": {
+      "title": "Хоманов трансфер"
+    },
+    "/diagrams/science/inclination_webp": {
+      "title": "Нагиб орбите"
+    },
+    "/diagrams/science/interplanetary-internet_webp": {
+      "title": "Међупланетарни интернет"
+    },
+    "/diagrams/science/ion-drive_webp": {
+      "title": "Јонски погон"
+    },
+    "/diagrams/science/iva-suits_webp": {
+      "title": "IVA одела"
+    },
+    "/diagrams/science/j2000_webp": {
+      "title": "J2000"
+    },
+    "/diagrams/science/keplerian-orbit_webp": {
+      "title": "Кеплерова орбита"
+    },
+    "/diagrams/science/keplers-laws_webp": {
+      "title": "Кеплерови закони"
+    },
+    "/diagrams/science/kuiper-belt_webp": {
+      "title": "Којперов појас"
+    },
+    "/diagrams/science/lagrange-points_webp": {
+      "title": "Лагранжове тачке"
+    },
+    "/diagrams/science/lambert-problem_webp": {
+      "title": "Ламбертов проблем"
+    },
+    "/diagrams/science/laser-sail_webp": {
+      "title": "Ласерско једро"
+    },
+    "/diagrams/science/launch_webp": {
+      "title": "Лансирање"
+    },
+    "/diagrams/science/lifting-entry_webp": {
+      "title": "Улазак са узгоном"
+    },
+    "/diagrams/science/light-minute_webp": {
+      "title": "Светлосни минут"
+    },
+    "/diagrams/science/long-duration_webp": {
+      "title": "Дуго трајање"
+    },
+    "/diagrams/science/lunar-ice_webp": {
+      "title": "Месечев лед"
+    },
+    "/diagrams/science/lunar-suits_webp": {
+      "title": "Месечева одела"
+    },
+    "/diagrams/science/met_webp": {
+      "title": "MET"
+    },
+    "/diagrams/science/microgravity-physiology_webp": {
+      "title": "Физиологија у микрогравитацији"
+    },
+    "/diagrams/science/mission-types_webp": {
+      "title": "Врсте мисија"
+    },
+    "/diagrams/science/node-module_webp": {
+      "title": "Модул-чвор"
+    },
+    "/diagrams/science/nrho_webp": {
+      "title": "NRHO"
+    },
+    "/diagrams/science/nuclear-thermal_webp": {
+      "title": "Нуклеарно-термални погон"
+    },
+    "/diagrams/science/oberth-effect_webp": {
+      "title": "Обертов ефекат"
+    },
+    "/diagrams/science/optical-comms_webp": {
+      "title": "Оптичка комуникација"
+    },
+    "/diagrams/science/orbit-insertion_webp": {
+      "title": "Убацивање у орбиту"
+    },
+    "/diagrams/science/orbit-regimes_webp": {
+      "title": "Режими орбита"
+    },
+    "/diagrams/science/our-galaxy_webp": {
+      "title": "Наша галаксија"
+    },
+    "/diagrams/science/patched-conics_webp": {
+      "title": "Спојене конике"
+    },
+    "/diagrams/science/porkchop_webp": {
+      "title": "Поркчоп дијаграм"
+    },
+    "/diagrams/science/pressurized-volume_webp": {
+      "title": "Под притиском запремина"
+    },
+    "/diagrams/science/propulsive-landing_webp": {
+      "title": "Погонско слетање"
+    },
+    "/diagrams/science/regolith_webp": {
+      "title": "Реголит"
+    },
+    "/diagrams/science/semi-major-axis_webp": {
+      "title": "Велика полуоса"
+    },
+    "/diagrams/science/sidereal-synodic_webp": {
+      "title": "Сидерички и синодички период"
+    },
+    "/diagrams/science/skip-entry_webp": {
+      "title": "Улазак са одскоком"
+    },
+    "/diagrams/science/skycrane_webp": {
+      "title": "Skycrane"
+    },
+    "/diagrams/science/solar-power-budget_webp": {
+      "title": "Биланс соларне енергије"
+    },
+    "/diagrams/science/solar-sail_webp": {
+      "title": "Соларно једро"
+    },
+    "/diagrams/science/space-photography_webp": {
+      "title": "Фотографија у свемиру"
+    },
+    "/diagrams/science/specific-impulse_webp": {
+      "title": "Специфични импулс"
+    },
+    "/diagrams/science/staged-combustion_webp": {
+      "title": "Степенасто сагоревање"
+    },
+    "/diagrams/science/synodic-period_webp": {
+      "title": "Синодички период"
+    },
+    "/diagrams/science/tcm_webp": {
+      "title": "TCM"
+    },
+    "/diagrams/science/terminal-velocity_webp": {
+      "title": "Терминална брзина"
+    },
+    "/diagrams/science/tof-axis_webp": {
+      "title": "Tof оса"
+    },
+    "/diagrams/science/trans-x-injection_webp": {
+      "title": "Trans X убацивање"
+    },
+    "/diagrams/science/transfer-ellipse_webp": {
+      "title": "Трансферна елипса"
+    },
+    "/diagrams/science/true-anomaly_webp": {
+      "title": "Права аномалија"
+    },
+    "/diagrams/science/tsiolkovsky_webp": {
+      "title": "Циолковски"
+    },
+    "/diagrams/science/v-infinity_webp": {
+      "title": "V бесконачно"
+    },
+    "/diagrams/science/viability_webp": {
+      "title": "Одрживост"
+    },
+    "/diagrams/science/vis-viva_webp": {
+      "title": "Vis Viva"
+    }
+  },
+  "posters": {
+    "/images/posters/solar-system-orrery_jpg": {
+      "title": "Сунчев систем"
+    },
+    "/images/posters/solar-system-procession_jpg": {
+      "title": "Сунчев систем"
+    },
+    "/images/posters/earth_jpg": {
+      "title": "Земља"
+    },
+    "/images/posters/moon_jpg": {
+      "title": "Месец"
+    },
+    "/images/posters/mars_jpg": {
+      "title": "Марс"
+    },
+    "/images/posters/saturn-v_jpg": {
+      "title": "Saturn V"
+    },
+    "/images/posters/mir_jpg": {
+      "title": "Mir"
+    },
+    "/images/posters/sputnik_jpg": {
+      "title": "Sputnik"
+    },
+    "/images/posters/soyuz_jpg": {
+      "title": "Soyuz"
+    },
+    "/images/posters/voyager_jpg": {
+      "title": "Voyager"
+    },
+    "/images/posters/sojourner_jpg": {
+      "title": "Sojourner"
+    },
+    "/images/posters/footprints_jpg": {
+      "title": "Отисци стопала"
+    },
+    "/images/posters/gagarin_jpg": {
+      "title": "Гагарин"
+    },
+    "/images/posters/rosetta_jpg": {
+      "title": "Rosetta"
+    },
+    "/images/posters/huygens_jpg": {
+      "title": "Huygens"
+    },
+    "/images/posters/hayabusa2_jpg": {
+      "title": "Hayabusa2"
+    },
+    "/images/posters/artemis-ii_jpg": {
+      "title": "Artemis II"
+    },
+    "/images/posters/iss_jpg": {
+      "title": "МСС"
+    },
+    "/images/posters/tiangong_jpg": {
+      "title": "Tiangong"
+    },
+    "/images/posters/perseverance_jpg": {
+      "title": "Perseverance"
+    },
+    "/images/posters/space-shuttle_jpg": {
+      "title": "Space Shuttle"
+    },
+    "/images/posters/solar-sail_jpg": {
+      "title": "Сунчево једро"
+    },
+    "/images/posters/nuclear-drive_jpg": {
+      "title": "Нуклеарни погон"
+    },
+    "/images/posters/jwst_jpg": {
+      "title": "James Webb"
+    },
+    "/images/posters/hubble_jpg": {
+      "title": "Hubble"
+    },
+    "/images/posters/cassini_jpg": {
+      "title": "Cassini"
+    },
+    "/images/posters/starship_jpg": {
+      "title": "Starship"
+    }
+  },
+  "models3d": {
+    "/images/colophon/craft-cassini_webp": {
+      "title": "Cassini–Huygens",
+      "what": "Антена високог појачања, носачи RTG-а и сонда Huygens — орбитер Сатурна.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/craft-voyager-1_webp": {
+      "title": "Voyager",
+      "what": "Антена од 3,7 m, носач магнетометра и RTG решеткаста конструкција — носећа платформа програма Grand Tour.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/craft-galileo_webp": {
+      "title": "Galileo",
+      "what": "Двостручно ротирајућа платформа са савијеном кишобранском антеном великог појачања.",
+      "where": "Лет + истраживање"
+    },
+    "/images/colophon/craft-new-horizons_webp": {
+      "title": "New Horizons",
+      "what": "Компактна троугаона платформа са једном антеном — сонда за прелет поред Плутона.",
+      "where": "Лет + истраживање"
+    },
+    "/images/colophon/craft-pioneer-10_webp": {
+      "title": "Pioneer",
+      "what": "Антена стабилизована ротацијом, RTG носачи и угравирана плоча.",
+      "where": "Лет + истраживање"
+    },
+    "/images/colophon/craft-juno_webp": {
+      "title": "Juno",
+      "what": "Три огромна соларна крила око шестоугаоне платформе — орбитер у поларној орбити око Јупитера.",
+      "where": "Лет + истраживање"
+    },
+    "/images/colophon/craft-bepicolombo_webp": {
+      "title": "BepiColombo",
+      "what": "Спојени транзитни модул + орбитери око Меркура са јонским потисницима.",
+      "where": "Лет + истраживање"
+    },
+    "/images/colophon/craft-dawn_webp": {
+      "title": "Dawn",
+      "what": "Платформа са јонским погоном и широким соларним крилима — орбитер око Весте и Церере.",
+      "where": "Лет + истраживање"
+    },
+    "/images/colophon/craft-giotto_webp": {
+      "title": "Giotto",
+      "what": "Бубњаст ротирајући апарат са штитом од прашине — прелет поред Халејеве комете.",
+      "where": "Лет + истраживање"
+    },
+    "/images/colophon/craft-hayabusa2_webp": {
+      "title": "Hayabusa2",
+      "what": "Кутијаста платформа са соларним панелима и рогом за узимање узорака — астероид Рјугу.",
+      "where": "Лет + истраживање"
+    },
+    "/images/colophon/craft-juice_webp": {
+      "title": "JUICE",
+      "what": "Крстасти соларни низови на компактној платформи — орбитер ледених месеца Јупитера.",
+      "where": "Лет + истраживање"
+    },
+    "/images/colophon/craft-rosetta_webp": {
+      "title": "Rosetta",
+      "what": "Соларна крила од 14 m око модула за јурњаву за кометом + лендер Philae.",
+      "where": "Лет + истраживање"
+    },
+    "/images/colophon/craft-ulysses_webp": {
+      "title": "Ulysses",
+      "what": "Соларна поларна сонда на RTG погон са једном антеном.",
+      "where": "Лет + истраживање"
+    },
+    "/images/colophon/craft-vega-1_webp": {
+      "title": "Вега",
+      "what": "Совјетски прелет Венере + матична летелица балона са покретном антеном.",
+      "where": "Лет + истраживање"
+    },
+    "/images/colophon/craft-venera-13_webp": {
+      "title": "Venera 13",
+      "what": "Совјетски лендер за Венеру — тороидални аероштит и прстен за слетање.",
+      "where": "Лет + истраживање"
+    },
+    "/images/colophon/model-launcher-generic_webp": {
+      "title": "Генеричка ракета-носач",
+      "what": "Двостепено тело налик ракети Falcon-9 — резервна силуета прилагођена агенцији.",
+      "where": "Лет · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-saturn-v_webp": {
+      "title": "Saturn V",
+      "what": "Сужени склоп од три степена, пет млазница F-1, шара ротације на облози и торањ за спасавање.",
+      "where": "Лет · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-saturn-ib_webp": {
+      "title": "Saturn IB",
+      "what": "Радна снага програма Apollo за LEO — склопљени први степен S-IB са осам мотора H-1 испод истог S-IVB + CSM.",
+      "where": "Лет · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-vostok-k_webp": {
+      "title": "Soyuz / R-7",
+      "what": "Језгро са Корољовљевим крстом и четири сужена бочна појачивача.",
+      "where": "Лет · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-ariane-5_webp": {
+      "title": "Ariane 5",
+      "what": "Криогено језгро између два висока ракетна појачивача на чврсто гориво, испод избочене аеродинамичке капе.",
+      "where": "Лет · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-h-iia_webp": {
+      "title": "H-IIA",
+      "what": "Јапанско криогено језгро са паром ракетних појачивача на чврсто гориво.",
+      "where": "Лет · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-space-shuttle-stack_webp": {
+      "title": "Space Shuttle",
+      "what": "Спољни резервоар, два SRB појачивача и орбитер са делта-крилима.",
+      "where": "Лет · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-falcon-9_webp": {
+      "title": "Falcon 9",
+      "what": "Витко двостепено тело — октавеб од девет мотора, решеткасти кормилари и ноге за слетање.",
+      "where": "Лет · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-starship_webp": {
+      "title": "Starship / Super Heavy",
+      "what": "Потпуно поновљиво употребљив склоп од голог нерђајућег челика — 33 Raptor-а на Super Heavy-ју, 6 на Starship-у, предња и задња крилца и огивални нос.",
+      "where": "Лет · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-atlas-v_webp": {
+      "title": "Atlas V",
+      "what": "Широко језгро са RD-180 мотором, избоченом капом за кориснички терет и опционим појачивачима на чврсто гориво.",
+      "where": "Лет · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-proton-k_webp": {
+      "title": "Proton-K",
+      "what": "Совјетска тешка ракета — централно језгро опасано са шест спољних резервоара горива.",
+      "where": "Лет · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-titan-ii-glv_webp": {
+      "title": "Titan II GLV",
+      "what": "Витка, уједначена двостепена ракета која је лансирала капсуле Gemini са посадом.",
+      "where": "Лет · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-atlas-lv-3b_webp": {
+      "title": "Atlas LV-3B",
+      "what": "Mercury-Atlas са полуторним степеном, сукњом погонских мотора и торњем за спасавање.",
+      "where": "Fly · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-mercury-redstone_webp": {
+      "title": "Mercury-Redstone",
+      "what": "Прва америчка ракета-носач с посадом — витка Redstone с једним мотором и четири репна стабилизатора, капсулом Mercury и торњем за спасавање (Freedom 7).",
+      "where": "Fly · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-long-march-2f_webp": {
+      "title": "Long March 2F",
+      "what": "Кинеска ракета-носач с посадом — централни степен, четири помоћна бустера на течно гориво и торањ за спасавање при лансирању (Shenzhou).",
+      "where": "Fly · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-long-march-3b_webp": {
+      "title": "Long March 3B",
+      "what": "Кинеска радна снага за GTO — централни степен са четири помоћна бустера на течно гориво (лунарне мисије Chang’e).",
+      "where": "Fly · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-long-march-5_webp": {
+      "title": "Long March 5",
+      "what": "Кинеска тешка „Fat Five“ — широк криогени централни степен са четири велика бустера.",
+      "where": "Fly · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-pslv_webp": {
+      "title": "PSLV",
+      "what": "Радна снага агенције ISRO — витак централни степен окружен са шест помоћних бустера на чврсто гориво.",
+      "where": "Fly · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-lvm3_webp": {
+      "title": "LVM3 / GSLV Mk III",
+      "what": "ISRO-ова тешка ракета-носач — централни степен са два велика бустера S200 на чврсто гориво (Chandrayaan-3).",
+      "where": "Fly · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-m-v_webp": {
+      "title": "M-V",
+      "what": "JAXA-ина тространа ракета-носач на чврсто гориво у свим степенима (Hayabusa).",
+      "where": "Fly · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-h3_webp": {
+      "title": "H3",
+      "what": "JAXA-ин нови криогени централни степен са помоћним бустерима на чврсто гориво.",
+      "where": "Лет · лансирање/успон"
+    },
+    "/images/colophon/model-launcher-ariane-1_webp": {
+      "title": "Ariane 1",
+      "what": "Први европски ракета-носач — витак тростепени дизајн из 1979. (Giotto).",
+      "where": "Лет · лансирање/успон"
+    },
+    "/images/colophon/model-moon-apollo-lm_webp": {
+      "title": "Apollo Lunar Module",
+      "what": "Спуштајући и узлетни степен, златна MLI фолија и RCS групе од по четири потисника.",
+      "where": "Места слетања на Месец"
+    },
+    "/images/colophon/model-moon-apollo-lm-extended_webp": {
+      "title": "Apollo LM (J-мисија + LRV)",
+      "what": "LM за дужи боравак упарен са Lunar Roving Vehicle.",
+      "where": "Места слетања на Месец"
+    },
+    "/images/colophon/model-moon-luna-9_webp": {
+      "title": "Luna 9",
+      "what": "Совјетска сфера која је послала прве снимке са површине Месеца.",
+      "where": "Места слетања на Месец"
+    },
+    "/images/colophon/model-moon-luna-sample-return_webp": {
+      "title": "Luna за повратак узорака",
+      "what": "Узлетна ракета на врху спуштајуће платформе (Luna 16 / 20 / 24).",
+      "where": "Места слетања на Месец"
+    },
+    "/images/colophon/model-moon-lunokhod_webp": {
+      "title": "Lunokhod ровер",
+      "what": "Совјетски ровер са осам точкова и склопивим соларним поклопцем.",
+      "where": "Места слетања на Месец"
+    },
+    "/images/colophon/model-moon-chang-e-lander_webp": {
+      "title": "Chang’e лендер",
+      "what": "CNSA-ин спуштајући степен са узлетном капсулом (Chang’e 5 / 6).",
+      "where": "Места слетања на Месец"
+    },
+    "/images/colophon/model-moon-yutu_webp": {
+      "title": "Yutu ровер",
+      "what": "Кинески ровер са шест точкова и склопивим соларним панелима.",
+      "where": "Места слетања на Месец"
+    },
+    "/images/colophon/model-moon-chandrayaan-3-vikram_webp": {
+      "title": "Chandrayaan-3 Vikram",
+      "what": "ISRO-ов лендер са четири ноге који је допремио ровер Pragyan.",
+      "where": "Места слетања на Месец"
+    },
+    "/images/colophon/model-moon-slim_webp": {
+      "title": "SLIM",
+      "what": "JAXA-ин прецизни спусни степен са два мотора, „Снајпер за Месец“.",
+      "where": "Места слетања на Месец"
+    },
+    "/images/colophon/model-moon-beresheet_webp": {
+      "title": "Beresheet",
+      "what": "Компактни лендер са четири ноге компаније SpaceIL.",
+      "where": "Места слетања на Месец"
+    },
+    "/images/colophon/model-mars-viking_webp": {
+      "title": "Viking",
+      "what": "NASA-ин лендер на три ноге са RTG-ом и руком за узимање узорака.",
+      "where": "Места слетања на Марс"
+    },
+    "/images/colophon/model-mars-pathfinder-sojourner_webp": {
+      "title": "Pathfinder + Sojourner",
+      "what": "Тетраедарски лендер са ваздушним јастуцима и први ровер на Марсу.",
+      "where": "Места слетања на Марс"
+    },
+    "/images/colophon/model-mars-mer_webp": {
+      "title": "MER (Spirit / Opportunity)",
+      "what": "Ровер са рокер-боги вешањем и соларним крилима налик лептиру.",
+      "where": "Места слетања на Марс"
+    },
+    "/images/colophon/model-mars-curiosity_webp": {
+      "title": "Curiosity",
+      "what": "Ровер класе MSL са RTG-ом, јарболом и руком.",
+      "where": "Места слетања на Марс"
+    },
+    "/images/colophon/model-mars-perseverance-rover_webp": {
+      "title": "Perseverance + Ingenuity",
+      "what": "Ровер мисије Mars 2020 са јарболом Mastcam-Z, одељком за складиштење узорака и хеликоптером Ingenuity.",
+      "where": "Места слетања на Марс"
+    },
+    "/images/colophon/model-mars-phoenix_webp": {
+      "title": "Phoenix",
+      "what": "Соларни стационарни lander са роботском руком.",
+      "where": "Места слетања на Марс"
+    },
+    "/images/colophon/model-mars-insight-lander_webp": {
+      "title": "InSight",
+      "what": "Геофизички lander у облику декагона са соларним панелима, сеизмометром SEIS и кртицом HP3.",
+      "where": "Места слетања на Марс"
+    },
+    "/images/colophon/model-mars-mars-3_webp": {
+      "title": "Mars 3",
+      "what": "Совјетски lander са латицама — прво меко спуштање на Марс.",
+      "where": "Места слетања на Марс"
+    },
+    "/images/colophon/model-mars-zhurong_webp": {
+      "title": "Tianwen-1 Zhurong",
+      "what": "Кинески rover са лептирастим соларним панелима и јарболом.",
+      "where": "Места слетања на Марс"
+    },
+    "/images/colophon/model-mars-schiaparelli_webp": {
+      "title": "Schiaparelli",
+      "what": "ESA-ина капсула за демонстрацију уласка, спуштања и слетања.",
+      "where": "Места слетања на Марс"
+    },
+    "/images/colophon/model-mars-beagle-2_webp": {
+      "title": "Beagle 2",
+      "what": "ESA-ин lander у облику шкољке са соларним панелима у облику латица.",
+      "where": "Места слетања на Марс"
+    },
+    "/images/colophon/model-venus-venera_webp": {
+      "title": "Venera / Vega лендер",
+      "what": "Совјетски lander за површину Венере — сфера под притиском на торусном прстену за апсорпцију удара.",
+      "where": "Ознаке на површини Венере"
+    },
+    "/images/colophon/model-descent-lunar-powered_webp": {
+      "title": "Лунарно моторно спуштање",
+      "what": "Степен за ретро-спуштање у вакууму — без аеро-штита и падобрана (Apollo / Chang’e / Luna).",
+      "where": "Лет · спуштање/слетање"
+    },
+    "/images/colophon/model-descent-mars-retro_webp": {
+      "title": "Падобран + ретро-мотори на Марсу",
+      "what": "Аеро-штит, надзвучни падобран и завршни ретро-ракетни мотори (Viking / Phoenix / InSight).",
+      "where": "Лет · спуштање/слетање"
+    },
+    "/images/colophon/model-descent-airbag_webp": {
+      "title": "Одбијање ваздушних јастука на Марсу",
+      "what": "Тетраедарски кокон од ваздушних јастука који се одбија до мировања (Pathfinder / Spirit / Opportunity).",
+      "where": "Лет · спуштање/слетање"
+    },
+    "/images/colophon/model-descent-skycrane_webp": {
+      "title": "Небеска дизалица за Марс",
+      "what": "Степен за спуштање на ракетни погон који спушта ровер на ужадима (Curiosity / Perseverance).",
+      "where": "Лет · спуштање/слетање"
+    },
+    "/images/colophon/model-descent-venus-aeroshell_webp": {
+      "title": "Аеро-омотач за Венеру",
+      "what": "Капсула за улазак у атмосферу у облику сфере и купе и кочиони диск за густу атмосферу (Venera / Вега).",
+      "where": "Лет · спуштање/слетање"
+    },
+    "/images/colophon/model-descent-asteroid-sampler_webp": {
+      "title": "Додир и полетање на астероиду",
+      "what": "Свемирска летелица за узимање узорака са сабирним левком — додир и полетање у микрогравитацији (Hayabusa / OSIRIS-REx).",
+      "where": "Лет · спуштање/слетање"
+    },
+    "/images/colophon/model-descent-comet-lander_webp": {
+      "title": "Лендер са харпунима за комету",
+      "what": "Лендер са три ноге за микрогравитацију са харпунима за учвршћивање (Philae на комети 67P).",
+      "where": "Лет · спуштање/слетање"
+    },
+    "/images/colophon/model-descent-jupiter-probe_webp": {
+      "title": "Атмосферска сонда за Јупитер",
+      "what": "Аеро-омотач у облику сфере и купе и падобран за улазак дубоко у атмосферу (сонда Galileo).",
+      "where": "Лет · спуштање/слетање"
+    },
+    "/images/colophon/model-descent-titan-parachute_webp": {
+      "title": "Спуштање падобраном на Титан",
+      "what": "Аеро-омотач и велики падобран за споро спуштање кроз измаглицу на Титану (Huygens).",
+      "where": "Лет · спуштање/слетање"
+    },
+    "/images/colophon/model-cruise-curiosity_webp": {
+      "title": "Крузни степен летелице Curiosity",
+      "what": "Диск крузног степена летелице MSL изнад аеро-омотача који обавија ровер.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-perseverance_webp": {
+      "title": "Крузни степен Perseverance-а",
+      "what": "Крузни степен мисије Mars 2020 + аеро-штит (унутра су запечаћени rover и Ingenuity).",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-insight_webp": {
+      "title": "Крузни степен InSight-а",
+      "what": "Диск крузног степена изнад аеро-штита који носи lander.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-phoenix_webp": {
+      "title": "Крузни степен Phoenix-а",
+      "what": "Крузни степен + аеро-штит за поларни lander.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-mars-pathfinder_webp": {
+      "title": "Крузни степен Pathfinder-а",
+      "what": "Крузни степен + аеро-штит (lander са ваздушним јастуцима + Sojourner унутра).",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-spirit_webp": {
+      "title": "Крузни степен Spirit-а",
+      "what": "Крузни степен MER-а + аеро-штит.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-opportunity_webp": {
+      "title": "Крузни степен Opportunity-ја",
+      "what": "Крузни степен MER-а + аеро-штит.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-schiaparelli_webp": {
+      "title": "Schiaparelli + TGO",
+      "what": "ExoMars Trace Gas Orbiter који носи капсулу за улазак у атмосферу Schiaparelli.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-viking1_webp": {
+      "title": "Viking орбитер + лендер",
+      "what": "Viking orbiter са lander-ом у капсули са биоштитом испод.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-mars3_webp": {
+      "title": "Модул летелице Mars 3",
+      "what": "Совјетски модул M-71 са спусном капсулом и соларним крилима.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-tianwen1_webp": {
+      "title": "Tianwen-1 орбитер",
+      "what": "Орбитални модул који носи капсулу за улазак у атмосферу (унутра је Zhurong).",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-apollo11_webp": {
+      "title": "Apollo CSM + LM",
+      "what": "Командно-сервисни модул спојен са Лунарним модулом — склоп за лет ка Месецу (Apollo 11–17).",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-artemis3_webp": {
+      "title": "Orion (Artemis)",
+      "what": "Посада капсула Orion + Европски сервисни модул са четири соларна крила (Artemis III / IV).",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-luna9_webp": {
+      "title": "Luna 9 директним узлетом",
+      "what": "Совјетски директни модул са сферном капсулом лендера на врху.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-luna16_webp": {
+      "title": "Luna за повратак узорака",
+      "what": "Спусни степен са сферним резервоарима, узлетни степен и повратна капсула (Luna 16 / 24).",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-luna17_webp": {
+      "title": "Носач Lunokhod-а",
+      "what": "Модул спусног степена који носи ровер Lunokhod (Luna 17 / 21).",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-change3_webp": {
+      "title": "Chang’e 3 / 4",
+      "what": "Спусни степен лендера CNSA са ровером Yutu причвршћеним на врху.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-change5_webp": {
+      "title": "Chang’e 5 / 6",
+      "what": "Склоп од четири модула за повратак узорака — орбитер, модул за повратак, узлетни модул и лендер.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-chandrayaan3_webp": {
+      "title": "Chandrayaan-3",
+      "what": "ISRO-ов погонски модул који носи лендер Vikram.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-slim_webp": {
+      "title": "SLIM",
+      "what": "JAXA-ин компактни крсташки модул „Moon Sniper“.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-beresheet_webp": {
+      "title": "Beresheet",
+      "what": "SpaceIL-ов мали округли лендер на четири ноге током путовања.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1",
+      "what": "Blue Origin-ов висок лендер — централни резервоар на оквиру са четири ноге.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-hayabusa1_webp": {
+      "title": "Hayabusa на крстарењу",
+      "what": "JAXA-ин модул за повратак узорака — соларна крила, рог за узимање узорака и јонски мотори.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-osiris-rex_webp": {
+      "title": "OSIRIS-REx на крстарењу",
+      "what": "Кутијаст модул са соларним крилима постављеним у облику слова V и испруженом руком TAGSAM за узимање узорака.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-near-shoemaker_webp": {
+      "title": "NEAR Shoemaker",
+      "what": "Орбитални модул са четири фиксна соларна панела у облику крста и фиксном антеном.",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-cruise-starship-demo_webp": {
+      "title": "Starship",
+      "what": "Горњи степен од нерђајућег челика — конус на врху, предња и задња крилца и скуп мотора Raptor (прелет ка Марсу).",
+      "where": "Лет · крстарење/приближавање"
+    },
+    "/images/colophon/model-sat-hubble_webp": {
+      "title": "Hubble",
+      "what": "Цилиндрична опсерваторија са поклопцем отвора и соларним крилима.",
+      "where": "Орбиталне означке Земље"
+    },
+    "/images/colophon/model-sat-jwst_webp": {
+      "title": "JWST",
+      "what": "Штитник од Сунца величине тениског терена испод сегментираног златног огледала.",
+      "where": "Орбиталне означке Земље"
+    },
+    "/images/colophon/model-sat-chandra_webp": {
+      "title": "Chandra",
+      "what": "Издужена рендгенска опсерваторија са соларним крилима.",
+      "where": "Орбиталне означке Земље"
+    },
+    "/images/colophon/model-sat-xmm_webp": {
+      "title": "XMM-Newton",
+      "what": "Дуга цев ESA-иног рендгенског телескопа.",
+      "where": "Орбиталне означке Земље"
+    },
+    "/images/colophon/model-sat-gaia_webp": {
+      "title": "Gaia",
+      "what": "ESA-ина астрометријска опсерваторија са сенилом у облику сукње.",
+      "where": "Орбиталне означке Земље"
+    },
+    "/images/colophon/model-sat-lro_webp": {
+      "title": "LRO",
+      "what": "Платформа и антена сонде Lunar Reconnaissance Orbiter.",
+      "where": "Орбиталне означке Земље"
+    },
+    "/images/colophon/model-sat-geo-comsat_webp": {
+      "title": "GEO комуникациони сателит",
+      "what": "Кутијаста платформа са развијеним соларним крилима и антенама.",
+      "where": "Орбиталне означке Земље"
+    },
+    "/images/colophon/model-sat-nav-constellation_webp": {
+      "title": "Навигациона констелација",
+      "what": "Група сателита класе GPS-а (GPS / Galileo / GLONASS / BeiDou).",
+      "where": "Орбиталне означке Земље"
+    },
+    "/images/colophon/model-sat-generic-orbiter_webp": {
+      "title": "Општа платформа орбитера",
+      "what": "Шестоугаона платформа + соларна крила + антена, резервна израда прилагођена агенцији.",
+      "where": "Маркери Земљине орбите"
+    },
+    "/images/colophon/model-earth-launchpad_webp": {
+      "title": "Лансирни комплекс",
+      "what": "Осмоугаона платформа са четири громобранска торња — Кенеди, Бајконур, Ђиуцјуен и други.",
+      "where": "Маркери Земљине површине"
+    },
+    "/images/colophon/model-station-iss_webp": {
+      "title": "МСС прокси модел",
+      "what": "Комплетна решеткаста конструкција, модули под притиском, приведени посетиоци и покретни низови панела.",
+      "where": "Орбитална сцена МСС"
+    },
+    "/images/colophon/model-station-tiangong_webp": {
+      "title": "Tiangong прокси модел",
+      "what": "Језгро у T-конфигурацији + лабораторијски модули, приведени Shenzhou / Tianzhou и низови панела.",
+      "where": "Орбитална сцена Tiangong"
+    },
+    "/images/colophon/model-microgravity_webp": {
+      "title": "Осе микрогравитације",
+      "what": "Шест означених стрелица које показују локални оквир станице (зенит/надир…).",
+      "where": "МСС + Tiangong: научни поглед"
+    },
+    "/images/colophon/model-orbit-rings_webp": {
+      "title": "Прстенови орбитера + ореоли маркера",
+      "what": "Висински прстенови нагнути према инклинацији и сјајни ореоли избора.",
+      "where": "Земља · Месец · Марс"
+    },
+    "/images/colophon/model-trajectories_webp": {
+      "title": "Прославена путање мисија",
+      "what": "Путање лета: Voyager, Pioneer, New Horizons, Cassini, Juno, Dawn.",
+      "where": "Истражи"
+    }
+  },
+  "capsules": {
+    "/images/colophon/model-capsule-mercury-capsule_webp": {
+      "title": "Капсула Mercury",
+      "what": "Тупи аблативни топлотни штит, љуспасти конус и одељак за спасавање + антену (Freedom 7 … Faith 7).",
+      "where": "Улазак у атмосферу из Земљине орбите"
+    },
+    "/images/colophon/model-capsule-gemini-capsule_webp": {
+      "title": "Капсула Gemini",
+      "what": "Дводедна увећана верзија капсуле Mercury са носом за радар за сусрет у орбити и адаптерским модулом.",
+      "where": "Улазак у атмосферу из Земљине орбите"
+    },
+    "/images/colophon/model-capsule-vostok-sphere_webp": {
+      "title": "Vostok",
+      "what": "Сферни спусни модул Sharik — траке за антене и обруч за опрему; космонаут се катапултирао и спустио падобраном одвојено.",
+      "where": "Улазак у атмосферу из Земљине орбите"
+    },
+    "/images/colophon/model-capsule-voskhod-sphere_webp": {
+      "title": "Voskhod",
+      "what": "Иста сфера Sharik, сада са ретро-склопом на чврсто гориво за меко слетање, постављеним на носачу од шипки — посада се у њој спустила све до тла.",
+      "where": "Улазак у атмосферу из Земљине орбите"
+    },
+    "/images/colophon/model-capsule-apollo-cm_webp": {
+      "title": "Командни модул Apollo",
+      "what": "Класични стрми тупи конус са предњим спојним тунелом (Apollo 7/9, Skylab, ASTP).",
+      "where": "Улазак у атмосферу из Земљине орбите"
+    },
+    "/images/colophon/model-capsule-soyuz-sa_webp": {
+      "title": "Спусни модул Soyuz",
+      "what": "Звоно налик фару — сферни топлотни штит на дну и конусни део за посаду на врху.",
+      "where": "Улазак у атмосферу из Земљине орбите"
+    },
+    "/images/colophon/model-capsule-dragon-capsule_webp": {
+      "title": "Crew Dragon",
+      "what": "Витко конусно тело са SuperDraco модулима и топлотним штитом PICA-X (Inspiration4, Polaris Dawn).",
+      "where": "Улазак у атмосферу из Земљине орбите"
+    },
+    "/images/colophon/model-capsule-shenzhou-reentry_webp": {
+      "title": "Модул за улазак у атмосферу Shenzhou",
+      "what": "Широко звоно из лозе Soyuz — сопствени светлији сребрни труп са сивим појасом за опрему (од Shenzhou-1 надаље).",
+      "where": "Улазак у атмосферу из Земљине орбите"
+    }
+  },
+  "canvas2d": {
+    "/images/app-landing-hero_webp": {
+      "title": "Јунак почетне странице",
+      "what": "Постер равног модела Сунчевог система — усијано Сунце, нагнути орбитални прстенови и један истакнут цијан трансферни лук.",
+      "where": "Почетна"
+    },
+    "/images/colophon/viz-system-map_webp": {
+      "title": "2D мапа система",
+      "what": "Модел Сунчевог система из птичје перспективе са осенченим планетама, сјајем, орбиталним прстеновима и Сатурновим прстеновима.",
+      "where": "Истражи 2D режим"
+    },
+    "/images/colophon/viz-porkchop_webp": {
+      "title": "Porkchop топлотна мапа Δv",
+      "what": "Мрежа полазак × трајање лета, обојена на основу резултата Lambert решавача.",
+      "where": "Планирајте трансфер"
+    },
+    "/images/colophon/viz-blueprint_webp": {
+      "title": "Нацрти станица",
+      "what": "Ортографске пројекције одозго и са стране за сваки модул станице.",
+      "where": "МСС + Tiangong"
+    },
+    "/images/colophon/viz-nation-legend_webp": {
+      "title": "Легенда нација на површинским мапама",
+      "what": "Аутоматски размакнут кључ боја агенција, исцртан на равним површинским мапама.",
+      "where": "Месец + Mars 2D"
+    },
+    "/images/colophon/model-textlabels_webp": {
+      "title": "3D спрајтови за текстуалне ознаке",
+      "what": "Именске налепнице исцртане на платну, увек окренуте ка камери, на објектима у свакој сцени.",
+      "where": "Земља · Месец · Марс · Истражи"
+    }
+  },
+  "ui": {
+    "Science info-chips": {
+      "title": "Научни инфо-чипови",
+      "what": "Уметнути симбол „i“ који повезује сваку вредност са њеним објашњењем на /science.",
+      "where": "Свуда"
+    },
+    "Panorama compass rose": {
+      "title": "Компас-ружа панораме",
+      "what": "Ротирајућа ознака N/E/S/W оријентисана према ротацији панораме по азимуту.",
+      "where": "Панораме Месеца и Марса"
+    },
+    "Conic-section icons": {
+      "title": "Иконе конусних пресека",
+      "what": "Симболи круга, елипсе, параболе и хиперболе за приказ орбите.",
+      "where": "Лет"
+    },
+    "Navigation + control glyphs": {
+      "title": "Навигациони и контролни симболи",
+      "what": "Иконе хамбургер менија, научног објектива, контраста, квалитета и целог екрана.",
+      "where": "Свака рута"
+    }
+  },
+  "writing": {
+    "Mission briefings": {
+      "title": "Брифинзи о мисијама",
+      "what": "114 приповести о мисијама — историја лансирања, летелица, профил лета и резултати — написаних за картице мисија и Fly прегледе.",
+      "where": "Мисије + Fly"
+    },
+    "Fleet catalogue entries": {
+      "title": "Одреднице каталога флоте",
+      "what": "251 летелица, ракета-носача, одела, лансирних рампи и компоненти станица, свака са одредницом „по чему је најпознатија“ и потпуним прозним профилом.",
+      "where": "Флота"
+    },
+    "Landing-site stories": {
+      "title": "Приче о места слетања",
+      "what": "55 вишепоглавних приповедних историја места слетања на Месецу и Марсу, са оригиналним натписима уз сваку фотографију.",
+      "where": "Места на Месецу + Марсу"
+    },
+    "Science encyclopedia": {
+      "title": "Научна енциклопедија",
+      "what": "117 оригиналних објашњења из орбиталне механике, погона, живота у свемиру, Земље из свемира и историје свемирских летова — плус сваки натпис уз слику.",
+      "where": "Наука"
+    },
+    "World profiles": {
+      "title": "Профили светова",
+      "what": "Описни текстови за 9 планета и 22 мала тела — комете, астероиде и објекте Којперовог појаса — приказана на орерију.",
+      "where": "Истражи"
+    },
+    "Station module notes": {
+      "title": "Белешке о модулима станица",
+      "what": "Оперативне и историјске белешке за свих 22 модула станица МСС и Tiangong, написане за панеле са нацртима.",
+      "where": "МСС + Tiangong"
+    },
+    "Surface + panorama captions": {
+      "title": "Натписи за површину + панораме",
+      "what": "Ознаке жаришних тачака и анотирани натписи панорама који именују оно што гледате на свакој сцени Месеца и Марса.",
+      "where": "Панораме Месеца + Марса"
+    },
+    "Audio tour scripts": {
+      "title": "Скрипте за аудио туре",
+      "what": "Свака епизода вођене + проширене туре оригинално је написана за Orrery; једино су гласови за претварање текста у говор од трећих страна (наведени на страници Заслуге).",
+      "where": "Крени у обилазак"
+    },
+    "Physics Lab formula registry": {
+      "title": "Регистар формула Physics Lab",
+      "what": "Physics Lab је заснован на 64 оригиналне дефиниције формула — свака са својом једначином, распонима параметара, поштеним образложењем грешака, наведеним претпоставкама и спецификацијом израчунате вредности — написаних у сопственој режији на основу праве физике. Референтне константе из којих се рачунају (JPL/IAU/EGM96) наведене су на страници Заслуге.",
+      "where": "Лабораторија физике"
+    },
+    "Physics Lab goals": {
+      "title": "Циљеви у Лабораторији физике",
+      "what": "25 оригиналних лествица циљева учења које повезују формуле у приповедана путовања — од лансирања ракете до додира с кометом — уз писани панел практичне повезаности за свако од њих.",
+      "where": "Лабораторија физике"
+    },
+    "Physics Lab interface, in 14 languages": {
+      "title": "Интерфејс Лабораторије физике на 14 језика",
+      "what": "Сваки текст у Лабораторији физике — наслови формула, називи параметара, претпоставке, нарација, стања грешке — оригинално је написан и машински преведен на свих 14 подржаних локалитета.",
+      "where": "Лабораторија физике"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "intro": "Chang'e 4 s'est posée dans le cratère Von Kármán le 3 janvier 2019 — premier atterrissage en douceur sur la face cachée de la Lune, d'où la Terre n'est jamais visible. Les communications étaient relayées par le satellite Queqiao, placé au point L2. Elle a déployé le rover Yutu-2, qui a parcouru plus de 1,5 km et fonctionne toujours en 2026, ce qui en fait la mission de surface lunaire restée active le plus longtemps de l'histoire. Elle a découvert des matériaux du manteau à l'état intact dans le bassin du pôle Sud–Aitken.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Matériel",
+      "subtitle": "Premier atterrisseur lunaire sur la face cachée + satellite relais au point L2 (Queqiao)",
+      "images": [
+        {
+          "src": "/images/missions/change4/01.webp",
+          "caption": "L'atterrisseur Chang'e 4 et le rover Yutu-2 lors de l'intégration avant le lancement, à Pékin."
+        },
+        {
+          "src": "/images/missions/change4/02.webp",
+          "caption": "Le satellite relais Queqiao au point L2 : sans lui, Chang'e 4 n'aurait eu aucun contact avec la Terre. La Chine a bâti une infrastructure de communication lunaire avant de se rendre sur la face cachée."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Cratère Von Kármán, face cachée — atterrissage le 3 janvier 2019",
+      "images": [
+        {
+          "src": "/images/missions/change4/03.webp",
+          "caption": "Le rover Yutu-2 photographié par l'atterrisseur Chang'e 4 : les premières roues posées sur la face cachée de la Lune."
+        },
+        {
+          "src": "/images/missions/change4/04.webp",
+          "caption": "Yutu-2 inspecte une bille vitreuse à la surface : probablement un fragment de roche fondue par impact, issu d'un lointain épisode de cratérisation."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "La science",
+      "subtitle": "Matériaux du manteau dans le bassin Pôle Sud-Aitken",
+      "images": [
+        {
+          "src": "/images/missions/change4/05.webp",
+          "caption": "Les spectres du VNIS ont révélé de l'olivine et du pyroxène pauvre en calcium : des minéraux du manteau lunaire, mis à nu par l'impact du bassin SPA il y a environ 4,2 milliards d'années."
+        }
+      ]
+    }
+  ]
+}

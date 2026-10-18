@@ -1,0 +1,30 @@
+{
+  "name": "Dawn",
+  "current_distance_label": "2.8 AU · 自2018年10月31日月末以来稳定绕谷神星轨道运行（约20年轨道寿命）",
+  "waypoints": [
+    {
+      "label": "发射"
+    },
+    null,
+    null,
+    {
+      "label": "火星借力"
+    },
+    null,
+    null,
+    {
+      "label": "灶神星轨道"
+    },
+    {
+      "label": "灶神星离轨"
+    },
+    null,
+    null,
+    {
+      "label": "谷神星轨道插入"
+    },
+    {
+      "label": "寿命终结（今日）"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "BepiColombo",
+  "current_distance_label": "0,48 UA · en route vers l'insertion en orbite de Mercure 2026-12-05",
+  "waypoints": [
+    {
+      "label": "Lancement (Ariane 5)"
+    },
+    null,
+    {
+      "label": "Terre"
+    },
+    {
+      "label": "Vénus n°1"
+    },
+    {
+      "label": "Vénus n°2"
+    },
+    {
+      "label": "Mercure n°1"
+    },
+    {
+      "label": "Mercure n°2"
+    },
+    {
+      "label": "Mercure n°3"
+    },
+    {
+      "label": "Mercure n°4"
+    },
+    {
+      "label": "Mercure n°5"
+    },
+    {
+      "label": "Mercure n°6"
+    },
+    null,
+    {
+      "label": "Insertion en orbite de Mercure"
+    }
+  ]
+}

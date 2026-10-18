@@ -1,0 +1,50 @@
+{
+  "intro": "Beagle 2는 영국이 주도해 만든 소형 ESA 착륙선으로, 2003년 12월 19일 Mars Express에서 분리되었습니다. 그러나 엿새 뒤 교신이 끊겼고, 추락한 것으로 추정되었습니다. 이후 12년 동안 그 운명은 알려지지 않았습니다. 2015년 1월 16일, NASA의 HiRISE 카메라가 지표면에 있는 착륙선을 포착했습니다. 착륙선은 온전했지만 태양광 패널이 일부만 펼쳐져 안테나를 가리고 있었습니다. 착륙은 성공했지만, 집에 전화할 방법이 없었던 것입니다. 이 발견으로 이 임무는 부분적 성공으로 재평가되었습니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "33kg, 지금까지 시도된 행성 간 착륙선 중 가장 작은 기체",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/01.webp",
+          "caption": "Beagle 2 착륙선 렌더링 — 조개껍데기 모양 덮개 안에 꽃잎형 전개식 태양전지판, Pillinger Lab, 대기 관측 장비가 들어 있습니다."
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/03.webp",
+          "caption": "전시 중인 Beagle 2 지구 복제품 — 프리스비를 닮은 착륙선의 아담한 형태를 짐작할 수 있습니다."
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/05.webp",
+          "caption": "Seacombe의 Spaceport에 전시된 Beagle 2 엔지니어링 모델 — 태양전지판 꽃잎이 설계대로 완전히 펼쳐져 있습니다."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "2003년 6월 2일 — 바이코누르에서 Soyuz/Fregat로 발사, Mars Express에 얹혀 가는 방식",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/02.webp",
+          "caption": "2003년 12월 19일, Mars Express에서 분리되는 Beagle 2 — 예정된 착륙 엿새 전이며, 탄도 진입 궤적을 따랐습니다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "지표면",
+      "subtitle": "이시디스 평원 — 2003년 12월 25일 착륙(교신 없이)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/04.webp",
+          "caption": "Beagle 2 발견! MRO HiRISE 영상(2015년 1월) — 태양광 패널이 일부만 펼쳐지고 안테나가 가려진 모습이 보이며, 기체는 온전합니다. 12년 동안 이어진 수수께끼가 풀렸습니다."
+        },
+        {
+          "src": "/images/hotspots/mars/beagle2/tier2-hirise.jpg",
+          "caption": "이시디스 평원에 있는 Beagle 2 착륙 지점의 HiRISE 상세 영상 — 이 축척에서 착륙선 자체는 한 픽셀에도 못 미치는 작은 점일 뿐이며, 이를 찾아내려면 여러 장면과 여러 조명 조건의 영상을 대조해야 합니다."
+        }
+      ]
+    }
+  ]
+}

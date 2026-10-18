@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 14는 1971년 2월 5일 프라 마우로 고지 고지에 착륙했습니다. 원래 Apollo 13의 목표 지점이었던 이곳은 13호의 폭발 사고 이후에야 임무가 완수되었습니다. 셰퍼드와 미첼은 모듈형 장비 운반차(Modular Equipment Transporter, 일명 인력거)를 끌고 콘 분화구의 비탈을 올랐고, 39억 년 전 비의 바다를 만든 거대 충돌의 파편인 각력암 43kg을 가져왔습니다. 셰퍼드가 이륙 전에 골프공 두 개를 친 일화는 유명합니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "Kitty Hawk + 안타레스 + 인력거",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/01.webp",
+          "caption": "Apollo 14 승무원: 앨런 셰퍼드(선장 — 10년 전 미국인 최초로 우주에 간 인물), 스튜어트 루사(사령선 조종사), 에드거 미첼(달착륙선 조종사)."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "프라 마우로 고지 — 1971년 2월 5일 착륙",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/02.webp",
+          "caption": "미첼과 모듈형 장비 운반차(MET) — \"인력거\"로 불린 이 수레는 도구와 시료를 싣고 콘 분화구 방향의 비탈을 올랐습니다."
+        },
+        {
+          "src": "/images/missions/apollo14/03.webp",
+          "caption": "콘 분화구 가장자리 — 승무원들은 가장자리에서 약 30m 앞까지 올랐지만, 체력 소진과 통신 제약 때문에 되돌아와야 했습니다."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo14/tier3-pan.jpg",
+          "caption": "Apollo 14 착륙 지점 파노라마 — 안타레스 하강단과 ALSEP이 보입니다."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "비의 바다 충돌 각력암 시료",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/04.webp",
+          "caption": "\"Big Bertha\" — 시료 14321, 8.99kg의 각력암으로, 지금까지 발견된 가장 오래된 지구 암석(41억 년 된 저콘)을 품고 있습니다. 초기 지구에 일어난 충돌로 달까지 날아온 것입니다."
+        }
+      ]
+    }
+  ]
+}

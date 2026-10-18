@@ -1,0 +1,76 @@
+{
+  "intro": "NASA의 로버 Curiosity는 2011년 11월 26일 케이프 커내버럴에서 Atlas V에 실려 발사되었습니다. 254일간의 순항 끝에 Mars Science Laboratory는 2012년 8월 6일, 이제는 유명해진 스카이크레인 방식의 착륙으로 899킬로그램의 원자력 로버를 게일 분화구에 내려놓았습니다. 10년이 넘게 지난 지금도 Curiosity는 샤프 산을 오르며, 한때 생명이 살 수 있었던 화성의 과거 기록을 간직한 암석에 구멍을 뚫고 있습니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "게일 분화구를 위한 로버 제작",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/01.webp",
+          "caption": "JPL에서 조립된 Mars Science Laboratory — 플로리다로 보내기 위해 Curiosity, 하강 단계, 백셸과 열 차폐막을 차례로 쌓아 올린 모습."
+        },
+        {
+          "src": "/images/missions/curiosity/02.webp",
+          "caption": "MMRTG 원자력 전원(오른쪽 아래의 주황색 원반)은 14년 이상 약 110와트를 끊임없이 공급합니다. 태양 전지판도, 겨울철 가동 중단도 없습니다."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "2011년 11월 26일 — 케이프 커내버럴에서 발사된 Atlas V",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/03.webp",
+          "caption": "Mars Science Laboratory와 Curiosity를 실은 Atlas V 541이 SLC-41에서 이륙하는 모습. 2011년 11월 26일 오전 10시 02분(미국 동부 표준시)."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "게일 분화구 — 2012년 8월 6일 착륙",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
+          "caption": "Mont Mercou 파노라마, 3070솔(2021년 3월). Mastcam-Z로 360° 훑어 촬영한 이 사진에는 로버와 Mt Mercou의 층층이 쌓인 절벽, 지평선 위의 샤프 산이 담겨 있습니다."
+        },
+        {
+          "src": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
+          "caption": "Mars Reconnaissance Orbiter가 픽셀당 25센티미터 해상도로 포착한 Curiosity 주행 경로의 HiRISE 상공 촬영 이미지."
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/01.webp",
+          "caption": "1126솔, \"Big Sky\" 시추 지점에서 찍은 셀프 카메라 사진 — 수십 장의 MAHLI 근접 사진을 한 장으로 이어 붙인 합성 이미지."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "고대 화성이 생명이 살 수 있는 환경이었다는 증거",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/02.webp",
+          "caption": "Yellowknife Bay의 시추 구멍 — 화성의 과거 호수 바닥 환경에서 얻은 첫 번째 시료, 2013년 1월."
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/03.webp",
+          "caption": "베라 루빈 능선의 퇴적암 — 줄무늬 철 광층과 점토 광물은 고대의 액체 상태 물과 생명이 살 수 있는 화학 환경을 보여 줍니다."
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "title": "사람들",
+      "subtitle": "Curiosity를 만든 엔지니어와 과학자들",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/04.webp",
+          "caption": "JPL 관제센터가 '공포의 7분'으로 불린 스카이크레인 착륙의 성공을 축하하는 모습, 2012년 8월 5일/6일 — 게일 분화구에서 첫 신호가 들어온 직후의 애덤 스텔츠너와 팀."
+        }
+      ]
+    }
+  ]
+}

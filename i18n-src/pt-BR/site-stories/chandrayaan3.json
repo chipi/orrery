@@ -1,0 +1,46 @@
+{
+  "intro": "A Chandrayaan-3 pousou perto do polo sul lunar em 23 de agosto de 2023 — o primeiro pouso suave da Índia na Lua e o pouso mais próximo do polo sul já realizado por qualquer nação. O módulo de pouso Vikram liberou o rover Pragyan, que percorreu cerca de 100 m ao longo de 14 dias em busca de gelo de água em terreno permanentemente sombreado. A Índia tornou-se a quarta nação a realizar um pouso suave na Lua, depois da URSS, dos EUA e da China.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Módulo de pouso Vikram + rover Pragyan",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/01.webp",
+          "caption": "A pilha da espaçonave Chandrayaan-3 durante a integração pré-lançamento na ISRO, em Sriharikota."
+        },
+        {
+          "src": "/images/missions/chandrayaan3/02.webp",
+          "caption": "Rover Pragyan — 26 kg, movido a energia solar, com 6 rodas. Projetado para percorrer o regolito do polo sul lunar em busca de voláteis."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "14 de julho de 2023 — LVM3 a partir do Satish Dhawan Space Centre",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/03.webp",
+          "caption": "O LVM3 (\"Bahubali\") lança a Chandrayaan-3 — trânsito de 40 dias, com captura lunar em várias voltas e trajetória lenta intencional para maximizar a margem de combustível."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Shiv Shakti Point, perto do polo sul lunar — pouso em 23 de agosto de 2023",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/04.webp",
+          "caption": "O módulo de pouso Vikram na superfície polar sul — toque no solo a 69,37°S, o pouso lunar de maior latitude já realizado."
+        },
+        {
+          "src": "/images/missions/chandrayaan3/05.webp",
+          "caption": "O rover Pragyan descendo a rampa — as primeiras rodas no polo sul lunar, fotografadas pelas câmeras de bordo do Vikram."
+        }
+      ]
+    }
+  ]
+}

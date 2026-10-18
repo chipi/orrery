@@ -1,0 +1,30 @@
+{
+  "name": "Dawn",
+  "current_distance_label": "2,8 AU · in stabiele Ceres-baan sinds EOM 2018-10-31 (~20 jaar baanlevensduur)",
+  "waypoints": [
+    {
+      "label": "Lancering"
+    },
+    null,
+    null,
+    {
+      "label": "Mars-assistentie"
+    },
+    null,
+    null,
+    {
+      "label": "Vesta-baan"
+    },
+    {
+      "label": "Vertrek uit Vesta-baan"
+    },
+    null,
+    null,
+    {
+      "label": "Invoeg in Ceres-baan"
+    },
+    {
+      "label": "EOM (vandaag)"
+    }
+  ]
+}

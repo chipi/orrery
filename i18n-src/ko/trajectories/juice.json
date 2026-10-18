@@ -1,0 +1,29 @@
+{
+  "name": "JUICE",
+  "current_distance_label": "0.94 AU · 지구 #2 플라이바이를 향해 이동 중 2026-09-29 (항해 레그 2/5)",
+  "waypoints": [
+    {
+      "label": "발사 (Ariane 5)"
+    },
+    null,
+    {
+      "label": "달-지구 플라이바이"
+    },
+    null,
+    {
+      "label": "금성 플라이바이"
+    },
+    null,
+    {
+      "label": "지구 #2"
+    },
+    null,
+    {
+      "label": "지구 #3"
+    },
+    null,
+    {
+      "label": "목성 궤도 진입"
+    }
+  ]
+}

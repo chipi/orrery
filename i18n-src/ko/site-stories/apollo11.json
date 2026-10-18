@@ -1,0 +1,57 @@
+{
+  "intro": "Apollo 11은 1969년 7월 20일 20:17 UTC에 고요의 바다에 착륙했습니다. 다른 천체에 사람이 탄 우주선이 착륙한 것은 이번이 처음이었습니다. 암스트롱과 올드린은 달 착륙선 Eagle 밖에서 2시간 31분을 보냈고, 콜린스는 머리 위 궤도에서 Columbia를 타고 돌았습니다. 승무원들은 21.5kg의 달 시료를 가지고 돌아왔고, 발자국과 레트로리플렉터 배열(지금도 지구에서 쏘는 레이저에 쓰입니다), 그리고 명판 하나를 남겼습니다. 명판에는 이렇게 적혀 있습니다. \"우리는 全 인류를 위해 평화롭게 왔다.\"",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "Saturn V + 사령선 Columbia + 달 착륙선 Eagle",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/01.webp",
+          "caption": "39A 발사대에 선 Apollo 11의 Saturn V SA-506. 높이 110.6m로, 실제 임무에 투입된 발사체 중 역대 가장 강력했습니다."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "1969년 7월 16일 — 케네디 우주 센터에서 발사된 Saturn V",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/02.webp",
+          "caption": "1969년 7월 16일 13:32 UTC 이륙. 2시간 44분 뒤 TLI 연소로 Apollo 11은 초속 11km로 달을 향해 나아갔습니다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "고요의 바다 — 1969년 7월 20일 착륙",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/03.webp",
+          "caption": "달 착륙선 사다리를 내려오는 버즈 올드린. 암스트롱이 촬영했습니다. \"웅장한 황량함\"은 올드린이 달 표면에서 남긴 첫마디였습니다."
+        },
+        {
+          "src": "/images/missions/apollo11/04.webp",
+          "caption": "고요의 기지에 남은 올드린의 발자국. 진공 속에서 반세기가 넘도록 변함없이 보존되어 있습니다."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo11/tier3-pan.jpg",
+          "caption": "고요의 기지 전경. 달 착륙선 Eagle의 하강단, EASEP 과학 장비 세트, 미국 국기, 그리고 달에서 가장 유명한 발자국이 보입니다."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "21.5kg의 현무암 시료, 레트로리플렉터 배열, 지진계",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/05.webp",
+          "caption": "달 시료 10072. 기공이 있는 바다 현무암으로, 37억 년 전에 만들어졌습니다. 지구에서 연구된 최초의 다른 천체 암석입니다."
+        }
+      ]
+    }
+  ]
+}

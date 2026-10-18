@@ -1,0 +1,32 @@
+{
+  "name": "New Horizons",
+  "current_distance_label": "66 UA · em missão estendida — rumo à região de estagnação da heliosfera",
+  "interstellar_since_label": "Cruzará a heliopausa por volta de 2040 — terceira sonda destinada a alcançar o espaço interestelar",
+  "waypoints": [
+    {
+      "label": "Lançamento"
+    },
+    {
+      "label": "Asteroide APL"
+    },
+    null,
+    null,
+    {
+      "label": "Assistência de Júpiter"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Plutão"
+    },
+    null,
+    {
+      "label": "Arrokoth"
+    },
+    null,
+    {
+      "label": "Atualmente"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "intro": "Schiaparelli, la deuxième tentative d'atterrissage de l'Europe sur Mars, s'est séparé d'ExoMars Trace Gas Orbiter le 16 octobre 2016, puis s'est écrasé sur Meridiani Planum à environ 540 km/h trois jours plus tard. Une défaillance logicielle a provoqué le largage prématuré du parachute et l'arrêt des propulseurs de freinage 50 secondes trop tôt, alors que l'atterrisseur se trouvait encore à 3,7 km au-dessus de la surface. Les débris ont été repérés par HiRISE, à bord de MRO, en moins d'une semaine. Les enseignements tirés de cet échec ont façonné le rover ExoMars Rosalind Franklin, dont le lancement est désormais prévu en 2028.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "EDM — module de démonstration d'entrée, de descente et d'atterrissage",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/01.webp",
+          "caption": "L'atterrisseur Schiaparelli avant son lancement : 577 kg, conçu comme un démonstrateur technologique à usage unique pour le système d'EDL (entrée, descente et atterrissage) du rover ExoMars."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Le lancement",
+      "subtitle": "14 mars 2016 — Proton-M depuis Baïkonour",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/02.webp",
+          "caption": "Proton-M décolle avec l'ensemble ExoMars 2016 (TGO + Schiaparelli), mission conjointe de l'ESA et de Roscosmos."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Meridiani Planum — impact le 19 octobre 2016",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/03.webp",
+          "caption": "MRO HiRISE image le site d'impact de Schiaparelli : le cratère principal est visible en haut ; le parachute et le bouclier arrière, en bas à droite."
+        },
+        {
+          "src": "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg",
+          "caption": "Détail HiRISE du site d'impact de Schiaparelli : traînée sombre laissée par le choc du matériel, entourée d'une couverture d'éjectas."
+        },
+        {
+          "src": "/images/fleet-galleries/schiaparelli/04.webp",
+          "caption": "Reconstitution en images de synthèse de la séquence de la défaillance : la saturation de l'IMU pendant le déploiement du parachute a provoqué la libération prématurée de l'atterrisseur à 3,7 km d'altitude."
+        }
+      ]
+    }
+  ]
+}

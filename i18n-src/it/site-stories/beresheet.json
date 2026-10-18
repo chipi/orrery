@@ -1,0 +1,46 @@
+{
+  "intro": "Beresheet — in ebraico «In principio» — fu il primo tentativo di allunaggio di Israele, costruito da privati da SpaceIL con un budget risicatissimo di 100 milioni di dollari. Lanciata il 22 febbraio 2019 e inserita in orbita lunare il 4 aprile, il 11 aprile 2019 la sonda si schiantò nel Mare Serenitatis, dopo che l'IMU e il computer di bordo si erano riavviati durante la discesa. Tra i rottami c'era una capsula del tempo piena di tardigradi. Israele divenne così la settima nazione a raggiungere la Luna, anche se solo in modo cinetico.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Il più piccolo lander interplanetario tentato fino a quel momento — 585 kg",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/01.webp",
+          "caption": "La sonda Beresheet durante l'integrazione pre-lancio — costruita da SpaceIL con Israel Aerospace Industries, il primo tentativo di allunaggio finanziato da privati."
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/02.webp",
+          "caption": "Il carico della capsula del tempo — cimeli israeliani, 30 milioni di pagine di conoscenza umana incise su lastre di nichel e (non senza polemiche) i tardigradi, i micro-animali più resistenti del mondo."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "22 febbraio 2019 — Falcon 9 da Cape Canaveral (lancio condiviso)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/03.webp",
+          "caption": "Falcon 9 lancia Beresheet in condivisione con il satellite per telecomunicazioni PSN-6 — un transito di 6 settimane, con più anelli orbitali, verso l'orbita lunare."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Mare Serenitatis — impatto l'11 aprile 2019",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/04.webp",
+          "caption": "L'ultimo selfie inviato da Beresheet durante la discesa propulsa — si vede la targa «Small country, big dreams». Comunicazione persa a circa 150 m di quota."
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/05.webp",
+          "caption": "Il sito d'impatto ripreso dalla LRO della NASA — un alone luminoso causato dal regolite sconvolto. Alcuni tardigradi potrebbero essere sopravvissuti intatti all'impatto."
+        }
+      ]
+    }
+  ]
+}

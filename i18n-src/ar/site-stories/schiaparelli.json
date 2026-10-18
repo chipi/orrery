@@ -1,0 +1,46 @@
+{
+  "intro": "مسبار Schiaparelli — محاولة أوروبا الثانية للهبوط على المريخ — انفصل عن ExoMars Trace Gas Orbiter في 16 أكتوبر 2016، ثم ارتطم بسطح هضبة ميريدياني بسرعة نحو 540 كم/ساعة بعد ثلاثة أيام. فقد تسبب خلل برمجي في فصل المظلة ودافعات الكبح قبل أوانهما بـ50 ثانية، بينما كانت المركبة الهابطة لا تزال على ارتفاع 3.7 كم فوق السطح. ورصدت كاميرا MRO HiRISE حطام المركبة في غضون أسبوع. وقد أسهمت الدروس المستفادة في تشكيل مسبار ExoMars Rosalind Franklin الجوّال، المقرر إطلاقه الآن عام 2028.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "العتاد",
+      "subtitle": "EDM — وحدة تجريب الدخول والهبوط والإنزال",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/01.webp",
+          "caption": "المركبة الهابطة Schiaparelli قبل الإطلاق — كتلتها 577 كغ، وقد صُمّمت كمنصة تجريبية تقنية لمرة واحدة لنظام الدخول والهبوط والإنزال الخاص بالمركبة الجوّالة ExoMars."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "الإطلاق",
+      "subtitle": "14 مارس 2016 — صاروخ Proton-M من بايكونور",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/02.webp",
+          "caption": "ينطلق صاروخ Proton-M حاملاً مجموعة ExoMars 2016 — المسبار TGO مع Schiaparelli، في مهمة مشتركة بين ESA وRoscosmos."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "السطح",
+      "subtitle": "هضبة ميريدياني — موقع الارتطام في 19 أكتوبر 2016",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/03.webp",
+          "caption": "كاميرا MRO HiRISE تلتقط موقع ارتطام Schiaparelli — الفوهة الرئيسية ظاهرة في الأعلى، والمظلة مع الغلاف الخلفي في الأسفل جهة اليمين."
+        },
+        {
+          "src": "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg",
+          "caption": "تفصيل من HiRISE لموقع تحطم Schiaparelli — أثر أسود خلّفه ارتطام العتاد، تحيط به بطانية من المقذوفات."
+        },
+        {
+          "src": "/images/fleet-galleries/schiaparelli/04.webp",
+          "caption": "إعادة بناء بالرسوم الحاسوبية لتسلسل الفشل — أدى تشبّع وحدة القياس بالقصور الذاتي (IMU) أثناء فتح المظلة إلى انفصال المركبة الهابطة قبل أوانه على ارتفاع 3.7 كم."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 14は1971年2月5日、フラ・マウロ高地に着陸した。ここはもともとApollo 13の目標地点で、13号の爆発事故を経て、ついに果たされた着陸だった。シェパードとミッチェルは、リヤカー代わりのモジュラー式装備運搬車(Modular Equipment Transporter)を引いてコーン・クレーターの斜面を登り、43 kgの角礫岩を持ち帰った。これは39億年前に雨の海を形成した巨大衝突でできた破片である。シェパードが離陸前にゴルフボールを2球打ったことは、よく知られている。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "Kitty Hawk + アンタレス + リヤカー",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/01.webp",
+          "caption": "Apollo 14のクルー:アラン・シェパード(船長 — 10年前に初のアメリカ人として宇宙へ)、スチュアート・ルーサ(司令船操縦士)、エドガー・ミッチェル(月着陸船操縦士)。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "フラ・マウロ高地 — 1971年2月5日着陸",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/02.webp",
+          "caption": "ミッチェルとモジュラー式装備運搬車(MET)。この「リヤカー」は、工具と試料を積んでコーン・クレーターへ向かう斜面を運び上げた。"
+        },
+        {
+          "src": "/images/missions/apollo14/03.webp",
+          "caption": "コーン・クレーターの縁。クルーは縁の手前約30 mまで登ったが、疲労と通信上の制約のため引き返さざるを得なかった。"
+        },
+        {
+          "src": "/images/hotspots/moon/apollo14/tier3-pan.jpg",
+          "caption": "Apollo 14着陸地点のパノラマ。アンタレスの降下段とALSEPが見える。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "雨の海衝突の角礫岩試料",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/04.webp",
+          "caption": "「Big Bertha」— 試料14321。重さ8.99 kgの角礫岩で、これまでに見つかった中で最も古い地球の岩石(41億年前のジルコン、4.1 Ga)を含む。初期の地球への天体衝突によって月へ吹き飛ばされたものだ。"
+        }
+      ]
+    }
+  ]
+}

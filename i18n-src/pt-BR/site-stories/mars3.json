@@ -1,0 +1,46 @@
+{
+  "intro": "Mars 3 pousou na Terra Sirenum em 2 de dezembro de 1971 — foi o primeiro módulo de pouso a sobreviver à entrada na atmosfera marciana e a alcançar a superfície, cinco dias depois de a sua irmã Mars 2 se espatifar. As comunicações cessaram após 14,5 segundos, devolvendo um único fragmento parcial e degradado de imagem em tons de cinza. O módulo provavelmente chegou no meio de uma tempestade de poeira que envolvia todo o planeta. O local exato de repouso de Mars 3 ainda é debatido; em 2013, a HiRISE fotografou um possível equipamento candidato.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Módulo de pouso soviético da classe 4MS, o primeiro toque em Marte de qualquer espécie",
+      "images": [
+        {
+          "src": "/images/missions/mars3/01.webp",
+          "caption": "Maquete do módulo de pouso Mars 3 no museu de história espacial da NPO Lavochkin — massa total de 1.210 kg, incluía um rover Prop-M de 4,5 kg (nunca implantado)."
+        },
+        {
+          "src": "/images/missions/mars3/02.webp",
+          "caption": "Diagrama em corte do equipamento do módulo de pouso Mars 3 — a concepção básica influenciou os equipamentos soviéticos posteriores das séries Venera e Mars."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "28 de maio de 1971 — Proton-K a partir de Baikonur",
+      "images": [
+        {
+          "src": "/images/missions/mars3/03.webp",
+          "caption": "Proton-K com o estágio superior Blok-D preparado no Cosmódromo de Baikonur — seis meses de trânsito até Marte."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Terra Sirenum — pouso em 2 de dezembro de 1971",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars3/tier2-hirise.jpg",
+          "caption": "Detalhe da HiRISE do possível local do equipamento de Mars 3 na Terra Sirenum — divulgado em 2013 pela equipe HiRISE da NASA/UA, identificado por historiadores espaciais amadores russos."
+        },
+        {
+          "src": "/images/missions/mars3/04.webp",
+          "caption": "A única imagem fragmentária devolvida por Mars 3 — 79 linhas, sem horizonte, sem detalhes. A primeira imagem da superfície de outro planeta, por mais tênue que seja."
+        }
+      ]
+    }
+  ]
+}

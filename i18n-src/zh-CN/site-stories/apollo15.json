@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 15 于1971年7月30日降落在哈德利沟纹 / 亚平宁山脉地区——这是首次“J 级”任务,具备延长的月面停留时间、月球车(Lunar Roving Vehicle,LRV),以及一位受过科学训练的飞行员(大卫·斯科特)。斯科特与艾尔文在三次舱外活动中共驾车行驶28公里,发现了“Genesis Rock”(约41亿年前的斜长岩,属原始月壳),并在电视直播中同时释放一根羽毛和一把锤子,重现 Galileo 的重力实验。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "Endeavour + Falcon + LRV-1(首辆月球车)",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/01.webp",
+          "caption": "Apollo 15 乘组与 Lunar Roving Vehicle 在任务前训练中——斯科特与艾尔文将驾驶人类在月球上的第一辆轮式车。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "Hadley-Apennine——1971年7月30日着陆",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/02.webp",
+          "caption": "詹姆斯·艾尔文在 LRV 旁敬礼,身后是哈德利三角山——这是首批从月面拍摄的亚平宁山脉影像。"
+        },
+        {
+          "src": "/images/missions/apollo15/03.webp",
+          "caption": "大卫·斯科特站在哈德利沟纹边缘——宇航员首次站在另一个世界上古老熔岩通道的边缘。"
+        },
+        {
+          "src": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
+          "caption": "哈德利平原全景——Falcon 下降级、LRV,以及地平线上的哈德利三角山。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "Genesis Rock 与 Galileo 实验",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/04.webp",
+          "caption": "样本 15415“Genesis Rock”——纯铁质斜长岩,年龄约41亿年。它是月球原始岩浆洋月壳的一块碎片。"
+        }
+      ]
+    }
+  ]
+}

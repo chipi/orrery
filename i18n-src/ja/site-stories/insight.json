@@ -1,0 +1,61 @@
+{
+  "intro": "InSightは2018年11月26日にエリシウム平原に着陸した。火星で初めての地球物理観測所である。このミッションは4年間にわたり地震計SEISで火星地震に耳を澄まし、1,300回を超える地震を記録。その観測によって、火星の核、マントル、地殻がかつてない詳細さで明らかになった。モグラ型掘削機(HP³)は自力で地中に潜ることができなかったが、SEISの成果はその落胆を補って余りあるものだった。ミッションは2022年12月、塵の堆積で太陽電池パネルが機能しなくなり、終了した。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "内部探査に特化した初の火星ミッション",
+      "images": [
+        {
+          "src": "/images/missions/insight/01.webp",
+          "caption": "Lockheed Martinでの統合作業中のInSight。Phoenixと同じランダー・プラットフォームを、地球物理観測用に転用した。"
+        },
+        {
+          "src": "/images/missions/insight/02.webp",
+          "caption": "ロボットアームで地表に設置されたSEIS地震計とWTS(風・熱シールド)。地球以外の惑星に置かれた初の地震計である。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "2018年5月5日 — ヴァンデンバーグ空軍基地からAtlas Vで打ち上げ",
+      "images": [
+        {
+          "src": "/images/missions/insight/03.webp",
+          "caption": "ヴァンデンバーグ(SLC-3E)から離昇するAtlas V 401。アメリカ西海岸から打ち上げられた初の惑星間ミッションである。MarCO CubeSatsが通信中継機として並走した。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "エリシウム平原 — 2018年11月26日着陸",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/insight/tier3-pan.jpg",
+          "caption": "Homestead Hollowの作業エリア、ソル14。インスツルメント展開カメラによる290°パノラマ。左下には、すでに地面に設置されたSEISが見える。"
+        },
+        {
+          "src": "/images/fleet-galleries/insight/02.webp",
+          "caption": "火星での初の自撮り合成画像。ソル110、SEISとHP³の展開後のInSightのデッキ。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学成果",
+      "subtitle": "1,319回の火星地震 — 明らかになった惑星の内部",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/insight/03.webp",
+          "caption": "2022年5月4日に発生したマグニチュード4.7の火星地震の地震波形。観測された中で最大の地震で、震源はケルベルス地溝帯断層系である。"
+        },
+        {
+          "src": "/images/fleet-galleries/insight/04.webp",
+          "caption": "InSight最後の自撮り、ソル1211。太陽電池パネルは塵に覆われている。最後の通信は2022年12月15日。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Pioneer 11",
+  "current_distance_label": "89 UA · ~12,3 horas luz desde el Sol (contacto perdido 1995-09-30)",
+  "interstellar_since_label": "Contacto perdido en 1995 — en coasta hacia Aquila, entrará en el espacio interestelar alrededor de 2027",
+  "waypoints": [
+    {
+      "label": "Lanzamiento"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Asistencia de Júpiter"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Saturno + anillo F"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Último contacto"
+    },
+    null,
+    null,
+    {
+      "label": "Hoy"
+    }
+  ]
+}

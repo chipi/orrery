@@ -1,0 +1,57 @@
+{
+  "intro": "Apollo 17호는 1972년 12월 11일 타우루스-리트로 계곡에 착륙했습니다. 유인 달 탐사로는 마지막이었고, 전문 지질학자(해리슨 슈미트)가 달 표면에 선 유일한 임무였습니다. 서넌과 슈미트는 세 차례의 선외 활동(EVA)으로 22시간을 밖에서 보내며 35km를 주행했고, 35억 년 전 용암 분수에서 생긴 화산 유리 구슬인 유명한 오렌지 토양을 포함해 110kg의 시료를 가져왔습니다. 서넌의 발자국은 다른 세계에 남은 인류의 가장 최근 흔적입니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "America + Challenger + LRV-3",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/01.webp",
+          "caption": "Apollo 17 승무원 단체 사진 — 유진 서넌(사령관), 로널드 에번스(사령선 조종사), 해리슨 \"잭\" 슈미트(달착륙선 조종사, 과학자 우주비행사)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "1972년 12월 7일 — 마지막 Saturn V 비행",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/02.webp",
+          "caption": "Saturn V의 첫 야간 발사, 1972년 12월 7일 05:33 UTC — 700km 떨어진 곳에서도 보였습니다. 마지막 Apollo이자 마지막 Saturn V였습니다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "타우루스-리트로 계곡 — 1972년 12월 11일 착륙",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/03.webp",
+          "caption": "서넌과 깃발, 그 위로 떠 있는 지구 — \"달 위의 마지막 사람\"."
+        },
+        {
+          "src": "/images/missions/apollo17/04.webp",
+          "caption": "슈미트가 쇼티 분화구에서 오렌지 토양을 발견하는 모습 — 35억 년 전 용암 분수 분출로 생긴 화산 유리 구슬입니다."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo17/tier3-pan.jpg",
+          "caption": "타우루스-리트로 계곡 파노라마 — Challenger 하강단, LRV, 멀리 보이는 Tortilla Flat."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "달에 간 최초의 정식 훈련 받은 지질학자",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/05.webp",
+          "caption": "시료 70017 — 인류가 마지막으로 채취한 달 시료로, 1972년 12월 14일 이륙 전 서넌의 마지막 임무였습니다."
+        }
+      ]
+    }
+  ]
+}

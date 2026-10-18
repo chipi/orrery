@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 15は1971年7月30日、ハドリー谷 / アペニン山脈に着陸した。滞在期間を延長した初の「J-class」ミッションであり、月面ローバー(Lunar Roving Vehicle、LRV)を初めて搭載し、科学者としての訓練を受けたパイロット(デイヴィッド・スコット)が参加した。スコットとアーウィンは3回の船外活動で合計28 kmを走行し、Genesis Rock(約4.1 Ga、すなわち約41億年前の斜長岩で、原初の地殻の一部)を発見。さらに生中継のテレビ映像の中で、羽根とハンマーを同時に落とし、Galileoの重力実験を再現してみせた。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "Endeavour + Falcon + LRV-1(初の月面車)",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/01.webp",
+          "caption": "ミッション前の訓練中のApollo 15のクルーと月面ローバー(Lunar Roving Vehicle)。スコットとアーウィンは、月面を走る初の車輪を操ることになる。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "Hadley-Apennine — 1971年7月30日着陸",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/02.webp",
+          "caption": "LRVのそばで敬礼するジェームズ・アーウィン。背後にはハドリー・デルタ山。月面からとらえた初のアペニン山脈の映像である。"
+        },
+        {
+          "src": "/images/missions/apollo15/03.webp",
+          "caption": "ハドリー谷の縁に立つデイヴィッド・スコット。宇宙飛行士が、別の天体にある太古の溶岩流の水路の縁に立ったのは、これが初めてだった。"
+        },
+        {
+          "src": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
+          "caption": "ハドリー平原のパノラマ。Falconの降下段とLRV、そして地平線上のハドリー・デルタ山。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "Genesis Rock + Galileoの実験",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/04.webp",
+          "caption": "サンプル15415「Genesis Rock」。年代約41億年の純粋な鉄質斜長岩で、月の原初のマグマオーシャンが固まってできた地殻の破片である。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "intro": "A Apollo 11 pousou no Mare Tranquillitatis às 20h17 UTC de 20 de julho de 1969 — o primeiro pouso tripulado em outro mundo. Armstrong e Aldrin passaram 2h31min fora do Módulo Lunar Eagle; Collins permaneceu em órbita, no Columbia, sobre eles. A tripulação trouxe de volta 21,5 kg de amostras lunares e deixou para trás pegadas, um conjunto de retrorrefletores (ainda usado por lasers baseados na Terra) e uma placa: \"Viemos em paz em nome de toda a humanidade\".",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Saturn V + Módulo de Comando Columbia + Módulo Lunar Eagle",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/01.webp",
+          "caption": "Saturn V SA-506 com a Apollo 11 na Plataforma 39A — 110,6 m de altura, o veículo de lançamento mais potente já levado a uma missão operacional."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "16 de julho de 1969 — Saturn V a partir do Centro Espacial Kennedy",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/02.webp",
+          "caption": "Decolagem às 13h32 UTC, em 16 de julho de 1969 — a queima TLI, 2h44min depois, enviou a Apollo 11 rumo à Lua a 11 km/s."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Mare Tranquillitatis — pouso em 20 de julho de 1969",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/03.webp",
+          "caption": "Buzz Aldrin descendo a escada do LM, fotografado por Armstrong. \"Magnífica desolação\" — as primeiras palavras de Aldrin na superfície."
+        },
+        {
+          "src": "/images/missions/apollo11/04.webp",
+          "caption": "A marca da bota de Aldrin na Base Tranquility — preservada intacta no vácuo por mais de meio século."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo11/tier3-pan.jpg",
+          "caption": "Panorama da Base Tranquility — estágio de descida do LM Eagle, pacote científico EASEP, bandeira dos EUA e as pegadas mais famosas da Lua."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciência",
+      "subtitle": "21,5 kg de amostras de basalto, conjunto de retrorrefletores, sismômetro",
+      "images": [
+        {
+          "src": "/images/missions/apollo11/05.webp",
+          "caption": "Amostra lunar 10072 — basalto de mare vesicular, com 3,7 bilhões de anos. A primeira rocha de outro mundo estudada na Terra."
+        }
+      ]
+    }
+  ]
+}

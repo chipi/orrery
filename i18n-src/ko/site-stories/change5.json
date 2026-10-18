@@ -1,0 +1,53 @@
+{
+  "intro": "Chang'e 5는 2020년 12월 1일 륌케르산에 착륙했다. 중국 최초의 달 시료 귀환 임무이자, 44년 전 Luna 24(1976) 이후 어느 나라도 해내지 못한 달 시료 귀환이었다. 젊은 화산 지형(약 20억 년 전, 약 3.5 Ga의 Apollo 시료와 비교)에서 채취한 시료 1,731 g을 가져왔으며, 달의 화산 활동이 기존에 알려진 것보다 훨씬 늦게까지 이어졌음을 입증했다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "착륙선 + 상승선 + 궤도선 + 재진입 캡슐",
+      "images": [
+        {
+          "src": "/images/missions/change5/01.webp",
+          "caption": "Chang'e 5 결합체 — 네 부분으로 이루어진 비행체: 착륙선/상승선(달 표면), 궤도선(달 궤도 랑데부), 재진입 캡슐(지구 귀환)."
+        },
+        {
+          "src": "/images/missions/change5/02.webp",
+          "caption": "드릴 + 스쿱 장치 — 표면과 1 m 이상 깊이에서 모두 시료를 채취했다."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "2020년 11월 23일 — 원창에서 발사된 Long March 5",
+      "images": [
+        {
+          "src": "/images/missions/change5/03.webp",
+          "caption": "Long March 5가 Chang'e 5를 발사한다 — 당시 중국이 추진한 가장 야심 찬 달 탐사 임무로, 23일간의 왕복 비행을 완전 자동으로 수행했다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "륌케르산 — 2020년 12월 1일 착륙",
+      "images": [
+        {
+          "src": "/images/missions/change5/04.webp",
+          "caption": "륌케르산 인근 표면의 Chang'e 5 — 상승단이 이륙하기까지 19시간 동안 작업을 수행했다."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "20억 년 전의 달 화산 활동이 달의 열 역사를 다시 쓰다",
+      "images": [
+        {
+          "src": "/images/missions/change5/05.webp",
+          "caption": "2020년 12월 17일 내몽골의 눈 위에 놓인 시료 귀환 캡슐 — 젊은 현무암 1,731 g이 지구로 돌아왔다."
+        }
+      ]
+    }
+  ]
+}

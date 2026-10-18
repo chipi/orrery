@@ -1,0 +1,38 @@
+{
+  "name": "Voyager 1",
+  "current_distance_label": "태양으로부터 172 AU · 약 23.8 광시간",
+  "interstellar_since_label": "2012년 8월 태양권 경계를 통과함 — 인류가 만든 최초의 별간 우주 물체",
+  "waypoints": [
+    {
+      "label": "발사"
+    },
+    null,
+    null,
+    {
+      "label": "목성"
+    },
+    null,
+    null,
+    {
+      "label": "토성 + 타이탄"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "창백한 푸른 점"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "태양권 경계"
+    },
+    null,
+    null,
+    {
+      "label": "오늘"
+    }
+  ]
+}

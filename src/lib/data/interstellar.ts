@@ -12,6 +12,25 @@
 import { get, type FetchLike } from './core';
 import { getCultureDoors, type LocalizedCultureDoor } from './universe';
 import type { IconicTrajectoryData } from '$lib/three/iconic-trajectory';
+import { localizeTrajectory, type IconicTrajectoryOverlay } from '$lib/trajectory-overlay';
+
+/** A trajectory with its locale overlay applied (display text only; see
+ *  localizeTrajectory). Null when the trajectory is missing. */
+export async function getTrajectory(
+  id: string,
+  locale = 'en-US',
+  fetchFn: FetchLike = fetch,
+): Promise<IconicTrajectoryData | null> {
+  const traj = await get<IconicTrajectoryData>(`trajectories/${id}.json`, fetchFn).catch(
+    () => null,
+  );
+  if (!traj || locale === 'en-US') return traj;
+  const overlay = await get<IconicTrajectoryOverlay>(
+    `i18n/${locale}/trajectories/${id}.json`,
+    fetchFn,
+  ).catch(() => null);
+  return localizeTrajectory(traj, overlay);
+}
 
 /** 1 AU expressed in light-hours (149,597,870.7 km ÷ c). */
 const AU_IN_LIGHT_HOURS = 0.138612;
@@ -43,9 +62,7 @@ export async function getInterstellarCraft(
   locale = 'en-US',
   fetchFn: FetchLike = fetch,
 ): Promise<InterstellarCraft | null> {
-  const traj = await get<IconicTrajectoryData>(`trajectories/${id}.json`, fetchFn).catch(
-    () => null,
-  );
+  const traj = await getTrajectory(id, locale, fetchFn);
   if (!traj || !traj.category?.includes('interstellar-bound')) return null;
 
   const launchWaypoint = traj.waypoints?.find((w) => w.label === 'Launch') ?? traj.waypoints?.[0];

@@ -1,0 +1,34 @@
+{
+  "name": "Pioneer 11",
+  "current_distance_label": "89 UA · ~12,3 heures-lumière du Soleil (signal perdu le 1995-09-30)",
+  "interstellar_since_label": "Signal perdu en 1995 — en phase de coaste vers l'Aigle, atteindra l'espace interstellaire vers 2027",
+  "waypoints": [
+    {
+      "label": "Lancement"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Assistance gravitationnelle de Jupiter"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Saturne + anneau F"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Dernier signal"
+    },
+    null,
+    null,
+    {
+      "label": "Aujourd'hui"
+    }
+  ]
+}

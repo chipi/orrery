@@ -1,0 +1,22 @@
+{
+  "name": "Giotto",
+  "current_distance_label": "1,04 AE · im heliozentrischen Orbit seit Grigg-Skjellerup-Vorbeiflug 1992-07-10",
+  "waypoints": [
+    {
+      "label": "Start (Ariane 1)"
+    },
+    null,
+    {
+      "label": "Halley-Vorbeiflug"
+    },
+    null,
+    {
+      "label": "Erde #1"
+    },
+    null,
+    {
+      "label": "Grigg-Skjellerup"
+    },
+    null
+  ]
+}

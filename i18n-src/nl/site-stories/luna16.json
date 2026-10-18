@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 16 landde op 20 september 1970 in Mare Fecunditatis — het eerste geautomatiseerde monsterretourproject vanaf een andere wereld. De sonde boorde 35 cm diep in het maanregoliet, sloot 101 g af in de terugkeercapsule en steeg 26 uur na de landing weer op. De capsule landde drie dagen later in Kazachstan. Het bewees dat Sovjettechniek maanmateriaal naar de aarde kon terugbrengen zonder bemande vlucht, een jaar en twee maanden na Apollo 11.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Sovjet-lander E-8-5 — het eerste robotsysteem voor het terugbrengen van monsters",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/01.webp",
+          "caption": "Maquette van het ruimtevaartuig Luna 16 — afdaaltrap (voorgrond) en opstijgtrap met de terugkeercapsule (boven)."
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/02.webp",
+          "caption": "Schema van het monsternamemechanisme — boorkern met afgesloten overdracht naar de terugkeercapsule."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "12 september 1970 — Proton-K vanaf Bajkonoer",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/03.webp",
+          "caption": "Proton-K met bovenste trap Blok-D op het lanceerplatform van kosmodroom Bajkonoer."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Mare Fecunditatis — geland op 20 september 1970",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/04.webp",
+          "caption": "Luna 16 boort in het regoliet — 101 g materiaal werd afgesloten in de bolvormige terugkeercapsule voor de opstijging."
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/05.webp",
+          "caption": "Terugkeercapsule op de Kazachse steppe, 24 september 1970 — het eerste geautomatiseerde interplanetaire monsterretourproject in de geschiedenis."
+        }
+      ]
+    }
+  ]
+}

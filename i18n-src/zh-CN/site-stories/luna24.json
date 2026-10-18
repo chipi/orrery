@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 24 于1976年8月18日降落在危海——这是20世纪苏联最后一次（也是最后一次无人）月球采样返回任务，并且直到2013年中国的嫦娥三号之前，它也是最后一个任何类型的月球着陆器。它向月壤钻探了2米，将170.1克样品带回地球，其中包含月球水冰的证据（数十年后被 SOFIA 与 LCROSS 再次证实）。苏联的月球计划就此画上句号。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "苏联 E-8-5M 着陆器——改进型采样返回装置",
+      "images": [
+        {
+          "src": "/images/missions/luna24/01.webp",
+          "caption": "陈列于一家苏联航天博物馆的 Luna 24 探测器——下降级 + 上升器 + 返回舱。"
+        },
+        {
+          "src": "/images/missions/luna24/02.webp",
+          "caption": "钻取机构——钻入深度达2米，是 Luna 16 的35厘米的三倍。它带回了人类从另一个天体取得的最深样品。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "表面",
+      "subtitle": "危海——1976年8月18日着陆",
+      "images": [
+        {
+          "src": "/images/missions/luna24/03.webp",
+          "caption": "危海着陆点——Luna 24 降落在距 Luna 23 于1974年着陆失败处约2公里的同一区域。"
+        },
+        {
+          "src": "/images/missions/luna24/04.webp",
+          "caption": "1976年8月22日，返回舱落在西伯利亚——直到2020年代的 VKS 计划之前，这是苏联最后一次从地球轨道以外取回样品。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "月壤中的水——早有印证",
+      "images": [
+        {
+          "src": "/images/missions/luna24/05.webp",
+          "caption": "1978年对 Luna 24 样品的重新分析显示含水量为0.1%——起初被忽视，2020年经 LCROSS 撞击与 SOFIA 证实。"
+        }
+      ]
+    }
+  ]
+}

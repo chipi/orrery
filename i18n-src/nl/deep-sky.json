@@ -1,0 +1,400 @@
+{
+  "jwst-carina": {
+    "title": "Kosmische Kliffen",
+    "caption": "De rand van een stellaire kinderkamer in de Carinanevel (NGC 3324), uitgegraven door jonge sterren.",
+    "subject": "Nevel",
+    "type": "Stervormerdegebied",
+    "distance": "~7.600 lichtjaren",
+    "taken": "Vrijgegeven 12 jul 2022"
+  },
+  "jwst-southern-ring": {
+    "title": "Zuidelijke Ringnevel",
+    "caption": "Een stervende ster (NGC 3132) die schalen van gas en stof over een halflichtjaar verspreidt.",
+    "subject": "Nevel",
+    "type": "Planetaire nevel",
+    "distance": "~2.500 lichtjaren",
+    "taken": "Vrijgegeven 12 jul 2022"
+  },
+  "jwst-stephans": {
+    "title": "Kwintet van Stephan",
+    "caption": "Vijf sterrenstelsels in een kosmische dans, vier ervan die elkaar opzij trekken door getijdekrachten.",
+    "subject": "Sterrenstelsels",
+    "type": "Compacte sterrenstelselgroep",
+    "distance": "~290 miljoen lichtjaren",
+    "taken": "Vrijgegeven 12 jul 2022"
+  },
+  "jwst-pillars": {
+    "title": "Pilaren van Schepping",
+    "caption": "Torens van koude gas en stof in de Adelaarsnevel (M16), van binnenuit verlicht door pasgeboren sterren.",
+    "subject": "Nevel",
+    "type": "Emissiesnevel / stervormerdegebied (M16)",
+    "distance": "~6.500 lichtjaren",
+    "taken": "Vrijgegeven 19 okt 2022"
+  },
+  "jwst-tarantula": {
+    "title": "Tarantulanevel",
+    "caption": "30 Doradus — de meest actieve starburst-regio die bekend is in onze galactische buurt.",
+    "subject": "Nevel",
+    "type": "Stervorming-gebied (30 Dor)",
+    "distance": "~161.000 lichtjaar",
+    "taken": "Gepubliceerd 6 sep 2022"
+  },
+  "jwst-cartwheel": {
+    "title": "Wagenwielstelsel",
+    "caption": "Een zeldzaam ringgalaxie, nog steeds trilland van een frontale botsing enkele honderden miljoen jaar geleden.",
+    "subject": "Sterrenstelsels",
+    "type": "Ringgalaxie",
+    "distance": "~500 miljoen lichtjaar",
+    "taken": "Gepubliceerd 2 aug 2022"
+  },
+  "jwst-phantom": {
+    "title": "Fantoomstelsel",
+    "caption": "M74 — een klassieke spiraalvormige, haar skelet van gas en stof blootgelegd in het infrarood.",
+    "subject": "Sterrenstelsels",
+    "type": "Spiraalvormig sterrenstelsel (M74)",
+    "distance": "~32 miljoen lichtjaar",
+    "taken": "2022"
+  },
+  "hst-pillars": {
+    "title": "Pilaren van Schepping",
+    "caption": "Hubbles iconische weergave uit 2014 van de torens van stervorming-gas van de Adelaarsnevel.",
+    "subject": "Nevel",
+    "type": "Emissievel / stervorming-gebied (M16)",
+    "distance": "~6.500 lichtjaar",
+    "taken": "2014"
+  },
+  "hst-mystic-mountain": {
+    "title": "Mystieke Berg",
+    "caption": "Een drie-lichtjaar-pilaar in de Carinanevel, van Hubbles 20ste verjaardag.",
+    "subject": "Nevel",
+    "type": "Stervormende zuil",
+    "distance": "~7.500 lichtjaar",
+    "taken": "2010 · Hubble 20ste"
+  },
+  "hst-butterfly": {
+    "title": "Vlindernevel",
+    "caption": "NGC 6302 — vleugels van gas verwarmd tot meer dan 20.000°C, uitgeslingerd door een stervende ster.",
+    "subject": "Nevel",
+    "type": "Planetaire nevel (NGC 6302)",
+    "distance": "~3.400 lichtjaar",
+    "taken": "2009"
+  },
+  "hst-antennae": {
+    "title": "Antennae-sterrenstelsels",
+    "caption": "Twee sterrenstelsels (NGC 4038/4039) die met elkaar botsen en miljarden nieuwe sterren doen ontstaan.",
+    "subject": "Sterrenstelsels",
+    "type": "Botsende sterrenstelsels",
+    "distance": "~45–65 miljoen lichtjaar",
+    "taken": "2006"
+  },
+  "hst-bubble": {
+    "title": "Bellnevel",
+    "caption": "NGC 7635 — een bel van zeven lichtjaar groot, weggeblazen door de heftige wind van een massieve ster.",
+    "subject": "Nevel",
+    "type": "Emissiesnevel (NGC 7635)",
+    "distance": "~7.100 lichtjaar",
+    "taken": "2016 · Hubble 26ste"
+  },
+  "hst-westerlund2": {
+    "title": "Westerlund 2",
+    "caption": "Een reuzencluster van jonge sterren, uit Hubbles 25ste jubileumfoto.",
+    "subject": "Sterrenhoop",
+    "type": "Sterrenhoop (Gum 29)",
+    "distance": "~20.000 lichtjaar",
+    "taken": "2015 · Hubble 25 jaar"
+  },
+  "hst-cats-eye": {
+    "title": "Katten-oognevel",
+    "caption": "NGC 6543 — een van de ingewikkeldste planetaire nevels ooit waargenomen.",
+    "subject": "Nevel",
+    "type": "Planetaire nevel (NGC 6543)",
+    "distance": "~3.300 lichtjaar",
+    "taken": "2004"
+  },
+  "hst-whirlpool": {
+    "title": "Wervelsterrenstelsel",
+    "caption": "M51 — een leerboekvoorbeeld van een spiraalsterrenstelsel, de armen gloeiend roze van pasgeboren sterren.",
+    "subject": "Sterrenstelsels",
+    "type": "Spiraalsterrenstelsel (M51)",
+    "distance": "~31 miljoen lichtjaar",
+    "taken": "2005"
+  },
+  "hst-crab": {
+    "title": "Krabbenevel",
+    "caption": "M1 — de verspreid liggende resten van een ster waarvan men de explosie in 1054 AD zag plaatsvinden.",
+    "subject": "Nevel",
+    "type": "SupernovaRestant (M1)",
+    "distance": "~6.500 lichtjaar",
+    "taken": "2005"
+  },
+  "hst-veil": {
+    "title": "Sluiternevel",
+    "caption": "Een vaag gedeelte van de Cygnus-lus — een supernovablasgolf die na 10.000 jaar nog steeds uitdijt.",
+    "subject": "Nevel",
+    "type": "Supernovarestant · Cygnus-lus",
+    "distance": "~2.400 lichtjaar",
+    "taken": "2015"
+  },
+  "hst-sombrero": {
+    "title": "Sombrerostelsel",
+    "caption": "M104 — een briljante witte kern omgeven door een donkere ring van stof.",
+    "subject": "Sterrenstelsels",
+    "type": "Spiraalvormig sterrenstelsel (M104)",
+    "distance": "~28 miljoen lichtjaar",
+    "taken": "2003"
+  },
+  "hst-eskimo": {
+    "title": "Eskimo-nevel",
+    "caption": "NGC 2392 — een Zon-achtige ster omgeven door schelpen van gas die zij 10.000 jaar geleden heeft afgestoten.",
+    "subject": "Nevel",
+    "type": "Planetaire nevel (NGC 2392)",
+    "distance": "~3.000 lichtjaar",
+    "taken": "2000"
+  },
+  "chandra-crab": {
+    "title": "Krabnevel (röntgenstraling)",
+    "caption": "Het röntgenoog van Chandra op de pulsar die de Crab aandrijft, materie in ringen en jets zwiepend.",
+    "subject": "Nevel",
+    "type": "Supernova-residu · röntgenstraling (M1)",
+    "distance": "~6.500 lichtjaar"
+  },
+  "chandra-tycho": {
+    "title": "Tycho's Supernova-residu",
+    "caption": "De röntgenschil van een ster die Tycho Brahe in 1572 zag exploderen.",
+    "subject": "Supernova",
+    "type": "Supernova-residu · röntgenstraling (SN 1572)",
+    "distance": "~10.000 lichtjaar"
+  },
+  "spitzer-helix": {
+    "title": "Helixnevel (infrarood)",
+    "caption": "Spitzers infrarood beeld van de stoffige cocon van een stervende ster, 700 lichtjaar verderop.",
+    "subject": "Nevel",
+    "type": "Planetaire nevel · infrarood",
+    "distance": "~700 lichtjaar",
+    "taken": "2007"
+  },
+  "euclid-perseus": {
+    "title": "Perseuscluster",
+    "caption": "Euclid legt 1.000 sterrenstelsels in de cluster vast en nog 100.000 meer verspreid erachter.",
+    "subject": "Diep veld",
+    "type": "Sterrenstelselhoop",
+    "distance": "~240 miljoen lichtjaar",
+    "taken": "Vrijgegeven 7 nov 2023"
+  },
+  "euclid-horsehead": {
+    "title": "Paardenkopnevel",
+    "caption": "Euclids panoramische beeld van de iconische donkere wolk in Orion.",
+    "subject": "Nevel",
+    "type": "Donkere nevel (Barnard 33)",
+    "distance": "~1.375 lichtjaar",
+    "taken": "Vrijgegeven 7 nov 2023"
+  },
+  "pale-blue-dot": {
+    "title": "Pale Blue Dot",
+    "caption": "De aarde als een enkele pixel, gefotografeerd door Voyager 1 vanaf zes miljard kilometer.",
+    "subject": "Zonnestelsel",
+    "type": "De aarde als een enkele pixel",
+    "distance": "~40,5 AU (6 miljard km)",
+    "taken": "14 feb 1990"
+  },
+  "pluto-nh": {
+    "title": "Pluto",
+    "caption": "De eerste echt gekleurd close-up beeld van Pluto en zijn hart van stikstofijs door New Horizons.",
+    "subject": "Zonnestelsel",
+    "type": "Dwergplaneet",
+    "distance": "~34 AU (5 miljard km)",
+    "taken": "14 jul 2015"
+  },
+  "sun-sdo": {
+    "title": "De Zon",
+    "caption": "Het zicht van Solar Dynamics Observatory op onze ster in het extreme ultraviolet.",
+    "subject": "De Zon",
+    "type": "De Zon · extreme ultraviolet",
+    "distance": "1 AU",
+    "taken": "2010–heden"
+  },
+  "jwst-orion": {
+    "title": "Orion-nevel",
+    "caption": "De binnenste Orion-nevel — een stellaire wieg op 1.350 lichtjaar afstand, in Webb NIRCam.",
+    "subject": "Nevel",
+    "type": "Emissiënevel (M42)",
+    "distance": "~1.350 lichtjaar",
+    "taken": "Vrijgegeven 12 sep 2022"
+  },
+  "jwst-ring": {
+    "title": "Ringnevel",
+    "caption": "M57 — een ster in het sterleven van onze Zon aan het einde van zijn leven, zijn buitenlagen gloeien in delicate detail.",
+    "subject": "Nevel",
+    "type": "Planetaire nevel (M57)",
+    "distance": "~2.600 lichtjaar",
+    "taken": "Vrijgegeven 21 aug 2023"
+  },
+  "jwst-serpens": {
+    "title": "Serpens-nevel",
+    "caption": "Een nest van ontluikende sterren, die kristallijne stof in een donkere wolk in Serpens spuiten.",
+    "subject": "Nevel",
+    "type": "Stervorming regio",
+    "distance": "~1.300 lichtjaar",
+    "taken": "Gepubliceerd 2024"
+  },
+  "hst-lagoon": {
+    "title": "Lagoonnevel",
+    "caption": "M8 — een stellaire crèche van gas en stof, uit Hubbles 28ste verjaardag.",
+    "subject": "Nevelvlek",
+    "type": "Emissienebulaira (M8)",
+    "distance": "~4.000 lichtjaar",
+    "taken": "2018 · Hubble 28ste"
+  },
+  "hst-orion": {
+    "title": "Orionneveling",
+    "caption": "M42 — Hubbles scherpste mozaïek van de dichtstbijzijnde massieve stervorming regio.",
+    "subject": "Nevelvlek",
+    "type": "Emissienebulaira (M42)",
+    "distance": "~1.344 lichtjaar",
+    "taken": "2006"
+  },
+  "hst-carina-pano": {
+    "title": "Carinaneveling",
+    "caption": "Een panorama van 50 lichtjaar breed van een van de grootste sterfabrieken in de melkweg.",
+    "subject": "Nevelvlek",
+    "type": "Stervorming regio",
+    "distance": "~7.500 lichtjaar",
+    "taken": "2007 · Hubble 17de"
+  },
+  "jwst-casa": {
+    "title": "Cassiopeia A",
+    "caption": "Webbs infrarode blik op de jongste bekende supernovaresta in de melkweg.",
+    "subject": "Supernova",
+    "type": "Supernovarest",
+    "distance": "~11.000 lichtjaar",
+    "taken": "Vrijgegeven 2023"
+  },
+  "hst-cone-nebula": {
+    "title": "Conenevel",
+    "caption": "Een zeven lichtjaar hoge toren van koud gas in een verre sterrencrèche.",
+    "subject": "Nevel",
+    "type": "Emissiennes",
+    "distance": "~2.700 lichtjaar",
+    "taken": "2002 · eerste licht van ACS"
+  },
+  "hst-omega-centauri": {
+    "title": "Omega Centauri",
+    "caption": "De helderste bolvormige sterrenhoop aan de hemel — miljoen sterren door zwaartekracht aan elkaar gebonden.",
+    "subject": "Sterrenhoop",
+    "type": "Bolvormige sterrenhoop",
+    "distance": "~17.000 lichtjaar",
+    "taken": "2009"
+  },
+  "jwst-ngc1365": {
+    "title": "NGC 1365",
+    "caption": "Een kolossale gerechteerd spiraalsterrenstelsel dat gas naar een hongerig zwart gat funnelt.",
+    "subject": "Sterrenstelsel",
+    "type": "Gerechteerd spiraalsterrenstelsel",
+    "distance": "~56 miljoen lichtjaar",
+    "taken": "2023"
+  },
+  "hst-ngc602": {
+    "title": "NGC 602",
+    "caption": "Een jonge sterrenhoop die een gloeiende holte in de Kleine Magelhaense Wolk uitgraaft.",
+    "subject": "Sterrenhoop",
+    "type": "Jonge sterrenhoop",
+    "distance": "~200.000 lichtjaar",
+    "taken": "2007 · Hubble 17e"
+  },
+  "jwst-rho-ophiuchi": {
+    "title": "Rho Ophiuchi-wolk",
+    "caption": "De dichtstbijzijnde stervormerij op aarde, gloeiend van jonge zonnen — Webb's eerste-jubileumafbeelding.",
+    "subject": "Nevel",
+    "type": "Stervormerij",
+    "distance": "~430 lichtjaar",
+    "taken": "Gepubliceerd 12 jul 2023"
+  },
+  "jwst-wr124": {
+    "title": "Wolf–Rayet 124",
+    "caption": "Een zeldzame, massieve ster die zijn buitenlagen afwerpt in de momenten voordat deze supernova wordt.",
+    "subject": "Ster",
+    "type": "Wolf–Rayet-ster",
+    "distance": "~15.000 lichtjaar",
+    "taken": "Gepubliceerd 14 mrt 2023"
+  },
+  "hst-cosmic-reef": {
+    "title": "Het Kosmische Rif",
+    "caption": "NGC 2014 en NGC 2020 — een rif van gloeiende waterstof, uit Hubble's 30e jubileum.",
+    "subject": "Nevel",
+    "type": "Emissienevel",
+    "distance": "~163.000 lichtjaar",
+    "taken": "2020 · Hubble 30e"
+  },
+  "hst-hen2104": {
+    "title": "Zuidelijke Krabnevel",
+    "caption": "Geneste zandlopers van gas afgestoten door een stervende ster en haar begeleider.",
+    "subject": "Nevel",
+    "type": "Planetaire nevel",
+    "distance": "~7.000 lichtjaar",
+    "taken": "2019 · Hubble 29e"
+  },
+  "hst-monkey-head": {
+    "title": "Nevel van de Aapenkop",
+    "caption": "NGC 2174 — stofzuilen geslepen door de straling van pasgeboren sterren.",
+    "subject": "Nevel",
+    "type": "EmissieneveL",
+    "distance": "~6.400 lichtjaren",
+    "taken": "2014 · Hubble 24ste"
+  },
+  "hst-andromeda": {
+    "title": "Andromedastelsels",
+    "caption": "Het scherpste Hubble-panorama ooit van onze dichtstbijzijnde grote buurman — meer dan 100 miljoen sterren.",
+    "subject": "Sterrenstelsel",
+    "type": "Spiraalsterrenstelsel",
+    "distance": "~2,5 miljoen lichtjaren",
+    "taken": "2015 · PHAT"
+  },
+  "hst-pinwheel": {
+    "title": "Windmotor-Sterrenstelsel",
+    "caption": "M101 — een reuze gezichtsgraad spiraal, waarvan de armen bezaaid zijn met roze stervormende gebieden.",
+    "subject": "Sterrenstelsel",
+    "type": "Spiraalsterrenstelsel",
+    "distance": "~21 miljoen lichtjaren",
+    "taken": "2006"
+  },
+  "hst-ngc1300": {
+    "title": "NGC 1300",
+    "caption": "Een schoolboek-gestreepte spiraal, waarvan de armen rond een staaf van 200.000 lichtjaren winden.",
+    "subject": "Sterrenstelsel",
+    "type": "Gestreepte spiraalsterrenstelsel",
+    "distance": "~61 miljoen lichtjaren",
+    "taken": "2005"
+  },
+  "jwst-ngc604": {
+    "title": "NGC 604",
+    "caption": "Een holte van gas en stof in de Driehoeksteenbok, uitgehold door meer dan 200 hete jonge sterren.",
+    "subject": "Nevel",
+    "type": "Stervormer",
+    "distance": "~2,7 miljoen lichtjaar",
+    "taken": "Gepubliceerd 2024"
+  },
+  "jwst-ngc346": {
+    "title": "NGC 346",
+    "caption": "Een helderglanzende cluster jonge sterren die de Kleine Magellaan verlicht.",
+    "subject": "Sterrenhoop",
+    "type": "Sterrenhoop",
+    "distance": "~200.000 lichtjaar",
+    "taken": "Gepubliceerd 2023"
+  },
+  "euclid-ic342": {
+    "title": "Het Verborgen Sterrenstelsel",
+    "caption": "IC 342 — een spiraalsterrenstelsel verborgen achter het stof van de Melkweg, onthuld door Euclid.",
+    "subject": "Sterrenstelsel",
+    "type": "Spiraalsterrenstelsel",
+    "distance": "~11 miljoen lichtjaar",
+    "taken": "Gepubliceerd 2024"
+  },
+  "hst-v838": {
+    "title": "V838 Monocerotis",
+    "caption": "Een lichtecho die golvend naar buiten stroomt door het stof rond een ster die plotseling opvlamde.",
+    "subject": "Nevel",
+    "type": "Lichtecho",
+    "distance": "~20.000 lichtjaar",
+    "taken": "2004"
+  }
+}

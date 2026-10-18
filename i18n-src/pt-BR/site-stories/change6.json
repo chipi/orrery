@@ -1,0 +1,53 @@
+{
+  "intro": "A Chang'e 6 pousou na bacia Polo Sul-Aitken em 1º de junho de 2024 — a primeira missão de retorno de amostras do lado oculto da Lua, na maior, mais antiga e mais profunda estrutura de impacto do Sistema Solar interno. Trouxe à Terra 1.935 g de material do lado oculto em 25 de junho de 2024 — amostras que podem conter fragmentos do manto provenientes do impacto formador da bacia, ocorrido há 4,2 bilhões de anos.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamentos",
+      "subtitle": "Redesenho da Chang'e 5 para o retorno de amostras do lado oculto",
+      "images": [
+        {
+          "src": "/images/missions/change6/01.webp",
+          "caption": "Conjunto da Chang'e 6 — com o acréscimo do retransmissor Queqiao-2 para comunicações com o lado oculto; no mais, herda a arquitetura da Chang'e 5."
+        },
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "Cargas úteis internacionais — detector NILS da ESA, detector de radônio francês DORN, retrorrefletor italiano INRRI e nanossatélite paquistanês ICUBE-Q."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "3 de maio de 2024 — Long March 5, a partir de Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/change6/03.webp",
+          "caption": "O Long March 5 lança a Chang'e 6 — viagem de ida e volta de 28 dias ao lado oculto da Lua, incluindo 14 dias de espera pela janela certa de comunicação via retransmissor."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Cratera Apollo (dentro da bacia Polo Sul-Aitken) — pouso em 1º de junho de 2024",
+      "images": [
+        {
+          "src": "/images/missions/change6/04.webp",
+          "caption": "O módulo de pouso da Chang'e 6 no lado oculto — o retorno de amostras estacionário, sem rover, registrado por um minirrover implantado."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciência",
+      "subtitle": "1.935 g de material da bacia Polo Sul-Aitken",
+      "images": [
+        {
+          "src": "/images/missions/change6/05.webp",
+          "caption": "Cápsula de retorno de amostras na pradaria da Mongólia Interior, 25 de junho de 2024 — as primeiras amostras do lado oculto da Lua na Terra, de todos os tempos."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Venera 13",
+  "current_distance_label": "0.74 AU · 1982년 3월 1일 금성 착륙 (표면 생존 시간 127분)",
+  "waypoints": [
+    {
+      "label": "발사 (Proton-K)"
+    },
+    null,
+    null,
+    {
+      "label": "금성 표면 착륙"
+    }
+  ]
+}

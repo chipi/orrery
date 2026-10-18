@@ -1,0 +1,39 @@
+{
+  "intro": "Luna 21 landete am 15. Januar 1973 im Krater Le Monnier – und setzte Lunokhod 2 ab, den Nachfolger des ersten Mondrovers der Welt. Lunokhod 2 legte in 4 Monaten 42,1 km zurück – ein Rekord, der bis zum Juli 2014 Bestand hatte, als ihn die Opportunity der NASA auf dem Mars übertraf, 41 Jahre später. Der Rover lieferte 80.000 Fernsehbilder und 86 Panoramaaufnahmen, bevor ein Regolithhaufen auf den Radiator fiel und das Fahrzeug überhitzte.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Lunokhod 2 – der Fahrrekord im Mondhochland (42 km)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/01.webp",
+          "caption": "Lunokhod 2 – gegenüber Lunokhod 1 verbessert: mehr Kameras, feinere Lenkung, Manipulator an der dritten Achse, größere Solarpaneele."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/02.webp",
+          "caption": "Das Fahrgestell von Lunokhod 2 bei der Vorbereitung für den Transport – acht unabhängige Radmotoren, jeder mit eigenem Regelkreis zur Drehmomentrückmeldung."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Krater Le Monnier – Landung am 15. Januar 1973",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/03.webp",
+          "caption": "Lunokhod 2, aufgenommen von seiner Panoramakamera – ein langer Schatten zieht sich über die Mondoberfläche."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/04.webp",
+          "caption": "Karte der 42,1 km langen Fahrtroute – der Rover überquerte Mare-Basalt, erklomm Kraterwände und untersuchte über vier Mondtage hinweg Dutzende Gesteinsbrocken."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/05.webp",
+          "caption": "Endposition, 2010 von LRO aufgenommen – Lunokhod 2 kam zum Stillstand, nachdem Regolith von einer steilen Kraterwand sein Radiatorpaneel verschüttet hatte."
+        }
+      ]
+    }
+  ]
+}

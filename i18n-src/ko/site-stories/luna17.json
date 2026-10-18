@@ -1,0 +1,39 @@
+{
+  "intro": "Luna 17은 1970년 11월 17일 비의 바다에 착륙해 다른 천체에서 작동한 최초의 바퀴 달린 탐사 차량 Lunokhod 1을 내려놓았다. NASA의 LRV보다 7개월 앞선 기록이다. Lunokhod 1은 크림반도에 있던 5인 팀의 조종을 받으며 달의 하루 11번에 걸쳐 10.5km를 주행했다. 사진 25,000장과 파노라마 211장을 보낸 뒤 1971년 9월 교신이 끊겼다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "달 위의 첫 바퀴 — Lunokhod 1",
+      "images": [
+        {
+          "src": "/images/missions/luna17/01.webp",
+          "caption": "Lunokhod 1 — 바퀴 8개, 무게 756kg의 태양광 전력 섀시로, 밤의 온기를 위해 폴로늄-210 RTG를 갖췄다. 3개월을 목표로 설계했지만 10개월 동안 작동했다."
+        },
+        {
+          "src": "/images/missions/luna17/02.webp",
+          "caption": "Luna 17 착륙선과 Lunokhod 1을 내려놓기 위한 경사로. 소련의 원격 조종팀은 크림반도 해안에 있던 개조된 잠수함에서 차량을 운용했다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "비의 바다 — 1970년 11월 17일 착륙",
+      "images": [
+        {
+          "src": "/images/missions/luna17/03.webp",
+          "caption": "비의 바다 위를 달리는 Lunokhod 1 — 빛의 속도 때문에 각 방향으로 2.5초의 지연이 있었지만, 5인 팀이 실시간으로 조종했다."
+        },
+        {
+          "src": "/images/missions/luna17/04.webp",
+          "caption": "Lunokhod 1의 주행 경로 지도 — 비의 바다를 가로지르는 10.5km의 지그재그 경로와 바위와 크레이터에서 이루어진 과학 관측 정차 지점."
+        },
+        {
+          "src": "/images/missions/luna17/05.webp",
+          "caption": "Lunokhod 1의 레트로리플렉터 — 50년이 넘은 지금도 지구의 달 레이저 거리 측정 관측소에서 사용하고 있다."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "intro": "Opportunity s'est posé à Meridiani Planum le 25 janvier 2004 — un trou d'un coup, qui a fait rouler le rover, rebondissant sur ses airbags, directement dans un petit cratère (Eagle Crater) dont les parois recelaient les premières « myrtilles » riches en hématite jamais observées de près sur Mars. Conçu pour durer 90 sols, Opportunity a parcouru 45,16 km en 14 ans, jusqu'à ce qu'une tempête de poussière englobant toute la planète, en juin 2018, le prive d'énergie solaire. Dernière transmission : « Ma batterie est faible et la nuit tombe. »",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Jumeau de Spirit, posé de l'autre côté de Mars",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/opportunity/01.webp",
+          "caption": "MER-B pendant l'intégration — un matériel identique à celui de Spirit, optimisé pour le terrain plat des plaines martiennes."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "En surface",
+      "subtitle": "Meridiani Planum — posé le 25 janvier 2004",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/opportunity/tier3-pan.jpg",
+          "caption": "Legacy Pan, sols 5084-5111 (mai-juin 2018) — le dernier panorama à 360° d'Opportunity avant la tempête de poussière. Perseverance Valley descend vers le cratère Endeavour."
+        },
+        {
+          "src": "/images/hotspots/mars/opportunity/tier2-hirise.jpg",
+          "caption": "Le bord du cratère Endeavour, où Opportunity a passé ses dernières années. Le lieu de repos du rover se trouve à droite, dans Perseverance Valley."
+        },
+        {
+          "src": "/images/fleet-galleries/opportunity/02.webp",
+          "caption": "« Myrtilles » d'hématite — des sphérules de l'ordre du millimètre incrustées dans le substrat rocheux de Meridiani. La première preuve directe de la présence d'eau liquide de longue durée sur Mars."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "La science",
+      "subtitle": "D'Eagle Crater à Endeavour — 14 ans de preuves",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/opportunity/03.webp",
+          "caption": "Site d'impact du bouclier thermique au cratère Endurance — Opportunity est revenu inspecter son propre matériel d'entrée atmosphérique abandonné."
+        },
+        {
+          "src": "/images/fleet-galleries/opportunity/04.webp",
+          "caption": "Affleurements stratifiés de Burns Cliff à l'intérieur du cratère Endurance — archive sédimentaire d'une ancienne étendue d'eau salée et acide."
+        }
+      ]
+    }
+  ]
+}

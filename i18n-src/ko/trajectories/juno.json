@@ -1,0 +1,27 @@
+{
+  "name": "Juno",
+  "current_distance_label": "5.5 AU · 2016-07-05부터 목성의 극궤도에 진입했으며, 2025년까지 연장 임무 진행 중",
+  "waypoints": [
+    {
+      "label": "발사"
+    },
+    null,
+    null,
+    {
+      "label": "심우주 기동"
+    },
+    null,
+    {
+      "label": "지구 보조 중력"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "목성 궤도 진입"
+    },
+    {
+      "label": "현재 (목성 궤도)"
+    }
+  ]
+}

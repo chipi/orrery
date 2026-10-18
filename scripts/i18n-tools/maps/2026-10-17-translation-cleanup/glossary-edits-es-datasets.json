@@ -1,0 +1,242 @@
+[
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-veil.caption",
+    "old": "Una wisp del Cygnus Loop — una onda de choque de supernova aún en expansión después de 10.000 años.",
+    "new": "Un jirón del Bucle de Cygnus — una onda de choque de supernova aún en expansión después de 10.000 años."
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-veil.type",
+    "old": "Remanente de supernova · Cygnus Loop",
+    "new": "Remanente de supernova · Bucle de Cygnus"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "lab_illustrations./images/lab/goals/catch-the-iss_webp.title",
+    "old": "Atrapar la ISS",
+    "new": "Atrapar la EEI"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "posters./images/posters/iss_jpg.title",
+    "old": "ISS",
+    "new": "EEI"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-launcher-vostok-k_webp.what",
+    "old": "Núcleo en cruz de Korolev con cuatro propulsores cohete de geometría ahusada.",
+    "new": "Núcleo en cruz de Koroliov con cuatro propulsores cohete de geometría ahusada."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-station-iss_webp.title",
+    "old": "Modelo proxy de la ISS",
+    "new": "Modelo proxy de la EEI"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-station-iss_webp.where",
+    "old": "Escena orbital de la ISS",
+    "new": "Escena orbital de la EEI"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-microgravity_webp.where",
+    "old": "Lente científica de ISS + Tiangong",
+    "new": "Lente científica de EEI + Tiangong"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "canvas2d./images/colophon/viz-blueprint_webp.where",
+    "old": "ISS + Tiangong",
+    "new": "EEI + Tiangong"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Station module notes.what",
+    "old": "Notas operativas e históricas para los 22 módulos de la ISS y Tiangong, escritas para los paneles de planos.",
+    "new": "Notas operativas e históricas para los 22 módulos de la EEI y Tiangong, escritas para los paneles de planos."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Station module notes.where",
+    "old": "ISS + Tiangong",
+    "new": "EEI + Tiangong"
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.1.subtitle",
+    "old": "16 de julio de 1969: el Saturn V despega desde Kennedy Space Center",
+    "new": "16 de julio de 1969: el Saturn V despega desde el Centro Espacial Kennedy"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "intro",
+    "old": "El Apollo 14 aterrizó en las tierras altas de Fra Mauro el 5 de febrero de 1971, el objetivo original del Apollo 13, que se cumplió tras la explosión de aquella misión. Shepard y Mitchell arrastraron el Modular Equipment Transporter (una especie de rickshaw) por las laderas de Cone Crater y trajeron de vuelta 43 kg de brecha: fragmentos del gigantesco impacto que formó Mare Imbrium hace 3900 millones de años. Shepard, como es bien sabido, golpeó dos pelotas de golf antes del despegue.",
+    "new": "El Apollo 14 aterrizó en las tierras altas de Fra Mauro el 5 de febrero de 1971, el objetivo original del Apollo 13, que se cumplió tras la explosión de aquella misión. Shepard y Mitchell arrastraron el Modular Equipment Transporter (una especie de rickshaw) por las laderas del cráter Cone y trajeron de vuelta 43 kg de brecha: fragmentos del gigantesco impacto que formó Mare Imbrium hace 3900 millones de años. Shepard, como es bien sabido, golpeó dos pelotas de golf antes del despegue."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Mitchell con el Modular Equipment Transporter (MET): el «rickshaw» transportaba herramientas y muestras cuesta arriba hacia Cone Crater.",
+    "new": "Mitchell con el Modular Equipment Transporter (MET): el «rickshaw» transportaba herramientas y muestras cuesta arriba hacia el cráter Cone."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Borde de Cone Crater: la tripulación ascendió hasta unos 30 m del borde, pero tuvo que retroceder por el agotamiento y las limitaciones de comunicaciones.",
+    "new": "Borde del cráter Cone: la tripulación ascendió hasta unos 30 m del borde, pero tuvo que retroceder por el agotamiento y las limitaciones de comunicaciones."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "intro",
+    "old": "El Apollo 15 alunizó en Hadley Rille / Apennine Mountains el 30 de julio de 1971: la primera misión «clase J», con una estancia prolongada en la superficie, el Lunar Roving Vehicle (LRV) y un piloto con formación científica (David Scott). Scott e Irwin recorrieron en total 28 km a lo largo de tres EVA, hallaron la Genesis Rock (anortosita de ~4100 millones de años, corteza primaria) y, en directo por televisión, soltaron una pluma y un martillo para reproducir el experimento de gravedad de Galileo.",
+    "new": "El Apollo 15 alunizó junto al surco Hadley, en los montes Apeninos el 30 de julio de 1971: la primera misión «clase J», con una estancia prolongada en la superficie, el Lunar Roving Vehicle (LRV) y un piloto con formación científica (David Scott). Scott e Irwin recorrieron en total 28 km a lo largo de tres EVA, hallaron la Genesis Rock (anortosita de ~4100 millones de años, corteza primaria) y, en directo por televisión, soltaron una pluma y un martillo para reproducir el experimento de gravedad de Galileo."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "David Scott en el borde de Hadley Rille: la primera vez que unos astronautas se plantaron al borde de un antiguo canal de lava en otro mundo.",
+    "new": "David Scott en el borde del surco Hadley: la primera vez que unos astronautas se plantaron al borde de un antiguo canal de lava en otro mundo."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "intro",
+    "old": "El Apollo 16 alunizó en las Descartes Highlands el 21 de abril de 1972, la única misión Apollo a una zona de tierras altas (no de mares), elegida para tomar muestras de lo que se creía un terreno volcánico. Young y Duke NO encontraron rocas volcánicas, solo brechas de impacto y anortosita, lo que echó por tierra el modelo geológico y demostró que las tierras altas lunares son una corteza antigua fracturada por impactos, y no el resultado de un vulcanismo posterior. Tres EVA, 27 km de recorrido en el LRV y 95 kg de muestras traídas a la Tierra.",
+    "new": "El Apollo 16 alunizó en las Tierras Altas de Descartes el 21 de abril de 1972, la única misión Apollo a una zona de tierras altas (no de mares), elegida para tomar muestras de lo que se creía un terreno volcánico. Young y Duke NO encontraron rocas volcánicas, solo brechas de impacto y anortosita, lo que echó por tierra el modelo geológico y demostró que las tierras altas lunares son una corteza antigua fracturada por impactos, y no el resultado de un vulcanismo posterior. Tres EVA, 27 km de recorrido en el LRV y 95 kg de muestras traídas a la Tierra."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.subtitle",
+    "old": "Descartes Highlands: alunizaje el 21 de abril de 1972",
+    "new": "Tierras Altas de Descartes: alunizaje el 21 de abril de 1972"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Panorámica de las Descartes Highlands: la etapa de descenso de Orion + el LRV + Stone Mountain al fondo.",
+    "new": "Panorámica de las Tierras Altas de Descartes: la etapa de descenso de Orion + el LRV + Stone Mountain al fondo."
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.1.subtitle",
+    "old": "22 de febrero de 2019: Falcon 9 desde Cape Canaveral (lanzamiento compartido)",
+    "new": "22 de febrero de 2019: Falcon 9 desde Cabo Cañaveral (lanzamiento compartido)"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "intro",
+    "old": "El rover Curiosity de la NASA despegó el 26 de noviembre de 2011 a bordo de un Atlas V desde Cape Canaveral. Tras 254 días de crucero, Mars Science Laboratory depositó el 6 de agosto de 2012 al rover de 899 kg y propulsión nuclear en el cráter Gale, mediante el ya célebre aterrizaje con grúa celeste. Más de una década después, Curiosity sigue ascendiendo por el Mount Sharp y perforando rocas que guardan el registro de un pasado en el que Marte fue habitable.",
+    "new": "El rover Curiosity de la NASA despegó el 26 de noviembre de 2011 a bordo de un Atlas V desde Cabo Cañaveral. Tras 254 días de crucero, Mars Science Laboratory depositó el 6 de agosto de 2012 al rover de 899 kg y propulsión nuclear en el cráter Gale, mediante el ya célebre aterrizaje con grúa celeste. Más de una década después, Curiosity sigue ascendiendo por el monte Sharp y perforando rocas que guardan el registro de un pasado en el que Marte fue habitable."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.1.subtitle",
+    "old": "26 de noviembre de 2011: un Atlas V desde Cape Canaveral",
+    "new": "26 de noviembre de 2011: un Atlas V desde Cabo Cañaveral"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Panorámica de Mont Mercou, sol 3070 (marzo de 2021). Barrido de 360° de Mastcam-Z que muestra el rover, los acantilados estratificados de Mt Mercou y el Mount Sharp en el horizonte.",
+    "new": "Panorámica de Mont Mercou, sol 3070 (marzo de 2021). Barrido de 360° de Mastcam-Z que muestra el rover, los acantilados estratificados de Mt Mercou y el monte Sharp en el horizonte."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.3.images.1.caption",
+    "old": "Rocas sedimentarias en Vera Rubin Ridge: formaciones de hierro bandeado y minerales de arcilla indican la existencia de agua líquida en el pasado y de un entorno químico habitable.",
+    "new": "Rocas sedimentarias en cresta Vera Rubin: formaciones de hierro bandeado y minerales de arcilla indican la existencia de agua líquida en el pasado y de un entorno químico habitable."
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.1.subtitle",
+    "old": "5 de mayo de 2018: un Atlas V desde la base Vandenberg AFB",
+    "new": "5 de mayo de 2018: un Atlas V desde la Base de la Fuerza Aérea Vandenberg"
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.1.subtitle",
+    "old": "4 de diciembre de 1996: un Delta II desde Cape Canaveral",
+    "new": "4 de diciembre de 1996: un Delta II desde Cabo Cañaveral"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Legacy Pan, soles 5084-5111 (mayo-junio de 2018): el último panorama de 360° de Opportunity antes de la tormenta de polvo. Perseverance Valley desciende hacia Endeavour Crater.",
+    "new": "Legacy Pan, soles 5084-5111 (mayo-junio de 2018): el último panorama de 360° de Opportunity antes de la tormenta de polvo. Perseverance Valley desciende hacia el cráter Endeavour."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "El borde de Endeavour Crater, donde Opportunity pasó sus últimos años. El lugar de reposo del rover se encuentra en Perseverance Valley, a la derecha.",
+    "new": "El borde del cráter Endeavour, donde Opportunity pasó sus últimos años. El lugar de reposo del rover se encuentra en Perseverance Valley, a la derecha."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Lugar del impacto del escudo térmico en Endurance Crater: Opportunity regresó para inspeccionar su propio material de entrada desechado.",
+    "new": "Lugar del impacto del escudo térmico en el cráter Endurance: Opportunity regresó para inspeccionar su propio material de entrada desechado."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Afloramientos estratificados de Burns Cliff en el interior de Endurance Crater: registro sedimentario de una antigua masa de agua salada y ácida.",
+    "new": "Afloramientos estratificados de Burns Cliff en el interior del cráter Endurance: registro sedimentario de una antigua masa de agua salada y ácida."
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.1.subtitle",
+    "old": "30 de julio de 2020: un Atlas V desde Cape Canaveral",
+    "new": "30 de julio de 2020: un Atlas V desde Cabo Cañaveral"
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.1.subtitle",
+    "old": "20 de agosto de 1975: un Titan IIIE desde Cape Canaveral",
+    "new": "20 de agosto de 1975: un Titan IIIE desde Cabo Cañaveral"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Un Long March 5 lanza Tianwen-1 desde el Wenchang Space Launch Site, en Hainan, para un tránsito de 7 meses hasta Marte.",
+    "new": "Un Long March 5 lanza Tianwen-1 desde el Centro de Lanzamiento de Satélites de Wenchang, en Hainan, para un tránsito de 7 meses hasta Marte."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-37cb7096799f.caption",
+    "old": "El Cmdr Chris Hadfield interpreta Space Oddity de David Bowie a bordo de la ISS — may 2013.",
+    "new": "El Cmdr Chris Hadfield interpreta Space Oddity de David Bowie a bordo de la EEI — may 2013."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-4ba1c691d9d4.title",
+    "old": "Voskhod 2 — Leonov, el primer paseo espacial",
+    "new": "Voskhod 2 — Leónov, el primer paseo espacial"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-4ba1c691d9d4.caption",
+    "old": "Los 12 minutos de Alexei Leonov fuera de la cápsula — 18 mar 1965.",
+    "new": "Los 12 minutos de Alekséi Leónov fuera de la cápsula — 18 mar 1965."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-9540338e3285.title",
+    "old": "La ISS — timelapse continuo más largo desde el espacio",
+    "new": "La EEI — timelapse continuo más largo desde el espacio"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ac1902ff67f1.title",
+    "old": "DART — impacto con el asteroide Dimorphos",
+    "new": "DART — impacto con el asteroide Dimorfos"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-b6068838acb1.caption",
+    "old": "Segundo aterrizaje lunar tripulado, Ocean of Storms — 14 nov 1969.",
+    "new": "Segundo aterrizaje lunar tripulado, océano de las Tormentas — 14 nov 1969."
+  }
+]

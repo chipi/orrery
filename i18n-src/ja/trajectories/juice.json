@@ -1,0 +1,29 @@
+{
+  "name": "JUICE",
+  "current_distance_label": "0.94 AU · 第2次地球フライバイ 2026-09-29 に向かう途中 (巡航レグ 2/5)",
+  "waypoints": [
+    {
+      "label": "打ち上げ (Ariane 5)"
+    },
+    null,
+    {
+      "label": "月・地球フライバイ"
+    },
+    null,
+    {
+      "label": "金星フライバイ"
+    },
+    null,
+    {
+      "label": "地球 #2"
+    },
+    null,
+    {
+      "label": "地球 #3"
+    },
+    null,
+    {
+      "label": "木星軌道投入"
+    }
+  ]
+}

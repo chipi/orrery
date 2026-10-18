@@ -1,0 +1,53 @@
+{
+  "intro": "Chang'e 6 aterrizó en la cuenca Polo Sur-Aitken el 1 de junio de 2024: la primera misión de retorno de muestras de la cara oculta de la Luna, y la estructura de impacto más profunda, antigua y grande del Sistema Solar interior. El 25 de junio de 2024 trajo a la Tierra 1935 g de material de la cara oculta, unas muestras que podrían contener fragmentos del manto procedentes del impacto que formó la cuenca hace 4200 millones de años.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Rediseño de Chang'e 5 para el retorno de muestras de la cara oculta",
+      "images": [
+        {
+          "src": "/images/missions/change6/01.webp",
+          "caption": "Conjunto de Chang'e 6: se añadió el relé Queqiao-2 para las comunicaciones con la cara oculta; por lo demás, hereda la arquitectura de Chang'e 5."
+        },
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "Cargas útiles internacionales: detector NILS de la ESA, detector de radón francés DORN, retrorreflector italiano INRRI y nanosatélite paquistaní ICUBE-Q."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "3 de mayo de 2024: Long March 5 desde Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/change6/03.webp",
+          "caption": "Long March 5 lanza Chang'e 6: viaje de ida y vuelta de 28 días a la cara oculta lunar, que incluye 14 días de espera hasta la ventana adecuada de comunicaciones por relé."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Cráter Apollo (dentro de Polo Sur-Aitken): aterrizaje el 1 de junio de 2024",
+      "images": [
+        {
+          "src": "/images/missions/change6/04.webp",
+          "caption": "El módulo de aterrizaje de Chang'e 6 en la cara oculta: un retorno de muestras estacionario, sin rover, fotografiado por un minirrover desplegado."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciencia",
+      "subtitle": "1935 g de material de la cuenca Polo Sur-Aitken",
+      "images": [
+        {
+          "src": "/images/missions/change6/05.webp",
+          "caption": "Cápsula de retorno de muestras en la pradera de Mongolia Interior, 25 de junio de 2024: las primeras muestras lunares de la cara oculta en la Tierra, nunca antes logradas."
+        }
+      ]
+    }
+  ]
+}

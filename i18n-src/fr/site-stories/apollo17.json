@@ -1,0 +1,57 @@
+{
+  "intro": "Apollo 17 s'est posée dans la vallée Taurus-Littrow le 11 décembre 1972 : c'était la dernière mission lunaire avec équipage, et la seule à avoir compté un géologue professionnel (Harrison Schmitt) à la surface. Cernan et Schmitt ont passé 22 h dehors au cours de trois sorties extravéhiculaires (EVA), parcouru 35 km en rover et rapporté 110 kg d'échantillons, parmi lesquels le célèbre sol orange (des billes de verre volcanique issues d'une fontaine de feu vieille de 3,5 Ga). L'empreinte de pas de Cernan est la trace humaine la plus récente laissée sur un autre monde.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "America + Challenger + LRV-3",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/01.webp",
+          "caption": "Portrait de l'équipage d'Apollo 17 : Gene Cernan (CDR, commandant), Ron Evans (CMP, pilote du module de commande) et Harrison « Jack » Schmitt (LMP, pilote du module lunaire, astronaute-scientifique)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Le lancement",
+      "subtitle": "7 décembre 1972 : le dernier vol d'une Saturn V",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/02.webp",
+          "caption": "Premier lancement de nuit d'une Saturn V, le 7 décembre 1972 à 05 h 33 UTC — visible à 700 km de distance. Le dernier vol Apollo et la dernière Saturn V."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "vallée Taurus-Littrow : alunissage le 11 décembre 1972",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/03.webp",
+          "caption": "Cernan + le drapeau, avec la Terre au-dessus : « Le dernier homme sur la Lune »."
+        },
+        {
+          "src": "/images/missions/apollo17/04.webp",
+          "caption": "Schmitt au cratère Shorty découvre le sol orange : des sphérules de verre volcanique issues d'une fontaine de lave vieille de 3,5 Ga."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo17/tier3-pan.jpg",
+          "caption": "Panorama de Taurus-Littrow : l'étage de descente de Challenger + le LRV + Tortilla Flat au loin."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "La science",
+      "subtitle": "Le premier géologue de formation sur la Lune",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/05.webp",
+          "caption": "Échantillon 70017 : le dernier échantillon lunaire prélevé par des humains, ultime tâche de Cernan avant le décollage du 14 décembre 1972."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "intro": "Phoenix è atterrato a 68,22° N il 25 maggio 2008: il primo lander della NASA a toccare il suolo nell'alto Artico marziano. In pochi giorni ha raccolto il primo campione di ghiaccio d'acqua marziano e lo ha osservato sublimare nell'inquadratura della camera. Il lander ha operato per 157 sol, fino a quando l'inverno polare lo ha ucciso: la formazione di brina di CO₂ ha sepolto i pannelli solari, ponendo fine alla missione.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Ricostruito a partire dal lander cancellato della missione Mars Surveyor 2001",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/01.webp",
+          "caption": "Il lander Phoenix prima della spedizione: 350 kg, braccio robotico, paletta per il ghiaccio, laboratorio di chimica a umido TEGA."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Vastitas Borealis — atterraggio il 25 maggio 2008",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/phoenix/tier3-pan.jpg",
+          "caption": "Panorama a 360° del sito di atterraggio di Phoenix, sol 14: in basso a destra sono visibili l'area di lavoro, il piede del lander e il ghiaccio messo a nudo dai retrorazzi."
+        },
+        {
+          "src": "/images/hotspots/mars/phoenix/tier2-hirise.jpg",
+          "caption": "Il lander Phoenix, il paracadute e il backshell: tutti ripresi da HiRISE su MRO dopo l'atterraggio."
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/02.webp",
+          "caption": "Il braccio robotico scava la trincea «Snow White»: il ghiaccio d'acqua brillante, esposto a pochi centimetri sotto la superficie, è stato poi osservato mentre sublimava nell'arco di quattro sol."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Scienza",
+      "subtitle": "Acqua, perclorati e il primo meteo marziano",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/03.webp",
+          "caption": "Rilevamento di sali di perclorato nel suolo marziano: una chimica destinata a plasmare ogni successiva discussione sull'abitabilità di Marte."
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/04.webp",
+          "caption": "Profili lidar della neve che cade sul sito di Phoenix, verso la fine della missione: la prima precipitazione marziana osservata direttamente."
+        }
+      ]
+    }
+  ]
+}

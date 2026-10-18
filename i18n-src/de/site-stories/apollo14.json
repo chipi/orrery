@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 14 landete am 5. Februar 1971 im Hochland von Fra Mauro – dem ursprünglichen Ziel von Apollo 13, das nach der Explosion an Bord von Apollo 13 nun doch noch erreicht wurde. Shepard und Mitchell zogen den Modular Equipment Transporter (eine Art Rikscha) die Hänge des Cone-Kraters hinauf und brachten 43 kg Brekzie zurück – Bruchstücke jenes gewaltigen Einschlags, der vor 3,9 Milliarden Jahren das Mare Imbrium formte. Berühmt wurde Shepard dafür, dass er vor dem Start noch zwei Golfbälle schlug.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Kitty Hawk + Antares + die Rikscha",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/01.webp",
+          "caption": "Die Besatzung von Apollo 14: Alan Shepard (CDR – zehn Jahre zuvor erster Amerikaner im All), Stuart Roosa (CMP), Ed Mitchell (LMP)."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Hochland von Fra Mauro – Landung am 5. Februar 1971",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/02.webp",
+          "caption": "Mitchell mit dem Modular Equipment Transporter (MET) – die „Rikscha“ beförderte Werkzeuge und Proben den Hang hinauf in Richtung Cone-Krater."
+        },
+        {
+          "src": "/images/missions/apollo14/03.webp",
+          "caption": "Rand des Cone-Kraters – die Besatzung stieg bis auf ca. 30 m an den Rand heran, musste aber wegen Erschöpfung + Funkverbindungsgrenzen umkehren."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo14/tier3-pan.jpg",
+          "caption": "Panorama der Landestelle von Apollo 14 – Antares-Abstiegsstufe + ALSEP sichtbar."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wissenschaft",
+      "subtitle": "Brekzienproben vom Imbrium-Einschlag",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/04.webp",
+          "caption": "„Big Bertha“ – Probe 14321, eine Brekzie von 8,99 kg, die das älteste je gefundene Erdgestein enthält (Zirkon mit 4,1 Ga), durch einen frühen Einschlag auf der Erde zum Mond geschleudert."
+        }
+      ]
+    }
+  ]
+}

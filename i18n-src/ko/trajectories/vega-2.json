@@ -1,0 +1,18 @@
+{
+  "name": "Vega 2",
+  "current_distance_label": "0.95 AU · 1986-03-09 Halley 비행 이후 태양 중심 궤도에 있는 우주선",
+  "waypoints": [
+    {
+      "label": "발사 (Proton-K)"
+    },
+    null,
+    {
+      "label": "금성 + 풍선"
+    },
+    null,
+    {
+      "label": "Halley 비행"
+    },
+    null
+  ]
+}

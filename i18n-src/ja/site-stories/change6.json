@@ -1,0 +1,53 @@
+{
+  "intro": "Chang'e 6は2024年6月1日、南極エイトケン盆地に着陸した。月の裏側からの初のサンプルリターン・ミッションであり、舞台となったのは太陽系内部で最も深く、最も古く、最大の衝突構造だ。2024年6月25日、裏側の物質1,935 gを地球へ持ち帰った。そのサンプルには、42億年前に盆地を形成した衝突によるマントル片が含まれている可能性がある。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "月の裏側からのサンプルリターンに向けたChang'e 5の再設計",
+      "images": [
+        {
+          "src": "/images/missions/change6/01.webp",
+          "caption": "Chang'e 6の機体構成。裏側との通信のためQueqiao-2中継衛星を追加した以外は、Chang'e 5のアーキテクチャを踏襲している。"
+        },
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "国際搭載機器。ESAのNILS検出器、フランスのDORNラドン検出器、イタリアのINRRI再帰反射器、パキスタンのICUBE-Qナノ衛星。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "2024年5月3日 — 文昌から打ち上げられたLong March 5",
+      "images": [
+        {
+          "src": "/images/missions/change6/03.webp",
+          "caption": "Long March 5がChang'e 6を打ち上げる。月の裏側への往復は28日間で、中継通信に適したタイミングを待つ14日間も含まれる。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "アポロ・クレーター(南極エイトケン内)— 2024年6月1日着陸",
+      "images": [
+        {
+          "src": "/images/missions/change6/04.webp",
+          "caption": "月の裏側に立つChang'e 6着陸機。ローバーを搭載せず定点で行うサンプルリターンの様子を、展開された小型ローバーがとらえた。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "南極エイトケン盆地の物質1,935 g",
+      "images": [
+        {
+          "src": "/images/missions/change6/05.webp",
+          "caption": "2024年6月25日、内モンゴルの草原に着地したサンプルリターンカプセル。月の裏側のサンプルが地球にもたらされたのは、史上初めてのことだ。"
+        }
+      ]
+    }
+  ]
+}

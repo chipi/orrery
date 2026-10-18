@@ -1,0 +1,41 @@
+{
+  "name": "BepiColombo",
+  "current_distance_label": "0,48 AU · in rotta verso l'inserimento in orbita attorno a Mercurio il 2026-12-05",
+  "waypoints": [
+    {
+      "label": "Lancio (Ariane 5)"
+    },
+    null,
+    {
+      "label": "Terra"
+    },
+    {
+      "label": "Venere n. 1"
+    },
+    {
+      "label": "Venere n. 2"
+    },
+    {
+      "label": "Mercurio n. 1"
+    },
+    {
+      "label": "Mercurio n. 2"
+    },
+    {
+      "label": "Mercurio n. 3"
+    },
+    {
+      "label": "Mercurio n. 4"
+    },
+    {
+      "label": "Mercurio n. 5"
+    },
+    {
+      "label": "Mercurio n. 6"
+    },
+    null,
+    {
+      "label": "Inserimento in orbita attorno a Mercurio"
+    }
+  ]
+}

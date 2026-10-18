@@ -1,0 +1,46 @@
+{
+  "intro": "Chang'e 3は2013年12月14日、雨の海に着陸した。中国初の月面軟着陸であり、Luna 24以来37年ぶりとなる、あらゆる種類を通じての月面着陸でもあった。Yutu探査車を展開し、Yutuは約114 m走行したのち、制御系の故障によってその場から動けなくなり、残る約30月日の生存期間をそのまま過ごした。この成功により、中国は月面に資産を持つ3番目の国となった。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "中国初の月着陸機とYutu探査車",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/01.webp",
+          "caption": "展示されているChang'e 3着陸機。RTG方式の熱源ユニット、4本の脚、Yutuを降ろすためのスロープを備える。"
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/02.webp",
+          "caption": "Yutu探査車。重量140 kg、6輪、車体下部に地中レーダーを搭載。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "2013年12月1日 — 西昌から長征3B(Long March 3B)で打ち上げ",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/03.webp",
+          "caption": "Chang'e 3を載せて離昇するLong March 3B。月までの飛行は5日間で、12月14日に軟着陸した。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "雨の海 — 2013年12月14日着陸",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/04.webp",
+          "caption": "月面で互いを撮影するChang'e 3着陸機とYutu探査車。月面における中国の機体同士による、初めての相互ポートレートとなった。"
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/05.webp",
+          "caption": "Yutuのレーダーがとらえた雨の海地下の断面。深さ約330 mまで、玄武岩の溶岩流が幾層にも重なっている。"
+        }
+      ]
+    }
+  ]
+}

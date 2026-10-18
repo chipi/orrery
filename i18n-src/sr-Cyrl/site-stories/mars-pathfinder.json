@@ -1,0 +1,50 @@
+{
+  "intro": "Mars Pathfinder слетео је у долину Арес 4. јула 1997. — прва америчка мисија на Марс после мисија Viking, 21 годину раније. Лендер је испустио Sojourner, први точкови на Марсу, и тако показао да су слетање помоћу ваздушних јастука и вожња по површини изводљиви у јефтиној мисији вредној 265 милиона долара, рађеној по начелу „брже-боље-јефтиније”, која је послала око 16.500 снимака. На путу дугом 100 метара Sojourner је мапирао дванаест стена названих по ликовима из цртаних филмова (Yogi, Barnacle Bill, Scooby Doo), пре него што је лендер престао да ради.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Опрема",
+      "subtitle": "Први ровер на Марсу — и први амерички лендер на Марсу после мисије Viking",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/01.webp",
+          "caption": "Pathfinder током испитивања пре лансирања — базна станица и рампе са латицама за спуштање Sojourner-а."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/02.webp",
+          "caption": "Микроровер Sojourner — 11,5 kg, 6 точкова, на соларни погон, предвиђен да ради 7 сола (радио је 83)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Лансирање",
+      "subtitle": "4. децембар 1996. — Delta II са Кејп Канаверала",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/03.webp",
+          "caption": "Ракета Delta II 7925 лансира Pathfinder на седмомесечни пут ка Марсу."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Површина",
+      "subtitle": "Долина Арес — слетање 4. јула 1997.",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg",
+          "caption": "Improved Presidential Panorama — панорамски поглед од 360° у боји долине Арес. На хоризонту се виде Twin Peaks (названи по телевизијској серији)."
+        },
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg",
+          "caption": "Лендер Pathfinder снимљен из орбите деценијама касније камером HiRISE на сонди MRO — виде се латице и Sojourner-ов последњи познати положај."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/04.webp",
+          "caption": "Sojourner прегледа стену Yogi — прва хемијска анализа стена на марсовском терену изблиза."
+        }
+      ]
+    }
+  ]
+}

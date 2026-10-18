@@ -1,0 +1,46 @@
+{
+  "intro": "Mars 3 toccò il suolo della Terra Sirenum il 2 dicembre 1971: fu il primo lander a sopravvivere all'ingresso nell'atmosfera marziana e a raggiungere la superficie, cinque giorni dopo lo schianto della gemella Mars 2. Le comunicazioni si interruppero dopo 14,5 secondi, restituendo un unico frammento parziale e degradato di immagine in scala di grigi. Con ogni probabilità il lander arrivò nel pieno di una tempesta di polvere che avvolgeva l'intero pianeta. L'esatto luogo di quiete di Mars 3 è ancora oggetto di dibattito: nel 2013 HiRISE ha ripreso un possibile hardware candidato.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Lander sovietico di classe 4MS, primo atterraggio su Marte di qualsiasi tipo",
+      "images": [
+        {
+          "src": "/images/missions/mars3/01.webp",
+          "caption": "Modello del lander Mars 3 al museo di storia spaziale della NPO Lavochkin: massa totale di 1.210 kg, includeva un rover Prop-M da 4,5 kg (mai dispiegato)."
+        },
+        {
+          "src": "/images/missions/mars3/02.webp",
+          "caption": "Spaccato dell'hardware del lander Mars 3: l'impostazione progettuale di base influenzò il successivo hardware sovietico dei programmi Venera e Mars."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "28 maggio 1971 — Proton-K da Bajkonur",
+      "images": [
+        {
+          "src": "/images/missions/mars3/03.webp",
+          "caption": "Il Proton-K con lo stadio superiore Blok-D preparato al Cosmodromo di Bajkonur: 6 mesi di viaggio verso Marte."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Terra Sirenum — atterraggio il 2 dicembre 1971",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars3/tier2-hirise.jpg",
+          "caption": "Dettaglio HiRISE del possibile sito dell'hardware di Mars 3 sulla Terra Sirenum: diffuso nel 2013 dal team NASA/UA HiRISE, identificato da storici dilettanti russi dell'astronautica."
+        },
+        {
+          "src": "/images/missions/mars3/04.webp",
+          "caption": "L'unica immagine frammentaria trasmessa da Mars 3: 79 linee, nessun orizzonte, nessun dettaglio. La prima fotografia dalla superficie di un altro pianeta, per quanto debole."
+        }
+      ]
+    }
+  ]
+}

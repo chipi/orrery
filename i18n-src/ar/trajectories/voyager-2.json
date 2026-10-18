@@ -1,0 +1,46 @@
+{
+  "name": "Voyager 2",
+  "current_distance_label": "143 AU · حوالي 19,8 ساعة ضوئية من الشمس",
+  "interstellar_since_label": "عبرت الهيليوبوز في نوفمبر 2018",
+  "waypoints": [
+    {
+      "label": "الإطلاق"
+    },
+    null,
+    null,
+    {
+      "label": "المشتري"
+    },
+    null,
+    null,
+    {
+      "label": "زحل"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "أورانوس"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "نبتون"
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "الهيليوبوز"
+    },
+    null,
+    {
+      "label": "اليوم"
+    }
+  ]
+}

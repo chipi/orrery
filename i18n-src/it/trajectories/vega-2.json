@@ -1,0 +1,18 @@
+{
+  "name": "Vega 2",
+  "current_distance_label": "0,95 UA · veicolo spaziale in orbita eliocentrica dal sorvolo di Halley 1986-03-09",
+  "waypoints": [
+    {
+      "label": "Lancio (Proton-K)"
+    },
+    null,
+    {
+      "label": "Venere + pallone"
+    },
+    null,
+    {
+      "label": "Sorvolo di Halley"
+    },
+    null
+  ]
+}

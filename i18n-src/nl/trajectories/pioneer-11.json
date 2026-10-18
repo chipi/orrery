@@ -1,0 +1,34 @@
+{
+  "name": "Pioneer 11",
+  "current_distance_label": "89 AU · ~12,3 lichtuur van de zon (signaal verloren op 30 september 1995)",
+  "interstellar_since_label": "Signaal verloren in 1995 — vaart in de richting van Arend, bereikt rond 2027 de interstellaire ruimte",
+  "waypoints": [
+    {
+      "label": "Start"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Jupiter-hulp"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Saturnus + F-ring"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Laatste signaal"
+    },
+    null,
+    null,
+    {
+      "label": "Vandaag"
+    }
+  ]
+}

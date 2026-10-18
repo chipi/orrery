@@ -1,0 +1,46 @@
+{
+  "intro": "A Luna 16 pousou no Mare Fecunditatis em 20 de setembro de 1970 — o primeiro retorno robótico de amostras de outro mundo: perfurou 35 cm no regolito lunar, selou 101 g na cápsula de retorno e decolou 26 horas após o pouso. A cápsula aterrissou no Cazaquistão três dias depois. Demonstrou que a engenharia soviética podia trazer material lunar de volta sem voo tripulado, um ano e dois meses após a Apollo 11.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Lander soviético E-8-5 — o primeiro equipamento robótico de retorno de amostras",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/01.webp",
+          "caption": "Maquete da espaçonave Luna 16 — estágio de descida (em primeiro plano) e estágio de subida com a cápsula de retorno (no alto)."
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/02.webp",
+          "caption": "Diagrama do mecanismo de coleta de amostras — testemunho da perfuração com transferência selada para a cápsula de retorno."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "12 de setembro de 1970 — Proton-K a partir de Baikonur",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/03.webp",
+          "caption": "Proton-K com o estágio superior Blok-D na plataforma de lançamento do Cosmódromo de Baikonur."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Mare Fecunditatis — pouso em 20 de setembro de 1970",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/04.webp",
+          "caption": "A Luna 16 perfurando o regolito — 101 g de material foram selados na cápsula de retorno esférica para a decolagem."
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/05.webp",
+          "caption": "Cápsula de retorno na estepe do Cazaquistão, 24 de setembro de 1970 — o primeiro retorno robótico de amostras interplanetárias da história."
+        }
+      ]
+    }
+  ]
+}

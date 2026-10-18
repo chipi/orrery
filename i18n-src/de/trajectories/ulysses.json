@@ -1,0 +1,30 @@
+{
+  "name": "Ulysses",
+  "current_distance_label": "5,2 AU · Mission beendet 2009-06-30 (Düsenleitungen gefroren) — Hardware in polarer heliozentrische Umlaufbahn",
+  "waypoints": [
+    {
+      "label": "Start (STS-41)"
+    },
+    null,
+    {
+      "label": "Jupiter-Vorbeiflug"
+    },
+    null,
+    {
+      "label": "Südpolpassage"
+    },
+    {
+      "label": "Nordpolpassage"
+    },
+    null,
+    {
+      "label": "Südpol #2"
+    },
+    {
+      "label": "Südpol #3"
+    },
+    {
+      "label": "Missionsende"
+    }
+  ]
+}

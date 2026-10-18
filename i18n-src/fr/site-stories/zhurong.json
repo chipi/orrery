@@ -1,0 +1,61 @@
+{
+  "intro": "Zhurong s'est posé sur Utopia Planitia le 14 mai 2021 : c'était le premier atterrissage réussi de la Chine sur Mars, et la première mission martienne d'une nation à réunir orbiteur, atterrisseur et rover en un seul lancement (Tianwen-1). Nommé d'après le dieu chinois du feu, Zhurong a parcouru 1,92 km à travers les plaines du sud d'Utopia avant d'être placé en hibernation en mai 2022, pendant la saison des tempêtes de poussière. La CNSA n'a pas confirmé son réveil.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Premier atterrisseur et premier rover martiens de la Chine",
+      "images": [
+        {
+          "src": "/images/missions/tianwen1/01.webp",
+          "caption": "Le rover Zhurong lors de l’intégration précédant le lancement, à Pékin — 240 kg, alimenté par énergie solaire, équipé d’un radar à pénétration de sol pour sonder le sous-sol."
+        },
+        {
+          "src": "/images/missions/tianwen1/02.webp",
+          "caption": "L’ensemble de lancement de Tianwen-1 — orbiteur, atterrisseur et rover réunis, la mission martienne la plus ambitieuse jamais réalisée dès une première tentative."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Le lancement",
+      "subtitle": "23 juillet 2020 — Long March 5 depuis Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/tianwen1/03.webp",
+          "caption": "Long March 5 lance Tianwen-1 depuis la base de lancement de Wenchang, sur l’île de Hainan — sept mois de transit vers Mars."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Utopia Planitia — atterrissage le 14 mai 2021",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/zhurong/tier3-pan.jpg",
+          "caption": "Panorama pris par la caméra de navigation de Zhurong, montrant le pont de l’atterrisseur et la surface de Mars au-delà — première vue depuis le sol d’une mission martienne ni NASA ni soviétique."
+        },
+        {
+          "src": "/images/hotspots/mars/zhurong/tier2-hirise.jpg",
+          "caption": "Le rover et l’atterrisseur de Zhurong, photographiés depuis l’orbite par HiRISE, à bord du MRO de la NASA — une collaboration internationale au service des images d’archive."
+        },
+        {
+          "src": "/images/fleet-galleries/zhurong/01.webp",
+          "caption": "Zhurong et son atterrisseur sur Mars — photographiés par une caméra distante que le rover a lui-même déposée, avant de s’éloigner pour prendre le cliché."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "La science",
+      "subtitle": "Radar à pénétration de sol sondant le sous-sol d’Utopia",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/zhurong/03.webp",
+          "caption": "Profil radar à pénétration de sol montrant des couches du sous-sol jusqu’à environ 80 m de profondeur — indices d’anciennes crues dans le sud d’Utopia."
+        }
+      ]
+    }
+  ]
+}

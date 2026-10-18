@@ -1,0 +1,53 @@
+{
+  "intro": "Chang'e 6 è atterrata nel bacino Polo Sud-Aitken il 1° giugno 2024: la prima missione di restituzione di campioni dal lato nascosto della Luna, sulla struttura da impatto più profonda, più antica e più grande del Sistema Solare interno. Il 25 giugno 2024 ha riportato sulla Terra 1.935 g di materiale del lato nascosto: campioni che potrebbero contenere frammenti di mantello provenienti dall'impatto che, 4,2 miliardi di anni fa, formò il bacino.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Il progetto di Chang'e 5 riadattato per la restituzione di campioni dal lato nascosto",
+      "images": [
+        {
+          "src": "/images/missions/change6/01.webp",
+          "caption": "Lo stack di Chang'e 6: aggiunto il relè Queqiao-2 per le comunicazioni con il lato nascosto, per il resto eredita l'architettura di Chang'e 5."
+        },
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "Carichi utili internazionali: il rivelatore NILS dell'ESA, il rivelatore di radon francese DORN, il retroriflettore italiano INRRI e il nanosatellite pakistano ICUBE-Q."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "3 maggio 2024: Long March 5 da Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/change6/03.webp",
+          "caption": "Long March 5 lancia Chang'e 6: 28 giorni di viaggio di andata e ritorno verso il lato nascosto della Luna, inclusi 14 giorni di attesa per la giusta finestra di comunicazione tramite relè."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "cratere Apollo (all'interno del Polo Sud-Aitken): atterraggio il 1° giugno 2024",
+      "images": [
+        {
+          "src": "/images/missions/change6/04.webp",
+          "caption": "Il lander di Chang'e 6 sul lato nascosto: la restituzione di campioni da una postazione fissa, senza rover, ripresa da un minirover dispiegato."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Scienza",
+      "subtitle": "1.935 g di materiale del bacino Polo Sud-Aitken",
+      "images": [
+        {
+          "src": "/images/missions/change6/05.webp",
+          "caption": "La capsula di rientro con i campioni sulla prateria della Mongolia Interna, 25 giugno 2024: i primi campioni del lato nascosto lunare mai giunti sulla Terra."
+        }
+      ]
+    }
+  ]
+}

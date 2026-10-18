@@ -1,0 +1,44 @@
+[
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-butterfly.taken",
+    "old": "2009",
+    "new": "2009년"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-antennae.taken",
+    "old": "2006",
+    "new": "2006년"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-cats-eye.taken",
+    "old": "2004",
+    "new": "2004년"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-pinwheel.taken",
+    "old": "2006",
+    "new": "2006년"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/apollo-lm_webp.title",
+    "old": "Apollo Lunar Module",
+    "new": "Apollo 달 착륙선"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Science encyclopedia.where",
+    "old": "Science",
+    "new": "과학"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.World profiles.where",
+    "old": "Explore",
+    "new": "탐사"
+  }
+]

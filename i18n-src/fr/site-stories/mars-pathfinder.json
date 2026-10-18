@@ -1,0 +1,50 @@
+{
+  "intro": "Mars Pathfinder s'est posée dans Ares Vallis le 4 juillet 1997 — la première mission américaine vers Mars depuis les Viking, 21 ans plus tôt. L'atterrisseur a déployé Sojourner, les premières roues sur Mars, démontrant l'atterrissage par airbags et l'exploration mobile dans le cadre d'une mission à bas coût de 265 M$, fidèle à la devise « plus vite, mieux, moins cher », qui a renvoyé environ 16 500 images. Au cours de son trajet de 100 mètres, Sojourner a cartographié douze roches baptisées d'après des personnages de dessins animés (Yogi, Barnacle Bill, Scooby Doo), avant que l'atterrisseur ne cesse de fonctionner.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Premier rover martien — et premier atterrisseur américain sur Mars depuis Viking",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/01.webp",
+          "caption": "Pathfinder lors des essais avant lancement — station de base + rampes de déploiement des pétales pour Sojourner."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/02.webp",
+          "caption": "Le microrover Sojourner — 11,5 kg, 6 roues, alimenté à l'énergie solaire, conçu pour fonctionner 7 sols (il en a tenu 83)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Le lancement",
+      "subtitle": "4 décembre 1996 — Delta II depuis Cap Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/03.webp",
+          "caption": "Une Delta II 7925 lance Pathfinder pour son transit de 7 mois vers Mars."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Ares Vallis — atterrissage le 4 juillet 1997",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg",
+          "caption": "Improved Presidential Panorama — vue en couleur à 360° d'Ares Vallis. Les Twin Peaks sont visibles à l'horizon (ainsi nommés d'après la série télévisée)."
+        },
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg",
+          "caption": "L'atterrisseur Pathfinder photographié depuis l'orbite des décennies plus tard par HiRISE, à bord de MRO — pétales + dernière position connue de Sojourner visibles."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/04.webp",
+          "caption": "Sojourner inspectant le rocher Yogi — première analyse chimique rapprochée d'un terrain martien."
+        }
+      ]
+    }
+  ]
+}

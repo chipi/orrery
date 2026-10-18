@@ -1,0 +1,134 @@
+[
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Equipamento"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/porkchop_webp.title",
+    "old": "Porkchop",
+    "new": "Diagrama Porkchop"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-cassini_webp.where",
+    "old": "Fly + Explore",
+    "new": "Voar + Explorar"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-voyager-1_webp.where",
+    "old": "Fly + Explore",
+    "new": "Voar + Explorar"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Science encyclopedia.where",
+    "old": "Science",
+    "new": "Ciência"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.World profiles.where",
+    "old": "Explore",
+    "new": "Explorar"
+  }
+]

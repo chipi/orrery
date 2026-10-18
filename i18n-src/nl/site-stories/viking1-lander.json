@@ -1,0 +1,61 @@
+{
+  "intro": "Viking 1 landde op 20 juli 1976 in Chryse Planitia — de eerste geslaagde Amerikaanse lander op Mars, precies zeven jaar na Apollo 11. De oppervlaktemissie van 2.245 sol (6,3 jaar) omvatte de eerste kleurenbeelden van Mars, de eerste biologische experimenten ter plaatse (met dubbelzinnige resultaten) en een dagelijks weerrapport. De laatste transmissie volgde in november 1982, nadat een commando-upload per ongeluk de parameters voor het richten van de antenne had overschreven.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Lander- en orbiterpaar, aangedreven door RTG, ~600 kg",
+      "images": [
+        {
+          "src": "/images/missions/viking1/01.webp",
+          "caption": "De Viking 1-lander tijdens tests vóór de lancering — RTG zichtbaar aan de achterzijde, de bodemmonsterarm uitgeklapt."
+        },
+        {
+          "src": "/images/missions/viking1/02.webp",
+          "caption": "Proefopstelling van de uitgeklapte bodemmonsterarm in de testomgeving van JPL."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "20 augustus 1975 — Titan IIIE vanaf Cape Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/viking1/03.webp",
+          "caption": "Titan IIIE / Centaur lanceert Viking 1 — 10 maanden onderweg, baaninsertie rond Mars in juni 1976, landing op 20 juli."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Chryse Planitia — geland op 20 juli 1976",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier3-pan.jpg",
+          "caption": "360°-panorama van Chryse Planitia — het eerste kleurenlandschap vanaf het oppervlak van een andere planeet."
+        },
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier2-hirise.jpg",
+          "caption": "De Viking 1-lander, ruim 30 jaar later vanuit een baan om Mars gefotografeerd door MRO HiRISE — de eerste hardware-archeologische blik op een Marsmissie uit de jaren zeventig."
+        },
+        {
+          "src": "/images/missions/viking1/04.webp",
+          "caption": "Eerste beeld van het Marsoppervlak, enkele minuten na de landing vastgelegd door Camera 2."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "Biologische experimenten, weer en de zoektocht naar leven",
+      "images": [
+        {
+          "src": "/images/missions/viking1/05.webp",
+          "caption": "Geul gegraven door de bodemmonsterarm — de biologische experimenten van Viking testten op organische verbindingen (geen aangetroffen; de uitkomst blijft omstreden)."
+        }
+      ]
+    }
+  ]
+}

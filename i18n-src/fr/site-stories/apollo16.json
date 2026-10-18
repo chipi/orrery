@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 16 s'est posée dans les hauts plateaux Descartes le 21 avril 1972 — la seule mission Apollo vers un site de hautes terres (et non de mer lunaire), choisi pour échantillonner ce que l'on croyait être un terrain volcanique. Young et Duke n'y ont trouvé AUCUNE roche volcanique — seulement des brèches d'impact et de l'anorthosite —, ce qui a renversé le modèle géologique et démontré que les hautes terres de la Lune sont une croûte ancienne fracturée par les impacts, et non le produit d'un volcanisme plus tardif. Trois sorties extravéhiculaires, 27 km de parcours en LRV, 95 kg d'échantillons rapportés.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Casper + Orion + LRV-2",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/01.webp",
+          "caption": "Portrait de l'équipage d'Apollo 16 — John Young (CDR), Ken Mattingly (CMP — écarté d'Apollo 13), Charlie Duke (LMP)."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "hauts plateaux Descartes — alunissage le 21 avril 1972",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/02.webp",
+          "caption": "John Young en plein saut lors des « Jeux olympiques lunaires » — premier saut en hauteur lunaire réalisé par un équipage, démonstration de la gravité au sixième de g."
+        },
+        {
+          "src": "/images/missions/apollo16/03.webp",
+          "caption": "Duke près de « Big Muley » — échantillon 61016, la plus grosse roche rapportée de la Lune (11,7 kg)."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo16/tier3-pan.jpg",
+          "caption": "Panorama des hauts plateaux Descartes — étage de descente d'Orion + LRV + Stone Mountain en toile de fond."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "La science",
+      "subtitle": "Les brèches des hautes terres font tomber l'hypothèse du volcanisme",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/04.webp",
+          "caption": "La photo de famille de Charlie Duke, laissée à la surface de la Lune — le seul portrait connu d'une famille terrestre laissé sur un autre monde."
+        }
+      ]
+    }
+  ]
+}

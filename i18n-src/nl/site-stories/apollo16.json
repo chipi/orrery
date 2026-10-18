@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 16 landde op 21 april 1972 in de Descartes-hoogland — de enige Apollo-missie naar een hooglandgebied (geen mare), gekozen om te bemonsteren wat voor vulkanisch terrein werd gehouden. Young en Duke vonden GEEN vulkanisch gesteente — alleen inslagbreccies en anorthosiet — waarmee het geologische model werd omvergeworpen en bleek dat de hooglanden van de Maan een eeuwenoude, door inslagen versplinterde korst zijn en niet het resultaat van later vulkanisme. Drie EVA's, 27 km aan LRV-tochten, 95 kg aan monsters teruggebracht.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Casper + Orion + LRV-2",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/01.webp",
+          "caption": "Portret van de bemanning van Apollo 16 — John Young (CDR), Ken Mattingly (CMP — vervangen voor Apollo 13), Charlie Duke (LMP)."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Descartes-hoogland — geland op 21 april 1972",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/02.webp",
+          "caption": "John Young maakt een sprong tijdens de \"Lunar Olympics\" — de eerste hoogsprong op de Maan met een bemanning, een demonstratie van de zwaartekracht van 1/6 g."
+        },
+        {
+          "src": "/images/missions/apollo16/03.webp",
+          "caption": "Duke bij \"Big Muley\" — monster 61016, het grootste afzonderlijke gesteente dat van de Maan is teruggebracht (11,7 kg)."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo16/tier3-pan.jpg",
+          "caption": "Panorama van de Descartes-hoogland — afdaaltrap van Orion + LRV, met Stone Mountain op de achtergrond."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "Hooglandbreccies werpen de vulkanismehypothese omver",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/04.webp",
+          "caption": "De familiefoto van Charlie Duke, achtergelaten op het maanoppervlak — het enige bekende portret van een aardse familie dat op een andere wereld is achtergelaten."
+        }
+      ]
+    }
+  ]
+}

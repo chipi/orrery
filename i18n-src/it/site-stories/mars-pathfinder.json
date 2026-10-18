@@ -1,0 +1,50 @@
+{
+  "intro": "Mars Pathfinder atterrò in Ares Vallis il 4 luglio 1997, la prima missione statunitense su Marte dopo le Viking, 21 anni prima. Il lander dispiegò Sojourner, le prime ruote su Marte, dimostrando che l'atterraggio con airbag e l'esplorazione su ruote erano possibili in una missione low-cost «faster-better-cheaper» da 265 milioni di dollari, che restituì circa 16.500 immagini. Il percorso di 100 metri di Sojourner mappò dodici rocce battezzate con nomi di personaggi dei cartoni animati (Yogi, Barnacle Bill, Scooby Doo) prima che il lander cessasse di funzionare.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Il primo rover su Marte — e il primo lander statunitense su Marte dopo Viking",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/01.webp",
+          "caption": "Pathfinder durante i test pre-lancio: la stazione base e le rampe a petalo da cui sarebbe sceso Sojourner."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/02.webp",
+          "caption": "Il microrover Sojourner: 11,5 kg, 6 ruote, alimentato a energia solare, progettato per operare 7 sol (ne durò 83)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "4 dicembre 1996 — Delta II da Cape Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/03.webp",
+          "caption": "Un Delta II 7925 lancia Pathfinder nel suo viaggio di 7 mesi verso Marte."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Ares Vallis — atterraggio il 4 luglio 1997",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg",
+          "caption": "Improved Presidential Panorama: vista a colori a 360° di Ares Vallis. All'orizzonte si scorgono i Twin Peaks (battezzati così dalla serie TV)."
+        },
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg",
+          "caption": "Il lander Pathfinder ripreso dall'orbita, decenni dopo, da HiRISE a bordo di MRO: sono visibili i petali e l'ultima posizione nota di Sojourner."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/04.webp",
+          "caption": "Sojourner ispeziona la roccia Yogi: la prima analisi chimica ravvicinata del terreno marziano."
+        }
+      ]
+    }
+  ]
+}

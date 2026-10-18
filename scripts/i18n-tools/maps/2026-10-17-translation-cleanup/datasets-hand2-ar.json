@@ -1,0 +1,62 @@
+[
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-westerlund2.taken",
+    "old": "2015 · ذكرى Hubble الخمسون",
+    "new": "2015 · Hubble الخامسة والعشرون"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-cosmic-reef.taken",
+    "old": "2020 · Hubble 30th",
+    "new": "2020 · Hubble الثلاثون"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-hen2104.taken",
+    "old": "2019 · Hubble 29th",
+    "new": "2019 · Hubble التاسعة والعشرون"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-monkey-head.taken",
+    "old": "2014 · Hubble 24th",
+    "new": "2014 · Hubble الرابعة والعشرون"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/luna-16_webp.title",
+    "old": "Luna 16-class",
+    "new": "فئة Luna 16"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/hertzsprung-russell_webp.title",
+    "old": "Hertzsprung Russell",
+    "new": "مخطط هرتزشبرونغ-راسل"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-moon-apollo-lm-extended_webp.title",
+    "old": "Apollo LM (J-mission + LRV)",
+    "new": "Apollo LM (بعثة من الفئة J + LRV)"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-moon-lunokhod_webp.title",
+    "old": "Lunokhod rover",
+    "new": "جوّالة Lunokhod"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-moon-yutu_webp.title",
+    "old": "Yutu rover",
+    "new": "جوّالة Yutu"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-venus-venera_webp.title",
+    "old": "Venera / Vega lander",
+    "new": "مركبة هبوط Venera / Vega"
+  }
+]

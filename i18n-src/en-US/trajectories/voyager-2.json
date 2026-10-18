@@ -1,0 +1,46 @@
+{
+  "name": "Voyager 2",
+  "current_distance_label": "143 AU · ~19.8 light-hours from the Sun",
+  "interstellar_since_label": "Crossed the heliopause November 2018",
+  "waypoints": [
+    {
+      "label": "Launch"
+    },
+    null,
+    null,
+    {
+      "label": "Jupiter"
+    },
+    null,
+    null,
+    {
+      "label": "Saturn"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Uranus"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Neptune"
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Heliopause"
+    },
+    null,
+    {
+      "label": "Today"
+    }
+  ]
+}

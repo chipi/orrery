@@ -1,0 +1,37 @@
+{
+  "name": "Galileo",
+  "current_distance_label": "5.4 天文单位 · 2003-09-21 坠入木星（欧罗巴保护）",
+  "waypoints": [
+    {
+      "label": "发射（STS-34）"
+    },
+    null,
+    {
+      "label": "金星"
+    },
+    null,
+    {
+      "label": "地球第1次"
+    },
+    null,
+    {
+      "label": "灶神星"
+    },
+    null,
+    {
+      "label": "地球第2次"
+    },
+    null,
+    {
+      "label": "小行星及卫星"
+    },
+    null,
+    null,
+    {
+      "label": "木星轨道插入"
+    },
+    {
+      "label": "坠入木星"
+    }
+  ]
+}

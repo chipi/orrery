@@ -1,0 +1,46 @@
+{
+  "intro": "Chang'e 3 landde op 14 december 2013 in Mare Imbrium — de eerste zachte landing van China op de Maan en de eerste maanlanding van welke aard ook in 37 jaar (sinds Luna 24). Het ruimtevaartuig zette de Yutu-rover af, die ongeveer 114 m reed voordat een defect in de besturing hem vastzette voor de resterende ~30 maandagen die hij overleefde. Daarmee werd China bevestigd als de derde natie met installaties op het maanoppervlak.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Eerste Chinese maanlander + Yutu-rover",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/01.webp",
+          "caption": "De Chang'e 3-lander tentoongesteld — warmte-eenheid in RTG-stijl, vier poten, hellingbanen voor het uitzetten van Yutu."
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/02.webp",
+          "caption": "De Yutu-rover — 140 kg, 6 wielen, grondpenetrerende radar onder het chassis gemonteerd."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "1 december 2013 — Long March 3B vanaf Xichang",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/03.webp",
+          "caption": "Long March 3B stijgt op met Chang'e 3 — vijf dagen onderweg naar de Maan, zachte landing op 14 december."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Mare Imbrium — geland op 14 december 2013",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/04.webp",
+          "caption": "De Chang'e 3-lander en de Yutu-rover fotograferen elkaar op het maanoppervlak — het eerste zulke wederzijdse portret van Chinese hardware op de Maan."
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/05.webp",
+          "caption": "Het radarprofiel van Yutu's grondpenetrerende radar van de ondergrond van Mare Imbrium — meerlaagse basaltstromen tot een diepte van ~330 m."
+        }
+      ]
+    }
+  ]
+}

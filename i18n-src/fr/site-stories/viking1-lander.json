@@ -1,0 +1,61 @@
+{
+  "intro": "Viking 1 s'est posé sur Chryse Planitia le 20 juillet 1976 — le premier atterrisseur américain à réussir son arrivée sur Mars, exactement sept ans après Apollo 11. Sa mission en surface, longue de 2 245 sols (6,3 ans), a comporté les premières images en couleur de Mars, les premières expériences de biologie in situ (aux résultats ambigus) et un relevé météorologique quotidien. Dernière transmission en novembre 1982, après qu'un téléversement de commandes a écrasé par accident les paramètres de pointage de l'antenne.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Matériel",
+      "subtitle": "Duo atterrisseur + orbiteur, alimenté par RTG, ~600 kg",
+      "images": [
+        {
+          "src": "/images/missions/viking1/01.webp",
+          "caption": "L'atterrisseur Viking 1 lors des essais avant le vol — le RTG est visible à l'arrière, le bras d'échantillonnage de surface déployé."
+        },
+        {
+          "src": "/images/missions/viking1/02.webp",
+          "caption": "Déploiement d'une maquette du bras d'échantillonnage de surface dans l'environnement d'essai du JPL."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancement",
+      "subtitle": "20 août 1975 — Titan IIIE depuis Cap Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/viking1/03.webp",
+          "caption": "Le lanceur Titan IIIE / Centaur envoie Viking 1 vers Mars — transit de 10 mois, insertion en orbite martienne en juin 1976, atterrissage de l'atterrisseur le 20 juillet."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Chryse Planitia — atterrissage le 20 juillet 1976",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier3-pan.jpg",
+          "caption": "Panorama à 360° de Chryse Planitia — le premier paysage en couleur pris à la surface d'une autre planète."
+        },
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier2-hirise.jpg",
+          "caption": "L'atterrisseur Viking 1, photographié depuis l'orbite plus de 30 ans après par HiRISE, à bord de MRO — première vue « archéologique » du matériel d'une mission martienne des années 1970."
+        },
+        {
+          "src": "/images/missions/viking1/04.webp",
+          "caption": "Première vue de la surface martienne, saisie quelques minutes après l'atterrissage par la caméra 2."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "La science",
+      "subtitle": "Expériences de biologie, météo et recherche de la vie",
+      "images": [
+        {
+          "src": "/images/missions/viking1/05.webp",
+          "caption": "Tranchée creusée par le bras d'échantillonnage de surface — les expériences de biologie de Viking recherchaient des composés organiques (aucun détecté ; le résultat reste débattu)."
+        }
+      ]
+    }
+  ]
+}

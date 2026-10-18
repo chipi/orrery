@@ -1,0 +1,38 @@
+{
+  "name": "Voyager 1",
+  "current_distance_label": "172 AE · ~23,8 lichtuur van de Zon",
+  "interstellar_since_label": "Passeerde de heliopauze augustus 2012 — eerste door mensen gemaakte object in interstellaire ruimte",
+  "waypoints": [
+    {
+      "label": "Start"
+    },
+    null,
+    null,
+    {
+      "label": "Jupiter"
+    },
+    null,
+    null,
+    {
+      "label": "Saturnus + Titan"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Pale Blue Dot"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Heliopauze"
+    },
+    null,
+    null,
+    {
+      "label": "Vandaag"
+    }
+  ]
+}

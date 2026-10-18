@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 12 allunò nell'Oceanus Procellarum il 19 novembre 1969: un atterraggio di precisione a breve distanza a piedi dal lander robotico Surveyor 3, posatosi due anni e mezzo prima. Conrad e Bean trascorsero 31 ore sulla superficie nel corso di due EVA e riportarono a Terra 34 kg di campioni, insieme a parti del Surveyor 3 da sottoporre ad analisi. Dimostrò che un Apollo con equipaggio poteva raggiungere un bersaglio preciso sulla superficie lunare.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Yankee Clipper + Intrepid",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/01.webp",
+          "caption": "Ritratto dell'equipaggio dell'Apollo 12 — Pete Conrad (CDR), Dick Gordon (CMP), Al Bean (LMP)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "14 novembre 1969 — colpiti da un fulmine due volte nel primo minuto",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/02.webp",
+          "caption": "Il Saturn V SA-507 si solleva attraverso un acquazzone. I fulmini colpirono il veicolo a T+36 s e T+52 s, mettendo fuori uso l'alimentazione delle celle a combustibile; il comando SCE su AUX salvò la missione."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Oceanus Procellarum — allunaggio il 19 novembre 1969",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/03.webp",
+          "caption": "Conrad accanto al lander Surveyor 3 — l'Apollo 12 allunò a 163 m di distanza, il primo allunaggio di precisione."
+        },
+        {
+          "src": "/images/missions/apollo12/04.webp",
+          "caption": "La stazione scientifica ALSEP dopo il dispiegamento — il primo osservatorio geofisico lunare di lunga durata."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo12/tier3-pan.jpg",
+          "caption": "Panorama del sito di atterraggio dell'Apollo 12 — lo stadio di discesa dell'Intrepid, l'ALSEP e il Surveyor 3 nella stessa inquadratura."
+        }
+      ]
+    }
+  ]
+}

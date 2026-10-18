@@ -1,0 +1,50 @@
+{
+  "intro": "Spirit は2004年1月4日にグセフ・クレーターへ着陸した。双子機 Opportunity が火星の反対側に降り立つ3週間前のことである。設計寿命は90ソルだったが、Spirit は6年にわたって稼働し、7.7 km を走破した。やがて「Troy」で車輪が柔らかい土壌に完全にはまり込み、動けなくなった。それでも身動きの取れないローバーは、固定式の科学観測プラットフォームとして活動を続け、2010年3月に交信が途絶えた。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "太陽電池で動くローバー、Opportunity の双子機",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/01.webp",
+          "caption": "組み立て中の Mars Exploration Rover — 185 kg、6輪、Pancam マストカメラ、RAT 岩石研磨装置を備える。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "グセフ・クレーター — 2004年1月4日着陸",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/spirit/tier3-pan.jpg",
+          "caption": "McMurdo の Winter Haven、ソル814〜980(2006年) — Pancam による360°パノラマ。失われた STS-107 の乗組員にちなんで名づけられたコロンビア・ヒルズが地平線を支配している。"
+        },
+        {
+          "src": "/images/hotspots/mars/spirit/tier2-hirise.jpg",
+          "caption": "Spirit が動けなくなった Troy の現場。2009年5月に車輪が埋まった後、MRO の HiRISE が撮影した。"
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/02.webp",
+          "caption": "Adirondack と名づけられた岩石での掘削、ソル34 — 火星で初めて岩石研磨装置が使われた。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "ハズバンド・ヒルを登り、Home Plate でシリカを発見",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/03.webp",
+          "caption": "Home Plate で Spirit の壊れた右前輪が掘り起こしたシリカに富む土壌 — グセフ・クレーターにかつて熱水活動があった証拠である。"
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/04.webp",
+          "caption": "Pancam が撮影したグセフ・クレーターの日没、ソル489(2005年5月19日)。青みを帯びた火星の夕暮れを捉えた象徴的な画像の一つ。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "intro": "A Luna 17 pousou no Mare Imbrium em 17 de novembro de 1970 e liberou o Lunokhod 1, o primeiro veículo de rodas a operar em outro mundo, adiantando-se em sete meses ao LRV da NASA. O Lunokhod 1 percorreu 10,5 km ao longo de 11 dias lunares, controlado por uma equipe de cinco pessoas na Crimeia. Enviou 25.000 fotografias e 211 panoramas antes de silenciar, em setembro de 1971.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "As primeiras rodas na Lua — Lunokhod 1",
+      "images": [
+        {
+          "src": "/images/missions/luna17/01.webp",
+          "caption": "Lunokhod 1 — chassi de 8 rodas, 756 kg, movido a energia solar, com um RTG de polônio-210 para aquecimento durante a noite. Projetado para 3 meses, durou 10."
+        },
+        {
+          "src": "/images/missions/luna17/02.webp",
+          "caption": "Módulo de pouso da Luna 17 + rampas para a descida do Lunokhod 1. A equipe soviética de controle remoto operava a partir de um submarino adaptado, na costa da Crimeia."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Mare Imbrium — pouso em 17 de novembro de 1970",
+      "images": [
+        {
+          "src": "/images/missions/luna17/03.webp",
+          "caption": "Lunokhod 1 em movimento no Mare Imbrium — controlado em tempo real por uma equipe de cinco pessoas, apesar do atraso de 2,5 segundos, em cada sentido, imposto pela velocidade da luz."
+        },
+        {
+          "src": "/images/missions/luna17/04.webp",
+          "caption": "Mapa do trajeto do Lunokhod 1 — um zigue-zague de 10,5 km pelo Mare Imbrium, com paradas científicas junto a rochas e crateras."
+        },
+        {
+          "src": "/images/missions/luna17/05.webp",
+          "caption": "Retrorrefletor do Lunokhod 1 — ainda hoje usado por estações terrestres de telemetria laser lunar, mais de 50 anos depois."
+        }
+      ]
+    }
+  ]
+}

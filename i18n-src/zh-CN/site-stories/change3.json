@@ -1,0 +1,46 @@
+{
+  "intro": "嫦娥三号于2013年12月14日降落在雨海——这是中国首次月球软着陆,也是自Luna 24以来37年间人类首次实现的月球着陆。它释放了玉兔号月球车,月球车行驶约114米后,因控制系统故障被困原地,此后又存活了约30个月球日。嫦娥三号确立了中国作为第三个在月球表面部署设备的国家的地位。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "中国首个月球着陆器与玉兔号月球车",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/01.webp",
+          "caption": "展出的嫦娥三号着陆器——RTG式热源装置、四条着陆腿,以及用于释放玉兔号的坡道。"
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/02.webp",
+          "caption": "玉兔号月球车——重140千克,6个轮子,探地雷达安装在底盘下方。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "2013年12月1日——长征三号乙(Long March 3B)火箭从西昌发射",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/03.webp",
+          "caption": "长征三号乙(Long March 3B)运载火箭携嫦娥三号升空——5天奔月,12月14日实现软着陆。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "雨海——2013年12月14日着陆",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/04.webp",
+          "caption": "嫦娥三号着陆器与玉兔号月球车在月球表面互相拍照——这是中国航天器在月球上首次拍摄的此类互拍合影。"
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/05.webp",
+          "caption": "玉兔号探地雷达获得的雨海地下剖面——多层玄武岩流一直延伸至约330米深处。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "intro": "Chang'e 3 landete am 14. Dezember 2013 im Mare Imbrium – Chinas erste weiche Landung auf dem Mond und die erste Mondlandung überhaupt seit 37 Jahren (seit Luna 24). Setzte den Rover Yutu aus, der rund 114 m zurücklegte, bevor ein Steuerungsausfall ihn für die verbleibenden etwa 30 Mondtage seiner Überlebenszeit an Ort und Stelle lahmlegte. Bestätigte China als dritte Nation mit Technik auf der Mondoberfläche.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Chinas erster Mondlander + der Rover Yutu",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/01.webp",
+          "caption": "Der Lander von Chang'e 3 als Ausstellungsstück – Wärmeeinheit im RTG-Stil, vier Landebeine, Rampen für das Ausfahren von Yutu."
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/02.webp",
+          "caption": "Der Rover Yutu – 140 kg, 6 Räder, Bodenradar unter dem Chassis montiert."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "1. Dezember 2013 – Long March 3B von Xichang",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/03.webp",
+          "caption": "Die Long March 3B hebt mit Chang'e 3 ab – fünf Tage Flug zum Mond, weiche Landung am 14. Dezember."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Mare Imbrium – gelandet am 14. Dezember 2013",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/04.webp",
+          "caption": "Der Lander von Chang'e 3 und der Rover Yutu fotografieren einander auf der Mondoberfläche – das erste derartige gegenseitige Porträt chinesischer Hardware auf dem Mond."
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/05.webp",
+          "caption": "Das Bodenradarprofil von Yutu durch den Untergrund des Mare Imbrium – mehrschichtige Basaltströme bis in etwa 330 m Tiefe."
+        }
+      ]
+    }
+  ]
+}

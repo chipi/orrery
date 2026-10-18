@@ -1,0 +1,76 @@
+{
+  "intro": "NASA का Curiosity रोवर 26 नवंबर 2011 को केप केनवरल से एक Atlas V रॉकेट पर सवार होकर प्रक्षेपित हुआ। 254 दिनों की यात्रा के बाद Mars Science Laboratory ने 899 किलोग्राम के इस परमाणु-ऊर्जा चालित रोवर को 6 अगस्त 2012 को अब प्रसिद्ध हो चुकी स्काई-क्रेन लैंडिंग के ज़रिए गेल क्रेटर में उतारा। एक दशक से भी अधिक समय बाद Curiosity आज भी शार्प पर्वत पर चढ़ रहा है और ऐसी चट्टानों में ड्रिल कर रहा है, जिनमें मंगल के कभी रहने योग्य रहे अतीत का अभिलेख दर्ज है।",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "हार्डवेयर",
+      "subtitle": "गेल क्रेटर के लिए एक रोवर का निर्माण",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/01.webp",
+          "caption": "JPL में असेंबल किया गया Mars Science Laboratory — Curiosity, अवरोहण चरण, बैकशेल और ताप-कवच, जिन्हें फ़्लोरिडा भेजने के लिए एक के ऊपर एक जमाया गया है।"
+        },
+        {
+          "src": "/images/missions/curiosity/02.webp",
+          "caption": "MMRTG परमाणु ऊर्जा स्रोत (नारंगी डिस्क, नीचे दाएँ) कम से कम 14 वर्षों तक लगातार लगभग 110 W बिजली देता है — न सौर पैनल, न सर्दियों में कामकाज की बंदी।"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "प्रक्षेपण",
+      "subtitle": "26 नवंबर 2011 — केप केनवरल से Atlas V",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/03.webp",
+          "caption": "Atlas V 541 Mars Science Laboratory और Curiosity को लेकर SLC-41 से उड़ान भरता हुआ। पूर्वी मानक समय (EST) के अनुसार सुबह 10:02, 26 नवंबर 2011।"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "सतह",
+      "subtitle": "गेल क्रेटर — 6 अगस्त 2012 को उतरा",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
+          "caption": "Mont Mercou का पैनोरमा, सोल 3070 (मार्च 2021)। Mastcam-Z का 360° दृश्य, जिसमें रोवर, Mt Mercou की परतदार चट्टानी ढलानें और क्षितिज पर शार्प पर्वत दिखाई देते हैं।"
+        },
+        {
+          "src": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
+          "caption": "Curiosity के यात्रा-पथ का HiRISE द्वारा लिया गया ऊपरी दृश्य, जिसे Mars Reconnaissance Orbiter ने 25 सेमी प्रति पिक्सेल के विभेदन पर कैद किया।"
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/01.webp",
+          "caption": "\"Big Sky\" ड्रिल स्थल पर सेल्फ़-पोर्ट्रेट, सोल 1126 — MAHLI के दर्जनों क्लोज़-अप चित्रों को जोड़कर बनाई गई एक एकल छवि।"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "विज्ञान",
+      "subtitle": "प्राचीन, रहने योग्य मंगल के प्रमाण",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/02.webp",
+          "caption": "Yellowknife Bay में ड्रिल किया गया छेद — मंगल के अतीत के झील-तल जैसे वातावरण से लिया गया पहला नमूना, जनवरी 2013।"
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/03.webp",
+          "caption": "वेरा रुबिन रिज की अवसादी चट्टानें — धारीदार लौह-संरचनाएँ और मृदा खनिज प्राचीन तरल जल तथा रहने योग्य रासायनिक वातावरण की ओर संकेत करते हैं।"
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "title": "लोग",
+      "subtitle": "Curiosity के पीछे के इंजीनियर और वैज्ञानिक",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/04.webp",
+          "caption": "JPL का मिशन कंट्रोल \"आतंक के सात मिनट\" वाली स्काई-क्रेन लैंडिंग का जश्न मनाता हुआ, 5/6 अगस्त 2012 — गेल क्रेटर से पहले संकेत मिलने के बाद एडम स्टेल्ट्ज़नर और उनकी टीम।"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "intro": "InSight landde op 26 november 2018 op Elysium Planitia — het eerste geofysische observatorium op Mars. Vier jaar lang luisterde de missie met de SEIS-seismometer naar marsbevingen en registreerde ze meer dan 1.300 bevingen, die de kern, de mantel en de korst van de planeet in ongekend detail onthulden. De mole-boor (HP³) slaagde er niet in zichzelf in te graven, maar SEIS maakte die teleurstelling ruimschoots goed. De missie eindigde in december 2022, toen opgehoopt stof de zonnepanelen onbruikbaar maakte.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Eerste Marsmissie gericht op het binnenste van de planeet",
+      "images": [
+        {
+          "src": "/images/missions/insight/01.webp",
+          "caption": "InSight tijdens de integratie bij Lockheed Martin — hetzelfde landerplatform als Phoenix, herbestemd voor geofysica."
+        },
+        {
+          "src": "/images/missions/insight/02.webp",
+          "caption": "De SEIS-seismometer + het WTS-wind- en thermisch schild, door de robotarm op het oppervlak geplaatst — de eerste seismometer op een andere planeet."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "5 mei 2018 — Atlas V vanaf Vandenberg Air Force Base",
+      "images": [
+        {
+          "src": "/images/missions/insight/03.webp",
+          "caption": "Een Atlas V 401 stijgt op vanaf SLC-3E in Vandenberg — de eerste interplanetaire lancering vanaf de Amerikaanse westkust. De MarCO-CubeSats vlogen mee als communicatierelais."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Elysium Planitia — geland op 26 november 2018",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/insight/tier3-pan.jpg",
+          "caption": "Werkgebied Homestead Hollow, sol 14 — 290°-panorama van de Instrument Deployment Camera. SEIS staat linksonder al op de grond."
+        },
+        {
+          "src": "/images/fleet-galleries/insight/02.webp",
+          "caption": "Eerste samengestelde selfie op Mars — het dek van InSight na het plaatsen van SEIS + HP³, sol 110."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "1.319 marsbevingen — het binnenste van de planeet onthuld",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/insight/03.webp",
+          "caption": "Seismogram van de marsbeving met een magnitude van 4,7 op 4 mei 2022 — de grootste geregistreerde beving, afkomstig uit het breukensysteem Cerberus Fossae."
+        },
+        {
+          "src": "/images/fleet-galleries/insight/04.webp",
+          "caption": "De laatste selfie van InSight, sol 1211 — zonnepanelen bedekt met stof. Laatste transmissie op 15 december 2022."
+        }
+      ]
+    }
+  ]
+}

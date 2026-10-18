@@ -1,0 +1,14 @@
+{
+  "name": "Venera 13",
+  "current_distance_label": "0,74 UA · posée sur Vénus le 1er mars 1982 (127 min de survie à la surface)",
+  "waypoints": [
+    {
+      "label": "Lancement (Proton-K)"
+    },
+    null,
+    null,
+    {
+      "label": "Atterrissage à la surface de Vénus"
+    }
+  ]
+}

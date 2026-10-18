@@ -1,0 +1,46 @@
+{
+  "intro": "A Apollo 15 pousou junto ao sulco Hadley, nos montes Apeninos em 30 de julho de 1971 — a primeira missão \"classe J\", com permanência prolongada na superfície, o Lunar Roving Vehicle (LRV) e um piloto treinado como cientista (David Scott). Scott e Irwin percorreram 28 km no total ao longo de três EVAs, encontraram a Genesis Rock (anortosito de ~4,1 Ga, crosta primária) e, em transmissão ao vivo pela TV, soltaram uma pena e um martelo para demonstrar o teste de gravidade de Galileo.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Endeavour + Falcon + LRV-1 (o primeiro carro lunar)",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/01.webp",
+          "caption": "A tripulação da Apollo 15 + o Lunar Roving Vehicle em treinamento pré-missão — Scott + Irwin conduziriam as primeiras rodas na Lua."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Hadley-Apennine — pouso em 30 de julho de 1971",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/02.webp",
+          "caption": "Jim Irwin batendo continência ao lado do LRV, com Mt Hadley Delta ao fundo — as primeiras imagens das Apennine Mountains vistas da superfície."
+        },
+        {
+          "src": "/images/missions/apollo15/03.webp",
+          "caption": "David Scott à beira do sulco Hadley — a primeira vez que astronautas estiveram na borda de um antigo canal de lava em outro mundo."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
+          "caption": "Panorama da Hadley Plain — estágio de descida do Falcon + LRV + Mt Hadley Delta no horizonte."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciência",
+      "subtitle": "Genesis Rock + experimento de Galileo",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/04.webp",
+          "caption": "Amostra 15415 \"Genesis Rock\" — anortosito ferroano puro, com ~4,1 bilhões de anos. Um fragmento da crosta primária do oceano de magma da Lua."
+        }
+      ]
+    }
+  ]
+}

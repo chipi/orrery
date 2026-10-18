@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 12 于1969年11月19日降落在风暴洋——这是一次精确到“步行可达”的着陆,落点就在 2½ 年前着陆的无人着陆器 Surveyor 3 附近。康拉德和宾在月面停留了31小时,进行了两次舱外活动,带回34千克样本以及 Surveyor 3 的部分部件供分析。此次任务证明,载人的 Apollo 飞船能够抵达月球表面的特定目标。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "Yankee Clipper + Intrepid",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/01.webp",
+          "caption": "Apollo 12 乘组合影——皮特·康拉德(指令长)、理查德·戈尔登(指令舱驾驶员)、艾伦·宾(登月舱驾驶员)。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "1969年11月14日——升空第一分钟内两度遭雷击",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/02.webp",
+          "caption": "Saturn V SA-507 穿过阵雨升空。闪电在 T+36 秒和 T+52 秒两次击中飞行器,致使燃料电池供电中断;“SCE 切换至 AUX”指令挽救了这次任务。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "风暴洋——1969年11月19日着陆",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/03.webp",
+          "caption": "康拉德与 Surveyor 3 着陆器合影——Apollo 12 降落在距其163米处,是首次精确月球着陆。"
+        },
+        {
+          "src": "/images/missions/apollo12/04.webp",
+          "caption": "ALSEP 科学站部署完毕——首个长期运行的月球地球物理观测站。"
+        },
+        {
+          "src": "/images/hotspots/moon/apollo12/tier3-pan.jpg",
+          "caption": "Apollo 12 着陆点全景——Intrepid 下降级、ALSEP 与 Surveyor 3 同框。"
+        }
+      ]
+    }
+  ]
+}

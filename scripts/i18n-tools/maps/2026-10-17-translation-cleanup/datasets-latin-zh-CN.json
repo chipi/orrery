@@ -1,0 +1,266 @@
+[
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "奥尔德林在 Tranquility Base 留下的靴印——在真空中原封不动地保存了半个多世纪。",
+    "new": "奥尔德林在静海基地留下的靴印——在真空中原封不动地保存了半个多世纪。"
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.2.caption",
+    "old": "Tranquility Base 全景——Eagle 登月舱下降级、EASEP 科学实验包、美国国旗，以及月球上最著名的脚印。",
+    "new": "静海基地全景——Eagle 登月舱下降级、EASEP 科学实验包、美国国旗，以及月球上最著名的脚印。"
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "Apollo 12 乘组合影——皮特·康拉德(指令长)、Dick Gordon(指令舱驾驶员)、Al 宾(登月舱驾驶员)。",
+    "new": "Apollo 12 乘组合影——皮特·康拉德(指令长)、理查德·戈尔登(指令舱驾驶员)、艾伦·宾(登月舱驾驶员)。"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.2.subtitle",
+    "old": "Imbrium 撞击角砾岩样本",
+    "new": "雨海撞击角砾岩样本"
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "intro",
+    "old": "Apollo 15 于1971年7月30日降落在哈德利沟纹 / Apennine Mountains 地区——这是首次“J 级”任务,具备延长的月面停留时间、月球车(Lunar Roving Vehicle,LRV),以及一位受过科学训练的飞行员(大卫·斯科特)。斯科特与艾尔文在三次舱外活动中共驾车行驶28公里,发现了“Genesis Rock”(约41亿年前的斜长岩,属原始月壳),并在电视直播中同时释放一根羽毛和一把锤子,重现 Galileo 的重力实验。",
+    "new": "Apollo 15 于1971年7月30日降落在哈德利沟纹 / 亚平宁山脉地区——这是首次“J 级”任务,具备延长的月面停留时间、月球车(Lunar Roving Vehicle,LRV),以及一位受过科学训练的飞行员(大卫·斯科特)。斯科特与艾尔文在三次舱外活动中共驾车行驶28公里,发现了“Genesis Rock”(约41亿年前的斜长岩,属原始月壳),并在电视直播中同时释放一根羽毛和一把锤子,重现 Galileo 的重力实验。"
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Jim Irwin 在 LRV 旁敬礼,身后是 Mt Hadley Delta——这是首批从月面拍摄的 Apennine Mountains 影像。",
+    "new": "詹姆斯·艾尔文在 LRV 旁敬礼,身后是哈德利三角山——这是首批从月面拍摄的亚平宁山脉影像。"
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Hadley Plain 全景——Falcon 下降级、LRV,以及地平线上的 Mt Hadley Delta。",
+    "new": "哈德利平原全景——Falcon 下降级、LRV,以及地平线上的哈德利三角山。"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "Apollo 16 乘组合影——约翰·扬（指令长）、Ken Mattingly（指令舱驾驶员，原定执行 Apollo 13 任务，后被换下）、查理·杜克（登月舱驾驶员）。",
+    "new": "Apollo 16 乘组合影——约翰·扬（指令长）、肯·马丁利（指令舱驾驶员，原定执行 Apollo 13 任务，后被换下）、查理·杜克（登月舱驾驶员）。"
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "Apollo 17 机组合影——尤金·塞尔南(指令长)、Ron Evans(指令舱驾驶员)、Harrison “Jack” Schmitt(登月舱驾驶员,科学家宇航员)。",
+    "new": "Apollo 17 机组合影——尤金·塞尔南(指令长)、罗纳德·埃万斯(指令舱驾驶员)、哈里森·“杰克”·施密特(登月舱驾驶员,科学家宇航员)。"
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.1.subtitle",
+    "old": "2023年7月14日——LVM3 自 Satish Dhawan Space Centre 升空",
+    "new": "2023年7月14日——LVM3 自萨迪什·达万航天中心升空"
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "intro",
+    "old": "嫦娥四号于2019年1月3日降落在 Von Kármán 撞击坑——这是人类首次在月球背面软着陆，而在那里，地球永远不可见。通信由停驻在 L2 点的鹊桥中继卫星转发。嫦娥四号释放了玉兔二号月球车，它已行驶1.5公里以上，至2026年仍在工作，是迄今在月面持续运行时间最长的任务。任务还在南极-艾特肯盆地发现了未经改变的原始月幔物质。",
+    "new": "嫦娥四号于2019年1月3日降落在冯·卡门环形山——这是人类首次在月球背面软着陆，而在那里，地球永远不可见。通信由停驻在 L2 点的鹊桥中继卫星转发。嫦娥四号释放了玉兔二号月球车，它已行驶1.5公里以上，至2026年仍在工作，是迄今在月面持续运行时间最长的任务。任务还在南极-艾特肯盆地发现了未经改变的原始月幔物质。"
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.1.subtitle",
+    "old": "Von Kármán 撞击坑，月球背面——2019年1月3日着陆",
+    "new": "冯·卡门环形山，月球背面——2019年1月3日着陆"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "火星车在 JPL 组装完成：Curiosity 火星车、下降级、后壳与隔热罩叠放就位，准备运往美国 Florida 州。该任务名为 Mars Science Laboratory。",
+    "new": "火星车在 JPL 组装完成：Curiosity 火星车、下降级、后壳与隔热罩叠放就位，准备运往美国佛罗里达州。该任务名为 Mars Science Laboratory。"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.4.images.0.caption",
+    "old": "JPL 任务控制中心欢庆“恐怖七分钟”空中吊车着陆成功，2012 年 8 月 5 日/6 日——Adam Steltzner 与团队在收到来自盖尔撞击坑的第一批信号之后。",
+    "new": "JPL 任务控制中心欢庆“恐怖七分钟”空中吊车着陆成功，2012 年 8 月 5 日/6 日——亚当·施特尔茨纳与团队在收到来自盖尔撞击坑的第一批信号之后。"
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.3.images.0.caption",
+    "old": "2022年5月4日4.7级火星地震的地震图——这是有记录以来最大的一次地震，震源位于 Cerberus Fossae 断层系统。",
+    "new": "2022年5月4日4.7级火星地震的地震图——这是有记录以来最大的一次地震，震源位于科柏洛斯槽沟断层系统。"
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "intro",
+    "old": "Luna 21 于 1973 年 1 月 15 日降落在 Le Monnier 撞击坑，并释放了 Lunokhod 2——世界首辆月球车的后继者。Lunokhod 2 在 4 个月内行驶了 42.1 公里，这一纪录一直保持到 41 年后的 2014 年 7 月，才被 NASA 的 Opportunity 在火星上超越。它传回了 8 万幅电视图像和 86 次全景扫描，最终一堆月壤落到散热器上，导致月球车过热失效。",
+    "new": "Luna 21 于 1973 年 1 月 15 日降落在勒莫尼耶环形山，并释放了 Lunokhod 2——世界首辆月球车的后继者。Lunokhod 2 在 4 个月内行驶了 42.1 公里，这一纪录一直保持到 41 年后的 2014 年 7 月，才被 NASA 的 Opportunity 在火星上超越。它传回了 8 万幅电视图像和 86 次全景扫描，最终一堆月壤落到散热器上，导致月球车过热失效。"
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.1.subtitle",
+    "old": "Le Monnier 撞击坑——1973 年 1 月 15 日着陆",
+    "new": "勒莫尼耶环形山——1973 年 1 月 15 日着陆"
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "首批月球表面图像——粗糙的低码率全景图,呈现出遍布岩石的月壤。曼彻斯特的Jodrell Bank射电望远镜截获了这次传输,并抢在苏联之前公布了图像。",
+    "new": "首批月球表面图像——粗糙的低码率全景图,呈现出遍布岩石的月壤。曼彻斯特的焦德雷尔班克射电望远镜截获了这次传输,并抢在苏联之前公布了图像。"
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "intro",
+    "old": "Mars 3 于 1971 年 12 月 2 日降落在 Terra Sirenum——这是首个熬过火星大气进入过程并抵达地表的着陆器，而此前五天，姊妹器 Mars 2 刚刚坠毁。14.5 秒后通信中断，仅传回一幅残缺且严重失真的灰度图像片段。着陆器很可能恰好降临在一场席卷全球的沙尘暴之中。Mars 3 的确切安息之地至今仍有争议；2013 年，HiRISE 拍摄到了疑似其硬件的影像。",
+    "new": "Mars 3 于 1971 年 12 月 2 日降落在萨瑞南高地——这是首个熬过火星大气进入过程并抵达地表的着陆器，而此前五天，姊妹器 Mars 2 刚刚坠毁。14.5 秒后通信中断，仅传回一幅残缺且严重失真的灰度图像片段。着陆器很可能恰好降临在一场席卷全球的沙尘暴之中。Mars 3 的确切安息之地至今仍有争议；2013 年，HiRISE 拍摄到了疑似其硬件的影像。"
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.2.subtitle",
+    "old": "Terra Sirenum——1971 年 12 月 2 日着陆",
+    "new": "萨瑞南高地——1971 年 12 月 2 日着陆"
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "HiRISE 拍摄的 Terra Sirenum 中疑似 Mars 3 硬件所在地的细节图——由 NASA/UA HiRISE 团队于 2013 年发布，由俄罗斯业余航天史爱好者辨认出。",
+    "new": "HiRISE 拍摄的萨瑞南高地中疑似 Mars 3 硬件所在地的细节图——由 NASA/UA HiRISE 团队于 2013 年发布，由俄罗斯业余航天史爱好者辨认出。"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "intro",
+    "old": "Opportunity 于2004年1月25日降落在子午线高原——这是一次一杆进洞般的着陆：借助气囊弹跳的火星车径直滚入一个小型撞击坑（Eagle Crater），坑壁上嵌着人类首次在火星上近距离见到的富含赤铁矿的“蓝莓”。Opportunity 的设计寿命仅为90个火星日，却在14年间行驶了45.16 km，直到2018年6月一场覆盖全球的沙尘暴切断了太阳能供电。最后一次传回的信息是：“我的电量不足，天也越来越黑了。”",
+    "new": "Opportunity 于2004年1月25日降落在子午线高原——这是一次一杆进洞般的着陆：借助气囊弹跳的火星车径直滚入一个小型撞击坑（鹰撞击坑），坑壁上嵌着人类首次在火星上近距离见到的富含赤铁矿的“蓝莓”。Opportunity 的设计寿命仅为90个火星日，却在14年间行驶了45.16 km，直到2018年6月一场覆盖全球的沙尘暴切断了太阳能供电。最后一次传回的信息是：“我的电量不足，天也越来越黑了。”"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "赤铁矿“蓝莓”——嵌在 Meridiani 基岩中的毫米级球粒，是火星上存在长期液态水的首个直接证据。",
+    "new": "赤铁矿“蓝莓”——嵌在子午线高原基岩中的毫米级球粒，是火星上存在长期液态水的首个直接证据。"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.subtitle",
+    "old": "从 Eagle Crater 到 Endeavour——14年的证据",
+    "new": "从鹰撞击坑到 Endeavour——14年的证据"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "2020年7月30日美国东部夏令时07:50，Atlas V 541 从 SLC-41 发射场发射 Mars 2020——飞往 Jezero 的旅程历时203天。",
+    "new": "2020年7月30日美国东部夏令时07:50，Atlas V 541 从 SLC-41 发射场发射 Mars 2020——飞往耶泽罗的旅程历时203天。"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Van Zyl Overlook——Mastcam-Z 拍摄的首幅360°全景图，第3个火星日（2021年2月21日）。向西可见 Jezero 三角洲。",
+    "new": "Van Zyl Overlook——Mastcam-Z 拍摄的首幅360°全景图，第3个火星日（2021年2月21日）。向西可见耶泽罗三角洲。"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "乌托邦平原的360°相机全景拼图——这里的地形比 Viking 1 所在的 Chryse 着陆点更平坦，岩石也更多。",
+    "new": "乌托邦平原的360°相机全景拼图——这里的地形比 Viking 1 所在的克律塞平原着陆点更平坦，岩石也更多。"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "乌托邦平原的彩色视图——由 Andrea Luck 根据 NASA 档案底片，对 Viking 2 的图像重新处理而成。",
+    "new": "乌托邦平原的彩色视图——由安德烈娅·勒克根据 NASA 档案底片，对 Viking 2 的图像重新处理而成。"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.2.images.2.caption",
+    "old": "乌托邦平原的霜冻（NASA 的 Viking 2 着陆器）——由 Andrea Luck 重新处理。",
+    "new": "乌托邦平原的霜冻（NASA 的 Viking 2 着陆器）——由安德烈娅·勒克重新处理。"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "intro",
+    "old": "祝融号于2021年5月14日降落在乌托邦平原——这是中国首次成功登陆火星,也是各国火星任务中首次通过一次发射同时实现环绕器、着陆器和火星车组合的任务(天问一号)。祝融号以中国火神命名,在 Utopia 南部平原上行驶了1.92公里,于2022年5月沙尘季期间进入休眠。中国国家航天局(CNSA)尚未确认其已唤醒。",
+    "new": "祝融号于2021年5月14日降落在乌托邦平原——这是中国首次成功登陆火星,也是各国火星任务中首次通过一次发射同时实现环绕器、着陆器和火星车组合的任务(天问一号)。祝融号以中国火神命名,在乌托邦平原南部行驶了1.92公里,于2022年5月沙尘季期间进入休眠。中国国家航天局(CNSA)尚未确认其已唤醒。"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.3.subtitle",
+    "old": "探地雷达探测 Utopia 地下结构",
+    "new": "探地雷达探测乌托邦平原地下结构"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.3.images.0.caption",
+    "old": "探地雷达剖面显示地下约80米深处的分层结构——这是 Utopia 南部古代洪水事件的证据。",
+    "new": "探地雷达剖面显示地下约80米深处的分层结构——这是乌托邦平原南部古代洪水事件的证据。"
+  },
+  {
+    "rel": "trajectories/rosetta.json",
+    "at": "waypoints.7.label",
+    "old": "小行星Lutetia",
+    "new": "小行星司琴星"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-01dea29ff9ad.title",
+    "old": "Apollo 13 — \"Houston，我们遇到了一个问题\"",
+    "new": "Apollo 13 — \"休斯敦，我们遇到了一个问题\""
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-28fc9267360f.caption",
+    "old": "JunoCam飞越，配合Vangelis音乐",
+    "new": "JunoCam飞越，配合范吉利斯音乐"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-37cb7096799f.caption",
+    "old": "指挥官Chris Hadfield在国际空间站上演绎David Bowie的《太空怪谈》 — 2013年5月",
+    "new": "指挥官克里斯·哈德菲尔德在国际空间站上演绎大卫·鲍伊的《太空怪谈》 — 2013年5月"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-46ec373795e7.title",
+    "old": "火星快车 — 飞越Nili Fossae",
+    "new": "火星快车 — 飞越尼利槽沟"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-46ec373795e7.caption",
+    "old": "ESA火星快车飞越Nili Fossae",
+    "new": "ESA火星快车飞越尼利槽沟"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-48a3eb39d691.title",
+    "old": "Space Shuttle Discovery——在Kennedy着陆",
+    "new": "Space Shuttle Discovery——在肯尼迪航天中心着陆"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-54cee894b509.caption",
+    "old": "首个真实的行星着陆视频 — Jezero陨石坑，2021年2月18日。",
+    "new": "首个真实的行星着陆视频 — 耶泽罗撞击坑，2021年2月18日。"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-5fd25a75da64.caption",
+    "old": "首次在月球背面软着陆 — Von Kármán陨石坑，2019年1月3日。",
+    "new": "首次在月球背面软着陆 — 冯·卡门环形山，2019年1月3日。"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-942da82230d0.caption",
+    "old": "Hayabusa样本舱在Woomera上空再入——2010年6月。",
+    "new": "Hayabusa样本舱在伍默拉上空再入——2010年6月。"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/tsiolkovsky_webp.title",
+    "old": "Tsiolkovsky",
+    "new": "齐奥尔科夫斯基"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-earth-launchpad_webp.what",
+    "old": "八角形发射台，配有四个避雷塔——Kennedy、拜科努尔、酒泉及其他。",
+    "new": "八角形发射台，配有四个避雷塔——肯尼迪、拜科努尔、酒泉及其他。"
+  }
+]

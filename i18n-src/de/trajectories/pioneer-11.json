@@ -1,0 +1,34 @@
+{
+  "name": "Pioneer 11",
+  "current_distance_label": "89 AU · ~12,3 Lichtstunden von der Sonne entfernt (Signalverlust 1995-09-30)",
+  "interstellar_since_label": "Signalverlust 1995 — schwebt zum Adler hin, wird den interstellaren Raum um 2027 erreichen",
+  "waypoints": [
+    {
+      "label": "Start"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Jupiter-Swing-by"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Saturn + F-Ring"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Letzte Signale"
+    },
+    null,
+    null,
+    {
+      "label": "Heute"
+    }
+  ]
+}

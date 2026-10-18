@@ -1,0 +1,46 @@
+{
+  "intro": "Chang'e 4는 2019년 1월 3일 폰 카르만 분화구에 착륙했다. 지구가 결코 보이지 않는 달 뒷면에 최초로 연착륙한 사례다. 통신은 L2에 자리 잡은 Queqiao 위성을 통해 중계되었다. 탐사 로버 Yutu-2를 내보냈으며, 이 로버는 1.5km 이상을 주행했고 2026년 현재도 작동 중으로, 역대 가장 오래 활동한 달 표면 임무다. 남극-에이트켄 분지에서 원시 상태의 맨틀 물질을 발견했다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "최초의 달 뒷면 착륙선 + L2 중계 위성(Queqiao)",
+      "images": [
+        {
+          "src": "/images/missions/change4/01.webp",
+          "caption": "베이징에서 발사 전 통합 작업 중인 Chang'e 4 착륙선과 Yutu-2 로버."
+        },
+        {
+          "src": "/images/missions/change4/02.webp",
+          "caption": "Queqiao L2 중계 위성 — 이 위성이 없었다면 Chang'e 4는 지구와 교신할 수 없었을 것이다. 중국은 달 뒷면으로 향하기 전에 달 통신 기반 시설부터 구축했다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "달 뒷면의 폰 카르만 분화구 — 2019년 1월 3일 착륙",
+      "images": [
+        {
+          "src": "/images/missions/change4/03.webp",
+          "caption": "Chang'e 4 착륙선이 촬영한 Yutu-2 로버 — 달 뒷면에 처음으로 남긴 바퀴 자국."
+        },
+        {
+          "src": "/images/missions/change4/04.webp",
+          "caption": "Yutu-2가 표면에서 유리질 구슬을 살펴보고 있다. 멀리서 일어난 충돌구 형성 사건에서 생긴 충돌 용융 파편으로 보인다."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "남극-에이트켄 분지의 맨틀 물질",
+      "images": [
+        {
+          "src": "/images/missions/change4/05.webp",
+          "caption": "VNIS 스펙트럼에서 감람석과 저칼슘 휘석이 확인되었다. 약 42억 년 전 SPA 분지 충돌로 드러난 달 맨틀의 광물이다."
+        }
+      ]
+    }
+  ]
+}

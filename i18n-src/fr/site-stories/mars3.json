@@ -1,0 +1,46 @@
+{
+  "intro": "Mars 3 s'est posée dans Terra Sirenum le 2 décembre 1971 — premier atterrisseur à avoir survécu à l'entrée dans l'atmosphère martienne et à avoir atteint la surface, cinq jours après le crash de sa sœur Mars 2. Les communications se sont interrompues au bout de 14,5 secondes, ne renvoyant qu'un unique fragment d'image en niveaux de gris, partiel et dégradé. L'atterrisseur est probablement arrivé en plein cœur d'une tempête de poussière qui enveloppait toute la planète. L'emplacement exact où repose Mars 3 fait encore débat ; HiRISE a photographié en 2013 des éléments de matériel qui pourraient en être les vestiges.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Atterrisseur soviétique de classe 4MS, premier contact avec la surface de Mars, tous types confondus",
+      "images": [
+        {
+          "src": "/images/missions/mars3/01.webp",
+          "caption": "Maquette de l'atterrisseur Mars 3 au musée d'histoire spatiale de NPO Lavochkin — masse totale de 1 210 kg, dont un rover Prop-M de 4,5 kg (jamais déployé)."
+        },
+        {
+          "src": "/images/missions/mars3/02.webp",
+          "caption": "Schéma en coupe du matériel de l'atterrisseur Mars 3 — les principes de sa conception de base ont influencé le matériel soviétique ultérieur des programmes Venera et Mars."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Le lancement",
+      "subtitle": "28 mai 1971 — Proton-K depuis Baïkonour",
+      "images": [
+        {
+          "src": "/images/missions/mars3/03.webp",
+          "caption": "Proton-K avec son étage supérieur Blok-D préparé au cosmodrome de Baïkonour — 6 mois de transit vers Mars."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Terra Sirenum — atterrissage le 2 décembre 1971",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars3/tier2-hirise.jpg",
+          "caption": "Détail HiRISE du site candidat du matériel de Mars 3 dans Terra Sirenum — publié en 2013 par l'équipe NASA/UA HiRISE, identifié par des historiens amateurs russes de l'astronautique."
+        },
+        {
+          "src": "/images/missions/mars3/04.webp",
+          "caption": "L'unique image fragmentaire renvoyée par Mars 3 — 79 lignes, sans horizon, sans aucun détail. La première image de la surface d'une autre planète, aussi ténue soit-elle."
+        }
+      ]
+    }
+  ]
+}

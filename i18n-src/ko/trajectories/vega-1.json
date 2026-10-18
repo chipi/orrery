@@ -1,0 +1,18 @@
+{
+  "name": "Vega 1",
+  "current_distance_label": "0.98 AU · 1986-03-06 Halley 근접비행 이후 태양중심궤도에 있는 우주선",
+  "waypoints": [
+    {
+      "label": "발사 (Proton-K)"
+    },
+    null,
+    {
+      "label": "금성 + 기구"
+    },
+    null,
+    {
+      "label": "Halley 근접비행"
+    },
+    null
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Venera 13",
+  "current_distance_label": "0,74 AU · слетање на Венеру 1982-03-01 (127 min опстанка на површини)",
+  "waypoints": [
+    {
+      "label": "Лансирање (Proton-K)"
+    },
+    null,
+    null,
+    {
+      "label": "Слетање на површину Венере"
+    }
+  ]
+}

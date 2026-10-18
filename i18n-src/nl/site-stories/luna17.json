@@ -1,0 +1,39 @@
+{
+  "intro": "Luna 17 landde op 17 november 1970 in Mare Imbrium en zette Lunokhod 1 af, het eerste voertuig op wielen dat op een andere wereld opereerde — zeven maanden eerder dan de LRV van NASA. Lunokhod 1 legde in 11 maandagen 10,5 km af, bestuurd door een team van vijf mensen op de Krim. Het zond 25.000 foto's en 211 panorama's terug voordat het in september 1971 verstomde.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "De eerste wielen op de Maan — Lunokhod 1",
+      "images": [
+        {
+          "src": "/images/missions/luna17/01.webp",
+          "caption": "Lunokhod 1 — chassis met 8 wielen, 756 kg, aangedreven door zonne-energie, met een polonium-210-RTG voor warmte tijdens de nacht. Ontworpen voor 3 maanden, hield het 10 maanden vol."
+        },
+        {
+          "src": "/images/missions/luna17/02.webp",
+          "caption": "De lander van Luna 17 + de afrijhellingen voor het uitzetten van Lunokhod 1. Het Sovjetteam dat het voertuig op afstand bestuurde, werkte vanuit een omgebouwde onderzeeër aan de kust van de Krim."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Mare Imbrium — geland op 17 november 1970",
+      "images": [
+        {
+          "src": "/images/missions/luna17/03.webp",
+          "caption": "Lunokhod 1 rijdt over Mare Imbrium — in realtime bestuurd door een team van vijf mensen, ondanks de vertraging van 2,5 seconde per richting door de lichtsnelheid."
+        },
+        {
+          "src": "/images/missions/luna17/04.webp",
+          "caption": "Routekaart van Lunokhod 1 — een zigzagtraject van 10,5 km over Mare Imbrium, met wetenschappelijke stops bij rotsen en kraters."
+        },
+        {
+          "src": "/images/missions/luna17/05.webp",
+          "caption": "De retroreflector van Lunokhod 1 — wordt ruim 50 jaar later nog steeds gebruikt door aardse stations voor laserafstandsmeting naar de Maan."
+        }
+      ]
+    }
+  ]
+}

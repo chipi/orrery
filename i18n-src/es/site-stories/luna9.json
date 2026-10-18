@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 9 aterrizó en Oceanus Procellarum el 3 de febrero de 1966: el primer aterrizaje suave en otro mundo. La cápsula esférica de 99 kg sobrevivió a un impacto a 22 km/h desplegando cojines inflables; después abrió unos pétalos para enderezarse y transmitió las primeras fotografías de la superficie lunar. Funcionó durante 3 días, hasta el agotamiento de las baterías.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Cápsula soviética E-6, pionera del aterrizaje suave",
+      "images": [
+        {
+          "src": "/images/missions/luna9/01.webp",
+          "caption": "Maqueta de la cápsula de Luna 9: 99 kg, esférica, con cámara protegida por airbags y cuatro antenas en forma de pétalo."
+        },
+        {
+          "src": "/images/missions/luna9/02.webp",
+          "caption": "Diagrama en corte del hardware de Luna 9: los ingenieros soviéticos resolvieron el problema del aterrizaje suave antes que la NASA."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "31 de enero de 1966: Molniya-M desde Baikonur",
+      "images": [
+        {
+          "src": "/images/missions/luna9/03.webp",
+          "caption": "Cohete Molniya-M preparado en Baikonur: Luna 9 se lanzó en plena carrera entre soviéticos y estadounidenses por lograr el primer aterrizaje suave."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Oceanus Procellarum: aterrizaje el 3 de febrero de 1966",
+      "images": [
+        {
+          "src": "/images/missions/luna9/04.webp",
+          "caption": "Primeras imágenes de la superficie lunar: panorámicas toscas, de baja tasa de bits, que mostraban un regolito rocoso. El radiotelescopio de Jodrell Bank, en Manchester, interceptó la transmisión y la publicó antes que los soviéticos."
+        },
+        {
+          "src": "/images/missions/luna9/05.webp",
+          "caption": "Mosaico panorámico de Luna 9: la primera prueba de que la superficie lunar era lo bastante sólida para sostener un módulo de aterrizaje, lo que puso fin a años de especulación sobre profundas acumulaciones de polvo."
+        }
+      ]
+    }
+  ]
+}

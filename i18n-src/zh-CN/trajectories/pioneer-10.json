@@ -1,0 +1,34 @@
+{
+  "name": "Pioneer 10",
+  "current_distance_label": "距太阳135天文单位·约18.8光小时（最后联系时间：2003-01-23）",
+  "interstellar_since_label": "最后联系：2003年——正在向金牛座航行，约200万年后将经过毕宿五附近",
+  "waypoints": [
+    {
+      "label": "发射"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "木星"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "冥王星轨道外侧"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "最后联系"
+    },
+    null,
+    null,
+    {
+      "label": "今日"
+    }
+  ]
+}

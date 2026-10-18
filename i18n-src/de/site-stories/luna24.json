@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 24 landete am 18. August 1976 im Mare Crisium – es war die letzte sowjetische (und die letzte robotische) Mission zur Rückführung von Mondproben im 20. Jahrhundert und bis zu Chinas Chang'e 3 im Jahr 2013 zugleich die letzte Mondlandung überhaupt. Die Sonde bohrte 2 m tief in den Regolith und brachte 170,1 g Proben zur Erde zurück, darunter Hinweise auf Wassereis auf dem Mond (Jahrzehnte später durch SOFIA und LCROSS erneut bestätigt). Hier endete das sowjetische Mondprogramm.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Sowjetischer Lander E-8-5M – verbesserte Anlage zur Probenrückführung",
+      "images": [
+        {
+          "src": "/images/missions/luna24/01.webp",
+          "caption": "Raumfahrzeug Luna 24 in einem sowjetischen Raumfahrtmuseum – Landestufe + Aufstiegsstufe + Rückkehrkapsel."
+        },
+        {
+          "src": "/images/missions/luna24/02.webp",
+          "caption": "Der Bohrmechanismus – er drang 2 m tief ein, dreimal so weit wie bei Luna 16 mit 35 cm. Er lieferte die tiefsten Proben, die je von einer anderen Welt zur Erde gebracht wurden."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Mare Crisium – Landung am 18. August 1976",
+      "images": [
+        {
+          "src": "/images/missions/luna24/03.webp",
+          "caption": "Landestelle im Mare Crisium – Luna 24 setzte etwa 2 km von der Stelle auf, an der Luna 23 1974 in derselben Region eine missglückte Landung hatte."
+        },
+        {
+          "src": "/images/missions/luna24/04.webp",
+          "caption": "Rückkehrkapsel in Sibirien, 22. August 1976 – die letzte sowjetische Probenrückführung von jenseits der Erdumlaufbahn bis zu den VKS-Programmen der 2020er-Jahre."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wissenschaft",
+      "subtitle": "Wasser im Regolith – vorab bestätigt",
+      "images": [
+        {
+          "src": "/images/missions/luna24/05.webp",
+          "caption": "Die erneute Analyse der Luna 24-Proben im Jahr 1978 ergab einen Wassergehalt von 0,1 % – zunächst abgetan, 2020 bestätigt durch den Einschlag von LCROSS und durch SOFIA."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Venera 13",
+  "current_distance_label": "0,74 AU · landete am 01.03.1982 auf der Venus (127 Minuten Oberflächenüberleben)",
+  "waypoints": [
+    {
+      "label": "Start (Proton-K)"
+    },
+    null,
+    null,
+    {
+      "label": "Landung auf der Venusoberfläche"
+    }
+  ]
+}

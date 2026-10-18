@@ -1,0 +1,30 @@
+{
+  "name": "Dawn",
+  "current_distance_label": "2,8 AU · seit Ende Oktober 2018 in stabiler Ceres-Umlaufbahn (~20 Jahre Umlauflebensdauer)",
+  "waypoints": [
+    {
+      "label": "Start"
+    },
+    null,
+    null,
+    {
+      "label": "Mars-Unterstützung"
+    },
+    null,
+    null,
+    {
+      "label": "Vesta-Umlaufbahn"
+    },
+    {
+      "label": "Vesta-Abflug"
+    },
+    null,
+    null,
+    {
+      "label": "Ceres-Orbiteinsatz"
+    },
+    {
+      "label": "Missionsende (Heute)"
+    }
+  ]
+}

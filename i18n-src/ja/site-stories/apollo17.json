@@ -1,0 +1,57 @@
+{
+  "intro": "Apollo 17は1972年12月11日、タウルス・リットロウ渓谷に着陸した。有人月面探査の最後のミッションであり、職業地質学者（ハリソン・シュミット）が月面に立った唯一のミッションでもある。サーナンとシュミットは3回の船外活動で合計22時間を船外で過ごし、35 km走破して、110 kgの試料を持ち帰った。その中には有名なオレンジ色の土壌（35億年前（3.5 Ga）の溶岩噴泉に由来する火山ガラスのビーズ）も含まれる。サーナンの足跡は、地球以外の天体に残された人類最新の痕跡である。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "America + Challenger + LRV-3",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/01.webp",
+          "caption": "Apollo 17のクルーの肖像 — ユージン・サーナン（船長、CDR）、ロナルド・エヴァンス（司令船操縦士、CMP）、ハリソン・\"ジャック\"・シュミット（月着陸船操縦士、LMP、科学者宇宙飛行士）。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "1972年12月7日 — Saturn V最後の飛行",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/02.webp",
+          "caption": "Saturn V初の夜間打ち上げ、1972年12月7日 UTC 05:33 — 700 km離れた場所からも見えた。Apollo計画最後の打ち上げであり、Saturn V最後の打ち上げでもある。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "タウルス・リットロウ渓谷 — 1972年12月11日着陸",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/03.webp",
+          "caption": "サーナンと、頭上に地球を望む旗 — 「月面に立った最後の人類」。"
+        },
+        {
+          "src": "/images/missions/apollo17/04.webp",
+          "caption": "シュミットがショーティ・クレーターでオレンジ色の土壌を発見 — 35億年前（3.5 Ga）の溶岩噴泉の噴火でできた火山ガラスの微小球。"
+        },
+        {
+          "src": "/images/hotspots/moon/apollo17/tier3-pan.jpg",
+          "caption": "タウルス・リットロウ渓谷のパノラマ — Challengerの降下段、LRV、そして遠くにTortilla Flat。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "月面に降り立った初の専門訓練を受けた地質学者",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/05.webp",
+          "caption": "試料70017 — 人類が最後に採取した月の試料。1972年12月14日の離陸前にサーナンが最後に行った作業だった。"
+        }
+      ]
+    }
+  ]
+}

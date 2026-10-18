@@ -1,0 +1,14 @@
+{
+  "name": "Venera 13",
+  "current_distance_label": "0.74 AU · 1982-03-01 登陆金星（表面存活时间 127 分钟）",
+  "waypoints": [
+    {
+      "label": "发射（Proton-K）"
+    },
+    null,
+    null,
+    {
+      "label": "金星表面着陆"
+    }
+  ]
+}

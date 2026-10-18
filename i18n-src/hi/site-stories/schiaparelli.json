@@ -1,0 +1,46 @@
+{
+  "intro": "Schiaparelli — यूरोप का मंगल पर उतरने का दूसरा प्रयास — 16 अक्टूबर 2016 को ExoMars Trace Gas Orbiter से अलग हुआ और तीन दिन बाद लगभग 540 किमी/घंटा की गति से मेरिडियानी पठार में जा टकराया। एक सॉफ़्टवेयर गड़बड़ी के कारण पैराशूट और ब्रेकिंग थ्रस्टर निर्धारित समय से 50 सेकंड पहले ही अलग हो गए, जबकि लैंडर अभी सतह से 3.7 किमी ऊपर था। एक सप्ताह के भीतर MRO HiRISE ने इसका मलबा खोज निकाला। इससे मिले सबक़ों ने ExoMars Rosalind Franklin रोवर को आकार दिया, जिसका प्रक्षेपण अब 2028 के लिए प्रस्तावित है।",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "हार्डवेयर",
+      "subtitle": "EDM — एंट्री, डिसेंट एंड लैंडिंग डेमॉन्स्ट्रेटर मॉड्यूल",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/01.webp",
+          "caption": "प्रक्षेपण से पहले Schiaparelli लैंडर — 577 किग्रा, ExoMars रोवर की EDL प्रणाली के लिए एकबारगी प्रौद्योगिकी प्रदर्शक के रूप में डिज़ाइन किया गया।"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "प्रक्षेपण",
+      "subtitle": "14 मार्च 2016 — बायकोनूर से Proton-M",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/02.webp",
+          "caption": "ExoMars 2016 स्टैक के साथ Proton-M ने उड़ान भरी — TGO + Schiaparelli, ESA-Roscosmos का संयुक्त मिशन।"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "सतह",
+      "subtitle": "मेरिडियानी पठार — 19 अक्टूबर 2016 को टकराया",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/03.webp",
+          "caption": "MRO HiRISE ने Schiaparelli के टकराव स्थल की तस्वीर ली — मुख्य क्रेटर ऊपर दिखाई दे रहा है; पैराशूट + बैकशेल नीचे दाईं ओर।"
+        },
+        {
+          "src": "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg",
+          "caption": "Schiaparelli के दुर्घटना स्थल का HiRISE से लिया गया विस्तृत चित्र — हार्डवेयर के टकराने से बनी काली लकीर और चारों ओर फैली उत्क्षेपित सामग्री की परत।"
+        },
+        {
+          "src": "/images/fleet-galleries/schiaparelli/04.webp",
+          "caption": "विफलता के क्रम का कंप्यूटर-ग्राफ़िक्स पुनर्निर्माण — पैराशूट खुलने के दौरान IMU के संतृप्त हो जाने से लैंडर 3.7 किमी की ऊँचाई पर समय से पहले अलग हो गया।"
+        }
+      ]
+    }
+  ]
+}

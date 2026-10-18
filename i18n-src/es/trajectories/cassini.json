@@ -1,0 +1,33 @@
+{
+  "name": "Cassini-Huygens",
+  "current_distance_label": "9,5 UA · en órbita de Saturno 2004-2017 — desintegrada en la atmósfera de Saturno 2017-09-15",
+  "waypoints": [
+    {
+      "label": "Lanzamiento"
+    },
+    null,
+    {
+      "label": "Venus n.º 1"
+    },
+    null,
+    {
+      "label": "Venus n.º 2"
+    },
+    {
+      "label": "Tierra"
+    },
+    null,
+    {
+      "label": "Júpiter"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Inserción en órbita de Saturno"
+    },
+    {
+      "label": "Gran Final (hoy)"
+    }
+  ]
+}

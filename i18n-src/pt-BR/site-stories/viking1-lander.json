@@ -1,0 +1,61 @@
+{
+  "intro": "A Viking 1 pousou em Chryse Planitia em 20 de julho de 1976 — o primeiro lander americano a ter sucesso em Marte, exatamente sete anos depois da Apollo 11. Sua missão na superfície, de 2.245 sóis (6,3 anos), incluiu as primeiras imagens em cores de Marte, os primeiros experimentos de biologia in situ (com resultados ambíguos) e um registro meteorológico diário. A última transmissão ocorreu em novembro de 1982, depois que o envio de um comando sobrescreveu por acidente os parâmetros de apontamento da antena.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Par lander + orbitador, alimentado por RTG, ~600 kg",
+      "images": [
+        {
+          "src": "/images/missions/viking1/01.webp",
+          "caption": "O lander Viking 1 em testes pré-voo — RTG visível na traseira, braço coletor de amostras da superfície estendido."
+        },
+        {
+          "src": "/images/missions/viking1/02.webp",
+          "caption": "Implantação de uma maquete do braço coletor de amostras da superfície no ambiente de testes do JPL."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "20 de agosto de 1975 — Titan IIIE, de Cabo Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/viking1/03.webp",
+          "caption": "O Titan IIIE / Centaur lança a Viking 1 — trânsito de 10 meses, inserção em órbita de Marte em junho de 1976, pouso do lander em 20 de julho."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Chryse Planitia — pouso em 20 de julho de 1976",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier3-pan.jpg",
+          "caption": "Panorama de 360° de Chryse Planitia — a primeira paisagem em cores da superfície de outro planeta."
+        },
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier2-hirise.jpg",
+          "caption": "O lander Viking 1, fotografado da órbita mais de 30 anos depois pela HiRISE da MRO — a primeira imagem de arqueologia de hardware de uma missão a Marte da década de 1970."
+        },
+        {
+          "src": "/images/missions/viking1/04.webp",
+          "caption": "Primeira imagem da superfície marciana, captada minutos após o pouso pela Câmera 2."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciência",
+      "subtitle": "Experimentos de biologia, clima e a busca por vida",
+      "images": [
+        {
+          "src": "/images/missions/viking1/05.webp",
+          "caption": "Trincheira escavada pelo coletor de amostras da superfície — os experimentos de biologia da Viking buscaram compostos orgânicos (nenhum detectado; o resultado ainda é debatido)."
+        }
+      ]
+    }
+  ]
+}

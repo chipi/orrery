@@ -1,0 +1,50 @@
+{
+  "intro": "Mars Pathfinderは1997年7月4日、アレス渓谷に着陸した。21年前のVikingによる探査以来、米国として初めての火星ミッションだった。着陸機は火星で初めて車輪を走らせたSojournerを展開し、エアバッグ着陸と探査走行を、2億6,500万ドルの低コストな「より速く、より良く、より安く」ミッションで実証して、約16,500枚の画像を送り届けた。着陸機が機能を失うまでに、Sojournerは100メートルを走行し、アニメのキャラクターにちなんで名付けられた12個の岩(Yogi、Barnacle Bill、Scooby Doo)を調べて地図に記した。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "初の火星ローバー、そしてViking以来初の米国の火星着陸機",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/01.webp",
+          "caption": "打ち上げ前試験中のPathfinder。ベースステーションと、Sojourner用の花弁状展開ランプが見える。"
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/02.webp",
+          "caption": "マイクロローバーSojourner。重量11.5 kg、6輪、太陽電池駆動で、7ソル稼働する設計だった(実際は83ソル持続した)。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "1996年12月4日 — ケープ・カナベラルからDelta IIで打ち上げ",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/03.webp",
+          "caption": "Delta II 7925がPathfinderを乗せて打ち上げられ、7か月に及ぶ火星への旅に出発する。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "アレス渓谷 — 1997年7月4日着陸",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg",
+          "caption": "Improved Presidential Panorama。アレス渓谷を360°のカラーで捉えた眺め。地平線にTwin Peaksが見える(名前はテレビ番組に由来)。"
+        },
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg",
+          "caption": "数十年後にMROのHiRISEが軌道上から撮影したPathfinder着陸機。花弁状のパネルと、Sojournerが最後に確認された位置が写っている。"
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/04.webp",
+          "caption": "Yogiと名付けられた岩を調べるSojourner。火星の地形を間近で化学分析した初の例となった。"
+        }
+      ]
+    }
+  ]
+}

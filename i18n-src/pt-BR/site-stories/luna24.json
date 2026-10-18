@@ -1,0 +1,46 @@
+{
+  "intro": "A Luna 24 pousou no Mare Crisium em 18 de agosto de 1976 — a última missão soviética (e a última missão robótica) de retorno de amostras lunares do século XX, e o último módulo de pouso lunar de qualquer tipo até a Chang'e 3, da China, em 2013. Perfurou 2 m no regolito e trouxe à Terra 170,1 g de amostras, incluindo indícios de gelo de água lunar (reconfirmados décadas depois pelo SOFIA e pelo LCROSS). O programa lunar soviético terminou ali.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Módulo de pouso soviético E-8-5M — equipamento aprimorado de retorno de amostras",
+      "images": [
+        {
+          "src": "/images/missions/luna24/01.webp",
+          "caption": "A espaçonave Luna 24 exposta em um museu espacial soviético — estágio de descida + veículo de ascensão + cápsula de retorno."
+        },
+        {
+          "src": "/images/missions/luna24/02.webp",
+          "caption": "O mecanismo de perfuração — penetrou 2 m, três vezes mais fundo que os 35 cm da Luna 16. Trouxe as amostras mais profundas já retiradas de outro mundo."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Mare Crisium — pouso em 18 de agosto de 1976",
+      "images": [
+        {
+          "src": "/images/missions/luna24/03.webp",
+          "caption": "Local de pouso no Mare Crisium — a Luna 24 tocou o solo a ~2 km do pouso fracassado da Luna 23, em 1974, na mesma região."
+        },
+        {
+          "src": "/images/missions/luna24/04.webp",
+          "caption": "Cápsula de retorno na Sibéria, 22 de agosto de 1976 — o último retorno soviético de amostras de além da órbita da Terra até os programas da VKS da década de 2020."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciência",
+      "subtitle": "Água no regolito — pré-confirmada",
+      "images": [
+        {
+          "src": "/images/missions/luna24/05.webp",
+          "caption": "A reanálise das amostras da Luna 24, em 1978, indicou um teor de água de 0,1% — inicialmente descartada, foi confirmada pelo impacto do LCROSS e pelo SOFIA em 2020."
+        }
+      ]
+    }
+  ]
+}

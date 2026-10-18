@@ -1,0 +1,284 @@
+[
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-launcher-vostok-k_webp.what",
+    "old": "Nucleo a croce di Korolev con quattro booster affusolati montati ai lati.",
+    "new": "Nucleo a croce di Korolëv con quattro booster affusolati montati ai lati."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-earth-launchpad_webp.what",
+    "old": "Piazzaforma ottagonale con quattro torri di protezione dai fulmini — Kennedy, Baikonur, Jiuquan e altri.",
+    "new": "Piazzaforma ottagonale con quattro torri di protezione dai fulmini — Kennedy, Bajkonur, Jiuquan e altri."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Landing-site stories.where",
+    "old": "Moon + Mars sites",
+    "new": "Siti sulla Luna e su Marte"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Surface + panorama captions.where",
+    "old": "Moon + Mars panoramas",
+    "new": "Panorami della Luna e di Marte"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "intro",
+    "old": "Apollo 14 atterrò sugli altopiani di Fra Mauro il 5 febbraio 1971: era l'obiettivo originale di Apollo 13, raggiunto dopo l'esplosione che colpì quella missione. Shepard e Mitchell trascinarono il Modular Equipment Transporter (un risciò) su per i fianchi del Cone Crater e riportarono a Terra 43 kg di brecce, frammenti del gigantesco impatto che 3,9 miliardi di anni fa formò il Mare Imbrium. Shepard, com'è noto, colpì due palline da golf prima del decollo.",
+    "new": "Apollo 14 atterrò sugli altopiani di Fra Mauro il 5 febbraio 1971: era l'obiettivo originale di Apollo 13, raggiunto dopo l'esplosione che colpì quella missione. Shepard e Mitchell trascinarono il Modular Equipment Transporter (un risciò) su per i fianchi del cratere Cone e riportarono a Terra 43 kg di brecce, frammenti del gigantesco impatto che 3,9 miliardi di anni fa formò il Mare Imbrium. Shepard, com'è noto, colpì due palline da golf prima del decollo."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Mitchell con il Modular Equipment Transporter (MET): il «risciò» trasportava attrezzi e campioni lungo il pendio verso il Cone Crater.",
+    "new": "Mitchell con il Modular Equipment Transporter (MET): il «risciò» trasportava attrezzi e campioni lungo il pendio verso il cratere Cone."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Il bordo del Cone Crater: l'equipaggio salì fino a circa 30 m dal bordo, ma fu costretto a tornare indietro dalla stanchezza e dai limiti delle comunicazioni.",
+    "new": "Il bordo del cratere Cone: l'equipaggio salì fino a circa 30 m dal bordo, ma fu costretto a tornare indietro dalla stanchezza e dai limiti delle comunicazioni."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "intro",
+    "old": "Apollo 15 allunò a Hadley Rille / Apennine Mountains il 30 luglio 1971: fu la prima missione \"classe J\", con una permanenza prolungata in superficie, il Lunar Roving Vehicle (LRV) e un pilota addestrato come scienziato (David Scott). Scott e Irwin percorsero in totale 28 km in tre EVA, trovarono la Genesis Rock (anortosite di circa 4,1 Ga, crosta primaria) e, in diretta TV, lasciarono cadere una piuma e un martello per dimostrare l'esperimento di Galileo sulla gravità.",
+    "new": "Apollo 15 allunò presso il solco Hadley, sui monti Appennini il 30 luglio 1971: fu la prima missione \"classe J\", con una permanenza prolungata in superficie, il Lunar Roving Vehicle (LRV) e un pilota addestrato come scienziato (David Scott). Scott e Irwin percorsero in totale 28 km in tre EVA, trovarono la Genesis Rock (anortosite di circa 4,1 Ga, crosta primaria) e, in diretta TV, lasciarono cadere una piuma e un martello per dimostrare l'esperimento di Galileo sulla gravità."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "David Scott sul bordo di Hadley Rille: per la prima volta degli astronauti si trovarono sull'orlo di un antico canale di lava su un altro mondo.",
+    "new": "David Scott sul bordo del solco Hadley: per la prima volta degli astronauti si trovarono sull'orlo di un antico canale di lava su un altro mondo."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "intro",
+    "old": "Apollo 16 allunò negli Altopiani di Descartes (Descartes Highlands) il 21 aprile 1972: l'unica missione Apollo verso un sito di altopiano (e non di mare lunare), scelto per campionare quello che si credeva fosse un terreno vulcanico. Young e Duke NON trovarono rocce vulcaniche, ma solo brecce da impatto e anortosite, ribaltando il modello geologico e dimostrando che gli altopiani lunari sono una crosta antica frantumata dagli impatti, e non il prodotto di un vulcanismo successivo. Tre EVA, 27 km di percorso con il LRV, 95 kg di campioni riportati a Terra.",
+    "new": "Apollo 16 allunò negli Altopiani di Descartes (Altopiano Descartes) il 21 aprile 1972: l'unica missione Apollo verso un sito di altopiano (e non di mare lunare), scelto per campionare quello che si credeva fosse un terreno vulcanico. Young e Duke NON trovarono rocce vulcaniche, ma solo brecce da impatto e anortosite, ribaltando il modello geologico e dimostrando che gli altopiani lunari sono una crosta antica frantumata dagli impatti, e non il prodotto di un vulcanismo successivo. Tre EVA, 27 km di percorso con il LRV, 95 kg di campioni riportati a Terra."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.subtitle",
+    "old": "Altopiani di Descartes (Descartes Highlands): allunaggio il 21 aprile 1972",
+    "new": "Altopiani di Descartes (Altopiano Descartes): allunaggio il 21 aprile 1972"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Panorama degli Altopiani di Descartes (Descartes Highlands): lo stadio di discesa di Orion + il LRV, con sullo sfondo Stone Mountain.",
+    "new": "Panorama degli Altopiani di Descartes (Altopiano Descartes): lo stadio di discesa di Orion + il LRV, con sullo sfondo Stone Mountain."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "intro",
+    "old": "Apollo 17 allunò nella Taurus-Littrow Valley l'11 dicembre 1972: fu l'ultima missione lunare con equipaggio e l'unica ad avere sulla superficie un geologo di professione (Harrison Schmitt). Cernan e Schmitt trascorsero 22 ore all'esterno nel corso di tre EVA, percorsero 35 km in rover e riportarono a Terra 110 kg di campioni, tra cui il celebre Orange Soil (sferule di vetro vulcanico generate da una fontana di fuoco di 3,5 Ga). L'impronta di Cernan è il più recente segno umano lasciato su un altro mondo.",
+    "new": "Apollo 17 allunò nella valle Taurus-Littrow l'11 dicembre 1972: fu l'ultima missione lunare con equipaggio e l'unica ad avere sulla superficie un geologo di professione (Harrison Schmitt). Cernan e Schmitt trascorsero 22 ore all'esterno nel corso di tre EVA, percorsero 35 km in rover e riportarono a Terra 110 kg di campioni, tra cui il celebre Orange Soil (sferule di vetro vulcanico generate da una fontana di fuoco di 3,5 Ga). L'impronta di Cernan è il più recente segno umano lasciato su un altro mondo."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.subtitle",
+    "old": "Taurus-Littrow Valley — allunaggio l'11 dicembre 1972",
+    "new": "valle Taurus-Littrow — allunaggio l'11 dicembre 1972"
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Schmitt al Shorty Crater scopre l'Orange Soil: sferule di vetro vulcanico generate da un'eruzione a fontana di fuoco di 3,5 Ga.",
+    "new": "Schmitt al cratere Shorty scopre l'Orange Soil: sferule di vetro vulcanico generate da un'eruzione a fontana di fuoco di 3,5 Ga."
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.1.subtitle",
+    "old": "2 giugno 2003 — Soyuz/Fregat da Baikonur, in condivisione con Mars Express",
+    "new": "2 giugno 2003 — Soyuz/Fregat da Bajkonur, in condivisione con Mars Express"
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "intro",
+    "old": "Chang'e 4 è atterrata nel Von Kármán Crater il 3 gennaio 2019: il primo atterraggio morbido sul lato nascosto della Luna, dove la Terra non è mai visibile. Le comunicazioni sono state inoltrate tramite il satellite Queqiao, posizionato in L2. Ha schierato il rover Yutu-2, che ha percorso oltre 1,5 km ed è ancora operativo nel 2026: la missione sulla superficie lunare rimasta attiva più a lungo di sempre. Ha individuato materiale incontaminato del mantello nel bacino del Polo Sud-Aitken.",
+    "new": "Chang'e 4 è atterrata nel cratere Von Kármán il 3 gennaio 2019: il primo atterraggio morbido sul lato nascosto della Luna, dove la Terra non è mai visibile. Le comunicazioni sono state inoltrate tramite il satellite Queqiao, posizionato in L2. Ha schierato il rover Yutu-2, che ha percorso oltre 1,5 km ed è ancora operativo nel 2026: la missione sulla superficie lunare rimasta attiva più a lungo di sempre. Ha individuato materiale incontaminato del mantello nel bacino del Polo Sud-Aitken."
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.1.subtitle",
+    "old": "Von Kármán Crater, lato nascosto — atterraggio il 3 gennaio 2019",
+    "new": "cratere Von Kármán, lato nascosto — atterraggio il 3 gennaio 2019"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "intro",
+    "old": "Chang'e 6 è atterrata nel bacino South Pole-Aitken il 1° giugno 2024: la prima missione di restituzione di campioni dal lato nascosto della Luna, sulla struttura da impatto più profonda, più antica e più grande del Sistema Solare interno. Il 25 giugno 2024 ha riportato sulla Terra 1.935 g di materiale del lato nascosto: campioni che potrebbero contenere frammenti di mantello provenienti dall'impatto che, 4,2 miliardi di anni fa, formò il bacino.",
+    "new": "Chang'e 6 è atterrata nel bacino Polo Sud-Aitken il 1° giugno 2024: la prima missione di restituzione di campioni dal lato nascosto della Luna, sulla struttura da impatto più profonda, più antica e più grande del Sistema Solare interno. Il 25 giugno 2024 ha riportato sulla Terra 1.935 g di materiale del lato nascosto: campioni che potrebbero contenere frammenti di mantello provenienti dall'impatto che, 4,2 miliardi di anni fa, formò il bacino."
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.2.subtitle",
+    "old": "Apollo Crater (all'interno del South Pole-Aitken): atterraggio il 1° giugno 2024",
+    "new": "cratere Apollo (all'interno del Polo Sud-Aitken): atterraggio il 1° giugno 2024"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.3.subtitle",
+    "old": "1.935 g di materiale del bacino South Pole-Aitken",
+    "new": "1.935 g di materiale del bacino Polo Sud-Aitken"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "intro",
+    "old": "Il rover Curiosity della NASA è stato lanciato il 26 novembre 2011 a bordo di un Atlas V da Cape Canaveral. Dopo 254 giorni di crociera, Mars Science Laboratory ha portato il rover da 899 kg, alimentato a energia nucleare, nel cratere Gale il 6 agosto 2012, grazie al celebre atterraggio con sky crane. Più di dieci anni dopo, Curiosity continua a scalare il Mount Sharp, perforando rocce che custodiscono la testimonianza di un passato in cui Marte era abitabile.",
+    "new": "Il rover Curiosity della NASA è stato lanciato il 26 novembre 2011 a bordo di un Atlas V da Cape Canaveral. Dopo 254 giorni di crociera, Mars Science Laboratory ha portato il rover da 899 kg, alimentato a energia nucleare, nel cratere Gale il 6 agosto 2012, grazie al celebre atterraggio con sky crane. Più di dieci anni dopo, Curiosity continua a scalare il monte Sharp, perforando rocce che custodiscono la testimonianza di un passato in cui Marte era abitabile."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Panorama di Mont Mercou, sol 3070 (marzo 2021). Rotazione a 360° della Mastcam-Z che mostra il rover, le pareti stratificate di Mt Mercou e Mount Sharp all'orizzonte.",
+    "new": "Panorama di Mont Mercou, sol 3070 (marzo 2021). Rotazione a 360° della Mastcam-Z che mostra il rover, le pareti stratificate di Mt Mercou e monte Sharp all'orizzonte."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.3.images.1.caption",
+    "old": "Rocce sedimentarie a Vera Rubin Ridge: formazioni di ferro a bande e minerali argillosi indicano la presenza di acqua liquida antica e di un ambiente chimico abitabile.",
+    "new": "Rocce sedimentarie a cresta Vera Rubin: formazioni di ferro a bande e minerali argillosi indicano la presenza di acqua liquida antica e di un ambiente chimico abitabile."
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.1.subtitle",
+    "old": "5 maggio 2018 — Atlas V da Vandenberg AFB",
+    "new": "5 maggio 2018 — Atlas V da Vandenberg Air Force Base"
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.1.subtitle",
+    "old": "12 settembre 1970 — Proton-K da Baikonur",
+    "new": "12 settembre 1970 — Proton-K da Bajkonur"
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Il Proton-K con lo stadio superiore Blok-D sulla rampa del cosmodromo di Baikonur.",
+    "new": "Il Proton-K con lo stadio superiore Blok-D sulla rampa del cosmodromo di Bajkonur."
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "intro",
+    "old": "Luna 21 atterrò nel Le Monnier Crater il 15 gennaio 1973 — e dispiegò il Lunokhod 2, il successore del primo rover lunare al mondo. Il Lunokhod 2 percorse 42,1 km in 4 mesi — un record che resistette fino a quando l'Opportunity della NASA lo superò su Marte nel luglio 2014, 41 anni dopo. Trasmise 80.000 immagini televisive e 86 panoramiche a scansione, prima che un cumulo di regolite cadesse sul radiatore e facesse surriscaldare il rover.",
+    "new": "Luna 21 atterrò nel cratere Le Monnier il 15 gennaio 1973 — e dispiegò il Lunokhod 2, il successore del primo rover lunare al mondo. Il Lunokhod 2 percorse 42,1 km in 4 mesi — un record che resistette fino a quando l'Opportunity della NASA lo superò su Marte nel luglio 2014, 41 anni dopo. Trasmise 80.000 immagini televisive e 86 panoramiche a scansione, prima che un cumulo di regolite cadesse sul radiatore e facesse surriscaldare il rover."
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.1.subtitle",
+    "old": "Le Monnier Crater — atterraggio il 15 gennaio 1973",
+    "new": "cratere Le Monnier — atterraggio il 15 gennaio 1973"
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.1.subtitle",
+    "old": "31 gennaio 1966 — Molniya-M da Baikonur",
+    "new": "31 gennaio 1966 — Molniya-M da Bajkonur"
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Razzo Molniya-M preparato a Baikonur: Luna 9 fu lanciata nella corsa sovietico-americana, da un capo all'altro del mondo, verso il primo atterraggio morbido.",
+    "new": "Razzo Molniya-M preparato a Bajkonur: Luna 9 fu lanciata nella corsa sovietico-americana, da un capo all'altro del mondo, verso il primo atterraggio morbido."
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "intro",
+    "old": "Mars 3 toccò il suolo di Terra Sirenum il 2 dicembre 1971: fu il primo lander a sopravvivere all'ingresso nell'atmosfera marziana e a raggiungere la superficie, cinque giorni dopo lo schianto della gemella Mars 2. Le comunicazioni si interruppero dopo 14,5 secondi, restituendo un unico frammento parziale e degradato di immagine in scala di grigi. Con ogni probabilità il lander arrivò nel pieno di una tempesta di polvere che avvolgeva l'intero pianeta. L'esatto luogo di quiete di Mars 3 è ancora oggetto di dibattito: nel 2013 HiRISE ha ripreso un possibile hardware candidato.",
+    "new": "Mars 3 toccò il suolo della Terra Sirenum il 2 dicembre 1971: fu il primo lander a sopravvivere all'ingresso nell'atmosfera marziana e a raggiungere la superficie, cinque giorni dopo lo schianto della gemella Mars 2. Le comunicazioni si interruppero dopo 14,5 secondi, restituendo un unico frammento parziale e degradato di immagine in scala di grigi. Con ogni probabilità il lander arrivò nel pieno di una tempesta di polvere che avvolgeva l'intero pianeta. L'esatto luogo di quiete di Mars 3 è ancora oggetto di dibattito: nel 2013 HiRISE ha ripreso un possibile hardware candidato."
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.1.subtitle",
+    "old": "28 maggio 1971 — Proton-K da Baikonur",
+    "new": "28 maggio 1971 — Proton-K da Bajkonur"
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Il Proton-K con lo stadio superiore Blok-D preparato al Cosmodromo di Baikonur: 6 mesi di viaggio verso Marte.",
+    "new": "Il Proton-K con lo stadio superiore Blok-D preparato al Cosmodromo di Bajkonur: 6 mesi di viaggio verso Marte."
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Dettaglio HiRISE del possibile sito dell'hardware di Mars 3 in Terra Sirenum: diffuso nel 2013 dal team NASA/UA HiRISE, identificato da storici dilettanti russi dell'astronautica.",
+    "new": "Dettaglio HiRISE del possibile sito dell'hardware di Mars 3 sulla Terra Sirenum: diffuso nel 2013 dal team NASA/UA HiRISE, identificato da storici dilettanti russi dell'astronautica."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Legacy Pan, sol 5084-5111 (maggio-giugno 2018): l'ultimo panorama a 360° di Opportunity prima della tempesta di polvere. Perseverance Valley scende verso Endeavour Crater.",
+    "new": "Legacy Pan, sol 5084-5111 (maggio-giugno 2018): l'ultimo panorama a 360° di Opportunity prima della tempesta di polvere. Perseverance Valley scende verso cratere Endeavour."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Il bordo di Endeavour Crater, dove Opportunity trascorse i suoi ultimi anni. Il punto di riposo del rover si trova in Perseverance Valley, sulla destra.",
+    "new": "Il bordo del cratere Endeavour, dove Opportunity trascorse i suoi ultimi anni. Il punto di riposo del rover si trova in Perseverance Valley, sulla destra."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Il punto d'impatto dello scudo termico a Endurance Crater: Opportunity tornò indietro per ispezionare il proprio hardware di rientro scartato.",
+    "new": "Il punto d'impatto dello scudo termico al cratere Endurance: Opportunity tornò indietro per ispezionare il proprio hardware di rientro scartato."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Gli affioramenti stratificati di Burns Cliff all'interno di Endurance Crater: la testimonianza sedimentaria di un antico specchio d'acqua salato e acido.",
+    "new": "Gli affioramenti stratificati di Burns Cliff all'interno del cratere Endurance: la testimonianza sedimentaria di un antico specchio d'acqua salato e acido."
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "intro",
+    "old": "Perseverance è atterrato nel Jezero Crater il 18 febbraio 2021: un delta fluviale di 3,8 miliardi di anni, scelto perché offriva le migliori possibilità di conservare tracce dell'antica vita marziana. Il rover porta con sé il primo elicottero su Marte (Ingenuity), il primo registratore audio su Marte e il primo sistema di raccolta e deposito di campioni. Le provette di campioni lasciate sulla superficie saranno riportate sulla Terra dalla missione Mars Sample Return negli anni 2030.",
+    "new": "Perseverance è atterrato nel cratere Jezero il 18 febbraio 2021: un delta fluviale di 3,8 miliardi di anni, scelto perché offriva le migliori possibilità di conservare tracce dell'antica vita marziana. Il rover porta con sé il primo elicottero su Marte (Ingenuity), il primo registratore audio su Marte e il primo sistema di raccolta e deposito di campioni. Le provette di campioni lasciate sulla superficie saranno riportate sulla Terra dalla missione Mars Sample Return negli anni 2030."
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.subtitle",
+    "old": "Jezero Crater — atterraggio il 18 febbraio 2021",
+    "new": "cratere Jezero — atterraggio il 18 febbraio 2021"
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.1.subtitle",
+    "old": "14 marzo 2016 — Proton-M da Baikonur",
+    "new": "14 marzo 2016 — Proton-M da Bajkonur"
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "intro",
+    "old": "SLIM (Smart Lander for Investigating Moon) è atterrato nel Shioli Crater il 20 gennaio 2024: il primo atterraggio morbido del Giappone sulla Luna e un dimostratore di tecnologia per l'atterraggio di precisione. SLIM si è posato a meno di 100 m dal bersaglio (il miglior risultato precedente era di oltre 1 km), ma si è rovesciato su un fianco e ha operato capovolto, con le celle solari rimaste attive, finché l'energia non si è esaurita. Due micro-rover di superficie, LEV-1 e LEV-2 (Sora-Q), sono stati rilasciati prima di quell'infelice orientamento finale.",
+    "new": "SLIM (Smart Lander for Investigating Moon) è atterrato nel cratere Shioli il 20 gennaio 2024: il primo atterraggio morbido del Giappone sulla Luna e un dimostratore di tecnologia per l'atterraggio di precisione. SLIM si è posato a meno di 100 m dal bersaglio (il miglior risultato precedente era di oltre 1 km), ma si è rovesciato su un fianco e ha operato capovolto, con le celle solari rimaste attive, finché l'energia non si è esaurita. Due micro-rover di superficie, LEV-1 e LEV-2 (Sora-Q), sono stati rilasciati prima di quell'infelice orientamento finale."
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.2.subtitle",
+    "old": "Shioli Crater — atterraggio il 20 gennaio 2024",
+    "new": "cratere Shioli — atterraggio il 20 gennaio 2024"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Un Long March 5 lancia Tianwen-1 dal Wenchang Space Launch Site, a Hainan: sette mesi di viaggio verso Marte.",
+    "new": "Un Long March 5 lancia Tianwen-1 dal Centro spaziale di Wenchang, a Hainan: sette mesi di viaggio verso Marte."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-112fee55fa9f.caption",
+    "old": "Yuri Gagarin si lancia da Baikonur — 12 apr 1961.",
+    "new": "Jurij Gagarin si lancia da Bajkonur — 12 apr 1961."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-4ba1c691d9d4.caption",
+    "old": "I 12 minuti di Alexei Leonov al di fuori della capsula — 18 mar 1965",
+    "new": "I 12 minuti di Aleksej Leonov al di fuori della capsula — 18 mar 1965"
+  }
+]

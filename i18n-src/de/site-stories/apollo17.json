@@ -1,0 +1,57 @@
+{
+  "intro": "Apollo 17 landete am 11. Dezember 1972 im Taurus-Littrow-Tal – die letzte bemannte Mondmission und die einzige mit einem professionellen Geologen (Harrison Schmitt) auf der Oberfläche. Cernan und Schmitt verbrachten bei drei Ausstiegen (EVAs) insgesamt 22 Stunden im Freien, legten 35 km mit dem Rover zurück und brachten 110 kg Proben zur Erde, darunter den berühmten Orange Soil (Glasperlen vulkanischen Ursprungs aus einer Lavafontäne vor 3,5 Milliarden Jahren). Cernans Fußabdruck ist die jüngste menschliche Spur auf einer anderen Welt.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "America + Challenger + LRV-3",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/01.webp",
+          "caption": "Besatzungsporträt von Apollo 17 – Gene Cernan (CDR), Ron Evans (CMP), Harrison „Jack“ Schmitt (LMP, Wissenschaftsastronaut)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "7. Dezember 1972 – letzter Flug einer Saturn V",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/02.webp",
+          "caption": "Erster nächtlicher Start einer Saturn V, 7. Dezember 1972, 05:33 UTC – noch aus 700 km Entfernung zu sehen. Das letzte Apollo-Raumschiff + die letzte Saturn V."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Taurus-Littrow-Tal – Landung am 11. Dezember 1972",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/03.webp",
+          "caption": "Cernan + die Flagge mit der Erde darüber – „The Last Man on the Moon“."
+        },
+        {
+          "src": "/images/missions/apollo17/04.webp",
+          "caption": "Schmitt am Shorty-Krater entdeckt den Orange Soil – vulkanische Glaskügelchen aus einer Lavafontänen-Eruption vor 3,5 Milliarden Jahren."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo17/tier3-pan.jpg",
+          "caption": "Taurus-Littrow-Panorama – Landestufe der Challenger + LRV + Tortilla Flat in der Ferne."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wissenschaft",
+      "subtitle": "Der erste ausgebildete Geologe auf dem Mond",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/05.webp",
+          "caption": "Probe 70017 – die letzte von Menschen gesammelte Mondprobe, Cernans letzte Aufgabe vor dem Abheben am 14. Dezember 1972."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "intro": "Mars Pathfinder aterrizó en Ares Vallis el 4 de julio de 1997, la primera misión estadounidense a Marte desde las Viking, 21 años antes. El módulo de aterrizaje desplegó Sojourner, las primeras ruedas sobre Marte, y demostró que se podían combinar el aterrizaje con airbags y la exploración rodante en una misión de bajo coste, «más rápida, mejor y más barata», de 265 millones de dólares, que devolvió unas 16 500 imágenes. El recorrido de 100 metros de Sojourner cartografió doce rocas bautizadas con nombres de personajes de dibujos animados (Yogi, Barnacle Bill, Scooby Doo) antes de que el módulo de aterrizaje dejara de funcionar.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "El primer rover de Marte y el primer módulo de aterrizaje estadounidense en Marte desde las Viking",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/01.webp",
+          "caption": "Pathfinder durante las pruebas previas al lanzamiento: estación base y rampas de despliegue de los pétalos para Sojourner."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/02.webp",
+          "caption": "El microrover Sojourner: 11,5 kg, 6 ruedas, alimentado por energía solar y diseñado para operar durante 7 soles (duró 83)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "4 de diciembre de 1996: un Delta II desde Cabo Cañaveral",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/03.webp",
+          "caption": "Un Delta II 7925 lanza Pathfinder en su tránsito de 7 meses hacia Marte."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Ares Vallis: aterrizaje el 4 de julio de 1997",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg",
+          "caption": "Improved Presidential Panorama: vista en color de 360° de Ares Vallis. En el horizonte se distingue Twin Peaks (bautizado así por la serie de televisión)."
+        },
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg",
+          "caption": "El módulo de aterrizaje de Pathfinder, fotografiado desde la órbita décadas después por la cámara HiRISE de la MRO: se aprecian los pétalos y la última posición conocida de Sojourner."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/04.webp",
+          "caption": "Sojourner inspecciona la roca Yogi: el primer análisis químico de cerca de terreno marciano."
+        }
+      ]
+    }
+  ]
+}

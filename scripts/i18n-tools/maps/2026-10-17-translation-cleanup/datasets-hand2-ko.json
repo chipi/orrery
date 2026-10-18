@@ -1,0 +1,32 @@
+[
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-sat-geo-comsat_webp.title",
+    "old": "GEO comsat",
+    "new": "정지궤도 통신위성"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Mission briefings.where",
+    "old": "Missions + Fly",
+    "new": "임무 + 비행"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Fleet catalogue entries.where",
+    "old": "Fleet",
+    "new": "함대"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Audio tour scripts.where",
+    "old": "Take the tour",
+    "new": "투어 시작"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-40955744b738.title",
+    "old": "Voyager 1 at 토성",
+    "new": "토성에서의 Voyager 1"
+  }
+]

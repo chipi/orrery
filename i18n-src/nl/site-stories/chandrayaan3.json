@@ -1,0 +1,46 @@
+{
+  "intro": "Chandrayaan-3 landde op 23 augustus 2023 in de buurt van de zuidpool van de Maan — de eerste zachte landing van India op de Maan en de landing het dichtst bij de zuidpool die ooit door een land is uitgevoerd. De Vikram-lander zette de Pragyan-rover uit, die gedurende 14 dagen ~100 m aflegde op zoek naar waterijs in permanent beschaduwd terrein. India werd het vierde land dat zacht op de Maan landde, na de Sovjet-Unie, de Verenigde Staten en China.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Vikram-lander + Pragyan-rover",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/01.webp",
+          "caption": "De Chandrayaan-3-ruimtevaartuigstapel tijdens de integratie voor de lancering bij ISRO Sriharikota."
+        },
+        {
+          "src": "/images/missions/chandrayaan3/02.webp",
+          "caption": "Pragyan-rover — 26 kg, op zonne-energie, met zes wielen. Ontworpen om over de regoliet van het zuidpoolgebied van de Maan te rijden op zoek naar vluchtige stoffen."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "14 juli 2023 — LVM3 vanaf Satish Dhawan Space Centre",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/03.webp",
+          "caption": "LVM3 (\"Bahubali\") lanceert Chandrayaan-3 — een reis van 40 dagen met een maanvangst in meerdere lussen en een bewust trage baan om de brandstofmarge te maximaliseren."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Statio Shiv Shakti, nabij de zuidpool van de Maan — geland op 23 augustus 2023",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/04.webp",
+          "caption": "De Vikram-lander op het oppervlak van het zuidpoolgebied — landing op 69,37° Z, de maanlanding op de hoogste breedtegraad die ooit is uitgevoerd."
+        },
+        {
+          "src": "/images/missions/chandrayaan3/05.webp",
+          "caption": "De Pragyan-rover rijdt de oprit af — de eerste wielen op de zuidpool van de Maan, gefotografeerd door de camera's aan boord van Vikram."
+        }
+      ]
+    }
+  ]
+}

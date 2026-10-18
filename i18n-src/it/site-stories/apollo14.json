@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 14 atterrò sugli altopiani di Fra Mauro il 5 febbraio 1971: era l'obiettivo originale di Apollo 13, raggiunto dopo l'esplosione che colpì quella missione. Shepard e Mitchell trascinarono il Modular Equipment Transporter (un risciò) su per i fianchi del cratere Cone e riportarono a Terra 43 kg di brecce, frammenti del gigantesco impatto che 3,9 miliardi di anni fa formò il Mare Imbrium. Shepard, com'è noto, colpì due palline da golf prima del decollo.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Kitty Hawk + Antares + il risciò",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/01.webp",
+          "caption": "L'equipaggio di Apollo 14: Alan Shepard (CDR, primo americano nello spazio, dieci anni prima), Stuart Roosa (CMP), Ed Mitchell (LMP)."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Altopiani di Fra Mauro: allunaggio il 5 febbraio 1971",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/02.webp",
+          "caption": "Mitchell con il Modular Equipment Transporter (MET): il «risciò» trasportava attrezzi e campioni lungo il pendio verso il cratere Cone."
+        },
+        {
+          "src": "/images/missions/apollo14/03.webp",
+          "caption": "Il bordo del cratere Cone: l'equipaggio salì fino a circa 30 m dal bordo, ma fu costretto a tornare indietro dalla stanchezza e dai limiti delle comunicazioni."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo14/tier3-pan.jpg",
+          "caption": "Panorama del sito di allunaggio di Apollo 14: sono visibili lo stadio di discesa di Antares e l'ALSEP."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Scienza",
+      "subtitle": "Campioni di brecce dell'impatto dell'Imbrium",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/04.webp",
+          "caption": "«Big Bertha»: il campione 14321, una breccia di 8,99 kg che contiene la roccia terrestre più antica mai trovata (zircone di 4,1 Ga), scagliata sulla Luna da un antico impatto sulla Terra."
+        }
+      ]
+    }
+  ]
+}

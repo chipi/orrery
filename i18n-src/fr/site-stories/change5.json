@@ -1,0 +1,53 @@
+{
+  "intro": "Chang'e 5 s'est posée dans Mons Rümker le 1er décembre 2020 : première mission chinoise de retour d'échantillons lunaires, et premier retour d'échantillons lunaires réalisé par une nation depuis Luna 24 (1976), soit 44 ans plus tôt. La mission a rapporté 1 731 g d'échantillons prélevés sur un terrain volcanique jeune (environ 2 milliards d'années, contre environ 3,5 Ga pour les échantillons d'Apollo), prouvant que le volcanisme lunaire s'est poursuivi bien plus tard qu'on ne le savait auparavant.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Atterrisseur + module d'ascension + orbiteur + capsule de rentrée",
+      "images": [
+        {
+          "src": "/images/missions/change5/01.webp",
+          "caption": "Ensemble Chang'e 5 : véhicule à quatre éléments — atterrisseur/module d'ascension (surface), orbiteur (rendez-vous lunaire), capsule de rentrée (retour sur Terre)."
+        },
+        {
+          "src": "/images/missions/change5/02.webp",
+          "caption": "Sous-système de forage et de prélèvement à la pelle — il a collecté des échantillons à la fois en surface et à plus de 1 m de profondeur."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Le lancement",
+      "subtitle": "23 novembre 2020 — Long March 5 depuis Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/change5/03.webp",
+          "caption": "Long March 5 lance Chang'e 5 — la mission lunaire la plus ambitieuse de la Chine jusque-là, un aller-retour de 23 jours entièrement automatisé."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Mons Rümker — atterrissage le 1er décembre 2020",
+      "images": [
+        {
+          "src": "/images/missions/change5/04.webp",
+          "caption": "Chang'e 5 à la surface, près de Mons Rümker — 19 heures d'opérations avant le décollage de l'étage d'ascension."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "La science",
+      "subtitle": "Un volcanisme lunaire vieux de 2 milliards d'années réécrit l'histoire thermique de la Lune",
+      "images": [
+        {
+          "src": "/images/missions/change5/05.webp",
+          "caption": "La capsule de retour d'échantillons sur la neige en Mongolie-Intérieure, le 17 décembre 2020 — 1 731 g de jeune basalte de retour sur Terre."
+        }
+      ]
+    }
+  ]
+}

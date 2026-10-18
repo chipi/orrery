@@ -1,0 +1,65 @@
+{
+  "intro": "Perseverance је слетео у кратер Језеро 18. фебруара 2021. — у речну делту стару 3,8 милијарди година, изабрану зато што је пружала највећу шансу да сачува трагове древног марсовског живота. Ровер носи први хеликоптер на Марсу (Ingenuity), први аудио-снимач на Марсу и први систем за похрањивање узорака. Епрувете са узорцима, остављене на површини, на Земљу ће вратити мисија Mars Sample Return током 2030-их.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Опрема",
+      "subtitle": "Тежи и паметнији брат или сестра ровера Curiosity",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/01.webp",
+          "caption": "Perseverance током склапања у JPL-у — 1025 kg, напајан помоћу MMRTG-а, са 23 камере, 2 микрофона и ротирајућом куполом за похрањивање узорака."
+        },
+        {
+          "src": "/images/missions/perseverance/02.webp",
+          "caption": "Хеликоптер Ingenuity причвршћен на доњу страну ровера Perseverance — прво летелица тежа од ваздуха која је полетела на другој планети."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Лансирање",
+      "subtitle": "30. јул 2020. — Atlas V са Кејп Канаверала",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/03.webp",
+          "caption": "Atlas V 541 лансира Mars 2020 са SLC-41, 30. јула 2020. у 07:50 EDT — 203 дана путовања до кратера Језеро."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Површина",
+      "subtitle": "кратер Језеро — слетање 18. фебруара 2021.",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
+          "caption": "Van Zyl Overlook — први панорамски снимак од 360° камере Mastcam-Z, сол 3 (21. фебруар 2021). На западу се види делта кратера Језеро."
+        },
+        {
+          "src": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
+          "caption": "Perseverance и његова рута, снимљени из орбите камером HiRISE на сонди Mars Reconnaissance Orbiter, при резолуцији од 25 cm по пикселу."
+        },
+        {
+          "src": "/images/missions/perseverance/04.webp",
+          "caption": "Први лет Ingenuity-ја, 19. април 2021. — лебдење од 3 секунде на висини од 3 m. Flyer браће Wright носио је комадић тканине, који се за тај тачан тренутак нашао на хеликоптеру."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Наука",
+      "subtitle": "Узорковање речне делте старе 3,8 милијарди година",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/perseverance/02.webp",
+          "caption": "Прва епрувета са узорком запечаћена и похрањена на површини Марса — језгро „Roubion“, избушено из громаде Rochette, септембар 2021."
+        },
+        {
+          "src": "/images/fleet-galleries/perseverance/03.webp",
+          "caption": "Органски молекули које је у муљном камену Wildcat Ridge открио инструмент SHERLOC — хемијски отисак могућих кандидата за древну марсовску биологију."
+        }
+      ]
+    }
+  ]
+}

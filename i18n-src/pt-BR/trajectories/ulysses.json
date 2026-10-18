@@ -1,0 +1,30 @@
+{
+  "name": "Ulysses",
+  "current_distance_label": "5,2 UA · missão encerrada 2009-06-30 (linhas de propulsor congelaram) — hardware em órbita heliocêntrica polar",
+  "waypoints": [
+    {
+      "label": "Lançamento (STS-41)"
+    },
+    null,
+    {
+      "label": "Sobrevoo de Júpiter"
+    },
+    null,
+    {
+      "label": "Passagem pelo pólo sul"
+    },
+    {
+      "label": "Passagem pelo pólo norte"
+    },
+    null,
+    {
+      "label": "Pólo sul #2"
+    },
+    {
+      "label": "Pólo sul #3"
+    },
+    {
+      "label": "Fim da missão"
+    }
+  ]
+}

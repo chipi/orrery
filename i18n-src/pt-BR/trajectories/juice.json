@@ -1,0 +1,29 @@
+{
+  "name": "JUICE",
+  "current_distance_label": "0,94 UA · em rota para o sobrevoo da Terra #2 em 2026-09-29 (etapa de cruzeiro 2 de 5)",
+  "waypoints": [
+    {
+      "label": "Lançamento (Ariane 5)"
+    },
+    null,
+    {
+      "label": "Sobrevoo Lunar-Terra"
+    },
+    null,
+    {
+      "label": "Sobrevoo de Vênus"
+    },
+    null,
+    {
+      "label": "Terra #2"
+    },
+    null,
+    {
+      "label": "Terra #3"
+    },
+    null,
+    {
+      "label": "Inserção em órbita de Júpiter"
+    }
+  ]
+}

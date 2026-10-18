@@ -1,0 +1,46 @@
+{
+  "intro": "Mars 3 landde op 2 december 1971 in Terra Sirenum — de eerste lander die de Marsatmosfeer wist te doorstaan en het oppervlak bereikte, vijf dagen nadat zusterschip Mars 2 was neergestort. De communicatie viel na 14,5 seconde weg en leverde slechts één gedeeltelijk, sterk verminderd grijswaardenfragment van een beeld op. De lander arriveerde waarschijnlijk midden in een stofstorm die de hele planeet omspande. Waar Mars 3 precies tot rust kwam, is nog steeds onderwerp van discussie; in 2013 legde HiRISE mogelijke restanten van de hardware vast.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Sovjetlander van de klasse 4MS, de eerste Marslanding van welke aard ook",
+      "images": [
+        {
+          "src": "/images/missions/mars3/01.webp",
+          "caption": "Mockup van de Mars 3-lander in het ruimtevaartmuseum van NPO Lavochkin — totale massa 1210 kg, inclusief een Prop-M-rover van 4,5 kg (nooit uitgezet)."
+        },
+        {
+          "src": "/images/missions/mars3/02.webp",
+          "caption": "Doorsnedetekening van de hardware van de Mars 3-lander — het basisontwerp vormde de erfenis waarop latere Sovjethardware voor Venera en Mars voortbouwde."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "28 mei 1971 — Proton-K vanaf Bajkonoer",
+      "images": [
+        {
+          "src": "/images/missions/mars3/03.webp",
+          "caption": "Proton-K met Blok-D-boventrap, klaargemaakt op kosmodroom Bajkonoer — zes maanden onderweg naar Mars."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Terra Sirenum — geland op 2 december 1971",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars3/tier2-hirise.jpg",
+          "caption": "HiRISE-detailopname van de mogelijke locatie van de Mars 3-hardware in Terra Sirenum — in 2013 vrijgegeven door het NASA/UA HiRISE-team en geïdentificeerd door Russische amateurhistorici van de ruimtevaart."
+        },
+        {
+          "src": "/images/missions/mars3/04.webp",
+          "caption": "Het enige fragmentarische beeld dat Mars 3 terugstuurde — 79 regels, geen horizon, geen details. De eerste foto van het oppervlak van een andere planeet, hoe vaag ook."
+        }
+      ]
+    }
+  ]
+}

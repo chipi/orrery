@@ -1,0 +1,46 @@
+{
+  "name": "Voyager 2",
+  "current_distance_label": "143 AE · ~19,8 Lichtstunden von der Sonne entfernt",
+  "interstellar_since_label": "Überschritt die Heliopause im November 2018",
+  "waypoints": [
+    {
+      "label": "Start"
+    },
+    null,
+    null,
+    {
+      "label": "Jupiter"
+    },
+    null,
+    null,
+    {
+      "label": "Saturn"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Uranus"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Neptun"
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Heliopause"
+    },
+    null,
+    {
+      "label": "Heute"
+    }
+  ]
+}

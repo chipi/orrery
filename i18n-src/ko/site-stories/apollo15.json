@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 15는 1971년 7월 30일 해들리 열구 / 아펜니노산맥에 착륙했습니다. 장기 표면 체류, Lunar Roving Vehicle(LRV), 그리고 과학 훈련을 받은 조종사(데이비드 스콧)를 갖춘 최초의 \"J급\" 임무였습니다. 스콧과 어윈은 세 차례의 선외활동(EVA) 동안 총 28km를 주행했고, Genesis Rock(약 41억 년 된 회장암, 원시 지각)을 발견했으며, 생방송 중 깃털과 망치를 떨어뜨려 Galileo의 중력 실험을 재현했습니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "장비",
+      "subtitle": "Endeavour + Falcon + LRV-1 (최초의 달 자동차)",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/01.webp",
+          "caption": "임무 전 훈련 중인 Apollo 15 승무원과 Lunar Roving Vehicle — 스콧과 어윈은 달 위를 달린 최초의 바퀴를 몰게 됩니다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "Hadley-Apennine — 1971년 7월 30일 착륙",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/02.webp",
+          "caption": "제임스 어윈이 LRV 옆에서 경례하고 있고, 뒤로 해들리 델타산이 보입니다. 표면에서 촬영한 아펜니노산맥의 첫 영상입니다."
+        },
+        {
+          "src": "/images/missions/apollo15/03.webp",
+          "caption": "데이비드 스콧이 해들리 열구의 가장자리에 서 있습니다. 우주비행사가 다른 천체에서 고대 용암 수로의 끝자락에 선 것은 이번이 처음이었습니다."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
+          "caption": "해들리 평원 파노라마 — Falcon 하강 단계, LRV, 그리고 지평선 위의 해들리 델타산."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "Genesis Rock + Galileo 실험",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/04.webp",
+          "caption": "시료 15415 \"Genesis Rock\" — 순수한 철질 회장암으로, 나이는 약 41억 년입니다. 달의 원시 마그마 바다 지각의 파편입니다."
+        }
+      ]
+    }
+  ]
+}

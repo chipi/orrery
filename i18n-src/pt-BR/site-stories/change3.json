@@ -1,0 +1,46 @@
+{
+  "intro": "A Chang'e 3 pousou em Mare Imbrium em 14 de dezembro de 2013 — o primeiro pouso suave da China na Lua e o primeiro pouso lunar de qualquer tipo em 37 anos (desde a Luna 24). Lançou o rover Yutu, que percorreu cerca de 114 m antes de uma falha de controle imobilizá-lo no lugar pelos cerca de 30 dias lunares de sobrevivência restantes. Confirmou a China como a terceira nação com equipamentos na superfície da Lua.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Primeiro módulo de pouso lunar chinês + rover Yutu",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/01.webp",
+          "caption": "Módulo de pouso da Chang'e 3 em exposição — unidade de calor no estilo RTG, quatro pernas e rampas para o desembarque do Yutu."
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/02.webp",
+          "caption": "Rover Yutu — 140 kg, 6 rodas, radar de penetração no solo instalado sob o chassi."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "1º de dezembro de 2013 — Long March 3B a partir de Xichang",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/03.webp",
+          "caption": "O Long March 3B decola com a Chang'e 3 — trânsito de 5 dias até a Lua, pouso suave em 14 de dezembro."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Mare Imbrium — pouso em 14 de dezembro de 2013",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/04.webp",
+          "caption": "O módulo de pouso Chang'e 3 e o rover Yutu fotografam um ao outro na superfície lunar — o primeiro retrato mútuo desse tipo de equipamento chinês na Lua."
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/05.webp",
+          "caption": "Perfil do radar de penetração no solo do Yutu do subsolo de Mare Imbrium — múltiplos derrames de basalto em camadas, até cerca de 330 m."
+        }
+      ]
+    }
+  ]
+}

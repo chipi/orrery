@@ -1,0 +1,50 @@
+{
+  "intro": "Beagle 2 era un piccolo lander dell'ESA a guida britannica, rilasciato da Mars Express il 19 dicembre 2003 — e rimasto in silenzio sei giorni dopo, presumibilmente schiantatosi. Per 12 anni il suo destino è rimasto ignoto. Il 16 gennaio 2015 la camera HiRISE della NASA ha individuato il lander sulla superficie, integro ma con i pannelli solari dispiegati solo in parte, a bloccare l'antenna. Un atterraggio riuscito, ma senza alcun modo di chiamare casa. La scoperta ha riabilitato la missione come successo parziale.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "33 kg, il più piccolo lander interplanetario mai tentato",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/01.webp",
+          "caption": "Render del lander Beagle 2 — pannelli solari a petali dispiegabili + Pillinger Lab + strumenti atmosferici all'interno del guscio a conchiglia."
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/03.webp",
+          "caption": "Replica terrestre di Beagle 2 in mostra — dà un'idea della forma compatta del lander, simile a un frisbee."
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/05.webp",
+          "caption": "Modello ingegneristico di Beagle 2 allo Spaceport di Seacombe — petali solari completamente aperti, come da progetto."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "2 giugno 2003 — Soyuz/Fregat da Bajkonur, in condivisione con Mars Express",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/02.webp",
+          "caption": "Separazione di Beagle 2 da Mars Express, 19 dicembre 2003 — sei giorni prima dell'atterraggio previsto, su una traiettoria di rientro balistico."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Isidis Planitia — atterrato (senza comunicazioni) il 25 dicembre 2003",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/04.webp",
+          "caption": "Beagle 2 ritrovato! Immagine HiRISE di MRO (gennaio 2015) — visibile il dispiegamento parziale dei pannelli solari, antenna bloccata, hardware integro. Risolto un mistero lungo 12 anni."
+        },
+        {
+          "src": "/images/hotspots/mars/beagle2/tier2-hirise.jpg",
+          "caption": "Dettaglio HiRISE del sito di atterraggio di Beagle 2 a Isidis Planitia — a questa scala il lander è un puntino inferiore al pixel; per individuarlo servono il confronto di più scene e di più condizioni di illuminazione."
+        }
+      ]
+    }
+  ]
+}

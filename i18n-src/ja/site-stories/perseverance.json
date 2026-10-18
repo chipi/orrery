@@ -1,0 +1,65 @@
+{
+  "intro": "Perseveranceは2021年2月18日、ジェゼロ・クレーターに着陸した。そこは38億年前の河川デルタで、古代火星生命の痕跡が保存されている可能性が最も高いとして選ばれた場所だ。このローバーは、初の火星ヘリコプター(Ingenuity)、初の火星用音声レコーダー、初のサンプル貯蔵システムを搭載している。地表に残されたサンプルチューブは、2030年代にMars Sample Returnミッションによって地球へ持ち帰られる予定だ。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "Curiosityよりも重く、より賢い姉妹機",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/01.webp",
+          "caption": "JPLで組み立て中のPerseverance — 質量1025 kg、MMRTG駆動で、23台のカメラ、2本のマイク、サンプル貯蔵用ターレットを搭載。"
+        },
+        {
+          "src": "/images/missions/perseverance/02.webp",
+          "caption": "Perseveranceの機体下部に取り付けられたIngenuityヘリコプター — 別の惑星で飛行した初の重航空機。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "2020年7月30日 — ケープ・カナベラルからAtlas Vで",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/03.webp",
+          "caption": "2020年7月30日 07:50 EDT、SLC-41からAtlas V 541がMars 2020を打ち上げた — ジェゼロまでは203日の道のり。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "ジェゼロ・クレーター — 2021年2月18日着陸",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
+          "caption": "Van Zyl Overlook — Mastcam-Zによる初の360°パノラマ、ソル3(2021年2月21日)。西にジェゼロのデルタが見える。"
+        },
+        {
+          "src": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
+          "caption": "PerseveranceとそのトラバースをMars Reconnaissance OrbiterのHiRISEカメラが軌道上から撮影。1ピクセルあたり25 cm。"
+        },
+        {
+          "src": "/images/missions/perseverance/04.webp",
+          "caption": "2021年4月19日、Ingenuity初飛行 — 高度3 mで3秒間のホバリング。この瞬間のために、Wright Brothers' Flyerの布片がヘリコプターに搭載されていた。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "38億年前の河川デルタでサンプルを採取する",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/perseverance/02.webp",
+          "caption": "最初のサンプルチューブが密封され、火星の地表に貯蔵された — 2021年9月、Rochetteの岩塊から掘削された「Roubion」コア。"
+        },
+        {
+          "src": "/images/fleet-galleries/perseverance/03.webp",
+          "caption": "SHERLOC装置がWildcat Ridgeの泥岩から検出した有機分子 — 古代火星生命の候補を示す化学的な指紋。"
+        }
+      ]
+    }
+  ]
+}

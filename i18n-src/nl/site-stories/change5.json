@@ -1,0 +1,53 @@
+{
+  "intro": "Chang'e 5 landde op 1 december 2020 bij Mons Rümker — China's eerste maanmissie om monsters naar de Aarde terug te brengen en de eerste terugkeer van maanmonsters door welk land dan ook sinds Luna 24 (1976), 44 jaar eerder. De missie bracht 1.731 g aan monsters terug uit jong vulkanisch terrein (~2 miljard jaar oud, tegenover ~3,5 Ga bij de Apollo-monsters) en bewees daarmee dat het vulkanisme op de Maan veel langer doorging dan eerder bekend was.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Lander + ascender + orbiter + terugkeercapsule",
+      "images": [
+        {
+          "src": "/images/missions/change5/01.webp",
+          "caption": "Chang'e 5-stack — voertuig met vier elementen: lander/ascender (oppervlak), orbiter (rendez-vous in een maanbaan), terugkeercapsule (terugkeer naar de Aarde)."
+        },
+        {
+          "src": "/images/missions/change5/02.webp",
+          "caption": "Boor- en scheppensubsysteem — verzamelde monsters van zowel het oppervlak als van meer dan 1 m diepte."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "23 november 2020 — Long March 5 vanaf Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/change5/03.webp",
+          "caption": "Een Long March 5 lanceert Chang'e 5 — China's tot dan toe meest ambitieuze maanmissie, een volledig geautomatiseerde heen-en-terugreis van 23 dagen."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Mons Rümker — geland op 1 december 2020",
+      "images": [
+        {
+          "src": "/images/missions/change5/04.webp",
+          "caption": "Chang'e 5 op het oppervlak bij Mons Rümker — 19 uur aan operaties vóór de lancering van de ascender."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "Twee miljard jaar oud maanvulkanisme herschrijft de thermische geschiedenis van de Maan",
+      "images": [
+        {
+          "src": "/images/missions/change5/05.webp",
+          "caption": "De monstercapsule op de sneeuw in Binnen-Mongolië, 17 december 2020 — 1.731 g jong basalt terug op Aarde."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 9 s'est posée dans l'Océan des Tempêtes le 3 février 1966 : le premier atterrissage en douceur sur un autre monde. La capsule sphérique de 99 kg a survécu à un impact à 22 km/h grâce au déploiement de coussins gonflables, puis a déplié ses pétales pour se redresser et a transmis les premières photographies de la surface lunaire. Elle a fonctionné pendant 3 jours, jusqu'à l'épuisement de ses batteries.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Capsule soviétique E-6, pionnière de l'atterrissage en douceur",
+      "images": [
+        {
+          "src": "/images/missions/luna9/01.webp",
+          "caption": "Maquette de la capsule Luna 9 : 99 kg, sphérique, avec une caméra protégée par des coussins gonflables et quatre pétales-antennes."
+        },
+        {
+          "src": "/images/missions/luna9/02.webp",
+          "caption": "Schéma en coupe du matériel de Luna 9 : les ingénieurs soviétiques ont résolu le problème de l'atterrissage en douceur avant la NASA."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Le lancement",
+      "subtitle": "31 janvier 1966 : Molniya-M depuis Baïkonour",
+      "images": [
+        {
+          "src": "/images/missions/luna9/03.webp",
+          "caption": "Fusée Molniya-M préparée à Baïkonour : Luna 9 a été lancée dans une course serrée entre Soviétiques et Américains vers le premier atterrissage en douceur."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Océan des Tempêtes : atterrissage le 3 février 1966",
+      "images": [
+        {
+          "src": "/images/missions/luna9/04.webp",
+          "caption": "Premières images de la surface lunaire : des panoramas grossiers, à faible débit, montrant un régolithe rocailleux. Le radiotélescope de Jodrell Bank, près de Manchester, a intercepté l'émission et publié les images avant les Soviétiques."
+        },
+        {
+          "src": "/images/missions/luna9/05.webp",
+          "caption": "Mosaïque panoramique de Luna 9 : première preuve que la surface lunaire était assez solide pour supporter un atterrisseur, mettant fin à des années de spéculation sur d'épaisses accumulations de poussière."
+        }
+      ]
+    }
+  ]
+}

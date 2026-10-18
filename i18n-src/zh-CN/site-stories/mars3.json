@@ -1,0 +1,46 @@
+{
+  "intro": "Mars 3 于 1971 年 12 月 2 日降落在萨瑞南高地——这是首个熬过火星大气进入过程并抵达地表的着陆器，而此前五天，姊妹器 Mars 2 刚刚坠毁。14.5 秒后通信中断，仅传回一幅残缺且严重失真的灰度图像片段。着陆器很可能恰好降临在一场席卷全球的沙尘暴之中。Mars 3 的确切安息之地至今仍有争议；2013 年，HiRISE 拍摄到了疑似其硬件的影像。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "苏联 4MS 级着陆器，人类首次以任何形式登陆火星",
+      "images": [
+        {
+          "src": "/images/missions/mars3/01.webp",
+          "caption": "NPO Lavochkin 航天历史博物馆中的 Mars 3 着陆器模型——总质量 1,210 千克，搭载一台 4.5 千克的 Prop-M 火星车（从未展开）。"
+        },
+        {
+          "src": "/images/missions/mars3/02.webp",
+          "caption": "Mars 3 着陆器硬件剖面图——其基本设计传承影响了苏联时代后来的 Venera 与火星系列硬件。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "1971 年 5 月 28 日——Proton-K 自拜科努尔升空",
+      "images": [
+        {
+          "src": "/images/missions/mars3/03.webp",
+          "caption": "在拜科努尔航天发射场完成准备的 Proton-K 火箭及 Blok-D 上面级——飞往火星的旅程历时 6 个月。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "萨瑞南高地——1971 年 12 月 2 日着陆",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars3/tier2-hirise.jpg",
+          "caption": "HiRISE 拍摄的萨瑞南高地中疑似 Mars 3 硬件所在地的细节图——由 NASA/UA HiRISE 团队于 2013 年发布，由俄罗斯业余航天史爱好者辨认出。"
+        },
+        {
+          "src": "/images/missions/mars3/04.webp",
+          "caption": "Mars 3 传回的唯一一幅残缺图像——79 行，没有地平线，没有任何细节。尽管微弱，它仍是人类获得的第一张来自另一颗行星表面的照片。"
+        }
+      ]
+    }
+  ]
+}

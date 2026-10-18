@@ -1,0 +1,46 @@
+{
+  "intro": "Chang'e 3 s'est posée dans la mer des Pluies le 14 décembre 2013 — premier atterrissage en douceur de la Chine sur la Lune et premier alunissage, toutes nations confondues, depuis 37 ans (depuis Luna 24). A déployé le rover Yutu, qui a parcouru environ 114 m avant qu'une défaillance de commande ne l'immobilise sur place pour les quelque 30 jours lunaires de survie qui lui restaient. A confirmé la Chine comme troisième nation à disposer d'équipements à la surface de la Lune.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Matériel",
+      "subtitle": "Premier atterrisseur lunaire chinois + rover Yutu",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/01.webp",
+          "caption": "Atterrisseur Chang'e 3 exposé — unité de chauffage de type RTG, quatre jambes, rampes pour le déploiement de Yutu."
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/02.webp",
+          "caption": "Rover Yutu — 140 kg, 6 roues, radar à pénétration de sol monté sous le châssis."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancement",
+      "subtitle": "1er décembre 2013 — Long March 3B depuis Xichang",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/03.webp",
+          "caption": "Long March 3B décolle avec Chang'e 3 — 5 jours de transit vers la Lune, atterrissage en douceur le 14 décembre."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Mer des Pluies — atterrissage le 14 décembre 2013",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/04.webp",
+          "caption": "L'atterrisseur Chang'e 3 et le rover Yutu se photographient mutuellement à la surface de la Lune — premier portrait croisé de ce genre pour du matériel chinois sur la Lune."
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/05.webp",
+          "caption": "Profil radar à pénétration de sol de Yutu du sous-sol de la mer des Pluies — coulées de basalte en couches multiples jusqu'à environ 330 m de profondeur."
+        }
+      ]
+    }
+  ]
+}

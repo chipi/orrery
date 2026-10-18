@@ -1,0 +1,39 @@
+{
+  "intro": "Luna 21は1973年1月15日にル・モニエ・クレーターへ着陸し、世界初の月面ローバーの後継機であるLunokhod 2を展開した。Lunokhod 2は4か月間で42.1 kmを走破した。この記録は、41年後の2014年7月に火星でNASAのOpportunityが上回るまで破られなかった。8万枚のテレビ画像と86回のパノラマ撮影を送り届けたが、レゴリスの小山がラジアターに崩れ落ち、ローバーは過熱して機能を失った。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "Lunokhod 2 — 月のテラでの走行記録(42 km)に挑む",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/01.webp",
+          "caption": "Lunokhod 2 — Lunokhod 1から改良：カメラの増設、より精緻な操舵制御、第三軸マニピュレーター、大型化した太陽電池パネル。"
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/02.webp",
+          "caption": "出荷に向けて準備されるLunokhod 2のシャシー — 独立した8基のホイールモーターを備え、それぞれが固有のトルクフィードバック制御ループを持つ。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "ル・モニエ・クレーター — 1973年1月15日着陸",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/03.webp",
+          "caption": "パノラマカメラが撮影したLunokhod 2 — 長い影が月面に伸びている。"
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/04.webp",
+          "caption": "走行距離42.1 kmの軌跡図 — ローバーは海の玄武岩質の平原を横切り、クレーターの壁を登り、月の昼を4回重ねる間に数十個の岩石を調べた。"
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/05.webp",
+          "caption": "2010年にLROが撮影した最終位置 — 急なクレーター壁から崩れたレゴリスがラジエーターパネルを埋め、Lunokhod 2はそのまま動きを止めた。"
+        }
+      ]
+    }
+  ]
+}

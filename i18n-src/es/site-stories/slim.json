@@ -1,0 +1,46 @@
+{
+  "intro": "SLIM (Smart Lander for Investigating Moon) alunizó en el cráter Shioli el 20 de enero de 2024: fue el primer alunizaje suave de Japón y un demostrador de tecnología de aterrizaje de precisión. SLIM se posó a menos de 100 m de su objetivo (la mejor marca anterior superaba el kilómetro), pero volcó sobre un costado y funcionó boca abajo con las células solares que le quedaban operativas, hasta agotar la energía. Dos microrrovers de superficie, LEV-1 y LEV-2 (Sora-Q), se desplegaron antes de que el módulo quedara en esa incómoda orientación final.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El hardware",
+      "subtitle": "Módulo de aterrizaje de precisión volcado + 2 microrrovers",
+      "images": [
+        {
+          "src": "/images/missions/slim/01.webp",
+          "caption": "El módulo SLIM antes del lanzamiento: 200 kg, forma de lápiz, diseñado para demostrar aterrizajes de precisión con muy poca masa."
+        },
+        {
+          "src": "/images/missions/slim/02.webp",
+          "caption": "LEV-2 «Sora-Q»: un rover esférico transformable del tamaño de una pelota de béisbol, desarrollado por TOMY (la juguetera) + JAXA + Sony."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "6 de septiembre de 2023: un H-IIA desde Tanegashima",
+      "images": [
+        {
+          "src": "/images/missions/slim/03.webp",
+          "caption": "El H-IIA-47 despega con SLIM + el observatorio XRISM: un lanzamiento conjunto con una importante misión científica de rayos X."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Cráter Shioli: alunizaje el 20 de enero de 2024",
+      "images": [
+        {
+          "src": "/images/missions/slim/04.webp",
+          "caption": "SLIM fotografiado por Sora-Q sobre la superficie lunar: aterrizó con el morro hacia abajo y los paneles solares orientados en dirección equivocada."
+        },
+        {
+          "src": "/images/missions/slim/05.webp",
+          "caption": "A pesar de la orientación imprevista, SLIM funcionó en tres ocasiones: al amanecer lunar, la luz solar rasante incidió en sus paneles, que habían quedado invertidos, y la sonda despertó brevemente."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "intro": "Viking 2 は1976年9月3日、ユートピア平原に着陸した。双子のバイキング着陸機の2号機で、火星を挟んで Viking 1 の反対側にあたる地点だった。1,316ソルに及んだミッションでは、火星で初めて水の氷の霜が観測された(極地の冬)。また、はるかに寒冷で緯度の高いこの地で、Viking 1 の生物学実験を繰り返した。1980年4月、バッテリーの故障により運用を終えた。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "Viking 1 の双子機、同一の観測機器",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/01.webp",
+          "caption": "火星のユートピア平原の地表に立つ Viking 2 着陸機。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "ユートピア平原 — 1976年9月3日着陸",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier3-pan.jpg",
+          "caption": "ユートピア平原の360°カメラモザイク。Viking 1 のクリュセ平原の着陸地点よりも平坦で、岩の多い地形。"
+        },
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier2-hirise.jpg",
+          "caption": "ミッション終了から数十年後、MRO の HiRISE が軌道上から撮影した Viking 2 着陸機。"
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/02.webp",
+          "caption": "ユートピア平原のカラー画像。アンドレア・ラックが NASA のアーカイブ原板から Viking 2 の画像を再処理した。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "霜、砂嵐、そして火星で初めて迎えた冬",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/03.webp",
+          "caption": "Viking 2 着陸機の周囲の岩を覆う水の氷の霜。火星の北極圏の冬に初めて観測されたもの(ソル1230)。"
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/04.webp",
+          "caption": "ユートピア平原の日の出(PIA00576)。Viking 2 のカメラが、北半球の高緯度地方における夜明け前の輝きをとらえた。"
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/05.webp",
+          "caption": "ユートピア平原の霜(NASA Viking Lander 2)。アンドレア・ラックによる再処理画像。"
+        }
+      ]
+    }
+  ]
+}

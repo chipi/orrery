@@ -1,0 +1,400 @@
+{
+  "jwst-carina": {
+    "title": "Falaises cosmiques",
+    "caption": "Le bord d'une pépinière stellaire dans la Nébuleuse de la Carène (NGC 3324), creusé par de jeunes étoiles.",
+    "subject": "Nébuleuse",
+    "type": "Région de formation stellaire",
+    "distance": "~7 600 années-lumière",
+    "taken": "Publié le 12 juil 2022"
+  },
+  "jwst-southern-ring": {
+    "title": "Nébuleuse du Anneau austral",
+    "caption": "Une étoile moribonde (NGC 3132) versant des enveloppes de gaz et de poussière sur demi-année-lumière.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse planétaire",
+    "distance": "~2 500 années-lumière",
+    "taken": "Publié le 12 juil 2022"
+  },
+  "jwst-stephans": {
+    "title": "Quintette de Stephan",
+    "caption": "Cinq galaxies engagées dans une danse cosmique, quatre d'entre elles se déchirant l'une l'autre par les marées.",
+    "subject": "Galaxies",
+    "type": "Groupe compact de galaxies",
+    "distance": "~290 millions d'années-lumière",
+    "taken": "Publié le 12 juil 2022"
+  },
+  "jwst-pillars": {
+    "title": "Piliers de la Création",
+    "caption": "Tours de gaz froid et de poussière dans la Nébuleuse de l'Aigle (M16), éclairées de l'intérieur par des étoiles nouveau-nées.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse d'émission / région de formation stellaire (M16)",
+    "distance": "~6 500 années-lumière",
+    "taken": "Publié le 19 oct 2022"
+  },
+  "jwst-tarantula": {
+    "title": "Nébuleuse de la Tarentule",
+    "caption": "30 Doradus — la région de formation stellaire la plus active connue dans notre voisinage galactique.",
+    "subject": "Nébuleuse",
+    "type": "Région de formation stellaire (30 Dor)",
+    "distance": "~161 000 années-lumière",
+    "taken": "Publié le 6 sep 2022"
+  },
+  "jwst-cartwheel": {
+    "title": "Galaxie de la Roue de chariot",
+    "caption": "Une rare galaxie en anneau, oscillant encore d'une collision frontale survenue il y a des centaines de millions d'années.",
+    "subject": "Galaxies",
+    "type": "Galaxie en anneau",
+    "distance": "~500 millions d'années-lumière",
+    "taken": "Publié le 2 aoû 2022"
+  },
+  "jwst-phantom": {
+    "title": "Galaxie du Fantôme",
+    "caption": "M74 — une spirale de grand design, son squelette de gaz et de poussière mis à nu dans l'infrarouge.",
+    "subject": "Galaxies",
+    "type": "Galaxie spirale (M74)",
+    "distance": "~32 millions d'années-lumière",
+    "taken": "2022"
+  },
+  "hst-pillars": {
+    "title": "Piliers de la Création",
+    "caption": "La vue emblématique de 2014 du télescope Hubble des tours de gaz de formation stellaire de la Nébuleuse de l'Aigle.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse d'émission / région de formation stellaire (M16)",
+    "distance": "~6 500 années-lumière",
+    "taken": "2014"
+  },
+  "hst-mystic-mountain": {
+    "title": "Montagne Mystique",
+    "caption": "Un pilier de trois années-lumière dans la Nébuleuse de la Carène, issu de l'anniversaire des 20 ans du télescope Hubble.",
+    "subject": "Nébuleuse",
+    "type": "Pilier de formation d'étoiles",
+    "distance": "~7 500 années-lumière",
+    "taken": "2010 · 20e anniversaire de Hubble"
+  },
+  "hst-butterfly": {
+    "title": "Nébuleuse du Papillon",
+    "caption": "NGC 6302 — ailes de gaz chauffé au-delà de 20 000 °C, éjectées par une étoile mourante.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse planétaire (NGC 6302)",
+    "distance": "~3 400 années-lumière",
+    "taken": "2009"
+  },
+  "hst-antennae": {
+    "title": "Galaxies Antennae",
+    "caption": "Deux galaxies (NGC 4038/4039) en collision, allumant des milliards de nouvelles étoiles.",
+    "subject": "Galaxies",
+    "type": "Galaxies en collision",
+    "distance": "~45–65 millions d'années-lumière",
+    "taken": "2006"
+  },
+  "hst-bubble": {
+    "title": "Nébuleuse de la Bulle",
+    "caption": "NGC 7635 — une bulle de sept années-lumière soufflée par le vent féroce d'une étoile massive.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse d'émission (NGC 7635)",
+    "distance": "~7 100 années-lumière",
+    "taken": "2016 · 26e anniversaire de Hubble"
+  },
+  "hst-westerlund2": {
+    "title": "Westerlund 2",
+    "caption": "Un gigantesque amas d'étoiles jeunes, de l'anniversaire de 25 ans de Hubble.",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles (Gum 29)",
+    "distance": "~20 000 années-lumière",
+    "taken": "2015 · 25e anniversaire de Hubble"
+  },
+  "hst-cats-eye": {
+    "title": "Nébuleuse de l'Œil de Chat",
+    "caption": "NGC 6543 — l'une des nébuleuses planétaires les plus complexes jamais observées.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse planétaire (NGC 6543)",
+    "distance": "~3 300 années-lumière",
+    "taken": "2004"
+  },
+  "hst-whirlpool": {
+    "title": "Galaxie du Tourbillon",
+    "caption": "M51 — une spirale de manuel, les bras rougeoyant de rose avec des étoiles nouvellement nées.",
+    "subject": "Galaxies",
+    "type": "Galaxie spirale (M51)",
+    "distance": "~31 millions d'années-lumière",
+    "taken": "2005"
+  },
+  "hst-crab": {
+    "title": "Nébuleuse du Crabe",
+    "caption": "M1 — les restes brisés d'une étoile qu'on a vu exploser en 1054 apr. J.-C.",
+    "subject": "Nébuleuse",
+    "type": "Reste de supernova (M1)",
+    "distance": "~6 500 années-lumière",
+    "taken": "2005"
+  },
+  "hst-veil": {
+    "title": "Nébuleuse du Voile",
+    "caption": "Un filament de la Boucle du Cygnus — une onde de choc de supernova encore en expansion après 10 000 ans.",
+    "subject": "Nébuleuse",
+    "type": "Reste de supernova · Boucle du Cygnus",
+    "distance": "~2 400 années-lumière",
+    "taken": "2015"
+  },
+  "hst-sombrero": {
+    "title": "Galaxie du Sombrero",
+    "caption": "M104 — un noyau blanc brillant enserré dans un anneau sombre de poussière.",
+    "subject": "Galaxies",
+    "type": "Galaxie spirale (M104)",
+    "distance": "~28 millions d'années-lumière",
+    "taken": "2003"
+  },
+  "hst-eskimo": {
+    "title": "Nébuleuse de l'Esquimau",
+    "caption": "NGC 2392 — une étoile semblable au Soleil enveloppée dans les enveloppes de gaz qu'elle a éjectées il y a 10 000 ans.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse planétaire (NGC 2392)",
+    "distance": "~3 000 années-lumière",
+    "taken": "2000"
+  },
+  "chandra-crab": {
+    "title": "Nébuleuse du Crabe (rayons X)",
+    "caption": "L'œil aux rayons X de Chandra sur le pulsar qui alimente la Nébuleuse du Crabe, fouettant la matière en anneaux et en jets.",
+    "subject": "Nébuleuse",
+    "type": "Reste de supernova · Rayons X (M1)",
+    "distance": "~6 500 années-lumière"
+  },
+  "chandra-tycho": {
+    "title": "Reste de supernova de Tycho",
+    "caption": "L'enveloppe aux rayons X d'une étoile que Tycho Brahe a vu exploser en 1572.",
+    "subject": "Supernova",
+    "type": "Reste de supernova · Rayons X (SN 1572)",
+    "distance": "~10 000 années-lumière"
+  },
+  "spitzer-helix": {
+    "title": "Nébuleuse de l'Hélice (infrarouge)",
+    "caption": "Vue infrarouge de Spitzer du cocon poussiéreux d'une étoile mourante, à 700 années-lumière.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse planétaire · infrarouge",
+    "distance": "~700 années-lumière",
+    "taken": "2007"
+  },
+  "euclid-perseus": {
+    "title": "Amas de Persée",
+    "caption": "Euclid capture 1 000 galaxies dans l'amas et 100 000 autres disséminées derrière lui.",
+    "subject": "Champ profond",
+    "type": "Amas de galaxies",
+    "distance": "~240 millions d'années-lumière",
+    "taken": "Publié le 7 nov 2023"
+  },
+  "euclid-horsehead": {
+    "title": "Nébuleuse de la Tête de Cheval",
+    "caption": "Vue panoramique d'Euclid du nuage sombre emblématique dans Orion.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse sombre (Barnard 33)",
+    "distance": "~1 375 années-lumière",
+    "taken": "Publié le 7 nov 2023"
+  },
+  "pale-blue-dot": {
+    "title": "Pale Blue Dot",
+    "caption": "La Terre comme un seul pixel, photographiée par Voyager 1 à six milliards de kilomètres.",
+    "subject": "Système solaire",
+    "type": "La Terre comme un seul pixel",
+    "distance": "~40,5 UA (6 milliards de km)",
+    "taken": "14 fév 1990"
+  },
+  "pluto-nh": {
+    "title": "Pluton",
+    "caption": "Premier gros plan en vraies couleurs de Pluton par New Horizons, avec son cœur de glace d'azote.",
+    "subject": "Système solaire",
+    "type": "Planète naine",
+    "distance": "~34 UA (5 milliards de km)",
+    "taken": "14 juillet 2015"
+  },
+  "sun-sdo": {
+    "title": "Le Soleil",
+    "caption": "La vue du Solar Dynamics Observatory de notre étoile en ultraviolet extrême.",
+    "subject": "Le Soleil",
+    "type": "Le Soleil · ultraviolet extrême",
+    "distance": "1 UA",
+    "taken": "2010–présent"
+  },
+  "jwst-orion": {
+    "title": "Nébuleuse d'Orion",
+    "caption": "La nébuleuse d'Orion intérieure — un berceau stellaire à 1 350 années-lumière, en NIRCam de Webb.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse d'émission (M42)",
+    "distance": "~1 350 années-lumière",
+    "taken": "Publié 12 septembre 2022"
+  },
+  "jwst-ring": {
+    "title": "Nébuleuse de l'Anneau",
+    "caption": "M57 — une étoile semblable au Soleil en fin de vie, ses couches extérieures brillant dans les moindres détails.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse planétaire (M57)",
+    "distance": "~2 600 années-lumière",
+    "taken": "Publié 21 août 2023"
+  },
+  "jwst-serpens": {
+    "title": "Nébuleuse du Serpent",
+    "caption": "Un nid d'étoiles en formation, crachant de la poussière cristalline dans un nuage sombre du Serpent.",
+    "subject": "Nébuleuse",
+    "type": "Région de formation d'étoiles",
+    "distance": "~1 300 années-lumière",
+    "taken": "Publié en 2024"
+  },
+  "hst-lagoon": {
+    "title": "Nébuleuse de la Lagune",
+    "caption": "M8 — une pouponnière stellaire de gaz et de poussière, du 28e anniversaire du Hubble.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse d'émission (M8)",
+    "distance": "~4 000 années-lumière",
+    "taken": "2018 · Hubble 28e anniversaire"
+  },
+  "hst-orion": {
+    "title": "Nébuleuse d'Orion",
+    "caption": "M42 — la mosaïque la plus fine du Hubble de la plus proche région de formation d'étoiles massives.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse d'émission (M42)",
+    "distance": "~1 344 années-lumière",
+    "taken": "2006"
+  },
+  "hst-carina-pano": {
+    "title": "Nébuleuse de la Carène",
+    "caption": "Un panorama de 50 années-lumière de largeur de l'une des plus grandes usines d'étoiles de la galaxie.",
+    "subject": "Nébuleuse",
+    "type": "Région de formation d'étoiles",
+    "distance": "~7 500 années-lumière",
+    "taken": "2007 · Hubble 17e anniversaire"
+  },
+  "jwst-casa": {
+    "title": "Cassiopeia A",
+    "caption": "L'œil infrarouge du Webb sur le plus jeune vestige de supernova connu de la galaxie.",
+    "subject": "Supernova",
+    "type": "Vestige de supernova",
+    "distance": "~11 000 années-lumière",
+    "taken": "Publié en 2023"
+  },
+  "hst-cone-nebula": {
+    "title": "Nébuleuse du Cône",
+    "caption": "Une tour de gaz froid de sept années-lumière dans une lointaine pouponnière stellaire.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse par émission",
+    "distance": "~2 700 années-lumière",
+    "taken": "2002 · Premier éclairage de l'ACS"
+  },
+  "hst-omega-centauri": {
+    "title": "Omega Centauri",
+    "caption": "L'amas globulaire le plus brillant du ciel — des millions d'étoiles liées par la gravité.",
+    "subject": "Amas",
+    "type": "Amas globulaire",
+    "distance": "~17 000 années-lumière",
+    "taken": "2009"
+  },
+  "jwst-ngc1365": {
+    "title": "NGC 1365",
+    "caption": "Une spirale barrée colossale dont la barre canalise le gaz vers un trou noir vorace.",
+    "subject": "Galaxie",
+    "type": "Galaxie spirale barrée",
+    "distance": "~56 millions d'années-lumière",
+    "taken": "2023"
+  },
+  "hst-ngc602": {
+    "title": "NGC 602",
+    "caption": "Un jeune amas d'étoiles creusant une cavité brillante dans le Petit Nuage de Magellan.",
+    "subject": "Amas",
+    "type": "Amas d'étoiles",
+    "distance": "~200 000 années-lumière",
+    "taken": "2007 · Hubble 17e"
+  },
+  "jwst-rho-ophiuchi": {
+    "title": "Nuage de Rho Ophiuchi",
+    "caption": "La région de formation d'étoiles la plus proche de la Terre, embrasée de jeunes soleils — image anniversaire de Webb.",
+    "subject": "Nébuleuse",
+    "type": "Région de formation d'étoiles",
+    "distance": "~430 années-lumière",
+    "taken": "Diffusée 12 juil. 2023"
+  },
+  "jwst-wr124": {
+    "title": "Wolf–Rayet 124",
+    "caption": "Une étoile rare et massive expulsant ses couches externes au moment où elle s'apprête à devenir supernova.",
+    "subject": "Étoile",
+    "type": "Étoile Wolf–Rayet",
+    "distance": "~15 000 années-lumière",
+    "taken": "Diffusée 14 mars 2023"
+  },
+  "hst-cosmic-reef": {
+    "title": "Le Récif cosmique",
+    "caption": "NGC 2014 et NGC 2020 — un récif d'hydrogène luminescent, lors du 30e anniversaire de Hubble.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse d'émission",
+    "distance": "~163 000 années-lumière",
+    "taken": "2020 · Hubble 30e"
+  },
+  "hst-hen2104": {
+    "title": "Nébuleuse de la Crabe australe",
+    "caption": "Des sabliers imbriqués de gaz éjectés par une étoile mourante et son compagnon.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse planétaire",
+    "distance": "~7 000 années-lumière",
+    "taken": "2019 · Hubble 29e"
+  },
+  "hst-monkey-head": {
+    "title": "Nébuleuse de la Tête de Singe",
+    "caption": "NGC 2174 — des piliers de poussière sculptés par le rayonnement des étoiles nouveau-nées.",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse en émission",
+    "distance": "~6 400 années-lumière",
+    "taken": "2014 · Hubble 24e anniversaire"
+  },
+  "hst-andromeda": {
+    "title": "Galaxie d'Andromède",
+    "caption": "Le panorama Hubble le plus net jamais obtenu de notre plus proche grand voisin — plus de 100 millions d'étoiles.",
+    "subject": "Galaxie",
+    "type": "Galaxie spirale",
+    "distance": "~2,5 millions d'années-lumière",
+    "taken": "2015 · PHAT"
+  },
+  "hst-pinwheel": {
+    "title": "Galaxie du Moulinet",
+    "caption": "M101 — une géante spirale vue de face, ses bras parsemés de régions roses de formation d'étoiles.",
+    "subject": "Galaxie",
+    "type": "Galaxie spirale",
+    "distance": "~21 millions d'années-lumière",
+    "taken": "2006"
+  },
+  "hst-ngc1300": {
+    "title": "NGC 1300",
+    "caption": "Une spirale barrée exemplaire, ses bras enroulés autour d'une barre de 200 000 années-lumière.",
+    "subject": "Galaxie",
+    "type": "Galaxie spirale barrée",
+    "distance": "~61 millions d'années-lumière",
+    "taken": "2005"
+  },
+  "jwst-ngc604": {
+    "title": "NGC 604",
+    "caption": "Une caverne de gaz et de poussière dans la Galaxie du Triangle, sculptée par plus de 200 jeunes étoiles brûlantes.",
+    "subject": "Nébuleuse",
+    "type": "Région de formation stellaire",
+    "distance": "~2,7 millions d'années-lumière",
+    "taken": "Publié en 2024"
+  },
+  "jwst-ngc346": {
+    "title": "NGC 346",
+    "caption": "Un nœud brillant de jeunes étoiles illuminant le Petit Nuage de Magellan.",
+    "subject": "Amas",
+    "type": "Amas d'étoiles",
+    "distance": "~200 000 années-lumière",
+    "taken": "Publié en 2023"
+  },
+  "euclid-ic342": {
+    "title": "La Galaxie cachée",
+    "caption": "IC 342 — une spirale cachée derrière la poussière de la Voie lactée, révélée par Euclid.",
+    "subject": "Galaxie",
+    "type": "Galaxie spirale",
+    "distance": "~11 millions d'années-lumière",
+    "taken": "Publié en 2024"
+  },
+  "hst-v838": {
+    "title": "V838 Monocerotis",
+    "caption": "Un écho de lumière ondulant vers l'extérieur à travers la poussière autour d'une étoile qui a soudainement explosé.",
+    "subject": "Nébuleuse",
+    "type": "Écho lumineux",
+    "distance": "~20 000 années-lumière",
+    "taken": "2004"
+  }
+}

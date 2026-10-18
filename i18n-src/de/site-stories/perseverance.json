@@ -1,0 +1,65 @@
+{
+  "intro": "Perseverance landete am 18. Februar 2021 im Jezero-Krater – einem 3,8 Milliarden Jahre alten Flussdelta, das ausgewählt wurde, weil es die besten Aussichten bot, Spuren früheren Lebens auf dem Mars zu bewahren. Der Rover führt den ersten Mars-Hubschrauber (Ingenuity), das erste Audiogerät für den Mars und das erste System zur Probenlagerung mit sich. Die auf der Oberfläche zurückgelassenen Probenröhrchen soll die Mission Mars Sample Return in den 2030er-Jahren zur Erde bringen.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Das schwerere, klügere Geschwister von Curiosity",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/01.webp",
+          "caption": "Perseverance bei der Montage am JPL – 1025 kg schwer, mit einem MMRTG als Energiequelle und ausgestattet mit 23 Kameras, 2 Mikrofonen und einem Revolver für die Probenentnahme und -lagerung."
+        },
+        {
+          "src": "/images/missions/perseverance/02.webp",
+          "caption": "Der Hubschrauber Ingenuity, montiert an der Unterseite von Perseverance – das erste Fluggerät schwerer als Luft, das auf einem anderen Planeten geflogen ist."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "30. Juli 2020 – Atlas V von Cape Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/03.webp",
+          "caption": "Eine Atlas V 541 startet Mars 2020 am 30. Juli 2020 um 07:50 Uhr EDT vom SLC-41 – 203 Tage Flug zum Jezero."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Jezero-Krater – gelandet am 18. Februar 2021",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
+          "caption": "Van Zyl Overlook – erstes 360°-Panorama der Mastcam-Z, Sol 3 (21. Feb. 2021). Im Westen ist das Delta des Jezero zu sehen."
+        },
+        {
+          "src": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
+          "caption": "Perseverance und ihre Fahrtroute, aus der Umlaufbahn aufgenommen von der HiRISE-Kamera des Mars Reconnaissance Orbiter mit 25 cm/Pixel."
+        },
+        {
+          "src": "/images/missions/perseverance/04.webp",
+          "caption": "Erster Flug von Ingenuity, 19. April 2021 – ein 3 Sekunden langer Schwebeflug in 3 m Höhe. Für genau diesen Moment trug der Hubschrauber ein Stück Stoff vom Flyer der Brüder Wright an Bord."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wissenschaft",
+      "subtitle": "Proben aus einem 3,8 Milliarden Jahre alten Flussdelta",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/perseverance/02.webp",
+          "caption": "Das erste Probenröhrchen wird auf der Marsoberfläche versiegelt und deponiert – Bohrkern „Roubion“, aus dem Felsblock Rochette gebohrt, September 2021."
+        },
+        {
+          "src": "/images/fleet-galleries/perseverance/03.webp",
+          "caption": "Organische Moleküle im Schlammstein von Wildcat Ridge, nachgewiesen vom Instrument SHERLOC – ein chemischer Fingerabdruck möglicher Kandidaten für frühere marsianische Biologie."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/lifting-entry_webp.title",
+    "old": "Lifting Entry",
+    "new": "Auftriebsgestützter Wiedereintritt"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/light-minute_webp.title",
+    "old": "Light Minute",
+    "new": "Lichtminute"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/long-duration_webp.title",
+    "old": "Long Duration",
+    "new": "Langzeitflüge"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/lunar-ice_webp.title",
+    "old": "Lunar Ice",
+    "new": "Mondeis"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/lunar-suits_webp.title",
+    "old": "Lunar Suits",
+    "new": "Mondanzüge"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/microgravity-physiology_webp.title",
+    "old": "Microgravity Physiology",
+    "new": "Physiologie in Schwerelosigkeit"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/mission-types_webp.title",
+    "old": "Mission Types",
+    "new": "Missionstypen"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/node-module_webp.title",
+    "old": "Node Module",
+    "new": "Knotenmodul"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/nuclear-thermal_webp.title",
+    "old": "Nuclear Thermal",
+    "new": "Nuklearthermischer Antrieb"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/oberth-effect_webp.title",
+    "old": "Oberth Effect",
+    "new": "Oberth-Effekt"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/optical-comms_webp.title",
+    "old": "Optical Comms",
+    "new": "Optische Kommunikation"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/orbit-insertion_webp.title",
+    "old": "Orbit Insertion",
+    "new": "Einschuss in die Umlaufbahn"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/orbit-regimes_webp.title",
+    "old": "Orbit Regimes",
+    "new": "Orbitbereiche"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/our-galaxy_webp.title",
+    "old": "Our Galaxy",
+    "new": "Unsere Galaxis"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/patched-conics_webp.title",
+    "old": "Patched Conics",
+    "new": "Gepatchte Kegelschnitte"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/porkchop_webp.title",
+    "old": "Porkchop",
+    "new": "Porkchop-Diagramm"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/pressurized-volume_webp.title",
+    "old": "Pressurized Volume",
+    "new": "Druckvolumen"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/propulsive-landing_webp.title",
+    "old": "Propulsive Landing",
+    "new": "Triebwerkslandung"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/semi-major-axis_webp.title",
+    "old": "Semi Major Axis",
+    "new": "Große Halbachse"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/sidereal-synodic_webp.title",
+    "old": "Sidereal Synodic",
+    "new": "Siderisch und synodisch"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/skip-entry_webp.title",
+    "old": "Skip Entry",
+    "new": "Skip-Wiedereintritt"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/staged-combustion_webp.title",
+    "old": "Staged Combustion",
+    "new": "Gestufte Verbrennung"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/_cover-porkchop_svg.title",
+    "old": "Porkchop",
+    "new": "Porkchop-Diagramm"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-mystic-mountain.title",
+    "old": "Mystic Mountain",
+    "new": "Mystischer Berg"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-omega-centauri.subject",
+    "old": "Cluster",
+    "new": "Sternhaufen"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-ngc602.subject",
+    "old": "Cluster",
+    "new": "Sternhaufen"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-ngc346.subject",
+    "old": "Cluster",
+    "new": "Sternhaufen"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Physics Lab formula registry.where",
+    "old": "Physics Lab",
+    "new": "Physiklabor"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Physics Lab goals.where",
+    "old": "Physics Lab",
+    "new": "Physiklabor"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Physics Lab interface, in 14 languages.where",
+    "old": "Physics Lab",
+    "new": "Physiklabor"
+  }
+]

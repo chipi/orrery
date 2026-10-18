@@ -1,0 +1,65 @@
+{
+  "intro": "Perseverance pousou na Cratera Jezero em 18 de fevereiro de 2021 — um delta de rio de 3,8 bilhões de anos, escolhido por reunir a melhor chance de preservar evidências de vida marciana antiga. O rover leva o primeiro helicóptero em Marte (Ingenuity), o primeiro gravador de áudio em Marte e o primeiro sistema de armazenamento de amostras. Os tubos de amostras deixados na superfície serão trazidos de volta à Terra pela missão Mars Sample Return, na década de 2030.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "O irmão mais pesado e mais inteligente do Curiosity",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/01.webp",
+          "caption": "Perseverance durante a montagem no JPL — 1025 kg, alimentado por MMRTG, com 23 câmeras, 2 microfones e uma torre de armazenamento de amostras."
+        },
+        {
+          "src": "/images/missions/perseverance/02.webp",
+          "caption": "O helicóptero Ingenuity fixado na parte inferior do Perseverance — o primeiro veículo mais pesado que o ar a voar em outro planeta."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "30 de julho de 2020 — Atlas V a partir de Cabo Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/03.webp",
+          "caption": "O Atlas V 541 lança a Mars 2020 do SLC-41, em 30 de julho de 2020, às 07h50 EDT — 203 dias de trânsito até Jezero."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Cratera Jezero — pouso em 18 de fevereiro de 2021",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
+          "caption": "Van Zyl Overlook — primeiro panorama de 360° da Mastcam-Z, sol 3 (21 de fev. de 2021). O delta de Jezero é visível a oeste."
+        },
+        {
+          "src": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
+          "caption": "Perseverance + seu trajeto, fotografados em órbita pela câmera HiRISE do Mars Reconnaissance Orbiter, a 25 cm/pixel."
+        },
+        {
+          "src": "/images/missions/perseverance/04.webp",
+          "caption": "Primeiro voo do Ingenuity, 19 de abril de 2021 — uma pairada de 3 segundos a 3 m de altitude. O Flyer dos Irmãos Wright levou, no helicóptero, um pedaço de tecido para este exato momento."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciência",
+      "subtitle": "Coletando amostras de um delta de rio de 3,8 bilhões de anos",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/perseverance/02.webp",
+          "caption": "Primeiro tubo de amostra selado e armazenado na superfície marciana — testemunho \"Roubion\", perfurado no rochedo Rochette, em setembro de 2021."
+        },
+        {
+          "src": "/images/fleet-galleries/perseverance/03.webp",
+          "caption": "Moléculas orgânicas detectadas no lamito de Wildcat Ridge pelo instrumento SHERLOC — uma impressão digital química de possíveis candidatas a biologia marciana antiga."
+        }
+      ]
+    }
+  ]
+}

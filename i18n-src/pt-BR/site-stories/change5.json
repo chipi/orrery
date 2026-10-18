@@ -1,0 +1,53 @@
+{
+  "intro": "A Chang'e 5 pousou em Mons Rümker em 1º de dezembro de 2020 — a primeira missão chinesa de retorno de amostras lunares e o primeiro retorno de amostras lunares por qualquer nação desde a Luna 24 (1976), 44 anos antes. Trouxe de volta 1.731 g de amostras de um terreno vulcânico jovem (~2 bilhões de anos, em comparação com ~3,5 Ga das amostras da Apollo), provando que o vulcanismo lunar continuou muito mais tarde do que se sabia anteriormente.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Módulo de pouso + módulo de ascensão + orbitador + cápsula de reentrada",
+      "images": [
+        {
+          "src": "/images/missions/change5/01.webp",
+          "caption": "Conjunto da Chang'e 5 — veículo de quatro elementos: módulo de pouso/ascensão (superfície), orbitador (encontro lunar), cápsula de reentrada (retorno à Terra)."
+        },
+        {
+          "src": "/images/missions/change5/02.webp",
+          "caption": "Subsistema de broca + pá — coletou amostras tanto da superfície quanto de mais de 1 m de profundidade."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "23 de novembro de 2020 — Long March 5 a partir de Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/change5/03.webp",
+          "caption": "A Long March 5 lança a Chang'e 5 — a missão lunar mais ambiciosa da China até então, uma viagem de ida e volta de 23 dias totalmente automatizada."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Mons Rümker — pouso em 1º de dezembro de 2020",
+      "images": [
+        {
+          "src": "/images/missions/change5/04.webp",
+          "caption": "A Chang'e 5 na superfície, perto de Mons Rümker — 19 horas de operações antes da decolagem do estágio de ascensão."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciência",
+      "subtitle": "Vulcanismo lunar de 2 bilhões de anos reescreve a história térmica da Lua",
+      "images": [
+        {
+          "src": "/images/missions/change5/05.webp",
+          "caption": "Cápsula de retorno de amostras sobre a neve na Mongólia Interior, 17 de dezembro de 2020 — 1.731 g de basalto jovem de volta à Terra."
+        }
+      ]
+    }
+  ]
+}

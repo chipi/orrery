@@ -1,0 +1,18 @@
+{
+  "name": "Vega 1",
+  "current_distance_label": "0,98 UA · vaisseau spatial en orbite héliocentrique depuis le survol de Halley le 1986-03-06",
+  "waypoints": [
+    {
+      "label": "Lancement (Proton-K)"
+    },
+    null,
+    {
+      "label": "Vénus + ballon"
+    },
+    null,
+    {
+      "label": "Survol de Halley"
+    },
+    null
+  ]
+}

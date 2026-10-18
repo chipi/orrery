@@ -1,0 +1,18 @@
+{
+  "name": "Vega 1",
+  "current_distance_label": "0.98 AU · 1986-03-06 को Halley फ्लाईबाई के बाद से सूर्यकेंद्रीय कक्षा में अंतरिक्षयान",
+  "waypoints": [
+    {
+      "label": "प्रक्षेपण (Proton-K)"
+    },
+    null,
+    {
+      "label": "शुक्र + गुब्बारा"
+    },
+    null,
+    {
+      "label": "Halley फ्लाईबाई"
+    },
+    null
+  ]
+}

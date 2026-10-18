@@ -1,0 +1,30 @@
+{
+  "name": "Dawn",
+  "current_distance_label": "2.8 AU · in stable Ceres orbit since EOM 2018-10-31 (~20-year orbital lifetime)",
+  "waypoints": [
+    {
+      "label": "Launch"
+    },
+    null,
+    null,
+    {
+      "label": "Mars assist"
+    },
+    null,
+    null,
+    {
+      "label": "Vesta orbit"
+    },
+    {
+      "label": "Vesta departure"
+    },
+    null,
+    null,
+    {
+      "label": "Ceres orbit insertion"
+    },
+    {
+      "label": "EOM (Today)"
+    }
+  ]
+}

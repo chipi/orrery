@@ -1,0 +1,50 @@
+{
+  "intro": "Phoenix s'est posé à 68,22° N le 25 mai 2008 — premier lander de la NASA à toucher le sol dans l'extrême Arctique martien. En quelques jours, il avait prélevé le tout premier échantillon de glace d'eau martienne et l'avait vu se sublimer dans le champ de la caméra. Le lander a fonctionné pendant 157 sols, jusqu'à ce que l'hiver polaire l'achève : la formation de givre de CO₂ a recouvert ses panneaux solaires, mettant fin à la mission.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Matériel",
+      "subtitle": "Reconstitué à partir du lander annulé Mars Surveyor 2001",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/01.webp",
+          "caption": "Le lander Phoenix avant son expédition — 350 kg, bras robotisé, pelle à glace, laboratoire de chimie par voie humide TEGA."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Vastitas Borealis — atterrissage le 25 mai 2008",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/phoenix/tier3-pan.jpg",
+          "caption": "Panorama à 360° du site d'atterrissage de Phoenix, sol 14 — zone de travail, patin d'atterrissage et glace mise à nu par les rétrofusées visibles en bas à droite."
+        },
+        {
+          "src": "/images/hotspots/mars/phoenix/tier2-hirise.jpg",
+          "caption": "Le lander Phoenix, son parachute et sa coque arrière — tous photographiés par HiRISE, à bord de MRO, après l'atterrissage."
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/02.webp",
+          "caption": "Le bras robotisé creusant la tranchée « Snow White » — de la glace d'eau brillante mise à nu à quelques centimètres sous la surface, puis observée alors qu'elle se sublimait en quatre sols."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "La science",
+      "subtitle": "De l'eau, des perchlorates et les premières observations météo martiennes",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/03.webp",
+          "caption": "Détection de sels de perchlorate dans le sol martien — une chimie appelée à orienter toutes les discussions ultérieures sur l'habitabilité de Mars."
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/04.webp",
+          "caption": "Profils lidar de neige tombant au-dessus du site de Phoenix, en fin de mission — les premières précipitations martiennes observées directement."
+        }
+      ]
+    }
+  ]
+}

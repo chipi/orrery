@@ -1,0 +1,50 @@
+{
+  "intro": "Opportunity pousou em Meridiani Planum em 25 de janeiro de 2004 — um buraco em uma tacada que fez o rover, ainda quicando sobre os airbags, rolar diretamente para dentro de uma pequena cratera (Eagle Crater), cujas paredes guardavam as primeiras \"blueberries\" ricas em hematita já vistas de perto em Marte. Projetado para durar 90 sols, Opportunity percorreu 45,16 km ao longo de 14 anos, até que uma tempestade de poeira de escala planetária, em junho de 2018, cortou sua energia solar. Última transmissão: \"Minha bateria está fraca e está ficando escuro.\"",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Gêmeo de Spirit, pousado do lado oposto de Marte",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/opportunity/01.webp",
+          "caption": "MER-B durante a integração — hardware idêntico ao de Spirit, otimizado para o terreno de planícies de Marte."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Meridiani Planum — pouso em 25 de janeiro de 2004",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/opportunity/tier3-pan.jpg",
+          "caption": "Legacy Pan, sols 5084-5111 (maio-junho de 2018) — o último panorama de 360° de Opportunity antes da tempestade de poeira. Perseverance Valley desce em direção a cratera Endeavour."
+        },
+        {
+          "src": "/images/hotspots/mars/opportunity/tier2-hirise.jpg",
+          "caption": "Borda da cratera Endeavour, onde Opportunity passou seus últimos anos. O local de repouso do rover fica em Perseverance Valley, à direita."
+        },
+        {
+          "src": "/images/fleet-galleries/opportunity/02.webp",
+          "caption": "\"Blueberries\" de hematita — esférulas de escala milimétrica incrustadas no substrato rochoso de Meridiani. A primeira evidência direta de água líquida de longa duração em Marte."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciência",
+      "subtitle": "De Eagle Crater a Endeavour — 14 anos de evidências",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/opportunity/03.webp",
+          "caption": "Local de impacto do escudo térmico na cratera Endurance — Opportunity voltou para inspecionar o próprio equipamento de entrada atmosférica descartado."
+        },
+        {
+          "src": "/images/fleet-galleries/opportunity/04.webp",
+          "caption": "Afloramentos em camadas de Burns Cliff dentro da cratera Endurance — registro sedimentar de um antigo corpo de água salgada e ácida."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 12 s'est posée dans l'océan des Tempêtes le 19 novembre 1969 — un alunissage de précision, à distance de marche de l'atterrisseur robotique Surveyor 3, qui s'y était posé 2½ ans plus tôt. Conrad et Bean ont passé 31 h à la surface lors de deux sorties extravéhiculaires (EVA) et ont rapporté 34 kg d'échantillons, ainsi que des pièces de Surveyor 3 destinées à l'analyse. La mission a démontré qu'une mission Apollo avec équipage pouvait atteindre une cible précise à la surface lunaire.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Yankee Clipper + Intrepid",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/01.webp",
+          "caption": "Portrait de l'équipage d'Apollo 12 — Pete Conrad (CDR), Dick Gordon (CMP), Al Bean (LMP)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Le lancement",
+      "subtitle": "14 novembre 1969 — frappée par la foudre à deux reprises dès la première minute",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/02.webp",
+          "caption": "Saturn V SA-507 décolle sous une averse. La foudre frappe le lanceur à T+36 s et à T+52 s, coupant l'alimentation des piles à combustible ; la commande SCE to AUX sauve la mission."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Océan des Tempêtes — alunissage le 19 novembre 1969",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/03.webp",
+          "caption": "Conrad près de l'atterrisseur Surveyor 3 — Apollo 12 s'est posée à 163 m de là, premier alunissage de précision."
+        },
+        {
+          "src": "/images/missions/apollo12/04.webp",
+          "caption": "Station scientifique ALSEP déployée — premier observatoire géophysique lunaire de longue durée."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo12/tier3-pan.jpg",
+          "caption": "Panorama du site d'alunissage d'Apollo 12 — étage de descente d'Intrepid + ALSEP + Surveyor 3 dans le champ."
+        }
+      ]
+    }
+  ]
+}

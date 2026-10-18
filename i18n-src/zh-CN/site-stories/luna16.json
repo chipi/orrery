@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 16 于1970年9月20日在丰富海着陆——这是人类首次从另一个天体上实现无人采样返回：它向月壤钻入35厘米，将101克样品密封进返回舱，并在着陆26小时后起飞。三天后，返回舱在哈萨克斯坦着陆。这次任务表明，在 Apollo 11 之后一年零两个月，苏联的工程技术无需载人飞行也能把月球物质带回地球。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "苏联 E-8-5 着陆器——首套无人采样返回装置",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/01.webp",
+          "caption": "Luna 16 探测器模型——下降级（前景）与搭载返回舱的上升级（顶部）。"
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/02.webp",
+          "caption": "采样机构示意图——钻取岩芯，并以密封方式转移至返回舱。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "1970年9月12日——Proton-K 自拜科努尔升空",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/03.webp",
+          "caption": "Proton-K 火箭与 Blok-D 上面级在拜科努尔航天发射场的发射台上。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "丰富海——1970年9月20日着陆",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/04.webp",
+          "caption": "Luna 16 向月壤钻进——101克样品被密封进球形返回舱，以备起飞。"
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/05.webp",
+          "caption": "返回舱停在哈萨克草原上，1970年9月24日——这是历史上首次无人行星际采样返回。"
+        }
+      ]
+    }
+  ]
+}

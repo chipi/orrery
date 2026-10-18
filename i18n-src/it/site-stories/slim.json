@@ -1,0 +1,46 @@
+{
+  "intro": "SLIM (Smart Lander for Investigating Moon) è atterrato nel cratere Shioli il 20 gennaio 2024: il primo atterraggio morbido del Giappone sulla Luna e un dimostratore di tecnologia per l'atterraggio di precisione. SLIM si è posato a meno di 100 m dal bersaglio (il miglior risultato precedente era di oltre 1 km), ma si è rovesciato su un fianco e ha operato capovolto, con le celle solari rimaste attive, finché l'energia non si è esaurita. Due micro-rover di superficie, LEV-1 e LEV-2 (Sora-Q), sono stati rilasciati prima di quell'infelice orientamento finale.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Lander di precisione ribaltato + 2 micro-rover",
+      "images": [
+        {
+          "src": "/images/missions/slim/01.webp",
+          "caption": "Il lander SLIM prima del lancio: 200 kg, a forma di matita, progettato per dimostrare l'atterraggio di precisione a bassa massa."
+        },
+        {
+          "src": "/images/missions/slim/02.webp",
+          "caption": "LEV-2 \"Sora-Q\": un rover sferico trasformabile, grande quanto una palla da baseball, sviluppato da TOMY (l'azienda di giocattoli) + JAXA + Sony."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "6 settembre 2023 — H-IIA da Tanegashima",
+      "images": [
+        {
+          "src": "/images/missions/slim/03.webp",
+          "caption": "H-IIA-47 si solleva con a bordo SLIM + l'osservatorio XRISM: un lancio condiviso con un'importante missione scientifica per i raggi X."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "cratere Shioli — atterraggio il 20 gennaio 2024",
+      "images": [
+        {
+          "src": "/images/missions/slim/04.webp",
+          "caption": "SLIM fotografato da Sora-Q sulla superficie lunare: è atterrato con il muso in giù, con i pannelli solari rivolti nella direzione sbagliata."
+        },
+        {
+          "src": "/images/missions/slim/05.webp",
+          "caption": "Nonostante l'orientamento non previsto, SLIM ha operato tre volte: all'alba lunare ha intercettato la luce solare radente sui pannelli rimasti rivolti al contrario e si è risvegliato per breve tempo."
+        }
+      ]
+    }
+  ]
+}

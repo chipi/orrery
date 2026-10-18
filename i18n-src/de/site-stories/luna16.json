@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 16 setzte am 20. September 1970 im Mare Fecunditatis auf – die erste robotische Probenrückführung von einer anderen Welt. Die Sonde bohrte 35 cm tief in den Mondregolith, verschloss 101 g Probenmaterial in der Rückkehrkapsel und startete 26 Stunden nach der Landung wieder. Drei Tage später landete die Kapsel in Kasachstan. Luna 16 bewies, dass die sowjetische Ingenieurskunst Mondmaterial auch ohne bemannten Flug zur Erde zurückbringen konnte – ein Jahr und zwei Monate nach Apollo 11.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Sowjetischer Lander E-8-5 – erste robotische Anlage zur Probenrückführung",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/01.webp",
+          "caption": "Modell der Raumsonde Luna 16 – Landestufe (Vordergrund) und Aufstiegsstufe mit der Rückkehrkapsel (oben)."
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/02.webp",
+          "caption": "Schema des Probenentnahmemechanismus – Bohrkern mit verschlossener Überführung in die Rückkehrkapsel."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "12. September 1970 – Proton-K von Baikonur",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/03.webp",
+          "caption": "Proton-K mit Oberstufe Blok-D auf der Startrampe des Kosmodroms Baikonur."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Mare Fecunditatis – gelandet am 20. September 1970",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/04.webp",
+          "caption": "Luna 16 beim Bohren in den Regolith – 101 g Material wurden für den Start in der kugelförmigen Rückkehrkapsel verschlossen."
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/05.webp",
+          "caption": "Rückkehrkapsel in der kasachischen Steppe, 24. September 1970 – die erste robotische interplanetare Probenrückführung der Geschichte."
+        }
+      ]
+    }
+  ]
+}

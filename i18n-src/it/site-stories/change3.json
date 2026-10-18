@@ -1,0 +1,46 @@
+{
+  "intro": "Chang'e 3 è atterrato in Mare Imbrium il 14 dicembre 2013: il primo allunaggio morbido della Cina e il primo allunaggio di qualsiasi tipo da 37 anni (dai tempi di Luna 24). Ha messo in funzione il rover Yutu, che ha percorso circa 114 m prima che un guasto al sistema di controllo lo bloccasse sul posto per i restanti ~30 giorni lunari di sopravvivenza. Ha confermato la Cina come terza nazione con strumenti operativi sulla superficie della Luna.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Il primo lander lunare cinese + il rover Yutu",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/01.webp",
+          "caption": "Il lander Chang'e 3 in esposizione: unità termica in stile RTG, quattro gambe, rampe per il dispiegamento di Yutu."
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/02.webp",
+          "caption": "Il rover Yutu: 140 kg, 6 ruote, radar penetrante nel suolo montato sotto il telaio."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "1 dicembre 2013 — Long March 3B da Xichang",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/03.webp",
+          "caption": "Il Long March 3B decolla con Chang'e 3: 5 giorni di transito verso la Luna, allunaggio morbido il 14 dicembre."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Mare Imbrium — allunaggio il 14 dicembre 2013",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/04.webp",
+          "caption": "Il lander Chang'e 3 e il rover Yutu si fotografano a vicenda sulla superficie lunare: il primo ritratto reciproco di hardware cinese sulla Luna."
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/05.webp",
+          "caption": "Il profilo radar di Yutu, penetrante nel suolo, del sottosuolo di Mare Imbrium: colate di basalto multistrato fino a circa 330 m di profondità."
+        }
+      ]
+    }
+  ]
+}

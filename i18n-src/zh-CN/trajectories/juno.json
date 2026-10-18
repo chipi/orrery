@@ -1,0 +1,27 @@
+{
+  "name": "Juno",
+  "current_distance_label": "5.5 天文单位·自2016年7月5日起在木星极地轨道上·延期任务至2025年",
+  "waypoints": [
+    {
+      "label": "发射"
+    },
+    null,
+    null,
+    {
+      "label": "深空机动"
+    },
+    null,
+    {
+      "label": "地球借力"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "木星轨道插入"
+    },
+    {
+      "label": "今日（木星轨道）"
+    }
+  ]
+}

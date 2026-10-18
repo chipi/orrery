@@ -1,0 +1,46 @@
+{
+  "intro": "El Apollo 14 aterrizó en las tierras altas de Fra Mauro el 5 de febrero de 1971, el objetivo original del Apollo 13, que se cumplió tras la explosión de aquella misión. Shepard y Mitchell arrastraron el Modular Equipment Transporter (una especie de rickshaw) por las laderas del cráter Cone y trajeron de vuelta 43 kg de brecha: fragmentos del gigantesco impacto que formó Mare Imbrium hace 3900 millones de años. Shepard, como es bien sabido, golpeó dos pelotas de golf antes del despegue.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipo",
+      "subtitle": "Kitty Hawk + Antares + el rickshaw",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/01.webp",
+          "caption": "Tripulación del Apollo 14: Alan Shepard (comandante; primer estadounidense en el espacio, diez años antes), Stuart Roosa (piloto del módulo de mando) y Ed Mitchell (piloto del módulo lunar)."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Tierras altas de Fra Mauro: alunizaje el 5 de febrero de 1971",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/02.webp",
+          "caption": "Mitchell con el Modular Equipment Transporter (MET): el «rickshaw» transportaba herramientas y muestras cuesta arriba hacia el cráter Cone."
+        },
+        {
+          "src": "/images/missions/apollo14/03.webp",
+          "caption": "Borde del cráter Cone: la tripulación ascendió hasta unos 30 m del borde, pero tuvo que retroceder por el agotamiento y las limitaciones de comunicaciones."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo14/tier3-pan.jpg",
+          "caption": "Panorámica del lugar de alunizaje del Apollo 14: se ven la etapa de descenso del Antares y el ALSEP."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciencia",
+      "subtitle": "Muestras de brecha del impacto de Imbrium",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/04.webp",
+          "caption": "«Big Bertha»: la muestra 14321, una brecha de 8,99 kg que contiene la roca terrestre más antigua jamás hallada (un circón de 4100 millones de años), lanzada a la Luna por un impacto en la Tierra primitiva."
+        }
+      ]
+    }
+  ]
+}

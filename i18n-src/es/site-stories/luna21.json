@@ -1,0 +1,39 @@
+{
+  "intro": "Luna 21 aterrizó en el cráter Le Monnier el 15 de enero de 1973 y desplegó el Lunokhod 2, sucesor del primer rover lunar del mundo. El Lunokhod 2 recorrió 42,1 km en 4 meses, un récord que se mantuvo hasta que el Opportunity de la NASA lo superó en Marte en julio de 2014, 41 años después. Transmitió 80 000 imágenes de televisión y 86 barridos panorámicos antes de que un montón de regolito cayera sobre el radiador y sobrecalentara el rover.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Lunokhod 2: el récord de conducción sobre terreno lunar (42 km)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/01.webp",
+          "caption": "Lunokhod 2, mejorado respecto al Lunokhod 1: más cámaras, un control de dirección más fino, manipulador de tercer eje y paneles solares más grandes."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/02.webp",
+          "caption": "Chasis del Lunokhod 2 durante su preparación para el envío: ocho motores de rueda independientes, cada uno con su propio lazo de control con realimentación de par."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Cráter Le Monnier: aterrizaje el 15 de enero de 1973",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/03.webp",
+          "caption": "El Lunokhod 2 fotografiado por su cámara panorámica: una larga sombra se extiende sobre la superficie lunar."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/04.webp",
+          "caption": "Mapa del recorrido de 42,1 km: el rover cruzó basaltos de los mares lunares, escaló paredes de cráteres e inspeccionó decenas de rocas a lo largo de cuatro días lunares."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/05.webp",
+          "caption": "Posición final captada por la LRO en 2010: el Lunokhod 2 se detuvo para siempre cuando el regolito de la empinada pared de un cráter sepultó su panel radiador."
+        }
+      ]
+    }
+  ]
+}

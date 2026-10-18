@@ -1,0 +1,32 @@
+{
+  "name": "New Horizons",
+  "current_distance_label": "66 AU · In erweiterter Mission — unterwegs zur Stagnationsregion der Heliosphäre",
+  "interstellar_since_label": "Wird um 2040 die Heliopause überqueren — dritte Sonde, die den interstellaren Raum erreichen wird",
+  "waypoints": [
+    {
+      "label": "Start"
+    },
+    {
+      "label": "Asteroid APL"
+    },
+    null,
+    null,
+    {
+      "label": "Jupiter-Swing-by"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Pluto"
+    },
+    null,
+    {
+      "label": "Arrokoth"
+    },
+    null,
+    {
+      "label": "Heute"
+    }
+  ]
+}

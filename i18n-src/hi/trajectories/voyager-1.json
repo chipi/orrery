@@ -1,0 +1,38 @@
+{
+  "name": "Voyager 1",
+  "current_distance_label": "172 AU · सूर्य से लगभग 23.8 प्रकाश-घंटे",
+  "interstellar_since_label": "अगस्त 2012 में हेलीओपॉज को पार किया — अंतरतारकीय अंतरिक्ष में मानव द्वारा निर्मित पहली वस्तु",
+  "waypoints": [
+    {
+      "label": "प्रक्षेपण"
+    },
+    null,
+    null,
+    {
+      "label": "बृहस्पति"
+    },
+    null,
+    null,
+    {
+      "label": "शनि + टाइटन"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "पेल ब्लू डॉट"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "हेलीओपॉज"
+    },
+    null,
+    null,
+    {
+      "label": "आज"
+    }
+  ]
+}

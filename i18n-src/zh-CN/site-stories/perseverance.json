@@ -1,0 +1,65 @@
+{
+  "intro": "Perseverance 于2021年2月18日降落在耶泽罗撞击坑——这是一处有38亿年历史的河流三角洲，之所以被选中，是因为它最有可能保存古代火星生命的证据。这辆火星车搭载了首架火星直升机（Ingenuity）、首台火星录音设备和首套样本封装存放系统。留在火星表面的样本管，将由 Mars Sample Return 任务在21世纪30年代送回地球。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "Curiosity 更重、更聪明的“兄弟”",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/01.webp",
+          "caption": "Perseverance 在 JPL 组装期间——重1025千克，由 MMRTG 供电，配备23台相机、2个麦克风和一个样本封装转塔。"
+        },
+        {
+          "src": "/images/missions/perseverance/02.webp",
+          "caption": "安装在 Perseverance 车腹下的 Ingenuity 直升机——首架在另一颗行星上飞行的重于空气的飞行器。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "2020年7月30日——Atlas V 自卡纳维拉尔角升空",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/03.webp",
+          "caption": "2020年7月30日美国东部夏令时07:50，Atlas V 541 从 SLC-41 发射场发射 Mars 2020——飞往耶泽罗的旅程历时203天。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "表面",
+      "subtitle": "耶泽罗撞击坑——2021年2月18日着陆",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
+          "caption": "Van Zyl Overlook——Mastcam-Z 拍摄的首幅360°全景图，第3个火星日（2021年2月21日）。向西可见耶泽罗三角洲。"
+        },
+        {
+          "src": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
+          "caption": "Perseverance 及其行进路线，由 Mars Reconnaissance Orbiter 的 HiRISE 相机从轨道上拍摄，分辨率为每像素25厘米。"
+        },
+        {
+          "src": "/images/missions/perseverance/04.webp",
+          "caption": "Ingenuity 首飞，2021年4月19日——在3米高度悬停3秒。Wright Brothers' Flyer 的一小块织物就搭载在这架直升机上，只为这一刻。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "为38亿年前的河流三角洲采样",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/perseverance/02.webp",
+          "caption": "第一支样本管在火星表面密封并存放——“Roubion”岩芯，2021年9月钻取自 Rochette 巨石。"
+        },
+        {
+          "src": "/images/fleet-galleries/perseverance/03.webp",
+          "caption": "SHERLOC 仪器在 Wildcat Ridge 泥岩中探测到有机分子——这是古代火星生命候选迹象的化学指纹。"
+        }
+      ]
+    }
+  ]
+}

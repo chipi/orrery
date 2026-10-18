@@ -11,7 +11,7 @@ import {
 } from './translate-model.mjs';
 
 type Params = Record<string, unknown> & {
-  system?: string;
+  system?: Array<{ type: string; text: string; cache_control?: unknown }>;
   tool_choice?: unknown;
   messages: unknown[];
 };
@@ -34,6 +34,7 @@ function fakeClient(answers: string[]) {
     },
   };
 }
+const sysText = (p: Params) => (p.system ?? []).map((b) => b.text).join('');
 const call = (model: string, locale: string) => ({
   model,
   _locale: locale,
@@ -74,12 +75,19 @@ describe('translationClient', () => {
   it('appends the shared rules, the name policy and the locale rules', async () => {
     const c = fakeClient(['Капсула улази у атмосферу.']);
     await translationClient(c).messages.create(call(DEFAULT_TRANSLATION_MODEL, 'sr-Cyrl'));
-    const sys = c.calls[0].system!;
+    const sys = sysText(c.calls[0]);
     expect(sys.startsWith('Base prompt.')).toBe(true);
     expect(sys).toContain(NAME_POLICY);
     expect(sys).toContain('never shorten');
     expect(sys).toContain('EKAVIAN');
     expect(c.calls[0]).not.toHaveProperty('_locale');
+  });
+
+  it('marks the system prompt cacheable', async () => {
+    const c = fakeClient(['Die Kapsel tritt in die Atmosphäre ein.']);
+    await translationClient(c).messages.create(call(DEFAULT_TRANSLATION_MODEL, 'de'));
+    expect(c.calls[0].system).toHaveLength(1);
+    expect(c.calls[0].system![0].cache_control).toEqual({ type: 'ephemeral' });
   });
 
   it('keeps a forced tool for Haiku, relaxes it for Sonnet 5.5', async () => {
@@ -89,7 +97,7 @@ describe('translationClient', () => {
     const s = fakeClient(['Капсула улази у атмосферу.']);
     await translationClient(s).messages.create(call('claude-sonnet-5-5', 'sr-Cyrl'));
     expect(s.calls[0].tool_choice).toEqual({ type: 'auto' });
-    expect(s.calls[0].system).toContain('Answer ONLY by calling the submit_translation tool.');
+    expect(sysText(s.calls[0])).toContain('Answer ONLY by calling the submit_translation tool.');
   });
 
   it('retries a failing answer with the reason, on the same model', async () => {

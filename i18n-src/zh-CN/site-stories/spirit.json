@@ -1,0 +1,50 @@
+{
+  "intro": "“勇气号”(Spirit)于2004年1月4日降落在古瑟夫撞击坑,比它的孪生兄弟“机遇号”(Opportunity)在火星另一侧着陆早了三周。勇气号的设计寿命仅为90个火星日,却运行了6年,行驶7.7公里,直到车轮在“Troy”的松软土壤中彻底陷住。此后,这辆被困的火星车化身为一座固定的科学平台,继续工作,直至2010年3月失去联系。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "太阳能供电的火星车,Opportunity 的孪生兄弟",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/01.webp",
+          "caption": "集成测试中的火星探测漫游者——重185公斤,6个车轮,Pancam 桅杆相机,RAT 岩石研磨工具。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "表面",
+      "subtitle": "古谢夫撞击坑——2004年1月4日着陆",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/spirit/tier3-pan.jpg",
+          "caption": "McMurdo 的 Winter Haven,第814至980火星日(2006年)——Pancam 360° 全景图。以失事的 STS-107 机组命名的哥伦比亚丘陵在地平线上巍然耸立。"
+        },
+        {
+          "src": "/images/hotspots/mars/spirit/tier2-hirise.jpg",
+          "caption": "Spirit 在 Troy 的受困地点,由 MRO 的 HiRISE 相机在2009年5月车轮陷入土壤后拍摄。"
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/02.webp",
+          "caption": "在 Adirondack 岩石上钻磨,第34火星日——岩石研磨工具首次在火星上使用。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "攀登赫斯本德山,在 Home Plate 发现二氧化硅",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/03.webp",
+          "caption": "Spirit 破损的右前轮在 Home Plate 翻开了富含二氧化硅的土壤——这是古谢夫撞击坑昔日存在热液活动的证据。"
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/04.webp",
+          "caption": "Pancam 在第489火星日(2005年5月19日)拍摄的古谢夫撞击坑日落。这是最具代表性的泛蓝色火星黄昏影像之一。"
+        }
+      ]
+    }
+  ]
+}

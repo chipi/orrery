@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 14 s'est posée dans les hautes terres de Fra Mauro le 5 février 1971 — l'objectif initial d'Apollo 13, atteint après l'explosion qui avait frappé cette dernière mission. Shepard et Mitchell ont tiré le Modular Equipment Transporter (une sorte de pousse-pousse) à l'assaut des flancs du cratère Cone et ont rapporté 43 kg de brèches — des fragments de l'impact gigantesque qui a formé la mer des Pluies il y a 3,9 milliards d'années. Avant le décollage, Shepard a, comme chacun sait, frappé deux balles de golf.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Kitty Hawk + Antares + le pousse-pousse",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/01.webp",
+          "caption": "Équipage d'Apollo 14 : Alan Shepard (CDR — premier Américain dans l'espace, dix ans plus tôt), Stuart Roosa (CMP), Ed Mitchell (LMP)."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Hautes terres de Fra Mauro — alunissage le 5 février 1971",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/02.webp",
+          "caption": "Mitchell avec le Modular Equipment Transporter (MET) — le « pousse-pousse » qui servait à tirer outils et échantillons le long de la pente en direction du cratère Cone."
+        },
+        {
+          "src": "/images/missions/apollo14/03.webp",
+          "caption": "Bord du cratère Cone — l'équipage a grimpé jusqu'à environ 30 m du bord, mais l'épuisement et les limites des communications l'ont contraint à rebrousser chemin."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo14/tier3-pan.jpg",
+          "caption": "Panorama du site d'atterrissage d'Apollo 14 — l'étage de descente d'Antares et l'ALSEP visibles."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "La science",
+      "subtitle": "Échantillons de brèche issus de l'impact d'Imbrium",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/04.webp",
+          "caption": "« Big Bertha » — échantillon 14321, une brèche de 8,99 kg contenant la plus ancienne roche terrestre jamais découverte (zircon de 4,1 Ga), projetée vers la Lune par un impact survenu sur la Terre primitive."
+        }
+      ]
+    }
+  ]
+}

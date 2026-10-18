@@ -1,0 +1,46 @@
+{
+  "intro": "SLIM(Smart Lander for Investigating Moon)は2024年1月20日、シオリ・クレーターに着陸しました。日本初の月面軟着陸であり、精密着陸技術の実証機でもあります。SLIMは目標地点から100 m以内に着地しました(従来の最高記録は1 km以上)。しかし機体は横倒しになり、残った太陽電池を使って上下逆さまのまま、電力が尽きるまで運用を続けました。2機の小型の月面ローバー、LEV-1とLEV-2(ソラキュー)は、この不自然な最終姿勢になる前に放出されていました。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "転倒した高精度着陸機と2機の小型ローバー",
+      "images": [
+        {
+          "src": "/images/missions/slim/01.webp",
+          "caption": "打ち上げ前のSLIM着陸機。重量200 kg、鉛筆のような形状で、低質量での高精度着陸実証のために設計されました。"
+        },
+        {
+          "src": "/images/missions/slim/02.webp",
+          "caption": "LEV-2「ソラキュー」— 野球ボールほどの大きさの変形式ボール型ローバー。タカラトミー(玩具メーカー)、JAXA、ソニーが共同開発しました。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "2023年9月6日 — 種子島からH-IIAで打ち上げ",
+      "images": [
+        {
+          "src": "/images/missions/slim/03.webp",
+          "caption": "H-IIA-47がSLIMとX線観測衛星XRISMを搭載して離昇。主要なX線科学ミッションとの同時打ち上げです。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "シオリ・クレーター — 2024年1月20日着陸",
+      "images": [
+        {
+          "src": "/images/missions/slim/04.webp",
+          "caption": "月面でSora-Qが撮影したSLIM。機首を下に向けた姿勢で着陸し、太陽電池パネルは本来とは逆の方向を向いていました。"
+        },
+        {
+          "src": "/images/missions/slim/05.webp",
+          "caption": "想定外の姿勢にもかかわらず、SLIMは3度にわたって作動しました。月の夜明けには、逆さまを向いたパネルに斜めから差す太陽光を捉え、短時間だけ目を覚ましたのです。"
+        }
+      ]
+    }
+  ]
+}

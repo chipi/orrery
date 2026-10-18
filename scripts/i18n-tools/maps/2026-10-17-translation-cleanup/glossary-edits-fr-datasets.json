@@ -1,0 +1,350 @@
+[
+  {
+    "rel": "original-work.json",
+    "at": "posters./images/posters/gagarin_jpg.title",
+    "old": "Gagarin",
+    "new": "Gagarine"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-earth-launchpad_webp.what",
+    "old": "Aire octogonale avec quatre tours de parafoudre — Kennedy, Baikonur, Jiuquan et autres.",
+    "new": "Aire octogonale avec quatre tours de parafoudre — Kennedy, Baïkonour, Jiuquan et autres."
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "intro",
+    "old": "Apollo 11 s'est posé dans Mare Tranquillitatis à 20 h 17 UTC le 20 juillet 1969 — le premier atterrissage avec équipage sur un autre monde. Armstrong et Aldrin ont passé 2 h 31 min hors du Lunar Module Eagle, tandis que Collins tournait en orbite au-dessus d'eux à bord de Columbia. L'équipage a rapporté 21,5 kg d'échantillons lunaires et laissé derrière lui des empreintes de pas, un réseau de rétroréflecteurs (toujours utilisé par des lasers basés sur Terre) et une plaque : « Nous sommes venus en paix au nom de toute l'humanité »<br>.",
+    "new": "Apollo 11 s'est posé dans la mer de la Tranquillité à 20 h 17 UTC le 20 juillet 1969 — le premier atterrissage avec équipage sur un autre monde. Armstrong et Aldrin ont passé 2 h 31 min hors du Lunar Module Eagle, tandis que Collins tournait en orbite au-dessus d'eux à bord de Columbia. L'équipage a rapporté 21,5 kg d'échantillons lunaires et laissé derrière lui des empreintes de pas, un réseau de rétroréflecteurs (toujours utilisé par des lasers basés sur la Terre) et une plaque : « Nous sommes venus en paix au nom de toute l'humanité »<br>."
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.1.subtitle",
+    "old": "16 juillet 1969 — Saturn V depuis le Kennedy Space Center",
+    "new": "16 juillet 1969 — Saturn V depuis le Centre spatial Kennedy"
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.subtitle",
+    "old": "Mare Tranquillitatis — alunissage le 20 juillet 1969",
+    "new": "Mer de la Tranquillité — alunissage le 20 juillet 1969"
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "intro",
+    "old": "Apollo 12 s'est posée dans Oceanus Procellarum le 19 novembre 1969 — un alunissage de précision, à distance de marche de l'atterrisseur robotique Surveyor 3, qui s'y était posé 2½ ans plus tôt. Conrad et Bean ont passé 31 h à la surface lors de deux sorties extravéhiculaires (EVA) et ont rapporté 34 kg d'échantillons, ainsi que des pièces de Surveyor 3 destinées à l'analyse. La mission a démontré qu'une mission Apollo avec équipage pouvait atteindre une cible précise à la surface lunaire.",
+    "new": "Apollo 12 s'est posée dans l'océan des Tempêtes le 19 novembre 1969 — un alunissage de précision, à distance de marche de l'atterrisseur robotique Surveyor 3, qui s'y était posé 2½ ans plus tôt. Conrad et Bean ont passé 31 h à la surface lors de deux sorties extravéhiculaires (EVA) et ont rapporté 34 kg d'échantillons, ainsi que des pièces de Surveyor 3 destinées à l'analyse. La mission a démontré qu'une mission Apollo avec équipage pouvait atteindre une cible précise à la surface lunaire."
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.2.subtitle",
+    "old": "Oceanus Procellarum — alunissage le 19 novembre 1969",
+    "new": "Océan des Tempêtes — alunissage le 19 novembre 1969"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "intro",
+    "old": "Apollo 14 s'est posée dans les hautes terres de Fra Mauro le 5 février 1971 — l'objectif initial d'Apollo 13, atteint après l'explosion qui avait frappé cette dernière mission. Shepard et Mitchell ont tiré le Modular Equipment Transporter (une sorte de pousse-pousse) à l'assaut des flancs de Cone Crater et ont rapporté 43 kg de brèches — des fragments de l'impact gigantesque qui a formé Mare Imbrium il y a 3,9 milliards d'années. Avant le décollage, Shepard a, comme chacun sait, frappé deux balles de golf.",
+    "new": "Apollo 14 s'est posée dans les hautes terres de Fra Mauro le 5 février 1971 — l'objectif initial d'Apollo 13, atteint après l'explosion qui avait frappé cette dernière mission. Shepard et Mitchell ont tiré le Modular Equipment Transporter (une sorte de pousse-pousse) à l'assaut des flancs du cratère Cone et ont rapporté 43 kg de brèches — des fragments de l'impact gigantesque qui a formé la mer des Pluies il y a 3,9 milliards d'années. Avant le décollage, Shepard a, comme chacun sait, frappé deux balles de golf."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Mitchell avec le Modular Equipment Transporter (MET) — le « pousse-pousse » qui servait à tirer outils et échantillons le long de la pente en direction de Cone Crater.",
+    "new": "Mitchell avec le Modular Equipment Transporter (MET) — le « pousse-pousse » qui servait à tirer outils et échantillons le long de la pente en direction du cratère Cone."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Bord de Cone Crater — l'équipage a grimpé jusqu'à environ 30 m du bord, mais l'épuisement et les limites des communications l'ont contraint à rebrousser chemin.",
+    "new": "Bord du cratère Cone — l'équipage a grimpé jusqu'à environ 30 m du bord, mais l'épuisement et les limites des communications l'ont contraint à rebrousser chemin."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "intro",
+    "old": "Apollo 15 s'est posée à Hadley Rille / Apennine Mountains le 30 juillet 1971 : première mission « de classe J », avec un séjour prolongé en surface, le Lunar Roving Vehicle (LRV) et un pilote formé à la science (David Scott). Scott et Irwin ont parcouru 28 km au total en trois sorties extravéhiculaires (EVA), découvert la Genesis Rock (anorthosite d'environ 4,1 Ga, croûte primaire) et, en direct à la télévision, lâché une plume et un marteau pour reproduire l'expérience de Galileo sur la gravité.",
+    "new": "Apollo 15 s'est posée près de la rainure Hadley, dans les Apennins lunaires le 30 juillet 1971 : première mission « de classe J », avec un séjour prolongé en surface, le Lunar Roving Vehicle (LRV) et un pilote formé à la science (David Scott). Scott et Irwin ont parcouru 28 km au total en trois sorties extravéhiculaires (EVA), découvert la Genesis Rock (anorthosite d'environ 4,1 Ga, croûte primaire) et, en direct à la télévision, lâché une plume et un marteau pour reproduire l'expérience de Galileo sur la gravité."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "David Scott au bord de Hadley Rille — la première fois que des astronautes se tenaient au bord d'un ancien chenal de lave sur un autre monde.",
+    "new": "David Scott au bord de la rainure Hadley — la première fois que des astronautes se tenaient au bord d'un ancien chenal de lave sur un autre monde."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "intro",
+    "old": "Apollo 16 s'est posée dans les Descartes Highlands le 21 avril 1972 — la seule mission Apollo vers un site de hautes terres (et non de mer lunaire), choisi pour échantillonner ce que l'on croyait être un terrain volcanique. Young et Duke n'y ont trouvé AUCUNE roche volcanique — seulement des brèches d'impact et de l'anorthosite —, ce qui a renversé le modèle géologique et démontré que les hautes terres de la Lune sont une croûte ancienne fracturée par les impacts, et non le produit d'un volcanisme plus tardif. Trois sorties extravéhiculaires, 27 km de parcours en LRV, 95 kg d'échantillons rapportés.",
+    "new": "Apollo 16 s'est posée dans les hauts plateaux Descartes le 21 avril 1972 — la seule mission Apollo vers un site de hautes terres (et non de mer lunaire), choisi pour échantillonner ce que l'on croyait être un terrain volcanique. Young et Duke n'y ont trouvé AUCUNE roche volcanique — seulement des brèches d'impact et de l'anorthosite —, ce qui a renversé le modèle géologique et démontré que les hautes terres de la Lune sont une croûte ancienne fracturée par les impacts, et non le produit d'un volcanisme plus tardif. Trois sorties extravéhiculaires, 27 km de parcours en LRV, 95 kg d'échantillons rapportés."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.subtitle",
+    "old": "Descartes Highlands — alunissage le 21 avril 1972",
+    "new": "hauts plateaux Descartes — alunissage le 21 avril 1972"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Panorama des Descartes Highlands — étage de descente d'Orion + LRV + Stone Mountain en toile de fond.",
+    "new": "Panorama des hauts plateaux Descartes — étage de descente d'Orion + LRV + Stone Mountain en toile de fond."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "intro",
+    "old": "Apollo 17 s'est posée dans la Taurus-Littrow Valley le 11 décembre 1972 : c'était la dernière mission lunaire avec équipage, et la seule à avoir compté un géologue professionnel (Harrison Schmitt) à la surface. Cernan et Schmitt ont passé 22 h dehors au cours de trois sorties extravéhiculaires (EVA), parcouru 35 km en rover et rapporté 110 kg d'échantillons, parmi lesquels le célèbre sol orange (des billes de verre volcanique issues d'une fontaine de feu vieille de 3,5 Ga). L'empreinte de pas de Cernan est la trace humaine la plus récente laissée sur un autre monde.",
+    "new": "Apollo 17 s'est posée dans la vallée Taurus-Littrow le 11 décembre 1972 : c'était la dernière mission lunaire avec équipage, et la seule à avoir compté un géologue professionnel (Harrison Schmitt) à la surface. Cernan et Schmitt ont passé 22 h dehors au cours de trois sorties extravéhiculaires (EVA), parcouru 35 km en rover et rapporté 110 kg d'échantillons, parmi lesquels le célèbre sol orange (des billes de verre volcanique issues d'une fontaine de feu vieille de 3,5 Ga). L'empreinte de pas de Cernan est la trace humaine la plus récente laissée sur un autre monde."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.subtitle",
+    "old": "Taurus-Littrow Valley : alunissage le 11 décembre 1972",
+    "new": "vallée Taurus-Littrow : alunissage le 11 décembre 1972"
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Schmitt au Shorty Crater découvre le sol orange : des sphérules de verre volcanique issues d'une fontaine de lave vieille de 3,5 Ga.",
+    "new": "Schmitt au cratère Shorty découvre le sol orange : des sphérules de verre volcanique issues d'une fontaine de lave vieille de 3,5 Ga."
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.1.subtitle",
+    "old": "2 juin 2003 — Soyuz/Fregat depuis Baikonur, en passager de Mars Express",
+    "new": "2 juin 2003 — Soyuz/Fregat depuis Baïkonour, en passager de Mars Express"
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "intro",
+    "old": "Beresheet — « Au commencement » en hébreu — fut la première tentative d'alunissage d'Israël, conçue par SpaceIL, une structure privée, avec un budget de 100 millions de dollars à peine. La sonde a été lancée le 22 février 2019, s'est placée en orbite lunaire le 4 avril, puis s'est écrasée dans Mare Serenitatis le 11 avril 2019, après la réinitialisation de l'IMU et de l'ordinateur de bord pendant la descente. Son épave transportait une capsule témoin remplie de tardigrades. Israël est devenu la septième nation à atteindre la Lune, ne serait-ce que par l'impact.",
+    "new": "Beresheet — « Au commencement » en hébreu — fut la première tentative d'alunissage d'Israël, conçue par SpaceIL, une structure privée, avec un budget de 100 millions de dollars à peine. La sonde a été lancée le 22 février 2019, s'est placée en orbite lunaire le 4 avril, puis s'est écrasée dans la mer de la Sérénité le 11 avril 2019, après la réinitialisation de l'IMU et de l'ordinateur de bord pendant la descente. Son épave transportait une capsule témoin remplie de tardigrades. Israël est devenu la septième nation à atteindre la Lune, ne serait-ce que par l'impact."
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.1.subtitle",
+    "old": "22 février 2019 — Falcon 9 depuis Cape Canaveral (lancement partagé)",
+    "new": "22 février 2019 — Falcon 9 depuis Cap Canaveral (lancement partagé)"
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.2.subtitle",
+    "old": "Mare Serenitatis — impact le 11 avril 2019",
+    "new": "Mer de la Sérénité — impact le 11 avril 2019"
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.2.subtitle",
+    "old": "Shiv Shakti Point, près du pôle Sud lunaire — alunissage le 23 août 2023",
+    "new": "Statio Shiv Shakti, près du pôle Sud lunaire — alunissage le 23 août 2023"
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "intro",
+    "old": "Chang'e 3 s'est posée dans Mare Imbrium le 14 décembre 2013 — premier atterrissage en douceur de la Chine sur la Lune et premier alunissage, toutes nations confondues, depuis 37 ans (depuis Luna 24). A déployé le rover Yutu, qui a parcouru environ 114 m avant qu'une défaillance de commande ne l'immobilise sur place pour les quelque 30 jours lunaires de survie qui lui restaient. A confirmé la Chine comme troisième nation à disposer d'équipements à la surface de la Lune.",
+    "new": "Chang'e 3 s'est posée dans la mer des Pluies le 14 décembre 2013 — premier atterrissage en douceur de la Chine sur la Lune et premier alunissage, toutes nations confondues, depuis 37 ans (depuis Luna 24). A déployé le rover Yutu, qui a parcouru environ 114 m avant qu'une défaillance de commande ne l'immobilise sur place pour les quelque 30 jours lunaires de survie qui lui restaient. A confirmé la Chine comme troisième nation à disposer d'équipements à la surface de la Lune."
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.2.subtitle",
+    "old": "Mare Imbrium — atterrissage le 14 décembre 2013",
+    "new": "Mer des Pluies — atterrissage le 14 décembre 2013"
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Profil radar à pénétration de sol de Yutu du sous-sol de Mare Imbrium — coulées de basalte en couches multiples jusqu'à environ 330 m de profondeur.",
+    "new": "Profil radar à pénétration de sol de Yutu du sous-sol de la mer des Pluies — coulées de basalte en couches multiples jusqu'à environ 330 m de profondeur."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "intro",
+    "old": "Le rover Curiosity de la NASA a été lancé le 26 novembre 2011 au sommet d'une fusée Atlas V depuis Cape Canaveral. Après 254 jours de croisière, Mars Science Laboratory a déposé le rover de 899 kg, alimenté par une source d'énergie nucléaire, dans Gale Crater le 6 août 2012, grâce à la désormais célèbre manœuvre de la grue céleste (« sky crane »). Plus de dix ans plus tard, Curiosity gravit toujours Mount Sharp et fore des roches qui conservent la trace du passé autrefois habitable de Mars.",
+    "new": "Le rover Curiosity de la NASA a été lancé le 26 novembre 2011 au sommet d'une fusée Atlas V depuis Cap Canaveral. Après 254 jours de croisière, Mars Science Laboratory a déposé le rover de 899 kg, alimenté par une source d'énergie nucléaire, dans le cratère Gale le 6 août 2012, grâce à la désormais célèbre manœuvre de la grue céleste (« sky crane »). Plus de dix ans plus tard, Curiosity gravit toujours le mont Sharp et fore des roches qui conservent la trace du passé autrefois habitable de Mars."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.0.subtitle",
+    "old": "Construire un rover pour Gale Crater",
+    "new": "Construire un rover pour cratère Gale"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.1.subtitle",
+    "old": "26 novembre 2011 — Atlas V depuis Cape Canaveral",
+    "new": "26 novembre 2011 — Atlas V depuis Cap Canaveral"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.2.subtitle",
+    "old": "Gale Crater — atterrissage le 6 août 2012",
+    "new": "cratère Gale — atterrissage le 6 août 2012"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Panorama de Mont Mercou, sol 3070 (mars 2021). Balayage à 360° de Mastcam-Z montrant le rover, les falaises stratifiées de Mt Mercou et Mount Sharp à l'horizon.",
+    "new": "Panorama de Mont Mercou, sol 3070 (mars 2021). Balayage à 360° de Mastcam-Z montrant le rover, les falaises stratifiées de Mt Mercou et le mont Sharp à l'horizon."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.3.images.1.caption",
+    "old": "Roches sédimentaires à Vera Rubin Ridge — formations ferrugineuses rubanées + minéraux argileux témoignent d'une eau liquide ancienne et d'un environnement chimique habitable.",
+    "new": "Roches sédimentaires à crête Vera Rubin — formations ferrugineuses rubanées + minéraux argileux témoignent d'une eau liquide ancienne et d'un environnement chimique habitable."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.4.images.0.caption",
+    "old": "Le centre de contrôle de la mission du JPL célèbre l'atterrissage par grue volante, les « sept minutes de terreur », les 5 et 6 août 2012 — Adam Steltzner et son équipe après les premiers signaux en provenance de Gale Crater.",
+    "new": "Le centre de contrôle de la mission du JPL célèbre l'atterrissage par grue volante, les « sept minutes de terreur », les 5 et 6 août 2012 — Adam Steltzner et son équipe après les premiers signaux en provenance du cratère Gale."
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.1.subtitle",
+    "old": "12 septembre 1970 — Proton-K depuis Baikonur",
+    "new": "12 septembre 1970 — Proton-K depuis Baïkonour"
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Proton-K avec son étage supérieur Blok-D sur le pas de tir du cosmodrome de Baikonur.",
+    "new": "Proton-K avec son étage supérieur Blok-D sur le pas de tir du cosmodrome de Baïkonour."
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "intro",
+    "old": "Luna 17 s'est posée dans la Mare Imbrium le 17 novembre 1970 et a déployé Lunokhod 1, le premier véhicule à roues à fonctionner sur un autre monde, devançant de sept mois le LRV de la NASA. Lunokhod 1 a parcouru 10,5 km en 11 jours lunaires, piloté depuis la Crimée par une équipe de cinq personnes. Il a renvoyé 25 000 photographies et 211 panoramas avant de se taire en septembre 1971.",
+    "new": "Luna 17 s'est posée dans la Mer des Pluies le 17 novembre 1970 et a déployé Lunokhod 1, le premier véhicule à roues à fonctionner sur un autre monde, devançant de sept mois le LRV de la NASA. Lunokhod 1 a parcouru 10,5 km en 11 jours lunaires, piloté depuis la Crimée par une équipe de cinq personnes. Il a renvoyé 25 000 photographies et 211 panoramas avant de se taire en septembre 1971."
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.1.subtitle",
+    "old": "Mare Imbrium : atterrissage le 17 novembre 1970",
+    "new": "Mer des Pluies : atterrissage le 17 novembre 1970"
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Lunokhod 1 roulant sur la Mare Imbrium, piloté en temps réel par une équipe de cinq personnes malgré le délai de 2,5 secondes imposé par la vitesse de la lumière à chaque sens.",
+    "new": "Lunokhod 1 roulant sur la Mer des Pluies, piloté en temps réel par une équipe de cinq personnes malgré le délai de 2,5 secondes imposé par la vitesse de la lumière à chaque sens."
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Carte du parcours de Lunokhod 1 : 10,5 km en zigzag à travers la Mare Imbrium, avec des arrêts scientifiques près de rochers et de cratères.",
+    "new": "Carte du parcours de Lunokhod 1 : 10,5 km en zigzag à travers la Mer des Pluies, avec des arrêts scientifiques près de rochers et de cratères."
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "intro",
+    "old": "Luna 9 s'est posée dans l'Oceanus Procellarum le 3 février 1966 : le premier atterrissage en douceur sur un autre monde. La capsule sphérique de 99 kg a survécu à un impact à 22 km/h grâce au déploiement de coussins gonflables, puis a déplié ses pétales pour se redresser et a transmis les premières photographies de la surface lunaire. Elle a fonctionné pendant 3 jours, jusqu'à l'épuisement de ses batteries.",
+    "new": "Luna 9 s'est posée dans l'Océan des Tempêtes le 3 février 1966 : le premier atterrissage en douceur sur un autre monde. La capsule sphérique de 99 kg a survécu à un impact à 22 km/h grâce au déploiement de coussins gonflables, puis a déplié ses pétales pour se redresser et a transmis les premières photographies de la surface lunaire. Elle a fonctionné pendant 3 jours, jusqu'à l'épuisement de ses batteries."
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.1.subtitle",
+    "old": "31 janvier 1966 : Molniya-M depuis Baikonur",
+    "new": "31 janvier 1966 : Molniya-M depuis Baïkonour"
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Fusée Molniya-M préparée à Baikonur : Luna 9 a été lancée dans une course serrée entre Soviétiques et Américains vers le premier atterrissage en douceur.",
+    "new": "Fusée Molniya-M préparée à Baïkonour : Luna 9 a été lancée dans une course serrée entre Soviétiques et Américains vers le premier atterrissage en douceur."
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.2.subtitle",
+    "old": "Oceanus Procellarum : atterrissage le 3 février 1966",
+    "new": "Océan des Tempêtes : atterrissage le 3 février 1966"
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.1.subtitle",
+    "old": "4 décembre 1996 — Delta II depuis Cape Canaveral",
+    "new": "4 décembre 1996 — Delta II depuis Cap Canaveral"
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.1.subtitle",
+    "old": "28 mai 1971 — Proton-K depuis Baikonur",
+    "new": "28 mai 1971 — Proton-K depuis Baïkonour"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Legacy Pan, sols 5084-5111 (mai-juin 2018) — le dernier panorama à 360° d'Opportunity avant la tempête de poussière. Perseverance Valley descend vers Endeavour Crater.",
+    "new": "Legacy Pan, sols 5084-5111 (mai-juin 2018) — le dernier panorama à 360° d'Opportunity avant la tempête de poussière. Perseverance Valley descend vers le cratère Endeavour."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Le bord d'Endeavour Crater, où Opportunity a passé ses dernières années. Le lieu de repos du rover se trouve à droite, dans Perseverance Valley.",
+    "new": "Le bord du cratère Endeavour, où Opportunity a passé ses dernières années. Le lieu de repos du rover se trouve à droite, dans Perseverance Valley."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Site d'impact du bouclier thermique à Endurance Crater — Opportunity est revenu inspecter son propre matériel d'entrée atmosphérique abandonné.",
+    "new": "Site d'impact du bouclier thermique au cratère Endurance — Opportunity est revenu inspecter son propre matériel d'entrée atmosphérique abandonné."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Affleurements stratifiés de Burns Cliff à l'intérieur d'Endurance Crater — archive sédimentaire d'une ancienne étendue d'eau salée et acide.",
+    "new": "Affleurements stratifiés de Burns Cliff à l'intérieur du cratère Endurance — archive sédimentaire d'une ancienne étendue d'eau salée et acide."
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "intro",
+    "old": "Perseverance a atterri dans le cratère Jezero le 18 février 2021 — un delta fluvial vieux de 3,8 milliards d'années, choisi parce qu'il offrait les meilleures chances de conserver des traces d'une vie martienne ancienne. Le rover embarque le premier hélicoptère martien (Ingenuity), le premier enregistreur audio sur Mars et le premier système de mise en cache d'échantillons. Les tubes d'échantillons laissés à la surface seront rapportés sur Terre par la mission Mars Sample Return dans les années 2030.",
+    "new": "Perseverance a atterri dans le cratère Jezero le 18 février 2021 — un delta fluvial vieux de 3,8 milliards d'années, choisi parce qu'il offrait les meilleures chances de conserver des traces d'une vie martienne ancienne. Le rover embarque le premier hélicoptère martien (Ingenuity), le premier enregistreur audio sur Mars et le premier système de mise en cache d'échantillons. Les tubes d'échantillons laissés à la surface seront rapportés sur la Terre par la mission Mars Sample Return dans les années 2030."
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.1.subtitle",
+    "old": "30 juillet 2020 — Atlas V depuis Cape Canaveral",
+    "new": "30 juillet 2020 — Atlas V depuis Cap Canaveral"
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.1.subtitle",
+    "old": "14 mars 2016 — Proton-M depuis Baikonur",
+    "new": "14 mars 2016 — Proton-M depuis Baïkonour"
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.1.subtitle",
+    "old": "20 août 1975 — Titan IIIE depuis Cape Canaveral",
+    "new": "20 août 1975 — Titan IIIE depuis Cap Canaveral"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Long March 5 lance Tianwen-1 depuis le Wenchang Space Launch Site, sur l’île de Hainan — sept mois de transit vers Mars.",
+    "new": "Long March 5 lance Tianwen-1 depuis la base de lancement de Wenchang, sur l’île de Hainan — sept mois de transit vers Mars."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-112fee55fa9f.title",
+    "old": "Vostok 1 — Gagarin, le premier humain dans l'espace",
+    "new": "Vostok 1 — Gagarine, le premier humain dans l'espace"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-112fee55fa9f.caption",
+    "old": "Yuri Gagarin se lance depuis Baikonur — 12 avril 1961.",
+    "new": "Youri Gagarine se lance depuis Baïkonour — 12 avril 1961."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-4ba1c691d9d4.caption",
+    "old": "Les 12 minutes d'Alexei Leonov en dehors de la capsule — 18 mars 1965.",
+    "new": "Les 12 minutes d'Alexeï Leonov en dehors de la capsule — 18 mars 1965."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-8690fe1ee080.caption",
+    "old": "La capsule d'échantillon Bennu revient sur Terre — 24 sept. 2023.",
+    "new": "La capsule d'échantillon Bénou revient sur la Terre — 24 sept. 2023."
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "intro": "Schiaparelli — a segunda tentativa europeia de pouso em Marte — separou-se do ExoMars Trace Gas Orbiter em 16 de outubro de 2016 e, três dias depois, colidiu com Meridiani Planum a cerca de 540 km/h. Uma falha de software fez o paraquedas e os propulsores de frenagem se desprenderem 50 segundos antes da hora, quando o módulo de pouso ainda estava a 3,7 km da superfície. Os destroços foram localizados pela HiRISE da MRO em menos de uma semana. As lições aprendidas moldaram o rover ExoMars Rosalind Franklin, cujo lançamento está agora previsto para 2028.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "EDM — Módulo Demonstrador de Entrada, Descida e Pouso",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/01.webp",
+          "caption": "O módulo de pouso Schiaparelli antes do lançamento — 577 kg, concebido como demonstrador tecnológico de uso único para o sistema de entrada, descida e pouso (EDL) do rover ExoMars."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "14 de março de 2016 — Proton-M a partir de Baikonur",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/02.webp",
+          "caption": "O Proton-M decola com o conjunto ExoMars 2016 — TGO + Schiaparelli, missão conjunta da ESA e da Roscosmos."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Meridiani Planum — impacto em 19 de outubro de 2016",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/03.webp",
+          "caption": "A HiRISE da MRO registra o local de impacto do Schiaparelli — cratera principal visível no alto; paraquedas e backshell no canto inferior direito."
+        },
+        {
+          "src": "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg",
+          "caption": "Detalhe da HiRISE do local da queda do Schiaparelli — mancha escura deixada pelo impacto do hardware, cercada por um manto de ejecta."
+        },
+        {
+          "src": "/images/fleet-galleries/schiaparelli/04.webp",
+          "caption": "Reconstituição em computação gráfica da sequência da falha — a saturação da IMU durante a abertura do paraquedas provocou a liberação prematura do módulo de pouso a 3,7 km de altitude."
+        }
+      ]
+    }
+  ]
+}

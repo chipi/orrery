@@ -1,0 +1,400 @@
+{
+  "jwst-carina": {
+    "title": "Cosmic Cliffs",
+    "caption": "The edge of a stellar nursery in the Carina Nebula (NGC 3324), carved by young stars.",
+    "subject": "Nebula",
+    "type": "Star-forming region",
+    "distance": "~7,600 light-years",
+    "taken": "Released 12 Jul 2022"
+  },
+  "jwst-southern-ring": {
+    "title": "Southern Ring Nebula",
+    "caption": "A dying star (NGC 3132) shedding shells of gas and dust across half a light-year.",
+    "subject": "Nebula",
+    "type": "Planetary nebula",
+    "distance": "~2,500 light-years",
+    "taken": "Released 12 Jul 2022"
+  },
+  "jwst-stephans": {
+    "title": "Stephan's Quintet",
+    "caption": "Five galaxies locked in a cosmic dance, four of them tearing at each other with tides.",
+    "subject": "Galaxies",
+    "type": "Compact galaxy group",
+    "distance": "~290 million light-years",
+    "taken": "Released 12 Jul 2022"
+  },
+  "jwst-pillars": {
+    "title": "Pillars of Creation",
+    "caption": "Towers of cold gas and dust in the Eagle Nebula (M16), lit from within by newborn stars.",
+    "subject": "Nebula",
+    "type": "Emission nebula / star-forming region (M16)",
+    "distance": "~6,500 light-years",
+    "taken": "Released 19 Oct 2022"
+  },
+  "jwst-tarantula": {
+    "title": "Tarantula Nebula",
+    "caption": "30 Doradus — the most active starburst region known in our galactic neighbourhood.",
+    "subject": "Nebula",
+    "type": "Star-forming region (30 Dor)",
+    "distance": "~161,000 light-years",
+    "taken": "Released 6 Sep 2022"
+  },
+  "jwst-cartwheel": {
+    "title": "Cartwheel Galaxy",
+    "caption": "A rare ring galaxy, still ringing from a head-on collision hundreds of millions of years ago.",
+    "subject": "Galaxies",
+    "type": "Ring galaxy",
+    "distance": "~500 million light-years",
+    "taken": "Released 2 Aug 2022"
+  },
+  "jwst-phantom": {
+    "title": "Phantom Galaxy",
+    "caption": "M74 — a grand-design spiral, its skeleton of gas and dust laid bare in the infrared.",
+    "subject": "Galaxies",
+    "type": "Spiral galaxy (M74)",
+    "distance": "~32 million light-years",
+    "taken": "2022"
+  },
+  "hst-pillars": {
+    "title": "Pillars of Creation",
+    "caption": "Hubble's iconic 2014 view of the Eagle Nebula's towers of star-forming gas.",
+    "subject": "Nebula",
+    "type": "Emission nebula / star-forming region (M16)",
+    "distance": "~6,500 light-years",
+    "taken": "2014"
+  },
+  "hst-mystic-mountain": {
+    "title": "Mystic Mountain",
+    "caption": "A three-light-year pillar in the Carina Nebula, from Hubble's 20th anniversary.",
+    "subject": "Nebula",
+    "type": "Star-forming pillar",
+    "distance": "~7,500 light-years",
+    "taken": "2010 · Hubble 20th"
+  },
+  "hst-butterfly": {
+    "title": "Butterfly Nebula",
+    "caption": "NGC 6302 — wings of gas heated past 20,000°C, flung out by a dying star.",
+    "subject": "Nebula",
+    "type": "Planetary nebula (NGC 6302)",
+    "distance": "~3,400 light-years",
+    "taken": "2009"
+  },
+  "hst-antennae": {
+    "title": "Antennae Galaxies",
+    "caption": "Two galaxies (NGC 4038/4039) colliding, igniting billions of new stars.",
+    "subject": "Galaxies",
+    "type": "Colliding galaxies",
+    "distance": "~45–65 million light-years",
+    "taken": "2006"
+  },
+  "hst-bubble": {
+    "title": "Bubble Nebula",
+    "caption": "NGC 7635 — a seven-light-year bubble blown by the fierce wind of a massive star.",
+    "subject": "Nebula",
+    "type": "Emission nebula (NGC 7635)",
+    "distance": "~7,100 light-years",
+    "taken": "2016 · Hubble 26th"
+  },
+  "hst-westerlund2": {
+    "title": "Westerlund 2",
+    "caption": "A giant cluster of young stars, from Hubble's 25th anniversary.",
+    "subject": "Star cluster",
+    "type": "Star cluster (Gum 29)",
+    "distance": "~20,000 light-years",
+    "taken": "2015 · Hubble 25th"
+  },
+  "hst-cats-eye": {
+    "title": "Cat's Eye Nebula",
+    "caption": "NGC 6543 — one of the most intricate planetary nebulae ever seen.",
+    "subject": "Nebula",
+    "type": "Planetary nebula (NGC 6543)",
+    "distance": "~3,300 light-years",
+    "taken": "2004"
+  },
+  "hst-whirlpool": {
+    "title": "Whirlpool Galaxy",
+    "caption": "M51 — a textbook spiral, arms glowing pink with newborn stars.",
+    "subject": "Galaxies",
+    "type": "Spiral galaxy (M51)",
+    "distance": "~31 million light-years",
+    "taken": "2005"
+  },
+  "hst-crab": {
+    "title": "Crab Nebula",
+    "caption": "M1 — the shattered remains of a star seen to explode in 1054 AD.",
+    "subject": "Nebula",
+    "type": "Supernova remnant (M1)",
+    "distance": "~6,500 light-years",
+    "taken": "2005"
+  },
+  "hst-veil": {
+    "title": "Veil Nebula",
+    "caption": "A wisp of the Cygnus Loop — a supernova blast wave still expanding after 10,000 years.",
+    "subject": "Nebula",
+    "type": "Supernova remnant · Cygnus Loop",
+    "distance": "~2,400 light-years",
+    "taken": "2015"
+  },
+  "hst-sombrero": {
+    "title": "Sombrero Galaxy",
+    "caption": "M104 — a brilliant white core wrapped in a dark ring of dust.",
+    "subject": "Galaxies",
+    "type": "Spiral galaxy (M104)",
+    "distance": "~28 million light-years",
+    "taken": "2003"
+  },
+  "hst-eskimo": {
+    "title": "Eskimo Nebula",
+    "caption": "NGC 2392 — a Sun-like star wrapped in shells of gas it cast off 10,000 years ago.",
+    "subject": "Nebula",
+    "type": "Planetary nebula (NGC 2392)",
+    "distance": "~3,000 light-years",
+    "taken": "2000"
+  },
+  "chandra-crab": {
+    "title": "Crab Nebula (X-ray)",
+    "caption": "Chandra's X-ray eye on the pulsar powering the Crab, whipping matter into rings and jets.",
+    "subject": "Nebula",
+    "type": "Supernova remnant · X-ray (M1)",
+    "distance": "~6,500 light-years"
+  },
+  "chandra-tycho": {
+    "title": "Tycho's Supernova Remnant",
+    "caption": "The X-ray shell of a star Tycho Brahe watched explode in 1572.",
+    "subject": "Supernova",
+    "type": "Supernova remnant · X-ray (SN 1572)",
+    "distance": "~10,000 light-years"
+  },
+  "spitzer-helix": {
+    "title": "Helix Nebula (infrared)",
+    "caption": "Spitzer's infrared view of a dying star's dusty cocoon, 700 light-years away.",
+    "subject": "Nebula",
+    "type": "Planetary nebula · infrared",
+    "distance": "~700 light-years",
+    "taken": "2007"
+  },
+  "euclid-perseus": {
+    "title": "Perseus Cluster",
+    "caption": "Euclid captures 1,000 galaxies in the cluster and 100,000 more scattered behind it.",
+    "subject": "Deep field",
+    "type": "Galaxy cluster",
+    "distance": "~240 million light-years",
+    "taken": "Released 7 Nov 2023"
+  },
+  "euclid-horsehead": {
+    "title": "Horsehead Nebula",
+    "caption": "Euclid's panoramic view of the iconic dark cloud in Orion.",
+    "subject": "Nebula",
+    "type": "Dark nebula (Barnard 33)",
+    "distance": "~1,375 light-years",
+    "taken": "Released 7 Nov 2023"
+  },
+  "pale-blue-dot": {
+    "title": "Pale Blue Dot",
+    "caption": "Earth as a single pixel, photographed by Voyager 1 from six billion kilometres.",
+    "subject": "Solar system",
+    "type": "Earth as a single pixel",
+    "distance": "~40.5 AU (6 billion km)",
+    "taken": "14 Feb 1990"
+  },
+  "pluto-nh": {
+    "title": "Pluto",
+    "caption": "New Horizons' first true-colour close-up of Pluto and its heart of nitrogen ice.",
+    "subject": "Solar system",
+    "type": "Dwarf planet",
+    "distance": "~34 AU (5 billion km)",
+    "taken": "14 Jul 2015"
+  },
+  "sun-sdo": {
+    "title": "The Sun",
+    "caption": "The Solar Dynamics Observatory's view of our star in the extreme ultraviolet.",
+    "subject": "The Sun",
+    "type": "The Sun · extreme ultraviolet",
+    "distance": "1 AU",
+    "taken": "2010–present"
+  },
+  "jwst-orion": {
+    "title": "Orion Nebula",
+    "caption": "The inner Orion Nebula — a stellar cradle 1,350 light-years away, in Webb NIRCam.",
+    "subject": "Nebula",
+    "type": "Emission nebula (M42)",
+    "distance": "~1,350 light-years",
+    "taken": "Released 12 Sep 2022"
+  },
+  "jwst-ring": {
+    "title": "Ring Nebula",
+    "caption": "M57 — a Sun-like star at the end of its life, its outer layers glowing in delicate detail.",
+    "subject": "Nebula",
+    "type": "Planetary nebula (M57)",
+    "distance": "~2,600 light-years",
+    "taken": "Released 21 Aug 2023"
+  },
+  "jwst-serpens": {
+    "title": "Serpens Nebula",
+    "caption": "A nest of forming stars, spewing crystalline dust into a dark cloud in Serpens.",
+    "subject": "Nebula",
+    "type": "Star-forming region",
+    "distance": "~1,300 light-years",
+    "taken": "Released 2024"
+  },
+  "hst-lagoon": {
+    "title": "Lagoon Nebula",
+    "caption": "M8 — a stellar nursery of gas and dust, from Hubble's 28th anniversary.",
+    "subject": "Nebula",
+    "type": "Emission nebula (M8)",
+    "distance": "~4,000 light-years",
+    "taken": "2018 · Hubble 28th"
+  },
+  "hst-orion": {
+    "title": "Orion Nebula",
+    "caption": "M42 — Hubble's sharpest mosaic of the nearest massive star-forming region.",
+    "subject": "Nebula",
+    "type": "Emission nebula (M42)",
+    "distance": "~1,344 light-years",
+    "taken": "2006"
+  },
+  "hst-carina-pano": {
+    "title": "Carina Nebula",
+    "caption": "A 50-light-year-wide panorama of one of the largest star factories in the galaxy.",
+    "subject": "Nebula",
+    "type": "Star-forming region",
+    "distance": "~7,500 light-years",
+    "taken": "2007 · Hubble 17th"
+  },
+  "jwst-casa": {
+    "title": "Cassiopeia A",
+    "caption": "Webb’s infrared eye on the youngest known supernova remnant in the galaxy.",
+    "subject": "Supernova",
+    "type": "Supernova remnant",
+    "distance": "~11,000 light-years",
+    "taken": "Released 2023"
+  },
+  "hst-cone-nebula": {
+    "title": "Cone Nebula",
+    "caption": "A seven-light-year tower of cold gas in a distant stellar nursery.",
+    "subject": "Nebula",
+    "type": "Emission nebula",
+    "distance": "~2,700 light-years",
+    "taken": "2002 · ACS first light"
+  },
+  "hst-omega-centauri": {
+    "title": "Omega Centauri",
+    "caption": "The brightest globular cluster in the sky — millions of stars bound by gravity.",
+    "subject": "Cluster",
+    "type": "Globular cluster",
+    "distance": "~17,000 light-years",
+    "taken": "2009"
+  },
+  "jwst-ngc1365": {
+    "title": "NGC 1365",
+    "caption": "A colossal barred spiral, its bar funnelling gas toward a hungry black hole.",
+    "subject": "Galaxy",
+    "type": "Barred spiral galaxy",
+    "distance": "~56 million light-years",
+    "taken": "2023"
+  },
+  "hst-ngc602": {
+    "title": "NGC 602",
+    "caption": "A young star cluster carving a glowing cavity in the Small Magellanic Cloud.",
+    "subject": "Cluster",
+    "type": "Star cluster",
+    "distance": "~200,000 light-years",
+    "taken": "2007 · Hubble 17th"
+  },
+  "jwst-rho-ophiuchi": {
+    "title": "Rho Ophiuchi Cloud",
+    "caption": "The closest star-forming region to Earth, ablaze with young suns — Webb’s first-anniversary image.",
+    "subject": "Nebula",
+    "type": "Star-forming region",
+    "distance": "~430 light-years",
+    "taken": "Released 12 Jul 2023"
+  },
+  "jwst-wr124": {
+    "title": "Wolf–Rayet 124",
+    "caption": "A rare, massive star casting off its outer layers in the moments before it goes supernova.",
+    "subject": "Star",
+    "type": "Wolf–Rayet star",
+    "distance": "~15,000 light-years",
+    "taken": "Released 14 Mar 2023"
+  },
+  "hst-cosmic-reef": {
+    "title": "The Cosmic Reef",
+    "caption": "NGC 2014 and NGC 2020 — a reef of glowing hydrogen, from Hubble’s 30th anniversary.",
+    "subject": "Nebula",
+    "type": "Emission nebula",
+    "distance": "~163,000 light-years",
+    "taken": "2020 · Hubble 30th"
+  },
+  "hst-hen2104": {
+    "title": "Southern Crab Nebula",
+    "caption": "Nested hourglasses of gas thrown off by a dying star and its companion.",
+    "subject": "Nebula",
+    "type": "Planetary nebula",
+    "distance": "~7,000 light-years",
+    "taken": "2019 · Hubble 29th"
+  },
+  "hst-monkey-head": {
+    "title": "Monkey Head Nebula",
+    "caption": "NGC 2174 — pillars of dust sculpted by the radiation of newborn stars.",
+    "subject": "Nebula",
+    "type": "Emission nebula",
+    "distance": "~6,400 light-years",
+    "taken": "2014 · Hubble 24th"
+  },
+  "hst-andromeda": {
+    "title": "Andromeda Galaxy",
+    "caption": "The sharpest-ever Hubble panorama of our nearest large neighbour — over 100 million stars.",
+    "subject": "Galaxy",
+    "type": "Spiral galaxy",
+    "distance": "~2.5 million light-years",
+    "taken": "2015 · PHAT"
+  },
+  "hst-pinwheel": {
+    "title": "Pinwheel Galaxy",
+    "caption": "M101 — a giant face-on spiral, its arms strung with pink star-forming regions.",
+    "subject": "Galaxy",
+    "type": "Spiral galaxy",
+    "distance": "~21 million light-years",
+    "taken": "2006"
+  },
+  "hst-ngc1300": {
+    "title": "NGC 1300",
+    "caption": "A textbook barred spiral, its arms wound around a 200,000-light-year bar.",
+    "subject": "Galaxy",
+    "type": "Barred spiral galaxy",
+    "distance": "~61 million light-years",
+    "taken": "2005"
+  },
+  "jwst-ngc604": {
+    "title": "NGC 604",
+    "caption": "A cavern of gas and dust in the Triangulum Galaxy, carved by more than 200 hot young stars.",
+    "subject": "Nebula",
+    "type": "Star-forming region",
+    "distance": "~2.7 million light-years",
+    "taken": "Released 2024"
+  },
+  "jwst-ngc346": {
+    "title": "NGC 346",
+    "caption": "A brilliant knot of young stars lighting up the Small Magellanic Cloud.",
+    "subject": "Cluster",
+    "type": "Star cluster",
+    "distance": "~200,000 light-years",
+    "taken": "Released 2023"
+  },
+  "euclid-ic342": {
+    "title": "The Hidden Galaxy",
+    "caption": "IC 342 — a spiral hidden behind the Milky Way's dust, revealed by Euclid.",
+    "subject": "Galaxy",
+    "type": "Spiral galaxy",
+    "distance": "~11 million light-years",
+    "taken": "Released 2024"
+  },
+  "hst-v838": {
+    "title": "V838 Monocerotis",
+    "caption": "A light echo rippling outward through the dust around a star that suddenly flared.",
+    "subject": "Nebula",
+    "type": "Light echo",
+    "distance": "~20,000 light-years",
+    "taken": "2004"
+  }
+}

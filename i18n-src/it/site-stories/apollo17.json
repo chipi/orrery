@@ -1,0 +1,57 @@
+{
+  "intro": "Apollo 17 allunò nella valle Taurus-Littrow l'11 dicembre 1972: fu l'ultima missione lunare con equipaggio e l'unica ad avere sulla superficie un geologo di professione (Harrison Schmitt). Cernan e Schmitt trascorsero 22 ore all'esterno nel corso di tre EVA, percorsero 35 km in rover e riportarono a Terra 110 kg di campioni, tra cui il celebre Orange Soil (sferule di vetro vulcanico generate da una fontana di fuoco di 3,5 Ga). L'impronta di Cernan è il più recente segno umano lasciato su un altro mondo.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "America + Challenger + LRV-3",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/01.webp",
+          "caption": "Il ritratto dell'equipaggio di Apollo 17: Gene Cernan (CDR), Ron Evans (CMP), Harrison \"Jack\" Schmitt (LMP, scienziato-astronauta)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "7 dicembre 1972 — l'ultimo volo del Saturn V",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/02.webp",
+          "caption": "Primo lancio notturno di un Saturn V, 7 dicembre 1972, 05:33 UTC — visibile da 700 km di distanza. L'ultimo Apollo e l'ultimo Saturn V."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "valle Taurus-Littrow — allunaggio l'11 dicembre 1972",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/03.webp",
+          "caption": "Cernan e la bandiera con la Terra sopra di loro — «L'ultimo uomo sulla Luna»."
+        },
+        {
+          "src": "/images/missions/apollo17/04.webp",
+          "caption": "Schmitt al cratere Shorty scopre l'Orange Soil: sferule di vetro vulcanico generate da un'eruzione a fontana di fuoco di 3,5 Ga."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo17/tier3-pan.jpg",
+          "caption": "Panorama di Taurus-Littrow — lo stadio di discesa di Challenger, l'LRV e, in lontananza, Tortilla Flat."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Scienza",
+      "subtitle": "Il primo geologo addestrato sulla Luna",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/05.webp",
+          "caption": "Campione 70017 — l'ultimo campione lunare raccolto da esseri umani, l'ultimo compito di Cernan prima del decollo del 14 dicembre 1972."
+        }
+      ]
+    }
+  ]
+}

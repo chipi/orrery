@@ -1,0 +1,46 @@
+{
+  "intro": "Beresheet(ヘブライ語で「はじめに」の意)は、SpaceILが約1億ドルという乏しい予算で民間開発した、イスラエル初の月面着陸機です。2019年2月22日に打ち上げられ、4月4日に月周回軌道へ投入されましたが、4月11日、降下中にIMUと搭載コンピューターがリセットされ、晴れの海に墜落しました。残骸には、クマムシを積んだタイムカプセルが収められていました。イスラエルは、運動エネルギーによる形だったとはいえ、月に到達した7番目の国となりました。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "当時としては最小の惑星間着陸機への挑戦 — 585 kg",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/01.webp",
+          "caption": "打ち上げ前の統合作業中のBeresheet探査機。SpaceILがIsrael Aerospace Industriesと共同で開発した、民間資金による初の月面着陸への挑戦です。"
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/02.webp",
+          "caption": "タイムカプセルのペイロード — イスラエルの記念品、ニッケル板に刻まれた3,000万ページ分の人類の知識、そして(物議を醸しましたが)世界で最も強靭な微小動物であるクマムシ。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "2019年2月22日 — ケープ・カナベラルからFalcon 9で打ち上げ(相乗り)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/03.webp",
+          "caption": "Falcon 9が通信衛星PSN-6との相乗りでBeresheetを打ち上げました。月周回軌道までは、複数回の周回を重ねる6週間の道のりです。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "表面",
+      "subtitle": "晴れの海 — 2019年4月11日に衝突",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/04.webp",
+          "caption": "動力降下中にBeresheetから送られた最後のセルフィー。「Small country, big dreams」のプレートが見えます。通信は高度約150 m付近で途絶えました。"
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/05.webp",
+          "caption": "NASAのLROが撮影した衝突地点。レゴリスが乱されたことで、周囲が明るいハローになっています。クマムシの一部は、衝突後も無傷で生き延びた可能性があります。"
+        }
+      ]
+    }
+  ]
+}

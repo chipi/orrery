@@ -1,0 +1,34 @@
+{
+  "name": "Pioneer 11",
+  "current_distance_label": "89 UA · ~12,3 horas-luz do Sol (sinal perdido em 1995-09-30)",
+  "interstellar_since_label": "Sinal perdido em 1995 — em voo de coast em direção à Aquila, entrará no espaço interestelar por volta de 2027",
+  "waypoints": [
+    {
+      "label": "Lançamento"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Assistência de Júpiter"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Saturno + Anel F"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Último sinal"
+    },
+    null,
+    null,
+    {
+      "label": "Hoje"
+    }
+  ]
+}

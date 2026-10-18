@@ -1,0 +1,46 @@
+{
+  "name": "Voyager 2",
+  "current_distance_label": "143 AU · ~19,8 ore-luce dal Sole",
+  "interstellar_since_label": "Ha attraversato l'eliopausa in novembre 2018",
+  "waypoints": [
+    {
+      "label": "Lancio"
+    },
+    null,
+    null,
+    {
+      "label": "Giove"
+    },
+    null,
+    null,
+    {
+      "label": "Saturno"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Urano"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Nettuno"
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Eliopausa"
+    },
+    null,
+    {
+      "label": "Oggi"
+    }
+  ]
+}

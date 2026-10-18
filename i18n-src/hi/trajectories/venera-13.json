@@ -1,0 +1,14 @@
+{
+  "name": "Venera 13",
+  "current_distance_label": "0.74 AU · शुक्र पर 1982-03-01 को उतरा (127 मिनट की सतह उत्तरजीविता)",
+  "waypoints": [
+    {
+      "label": "प्रक्षेपण (Proton-K)"
+    },
+    null,
+    null,
+    {
+      "label": "शुक्र की सतह पर उतरना"
+    }
+  ]
+}

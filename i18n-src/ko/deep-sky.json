@@ -1,0 +1,400 @@
+{
+  "jwst-carina": {
+    "title": "우주의 절벽",
+    "caption": "카리나 성운(NGC 3324)의 가장자리로, 젊은 별들이 조각한 별 생성 영역.",
+    "subject": "성운",
+    "type": "별 생성 지역",
+    "distance": "약 7,600광년",
+    "taken": "2022년 7월 12일 공개"
+  },
+  "jwst-southern-ring": {
+    "title": "남쪽 고리 성운",
+    "caption": "죽어가는 별(NGC 3132)이 반광년에 걸쳐 가스와 먼지 껍질을 흘리고 있다.",
+    "subject": "성운",
+    "type": "행성상 성운",
+    "distance": "약 2,500광년",
+    "taken": "2022년 7월 12일 공개"
+  },
+  "jwst-stephans": {
+    "title": "스테판의 다섯 쌍성",
+    "caption": "다섯 개의 은하가 우주적 춤을 벌이고 있으며, 그 중 네 개의 은하가 조석력으로 서로 찢어지고 있다.",
+    "subject": "은하",
+    "type": "컴팩트 은하군",
+    "distance": "약 2억 9,000만 광년",
+    "taken": "2022년 7월 12일 공개"
+  },
+  "jwst-pillars": {
+    "title": "창조의 기둥",
+    "caption": "독수리 성운(M16)의 차가운 가스와 먼지로 이루어진 탑으로, 새롭게 태어난 별들로부터 내부를 밝히고 있다.",
+    "subject": "성운",
+    "type": "방출 성운 / 별 생성 지역 (M16)",
+    "distance": "약 6,500광년",
+    "taken": "2022년 10월 19일 공개"
+  },
+  "jwst-tarantula": {
+    "title": "타란툴라 성운",
+    "caption": "30 Doradus — 우리 은하 근처에서 알려진 가장 활동적인 폭발적 항성 생성 영역입니다.",
+    "subject": "성운",
+    "type": "항성 생성 영역 (30 Dor)",
+    "distance": "약 161,000광년",
+    "taken": "2022년 9월 6일 공개"
+  },
+  "jwst-cartwheel": {
+    "title": "카트휠 은하",
+    "caption": "자기 중심에서 정면으로 충돌한 지 수억 년 후에도 여전히 울리고 있는 희귀한 환형 은하입니다.",
+    "subject": "은하",
+    "type": "환형 은하",
+    "distance": "약 5억 광년",
+    "taken": "2022년 8월 2일 공개"
+  },
+  "jwst-phantom": {
+    "title": "팬텀 은하",
+    "caption": "M74 — 대규모 설계형 나선 은하로, 적외선으로 가스와 먼지로 이루어진 뼈대가 명확하게 드러나 있습니다.",
+    "subject": "은하",
+    "type": "나선 은하 (M74)",
+    "distance": "약 3,200만 광년",
+    "taken": "2022년"
+  },
+  "hst-pillars": {
+    "title": "창조의 기둥",
+    "caption": "Hubble의 상징적인 2014년 독수리 성운의 항성 생성 가스 기둥 사진입니다.",
+    "subject": "성운",
+    "type": "방출 성운 / 항성 생성 영역 (M16)",
+    "distance": "약 6,500광년",
+    "taken": "2014년"
+  },
+  "hst-mystic-mountain": {
+    "title": "신비로운 산",
+    "caption": "Carina 성운의 3광년 높이의 기둥으로, Hubble의 20주년을 기념하는 사진입니다.",
+    "subject": "성운",
+    "type": "별 생성 기둥",
+    "distance": "~7,500 광년",
+    "taken": "2010 · Hubble 20주년"
+  },
+  "hst-butterfly": {
+    "title": "나비 성운",
+    "caption": "NGC 6302 — 죽어가는 별이 내뿜은 20,000°C 이상으로 가열된 가스의 날개.",
+    "subject": "성운",
+    "type": "행성 성운(NGC 6302)",
+    "distance": "~3,400 광년",
+    "taken": "2009년"
+  },
+  "hst-antennae": {
+    "title": "안테나 은하",
+    "caption": "두 개의 은하(NGC 4038/4039)가 충돌하여 수십억 개의 새로운 별을 탄생시키고 있습니다.",
+    "subject": "은하",
+    "type": "충돌하는 은하",
+    "distance": "~4,500~6,500만 광년",
+    "taken": "2006년"
+  },
+  "hst-bubble": {
+    "title": "버블 성운",
+    "caption": "NGC 7635 — 거대한 별의 맹렬한 바람에 의해 불어낸 7광년 크기의 버블.",
+    "subject": "성운",
+    "type": "방출 성운(NGC 7635)",
+    "distance": "~7,100 광년",
+    "taken": "2016 · Hubble 26주년"
+  },
+  "hst-westerlund2": {
+    "title": "웨스터룬드 2",
+    "caption": "Hubble 25주년을 기념하는 어린 별들의 거대한 성단.",
+    "subject": "별 성단",
+    "type": "별 집단 (Gum 29)",
+    "distance": "~20,000 광년",
+    "taken": "2015 · Hubble 25주년"
+  },
+  "hst-cats-eye": {
+    "title": "고양이 눈 성운",
+    "caption": "NGC 6543 — 지금까지 관측된 가장 복잡한 행성상 성운 중 하나입니다.",
+    "subject": "성운",
+    "type": "행성상 성운 (NGC 6543)",
+    "distance": "~3,300 광년",
+    "taken": "2004년"
+  },
+  "hst-whirlpool": {
+    "title": "소용돌이 은하",
+    "caption": "M51 — 전형적인 나선 은하로, 팔은 새로 태어난 별들로 인해 분홍색으로 빛나고 있습니다.",
+    "subject": "은하",
+    "type": "나선 은하 (M51)",
+    "distance": "~31 백만 광년",
+    "taken": "2005"
+  },
+  "hst-crab": {
+    "title": "게 성운",
+    "caption": "M1 — 1054년에 폭발하는 것이 관측된 별의 산산조각난 잔해입니다.",
+    "subject": "성운",
+    "type": "초신성 잔해 (M1)",
+    "distance": "~6,500 광년",
+    "taken": "2005"
+  },
+  "hst-veil": {
+    "title": "베일 성운",
+    "caption": "Cygnus Loop의 한 가닥 — 10,000년이 지난 지금도 계속 확장하고 있는 초신성 폭발 충격파.",
+    "subject": "성운",
+    "type": "초신성 잔해 · Cygnus Loop",
+    "distance": "약 2,400광년",
+    "taken": "2015"
+  },
+  "hst-sombrero": {
+    "title": "솜브레로 은하",
+    "caption": "M104 — 어두운 먼지 고리로 감싼 밝은 흰색 핵.",
+    "subject": "은하",
+    "type": "나선 은하(M104)",
+    "distance": "약 2,800만 광년",
+    "taken": "2003"
+  },
+  "hst-eskimo": {
+    "title": "에스키모 성운",
+    "caption": "NGC 2392 — 10,000년 전에 방출한 가스 껍질로 감싼 태양 같은 별.",
+    "subject": "성운",
+    "type": "행성상 성운(NGC 2392)",
+    "distance": "약 3,000광년",
+    "taken": "2000"
+  },
+  "chandra-crab": {
+    "title": "게 성운(X선)",
+    "caption": "Chandra의 X선 눈으로 본 게의 펄서, 물질을 고리와 분출로 휘어감는 모습.",
+    "subject": "성운",
+    "type": "초신성 잔해 · X선(M1)",
+    "distance": "약 6,500광년"
+  },
+  "chandra-tycho": {
+    "title": "Tycho의 초신성 잔해",
+    "caption": "티코 브라헤가 1572년에 폭발하는 것을 목격한 별의 X선 껍질.",
+    "subject": "초신성",
+    "type": "초신성 잔해 · X선(SN 1572)",
+    "distance": "약 10,000광년"
+  },
+  "spitzer-helix": {
+    "title": "헬릭스 성운(적외선)",
+    "caption": "Spitzer가 촬영한 죽어가는 별의 먼지 고치, 700광년 떨어진 곳에 있습니다.",
+    "subject": "성운",
+    "type": "행성 성운 · 적외선",
+    "distance": "약 700광년",
+    "taken": "2007년"
+  },
+  "euclid-perseus": {
+    "title": "Perseus 성단",
+    "caption": "Euclid이 성단의 1,000개 은하와 그 뒤로 흩어진 100,000개 이상의 은하를 포착했습니다.",
+    "subject": "심부 시야",
+    "type": "은하 성단",
+    "distance": "약 2억 4,000만 광년",
+    "taken": "2023년 11월 7일 공개"
+  },
+  "euclid-horsehead": {
+    "title": "Horsehead 성운",
+    "caption": "Euclid이 촬영한 Orion의 상징적인 암흑운에 대한 파노라마 뷰입니다.",
+    "subject": "성운",
+    "type": "암흑 성운 (Barnard 33)",
+    "distance": "약 1,375광년",
+    "taken": "2023년 11월 7일 공개"
+  },
+  "pale-blue-dot": {
+    "title": "창백한 푸른 점",
+    "caption": "지구가 하나의 픽셀로 나타나며, Voyager 1이 60억 킬로미터 거리에서 촬영했습니다.",
+    "subject": "태양계",
+    "type": "단일 픽셀로 나타낸 지구",
+    "distance": "약 40.5 AU (60억 km)",
+    "taken": "1990년 2월 14일"
+  },
+  "pluto-nh": {
+    "title": "명왕성",
+    "caption": "New Horizons가 촬영한 명왕성과 질소 얼음으로 이루어진 심장 부분의 최초 실제 색상 확대 사진입니다.",
+    "subject": "태양계",
+    "type": "왜소 행성",
+    "distance": "약 34 AU (50억 km)",
+    "taken": "2015년 7월 14일"
+  },
+  "sun-sdo": {
+    "title": "태양",
+    "caption": "Solar Dynamics Observatory의 극자외선 관측으로 본 우리 별의 모습입니다.",
+    "subject": "태양",
+    "type": "태양 · 극자외선",
+    "distance": "1 AU",
+    "taken": "2010년~현재"
+  },
+  "jwst-orion": {
+    "title": "오리온 성운",
+    "caption": "오리온 성운의 내부 — Webb NIRCam으로 포착한 1,350광년 떨어진 항성 요람.",
+    "subject": "성운",
+    "type": "방출 성운(M42)",
+    "distance": "약 1,350광년",
+    "taken": "2022년 9월 12일 공개"
+  },
+  "jwst-ring": {
+    "title": "고리 성운",
+    "caption": "M57 — 생의 마지막 단계에 있는 태양 같은 별이 섬세한 세부 사항으로 빛나는 외층을 보여준다.",
+    "subject": "성운",
+    "type": "행성 성운(M57)",
+    "distance": "약 2,600광년",
+    "taken": "2023년 8월 21일 공개"
+  },
+  "jwst-serpens": {
+    "title": "뱀자리 성운",
+    "caption": "별들이 형성되는 둥지로, 뱀자리의 어두운 구름 속으로 결정질 먼지를 분사한다.",
+    "subject": "성운",
+    "type": "별 형성 지역",
+    "distance": "~1,300광년",
+    "taken": "2024년 공개"
+  },
+  "hst-lagoon": {
+    "title": "라군 성운",
+    "caption": "M8 — Hubble 28주년을 기념하는 가스와 먼지의 별 탄생지.",
+    "subject": "성운",
+    "type": "방출 성운(M8)",
+    "distance": "~4,000광년",
+    "taken": "2018 · Hubble 28주년"
+  },
+  "hst-orion": {
+    "title": "오리온 성운",
+    "caption": "M42 — 가장 가까운 대규모 항성 형성 영역에 대한 Hubble의 최고 해상도 모자이크입니다.",
+    "subject": "성운",
+    "type": "방출 성운(M42)",
+    "distance": "~1,344광년",
+    "taken": "2006년"
+  },
+  "hst-carina-pano": {
+    "title": "용골자리 성운",
+    "caption": "은하에서 가장 큰 별 공장 중 하나를 50광년 너비로 담은 전망도",
+    "subject": "성운",
+    "type": "별 형성 지역",
+    "distance": "~7,500광년",
+    "taken": "2007 · Hubble 17주년"
+  },
+  "jwst-casa": {
+    "title": "카시오페이아 A",
+    "caption": "은하에서 알려진 가장 젊은 초신성 잔해를 포착한 웹의 적외선 시야",
+    "subject": "초신성",
+    "type": "초신성 잔해",
+    "distance": "약 11,000광년",
+    "taken": "2023년 공개됨"
+  },
+  "hst-cone-nebula": {
+    "title": "콘 성운",
+    "caption": "먼 항성 생성 영역에 있는 7광년 높이의 차가운 기체 기둥.",
+    "subject": "성운",
+    "type": "방출 성운",
+    "distance": "약 2,700광년",
+    "taken": "2002년 · ACS 최초 관측"
+  },
+  "hst-omega-centauri": {
+    "title": "오메가 센타우리",
+    "caption": "하늘에서 가장 밝은 구상 성단 — 중력으로 결합된 수백만 개의 별.",
+    "subject": "성단",
+    "type": "구상 성단",
+    "distance": "약 17,000광년",
+    "taken": "2009년"
+  },
+  "jwst-ngc1365": {
+    "title": "NGC 1365",
+    "caption": "거대한 막대 나선 은하로, 그 막대가 가스를 배고픈 검은 구멍으로 유입시킨다.",
+    "subject": "은하",
+    "type": "막대 나선 은하",
+    "distance": "약 5,600만 광년",
+    "taken": "2023년"
+  },
+  "hst-ngc602": {
+    "title": "NGC 602",
+    "caption": "소마젤란 은하에서 젊은 별 성단이 빛나는 공동을 깎아내고 있다.",
+    "subject": "성단",
+    "type": "별 성단",
+    "distance": "약 200,000광년",
+    "taken": "2007 · Hubble 17주년"
+  },
+  "jwst-rho-ophiuchi": {
+    "title": "로 오피우키 성운",
+    "caption": "지구에서 가장 가까운 항성 형성 영역으로, 젊은 별들로 가득 빛나고 있습니다 — Webb의 1주년 기념 이미지입니다.",
+    "subject": "성운",
+    "type": "항성 형성 영역",
+    "distance": "약 430광년",
+    "taken": "2023년 7월 12일 공개"
+  },
+  "jwst-wr124": {
+    "title": "Wolf–Rayet 124",
+    "caption": "초신성이 되기 직전 외부 층을 방출하는 희귀한 거대 별입니다.",
+    "subject": "별",
+    "type": "Wolf–Rayet 별",
+    "distance": "약 15,000광년",
+    "taken": "2023년 3월 14일 공개"
+  },
+  "hst-cosmic-reef": {
+    "title": "우주 산호초",
+    "caption": "NGC 2014와 NGC 2020 — Hubble의 30주년 기념으로 촬영한 발광 수소의 산호초입니다.",
+    "subject": "성운",
+    "type": "방출 성운",
+    "distance": "약 163,000광년",
+    "taken": "2020 · Hubble 30주년"
+  },
+  "hst-hen2104": {
+    "title": "남쪽 게 성운",
+    "caption": "죽어가는 별과 그 동반별이 방출한 모래시계 모양의 가스층입니다.",
+    "subject": "성운",
+    "type": "행성 성운",
+    "distance": "약 7,000광년",
+    "taken": "2019 · Hubble 29주년"
+  },
+  "hst-monkey-head": {
+    "title": "원숭이 머리 성운",
+    "caption": "NGC 2174 — 신생 별들의 복사에 의해 조각된 먼지 기둥들.",
+    "subject": "성운",
+    "type": "방출 성운",
+    "distance": "약 6,400광년",
+    "taken": "2014 · Hubble 24주년"
+  },
+  "hst-andromeda": {
+    "title": "안드로메다 은하",
+    "caption": "우리의 가장 가까운 대형 이웃에 대한 Hubble의 가장 선명한 전망 — 1억 개 이상의 별들.",
+    "subject": "은하",
+    "type": "나선 은하",
+    "distance": "약 250만 광년",
+    "taken": "2015 · PHAT"
+  },
+  "hst-pinwheel": {
+    "title": "핀휠 은하",
+    "caption": "M101 — 정면을 향한 거대한 나선으로, 그 팔은 분홍색 별 형성 영역들로 빼곡하다.",
+    "subject": "은하",
+    "type": "나선 은하",
+    "distance": "약 2,100만 광년",
+    "taken": "2006년"
+  },
+  "hst-ngc1300": {
+    "title": "NGC 1300",
+    "caption": "교과서적인 막대 나선으로, 그 팔은 길이 20만 광년의 막대 주위에 감겨 있다.",
+    "subject": "은하",
+    "type": "막대 나선 은하",
+    "distance": "약 6,100만 광년",
+    "taken": "2005"
+  },
+  "jwst-ngc604": {
+    "title": "NGC 604",
+    "caption": "삼각형 은하계 속 200개 이상의 뜨거운 어린 별들이 깎아낸 가스와 먼지의 동굴.",
+    "subject": "성운",
+    "type": "별 형성 영역",
+    "distance": "약 270만 광년",
+    "taken": "2024년 공개"
+  },
+  "jwst-ngc346": {
+    "title": "NGC 346",
+    "caption": "소마젤란 은하를 밝혀주는 어린 별들의 찬란한 집단.",
+    "subject": "성단",
+    "type": "별 성단",
+    "distance": "약 200,000광년",
+    "taken": "2023년 공개"
+  },
+  "euclid-ic342": {
+    "title": "숨은 은하",
+    "caption": "IC 342 — 은하수의 먼지 뒤에 숨은 나선은하를 Euclid가 드러냈다.",
+    "subject": "은하",
+    "type": "나선은하",
+    "distance": "약 1,100만 광년",
+    "taken": "2024년 공개"
+  },
+  "hst-v838": {
+    "title": "V838 Monocerotis",
+    "caption": "갑자기 밝아진 별 주변의 먼지를 통해 바깥쪽으로 퍼져나가는 빛의 메아리.",
+    "subject": "성운",
+    "type": "빛의 메아리",
+    "distance": "약 20,000광년",
+    "taken": "2004년"
+  }
+}

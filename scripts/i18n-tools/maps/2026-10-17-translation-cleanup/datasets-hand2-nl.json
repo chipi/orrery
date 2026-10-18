@@ -1,0 +1,302 @@
+[
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/exo-microlensing_webp.title",
+    "old": "Exo Microlensing",
+    "new": "Exo-microlensing"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/frames_webp.title",
+    "old": "Frames",
+    "new": "Referentiestelsels"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/lifting-entry_webp.title",
+    "old": "Lifting Entry",
+    "new": "Terugkeer met lift"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/light-minute_webp.title",
+    "old": "Light Minute",
+    "new": "Lichtminuut"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/long-duration_webp.title",
+    "old": "Long Duration",
+    "new": "Langdurige vluchten"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/lunar-ice_webp.title",
+    "old": "Lunar Ice",
+    "new": "Maanijs"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/lunar-suits_webp.title",
+    "old": "Lunar Suits",
+    "new": "Maanpakken"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/microgravity-physiology_webp.title",
+    "old": "Microgravity Physiology",
+    "new": "Fysiologie in microzwaartekracht"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/mission-types_webp.title",
+    "old": "Mission Types",
+    "new": "Missietypen"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/node-module_webp.title",
+    "old": "Node Module",
+    "new": "Knooppuntmodule"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/nuclear-thermal_webp.title",
+    "old": "Nuclear Thermal",
+    "new": "Nucleair-thermische aandrijving"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/oberth-effect_webp.title",
+    "old": "Oberth Effect",
+    "new": "Oberth-effect"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/optical-comms_webp.title",
+    "old": "Optical Comms",
+    "new": "Optische communicatie"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/orbit-insertion_webp.title",
+    "old": "Orbit Insertion",
+    "new": "Intrede in de baan"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/orbit-regimes_webp.title",
+    "old": "Orbit Regimes",
+    "new": "Baanregimes"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/our-galaxy_webp.title",
+    "old": "Our Galaxy",
+    "new": "Ons Melkwegstelsel"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/patched-conics_webp.title",
+    "old": "Patched Conics",
+    "new": "Aaneengeschakelde kegelsneden"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/porkchop_webp.title",
+    "old": "Porkchop",
+    "new": "Porkchopdiagram"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/pressurized-volume_webp.title",
+    "old": "Pressurized Volume",
+    "new": "Drukvolume"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/propulsive-landing_webp.title",
+    "old": "Propulsive Landing",
+    "new": "Aangedreven landing"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/regolith_webp.title",
+    "old": "Regolith",
+    "new": "Regoliet"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/semi-major-axis_webp.title",
+    "old": "Semi Major Axis",
+    "new": "Halve lange as"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/sidereal-synodic_webp.title",
+    "old": "Sidereal Synodic",
+    "new": "Siderisch en synodisch"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/skip-entry_webp.title",
+    "old": "Skip Entry",
+    "new": "Skip-terugkeer"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/_cover-porkchop_svg.title",
+    "old": "Porkchop",
+    "new": "Porkchopdiagram"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-cartwheel.title",
+    "old": "Cartwheel Galaxy",
+    "new": "Wagenwielstelsel"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-phantom.title",
+    "old": "Phantom Galaxy",
+    "new": "Fantoomstelsel"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-mystic-mountain.title",
+    "old": "Mystic Mountain",
+    "new": "Mystieke Berg"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "euclid-perseus.title",
+    "old": "Perseus Cluster",
+    "new": "Perseuscluster"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-cone-nebula.taken",
+    "old": "2002 · ACS first light",
+    "new": "2002 · eerste licht van ACS"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-rho-ophiuchi.title",
+    "old": "Rho Ophiuchi Cloud",
+    "new": "Rho Ophiuchi-wolk"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-monkey-head.taken",
+    "old": "2014 · Hubble 24th",
+    "new": "2014 · Hubble 24ste"
+  },
+  {
+    "rel": "trajectories/new-horizons.json",
+    "at": "waypoints.1.label",
+    "old": "Asteroid APL",
+    "new": "Planetoïde APL"
+  },
+  {
+    "rel": "trajectories/new-horizons.json",
+    "at": "waypoints.4.label",
+    "old": "Jupiter assist",
+    "new": "Zwaartekrachtslinger Jupiter"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-01dea29ff9ad.title",
+    "old": "Apollo 13 — \"Houston, we've had a problem\"",
+    "new": "Apollo 13 — \"Houston, we hebben een probleem gehad\""
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-3fe77da86ce8.title",
+    "old": "Hubble — Servicing Mission 1",
+    "new": "Hubble — Onderhoudsmissie 1"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-7170adc7d99b.title",
+    "old": "Phoenix — Mars landing",
+    "new": "Phoenix — Marslanding"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-be542e537390.title",
+    "old": "Apollo 8 — Earthrise",
+    "new": "Apollo 8 — Aardopkomst"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/exomars-rosalind-franklin_webp.title",
+    "old": "Rosalind Franklin (ExoMars rover)",
+    "new": "Rosalind Franklin (ExoMars-rover)"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/hakuto-r_webp.title",
+    "old": "Hakuto-R program",
+    "new": "Hakuto-R-programma"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/hubble_webp.title",
+    "old": "Hubble Space Telescope",
+    "new": "Hubble-ruimtetelescoop"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/luna-16_webp.title",
+    "old": "Luna 16-class",
+    "new": "Luna 16-klasse"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-skycrane_webp.title",
+    "old": "Mars skycrane",
+    "new": "Mars-skycrane"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-venus-aeroshell_webp.title",
+    "old": "Venus aeroshell",
+    "new": "Venus-hitteschild"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-cruise-viking1_webp.title",
+    "old": "Viking orbiter + lander",
+    "new": "Viking-orbiter + lander"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-cruise-mars3_webp.title",
+    "old": "Mars 3 bus",
+    "new": "Mars 3-bus"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-cruise-hayabusa1_webp.title",
+    "old": "Hayabusa cruise",
+    "new": "Hayabusa-kruisfase"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-cruise-osiris-rex_webp.title",
+    "old": "OSIRIS-REx cruise",
+    "new": "OSIRIS-REx-kruisfase"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "capsules./images/colophon/model-capsule-apollo-cm_webp.title",
+    "old": "Apollo Command Module",
+    "new": "Apollo-commandomodule"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "lab_illustrations./images/lab/goals/apollo-round-trip_webp.title",
+    "old": "Apollo Round Trip",
+    "new": "Apollo: heen en terug"
+  }
+]

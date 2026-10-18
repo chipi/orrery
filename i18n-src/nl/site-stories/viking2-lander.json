@@ -1,0 +1,54 @@
+{
+  "intro": "Viking 2 landde op 3 september 1976 in Utopia Planitia — de tweede van de twee identieke Viking-landers, aan de andere kant van Mars dan Viking 1. De missie van 1.316 sols omvatte de eerste waarneming van waterijsvorst op Mars (tijdens de poolwinter) en een herhaling van de biologie-experimenten van Viking 1, op een veel koudere locatie op hogere breedte. In april 1980 aan zijn einde gekomen door een defecte accu.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Tweeling van Viking 1, identieke instrumenten",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/01.webp",
+          "caption": "De Viking 2-lander op het oppervlak van Mars in Utopia Planitia."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Utopia Planitia — geland op 3 september 1976",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier3-pan.jpg",
+          "caption": "360°-cameramozaïek van Utopia Planitia — vlakker, rotsachtiger terrein dan Viking 1's landingsplaats in Chryse."
+        },
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier2-hirise.jpg",
+          "caption": "De Viking 2-lander, tientallen jaren na het einde van de missie vanuit een baan om Mars gefotografeerd door MRO HiRISE."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/02.webp",
+          "caption": "Kleurenbeeld van Utopia Planitia — Andrea Luck bewerkte de Viking 2-beelden opnieuw op basis van opnameplaten uit het NASA-archief."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wetenschap",
+      "subtitle": "Vorst, stofstormen en de eerste Marswinter",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/03.webp",
+          "caption": "Waterijsvorst op de rotsen rond de Viking 2-lander — de eerste waarneming van dien aard in de winter van het Marsiaanse noordpoolgebied (sol 1230)."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/04.webp",
+          "caption": "Zonsopgang in Utopia Planitia (PIA00576) — de camera van Viking 2 legde de gloed vlak voor zonsopgang vast op hoge noorderbreedte."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/05.webp",
+          "caption": "Vorst in Utopia Planitia (NASA Viking Lander 2) — opnieuw bewerkt door Andrea Luck."
+        }
+      ]
+    }
+  ]
+}

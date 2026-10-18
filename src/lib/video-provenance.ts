@@ -14,6 +14,8 @@
  * `last_verified`, live-feed pins) will grow.
  */
 import { base } from '$app/paths';
+import { get } from '$lib/data/core';
+import { getLocale } from '$lib/paraglide/runtime';
 
 const VIDEO_PROVENANCE_URL_PATH = 'video-provenance.json';
 
@@ -60,7 +62,26 @@ export interface VideoProvenanceManifest {
   entries: VideoProvenanceEntry[];
 }
 
+/** Locale overlay (i18n-src/<locale>/videos.json): title + caption by video id. */
+export type VideoOverlay = Record<string, { title?: string; caption?: string }>;
+
+/** Apply a locale overlay to the manifest; untranslated clips keep the English. */
+export function localizeVideos(
+  m: VideoProvenanceManifest,
+  overlay: VideoOverlay | null | undefined,
+): VideoProvenanceManifest {
+  if (!overlay) return m;
+  return {
+    ...m,
+    entries: m.entries.map((e) => {
+      const o = overlay[e.id];
+      return o ? { ...e, title: o.title || e.title, caption: o.caption || e.caption } : e;
+    }),
+  };
+}
+
 let manifest: VideoProvenanceManifest | null = null;
+let manifestLocale: string | null = null;
 let byId: Map<string, VideoProvenanceEntry> | null = null;
 let byEntity: Map<string, VideoProvenanceEntry[]> | null = null;
 
@@ -75,12 +96,19 @@ function index(m: VideoProvenanceManifest): void {
 }
 
 export async function getVideoManifest(): Promise<VideoProvenanceManifest | null> {
-  if (manifest) return manifest;
+  const locale = getLocale();
+  if (manifest && manifestLocale === locale) return manifest;
   try {
     const res = await fetch(`${base}/data/${VIDEO_PROVENANCE_URL_PATH}`);
     if (!res.ok) return null;
-    const m = (await res.json()) as VideoProvenanceManifest;
+    let m = (await res.json()) as VideoProvenanceManifest;
+    if (locale !== 'en-US')
+      m = localizeVideos(
+        m,
+        await get<VideoOverlay>(`i18n/${locale}/videos.json`).catch(() => null),
+      );
     manifest = m;
+    manifestLocale = locale;
     index(m);
     return m;
   } catch {
@@ -159,6 +187,7 @@ export function posterUrlFor(entry: VideoProvenanceEntry): string | null {
 /** Test-only: drop the module-singleton cache. */
 export function __resetVideoProvenanceCache(): void {
   manifest = null;
+  manifestLocale = null;
   byId = null;
   byEntity = null;
 }

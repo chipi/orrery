@@ -1,0 +1,61 @@
+{
+  "intro": "Viking 1 si posò su Chryse Planitia il 20 luglio 1976, il primo lander statunitense a operare con successo su Marte, esattamente sette anni dopo l'Apollo 11. La sua missione in superficie, di 2.245 sol (6,3 anni), comprese le prime immagini a colori da Marte, i primi esperimenti di biologia in situ (dai risultati ambigui) e una registrazione meteorologica quotidiana. L'ultima trasmissione risale al novembre 1982, dopo che il caricamento di un comando sovrascrisse per errore i parametri di puntamento dell'antenna.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Coppia lander + orbiter, alimentata da RTG, ~600 kg",
+      "images": [
+        {
+          "src": "/images/missions/viking1/01.webp",
+          "caption": "Il lander Viking 1 durante i test pre-volo: l'RTG è visibile sul retro, il braccio di campionamento della superficie è esteso."
+        },
+        {
+          "src": "/images/missions/viking1/02.webp",
+          "caption": "Dispiegamento di un modello del braccio di campionamento della superficie nell'ambiente di test del JPL."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "20 agosto 1975 — Titan IIIE da Cape Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/viking1/03.webp",
+          "caption": "Il Titan IIIE / Centaur lancia Viking 1: 10 mesi di viaggio, inserimento in orbita attorno a Marte a giugno 1976, atterraggio del lander il 20 luglio."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Chryse Planitia — atterraggio il 20 luglio 1976",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier3-pan.jpg",
+          "caption": "Panorama a 360° di Chryse Planitia: il primo paesaggio a colori dalla superficie di un altro pianeta."
+        },
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier2-hirise.jpg",
+          "caption": "Il lander Viking 1, fotografato dall'orbita più di 30 anni dopo da HiRISE a bordo di MRO: la prima immagine di «archeologia dell'hardware» di una missione su Marte degli anni Settanta."
+        },
+        {
+          "src": "/images/missions/viking1/04.webp",
+          "caption": "Prima veduta della superficie marziana, ripresa pochi minuti dopo l'atterraggio dalla Camera 2."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Scienza",
+      "subtitle": "Esperimenti di biologia, meteorologia e la ricerca della vita",
+      "images": [
+        {
+          "src": "/images/missions/viking1/05.webp",
+          "caption": "Trincea scavata dal campionatore di superficie: gli esperimenti di biologia di Viking cercarono composti organici (nessuno rilevato; il risultato è ancora dibattuto)."
+        }
+      ]
+    }
+  ]
+}

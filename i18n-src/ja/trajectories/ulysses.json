@@ -1,0 +1,30 @@
+{
+  "name": "Ulysses",
+  "current_distance_label": "5.2 AU · ミッション終了 2009-06-30（スラスタ配管が凍結）— ハードウェアは極太陽中心軌道に位置",
+  "waypoints": [
+    {
+      "label": "打上（STS-41）"
+    },
+    null,
+    {
+      "label": "木星フライバイ"
+    },
+    null,
+    {
+      "label": "南極通過"
+    },
+    {
+      "label": "北極通過"
+    },
+    null,
+    {
+      "label": "南極通過 #2"
+    },
+    {
+      "label": "南極通過 #3"
+    },
+    {
+      "label": "ミッション終了"
+    }
+  ]
+}

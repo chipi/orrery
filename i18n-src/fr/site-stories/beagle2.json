@@ -1,0 +1,50 @@
+{
+  "intro": "Beagle 2 était un petit atterrisseur de l'ESA, dirigé par le Royaume-Uni, largué par Mars Express le 19 décembre 2003 — et devenu silencieux six jours plus tard, présumé écrasé. Pendant 12 ans, son sort est resté inconnu. Le 16 janvier 2015, la caméra HiRISE de la NASA a repéré l'atterrisseur à la surface, intact, mais dont les panneaux solaires, seulement partiellement déployés, bloquaient l'antenne. Un atterrissage réussi, mais aucun moyen de donner de ses nouvelles. Cette découverte a réhabilité la mission, désormais considérée comme un succès partiel.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "33 kg, le plus petit atterrisseur interplanétaire jamais tenté",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/01.webp",
+          "caption": "Rendu de l'atterrisseur Beagle 2 — panneaux solaires à déploiement en pétales + Pillinger Lab + instruments atmosphériques à l'intérieur de la coque en forme de coquillage."
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/03.webp",
+          "caption": "Réplique terrestre de Beagle 2 exposée au public — elle donne une idée de la forme compacte de l'atterrisseur, semblable à un frisbee."
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/05.webp",
+          "caption": "Modèle d'ingénierie de Beagle 2 au Spaceport, à Seacombe — pétales solaires entièrement ouverts, comme prévu."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Le lancement",
+      "subtitle": "2 juin 2003 — Soyuz/Fregat depuis Baïkonour, en passager de Mars Express",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/02.webp",
+          "caption": "Séparation de Beagle 2 et de Mars Express, le 19 décembre 2003 — six jours avant l'atterrissage prévu, sur une trajectoire d'entrée balistique."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Isidis Planitia — posé (sans communication) le 25 décembre 2003",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/04.webp",
+          "caption": "Beagle 2 retrouvé ! Image de HiRISE à bord de MRO (janvier 2015) — déploiement partiel des panneaux solaires visible, antenne bloquée, matériel intact. Un mystère de 12 ans résolu."
+        },
+        {
+          "src": "/images/hotspots/mars/beagle2/tier2-hirise.jpg",
+          "caption": "Détail HiRISE du site d'atterrissage de Beagle 2 dans Isidis Planitia — à cette échelle, l'atterrisseur lui-même n'est qu'un point inférieur au pixel ; pour le repérer, il faut recouper plusieurs scènes sous plusieurs éclairages."
+        }
+      ]
+    }
+  ]
+}

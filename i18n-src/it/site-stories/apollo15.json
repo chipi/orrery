@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 15 allunò presso il solco Hadley, sui monti Appennini il 30 luglio 1971: fu la prima missione \"classe J\", con una permanenza prolungata in superficie, il Lunar Roving Vehicle (LRV) e un pilota addestrato come scienziato (David Scott). Scott e Irwin percorsero in totale 28 km in tre EVA, trovarono la Genesis Rock (anortosite di circa 4,1 Ga, crosta primaria) e, in diretta TV, lasciarono cadere una piuma e un martello per dimostrare l'esperimento di Galileo sulla gravità.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Endeavour + Falcon + LRV-1 (la prima automobile lunare)",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/01.webp",
+          "caption": "L'equipaggio dell'Apollo 15 e il Lunar Roving Vehicle durante l'addestramento pre-missione: Scott e Irwin avrebbero guidato le prime ruote sulla Luna."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Hadley-Apennine — allunaggio il 30 luglio 1971",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/02.webp",
+          "caption": "Jim Irwin fa il saluto accanto all'LRV, con Mt Hadley Delta alle spalle: le prime immagini degli Apennine Mountains riprese dalla superficie."
+        },
+        {
+          "src": "/images/missions/apollo15/03.webp",
+          "caption": "David Scott sul bordo del solco Hadley: per la prima volta degli astronauti si trovarono sull'orlo di un antico canale di lava su un altro mondo."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
+          "caption": "Panorama di Hadley Plain: lo stadio di discesa di Falcon, l'LRV e Mt Hadley Delta all'orizzonte."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Scienza",
+      "subtitle": "Genesis Rock + esperimento di Galileo",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/04.webp",
+          "caption": "Campione 15415 \"Genesis Rock\": anortosite ferrosa pura, vecchia di circa 4,1 miliardi di anni. Un frammento della crosta primaria dell'oceano di magma della Luna."
+        }
+      ]
+    }
+  ]
+}

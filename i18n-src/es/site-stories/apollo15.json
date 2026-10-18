@@ -1,0 +1,46 @@
+{
+  "intro": "El Apollo 15 alunizó junto al surco Hadley, en los montes Apeninos el 30 de julio de 1971: la primera misión «clase J», con una estancia prolongada en la superficie, el Lunar Roving Vehicle (LRV) y un piloto con formación científica (David Scott). Scott e Irwin recorrieron en total 28 km a lo largo de tres EVA, hallaron la Genesis Rock (anortosita de ~4100 millones de años, corteza primaria) y, en directo por televisión, soltaron una pluma y un martillo para reproducir el experimento de gravedad de Galileo.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Endeavour + Falcon + LRV-1 (el primer coche lunar)",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/01.webp",
+          "caption": "La tripulación del Apollo 15 y el Lunar Roving Vehicle durante el entrenamiento previo a la misión: Scott e Irwin conducirían las primeras ruedas sobre la Luna."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Hadley-Apennine: alunizaje el 30 de julio de 1971",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/02.webp",
+          "caption": "Jim Irwin hace el saludo junto al LRV con Mt Hadley Delta al fondo: las primeras imágenes de los Apennine Mountains tomadas desde la superficie."
+        },
+        {
+          "src": "/images/missions/apollo15/03.webp",
+          "caption": "David Scott en el borde del surco Hadley: la primera vez que unos astronautas se plantaron al borde de un antiguo canal de lava en otro mundo."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
+          "caption": "Panorámica de Hadley Plain: la etapa de descenso del Falcon, el LRV y Mt Hadley Delta en el horizonte."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciencia",
+      "subtitle": "Genesis Rock + experimento de Galileo",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/04.webp",
+          "caption": "Muestra 15415 «Genesis Rock»: anortosita ferrosa pura de ~4100 millones de años. Un fragmento de la corteza primaria del océano de magma de la Luna."
+        }
+      ]
+    }
+  ]
+}

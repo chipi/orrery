@@ -1,0 +1,50 @@
+[
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/mercury-capsule_webp.title",
+    "old": "Mercury capsule",
+    "new": "Капсула Mercury"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/proton-k_webp.title",
+    "old": "Proton-K",
+    "new": "Протон-К"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/venera-13_webp.title",
+    "old": "Venera 13",
+    "new": "Венера-13"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/vostok_webp.title",
+    "old": "Vostok",
+    "new": "Восток"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-cassini_webp.where",
+    "old": "Fly + Explore",
+    "new": "Полёт + Исследование"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-voyager-1_webp.where",
+    "old": "Fly + Explore",
+    "new": "Полёт + Исследование"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-venera-13_webp.title",
+    "old": "Venera 13",
+    "new": "Венера-13"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-moon-luna-9_webp.title",
+    "old": "Luna 9",
+    "new": "«Луна-9»"
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "name": "Pioneer 10",
+  "current_distance_label": "太陽から135 AU・光時で約18.8時間（最後の交信 2003年1月23日）",
+  "interstellar_since_label": "最後の交信は2003年—タウルス座に向かってコースティング中、約200万年後にアルデバラン近くを通過予定",
+  "waypoints": [
+    {
+      "label": "打上げ"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "木星"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "冥王星の軌道を通過"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "最後の交信"
+    },
+    null,
+    null,
+    {
+      "label": "現在"
+    }
+  ]
+}

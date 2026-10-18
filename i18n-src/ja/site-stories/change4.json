@@ -1,0 +1,46 @@
+{
+  "intro": "Chang'e 4は2019年1月3日、フォン・カルマン・クレーターに着陸した。地球がまったく見えない月の裏側への、人類初の軟着陸である。通信は、L2に待機する中継衛星Queqiaoを介して行われた。搭載されていた探査車Yutu-2は1.5km以上を走破し、2026年の今も稼働を続けている。月面ミッションとしては史上最長の稼働記録だ。南極エイトケン basinでは、手つかずのマントル物質が見つかった。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "史上初の月裏側着陸機とL2中継衛星(Queqiao)",
+      "images": [
+        {
+          "src": "/images/missions/change4/01.webp",
+          "caption": "北京での打ち上げ前の統合作業中の、Chang'e 4着陸機とYutu-2探査車。"
+        },
+        {
+          "src": "/images/missions/change4/02.webp",
+          "caption": "中継衛星Queqiao(L2)——これがなければ、Chang'e 4は地球と交信できなかった。中国は月の裏側へ向かう前に、月の通信インフラを整えたのだ。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "フォン・カルマン・クレーター(月の裏側)——2019年1月3日着陸",
+      "images": [
+        {
+          "src": "/images/missions/change4/03.webp",
+          "caption": "Chang'e 4着陸機が撮影したYutu-2探査車。月の裏側に刻まれた、初めての車輪の跡である。"
+        },
+        {
+          "src": "/images/missions/change4/04.webp",
+          "caption": "Yutu-2が月面にある ガラス質のビーズを調べている。遠方のクレーター形成イベントで生じた、衝突溶融物の破片とみられる。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "南極エイトケン basinのマントル物質",
+      "images": [
+        {
+          "src": "/images/missions/change4/05.webp",
+          "caption": "VNISのスペクトルから、かんらん石と低カルシウム輝石が検出された。約42億年前のSPA盆地を形成した衝突によって露出した、月のマントルの鉱物である。"
+        }
+      ]
+    }
+  ]
+}

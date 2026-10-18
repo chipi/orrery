@@ -1,0 +1,61 @@
+{
+  "intro": "InSight 于2018年11月26日降落在埃律西昂平原——这是火星上第一座地球物理观测站。四年间，任务通过 SEIS 地震仪监听火星地震，记录到1300多次震动，以前所未有的细节揭示了这颗行星的核、幔和壳。鼹鼠钻探装置（HP³）未能成功钻入地下，但 SEIS 的出色表现足以弥补这一遗憾。2022年12月，积尘覆盖太阳能电池板，任务就此结束。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "首个聚焦火星内部的火星任务",
+      "images": [
+        {
+          "src": "/images/missions/insight/01.webp",
+          "caption": "InSight 在 Lockheed Martin 总装期间——与 Phoenix 采用相同的着陆器平台，改作地球物理探测之用。"
+        },
+        {
+          "src": "/images/missions/insight/02.webp",
+          "caption": "SEIS 地震仪与 WTS 风热屏蔽罩，由机械臂部署到火星表面——这是另一颗行星上的第一台地震仪。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "2018年5月5日——Atlas V 自范登堡空军基地升空",
+      "images": [
+        {
+          "src": "/images/missions/insight/03.webp",
+          "caption": "Atlas V 401 自范登堡的 SLC-3E 发射台升空——这是美国西海岸首次星际发射。MarCO CubeSats 随行飞行，担任通信中继。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "表面",
+      "subtitle": "埃律西昂平原——2018年11月26日着陆",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/insight/tier3-pan.jpg",
+          "caption": "Homestead Hollow 工作区，第14个火星日——Instrument Deployment Camera 拍摄的290°全景。SEIS 已放置在地面上，位于左下方。"
+        },
+        {
+          "src": "/images/fleet-galleries/insight/02.webp",
+          "caption": "首张火星自拍合成图——SEIS 和 HP³ 部署完成后的 InSight 甲板，第110个火星日。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "1319次火星地震——揭示这颗行星的内部",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/insight/03.webp",
+          "caption": "2022年5月4日4.7级火星地震的地震图——这是有记录以来最大的一次地震，震源位于科柏洛斯槽沟断层系统。"
+        },
+        {
+          "src": "/images/fleet-galleries/insight/04.webp",
+          "caption": "InSight 的最后一张自拍，第1211个火星日——太阳能电池板上覆满尘埃。最后一次传输于2022年12月15日。"
+        }
+      ]
+    }
+  ]
+}

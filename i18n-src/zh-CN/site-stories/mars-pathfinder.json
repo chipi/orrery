@@ -1,0 +1,50 @@
+{
+  "intro": "Mars Pathfinder 于1997年7月4日降落在阿瑞斯谷——这是自21年前 Viking 任务以来美国首次执行的火星任务。着陆器部署了 Sojourner,这是火星上的第一副车轮,验证了气囊着陆加巡视探测的方案。这项“又快、又好、又省”的低成本任务仅耗资2.65亿美元,共传回约16,500张图像。在着陆器停止工作之前,Sojourner 行驶了100米,绘制出十二块以卡通人物命名的岩石(Yogi、Barnacle Bill、Scooby Doo)。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "首辆火星车,也是自 Viking 以来美国首个火星着陆器",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/01.webp",
+          "caption": "Pathfinder 发射前测试期间——基站,以及供 Sojourner 驶出的花瓣式展开坡道。"
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/02.webp",
+          "caption": "Sojourner 微型火星车——重11.5千克,6个车轮,太阳能供电,设计工作7个火星日(实际工作了83个)。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "1996年12月4日——Delta II 自卡纳维拉尔角发射",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/03.webp",
+          "caption": "Delta II 7925 运载火箭发射 Pathfinder,开启为期7个月的火星转移飞行。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "阿瑞斯谷——1997年7月4日着陆",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg",
+          "caption": "改进版总统全景图——阿瑞斯谷的360°彩色全景。地平线上可见 Twin Peaks(得名于那部电视剧)。"
+        },
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg",
+          "caption": "数十年后,MRO HiRISE 从轨道上拍到了 Pathfinder 着陆器——可见花瓣状着陆板以及 Sojourner 最后已知的位置。"
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/04.webp",
+          "caption": "Sojourner 正在检测 Yogi 岩石——人类首次对火星地表进行近距离化学分析。"
+        }
+      ]
+    }
+  ]
+}

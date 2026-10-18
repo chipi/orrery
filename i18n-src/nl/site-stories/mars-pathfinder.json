@@ -1,0 +1,50 @@
+{
+  "intro": "Mars Pathfinder landde op 4 juli 1997 in Ares Vallis — de eerste Amerikaanse missie naar Mars sinds de Viking-missies 21 jaar eerder. De lander zette Sojourner af, de eerste wielen op Mars, en toonde daarmee dat landen met airbags en rondrijden over de oppervlakte mogelijk was, in een low-cost \"faster-better-cheaper\"-missie van 265 miljoen dollar die ~16.500 beelden terugstuurde. Sojourners tocht van 100 meter bracht twaalf rotsen in kaart, vernoemd naar stripfiguren (Yogi, Barnacle Bill, Scooby Doo), voordat de lander uitviel.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Eerste Marsrover — en de eerste Amerikaanse Marslander sinds Viking",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/01.webp",
+          "caption": "Pathfinder tijdens tests vóór de lancering — basisstation + uitklapbare ramps van de bloemblaadjes voor Sojourner."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/02.webp",
+          "caption": "De microrover Sojourner — 11,5 kg, 6 wielen, zonne-energie, ontworpen om 7 sols te functioneren (hield het 83 vol)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "4 december 1996 — Delta II vanaf Cape Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/03.webp",
+          "caption": "Een Delta II 7925 lanceert Pathfinder op zijn reis van 7 maanden naar Mars."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Ares Vallis — geland op 4 juli 1997",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg",
+          "caption": "Improved Presidential Panorama — kleurenbeeld van 360° van Ares Vallis. Aan de horizon zijn de Twin Peaks te zien (genoemd naar de tv-serie)."
+        },
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg",
+          "caption": "De Pathfinder-lander decennia later vanuit een baan om Mars vastgelegd door MRO HiRISE — de bloemblaadjes + Sojourners laatst bekende positie zijn zichtbaar."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/04.webp",
+          "caption": "Sojourner onderzoekt de rots Yogi — de eerste chemische analyse van dichtbij op Marsterrein."
+        }
+      ]
+    }
+  ]
+}

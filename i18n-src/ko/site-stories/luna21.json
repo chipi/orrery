@@ -1,0 +1,39 @@
+{
+  "intro": "Luna 21은 1973년 1월 15일 르 모니에 분화구에 착륙해, 세계 최초의 달 탐사 로버의 후속기인 Lunokhod 2를 내려놓았다. Lunokhod 2는 4개월 동안 42.1km를 주행했는데, 이 기록은 41년 뒤인 2014년 7월 NASA의 Opportunity가 화성에서 넘어서기 전까지 깨지지 않았다. 레골리스 더미가 방열판 위로 쏟아져 로버가 과열되기 전까지, 8만 장의 TV 영상과 86회의 파노라마 촬영 자료를 지구로 보냈다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "Lunokhod 2 — 달 지표 주행 기록(42km)에 도전하다",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/01.webp",
+          "caption": "Lunokhod 2 — Lunokhod 1보다 개선된 모델: 더 많은 카메라, 더 정밀한 조향 제어, 3축 매니퓰레이터, 더 큰 태양 전지판."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/02.webp",
+          "caption": "출하를 앞두고 준비 중인 Lunokhod 2 섀시 — 독립 구동 바퀴 모터 8개로, 각각 자체 토크 피드백 제어 루프를 갖추고 있다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "르 모니에 분화구 — 1973년 1월 15일 착륙",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/03.webp",
+          "caption": "파노라마 카메라로 촬영한 Lunokhod 2 — 긴 그림자가 달 표면 위로 길게 드리워져 있다."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/04.webp",
+          "caption": "42.1km 주행 경로 지도 — 로버는 달의 바다 지역의 현무암 평원을 가로지르고, 크레이터 벽을 오르며, 네 번의 달의 낮 동안 수십 개의 암석을 조사했다."
+        },
+        {
+          "src": "/images/fleet-galleries/lunokhod-2/05.webp",
+          "caption": "2010년 LRO가 촬영한 최종 위치 — 가파른 크레이터 벽에서 흘러내린 레골리스가 방열판을 뒤덮은 뒤 Lunokhod 2는 그 자리에 멈춰 섰다."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "intro": "Viking 2 si posò su Utopia Planitia il 3 settembre 1976: era il secondo dei due lander gemelli Viking, sul lato opposto di Marte rispetto a Viking 1. La sua missione di 1.316 sol comprese la prima osservazione di brina di ghiaccio d'acqua su Marte (durante l'inverno polare) e la ripetizione degli esperimenti di biologia di Viking 1 in un sito molto più freddo e a latitudine più elevata. Fu messo fuori uso nell'aprile 1980 da un guasto alla batteria.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Gemello di Viking 1, strumenti identici",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/01.webp",
+          "caption": "Il lander Viking 2 sulla superficie di Marte a Utopia Planitia."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Utopia Planitia — atterraggio il 3 settembre 1976",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier3-pan.jpg",
+          "caption": "Mosaico a 360° delle fotocamere su Utopia Planitia: un terreno più piatto e roccioso rispetto al sito di Viking 1 a Chryse."
+        },
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier2-hirise.jpg",
+          "caption": "Il lander Viking 2 fotografato dall'orbita da MRO HiRISE decenni dopo la fine della missione."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/02.webp",
+          "caption": "Veduta a colori di Utopia Planitia: Andrea Luck ha rielaborato le immagini di Viking 2 a partire dalle lastre dell'archivio NASA."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Scienza",
+      "subtitle": "Brina, tempeste di polvere e il primo inverno marziano",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/03.webp",
+          "caption": "Brina di ghiaccio d'acqua che ricopre le rocce attorno al lander Viking 2: la prima osservazione del genere nell'inverno artico marziano (sol 1230)."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/04.webp",
+          "caption": "Alba su Utopia Planitia (PIA00576): la fotocamera di Viking 2 ha catturato il bagliore prima dell'alba alle alte latitudini settentrionali."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/05.webp",
+          "caption": "Brina su Utopia Planitia (NASA Viking Lander 2), rielaborata da Andrea Luck."
+        }
+      ]
+    }
+  ]
+}

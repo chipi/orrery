@@ -1,0 +1,50 @@
+{
+  "intro": "Mars Pathfinder는 1997년 7월 4일 아레스 계곡에 착륙했습니다. 21년 전 Viking 이후 처음으로 이루어진 미국의 화성 탐사 임무였습니다. 착륙선은 화성 최초의 바퀴인 Sojourner를 내보냈고, 에어백 착륙과 로버 주행을 함께 입증했습니다. 2억 6,500만 달러가 투입된 \"더 빠르게, 더 낫게, 더 저렴하게\" 방식의 저비용 임무였으며, 약 16,500장의 이미지를 보내왔습니다. Sojourner는 약 100미터를 이동하며, 만화 캐릭터의 이름을 딴 바위 열두 개(Yogi, Barnacle Bill, Scooby Doo)를 조사해 지도로 남겼고, 그 후 착륙선은 작동을 멈췄습니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "최초의 화성 로버이자 Viking 이후 처음 화성에 착륙한 미국 착륙선",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/01.webp",
+          "caption": "발사 전 시험 중인 Pathfinder. 기지국과 Sojourner가 내려오는 꽃잎형 전개 경사로가 보입니다."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/02.webp",
+          "caption": "Sojourner 마이크로로버. 무게 11.5kg, 바퀴 6개, 태양광 구동이며 7솔 동안 작동하도록 설계되었으나 83솔 동안 버텼습니다."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "1996년 12월 4일, 케이프 커내버럴에서 발사된 Delta II",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/03.webp",
+          "caption": "Delta II 7925가 7개월간의 화성 항해를 위해 Pathfinder를 발사하고 있습니다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "아레스 계곡, 1997년 7월 4일 착륙",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg",
+          "caption": "Improved Presidential Panorama. 아레스 계곡을 360°로 담은 컬러 전경입니다. 지평선에 Twin Peaks가 보입니다(TV 드라마에서 이름을 따왔습니다)."
+        },
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg",
+          "caption": "수십 년 뒤 MRO HiRISE가 궤도에서 촬영한 Pathfinder 착륙선. 꽃잎형 패널과 Sojourner의 마지막 위치로 알려진 지점이 보입니다."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/04.webp",
+          "caption": "Yogi 바위를 조사하는 Sojourner. 화성 지형을 가까이에서 분석한 최초의 화학 조성 측정이었습니다."
+        }
+      ]
+    }
+  ]
+}

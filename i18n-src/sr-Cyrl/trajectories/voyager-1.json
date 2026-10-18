@@ -1,0 +1,38 @@
+{
+  "name": "Voyager 1",
+  "current_distance_label": "172 AU · ~23,8 светлосних сати од Сунца",
+  "interstellar_since_label": "Прешао хелиопаузу августа 2012. — први објекат људске израде у међузвезданом простору",
+  "waypoints": [
+    {
+      "label": "Лансирање"
+    },
+    null,
+    null,
+    {
+      "label": "Јупитер"
+    },
+    null,
+    null,
+    {
+      "label": "Сатурн + Титан"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Pale Blue Dot"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Хелиопауза"
+    },
+    null,
+    null,
+    {
+      "label": "Данас"
+    }
+  ]
+}

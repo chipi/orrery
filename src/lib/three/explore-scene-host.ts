@@ -4,7 +4,7 @@ import { goto } from '$app/navigation';
 import { safeReplaceState } from '$lib/safe-replace-state';
 import { createAnimateLoop } from '$lib/three/animate-loop';
 import { disposeScene } from '$lib/three/dispose-object3d';
-import { buildIconicTrajectory, type IconicTrajectoryData } from '$lib/three/iconic-trajectory';
+import { buildIconicTrajectory } from '$lib/three/iconic-trajectory';
 import {
   ContextGraph,
   SOLAR_SYSTEM_CONTEXT,
@@ -34,6 +34,7 @@ import { assetOrigin } from '$lib/asset-url';
 import { coalesceLatest } from '$lib/async-coalesce';
 import { trackItemClick } from '$lib/analytics';
 import { exhibit } from '$lib/exhibit.svelte';
+import { getTrajectory } from '$lib/data/interstellar';
 import type { BodyScene } from '$lib/universe/body-scene';
 import type { NeighborhoodScene } from '$lib/universe/neighborhood-scene';
 import {
@@ -843,7 +844,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
           mod.loadConstellationLines(fetch, base),
           getExoplanetSystems(fetch),
           getDeepSkyObjects(fetch),
-          getDeepSkyGallery(fetch),
+          getDeepSkyGallery(fetch, getLocale()),
           getCultureObjectIds(fetch),
         ]);
       bridge.cultureObjectIds = cultureIds;
@@ -1993,9 +1994,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // frame yields, so each frame stays under the 16 ms budget instead
   // of one frame eating the whole roster.
   const trajectoryDataPromises = ICONIC_TRAJECTORY_IDS.map((id) =>
-    fetch(`${base}/data/trajectories/${id}.json`)
-      .then((r) => (r.ok ? (r.json() as Promise<IconicTrajectoryData>) : null))
-      .catch(() => null),
+    getTrajectory(id, getLocale(), fetch).catch(() => null),
   );
   void (async () => {
     for (let i = 0; i < ICONIC_TRAJECTORY_IDS.length; i++) {

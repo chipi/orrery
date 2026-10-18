@@ -1,0 +1,38 @@
+{
+  "name": "Voyager 1",
+  "current_distance_label": "172 وحدة فلكية · ~23.8 ساعة ضوئية من الشمس",
+  "interstellar_since_label": "عبرت الهيليوبوز في أغسطس 2012 — أول جسم من صنع الإنسان في الفضاء النجمي",
+  "waypoints": [
+    {
+      "label": "الإطلاق"
+    },
+    null,
+    null,
+    {
+      "label": "المشتري"
+    },
+    null,
+    null,
+    {
+      "label": "زحل + تيتان"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "الكرة الزرقاء الشاحبة"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "الهيليوبوز"
+    },
+    null,
+    null,
+    {
+      "label": "اليوم"
+    }
+  ]
+}

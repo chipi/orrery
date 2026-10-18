@@ -1,0 +1,44 @@
+[
+  {
+    "rel": "trajectories/hayabusa2.json",
+    "at": "name",
+    "old": "Hayabusa2",
+    "new": "はやぶさ2"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/hayabusa-2_webp.title",
+    "old": "Hayabusa2",
+    "new": "はやぶさ2"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/mercury-capsule_webp.title",
+    "old": "Mercury capsule",
+    "new": "マーキュリーカプセル"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-hayabusa2_webp.title",
+    "old": "Hayabusa2",
+    "new": "はやぶさ2"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-moon-luna-sample-return_webp.title",
+    "old": "Luna sample-return",
+    "new": "Luna サンプルリターン"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Science encyclopedia.where",
+    "old": "Science",
+    "new": "科学"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.World profiles.where",
+    "old": "Explore",
+    "new": "探索"
+  }
+]

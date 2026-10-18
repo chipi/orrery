@@ -1,0 +1,50 @@
+{
+  "intro": "Opportunity landete am 25. Januar 2004 in Meridiani Planum – ein Hole-in-one, das den auf Airbags aufspringenden Rover direkt in einen kleinen Krater (Eagle Crater) rollen ließ, dessen Wände die ersten hämatitreichen „Blueberries“ bargen, die je aus der Nähe auf dem Mars gesehen wurden. Ausgelegt für 90 Sols, legte Opportunity über 14 Jahre hinweg 45,16 km zurück, bis ein planetenweiter Staubsturm im Juni 2018 die Energieversorgung durch Solarzellen kappte. Letzte Übertragung: „Meine Batterie ist schwach, und es wird dunkel.“",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Zwilling von Spirit, gelandet auf der gegenüberliegenden Seite des Mars",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/opportunity/01.webp",
+          "caption": "MER-B während der Integration – baugleiche Hardware wie Spirit, optimiert für das ebene Terrain der Marsebenen."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Meridiani Planum – gelandet am 25. Januar 2004",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/opportunity/tier3-pan.jpg",
+          "caption": "Legacy Pan, Sols 5084–5111 (Mai–Juni 2018) – Opportunitys letztes 360°-Panorama vor dem Staubsturm. Perseverance Valley fällt in den Endeavour-Krater ab."
+        },
+        {
+          "src": "/images/hotspots/mars/opportunity/tier2-hirise.jpg",
+          "caption": "Der Rand des Endeavour-Kraters, wo Opportunity seine letzten Jahre verbrachte. Die letzte Ruhestätte des Rovers liegt rechts im Perseverance Valley."
+        },
+        {
+          "src": "/images/fleet-galleries/opportunity/02.webp",
+          "caption": "Hämatit-„Blueberries“ – millimetergroße Kügelchen, eingebettet im Grundgestein von Meridiani. Der erste direkte Beleg für lang anhaltendes flüssiges Wasser auf dem Mars."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Wissenschaft",
+      "subtitle": "Vom Eagle Crater zum Endeavour – 14 Jahre voller Belege",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/opportunity/03.webp",
+          "caption": "Aufprallstelle des Hitzeschilds am Endurance-Krater – Opportunity fuhr zurück, um seine eigene abgeworfene Eintrittshardware zu untersuchen."
+        },
+        {
+          "src": "/images/fleet-galleries/opportunity/04.webp",
+          "caption": "Burns Cliff: geschichtete Aufschlüsse im Endurance-Krater – Sedimentarchiv eines uralten sauren, salzhaltigen Gewässers."
+        }
+      ]
+    }
+  ]
+}

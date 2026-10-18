@@ -1,0 +1,61 @@
+{
+  "intro": "Viking 1 は1976年7月20日、クリュセ平原に着陸した。Apollo 11 からちょうど7年後のことで、米国初となる火星着陸機の成功例である。2,245ソル(6.3年)に及んだ地表ミッションでは、火星からの初のカラー画像の撮影、初の現地生物学実験(結果は判然としないものだった)、そして日々の気象記録が行われた。最後の送信は1982年11月。コマンドのアップロードによってアンテナの指向パラメータが誤って上書きされたことが原因だった。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "着陸機と周回機のペア、RTG駆動、約600 kg",
+      "images": [
+        {
+          "src": "/images/missions/viking1/01.webp",
+          "caption": "飛行前試験中のViking 1着陸機。後部にRTGが見え、地表サンプラーアームが伸びている。"
+        },
+        {
+          "src": "/images/missions/viking1/02.webp",
+          "caption": "JPLの試験環境で行われた、地表サンプラーアームの展開モックアップ試験。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "1975年8月20日 — ケープ・カナベラルからTitan IIIEで打ち上げ",
+      "images": [
+        {
+          "src": "/images/missions/viking1/03.webp",
+          "caption": "Titan IIIE/CentaurがViking 1を打ち上げる。到達までの飛行は10か月、火星周回軌道への投入は1976年6月、着陸機の着陸は7月20日。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "クリュセ平原 — 1976年7月20日着陸",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier3-pan.jpg",
+          "caption": "クリュセ平原の360°パノラマ。地球以外の天体の表面を捉えた、初のカラー風景写真。"
+        },
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier2-hirise.jpg",
+          "caption": "30年以上後にMROのHiRISEが軌道上から撮影したViking 1着陸機。1970年代の火星ミッションの機体を捉えた、初の「ハードウェア考古学」的な眺め。"
+        },
+        {
+          "src": "/images/missions/viking1/04.webp",
+          "caption": "着陸の数分後にカメラ2が捉えた、火星表面の最初の映像。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "生物学実験、気象観測、そして生命の探索",
+      "images": [
+        {
+          "src": "/images/missions/viking1/05.webp",
+          "caption": "地表サンプラーが掘った溝。Viking生物学実験では有機化合物の有無が調べられた(検出されず。ただし結果は今なお議論が続いている)。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+[
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.0.title",
+    "old": "Hardware",
+    "new": "Technik"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-cassini_webp.where",
+    "old": "Fly + Explore",
+    "new": "Erkunden + Fliegen"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-voyager-1_webp.where",
+    "old": "Fly + Explore",
+    "new": "Erkunden + Fliegen"
+  }
+]

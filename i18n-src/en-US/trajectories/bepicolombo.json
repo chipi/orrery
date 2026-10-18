@@ -1,0 +1,41 @@
+{
+  "name": "BepiColombo",
+  "current_distance_label": "0.48 AU · en route to Mercury orbit insertion 2026-12-05",
+  "waypoints": [
+    {
+      "label": "Launch (Ariane 5)"
+    },
+    null,
+    {
+      "label": "Earth"
+    },
+    {
+      "label": "Venus #1"
+    },
+    {
+      "label": "Venus #2"
+    },
+    {
+      "label": "Mercury #1"
+    },
+    {
+      "label": "Mercury #2"
+    },
+    {
+      "label": "Mercury #3"
+    },
+    {
+      "label": "Mercury #4"
+    },
+    {
+      "label": "Mercury #5"
+    },
+    {
+      "label": "Mercury #6"
+    },
+    null,
+    {
+      "label": "Mercury orbit insertion"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "intro": "A Apollo 16 pousou nas Terras Altas de Descartes em 21 de abril de 1972 — a única missão Apollo a um sítio de planalto (e não de mare), escolhido para coletar amostras do que se acreditava ser terreno vulcânico. Young e Duke NÃO encontraram rochas vulcânicas — apenas brechas de impacto e anortosito —, derrubando o modelo geológico e demonstrando que os planaltos da Lua são uma crosta antiga estilhaçada por impactos, e não resultado de vulcanismo posterior. Três EVAs, 27 km de percurso com o LRV, 95 kg de amostras trazidas de volta.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Casper + Orion + LRV-2",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/01.webp",
+          "caption": "Retrato da tripulação da Apollo 16 — John Young (comandante), Ken Mattingly (piloto do módulo de comando — substituído na Apollo 13), Charlie Duke (piloto do módulo lunar)."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Terras Altas de Descartes — pouso em 21 de abril de 1972",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/02.webp",
+          "caption": "John Young saltando durante as \"Olimpíadas Lunares\" — o primeiro salto em altura lunar com tripulação, demonstrando a gravidade de 1/6 g."
+        },
+        {
+          "src": "/images/missions/apollo16/03.webp",
+          "caption": "Duke em \"Big Muley\" — amostra 61016, a maior rocha individual trazida da Lua (11,7 kg)."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo16/tier3-pan.jpg",
+          "caption": "Panorama das Terras Altas de Descartes — estágio de descida do Orion + LRV + Stone Mountain ao fundo."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciência",
+      "subtitle": "As brechas dos planaltos derrubam a hipótese do vulcanismo",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/04.webp",
+          "caption": "Foto de família de Charlie Duke, deixada na superfície lunar — o único retrato conhecido de uma família da Terra deixado em outro mundo."
+        }
+      ]
+    }
+  ]
+}

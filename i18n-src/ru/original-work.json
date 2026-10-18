@@ -1,0 +1,1664 @@
+{
+  "anatomy_art": {
+    "/images/anatomy/akatsuki_webp": {
+      "title": "Akatsuki"
+    },
+    "/images/anatomy/antares_webp": {
+      "title": "Антарес"
+    },
+    "/images/anatomy/apollo-csm-block-ii_webp": {
+      "title": "Apollo CSM Block II"
+    },
+    "/images/anatomy/apollo-lm_webp": {
+      "title": "Apollo Lunar Module"
+    },
+    "/images/anatomy/ariane-1_webp": {
+      "title": "Ariane 1"
+    },
+    "/images/anatomy/ariane-5_webp": {
+      "title": "Ariane 5"
+    },
+    "/images/anatomy/ariane-6_webp": {
+      "title": "Ariane 6"
+    },
+    "/images/anatomy/atlas-lv-3b_webp": {
+      "title": "Atlas LV-3B"
+    },
+    "/images/anatomy/atlas-v_webp": {
+      "title": "Atlas V"
+    },
+    "/images/anatomy/atv_webp": {
+      "title": "ATV (Automated Transfer Vehicle)"
+    },
+    "/images/anatomy/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/anatomy/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/anatomy/blue-moon-mk1_webp": {
+      "title": "Blue Moon Mk1"
+    },
+    "/images/anatomy/buran_webp": {
+      "title": "Buran"
+    },
+    "/images/anatomy/cargo-dragon-2_webp": {
+      "title": "Cargo Dragon 2"
+    },
+    "/images/anatomy/cargo-dragon-v1_webp": {
+      "title": "Cargo Dragon v1"
+    },
+    "/images/anatomy/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/anatomy/chandra_webp": {
+      "title": "Chandra X-ray Observatory"
+    },
+    "/images/anatomy/chandrayaan1_webp": {
+      "title": "Chandrayaan-1"
+    },
+    "/images/anatomy/change-3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/anatomy/change-4_webp": {
+      "title": "Chang'e 4"
+    },
+    "/images/anatomy/change-5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/anatomy/compton-gro_webp": {
+      "title": "Compton Gamma Ray Observatory"
+    },
+    "/images/anatomy/crew-dragon_webp": {
+      "title": "Crew Dragon"
+    },
+    "/images/anatomy/curiosity_webp": {
+      "title": "Curiosity (MSL)"
+    },
+    "/images/anatomy/cygnus-enhanced_webp": {
+      "title": "Cygnus Enhanced"
+    },
+    "/images/anatomy/dart_webp": {
+      "title": "DART"
+    },
+    "/images/anatomy/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/anatomy/delta-ii_webp": {
+      "title": "Delta II"
+    },
+    "/images/anatomy/energia_webp": {
+      "title": "Energia"
+    },
+    "/images/anatomy/euclid_webp": {
+      "title": "Euclid"
+    },
+    "/images/anatomy/europa-clipper_webp": {
+      "title": "Europa Clipper"
+    },
+    "/images/anatomy/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin (марсоход ExoMars)"
+    },
+    "/images/anatomy/exomars-tgo_webp": {
+      "title": "ExoMars TGO"
+    },
+    "/images/anatomy/falcon-9_webp": {
+      "title": "Falcon 9 Block 5"
+    },
+    "/images/anatomy/falcon-heavy_webp": {
+      "title": "Falcon Heavy"
+    },
+    "/images/anatomy/gaganyaan_webp": {
+      "title": "Gaganyaan"
+    },
+    "/images/anatomy/gaia_webp": {
+      "title": "Gaia"
+    },
+    "/images/anatomy/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/anatomy/gemini_webp": {
+      "title": "Gemini"
+    },
+    "/images/anatomy/h-iia_webp": {
+      "title": "H-IIA"
+    },
+    "/images/anatomy/h3_webp": {
+      "title": "H3"
+    },
+    "/images/anatomy/hakuto-r_webp": {
+      "title": "программа Hakuto-R"
+    },
+    "/images/anatomy/hayabusa-2_webp": {
+      "title": "Hayabusa2"
+    },
+    "/images/anatomy/hayabusa_webp": {
+      "title": "Hayabusa"
+    },
+    "/images/anatomy/hitomi_webp": {
+      "title": "Hitomi (ASTRO-H)"
+    },
+    "/images/anatomy/hope_webp": {
+      "title": "Hope (EMM)"
+    },
+    "/images/anatomy/htv-x_webp": {
+      "title": "HTV-X"
+    },
+    "/images/anatomy/htv_webp": {
+      "title": "HTV (Kounotori)"
+    },
+    "/images/anatomy/hubble_webp": {
+      "title": "Космический телескоп Hubble"
+    },
+    "/images/anatomy/im-1-odysseus_webp": {
+      "title": "IM-1 Odysseus"
+    },
+    "/images/anatomy/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/anatomy/iss_webp": {
+      "title": "Международная космическая станция"
+    },
+    "/images/anatomy/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/anatomy/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/anatomy/jwst_webp": {
+      "title": "Космический телескоп James Webb"
+    },
+    "/images/anatomy/kepler_webp": {
+      "title": "Kepler"
+    },
+    "/images/anatomy/long-march-2f_webp": {
+      "title": "Long March 2F"
+    },
+    "/images/anatomy/long-march-3b_webp": {
+      "title": "Long March 3B"
+    },
+    "/images/anatomy/long-march-5_webp": {
+      "title": "Long March 5 / 5B"
+    },
+    "/images/anatomy/long-march-7_webp": {
+      "title": "Long March 7"
+    },
+    "/images/anatomy/lro_webp": {
+      "title": "Лунный разведывательный орбитальный аппарат (LRO)"
+    },
+    "/images/anatomy/lrv-apollo_webp": {
+      "title": "Лунный переносной модуль"
+    },
+    "/images/anatomy/lucy_webp": {
+      "title": "Lucy"
+    },
+    "/images/anatomy/luna-16_webp": {
+      "title": "«Луна-16»-класс"
+    },
+    "/images/anatomy/luna-9_webp": {
+      "title": "«Луна-9»"
+    },
+    "/images/anatomy/lunar-prospector_webp": {
+      "title": "Lunar Prospector"
+    },
+    "/images/anatomy/lunokhod-1_webp": {
+      "title": "Луноход-1"
+    },
+    "/images/anatomy/lunokhod-2_webp": {
+      "title": "Луноход-2"
+    },
+    "/images/anatomy/lvm3_webp": {
+      "title": "LVM3 (GSLV Mk III)"
+    },
+    "/images/anatomy/m-v_webp": {
+      "title": "M V"
+    },
+    "/images/anatomy/magellan_webp": {
+      "title": "Magellan"
+    },
+    "/images/anatomy/mangalyaan_webp": {
+      "title": "Mangalyaan (MOM)"
+    },
+    "/images/anatomy/mariner-4_webp": {
+      "title": "Mariner 4"
+    },
+    "/images/anatomy/mariner-9_webp": {
+      "title": "Mariner 9"
+    },
+    "/images/anatomy/mars-3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/anatomy/mars-express_webp": {
+      "title": "Mars Express"
+    },
+    "/images/anatomy/mars-odyssey_webp": {
+      "title": "2001 Mars Odyssey"
+    },
+    "/images/anatomy/maven_webp": {
+      "title": "MAVEN"
+    },
+    "/images/anatomy/mercury-capsule_webp": {
+      "title": "Капсула Mercury"
+    },
+    "/images/anatomy/mercury-redstone_webp": {
+      "title": "Mercury-Redstone"
+    },
+    "/images/anatomy/messenger_webp": {
+      "title": "MESSENGER"
+    },
+    "/images/anatomy/mir_webp": {
+      "title": "Мир"
+    },
+    "/images/anatomy/mro_webp": {
+      "title": "Mars Reconnaissance Orbiter"
+    },
+    "/images/anatomy/n1_webp": {
+      "title": "N1"
+    },
+    "/images/anatomy/new-glenn_webp": {
+      "title": "New Glenn"
+    },
+    "/images/anatomy/new-shepard_webp": {
+      "title": "New Shepard"
+    },
+    "/images/anatomy/opportunity_webp": {
+      "title": "Opportunity (MER-B)"
+    },
+    "/images/anatomy/orion_webp": {
+      "title": "Orion"
+    },
+    "/images/anatomy/osiris-rex_webp": {
+      "title": "OSIRIS-REx"
+    },
+    "/images/anatomy/parker-solar-probe_webp": {
+      "title": "Parker Solar Probe"
+    },
+    "/images/anatomy/perseverance_webp": {
+      "title": "Perseverance (Mars 2020)"
+    },
+    "/images/anatomy/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/anatomy/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/anatomy/pioneer-11_webp": {
+      "title": "Pioneer 11"
+    },
+    "/images/anatomy/pragyan_webp": {
+      "title": "Pragyan"
+    },
+    "/images/anatomy/progress-m_webp": {
+      "title": "Progress M"
+    },
+    "/images/anatomy/progress-ms_webp": {
+      "title": "Progress MS"
+    },
+    "/images/anatomy/proton-k_webp": {
+      "title": "Протон-К"
+    },
+    "/images/anatomy/proton-m_webp": {
+      "title": "Proton-M"
+    },
+    "/images/anatomy/pslv-xl_webp": {
+      "title": "PSLV-XL"
+    },
+    "/images/anatomy/pslv_webp": {
+      "title": "ПСЛВ"
+    },
+    "/images/anatomy/psyche-spacecraft_webp": {
+      "title": "Psyche"
+    },
+    "/images/anatomy/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/anatomy/salyut-1_webp": {
+      "title": "Салют-1"
+    },
+    "/images/anatomy/salyut-6_webp": {
+      "title": "Салют-6"
+    },
+    "/images/anatomy/salyut-7_webp": {
+      "title": "Салют-7"
+    },
+    "/images/anatomy/saturn-ib_webp": {
+      "title": "Saturn IB"
+    },
+    "/images/anatomy/saturn-v_webp": {
+      "title": "Saturn V"
+    },
+    "/images/anatomy/schiaparelli_webp": {
+      "title": "Schiaparelli"
+    },
+    "/images/anatomy/shenzhou_webp": {
+      "title": "Shenzhou"
+    },
+    "/images/anatomy/skylab_webp": {
+      "title": "Skylab"
+    },
+    "/images/anatomy/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/anatomy/sls-block-1_webp": {
+      "title": "SLS Block 1"
+    },
+    "/images/anatomy/smart-1_webp": {
+      "title": "SMART-1"
+    },
+    "/images/anatomy/sojourner_webp": {
+      "title": "Sojourner"
+    },
+    "/images/anatomy/solar-orbiter_webp": {
+      "title": "Solar Orbiter"
+    },
+    "/images/anatomy/soyuz-2_webp": {
+      "title": "Союз-2"
+    },
+    "/images/anatomy/soyuz-ms_webp": {
+      "title": "Союз МС"
+    },
+    "/images/anatomy/soyuz-tma_webp": {
+      "title": "Союз ТМА"
+    },
+    "/images/anatomy/soyuz_webp": {
+      "title": "Союз (11A511)"
+    },
+    "/images/anatomy/space-shuttle-orbiter_webp": {
+      "title": "Space Shuttle Orbiter"
+    },
+    "/images/anatomy/space-shuttle-stack_webp": {
+      "title": "Space Shuttle stack"
+    },
+    "/images/anatomy/spektr-rg_webp": {
+      "title": "Спектр-РГ"
+    },
+    "/images/anatomy/spirit_webp": {
+      "title": "Spirit (MER-A)"
+    },
+    "/images/anatomy/spitzer_webp": {
+      "title": "Spitzer Space Telescope"
+    },
+    "/images/anatomy/starliner_webp": {
+      "title": "Starliner (CST-100)"
+    },
+    "/images/anatomy/starship_webp": {
+      "title": "Starship"
+    },
+    "/images/anatomy/surveyor-3_webp": {
+      "title": "Surveyor 3"
+    },
+    "/images/anatomy/tess_webp": {
+      "title": "TESS"
+    },
+    "/images/anatomy/tiangong-1_webp": {
+      "title": "Tiangong-1"
+    },
+    "/images/anatomy/tiangong-2_webp": {
+      "title": "Tiangong-2"
+    },
+    "/images/anatomy/tiangong_webp": {
+      "title": "Tiangong"
+    },
+    "/images/anatomy/tianwen-1_webp": {
+      "title": "Tianwen-1"
+    },
+    "/images/anatomy/tianzhou_webp": {
+      "title": "Tianzhou"
+    },
+    "/images/anatomy/titan-ii-glv_webp": {
+      "title": "Titan II GLV"
+    },
+    "/images/anatomy/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/anatomy/venera-13_webp": {
+      "title": "Венера-13"
+    },
+    "/images/anatomy/venera-7_webp": {
+      "title": "Venera 7-class"
+    },
+    "/images/anatomy/viking-1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/anatomy/vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-3)"
+    },
+    "/images/anatomy/voskhod-11a57_webp": {
+      "title": "Voskhod (11A57)"
+    },
+    "/images/anatomy/vostok-k_webp": {
+      "title": "Vostok-K (8K72K)"
+    },
+    "/images/anatomy/vostok_webp": {
+      "title": "Восток"
+    },
+    "/images/anatomy/voyager-1_webp": {
+      "title": "Voyager 1"
+    },
+    "/images/anatomy/voyager-2_webp": {
+      "title": "Voyager 2"
+    },
+    "/images/anatomy/vulcan_webp": {
+      "title": "Vulcan Centaur"
+    },
+    "/images/anatomy/x37b_webp": {
+      "title": "X-37B OTV"
+    },
+    "/images/anatomy/xmm-newton_webp": {
+      "title": "XMM-Newton"
+    },
+    "/images/anatomy/yutu-2_webp": {
+      "title": "Yutu-2"
+    },
+    "/images/anatomy/yutu_webp": {
+      "title": "Yutu"
+    },
+    "/images/anatomy/zhurong_webp": {
+      "title": "Zhurong"
+    }
+  },
+  "lab_illustrations": {
+    "/images/lab/goals/apollo-round-trip_webp": {
+      "title": "Apollo: туда и обратно"
+    },
+    "/images/lab/goals/catch-the-iss_webp": {
+      "title": "Поймай МКС"
+    },
+    "/images/lab/goals/choose-an-orbit_webp": {
+      "title": "Выберите орбиту"
+    },
+    "/images/lab/goals/engines-of-the-world_webp": {
+      "title": "Двигатели мира"
+    },
+    "/images/lab/goals/entry-computer_webp": {
+      "title": "Компьютер входа в атмосферу"
+    },
+    "/images/lab/goals/flying-computer_webp": {
+      "title": "Полётный компьютер"
+    },
+    "/images/lab/goals/get-to-mars_webp": {
+      "title": "Долететь до Марса"
+    },
+    "/images/lab/goals/land-on-earth_webp": {
+      "title": "Приземлиться на Землю"
+    },
+    "/images/lab/goals/land-on-mars_webp": {
+      "title": "Посадка на Марс"
+    },
+    "/images/lab/goals/land-on-mercury_webp": {
+      "title": "Приземлиться на Меркурий"
+    },
+    "/images/lab/goals/land-on-the-moon_webp": {
+      "title": "Посадка на Луну"
+    },
+    "/images/lab/goals/land-on-titan_webp": {
+      "title": "Посадка на Титан"
+    },
+    "/images/lab/goals/land-on-venus_webp": {
+      "title": "Посадка на Венеру"
+    },
+    "/images/lab/goals/landing-computer_webp": {
+      "title": "Компьютер посадки"
+    },
+    "/images/lab/goals/launch-a-rocket_webp": {
+      "title": "Запустить ракету"
+    },
+    "/images/lab/goals/leave-the-solar-system_webp": {
+      "title": "Покинуть Солнечную систему"
+    },
+    "/images/lab/goals/moon-phases_webp": {
+      "title": "Фазы Луны"
+    },
+    "/images/lab/goals/motion-first-principles_webp": {
+      "title": "Переместить массу"
+    },
+    "/images/lab/goals/observe-the-sky_webp": {
+      "title": "Наблюдение неба"
+    },
+    "/images/lab/goals/plan-a-mission_webp": {
+      "title": "Планирование реальной миссии"
+    },
+    "/images/lab/goals/probe-jupiter_webp": {
+      "title": "Зонд к Юпитеру"
+    },
+    "/images/lab/goals/reach-orbit_webp": {
+      "title": "Выход на орбиту"
+    },
+    "/images/lab/goals/reach-the-moon_webp": {
+      "title": "Достичь Луны"
+    },
+    "/images/lab/goals/scale-a-rocket_webp": {
+      "title": "Масштабирование ракеты"
+    },
+    "/images/lab/goals/touch-small-world_webp": {
+      "title": "Прикоснуться к маленькому миру"
+    }
+  },
+  "diagrams_science": {
+    "/diagrams/science/_cover-cosmology_svg": {
+      "title": "Космология"
+    },
+    "/diagrams/science/_cover-exoplanets_svg": {
+      "title": "Экзопланеты"
+    },
+    "/images/science-covers-v2/_cover-history_webp": {
+      "title": "История"
+    },
+    "/images/science-covers-v2/_cover-life-in-space_webp": {
+      "title": "Жизнь в космосе"
+    },
+    "/images/science-covers-v2/_cover-mission-phases_webp": {
+      "title": "Этапы миссии"
+    },
+    "/images/science-covers-v2/_cover-observation_webp": {
+      "title": "Наблюдение"
+    },
+    "/diagrams/science/_cover-orbits_svg": {
+      "title": "Орбиты"
+    },
+    "/diagrams/science/_cover-planets_svg": {
+      "title": "Планеты"
+    },
+    "/diagrams/science/_cover-porkchop_svg": {
+      "title": "Диаграмма переносов"
+    },
+    "/images/science-covers-v2/_cover-propulsion_webp": {
+      "title": "Двигательная установка"
+    },
+    "/diagrams/science/_cover-scales-time_svg": {
+      "title": "Масштабы времени"
+    },
+    "/images/science-covers-v2/_cover-space-stations_webp": {
+      "title": "Космические станции"
+    },
+    "/diagrams/science/_cover-transfers_svg": {
+      "title": "Переходы"
+    },
+    "/diagrams/science/aerobraking_webp": {
+      "title": "Аэродинамическое торможение"
+    },
+    "/diagrams/science/antenna-arrays_webp": {
+      "title": "Антенные решётки"
+    },
+    "/diagrams/science/antimatter-propulsion_webp": {
+      "title": "Пропульсия антиматерией"
+    },
+    "/diagrams/science/apsides_webp": {
+      "title": "Апсиды"
+    },
+    "/diagrams/science/ascent-guidance_webp": {
+      "title": "Наведение при подъёме"
+    },
+    "/diagrams/science/asteroid-belt_webp": {
+      "title": "Пояс астероидов"
+    },
+    "/diagrams/science/au_webp": {
+      "title": "АЕ"
+    },
+    "/diagrams/science/ballistic-coefficient_webp": {
+      "title": "Баллистический коэффициент"
+    },
+    "/diagrams/science/black-holes_webp": {
+      "title": "Чёрные дыры"
+    },
+    "/diagrams/science/c3_webp": {
+      "title": "C3"
+    },
+    "/diagrams/science/comms-blackout_webp": {
+      "title": "Коммуникационная пауза"
+    },
+    "/diagrams/science/conic-sections_webp": {
+      "title": "Конические сечения"
+    },
+    "/diagrams/science/contour-reading_webp": {
+      "title": "Чтение контуров"
+    },
+    "/diagrams/science/deorbit-corridor_webp": {
+      "title": "Коридор торможения"
+    },
+    "/diagrams/science/departure-axis_webp": {
+      "title": "Ось вывода"
+    },
+    "/diagrams/science/dv-budget_webp": {
+      "title": "Бюджет ΔV"
+    },
+    "/diagrams/science/dv-heatmap_webp": {
+      "title": "Тепловая карта ΔV"
+    },
+    "/diagrams/science/eccentricity_webp": {
+      "title": "Эксцентриситет"
+    },
+    "/diagrams/science/ecliptic-plane_webp": {
+      "title": "Плоскость эклиптики"
+    },
+    "/diagrams/science/edl_webp": {
+      "title": "Вход, снижение, посадка"
+    },
+    "/diagrams/science/entry-footprint_webp": {
+      "title": "Отпечаток входа"
+    },
+    "/diagrams/science/entry-heating_webp": {
+      "title": "Нагрев при входе"
+    },
+    "/diagrams/science/escape-velocity_webp": {
+      "title": "Вторая космическая скорость"
+    },
+    "/diagrams/science/eva_webp": {
+      "title": "Выход в открытый космос"
+    },
+    "/diagrams/science/eva-suits_webp": {
+      "title": "Скафандры для открытого космоса"
+    },
+    "/diagrams/science/exo-astrometry_webp": {
+      "title": "Экзоастрометрия"
+    },
+    "/diagrams/science/exo-direct-imaging_webp": {
+      "title": "Прямая визуализация экзопланет"
+    },
+    "/diagrams/science/exo-habitable-zone_webp": {
+      "title": "Обитаемая зона экзопланетной системы"
+    },
+    "/diagrams/science/exo-microlensing_webp": {
+      "title": "Экзомикролинзирование"
+    },
+    "/diagrams/science/exo-radial-velocity_webp": {
+      "title": "Лучевая скорость экзопланеты"
+    },
+    "/diagrams/science/exo-resonance_webp": {
+      "title": "Резонанс экзопланет"
+    },
+    "/diagrams/science/exo-transit_webp": {
+      "title": "Транзит экзопланеты"
+    },
+    "/diagrams/science/exo-transit-timing_webp": {
+      "title": "Синхронизм транзитов экзопланет"
+    },
+    "/diagrams/science/expander-cycle_webp": {
+      "title": "Цикл расширения"
+    },
+    "/diagrams/science/expedition-cadence_webp": {
+      "title": "Ритм экспедиций"
+    },
+    "/diagrams/science/frames_webp": {
+      "title": "Каркасы"
+    },
+    "/diagrams/science/free-return_webp": {
+      "title": "Свободный возврат"
+    },
+    "/diagrams/science/fusion-propulsion_webp": {
+      "title": "Синтез-пропульсия"
+    },
+    "/diagrams/science/gas-generator_webp": {
+      "title": "Газогенератор"
+    },
+    "/diagrams/science/gravity-assist_webp": {
+      "title": "Гравитационный манёвр"
+    },
+    "/diagrams/science/hertzsprung-russell_webp": {
+      "title": "Диаграмма Герцшпрунга — Рассела"
+    },
+    "/diagrams/science/history-apollo-11_webp": {
+      "title": "История Apollo 11"
+    },
+    "/diagrams/science/history-goddard-rocket_webp": {
+      "title": "История ракеты Goddard"
+    },
+    "/diagrams/science/history-keplers-laws_webp": {
+      "title": "История законов Kepler"
+    },
+    "/diagrams/science/history-newton-principia_webp": {
+      "title": "История Principia Newton"
+    },
+    "/diagrams/science/history-sputnik_webp": {
+      "title": "История Sputnik"
+    },
+    "/diagrams/science/history-tsiolkovsky_webp": {
+      "title": "История: Циолковский"
+    },
+    "/diagrams/science/hohmann-transfer_webp": {
+      "title": "Переходящая орбита Hohmann"
+    },
+    "/diagrams/science/inclination_webp": {
+      "title": "Наклонение"
+    },
+    "/diagrams/science/interplanetary-internet_webp": {
+      "title": "Интерпланетный интернет"
+    },
+    "/diagrams/science/ion-drive_webp": {
+      "title": "Ионный двигатель"
+    },
+    "/diagrams/science/iva-suits_webp": {
+      "title": "Скафандры для внутрикорабельной деятельности"
+    },
+    "/diagrams/science/j2000_webp": {
+      "title": "J2000"
+    },
+    "/diagrams/science/keplerian-orbit_webp": {
+      "title": "Кеплеровская орбита"
+    },
+    "/diagrams/science/keplers-laws_webp": {
+      "title": "Законы Kepler"
+    },
+    "/diagrams/science/kuiper-belt_webp": {
+      "title": "Пояс Kuiper"
+    },
+    "/diagrams/science/lagrange-points_webp": {
+      "title": "Точки Lagrange"
+    },
+    "/diagrams/science/lambert-problem_webp": {
+      "title": "Задача Lambert"
+    },
+    "/diagrams/science/laser-sail_webp": {
+      "title": "Лазерный парус"
+    },
+    "/diagrams/science/launch_webp": {
+      "title": "Запуск"
+    },
+    "/diagrams/science/lifting-entry_webp": {
+      "title": "Вход с подъёмной силой"
+    },
+    "/diagrams/science/light-minute_webp": {
+      "title": "Световая минута"
+    },
+    "/diagrams/science/long-duration_webp": {
+      "title": "Длительная миссия"
+    },
+    "/diagrams/science/lunar-ice_webp": {
+      "title": "Лунный лёд"
+    },
+    "/diagrams/science/lunar-suits_webp": {
+      "title": "Лунные скафандры"
+    },
+    "/diagrams/science/met_webp": {
+      "title": "МЭТ"
+    },
+    "/diagrams/science/microgravity-physiology_webp": {
+      "title": "Физиология микрогравитации"
+    },
+    "/diagrams/science/mission-types_webp": {
+      "title": "Типы миссий"
+    },
+    "/diagrams/science/node-module_webp": {
+      "title": "Модуль узла"
+    },
+    "/diagrams/science/nrho_webp": {
+      "title": "NRHO"
+    },
+    "/diagrams/science/nuclear-thermal_webp": {
+      "title": "Ядерно-тепловой двигатель"
+    },
+    "/diagrams/science/oberth-effect_webp": {
+      "title": "Эффект Оберта"
+    },
+    "/diagrams/science/optical-comms_webp": {
+      "title": "Оптическая связь"
+    },
+    "/diagrams/science/orbit-insertion_webp": {
+      "title": "Орбитальное включение"
+    },
+    "/diagrams/science/orbit-regimes_webp": {
+      "title": "Орбитальные режимы"
+    },
+    "/diagrams/science/our-galaxy_webp": {
+      "title": "Наша Галактика"
+    },
+    "/diagrams/science/patched-conics_webp": {
+      "title": "Кусочно-конические траектории"
+    },
+    "/diagrams/science/porkchop_webp": {
+      "title": "График запусков"
+    },
+    "/diagrams/science/pressurized-volume_webp": {
+      "title": "Герметичный объём"
+    },
+    "/diagrams/science/propulsive-landing_webp": {
+      "title": "Управляемая посадка"
+    },
+    "/diagrams/science/regolith_webp": {
+      "title": "Реголит"
+    },
+    "/diagrams/science/semi-major-axis_webp": {
+      "title": "Большая полуось"
+    },
+    "/diagrams/science/sidereal-synodic_webp": {
+      "title": "Звёздный синодический период"
+    },
+    "/diagrams/science/skip-entry_webp": {
+      "title": "Вход с отскоком"
+    },
+    "/diagrams/science/skycrane_webp": {
+      "title": "Небесный кран"
+    },
+    "/diagrams/science/solar-power-budget_webp": {
+      "title": "Солнечный энергетический баланс"
+    },
+    "/diagrams/science/solar-sail_webp": {
+      "title": "Солнечный парус"
+    },
+    "/diagrams/science/space-photography_webp": {
+      "title": "Космическая фотография"
+    },
+    "/diagrams/science/specific-impulse_webp": {
+      "title": "Удельный импульс"
+    },
+    "/diagrams/science/staged-combustion_webp": {
+      "title": "Многоступенчатое сгорание"
+    },
+    "/diagrams/science/synodic-period_webp": {
+      "title": "Синодический период"
+    },
+    "/diagrams/science/tcm_webp": {
+      "title": "ТКМ"
+    },
+    "/diagrams/science/terminal-velocity_webp": {
+      "title": "Предельная скорость"
+    },
+    "/diagrams/science/tof-axis_webp": {
+      "title": "Ось времени полёта"
+    },
+    "/diagrams/science/trans-x-injection_webp": {
+      "title": "Трансгелиоцентрический перелёт"
+    },
+    "/diagrams/science/transfer-ellipse_webp": {
+      "title": "Эллипс перелёта"
+    },
+    "/diagrams/science/true-anomaly_webp": {
+      "title": "Истинная аномалия"
+    },
+    "/diagrams/science/tsiolkovsky_webp": {
+      "title": "Формула Циолковского"
+    },
+    "/diagrams/science/v-infinity_webp": {
+      "title": "V бесконечность"
+    },
+    "/diagrams/science/viability_webp": {
+      "title": "Осуществимость"
+    },
+    "/diagrams/science/vis-viva_webp": {
+      "title": "Уравнение Вис-Вива"
+    }
+  },
+  "posters": {
+    "/images/posters/solar-system-orrery_jpg": {
+      "title": "Солнечная система"
+    },
+    "/images/posters/solar-system-procession_jpg": {
+      "title": "Солнечная система"
+    },
+    "/images/posters/earth_jpg": {
+      "title": "Земля"
+    },
+    "/images/posters/moon_jpg": {
+      "title": "Луна"
+    },
+    "/images/posters/mars_jpg": {
+      "title": "Марс"
+    },
+    "/images/posters/saturn-v_jpg": {
+      "title": "Saturn V"
+    },
+    "/images/posters/mir_jpg": {
+      "title": "Мир"
+    },
+    "/images/posters/sputnik_jpg": {
+      "title": "Спутник"
+    },
+    "/images/posters/soyuz_jpg": {
+      "title": "Союз"
+    },
+    "/images/posters/voyager_jpg": {
+      "title": "Voyager"
+    },
+    "/images/posters/sojourner_jpg": {
+      "title": "Sojourner"
+    },
+    "/images/posters/footprints_jpg": {
+      "title": "Следы"
+    },
+    "/images/posters/gagarin_jpg": {
+      "title": "Гагарин"
+    },
+    "/images/posters/rosetta_jpg": {
+      "title": "Rosetta"
+    },
+    "/images/posters/huygens_jpg": {
+      "title": "Huygens"
+    },
+    "/images/posters/hayabusa2_jpg": {
+      "title": "Hayabusa2"
+    },
+    "/images/posters/artemis-ii_jpg": {
+      "title": "Artemis II"
+    },
+    "/images/posters/iss_jpg": {
+      "title": "МКС"
+    },
+    "/images/posters/tiangong_jpg": {
+      "title": "Tiangong"
+    },
+    "/images/posters/perseverance_jpg": {
+      "title": "Perseverance"
+    },
+    "/images/posters/space-shuttle_jpg": {
+      "title": "Space Shuttle"
+    },
+    "/images/posters/solar-sail_jpg": {
+      "title": "Солнечный парус"
+    },
+    "/images/posters/nuclear-drive_jpg": {
+      "title": "Ядерный двигатель"
+    },
+    "/images/posters/jwst_jpg": {
+      "title": "James Webb"
+    },
+    "/images/posters/hubble_jpg": {
+      "title": "Hubble"
+    },
+    "/images/posters/cassini_jpg": {
+      "title": "Cassini"
+    },
+    "/images/posters/starship_jpg": {
+      "title": "Starship"
+    }
+  },
+  "models3d": {
+    "/images/colophon/craft-cassini_webp": {
+      "title": "Cassini–Huygens",
+      "what": "Тарелка большого усиления, отсеки РИТЭГов и зонд Huygens — орбитальный аппарат Сатурна.",
+      "where": "Полёт + Исследование"
+    },
+    "/images/colophon/craft-voyager-1_webp": {
+      "title": "Voyager",
+      "what": "Тарелка диаметром 3,7 м, магнитометровая стрела и ферма РИТЭГов — шатл Большого тура.",
+      "where": "Полёт + Исследование"
+    },
+    "/images/colophon/craft-galileo_webp": {
+      "title": "Galileo",
+      "what": "Корпус с двойным вращением и свёрнутой антенной-зонтиком высокого усиления.",
+      "where": "Полёт + Исследование"
+    },
+    "/images/colophon/craft-new-horizons_webp": {
+      "title": "New Horizons",
+      "what": "Компактный треугольный корпус с одной антенной-тарелкой — зонд пролёта у Плутона.",
+      "where": "Полёт + Исследование"
+    },
+    "/images/colophon/craft-pioneer-10_webp": {
+      "title": "Pioneer",
+      "what": "Корпус, стабилизированный вращением, с тарелкой, стрелами РИТГов и выгравированной табличкой.",
+      "where": "Полёт + Исследование"
+    },
+    "/images/colophon/craft-juno_webp": {
+      "title": "Juno",
+      "what": "Три огромных солнечных крыла вокруг шестигранного корпуса — полярный орбитальный аппарат Юпитера.",
+      "where": "Полёт + Исследование"
+    },
+    "/images/colophon/craft-bepicolombo_webp": {
+      "title": "BepiColombo",
+      "what": "Составной модуль передачи + орбитальные аппараты Меркурия с ионными двигателями.",
+      "where": "Полёт + Исследование"
+    },
+    "/images/colophon/craft-dawn_webp": {
+      "title": "Dawn",
+      "what": "Корпус с ионным двигателем и широкими солнечными крыльями — орбитальный аппарат Весты и Цереры.",
+      "where": "Полёт + Исследование"
+    },
+    "/images/colophon/craft-giotto_webp": {
+      "title": "Giotto",
+      "what": "Вращающийся корпус барабанообразной формы с пылевым щитом — пролёт кометы Галлея.",
+      "where": "Полёт + Исследование"
+    },
+    "/images/colophon/craft-hayabusa2_webp": {
+      "title": "Hayabusa2",
+      "what": "Корпус коробчатой формы с солнечными панелями и рогом-пробоотборником — астероид Рюгу.",
+      "where": "Полёт + Исследование"
+    },
+    "/images/colophon/craft-juice_webp": {
+      "title": "JUICE",
+      "what": "Солнечные батареи крестообразной формы на компактном корпусе — орбитальный аппарат ледяных спутников Юпитера.",
+      "where": "Полёт + Исследование"
+    },
+    "/images/colophon/craft-rosetta_webp": {
+      "title": "Rosetta",
+      "what": "14-метровые солнечные панели вокруг автобуса-охотника за кометой + посадочный модуль Philae.",
+      "where": "Полёт + Исследование"
+    },
+    "/images/colophon/craft-ulysses_webp": {
+      "title": "Ulysses",
+      "what": "Зонд на солнечной орбите у полюсов на ядерном элементе питания с одной тарелкой антенны.",
+      "where": "Полёт + Исследование"
+    },
+    "/images/colophon/craft-vega-1_webp": {
+      "title": "Вега",
+      "what": "Советский пролёт мимо Венеры + материнский аппарат-аэростат с управляемой антенной.",
+      "where": "Полёт + Исследование"
+    },
+    "/images/colophon/craft-venera-13_webp": {
+      "title": "Венера-13",
+      "what": "Советский посадочный модуль на Венере — тороидальный аэротормоз и посадочное кольцо.",
+      "where": "Полёт + Исследование"
+    },
+    "/images/colophon/model-launcher-generic_webp": {
+      "title": "Типовая ракета-носитель",
+      "what": "Двухступенчатый корпус в духе Falcon-9 — запасной силуэт, выбираемый по агентству.",
+      "where": "Полёт · запуск/подъём"
+    },
+    "/images/colophon/model-launcher-saturn-v_webp": {
+      "title": "Saturn V",
+      "what": "Суженная трёхступенчатая конструкция, пять двигателей F-1, полосчатая ливрея и аварийная башня.",
+      "where": "Полёт · запуск/подъём"
+    },
+    "/images/colophon/model-launcher-saturn-ib_webp": {
+      "title": "Saturn IB",
+      "what": "Рабочая лошадка для низкой земной орбиты для программы Apollo — собранная первая ступень S-IB с восемью двигателями H-1 под той же S-IVB + CSM.",
+      "where": "Полёт · запуск/подъём"
+    },
+    "/images/colophon/model-launcher-vostok-k_webp": {
+      "title": "Soyuz / R-7",
+      "what": "Ядро в виде креста Королёва с четырьмя суженными боковыми ускорителями.",
+      "where": "Полёт · запуск/подъём"
+    },
+    "/images/colophon/model-launcher-ariane-5_webp": {
+      "title": "Ariane 5",
+      "what": "Криогенное ядро между двумя высокими твёрдотопливными ускорителями под луковицеобразным обтекателем.",
+      "where": "Полёт · запуск/набор высоты"
+    },
+    "/images/colophon/model-launcher-h-iia_webp": {
+      "title": "H-IIA",
+      "what": "Японское криогенное ядро с парой твёрдотопливных ускорителей.",
+      "where": "Полёт · запуск/набор высоты"
+    },
+    "/images/colophon/model-launcher-space-shuttle-stack_webp": {
+      "title": "Space Shuttle",
+      "what": "Внешний бак, два твёрдотопливных ускорителя и дельтовидный орбитальный самолёт.",
+      "where": "Полёт · запуск/набор высоты"
+    },
+    "/images/colophon/model-launcher-falcon-9_webp": {
+      "title": "Falcon 9",
+      "what": "Стройный двухступенчатый корпус — октавеб из девяти двигателей, сеточные рули и посадочные ноги.",
+      "where": "Полёт · запуск/набор высоты"
+    },
+    "/images/colophon/model-launcher-starship_webp": {
+      "title": "Starship / Super Heavy",
+      "what": "Полностью многоразовая стопка из голой нержавеющей стали — 33 двигателя Raptor на Super Heavy, 6 на Starship, передние и задние закрылки и остроконечный нос.",
+      "where": "Полёт · запуск/набор высоты"
+    },
+    "/images/colophon/model-launcher-atlas-v_webp": {
+      "title": "Atlas V",
+      "what": "Широкое ядро с двигателем RD-180, луковицеобразным обтекателем полезного груза и дополнительными твёрдотопливными ускорителями.",
+      "where": "Полёт · запуск/набор высоты"
+    },
+    "/images/colophon/model-launcher-proton-k_webp": {
+      "title": "Протон-К",
+      "what": "Советская тяжёлая ракета — центральное ядро, обрамлённое шестью внешними топливными баками.",
+      "where": "Полёт · запуск/набор высоты"
+    },
+    "/images/colophon/model-launcher-titan-ii-glv_webp": {
+      "title": "Titan II GLV",
+      "what": "Стройная однородная двухступенчатая ракета, запускавшая пилотируемые капсулы Gemini.",
+      "where": "Полёт · запуск/набор высоты"
+    },
+    "/images/colophon/model-launcher-atlas-lv-3b_webp": {
+      "title": "Atlas LV-3B",
+      "what": "Полутораступенчатая ракета Mercury-Atlas с нижним пакетом двигателей и спасательной башней.",
+      "where": "Полёт · пуск/набор высоты"
+    },
+    "/images/colophon/model-launcher-mercury-redstone_webp": {
+      "title": "Mercury-Redstone",
+      "what": "Первая пилотируемая американская ракета-носитель — стройный одномоторный Redstone с четырьмя хвостовыми стабилизаторами, капсулой Mercury и спасательной башней (Freedom 7).",
+      "where": "Полёт · пуск/набор высоты"
+    },
+    "/images/colophon/model-launcher-long-march-2f_webp": {
+      "title": "Long March 2F",
+      "what": "Китайская пилотируемая ракета-носитель — основной блок, четыре жидкостных боковых ускорителя и башня аварийного спасения (Shenzhou).",
+      "where": "Полёт · пуск/набор высоты"
+    },
+    "/images/colophon/model-launcher-long-march-3b_webp": {
+      "title": "Long March 3B",
+      "what": "Китайский рабочий конь для ГПО — основной блок с четырьмя жидкостными боковыми ускорителями (missions Chang'e).",
+      "where": "Полёт · пуск/набор высоты"
+    },
+    "/images/colophon/model-launcher-long-march-5_webp": {
+      "title": "Long March 5",
+      "what": "Китайская тяжёлая ракета «Толстая пятёрка» — широкий криогенный основной блок с четырьмя крупными ускорителями.",
+      "where": "Полёт · пуск/набор высоты"
+    },
+    "/images/colophon/model-launcher-pslv_webp": {
+      "title": "PSLV",
+      "what": "Рабочий конь ISRO — стройный основной блок, окружённый шестью твёрдотопливными боковыми ускорителями.",
+      "where": "Полёт · пуск/набор высоты"
+    },
+    "/images/colophon/model-launcher-lvm3_webp": {
+      "title": "LVM3 / GSLV Mk III",
+      "what": "Тяжёлая ракета-носитель ISRO — основной блок по бокам с двумя крупными твёрдотопливными ускорителями S200 (Chandrayaan-3).",
+      "where": "Полёт · пуск/набор высоты"
+    },
+    "/images/colophon/model-launcher-m-v_webp": {
+      "title": "M-V",
+      "what": "Трёхступенчатая твёрдотопливная ракета JAXA (Hayabusa).",
+      "where": "Полёт · пуск/набор высоты"
+    },
+    "/images/colophon/model-launcher-h3_webp": {
+      "title": "H3",
+      "what": "Новая криогенная ракета JAXA с основным блоком и твёрдотопливными боковыми ускорителями.",
+      "where": "Полёт · запуск/разгон"
+    },
+    "/images/colophon/model-launcher-ariane-1_webp": {
+      "title": "Ariane 1",
+      "what": "Первая европейская ракета-носитель — стройный трёхступенчатый аппарат конструкции 1979 года (Giotto).",
+      "where": "Полёт · запуск/разгон"
+    },
+    "/images/colophon/model-moon-apollo-lm_webp": {
+      "title": "Apollo Lunar Module",
+      "what": "Модуль снижения + модуль подъёма, золотая фольга MLI и блоки RCS.",
+      "where": "Места посадки на Луне"
+    },
+    "/images/colophon/model-moon-apollo-lm-extended_webp": {
+      "title": "Apollo LM (J-миссия + LRV)",
+      "what": "Лунный модуль расширенной длительности в паре с Луноходом.",
+      "where": "Места посадки на Луне"
+    },
+    "/images/colophon/model-moon-luna-9_webp": {
+      "title": "«Луна-9»",
+      "what": "Советская сфера, вернувшая первые изображения с поверхности Луны.",
+      "where": "Места посадки на Луне"
+    },
+    "/images/colophon/model-moon-luna-sample-return_webp": {
+      "title": "Luna — образцы с возвращением",
+      "what": "Ракета подъёма на платформе снижения (Luna 16 / 20 / 24).",
+      "where": "Места посадки на Луне"
+    },
+    "/images/colophon/model-moon-lunokhod_webp": {
+      "title": "Луноход",
+      "what": "Восьмиколёсный советский ровер с раскладывающейся солнечной крышкой.",
+      "where": "Места посадки на Луне"
+    },
+    "/images/colophon/model-moon-chang-e-lander_webp": {
+      "title": "Chang'e lander",
+      "what": "Посадочный модуль CNSA с капсулой подъёма (Chang'e 5 / 6).",
+      "where": "Места посадки на Луне"
+    },
+    "/images/colophon/model-moon-yutu_webp": {
+      "title": "Луноход Yutu",
+      "what": "Китайский шестиколёсный ровер со складными солнечными панелями.",
+      "where": "Места посадки на Луне"
+    },
+    "/images/colophon/model-moon-chandrayaan-3-vikram_webp": {
+      "title": "Chandrayaan-3 Vikram",
+      "what": "Посадочный аппарат ISRO с четырьмя опорами, доставивший марсоход Pragyan.",
+      "where": "Места посадок на Луне"
+    },
+    "/images/colophon/model-moon-slim_webp": {
+      "title": "SLIM",
+      "what": "Двигательный блок спуска JAXA «Moon Sniper» с двумя двигателями.",
+      "where": "Места посадок на Луне"
+    },
+    "/images/colophon/model-moon-beresheet_webp": {
+      "title": "Beresheet",
+      "what": "Компактный четырёхопорный посадочный аппарат SpaceIL.",
+      "where": "Места посадок на Луне"
+    },
+    "/images/colophon/model-mars-viking_webp": {
+      "title": "Viking",
+      "what": "Треногий посадочный аппарат NASA с источником питания на основе радиотермоэлектрических генераторов и манипулятором для отбора образцов.",
+      "where": "Места посадок на Марсе"
+    },
+    "/images/colophon/model-mars-pathfinder-sojourner_webp": {
+      "title": "Pathfinder + Sojourner",
+      "what": "Тетраэдрический посадочный аппарат с подушками безопасности и первый марсоход.",
+      "where": "Места посадок на Марсе"
+    },
+    "/images/colophon/model-mars-mer_webp": {
+      "title": "MER (Spirit / Opportunity)",
+      "what": "Марсоход с качающейся подвеской и солнечными крыльями-«бабочками».",
+      "where": "Места посадок на Марсе"
+    },
+    "/images/colophon/model-mars-curiosity_webp": {
+      "title": "Curiosity",
+      "what": "Марсоход класса MSL с питанием от радиотермоэлектрических генераторов, оснащённый мачтой и манипулятором.",
+      "where": "Места посадок на Марсе"
+    },
+    "/images/colophon/model-mars-perseverance-rover_webp": {
+      "title": "Perseverance + Ingenuity",
+      "what": "Марсоход программы Mars 2020 с мачтой Mastcam-Z, отсеком для кэширования образцов и вертолётом Ingenuity.",
+      "where": "Места посадок на Марсе"
+    },
+    "/images/colophon/model-mars-phoenix_webp": {
+      "title": "Phoenix",
+      "what": "Стационарный посадочный аппарат с солнечными батареями и роботизированной рукой.",
+      "where": "Посадочные площадки на Марсе"
+    },
+    "/images/colophon/model-mars-insight-lander_webp": {
+      "title": "InSight",
+      "what": "Десятиугольный геофизический посадочный аппарат с солнечными панелями, сейсмометром SEIS и проникающим зондом HP3.",
+      "where": "Посадочные площадки на Марсе"
+    },
+    "/images/colophon/model-mars-mars-3_webp": {
+      "title": "Mars 3",
+      "what": "Советский лепестковый посадочный аппарат — первая мягкая посадка на Марсе.",
+      "where": "Посадочные площадки на Марсе"
+    },
+    "/images/colophon/model-mars-zhurong_webp": {
+      "title": "Tianwen-1 Zhurong",
+      "what": "Китайский ровер с батареями-бабочками и мачтой.",
+      "where": "Посадочные площадки на Марсе"
+    },
+    "/images/colophon/model-mars-schiaparelli_webp": {
+      "title": "Schiaparelli",
+      "what": "Демонстрационный спускаемый аппарат ESA для входа в атмосферу, снижения и посадки.",
+      "where": "Посадочные площадки на Марсе"
+    },
+    "/images/colophon/model-mars-beagle-2_webp": {
+      "title": "Beagle 2",
+      "what": "Раскладывающийся посадочный аппарат ESA с лепестковыми солнечными панелями.",
+      "where": "Посадочные площадки на Марсе"
+    },
+    "/images/colophon/model-venus-venera_webp": {
+      "title": "Посадочный аппарат «Венера» / «Вега»",
+      "what": "Советский посадочный аппарат на поверхности Венеры — сфера давления на торообразном защитном кольце.",
+      "where": "Маркеры на поверхности Венеры"
+    },
+    "/images/colophon/model-descent-lunar-powered_webp": {
+      "title": "Лунный управляемый спуск",
+      "what": "Ступень спуска в вакууме — без тепловой защиты или парашюта (Apollo / Chang'e / Luna).",
+      "where": "Полёт · спуск/посадка"
+    },
+    "/images/colophon/model-descent-mars-retro_webp": {
+      "title": "Марс парашют + торможение",
+      "what": "Тепловая защита, сверхзвуковой парашют и тормозные двигатели на конечном этапе (Viking / Phoenix / InSight).",
+      "where": "Полёт · спуск/посадка"
+    },
+    "/images/colophon/model-descent-airbag_webp": {
+      "title": "Спускаемый аппарат с воздушными подушками на Марсе",
+      "what": "Тетраэдрическая подушечная оболочка, амортизирующая при приземлении (Pathfinder / Spirit / Opportunity).",
+      "where": "Полёт · спуск/посадка"
+    },
+    "/images/colophon/model-descent-skycrane_webp": {
+      "title": "Марсианский скайкрейн",
+      "what": "Энергетический модуль спуска, спускающий ровер на тросах (Curiosity / Perseverance).",
+      "where": "Полёт · спуск/посадка"
+    },
+    "/images/colophon/model-descent-venus-aeroshell_webp": {
+      "title": "Аэродинамический щит Венеры",
+      "what": "Сферо-конический спускаемый аппарат с тормозным диском для плотной атмосферы (Venera / Вега).",
+      "where": "Полёт · спуск/посадка"
+    },
+    "/images/colophon/model-descent-asteroid-sampler_webp": {
+      "title": "Тач-энд-гоу на астероиде",
+      "what": "Буксир-пробоотборник с приёмным раструбом для микрогравитационного контакта (Hayabusa / OSIRIS-REx).",
+      "where": "Полёт · спуск/посадка"
+    },
+    "/images/colophon/model-descent-comet-lander_webp": {
+      "title": "Посадочный модуль с гарпуном на комете",
+      "what": "Трёхопорный микрогравитационный посадочный модуль с якорными гарпунами (Philae на комете 67P).",
+      "where": "Полёт · спуск/посадка"
+    },
+    "/images/colophon/model-descent-jupiter-probe_webp": {
+      "title": "Атмосферный зонд Юпитера",
+      "what": "Сферо-конический аэродинамический щит и парашют для входа в глубокую атмосферу (зонд Galileo).",
+      "where": "Полёт · спуск/посадка"
+    },
+    "/images/colophon/model-descent-titan-parachute_webp": {
+      "title": "Спуск Гюйгенса на Титан с парашютом",
+      "what": "Аэродинамический щит и большой парашют для медленного спуска сквозь дымку Титана (Huygens).",
+      "where": "Полёт · спуск/посадка"
+    },
+    "/images/colophon/model-cruise-curiosity_webp": {
+      "title": "Круизный модуль Curiosity",
+      "what": "Диск круизного модуля MSL над аэродинамическим щитом, внутри которого находится ровер.",
+      "where": "Полёт · крейсерский полёт/подлёт"
+    },
+    "/images/colophon/model-cruise-perseverance_webp": {
+      "title": "Крейсерский модуль Perseverance",
+      "what": "Крейсерский модуль Mars 2020 + аэродинамический экран (марсоход и Ingenuity герметичны внутри).",
+      "where": "Полёт · крейсерская/маршевая фаза"
+    },
+    "/images/colophon/model-cruise-insight_webp": {
+      "title": "Крейсерский модуль InSight",
+      "what": "Диск крейсерского модуля над аэродинамическим экраном, несущий посадочный аппарат.",
+      "where": "Полёт · крейсерская/маршевая фаза"
+    },
+    "/images/colophon/model-cruise-phoenix_webp": {
+      "title": "Крейсерский модуль Phoenix",
+      "what": "Крейсерский модуль + аэродинамический экран для полярного посадочного аппарата.",
+      "where": "Полёт · крейсерская/маршевая фаза"
+    },
+    "/images/colophon/model-cruise-mars-pathfinder_webp": {
+      "title": "Крейсерский модуль Pathfinder",
+      "what": "Крейсерский модуль + аэродинамический экран (посадочный аппарат на воздушных подушках и Sojourner герметичны внутри).",
+      "where": "Полёт · крейсерская/маршевая фаза"
+    },
+    "/images/colophon/model-cruise-spirit_webp": {
+      "title": "Крейсерский модуль Spirit",
+      "what": "Крейсерский модуль MER + аэродинамический экран.",
+      "where": "Полёт · крейсерская/маршевая фаза"
+    },
+    "/images/colophon/model-cruise-opportunity_webp": {
+      "title": "Крейсерский модуль Opportunity",
+      "what": "Крейсерский модуль MER + аэродинамический экран.",
+      "where": "Полёт · крейсерская/маршевая фаза"
+    },
+    "/images/colophon/model-cruise-schiaparelli_webp": {
+      "title": "Schiaparelli + TGO",
+      "what": "Орбитальный аппарат ExoMars Trace Gas Orbiter, несущий входной капсулю Schiaparelli.",
+      "where": "Полёт · крейсерская/маршевая фаза"
+    },
+    "/images/colophon/model-cruise-viking1_webp": {
+      "title": "Орбитальный аппарат Viking + посадочный аппарат",
+      "what": "Орбитальный аппарат Viking с биощитом-капсулью посадочного аппарата ниже.",
+      "where": "Полёт · крейсерская/маршевая фаза"
+    },
+    "/images/colophon/model-cruise-mars3_webp": {
+      "title": "Аппарат Mars 3",
+      "what": "Советский автобус М-71 с посадочной капсулой и солнечными панелями.",
+      "where": "Полёт · крейсерский полёт/подход"
+    },
+    "/images/colophon/model-cruise-tianwen1_webp": {
+      "title": "Орбитальный аппарат Tianwen-1",
+      "what": "Орбитальный аппарат, несущий входную капсулу (с ровером Zhurong внутри).",
+      "where": "Полёт · крейсерский полёт/подход"
+    },
+    "/images/colophon/model-cruise-apollo11_webp": {
+      "title": "Apollo CSM + LM",
+      "what": "Командно-служебный модуль, стыкованный с лунным модулем — трансселенный стек (Apollo 11–17).",
+      "where": "Полёт · крейсерский полёт/подход"
+    },
+    "/images/colophon/model-cruise-artemis3_webp": {
+      "title": "Orion (Artemis)",
+      "what": "Капсула экипажа Orion с европейским служебным модулем и четырьмя солнечными панелями (Artemis III / IV).",
+      "where": "Полёт · крейсерский полёт/подход"
+    },
+    "/images/colophon/model-cruise-luna9_webp": {
+      "title": "Luna 9 прямой полёт",
+      "what": "Советский прямой автобус со сферической посадочной капсулой на вершине.",
+      "where": "Полёт · крейсерский полёт/подход"
+    },
+    "/images/colophon/model-cruise-luna16_webp": {
+      "title": "Luna образец с возвратом",
+      "what": "Ступень спуска со сферическими баками, ступень подъёма и возвратная капсула (Luna 16 / 24).",
+      "where": "Полёт · крейсерский полёт/подход"
+    },
+    "/images/colophon/model-cruise-luna17_webp": {
+      "title": "Носитель Lunokhod",
+      "what": "Автобус ступени спуска, несущий луноход Lunokhod (Luna 17 / 21).",
+      "where": "Полёт · крейсерский полёт/подход"
+    },
+    "/images/colophon/model-cruise-change3_webp": {
+      "title": "Chang'e 3 / 4",
+      "what": "Посадочная ступень CNSA с луноходом Yutu в сложенном виде на вершине.",
+      "where": "Полёт · крейсерский полёт/подход"
+    },
+    "/images/colophon/model-cruise-change5_webp": {
+      "title": "Chang'e 5 / 6",
+      "what": "Четырёхмодульный стек с возвратом образцов — орбитальный аппарат, возвращаемый модуль, ступень подъёма и посадочный модуль.",
+      "where": "Полёт · круиз/сближение"
+    },
+    "/images/colophon/model-cruise-chandrayaan3_webp": {
+      "title": "Chandrayaan-3",
+      "what": "Пропульсивный модуль ISRO, несущий лунный посадочный аппарат Vikram.",
+      "where": "Полёт · круиз/сближение"
+    },
+    "/images/colophon/model-cruise-slim_webp": {
+      "title": "SLIM",
+      "what": "Компактный лунный перехватчик JAXA «Moon Sniper».",
+      "where": "Полёт · круиз/сближение"
+    },
+    "/images/colophon/model-cruise-beresheet_webp": {
+      "title": "Beresheet",
+      "what": "Небольшой четырёхопорный лунный посадочный аппарат SpaceIL в пути к Луне.",
+      "where": "Полёт · круиз/сближение"
+    },
+    "/images/colophon/model-cruise-blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1",
+      "what": "Высокий лунный посадочный аппарат Blue Origin — центральный топливный бак на четырёхопорной раме.",
+      "where": "Полёт · круиз/сближение"
+    },
+    "/images/colophon/model-cruise-hayabusa1_webp": {
+      "title": "Hayabusa круиз",
+      "what": "Научно-исследовательский аппарат JAXA по доставке образцов — солнечные панели, пробоотборник-зонд и ионные двигатели.",
+      "where": "Полёт · круиз/сближение"
+    },
+    "/images/colophon/model-cruise-osiris-rex_webp": {
+      "title": "OSIRIS-REx круиз",
+      "what": "Коробчатый корпус с солнечными панелями в форме буквы V и выдвижным манипулятором для отбора проб TAGSAM.",
+      "where": "Полёт · круиз/сближение"
+    },
+    "/images/colophon/model-cruise-near-shoemaker_webp": {
+      "title": "NEAR Shoemaker",
+      "what": "Спутниковый модуль с четырьмя неподвижными солнечными панелями в форме креста и неподвижной антенной.",
+      "where": "Полёт · круиз/сближение"
+    },
+    "/images/colophon/model-cruise-starship-demo_webp": {
+      "title": "Starship",
+      "what": "Стальной верхний ступень — конус обтекателя, передние/задние элероны и кластер двигателей Raptor (транспортировка к Марсу).",
+      "where": "Полёт · круиз/сближение"
+    },
+    "/images/colophon/model-sat-hubble_webp": {
+      "title": "Hubble",
+      "what": "Цилиндрическая обсерватория с дверцей апертуры и солнечными панелями.",
+      "where": "Маркеры земной орбиты"
+    },
+    "/images/colophon/model-sat-jwst_webp": {
+      "title": "JWST",
+      "what": "Солнечный экран теннисного корта под сегментированным золотым зеркалом.",
+      "where": "Маркеры земной орбиты"
+    },
+    "/images/colophon/model-sat-chandra_webp": {
+      "title": "Chandra",
+      "what": "Вытянутая рентгеновская обсерватория с солнечными панелями.",
+      "where": "Маркеры земной орбиты"
+    },
+    "/images/colophon/model-sat-xmm_webp": {
+      "title": "XMM-Newton",
+      "what": "Длинная рентгеновская телескопическая труба ESA.",
+      "where": "Маркеры земной орбиты"
+    },
+    "/images/colophon/model-sat-gaia_webp": {
+      "title": "Gaia",
+      "what": "Обсерватория ESA для астрометрии с солнцезащитным юбками экраном.",
+      "where": "Маркеры земной орбиты"
+    },
+    "/images/colophon/model-sat-lro_webp": {
+      "title": "LRO",
+      "what": "Орбитер для лунной разведки — корпус аппарата и антенна.",
+      "where": "Маркеры земной орбиты"
+    },
+    "/images/colophon/model-sat-geo-comsat_webp": {
+      "title": "Геостационарный спутник связи",
+      "what": "Прямоугольный корпус с развёрнутыми солнечными панелями и антеннами.",
+      "where": "Маркеры земной орбиты"
+    },
+    "/images/colophon/model-sat-nav-constellation_webp": {
+      "title": "Навигационная группировка",
+      "what": "Кластер спутников GPS-класса (GPS / Galileo / GLONASS / BeiDou).",
+      "where": "Маркеры земной орбиты"
+    },
+    "/images/colophon/model-sat-generic-orbiter_webp": {
+      "title": "Корпус универсального спутника-орбитера",
+      "what": "Шестигранный корпус + солнечные крылья + антенна, резервная конструкция с отметкой агентства.",
+      "where": "Маркеры орбиты Земли"
+    },
+    "/images/colophon/model-earth-launchpad_webp": {
+      "title": "Космодром",
+      "what": "Восьмиугольная стартовая площадка с четырьмя молниеотводящими башнями — Кеннеди, Байконур, Цзюцюань и другие.",
+      "where": "Маркеры поверхности Земли"
+    },
+    "/images/colophon/model-station-iss_webp": {
+      "title": "Макет модели МКС",
+      "what": "Полная ферменная конструкция, герметичные модули, пристыкованные посещающие аппараты и управляемые антенные решётки.",
+      "where": "Орбитальная сцена МКС"
+    },
+    "/images/colophon/model-station-tiangong_webp": {
+      "title": "Макет модели Tiangong",
+      "what": "Основной модуль Т-образной конфигурации + лабораторные модули, пристыкованные Shenzhou / Tianzhou и антенные решётки.",
+      "where": "Орбитальная сцена Tiangong"
+    },
+    "/images/colophon/model-microgravity_webp": {
+      "title": "Оси микрогравитации",
+      "what": "Шесть обозначенных стрелок, отмечающих локальный фрейм станции (зенит/надир…).",
+      "where": "Научный объектив МКС + Tiangong"
+    },
+    "/images/colophon/model-orbit-rings_webp": {
+      "title": "Кольца орбитальных аппаратов + ореолы маркеров",
+      "what": "Кольца высот, наклонённые по наклонению орбиты, и ореолы выделения.",
+      "where": "Земля · Луна · Марс"
+    },
+    "/images/colophon/model-trajectories_webp": {
+      "title": "Культовые траектории миссий",
+      "what": "Траектории полёта Voyager, Pioneer, New Horizons, Cassini, Juno, Dawn.",
+      "where": "Исследование"
+    }
+  },
+  "capsules": {
+    "/images/colophon/model-capsule-mercury-capsule_webp": {
+      "title": "Капсула Mercury",
+      "what": "Тупой абляционный теплозащитный экран, конусная конструкция с черепичевым покрытием и секция восстановления + антенна (Freedom 7 … Faith 7).",
+      "where": "Вход в атмосферу Земли"
+    },
+    "/images/colophon/model-capsule-gemini-capsule_webp": {
+      "title": "Капсула Gemini",
+      "what": "Двухместная увеличенная версия Mercury с радаром стыковки на носовой части и адаптерным модулем.",
+      "where": "Возвращение на Землю из орбиты"
+    },
+    "/images/colophon/model-capsule-vostok-sphere_webp": {
+      "title": "Восток",
+      "what": "Сферический спускаемый модуль «Шарик» — антенные стропы и воротник оборудования; космонавт катапультировался и приземлился отдельно с парашютом.",
+      "where": "Возвращение на Землю из орбиты"
+    },
+    "/images/colophon/model-capsule-voskhod-sphere_webp": {
+      "title": "Восход",
+      "what": "Тот же модуль «Шарик», теперь оснащённый твёрдотопливным пакетом мягкой посадки на ферменной конструкции — экипаж спустился на нём на землю.",
+      "where": "Возвращение на Землю из орбиты"
+    },
+    "/images/colophon/model-capsule-apollo-cm_webp": {
+      "title": "Командный модуль Apollo",
+      "what": "Классический крутой тупой конус с передним стыковочным туннелем (Apollo 7/9, Skylab, ASTP).",
+      "where": "Возвращение на Землю из орбиты"
+    },
+    "/images/colophon/model-capsule-soyuz-sa_webp": {
+      "title": "Спускаемый аппарат Союза",
+      "what": "«Фара» — сферический базовый тепловой экран со сжимаемым конусом экипажа.",
+      "where": "Возвращение на Землю из орбиты"
+    },
+    "/images/colophon/model-capsule-dragon-capsule_webp": {
+      "title": "Crew Dragon",
+      "what": "Гладкий конический корпус с гондолами SuperDraco и тепловым экраном PICA-X (Inspiration4, Polaris Dawn).",
+      "where": "Возвращение на Землю из орбиты"
+    },
+    "/images/colophon/model-capsule-shenzhou-reentry_webp": {
+      "title": "Спускаемый модуль Shenzhou",
+      "what": "Широкий «фарообразный» корпус линии Союза — собственный корпус светлого серебристого цвета с серой полосой оборудования (Shenzhou-1 и позже).",
+      "where": "Возвращение на Землю из орбиты"
+    }
+  },
+  "canvas2d": {
+    "/images/app-landing-hero_webp": {
+      "title": "Герой посадочной страницы",
+      "what": "Плакат-орреум в плоском стиле — сияющее солнце, наклоненные орбитальные кольца и один выделенный голубой дуга перехода.",
+      "where": "Домашняя страница"
+    },
+    "/images/colophon/viz-system-map_webp": {
+      "title": "2D-карта системы",
+      "what": "Орреум вид сверху с затенёнными планетами, свечением, орбитальными кольцами и кольцами Сатурна.",
+      "where": "Исследовать режим 2D"
+    },
+    "/images/colophon/viz-porkchop_webp": {
+      "title": "Тепловая карта Porkchop Δv",
+      "what": "Сетка вывода × времени полёта, раскрашенная по цветам в соответствии с решением Ламберта.",
+      "where": "Спланировать маневр"
+    },
+    "/images/colophon/viz-blueprint_webp": {
+      "title": "Чертежи станций",
+      "what": "Ортографические проекции сверху и сбоку каждого модуля станции.",
+      "where": "МКС + Tiangong"
+    },
+    "/images/colophon/viz-nation-legend_webp": {
+      "title": "Условные обозначения поверхностной карты по странам",
+      "what": "Автоматически распределённая по пространству цветовая легенда агентств на плоских картах поверхности.",
+      "where": "Луна + Марс 2D"
+    },
+    "/images/colophon/model-textlabels_webp": {
+      "title": "Спрайты 3D текстовых подписей",
+      "what": "Имена объектов, отрендеренные на Canvas и расположенные лицом к камере во всех сценах.",
+      "where": "Земля · Луна · Марс · Explore"
+    }
+  },
+  "ui": {
+    "Science info-chips": {
+      "title": "Информационные карточки Science",
+      "what": "Встроенный глиф «i», связывающий любое изображение с его объяснителем /science.",
+      "where": "По всему приложению"
+    },
+    "Panorama compass rose": {
+      "title": "Роза ветров панорамы",
+      "what": "Вращающийся маркер Север/Восток/Юг/Запад, ориентированный по крену панорамы.",
+      "where": "Панорамы Луны и Марса"
+    },
+    "Conic-section icons": {
+      "title": "Значки конических сечений",
+      "what": "Глифы окружность / эллипс / парабола / гипербола для наложения орбиты.",
+      "where": "Полёт"
+    },
+    "Navigation + control glyphs": {
+      "title": "Глифы навигации и управления",
+      "what": "Значки меню, научной линзы, контраста, качества и полноэкранного режима.",
+      "where": "Все маршруты"
+    }
+  },
+  "writing": {
+    "Mission briefings": {
+      "title": "Брифинги по миссиям",
+      "what": "114 рассказов о миссиях — история запусков, космические аппараты, профиль полёта и результаты — написаны для карточек миссий и раздела Полёты.",
+      "where": "Миссии + Полёты"
+    },
+    "Fleet catalogue entries": {
+      "title": "Записи каталога флота",
+      "what": "251 космический аппарат, ракеты-носители, скафандры, стартовые площадки и модули станций, каждый с описанием «известен благодаря» и полным текстовым профилем.",
+      "where": "Флот"
+    },
+    "Landing-site stories": {
+      "title": "Истории мест посадок",
+      "what": "55 многоглавных повествовательных историй лунных и марсианских мест посадок с авторскими подписями к каждой фотографии.",
+      "where": "Места посадок на Луне и Марсе"
+    },
+    "Science encyclopedia": {
+      "title": "Научная энциклопедия",
+      "what": "117 оригинальных объяснений по механике орбит, движению в космосе, жизни в космосе, наблюдениям Земли из космоса и истории космических полётов — плюс подписи к каждой иллюстрации.",
+      "where": "Наука"
+    },
+    "World profiles": {
+      "title": "Профили небесных тел",
+      "what": "Описательные тексты для 9 планет и 22 малых тел — комет, астероидов и объектов пояса Койпера — представленных в орререе.",
+      "where": "Исследовать"
+    },
+    "Station module notes": {
+      "title": "Заметки о модулях станции",
+      "what": "Рабочие и исторические заметки для всех 22 модулей МКС и Tiangong, написаны для панелей схемы.",
+      "where": "МКС + Tiangong"
+    },
+    "Surface + panorama captions": {
+      "title": "Подписи к поверхностным сценам и панорамам",
+      "what": "Метки горячих точек и аннотированные подписи панорам, которые обозначают, что вы видите на каждой сцене Луны и Марса.",
+      "where": "Панорамы Луны и Марса"
+    },
+    "Audio tour scripts": {
+      "title": "Сценарии аудиотуров",
+      "what": "Каждый эпизод направляемого и расширенного тура изначально написан для Orrery; голоса синтеза речи — третьей стороны (указаны на странице Благодарности).",
+      "where": "Начать тур"
+    },
+    "Physics Lab formula registry": {
+      "title": "Реестр формул Физической лаборатории",
+      "what": "Физическая лаборатория построена на 64 оригинальных определениях формул — каждая с уравнением, диапазонами параметров, честным логированием ошибок, указанными предположениями и спецификацией вычисленных значений — написанными в компании на основе реальной физики. Справочные константы, из которых они вычисляются (JPL/IAU/EGM96), цитируются на странице Благодарности.",
+      "where": "Лаборатория физики"
+    },
+    "Physics Lab goals": {
+      "title": "Цели Лаборатории физики",
+      "what": "25 оригинальных лестниц образовательных целей, которые соединяют формулы в повествуемые путешествия — от запуска ракеты к касанию кометы — с написанной панелью практического применения для каждой.",
+      "where": "Лаборатория физики"
+    },
+    "Physics Lab interface, in 14 languages": {
+      "title": "Интерфейс Лаборатории физики на 14 языках",
+      "what": "Каждая строка Лаборатории — названия формул, ярлыки параметров, предположения, повествование, состояния ошибок — первоначально написана и переведена машиной по всем 14 поддерживаемым локалям.",
+      "where": "Лаборатория физики"
+    }
+  }
+}

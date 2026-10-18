@@ -1,0 +1,46 @@
+{
+  "name": "Voyager 2",
+  "current_distance_label": "143 а. е. · ~19,8 световых часов от Солнца",
+  "interstellar_since_label": "Пересекла гелиопаузу в ноябре 2018 г.",
+  "waypoints": [
+    {
+      "label": "Старт"
+    },
+    null,
+    null,
+    {
+      "label": "Юпитер"
+    },
+    null,
+    null,
+    {
+      "label": "Сатурн"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Уран"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Нептун"
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Гелиопауза"
+    },
+    null,
+    {
+      "label": "Сегодня"
+    }
+  ]
+}

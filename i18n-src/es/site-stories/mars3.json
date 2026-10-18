@@ -1,0 +1,46 @@
+{
+  "intro": "Mars 3 se posó en Terra Sirenum el 2 de diciembre de 1971: fue el primer módulo de aterrizaje que sobrevivió a la entrada en la atmósfera marciana y llegó a la superficie, cinco días después de que su gemelo Mars 2 se estrellara. Las comunicaciones se interrumpieron tras 14,5 segundos y solo transmitieron un único fragmento parcial y degradado de una imagen en escala de grises. Es probable que el módulo llegara en medio de una tormenta de polvo que envolvía todo el planeta. La ubicación exacta de Mars 3 sigue siendo objeto de debate; en 2013, HiRISE fotografió un posible hardware candidato.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Módulo de aterrizaje soviético de la clase 4MS, primer contacto con la superficie de Marte de cualquier tipo",
+      "images": [
+        {
+          "src": "/images/missions/mars3/01.webp",
+          "caption": "Maqueta del módulo de aterrizaje Mars 3 en el museo de historia espacial de NPO Lavochkin: 1210 kg de masa total, incluía un rover Prop-M de 4,5 kg (que nunca llegó a desplegarse)."
+        },
+        {
+          "src": "/images/missions/mars3/02.webp",
+          "caption": "Diagrama en corte del hardware del módulo de aterrizaje Mars 3: la herencia de su diseño básico influyó en el hardware soviético posterior de las series Venera y Mars."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "28 de mayo de 1971: Proton-K desde Baikonur",
+      "images": [
+        {
+          "src": "/images/missions/mars3/03.webp",
+          "caption": "Proton-K con la etapa superior Blok-D preparado en el cosmódromo de Baikonur: seis meses de tránsito hasta Marte."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Terra Sirenum: aterrizaje el 2 de diciembre de 1971",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars3/tier2-hirise.jpg",
+          "caption": "Detalle de HiRISE del posible emplazamiento del hardware de Mars 3 en Terra Sirenum: publicado en 2013 por el equipo de HiRISE de NASA/UA e identificado por historiadores espaciales aficionados rusos."
+        },
+        {
+          "src": "/images/missions/mars3/04.webp",
+          "caption": "La única imagen fragmentaria transmitida por Mars 3: 79 líneas, sin horizonte, sin detalle. La primera fotografía de la superficie de otro planeta, por tenue que fuera."
+        }
+      ]
+    }
+  ]
+}

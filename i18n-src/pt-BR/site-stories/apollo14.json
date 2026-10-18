@@ -1,0 +1,46 @@
+{
+  "intro": "A Apollo 14 pousou nas terras altas de Fra Mauro em 5 de fevereiro de 1971 — o alvo original da Apollo 13, cumprido após a explosão a bordo da 13. Shepard e Mitchell puxaram o Modular Equipment Transporter (uma espécie de riquixá) pelos flancos do cratera Cone e trouxeram de volta 43 kg de brecha — fragmentos do gigantesco impacto que formou o Mare Imbrium há 3,9 bilhões de anos. Shepard ficou famoso por acertar duas bolas de golfe antes da decolagem.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamentos",
+      "subtitle": "Kitty Hawk + Antares + o riquixá",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/01.webp",
+          "caption": "Tripulação da Apollo 14: Alan Shepard (comandante — primeiro americano no espaço, 10 anos antes), Stuart Roosa (piloto do módulo de comando) e Ed Mitchell (piloto do módulo lunar)."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Terras altas de Fra Mauro — pouso em 5 de fevereiro de 1971",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/02.webp",
+          "caption": "Mitchell com o Modular Equipment Transporter (MET) — o \"riquixá\" que levava ferramentas e amostras pela encosta em direção ao cratera Cone."
+        },
+        {
+          "src": "/images/missions/apollo14/03.webp",
+          "caption": "Borda do cratera Cone — a tripulação subiu até cerca de 30 m da borda, mas foi forçada a recuar pelo cansaço e pelos limites de comunicação."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo14/tier3-pan.jpg",
+          "caption": "Panorama do local de pouso da Apollo 14 — o estágio de descida da Antares e o ALSEP estão visíveis."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciência",
+      "subtitle": "Amostras de brecha do impacto de Imbrium",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/04.webp",
+          "caption": "\"Big Bertha\" — amostra 14321, uma brecha de 8,99 kg que contém a rocha terrestre mais antiga já encontrada (zircão de 4,1 Ga), lançada à Lua por um impacto na Terra primitiva."
+        }
+      ]
+    }
+  ]
+}

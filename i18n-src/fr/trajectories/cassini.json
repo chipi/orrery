@@ -1,0 +1,33 @@
+{
+  "name": "Cassini-Huygens",
+  "current_distance_label": "9,5 UA · en orbite de Saturne 2004-2017 — désintégrée dans l'atmosphère de Saturne 2017-09-15",
+  "waypoints": [
+    {
+      "label": "Lancement"
+    },
+    null,
+    {
+      "label": "Vénus #1"
+    },
+    null,
+    {
+      "label": "Vénus #2"
+    },
+    {
+      "label": "Terre"
+    },
+    null,
+    {
+      "label": "Jupiter"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Insertion en orbite de Saturne"
+    },
+    {
+      "label": "Grand Finale (aujourd'hui)"
+    }
+  ]
+}

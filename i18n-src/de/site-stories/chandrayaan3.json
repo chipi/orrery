@@ -1,0 +1,46 @@
+{
+  "intro": "Chandrayaan-3 landete am 23. August 2023 nahe dem lunaren Südpol – es war Indiens erste weiche Landung auf dem Mond und zugleich die Landung, die dem Südpol von allen Nationen bislang am nächsten kam. Der Lander Vikram setzte den Rover Pragyan aus, der im Verlauf von 14 Tagen rund 100 m zurücklegte und in dauerhaft beschattetem Gelände nach Wassereis suchte. Indien wurde damit nach der UdSSR, den USA und China die vierte Nation, der eine weiche Landung auf dem Mond gelang.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Lander Vikram + Rover Pragyan",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/01.webp",
+          "caption": "Raumfahrzeugstapel von Chandrayaan-3 während der Integration vor dem Start bei ISRO Sriharikota."
+        },
+        {
+          "src": "/images/missions/chandrayaan3/02.webp",
+          "caption": "Rover Pragyan – 26 kg, solarbetrieben, sechsrädrig. Konzipiert, um über das Regolith der lunaren Südpolregion zu fahren und nach flüchtigen Stoffen zu suchen."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "14. Juli 2023 – LVM3 vom Satish Dhawan Space Centre",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/03.webp",
+          "caption": "LVM3 („Bahubali“) startet Chandrayaan-3 – 40-tägiger Transit mit mehrfachen Schleifen zum Einschwenken in die Mondumlaufbahn, bewusst langsame Flugbahn, um die Treibstoffreserve zu maximieren."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Statio Shiv Shakti, nahe dem lunaren Südpol – gelandet am 23. August 2023",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/04.webp",
+          "caption": "Lander Vikram auf der Oberfläche der Südpolarregion – Aufsetzen bei 69,37° S, die Mondlandung in der höchsten geografischen Breite, die je erfolgt ist."
+        },
+        {
+          "src": "/images/missions/chandrayaan3/05.webp",
+          "caption": "Rover Pragyan rollt die Rampe hinab – die ersten Räder am lunaren Südpol, aufgenommen von den Bordkameras von Vikram."
+        }
+      ]
+    }
+  ]
+}

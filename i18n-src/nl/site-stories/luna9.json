@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 9 landde op 3 februari 1966 in Oceanus Procellarum — de eerste zachte landing op een andere wereld. De bolvormige capsule van 99 kg overleefde een inslag met 22 km/u dankzij opblaasbare kussens, vouwde vervolgens bloemblaadjes open om zichzelf op te richten en zond de eerste foto's van het maanoppervlak uit. Ze bleef 3 dagen in bedrijf, tot de batterijen leeg waren.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Sovjet-capsule E-6, pionier van de zachte landing",
+      "images": [
+        {
+          "src": "/images/missions/luna9/01.webp",
+          "caption": "Maquette van de Luna 9-capsule — 99 kg, bolvormig, met een door airbags beschermde camera en vier bloemblaadjesantennes."
+        },
+        {
+          "src": "/images/missions/luna9/02.webp",
+          "caption": "Doorsnedetekening van de hardware van Luna 9 — Sovjetingenieurs losten het probleem van de zachte landing eerder op dan NASA."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "31 januari 1966 — Molniya-M vanaf Bajkonoer",
+      "images": [
+        {
+          "src": "/images/missions/luna9/03.webp",
+          "caption": "Een Molniya-M-raket wordt voorbereid op Bajkonoer — Luna 9 werd gelanceerd te midden van een felle Sovjet-Amerikaanse race naar de eerste zachte landing."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Oceanus Procellarum — geland op 3 februari 1966",
+      "images": [
+        {
+          "src": "/images/missions/luna9/04.webp",
+          "caption": "De eerste beelden van het maanoppervlak — grove panorama's met een lage bitrate, waarop rotsachtig regoliet te zien is. De radiotelescoop van Jodrell Bank bij Manchester ving de uitzending op en publiceerde de beelden eerder dan de Sovjets."
+        },
+        {
+          "src": "/images/missions/luna9/05.webp",
+          "caption": "Panoramamozaïek van Luna 9 — het eerste bewijs dat het maanoppervlak stevig genoeg was om een lander te dragen, en het einde van jarenlange speculatie over diepe stofduinen."
+        }
+      ]
+    }
+  ]
+}

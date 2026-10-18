@@ -1,0 +1,65 @@
+{
+  "intro": "Perseverance는 2021년 2월 18일 예제로 분화구에 착륙했다. 38억 년 전에 형성된 이 강 삼각주는 고대 화성 생명의 흔적을 간직하고 있을 가능성이 가장 높다는 이유로 선정되었다. 이 로버는 최초의 화성 헬리콥터(Ingenuity)와 최초의 화성 녹음 장치, 그리고 최초의 시료 저장 시스템을 싣고 있다. 표면에 남겨진 시료 튜브는 2030년대에 Mars Sample Return 임무를 통해 지구로 가져올 예정이다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "Curiosity보다 더 무겁고 더 똑똑한 형제",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/01.webp",
+          "caption": "JPL에서 조립 중인 Perseverance — 무게 1025킬로그램, MMRTG 동력, 카메라 23대와 마이크 2개, 시료 저장용 터릿을 탑재했다."
+        },
+        {
+          "src": "/images/missions/perseverance/02.webp",
+          "caption": "Perseverance의 하부에 장착된 Ingenuity 헬리콥터 — 다른 행성에서 비행한 최초의 공기보다 무거운 비행체이다."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "2020년 7월 30일 — 케이프 커내버럴에서 발사된 Atlas V",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/03.webp",
+          "caption": "2020년 7월 30일 07:50 EDT, SLC-41에서 Atlas V 541이 Mars 2020을 발사한다. 예제로까지는 203일이 걸린다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "예제로 분화구 — 2021년 2월 18일 착륙",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
+          "caption": "Van Zyl Overlook — Mastcam-Z가 촬영한 최초의 360도 파노라마, 3솔(2021년 2월 21일). 서쪽으로 예제로 삼각주가 보인다."
+        },
+        {
+          "src": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
+          "caption": "Perseverance와 그 이동 경로. Mars Reconnaissance Orbiter의 HiRISE 카메라가 궤도에서 픽셀당 25센티미터 해상도로 촬영했다."
+        },
+        {
+          "src": "/images/missions/perseverance/04.webp",
+          "caption": "2021년 4월 19일, Ingenuity의 첫 비행 — 고도 3미터에서 3초간 정지 비행했다. Wright Brothers의 Flyer에 쓰였던 천 조각이 바로 이 순간을 위해 헬리콥터에 실려 있었다."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "38억 년 전 강 삼각주의 시료 채취",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/perseverance/02.webp",
+          "caption": "화성 표면에 밀봉되어 저장된 첫 번째 시료 튜브 — 2021년 9월 Rochette 암석에서 시추한 \"Roubion\" 코어."
+        },
+        {
+          "src": "/images/fleet-galleries/perseverance/03.webp",
+          "caption": "SHERLOC 장비가 Wildcat Ridge 이암에서 검출한 유기 분자 — 고대 화성 생명체 후보를 보여 주는 화학적 지문이다."
+        }
+      ]
+    }
+  ]
+}

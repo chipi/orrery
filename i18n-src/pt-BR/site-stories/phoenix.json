@@ -1,0 +1,50 @@
+{
+  "intro": "Phoenix pousou a 68,22°N em 25 de maio de 2008 — o primeiro módulo de pouso da NASA a tocar o solo no alto Ártico marciano. Em poucos dias, coletou a primeira amostra de gelo de água de Marte e a observou sublimar no quadro da câmera. O módulo operou por 157 sols, até que o inverno polar o matou: a formação de gelo de CO₂ sepultou os painéis solares e pôs fim à missão.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Reconstituído a partir do módulo de pouso cancelado Mars Surveyor 2001",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/01.webp",
+          "caption": "Módulo de pouso Phoenix antes do embarque — 350 kg, braço robótico, pá para gelo, laboratório de química úmida TEGA."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Vastitas Borealis — pouso em 25 de maio de 2008",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/phoenix/tier3-pan.jpg",
+          "caption": "Panorama de 360° do local de pouso da Phoenix, sol 14 — área de trabalho, base de apoio e o gelo exposto pelos propulsores visíveis no canto inferior direito."
+        },
+        {
+          "src": "/images/hotspots/mars/phoenix/tier2-hirise.jpg",
+          "caption": "Módulo de pouso Phoenix, paraquedas e escudo traseiro — todos fotografados pela HiRISE da MRO após o pouso."
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/02.webp",
+          "caption": "O braço robótico escavando a trincheira \"Snow White\" — gelo de água brilhante exposto a centímetros da superfície, observado depois enquanto sublimava ao longo de quatro sols."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciência",
+      "subtitle": "Água, percloratos e o primeiro clima marciano",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/03.webp",
+          "caption": "Detecção de sais de perclorato no solo marciano — uma química que moldaria todas as discussões seguintes sobre a habitabilidade de Marte."
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/04.webp",
+          "caption": "Perfis de lidar de neve caindo sobre o local da Phoenix, no fim da missão — a primeira precipitação marciana observada diretamente."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Rosetta",
+  "current_distance_label": "4.1 AU · 2016-09-30 受控下降至67P表面（任务结束）",
+  "waypoints": [
+    {
+      "label": "发射（Ariane 5）"
+    },
+    {
+      "label": "地球 #1"
+    },
+    null,
+    {
+      "label": "火星"
+    },
+    {
+      "label": "地球 #2"
+    },
+    {
+      "label": "小行星Šteins"
+    },
+    {
+      "label": "地球 #3"
+    },
+    {
+      "label": "小行星司琴星"
+    },
+    null,
+    null,
+    {
+      "label": "与67P会合"
+    },
+    {
+      "label": "Philae登陆"
+    },
+    {
+      "label": "67P近日点"
+    },
+    {
+      "label": "撞向67P"
+    }
+  ]
+}

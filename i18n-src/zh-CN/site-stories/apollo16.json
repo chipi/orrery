@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 16 于1972年4月21日降落在笛卡尔高地——这是阿波罗计划中唯一一次前往高地（而非月海）着陆点的任务，选址初衷是采集当时被认为属于火山地貌的样本。扬和杜克却没有发现任何火山岩，只找到撞击角砾岩和斜长岩，从而推翻了原有的地质模型，证明月球高地是古老的、被撞击击碎的月壳，而非后期火山活动的产物。三次舱外活动，月球车行驶路程27公里，带回样本95公斤。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "Casper 指令舱 + Orion 登月舱 + LRV-2 月球车",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/01.webp",
+          "caption": "Apollo 16 乘组合影——约翰·扬（指令长）、肯·马丁利（指令舱驾驶员，原定执行 Apollo 13 任务，后被换下）、查理·杜克（登月舱驾驶员）。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "笛卡尔高地——1972年4月21日着陆",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/02.webp",
+          "caption": "约翰·扬在“月球奥运会”上跃起——人类首次载人月面跳高，展示了月球1/6的重力。"
+        },
+        {
+          "src": "/images/missions/apollo16/03.webp",
+          "caption": "杜克在“Big Muley”旁——样本 61016，是从月球带回的最大单块岩石（11.7公斤）。"
+        },
+        {
+          "src": "/images/hotspots/moon/apollo16/tier3-pan.jpg",
+          "caption": "笛卡尔高地全景——Orion 下降级、月球车，以及远处作为背景的 Stone Mountain。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "高地角砾岩推翻了火山活动假说",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/04.webp",
+          "caption": "查理·杜克的全家福，被留在月球表面——这是已知唯一留在另一个世界上的地球家庭肖像。"
+        }
+      ]
+    }
+  ]
+}

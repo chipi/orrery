@@ -1,0 +1,46 @@
+{
+  "intro": "SLIM (Smart Lander for Investigating Moon) landete am 20. Januar 2024 im Shioli-Krater – Japans erste weiche Landung auf dem Mond und zugleich ein Technologiedemonstrator für präzises Landen. SLIM setzte weniger als 100 m von seinem Ziel entfernt auf (die bisherige Bestmarke lag bei über 1 km), kippte jedoch auf die Seite und arbeitete kopfüber mit den verbliebenen Solarzellen weiter, bis die Energie aufgebraucht war. Zwei Mikro-Rover für die Oberfläche, LEV-1 und LEV-2 (Sora-Q), wurden noch vor der unglücklichen Endlage ausgesetzt.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Umgekippter Präzisionslander + 2 Mikro-Rover",
+      "images": [
+        {
+          "src": "/images/missions/slim/01.webp",
+          "caption": "SLIM-Lander vor dem Start – 200 kg schwer, stiftförmig, konzipiert für Demonstrationen präziser Landungen mit geringer Masse."
+        },
+        {
+          "src": "/images/missions/slim/02.webp",
+          "caption": "LEV-2 „Sora-Q“ – ein baseballgroßer Transformer-Ball-Rover, entwickelt von TOMY (dem Spielzeughersteller) + JAXA + Sony."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "6. September 2023 – H-IIA von Tanegashima",
+      "images": [
+        {
+          "src": "/images/missions/slim/03.webp",
+          "caption": "H-IIA-47 hebt ab und trägt SLIM + das Observatorium XRISM – ein gemeinsamer Start mit einer bedeutenden Röntgen-Wissenschaftsmission."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Shioli-Krater – gelandet am 20. Januar 2024",
+      "images": [
+        {
+          "src": "/images/missions/slim/04.webp",
+          "caption": "SLIM, von Sora-Q auf der Mondoberfläche fotografiert – mit der Nase nach unten gelandet, die Solarzellenflächen in die falsche Richtung ausgerichtet."
+        },
+        {
+          "src": "/images/missions/slim/05.webp",
+          "caption": "Trotz der unbeabsichtigten Lage arbeitete SLIM dreimal – bei Sonnenaufgang auf dem Mond fiel schräges Sonnenlicht auf seine nach unten gewandten Solarzellenflächen, und die Sonde erwachte kurz zum Leben."
+        }
+      ]
+    }
+  ]
+}

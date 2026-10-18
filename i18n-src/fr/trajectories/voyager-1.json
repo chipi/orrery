@@ -1,0 +1,38 @@
+{
+  "name": "Voyager 1",
+  "current_distance_label": "172 UA · ~23,8 heures-lumière du Soleil",
+  "interstellar_since_label": "A traversé l'héliopause en août 2012 — premier objet créé par l'humain dans l'espace interstellaire",
+  "waypoints": [
+    {
+      "label": "Lancement"
+    },
+    null,
+    null,
+    {
+      "label": "Jupiter"
+    },
+    null,
+    null,
+    {
+      "label": "Saturne + Titan"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Pale Blue Dot"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Héliopause"
+    },
+    null,
+    null,
+    {
+      "label": "Aujourd'hui"
+    }
+  ]
+}

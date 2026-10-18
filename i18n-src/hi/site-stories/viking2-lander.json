@@ -1,0 +1,54 @@
+{
+  "intro": "Viking 2 ने 3 सितंबर 1976 को यूटोपिया मैदान में उतरकर इतिहास रचा — यह जुड़वाँ Viking लैंडरों में दूसरा था और मंगल के उस पार उतरा, जहाँ Viking 1 था। इसके 1,316 सोल के मिशन में मंगल पर जल-बर्फ़ के पाले का पहला अवलोकन शामिल था (ध्रुवीय शीत ऋतु में), और इसने Viking 1 के जीव-विज्ञान प्रयोगों को कहीं अधिक ठंडे, उच्च अक्षांश वाले स्थल पर दोहराया। अप्रैल 1980 में बैटरी विफल होने से इसका अंत हो गया।",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "हार्डवेयर",
+      "subtitle": "Viking 1 का जुड़वाँ, समान उपकरण",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/01.webp",
+          "caption": "यूटोपिया मैदान में मंगल की सतह पर Viking 2 लैंडर।"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "सतह",
+      "subtitle": "यूटोपिया मैदान — 3 सितंबर 1976 को उतरा",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier3-pan.jpg",
+          "caption": "यूटोपिया मैदान का 360° कैमरा मोज़ेक — Viking 1 के क्राइसी स्थल की तुलना में अधिक समतल और पथरीला भूभाग।"
+        },
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier2-hirise.jpg",
+          "caption": "मिशन समाप्त होने के दशकों बाद MRO HiRISE द्वारा कक्षा से खींची गई Viking 2 लैंडर की तस्वीर।"
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/02.webp",
+          "caption": "यूटोपिया मैदान का रंगीन दृश्य — एंड्रिया लक ने NASA अभिलेखागार की प्लेटों से Viking 2 की छवियों को दोबारा संसाधित किया।"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "विज्ञान",
+      "subtitle": "पाला, धूल भरी आँधियाँ और मंगल की पहली शीत ऋतु",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/03.webp",
+          "caption": "Viking 2 लैंडर के आसपास की चट्टानों पर जमा जल-बर्फ़ का पाला — मंगल के उत्तरी ध्रुवीय शीतकाल में ऐसा पहला अवलोकन (सोल 1230)।"
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/04.webp",
+          "caption": "यूटोपिया मैदान में सूर्योदय (PIA00576) — Viking 2 के कैमरे ने उच्च उत्तरी अक्षांशों पर भोर से पहले की आभा को कैद किया।"
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/05.webp",
+          "caption": "यूटोपिया मैदान में पाला (NASA Viking Lander 2) — एंड्रिया लक द्वारा दोबारा संसाधित।"
+        }
+      ]
+    }
+  ]
+}

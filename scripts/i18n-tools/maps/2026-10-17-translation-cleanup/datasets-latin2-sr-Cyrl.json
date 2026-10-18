@@ -1,0 +1,92 @@
+[
+  {
+    "rel": "deep-sky.json",
+    "at": "chandra-tycho.title",
+    "old": "Остатак Tycho-ове супернове",
+    "new": "Остатак Тихове супернове"
+  },
+  {
+    "rel": "trajectories/giotto.json",
+    "at": "waypoints.2.label",
+    "old": "Прелет поред Halley-а",
+    "new": "Прелет поред Халејеве комете"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/history-goddard-rocket_webp.title",
+    "old": "Историја: Goddard-ова ракета",
+    "new": "Историја: Годардова ракета"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/history-keplers-laws_webp.title",
+    "old": "Историја: Kepler-ови закони",
+    "new": "Историја: Кеплерови закони"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/history-newton-principia_webp.title",
+    "old": "Историја: Newton-ови Principia",
+    "new": "Историја: Њутнови Principia"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/hohmann-transfer_webp.title",
+    "old": "Hohmann-ов транфер",
+    "new": "Хоманов трансфер"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/keplerian-orbit_webp.title",
+    "old": "Kepler-ова орбита",
+    "new": "Кеплерова орбита"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/keplers-laws_webp.title",
+    "old": "Kepler-ови закони",
+    "new": "Кеплерови закони"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/kuiper-belt_webp.title",
+    "old": "Kuiper-ов појас",
+    "new": "Којперов појас"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/lagrange-points_webp.title",
+    "old": "Lagrange-ове тачке",
+    "new": "Лагранжове тачке"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/lambert-problem_webp.title",
+    "old": "Lambert-ов проблем",
+    "new": "Ламбертов проблем"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.World profiles.what",
+    "old": "Описни текстови за 9 планета и 22 мала тела — комете, астероиде и објекте Kuiper-овог појаса — приказана на орерију.",
+    "new": "Описни текстови за 9 планета и 22 мала тела — комете, астероиде и објекте Којперовог појаса — приказана на орерију."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Physics Lab goals.title",
+    "old": "Циљеви у Physics Lab-у",
+    "new": "Циљеви у Лабораторији физике"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Physics Lab interface, in 14 languages.title",
+    "old": "Интерфејс Physics Lab-а на 14 језика",
+    "new": "Интерфејс Лабораторије физике на 14 језика"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Physics Lab interface, in 14 languages.what",
+    "old": "Сваки текст у Lab-у — наслови формула, називи параметара, претпоставке, нарација, стања грешке — оригинално је написан и машински преведен на свих 14 подржаних локалитета.",
+    "new": "Сваки текст у Лабораторији физике — наслови формула, називи параметара, претпоставке, нарација, стања грешке — оригинално је написан и машински преведен на свих 14 подржаних локалитета."
+  }
+]

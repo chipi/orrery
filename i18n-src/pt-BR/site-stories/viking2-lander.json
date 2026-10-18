@@ -1,0 +1,54 @@
+{
+  "intro": "A Viking 2 pousou em Utopia Planitia em 3 de setembro de 1976 — a segunda das duas sondas gêmeas Viking, no lado oposto de Marte em relação à Viking 1. Sua missão de 1.316 sóis incluiu a primeira observação de geada de gelo de água em Marte (durante o inverno polar) e a repetição dos experimentos de biologia da Viking 1 em um local muito mais frio e de latitude mais alta. Encerrada em abril de 1980 por uma falha na bateria.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Gêmea da Viking 1, com instrumentos idênticos",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/01.webp",
+          "caption": "Módulo de pouso Viking 2 na superfície de Marte, em Utopia Planitia."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Utopia Planitia — pouso em 3 de setembro de 1976",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier3-pan.jpg",
+          "caption": "Mosaico de 360° das câmeras em Utopia Planitia — terreno mais plano e mais rochoso do que o local da Viking 1, em Chryse."
+        },
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier2-hirise.jpg",
+          "caption": "Módulo de pouso Viking 2 fotografado da órbita pela HiRISE da MRO décadas após o fim da missão."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/02.webp",
+          "caption": "Vista colorida de Utopia Planitia — Andrea Luck reprocessou imagens da Viking 2 a partir de placas do arquivo da NASA."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciência",
+      "subtitle": "Geada, tempestades de poeira e o primeiro inverno marciano",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/03.webp",
+          "caption": "Geada de gelo de água cobrindo as rochas ao redor do módulo de pouso Viking 2 — primeira observação do tipo no inverno do Ártico marciano (sol 1230)."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/04.webp",
+          "caption": "Nascer do Sol em Utopia Planitia (PIA00576) — a câmera da Viking 2 captou o brilho do amanhecer em altas latitudes do hemisfério norte."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/05.webp",
+          "caption": "Geada em Utopia Planitia (NASA Viking Lander 2) — reprocessada por Andrea Luck."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "intro": "SLIM (Smart Lander for Investigating Moon) s'est posé dans le cratère Shioli le 20 janvier 2024 — premier alunissage en douceur du Japon et démonstrateur technologique d'atterrissage de précision. SLIM a touché le sol à moins de 100 m de sa cible (le meilleur résultat précédent dépassait 1 km), mais il a basculé sur le côté et a fonctionné à l'envers, grâce aux cellules solaires qui lui restaient, jusqu'à épuisement de son énergie. Deux micro-rovers de surface, LEV-1 et LEV-2 (Sora-Q), se sont déployés avant cette orientation finale incommode.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Atterrisseur de précision renversé + 2 micro-rovers",
+      "images": [
+        {
+          "src": "/images/missions/slim/01.webp",
+          "caption": "L'atterrisseur SLIM avant le lancement — 200 kg, en forme de crayon, conçu pour des démonstrations d'atterrissage de précision à faible masse."
+        },
+        {
+          "src": "/images/missions/slim/02.webp",
+          "caption": "LEV-2 « Sora-Q » — un rover sphérique transformable, de la taille d'une balle de baseball, développé par TOMY (le fabricant de jouets) + JAXA + Sony."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Le lancement",
+      "subtitle": "6 septembre 2023 — H-IIA depuis Tanegashima",
+      "images": [
+        {
+          "src": "/images/missions/slim/03.webp",
+          "caption": "H-IIA-47 décolle avec SLIM + l'observatoire XRISM — un lancement partagé avec une grande mission scientifique consacrée aux rayons X."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Cratère Shioli — alunissage le 20 janvier 2024",
+      "images": [
+        {
+          "src": "/images/missions/slim/04.webp",
+          "caption": "SLIM photographié par Sora-Q à la surface de la Lune — posé le nez vers le bas, avec ses panneaux solaires tournés du mauvais côté."
+        },
+        {
+          "src": "/images/missions/slim/05.webp",
+          "caption": "Malgré cette orientation imprévue, SLIM a fonctionné à trois reprises — au lever du Soleil lunaire, ses panneaux tournés dans la mauvaise direction ont capté la lumière rasante du Soleil et il s'est brièvement réveillé."
+        }
+      ]
+    }
+  ]
+}

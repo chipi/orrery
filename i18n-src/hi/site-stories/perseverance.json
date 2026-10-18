@@ -1,0 +1,65 @@
+{
+  "intro": "Perseverance 18 फ़रवरी 2021 को जेज़ेरो क्रेटर में उतरा — यह 3.8 अरब वर्ष पुराना एक नदी-डेल्टा है, जिसे इसलिए चुना गया क्योंकि यहाँ प्राचीन मंगलीय जीवन के साक्ष्य सुरक्षित मिलने की सबसे अच्छी संभावना थी। यह रोवर अपने साथ मंगल का पहला हेलीकॉप्टर (Ingenuity), मंगल का पहला ऑडियो रिकॉर्डर और पहली नमूना-संचयन प्रणाली लेकर गया है। सतह पर छोड़ी गई नमूना-नलिकाओं को 2030 के दशक में Mars Sample Return मिशन द्वारा पृथ्वी पर लाया जाएगा।",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "हार्डवेयर",
+      "subtitle": "Curiosity का भारी और अधिक चतुर भाई",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/01.webp",
+          "caption": "JPL में असेंबली के दौरान Perseverance — 1025 किग्रा वज़न, MMRTG से संचालित, 23 कैमरों, 2 माइक्रोफ़ोन और नमूना-संचयन टरेट से लैस।"
+        },
+        {
+          "src": "/images/missions/perseverance/02.webp",
+          "caption": "Perseverance के निचले भाग में लगा Ingenuity हेलीकॉप्टर — किसी दूसरे ग्रह पर उड़ान भरने वाला पहला हवा से भारी यान।"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "प्रक्षेपण",
+      "subtitle": "30 जुलाई 2020 — केप केनवरल से Atlas V",
+      "images": [
+        {
+          "src": "/images/missions/perseverance/03.webp",
+          "caption": "Atlas V 541 ने 30 जुलाई 2020 को सुबह 07:50 EDT पर SLC-41 से Mars 2020 को प्रक्षेपित किया — जेज़ेरो तक 203 दिनों की यात्रा।"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "सतह",
+      "subtitle": "जेज़ेरो क्रेटर — 18 फ़रवरी 2021 को उतरा",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
+          "caption": "Van Zyl Overlook — Mastcam-Z का पहला 360° पैनोरमा, सोल 3 (21 फ़रवरी 2021)। पश्चिम में जेज़ेरो डेल्टा दिखाई देता है।"
+        },
+        {
+          "src": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
+          "caption": "Perseverance और उसका तय किया गया मार्ग — Mars Reconnaissance Orbiter के HiRISE कैमरे से कक्षा से 25 सेमी/पिक्सेल रिज़ॉल्यूशन पर ली गई तस्वीर।"
+        },
+        {
+          "src": "/images/missions/perseverance/04.webp",
+          "caption": "Ingenuity की पहली उड़ान, 19 अप्रैल 2021 — 3 मीटर की ऊँचाई पर 3 सेकंड तक हवा में स्थिर रहना। इसी क्षण के लिए हेलीकॉप्टर पर Wright Brothers के Flyer के कपड़े का एक टुकड़ा रखा गया था।"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "विज्ञान",
+      "subtitle": "3.8 अरब वर्ष पुराने नदी-डेल्टा के नमूने एकत्र करना",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/perseverance/02.webp",
+          "caption": "मंगल की सतह पर सीलबंद और संचित की गई पहली नमूना-नलिका — \"Roubion\" कोर, जिसे सितंबर 2021 में Rochette चट्टान से ड्रिल किया गया।"
+        },
+        {
+          "src": "/images/fleet-galleries/perseverance/03.webp",
+          "caption": "SHERLOC उपकरण ने Wildcat Ridge की मडस्टोन में कार्बनिक अणु खोजे — प्राचीन मंगलीय जैविकी की संभावनाओं का एक रासायनिक फ़िंगरप्रिंट।"
+        }
+      ]
+    }
+  ]
+}

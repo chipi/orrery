@@ -1,0 +1,46 @@
+{
+  "intro": "Schiaparelli — други европски покушај слетања на Марс — одвојио се од ExoMars Trace Gas Orbiter 16. октобра 2016, а три дана касније се срушио на платоу Меридијани брзином од око 540 km/h. Грешка у софтверу довела је до тога да су се падобран и кочиони потисници искључили 50 секунди прерано, док је лендер још био 3,7 km изнад површине. Олупину је у року од недељу дана уочила камера MRO HiRISE. Научене лекције обликовале су ровер ExoMars Rosalind Franklin, чије је лансирање сада предвиђено за 2028. годину.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Хардвер",
+      "subtitle": "EDM — демонстрациони модул за улазак, спуштање и слетање",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/01.webp",
+          "caption": "Лендер Schiaparelli пре лансирања — 577 kg, замишљен као једнократни технолошки демонстратор за систем EDL ровера ExoMars."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Лансирање",
+      "subtitle": "14. март 2016 — Proton-M са Бајконура",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/02.webp",
+          "caption": "Proton-M полеће са склопом ExoMars 2016 — TGO + Schiaparelli, заједничка мисија агенција ESA и Roscosmos."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Површина",
+      "subtitle": "Плато Меридијани — удар 19. октобра 2016.",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/03.webp",
+          "caption": "MRO HiRISE снима место удара лендера Schiaparelli — главни кратер видљив при врху; падобран и задњи омотач доле десно."
+        },
+        {
+          "src": "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg",
+          "caption": "HiRISE детаљ места пада лендера Schiaparelli — црна пруга коју је оставио удар опреме и окружујући покривач избаченог материјала."
+        },
+        {
+          "src": "/images/fleet-galleries/schiaparelli/04.webp",
+          "caption": "Рачунарска графичка реконструкција низа догађаја током квара — засићење јединице IMU током отварања падобрана изазвало је превремено одвајање лендера на висини од 3,7 km."
+        }
+      ]
+    }
+  ]
+}

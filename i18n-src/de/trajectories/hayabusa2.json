@@ -1,0 +1,24 @@
+{
+  "name": "Hayabusa2",
+  "current_distance_label": "1,24 AU · auf dem Weg zu Vorbeiflug an (98943) 2001 CC21 Juli 2026 (erweiterte Mission)",
+  "waypoints": [
+    {
+      "label": "Start (H-IIA)"
+    },
+    null,
+    {
+      "label": "Erd-Vorbeiflug"
+    },
+    null,
+    {
+      "label": "Ankunft bei Ryugu"
+    },
+    {
+      "label": "SCI-Impaktor"
+    },
+    {
+      "label": "Rückkehr zur Erde (Probe)"
+    },
+    null
+  ]
+}

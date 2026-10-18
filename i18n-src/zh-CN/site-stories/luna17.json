@@ -1,0 +1,39 @@
+{
+  "intro": "Luna 17 于1970年11月17日降落在雨海,并释放出 Lunokhod 1——这是首辆在另一个天体上运行的轮式车辆,比 NASA 的 LRV 早了七个月。Lunokhod 1 在11个月昼中行驶了10.5公里,由克里米亚一支五人团队遥控。它传回了25,000张照片和211幅全景图,并于1971年9月归于沉寂。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "月球上的第一副车轮——Lunokhod 1",
+      "images": [
+        {
+          "src": "/images/missions/luna17/01.webp",
+          "caption": "Lunokhod 1——八轮底盘,重756公斤,由太阳能供电,并配有钋-210放射性同位素热电机(RTG)用于月夜保暖。设计寿命3个月,实际工作了10个月。"
+        },
+        {
+          "src": "/images/missions/luna17/02.webp",
+          "caption": "Luna 17 着陆器及用于释放 Lunokhod 1 的坡道。苏联遥控团队在克里米亚海岸一艘改装潜艇上进行操作。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "表面",
+      "subtitle": "雨海——1970年11月17日着陆",
+      "images": [
+        {
+          "src": "/images/missions/luna17/03.webp",
+          "caption": "Lunokhod 1 行驶在雨海上——尽管每个方向都有2.5秒的光速延迟,五人团队仍实时对其进行控制。"
+        },
+        {
+          "src": "/images/missions/luna17/04.webp",
+          "caption": "Lunokhod 1 行进路线图——在雨海上呈之字形行驶10.5公里,沿途在岩石和撞击坑处停下进行科学考察。"
+        },
+        {
+          "src": "/images/missions/luna17/05.webp",
+          "caption": "Lunokhod 1 的后向反射器——50多年后的今天,地球上的月球激光测距站仍在使用它。"
+        }
+      ]
+    }
+  ]
+}

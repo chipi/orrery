@@ -1,0 +1,400 @@
+{
+  "jwst-carina": {
+    "title": "Kosmische Klippen",
+    "caption": "Der Rand einer Sternenkinderstätte im Carina-Nebel (NGC 3324), vom Sternenwind junger Sterne modelliert.",
+    "subject": "Nebel",
+    "type": "Sternentstehungsregion",
+    "distance": "~7.600 Lichtjahre",
+    "taken": "Veröffentlicht am 12. Jul 2022"
+  },
+  "jwst-southern-ring": {
+    "title": "Süd-Ring-Nebel",
+    "caption": "Ein sterbender Stern (NGC 3132), der Gas- und Staubschalen über eine halbe Lichtjahr verteilt abwirft.",
+    "subject": "Nebel",
+    "type": "Planetarischer Nebel",
+    "distance": "~2.500 Lichtjahre",
+    "taken": "Veröffentlicht am 12. Jul 2022"
+  },
+  "jwst-stephans": {
+    "title": "Stephans Quintett",
+    "caption": "Fünf Galaxien in einem kosmischen Tanz verschlungen, vier von ihnen zerren mit Gezeitenkräften aneinander.",
+    "subject": "Galaxien",
+    "type": "Kompakte Galaxiengruppe",
+    "distance": "~290 Millionen Lichtjahre",
+    "taken": "Veröffentlicht am 12. Jul 2022"
+  },
+  "jwst-pillars": {
+    "title": "Säulen der Schöpfung",
+    "caption": "Türme aus kaltem Gas und Staub im Eagle-Nebel (M16), von neugeborenen Sternen von innen heraus erleuchtet.",
+    "subject": "Nebel",
+    "type": "Emissionsnebel / Sternentstehungsregion (M16)",
+    "distance": "~6.500 Lichtjahre",
+    "taken": "Veröffentlicht am 19. Okt 2022"
+  },
+  "jwst-tarantula": {
+    "title": "Tarantula-Nebel",
+    "caption": "30 Doradus — die aktivste bekannte Starburst-Region in unserer galaktischen Nachbarschaft.",
+    "subject": "Nebel",
+    "type": "Sternentstehungsregion (30 Dor)",
+    "distance": "~161.000 Lichtjahre",
+    "taken": "Veröffentlicht am 6. Sep 2022"
+  },
+  "jwst-cartwheel": {
+    "title": "Cartwheel-Galaxie",
+    "caption": "Eine seltene Ringgalaxie, die noch immer von einer frontalen Kollision vor Hunderten von Millionen Jahren nachklingt.",
+    "subject": "Galaxien",
+    "type": "Ringgalaxie",
+    "distance": "~500 Millionen Lichtjahre",
+    "taken": "Veröffentlicht am 2. Aug 2022"
+  },
+  "jwst-phantom": {
+    "title": "Phantom-Galaxie",
+    "caption": "M74 — eine großartige Spiralgalaxie, deren Skelett aus Gas und Staub im Infrarot entblößt ist.",
+    "subject": "Galaxien",
+    "type": "Spiralgalaxie (M74)",
+    "distance": "~32 Millionen Lichtjahre",
+    "taken": "2022"
+  },
+  "hst-pillars": {
+    "title": "Säulen der Schöpfung",
+    "caption": "Hubbles ikonische Aufnahme von 2014 der Türme aus sternentstehenden Gas im Eagle-Nebel.",
+    "subject": "Nebel",
+    "type": "Emissionsnebel / Sternentstehungsregion (M16)",
+    "distance": "~6.500 Lichtjahre",
+    "taken": "2014"
+  },
+  "hst-mystic-mountain": {
+    "title": "Mystischer Berg",
+    "caption": "Eine drei Lichtjahre hohe Säule im Carina-Nebel aus Hubbles 20. Jahrestag.",
+    "subject": "Nebel",
+    "type": "Sternentstehungssäule",
+    "distance": "~7.500 Lichtjahre",
+    "taken": "2010 · Hubble 20."
+  },
+  "hst-butterfly": {
+    "title": "Schmetterlings-Nebel",
+    "caption": "NGC 6302 — Gasflügel, die über 20.000°C erhitzt und von einem sterbenden Stern hinausgeschleudert wurden.",
+    "subject": "Nebel",
+    "type": "Planetarischer Nebel (NGC 6302)",
+    "distance": "~3.400 Lichtjahre",
+    "taken": "2009"
+  },
+  "hst-antennae": {
+    "title": "Antennae-Galaxien",
+    "caption": "Zwei Galaxien (NGC 4038/4039) kollidieren miteinander und entzünden Milliarden neuer Sterne.",
+    "subject": "Galaxien",
+    "type": "Kollidierend Galaxien",
+    "distance": "~45–65 Millionen Lichtjahre",
+    "taken": "2006"
+  },
+  "hst-bubble": {
+    "title": "Bubble-Nebel",
+    "caption": "NGC 7635 — eine sieben Lichtjahre große Blase, die vom heftigen Wind eines massereichen Sterns aufgeblasen wurde.",
+    "subject": "Nebel",
+    "type": "Emissionsnebel (NGC 7635)",
+    "distance": "~7.100 Lichtjahre",
+    "taken": "2016 · Hubble 26."
+  },
+  "hst-westerlund2": {
+    "title": "Westerlund 2",
+    "caption": "Ein riesiger Cluster junger Sterne aus Hubbles 25. Jahrestag.",
+    "subject": "Sternhaufen",
+    "type": "Sternhaufen (Gum 29)",
+    "distance": "~20.000 Lichtjahre",
+    "taken": "2015 · Hubble 25."
+  },
+  "hst-cats-eye": {
+    "title": "Katzenauge-Nebel",
+    "caption": "NGC 6543 — einer der kompliziertesten planetarischen Nebel, die je beobachtet wurden.",
+    "subject": "Nebel",
+    "type": "Planetarischer Nebel (NGC 6543)",
+    "distance": "~3.300 Lichtjahre",
+    "taken": "2004"
+  },
+  "hst-whirlpool": {
+    "title": "Whirlpool-Galaxie",
+    "caption": "M51 — eine Lehrbuch-Spiralgalaxie, deren Arme rosa vom Licht neugeborener Sterne erglühen.",
+    "subject": "Galaxien",
+    "type": "Spiralgalaxie (M51)",
+    "distance": "~31 Millionen Lichtjahre",
+    "taken": "2005"
+  },
+  "hst-crab": {
+    "title": "Krebsnebel",
+    "caption": "M1 — die zerfetzten Überreste eines Sterns, der 1054 n. Chr. explodiert ist.",
+    "subject": "Nebel",
+    "type": "Supernova-Überrest (M1)",
+    "distance": "~6.500 Lichtjahre",
+    "taken": "2005"
+  },
+  "hst-veil": {
+    "title": "Schleier-Nebel",
+    "caption": "Ein Hauch des Cygnusbogens — eine Supernova-Stoßwelle, die sich noch nach 10.000 Jahren ausdehnt.",
+    "subject": "Nebel",
+    "type": "Supernova-Überrest · Cygnusbogen",
+    "distance": "~2.400 Lichtjahre",
+    "taken": "2015"
+  },
+  "hst-sombrero": {
+    "title": "Sombrero-Galaxie",
+    "caption": "M104 — ein strahlender weißer Kern, umhüllt von einem dunklen Staubring.",
+    "subject": "Galaxien",
+    "type": "Spiralgalaxie (M104)",
+    "distance": "~28 Millionen Lichtjahre",
+    "taken": "2003"
+  },
+  "hst-eskimo": {
+    "title": "Eskimo-Nebel",
+    "caption": "NGC 2392 — ein sonnenähnlicher Stern, umhüllt von Gasschalen, die er vor 10.000 Jahren abgestoßen hat.",
+    "subject": "Nebel",
+    "type": "Planetarischer Nebel (NGC 2392)",
+    "distance": "~3.000 Lichtjahre",
+    "taken": "2000"
+  },
+  "chandra-crab": {
+    "title": "Krebsnebel (Röntgenstrahlung)",
+    "caption": "Chandras Röntgenauge auf den Pulsar, der den Krebsnebel antreibt und Materie in Ringe und Jets wirbelt.",
+    "subject": "Nebel",
+    "type": "Supernova-Überrest · Röntgenstrahlung (M1)",
+    "distance": "~6.500 Lichtjahre"
+  },
+  "chandra-tycho": {
+    "title": "Tycho-Supernova-Überrest",
+    "caption": "Die Röntgenschale eines Sterns, dessen Explosion Tycho Brahe 1572 beobachtete.",
+    "subject": "Supernova",
+    "type": "Supernova-Überrest · Röntgenstrahlung (SN 1572)",
+    "distance": "~10.000 Lichtjahre"
+  },
+  "spitzer-helix": {
+    "title": "Helix-Nebel (Infrarot)",
+    "caption": "Spitzers Infrarotblick auf einen staubigen Kokon eines sterbenden Sterns, 700 Lichtjahre entfernt.",
+    "subject": "Nebel",
+    "type": "Planetarischer Nebel · Infrarot",
+    "distance": "~700 Lichtjahre",
+    "taken": "2007"
+  },
+  "euclid-perseus": {
+    "title": "Perseus-Cluster",
+    "caption": "Euclid erfasst 1.000 Galaxien im Cluster und 100.000 weitere dahinter verstreut.",
+    "subject": "Tiefenfeld",
+    "type": "Galaxienhaufen",
+    "distance": "~240 Millionen Lichtjahre",
+    "taken": "Veröffentlicht am 7. Nov 2023"
+  },
+  "euclid-horsehead": {
+    "title": "Pferdekopf-Nebel",
+    "caption": "Euclids panoramischer Blick auf die ikonische dunkle Wolke im Orion.",
+    "subject": "Nebel",
+    "type": "Dunkelnebel (Barnard 33)",
+    "distance": "~1.375 Lichtjahre",
+    "taken": "Veröffentlicht am 7. Nov 2023"
+  },
+  "pale-blue-dot": {
+    "title": "Pale Blue Dot",
+    "caption": "Die Erde als einzelnes Pixel, fotografiert von Voyager 1 aus sechs Milliarden Kilometern Entfernung.",
+    "subject": "Sonnensystem",
+    "type": "Die Erde als einzelnes Pixel",
+    "distance": "~40,5 AE (6 Milliarden km)",
+    "taken": "14. Feb 1990"
+  },
+  "pluto-nh": {
+    "title": "Pluto",
+    "caption": "New Horizons' erste Nahaufnahme von Pluto in echter Farbe und seinem Herzen aus Stickstoffeis.",
+    "subject": "Sonnensystem",
+    "type": "Zwergplanet",
+    "distance": "~34 AE (5 Milliarden km)",
+    "taken": "14. Jul 2015"
+  },
+  "sun-sdo": {
+    "title": "Die Sonne",
+    "caption": "Die Ansicht unseres Sterns durch das Solar Dynamics Observatory im extremen Ultraviolett.",
+    "subject": "Die Sonne",
+    "type": "Die Sonne · extremes Ultraviolett",
+    "distance": "1 AE",
+    "taken": "2010–heute"
+  },
+  "jwst-orion": {
+    "title": "Orion-Nebel",
+    "caption": "Der innere Orion-Nebel — eine Sternenkinderstube 1.350 Lichtjahre entfernt, in Webb NIRCam.",
+    "subject": "Nebel",
+    "type": "Emissionsnebel (M42)",
+    "distance": "~1.350 Lichtjahre",
+    "taken": "Veröffentlicht am 12. Sep 2022"
+  },
+  "jwst-ring": {
+    "title": "Ring-Nebel",
+    "caption": "M57 — ein sonnenähnlicher Stern am Ende seines Lebens, seine äußeren Schichten leuchten in feiner Detailschärfe.",
+    "subject": "Nebel",
+    "type": "Planetarischer Nebel (M57)",
+    "distance": "~2.600 Lichtjahre",
+    "taken": "Veröffentlicht am 21. Aug 2023"
+  },
+  "jwst-serpens": {
+    "title": "Serpens-Nebel",
+    "caption": "Ein Nest entstehender Sterne, das kristalline Staubkörner in eine dunkle Wolke in Serpens ausstößt.",
+    "subject": "Nebel",
+    "type": "Sternentstehungsgebiet",
+    "distance": "~1.300 Lichtjahre",
+    "taken": "Veröffentlicht 2024"
+  },
+  "hst-lagoon": {
+    "title": "Lagoon-Nebel",
+    "caption": "M8 — eine Sternkinderstube aus Gas und Staub, vom 28. Jahrestag des Hubble.",
+    "subject": "Nebel",
+    "type": "Emissionsnebel (M8)",
+    "distance": "~4.000 Lichtjahre",
+    "taken": "2018 · Hubble 28."
+  },
+  "hst-orion": {
+    "title": "Orion-Nebel",
+    "caption": "M42 — Hubbles schärfstes Mosaik der nächstgelegenen massiven Sternentstehungsgebiet.",
+    "subject": "Nebel",
+    "type": "Emissionsnebel (M42)",
+    "distance": "~1.344 Lichtjahre",
+    "taken": "2006"
+  },
+  "hst-carina-pano": {
+    "title": "Carina-Nebel",
+    "caption": "Ein 50 Lichtjahre breites Panorama einer der größten Sternfabriken in der Galaxie.",
+    "subject": "Nebel",
+    "type": "Sternentstehungsgebiet",
+    "distance": "~7.500 Lichtjahre",
+    "taken": "2007 · Hubble 17."
+  },
+  "jwst-casa": {
+    "title": "Cassiopeia A",
+    "caption": "Webbs Infrarotauge auf dem jüngsten bekannten Supernova-Überrest in der Galaxie.",
+    "subject": "Supernova",
+    "type": "Supernova-Überrest",
+    "distance": "~11.000 Lichtjahre",
+    "taken": "Veröffentlicht 2023"
+  },
+  "hst-cone-nebula": {
+    "title": "Kegel-Nebel",
+    "caption": "Ein sieben Lichtjahre hohes Gasgebilde aus kaltem Gas in einer fernen Sternkinderstube.",
+    "subject": "Nebel",
+    "type": "Emissionsnebel",
+    "distance": "~2.700 Lichtjahre",
+    "taken": "2002 · ACS Erstes Licht"
+  },
+  "hst-omega-centauri": {
+    "title": "Omega Centauri",
+    "caption": "Der hellste Kugelsternhaufen am Himmel — Millionen von Sternen durch Gravitation gebunden.",
+    "subject": "Sternhaufen",
+    "type": "Kugelcluster",
+    "distance": "~17.000 Lichtjahre",
+    "taken": "2009"
+  },
+  "jwst-ngc1365": {
+    "title": "NGC 1365",
+    "caption": "Eine kolossale Balkenspiralgalaxie, deren Balken Gas auf ein hungriges schwarzes Loch lenkt.",
+    "subject": "Galaxie",
+    "type": "Balkenspiralgalaxie",
+    "distance": "~56 Millionen Lichtjahre",
+    "taken": "2023"
+  },
+  "hst-ngc602": {
+    "title": "NGC 602",
+    "caption": "Ein junger Sterncluster, der eine leuchtende Kavität in der Kleinen Magellanschen Wolke formt.",
+    "subject": "Sternhaufen",
+    "type": "Sterncluster",
+    "distance": "~200.000 Lichtjahre",
+    "taken": "2007 · Hubble 17."
+  },
+  "jwst-rho-ophiuchi": {
+    "title": "Rho-Ophiuchi-Wolke",
+    "caption": "Die dem Erdentfernteste Sternentstehungsgebiet, entflammt von jungen Sonnen — Webbs Jahrestags-Bild.",
+    "subject": "Nebel",
+    "type": "Sternentstehungsgebiet",
+    "distance": "~430 Lichtjahre",
+    "taken": "Veröffentlicht 12. Jul 2023"
+  },
+  "jwst-wr124": {
+    "title": "Wolf–Rayet 124",
+    "caption": "Ein seltener, massiver Stern, der seine äußeren Schichten in den Momenten vor seiner Supernova-Explosion abwirft.",
+    "subject": "Stern",
+    "type": "Wolf–Rayet-Stern",
+    "distance": "~15.000 Lichtjahre",
+    "taken": "Veröffentlicht 14. Mär 2023"
+  },
+  "hst-cosmic-reef": {
+    "title": "Das Kosmische Riff",
+    "caption": "NGC 2014 und NGC 2020 — ein Riff aus leuchtendem Wasserstoff vom 30. Jahrestag des Hubble.",
+    "subject": "Nebel",
+    "type": "Emissionsnebel",
+    "distance": "~163.000 Lichtjahre",
+    "taken": "2020 · Hubble 30."
+  },
+  "hst-hen2104": {
+    "title": "Südlicher Krebsnebel",
+    "caption": "Verschachtelte Sanduhrformen aus Gas, die von einem sterbenden Stern und seinem Begleiter ausgestoßen wurden.",
+    "subject": "Nebel",
+    "type": "Planetarischer Nebel",
+    "distance": "~7.000 Lichtjahre",
+    "taken": "2019 · Hubble 29."
+  },
+  "hst-monkey-head": {
+    "title": "Affenkopf-Nebel",
+    "caption": "NGC 2174 — Staubsäulen, die von der Strahlung neugeborener Sterne geformt wurden.",
+    "subject": "Nebel",
+    "type": "Emissionsnebel",
+    "distance": "~6.400 Lichtjahre",
+    "taken": "2014 · Hubble 24."
+  },
+  "hst-andromeda": {
+    "title": "Andromeda-Galaxie",
+    "caption": "Das schärfste Hubble-Panorama aller Zeiten unserer nächsten großen Nachbarin — über 100 Millionen Sterne.",
+    "subject": "Galaxie",
+    "type": "Spiralgalaxie",
+    "distance": "~2,5 Millionen Lichtjahre",
+    "taken": "2015 · PHAT"
+  },
+  "hst-pinwheel": {
+    "title": "Feuerrad-Galaxie",
+    "caption": "M101 — eine riesige Spiralgalaxie von vorne gesehen, ihre Arme durchzogen von rosa Sternentstehungsgebieten.",
+    "subject": "Galaxie",
+    "type": "Spiralgalaxie",
+    "distance": "~21 Millionen Lichtjahre",
+    "taken": "2006"
+  },
+  "hst-ngc1300": {
+    "title": "NGC 1300",
+    "caption": "Eine klassische Balkenspiralgalaxie, deren Arme sich um einen 200.000-Lichtjahre großen Balken winden.",
+    "subject": "Galaxie",
+    "type": "Balkenspiralgalaxie",
+    "distance": "~61 Millionen Lichtjahre",
+    "taken": "2005"
+  },
+  "jwst-ngc604": {
+    "title": "NGC 604",
+    "caption": "Eine Höhle aus Gas und Staub in der Dreieck-Galaxie, ausgehöhlt von mehr als 200 heißen jungen Sternen.",
+    "subject": "Nebel",
+    "type": "Sternentstehungsgebiet",
+    "distance": "~2,7 Millionen Lichtjahre",
+    "taken": "Veröffentlicht 2024"
+  },
+  "jwst-ngc346": {
+    "title": "NGC 346",
+    "caption": "Ein strahlender Knoten junger Sterne, der die Kleine Magellansche Wolke erleuchtet.",
+    "subject": "Sternhaufen",
+    "type": "Sterncluster",
+    "distance": "~200.000 Lichtjahre",
+    "taken": "Veröffentlicht 2023"
+  },
+  "euclid-ic342": {
+    "title": "Die verborgene Galaxie",
+    "caption": "IC 342 — eine Spiralgalaxie, verborgen hinter dem Staub der Milchstraße, enthüllt durch Euclid.",
+    "subject": "Galaxie",
+    "type": "Spiralgalaxie",
+    "distance": "~11 Millionen Lichtjahre",
+    "taken": "Veröffentlicht 2024"
+  },
+  "hst-v838": {
+    "title": "V838 Monocerotis",
+    "caption": "Ein Lichtwellen-Echo, das sich wellförmig durch den Staub um einen Stern ausbreitet, der plötzlich aufflammte.",
+    "subject": "Nebel",
+    "type": "Lichtwellen-Echo",
+    "distance": "~20.000 Lichtjahre",
+    "taken": "2004"
+  }
+}

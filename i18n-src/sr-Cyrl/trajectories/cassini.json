@@ -1,0 +1,33 @@
+{
+  "name": "Cassini-Huygens",
+  "current_distance_label": "9,5 АЈ · у орбити Сатурна 2004–2017 — одложена у Сатурнову атмосферу 2017-09-15",
+  "waypoints": [
+    {
+      "label": "Лансирање"
+    },
+    null,
+    {
+      "label": "Венера бр. 1"
+    },
+    null,
+    {
+      "label": "Венера бр. 2"
+    },
+    {
+      "label": "Земља"
+    },
+    null,
+    {
+      "label": "Јупитер"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Убацивање у орбиту око Сатурна"
+    },
+    {
+      "label": "Grand Finale (данас)"
+    }
+  ]
+}

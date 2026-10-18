@@ -1,0 +1,32 @@
+{
+  "name": "New Horizons",
+  "current_distance_label": "66 UA · en mission étendue — se dirigeant vers la région de stagnation de l'héliosphère",
+  "interstellar_since_label": "Franchira l'héliopause vers 2040 — troisième sonde destinée à atteindre l'espace interstellaire",
+  "waypoints": [
+    {
+      "label": "Lancement"
+    },
+    {
+      "label": "Astéroïde APL"
+    },
+    null,
+    null,
+    {
+      "label": "Assistance gravitationnelle de Jupiter"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Pluton"
+    },
+    null,
+    {
+      "label": "Arrokoth"
+    },
+    null,
+    {
+      "label": "Aujourd'hui"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "intro": "Beresheet — Hebreeuws voor \"In het begin\" — was de eerste Israëlische poging tot een maanlanding, privé gebouwd door SpaceIL met een krap budget van 100 miljoen dollar. De lander werd gelanceerd op 22 februari 2019, kwam op 4 april in een baan om de Maan terecht en stortte op 11 april 2019 neer in Mare Serenitatis, nadat de IMU en de boordcomputer tijdens de daling opnieuw opstartten. In het wrak zat een tijdcapsule vol tardigrades. Israël werd het zevende land dat de Maan bereikte, zij het alleen in kinetische zin.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "De kleinste interplanetaire lander die tot dan toe was geprobeerd — 585 kg",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/01.webp",
+          "caption": "De ruimtesonde Beresheet tijdens de integratie vóór de lancering — gebouwd door SpaceIL met Israel Aerospace Industries, de eerste privaat gefinancierde poging tot een maanlanding."
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/02.webp",
+          "caption": "De lading van de tijdcapsule — Israëlische memorabilia, 30 miljoen pagina's menselijke kennis gegraveerd in nikkelplaten en (omstreden) tardigrades, de veerkrachtigste microdiertjes ter wereld."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "22 februari 2019 — Falcon 9 vanaf Cape Canaveral (gedeelde lancering)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/03.webp",
+          "caption": "Een Falcon 9 lanceert Beresheet als bijlading samen met de communicatiesatelliet PSN-6 — een reis van 6 weken met meerdere lussen naar een baan om de Maan."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Mare Serenitatis — inslag op 11 april 2019",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/04.webp",
+          "caption": "Laatste selfie, verzonden door Beresheet tijdens de aangedreven daling — de plaquette \"Small country, big dreams\" is zichtbaar. Het contact viel weg op een hoogte van ~150 m."
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/05.webp",
+          "caption": "De inslagplek, vastgelegd door NASA's LRO — een heldere halo door verstoord regoliet. Sommige tardigrades hebben de inslag mogelijk ongeschonden overleefd."
+        }
+      ]
+    }
+  ]
+}

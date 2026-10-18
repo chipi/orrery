@@ -1,0 +1,33 @@
+{
+  "name": "Cassini-Huygens",
+  "current_distance_label": "9,5 UA · in orbita attorno a Saturno 2004-2017 — immessa nell'atmosfera di Saturno 2017-09-15",
+  "waypoints": [
+    {
+      "label": "Lancio"
+    },
+    null,
+    {
+      "label": "Venere #1"
+    },
+    null,
+    {
+      "label": "Venere #2"
+    },
+    {
+      "label": "Terra"
+    },
+    null,
+    {
+      "label": "Giove"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Inserimento in orbita attorno a Saturno"
+    },
+    {
+      "label": "Gran Finale (oggi)"
+    }
+  ]
+}

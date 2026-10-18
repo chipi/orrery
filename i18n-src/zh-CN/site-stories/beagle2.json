@@ -1,0 +1,50 @@
+{
+  "intro": "Beagle 2 是一台由英国主导的小型 ESA 着陆器，于 2003 年 12 月 19 日从 Mars Express 上释放，六天后便杳无音讯，被推定坠毁。此后 12 年，它的命运始终成谜。2015 年 1 月 16 日，NASA 的 HiRISE 相机在火星表面发现了这台着陆器：它完好无损，但太阳能电池板只部分展开，挡住了天线。着陆成功了，只是再也无法“打电话回家”。这一发现让该任务得以正名，被视为一次部分成功。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "33 千克,迄今尝试过的最小的行星际着陆器",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/01.webp",
+          "caption": "Beagle 2 着陆器渲染图——花瓣式展开的太阳能电池阵、Pillinger Lab 实验室以及蛤壳式舱体内的大气探测仪器。"
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/03.webp",
+          "caption": "展出的 Beagle 2 地球复制品——可以让人感受到这台着陆器小巧、形似飞盘的外形。"
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/05.webp",
+          "caption": "位于 Seacombe 的 Spaceport 展出的 Beagle 2 工程模型——太阳能花瓣板按设计完全展开。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "2003年6月2日——联盟号/Fregat 自拜科努尔发射,搭载 Mars Express 一同升空",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/02.webp",
+          "caption": "2003年12月19日,Beagle 2 与 Mars Express 分离——距预定着陆还有六天,沿弹道式进入轨迹飞行。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "伊希斯平原——于2003年12月25日着陆(但无通信)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/04.webp",
+          "caption": "找到 Beagle 2 了!MRO HiRISE 影像(2015年1月)——可见太阳能电池板部分展开,天线被遮挡,硬件完好无损。困扰了12年的谜团就此解开。"
+        },
+        {
+          "src": "/images/hotspots/mars/beagle2/tier2-hirise.jpg",
+          "caption": "HiRISE 拍摄的伊希斯平原中 Beagle 2 着陆区细节图——在这一比例尺下,着陆器本身只是一个亚像素级的小点;要找到它,需要多幅影像、多种光照条件的比对。"
+        }
+      ]
+    }
+  ]
+}

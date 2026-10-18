@@ -1,0 +1,18 @@
+{
+  "name": "Vega 2",
+  "current_distance_label": "0.95 AU · 航天器自1986年3月9日哈雷彗星近距掠过后一直在日心轨道上运行",
+  "waypoints": [
+    {
+      "label": "发射（质子-K运载火箭）"
+    },
+    null,
+    {
+      "label": "金星 + 气球"
+    },
+    null,
+    {
+      "label": "哈雷彗星近距掠过"
+    },
+    null
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Venera 13",
+  "current_distance_label": "0.74 AU · landed on Venus 1982-03-01 (127 min surface survival)",
+  "waypoints": [
+    {
+      "label": "Launch (Proton-K)"
+    },
+    null,
+    null,
+    {
+      "label": "Venus surface landing"
+    }
+  ]
+}

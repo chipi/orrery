@@ -1,0 +1,46 @@
+{
+  "intro": "Schiaparelli, el segundo intento europeo de aterrizar en Marte, se separó de ExoMars Trace Gas Orbiter el 16 de octubre de 2016 y se estrelló tres días después contra Meridiani Planum a unos 540 km/h. Un fallo de software provocó que el paracaídas y los propulsores de frenado se desactivaran 50 segundos antes de tiempo, cuando el módulo de aterrizaje aún se hallaba a 3,7 km de la superficie. El MRO HiRISE localizó los restos en menos de una semana. Las lecciones aprendidas moldearon el rover ExoMars Rosalind Franklin, cuyo lanzamiento está ahora previsto para 2028.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "EDM: módulo demostrador de entrada, descenso y aterrizaje",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/01.webp",
+          "caption": "El módulo de aterrizaje Schiaparelli antes del lanzamiento: 577 kg, concebido como demostrador tecnológico de un solo uso para el sistema de entrada, descenso y aterrizaje (EDL) del rover de ExoMars."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "14 de marzo de 2016: un Proton-M desde Baikonur",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/02.webp",
+          "caption": "El Proton-M despega con el conjunto ExoMars 2016, formado por TGO y Schiaparelli, misión conjunta de la ESA y Roscosmos."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Meridiani Planum: impacto el 19 de octubre de 2016",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/03.webp",
+          "caption": "El MRO HiRISE capta el lugar del impacto de Schiaparelli: el cráter principal se ve en la parte superior; el paracaídas y la cubierta trasera, abajo a la derecha."
+        },
+        {
+          "src": "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg",
+          "caption": "Detalle de HiRISE del lugar del siniestro de Schiaparelli: la mancha negra dejada por el impacto del equipo y la manta de eyecciones que lo rodea."
+        },
+        {
+          "src": "/images/fleet-galleries/schiaparelli/04.webp",
+          "caption": "Reconstrucción por ordenador de la secuencia del fallo: la saturación de la IMU durante el despliegue del paracaídas provocó la liberación prematura del módulo de aterrizaje a 3,7 km de altitud."
+        }
+      ]
+    }
+  ]
+}

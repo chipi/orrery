@@ -1,0 +1,30 @@
+{
+  "name": "Dawn",
+  "current_distance_label": "2,8 UA · en orbite stable autour de Cérès depuis fin octobre 2018 (~20 ans de durée de vie orbitale)",
+  "waypoints": [
+    {
+      "label": "Lancement"
+    },
+    null,
+    null,
+    {
+      "label": "Assistance gravitationnelle de Mars"
+    },
+    null,
+    null,
+    {
+      "label": "Orbite de Vesta"
+    },
+    {
+      "label": "Départ de Vesta"
+    },
+    null,
+    null,
+    {
+      "label": "Insertion en orbite de Cérès"
+    },
+    {
+      "label": "Fin de mission (aujourd'hui)"
+    }
+  ]
+}

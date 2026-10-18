@@ -1,0 +1,866 @@
+[
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-orion.title",
+    "old": "Orion Nebula",
+    "new": "オリオン大星雲"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-orion.caption",
+    "old": "内側のOrion Nebula — 1,350光年離れた恒星の揺りかごで、Webb NIRCamで撮影。",
+    "new": "内側のオリオン大星雲 — 1,350光年離れた恒星の揺りかごで、Webb NIRCamで撮影。"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-ring.title",
+    "old": "Ring Nebula",
+    "new": "環状星雲"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-orion.title",
+    "old": "Orion Nebula",
+    "new": "オリオン大星雲"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/antares_webp.title",
+    "old": "Antares",
+    "new": "アンタレス"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-vega-1_webp.title",
+    "old": "Vega",
+    "new": "ベガ"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-launcher-vostok-k_webp.what",
+    "old": "Korolev クロスコア、4 本のテーパー型固体ロケットブースター。",
+    "new": "コロリョフクロスコア、4 本のテーパー型固体ロケットブースター。"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-earth-launchpad_webp.what",
+    "old": "八角形パッドと4本の避雷塔 — Kennedy、Baikonur、Jiuquan、その他。",
+    "new": "八角形パッドと4本の避雷塔 — Kennedy、バイコヌール、酒泉、その他。"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Landing-site stories.where",
+    "old": "Moon + Mars sites",
+    "new": "月 + 火星 sites"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Surface + panorama captions.where",
+    "old": "Moon + Mars panoramas",
+    "new": "月 + 火星 panoramas"
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "intro",
+    "old": "Apollo 11は1969年7月20日20時17分(UTC)、Mare Tranquillitatisに着陸しました。人類が初めて別の天体に降り立った有人着陸です。Armstrongと Aldrinは月着陸船Eagleの外で2時間31分を過ごし、Collinsは頭上の軌道でColumbiaに乗って周回しました。クルーは21.5 kgの月試料を持ち帰り、足跡と、レトロリフレクター・アレイ(地上からのレーザーで今も使われています)、そして銘板を残しました。銘板にはこう刻まれています。「われわれは全人類のために平和のうちにやって来た」。",
+    "new": "Apollo 11は1969年7月20日20時17分(UTC)、静かの海に着陸しました。人類が初めて別の天体に降り立った有人着陸です。アームストロングとオルドリンは月着陸船Eagleの外で2時間31分を過ごし、コリンズは頭上の軌道でColumbiaに乗って周回しました。クルーは21.5 kgの月試料を持ち帰り、足跡と、レトロリフレクター・アレイ(地上からのレーザーで今も使われています)、そして銘板を残しました。銘板にはこう刻まれています。「われわれは全人類のために平和のうちにやって来た」。"
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.1.subtitle",
+    "old": "1969年7月16日 — Kennedy Space CenterからのSaturn V",
+    "new": "1969年7月16日 — ケネディ宇宙センターからのSaturn V"
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.subtitle",
+    "old": "Mare Tranquillitatis — 1969年7月20日着陸",
+    "new": "静かの海 — 1969年7月20日着陸"
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "月着陸船のはしごを降りるBuzz Aldrin。撮影はArmstrong。「荘厳なる荒涼」— Aldrinが月面で最初に発した言葉です。",
+    "new": "月着陸船のはしごを降りるバズ・オルドリン。撮影はアームストロング。「荘厳なる荒涼」— オルドリンが月面で最初に発した言葉です。"
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Tranquility Baseに残るAldrinのブーツの足跡。真空の中で、半世紀以上そのままの姿を保っています。",
+    "new": "Tranquility Baseに残るオルドリンのブーツの足跡。真空の中で、半世紀以上そのままの姿を保っています。"
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "intro",
+    "old": "Apollo 12は1969年11月19日、Oceanus Procellarumに着陸した。2年半前に着陸した無人探査機Surveyor 3から徒歩圏内という、ピンポイントの着陸だった。ConradとBeanは2回のEVAで計31時間を月面で過ごし、34 kgの試料とSurveyor 3の部品を分析用に持ち帰った。有人のApolloが月面の特定の目標地点に到達できることを実証した。",
+    "new": "Apollo 12は1969年11月19日、嵐の大洋に着陸した。2年半前に着陸した無人探査機Surveyor 3から徒歩圏内という、ピンポイントの着陸だった。コンラッドとビーンは2回のEVAで計31時間を月面で過ごし、34 kgの試料とSurveyor 3の部品を分析用に持ち帰った。有人のApolloが月面の特定の目標地点に到達できることを実証した。"
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "Apollo 12の乗組員の肖像 — Pete Conrad(船長)、Dick Gordon(司令船操縦士)、Al Bean(月着陸船操縦士)。",
+    "new": "Apollo 12の乗組員の肖像 — ピート・コンラッド(船長)、Dick Gordon(司令船操縦士)、Al ビーン(月着陸船操縦士)。"
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.2.subtitle",
+    "old": "Oceanus Procellarum — 1969年11月19日着陸",
+    "new": "嵐の大洋 — 1969年11月19日着陸"
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Surveyor 3着陸機のそばに立つConrad。Apollo 12はそこからわずか163 m の地点に着陸した。月面への精密着陸は、これが初めてだった。",
+    "new": "Surveyor 3着陸機のそばに立つコンラッド。Apollo 12はそこからわずか163 m の地点に着陸した。月面への精密着陸は、これが初めてだった。"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "intro",
+    "old": "Apollo 14は1971年2月5日、フラ・マウロ高地に着陸した。ここはもともとApollo 13の目標地点で、13号の爆発事故を経て、ついに果たされた着陸だった。ShepardとMitchellは、リヤカー代わりのモジュラー式装備運搬車(Modular Equipment Transporter)を引いてCone Craterの斜面を登り、43 kgの角礫岩を持ち帰った。これは39億年前にMare Imbriumを形成した巨大衝突でできた破片である。Shepardが離陸前にゴルフボールを2球打ったことは、よく知られている。",
+    "new": "Apollo 14は1971年2月5日、フラ・マウロ高地に着陸した。ここはもともとApollo 13の目標地点で、13号の爆発事故を経て、ついに果たされた着陸だった。シェパードとミッチェルは、リヤカー代わりのモジュラー式装備運搬車(Modular Equipment Transporter)を引いてコーン・クレーターの斜面を登り、43 kgの角礫岩を持ち帰った。これは39億年前に雨の海を形成した巨大衝突でできた破片である。シェパードが離陸前にゴルフボールを2球打ったことは、よく知られている。"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.0.subtitle",
+    "old": "Kitty Hawk + Antares + リヤカー",
+    "new": "Kitty Hawk + アンタレス + リヤカー"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "Apollo 14のクルー:Alan Shepard(船長 — 10年前に初のアメリカ人として宇宙へ)、Stuart Roosa(司令船操縦士)、Ed Mitchell(月着陸船操縦士)。",
+    "new": "Apollo 14のクルー:アラン・シェパード(船長 — 10年前に初のアメリカ人として宇宙へ)、Stuart Roosa(司令船操縦士)、Ed ミッチェル(月着陸船操縦士)。"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Mitchellとモジュラー式装備運搬車(MET)。この「リヤカー」は、工具と試料を積んでCone Craterへ向かう斜面を運び上げた。",
+    "new": "ミッチェルとモジュラー式装備運搬車(MET)。この「リヤカー」は、工具と試料を積んでコーン・クレーターへ向かう斜面を運び上げた。"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Cone Craterの縁。クルーは縁の手前約30 mまで登ったが、疲労と通信上の制約のため引き返さざるを得なかった。",
+    "new": "コーン・クレーターの縁。クルーは縁の手前約30 mまで登ったが、疲労と通信上の制約のため引き返さざるを得なかった。"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Apollo 14着陸地点のパノラマ。Antaresの降下段とALSEPが見える。",
+    "new": "Apollo 14着陸地点のパノラマ。アンタレスの降下段とALSEPが見える。"
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "intro",
+    "old": "Apollo 15は1971年7月30日、Hadley Rille / Apennine Mountainsに着陸した。滞在期間を延長した初の「J-class」ミッションであり、月面ローバー(Lunar Roving Vehicle、LRV)を初めて搭載し、科学者としての訓練を受けたパイロット(David Scott)が参加した。ScottとIrwinは3回の船外活動で合計28 kmを走行し、Genesis Rock(約4.1 Ga、すなわち約41億年前の斜長岩で、原初の地殻の一部)を発見。さらに生中継のテレビ映像の中で、羽根とハンマーを同時に落とし、Galileoの重力実験を再現してみせた。",
+    "new": "Apollo 15は1971年7月30日、ハドリー谷 / Apennine Mountainsに着陸した。滞在期間を延長した初の「J-class」ミッションであり、月面ローバー(Lunar Roving Vehicle、LRV)を初めて搭載し、科学者としての訓練を受けたパイロット(デイヴィッド・スコット)が参加した。スコットとアーウィンは3回の船外活動で合計28 kmを走行し、Genesis Rock(約4.1 Ga、すなわち約41億年前の斜長岩で、原初の地殻の一部)を発見。さらに生中継のテレビ映像の中で、羽根とハンマーを同時に落とし、Galileoの重力実験を再現してみせた。"
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "ミッション前の訓練中のApollo 15のクルーと月面ローバー(Lunar Roving Vehicle)。ScottとIrwinは、月面を走る初の車輪を操ることになる。",
+    "new": "ミッション前の訓練中のApollo 15のクルーと月面ローバー(Lunar Roving Vehicle)。スコットとアーウィンは、月面を走る初の車輪を操ることになる。"
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "LRVのそばで敬礼するJim Irwin。背後にはMt Hadley Delta。月面からとらえた初のApennine Mountainsの映像である。",
+    "new": "LRVのそばで敬礼するJim アーウィン。背後にはMt Hadley Delta。月面からとらえた初のApennine Mountainsの映像である。"
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Hadley Rilleの縁に立つDavid Scott。宇宙飛行士が、別の天体にある太古の溶岩流の水路の縁に立ったのは、これが初めてだった。",
+    "new": "ハドリー谷の縁に立つデイヴィッド・スコット。宇宙飛行士が、別の天体にある太古の溶岩流の水路の縁に立ったのは、これが初めてだった。"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "intro",
+    "old": "Apollo 16は1972年4月21日、Descartes Highlandsに着陸した。海(マリア)ではなく高地に降り立った、アポロ計画で唯一のミッションである。目的地に選ばれたのは、火山性の地形だと考えられていた場所のサンプルを採取するためだった。ところがYoungとDukeが見つけたのは火山岩ではなく、衝突角礫岩と斜長岩だけだった。この発見は従来の地質学的モデルを覆し、月の高地が後世の火山活動によるものではなく、衝突で砕かれた太古の地殻であることを示した。船外活動は3回、LRVによる走行距離は27 km、持ち帰ったサンプルは95 kgにのぼる。",
+    "new": "Apollo 16は1972年4月21日、デカルト高地に着陸した。海(マリア)ではなく高地に降り立った、アポロ計画で唯一のミッションである。目的地に選ばれたのは、火山性の地形だと考えられていた場所のサンプルを採取するためだった。ところがヤングとデュークが見つけたのは火山岩ではなく、衝突角礫岩と斜長岩だけだった。この発見は従来の地質学的モデルを覆し、月の高地が後世の火山活動によるものではなく、衝突で砕かれた太古の地殻であることを示した。船外活動は3回、LRVによる走行距離は27 km、持ち帰ったサンプルは95 kgにのぼる。"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "Apollo 16のクルーの肖像写真。船長のJohn Young、司令船操縦士のKen Mattingly(Apollo 13の搭乗から外された)、月着陸船操縦士のCharlie Duke。",
+    "new": "Apollo 16のクルーの肖像写真。船長のジョン・ヤング、司令船操縦士のKen Mattingly(Apollo 13の搭乗から外された)、月着陸船操縦士のチャーリー・デューク。"
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "intro",
+    "old": "Apollo 17は1972年12月11日、Taurus-Littrow Valleyに着陸した。有人月面探査の最後のミッションであり、職業地質学者（Harrison Schmitt）が月面に立った唯一のミッションでもある。CernanとSchmittは3回の船外活動で合計22時間を船外で過ごし、35 km走破して、110 kgの試料を持ち帰った。その中には有名なオレンジ色の土壌（35億年前（3.5 Ga）の溶岩噴泉に由来する火山ガラスのビーズ）も含まれる。Cernanの足跡は、地球以外の天体に残された人類最新の痕跡である。",
+    "new": "Apollo 17は1972年12月11日、タウルス・リットロウ渓谷に着陸した。有人月面探査の最後のミッションであり、職業地質学者（ハリソン・シュミット）が月面に立った唯一のミッションでもある。サーナンとシュミットは3回の船外活動で合計22時間を船外で過ごし、35 km走破して、110 kgの試料を持ち帰った。その中には有名なオレンジ色の土壌（35億年前（3.5 Ga）の溶岩噴泉に由来する火山ガラスのビーズ）も含まれる。サーナンの足跡は、地球以外の天体に残された人類最新の痕跡である。"
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "Apollo 17のクルーの肖像 — Gene Cernan（船長、CDR）、Ron Evans（司令船操縦士、CMP）、Harrison \"Jack\" Schmitt（月着陸船操縦士、LMP、科学者宇宙飛行士）。",
+    "new": "Apollo 17のクルーの肖像 — ユージン・サーナン（船長、CDR）、Ron Evans（司令船操縦士、CMP）、Harrison \"Jack\" Schmitt（月着陸船操縦士、LMP、科学者宇宙飛行士）。"
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.subtitle",
+    "old": "Taurus-Littrow Valley — 1972年12月11日着陸",
+    "new": "タウルス・リットロウ渓谷 — 1972年12月11日着陸"
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Cernanと、頭上に地球を望む旗 — 「月面に立った最後の人類」。",
+    "new": "サーナンと、頭上に地球を望む旗 — 「月面に立った最後の人類」。"
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "SchmittがShorty Craterでオレンジ色の土壌を発見 — 35億年前（3.5 Ga）の溶岩噴泉の噴火でできた火山ガラスの微小球。",
+    "new": "シュミットがショーティ・クレーターでオレンジ色の土壌を発見 — 35億年前（3.5 Ga）の溶岩噴泉の噴火でできた火山ガラスの微小球。"
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.images.2.caption",
+    "old": "Taurus-Littrowのパノラマ — Challengerの降下段、LRV、そして遠くにTortilla Flat。",
+    "new": "タウルス・リットロウ渓谷のパノラマ — Challengerの降下段、LRV、そして遠くにTortilla Flat。"
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.3.images.0.caption",
+    "old": "試料70017 — 人類が最後に採取した月の試料。1972年12月14日の離陸前にCernanが最後に行った作業だった。",
+    "new": "試料70017 — 人類が最後に採取した月の試料。1972年12月14日の離陸前にサーナンが最後に行った作業だった。"
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.2.subtitle",
+    "old": "Isidis Planitia — 2003年12月25日に着陸(ただし通信なし)",
+    "new": "イシディス平原 — 2003年12月25日に着陸(ただし通信なし)"
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Isidis PlanitiaにあるBeagle 2着陸地点のHiRISE拡大画像。このスケールでは着陸機自体は1ピクセルに満たない点にすぎず、発見には複数の画像と異なる照明条件での照合が必要だった。",
+    "new": "イシディス平原にあるBeagle 2着陸地点のHiRISE拡大画像。このスケールでは着陸機自体は1ピクセルに満たない点にすぎず、発見には複数の画像と異なる照明条件での照合が必要だった。"
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "intro",
+    "old": "Beresheet(ヘブライ語で「はじめに」の意)は、SpaceILが約1億ドルという乏しい予算で民間開発した、イスラエル初の月面着陸機です。2019年2月22日に打ち上げられ、4月4日に月周回軌道へ投入されましたが、4月11日、降下中にIMUと搭載コンピューターがリセットされ、Mare Serenitatisに墜落しました。残骸には、クマムシを積んだタイムカプセルが収められていました。イスラエルは、運動エネルギーによる形だったとはいえ、月に到達した7番目の国となりました。",
+    "new": "Beresheet(ヘブライ語で「はじめに」の意)は、SpaceILが約1億ドルという乏しい予算で民間開発した、イスラエル初の月面着陸機です。2019年2月22日に打ち上げられ、4月4日に月周回軌道へ投入されましたが、4月11日、降下中にIMUと搭載コンピューターがリセットされ、晴れの海に墜落しました。残骸には、クマムシを積んだタイムカプセルが収められていました。イスラエルは、運動エネルギーによる形だったとはいえ、月に到達した7番目の国となりました。"
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.1.subtitle",
+    "old": "2019年2月22日 — Cape CanaveralからFalcon 9で打ち上げ(相乗り)",
+    "new": "2019年2月22日 — ケープ・カナベラルからFalcon 9で打ち上げ(相乗り)"
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.2.subtitle",
+    "old": "Mare Serenitatis — 2019年4月11日に衝突",
+    "new": "晴れの海 — 2019年4月11日に衝突"
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "ISRO Sriharikotaでの打ち上げ前の統合作業中のChandrayaan-3探査機スタック。",
+    "new": "ISRO シュリーハリコータでの打ち上げ前の統合作業中のChandrayaan-3探査機スタック。"
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.2.subtitle",
+    "old": "Shiv Shakti Point、月の南極付近 — 2023年8月23日着陸",
+    "new": "シヴ・シャクティ・ポイント、月の南極付近 — 2023年8月23日着陸"
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "intro",
+    "old": "Chang'e 3は2013年12月14日、Mare Imbriumに着陸した。中国初の月面軟着陸であり、Luna 24以来37年ぶりとなる、あらゆる種類を通じての月面着陸でもあった。Yutu探査車を展開し、Yutuは約114 m走行したのち、制御系の故障によってその場から動けなくなり、残る約30月日の生存期間をそのまま過ごした。この成功により、中国は月面に資産を持つ3番目の国となった。",
+    "new": "Chang'e 3は2013年12月14日、雨の海に着陸した。中国初の月面軟着陸であり、Luna 24以来37年ぶりとなる、あらゆる種類を通じての月面着陸でもあった。Yutu探査車を展開し、Yutuは約114 m走行したのち、制御系の故障によってその場から動けなくなり、残る約30月日の生存期間をそのまま過ごした。この成功により、中国は月面に資産を持つ3番目の国となった。"
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.2.subtitle",
+    "old": "Mare Imbrium — 2013年12月14日着陸",
+    "new": "雨の海 — 2013年12月14日着陸"
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "YutuのレーダーがとらえたMare Imbrium地下の断面。深さ約330 mまで、玄武岩の溶岩流が幾層にも重なっている。",
+    "new": "Yutuのレーダーがとらえた雨の海地下の断面。深さ約330 mまで、玄武岩の溶岩流が幾層にも重なっている。"
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "intro",
+    "old": "Chang'e 4は2019年1月3日、Von Kármán Crater(フォン・カルマン・クレーター)に着陸した。地球がまったく見えない月の裏側への、人類初の軟着陸である。通信は、L2に待機する中継衛星Queqiaoを介して行われた。搭載されていた探査車Yutu-2は1.5km以上を走破し、2026年の今も稼働を続けている。月面ミッションとしては史上最長の稼働記録だ。South Pole-Aitken basinでは、手つかずのマントル物質が見つかった。",
+    "new": "Chang'e 4は2019年1月3日、フォン・カルマン・クレーターに着陸した。地球がまったく見えない月の裏側への、人類初の軟着陸である。通信は、L2に待機する中継衛星Queqiaoを介して行われた。搭載されていた探査車Yutu-2は1.5km以上を走破し、2026年の今も稼働を続けている。月面ミッションとしては史上最長の稼働記録だ。南極エイトケン basinでは、手つかずのマントル物質が見つかった。"
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.1.subtitle",
+    "old": "Von Kármán Crater(月の裏側)——2019年1月3日着陸",
+    "new": "フォン・カルマン・クレーター(月の裏側)——2019年1月3日着陸"
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.2.subtitle",
+    "old": "South Pole-Aitken basinのマントル物質",
+    "new": "南極エイトケン basinのマントル物質"
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "intro",
+    "old": "Chang'e 5は2020年12月1日、Mons Rümkerに着陸した。中国初の月サンプルリターン計画であり、1976年のLuna 24以来44年ぶり、いずれの国にとっても久々となる月試料の地球帰還だった。若い火山地形(約20億年前。Apolloの試料は約3.5 Ga)から1,731 gの試料を持ち帰り、月の火山活動がこれまで知られていたよりはるかに後の時代まで続いていたことを証明した。",
+    "new": "Chang'e 5は2020年12月1日、リュムケル山に着陸した。中国初の月サンプルリターン計画であり、1976年のLuna 24以来44年ぶり、いずれの国にとっても久々となる月試料の地球帰還だった。若い火山地形(約20億年前。Apolloの試料は約3.5 Ga)から1,731 gの試料を持ち帰り、月の火山活動がこれまで知られていたよりはるかに後の時代まで続いていたことを証明した。"
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.1.subtitle",
+    "old": "2020年11月23日 — WenchangからLong March 5で打ち上げ",
+    "new": "2020年11月23日 — 文昌からLong March 5で打ち上げ"
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.2.subtitle",
+    "old": "Mons Rümker — 2020年12月1日に着陸",
+    "new": "リュムケル山 — 2020年12月1日に着陸"
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Mons Rümker付近の月面に立つChang'e 5 — 上昇機の離陸までに19時間の作業を行った。",
+    "new": "リュムケル山付近の月面に立つChang'e 5 — 上昇機の離陸までに19時間の作業を行った。"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "intro",
+    "old": "Chang'e 6は2024年6月1日、South Pole-Aitken盆地に着陸した。月の裏側からの初のサンプルリターン・ミッションであり、舞台となったのは太陽系内部で最も深く、最も古く、最大の衝突構造だ。2024年6月25日、裏側の物質1,935 gを地球へ持ち帰った。そのサンプルには、42億年前に盆地を形成した衝突によるマントル片が含まれている可能性がある。",
+    "new": "Chang'e 6は2024年6月1日、南極エイトケン盆地に着陸した。月の裏側からの初のサンプルリターン・ミッションであり、舞台となったのは太陽系内部で最も深く、最も古く、最大の衝突構造だ。2024年6月25日、裏側の物質1,935 gを地球へ持ち帰った。そのサンプルには、42億年前に盆地を形成した衝突によるマントル片が含まれている可能性がある。"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.1.subtitle",
+    "old": "2024年5月3日 — Wenchangから打ち上げられたLong March 5",
+    "new": "2024年5月3日 — 文昌から打ち上げられたLong March 5"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.2.subtitle",
+    "old": "Apollo Crater(South Pole-Aitken内)— 2024年6月1日着陸",
+    "new": "アポロ・クレーター(南極エイトケン内)— 2024年6月1日着陸"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.3.subtitle",
+    "old": "South Pole-Aitken盆地の物質1,935 g",
+    "new": "南極エイトケン盆地の物質1,935 g"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "intro",
+    "old": "NASAの火星探査車 Curiosity は、2011年11月26日、Cape Canaveral から Atlas V ロケットに載せられて打ち上げられた。254日間の巡航を経て、Mars Science Laboratory は、重さ899 kgの原子力電池駆動のこの探査車を、2012年8月6日、今や有名になったスカイクレーン方式の着陸で Gale Crater に届けた。それから10年以上がたった今も、Curiosity は Mount Sharp を登り続け、かつて火星が居住可能だったころの記録を宿す岩石を掘削している。",
+    "new": "NASAの火星探査車 Curiosity は、2011年11月26日、ケープ・カナベラルから Atlas V ロケットに載せられて打ち上げられた。254日間の巡航を経て、Mars Science Laboratory は、重さ899 kgの原子力電池駆動のこの探査車を、2012年8月6日、今や有名になったスカイクレーン方式の着陸でゲール・クレーターに届けた。それから10年以上がたった今も、Curiosity はシャープ山を登り続け、かつて火星が居住可能だったころの記録を宿す岩石を掘削している。"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.0.subtitle",
+    "old": "Gale Crater のための探査車づくり",
+    "new": "ゲール・クレーターのための探査車づくり"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.1.subtitle",
+    "old": "2011年11月26日 — Cape Canaveral から Atlas V で",
+    "new": "2011年11月26日 — ケープ・カナベラルから Atlas V で"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.2.subtitle",
+    "old": "Gale Crater — 2012年8月6日着陸",
+    "new": "ゲール・クレーター — 2012年8月6日着陸"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Mont Mercou のパノラマ、ソル3070(2021年3月)。Mastcam-Z による360°の撮影で、探査車、Mt Mercou の層状の崖、そして地平線上の Mount Sharp が写っている。",
+    "new": "Mont Mercou のパノラマ、ソル3070(2021年3月)。Mastcam-Z による360°の撮影で、探査車、Mt Mercou の層状の崖、そして地平線上のシャープ山が写っている。"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.3.images.1.caption",
+    "old": "Vera Rubin Ridge の堆積岩。縞状鉄鉱床と粘土鉱物は、古代に液体の水が存在し、居住可能な化学環境があったことを示している。",
+    "new": "ベラ・ルービン尾根の堆積岩。縞状鉄鉱床と粘土鉱物は、古代に液体の水が存在し、居住可能な化学環境があったことを示している。"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.4.images.0.caption",
+    "old": "2012年8月5日〜6日、「恐怖の7分間」のスカイクレーン着陸を祝う JPL の管制室。Gale Crater からの最初の信号を受け取った後の Adam Steltzner とチーム。",
+    "new": "2012年8月5日〜6日、「恐怖の7分間」のスカイクレーン着陸を祝う JPL の管制室。ゲール・クレーターからの最初の信号を受け取った後の Adam Steltzner とチーム。"
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "intro",
+    "old": "InSightは2018年11月26日にElysium Planitiaに着陸した。火星で初めての地球物理観測所である。このミッションは4年間にわたり地震計SEISで火星地震に耳を澄まし、1,300回を超える地震を記録。その観測によって、火星の核、マントル、地殻がかつてない詳細さで明らかになった。モグラ型掘削機(HP³)は自力で地中に潜ることができなかったが、SEISの成果はその落胆を補って余りあるものだった。ミッションは2022年12月、塵の堆積で太陽電池パネルが機能しなくなり、終了した。",
+    "new": "InSightは2018年11月26日にエリシウム平原に着陸した。火星で初めての地球物理観測所である。このミッションは4年間にわたり地震計SEISで火星地震に耳を澄まし、1,300回を超える地震を記録。その観測によって、火星の核、マントル、地殻がかつてない詳細さで明らかになった。モグラ型掘削機(HP³)は自力で地中に潜ることができなかったが、SEISの成果はその落胆を補って余りあるものだった。ミッションは2022年12月、塵の堆積で太陽電池パネルが機能しなくなり、終了した。"
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.1.subtitle",
+    "old": "2018年5月5日 — Vandenberg AFBからAtlas Vで打ち上げ",
+    "new": "2018年5月5日 — ヴァンデンバーグ空軍基地からAtlas Vで打ち上げ"
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Vandenberg(SLC-3E)から離昇するAtlas V 401。アメリカ西海岸から打ち上げられた初の惑星間ミッションである。MarCO CubeSatsが通信中継機として並走した。",
+    "new": "ヴァンデンバーグ(SLC-3E)から離昇するAtlas V 401。アメリカ西海岸から打ち上げられた初の惑星間ミッションである。MarCO CubeSatsが通信中継機として並走した。"
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.2.subtitle",
+    "old": "Elysium Planitia — 2018年11月26日着陸",
+    "new": "エリシウム平原 — 2018年11月26日着陸"
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "intro",
+    "old": "1970年9月20日、Luna 16 は Mare Fecunditatis に着陸した。これは別の天体から初めて実現したロボットによるサンプルリターンである。月のレゴリスを35cm掘削し、101gを帰還カプセルに密封して、着陸から26時間後に離陸した。カプセルは3日後にカザフスタンへ着陸した。Apollo 11 から1年2か月後、ソビエトの技術が有人飛行なしで月の物質を持ち帰れることを実証した。",
+    "new": "1970年9月20日、Luna 16 は豊かの海に着陸した。これは別の天体から初めて実現したロボットによるサンプルリターンである。月のレゴリスを35cm掘削し、101gを帰還カプセルに密封して、着陸から26時間後に離陸した。カプセルは3日後にカザフスタンへ着陸した。Apollo 11 から1年2か月後、ソビエトの技術が有人飛行なしで月の物質を持ち帰れることを実証した。"
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.1.subtitle",
+    "old": "1970年9月12日 ― Baikonur から Proton-K で打ち上げ",
+    "new": "1970年9月12日 ― バイコヌールから Proton-K で打ち上げ"
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Baikonur Cosmodrome の発射台に据えられた、Blok-D 上段付きの Proton-K。",
+    "new": "バイコヌール宇宙基地の発射台に据えられた、Blok-D 上段付きの Proton-K。"
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.2.subtitle",
+    "old": "Mare Fecunditatis ― 1970年9月20日に着陸",
+    "new": "豊かの海 ― 1970年9月20日に着陸"
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "intro",
+    "old": "Luna 17は1970年11月17日にMare Imbriumへ着陸し、Lunokhod 1を送り出した。Lunokhod 1は、地球以外の天体で稼働した初の車輪式車両であり、NASAのLRVより7か月早かった。Lunokhod 1は月の昼夜11回分にわたって10.5 km走行し、クリミアの5人編成のチームが操縦した。2万5000枚の写真と211枚のパノラマを送り届けたのち、1971年9月に沈黙した。",
+    "new": "Luna 17は1970年11月17日に雨の海へ着陸し、Lunokhod 1を送り出した。Lunokhod 1は、地球以外の天体で稼働した初の車輪式車両であり、NASAのLRVより7か月早かった。Lunokhod 1は月の昼夜11回分にわたって10.5 km走行し、クリミアの5人編成のチームが操縦した。2万5000枚の写真と211枚のパノラマを送り届けたのち、1971年9月に沈黙した。"
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.1.subtitle",
+    "old": "Mare Imbrium — 1970年11月17日着陸",
+    "new": "雨の海 — 1970年11月17日着陸"
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Mare Imbriumを走行するLunokhod 1 — 光速による片道2.5秒の通信遅延がありながら、5人のチームがリアルタイムで操縦した。",
+    "new": "雨の海を走行するLunokhod 1 — 光速による片道2.5秒の通信遅延がありながら、5人のチームがリアルタイムで操縦した。"
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Lunokhod 1の走行ルート図 — Mare Imbriumを横切る10.5 kmのジグザグの軌跡と、岩石やクレーターでの科学観測地点。",
+    "new": "Lunokhod 1の走行ルート図 — 雨の海を横切る10.5 kmのジグザグの軌跡と、岩石やクレーターでの科学観測地点。"
+  },
+  {
+    "rel": "site-stories/luna24.json",
+    "at": "intro",
+    "old": "Luna 24は1976年8月18日にMare Crisiumへ着陸した。20世紀における最後のソ連の(そして最後のロボットによる)月サンプルリターン計画であり、2013年に中国のChang'e 3が着陸するまで、あらゆる種類を通じて最後の月着陸機でもあった。レゴリスを深さ2 m掘削し、170.1 gの試料を地球へ持ち帰った。その中には月の水氷の証拠も含まれており、数十年後にSOFIAとLCROSSによって再確認されている。ソ連の月探査計画は、ここで幕を閉じた。",
+    "new": "Luna 24は1976年8月18日に危難の海へ着陸した。20世紀における最後のソ連の(そして最後のロボットによる)月サンプルリターン計画であり、2013年に中国のChang'e 3が着陸するまで、あらゆる種類を通じて最後の月着陸機でもあった。レゴリスを深さ2 m掘削し、170.1 gの試料を地球へ持ち帰った。その中には月の水氷の証拠も含まれており、数十年後にSOFIAとLCROSSによって再確認されている。ソ連の月探査計画は、ここで幕を閉じた。"
+  },
+  {
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.1.subtitle",
+    "old": "Mare Crisium ― 1976年8月18日着陸",
+    "new": "危難の海 ― 1976年8月18日着陸"
+  },
+  {
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Mare Crisiumの着陸地点。Luna 24は、同じ地域で1974年に着陸に失敗したLuna 23の地点から約2 km離れた場所に降り立った。",
+    "new": "危難の海の着陸地点。Luna 24は、同じ地域で1974年に着陸に失敗したLuna 23の地点から約2 km離れた場所に降り立った。"
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "intro",
+    "old": "Luna 9は1966年2月3日、Oceanus Procellarumに着陸した。地球以外の天体への初の軟着陸である。質量99 kgの球形カプセルは、膨張式のクッションを展開して時速22 kmの衝撃に耐え、その後、花弁状のパネルを開いて姿勢を立て直し、月面から初めての写真を送信した。バッテリーが尽きるまでの3日間、運用された。",
+    "new": "Luna 9は1966年2月3日、嵐の大洋に着陸した。地球以外の天体への初の軟着陸である。質量99 kgの球形カプセルは、膨張式のクッションを展開して時速22 kmの衝撃に耐え、その後、花弁状のパネルを開いて姿勢を立て直し、月面から初めての写真を送信した。バッテリーが尽きるまでの3日間、運用された。"
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.1.subtitle",
+    "old": "1966年1月31日 — Baikonurから打ち上げられたMolniya-M",
+    "new": "1966年1月31日 — バイコヌールから打ち上げられたMolniya-M"
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Baikonurで準備されるMolniya-Mロケット — Luna 9は、軟着陸一番乗りをめぐるソ連とアメリカの競争のさなかに打ち上げられた。",
+    "new": "バイコヌールで準備されるMolniya-Mロケット — Luna 9は、軟着陸一番乗りをめぐるソ連とアメリカの競争のさなかに打ち上げられた。"
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.2.subtitle",
+    "old": "Oceanus Procellarum — 1966年2月3日着陸",
+    "new": "嵐の大洋 — 1966年2月3日着陸"
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "intro",
+    "old": "Mars Pathfinderは1997年7月4日、Ares Vallisに着陸した。21年前のVikingによる探査以来、米国として初めての火星ミッションだった。着陸機は火星で初めて車輪を走らせたSojournerを展開し、エアバッグ着陸と探査走行を、2億6,500万ドルの低コストな「より速く、より良く、より安く」ミッションで実証して、約16,500枚の画像を送り届けた。着陸機が機能を失うまでに、Sojournerは100メートルを走行し、アニメのキャラクターにちなんで名付けられた12個の岩(Yogi、Barnacle Bill、Scooby Doo)を調べて地図に記した。",
+    "new": "Mars Pathfinderは1997年7月4日、アレス渓谷に着陸した。21年前のVikingによる探査以来、米国として初めての火星ミッションだった。着陸機は火星で初めて車輪を走らせたSojournerを展開し、エアバッグ着陸と探査走行を、2億6,500万ドルの低コストな「より速く、より良く、より安く」ミッションで実証して、約16,500枚の画像を送り届けた。着陸機が機能を失うまでに、Sojournerは100メートルを走行し、アニメのキャラクターにちなんで名付けられた12個の岩(Yogi、Barnacle Bill、Scooby Doo)を調べて地図に記した。"
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.1.subtitle",
+    "old": "1996年12月4日 — Cape CanaveralからDelta IIで打ち上げ",
+    "new": "1996年12月4日 — ケープ・カナベラルからDelta IIで打ち上げ"
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.2.subtitle",
+    "old": "Ares Vallis — 1997年7月4日着陸",
+    "new": "アレス渓谷 — 1997年7月4日着陸"
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Improved Presidential Panorama。Ares Vallisを360°のカラーで捉えた眺め。地平線にTwin Peaksが見える(名前はテレビ番組に由来)。",
+    "new": "Improved Presidential Panorama。アレス渓谷を360°のカラーで捉えた眺め。地平線にTwin Peaksが見える(名前はテレビ番組に由来)。"
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.1.subtitle",
+    "old": "1971年5月28日 — BaikonurからProton-Kで",
+    "new": "1971年5月28日 — バイコヌールからProton-Kで"
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Baikonur Cosmodromeで準備されるBlok-D上段付きのProton-K。火星までの航行期間は6か月。",
+    "new": "バイコヌール宇宙基地で準備されるBlok-D上段付きのProton-K。火星までの航行期間は6か月。"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "intro",
+    "old": "Opportunityは2004年1月25日、Meridiani Planumに着陸しました。まさにホールインワンでした。エアバッグで弾みながら転がった探査車は、そのまま小さなクレーター（Eagle Crater）の中に収まりました。その壁面には、火星で初めて間近に観察された、赤鉄鉱に富む「ブルーベリー」が残されていました。設計寿命は90ソルでしたが、Opportunityは14年かけて45.16キロメートルを走破しました。2018年6月、惑星規模のダストストームによって太陽光発電が途絶えるまでのことです。最後の送信はこうでした。「バッテリー残量が少なくなり、暗くなってきました。」",
+    "new": "Opportunityは2004年1月25日、メリディアニ平原に着陸しました。まさにホールインワンでした。エアバッグで弾みながら転がった探査車は、そのまま小さなクレーター（Eagle Crater）の中に収まりました。その壁面には、火星で初めて間近に観察された、赤鉄鉱に富む「ブルーベリー」が残されていました。設計寿命は90ソルでしたが、Opportunityは14年かけて45.16キロメートルを走破しました。2018年6月、惑星規模のダストストームによって太陽光発電が途絶えるまでのことです。最後の送信はこうでした。「バッテリー残量が少なくなり、暗くなってきました。」"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.subtitle",
+    "old": "Meridiani Planum――2004年1月25日着陸",
+    "new": "メリディアニ平原――2004年1月25日着陸"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Legacy Pan、ソル5084〜5111（2018年5〜6月）。ダストストームの前にOpportunityが撮影した、最後の360°パノラマです。Perseverance ValleyはEndeavour Craterへと下っています。",
+    "new": "Legacy Pan、ソル5084〜5111（2018年5〜6月）。ダストストームの前にOpportunityが撮影した、最後の360°パノラマです。Perseverance Valleyはエンデバー・クレーターへと下っています。"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.1.caption",
+    "old": "Endeavour Craterの縁。Opportunityが最後の数年間を過ごした場所です。探査車が停止した地点は、右側のPerseverance Valleyにあります。",
+    "new": "エンデバー・クレーターの縁。Opportunityが最後の数年間を過ごした場所です。探査車が停止した地点は、右側のPerseverance Valleyにあります。"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Endurance Craterの耐熱シールド落下地点。Opportunityは、自らが切り離した大気圏突入用ハードウェアを調べるため、そこまで引き返しました。",
+    "new": "エンデュランス・クレーターの耐熱シールド落下地点。Opportunityは、自らが切り離した大気圏突入用ハードウェアを調べるため、そこまで引き返しました。"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Endurance Crater内部のBurns Cliffに露出した地層。酸性で塩分を含む古代の水域が残した堆積記録です。",
+    "new": "エンデュランス・クレーター内部のBurns Cliffに露出した地層。酸性で塩分を含む古代の水域が残した堆積記録です。"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "intro",
+    "old": "Perseveranceは2021年2月18日、Jezero Craterに着陸した。そこは38億年前の河川デルタで、古代火星生命の痕跡が保存されている可能性が最も高いとして選ばれた場所だ。このローバーは、初の火星ヘリコプター(Ingenuity)、初の火星用音声レコーダー、初のサンプル貯蔵システムを搭載している。地表に残されたサンプルチューブは、2030年代にMars Sample Returnミッションによって地球へ持ち帰られる予定だ。",
+    "new": "Perseveranceは2021年2月18日、ジェゼロ・クレーターに着陸した。そこは38億年前の河川デルタで、古代火星生命の痕跡が保存されている可能性が最も高いとして選ばれた場所だ。このローバーは、初の火星ヘリコプター(Ingenuity)、初の火星用音声レコーダー、初のサンプル貯蔵システムを搭載している。地表に残されたサンプルチューブは、2030年代にMars Sample Returnミッションによって地球へ持ち帰られる予定だ。"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.1.subtitle",
+    "old": "2020年7月30日 — Cape CanaveralからAtlas Vで",
+    "new": "2020年7月30日 — ケープ・カナベラルからAtlas Vで"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.subtitle",
+    "old": "Jezero Crater — 2021年2月18日着陸",
+    "new": "ジェゼロ・クレーター — 2021年2月18日着陸"
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "chapters.1.subtitle",
+    "old": "Vastitas Borealis — 2008年5月25日着陸",
+    "new": "ボレアリス荒野 — 2008年5月25日着陸"
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "intro",
+    "old": "Schiaparelli——ヨーロッパにとって2度目の火星着陸挑戦——は、2016年10月16日に ExoMars Trace Gas Orbiter から分離し、その3日後、時速約540kmで Meridiani Planum に墜落した。ソフトウェアの不具合により、パラシュートと制動用スラスターが50秒早く切り離され、着陸機はまだ地表から3.7kmの高度にあった。残骸は1週間以内に、火星を周回する探査機 MRO の HiRISE カメラによって発見された。ここで得られた教訓は、現在2028年の打ち上げが予定されているローバー、ExoMars Rosalind Franklin の設計に生かされている。",
+    "new": "Schiaparelli——ヨーロッパにとって2度目の火星着陸挑戦——は、2016年10月16日に ExoMars Trace Gas Orbiter から分離し、その3日後、時速約540kmでメリディアニ平原に墜落した。ソフトウェアの不具合により、パラシュートと制動用スラスターが50秒早く切り離され、着陸機はまだ地表から3.7kmの高度にあった。残骸は1週間以内に、火星を周回する探査機 MRO の HiRISE カメラによって発見された。ここで得られた教訓は、現在2028年の打ち上げが予定されているローバー、ExoMars Rosalind Franklin の設計に生かされている。"
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.1.subtitle",
+    "old": "2016年3月14日——Baikonur から Proton-M ロケットで打ち上げ",
+    "new": "2016年3月14日——バイコヌールから Proton-M ロケットで打ち上げ"
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.2.subtitle",
+    "old": "Meridiani Planum——2016年10月19日、この平原に衝突した",
+    "new": "メリディアニ平原——2016年10月19日、この平原に衝突した"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "intro",
+    "old": "Spirit は2004年1月4日にグセフ・クレーター(Gusev Crater)へ着陸した。双子機 Opportunity が火星の反対側に降り立つ3週間前のことである。設計寿命は90ソルだったが、Spirit は6年にわたって稼働し、7.7 km を走破した。やがて「Troy」で車輪が柔らかい土壌に完全にはまり込み、動けなくなった。それでも身動きの取れないローバーは、固定式の科学観測プラットフォームとして活動を続け、2010年3月に交信が途絶えた。",
+    "new": "Spirit は2004年1月4日にグセフ・クレーターへ着陸した。双子機 Opportunity が火星の反対側に降り立つ3週間前のことである。設計寿命は90ソルだったが、Spirit は6年にわたって稼働し、7.7 km を走破した。やがて「Troy」で車輪が柔らかい土壌に完全にはまり込み、動けなくなった。それでも身動きの取れないローバーは、固定式の科学観測プラットフォームとして活動を続け、2010年3月に交信が途絶えた。"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.1.subtitle",
+    "old": "グセフ・クレーター(Gusev Crater) — 2004年1月4日着陸",
+    "new": "グセフ・クレーター — 2004年1月4日着陸"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "McMurdo の Winter Haven、ソル814〜980(2006年) — Pancam による360°パノラマ。失われた STS-107 の乗組員にちなんで名づけられた Columbia Hills が地平線を支配している。",
+    "new": "McMurdo の Winter Haven、ソル814〜980(2006年) — Pancam による360°パノラマ。失われた STS-107 の乗組員にちなんで名づけられたコロンビア・ヒルズが地平線を支配している。"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.2.subtitle",
+    "old": "Husband Hill を登り、Home Plate でシリカを発見",
+    "new": "ハズバンド・ヒルを登り、Home Plate でシリカを発見"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Home Plate で Spirit の壊れた右前輪が掘り起こしたシリカに富む土壌 — グセフ・クレーター(Gusev Crater)にかつて熱水活動があった証拠である。",
+    "new": "Home Plate で Spirit の壊れた右前輪が掘り起こしたシリカに富む土壌 — グセフ・クレーターにかつて熱水活動があった証拠である。"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Pancam が撮影したグセフ・クレーター(Gusev Crater)の日没、ソル489(2005年5月19日)。青みを帯びた火星の夕暮れを捉えた象徴的な画像の一つ。",
+    "new": "Pancam が撮影したグセフ・クレーターの日没、ソル489(2005年5月19日)。青みを帯びた火星の夕暮れを捉えた象徴的な画像の一つ。"
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "intro",
+    "old": "Viking 1 は1976年7月20日、Chryse Planitia に着陸した。Apollo 11 からちょうど7年後のことで、米国初となる火星着陸機の成功例である。2,245ソル(6.3年)に及んだ地表ミッションでは、火星からの初のカラー画像の撮影、初の現地生物学実験(結果は判然としないものだった)、そして日々の気象記録が行われた。最後の送信は1982年11月。コマンドのアップロードによってアンテナの指向パラメータが誤って上書きされたことが原因だった。",
+    "new": "Viking 1 は1976年7月20日、クリュセ平原に着陸した。Apollo 11 からちょうど7年後のことで、米国初となる火星着陸機の成功例である。2,245ソル(6.3年)に及んだ地表ミッションでは、火星からの初のカラー画像の撮影、初の現地生物学実験(結果は判然としないものだった)、そして日々の気象記録が行われた。最後の送信は1982年11月。コマンドのアップロードによってアンテナの指向パラメータが誤って上書きされたことが原因だった。"
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.1.subtitle",
+    "old": "1975年8月20日 — Cape CanaveralからTitan IIIEで打ち上げ",
+    "new": "1975年8月20日 — ケープ・カナベラルからTitan IIIEで打ち上げ"
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.2.subtitle",
+    "old": "Chryse Planitia — 1976年7月20日着陸",
+    "new": "クリュセ平原 — 1976年7月20日着陸"
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Chryse Planitiaの360°パノラマ。地球以外の天体の表面を捉えた、初のカラー風景写真。",
+    "new": "クリュセ平原の360°パノラマ。地球以外の天体の表面を捉えた、初のカラー風景写真。"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "intro",
+    "old": "Viking 2 は1976年9月3日、Utopia Planitia に着陸した。双子のバイキング着陸機の2号機で、火星を挟んで Viking 1 の反対側にあたる地点だった。1,316ソルに及んだミッションでは、火星で初めて水の氷の霜が観測された(極地の冬)。また、はるかに寒冷で緯度の高いこの地で、Viking 1 の生物学実験を繰り返した。1980年4月、バッテリーの故障により運用を終えた。",
+    "new": "Viking 2 は1976年9月3日、ユートピア平原に着陸した。双子のバイキング着陸機の2号機で、火星を挟んで Viking 1 の反対側にあたる地点だった。1,316ソルに及んだミッションでは、火星で初めて水の氷の霜が観測された(極地の冬)。また、はるかに寒冷で緯度の高いこの地で、Viking 1 の生物学実験を繰り返した。1980年4月、バッテリーの故障により運用を終えた。"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "火星の Utopia Planitia の地表に立つ Viking 2 着陸機。",
+    "new": "火星のユートピア平原の地表に立つ Viking 2 着陸機。"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.subtitle",
+    "old": "Utopia Planitia — 1976年9月3日着陸",
+    "new": "ユートピア平原 — 1976年9月3日着陸"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Utopia Planitia の360°カメラモザイク。Viking 1 の Chryse の着陸地点よりも平坦で、岩の多い地形。",
+    "new": "ユートピア平原の360°カメラモザイク。Viking 1 の Chryse の着陸地点よりも平坦で、岩の多い地形。"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Utopia Planitia のカラー画像。Andrea Luck が NASA のアーカイブ原板から Viking 2 の画像を再処理した。",
+    "new": "ユートピア平原のカラー画像。Andrea Luck が NASA のアーカイブ原板から Viking 2 の画像を再処理した。"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "Utopia Planitia の日の出(PIA00576)。Viking 2 のカメラが、北半球の高緯度地方における夜明け前の輝きをとらえた。",
+    "new": "ユートピア平原の日の出(PIA00576)。Viking 2 のカメラが、北半球の高緯度地方における夜明け前の輝きをとらえた。"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.2.images.2.caption",
+    "old": "Utopia Planitia の霜(NASA Viking Lander 2)。Andrea Luck による再処理画像。",
+    "new": "ユートピア平原の霜(NASA Viking Lander 2)。Andrea Luck による再処理画像。"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "intro",
+    "old": "Zhurong は2021年5月14日、Utopia Planitia に着陸しました。中国初の火星着陸成功であり、周回機・着陸機・ローバーを一度の打ち上げで組み合わせた、あらゆる国で初めての火星ミッション(Tianwen-1)でもあります。名前は中国の火の神に由来します。Zhurong は Utopia 平原南部を1.92 km走行した後、砂塵の季節にあたる2022年5月に休眠に入りました。CNSA は、その後の再起動を確認していません。",
+    "new": "Zhurong は2021年5月14日、ユートピア平原に着陸しました。中国初の火星着陸成功であり、周回機・着陸機・ローバーを一度の打ち上げで組み合わせた、あらゆる国で初めての火星ミッション(Tianwen-1)でもあります。名前は中国の火の神に由来します。Zhurong は Utopia 平原南部を1.92 km走行した後、砂塵の季節にあたる2022年5月に休眠に入りました。CNSA は、その後の再起動を確認していません。"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.1.subtitle",
+    "old": "2020年7月23日 — Wenchang から Long March 5 で打ち上げ",
+    "new": "2020年7月23日 — 文昌から Long March 5 で打ち上げ"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Long March 5 が、海南島の Wenchang Space Launch Site から Tianwen-1 を打ち上げます。火星までの飛行は7か月です。",
+    "new": "Long March 5 が、海南島の文昌衛星発射場から Tianwen-1 を打ち上げます。火星までの飛行は7か月です。"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.2.subtitle",
+    "old": "Utopia Planitia — 2021年5月14日着陸",
+    "new": "ユートピア平原 — 2021年5月14日着陸"
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "current_distance_label",
+    "old": "5.4 AU · 2003年9月21日にJupiterに廃棄（Europa保護）",
+    "new": "5.4 AU · 2003年9月21日に木星に廃棄（エウロパ保護）"
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "waypoints.2.label",
+    "old": "Venus",
+    "new": "金星"
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "waypoints.4.label",
+    "old": "Earth #1",
+    "new": "地球 #1"
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "waypoints.6.label",
+    "old": "Gaspra",
+    "new": "ガスプラ"
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "waypoints.8.label",
+    "old": "Earth #2",
+    "new": "地球 #2"
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "waypoints.13.label",
+    "old": "Jupiter軌道投入",
+    "new": "木星軌道投入"
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "waypoints.14.label",
+    "old": "Jupiterに廃棄",
+    "new": "木星に廃棄"
+  },
+  {
+    "rel": "trajectories/pioneer-10.json",
+    "at": "interstellar_since_label",
+    "old": "最後の交信は2003年—タウルス座に向かってコースティング中、約200万年後にAldebaran近くを通過予定",
+    "new": "最後の交信は2003年—タウルス座に向かってコースティング中、約200万年後にアルデバラン近くを通過予定"
+  },
+  {
+    "rel": "trajectories/pioneer-11.json",
+    "at": "interstellar_since_label",
+    "old": "通信喪失1995年—Aquila方向に航行中、2027年頃に星間空間に到達する予定",
+    "new": "通信喪失1995年—わし座方向に航行中、2027年頃に星間空間に到達する予定"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-4ba1c691d9d4.caption",
+    "old": "Alexei Leonov がカプセルの外で過ごした12分間 — 1965年3月18日",
+    "new": "アレクセイ・レオーノフがカプセルの外で過ごした12分間 — 1965年3月18日"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-54cee894b509.caption",
+    "old": "別の惑星への着陸の初の実映像 — Jezero Crater、2021年2月18日",
+    "new": "別の惑星への着陸の初の実映像 — ジェゼロ・クレーター、2021年2月18日"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-612cd0489c9c.caption",
+    "old": "Neil Armstrong が Eagle のはしごを下ります — 「一人の人間にとっては小さな一歩」、1969年7月20日",
+    "new": "ニール・アームストロングが Eagle のはしごを下ります — 「一人の人間にとっては小さな一歩」、1969年7月20日"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-681dfc9a2920.caption",
+    "old": "InSight が Elysium Planitia に着陸した時のライブミッション管制室 — 2018年11月26日",
+    "new": "InSight がエリシウム平原に着陸した時のライブミッション管制室 — 2018年11月26日"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-7581f1522f30.caption",
+    "old": "Vesta と Ceres での Dawn に関する JPL の振り返り",
+    "new": "ベスタとケレスでの Dawn に関する JPL の振り返り"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-c7e73304d001.title",
+    "old": "初のテザーなし船外活動 — Bruce McCandless",
+    "new": "初のテザーなし船外活動 — ブルース・マッカンドレス"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ddd21b3aecd3.title",
+    "old": "Hayabusa2 — 小惑星Ryuguへのタッチダウン",
+    "new": "Hayabusa2 — 小惑星リュウグウへのタッチダウン"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ddd21b3aecd3.caption",
+    "old": "Ryuguへの初回タッチダウンの船上映像 — 2019年2月22日。",
+    "new": "リュウグウへの初回タッチダウンの船上映像 — 2019年2月22日。"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ebdd274dcfb4.title",
+    "old": "Opportunity — 15年間のMars探査ミッション完結",
+    "new": "Opportunity — 15年間の火星探査ミッション完結"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-f2931f6a3831.title",
+    "old": "Akatsuki — Venus大気の探査",
+    "new": "Akatsuki — 金星大気の探査"
+  }
+]

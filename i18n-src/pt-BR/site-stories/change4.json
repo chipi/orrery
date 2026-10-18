@@ -1,0 +1,46 @@
+{
+  "intro": "A Chang'e 4 pousou na Cratera Von Kármán em 3 de janeiro de 2019 — o primeiro pouso suave no lado oculto da Lua, de onde a Terra nunca é visível. A comunicação foi retransmitida pelo satélite Queqiao, estacionado em L2. A missão lançou o rover Yutu-2, que já percorreu mais de 1,5 km e continua em operação em 2026, a missão de superfície lunar mais longeva de todos os tempos. Encontrou material intacto do manto na bacia Polo Sul-Aitken.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamentos",
+      "subtitle": "Primeiro módulo de pouso lunar do lado oculto + satélite de retransmissão em L2 (Queqiao)",
+      "images": [
+        {
+          "src": "/images/missions/change4/01.webp",
+          "caption": "O módulo de pouso Chang'e 4 e o rover Yutu-2 durante a integração pré-lançamento, em Pequim."
+        },
+        {
+          "src": "/images/missions/change4/02.webp",
+          "caption": "Satélite de retransmissão Queqiao em L2 — sem ele, a Chang'e 4 não teria contato com a Terra. A China construiu a infraestrutura de comunicações lunares antes de ir ao lado oculto."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Cratera Von Kármán, lado oculto — pouso em 3 de janeiro de 2019",
+      "images": [
+        {
+          "src": "/images/missions/change4/03.webp",
+          "caption": "O rover Yutu-2 fotografado pelo módulo de pouso Chang'e 4 — as primeiras rodas no lado oculto da Lua."
+        },
+        {
+          "src": "/images/missions/change4/04.webp",
+          "caption": "O Yutu-2 inspeciona uma esférula vítrea na superfície — provavelmente um fragmento de rocha fundida por impacto, originado em um evento de craterização distante."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciência",
+      "subtitle": "Material do manto na bacia Polo Sul-Aitken",
+      "images": [
+        {
+          "src": "/images/missions/change4/05.webp",
+          "caption": "Os espectros do VNIS mostraram olivina + piroxênio pobre em cálcio — minerais do manto lunar, expostos pelo impacto que formou a bacia SPA há cerca de 4,2 bilhões de anos."
+        }
+      ]
+    }
+  ]
+}

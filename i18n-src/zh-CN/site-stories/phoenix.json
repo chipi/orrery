@@ -1,0 +1,50 @@
+{
+  "intro": "Phoenix 于2008年5月25日在北纬68.22°着陆——这是NASA首个降落在火星高纬度北极地区的着陆器。数日之内，它就铲取了首份火星水冰样本，并在相机画面中看着它升华。这台着陆器共运行了157个火星日，直到极地之冬将它终结：CO₂霜的形成掩埋了太阳能电池板，任务就此结束。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "由被取消的 Mars Surveyor 2001 着陆器改造而成",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/01.webp",
+          "caption": "发射前运输之前的 Phoenix 着陆器——350 千克，机械臂、冰铲、TEGA 湿化学实验室。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "表面",
+      "subtitle": "北方荒原——2008年5月25日着陆",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/phoenix/tier3-pan.jpg",
+          "caption": "Phoenix 着陆点360°全景图，第14火星日——右下方可见工作区、着陆脚垫，以及被发动机推力吹净而露出的冰层。"
+        },
+        {
+          "src": "/images/hotspots/mars/phoenix/tier2-hirise.jpg",
+          "caption": "Phoenix 着陆器、降落伞与背罩——着陆后均由 MRO HiRISE 拍摄成像。"
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/02.webp",
+          "caption": "机械臂正在挖掘“Snow White”沟槽——地表下数厘米处露出明亮的水冰，随后在四个火星日里被观察到逐渐升华。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "水、高氯酸盐，以及首次火星天气观测",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/03.webp",
+          "caption": "在火星土壤中探测到高氯酸盐——这一化学发现将影响此后所有关于火星宜居性的讨论。"
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/04.webp",
+          "caption": "任务后期 Phoenix 着陆点上空降雪的激光雷达剖面——这是首次直接观测到的火星降水。"
+        }
+      ]
+    }
+  ]
+}

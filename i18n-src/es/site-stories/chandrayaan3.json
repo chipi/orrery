@@ -1,0 +1,46 @@
+{
+  "intro": "Chandrayaan-3 aterrizó cerca del polo sur lunar el 23 de agosto de 2023: fue el primer alunizaje suave de la India y el aterrizaje más próximo al polo sur realizado por ninguna nación. El módulo de aterrizaje Vikram desplegó el rover Pragyan, que recorrió unos 100 m a lo largo de 14 días en busca de hielo de agua en terreno permanentemente en sombra. La India se convirtió en la cuarta nación en posarse suavemente sobre la Luna, después de la URSS, Estados Unidos y China.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Módulo de aterrizaje Vikram + rover Pragyan",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/01.webp",
+          "caption": "La pila de la nave Chandrayaan-3 durante la integración previa al lanzamiento en ISRO Sriharikota."
+        },
+        {
+          "src": "/images/missions/chandrayaan3/02.webp",
+          "caption": "El rover Pragyan: 26 kg, alimentado por energía solar y con 6 ruedas. Diseñado para desplazarse por el regolito del polo sur lunar en busca de volátiles."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "14 de julio de 2023: LVM3 desde el Satish Dhawan Space Centre",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/03.webp",
+          "caption": "El LVM3 («Bahubali») lanza Chandrayaan-3: un tránsito de 40 días que incluye una captura lunar en varias órbitas y una trayectoria lenta deliberada para maximizar el margen de combustible."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Shiv Shakti Point, cerca del polo sur lunar: aterrizaje el 23 de agosto de 2023",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/04.webp",
+          "caption": "El módulo de aterrizaje Vikram sobre la superficie del polo sur: el contacto con el suelo se produjo a 69,37° S, el alunizaje de latitud más alta jamás realizado."
+        },
+        {
+          "src": "/images/missions/chandrayaan3/05.webp",
+          "caption": "El rover Pragyan descendiendo por la rampa: las primeras ruedas en el polo sur lunar, fotografiadas por las cámaras de a bordo de Vikram."
+        }
+      ]
+    }
+  ]
+}

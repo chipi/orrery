@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 14 于 1971 年 2 月 5 日降落在毛罗修士高地高地——这里原本是 Apollo 13 的目标，在 Apollo 13 爆炸事故之后得以完成。谢泼德和米切尔拉着模块化设备运输车（Modular Equipment Transporter，一辆人力车）爬上锥形撞击坑的山坡，带回 43 千克角砾岩——这些碎块来自 39 亿年前形成雨海的那次巨型撞击。众所周知，谢泼德在起飞前还打了两个高尔夫球。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "Kitty Hawk + 心宿二 + 人力车",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/01.webp",
+          "caption": "Apollo 14 乘组：艾伦·谢泼德（指令长 CDR——10 年前成为首位进入太空的美国人）、斯图尔特·罗萨（指令舱驾驶员 CMP）、Ed 米切尔（登月舱驾驶员 LMP）。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "毛罗修士高地——1971 年 2 月 5 日着陆",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/02.webp",
+          "caption": "米切尔与模块化设备运输车（MET）——这辆“人力车”载着工具和样本，沿斜坡向锥形撞击坑攀爬。"
+        },
+        {
+          "src": "/images/missions/apollo14/03.webp",
+          "caption": "锥形撞击坑边缘——乘组一度爬到距边缘约 30 米处，却因体力耗尽和通信限制而被迫折返。"
+        },
+        {
+          "src": "/images/hotspots/moon/apollo14/tier3-pan.jpg",
+          "caption": "Apollo 14 着陆点全景——可见心宿二下降级和 ALSEP。"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "科学",
+      "subtitle": "雨海撞击角砾岩样本",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/04.webp",
+          "caption": "“Big Bertha”——样本 14321，一块重 8.99 千克的角砾岩，内含迄今发现的最古老的地球岩石（41 亿年的锆石），它是被早期的地球撞击抛射到月球上的。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Cassini-Huygens",
+  "current_distance_label": "9,5 UA · em órbita de Saturno 2004-2017 — descartada na atmosfera de Saturno 2017-09-15",
+  "waypoints": [
+    {
+      "label": "Lançamento"
+    },
+    null,
+    {
+      "label": "Vênus #1"
+    },
+    null,
+    {
+      "label": "Vênus #2"
+    },
+    {
+      "label": "Terra"
+    },
+    null,
+    {
+      "label": "Júpiter"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Inserção em órbita de Saturno"
+    },
+    {
+      "label": "Grande Finale (hoje)"
+    }
+  ]
+}

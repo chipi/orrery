@@ -1,0 +1,14 @@
+{
+  "name": "Venera 13",
+  "current_distance_label": "0,74 AU · atterrata su Venere il 1° marzo 1982 (127 min di sopravvivenza in superficie)",
+  "waypoints": [
+    {
+      "label": "Lancio (Proton-K)"
+    },
+    null,
+    null,
+    {
+      "label": "Atterraggio in superficie su Venere"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "BepiColombo",
+  "current_distance_label": "0.48 AU · 2026-12-05 수성 궤도 진입을 향해 비행 중",
+  "waypoints": [
+    {
+      "label": "발사 (Ariane 5)"
+    },
+    null,
+    {
+      "label": "지구"
+    },
+    {
+      "label": "금성 #1"
+    },
+    {
+      "label": "금성 #2"
+    },
+    {
+      "label": "수성 #1"
+    },
+    {
+      "label": "수성 #2"
+    },
+    {
+      "label": "수성 #3"
+    },
+    {
+      "label": "수성 #4"
+    },
+    {
+      "label": "수성 #5"
+    },
+    {
+      "label": "수성 #6"
+    },
+    null,
+    {
+      "label": "수성 궤도 진입"
+    }
+  ]
+}

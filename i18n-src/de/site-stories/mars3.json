@@ -1,0 +1,46 @@
+{
+  "intro": "Mars 3 setzte am 2. Dezember 1971 in der Terra Sirenum auf – als erster Lander, der den Eintritt in die Marsatmosphäre überstand und die Oberfläche erreichte, fünf Tage nachdem die Schwestersonde Mars 2 abgestürzt war. Nach 14,5 Sekunden brach die Kommunikation ab; übermittelt wurde nur ein einziges, unvollständiges, stark verrauschtes Graustufen-Bildfragment. Vermutlich traf der Lander mitten in einem planetenumspannenden Staubsturm ein. Wo Mars 3 genau liegt, ist bis heute umstritten; HiRISE bildete 2013 mögliche Hardware-Überreste ab.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Sowjetischer Lander der 4MS-Klasse, die erste Marslandung überhaupt",
+      "images": [
+        {
+          "src": "/images/missions/mars3/01.webp",
+          "caption": "Modell des Mars-3-Landers im Raumfahrtmuseum von NPO Lavochkin – 1.210 kg Gesamtmasse, darunter ein 4,5 kg schwerer Rover vom Typ Prop-M (nie ausgesetzt)."
+        },
+        {
+          "src": "/images/missions/mars3/02.webp",
+          "caption": "Schnittzeichnung der Hardware des Mars-3-Landers – die grundlegende Konstruktionslinie prägte auch spätere sowjetische Venera- und Mars-Hardware."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "28. Mai 1971 – Proton-K von Baikonur",
+      "images": [
+        {
+          "src": "/images/missions/mars3/03.webp",
+          "caption": "Proton-K mit der Oberstufe Blok-D, vorbereitet auf dem Kosmodrom Baikonur – sechs Monate Flugzeit zum Mars."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Terra Sirenum – gelandet am 2. Dezember 1971",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars3/tier2-hirise.jpg",
+          "caption": "HiRISE-Detailaufnahme des möglichen Landeplatzes der Mars-3-Hardware in der Terra Sirenum – 2013 vom HiRISE-Team von NASA/UA veröffentlicht, identifiziert von russischen Amateur-Raumfahrthistorikern."
+        },
+        {
+          "src": "/images/missions/mars3/04.webp",
+          "caption": "Das einzige bruchstückhafte Bild, das Mars 3 übermittelte – 79 Zeilen, kein Horizont, keine Details. Das erste Bild von der Oberfläche eines anderen Planeten, so schwach es auch sein mag."
+        }
+      ]
+    }
+  ]
+}

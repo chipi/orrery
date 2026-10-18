@@ -1,0 +1,37 @@
+{
+  "name": "Galileo",
+  "current_distance_label": "5,4 AU · smaltito in Giove il 2003-09-21 (protezione di Europa)",
+  "waypoints": [
+    {
+      "label": "Lancio (STS-34)"
+    },
+    null,
+    {
+      "label": "Venere"
+    },
+    null,
+    {
+      "label": "Terra #1"
+    },
+    null,
+    {
+      "label": "Gaspra"
+    },
+    null,
+    {
+      "label": "Terra #2"
+    },
+    null,
+    {
+      "label": "Ida + Dattilo"
+    },
+    null,
+    null,
+    {
+      "label": "Inserimento in orbita attorno a Giove"
+    },
+    {
+      "label": "Smaltito in Giove"
+    }
+  ]
+}

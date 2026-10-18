@@ -1,0 +1,61 @@
+{
+  "intro": "InSight는 2018년 11월 26일 엘리시움 평원에 착륙했습니다. 화성에 놓인 최초의 지구물리 관측소였습니다. 이 임무는 4년 동안 SEIS 지진계로 화성의 지진에 귀를 기울였고, 1,300개가 넘는 지진을 기록하며 행성의 핵, 맨틀, 지각을 전례 없이 상세하게 드러냈습니다. 두더지형 굴착기(HP³)는 스스로 땅속에 묻히지 못했지만, SEIS가 그 아쉬움을 충분히 만회했습니다. 임무는 먼지가 쌓여 태양 전지판이 작동을 멈춘 2022년 12월에 끝났습니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "내부에 초점을 맞춘 최초의 화성 임무",
+      "images": [
+        {
+          "src": "/images/missions/insight/01.webp",
+          "caption": "Lockheed Martin에서 통합 작업 중인 InSight — Phoenix와 같은 착륙선 플랫폼을 지구물리 탐사용으로 다시 활용했습니다."
+        },
+        {
+          "src": "/images/missions/insight/02.webp",
+          "caption": "SEIS 지진계와 WTS 바람·열 차단막이 로봇 팔에 의해 표면에 설치되었습니다. 다른 행성에 놓인 최초의 지진계입니다."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "2018년 5월 5일 — 반덴버그 공군기지에서 Atlas V 발사",
+      "images": [
+        {
+          "src": "/images/missions/insight/03.webp",
+          "caption": "Atlas V 401이 반덴버그의 SLC-3E에서 이륙합니다. 미국 서부 해안에서 이루어진 최초의 행성 간 발사였습니다. MarCO CubeSats가 통신 중계기로 함께 비행했습니다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "엘리시움 평원 — 2018년 11월 26일 착륙",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/insight/tier3-pan.jpg",
+          "caption": "Homestead Hollow 작업 구역, 화성일 14일째 — 장비 배치 카메라(Instrument Deployment Camera)로 촬영한 290° 파노라마. 왼쪽 아래에는 이미 지면에 놓인 SEIS가 보입니다."
+        },
+        {
+          "src": "/images/fleet-galleries/insight/02.webp",
+          "caption": "화성에서 찍은 최초의 셀카 합성 이미지 — 화성일 110일째, SEIS와 HP³ 설치를 마친 InSight의 데크."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "1,319회의 화성 지진 — 모습을 드러낸 행성의 내부",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/insight/03.webp",
+          "caption": "2022년 5월 4일 규모 4.7 화성 지진의 지진도 — 기록된 가장 큰 지진으로, 케르베루스 지구대 단층계에서 발생했습니다."
+        },
+        {
+          "src": "/images/fleet-galleries/insight/04.webp",
+          "caption": "InSight의 마지막 셀카, 화성일 1211일째 — 태양 전지판이 먼지로 뒤덮였습니다. 최종 교신은 2022년 12월 15일."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "intro": "Apollo 12는 1969년 11월 19일 폭풍의 대양에 착륙했다. 2년 반 전에 내려앉은 무인 착륙선 Surveyor 3에서 걸어갈 수 있는 거리에 정확히 내려앉은 정밀 착륙이었다. 콘래드와 빈은 두 차례의 선외활동(EVA)으로 31시간 동안 달 표면에 머물렀고, 34kg의 시료와 분석용 Surveyor 3 부품을 가져왔다. 유인 Apollo가 달 표면의 특정 목표 지점에 도달할 수 있음을 입증했다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "Yankee Clipper + Intrepid",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/01.webp",
+          "caption": "Apollo 12 승무원 단체 사진 — 피트 콘래드(선장, CDR), 리처드 고든(사령선 조종사, CMP), 앨런 빈(달 착륙선 조종사, LMP)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "1969년 11월 14일 — 첫 1분 동안 두 차례 벼락을 맞다",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/02.webp",
+          "caption": "Saturn V SA-507이 소나기 속을 뚫고 이륙한다. 벼락이 T+36초와 T+52초에 발사체를 강타해 연료전지 전력이 끊겼고, SCE-to-AUX 명령이 임무를 구했다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "달 표면",
+      "subtitle": "폭풍의 대양 — 1969년 11월 19일 착륙",
+      "images": [
+        {
+          "src": "/images/missions/apollo12/03.webp",
+          "caption": "콘래드가 Surveyor 3 착륙선 곁에 서 있다. Apollo 12는 163m 떨어진 곳에 착륙했으며, 최초의 정밀 달 착륙이었다."
+        },
+        {
+          "src": "/images/missions/apollo12/04.webp",
+          "caption": "ALSEP 과학 관측 기지를 설치한 모습 — 최초의 장기 운용 달 지구물리 관측소."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo12/tier3-pan.jpg",
+          "caption": "Apollo 12 착륙 지점 파노라마 — Intrepid 하강단, ALSEP, Surveyor 3이 한 화면에 담겼다."
+        }
+      ]
+    }
+  ]
+}

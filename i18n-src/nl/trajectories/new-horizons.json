@@ -1,0 +1,32 @@
+{
+  "name": "New Horizons",
+  "current_distance_label": "66 AU · in uitgebreide missie — koers stellend naar de stagnatiezone van de heliospheer",
+  "interstellar_since_label": "Zal de heliopauze rond 2040 kruisen — derde sonde bestemd om interstellaire ruimte te bereiken",
+  "waypoints": [
+    {
+      "label": "Lancering"
+    },
+    {
+      "label": "Planetoïde APL"
+    },
+    null,
+    null,
+    {
+      "label": "Zwaartekrachtslinger Jupiter"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Pluto"
+    },
+    null,
+    {
+      "label": "Arrokoth"
+    },
+    null,
+    {
+      "label": "Vandaag"
+    }
+  ]
+}

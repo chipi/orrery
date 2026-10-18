@@ -1,0 +1,46 @@
+{
+  "intro": "Luna 9 于1966年2月3日降落在风暴洋,实现了人类在另一个天体上的首次软着陆。这个重99公斤的球形返回舱依靠展开的充气缓冲气囊,承受住了时速22公里的撞击;随后它展开花瓣状的舱瓣使自身扶正,并传回了第一批月球表面照片。它在电池耗尽前共工作了3天。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "苏联E-6舱体,软着陆先驱",
+      "images": [
+        {
+          "src": "/images/missions/luna9/01.webp",
+          "caption": "Luna 9 舱体模型——重99公斤,呈球形,配有气囊保护的相机和四根花瓣状天线。"
+        },
+        {
+          "src": "/images/missions/luna9/02.webp",
+          "caption": "Luna 9 硬件剖视图——苏联工程师在NASA之前解决了软着陆难题。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "1966年1月31日——Molniya-M 从拜科努尔升空",
+      "images": [
+        {
+          "src": "/images/missions/luna9/03.webp",
+          "caption": "在拜科努尔准备中的Molniya-M火箭——Luna 9 的发射,正值苏美隔洋对决、争夺首次软着陆的竞赛之中。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "表面",
+      "subtitle": "风暴洋——1966年2月3日着陆",
+      "images": [
+        {
+          "src": "/images/missions/luna9/04.webp",
+          "caption": "首批月球表面图像——粗糙的低码率全景图,呈现出遍布岩石的月壤。曼彻斯特的焦德雷尔班克射电望远镜截获了这次传输,并抢在苏联之前公布了图像。"
+        },
+        {
+          "src": "/images/missions/luna9/05.webp",
+          "caption": "Luna 9 全景拼接图——首次证明月球表面坚实得足以支撑着陆器,终结了多年来关于月面存在深厚尘埃堆积的猜测。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "intro": "Viking 2 se posó en Utopia Planitia el 3 de septiembre de 1976: fue el segundo de los módulos de aterrizaje gemelos Viking, en el lado opuesto de Marte respecto a Viking 1. Su misión, de 1316 soles, incluyó la primera observación de escarcha de hielo de agua en Marte (durante el invierno polar) y la repetición de los experimentos de biología de Viking 1 en un emplazamiento mucho más frío y de latitud más alta. Dejó de funcionar en abril de 1980 por un fallo de las baterías.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Gemelo de Viking 1, con instrumentos idénticos",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/01.webp",
+          "caption": "El módulo de aterrizaje Viking 2 sobre la superficie de Marte, en Utopia Planitia."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Utopia Planitia: aterrizaje el 3 de septiembre de 1976",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier3-pan.jpg",
+          "caption": "Mosaico de la cámara de 360° de Utopia Planitia: un terreno más llano y más rocoso que el del emplazamiento de Viking 1 en Chryse."
+        },
+        {
+          "src": "/images/hotspots/mars/viking2-lander/tier2-hirise.jpg",
+          "caption": "El módulo de aterrizaje Viking 2, fotografiado desde la órbita por la cámara HiRISE de la MRO décadas después del fin de la misión."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/02.webp",
+          "caption": "Vista en color de Utopia Planitia: Andrea Luck reprocesó las imágenes de Viking 2 a partir de placas del archivo de la NASA."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciencia",
+      "subtitle": "Escarcha, tormentas de polvo y el primer invierno marciano",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/viking2-lander/03.webp",
+          "caption": "Escarcha de hielo de agua que recubre las rocas alrededor del módulo de aterrizaje Viking 2: la primera observación de este tipo en el invierno del ártico marciano (sol 1230)."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/04.webp",
+          "caption": "Amanecer en Utopia Planitia (PIA00576): la cámara de Viking 2 captó el resplandor previo al alba en las latitudes septentrionales altas."
+        },
+        {
+          "src": "/images/fleet-galleries/viking2-lander/05.webp",
+          "caption": "Escarcha en Utopia Planitia (NASA Viking Lander 2), reprocesada por Andrea Luck."
+        }
+      ]
+    }
+  ]
+}

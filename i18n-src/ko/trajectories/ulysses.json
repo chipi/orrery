@@ -1,0 +1,30 @@
+{
+  "name": "Ulysses",
+  "current_distance_label": "5.2 AU · 미션 종료 2009-06-30 (추진제 배관 동결) — 극궤도 태양중심궤도에 있는 기기",
+  "waypoints": [
+    {
+      "label": "발사 (STS-41)"
+    },
+    null,
+    {
+      "label": "목성 플라이바이"
+    },
+    null,
+    {
+      "label": "남극 통과"
+    },
+    {
+      "label": "북극 통과"
+    },
+    null,
+    {
+      "label": "남극 #2"
+    },
+    {
+      "label": "남극 #3"
+    },
+    {
+      "label": "미션 종료"
+    }
+  ]
+}

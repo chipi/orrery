@@ -1,0 +1,46 @@
+{
+  "intro": "Chandrayaan-3 于2023年8月23日降落在月球南极附近——这是印度首次在月球软着陆,也是所有国家中最接近南极的一次着陆。Vikram 着陆器释放了 Pragyan 月球车,后者在14天里行驶约100米,在永久阴影区地形中搜寻水冰。印度由此成为继苏联、美国和中国之后,第四个实现月球软着陆的国家。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "Vikram 着陆器 + Pragyan 月球车",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/01.webp",
+          "caption": "Chandrayaan-3 航天器组合体在 ISRO 斯里赫里戈达发射前的集成测试中。"
+        },
+        {
+          "src": "/images/missions/chandrayaan3/02.webp",
+          "caption": "Pragyan 月球车——重26公斤,太阳能供电,六轮设计。它专为在月球南极的风化层上行驶、寻找挥发性物质而设计。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "2023年7月14日——LVM3 自萨迪什·达万航天中心升空",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/03.webp",
+          "caption": "LVM3(“Bahubali”)发射 Chandrayaan-3——历时40天的奔月旅程,包含多圈月球捕获;刻意采用缓慢的轨道,以最大限度保留燃料余量。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "湿婆-沙克提点,位于月球南极附近——2023年8月23日着陆",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/04.webp",
+          "caption": "Vikram 着陆器位于南极地区的月面上——着陆点为南纬69.37°,是迄今纬度最高的月球着陆。"
+        },
+        {
+          "src": "/images/missions/chandrayaan3/05.webp",
+          "caption": "Pragyan 月球车沿坡道驶下——这是首批抵达月球南极的车轮,由 Vikram 的机载相机拍摄。"
+        }
+      ]
+    }
+  ]
+}

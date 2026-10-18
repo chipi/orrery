@@ -1,0 +1,61 @@
+{
+  "intro": "Zhurong aterrizó en Utopia Planitia el 14 de mayo de 2021: fue el primer aterrizaje exitoso de China en Marte y la primera misión a Marte de cualquier nación que combinó orbitador, módulo de aterrizaje y rover en un único lanzamiento (Tianwen-1). Bautizado con el nombre del dios chino del fuego, Zhurong recorrió 1,92 km por las llanuras meridionales de Utopia antes de ser puesto en hibernación en mayo de 2022, durante la estación de polvo. La CNSA no ha confirmado que se haya reactivado.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "El primer módulo de aterrizaje y rover chinos en Marte",
+      "images": [
+        {
+          "src": "/images/missions/tianwen1/01.webp",
+          "caption": "El rover Zhurong durante la integración previa al lanzamiento en Pekín: 240 kg, alimentado por energía solar e instrumentado con un radar de penetración terrestre para sondear el subsuelo."
+        },
+        {
+          "src": "/images/missions/tianwen1/02.webp",
+          "caption": "La pila de lanzamiento de Tianwen-1: orbitador, módulo de aterrizaje y rover combinados, la misión a Marte más ambiciosa en un primer intento que se haya llevado a cabo jamás."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lanzamiento",
+      "subtitle": "23 de julio de 2020: un Long March 5 desde Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/tianwen1/03.webp",
+          "caption": "Un Long March 5 lanza Tianwen-1 desde el Centro de Lanzamiento de Satélites de Wenchang, en Hainan, para un tránsito de 7 meses hasta Marte."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Utopia Planitia: aterrizaje el 14 de mayo de 2021",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/zhurong/tier3-pan.jpg",
+          "caption": "Panorama de las cámaras de navegación de Zhurong, con la cubierta del módulo de aterrizaje y la superficie de Marte al fondo: la primera vista desde el suelo de una misión a Marte que no es ni de la NASA ni soviética."
+        },
+        {
+          "src": "/images/hotspots/mars/zhurong/tier2-hirise.jpg",
+          "caption": "El rover Zhurong y el módulo de aterrizaje, fotografiados desde la órbita por el HiRISE del MRO de la NASA: colaboración internacional en imágenes de archivo."
+        },
+        {
+          "src": "/images/fleet-galleries/zhurong/01.webp",
+          "caption": "Zhurong y el módulo de aterrizaje en Marte: imagen tomada por una cámara remota que el propio rover desplegó y a la que luego se alejó para fotografiarlos."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciencia",
+      "subtitle": "Radar de penetración terrestre del subsuelo de Utopia",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/zhurong/03.webp",
+          "caption": "Perfil del radar de penetración terrestre que muestra estratos subterráneos hasta unos 80 m de profundidad: indicios de antiguas inundaciones en el sur de Utopia."
+        }
+      ]
+    }
+  ]
+}

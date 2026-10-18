@@ -1,0 +1,50 @@
+{
+  "intro": "Spirit은 2004년 1월 4일 구세프 분화구에 착륙했습니다. 화성 반대편에 쌍둥이 탐사 로버 Opportunity가 착륙하기 3주 전이었습니다. 90솔(sol)을 목표로 설계된 Spirit은 6년 동안 활동하며 7.7km를 주행했고, 결국 \"Troy\"의 부드러운 토양에 바퀴가 완전히 빠져 움직일 수 없게 되었습니다. 발이 묶인 로버가 된 뒤에도 Spirit은 2010년 3월 교신이 끊길 때까지 고정형 과학 플랫폼으로서 임무를 이어갔습니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "태양광으로 움직이는 로버, Opportunity의 쌍둥이",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/01.webp",
+          "caption": "통합 조립 중인 Mars Exploration Rover — 185kg, 바퀴 6개, Pancam 마스트 카메라, RAT 암석 연마 장비."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "구세프 분화구 — 2004년 1월 4일 착륙",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/spirit/tier3-pan.jpg",
+          "caption": "McMurdo의 Winter Haven, 814~980솔(2006년) — Pancam 360° 파노라마. 사고로 희생된 STS-107 승무원들을 기려 이름 붙인 컬럼비아 힐스가 지평선을 압도합니다."
+        },
+        {
+          "src": "/images/hotspots/mars/spirit/tier2-hirise.jpg",
+          "caption": "바퀴가 파묻힌 뒤인 2009년 5월 MRO HiRISE가 촬영한, Spirit이 갇힌 Troy 지점."
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/02.webp",
+          "caption": "34솔, Adirondack 암석 시추 — 화성에서 암석 연마 장비를 처음 사용한 순간."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "과학",
+      "subtitle": "허즈번드 언덕을 오르고 Home Plate에서 실리카를 발견하다",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/03.webp",
+          "caption": "Home Plate에서 Spirit의 고장 난 오른쪽 앞바퀴가 파헤쳐 드러낸 실리카가 풍부한 토양 — 구세프 분화구에 과거 열수 활동이 있었다는 증거입니다."
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/04.webp",
+          "caption": "489솔(2005년 5월 19일) Pancam이 촬영한 구세프 분화구의 일몰. 푸른빛이 감도는 화성 황혼을 담은 대표적인 이미지 중 하나입니다."
+        }
+      ]
+    }
+  ]
+}

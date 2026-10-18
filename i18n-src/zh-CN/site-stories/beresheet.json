@@ -1,0 +1,46 @@
+{
+  "intro": "Beresheet——希伯来语意为“起初”——是以色列首次尝试登月的任务，由 SpaceIL 以民间力量打造，预算仅 1 亿美元，可谓精打细算。它于 2019 年 2 月 22 日发射，4 月 4 日被月球轨道捕获，随后在 2019 年 4 月 11 日下降过程中，惯性测量单元（IMU）和星载计算机发生重启，最终坠毁于澄海。残骸中带着一个装有缓步动物（水熊虫）的时间胶囊。以色列由此成为第七个抵达月球的国家，尽管只是以撞击的方式。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "迄今所尝试的最小星际着陆器——585 公斤",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/01.webp",
+          "caption": "Beresheet 航天器在发射前的集成测试中——由 SpaceIL 与 Israel Aerospace Industries 共同打造，是首次由民间出资的登月尝试。"
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/02.webp",
+          "caption": "时间胶囊载荷——以色列纪念物品、蚀刻在镍片上的 3000 万页人类知识，以及（颇具争议地）缓步动物，即世界上生命力最顽强的微型动物。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "发射",
+      "subtitle": "2019 年 2 月 22 日——Falcon 9 自卡纳维拉尔角发射（搭载发射）",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/03.webp",
+          "caption": "Falcon 9 以搭载方式将 Beresheet 与 PSN-6 通信卫星一同发射——这是一段为期 6 周、多次绕行的飞向月球轨道的旅程。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "澄海——2019 年 4 月 11 日撞击",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/04.webp",
+          "caption": "Beresheet 在动力下降过程中发回的最后一张自拍——可见“小国家，大梦想”的铭牌。在约 150 米高度时通信中断。"
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/05.webp",
+          "caption": "NASA 的 LRO 拍摄的撞击地点——月壤受扰动形成明亮的光晕。部分缓步动物或许在撞击中完好无损地幸存了下来。"
+        }
+      ]
+    }
+  ]
+}

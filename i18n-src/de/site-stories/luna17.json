@@ -1,0 +1,39 @@
+{
+  "intro": "Luna 17 landete am 17. November 1970 im Mare Imbrium – und setzte Lunokhod 1 ab, das erste Radfahrzeug, das auf einer anderen Welt operierte, und kam damit dem LRV der NASA um sieben Monate zuvor. Lunokhod 1 legte in 11 Mondtagen 10,5 km zurück, gesteuert von einem fünfköpfigen Team auf der Krim. Es lieferte 25.000 Fotografien und 211 Panoramen, bevor es im September 1971 verstummte.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Die ersten Räder auf dem Mond – Lunokhod 1",
+      "images": [
+        {
+          "src": "/images/missions/luna17/01.webp",
+          "caption": "Lunokhod 1 – achträdriges, 756 kg schweres Chassis mit Solarstromversorgung und einem Polonium-210-RTG, der nachts für Wärme sorgte. Ausgelegt auf 3 Monate, hielt es 10 durch."
+        },
+        {
+          "src": "/images/missions/luna17/02.webp",
+          "caption": "Die Landestufe von Luna 17 samt Rampen für das Absetzen von Lunokhod 1. Das sowjetische Fernsteuerungsteam arbeitete von einem umgebauten U-Boot an der Küste der Krim aus."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Mare Imbrium – gelandet am 17. November 1970",
+      "images": [
+        {
+          "src": "/images/missions/luna17/03.webp",
+          "caption": "Lunokhod 1 auf der Fahrt über das Mare Imbrium – in Echtzeit gesteuert von einem fünfköpfigen Team, trotz der Lichtlaufzeit von je 2,5 Sekunden pro Richtung."
+        },
+        {
+          "src": "/images/missions/luna17/04.webp",
+          "caption": "Lunokhod 1 – Routenkarte: 10,5 km im Zickzack über das Mare Imbrium, mit wissenschaftlichen Stopps an Felsen und Kratern."
+        },
+        {
+          "src": "/images/missions/luna17/05.webp",
+          "caption": "Der Retroreflektor von Lunokhod 1 – wird noch heute, mehr als 50 Jahre später, von erdgebundenen Laserentfernungsmessstationen zum Mond genutzt."
+        }
+      ]
+    }
+  ]
+}

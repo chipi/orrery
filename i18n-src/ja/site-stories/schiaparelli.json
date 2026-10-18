@@ -1,0 +1,46 @@
+{
+  "intro": "Schiaparelli——ヨーロッパにとって2度目の火星着陸挑戦——は、2016年10月16日に ExoMars Trace Gas Orbiter から分離し、その3日後、時速約540kmでメリディアニ平原に墜落した。ソフトウェアの不具合により、パラシュートと制動用スラスターが50秒早く切り離され、着陸機はまだ地表から3.7kmの高度にあった。残骸は1週間以内に、火星を周回する探査機 MRO の HiRISE カメラによって発見された。ここで得られた教訓は、現在2028年の打ち上げが予定されているローバー、ExoMars Rosalind Franklin の設計に生かされている。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "EDM——突入・降下・着陸実証モジュール",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/01.webp",
+          "caption": "打ち上げ前の Schiaparelli 着陸機——質量577kg。ExoMars ローバーのEDL(突入・降下・着陸)システムのための、一度限りの技術実証機として設計された。"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "2016年3月14日——バイコヌールから Proton-M ロケットで打ち上げ",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/02.webp",
+          "caption": "ExoMars 2016 の機体を載せて離昇する Proton-M ロケット——TGO と Schiaparelli を搭載した、ESA と Roscosmos の共同ミッション。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "メリディアニ平原——2016年10月19日、この平原に衝突した",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/03.webp",
+          "caption": "MRO の HiRISE カメラが捉えた Schiaparelli の衝突地点——上部に主クレーター、右下にパラシュートとバックシェルが見える。"
+        },
+        {
+          "src": "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg",
+          "caption": "HiRISE による Schiaparelli 墜落地点の拡大画像——機体の衝突で生じた黒い筋と、その周囲に広がるイジェクタ(放出物)の層。"
+        },
+        {
+          "src": "/images/fleet-galleries/schiaparelli/04.webp",
+          "caption": "失敗に至る経過のコンピューターグラフィックスによる再現——パラシュート展開中に IMU(慣性計測装置)が飽和し、高度3.7kmで着陸機が早期に切り離された。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "intro": "انطلقت مركبة الجوّالة Curiosity التابعة لوكالة NASA في 26 نوفمبر 2011 فوق صاروخ Atlas V من رأس كانافيرال. وبعد 254 يومًا من الرحلة عبر الفضاء، أوصل مختبر علوم المريخ (Mars Science Laboratory) الجوّالة التي تعمل بالطاقة النووية ويبلغ وزنها 899 كغ إلى فوهة غيل في 6 أغسطس 2012 بفضل عملية الهبوط الشهيرة اليوم بالرافعة السماوية. وبعد أكثر من عقد، لا تزال Curiosity تتسلق جبل شارب، وتحفر في صخور تحتفظ بسجلّ لماضي المريخ الذي كان صالحًا للحياة يومًا ما.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "العتاد",
+      "subtitle": "بناء جوّالة لفوهة غيل",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/01.webp",
+          "caption": "تجميع مختبر علوم المريخ (Mars Science Laboratory) في JPL — Curiosity ومرحلة الهبوط والغلاف الخلفي والدرع الحراري مكدّسة تمهيدًا لشحنها إلى فلوريدا."
+        },
+        {
+          "src": "/images/missions/curiosity/02.webp",
+          "caption": "مصدر الطاقة النووية MMRTG (القرص البرتقالي، أسفل اليمين) يوفّر نحو 110 واط بصورة متواصلة لمدة 14 عامًا على الأقل — بلا ألواح شمسية ولا توقف شتوي."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "الإطلاق",
+      "subtitle": "26 نوفمبر 2011 — صاروخ Atlas V من رأس كانافيرال",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/03.webp",
+          "caption": "يقلع صاروخ Atlas V 541 من منصة SLC-41 حاملًا مختبر علوم المريخ (Mars Science Laboratory) والجوّالة Curiosity. الساعة 10:02 بتوقيت شرق الولايات المتحدة، 26 نوفمبر 2011."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "السطح",
+      "subtitle": "فوهة غيل — الهبوط في 6 أغسطس 2012",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
+          "caption": "بانوراما Mont Mercou، اليوم المريخي 3070 (مارس 2021). مسح بزاوية 360° بكاميرا Mastcam-Z يُظهر الجوّالة والجروف الطبقية في Mt Mercou وجبل شارب عند الأفق."
+        },
+        {
+          "src": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
+          "caption": "منظر علوي من HiRISE لمسار Curiosity، التقطه مسبار Mars Reconnaissance Orbiter بدقة 25 سم لكل بكسل."
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/01.webp",
+          "caption": "صورة ذاتية في موقع الحفر \"Big Sky\"، اليوم المريخي 1126 — تركيب من عشرات اللقطات المقرّبة بكاميرا MAHLI جُمعت في صورة واحدة."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "العلوم",
+      "subtitle": "أدلة على مريخ قديم صالح للحياة",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/02.webp",
+          "caption": "حفرة حفر في Yellowknife Bay — أول عيّنة من بيئة قاع بحيرة في ماضي المريخ، يناير 2013."
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/03.webp",
+          "caption": "صخور رسوبية في سلسلة فيرا روبين — تكوينات حديدية شريطية ومعادن طينية تدل على وجود ماء سائل قديم وبيئة كيميائية صالحة للحياة."
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "title": "الأشخاص",
+      "subtitle": "المهندسون والعلماء وراء Curiosity",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/04.webp",
+          "caption": "غرفة التحكم في مهمة JPL تحتفل بنجاح الهبوط بالرافعة السماوية في «دقائق الرعب السبع»، 5/6 أغسطس 2012 — آدم ستيلتزنر وفريقه بعد وصول الإشارات الأولى من فوهة غيل."
+        }
+      ]
+    }
+  ]
+}

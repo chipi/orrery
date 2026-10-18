@@ -1,0 +1,41 @@
+{
+  "name": "BepiColombo",
+  "current_distance_label": "0.48 AU·正在驶向2026年12月5日水星轨道交会",
+  "waypoints": [
+    {
+      "label": "发射（Ariane 5）"
+    },
+    null,
+    {
+      "label": "地球"
+    },
+    {
+      "label": "金星第1次"
+    },
+    {
+      "label": "金星第2次"
+    },
+    {
+      "label": "水星第1次"
+    },
+    {
+      "label": "水星第2次"
+    },
+    {
+      "label": "水星第3次"
+    },
+    {
+      "label": "水星第4次"
+    },
+    {
+      "label": "水星第5次"
+    },
+    {
+      "label": "水星第6次"
+    },
+    null,
+    {
+      "label": "水星轨道交会"
+    }
+  ]
+}

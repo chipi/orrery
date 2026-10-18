@@ -1,0 +1,34 @@
+{
+  "name": "Pioneer 10",
+  "current_distance_label": "135 AU · ~18.8 light-hours from the Sun (last contact 2003-01-23)",
+  "interstellar_since_label": "Last contact 2003 — coasting toward Taurus, will pass near Aldebaran in ~2 million years",
+  "waypoints": [
+    {
+      "label": "Launch"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "label": "Jupiter"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Past Pluto orbit"
+    },
+    null,
+    null,
+    null,
+    {
+      "label": "Last contact"
+    },
+    null,
+    null,
+    {
+      "label": "Today"
+    }
+  ]
+}

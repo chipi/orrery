@@ -1,0 +1,98 @@
+[
+  {
+    "rel": "original-work.json",
+    "at": "lab_illustrations./images/lab/goals/apollo-round-trip_webp.title",
+    "old": "Apollo Round Trip",
+    "new": "Apollo: туда и обратно"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "lab_illustrations./images/lab/goals/choose-an-orbit_webp.title",
+    "old": "Choose An Orbit",
+    "new": "Выберите орбиту"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "lab_illustrations./images/lab/goals/engines-of-the-world_webp.title",
+    "old": "Engines Of The World",
+    "new": "Двигатели мира"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "lab_illustrations./images/lab/goals/entry-computer_webp.title",
+    "old": "Entry Computer",
+    "new": "Компьютер входа в атмосферу"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "lab_illustrations./images/lab/goals/flying-computer_webp.title",
+    "old": "Flying Computer",
+    "new": "Полётный компьютер"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "lab_illustrations./images/lab/goals/land-on-mercury_webp.title",
+    "old": "Land On Mercury",
+    "new": "Приземлиться на Меркурий"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "lab_illustrations./images/lab/goals/landing-computer_webp.title",
+    "old": "Landing Computer",
+    "new": "Компьютер посадки"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "lab_illustrations./images/lab/goals/launch-a-rocket_webp.title",
+    "old": "Launch A Rocket",
+    "new": "Запустить ракету"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "lab_illustrations./images/lab/goals/motion-first-principles_webp.title",
+    "old": "Motion First Principles",
+    "new": "Переместить массу"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "lab_illustrations./images/lab/goals/observe-the-sky_webp.title",
+    "old": "Observe The Sky",
+    "new": "Наблюдение неба"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "lab_illustrations./images/lab/goals/plan-a-mission_webp.title",
+    "old": "Plan A Mission",
+    "new": "Планирование реальной миссии"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "lab_illustrations./images/lab/goals/reach-orbit_webp.title",
+    "old": "Reach Orbit",
+    "new": "Выход на орбиту"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-moon-yutu_webp.title",
+    "old": "Yutu rover",
+    "new": "Луноход Yutu"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-venus-venera_webp.title",
+    "old": "Venera / Vega lander",
+    "new": "Посадочный аппарат «Венера» / «Вега»"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "ui.Conic-section icons.where",
+    "old": "Fly",
+    "new": "Полёт"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-monkey-head.taken",
+    "old": "2014 · Hubble 24th",
+    "new": "2014 · Hubble 24-летие"
+  }
+]

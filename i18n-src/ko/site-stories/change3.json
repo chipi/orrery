@@ -1,0 +1,46 @@
+{
+  "intro": "Chang'e 3는 2013년 12월 14일 비의 바다에 착륙했다. 중국 최초의 달 연착륙이자, (Luna 24 이후) 37년 만에 이루어진 첫 달 착륙이었다. Yutu 로버를 내보냈으며, Yutu는 약 114m를 주행한 뒤 제어 계통 고장으로 그 자리에 멈춰 선 채 남은 약 30 달의 하루를 버텼다. 이로써 중국은 달 표면에 자산을 둔 세 번째 국가가 되었다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "중국 최초의 달 착륙선 + Yutu 로버",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/01.webp",
+          "caption": "전시 중인 Chang'e 3 착륙선 — RTG 방식의 열원 장치, 네 개의 다리, Yutu를 내려보내는 경사로."
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/02.webp",
+          "caption": "Yutu 로버 — 140kg, 바퀴 6개, 차체 아래에 장착된 지하 탐사 레이더."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "2013년 12월 1일 — 시창에서 Long March 3B 발사",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/03.webp",
+          "caption": "Long March 3B가 Chang'e 3를 싣고 이륙하는 모습 — 달까지 5일간 비행한 뒤 12월 14일 연착륙."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "비의 바다 — 2013년 12월 14일 착륙",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/04.webp",
+          "caption": "달 표면에서 서로를 촬영한 Chang'e 3 착륙선과 Yutu 로버 — 달 위의 중국 장비가 서로를 찍은 최초의 상호 초상 사진."
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/05.webp",
+          "caption": "Yutu의 지하 탐사 레이더로 얻은 비의 바다 지하 단면 — 약 330m 깊이까지 여러 겹으로 쌓인 현무암 용암류."
+        }
+      ]
+    }
+  ]
+}

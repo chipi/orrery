@@ -1,0 +1,46 @@
+{
+  "intro": "Schiaparelli — il secondo tentativo europeo di atterraggio su Marte — si separò da ExoMars Trace Gas Orbiter il 16 ottobre 2016 e tre giorni dopo si schiantò su Meridiani Planum a circa 540 km/h. Un errore software fece sì che il paracadute e i retrorazzi di frenata si disattivassero con 50 secondi di anticipo, quando il lander si trovava ancora a 3,7 km dalla superficie. I resti furono individuati da HiRISE di MRO nel giro di una settimana. Le lezioni apprese hanno plasmato il rover ExoMars Rosalind Franklin, ora in programma per il lancio nel 2028.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "EDM — Modulo dimostratore di ingresso, discesa e atterraggio",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/01.webp",
+          "caption": "Il lander Schiaparelli prima del lancio — 577 kg, progettato come dimostratore tecnologico monouso per il sistema EDL del rover ExoMars."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "14 marzo 2016 — Proton-M da Bajkonur",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/02.webp",
+          "caption": "Il Proton-M decolla con il complesso ExoMars 2016 — TGO + Schiaparelli, missione congiunta ESA-Roscosmos."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Meridiani Planum — impatto il 19 ottobre 2016",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/schiaparelli/03.webp",
+          "caption": "HiRISE di MRO riprende il sito d'impatto di Schiaparelli — il cratere principale è visibile in alto; paracadute + backshell in basso a destra."
+        },
+        {
+          "src": "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg",
+          "caption": "Dettaglio HiRISE del sito di schianto di Schiaparelli — la striscia nera lasciata dall'impatto del veicolo, circondata dalla coltre di ejecta."
+        },
+        {
+          "src": "/images/fleet-galleries/schiaparelli/04.webp",
+          "caption": "Ricostruzione in computer grafica della sequenza del guasto — la saturazione dell'IMU durante il dispiegamento del paracadute causò il rilascio prematuro del lander a 3,7 km di quota."
+        }
+      ]
+    }
+  ]
+}

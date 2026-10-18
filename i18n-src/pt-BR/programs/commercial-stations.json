@@ -1,10 +1,10 @@
 {
   "name": "Estações comerciais",
-  "tagline": "Os postos avançados privados destinados a substituir a ISS — uma aposta de que a órbita terrestre baixa pode se tornar um negócio, não apenas um programa governamental.",
+  "tagline": "Os postos avançados privados destinados a substituir a EEI — uma aposta de que a órbita terrestre baixa pode se tornar um negócio, não apenas um programa governamental.",
   "the_land": [
     {
       "type": "prose",
-      "md": "A Estação Espacial Internacional é a maior coisa que a humanidade já construiu em órbita, e será deliberadamente destruída. Por volta de 2030, após mais de três décadas de operação tripulada contínua, a ISS será guiada para queimar sobre o Pacífico — porque está envelhecendo, é cara de manter, e seus parceiros decidiram que o futuro da órbita terrestre baixa pertence a empresas privadas e não a agências governamentais. As Commercial Stations são o que deve tomar seu lugar."
+      "md": "A Estação Espacial Internacional é a maior coisa que a humanidade já construiu em órbita, e será deliberadamente destruída. Por volta de 2030, após mais de três décadas de operação tripulada contínua, a EEI será guiada para queimar sobre o Pacífico — porque está envelhecendo, é cara de manter, e seus parceiros decidiram que o futuro da órbita terrestre baixa pertence a empresas privadas e não a agências governamentais. As Commercial Stations são o que deve tomar seu lugar."
     },
     {
       "type": "prose",
@@ -14,7 +14,7 @@
   "goals": [
     {
       "type": "prose",
-      "md": "O objetivo imediato é continuidade: ter pelo menos uma estação comercial operando antes que a ISS seja desorbitada, para que a presença humana em órbita terrestre baixa — ininterrupta desde 2000 — nunca seja interrompida. Perder essa continuidade significaria entregar uma capacidade arduamente conquistada e, simbolicamente, ceder o terreno elevado da órbita baixa exatamente no momento em que a estação da China é a única outra voando."
+      "md": "O objetivo imediato é continuidade: ter pelo menos uma estação comercial operando antes que a EEI seja desorbitada, para que a presença humana em órbita terrestre baixa — ininterrupta desde 2000 — nunca seja interrompida. Perder essa continuidade significaria entregar uma capacidade arduamente conquistada e, simbolicamente, ceder o terreno elevado da órbita baixa exatamente no momento em que a estação da China é a única outra voando."
     },
     {
       "type": "prose",
@@ -22,13 +22,13 @@
     },
     {
       "type": "prose",
-      "md": "Há também um objetivo estratégico embutido no comercial: manter uma presença humana liderada pelos americanos em órbita baixa à medida que a ISS termina e a Tiangong da China continua. As estações comerciais visam garantir que a aposentadoria da ISS seja uma transferência, não uma retirada — que o Ocidente não simplesmente deixe a órbita terrestre baixa para a China por omissão."
+      "md": "Há também um objetivo estratégico embutido no comercial: manter uma presença humana liderada pelos americanos em órbita baixa à medida que a EEI termina e a Tiangong da China continua. As estações comerciais visam garantir que a aposentadoria da EEI seja uma transferência, não uma retirada — que o Ocidente não simplesmente deixe a órbita terrestre baixa para a China por omissão."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "O resultado ainda não está escrito — estas são, por enquanto, contratos, projetos e artigos de teste em vez de estações voando. Os planos são reais e financiados: a Axiom está construindo um veículo independente de voo livre, com apenas seu primeiro módulo acoplando brevemente à ISS antes de se desacoplar para se juntar ao resto da estação em voo livre — um plano reestruturado no final de 2024 que abandonou a visão anterior de montar módulos permanentemente na ISS e depois partir. Orbital Reef e Starlab estão projetando postos avançados independentes, e o Haven-1 da Vast — um veículo de voo livre de módulo único — está entre os com maior probabilidade de voar primeiro. Mas nenhuma estação comercial está ainda em órbita, e os cronogramas são apertados contra o fim planejado da ISS, com o risco usual de que uma estação no papel atrase enquanto o prazo não atrasa."
+      "md": "O resultado ainda não está escrito — estas são, por enquanto, contratos, projetos e artigos de teste em vez de estações voando. Os planos são reais e financiados: a Axiom está construindo um veículo independente de voo livre, com apenas seu primeiro módulo acoplando brevemente à EEI antes de se desacoplar para se juntar ao resto da estação em voo livre — um plano reestruturado no final de 2024 que abandonou a visão anterior de montar módulos permanentemente na EEI e depois partir. Orbital Reef e Starlab estão projetando postos avançados independentes, e o Haven-1 da Vast — um veículo de voo livre de módulo único — está entre os com maior probabilidade de voar primeiro. Mas nenhuma estação comercial está ainda em órbita, e os cronogramas são apertados contra o fim planejado da EEI, com o risco usual de que uma estação no papel atrase enquanto o prazo não atrasa."
     },
     {
       "type": "prose",
@@ -36,7 +36,7 @@
     },
     {
       "type": "prose",
-      "md": "O que já está claro é que o modelo tem impulso e apoio oficial. A NASA se comprometeu a se tornar um cliente em vez de um operador, várias empresas bem financiadas estão competindo, e a data fixa de aposentadoria da ISS dá a todo o esforço um prazo rígido. As estações comerciais podem atrasar, se consolidar ou falhar parcialmente — mas a intenção de entregar a órbita terrestre baixa ao setor privado é firme."
+      "md": "O que já está claro é que o modelo tem impulso e apoio oficial. A NASA se comprometeu a se tornar um cliente em vez de um operador, várias empresas bem financiadas estão competindo, e a data fixa de aposentadoria da EEI dá a todo o esforço um prazo rígido. As estações comerciais podem atrasar, se consolidar ou falhar parcialmente — mas a intenção de entregar a órbita terrestre baixa ao setor privado é firme."
     }
   ],
   "narrative": [
@@ -46,11 +46,11 @@
     },
     {
       "type": "prose",
-      "md": "É também uma aposta sobre mercados que já falhou antes. Tentativas anteriores de construir uma economia comercial em órbita baixa descobriram que, fora dos contratos governamentais, a demanda pagante era escassa. O esforço atual é melhor financiado e melhor cronometrado — aproveitando lançamentos mais baratos e um prazo real — mas está tentando a mesma coisa difícil: provar que a órbita pode ser um negócio. A ISS nunca foi esperada para dar lucro; suas sucessoras devem, e essa é uma demanda genuinamente nova e não comprovada."
+      "md": "É também uma aposta sobre mercados que já falhou antes. Tentativas anteriores de construir uma economia comercial em órbita baixa descobriram que, fora dos contratos governamentais, a demanda pagante era escassa. O esforço atual é melhor financiado e melhor cronometrado — aproveitando lançamentos mais baratos e um prazo real — mas está tentando a mesma coisa difícil: provar que a órbita pode ser um negócio. A EEI nunca foi esperada para dar lucro; suas sucessoras devem, e essa é uma demanda genuinamente nova e não comprovada."
     },
     {
       "type": "prose",
-      "md": "E se desenrola contra um relógio e um rival. A aposentadoria da ISS está programada; a Tiangong da China está voando e não se aposentará com ela. As estações comerciais estão sendo construídas para garantir que o Ocidente não saia da órbita terrestre baixa justamente quando um concorrente se instala — o que carrega uma proposição de negócio com peso estratégico, e levanta a questão do que acontece se o mercado se mostrar muito escasso mas a necessidade estratégica permanecer."
+      "md": "E se desenrola contra um relógio e um rival. A aposentadoria da EEI está programada; a Tiangong da China está voando e não se aposentará com ela. As estações comerciais estão sendo construídas para garantir que o Ocidente não saia da órbita terrestre baixa justamente quando um concorrente se instala — o que carrega uma proposição de negócio com peso estratégico, e levanta a questão do que acontece se o mercado se mostrar muito escasso mas a necessidade estratégica permanecer."
     }
   ],
   "legacy": [
@@ -60,11 +60,11 @@
     },
     {
       "type": "prose",
-      "md": "Se elas enfrentarem dificuldades, seu legado será uma lição dura sobre os limites da comercialização: que algumas capacidades, por mais desejáveis que sejam, podem ainda não ter um mercado que possa sustentá-las sem uma âncora governamental — e que a transferência da órbita baixa pode precisar ser mais lenta, ou subsidiada por mais tempo, do que o prazo da ISS permite."
+      "md": "Se elas enfrentarem dificuldades, seu legado será uma lição dura sobre os limites da comercialização: que algumas capacidades, por mais desejáveis que sejam, podem ainda não ter um mercado que possa sustentá-las sem uma âncora governamental — e que a transferência da órbita baixa pode precisar ser mais lenta, ou subsidiada por mais tempo, do que o prazo da EEI permite."
     },
     {
       "type": "prose",
-      "md": "De qualquer forma, elas marcam o fim da era da ISS e o teste de um novo modelo. As estações comerciais são onde o longo experimento de privatizar o acesso ao espaço encontra sua questão mais difícil — não se uma empresa pode alcançar a órbita, mas se pode lucrativamente viver lá."
+      "md": "De qualquer forma, elas marcam o fim da era da EEI e o teste de um novo modelo. As estações comerciais são onde o longo experimento de privatizar o acesso ao espaço encontra sua questão mais difícil — não se uma empresa pode alcançar a órbita, mas se pode lucrativamente viver lá."
     }
   ],
   "lessons": [
@@ -74,7 +74,7 @@
     },
     {
       "type": "prose",
-      "md": "A lição mais profunda, ainda se formando, é sobre o perigo de aposentar uma capacidade antes que sua substituição esteja segura. A ISS tem uma data final fixa; suas sucessoras comerciais ainda não voam. Apostar que um mercado se materializará no prazo, com um prazo rígido e um rival já em órbita, é uma aposta cujas apostas não são nada menos que a presença humana contínua na própria órbita terrestre baixa."
+      "md": "A lição mais profunda, ainda se formando, é sobre o perigo de aposentar uma capacidade antes que sua substituição esteja segura. A EEI tem uma data final fixa; suas sucessoras comerciais ainda não voam. Apostar que um mercado se materializará no prazo, com um prazo rígido e um rival já em órbita, é uma aposta cujas apostas não são nada menos que a presença humana contínua na própria órbita terrestre baixa."
     }
   ]
 }

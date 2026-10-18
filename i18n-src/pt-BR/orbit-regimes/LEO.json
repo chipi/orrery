@@ -2,11 +2,11 @@
   "name": "Órbita Terrestre Baixa",
   "short": "LEO",
   "story": "A faixa mais próxima do espaço — de 160 a 2.000 km de altitude. Latência de comunicação baixa (~7 ms em um sentido), arrasto atmosférico ainda puxa a borda inferior, e os cinturões de radiação ainda não entraram em jogo. Voos espaciais tripulados vivem aqui pelas mesmas razões: resgatável, alcançável, e o corpo humano tolera um deslocamento de algumas centenas de quilômetros. Toda estação espacial que já voou estacionou em LEO.",
-  "comparison": "Cerca de 1/600 do caminho até a Lua. A ISS a 408 km orbita na mesma altitude que a distância entre Londres e Genebra — deitada de lado.",
+  "comparison": "Cerca de 1/600 do caminho até a Lua. A EEI a 408 km orbita na mesma altitude que a distância entre Londres e Genebra — deitada de lado.",
   "residents": [
     {
       "id": "iss",
-      "label": "ISS — Estação Espacial Internacional",
+      "label": "EEI — Estação Espacial Internacional",
       "agency": "NASA"
     },
     {

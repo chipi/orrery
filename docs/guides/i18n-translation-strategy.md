@@ -82,8 +82,10 @@ own sources (instrument acronyms like JWST; Latin IAU names where native sources
 them). **ISS is a term, not a name** (operator 2026-10-18): "МКС is the Russian
 abbreviation of Международная космическая станция." Each language uses its own
 abbreviation or name for the International Space Station, as `native-terms.json`
-records it: ru МКС, sr-Cyrl МСС, es EEI, zh-CN 国际空间站, ar محطة الفضاء الدولية;
-ISS where the language's own sources write ISS (de, fr, it, nl, pt-BR, ja, ko, hi).
+records it, checked against each language's own Wikipedia intro (2026-10-18): ru МКС,
+sr-Cyrl МСС, es EEI, pt-BR EEI, it SSI ("in sigla SSI"), hi आईएसएस, zh-CN 国际空间站,
+ar محطة الفضاء الدولية; ISS where the language's own sources write ISS (de, fr — SSI
+there is mostly Canadian — nl, ja, ko).
 
 ### 3.3 One thing, one name per language (2026-10-17)
 

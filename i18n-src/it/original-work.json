@@ -462,7 +462,7 @@
       "title": "Viaggio di andata e ritorno Apollo"
     },
     "/images/lab/goals/catch-the-iss_webp": {
-      "title": "Raggiungere la ISS"
+      "title": "Raggiungere la SSI"
     },
     "/images/lab/goals/choose-an-orbit_webp": {
       "title": "Scegli un'orbita"
@@ -931,7 +931,7 @@
       "title": "Artemis II"
     },
     "/images/posters/iss_jpg": {
-      "title": "ISS"
+      "title": "SSI"
     },
     "/images/posters/tiangong_jpg": {
       "title": "Tiangong"
@@ -1483,9 +1483,9 @@
       "where": "Marcatori sulla superficie terrestre"
     },
     "/images/colophon/model-station-iss_webp": {
-      "title": "Modello proxy della ISS",
+      "title": "Modello proxy della SSI",
       "what": "Travatura completa, moduli in pressione, visitatori attraccati e antenne orientabili.",
-      "where": "Scena orbitale della ISS"
+      "where": "Scena orbitale della SSI"
     },
     "/images/colophon/model-station-tiangong_webp": {
       "title": "Modello proxy di Tiangong",
@@ -1495,7 +1495,7 @@
     "/images/colophon/model-microgravity_webp": {
       "title": "Assi di microgravità",
       "what": "Sei frecce etichettate che marcano il frame locale della stazione (zenith/nadir…).",
-      "where": "Lente scientifica ISS + Tiangong"
+      "where": "Lente scientifica SSI + Tiangong"
     },
     "/images/colophon/model-orbit-rings_webp": {
       "title": "Anelli di orbita + alone luminoso di marcatore",
@@ -1569,7 +1569,7 @@
     "/images/colophon/viz-blueprint_webp": {
       "title": "Schemi della stazione",
       "what": "Proiezioni ortografiche superiore / laterale di ogni modulo della stazione.",
-      "where": "ISS + Tiangong"
+      "where": "SSI + Tiangong"
     },
     "/images/colophon/viz-nation-legend_webp": {
       "title": "Legenda mappa di superficie nazionale",
@@ -1632,8 +1632,8 @@
     },
     "Station module notes": {
       "title": "Note sui moduli di stazione",
-      "what": "Note operative e storiche per tutti i 22 moduli ISS e Tiangong, scritte per i pannelli dei blueprint.",
-      "where": "ISS + Tiangong"
+      "what": "Note operative e storiche per tutti i 22 moduli SSI e Tiangong, scritte per i pannelli dei blueprint.",
+      "where": "SSI + Tiangong"
     },
     "Surface + panorama captions": {
       "title": "Didascalie di panorami e superfici",

@@ -3,14 +3,14 @@
   "intro_sentence": "Um hub pressurizado com múltiplos portos de atracação — o conector estrutural que permite uma estação se ramificar.",
   "narrative_101": [
     "Um nó é um tipo especial de módulo pressurizado: não hospeda experimentos nem acomodações de tripulação, apenas conecta outros módulos. Imagine uma caixa hexagonal onde cada face tem um porto de atracação. Prenda um nó a um foguete lançador, envie-o para o espaço e, em seguida, acople cinco módulos aos cinco portos restantes — você transformou sua estação de um módulo para seis.",
-    "A ISS tem três: Unity (Node 1), Harmony (Node 2) e Tranquility (Node 3). Cada um é a junção central de um segmento da estação — Unity conecta os lados russo e americano; Harmony une o aglomerado de laboratórios dos EUA aos módulos japoneses e europeus; Tranquility carrega a cúpula de observação Cupola.",
+    "A EEI tem três: Unity (Node 1), Harmony (Node 2) e Tranquility (Node 3). Cada um é a junção central de um segmento da estação — Unity conecta os lados russo e americano; Harmony une o aglomerado de laboratórios dos EUA aos módulos japoneses e europeus; Tranquility carrega a cúpula de observação Cupola.",
     "Tiangong adotou uma abordagem diferente: em vez de nós dedicados, o módulo central Tianhe funciona tanto como acomodações quanto como hub, com múltiplos portos de atracação construídos diretamente em suas extremidades frontal e traseira. É um design mais compacto que custa menos massa para lançar, mas limita quantos módulos podem se ramificar."
   ],
   "body_paragraphs": [
     "Nós são módulos conectores — hubs presurizados com múltiplos portos Common Berthing Mechanism (CBM) ou de atracação — que permitem uma estação se ramificar em uma topologia em árvore em vez de uma cadeia linear.",
-    "ISS Unity (Node 1) lançada em 1998 no STS-88. Seis portos CBM: frontal → Destiny, traseiro → Zarya, boreste → Quest airlock, zenite → Z1 truss, bombordo → Tranquility (2010), nadir → PMA/berthing para carga (anteriormente Leonardo PMM 2011–2015). O primeiro módulo da ISS construído pelos EUA.",
-    "ISS Harmony (Node 2) lançada em 2007. Seis portos: conecta Destiny a Columbus (bombordo), Kibo (boreste) e os dois adaptadores de atracação (IDA-2 frontal, IDA-3 zenite) para Crew Dragon / Starliner.",
-    "ISS Tranquility (Node 3) lançada em 2010. Hospeda a cúpula de observação Cupola (porto nadir), o Módulo Multipropósito Permanente Leonardo (frontal) e BEAM (traseiro).",
+    "EEI Unity (Node 1) lançada em 1998 no STS-88. Seis portos CBM: frontal → Destiny, traseiro → Zarya, boreste → Quest airlock, zenite → Z1 truss, bombordo → Tranquility (2010), nadir → PMA/berthing para carga (anteriormente Leonardo PMM 2011–2015). O primeiro módulo da EEI construído pelos EUA.",
+    "EEI Harmony (Node 2) lançada em 2007. Seis portos: conecta Destiny a Columbus (bombordo), Kibo (boreste) e os dois adaptadores de atracação (IDA-2 frontal, IDA-3 zenite) para Crew Dragon / Starliner.",
+    "EEI Tranquility (Node 3) lançada em 2010. Hospeda a cúpula de observação Cupola (porto nadir), o Módulo Multipropósito Permanente Leonardo (frontal) e BEAM (traseiro).",
     "Núcleo Tianhe da Tiangong: combina nó + acomodações de tripulação + propulsão + controle. O hub do nó possui um porto axial frontal (Shenzhou), dois portos radiais laterais (Wentian a boreste, Mengtian a bombordo, ambos realocados pelo braço robótico), e um porto nadir; o porto axial traseiro recebe cargas Tianzhou. Os portos usam o Mecanismo de Atracação Chinês, não o CBM dos EUA."
   ],
   "diagram_caption": "Módulo nó hexagonal com seis portos de atracação identificados como frontal / traseiro / bombordo / boreste / zenite / nadir."

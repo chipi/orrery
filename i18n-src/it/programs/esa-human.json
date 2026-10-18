@@ -8,7 +8,7 @@
     },
     {
       "type": "prose",
-      "md": "Questo è iniziato con Spacelab nel 1983 — un laboratorio costruito dagli europei che viaggiava nella stiva dello Space Shuttle e trasformava lo Shuttle in una piattaforma scientifica, portando il primo astronauta ESA nel suo primo volo. È continuato con Columbus, il laboratorio permanente europeo agganciato alla Stazione Spaziale Internazionale, e con l'Automated Transfer Vehicle, la nave cargo più grande e sofisticata della sua epoca. Nel corso del tempo gli astronauti europei hanno volato su Shuttle e Soyuz, hanno vissuto a bordo della Mir e della ISS, e hanno comandato la Stazione. L'Europa non ha mai lanciato un proprio equipaggio — ed è diventata essenziale per quasi tutti coloro che l'hanno fatto."
+      "md": "Questo è iniziato con Spacelab nel 1983 — un laboratorio costruito dagli europei che viaggiava nella stiva dello Space Shuttle e trasformava lo Shuttle in una piattaforma scientifica, portando il primo astronauta ESA nel suo primo volo. È continuato con Columbus, il laboratorio permanente europeo agganciato alla Stazione Spaziale Internazionale, e con l'Automated Transfer Vehicle, la nave cargo più grande e sofisticata della sua epoca. Nel corso del tempo gli astronauti europei hanno volato su Shuttle e Soyuz, hanno vissuto a bordo della Mir e della SSI, e hanno comandato la Stazione. L'Europa non ha mai lanciato un proprio equipaggio — ed è diventata essenziale per quasi tutti coloro che l'hanno fatto."
     }
   ],
   "goals": [
@@ -35,16 +35,16 @@
       "image": {
         "reuse": "fleet/atv/02"
       },
-      "caption": "L'Automated Transfer Vehicle — il cargo europeo per la ISS. Venti tonnellate a pieno carico, volava autonomamente fino a un aggancio automatico con la Stazione, consegnava carico, acqua, aria e propellente, e usava i suoi motori per alzare l'orbita della ISS.",
+      "caption": "L'Automated Transfer Vehicle — il cargo europeo per la SSI. Venti tonnellate a pieno carico, volava autonomamente fino a un aggancio automatico con la Stazione, consegnava carico, acqua, aria e propellente, e usava i suoi motori per alzare l'orbita della SSI.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "I risultati sono stati sostanziali e distintamente europei. Spacelab ha volato in 22 missioni Shuttle tra il 1983 e il 1998, dando all'Europa due decenni di scienza con equipaggio sul campo e una generazione di astronauti esperti. Columbus, installato nel 2008, ha dato all'Europa un laboratorio permanente in orbita e l'ha resa partner di primo rango nella più grande struttura mai costruita dagli esseri umani. E l'Automated Transfer Vehicle — cinque enormi cargo volati tra il 2008 e il 2015, ciascuno intitolato a un pensatore europeo da Jules Verne a Georges Lemaître — ha fatto qualcosa di genuinamente avanzato: una navicella di venti tonnellate che si orientava da sola fino a un aggancio completamente automatico con la ISS, consegnava rifornimenti e carburante, e riportava in quota l'intera Stazione con i suoi motori."
+      "md": "I risultati sono stati sostanziali e distintamente europei. Spacelab ha volato in 22 missioni Shuttle tra il 1983 e il 1998, dando all'Europa due decenni di scienza con equipaggio sul campo e una generazione di astronauti esperti. Columbus, installato nel 2008, ha dato all'Europa un laboratorio permanente in orbita e l'ha resa partner di primo rango nella più grande struttura mai costruita dagli esseri umani. E l'Automated Transfer Vehicle — cinque enormi cargo volati tra il 2008 e il 2015, ciascuno intitolato a un pensatore europeo da Jules Verne a Georges Lemaître — ha fatto qualcosa di genuinamente avanzato: una navicella di venti tonnellate che si orientava da sola fino a un aggancio completamente automatico con la SSI, consegnava rifornimenti e carburante, e riportava in quota l'intera Stazione con i suoi motori."
     },
     {
       "type": "prose",
-      "md": "Quella competenza ATV ha poi fruttato un dividendo inatteso. La tecnologia che l'Europa ha sviluppato per costruire una navicella autonoma capace di agganciarsi alla ISS è diventata la base del European Service Module — la parte che l'Europa ora costruisce per Orion della NASA, la navicella che porta gli astronauti verso la Luna nell'ambito di Artemis. Il modulo di servizio fornisce ad Orion energia, propulsione, aria e acqua: la sezione che mantiene l'equipaggio in vita durante il viaggio verso l'orbita lunare e ritorno. Un continente che non ha mai costruito una propria navicella con equipaggio ora costruisce la metà di una americana senza la quale i suoi astronauti non potrebbero sopravvivere."
+      "md": "Quella competenza ATV ha poi fruttato un dividendo inatteso. La tecnologia che l'Europa ha sviluppato per costruire una navicella autonoma capace di agganciarsi alla SSI è diventata la base del European Service Module — la parte che l'Europa ora costruisce per Orion della NASA, la navicella che porta gli astronauti verso la Luna nell'ambito di Artemis. Il modulo di servizio fornisce ad Orion energia, propulsione, aria e acqua: la sezione che mantiene l'equipaggio in vita durante il viaggio verso l'orbita lunare e ritorno. Un continente che non ha mai costruito una propria navicella con equipaggio ora costruisce la metà di una americana senza la quale i suoi astronauti non potrebbero sopravvivere."
     }
   ],
   "narrative": [
@@ -54,7 +54,7 @@
     },
     {
       "type": "prose",
-      "md": "L'ATV è l'espressione più chiara di questo. Non era un progetto di prestigio o una partecipazione a una gara; era un pezzo di infrastruttura estremamente capace — un cargo automatizzato più avanzato nel suo aggancio e nella sua capacità di carico di qualsiasi altro in volo — che ha reso l'Europa centrale per mantenere in vita la ISS. E poiché l'Europa aveva costruito quella capacità, era posizionata per costruire la cosa successiva: il modulo di servizio Orion, e con esso un posto nel ritorno dell'umanità sulla Luna. Padroneggiare una nicchia poco appariscente ha portato, passo dopo passo, a una quota nel programma con equipaggio più ambizioso del nuovo secolo."
+      "md": "L'ATV è l'espressione più chiara di questo. Non era un progetto di prestigio o una partecipazione a una gara; era un pezzo di infrastruttura estremamente capace — un cargo automatizzato più avanzato nel suo aggancio e nella sua capacità di carico di qualsiasi altro in volo — che ha reso l'Europa centrale per mantenere in vita la SSI. E poiché l'Europa aveva costruito quella capacità, era posizionata per costruire la cosa successiva: il modulo di servizio Orion, e con esso un posto nel ritorno dell'umanità sulla Luna. Padroneggiare una nicchia poco appariscente ha portato, passo dopo passo, a una quota nel programma con equipaggio più ambizioso del nuovo secolo."
     }
   ],
   "legacy": [

@@ -462,7 +462,7 @@
       "title": "Viagem de Ida e Volta Apollo"
     },
     "/images/lab/goals/catch-the-iss_webp": {
-      "title": "Alcançar a ISS"
+      "title": "Alcançar a EEI"
     },
     "/images/lab/goals/choose-an-orbit_webp": {
       "title": "Escolher uma Órbita"
@@ -931,7 +931,7 @@
       "title": "Artemis II"
     },
     "/images/posters/iss_jpg": {
-      "title": "ISS"
+      "title": "EEI"
     },
     "/images/posters/tiangong_jpg": {
       "title": "Tiangong"
@@ -1483,9 +1483,9 @@
       "where": "Marcadores de superfície terrestre"
     },
     "/images/colophon/model-station-iss_webp": {
-      "title": "Modelo proxy da ISS",
+      "title": "Modelo proxy da EEI",
       "what": "Viga principal completa, módulos pressurizados, visitantes acoplados e painéis orientáveis.",
-      "where": "Cena orbital da ISS"
+      "where": "Cena orbital da EEI"
     },
     "/images/colophon/model-station-tiangong_webp": {
       "title": "Modelo proxy do Tiangong",
@@ -1495,7 +1495,7 @@
     "/images/colophon/model-microgravity_webp": {
       "title": "Eixos de microgravidade",
       "what": "Seis setas rotuladas marcando o referencial local da estação (zênite/nadir…).",
-      "where": "Lente científica ISS + Tiangong"
+      "where": "Lente científica EEI + Tiangong"
     },
     "/images/colophon/model-orbit-rings_webp": {
       "title": "Anéis de orbitador + halos de marcador",
@@ -1569,7 +1569,7 @@
     "/images/colophon/viz-blueprint_webp": {
       "title": "Diagramas de estação",
       "what": "Projeções ortográficas superior / lateral de cada módulo de estação.",
-      "where": "ISS + Tiangong"
+      "where": "EEI + Tiangong"
     },
     "/images/colophon/viz-nation-legend_webp": {
       "title": "Legenda de nação do mapa de superfície",
@@ -1632,8 +1632,8 @@
     },
     "Station module notes": {
       "title": "Notas dos módulos de estação",
-      "what": "Notas operacionais e históricas para todos os 22 módulos da ISS e Tiangong, escritas para os painéis de diagrama.",
-      "where": "ISS + Tiangong"
+      "what": "Notas operacionais e históricas para todos os 22 módulos da EEI e Tiangong, escritas para os painéis de diagrama.",
+      "where": "EEI + Tiangong"
     },
     "Surface + panorama captions": {
       "title": "Legendas de superfície + panorama",

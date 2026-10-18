@@ -1,0 +1,1 @@
+import{J as e,ft as t,pt as n}from"./DH0uuajr.js";import{c as r,l as i}from"./DHM0r1Sy.js";var a=n(!1),o=!1,s=!1;function c(){s=!0}function l(){o||(o=!0,i().then(()=>t(a,!0)))}function u(t,n){if(l(),!e(a))return s?{}:{src:t};let i=r(t);return i?.srcset?{src:i.src,srcset:i.srcset,sizes:n}:{src:i?.src??t}}export{u as n,c as t};

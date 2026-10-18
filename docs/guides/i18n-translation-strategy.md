@@ -64,6 +64,12 @@ of the name's origin, which uses the original name.**
   इसरो (ISRO). `native-terms.json` class `agency`; the one exception is a list of
   English search terms in `sourcing/gaps.json`, quoted as typed.
 - Russian running text puts vehicle names in «» quotes; headings don't.
+- A name kept in Latin script never takes a case ending, with or without a hyphen (no
+  "NASA-ин", "Voyager-а"). A common noun before it carries the ending: ru агентства NASA,
+  аппарата Voyager 2; sr агенције NASA, летелице Voyager 2; or the sentence is reworded
+  (decided 2026-10-18 at the operator's request: Russian press usage, and one rule for
+  both languages; the Serbian Pravopis was not checked). Native-script names inflect
+  normally (Кеплера, Ориона).
 - Code: `ORIGIN_NAMES`, `nativeName()`, `nativeCompound()` in
   `src/lib/name-origins.js`. Every origin name must be listed there, or the checker
   rejects the native form and the scan cannot find leftovers.

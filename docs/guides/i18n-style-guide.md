@@ -52,6 +52,10 @@ uses the local name its own Wikipedia uses: hi इसरो, ru Роскосмо
 Code: `ORIGIN_NAMES` in `src/lib/name-origins.js`; glossary class `agency` in
 `scripts/i18n-tools/native-terms.json`.
 
+**Latin names never take a case ending** (ru, sr-Cyrl, any inflected language): no
+"NASA-ин", "Voyager-а". A common noun before the name carries the ending (ru агентства
+NASA, аппарата Voyager 2; sr агенције NASA, летелице Voyager 2), or reword.
+
 **Science, geography, astronomy and people — native in every language,** written the
 way that country's universities, schools and space agency write them: planets and moons,
 eponymous terms (законы Кеплера, сфера Хилла, эффект Оберта), term abbreviations (НОО for

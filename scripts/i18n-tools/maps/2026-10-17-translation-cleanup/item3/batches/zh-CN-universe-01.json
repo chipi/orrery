@@ -1,0 +1,1400 @@
+[
+ {
+  "rel": "universe/exoplanets/51-peg-b.json",
+  "at": "fact",
+  "en": "The first planet found orbiting a Sun-like star — the world that opened the exoplanet era.",
+  "cur": "第一颗被发现围绕类太阳恒星运行的行星——开启系外行星时代的世界。"
+ },
+ {
+  "rel": "universe/exoplanets/51-peg-b.json",
+  "at": "bio",
+  "en": "51 Pegasi b, informally named Dimidium, was discovered in 1995 by Michel Mayor and Didier Queloz — the first confirmed planet around a normal Sun-like star, a find that earned them the 2019 Nobel Prize in Physics. A 'hot Jupiter' skimming its star every four days, it stunned astronomers who never expected a giant planet so close in, and forced a rethink of how planetary systems form and migrate.",
+  "cur": "51 Pegasi b，非正式命名为Dimidium，由米歇尔·麦耶和迪迪埃·奎洛兹于1995年发现——这是首颗在类太阳恒星周围被确认的行星，这一发现为他们赢得了2019年诺贝尔物理学奖。作为一颗每四天就环绕其恒星一周的\"热木星\"，它令天文学家震惊不已，因为他们从未料到巨行星会如此靠近恒星，这迫使人们重新思考行星系统的形成与迁移机制。"
+ },
+ {
+  "rel": "universe/exoplanets/alf-ari-b.json",
+  "at": "fact",
+  "en": "A giant planet candidate at Hamal — the Ram's star that once marked the spring equinox.",
+  "cur": "娄宿三——曾标记春分点的白羊座主星——旁的一颗候选巨行星。"
+ },
+ {
+  "rel": "universe/exoplanets/alf-ari-b.json",
+  "at": "bio",
+  "en": "Hamal (Alpha Arietis), the brightest star of Aries, anchored the vernal equinox two thousand years ago and still lends its name to the zero-point of the sky. A planet nearly twice Jupiter’s mass has been inferred from the orange giant's motion, placing another world around one of the zodiac's oldest landmark stars.",
+  "cur": "娄宿三 (Alpha Arietis),是白羊座最亮的恒星,两千年前它曾锚定春分点,至今仍以其名字命名天空坐标的零点。通过这颗橙色巨星的运动推断出存在一颗质量近两倍木星质量的行星,为黄道十二宫最古老的标志性恒星之一又添一颗世界。"
+ },
+ {
+  "rel": "universe/exoplanets/alf-tau-b.json",
+  "at": "fact",
+  "en": "A massive planet proposed at Aldebaran — the fiery eye of the Bull and a sci-fi waypoint.",
+  "cur": "一颗围绕毕宿五运行的巨大行星——金牛座的火红之眼与科幻作品中的航路坐标。"
+ },
+ {
+  "rel": "universe/exoplanets/alf-tau-b.json",
+  "at": "bio",
+  "en": "Aldebaran, the orange-giant eye of Taurus, is one of science fiction's most name-dropped stars, from pulp adventures to film. A planet several times Jupiter's mass was once proposed from decades of subtle velocity signals, but later analysis attributes those signals to the giant star's own pulsations — the planet is now considered unconfirmed — a reminder of how hard planets are to pin down around restless old suns.",
+  "cur": "毕宿五是金牛座那颗橙色巨星的眼睛，也是科幻小说中最频繁被提及的恒星之一，从通俗冒险故事到电影作品无处不在。曾有一颗数倍木星质量的行星因数十年来细微的速度信号而被提议存在，但后来的分析表明这些信号源于这颗巨星本身的脉动——该行星现已被认定为未确认——这提醒我们，在不稳定的老年恒星周围发现行星是多么困难。"
+ },
+ {
+  "rel": "universe/exoplanets/barnard-b.json",
+  "at": "fact",
+  "en": "A planet at Barnard's Star — the storied sci-fi sun that eluded planet-hunters for a century.",
+  "cur": "一颗围绕巴纳德星运行的行星——这颗传奇的科幻恒星让行星猎人们追寻了一个世纪。"
+ },
+ {
+  "rel": "universe/exoplanets/barnard-b.json",
+  "at": "bio",
+  "en": "Barnard's Star, the nearest single star to the Sun at just under six light-years, is a fixture of science fiction — the destination of the British Interplanetary Society's 1970s 'Project Daedalus' starship study and a waypoint in interstellar fiction from Robert Forward’s Rocheworld to the later Rama novels. After a century of claimed planets that all evaporated under scrutiny, Barnard b was finally confirmed in 2024: a sub-Earth far too hot for life, but real at last.",
+  "cur": "巴纳德星是距离太阳最近的单颗恒星，距离仅约6光年，在科幻小说中无处不在——它是英国星际协会1970年代Project Daedalus恒星飞船研究的目标地，也是从罗伯特·弗尔沃德的《Rocheworld》到后来的《Rama》系列小说等星际虚构作品中的关键位置。经历了整整一个世纪的行星声称却在严格审视下一个个消散之后，Barnard b终于在2024年得到证实：这是一颗远地行星，虽然太热而不适合生命，但终于成为现实。"
+ },
+ {
+  "rel": "universe/exoplanets/barnard-c.json",
+  "at": "fact",
+  "en": "One of a compact family of sub-Earths recently found circling the storied Barnard's Star.",
+  "cur": "最近发现的一颗环绕传奇巴纳德星运行的紧密行星家族中的一员，质量低于地球。"
+ },
+ {
+  "rel": "universe/exoplanets/barnard-c.json",
+  "at": "bio",
+  "en": "Barnard c is part of a tightly packed system of small, low-mass worlds confirmed around Barnard's Star in 2024–2025 with the ESPRESSO spectrograph. Each planet is a fraction of Earth's mass and orbits in just days, far too hot for life — but their discovery finally delivered real planets at a star that had frustrated hunters for a hundred years.",
+  "cur": "Barnard c是2024–2025年间利用ESPRESSO光谱仪在巴纳德星周围确认的一个紧密排列的小质量行星系统的一部分。每颗行星的质量都只是地球的一小部分,轨道周期仅有数天,温度过高无法孕育生命——但它们的发现终于在这颗让猎星者挫败了一百年的恒星周围找到了真正的行星。"
+ },
+ {
+  "rel": "universe/exoplanets/barnard-d.json",
+  "at": "fact",
+  "en": "A sub-Earth in Barnard's Star's newly revealed inner system.",
+  "cur": "巴纳德星新揭示的内层系统中一颗亚地球行星。"
+ },
+ {
+  "rel": "universe/exoplanets/barnard-d.json",
+  "at": "bio",
+  "en": "Barnard d is one of the diminutive worlds detected around Barnard's Star, a red dwarf just six light-years away. Weighing well under an Earth mass and orbiting close to its cool star, it helps make our second-nearest stellar neighbour a genuine planetary system rather than the empty sky once assumed.",
+  "cur": "Barnard d是在巴纳德星周围探测到的微小行星之一，这颗红矮星距离我们仅六光年。它的质量远低于地球，围绕其冷恒星近距离运行，使我们第二近的恒星邻居成为一个真正的行星系统，而非曾经认为的空旷天空。"
+ },
+ {
+  "rel": "universe/exoplanets/barnard-e.json",
+  "at": "fact",
+  "en": "The lightest of Barnard's Star's little worlds — near the edge of detectability.",
+  "cur": "巴纳德星最轻的小行星——接近可探测的边界。"
+ },
+ {
+  "rel": "universe/exoplanets/barnard-e.json",
+  "at": "bio",
+  "en": "Barnard e is the smallest planet found around Barnard's Star, only about a fifth of Earth's mass. Teasing such a feeble signal out of the star's motion pushed the ESPRESSO instrument to its limits, extending the roster of the nearest single star known to host planets.",
+  "cur": "Barnard e 是围绕巴纳德星发现的最小行星，质量仅约为地球的五分之一。从恒星的运动中提取如此微弱的信号将 ESPRESSO 仪器推至极限，扩展了已知最近的单星宿主行星的列表。"
+ },
+ {
+  "rel": "universe/exoplanets/gj-273-b.json",
+  "at": "fact",
+  "en": "A habitable-zone super-Earth at Luyten's Star — and the target of a deliberate message from Earth.",
+  "cur": "鲁坦星宜居带中的超级地球——也是地球发出定向信息的目标。"
+ },
+ {
+  "rel": "universe/exoplanets/gj-273-b.json",
+  "at": "bio",
+  "en": "GJ 273 b, also called Luyten b, is a super-Earth in the temperate zone of Luyten's Star, only about 12 light-years away. In 2017–2018 the 'Sónar Calling GJ 273b' project beamed a coded radio message toward it from a radar in Norway — one of the few deliberate attempts to contact a specific nearby world, with any reply not due until the 2040s.",
+  "cur": "GJ 273 b，也称为 Luyten b，是位于鲁坦星温和区域内的一颗超级地球，距离我们仅约12光年。2017至2018年间，'Sónar Calling GJ 273b' 项目从挪威的一座雷达向它发射了编码无线电信息——这是少数几次针对特定近邻世界的定向接触尝试之一，任何回复预计要到2040年代才能收到。"
+ },
+ {
+  "rel": "universe/exoplanets/gj-273-c.json",
+  "at": "fact",
+  "en": "A hot inner companion to Luyten's habitable-zone world.",
+  "cur": "Luyten星宜居带世界的一颗炽热内侧伴星。"
+ },
+ {
+  "rel": "universe/exoplanets/gj-273-c.json",
+  "at": "bio",
+  "en": "GJ 273 c is a small, hot planet orbiting Luyten's Star close in, interior to its more famous sibling GJ 273 b. Together they make Luyten's Star — a dim red dwarf near bright Procyon — one of the nearest multi-planet systems to the Sun.",
+  "cur": "GJ 273 c是一颗小型炽热行星,近距离环绕Luyten Star运行,位于其更著名的姊妹星GJ 273 b的轨道内侧。它们共同使Luyten Star——一颗位于明亮的南河三附近的暗淡红矮星——成为距太阳最近的多行星系统之一。"
+ },
+ {
+  "rel": "universe/exoplanets/gj-411-b.json",
+  "at": "fact",
+  "en": "A hot super-Earth at Lalande 21185 — one of the nearest planet-hosting stars.",
+  "cur": "一颗位于拉兰德21185的炽热超级地球——这是距离最近的拥有行星的恒星之一。"
+ },
+ {
+  "rel": "universe/exoplanets/gj-411-b.json",
+  "at": "bio",
+  "en": "GJ 411 b is a super-Earth whipping around Lalande 21185, a dim red dwarf about eight light-years away in the Great Bear and one of the closest stars to the Sun. First detected in 2017 and confirmed in 2020 from the star's tiny velocity wobble, it orbits far too close to be habitable, but its nearness makes the system a recurring waypoint in interstellar-travel fiction.",
+  "cur": "GJ 411 b是一颗围绕拉兰德21185高速运转的超级地球，这颗暗淡的红矮星距离我们约八光年，位于大熊座，是最接近太阳的恒星之一。它于2017年首次通过恒星的微小速度摆动被探测到，并在2020年得到确认。它的轨道离恒星太近，无法支持生命存在，但由于距离地球很近，这个星系在星际旅行科幻作品中反复出现，成为一个标志性的航点。"
+ },
+ {
+  "rel": "universe/exoplanets/hd-62509-b.json",
+  "at": "fact",
+  "en": "A giant planet circling Pollux — one of the first worlds found around a nearby giant star.",
+  "cur": "一颗环绕北河三的巨行星——首批在近邻巨星周围发现的世界之一。"
+ },
+ {
+  "rel": "universe/exoplanets/hd-62509-b.json",
+  "at": "bio",
+  "en": "Pollux b (Beta Geminorum b) is a gas giant several times Jupiter's mass orbiting Pollux, the brighter of the mythological Twins and the nearest giant star to the Sun. Reported in 2006 from the star's slow wobble (its existence is now debated), it showed that even evolved giant stars — the Sun's own distant future — can keep massive planets in tow.",
+  "cur": "北河三 b（双子座β b）是一颗气体巨行星，其质量为木星的数倍，环绕北河三运行。北河三是神话中的双子座中较亮的那颗星，也是距太阳最近的巨星。该行星于2006年根据该星缓慢的摇晃被报道（其存在现已引发争议），它表明即使是演化阶段的巨星——太阳遥远的未来样貌——也能够保持大质量行星的绕行。"
+ },
+ {
+  "rel": "universe/exoplanets/hd-95735-c.json",
+  "at": "fact",
+  "en": "A second, cooler world orbiting nearby Lalande 21185.",
+  "cur": "围绕邻近恒星拉兰德21185运行的第二颗更冷的世界。"
+ },
+ {
+  "rel": "universe/exoplanets/hd-95735-c.json",
+  "at": "bio",
+  "en": "A second planet around Lalande 21185, larger and farther out than GJ 411 b, was reported in the early 2020s from continued monitoring of the star. Together the planets make one of the Sun's nearest multi-planet systems — around a star already famous for its swift motion across our sky.",
+  "cur": "拉兰德21185的第二颗行星，比 GJ 411 b 更大且更远，于2020年代初通过对该恒星的持续监测被报告。这些行星共同构成了距太阳最近的多行星系统之一——围绕着一颗因其在天空中快速运动而闻名的恒星。"
+ },
+ {
+  "rel": "universe/exoplanets/proxima-cen-b.json",
+  "at": "fact",
+  "en": "The closest exoplanet to Earth — a roughly Earth-mass world in the habitable zone of the nearest star.",
+  "cur": "距离地球最近的系外行星——一颗质量约为地球质量的世界,位于最近恒星的宜居带内。"
+ },
+ {
+  "rel": "universe/exoplanets/proxima-cen-b.json",
+  "at": "bio",
+  "en": "Proxima Centauri b orbits the Sun's nearest neighbour just 4.24 light-years away, circling its cool red dwarf every 11 days within the zone where liquid water could exist. Its proximity made it the headline target of the Breakthrough Starshot project, which imagines gram-scale light-sail probes reaching it within a human lifetime — though the star's violent flares are a serious hazard to any atmosphere or life.",
+  "cur": "比邻星 b 围绕距离太阳最近的邻星运行，仅4.24光年之遥，每11天绕其冷红矮星一周，轨道位于可能存在液态水的区域内。其近距离使它成为Breakthrough Starshot项目的焦点目标，该项目设想克级光帆探测器可在人类一生的时间内抵达——尽管这颗恒星的剧烈耀斑对任何大气层或生命构成严重威胁。"
+ },
+ {
+  "rel": "universe/exoplanets/proxima-cen-d.json",
+  "at": "fact",
+  "en": "A feather-light sub-Earth hugging the nearest star — one of the lowest-mass planets ever found.",
+  "cur": "一颗轻如鸿毛的亚地球行星，紧紧依偎着距离我们最近的恒星——这是迄今发现的质量最低的行星之一。"
+ },
+ {
+  "rel": "universe/exoplanets/proxima-cen-d.json",
+  "at": "bio",
+  "en": "Proxima Centauri d is a tiny world, only about a quarter of Earth's mass, whirling around Proxima Centauri every five days far too close to be habitable. Confirmed in the 2020s, it sits near the very limit of what our instruments can detect, a testament to how precisely we can now weigh unseen planets by the wobble they induce in their star.",
+  "cur": "比邻星 d 是一颗微小的世界，质量仅约为地球的四分之一，每五天绕比邻星公转一周，距离过近而无法适居。它于2020年代得到证实，位于我们仪器探测能力的极限边缘，充分证明了我们如今能够通过行星在其恒星上引发的摆动来精确测定这些不可见行星质量的能力。"
+ },
+ {
+  "rel": "universe/exoplanets/toi-700-b.json",
+  "at": "fact",
+  "en": "The innermost world of TOI-700 — a rocky planet just smaller than Earth.",
+  "cur": "TOI-700 最内侧的世界——一颗略小于地球的岩石行星。"
+ },
+ {
+  "rel": "universe/exoplanets/toi-700-b.json",
+  "at": "bio",
+  "en": "TOI-700 b is a roughly Earth-sized rocky planet orbiting close to TOI-700, a red dwarf about 101 light-years away, completing a lap in only about ten days. It is the warm inner member of a system that NASA's TESS mission made famous for the temperate worlds farther out.",
+  "cur": "TOI-700 b 是一颗大致与地球同等大小的岩石行星,紧密环绕着TOI-700运行,后者是一颗距离约101光年的红矮星。它仅需约十天便完成一圈公转。它是这个恒星系统中温暖的内侧成员,而NASA的TESS任务正是因为该系统外侧那些温度适宜的世界而声名鹊起。"
+ },
+ {
+  "rel": "universe/exoplanets/toi-700-c.json",
+  "at": "fact",
+  "en": "A sub-Neptune in the middle of the TOI-700 system.",
+  "cur": "TOI-700 系统中部的一颗亚海王星。"
+ },
+ {
+  "rel": "universe/exoplanets/toi-700-c.json",
+  "at": "bio",
+  "en": "TOI-700 c is a larger, likely gas-rich world between the system's rocky planets, too hot and puffy for habitability. It sits between the inner rocky planet b and the temperate, Earth-sized planets d and e that drew the world's attention to this red-dwarf system.",
+  "cur": "TOI-700 c 是一个较大、可能富含气体的世界,位于该系统的岩石行星之间,过于炎热且膨胀,不适合居住。它位于内侧岩石行星 b 与温和的、地球大小的行星 d 和 e 之间,正是后两者让世界将目光投向了这个红矮星系统。"
+ },
+ {
+  "rel": "universe/exoplanets/toi-700-d.json",
+  "at": "fact",
+  "en": "TESS's first Earth-sized planet in the habitable zone — a landmark find.",
+  "cur": "TESS发现的首颗位于宜居带的地球大小行星——一项里程碑式的发现。"
+ },
+ {
+  "rel": "universe/exoplanets/toi-700-d.json",
+  "at": "bio",
+  "en": "TOI-700 d, announced by NASA in 2020, was the first Earth-sized planet found in the habitable zone by the TESS mission. Orbiting a quiet red dwarf, it receives a gentle share of starlight that could allow liquid water, making it a benchmark case in the search for potentially habitable worlds close to home.",
+  "cur": "TOI-700 d由NASA于2020年宣布发现，是TESS任务发现的首颗位于宜居带的地球大小行星。它环绕一颗平静的红矮星运行，接收到的恒星光照温和适中，可能允许液态水存在，使其成为在我们附近寻找潜在宜居世界的标杆案例。"
+ },
+ {
+  "rel": "universe/exoplanets/toi-700-e.json",
+  "at": "fact",
+  "en": "A second Earth-sized world in TOI-700's habitable zone, found three years after the first.",
+  "cur": "TOI-700 宜居带中的第二颗地球大小的世界,在发现第一颗三年后找到。"
+ },
+ {
+  "rel": "universe/exoplanets/toi-700-e.json",
+  "at": "bio",
+  "en": "TOI-700 e, confirmed in 2023, is a rocky, roughly Earth-sized planet orbiting within the habitable zone just inside its sibling TOI-700 d. Finding two temperate Earth-sized worlds in one nearby system made TOI-700 an especially rich target for future studies of small-planet atmospheres.",
+  "cur": "TOI-700 e 于2023年确认,是一颗岩质的、大致与地球同等大小的行星,运行于宜居带内,位置就在其姊妹星球 TOI-700 d 的内侧。在一个邻近恒星系统中发现两颗温和的地球大小世界,使 TOI-700 成为未来研究小型行星大气层的特别丰富的目标。"
+ },
+ {
+  "rel": "universe/exoplanets/trappist-1-b.json",
+  "at": "fact",
+  "en": "The innermost of TRAPPIST-1's seven Earth-sized worlds — scorched and, JWST found, likely airless.",
+  "cur": "TRAPPIST-1 七颗地球大小世界中最内侧的一颗——炙烤灼热,JWST 发现它很可能没有大气层。"
+ },
+ {
+  "rel": "universe/exoplanets/trappist-1-b.json",
+  "at": "bio",
+  "en": "TRAPPIST-1 b is the closest planet to the ultracool dwarf star, baked far too hot for water. In 2023 it became one of the first rocky exoplanets probed for an atmosphere by the James Webb Space Telescope, which found little sign of a thick one — an early verdict in the long effort to learn whether any of these seven worlds can hold onto air.",
+  "cur": "TRAPPIST-1 b 是距离这颗超冷矮星最近的行星,被烘烤得过于炽热而无法存在液态水。2023年,它成为 James Webb Space Telescope 探测大气层的首批岩石系外行星之一,结果几乎没有发现厚重大气层的迹象——这是一个早期判定,属于长期探索这七颗世界中是否有任何一颗能够保留大气层的努力的一部分。"
+ },
+ {
+  "rel": "universe/exoplanets/trappist-1-c.json",
+  "at": "fact",
+  "en": "The second of the seven — a Venus-sized world where Webb ruled out a thick CO₂ atmosphere.",
+  "cur": "七颗行星中的第二颗——一个金星大小的世界，Webb已排除其存在厚重的CO₂大气层的可能性。"
+ },
+ {
+  "rel": "universe/exoplanets/trappist-1-c.json",
+  "at": "bio",
+  "en": "TRAPPIST-1 c is close in size to Venus but, unlike Venus, JWST observations in 2023 suggested it lacks a dense carbon-dioxide blanket. Its study is part of the system's central question: whether planets around small, flare-prone red dwarfs can keep atmospheres at all.",
+  "cur": "TRAPPIST-1 c的大小接近金星,但与金星不同的是,JWST在2023年的观测表明它缺乏浓密的二氧化碳包层。对它的研究是该星系核心问题的一部分:围绕小型、易耀斑红矮星运行的行星是否能够保留大气。"
+ },
+ {
+  "rel": "universe/exoplanets/trappist-1-d.json",
+  "at": "fact",
+  "en": "A small world at the warm inner edge of TRAPPIST-1's habitable zone.",
+  "cur": "一颗位于TRAPPIST-1宜居带温暖内缘的小型世界。"
+ },
+ {
+  "rel": "universe/exoplanets/trappist-1-d.json",
+  "at": "bio",
+  "en": "TRAPPIST-1 d is among the smaller of the seven planets and sits just inside the zone where temperatures might allow liquid water. Like all its siblings it is thought to be tidally locked, keeping one face forever toward the dim red star and the other in perpetual night.",
+  "cur": "TRAPPIST-1 d是七颗行星中较小的一颗，正好位于温度可能允许液态水存在的区域内侧。与它的所有兄弟星球一样，它被认为处于潮汐锁定状态，始终以一面朝向这颗暗淡的红矮星，而另一面则永远处于黑夜之中。"
+ },
+ {
+  "rel": "universe/exoplanets/trappist-1-e.json",
+  "at": "fact",
+  "en": "The most Earth-like of the seven — a rocky world squarely in the habitable zone.",
+  "cur": "七颗行星中最类地的一颗——一个恰好位于宜居带内的岩质世界。"
+ },
+ {
+  "rel": "universe/exoplanets/trappist-1-e.json",
+  "at": "bio",
+  "en": "TRAPPIST-1 e is widely considered the system's best hope for habitability: rocky, close to Earth's size, and receiving about as much warmth as Earth does. When the seven-planet system was unveiled by NASA in 2017 it captured the world's imagination, and TRAPPIST-1 e remains a headline target for atmospheric searches with JWST.",
+  "cur": "TRAPPIST-1 e被广泛认为是该星系中最有希望宜居的行星:岩质、大小接近地球、接收到的热量也与地球相当。当NASA在2017年揭晓这个七行星系统时,它吸引了全世界的想象力,而TRAPPIST-1 e至今仍是JWST搜寻大气层的重点目标。"
+ },
+ {
+  "rel": "universe/exoplanets/trappist-1-f.json",
+  "at": "fact",
+  "en": "A habitable-zone world that could, in principle, hold oceans.",
+  "cur": "一颗位于宜居带的世界，原则上可能拥有海洋。"
+ },
+ {
+  "rel": "universe/exoplanets/trappist-1-f.json",
+  "at": "bio",
+  "en": "TRAPPIST-1 f orbits within the temperate zone of TRAPPIST-1 and is light enough to suggest a substantial share of water or ice. It is one of three planets — e, f, and g — that fall in the region where a suitable atmosphere might permit surface water.",
+  "cur": "TRAPPIST-1 f 运行于 TRAPPIST-1 的温带区域内，其质量之轻暗示着它可能拥有相当比例的水或冰。它是 e、f 和 g 三颗行星之一——这些行星都落在适宜的大气层可能允许液态水存在的区域内。"
+ },
+ {
+  "rel": "universe/exoplanets/trappist-1-g.json",
+  "at": "fact",
+  "en": "The largest of the seven, at the cool outer edge of the habitable zone.",
+  "cur": "七颗行星中最大的一颗,位于宜居带的冷凉外缘。"
+ },
+ {
+  "rel": "universe/exoplanets/trappist-1-g.json",
+  "at": "bio",
+  "en": "TRAPPIST-1 g is the biggest planet in the system and sits toward the outer boundary of the temperate zone, where any liquid water would need a strong greenhouse to survive. The seven planets circle their star in a delicate chain of orbital resonances, each period a near-whole-number ratio of its neighbour's.",
+  "cur": "TRAPPIST-1 g 是该系统中最大的行星,位于温和带的外边界附近,那里的液态水需要强大的温室效应才能存在。这七颗行星以一条精妙的轨道共振链环绕恒星运行,每颗行星的轨道周期都与相邻行星的周期接近整数比。"
+ },
+ {
+  "rel": "universe/exoplanets/trappist-1-h.json",
+  "at": "fact",
+  "en": "The outermost and coldest of the seven Earth-sized worlds.",
+  "cur": "七颗地球大小世界中最外层也最寒冷的一颗。"
+ },
+ {
+  "rel": "universe/exoplanets/trappist-1-h.json",
+  "at": "bio",
+  "en": "TRAPPIST-1 h is the farthest planet from the ultracool dwarf, likely frozen, completing the remarkable family of seven roughly Earth-sized worlds packed closer to their star than Mercury is to the Sun. All seven would fit comfortably inside the orbit of our innermost planet.",
+  "cur": "TRAPPIST-1 h 是距离这颗超冷矮星最远的行星，可能处于冰封状态，它完整了这个由七颗大致与地球同等大小的世界组成的非凡家族，它们的轨道比水星到太阳的距离还要紧密。这七颗行星全部都能舒适地容纳在我们最内侧行星的轨道之内。"
+ },
+ {
+  "rel": "universe/named-stars/achernar.json",
+  "at": "fact",
+  "en": "The 'end of the river' — spinning so fast it is squashed into the sky's most flattened star.",
+  "cur": "\"河流的尽头\"——自转极快,被压扁成天空中最扁平的恒星。"
+ },
+ {
+  "rel": "universe/named-stars/achernar.json",
+  "at": "bio",
+  "en": "Achernar (Alpha Eridani) is a hot blue star about 139 light-years away marking the southern end of the celestial river Eridanus. It rotates near its break-up speed, bulging so strongly at the equator that its diameter there is over a third larger than its polar diameter — the most oblate star known among the bright ones.",
+  "cur": "水委一（Alpha Eridani）是一颗炽热的蓝星，距离约139光年，标志着天球上波江座星官的南端。它的自转速度接近临界速率，在赤道处膨胀极为强烈，以至于该处的直径比两极直径大超过三分之一——在明亮恒星中已知自转最扁的星体。"
+ },
+ {
+  "rel": "universe/named-stars/achernar.json",
+  "at": "cultural",
+  "en": "The name is Arabic for 'the end of the river'. Lying deep in the southern sky, it was invisible to the classical Mediterranean astronomers and entered star charts only with the age of southern-hemisphere exploration.",
+  "cur": "这个名字在阿拉伯语中意为\"河流的尽头\"。它位于南天深处，对于古典地中海天文学家来说是不可见的，只有在南半球探索时代才进入星图。"
+ },
+ {
+  "rel": "universe/named-stars/acrux.json",
+  "at": "fact",
+  "en": "The brightest jewel of the Southern Cross — and the southernmost first-magnitude star.",
+  "cur": "南十字座最明亮的宝石——也是最靠南的一等星。"
+ },
+ {
+  "rel": "universe/named-stars/acrux.json",
+  "at": "bio",
+  "en": "Acrux (Alpha Crucis) is a hot blue multiple system about 320 light-years away, the luminous foot of the Southern Cross. Its component stars are young and massive, blazing in blue-white light.",
+  "cur": "十字架二（南十字座α）是一个炽热的蓝色聚星系统，距离约320光年，是南十字座明亮的基点。它的成员恒星年轻而质量巨大，闪耀着蓝白色的光芒。"
+ },
+ {
+  "rel": "universe/named-stars/acrux.json",
+  "at": "cultural",
+  "en": "As the leading star of Crux, Acrux shares in the Southern Cross that appears on the national flags of Australia, New Zealand, Brazil, Papua New Guinea and Samoa. For cultures across the southern hemisphere the Cross is a central navigational and seasonal marker.",
+  "cur": "作为南十字座的主星，十字架二与南十字一起出现在澳大利亚、新西兰、巴西、巴布亚新几内亚和萨摩亚的国旗上。对于南半球各地的文化而言，南十字是重要的导航和季节标志。"
+ },
+ {
+  "rel": "universe/named-stars/adhara.json",
+  "at": "fact",
+  "en": "The second star of the Great Dog — and once the brightest ultraviolet beacon in our sky.",
+  "cur": "Great Dog的第二亮星——曾是我们天空中最明亮的紫外线灯塔。"
+ },
+ {
+  "rel": "universe/named-stars/adhara.json",
+  "at": "bio",
+  "en": "Adhara (Epsilon Canis Majoris) is a hot blue-white pair about 430 light-years away, the second-brightest star in Canis Major after Sirius. A few million years ago it passed much closer to the Sun and was then the brightest star in Earth's entire sky.",
+  "cur": "弧矢七(大犬座ε)是一对炽热的蓝白色双星,距离我们约430光年,是大犬座中仅次于天狼星的第二亮星。数百万年前,它曾经离太阳近得多,那时它是地球整个天空中最明亮的恒星。"
+ },
+ {
+  "rel": "universe/named-stars/adhara.json",
+  "at": "cultural",
+  "en": "The traditional name comes from an Arabic term for 'the maidens'. Though outshone today by its neighbour Sirius, Adhara remains a powerful source of ultraviolet light illuminating the surrounding interstellar gas.",
+  "cur": "这个传统名称源自阿拉伯语中\"少女们\"的意思。尽管如今它的光芒被邻星天狼星所掩盖,弧矢七依然是强大的紫外光源,照亮着周围的星际气体。"
+ },
+ {
+  "rel": "universe/named-stars/aldebaran.json",
+  "at": "fact",
+  "en": "The fiery orange 'eye of the bull' in Taurus — a giant star that only appears to sit among the Hyades cluster.",
+  "cur": "金牛座中炽热的橙色\"公牛之眼\"——一颗巨星,只是看起来位于Hyades星团之中。"
+ },
+ {
+  "rel": "universe/named-stars/aldebaran.json",
+  "at": "bio",
+  "en": "Aldebaran (Alpha Tauri) is an orange giant about 65 light-years away. It lies in the foreground of the more distant Hyades cluster, a line-of-sight coincidence rather than true membership.",
+  "cur": "毕宿五(金牛座α)是一颗橙巨星,距离我们约65光年。它位于更遥远的Hyades星团的前景中,这只是视线上的巧合,而非真正的成员。"
+ },
+ {
+  "rel": "universe/named-stars/aldebaran.json",
+  "at": "cultural",
+  "en": "Aldebaran is one of the four 'Royal Stars' of ancient Persian astronomy. Its name means 'the follower', for the way it trails the Pleiades across the sky.",
+  "cur": "毕宿五是古波斯天文学中四颗\"王者之星\"之一。它的名字意为\"追随者\",因为它在天空中尾随昴宿星团而行。"
+ },
+ {
+  "rel": "universe/named-stars/algol.json",
+  "at": "fact",
+  "en": "The 'Demon Star' — it winks every few days as an unseen companion eclipses it.",
+  "cur": "这颗\"恶魔星\"——每隔几天就会眨眼一次,因为一颗看不见的伴星遮掩了它。"
+ },
+ {
+  "rel": "universe/named-stars/algol.json",
+  "at": "bio",
+  "en": "Algol (Beta Persei) is a multiple system about 90 light-years away and the prototype of the eclipsing binary stars. Every 2.87 days a dimmer companion passes in front of the bright star, dropping its light noticeably for a few hours before it recovers.",
+  "cur": "大陵五 (英仙座β) 是一个位于约90光年外的多星系统,也是食双星的原型。每隔2.87天,一颗较暗的伴星会从亮星前方经过,使其亮度在几小时内明显下降,随后恢复。"
+ },
+ {
+  "rel": "universe/named-stars/algol.json",
+  "at": "cultural",
+  "en": "The name is Arabic for 'the ghoul', and Algol marks the severed head of Medusa held by Perseus. Cultures from the Arab world to ancient Egypt seem to have marked this star's strange, regular 'winking' with unease long before its cause was understood.",
+  "cur": "这个名字在阿拉伯语中意为\"食尸鬼\",大陵五标记着Perseus手中Medusa被斩下的头颅。从阿拉伯世界到古埃及的各种文化似乎早在其成因被理解之前,就对这颗星规律性的奇异\"眨眼\"现象感到不安。"
+ },
+ {
+  "rel": "universe/named-stars/alhena.json",
+  "at": "fact",
+  "en": "The bright foot of the Twins, marking a brand on the sky.",
+  "cur": "双子座明亮的足部,在天空标记着一个烙印。"
+ },
+ {
+  "rel": "universe/named-stars/alhena.json",
+  "at": "bio",
+  "en": "Alhena (Gamma Geminorum) is a blue-white subgiant about 109 light-years away, the third-brightest star in Gemini and set at the foot of the Twins near the edge of the Milky Way.",
+  "cur": "井宿三 (双子座γ) 是一颗蓝白色亚巨星,距离我们约109光年,是Gemini第三亮的恒星,位于双子座足部靠近银河系边缘的位置。"
+ },
+ {
+  "rel": "universe/named-stars/alhena.json",
+  "at": "cultural",
+  "en": "The name comes from an Arabic word for a brand or mark once made on the necks of camels. It sits close to the winter Milky Way, in the path the Sun, Moon and planets can occult.",
+  "cur": "这个名字源自阿拉伯语,意为曾经烙在骆驼脖颈上的烙印或标记。它位于冬季银河附近,处在太阳、月球和行星可能掩食的轨道上。"
+ },
+ {
+  "rel": "universe/named-stars/alioth.json",
+  "at": "fact",
+  "en": "The brightest star of the Great Bear, first in the handle of the Big Dipper.",
+  "cur": "大熊座中最明亮的恒星，北斗七星斗柄的第一颗星。"
+ },
+ {
+  "rel": "universe/named-stars/alioth.json",
+  "at": "bio",
+  "en": "Alioth (Epsilon Ursae Majoris) is a peculiar white star about 81 light-years away, the brightest in Ursa Major. Its spectrum shows odd, shifting chemical signatures tied to a strong magnetic field.",
+  "cur": "玉衡（大熊座ε）是一颗距离约81光年的奇特白色恒星，是大熊座中最明亮的恒星。它的光谱显示出与强磁场相关的奇异的、变化的化学特征。"
+ },
+ {
+  "rel": "universe/named-stars/alioth.json",
+  "at": "cultural",
+  "en": "The name derives from Arabic. As the first star in the handle of the Big Dipper — or the tail of the Great Bear — Alioth is a fixture of northern navigation and one of the 57 stars used in celestial position-finding.",
+  "cur": "这个名字源自阿拉伯语。作为北斗七星斗柄——或大熊——的第一颗星，玉衡是北方导航的基准星，也是用于天体定位的57颗恒星之一。"
+ },
+ {
+  "rel": "universe/named-stars/alkaid.json",
+  "at": "fact",
+  "en": "The star at the very tip of the Big Dipper's handle — the end of the Great Bear's tail.",
+  "cur": "位于北斗七星斗柄最末端的恒星——大熊尾巴的尖端。"
+ },
+ {
+  "rel": "universe/named-stars/alkaid.json",
+  "at": "bio",
+  "en": "Alkaid (Eta Ursae Majoris) is a hot blue main-sequence star about 104 light-years away, the last star in the handle of the Big Dipper. Unlike the five central Dipper stars, it does not share their common motion through space — it only happens to lie along the same line.",
+  "cur": "瑶光(Eta Ursae Majoris)是一颗炽热的蓝色主序星,距离我们约104光年,位于北斗七星斗柄的末端。与北斗中央的五颗星不同,它并不与它们共享穿越空间的运动方向——它只是恰好位于同一条视线上。"
+ },
+ {
+  "rel": "universe/named-stars/alkaid.json",
+  "at": "cultural",
+  "en": "Its name comes from an Arabic phrase, 'the leader of the mourners' — in that tradition the Dipper's bowl was a bier and the handle stars a procession of mourning daughters following behind.",
+  "cur": "它的名字源自阿拉伯语短语\"哀悼者的领队\"——在那个传统中,北斗七星的斗身被视为灵柩,而斗柄的星星则是跟随其后的哀悼女儿们组成的送葬队伍。"
+ },
+ {
+  "rel": "universe/named-stars/almach.json",
+  "at": "fact",
+  "en": "One of the sky's loveliest double stars — a golden sun paired with a blue one.",
+  "cur": "天空中最美的双星之一——一颗金色太阳与一颗蓝色太阳相伴而行。"
+ },
+ {
+  "rel": "universe/named-stars/almach.json",
+  "at": "bio",
+  "en": "Almach (Gamma Andromedae) is a multiple system about 350 light-years away, celebrated for the vivid colour contrast between its bright golden-orange giant and a bluish companion — itself a triple — making it a favourite target for small telescopes.",
+  "cur": "天大将军一(仙女座γ)是一个距离约350光年的多星系统,以其明亮的金橙色巨星与蓝色伴星之间鲜明的色彩对比而闻名——伴星本身是一个三合星——使其成为小型望远镜的热门观测目标。"
+ },
+ {
+  "rel": "universe/named-stars/almach.json",
+  "at": "cultural",
+  "en": "The name derives from an Arabic term for a small desert cat or lynx. Almach marks the foot of the chained princess Andromeda, at the far end of the constellation from her head at Alpheratz.",
+  "cur": "这个名字源自阿拉伯语中对一种小型沙漠猫或猞猁的称呼。天大将军一标记着被锁链束缚的公主Andromeda的足部,位于星座远离其头部壁宿二的一端。"
+ },
+ {
+  "rel": "universe/named-stars/alnair.json",
+  "at": "fact",
+  "en": "The bright eye of the Crane, a hot blue star of the deep south.",
+  "cur": "天鹤座的明亮之眼，南天深处的一颗炽热蓝星。"
+ },
+ {
+  "rel": "universe/named-stars/alnair.json",
+  "at": "bio",
+  "en": "Alnair (Alpha Gruis) is a hot blue-white star about 101 light-years away, the brightest in the modern constellation Grus, the Crane. It shines with a clean blue-white light in the southern sky.",
+  "cur": "鹤一（天鶴座α星）是一颗炽热的蓝白色恒星，距离我们约101光年，是现代星座天鹤座中最明亮的恒星。它在南天闪耀着纯净的蓝白色光芒。"
+ },
+ {
+  "rel": "universe/named-stars/alnair.json",
+  "at": "cultural",
+  "en": "Its name comes from an Arabic phrase, 'the bright one', inherited from an older constellation figure. Grus was formed by late-16th-century navigators charting the southern stars.",
+  "cur": "它的名字来自阿拉伯语短语“明亮者”，继承自一个更古老的星座形象。天鹤座由16世纪晚期绘制南天星图的航海家们所创立。"
+ },
+ {
+  "rel": "universe/named-stars/alnilam.json",
+  "at": "fact",
+  "en": "The central pearl of Orion's Belt — a blazing blue supergiant seen across vast distance.",
+  "cur": "猎户座的中央明珠——一颗横跨遥远距离、炽热闪耀的蓝色超巨星。"
+ },
+ {
+  "rel": "universe/named-stars/alnilam.json",
+  "at": "bio",
+  "en": "Alnilam (Epsilon Orionis) is a blue supergiant more than a thousand light-years away, the middle and most distant of the three stars of Orion's Belt. Its enormous true luminosity lets it hold its own in the Belt despite that gulf of space.",
+  "cur": "参宿二 (猎户座ε)是一颗蓝色超巨星,距离我们超过一千光年,是猎户座腰带三颗星中位于中央且最遥远的一颗。尽管距离如此遥远,它凭借自身巨大的真实光度,依然能够在腰带中占据一席之地。"
+ },
+ {
+  "rel": "universe/named-stars/alnilam.json",
+  "at": "cultural",
+  "en": "The name is Arabic for 'the string of pearls'. The three Belt stars are among the most universally recognised in the sky, used as a pointer to Sirius and Aldebaran and woven into star-lore worldwide.",
+  "cur": "这个名字在阿拉伯语中意为\"珍珠串\"。腰带三星是天空中最广为人知的恒星之一,被用作指向天狼星和毕宿五的指示标,并编织进世界各地的星辰传说之中。"
+ },
+ {
+  "rel": "universe/named-stars/alnitak.json",
+  "at": "fact",
+  "en": "The eastern star of Orion's Belt — a blue supergiant beside the glowing Flame.",
+  "cur": "猎户座腰带东侧的恒星——火焰星云旁的蓝色超巨星。"
+ },
+ {
+  "rel": "universe/named-stars/alnitak.json",
+  "at": "bio",
+  "en": "Alnitak (Zeta Orionis) is a hot blue supergiant system about 1,260 light-years away, the easternmost of the three Belt stars. Its fierce ultraviolet light illuminates the nearby Flame Nebula, and the famous Horsehead is silhouetted close by.",
+  "cur": "参宿一（猎户座ζ）是一个炽热的蓝色超巨星系统，距离地球约1,260光年，是猎户座腰带三星中最东端的一颗。它发出的强烈紫外光照亮了附近的火焰星云，著名的Horsehead就在其近旁形成剪影。"
+ },
+ {
+  "rel": "universe/named-stars/alnitak.json",
+  "at": "cultural",
+  "en": "The name is Arabic for 'the girdle' or 'belt'. As one of the three Belt stars it shares in the near-universal recognition of Orion across human cultures.",
+  "cur": "该名称在阿拉伯语中意为\"腰带\"。作为猎户座腰带三星之一，它在人类各种文化中都享有近乎普遍的认知度。"
+ },
+ {
+  "rel": "universe/named-stars/alphard.json",
+  "at": "fact",
+  "en": "'The solitary one' — a lone orange giant in a wide, empty stretch of sky.",
+  "cur": "\"孤独者\"——在广阔空旷的天区中独自存在的一颗橙巨星。"
+ },
+ {
+  "rel": "universe/named-stars/alphard.json",
+  "at": "bio",
+  "en": "Alphard (Alpha Hydrae) is an orange giant about 180 light-years away, by far the brightest star in the sprawling constellation Hydra, the Water Snake — and conspicuously alone in an otherwise dim region.",
+  "cur": "星宿一 (长蛇座α) 是一颗橙巨星,距离我们约 180 光年,是蜿蜒绵长的长蛇座中最明亮的恒星——在周围这片昏暗的区域中显得格外孤独醒目。"
+ },
+ {
+  "rel": "universe/named-stars/alphard.json",
+  "at": "cultural",
+  "en": "The Arabic name means 'the solitary one', chosen precisely because it has no bright neighbours. That isolation made it a clear and reliable marker in an otherwise faint part of the sky.",
+  "cur": "这个阿拉伯名字的意思是\"孤独者\",之所以这样命名,正是因为它周围没有明亮的邻星。这种孤立使它成为天空中这片原本黯淡区域里清晰而可靠的标志。"
+ },
+ {
+  "rel": "universe/named-stars/alphecca.json",
+  "at": "fact",
+  "en": "The jewel of the Northern Crown — a bright star set in a delicate arc.",
+  "cur": "北冕座的宝石——镶嵌在精致弧线中的明亮恒星。"
+ },
+ {
+  "rel": "universe/named-stars/alphecca.json",
+  "at": "bio",
+  "en": "Alphecca (Alpha Coronae Borealis), also called Gemma, is a white star about 75 light-years away, the brightest in Corona Borealis, the Northern Crown. It is a faint eclipsing binary and, like Vega and Fomalhaut, is girdled by a disk of dust.",
+  "cur": "贯索四(北冕座α),又名Gemma,是一颗白色恒星,距离约75光年,是北冕座中最亮的星。它是一颗微弱的食双星,和织女一、北落师门一样,周围环绕着尘埃盘。"
+ },
+ {
+  "rel": "universe/named-stars/alphecca.json",
+  "at": "cultural",
+  "en": "'Alphecca' comes from the Arabic for 'the broken one' — the broken ring of stars forming the crown — while the alternative 'Gemma' is Latin for 'jewel'. The small arc of Corona Borealis has been seen as a crown or a broken dish across many cultures.",
+  "cur": "\"贯索四\"来自阿拉伯语,意为\"破碎者\"——指形成王冠的破碎星环——而另一个名字\"Gemma\"在拉丁语中意为\"宝石\"。北冕座的小弧形在许多文化中都被视为王冠或破碎的碟子。"
+ },
+ {
+  "rel": "universe/named-stars/alpheratz.json",
+  "at": "fact",
+  "en": "The shared corner of two figures — the head of Andromeda and a corner of Pegasus's Great Square.",
+  "cur": "两个星座共享的角点——Andromeda的头部和Pegasus的大四边形的一角。"
+ },
+ {
+  "rel": "universe/named-stars/alpheratz.json",
+  "at": "bio",
+  "en": "Alpheratz (Alpha Andromedae) is a blue-white star about 97 light-years away with an unusual mercury-manganese chemical peculiarity. It marks the head of Andromeda while also serving as the north-eastern corner of the Great Square of Pegasus.",
+  "cur": "壁宿二(仙女座α)是一颗距离我们约97光年的蓝白色恒星,具有不寻常的汞锰化学特异性。它标志着Andromeda的头部,同时也是Pegasus大四边形的东北角。"
+ },
+ {
+  "rel": "universe/named-stars/alpheratz.json",
+  "at": "cultural",
+  "en": "The name derives from the Arabic for 'the navel of the mare', from a time when the star was counted as part of Pegasus. It bridges the myth of the chained princess Andromeda and the winged horse beside her.",
+  "cur": "这个名字源自阿拉伯语\"母马的肚脐\",那时这颗恒星还被归为Pegasus的一部分。它连接着被锁链束缚的Andromeda公主和她身旁的飞马这两个神话。"
+ },
+ {
+  "rel": "universe/named-stars/altair.json",
+  "at": "fact",
+  "en": "The swift-spinning eye of the Eagle — rotating so fast it bulges into a flattened, egg-like shape.",
+  "cur": "天鹰座的快速旋转之眼——自转速度如此之快，以至于隆起成扁平的蛋形。"
+ },
+ {
+  "rel": "universe/named-stars/altair.json",
+  "at": "bio",
+  "en": "Altair (Alpha Aquilae) is a hot white star about 17 light-years away, one of the closest naked-eye stars. It spins near its break-up speed — a full rotation in under eight hours — which flattens it markedly and makes its poles hotter and brighter than its equator. Interferometry has directly imaged this distorted, gravity-darkened surface.",
+  "cur": "河鼓二（天鹰座α）是一颗炽热的白星，距离约17光年，是肉眼可见的最近恒星之一。它以接近极限自转速度旋转——整个自转周期不足8小时——这使其明显扁平，并使其极点比赤道更炽热、更明亮。干涉测量术已直接成像了这个扭曲、重力昏暗的表面。"
+ },
+ {
+  "rel": "universe/named-stars/altair.json",
+  "at": "cultural",
+  "en": "The name comes from the Arabic 'al-nasr al-ta'ir', the 'flying eagle'. Altair marks one corner of the Summer Triangle with Vega and Deneb, and in Chinese lore it is the cowherd Niulang, separated from the weaver Zhinu (Vega) by the Silver River of the Milky Way.",
+  "cur": "这个名字来自阿拉伯语\"al-nasr al-ta'ir\"，意思是\"飞鹰\"。牛郎星与织女星（织女一）和天津四共同组成夏季大三角，在中国传说中，它是牛郎，被银河（银河系）分隔在织女星（织女一）所代表的织女之外。"
+ },
+ {
+  "rel": "universe/named-stars/antares.json",
+  "at": "fact",
+  "en": "The red heart of the Scorpion — a vast red supergiant whose ruddy colour earned it the name 'rival of Mars'.",
+  "cur": "蝎子的红心——一颗巨大的红色超巨星，其暗红色的光芒为它赢得了\"火星的对手\"的名字。"
+ },
+ {
+  "rel": "universe/named-stars/antares.json",
+  "at": "bio",
+  "en": "Antares (Alpha Scorpii) is a red supergiant roughly 550 light-years away, hundreds of times the Sun's diameter. Like Betelgeuse it is destined to end as a supernova.",
+  "cur": "心宿二(天蝎座α)是一颗红超巨星,距离我们约550光年,直径是太阳的数百倍。与参宿四一样,它注定将以超新星的形式终结。"
+ },
+ {
+  "rel": "universe/named-stars/antares.json",
+  "at": "cultural",
+  "en": "The Greek name means 'rival of Ares (Mars)', for its Mars-like hue. Many cultures place it at the heart or sting of a great scorpion or serpent along the Milky Way.",
+  "cur": "这个希腊名字意为\"战神阿瑞斯（火星）的对手\"，因其火星般的色泽而得名。许多文化都将它视为一只伟大的蝎子或沿着银河的巨蛇的心脏或毒刺所在之处。"
+ },
+ {
+  "rel": "universe/named-stars/arcturus.json",
+  "at": "fact",
+  "en": "The brightest star of the northern sky's Boötes — an ageing orange giant racing through the galaxy on an unusual orbit.",
+  "cur": "北方天空大熊星座中最亮的恒星——一颗衰老的橙色巨星，以不寻常的轨道穿过星系飞驰。"
+ },
+ {
+  "rel": "universe/named-stars/arcturus.json",
+  "at": "bio",
+  "en": "Arcturus (Alpha Boötis) is an orange giant just 37 light-years away. It belongs to an older population of stars moving steeply relative to the galactic disc, giving it a large proper motion.",
+  "cur": "大角星(牧夫座α)是一颗橙巨星,距离我们仅37光年。它属于较古老的恒星群体,相对于银盘做陡峭的运动,因此具有很大的自行。"
+ },
+ {
+  "rel": "universe/named-stars/arcturus.json",
+  "at": "cultural",
+  "en": "In Hawaiian tradition Arcturus is Hōkūleʻa, the 'Star of Gladness' — the zenith star of Hawaii and a key wayfinding star for Polynesian voyagers, later lending its name to the famous voyaging canoe.",
+  "cur": "在夏威夷传统中,大角星被称为Hōkūleʻa,意为\"欢乐之星\"——它是夏威夷的天顶星,也是波利尼西亚航海者的关键导航星,后来这个名字被用于命名那艘著名的航海独木舟。"
+ },
+ {
+  "rel": "universe/named-stars/atria.json",
+  "at": "fact",
+  "en": "The apex of the Southern Triangle — an orange giant marking the deep south.",
+  "cur": "南三角座的顶点——一颗标志着极南天空的橙巨星。"
+ },
+ {
+  "rel": "universe/named-stars/atria.json",
+  "at": "bio",
+  "en": "Atria (Alpha Trianguli Australis) is an orange giant roughly 390 light-years away, the brightest star of Triangulum Australe, the Southern Triangle.",
+  "cur": "三角形三 (Alpha Trianguli Australis) 是一颗橙巨星，距离我们约390光年，是南三角座中最亮的恒星。"
+ },
+ {
+  "rel": "universe/named-stars/atria.json",
+  "at": "cultural",
+  "en": "Its name is simply a contraction of its Bayer designation, 'Alpha Trianguli Australis'. The Southern Triangle was among the constellations introduced by the navigators who charted the far-southern sky in the late 16th century.",
+  "cur": "它的名字是其拜耳命名的简化形式，即\"南三角 α 星\"（Alpha Trianguli Australis）。南三角是在16世纪末绘制遥远南天的航海家所引入的众多星座之一。"
+ },
+ {
+  "rel": "universe/named-stars/avior.json",
+  "at": "fact",
+  "en": "A giant of the Keel and a corner of the 'False Cross' — with a name coined in the age of flight.",
+  "cur": "船底座的巨星,也是\"假十字\"的一角——其名字诞生于飞行时代。"
+ },
+ {
+  "rel": "universe/named-stars/avior.json",
+  "at": "bio",
+  "en": "Avior (Epsilon Carinae) is a system about 600 light-years away pairing an orange giant with a hot blue companion. It sits in Carina, forming one corner of the False Cross that is often mistaken for the true Southern Cross.",
+  "cur": "海石一(Epsilon Carinae)是一个距离约600光年的双星系统,由一颗橙巨星和一颗炽热的蓝色伴星组成。它位于船底座,构成假十字的一角,常被误认为是真正的南十字座。"
+ },
+ {
+  "rel": "universe/named-stars/avior.json",
+  "at": "cultural",
+  "en": "Avior is one of the few star names with no ancient roots — it was assigned in the 1930s for a British air-navigation almanac, when unnamed but bright southern stars needed labels for aviators and sailors.",
+  "cur": "海石一是少数几颗没有古老渊源的恒星名称之一——它是在1930年代为英国航空导航年历而命名的,当时那些明亮但尚未命名的南天恒星需要为飞行员和水手提供标识。"
+ },
+ {
+  "rel": "universe/named-stars/barnards-star.json",
+  "at": "fact",
+  "en": "A dim red dwarf just 6 light-years away — famous for sweeping across our sky faster than any other star.",
+  "cur": "一颗距离我们仅6光年的暗淡红矮星——因其掠过我们天空的速度超过任何其他恒星而闻名。"
+ },
+ {
+  "rel": "universe/named-stars/barnards-star.json",
+  "at": "bio",
+  "en": "Barnard's Star has the largest known proper motion of any star, crossing an apparent Moon's-width of sky roughly every 180 years — earning it the nickname 'Barnard's Runaway Star'. It is an ancient, low-mass red dwarf.",
+  "cur": "巴纳德星是已知自行最大的恒星,大约每180年在天空中移动相当于一个满月视直径的距离——因此获得了\"Barnard's Runaway Star\"的昵称。它是一颗古老的低质量红矮星。"
+ },
+ {
+  "rel": "universe/named-stars/barnards-star.json",
+  "at": "cultural",
+  "en": "Its closeness and motion made it a long-running target in the search for nearby planets, and a staple destination in interstellar-travel fiction and early starship studies like Project Daedalus.",
+  "cur": "它的近距离和自行使其长期成为搜寻邻近行星的目标,也是星际旅行科幻作品和早期星舰研究(如Daedalus计划)中的常驻目的地。"
+ },
+ {
+  "rel": "universe/named-stars/bellatrix.json",
+  "at": "fact",
+  "en": "The 'female warrior' — the hot blue star at Orion's shoulder.",
+  "cur": "\"女战士\"——位于猎户座肩部的炽热蓝色恒星。"
+ },
+ {
+  "rel": "universe/named-stars/bellatrix.json",
+  "at": "bio",
+  "en": "Bellatrix (Gamma Orionis) is a hot blue giant roughly 250 light-years away, marking the left shoulder of Orion the Hunter. It is one of the hotter, bluer naked-eye stars in the constellation.",
+  "cur": "参宿五 (猎户座γ)是一颗炽热的蓝巨星,距离我们约250光年,标志着猎户座猎人的左肩。它是该星座中肉眼可见的较热、较蓝的恒星之一。"
+ },
+ {
+  "rel": "universe/named-stars/bellatrix.json",
+  "at": "cultural",
+  "en": "The Latin name means 'female warrior' or 'Amazon star'. It has long been one of the recognisable corners of the Orion figure used to find the way around the northern winter sky.",
+  "cur": "这个拉丁名称意为\"女战士\"或\"亚马逊之星\"。长久以来,它一直是猎户座图形中易于辨认的一角,用于在北半球冬季夜空中辨别方位。"
+ },
+ {
+  "rel": "universe/named-stars/betelgeuse.json",
+  "at": "fact",
+  "en": "A colossal red supergiant marking Orion's shoulder — so large it would swallow the inner planets if placed at the Sun.",
+  "cur": "一颗巨大的红超巨星,标志着猎户座的肩膀——如果将它放在太阳的位置,其体积之大足以吞没内行星。"
+ },
+ {
+  "rel": "universe/named-stars/betelgeuse.json",
+  "at": "bio",
+  "en": "Betelgeuse (Alpha Orionis) is a semiregular variable near the end of its life. Estimates place it several hundred light-years away with large uncertainty. It will one day end as a supernova — briefly rivalling the Moon in our sky.",
+  "cur": "参宿四(猎户座α)是一颗生命即将走到尽头的半规则变星。估计它距离我们数百光年,不确定性很大。有朝一日它将以超新星的方式终结——短暂地与月亮在我们天空中的亮度相媲美。"
+ },
+ {
+  "rel": "universe/named-stars/betelgeuse.json",
+  "at": "cultural",
+  "en": "Its dramatic dimming in 2019–2020 (a dust cloud, not imminent collapse) drew worldwide attention. The name descends from Arabic, and the star features across countless sky-lore traditions as a shoulder or hand of the hunter.",
+  "cur": "它在2019–2020年戏剧性的变暗(由尘埃云引起,并非即将坍缩)引起了全球关注。这个名字源自阿拉伯语,这颗星在无数天空传说中都作为猎人的肩膀或手而出现。"
+ },
+ {
+  "rel": "universe/named-stars/canopus.json",
+  "at": "fact",
+  "en": "The sky's second-brightest star — a distant beacon so steady that spacecraft steer by it.",
+  "cur": "天空中第二亮的恒星——一座遥远而稳定的灯塔,连航天器都以它来导航。"
+ },
+ {
+  "rel": "universe/named-stars/canopus.json",
+  "at": "bio",
+  "en": "Canopus (Alpha Carinae) is a rare yellow-white bright giant roughly 310 light-years away, intrinsically thousands of times more luminous than the Sun. Its brilliance and position far from the ecliptic make it an ideal fixed reference — Mariner and later probes carried 'Canopus star trackers' to hold their bearings in deep space.",
+  "cur": "老人星(船底座α)是一颗罕见的黄白色亮巨星,距离地球约310光年,其本征光度是太阳的数千倍。它的明亮以及远离黄道面的位置使其成为理想的固定参考点——水手号及后续探测器都携带了\"老人星追踪器\"以在深空中保持方向。"
+ },
+ {
+  "rel": "universe/named-stars/canopus.json",
+  "at": "cultural",
+  "en": "Often linked to a helmsman of the Greek fleet at Troy, Canopus is 'Agastya' in Indian tradition — a revered sage of the southern sky. Too far south for much of Europe, it was a prized season- and latitude-marker for navigators of the southern seas.",
+  "cur": "老人星常被认为与特洛伊战争中希腊舰队的舵手有关，而在印度传统中则被称为'Agastya'——一位受人尊敬的南天圣贤。它地处太南，欧洲大部分地区难以观测，却是南方海域航海者珍视的季节与纬度标志。"
+ },
+ {
+  "rel": "universe/named-stars/capella.json",
+  "at": "fact",
+  "en": "The 'little she-goat' of the charioteer — a golden point that is secretly four stars.",
+  "cur": "御夫座的\"小母山羊\"——一个金色光点,实则由四颗恒星组成。"
+ },
+ {
+  "rel": "universe/named-stars/capella.json",
+  "at": "bio",
+  "en": "Capella (Alpha Aurigae) is the brightest star in Auriga and the sixth-brightest in the sky, about 43 light-years away. Though it looks like one yellow star resembling the Sun, it is really two giant G-type stars orbiting closely, accompanied by a pair of faint red dwarfs.",
+  "cur": "五车二（御夫座α）是御夫座中最亮的恒星，也是天空中第六亮的星，距离我们约43光年。虽然看起来像一颗类似太阳的黄色恒星，但它实际上是两颗紧密环绕的G型巨星，并伴有一对暗淡的红矮星。"
+ },
+ {
+  "rel": "universe/named-stars/capella.json",
+  "at": "cultural",
+  "en": "Its Latin name means 'little she-goat' — the goat carried on the shoulder of Auriga the Charioteer, with the nearby 'Kids' at her side. As one of the northernmost bright stars, it was a familiar winter-evening marker across Europe and the Near East.",
+  "cur": "它的拉丁语名字意为\"小母山羊\"——即Auriga肩上驮着的山羊,身旁还有附近的\"小羊羔\"。作为最靠北的明亮恒星之一,它是欧洲和近东地区冬夜天空中人们熟悉的标志。"
+ },
+ {
+  "rel": "universe/named-stars/castor.json",
+  "at": "fact",
+  "en": "The mortal Twin — a single point to the eye that is really six stars bound together.",
+  "cur": "凡人双子——肉眼看似单一光点,实则由六颗恒星束缚在一起。"
+ },
+ {
+  "rel": "universe/named-stars/castor.json",
+  "at": "bio",
+  "en": "Castor (Alpha Geminorum) lies about 51 light-years away and is one of the most remarkable multiple systems in the sky: three pairs of stars — two bright white A-type stars, each with a red-dwarf companion, plus a distant red-dwarf pair — all gravitationally bound, six suns in one 'star'.",
+  "cur": "北河二 (Alpha Geminorum) 距地球约51光年，是天空中最非凡的多星系统之一：三对恒星——两颗明亮的白色A型星，每颗都伴有一颗红矮星，加上一对遥远的红矮星——全部引力束缚，六颗太阳汇聚在一个\"恒星\"中。"
+ },
+ {
+  "rel": "universe/named-stars/castor.json",
+  "at": "cultural",
+  "en": "Castor is the mortal horseman of the Dioscuri, twin brother of Pollux in Greek and Roman myth. Though labelled 'Alpha', it is usually slightly fainter than its brother Pollux beside it.",
+  "cur": "北河二是 Dioscuri 中凡人骑士，在希腊和罗马神话中是北河三的孪生兄弟。虽然标为\"Alpha\"，但它通常比身旁的兄弟北河三稍暗一些。"
+ },
+ {
+  "rel": "universe/named-stars/deneb.json",
+  "at": "fact",
+  "en": "The Swan's tail — one of the most luminous stars the eye can see, shining from far across the galaxy.",
+  "cur": "天鹅的尾巴——肉眼可见的最明亮恒星之一,从银河系的遥远彼端闪耀而来。"
+ },
+ {
+  "rel": "universe/named-stars/deneb.json",
+  "at": "bio",
+  "en": "Deneb (Alpha Cygni) is a blue-white supergiant so distant — likely well over a thousand light-years — that its brilliance in our sky implies a true luminosity tens of thousands of times the Sun's, among the most powerful stars visible without a telescope.",
+  "cur": "天津四(天鹅座α)是一颗蓝白色超巨星,距离极为遥远——很可能超过一千光年——它在我们天空中的明亮光辉意味着其真实光度是太阳的数万倍,是肉眼可见的最强大恒星之一。"
+ },
+ {
+  "rel": "universe/named-stars/deneb.json",
+  "at": "cultural",
+  "en": "The name comes from the Arabic for 'tail', marking the tail of Cygnus the Swan. Deneb anchors the Summer Triangle with Vega and Altair and rides the length of the Milky Way's northern stream.",
+  "cur": "这个名字来自阿拉伯语中\"尾巴\"的意思,标志着Cygnus中天鹅的尾部。天津四与织女一和河鼓二共同构成夏季大三角,并沿着银河北部星流延伸。"
+ },
+ {
+  "rel": "universe/named-stars/denebola.json",
+  "at": "fact",
+  "en": "The 'tail of the Lion' — a fast-spinning young white star with a disk of dust.",
+  "cur": "\"狮子的尾巴\"——一颗快速自转的年轻白色恒星，周围环绕着尘埃盘。"
+ },
+ {
+  "rel": "universe/named-stars/denebola.json",
+  "at": "bio",
+  "en": "Denebola (Beta Leonis) is a white main-sequence star just 36 light-years away, marking the tail of Leo the Lion. It rotates quickly and is surrounded by a disk of cool debris left over from planet-building.",
+  "cur": "五帝座一 (獅子座β) 是一颗白色主序星，距离我们仅36光年，标志着狮子座的尾巴。它自转快速，周围环绕着行星形成后残留的冷碎屑盘。"
+ },
+ {
+  "rel": "universe/named-stars/denebola.json",
+  "at": "cultural",
+  "en": "The name comes from the Arabic 'dhanab al-asad', 'the tail of the lion'. In older astrology it was considered a star of ill fortune, in contrast to the regal Regulus at the Lion's heart.",
+  "cur": "这个名字来自阿拉伯语\"dhanab al-asad\"，意为\"狮子的尾巴\"。在古代占星术中，它被认为是一颗不祥之星，与狮子心脏位置的王者之星轩辕十四形成对比。"
+ },
+ {
+  "rel": "universe/named-stars/diphda.json",
+  "at": "fact",
+  "en": "The 'second frog' — an orange giant that outshines its own constellation's alpha star.",
+  "cur": "“第二只青蛙”——一颗橙色巨星，光芒超越了其所在星座的α星。"
+ },
+ {
+  "rel": "universe/named-stars/diphda.json",
+  "at": "bio",
+  "en": "Diphda (Beta Ceti), also called Deneb Kaitos, is an orange giant about 96 light-years away. Though lettered 'Beta', it is the brightest star in Cetus, the Sea Monster, outshining the constellation's Alpha, Menkar.",
+  "cur": "土司空（鲸鱼座β星），也被称为 Deneb Kaitos，是一颗距离约 96 光年的橙色巨星。尽管标记为\"Beta\"，但它是鲸鱼座（海怪）中最亮的星，比该星座的 Alpha 星天囷一更明亮。"
+ },
+ {
+  "rel": "universe/named-stars/diphda.json",
+  "at": "cultural",
+  "en": "The name comes from an Arabic phrase meaning 'the second frog' — distant Fomalhaut being the 'first frog'. Its alternative name, Deneb Kaitos, marks the tail of the great sea beast of the watery region of the sky.",
+  "cur": "这个名字源自一句阿拉伯语短语,意为\"第二只青蛙\"——遥远的北落师门是\"第一只青蛙\"。它的另一个名字Deneb Kaitos标示着天空水域区域中那头巨大海兽的尾巴。"
+ },
+ {
+  "rel": "universe/named-stars/dubhe.json",
+  "at": "fact",
+  "en": "One of the two Pointer stars that guide the eye from the Dipper to the Pole Star.",
+  "cur": "两颗指极星之一,引导视线从北斗七星指向北极星。"
+ },
+ {
+  "rel": "universe/named-stars/dubhe.json",
+  "at": "bio",
+  "en": "Dubhe (Alpha Ursae Majoris) is an orange giant about 123 light-years away, one of the two 'Pointers' at the front of the bowl of the Big Dipper. A line drawn through Dubhe and its neighbour Merak points almost exactly at Polaris.",
+  "cur": "天枢(大熊座 Alpha,即天枢)是一颗橙色巨星,距离约 123 光年,是北斗七星斗口前方两颗\"指极星\"之一。从天璇经过天枢划一条直线,几乎正好指向北极星。"
+ },
+ {
+  "rel": "universe/named-stars/dubhe.json",
+  "at": "cultural",
+  "en": "The name is Arabic for 'the bear'. The Pointers have guided travellers to the North Star for millennia, making Dubhe one of the most practically useful stars in the northern sky.",
+  "cur": "这个名字在阿拉伯语中意为\"熊\"。数千年来,指极星一直引导着旅行者找到北极星,使得天枢成为北方天空中最具实用价值的恒星之一。"
+ },
+ {
+  "rel": "universe/named-stars/elnath.json",
+  "at": "fact",
+  "en": "The butting horn-tip of the Bull, on the border it once shared with the Charioteer.",
+  "cur": "金牛座的顶角尖端，位于它曾与御夫座共享的边界上。"
+ },
+ {
+  "rel": "universe/named-stars/elnath.json",
+  "at": "bio",
+  "en": "Elnath (Beta Tauri) is a blue-white giant about 130 light-years away, marking the tip of the northern horn of Taurus the Bull. It sits so close to Auriga that it was historically counted as a star shared between the two constellations.",
+  "cur": "五车五 (金牛座β)是一颗蓝白色巨星,距离我们约130光年,标志着Taurus公牛北角的尖端。它位置如此接近Auriga,以至于在历史上曾被视为这两个星座共享的一颗恒星。"
+ },
+ {
+  "rel": "universe/named-stars/elnath.json",
+  "at": "cultural",
+  "en": "The name comes from the Arabic for 'the butting' — the point of the Bull's horn. Its position on the edge of the Milky Way made it a useful signpost between Taurus and Auriga.",
+  "cur": "这个名字来自阿拉伯语\"顶撞\"之意——指的是公牛角的尖端。它位于银河边缘的位置使它成为金牛座与御夫座之间的有用路标。"
+ },
+ {
+  "rel": "universe/named-stars/fomalhaut.json",
+  "at": "fact",
+  "en": "The 'lonely star' of the southern autumn sky — a young star girdled by a sharp-edged ring of debris.",
+  "cur": "南天秋季的\"孤星\"——一颗被锋利边缘的碎屑环环绕的年轻恒星。"
+ },
+ {
+  "rel": "universe/named-stars/fomalhaut.json",
+  "at": "bio",
+  "en": "Fomalhaut (Alpha Piscis Austrini) is a hot white star about 25 light-years away, one of the brightest in the sky and conspicuously isolated from other bright stars. It is encircled by a striking dusty debris ring, sculpted by unseen gravity — one of the first such rings ever imaged in visible light.",
+  "cur": "北落师门 (南鱼座α) 是一颗炽热的白色恒星,距离我们约25光年,是天空中最明亮的恒星之一,与其他明亮恒星相距甚远,显得格外孤立。它被一圈引人注目的尘埃碎片环所环绕,由不可见的引力雕琢而成——这是最早在可见光下成像的此类环状结构之一。"
+ },
+ {
+  "rel": "universe/named-stars/fomalhaut.json",
+  "at": "cultural",
+  "en": "Its name comes from the Arabic for 'mouth of the [southern] fish'. One of the four ancient Persian 'Royal Stars', Fomalhaut was a marker of the season and a waypoint for navigators of the southern horizon.",
+  "cur": "其名称源自阿拉伯语，意为“[南方]鱼之口”。作为古波斯四颗“王者之星”之一，北落师门曾是季节的标志，也是南方地平线航海者的航路指引。"
+ },
+ {
+  "rel": "universe/named-stars/gacrux.json",
+  "at": "fact",
+  "en": "The red top of the Southern Cross — the nearest red giant to the Sun.",
+  "cur": "南十字座的红色顶端——距离太阳最近的红巨星。"
+ },
+ {
+  "rel": "universe/named-stars/gacrux.json",
+  "at": "bio",
+  "en": "Gacrux (Gamma Crucis) is a cool red giant about 89 light-years away, the closest red giant to our Solar System. Its warm orange light sits at the head of the Southern Cross, a vivid contrast to the hot blue stars that form the rest of the figure.",
+  "cur": "十字架一 (Gamma Crucis) 是一颗冷红巨星,距离我们约89光年,是距离太阳系最近的红巨星。它温暖的橙色光芒位于南十字座的顶端,与构成该星座其余部分的炽热蓝色恒星形成鲜明对比。"
+ },
+ {
+  "rel": "universe/named-stars/gacrux.json",
+  "at": "cultural",
+  "en": "Its name is a modern contraction of 'Gamma Crucis'. As part of Crux it features in southern-hemisphere navigation and appears, with its companions, on several national flags of the south.",
+  "cur": "它的名字是\"Gamma Crucis\"的现代缩写。作为南十字座的一部分,它在南半球导航中占有重要地位,并与其伴星一起出现在多个南方国家的国旗上。"
+ },
+ {
+  "rel": "universe/named-stars/hadar.json",
+  "at": "fact",
+  "en": "A blue giant and one of the two bright 'Pointers' aiming at the Southern Cross.",
+  "cur": "一颗蓝巨星,也是指向南十字座的两颗明亮\"指针星\"之一。"
+ },
+ {
+  "rel": "universe/named-stars/hadar.json",
+  "at": "bio",
+  "en": "Hadar (Beta Centauri), also called Agena, is a hot blue system of massive stars around 390 light-years away, the eleventh-brightest in the sky. Together with nearby Rigil Kentaurus it forms the Southern Pointers that lead the eye to the Southern Cross.",
+  "cur": "马腹一 (Beta Centauri),又名Agena,是一个由大质量恒星组成的炽热蓝色星系,距离我们约390光年,是天空中第十一亮的恒星。它与邻近的南门二共同构成南方指极星,引导人们的视线找到南十字座。"
+ },
+ {
+  "rel": "universe/named-stars/hadar.json",
+  "at": "cultural",
+  "en": "Its traditional name derives from Arabic. As a brilliant southern beacon it has long served navigators below the equator, and it appears alongside the Cross in the sky-lore of many southern cultures.",
+  "cur": "它的传统名称源自阿拉伯语。作为一个灿烂的南方灯塔，它长期以来一直为赤道以南的航海者服务，在许多南方文化的天空传说中，它与南十字星一起出现。"
+ },
+ {
+  "rel": "universe/named-stars/hamal.json",
+  "at": "bio",
+  "en": "Hamal (Alpha Arietis) is an orange giant about 66 light-years away, the brightest star in Aries the Ram, and it hosts a giant planet detected from its motion.",
+  "cur": "娄宿三 (Alpha Arietis) 是一颗距离我们约66光年的橙色巨星,是白羊座中最亮的恒星,并且拥有一颗通过其运动探测到的巨行星。"
+ },
+ {
+  "rel": "universe/named-stars/hamal.json",
+  "at": "cultural",
+  "en": "The name is Arabic for 'the lamb' or 'ram'. Around two thousand years ago the Sun crossed the vernal equinox near Hamal, so the 'First Point of Aries' — still the zero of celestial longitude — carries the Ram's name even though precession has since moved the crossing into Pisces.",
+  "cur": "这个名字在阿拉伯语中意为\"羔羊\"或\"公羊\"。大约两千年前,太阳在娄宿三附近穿越春分点,因此\"白羊座第一点\"——至今仍是天球经度的零点——沿用了公羊之名,尽管岁差已使穿越点移入双鱼座。"
+ },
+ {
+  "rel": "universe/named-stars/kaus-australis.json",
+  "at": "fact",
+  "en": "The 'southern bow' of the Archer, brightest star aiming toward the galaxy's heart.",
+  "cur": "射手座的\"南方之弓\"，最明亮的星辰指向银河系的心脏。"
+ },
+ {
+  "rel": "universe/named-stars/kaus-australis.json",
+  "at": "bio",
+  "en": "Kaus Australis (Epsilon Sagittarii) is a blue-white star about 143 light-years away, the brightest in Sagittarius. It forms the lower part of the Archer's drawn bow, which points across the rich star clouds toward the centre of the Milky Way.",
+  "cur": "箕宿三（Epsilon Sagittarii）是一颗蓝白色恒星，距离我们约143光年，是人马座中最亮的恒星。它构成了射手拉开的弓的下部，弓身指向横跨浓密星云直抵银河系中心的方向。"
+ },
+ {
+  "rel": "universe/named-stars/kaus-australis.json",
+  "at": "cultural",
+  "en": "'Kaus' comes from the Arabic for 'bow', with the Latin 'australis' for 'southern'. The bow-and-arrow of Sagittarius aims at the heart of the galaxy, a direction dense with the Milky Way's brightest clouds.",
+  "cur": "\"Kaus\"源自阿拉伯语中\"弓\"的意思，拉丁语\"australis\"意为\"南方的\"。人马座的弓箭指向银河系的中心，那个方向密布着银河最明亮的星云。"
+ },
+ {
+  "rel": "universe/named-stars/lalande-21185.json",
+  "at": "fact",
+  "en": "A dim red dwarf in the Great Bear — one of the closest stars to the Sun, yet invisible to the eye.",
+  "cur": "大熊座中一颗暗淡的红矮星——距太阳最近的恒星之一,肉眼却无法看见。"
+ },
+ {
+  "rel": "universe/named-stars/lalande-21185.json",
+  "at": "bio",
+  "en": "Lalande 21185 is a red dwarf about 8.3 light-years away in Ursa Major, among the nearest star systems to the Sun. Despite its nearness it is far too faint to see without a telescope, and it drifts across the sky with a large proper motion. Careful measurements point to a family of planets orbiting it.",
+  "cur": "拉兰德21185是一颗位于大熊座的红矮星,距离约 8.3 光年,是离太阳最近的恒星系统之一。尽管距离很近,但它太过暗淡,没有望远镜无法看到,而且它以很大的自行速度在天空中漂移。仔细的测量表明有一族行星围绕它运行。"
+ },
+ {
+  "rel": "universe/named-stars/lalande-21185.json",
+  "at": "cultural",
+  "en": "It carries no ancient name — only its entry number in the 18th-century star catalogue of the French astronomer Joseph Jérôme de Lalande. Such faint nearby stars became important only once astronomers began measuring stellar distances and motions.",
+  "cur": "它没有古老的名称——只有 18 世纪法国天文学家拉朗德星表中的编号。这类暗淡的近距恒星只有在天文学家开始测量恒星距离和运动后才变得重要。"
+ },
+ {
+  "rel": "universe/named-stars/luytens-star.json",
+  "at": "fact",
+  "en": "A nearby red dwarf with a planet — and a target of a deliberate message to the stars.",
+  "cur": "一颗附近的红矮星，拥有行星——也是人类向恒星发送信息的目标。"
+ },
+ {
+  "rel": "universe/named-stars/luytens-star.json",
+  "at": "bio",
+  "en": "Luyten's Star is a red dwarf about 12.4 light-years away in Canis Minor, not far in our sky from bright Procyon. It hosts a planetary system including a super-Earth in its habitable zone — a world so nearby that it has been chosen as a target for interstellar radio messages sent from Earth.",
+  "cur": "Luyten星是一颗距离我们约12.4光年的红矮星，位于小犬座，在天空中离明亮的南河三不远。它拥有一个行星系统，其中包括一颗位于宜居带内的超级地球——这颗世界离我们如此之近，以至于被选为地球发送星际无线电信息的目标。"
+ },
+ {
+  "rel": "universe/named-stars/luytens-star.json",
+  "at": "cultural",
+  "en": "It is named for Willem Jacob Luyten, the astronomer who catalogued the motions of thousands of faint high-velocity stars in the 20th century. Its planet's proximity has made it a focus of both exoplanet study and speculation about contact.",
+  "cur": "它以威廉·雅各·鲁坦命名,这位天文学家在20世纪编录了数千颗暗弱高速恒星的运动。其行星的邻近性使它成为系外行星研究和接触推测的焦点。"
+ },
+ {
+  "rel": "universe/named-stars/menkalinan.json",
+  "at": "fact",
+  "en": "The 'shoulder of the rein-holder' — a pair of stars that eclipse each other every few days.",
+  "cur": "\"执缰者的肩膀\"——一对每隔几天就会相互掩食的恒星。"
+ },
+ {
+  "rel": "universe/named-stars/menkalinan.json",
+  "at": "bio",
+  "en": "Menkalinan (Beta Aurigae) is a system about 81 light-years away, the second-brightest star in Auriga. Its two nearly identical white stars orbit so closely that they periodically pass in front of one another, dimming the star slightly in a four-day rhythm.",
+  "cur": "五车三(御夫座β)是一个距离约81光年的恒星系统,是御夫座中第二亮的恒星。它的两颗几乎完全相同的白色恒星轨道非常接近,以至于它们会周期性地相互遮掩,使这颗恒星在四天的周期内略微变暗。"
+ },
+ {
+  "rel": "universe/named-stars/menkalinan.json",
+  "at": "cultural",
+  "en": "The name is Arabic for 'the shoulder of the rein-holder' — the charioteer Auriga, who drives across the northern winter sky with the goat Capella on his shoulder.",
+  "cur": "这个名字在阿拉伯语中意为\"执缰者的肩膀\"——指的是御夫座Auriga,他肩上驮着山羊星五车二,驰骋于北天的冬季星空。"
+ },
+ {
+  "rel": "universe/named-stars/menkent.json",
+  "at": "bio",
+  "en": "Menkent (Theta Centauri) is an orange giant about 61 light-years away, one of the brighter stars of Centaurus and the only one of the constellation's leading lights that is a cool giant rather than a hot blue star.",
+  "cur": "库楼三 (Theta Centauri)是一颗橙巨星,距离我们约61光年,是半人马座中较亮的恒星之一,也是该星座主要亮星中唯一一颗冷巨星,而非炽热的蓝色恒星。"
+ },
+ {
+  "rel": "universe/named-stars/menkent.json",
+  "at": "cultural",
+  "en": "The name means 'the shoulder of the Centaur'. Centaurus, home also to the Sun's nearest neighbours Alpha and Proxima Centauri, is one of the grandest figures of the southern sky.",
+  "cur": "这个名字意为\"半人马的肩膀\"。Centaurus是太阳最近邻居半人马座α和比邻星的家园，是南天最壮丽的星座之一。"
+ },
+ {
+  "rel": "universe/named-stars/miaplacidus.json",
+  "at": "fact",
+  "en": "The second light of the Keel — a white star with a curiously blended name.",
+  "cur": "船底座的第二亮星——一颗拥有奇特混合名字的白色恒星。"
+ },
+ {
+  "rel": "universe/named-stars/miaplacidus.json",
+  "at": "bio",
+  "en": "Miaplacidus (Beta Carinae) is a white star about 113 light-years away, the second-brightest in the southern constellation Carina, the Keel of the ancient ship Argo.",
+  "cur": "南船五 (Beta Carinae)是一颗白色恒星,距离约113光年,是南天星座Carina中第二亮的恒星,Carina代表古代船只Argo的龙骨。"
+ },
+ {
+  "rel": "universe/named-stars/miaplacidus.json",
+  "at": "cultural",
+  "en": "Its unusual name appears to fuse an Arabic word for 'waters' with the Latin 'placidus' ('placid'). Deep in the southern sky, it was charted by the navigators and astronomers who mapped the far south.",
+  "cur": "它不寻常的名字似乎融合了阿拉伯语中表示\"水域\"的词汇与拉丁语\"placidus\"(\"平静的\")。它位于南天深处,由那些绘制遥远南方星空的航海家和天文学家所测绘。"
+ },
+ {
+  "rel": "universe/named-stars/mimosa.json",
+  "at": "bio",
+  "en": "Mimosa (Beta Crucis), also known as Becrux, is a hot blue giant roughly 280 light-years away and one of the hottest bright stars visible to the eye. It pulsates subtly and lies within the striking figure of the Southern Cross.",
+  "cur": "十字架三(Beta Crucis),又称 Becrux,是一颗距离约 280 光年的炽热蓝巨星,也是肉眼可见的最热恒星之一。它有着微妙的脉动,位于醒目的南十字座图形之中。"
+ },
+ {
+  "rel": "universe/named-stars/mimosa.json",
+  "at": "cultural",
+  "en": "As a principal star of Crux, Mimosa shares in the Cross's prominence on southern flags and in southern-hemisphere navigation and myth, from Aboriginal Australian sky-stories to Andean cosmology.",
+  "cur": "作为南十字座的主星之一,十字架三与南十字一同在南半球国家的旗帜、航海导航和神话传说中占据显著地位,从澳大利亚原住民的星空故事到安第斯山脉的宇宙观。"
+ },
+ {
+  "rel": "universe/named-stars/mintaka.json",
+  "at": "fact",
+  "en": "The westernmost star of Orion's Belt — poised almost exactly on the celestial equator.",
+  "cur": "猎户座腰带最西端的恒星——几乎正好位于天球赤道上。"
+ },
+ {
+  "rel": "universe/named-stars/mintaka.json",
+  "at": "bio",
+  "en": "Mintaka (Delta Orionis) is a hot, massive multiple system more than a thousand light-years away, the western star of Orion's Belt. It lies so close to the celestial equator that it rises very nearly due east and sets very nearly due west for observers everywhere on Earth.",
+  "cur": "参宿三是一个炽热、质量巨大的多星系统,距离地球一千多光年,是猎户座腰带西侧的那颗星。它位于天赤道附近,因此对地球上任何地方的观测者来说,它升起的方向几乎正东,落下的方向几乎正西。"
+ },
+ {
+  "rel": "universe/named-stars/mintaka.json",
+  "at": "cultural",
+  "en": "The name is Arabic for 'the belt'. As one of the three Belt stars, it shares in the near-universal recognition of Orion, and its place on the equator made it a natural marker of east and west.",
+  "cur": "这个名字在阿拉伯语中意为\"腰带\"。作为三颗腰带星之一,它分享着猎户座近乎全球性的认知度,而它位于天球赤道上的位置使其成为东西方位的天然标记。"
+ },
+ {
+  "rel": "universe/named-stars/mirfak.json",
+  "at": "fact",
+  "en": "The luminous heart of Perseus, leading a scattered cluster of young stars.",
+  "cur": "英仙座的明亮心脏，引领着一群分散的年轻恒星。"
+ },
+ {
+  "rel": "universe/named-stars/mirfak.json",
+  "at": "bio",
+  "en": "Mirfak (Alpha Persei) is a yellow-white supergiant roughly 510 light-years away, the brightest star in Perseus. It is the leading light of the Alpha Persei Cluster, a loose group of hot young stars sharing its motion through space.",
+  "cur": "天船三(英仙座α)是一颗黄白色超巨星,距离我们约510光年,是英仙座中最明亮的恒星。它是英仙座α星团的主导恒星,该星团是一个由炽热年轻恒星组成的疏散星团,这些恒星共享着相同的空间运动。"
+ },
+ {
+  "rel": "universe/named-stars/mirfak.json",
+  "at": "cultural",
+  "en": "The name comes from the Arabic for 'the elbow'. In the classical figure Perseus holds the head of Medusa — near the winking demon-star Algol — and Mirfak marks the hero's side.",
+  "cur": "这个名字来自阿拉伯语，意为\"肘部\"。在古典星图中，Perseus手持Medusa的头颅——靠近那颗眨眼的魔星大陵五——而天船三标记着这位英雄的腰侧。"
+ },
+ {
+  "rel": "universe/named-stars/nunki.json",
+  "at": "fact",
+  "en": "A hot blue star of the Archer — and one of the very few surviving Babylonian star names.",
+  "cur": "人马座的一颗炽热蓝星——也是极少数留存至今的Babylonian星名之一。"
+ },
+ {
+  "rel": "universe/named-stars/nunki.json",
+  "at": "bio",
+  "en": "Nunki (Sigma Sagittarii) is a hot blue main-sequence star about 230 light-years away, the second-brightest in Sagittarius. It forms part of the 'Teapot' asterism, near where the Milky Way is richest.",
+  "cur": "斗宿四 (Sigma Sagittarii)是一颗炽热的蓝色主序星,距离我们约230光年,是人马座中第二亮的恒星。它构成\"Teapot\"星群的一部分,位于银河最为稠密的区域附近。"
+ },
+ {
+  "rel": "universe/named-stars/nunki.json",
+  "at": "cultural",
+  "en": "'Nunki' is one of the rare star names handed down directly from ancient Mesopotamia, recorded by the Babylonians thousands of years ago and preserved through to modern star catalogues.",
+  "cur": "\"斗宿四\"是少数直接传承自古美索不达米亚的恒星名称之一,在数千年前由巴比伦人记录下来,并保存至今的现代星表中。"
+ },
+ {
+  "rel": "universe/named-stars/peacock.json",
+  "at": "fact",
+  "en": "The brightest star of the Peacock — an English name born of 20th-century navigation.",
+  "cur": "孔雀座最亮的恒星——这个英文名字诞生于20世纪的航海时代。"
+ },
+ {
+  "rel": "universe/named-stars/peacock.json",
+  "at": "bio",
+  "en": "Peacock (Alpha Pavonis) is a hot blue system about 180 light-years away, the brightest star in Pavo, the Peacock, deep in the southern sky.",
+  "cur": "Peacock(Alpha Pavonis)是一个距离约180光年的炽热蓝色恒星系统,是孔雀座最亮的恒星,位于南天深处。"
+ },
+ {
+  "rel": "universe/named-stars/peacock.json",
+  "at": "cultural",
+  "en": "Like Avior, its name is modern: the British nautical almanac of the 1930s required names for bright southern stars, and 'Peacock' was coined from its constellation. Pavo was one of the southern 'bird' constellations of the exploration era.",
+  "cur": "与海石一一样,它的名字是现代产物:1930年代的英国航海年历需要为明亮的南天恒星命名,'Peacock'便由其所在星座而得名。孔雀座是大航海时代命名的南天'鸟类'星座之一。"
+ },
+ {
+  "rel": "universe/named-stars/polaris.json",
+  "at": "fact",
+  "en": "Today's North Star — sitting almost exactly above Earth's north pole, a fixed point around which the sky appears to turn.",
+  "cur": "今日的北极星——几乎正好位于地球北极的正上方,是天空似乎围绕旋转的固定点。"
+ },
+ {
+  "rel": "universe/named-stars/polaris.json",
+  "at": "bio",
+  "en": "Polaris (Alpha Ursae Minoris) is a yellow supergiant and a Cepheid variable roughly 430 light-years away. It is not especially bright; its fame comes entirely from its position near the celestial pole.",
+  "cur": "北极星 (小熊座α星) 是一颗黄色超巨星,也是一颗造父变星,距离我们约430光年。它的亮度并不特别突出;其盛名完全来自于它靠近天球北极的位置。"
+ },
+ {
+  "rel": "universe/named-stars/polaris.json",
+  "at": "cultural",
+  "en": "For navigators across the northern hemisphere, Polaris gives both direction (true north) and latitude (its altitude equals your latitude). Precession means it has not always been, and will not always be, the pole star.",
+  "cur": "对于北半球各地的航海者而言,北极星既指示方向(真北),也指示纬度(它的高度角等于你所在的纬度)。由于岁差运动,它并非一直是北极星,将来也不会一直是。"
+ },
+ {
+  "rel": "universe/named-stars/pollux.json",
+  "at": "fact",
+  "en": "The brighter of the Heavenly Twins — an orange giant with a planet of its own.",
+  "cur": "天上双子中较亮的一颗——一颗拥有自己行星的橙色巨星。"
+ },
+ {
+  "rel": "universe/named-stars/pollux.json",
+  "at": "bio",
+  "en": "Pollux (Beta Geminorum) is an orange-hued giant star just 34 light-years away, the nearest giant to the Sun. It hosts a confirmed gas-giant planet, Pollux b, discovered from the star's slight wobble.",
+  "cur": "北河三(双子座β)是一颗橙色调的巨星,距离我们仅34光年,是距离太阳最近的巨星。它拥有一颗已确认的气态巨行星北河三 b,这颗行星是通过恒星的微小摆动发现的。"
+ },
+ {
+  "rel": "universe/named-stars/pollux.json",
+  "at": "cultural",
+  "en": "Pollux and neighbouring Castor are the 'Dioscuri', the twin brothers of Greek and Roman myth — Pollux the immortal son of Zeus. The pair have guided and guarded sailors since antiquity.",
+  "cur": "北河三和邻近的北河二是希腊罗马神话中的\"Dioscuri\"——孪生兄弟，北河三是宙斯的不朽之子。这对双星自古以来一直引导和守护着航海者。"
+ },
+ {
+  "rel": "universe/named-stars/procyon.json",
+  "at": "fact",
+  "en": "The 'forerunner of the dog' — it rises just before Sirius to announce the Dog Star.",
+  "cur": "\"狗的先行者\"——它在天狼星之前升起，预示着Dog Star的到来。"
+ },
+ {
+  "rel": "universe/named-stars/procyon.json",
+  "at": "bio",
+  "en": "Procyon (Alpha Canis Minoris) is a nearby white subgiant star only 11.5 light-years away, orbited by a faint white-dwarf companion. Its closeness makes it the eighth-brightest star in the sky despite its modest true luminosity.",
+  "cur": "南河三（小犬座α）是一颗距地球仅11.5光年的邻近白亚巨星，由一个暗淡的白矮星伴星环绕。正因为它的近距离，尽管其实际光度并不很高，它仍是天空中第八亮的恒星。"
+ },
+ {
+  "rel": "universe/named-stars/procyon.json",
+  "at": "cultural",
+  "en": "The Greek name means 'before the dog', because from many latitudes Procyon climbs above the horizon shortly ahead of Sirius. With Sirius and Betelgeuse it forms the bright 'Winter Triangle'.",
+  "cur": "这个希腊名字意为\"狗之前\"，因为在许多纬度上，南河三会在天狼星之前不久升至地平线以上。它与天狼星和参宿四共同构成明亮的\"冬季大三角\"。"
+ },
+ {
+  "rel": "universe/named-stars/proxima-centauri.json",
+  "at": "fact",
+  "en": "The closest star to the Sun — a dim red dwarf just 4.24 light-years away, host to a potentially rocky planet in its habitable zone.",
+  "cur": "距离太阳最近的恒星——一颗暗淡的红矮星,仅距离我们4.24光年,拥有一颗可能位于宜居带内的岩质行星。"
+ },
+ {
+  "rel": "universe/named-stars/proxima-centauri.json",
+  "at": "bio",
+  "en": "Proxima Centauri is a small, cool red dwarf, the third member of the Alpha Centauri system. It is far too faint to see with the naked eye despite its proximity, and it flares violently — a challenge for any planet's habitability.",
+  "cur": "比邻星是一颗小而冷的红矮星,是半人马座α三合星系统的第三颗成员星。尽管距离很近,但它太过暗淡,肉眼无法看见,而且会发生剧烈的耀斑爆发——这对任何行星的宜居性都是一个挑战。"
+ },
+ {
+  "rel": "universe/named-stars/proxima-centauri.json",
+  "at": "cultural",
+  "en": "As our nearest stellar neighbour, Proxima is the natural first target for interstellar thought experiments, from Breakthrough Starshot's light-sail probes to generations of science fiction.",
+  "cur": "作为我们最近的恒星邻居,Proxima自然成为星际思想实验的首选目标,从Breakthrough Starshot的光帆探测器到一代又一代的科幻作品。"
+ },
+ {
+  "rel": "universe/named-stars/rasalhague.json",
+  "at": "fact",
+  "en": "The 'head of the serpent-bearer' — the crown of the healer who holds the snake.",
+  "cur": "\"蛇夫之首\"——手持巨蛇的治疗者头顶的冠冕。"
+ },
+ {
+  "rel": "universe/named-stars/rasalhague.json",
+  "at": "bio",
+  "en": "Rasalhague (Alpha Ophiuchi) is a white star about 48 light-years away, the brightest in Ophiuchus, the Serpent-Bearer. It spins rapidly and is orbited by a low-mass companion.",
+  "cur": "候（蛇夫座α）是一颗白色恒星，距离我们约 48 光年，是蛇夫座中最明亮的星。它快速自转，并有一颗低质量伴星围绕其运行。"
+ },
+ {
+  "rel": "universe/named-stars/rasalhague.json",
+  "at": "cultural",
+  "en": "The name is Arabic for 'the head of the serpent-collector'. Ophiuchus — often identified with the healer Asclepius grasping a great snake — straddles the ecliptic, the thirteenth figure the Sun passes through.",
+  "cur": "这个名字在阿拉伯语中意为\"捕蛇者之首\"。蛇夫座——常被认定为手握巨蛇的医者Asclepius——横跨黄道,是太阳经过的第十三个星座。"
+ },
+ {
+  "rel": "universe/named-stars/regulus.json",
+  "at": "fact",
+  "en": "The 'little king' at the heart of the Lion — a flattened, fast-spinning royal star on the ecliptic.",
+  "cur": "狮子座心脏处的\"小国王\"——黄道上一颗扁平、快速自转的王者之星。"
+ },
+ {
+  "rel": "universe/named-stars/regulus.json",
+  "at": "bio",
+  "en": "Regulus (Alpha Leonis) is a hot blue-white star about 79 light-years away, the brightest in Leo. It whirls so rapidly that it is visibly flattened, and it heads a multiple system with fainter companions. Lying almost exactly on the ecliptic, it is regularly passed — and occasionally occulted — by the Moon and planets.",
+  "cur": "轩辕十四(狮子座α)是一颗炽热的蓝白色恒星,距离我们约79光年,是狮子座中最明亮的星。它旋转速度极快,以至于肉眼可见其被压扁的形状,并且它领衔着一个包含较暗伴星的多星系统。由于几乎精确地位于黄道上,月球和行星会定期从它身边经过——偶尔还会发生掩星现象。"
+ },
+ {
+  "rel": "universe/named-stars/regulus.json",
+  "at": "cultural",
+  "en": "Named 'little king' by Copernicus and known anciently as the Lion's Heart (Cor Leonis), Regulus was one of the four 'Royal Stars' of Persia that marked the turning of the seasons.",
+  "cur": "被Copernicus称为\"小王\"，在古代被称作狮子之心（Cor Leonis），轩辕十四是波斯四颗\"王者之星\"之一，标志着季节的更替。"
+ },
+ {
+  "rel": "universe/named-stars/rigel.json",
+  "at": "fact",
+  "en": "A brilliant blue supergiant — the luminous foot of Orion, tens of thousands of times brighter than the Sun.",
+  "cur": "一颗耀眼的蓝色超巨星——猎户座明亮的足部，亮度是太阳的数万倍。"
+ },
+ {
+  "rel": "universe/named-stars/rigel.json",
+  "at": "bio",
+  "en": "Rigel (Beta Orionis) is a hot blue supergiant several hundred light-years away, one of the most intrinsically luminous stars visible to the naked eye. Despite the 'Beta' designation it usually outshines Betelgeuse.",
+  "cur": "参宿七(猎户座β)是一颗炽热的蓝色超巨星,距离我们数百光年,是肉眼可见的本质光度最高的恒星之一。尽管它的拜耳命名是\"Beta\",但通常比参宿四更明亮。"
+ },
+ {
+  "rel": "universe/named-stars/rigel.json",
+  "at": "cultural",
+  "en": "The name comes from the Arabic for 'foot'. Rigel's steely blue-white light is a classic contrast to Betelgeuse's red across the figure of Orion.",
+  "cur": "这个名字来自阿拉伯语中\"脚\"的意思。参宿七的钢蓝白色光芒与猎户座中参宿四的红色形成经典对比。"
+ },
+ {
+  "rel": "universe/named-stars/rigil-kentaurus.json",
+  "at": "fact",
+  "en": "The Sun's nearest bright neighbour — a golden twin of the Sun anchoring the front foot of the Centaur.",
+  "cur": "离太阳最近的明亮邻星——一颗金色的太阳孪生星,固定在半人马座的前足。"
+ },
+ {
+  "rel": "universe/named-stars/rigil-kentaurus.json",
+  "at": "bio",
+  "en": "Rigil Kentaurus (Alpha Centauri A) is the brightest member of the closest stellar system to the Sun, just 4.3 light-years away. A near-twin of the Sun in colour and mass, it forms a bright binary with the cooler Alpha Centauri B, while the faint red dwarf Proxima Centauri orbits far out as the actual nearest star.",
+  "cur": "南门二（半人马座α A）是距离太阳最近的恒星系统中最明亮的成员，仅4.3光年之遥。它在颜色和质量上几乎是太阳的孪生星，与温度较低的半人马座α B组成一对明亮的双星系统，而暗淡的红矮星比邻星则在遥远的外围运行，是实际上距离我们最近的恒星。"
+ },
+ {
+  "rel": "universe/named-stars/rigil-kentaurus.json",
+  "at": "cultural",
+  "en": "The name is Arabic for 'foot of the Centaur'. Together with nearby Hadar it forms the 'Pointers' that guide southern observers to the Southern Cross, and as the closest Sun-like star it is a perennial target of interstellar-travel studies and fiction.",
+  "cur": "这个名字在阿拉伯语中意为\"半人马的足\"。它与附近的马腹一一起构成了\"指针星\",为南半球观测者指向南十字座,而作为距离最近的类太阳恒星,它一直是星际旅行研究和科幻作品的常见目标。"
+ },
+ {
+  "rel": "universe/named-stars/sadr.json",
+  "at": "fact",
+  "en": "The breast of the Swan — a luminous supergiant at the heart of the Northern Cross, wrapped in glowing gas.",
+  "cur": "天鹅的胸部——北十字中心的一颗明亮超巨星,笼罩在炽热的气体之中。"
+ },
+ {
+  "rel": "universe/named-stars/sadr.json",
+  "at": "bio",
+  "en": "Sadr (Gamma Cygni) is a yellow-white supergiant roughly 1,800 light-years away, sitting at the intersection of the Northern Cross where the wings of Cygnus meet the body. It is embedded against a vast complex of glowing hydrogen known as the Sadr region.",
+  "cur": "天津一 (天鹅座γ)是一颗黄白色超巨星,距离地球约1,800光年,位于北十字的交叉点,Cygnus双翼与躯干的交汇处。它镶嵌在一片被称为天津一区域的巨大发光氢气复合体之中。"
+ },
+ {
+  "rel": "universe/named-stars/sadr.json",
+  "at": "cultural",
+  "en": "The name is Arabic for 'the chest' or 'breast'. As the centre of the Northern Cross, Sadr rides the brightest reach of the summer Milky Way, in the direction of one of its richest star clouds.",
+  "cur": "这个名字在阿拉伯语中意为\"胸部\"或\"胸膛\"。作为北十字的中心,天津一位于夏季银河最明亮的区域,指向其中一片最丰富的星云。"
+ },
+ {
+  "rel": "universe/named-stars/saiph.json",
+  "at": "fact",
+  "en": "A blue supergiant at Orion's knee — Rigel's hotter, fainter-looking twin.",
+  "cur": "猎户座膝盖处的一颗蓝色超巨星——参宿七那更热、看起来更暗的孪生星。"
+ },
+ {
+  "rel": "universe/named-stars/saiph.json",
+  "at": "bio",
+  "en": "Saiph (Kappa Orionis) is a blue supergiant roughly 650 light-years away, marking the lower-left corner of Orion opposite Rigel. It is comparable to Rigel in size and heat, but appears fainter to us because much of its fierce output pours out as invisible ultraviolet light.",
+  "cur": "参宿六(猎户座κ)是一颗蓝色超巨星,距离我们约650光年,标志着猎户座左下角,与参宿七相对。它在大小和温度上与参宿七相当,但对我们来说显得更暗淡,因为它的大部分强烈辐射以不可见的紫外光形式倾泻而出。"
+ },
+ {
+  "rel": "universe/named-stars/saiph.json",
+  "at": "cultural",
+  "en": "The name comes from the Arabic for 'sword'. Saiph marks the Hunter's knee and Rigel his foot, framing the base of one of the most recognisable figures in the sky.",
+  "cur": "这个名字来自阿拉伯语中的\"剑\"。参宿六标志着猎人的膝盖，而参宿七标志着他的脚，框定了天空中最容易辨认的星座之一的底部。"
+ },
+ {
+  "rel": "universe/named-stars/sargas.json",
+  "at": "fact",
+  "en": "A bright giant in the Scorpion's raised tail, carrying an ancient Mesopotamian name.",
+  "cur": "天蝎座高举尾部的一颗明亮巨星,承载着古美索不达米亚的名字。"
+ },
+ {
+  "rel": "universe/named-stars/sargas.json",
+  "at": "bio",
+  "en": "Sargas (Theta Scorpii) is a yellow-white bright giant roughly 300 light-years away, one of the leading stars in the curving tail of Scorpius near its stinger.",
+  "cur": "尾宿五(Theta Scorpii)是一颗黄白色的明亮巨星,距离地球约300光年,是天蝎座弯曲尾部靠近尾钩位置的主要恒星之一。"
+ },
+ {
+  "rel": "universe/named-stars/sargas.json",
+  "at": "cultural",
+  "en": "The name appears to be of Sumerian or Babylonian origin, a rare survival from Mesopotamian star-lore. In the sky it lies along the Scorpion's tail as it sweeps through the bright clouds of the southern Milky Way.",
+  "cur": "这个名字似乎源自苏美尔或巴比伦,是美索不达米亚星辰传说中罕见的留存。在天空中,它位于天蝎座的尾部,尾巴扫过南天银河的明亮星云。"
+ },
+ {
+  "rel": "universe/named-stars/sirius.json",
+  "at": "fact",
+  "en": "The brightest star in Earth's night sky — and one of our nearest stellar neighbours at 8.6 light-years.",
+  "cur": "地球夜空中最明亮的恒星——也是距离我们最近的恒星邻居之一,距离8.6光年。"
+ },
+ {
+  "rel": "universe/named-stars/sirius.json",
+  "at": "bio",
+  "en": "Sirius (Alpha Canis Majoris) is a hot, blue-white main-sequence star with a faint white-dwarf companion, Sirius B, the burnt-out core of a once more-massive star. Its brilliance comes from a genuinely luminous star sitting unusually close to us.",
+  "cur": "天狼星(大犬座α)是一颗炽热的蓝白色主序星,伴有一颗暗淡的白矮星伴星天狼星B,后者是一颗曾经质量更大的恒星燃尽后的核心。它的明亮来自一颗本身就极为明亮的恒星,且距离我们异常之近。"
+ },
+ {
+  "rel": "universe/named-stars/sirius.json",
+  "at": "cultural",
+  "en": "The 'Dog Star' has guided calendars for millennia: its heliacal rising once heralded the annual flooding of the Nile in ancient Egypt, and it anchors the 'Dog Days' of summer in the Greco-Roman tradition.",
+  "cur": "“犬星”数千年来一直指引着历法：它的偕日升曾预示着古埃及尼罗河的年度泛滥，并在希腊罗马传统中标志着夏季“犬日”的到来。"
+ },
+ {
+  "rel": "universe/named-stars/spica.json",
+  "at": "fact",
+  "en": "The 'ear of wheat' in the Maiden's hand — a close pair whose dance helped reveal precession.",
+  "cur": "少女手中的\"麦穗\"——一对紧密的双星,它们的舞动帮助揭示了岁差。"
+ },
+ {
+  "rel": "universe/named-stars/spica.json",
+  "at": "bio",
+  "en": "Spica (Alpha Virginis) is a hot blue pair of stars about 250 light-years away, so close together that they orbit in just four days and are distorted into egg shapes by mutual gravity. Their combined light makes Spica the brightest star in Virgo.",
+  "cur": "角宿一 (室女座α)是一对炽热的蓝色恒星,距离我们约250光年,两颗星彼此靠得极近,仅用四天就能完成一次相互绕转,并因相互引力而被拉扯成卵形。它们的合光使角宿一成为室女座中最亮的恒星。"
+ },
+ {
+  "rel": "universe/named-stars/spica.json",
+  "at": "cultural",
+  "en": "Its Latin name means 'ear of grain', the sheaf of wheat held by Virgo the harvest maiden. Observations of Spica let Hipparchus detect the slow precession of the equinoxes over two thousand years ago.",
+  "cur": "它的拉丁名意为\"谷穗\",即处女座丰收少女手持的麦束。两千多年前,依巴谷通过观测角宿一发现了春分点的缓慢进动。"
+ },
+ {
+  "rel": "universe/named-stars/van-maanens-star.json",
+  "at": "fact",
+  "en": "The nearest lone white dwarf — the burnt-out, Earth-sized ember of a dead star.",
+  "cur": "最近的孤独白矮星——一颗死亡恒星燃尽后留下的、地球大小的余烬。"
+ },
+ {
+  "rel": "universe/named-stars/van-maanens-star.json",
+  "at": "bio",
+  "en": "Van Maanen's Star is a white dwarf about 14 light-years away in Pisces, the closest solitary white dwarf to the Sun. Once a Sun-like star, it has exhausted its fuel and collapsed to roughly the size of Earth, now slowly cooling as a dense stellar cinder.",
+  "cur": "Van Maanen星是一颗距离约14光年的白矮星，位于双鱼座，是距离太阳最近的孤立白矮星。它曾经是一颗类似太阳的恒星，已经耗尽了燃料并坍缩至大约地球大小，现在作为一颗致密的恒星灰烬缓慢冷却。"
+ },
+ {
+  "rel": "universe/named-stars/van-maanens-star.json",
+  "at": "cultural",
+  "en": "It is named for Adriaan van Maanen, who discovered it in 1917. Its spectrum shows heavy elements that betray rocky debris raining onto it — early evidence that planetary systems can outlive their stars.",
+  "cur": "它以阿德里安·范马嫩的名字命名,他于1917年发现了这颗星。其光谱显示出重元素,揭示有岩石碎片正降落到它表面——这是行星系统可以比其恒星存活更久的早期证据。"
+ },
+ {
+  "rel": "universe/named-stars/vega.json",
+  "at": "fact",
+  "en": "The brightest star of Lyra, and once — and future — Pole Star as Earth's axis slowly precesses.",
+  "cur": "天琴座最亮的恒星,也是地球自转轴缓慢进动过程中曾经的——以及未来的——北极星。"
+ },
+ {
+  "rel": "universe/named-stars/vega.json",
+  "at": "bio",
+  "en": "Vega (Alpha Lyrae) is a nearby hot white star, only 25 light-years away, that long served as the zero-point reference for the astronomical magnitude scale. It rotates so fast it is noticeably flattened.",
+  "cur": "织女一(天琴座α)是一颗邻近的炽热白色恒星,距离我们仅25光年,长期以来被用作天文星等标尺的零点参考。它自转速度极快,以至于呈现出明显的扁平形状。"
+ },
+ {
+  "rel": "universe/named-stars/vega.json",
+  "at": "cultural",
+  "en": "Vega was the northern pole star around 12,000 BCE and will be again near 13,700 CE. It anchors the Summer Triangle with Deneb and Altair, and stars in Carl Sagan's Contact as the source of the alien signal.",
+  "cur": "织女一在公元前12000年左右曾是北极星,并将在公元13700年左右再次成为北极星。它与天津四和河鼓二共同构成夏季大三角,并在卡尔·萨根的《Contact》中作为外星信号的来源而闻名。"
+ },
+ {
+  "rel": "universe/named-stars/wezen.json",
+  "at": "fact",
+  "en": "A supergiant of the Great Dog, so luminous it shines brightly from far across the galaxy.",
+  "cur": "大犬座的一颗超巨星，光度极高，从银河系的遥远彼端也能明亮地闪耀。"
+ },
+ {
+  "rel": "universe/named-stars/wezen.json",
+  "at": "bio",
+  "en": "Wezen (Delta Canis Majoris) is a yellow-white supergiant around 1,600 light-years away. To appear as bright as it does from that distance, it must pour out tens of thousands of times the Sun's light — a star nearing the end of its life.",
+  "cur": "弧矢一（大犬座δ）是一颗黄白色超巨星，距离我们约1,600光年。要在如此遥远的距离上显得如此明亮，它必定释放出相当于太阳数万倍的光芒——这是一颗正接近生命终点的恒星。"
+ },
+ {
+  "rel": "universe/named-stars/wezen.json",
+  "at": "cultural",
+  "en": "The name comes from an Arabic word for 'weight'. It lies in Canis Major, the Great Dog that follows Orion across the sky behind brilliant Sirius.",
+  "cur": "这个名字来自阿拉伯语中表示“重量”的词。它位于大犬座，这只伟大的猎犬跟随猎户座穿越天空，紧随在明亮的天狼星之后。"
+ }
+]

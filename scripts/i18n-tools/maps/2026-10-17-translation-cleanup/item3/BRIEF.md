@@ -42,7 +42,10 @@ fields have schema limits).
 4. **Science, astronomy, geography and people**: native, as `<LOCALE>`'s universities and
    its own Wikipedia write them (planets, stars, constellations, craters, countries,
    cities, people's names, term abbreviations like LEO/GEO where the language has its own).
-5. **Publications and cited sources** (titles in link labels, papers, books): verbatim.
+5. **Publications and cited sources** (titles in link labels, papers, books): keep the
+   title verbatim, but never output a string identical to the English (the checker refuses
+   it) — a link label keeps its translated descriptive part around the verbatim title. If a
+   label's only problem is that the title was translated, leave it alone.
 6. One name per thing: if the batch writes the same thing two ways, use the glossary or
    the more common site form for both.
 

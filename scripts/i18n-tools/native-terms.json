@@ -11,7 +11,8 @@
     "ISS (2026-10-18)": "Abbreviation from each Wikipedia intro: it \"in sigla SSI\", pt \"(EEI)\", hi \"संक्षेप में आईएसएस\"; fr/de/nl/ja/ko write ISS; ru МКС, sr МСС, es EEI.",
     "ISRO (2026-10-18)": "hi: hi.wikipedia article भारतीय अंतरिक्ष अनुसंधान संगठन writes इसरो 67 times, ISRO 6 (operator decision: origin language takes its own form). Other locales keep ISRO.",
     "Agencies (2026-10-18)": "Origin language writes the agency as its own Wikipedia does (operator: agencies have a local and an international name). hi इसरो (hi.wiki 67 vs ISRO 6), ru Роскосмос (146), zh-CN 国家航天局 (10, CNSA 0), ar مركز محمد بن راشد للفضاء (25, MBRSC 0). ja keeps JAXA (ja.wiki JAXA 50 vs 宇宙航空研究開発機構 9). Every other locale keeps the international acronym. CMSA (China Manned Space Agency): zh-CN 中国载人航天工程办公室, the zh.wikipedia title (Q5099768). CAST: zh-CN 中国空间技术研究院 (Q5099557); CASC: zh-CN 中国航天科技集团 (Q2777589) — zh.wikipedia titles.",
-    "Group 7 names (2026-10-18)": "Kubasov, Yegorov, Gibson, Pogue, Worden, Giuseppe Colombo, Cleveland, Krasny Kut: en.wikipedia langlinks titles (surnames from the full titles; zh traditional titles converted to simplified). Smelovka: no article in any language, kept as in English."
+    "Group 7 names (2026-10-18)": "Kubasov, Yegorov, Gibson, Pogue, Worden, Giuseppe Colombo, Cleveland, Krasny Kut: en.wikipedia langlinks titles (surnames from the full titles; zh traditional titles converted to simplified). Smelovka: no article in any language, kept as in English.",
+    "Cosmonauts and astronauts (2026-10-18)": "Forms from en.wikipedia langlinks (one request). sr-Cyrl: sr.wikipedia has articles only for Haise, Pogue and Worden; the other sr-Cyrl forms are transcribed from the ru.wikipedia spelling by the Serbian rules for Russian names — operator to confirm."
   },
   "body": {
     "Earth": {
@@ -3004,7 +3005,10 @@
       "it": "Pavel Popovič",
       "nl": "Pavlo Popovytsj",
       "_slavic": true,
-      "_qid": "Q118490"
+      "_qid": "Q118490",
+      "es": "Pável Popóvich",
+      "pt-BR": "Pavel Popovitch",
+      "sr-Cyrl": "Павел Попович"
     },
     "Robert Heinlein": {
       "ru": "Роберт Хайнлайн",
@@ -3572,7 +3576,14 @@
       "ko": "프랭크 드레이크",
       "hi": "फ्रैंक ड्रेक",
       "ar": "فرانك دريك",
-      "_qid": "Q299149"
+      "_qid": "Q299149",
+      "de": "Frank Drake",
+      "es": "Frank Drake",
+      "fr": "Frank Drake",
+      "it": "Frank Drake",
+      "nl": "Frank Drake",
+      "pt-BR": "Frank Drake",
+      "sr-Cyrl": "Френк Дрејк"
     },
     "Frank Rubio": {
       "ru": "Фрэнк Рубио",
@@ -3744,7 +3755,13 @@
       "hi": "फ़्रेड हेज़",
       "ar": "فريد هايس",
       "sr-Cyrl": "Фред Хејз",
-      "_qid": "Q318965"
+      "_qid": "Q318965",
+      "de": "Fred Haise",
+      "es": "Fred Haise",
+      "fr": "Fred Haise",
+      "it": "Fred Haise",
+      "nl": "Fred Haise",
+      "pt-BR": "Fred Haise"
     },
     "Feoktistov": {
       "ru": "Феоктистов",
@@ -3861,7 +3878,12 @@
       "de": "Wladislaw Wolkow",
       "es": "Vladislav Vólkov",
       "_slavic": true,
-      "_qid": "Q345658"
+      "_qid": "Q345658",
+      "fr": "Vladislav Volkov",
+      "it": "Vladislav Volkov",
+      "nl": "Vladislav Volkov",
+      "pt-BR": "Vladislav Volkov",
+      "sr-Cyrl": "Владислав Волков"
     },
     "Roger Chaffee": {
       "ru": "Роджер Чаффи",
@@ -3881,7 +3903,14 @@
       "hi": "गोर्बात्को",
       "_bare": true,
       "_slavic": true,
-      "_qid": "Q348205"
+      "_qid": "Q348205",
+      "de": "Gorbatko",
+      "es": "Gorbatkó",
+      "fr": "Gorbatko",
+      "it": "Gorbatko",
+      "nl": "Gorbatko",
+      "pt-BR": "Gorbatko",
+      "sr-Cyrl": "Горбатко"
     },
     "Jack Swigert": {
       "ru": "Джек Суайгерт",
@@ -3951,7 +3980,8 @@
       "nl": "Georgi Dobrovolski",
       "pt-BR": "Georgi Dobrovolski",
       "_slavic": true,
-      "_qid": "Q355433"
+      "_qid": "Q355433",
+      "sr-Cyrl": "Георгиј Добровољски"
     },
     "Patsayev": {
       "ru": "Пацаев",
@@ -3967,7 +3997,9 @@
       "nl": "Patsajev",
       "_bare": true,
       "_slavic": true,
-      "_qid": "Q358525"
+      "_qid": "Q358525",
+      "pt-BR": "Patsayev",
+      "sr-Cyrl": "Пацајев"
     },
     "Viktor Patsayev": {
       "ru": "Виктор Пацаев",
@@ -3982,7 +4014,9 @@
       "it": "Viktor Pacaev",
       "nl": "Viktor Patsajev",
       "_slavic": true,
-      "_qid": "Q358525"
+      "_qid": "Q358525",
+      "pt-BR": "Viktor Patsayev",
+      "sr-Cyrl": "Виктор Пацајев"
     },
     "Scott Kelly": {
       "ru": "Скотт Келли",
@@ -4099,7 +4133,11 @@
       "de": "Wiktor Sawinych",
       "it": "Viktor Savinych",
       "_slavic": true,
-      "_qid": "Q431006"
+      "_qid": "Q431006",
+      "fr": "Viktor Savinykh",
+      "nl": "Viktor Savinych",
+      "pt-BR": "Viktor Savinykh",
+      "sr-Cyrl": "Виктор Савиних"
     },
     "Bernard Lyot": {
       "ru": "Бернар Лио",
@@ -4191,7 +4229,12 @@
       "es": "Volinov",
       "_bare": true,
       "_slavic": true,
-      "_qid": "Q448538"
+      "_qid": "Q448538",
+      "fr": "Volynov",
+      "it": "Volynov",
+      "nl": "Volynov",
+      "pt-BR": "Volynov",
+      "sr-Cyrl": "Волинов"
     },
     "Yury Artyukhin": {
       "ru": "Юрий Артюхин",
@@ -4205,7 +4248,8 @@
       "nl": "Joeri Artjoechin",
       "pt-BR": "Yuri Artyukhin",
       "_slavic": true,
-      "_qid": "Q451259"
+      "_qid": "Q451259",
+      "sr-Cyrl": "Јуриј Артјухин"
     },
     "Linda Salzman": {
       "ru": "Линда Зальцман",
@@ -4237,7 +4281,11 @@
       "fr": "Vladimir Djanibekov",
       "it": "Vladimir Džanibekov",
       "_slavic": true,
-      "_qid": "Q466513"
+      "_qid": "Q466513",
+      "es": "Vladimir Dzhanibekov",
+      "nl": "Vladimir Dzjanibekov",
+      "pt-BR": "Vladimir Djanibekov",
+      "sr-Cyrl": "Владимир Џанибеков"
     },
     "Dzhanibekov": {
       "ru": "Джанибеков",
@@ -4250,7 +4298,11 @@
       "it": "Džanibekov",
       "_bare": true,
       "_slavic": true,
-      "_qid": "Q466513"
+      "_qid": "Q466513",
+      "es": "Dzhanibekov",
+      "nl": "Dzjanibekov",
+      "pt-BR": "Djanibekov",
+      "sr-Cyrl": "Џанибеков"
     },
     "Arthur C. Clarke": {
       "ru": "Артур Кларк",
@@ -4289,7 +4341,11 @@
       "zh-CN": "戈尔登·福勒顿",
       "hi": "गॉर्डन फ़ुलर्टन",
       "ar": "غوردون فولرتون",
-      "_qid": "Q519268"
+      "_qid": "Q519268",
+      "it": "Gordon Fullerton",
+      "nl": "Gordon Fullerton",
+      "pt-BR": "Gordon Fullerton",
+      "sr-Cyrl": "Гордон Фулертон"
     },
     "Donald Kessler": {
       "ja": "ドナルド・ケスラー",
@@ -4613,7 +4669,10 @@
       "nl": "Popovytsj",
       "_slavic": true,
       "_qid": "Q118490",
-      "_bare": true
+      "_bare": true,
+      "es": "Popóvich",
+      "pt-BR": "Popovitch",
+      "sr-Cyrl": "Попович"
     },
     "Bykovsky": {
       "ru": "Быковский",
@@ -4711,7 +4770,8 @@
       "pt-BR": "Dobrovolski",
       "_slavic": true,
       "_qid": "Q355433",
-      "_bare": true
+      "_bare": true,
+      "sr-Cyrl": "Добровољски"
     },
     "Volkov": {
       "ru": "Волков",
@@ -4724,7 +4784,12 @@
       "es": "Vólkov",
       "_slavic": true,
       "_qid": "Q345658",
-      "_bare": true
+      "_bare": true,
+      "fr": "Volkov",
+      "it": "Volkov",
+      "nl": "Volkov",
+      "pt-BR": "Volkov",
+      "sr-Cyrl": "Волков"
     },
     "Savinykh": {
       "ru": "Савиных",
@@ -4737,7 +4802,11 @@
       "it": "Savinych",
       "_slavic": true,
       "_qid": "Q431006",
-      "_bare": true
+      "_bare": true,
+      "fr": "Savinykh",
+      "nl": "Savinych",
+      "pt-BR": "Savinykh",
+      "sr-Cyrl": "Савиних"
     },
     "Solovyev": {
       "ru": "Соловьёв",
@@ -4818,7 +4887,13 @@
       "ar": "هايس",
       "sr-Cyrl": "Хејз",
       "_qid": "Q318965",
-      "_bare": true
+      "_bare": true,
+      "de": "Haise",
+      "es": "Haise",
+      "fr": "Haise",
+      "it": "Haise",
+      "nl": "Haise",
+      "pt-BR": "Haise"
     },
     "Schmitt": {
       "ru": "Шмитт",
@@ -5309,7 +5384,8 @@
       "pt-BR": "Kubasov",
       "_bare": true,
       "_slavic": true,
-      "_qid": "Q432752"
+      "_qid": "Q432752",
+      "sr-Cyrl": "Кубасов"
     },
     "Yegorov": {
       "ru": "Егоров",
@@ -5325,7 +5401,8 @@
       "pt-BR": "Yegorov",
       "_bare": true,
       "_slavic": true,
-      "_qid": "Q352137"
+      "_qid": "Q352137",
+      "sr-Cyrl": "Јегоров"
     },
     "Gibson": {
       "ru": "Гибсон",
@@ -5350,7 +5427,13 @@
       "ar": "ألفريد وردن",
       "sr-Cyrl": "Алфред Ворден",
       "zh-CN": "阿尔弗雷德·沃尔登",
-      "_qid": "Q539385"
+      "_qid": "Q539385",
+      "de": "Alfred Worden",
+      "es": "Alfred Worden",
+      "fr": "Alfred Worden",
+      "it": "Alfred Worden",
+      "nl": "Alfred Worden",
+      "pt-BR": "Alfred Worden"
     },
     "Worden": {
       "ru": "Уорден",
@@ -5359,7 +5442,13 @@
       "sr-Cyrl": "Ворден",
       "zh-CN": "沃尔登",
       "_bare": true,
-      "_qid": "Q539385"
+      "_qid": "Q539385",
+      "de": "Worden",
+      "es": "Worden",
+      "fr": "Worden",
+      "it": "Worden",
+      "nl": "Worden",
+      "pt-BR": "Worden"
     },
     "Giuseppe Colombo": {
       "ru": "Джузеппе Коломбо",
@@ -5378,6 +5467,466 @@
       "hi": "कार",
       "ar": "كار",
       "sr-Cyrl": "Кар"
+    },
+    "Boris Yegorov": {
+      "_qid": "Q352137",
+      "ar": "بوريس يغوروف",
+      "de": "Boris Jegorow",
+      "es": "Boris Yegorov",
+      "fr": "Boris Iegorov",
+      "it": "Boris Egorov",
+      "ja": "ボリス・エゴロフ",
+      "ko": "보리스 예고로프",
+      "nl": "Boris Jegorov",
+      "pt-BR": "Boris Yegorov",
+      "ru": "Борис Егоров",
+      "zh-CN": "鲍里斯·叶戈罗夫",
+      "sr-Cyrl": "Борис Јегоров"
+    },
+    "Boris Volynov": {
+      "_qid": "Q448538",
+      "de": "Boris Wolynow",
+      "es": "Borís Volynov",
+      "fr": "Boris Volynov",
+      "it": "Boris Volynov",
+      "ja": "ボリス・ヴォリノフ",
+      "nl": "Boris Volynov",
+      "pt-BR": "Boris Volynov",
+      "ru": "Борис Волынов",
+      "zh-CN": "鲍里斯·沃雷诺夫",
+      "sr-Cyrl": "Борис Волинов"
+    },
+    "Valery Kubasov": {
+      "_qid": "Q432752",
+      "ar": "فاليري كوباسوف",
+      "de": "Waleri Kubassow",
+      "es": "Valeri Kubásov",
+      "fr": "Valeri Koubassov",
+      "it": "Valerij Kubasov",
+      "ja": "ワレリー・クバソフ",
+      "nl": "Valeri Koebasov",
+      "pt-BR": "Valeri Kubasov",
+      "ru": "Валерий Кубасов",
+      "zh-CN": "瓦列里·库巴索夫",
+      "sr-Cyrl": "Валериј Кубасов"
+    },
+    "Viktor Gorbatko": {
+      "_qid": "Q348205",
+      "de": "Wiktor Gorbatko",
+      "es": "Víktor Gorbatkó",
+      "fr": "Viktor Gorbatko",
+      "it": "Viktor Gorbatko",
+      "ja": "ヴィクトル・ゴルバトコ",
+      "nl": "Viktor Gorbatko",
+      "pt-BR": "Viktor Gorbatko",
+      "ru": "Виктор Горбатко",
+      "zh-CN": "維克托·戈爾巴特科",
+      "sr-Cyrl": "Виктор Горбатко"
+    },
+    "Vitaly Sevastyanov": {
+      "_qid": "Q252726",
+      "ar": "فيتالي سيفاستيانوف",
+      "de": "Witali Sewastjanow",
+      "es": "Vitali Sevastianov",
+      "fr": "Vitali Sevastianov",
+      "it": "Vitalij Sevast'janov",
+      "ja": "ヴィタリー・セバスチャノフ",
+      "nl": "Vitali Sevastjanov",
+      "pt-BR": "Vitali Sevastyanov",
+      "ru": "Виталий Севастьянов",
+      "zh-CN": "维塔利·谢瓦斯季亚诺夫",
+      "sr-Cyrl": "Виталиј Севастјанов"
+    },
+    "Sevastyanov": {
+      "_bare": true,
+      "_slavic": true,
+      "_qid": "Q252726",
+      "ar": "سيفاستيانوف",
+      "de": "Sewastjanow",
+      "es": "Sevastianov",
+      "fr": "Sevastianov",
+      "it": "Sevast'janov",
+      "ja": "セバスチャノフ",
+      "nl": "Sevastjanov",
+      "pt-BR": "Sevastyanov",
+      "ru": "Севастьянов",
+      "zh-CN": "谢瓦斯季亚诺夫",
+      "sr-Cyrl": "Севастјанов"
+    },
+    "Dobrovolski": {
+      "_bare": true,
+      "_slavic": true,
+      "_qid": "Q355433",
+      "ar": "دوبروفولسكي",
+      "de": "Dobrowolski",
+      "es": "Dobrovolski",
+      "fr": "Dobrovolski",
+      "it": "Dobrovol'skij",
+      "ja": "ドブロボルスキー",
+      "ko": "도브로볼스키",
+      "nl": "Dobrovolski",
+      "pt-BR": "Dobrovolski",
+      "ru": "Добровольский",
+      "zh-CN": "多布羅沃爾斯基",
+      "sr-Cyrl": "Добровољски"
+    },
+    "Oleg Makarov": {
+      "_qid": "Q467623",
+      "ar": "أوليج ماكاروف",
+      "de": "Oleg Makarow",
+      "fr": "Oleg Makarov",
+      "it": "Oleg Makarov",
+      "ja": "オレグ・マカロフ",
+      "nl": "Oleg Makarov",
+      "pt-BR": "Oleg Makarov",
+      "ru": "Олег Макаров",
+      "sr-Cyrl": "Олег Макаров"
+    },
+    "Makarov": {
+      "_bare": true,
+      "_slavic": true,
+      "_qid": "Q467623",
+      "ar": "ماكاروف",
+      "de": "Makarow",
+      "fr": "Makarov",
+      "it": "Makarov",
+      "ja": "マカロフ",
+      "nl": "Makarov",
+      "pt-BR": "Makarov",
+      "ru": "Макаров",
+      "sr-Cyrl": "Макаров"
+    },
+    "Vasily Lazarev": {
+      "_qid": "Q365317",
+      "ar": "فاسيلي لازاريف",
+      "de": "Wassili Lasarew",
+      "fr": "Vassili Lazarev",
+      "it": "Vasilij Lazarev",
+      "ja": "ワシリー・ラザレフ",
+      "nl": "Vasili Lazarev",
+      "pt-BR": "Vasili Lazarev",
+      "ru": "Василий Лазарев",
+      "zh-CN": "瓦西里·拉扎列夫",
+      "sr-Cyrl": "Василиј Лазарев"
+    },
+    "Lazarev": {
+      "_bare": true,
+      "_slavic": true,
+      "_qid": "Q365317",
+      "ar": "لازاريف",
+      "de": "Lasarew",
+      "fr": "Lazarev",
+      "it": "Lazarev",
+      "ja": "ラザレフ",
+      "nl": "Lazarev",
+      "pt-BR": "Lazarev",
+      "ru": "Лазарев",
+      "zh-CN": "拉扎列夫",
+      "sr-Cyrl": "Лазарев"
+    },
+    "Pyotr Klimuk": {
+      "_qid": "Q434546",
+      "de": "Pjotr Klimuk",
+      "fr": "Piotr Klimouk",
+      "it": "Pëtr Klimuk",
+      "ja": "ピョートル・クリムク",
+      "nl": "Pjotr Klimoek",
+      "pt-BR": "Piotr Klimuk",
+      "ru": "Пётр Климук",
+      "zh-CN": "彼得·克利穆克",
+      "sr-Cyrl": "Пјотр Климук"
+    },
+    "Klimuk": {
+      "_bare": true,
+      "_slavic": true,
+      "_qid": "Q434546",
+      "de": "Klimuk",
+      "fr": "Klimouk",
+      "it": "Klimuk",
+      "ja": "クリムク",
+      "nl": "Klimoek",
+      "pt-BR": "Klimuk",
+      "ru": "Климук",
+      "zh-CN": "克利穆克",
+      "sr-Cyrl": "Климук"
+    },
+    "Artyukhin": {
+      "_bare": true,
+      "_slavic": true,
+      "_qid": "Q451259",
+      "de": "Artjuchin",
+      "es": "Artíujin",
+      "fr": "Artioukhine",
+      "it": "Artjuchin",
+      "ja": "アルチューヒン",
+      "nl": "Artjoechin",
+      "pt-BR": "Artyukhin",
+      "ru": "Артюхин",
+      "zh-CN": "阿尔秋欣",
+      "sr-Cyrl": "Артјухин"
+    },
+    "Lev Demin": {
+      "_qid": "Q450834",
+      "de": "Lew Djomin",
+      "es": "Lev Diomin",
+      "fr": "Lev Demine",
+      "it": "Lev Dëmin",
+      "ja": "レフ・デミン",
+      "nl": "Lev Djomin",
+      "pt-BR": "Lev Demin",
+      "ru": "Лев Дёмин",
+      "zh-CN": "列夫·焦明",
+      "sr-Cyrl": "Лев Дјомин"
+    },
+    "Demin": {
+      "_bare": true,
+      "_slavic": true,
+      "_qid": "Q450834",
+      "de": "Djomin",
+      "es": "Diomin",
+      "fr": "Demine",
+      "it": "Dëmin",
+      "ja": "デミン",
+      "nl": "Djomin",
+      "pt-BR": "Demin",
+      "ru": "Дёмин",
+      "zh-CN": "焦明",
+      "sr-Cyrl": "Дјомин"
+    },
+    "Gennady Sarafanov": {
+      "_qid": "Q472491",
+      "ar": "جينادي سارافانوف",
+      "de": "Gennadi Sarafanow",
+      "fr": "Guennadi Sarafanov",
+      "it": "Gennadij Sarafanov",
+      "ja": "ゲナジ・サラファノフ",
+      "nl": "Gennadi Sarafanov",
+      "pt-BR": "Gennadi Sarafanov",
+      "ru": "Геннадий Сарафанов",
+      "zh-CN": "根纳季·萨拉法诺夫",
+      "sr-Cyrl": "Генадиј Сарафанов"
+    },
+    "Sarafanov": {
+      "_bare": true,
+      "_slavic": true,
+      "_qid": "Q472491",
+      "ar": "سارافانوف",
+      "de": "Sarafanow",
+      "fr": "Sarafanov",
+      "it": "Sarafanov",
+      "ja": "サラファノフ",
+      "nl": "Sarafanov",
+      "pt-BR": "Sarafanov",
+      "ru": "Сарафанов",
+      "zh-CN": "萨拉法诺夫",
+      "sr-Cyrl": "Сарафанов"
+    },
+    "Georgy Grechko": {
+      "_qid": "Q434555",
+      "ar": "جورجي غريشكو",
+      "de": "Georgi Gretschko",
+      "es": "Gueorgui Grechko",
+      "fr": "Gueorgui Gretchko",
+      "it": "Georgij Grečko",
+      "ja": "ゲオルギー・グレチコ",
+      "nl": "Georgi Gretsjko",
+      "pt-BR": "Georgi Grechko",
+      "ru": "Георгий Гречко",
+      "zh-CN": "格奧爾基·格列奇科",
+      "sr-Cyrl": "Георгиј Гречко"
+    },
+    "Grechko": {
+      "_bare": true,
+      "_slavic": true,
+      "_qid": "Q434555",
+      "ar": "غريشكو",
+      "de": "Gretschko",
+      "es": "Grechko",
+      "fr": "Gretchko",
+      "it": "Grečko",
+      "ja": "グレチコ",
+      "nl": "Gretsjko",
+      "pt-BR": "Grechko",
+      "ru": "Гречко",
+      "zh-CN": "格列奇科",
+      "sr-Cyrl": "Гречко"
+    },
+    "Aleksei Gubarev": {
+      "_qid": "Q465748",
+      "de": "Alexei Gubarew",
+      "es": "Alekséi Gúbarev",
+      "fr": "Alekseï Goubarev",
+      "it": "Aleksej Gubarev",
+      "ja": "アレクセイ・グバレフ",
+      "nl": "Aleksej Goebarev",
+      "pt-BR": "Aleksei Gubarev",
+      "ru": "Алексей Губарев",
+      "zh-CN": "阿列克谢·古巴列夫",
+      "sr-Cyrl": "Алексеј Губарев"
+    },
+    "Gubarev": {
+      "_bare": true,
+      "_slavic": true,
+      "_qid": "Q465748",
+      "de": "Gubarew",
+      "es": "Gúbarev",
+      "fr": "Goubarev",
+      "it": "Gubarev",
+      "ja": "グバレフ",
+      "nl": "Goebarev",
+      "pt-BR": "Gubarev",
+      "ru": "Губарев",
+      "zh-CN": "古巴列夫",
+      "sr-Cyrl": "Губарев"
+    },
+    "Vitaly Zholobov": {
+      "_qid": "Q382184",
+      "ar": "فيتالي جولوبوف",
+      "de": "Witali Scholobow",
+      "es": "Vitali Zhólobov",
+      "fr": "Vitali Jolobov",
+      "it": "Vitalij Žolobov",
+      "ja": "ビタリー・ジョロボフ",
+      "nl": "Vitali Zjolobov",
+      "pt-BR": "Vitali Jolobov",
+      "ru": "Виталий Жолобов",
+      "zh-CN": "维塔利·若洛博夫",
+      "sr-Cyrl": "Виталиј Жолобов"
+    },
+    "Zholobov": {
+      "_bare": true,
+      "_slavic": true,
+      "_qid": "Q382184",
+      "ar": "جولوبوف",
+      "de": "Scholobow",
+      "es": "Zhólobov",
+      "fr": "Jolobov",
+      "it": "Žolobov",
+      "ja": "ジョロボフ",
+      "nl": "Zjolobov",
+      "pt-BR": "Jolobov",
+      "ru": "Жолобов",
+      "zh-CN": "若洛博夫",
+      "sr-Cyrl": "Жолобов"
+    },
+    "Edward Gibson": {
+      "_qid": "Q390344",
+      "ar": "إدوارد جيبسون",
+      "de": "Edward Gibson",
+      "es": "Edward Gibson",
+      "fr": "Edward Gibson",
+      "it": "Edward Gibson",
+      "nl": "Edward Gibson",
+      "pt-BR": "Edward Gibson",
+      "ru": "Эдвард Гибсон",
+      "zh-CN": "爱德华·吉布森",
+      "sr-Cyrl": "Едвард Гибсон"
+    },
+    "William Pogue": {
+      "_qid": "Q460440",
+      "ar": "وليم بوج",
+      "de": "William Pogue",
+      "es": "William Pogue",
+      "fr": "William Pogue",
+      "it": "Bill Pogue",
+      "ja": "ウイリアム・ポーグ",
+      "nl": "William Pogue",
+      "pt-BR": "William Pogue",
+      "ru": "Уильям Поуг",
+      "sr-Cyrl": "Вилијам Поуг",
+      "zh-CN": "威廉·波格"
+    },
+    "Yury Glazkov": {
+      "_qid": "Q465461",
+      "ar": "يوري جلازكوف",
+      "de": "Juri Glaskow",
+      "es": "Yuri Glazkov",
+      "fr": "Iouri Glazkov",
+      "it": "Jurij Glazkov",
+      "ja": "ユーリ・グラズコフ",
+      "nl": "Joeri Glazkov",
+      "pt-BR": "Yuri Glazkov",
+      "ru": "Юрий Глазков",
+      "zh-CN": "尤里·格拉兹科夫",
+      "sr-Cyrl": "Јуриј Глазков"
+    },
+    "Glazkov": {
+      "_bare": true,
+      "_slavic": true,
+      "_qid": "Q465461",
+      "ar": "جلازكوف",
+      "de": "Glaskow",
+      "es": "Glazkov",
+      "fr": "Glazkov",
+      "it": "Glazkov",
+      "ja": "グラズコフ",
+      "nl": "Glazkov",
+      "pt-BR": "Glazkov",
+      "ru": "Глазков",
+      "zh-CN": "格拉兹科夫",
+      "sr-Cyrl": "Глазков"
+    },
+    "Vyacheslav Zudov": {
+      "_qid": "Q440178",
+      "ar": "فياتشيسلاف زودوف",
+      "de": "Wjatscheslaw Sudow",
+      "es": "Viacheslav Zudov",
+      "fr": "Viatcheslav Zoudov",
+      "it": "Vjačeslav Zudov",
+      "ja": "ヴャチェスラフ・ズードフ",
+      "ko": "뱌체슬라프 주도프",
+      "nl": "Vjatsjelav Zoedov",
+      "pt-BR": "Vyacheslav Zudov",
+      "ru": "Вячеслав Зудов",
+      "zh-CN": "维亚切斯拉夫·祖多夫",
+      "sr-Cyrl": "Вјачеслав Зудов"
+    },
+    "Zudov": {
+      "_bare": true,
+      "_slavic": true,
+      "_qid": "Q440178",
+      "ar": "زودوف",
+      "de": "Sudow",
+      "es": "Zudov",
+      "fr": "Zoudov",
+      "it": "Zudov",
+      "ja": "ズードフ",
+      "ko": "주도프",
+      "nl": "Zoedov",
+      "pt-BR": "Zudov",
+      "ru": "Зудов",
+      "zh-CN": "祖多夫",
+      "sr-Cyrl": "Зудов"
+    },
+    "Valery Rozhdestvensky": {
+      "_qid": "Q360038",
+      "ar": "فاليري روجديستفينسكي",
+      "de": "Waleri Roschdestwenski",
+      "es": "Valeri Rozhdestvenski",
+      "fr": "Valeri Rojdestvenski",
+      "it": "Valerij Roždestvenskij",
+      "ja": "ヴァレリー・ロジェストヴェンスキー",
+      "nl": "Valeri Rozjdestvenski",
+      "pt-BR": "Valeri Rojdestvenski",
+      "ru": "Валерий Рождественский",
+      "zh-CN": "瓦列里·罗日杰斯特文斯基",
+      "sr-Cyrl": "Валериј Рождественски"
+    },
+    "Rozhdestvensky": {
+      "_bare": true,
+      "_slavic": true,
+      "_qid": "Q360038",
+      "ar": "روجديستفينسكي",
+      "de": "Roschdestwenski",
+      "es": "Rozhdestvenski",
+      "fr": "Rojdestvenski",
+      "it": "Roždestvenskij",
+      "ja": "ロジェストヴェンスキー",
+      "nl": "Rozjdestvenski",
+      "pt-BR": "Rojdestvenski",
+      "ru": "Рождественский",
+      "zh-CN": "罗日杰斯特文斯基",
+      "sr-Cyrl": "Рождественски"
     }
   },
   "star": {

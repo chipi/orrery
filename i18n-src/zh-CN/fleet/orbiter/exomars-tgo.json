@@ -1,6 +1,6 @@
 {
   "name": "ExoMars TGO",
   "tagline": "痕量气体分析 + ESA/NASA 表面中继",
-  "description": "ESA的Trace Gas Orbiter，自2016年以来在火星轨道运行。通过嗅探大气中可能暗示生物或地质活动的甲烷和水蒸气，并通过其UHF中继为火星表面任务中继数据。",
+  "description": "ESA 的 Trace Gas Orbiter，自 2016 年起在火星轨道运行。它在大气中探测可能暗示生物或地质活动的甲烷和水蒸气，并通过 UHF 中继为火星表面任务转发数据。",
   "best_known_for": "火星痕量气体分析；为ESA和NASA表面任务提供中继"
 }

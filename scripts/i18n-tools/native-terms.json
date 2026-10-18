@@ -10,7 +10,7 @@
     "names": "Second batch (2026-10-17): every capitalised name in the English source classified by Wikidata (name-inventory.mjs → maps/2026-10-17-translation-cleanup/wikidata-name-classes.tsv), curated by hand (names-curation.tsv: vehicles, homonyms, adjectives, Latin genitives dropped), forms from each language's Wikipedia title / label (name-forms.mjs → wikidata-name-forms.tsv; zh-CN through Wikidata's simplified converter; sr-Cyrl only where Cyrillic at the source), corrected in name-forms-overrides.tsv, merged by name-glossary-merge.mjs. Entries carry _qid. body: moons of Uranus and Pluto, dwarf planets, asteroids, comets. star: stars, constellations, nebulae, galaxies, clusters — a Bayer or catalogue alias never becomes the common name; Latin-script locales keep a star's proper name where their Wikipedia titles it by Bayer designation. person: _female / _slavic drive Russian and Serbian declension; Latin-script locales change a name only where it is transliterated (Juri Gagarin) — nicknames stay (Wally Schirra). feature (second batch): hand-built in features-2.tsv on the first batch's pattern; cells for languages without an article are unverified.",
     "ISS (2026-10-18)": "Abbreviation from each Wikipedia intro: it \"in sigla SSI\", pt \"(EEI)\", hi \"संक्षेप में आईएसएस\"; fr/de/nl/ja/ko write ISS; ru МКС, sr МСС, es EEI.",
     "ISRO (2026-10-18)": "hi: hi.wikipedia article भारतीय अंतरिक्ष अनुसंधान संगठन writes इसरो 67 times, ISRO 6 (operator decision: origin language takes its own form). Other locales keep ISRO.",
-    "Agencies (2026-10-18)": "Origin language writes the agency as its own Wikipedia does (operator: agencies have a local and an international name). hi इसरो (hi.wiki 67 vs ISRO 6), ru Роскосмос (146), zh-CN 国家航天局 (10, CNSA 0), ar مركز محمد بن راشد للفضاء (25, MBRSC 0). ja keeps JAXA (ja.wiki JAXA 50 vs 宇宙航空研究開発機構 9). Every other locale keeps the international acronym. CMSA (China Manned Space Agency): zh-CN 中国载人航天工程办公室, the zh.wikipedia title (Q5099768).",
+    "Agencies (2026-10-18)": "Origin language writes the agency as its own Wikipedia does (operator: agencies have a local and an international name). hi इसरो (hi.wiki 67 vs ISRO 6), ru Роскосмос (146), zh-CN 国家航天局 (10, CNSA 0), ar مركز محمد بن راشد للفضاء (25, MBRSC 0). ja keeps JAXA (ja.wiki JAXA 50 vs 宇宙航空研究開発機構 9). Every other locale keeps the international acronym. CMSA (China Manned Space Agency): zh-CN 中国载人航天工程办公室, the zh.wikipedia title (Q5099768). CAST: zh-CN 中国空间技术研究院 (Q5099557); CASC: zh-CN 中国航天科技集团 (Q2777589) — zh.wikipedia titles.",
     "Group 7 names (2026-10-18)": "Kubasov, Yegorov, Gibson, Pogue, Worden, Giuseppe Colombo, Cleveland, Krasny Kut: en.wikipedia langlinks titles (surnames from the full titles; zh traditional titles converted to simplified). Smelovka: no article in any language, kept as in English."
   },
   "body": {
@@ -7961,6 +7961,14 @@
     "CMSA": {
       "zh-CN": "中国载人航天工程办公室",
       "_qid": "Q5099768"
+    },
+    "CAST": {
+      "zh-CN": "中国空间技术研究院",
+      "_qid": "Q5099557"
+    },
+    "CASC": {
+      "zh-CN": "中国航天科技集团",
+      "_qid": "Q2777589"
     }
   }
 }

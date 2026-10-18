@@ -12,10 +12,11 @@ describe('galaxyLabel', () => {
     expect(galaxyLabel({ id: 'not-a-galaxy', name: 'Nowhere Dwarf' })).toBe('Nowhere Dwarf');
   });
 
-  it('every locale translates the generic word and keeps the proper name', () => {
+  it('every locale translates the label; named bodies take the glossary form', () => {
     const ru = JSON.parse(readFileSync('messages/ru.json', 'utf8'));
     const de = JSON.parse(readFileSync('messages/de.json', 'utf8'));
-    expect(ru.galaxy_name_andromeda).toBe('Галактика Andromeda (M31)');
+    // native-terms.json star:"Andromeda Galaxy" ru = "Галактика Андромеды"
+    expect(ru.galaxy_name_andromeda).toBe('Галактика Андромеды (M31)');
     expect(de.galaxy_name_ursa_minor_dwarf).toBe('Ursa-Minor-Zwerggalaxie');
     for (const loc of [
       'ar',

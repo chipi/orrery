@@ -1,0 +1,20 @@
+[
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-1.json",
+    "at": "tagline",
+    "old": "Eerste Amerikaanse maanorbiter (1966-08-14); bracht Apollo-landingsplaatsen in kaart en maakte de eerste foto van de Aarde vanuit een baan om de Maan (1966).",
+    "new": "Eerste Amerikaanse maanorbiter (1966-08-14); karteerde Apollo-landingsplaatsen en maakte de eerste foto van de Aarde vanuit maanbaan (1966)."
+  },
+  {
+    "rel": "fleet/rover/exomars-rosalind-franklin.json",
+    "at": "tagline",
+    "old": "ESA's Marsrover van 2028 — boor van 2 m om naar biosignaturen te zoeken op Oxia Planum. Stilgezet door de terugtrekking van Roscosmos in 2022, nu omgezet naar een NASA-lancering",
+    "new": "ESA-Marsrover voor 2028 — boor van 2 m zoekt biosignaturen op Oxia Planum. Stilgelegd na vertrek van Roscosmos (2022), nu met NASA-lancering"
+  },
+  {
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "intro_sentence",
+    "old": "Elk ruimtevaartagentschap hanteert ongeveer dezelfde selectietrechter — fysiek, cognitief, psychologisch, operationeel — die ~10.000 kandidaten terugbrengt tot ~10 geselecteerden. Het knelpunt is de groepsdynamiek van de bemanning onder stress.",
+    "new": "Elk ruimtevaartagentschap hanteert dezelfde selectietrechter — fysiek, cognitief, psychologisch, operationeel — van ~10.000 kandidaten naar ~10 geselecteerden. Het knelpunt: groepsdynamiek onder stress."
+  }
+]

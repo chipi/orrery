@@ -1,0 +1,809 @@
+{
+  "locale": "hi",
+  "segments": {
+    "UI strings — long (help text, panels)": {
+      "sampled": 25,
+      "ok": 11,
+      "minor": 10,
+      "broken": 4
+    },
+    "UI strings — short (menus, labels, buttons)": {
+      "sampled": 25,
+      "ok": 23,
+      "minor": 1,
+      "broken": 1
+    },
+    "essays (long editorial)": {
+      "sampled": 10,
+      "ok": 0,
+      "minor": 3,
+      "broken": 7
+    },
+    "fleet (launcher/capsule/engine/site descriptions)": {
+      "sampled": 25,
+      "ok": 15,
+      "minor": 8,
+      "broken": 2
+    },
+    "mission descriptions": {
+      "sampled": 25,
+      "ok": 10,
+      "minor": 9,
+      "broken": 6
+    },
+    "mission event notes": {
+      "sampled": 25,
+      "ok": 18,
+      "minor": 5,
+      "broken": 2
+    },
+    "other short entries (earth-objects, satellites, iss, orbit-regimes, …)": {
+      "sampled": 25,
+      "ok": 20,
+      "minor": 3,
+      "broken": 2
+    },
+    "planets & sites (short facts)": {
+      "sampled": 25,
+      "ok": 15,
+      "minor": 9,
+      "broken": 1
+    },
+    "programs (long editorial)": {
+      "sampled": 10,
+      "ok": 5,
+      "minor": 5,
+      "broken": 0
+    },
+    "science articles (editorial)": {
+      "sampled": 10,
+      "ok": 2,
+      "minor": 6,
+      "broken": 2
+    },
+    "universe (short entries)": {
+      "sampled": 25,
+      "ok": 19,
+      "minor": 5,
+      "broken": 1
+    }
+  },
+  "findings": [
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-2",
+      "key": "messages :: chip_label_radiation_exposure",
+      "grade": "MINOR",
+      "issue": "Hyphen instead of em dash and awkward 'फंसे हुए बेल्ट' for trapped belts.",
+      "fix": "विकिरण जोखिम — GCR + SPE + फँसी विकिरण पट्टियाँ, mSv प्रति वर्ष"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-3",
+      "key": "messages :: plan_explainer_how_to_desc",
+      "grade": "BROKEN",
+      "issue": "'right panel' rendered as 'सही पैनल' (correct), and the '∆v' half of the last sentence is missing; gender error on 'लॉन्च विंडो'.",
+      "fix": "प्राकृतिक हॉमन न्यूनतम (~250 दिन TOF, लगभग हर 26 महीने) के पास ठंडे रंग का कोई क्षेत्र क्लिक करें — यही सबसे सस्ती लॉन्च विंडो है। दायाँ पैनल सटीक तारीखें और ∆v दिखाता है।"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-4",
+      "key": "messages :: lab_goal_fc_verdict",
+      "grade": "MINOR",
+      "issue": "'देय क्षमता' is an unnatural term for what the best chemical stage delivers.",
+      "fix": "तो: क्या आप इसे केवल ईंधन पर उड़ा सकते हैं? बृहस्पति तक पहुंचना वास्तव में रासायनिक पहुंच के भीतर है — LEO से लगभग 6 km/s, एक मजबूत ऊपरी चरण के ~8.5 से कम। लेकिन एक Grand Tour का अर्थ है सौर मंडल से गति शेष रखते हुए बाहर निकलना, और इसके लिए LEO से ~8.7 km/s चाहिए — जो सर्वोत्तम रासायनिक चरण जितना दे पाता है, उससे बस थोड़ा आगे है। रसायन आपको बृहस्पति तक पहुंचाकर रुक जाता है; गुरुत्व-सहायता श्रृंखला बाकी की आपूर्ति करती है, और ऊपर से दसियों km/s की यात्रा गति भी। यही कारण है कि Voyager उड़ाना संभव हुआ, और यही कारण है कि तब से हर गहन-अंतरिक्ष मिशन ग्रहों से गति उधार लेने की एक योजना है।"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-5",
+      "key": "messages :: credits_intro_body_1",
+      "grade": "BROKEN",
+      "issue": "ISRO must be in Devanagari (इसरो) per the Indian-name rule; 'एजेंसी, ऑपरेटर' should be plural.",
+      "fix": "ऑरेरी इसलिए मौजूद है क्योंकि दुनिया की अंतरिक्ष एजेंसियाँ, ऑपरेटर और विकिमीडिया समुदाय अपने काम को स्वतंत्र रूप से उपलब्ध कराते हैं। NASA, ESA, JAXA, इसरो, CNSA, Roscosmos, MBRSC, कनाडाई अंतरिक्ष एजेंसी, SpaceX, Blue Origin, विकिमीडिया कॉमन्स के योगदानकर्ताओं और विकिपीडिया के संपादकों ने मिलकर ग्रह अन्वेषण का एक ऐसा सार्वजनिक संग्रह बनाया है जो मानव इतिहास में बेजोड़ है। धन्यवाद।"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-6",
+      "key": "messages :: lab_goal_lar_challenge",
+      "grade": "MINOR",
+      "issue": "Machine-like transliterations (वर्डिक्ट, लोडेड मास, पेलोड वॉल).",
+      "fix": "रॉकेट पर और भार लादें — रॉकेट समीकरण में लदा द्रव्यमान तब तक बढ़ाएँ जब तक यह निर्णय लाल न हो जाए। वही द्रव्यमान इस स्टैक की पेलोड-सीमा है।"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-7",
+      "key": "messages :: library_intro_body_2",
+      "grade": "BROKEN",
+      "issue": "Wrong meaning: 'who gets the click' garbled, 'flown' rendered as 'बह गया' (drifted), and the fallback clause is nonsensical.",
+      "fix": "/credits पर दी गई सामग्री-सूची की तरह, यह पृष्ठ हमें इस बारे में ईमानदार रखने के लिए है कि क्लिक किसे मिलता है। जहाँ ऑपरेटर का पोर्टल मौजूद है, हम आपको वहाँ भेजते हैं; जब मिशन किसी गैर-अंग्रेज़ीभाषी एजेंसी ने उड़ाया था, तो उसकी अपनी भाषा के Wikipedia पर; और जब किसी और स्रोत में उस इकाई का ज़िक्र नहीं होता, तब अंग्रेज़ी Wikipedia पर।"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-11",
+      "key": "messages :: lab_goal_sysasc_guidance",
+      "grade": "MINOR",
+      "issue": "'लोफ्ट' is an unexplained transliteration, and 'इतने अंधेरे में' mistranslates 'that blind'.",
+      "fix": "फ्लाइट कंप्यूटर को सोचते हुए देखें। कक्षा तक पहुँचना एक सीमा-मान समस्या है जिसका एक सटीक उत्तर है — लक्ष्य ऊँचाई पर, समतल होकर, वृत्ताकार गति से पहुँचना — और यान की वास्तविक स्थिति हर सेकंड बहती रहती है, इसलिए आप पूरा पथ पहले से योजना नहीं बना सकते। तो यह दो व्यवस्थाओं में उड़ता है। घने वायुमंडल में यह एक पूर्व-नियोजित पिच तालिका (ओपन-लूप) का अनुसरण करता है जो गुरुत्व मोड़ के दौरान भार को सुरक्षित रखती है। ~55 किमी से ऊपर कंप्यूटर नियंत्रण संभाल लेता है: इस कम-थ्रस्ट ऊपरी चरण के लिए यह Powered Explicit Guidance है, जो हर सेकंड एक दो-बिंदु सीमा समस्या को फिर से हल करती है ताकि एक स्टीयरिंग नियम sin γ = A + B·t मिले — और इसका उत्तर चढ़ाई को ऊपर की ओर उछालता है: नाक को क्षितिज से नीचे रखने का आदेश देकर यह गति पाने के लिए ऊँचाई खर्च करता है। कोई इंसान आँख मूँदकर इस तरह नहीं उड़ा सकता। ऊपरी-चरण का थ्रस्ट घटाएँ और देखें कि यह चढ़ाई को और ज़्यादा ऊपर उछालता है।"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-12",
+      "key": "messages :: lab_conn_fc_why",
+      "grade": "MINOR",
+      "issue": "'वह Δv खरीदती हैं जो रसायन नहीं कर सकता' is unidiomatic and illogical.",
+      "fix": "वास्तविक मिशन इसी तरह डिज़ाइन किए जाते हैं: ग्रहों द्वारा निर्धारित एक लॉन्च खिड़की, स्थानांतरण चरणों की एक श्रृंखला, और गुरुत्व-सहायताएं जो वह Δv जुटाती हैं जो रासायनिक ईंधन नहीं दे सकता। Voyager 2 चारों विशाल ग्रहों का दौरा करने वाला एकमात्र अंतरिक्ष यान है — एक ऐसे मार्ग पर जो 176-वर्ष के एक क्षण के लिए मौजूद था। Cassini ने विपरीत तरीका अपनाया: चार सहायताएं (शुक्र दो बार, पृथ्वी, बृहस्पति) जिन्होंने पहले इसे गति बनाने के लिए अंदर की ओर भेजा और फिर इसे शनि तक फेंका।"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-13",
+      "key": "messages :: lab_illustration_alt_landing_computer",
+      "grade": "MINOR",
+      "issue": "Awkward literal rendering ('भूत की तरह', 'होवर', 'वंश-दर').",
+      "fix": "एक लैंडर थ्रॉटल किए गए इंजन के सहारे सतह के ऊपर मँडरा रहा है, और उसकी अवरोहण-दर का वक्र बगल में धुंधला खिंचा हुआ शून्य तक उतरता दिख रहा है।"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-14",
+      "key": "messages :: plan_gravity_assist_caveat",
+      "grade": "MINOR",
+      "issue": "'प्रत्यक्ष प्रक्षेपण' is the wrong term for trajectory (launch) and 'रियल' is left untranslated.",
+      "fix": "सीधा प्रक्षेप पथ दिखाया गया है। वास्तविक बाहरी-ग्रह मिशन ग्रहों की गुरुत्व-सहायता का उपयोग करते हैं — वास्तविक उड़ान पथ के लिए मिशनों में Voyager 2, Galileo, Cassini, New Horizons देखें।"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-15",
+      "key": "messages :: lab_f_moonalt_glossary",
+      "grade": "MINOR",
+      "issue": "'विचलन' is the wrong term for declination, and 'यह है क्यों' is unnatural.",
+      "fix": "चंद्रमा कितना ऊँचा चढ़ता है: h_max = 90° − |φ − δ| — आपका अक्षांश φ और चंद्रमा का दिक्पात δ। यही नियम सूर्य पर भी लागू होता है; इसी कारण पूर्णिमा का चंद्रमा सर्दियों में ऊँचा चलता है।"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-17",
+      "key": "messages :: lab_conn_lss_hook",
+      "grade": "MINOR",
+      "issue": "Awkward 'Voyagers यानों', English verb 'स्लिंगशॉट', clumsy 'दुनिया से दुनिया'.",
+      "fix": "Voyager यानों ने बृहस्पति, शनि, अरुण और वरुण का 176 वर्ष में एक बार बनने वाला संरेखण पकड़ा — 'Grand Tour' — जिससे एक ही यान एक ग्रह से दूसरे ग्रह तक गुलेल की तरह उछलता गया। यह खिड़की चूकने पर यह संयोग 22वीं सदी तक फिर नहीं आता।"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-20",
+      "key": "messages :: lab_goal_g10_frozen",
+      "grade": "BROKEN",
+      "issue": "Person name Kepler left in Latin (should be केप्लर) and 'यह शीर्ष पर सुस्ती करता है' is not natural Hindi.",
+      "fix": "वही उभार एक दीर्घवृत्तीय कक्षा के उपभू को भी घुमाता है — जब तक आप 63.4° के क्रांतिक झुकाव पर न उड़ें, जहाँ वह बहाव रद्द हो जाता है और निम्न व उच्च बिंदु स्थिर रहते हैं। यही Molniya कक्षा का रहस्य है: एक तीव्र, खिंचा हुआ दीर्घवृत्त जिसका अपभू सुदूर उत्तर के ऊपर घंटों तक ठहरा रहता है (केप्लर का दूसरा नियम — यह शीर्ष पर धीमा पड़ जाता है), उन उच्च अक्षांशों को कवर करता है जहाँ एक भूस्थिर उपग्रह क्षितिज पर बेकार पड़ा रहता है। इसी तरह USSR, और बाद में Sirius रेडियो, आर्कटिक तक पहुँचे।"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-21",
+      "key": "messages :: explore_layer_tip_planets",
+      "grade": "MINOR",
+      "issue": "Unnatural genitive chain ('कक्षाओं की टॉगल दृश्यता').",
+      "fix": "आठ प्रमुख ग्रहों की कक्षाओं की दृश्यता चालू/बंद करें"
+    },
+    {
+      "segment": "UI strings — short (menus, labels, buttons)",
+      "id": "UI-10",
+      "key": "messages :: panel_lightbox_close",
+      "grade": "BROKEN",
+      "issue": "Missing the verb 'Close' — reads as just 'Gallery preview'.",
+      "fix": "गैलरी पूर्वावलोकन बंद करें"
+    },
+    {
+      "segment": "UI strings — short (menus, labels, buttons)",
+      "id": "UI-19",
+      "key": "messages :: galaxy_name_triangulum",
+      "grade": "MINOR",
+      "issue": "Mixed script: galaxy name should be native Hindi.",
+      "fix": "त्रिकोणिका आकाशगंगा (M33)"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-1",
+      "key": "essays/seven-minutes.json :: body.19.md",
+      "grade": "BROKEN",
+      "issue": "Garbled: 'body count' mistranslated, missing verbs, tense and agreement errors throughout.",
+      "fix": "विशेष रूप से मंगल मिशनों के इतिहास में, लैंडिंग की समस्या की एक मौतों की गिनती रही है। Mars 2, 1971 में, पृथ्वी से आई पहली वस्तु बना जिसने मंगल की सतह को छुआ — और दुर्घटनाग्रस्त हो गया, टकराव में नष्ट हो गया, क्योंकि पैराशूट अनुक्रम पूरा होने से पहले ही अवरोहण प्रणाली विफल हो चुकी थी। Mars Polar Lander ने दिसंबर 1999 में लगभग निश्चित रूप से अपने अवरोहण इंजन समय से पहले बंद कर दिए, जब पैर खुलने के कंपन को टचडाउन का संकेत समझ लिया गया, और वह आख़िरी चालीस मीटर पूरी गति से गिरा। Beagle 2 ने क्रिसमस के दिन 2003 को प्रवेश पूरा कर लिया — EDL अनुक्रम काम करता प्रतीत होता है — लेकिन लैंडिंग पर सौर पैनल पूरी तरह नहीं खुले और वह कभी संवाद नहीं कर सका, मंगल के मैदानों पर खामोश पड़ा रहा। European Space Agency के Schiaparelli लैंडर में, अक्टूबर 2016 में, हिंसक पैराशूट अवरोहण के दौरान जड़त्वीय मापन इकाई संतृप्त हो गई — रीडिंग क्षण भर के लिए अपने पैमाने के शिखर से बाहर चली गईं — जिससे नेविगेशन समाधान बिगड़ गया और ऑनबोर्ड कंप्यूटर को लगा कि वह पहले ही सतह के नीचे है; उसने पैराशूट काट दिया और तीस सेकंड के बजाय सिर्फ़ तीन सेकंड के लिए रेट्रो रॉकेट दागे, और लगभग 540 किलोमीटर प्रति घंटे की गति से ज़मीन से टकराया।"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-2",
+      "key": "essays/the-body-in-the-dark.json :: body.7.caption",
+      "grade": "MINOR",
+      "issue": "Clumsy phrasing and agreement ('चालक दल ... अवशोषित करते हैं', 'ढाल उड़ाने के लिए').",
+      "fix": "सबसे कठिन समस्या वह है जिसे आप देख नहीं सकते। पृथ्वी के चुंबकीय क्षेत्र से परे गैलेक्टिक ब्रह्मांडीय किरणों से कोई आश्रय नहीं है, और एक सौर तूफ़ान कुछ ही घंटों में तीव्र खुराक दे सकता है। उन्हें रोकने लायक मोटी परिरक्षण परत इतनी भारी होगी कि उसे उड़ाया ही नहीं जा सकता — इसलिए लंबी यात्रा में चालक दल बस अंतरिक्ष के मौसम को सोख लेता है।"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-3",
+      "key": "essays/interstellar-exploration.json :: body.11.md",
+      "grade": "BROKEN",
+      "issue": "The last sentence is garbled and its meaning lost; several other sentences are ungrammatical.",
+      "fix": "परमाणु-तापीय प्रणोदन — रिएक्टर में हाइड्रोजन को गर्म करना और उसे नोज़ल से बाहर फेंकना — निष्कासन वेग को लगभग दोगुना कर देता है; NERVA कार्यक्रम के सर्वश्रेष्ठ ज़मीनी-परीक्षित इंजनों में लगभग 825 सेकंड का विशिष्ट आवेग हासिल हुआ। निष्कासन वेग दोगुना करने से आवश्यक द्रव्यमान अनुपात आधा नहीं होता; वह उसका वर्गमूल हो जाता है — जो कहीं बड़ा लाभ है। फिर भी अंतरतारकीय वेगों के लिए परमाणु-तापीय प्रणोदन श्रेणीगत रूप से अपर्याप्त है। रॉकेट समीकरण को इसकी परवाह नहीं कि प्रणोदक कैसे गर्म किया गया; उसे बस यह मायने रखता है कि वह कितनी तेज़ी से बाहर निकलता है। और अब तक कल्पित कोई भी प्रणोदक-जलाने वाली संरचना पदार्थ को इतनी तेज़ी से बाहर नहीं फेंक सकती कि c का कोई सार्थक अंश हासिल हो, बिना ऐसे ईंधन भार की ज़रूरत के जो मिशन को देखते ही असंभव बना दे।"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-4",
+      "key": "essays/going-to-mars.json :: body.21.md",
+      "grade": "BROKEN",
+      "issue": "Machine-like and garbled ('इंजीनियर नहीं कर सकता', 'डायनेमो को समाप्त कर रहा है', 'बल्क', 'आगे जमा होती है').",
+      "fix": "तीसरी दीवार मानव शरीर है, और यही वह दीवार है जिसके इर्द-गिर्द मिशन की संरचना इंजीनियरिंग से रास्ता नहीं निकाल सकती। मंगल का कोई वैश्विक चुंबकीय क्षेत्र नहीं है — उसका कोर बहुत पहले जम चुका है, जिससे वह डायनेमो थम गया जो कभी यह कवच पैदा करता था। पृथ्वी का चुंबकमंडल गैलेक्टिक कॉस्मिक किरणों और सौर ऊर्जावान कणों के बड़े हिस्से को मोड़ देता है; मंगल के पास ऐसा कुछ नहीं है। अंतरग्रहीय अंतरिक्ष में छह महीने की यात्रा लगभग 300 मिलीसीवर्ट की मापी गई खुराक देती है — पृथ्वी पर प्राकृतिक पृष्ठभूमि विकिरण के एक सामान्य वर्ष से सौ गुना से भी अधिक, जो छह महीने में सोख ली जाती है। मंगल की सतह पर, चुंबकमंडल के बिना, द्वितीयक विकिरण से खुराक और जमा होती जाती है। सौर-चक्र की अवस्था और परिरक्षण के आधार पर तीन वर्ष की आना-जाना यात्रा का कुल अनुमान 600 से 1,200 मिलीसीवर्ट है — ये संख्याएँ [Curiosity](/missions?id=curiosity) पर लगे उपकरणों ने उड़ान में मापी हैं।"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-5",
+      "key": "essays/interstellar-exploration.json :: body.26.md",
+      "grade": "BROKEN",
+      "issue": "'छत करता है' is garbled for 'dwarfs'; mixed tenses and broken syntax ('यह मानते हुए लेजर ऐरे बिल्कुल बनाया जा सकता है').",
+      "fix": "लेकिन \"निषिद्ध नहीं\" और \"किसी भी निकट समय में प्राप्य\" के बीच का अंतर विशाल है। सबसे धीमा गंभीर प्रस्ताव — c के 12% पर चलने वाला संलयन स्टारशिप — ऐसी तकनीक माँगेगा जो मौजूद ही नहीं है, ऐसी लागत पर जो इतिहास के किसी भी अंतरिक्ष कार्यक्रम को बौना कर दे, और तब जाकर लगभग पचास वर्षों में एक मानवयुक्त पोत दूसरे तारे तक पहुँचेगा। सबसे तेज़ गंभीर प्रस्ताव — Breakthrough Starshot का लेज़र-चालित प्रकाश-पाल — एक ग्राम के उपकरण पहुँचाएगा जो घंटों चलने वाले फ्लाईबाई में काम करेंगे और वर्षों तक डेटा लौटाएँगे, ऐसी लागत पर जिसका अनुमान इसके समर्थक दसियों अरब डॉलर लगाते हैं, बशर्ते लेज़र ऐरे बनाया भी जा सके। इन दोनों छोरों के बीच कोई मध्य विकल्प नहीं है जो तकनीकी रूप से व्यवहार्य हो और सार्थक अन्वेषण के लिए पर्याप्त भी। समस्या के पैमाने का कोई मध्यम समाधान है ही नहीं।"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-6",
+      "key": "essays/seven-minutes.json :: dek",
+      "grade": "MINOR",
+      "issue": "'भौतिकी पर तैर रहे होते हैं' and 'हल्का-फुल्का करते हैं' are odd renderings of coasting and nudging.",
+      "fix": "यात्रा आसान है। आप महीनों तक लगभग कुछ नहीं करते — भौतिकी के सहारे सरकते रहते हैं, प्रक्षेप पथ में हल्का-सा सुधार करते हैं, इंतज़ार करते हैं। पहुँचना वह जगह है जहाँ मिशन दम तोड़ देते हैं। लैंडिंग अंतरिक्ष उड़ान की सबसे कठिन चीज़ है, और हमने इसे कभी दो बार एक ही तरीके से हल नहीं किया।"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-7",
+      "key": "essays/the-body-in-the-dark.json :: body.14.md",
+      "grade": "BROKEN",
+      "issue": "Telomere rendered as 'दूरदर्शी' (wrong), ungrammatical clauses ('जिन्होंने ... रहा'), 'Mark' left in Latin, 'taikonaut' untranslated, many awkward sentences.",
+      "fix": "लंबी अवधि की अंतरिक्ष उड़ान में मानव शरीर की कार्यप्रणाली के बारे में हम जो कुछ जानते हैं, वह सब मापा गया है — असली लोगों पर, जो असली अवधियों तक अंतरिक्ष में रहे, घर लौटे, और जिनका अध्ययन किया गया। एक सतत उड़ान का रिकॉर्ड वलेरी पोल्याकोव के नाम है, जो रूसी चिकित्सक-अंतरिक्षयात्री थे; वे जनवरी 1994 में [Mir](/programs/mir) पर सवार हुए और मार्च 1995 में पृथ्वी लौटे, कक्षा में लगातार 437 दिन बिताकर — यह रिकॉर्ड तीन दशक बाद भी अटूट है। पोल्याकोव का लक्ष्य स्पष्ट रूप से चिकित्सकीय था: यह तय करना कि क्या कोई मनुष्य मंगल मिशन जितनी अवधि कार्यक्षम रूप से झेल सकता है। उतरने पर उन्होंने ज़ोर देकर Soyuz कैप्सूल से अपने बल पर चलकर बाहर आना चुना। उनकी हड्डियों और मांसपेशियों के उबरने में महीनों लगे। वे चले। [Salyut](/programs/salyut) और [Mir](/programs/mir) कार्यक्रमों ने सोवियत और फिर रूसी शारीरिक आँकड़ों का ऐसा भंडार बनाया जिसकी जगह कोई नहीं ले सकता — [ISS](/programs/iss) ने उसे बढ़ाया और वैश्विक बनाया। पैगी व्हिट्सन के तीन मिशनों के कुल 665 दिनों ने शोधकर्ताओं को एक ही व्यक्ति पर दीर्घकालिक डेटासेट दिया, जिसे अन्यथा दोहराना असंभव था। NASA Twin Study — स्कॉट केली के 340 दिन के मिशन की तुलना उनके पृथ्वी पर रहे समान जुड़वाँ भाई मार्क से की गई — में जीन अभिव्यक्ति, टेलोमियर की गतिकी, आंत के माइक्रोबायोम की संरचना और संज्ञानात्मक प्रदर्शन में मापने योग्य बदलाव मिले; इनमें से अधिकांश वापसी पर लौट गए, लेकिन सब नहीं। चीन का [Tiangong](/programs/tiangong) कार्यक्रम अब इस रिकॉर्ड में जुड़ रहा है: 2021 से 90 और 180 दिन की पालियों में दल, यानी ताइकोनॉट (चीनी अंतरिक्षयात्री) समूह जो पहले डेटासेट में नहीं था। अंतरिक्ष में लंबे समय तक मानव शरीर के बारे में मानवता जो जानती है, उसके किसी भी ईमानदार विवरण में यह शामिल होना ही चाहिए कि रूस ने Mir पर क्या सीखा, 2000 से 15-राष्ट्र ISS साझेदारी ने क्या मापा, और चीन अब क्या जमा कर रहा है।"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-8",
+      "key": "essays/navigation.json :: body.22.caption",
+      "grade": "BROKEN",
+      "issue": "'Between fixes' rendered as 'स्थिरांक के बीच' (constants) — wrong meaning; awkward opening.",
+      "fix": "ऊपर किधर है, जब कोई ऊपर है ही नहीं: एक स्टार ट्रैकर आकाश के एक टुकड़े की तस्वीर लेता है, उस पैटर्न को यान में रखे तारा-सूचीपत्र से मिलाता है, और तुरंत जान लेता है कि यान स्थिर J2000 निर्देश-तंत्र में किस दिशा में उन्मुख है। दो स्थिति-निर्धारणों के बीच जाइरो गिनती सँभाले रखते हैं।"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-9",
+      "key": "essays/going-to-the-moon.json :: dek",
+      "grade": "MINOR",
+      "issue": "Ungrammatical clause 'हम जाने का कारण बदल गया है'.",
+      "fix": "हम एक बार असाधारण खर्च पर चाँद तक गए, फिर आधी सदी के लिए रुक गए और संस्थागत स्मृति को मर जाने दिया। अब हम उसे फिर से सीख रहे हैं — और इस बार, हमारे जाने का कारण बदल गया है।"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-10",
+      "key": "essays/the-body-in-the-dark.json :: body.22.md",
+      "grade": "BROKEN",
+      "issue": "Garbled sentences ('पृथ्वी ग्रह अंतरिक्ष के पार...', 'घर लौटता है उन तरीकों से कम किया जाता है...') and a truncated sentence that drops the meaning.",
+      "fix": "बेहतर प्रणोदन मायने रखता है। विकास के अधीन [नई इंजन प्रौद्योगिकियाँ](/essays/new-propulsion) — परमाणु-तापीय, परमाणु-विद्युत, सौर पाल, और आगे की दूर-भविष्य की अवधारणाएँ — पारगमन समय घटाएँगी, और पारगमन समय घटाने से संचयी विकिरण जोखिम और संचयी शारीरिक क्षय भी घटता है। 270 दिन के बजाय 90 दिन का पारगमन शरीर के लिए तीन गुना आसान नहीं होता; खुराक और प्रभाव का संबंध रैखिक से अधिक जटिल है, और कुछ तंत्र — मनोवैज्ञानिक, अस्थि, हृदय-संवहनी — अवधि के प्रति इस तरह संवेदनशील हैं कि छोटा संपर्क भी उन्हें पूरी तरह नहीं बचा पाता। लेकिन छोटा बेहतर है। तेज़ इंजन असली चिकित्सा हैं। फिर भी वे समस्या की बुनियादी प्रकृति नहीं बदलते। 90 दिन का पारगमन भी अंतरग्रहीय अंतरिक्ष को बिना चुंबकमंडल, बिना गुरुत्वाकर्षण और बिना किसी बचाव के पार करता है। शरीर अब भी पेलोड है। वह अब भी क्षीण होता है। वह अब भी घर ऐसे लौटता है कि क्षीणता को उलटने में महीनों या वर्षों लगते हैं, अगर वह उलटती भी है।"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-1",
+      "key": "fleet/launcher/titan-ii-glv.json :: description",
+      "grade": "MINOR",
+      "issue": "'वर्कहॉर्स' left as English, masculine plural 'सेवानिवृत्त हुए' for a rocket, fragmentary.",
+      "fix": "Titan II GLV संयुक्त राज्य अमेरिका में Martin Marietta द्वारा बनाया गया एक कक्षीय प्रक्षेपक है। Project Gemini का मुख्य सहारा। 1964 में पहली उड़ान के बाद सेवानिवृत्त।"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-3",
+      "key": "fleet/lander/mars-2.json :: description",
+      "grade": "MINOR",
+      "issue": "Syntax makes the lander (not the dust storm) the subject that obscured the probes; 'अस्पष्ट कर दिया' loose.",
+      "fix": "मंगल ग्रह की सतह पर पहुँचने वाली पहली मानव निर्मित वस्तु — कठोर टक्कर के रूप में। अवरोहण मॉड्यूल 1971 की उस धूल भरी आँधी के दौरान दुर्घटनाग्रस्त हुआ, जिसने उस समय कक्षा में मौजूद हर दूसरे मंगल यान की दृष्टि ढक दी थी। उसके साथी Mars 3 ने दो दिन बाद पहली सॉफ्ट लैंडिंग की।"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-7",
+      "key": "fleet/launch-site/xichang-lc-3.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "'कार्यकर्ता' (a person) is a wrong rendering of 'workhorse'.",
+      "fix": "पहली चीनी GTO सफलता (1984) + संचार उपग्रहों का मुख्य प्रक्षेपण स्थल"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-8",
+      "key": "fleet/crewed-spacecraft/new-shepard.json :: best_known_for",
+      "grade": "BROKEN",
+      "issue": "'चालक दलित' is garbled and 'दलित' carries an unrelated, inappropriate meaning.",
+      "fix": "पहला वाणिज्यिक उप-कक्षीय मानवयुक्त यान"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-10",
+      "key": "fleet/observatory/hubble.json :: name",
+      "grade": "BROKEN",
+      "issue": "Name rule: the Hubble Space Telescope name must stay in English.",
+      "fix": "Hubble Space Telescope"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-18",
+      "key": "fleet/orbiter/voyager-2.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "Word order broken: 'केवल अंतरिक्ष यान सभी चार विशाल ग्रहों की यात्रा करने के लिए'.",
+      "fix": "चारों विशाल ग्रहों की यात्रा करने वाला एकमात्र अंतरिक्ष यान"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-19",
+      "key": "fleet/orbiter/osiris-rex.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "Telegraphic and ungrammatical; Apophis (a named asteroid) should be in Hindi form.",
+      "fix": "बेन्नू से नमूना लौटाया (2023); अब एपोफिस की ओर रवाना"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-20",
+      "key": "fleet/orbiter/magellan.json :: description",
+      "grade": "MINOR",
+      "issue": "'राडार ने ... मैप किया' makes radar the agent; 'सेवानिवृत्त हुए' agreement.",
+      "fix": "Magellan संयुक्त राज्य अमेरिका में Martin Marietta द्वारा निर्मित एक गहन-अंतरिक्ष ऑर्बिटर है। रडार से शुक्र की 98% सतह का मानचित्र बनाया। 1989 में पहली उड़ान के बाद सेवानिवृत्त।"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-21",
+      "key": "fleet/rover/yutu-2.json :: description",
+      "grade": "MINOR",
+      "issue": "Crater named after a person (Von Kármán) left in Latin script.",
+      "fix": "चीन का Chang'e-4 रोवर, चंद्रमा के दूर वाले पक्ष पर संचालित होने वाला पहला रोवर। जनवरी 2019 में वॉन कार्मन क्रेटर में उतरा और छह वर्षों से अधिक समय तक संचालित रहा, जो इसके तीन महीने के डिज़ाइन जीवनकाल से कहीं अधिक है; 2024 की शुरुआत से काफी हद तक स्थिर रहा है।"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-24",
+      "key": "fleet/observatory/tess.json :: tagline",
+      "grade": "MINOR",
+      "issue": "'सर्वव्यापी' is wrong for all-sky; 'संचरण' is not the standard term for transit.",
+      "fix": "पूर्ण-आकाश बहिर्ग्रह पारगमन सर्वेक्षण"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-1",
+      "key": "missions/earth/inspiration4.json :: description",
+      "grade": "MINOR",
+      "issue": "'कक्ष' (chamber) used for 'कक्षा' (orbit); 'cupola' left in Latin.",
+      "fix": "जेरेड आइज़कमैन, सियान प्रॉक्टर, हेली आर्सेनो और क्रिस सेम्ब्रोस्की — पहली कक्षीय उड़ान जिसका दल पूरी तरह ऐसे लोगों से बना था जो पेशेवर सरकारी अंतरिक्ष-यात्री नहीं थे। 2021-09-15 00:02 UTC को LC-39A से Falcon 9 B1062 (तीसरी उड़ान) पर, Crew Dragon Resilience (C207, पहले Crew-1 पर उड़ान भर चुका) के साथ प्रक्षेपित। 51.6° झुकाव पर 585 किमी की वृत्ताकार कक्षा — Hubble सर्विसिंग मिशनों के बाद से सबसे ऊँची मानवयुक्त कक्षा। किसी स्टेशन से डॉकिंग नहीं; तीन दिन की मुक्त उड़ान जिसमें पहला ऑनबोर्ड क्यूपोला (डॉकिंग एडैप्टर की जगह) शामिल था। 2021-09-18 23:06 UTC को फ़्लोरिडा तट के पास स्प्लैशडाउन। मिशन ने St. Jude Children's Research Hospital के लिए $243M से अधिक जुटाए — Arceneaux St. Jude की पूर्व रोगी हैं और कक्षा में पहली कैंसर सर्वाइवर भी।"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-5",
+      "key": "missions/mars/perseverance.json :: dispatch",
+      "grade": "MINOR",
+      "issue": "Ungrammatical 'बिल्कुल वह तरह की जगह', 'कैश किए गए', 'घाटी' for basin; stilted syntax.",
+      "fix": "Perseverance मंगल पर मृतकों को खोजने गया था। 2021 में यह जेज़ेरो क्रेटर के तल पर उतरा — एक बेसिन, जिसमें उस नदी का डेल्टा है जो अरबों साल पहले एक झील को भरती थी, ठीक वैसी जगह जहाँ जीवन अपने निशान छोड़ता — यह पहला रोवर है जो विशेष रूप से प्राचीन जीवन के संकेत खोजने के लिए बना, और कुछ ऐसा करने के लिए जो किसी मिशन ने पहले नहीं किया था: मंगल की चट्टानों को ट्यूबों में बंद करके अलग रख देना, ताकि भविष्य का कोई अंतरिक्ष यान उन्हें घर ले आए। इसने Ingenuity को भी पहुँचाया, वह छोटा हेलीकॉप्टर जिसने किसी दूसरे ग्रह पर पहली संचालित उड़ान भरी। अगर इसके जमा किए नमूने कभी लौटाए गए, तो वे किसी दूसरे ग्रह की सतह के पहले टुकड़े होंगे जो पृथ्वी पर लाए जाएँगे।"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-6",
+      "key": "missions/moon/smart-1.json :: description",
+      "grade": "MINOR",
+      "issue": "Dangling subject ('संचालित ... लौटाया'), 'कब्जा किया गया' passive clumsy, 'पूर्वकालीन' stiff, '-kg' with Latin unit.",
+      "fix": "ESA का पहला चंद्र मिशन और चंद्रमा तक पहुँचने वाला पहला यूरोपीय अंतरिक्ष यान। SMART = Small Missions for Advanced Research in Technology — और मुख्य प्रौद्योगिकी एक हॉल-इफेक्ट सौर-विद्युत आयन थ्रस्टर (PPS-1350-G) थी, जो उस समय तक उड़ाया गया सबसे बड़ा ऐसा थ्रस्टर था। कूरू से Ariane 5 पर साझा पेलोड के रूप में 2003-09-27 को प्रक्षेपित, 367 किग्रा के इस अंतरिक्ष यान ने अपने 1.2 kW जेनॉन आयन ड्राइव का उपयोग 13 महीनों तक पृथ्वी की कक्षा को धीरे-धीरे ऊँचा करने के लिए किया, और अंततः 2004-11-15 को चंद्र गुरुत्वाकर्षण ने इसे पकड़ लिया — यह 13 महीने का निम्न-थ्रस्ट सर्पिल था, पहले के हर चंद्र मिशन के कुछ दिनों के रासायनिक स्थानांतरण से बिल्कुल अलग। यह 16 महीने तक ध्रुवीय चंद्र कक्षा में संचालित रहा और AMIE कैमरे की तस्वीरें, चंद्रमा के पहले एक्स-रे प्रतिदीप्ति तत्व मानचित्र (D-CIXS) और अवरक्त खनिज स्पेक्ट्रोस्कोपी (SIR) भेजता रहा। 2006-09-03 05:42 UTC पर इसे जानबूझकर Lacus Excellentiae (34.4° S, 46.2° W) पर टकराया गया — टक्कर की चमक Canada-France-Hawaii Telescope से सीधे देखी गई।"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-7",
+      "key": "missions/neptune/voyager-2.json :: description",
+      "grade": "BROKEN",
+      "issue": "Several meaning errors: 'calling card' as 'बुलाहट', 'revealed' as 'खोले', 'sail' as 'प्लावित', and an ungrammatical final sentence.",
+      "fix": "बजट तंग होने पर भी चलते रहने वाला जुड़वाँ, Voyager 2 ने Grand Tour को बृहस्पति और शनि से आगे अरुण और वरुण तक पहुँचाया — बर्फ़ीले दानवों की आज भी हमारे पास यही एकमात्र नज़दीकी तस्वीरें हैं। 1989 में वरुण से इसकी मुलाक़ात ने Great Dark Spot और ट्राइटन के गीज़र उजागर किए। आज दोनों Voyager अंतरतारकीय अंतरिक्ष में चल रहे हैं, मानवता के परिचय-पत्र के रूप में सुनहरी रिकॉर्ड के साथ। Orrery वरुण को सूची के गंतव्य के रूप में दिखाता है; असली मार्ग कई गुरुत्व-सहायताओं पर निर्भर था।"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-9",
+      "key": "missions/earth/friendship-7.json :: description",
+      "grade": "MINOR",
+      "issue": "The retropack sentence is garbled; 'छींटे पड़े' is a machine-like rendering of splashdown.",
+      "fix": "जॉन ग्लेन की 3-कक्षीय उड़ान — पृथ्वी की परिक्रमा करने वाले पहले अमेरिकी, गगारिन के 10 महीने बाद और तितोव के 4 महीने बाद। कक्षा: 159 × 265 किमी, झुकाव 32.5°। मिशन नियंत्रण में एक ताप-ढाल चेतावनी संकेतक ने सुझाया कि ढाल ढीली हो सकती है — इसलिए बैकअप के तौर पर रेट्रोपैक को पुनः प्रवेश तक जुड़ा रखा गया, जिससे ग्लेन की प्रसिद्ध \"जुगनू\" वाली टिप्पणी निकली, जब रेट्रोपैक के टुकड़े घिसते हुए खिड़की के पास से गुज़रे। केप केनवरल से 1287 किमी दक्षिण-पूर्व में समुद्र में उतरा (स्प्लैशडाउन), प्रक्षेपण के 4 घंटे 55 मिनट बाद। ग्लेन 36 साल बाद STS-95 (1998) पर अंतरिक्ष में लौटे, जब उनकी आयु 77 वर्ष थी। Friendship 7 वाशिंगटन DC के National Air and Space Museum में प्रदर्शित है।"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-10",
+      "key": "missions/venus/vega-1.json :: first",
+      "grade": "MINOR",
+      "issue": "Gender error 'अन्य ग्रह की वायुमंडल' and clumsy ordering.",
+      "fix": "किसी अन्य ग्रह के वायुमंडल (शुक्र, 1985) में पहली बार तैनात किया गया गुब्बारा एरोस्टैट; सौर मंडल के दो अलग-अलग लक्ष्यों तक विज्ञान पहुँचाने वाला पहला अंतरिक्ष यान"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-12",
+      "key": "missions/jupiter/juice.json :: description",
+      "grade": "BROKEN",
+      "issue": "Non-word 'गुजरवट', 'Galilean' left untranslated, awkward tenses and 'JUpiter ICy moons Explorer' expansion dropped.",
+      "fix": "JUpiter ICy moons Explorer — ESA का L-श्रेणी का प्रमुख मिशन, 2023-04-14 को प्रक्षेपित। 8 साल की यात्रा में अब तक की सबसे जटिल गुरुत्व-सहायता शृंखलाओं में से एक उड़ाई जा रही है: 2024-08-19 को पहली बार चंद्र-पृथ्वी गुरुत्व-सहायता, 2025-08-31 को शुक्र, फिर 2026 और 2029 में पृथ्वी के पास से दो और गुज़ार। बृहस्पति कक्षा-प्रवेश 2031-07-21 के लिए निर्धारित है। 3.5 वर्षों में यूरोपा, गैनिमीड और कैलिस्टो के 35 नज़दीकी फ्लाईबाई के बाद, JUICE 2034-12-31 को गैनिमीड की समर्पित कक्षा में जाएगा — किसी अन्य ग्रह के चंद्रमा की परिक्रमा करने वाला पहला अंतरिक्ष यान। मिशन 2035 में गैनिमीड से टकराकर समाप्त होगा। प्राथमिक विज्ञान: बर्फ़ीले गैलीलियन चंद्रमाओं में उपसतही महासागरों का अस्तित्व और गुण, बर्फ़-खोल की संरचना और ज्वारीय तापन, तथा बृहस्पति के चुंबकमंडल की संरचना।"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-13",
+      "key": "missions/saturn/huygens.json :: dispatch",
+      "grade": "MINOR",
+      "issue": "'Christmas Day' left in English, 'नेविगेट किया' for coasted, 'ताप ढाल ने जरूरी समय खरीदा' literal.",
+      "fix": "Huygens कक्षा में जाने के लिए नहीं, गिरने के लिए भेजा गया था। सात साल तक Cassini से बंधा रहने के बाद, यह क्रिसमस के दिन 2004 को अलग हुआ और बीस दिन तक अकेले टाइटन की ओर बढ़ता रहा। जब यह छह किलोमीटर प्रति सेकंड की गति से टाइटन के वायुमंडल से टकराया, तो ताप ढाल ने इसे ज़रूरी समय दिलाया; फिर तीन पैराशूट चरणों ने इसे ढाई घंटे तक एक नारंगी धुंध के बीच धीमा किया, जिसे किसी उपकरण ने पहले कभी पार नहीं किया था। इसने नदी की घाटियों की तस्वीरें लीं, हवा की गति नापी, वायुमंडल को सूँघा — और गोल जल-बर्फ़ के कंकड़ों वाले बाढ़ के मैदान पर उतरा। बाहरी सौर मंडल में यह पहली लैंडिंग थी, और तब से कोई अंतरिक्ष यान वहाँ नहीं उतरा है।"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-15",
+      "key": "missions/earth/skylab-4.json :: description",
+      "grade": "BROKEN",
+      "issue": "Nonsense phrases ('निरलस ग्राउंड-कंट्रोलर मांगों', 'विश्राम-दिवस स्टैंड-डाउन खाता'), garbled 'best remembered' clause and untranslated 'strike/splashdown'.",
+      "fix": "कार, गिब्सन और पोग — Skylab का अंतिम और सबसे लंबा दल, 84 दिन 1 घंटा, सब नए। 1973-11-16 14:01 UTC को Saturn IB (SA-208) पर प्रक्षेपित। व्यापक पृथ्वी-संसाधन और सौर अवलोकन, जिसमें दिसंबर–जनवरी में पूरा Comet Kohoutek अभियान शामिल है। यह मिशन सबसे ज़्यादा उस घटना के लिए याद किया जाता है जिसे NASA ने बाद में 'Skylab विद्रोह' या 'हड़ताल' कहा — 42वें दिन के आसपास एक विश्राम-दिवस पर काम रोकने का विवादित वृत्तांत, जो ज़मीनी नियंत्रकों की लगातार माँगों के बाद आया, जिन्होंने जागने के हर मिनट को ठूँस दिया था; NASA और दल का कहना है कि कोई संगठित हड़ताल नहीं हुई, लेकिन समय-सारणी का अतिभार वास्तविक था और इसी से दीर्घावधि मिशनों के लिए दल की समय-सारणी बनाने में NASA के स्थायी सुधार हुए। 1974-02-08 15:17 UTC को समुद्र में उतरा — Skylab का अंतिम स्प्लैशडाउन। CSM-118 National Museum of the US Air Force, Dayton OH में प्रदर्शित है।"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-16",
+      "key": "missions/earth/shenzhou-1.json :: description",
+      "grade": "MINOR",
+      "issue": "Awkward phrasing ('क्रू यान', 'प्रतिबद्धता को चिन्हित किया ... पालन करने की') and truncated verb sentences.",
+      "fix": "Shenzhou मानवयुक्त अंतरिक्ष यान कार्यक्रम की पहली उड़ान। 1999-11-19 को 22:30 UTC पर जिउकुआन से मानव-रेटेड Long March 2F (CZ-2F) की पहली उड़ान पर प्रक्षेपित। कैप्सूल ने 195 × 315 किमी की कक्षा में, 42.6° झुकाव पर, 14 परिक्रमाएँ पूरी कीं, और 1999-11-20 को 19:41 UTC पर भीतरी मंगोलिया के घास के मैदान में पुनः प्रवेश कर बरामद हुआ। इसमें नकली जीवन-समर्थन उपकरण, टेलीमेट्री पैकेज और एक चीनी झंडा था, साथ ही सूक्ष्मगुरुत्व-आनुवंशिकी के वापसी कार्गो के लिए बीज। यह सोवियत संघ / अमेरिका के बाद स्वतंत्र मानवयुक्त अंतरिक्ष उड़ान की ओर चीन की प्रतिबद्धता का प्रतीक बना; और सीधे Shenzhou 5 (2003) तक पहुँचा, जिसमें यांग लिवेइ थे।"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-17",
+      "key": "missions/saturn/huygens.json :: description",
+      "grade": "BROKEN",
+      "issue": "'अवसनिक' is a non-word (subsonic), 'ने ... पहुंचे' agreement errors, 'वंश' for descent, garbled syntax throughout.",
+      "fix": "ESA की Huygens जांच NASA के Cassini अंतरिक्ष यान पर सवार होकर 7 साल की अंतरग्रहीय यात्रा से शनि प्रणाली तक गई और जुलाई 2004 में शनि पहुँची। 2004-12-25 को छोड़े जाने के बाद यह 20 दिन तक आगे बढ़ती रही और 2005-01-14 को 6 किमी/सेकंड की गति से टाइटन के नाइट्रोजन–मीथेन वायुमंडल में प्रविष्ट हुई। एक एयरोशेल ने जांच को ध्वनि की गति से नीचे तक धीमा किया; फिर तीन क्रमिक पैराशूट चरणों ने इसे 2 घंटे 27 मिनट के अवरोहण में उतारा और टाइटन के वायुमंडल के पहले प्रत्यक्ष माप जुटाए — सभी ऊँचाइयों पर तापमान, दबाव, हवा और रासायनिक संघटन। जांच ने अवरोहण के दौरान 350 तस्वीरें प्रेषित कीं और सतह से 72 मिनट तक प्रसारण जारी रखा, जिसमें 10.3°S, 192.3°W पर तरल मीथेन की पतली परत के नीचे गोल जल-बर्फ़ के कंकड़ों का बाढ़ का मैदान दिखा।"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-19",
+      "key": "missions/neptune/voyager-2.json :: dispatch",
+      "grade": "BROKEN",
+      "issue": "Meaning errors: 'tipped on its side' became 'अपनी ओर झुका', 'interstellar' became 'तारकीय', gender error on 'जमी हुई चाँद'.",
+      "fix": "Voyager 2 ने वह यात्रा की जो शायद फिर कभी नहीं की जा सकेगी। अपने जुड़वाँ से सोलह दिन पहले एक धीमे, लंबे चाप पर प्रक्षेपित, यह अब तक का एकमात्र अंतरिक्ष यान है जो अरुण और वरुण तक पहुँचा — दो ऐसी दुनियाएँ जो दशकों बाद भी हमें लगभग पूरी तरह उन्हीं कुछ घंटों से ज्ञात हैं जो इसने हर एक के पास से तेज़ी से गुज़रते हुए बिताए। इसने अपनी बगल पर झुका हुआ एक ग्रह पाया, सौर मंडल की सबसे तेज़ हवाएँ, और एक जमा हुआ चाँद जो अंतरिक्ष में गीज़र छोड़ रहा था, और फिर यह भी 2018 में अंतरतारकीय अंतरिक्ष में पहुँच गया। बर्फ़ीले दानव ग्रहों पर लौटने की हर गंभीर योजना आज भी उस पर टिकी है जो इस अकेले अंतरिक्ष यान ने अपने जाते हुए रास्ते में देखा था।"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-20",
+      "key": "missions/neptune/voyager-2.json :: first",
+      "grade": "MINOR",
+      "issue": "'visit' is dropped and the sentence is truncated; 'दानव ग्रहों' vs usual 'विशाल ग्रहों'.",
+      "fix": "अरुण और वरुण की यात्रा करने वाला एकमात्र अंतरिक्ष यान; चार विशाल ग्रहों का Grand Tour"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-23",
+      "key": "missions/moon/chandrayaan1.json :: description",
+      "grade": "BROKEN",
+      "issue": "ISRO must be इसरो; gender error 'पहला भारतीय वस्तु'; missing verb in the last sentence.",
+      "fix": "इसरो का पहला अंतरग्रहीय अंतरिक्ष यान। ऑर्बिटर ने चंद्र सतह पर Moon Impact Probe पहुँचाया — किसी अन्य दुनिया पर पहली भारतीय वस्तु — और 6 देशों के 11 उपकरण साथ ले गया। NASA का Moon Mineralogy Mapper (M3) उपकरण, जो चंद्रयान-1 पर लगा था, उस खोज का कारण बना जिसने पाठ्यपुस्तकें फिर से लिखीं: जल के अणु चंद्र सतह पर व्यापक रूप से मौजूद हैं, केवल ध्रुवीय छाया वाले क्रेटरों में बंद नहीं। अगस्त 2009 में मिशन अचानक समाप्त हो गया, जब इसरो का अंतरिक्ष यान से संपर्क टूट गया।"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-24",
+      "key": "missions/mars/mariner4.json :: description",
+      "grade": "MINOR",
+      "issue": "Telegraphic, word order broken ('क्रेटर वाली सतह दिखाईं चंद्रमा जैसी').",
+      "fix": "वह मिशन जिसने रहने योग्य मंगल के सपने खत्म कर दिए। Mariner 4 की 22 दानेदार तस्वीरों ने, जो 9,846 किमी की ऊँचाई पर 25 मिनट की निकटतम पहुँच के दौरान ली गईं, चंद्रमा जैसी क्रेटर-भरी सतह दिखाई — न नहरें, न वनस्पति, न कोई स्पष्ट जीवन। वायुमंडल अपेक्षा से 100 गुना पतला था। इस खोज ने जनकल्पना में मंगल को बहन-पृथ्वी से मृत संसार में बदल दिया। यान की ट्रैकिंग से ग्रहों के बीच सौर पवन की संरचना का पहला माप भी मिला।"
+    },
+    {
+      "segment": "mission event notes",
+      "id": "mission-2",
+      "key": "missions/moon/apollo8.json :: events.4.note",
+      "grade": "MINOR",
+      "issue": "'Genesis' (the Bible book) left untranslated and 'दर्शक' used for audience size awkwardly.",
+      "fix": "चालक दल लाइव टीवी पर उत्पत्ति (Genesis) का पाठ करता है, जिसे लगभग 1 अरब दर्शक देखते हैं — उस समय तक का सबसे बड़ा लाइव टीवी दर्शक-वर्ग।"
+    },
+    {
+      "segment": "mission event notes",
+      "id": "mission-5",
+      "key": "missions/earth/freedom-7.json :: events.0.note",
+      "grade": "MINOR",
+      "issue": "Ends with a Latin full stop instead of the danda used elsewhere.",
+      "fix": "केप केनवरल LC-5 से Mercury-Redstone 3 (MR-3), 1961-05-05 14:34 UTC।"
+    },
+    {
+      "segment": "mission event notes",
+      "id": "mission-6",
+      "key": "missions/bennu/osiris-rex.json :: events.2.note",
+      "grade": "MINOR",
+      "issue": "Wrong object ('कक्षा को कसता है'), gender error, and awkward 'सबसे करीब का अंतरिक्ष यान कक्षा'.",
+      "fix": "बेन्नू पर पहुँचता है; ~19 किमी पर स्टेशन-कीपिंग करता है, फिर धीरे-धीरे कक्षा को कसते हुए रिकॉर्ड ~1.4 किमी तक ले आता है — किसी भी खगोलीय पिंड के चारों ओर अब तक की सबसे निकट अंतरिक्ष यान कक्षा।"
+    },
+    {
+      "segment": "mission event notes",
+      "id": "mission-8",
+      "key": "missions/pluto/new-horizons.json :: events.1.note",
+      "grade": "MINOR",
+      "issue": "Telegraphic and ungrammatical ('डेटा पृथ्वी में बाढ़').",
+      "fix": "यम का निकटतम संपर्क; तेज़ दर की इमेजिंग और प्लाज़्मा डेटा की बाढ़ पृथ्वी तक पहुँचती है।"
+    },
+    {
+      "segment": "mission event notes",
+      "id": "mission-12",
+      "key": "missions/moon/apollo13.json :: events.3.note",
+      "grade": "BROKEN",
+      "issue": "Module name Aquarius transliterated (must stay English); 'शक्ति और पानी कम हो जाता है' agreement; 'टैंक टूटने' loose.",
+      "fix": "SM क्रायो-स्टिर कमांड से शॉर्ट-सर्किट आग लगती है और टैंक फट जाता है। \"Houston, we've had a problem.\" बिजली और पानी घटते जाते हैं; LM Aquarius जीवन-नौका बन जाता है।"
+    },
+    {
+      "segment": "mission event notes",
+      "id": "mission-13",
+      "key": "missions/earth/apollo-1.json :: events.2.note",
+      "grade": "BROKEN",
+      "issue": "Meaning inverted: 'crewed' rendered as 'मानव-रहित' (uncrewed).",
+      "fix": "Apollo मानवयुक्त कार्यक्रम 21 महीनों के लिए रोका गया। मरणोपरांत सम्मान में मिशन का नाम Apollo 1 रखा गया।"
+    },
+    {
+      "segment": "mission event notes",
+      "id": "mission-22",
+      "key": "missions/moon/artemis2.json :: events.3.note",
+      "grade": "MINOR",
+      "issue": "'दूर पार्श्व' and 'कक्षा समावेश' are unnatural for far side and orbit insertion.",
+      "fix": "चंद्रमा के सुदूर भाग के ऊपर निकटतम पहुँच, ~9,200 km ऊँचाई। कक्षा-प्रवेश नहीं — मुक्त-वापसी ज्यामिति Orion को पृथ्वी की ओर लौटा देती है।"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-9",
+      "key": "original-work.json :: models3d./images/colophon/model-launcher-mercury-redstone_webp.what",
+      "grade": "MINOR",
+      "issue": "'crewed' left in English.",
+      "fix": "अमेरिका का पहला मानवयुक्त प्रक्षेपक — चार पूँछ-पंखों वाला पतला एकल-इंजन Redstone, Mercury कैप्सूल और एस्केप टावर (Freedom 7) के साथ।"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-11",
+      "key": "original-work.json :: models3d./images/colophon/model-cruise-chandrayaan3_webp.what",
+      "grade": "BROKEN",
+      "issue": "Indian names must be Devanagari: ISRO and Vikram left in Latin.",
+      "fix": "विक्रम लैंडर को ले जाता इसरो का प्रणोदन मॉड्यूल।"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-14",
+      "key": "original-work.json :: models3d./images/colophon/model-launcher-saturn-ib_webp.where",
+      "grade": "MINOR",
+      "issue": "Inconsistent with the other 'Fly · launch/ascent' entry ('उड़ान ·' vs 'उड़ें ·').",
+      "fix": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-21",
+      "key": "rockets/lvm3.json :: description",
+      "grade": "BROKEN",
+      "issue": "ISRO must be इसरो per the Indian-name rule.",
+      "fix": "इसरो का तीन चरणों वाला प्रक्षेपण यान (पूर्व GSLV Mk III): दो ठोस S200 बूस्टर, एक द्रव L110 कोर, और स्वदेश-विकसित क्रायोजेनिक CE-20 ऊपरी चरण। चंद्रयान-2 (2019) और चंद्रयान-3 (2023) को चंद्र प्रक्षेप पथों पर पहुँचाया। आगामी गगनयान मानवयुक्त कार्यक्रम के लिए मानव-रेटेड।"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-24",
+      "key": "orbit-regimes-explore/GIANTS.json :: firsts.1.label",
+      "grade": "MINOR",
+      "issue": "Garbled word order ('एकमात्र अरुण उड़ान कभी').",
+      "fix": "Voyager 2 — अरुण का अब तक का एकमात्र फ्लाईबाई (USA)"
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-3",
+      "key": "moon-sites/apollo12.json :: fact",
+      "grade": "MINOR",
+      "issue": "Gender/agreement slips ('भविष्य की मिलन मिशनों', 'संकल्पना का प्रमाण').",
+      "fix": "सटीक लैंडिंग — कॉनराड बिना चालक दल वाले Surveyor 3 यान (1967) से ~163 मीटर के भीतर उतरे। वे उसके कुछ हिस्से पृथ्वी पर लौटाने के लिए ले आए, जिससे दिखा कि अंतरिक्ष यान चंद्रमा पर वर्षों तक विकिरण या सूक्ष्म उल्कापिंडों से बिना क्षतिग्रस्त हुए टिके रह सकते हैं। भविष्य के मिलन-मिशनों के लिए अवधारणा का प्रमाण।"
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-7",
+      "key": "planets/jupiter.json :: science_sections.2.why",
+      "grade": "MINOR",
+      "issue": "'Jovian' left in Latin; mixed tenses.",
+      "fix": "बृहस्पति बाह्य-मंडल मिशनों के लिए पसंदीदा गुरुत्व-सहायता लक्ष्य है — Voyager 1+2, Cassini, Galileo, New Horizons, Juno, Europa Clipper और JUICE सभी ने वेग बढ़ाने के लिए बृहस्पति के पास से फ्लाईबाई का उपयोग किया या कर रहे हैं।"
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-11",
+      "key": "small-bodies/haumea.json :: science_sections.1.why",
+      "grade": "MINOR",
+      "issue": "Gender agreement ('वाली खगोलीय पिंड').",
+      "fix": "हउमेया कुइपर बेल्ट में एक छोटे संघट्टन परिवार का हिस्सा है — समान कक्षाओं और स्पेक्ट्रा वाले पिंड जो एक प्राचीन मातृ पिंड साझा करते हैं।"
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-15",
+      "key": "small-bodies/halley.json :: science_sections.0.why",
+      "grade": "MINOR",
+      "issue": "'विकेंद्रता' inconsistent with 'उत्केंद्रता' used elsewhere; perihelion/aphelion terms inconsistent.",
+      "fix": "हैली की 0.967 उत्केंद्रता अल्पकालीन धूमकेतु की पाठ्यपुस्तकीय कक्षा है — लगभग परवलयिक, उपसौर 0.59 AU और अपसौर 35 AU के साथ।"
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-18",
+      "key": "planets/uranus.json :: science_sections.2.why",
+      "grade": "MINOR",
+      "issue": "'अण्डाकार तल' wrongly renders ecliptic plane; gender error 'अरुण की झुकाव'.",
+      "fix": "अरुण के पाँच प्रमुख चंद्रमा (मिरांडा, एरियल, अम्ब्रिएल, टाइटेनिया, ओबेरॉन) अरुण का झुकाव साझा करते हैं — वे भूमध्यरेखीय तल में परिक्रमा करते हैं, जो क्रांतिवृत्त तल के लगभग लंबवत है।"
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-19",
+      "key": "planets/jupiter.json :: science_sections.3.why",
+      "grade": "MINOR",
+      "issue": "Devanagari digits inconsistent with the rest; 'हिल गोल' and 'कुआँ' awkward.",
+      "fix": "बृहस्पति का विशाल हिल गोला (50 मिलियन किमी त्रिज्या) ही इसके 101 चंद्रमाओं वाले तंत्र को स्थिर रखता है — गुरुत्वीय कूप उपसौर पर लगभग मंगल तक फैला होता है।"
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-20",
+      "key": "small-bodies/bennu.json :: science_sections.0.why",
+      "grade": "MINOR",
+      "issue": "Spelling inconsistent with 'बेन्नू' elsewhere; 'मिल सके' vague for rendezvous.",
+      "fix": "बेन्नू एक पृथ्वी-निकट क्षुद्रग्रह है (अर्ध-दीर्घ अक्ष 1.13 AU) — इतना निकट कि OSIRIS-REx उससे मिलन कर सका, नमूना ले सका और 7 वर्षों में सामग्री पृथ्वी पर लौटा सका।"
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-21",
+      "key": "mars-sites/insight.json :: capability",
+      "grade": "MINOR",
+      "issue": "'स्थलीय' means terrestrial, not crustal.",
+      "fix": "किसी अन्य ग्रह के आंतरिक भाग की पहली भूकंपीय खोज — मंगल के कोर का आकार और पर्पटी की मोटाई निर्धारित की।"
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-23",
+      "key": "small-bodies/eris.json :: science_sections.0.why",
+      "grade": "MINOR",
+      "issue": "'ग्रहण' means eclipse, not ecliptic; 'scattered-disc' left in English.",
+      "fix": "एरिस का 44° कक्षीय झुकाव किसी भी सूचीबद्ध बड़े पिंड में सबसे अधिक में से है — इसका प्रकीर्णित-चक्र मूल इसे क्रांतिवृत्त से बहुत दूर रखता है।"
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-25",
+      "key": "planets/menoetius.json :: fact",
+      "grade": "BROKEN",
+      "issue": "Factual error: the Patroclus-Menoetius pair is a binary asteroid, not a 'द्वैध तारा'; 'L5 Trojan' untranslated; gender slip 'का मुठभेड़'.",
+      "fix": "L5 ट्रोजन झुंड में पेट्रोक्लस-मेनोएतिअस द्वि-क्षुद्रग्रह का 104 किमी का द्वितीयक पिंड — पेट्रोक्लस का लगभग समान द्रव्यमान वाला साथी, जो 680 किमी दूर है। Lucy की 2033-03 की मुठभेड़ किसी ट्रोजन द्वि-क्षुद्रग्रह प्रणाली की पहली नज़दीकी झलक होगी, जो दोनों साथियों का एक साथ मानचित्र बनाएगी।"
+    },
+    {
+      "segment": "programs (long editorial)",
+      "id": "programs-1",
+      "key": "programs/jaxa-robotic.json :: outcome.2.md",
+      "grade": "MINOR",
+      "issue": "'write-off' rendered as 'लिखावट' (handwriting), a wrong term that garbles the sentence.",
+      "fix": "इन नतीजों में जो बात साझा है, वह है किसी विफल मिशन को खोया हुआ मिशन मानने से इनकार। Akatsuki को छोड़ दिया जाना चाहिए था; SLIM की उलटी लैंडिंग से उसका विज्ञान खत्म हो जाना चाहिए था; हर एक को उन टीमों ने बचाया जिन्होंने टूटे हुए यान को बट्टे खाते की चीज़ नहीं, बल्कि हल करने की पहेली माना। नतीजे असली ग्रह-विज्ञान हैं — शुक्र के वायुमंडल की गतिकी, विस्तृत चंद्र भूविज्ञान, प्रदर्शित सटीक लैंडिंग — ऐसे मिशनों से मिले जिन्हें बार-बार कुछ भी नहीं दे पाना चाहिए था।"
+    },
+    {
+      "segment": "programs (long editorial)",
+      "id": "programs-2",
+      "key": "programs/viking.json :: lessons.0.md",
+      "grade": "MINOR",
+      "issue": "Garbled 'न तो हाँ था न ही न' and clumsy final clause.",
+      "fix": "Viking का सबक यह है कि सबसे महत्वपूर्ण सवाल शायद ही कभी एक प्रयोग में सुलझते हैं। Viking ने अपने युग के सर्वोत्तम उपकरण से पूछा कि क्या मंगल पर जीवन है, और जवाब मिला जो न हाँ था न ना — और ईमानदार प्रतिक्रिया अस्पष्टता की रिपोर्ट करना थी, निश्चितता गढ़ना नहीं। कठिन सवालों के जवाब आम तौर पर साक्ष्य के धीमे जमा होते वज़न से मिलते हैं, किसी एक साफ़ नतीजे से नहीं, और किसी चतुर परीक्षण को अंतिम मान लेना ही खुद को मूर्ख बनाने का तरीका है।"
+    },
+    {
+      "segment": "programs (long editorial)",
+      "id": "programs-3",
+      "key": "programs/chandrayaan.json :: legacy.1.md",
+      "grade": "MINOR",
+      "issue": "Dangling syntax ('भारत वहां पहले पहुंचा, इसे ... दावा देता है').",
+      "fix": "इसकी दूसरी विरासत चंद्र दक्षिणी ध्रुव के निकट पहली सॉफ्ट लैंडिंग है — वह क्षेत्र जिसे हर भावी चंद्र कार्यक्रम निशाना बना रहा है। भारत वहाँ सबसे पहले पहुँचा, जिससे उसे चंद्रमा के सबसे महत्वपूर्ण गंतव्य पर नेतृत्व का वास्तविक दावा मिलता है और कठिनाई से कमाया लैंडिंग अनुभव भी, जिस पर आगे के मिशन निर्माण करेंगे।"
+    },
+    {
+      "segment": "programs (long editorial)",
+      "id": "programs-4",
+      "key": "programs/jaxa-robotic.json :: goals.2.md",
+      "grade": "MINOR",
+      "issue": "'सरल उड़ान भरने' and 'प्रमुख बजट' do not convey 'fly lean' and 'flagship budget'.",
+      "fix": "इन सभी में चलने वाला इंजीनियरिंग लक्ष्य सीमित बजट में सटीकता और स्वायत्तता है — दृष्टि-आधारित नेविगेशन, सावधानीपूर्ण प्रणोदक प्रबंधन, और इतने चतुर अंतरिक्ष यान कि किसी अहम प्रणाली के विफल होने पर उन्हें बचाया जा सके। JAXA के कार्यक्रम असल में एक लंबा तर्क हैं कि अग्रिम पंक्ति का विज्ञान करने के लिए फ्लैगशिप बजट ज़रूरी नहीं, अगर आप हल्के-फुल्के उड़ने और तेज़ी से सोचने को तैयार हों।"
+    },
+    {
+      "segment": "programs (long editorial)",
+      "id": "programs-8",
+      "key": "programs/tiangong.json :: legacy.2.md",
+      "grade": "MINOR",
+      "issue": "Awkward double 'के साथ' construction and garbled final clause.",
+      "fix": "और यह कक्षा का दूसरा प्रवेश द्वार है। चूँकि ISS साझेदारी ऐतिहासिक रूप से चीन के लिए बंद रही है, Tiangong दुनिया के बाकी हिस्सों को मानव अंतरिक्ष उड़ान के लिए एक वैकल्पिक मेज़बान देता है — जो अपनी भू-राजनीति के साथ आता है, लेकिन ठोस रूप से यह दायरा बढ़ाता है कि किसी स्टेशन तक लोगों और प्रयोगों को भेजने का मौका किसे मिलता है।"
+    },
+    {
+      "segment": "science articles (editorial)",
+      "id": "science-3",
+      "key": "science/cosmology/large-scale-structure.json :: body_paragraphs.0",
+      "grade": "BROKEN",
+      "issue": "Garbled: 'नेस्ट करता है', 'समूह और समूह' (groups vs clusters not distinguished), 'एक गुरुत्वाकर्षण कुआं में एक हजार से अधिक आकाशगंगाएँ', English names left untranslated.",
+      "fix": "पदानुक्रम एक के भीतर एक बसा है। तारे आकाशगंगाओं में इकट्ठा होते हैं; आकाशगंगाएँ समूहों (जैसे हमारा स्थानीय समूह) और समृद्ध गुच्छों (जैसे कन्या गुच्छ, जिसमें एक ही गुरुत्वीय कूप में बँधी हज़ार से अधिक आकाशगंगाएँ हैं) में एक साथ गिरती हैं। समूह और गुच्छ स्वयं अधिगुच्छों में खिंच जाते हैं — ढीली, फैली हुई सांद्रताएँ जो दसियों मेगापार्सेक में फैली हैं। हमारा स्थानीय समूह कन्या अधिगुच्छ के बाहरी इलाके में है, जो ~33 मेगापार्सेक (लगभग 11 करोड़ प्रकाश-वर्ष) चौड़ा है और कन्या गुच्छ पर केंद्रित है।"
+    },
+    {
+      "segment": "science articles (editorial)",
+      "id": "science-4",
+      "key": "science/life-in-space/eva-physiology.json :: body_paragraphs.1",
+      "grade": "MINOR",
+      "issue": "'प्रतिरोध उपाय' for countermeasure and 'एयरलॉक विमुक्त दबाव से पहले' are garbled.",
+      "fix": "इसका उपाय प्री-ब्रीद है: बाहर निकलने से पहले क्रमशः घटते दबाव पर घंटों शुद्ध ऑक्सीजन में साँस लेना, ताकि शरीर के ऊतकों से नाइट्रोजन बाहर निकल जाए। ISS का वर्तमान अमेरिकी-पक्ष प्रोटोकॉल सूट के भीतर प्री-ब्रीद और Campout प्रोटोकॉल (रात भर 10.2 psi पर) का उपयोग करता है, जो एयरलॉक का दबाव घटाने से पहले कुल लगभग 4 घंटे बैठता है। रूसी Orlan सूट 5.7 psi पर चलते हैं, जिससे प्री-ब्रीद काफी छोटा हो जाता है — अलग समझौता।"
+    },
+    {
+      "segment": "science articles (editorial)",
+      "id": "science-5",
+      "key": "science/mission-phases/entry-footprint.json :: body_paragraphs.0",
+      "grade": "MINOR",
+      "issue": "Untranslated English in the middle of Hindi ('बैंकिंग', 'विंगड वाहन', 'लिफ्ट-ऊपर') and clumsy 'तीव्र, तेजी से आगमन'.",
+      "fix": "फुटप्रिंट डाउनरेंज–क्रॉसरेंज समतल में पहुँचने योग्य क्षेत्र है। डाउनरेंज मुख्यतः इससे तय होता है कि यान ऊर्ध्वाधर लिफ्ट कैसे खर्च करता है: पूरी लिफ्ट ऊपर की ओर होने पर दूरी अधिकतम होती है (कैप्सूल \"तैरता\" है, धीरे-धीरे मंद होता है और दूर तक जाता है), पूरी लिफ्ट नीचे की ओर होने पर न्यूनतम (तीखा, तेज़ आगमन)। क्रॉसरेंज लिफ्ट को बगल की ओर झुकाने से आती है, और इसका विस्तार L/D के साथ बढ़ता है। कम L/D वाले कैप्सूल के लिए फुटप्रिंट मामूली है; लिफ्टिंग बॉडी या पंखदार यान के लिए यह विशाल है।"
+    },
+    {
+      "segment": "science articles (editorial)",
+      "id": "science-6",
+      "key": "science/mission-phases/gravity-turn.json :: narrative_101.0",
+      "grade": "MINOR",
+      "issue": "'सबसे गहरी हवा' for thickest air and 'लिफ्ट ऑफ करता है' are unnatural.",
+      "fix": "रॉकेट सीधे ऊपर की ओर उड़कर कक्षा में नहीं पहुँचता। वह पैड से हटने और सबसे घनी हवा को चीरने के लिए सीधा ऊपर उठता है, फिर धीरे-धीरे क्षितिज की ओर झुकता जाता है। इंजन बंद होने तक वह लगभग बगल की दिशा में उड़ रहा होता है — क्योंकि कक्षा का मतलब ऊपर की ओर काफ़ी ऊँचे जाना नहीं, बगल की ओर काफ़ी तेज़ जाना है।"
+    },
+    {
+      "segment": "science articles (editorial)",
+      "id": "science-7",
+      "key": "science/porkchop/_intro.json :: paragraphs.0",
+      "grade": "MINOR",
+      "issue": "Awkward renderings ('चॉप का मांस', 'महंगी रिज हड्डी है'), inconsistent transliteration ('ट्रैजेक्टरी').",
+      "fix": "मिशन योजनाकार मंगल के लिए एक ही प्रक्षेप पथ की गणना नहीं करते — वे लाखों की गणना करते हैं, एक विशाल ग्रिड में, और उनसे हीटमैप बनाते हैं। सस्ते प्रक्षेप पथ ठंडे नीले उभारों के रूप में दिखते हैं। महँगे लाल हो जाते हैं। नतीजा, अजीब ढंग से, पोर्क चॉप जैसा दिखता है। सस्ता क्षेत्र चॉप का गूदा है; महँगी कटक उसकी हड्डी।"
+    },
+    {
+      "segment": "science articles (editorial)",
+      "id": "science-8",
+      "key": "science/history/goddard-liquid-rocket-1926.json :: body_paragraphs.1",
+      "grade": "MINOR",
+      "issue": "Person name Congreve left in Latin; 'पुनः शुरू योग्य' stiff and 'रॉकेटें' gender.",
+      "fix": "इससे पहले ठोस-ईंधन वाले रॉकेट मौजूद थे (13वीं सदी से चीनी अग्नि-बाण, नेपोलियनी युद्धों में कॉन्ग्रीव रॉकेट), लेकिन तरल ईंधन अंतरिक्ष उड़ान का द्वार थे: उच्च विशिष्ट आवेग, नियंत्रित थ्रॉटलिंग, और दोबारा चालू किए जा सकने की क्षमता।"
+    },
+    {
+      "segment": "science articles (editorial)",
+      "id": "science-9",
+      "key": "science/propulsion/thrust-and-twr.json :: body_paragraphs.0",
+      "grade": "MINOR",
+      "issue": "Dropped verbs ('बताता कितनी', 'उपयोगी हो सकते') and inconsistent 'प्रोपेलेंट'/'प्रणोदक'.",
+      "fix": "थ्रस्ट बल है। इसकी इकाई न्यूटन है (या उड़ने वाली किसी भी चीज़ के लिए किलोन्यूटन / मेगान्यूटन)। Merlin 1D समुद्र तल पर 845 kN पैदा करता है। एक F-1 ने 6770 kN पैदा किया। SLS के हर बूस्टर से 16,000 kN मिलता है। थ्रस्ट विशिष्ट आवेग नहीं है: थ्रस्ट बताता है कि इंजन कितने *ज़ोर* से धकेलता है; Isp बताता है कि वह यह कितनी *कुशलता* से करता है। उच्च-थ्रस्ट कम-Isp इंजन (ठोस बूस्टर) और कम-थ्रस्ट उच्च-Isp इंजन (आयन ड्राइव) दोनों उपयोगी हो सकते हैं — मिशन के अलग-अलग हिस्सों में अलग-अलग कामों के लिए। थ्रस्ट का समीकरण सरल है: थ्रस्ट = प्रणोदक द्रव्यमान प्रवाह दर × निष्कासन वेग, साथ में एक छोटा दबाव पद जहाँ नोज़ल निकास दबाव परिवेश से भिन्न होता है। इसीलिए उच्च चैम्बर दबाव वाले स्टेज्ड-कंबशन इंजन प्रति किलोग्राम इंजन द्रव्यमान अधिक थ्रस्ट देते हैं — वे उसी गले से प्रति सेकंड अधिक प्रणोदक को अधिक वेग पर धकेलते हैं।"
+    },
+    {
+      "segment": "science articles (editorial)",
+      "id": "science-10",
+      "key": "science/propulsion/expander-cycle.json :: body_paragraphs.2",
+      "grade": "BROKEN",
+      "issue": "'One of the longest careers' became 'सबसे लंबा कैरियर' (factual change), 'बोर्ड के ऊपर डंप करता है' is a literal machine rendering of 'overboard', and 'इसका भाई' is wrong for sibling engine.",
+      "fix": "क्लासिक उदाहरण RL10 है, जिसने पहली उड़ान 1962 में Centaur पर भरी और आज भी उत्पादन में है — किसी भी इंजन के सबसे लंबे करियरों में से एक। वह थ्रस्ट सीमा पूरी तरह बंद चक्र पर लागू होती है; विस्तारक-ब्लीड संस्करण पर जाने से वह टूट जाती है। ब्लीड टर्बाइन चलाने के लिए गर्म गैस का एक हिस्सा निकाल लेता है और फिर पूरी गैस चैंबर में भेजने के बजाय उसे बाहर छोड़ देता है — थोड़ा Isp छोड़कर कहीं अधिक शक्ति पाता है। जापान का LE-9 दिखाता है कि यह कितना आगे जा सकता है: 1,471 kN पैदा करने वाला विस्तारक-ब्लीड इंजन, जो H3 के पहले चरण को शक्ति देता है — ऐसा कुछ जो बंद विस्तारक कभी नहीं कर सकता। इसका सहोदर LE-5B और Ariane 6 पर यूरोप का Vinci ऊपरी चरणों के लिए यही ब्लीड तरीका अपनाते हैं। जहाँ स्टेज्ड कम्बशन कच्चे प्रदर्शन के पीछे भागता है, वहीं विस्तारक चक्र विश्वसनीयता और दोबारा चालू होने की क्षमता के पीछे भागता है, ताकि पेलोड को ठीक उसकी सही जगह पर रखने का शांत, सटीक काम हो सके।"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-6",
+      "key": "universe/exoplanets/51-peg-b.json :: bio",
+      "grade": "MINOR",
+      "issue": "Gender error 'पहली पुष्ट ग्रह' (ग्रह is masculine) and slightly awkward 'सूर्य-समान'.",
+      "fix": "51 Pegasi b, अनौपचारिक रूप से Dimidium नाम से जाना जाता है, की खोज 1995 में मिशेल मेयर और डिडिएर क्वेलोज़ ने की थी — एक सामान्य सूर्य-जैसे तारे के चारों ओर पहला पुष्ट ग्रह, एक खोज जिसने उन्हें 2019 का भौतिकी का नोबेल पुरस्कार दिलाया। यह एक 'हॉट जुपिटर' है जो हर चार दिन में अपने तारे की परिक्रमा करता है; इसने उन खगोलविदों को चौंका दिया जिन्होंने कभी इतने निकट किसी विशाल ग्रह की उम्मीद नहीं की थी, और ग्रह-प्रणालियों के बनने और प्रवास करने के बारे में दोबारा सोचने को मजबूर किया।"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-11",
+      "key": "universe/exoplanets/trappist-1-c.json :: bio",
+      "grade": "MINOR",
+      "issue": "'तारामंडल' means constellation, not planetary system.",
+      "fix": "TRAPPIST-1 c आकार में शुक्र के करीब है, लेकिन शुक्र के विपरीत, 2023 में JWST प्रेक्षणों ने संकेत दिया कि इसके पास सघन कार्बन-डाइऑक्साइड आवरण नहीं है। इसका अध्ययन इस तारा-प्रणाली के केंद्रीय प्रश्न का हिस्सा है: क्या छोटे, ज्वाला-प्रवण लाल बौने तारों के चारों ओर के ग्रह वायुमंडल बनाए भी रख सकते हैं।"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-15",
+      "key": "universe/named-stars/diphda.json :: bio",
+      "grade": "BROKEN",
+      "issue": "Drops 'Menkar' entirely and garbles the constellation names ('बेटा सॅटाए तारा', 'Alpha, अल्फ़ा सॅटाए तारे').",
+      "fix": "डिफ़्डा (बीटा सेटाई), जिसे देनेब काइटोस भी कहा जाता है, लगभग 96 प्रकाश-वर्ष दूर एक नारंगी दानव है। यद्यपि इसे 'बीटा' अक्षर दिया गया है, यह समुद्री राक्षस, सीटस तारामंडल, का सबसे चमकीला तारा है और तारामंडल के अल्फ़ा तारे मेनकार को भी पीछे छोड़ देता है।"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-16",
+      "key": "universe/named-stars/alnilam.json :: fact",
+      "grade": "MINOR",
+      "issue": "Constellation name Orion left in Latin script among native star names.",
+      "fix": "मृगशीर्ष (Orion) की पट्टी का केंद्रीय मोती — विशाल दूरी से दिखने वाला एक दहकता नीला महादानव तारा।"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-18",
+      "key": "universe/named-stars/vega.json :: cultural",
+      "grade": "MINOR",
+      "issue": "'Summer Triangle' and 'Contact' left in English; 'स्थिर करता है' weak for 'anchors'.",
+      "fix": "अभिजित् तारा लगभग 12,000 BCE के आसपास उत्तरी ध्रुव तारा था और लगभग 13,700 CE में फिर बनेगा। यह हंस और श्रवण तारों के साथ ग्रीष्म त्रिकोण का आधार बनाता है, और कार्ल सेगन की उपन्यास/फ़िल्म Contact में परग्रही संकेत के स्रोत के रूप में आता है।"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-23",
+      "key": "universe/named-stars/sirius.json :: cultural",
+      "grade": "MINOR",
+      "issue": "'Dog Star' and 'Dog Days' left in English; 'उदयकालीन उदय' is redundant.",
+      "fix": "'श्वान तारा' ने सहस्राब्दियों से कैलेंडरों का मार्गदर्शन किया है: सूर्योदय से ठीक पहले इसका पहली बार दिखना कभी प्राचीन मिस्र में नील नदी की वार्षिक बाढ़ का संकेत देता था, और यह ग्रीको-रोमन परंपरा में ग्रीष्मकाल के 'श्वान दिवसों' का आधार है।"
+    }
+  ]
+}

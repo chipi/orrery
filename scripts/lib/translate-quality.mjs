@@ -18,6 +18,7 @@ export const LANGUAGE_NAMES = {
   de: 'German',
   es: 'European Spanish',
   fr: 'French',
+  he: 'Modern Hebrew',
   hi: 'Hindi',
   it: 'Italian',
   ja: 'Japanese',
@@ -30,7 +31,11 @@ export const LANGUAGE_NAMES = {
 };
 
 /** Operator ruling 2026-10-17, binding in every language. */
-export const NAME_POLICY = `NAMES — never translate or transliterate a name into another language. Keep every name exactly as the English source writes it, in Latin script — except in the name's own language: a Russian/Soviet name is written in its original Cyrillic in Russian (Союз МС-24, Мир, Протон-М, «Луна-9»), a Chinese name in Chinese characters in Chinese (神舟, 天宫, 嫦娥五号), and likewise Japanese, Korean, Hindi and Arabic names in their own language. In every other language: missions, spacecraft, rockets, stations and modules (Apollo 12, Cygnus, Falcon 9, Voyager 2, Soyuz MS-24, Chang'e 5, Tiangong); companies, agencies and instruments (Northrop Grumman, SpaceX, NASA, ESA, JAXA, Roscosmos, ALSEP, DSN, JWST); people (Neil Armstrong, Sergei Korolev, Johannes Kepler — also inside eponymous terms such as the Hohmann transfer or Kepler's laws); spaceports, launch sites, observatories, surface features of the Moon and planets, stars and galaxies (Cape Canaveral, Baikonur, Kennedy Space Center, Arecibo, Oceanus Procellarum, Ocean of Storms, Mare Tranquillitatis, Betelgeuse, Andromeda Galaxy as its proper name). Countries, continents, oceans, regions and cities are ordinary geography and ARE translated normally (Pacific, Inner Mongolia, Kazakhstan, Florida, Russia, Europe). Inflect around the name with the language's grammar where needed (a case ending after a hyphen only if the language requires it), but never change the name's letters. Ordinary nouns are translated normally: the Moon, the Sun, Mars, Earth, the Solar System, comet, orbit.`;
+export const NAME_POLICY = `NAMES (operator rules, docs/guides/i18n-translation-strategy.md §3.1–3.2).
+1. Things people built and the organisations behind them — missions, spacecraft, rockets, upper stages, stations, modules, programmes, instruments, agencies, companies, design bureaus: keep the English name exactly, in Latin script (Apollo 12, Voyager 2, Falcon 9, Soyuz MS-24, Chang'e 5, Tiangong, JWST, NASA, ESA, SpaceX). Exception: in the name's own language use the original name — Russian/Soviet names in Cyrillic in Russian (Союз МС-24, «Мир», Протон-М, «Луна-9»), Chinese in Chinese (神舟, 天宫, 嫦娥五号), and likewise Japanese, Korean, Indian (Hindi), Iranian (Arabic), Serbian and Israeli (Hebrew) names in their own language. Agencies stay as they are: NASA is NASA.
+2. Publications and sources — journals, websites, reports, societies cited as a source (Nature, Science, Icarus, Annual Review of Astronomy, NASA Solar System Exploration, Planetary Society): keep exactly as in English.
+3. Science, astronomy, geography and people are written the way that language's universities and schools write them: planets, moons, asteroids and comets; surface features of the Moon and planets (Mare Tranquillitatis → the language's own name); stars, constellations, galaxies and nebulae; eponymous terms (Kepler's laws, Hohmann transfer, Kuiper belt → the language's own form of the person's name); term abbreviations (LEO, GEO, EVA → the language's own); countries, cities, regions, spaceports' geography; and people's names in the language's own spelling. Keep an international form only where that language's own sources really use it (instrument acronyms such as JWST).
+Inflect names with the language's grammar where it needs it (for a Latin-script name, a case ending after a hyphen only where the language requires it), but never change the letters of a name kept in English.`;
 
 export const BASE_RULES = `Translation rules (always):
 - Translate the WHOLE text: never shorten, summarise or drop a sentence or clause.
@@ -64,6 +69,7 @@ export const LOCALE_RULES = {
   hi: `Hindi rules: Devanagari for Hindi words; never Chinese/Japanese characters (e.g. 着陸, 弹道 are wrong); names follow the NAMES rule.`,
   ko: `Korean rules: Hangul for Korean words; never Chinese characters/hanja (e.g. 西昌衛星發射中心, 衛星群 are wrong); names follow the NAMES rule.`,
   ar: `Arabic rules: Arabic script for Arabic words; never Cyrillic or other letters inside an Arabic word; names follow the NAMES rule.`,
+  he: `Hebrew rules: Modern Hebrew in Hebrew script, without niqqud (vowel points); never Arabic or other letters inside a Hebrew word; names follow the NAMES rule (Latin, as in English, except Israeli names).`,
 };
 
 export function systemAddendum(locale) {
@@ -88,6 +94,7 @@ const CHECKS = {
 };
 const NATIVE = {
   ar: /\p{Script=Arabic}/u,
+  he: /\p{Script=Hebrew}/u,
   hi: /\p{Script=Devanagari}/u,
   ja: /[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u,
   ko: /\p{Script=Hangul}/u,
@@ -96,7 +103,7 @@ const NATIVE = {
   'sr-Cyrl': /\p{Script=Cyrillic}/u,
 };
 const FOREIGN =
-  /[\p{Script=Hangul}\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Arabic}\p{Script=Devanagari}\p{Script=Cyrillic}]/gu;
+  /[\p{Script=Hangul}\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Arabic}\p{Script=Devanagari}\p{Script=Cyrillic}\p{Script=Hebrew}]/gu;
 
 let KNOWN = null;
 /** Names containing a digit, from the en-US overlays' `name` fields (Apollo 12,

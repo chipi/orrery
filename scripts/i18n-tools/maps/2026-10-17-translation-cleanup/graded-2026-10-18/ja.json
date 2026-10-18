@@ -1,0 +1,460 @@
+{
+  "locale": "ja",
+  "segments": {
+    "UI strings — long (help text, panels)": { "sampled": 25, "ok": 19, "minor": 4, "broken": 2 },
+    "UI strings — short (menus, labels, buttons)": {
+      "sampled": 25,
+      "ok": 22,
+      "minor": 1,
+      "broken": 2
+    },
+    "essays (long editorial)": { "sampled": 10, "ok": 1, "minor": 2, "broken": 7 },
+    "fleet (launcher/capsule/engine/site descriptions)": {
+      "sampled": 25,
+      "ok": 14,
+      "minor": 5,
+      "broken": 6
+    },
+    "mission descriptions": { "sampled": 25, "ok": 13, "minor": 11, "broken": 1 },
+    "mission event notes": { "sampled": 25, "ok": 20, "minor": 3, "broken": 2 },
+    "other short entries (earth-objects, satellites, iss, orbit-regimes, …)": {
+      "sampled": 25,
+      "ok": 23,
+      "minor": 2,
+      "broken": 0
+    },
+    "planets & sites (short facts)": { "sampled": 25, "ok": 21, "minor": 3, "broken": 1 },
+    "programs (long editorial)": { "sampled": 10, "ok": 10, "minor": 0, "broken": 0 },
+    "science articles (editorial)": { "sampled": 10, "ok": 7, "minor": 2, "broken": 1 },
+    "universe (short entries)": { "sampled": 25, "ok": 19, "minor": 6, "broken": 0 }
+  },
+  "findings": [
+    {
+      "id": "UI-3",
+      "key": "messages :: plan_explainer_how_to_desc",
+      "grade": "BROKEN",
+      "issue": "Machine-garbled: 'cool-colored region' becomes nonsense, 'right panel' becomes 'correct panel', sentence structure is broken.",
+      "fix": "自然なホーマン最小値付近（飛行時間約250日、約26か月ごと）の寒色の領域をクリックすると、そこが最も安価な打ち上げウィンドウです。右のパネルに正確な日付とΔvが表示されます。"
+    },
+    {
+      "id": "UI-5",
+      "key": "messages :: credits_intro_body_1",
+      "grade": "MINOR",
+      "issue": "Inconsistent spacing around Latin names and 'archive' rendered as the stiff 資料館.",
+      "fix": "Orreryは、世界の宇宙機関、事業者、そしてWikimediaコミュニティがその成果を自由に提供しているからこそ存在しています。NASA、ESA、JAXA、ISRO、CNSA、Roscosmos、MBRSC、カナダ宇宙庁、SpaceX、Blue Origin、Wikimedia Commonsの寄稿者、そしてWikipediaの編集者は、人類史上比類のない惑星探査の公開アーカイブを共同で築き上げてきました。ありがとうございます。"
+    },
+    {
+      "id": "UI-6",
+      "key": "messages :: lab_goal_lar_challenge",
+      "grade": "MINOR",
+      "issue": "Awkward word order and 積載してください; the trailing clause is detached from the verb.",
+      "fix": "ロケットをもっと重くしてみましょう — ロケット方程式の積載質量を、この判定が赤に変わるまで増やします。その質量が、このスタックのペイロードの限界です。"
+    },
+    {
+      "id": "UI-7",
+      "key": "messages :: library_intro_body_2",
+      "grade": "BROKEN",
+      "issue": "Wrong meaning: 'bill of materials' as 資料の請求書, mission 'flown by' as 流れていた, and the routing logic is garbled.",
+      "fix": "/creditsの部品表と同様に、このページは誰にクリックが渡るのかについて誠実であるために存在します。運営機関のポータルがあればそこへ、英語圏以外の機関が飛ばしたミッションには現地語版のウィキペディアへご案内し、ほかに対象を扱うものがないときは英語版ウィキペディアに戻ります。"
+    },
+    {
+      "id": "UI-16",
+      "key": "messages :: lab_conn_lss_voyager2",
+      "grade": "MINOR",
+      "issue": "Grand Tour left in English while sibling strings use グランドツアー.",
+      "fix": "Voyager 2 — グランドツアー：木星、土星、天王星、海王星"
+    },
+    {
+      "id": "UI-17",
+      "key": "messages :: lab_conn_lss_hook",
+      "grade": "MINOR",
+      "issue": "Grand Tour left in English (inconsistent with グランドツアー elsewhere) and the final clause tense is unnatural.",
+      "fix": "Voyager探査機は、176年に一度という木星、土星、天王星、海王星の整列――「グランドツアー」――をとらえ、1機の探査機が天体から天体へスイングバイしていくことを可能にした。この機会を逃せば、次は22世紀まで巡ってこなかった。"
+    },
+    {
+      "id": "UI-5",
+      "key": "messages :: lab_ask_kernel_badge",
+      "grade": "BROKEN",
+      "issue": "Left in untranslated English.",
+      "fix": "カーネル計算値"
+    },
+    {
+      "id": "UI-16",
+      "key": "messages :: explore_lens_story_bh_title",
+      "grade": "MINOR",
+      "issue": "Unnatural, truncated rendering of 'bent to breaking'.",
+      "fix": "限界まで曲げられた時空"
+    },
+    {
+      "id": "UI-19",
+      "key": "messages :: galaxy_name_sagittarius_dwarf",
+      "grade": "BROKEN",
+      "issue": "Galaxy name left half in Latin script instead of its normal Japanese form.",
+      "fix": "いて座矮小楕円銀河"
+    },
+    {
+      "id": "essays-1",
+      "key": "essays/seven-minutes.json :: body.19.md",
+      "grade": "BROKEN",
+      "issue": "Schiaparelli sentence is garbled ('3秒間ではなく30秒間ではなく発射'), plus 船上コンピュータ and 'crashed, killing itself' mistranslated.",
+      "fix": "火星ミッションの歴史に限っても、着陸の問題は多くの犠牲を出してきました。1971年のMars 2は、地球からの物体として初めて火星表面に到達しましたが、衝突して自壊しました。パラシュートの手順が完了する前に降下システムが故障していたのです。1999年12月のMars Polar Landerは、脚の展開時の振動が着陸信号と誤認され、降下エンジンを早期に停止させた可能性が極めて高く、最後の40メートルを全速力で落下しました。2003年のクリスマスのBeagle 2は、大気圏突入には成功しました。EDLのシーケンスは機能したとみられます。しかし着陸時に太陽電池パネルが完全には展開せず、通信は一度もできないまま、火星の平原で沈黙しました。2016年10月のESAのSchiaparelliランダーは、激しいパラシュート降下の最中に慣性計測装置が飽和し――測定値が一時的に目盛りの上限を振り切り――航法解が壊れて、搭載コンピュータはすでに地表より下にいると判断しました。そしてパラシュートを切り離し、逆噴射ロケットを30秒ではなくわずか3秒しか噴射せず、時速およそ540キロメートルで地面に激突しました。"
+    },
+    {
+      "id": "essays-2",
+      "key": "essays/the-body-in-the-dark.json :: body.7.caption",
+      "grade": "MINOR",
+      "issue": "Stiff machine-like phrasing (あなたが見ることができない, 急性用量, 気象を吸収する).",
+      "fix": "最も厄介なのは、目に見えない問題だ。地球の磁場の外には銀河宇宙線から身を守る場所がなく、太陽嵐は数時間で急性被曝をもたらしうる。それらを止められるほど厚い遮蔽は重すぎて打ち上げられない。そのため長い航海では、乗組員は宇宙の天候をただ浴び続けることになる。"
+    },
+    {
+      "id": "essays-3",
+      "key": "essays/interstellar-exploration.json :: body.11.md",
+      "grade": "BROKEN",
+      "issue": "Wrong terms (特定のインパルス for specific impulse, 分類的に不十分, 顔に不可能, 問題を排出 for matter) and ungrammatical machine text.",
+      "fix": "核熱推進――リアクターで水素を加熱し、ノズルから噴出する方式――は排気速度をおよそ2倍にし、NERVA計画の地上試験で最良のエンジンでは比推力が約825秒に達した。排気速度が2倍になっても、必要な質量比が半分になるわけではない。質量比はその平方根になる――はるかに大きな利得である。それでも星間速度に対しては、核熱推進は明らかに力不足である。ロケット方程式は推進剤がどう加熱されるかを気にしない。気にするのは、どれだけの速さで出ていくかだけだ。そして、これまでに考案された推進剤燃焼型のどの方式も、光速cの意味のある割合に達するだけの速さで物質を噴出しようとすれば、それだけでミッションが成り立たなくなるほどの燃料搭載量を必要とする。"
+    },
+    {
+      "id": "essays-4",
+      "key": "essays/going-to-mars.json :: body.21.md",
+      "grade": "BROKEN",
+      "issue": "Interplanetary space mistranslated as 星間空間 (interstellar), and the dose sentence is mangled.",
+      "fix": "第三の壁は人体であり、ミッションの設計では回避できない壁だ。火星にはグローバルな磁場がない。核はとうに固化し、かつて防護の盾をつくっていたダイナモは止まった。地球の磁気圏は銀河宇宙線と太陽高エネルギー粒子の大半をそらすが、火星にはそれに相当するものがない。惑星間空間を6か月かけて移動すると、実測でおよそ300ミリシーベルトの線量を受ける。これは地球上の平年の自然放射線の100倍をはるかに超える量が、6か月で蓄積することを意味する。磁気圏のない火星表面では、二次放射線によって線量がさらに積み重なる。3年間の往復では、太陽活動周期の位相と遮蔽によって、合計600～1,200ミリシーベルトと見積もられている――これらの数値は、[Curiosity](/missions?id=curiosity)に搭載された機器が飛行中に測定したものだ。"
+    },
+    {
+      "id": "essays-5",
+      "key": "essays/interstellar-exploration.json :: body.26.md",
+      "grade": "BROKEN",
+      "issue": "Machine-like and broken: 配信する for deliver, 真摯な提案, 任意の近いタイムフレーム, and fragmentary clauses lose the logic.",
+      "fix": "しかし、「禁じられていない」ことと「近い将来に実現できる」ことの間の隔たりは途方もなく大きい。最も遅い現実的な提案――光速cの12%で進む核融合スターシップ――は、存在しない技術を必要とし、歴史上のどの宇宙計画も霞むほどの費用をかけて、有人の船を約50年で別の恒星へ届ける。最も速い現実的な提案――Breakthrough Starshotのレーザー駆動ライトセイル――は、数時間で終わるフライバイに1グラムの観測機器を送り込み、何年にもわたってデータを送り返す。費用は提唱者の見積もりで数百億ドル規模であり、そもそもレーザーアレイを建造できるという前提に立っている。この両極端の間に、技術的に実現可能で、かつ意味のある探査に足る中間の選択肢は存在しない。この問題の規模は、穏当な解決策を単純に許さないのだ。"
+    },
+    {
+      "id": "essays-6",
+      "key": "essays/seven-minutes.json :: dek",
+      "grade": "MINOR",
+      "issue": "惑星間飛行 narrows 'spaceflight' wrongly; the last sentence is awkward.",
+      "fix": "巡航は簡単だ。何か月もほとんど何もせずに過ごす。物理法則に身を任せ、軌道をわずかに調整し、待つ。ミッションが命を落とすのは到着のときだ。着陸は宇宙飛行で最も難しいことであり、私たちは同じ方法で二度成功させたことがない。"
+    },
+    {
+      "id": "essays-7",
+      "key": "essays/the-body-in-the-dark.json :: body.14.md",
+      "grade": "BROKEN",
+      "issue": "Garbled final sentence (宇宙の長期宇宙飛行人間の身体), '3十年', wrong 'population' sense, Mark left in Latin, other machine-like phrasing.",
+      "fix": "長期宇宙飛行の生理学について私たちが知っていることはすべて、実在の人々で測定されたものです。彼らは実際に長期間を宇宙で暮らし、帰還し、研究対象となりました。単一の連続飛行の記録を持つのは、ロシア人医師で宇宙飛行士のワレリー・ポリャコフです。彼は1994年1月に[Mir](/programs/mir)に搭乗し、1995年3月に地球へ帰還するまで、軌道上で連続437日を過ごしました。この記録は30年たった今も破られていません。ポリャコフの目的は明確に医学的なものでした。人間が火星ミッションに相当する期間を、機能を保ったまま生き延びられるかを確かめることです。着陸したとき、彼はSoyuzカプセルから自分の足で歩いて出ることにこだわりました。骨と筋肉の回復には数か月かかりました。それでも彼は歩きました。[Salyut](/programs/salyut)と[Mir](/programs/mir)の計画は、ソビエト、そしてロシアの代えがたい生理学データの蓄積を築き、[ISS](/programs/iss)がそれを拡張し、国際的なものにしました。ペギー・ウィットソンが3回のミッションで積み上げた累計665日は、研究者に、ほかの方法では再現できない一人の個人についての縦断的データセットを与えました。NASA Twin Study――スコット・ケリーの340日間のミッションを、地上にいた一卵性双生児のマーク・ケリーと比較したもの――では、遺伝子発現、テロメアの動態、腸内マイクロバイオームの構成、認知機能に測定可能な変化が見つかりました。その大半は帰還後に元へ戻りましたが、すべてではありません。中国の[Tiangong](/programs/tiangong)計画も、いまや記録に加わりつつあります。2021年以降、90日と180日の交代制で乗組員が滞在しており、これまでデータセットに存在しなかった宇宙飛行士（タイコノート）の集団が加わりました。宇宙での長期滞在が人体に及ぼす影響について人類が何を知っているかを誠実に語るなら、ロシアがMirで学んだこと、2000年以降に15か国のISSパートナーシップが測定してきたこと、そして中国がいま蓄積しつつあることを含めなければなりません。"
+    },
+    {
+      "id": "essays-8",
+      "key": "essays/navigation.json :: body.22.caption",
+      "grade": "BROKEN",
+      "issue": "Machine-like and meaningless in places (空のパッチを写真に撮り, 修正の間、ジャイロスコープが計数を運ぶ, 船).",
+      "fix": "上はどちらか、上というものがないとき：スタートラッカーは空の一角を撮影し、そのパターンを搭載星表と照合して、固定されたJ2000座標系の中で機体がどちらを向いているかを即座に知る。次の更新までの間は、ジャイロが姿勢を積算し続ける。"
+    },
+    {
+      "id": "essays-10",
+      "key": "essays/the-body-in-the-dark.json :: body.22.md",
+      "grade": "BROKEN",
+      "issue": "Final sentences are garbled (月または数年が続く方法で、または決してそれらが逆転しなければ), 切り詰める and 救出されない方法で are machine-like, 'heavier' logic lost.",
+      "fix": "より優れた推進は重要だ。開発中の[新しいエンジン技術](/essays/new-propulsion)――核熱、核電気、ソーラーセイル、さらに先の構想――は輸送時間を短縮し、輸送時間の短縮は累積被曝線量と累積的な生理機能の低下を減らす。270日ではなく90日で移動できても、身体への負担が3分の1になるわけではない。線量と影響の関係は線形よりも複雑で、心理面、骨、心血管など一部のシステムは期間に敏感であり、被曝が短くなっても完全には救われない。それでも短いほうがよい。より速いエンジンは本物の医療である。しかし、問題の本質的な性格までは変えない。90日の移動でも、磁気圏もなく、重力もなく、救助もない惑星間空間を横断することに変わりはない。身体は依然としてペイロードである。それは今も劣化する。そして、そもそも元に戻るとしても数か月から数年かかる形で衰えたまま、帰還する。"
+    },
+    {
+      "id": "fleet-2",
+      "key": "fleet/station/salyut-7.json :: description",
+      "grade": "MINOR",
+      "issue": "遂行 is wrong for an uncontrolled reentry and the salvage sentence is clumsy.",
+      "fix": "最後のSalyutで、1982年から1991年にかけて運用されました。1985年に電力を失って回転状態に陥った後、ウラジーミル・ジャニベコフとヴィクトル・サヴィヌイフによって修復されたことで有名で、これは初の軌道上救難ミッションです。1991年にアルゼンチン上空で制御不能のまま再突入しました。"
+    },
+    {
+      "id": "fleet-5",
+      "key": "fleet/launcher/lvm3.json :: best_known_for",
+      "grade": "BROKEN",
+      "issue": "Nonsense machine term クルーレーションランチャー for crew-rated launcher.",
+      "fix": "Gaganyaan向けの有人対応ランチャー"
+    },
+    {
+      "id": "fleet-8",
+      "key": "fleet/crewed-spacecraft/new-shepard.json :: best_known_for",
+      "grade": "BROKEN",
+      "issue": "Garbled mix of katakana and untranslated English (ファースト・コマーシャルのsuborbital乗組車).",
+      "fix": "初の商業用サブオービタル有人機"
+    },
+    {
+      "id": "fleet-12",
+      "key": "fleet/constellation/goes-noaa.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "Geostationary rendered as 地球同期 (geosynchronous) and コーカレッジ calque.",
+      "fix": "NOAAの静止気象衛星ペア — アメリカ大陸を常時観測"
+    },
+    {
+      "id": "fleet-13",
+      "key": "fleet/orbiter/lunar-orbiter-4.json :: description",
+      "grade": "BROKEN",
+      "issue": "Mission name Lunar Orbiter transliterated (ルナー・オービター) against the name rule; also 有意な領域 and the closing sentence are awkward.",
+      "fix": "Lunar Orbiter探査機5機のうちの4番機で、高傾斜の月極軌道を飛行した最初の機体です。1967年5月4日にケープ・カナベラルから打ち上げられ、1967年5月8日に6111 × 2706 kmの極軌道に入りました。ミッションはApollo着陸地点の選定（最初の3機がすでに完了していた任務）から、広範な科学的マッピングへと切り替えられました。月の表側の99 %を解像度60 m/ピクセルでカバーする419フレームを撮影したほか、月の裏側の主要な領域を初めて詳細に撮影しました。これらのフレームは、現代のLROの時代まで、この縮尺での月の表側の最高解像度の撮影範囲であり続けました。無線が故障した後、1967年10月に裏側の西経22～30°に衝突しました。"
+    },
+    {
+      "id": "fleet-14",
+      "key": "fleet/station/skylab.json :: dispatch",
+      "grade": "MINOR",
+      "issue": "ムーンミッション is a stiff calque for the cancelled Moon landings.",
+      "fix": "Skylabはアメリカ初の宇宙ステーションであり、歴史に残る即興の傑作の一つだった。使用済みのSaturn V上段の空になった水素タンクの内部に、軌道上の工房を丸ごとつくり上げたのである。ステーションをゼロから設計する代わりに、NASAは中止された月着陸計画で余ったハードウェアを、居住区、シャワー、有人の太陽観測所を備えた、家ほどの大きさの実験室に転用した。打ち上げ時にサンシールドが剥がれ落ちてほぼ破壊されかけたが、最初のクルーの即興の修理で救われ、その後のすべてのステーションが前提とすることを実証した。人は軌道上で何か月も生活し作業でき、宇宙船が壊れたら自分で直せるということである。"
+    },
+    {
+      "id": "fleet-16",
+      "key": "fleet/rover/curiosity.json :: best_known_for",
+      "grade": "BROKEN",
+      "issue": "Mission name Mars Science Laboratory translated instead of kept in English.",
+      "fix": "原子力電源を備えたMars Science Laboratoryのローバー"
+    },
+    {
+      "id": "fleet-17",
+      "key": "fleet/orbiter/juno.json :: description",
+      "grade": "BROKEN",
+      "issue": "Machine-garbled: 極端なジュピターオービター, 太陽動力を与えられた, 木星の間隔で, クラウドトップに十分な軌道を閉じる.",
+      "fix": "2016年から木星を周回しているNASAの極軌道探査機。木星の距離では初となる太陽電池駆動で、機体を自転させて姿勢を安定させ、周回のたびに深刻な放射線被害を受けかねないほど木星の雲頂に近づいて飛行する。"
+    },
+    {
+      "id": "fleet-18",
+      "key": "fleet/orbiter/viking1-orbiter.json :: description",
+      "grade": "MINOR",
+      "issue": "Wrong terms (軌道上部, 駐機軌道, 衰退する) and awkward landing-site clause.",
+      "fix": "NASAのViking 1ミッションの周回機部分――米国初の火星周回機であり、1976年から1980年にかけて150～300 m/ピクセルの地表画像を約5万枚送り返した、ほぼ同一の2機のViking周回機のうちの1機。1975年8月20日にケープ・カナベラルからTitan IIIE-Centaurで打ち上げられ、Viking 1は1976年6月19日に火星周回軌道に入った。周回機は1か月かけて着陸候補地を調査したのち、1976年7月20日にViking 1着陸機を切り離し、米国初の火星着陸成功となるクリュセ平原への着陸につなげた。その後、周回機は約4年近く科学観測プラットフォームとして活動を続け、火星初の全球地形図と熱地図を作成し、フォボスとダイモスを調べ、着陸機のUHF中継局を務めた。1980年8月7日に姿勢制御用ガスが尽きた。意図的に357 × 33614 kmの待機軌道に引き上げられ、2024年頃まで安定を保つと予想されていた（Aerospace Corpの再突入予測では2025年頃に軌道が崩壊）。"
+    },
+    {
+      "id": "fleet-21",
+      "key": "fleet/rover/spirit.json :: description",
+      "grade": "BROKEN",
+      "issue": "Wrong word 退職 (a person retiring) for a rover, plus awkward 惑星のローバー and 構築された.",
+      "fix": "Spirit（MER-A）は、アメリカのNASA JPLが製作した惑星探査ローバーです。火星探査ローバーで、6年間運用されました。2004年の初飛行後に運用を終了しました。"
+    },
+    {
+      "id": "fleet-24",
+      "key": "fleet/observatory/jwst.json :: tagline",
+      "grade": "MINOR",
+      "issue": "スペース望遠鏡 is unnatural (宇宙望遠鏡) and 最も大きい is clumsy.",
+      "fix": "最大の赤外線宇宙望遠鏡；L2軌道"
+    },
+    {
+      "id": "mission-2",
+      "key": "missions/jupiter/juno.json :: description",
+      "grade": "MINOR",
+      "issue": "Kanji numerals for dates (二〇一六年 etc.) are inconsistent with the site's Arabic-numeral style; 近木点 should be 近木星点.",
+      "fix": "Junoは2016年7月5日、53日周期の高離心率の極軌道で木星周回軌道に入った。この軌道は、放射線帯の内側（近木星点は雲頂の上空約4,200 km）からカリストの軌道の外側まで往復する。電源は太陽電池——約50 m²の三接合アレイは地球では14 kWを発生するが、木星では約500 Wにすぎず、この距離で太陽電池が使われたのは初めてである。木星の岩石コアは「希薄」で明瞭な境界を持たないことを確認し、極域サイクロンの配置（各極を8つの周極嵐が囲む）を計測し、2023年にはイオの火山活動を前例のない精細さで撮像した。延長ミッションでは2025年までガリレオ衛星4つすべてへの接近通過を含む。"
+    },
+    {
+      "id": "mission-3",
+      "key": "missions/moon/luna16.json :: first",
+      "grade": "MINOR",
+      "issue": "Awkward, wordy phrasing (自動機械による).",
+      "fix": "初の無人機による月試料回収；アメリカ以外で初の月試料"
+    },
+    {
+      "id": "mission-6",
+      "key": "missions/moon/lunar-prospector.json :: description",
+      "grade": "MINOR",
+      "issue": "Shackleton left in Latin script (surface feature should be native) and 円形極軌道上の月周回軌道 is redundant.",
+      "fix": "NASAのDiscoveryクラスの3番目のミッションであり、Apollo時代以降で最初のNASA管轄の専用月周回探査機。1998年1月7日にケープ・カナベラルからAthena IIで打ち上げられたLunar Prospectorは、1998年1月11日に高度100 kmの円形極軌道に投入された。296 kgの自転する宇宙機は5つの計器を搭載していた。全球的な地殻組成を測定するガンマ線分光計、極地の水素/水氷を検出する中性子分光計、ラドンガス検出用アルファ粒子分光計（間接的な火山活動検出）、地殻磁場測定用の磁力計と電子反射計、およびドップラー重力実験である。Boyntonチームによる中性子データの分析（Feldman ら、Science 281 + 284）により、月の両極上で鋭い中性子束の欠損が発見された。これは、永久に日が当たらない極地のクレーターに存在する約2 × 10⁹トンの水素に富む物質（おそらく水氷）と矛盾しない。ミッションは1999年7月31日にシャクルトン・クレーター付近への意図的な衝突で終了し、検出可能な水蒸気プルームの放出を期待したが、観測されなかった。この水素の発見は、LCROSSとChandrayaan-1/M3（2009）が独立した確認を提供するまで続いた。"
+    },
+    {
+      "id": "mission-7",
+      "key": "missions/moon/smart-1.json :: first",
+      "grade": "MINOR",
+      "issue": "Typo/wrong word 航宇宙機.",
+      "fix": "ヨーロッパ初の月到達宇宙機。イオンエンジン推進で月に到達した初のミッション"
+    },
+    {
+      "id": "mission-11",
+      "key": "missions/mars/spirit.json :: dispatch",
+      "grade": "MINOR",
+      "issue": "Redundant mistranslation 'silica deposits ... 珪華堆積物のような珪華鉱床'.",
+      "fix": "Spiritは90日間の稼働を想定して設計されたが、6年間も動作し続けた。2004年に着陸した、ゴルフカート大の地質学者2台のうちの1台として、かつてのより湿潤な火星の証拠を求めて岩石を調査するために送られた。そして実際にそれを見つけた。水の中でのみ形成される鉱物を発見し、ある場所では地球の温泉が残すようなシリカ堆積物を露出させた。計画されていなかった丘を登り、設計されていなかった火星の冬を生き延びたが、やがて車輪が故障して柔らかい砂に埋もれた。動けなくなった地点から、火星の寒さがついにその命を奪うまで、送信を続けていた。"
+    },
+    {
+      "id": "mission-12",
+      "key": "missions/itokawa/hayabusa1.json :: description",
+      "grade": "MINOR",
+      "issue": "Chinese-form typo 采集ホーン and vague 何らかの形で细粒物質; sample-projectile sentence is clumsy.",
+      "fix": "JAXAのはやぶさ（日本語で「隼」）は、宇宙飛行史上最も劇的なミッション救済を成し遂げた。2003年5月9日にM-V-5ロケットで打ち上げられ、当時最強のイオン推進サブシステムとなる4基のμ10イオンスラスタを搭載していた。2005年9月12日に、地球近傍小惑星である540×270×210 mの瓦礫状天体、25143イトカワに到着。2005年11月20日と25日の2度の着地を行ったが、両回ともサンプル採取用の弾丸は発射されなかったものの、採取ホーンにはそれでも表面物質が入り込んでいた。その後、ヒドラジン漏れにより姿勢制御が機能不全に陥り、3基のリアクションホイールのうち2基が故障し、7週間にわたって通信が途絶し、地球帰還の機会は3年先に延びた。技術者たちは、破損した2基のエンジンの生き残った半分ずつから動作するイオンエンジン1基を組み立て、はやぶさを地球へ連れ戻した。2010年6月13日にオーストラリアのウーメラで回収されたサンプルカプセルからは、イトカワの粒子約1,500個（合計でミリグラム未満）が得られた。これは小惑星のS型の組成と瓦礫状構造を確認し、小惑星サンプルリターンが可能であることを証明した。"
+    },
+    {
+      "id": "mission-13",
+      "key": "missions/saturn/cassini.json :: first",
+      "grade": "MINOR",
+      "issue": "Kanji numerals for dates are inconsistent with the Arabic-numeral style used elsewhere.",
+      "fix": "土星周回13年 — Huygensは2005年1月14日にタイタンに着陸（外太陽系初の軟着陸）"
+    },
+    {
+      "id": "mission-14",
+      "key": "missions/mars/mars-express.json :: description",
+      "grade": "BROKEN",
+      "issue": "Mars Reconnaissance Orbiter translated (火星偵察軌道機) instead of kept in English; 三十年代目 and 軌道機 are also awkward.",
+      "fix": "ESA初の地球以外の惑星へのミッション。周回機は火星大気の最長の連続記録を残し、水氷の堆積、メタンのプルーム、惑星の三次元的な気象をマッピングしてきた。搭載した英国製ランダーのBeagle 2は表面に到達したが太陽電池パネルを完全には展開できず、2004年に喪失が宣言され、2015年にNASAのMars Reconnaissance Orbiterによって無傷で発見された。周回機は運用30年目に入っている。"
+    },
+    {
+      "id": "mission-19",
+      "key": "missions/moon/slim.json :: description",
+      "grade": "MINOR",
+      "issue": "Kanji numerals (一百, 一百三十五) clash with the Arabic style, and the telegraphic phrasing drops connecting logic.",
+      "fix": "SLIM以前、月面着陸の目標精度はキロメートル級だった。JAXAのSmart Landerは100 mの精度を実証した。これは、有人ミッションが事前配置した貨物とドッキングするために、試料帰還用の上昇機が軌道上の相手を見つけるために、そして科学的に価値の高い特定地点への着陸に依存する将来のあらゆる構成に必要とされる精度である。SLIMはまた、月への低エネルギー弾道遷移を開拓した。到着までに135日かかるが、直接軌道より推進剤は少なくて済む。タイムラインが制約でないとき、惑星間ミッションが取りうる忍耐の実証である。"
+    },
+    {
+      "id": "mission-20",
+      "key": "missions/moon/slim.json :: first",
+      "grade": "MINOR",
+      "issue": "Kanji numeral 一百 and clipped ending (精密着陸初).",
+      "fix": "別の天体で目標から100 m以内に着陸した初の精密着陸"
+    },
+    {
+      "id": "mission-23",
+      "key": "missions/moon/beresheet.json :: first",
+      "grade": "MINOR",
+      "issue": "月面探査機 implies a rover; awkward 初めての.",
+      "fix": "月に到達した初の民間資金によるミッション；イスラエル初の月ミッション"
+    },
+    {
+      "id": "mission-24",
+      "key": "missions/earth/otv-2.json :: name",
+      "grade": "MINOR",
+      "issue": "Stray 号 suffix, inconsistent with the OTV-7 name form.",
+      "fix": "X-37B OTV-2 (USA-226)"
+    },
+    {
+      "id": "mission-5",
+      "key": "missions/moon/apollo16.json :: events.6.note",
+      "grade": "MINOR",
+      "issue": "Stone Mountain left in Latin script (surface feature) and ピークスピード is loose.",
+      "fix": "EVA-2：ヤングのテレビ中継されたLRVスピードテスト（「月面グランプリ」）— 最高速度約17 km/h。ストーン・マウンテンを登る地質調査走行。"
+    },
+    {
+      "id": "mission-16",
+      "key": "missions/moon/artemis2.json :: events.1.note",
+      "grade": "MINOR",
+      "issue": "月移行軌道燃焼 is a wrong term for trans-lunar injection and 地球‐月軌道へ分離 is garbled.",
+      "fix": "ICPSによる月遷移軌道投入（TLI）噴射 — Orionが地球・月間軌道へ分離。"
+    },
+    {
+      "id": "mission-18",
+      "key": "missions/moon/luna21.json :: events.3.note",
+      "grade": "BROKEN",
+      "issue": "Crater name garbled as 孔径 (aperture) and Le Monnier left in Latin; ランプを降りて展開 is wrong.",
+      "fix": "ル・モニエ・クレーターに軟着陸（1973年1月15日）。数時間後、Lunokhod 2がスロープを降りて走行を開始した。"
+    },
+    {
+      "id": "mission-19",
+      "key": "missions/moon/luna24.json :: events.5.note",
+      "grade": "MINOR",
+      "issue": "Regolith rendered as 風化岩屑 and the place Surgut left in Latin script.",
+      "fix": "カプセルが1976-08-22にソ連のスルグトに着陸、レゴリス170 gを回収。"
+    },
+    {
+      "id": "mission-20",
+      "key": "missions/earth/otv-4.json :: events.1.note",
+      "grade": "BROKEN",
+      "issue": "Wrong meaning: Apogee translated as 近地点 (perigee).",
+      "fix": "遠地点 ~325 km；機密ペイロード運用。"
+    },
+    {
+      "id": "other-6",
+      "key": "satellites/callisto.json :: description",
+      "grade": "MINOR",
+      "issue": "Laplace and Valhalla left in Latin script; 衝突隕石爆撃 and 一貫性のある are unnatural.",
+      "fix": "カリストは、イオ、エウロパ、ガニメデの潮汐加熱を引き起こすラプラス共鳴の外側にあるため、内部が分化しきるほど溶けることも、地殻が更新されることもありませんでした。その結果、内側のガリレオ衛星のなかで衝突による爆撃の最も原始的な記録が残されています。月の円周のおよそ4分の1に及ぶ約10重のリング構造をもつ壮大なバルハラ盆地もその一つです。潮汐加熱がないにもかかわらず、Galileoの磁力計は、地表下約100 kmにある深い塩水の海と整合する誘導磁場を検出しました。（エウロパやガニメデと比べて）放射線環境が穏やかで水が長期間存在することから、カリストは将来の木星系への有人ミッションの有力な中継地点と考えられています。"
+    },
+    {
+      "id": "other-12",
+      "key": "original-work.json :: writing.Physics Lab goals.what",
+      "grade": "MINOR",
+      "issue": "Clumsy syntax and machine-like 記述された実践的な結びつきパネル.",
+      "fix": "25の独自の学習目標ラダーが公式を結び、ロケットの打ち上げから彗星への接触まで、ナレーション付きの旅に仕立てています。各ラダーには、実生活とのつながりを説明するパネルが付いています。"
+    },
+    {
+      "id": "planets-4",
+      "key": "moon-sites/apollo14.json :: capability",
+      "grade": "MINOR",
+      "issue": "火星の非月海地点 is nonsensical for Mars non-mare sites.",
+      "fix": "高地への着陸を実証し、それまで危険すぎるとされていた科学的価値の高い地形への道を開いた——火星の平原以外の着陸地点に向けた青写真となった。"
+    },
+    {
+      "id": "planets-10",
+      "key": "mars-sites/beagle2.json :: fact",
+      "grade": "MINOR",
+      "issue": "星の生物学 is a wrong term for astrobiology.",
+      "fix": "ESAの火星探査機Mars Expressに搭載された、英国主導の宇宙生物学ランダー。2003年のクリスマスに着陸したが、通信を確立できなかった。ランダーはNASAのMRO搭載HiRISEカメラにより2015年に発見された。表面に無傷で到達していたが、4枚の太陽電池パネルのうち少なくとも1枚が展開に失敗し、無線アンテナをふさいでいた。軌道上からの画像によって、12年間の謎が解き明かされた。"
+    },
+    {
+      "id": "planets-13",
+      "key": "mars-sites/mars-express.json :: mission_type",
+      "grade": "BROKEN",
+      "issue": "Active Orbiter left untranslated English.",
+      "fix": "現役の周回機 · 2003年〜現在"
+    },
+    {
+      "id": "planets-20",
+      "key": "planets/mars.json :: science_sections.4.why",
+      "grade": "MINOR",
+      "issue": "Awkward calque (最も密集した活動的な宇宙機の集中を有する).",
+      "fix": "火星は、地球以外で最も多くの運用中の宇宙機が集まる天体で、5つの機関の周回機と3つの機関の表面ローバー／着陸機が活動している。"
+    },
+    {
+      "id": "science-2",
+      "key": "science/transfers/free-return.json :: body_paragraphs.0",
+      "grade": "MINOR",
+      "issue": "切り札のコツ is odd and the last sentence misplaces the verb (エンジンを一度も起動して帰宅する).",
+      "fix": "最大の仕掛けはこうです。地球を離れ、月（または火星）のそばを通過し、その天体の重力に進路を曲げてもらって地球へ戻ります。幾何学が正しければ、跳ね返るように地球の大気圏に再突入します。乗組員は帰還のためにエンジンを噴射する必要が一度もありません。"
+    },
+    {
+      "id": "science-4",
+      "key": "science/cosmology/large-scale-structure.json :: body_paragraphs.0",
+      "grade": "BROKEN",
+      "issue": "Hierarchy mistranslated: stars are said to gather into the Local Group, and galaxies/groups/clusters terms are scrambled (豊富なクラスター, 濃度).",
+      "fix": "階層は入れ子になっています。星は集まって銀河をつくり、銀河は互いに引き合って（私たちの局所銀河群のような）銀河群や、（おとめ座銀河団のような、1,000個以上の銀河がひとつの重力井戸に束縛された）銀河団をつくります。銀河群や銀河団そのものも、超銀河団に引き込まれます。超銀河団は数十メガパーセクにわたって広がる、緩やかな集まりです。私たちの局所銀河群はおとめ座超銀河団の外縁部に位置し、この超銀河団は幅約33メガパーセク（約1億1,000万光年）で、おとめ座銀河団を中心としています。"
+    },
+    {
+      "id": "science-8",
+      "key": "science/porkchop/_intro.json :: paragraphs.0",
+      "grade": "MINOR",
+      "issue": "Transliterated lobes/ridge (ローブ, リッジ) and クールな青 read unnaturally.",
+      "fix": "ミッション計画者は火星への軌道を一つだけ計算するのではなく、巨大な格子上で何百万も計算し、ヒートマップとして描きます。低コストの軌道は涼しげな青の葉状の領域として現れ、高コストの軌道は赤くなります。その結果、不思議なことにポークチョップのような形に見えます。低コストの領域がチョップの肉の部分で、高コストの尾根が骨です。"
+    },
+    {
+      "id": "universe-6",
+      "key": "universe/named-stars/proxima-centauri.json :: cultural",
+      "grade": "MINOR",
+      "issue": "Star name Proxima left in Latin script instead of プロキシマ・ケンタウリ.",
+      "fix": "最も近い恒星の隣人であるプロキシマ・ケンタウリは、Breakthrough Starshotの光帆探査機から何世代ものSFに至るまで、星間旅行の思考実験の自然な最初の目標です。"
+    },
+    {
+      "id": "universe-10",
+      "key": "universe/named-stars/rigil-kentaurus.json :: bio",
+      "grade": "MINOR",
+      "issue": "The star's own name Rigil Kentaurus is replaced by the system name アルファ・ケンタウリ.",
+      "fix": "リギル・ケンタウルス（ケンタウルス座アルファ星A）は、太陽からわずか4.3光年の距離にある最も近い恒星系の中で最も明るい星である。色と質量が太陽とほぼ双子の星で、より低温のケンタウルス座アルファ星Bと明るい連星を形づくる。一方、暗い赤色矮星のプロキシマ・ケンタウリは遠く離れて周回し、実際に最も近い恒星となっている。"
+    },
+    {
+      "id": "universe-16",
+      "key": "universe/named-stars/diphda.json :: bio",
+      "grade": "MINOR",
+      "issue": "Deneb Kaitos and Alpha/Beta left in Latin script instead of native forms.",
+      "fix": "ディフダ（くじら座ベータ星）は、デネブ・カイトスとも呼ばれる、約96光年の距離にある橙色巨星である。「ベータ」の符号を持つが、海の怪物くじら座で最も明るい恒星であり、同星座のアルファ星メンカルをもしのぐ。"
+    },
+    {
+      "id": "universe-17",
+      "key": "universe/named-stars/alnilam.json :: fact",
+      "grade": "MINOR",
+      "issue": "Orion constellation left in Latin script.",
+      "fix": "オリオン座の三つ星の中央の真珠——遥か彼方から輝く青い超巨星。"
+    },
+    {
+      "id": "universe-20",
+      "key": "universe/named-stars/mintaka.json :: cultural",
+      "grade": "MINOR",
+      "issue": "Orion left in Latin script.",
+      "fix": "この名はアラビア語で「帯」を意味する。三つ星の一つとして、オリオン座がほぼ世界共通で知られていることにあずかり、赤道上に位置することから東西の自然な目印となった。"
+    },
+    {
+      "id": "universe-23",
+      "key": "universe/named-stars/sirius.json :: cultural",
+      "grade": "MINOR",
+      "issue": "Dog Star and Dog Days left as untranslated English.",
+      "fix": "「犬の星」は何千年にもわたって暦の指標となってきた。古代エジプトでは、その偕日出がナイル川の毎年の氾濫を告げ、ギリシア・ローマの伝統では夏の「犬の日々」の基準となっている。"
+    }
+  ]
+}

@@ -1,0 +1,465 @@
+{
+  "locale": "it",
+  "segments": {
+    "UI strings — long (help text, panels)": {
+      "sampled": 25,
+      "ok": 22,
+      "minor": 3,
+      "broken": 0
+    },
+    "UI strings — short (menus, labels, buttons)": {
+      "sampled": 25,
+      "ok": 23,
+      "minor": 2,
+      "broken": 0
+    },
+    "essays (long editorial)": {
+      "sampled": 10,
+      "ok": 3,
+      "minor": 5,
+      "broken": 2
+    },
+    "fleet (launcher/capsule/engine/site descriptions)": {
+      "sampled": 25,
+      "ok": 17,
+      "minor": 7,
+      "broken": 1
+    },
+    "mission descriptions": {
+      "sampled": 25,
+      "ok": 16,
+      "minor": 7,
+      "broken": 2
+    },
+    "mission event notes": {
+      "sampled": 25,
+      "ok": 22,
+      "minor": 2,
+      "broken": 1
+    },
+    "other short entries (earth-objects, satellites, iss, orbit-regimes, …)": {
+      "sampled": 25,
+      "ok": 19,
+      "minor": 5,
+      "broken": 1
+    },
+    "planets & sites (short facts)": {
+      "sampled": 25,
+      "ok": 19,
+      "minor": 5,
+      "broken": 1
+    },
+    "programs (long editorial)": {
+      "sampled": 10,
+      "ok": 9,
+      "minor": 1,
+      "broken": 0
+    },
+    "science articles (editorial)": {
+      "sampled": 10,
+      "ok": 3,
+      "minor": 6,
+      "broken": 1
+    },
+    "universe (short entries)": {
+      "sampled": 25,
+      "ok": 21,
+      "minor": 3,
+      "broken": 1
+    }
+  },
+  "findings": [
+    {
+      "id": "UI-6",
+      "key": "messages :: lab_goal_lar_challenge",
+      "grade": "MINOR",
+      "issue": "Awkward adverb 'più pesantemente'.",
+      "fix": "Carica il razzo di più — aumenta la massa caricata nell'equazione del razzo finché questo verdetto non diventa rosso. Quella massa è il muro del carico utile per questo stack."
+    },
+    {
+      "id": "UI-13",
+      "key": "messages :: lab_illustration_alt_landing_computer",
+      "grade": "MINOR",
+      "issue": "'motore moderato' misrenders 'throttled engine'; clumsy clause.",
+      "fix": "Un lander in hovering su un motore regolato sopra la superficie, con accanto la curva della velocità di discesa, sfumata, che si smorza fino a zero."
+    },
+    {
+      "id": "UI-17",
+      "key": "messages :: lab_conn_lss_hook",
+      "grade": "MINOR",
+      "issue": "Ungrammatical conditional ('Perdere quella finestra e non si ripeterebbe').",
+      "fix": "I Voyager hanno colto un allineamento di Giove, Saturno, Urano e Nettuno che si presenta una volta ogni 176 anni — il 'Grand Tour' — permettendo a una singola sonda di lanciarsi da un mondo all'altro con la fionda gravitazionale. Se si perdesse quella finestra, non si ripresenterebbe fino al XXII secolo."
+    },
+    {
+      "id": "UI-2 (short)",
+      "key": "messages :: fly_hud_dv_used",
+      "grade": "MINOR",
+      "issue": "Gender disagreement: Δv is masculine.",
+      "fix": "∆V UTILIZZATO"
+    },
+    {
+      "id": "UI-13 (short)",
+      "key": "messages :: fly_toggle_conic_title",
+      "grade": "MINOR",
+      "issue": "Panel name 'Conic Section' left untranslated inside Italian phrase.",
+      "fix": "Attiva/disattiva pannello laterale Sezione conica"
+    },
+    {
+      "id": "essays-1",
+      "key": "essays/seven-minutes.json :: body.19.md",
+      "grade": "BROKEN",
+      "issue": "Machine-like Italian: comma splice, 'a approssimativamente', 'e è caduto', calqued IMU sentence.",
+      "fix": "Nella storia delle missioni su Marte in particolare, il problema dell'atterraggio ha un bilancio di vittime. Mars 2, nel 1971, fu il primo oggetto proveniente dalla Terra a toccare la superficie marziana — e si schiantò, distruggendosi all'impatto, perché il sistema di discesa si era guastato prima che la sequenza del paracadute fosse completa. Mars Polar Lander, nel dicembre 1999, con ogni probabilità spense prematuramente i motori di discesa quando le vibrazioni dovute al dispiegamento delle gambe furono scambiate per un segnale di contatto con il suolo, e precipitò per gli ultimi quaranta metri a piena velocità. Beagle 2, il giorno di Natale 2003, superò la fase di ingresso — la sequenza EDL sembra aver funzionato — ma i pannelli solari non si dispiegarono completamente all'atterraggio e il lander non riuscì mai a comunicare, rimanendo muto sulle pianure marziane. Il lander Schiaparelli dell'Agenzia Spaziale Europea, nell'ottobre 2016, vide saturare la propria unità di misura inerziale durante la violenta discesa con il paracadute — i valori superarono per un attimo il fondo scala — falsando la soluzione di navigazione al punto che il computer di bordo credette di trovarsi già sotto la superficie; staccò il paracadute e accese i retrorazzi per soli tre secondi invece di trenta, e toccò il suolo a circa 540 chilometri all'ora."
+    },
+    {
+      "id": "essays-3",
+      "key": "essays/interstellar-exploration.json :: body.11.md",
+      "grade": "MINOR",
+      "issue": "Calques ('non si preoccupa di', 'approssimativamente', 'nucleare-termica') and stiff phrasing.",
+      "fix": "La propulsione termica nucleare — riscaldare idrogeno in un reattore ed espellerlo attraverso un ugello — raddoppia all'incirca la velocità di scarico, raggiungendo impulsi specifici intorno agli 825 secondi nei migliori motori del programma NERVA provati a terra. Raddoppiare la velocità di scarico non dimezza il rapporto di massa richiesto; ne prende la radice quadrata — un guadagno ben più grande. A velocità interstellari, la propulsione termica nucleare resta comunque categoricamente inadeguata. All'equazione del razzo non importa come venga riscaldato il propellente. Importa solo con quale velocità esce. E nessuna architettura a combustione di propellente finora concepita può espellere materia abbastanza velocemente da raggiungere una frazione significativa di c senza richiedere un carico di carburante che rende la missione impossibile in partenza."
+    },
+    {
+      "id": "essays-4",
+      "key": "essays/going-to-mars.json :: body.21.md",
+      "grade": "MINOR",
+      "issue": "'e è', 'approssimativamente', 'ingegneristicamente', 'schermaggio' unnatural.",
+      "fix": "Il terzo muro è il corpo umano, ed è quello che l'architettura della missione non può aggirare con l'ingegneria. Marte non ha un campo magnetico globale — il suo nucleo si è solidificato da tempo, ponendo fine alla dinamo che un tempo generava lo scudo. La magnetosfera terrestre devia la maggior parte dei raggi cosmici galattici e delle particelle energetiche solari; Marte non offre nulla di equivalente. Un transito di sei mesi nello spazio interplanetario comporta una dose misurata di circa 300 millisievert — ben più di cento volte la radiazione naturale di fondo di un anno tipico sulla Terra, assorbita in sei mesi. Sulla superficie marziana, senza una magnetosfera, la dose si accumula ulteriormente per effetto della radiazione secondaria. Un viaggio di andata e ritorno di tre anni è stato stimato in 600-1.200 millisievert in totale, a seconda della fase del ciclo solare e della schermatura — valori misurati in volo da strumenti a bordo di [Curiosity](/missions?id=curiosity)."
+    },
+    {
+      "id": "essays-5",
+      "key": "essays/interstellar-exploration.json :: body.26.md",
+      "grade": "BROKEN",
+      "issue": "'vaso equipaggiato' mistranslates 'crewed vessel'; 'a tutti', 'sia sia' garbled.",
+      "fix": "Ma il divario tra «non vietato» e «raggiungibile in tempi ravvicinati» è enorme. La proposta seria più lenta — un'astronave interstellare a fusione al 12% di c — richiederebbe una tecnologia che non esiste, a un costo che supera qualsiasi programma spaziale della storia, per portare un veicolo con equipaggio presso un'altra stella in circa cinquant'anni. La proposta seria più veloce — la vela leggera spinta da laser di Breakthrough Starshot — consegnerebbe un grammo di strumenti a un sorvolo che dura ore, e restituirebbe dati per anni, a un costo che i suoi sostenitori stimano in decine di miliardi di dollari, ammesso che l'array laser possa essere costruito. Tra questi estremi non esiste un'opzione intermedia che sia al tempo stesso tecnologicamente fattibile e adeguata a un'esplorazione significativa. La scala del problema semplicemente non ammette una soluzione moderata."
+    },
+    {
+      "id": "essays-7",
+      "key": "essays/the-body-in-the-dark.json :: body.14.md",
+      "grade": "MINOR",
+      "issue": "Tense shifts ('Ha camminato'), 'non tutto', 'legato alla Terra', 'Lo NASA', 'dataset' calques.",
+      "fix": "Tutto ciò che sappiamo sulla fisiologia dei voli spaziali di lunga durata è stato misurato — su persone reali, che hanno vissuto nello spazio per periodi reali, sono tornate a casa e sono state studiate. Il record per un singolo volo continuo è detenuto da Valerij Poljakov, un medico-cosmonauta russo che salì a bordo della [Mir](/programs/mir) nel gennaio 1994 e tornò sulla Terra nel marzo 1995, dopo 437 giorni consecutivi in orbita — un primato ancora imbattuto, tre decenni dopo. L'obiettivo di Poljakov era esplicitamente medico: stabilire se un essere umano potesse sopravvivere, in modo funzionale, per la durata di una missione su Marte. Quando atterrò, insistette per allontanarsi dalla capsula Soyuz con le proprie gambe. Il recupero di ossa e muscoli richiese mesi. Ma camminò. I programmi [Salyut](/programs/salyut) e [Mir](/programs/mir) costruirono un corpo di dati fisiologici sovietici e poi russi che resta insostituibile — la [ISS](/programs/iss) lo ha ampliato e globalizzato. I 665 giorni cumulativi di Peggy Whitson in tre missioni hanno dato ai ricercatori un insieme di dati longitudinali su un singolo individuo impossibile da replicare altrimenti. Il NASA Twin Study — la missione di 340 giorni di Scott Kelly confrontata con quella del suo gemello identico rimasto a terra, Mark — ha trovato cambiamenti misurabili nell'espressione genica, nella dinamica dei telomeri, nella composizione del microbioma intestinale e nelle prestazioni cognitive, la maggior parte dei quali si è invertita al ritorno, ma non tutti. Il programma [Tiangong](/programs/tiangong) cinese sta ora arricchendo il quadro: equipaggi in rotazioni di 90 e 180 giorni dal 2021, una popolazione di taikonauti prima assente dai dati. Qualsiasi resoconto onesto di ciò che l'umanità sa sul corpo umano nello spazio per lunghe durate deve includere ciò che la Russia ha imparato sulla Mir, ciò che la partnership ISS a 15 nazioni ha misurato dal 2000 e ciò che la Cina sta accumulando oggi."
+    },
+    {
+      "id": "essays-8",
+      "key": "essays/navigation.json :: body.22.caption",
+      "grade": "MINOR",
+      "issue": "'cornice fissa' is a calque of 'frame'; should be reference system.",
+      "fix": "Qual è l'alto, quando non esiste un alto: un inseguitore stellare fotografa una porzione di cielo, confronta lo schema con un catalogo di bordo e sa subito come è orientato il veicolo nel sistema di riferimento fisso J2000. Tra una determinazione e l'altra, i giroscopi mantengono il conto."
+    },
+    {
+      "id": "essays-10",
+      "key": "essays/the-body-in-the-dark.json :: body.22.md",
+      "grade": "MINOR",
+      "issue": "Several unnatural phrases and an article error ('il psicologico').",
+      "fix": "Una propulsione migliore conta. Le [nuove tecnologie di propulsione](/essays/new-propulsion) in sviluppo — termica nucleare, elettrica nucleare, vele solari, i concetti di un futuro più lontano — ridurrebbero il tempo di transito, e ridurre il tempo di transito riduce l'esposizione cumulativa alle radiazioni e il degrado fisiologico cumulativo. Un transito di 90 giorni invece di 270 non è tre volte più facile per il corpo; il rapporto tra dose ed effetto è più complesso di una semplice proporzione lineare, e alcuni sistemi — quello psicologico, quello osseo, quello cardiovascolare — sono sensibili alla durata in modi che nemmeno un'esposizione più breve compensa del tutto. Ma più breve è meglio. Motori più veloci sono vera medicina. Non cambiano, però, la natura fondamentale del problema. Un transito di 90 giorni attraversa comunque lo spazio interplanetario senza magnetosfera, senza gravità e senza soccorso. Il corpo resta il carico utile. Continua a degradarsi. Continua a tornare a casa indebolito in modi che richiedono mesi o anni per recuperare, se si recuperano."
+    },
+    {
+      "id": "fleet-3",
+      "key": "fleet/lander/mars-3.json :: tagline",
+      "grade": "MINOR",
+      "issue": "'allunaggio' means Moon landing; wrong for Mars.",
+      "fix": "Primo atterraggio morbido su Marte; ~20 s di trasmissione dalla superficie"
+    },
+    {
+      "id": "fleet-7",
+      "key": "fleet/launch-site/xichang-lc-2.json :: description",
+      "grade": "MINOR",
+      "issue": "Article error 'dello Sichuan'.",
+      "fix": "LC-2 del Centro spaziale di Xichang ha gestito la maggior parte dei lanci geostazionari commerciali cinesi, la costellazione di navigazione Beidou/Compass e il programma lunare Chang'e tramite le varianti Long March 3A, 3B e 3C. Situato nella provincia montuosa del Sichuan, il sito combina un vantaggio di bassa latitudine per le prestazioni verso GTO con disponibilità operativa tutto l'anno."
+    },
+    {
+      "id": "fleet-8",
+      "key": "fleet/crewed-spacecraft/orion.json :: tagline",
+      "grade": "MINOR",
+      "issue": "Telegraphic calque 'Veicolo equipaggio'.",
+      "fix": "Veicolo con equipaggio per il programma lunare Artemis"
+    },
+    {
+      "id": "fleet-10",
+      "key": "fleet/observatory/hitomi.json :: tagline",
+      "grade": "MINOR",
+      "issue": "'ha guidato lo sviluppo' is a calque of 'drove'; 'Disintegrato' loses 'spun apart'.",
+      "fix": "Messo in rotazione e disintegrato in orbita; la sua perdita ha portato allo sviluppo di XRISM"
+    },
+    {
+      "id": "fleet-14",
+      "key": "fleet/station/tiangong-1.json :: description",
+      "grade": "MINOR",
+      "issue": "'missioni equipaggiate' and 'e è rientrata' are unnatural/ungrammatical.",
+      "fix": "Tiangong-1 è una stazione spaziale costruita da CAST in Cina. Prima stazione spaziale cinese; modulo singolo di prova. Lanciata nel 2011, ha ospitato due visite con equipaggio (Shenzhou 9 nel 2012 e Shenzhou 10 nel 2013); il contatto è stato perso nel marzo 2016 ed è rientrata in modo incontrollato il 2 aprile 2018."
+    },
+    {
+      "id": "fleet-21",
+      "key": "fleet/rover/spirit.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "'operazione di 6 anni' calque.",
+      "fix": "Mars Exploration Rover; 6 anni di attività"
+    },
+    {
+      "id": "fleet-22",
+      "key": "fleet/lander/mars-polar-lander.json :: best_known_for",
+      "grade": "BROKEN",
+      "issue": "Garbled: 'più veloce-miglior-cheaper recensione' leaves English and has no sense.",
+      "fix": "Perso durante l'atterraggio; ha dato origine alla revisione sulla filosofia «più veloce, migliore, più economico»"
+    },
+    {
+      "id": "fleet-25",
+      "key": "fleet/crewed-spacecraft/challenger.json :: dispatch",
+      "grade": "MINOR",
+      "issue": "Untranslated 'spacewalk', 'e espose'.",
+      "fix": "Challenger, OV-099, fu il cavallo da lavoro iniziale della flotta e il teatro della sua prima catastrofe. Condusse la prima passeggiata spaziale del programma e portò in orbita la prima donna americana, Sally Ride. Il 28 gennaio 1986, lanciandosi con un freddo insolito, una guarnizione in gomma in uno dei booster a propellente solido — irrigidita dal freddo, una modalità di guasto su cui gli ingegneri avevano lanciato l'allarme — cedette, e il veicolo si disintegrò 73 secondi dopo il decollo. Tutti e sette a bordo morirono. Il disastro tenne a terra la flotta per quasi tre anni ed espose una cultura gestionale che aveva volato oltre un rischio noto e segnalato."
+    },
+    {
+      "id": "mission-2 (desc)",
+      "key": "missions/mars/curiosity.json :: dispatch",
+      "grade": "MINOR",
+      "issue": "'Cratere Gale' capitalised against rule; 'legge come' wrong reflexive; 'continua ancora' redundant.",
+      "fix": "Curiosity è un laboratorio a propulsione nucleare grande quanto una piccola automobile, e farlo scendere è stata la parte difficile. Troppo pesante per gli airbag, fu calato su Marte nel 2012 da una gru aerea a razzo in una sequenza così rischiosa che i suoi pianificatori la chiamarono sette minuti di terrore — e funzionò al primo tentativo. Da allora ha trivellato la sua strada attraverso il cratere Gale e ha risposto alla domanda per cui era stato inviato: il cratere un tempo ospitava un lago, con la chimica che un essere vivente avrebbe potuto usare. Marte era stato abitabile. Curiosity è ancora in movimento, sale una montagna di roccia stratificata che si legge come il libro di storia del pianeta stesso."
+    },
+    {
+      "id": "mission-5 (desc)",
+      "key": "missions/mars/mmx.json :: events.2.label",
+      "grade": "MINOR",
+      "issue": "'DISTRIBUZIONE' is the wrong sense of 'deploy'.",
+      "fix": "DISPIEGAMENTO DEL ROVER"
+    },
+    {
+      "id": "mission-6 (desc)",
+      "key": "missions/moon/slim.json :: description",
+      "grade": "MINOR",
+      "issue": "'Fino a SLIM' (should be 'Prima di'), 'vincolo vincolante', 'cronologia' for timeline, awkward docking phrase.",
+      "fix": "Prima di SLIM, gli atterraggi lunari avevano una precisione di mira su scala chilometrica. Lo Smart Lander della JAXA ha dimostrato una precisione di 100 m: la precisione necessaria perché le missioni con equipaggio possano attraccare a un carico posizionato in anticipo, perché i veicoli di risalita dei campioni trovino i loro partner in orbita e per qualsiasi architettura futura che dipenda dall'atterraggio in siti specifici di grande valore scientifico. SLIM ha anche aperto la strada al trasferimento balistico a bassa energia verso la Luna, impiegando 135 giorni per arrivare ma usando meno propellente delle traiettorie dirette. Una dimostrazione della pazienza che le missioni interplanetarie possono permettersi quando i tempi non sono il vincolo decisivo."
+    },
+    {
+      "id": "mission-7 (desc)",
+      "key": "missions/moon/smart-1.json :: description",
+      "grade": "MINOR",
+      "issue": "Garbled thruster name, dangling participles ('Operato…', 'Volutamente impattato'), untranslated 'spacecraft'.",
+      "fix": "Prima missione lunare dell'ESA e primo veicolo spaziale europeo a raggiungere la Luna. SMART = Small Missions for Advanced Research in Technology — e la tecnologia chiave era un propulsore ionico solare-elettrico a effetto Hall (PPS-1350-G), all'epoca il più grande mai volato. Lanciato il 2003-09-27 come carico utile condiviso su un Ariane 5 da Kourou, il veicolo di 367 kg ha usato il suo motore ionico a xeno da 1,2 kW per 13 mesi per innalzare lentamente la propria orbita terrestre, fino a essere catturato dalla gravità lunare il 2004-11-15 — una spirale a bassa spinta di 13 mesi anziché il trasferimento chimico di pochi giorni di ogni missione lunare precedente. Ha operato per 16 mesi in un'orbita lunare polare, restituendo immagini della camera AMIE, le prime mappe elementari della Luna in fluorescenza a raggi X (D-CIXS) e la spettroscopia infrarossa dei minerali (SIR). Ha concluso la missione con un impatto deliberato nel Lacus Excellentiae (34,4° S, 46,2° O) il 2006-09-03 alle 05:42 UTC — il lampo dell'impatto è stato osservato in diretta dal Canada-France-Hawaii Telescope."
+    },
+    {
+      "id": "mission-11 (desc)",
+      "key": "missions/mars/starship-demo.json :: description",
+      "grade": "BROKEN",
+      "issue": "Garbled parenthetical ('l'astronave funziona ancora attraverso l'affidabilità del volo orbitale'); Starship rendered generically.",
+      "fix": "Una dimostrazione senza equipaggio dell'architettura Starship per Marte: lancio su Super Heavy, rifornimento in LEO da una variante cisterna, poi iniezione trans-marziana di una Starship completamente rifornita e discesa propulsa verso la superficie marziana. L'obiettivo dichiarato di SpaceX è la finestra di lancio 2026-2027; la realtà ingegneristica (Starship sta ancora lavorando sull'affidabilità del volo orbitale e il rifornimento in orbita non è stato dimostrato) rende più probabile il 2028 o oltre. Se avrà successo, ribalterà l'economia del carico utile verso Marte: da migliaia di kg a cento tonnellate per atterraggio."
+    },
+    {
+      "id": "mission-14 (desc)",
+      "key": "missions/mars/mars-pathfinder.json :: dispatch",
+      "grade": "BROKEN",
+      "issue": "'retrorazzi al ralenti' means idling, not hover; faster-cheaper-better clause is garbled.",
+      "fix": "Mars Pathfinder fu la dimostrazione della NASA che atterrare su Marte non doveva costare una fortuna. Invece del volo stazionario con retrorazzi usato dai Viking, entrò nell'atmosfera protetto da uno scudo termico, aprì un paracadute, gonfiò un bozzolo di airbag e rimbalzò decine di volte sulla superficie prima di fermarsi e aprirsi come un fiore. Ne uscì Sojourner — un rover grande quanto un forno a microonde, le prime ruote a girare su un altro pianeta. La scienza fu modesta; il punto era il metodo. L'atterraggio con airbag e l'approccio «più veloce, più economico, migliore» che dimostrò divennero il modello per i rover molto più ambiziosi — Spirit, Opportunity, Curiosity — che seguirono."
+    },
+    {
+      "id": "mission-15 (desc)",
+      "key": "missions/earth/skylab-4.json :: description",
+      "grade": "MINOR",
+      "issue": "Gender error 'una ammutinamento', untranslated 'timeline', stiff phrasing.",
+      "fix": "Carr, Gibson e Pogue — l'ultimo e più lungo equipaggio di Skylab, 84 giorni e 1 ora, tutti alla prima missione. Lanciato il 1973-11-16 14:01 UTC su Saturn IB (SA-208). Osservazioni complete delle risorse terrestri e del Sole, inclusa una campagna completa sulla cometa Kohoutek tra dicembre e gennaio. La missione è ricordata soprattutto per quello che la NASA chiamò in seguito un «ammutinamento di Skylab» o «sciopero» — un resoconto controverso di una pausa nel giorno di riposo intorno al giorno 42, dopo che le richieste incessanti dei controllori a terra avevano compresso ogni minuto di veglia; la NASA e l'equipaggio hanno dichiarato che non vi fu alcuno sciopero organizzato, ma il sovraccarico del programma di attività era reale e portò a riforme permanenti della NASA nella pianificazione dei tempi di lavoro dell'equipaggio per le missioni di lunga durata. Ammaraggio il 1974-02-08 15:17 UTC — l'ultimo ammaraggio di Skylab. CSM-118 esposto al National Museum of the US Air Force, Dayton OH."
+    },
+    {
+      "id": "mission-18 (desc)",
+      "key": "missions/moon/apollo15.json :: dispatch",
+      "grade": "MINOR",
+      "issue": "Mile conversions wrong (18 miles is ~29 km, not 24 km); 'bravo… cancellato' clumsy.",
+      "fix": "Con Apollo 15 la corsa era ormai finita, e la scienza prese il volante — letteralmente. Fu il primo volo a portare il Lunar Rover, che trasformò un raggio a piedi di circa tre chilometri in una vera spedizione sul campo di quasi trenta, e si posò non su una pianura sicura ma in una valle tra una catena montuosa e un canyon tortuoso. Scott e Irwin tornarono a casa con la «Genesis Rock», un frammento di quattro miliardi di anni della crosta originaria della Luna che confermò come si era formata. Apollo aveva smesso di visitare la Luna e aveva cominciato a studiarla — e continuò a migliorare in questo fino alla sua cancellazione."
+    },
+    {
+      "id": "mission-19 (desc)",
+      "key": "missions/moon/smart-1.json :: first",
+      "grade": "MINOR",
+      "issue": "'spacecraft' left in English.",
+      "fix": "Primo veicolo spaziale europeo a raggiungere la Luna; prima missione a raggiungere la Luna con propulsione ionica"
+    },
+    {
+      "id": "mission-4 (notes)",
+      "key": "missions/moon/apollo8.json :: events.6.note",
+      "grade": "MINOR",
+      "issue": "Fragment 'CM ammaraggio…' is ungrammatical.",
+      "fix": "Il CM ammarò nel Pacifico settentrionale il 1968-12-27. Recupero da parte della USS Yorktown."
+    },
+    {
+      "id": "mission-13 (notes)",
+      "key": "missions/venus/magellan.json :: events.5.note",
+      "grade": "MINOR",
+      "issue": "'Perielio' is the wrong term for periapsis around Venus.",
+      "fix": "1994-10-13. Pericentro abbassato nell'atmosfera — primo ingresso atmosferico pianificato di una sonda planetaria."
+    },
+    {
+      "id": "mission-25 (notes)",
+      "key": "missions/mars/curiosity.json :: events.1.note",
+      "grade": "BROKEN",
+      "issue": "'translumare' means trans-lunar; should be trans-Mars.",
+      "fix": "L'iniezione trans-marziana (3,61 km/s ∆v) pone MSL su una traiettoria eliocentrica diretta verso Marte."
+    },
+    {
+      "id": "other-3",
+      "key": "original-work.json :: models3d./images/colophon/craft-venera-13_webp.what",
+      "grade": "BROKEN",
+      "issue": "'veneziano' means Venetian, not of Venus.",
+      "fix": "Lander sovietico per Venere — aerofrenante toroidale e anello di atterraggio."
+    },
+    {
+      "id": "other-5 (12)",
+      "key": "earth-objects/change2.json :: scale_fact",
+      "grade": "MINOR",
+      "issue": "Garbled 'nonNASA-non-ESA' and stiff phrasing.",
+      "fix": "Orbita polare lunare a 100 km di altitudine durante la fase lunare. Prima missione cinese nello spazio profondo dopo le operazioni estese; prima missione non NASA e non ESA verso L2."
+    },
+    {
+      "id": "other-11",
+      "key": "original-work.json :: models3d./images/colophon/model-launcher-saturn-ib_webp.what",
+      "grade": "MINOR",
+      "issue": "'ammassato' is a poor rendering of 'clustered'.",
+      "fix": "Il cavallo di battaglia Apollo per la LEO — un primo stadio S-IB con otto motori H-1 raggruppati, sotto lo stesso S-IVB + CSM."
+    },
+    {
+      "id": "other-15",
+      "key": "orbit-regimes-explore/GIANTS.json :: story",
+      "grade": "MINOR",
+      "issue": "Unit 'AU' left in English (Italian uses UA, as elsewhere in the site).",
+      "fix": "Il regno planetario esterno — da 5 a 30 UA. Due giganti gassosi (Giove, Saturno) con involucri di idrogeno-elio profondi migliaia di chilometri sopra piccoli nuclei rocciosi; due giganti ghiacciati (Urano, Nettuno) con mantelli di acqua/ammoniaca/metano sotto strati di gas più sottili. Insieme racchiudono il 99% di tutta la massa planetaria del sistema solare. Ciascuno ha un proprio sistema di lune che si presenta come un sistema solare in miniatura — solo Giove ha 95 lune note, di cui quattro più grandi di Plutone."
+    },
+    {
+      "id": "other-17",
+      "key": "tiangong-modules/mengtian.json :: description",
+      "grade": "MINOR",
+      "issue": "Drops 'cargo-style external payload airlock' detail; 'automatizzata' invented.",
+      "fix": "Il secondo laboratorio — ha completato la tipica silhouette a T nell'ottobre 2022, con altre due ali solari e una camera di equilibrio esterna per i carichi utili, in stile cargo, che non richiede un astronauta in passeggiata spaziale per essere azionata."
+    },
+    {
+      "id": "other-23",
+      "key": "original-work.json :: writing.Landing-site stories.title",
+      "grade": "MINOR",
+      "issue": "'allunaggio' excludes Mars and other landing sites.",
+      "fix": "Storie dei siti di atterraggio"
+    },
+    {
+      "id": "planets-2",
+      "key": "planets/patroclus.json :: fact",
+      "grade": "MINOR",
+      "issue": "'la più grande binaria' wrong gender/term for binary system.",
+      "fix": "Componente principale del più grande sistema binario noto tra i Troiani di Giove — Patroclo, di 113 km, accoppiato a Menezio, di 104 km, a una separazione reciproca di 680 km. L'accoppiamento iliadico è voluto: Patroclo e Menezio sono il caro compagno di Achille e suo padre, i due che nell'epica cadono insieme."
+    },
+    {
+      "id": "planets-3",
+      "key": "planets/saturn.json :: science_sections.3.why",
+      "grade": "MINOR",
+      "issue": "'gentile' is a literal calque; 'AU' left in English.",
+      "fix": "L'orbita di Saturno è dolce (eccentricità 0,054) ma la sua distanza media di 9,6 UA fa sì che perielio e afelio differiscano di 100 milioni di km — Cassini ha calcolato i tempi del suo arrivo per sfruttare la velocità in avvicinamento."
+    },
+    {
+      "id": "planets-7",
+      "key": "moon-sites/luna9.json :: mission_type",
+      "grade": "BROKEN",
+      "issue": "Left entirely in English.",
+      "fix": "Lander morbido senza equipaggio"
+    },
+    {
+      "id": "planets-14",
+      "key": "mars-sites/mariner9.json :: capability",
+      "grade": "MINOR",
+      "issue": "'riconoscimento' is the wrong sense of reconnaissance.",
+      "fix": "Prima ricognizione orbitale in assoluto di un altro pianeta — ha definito il modello per ogni successiva missione scientifica orbitale."
+    },
+    {
+      "id": "planets-21",
+      "key": "planets/jupiter.json :: science_sections.0.why",
+      "grade": "MINOR",
+      "issue": "Agreement error 'lune confermati'.",
+      "fix": "Giove ha 101 lune confermate — i quattro satelliti galileiani (Io, Europa, Ganimede, Callisto) sono ciascuno un mondo a sé e tracciano una risonanza orbitale 1:2:4."
+    },
+    {
+      "id": "planets-25",
+      "key": "small-bodies/donaldjohanson.json :: science_sections.0.why",
+      "grade": "MINOR",
+      "issue": "Awkward 'denominato dal nome dello scopritore'.",
+      "fix": "52246 Donaldjohanson è un asteroide della fascia principale (dedicato allo scopritore del fossile Lucy) — la sonda NASA Lucy lo ha sorvolato il 20 aprile 2025 come primo incontro nella fascia."
+    },
+    {
+      "id": "programs-2",
+      "key": "programs/skylab.json :: lessons.0.md",
+      "grade": "MINOR",
+      "issue": "'fallimento al lancio' and 'servizio di Hubble' are calques (should be guasto / manutenzione).",
+      "fix": "La prima lezione di Skylab è che la riparabilità è una capacità per cui vale la pena progettare. La stazione sopravvisse a un guasto al lancio che avrebbe dovuto distruggerla solo perché fu possibile inviare un equipaggio a ripararla — e perché, per quanto improvvisate fossero le riparazioni, c'erano abbastanza accessi e abbastanza margine per tentarle. I programmi che presero a cuore questa lezione, dalla manutenzione di Hubble alla ISS, trattarono il proprio hardware come qualcosa da mantenere, non semplicemente da far funzionare finché non si rompeva. Quelli che la dimenticarono pagarono per veicoli che poterono solo guardare mentre si guastavano."
+    },
+    {
+      "id": "science-1",
+      "key": "science/observation/magellanic-clouds.json :: diagram_caption",
+      "grade": "MINOR",
+      "issue": "'SN 1987a' wrong case, 'Magellanic Stream' untranslated, 'dal meridione' unclear.",
+      "fix": "LMC: distanza 49,97 kpc, ~10¹⁰ M☉, irregolare, visibile a occhio nudo nel cielo australe. SMC: 62,1 kpc, ~10⁹ M☉, irregolare. Entrambe su orbite di primo passaggio (Gaia DR3, Kallivayalil et al.), non legate stabilmente. Corrente Magellanica: coda di idrogeno che segue il loro recente passaggio ravvicinato attraverso le maree della Via Lattea. SN 1987A nella LMC: supernova più brillante dopo quella di Keplero del 1604; prima supernova visibile a occhio nudo dopo SN 1885A (Andromeda)."
+    },
+    {
+      "id": "science-2",
+      "key": "science/life-in-space/crew-selection.json :: intro_sentence",
+      "grade": "MINOR",
+      "issue": "'circa lo stesso' calque of 'roughly the same'; 'dinamica di equipaggio' missing article.",
+      "fix": "Ogni agenzia spaziale applica all'incirca lo stesso imbuto di selezione — fisico, cognitivo, psicologico, operativo — che riduce ~10.000 candidati a ~10 selezionati. Il collo di bottiglia è la dinamica dell'equipaggio sotto stress."
+    },
+    {
+      "id": "science-4",
+      "key": "science/exoplanets/hot-jupiters.json :: narrative_101.0",
+      "grade": "MINOR",
+      "issue": "'Giove che arrostivano… girando attorno in giorni' is awkward.",
+      "fix": "I primi esopianeti trovati attorno a stelle simili al Sole non somigliavano affatto ai nostri giganti. Invece di un Giove parcheggiato lontano, nel freddo, erano Giove arroventati a pochi raggi stellari dalle loro stelle, che li percorrevano in giorni."
+    },
+    {
+      "id": "science-5",
+      "key": "science/cosmology/large-scale-structure.json :: body_paragraphs.0",
+      "grade": "BROKEN",
+      "issue": "'sprawling' left in English, 'lasse' wrong, Virgo Supercluster renamed.",
+      "fix": "La gerarchia si annida. Le stelle si raccolgono in galassie; le galassie cadono insieme in gruppi (come il nostro Gruppo Locale) e in ammassi ricchi (come l'Ammasso della Vergine, oltre mille galassie legate in un unico pozzo gravitazionale). Gruppi e ammassi sono a loro volta attratti in superammassi — concentrazioni sparse e dall'estensione irregolare, larghe decine di megaparsec. Il nostro Gruppo Locale si trova alla periferia del Superammasso della Vergine, largo ~33 megaparsec (circa 110 milioni di anni luce) e centrato sull'Ammasso della Vergine."
+    },
+    {
+      "id": "science-6",
+      "key": "science/life-in-space/eva-physiology.json :: body_paragraphs.1",
+      "grade": "MINOR",
+      "issue": "Gender error 'Il contromisura', 'airlock' untranslated.",
+      "fix": "La contromisura è la pre-respirazione: ore di respirazione di ossigeno puro a pressioni gradualmente più basse prima dell'uscita, per eliminare l'azoto dai tessuti corporei. L'attuale protocollo ISS lato USA prevede una pre-respirazione in tuta + il protocollo Campout (una notte a 10,2 psi) per un totale di circa 4 ore prima della depressurizzazione del portello stagno. Le tute russe Orlan funzionano a 5,7 psi, il che riduce sensibilmente la pre-respirazione — un diverso compromesso."
+    },
+    {
+      "id": "science-7",
+      "key": "science/mission-phases/entry-footprint.json :: body_paragraphs.0",
+      "grade": "MINOR",
+      "issue": "Technical terms downrange/crossrange left in English in prose; awkward 'portanza verso l'alto'.",
+      "fix": "L'impronta è l'insieme raggiungibile nello spazio gittata–gittata laterale. La gittata dipende soprattutto da come il veicolo impiega la portanza verticale: con la portanza tutta verso l'alto si massimizza (la capsula «galleggia», decelerando lentamente e percorrendo molta strada), con la portanza tutta verso il basso si minimizza (un arrivo ripido e veloce). La gittata laterale deriva dall'inclinare lateralmente la portanza, e la sua estensione cresce con L/D. Per una capsula con L/D basso l'impronta è modesta; per un corpo portante o un veicolo alato è enorme."
+    },
+    {
+      "id": "science-10",
+      "key": "science/history/goddard-liquid-rocket-1926.json :: body_paragraphs.1",
+      "grade": "MINOR",
+      "issue": "'accelerazione controllabile' mistranslates throttling; 'riavviabile' dangling.",
+      "fix": "Esistevano già razzi a propellente solido (le frecce incendiarie cinesi dal XIII secolo in poi, i razzi Congreve nelle guerre napoleoniche), ma i propellenti liquidi furono la porta verso il volo spaziale: impulso specifico più elevato, spinta regolabile, possibilità di riaccensione."
+    },
+    {
+      "id": "universe-1",
+      "key": "universe/named-stars/regulus.json :: cultural",
+      "grade": "MINOR",
+      "issue": "Person name 'Copernicus' not in Italian form.",
+      "fix": "Chiamata 'piccolo re' da Copernico e conosciuta nell'antichità come il Cuore del Leone (Cor Leonis), Regolo era una delle quattro 'Stelle Regali' della Persia che segnavano il mutare delle stagioni."
+    },
+    {
+      "id": "universe-2",
+      "key": "universe/named-stars/polaris.json :: bio",
+      "grade": "MINOR",
+      "issue": "Mixed Latin/Italian designation 'Alfa Ursae Minoris'.",
+      "fix": "Polaris (Alfa dell'Orsa Minore) è una supergigante gialla e una variabile Cefeide distante circa 430 anni luce. Non è particolarmente luminosa; la sua fama deriva interamente dalla sua posizione vicino al polo celeste."
+    },
+    {
+      "id": "universe-17",
+      "key": "universe/named-stars/diphda.json :: bio",
+      "grade": "BROKEN",
+      "issue": "Star name Menkar wrongly given as 'Menkab'; 'Alpha della costellazione' unnatural.",
+      "fix": "Diphda (Beta Ceti), chiamata anche Deneb Kaitos, è una gigante arancione a circa 96 anni luce di distanza. Pur essendo designata 'Beta', è la stella più luminosa della Balena, il Mostro Marino, e supera in luminosità l'Alfa della costellazione, Menkar."
+    },
+    {
+      "id": "universe-21",
+      "key": "universe/named-stars/mintaka.json :: cultural",
+      "grade": "MINOR",
+      "issue": "'Orion' not in Italian form.",
+      "fix": "Il nome è arabo e significa 'la cintura'. Come una delle tre stelle della Cintura, condivide il riconoscimento quasi universale di Orione, e la sua posizione sull'equatore la rese un indicatore naturale di est e ovest."
+    }
+  ]
+}

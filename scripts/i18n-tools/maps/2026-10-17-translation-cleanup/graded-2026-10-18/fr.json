@@ -1,0 +1,472 @@
+{
+  "locale": "fr",
+  "segments": {
+    "UI strings — long (help text, panels)": {
+      "sampled": 25,
+      "ok": 20,
+      "minor": 4,
+      "broken": 1
+    },
+    "UI strings — short (menus, labels, buttons)": {
+      "sampled": 25,
+      "ok": 23,
+      "minor": 1,
+      "broken": 1
+    },
+    "essays (long editorial)": {
+      "sampled": 10,
+      "ok": 1,
+      "minor": 7,
+      "broken": 2
+    },
+    "fleet (launcher/capsule/engine/site descriptions)": {
+      "sampled": 25,
+      "ok": 18,
+      "minor": 4,
+      "broken": 3
+    },
+    "mission descriptions": {
+      "sampled": 25,
+      "ok": 20,
+      "minor": 2,
+      "broken": 3
+    },
+    "mission event notes": {
+      "sampled": 25,
+      "ok": 18,
+      "minor": 6,
+      "broken": 1
+    },
+    "other short entries (earth-objects, satellites, iss, orbit-regimes, …)": {
+      "sampled": 25,
+      "ok": 18,
+      "minor": 5,
+      "broken": 2
+    },
+    "planets & sites (short facts)": {
+      "sampled": 25,
+      "ok": 16,
+      "minor": 6,
+      "broken": 3
+    },
+    "programs (long editorial)": {
+      "sampled": 10,
+      "ok": 7,
+      "minor": 3,
+      "broken": 0
+    },
+    "science articles (editorial)": {
+      "sampled": 10,
+      "ok": 7,
+      "minor": 3,
+      "broken": 0
+    },
+    "universe (short entries)": {
+      "sampled": 25,
+      "ok": 25,
+      "minor": 0,
+      "broken": 0
+    }
+  },
+  "findings": [
+    {
+      "id": "UI-4",
+      "key": "messages :: lab_goal_fc_verdict",
+      "grade": "MINOR",
+      "issue": "Switches to informal tu ('pourrais-tu', 't'amène') while the rest of the UI uses vous.",
+      "fix": "Alors : pourriez-vous réaliser cela au carburant seul ? Atteindre Jupiter est en fait à portée chimique — environ 6 km/s depuis la LEO, moins que les ~8,5 d'un étage supérieur puissant. Mais un Grand Tour signifie s'ÉCHAPPER du système solaire avec de la vitesse en réserve, et cela demande ~8,7 km/s depuis la LEO — juste au-delà de ce que délivre le meilleur étage chimique. La chimie vous amène à Jupiter et s'arrête ; la chaîne d'assistances gravitationnelles fournit le reste, et les dizaines de km/s de vitesse de périple par-dessus. Voilà pourquoi Voyager était réalisable, et pourquoi chaque mission dans l'espace lointain depuis lors consiste à emprunter de la vitesse aux planètes."
+    },
+    {
+      "id": "UI-6",
+      "key": "messages :: lab_goal_lar_challenge",
+      "grade": "MINOR",
+      "issue": "'plus lourd' should be the adverb 'plus lourdement'; awkward 'mur de charge utile'.",
+      "fix": "Chargez la fusée plus lourdement — augmentez la masse chargée dans l'équation de Tsiolkovski jusqu'à ce que ce verdict passe au rouge. Cette masse est la limite de charge utile de cette configuration."
+    },
+    {
+      "id": "UI-13",
+      "key": "messages :: lab_illustration_alt_landing_computer",
+      "grade": "MINOR",
+      "issue": "'atténuée progressivement' does not render 'ghosted ... easing to zero'; unnatural.",
+      "fix": "Un atterrisseur en vol stationnaire sur un moteur à poussée réglée au-dessus de la surface, sa courbe de vitesse de descente tracée en transparence à côté de lui, décroissant doucement jusqu'à zéro."
+    },
+    {
+      "id": "UI-23",
+      "key": "messages :: lab_goal_sar_thrust",
+      "grade": "BROKEN",
+      "issue": "'poussée spécifique' means specific impulse, not thrust-to-weight; wrong physical term.",
+      "fix": "Toute cette pile doit quitter le pas de tir, donc la poussée doit surpasser le poids : F = TWR·m₀·g. Au décollage, le rapport poussée/poids se situe autour de 1,2–1,5 — trop bas et la gravité grignote votre Δv pendant que vous montez lentement, trop haut et vous disloquez la fusée."
+    },
+    {
+      "id": "UI-24",
+      "key": "messages :: science_layer_polar_caps_desc",
+      "grade": "MINOR",
+      "issue": "'Elles' has no feminine plural antecedent after 'Givre'.",
+      "fix": "Givre de CO₂ saisonnier sur de la glace d'eau pérenne. Les calottes croissent et rétrécissent selon que chaque hémisphère s'incline vers le Soleil ou s'en éloigne."
+    },
+    {
+      "id": "UI-13",
+      "key": "messages :: fly_mission_arc_title",
+      "grade": "MINOR",
+      "issue": "'ellipse' is feminine (képlérienne) and should not be capitalised mid-title.",
+      "fix": "Arc de mission · ellipse de transfert képlérienne"
+    },
+    {
+      "id": "UI-19",
+      "key": "messages :: galaxy_name_andromeda",
+      "grade": "BROKEN",
+      "issue": "Name not in the normal French form for a celestial object.",
+      "fix": "Galaxie d'Andromède (M31)"
+    },
+    {
+      "id": "essays-1",
+      "key": "essays/seven-minutes.json :: body.19.md",
+      "grade": "BROKEN",
+      "issue": "Ungrammatical/garbled French ('il a tombé', 'n'ont pas complètement se déployer', 'tirer les rétrofusées', 'bilan des morts').",
+      "fix": "À travers l'histoire des missions martiennes en particulier, le problème de l'atterrissage a fait des victimes. Mars 2, en 1971, est devenu le premier objet venu de la Terre à toucher la surface martienne — et s'est écrasé, se détruisant à l'impact, le système de descente ayant échoué avant la fin de la séquence du parachute. Mars Polar Lander, en décembre 1999, a presque certainement coupé prématurément ses moteurs de descente lorsque les vibrations du déploiement des jambes ont été interprétées à tort comme un signal de toucher du sol, et il est tombé sur les quarante derniers mètres à pleine vitesse. Beagle 2, le jour de Noël 2003, a franchi l'entrée atmosphérique — la séquence EDL semble avoir fonctionné — mais les panneaux solaires ne se sont pas entièrement déployés à l'atterrissage et il n'a jamais pu communiquer, muet sur les plaines martiennes. L'atterrisseur Schiaparelli de l'Agence spatiale européenne, en octobre 2016, a vu sa centrale inertielle saturer pendant la violente descente sous parachute — les mesures ont brièvement dépassé le haut de leur échelle — faussant la solution de navigation au point que l'ordinateur de bord croyait déjà se trouver sous la surface ; il a largué le parachute et allumé les rétrofusées pendant seulement trois secondes au lieu de trente, et a touché le sol à environ 540 kilomètres par heure."
+    },
+    {
+      "id": "essays-2",
+      "key": "essays/the-body-in-the-dark.json :: body.7.caption",
+      "grade": "MINOR",
+      "issue": "'absorbs the weather' mistranslated as 'absorbe le temps'; should be space weather.",
+      "fix": "Le problème le plus difficile est celui que l'on ne voit pas. Au-delà du champ magnétique terrestre, il n'existe aucune protection contre les rayons cosmiques galactiques, et une tempête solaire peut délivrer une dose aiguë en quelques heures. Un blindage assez épais pour les arrêter serait bien trop lourd pour voler — donc, lors d'un long voyage, l'équipage encaisse simplement la météo spatiale."
+    },
+    {
+      "id": "essays-3",
+      "key": "essays/interstellar-exploration.json :: body.11.md",
+      "grade": "MINOR",
+      "issue": "Calque 'vélocité d'échappement' for exhaust velocity (should be vitesse d'éjection); 'combustion de carburant' stiff.",
+      "fix": "La propulsion nucléo-thermique — chauffer de l'hydrogène dans un réacteur et l'expulser par une tuyère — double à peu près la vitesse d'éjection, atteignant des impulsions spécifiques d'environ 825 secondes dans les meilleurs moteurs testés au sol du programme NERVA. Doubler la vitesse d'éjection ne divise pas par deux le rapport de masse requis ; il en prend la racine carrée — un gain bien plus important. À des vitesses interstellaires, la propulsion nucléo-thermique reste catégoriquement insuffisante. L'équation des fusées n'a cure de la manière dont l'ergol est chauffé. Seule compte la rapidité avec laquelle il s'échappe. Et aucune architecture à ergols conçue à ce jour ne peut expulser la matière assez vite pour atteindre une fraction significative de c sans exiger une charge d'ergols qui rend la mission manifestement impossible."
+    },
+    {
+      "id": "essays-4",
+      "key": "essays/going-to-mars.json :: body.21.md",
+      "grade": "MINOR",
+      "issue": "Awkward 'bien plus d'une centaine de fois', 'des nombres mesurés', 'à partir du rayonnement secondaire'.",
+      "fix": "Le troisième mur est le corps humain, et c'est celui que l'architecture de la mission ne peut pas contourner. Mars n'a pas de champ magnétique global — son noyau s'est solidifié il y a longtemps, mettant fin à la dynamo qui générait autrefois le bouclier. La magnétosphère de la Terre dévie l'essentiel des rayons cosmiques galactiques et des particules énergétiques solaires ; Mars n'offre rien d'équivalent. Un transit de six mois dans l'espace interplanétaire délivre une dose mesurée d'environ 300 millisieverts — bien plus de cent fois la dose d'une année typique de rayonnement naturel de fond sur Terre, absorbée en six mois. À la surface martienne, sans magnétosphère, la dose s'accumule encore avec le rayonnement secondaire. Un aller-retour de trois ans a été estimé à 600–1 200 millisieverts au total, selon la phase du cycle solaire et le blindage — des chiffres mesurés en vol par des instruments à bord de [Curiosity](/missions?id=curiosity)."
+    },
+    {
+      "id": "essays-5",
+      "key": "essays/interstellar-exploration.json :: body.26.md",
+      "grade": "MINOR",
+      "issue": "Calques: 'navire habité', 'du tout', 'délai proche quelconque'.",
+      "fix": "Mais l'écart entre « non interdit » et « réalisable à brève échéance » est énorme. La proposition sérieuse la plus lente — un vaisseau interstellaire à fusion à 12 % de c — nécessiterait une technologie qui n'existe pas, à un coût qui dépasse tout programme spatial de l'histoire, pour amener un vaisseau habité jusqu'à une autre étoile en une cinquantaine d'années environ. La proposition sérieuse la plus rapide — la voile légère propulsée par laser de Breakthrough Starshot — livrerait un gramme d'instruments pour un survol de quelques heures, et renverrait des données pendant des années, à un coût que ses partisans estiment à des dizaines de milliards de dollars, à supposer que le réseau de lasers puisse seulement être construit. Entre ces extrêmes, il n'existe aucune option intermédiaire à la fois techniquement réalisable et adaptée à une exploration significative. L'échelle du problème n'admet tout simplement pas de solution modérée."
+    },
+    {
+      "id": "essays-6",
+      "key": "essays/seven-minutes.json :: dek",
+      "grade": "MINOR",
+      "issue": "Typo/grammar: 'jamais la réussi'.",
+      "fix": "La croisière est facile. Vous passez des mois à ne pratiquement rien faire — à glisser sur la physique, à ajuster une trajectoire, à attendre. C'est à l'arrivée que les missions meurent. L'atterrissage est la chose la plus difficile du vol spatial, et nous ne l'avons jamais réussi deux fois de la même manière."
+    },
+    {
+      "id": "essays-7",
+      "key": "essays/the-body-in-the-dark.json :: body.14.md",
+      "grade": "MINOR",
+      "issue": "Calques: 'sous sa propre puissance', 'revenu sur la Terre', 'record de vol continu unique'.",
+      "fix": "Tout ce que nous savons de la physiologie du vol spatial de longue durée a été mesuré — sur de vraies personnes, qui ont vécu dans l'espace pendant de vraies durées, sont rentrées chez elles et ont été étudiées. Le record du plus long vol continu est détenu par Valeri Poliakov, un médecin-cosmonaute russe qui a embarqué sur [Mir](/programs/mir) en janvier 1994 et est revenu sur Terre en mars 1995, après 437 jours consécutifs en orbite — un record toujours inégalé, trois décennies plus tard. L'objectif de Poliakov était explicitement médical : déterminer si un être humain pouvait survivre, en restant fonctionnel, à la durée d'une mission vers Mars. À son atterrissage, il a insisté pour s'éloigner de la capsule Soyuz par ses propres moyens. Sa récupération osseuse et musculaire a pris des mois. Il a marché. Les programmes [Salyut](/programs/salyut) et [Mir](/programs/mir) ont constitué un corpus de données physiologiques soviétique puis russe qui reste irremplaçable — l'[ISS](/programs/iss) l'a prolongé et mondialisé. Les 665 jours cumulés de Peggy Whitson sur trois missions ont fourni aux chercheurs un jeu de données longitudinales sur un seul individu, impossible à obtenir autrement. L'étude des jumeaux de la NASA — la mission de 340 jours de Scott Kelly comparée à son jumeau identique Mark resté sur Terre — a révélé des changements mesurables dans l'expression génique, la dynamique des télomères, la composition du microbiome intestinal et les performances cognitives, dont la plupart se sont inversés au retour, mais pas tous. Le programme [Tiangong](/programs/tiangong) de la Chine enrichit désormais ces données : des équipages en rotations de 90 et 180 jours depuis 2021, une population de taïkonautes jusque-là absente du jeu de données. Tout récit honnête de ce que l'humanité sait du corps humain en séjour prolongé dans l'espace doit inclure ce que la Russie a appris sur Mir, ce que le partenariat de 15 nations de l'ISS a mesuré depuis 2000, et ce que la Chine accumule aujourd'hui."
+    },
+    {
+      "id": "essays-8",
+      "key": "essays/navigation.json :: body.22.caption",
+      "grade": "MINOR",
+      "issue": "'Vers où est le haut' and 'traqueur d'étoiles' are unnatural; 'portent le compte' unclear.",
+      "fix": "Où est le haut, quand il n'y a pas de haut : un viseur stellaire photographie un coin du ciel, compare la configuration à un catalogue embarqué, et sait aussitôt comment l'engin est orienté dans le repère fixe J2000. Entre deux recalages, ce sont les gyroscopes qui tiennent le compte."
+    },
+    {
+      "id": "essays-10",
+      "key": "essays/the-body-in-the-dark.json :: body.22.md",
+      "grade": "BROKEN",
+      "issue": "Garbled French ('n'entièrement rescousse', 'de manière que', 'plus court est mieux', 'la radiation cumulative').",
+      "fix": "Une meilleure propulsion compte. Les [nouvelles technologies de moteur](/essays/new-propulsion) en développement — thermique nucléaire, électrique nucléaire, voiles solaires, les concepts plus lointains — réduiraient le temps de transit, et réduire le temps de transit réduit l'exposition cumulée aux rayonnements ainsi que la dégradation physiologique cumulée. Un transit de 90 jours au lieu de 270 n'est pas trois fois plus facile pour le corps ; la relation entre dose et effet est plus complexe qu'une simple proportionnalité, et certains systèmes — le psychologique, l'osseux, le cardiovasculaire — sont sensibles à la durée d'une façon que même une exposition plus courte ne suffit pas à rattraper entièrement. Mais plus court vaut mieux. Des moteurs plus rapides, c'est de la vraie médecine. Ils ne changent cependant pas la nature fondamentale du problème. Un transit de 90 jours traverse toujours l'espace interplanétaire sans magnétosphère, sans gravité et sans secours. Le corps reste la charge utile. Il se dégrade toujours. Il rentre toujours à la maison diminué, d'une manière qui met des mois ou des années à s'inverser, si elle s'inverse un jour."
+    },
+    {
+      "id": "fleet-5",
+      "key": "fleet/launcher/proton-k.json :: tagline",
+      "grade": "MINOR",
+      "issue": "'cheval de trait lourd' is an awkward calque of 'heavy-lift workhorse'.",
+      "fix": "Le lanceur lourd soviétique / russe sur lequel on pouvait compter, 1967-2012 — Salyut, Mir, Venera, Vega, retours d'échantillons Luna"
+    },
+    {
+      "id": "fleet-8",
+      "key": "fleet/crewed-spacecraft/orion.json :: description",
+      "grade": "MINOR",
+      "issue": "Missing articles before agency names ('de NASA', 'avec ESA').",
+      "fix": "Le véhicule d'équipage du programme Artemis de la NASA, construit conjointement avec l'ESA (le module de service européen est fourni par Airbus). Conçu pour accueillir jusqu'à quatre astronautes lors de missions de plusieurs semaines en orbite lunaire. A volé sans équipage lors d'Artemis I en 2022. A effectué sa première mission habitée (Artemis II) en avril 2026, avec un équipage de quatre personnes sur une trajectoire de survol lunaire."
+    },
+    {
+      "id": "fleet-13",
+      "key": "fleet/orbiter/mariner-4.json :: tagline",
+      "grade": "MINOR",
+      "issue": "'vol sur Mars' misrenders 'flyby'.",
+      "fix": "Premier survol réussi de Mars"
+    },
+    {
+      "id": "fleet-16",
+      "key": "fleet/rover/exomars-rosalind-franklin.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "Machine-like 'Pausé par retrait' and clipped phrasing.",
+      "fix": "Rover martien de l'ESA prévu en 2028 — foreuse de 2 m pour chercher des biosignatures à Oxia Planum. Suspendu par le retrait de Roscosmos en 2022, lancement réorienté vers la NASA"
+    },
+    {
+      "id": "fleet-19",
+      "key": "fleet/orbiter/osiris-rex.json :: tagline",
+      "grade": "BROKEN",
+      "issue": "'Bénou de retour' garbles 'sample-returned Bennu'; the meaning is lost.",
+      "fix": "Échantillons de Bénou rapportés sur Terre (2023) ; en route vers Apophis"
+    },
+    {
+      "id": "fleet-20",
+      "key": "fleet/orbiter/magellan.json :: description",
+      "grade": "BROKEN",
+      "issue": "'maquillés par radar' is a wrong word (made up); 'a pris sa retraite après le premier vol' is garbled.",
+      "fix": "Magellan est un orbiteur d'espace lointain construit par Martin Marietta aux États-Unis. A cartographié par radar 98 % de la surface de Vénus. Mis hors service après un seul vol, lancé en 1989."
+    },
+    {
+      "id": "fleet-25",
+      "key": "fleet/crewed-spacecraft/challenger.json :: description",
+      "grade": "BROKEN",
+      "issue": "Content changed: 'Sally Ride' replaced by 'Christa McAuliffe'; also 'Volé 10 missions' is ungrammatical and 'après qu'Enterprise soit jugé' is wrong agreement (the English source itself lists Ride, which is a source error to fix separately).",
+      "fix": "Construit à partir d'un article d'essai structural (STA-099) converti pour le vol après qu'Enterprise a été jugé trop coûteux à moderniser. Premier vol : STS-6 (1983-04-04), avec la première EVA de la navette. A effectué 10 missions au total : STS-6, STS-7, STS-8, STS-41-B, STS-41-C, STS-41-G, STS-51-B, STS-51-F, STS-61-A, et le vol final STS-51-L. Le 1986-01-28, STS-51-L a décollé par un froid sans précédent (−1 °C) — les joints toriques du SRB droit n'ont pas assuré l'étanchéité, des gaz chauds ont brûlé l'entretoise reliant le SRB au réservoir externe, et l'orbiteur s'est désintégré à Max-Q (T+73 s) à 14 km d'altitude. Les sept membres d'équipage ont péri, dont Sally Ride, de sa mission historique STS-7. La Commission Rogers a cloué la navette au sol pendant 32 mois et a réécrit la culture de sécurité de la NASA."
+    },
+    {
+      "id": "mission-1",
+      "key": "missions/earth/liberty-bell-7.json :: first",
+      "grade": "BROKEN",
+      "issue": "Gender error ('vol suborbitale') and garbled 'panneau écoutille a perdu la capsule'.",
+      "fix": "Deuxième vol suborbital américain ; une défaillance de l'écoutille a fait perdre la capsule (récupérée en 1999)"
+    },
+    {
+      "id": "mission-3",
+      "key": "missions/moon/luna17.json :: description",
+      "grade": "MINOR",
+      "issue": "Missing article before NASA, awkward 'pendant un délai de 2,5 secondes à la vitesse de la lumière'.",
+      "fix": "Les premières roues sur la Lune — pilotées depuis une salle de contrôle en Crimée. Lunokhod 1 était une cuve pressurisée de 322 kg montée sur huit roues motrices indépendantes, contrôlée en temps réel par une équipe de cinq personnes malgré le décalage de 2,5 secondes dû à la vitesse de la lumière. Il a parcouru 10,5 km en 11 jours lunaires (322 jours terrestres), photographié plus de 20 000 scènes et fonctionné bien au-delà de sa durée de vie nominale de 90 jours. Tombé dans l'oubli dans les années 1970, il a été retrouvé en 2010 lorsque le Lunar Reconnaissance Orbiter de la NASA l'a repéré à l'endroit où il s'était arrêté."
+    },
+    {
+      "id": "mission-4",
+      "key": "missions/jupiter/galileo.json :: dispatch",
+      "grade": "BROKEN",
+      "issue": "Untranslated/invented word 'cripplé', calque 'orbiter Jupiter', gender switch (Galileo/Elle), 'géante planète'.",
+      "fix": "Galileo aurait dû être paralysé avant même d'arriver. Son antenne principale est restée coincée à demi ouverte en route vers Jupiter, réduisant son débit de données à un filet — et la mission a réussi malgré tout, parce que les ingénieurs ont réécrit son logiciel depuis la Terre pour faire passer la science par une minuscule antenne de secours. Il est devenu le premier engin spatial à se mettre en orbite autour de Jupiter, a largué une sonde dans les nuages de la planète géante, et a passé huit ans à explorer ses lunes. Sa plus grande découverte est née lentement de cette persévérance : la façon dont le champ magnétique de Jupiter s'enroulait autour d'Europe ne pouvait s'expliquer que par un océan salé sous la glace — l'indice le plus solide à ce jour qu'une lune de Jupiter pourrait contenir de l'eau liquide, et de la vie. À la fin, il a été précipité volontairement dans Jupiter, afin qu'il ne puisse jamais tomber sur Europe et la contaminer."
+    },
+    {
+      "id": "mission-11",
+      "key": "missions/mars/starship-mars-crew.json :: events.0.label",
+      "grade": "BROKEN",
+      "issue": "Vehicle name Starship must stay in English.",
+      "fix": "LANCEMENT DE STARSHIP"
+    },
+    {
+      "id": "mission-24",
+      "key": "missions/earth/otv-3.json :: description",
+      "grade": "MINOR",
+      "issue": "Missing auxiliary and article: 'atterri à base aérienne'.",
+      "fix": "Troisième vol du X-37B, réutilisation du véhicule de vol d'OTV-1. Lancé le 2012-12-11 à 18:03 UTC depuis CCAFS SLC-41 sur Atlas V 501 AV-034 ; a atterri sur la base aérienne de Vandenberg le 2014-10-17 à 16:24 UTC. 675 jours en orbite."
+    },
+    {
+      "id": "mission-3",
+      "key": "missions/moon/apollo8.json :: events.6.note",
+      "grade": "BROKEN",
+      "issue": "Wrong ocean: source says North Pacific, translation says North Atlantic.",
+      "fix": "CM amerri dans le Pacifique Nord le 1968-12-27. Récupération par l'USS Yorktown."
+    },
+    {
+      "id": "mission-7",
+      "key": "missions/bennu/osiris-rex.json :: events.2.note",
+      "grade": "MINOR",
+      "issue": "Clumsy last clause ('l'orbite de vaisseau spatial la plus proche jamais effectuée').",
+      "fix": "Arrive à Bénou ; maintien à poste à ~19 km, puis resserrement progressif jusqu'à une orbite record de ~1,4 km — l'orbite d'engin spatial la plus proche jamais réalisée autour d'un corps céleste."
+    },
+    {
+      "id": "mission-13",
+      "key": "missions/moon/apollo13.json :: events.5.note",
+      "grade": "MINOR",
+      "issue": "Ungrammatical 'la distance la plus loin'.",
+      "fix": "Approche la plus proche à 254 km d'altitude au-dessus de Mare Cognitum — à 400 171 km, la plus grande distance parcourue par des humains depuis la Terre (record détenu de 1970 à 2026, dépassé par Artemis II en avril 2026)."
+    },
+    {
+      "id": "mission-17",
+      "key": "missions/moon/apollo13.json :: events.3.note",
+      "grade": "MINOR",
+      "issue": "Awkward 'court-circuit incendie', 'initie', and 'le Aquarius' (needs l').",
+      "fix": "La commande d'agitation cryogénique du SM déclenche un court-circuit, un incendie et la rupture d'un réservoir. « Houston, nous avons eu un problème. » L'électricité et l'eau diminuent ; le LM Aquarius devient le canot de sauvetage."
+    },
+    {
+      "id": "mission-18",
+      "key": "missions/moon/luna21.json :: events.4.note",
+      "grade": "MINOR",
+      "issue": "Missing article at the start of the sentence.",
+      "fix": "Une équipe au sol de cinq personnes, en Crimée, commence les opérations de pilotage. Parcours total : ~39 km."
+    },
+    {
+      "id": "mission-24",
+      "key": "missions/mars/curiosity.json :: events.1.note",
+      "grade": "MINOR",
+      "issue": "Missing space ('héliocentriquedirigée').",
+      "fix": "Injection trans-Mars (∆v de 3,61 km/s) : MSL est placé sur une trajectoire héliocentrique en direction de Mars."
+    },
+    {
+      "id": "mission-25",
+      "key": "missions/earth/gemini6a.json :: events.0.note",
+      "grade": "MINOR",
+      "issue": "'sur l'aire' is not the right term for the pad.",
+      "fix": "1965-12-12 : les moteurs s'allument puis s'arrêtent sur le pas de tir ; Schirra ne s'éjecte pas."
+    },
+    {
+      "id": "other-4",
+      "key": "earth-objects/hubble.json :: scale_fact",
+      "grade": "MINOR",
+      "issue": "'du ISS' should be 'de l'ISS'.",
+      "fix": "Hubble orbite à 547 km d'altitude, juste au-dessus de l'ISS. L'orbite terrestre basse regorge d'infrastructures que nous avons complètement oubliées."
+    },
+    {
+      "id": "other-15",
+      "key": "original-work.json :: diagrams_science./diagrams/science/exo-microlensing_webp.title",
+      "grade": "BROKEN",
+      "issue": "'Microgravitation exoplanétaire' is wrong; microlensing is microlentille gravitationnelle.",
+      "fix": "Microlentille gravitationnelle d'exoplanète"
+    },
+    {
+      "id": "other-16",
+      "key": "tiangong-modules/mengtian.json :: function_detail",
+      "grade": "MINOR",
+      "issue": "Omits 'transfer' from 'robotic transfer mechanism'.",
+      "fix": "Expériences de physique en microgravité, de mécanique des fluides et de combustion ; déploiement automatisé de charges utiles grâce à son petit mécanisme robotique de transfert."
+    },
+    {
+      "id": "other-17",
+      "key": "orbit-regimes-explore/SCATTERED.json :: name",
+      "grade": "BROKEN",
+      "issue": "Left in English; the region names should be translated.",
+      "fix": "Disque dispersé + Sednoïdes"
+    },
+    {
+      "id": "other-18",
+      "key": "videos.json :: vid-b41ebdd9d096.caption",
+      "grade": "MINOR",
+      "issue": "Wrong abbreviation for September ('sep.').",
+      "fix": "Le plongeon final dans Saturne — 15 sept. 2017."
+    },
+    {
+      "id": "other-19",
+      "key": "original-work.json :: models3d./images/colophon/model-launcher-pslv_webp.what",
+      "grade": "MINOR",
+      "issue": "'Fusée de travail' is a calque of 'workhorse'.",
+      "fix": "Le lanceur à tout faire de l'ISRO — un noyau élancé entouré de six propulseurs d'appoint à poudre."
+    },
+    {
+      "id": "other-24",
+      "key": "deep-sky.json :: jwst-southern-ring.caption",
+      "grade": "MINOR",
+      "issue": "Missing article: 'sur demi-année-lumière'.",
+      "fix": "Une étoile mourante (NGC 3132) rejetant des enveloppes de gaz et de poussière sur une demi-année-lumière."
+    },
+    {
+      "id": "planets-3",
+      "key": "planets/neptune.json :: links.3.l",
+      "grade": "MINOR",
+      "issue": "Publication name 'Wikipedia' written 'Wikipédia', inconsistent with the other link and the names rule.",
+      "fix": "Découverte de Neptune — Wikipedia"
+    },
+    {
+      "id": "planets-5",
+      "key": "mars-sites/viking1-orbiter.json :: fact",
+      "grade": "MINOR",
+      "issue": "Sentence 2 has no subject/verb agreement with the rest ('Cartographie des sites').",
+      "fix": "A renvoyé plus de 50 000 images de la surface et des lunes de Mars sur quatre ans. A cartographié à l'avance les sites d'atterrissage potentiels des deux atterrisseurs Viking. A cessé ses opérations en août 1980, à court de gaz de contrôle d'attitude."
+    },
+    {
+      "id": "planets-11",
+      "key": "moon-sites/change4.json :: mission_type",
+      "grade": "BROKEN",
+      "issue": "Left entirely in English.",
+      "fix": "Atterrisseur sans équipage · Rover (face cachée)"
+    },
+    {
+      "id": "planets-15",
+      "key": "mars-sites/spirit.json :: fact",
+      "grade": "BROKEN",
+      "issue": "Wrong person ('Je suis resté coincé' in first person) and fragment 'Découverte de preuves'.",
+      "fix": "Mars Exploration Rover A. Conçu pour une mission principale de 90 sols ; a fonctionné pendant 2 208 sols. A découvert des indices que le cratère Gusev avait autrefois connu une interaction entre volcanisme et eau. S'est enlisé dans un sol meuble à « Troy » en 2009 ; l'équipe a continué à exploiter Spirit comme plate-forme fixe jusqu'au dernier contact, en mars 2010."
+    },
+    {
+      "id": "planets-16",
+      "key": "small-bodies/halley.json :: science_sections.0.why",
+      "grade": "MINOR",
+      "issue": "English decimal points and 'AU' left; 'canonique' stiff.",
+      "fix": "L'excentricité de 0,967 de Halley est l'orbite typique d'une comète à courte période — quasi parabolique, avec un périhélie à 0,59 UA et un aphélie à 35 UA."
+    },
+    {
+      "id": "planets-20",
+      "key": "planets/jupiter.json :: science_sections.2.why",
+      "grade": "MINOR",
+      "issue": "'vélocité' is a calque (should be vitesse).",
+      "fix": "Jupiter est la cible d'assistance gravitationnelle privilégiée pour les missions vers le système externe — Voyager 1 et 2, Cassini, Galileo, New Horizons, Juno, Europa Clipper et JUICE ont tous utilisé ou utilisent un survol jovien pour gagner de la vitesse."
+    },
+    {
+      "id": "planets-21",
+      "key": "small-bodies/arrokoth.json :: science_sections.1.why",
+      "grade": "MINOR",
+      "issue": "'AU' left untranslated (UA used elsewhere).",
+      "fix": "Arrokoth orbite à 44,6 UA — dans la ceinture de Kuiper classique, au-delà de Pluton, dans une région où les corps sont restés largement inchangés depuis les débuts du système solaire."
+    },
+    {
+      "id": "planets-22",
+      "key": "mars-sites/mangalyaan.json :: name",
+      "grade": "BROKEN",
+      "issue": "Mission name 'Mars Orbiter Mission' must stay in English.",
+      "fix": "Mangalyaan (Mars Orbiter Mission)"
+    },
+    {
+      "id": "planets-23",
+      "key": "sun.json :: fact",
+      "grade": "MINOR",
+      "issue": "'Nuage de Oort' wrong elision/case; 'la vie sur la Terre'.",
+      "fix": "Le Soleil contient 99,86 % de toute la masse du système solaire. Sa gravité maintient tout – de Mercure au nuage d'Oort – en orbite. Chaque seconde, il fusionne 600 millions de tonnes d'hydrogène en hélium, libérant l'énergie qui entretient la vie sur Terre depuis 4,5 milliards d'années."
+    },
+    {
+      "id": "programs-4",
+      "key": "programs/chandrayaan.json :: legacy.1.md",
+      "grade": "MINOR",
+      "issue": "Awkward 'revendication légitime au leadership à la destination'.",
+      "fix": "Son deuxième héritage est le premier atterrissage en douceur près du pôle sud lunaire, la région visée par tous les futurs programmes lunaires. L'Inde y est arrivée la première, ce qui lui donne un droit légitime de revendiquer le leadership sur la destination la plus importante de la Lune, ainsi qu'une expérience d'atterrissage durement acquise sur laquelle s'appuieront les missions suivantes."
+    },
+    {
+      "id": "programs-7",
+      "key": "programs/buran.json :: outcome.1.md",
+      "grade": "MINOR",
+      "issue": "'entièrement automatiquement' is clumsy.",
+      "fix": "Le 15 novembre 1988, Buran vola. Il décolla sur Energia, fit deux fois le tour de la Terre, rentra dans l'atmosphère, et — dans un vent de travers en rafales qui aurait mis n'importe quel pilote à l'épreuve — se posa de façon entièrement automatique sur la piste de Baïkonour, touchant le sol à quelques mètres de sa cible sans personne à bord à aucun moment. Ce fut un vol sans défaut et un véritable triomphe technique : aucun autre engin spatial ailé n'avait accompli une mission orbitale complète et atterri seul. Et ce fut la seule fois où Buran vola."
+    },
+    {
+      "id": "programs-9",
+      "key": "programs/tiangong.json :: legacy.2.md",
+      "grade": "MINOR",
+      "issue": "Dangling participial 'Avec le partenariat ... fermé' is unnatural.",
+      "fix": "Et c'est une seconde porte d'entrée vers l'orbite. Le partenariat de l'ISS ayant été historiquement fermé à la Chine, Tiangong offre au reste du monde un autre hôte pour le vol spatial habité — un hôte qui s'accompagne de sa propre géopolitique, mais qui élargit concrètement le nombre de ceux qui peuvent envoyer des personnes et des expériences vers une station."
+    },
+    {
+      "id": "science-2",
+      "key": "science/transfers/free-return.json :: body_paragraphs.0",
+      "grade": "MINOR",
+      "issue": "'voler au-delà de' should be 'survoler'; 'rebond' unclear.",
+      "fix": "L'astuce principale : quitter la Terre, survoler la Lune (ou Mars), et laisser la gravité de ce corps infléchir votre trajectoire vers la Terre. Si la géométrie est bonne, vous rentrez dans l'atmosphère terrestre au retour. L'équipage n'a jamais besoin d'allumer un moteur pour rentrer à la maison."
+    },
+    {
+      "id": "science-5",
+      "key": "science/life-in-space/eva-physiology.json :: body_paragraphs.1",
+      "grade": "MINOR",
+      "issue": "Gender error 'Le contre-mesure'; 'nuit à 10,2 psi' terse.",
+      "fix": "La contre-mesure est la pré-respiration : des heures de respiration d'oxygène pur à des pressions progressivement plus basses avant la sortie, pour chasser l'azote des tissus du corps. Le protocole actuel côté américain sur l'ISS combine une pré-respiration dans la combinaison et le protocole Campout (une nuit à 10,2 psi), pour un total d'environ 4 heures avant la dépressurisation du sas. Les combinaisons russes Orlan fonctionnent à 5,7 psi, ce qui raccourcit nettement la pré-respiration — un compromis différent."
+    },
+    {
+      "id": "science-10",
+      "key": "science/propulsion/thrust-and-twr.json :: body_paragraphs.0",
+      "grade": "MINOR",
+      "issue": "Clipped/awkward phrasing ('fort-poussée faible-Isp', 'pression chambre', 'l'ambiant').",
+      "fix": "La poussée est une force. Son unité est le newton (ou le kilonewton / méganewton pour tout ce qui vole). Un Merlin 1D produit 845 kN au niveau de la mer. Un seul F-1 produisait 6 770 kN. Les boosters du SLS produisent chacun 16 000 kN. La poussée n'est pas l'impulsion spécifique : la poussée dit avec quelle *force* le moteur pousse ; l'Isp dit avec quelle *efficacité*. Un moteur à forte poussée et faible Isp (un booster à poudre) et un moteur à faible poussée et fort Isp (un moteur ionique) peuvent tous deux être utiles — pour des tâches différentes à différents moments de la mission. L'équation de la poussée est simple : la poussée est égale au débit massique d'ergols multiplié par la vitesse d'éjection, plus un petit terme de pression lorsque la pression à la sortie de la tuyère diffère de la pression ambiante. C'est pourquoi les moteurs à combustion étagée à haute pression de chambre produisent plus de poussée par kilogramme de moteur — ils font passer davantage d'ergols par seconde dans le même col, à plus grande vitesse."
+    }
+  ]
+}

@@ -1,0 +1,849 @@
+{
+  "locale": "zh-CN",
+  "segments": {
+    "UI strings — long (help text, panels)": {
+      "sampled": 25,
+      "ok": 12,
+      "minor": 11,
+      "broken": 2
+    },
+    "UI strings — short (menus, labels, buttons)": {
+      "sampled": 25,
+      "ok": 22,
+      "minor": 2,
+      "broken": 1
+    },
+    "essays (long editorial)": {
+      "sampled": 10,
+      "ok": 2,
+      "minor": 4,
+      "broken": 4
+    },
+    "fleet (launcher/capsule/engine/site descriptions)": {
+      "sampled": 25,
+      "ok": 12,
+      "minor": 10,
+      "broken": 3
+    },
+    "mission descriptions": {
+      "sampled": 25,
+      "ok": 12,
+      "minor": 8,
+      "broken": 5
+    },
+    "mission event notes": {
+      "sampled": 25,
+      "ok": 21,
+      "minor": 1,
+      "broken": 3
+    },
+    "other short entries (earth-objects, satellites, iss, orbit-regimes, …)": {
+      "sampled": 25,
+      "ok": 14,
+      "minor": 7,
+      "broken": 4
+    },
+    "planets & sites (short facts)": {
+      "sampled": 25,
+      "ok": 19,
+      "minor": 5,
+      "broken": 1
+    },
+    "programs (long editorial)": {
+      "sampled": 10,
+      "ok": 3,
+      "minor": 7,
+      "broken": 0
+    },
+    "science articles (editorial)": {
+      "sampled": 10,
+      "ok": 7,
+      "minor": 2,
+      "broken": 1
+    },
+    "universe (short entries)": {
+      "sampled": 25,
+      "ok": 9,
+      "minor": 13,
+      "broken": 3
+    }
+  },
+  "findings": [
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-1",
+      "key": "messages :: audio_action_tour_driving",
+      "grade": "MINOR",
+      "issue": "Wording is stiff; 引导 misrenders tour driving itself.",
+      "fix": "导览正在自动运行——停止后即可自由浏览。"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-2",
+      "key": "messages :: chip_label_radiation_exposure",
+      "grade": "MINOR",
+      "issue": "被困带 is not the term for trapped radiation belts and the unit spacing/ordering is awkward.",
+      "fix": "辐射照射——GCR + SPE + 捕获辐射带，每年 mSv"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-3",
+      "key": "messages :: plan_explainer_how_to_desc",
+      "grade": "BROKEN",
+      "issue": "Person name Hohmann left in Latin script and TOF left as an English abbreviation.",
+      "fix": "点击靠近自然霍曼最小值（约250天飞行时间，每约26个月一次）的冷色区域——那是最便宜的发射窗口。右侧面板显示确切日期和 ∆v。"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-4",
+      "key": "messages :: lab_goal_fc_verdict",
+      "grade": "MINOR",
+      "issue": "Grand Tour rendered 大巡航 (elsewhere 大巡游), 这里 should be 那里, and some stiff phrasing.",
+      "fix": "所以：仅靠燃料能飞到那里吗？到达木星其实在化学推进的能力范围内——从近地轨道出发约需6 km/s，低于强力上面级的约8.5 km/s。但“大巡游”意味着带着富余的速度逃离太阳系，这需要从近地轨道出发约8.7 km/s——刚好超出最好的化学火箭级所能提供的。化学推进能把你送到木星，然后就到此为止；其余的速度由引力辅助链提供，外加数十 km/s 的巡游速度。这就是Voyager能够成行的原因，也是此后每一次深空任务都是一个向行星借速度的计划的原因。"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-5",
+      "key": "messages :: credits_intro_body_1",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation, missing sentence-final marks, awkward 空间机构/可以自由地提供.",
+      "fix": "Orrery之所以存在，是因为世界各国的航天机构、运营商以及维基媒体社区将其工作成果免费开放。NASA、ESA、JAXA、ISRO、CNSA、Roscosmos、MBRSC、加拿大航天局、SpaceX、Blue Origin、Wikimedia Commons 的贡献者以及维基百科的编辑者，共同建成了一座人类历史上无与伦比的行星探索公共档案。谢谢。"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-6",
+      "key": "messages :: lab_goal_lar_challenge",
+      "grade": "MINOR",
+      "issue": "堆栈 (software stack) is wrong for a rocket stack; 有效载荷壁 is unnatural.",
+      "fix": "加重火箭的负载——在火箭方程中提高装载质量，直到该判定变红。该质量就是这套火箭的有效载荷上限。"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-7",
+      "key": "messages :: library_intro_body_2",
+      "grade": "MINOR",
+      "issue": "Awkward 诚实 construction and 清单 for bill of materials.",
+      "fix": "与 /credits 中的物料清单一样，这个页面的存在是为了让我们对“点击流向谁”保持诚实。有运营商门户网站时，我们会把您带到运营商门户；任务由非英语国家的机构执行时，我们会带您去当地语言的维基百科；没有其他资源涵盖该实体时，才回退到英文维基百科。"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-8",
+      "key": "messages :: why_landing_site_body",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation and 陨坑环形山 for crater rim is wrong/duplicated.",
+      "fix": "着陆点是一种权衡：赤道纬度成本低、气候温暖，但信息量少；极地保留着挥发物（永久阴影陨石坑中的水冰），科学价值丰富，但代价高昂。具体坐标则瞄准某个地质特征——陨石坑边缘、古老的湖床或新鲜的撞击点。"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-11",
+      "key": "messages :: lab_goal_sysasc_guidance",
+      "grade": "MINOR",
+      "issue": "上升级 for upper stage (inconsistent with 上面级), 车辆, and an awkward loft sentence.",
+      "fix": "观察飞行计算机如何“思考”。进入轨道是一个有精确解的边界值问题——在目标高度、水平飞行、达到圆轨道速度——而飞行器的实际状态每秒都在漂移，所以无法预先规划整条路径。因此它分两个阶段飞行。在稠密大气中，它遵循一张预先规划的俯仰表（开环），通过重力转向保证载荷安全。在约 55 km 以上，计算机接管：对于这个低推力上面级，采用的是动力显式制导，它每秒重新求解一次两点边界问题，得到操纵律 sin γ = A + B·t——其解会让爬升“抬高”，指令机头指向地平线下方，以消耗高度来换取速度。没有人能这样盲飞。降低上面级推力，看它抬得更高。"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-13",
+      "key": "messages :: lab_illustration_alt_landing_computer",
+      "grade": "MINOR",
+      "issue": "Syntax makes the engine appear to be above the surface and misses the hovering-on-engine meaning.",
+      "fix": "着陆器靠节流发动机悬停在地表上方，其下降速率曲线以虚影形式留在一旁，缓缓趋近于零。"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-20",
+      "key": "messages :: lab_goal_g10_frozen",
+      "grade": "BROKEN",
+      "issue": "Person name Kepler left in Latin script instead of 开普勒.",
+      "fix": "同样的隆起也会让椭圆轨道的近地点转动——除非你飞行在 63.4° 的临界倾角上，此时这种漂移相互抵消，最低点和最高点固定不动。这正是闪电轨道（Molniya）的秘密：一个陡峭、拉长的椭圆，其远地点会在遥远的北方上空停留数小时（开普勒第二定律——它在顶点处运行缓慢），覆盖那些地球静止卫星只能无用地贴在地平线上的高纬度地区。苏联，以及后来的 Sirius 广播，正是靠它触及北极地区。"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-23",
+      "key": "messages :: lab_goal_sar_thrust",
+      "grade": "MINOR",
+      "issue": "堆叠 is an unnatural term for the rocket stack and the Δv clause is awkward.",
+      "fix": "整个火箭组合体都必须离开发射台，所以推力必须胜过重量：F = TWR·m₀·g。起飞推重比在 1.2–1.5 左右——太低，你缓慢上爬时重力会吞噬你的 Δv；太高，则会把火箭震散。"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-25",
+      "key": "messages :: lab_illustration_alt_plan_a_mission",
+      "grade": "MINOR",
+      "issue": "Machine-like, awkward phrasing.",
+      "fix": "一次任务的完整弧线收于一帧之中——发射、入轨、转移椭圆与抵达，连成一条不间断的旅程线。"
+    },
+    {
+      "segment": "UI strings — short (menus, labels, buttons)",
+      "id": "UI-7",
+      "key": "messages :: fly_flight_caveat_unknown",
+      "grade": "MINOR",
+      "issue": "Reads as unresearched flight data rather than data not yet researched.",
+      "fix": "飞行数据尚未研究"
+    },
+    {
+      "segment": "UI strings — short (menus, labels, buttons)",
+      "id": "UI-15",
+      "key": "messages :: nav_iss",
+      "grade": "MINOR",
+      "issue": "Station name ISS is translated instead of kept as ISS (name rule).",
+      "fix": "ISS"
+    },
+    {
+      "segment": "UI strings — short (menus, labels, buttons)",
+      "id": "UI-19",
+      "key": "messages :: galaxy_name_sculptor_dwarf",
+      "grade": "BROKEN",
+      "issue": "Galaxy/constellation name left in Latin; native form is 玉夫座矮星系.",
+      "fix": "玉夫座矮星系"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-1",
+      "key": "essays/seven-minutes.json :: body.19.md",
+      "grade": "MINOR",
+      "issue": "Several stiff or machine-like clauses (导航解决方案, 腿部展开产生的振动被误读为).",
+      "fix": "在火星任务的历史中，着陆问题是以生命为代价的。Mars 2在1971年成为首个触及火星表面的地球物体——但它坠毁了，在撞击中自毁，下降系统在降落伞序列完成之前便已失效。Mars Polar Lander在1999年12月，几乎可以肯定是因为着陆腿展开时的振动被误判为触地信号，而过早关闭了下降发动机，最后四十米它以全速坠落。Beagle 2在2003年圣诞节那天成功通过了进入阶段——EDL序列看起来运行正常——但太阳能电池板在着陆时未能完全展开，它再也无法通信，静静地躺在火星平原上。欧洲航天局的Schiaparelli着陆器在2016年10月，其惯性测量单元在剧烈的降落伞下降过程中饱和——读数瞬间超出了量程——导航解算因此被破坏，星上计算机错误地认为自己已经在地表以下；它抛掉了降落伞，只点燃了三秒而非三十秒的制动火箭，以大约每小时540公里的速度撞击地面。"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-2",
+      "key": "essays/the-body-in-the-dark.json :: body.7.caption",
+      "grade": "MINOR",
+      "issue": "Unnatural wording (吸收这个天气, 传递急性剂量, 避免...的庇护).",
+      "fix": "最难的问题是你看不见的那一个。在地球磁场之外，银河宇宙射线无处可躲，而一次太阳风暴可在数小时内造成急性剂量。足以挡住它们的屏蔽层重得根本无法飞行——所以在长途航行中，船员只能直接承受这种“天气”。"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-3",
+      "key": "essays/interstellar-exploration.json :: body.11.md",
+      "grade": "BROKEN",
+      "issue": "比冲脉冲 is wrong for specific impulse of 825 s and the last sentences are garbled.",
+      "fix": "核热推进——在反应堆中加热氢气并通过喷嘴排出——大约使排气速度加倍，在NERVA计划最佳的地面测试发动机中达到约825秒的比冲。排气速度加倍并不会使所需质量比减半；它是对质量比开平方根——这是大得多的收益。但在星际速度下，核热推进在原则上仍然完全不够用。火箭方程并不关心推进剂是如何加热的，它只关心推进剂离开的速度有多快。而迄今设想的任何燃烧推进剂的架构，都无法把物质喷射得足够快，以达到光速的可观比例，除非所需燃料量大到让任务从一开始就不可能。"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-4",
+      "key": "essays/going-to-mars.json :: body.21.md",
+      "grade": "BROKEN",
+      "issue": "Half-width punctuation and garbled/incorrect phrasing (任务构架无法工程绕过, 太阳能粒子, 过渡, 发电机制, 屏障).",
+      "fix": "第三道墙是人体，而这是任务架构无法通过工程手段绕开的一道墙。火星没有全球磁场——其内核早已冷却凝固，曾经产生屏障的发电机效应就此终结。地球的磁层偏转了大部分银河宇宙射线和太阳高能粒子；火星没有任何等效的屏障。穿越星际空间的六个月航程，实测剂量约为300毫西弗——是地球上一年典型天然本底辐射的一百多倍，而这是在六个月内吸收的。在火星表面，由于没有磁层，次级辐射使剂量进一步累积。三年往返行程的总剂量估计为600至1,200毫西弗，取决于太阳周期阶段和屏蔽——这些数字是由[Curiosity](/missions?id=curiosity)上的仪器在飞行中实测得到的。"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-5",
+      "key": "essays/interstellar-exploration.json :: body.26.md",
+      "grade": "MINOR",
+      "issue": "最保守/最激进 for slowest/fastest and several awkward phrasings.",
+      "fix": "但“并未被禁止”与“在任何近期时间范围内可以实现”之间的差距是巨大的。最慢的严肃提案——以12%光速航行的核聚变星舰——需要尚不存在的技术，花费超过历史上任何航天计划，才能在大约五十年内把一艘载人飞船送到另一颗恒星。最快的严肃提案——Breakthrough Starshot的激光驱动光帆——将把一克重的仪器送去执行只持续数小时的飞掠，并在数年内回传数据，其支持者估计费用高达数百亿美元，前提还是激光阵列真能建成。在这两个极端之间，没有一个既在技术上可行、又足以支撑有意义探索的中间方案。这个问题的尺度，就是没有折中的解法。"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-7",
+      "key": "essays/the-body-in-the-dark.json :: body.14.md",
+      "grade": "BROKEN",
+      "issue": "Person name Mark left in Latin, ISS translated while Mir is kept, and several garbled sentences (在自己的力量下, 人类在太空中长期人体所知).",
+      "fix": "我们所知的关于长期太空飞行生理学的一切，都来自实测——对象是真实的人，他们在太空中真正住了那么久，回到家，并接受了研究。单次连续飞行的纪录由俄罗斯医生兼宇航员瓦列里·波利亚科夫保持，他于1994年1月登上[Mir](/programs/mir)，1995年3月返回地球，在轨连续停留437天——三十年后仍未被打破。波利亚科夫的目标明确是医学性的：确定人类能否在功能正常的状态下度过一次火星任务的时长。着陆时，他坚持靠自己的力量走出Soyuz返回舱。他的骨骼和肌肉恢复花了数月。但他走出来了。[Salyut](/programs/salyut)和[Mir](/programs/mir)计划积累了苏联、后来是俄罗斯的一整套生理数据，至今无可替代——[ISS](/programs/iss)扩展了这些数据并使之全球化。佩吉·惠特森三次任务累计的665天，为研究人员提供了关于单个个体的纵向数据集，别无他法能够复制。NASA双胞胎研究——斯科特·凯利340天的任务，与他留在地球上的同卵双胞胎兄弟马克作对照——发现了基因表达、端粒动力学、肠道微生物组构成和认知表现方面可测量的变化，其中大部分在返回后恢复，但并非全部。中国的[天宫](/programs/tiangong)计划如今也在增添纪录：自2021年起，乘组以90天和180天轮换，这是此前数据集中缺席的中国航天员群体。任何关于人类对太空中长期人体了解的诚实叙述，都必须包括俄罗斯在Mir上学到的东西、15国ISS合作伙伴自2000年以来测得的东西，以及中国现在正在积累的东西。"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-8",
+      "key": "essays/navigation.json :: body.22.caption",
+      "grade": "MINOR",
+      "issue": "Awkward opening, 星跟踪器 instead of 星敏感器, vague last clause.",
+      "fix": "当没有“上”可言时，哪边才是上？星敏感器拍摄一小片天空，把图案与星上星表比对，立刻就知道飞行器在固定的J2000坐标系中朝向哪里。两次定位之间，由陀螺仪接力推算姿态。"
+    },
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-10",
+      "key": "essays/the-body-in-the-dark.json :: body.22.md",
+      "grade": "BROKEN",
+      "issue": "Garbled sentences (对期间敏感, 以即使更短的暴露也不能完全拯救的方式, last sentence) and clumsy chain of clauses.",
+      "fix": "更好的推进很重要。正在开发的[新型发动机技术](/essays/new-propulsion)——核热、核电、太阳帆以及更遥远未来的构想——将缩短转移时间，而缩短转移时间就会减少累积的辐射暴露和累积的生理退化。90天的航程而不是270天，对身体来说并不是轻松三倍；剂量与效应之间的关系比线性复杂得多，有些系统——心理、骨骼、心血管——对时长很敏感，即便暴露时间更短，也无法完全挽回。但越短越好。更快的发动机就是真正的医学。然而，它们并没有改变问题的根本性质。90天的航程依然要穿越没有磁层、没有重力、没有救援的星际空间。身体依然是有效载荷。它依然会退化。它依然会带着需要数月甚至数年才能恢复的损伤回到家——如果还能恢复的话。"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-1",
+      "key": "fleet/launcher/soyuz-2.json :: description",
+      "grade": "MINOR",
+      "issue": "Awkward 承载...到国际空间站 clause and ISS translated instead of kept (name rule).",
+      "fix": "RKTs Progress 现代化的 Soyuz 系列，以数字飞行控制取代了 Soyuz-FG / Soyuz-U 的模拟系统。变型包括 2.1a（RD-107A/RD-108A 一级 + RD-0124 三级）、2.1b（推力增强的三级）和 2.1v（无助推器，单级 RD-110）。承担俄罗斯所有现代载人和货运飞往 ISS 的任务，并发射 Glonass、Resurs-P 和 Lotos-S 有效载荷。"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-2",
+      "key": "fleet/station/salyut-7.json :: dispatch",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation throughout a Chinese paragraph.",
+      "fix": "Salyut 7是最后一座Salyut空间站，也是通往Mir的桥梁——同时也是人类在轨道上尝试过的最艰难修复任务的发生地。1985年，这座被遗弃的空间站陷入沉寂、冻结并缓慢翻滚，两名宇航员飞往太空，手动与这个失去动力的死寂舱体对接，通过手工操作使其恢复生机，逐一解冻并重启其系统。Salyut 7将双对接口、由Progress补给的架构发展至完全成熟，并将这套本质上已经完备的系统移交给了将要取代它的模块化空间站。"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-4",
+      "key": "fleet/launcher/vostok-k.json :: dispatch",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation and ISS translated instead of kept.",
+      "fix": "发射加加林的火箭原本是一件改变了职业生涯的武器。Vostok-K是科罗廖夫R-7的载人版本——R-7是世界上第一枚洲际弹道导弹，最初建造是为了将弹头投送到地球另一端，如今却被赋予了将人送入轨道的使命。它与发射Sputnik的火箭属于同一血统，而且令人惊讶的是，这一血统至今仍在飞行：今天将宇航员送往ISS的Soyuz火箭正是其直系后代，这使得R-7家族成为历史上发射次数最多的火箭。很少有为战争而造的机器能拥有如此长久而和平的第二次生命。"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-5",
+      "key": "fleet/launcher/long-march-3b.json :: description",
+      "grade": "BROKEN",
+      "issue": "Adds 固体 (solid) for the strap-on boosters, which the source does not say and which is wrong for this vehicle.",
+      "fix": "三级液体自燃推进剂运载火箭（下两级采用偏二甲肼/四氧化二氮，第三级采用LH2/LOX），侧装四个捆绑助推器。从西昌卫星发射中心可运送约 11 吨有效载荷到LEO / 约 5.1 吨到GTO。首飞（1996-02-15，Intelsat 708）因制导控制系统故障而发生灾难性失败，造成下落区村民伤亡；经过改进设计的火箭已成功完成100多次任务，是嫦娥月球探测计划的标准运载火箭。"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-7",
+      "key": "fleet/launch-site/starbase-orbital-a.json :: tagline",
+      "grade": "MINOR",
+      "issue": "堆栈 is unnatural for the full vehicle stack.",
+      "fix": "Starship首次轨道飞行试验；为完全可重复使用、飞往火星的整套火箭而设计"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-11",
+      "key": "fleet/constellation/inmarsat.json :: description",
+      "grade": "MINOR",
+      "issue": "Mixed half-width punctuation inside Chinese text.",
+      "fix": "地球静止轨道移动卫星通信——14+ 颗 GEO 卫星提供海事、航空和偏远地区的语音 + 数据服务。最初于 1979 年成立，名为国际海事卫星组织（International Maritime Satellite Organization），是一个政府间条约机构，负责船岸通信（GMDSS 的前身）。1999 年私有化。2023 年被 Viasat 收购，与 Viasat 的 Ka 波段卫星群合并。"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-13",
+      "key": "fleet/orbiter/magellan.json :: description",
+      "grade": "MINOR",
+      "issue": "雷达覆盖 loses the meaning radar-mapped.",
+      "fix": "Magellan是美国Martin Marietta建造的深空轨道器。用雷达测绘了98%的金星表面。1989年首飞后退役。"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-14",
+      "key": "fleet/station/salyut-7.json :: description",
+      "grade": "BROKEN",
+      "issue": "Garbled and wrong: 再次以名声复兴, 倾覆, and uncontrolled reentry rendered as 对阿根廷的控制.",
+      "fix": "最后一座Salyut，服役于1982–1991年。1985年，它在失去动力并翻滚之后，由弗拉基米尔·扎尼别科夫和维克托·萨维内赫重新激活——这是首次轨道抢修任务。1991年在阿根廷上空不受控再入。"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-16",
+      "key": "fleet/rover/exomars-rosalind-franklin.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "生物特征 means biometrics; biosignatures is 生物标志.",
+      "fix": "ESA 的 2028 火星漫游车 — 2 米钻头在奥克西亚平原寻找生物标志。因 2022 年 Roscosmos 退出而暂停，改由 NASA 发射"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-17",
+      "key": "fleet/orbiter/lunar-orbiter-1.json :: description",
+      "grade": "MINOR",
+      "issue": "开发胶片 is wrong for developing film (冲洗); also first-spacecraft framing is clumsy.",
+      "fix": "美国第一颗环绕月球的航天器，在Luna 10之后四个月。1966年8月10日从卡纳维拉尔角由Atlas-Agena D运载火箭发射，Lunar Orbiter 1于1966年8月14日进入椭圆形月球轨道。其主要任务是以亚米级分辨率拍摄候选的Apollo着陆点——一套70毫米+610毫米双镜头相机系统在轨冲洗胶片（Bimat工艺），再扫描后通过无线电传回地球。它在第16圈轨道上以广角镜头拍摄了从月球轨道看到的第一张地球照片（1966年8月23日——比Apollo 8更著名的“地出”早两年多），并回传了207幅高分辨率+207幅中分辨率图像，绘制了410万平方公里的月球表面。1966年10月29日它被故意撞向月球背面，以腾出无线电频段供Lunar Orbiter 2使用。"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-21",
+      "key": "fleet/rover/spirit.json :: description",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation; JPL is not a 公司; 运营6年 is bare.",
+      "fix": "Spirit（MER-A）是美国NASA JPL建造的行星漫游车。火星探测漫游车；运行6年。2004年首飞后退役。"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-22",
+      "key": "fleet/lander/luna24.json :: tagline",
+      "grade": "BROKEN",
+      "issue": "Surface feature Mare Crisium kept in Latin instead of 危海.",
+      "fix": "苏联最后一次成功的月球任务——1976年8月22日带回了170克危海月壤；在嫦娥五号之前最后一次月球样本返回"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-23",
+      "key": "fleet/launcher/pslv-xl.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "Mission name Mars Orbiter Mission translated instead of kept in English.",
+      "fix": "ISRO的重型助推器PSLV变型——发射了Chandrayaan-1和Mars Orbiter Mission"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-1",
+      "key": "missions/earth/inspiration4.json :: description",
+      "grade": "BROKEN",
+      "issue": "Person name Arceneaux left in Latin after being transliterated earlier, 243百万美元 is unnatural, and 无与任何空间站对接 is awkward.",
+      "fix": "贾里德·伊萨克曼、肖恩·普罗克特、海莉·阿尔塞诺和克里斯·森布罗斯基——首次完全由非职业政府宇航员组成的轨道飞行乘组。2021年9月15日00:02 UTC 从 LC-39A 发射，乘 Falcon 9 B1062（第三次飞行）升空，顶部为 Crew Dragon Resilience（C207，此前曾在 Crew-1 上飞行）。到达高度 585 千米、倾角 51.6° 的圆形轨道——自 Hubble 维修任务以来最高的载人轨道。没有与任何空间站对接；三天自由飞行，包括首个机载穹顶舱（取代了对接适配器）。2021年9月18日23:06 UTC 在佛罗里达沿岸溅落。该任务为圣裘德儿童研究医院筹集了超过2.43亿美元——阿尔塞诺是圣裘德的前患者，也是首位进入轨道的癌症幸存者。"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-2",
+      "key": "missions/jupiter/juno.json :: first",
+      "grade": "MINOR",
+      "issue": "Half-width semicolon in Chinese text.",
+      "fix": "木星首艘极轨道探测器；首次在小行星带以外以太阳能供电"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-9",
+      "key": "missions/earth/gemini12.json :: first",
+      "grade": "MINOR",
+      "issue": "Half-width semicolon and truncated 最后一次Gemini.",
+      "fix": "解决了EVA问题——奥尔德林的太空行走；最后一次Gemini任务"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-11",
+      "key": "missions/mars/spirit.json :: description",
+      "grade": "BROKEN",
+      "issue": "Surface feature Gusev Crater left in Latin instead of 古谢夫陨石坑.",
+      "fix": "Spirit（MER-A）在2004年1月4日于古谢夫陨石坑底部反弹28次，从首次撞击点滚动250 m后停下。它按90火星日的主任务设计，却存活了2,208火星日。它在古谢夫平原上行驶了7.7 km，攀登了哥伦比亚丘陵，并发现了含赤铁矿的岩石，表明火星曾有持久的古代水活动。2009年4月，一个车轮在“Troy”处压穿硫酸盐地壳，Spirit陷入软土无法动弹；团队将其改作固定平台。最后信号发送于2010年3月22日；任务于2011年5月25日宣布结束。它与Opportunity是孪生任务，Opportunity三周后在火星另一侧着陆。"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-13",
+      "key": "missions/saturn/cassini.json :: first",
+      "grade": "MINOR",
+      "issue": "Half-width parentheses in Chinese text.",
+      "fix": "环绕土星13年 — Huygens 于 2005-01-14 着陆土卫六（外太阳系首次软着陆）"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-15",
+      "key": "missions/earth/skylab-2.json :: first",
+      "grade": "MINOR",
+      "issue": "工作室 for the Skylab workshop is wrong (工作舱) and 访问Skylab 2 is clumsy.",
+      "fix": "Skylab首次载人访问——修复了受损的工作舱并拯救了整个计划"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-17",
+      "key": "missions/saturn/cassini.json :: dispatch",
+      "grade": "BROKEN",
+      "issue": "Untranslated English word tiny in the Chinese text, plus half-width punctuation.",
+      "fix": "Cassini 做到了此前没有任何航天器在任何巨行星那里做到的事：它停了下来。它在土星生活了十三年，而最重要的发现正是来自这份驻留——土卫二的间歇泉，之所以被捕捉到，是因为这个轨道器飞得足够近、足够频繁，才得以看到一颗微小的卫星把隐藏的海洋喷射到太空中。它把欧洲的Huygens探测器投放到土卫六上，那是外太阳系有史以来唯一一次着陆，并绘制了一个充满甲烷河流和湖泊的世界。最后，在燃料耗尽时，它被刻意驱动飞入土星，这样它就永远不会坠落到它所发现的那些海洋卫星上并污染它们——一项以保护自己所发现之地而告终的任务。"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-18",
+      "key": "missions/moon/apollo15.json :: dispatch",
+      "grade": "MINOR",
+      "issue": "Book-title marks 《》 around Genesis Rock and a stiff last clause.",
+      "fix": "到Apollo 15时，竞争早已结束，科学接过了方向盘——字面意义上的。这是首次搭载月球车的飞行，它把两英里的步行半径扩大为十八英里的正式野外考察，而且着陆点不是安全平坦的平原，而是山脉与蜿蜒峡谷之间的山谷。斯科特和艾尔文带回了“创世纪岩”，这块四十亿年前的月球原始地壳碎片证实了月壳是如何形成的。Apollo已不再只是造访月球，而是开始研究它——而且直到被取消，它在这方面一直越做越好。"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-20",
+      "key": "missions/jupiter/pioneer-10.json :: description",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation, plaque name inconsistent with Latin Pioneer 10, and Salzman Sagan name truncated.",
+      "fix": "Pioneer 10 是开路先锋——首个穿越小行星带的探测器（后来证明那里远没有预想的危险），首个近距离拍摄木星的探测器，首个到达超过冥王星近日距的日心距离（1983年）的航天器。它携带着由卡尔·萨根、弗兰克·德雷克和琳达·萨尔茨曼·萨根设计的Pioneer镀金铝板——人类首条有意发出的星际信息。最后一次成功联络是在2003-01-23，距离约82 AU；探测器如今正飘向金牛座方向，约两百万年后将经过毕宿五附近。"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-21",
+      "key": "missions/moon/apollo12.json :: description",
+      "grade": "MINOR",
+      "issue": "Program name Apollo translated as 阿波罗 in one place, and 拆除了其相机和表面样本 misreads the source.",
+      "fix": "第二次载人登月任务。Saturn V 火箭在上升过程中两次遭雷击（T+36 秒和 T+52 秒）——宾通过 EECOM 约翰·阿伦著名的“SCE to AUX”指令恢复了航天器，随后乘组在月球轨道上重新校准了惯性测量单元。康拉德和宾在风暴洋实现了精确着陆，降落点距 Surveyor 3（该探测器于 1967 年 4 月软着陆）仅 163 米，随后他们步行至 Surveyor 3，取下了它的相机并采集了它的表面样本——这些部件被带回地球，用于分析长期暴露在月表的影响。他们部署了 ALSEP（完整的 Apollo 月面实验包——这是第一套 ALSEP，而 Apollo 11 部署的是更简单的 EASEP），该设备传输数据长达 8 年。任务带回了 34 千克样本，包括暗色月海玄武岩。"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-22",
+      "key": "missions/moon/beresheet.json :: first",
+      "grade": "MINOR",
+      "issue": "Clumsy: 首次以色列月球任务 and 登月任务 for a mission that did not land.",
+      "fix": "首个抵达月球的私人出资任务；以色列首次月球任务"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-23",
+      "key": "missions/mars/insight.json :: description",
+      "grade": "BROKEN",
+      "issue": "月壤 (lunar soil) used for Martian regolith throughout, and 铁核 adds content.",
+      "fix": "InSight 为火星配备了第一个“听诊器”。它的地震仪由机械臂部署在火星表土上，记录了超过1300次火星地震——包括2022年发生的5级地震，这是迄今在其他星球上探测到的最强地震。数据揭示了火星的内部结构：半径为1800公里的熔融核心、厚重的地壳，以及出人意料的地幔分层。“鼹鼠”热流实验失败了，因为火星表土的粘聚力超出了其自锤击设计的承受能力。当太阳能电池板上积尘使功率降至运行阈值以下时，任务宣告结束。"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-25",
+      "key": "missions/earth/vostok-5.json :: description",
+      "grade": "BROKEN",
+      "issue": "Place name Karaganda left in Latin instead of 卡拉干达.",
+      "fix": "瓦列里·贝科夫斯基的81圈、4天23小时飞行——至今仍是史上最长的单人地球轨道任务。1963-06-14 11:59 UTC发射；任务的后半段与Vostok 6（捷列什科娃，两天后发射）并行飞行。原计划8天的飞行因担忧太阳耀斑辐射和缓慢的轨道衰减而缩短。1963-06-19 11:06 UTC，降落伞分离后在卡拉干达附近着陆。"
+    },
+    {
+      "segment": "mission event notes",
+      "id": "mission-11",
+      "key": "missions/moon/apollo12.json :: events.5.note",
+      "grade": "BROKEN",
+      "issue": "Lunar module name Intrepid translated as 勇气号 (also reads as Spirit).",
+      "fix": "Intrepid在表面停留 31 小时 31 分钟后升空。返回 34 千克样品。"
+    },
+    {
+      "segment": "mission event notes",
+      "id": "mission-18",
+      "key": "missions/earth/otv-3.json :: events.1.note",
+      "grade": "BROKEN",
+      "issue": "Apogee mistranslated as 近地点 (perigee).",
+      "fix": "远地点~360 km；机密有效载荷运行。"
+    },
+    {
+      "segment": "mission event notes",
+      "id": "mission-20",
+      "key": "missions/earth/otv-2.json :: events.2.note",
+      "grade": "MINOR",
+      "issue": "Word order makes 着陆跑道 read as an object.",
+      "fix": "2012年6月16日在范登堡空军基地自主着陆于跑道。"
+    },
+    {
+      "segment": "mission event notes",
+      "id": "mission-25",
+      "key": "missions/earth/vostok-4.json :: events.2.note",
+      "grade": "BROKEN",
+      "issue": "Place name Karaganda left in Latin instead of 卡拉干达.",
+      "fix": "于1962-08-15 06:59 UTC在卡拉干达附近着陆。"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-1",
+      "key": "orbit-regimes-moon/LLO.json :: story",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation throughout.",
+      "fix": "距离月球表面最近的轨道带——通常在50到100 km高度。在这里飞行的航天器能够以亚米级分辨率对表面成像，但代价高昂：月球的质量分布极不均匀（月海下方有巨大的地下质量瘤），因此低轨道会受到剧烈扰动。大多数LLO任务需要主动保持轨道，或者精心选择能够抵抗漂移的“冻结”倾角。LRO自2009年以来一直在这里飞行——是在轨时间最长的月球任务。"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-2",
+      "key": "earth-objects/smart-1.json :: description",
+      "grade": "MINOR",
+      "issue": "创开...先河 is wrong, 太阳电能 is nonstandard, and 螺旋形上升 is stiff.",
+      "fix": "ESA的首次月球任务，2003-2006年。采用太阳能电推进（离子）系统，从地球同步转移轨道螺旋上升至月球捕获轨道——这次耗时14个月、燃料高效的航程，开创了ESA后来行星际任务所用的低推力轨道。2006年故意撞击月球表面。"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-5",
+      "key": "site-stories/opportunity.json :: chapters.2.subtitle",
+      "grade": "BROKEN",
+      "issue": "Surface feature Endeavour (crater) left in Latin; should be 奋进撞击坑.",
+      "fix": "从鹰撞击坑到奋进撞击坑——14年的证据"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-7",
+      "key": "orbit-regimes-moon/NRHO.json :: story",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation throughout.",
+      "fix": "并非真正意义上的绕月轨道——更像是围绕地月L1和L2拉格朗日点的长“8”字形轨道，在近月点贴近月球南极（约3,000公里），在远月点则延伸至北极上方极远处（约70,000公里）。这种几何构型带来两大优势：与地球保持持续视线通信（无通信中断），以及极低的轨道维持燃料消耗——每年仅需几米/秒。NASA的Lunar Gateway在发射后将驻留于NRHO。CAPSTONE于2022年作为探路者飞抵该轨道。"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-11",
+      "key": "tiangong-modules/wentian.json :: description",
+      "grade": "BROKEN",
+      "issue": "Drops the July 2022 berthing date from the source.",
+      "fix": "首个实验舱，2022年7月对接——两个大型太阳翼、一个外部载荷气闸舱，以及舱体上安装的一个小型实验性机械臂。"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-15",
+      "key": "orbit-regimes-explore/TERRESTRIAL.json :: firsts.1.label",
+      "grade": "MINOR",
+      "issue": "USA left in English inside Chinese text.",
+      "fix": "Mariner 4 — 首次火星飞掠（美国）"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-17",
+      "key": "original-work.json :: models3d./images/colophon/model-cruise-change3_webp.what",
+      "grade": "BROKEN",
+      "issue": "Chinese rover name Yutu left in Latin; must be 玉兔号.",
+      "fix": "CNSA着陆器下降级，顶部搭载玉兔号月球车。"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-19",
+      "key": "site-stories/spirit.json :: chapters.1.images.2.caption",
+      "grade": "MINOR",
+      "issue": "Half-width comma.",
+      "fix": "在 Adirondack 岩石上钻磨，第34火星日——岩石研磨工具首次在火星上使用。"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-21",
+      "key": "orbit-regimes/HEO.json :: comparison",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "远地点可达到月球距离的1/8；近地点可擦过LEO顶部。轨道器在地球附近疾驰，在顶部缓慢爬行。"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-22",
+      "key": "culture-doors/voyager-golden-record.json :: blurb",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation throughout.",
+      "fix": "固定在两艘Voyager飞船上的是一张镀金唱片，载有55种语言的问候、从巴赫到查克·贝里的音乐，以及地球的图像——这是一封现在正漂流在太阳系之外、飘向群星的瓶中信，为任何有朝一日可能找到它的人或物而准备。"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-23",
+      "key": "orbit-regimes-explore/BELT.json :: firsts.0.label",
+      "grade": "BROKEN",
+      "issue": "Country name Italy left in English.",
+      "fix": "谷神星 — 首颗被发现的小行星（皮亚齐，意大利）"
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-3",
+      "key": "moon-sites/apollo11.json :: left",
+      "grade": "MINOR",
+      "issue": "纪念碑/国旗 are imprecise for plaque/flag and the quote is reworded.",
+      "fix": "下降级 · EASEP · 激光角反射器 · 旗帜 · 纪念牌：“我们为全人类带着和平而来”"
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-4",
+      "key": "planets/arrokoth.json :: bio",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "2014年由Hubble发现，最初编号为2014 MU69。2019年New Horizons飞掠后更名为阿罗科斯（Powhatan语意为“天空”）——一个自形成以来未经改变、保存完好的原始星子盘残留物。其红色、温和吸积而成的接触双星形态，直接留下了外太阳系行星形成之初的指纹。"
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-8",
+      "key": "mars-sites/beagle2.json :: mission_type",
+      "grade": "BROKEN",
+      "issue": "Untranslated English.",
+      "fix": "无人着陆器 · 失联"
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-13",
+      "key": "mars-sites/tgo.json :: fact",
+      "grade": "MINOR",
+      "issue": "特征化 is machine-like and 着陆器已坠毁 adds a gloss.",
+      "fix": "ExoMars 2016 任务中幸存的一半（Schiaparelli 是着陆器）。以万亿分之一的灵敏度测定大气中的甲烷、水蒸气和其他痕量气体。未发现高于 0.05 ppbv 的甲烷——远低于所有先前宣称的探测结果——这使甲烷之谜更深而非得到解决。Curiosity 在表面探测到的结果仍无法解释。"
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-18",
+      "key": "small-bodies/didymos.json :: science_sections.0.why",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "迪迪莫斯是一个双小行星近地天体（半长轴1.64 AU）。DART（NASA，2022）撞击其小伴星迪莫弗斯，以检验小行星偏转物理。"
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-23",
+      "key": "planets/mercury.json :: science_sections.0.why",
+      "grade": "MINOR",
+      "issue": "显得...大1.5倍 means 2.5 times; source says 1.5 times as large.",
+      "fix": "水星的离心率为0.206，是8颗行星中最高的——近日点时太阳在其天空中的视大小是远日点时的1.5倍。"
+    },
+    {
+      "segment": "programs (long editorial)",
+      "id": "programs-3",
+      "key": "programs/kuiper.json :: goals.2.md",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "一个决定性目标是在发射上独立于SpaceX。由于Kuiper与Starlink直接竞争，购买Falcon 9的发射服务就意味着资助并依赖竞争对手——因此Amazon刻意把庞大的发射合同分散给多家供应商：United Launch Alliance的Atlas V和Vulcan、Arianespace的Ariane 6，以及Blue Origin的New Glenn。这是历史上最大的发射采购交易之一，专门设计为避开那枚本来最容易买到的火箭。"
+    },
+    {
+      "segment": "programs (long editorial)",
+      "id": "programs-4",
+      "key": "programs/buran.json :: outcome.1.md",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "1988年11月15日，Buran飞行了。它由Energia发射，绕地球飞行两圈，再入大气层，然后——在足以考验任何飞行员的阵风侧风中——完全自动地降落在拜科努尔的跑道上，着陆点距目标仅几米，全程无人在机上。这是一次完美的飞行和真正的技术胜利：此前没有其他有翼航天器完成过整个轨道任务并自行着陆。而这是Buran唯一一次飞行。"
+    },
+    {
+      "segment": "programs (long editorial)",
+      "id": "programs-5",
+      "key": "programs/voyager.json :: goals.1.caption",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "每艘Voyager都把仪器装在伸杆上，带有一面始终对准渐行渐远的地球的大型碟形天线，以及一台核发电机，使其能在阳光弱得无法使用太阳能板的地方运行。它们被设计为运行几年并抵达土星。它们至今仍在工作。"
+    },
+    {
+      "segment": "programs (long editorial)",
+      "id": "programs-6",
+      "key": "programs/tiangong.json :: legacy.2.md",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "而且它是通往轨道的第二扇前门。由于ISS合作伙伴关系历来对中国关闭，天宫为世界其他地区提供了载人航天的另一个东道主——虽然它自带地缘政治因素，但实质上拓宽了哪些国家能够把人员和实验送往空间站。"
+    },
+    {
+      "segment": "programs (long editorial)",
+      "id": "programs-8",
+      "key": "programs/commercial-stations.json :: narrative.1.md",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation and 要求 for demand (需求).",
+      "fix": "这也是对市场的一次赌注，而这种赌注以前失败过。之前在近地轨道建立商业经济的尝试发现，除了政府合同之外，付费需求很少。当前的努力资金更充足、时机更好——得益于更便宜的发射和真实的截止期限——但它在尝试同样艰难的事情：证明轨道可以成为一门生意。ISS从未被期望盈利；它的继任者应该盈利，而这是一种真正新颖且未经验证的需求。"
+    },
+    {
+      "segment": "programs (long editorial)",
+      "id": "programs-9",
+      "key": "programs/vostok.json :: legacy.1.md",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "Vostok的遗产一部分是那些永远无法被改写的“第一次”，另一部分则是一台从未真正退役的机器。当年发射加加林的R-7火箭，直系传承下来就是今天仍在把乘组送入轨道的Soyuz火箭——六十多年、一千八百次发射之后，它仍是历史上使用次数最多的运载火箭。球形返回舱加服务舱的布局成为了Soyuz的模板，而Soyuz至今仍在飞行。"
+    },
+    {
+      "segment": "programs (long editorial)",
+      "id": "programs-10",
+      "key": "programs/buran.json :: goals.1.md",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation and 提升力 for lift (推力).",
+      "fix": "第一个决定是关于发动机的。美国航天飞机把三台大型主发动机装在轨道器本身上，这意味着每次飞行都要把那些沉重、昂贵的机械拖到轨道再带回来，只抛弃外部燃料箱。苏联则把全部推力放在火箭上：Buran搭乘Energia，这是一枚真正的超重型运载火箭，完成了到达轨道的全部工作，让轨道器只是载荷，而不是推进系统的一部分。这使得Energia本身就很有用——一枚强大的火箭，可以在完全没有轨道器的情况下发射其他重型载荷——也使Buran摆脱了其竞争对手背负了三十年的负担。"
+    },
+    {
+      "segment": "science articles (editorial)",
+      "id": "science-6",
+      "key": "science/history/goddard-liquid-rocket-1926.json :: body_paragraphs.1",
+      "grade": "BROKEN",
+      "issue": "Person name Congreve left in Latin; should be 康格里夫.",
+      "fix": "早期的固体燃料火箭确实存在（13世纪起的中国火箭、拿破仑战争时期的康格里夫火箭），但液体燃料才是通往航天的大门：比冲更高、节流可控、可重启。"
+    },
+    {
+      "segment": "science articles (editorial)",
+      "id": "science-7",
+      "key": "science/propulsion/thrust-and-twr.json :: body_paragraphs.0",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation and leftover asterisk emphasis marks.",
+      "fix": "推力就是力。单位是牛顿（对飞行器常用千牛 / 兆牛）。一台 Merlin 1D 在海平面产生 845 kN。单台 F-1 产生 6770 kN。每枚 SLS 助推器产生 16,000 kN。推力不是比冲：推力说明发动机推得有多猛，Isp 说明它推得有多高效。高推力低 Isp 的发动机（固体助推器）和低推力高 Isp 的发动机（离子推进器）都有用——用在任务不同阶段的不同工作上。推力方程很简单：推力等于推进剂质量流量乘以排气速度，再加上喷管出口压力与环境压力不同时产生的一个小的压力项。这就是为什么高燃烧室压力的分级燃烧发动机每千克发动机质量产生更多推力——它们每秒以更高速度让更多推进剂通过同一个喉部。"
+    },
+    {
+      "segment": "science articles (editorial)",
+      "id": "science-8",
+      "key": "science/propulsion/expander-cycle.json :: body_paragraphs.2",
+      "grade": "MINOR",
+      "issue": "Garbled bleed explanation and an awkward closing sentence.",
+      "fix": "经典之作是 RL10，1962 年首次在 Centaur 上飞行，至今仍在生产——是所有发动机中服役时间最长的之一。这个推力上限适用于完全封闭的循环；改用膨胀放气型变体就能突破它。放气型从受热气体中分出一部分去驱动涡轮，然后将其直接排出舷外，而不是全部导入燃烧室——以损失一点比冲换取大得多的功率。日本的 LE-9 展示了它能走多远：这台膨胀放气发动机产生 1,471 kN 推力，驱动 H3 的一级，这是封闭膨胀循环永远做不到的。它的同系发动机 LE-5B 和 Ariane 6 上的欧洲 Vinci 都在上面级采用同样的放气方案。分级燃烧追求原始性能，而膨胀循环追求的是可靠性和可重启性，用于把有效载荷精确送到应在的位置这类安静而精细的工作。"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-2",
+      "key": "universe/exoplanets/barnard-d.json :: bio",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "Barnard d是在巴纳德星周围探测到的微小行星之一，这颗红矮星距离我们仅六光年。它的质量远低于地球，围绕其冷恒星近距离运行，使我们第二近的恒星邻居成为一个真正的行星系统，而非曾经认为的空旷天空。"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-3",
+      "key": "universe/named-stars/rasalhague.json :: bio",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation and parentheses.",
+      "fix": "候（蛇夫座α）是一颗白色恒星，距离我们约 48 光年，是蛇夫座中最明亮的星。它快速自转，并有一颗低质量伴星围绕其运行。"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-5",
+      "key": "universe/named-stars/miaplacidus.json :: fact",
+      "grade": "BROKEN",
+      "issue": "Constellation Carina (the Keel) left in English.",
+      "fix": "船底座的第二亮星——一颗拥有奇特混合名字的白色恒星。"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-6",
+      "key": "universe/exoplanets/trappist-1-d.json :: bio",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "TRAPPIST-1 d是七颗行星中较小的一颗，正好位于温度可能允许液态水存在的区域内侧。与它的所有兄弟星球一样，它被认为处于潮汐锁定状态，始终以一面朝向这颗暗淡的红矮星，而另一面则永远处于黑夜之中。"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-8",
+      "key": "universe/named-stars/acrux.json :: bio",
+      "grade": "MINOR",
+      "issue": "Latin name kept in parentheses with inconsistent spacing.",
+      "fix": "十字架二（南十字座α）是一个炽热的蓝色聚星系统，距离约320光年，是南十字座明亮的基点。它的成员恒星年轻而质量巨大，闪耀着蓝白色的光芒。"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-10",
+      "key": "universe/named-stars/alioth.json :: bio",
+      "grade": "MINOR",
+      "issue": "Latin designation left in parentheses instead of 大熊座ε.",
+      "fix": "玉衡（大熊座ε）是一颗距离约81光年的奇特白色恒星，是大熊座中最明亮的恒星。它的光谱显示出与强磁场相关的奇异的、变化的化学特征。"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-11",
+      "key": "universe/named-stars/luytens-star.json :: fact",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "一颗附近的红矮星，拥有行星——也是人类向恒星发送信息的目标。"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-12",
+      "key": "universe/named-stars/fomalhaut.json :: cultural",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "其名称源自阿拉伯语，意为“[南方]鱼之口”。作为古波斯四颗“王者之星”之一，北落师门曾是季节的标志，也是南方地平线航海者的航路指引。"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-13",
+      "key": "universe/named-stars/diphda.json :: fact",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "“第二只青蛙”——一颗橙色巨星，光芒超越了其所在星座的α星。"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-14",
+      "key": "universe/named-stars/alnair.json :: cultural",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "它的名字来自阿拉伯语短语“明亮者”，继承自一个更古老的星座形象。天鹤座由16世纪晚期绘制南天星图的航海家们所创立。"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-16",
+      "key": "universe/named-stars/wezen.json :: fact",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "大犬座的一颗超巨星，光度极高，从银河系的遥远彼端也能明亮地闪耀。"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-17",
+      "key": "universe/named-stars/mirfak.json :: fact",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "英仙座的明亮心脏，引领着一群分散的年轻恒星。"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-18",
+      "key": "universe/named-stars/wezen.json :: bio",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation and parentheses.",
+      "fix": "弧矢一（大犬座δ）是一颗黄白色超巨星，距离我们约1,600光年。要在如此遥远的距离上显得如此明亮，它必定释放出相当于太阳数万倍的光芒——这是一颗正接近生命终点的恒星。"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-21",
+      "key": "universe/named-stars/sirius.json :: cultural",
+      "grade": "BROKEN",
+      "issue": "Dog Star and Dog Days left in English.",
+      "fix": "“犬星”数千年来一直指引着历法：它的偕日升曾预示着古埃及尼罗河的年度泛滥，并在希腊罗马传统中标志着夏季“犬日”的到来。"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-24",
+      "key": "universe/named-stars/wezen.json :: cultural",
+      "grade": "BROKEN",
+      "issue": "Constellation/figure Orion left in Latin; should be 猎户.",
+      "fix": "这个名字来自阿拉伯语中表示“重量”的词。它位于大犬座，这只伟大的猎犬跟随猎户穿越天空，紧随在明亮的天狼星之后。"
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-25",
+      "key": "universe/exoplanets/proxima-cen-b.json :: bio",
+      "grade": "MINOR",
+      "issue": "Half-width punctuation.",
+      "fix": "比邻星 b 围绕距离太阳最近的邻星运行，仅4.24光年之遥，每11天绕其冷红矮星一周，轨道位于可能存在液态水的区域内。其近距离使它成为Breakthrough Starshot项目的焦点目标，该项目设想克级光帆探测器可在人类一生的时间内抵达——尽管这颗恒星的剧烈耀斑对任何大气层或生命构成严重威胁。"
+    }
+  ]
+}

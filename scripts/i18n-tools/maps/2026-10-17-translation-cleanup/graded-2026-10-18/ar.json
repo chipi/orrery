@@ -1,0 +1,538 @@
+{
+  "locale": "ar",
+  "segments": {
+    "UI strings — long (help text, panels)": { "sampled": 25, "ok": 15, "minor": 9, "broken": 1 },
+    "UI strings — short (menus, labels, buttons)": {
+      "sampled": 25,
+      "ok": 22,
+      "minor": 2,
+      "broken": 1
+    },
+    "essays (long editorial)": { "sampled": 10, "ok": 9, "minor": 1, "broken": 0 },
+    "fleet (launcher/capsule/engine/site descriptions)": {
+      "sampled": 25,
+      "ok": 16,
+      "minor": 6,
+      "broken": 3
+    },
+    "mission descriptions": { "sampled": 25, "ok": 14, "minor": 6, "broken": 5 },
+    "mission event notes": { "sampled": 25, "ok": 20, "minor": 5, "broken": 0 },
+    "other short entries (earth-objects, satellites, iss, orbit-regimes, …)": {
+      "sampled": 25,
+      "ok": 19,
+      "minor": 4,
+      "broken": 2
+    },
+    "planets & sites (short facts)": { "sampled": 25, "ok": 14, "minor": 11, "broken": 0 },
+    "programs (long editorial)": { "sampled": 10, "ok": 10, "minor": 0, "broken": 0 },
+    "science articles (editorial)": { "sampled": 10, "ok": 9, "minor": 1, "broken": 0 },
+    "universe (short entries)": { "sampled": 25, "ok": 20, "minor": 5, "broken": 0 }
+  },
+  "findings": [
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-3",
+      "key": "messages :: plan_explainer_how_to_desc",
+      "grade": "MINOR",
+      "issue": "Person name Hohmann left in Latin; people's names should be in native Arabic form.",
+      "fix": "انقر على منطقة ذات لون بارد قرب الحد الأدنى الطبيعي لنقل هومان (~250 يوم وقت رحلة، كل ~26 شهراً) — تلك هي نافذة الإطلاق الأرخص. اللوحة اليمنى تُظهر التواريخ الدقيقة و∆v."
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-4",
+      "key": "messages :: lab_goal_fc_verdict",
+      "grade": "MINOR",
+      "issue": "\"تطيير\" is an unnatural word for 'fly this' in the opening question.",
+      "fix": "إذن: هل يمكنك تسيير هذه الرحلة بالوقود وحده؟ الوصول إلى المشتري في متناول الطاقة الكيميائية فعلاً — نحو 6 كم/ث من LEO، أقل من ~8.5 لمرحلة علوية قوية. لكن الجولة الكبرى تعني الإفلات من المجموعة الشمسية بسرعة فائضة، وهذا يتطلّب ~8.7 كم/ث من LEO — بعد ما توفّره أفضل مرحلة كيميائية بقليل. الكيمياء تُوصلك إلى المشتري وتقف؛ وسلسلة المساعدة الجاذبية تُوفّر الباقي، وعشرات الكم/ث من سرعة الجولة فوق ذلك. لهذا كانت Voyager قابلة للطيران، ولهذا كل مهمة فضاء عميق منذ ذلك الحين هي خطة لاستعارة السرعة من الكواكب."
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-5",
+      "key": "messages :: credits_intro_body_1",
+      "grade": "MINOR",
+      "issue": "Canadian Space Agency is translated into Arabic although agency names stay in English.",
+      "fix": "يوجد تطبيق Orrery لأن وكالات الفضاء العالمية والمشغّلين والمجتمع الويكيميدي يجعلون عملهم متاحاً بحرية. لقد قامت NASA و ESA و JAXA و ISRO و CNSA و Roscosmos و MBRSC و Canadian Space Agency و SpaceX و Blue Origin ومساهمو Wikimedia Commons ومحررو ويكيبيديا ببناء أرشيف عام جماعي لاستكشاف الكواكب لا نظير له في تاريخ البشرية. شكراً لكم."
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-6",
+      "key": "messages :: lab_goal_lar_challenge",
+      "grade": "MINOR",
+      "issue": "\"المكدس\" (computing 'stack') is the wrong term for a rocket stack.",
+      "fix": "حمّل الصاروخ أكثر — ارفع الكتلة المحمَّلة في معادلة الصاروخ حتى يتحول هذا الحكم إلى الأحمر. تلك الكتلة هي جدار الحمولة لهذا التشكيل."
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-7",
+      "key": "messages :: library_intro_body_2",
+      "grade": "MINOR",
+      "issue": "\"who gets the click\" rendered as \"من يستحق الاستحسان\" (who deserves approval), changing the meaning.",
+      "fix": "مثل قائمة المكونات الموجودة في /credits، تُخصَّص هذه الصفحة للحفاظ على الشفافية حول الجهة التي تنال النقرة. نُرسلك إلى بوابات المُشغِّلين عندما تكون موجودة، وإلى ويكيبيديا باللغة الأصلية عندما تكون المهمة قد نُفِّذت بواسطة وكالة ناطقة بغير اللغة الإنجليزية، وننتقل إلى ويكيبيديا باللغة الإنجليزية عندما لا يُغطِّي أي مصدر آخر الكيان."
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-15",
+      "key": "messages :: lab_f_moonalt_glossary",
+      "grade": "MINOR",
+      "issue": "\"عرض بلدك\" is an unnatural rendering of 'your latitude'; 'ترتقي/يركب' phrasing is loose.",
+      "fix": "إلى أي ارتفاع يبلغ القمر عند أوج عبوره: h_max = 90° − |φ − δ| — خط عرضك φ مقابل ميل القمر δ. القاعدة ذاتها التي تخضع لها الشمس؛ ولهذا يعلو البدر في الشتاء."
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-17",
+      "key": "messages :: lab_conn_lss_hook",
+      "grade": "BROKEN",
+      "issue": "\"مسبّة\"/\"المسبّتان\" is a wrong word (means an insult) used for probe; should be مسبار/مسباران.",
+      "fix": "التقط المسباران Voyager محاذاة نادرة تحدث مرة واحدة كل 176 سنة بين كوكب المشتري وزحل وأورانوس ونبتون — وهي ما تُعرف بـ«الجولة الكبرى» — مما سمح لمسبار واحد بالانطلاق من كوكب إلى آخر. وإذا فاتت هذه النافذة الزمنية، فلن تحدث محاذاة مماثلة مجدداً إلا في القرن الثاني والعشرين."
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-20",
+      "key": "messages :: lab_goal_g10_frozen",
+      "grade": "MINOR",
+      "issue": "Person name Kepler left in Latin script.",
+      "fix": "الانتفاخ نفسه يدوّر أيضًا حضيض المدار الإهليلجي — إلا إذا طرت عند الميل الحرج البالغ 63.4°، حيث يُلغى ذلك الانجراف وتبقى النقطتان المنخفضة والعالية ثابتتين. هذا هو سر مدار Molniya: قطع ناقص حاد ومطوّل يتلكأ أوجه لساعات فوق أقصى الشمال (قانون كبلر الثاني — يتباطأ عند القمة)، مغطّيًا خطوط العرض العالية حيث يقبع قمر ثابت أرضيًا بلا فائدة على الأفق. وهكذا وصل الاتحاد السوفيتي، ثم لاحقًا راديو Sirius، إلى القطب الشمالي."
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-21",
+      "key": "messages :: explore_layer_tip_planets",
+      "grade": "MINOR",
+      "issue": "'Toggle visibility' rendered as 'تسليط الضوء' (highlighting), wrong action.",
+      "fix": "تبديل إظهار مدارات الكواكب الرئيسية الثمانية"
+    },
+    {
+      "segment": "UI strings — long (help text, panels)",
+      "id": "UI-25",
+      "key": "messages :: lab_illustration_alt_plan_a_mission",
+      "grade": "MINOR",
+      "issue": "\"المسار الناقلي\" is a vague/incorrect term for 'transfer ellipse'.",
+      "fix": "قوس المهمة الكامل في إطار واحد — الإطلاق والمدار وقطع النقل الناقص والوصول كخط رحلة متصل واحد."
+    },
+
+    {
+      "segment": "UI strings — short (menus, labels, buttons)",
+      "id": "UI-3",
+      "key": "messages :: library_kind_educational",
+      "grade": "MINOR",
+      "issue": "\"التعليم\" is the noun 'education', not the adjective 'Educational'.",
+      "fix": "تعليمي"
+    },
+    {
+      "segment": "UI strings — short (menus, labels, buttons)",
+      "id": "UI-19",
+      "key": "messages :: galaxy_name_andromeda",
+      "grade": "MINOR",
+      "issue": "Galaxy name left in Latin; should use the native Arabic name.",
+      "fix": "مجرة المرأة المسلسلة (M31)"
+    },
+    {
+      "segment": "UI strings — short (menus, labels, buttons)",
+      "id": "UI-20",
+      "key": "messages :: science_tab_scales_time",
+      "grade": "BROKEN",
+      "issue": "'SCALES & TIME' translated as 'الوقت المحدد' (specified time), wrong meaning and drops 'scales'.",
+      "fix": "المقاييس والزمن"
+    },
+
+    {
+      "segment": "essays (long editorial)",
+      "id": "essays-7",
+      "key": "essays/the-body-in-the-dark.json :: body.14.md",
+      "grade": "MINOR",
+      "issue": "Person name Mark (Kelly) left in Latin script while other people are in Arabic.",
+      "fix": "كل ما نعرفه عن فيزيولوجيا رحلات الفضاء الطويلة قيس على أناس حقيقيين عاشوا في الفضاء مددًا حقيقية، ثم عادوا إلى الوطن وخضعوا للدراسة. والرقم القياسي لأطول رحلة متواصلة واحدة يحمله فاليري بولياكوف، الطبيب ورائد الفضاء الروسي الذي صعد إلى [Mir](/programs/mir) في يناير 1994 وعاد إلى الأرض في مارس 1995، بعد أن أمضى 437 يومًا متتاليًا في المدار، وهو رقم لم يُكسر حتى الآن، بعد ثلاثة عقود. وكان هدف بولياكوف طبيًا صراحةً: أن يحدد ما إذا كان بوسع إنسان أن ينجو، وظيفيًا، طوال مدة رحلة إلى المريخ. وعندما هبط، أصرّ على أن يغادر كبسولة Soyuz ماشيًا على قدميه بقوته الذاتية. واستغرق تعافي عظامه وعضلاته أشهرًا. لكنه مشى. وقد بنى برنامجا [Salyut](/programs/salyut) و[Mir](/programs/mir) رصيدًا من البيانات الفيزيولوجية السوفييتية ثم الروسية لا يزال لا يعوَّض، ثم وسّعته [محطة الفضاء الدولية](/programs/iss) وجعلته عالميًا. فقد أتاحت أيام بيجي ويتسون التراكمية البالغة 665 يومًا عبر ثلاث بعثات للباحثين مجموعة بيانات طولانية عن فرد واحد يستحيل تكرارها بوسيلة أخرى. أما «دراسة التوأم» التي أجرتها NASA، وقارنت بعثة سكوت كيلي التي استمرت 340 يومًا بتوأمه المتطابق مارك الذي بقي على الأرض، فقد رصدت تغيرات قابلة للقياس في التعبير الجيني، وديناميات التيلوميرات، وتركيب الميكروبيوم المعوي، والأداء الإدراكي، وقد انعكس معظمها عند العودة، لكن ليس كلها. وبرنامج [Tiangong](/programs/tiangong) الصيني يضيف الآن إلى السجل: طواقم تتناوب كل 90 و180 يومًا منذ عام 2021، أي فئة من رواد الفضاء الصينيين (التايكونوت) كانت غائبة عن البيانات من قبل. وأي سرد أمين لما تعرفه البشرية عن جسد الإنسان في الفضاء خلال المدد الطويلة لا بد أن يشمل ما تعلمته روسيا على Mir، وما قاسته شراكة محطة الفضاء الدولية التي تضم 15 دولة منذ عام 2000، وما تجمعه الصين الآن."
+    },
+
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-5",
+      "key": "fleet/launcher/proton-k.json :: description",
+      "grade": "BROKEN",
+      "issue": "'hypergolic' rendered as 'الهيدروكسيل', 'anchored' as 'ألحقت بها', and 'crewed lunar' as 'المأهولة بالسكان'; several wrong meanings.",
+      "fix": "مركبة إطلاق ثقيلة من ثلاث مراحل تعمل بوقود ذاتي الاشتعال (N2O4 / UDMH) مع مراحل عليا عالية الطاقة اختيارية من نوع Blok-D أو D-1 أو D-2. أُجريت 311 عملية إطلاق بين 1967-03-10 و2012-03-30 — أطلقت كل وحدات Salyut وMir والقطاع الروسي من محطة الفضاء الدولية، وكل مسابير Venera وVega المتجهة إلى الزهرة، وكل مهام Luna لإعادة العينات، ومهام Mars-2 وMars-3 وMars-5 وMars-7 السوفييتية. طُوّرت المرحلة العليا Blok-D في الأصل لمعمارية الهبوط القمري المأهول N1-L3 الملغاة؛ وأتاحت إعادة استخدامها على Proton-K بقاء خط استكشاف الكواكب السوفييتي عالي الطاقة قائماً حتى الثمانينيات. حلّت محلها Proton-M التي لا تزال تحلق."
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-8",
+      "key": "fleet/crewed-spacecraft/new-shepard.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "'crewed' is missing and 'suborbital' is rendered 'الفرعية'.",
+      "fix": "أول مركبة تجارية مأهولة دون مدارية"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-10",
+      "key": "fleet/observatory/hitomi.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "'Spun apart' (broke up while spinning) rendered as merely 'separated'.",
+      "fix": "تفككت في المدار بفعل دوران خارج السيطرة؛ وأدى فقدانها إلى تطوير XRISM"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-16",
+      "key": "fleet/rover/exomars-rosalind-franklin.json :: description",
+      "grade": "MINOR",
+      "issue": "'Oxia Planum' rendered as 'هضبة' (plateau) instead of plain, and 'gas chromatograph' as the vague 'فاصل غاز'.",
+      "fix": "أول مركبة جوالة تابعة لـ ESA إلى المريخ، وتحمل اسم رائدة أبحاث الحمض النووي Rosalind Franklin. صُممت للهبوط في سهل أوكسيا (منطقة مريخية قديمة غنية بالطين اختيرت لقدرتها العالية على حفظ الدلائل البيولوجية) واستخدام حفّار تحت سطحي بطول 2 متر — أعمق من أي بعثة سابقة إلى المريخ — للحصول على عينات من أعماق محمية من الإشعاع الكوني والأشعة فوق البنفسجية التي تدمر المواد العضوية السطحية. يضم درج المختبر التحليلي ثلاث أدوات للكشف عن الحياة: MOMA (محلل جزيئات المريخ العضوية، وهو كروماتوغراف غازي + مطياف كتلة ثنائي المصدر)، وMicrOmega (التصوير الطيفي بالأشعة تحت الحمراء)، وRaman Laser Spectrometer. كان مقرراً في الأصل إطلاقها عام 2022 على صاروخ Proton روسي مع منصة هبوط روسية الصنع (Kazachok)؛ وبعد غزو روسيا لأوكرانيا عام 2022 علّقت ESA التعاون، وتأجل إطلاق Rosalind Franklin. يُتوقع حالياً إطلاقها عام 2028 على متن مركبة إطلاق توفرها NASA مع منصة هبوط أعادت ESA وAirbus بناءها."
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-17",
+      "key": "fleet/orbiter/lunar-orbiter-1.json :: tagline",
+      "grade": "MINOR",
+      "issue": "'orbiter' rendered 'مدار' (orbit); should be a orbiting spacecraft.",
+      "fix": "أول مركبة أمريكية تدور حول القمر (1966-08-14)؛ رسمت خريطة مواقع هبوط Apollo والتقطت أول صورة للأرض من مدار القمر (1966)."
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-18",
+      "key": "fleet/orbiter/voyager-2.json :: tagline",
+      "grade": "MINOR",
+      "issue": "Ungrammatical, machine-like phrasing (\"فقط مركبة فضائية لزيارة الكواكب العملاق الأربعة\").",
+      "fix": "المركبة الفضائية الوحيدة التي زارت الكواكب العملاقة الأربعة"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-19",
+      "key": "fleet/orbiter/osiris-rex.json :: tagline",
+      "grade": "BROKEN",
+      "issue": "The 'sample-returned' content is missing; the line reads 'Bennu (2023); now en route to Apophis' with no verb.",
+      "fix": "أعادت عينة من بينو (2023)؛ وهي الآن في طريقها إلى أبوفيس"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-20",
+      "key": "fleet/orbiter/lunar-prospector.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "'orbiter' rendered 'مدار'; 'neutron spectrometer' mangled; Shackleton left in Latin.",
+      "fix": "مركبة NASA Discovery المدارية القطبية — رصد مطياف النيوترونات الهيدروجين عند القطبين عام 1998؛ وأنهى اصطدامها المتعمد قرب فوهة شاكلتون المهمة عام 1999"
+    },
+    {
+      "segment": "fleet (launcher/capsule/engine/site descriptions)",
+      "id": "fleet-25",
+      "key": "fleet/crewed-spacecraft/challenger.json :: dispatch",
+      "grade": "BROKEN",
+      "issue": "Garbled: 'fleet's early workhorse' becomes 'حصان الفريق العاملي', 'flew the first spacewalk' becomes 'قاد', 'فشم' replaces 'gave way', broken grammar.",
+      "fix": "كانت Challenger (OV-099) حصان العمل الأول في الأسطول وموقع أولى كوارثه. نفّذت أول سير في الفضاء في تاريخ البرنامج وحملت أول امرأة أمريكية، سالي رايد، إلى المدار. وفي 28 يناير 1986، وقد أُطلقت في طقس بارد على غير المعتاد، انهار ختم مطاطي في أحد معزّزاتها الصلبة — بعدما تيبّس من البرد، وهو نمط فشل كان المهندسون قد حذّروا منه — فتفككت المركبة بعد 73 ثانية من الإقلاع. وقضى جميع من كانوا على متنها السبعة. أوقفت الكارثة الأسطول نحو ثلاث سنوات وكشفت عن ثقافة إدارية مضت قدماً متجاوزةً خطراً معروفاً سبق التنبيه إليه."
+    },
+
+    {
+      "segment": "mission descriptions",
+      "id": "mission-4",
+      "key": "missions/jupiter/galileo.json :: dispatch",
+      "grade": "MINOR",
+      "issue": "Typos/agreement errors: 'ظلت هوائيه' and the garbled verb 'لتف'.",
+      "fix": "كان يُفترض أن يصاب Galileo بالشلل قبل وصوله أصلاً. ظل هوائيه الرئيسي نصف مفتوح في الطريق إلى المشتري، مما قلل معدل نقل البيانات إلى خيط رفيع — لكن المهمة نجحت على أي حال، لأن المهندسين أعادوا كتابة برنامجه من الأرض لتمرير العلم عبر هوائي احتياطي صغير. أصبح أول مركبة فضائية تدور حول المشتري، وأسقط مسباراً في سحب الكوكب العملاق، وقضى ثماني سنوات في جولة بين الأقمار. وظهر أعظم اكتشافاته ببطء من هذا الإصرار: الطريقة التي التف بها المجال المغناطيسي للمشتري حول أوروبا لا يمكن تفسيرها إلا بوجود محيط مالح تحت الجليد — أقوى دليل حتى الآن على أن قمراً من أقمار المشتري قد يحتوي على ماء سائل، وحياة. وفي النهاية وُجّه إلى المشتري عن قصد، حتى لا يسقط أبداً على أوروبا ويلوّثها."
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-6",
+      "key": "missions/moon/lunar-prospector.json :: first",
+      "grade": "MINOR",
+      "issue": "'طيف النيوترون' is not the instrument (neutron spectrometer = مطياف النيوترونات).",
+      "fix": "اكتشاف الهيدروجين بمطياف النيوترونات عند القطبين القمريين"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-10",
+      "key": "missions/venus/magellan.json :: description",
+      "grade": "BROKEN",
+      "issue": "'coronae' rendered 'هياليس' and 'pancake domes' as the transliteration 'بنكيك'; wrong terms (also 'رسم الخريطة' wording).",
+      "fix": "حوّلت Magellan الزهرة من قرص محجوب بالغيوم بلا معالم إلى كوكب مرسوم الخرائط. أُطلقت من حجرة حمولة المكوك Atlantis في 1989-05-04 — أول مركبة كوكبية تُطلق على متن مكوك فضاء — ووصلت إلى الزهرة في 1990-08-10 عبر مسار طويل من النوع الرابع (1.5 دورة حول الشمس). وعلى مدى أربع دورات رسم، صوّر الرادار ذو الفتحة الاصطناعية 98% من سطح الزهرة بدقة ~120 متراً، كاشفاً عن مرتفعات التسيرا (tesserae) والتيجان البركانية (coronae) والقباب المفلطحة، وعن سطح فتيّ أعادت البراكين تشكيله. انتهت المهمة في 1994-10-13 بتجربة الإنهاء (Termination Experiment) — أول دخول جوي مخطط ومتحكَّم فيه لمركبة كوكبية."
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-14",
+      "key": "missions/mars/mmx.json :: description",
+      "grade": "MINOR",
+      "issue": "'impact' rendered 'تأثير' (influence); missing 'لـ' before JAXA.",
+      "fix": "Martian Moons eXploration هي خطة JAXA للهبوط على فوبوس، وجمع حوالي 10 غرامات من التربة السطحية، وإعادتها إلى الأرض. قد تحسم العيّنات نقاشاً طويل الأمد: هل فوبوس وديموس كويكبان أسيران، أم أنهما شظايا من اصطدام قديم على المريخ ذاته؟ تتضمن المهمة أيضاً مركبة جوالة ألمانية-فرنسية للتنقل على سطح فوبوس — وهو نموذج عمليات مختلف تماماً عما فعلته بعثات Hayabusa على إيتوكاوا أو ريوغو. كان من المخطط إطلاق المهمة في 2024 لكنها تأجلت إلى 2026 بسبب تأخيرات في مركبة الإطلاق H3 التابعة لـ JAXA."
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-16",
+      "key": "missions/earth/polaris-dawn.json :: description",
+      "grade": "BROKEN",
+      "issue": "States splashdown in the Pacific Ocean near Florida; source says 'off Florida' (Atlantic side) — added wrong fact.",
+      "fix": "جارد آيزاكمان (القائد)، وسكوت 'كيد' بوتيت (الطيار)، وسارة جيليس وآنا منون (مهندسان / متخصصان في المهام من SpaceX). انطلقت في 2024-09-10 09:23 بتوقيت UTC من LC-39A على Falcon 9 B1083، فوق Crew Dragon Resilience (C207، الرحلة الثالثة). في اليوم الأول، رفعت الأوج إلى 1408 كم — أعلى مدار حول الأرض حلّق به البشر على الإطلاق باستثناء بعثات Apollo القمرية؛ ثم خُفّض الأوج إلى 730 كم دائري لنشاط السير في الفضاء. شهد اليوم الثالث أول عملية سير في الفضاء تجارية: خرج آيزاكمان وجيليس عبر الفتحة المفتوحة في بدلات سير فضاء جديدة من SpaceX (بدون حجرة معادلة ضغط — تعريض الكابينة بالكامل للفراغ لجميع أفراد الطاقم الأربعة)، وقضى كلٌّ منهما حوالي 8 دقائق في الفراغ لاختبار القدرة على الحركة. اختُبرت روابط Starlink الليزرية بين الأقمار الصناعية من المدار. هبطت في البحر قبالة سواحل فلوريدا في 2024-09-15 07:36 بتوقيت UTC."
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-18",
+      "key": "missions/moon/apollo15.json :: events.6.label",
+      "grade": "BROKEN",
+      "issue": "'DROP' rendered 'نقرة' (a dent/tap), wrong word.",
+      "fix": "إسقاط المطرقة والريشة"
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-20",
+      "key": "missions/moon/lunar-prospector.json :: description",
+      "grade": "BROKEN",
+      "issue": "'magnetometer' rendered 'مغناطيس كهربائي' (electromagnet); 'Doppler gravity experiment' garbled; mixed Levantine month names; other awkward phrasing.",
+      "fix": "ثالث مهمة من فئة Discovery التابعة لـ NASA وأول مركبة مدارية قمرية مخصصة تديرها NASA في حقبة ما بعد Apollo. أُطلقت في 7 يناير 1998 على صاروخ Athena II من رأس كانافيرال، ودخلت Lunar Prospector مداراً قطبياً دائرياً حول القمر على ارتفاع 100 كم في 11 يناير 1998. حملت المركبة الدوّارة التي تبلغ كتلتها 296 كغ خمسة أجهزة: مطياف أشعة غاما لقياس التركيب العالمي للقشرة، ومطياف نيوترونات للكشف عن الهيدروجين / الجليد المائي عند القطبين، ومطياف جسيمات ألفا للكشف عن غاز الرادون (دليل غير مباشر على النشاط البركاني)، ومقياس مغناطيسية + مقياس انعكاس الإلكترونات لدراسة مغناطيسية القشرة، وتجربة جاذبية بقياس دوبلر. وتوصل تحليل فريق Boynton لبيانات النيوترونات (Feldman وآخرون، Science 281 + 284) إلى نقص حاد في تدفق النيوترونات فوق القطبين القمريين كليهما — بما يتسق مع نحو 2 × 10⁹ طن من مادة غنية بالهيدروجين (على الأرجح جليد مائي) في الفوهات القطبية الدائمة الظل. انتهت المهمة في 31 يوليو 1999 بارتطام متعمد قرب فوهة شاكلتون أملاً في إطلاق عمود بخار ماء يمكن رصده؛ ولم يُرَ شيء. وبقي اكتشاف الهيدروجين قائماً إلى أن قدمت LCROSS وChandrayaan-1 / M3 (2009) تأكيداً مستقلاً."
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-21",
+      "key": "missions/mars/mangalyaan.json :: description",
+      "grade": "MINOR",
+      "issue": "'trans-Mars injection' rendered 'حقن الرحلة عبر المريخ' (through Mars), wrong.",
+      "fix": "بلغت تكلفة مهمة مدار المريخ التابعة لـ ISRO 74 مليون دولار — أقل من ميزانية فيلم Gravity (100 مليون دولار)، وجزء صغير من تكلفة MAVEN التابع لـ NASA (671 مليون دولار) الذي وصل قبل يومين. بُنيت Mangalyaan في 18 شهراً كمشروع لإثبات التقنية، وحققت جميع أهدافها: الحقن نحو المريخ، والملاحة في الفضاء العميق، والدخول في مدار المريخ، و8 سنوات من العائد العلمي. وأصبحت الهند الوكالة الفضائية الرابعة التي تبلغ المريخ والأولى التي تنجح في محاولتها الأولى."
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-22",
+      "key": "missions/moon/apollo13.json :: dispatch",
+      "grade": "MINOR",
+      "issue": "'not heroics' rendered 'لم يكن الأبطال' (not the heroes); minor awkward phrasing.",
+      "fix": "لم تهبط Apollo 13 على الإطلاق، وهي المهمة التي يتذكرها الجميع. بعد يومين من الإطلاق، انفجر خزان أكسجين وحوّل رحلة روتينية إلى هضاب فرا ماورو إلى مشكلة استمرت أربعة أيام لإبقاء ثلاثة رجال أحياء في مركبة فضائية محتضرة على بُعد ربع مليون ميل من الوطن. ما أنقذهم لم يكن البطولات؛ بل كان الإعداد المسبق وقاعة مليئة بأناس يعالجون المشكلة في الوقت الفعلي، ويرتجلون طريقة للتنفس وطريقة للعودة من كل ما كان مثبتاً أصلاً على المركبة. سمّتها NASA فشلاً ناجحاً. والأقرب إلى الحقيقة القول إنها الرحلة التي أثبتت أن الوكالة بالجودة التي ادّعتها."
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-24",
+      "key": "missions/mars/mars-pathfinder.json :: dispatch",
+      "grade": "BROKEN",
+      "issue": "'retrorocket' rendered 'الصواريخ الاحتراقية', 'inflated airbags' as 'أطلقت', and the final sentence is ungrammatical.",
+      "fix": "كانت Mars Pathfinder إثباتاً من NASA بأن الهبوط على المريخ لا يتطلب إنفاق ثروة. فبدلاً من التحويم بالصواريخ الكابحة كما فعلت مركبتا Viking، اخترقت الغلاف الجوي خلف درع حراري، ثم فتحت مظلة، ونفخت شرنقة من الوسائد الهوائية، وارتدت عشرات المرات على السطح قبل أن تتوقف وتنفتح كزهرة. ومنها خرجت Sojourner — مركبة جوالة بحجم فرن ميكروويف، وأول عجلات تدور على كوكب آخر. كانت النتائج العلمية متواضعة؛ لكن المهم كان الطريقة. فقد أصبح الهبوط بالوسائد الهوائية ونهج «الأسرع والأرخص والأفضل» الذي أثبتته النموذج الذي احتذته المركبات الجوالة الأكثر طموحاً بكثير — Spirit وOpportunity وCuriosity — التي جاءت بعدها."
+    },
+    {
+      "segment": "mission descriptions",
+      "id": "mission-25",
+      "key": "missions/moon/apollo15.json :: first",
+      "grade": "MINOR",
+      "issue": "'Lunar Roving Vehicle' rendered as the vague 'مركبة قمرية'; quotes inconsistent.",
+      "fix": "أول بعثة من نوع J — إقامة ممتدة، وأول مركبة قمرية جوالة، و«Genesis Rock»"
+    },
+
+    {
+      "segment": "mission event notes",
+      "id": "mission-9",
+      "key": "missions/moon/luna10.json :: events.0.note",
+      "grade": "MINOR",
+      "issue": "UTC transliterated as 'يوتك' instead of the standard UTC used elsewhere.",
+      "fix": "Molniya-M من بايكونور 1966-03-31 10:46 بتوقيت UTC."
+    },
+    {
+      "segment": "mission event notes",
+      "id": "mission-10",
+      "key": "missions/earth/sputnik1.json :: events.1.note",
+      "grade": "MINOR",
+      "issue": "'Stage-2' left as untranslated English prose.",
+      "fix": "قطع المحرك في المرحلة الثانية + فصل الحمولة؛ مدار بارتفاعات 215 × 939 كم، ميل 65.1°، دورة 96.2 دقيقة."
+    },
+    {
+      "segment": "mission event notes",
+      "id": "mission-16",
+      "key": "missions/moon/apollo12.json :: events.7.note",
+      "grade": "MINOR",
+      "issue": "'Trans-Earth injection' rendered 'حقن عبر الأرض' (through Earth), wrong.",
+      "fix": "الحقن نحو الأرض. SPS ∆v ≈1.0 km/s."
+    },
+    {
+      "segment": "mission event notes",
+      "id": "mission-17",
+      "key": "missions/moon/luna21.json :: events.3.note",
+      "grade": "MINOR",
+      "issue": "Crater name left in Latin; surface features take native Arabic form.",
+      "fix": "هبوط ناعم في فوهة لو مونييه 1973-01-15. انحدرت Lunokhod 2 على منحدرات النزول بعد بضع ساعات."
+    },
+    {
+      "segment": "mission event notes",
+      "id": "mission-18",
+      "key": "missions/moon/luna24.json :: events.3.note",
+      "grade": "MINOR",
+      "issue": "'Core sample' rendered 'عينة أساسية' (basic sample); should be a core sample.",
+      "fix": "استخراج عينة لبية من عمق 2 متر."
+    },
+
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-1",
+      "key": "original-work.json :: models3d./images/colophon/model-launcher-atlas-lv-3b_webp.what",
+      "grade": "BROKEN",
+      "issue": "'stage-and-a-half' garbled as 'ركيزة ... سعة نصفين'; unintelligible.",
+      "fix": "صاروخ Mercury-Atlas بمرحلة ونصف، مع تنورة لمحركات التعزيز وبرج للهروب."
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-4",
+      "key": "videos.json :: vid-0814b1c3f15a.caption",
+      "grade": "MINOR",
+      "issue": "Final full stop dropped, inconsistent with the source and neighbouring captions.",
+      "fix": "نظرة عامة من CGTN لأول هبوط قمري ناعم للصين — 14 ديسمبر 2013."
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-13",
+      "key": "orbit-regimes-explore/HELIOPAUSE.json :: story",
+      "grade": "MINOR",
+      "issue": "'artefacts' rendered 'القطع الأثرية' (archaeological relics), wrong connotation.",
+      "fix": "الحدود التي تخسر عندها الرياح الشمسية معركتها ضد الوسط بين النجمي — على بُعد حوالي 120 AU. في الداخل يقع الغلاف الشمسي، فقاعة من الجسيمات الشمسية المشحونة تتدفق إلى الخارج بمئات km/s. وفي الخارج: الغاز البارد الكثيف والأشعة الكونية للمجرة ذاتها. ومسبارا Voyager هما الصنعتان الوحيدتان اللتان وضعتهما البشرية عبر هذا الحد — عبر Voyager 1 في 2012، وVoyager 2 في 2018. وكلاهما لا يزال ينقل بيانات، بشكل خافت، من الفضاء بين النجمي."
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-15",
+      "key": "tiangong-modules/wentian.json :: description",
+      "grade": "BROKEN",
+      "issue": "'berthed July 2022' is omitted from the translation.",
+      "fix": "أول مختبر، رسا بالمحطة في يوليو 2022 — جناحان شمسيان كبيران، ومخرج حمولة خارجي، وذراع روبوتية تجريبية صغيرة مثبتة على هيكله."
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-16",
+      "key": "orbit-regimes-mars/HMO.json :: residents.0.label",
+      "grade": "MINOR",
+      "issue": "Eastern Arabic digits used here while the rest of the site uses Western digits.",
+      "fix": "Mariner 9 (1971–1972 — أول مسبار مداري للمريخ)"
+    },
+    {
+      "segment": "other short entries (earth-objects, satellites, iss, orbit-regimes, …)",
+      "id": "other-22",
+      "key": "orbit-regimes/LEO.json :: firsts.1.label",
+      "grade": "MINOR",
+      "issue": "'USSR' left as a Latin abbreviation inside Arabic text.",
+      "fix": "Vostok 1 — يوري جاجارين، أول رحلة مدارية مأهولة (الاتحاد السوفيتي)"
+    },
+
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-2",
+      "key": "planets/neptune.json :: science_sections.1.why",
+      "grade": "MINOR",
+      "issue": "Grammar: 'وليس تشكل مع نبتون' is ungrammatical.",
+      "fix": "ترايتون هو القمر الكبير الوحيد في النظام الشمسي ذو مدار رجعي — دليل قوي على أنه التُقط من حزام كايبر ولم يتشكل مع نبتون."
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-3",
+      "key": "planets/neptune.json :: science_sections.2.why",
+      "grade": "MINOR",
+      "issue": "'eccentricity' rendered 'الانحراف' instead of the standard 'الاختلاف المركزي'.",
+      "fix": "الاختلاف المركزي اللطيف لنبتون البالغ 0.0086 يعطي مداراً دائرياً جداً بحيث يكون تأرجح الحضيض-الأوج أقل من 200 مليون km على محور شبه رئيسي قدره 30 AU — تغير بنسبة 1.4%."
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-4",
+      "key": "moon-sites/apollo12.json :: fact",
+      "grade": "MINOR",
+      "issue": "'micrometeorites' rendered 'الشهب الصغيرة' (meteors); 'مركبة كونراد' is loose.",
+      "fix": "الهبوط الدقيق — حطّ كونراد على بعد ~163 م من المسبار غير المأهول Surveyor 3 (1967). واسترجعوا أجزاءً منه لإعادتها إلى الأرض، مما أثبت أن المركبات الفضائية تبقى سليمة لسنوات على القمر دون أن تتضرر بالإشعاع أو بالنيازك الدقيقة. إثبات مفهوم لمهمات الالتقاء المستقبلية."
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-6",
+      "key": "moon-sites/lunar-prospector.json :: fact",
+      "grade": "MINOR",
+      "issue": "Awkward machine-like phrasing ('تم تصادمه', 'مواد الانفجار'); Shoemaker left in Latin.",
+      "fix": "رصد مباشر للهيدروجين بمطياف النيوترونات عند القطبين القمريين — دليل قوي على وجود جليد مائي في أرضيات الفوهات الدائمة الظل. اصطدمت المركبة عمداً بفوهة شوميكر في نهاية المهمة، على أمل أن تؤكد المقذوفات وجود الماء؛ ولم يرصد المراقبون من الأرض شيئاً حاسماً (ولم تتحقق المتابعة إلا بواسطة LCROSS في 2009)."
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-9",
+      "key": "mars-sites/tgo.json :: capability",
+      "grade": "MINOR",
+      "issue": "Garbled: 'highest-sensitivity ... mapping' becomes 'أعلى خريطة حساسية'.",
+      "fix": "رسم خرائط الغازات الأثرية في الغلاف الجوي بأعلى حساسية في أي كوكب."
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-10",
+      "key": "mars-sites/beagle2.json :: fact",
+      "grade": "MINOR",
+      "issue": "'هبوط استروبيولوجيا' is a garbled rendering of 'astrobiology lander'.",
+      "fix": "مركبة هبوط للأحياء الفلكية بقيادة المملكة المتحدة على متن مسبار ESA Mars Express. هبطت في يوم عيد الميلاد 2003 لكنها لم تُجرِ أي اتصال. حُدد موقعها عام 2015 بواسطة كاميرا HiRISE التابعة لـ NASA على المسبار MRO — فقد وصلت إلى السطح سليمة، لكن واحداً على الأقل من ألواحها الشمسية الأربعة لم ينتشر، فحجب هوائي الراديو الخاص بها. لغز دام 12 عاماً حُلّ بفضل الصور المدارية."
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-15",
+      "key": "mars-sites/spirit.json :: fact",
+      "grade": "MINOR",
+      "issue": "Gusev crater left in Latin (rendered غوسيف elsewhere); awkward 'كانت تحتوي على تفاعل'.",
+      "fix": "جوّال استكشاف المريخ أ. صُمّم لمهمة أساسية مدتها 90 يوماً مريخياً؛ واستمرّ 2,208 يوماً مريخياً. اكتشف أدلة على أن فوهة غوسيف شهدت ذات يوم تفاعلاً بين النشاط البركاني والماء. عَلِق في تربة طرية عند «Troy» في عام 2009؛ وواصل الفريق تشغيل Spirit كمنصة ثابتة حتى آخر اتصال في مارس 2010."
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-19",
+      "key": "planets/venus.json :: fact",
+      "grade": "MINOR",
+      "issue": "Unnatural '90 مرة من ضغط الأرض'; should be '90 ضعف'.",
+      "fix": "ضغط السطح يبلغ 90 ضعف ضغط الأرض. صمدت مسابير Venera السوفييتية من 23 إلى 127 دقيقة قبل أن تغلبها الحرارة والضغط."
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-20",
+      "key": "planets/leucus.json :: bio",
+      "grade": "MINOR",
+      "issue": "Odysseus and Troy left in Latin and 'Trojan family' unrendered; 'مقابلة' for encounter.",
+      "fix": "اكتُشف عام 1997، وسُمي على اسم ليوكوس (رفيق أوديسيوس الذي قُتل في طروادة). تصنيف طيفي من النوع D — الأغمق والأحمر بين عائلة الكويكبات الطروادية. سيتيح لقاء Lucy في 2028-04-18 رسم صورة شاملة للشكل والتركيب السطحي وتطور حالة الدوران الكامنة وراء بطء الدوران."
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-21",
+      "key": "small-bodies/bennu.json :: science_sections.1.why",
+      "grade": "MINOR",
+      "issue": "Typo 'بيننو', 'eccentricity' as 'الانحراف المداري', Latin '2100s' left.",
+      "fix": "الاختلاف المركزي لبينو البالغ 0.204 يمنحه مسار اصطدام منخفض الاحتمال مع الأرض في القرن الثاني والعشرين — وهو أحد أسباب اختياره هدفاً لـ OSIRIS-REx (استطلاع الدفاع الكوكبي)."
+    },
+    {
+      "segment": "planets & sites (short facts)",
+      "id": "planets-22",
+      "key": "mars-sites/insight.json :: capability",
+      "grade": "MINOR",
+      "issue": "'القشرة الأرضية' (Earth's crust) used for Mars's crust.",
+      "fix": "أول استكشاف زلزالي لداخل كوكب آخر — حدد حجم نواة المريخ وسمك قشرته."
+    },
+
+    {
+      "segment": "science articles (editorial)",
+      "id": "science-4",
+      "key": "science/cosmology/large-scale-structure.json :: body_paragraphs.0",
+      "grade": "MINOR",
+      "issue": "Gender agreement errors: 'المجموعة المحلية الذي ننتمي إليه', 'ويقع المجموعة المحلية'.",
+      "fix": "يتداخل هذا التسلسل الهرمي طبقةً في طبقة. تتجمّع النجوم في مجرات؛ وتتساقط المجرات معًا في مجموعات (مثل المجموعة المحلية التي ننتمي إليها) وعناقيد غنية (مثل عنقود العذراء المجري، الذي يضم أكثر من ألف مجرة مرتبطة في بئر جاذبية واحدة). ثم تنجذب المجموعات والعناقيد نفسها إلى عناقيد فائقة، وهي تجمّعات فضفاضة مترامية يبلغ عرضها عشرات الميغابارسك. وتقع المجموعة المحلية على أطراف عنقود العذراء الفائق، الذي يبلغ عرضه نحو 33 ميغابارسك (قرابة 110 ملايين سنة ضوئية) ويتمركز حول عنقود العذراء المجري."
+    },
+
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-5",
+      "key": "universe/exoplanets/barnard-e.json :: fact",
+      "grade": "MINOR",
+      "issue": "Star name Barnard left in Latin script.",
+      "fix": "الأخف وزناً من بين العوالم الصغيرة لنجم بارنارد — قرب حافة قابلية الرصد."
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-8",
+      "key": "universe/named-stars/miaplacidus.json :: fact",
+      "grade": "MINOR",
+      "issue": "'Keel' (of Carina) rendered 'القاعدة' (base), wrong term.",
+      "fix": "النجم الثاني في عارضة السفينة — نجم أبيض ذو اسم ممزوج بشكل غريب."
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-14",
+      "key": "universe/named-stars/luytens-star.json :: bio",
+      "grade": "MINOR",
+      "issue": "Star name Luyten left in Latin; 'super-Earth' rendered 'أرض عملاقة' (giant Earth).",
+      "fix": "نجم لويتن هو قزم أحمر يبعد حوالي 12.4 سنة ضوئية في الكلب الأصغر، وليس بعيداً في سمائنا عن الشعرى الشامية الساطعة. يستضيف نظاماً كوكبياً يشمل أرضاً فائقة في منطقته الصالحة للحياة — عالَم قريب جداً لدرجة أنه اختير هدفاً لرسائل راديوية بين نجمية أُرسلت من الأرض."
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-17",
+      "key": "universe/named-stars/alnilam.json :: fact",
+      "grade": "MINOR",
+      "issue": "Constellation name Orion left in Latin.",
+      "fix": "اللؤلؤة المركزية في حزام الجبار — عملاق أزرق متوهج يُرى عبر مسافة شاسعة."
+    },
+    {
+      "segment": "universe (short entries)",
+      "id": "universe-20",
+      "key": "universe/named-stars/mintaka.json :: cultural",
+      "grade": "MINOR",
+      "issue": "Constellation name Orion left in Latin.",
+      "fix": "الاسم عربي ويعني «المنطقة» (الحزام). وبصفته أحد نجوم الحزام الثلاثة، فإنه يشارك في الشهرة شبه العالمية لكوكبة الجبار، وموقعه على خط الاستواء جعله علامة طبيعية للشرق والغرب."
+    }
+  ]
+}

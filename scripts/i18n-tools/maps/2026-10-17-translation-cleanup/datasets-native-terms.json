@@ -31,8 +31,14 @@
       "sr-Cyrl": "Едгар Мичел",
       "_qid": "Q295873"
     },
-    "Stuart Roosa": { "ja": "スチュアート・ルーサ", "ko": "스튜어트 루사" },
-    "Roosa": { "ja": "ルーサ", "ko": "루사" },
+    "Stuart Roosa": {
+      "ja": "スチュアート・ルーサ",
+      "ko": "스튜어트 루사"
+    },
+    "Roosa": {
+      "ja": "ルーサ",
+      "ko": "루사"
+    },
     "Jim Irwin": {
       "ru": "Джеймс Ирвин",
       "ja": "ジェームズ・アーウィン",
@@ -63,8 +69,12 @@
       "sr-Cyrl": "Рон Еванс",
       "_qid": "Q1696151"
     },
-    "Harrison Schmitt": { "sr-Cyrl": "Харисон Шмит" },
-    "Schmitt": { "sr-Cyrl": "Шмит" },
+    "Harrison Schmitt": {
+      "sr-Cyrl": "Харисон Шмит"
+    },
+    "Schmitt": {
+      "sr-Cyrl": "Шмит"
+    },
     "Adam Steltzner": {
       "ru": "Адам Стелцнер",
       "ja": "アダム・ステルツナー",
@@ -114,6 +124,9 @@
       "ar": "فانجيليس",
       "sr-Cyrl": "Вангелис",
       "_qid": "Q153172"
+    },
+    "Christa McAuliffe": {
+      "sr-Cyrl": "Криста Маколиф"
     }
   },
   "feature": {

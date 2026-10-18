@@ -1,0 +1,974 @@
+[
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "name",
+    "old": "ATV (veículo de transferência automatizado)",
+    "new": "ATV (Automated Transfer Vehicle)"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "tagline",
+    "old": "Transportador de carga da ESA para a EEI; 5 missões",
+    "new": "Transportador de carga principal da ESA para a EEI; 5 missões"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "dispatch",
+    "old": "O Automated Transfer Vehicle foi o transportador de carga europeu da EEI e a nave de suprimentos mais sofisticada de sua época — uma espaçonave de vinte toneladas que se navegava para um acoplamento totalmente automático com a Estação, entregava carga, água, ar e propelente, e usava seus próprios motores para elevar a órbita de toda a EEI. Cinco decolaram entre 2008 e 2015, cada um nomeado em homenagem a um pensador europeu, de Jules Verne a Georges Lemaître. Mais que um caminhão de suprimentos, o ATV foi como a Europa conquistou seu lugar como parceira plena da EEI — e a tecnologia que ele provou continua viva no Módulo de Serviço Europeu que agora impulsiona a NASA Orion em sua jornada para a Lua.",
+    "new": "O Automated Transfer Vehicle foi o cargueiro europeu da EEI e a nave de carga mais sofisticada de sua época — uma espaçonave de vinte toneladas que navegava sozinha até um acoplamento totalmente automático com a Estação, entregava carga, água, ar e propelente e usava os próprios motores para elevar a órbita de toda a EEI. Cinco voaram entre 2008 e 2015, cada um batizado com o nome de um pensador europeu, de Jules Verne a Georges Lemaître. Mais que um caminhão de suprimentos, o ATV foi o meio pelo qual a Europa conquistou seu lugar como parceira plena da EEI — e a tecnologia que ele provou continua viva no European Service Module, que hoje impulsiona a Orion, da NASA, rumo à Lua."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "old": "ATV (Automated Transfer Vehicle) é uma espaçonave de carga robótica construída pela Airbus em Multi (Europa). O transportador de carga principal da ESA para a EEI que realizou cinco missões para a EEI de 2008 a 2015, entregando carga, água, ar e propelente enquanto usava seus motores para elevar a órbita da Estação.",
+    "new": "ATV (Automated Transfer Vehicle) é uma espaçonave de carga robótica construída pela Astrium / Airbus em Multi (Europa). Principal cargueiro da ESA para a EEI, realizou cinco missões à estação de 2008 a 2015, entregando carga, água, ar e propelente e usando seus motores para elevar a órbita da Estação."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
+    "at": "tagline",
+    "old": "Sucessor ao Cargo Dragon v1; PV montado em tronco",
+    "new": "Sucessora da Cargo Dragon v1; painéis solares no tronco"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
+    "at": "description",
+    "old": "A variante sem tripulação da Crew Dragon, com as mesmas células solares montadas no tronco. Difere visivelmente de Cygnus (arranjos redondos) e Soyuz/Progress (asas retangulares). Retorno intacto com downmass – único entre os transportadores de carga EEI.",
+    "new": "A variante sem tripulação da Crew Dragon, com as mesmas células solares fixadas ao tronco. Difere visivelmente da Cygnus (painéis redondos) e das Soyuz/Progress (asas retangulares). Retorna intacta com carga de retorno (downmass) — única entre os cargueiros da EEI."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
+    "at": "best_known_for",
+    "old": "Sucessor ao Cargo Dragon v1; PV montado em tronco",
+    "new": "Sucessora da Cargo Dragon v1; painéis solares no tronco"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cargo-dragon-v1.json",
+    "at": "description",
+    "old": "A primeira nave comercial a atracar com a EEI (COTS-2, maio de 2012); primeiro ressuprimento contratado da EEI (CRS-1, outubro de 2012). Vinte e uma missões CRS mais duas demonstrações COTS voaram entre 2010 e 2020 antes do Dragon 2 atualizado assumir.",
+    "new": "A primeira nave comercial a atracar na EEI (COTS-2, maio de 2012) e o primeiro ressuprimento contratado da Estação (CRS-1, outubro de 2012). Vinte e uma missões CRS e duas demonstrações COTS voaram entre 2010 e 2020, antes de a Dragon 2 atualizada assumir."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+    "at": "tagline",
+    "old": "Conjuntos arredondados Cygnus; UltraFlex",
+    "new": "Cygnus alongada; painéis redondos UltraFlex"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+    "at": "description",
+    "old": "Transportador de carga pressurizado da Northrop Grumman, reconhecível pelas suas matrizes solares UltraFlex redondas — um padrão de acordeão de dobra de ventilador compartilhado com nenhum outro visitante da EEI. Queima na reentrada, sem queda.",
+    "new": "Cargueiro pressurizado da Northrop Grumman, reconhecível pelos painéis solares redondos UltraFlex — um padrão de dobra em leque, como uma sanfona, que nenhum outro visitante da EEI tem. Queima na reentrada; não devolve carga à Terra."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+    "at": "best_known_for",
+    "old": "Conjuntos arredondados Cygnus; UltraFlex",
+    "new": "Cygnus alongada; painéis redondos UltraFlex"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "tagline",
+    "old": "Transportador de carga EEI exclusivamente pressurizado",
+    "new": "Cargueiro da EEI só para carga pressurizada"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "old": "Cygnus Standard é uma espaçonave de carga robótica construída pela Orbital ATK nos EUA. Transportador de carga EEI apenas pressurizado. Aposentou-se após o primeiro voo em 2013.",
+    "new": "Cygnus Standard é uma espaçonave de carga robótica construída pela Orbital ATK nos EUA. Cargueiro da EEI só para carga pressurizada. Aposentada após o primeiro voo, em 2013."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "best_known_for",
+    "old": "Transportador de carga EEI exclusivamente pressurizado",
+    "new": "Cargueiro da EEI só para carga pressurizada"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "tagline",
+    "old": "Sucessor ao HTV; carga expandida",
+    "new": "Sucessor do HTV; carga útil ampliada"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "best_known_for",
+    "old": "Sucessor ao HTV; carga expandida",
+    "new": "Sucessor do HTV; carga útil ampliada"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv.json",
+    "at": "tagline",
+    "old": "Veículo H-II Transfer Vehicle do Japão para a EEI",
+    "new": "H-II Transfer Vehicle, do Japão, para a EEI"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv.json",
+    "at": "description",
+    "old": "HTV (Kounotori) é uma espaçonave de carga robótica construída pela Mitsubishi Heavy Industries no Japão. O Veículo de Transferência H-II do Japão realizou nove missões para a EEI de 2009 a 2020, com o HTV-9 (voo final) partindo em maio de 2020.",
+    "new": "HTV (Kounotori) é uma espaçonave de carga robótica construída pela Mitsubishi Heavy Industries no Japão. O H-II Transfer Vehicle do Japão realizou nove missões à EEI de 2009 a 2020, com o HTV-9 (voo final) partindo em maio de 2020."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv.json",
+    "at": "best_known_for",
+    "old": "H-II Transfer Vehicle do Japão para EEI",
+    "new": "H-II Transfer Vehicle, do Japão, para a EEI"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/progress-7k-tg.json",
+    "at": "description",
+    "old": "A primeira nave espacial de carga robótica, derivada da Soyuz. Quarenta e três voos Progress para Salyut e Mir inicial entre 1978 e 1990 estabeleceram a arquitetura que cada fornecimento EEI subsequente seguiu.",
+    "new": "A primeira nave de carga robótica, derivada da Soyuz. Quarenta e três voos Progress às Salyut e ao início da Mir, entre 1978 e 1990, estabeleceram a arquitetura que todo ressuprimento posterior da EEI seguiu."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/progress-m.json",
+    "at": "description",
+    "old": "Progress M é uma nave cargueira robótica construída pela RKK Energia na Rússia. O Progress-M modernizado serviu Mir e a EEI em 97 missões de 1989 a 2021, antes de ser substituído pelo Progress-MS.",
+    "new": "Progress M é uma nave cargueira robótica construída pela RKK Energia na Rússia. O Progress-M modernizado atendeu a Mir e a EEI em 97 missões, de 1989 a 2021, antes de ser substituído pelo Progress-MS."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/progress-ms.json",
+    "at": "description",
+    "old": "Progress MS é uma nave espacial de carga robótica construída pela RKK Energia na Rússia. Geração de progresso atual; EEI reabastecimento. Em serviço desde 2015.",
+    "new": "Progress MS é uma nave espacial de carga robótica construída pela RKK Energia na Rússia. Geração atual da Progress; ressuprimento da EEI. Em serviço desde 2015."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/tianzhou.json",
+    "at": "tagline",
+    "old": "Espaçonave de carga chinesa para Tiangong",
+    "new": "Espaçonave de carga chinesa para a Tiangong"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/tianzhou.json",
+    "at": "description",
+    "old": "Espaçonave de carga chinesa para a estação espacial Tiangong, compartilhando herança de plataforma com Tiangong-1. Reabastece os tanques de propelente de Tiangong e entrega racks de experimentos; primeiro voo em 2017.",
+    "new": "Espaçonave de carga chinesa para a estação espacial Tiangong, com plataforma herdada da Tiangong-1. Reabastece os tanques de propelente da Tiangong e entrega racks de experimentos; primeiro voo em 2017."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/tianzhou.json",
+    "at": "best_known_for",
+    "old": "Espaçonave de carga chinesa para Tiangong",
+    "new": "Espaçonave de carga chinesa para a Tiangong"
+  },
+  {
+    "rel": "fleet/constellation/beidou.json",
+    "at": "description",
+    "old": "GNSS da China, formalmente BeiDou-3 em sua forma atual. Arquitetura híbrida única combinando MEO (24 satélites a 21.500 km, 55°), geossíncrona inclinada (IGSO, 3 satélites) e GEO (3 satélites). Cobertura global completa declarada em julho de 2020. O único GNSS com capacidade de comunicação por satélite de mensagens curtas integrada ao sinal — usuários podem enviar mensagens de texto curtas diretamente pela constelação, útil em comunicações de emergência em áreas remotas.",
+    "new": "GNSS da China, formalmente BeiDou-3 em sua forma atual. Arquitetura híbrida única, combinando MEO (24 satélites a 21.500 km, 55°), geossíncrona inclinada (IGSO, 3 satélites) e GEO (3 satélites). Cobertura global completa declarada em julho de 2020. O único GNSS com comunicação por mensagens curtas via satélite integrada ao sinal — os usuários podem enviar mensagens de texto curtas diretamente pela constelação, o que é útil em emergências em áreas remotas."
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "tagline",
+    "old": "GNSS civil europeu — ~30 satélites, posicionamento sub-métrico",
+    "new": "GNSS civil europeu — ~30 satélites, posicionamento submétrico"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "description",
+    "old": "GNSS civil europeu — 34 satélites foram lançados (4 IOV + 30 FOC); 27 operacionais + 1 em comissionamento a partir de maio de 2026; alvo da constelação é 30 satélites a 23.222 km em MEO em 3 planos orbitais inclinados a 56°. Primeiro serviço operacional em 2016; declaração de capacidade operacional completa pendente de anúncio oficial da ESA/EUSPA. Diferentemente de GPS (operador militar) e GLONASS (operador militar), Galileo é gerenciado pela EUSPA, uma agência civil da UE. Projetado para posicionamento sub-métrico com camadas de Serviço Aberto + Comercial + Serviço Regulado Público. Carga útil de Busca e Resgate integrada para detecção de radiofarol de emergência.",
+    "new": "GNSS civil europeu — 34 satélites foram lançados (4 IOV + 30 FOC); 27 operacionais + 1 em comissionamento em maio de 2026; a meta da constelação é de 30 satélites a 23.222 km, em MEO, em 3 planos orbitais inclinados a 56°. Primeiro serviço operacional em 2016; a declaração de capacidade operacional plena aguarda o anúncio oficial da ESA/EUSPA. Diferentemente do GPS (operador militar) e do GLONASS (operador militar), o Galileo é gerenciado pela EUSPA, uma agência civil da UE. Projetado para posicionamento submétrico, com serviços aberto e comercial e o Serviço Público Regulado. Carga útil de Busca e Salvamento integrada para detecção de radiofaróis de emergência."
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "best_known_for",
+    "old": "GNSS civil europeu — ~30 satélites, posicionamento sub-métrico",
+    "new": "GNSS civil europeu — ~30 satélites, posicionamento submétrico"
+  },
+  {
+    "rel": "fleet/constellation/glonass.json",
+    "at": "description",
+    "old": "GNSS russo — 24 satélites ativos em órbita MEO a 19.130 km em 3 planos inclinados 64,8° (a inclinação elevada é intencional para melhor cobertura em altas latitudes em relação ao GPS). Lançado pela primeira vez em 1982; atingiu constelação completa em 1995, depois entrou em colapso no final dos anos 1990 / início dos anos 2000 após o término do financiamento soviético; restaurado ao status operacional completo de 24 satélites por volta de 2010-2011 com retomada do financiamento. Continua operacional em 2026. Operado pela Roscosmos em coordenação com o Ministério da Defesa russo.",
+    "new": "GNSS russo — 24 satélites ativos a 19.130 km, em MEO, em 3 planos inclinados 64,8° (a inclinação elevada é intencional, para dar melhor cobertura em altas latitudes que o GPS). Lançado pela primeira vez em 1982; atingiu a constelação completa em 1995, depois entrou em colapso no final dos anos 1990 e início dos anos 2000, após o fim do financiamento soviético; restaurado ao status operacional completo de 24 satélites por volta de 2010-2011, com a retomada do financiamento. Continua operacional em 2026. Operado pela Roscosmos em coordenação com o Ministério da Defesa russo."
+  },
+  {
+    "rel": "fleet/constellation/goes-noaa.json",
+    "at": "tagline",
+    "old": "Par geoestacionário de previsão da NOAA — cobertura contínua das Américas",
+    "new": "Par meteorológico geoestacionário da NOAA — cobertura contínua das Américas"
+  },
+  {
+    "rel": "fleet/constellation/goes-noaa.json",
+    "at": "description",
+    "old": "Geostationary Operational Environmental Satellite — par geoestacionário de previsão meteorológica da NOAA. GOES-19 (GOES-Leste em 75,2° W) e GOES-18 (GOES-Oeste em 137,0° W) formam o par operacional a partir de abril de 2025, fornecendo cobertura contínua das Américas. GOES-16 está armazenado como reserva; GOES-17 foi desativado em janeiro de 2023. A série GOES-R carrega o Advanced Baseline Imager capaz de varreduras mesoescala de 30 segundos para núcleos de furacões e rastreamento de tempestades severas. Fabricado pela Lockheed Martin; produtos de dados disponíveis gratuitamente.",
+    "new": "Geostationary Operational Environmental Satellite — par meteorológico geoestacionário da NOAA. GOES-19 (GOES-Leste, a 75,2° O) e GOES-18 (GOES-Oeste, a 137,0° O) formam o par operacional desde abril de 2025, com cobertura contínua das Américas. O GOES-16 está guardado como reserva; o GOES-17 foi desativado em janeiro de 2023. A série GOES-R leva o Advanced Baseline Imager, capaz de varreduras de mesoescala a cada 30 segundos para núcleos de furacões e acompanhamento de tempestades severas. Construído pela Lockheed Martin; produtos de dados de acesso gratuito."
+  },
+  {
+    "rel": "fleet/constellation/goes-noaa.json",
+    "at": "best_known_for",
+    "old": "Par geoestacionário de previsão da NOAA — cobertura contínua das Américas",
+    "new": "Par meteorológico geoestacionário da NOAA — cobertura contínua das Américas"
+  },
+  {
+    "rel": "fleet/constellation/gps-gnss.json",
+    "at": "name",
+    "old": "GPS (Sistema de Posicionamento Global)",
+    "new": "GPS (Global Positioning System)"
+  },
+  {
+    "rel": "fleet/constellation/gps-gnss.json",
+    "at": "description",
+    "old": "Global Positioning System — o GNSS original e ainda o mais amplamente utilizado. 31 satélites ativos a 20.180 km em 6 planos orbitais inclinados 55°. Operado pela Força Espacial dos EUA; originalmente do Departamento de Defesa. A diretiva do Presidente Reagan em 1983 prometeu acesso futuro ao GPS civil após o incidente com o voo 007 da Korean Air Lines, mas o acesso ao sinal L1 C/A não criptografado para uso civil não foi disponibilizado até que a Disponibilidade Seletiva foi desativada em maio de 2000, melhorando dramaticamente a precisão civil. Sinais modernizados L1C, L2C, L5 nos satélites Block IIF e III.",
+    "new": "Global Positioning System — o GNSS original e ainda o mais utilizado. 31 satélites ativos a 20.180 km em 6 planos orbitais inclinados 55°. Operado pela Força Espacial dos EUA; originalmente do Departamento de Defesa. A diretiva do presidente Reagan, de 1983, prometeu acesso civil futuro ao GPS após o abate do voo 007 da Korean Air Lines, mas o acesso civil ao sinal L1 C/A sem criptografia só veio quando a Disponibilidade Seletiva foi desativada, em maio de 2000, o que melhorou muito a precisão civil. Sinais modernizados L1C, L2C e L5 nos satélites Block IIF e III."
+  },
+  {
+    "rel": "fleet/constellation/inmarsat.json",
+    "at": "tagline",
+    "old": "Comunicações móveis GEO — marítima, aviação, espinha dorsal GMDSS",
+    "new": "Comunicações móveis GEO — marítimas, aeronáuticas e base do GMDSS"
+  },
+  {
+    "rel": "fleet/constellation/inmarsat.json",
+    "at": "description",
+    "old": "Comunicações móveis por satélite geoestacionário — 14+ satélites em GEO fornecendo serviços de voz + dados marítimos, de aviação e para áreas remotas. Originalmente fundada em 1979 como International Maritime Satellite Organization, um órgão internacional baseado em tratado para comunicações navio-terra (o predecessor do GMDSS). Privatizada em 1999. Adquirida pela Viasat em 2023 para combinar com a frota de banda Ka da Viasat.",
+    "new": "Comunicações móveis por satélite geoestacionário — 14+ satélites em GEO que fornecem serviços de voz + dados marítimos, de aviação e para áreas remotas. Fundada em 1979 como International Maritime Satellite Organization, um órgão intergovernamental criado por tratado para comunicações entre navios e terra (o precursor do GMDSS). Privatizada em 1999. Adquirida pela Viasat em 2023 para se unir à frota da Viasat em banda Ka."
+  },
+  {
+    "rel": "fleet/constellation/inmarsat.json",
+    "at": "best_known_for",
+    "old": "Comunicações móveis GEO — marítima, aviação, espinha dorsal GMDSS",
+    "new": "Comunicações móveis GEO — marítimas, aeronáuticas e base do GMDSS"
+  },
+  {
+    "rel": "fleet/constellation/iridium-next.json",
+    "at": "tagline",
+    "old": "Comuns LEO polar — 66 satélites operacionais +9 reservas, parceira GMDSS, voz/dados globais",
+    "new": "Comunicações LEO polares — 66 satélites operacionais + 9 sobressalentes, parceira do GMDSS, voz e dados globais"
+  },
+  {
+    "rel": "fleet/constellation/iridium-next.json",
+    "at": "description",
+    "old": "Constelação Iridium de segunda geração — 66 satélites operacionais a 780 km em 6 planos polares (11 por plano), com 9 reservas em órbita, implantados 2017-2019 para substituir a frota Iridium original de 1998. Um total de 75 satélites foi lançado; 5 reservas de solo adicionais foram lançados em maio de 2023. Oferece serviços de voz + dados + máquina-para-máquina + telefone via satélite. Um dos dois provedores GMDSS (Global Maritime Distress and Safety System) — navios em navegação oceânica podem atender aos requisitos GMDSS via Iridium OU Inmarsat. A colisão do Iridium 33 original com o Cosmos 2251 abandonado em 2009 foi a primeira colisão conhecida satélite-para-satélite na história.",
+    "new": "Constelação Iridium de segunda geração — 66 satélites operacionais a 780 km em 6 planos polares (11 por plano), com 9 sobressalentes em órbita, implantados entre 2017 e 2019 para substituir a frota Iridium original, de 1998. Foram lançados 75 satélites no total; outros 5 sobressalentes de solo foram lançados em maio de 2023. Oferece voz, dados, comunicação máquina a máquina e telefonia via satélite. Um dos dois provedores de satélite do GMDSS (Global Maritime Distress and Safety System), ao lado da Inmarsat — embarcações oceânicas podem cumprir os requisitos do GMDSS via Iridium OU Inmarsat. A colisão do Iridium 33 original com o Cosmos 2251 abandonado, em 2009, foi a primeira colisão conhecida entre satélites na história."
+  },
+  {
+    "rel": "fleet/constellation/iridium-next.json",
+    "at": "best_known_for",
+    "old": "Comuns LEO polar — 66 satélites operacionais + 9 sobressalentes, parceiro GMDSS, voz/dados global",
+    "new": "Comunicações LEO polares — 66 satélites operacionais + 9 sobressalentes, parceira do GMDSS, voz e dados globais"
+  },
+  {
+    "rel": "fleet/constellation/landsat.json",
+    "at": "description",
+    "old": "O registro contínuo mais longo de imageamento da Terra na história — Landsat 1 lançado em 1972 (originalmente como ERTS-1), continuando até Landsat 9 (2021). Par operacional atual Landsat 8 (2013) + Landsat 9 (2021) em órbita heliosíncrona de 705 km, inclinação de 98,2°. Resolução multiespectral de 30 m. NASA constrói + lança; USGS opera e distribui os dados. Acesso público gratuito desde 2008 transformou Landsat no conjunto de dados de referência global para mudanças climáticas, desmatamento e crescimento urbano.",
+    "new": "O registro contínuo mais longo de imagens da Terra na história — o Landsat 1 foi lançado em 1972 (originalmente como ERTS-1) e a série segue até o Landsat 9 (2021). O par operacional atual, Landsat 8 (2013) + Landsat 9 (2021), está em órbita heliossíncrona de 705 km, com inclinação de 98,2°. Resolução multiespectral de 30 m. A NASA constrói e lança; o USGS opera e distribui os dados. O acesso público gratuito desde 2008 fez do Landsat o conjunto de dados de referência global para mudanças climáticas, desmatamento e crescimento urbano."
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "tagline",
+    "old": "HEO russa de 12 horas para comunicações — inclinação crítica de 63,4° trava o apogeu sobre o norte",
+    "new": "Comunicações russas em HEO de 12 horas — a inclinação crítica de 63,4° prende o apogeu sobre o norte"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "description",
+    "old": "Constelação russa em órbita altamente excêntrica. A órbita Molniya de 12 horas (~600 × 40.000 km) com inclinação crítica de 63,4° explora a perturbação J2 da Terra para travar a linha dos apsides — o apogeu permanece estacionado sobre o Hemisfério Norte, fornecendo aos usuários de altas latitudes ângulos de elevação que um satélite geoestacionário jamais conseguiria entregar. O Molniya-1 foi lançado em 1965; a linha continuou através do Molniya-1/2/3, os satélites de alerta antecipado Oko, e o sucessor de comunicações Meridian em serviço até hoje.",
+    "new": "Constelação russa em órbita altamente excêntrica. A órbita Molniya de 12 horas (~600 × 40.000 km), com inclinação crítica de 63,4°, aproveita a perturbação J2 da Terra para travar a linha das ápsides — o apogeu fica estacionado sobre o Hemisfério Norte, oferecendo aos usuários de altas latitudes ângulos de elevação que um satélite geoestacionário nunca conseguiria dar. O Molniya-1 foi lançado em 1965; a linha seguiu com os Molniya-1/2/3, os satélites de alerta antecipado Oko e a sucessora de comunicações Meridian, em serviço até hoje."
+  },
+  {
+    "rel": "fleet/constellation/o3b-mpower.json",
+    "at": "tagline",
+    "old": "Única banda larga comercial MEO operacional — 20+ sats",
+    "new": "Única banda larga comercial em MEO em operação — mais de 20 satélites"
+  },
+  {
+    "rel": "fleet/constellation/o3b-mpower.json",
+    "at": "description",
+    "old": "A única constelação comercial de banda larga MEO operacional — O3b original implantado em 2013-2019, segunda geração O3b mPOWER a partir de 2022. 20+ satélites em órbita equatorial a 8.063 km. Latência entre GEO e LEO, base de clientes focada em backhaul de telecomunicações, marítimo e empresas remotas. Operado pela SES (Luxemburgo). Nomeado pelos 'outros 3 bilhões' — a missão original era levar conectividade a áreas não atendidas por banda larga terrestre.",
+    "new": "A única constelação comercial de banda larga em MEO em operação — o O3b original foi implantado entre 2013 e 2019 e a segunda geração, O3b mPOWER, a partir de 2022. Mais de 20 satélites em órbita equatorial a 8.063 km. Latência entre as de GEO e LEO; clientes concentrados em backhaul de telecomunicações, setor marítimo e empresas em áreas remotas. Operada pela SES (Luxemburgo). O nome vem dos “outros 3 bilhões” — a missão original era levar conectividade a áreas sem banda larga terrestre."
+  },
+  {
+    "rel": "fleet/constellation/o3b-mpower.json",
+    "at": "best_known_for",
+    "old": "Única banda larga comercial MEO operacional — 20+ sats",
+    "new": "Única banda larga comercial em MEO em operação — mais de 20 satélites"
+  },
+  {
+    "rel": "fleet/constellation/oneweb.json",
+    "at": "description",
+    "old": "Constelação de banda larga LEO de primeira geração, 648 satélites a 1.200 km em 12 planos polares. Órbitas polares proporcionam cobertura completa de polo a polo que as camadas de inclinação média da Starlink não conseguem alcançar. Adquirida pela Eutelsat em 2023 para formar a Eutelsat OneWeb; o serviço comercial agora é integrado aos ativos GEO da Eutelsat. Altitude maior que a Starlink significa latência ligeiramente maior, mas menos satélites necessários.",
+    "new": "Constelação de banda larga LEO de primeira geração, 648 satélites a 1.200 km em 12 planos polares. As órbitas polares oferecem cobertura completa de polo a polo, que as camadas de inclinação média da Starlink não alcançam. Adquirida pela Eutelsat em 2023 para formar a Eutelsat OneWeb; o serviço comercial agora é combinado com os ativos GEO da Eutelsat. A altitude maior que a da Starlink implica latência ligeiramente maior, mas exige menos satélites."
+  },
+  {
+    "rel": "fleet/constellation/planet-labs.json",
+    "at": "description",
+    "old": "Imageamento diário da Terra a partir de duas frotas — ~150 PlanetScope 3U CubeSats (imageamento global diário com resolução de 3-5 m) e ~21 SkySats (alta resolução de 50 cm sob demanda). Todos em órbita heliosíncrona a ~475 km. A filosofia 'Doves' era 'lançar centenas de pequenos satélites baratos, aceitar algumas falhas, obter imagens de cada pedaço de terra todos os dias' — e funciona. O arquivo de imagens da Planet é consultado por ONGs, governos e jornalistas.",
+    "new": "Imageamento diário da Terra a partir de duas frotas — ~150 PlanetScope 3U CubeSats (imageamento global diário com resolução de 3-5 m) e ~21 SkySats (alta resolução de 50 cm sob demanda). Todos em órbita heliossíncrona a ~475 km. A filosofia “Doves” era “lançar centenas de pequenos satélites baratos, aceitar algumas falhas, obter imagens de cada pedaço de terra todos os dias” — e funciona. O arquivo de imagens da Planet é consultado por ONGs, governos e jornalistas."
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "best_known_for",
+    "old": "Alerta inicial por IR no segmento HEO — cobre latitudes polares que os sensores GEO não alcançam",
+    "new": "Alerta antecipado por IR no segmento HEO — cobre latitudes polares que os sensores GEO não alcançam"
+  },
+  {
+    "rel": "fleet/constellation/sentinel-copernicus.json",
+    "at": "description",
+    "old": "Programa europeu carro-chefe de observação da Terra, operado pela ESA em nome do serviço de monitoramento ambiental Copernicus da Comissão Europeia. Sentinel-1 (imageamento por radar SAR banda C), Sentinel-2 (óptico multiespectral a 10-60 m), Sentinel-3 (oceano + terra), Sentinel-5P (química atmosférica), Sentinel-6 (altimetria). Todos em LEO síncrono ao Sol. Política de dados abertos e gratuitos — cada imagem Sentinel pode ser baixada sem taxas de licenciamento.",
+    "new": "Principal programa europeu de observação da Terra, operado pela ESA em nome do serviço de monitoramento ambiental Copernicus da Comissão Europeia. Sentinel-1 (imagens de radar SAR em banda C), Sentinel-2 (óptico multiespectral a 10-60 m), Sentinel-3 (oceanos e superfície terrestre), Sentinel-5P (química atmosférica), Sentinel-6 (altimetria). Todos em LEO heliossíncrona. Política de dados abertos e gratuitos — cada imagem Sentinel pode ser baixada sem taxas de licenciamento."
+  },
+  {
+    "rel": "fleet/constellation/starlink.json",
+    "at": "description",
+    "old": "Constelação de banda larga LEO da SpaceX — mais de 10.800 satélites ativos a 550 km de altitude distribuídos em múltiplas camadas (inclinações de 53°, 70°, 97,6°). Primeiro serviço operacional em 2019; cobertura global alcançada em 2023. Cada satélite Gen-2 dispõe de enlaces inter-satélites por laser, permitindo que a constelação rotule pacotes entre satélites sem saltos por estações terrestres. Sistema autônomo de prevenção de colisões realiza dezenas de milhares de manobras por ano — mais do que todos os outros operadores LEO combinados.",
+    "new": "Constelação de banda larga LEO da SpaceX — mais de 10.800 satélites ativos a 550 km de altitude, distribuídos em várias camadas (inclinações de 53°, 70° e 97,6°). Primeiro serviço operacional em 2019; cobertura global alcançada em 2023. Cada satélite Gen-2 tem enlaces a laser entre satélites, o que permite à constelação rotear pacotes de um satélite a outro sem passar por estações terrestres. O sistema autônomo de prevenção de colisões faz dezenas de milhares de manobras por ano — mais do que todos os outros operadores LEO somados."
+  },
+  {
+    "rel": "fleet/constellation/tundra-sirius.json",
+    "at": "tagline",
+    "old": "Constelação histórica de órbita Tundra comercial — desativada em 2016",
+    "new": "Constelação comercial histórica em órbita Tundra — desativada em 2016"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "tagline",
+    "old": "Design original do Apollo CSM — nunca tripulado; matou a tripulação da Apollo 1 em 1967-01-27. Redesenho produziu o Block II de 1968-1975",
+    "new": "CSM Apollo original — nunca voou com tripulação; matou a tripulação da Apollo 1 em 1967-01-27. Redesenho gerou o Block II (1968-1975)"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "dispatch",
+    "old": "Block I é o hardware Apollo que nunca foi tripulado, e parte do motivo pelo qual o restante do programa sobreviveu. Foi a primeira versão do Módulo de Comando — destinado apenas a testes não tripulados e em órbita terrestre inicial — e carregava um conjunto de pressupostos que pareciam razoáveis em 1966: uma cabine de oxigênio puro mantida acima da pressão do nível do mar, uma escotilha que abria para dentro, e materiais internos escolhidos sem muito pensamento quanto ao fogo. Em 27 de janeiro de 1967, uma faísca na plataforma de lançamento tornou esses pressupostos letais em segundos, e a tripulação da Apollo 1 morreu em um teste que todos tinham tratado como rotineiro. Block I foi aposentado nessa lição; o Block II que chegou à Lua era, em grande parte, a lista de tudo que Block I fez errado.",
+    "new": "O Block I é o hardware da Apollo que nunca levou uma tripulação, e parte do motivo pelo qual o restante do programa sobreviveu. Foi o primeiro esboço do Módulo de Comando — destinado apenas a testes sem tripulação e aos primeiros testes em órbita terrestre — e carregava um conjunto de pressupostos que pareciam razoáveis em 1966: uma cabine de oxigênio puro mantida acima da pressão do nível do mar, uma escotilha que abria para dentro e materiais internos escolhidos sem grande preocupação com o fogo. Em 27 de janeiro de 1967, uma faísca na plataforma de lançamento tornou esses pressupostos letais em segundos, e a tripulação da Apollo 1 morreu em um teste que todos tratavam como rotina. O Block I foi aposentado com essa lição; o Block II que chegou à Lua era, em grande parte, a lista de tudo o que o Block I errou."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "description",
+    "old": "Block I foi a primeira iteração de design do Módulo de Comando e Serviço Apollo — destinado como um veículo puro de teste em órbita terrestre antes do Block II capaz de atingir a Lua. Cabine pressurizada com O₂ puro a 16,7 psi pré-lançamento (5 psi em voo); escotilha com abertura para dentro selada por diferencial de pressão atmosférica. CSM-009 + CSM-011 realizaram testes suborbitais não tripulados (AS-201 1966-02-26 + AS-202 1966-08-25). CSM-017 e CSM-020 voaram sem tripulação em Apollo 4 (1967-11-09) e Apollo 6 (1968-04-04) respectivamente — módulos de comando Block I nos dois primeiros voos do Saturn V. CSM-012 — a nave Apollo 1 — foi fechada para um teste Plugs-Out em 1967-01-27 quando um incêndio repentino se inflamou na baía de equipamentos inferior, matando a tripulação em segundos; a cabine não podia ser ventilada porque a escotilha abria para dentro contra o pico de 29 psi. O Conselho de Investigação do Acidente Apollo 204 levou ao redesenho do Block II: escotilha unificada com abertura para fora, materiais de cabine não inflamáveis, atmosfera rica em nitrogênio pré-lançamento, feixes de fios redesenhados. Nenhum CSM Block I jamais foi tripulado; Block II voou Apollo 7 (1968) até ASTP (1975).",
+    "new": "O Block I foi a primeira versão do projeto do Módulo de Comando e Serviço da Apollo — concebido como veículo de testes em órbita terrestre antes do Block II, capaz de chegar à Lua. Cabine pressurizada com O₂ puro a 16,7 psi antes do lançamento (5 psi em voo); escotilha com abertura para dentro, vedada pela diferença de pressão atmosférica. O CSM-009 e o CSM-011 fizeram testes suborbitais sem tripulação (AS-201 1966-02-26 + AS-202 1966-08-25). O CSM-017 e o CSM-020 voaram sem tripulação na Apollo 4 (1967-11-09) e na Apollo 6 (1968-04-04), respectivamente — módulos de comando Block I nos dois primeiros voos do Saturn V. O CSM-012 — a nave da Apollo 1 — foi fechado para um teste Plugs-Out em 1967-01-27, quando um fogo súbito começou no compartimento inferior de equipamentos e matou a tripulação em segundos; a cabine não pôde ser ventilada porque a escotilha abria para dentro, contra o pico de pressão de 29 psi. O Conselho de Investigação do Acidente da Apollo 204 levou ao redesenho do Block II: escotilha unificada com abertura para fora, materiais de cabine não inflamáveis, atmosfera rica em nitrogênio antes do lançamento e feixes de fios redesenhados. Nenhum CSM Block I voou com tripulação; o Block II voou da Apollo 7 (1968) até o ASTP (1975)."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "best_known_for",
+    "old": "Design original do Apollo CSM — nunca tripulado; matou a tripulação da Apollo 1 em 1967-01-27. Redesenho produziu o Block II de 1968-1975",
+    "new": "CSM Apollo original — nunca voou com tripulação; matou a tripulação da Apollo 1 em 1967-01-27. Redesenho gerou o Block II (1968-1975)"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+    "at": "tagline",
+    "old": "Módulo Command + Service com capacidade lunar",
+    "new": "Módulo de Comando e Serviço com capacidade lunar"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+    "at": "dispatch",
+    "old": "O Módulo de Comando foi a única parte do Apollo que voltou para casa — tudo mais foi consumido e descartado ao longo da jornada. Isso a tornou a parte que não podia falhar na reentrada, e reentrada da Lua era a versão mais difícil do problema: a cápsula encontrava a atmosfera a quase onze quilômetros por segundo, uma vez e meia mais rápido que qualquer coisa que retornasse da órbita terrestre, envolta em uma bola de fogo quente o suficiente para fervir aço. Sua solução foi um escudo térmico ablativo projetado para se carbonizar e se desprender de forma controlada, levando o calor embora com ele. O Block II foi a versão que levou tripulação — o redesenho completo forçado pelo incêndio do Apollo 1 — e trouxe cada astronauta que partiu para a Lua de volta vivo.",
+    "new": "O Módulo de Comando foi a única parte da Apollo que voltou para casa — todo o resto foi gasto e descartado ao longo do caminho. Isso fez dele a peça que não podia falhar na reentrada, e a reentrada vinda da Lua era a versão mais difícil do problema: a cápsula encontrava a atmosfera a quase onze quilômetros por segundo, uma vez e meia a velocidade de qualquer coisa que voltasse da órbita terrestre, envolta em uma bola de fogo capaz de ferver aço. A resposta foi um escudo térmico ablativo, projetado para carbonizar e se desprender de forma controlada, levando o calor consigo. O Block II foi a versão que levou tripulações — o redesenho completo imposto pelo incêndio da Apollo 1 — e trouxe de volta com vida todos os astronautas que partiram rumo à Lua."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+    "at": "description",
+    "old": "O Módulo de Comando e Serviço com capacidade lunar que levou astronautas do Apollo à órbita lunar entre 1968 e 1972. Quinze voos tripulados no total: Apollo 7–17 (onze missões com destino à Lua), três rotações de tripulação do Skylab (1973–1974) e o Apollo-Soyuz Test Project de 1975 — incluindo a configuração de bote salva-vidas improvisada do Apollo 13.",
+    "new": "O Módulo de Comando e Serviço com capacidade lunar que levou astronautas da Apollo à órbita lunar entre 1968 e 1972. Quinze voos tripulados no total: Apollo 7–17 (onze missões com a Lua como destino), três rotações de tripulação do Skylab (1973–1974) e o Apollo-Soyuz Test Project de 1975 — incluindo a configuração improvisada de bote salva-vidas da Apollo 13."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+    "at": "best_known_for",
+    "old": "Módulo de Comando + Serviço com capacidade lunar",
+    "new": "Módulo de Comando e Serviço com capacidade lunar"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "description",
+    "old": "O único módulo lunar já construído. Seis desembarques bem - sucedidos entre 1969 e 1972 — Eagle, Intrepid, Antares, Falcon, Orion, Challenger — além de Aquarius, que serviu como salva - vidas da Apollo 13. O estágio descendente permanece na Lua; o estágio de ascensão voltou ao CSM em órbita lunar.",
+    "new": "O único módulo de pouso lunar tripulado já construído. Seis pousos bem-sucedidos entre 1969 e 1972 — Eagle, Intrepid, Antares, Falcon, Orion, Challenger — além do Aquarius, que serviu de bote salva-vidas da Apollo 13. O estágio de descida permanece na Lua; o estágio de ascensão voltou a se unir ao CSM na órbita lunar."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/atlantis.json",
+    "at": "tagline",
+    "old": "OV-104 — quarto Shuttle. Voou a missão final STS-135 (2011); última servicing do Hubble STS-125; implantou Galileo + Magellan",
+    "new": "OV-104 — quarto Shuttle. Voou a última missão, STS-135 (2011), e a última de manutenção do Hubble, STS-125; lançou Galileo + Magellan"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/atlantis.json",
+    "at": "dispatch",
+    "old": "Atlantis, OV-104, voou os marcos das maiores parcerias do Shuttle. Realizou o maior número de acoplagens com a estação russa Mir, inaugurando a era de cooperação EUA-Rússia, e voou a STS-125, a última e ousada missão de manutenção que deixou o Hubble Space Telescope apto para mais uma década. Em julho de 2011 a Atlantis voou a STS-135, a 135ª e última missão Shuttle — o voo que encerrou trinta anos de voo espacial americano reutilizável e deixou a Space Station que havia ajudado a construir em órbita acima.",
+    "new": "Atlantis, OV-104, marcou o início e o fim das maiores parcerias do Shuttle. Foi a que mais se acoplou à estação russa Mir, inaugurando a era de cooperação entre EUA e Rússia, e voou a STS-125, a última e ousada missão de manutenção, que deixou o Hubble Space Telescope em condições de operar por mais uma década. Em julho de 2011, a Atlantis voou a STS-135, a 135ª e última missão do Shuttle — o voo que encerrou trinta anos de voo espacial americano reutilizável e deixou em órbita, lá no alto, a estação espacial que ajudara a construir."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/atlantis.json",
+    "at": "description",
+    "old": "Quarto orbiter operacional; primeiro voo STS-51-J (3-10-1985) foi uma missão DoD classificada. Destaques: implantou Magellan (STS-30, 1989) e Galileo (STS-34, 1989) — as duas sondas planetárias que abriram Vênus e Júpiter para observação de longa duração; voou 7 das 9 missões de acoplamento Shuttle-Mir entre 1995-1997; voou a missão final de servicing do Hubble STS-125 (5-2009) — a única pós-Columbia sem rendezvous com a EEI; voou STS-135 (7-2011) — o último voo Shuttle de todos. Em exibição no Centro Espacial Kennedy desde 2013.",
+    "new": "Quarto orbitador operacional; o primeiro voo, STS-51-J (1985-10-03), foi uma missão classificada do DoD. Destaques: lançou Magellan (STS-30, 1989) e Galileo (STS-34, 1989) — as duas sondas planetárias que abriram Vênus e Júpiter à observação de longa duração; voou 7 das 9 missões de acoplamento Shuttle-Mir entre 1995 e 1997; voou a última missão de manutenção do Hubble, STS-125 (2009-05) — a única missão aprovada após a Columbia sem encontro com a EEI; voou a STS-135 (2011-07) — o último voo do Shuttle de todos os tempos. Em exibição no Complexo de Visitantes do Centro Espacial Kennedy desde 2013."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/atlantis.json",
+    "at": "best_known_for",
+    "old": "Voou missão final Shuttle STS-135 (2011); implantou Galileo + Magellan; última servicing do Hubble STS-125",
+    "new": "Voou a última missão do Shuttle, STS-135 (2011); lançou Galileo + Magellan; última manutenção do Hubble, STS-125"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "dispatch",
+    "old": "OK-GLI foi o orbitador de teste atmosférico do Buran — o equivalente ao NASA Enterprise, construído para provar que o avião espacial podia planar e pousar antes de qualquer voo à órbita. Equipado com quatro motores a jato, ele fez suas próprias aproximações e pousos em pista na atmosfera, validando a aerodinâmica do Buran e seus sistemas de pouso automatizado. Nunca foi ao espaço e nunca deveria ir, e sobreviveu ao orbitador que foi: enquanto o Buran que voou foi destruído em 2002, o OK-GLI sobrevive como peça de museu na Alemanha, um dos poucos vestígios tangíveis do maior programa espacial que a União Soviética já tentou.",
+    "new": "OK-GLI foi o orbitador de teste atmosférico do Buran — equivalente ao Enterprise da NASA, construído para provar que o avião espacial podia planar e pousar antes de qualquer voo à órbita. Equipado com quatro motores a jato, fez suas próprias aproximações e pousos em pista na atmosfera, validando a aerodinâmica do Buran e seus sistemas de pouso automatizado. Nunca foi ao espaço e nunca foi planejado para ir, e sobreviveu ao orbitador que foi: enquanto o Buran que voou foi destruído em 2002, o OK-GLI sobrevive como peça de museu na Alemanha, um dos poucos vestígios tangíveis do maior programa espacial que a União Soviética já tentou."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "description",
+    "old": "Oficialmente BTS-002, apelido OK-GLI. Artigo de teste atmosférico em escala real do programa espacial Buran — mesma geometria externa que o veículo de voo Buran 1.01, mas equipado com quatro motores a jato AL-31 para decolar sob seu próprio poder de uma pista convencional. 24 voos atmosféricos entre 1985-11-10 e 1988-04-15 no campo do Instituto de Pesquisa de Voo Zhukovsky validaram o sistema de pouso automatizado do Buran e o software de controle de voo para o voo orbital de 1988-11-15. Após o cancelamento do programa Buran, OK-GLI permaneceu na LII por anos; vendido a um museu australiano em 1999, depois para o Bahrein, finalmente para o Technik Museum Speyer / Sinsheim na Alemanha, onde está em exibição hoje — o equivalente do Buran ao Enterprise da NASA.",
+    "new": "Oficialmente BTS-002, apelidado de OK-GLI. Exemplar de teste atmosférico em escala real do programa orbital Buran — mesma linha de contorno externa do veículo de voo Buran 1.01, mas equipado com quatro turbojatos AL-31 para decolar com a própria potência de uma pista convencional. 24 voos atmosféricos entre 1985-11-10 e 1988-04-15, no aeródromo do Instituto de Pesquisa de Voo Zhukovsky, validaram o sistema de pouso automatizado e o software de controle de voo do Buran para o voo orbital de 1988-11-15. Após o cancelamento do programa Buran, o OK-GLI ficou anos no LII; foi vendido a um museu australiano em 1999, depois ao Bahrein e por fim ao Technik Museum Speyer / Sinsheim, na Alemanha, onde está em exibição hoje — o equivalente do Buran ao Enterprise da NASA."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "tagline",
+    "old": "Vaivém soviético; um voo não tripulado, nunca tripulado",
+    "new": "Ônibus espacial soviético; um único voo, sem tripulação"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "dispatch",
+    "old": "Buran foi a resposta da União Soviética ao Space Shuttle — externamente quase idêntico, mas com duas decisões que indiscutivelmente superaram o original: não carregava motores principais (toda a propulsão vinha do foguete Energia separado), e podia voar sem ninguém a bordo. Em 15 de novembro de 1988 provou a segunda, realizando uma missão orbital não tripulada completa e pousando sozinho em uma pista com vento cruzado, algo que nenhuma espaçonave alada jamais havia feito. Foi um voo impecável e seu único. A União Soviética entrou em colapso, o dinheiro e a missão desapareceram, e Buran foi cancelado — o orbitador que voou foi posteriormente esmagado quando o teto de seu hangar desabou em 2002. Uma das conquistas mais impressionantes e mais inúteis da exploração espacial.",
+    "new": "O Buran foi a resposta da União Soviética ao Space Shuttle — externamente quase idêntico, mas com duas decisões que talvez tenham superado o original: não tinha motores principais (toda a força de subida vinha do foguete Energia, separado) e podia voar sem ninguém a bordo. Em 15 de novembro de 1988 provou a segunda, realizando uma missão orbital completa sem tripulação e pousando sozinho em uma pista com vento cruzado, algo que nenhuma espaçonave alada jamais havia feito. Foi um voo impecável e o único. A União Soviética entrou em colapso, o dinheiro e a missão desapareceram, e o Buran foi cancelado — o orbitador que voou foi esmagado depois, quando o teto de seu hangar desabou em 2002. Uma das conquistas mais impressionantes e mais inúteis da exploração espacial."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "description",
+    "old": "O vaivém soviético, externamente similar ao orbitador americano, mas sem motores principais (Energia o carregava). Voou exatamente uma vez, em 1988, totalmente autônomo e sem tripulação — o único ônibus soviético a chegar à órbita antes do fim do programa.",
+    "new": "O ônibus espacial soviético, externamente parecido com o orbitador americano, mas sem motores principais (o foguete Energia o levava). Voou exatamente uma vez, em 1988, totalmente autônomo e sem tripulação — o único ônibus espacial soviético a chegar à órbita antes do fim do programa."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "best_known_for",
+    "old": "Vaivém soviético; um voo não tripulado, nunca tripulado",
+    "new": "Ônibus espacial soviético; um único voo, sem tripulação"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "tagline",
+    "old": "OV-099 — segundo Shuttle operacional. Perdido 73s após lançamento em STS-51-L (1986-01-28) com sete tripulantes, incluindo Christa McAuliffe",
+    "new": "OV-099 — 2º Shuttle. Perdido 73 s após o lançamento (STS-51-L, 1986-01-28), com os sete a bordo, incluindo a professora Christa McAuliffe"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "dispatch",
+    "old": "Challenger, OV-099, foi o primeiro cavalo de trabalho da frota e cenário de sua primeira catástrofe. Realizou o primeiro spacewalk do programa e levou a primeira mulher americana, Sally Ride, a órbita. Em 28 de janeiro de 1986, decolando em condições meteorológicas inusitadamente frias, uma vedação de borracha em um de seus propulsores sólidos — endurecida pelo frio, um modo de falha que engenheiros haviam alertado — cedeu, e o veículo se desintegrou 73 segundos após o lançamento. Todos os sete a bordo morreram. O desastre imobilizou a frota por quase três anos e expôs uma cultura de gestão que havia ignorado um risco conhecido e sinalizado.",
+    "new": "Challenger, OV-099, foi o primeiro cavalo de trabalho da frota e cenário de sua primeira catástrofe. Realizou a primeira caminhada espacial do programa e levou a primeira mulher americana, Sally Ride, à órbita. Em 28 de janeiro de 1986, decolando sob um frio incomum, uma vedação de borracha em um de seus propulsores sólidos — endurecida pelo frio, um modo de falha sobre o qual engenheiros haviam alertado — cedeu, e o veículo se desintegrou 73 segundos após a decolagem. Todos os sete a bordo morreram. O desastre imobilizou a frota por quase três anos e expôs uma cultura de gestão que havia seguido adiante apesar de um risco conhecido e sinalizado."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "description",
+    "old": "Construído a partir de um artigo de teste estrutural (STA-099) convertido para voo após Enterprise ser considerado muito caro para atualizar. Primeiro voo em STS-6 (1983-04-04) realizando o primeiro EVA do Ônibus Espacial. Voou 10 missões no total: STS-6, STS-7, STS-8, STS-41-B, STS-41-C, STS-41-G, STS-51-B, STS-51-F, STS-61-A e voo final STS-51-L. Em 1986-01-28, STS-51-L decolou em frio sem precedentes (−1 °C) — os O-rings do SRB direito falharam em vedar, gás quente queimou a estrutura unindo o SRB ao tanque externo, e o orbitador se desintegrou no Max-Q (T+73s) a 14 km de altitude. Todos os sete tripulantes pereceram, incluindo a professora Christa McAuliffe. A Comissão Rogers imobilizou o Ônibus Espacial por 32 meses e reescreveu a cultura de segurança da NASA.",
+    "new": "Construído a partir de um artigo de teste estrutural (STA-099) convertido para voo depois de o Enterprise ser considerado caro demais para atualizar. Voou pela primeira vez na STS-6 (1983-04-04), realizando a primeira caminhada espacial (EVA) do Shuttle. Fez 10 missões no total: STS-6, STS-7, STS-8, STS-41-B, STS-41-C, STS-41-G, STS-51-B, STS-51-F, STS-61-A e o voo final, STS-51-L. Em 1986-01-28, a STS-51-L decolou sob um frio sem precedentes (−1 °C) — os O-rings do SRB direito não vedaram, o gás quente perfurou o suporte que prende o SRB ao tanque externo, e o orbitador se desintegrou no Max-Q (T+73s), a 14 km de altitude. Todos os sete tripulantes morreram, incluindo a professora Christa McAuliffe. A Comissão Rogers manteve o Shuttle em solo por 32 meses e reescreveu a cultura de segurança da NASA."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "best_known_for",
+    "old": "Segundo Ônibus Espacial; perdido 73s após lançamento em STS-51-L 1986-01-28 com 7 tripulantes",
+    "new": "Segundo Shuttle; perdido 73 s após o lançamento na STS-51-L 1986-01-28 com 7 tripulantes"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "tagline",
+    "old": "OV-102 — o primeiro ônibus espacial a viajar para o espaço (STS-1, 1981-04-12); perdido na reentrada STS-107 2003-02-01",
+    "new": "OV-102 — primeiro orbitador do Shuttle a voar ao espaço (STS-1, 1981-04-12); perdido na reentrada da STS-107, 2003-02-01"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "dispatch",
+    "old": "Columbia foi o primeiro — OV-102, o ônibus que abriu a era dos Shuttle. No STS-1 em abril de 1981, fez algo que nenhuma espaçonave tripulada havia feito antes ou fez desde então: voou para órbita em seu lançamento inaugural, com dois astronautas a bordo de um veículo reutilizável não testado, e planou até pousar em uma pista. Era a mais pesada da frota e realizou grande parte da ciência do programa, incluindo os laboratórios Spacelab. Em 2003, no STS-107, um furo aberto em sua asa por detritos de lançamento deixou o calor da reentrada penetrar a estrutura, e Columbia desintegrou-se sobre o Texas poucos minutos antes de chegar à base — a perda que encerrou a complacência do programa quanto aos impactos de detritos.",
+    "new": "Columbia foi a primeira — OV-102, o orbitador que abriu a era do Shuttle. Na STS-1, em abril de 1981, fez algo que nenhuma espaçonave tripulada havia feito antes nem fez depois: voou até a órbita em seu lançamento inaugural, com dois astronautas a bordo de um veículo reutilizável não testado, e planou de volta até uma pista. Era a mais pesada da frota e realizou grande parte da ciência do programa, incluindo os laboratórios Spacelab. Em 2003, na STS-107, um furo aberto em sua asa por detritos de lançamento deixou o calor da reentrada penetrar a estrutura, e a Columbia se desintegrou sobre o Texas a poucos minutos de casa — a perda que pôs fim à complacência do programa quanto aos impactos de detritos."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "description",
+    "old": "O primeiro Space Shuttle operacional. Realizou 28 missões ao longo de 22 anos, incluindo STS-1 (a primeira e única espaçonave tripulada dos EUA a completar sua viagem inaugural com tripulação a bordo), a missão de astronomia UV Astro-1 em 1990, o voo de ciências da vida SLS-2 em 1993 e o retorno ao espaço do Senador John Glenn no STS-95 em 1998. Perdido na reentrada durante STS-107 (2003-02-01) — um impacto de espuma durante o lançamento danificou o bordo de ataque de RCC da asa esquerda e a espaçonave desintegrou-se sobre o Texas a Mach 18 com a perda de todos os sete tripulantes. O acidente suspendeu a operação da frota de Shuttle por 29 meses e desencadeou a Vision for Space Exploration.",
+    "new": "O primeiro orbitador operacional do Space Shuttle. Realizou 28 missões ao longo de 22 anos, incluindo a STS-1 (a primeira e única espaçonave tripulada dos EUA a fazer seu voo inaugural com tripulação a bordo), a missão de astronomia UV Astro-1 em 1990, o voo de ciências da vida SLS-2 em 1993 e o retorno ao espaço do senador John Glenn na STS-95, em 1998. Perdido na reentrada durante a STS-107 (2003-02-01) — um impacto de espuma durante o lançamento rompeu o bordo de ataque de RCC da asa esquerda, e o veículo se desintegrou sobre o Texas a Mach 18, com a perda dos sete tripulantes. O acidente imobilizou a frota do Shuttle por 29 meses e desencadeou a Vision for Space Exploration."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "best_known_for",
+    "old": "Primeiro ônibus espacial a viajar para o espaço (STS-1, 1981); perdido na reentrada STS-107 em 2003",
+    "new": "Primeiro orbitador do Shuttle a voar ao espaço (STS-1, 1981); perdido na reentrada da STS-107 em 2003"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "tagline",
+    "old": "Primeira nave espacial orbital certificada para humanos de origem comercial",
+    "new": "Primeira nave orbital comercial certificada para voos tripulados"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "description",
+    "old": "Nave espacial certificada para humanos da SpaceX, a primeira desenvolvida e operada por empresa privada a levar humanos à órbita (Demo-2, 2020-05-30). O tronco apresenta dois painéis de arrays solares que se desdobram após a separação do carenagem para fornecer energia durante operações orbitais.",
+    "new": "A espaçonave da SpaceX certificada para voos tripulados, a primeira desenvolvida e operada por empresa privada a levar pessoas à órbita (Demo-2, 2020-05-30). O tronco tem dois painéis solares que se abrem depois da separação da carenagem, para fornecer energia durante as operações em órbita."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "best_known_for",
+    "old": "Primeira nave espacial orbital certificada para humanos de origem comercial",
+    "new": "Primeira nave orbital comercial certificada para voos tripulados"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "tagline",
+    "old": "OV-103 — terceiro Shuttle. Implantou o Hubble (STS-31, 1990); voou ambas missões de retorno ao voo. 39 missões — o mais voado",
+    "new": "OV-103 — terceiro Shuttle. Lançou o Hubble (STS-31, 1990); fez as duas missões de retorno ao voo. 39 missões — mais que qualquer orbitador"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "dispatch",
+    "old": "Discovery, OV-103, foi o orbitador mais utilizado e mais confiável da frota, registrando 39 missões ao longo de 27 anos. Foi a escolha da NASA para retornar o Shuttle ao voo após ambos os desastres — o veículo enviado primeiro quando o programa mais precisava provar que era seguro novamente. Entre seus voos estava aquele que talvez seja o mais importante: STS-31, que levou o Hubble Space Telescope à órbita e o liberou, dando início ao capítulo mais produtivo da história da astronomia.",
+    "new": "Discovery, OV-103, foi o orbitador mais voado e mais confiável da frota, com 39 missões ao longo de 27 anos. Foi a escolha da NASA para devolver o Shuttle ao voo após os dois desastres — o veículo enviado primeiro quando o programa mais precisava provar que era seguro de novo. Entre seus voos estava aquele que talvez seja o mais importante: a STS-31, que levou o Hubble Space Telescope à órbita e o liberou, dando início ao capítulo mais produtivo da história da astronomia."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "description",
+    "old": "Terceiro ônibus operacional; primeiro voo STS-41-D (1984-08-30). O Shuttle mais utilizado — 39 missões em 27 anos. Destaques da carreira: STS-31 (1990-04-24) deployou o Hubble Space Telescope; STS-26 (1988-09-29) foi o retorno ao voo pós-Challenger; STS-114 (2005-07-26) foi o retorno ao voo pós-Columbia; STS-95 (1998) retornou John Glenn à órbita aos 77 anos de idade; múltiplos voos de montagem da EEI (STS-92, 120, 124, 128, 131, 133). Voo final STS-133 (2011-02-24) entregou o Módulo Leonardo Multipropósito Permanente. Em exibição no Udvar-Hazy desde 2012.",
+    "new": "Terceiro orbitador operacional; primeiro voo STS-41-D (1984-08-30). O Shuttle mais voado — 39 missões em 27 anos. Destaques da carreira: a STS-31 (1990-04-24) colocou em órbita o Hubble Space Telescope; a STS-26 (1988-09-29) foi o retorno ao voo após a Challenger; a STS-114 (2005-07-26) foi o retorno ao voo após a Columbia; a STS-95 (1998) levou John Glenn de volta à órbita aos 77 anos; vários voos de montagem da EEI (STS-92, 120, 124, 128, 131, 133). O voo final, STS-133 (2011-02-24), entregou o Leonardo Permanent Multipurpose Module. Em exibição no Udvar-Hazy desde 2012."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "best_known_for",
+    "old": "Shuttle mais voado (39 missões); implantou Hubble + ambas missões de retorno ao voo",
+    "new": "Shuttle mais voado (39 missões); lançou o Hubble + as duas missões de retorno ao voo"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/endeavour.json",
+    "at": "tagline",
+    "old": "OV-105 — quinto e mais jovem Shuttle. Primeira servicing do Hubble STS-61 (1993); entregou Unity + Canadarm2 + Tranquility/Cupola",
+    "new": "OV-105 — quinto Shuttle, construído de sobressalentes após a Challenger. 1ª manutenção do Hubble, STS-61 (1993); entregou Unity + Canadarm2"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/endeavour.json",
+    "at": "description",
+    "old": "Quinto e último ônibus espacial operacional, construído a partir de peças estruturais de reposição depois que o Challenger deixou a NASA com apenas três ônibus espaciais com certificação de voo. Nomeado através de uma competição de escolas nacionais em homenagem ao HMS Endeavour do Capitão Cook. Primeiro voo STS-49 (1992-05-07) incluiu a primeira EVA de três pessoas (para capturar o satélite Intelsat VI preso). Destaques: STS-61 (1993-12) primeira missão de manutenção do Hubble restaurou a óptica do Hubble; STS-88 (1998-12-04) primeiro voo de montagem da EEI entregando o Nó 1 Unity; STS-100 (2001-04) instalou o Canadarm2; STS-130 (2010-02) instalou Tranquility + Cupola; STS-134 (2011-05) instalou o detector de raios cósmicos AMS-02 — última tripulação de EVA do programa Shuttle. Em exibição no California Science Center, Los Angeles.",
+    "new": "Quinto e último orbitador operacional, construído a partir de peças estruturais sobressalentes depois que a Challenger deixou a NASA com apenas três orbitadores certificados para voo. Batizado por meio de um concurso entre escolas do país, em homenagem ao HMS Endeavour do capitão Cook. O primeiro voo, STS-49 (1992-05-07), incluiu a primeira caminhada espacial com três pessoas (para capturar o satélite Intelsat VI, à deriva). Destaques: STS-61 (1993-12), primeira missão de manutenção do Hubble, restaurou a óptica do telescópio; STS-88 (1998-12-04), primeiro voo de montagem da EEI, entregou o Nó 1 Unity; STS-100 (2001-04) instalou o Canadarm2; STS-130 (2010-02) instalou Tranquility + Cupola; STS-134 (2011-05) instalou o detector de raios cósmicos AMS-02 — a última tripulação a fazer caminhada espacial no programa Shuttle. Em exibição no California Science Center, em Los Angeles."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/endeavour.json",
+    "at": "best_known_for",
+    "old": "Shuttle mais jovem; primeira servicing do Hubble STS-61 (1993); entregou Unity + Canadarm2 + Tranquility/Cupola",
+    "new": "Shuttle mais jovem; primeira manutenção do Hubble, STS-61 (1993); entregou Unity + Canadarm2 + Tranquility / Cupola"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/enterprise.json",
+    "at": "tagline",
+    "old": "OV-101 — protótipo do Shuttle. Renomeado após campanha de fãs de Star Trek. Voou testes atmosféricos em 1977; nunca atingiu órbita",
+    "new": "OV-101 — protótipo do Shuttle. Ex-Constitution, rebatizado por fãs de Star Trek. Testes atmosféricos em 1977; nunca chegou à órbita"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/enterprise.json",
+    "at": "description",
+    "old": "Originalmente chamado Constitution, renomeado Enterprise após uma campanha de cartas de fãs organizada por fãs de Star Trek em 1976 quando o ônibus espacial estava sendo nomeado. Construído como protótipo para os Testes de Aproximação e Pouso (ALT) — oito voos cativos e cinco voos livres a partir da Aeronave Transportadora do Shuttle sobre a Base da Força Aérea de Edwards em 1977. Primeiro voo livre em 1977-08-12 pilotado por Fred Haise + Gordon Fullerton provou que o orbitador podia planar e pousar. NÃO continha propulsão ou ladrilhos TPS ativos; converter Enterprise para o padrão de voo foi estimado como mais pesado do que construir um novo orbitador a partir de peças estruturais sobressalentes, então Challenger foi construído no lugar. Agora em exibição no Intrepid Sea, Air & Space Museum em NYC.",
+    "new": "Originalmente chamado Constitution, foi rebatizado Enterprise após uma campanha de cartas organizada por fãs de Star Trek em 1976, quando o ônibus espacial estava sendo batizado. Construído como protótipo para os Testes de Aproximação e Pouso (ALT) — oito voos cativos e cinco voos livres a partir do Shuttle Carrier Aircraft sobre a Base da Força Aérea de Edwards, em 1977. O primeiro voo livre, em 1977-08-12, pilotado por Fred Haise + Gordon Fullerton, provou que o orbitador podia planar e pousar. NÃO tinha propulsão nem placas TPS ativas; converter o Enterprise para voo foi estimado como mais pesado do que construir um novo orbitador a partir de peças estruturais sobressalentes, por isso o Challenger foi construído. Hoje em exibição no Intrepid Sea, Air & Space Museum, em Nova York."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/enterprise.json",
+    "at": "best_known_for",
+    "old": "Protótipo do Shuttle; testes de lançamento atmosférico em 1977; nunca voou para órbita",
+    "new": "Protótipo do Shuttle; testes atmosféricos de largada em 1977; nunca chegou à órbita"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gaganyaan.json",
+    "at": "description",
+    "old": "A primeira espaçonave tripulada da Índia, com objetivo de um voo tripulado em 2027 no LVM3 (anteriormente GSLV Mk III). Três astronautas em uma missão de órbita baixa terrestre de aproximadamente sete dias — o início de um programa indiano de voo espacial humano. A ISRO completou testes de qualificação do módulo de tripulação e treinou candidatos a astronautas.",
+    "new": "A primeira espaçonave tripulada da Índia, com um voo tripulado previsto para 2027 no LVM3 (antes GSLV Mk III). Três astronautas em uma missão de cerca de sete dias na órbita baixa da Terra — o início de um programa indiano de voos espaciais tripulados. A ISRO concluiu os testes de qualificação do módulo da tripulação e treinou candidatos a astronauta."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "tagline",
+    "old": "Tripulação de duas pessoas; prática de rendezvous e EVA",
+    "new": "Tripulação de duas pessoas; encontros orbitais e caminhadas espaciais"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "dispatch",
+    "old": "A espaçonave Gemini foi a primeira que os americanos conseguiram realmente pilotar. Os astronautas do Mercury principalmente ocupavam uma cápsula controlada pelo solo; a tripulação de duas pessoas do Gemini recebeu propulsores, um computador de voo e a capacidade de alterar sua própria órbita — para perseguir outra nave e acoplar-se a ela. Esse era seu único propósito: não ir a qualquer lugar novo, mas ser uma máquina para praticar as manobras que o Apollo precisaria. Mais espaçosa que o Mercury mas ainda apertada, dividida em um módulo de tripulação e uma seção de equipamentos como o Apollo que viria depois, em dez voos ela transformou rendezvous, acoplamento e resistência de duas semanas de questões em aberto em coisas que uma tripulação simplesmente conseguia fazer.",
+    "new": "A espaçonave Gemini foi a primeira que os americanos puderam de fato pilotar. O astronauta da Mercury viajava, na maior parte do tempo, numa cápsula controlada do solo; a tripulação de duas pessoas da Gemini ganhou propulsores, um computador de voo e a capacidade de mudar a própria órbita — para perseguir outra nave e acoplar a ela. Essa era toda a sua razão de existir: não ir a algum lugar novo, mas ser uma máquina de treinar as manobras de que a Apollo precisaria. Mais espaçosa que a Mercury, mas ainda apertada, e dividida, como a Apollo depois dela, em um módulo da tripulação e uma seção de equipamentos, ela transformou, ao longo de dez voos, o encontro orbital, o acoplamento e a resistência de duas semanas de questões em aberto em coisas que uma tripulação simplesmente conseguia fazer."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "description",
+    "old": "A espaçonave de duas pessoas que ensinou à NASA como fazer rendezvous, acoplar e caminhar no espaço — as técnicas que tornaram o Apollo possível. Dois voos de teste não tripulados (Gemini 1 e 2) em 1964–1965 antecederam dez missões tripuladas (Gemini 3–12) em 1965–1966, cada uma um passo em direção à Lua.",
+    "new": "A espaçonave de duas pessoas que ensinou à NASA como fazer encontros orbitais, acoplar e caminhar no espaço — as técnicas que tornaram a Apollo possível. Dois voos de teste sem tripulação (Gemini 1 e 2) em 1964–1965 antecederam dez missões tripuladas (Gemini 3–12) em 1965–1966, cada uma um passo em direção à Lua."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "best_known_for",
+    "old": "Tripulação de duas pessoas; prática de rendezvous e EVA",
+    "new": "Tripulação de duas pessoas; encontros orbitais e caminhadas espaciais"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+    "at": "dispatch",
+    "old": "A cápsula Mercury foi concebida como a menor coisa capaz de manter uma pessoa viva no espaço — e isso se nota. Não havia espaço para fazer muito além de sentar; o astronauta vestia a nave tanto quanto a pilotava. Mas seu formato resolveu o problema mais difícil da era — como voltar. A extremidade romba, revestida por um escudo concebido para se carbonizar e dissipar o calor, transformou a reentrada de uma certeza fatal em algo sobrevivível, e seu cone foi a primeira resposta americana à questão de como seria uma nave espacial tripulada. Cada cápsula desde então — Gemini, Apollo, Dragon — é descendente deste pequeno cone apertado.",
+    "new": "A cápsula Mercury foi concebida como a menor coisa capaz de manter uma pessoa viva no espaço — e isso se nota. Não havia espaço para fazer muito além de ficar sentado; o astronauta vestia a nave tanto quanto viajava nela. Mas seu formato resolveu o problema mais difícil da época — como voltar. A extremidade romba, revestida por um escudo concebido para se carbonizar e dissipar o calor, transformou a reentrada de uma certeza fatal em algo possível de sobreviver, e seu cone foi a primeira resposta americana à questão de como seria uma nave espacial tripulada. Toda cápsula desde então — Gemini, Apollo, Dragon — descende deste pequeno cone apertado."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+    "at": "description",
+    "old": "A cápsula em formato cônico que levou seis astronautas americanos na Projeto Mercury entre 1961 e 1963. Tão diminuta que John Glenn a descreveu como estar \"em lata de spam\" — mas comprovou que o voo orbital era alcançável para os Estados Unidos.",
+    "new": "A cápsula em formato de cone que levou seis astronautas americanos no Projeto Mercury entre 1961 e 1963. Tão pequena que John Glenn a descreveu, em frase famosa, como “spam numa lata” — mas comprovou que o voo orbital era alcançável para os Estados Unidos."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/new-shepard.json",
+    "at": "description",
+    "old": "Espaçonave tripulada suborbikal da Blue Origin, em homenagem a Alan Shepard. Arquitetura com propulsor reutilizável e cápsula, onde a cápsula pousa sob paraquedas. Tripulada desde 2021; transportou Jeff Bezos, William Shatner e outros em breves voos suborbiais.",
+    "new": "Espaçonave tripulada suborbital da Blue Origin, em homenagem a Alan Shepard. Arquitetura de propulsor reutilizável + cápsula, com a cápsula pousando sob paraquedas. Tripulada desde 2021; transportou Jeff Bezos, William Shatner e outros em breves voos suborbitais."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/shenzhou.json",
+    "at": "description",
+    "old": "A nave espacial da China, externamente derivada da Soyuz, mas ampliada. Primeiro voo tripulado em 2003 (Shenzhou 5, Yang Liwei); agora o ferry padrão para Tiangong, com rotações de tripulação a cada seis meses.",
+    "new": "A espaçonave tripulada da China, externamente derivada da Soyuz, mas ampliada. Primeiro voo tripulado em 2003 (Shenzhou 5, Yang Liwei); hoje é o transporte padrão até a Tiangong, com rodízio de tripulações a cada seis meses."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+    "at": "dispatch",
+    "old": "O Soyuz 7K-OK foi o primeiro da linha — a versão original da espaçonave que sobreviveria a todas as outras. Ele introduziu o layout de três módulos que todo Soyuz mantém desde então: um módulo orbital esférico para viver e trabalhar, um módulo de descida compacto para a viagem de retorno, e um módulo de serviço para energia e propulsão. Foi também a versão que matou Vladimir Komarov em seu primeiro voo tripulado e, em uma forma aprimorada, os três cosmonautas da Soyuz 11 — o duro aprendizado inicial que transformou um projeto apressado em um confiável. Rudimentar e perigoso no início, sua arquitetura básica provou ser tão sólida que, refinada ao longo de décadas, ainda está levando tripulações à órbita hoje.",
+    "new": "A Soyuz 7K-OK foi a primeira da linha — a versão original da espaçonave que sobreviveria a todas as outras. Introduziu o layout de três módulos que toda Soyuz manteve desde então: um módulo orbital esférico para viver e trabalhar, um módulo de descida compacto para a volta para casa e um módulo de serviço para energia e propulsão. Foi também a versão que matou Vladimir Komarov em seu primeiro voo tripulado e, em forma aprimorada, os três cosmonautas da Soyuz 11 — o duro aprendizado inicial que transformou um projeto apressado em um projeto confiável. Rudimentar e perigosa no início, sua arquitetura básica se mostrou tão sólida que, refinada ao longo de décadas, ainda leva tripulações à órbita hoje."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+    "at": "description",
+    "old": "A primeira geração de Soyuz, com todas as escolhas arquitetônicas que suportaram por sessenta anos: esfera de módulo orbital, módulo de descida, módulo de serviço com matrizes solares implantáveis. Tragicamente introduzido por Soyuz 1 (o vôo fatal de Komarov, 1967).",
+    "new": "A primeira geração da Soyuz, com todas as escolhas de arquitetura que perduraram por sessenta anos: módulo orbital esférico, módulo de descida, módulo de serviço com painéis solares desdobráveis. Estreou tragicamente com a Soyuz 1 (o voo fatal de Komarov, 1967)."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+    "at": "tagline",
+    "old": "Geração Soyuz atual; salva-vidas EEI",
+    "new": "Geração atual da Soyuz; salva-vidas da EEI"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+    "at": "description",
+    "old": "A geração atual do Soyuz, em serviço desde 2016. Novo software e sistema de rendezvous auxiliado por GLONASS/GPS torna possível o acoplamento à EEI em até 3 horas. Parte da família Soyuz — a linhagem de naves espaciais tripuladas mais utilizada na história.",
+    "new": "A geração atual da Soyuz, em serviço desde 2016. O novo software e o encontro orbital auxiliado por GLONASS/GPS tornam possível o acoplamento à EEI em até 3 horas. Parte da família Soyuz — a linhagem de naves tripuladas mais voada da história."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+    "at": "best_known_for",
+    "old": "Geração Soyuz atual; salva-vidas EEI",
+    "new": "Geração atual da Soyuz; salva-vidas da EEI"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
+    "at": "tagline",
+    "old": "Mir-era Soyuz; aviónica modernizada",
+    "new": "Soyuz da era Mir; aviônica modernizada"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
+    "at": "description",
+    "old": "O Mir-era Soyuz (1986-2002), com a aviônica redesenhada e o novo sistema de acoplagem automatizado Kurs. Voou soviético, russo e cosmonautas de países parceiros para Mir durante 15 anos.",
+    "new": "A Soyuz da era Mir (1986–2002), com aviônica redesenhada e o novo sistema automatizado de acoplamento Kurs. Levou cosmonautas soviéticos, russos e de países parceiros à Mir por 15 anos."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
+    "at": "best_known_for",
+    "old": "Mir-era Soyuz; aviónica modernizada",
+    "new": "Soyuz da era Mir; aviônica modernizada"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+    "at": "tagline",
+    "old": "ISS-era Soyuz; envelope ampliado de altura da tripulação",
+    "new": "Soyuz da era EEI; faixa de altura da tripulação ampliada"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+    "at": "description",
+    "old": "O ISS-era Soyuz (2002-2012), com um computador de voo digital e um envelope mais amplo de altura da tripulação para acomodar o corpo de astronautas parceiros internacionais. Transportaram os primeiros turistas espaciais ao lado de equipes profissionais.",
+    "new": "A Soyuz da era da EEI (2002–2012), com computador de voo digital e uma faixa de altura da tripulação mais ampla para acomodar o corpo internacional de astronautas parceiros. Levou os primeiros turistas espaciais ao lado de tripulações profissionais."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+    "at": "best_known_for",
+    "old": "ISS-era Soyuz; envelope ampliado de altura da tripulação",
+    "new": "Soyuz da era EEI; faixa de altura da tripulação ampliada"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+    "at": "tagline",
+    "old": "Veículo de tripulação orbital alado reutilizável",
+    "new": "Veículo orbital tripulado, alado e reutilizável"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+    "at": "best_known_for",
+    "old": "Veículo de tripulação orbital alado reutilizável",
+    "new": "Veículo orbital tripulado, alado e reutilizável"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/starliner.json",
+    "at": "tagline",
+    "old": "Veículo comercial de tripulação da Boeing",
+    "new": "Nave tripulada comercial da Boeing"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/starliner.json",
+    "at": "description",
+    "old": "Veículo Commercial Crew da Boeing, com um sistema de aborto de lançamento com propulsor que utiliza seus próprios propulsores do módulo de serviço. Crew Flight Test (junho de 2024) sofreu falhas de propulsores e vazamentos de hélio; a NASA retornou a cápsula sem tripulação (setembro de 2024). Wilmore e Williams retornaram via SpaceX Crew-9 (fevereiro de 2025). Os voos tripulados foram suspensos pendente de recertificação.",
+    "new": "A nave Commercial Crew da Boeing, com um sistema de aborto de lançamento do tipo pusher que usa os propulsores do próprio módulo de serviço. O Crew Flight Test (junho de 2024) teve falhas de propulsores e vazamentos de hélio; a NASA trouxe a cápsula de volta sem tripulação (setembro de 2024). Wilmore e Williams voltaram pela Crew-9 da SpaceX (fevereiro de 2025). Voos tripulados suspensos até uma nova certificação."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/starliner.json",
+    "at": "best_known_for",
+    "old": "Veículo comercial de tripulação da Boeing",
+    "new": "Nave tripulada comercial da Boeing"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "tagline",
+    "old": "Primeiro voo multi-rede; primeiro passeio espacial",
+    "new": "Primeira tripulação múltipla; primeira caminhada espacial"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "dispatch",
+    "old": "A espaçonave Voskhod foi uma Vostok levada além de seu projeto original, e mostra exatamente como é a improvisação sob prazo. Para fazer a cápsula de um assento carregar mais, os engenheiros removeram o assento ejetável — a única saída da tripulação — e no primeiro voo deixaram de fora os trajes pressurizados também; no segundo parafusaram uma eclusa inflável para que um cosmonauta pudesse sair. Conquistou a primeira tripulação multipessoal e a primeira caminhada espacial, os dois últimos primeiros lugares que o programa soviético reivindicaria. Mas não tinha margem restante, e após o quase desastre de seu segundo voo foi aposentada — uma solução provisória que cumpriu seu trabalho limitado e sabiamente não foi solicitada a fazer mais.",
+    "new": "A espaçonave Voskhod foi uma Vostok levada além de seu projeto, e mostra exatamente como é a improvisação sob prazo. Para fazer a cápsula de um assento carregar mais, os engenheiros removeram o assento ejetável — a única saída da tripulação — e no primeiro voo dispensaram também os trajes pressurizados; no segundo, parafusaram uma eclusa inflável para que um cosmonauta pudesse sair. Conquistou a primeira tripulação com mais de uma pessoa e a primeira caminhada espacial, os dois últimos “primeiros” que o programa soviético reivindicaria. Mas não tinha mais margem alguma, e após o quase desastre de seu segundo voo foi aposentada — uma solução provisória que cumpriu seu trabalho restrito e, sabiamente, não foi chamada a fazer mais."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "description",
+    "old": "Um Vostok modificado adaptado para transportar até três cosmonautas. Dois voos tripulados — Voskhod 1 (primeira tripulação múltipla) e Voskhod 2 (primeira caminhada espacial de Aleksei Leonov em 1965). Empurrou para além da margem de design e foi aposentado a favor da Soyuz.",
+    "new": "Uma Vostok modificada, adaptada para levar até três cosmonautas. Dois voos tripulados — Voskhod 1 (primeira tripulação com mais de uma pessoa) e Voskhod 2 (primeira caminhada espacial de Aleksei Leonov, em 1965). Levada além da margem de projeto, foi aposentada em favor da Soyuz."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "best_known_for",
+    "old": "Primeiro voo multi-rede; primeiro passeio espacial",
+    "new": "Primeira tripulação múltipla; primeira caminhada espacial"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/vostok.json",
+    "at": "tagline",
+    "old": "Primeira nave espacial tripulado (Gagarin, 1961)",
+    "new": "Primeira nave espacial tripulada (Gagarin, 1961)"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/vostok.json",
+    "at": "dispatch",
+    "old": "A espaçonave Vostok foi a primeira máquina a levar um ser humano ao espaço e trazê-lo de volta, e seu design é um estudo em fazer o mínimo que funciona. A reentrada é a parte mais difícil da volta para casa, então a Vostok usou a única forma que sobrevive a ela de qualquer ângulo — uma esfera — o que significava que os sistemas automáticos nunca precisavam apontar a nave com precisão; ela tombaria e ainda assim desceria com o escudo térmico voltado para baixo. O problema era que a esfera aterrissava com impacto muito forte para uma pessoa, então o cosmonauta ejetava perto do solo e descia de paraquedas separadamente, um fato ocultado por anos para proteger os recordes. Rudimentar, secreta e completamente eficaz, ela levou seis pessoas à órbita e não perdeu nenhuma — e seu layout de cápsula mais módulo de serviço tornou-se o padrão para a Soyuz, ainda em operação hoje.",
+    "new": "A espaçonave Vostok foi a primeira máquina a levar um ser humano ao espaço e trazê-lo de volta, e seu projeto é um estudo em fazer o mínimo que funciona. A reentrada é a parte mais difícil da volta para casa, então a Vostok usou a única forma que sobrevive a ela de qualquer ângulo — uma esfera — o que significava que os sistemas automáticos nunca precisavam apontar a nave com precisão; ela entrava rolando e, ainda assim, descia com o lado do escudo térmico para baixo. O problema era que a esfera pousava com impacto forte demais para uma pessoa, então o cosmonauta se ejetava perto do solo e descia de paraquedas separadamente, um fato ocultado por anos para proteger os recordes. Rudimentar, secreta e completamente eficaz, levou seis pessoas à órbita e não perdeu nenhuma — e seu layout de cápsula mais módulo de serviço tornou-se o padrão para a Soyuz, ainda em operação hoje."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/vostok.json",
+    "at": "description",
+    "old": "O módulo de descida esférica que devolveu Iuri Gagarin da órbita em 1961-04-12 — o primeiro voo espacial humano. Seis voos tripulados entre 1961 e 1963, incluindo a missão orbital de Valentina Tereshkova como primeira mulher no espaço.",
+    "new": "O módulo de descida esférico que trouxe Iuri Gagarin de volta da órbita em 1961-04-12 — o primeiro voo espacial humano. Seis voos tripulados entre 1961 e 1963, incluindo a missão orbital solo de Valentina Tereshkova, a primeira mulher no espaço."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/vostok.json",
+    "at": "best_known_for",
+    "old": "Primeira nave espacial tripulado (Gagarin, 1961)",
+    "new": "Primeira nave espacial tripulada (Gagarin, 1961)"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/x37b.json",
+    "at": "tagline",
+    "old": "Avião espacial robótico reutilizável da USSF — missões orbitais classificadas plurianuais; único pós-Shuttle dos EUA",
+    "new": "Avião espacial robótico reutilizável da USSF — missões orbitais classificadas de anos; único dos EUA em operação após o Shuttle"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/x37b.json",
+    "at": "description",
+    "old": "Mini avião espacial robótico (8,9 m, ~5 t) — Boeing Phantom Works construiu dois veículos de voo para a USAF (transferidos para USSF em 2019). Lança verticalmente (Atlas V 501 originalmente; SpaceX Falcon 9 desde OTV-5; Falcon Heavy desde OTV-7) e pousa horizontalmente na antiga pista do Shuttle de Kennedy. A maioria das cargas úteis + parâmetros orbitais são classificados — durações típicas de missão variam de 224 dias (OTV-1, 2010) a um recorde de 908 dias (OTV-6, 2020-2022). Cargas úteis desclassificadas conhecidas incluem demonstrador de tecnologia de propulsor Hall, experimento de comunicação de radiofrequência da AFRL, e um experimento de transmissão de energia solar para micro-ondas de 1 W (PRAM, OTV-6). Em 2026, voou sete missões.",
+    "new": "Mini avião espacial robótico (8,9 m de comprimento, ~5 t) construído pela Boeing Phantom Works para a USAF e transferido para a USSF em 2019. Lança na vertical (originalmente em um Atlas V 501; em um Falcon 9 da SpaceX a partir da OTV-5; em um Falcon Heavy a partir da OTV-7) e pousa na horizontal na antiga pista do Shuttle do Kennedy. A maioria das cargas úteis e dos parâmetros orbitais é classificada — as durações de missão conhecidas vão de 224 dias (OTV-1, 2010) a um recorde de 908 dias (OTV-6, 2020-2022). Os experimentos desclassificados incluem uma demonstração de tecnologia de propulsor de efeito Hall, um teste de comunicação por radiofrequência da AFRL e um experimento de transmissão de energia solar por micro-ondas de 1 W (PRAM, OTV-6). Em 2026, já voou sete missões."
+  },
+  {
+    "rel": "fleet/engine/f-1.json",
+    "at": "description",
+    "old": "Cinco F-1s no primeiro estágio de Saturn V geravam impulso combinado que nenhum foguete único antes ou depois igualou ao nível do mar. O ciclo de gerador de gás da Rocketdyne queimava LOX e RP-1 em uma taxa que exigia turbobombas do tamanho de motores de carro e uma câmara de combustão na qual os engenheiros tiveram de resolver instabilidade de combustão por tentativa, explosão e redesenho. Voou pela primeira vez em 9 de novembro de 1967 e colocou Apollo em seu caminho para a Lua seis vezes antes do programa terminar.",
+    "new": "Cinco F-1 no primeiro estágio do Saturn V geravam um empuxo combinado que nenhum outro foguete, antes ou depois, igualou ao nível do mar. O ciclo de gerador de gás da Rocketdyne queimava LOX e RP-1 a uma vazão que exigia turbobombas do tamanho de motores de carro e uma câmara de combustão em que os engenheiros tiveram de resolver a instabilidade de combustão por tentativa, explosão e redesenho. Voou pela primeira vez em 9 de novembro de 1967 e pôs a Apollo a caminho da Lua seis vezes antes do fim do programa."
+  },
+  {
+    "rel": "fleet/engine/f-1.json",
+    "at": "best_known_for",
+    "old": "Motor líquido de câmara única mais potente jamais voado — cinco elevaram Saturn V",
+    "new": "Motor líquido de câmara única mais potente jamais voado — cinco impulsionaram o Saturn V"
+  },
+  {
+    "rel": "fleet/engine/h-1.json",
+    "at": "description",
+    "old": "O H-1 foi o motor que a Rocketdyne desenvolveu para preencher a lacuna entre os primeiros propulsores de mísseis balísticos e o F-1 que viria depois. Operando em ciclo de gerador de gás com LOX e RP-1, oito H-1s agrupados juntos formavam o primeiro estágio do Saturn I — e posteriormente do Saturn IB — voando em todos os testes de hardware Apollo não-tripulados e na missão tripulada Apollo 7. Seu primeiro voo foi em 27 de outubro de 1961; continuou em operação até o final do programa Saturn IB em 1975.",
+    "new": "O H-1 foi o motor que a Rocketdyne desenvolveu para preencher a lacuna entre os primeiros propulsores de mísseis balísticos e o F-1 que viria depois. Operando em ciclo de gerador de gás com LOX e RP-1, oito H-1 agrupados formavam o primeiro estágio do Saturn I — e depois do Saturn IB —, voando em todos os testes de hardware da Apollo sem tripulação e na Apollo 7 tripulada. Seu primeiro voo foi em 27 de outubro de 1961; continuou em operação até o fim do programa Saturn IB, em 1975."
+  },
+  {
+    "rel": "fleet/engine/h-1.json",
+    "at": "best_known_for",
+    "old": "Motor propulsor de oito clusters do Saturn I/IB — o ensaio do F-1",
+    "new": "Motor do primeiro estágio do Saturn I/IB, em conjunto de oito — o ensaio do F-1"
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "tagline",
+    "old": "Estágio superior criogênico de Ariane, três décadas de serviço",
+    "new": "Estágio superior criogênico do Ariane, três décadas de serviço"
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "description",
+    "old": "O HM7B é o motor de estágio superior alimentado por hidrogênio que dava aos foguetes Ariane um impulso energético após o desligamento do estágio principal. Operando em ciclo de gerador de gás com LOX e LH2, realizou seu primeiro voo no Ariane 2 em maio de 1986 e continuou até o fim da vida operacional do Ariane 5 em julho de 2023. Seu tamanho reduzido mascara um impulso específico elevado que o tornou o motor de trabalho para injeções em órbita geoestacionária, transportando satélites comerciais e cargas úteis científicas — incluindo Rosetta, Mars Express e Venus Express — para suas trajetórias de partida ao longo de mais de três décadas.",
+    "new": "O HM7B é o motor de estágio superior a hidrogênio que dava aos foguetes Ariane um impulso de alta energia depois do desligamento do estágio principal. Operando em ciclo de gerador de gás com LOX e LH2, voou pela primeira vez no Ariane 2 em maio de 1986 e seguiu até o fim da vida operacional do Ariane 5, em julho de 2023. Seu tamanho reduzido disfarça um impulso específico elevado, que o fez o cavalo de batalha das injeções em órbita de transferência geoestacionária, levando satélites comerciais e cargas úteis científicas — incluindo Rosetta, Mars Express e Venus Express — às suas trajetórias de partida ao longo de mais de três décadas."
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "best_known_for",
+    "old": "Motor criogênico de estágio superior europeu — motor de transferência translunare de Ariane",
+    "new": "Motor criogênico europeu de estágio superior — o cavalo de batalha translunar do Ariane"
+  },
+  {
+    "rel": "fleet/engine/j-2.json",
+    "at": "description",
+    "old": "O J-2 queimava hidrogênio e oxigênio, e podia ser reiniciado no vácuo do espaço — uma capacidade que tornou possível a queimada de injeção translunar da Saturn V. O design de gerador de gás da Rocketdyne foi utilizado nos segundo e terceiro estágios da Saturn V e na Saturn IB, combinando desempenho com reinicializações no espaço que transformaram um foguete em um verdadeiro estágio de partida. Seu primeiro voo foi em fevereiro de 1966 e o último voo foi no Apollo-Soyuz Test Project em julho de 1975.",
+    "new": "O J-2 queimava hidrogênio e oxigênio e podia ser reacendido no vácuo do espaço — uma capacidade que tornou possível a queima de injeção translunar do Saturn V. O projeto de gerador de gás da Rocketdyne voou no segundo e no terceiro estágios do Saturn V e no Saturn IB, combinando desempenho com reacendimentos no espaço que transformaram um veículo lançador num verdadeiro estágio de partida. Voou pela primeira vez em fevereiro de 1966 e pela última no Apollo-Soyuz Test Project, em julho de 1975."
+  },
+  {
+    "rel": "fleet/engine/j-2.json",
+    "at": "best_known_for",
+    "old": "Motor de estágio superior de hidrogênio reiniciável que enviou a Apollo translunar",
+    "new": "Motor de hidrogênio reacendível de estágio superior que enviou a Apollo rumo à Lua"
+  },
+  {
+    "rel": "fleet/engine/le-5b.json",
+    "at": "tagline",
+    "old": "Estágio superior reiniciável do Japão, operando no H-IIA até o H3",
+    "new": "Estágio superior reiniciável do Japão, em voo do H-IIA ao H3"
+  },
+  {
+    "rel": "fleet/engine/le-5b.json",
+    "at": "description",
+    "old": "O LE-5B é o motor de estágio superior criogênico que conectou duas gerações de veículos lançadores japoneses. Operando em ciclo expander-bleed com LOX e LH2, pode ser reiniciado em voo — um requisito para colocar cargas úteis em órbitas precisas após uma fase de costa. Teve seu primeiro voo no H-IIA em agosto de 2001 e desde então foi atualizado como LE-5B-3 para continuidade de serviço no H3, concedendo ao Japão continuidade ininterrupta de estágio superior da era de montagem da EEI até o presente. Sua combinação de reiniciabilidade e a simplicidade limpa do ciclo expander-bleed o tornaram o complemento natural de estágio superior tanto para o LE-7A quanto para o LE-9.",
+    "new": "O LE-5B é o motor criogênico de estágio superior que ligou duas gerações de veículos lançadores japoneses. Operando em ciclo expansor-sangria com LOX e LH2, pode ser reiniciado em voo — requisito para colocar cargas úteis em órbitas precisas depois de uma fase balística. Voou pela primeira vez no H-IIA em agosto de 2001 e desde então foi aprimorado como LE-5B-3 para continuar em serviço no H3, garantindo ao Japão continuidade ininterrupta de estágio superior da era da montagem da EEI até o presente. A combinação de reiniciabilidade e da simplicidade limpa do ciclo expansor-sangria o tornou o complemento natural de estágio superior tanto do LE-7A quanto do LE-9."
+  },
+  {
+    "rel": "fleet/engine/le-5b.json",
+    "at": "best_known_for",
+    "old": "Estágio superior criogênico reiniciável do Japão — H-IIA até H3",
+    "new": "Estágio superior criogênico reiniciável do Japão — do H-IIA ao H3"
+  },
+  {
+    "rel": "fleet/engine/le-7a.json",
+    "at": "tagline",
+    "old": "Núcleo de hidrogênio com combustão em estágios do Japão, duas décadas de serviço H-II",
+    "new": "Núcleo japonês a hidrogênio com combustão em estágios, duas décadas de serviço no H-II"
+  },
+  {
+    "rel": "fleet/engine/le-7a.json",
+    "at": "description",
+    "old": "O LE-7A é o motor que conferiu ao Japão uma capacidade de lançamento pesado totalmente autóctone. Desenvolvido pela Mitsubishi Heavy Industries para a JAXA, funciona com ciclo de combustão em estágios usando LOX e LH2 — a abordagem termodinâmica que extrai o máximo de eficiência do propelente hidrogênio — e voo inaugural ocorreu no H-IIA em agosto de 2001 como sucessor refinado do LE-7 original. O redesenho resolveu os problemas das turbobombas que haviam causado falhas iniciais no H-II, e o LE-7A passou a servir como âncora nas carreiras operacionais do H-IIA e H-IIB até 2024, lançando os navios de carga HTV do Japão para a Estação Espacial Internacional e a série de satélites de radar ALOS da JAXA-ISRO.",
+    "new": "O LE-7A é o motor que deu ao Japão uma capacidade de lançamento pesado totalmente nacional. Desenvolvido pela Mitsubishi Heavy Industries para a JAXA, funciona em ciclo de combustão em estágios com LOX e LH2 — a abordagem termodinâmica que extrai o máximo de eficiência do propelente hidrogênio — e voou pela primeira vez no H-IIA em agosto de 2001, como sucessor refinado do LE-7 original. O redesenho resolveu os problemas das turbobombas que haviam causado as primeiras falhas do H-II, e o LE-7A passou a sustentar a vida operacional do H-IIA e do H-IIB até 2024, lançando os cargueiros HTV do Japão à Estação Espacial Internacional e a série de satélites de radar ALOS da JAXA-ISRO."
+  },
+  {
+    "rel": "fleet/engine/le-7a.json",
+    "at": "best_known_for",
+    "old": "Núcleo de hidrogênio com combustão em estágios do Japão — que impulsionou H-IIA/H-IIB",
+    "new": "Núcleo japonês a hidrogênio com combustão em estágios — impulsionou o H-IIA/H-IIB"
+  },
+  {
+    "rel": "fleet/engine/le-9.json",
+    "at": "tagline",
+    "old": "O maior motor expansor-sangria já construído — alimentando o H3",
+    "new": "O maior motor expansor-sangria já construído — impulsionando o H3"
+  },
+  {
+    "rel": "fleet/engine/le-9.json",
+    "at": "description",
+    "old": "O LE-9 é uma escolha deliberada de elegância sobre complexidade. Em vez do arranjo turbobomba-pré-câmara da combustão em estágios, utiliza um ciclo expansor-sangria: o hidrogênio é aquecido pelas paredes da câmara e do bocal, e uma porção desse gás é sangrada para impulsionar as turbobombas antes de ser descartada. O ciclo possui pressões de câmara inerentemente mais baixas e um design da seção quente mais simples, negociando algum desempenho por uma redução nos modos de falha mecânica que afligiam os motores japoneses anteriores. Desenvolvido pela Mitsubishi para o foguete H3 da JAXA, o LE-9 voou pela primeira vez em março de 2023 e é o maior motor deste tipo a alcançar serviço operacional.",
+    "new": "O LE-9 é uma escolha deliberada da elegância sobre a complexidade. Em vez do arranjo de turbobombas e pré-câmaras da combustão em estágios, usa um ciclo expansor-sangria: o hidrogênio é aquecido pelas paredes da câmara e do bocal, e uma parte desse gás é sangrada para acionar as turbobombas antes de ser descartada. O ciclo tem pressões de câmara inerentemente mais baixas e uma seção quente de projeto mais simples, trocando algum desempenho por menos modos de falha mecânica, que afligiam motores japoneses anteriores. Desenvolvido pela Mitsubishi para o foguete H3 da JAXA, o LE-9 voou pela primeira vez em março de 2023 e é o maior motor desse tipo a entrar em serviço operacional."
+  },
+  {
+    "rel": "fleet/engine/lr87.json",
+    "at": "tagline",
+    "old": "Estágio primeiro hipergólico de câmara dupla que impulsionou todas as tripulações do Gemini",
+    "new": "Primeiro estágio hipergólico de câmara dupla que lançou todas as tripulações da Gemini"
+  },
+  {
+    "rel": "fleet/engine/lr87.json",
+    "at": "description",
+    "old": "O LR87 é o motor que lançou todas as dez missões tripuladas do Gemini no Titan II. O design da Aerojet posiciona duas câmaras de combustão em um único conjunto de turbobomba, queimando Aerozine-50 e tetróxido de nitrogênio em um ciclo de gerador de gás — uma combinação hipergólica que era equipamento padrão em ICBMs americanos da época. A escolha de propelente teve uma consequência direta para a segurança da tripulação: diferentemente de RP-1 ou hidrogênio, Aerozine-50 e N2O4 se inflamam ao contato, proporcionando uma confiabilidade hipergólica que permitiu ao Gemini voar com assentos ejetáveis em vez de uma torre de escape ao lançamento em todas as dez missões tripuladas. O LR87 foi posteriormente desenvolvido em variantes maiores que voaram no Titan III e Titan IV em missões comerciais e militares até outubro de 2005.",
+    "new": "O LR87 é o motor que lançou todas as dez missões tripuladas da Gemini no Titan II. O projeto da Aerojet coloca duas câmaras de combustão em um único conjunto de turbobomba, queimando Aerozine-50 e tetróxido de nitrogênio em um ciclo de gerador de gás — uma combinação hipergólica que era equipamento padrão nos ICBMs americanos da época. A escolha do propelente teve uma consequência direta para a segurança da tripulação: diferentemente do RP-1 ou do hidrogênio, o Aerozine-50 e o N2O4 se inflamam ao contato, o que dava uma confiabilidade hipergólica que permitiu à Gemini voar com assentos ejetáveis em vez de uma torre de escape de lançamento em todas as dez missões tripuladas. O LR87 foi depois desenvolvido em variantes maiores que voaram nos Titan III e Titan IV em missões comerciais e militares até outubro de 2005."
+  },
+  {
+    "rel": "fleet/engine/lr87.json",
+    "at": "best_known_for",
+    "old": "O estágio primeiro de câmara dupla que lançou as tripulações do Gemini no Titan II",
+    "new": "O primeiro estágio de câmara dupla que lançou as tripulações da Gemini no Titan II"
+  },
+  {
+    "rel": "fleet/engine/merlin-1d.json",
+    "at": "tagline",
+    "old": "Nove motores, um foguete, voado e reutilizado dezenas de vezes",
+    "new": "Nove motores, um booster, voado e reutilizado dezenas de vezes"
+  },
+  {
+    "rel": "fleet/engine/merlin-1d.json",
+    "at": "description",
+    "old": "O Merlin 1D da SpaceX é o motor que tornou possível o Falcon 9 reutilizável. Nove deles se agrupam no primeiro estágio do Falcon 9, operando em ciclo gerador de gás com LOX e RP-1, tendo o motor central também utilizado para queimadas de reentrada e pouso. Primeiro voo em setembro de 2013, o Merlin 1D evoluiu para um motor de alto ciclo: motores individuais acumularam mais de vinte voos cada um, um recorde de reutilização que mudou o que a indústria acreditava ser economicamente viável. A variante a vácuo, Merlin 1D Vacuum, alimenta o estágio superior do Falcon 9 com um bocal maior otimizado para o ambiente de quase-vácuo.",
+    "new": "O Merlin 1D da SpaceX é o motor que tornou possível o Falcon 9 reutilizável. Nove deles se agrupam no primeiro estágio do Falcon 9, operando em ciclo de gerador de gás com LOX e RP-1, e o motor central também é usado nas queimas de reentrada e de pouso. Voou pela primeira vez em setembro de 2013 e o Merlin 1D amadureceu até virar um cavalo de batalha de alta cadência: motores individuais acumularam mais de vinte voos cada um, um recorde de reutilização que mudou o que a indústria acreditava ser economicamente viável. A variante a vácuo, o Merlin 1D Vacuum, impulsiona o estágio superior do Falcon 9 com um bocal maior, otimizado para o ambiente de quase-vácuo."
+  },
+  {
+    "rel": "fleet/engine/merlin-1d.json",
+    "at": "best_known_for",
+    "old": "O motor reutilizável — nove elevam o Falcon 9, voado e reutilizado dezenas de vezes",
+    "new": "O cavalo de batalha reutilizável — nove levantam o Falcon 9, voado e reutilizado dezenas de vezes"
+  },
+  {
+    "rel": "fleet/engine/raptor.json",
+    "at": "description",
+    "old": "O Raptor é o primeiro motor com combustão em ciclo completo a alcançar voo operacional. Neste ciclo termodinâmico, ambos os propelentes — LOX e metano líquido — passam por pré-câmaras de combustão antes de entrar na câmara de combustão principal, extraindo energia máxima e deixando praticamente nenhum propelente não queimado. Engenheiros estudaram o conceito por décadas e concluíram que era proibitivamente complexo; a SpaceX o construiu mesmo assim. Trinta e três Raptors ignizam simultaneamente no primeiro estágio do Super Heavy, e uma variante otimizada para vácuo alimenta o estágio superior do Starship. O primeiro voo integrado do Starship com Raptors decolou em 20 de abril de 2023.",
+    "new": "O Raptor é o primeiro motor de combustão em estágios de ciclo completo a chegar ao voo operacional. Nesse ciclo termodinâmico, os dois propelentes — LOX e metano líquido — passam por pré-câmaras antes de entrar na câmara de combustão principal, extraindo o máximo de energia e deixando praticamente nenhum propelente sem queimar. Os engenheiros estudaram o conceito por décadas e concluíram que era proibitivamente complexo; a SpaceX o construiu mesmo assim. Trinta e três Raptors acendem simultaneamente no primeiro estágio do Super Heavy, e uma variante otimizada para vácuo impulsiona o estágio superior do Starship. O primeiro voo integrado do Starship com Raptors decolou em 20 de abril de 2023."
+  },
+  {
+    "rel": "fleet/engine/rd-107-108.json",
+    "at": "description",
+    "old": "O RD-107 e o RD-108 são os motores do R-7, o primeiro míssil balístico intercontinental do mundo, que a equipe de Sergei Korolev adaptou como veículo de lançamento. O RD-107 alimenta os quatro propulsores acoplados ao R-7; o RD-108 impulsiona o núcleo sustentador. Ambos funcionam com ciclo de gerador de gás usando LOX e querosene, e ambos voaram pela primeira vez em 21 de agosto de 1957 — meses antes do Sputnik. Atualizados como RD-107A e RD-108A, continuam a impulsionar os foguetes Soyuz que levam tripulações à Estação Espacial Internacional, tornando-os o sistema de propulsão homologado para voo humano com maior tempo de operação da história.",
+    "new": "O RD-107 e o RD-108 são os motores do R-7, o primeiro míssil balístico intercontinental do mundo, que a equipe de Sergei Korolev adaptou como veículo de lançamento. O RD-107 impulsiona os quatro propulsores laterais do R-7; o RD-108 aciona o núcleo central sustentador. Ambos funcionam em ciclo de gerador de gás com LOX e querosene, e ambos voaram pela primeira vez em 21 de agosto de 1957 — meses antes do Sputnik. Atualizados como RD-107A e RD-108A, continuam a impulsionar os foguetes Soyuz que levam tripulações à Estação Espacial Internacional, o que os torna o sistema de propulsão certificado para voo humano com maior tempo de operação da história."
+  },
+  {
+    "rel": "fleet/engine/rd-107-108.json",
+    "at": "best_known_for",
+    "old": "Os motores do R-7 — ainda levando humanos no Soyuz após 65+ anos",
+    "new": "Os motores do R-7 — ainda levando humanos na Soyuz após mais de 65 anos"
+  },
+  {
+    "rel": "fleet/engine/rd-180.json",
+    "at": "tagline",
+    "old": "Combustão encenada com oxidante rico russo que os EUA não conseguiram replicar",
+    "new": "Combustão em estágios rica em oxidante, russa, que os EUA não conseguiram replicar"
+  },
+  {
+    "rel": "fleet/engine/rd-180.json",
+    "at": "description",
+    "old": "O RD-180 representa um ramo da tecnologia de propulsão que os Estados Unidos efetivamente cederam à União Soviética durante a Guerra Fria. Combustão encenada com oxidante rico — queimando oxidante em excesso através do pré-queimador para impulsionar a turbobomba — exige materiais e tolerâncias de fabricação que a indústria americana não havia dominado. O projeto de duas câmaras e uma única turbobomba da NPO Energomash voou no Atlas V a partir de maio de 2000, fornecendo ao primeiro estágio uma combinação de empuxo e eficiência que nenhum motor querosene-oxigênio feito nos EUA da época conseguiu igualar. Foi desativado com o Atlas V em 2023.",
+    "new": "O RD-180 representa um ramo da tecnologia de propulsão que os Estados Unidos, na prática, cederam à União Soviética durante a Guerra Fria. A combustão em estágios rica em oxidante — queimar oxidante em excesso na pré-câmara para acionar a turbobomba — exige materiais e tolerâncias de fabricação que a indústria americana não havia dominado. O projeto de duas câmaras e uma única turbobomba da NPO Energomash voou no Atlas V a partir de maio de 2000, dando ao primeiro estágio uma combinação de empuxo e eficiência que nenhum motor americano de querosene e oxigênio da época conseguia igualar. Foi desativado com o Atlas V em 2023."
+  },
+  {
+    "rel": "fleet/engine/rd-180.json",
+    "at": "best_known_for",
+    "old": "Combustão encenada com oxidante rico que os EUA não conseguiram igualar — voou no Atlas V",
+    "new": "Combustão em estágios rica em oxidante que os EUA não conseguiram igualar — voou no Atlas V"
+  },
+  {
+    "rel": "fleet/engine/rd-253.json",
+    "at": "tagline",
+    "old": "Seis motores hipergólicos construídos em cada missão Proton",
+    "new": "Seis motores hipergólicos viabilizaram cada missão do Proton"
+  },
+  {
+    "rel": "fleet/engine/rd-253.json",
+    "at": "description",
+    "old": "O RD-253 é o motor que tornou Proton um dos foguetes mais capacitados da era soviética. Seis deles circundam o primeiro estágio do Proton, cada um operando combustão em estágio rica em oxigênio com tetróxido de nitrogênio e dimetilhidrazina assimétrica — um par hipergólico que se inflama ao contato e não requer sistema de ignição. A escolha de propelente é tóxica e corrosiva, mas armazena em temperatura ambiente e oferece confiabilidade que o Proton sustentou ao longo de décadas de missões comerciais e planetárias. O RD-253 voou pela primeira vez em 16 de julho de 1965 e potencializou cada primeiro estágio Proton até a aposentadoria do foguete.",
+    "new": "O RD-253 é o motor que fez do Proton um dos foguetes de grande porte mais capazes da era soviética. Seis deles circundam o primeiro estágio do Proton, cada um operando combustão em estágios rica em oxigênio com tetróxido de nitrogênio e dimetilhidrazina assimétrica — um par hipergólico que se inflama ao contato e dispensa sistema de ignição. A escolha de propelente é tóxica e corrosiva, mas pode ser armazenada em temperatura ambiente e oferece uma confiabilidade que o Proton manteve ao longo de décadas de missões comerciais e planetárias. O RD-253 voou pela primeira vez em 16 de julho de 1965 e impulsionou todo primeiro estágio do Proton até a aposentadoria do foguete."
+  },
+  {
+    "rel": "fleet/engine/rd-253.json",
+    "at": "best_known_for",
+    "old": "Motor hipergólico do Proton — seis levantaram cada primeiro estágio Proton",
+    "new": "Cavalo de batalha hipergólico do Proton — seis impulsionaram cada primeiro estágio do Proton"
+  },
+  {
+    "rel": "fleet/engine/rl10.json",
+    "at": "description",
+    "old": "O RL10 introduziu o ciclo expansor ao voo espacial: o propelente flui através das paredes do bocal e da câmara, absorve calor e aciona a turbobomba antes mesmo de chegar à câmara de combustão — nenhum gerador de gás separado necessário. Voado pela primeira vez em novembro de 1963 no estágio superior Centaur, a família RL10 desde então impulsionou estágios superiores para missões Atlas, Delta e Vulcan. Sua longevidade é recorde; nenhuma outra família de motores de foguete permaneceu em produção contínua e voo pelo mesmo período, evoluindo através de atualizações de blocos enquanto o conceito termodinâmico central permanece intacto.",
+    "new": "O RL10 introduziu o ciclo expansor ao voo espacial: o propelente flui pelas paredes do bocal e da câmara, absorve calor e aciona a turbobomba antes mesmo de chegar à câmara de combustão — sem precisar de um gerador de gás separado. Voou pela primeira vez em novembro de 1963, no estágio superior Centaur, e desde então a família RL10 impulsiona estágios superiores das missões Atlas, Delta e Vulcan. Sua longevidade é o recorde; nenhuma outra família de motores de foguete permaneceu em produção e em voo contínuos por tanto tempo, evoluindo em atualizações por blocos enquanto o conceito termodinâmico central se mantém intacto."
+  },
+  {
+    "rel": "fleet/engine/rocketdyne-a7.json",
+    "at": "description",
+    "old": "Em 5 de maio de 1961, Alan Shepard voou em um foguete Mercury-Redstone até uma altitude de 187 quilômetros e retornou — tornando-se o primeiro americano no espaço — e o motor que o lançou foi o Rocketdyne A-7. Derivado do A-6 que propulsionava o míssil balístico Redstone, o A-7 operava em ciclo de gerador de gás com LOX e álcool etílico: o mesmo par de propelentes que remontava através do Redstone até o V-2 alemão. O voo Freedom 7 de Shepard durou quinze minutos e alterou os cálculos políticos da Corrida Espacial. O A-7 voou apenas nas missões Mercury-Redstone, aposentando-se em maio de 1963.",
+    "new": "Em 5 de maio de 1961, Alan Shepard subiu num foguete Mercury-Redstone até uma altitude de 187 quilômetros e voltou — tornando-se o primeiro americano no espaço — e o motor que o levantou foi o Rocketdyne A-7. Derivado do A-6, que impulsionava o míssil balístico Redstone, o A-7 operava em ciclo de gerador de gás com LOX e álcool etílico: o mesmo par de propelentes que remonta, passando pelo Redstone, ao V-2 alemão. O voo Freedom 7 de Shepard durou quinze minutos e mudou os cálculos políticos da Corrida Espacial. O A-7 voou apenas nas missões Mercury-Redstone, aposentando-se em maio de 1963."
+  }
+]

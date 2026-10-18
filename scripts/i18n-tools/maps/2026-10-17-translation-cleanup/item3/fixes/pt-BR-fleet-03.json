@@ -1,0 +1,1094 @@
+[
+  {
+    "rel": "fleet/launcher/long-march-5.json",
+    "at": "description",
+    "old": "O primeiro lançador de elevação pesada da China, capaz de colocar 25 t para LEO. Levanta os módulos da estação espacial de Tiangong e as sondas de Tianwen Marte; Longo 5B de março é a variante usada para os módulos da estação.",
+    "new": "O primeiro lançador de carga pesada da China, capaz de colocar 25 t em LEO. Lança os módulos da estação espacial Tiangong e as sondas Tianwen a Marte; o Long March 5B é a variante usada para os módulos da estação."
+  },
+  {
+    "rel": "fleet/launcher/long-march-5.json",
+    "at": "best_known_for",
+    "old": "A espinha dorsal pesada do programa espacial chinês",
+    "new": "Espinha dorsal de carga pesada do programa espacial chinês"
+  },
+  {
+    "rel": "fleet/launcher/long-march-7.json",
+    "at": "tagline",
+    "old": "Tianzhou lançador de carga para Tiangong",
+    "new": "Lançador de carga Tianzhou para Tiangong"
+  },
+  {
+    "rel": "fleet/launcher/long-march-7.json",
+    "at": "best_known_for",
+    "old": "Tianzhou lançador de carga para Tiangong",
+    "new": "Lançador de carga Tianzhou para Tiangong"
+  },
+  {
+    "rel": "fleet/launcher/lvm3.json",
+    "at": "tagline",
+    "old": "Lançador para Gaganyaan",
+    "new": "Lançador certificado para voos tripulados da Gaganyaan"
+  },
+  {
+    "rel": "fleet/launcher/lvm3.json",
+    "at": "description",
+    "old": "LVM3 (GSLV Mk III) é um lançador orbital construído pela ISRO na Índia. Lançador certificado para tripulação para o Gaganyaan. Em serviço desde 2014.",
+    "new": "LVM3 (GSLV Mk III) é um lançador orbital construído pela ISRO na Índia. Lançador certificado para voos tripulados da Gaganyaan. Em serviço desde 2014."
+  },
+  {
+    "rel": "fleet/launcher/lvm3.json",
+    "at": "best_known_for",
+    "old": "Lançador para Gaganyaan",
+    "new": "Lançador certificado para voos tripulados da Gaganyaan"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "tagline",
+    "old": "Primeiro lançador com aprovação para voo humano dos EUA — variante do Redstone. Lançou Freedom 7 (1961-05-05) e Liberty Bell 7 (1961-07-21)",
+    "new": "Primeiro lançador tripulado dos EUA — variante do IRBM Redstone do Exército. Lançou Freedom 7 (1961-05-05) e Liberty Bell 7 (1961-07-21)"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "dispatch",
+    "old": "O Mercury-Redstone era uma arma ensinada a transportar um passageiro. Seu ancestral foi o V-2 alemão, e seu pai direto um míssil balístico do Exército construído para entregar uma ogiva — agora modificado, suavizado e tornado confiável o suficiente para confiar uma vida humana. Ele conseguia apenas um arco suborbital; nunca teve potência para alcançar órbita. Mas esse era exatamente seu trabalho: o primeiro passo cauteloso, a máquina que permitiu à América provar que uma pessoa podia montar um foguete, subir e voltar viva antes de apostar uma vida no propulsor maior e mais arriscado que realmente podia alcançar órbita.",
+    "new": "O Mercury-Redstone era uma arma ensinada a levar um passageiro. Seu ancestral era o V-2 alemão, e seu progenitor direto, um míssil balístico do Exército construído para entregar uma ogiva — agora modificado, amansado e tornado confiável o bastante para que se lhe confiasse uma vida humana. Só conseguia percorrer um arco suborbital; nunca teve potência para chegar à órbita. Mas era exatamente esse o seu papel: o primeiro passo cauteloso, a máquina que permitiu à América provar que uma pessoa podia subir num foguete e voltar viva antes de apostar uma vida no propulsor maior e mais arriscado, capaz de realmente alcançar a órbita."
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "description",
+    "old": "O veículo lançador Mercury-Redstone foi um derivado tripulável do míssil balístico Redstone do Exército dos EUA, modificado no NASA Marshall Space Flight Center para as missões tripuladas suborbitais Mercury. Monoestágio de propelente líquido (LOX + álcool), 25 metros de altura com cápsula e torre de escape (~18 m apenas o propulsor), produzindo aproximadamente 347 kN (~35 toneladas-força) de empuxo. O primeiro voo tripulado foi Mercury-Redstone 3 / Freedom 7 (1961-05-05, Alan Shepard) — o primeiro americano no espaço, 23 dias após Gagarin. Mercury-Redstone 4 / Liberty Bell 7 seguiu (1961-07-21, Gus Grissom). Após o mau funcionamento da escotilha do Liberty Bell 7, a NASA transferiu os voos orbitais Mercury para o mais poderoso Atlas LV-3B. Voo final 1961-07-21; total de 6 veículos Mercury-Redstone construídos, 2 voos tripulados realizados.",
+    "new": "O veículo lançador Mercury-Redstone foi um derivado tripulável do míssil balístico Redstone do Exército dos EUA, modificado no NASA Marshall Space Flight Center para as missões tripuladas suborbitais Mercury. Monoestágio de propelente líquido (LOX + álcool), 25 metros de altura com cápsula e torre de escape (~18 m só o propulsor), produzindo aproximadamente 347 kN (~35 toneladas-força) de empuxo. O primeiro voo tripulado foi o Mercury-Redstone 3 / Freedom 7 (1961-05-05, Alan Shepard) — o primeiro americano no espaço, 23 dias após Gagarin. Em seguida veio o Mercury-Redstone 4 / Liberty Bell 7 (1961-07-21, Gus Grissom). Após o mau funcionamento da escotilha do Liberty Bell 7, a NASA transferiu os voos orbitais Mercury para o mais poderoso Atlas LV-3B. Último voo em 1961-07-21; ao todo, 6 veículos Mercury-Redstone construídos e 2 voos tripulados realizados."
+  },
+  {
+    "rel": "fleet/launcher/n1.json",
+    "at": "dispatch",
+    "old": "O N1 era o Saturn V da União Soviética — e a razão pela qual ela nunca chegou à Lua. Com 105 metros de altura, seu primeiro estágio agrupava trinta motores em sua base, não por escolha, mas por necessidade: nenhum motor soviético isolado chegava perto do poder do F-1 americano, então a equipe de Korolev juntou trinta menores e esperou que funcionassem em sinconia. Nunca funcionaram. Sem uma base de testes grande o suficiente para disparar o estágio montado no solo, cada lançamento era o primeiro teste completo do sistema de propulsão — e todos os quatro, entre 1969 e 1972, falharam. O segundo lançamento (N1-5L, 3 de julho de 1969) caiu de volta em seu pad em uma das maiores explosões não-nucleares já registradas. Seus motores NK-33, escondidos após o programa ser cancelado, provaram ser entre os melhores já construídos e voaram em foguetes americanos um quarto de século depois — uma máquina brilhante derrotada pela única coisa que nunca foi permitido fazer: ser testada antes de voar.",
+    "new": "O N1 era o Saturn V da União Soviética — e a razão pela qual ela nunca chegou à Lua. Com 105 metros de altura, seu primeiro estágio reunia trinta motores em torno da base, não por escolha, mas por necessidade: nenhum motor soviético chegava perto da potência do F-1 americano, então a equipe de Korolev juntou trinta menores e torceu para que disparassem em uníssono. Nunca o fizeram. Sem uma bancada de testes grande o bastante para disparar no solo o estágio montado, cada lançamento era o primeiro teste completo do sistema de propulsão — e os quatro, entre 1969 e 1972, falharam. O segundo lançamento (N1-5L, 3 de julho de 1969) caiu de volta sobre a plataforma de lançamento em uma das maiores explosões não nucleares já registradas. Seus motores NK-33, guardados em segredo depois do cancelamento do programa, revelaram-se entre os melhores já construídos e voaram em foguetes americanos um quarto de século depois — uma máquina brilhante derrotada pela única coisa que nunca lhe permitiram fazer: ser testada antes de voar."
+  },
+  {
+    "rel": "fleet/launcher/n1.json",
+    "at": "description",
+    "old": "A resposta da União Soviética ao Saturn V — um foguete super-pesado de 105 m com trinta motores NK-15 no primeiro estágio. Todos os quatro lançamentos entre 1969 e 1972 falharam; o programa foi cancelado quando Apollo 17 eliminou qualquer chance de um pouso lunar tripulado soviético.",
+    "new": "A resposta da União Soviética ao Saturn V — um foguete superpesado de 105 m, com trinta motores NK-15 no primeiro estágio. Todos os quatro lançamentos entre 1969 e 1972 falharam; o programa foi cancelado quando a Apollo 17 eliminou qualquer chance de um pouso lunar tripulado soviético."
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "old": "Veículo pesado de dois estágios com sete motores a metano BE-4 no primeiro estágio (o mesmo motor que o Vulcan utiliza) e dois motores a hidrogênio BE-3U no segundo. Projetado para recuperação do primeiro estágio via um navio de pouso distante. Coloca ~45 t em LEO e é certificado para implantações de Project Kuiper + NSSL Phase 3. O voo de estreia NG-1 decolou de Cabo Canaveral LC-36 em 16 de janeiro de 2025 e entregou com sucesso o pathfinder Blue Ring à órbita — a tentativa de pouso do primeiro estágio foi perdida, mas a inserção orbital foi limpa.",
+    "new": "Veículo de carga pesada de dois estágios, com sete motores a metano BE-4 no primeiro estágio (o mesmo motor usado pelo Vulcan) e dois motores a hidrogênio BE-3U no segundo. Projetado para recuperar o primeiro estágio por pouso em um navio, ao longo da rota de lançamento. Coloca ~45 t em LEO e é certificado para a fase 3 do NSSL e para as implantações do Project Kuiper. O voo inaugural, NG-1, decolou de Cabo Canaveral LC-36 em 16 de janeiro de 2025 e entregou com sucesso o precursor Blue Ring à órbita — a tentativa de pouso do primeiro estágio foi perdida, mas a inserção orbital foi limpa."
+  },
+  {
+    "rel": "fleet/launcher/proton-k.json",
+    "at": "tagline",
+    "old": "O cavalo-de-carga de peso pesado soviético / russo 1967-2012 — Salyut, Mir, Venera, Vega, retorno de amostra Luna",
+    "new": "O cavalo de batalha soviético / russo de carga pesada, 1967-2012 — Salyut, Mir, Venera, Vega, retorno de amostras Luna"
+  },
+  {
+    "rel": "fleet/launcher/proton-k.json",
+    "at": "description",
+    "old": "Veículo hipergólico (N2O4 / UDMH) de peso pesado de três estágios com estágios superiores de alta energia Blok-D / D-1 / D-2 opcionais. 311 lançamentos entre 1967-03-10 e 2012-03-30 — ancoraram cada módulo Salyut + Mir + segmento russo da EEI, cada sonda Venera e Vega para Vênus, cada retorno de amostra Luna, e Mars-2/-3/-5/-7 soviético. O estágio superior Blok-D foi originalmente desenvolvido para a arquitetura lunar tripulada cancelada N1-L3; reutilizá-lo no Proton-K manteve a linha planetária soviética de alta energia viável até os anos 1980. Substituído por Proton-M que ainda voa.",
+    "new": "Veículo hipergólico (N2O4 / UDMH) de carga pesada, de três estágios, com estágios superiores de alta energia opcionais Blok-D / D-1 / D-2. 311 lançamentos entre 1967-03-10 e 2012-03-30 — lançou todos os módulos Salyut, Mir e do segmento russo da EEI, todas as sondas Venera e Vega a Vênus, todos os retornos de amostras Luna e as Mars-2/-3/-5/-7 soviéticas. O estágio superior Blok-D foi desenvolvido originalmente para a arquitetura lunar tripulada cancelada N1-L3; reutilizá-lo no Proton-K manteve viável até os anos 1980 a linha planetária soviética de alta energia. Substituído pelo Proton-M, que ainda voa."
+  },
+  {
+    "rel": "fleet/launcher/proton-k.json",
+    "at": "best_known_for",
+    "old": "Cavalo-de-carga de peso pesado soviético / russo 1967-2012 — Salyut, Mir, todas as sondas Venera + Vega para Vênus, todos os retornos de amostra Luna, e toda tentativa soviética de planetas exteriores",
+    "new": "Cavalo de batalha soviético / russo de carga pesada, 1967-2012 — Salyut, Mir, todas as sondas Venera + Vega a Vênus, todos os retornos de amostras Luna e toda tentativa soviética de chegar aos planetas exteriores"
+  },
+  {
+    "rel": "fleet/launcher/proton-m.json",
+    "at": "tagline",
+    "old": "Sucessor em Proton-K; elevador pesado modernizado",
+    "new": "Sucessor do Proton-K; lançador de carga pesada modernizado"
+  },
+  {
+    "rel": "fleet/launcher/proton-m.json",
+    "at": "description",
+    "old": "Proton-M é um foguete orbital construído pela Khrunichev na Rússia. Sucessor do Proton-K; transporte pesado modernizado. Em serviço desde 2001.",
+    "new": "Proton-M é um foguete orbital construído pela Khrunichev na Rússia. Sucessor do Proton-K; lançador de carga pesada modernizado. Em serviço desde 2001."
+  },
+  {
+    "rel": "fleet/launcher/proton-m.json",
+    "at": "best_known_for",
+    "old": "Sucessor do Proton-K; transporte pesado modernizado",
+    "new": "Sucessor do Proton-K; lançador de carga pesada modernizado"
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "tagline",
+    "old": "Variante pesada com acelerador da ISRO — Chandrayaan-1 + Mars Orbiter",
+    "new": "Variante pesada do PSLV da ISRO, com propulsores auxiliares — Chandrayaan-1 + Mars Orbiter"
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "description",
+    "old": "Veículo Lançador de Satélites Polares de quatro estágios em sua configuração estendida (XL): seis aceleradores sólidos PS0M-XL com ~50 % mais propelente que o PSLV padrão. Leva ~3,8 t para LEO / ~1,8 t para SSO / ~1,4 t para GTO e já conduziu as missões interplanetárias mais significativas da Índia — Chandrayaan-1 (2008) e Mangalyaan / Missão do Orbitador de Marte (2013) — da Primeira Plataforma de Lançamento de Sriharikota. Ainda ativo para missões de observação da Terra em hiperspectral + radar.",
+    "new": "O Polar Satellite Launch Vehicle, de quatro estágios, em sua configuração estendida (XL): seis propulsores auxiliares sólidos PS0M-XL, com ~50 % mais propelente que o PSLV padrão. Leva ~3,8 t para LEO / ~1,8 t para SSO / ~1,4 t para GTO e lançou as missões interplanetárias mais importantes da Índia — Chandrayaan-1 (2008) e Mangalyaan / Mars Orbiter Mission (2013) — a partir da Primeira Plataforma de Lançamento de Sriharikota. Ainda em atividade para implantações de observação da Terra hiperespectral e por radar."
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "best_known_for",
+    "old": "Variante pesada com acelerador da PSLV da ISRO — lançou Chandrayaan-1 + Missão do Orbitador de Marte",
+    "new": "Variante pesada do PSLV da ISRO, com propulsores auxiliares — lançou Chandrayaan-1 + Mars Orbiter Mission"
+  },
+  {
+    "rel": "fleet/launcher/r-7-vostok.json",
+    "at": "tagline",
+    "old": "Transportado Sputnik e Gagarin para órbita",
+    "new": "Levou Sputnik e Gagarin à órbita"
+  },
+  {
+    "rel": "fleet/launcher/r-7-vostok.json",
+    "at": "description",
+    "old": "O lançador que colocou Sputnik em órbita em 1957 e Iuri Gagarin no espaço em 1961. Um ancestral direto de cada foguete Soyuz voou desde então — a linhagem de produção mais longa em vôos espaciais, com milhares de voos em seis décadas.",
+    "new": "O lançador que colocou o Sputnik em órbita em 1957 e Iuri Gagarin no espaço em 1961. Ancestral direto de todos os foguetes Soyuz lançados desde então — a mais longa linhagem de produção da astronáutica, com milhares de voos ao longo de seis décadas."
+  },
+  {
+    "rel": "fleet/launcher/r-7-vostok.json",
+    "at": "best_known_for",
+    "old": "Transportado Sputnik e Gagarin para órbita",
+    "new": "Levou Sputnik e Gagarin à órbita"
+  },
+  {
+    "rel": "fleet/launcher/saturn-ib.json",
+    "at": "tagline",
+    "old": "Lançou as tripulações do Apollo 7, Skylab e ASTP",
+    "new": "Lançou Apollo 7, as tripulações do Skylab e a ASTP"
+  },
+  {
+    "rel": "fleet/launcher/saturn-ib.json",
+    "at": "dispatch",
+    "old": "Nem todo trabalho do Apollo exigia o foguete lunar. O Saturn IB era a opção pragmática — um veículo lançador tripulado para o trabalho que permanecia em órbita terrestre: o teste do Apollo 7 da espaçonave redesenhada, os voos de transporte para o Skylab e o aperto de mão em órbita do Apollo-Soyuz. Seu primeiro estágio era famosamente um conjunto de tanques emprestados dos mísseis Redstone e Jupiter anteriores, agrupados juntos — peças comprovadas fazendo um novo trabalho em vez de um projeto novo: isso é a lição tranquila de não superprojetar: adapte a máquina à missão.",
+    "new": "Nem toda tarefa do programa Apollo exigia o foguete lunar. O Saturn IB foi a opção pragmática — um lançador certificado para tripulação, feito para o trabalho que ficava na órbita da Terra: o teste da espaçonave redesenhada na Apollo 7, os voos de transporte até o Skylab e o aperto de mão em órbita da Apollo-Soyuz. Seu primeiro estágio era, como se sabe, um feixe de tanques emprestados dos mísseis Redstone e Jupiter, reunidos num só conjunto — peças já comprovadas fazendo um novo trabalho, em vez de um projeto feito do zero. É o foguete menos glamouroso do programa e uma lição discreta sobre não construir demais: adequar a máquina à missão."
+  },
+  {
+    "rel": "fleet/launcher/saturn-ib.json",
+    "at": "description",
+    "old": "Saturn IB é um veículo lançador orbital construído pela Chrysler / Douglas / IBM nos EUA. Lançou as tripulações do Apollo 7, Skylab e ASTP.",
+    "new": "Saturn IB é um veículo lançador orbital construído pela Chrysler / Douglas / IBM nos EUA. Lançou Apollo 7, as tripulações do Skylab e a ASTP."
+  },
+  {
+    "rel": "fleet/launcher/saturn-ib.json",
+    "at": "best_known_for",
+    "old": "Lançou as tripulações do Apollo 7, Skylab e ASTP",
+    "new": "Lançou Apollo 7, as tripulações do Skylab e a ASTP"
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "dispatch",
+    "old": "O Saturn V foi construído para resolver uma questão brutal de aritmética: colocar uma tripulação na Lua significa lançar aproximadamente 45 toneladas em uma trajetória para fora da gravidade terrestre, e em 1961 nada na Terra conseguia lançar uma fração disso. Assim, a equipe de von Braun em Marshall construiu a maior máquina que já havia voado — cinco motores F-1 em sua base, cada um o mais poderoso motor de foguete de câmara única já acionado na época, queimando juntos cerca de treze toneladas de propelente a cada segundo. Tudo nela foi dimensionado pelo destino, não pelo que parecia razoável. O fato de ter voado treze vezes e nunca uma sequer falhado em atingir o espaço é a parte que ainda parece impossível.",
+    "new": "O Saturn V foi construído para resolver uma questão brutal de aritmética: colocar uma tripulação na Lua significa lançar aproximadamente 45 toneladas em uma trajetória para fora da gravidade terrestre, e em 1961 nada na Terra conseguia lançar uma fração disso. Então a equipe de von Braun, em Marshall, construiu a maior máquina que já havia voado — cinco motores F-1 em sua base, cada um o mais poderoso motor de foguete de câmara única já acionado até então, queimando juntos cerca de treze toneladas de propelente a cada segundo. Tudo nela foi dimensionado pelo destino, não pelo que parecia razoável. O fato de ter voado treze vezes sem jamais deixar de chegar ao espaço é a parte que ainda parece quase impossível."
+  },
+  {
+    "rel": "fleet/launcher/sls-block-1.json",
+    "at": "tagline",
+    "old": "Elevador pesado para o programa lunar Artemis",
+    "new": "Lançador de carga pesada para o programa lunar Artemis"
+  },
+  {
+    "rel": "fleet/launcher/sls-block-1.json",
+    "at": "best_known_for",
+    "old": "Elevador pesado para o programa lunar Artemis",
+    "new": "Lançador de carga pesada para o programa lunar Artemis"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-2.json",
+    "at": "description",
+    "old": "Família Soyuz modernizada de RKTs Progress, com controles de voo digitais substituindo os sistemas analógicos do Soyuz-FG / Soyuz-U. Variantes 2.1a (primeiro estágio RD-107A/RD-108A + terceiro estágio RD-0124), 2.1b (terceiro estágio potencializado), e 2.1v (sem aceleradores, estágio único RD-110). Transporta todos os voos tripulados e de carga russos modernos para a EEI além de cargas úteis Glonass, Resurs-P e Lotos-S.",
+    "new": "Família Soyuz modernizada da RKTs Progress, com controles de voo digitais no lugar dos sistemas analógicos do Soyuz-FG / Soyuz-U. Variantes 2.1a (primeiro estágio RD-107A/RD-108A + terceiro estágio RD-0124), 2.1b (terceiro estágio aprimorado) e 2.1v (sem propulsores auxiliares, estágio único RD-110). Lança todos os voos russos modernos, tripulados e de carga, para a EEI, além das cargas úteis Glonass, Resurs-P e Lotos-S."
+  },
+  {
+    "rel": "fleet/launcher/soyuz-fg.json",
+    "at": "tagline",
+    "old": "Lançamentos de Soyuz tripulados 2001-2019",
+    "new": "Lançamentos tripulados de Soyuz, 2001-2019"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-fg.json",
+    "at": "description",
+    "old": "Soyuz-FG é um lançador orbital construído pelo Progress Rocket Space Centre na Rússia. Lançamentos de Soyuz tripulados 2001-2019.",
+    "new": "Soyuz-FG é um lançador orbital construído pelo Progress Rocket Space Centre na Rússia. Lançamentos tripulados de Soyuz, 2001-2019."
+  },
+  {
+    "rel": "fleet/launcher/soyuz-fg.json",
+    "at": "best_known_for",
+    "old": "Lançamentos de Soyuz tripulados 2001-2019",
+    "new": "Lançamentos tripulados de Soyuz, 2001-2019"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "tagline",
+    "old": "Lançador derivado do R-7 para a primeira geração de naves Soyuz — voou Soyuz 1 (1967) e Soyuz 11 (1971)",
+    "new": "Lançador derivado do R-7 para a primeira geração de naves Soyuz — lançou Soyuz 1 (1967) e Soyuz 11 (1971)"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "description",
+    "old": "O Soyuz 11A511 foi o derivado do R-7 construído para lançar a primeira geração de naves Soyuz 7K-OK, adicionando um estágio superior mais capaz à linhagem de lançadores Vostok/Voskhod. Três estágios a propelente líquido (LOX + querosene), ~50 metros de altura, ~308 toneladas de massa de lançamento. Carregou os voos mais iniciais do programa Soyuz tripulado, incluindo suas duas missões fatais — Soyuz 1 (1967), perdida quando os paraquedas de recuperação se embaraçaram, e Soyuz 11 (1971), cuja tripulação morreu por despressurização durante a descida. O 11A511 foi sucedido pelo Soyuz-U em 1973; a mesma linhagem R-7 ainda leva tripulações como Soyuz-2 hoje.",
+    "new": "O Soyuz 11A511 foi o derivado do R-7 construído para lançar a primeira geração de naves Soyuz 7K-OK, adicionando um estágio superior mais capaz à linhagem de lançadores Vostok/Voskhod. Três estágios a propelente líquido (LOX + querosene), ~50 metros de altura, ~308 toneladas de massa de lançamento. Levou os primeiros voos do programa Soyuz tripulado, incluindo suas duas missões fatais — Soyuz 1 (1967), perdida quando os paraquedas de recuperação se embaraçaram, e Soyuz 11 (1971), cuja tripulação morreu por despressurização durante a descida. O 11A511 foi sucedido pelo Soyuz-U em 1973; a mesma linhagem R-7 ainda leva tripulações como Soyuz-2 hoje."
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "best_known_for",
+    "old": "Lançador derivado do R-7 para a primeira geração de naves Soyuz — voou Soyuz 1 (1967) e Soyuz 11 (1971)",
+    "new": "Lançador derivado do R-7 para a primeira geração de naves Soyuz — lançou Soyuz 1 (1967) e Soyuz 11 (1971)"
+  },
+  {
+    "rel": "fleet/launcher/space-shuttle-stack.json",
+    "at": "name",
+    "old": "Pilha do Space Shuttle",
+    "new": "Conjunto do Space Shuttle"
+  },
+  {
+    "rel": "fleet/launcher/space-shuttle-stack.json",
+    "at": "tagline",
+    "old": "Órbito + ET + SRBs; 135 missões",
+    "new": "Orbitador + ET + SRBs; 135 missões"
+  },
+  {
+    "rel": "fleet/launcher/space-shuttle-stack.json",
+    "at": "description",
+    "old": "O orbital reutilizável, tanque externo, e dois foguetes sólidos impulsionadores que voou 135 missões entre 1981 e 2011. Construiu a EEI, implantou e serviu a Hubble, e demonstrou o comércio de engenharia de um lançador parcialmente reutilizável.",
+    "new": "O conjunto formado pelo orbitador reutilizável, pelo tanque externo e por dois propulsores de foguete sólido, que voou 135 missões entre 1981 e 2011. Construiu a EEI, colocou em órbita e fez a manutenção do Hubble, e demonstrou os compromissos de engenharia de um lançador tripulado parcialmente reutilizável."
+  },
+  {
+    "rel": "fleet/launcher/space-shuttle-stack.json",
+    "at": "best_known_for",
+    "old": "Órbito + ET + SRBs; 135 missões",
+    "new": "Orbitador + ET + SRBs; 135 missões"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "tagline",
+    "old": "Veículo lançador super-pesado totalmente reutilizável",
+    "new": "Veículo lançador superpesado totalmente reutilizável"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "description",
+    "old": "Veículo em dois estágios construído em torno do motor Raptor movido a metano — primeiro estágio Super Heavy (33 Raptors) + segundo estágio Starship (6 Raptors). Projetado para reutilização total e rápida através da recuperação por captura em torre de ambos os estágios, visando cronogramas de trânsito para Marte + Sistema de Pouso Lunar Tripulado Artemis. O primeiro teste de voo integrado (IFT-1) saiu da plataforma em 2023-04-20, mas perdeu o controle do veículo antes da separação de estágios; demonstrou recuperação controlada de ambos os estágios a começar pelo IFT-4 em junho de 2024.",
+    "new": "Veículo de dois estágios construído em torno do motor Raptor, movido a metano — primeiro estágio Super Heavy (33 Raptors) + segundo estágio Starship (6 Raptors). Projetado para reutilização total e rápida, com recuperação de ambos os estágios por captura na torre, visando os prazos de trânsito até Marte e o Artemis Human Landing System. O primeiro teste de voo integrado (IFT-1) deixou a plataforma em 2023-04-20, mas perdeu o controle do veículo antes da separação dos estágios; a recuperação controlada de ambos os estágios foi demonstrada a partir do IFT-4, em junho de 2024."
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "best_known_for",
+    "old": "Veículo lançador super-pesado totalmente reutilizável em desenvolvimento para Artemis HLS + Marte",
+    "new": "Veículo lançador superpesado totalmente reutilizável, em desenvolvimento para o Artemis HLS + Marte"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "tagline",
+    "old": "Cavalo de trabalho para o Projeto Gemini",
+    "new": "Cavalo de batalha do Project Gemini"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "dispatch",
+    "old": "O Titan II que lançou o Gemini era, assim como os foguetes do Mercury, uma arma convertida — o maior míssil intercontinental da América, certificado para transportar uma tripulação. Sua característica definidora era o combustível: enquanto propelentes criogênicos precisam ser carregados pouco antes do lançamento e podem forçar um cancelamento, o Titã queimava líquidos armazenáveis que permitiam que ele ficasse pronto e decolasse quase no horário. Essa confiabilidade de cronometragem importava mais do que parece, porque todo o trabalho do Gemini era o encontro espacial, e interceptar outra espaçonave em órbita depende de lançar em um momento exato. O cavalo de batalha do programa, ele voou todas as dez missões tripuladas do Gemini sem perder uma tripulação.",
+    "new": "O Titan II que lançou o Gemini era, assim como os foguetes do Mercury, uma arma convertida — o maior míssil intercontinental da América, certificado para transportar uma tripulação. Sua característica definidora era o combustível: enquanto os propelentes criogênicos precisam ser carregados pouco antes do lançamento e podem forçar um cancelamento, o Titan queimava líquidos armazenáveis, que o deixavam pronto e permitiam decolar quase no horário previsto. Essa pontualidade importava mais do que parece, porque todo o trabalho do Gemini era o encontro orbital, e alcançar outra espaçonave em órbita depende de lançar em um momento exato. Cavalo de batalha do programa, voou todas as dez missões tripuladas do Gemini sem perder uma tripulação."
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "description",
+    "old": "Titan II GLV é um lançador orbital construído por Martin Marietta nos EUA. Cavalo de trabalho para o Projecto Gemini. Aposentou-se depois do primeiro voo em 1964.",
+    "new": "Titan II GLV é um lançador orbital construído pela Martin Marietta nos EUA. Cavalo de batalha do Project Gemini. Aposentado após o primeiro voo, em 1964."
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "best_known_for",
+    "old": "Cavalo de trabalho para o Projeto Gemini",
+    "new": "Cavalo de batalha do Project Gemini"
+  },
+  {
+    "rel": "fleet/launcher/voskhod-11a57.json",
+    "at": "dispatch",
+    "old": "O Voskhod 11A57 era o R-7 elevado a um novo patamar. A cápsula Vostok modificada era mais pesada que a original, então precisava de mais impulso do que o Vostok-K podia fornecer — o que a família R-7, infinitamente adaptável, devidamente proporcionou com um estágio superior aprimorado. É um pequeno capítulo numa história muito longa: o mesmo foguete básico que lançou o Sputnik e Gagarin, alongado novamente para elevar os dois voos Voskhod, e ainda sendo alongado, décadas depois, para transportar tripulações Soyuz. Poucos projetos foram solicitados a realizar tantos trabalhos diferentes por tanto tempo.",
+    "new": "O Voskhod 11A57 era o R-7 elevado a um novo patamar. A cápsula Vostok modificada era mais pesada que a original, então precisava de mais impulso do que o Vostok-K podia fornecer — o que a família R-7, infinitamente adaptável, devidamente proporcionou com um estágio superior aprimorado. É um pequeno capítulo numa história muito longa: o mesmo foguete básico que lançou o Sputnik e Gagarin, alongado novamente para lançar os dois voos Voskhod, e ainda sendo alongado, décadas depois, para levar tripulações Soyuz. Poucos projetos foram chamados a desempenhar tantas funções diferentes por tanto tempo."
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "tagline",
+    "old": "Lançador soviético derivado do R-7 que levou Gagarin ao espaço — Vostok 1 (12-04-1961) e mais 5 voos Vostok até 1963",
+    "new": "Lançador soviético derivado do R-7 que levou Gagarin ao espaço — Vostok 1 (1961-04-12) e mais 5 voos Vostok até 1963"
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "description",
+    "old": "O Vostok-K (índice GRAU 8K72K) foi a versão habilitada para voos tripulados do ICBM R-7 de Korolev, com estágio superior Blok-E e parâmetros certificados para tripulação. Três estágios a propelente líquido (LOX + querosene), 38 metros de altura, 287 toneladas de massa de lançamento. Lançou todos os seis voos Vostok tripulados (1-6, 1961-1963) além de alguns precursores não tripulados. A confiabilidade evoluiu dos problemas iniciais do R-7 (3 das 6 falhas do primeiro estágio antes de Gagarin) para um registro perfeito na série tripulada. A linhagem de projeto do Vostok-K continua hoje no lançador Soyuz-2.",
+    "new": "O Vostok-K (índice GRAU 8K72K) foi a versão habilitada para voos tripulados do ICBM R-7 de Korolev, com estágio superior Blok-E e parâmetros certificados para tripulação. Três estágios a propelente líquido (LOX + querosene), 38 metros de altura, 287 toneladas de massa de lançamento. Lançou todos os seis voos Vostok tripulados (1-6, 1961-1963) além de alguns precursores não tripulados. A confiabilidade evoluiu dos problemas iniciais do R-7 (3 das 6 falhas do primeiro estágio antes de Gagarin) para um registro perfeito na série tripulada. A linhagem de projeto do Vostok-K continua hoje no lançador Soyuz-2 (o único veículo de lançamento russo capaz de levar tripulação em 2026)."
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "best_known_for",
+    "old": "Lançador soviético derivado do R-7 que levou Gagarin ao espaço — Vostok 1 (12-04-1961) e mais 5 voos Vostok até 1963",
+    "new": "Lançador soviético derivado do R-7 que levou Gagarin ao espaço — Vostok 1 (1961-04-12) e mais 5 voos Vostok até 1963"
+  },
+  {
+    "rel": "fleet/launcher/vulcan.json",
+    "at": "tagline",
+    "old": "Sucessor de Atlas V + Delta IV; certificação para NSSL Phase 3 + planejado para Dream Chaser",
+    "new": "Sucessor do Atlas V e do Delta IV; certificação para a NSSL Phase 3 e previsto para o Dream Chaser"
+  },
+  {
+    "rel": "fleet/launcher/vulcan.json",
+    "at": "description",
+    "old": "Foguete de dois estágios da United Launch Alliance, sucessor de Atlas V e Delta IV. Equipado com dois motores BE-4 methalox no primeiro estágio e Centaur V (RL10) acima. Primeiro voo em 2024-01-08 transportou o Astrobotic Peregrine. Previsto para certificação nos contratos de National Security Space Launch Phase 3 e planejado como veículo de lançamento do avião-espaço de carga Dream Chaser da Sierra Space.",
+    "new": "Sucessor de dois estágios do Atlas V e do Delta IV, da United Launch Alliance. Equipado com dois motores BE-4 a metano e oxigênio líquido no primeiro estágio e, acima, o Centaur V (RL10). O primeiro voo, em 2024-01-08, levou o Peregrine da Astrobotic. Previsto para obter certificação para os contratos da fase 3 do National Security Space Launch e planejado como o veículo de lançamento do avião espacial de carga Dream Chaser, da Sierra Space."
+  },
+  {
+    "rel": "fleet/launcher/vulcan.json",
+    "at": "best_known_for",
+    "old": "Sucessor de Atlas V + Delta IV",
+    "new": "Sucessor do Atlas V e do Delta IV"
+  },
+  {
+    "rel": "fleet/observatory/chandra.json",
+    "at": "name",
+    "old": "Observatório de Raios X Chandra",
+    "new": "Chandra X-ray Observatory"
+  },
+  {
+    "rel": "fleet/observatory/chandra.json",
+    "at": "description",
+    "old": "Observatório de Raios-X da NASA, em serviço desde 1999. Resolução aproximadamente 25× melhor do que qualquer telescópio de raios X anterior, permitindo imagens diretas de discos de acreção de buracos negros, restos de supernova, e os aglomerados de galáxias de rosca de gás quente.",
+    "new": "Observatório de raios X de referência da NASA, em serviço desde 1999. Resolução cerca de 25× melhor do que a de qualquer telescópio de raios X anterior, o que permite obter imagens diretas de discos de acreção de buracos negros, remanescentes de supernova e do gás quente que permeia os aglomerados de galáxias."
+  },
+  {
+    "rel": "fleet/observatory/compton-gro.json",
+    "at": "name",
+    "old": "Observatório Compton Gamma Ray",
+    "new": "Compton Gamma Ray Observatory"
+  },
+  {
+    "rel": "fleet/observatory/compton-gro.json",
+    "at": "tagline",
+    "old": "Um dos quatro grandes observatórios da NASA.",
+    "new": "Um dos quatro Grandes Observatórios da NASA"
+  },
+  {
+    "rel": "fleet/observatory/compton-gro.json",
+    "at": "description",
+    "old": "Um dos quatro \"Grandes Observatórios\" da NASA ao lado de Hubble, Chandra e Spitzer. Em órbita 1991–2000, mapeou o céu de raios gama e descobriu que explosões de raios gama vêm de distâncias cosmológicas em vez de fontes próximas.",
+    "new": "Um dos quatro “Grandes Observatórios” da NASA, ao lado do Hubble, do Chandra e do Spitzer. Em órbita de 1991 a 2000, mapeou o céu de raios gama e descobriu que as explosões de raios gama vêm de distâncias cosmológicas, e não de fontes próximas."
+  },
+  {
+    "rel": "fleet/observatory/compton-gro.json",
+    "at": "best_known_for",
+    "old": "Um dos quatro grandes observatórios da NASA.",
+    "new": "Um dos quatro Grandes Observatórios da NASA"
+  },
+  {
+    "rel": "fleet/observatory/euclid.json",
+    "at": "tagline",
+    "old": "Mapeamento de energia escura em um terço do céu",
+    "new": "Levantamento da energia escura em um terço do céu"
+  },
+  {
+    "rel": "fleet/observatory/euclid.json",
+    "at": "best_known_for",
+    "old": "Mapeamento de energia escura em um terço do céu",
+    "new": "Levantamento da energia escura em um terço do céu"
+  },
+  {
+    "rel": "fleet/observatory/gaia.json",
+    "at": "tagline",
+    "old": "Mapeado 1,8 bilhões de estrelas em 3D",
+    "new": "Mapeou 1,8 bilhão de estrelas em 3D"
+  },
+  {
+    "rel": "fleet/observatory/gaia.json",
+    "at": "description",
+    "old": "Satélite estelar da ESA, mapeando a posição, brilho e movimento de quase dois bilhões de estrelas na Via Láctea com precisão sem precedentes. Operado 2013-2025; o catálogo resultante apoiará a astronomia galáctica durante décadas.",
+    "new": "Satélite da ESA para cartografia estelar, que mapeia a posição, o brilho e o movimento de quase dois bilhões de estrelas da Via Láctea com precisão sem precedentes. Operou de 2013 a 2025; o catálogo resultante servirá de base à astronomia galáctica por décadas."
+  },
+  {
+    "rel": "fleet/observatory/gaia.json",
+    "at": "best_known_for",
+    "old": "Mapeado 1,8 bilhões de estrelas em 3D",
+    "new": "Mapeou 1,8 bilhão de estrelas em 3D"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "tagline",
+    "old": "Despedaçado em órbita; perda impulsionou desenvolvimento do XRISM",
+    "new": "Girou até se despedaçar em órbita; a perda impulsionou o desenvolvimento do XRISM"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "description",
+    "old": "Observatório de raios X da JAXA, perdido 37 dias após o lançamento em fevereiro de 2016. Uma saturação da roda de reação desencadeou uma sequência de erros de controle de atitude que girou a espaçonave tão rapidamente que a quebrou. As lições aprendidas impulsionaram o desenvolvimento do XRISM (lançado em 2023).",
+    "new": "Observatório de raios X da JAXA, perdido 37 dias após o lançamento, em fevereiro de 2016. A saturação de uma roda de reação desencadeou uma sequência de erros do controle de atitude que fez a espaçonave girar tão rápido que se despedaçou. As lições aprendidas impulsionaram o desenvolvimento do XRISM (lançado em 2023)."
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "best_known_for",
+    "old": "Despedaçado em órbita; perda impulsionou desenvolvimento do XRISM",
+    "new": "Girou até se despedaçar em órbita; a perda impulsionou o desenvolvimento do XRISM"
+  },
+  {
+    "rel": "fleet/observatory/hubble.json",
+    "at": "tagline",
+    "old": "Icônico telescópio espacial visível/UV; 5 missões de manutenção",
+    "new": "Telescópio espacial icônico de luz visível e UV; 5 missões de manutenção"
+  },
+  {
+    "rel": "fleet/observatory/hubble.json",
+    "at": "description",
+    "old": "Telescópio espacial visível/UV compartilhado pela NASA e ESA, em órbita baixa terrestre desde 1990 e servido cinco vezes por missões do Space Shuttle até 2009. Ainda em operação 35+ anos depois, com instrumentos principais instalados por astronautas em atividade extraveicular e um defeito no espelho primário corrigido em 1993 pelo COSTAR (posteriormente substituído por instrumentos com óptica corretiva integrada).",
+    "new": "Telescópio espacial de luz visível e UV compartilhado pela NASA e pela ESA, em órbita terrestre baixa desde 1990 e atendido cinco vezes por missões do Space Shuttle até 2009. Ainda em operação mais de 35 anos depois, com instrumentos principais instalados por astronautas em atividade extraveicular e um defeito no espelho primário corrigido em 1993 pelo COSTAR (depois substituído por instrumentos com óptica corretiva integrada)."
+  },
+  {
+    "rel": "fleet/observatory/hubble.json",
+    "at": "best_known_for",
+    "old": "Icônico telescópio espacial visível/UV; 5 missões de manutenção",
+    "new": "Telescópio espacial icônico de luz visível e UV; 5 missões de manutenção"
+  },
+  {
+    "rel": "fleet/observatory/jwst.json",
+    "at": "description",
+    "old": "O maior telescópio espacial infravermelho já construído. Estacionado na Sol-Terra L2 desde janeiro de 2022, com um espelho primário de berílio revestido a ouro de 6,5 m segmentado atrás de um escudo solar do tamanho de uma quadra de tênis. Volta às primeiras galáxias depois do Big Bang.",
+    "new": "O maior telescópio espacial infravermelho já construído. Posicionado no ponto L2 Sol-Terra desde janeiro de 2022, com um espelho primário segmentado de berílio revestido de ouro, de 6,5 m, atrás de um escudo solar do tamanho de uma quadra de tênis. Enxerga até as primeiras galáxias formadas após o Big Bang."
+  },
+  {
+    "rel": "fleet/observatory/kepler.json",
+    "at": "description",
+    "old": "Caçador de exoplanetas da NASA (2009–2018). Manteve o olhar fixo em um único campo do céu e detectou exoplanetas via fotometria de trânsito — a breve queda na luz das estrelas quando um planeta passa em frente à sua estrela. Descobriu mais de 2.700 exoplanetas confirmados e demonstrou que mundos do tamanho da Terra são comuns.",
+    "new": "Caçador de exoplanetas da NASA (2009–2018). Manteve o olhar fixo em um único campo do céu e detectou exoplanetas por fotometria de trânsito — a breve queda da luz estelar quando um planeta passa em frente à sua estrela. Descobriu mais de 2.700 exoplanetas confirmados e demonstrou que mundos do tamanho da Terra são comuns."
+  },
+  {
+    "rel": "fleet/observatory/spektr-rg.json",
+    "at": "tagline",
+    "old": "Observatório russo-alemão de raios-X",
+    "new": "Observatório russo-alemão de mapeamento do céu em raios X"
+  },
+  {
+    "rel": "fleet/observatory/spektr-rg.json",
+    "at": "best_known_for",
+    "old": "Observatório russo-alemão de raios-X",
+    "new": "Observatório russo-alemão de mapeamento do céu em raios X"
+  },
+  {
+    "rel": "fleet/observatory/spitzer.json",
+    "at": "tagline",
+    "old": "Infravermelho Grande Observatório; 16 anos de dados",
+    "new": "Grande Observatório infravermelho; 16 anos de dados"
+  },
+  {
+    "rel": "fleet/observatory/spitzer.json",
+    "at": "description",
+    "old": "Grande Observatório infravermelho da NASA, em serviço de 2003 a 2020. Projetado para uma missão criogênica de cinco anos, mas operou por dezesseis, incluindo uma fase de \"missão quente\" depois que o hélio líquido usado como refrigerante se esgotou, em 2009.",
+    "new": "Grande Observatório infravermelho da NASA, em serviço de 2003 a 2020. Projetado para uma missão criogênica de cinco anos, mas operou por dezesseis, incluindo uma fase de “missão quente” depois que o hélio líquido usado como refrigerante se esgotou, em 2009."
+  },
+  {
+    "rel": "fleet/observatory/spitzer.json",
+    "at": "best_known_for",
+    "old": "Infravermelho Grande Observatório; 16 anos de dados",
+    "new": "Grande Observatório infravermelho; 16 anos de dados"
+  },
+  {
+    "rel": "fleet/observatory/tess.json",
+    "at": "description",
+    "old": "O Transiting Exoplanet Survey Satellite, em órbita desde 2018. Realiza levantamentos de quase todo o céu em 26 setores por ano, buscando exoplanetas de período curto ao redor das estrelas mais brilhantes e mais próximas da Terra — os alvos que serão mais adequados para caracterização atmosférica de acompanhamento pelo JWST.",
+    "new": "O Transiting Exoplanet Survey Satellite, em órbita desde 2018. Faz o levantamento de quase todo o céu em 26 setores por ano, em busca de exoplanetas de período curto ao redor das estrelas mais brilhantes e mais próximas da Terra — os alvos mais adequados à caracterização atmosférica de acompanhamento pelo JWST."
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "tagline",
+    "old": "Observatório de Raios X da ESA",
+    "new": "Principal observatório de raios X da ESA"
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "description",
+    "old": "XMM-Newton é um observatório espacial construído pela Airbus Defence and Space in Multi (Europe). O observatório de raios-X da ESA. Em serviço desde 1999.",
+    "new": "XMM-Newton é um observatório espacial construído pela Airbus Defence and Space em vários países (Europa). Principal observatório de raios X da ESA. Em serviço desde 1999."
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "best_known_for",
+    "old": "Observatório de Raios X da ESA",
+    "new": "Principal observatório de raios X da ESA"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "tagline",
+    "old": "Primeiro orbitador de Vênus do Japão; recuperado de uma falha na inserção orbital em 2010 para estudar dinâmicas no topo das nuvens",
+    "new": "Primeiro orbitador de Vênus do Japão; recuperado de uma falha na inserção em órbita em 2010 para estudar a dinâmica do topo das nuvens"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "description",
+    "old": "Orbitador Climático de Vênus da JAXA, primeiro satélite japonês a orbitar com sucesso Vênus. Falhou originalmente na inserção orbital em 2010, mas foi recuperado em uma tentativa de backup cinco anos depois (2015) usando propulsores menos eficientes. Estudou ventos no topo das nuvens, relâmpagos e dinâmicas atmosféricas da super-rotação atmosférica de Vênus. A missão terminou em setembro de 2025 após o contato ser perdido.",
+    "new": "Orbitador Climático de Vênus da JAXA, primeira espaçonave japonesa a entrar com sucesso em órbita de Vênus. A inserção orbital falhou originalmente em 2010, mas a nave foi recuperada em uma tentativa de reserva cinco anos depois (2015), com propulsores menos eficientes. Estudou os ventos no topo das nuvens, os relâmpagos e a dinâmica da atmosfera em superrotação de Vênus. A missão terminou em setembro de 2025, após a perda de contato."
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "best_known_for",
+    "old": "Primeiro orbitador de Vênus do Japão; estudou ventos no topo das nuvens e dinâmicas atmosféricas. Recuperado após uma falha na inserção orbital em 2010",
+    "new": "Primeiro orbitador de Vênus do Japão; estudou ventos no topo das nuvens e a dinâmica atmosférica. Recuperado após uma falha na inserção em órbita em 2010"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "tagline",
+    "old": "Missão conjunta de dois orbitadores ESA + JAXA para Mercúrio — se separam em MPO + Mio na chegada a Mercúrio em 2026",
+    "new": "Missão conjunta ESA + JAXA a Mercúrio com dois orbitadores, que se separam em MPO + Mio na chegada, em 2026"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "old": "Missão conjunta ESA + JAXA. Lançada em 2018-10-20 por um Ariane 5 ECA. O Módulo de Transferência de Mercúrio carrega o conjunto em uma navegação com auxílio gravitacional de 7 anos (1 auxílio da Terra + 2 de Vênus + 6 de Mercúrio) antes da inserção em órbita de Mercúrio em 2026-11-21. Na chegada, os dois orbitadores científicos se separam: o Orbitador Planetário de Mercúrio (MPO) da ESA voa em órbita polar de 480 × 1500 km com 11 instrumentos para composição superficial, topografia, gravidade e exosfera; o Mio da JAXA voa em órbita polar de 590 × 11 640 km com 5 instrumentos para a magnetosfera e plasma. Juntos, são o primeiro casal de espaçonaves europeia + japonesa jamais em órbita de Mercúrio.",
+    "new": "Missão conjunta ESA + JAXA. Lançada em 2018-10-20 em um Ariane 5 ECA. O Mercury Transfer Module leva o conjunto em um cruzeiro de 7 anos com sobrevoos (1 da Terra + 2 de Vênus + 6 de Mercúrio, todos com auxílio gravitacional) antes da inserção em órbita de Mercúrio em 2026-11-21. Na chegada, os dois orbitadores científicos se separam: o Mercury Planetary Orbiter (MPO) da ESA voa em órbita polar de 480 × 1500 km com 11 instrumentos para composição da superfície, topografia, gravidade e exosfera; o Mio (Mercury Magnetospheric Orbiter) da JAXA voa em órbita polar de 590 × 11 640 km com 5 instrumentos para a magnetosfera e o plasma. Juntos, são as primeiras espaçonaves europeia e japonesa em órbita de Mercúrio."
+  },
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "tagline",
+    "old": "Saturno orbitar; Huygens pousou em Titã",
+    "new": "Orbitador de Saturno; Huygens pousou em Titã"
+  },
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "description",
+    "old": "O orbitador de Saturno (2004–2017) que levou o Huygens da ESA até Titã — ainda o único pouso na lua de um planeta exterior. Descobriu as plumas gêiseres ativas de Encélado e o oceano global sob sua crosta gelada. Terminou num mergulho planejado na atmosfera de Saturno.",
+    "new": "O orbitador de Saturno (2004–2017) que levou o módulo de pouso Huygens, da ESA, até Titã — ainda o único pouso na lua de um planeta exterior. Descobriu as plumas ativas de gêiseres de Encélado e o oceano global sob sua crosta gelada. Terminou em um mergulho planejado na atmosfera de Saturno."
+  },
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "best_known_for",
+    "old": "Saturno orbitar; Huygens pousou em Titã",
+    "new": "Orbitador de Saturno; Huygens pousou em Titã"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "tagline",
+    "old": "Primeira missão da Índia à Lua. Descobriu água na superfície lunar (M3 + MIP, 2009). Perdeu contato em 2009-08-29",
+    "new": "Primeira missão da Índia à Lua. Água disseminada na superfície lunar (M3 + MIP, 2009). Perdeu contato em 2009-08-29, após só 312 dias"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "best_known_for",
+    "old": "Primeira missão da Índia à Lua. Descobriu água na superfície lunar (M3 + MIP, 2009). Perdeu contato em 2009-08-29 após apenas 312 dias",
+    "new": "Primeira missão da Índia à Lua. Descobriu água disseminada na superfície lunar (M3 + MIP, 2009). Perdeu contato em 2009-08-29 após apenas 312 dias"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "description",
+    "old": "Primeira missão da Índia além da órbita terrestre e sua primeira à Lua. Lançada em 2008-10-22 do Centro Espacial Satish Dhawan em um PSLV-XL, a Chandrayaan-1 entrou em órbita lunar polar de 100 km em 2008-11-12. Carregava 11 instrumentos de 6 países (Índia, EUA, Reino Unido, Alemanha, Suécia, Bulgária) — mais consequentemente o Mapeador de Mineralogia Lunar (M3) da NASA, que detectou a assinatura de banda de absorção de OH/H₂O em vastas extensões da superfície lunar, particularmente em altas latitudes (Pieters et al., 2009, Science 326). Sua Sonda de Impacto Lunar (MIP) de 35 kg foi liberada em 2008-11-14 e impactou próximo à borda da Cratera Shackleton no pólo sul lunar (Jawahar Sthal, ~89,5°S), tornando-se o primeiro artefato indiano na Lua e registrando vapor de água na atmosfera lunar durante a descida. O contato com a nave foi perdido em 2009-08-29 após ~10 meses / 3400 órbitas — metade de sua missão planejada de 2 anos, mas o retorno científico já era revolucionário. Permanece em órbita lunar, redetectada pelo radar Goldstone da NASA em 2017.",
+    "new": "Primeira missão da Índia além da órbita terrestre e sua primeira à Lua. Lançada em 2008-10-22 do Centro Espacial Satish Dhawan em um PSLV-XL, a Chandrayaan-1 entrou em órbita lunar polar de 100 km em 2008-11-12. Levava 11 instrumentos de 6 países (Índia, EUA, Reino Unido, Alemanha, Suécia, Bulgária) — o de maior consequência foi o Moon Mineralogy Mapper (M3) da NASA, que detectou a assinatura de banda de absorção de OH/H₂O em vastas extensões da superfície lunar, particularmente em altas latitudes (Pieters et al., 2009, Science 326). Sua Moon Impact Probe (MIP), de 35 kg, foi liberada em 2008-11-14 e se chocou perto da borda da cratera Shackleton, no polo sul lunar (Jawahar Sthal, ~89,5°S), tornando-se o primeiro artefato indiano na Lua e registrando vapor de água na atmosfera lunar durante a descida. O contato com a nave foi perdido em 2009-08-29, após ~10 meses / 3400 órbitas — metade da missão planejada de 2 anos, mas o retorno científico já era revolucionário. Permanece em órbita lunar, reencontrada pelo radar Goldstone da NASA em 2017."
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "tagline",
+    "old": "Segundo satélite lunar chinês; primeiro a visitar o asteroide 4179 Toutatis",
+    "new": "Segundo orbitador lunar chinês; primeiro a visitar o asteroide 4179 Toutatis"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "description",
+    "old": "Segundo satélite lunar da China, lançado em 2010-10-01. Chang'e 2 orbitou a Lua de 2010 a 2011, depois abandonou a órbita lunar em junho de 2011 para uma missão estendida no espaço profundo. Prosseguiu para o ponto Sol-Terra L2 (chegando em agosto de 2011), depois partiu de L2 em abril de 2012 para um histórico sobrevoo do asteroide 4179 Toutatis, executando uma aproximação próxima em 2012-12-13 a ~770 m de distância — a primeira espaçonave a visitar o asteroide. Após o encontro com Toutatis, Chang'e 2 continuou no espaço profundo em uma trajetória heliocêntrica, tornando-se um objeto interplanetário à deriva.",
+    "new": "Segundo orbitador lunar da China, lançado em 2010-10-01. A Chang'e 2 orbitou a Lua de 2010 a 2011 e depois deixou a órbita lunar em junho de 2011 para uma missão estendida no espaço profundo. Seguiu para o ponto L2 Sol-Terra (chegando em agosto de 2011) e partiu de L2 em abril de 2012 para um sobrevoo histórico do asteroide 4179 Toutatis, com aproximação máxima em 2012-12-13, a ~770 m de distância — a primeira espaçonave a visitar o asteroide. Depois do encontro com Toutatis, a Chang'e 2 seguiu para o espaço profundo em trajetória heliocêntrica, tornando-se um objeto interplanetário à deriva."
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "best_known_for",
+    "old": "Segundo satélite lunar chinês; primeiro sobrevoo de espaçonave do asteroide 4179 Toutatis (13 de dezembro de 2012, aproximação mínima de ~770 m)",
+    "new": "Segundo orbitador lunar chinês; primeiro sobrevoo do asteroide 4179 Toutatis por uma espaçonave (13 de dezembro de 2012, aproximação mínima de ~770 m)"
+  },
+  {
+    "rel": "fleet/orbiter/change1.json",
+    "at": "tagline",
+    "old": "Primeira missão lunar da China. Mapa topo global 200 m; impacto deliberado Mare Fecunditatis 2009-03-01 — primeiro objeto chinês",
+    "new": "Primeira missão lunar da China. Mapa topográfico global (200 m); impacto deliberado no Mare Fecunditatis, 2009-03-01 — 1º objeto chinês lá"
+  },
+  {
+    "rel": "fleet/orbiter/change1.json",
+    "at": "description",
+    "old": "A primeira fase do Programa Chinês de Exploração Lunar (CLEP) e a primeira missão da CNSA além da Terra. Lançada em 24 de outubro de 2007 do Centro de Lançamento de Satélites de Xichang em um foguete Long March 3A, a Chang'e 1 (nomeada em homenagem à deusa lunar da mitologia chinesa) entrou em uma órbita lunar polar circular de 200 km em 7 de novembro de 2007. Carregava 8 instrumentos incluindo uma câmera estéreo CCD, altímetro a laser, espectrômetro de imagem, espectrômetros de raio gama e raio X, radiômetro de microondas, detector de vento solar e detector de partículas de alta energia. Produziu o primeiro mapa topográfico lunar global completo da China em resolução de 120–200 m e mapas de abundância elementar de Th, K, U, O, Si, Mg, Al, Ca, Ti, Fe. A missão foi encerrada deliberadamente em 1º de março de 2009 com um impacto controlado em 1,50° S, 52,36° L no Mare Fecunditatis — o primeiro objeto chinês na superfície lunar, abrindo caminho para Chang'e 3 (pouso de superfície em 2013) e Chang'e 5 (retorno de amostra em 2020). Operou 16 meses — 4 meses além do nominal.",
+    "new": "A primeira fase do China's Lunar Exploration Program (CLEP) e a primeira missão da CNSA além da Terra. Lançada em 2007-10-24 do Centro de Lançamento de Satélites de Xichang em um Long March 3A, a Chang'e 1 (nome da deusa lunar do folclore chinês) entrou em uma órbita lunar polar circular de 200 km em 2007-11-07. Levava 8 instrumentos, incluindo câmera estéreo CCD, altímetro a laser, espectrômetro imageador, espectrômetros de raios gama e raios X, radiômetro de micro-ondas, detector de vento solar e detector de partículas de alta energia. Produziu o primeiro mapa topográfico global completo da Lua feito pela China, com resolução de 120–200 m, e mapas de abundância elementar de Th, K, U, O, Si, Mg, Al, Ca, Ti, Fe. A missão terminou deliberadamente em 2009-03-01, com um impacto controlado em 1,50° S, 52,36° L, no Mare Fecunditatis — o primeiro objeto chinês na superfície lunar, abrindo caminho para a Chang'e 3 (pouso em 2013) e a Chang'e 5 (retorno de amostras em 2020). Operou por 16 meses — 4 além do previsto."
+  },
+  {
+    "rel": "fleet/orbiter/change1.json",
+    "at": "best_known_for",
+    "old": "Primeira missão lunar da China. Mapa topo global 200 m; impacto deliberado Mare Fecunditatis 2009-03-01 — primeiro objeto chinês",
+    "new": "Primeira missão lunar da China. Mapa topográfico global de 200 m; impacto deliberado no Mare Fecunditatis, 2009-03-01 — primeiro objeto chinês na Lua"
+  },
+  {
+    "rel": "fleet/orbiter/clementine.json",
+    "at": "description",
+    "old": "Oficialmente o Deep Space Program Science Experiment (DSPSE). Concebida pela Ballistic Missile Defense Organization para qualificar sensores leves em condições do espaço profundo, com NASA colaborando em ciência lunar e de asteroides. Lançada em 1994-01-25 em um Titan IIG, entrou em órbita polar lunar em 1994-02-19 para 71 dias de mapeamento. Imageou cada quilômetro quadrado da Lua em resolução de 100-300 m em 11 comprimentos de onda — o primeiro mapa lunar global completo. O experimento de radar biestático usando o transmissor de Clementine e antenas de solo do DSN encontrou ecos realçados na cratera Shackleton do pólo sul consistentes com gelo de água, antecedendo LCROSS por 15 anos. Um disparo de propulsor falhado abortou o planejado sobrevoo do asteroide Geographos e encerrou a missão.",
+    "new": "Oficialmente o Deep Space Program Science Experiment (DSPSE). Concebida pela Ballistic Missile Defense Organization para qualificar sensores leves em condições de espaço profundo, com a NASA colaborando na ciência lunar e de asteroides. Lançada em 1994-01-25 em um Titan IIG, entrou em órbita polar lunar em 1994-02-19 para 71 dias de mapeamento. Fotografou cada quilômetro quadrado da Lua com resolução de 100-300 m em 11 comprimentos de onda — o primeiro mapa lunar global completo. O experimento de radar biestático, que usou o transmissor da Clementine e antenas terrestres da DSN, encontrou ecos realçados na cratera Shackleton, no polo sul, compatíveis com gelo de água, 15 anos antes do LCROSS. Uma falha no disparo de um propulsor abortou o sobrevoo planejado do asteroide Geographos e encerrou a missão."
+  },
+  {
+    "rel": "fleet/orbiter/dart.json",
+    "at": "tagline",
+    "old": "Primeiro impactor de defesa planetário (Dimorfos)",
+    "new": "Primeiro impactor de defesa planetária (Dimorfos)"
+  },
+  {
+    "rel": "fleet/orbiter/dart.json",
+    "at": "description",
+    "old": "O primeiro impactor de defesa planetário. Deliberadamente colidiu com o asteroide Moonlet Dimorfos em setembro de 2022, encurtando seu período orbital em torno de seu pai Dídimo em 33 minutos — provando que a deflexão cinética é uma técnica viável de proteção do planeta.",
+    "new": "O primeiro impactor de defesa planetária. Colidiu deliberadamente com Dimorfos, a pequena lua do asteroide, em setembro de 2022, encurtando em 33 minutos seu período orbital em torno de Dídimo, o corpo principal — provando que a deflexão cinética é uma técnica viável de proteção do planeta."
+  },
+  {
+    "rel": "fleet/orbiter/dart.json",
+    "at": "best_known_for",
+    "old": "Primeiro impactor de defesa planetário (Dimorfos)",
+    "new": "Primeiro impactor de defesa planetária (Dimorfos)"
+  },
+  {
+    "rel": "fleet/orbiter/dawn.json",
+    "at": "description",
+    "old": "Missão Discovery da NASA impulsionada por três propulsores iônicos de xenônio NSTAR que geraram os 11 km/s de delta-v total necessários para entrar em órbita ao redor de Vesta, escapar, navegar por três anos e entrar em órbita ao redor de Ceres. Mapeou ambos os corpos em detalhes sem precedentes — a bacia Rheasilvia meridional de Vesta, as manchas brilhantes Cerealia Facula de Ceres, filossilicatos amoniados e criovulcanismo em Ahuna Mons. A missão terminou em 2018 quando a hidrazina do sistema de controle de atitude foi esgotada; a sonda permanece em órbita estável ao redor de Ceres.",
+    "new": "Missão da classe Discovery da NASA, impulsionada por três propulsores iônicos de xenônio NSTAR que geraram os 11 km/s de delta-v total necessários para entrar em órbita ao redor de Vesta, escapar, cruzar três anos e entrar em órbita ao redor de Ceres. Mapeou os dois corpos com detalhes sem precedentes — a bacia Rheasilvia, ao sul de Vesta, as manchas brilhantes Cerealia Facula de Ceres, filossilicatos amoniacais e o criovulcanismo em Ahuna Mons. A missão terminou em 2018, quando a hidrazina do controle de reação se esgotou; a sonda permanece em órbita estável ao redor de Ceres."
+  },
+  {
+    "rel": "fleet/orbiter/dawn.json",
+    "at": "best_known_for",
+    "old": "Única sonda a orbitar dois mundos extraterrestres — Vesta + Ceres",
+    "new": "Única sonda a orbitar dois mundos extraterrestres — Vesta (2011-2012), Ceres (2015-2018)"
+  },
+  {
+    "rel": "fleet/orbiter/europa-clipper.json",
+    "at": "description",
+    "old": "Missão da NASA para estudar a habitabilidade de Europa, a lua gelada de Júpiter — acredita-se que abriga um oceano global de água líquida sob uma camada de gelo de 15-25 km, possivelmente o ambiente potencialmente habitável mais acessível do sistema solar. Maior espaçonave de missão planetária já lançada (~6000 kg). Painéis solares de ~102 m² geram energia suficiente na distância de Júpiter para acionar nove instrumentos durante 49 sobrevoos próximos de Europa, projetados para mapear a lua inteira enquanto limitam a dose de radiação da espaçonave nos brutais cinturões de radiação de Júpiter.",
+    "new": "Missão da NASA para estudar a habitabilidade de Europa, lua gelada de Júpiter — que se acredita abrigar um oceano global de água líquida sob uma camada de gelo de 15-25 km, possivelmente o ambiente potencialmente habitável mais acessível do Sistema Solar. Maior espaçonave de missão planetária já lançada (~6000 kg). Painéis solares de ~102 m² geram energia suficiente, à distância de Júpiter, para alimentar nove instrumentos durante 49 sobrevoos próximos de Europa, planejados para mapear a lua inteira e, ao mesmo tempo, limitar a dose de radiação recebida pela espaçonave nos brutais cinturões de radiação de Júpiter."
+  },
+  {
+    "rel": "fleet/orbiter/exomars-tgo.json",
+    "at": "tagline",
+    "old": "Análise de gases traço + retransmissão de superfície ESA/NASA",
+    "new": "Análise de gases-traço + retransmissão de superfície ESA/NASA"
+  },
+  {
+    "rel": "fleet/orbiter/exomars-tgo.json",
+    "at": "description",
+    "old": "Orbitador Trace Gas Orbiter da ESA, em órbita em Marte desde 2016. Analisa a atmosfera em busca de metano e vapor de água que podem indicar atividade biológica ou geológica, e retransmite dados para missões de superfície em Marte via seu relé UHF.",
+    "new": "O Trace Gas Orbiter da ESA, em órbita de Marte desde 2016. Analisa a atmosfera em busca de metano e vapor de água que podem indicar atividade biológica ou geológica, e retransmite dados das missões de superfície em Marte por seu retransmissor UHF."
+  },
+  {
+    "rel": "fleet/orbiter/exomars-tgo.json",
+    "at": "best_known_for",
+    "old": "Análise de gases traço em Marte; retransmissão para missões de superfície da ESA e NASA",
+    "new": "Análise de gases-traço em Marte; retransmissão para missões de superfície da ESA e da NASA"
+  },
+  {
+    "rel": "fleet/orbiter/galileo.json",
+    "at": "description",
+    "old": "O primeiro orbitador de Júpiter (1995-2003) e a única missão para lançar uma sonda na atmosfera de Júpiter. Também descobriu evidências de um oceano subsuperficial em Europa — tornando-o uma das missões planetárias mais conseqüentes já voadas.",
+    "new": "O primeiro orbitador de Júpiter (1995-2003) e a única missão a lançar uma sonda na atmosfera de Júpiter. Também descobriu evidências de um oceano subsuperficial em Europa — o que o torna uma das missões planetárias mais relevantes já realizadas."
+  },
+  {
+    "rel": "fleet/orbiter/giotto.json",
+    "at": "tagline",
+    "old": "Primeiras imagens próximas do núcleo de um cometa — passou a 596 km de Halley a 68 km/s em 1986",
+    "new": "Primeiras imagens de perto do núcleo de um cometa — passou a 596 km do cometa Halley a 68 km/s em 1986"
+  },
+  {
+    "rel": "fleet/orbiter/giotto.json",
+    "at": "description",
+    "old": "Primeira sonda de espaço profundo da ESA. Barramento em tambor estabilizado por rotação, protegido por um escudo Whipple de Kevlar + alumínio, construído em torno da Halley Multicolour Camera mais 9 instrumentos fornecidos por 11 países europeus, NASA e Japão. Maior aproximação a 1P/Halley em 14-03-1986 a 596 km — um impacto de poeira de 100 mg, 14 segundos antes da maior aproximação, deslocou o eixo de rotação e cortou o contato com a câmara. Reativada em 1990 para um sobrevoo a 200 km do cometa Grigg-Skjellerup em 1992.",
+    "new": "Primeira sonda de espaço profundo da ESA. Corpo em forma de tambor, estabilizado por rotação e protegido por um amortecedor de poeira com escudo Whipple, construído em torno da Halley Multicolour Camera e de outros 9 instrumentos fornecidos por 11 países europeus, pela NASA e pelo Japão. Maior aproximação do cometa Halley em 1986-03-14, a 596 km — o amortecedor sobreviveu, embora o impacto de uma partícula de poeira de 100 mg, 14 segundos antes da maior aproximação, tenha deslocado o eixo de rotação e interrompido o contato da câmera. Reativada em 1990 para um sobrevoo a 200 km do cometa Grigg-Skjellerup em 1992, a primeira vez que uma espaçonave retornou a um alvo cometário diferente."
+  },
+  {
+    "rel": "fleet/orbiter/giotto.json",
+    "at": "best_known_for",
+    "old": "Primeiras imagens próximas do núcleo de um cometa — 596 km de Halley, 14-03-1986",
+    "new": "Primeiras imagens de perto do núcleo de um cometa — 596 km do cometa Halley, 1986-03-14"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa-2.json",
+    "at": "description",
+    "old": "Hayabusa2 é um orbitador de espaço profundo construído pela NEC no Japão. Retornou com sucesso ~5,4 gramas de amostras do asteroide 162173 Ryugu em 6 de dezembro de 2020. Após a entrega das amostras, a espaçonave continuou em uma missão estendida SHARP (Small Hazardous Asteroid Reconnaissance Probe) para outros asteroides. Sobrevoou o asteroide Torifune em 5 de julho de 2026 e está planejado para um encontro com o asteroide 1998 KY26 em 2031.",
+    "new": "Hayabusa2 é um orbitador de espaço profundo construído pela NEC no Japão. Retornou com sucesso ~5,4 gramas de amostras do asteroide 162173 Ryugu em 6 de dezembro de 2020. Após a entrega das amostras, a espaçonave continuou em uma missão estendida SHARP (Small Hazardous Asteroid Reconnaissance Probe) para outros asteroides. Sobrevoou o asteroide Torifune em 5 de julho de 2026 e tem um encontro previsto com o asteroide 1998 KY26 em 2031."
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa-2.json",
+    "at": "best_known_for",
+    "old": "Primeiro retorno de amostra de asteroide à Terra de Ryugu (dez 2020); continuação de missão estendida para Torifune e 1998 KY26",
+    "new": "Primeiro retorno de amostra de asteroide à Terra, vinda de Ryugu (dez 2020); missão estendida em andamento para Torifune e 1998 KY26"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa.json",
+    "at": "tagline",
+    "old": "Primeira amostra de asteroide já retornada à Terra",
+    "new": "Primeira amostra de asteroide já trazida de volta à Terra"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa.json",
+    "at": "description",
+    "old": "Missão pioneira de retorno de amostra de asteroide da JAXA. Lançada em 09/05/2003 para Itokawa carregando quatro propulsores iônicos de descarga de micro-ondas μ10. Sobreviveu a um vazamento de hidrazina, três dos quatro volantes de reação falhando, uma falha de motor iônico e sete semanas de comunicações perdidas antes que os engenheiros a trouxessem de volta à Terra com um motor funcionando montado a partir das metades sobreviventes de dois motores danificados. Cápsula de amostra recuperada em Woomera AUS em 13/06/2010 com 1500 μg de material de Itokawa — a primeira amostra de asteroide já retornada à Terra.",
+    "new": "Missão pioneira de retorno de amostras de asteroide da JAXA. Lançada em 2003-05-09 rumo a Itokawa, com quatro propulsores iônicos de descarga de micro-ondas μ10. Sobreviveu a um vazamento de hidrazina, à falha de três das quatro rodas de reação, à falha de um motor iônico e a sete semanas sem comunicação, antes que os engenheiros a trouxessem de volta à Terra com um único motor funcional, montado com as metades sobreviventes de dois motores danificados. Cápsula de amostra recuperada em Woomera, na Austrália, em 2010-06-13, com 1500 μg de material de Itokawa — a primeira amostra de asteroide já trazida de volta à Terra."
+  },
+  {
+    "rel": "fleet/orbiter/hope.json",
+    "at": "description",
+    "old": "O orbitador Hope dos Emirados Árabes Unidos — Emirates Mars Mission, conhecida em árabe como Al-Amal. Chegou a Marte em 2021 e forneceu a primeira visão global holística da atmosfera marciana ao longo de um ano marciano completo. Construída em parceria com a University of Colorado LASP.",
+    "new": "O orbitador Hope dos Emirados Árabes Unidos — Emirates Mars Mission, conhecida em árabe como Al-Amal. Chegou a Marte em 2021 e forneceu a primeira visão global holística da atmosfera marciana ao longo de um ano marciano completo. Construída em parceria com o LASP da Universidade do Colorado."
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "tagline",
+    "old": "Navio-capitânia da ESA para Júpiter — primeiro orbitador a se fixar ao redor de uma lua galileana (Ganimedes, 2034)",
+    "new": "Carro-chefe da ESA para Júpiter — primeiro orbitador a se estabelecer ao redor de uma lua galileana (Ganimedes, 2034)"
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "description",
+    "old": "Jupiter Icy Moons Explorer. Lançado em 14 de abril de 2023 em um Ariane 5 ECA+ para uma jornada de 8,5 anos via assistências gravitacionais Terra-Vênus-Terra-Terra até a chegada em Júpiter em julho de 2031. Uma vez no sistema joviano, JUICE sobrevoa ~35 vezes Europa, Ganimedes e Calisto antes de entrar em órbita de Ganimedes em 2034 — o primeiro veículo espacial a orbitar uma lua que não seja a Terra. A carga útil de dez instrumentos inclui radar que penetra gelo (RIME), espectrômetros, magnetômetro e altímetro a laser, otimizados para caracterizar as três luas geladas como mundos potencialmente habitáveis de oceano subsuperficial.",
+    "new": "Jupiter Icy Moons Explorer. Lançado em 2023-04-14 em um Ariane 5 ECA+ para um cruzeiro de 8,5 anos, com assistências gravitacionais Terra-Vênus-Terra-Terra, até a chegada a Júpiter em julho de 2031. Uma vez no sistema joviano, o JUICE faz ~35 sobrevoos de Europa, Ganimedes e Calisto antes de entrar em órbita de Ganimedes em 2034 — a primeira espaçonave a orbitar uma lua que não seja a da Terra. A carga útil de dez instrumentos inclui um radar de penetração em gelo (RIME), espectrômetros, magnetômetro e altímetro a laser, otimizados para caracterizar as três luas geladas como mundos potencialmente habitáveis de oceano subsuperficial."
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "best_known_for",
+    "old": "Navio-capitânia da ESA para Júpiter — primeiro orbitador ao redor de uma lua galileana (Ganimedes), chegada 2031-2034",
+    "new": "Carro-chefe da ESA para Júpiter — primeiro orbitador ao redor de uma lua galileana (Ganimedes), chegada 2031-2034"
+  },
+  {
+    "rel": "fleet/orbiter/juno.json",
+    "at": "tagline",
+    "old": "Órbita Polar de Júpiter; estudos de magnetosfera",
+    "new": "Orbitador polar de Júpiter; estudos da magnetosfera"
+  },
+  {
+    "rel": "fleet/orbiter/juno.json",
+    "at": "description",
+    "old": "O orbitador polar de Júpiter da NASA, em órbita desde 2016. Energia solar (um primeiro à distância de Júpiter), girando para manter a estabilidade, e orbitando perto o suficiente das nuvens de Júpiter-tops para arriscar graves danos de radiação com cada passagem.",
+    "new": "O orbitador polar de Júpiter da NASA, em órbita desde 2016. Movido a energia solar (algo inédito à distância de Júpiter), gira para se manter estável e orbita perto o bastante do topo das nuvens de Júpiter para arriscar graves danos por radiação a cada passagem."
+  },
+  {
+    "rel": "fleet/orbiter/juno.json",
+    "at": "best_known_for",
+    "old": "Órbita Polar de Júpiter; estudos de magnetosfera",
+    "new": "Orbitador polar de Júpiter; estudos da magnetosfera"
+  },
+  {
+    "rel": "fleet/orbiter/lro.json",
+    "at": "tagline",
+    "old": "Orbitador lunar de reconhecimento ativo da NASA. As imagens LROC de 0,5 m/pixel são a fonte de cada foto de sítio Apollo/Luna/Chang'e aqui",
+    "new": "Orbitador de reconhecimento lunar ativo da NASA. As imagens LROC de 0,5 m/pixel são a fonte de cada foto de sítio Apollo/Luna/Chang'e aqui"
+  },
+  {
+    "rel": "fleet/orbiter/lro.json",
+    "at": "description",
+    "old": "O orbitador lunar carro-chefe ativo da NASA — em operação contínua desde 23-06-2009. Lançado em 18-06-2009 com o LCROSS em um Atlas V de Cabo Canaveral, a carga útil do LRO de 7 instrumentos remapeou todos os aspectos da Lua em resolução sem precedentes. A Lunar Reconnaissance Orbiter Camera (LROC) NAC (Câmera de Ângulo Estreito, 0,5 m/pixel a 50 km de altitude) fotografou todos os sítios de pouso de Apollo, Luna, Surveyor, Chang'e, Vikram, Beresheet e Hakuto. O LOLA (Laser Altimeter) forneceu a topografia mais detalhada de qualquer corpo do sistema solar. O Diviner mapeou a temperatura da superfície com precisão de 10 K; o LAMP detectou H₂O superficial generalizado até o amanhecer lunar; o LEND mapeou o fluxo de nêutrons em resolução <10 km. A partir de 2026 ainda operacional em missão estendida, sem fim de vida planejado.",
+    "new": "O orbitador lunar de referência e ainda ativo da NASA — em operação contínua desde 2009-06-23. Lançado em 2009-06-18 com o LCROSS em um Atlas V a partir de Cabo Canaveral, o LRO, com sua carga útil de 7 instrumentos, remapeou todos os aspectos da Lua com resolução sem precedentes. A Lunar Reconnaissance Orbiter Camera (LROC) NAC (Narrow-Angle Camera, 0,5 m/pixel a 50 km de altitude) fotografou todos os locais de pouso das Apollo, Luna, Surveyor, Chang'e, Vikram, Beresheet e Hakuto — toda imagem “tier-2 LROC” nos pontos de interesse de /moon deste app veio da LROC NAC. O LOLA (Laser Altimeter) forneceu a topografia mais detalhada de qualquer corpo do Sistema Solar. O Diviner mapeou a temperatura da superfície com precisão de 10 K; o LAMP detectou H₂O superficial generalizada até o amanhecer lunar; o LEND mapeou o fluxo de nêutrons com resolução <10 km. Em 2026, continua operacional em missão estendida, sem fim de vida planejado — o propelente sustenta as operações até ~2030+."
+  },
+  {
+    "rel": "fleet/orbiter/lro.json",
+    "at": "best_known_for",
+    "old": "Orbitador lunar de reconhecimento ativo da NASA. As imagens LROC de 0,5 m/pixel são a fonte de cada foto de sítio Apollo/Luna/Chang'e aqui",
+    "new": "Orbitador lunar de reconhecimento da NASA, ativo. As imagens da LROC, de 0,5 m/pixel, são a fonte de cada foto de sítio Apollo/Luna/Chang'e aqui"
+  },
+  {
+    "rel": "fleet/orbiter/lucy.json",
+    "at": "tagline",
+    "old": "Primeira missão aos Troianos de Júpiter",
+    "new": "Primeira missão aos troianos de Júpiter"
+  },
+  {
+    "rel": "fleet/orbiter/lucy.json",
+    "at": "description",
+    "old": "Missão da NASA de 12 anos com múltiplos sobrevoos a 6 sistemas de asteroides Troianos de Júpiter e 2 asteroides do cinturão principal (11 encontros totais incluindo satélites). Três assistências gravitacionais da Terra moldam uma única trajetória visitando ambas as nuvens Troianas L4 e L5. Carrega 1003 kg de hidrazina — mais combustível do que massa seca. Nomeada em homenagem ao fóssil Australopithecus afarensis de 1974, por sua vez nomeado para a música dos Beatles — a implicação sendo que os Troianos preservam material do sistema solar primitivo da mesma forma que o fóssil preserva a história da humanidade primitiva.",
+    "new": "Missão da NASA de 12 anos, com vários sobrevoos de 6 sistemas de asteroides troianos de Júpiter e de 2 asteroides da Cintura de asteroides (11 encontros no total, contando os satélites). Três assistências gravitacionais da Terra formam uma única trajetória que visita as nuvens troianas L4 e L5. Leva 1003 kg de hidrazina — mais propelente do que massa seca. Recebeu o nome do fóssil de Australopithecus afarensis de 1974, por sua vez batizado em referência à canção dos Beatles — a ideia é que os troianos preservam material do Sistema Solar primitivo como o fóssil preserva a história dos primeiros humanos."
+  },
+  {
+    "rel": "fleet/orbiter/lucy.json",
+    "at": "best_known_for",
+    "old": "Primeira missão aos Troianos de Júpiter",
+    "new": "Primeira missão aos troianos de Júpiter"
+  },
+  {
+    "rel": "fleet/orbiter/luna10.json",
+    "at": "tagline",
+    "old": "Primeira nave a orbitar a Lua (ou qualquer corpo celeste além da Terra) — entrou em órbita lunar 1966-04-03, três anos antes do Apollo 8",
+    "new": "Primeira nave a orbitar a Lua (ou qualquer corpo além da Terra) — entrou em órbita lunar em 1966-04-03, três anos antes da Apollo 8"
+  },
+  {
+    "rel": "fleet/orbiter/luna10.json",
+    "at": "description",
+    "old": "Primeira nave a orbitar a Lua — e o primeiro satélite artificial de qualquer corpo celeste além da Terra. Lançada 1966-03-31 de Baikonur em um foguete Molniya, Luna 10 entrou em órbita lunar 1966-04-03 com uma órbita de 349 × 1015 km com inclinação de 71,9°, três anos antes do Apollo 8 chegar à Lua com humanos a bordo. Mediu o campo magnético lunar (~3 nT, essencialmente zero), fluxo de micrometeoritos, emissão gama, radiação ionizante e plasma solar — os dados gama foram o primeiro sensoriamento remoto composicional da Lua, sugerindo composição tipo basalto das marias lunares. Famosamente tocou o hino da \"Internationale\" durante o 23º Congresso do Partido Comunista Soviético (1966-04-04). Operou 56 dias / 460 órbitas antes que suas baterias NiCd se esgotassem. Permanece em órbita lunar.",
+    "new": "Primeira nave a orbitar a Lua — e primeiro satélite artificial de qualquer corpo além da Terra. Lançada em 1966-03-31 de Baikonur em um foguete Molniya, a Luna 10 entrou em órbita lunar em 1966-04-03, numa órbita de 349 × 1015 km com inclinação de 71,9°, três anos antes de a Apollo 8 chegar à Lua com humanos a bordo. Mediu o campo magnético lunar (~3 nT, essencialmente zero), o fluxo de micrometeoritos, a emissão de raios gama, a radiação ionizante e o plasma solar — os dados de raios gama foram o primeiro sensoriamento remoto da composição da Lua, sugerindo uma composição de tipo basáltico nos mares lunares. Tocou, num episódio famoso, o hino “A Internacional” durante o 23º Congresso do Partido Comunista da União Soviética (1966-04-04). Operou 56 dias / 460 órbitas antes que suas baterias de NiCd se esgotassem. Permanece em órbita lunar."
+  },
+  {
+    "rel": "fleet/orbiter/luna10.json",
+    "at": "best_known_for",
+    "old": "Primeira nave a orbitar a Lua (ou qualquer corpo celeste além da Terra) — entrou em órbita lunar 1966-04-03, três anos antes do Apollo 8",
+    "new": "Primeira nave a orbitar a Lua (ou qualquer corpo além da Terra) — entrou em órbita lunar em 1966-04-03, três anos antes da Apollo 8"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-1.json",
+    "at": "tagline",
+    "old": "Primeiro orbitador lunar dos EUA (1966-08-14); mapeou possíveis sítios de pouso do Apollo e fotografou a Terra da órbita lunar (1966).",
+    "new": "Primeiro orbitador lunar dos EUA (1966-08-14); mapeou locais de pouso da Apollo e fez a primeira foto da Terra da órbita lunar (1966)"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-1.json",
+    "at": "description",
+    "old": "A primeira nave espacial dos EUA a orbitar a Lua, quatro meses após Luna 10. Lançada em 1966-08-10 do Cabo Canaveral em um Atlas-Agena D, a Lunar Orbiter 1 entrou em órbita lunar elíptica em 1966-08-14. Sua missão primária era fotografar potenciais sítios de pouso do Apollo com resolução submétrica — um sistema de câmera de dual-lente de 70 mm + 610 mm que revelava filme em órbita (processo Bimat) e o digitalizava para transmissão por rádio à Terra. Capturou a primeira fotografia da Terra da órbita lunar (1966-08-23 — mais de dois anos antes do famoso Earthrise do Apollo 8) como um enquadramento de grande-angular tirado durante a 16ª órbita. Retornou 207 imagens de alta resolução + 207 imagens de resolução média mapeando 4,1 milhões km² da superfície lunar. Intencionalmente colidiu com o lado distante da Lua em 1966-10-29 para liberar a faixa de rádio para a Lunar Orbiter 2.",
+    "new": "A primeira nave espacial dos EUA a orbitar a Lua, quatro meses após a Luna 10. Lançada em 1966-08-10 de Cabo Canaveral em um Atlas-Agena D, a Lunar Orbiter 1 entrou em órbita lunar elíptica em 1966-08-14. Sua missão principal era fotografar locais candidatos de pouso da Apollo com resolução submétrica — um sistema de câmera de lente dupla (70 mm + 610 mm) que revelava o filme em órbita (processo Bimat) e o digitalizava para transmissão por rádio à Terra. Fez a primeira fotografia da Terra a partir da órbita lunar (1966-08-23 — mais de dois anos antes do famoso Earthrise da Apollo 8), uma imagem em grande-angular tirada durante a 16ª órbita. Retornou 207 imagens de alta resolução + 207 de resolução média, mapeando 4,1 milhões de km² da superfície lunar. Foi lançada deliberadamente contra o lado oculto da Lua em 1966-10-29 para liberar a faixa de rádio para a Lunar Orbiter 2."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-1.json",
+    "at": "best_known_for",
+    "old": "Primeiro orbitador lunar dos EUA (1966-08-14). Mapeou potenciais sítios de pouso do Apollo; fotografou a Terra da órbita lunar — mais de dois anos antes do famoso Earthrise do Apollo 8.",
+    "new": "Primeiro orbitador lunar dos EUA (1966-08-14). Mapeou possíveis locais de pouso da Apollo; fez a primeira fotografia da Terra a partir da órbita lunar — mais de dois anos antes do famoso Earthrise da Apollo 8"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-2.json",
+    "at": "tagline",
+    "old": "Segundo satélite lunar dos EUA (1966-11-10). Registrou a \"Foto do Século\" — vista oblíqua da cratera Copernicus a ~45 km de altitude",
+    "new": "Segundo orbitador lunar dos EUA (1966-11-10). Registrou a “Foto do Século” — vista oblíqua da cratera Copernicus a ~45 km de altitude"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-2.json",
+    "at": "description",
+    "old": "Segunda das cinco sondas Lunar Orbiter. Lançada em 1966-11-06 de Cabo Canaveral, entrou em órbita lunar em 1966-11-10. Mapeou 13 sítios na zona equatorial de Apollo. Em 1966-11-24, o Frame 162 capturou uma vista oblíqua da cratera Copernicus de 93 km de diâmetro a 45,8 km de altitude olhando para o norte — uma paisagem montanhosa ao estilo terrestre nunca antes vista em outro mundo. Jornais chamaram-na de \"Foto do Século\". O lançamento da foto tornou-se um ponto de virada no engajamento público com a exploração lunar. Retornou 422 frames ao longo de 33 dias de imageamento. Impactou deliberadamente em 1967-10-11 a 4° S, 98° E (lado afastado lunar) para evitar interferência de radiofrequência com Lunar Orbiter 5.",
+    "new": "Segunda das cinco sondas Lunar Orbiter. Lançada em 1966-11-06 de Cabo Canaveral, entrou em órbita lunar em 1966-11-10. Mapeou 13 locais na zona equatorial da Apollo. Em 1966-11-24, o quadro 162 captou uma vista oblíqua da cratera Copernicus, de 93 km de diâmetro, a 45,8 km de altitude, olhando para o norte — uma paisagem de montanhas ao estilo terrestre nunca antes vista em outro mundo. Os jornais a chamaram de “Foto do Século”. A divulgação da foto tornou-se um ponto de virada no engajamento do público com a exploração lunar. Retornou 422 quadros ao longo de 33 dias de imageamento. Impactou deliberadamente a superfície em 1967-10-11, a 4° S, 98° L (lado oculto da Lua), para evitar interferência de radiofrequência com a Lunar Orbiter 5."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-2.json",
+    "at": "best_known_for",
+    "old": "Segundo satélite lunar dos EUA (1966-11-10). Registrou a \"Foto do Século\" — vista oblíqua da cratera Copernicus a ~45 km de altitude",
+    "new": "Segundo orbitador lunar dos EUA (1966-11-10). Registrou a “Foto do Século” — vista oblíqua da cratera Copernicus a ~45 km de altitude"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-3.json",
+    "at": "description",
+    "old": "Terceira das cinco naves Lunar Orbiter. Lançada em 1967-02-04 de Cabo Canaveral, entrou em órbita lunar em 1967-02-08. Continuou a campanha de mapeamento de sítios Apollo com 477 quadros em 30 dias, incluindo uma célebre fotografia de 1967-02-22 que resolveu o módulo Surveyor 1 de 3 metros pousado na superfície do Oceanus Procellarum — a primeira fotografia de uma nave espacial tirada por outra em outro mundo. Uma falha de meio de missão no sistema de transporte de filme da câmera encerrou a campanha de imageamento em 1967-03-04. Continuou operando como farol de rastreamento Apollo para testes de navegação. Impactou deliberadamente em 1967-10-09 a 14,6° N, 91,7° O.",
+    "new": "Terceira das cinco naves Lunar Orbiter. Lançada em 1967-02-04 de Cabo Canaveral, entrou em órbita lunar em 1967-02-08. Continuou a campanha de mapeamento de locais da Apollo com 477 quadros ao longo de 30 dias, incluindo uma célebre fotografia de 1967-02-22 que distinguiu o módulo de pouso Surveyor 1, de 3 metros, na superfície do Oceanus Procellarum — a primeira fotografia de uma nave espacial tirada por outra em outro mundo. Uma falha no sistema de transporte de filme da câmera, no meio da missão, encerrou a campanha de imageamento em 1967-03-04. Continuou operando como baliza de rastreamento da Apollo em testes de navegação. Impactou deliberadamente a superfície em 1967-10-09, a 14,6° N, 91,7° O."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "description",
+    "old": "Quarta das cinco naves Lunar Orbiter e a primeira a voar uma órbita lunar polar de alta inclinação. Lançada em 1967-05-04 de Cabo Canaveral, entrou em uma órbita polar de 6111 × 2706 km em 1967-05-08. Missão redirecionada da seleção de sítios Apollo (os três primeiros orbitadores já haviam feito esse trabalho) para mapeamento científico amplo. Retornou 419 quadros cobrindo 99 % do lado visível lunar a 60 m/pixel de resolução, mais o primeiro imageamento detalhado de regiões significativas do lado oculto. Os quadros permanecem a cobertura de maior resolução do lado visível lunar nessa escala até a era moderna do LRO. Impacto em outubro de 1967 a 22-30° O no lado oculto após falha do rádio.",
+    "new": "Quarta das cinco naves Lunar Orbiter e a primeira a seguir uma órbita lunar polar de alta inclinação. Lançada em 1967-05-04 de Cabo Canaveral, entrou em uma órbita polar de 6111 × 2706 km em 1967-05-08. Missão redirecionada da seleção de sítios Apollo (os três primeiros orbitadores já haviam feito esse trabalho) para mapeamento científico amplo. Retornou 419 quadros cobrindo 99 % do lado visível lunar a 60 m/pixel de resolução, mais o primeiro imageamento detalhado de regiões significativas do lado oculto. Os quadros permanecem a cobertura de maior resolução do lado visível lunar nessa escala até a era moderna do LRO. Impacto em outubro de 1967 a 22-30° O no lado oculto após falha do rádio."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-5.json",
+    "at": "tagline",
+    "old": "Último orbitador lunar dos EUA (1967-08-05). Completou o mapeamento do lado oculto a 60 m/pixel; impacto 1968-01-31 antes da Apollo",
+    "new": "Último orbitador lunar dos EUA (1967-08-05). Completou o mapa do lado oculto a 60 m/pixel; caiu na Lua em 1968-01-31, antes da Apollo"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-5.json",
+    "at": "description",
+    "old": "Quinta e última nave Lunar Orbiter. Lançada em 1967-08-01 de Cabo Canaveral, entrou em órbita lunar polar em 1967-08-05. Retornou 633 quadros em 35 dias — encerrando a cobertura quase completa de ambos os hemisférios lunares em alta resolução do programa Lunar Orbiter. Imageou 36 alvos científicos de alta prioridade selecionados a partir de lacunas na cobertura dos Orbiters anteriores e das necessidades dos sítios de pouso Surveyor/Apollo. Após a decisão de fim de missão de 1968-01, colidiu deliberadamente em 1968-01-31 a 2,79° S, 83,04° O para liberar o espaço orbital lunar antes da Apollo. Os cinco Orbiters juntos fotografaram 99 % da Lua a 60 m/pixel — até o LRO iniciar seu programa LROC NAC de 0,5 m/pixel em 2009, este foi o mapa lunar global de maior resolução já feito.",
+    "new": "Quinta e última nave Lunar Orbiter. Lançada em 1967-08-01 de Cabo Canaveral, entrou em órbita lunar polar em 1967-08-05. Retornou 633 quadros em 35 dias, completando a cobertura quase total, em alta resolução, de ambos os hemisférios lunares pelo programa Lunar Orbiter. Fotografou 36 alvos científicos de alta prioridade, escolhidos a partir de lacunas na cobertura dos Orbiters anteriores e das necessidades de locais de pouso das Surveyor e da Apollo. Após a decisão de encerrar a missão, em 1968-01, caiu deliberadamente em 1968-01-31, a 2,79° S, 83,04° O, para liberar o espaço orbital lunar antes da Apollo. Os cinco Orbiters juntos fotografaram 99 % da Lua a 60 m/pixel — até o LRO iniciar seu programa LROC NAC de 0,5 m/pixel, em 2009, foi o mapa lunar global de maior resolução já feito."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-5.json",
+    "at": "best_known_for",
+    "old": "Último orbitador lunar dos EUA (1967-08-05). Completou o mapeamento do lado oculto a 60 m/pixel; impacto 1968-01-31 antes da Apollo",
+    "new": "Último orbitador lunar dos EUA (1967-08-05). Completou o mapeamento do lado oculto a 60 m/pixel; caiu na Lua em 1968-01-31, antes das operações lunares da Apollo"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-prospector.json",
+    "at": "tagline",
+    "old": "Orbitador polar NASA Discovery — espectrômetro de nêutrons detecta hidrogênio em polos 1998; impacto em Shackleton encerrou missão 1999",
+    "new": "Orbitador polar Discovery da NASA — espectrômetro de nêutrons achou hidrogênio nos dois polos (1998); impacto em Shackleton, fim em 1999"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-prospector.json",
+    "at": "description",
+    "old": "A terceira missão da classe Discovery da NASA (e a primeira selecionada competitivamente) e a primeira missão científica dedicada da NASA à Lua desde Explorer 49 (1973). Lançado em 1998-01-07 em um Athena II de Cabo Canaveral, Lunar Prospector entrou em uma órbita polar circular de 100 km. Seu espectrômetro de nêutrons detectou déficits agudos de fluxo de nêutrons sobre ambos os pólos lunares (Feldman et al., 1998 / 1999) — consistentes com ~2 × 10⁹ toneladas de material rico em hidrogênio (muito provavelmente gelo de água) em crateras polares permanentemente sombreadas. O graviômetro, magnetômetro, espectrômetros de raios gama e partículas alfa também forneceram mapas globais de composição crustal e magnetismo remanente. Fim da missão em 1999-07-31: impactou deliberadamente perto da cratera Shackleton esperando liberar uma pluma de vapor de água detectável; nenhuma foi vista (o experimento de fluorescência de lítio-7 que a teria detectado era uma tentativa arriscada). A descoberta de hidrogênio manteve-se até LCROSS (2009) e Chandrayaan-1 / M3 (2009) fornecerem confirmação independente.",
+    "new": "A terceira missão da classe Discovery da NASA (e a primeira selecionada por concorrência) e a primeira missão científica da NASA dedicada à Lua desde a Explorer 49 (1973). Lançada em 1998-01-07 em um Athena II de Cabo Canaveral, a Lunar Prospector entrou em uma órbita polar circular de 100 km. Seu espectrômetro de nêutrons detectou déficits acentuados de fluxo de nêutrons sobre ambos os polos lunares (Feldman et al., 1998 / 1999) — compatíveis com ~2 × 10⁹ toneladas de material rico em hidrogênio (muito provavelmente gelo de água) em crateras polares permanentemente sombreadas. O gravímetro, o magnetômetro e os espectrômetros de raios gama e de partículas alfa também forneceram mapas globais da composição da crosta e do magnetismo remanescente. Fim da missão em 1999-07-31: impactou deliberadamente perto da cratera Shackleton, na esperança de liberar uma pluma detectável de vapor de água; nenhuma foi vista (o experimento de fluorescência de lítio-7 que a teria detectado era uma aposta improvável). A descoberta do hidrogênio permaneceu sem confirmação independente até o LCROSS (2009) e a Chandrayaan-1 / M3 (2009)."
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "tagline",
+    "old": "Mapeado por radar 98% da superfície de Vênus",
+    "new": "Mapeou por radar 98% da superfície de Vênus"
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "old": "Magellan é uma órbita espacial construída por Martin Marietta nos EUA. O radar mapeou 98% da superfície de Vênus. Aposentou-se após o primeiro voo em 1989.",
+    "new": "Magellan é um orbitador de espaço profundo construído pela Martin Marietta nos EUA. Mapeou por radar 98% da superfície de Vênus. Aposentado após o primeiro voo, em 1989."
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "best_known_for",
+    "old": "Mapeado por radar 98% da superfície de Vênus",
+    "new": "Mapeou por radar 98% da superfície de Vênus"
+  },
+  {
+    "rel": "fleet/orbiter/mangalyaan.json",
+    "at": "tagline",
+    "old": "Primeira missão marciana asiática; primeiro sucesso na tentativa",
+    "new": "Primeira missão asiática a Marte; sucesso logo na primeira tentativa"
+  },
+  {
+    "rel": "fleet/orbiter/mangalyaan.json",
+    "at": "description",
+    "old": "A primeira missão interplanetária da Índia e a primeira missão marciana bem-sucedida de uma agência espacial asiática. Entregou um orbitador a Marte na primeira tentativa — um feito que nenhuma outra agência espacial nacional havia alcançado (a ESA, uma organização multinacional, obteve sucesso em sua primeira tentativa em Marte com a Mars Express em 2003). Operou por quase oito anos antes do contato ser perdido em 2022.",
+    "new": "A primeira missão interplanetária da Índia e a primeira missão marciana bem-sucedida de uma agência espacial asiática. Entregou um orbitador a Marte na primeira tentativa — um feito que nenhuma outra agência espacial nacional havia alcançado (a ESA, uma organização multinacional, obteve sucesso em sua primeira tentativa em Marte com a Mars Express em 2003). Operou por quase oito anos, até o contato se perder em 2022."
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "tagline",
+    "old": "Primeiro voo bem sucedido de Marte",
+    "new": "Primeiro sobrevoo bem-sucedido de Marte"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "dispatch",
+    "old": "Mariner 4 fez o que nenhuma máquina havia feito: fotografou outro planeta. Pequena e despojada, construída para passar por Marte uma única vez e enviar para casa o que conseguisse nas horas que tinha, ela carregou uma câmera e um gravador de fita através do sistema solar e em julho de 1965 retornou as primeiras imagens em close-up já tiradas de outro mundo — 22 quadros granulados de uma superfície craterizada, semelhante à lua. Aquelas imagens encerraram um século de especulação sobre canais e civilizações marcianas em uma única tarde, e provaram que uma espaçonave poderia cruzar o espaço interplanetário e trazer de volta a face de um planeta. Cada câmera que a humanidade desde então enviou para outro mundo descende desta.",
+    "new": "A Mariner 4 fez o que nenhuma máquina havia feito: fotografou outro planeta. Pequena e despojada, construída para passar por Marte uma única vez e enviar para casa o que conseguisse nas horas de que dispunha, levou uma câmera e um gravador de fita pelo Sistema Solar e, em julho de 1965, enviou de volta as primeiras imagens de perto já feitas de outro mundo — 22 quadros granulados de uma superfície craterizada, semelhante à da Lua. Essas imagens encerraram, numa única tarde, um século de especulação sobre canais e civilizações em Marte, e provaram que uma espaçonave podia cruzar o espaço interplanetário e trazer de volta o rosto de um planeta. Toda câmera que a humanidade enviou desde então a outro mundo descende desta."
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "description",
+    "old": "O primeiro voo bem - sucedido de Marte — julho de 1965. As 22 fotos em preto-e-branco retornadas terminaram ao longo de um século de especulação sobre canais marcianos e vida, mostrando uma superfície craterada, semelhante à Lua.",
+    "new": "O primeiro sobrevoo bem-sucedido de Marte — julho de 1965. As 22 fotos granuladas em preto e branco que enviou puseram fim a mais de um século de especulação sobre canais e vida em Marte, ao mostrar uma superfície craterizada, semelhante à da Lua."
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "best_known_for",
+    "old": "Primeiro voo bem sucedido de Marte",
+    "new": "Primeiro sobrevoo bem-sucedido de Marte"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "dispatch",
+    "old": "A Mariner 9 foi a primeira máquina a parar em outro planeta em vez de simplesmente passar voando. Enquanto as Mariners anteriores vislumbraram Marte em poucas horas, ela carregava combustível suficiente para frear e entrar em órbita e permanecer — e chegou para encontrar o planeta inteiro enterrado sob uma tempestade de poeira global. Então ela esperou. Quando a poeira baixou, mapeou todo Marte, e o levantamento revelou um mundo que as passagens rasantes haviam perdido completamente: o maior vulcão do sistema solar, um cânion com a largura de um continente e os canais secos de rios antigos. Isso provou que uma sonda orbital paciente o suficiente para observar um planeta ao longo do tempo vê o que nenhuma passagem rasante jamais consegue.",
+    "new": "A Mariner 9 foi a primeira máquina a parar em outro planeta em vez de passar direto. Enquanto as Mariners anteriores só vislumbraram Marte durante poucas horas, ela levava combustível suficiente para frear, entrar em órbita e ficar — e chegou para encontrar o planeta inteiro soterrado por uma tempestade global de poeira. Então esperou. Quando a poeira baixou, mapeou todo Marte, e o levantamento revelou um mundo que os sobrevoos haviam deixado passar por completo: o maior vulcão do Sistema Solar, um cânion com a largura de um continente e os canais secos de rios antigos. Provou que um orbitador paciente o bastante para observar um planeta ao longo do tempo vê o que nenhum sobrevoo jamais pode ver."
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "description",
+    "old": "A primeira nave espacial a orbitar outro planeta (Marte, novembro de 1971). Mapeou 100% da superfície marciana — incluindo a tempestade de poeira global que escondeu tudo durante o primeiro mês e o primeiro close-up do Monte Olimpo.",
+    "new": "A primeira nave espacial a orbitar outro planeta (Marte, novembro de 1971). Mapeou 100% da superfície marciana — incluindo a tempestade de poeira global que escondeu tudo durante o primeiro mês e a primeira imagem de perto do Monte Olimpo."
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "old": "Mars Express é um orbitador de espaço profundo construído pela EADS Astrium em Toulouse (Europa). O primeiro e único orbitador marciano da ESA; primeira missão planetária europeia. Em operação desde 2003.",
+    "new": "Mars Express é um orbitador de espaço profundo construído pela EADS Astrium em vários países (Europa). O primeiro e único orbitador marciano da ESA; primeira missão planetária europeia. Em operação desde 2003."
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "tagline",
+    "old": "Ativo marciano mais longevo já — em órbita desde 24/10/2001. Mapas de gelo por gama + nêutrons; repetidor UHF da frota de superfície",
+    "new": "Ativo mais longevo de Marte — em órbita desde 2001-10-24. Mapas de gelo por raios gama + nêutrons; retransmissor UHF da frota de superfície"
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "description",
+    "old": "A sonda mais longevamente ativa a operar em Marte — entrou em órbita marciana em 2001-10-24 e continua ativa em 2026, superando a vida útil de qualquer outra missão a Marte. Lançada em 2001-04-07 em um Delta II a partir de Cabo Canaveral, nomeada em homenagem a '2001: A Space Odyssey' de Arthur C. Clarke. Transportava THEMIS (Thermal Emission Imaging System, imageamento visível de 100 m / infravermelho de 100 m que mapeou a mineralogia da superfície global) e o conjunto de espectrômetro de raios gama GRS + HEND + NS — Boynton et al. (2002, Science 297) utilizou espectroscopia de nêutrons HEND para mapear o gelo de água próximo à superfície global, a descoberta que motivou a seleção de alvo de toda missão de pouso subsequente. Também funciona como o relé UHF primário para ativos na superfície marciana (MERs, MSL, InSight, Perseverance) e como backup para Mars Reconnaissance Orbiter. As reservas de combustível de missão estendida devem durar até 2026-2027.",
+    "new": "A espaçonave mais longeva já em operação em Marte — entrou em órbita marciana em 2001-10-24 e continua ativa em 2026, superando o tempo de vida de qualquer outra missão a Marte. Lançada em 2001-04-07 em um Delta II a partir de Cabo Canaveral, recebeu o nome em homenagem a “2001: A Space Odyssey”, de Arthur C. Clarke. Levava o THEMIS (Thermal Emission Imaging System, imageamento de 100 m no visível e de 100 m no infravermelho, que mapeou a mineralogia global da superfície) e o conjunto de espectrômetros de raios gama GRS + HEND + NS — Boynton et al. (2002, Science 297) usaram a espectroscopia de nêutrons do HEND para mapear o gelo de água global próximo da superfície, a descoberta que orientou a escolha do alvo de todas as missões de pouso seguintes. Também serve como retransmissor UHF principal dos ativos na superfície de Marte (MERs, MSL, InSight, Perseverance) e como reserva do Mars Reconnaissance Orbiter. Espera-se que as reservas de combustível da missão estendida durem até 2026-2027."
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "best_known_for",
+    "old": "Ativo marciano mais longevo já — em órbita desde 24/10/2001. Mapas de gelo por gama + nêutrons; repetidor UHF da frota de superfície",
+    "new": "O ativo mais longevo de Marte — em órbita desde 2001-10-24. Mapas de gelo de água por raios gama + nêutrons; retransmissor UHF da frota de superfície"
+  },
+  {
+    "rel": "fleet/orbiter/mars2-orbiter.json",
+    "at": "tagline",
+    "old": "Orbitador soviético de Mars 2 — segundo artefato em órbita de Marte (13 dias após Mariner 9). Operado 1971-11-27 a 1972-08",
+    "new": "Orbitador soviético companheiro da Mars 2 — segunda espaçonave em órbita de Marte (13 dias após a Mariner 9). Operou de 1971-11-27 a 1972-08"
+  },
+  {
+    "rel": "fleet/orbiter/mars2-orbiter.json",
+    "at": "description",
+    "old": "A metade orbital da missão soviética Mars 2. Lançada em 1971-05-19 em um Proton-K de Baikonur, Mars 2 chegou a Marte em 1971-11-27 — apenas 13 dias depois que Mariner 9 se tornou o primeiro orbitador de Marte. Seu lander tentou descida em 1971-11-27, mas seu paraquedas falhou ao abrir e o lander colidiu (o primeiro objeto feito pelo homem em Marte, mas sem telemetria). A metade orbitadora foi muito mais bem-sucedida, retornando ~60 quadros de imagem + medições extensivas da atmosfera superior, campo magnético e temperaturas da superfície durante a mesma tempestade global de poeira que comprometeu as primeiras imagens de Mariner 9. Carregava espectrômetros de infravermelho e ultravioleta, fotômetros, um sensor Lyman-alfa, magnetômetro, analisador de plasma e detectores de raios cósmicos — o mesmo conjunto de instrumentos que Mars 3 Orbiter. Fim da missão em 1972-08-22 após 362 órbitas.",
+    "new": "A metade orbital da missão soviética Mars 2. Lançada em 1971-05-19 em um Proton-K a partir de Baikonur, a Mars 2 chegou a Marte em 1971-11-27 — apenas 13 dias depois que a Mariner 9 se tornou o primeiro orbitador de Marte. Seu módulo de pouso tentou a descida em 1971-11-27, mas o paraquedas não abriu e ele colidiu com a superfície (o primeiro objeto feito pelo homem em Marte, mas sem telemetria). A metade orbital foi muito mais bem-sucedida: enviou de volta ~60 imagens e extensas medições da atmosfera superior, do campo magnético e das temperaturas da superfície durante a mesma tempestade global de poeira que prejudicou as primeiras imagens da Mariner 9. Levava espectrômetros de infravermelho e ultravioleta, fotômetros, um sensor Lyman-alfa, magnetômetro, analisador de plasma e detectores de raios cósmicos — o mesmo conjunto de instrumentos do Mars 3 Orbiter. Fim da missão em 1972-08-22, após 362 órbitas."
+  },
+  {
+    "rel": "fleet/orbiter/mars2-orbiter.json",
+    "at": "best_known_for",
+    "old": "Orbitador companheiro soviético de Mars 2 — segunda nave espacial de todos os tempos em órbita de Marte (após Mariner 9 por 13 dias). Operou 27/11/1971 a 08/1972",
+    "new": "Orbitador companheiro soviético da Mars 2 — segunda espaçonave em órbita de Marte (13 dias depois da Mariner 9). Operou de 1971-11-27 a 1972-08"
+  },
+  {
+    "rel": "fleet/orbiter/mars3-orbiter.json",
+    "at": "description",
+    "old": "A metade orbital da missão soviética Mars 3 (seu lander realizou o primeiro pouso suave em Marte em 1971-12-02, mas transmitiu apenas por 14,5 segundos antes da perda de sinal em uma tempestade de poeira global). O orbitador foi muito mais bem-sucedido — entrou em uma órbita altamente elíptica de 1500 × 211400 km ao redor de Marte em 1971-12-02, a terceira espaçonave a orbitar Marte (após Mariner 9 em 1971-11-14 e Mars 2 Orbiter em 1971-11-27). Carregava espectrômetros infravermelhos e ultravioleta, fotômetros, um sensor Lyman-alpha, magnetômetro, analisador de plasma e detectores de raios cósmicos. Retornou as primeiras medições do perfil de temperatura da alta atmosfera, mapeou as temperaturas da superfície (pico de +13 °C, mínima de -93 °C) e confirmou vapor de água atmosférico. Retornou aproximadamente 60 fotogramas; a qualidade das imagens foi comprometida pela tempestade de poeira global de Marte que já estava em progresso quando o orbitador chegou. Fim da missão em 1972-08-22.",
+    "new": "A metade orbital da missão soviética Mars 3 (seu módulo de pouso realizou o primeiro pouso suave em Marte em 1971-12-02, mas transmitiu por apenas 14,5 segundos antes de perder o sinal em uma tempestade de poeira global). O orbitador foi muito mais bem-sucedido — entrou em uma órbita marciana altamente elíptica de 1500 × 211400 km em 1971-12-02, a terceira espaçonave a orbitar Marte (depois da Mariner 9, em 1971-11-14, e do Mars 2 Orbiter, em 1971-11-27). Levava espectrômetros de infravermelho e ultravioleta, fotômetros, um sensor Lyman-alfa, magnetômetro, analisador de plasma e detectores de raios cósmicos. Forneceu as primeiras medições do perfil de temperatura da alta atmosfera, mapeou as temperaturas da superfície (máxima de +13 °C, mínima de -93 °C) e confirmou a presença de vapor de água na atmosfera. Enviou cerca de 60 imagens; a qualidade delas foi prejudicada pela tempestade de poeira global de Marte, que já estava em curso quando o orbitador chegou. Fim da missão em 1972-08-22."
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "tagline",
+    "old": "Primeiro orbitador de Mercúrio — 6 assistências gravitacionais planetárias em 6,6 anos antes da inserção em 2011",
+    "new": "Primeiro orbitador de Mercúrio — 6 assistências gravitacionais planetárias em 6,6 anos para dissipar energia antes da inserção, em 2011"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "description",
+    "old": "Missão Discovery da NASA (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). Lançada em 03-08-2004 num Delta II 7925H-9.5. O cruzeiro de 6,6 anos usou 6 assistências gravitacionais (1 Terra, 2 Vênus, 3 Mercúrio) para perder ~5 km/s de energia heliocêntrica. Inserção em órbita mercuriana em 18-03-2011. Descobertas: gelo de água em crateras polares permanentemente sombreadas, material escuro rico em orgânicos nos polos, campo magnético deslocado do centro planetário. Impactou Mercúrio em 30-04-2015 após esgotar o propelente.",
+    "new": "Missão da classe Discovery da NASA, MErcury Surface, Space ENvironment, GEochemistry, and Ranging. Lançada em 2004-08-03 em um Delta II 7925H-9.5. O cruzeiro de 6,6 anos usou 6 assistências gravitacionais (1 da Terra, 2 de Vênus, 3 de Mercúrio) para perder ~5 km/s de energia heliocêntrica — a inserção direta em órbita exigiria um delta-v impossível. Inserção em órbita de Mercúrio em 2011-03-18; mapeou o planeta por 4 anos. Descobertas: gelo de água em crateras polares permanentemente sombreadas, material escuro rico em compostos orgânicos nos polos, composição da exosfera, um campo magnético deslocado do centro do planeta e abundantes depressões de fundo oco. Impactou Mercúrio em 2015-04-30, depois de esgotar o propelente — deixando uma cratera artificial de 16 m perto do polo norte."
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "best_known_for",
+    "old": "Primeiro orbitador de Mercúrio — 4 anos mapeando, fim em impacto controlado 30-04-2015",
+    "new": "Primeiro orbitador de Mercúrio — 4 anos mapeando o planeta, terminou em impacto controlado em 2015-04-30"
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "tagline",
+    "old": "Imagens de Marte de alta resolução de órbita",
+    "new": "Imagens de Marte de mais alta resolução a partir da órbita"
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "description",
+    "old": "Mars Reconnaissance Orbiter é uma órbita espacial construída pela Lockheed Martin nos EUA. Imagens de Marte de alta resolução de órbita. Em serviço desde 2005.",
+    "new": "Mars Reconnaissance Orbiter é um orbitador de espaço profundo construído pela Lockheed Martin nos EUA. Imagens de Marte de mais alta resolução a partir da órbita. Em serviço desde 2005."
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "tagline",
+    "old": "Bennu (2023); agora a caminho de Apófis",
+    "new": "Trouxe amostras de Bennu (2023); agora a caminho de Apófis"
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "description",
+    "old": "A missão de devolução de amostras de asteróides da NASA. Aproximou-se do asteróide Bennu em 2018, capturou uma amostra com seu braço TAGSAM em 2020, e devolveu a cápsula de amostra para Utah em setembro de 2023. Agora redesenhou OSIRIS-APEX, a caminho do asteróide Apófis para o seu voo 2029 próximo da Terra.",
+    "new": "Missão da NASA de retorno de amostras de asteroide. Aproximou-se do asteroide Bennu em 2018, coletou uma amostra com seu braço TAGSAM em 2020 e devolveu a cápsula de amostra a Utah em setembro de 2023. Agora redesignada OSIRIS-APEX, está a caminho do asteroide Apófis para sua passagem próxima da Terra em 2029."
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "best_known_for",
+    "old": "Bennu (2023); agora a caminho de Apófis",
+    "new": "Trouxe amostras de Bennu (2023); agora a caminho de Apófis"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "tagline",
+    "old": "Nave espacial mais próxima do Sol já lançada",
+    "new": "Espaçonave que chegou mais perto do Sol"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "description",
+    "old": "Missão de rasante solar da NASA. Lançada em 2018-08-12 em um foguete Delta IV Heavy + Star 48BV no maior C3 já alcançado por uma carga científica (154 km²/s²). Sete assistências gravitacionais de Vênus durante seis anos reduziram o periélio de 0,16 AU (P1) para 0,046 AU (P22, 2024-12-24) — 9,86 raios solares, 6,1 milhões de km da superfície do Sol. Em P8 (2021-04-28), a Parker ultrapassou a superfície crítica de Alfvén — a primeira nave espacial a entrar na coroa solar. Velocidade máxima no periélio: 192,22 km/s, o objeto mais rápido já criado pela humanidade.",
+    "new": "Missão da NASA rasante ao Sol. Lançada em 2018-08-12 em um conjunto Delta IV Heavy + Star 48BV, com o maior C3 já alcançado para uma carga científica (154 km²/s²). Sete assistências gravitacionais de Vênus ao longo de seis anos aproximaram o periélio de 0,16 AU (P1) até 0,046 AU (P22, 2024-12-24) — 9,86 raios solares, a 6,1 milhões de km da superfície do Sol. No P8 (2021-04-28), a Parker mergulhou abaixo da superfície crítica de Alfvén — a primeira espaçonave a entrar na coroa solar. Velocidade máxima no periélio: 192,22 km/s, o objeto mais rápido já feito pela humanidade."
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "best_known_for",
+    "old": "Nave espacial mais próxima do Sol já lançada (9,86 R☉)",
+    "new": "Espaçonave que chegou mais perto do Sol (9,86 R☉)"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "tagline",
+    "old": "Primeira nave espacial a atravessar o cinturão de asteróides",
+    "new": "Primeira espaçonave a atravessar a Cintura de asteroides"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "description",
+    "old": "A primeira nave espacial a atravessar o cinturão de asteróides e a primeira a passar por Júpiter (Dezembro de 1973). Carregava a placa Pioneer — o desenho dourado anodizado em alumínio de figuras humanas + sistema solar que Carl Sagan e Frank Drake desenharam em três semanas.",
+    "new": "A primeira nave espacial a atravessar a Cintura de asteroides e a primeira a sobrevoar Júpiter (dezembro de 1973). Levava a placa Pioneer — o desenho gravado em alumínio anodizado dourado, com figuras humanas + o Sistema Solar, que Carl Sagan e Frank Drake criaram em três semanas."
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "best_known_for",
+    "old": "Primeira nave espacial a atravessar o cinturão de asteróides",
+    "new": "Primeira espaçonave a atravessar a Cintura de asteroides"
+  }
+]

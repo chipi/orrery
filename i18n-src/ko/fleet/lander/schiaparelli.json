@@ -1,6 +1,6 @@
 {
   "name": "Schiaparelli",
   "tagline": "ExoMars 선행 임무; Rosalind Franklin에 교훈 제공",
-  "description": "ESA의 2016년 ExoMars 시연기로, 착륙 중 충돌함 — 낙하산 강하 중 IMU가 포화되어 비행 컴퓨터가 지면 아래에 있다고 잘못 판단했고, 낙하산을 방출한 후 역추진 로켓을 30초가 아닌 3초만 분사했으며, 이후 신호가 끊기고 3.7 km 고도에서 ~300 km/h의 속도로 충돌했다. 이 교훈은 Rosalind Franklin 착륙선 설계에 직접 반영되었다.",
+  "description": "ESA의 2016년 ExoMars 실증기로, 착륙 중 추락했다. 낙하산 강하 중 IMU가 포화되어 비행 컴퓨터가 자신이 지면 아래에 있다고 판단했고, 낙하산을 분리한 뒤 역추진 로켓을 30초가 아니라 3초만 분사했으며, 이후 교신이 끊긴 채 고도 3.7 km에서 약 300 km/h로 충돌했다. 이 교훈은 Rosalind Franklin 착륙선 설계에 곧바로 반영되었다.",
   "best_known_for": "ExoMars 선행 임무; Rosalind Franklin에 교훈 제공"
 }

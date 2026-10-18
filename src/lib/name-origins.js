@@ -208,7 +208,7 @@ export const ORIGIN_NAMES = {
     Itokawa: 'イトカワ',
     Ryugu: 'リュウグウ',
   },
-  ko: { Danuri: '다누리', Nuri: '누리', Naro: '나로' },
+  ko: { Danuri: '다누리', Nuri: '누리', Naro: '나로', 'Korean Air Lines': '대한항공' },
   hi: {
     Chandrayaan: 'चंद्रयान',
     Mangalyaan: 'मंगलयान',

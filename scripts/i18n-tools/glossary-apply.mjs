@@ -407,13 +407,22 @@ const MERCURY_PLANET =
   /(^|\/)(planets|science\/planets|orbit-regimes[^/]*|science\/transfers|science\/orbits|science\/scales-time)\/|bepicolombo|messenger|mariner-10|programs\/ariane/;
 const SKIP_KEY = /(^|\.)(l|u|url|href|src|id|slug|t|key|wikidata|name|short_name|site_name)$/;
 const CJK = /[぀-ヿ㐀-鿿가-힯]/;
+// Final consonant of the word's last syllable as read aloud: Hangul from the character; a
+// digit as its Korean reading (LC-101 = 백일, ㄹ); anything else (a Latin letter) is unknown.
+const DIGIT_BATCHIM = { 1: 8, 2: 0, 3: 16, 4: 0, 5: 0, 6: 1, 7: 8, 8: 8, 9: 0 };
 const batchim = (w) => {
   const c = w.charCodeAt(w.length - 1) - 0xac00;
-  return c >= 0 && c < 11172 ? c % 28 : 0;
+  if (c >= 0 && c < 11172) return c % 28;
+  if (/000$/.test(w)) return 4; // 천
+  if (/00$/.test(w)) return 1; // 백
+  if (/0$/.test(w)) return 17; // 십
+  if (/\d$/.test(w)) return DIGIT_BATCHIM[w.at(-1)];
+  return -1;
 };
 function koParticles(s, word) {
   const b = batchim(word),
     rieul = b === 8;
+  if (b === -1) return s;
   return s.replace(
     new RegExp(`${word}(를|을|는|은|가|이(?![가-힣]{2})|와|과|로|으로)`, 'g'),
     (m, p) => {

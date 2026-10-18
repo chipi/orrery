@@ -1,6 +1,6 @@
 {
   "name": "Soyuz-2",
-  "tagline": "현대식 소유즈 주력 발사체 — Soyuz MS 유인선과 Progress MS 화물선을 ISS로 운반",
-  "description": "RKTs Progress의 현대화된 소유즈 계열로, Soyuz-FG / Soyuz-U의 아날로그 시스템을 디지털 비행 제어로 대체했습니다. 2.1a 형(1단계 RD-107A/RD-108A + 3단계 RD-0124), 2.1b 형(향상된 3단계), 2.1v 형(부스터 없음, 단일 RD-110 단계)의 변형이 있습니다. ISS로 가는 모든 현대식 러시아 유인선과 화물선, 그리고 Glonass, Resurs-P, Lotos-S 페이로드를 운반합니다.",
-  "best_known_for": "ISS 유인선과 화물 운반용 현대식 소유즈 주력 발사체"
+  "tagline": "현대형 Soyuz 주력 발사체 — Soyuz MS 유인선과 Progress MS 화물선을 ISS로 운반",
+  "description": "RKTs Progress의 현대화된 Soyuz 계열로, Soyuz-FG / Soyuz-U의 아날로그 시스템을 디지털 비행 제어로 바꿨습니다. 변형으로 2.1a(1단 RD-107A/RD-108A + 3단 RD-0124), 2.1b(성능을 높인 3단), 2.1v(부스터 없이 RD-110 단일 단)가 있습니다. ISS로 향하는 러시아의 모든 현대 유인·화물 비행과 Glonass, Resurs-P, Lotos-S 탑재체를 운반합니다.",
+  "best_known_for": "ISS 승무원과 화물 수송을 맡은 현대형 Soyuz 주력 발사체"
 }

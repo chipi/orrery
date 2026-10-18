@@ -1,0 +1,14 @@
+[
+ {
+  "rel": "earth-objects/starlink.json",
+  "at": "scale_fact",
+  "old": "Starlink voerde van juni 2025 tot mei 2026 meer dan 355.000 autonome ontwijkingsmanoeuvres uit over de hele constellatie — meer dan alle andere exploitanten samen.",
+  "new": "Starlink voerde van juni 2025 tot mei 2026 meer dan 355.000 autonome ontwijkingsmanoeuvres uit over de hele constellatie."
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "description",
+  "old": "SpaceX's breedband-LEO-constellatie — meer dan 11.000 actieve satellieten (stand oktober 2026) op 550 km hoogte verdeeld over meerdere lagen (53°, 70°, 97,6° inclinaties). Eerste operationele diensten in 2019; bereikt wereldwijd bereik in 2023. Elke Gen-2-satelliet is voorzien van laser-intersatelliet-verbindingen, waardoor de constellatie pakketten tussen satellieten kan routeren zonder grondstationhops. Het autonome botsingsvoorkomingssysteem voerde van juni 2025 tot mei 2026 meer dan 355.000 manoeuvres uit — meer dan alle andere LEO-operators tezamen.",
+  "new": "SpaceX's breedband-LEO-constellatie — meer dan 11.000 actieve satellieten (stand oktober 2026) op 550 km hoogte verdeeld over meerdere lagen (53°, 70°, 97,6° inclinaties). Eerste operationele diensten in 2019; bereikt wereldwijd bereik in 2023. Elke Gen-2-satelliet is voorzien van laser-intersatelliet-verbindingen, waardoor de constellatie pakketten tussen satellieten kan routeren zonder grondstationhops. Het autonome botsingsvoorkomingssysteem voerde van juni 2025 tot mei 2026 meer dan 355.000 manoeuvres uit."
+ }
+]

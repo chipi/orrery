@@ -1,0 +1,14 @@
+[
+ {
+  "rel": "earth-objects/starlink.json",
+  "at": "scale_fact",
+  "old": "A Starlink realizou mais de 355.000 manobras autônomas de desvio em toda a constelação entre junho de 2025 e maio de 2026 — mais do que todos os outros operadores combinados.",
+  "new": "A Starlink realizou mais de 355.000 manobras autônomas de desvio em toda a constelação entre junho de 2025 e maio de 2026."
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "description",
+  "old": "Constelação de banda larga LEO da SpaceX — mais de 11.000 satélites ativos (em outubro de 2026) a 550 km de altitude, distribuídos em várias camadas (inclinações de 53°, 70° e 97,6°). Primeiro serviço operacional em 2019; cobertura global alcançada em 2023. Cada satélite Gen-2 tem enlaces a laser entre satélites, o que permite à constelação rotear pacotes de um satélite a outro sem passar por estações terrestres. O sistema autônomo de prevenção de colisões fez mais de 355.000 manobras entre junho de 2025 e maio de 2026 — mais do que todos os outros operadores LEO somados.",
+  "new": "Constelação de banda larga LEO da SpaceX — mais de 11.000 satélites ativos (em outubro de 2026) a 550 km de altitude, distribuídos em várias camadas (inclinações de 53°, 70° e 97,6°). Primeiro serviço operacional em 2019; cobertura global alcançada em 2023. Cada satélite Gen-2 tem enlaces a laser entre satélites, o que permite à constelação rotear pacotes de um satélite a outro sem passar por estações terrestres. O sistema autônomo de prevenção de colisões fez mais de 355.000 manobras entre junho de 2025 e maio de 2026."
+ }
+]

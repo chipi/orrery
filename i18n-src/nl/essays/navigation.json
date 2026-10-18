@@ -4,15 +4,15 @@
   "body": [
     {
       "type": "prose",
-      "md": "Er zijn geen wegen in de ruimte. Geen kustlijn, geen horizon, geen landmark om naar te navigeren — en het enige wat elke bestuurder op Aarde nu als vanzelfsprekend beschouwt, een satellietconstellation dat fluistert *je bent hier*, bestaat alleen in een dunne schil van enkele duizenden kilometers dik rond één planeet. Verlaat die schil, en je staat alleen met een probleem met drie lagen: **Waar ben ik? In welke richting wijs ik? En hoe kom ik van hier naar een plek die zelf beweegt, snel, en niet meer daar zal zijn als ik aankom?**"
+      "md": "Er zijn geen wegen in de ruimte. Geen kustlijn, geen horizon, geen herkenningspunt om op te sturen — en het ene wat elke automobilist op Aarde inmiddels als vanzelfsprekend beschouwt, een satellietconstellatie die *je bent hier* fluistert, bestaat alleen in een dunne schil van enkele duizenden kilometers dik rond één planeet. Verlaat die schil, en je staat alleen met een probleem dat uit drie lagen bestaat: **Waar ben ik? Welke kant wijs ik op? En hoe kom ik van hier naar een plek die zelf beweegt, snel, en er niet meer zal zijn als ik aankom?**"
     },
     {
       "type": "prose",
-      "md": "Zet het verkeerd aan en herstel is onmogelijk: een fractie van een graad richtingsfout, vermenigvuldigd over honderd miljoen kilometer, is het verschil tussen een baan en een krater. Zet het goed aan en het verdwijnt uit het zicht — navigatie is de stille vaardigheid achter alle luidruchtige, het iets waarmee geen persverklaring begint en zonder wat geen missie overleefd wordt. Beschouw de standaard waaraan het wordt gehouden. [New Horizons](/missions?id=new-horizons) legde bijna vijf miljard kilometer af naar [Pluto](/explore) in negen en een half jaar en arriveerde binnen ongeveer honderd kilometer, en ongeveer twee en een half minuut, van een plan dat nog voor de lancering werd opgesteld. Dit is de nauwkeurigheid waar het om gaat — en het verbazingwekkende is hoe oud, en hoe menselijk, de ideeën erachter zich blijken te voordoen."
+      "md": "Doe je het fout, dan is herstel niet mogelijk: een fractie van een graad richtfout, vermenigvuldigd over honderd miljoen kilometer, is het verschil tussen een baan en een krater. Doe je het goed, dan verdwijnt het uit het zicht — navigatie is de stille vaardigheid onder alle luide vaardigheden, het ding waarmee geen persbericht opent en zonder welk geen missie slaagt. Bedenk aan welke maatstaf het wordt gemeten. [New Horizons](/missions?id=new-horizons) legde in negenenhalf jaar bijna vijf miljard kilometer af naar [Pluto](/explore) en kwam aan binnen ongeveer honderd kilometer en ongeveer tweeënhalve minuut van een plan dat was opgesteld voordat het de lanceerplaats verliet. Dat is de precisie waar het hier om gaat — en het verbazingwekkende is hoe oud, en hoe menselijk, de ideeën erachter blijken te zijn."
     },
     {
       "type": "prose",
-      "md": "Want het antwoord is nauwelijks veranderd. De machines werden kleiner en werden vervolgens slim; de afstanden groeiden totdat de grond niet meer kon meekomen; maar daaronder navigeren ruimtevaartuigen nog steeds zoals een zeeman uit de achttiende eeuw dat deed — door hoeken te meten naar de enige vaste dingen die er zijn, de sterren, en door eerlijk tellen van elke stoot die ze ooit hebben gevoeld. Dit is het verhaal van dat tellen, en van de langzame overdracht van het hele delicate bedrijf van een kamer vol mensen op de grond naar het ruimtevaartuig zelf."
+      "md": "Want het antwoord is nauwelijks veranderd. De machines werden kleiner en daarna slim; de afstanden namen toe tot de grond het niet meer kon bijbenen; maar onderliggend navigeren ruimtevaartuigen nog steeds zoals een zeeman uit de achttiende eeuw: door hoeken te meten naar de enige vaste dingen die er zijn, de sterren, en door eerlijk bij te houden hoeveel duwtjes ze ooit hebben gevoeld. Dit is het verhaal van dat bijhouden, en van de langzame overdracht van de hele delicate onderneming van een zaal vol mensen op de grond aan het ruimtevaartuig zelf."
     },
     {
       "type": "heading",
@@ -20,42 +20,42 @@
     },
     {
       "type": "prose",
-      "md": "Begin met de moeilijkste van de drie vragen, degene die het makkelijkst klinkt: *waar ben ik?* Op Aarde kijk je. In de ruimte kon je dat lange tijd niet — dus in plaats daarvan **telde je**."
+      "md": "Begin met de moeilijkste van de drie vragen, degene die het makkelijkst klinkt: *waar ben ik?* Op Aarde kijk je. In de ruimte kon dat lange tijd niet — dus hield je in plaats daarvan **de tel bij**."
     },
     {
       "type": "prose",
-      "md": "De techniek heet [dead reckoning](/science/mission-phases/dead-reckoning), en zij is precies zo oud als zeevaart. Als je weet waar je begonnen bent, en je meet elke versnelling die je sinds je vertrek hebt gevoeld — elke motorbrand, elke zet — dan kun je ze allemaal optellen en in principe weten waar je nu bent. Een ruimtevaartuig doet dit met een *inertial measurement unit*: een cluster van gyroscopen die een vaste oriëntatie aanhouden en accelerometers die elke verandering in beweging voelen, en integreren stilletjes in de kern van het vaartuig de hele reis in een voortdurende schatting van positie en snelheid."
+      "md": "De techniek heet [gegist bestek](/science/mission-phases/dead-reckoning) en is precies zo oud als de oceaanvaart. Als je weet waar je begon en je meet elke versnelling die je sindsdien hebt gevoeld — elke motorbrand, elke por — dan kun je ze allemaal optellen en in principe weten waar je nu bent. Een ruimtevaartuig doet dit met een *inertiële meeteenheid*: een cluster gyroscopen die een vaste oriëntatie vasthouden en versnellingsmeters die elke verandering in beweging voelen, en die in de kern van het ruimtevaartuig de hele reis stilletjes integreren tot een doorlopende schatting van positie en snelheid."
     },
     {
       "type": "figure",
       "image": "essays/navigation/dead-reckoning",
       "kind": "diagram",
-      "caption": "Dead reckoning — de oudste truc op zee, en nog steeds degene daaronder. Houd het bekende startpunt vast, tel elke stoot die je sinds je vertrek hebt gevoeld op, en een voortdurende schatting van waar je bent rotten langzaam weg; een sterrenwaarneming stelt de drift terug op nul.",
+      "caption": "Gegist bestek — de oudste truc op zee, en nog steeds de truc eronder. Houd het bekende beginpunt vast, tel elke duw op die je sindsdien hebt gevoeld, en een doorlopende schatting van waar je bent rot langzaam weg; een sterwaarneming zet de afwijking terug op nul.",
       "align": "wide"
     },
     {
       "type": "prose",
-      "md": "\"In principe\" draagt gewicht in die zin. Dead reckoning drijft af. Elke minuscule fout in elke meting accumuleert, dus de schatting rotten langzaam weg, en hoe verder je gaat, hoe erger het wordt. Daarom legden zij op de vluchten die het meest belangrijk waren een mens in de lus met een sextant."
+      "md": "\"In principe\" weegt hier zwaar. Gegist bestek drijft af. Elke kleine fout in elke meting stapelt zich op, dus de schatting rot langzaam weg, en hoe verder je gaat, hoe erger het wordt. Daarom zetten ze op de vluchten die het meest telden een mens met een sextant in de lus."
     },
     {
       "type": "prose",
-      "md": "Dit is het detail dat het waard is vast te houden. Toen [Apollo 8](/missions?id=apollo8) in december 1968 het eerste bemande schip werd dat Aarde's zwaartekracht verliet en naar een ander wereldlichaam navigeerde, stuurde zijn bemanning deels op de manier waarop Cook de Stille Oceaan overstak: Jim Lovell bij een telescoop en sextant ingebouwd in de romp, stelsel van bekende sterren tegenover Aarde's horizon kijkend, de hoeken invoerend in een computer om de drift te corrigeren. De Apollo Guidance Computer die deze berekeningen uitvoerde had ongeveer 72 kilobytes vast geheugen en liep op een kloksnelheid die een moderne deurbel zou bespotten — en het vloog negen bemande missies naar de Maan en [twee handenvol van hen op die Maan](/missions?id=apollo11). Het genie was niet de hardware. Het was de herkenning dat een machine om het tellen bij te houden en een mens om het tegen de sterren te controleren, samen, konden doen wat geen van beiden alleen kon."
+      "md": "Dit is het detail om vast te houden. Toen [Apollo 8](/missions?id=apollo8) in december 1968 het eerste bemande schip werd dat de zwaartekracht van de Aarde verliet en naar een andere wereld navigeerde, stuurde de bemanning deels zoals Cook de Stille Oceaan overstak: Jim Lovell bij een telescoop en een sextant die in de romp waren ingebouwd, die bekende sterren tegen de horizon van de Aarde peilde en de hoeken in een computer voerde om de afwijking te corrigeren. De Apollo Guidance Computer die die sommen maakte had ongeveer 72 kilobyte vast geheugen en draaide op een kloksnelheid waar een moderne deurbel smalend om zou doen — en hij bracht negen bemanningen naar de Maan en [twee handen vol van hen erop](/missions?id=apollo11). Het genie zat niet in de hardware. Het zat in het inzicht dat een machine die de telling bijhoudt en een mens die haar aan de sterren toetst, samen konden wat geen van beide alleen kon."
     },
     {
       "type": "prose",
-      "md": "Het idee behoorde niet eens tot de ruimtevaarttechnologie. In dezelfde jaren vloog het een verkenningsvliegtuig: de SR-71 Blackbird, cruisend op drie keer de geluidsnelheid waar de daghemel al donker is, droeg een sterrentracker achter de cockpit die sterren zag door een kwartsvenster — op zijn minst twee tegelijk, gematcht tegen een boordcatalogus — en gebruikte ze om de drift van zijn inertial platform te corrigeren, precies zoals een ruimtevaartuig dat doet. Zijn bemanningen noemden de eenheid R2-D2. Het probleem is hetzelfde probleem op zeventigduizend voet of in een baan: houd eerlijk tellen bij, en controleer het tegen het enige wat niet beweegt."
+      "md": "Het idee was niet eens voorbehouden aan de ruimtevaart. In diezelfde jaren vloog een verkenningsvliegtuig ermee: de SR-71 Blackbird, die met driemaal de geluidssnelheid vloog, waar de hemel overdag al donker is, had achter de cockpit een sterrensensor die door een kwartsvenster sterren peilde — minstens twee tegelijk, vergeleken met een boordcatalogus — en daarmee de afwijking van zijn traagheidsplatform corrigeerde, precies zoals een ruimtevaartuig dat doet. De bemanningen noemden dat apparaat R2-D2. Het probleem is hetzelfde op zeventigduizend voet hoogte of in een baan: houd een eerlijke telling bij en toets die aan het enige dat niet beweegt."
     },
     {
       "type": "figure",
       "image": "missions/apollo8/01",
       "kind": "photo",
-      "caption": "Apollo 8, december 1968 — de eerste bemanning die Aarde verliet en naar een ander wereldlichaam navigeerde, een drijvend tellen corrigerend zoals een zeeman zou doen: een sextant, de sterren, en Aarde's horizon.",
+      "caption": "Apollo 8, december 1968 — de eerste bemanning die de Aarde verliet en naar een andere wereld navigeerde, en een afdrijvende telling corrigeerde zoals een zeeman dat zou doen: met een sextant, de sterren en de horizon van de Aarde.",
       "align": "wide",
       "credit": "NASA"
     },
     {
       "type": "prose",
-      "md": "Elk diep-ruimtevaartuig draagt nog steeds het machinale deel van dat paar. Maar de bemande sextant was een noodoplossing voor een specifiek decennium. Voor alles zonder bemanning — elke sonde naar elke planeet — moest het eerlijke tellen op een ander manier worden gecontroleerd. Het moest worden gecontroleerd vanaf de grond."
+      "md": "Elk ruimtevaartuig voor de diepe ruimte draagt nog altijd de machinehelft van dat paar. Maar de sextant met bemanning was een noodoplossing voor één bepaald decennium. Voor alles zonder bemanning — elke sonde naar elke planeet — moest de eerlijke telling op een andere manier worden gecontroleerd. Ze moest worden gecontroleerd vanaf de grond."
     },
     {
       "type": "heading",
@@ -63,26 +63,26 @@
     },
     {
       "type": "prose",
-      "md": "Hier is het feit dat de meeste mensen's intuïtie over ruimtenavigatiegatie ongedaan maakt: voor de meeste missies in deze atlas, **weet het ruimtevaartuig niet waar het is. De grond weet het.**"
+      "md": "Hier is het feit dat de intuïtie van de meeste mensen over ruimtenavigatie onderuit haalt: bij de meeste missies in deze atlas **weet het ruimtevaartuig niet waar het is. De grond weet het.**"
     },
     {
       "type": "prose",
-      "md": "Het instrument is het [Deep Space Network](/science/mission-phases/dsn) — drie grote schotelcomplexen ruwweg 120° uit elkaar in Californië, Spanje en Australië, zodat als de Aarde draait, er altijd minstens één van hen in diepe ruimte kan kijken. Wanneer een schotel naar een sonde wijst, luistert het niet vooral naar gegevens. Het meet twee dingen met kolossale precisie. Ten eerste, **range**: het stuurt een timsignaal, het ruimtevaartuig echoet het terug, en de retourreistijd — vermenigvuldigd met de lichtsnelheid — geeft de afstand, goed tot enkele meters over miljarden kilometers. Ten tweede, **snelheid**: de radio van de craft, in frequentie verschoven door zijn beweging naar of weg van ons, wordt gelezen op zijn Dopplershift, en de shift geeft de snelheid langs de zichtlijn tot op een fractie van een millimeter per seconde."
+      "md": "Het instrument is het [Deep Space Network](/science/mission-phases/dsn) — drie grote schotelcomplexen op ruwweg 120° van elkaar in Californië, Spanje en Australië, zodat er terwijl de Aarde draait altijd minstens één de diepe ruimte in kan kijken. Als een schotel op een sonde wordt gericht, luistert hij niet in de eerste plaats naar gegevens. Hij meet twee dingen met monsterlijke precisie. Ten eerste de **afstand**: hij stuurt een tijdsignaal, het ruimtevaartuig kaatst het terug, en de heen-en-terugtijd — vermenigvuldigd met de lichtsnelheid — geeft de afstand, nauwkeurig tot enkele meters over miljarden kilometers. Ten tweede de **snelheid**: de radiozender van het ruimtevaartuig, in frequentie verschoven door zijn beweging naar ons toe of van ons af, wordt uitgelezen op zijn dopplerverschuiving, en die verschuiving geeft de snelheid langs de zichtlijn tot op een fractie van een millimeter per seconde."
     },
     {
       "type": "figure",
       "image": "essays/navigation/deep-space-network",
       "kind": "diagram",
-      "caption": "Het Deep Space Network: drie grote schotels ruwweg 120° uit elkaar, zodat er altijd één in diepe ruimte kijkt. Range komt uit de retourreislicht-tijd; snelheid uit de radio's Dopplershift. De grond doet het vliegen.",
+      "caption": "Het Deep Space Network: drie grote schotels op ruwweg 120° van elkaar, zodat er altijd één de diepe ruimte in kijkt. De afstand komt uit de heen-en-terug-lichttijd; de snelheid uit de dopplerverschuiving van de radio. De grond doet het vliegen.",
       "align": "wide"
     },
     {
       "type": "prose",
-      "md": "Volg die twee getallen uren lang terwijl de Aarde draait en de geometrie verandert, en een kamer vol navigators kan de baan van een ruimtevaartuig door het zonnestelsel reconstrueren zonder dat het ruimtevaartuig enige sterke mening erover heeft. Toen [Mariner 4](/missions?id=mariner4) in 1965 de eerste close-up foto's van een ander wereldlichaam terugbracht, was het vaartuig een passagier; het navigeren werd op Aarde gedaan. Hetzelfde gold voor [Voyager](/missions?id=voyager-1) en [Cassini](/missions?id=cassini) — en die scherpe aankomst bij Pluto, degene die dit essay opende, werd op dezelfde manier gevlogen: vrijwel geheel gereconstrueerd en gecorrigeerd vanuit drie schotels op de grond."
+      "md": "Volg die twee getallen uren achtereen terwijl de Aarde draait en de geometrie verandert, en een zaal vol navigators kan de baan van een ruimtevaartuig door het zonnestelsel reconstrueren zonder dat het ruimtevaartuig daar zelf enige uitgesproken mening over heeft. Toen [Mariner 4](/missions?id=mariner4) in 1965 de eerste foto's van dichtbij van een andere planeet terugstuurde, was het ruimtevaartuig een passagier; het navigeren gebeurde op Aarde. Hetzelfde gold voor de [Voyagers](/missions?id=voyager-1) en voor [Cassini](/missions?id=cassini) — en ook die messcherpe aankomst bij Pluto, waarmee dit essay opende, werd zo gevlogen: bijna volledig gereconstrueerd en bijgestuurd vanaf drie schotels op de grond."
     },
     {
       "type": "prose",
-      "md": "Maar het Deep Space Network heeft één tegenstander tegen wie het niet kan argumenteren, en zijn naam is de lichtsnelheid. Bij Mars duurt een commando ongeveer drie tot tweeëntwintig minuten om aan te komen, en de bevestiging duurt even lang om terug te keren. Bij Pluto is het vier en een half *uur*, één kant op. De grond kan een sonde prachtig navigeren — zolang niets sneller moet worden beslist dan het licht kan het nieuws thuis brengen en een antwoord terug kan gaan. Zeventig jaar lang deed bijna niets dat. Dat staat op het punt het hele probleem te worden."
+      "md": "Maar het Deep Space Network heeft één tegenstander met wie niet te redetwisten valt, en die heet de lichtsnelheid. Bij Mars doet een commando er zo'n drie tot tweeëntwintig minuten over om aan te komen, en de ontvangstbevestiging doet er even lang over om terug te komen. Bij Pluto is het vier en een half *uur*, enkele reis. De grond kan een sonde prachtig navigeren — zolang niets sneller moet worden besloten dan het licht het nieuws naar huis en een antwoord weer naar buiten kan brengen. Zeventig jaar lang was dat bijna nooit het geval. Dat staat op het punt het hele probleem te worden."
     },
     {
       "type": "heading",
@@ -90,15 +90,15 @@
     },
     {
       "type": "prose",
-      "md": "Voordat je ergens heen kunt gaan, moet je de tweede vraag oplossen — *in welke richting wijs ik?* — en de ruimte is er rustig vijandig tegen. Er is geen boven. Er is geen beneden. Een ruimtevaartuig dat in het donker tuimelt heeft geen vloer om het te vertellen welke richting het uitkijkt, en het verkeerd zetten betekent je antenne weg van Aarde wijzen, je camera weg van het doel, je motor de verkeerde kant op de baan."
+      "md": "Voordat je ergens heen kunt, moet je de tweede vraag oplossen — *welke kant wijs ik op?* — en de ruimte is daar stilletjes vijandig tegenover. Er is geen boven. Er is geen onder. Een ruimtevaartuig dat in het donker tolt, heeft geen vloer die het vertelt welke kant het op kijkt, en als je dat verkeerd hebt, wijst je antenne van de Aarde weg, je camera van het doel weg en je motor de verkeerde kant op langs het traject."
     },
     {
       "type": "prose",
-      "md": "De oplossing is om vooraf een reeks richtingen af te spreken die nooit bewegen, en jezelf constant tegen hen te meten. Die afspraak is een [reference frame](/science/scales-time/frames) — voor het merendeel van de moderne ruimtevaarttechnologie, de ene J2000 genoemde, een oriëntatie vastgepind aan de gemiddelde posities van de sterren op de middag van de eerste dag van het jaar 2000. Het is een willekeurig anker, gekozen voor gemak, en het is nu het gedeelde raster waaraan vrijwel elk ruimtevaartuig, efemeride en missieplan rustig hangt."
+      "md": "De oplossing is om van tevoren een stel richtingen af te spreken die nooit bewegen, en jezelf er voortdurend aan te meten. Die afspraak is een [referentiekader](/science/scales-time/frames) — voor het grootste deel van de moderne ruimtevaart het kader dat J2000 heet, een oriëntatie die is vastgepind aan de gemiddelde posities van de sterren op de middag van de eerste dag van het jaar 2000. Het is een willekeurig anker, gekozen voor het gemak, en het is nu het gedeelde raster waaraan vrijwel elk ruimtevaartuig, elke efemeride en elk missieplan stilletjes hangt."
     },
     {
       "type": "prose",
-      "md": "Om zijn plaats in dat raster te vinden, leest een craft de hemel. Een **star tracker** is een klein cameratje dat een stukje sterren fotografeert, het patroon tegen een boordcatalogus koppelt, en hieruit eenmaals precies weet welke richting het in het vaste raam is georiënteerd — een machine die in een fractie van een seconde doet wat Lovell met de hand bij zijn sextant deed. Tussen fixes dragen de drijvende gyroscopen het tellen; elke keer dat de star tracker een schone blik krijgt, zet het de drift terug op nul. De hemel, wederom, is het enige ding dat waard is te vertrouwen. Alles ander is interpolatie tussen glimpsen ervan."
+      "md": "Om zijn plaats in dat raster te bepalen, leest een ruimtevaartuig de hemel. Een **sterrensensor** is een kleine camera die een stukje sterrenhemel fotografeert, het patroon vergelijkt met een boordcatalogus en uit die ene meting precies weet welke kant het op staat in het vaste kader — een machine die in een fractie van een seconde doet wat Lovell met de hand bij zijn sextant deed. Tussen de metingen door houden de afdrijvende gyroscopen de telling bij; elke keer dat de sterrensensor een schone blik krijgt, zet hij de afwijking terug op nul. De hemel is, opnieuw, het enige dat het vertrouwen waard is. Al het andere is interpolatie tussen glimpen ervan."
     },
     {
       "type": "figure",
@@ -109,30 +109,30 @@
     },
     {
       "type": "heading",
-      "text": "Gericht op een bewegende planeet"
+      "text": "Mikken op een bewegende planeet"
     },
     {
       "type": "prose",
-      "md": "Nu de derde vraag, degene die navigatie van boekhouden verandert in iets dichter bij scherpschutterij. Je weet waar je bent. Je weet in welke richting je wijst. **Mars is ergens anders — en op het moment dat je aankomt, zal het zijn verplaatst.**"
+      "md": "Nu de derde vraag, die van navigatie iets maakt dat minder op boekhouden en meer op scherpschieten lijkt. Je weet waar je bent. Je weet welke kant je op wijst. **Mars is ergens anders — en tegen de tijd dat je er bent, is het opgeschoven.**"
     },
     {
       "type": "prose",
-      "md": "Je vliegt er nooit recht op aan. Brandstof is de valuta van de ruimtevaarttechnologie, en daar is nooit genoeg van, dus je vliegt de baan die het minst kost: een lange, gebogen [transfer orbit](/science/transfers/hohmann-transfer) die Aarde verlaat en zonder motor langs een boog kustent, berekend zodat het verre einde ervan en de doelplaneet op hetzelfde moment op hetzelfde rendezvous-punt aankomen, maanden later. Het berekenen van die boog — *welke snelheid, in welke richting, brengt mij van dit bewegende punt naar dat bewegende punt in precies dit veel tijd?* — is een stuk hemelmechanica oud genoeg om een naam te hebben, het [Lambert problem](/science/transfers/lambert-problem), en het oplossen ervan is de kern van elk interplanetair startvenster."
+      "md": "Je vliegt er nooit rechtstreeks op af. Brandstof is de munteenheid van de ruimtevaart, en er is nooit genoeg, dus je vliegt het traject dat het minst kost: een lange, gebogen [overdrachtsbaan](/science/transfers/hohmann-transfer) die de Aarde verlaat en zonder motor langs een boog glijdt die zo is berekend dat het verre uiteinde ervan en de doelplaneet maanden later op hetzelfde moment op hetzelfde ontmoetingspunt aankomen. Die boog uitrekenen — *welke snelheid, in welke richting, brengt mij van dit bewegende punt naar dat bewegende punt in precies zoveel tijd?* — is een stuk hemelmechanica dat oud genoeg is om een naam te hebben, het [Lambert-probleem](/science/transfers/lambert-problem), en het oplossen ervan vormt de kern van elk interplanetair lanceervenster."
     },
     {
       "type": "prose",
-      "md": "De meest elegante truc in de hele discipline is de planeten het duwen laten doen. Een ruimtevaartuig dat dicht voorbij een planeet zwaait kan een fluistering van die planeet eigen baanbeweging stelen en sneller wegslingeren dan het kwam, gratis — een [gravity assist](/science/transfers/gravity-assist). Midden jaren zestig merkte een jonge wiskundige bij JPL met de naam Gary Flandro, werkend aan zomer-baantje berekeningen, op dat de buitenplaneten in een eenmaals-in-175-jaar uitlijning wegdriften die een enkele sonde zou laten een assist in de volgende in de volgende inbanken, helemaal naar buiten. Dat waarneming werd de Grand Tour: [Voyager 2](/missions?id=voyager-2) gebruikte Jupiter om Saturnus te bereiken, Saturnus om Uranus te bereiken, Uranus om Neptunus te bereiken, een vier-planeet bankshot die decennia vliegtijd bespaarde en blijft, vandaag, de enige keer dat iets ooit de ijsreuzen allemaal bezocht."
+      "md": "De elegantste truc in de hele discipline is de planeten het duwwerk laten doen. Een ruimtevaartuig dat dicht langs een planeet zwaait, kan een zuchtje van de eigen baanbeweging van die planeet stelen en sneller wegschieten dan het kwam, gratis — een [zwaartekrachtassistentie](/science/transfers/gravity-assist). Halverwege de jaren zestig merkte een jonge wiskundige bij JPL, Gary Flandro, terwijl hij rekenwerk voor een zomerbaantje deed, op dat de buitenplaneten in een uitlijning schoven die maar eens in de 175 jaar voorkomt en waarmee één sonde de ene assist op de volgende kon laten aansluiten, en die weer op de volgende, helemaal naar buiten. Die waarneming werd de Grand Tour: [Voyager 2](/missions?id=voyager-2) gebruikte Jupiter om Saturnus te bereiken, Saturnus om Uranus te bereiken, Uranus om Neptunus te bereiken, een stoot over vier banden die decennia aan vliegtijd bespaarde en tot op de dag van vandaag de enige keer is dat iets de ijsreuzen ooit heeft bezocht."
     },
     {
       "type": "figure",
       "image": "essays/navigation/gravity-assist",
       "kind": "diagram",
-      "caption": "Je vliegt er nooit recht op aan. Een Hohmann-transfer kustent langs de goedkoopste boog naar een bewegende planeet; een gravity assist steelt een fluistering van een planeet eigen beweging gratis — de truc die één sonde liet Jupiter in Saturnus in Uranus in Neptunus banken.",
+      "caption": "Je vliegt er nooit rechtstreeks op af. Een Hohmann-overdracht glijdt langs de goedkoopste boog naar een bewegende planeet; een zwaartekrachtassistentie steelt gratis een zuchtje van de eigen beweging van een planeet — de truc waarmee één sonde over de band van Jupiter, Saturnus en Uranus naar Neptunus kon stoten.",
       "align": "wide"
     },
     {
       "type": "prose",
-      "md": "Geen boog wordt ooit perfect gevlogen. Kleine fouten bij lancering worden enorme fouten over honderd miljoen kilometer, dus elke diepe-ruimte vlucht is een langzame reeks [trajectory-correction maneuvers](/science/mission-phases/tcm) — korte, nauwkeurig getimede zetten, elk één de navigators op de grond sluitende de gat tussen waar het vaartuig *is* en waar het plan zegt dat het zou moeten zijn. Navigatie, in de praktijk, is geen enkel doelstellingsact. Het is gericht, controleren, en herricht, telkens en telkens, jarenlang."
+      "md": "Geen enkele boog wordt ooit perfect gevlogen. Kleine fouten bij de lancering groeien over honderd miljoen kilometer uit tot enorme, dus elke vlucht door de diepe ruimte is een langzame reeks [koerscorrecties](/science/mission-phases/tcm) — korte, nauwkeurig getimede duwtjes, elk een moment waarop de navigators op de grond de kloof dichten tussen waar het ruimtevaartuig *is* en waar het plan zegt dat het moet zijn. Navigatie is in de praktijk geen enkele daad van richten. Het is richten, controleren en opnieuw richten, steeds weer, jarenlang."
     },
     {
       "type": "heading",
@@ -140,27 +140,27 @@
     },
     {
       "type": "prose",
-      "md": "Tot nu toe heeft alles een kamer vol mensen op Aarde in de lus. De laatste act van dit verhaal is de machine die het tellen van hen afneemt — omdat aan de grens het licht gewoon te langzaam is om toestemming te vragen."
+      "md": "Tot nu toe zat er in alles een zaal vol mensen op Aarde in de lus. Het laatste bedrijf van dit verhaal is dat de machine hun de telling afneemt — omdat het licht aan de grens gewoon te langzaam is om toestemming te vragen."
     },
     {
       "type": "prose",
-      "md": "De eerste barst in het oude model was **optical navigation**: in plaats van zich alleen op radio van de grond te verlaten, fotografeert het ruimtevaartuig het doel zelf tegen de achtergrondsterren en werkt uit, aan boord, precies waar het doel zit ten opzichte van zijn eigen nadering. [Cassini](/missions?id=cassini) verfijnde dit tegen de manen van Saturnus; dit is hoe je een naald door een lichaam draad waarvan de positie, voordat je aankomt, minder precies bekend is dan je eigen."
+      "md": "De eerste barst in het oude model was **optische navigatie**: in plaats van alleen op radio vanaf de grond te vertrouwen, fotografeert het ruimtevaartuig het doel zelf tegen de achtergrond van de sterren en berekent het aan boord precies waar het doel ligt ten opzichte van zijn eigen nadering. [Cassini](/missions?id=cassini) verfijnde dit aan de manen van Saturnus; zo schiet je door het oog van de naald bij een hemellichaam waarvan de positie, voordat je aankomt, minder nauwkeurig bekend is dan je eigen."
     },
     {
       "type": "prose",
-      "md": "Toen kwamen de plaatsen waar de grond echt niet kan helpen. Op Mars landen is het scherpste voorbeeld — de [entry, descent and landing](/science/mission-phases/edl) duurt ongeveer zeven minuten, en Mars is licht-minuten weg, dus op het moment dat Aarde zelfs hoort dat het vaartuig in de atmosfeer is geraakt, is het hele ding al lang voorbij, op de een of andere manier. Niemand op Aarde landt een Mars rover. De rover landt zichzelf. [Perseverance](/missions?id=perseverance) droeg een systeem dat de grond fotografeerde die voorbijsuisde, het in real time tegen een boordkaart koppelde, het terrein herkende, en *koos* een veilige plaats om neer te strijken — een machine die Lovell's taak doet, de Deep Space Network's taak, en een buspiloots taak tegelijk, in zeven minuten, alleen."
+      "md": "Daarna kwamen de plekken waar de grond echt niet kan helpen. Landen op Mars is het scherpste voorbeeld — de [binnenkomst, afdaling en landing](/science/mission-phases/edl) duurt ongeveer zeven minuten, en Mars is lichtminuten ver weg, dus tegen de tijd dat de Aarde zelfs maar hoort dat het ruimtevaartuig de atmosfeer is binnengegaan, is het hele ding allang voorbij, zo of zo. Niemand op Aarde laat een Marsrover landen. De rover landt zichzelf. [Perseverance](/missions?id=perseverance) had een systeem aan boord dat de grond fotografeerde die op hem af kwam, die in realtime met een kaart aan boord vergeleek, het terrein herkende en een veilige plek *koos* om neer te komen — een machine die tegelijk het werk van Lovell deed, het werk van het Deep Space Network en het werk van een bushpiloot, in zeven minuten, helemaal alleen."
     },
     {
       "type": "figure",
       "image": "missions/perseverance/01",
       "kind": "photo",
-      "caption": "Perseverance landt zichzelf. Mars is licht-minuten weg, dus op het moment dat Aarde hoort dat het vaartuig in de atmosfeer is geraakt, is het al beneden, op de een of andere manier — de rover leest het terrein dat voorbij suist en kiest zelf een veilige plaats.",
+      "caption": "Perseverance landt zichzelf. Mars ligt lichtminuten ver weg, dus tegen de tijd dat de Aarde hoort dat het ruimtevaartuig de atmosfeer is binnengegaan, staat het al beneden, zo of zo — de rover leest het terrein dat op hem af komt en kiest zelf een veilige plek.",
       "align": "wide",
       "credit": "NASA/JPL-Caltech"
     },
     {
       "type": "prose",
-      "md": "[OSIRIS-REx](/missions?id=osiris-rex) deed iets van dezelfde familie bij de asteroïde Bennu: autonoom tegen oppervlaktekenmerken navigeren om een rotsachtige rots ter grootte van een kleine berg aan te raken en er een handvol van te stelen. Dit zijn niet meer de grond die een passagier vliegt. Dit zijn ruimtevaartuigen die zichzelf navigeren, omdat het alternatief — wachten op de lichtsnelheid — de missie zou doden."
+      "md": "[OSIRIS-REx](/missions?id=osiris-rex) deed iets in dezelfde trant bij de planetoïde Bennu: autonoom navigeren op kenmerken van het oppervlak om een rotsachtig, met keien bezaaid hemellichaam ter grootte van een kleine berg aan te raken en er een handvol van te stelen. Dit is niet langer de grond die een passagier vliegt. Dit zijn ruimtevaartuigen die zichzelf navigeren, omdat het alternatief — wachten op de lichtsnelheid — de missie zou doden."
     },
     {
       "type": "heading",
@@ -168,11 +168,11 @@
     },
     {
       "type": "prose",
-      "md": "Stap terug, en zeventig jaar vallen in één lijn ineen. [Apollo 8](/missions?id=apollo8)'s Lovell bij een sextant, sterren waarneming voor het corrigeren van een drijvend tellen. De star tracker op een sonde die het identieke ding doet, automatisch, een miljard kilometer weg. [Perseverance](/missions?id=perseverance)'s afdalingscamera die het terrein leest omdat de mensen die het hebben gebouwd twaalf licht-minuten te ver weg zijn om te helpen. Verschillende machines, zestig jaar uit elkaar, en daaronder één koppig feit dat nooit verplaatste: er is geen kaart van de ruimte, en dat was er nooit. Er is alleen de hemel, die niet beweegt, en een eerlijk tellen van elke stoot, wat langzaam doet — en de hele discipline komt neer op het vertrouwen van de eerste om de tweede te corrigeren. Elke landing, elke voorbijvlucht, elke foto in deze atlas reed op het correct doen ervan, en vrijwel niets ervan was ooit de kop."
+      "md": "Stap terug, en zeventig jaar vallen samen tot één lijn. Lovell aan boord van [Apollo 8](/missions?id=apollo8) bij een sextant, die sterren peilt om een afdrijvende telling te corrigeren. De sterrensensor op een sonde die precies hetzelfde doet, automatisch, een miljard kilometer ver weg. De afdalingscamera van [Perseverance](/missions?id=perseverance) die het terrein leest omdat de mensen die hem bouwden twaalf lichtminuten te ver weg zitten om te helpen. Verschillende machines, zestig jaar na elkaar, en daaronder één halsstarrig feit dat nooit is verschoven: er is geen kaart van de ruimte, en die is er nooit geweest. Er is alleen de hemel, die niet beweegt, en een eerlijke telling van elke duw, die dat langzaam wel doet — en de hele discipline komt neer op erop vertrouwen dat het eerste het tweede corrigeert. Elke landing, elke voorbijvlucht, elke foto in deze atlas steunde erop dat dit goed ging, en bijna niets daarvan haalde ooit de krantenkoppen."
     },
     {
       "type": "prose",
-      "md": "En het staat op het punt stil te worden. Hoe verder we pushen — naar [het buitenstelsel](/explore), naar bemande vluchten naar Mars waar een twintig-minuten vertraging het gat is tussen een correctie en een krater — hoe minder de grond in tijd kan doen, en hoe meer elk vaartuig zijn eigen navigator moet worden: zijn eigen sextant, zijn eigen [Deep Space Network](/science/mission-phases/dsn), zijn eigen kamer vol mensen. We brachten zeventig jaar door met het leren van machines om hun weg langs de hemel te vinden. We staan op het punt uit te vinden hoe goed ze leerden."
+      "md": "En het staat op het punt om niet langer stil te zijn. Hoe verder we gaan — richting [het buitenste zonnestelsel](/explore), richting bemande vluchten naar Mars, waar twintig minuten vertraging het verschil is tussen een correctie en een krater — hoe minder de grond op tijd kan doen, en hoe meer elk ruimtevaartuig zijn eigen navigator moet worden: zijn eigen sextant, zijn eigen [Deep Space Network](/science/mission-phases/dsn), zijn eigen zaal vol mensen. We hebben machines zeventig jaar lang geleerd hun weg langs de hemel te vinden. We staan op het punt te ontdekken hoe goed ze het geleerd hebben."
     }
   ]
 }

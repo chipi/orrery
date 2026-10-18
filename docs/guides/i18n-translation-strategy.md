@@ -55,10 +55,14 @@ of the name's origin, which uses the original name.**
 - Japanese in `ja`, Korean in `ko`, Indian in `hi` (श्रीहरिकोटा), Iranian names in
   Arabic script in `ar`, a Serbian name in `sr-Cyrl`, an Israeli name in `he`.
 - Everywhere else: Soyuz MS-24, Mir, Shenzhou.
-- Agencies stay as they are: "NASA should be NASA — this is not translation, it's
-  replacing words" (operator, 2026-10-17). Same origin exception as vehicles: the
-  origin language writes its own name where its sources do (hi इसरो, §3.2; operator
-  2026-10-18). When unsure, the origin language may give both: इसरो (ISRO).
+- Agencies have a local and an international name (operator, 2026-10-18). Every
+  other language keeps the international one: "NASA should be NASA — this is not
+  translation, it's replacing words" (operator, 2026-10-17). The agency's own language
+  uses the local name, as its own Wikipedia writes it (2026-10-18): hi इसरो (67 vs
+  ISRO 6), ru Роскосмос, zh-CN 国家航天局 (CNSA 0), ar مركز محمد بن راشد للفضاء
+  (MBRSC 0). ja keeps JAXA (50 vs 宇宙航空研究開発機構 9). When unsure, give both:
+  इसरो (ISRO). `native-terms.json` class `agency`; the one exception is a list of
+  English search terms in `sourcing/gaps.json`, quoted as typed.
 - Russian running text puts vehicle names in «» quotes; headings don't.
 - Code: `ORIGIN_NAMES`, `nativeName()`, `nativeCompound()` in
   `src/lib/name-origins.js`. Every origin name must be listed there, or the checker
@@ -88,11 +92,6 @@ records it, checked against each language's own Wikipedia intro (2026-10-18): ru
 sr-Cyrl МСС, es EEI, pt-BR EEI, it SSI ("in sigla SSI"), hi आईएसएस, zh-CN 国际空间站,
 ar محطة الفضاء الدولية; ISS where the language's own sources write ISS (de, fr — SSI
 there is mostly Canadian — nl, ja, ko).
-
-**ISRO in Hindi is इसरो** (operator 2026-10-18), by the origin-language rule of §3.1:
-hi.wikipedia's ISRO article writes इसरो 67 times and ISRO 6. Every other locale keeps
-ISRO. `native-terms.json` class `agency`; the one exception is a list of English search
-terms in `sourcing/gaps.json`, quoted as typed.
 
 ### 3.3 One thing, one name per language (2026-10-17)
 

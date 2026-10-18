@@ -33,3 +33,8 @@ zh titles partly traditional (中途島, 哈欽森, 堅忍, 卡門線, 科羅廖
 
 ## From groups 12–13 (ja, zh-CN fleet)
 - Gubarev, Grechko, Klimuk, Sevastyanov, Lazarev, Makarov, Rosalind Franklin, Copernicus (crater), Cerealia Facula, Jawahar Sthal, Goldstone, Marshall Space Flight Center, von Braun (bare), Darwin, Mössbauer, Rogers Commission, Captain Cook, 4179 Toutatis, Apophis
+
+## From groups 14–15 (ko, sr-Cyrl fleet)
+- Russian cosmonauts with no sr/ko forms (priority, recur in every locale): Dobrovolski, Volkov, Patsayev, Pavel Popovich, Yury Artyukhin, Sarafanov, Demin, Gubarev, Grechko, Klimuk, Sevastyanov, Lazarev, Makarov, Volynov, Zholobov, Gorbatko, Glazkov, Zudov, Rozhdestvensky, Vladimir Dzhanibekov, Viktor Savinykh; Zhai Zhigang; Gordon Fullerton (sr); Frank Drake (sr: Френк Дрејк unverified)
+- Places: Zhukovsky, Speyer, Sinsheim, Edwards AFB, Texas, Los Angeles, New York, Bahrain, Luxembourg, Udvar-Hazy, Beijing, Bay of Bengal
+- sr-Cyrl has no ORIGIN_NAMES block: Soviet/Russian built names stay Latin in sr (correct by rule — not Serbian origin)

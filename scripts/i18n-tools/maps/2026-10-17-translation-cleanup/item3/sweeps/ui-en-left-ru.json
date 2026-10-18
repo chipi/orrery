@@ -1,0 +1,152 @@
+[
+  {
+    "rel": "messages",
+    "at": "credits_used_route_lab",
+    "old": "Physics Lab",
+    "new": "Лаборатория физики"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_ui_title",
+    "old": "Physics Lab",
+    "new": "Лаборатория физики"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_ui_doc_title",
+    "old": "Physics Lab · Orrery",
+    "new": "Лаборатория физики · Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_cosmic_web",
+    "old": "Cosmic Web",
+    "new": "Космическая паутина"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_local_sheet",
+    "old": "Local Sheet",
+    "new": "Местный лист"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_stellar_neighborhood",
+    "old": "Stellar Neighborhood",
+    "new": "Звёздные окрестности"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_deep_sky_toggle",
+    "old": "Deep Sky",
+    "new": "Глубокий космос"
+  },
+  {
+    "rel": "messages",
+    "at": "iss_blueprint_label_top",
+    "old": "ТОП",
+    "new": "СВЕРХУ"
+  },
+  {
+    "rel": "messages",
+    "at": "tiangong_blueprint_label_top",
+    "old": "ТОП",
+    "new": "СВЕРХУ"
+  },
+  {
+    "rel": "messages",
+    "at": "iss_btn_spin",
+    "old": "SPIN",
+    "new": "ВРАЩЕНИЕ"
+  },
+  {
+    "rel": "messages",
+    "at": "tiangong_btn_spin",
+    "old": "SPIN",
+    "new": "ВРАЩЕНИЕ"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_axis_distance_au",
+    "old": "Distance (AU)",
+    "new": "Расстояние (а. е.)"
+  },
+  {
+    "rel": "messages",
+    "at": "launches_page_heading",
+    "old": "Launches Calendar",
+    "new": "Календарь запусков"
+  },
+  {
+    "rel": "messages",
+    "at": "launches_page_title",
+    "old": "Launches Calendar — Orrery",
+    "new": "Календарь запусков — Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "missions_page_title",
+    "old": "Mission Catalog · Orrery",
+    "new": "Каталог миссий · Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "mp_flight_event_flyby",
+    "old": "FLYBY",
+    "new": "ПРОЛЁТ"
+  },
+  {
+    "rel": "messages",
+    "at": "plan_mission_type_flyby",
+    "old": "FLYBY",
+    "new": "ПРОЛЁТ"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_dead_dynamo_label",
+    "old": "Dead Dynamo",
+    "new": "Угасшее динамо"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_far_side_label",
+    "old": "Far Side",
+    "new": "Обратная сторона"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_planet_stats_label",
+    "old": "Tactical Scan",
+    "new": "Тактическое сканирование"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_polar_caps_label",
+    "old": "Polar Ice Caps",
+    "new": "Полярные шапки"
+  },
+  {
+    "rel": "messages",
+    "at": "science_lens_aria",
+    "old": "Science Lens",
+    "new": "Научная линза"
+  },
+  {
+    "rel": "messages",
+    "at": "settings_graphics_quality",
+    "old": "Graphics Quality",
+    "new": "Качество графики"
+  },
+  {
+    "rel": "messages",
+    "at": "surface_flat_lat_lon",
+    "old": "LON {lon}° · LAT {lat}°",
+    "new": "ДОЛГ {lon}° · ШИР {lat}°"
+  },
+  {
+    "rel": "messages",
+    "at": "ui_layer_surface",
+    "old": "SURFACE",
+    "new": "ПОВЕРХНОСТЬ"
+  }
+]

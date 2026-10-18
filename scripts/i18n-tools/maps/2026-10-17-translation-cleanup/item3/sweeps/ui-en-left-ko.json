@@ -1,0 +1,56 @@
+[
+  {
+    "rel": "messages",
+    "at": "explore_ctx_local_sheet",
+    "old": "Local Sheet",
+    "new": "국부 시트"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_stellar_neighborhood",
+    "old": "Stellar Neighborhood",
+    "new": "항성 근방"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_deep_sky_toggle",
+    "old": "Deep Sky",
+    "new": "심원천체"
+  },
+  {
+    "rel": "messages",
+    "at": "fly_page_title",
+    "old": "Mission Arc · Orrery",
+    "new": "미션 아크 · Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_hohmann_title",
+    "old": "Hohmann Transfer",
+    "new": "호만 전이"
+  },
+  {
+    "rel": "messages",
+    "at": "lib_count_total",
+    "old": "{count} TOTAL",
+    "new": "총 {count}"
+  },
+  {
+    "rel": "messages",
+    "at": "science_lens_aria",
+    "old": "Science Lens",
+    "new": "과학 렌즈"
+  },
+  {
+    "rel": "messages",
+    "at": "settings_graphics_quality",
+    "old": "Graphics Quality",
+    "new": "그래픽 품질"
+  },
+  {
+    "rel": "messages",
+    "at": "tiangong_page_title",
+    "old": "Tiangong Explorer · Orrery",
+    "new": "Tiangong 탐색기 · Orrery"
+  }
+]

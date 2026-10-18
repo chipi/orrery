@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "messages",
+    "at": "iss_blueprint_label_top",
+    "old": "TOP",
+    "new": "ОДОЗГО"
+  },
+  {
+    "rel": "messages",
+    "at": "tiangong_blueprint_label_top",
+    "old": "TOP",
+    "new": "ОДОЗГО"
+  }
+]

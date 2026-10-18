@@ -1,0 +1,146 @@
+[
+  {
+    "rel": "messages",
+    "at": "lab_ui_doc_title",
+    "old": "Physics Lab · Orrery",
+    "new": "Laboratorio di Fisica · Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_cosmic_web",
+    "old": "Cosmic Web",
+    "new": "Ragnatela cosmica"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_local_sheet",
+    "old": "Local Sheet",
+    "new": "Foglio Locale"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_stellar_neighborhood",
+    "old": "Stellar Neighborhood",
+    "new": "Vicinato stellare"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_deep_sky_toggle",
+    "old": "Deep Sky",
+    "new": "Profondo cielo"
+  },
+  {
+    "rel": "messages",
+    "at": "iss_blueprint_label_top",
+    "old": "TOP",
+    "new": "SOPRA"
+  },
+  {
+    "rel": "messages",
+    "at": "tiangong_blueprint_label_top",
+    "old": "TOP",
+    "new": "SOPRA"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_descent_burn_title",
+    "old": "Powered Descent",
+    "new": "Discesa motorizzata"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_free_fall_title",
+    "old": "Free Fall",
+    "new": "Caduta libera"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_hohmann_title",
+    "old": "Hohmann Transfer",
+    "new": "Trasferimento di Hohmann"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_interplanetary_title",
+    "old": "Interplanetary Transfer",
+    "new": "Trasferimento interplanetario"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_retro_title",
+    "old": "Retro-Descent Burn",
+    "new": "Accensione di discesa retro"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_vis_viva_title",
+    "old": "Vis-viva — Orbital Speed",
+    "new": "Vis-viva — velocità orbitale"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_ui_aria_notebook",
+    "old": "Notebook",
+    "new": "Quaderno"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_ui_view_notebook",
+    "old": "Notebook",
+    "new": "Quaderno"
+  },
+  {
+    "rel": "messages",
+    "at": "panel_explore_surface_cta",
+    "old": "▷ EXPLORE {name} SURFACE",
+    "new": "▷ ESPLORA LA SUPERFICIE DI {name}"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_axial_tilt_label",
+    "old": "Axial Tilt & Seasons",
+    "new": "Inclinazione assiale e stagioni"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_dead_dynamo_label",
+    "old": "Dead Dynamo",
+    "new": "Dinamo spenta"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_far_side_label",
+    "old": "Far Side",
+    "new": "Faccia nascosta"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_polar_caps_label",
+    "old": "Polar Ice Caps",
+    "new": "Calotte polari"
+  },
+  {
+    "rel": "messages",
+    "at": "science_lens_aria",
+    "old": "Science Lens",
+    "new": "Lente scientifica"
+  },
+  {
+    "rel": "messages",
+    "at": "settings_graphics_quality",
+    "old": "Graphics Quality",
+    "new": "Qualità grafica"
+  },
+  {
+    "rel": "messages",
+    "at": "tiangong_page_title",
+    "old": "Tiangong Explorer · Orrery",
+    "new": "Esploratore Tiangong · Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "wave_caption_earth",
+    "old": "AIR · 343 m/s",
+    "new": "ARIA · 343 m/s"
+  }
+]

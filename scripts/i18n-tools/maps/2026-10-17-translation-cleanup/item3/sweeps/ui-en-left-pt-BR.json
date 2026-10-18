@@ -1,0 +1,38 @@
+[
+  {
+    "rel": "messages",
+    "at": "explore_ctx_cosmic_web",
+    "old": "Cosmic Web",
+    "new": "Teia cósmica"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_local_sheet",
+    "old": "Local Sheet",
+    "new": "Folha Local"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_stellar_neighborhood",
+    "old": "Stellar Neighborhood",
+    "new": "Vizinhança estelar"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_deep_sky_toggle",
+    "old": "Deep Sky",
+    "new": "Céu profundo"
+  },
+  {
+    "rel": "messages",
+    "at": "iss_blueprint_label_top",
+    "old": "TOP",
+    "new": "SUPERIOR"
+  },
+  {
+    "rel": "messages",
+    "at": "tiangong_blueprint_label_top",
+    "old": "TOP",
+    "new": "SUPERIOR"
+  }
+]

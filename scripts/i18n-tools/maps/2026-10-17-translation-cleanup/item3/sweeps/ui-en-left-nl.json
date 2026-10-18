@@ -1,0 +1,68 @@
+[
+  {
+    "rel": "messages",
+    "at": "credits_used_route_mars",
+    "old": "Mars Map",
+    "new": "Marskaart"
+  },
+  {
+    "rel": "messages",
+    "at": "credits_used_route_missions",
+    "old": "Mission Catalog",
+    "new": "Missiecatalogus"
+  },
+  {
+    "rel": "messages",
+    "at": "earth_panel_crew",
+    "old": "CREW",
+    "new": "BEMANNING"
+  },
+  {
+    "rel": "messages",
+    "at": "moon_panel_crew",
+    "old": "CREW",
+    "new": "BEMANNING"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_local_sheet",
+    "old": "Local Sheet",
+    "new": "Lokale Plaat"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_stellar_neighborhood",
+    "old": "Stellar Neighborhood",
+    "new": "Stellaire omgeving"
+  },
+  {
+    "rel": "messages",
+    "at": "fly_fd_marker_cruise",
+    "old": "Cruise",
+    "new": "Kruisvlucht"
+  },
+  {
+    "rel": "messages",
+    "at": "fly_page_title",
+    "old": "Mission Arc · Orrery",
+    "new": "Missieboog · Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_hohmann_title",
+    "old": "Hohmann Transfer",
+    "new": "Hohmann-transfer"
+  },
+  {
+    "rel": "messages",
+    "at": "lib_timeline_from",
+    "old": "FROM",
+    "new": "VAN"
+  },
+  {
+    "rel": "messages",
+    "at": "tiangong_page_title",
+    "old": "Tiangong Explorer · Orrery",
+    "new": "Tiangong-verkenner · Orrery"
+  }
+]

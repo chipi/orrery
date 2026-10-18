@@ -1,0 +1,86 @@
+[
+  {
+    "rel": "messages",
+    "at": "iss_blueprint_label_top",
+    "old": "TOP",
+    "new": "DESSUS"
+  },
+  {
+    "rel": "messages",
+    "at": "tiangong_blueprint_label_top",
+    "old": "TOP",
+    "new": "DESSUS"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_axis_distance_au",
+    "old": "Distance (AU)",
+    "new": "Distance (UA)"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_projectile_title",
+    "old": "Projectile Range",
+    "new": "Portée d'un projectile"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_reach_orbit_title",
+    "old": "Reach Orbit",
+    "new": "Atteindre l'orbite"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_retro_title",
+    "old": "Retro-Descent Burn",
+    "new": "Allumage de descente rétro"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_soft_land_title",
+    "old": "Soft-Landing Check",
+    "new": "Vérification d'atterrissage en douceur"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_synodic_title",
+    "old": "Launch Window",
+    "new": "Fenêtre de lancement"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_terminal_title",
+    "old": "Terminal Velocity",
+    "new": "Vitesse terminale"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_vis_viva_title",
+    "old": "Vis-viva — Orbital Speed",
+    "new": "Vis-viva — vitesse orbitale"
+  },
+  {
+    "rel": "messages",
+    "at": "launches_page_heading",
+    "old": "Launches Calendar",
+    "new": "Calendrier des lancements"
+  },
+  {
+    "rel": "messages",
+    "at": "launches_page_title",
+    "old": "Launches Calendar — Orrery",
+    "new": "Calendrier des lancements — Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "plan_plot_title",
+    "old": "PORKCHOP · EARTH → {dest} · ∆v km/s",
+    "new": "PORKCHOP · TERRE → {dest} · ∆v km/s"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_far_side_label",
+    "old": "Far Side",
+    "new": "Face cachée"
+  }
+]

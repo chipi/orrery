@@ -1,0 +1,104 @@
+[
+  {
+    "rel": "messages",
+    "at": "credits_used_route_lab",
+    "old": "Physics Lab",
+    "new": "物理实验室"
+  },
+  {
+    "rel": "messages",
+    "at": "fly_page_title",
+    "old": "Mission Arc · Orrery",
+    "new": "任务弧线 · Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_descent_burn_title",
+    "old": "Powered Descent",
+    "new": "动力下降"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_free_fall_title",
+    "old": "Free Fall",
+    "new": "自由落体"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_hohmann_title",
+    "old": "Hohmann Transfer",
+    "new": "霍曼转移"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_interplanetary_title",
+    "old": "Interplanetary Transfer",
+    "new": "行星际转移"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_newton_second_law_title",
+    "old": "Force, Mass & Acceleration",
+    "new": "力、质量与加速度"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_retro_title",
+    "old": "Retro-Descent Burn",
+    "new": "反推下降点火"
+  },
+  {
+    "rel": "messages",
+    "at": "launches_footer_sources_lead",
+    "old": "Sources: NASA · SpaceX · ESA ·",
+    "new": "来源：NASA · SpaceX · ESA ·"
+  },
+  {
+    "rel": "messages",
+    "at": "launches_page_heading",
+    "old": "Launches Calendar",
+    "new": "发射日历"
+  },
+  {
+    "rel": "messages",
+    "at": "launches_page_title",
+    "old": "Launches Calendar — Orrery",
+    "new": "发射日历 — Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "lib_count_filtered",
+    "old": "{count} VISIBLE",
+    "new": "{count} 项可见"
+  },
+  {
+    "rel": "messages",
+    "at": "plan_page_title",
+    "old": "Mission Configurator · Orrery",
+    "new": "任务配置器 · Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "surface_flat_lat_lon",
+    "old": "LON {lon}° · LAT {lat}°",
+    "new": "经度 {lon}° · 纬度 {lat}°"
+  },
+  {
+    "rel": "messages",
+    "at": "tiangong_page_title",
+    "old": "Tiangong Explorer · Orrery",
+    "new": "天宫探索 · Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "wave_caption_earth",
+    "old": "AIR · 343 m/s",
+    "new": "空气 · 343 m/s"
+  },
+  {
+    "rel": "messages",
+    "at": "wave_caption_mars",
+    "old": "THIN CO₂ · 240 m/s",
+    "new": "稀薄 CO₂ · 240 m/s"
+  }
+]

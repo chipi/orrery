@@ -1,0 +1,74 @@
+[
+  {
+    "rel": "messages",
+    "at": "lab_ui_doc_title",
+    "old": "Physics Lab · Orrery",
+    "new": "Physik-Labor · Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "earth_orbit_ruler_chip",
+    "old": "ORBITS",
+    "new": "BAHNEN"
+  },
+  {
+    "rel": "messages",
+    "at": "lib_filter_crew_label",
+    "old": "CREW",
+    "new": "BESATZUNG"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_cosmic_web_kind_supercluster",
+    "old": "Supercluster",
+    "new": "Superhaufen"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_kind_supercluster",
+    "old": "Supercluster",
+    "new": "Superhaufen"
+  },
+  {
+    "rel": "messages",
+    "at": "fly_page_title",
+    "old": "Mission Arc · Orrery",
+    "new": "Missionsbogen · Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "iss_blueprint_label_top",
+    "old": "TOP",
+    "new": "OBEN"
+  },
+  {
+    "rel": "messages",
+    "at": "tiangong_blueprint_label_top",
+    "old": "TOP",
+    "new": "OBEN"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_axis_restitution",
+    "old": "Restitution e",
+    "new": "Stoßzahl e"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_delta_v_margin_title",
+    "old": "Delta-v Margin",
+    "new": "Delta-v-Reserve"
+  },
+  {
+    "rel": "messages",
+    "at": "wave_caption_earth",
+    "old": "AIR · 343 m/s",
+    "new": "LUFT · 343 m/s"
+  },
+  {
+    "rel": "messages",
+    "at": "wave_caption_mars",
+    "old": "THIN CO₂ · 240 m/s",
+    "new": "DÜNNES CO₂ · 240 m/s"
+  }
+]

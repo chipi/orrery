@@ -1,0 +1,44 @@
+[
+  {
+    "rel": "messages",
+    "at": "iss_blueprint_label_top",
+    "old": "TOP",
+    "new": "SUPERIOR"
+  },
+  {
+    "rel": "messages",
+    "at": "tiangong_blueprint_label_top",
+    "old": "TOP",
+    "new": "SUPERIOR"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_planet_stats_label",
+    "old": "Tactical Scan",
+    "new": "Escaneo táctico"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_polar_caps_label",
+    "old": "Polar Ice Caps",
+    "new": "Casquetes polares"
+  },
+  {
+    "rel": "messages",
+    "at": "science_lens_aria",
+    "old": "Science Lens",
+    "new": "Lente científica"
+  },
+  {
+    "rel": "messages",
+    "at": "settings_graphics_quality",
+    "old": "Graphics Quality",
+    "new": "Calidad gráfica"
+  },
+  {
+    "rel": "messages",
+    "at": "tiangong_page_title",
+    "old": "Tiangong Explorer · Orrery",
+    "new": "Explorador de Tiangong · Orrery"
+  }
+]

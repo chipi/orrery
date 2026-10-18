@@ -1,0 +1,26 @@
+[
+  {
+    "rel": "messages",
+    "at": "explore_scan_eyebrow",
+    "old": "TACTICAL SCAN · {planet}",
+    "new": "مسح تكتيكي · {planet}"
+  },
+  {
+    "rel": "messages",
+    "at": "fly_page_title",
+    "old": "Mission Arc · Orrery",
+    "new": "قوس المهمة · Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_hohmann_title",
+    "old": "Hohmann Transfer",
+    "new": "انتقال هوهمان"
+  },
+  {
+    "rel": "messages",
+    "at": "tiangong_page_title",
+    "old": "Tiangong Explorer · Orrery",
+    "new": "مستكشف Tiangong · Orrery"
+  }
+]

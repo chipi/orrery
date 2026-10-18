@@ -1,0 +1,194 @@
+[
+  {
+    "rel": "messages",
+    "at": "credits_used_route_lab",
+    "old": "Physics Lab",
+    "new": "भौतिकी प्रयोगशाला"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_ui_title",
+    "old": "Physics Lab",
+    "new": "भौतिकी प्रयोगशाला"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_ui_doc_title",
+    "old": "Physics Lab · Orrery",
+    "new": "भौतिकी प्रयोगशाला · Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "mp_flight_event_anomaly",
+    "old": "ANOMALY",
+    "new": "विसंगति"
+  },
+  {
+    "rel": "messages",
+    "at": "fly_hud_next_event",
+    "old": "NEXT",
+    "new": "अगला"
+  },
+  {
+    "rel": "messages",
+    "at": "iss_btn_spin",
+    "old": "SPIN",
+    "new": "घुमाएँ"
+  },
+  {
+    "rel": "messages",
+    "at": "tiangong_btn_spin",
+    "old": "SPIN",
+    "new": "घुमाएँ"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_delta_v_margin_title",
+    "old": "Delta-v Margin",
+    "new": "डेल्टा-v मार्जिन"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_descent_burn_title",
+    "old": "Powered Descent",
+    "new": "संचालित अवतरण"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_free_fall_title",
+    "old": "Free Fall",
+    "new": "मुक्त पतन"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_hohmann_title",
+    "old": "Hohmann Transfer",
+    "new": "होमान स्थानांतरण"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_interplanetary_title",
+    "old": "Interplanetary Transfer",
+    "new": "अंतरग्रहीय स्थानांतरण"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_launch_site_title",
+    "old": "Launch Site",
+    "new": "प्रक्षेपण स्थल"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_newton_second_law_title",
+    "old": "Force, Mass & Acceleration",
+    "new": "बल, द्रव्यमान और त्वरण"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_orbital_velocity_title",
+    "old": "Orbital Velocity",
+    "new": "कक्षीय वेग"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_projectile_title",
+    "old": "Projectile Range",
+    "new": "प्रक्षेप्य परास"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_reach_orbit_title",
+    "old": "Reach Orbit",
+    "new": "कक्षा तक पहुँचना"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_retro_title",
+    "old": "Retro-Descent Burn",
+    "new": "रेट्रो-अवतरण दहन"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_soft_land_title",
+    "old": "Soft-Landing Check",
+    "new": "सॉफ्ट-लैंडिंग जाँच"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_synodic_title",
+    "old": "Launch Window",
+    "new": "प्रक्षेपण खिड़की"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_terminal_title",
+    "old": "Terminal Velocity",
+    "new": "अंतिम गति"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_ui_builds_on",
+    "old": "Builds on:",
+    "new": "इस पर आधारित:"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_ui_family_cross_cutting",
+    "old": "Foundations",
+    "new": "आधार"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_ui_family_systems",
+    "old": "Guidance & control",
+    "new": "मार्गदर्शन और नियंत्रण"
+  },
+  {
+    "rel": "messages",
+    "at": "launches_filter_decade",
+    "old": "DECADE",
+    "new": "दशक"
+  },
+  {
+    "rel": "messages",
+    "at": "launches_page_heading",
+    "old": "Launches Calendar",
+    "new": "प्रक्षेपण कैलेंडर"
+  },
+  {
+    "rel": "messages",
+    "at": "launches_page_title",
+    "old": "Launches Calendar — Orrery",
+    "new": "प्रक्षेपण कैलेंडर — Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "lib_count_filtered",
+    "old": "{count} VISIBLE",
+    "new": "{count} दृश्यमान"
+  },
+  {
+    "rel": "messages",
+    "at": "lib_count_total",
+    "old": "{count} TOTAL",
+    "new": "कुल {count}"
+  },
+  {
+    "rel": "messages",
+    "at": "mp_flight_event_flyby",
+    "old": "FLYBY",
+    "new": "फ्लाईबाई"
+  },
+  {
+    "rel": "messages",
+    "at": "plan_mission_type_flyby",
+    "old": "FLYBY",
+    "new": "फ्लाईबाई"
+  },
+  {
+    "rel": "messages",
+    "at": "ui_layer_comets",
+    "old": "COMETS",
+    "new": "धूमकेतु"
+  }
+]

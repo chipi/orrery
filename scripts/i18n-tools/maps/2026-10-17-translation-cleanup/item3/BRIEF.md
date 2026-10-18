@@ -36,7 +36,10 @@ fields have schema limits: a `tagline` is at most 140 characters).
 2. **Things people built** (missions, spacecraft, rockets, stations, programmes,
    instruments, companies, design bureaus): the English name exactly, in Latin script —
    except a name from `<LOCALE>`'s own country, which takes its original form as listed for
-   `<LOCALE>` in `src/lib/name-origins.js` (`ORIGIN_NAMES`).
+   `<LOCALE>` in `src/lib/name-origins.js` (`ORIGIN_NAMES`). The table is not complete: a
+   thing or company from `<LOCALE>`'s own country that the table lacks still keeps its
+   native name (leave the native form `cur` has; never switch it to Latin) — and list it
+   under `NAMES:` so the caller adds it to the table.
 3. **Agencies**: the international acronym (NASA, ESA), except the agency of `<LOCALE>`'s
    own country, which uses its glossary (`agency` class) form.
 4. **Science, astronomy, geography and people**: native, as `<LOCALE>`'s universities and

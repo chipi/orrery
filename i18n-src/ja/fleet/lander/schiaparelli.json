@@ -1,6 +1,6 @@
 {
   "name": "Schiaparelli",
-  "tagline": "ExoMars 先駆機; Rosalind Franklin に活かされた教訓",
-  "description": "ESAの2016年ExoMarsデモンストレータ。着陸時にクラッシュ — 降下中にパラシュート降下時にIMUが飽和し、飛行コンピュータが自機が地面より下にあると判断。パラシュートを放出し、逆推進ロケットを30秒ではなくわずか3秒間だけ噴射し、その後通信が途絶えて3.7 km高度から約300 km/hで衝突した。この教訓はRosalind Franklin着陸機の設計に直接活かされた。",
-  "best_known_for": "ExoMars先駆機; Rosalind Franklinに活かされた教訓"
+  "tagline": "ExoMars先駆機；教訓はRosalind Franklinに活かされた",
+  "description": "ESAが2016年に送ったExoMarsの実証機で、着陸時に墜落した。パラシュート降下中にIMUが飽和し、飛行コンピューターが自機を地面より下にいると誤認して、パラシュートを切り離し、逆噴射ロケットを30秒ではなくわずか3秒だけ噴射したのち、通信が途絶え、高度3.7 kmから時速約300 kmで衝突した。この教訓はRosalind Franklin着陸機の設計に直接活かされた。",
+  "best_known_for": "ExoMars先駆機；Rosalind Franklinに活かされた教訓"
 }

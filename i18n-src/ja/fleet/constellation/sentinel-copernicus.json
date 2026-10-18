@@ -1,6 +1,6 @@
 {
   "name": "Sentinel (Copernicus)",
-  "tagline": "欧州の地球観測フラッグシップ — Sentinel-1/2/3/5P/6",
-  "description": "ヨーロッパの主力地球観測計画で、欧州委員会のコペルニクス環境監視サービスを代行するESAが運用しています。Sentinel-1（C帯SARレーダー画像撮影）、Sentinel-2（10～60 mでのマルチスペクトル光学）、Sentinel-3（海洋・陸地）、Sentinel-5P（大気化学）、Sentinel-6（高度測定）。すべて太陽同期極軌道にあります。フリーかつオープンなデータポリシー――すべてのSentinel画像はライセンス料なしでダウンロード可能です。",
-  "best_known_for": "欧州の地球観測フラッグシップ — Sentinel-1/2/3/5P/6"
+  "tagline": "ヨーロッパの地球観測の旗艦計画 — Sentinel-1/2/3/5P/6",
+  "description": "ヨーロッパの主力地球観測計画で、欧州委員会のコペルニクス環境監視サービスを代行するESAが運用しています。Sentinel-1（C帯SARレーダー画像撮影）、Sentinel-2（10～60 mでのマルチスペクトル光学）、Sentinel-3（海洋・陸地）、Sentinel-5P（大気化学）、Sentinel-6（高度測定）。すべて太陽同期のLEOにあります。無償かつオープンなデータ政策 — すべてのSentinel画像はライセンス料なしでダウンロード可能です。",
+  "best_known_for": "ヨーロッパの地球観測の旗艦計画 — Sentinel-1/2/3/5P/6"
 }

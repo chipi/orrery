@@ -1,0 +1,20 @@
+[
+ {
+  "rel": "fleet/crewed-spacecraft/atlantis.json",
+  "at": "description",
+  "old": "4番目の運用オービタ。初飛行のSTS-51-J（1985年10月3日）は機密扱いの国防総省ミッション。主な実績：Magellan（STS-30、1989年）とGalileo（STS-34、1989年）を放出し、金星と木星の長期観測への道を開いた2機の惑星探査機。1995～1997年の9回のShuttle-Mirドッキングミッションのうち7回を担当。最後のHubble整備ミッションSTS-125（2009年5月）を飛行し、Columbia事故後に承認された、ISSへのランデブーを伴わない唯一のミッションとなった。STS-135（2011年7月）を飛行し、これがシャトル最後のフライトとなった。2013年からケネディ宇宙センター・ビジターコンプレックス（Kennedy Space Center Visitor Complex）に展示されている。",
+  "new": "4番目の運用オービタ。初飛行のSTS-51-J（1985年10月3日）は機密扱いの国防総省ミッション。主な実績：Magellan（STS-30、1989年）とGalileo（STS-34、1989年）を放出し、金星と木星の長期観測への道を開いた2機の惑星探査機。1995～1997年の9回のShuttle-Mirドッキングミッションのうち7回を担当。最後のHubble整備ミッションSTS-125（2009年5月）を飛行し、Columbia事故後に承認された、ISSへのランデブーを伴わない唯一のミッションとなった。STS-135（2011年7月）を飛行し、これがシャトル最後のフライトとなった。2013年からケネディ宇宙センター・ビジターコンプレックス（ケネディ宇宙センター Visitor Complex）に展示されている。"
+ },
+ {
+  "rel": "fleet/launch-site/cape-canaveral-slc-41.json",
+  "at": "description",
+  "old": "United Launch AllianceがCape Canaveralにもつ、Atlas Vの主要発射台。1960年代にTitan III用に建設されたが、1999年に完全に解体され、Atlas V用の発射台として再建された。最初のAtlas Vの飛行は2002-08-21。Atlas Vは全機がここから打ち上げられた——Mars Reconnaissance Orbiter、Curiosity、Perseverance、Lucy、Juno、BoeingのStarliner Crew Flight Test、そして数十件のNSSL国家安全保障ミッション。2024年1月にSLC-41からの飛行を始めたVulcan Centaurも、ここを使う。",
+  "new": "United Launch Allianceがケープ・カナベラルにもつ、Atlas Vの主要発射台。1960年代にTitan III用に建設されたが、1999年に完全に解体され、Atlas V用の発射台として再建された。最初のAtlas Vの飛行は2002-08-21。Atlas Vは全機がここから打ち上げられた——Mars Reconnaissance Orbiter、Curiosity、Perseverance、Lucy、Juno、BoeingのStarliner Crew Flight Test、そして数十件のNSSL国家安全保障ミッション。2024年1月にSLC-41からの飛行を始めたVulcan Centaurも、ここを使う。"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "dispatch",
+  "old": "Launch Complex 39Aは、それが支えたロケットに劣らない大胆な発想の上に作られた——ロケットを発射台で組み立てない、という発想である。代わりにSaturn Vを巨大なVehicle Assembly Buildingの内部で積み上げ、約3,000トンの機体を丸ごと、直立したまま、歩く速さで進むクローラートランスポーターに載せて発射台まで運び出す。この「クリーンパッド」方式により、一つの射場が、現地で組み立てるよりはるかに速く、史上最大のロケットを回転させられた。この設計はApolloより半世紀も長生きした——同じ発射台がSpace Shuttleの大半を打ち上げ、2014年にSpaceXへリースされた現在は、Falcon Heavyと、Crew Dragonで飛ぶ宇宙飛行士を送り出している。良いインフラとは、結局のところ最も静かな種類のムーンショットなのだ——一度作れば、成果を生み続ける。",
+  "new": "第39A発射施設は、それが支えたロケットに劣らない大胆な発想の上に作られた——ロケットを発射台で組み立てない、という発想である。代わりにSaturn Vを巨大なVehicle Assembly Buildingの内部で積み上げ、約3,000トンの機体を丸ごと、直立したまま、歩く速さで進むクローラートランスポーターに載せて発射台まで運び出す。この「クリーンパッド」方式により、一つの射場が、現地で組み立てるよりはるかに速く、史上最大のロケットを回転させられた。この設計はApolloより半世紀も長生きした——同じ発射台がSpace Shuttleの大半を打ち上げ、2014年にSpaceXへリースされた現在は、Falcon Heavyと、Crew Dragonで飛ぶ宇宙飛行士を送り出している。良いインフラとは、結局のところ最も静かな種類のムーンショットなのだ——一度作れば、成果を生み続ける。"
+ }
+]

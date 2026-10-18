@@ -30,3 +30,6 @@ zh titles partly traditional (中途島, 哈欽森, 堅忍, 卡門線, 科羅廖
 
 ## From group 10 (ar missions)
 - Taurus (كوكبة الثور, reviewer-written), Faulkes Telescope, Linda Salzman Sagan (no ar form), Dinkinesh (no ar form), Siberia, leucite (term)
+
+## From groups 12–13 (ja, zh-CN fleet)
+- Gubarev, Grechko, Klimuk, Sevastyanov, Lazarev, Makarov, Rosalind Franklin, Copernicus (crater), Cerealia Facula, Jawahar Sthal, Goldstone, Marshall Space Flight Center, von Braun (bare), Darwin, Mössbauer, Rogers Commission, Captain Cook, 4179 Toutatis, Apophis

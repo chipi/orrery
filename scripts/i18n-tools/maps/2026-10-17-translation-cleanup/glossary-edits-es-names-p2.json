@@ -1,0 +1,68 @@
+[
+ {
+  "rel": "essays/comms.json",
+  "at": "body.3.md",
+  "old": "La [Deep Space Network](/science/mission-phases/dsn) es una creación de principios de la década de 1960, construida cuando las primeras sondas se dirigían a Venus y Marte y la cuestión de cómo comunicarse con ellas a medida que se alejaban se volvió urgentemente práctica. La solución a la que llegó el JPL era elegante en su sencillez: colocar complejos de antenas separados unos 120 grados de longitud alrededor del planeta, de modo que, a medida que la Tierra gira, al menos uno de ellos siempre mire hacia la parte del cielo donde está la misión. Tres emplazamientos: Goldstone, en el desierto de California; Madrid, en España, y Canberra, en Australia. Desde entonces han sido los oídos y la boca del Sistema solar.",
+  "new": "La [Deep Space Network](/science/mission-phases/dsn) es una creación de principios de la década de 1960, construida cuando las primeras sondas se dirigían a Venus y Marte y la cuestión de cómo comunicarse con ellas a medida que se alejaban se volvió urgentemente práctica. La solución a la que llegó el JPL era elegante en su sencillez: colocar complejos de antenas separados unos 120 grados de longitud alrededor del planeta, de modo que, a medida que la Tierra gira, al menos uno de ellos siempre mire hacia la parte del cielo donde está la misión. Tres emplazamientos: Goldstone, en el desierto de California; Madrid, en España, y Camberra, en Australia. Desde entonces han sido los oídos y la boca del Sistema solar."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.4.md",
+  "old": "La joya de cada complejo es su antena de 70 metros, una estructura del tamaño y el peso de un destructor naval, equilibrada sobre un cojinete que le permite seguir un punto del cielo con una precisión de una fracción de grado, hora tras hora, mientras la Tierra gira bajo ella. Las tres antenas de 70 metros (DSS-14 en Goldstone, DSS-43 en Canberra, DSS-63 en Madrid) se construyeron como antenas de 64 metros y luego, entre 1982 y 1988, se ampliaron específicamente para dar soporte al inminente encuentro de Voyager 2 con Neptuno: una mejora a escala civilizatoria de una red global, para un solo sobrevuelo, de un solo planeta. La DSS-43 de Canberra tiene una distinción que no tienen las otras dos: como la trayectoria de Voyager 2 la llevó al sur del plano del Sistema solar, es la única antena de la Tierra con línea de visión hacia ella. Una antena, en un continente, es la razón por la que [Voyager 2](/missions?id=voyager-2) sigue en la conversación.",
+  "new": "La joya de cada complejo es su antena de 70 metros, una estructura del tamaño y el peso de un destructor naval, equilibrada sobre un cojinete que le permite seguir un punto del cielo con una precisión de una fracción de grado, hora tras hora, mientras la Tierra gira bajo ella. Las tres antenas de 70 metros (DSS-14 en Goldstone, DSS-43 en Camberra, DSS-63 en Madrid) se construyeron como antenas de 64 metros y luego, entre 1982 y 1988, se ampliaron específicamente para dar soporte al inminente encuentro de Voyager 2 con Neptuno: una mejora a escala civilizatoria de una red global, para un solo sobrevuelo, de un solo planeta. La DSS-43 de Camberra tiene una distinción que no tienen las otras dos: como la trayectoria de Voyager 2 la llevó al sur del plano del Sistema solar, es la única antena de la Tierra con línea de visión hacia ella. Una antena, en un continente, es la razón por la que [Voyager 2](/missions?id=voyager-2) sigue en la conversación."
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-2.json",
+  "at": "tagline",
+  "old": "Segundo orbitador lunar estadounidense (1966-11-10). Capturó la 'Imagen del Siglo' — vista oblicua del cráter Copernicus a ~45 km",
+  "new": "Segundo orbitador lunar estadounidense (1966-11-10). Capturó la 'Imagen del Siglo' — vista oblicua del cráter Copérnico a ~45 km"
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-2.json",
+  "at": "description",
+  "old": "Segundo de los cinco vehículos Lunar Orbiter. Lanzado el 1966-11-06 desde Cabo Cañaveral, entró en órbita lunar el 1966-11-10. Cartografió 13 sitios en la zona ecuatorial de Apollo. El 1966-11-24, el Fotograma 162 capturó una vista oblicua del cráter Copernicus de 93 km desde 45,8 km de altitud mirando al norte — un paisaje montañoso al estilo terrestre nunca antes visto en otro mundo. Los periódicos la llamaron la 'Imagen del Siglo'. La publicación de la foto se convirtió en un punto de inflexión en la participación pública con la exploración lunar. Devolvió 422 fotogramas en total a lo largo de 33 días de captura de imágenes. Impactó deliberadamente el 1967-10-11 a 4° S, 98° E (cara oculta lunar) para evitar interferencias de radiofrecuencia con Lunar Orbiter 5.",
+  "new": "Segundo de los cinco vehículos Lunar Orbiter. Lanzado el 1966-11-06 desde Cabo Cañaveral, entró en órbita lunar el 1966-11-10. Cartografió 13 sitios en la zona ecuatorial de Apollo. El 1966-11-24, el Fotograma 162 capturó una vista oblicua del cráter Copérnico de 93 km desde 45,8 km de altitud mirando al norte — un paisaje montañoso al estilo terrestre nunca antes visto en otro mundo. Los periódicos la llamaron la 'Imagen del Siglo'. La publicación de la foto se convirtió en un punto de inflexión en la participación pública con la exploración lunar. Devolvió 422 fotogramas en total a lo largo de 33 días de captura de imágenes. Impactó deliberadamente el 1967-10-11 a 4° S, 98° E (cara oculta lunar) para evitar interferencias de radiofrecuencia con Lunar Orbiter 5."
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-2.json",
+  "at": "best_known_for",
+  "old": "Segundo orbitador lunar estadounidense (1966-11-10). Capturó la 'Imagen del Siglo' — vista oblicua del cráter Copernicus a ~45 km de altitud",
+  "new": "Segundo orbitador lunar estadounidense (1966-11-10). Capturó la 'Imagen del Siglo' — vista oblicua del cráter Copérnico a ~45 km de altitud"
+ },
+ {
+  "rel": "science/mission-phases/antenna-arrays.json",
+  "at": "body_paragraphs.0",
+  "old": "Una sola antena grande es la forma obvia de captar la débil señal de una nave situada a miles de millones de kilómetros. Las antenas de 70 m de la DSN —en Goldstone, Madrid y Canberra— están cerca del límite práctico de los reflectores terrestres totalmente orientables. Construir algo apreciablemente mayor exigiría una estructura fija (que limita la cobertura del cielo) o una ingeniería que aún no existe. La alternativa es combinar muchas antenas más pequeñas: la agrupación de antenas (arraying).",
+  "new": "Una sola antena grande es la forma obvia de captar la débil señal de una nave situada a miles de millones de kilómetros. Las antenas de 70 m de la DSN —en Goldstone, Madrid y Camberra— están cerca del límite práctico de los reflectores terrestres totalmente orientables. Construir algo apreciablemente mayor exigiría una estructura fija (que limita la cobertura del cielo) o una ingeniería que aún no existe. La alternativa es combinar muchas antenas más pequeñas: la agrupación de antenas (arraying)."
+ },
+ {
+  "rel": "science/mission-phases/antenna-arrays.json",
+  "at": "body_paragraphs.2",
+  "old": "La demostración más célebre en las operaciones de espacio profundo se produjo durante el sobrevuelo de Neptuno por la Voyager 2 en agosto de 1989. A 4400 millones de kilómetros, la señal de la Voyager era tan débil que recibirla a la tasa completa de datos científicos exigió agrupar antenas de cuatro continentes a la vez — la de 70 m de Goldstone y el Very Large Array en Estados Unidos, la antena DSN de 64 m de Canberra y el radiotelescopio de Parkes, de 64 m, en Australia, y la antena de 64 m de Usuda, en Japón. El acuerdo de agrupación de la NASA con instalaciones ajenas a ella, como Parkes (operado por la CSIRO), demostró que la red de comunicaciones del espacio profundo puede ampliarse a escala internacional en los momentos críticos de una misión.",
+  "new": "La demostración más célebre en las operaciones de espacio profundo se produjo durante el sobrevuelo de Neptuno por la Voyager 2 en agosto de 1989. A 4400 millones de kilómetros, la señal de la Voyager era tan débil que recibirla a la tasa completa de datos científicos exigió agrupar antenas de cuatro continentes a la vez — la de 70 m de Goldstone y el Very Large Array en Estados Unidos, la antena DSN de 64 m de Camberra y el radiotelescopio de Parkes, de 64 m, en Australia, y la antena de 64 m de Usuda, en Japón. El acuerdo de agrupación de la NASA con instalaciones ajenas a ella, como Parkes (operado por la CSIRO), demostró que la red de comunicaciones del espacio profundo puede ampliarse a escala internacional en los momentos críticos de una misión."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "intro_sentence",
+  "old": "Tres complejos de antenas gigantes separados 120° alrededor de la Tierra — Goldstone, Madrid y Canberra— que ofrecen cobertura continua a cualquier nave más allá de la órbita terrestre baja.",
+  "new": "Tres complejos de antenas gigantes separados 120° alrededor de la Tierra — Goldstone, Madrid y Camberra— que ofrecen cobertura continua a cualquier nave más allá de la órbita terrestre baja."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "body_paragraphs.1",
+  "old": "Tres complejos de antenas separados 120° alrededor del globo — Goldstone (California), Madrid (España) y Canberra (Australia)— garantizan que cualquier nave más allá de la GEO esté en línea de visión de al menos un complejo en todo momento mientras la Tierra gira. Cada complejo tiene varias antenas, y las más destacadas son los «grandes platos» de 70 m (DSS-14, DSS-43, DSS-63). Las antenas menores, de 34 m, manejan la mayor parte del tráfico moderno.",
+  "new": "Tres complejos de antenas separados 120° alrededor del globo — Goldstone (California), Madrid (España) y Camberra (Australia)— garantizan que cualquier nave más allá de la GEO esté en línea de visión de al menos un complejo en todo momento mientras la Tierra gira. Cada complejo tiene varias antenas, y las más destacadas son los «grandes platos» de 70 m (DSS-14, DSS-43, DSS-63). Las antenas menores, de 34 m, manejan la mayor parte del tráfico moderno."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "diagram_caption",
+  "old": "Goldstone + Madrid + Canberra a intervalos de 120° → cobertura continua a medida que la Tierra gira → medición de distancia + Doppler + delta-DOR → posición de la nave con precisión del orden de kilómetros por todo el sistema solar.",
+  "new": "Goldstone + Madrid + Camberra a intervalos de 120° → cobertura continua a medida que la Tierra gira → medición de distancia + Doppler + delta-DOR → posición de la nave con precisión del orden de kilómetros por todo el sistema solar."
+ },
+ {
+  "rel": "universe/named-stars/regulus.json",
+  "at": "cultural",
+  "old": "Denominada 'pequeño rey' por Copernicus y conocida en la antigüedad como el Corazón del León (Cor Leonis), Regulus fue una de las cuatro 'Estrellas Reales' de Persia que marcaban el cambio de las estaciones.",
+  "new": "Denominada 'pequeño rey' por Copérnico y conocida en la antigüedad como el Corazón del León (Cor Leonis), Regulus fue una de las cuatro 'Estrellas Reales' de Persia que marcaban el cambio de las estaciones."
+ }
+]

@@ -1,0 +1,74 @@
+[
+ {
+  "rel": "essays/comms.json",
+  "at": "body.3.md",
+  "old": "A [Deep Space Network](/science/mission-phases/dsn) é uma criação do início dos anos 1960, construída quando as primeiras sondas se dirigiam para Vênus e Marte e a questão de como conversar com elas enquanto recuavam tornou-se uma questão prática urgente. A resposta a que o JPL chegou era elegante em sua simplicidade: espaçar os complexos de antenas cerca de 120 graus de longitude uns dos outros ao redor do planeta, de modo que, com a rotação da Terra, pelo menos um deles esteja sempre voltado para a parte do céu onde a missão está. Três locais: Goldstone no deserto da Califórnia, Madrid na Espanha e Canberra na Austrália. Eles têm sido os ouvidos e a boca do sistema solar desde então.",
+  "new": "A [Deep Space Network](/science/mission-phases/dsn) é uma criação do início dos anos 1960, construída quando as primeiras sondas se dirigiam para Vênus e Marte e a questão de como conversar com elas enquanto recuavam tornou-se uma questão prática urgente. A resposta a que o JPL chegou era elegante em sua simplicidade: espaçar os complexos de antenas cerca de 120 graus de longitude uns dos outros ao redor do planeta, de modo que, com a rotação da Terra, pelo menos um deles esteja sempre voltado para a parte do céu onde a missão está. Três locais: Goldstone no deserto da Califórnia, Madrid na Espanha e Camberra na Austrália. Eles têm sido os ouvidos e a boca do sistema solar desde então."
+ },
+ {
+  "rel": "essays/comms.json",
+  "at": "body.4.md",
+  "old": "A joia de cada complexo é sua antena de 70 metros — uma estrutura aproximadamente do tamanho e peso de um contratorpedeiro equilibrada em um mancal que lhe permite rastrear um ponto no céu com uma precisão de uma fração de grau, hora após hora, enquanto a Terra gira sob ela. As três antenas de 70 metros (DSS-14 em Goldstone, DSS-43 em Canberra, DSS-63 em Madrid) foram construídas como pratos de 64 metros e depois, entre 1982 e 1988, expandidas especificamente para apoiar o encontro próximo de Voyager 2 com Netuno — uma atualização de escala civilizacional de uma rede global, para um único sobrevoo, de um único planeta. A DSS-43 de Canberra carrega uma distinção que as outras duas não têm: porque a trajetória de Voyager 2 a levou para o sul do plano solar, é a única antena na Terra com linha de visão para ela. Uma antena, em um continente, é a razão pela qual [Voyager 2](/missions?id=voyager-2) ainda está na conversa.",
+  "new": "A joia de cada complexo é sua antena de 70 metros — uma estrutura aproximadamente do tamanho e peso de um contratorpedeiro equilibrada em um mancal que lhe permite rastrear um ponto no céu com uma precisão de uma fração de grau, hora após hora, enquanto a Terra gira sob ela. As três antenas de 70 metros (DSS-14 em Goldstone, DSS-43 em Camberra, DSS-63 em Madrid) foram construídas como pratos de 64 metros e depois, entre 1982 e 1988, expandidas especificamente para apoiar o encontro próximo de Voyager 2 com Netuno — uma atualização de escala civilizacional de uma rede global, para um único sobrevoo, de um único planeta. A DSS-43 de Camberra carrega uma distinção que as outras duas não têm: porque a trajetória de Voyager 2 a levou para o sul do plano solar, é a única antena na Terra com linha de visão para ela. Uma antena, em um continente, é a razão pela qual [Voyager 2](/missions?id=voyager-2) ainda está na conversa."
+ },
+ {
+  "rel": "essays/generational-starships.json",
+  "at": "body.16.md",
+  "old": "Além da genética, o problema da população é cultural. Sociedades humanas ao longo de dezenas de gerações não permanecem estáticas. Línguas derivam; religiões evoluem ou morrem; sistemas de governança que parecem estáveis por décadas se fraturam ao longo de séculos; a memória institucional do motivo das regras se corrói, e as regras ou se calcificam em dogma ou se dissolvem em anomia. Uma viagem de quatro séculos, da partida à chegada, abrange aproximadamente o mesmo tempo que toda a Revolução Científica — de Copernicus a Newton, a Darwin e a Einstein. A sociedade que chegar ao destino não será a que partiu, em nenhum sentido cultural que importe. Se ainda compreenderá a missão, se ainda terá o conhecimento técnico para executar o pouso e a instalação de uma colônia, se ainda levará adiante as habilidades e as estruturas sociais necessárias para sobreviver em um ambiente alienígena — essas não são questões de engenharia. São questões sobre como o conhecimento é transmitido entre gerações, como as instituições persistem ou falham, como a identidade se mantém sob confinamento e isolamento radicais. A história não é otimista quanto a nenhuma delas.",
+  "new": "Além da genética, o problema da população é cultural. Sociedades humanas ao longo de dezenas de gerações não permanecem estáticas. Línguas derivam; religiões evoluem ou morrem; sistemas de governança que parecem estáveis por décadas se fraturam ao longo de séculos; a memória institucional do motivo das regras se corrói, e as regras ou se calcificam em dogma ou se dissolvem em anomia. Uma viagem de quatro séculos, da partida à chegada, abrange aproximadamente o mesmo tempo que toda a Revolução Científica — de Copérnico a Newton, a Darwin e a Einstein. A sociedade que chegar ao destino não será a que partiu, em nenhum sentido cultural que importe. Se ainda compreenderá a missão, se ainda terá o conhecimento técnico para executar o pouso e a instalação de uma colônia, se ainda levará adiante as habilidades e as estruturas sociais necessárias para sobreviver em um ambiente alienígena — essas não são questões de engenharia. São questões sobre como o conhecimento é transmitido entre gerações, como as instituições persistem ou falham, como a identidade se mantém sob confinamento e isolamento radicais. A história não é otimista quanto a nenhuma delas."
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-2.json",
+  "at": "tagline",
+  "old": "Segundo orbitador lunar dos EUA (1966-11-10). Registrou a “Foto do Século” — vista oblíqua da cratera Copernicus a ~45 km de altitude",
+  "new": "Segundo orbitador lunar dos EUA (1966-11-10). Registrou a “Foto do Século” — vista oblíqua da cratera Copérnico a ~45 km de altitude"
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-2.json",
+  "at": "description",
+  "old": "Segunda das cinco sondas Lunar Orbiter. Lançada em 1966-11-06 de Cabo Canaveral, entrou em órbita lunar em 1966-11-10. Mapeou 13 locais na zona equatorial da Apollo. Em 1966-11-24, o quadro 162 captou uma vista oblíqua da cratera Copernicus, de 93 km de diâmetro, a 45,8 km de altitude, olhando para o norte — uma paisagem de montanhas ao estilo terrestre nunca antes vista em outro mundo. Os jornais a chamaram de “Foto do Século”. A divulgação da foto tornou-se um ponto de virada no engajamento do público com a exploração lunar. Retornou 422 quadros ao longo de 33 dias de imageamento. Impactou deliberadamente a superfície em 1967-10-11, a 4° S, 98° L (lado oculto da Lua), para evitar interferência de radiofrequência com a Lunar Orbiter 5.",
+  "new": "Segunda das cinco sondas Lunar Orbiter. Lançada em 1966-11-06 de Cabo Canaveral, entrou em órbita lunar em 1966-11-10. Mapeou 13 locais na zona equatorial da Apollo. Em 1966-11-24, o quadro 162 captou uma vista oblíqua da cratera Copérnico, de 93 km de diâmetro, a 45,8 km de altitude, olhando para o norte — uma paisagem de montanhas ao estilo terrestre nunca antes vista em outro mundo. Os jornais a chamaram de “Foto do Século”. A divulgação da foto tornou-se um ponto de virada no engajamento do público com a exploração lunar. Retornou 422 quadros ao longo de 33 dias de imageamento. Impactou deliberadamente a superfície em 1967-10-11, a 4° S, 98° L (lado oculto da Lua), para evitar interferência de radiofrequência com a Lunar Orbiter 5."
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-2.json",
+  "at": "best_known_for",
+  "old": "Segundo orbitador lunar dos EUA (1966-11-10). Registrou a “Foto do Século” — vista oblíqua da cratera Copernicus a ~45 km de altitude",
+  "new": "Segundo orbitador lunar dos EUA (1966-11-10). Registrou a “Foto do Século” — vista oblíqua da cratera Copérnico a ~45 km de altitude"
+ },
+ {
+  "rel": "science/mission-phases/antenna-arrays.json",
+  "at": "body_paragraphs.0",
+  "old": "Uma antena grande única é a forma óbvia de captar um fraco sinal de uma nave espacial a bilhões de quilómetros de distância. Os pratos de 70 m da DSN — em Goldstone, Madrid e Canberra — estão próximos do limite prático para refletores totalmente orientáveis baseados em terra. Construir algo significativamente maior exigiria uma estrutura fixa (limitando a cobertura do céu) ou engenharia que ainda não existe. A alternativa é combinar muitas antenas menores: arranjos.",
+  "new": "Uma antena grande única é a forma óbvia de captar um fraco sinal de uma nave espacial a bilhões de quilómetros de distância. Os pratos de 70 m da DSN — em Goldstone, Madrid e Camberra — estão próximos do limite prático para refletores totalmente orientáveis baseados em terra. Construir algo significativamente maior exigiria uma estrutura fixa (limitando a cobertura do céu) ou engenharia que ainda não existe. A alternativa é combinar muitas antenas menores: arranjos."
+ },
+ {
+  "rel": "science/mission-phases/antenna-arrays.json",
+  "at": "body_paragraphs.2",
+  "old": "A demonstração mais famosa em operações de espaço profundo ocorreu durante o encontro de Voyager 2 com Netuno em agosto de 1989. A 4,4 bilhões de quilómetros, o sinal de Voyager era tão fraco que capturá-lo na taxa de dados científicos completa exigia arranjar pratos em quatro continentes simultaneamente — o prato de 70 m Goldstone e o Very Large Array nos Estados Unidos, a antena DSN de 64 m Canberra e o radiotelescópio de 64 m Parkes na Austrália, e o prato de 64 m Usuda do Japão. O acordo de arranjos da NASA com instalações não-NASA como Parkes (operada pelo CSIRO) estabeleceu que a rede de comunicação de espaço profundo pode ser ampliada internacionalmente em momentos críticos de missão.",
+  "new": "A demonstração mais famosa em operações de espaço profundo ocorreu durante o encontro de Voyager 2 com Netuno em agosto de 1989. A 4,4 bilhões de quilómetros, o sinal de Voyager era tão fraco que capturá-lo na taxa de dados científicos completa exigia arranjar pratos em quatro continentes simultaneamente — o prato de 70 m Goldstone e o Very Large Array nos Estados Unidos, a antena DSN de 64 m Camberra e o radiotelescópio de 64 m Parkes na Austrália, e o prato de 64 m Usuda do Japão. O acordo de arranjos da NASA com instalações não-NASA como Parkes (operada pelo CSIRO) estabeleceu que a rede de comunicação de espaço profundo pode ser ampliada internacionalmente em momentos críticos de missão."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "intro_sentence",
+  "old": "Três complexos de antenas gigantes espaçaram 120° em torno da Terra — Goldstone, Madrid, Canberra — proporcionando cobertura contínua de qualquer espaçonave além da órbita terrestre baixa.",
+  "new": "Três complexos de antenas gigantes espaçaram 120° em torno da Terra — Goldstone, Madrid, Camberra — proporcionando cobertura contínua de qualquer espaçonave além da órbita terrestre baixa."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "body_paragraphs.1",
+  "old": "Três complexos de antenas espaçados 120° ao redor do globo — Goldstone (Califórnia), Madrid (Espanha), Canberra (Austrália) — garantem que qualquer espaçonave para além da GEO esteja em linha de visão de pelo menos um complexo em todos os tempos à medida que a Terra gira. Cada complexo tem várias antenas, sendo a marquee os 70 m \"grandes pratos\" (DSS-14, DSS-43, DSS-63). antenas menores de 34 m lidar com o tráfego mais moderno.",
+  "new": "Três complexos de antenas espaçados 120° ao redor do globo — Goldstone (Califórnia), Madrid (Espanha), Camberra (Austrália) — garantem que qualquer espaçonave para além da GEO esteja em linha de visão de pelo menos um complexo em todos os tempos à medida que a Terra gira. Cada complexo tem várias antenas, sendo a marquee os 70 m \"grandes pratos\" (DSS-14, DSS-43, DSS-63). antenas menores de 34 m lidar com o tráfego mais moderno."
+ },
+ {
+  "rel": "science/mission-phases/dsn.json",
+  "at": "diagram_caption",
+  "old": "Goldstone + Madrid + Canberra em intervalos de 120° → cobertura contínua à medida que a Terra gira → variando + Doppler + delta-DOR → quilômetro de posição da nave espacial através do sistema solar.",
+  "new": "Goldstone + Madrid + Camberra em intervalos de 120° → cobertura contínua à medida que a Terra gira → variando + Doppler + delta-DOR → quilômetro de posição da nave espacial através do sistema solar."
+ },
+ {
+  "rel": "universe/named-stars/regulus.json",
+  "at": "cultural",
+  "old": "Chamada de 'pequeno rei' por Copernicus e conhecida na antiguidade como o Coração do Leão (Cor Leonis), Régulo foi uma das quatro 'Estrelas Reais' da Pérsia que marcavam a mudança das estações.",
+  "new": "Chamada de 'pequeno rei' por Copérnico e conhecida na antiguidade como o Coração do Leão (Cor Leonis), Régulo foi uma das quatro 'Estrelas Reais' da Pérsia que marcavam a mudança das estações."
+ }
+]

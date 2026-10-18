@@ -707,7 +707,7 @@
       "title": "역사: Kepler의 법칙"
     },
     "/diagrams/science/history-newton-principia_webp": {
-      "title": "역사: Newton의 Principia"
+      "title": "역사: 뉴턴의 Principia"
     },
     "/diagrams/science/history-sputnik_webp": {
       "title": "역사: Sputnik"
@@ -716,7 +716,7 @@
       "title": "역사: 치올콥스키"
     },
     "/diagrams/science/hohmann-transfer_webp": {
-      "title": "Hohmann 전이"
+      "title": "호만 전이"
     },
     "/diagrams/science/inclination_webp": {
       "title": "궤도 경사각"
@@ -746,7 +746,7 @@
       "title": "Lagrange 포인트"
     },
     "/diagrams/science/lambert-problem_webp": {
-      "title": "Lambert 문제"
+      "title": "람베르트 문제"
     },
     "/diagrams/science/laser-sail_webp": {
       "title": "레이저 돛"
@@ -1563,7 +1563,7 @@
     },
     "/images/colophon/viz-porkchop_webp": {
       "title": "Porkchop Δv 히트맵",
-      "what": "출발 × 비행 시간 격자를 Lambert 솔버로 색상 매핑한 것.",
+      "what": "출발 × 비행 시간 격자를 람베르트 솔버로 색상 매핑한 것.",
       "where": "전이 계획하기"
     },
     "/images/colophon/viz-blueprint_webp": {

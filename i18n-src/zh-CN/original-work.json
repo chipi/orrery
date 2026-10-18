@@ -1563,7 +1563,7 @@
     },
     "/images/colophon/viz-porkchop_webp": {
       "title": "猪排图Δv热力图",
-      "what": "出发×飞行时间网格，通过Lambert求解器进行颜色映射。",
+      "what": "出发×飞行时间网格，通过朗伯求解器进行颜色映射。",
       "where": "规划转移轨迹"
     },
     "/images/colophon/viz-blueprint_webp": {

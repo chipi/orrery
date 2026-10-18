@@ -1,0 +1,26 @@
+[
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-2.json",
+  "at": "tagline",
+  "old": "Zweiter US-Mondorbiter (1966-11-10). Machte das „Bild des Jahrhunderts“ — Schrägsicht des Copernicus-Kraters aus ~45 km Höhe",
+  "new": "Zweiter US-Mondorbiter (1966-11-10). Machte das „Bild des Jahrhunderts“ — Schrägsicht des Kopernikus-Kraters aus ~45 km Höhe"
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-2.json",
+  "at": "description",
+  "old": "Zweite der fünf Lunar-Orbiter-Sonden. Gestartet am 6. November 1966 von Cape Canaveral, trat am 10. November 1966 in eine Mondumlaufbahn ein. Kartografierte 13 Standorte in der äquatorialen Apollo-Zone. Am 24. November 1966 hielt Aufnahme 162 eine schräge Ansicht des 93 km großen Copernicus-Kraters aus 45,8 km Höhe mit Blick nach Norden fest – eine noch nie gesehene, erdähnliche Berglandschaft auf einer anderen Welt. Zeitungen nannten sie das „Bild des Jahrhunderts“. Die Veröffentlichung des Fotos wurde zu einem Wendepunkt für das öffentliche Interesse an der Mondforschung. Lieferte insgesamt 422 Aufnahmen in 33 Tagen Bildgebung. Bewusst zum Absturz gebracht am 11. Oktober 1967 bei 4° S, 98° O (Mondrückseite), um Funkstörungen bei Lunar Orbiter 5 zu verhindern.",
+  "new": "Zweite der fünf Lunar-Orbiter-Sonden. Gestartet am 6. November 1966 von Cape Canaveral, trat am 10. November 1966 in eine Mondumlaufbahn ein. Kartografierte 13 Standorte in der äquatorialen Apollo-Zone. Am 24. November 1966 hielt Aufnahme 162 eine schräge Ansicht des 93 km großen Kopernikus-Kraters aus 45,8 km Höhe mit Blick nach Norden fest – eine noch nie gesehene, erdähnliche Berglandschaft auf einer anderen Welt. Zeitungen nannten sie das „Bild des Jahrhunderts“. Die Veröffentlichung des Fotos wurde zu einem Wendepunkt für das öffentliche Interesse an der Mondforschung. Lieferte insgesamt 422 Aufnahmen in 33 Tagen Bildgebung. Bewusst zum Absturz gebracht am 11. Oktober 1967 bei 4° S, 98° O (Mondrückseite), um Funkstörungen bei Lunar Orbiter 5 zu verhindern."
+ },
+ {
+  "rel": "fleet/orbiter/lunar-orbiter-2.json",
+  "at": "best_known_for",
+  "old": "Zweiter US-Mondorbiter (1966-11-10). Machte das „Bild des Jahrhunderts“ — Schrägsicht des Copernicus-Kraters aus ~45 km Höhe",
+  "new": "Zweiter US-Mondorbiter (1966-11-10). Machte das „Bild des Jahrhunderts“ — Schrägsicht des Kopernikus-Kraters aus ~45 km Höhe"
+ },
+ {
+  "rel": "universe/named-stars/regulus.json",
+  "at": "cultural",
+  "old": "Von Copernicus als ‚kleiner König' bezeichnet und in der Antike als Herz des Löwen (Cor Leonis) bekannt, war Regulus einer der vier ‚Königssterne' Persiens, die den Wechsel der Jahreszeiten markierten.",
+  "new": "Von Kopernikus als ‚kleiner König' bezeichnet und in der Antike als Herz des Löwen (Cor Leonis) bekannt, war Regulus einer der vier ‚Königssterne' Persiens, die den Wechsel der Jahreszeiten markierten."
+ }
+]

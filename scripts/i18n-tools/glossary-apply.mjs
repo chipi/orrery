@@ -109,6 +109,12 @@ const GUARD = {
   },
   // inside an English acronym's expansion: LEO (Low Earth Orbit), MEO, GEO
   Earth: { after: /^\s?Orbit\b/ },
+  // ESA's XMM-Newton observatory, a built thing
+  Newton: { before: /XMM[-\s]?$/ },
+  // the EU's Earth-observation programme (Sentinel), a built thing — not the astronomer
+  Copernicus: {
+    path: /fleet\/constellation\/sentinel-copernicus|fleet\/launch-site\/kourou-ela-4|science\/orbits\/sun-synchronous/,
+  },
   // German 'Sub-Neptune' is already the plural of Sub-Neptun
   Neptune: { before: /Sub-$/, locs: /^de$/ },
   // inside SLIM's English expansion and the quoted title 'The Last Man on the Moon'
@@ -346,6 +352,8 @@ function coordinateSr(s) {
   return s;
 }
 const LATIN = new Set(['de', 'fr', 'es', 'it', 'nl', 'pt-BR']);
+const EPONYM_HEAD_RU =
+  /(^|[\s«(\[])(перел[её]т|передач|вопрос|окон|переход|трансфер|задач|закон|уравнени|решени|решател|предел|окн|полос|эллипс|траектори|орбит|гравитаци|мост|эффект|постоянн|сфер|радиус|пояс|сдвиг|анализ|Principia)[а-яё]*»?\s*$/i;
 // The glossary holds the form used inside a sentence ("cráter Gale", "Terre"); a
 // Romance/Germanic sentence needs the article the English source didn't have. These
 // rules only add an article where a preposition stands right before the swapped word;
@@ -591,7 +599,12 @@ for (const [f, rel] of files) {
             if (loc === 'ru' && PERSON[en]) {
               const before = str.slice(Math.max(0, off - 40), off) + a;
               const p = PERSON[en];
-              return lead + declinePersonRu(nat, guessCaseRu(before), p._female, p._slavic) + trail;
+              // an eponym right after its head noun is a possessive genitive: перелёт Гомана,
+              // задача Ламберта, закон Ньютона, уравнения Эйнштейна (people only — "кратер
+              // Коперник" is apposition and stays nominative)
+              let c = guessCaseRu(before);
+              if (c === 'nom' && EPONYM_HEAD_RU.test(before)) c = 'gen';
+              return lead + declinePersonRu(nat, c, p._female, p._slavic) + trail;
             }
             if (loc === 'sr-Cyrl' && PERSON[en]) {
               const before = str.slice(Math.max(0, off - 40), off) + a;

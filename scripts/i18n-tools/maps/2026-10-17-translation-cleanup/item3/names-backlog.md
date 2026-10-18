@@ -59,3 +59,13 @@ zh titles partly traditional (中途島, 哈欽森, 堅忍, 卡門線, 科羅廖
 - hi: Bengaluru = बेंगलुरु (hi.wikipedia, Q1355) used in essays; Byalalu (Q5003923) has no hi form — kept Latin. Indian Deep Space Network = भारतीय गहन अंतरिक्ष नेटवर्क (hi.wikipedia) if it ever needs a native form.
 - es: thousands separator — RAE space (science group 25 and es essays group 34 use plain spaces); the rest of the es site still has ~268 'N.NNN' dots, 34 of them in the essays' unchanged strings. Sweep after item 3, reviewing each (a dot could be a misplaced decimal).
 - it: 'condriti carbonacei' (2, wrong gender) → 'condriti carbonacee' outside the essays.
+
+## Phase 2 item 1 — done 2026-10-18 (glossary names)
+Added: Isaac Newton, Albert Einstein, Karl Schwarzschild, Édouard Roche, Christian Doppler,
+Johann Heinrich Lambert, Nicolaus Copernicus, Charles Darwin (person); Madrid, Canberra (place);
+filled Pallas, Hygiea (body); bare Newton, Einstein, Schwarzschild, Roche, Doppler, Lambert,
+Copernicus, Hohmann. 421 strings in 12 locales, every proposal read in context.
+Still open: bare Hubble (homonym with the telescope — needs a person-only guard), bare Darwin
+(city, ESA mission), Van Allen (two-word surname), Goldstone (no clean short form), Nathan
+Rosen (ru Розен used by hand in two strings), Scott Kelly bare (QID mismatch), plus the
+place/feature lists above.

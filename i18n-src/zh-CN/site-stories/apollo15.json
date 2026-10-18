@@ -1,5 +1,5 @@
 {
-  "intro": "Apollo 15 于1971年7月30日降落在哈德利沟纹 / 亚平宁山脉地区——这是首次“J 级”任务,具备延长的月面停留时间、月球车(Lunar Roving Vehicle,LRV),以及一位受过科学训练的飞行员(大卫·斯科特)。斯科特与艾尔文在三次舱外活动中共驾车行驶28公里,发现了“Genesis Rock”(约41亿年前的斜长岩,属原始月壳),并在电视直播中同时释放一根羽毛和一把锤子,重现 Galileo 的重力实验。",
+  "intro": "Apollo 15 于1971年7月30日降落在哈德利沟纹 / 亚平宁山脉地区——这是首次“J 级”任务,具备延长的月面停留时间、月球车(Lunar Roving Vehicle,LRV),以及一位受过科学训练的飞行员(大卫·斯科特)。斯科特与艾尔文在三次舱外活动中共驾车行驶28公里,发现了“Genesis Rock”(约41亿年前的斜长岩,属原始月壳),并在电视直播中同时释放一根羽毛和一把锤子,重现伽利略的重力实验。",
   "chapters": [
     {
       "id": "hardware",
@@ -34,7 +34,7 @@
     {
       "id": "science",
       "title": "科学",
-      "subtitle": "Genesis Rock 与 Galileo 实验",
+      "subtitle": "Genesis Rock 与伽利略实验",
       "images": [
         {
           "src": "/images/missions/apollo15/04.webp",

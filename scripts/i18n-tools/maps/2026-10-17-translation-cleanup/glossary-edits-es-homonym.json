@@ -1,0 +1,74 @@
+[
+ {
+  "rel": "deep-sky.json",
+  "at": "euclid-horsehead.caption",
+  "old": "La vista panorámica de Euclid de la icónica nube oscura en Orion.",
+  "new": "La vista panorámica de Euclid de la icónica nube oscura en Orión."
+ },
+ {
+  "rel": "universe/named-stars/alnitak.json",
+  "at": "fact",
+  "old": "La estrella oriental del Cinturón de Orion — una supergigante azul junto a la resplandeciente Llama.",
+  "new": "La estrella oriental del Cinturón de Orión — una supergigante azul junto a la resplandeciente Llama."
+ },
+ {
+  "rel": "universe/named-stars/alnitak.json",
+  "at": "cultural",
+  "old": "El nombre proviene del árabe y significa 'la faja' o 'cinturón'. Como una de las tres estrellas del Cinturón, comparte el reconocimiento casi universal de Orion a través de las culturas humanas.",
+  "new": "El nombre proviene del árabe y significa 'la faja' o 'cinturón'. Como una de las tres estrellas del Cinturón, comparte el reconocimiento casi universal de Orión a través de las culturas humanas."
+ },
+ {
+  "rel": "universe/named-stars/bellatrix.json",
+  "at": "fact",
+  "old": "La 'guerrera' — la estrella azul caliente en el hombro de Orion.",
+  "new": "La 'guerrera' — la estrella azul caliente en el hombro de Orión."
+ },
+ {
+  "rel": "universe/named-stars/bellatrix.json",
+  "at": "cultural",
+  "old": "El nombre latino significa 'guerrera' o 'estrella amazona'. Desde hace tiempo es una de las esquinas reconocibles de la figura de Orion utilizada para orientarse en el cielo invernal del norte.",
+  "new": "El nombre latino significa 'guerrera' o 'estrella amazona'. Desde hace tiempo es una de las esquinas reconocibles de la figura de Orión utilizada para orientarse en el cielo invernal del norte."
+ },
+ {
+  "rel": "universe/named-stars/betelgeuse.json",
+  "at": "fact",
+  "old": "Una colosal supergigante roja que marca el hombro de Orion — tan grande que devoraría los planetas interiores si se colocara en el lugar del Sol.",
+  "new": "Una colosal supergigante roja que marca el hombro de Orión — tan grande que devoraría los planetas interiores si se colocara en el lugar del Sol."
+ },
+ {
+  "rel": "universe/named-stars/mintaka.json",
+  "at": "fact",
+  "old": "La estrella más occidental del Cinturón de Orion, situada casi exactamente sobre el ecuador celeste.",
+  "new": "La estrella más occidental del Cinturón de Orión, situada casi exactamente sobre el ecuador celeste."
+ },
+ {
+  "rel": "universe/named-stars/mintaka.json",
+  "at": "cultural",
+  "old": "El nombre proviene del árabe y significa 'el cinturón'. Como una de las tres estrellas del Cinturón, comparte el reconocimiento casi universal de Orion, y su posición sobre el ecuador la convirtió en un marcador natural del este y el oeste.",
+  "new": "El nombre proviene del árabe y significa 'el cinturón'. Como una de las tres estrellas del Cinturón, comparte el reconocimiento casi universal de Orión, y su posición sobre el ecuador la convirtió en un marcador natural del este y el oeste."
+ },
+ {
+  "rel": "universe/named-stars/rigel.json",
+  "at": "fact",
+  "old": "Una supergigante azul brillante: el pie luminoso de Orion, decenas de miles de veces más brillante que el Sol.",
+  "new": "Una supergigante azul brillante: el pie luminoso de Orión, decenas de miles de veces más brillante que el Sol."
+ },
+ {
+  "rel": "universe/named-stars/rigel.json",
+  "at": "cultural",
+  "old": "El nombre proviene del árabe y significa «pie». La luz blanco-azulada acerada de Rigel contrasta de forma clásica con el rojo de Betelgeuse a lo largo de la figura de Orion.",
+  "new": "El nombre proviene del árabe y significa «pie». La luz blanco-azulada acerada de Rigel contrasta de forma clásica con el rojo de Betelgeuse a lo largo de la figura de Orión."
+ },
+ {
+  "rel": "universe/named-stars/saiph.json",
+  "at": "fact",
+  "old": "Una supergigante azul en la rodilla de Orion — la gemela más caliente y aparentemente más tenue de Rigel.",
+  "new": "Una supergigante azul en la rodilla de Orión — la gemela más caliente y aparentemente más tenue de Rigel."
+ },
+ {
+  "rel": "universe/named-stars/wezen.json",
+  "at": "cultural",
+  "old": "El nombre proviene de una palabra árabe que significa 'peso'. Se encuentra en Canis Maior, el Can Mayor que sigue a Orion a través del cielo detrás del brillante Sirio.",
+  "new": "El nombre proviene de una palabra árabe que significa 'peso'. Se encuentra en Canis Maior, el Can Mayor que sigue a Orión a través del cielo detrás del brillante Sirio."
+ }
+]

@@ -1,0 +1,56 @@
+[
+ {
+  "rel": "missions/moon/apollo15.json",
+  "at": "description",
+  "old": "La première « J-mission » — Apollo scientifique à séjour prolongé avec le nouveau Lunar Roving Vehicle. Le LRV a donné à Scott et Irwin une portée de traversée de 27,9 km (contre les 3,5 km de la marche seule d'Apollo 14), ouvrant le site dramatique d'Hadley-Apennine au pied d'une chaîne montagneuse de 4,5 km et à la lisière de la sinueuse rainure Hadley. Trois EVA totalisant 18 h 35 m, 77 kg d'échantillons rapportés, dont la célèbre « Genesis Rock » (échantillon 15415) — une anorthosite de 4,1 milliards d'années confirmant l'origine de l'océan magmatique de la croûte des terres hautes lunaires. La « chute du marteau et de la plume » télévisée par Scott a vérifié en direct la loi de la gravitation de Galileo. Worden en orbite lunaire a opéré une baie SIM remplie d'instruments de télédétection (caméras de cartographie, spectromètres gamma, rayons X, particules alpha) et a effectué la première EVA en espace lointain sur le chemin du retour (~EVA d'environ 39 minutes à environ 317 000 km de la Terre pour récupérer les cartouches de film). La récupération d'Apollo 15 a été entachée par la défaillance d'un des trois parachutes — le module de commande s'est posé rudement mais l'équipage était indemne.",
+  "new": "La première « J-mission » — Apollo scientifique à séjour prolongé avec le nouveau Lunar Roving Vehicle. Le LRV a donné à Scott et Irwin une portée de traversée de 27,9 km (contre les 3,5 km de la marche seule d'Apollo 14), ouvrant le site dramatique d'Hadley-Apennine au pied d'une chaîne montagneuse de 4,5 km et à la lisière de la sinueuse rainure Hadley. Trois EVA totalisant 18 h 35 m, 77 kg d'échantillons rapportés, dont la célèbre « Genesis Rock » (échantillon 15415) — une anorthosite de 4,1 milliards d'années confirmant l'origine de l'océan magmatique de la croûte des terres hautes lunaires. La « chute du marteau et de la plume » télévisée par Scott a vérifié en direct la loi de la gravitation de Galilée. Worden en orbite lunaire a opéré une baie SIM remplie d'instruments de télédétection (caméras de cartographie, spectromètres gamma, rayons X, particules alpha) et a effectué la première EVA en espace lointain sur le chemin du retour (~EVA d'environ 39 minutes à environ 317 000 km de la Terre pour récupérer les cartouches de film). La récupération d'Apollo 15 a été entachée par la défaillance d'un des trois parachutes — le module de commande s'est posé rudement mais l'équipage était indemne."
+ },
+ {
+  "rel": "missions/moon/apollo15.json",
+  "at": "events.6.note",
+  "old": "EVA-3 / avant ascension : Scott télévisé lâchant un marteau et une plume ensemble ; les deux frappent le régolithe simultanément, vérifiant en direct la prédiction de Galileo de 1589.",
+  "new": "EVA-3 / avant ascension : Scott télévisé lâchant un marteau et une plume ensemble ; les deux frappent le régolithe simultanément, vérifiant en direct la prédiction de Galilée de 1589."
+ },
+ {
+  "rel": "science/history/_intro.json",
+  "at": "paragraphs.1",
+  "old": "Nous avons choisi six pivots : les ellipses de Kepler, la gravité de Newton, l'équation de fusée de Tsiolkovsky, le premier allumage liquide de Goddard, la R-7 de Korolev, et Apollo 11. Des centaines d'autres méritent une place ; les révisions futures les combleront (les télescopes de Galileo, le mémoire de transfert de Hohmann, la femme de Goddard qui a pris la plupart des photos, les ingénieurs soviétiques que Korolev ne pouvait pas nommer en public, la sortie dans l'espace d'Ed White, la ligne d'altitude de von Kármán). L'histoire n'appartient à aucune nation — chaque chapitre comprend des personnes que vous n'avez jamais entendues qui l'ont fait fonctionner.",
+  "new": "Nous avons choisi six pivots : les ellipses de Kepler, la gravité de Newton, l'équation de fusée de Tsiolkovsky, le premier allumage liquide de Goddard, la R-7 de Korolev, et Apollo 11. Des centaines d'autres méritent une place ; les révisions futures les combleront (les télescopes de Galilée, le mémoire de transfert de Hohmann, la femme de Goddard qui a pris la plupart des photos, les ingénieurs soviétiques que Korolev ne pouvait pas nommer en public, la sortie dans l'espace d'Ed White, la ligne d'altitude de von Kármán). L'histoire n'appartient à aucune nation — chaque chapitre comprend des personnes que vous n'avez jamais entendues qui l'ont fait fonctionner."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.2",
+  "old": "La contribution de Brahe n'était pas seulement des données : c'était un instrumentaliste méticuleux qui a poussé la mesure à l'œil nu aux limites physiques. La précision comparable aux télescopes n'est arrivée qu'après le télescope de Galileo en 1609 — trop tard pour chevaucher la carrière de Brahe.",
+  "new": "La contribution de Brahe n'était pas seulement des données : c'était un instrumentaliste méticuleux qui a poussé la mesure à l'œil nu aux limites physiques. La précision comparable aux télescopes n'est arrivée qu'après le télescope de Galilée en 1609 — trop tard pour chevaucher la carrière de Brahe."
+ },
+ {
+  "rel": "science/planets/moons-of-the-system.json",
+  "at": "intro_sentence",
+  "old": "L'observation de quatre nuits par Galileo en 1610 a mis fin au géocentrisme. Les lunes du système remettent toujours en question les anciennes hypothèses.",
+  "new": "L'observation de quatre nuits par Galilée en 1610 a mis fin au géocentrisme. Les lunes du système remettent toujours en question les anciennes hypothèses."
+ },
+ {
+  "rel": "science/planets/moons-of-the-system.json",
+  "at": "narrative_101.0",
+  "old": "En janvier 1610, Galileo pointa son télescope 20× sur Jupiter et vit quatre points lumineux alignés de part et d'autre de la planète. Il les dessina. La nuit suivante, ils avaient bougé — non pas vers les étoiles en arrière-plan de Jupiter, mais comme s'ils orbitaient autour de Jupiter elle-même. Sur cinq nuits, il les suivit et conclut : ce sont des lunes de Jupiter. Des corps qui orbitent autre chose que la Terre. Le géocentrisme, qui avait été la cosmologie dominante pendant deux mille ans, était terminé.",
+  "new": "En janvier 1610, Galilée pointa son télescope 20× sur Jupiter et vit quatre points lumineux alignés de part et d'autre de la planète. Il les dessina. La nuit suivante, ils avaient bougé — non pas vers les étoiles en arrière-plan de Jupiter, mais comme s'ils orbitaient autour de Jupiter elle-même. Sur cinq nuits, il les suivit et conclut : ce sont des lunes de Jupiter. Des corps qui orbitent autre chose que la Terre. Le géocentrisme, qui avait été la cosmologie dominante pendant deux mille ans, était terminé."
+ },
+ {
+  "rel": "science/planets/moons-of-the-system.json",
+  "at": "body_paragraphs.0",
+  "old": "Les quatre lunes galiléennes de Jupiter sont des mondes radicalement différents. Io : corps le plus volcanique du système solaire, avec des éruptions actives visibles aux télescopes — alimentées par le chauffage de marée des autres. Europe : coquille de glace sur un océan d'eau global, une priorité majeure en astrobiologie. Ganymède : plus grande lune du système solaire, plus grand que Mercure, et la seule lune possédant son propre champ magnétique. Callisto : la plus externe des lunes galiléennes, surface ancienne et cratérisée, possiblement aussi un océan souterrain. Les quatre ont été découvertes en 1610 par Galileo depuis un toit de Padoue.",
+  "new": "Les quatre lunes galiléennes de Jupiter sont des mondes radicalement différents. Io : corps le plus volcanique du système solaire, avec des éruptions actives visibles aux télescopes — alimentées par le chauffage de marée des autres. Europe : coquille de glace sur un océan d'eau global, une priorité majeure en astrobiologie. Ganymède : plus grande lune du système solaire, plus grand que Mercure, et la seule lune possédant son propre champ magnétique. Callisto : la plus externe des lunes galiléennes, surface ancienne et cratérisée, possiblement aussi un océan souterrain. Les quatre ont été découvertes en 1610 par Galilée depuis un toit de Padoue."
+ },
+ {
+  "rel": "site-stories/apollo15.json",
+  "at": "intro",
+  "old": "Apollo 15 s'est posée près de la rainure Hadley, dans les monts Apennins le 30 juillet 1971 : première mission « de classe J », avec un séjour prolongé en surface, le Lunar Roving Vehicle (LRV) et un pilote formé à la science (David Scott). Scott et Irwin ont parcouru 28 km au total en trois sorties extravéhiculaires (EVA), découvert la Genesis Rock (anorthosite d'environ 4,1 Ga, croûte primaire) et, en direct à la télévision, lâché une plume et un marteau pour reproduire l'expérience de Galileo sur la gravité.",
+  "new": "Apollo 15 s'est posée près de la rainure Hadley, dans les monts Apennins le 30 juillet 1971 : première mission « de classe J », avec un séjour prolongé en surface, le Lunar Roving Vehicle (LRV) et un pilote formé à la science (David Scott). Scott et Irwin ont parcouru 28 km au total en trois sorties extravéhiculaires (EVA), découvert la Genesis Rock (anorthosite d'environ 4,1 Ga, croûte primaire) et, en direct à la télévision, lâché une plume et un marteau pour reproduire l'expérience de Galilée sur la gravité."
+ },
+ {
+  "rel": "site-stories/apollo15.json",
+  "at": "chapters.2.subtitle",
+  "old": "Genesis Rock + l'expérience de Galileo",
+  "new": "Genesis Rock + l'expérience de Galilée"
+ }
+]

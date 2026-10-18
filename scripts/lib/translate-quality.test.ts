@@ -34,3 +34,18 @@ describe('problems — names that contain a glossary term', () => {
     ).toEqual([]);
   });
 });
+
+describe('problems — numbered stages are words, not designations', () => {
+  it('accepts "Stage-2" translated (ar)', () => {
+    expect(
+      nameProblem(
+        'ar',
+        'Stage-2 cutoff + payload separation; orbit 215 × 939 km.',
+        'قطع المحرك في المرحلة الثانية + فصل الحمولة؛ مدار بارتفاعات 215 × 939 كم.',
+      ),
+    ).toEqual([]);
+  });
+  it('still requires a vehicle code (RD-181) to survive', () => {
+    expect(nameProblem('ar', 'Two RD-181 engines.', 'محركان من طراز آر دي.')).not.toEqual([]);
+  });
+});

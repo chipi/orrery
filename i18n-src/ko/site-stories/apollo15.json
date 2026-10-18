@@ -1,5 +1,5 @@
 {
-  "intro": "Apollo 15는 1971년 7월 30일 해들리 열구 / 아펜니노산맥에 착륙했습니다. 장기 표면 체류, Lunar Roving Vehicle(LRV), 그리고 과학 훈련을 받은 조종사(데이비드 스콧)를 갖춘 최초의 \"J급\" 임무였습니다. 스콧과 어윈은 세 차례의 선외활동(EVA) 동안 총 28km를 주행했고, Genesis Rock(약 41억 년 된 회장암, 원시 지각)을 발견했으며, 생방송 중 깃털과 망치를 떨어뜨려 Galileo의 중력 실험을 재현했습니다.",
+  "intro": "Apollo 15는 1971년 7월 30일 해들리 열구 / 아펜니노산맥에 착륙했습니다. 장기 표면 체류, Lunar Roving Vehicle(LRV), 그리고 과학 훈련을 받은 조종사(데이비드 스콧)를 갖춘 최초의 \"J급\" 임무였습니다. 스콧과 어윈은 세 차례의 선외활동(EVA) 동안 총 28km를 주행했고, Genesis Rock(약 41억 년 된 회장암, 원시 지각)을 발견했으며, 생방송 중 깃털과 망치를 떨어뜨려 갈릴레오의 중력 실험을 재현했습니다.",
   "chapters": [
     {
       "id": "hardware",
@@ -34,7 +34,7 @@
     {
       "id": "science",
       "title": "과학",
-      "subtitle": "Genesis Rock + Galileo 실험",
+      "subtitle": "Genesis Rock + 갈릴레오 실험",
       "images": [
         {
           "src": "/images/missions/apollo15/04.webp",

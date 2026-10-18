@@ -1,5 +1,5 @@
 {
-  "intro": "A Apollo 15 pousou junto ao sulco Hadley, nos montes Apeninos em 30 de julho de 1971 — a primeira missão \"classe J\", com permanência prolongada na superfície, o Lunar Roving Vehicle (LRV) e um piloto treinado como cientista (David Scott). Scott e Irwin percorreram 28 km no total ao longo de três EVAs, encontraram a Genesis Rock (anortosito de ~4,1 Ga, crosta primária) e, em transmissão ao vivo pela TV, soltaram uma pena e um martelo para demonstrar o teste de gravidade de Galileo.",
+  "intro": "A Apollo 15 pousou junto ao sulco Hadley, nos montes Apeninos em 30 de julho de 1971 — a primeira missão \"classe J\", com permanência prolongada na superfície, o Lunar Roving Vehicle (LRV) e um piloto treinado como cientista (David Scott). Scott e Irwin percorreram 28 km no total ao longo de três EVAs, encontraram a Genesis Rock (anortosito de ~4,1 Ga, crosta primária) e, em transmissão ao vivo pela TV, soltaram uma pena e um martelo para demonstrar o teste de gravidade de Galileu.",
   "chapters": [
     {
       "id": "hardware",
@@ -34,7 +34,7 @@
     {
       "id": "science",
       "title": "Ciência",
-      "subtitle": "Genesis Rock + experimento de Galileo",
+      "subtitle": "Genesis Rock + experimento de Galileu",
       "images": [
         {
           "src": "/images/missions/apollo15/04.webp",

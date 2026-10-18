@@ -1,5 +1,5 @@
 {
-  "intro": "Apollo 15 s'est posée près de la rainure Hadley, dans les monts Apennins le 30 juillet 1971 : première mission « de classe J », avec un séjour prolongé en surface, le Lunar Roving Vehicle (LRV) et un pilote formé à la science (David Scott). Scott et Irwin ont parcouru 28 km au total en trois sorties extravéhiculaires (EVA), découvert la Genesis Rock (anorthosite d'environ 4,1 Ga, croûte primaire) et, en direct à la télévision, lâché une plume et un marteau pour reproduire l'expérience de Galileo sur la gravité.",
+  "intro": "Apollo 15 s'est posée près de la rainure Hadley, dans les monts Apennins le 30 juillet 1971 : première mission « de classe J », avec un séjour prolongé en surface, le Lunar Roving Vehicle (LRV) et un pilote formé à la science (David Scott). Scott et Irwin ont parcouru 28 km au total en trois sorties extravéhiculaires (EVA), découvert la Genesis Rock (anorthosite d'environ 4,1 Ga, croûte primaire) et, en direct à la télévision, lâché une plume et un marteau pour reproduire l'expérience de Galilée sur la gravité.",
   "chapters": [
     {
       "id": "hardware",
@@ -34,7 +34,7 @@
     {
       "id": "science",
       "title": "La science",
-      "subtitle": "Genesis Rock + l'expérience de Galileo",
+      "subtitle": "Genesis Rock + l'expérience de Galilée",
       "images": [
         {
           "src": "/images/missions/apollo15/04.webp",

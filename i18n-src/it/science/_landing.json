@@ -12,7 +12,7 @@
       "diagram_caption": "Un corpo, un fuoco, un'ellisse. Questo è l'intero sistema solare.",
       "paragraphs": [
         "Dimentica i razzi per un secondo. Stai sulla Terra, lancia una palla da baseball più forte che puoi. Ritorna giù. Lanciala più forte, atterra più lontano. Lanciala così forte che il suolo si curva via più velocemente di quanto la palla cada, e la palla manca il pianeta — per sempre. Questa è un'[orbita](orbits/keplerian-orbit). Ogni veicolo spaziale, ogni pianeta, ogni roccia nella fascia degli asteroidi sta facendo questo trucco attorno a qualcosa di più pesante.",
-        "Un'orbita è un'ellisse. Ha una [dimensione](orbits/semi-major-axis), una [forma](orbits/eccentricity) (rotonda vs. allungata), un'[inclinazione](orbits/inclination), e una fase che ti dice dove sull'ellisse si trova il veicolo spaziale in questo momento ([anomalia vera](orbits/true-anomaly)). Cinque numeri e puoi predire la posizione di qualsiasi oggetto nel sistema solare, per sempre, senza alcun altro dato. Queste sono [le tre leggi di Kepler](orbits/keplers-laws), scritte nel 1609 — funzionano ancora.",
+        "Un'orbita è un'ellisse. Ha una [dimensione](orbits/semi-major-axis), una [forma](orbits/eccentricity) (rotonda vs. allungata), un'[inclinazione](orbits/inclination), e una fase che ti dice dove sull'ellisse si trova il veicolo spaziale in questo momento ([anomalia vera](orbits/true-anomaly)). Cinque numeri e puoi predire la posizione di qualsiasi oggetto nel sistema solare, per sempre, senza alcun altro dato. Queste sono [le tre leggi di Keplero](orbits/keplers-laws), scritte nel 1609 — funzionano ancora.",
         "L'equazione singola più utile che incontrerai qui è [vis-viva](orbits/vis-viva). Inserisci il tuo raggio, la dimensione della tua orbita, e ne esce la tua velocità. Tutto qui. La Terra al perielio: 30,3 km/s. La Terra all'afelio: 29,3 km/s. Stessa orbita, stessa energia, velocità diversa."
       ]
     },
@@ -102,7 +102,7 @@
       "paths": [
         "/explore"
       ],
-      "text": "Fai girare il sistema solare. Guarda le leggi di Kepler dal vivo. Clicca su qualsiasi pianeta per i suoi elementi orbitali."
+      "text": "Fai girare il sistema solare. Guarda le leggi di Keplero dal vivo. Clicca su qualsiasi pianeta per i suoi elementi orbitali."
     },
     {
       "paths": [

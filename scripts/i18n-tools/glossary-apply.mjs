@@ -67,6 +67,15 @@ const ALIAS = {
 // Homonyms found by glossary-keys.mjs: the same English word names a vehicle, an engine or
 // a facility in these paths or before these words
 const CJK_LOCALE = new Set(['ja', 'zh-CN']);
+// Names that mostly mean a spacecraft or a navigation system on this site. They are replaced only
+// on the pages that mean the constellation or the person (matched on "<file>:<field>").
+const ONLY = {
+  Orion: /^universe\/named-stars\/|^deep-sky\.json:(euclid-horsehead|hst-orion|jwst-orion)\./,
+  Kepler:
+    /^messages:(lab_assume_kepler_j2|lab_f_geo_glossary|lab_f_regime_glossary|lab_goal_g10_frozen|why_)|^planets\/saturn\.json|^science\/_landing\.json:(chapters\.0|tools\.0)\.|^science\/(history|orbits|scales-time|transfers)\/|^science\/observation\/magellanic-clouds|^sun\.json/,
+  Galileo:
+    /^(missions\/moon|site-stories)\/apollo15\.json|^science\/history\/|^science\/planets\/moons-of-the-system/,
+};
 const GUARD = {
   Vega: {
     path: /missions\/venus|fleet\/(orbiter|lander|launcher)|rockets\/|venus-sites|programs\/(vega|venera)|science\/orbits\/space-debris|messages:landing_card_venus_desc|original-work\.json/,
@@ -503,6 +512,7 @@ for (const [f, rel] of files) {
             }
             // a surname limited to some pages ("Mayor" only where it is Michel Mayor)
             if (PERSON[en]?._only && !new RegExp(PERSON[en]._only).test(rel)) return m;
+            if (ONLY[en] && !ONLY[en].test(`${rel}:${at}`)) return m;
             const g = GUARD[en];
             if (
               g &&

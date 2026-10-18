@@ -149,12 +149,17 @@ export function knownDigitNames() {
 /** Names in `src` that must survive verbatim: letter–digit codes joined by a hyphen
  *  or nothing (NG-19, AV-012, RD-181, X-37B, H3), CamelCase (SpaceX, CubeSat), and
  *  digit-bearing names the data knows (Apollo 12). A capitalised word followed by a
- *  count ("Glenn's 3 orbits", "Day 1", "The 10") is not a name. */
+ *  count ("Glenn's 3 orbits", "Day 1", "The 10") is not a name, nor is a numbered
+ *  stage, phase or step ("Stage-2 cutoff"). */
 export function designations(src) {
   if (!src) return [];
   const out = new Set();
   for (const m of src.matchAll(/\b[A-Z][A-Za-z]{0,6}-?\d+[A-Za-z]?\b/g))
-    if (/-|[A-Z]\d|[a-z]\d/.test(m[0]) && !/^[A-Z][a-z]+\d{4}$/.test(m[0]))
+    if (
+      /-|[A-Z]\d|[a-z]\d/.test(m[0]) &&
+      !/^[A-Z][a-z]+\d{4}$/.test(m[0]) &&
+      !/^(Stage|Phase|Step)-?\d/.test(m[0])
+    )
       out.add(m[0].replace(/(\d)s$/, '$1')); // plural "F-1s" → the name is "F-1"
   for (const m of src.matchAll(/\b[A-Z][a-z]+[A-Z][A-Za-z]+\b/g)) out.add(m[0]);
   for (const n of knownDigitNames()) {

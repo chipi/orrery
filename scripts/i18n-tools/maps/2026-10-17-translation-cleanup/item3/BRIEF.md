@@ -26,7 +26,7 @@ wrong.
 When you fix, write the whole string anew in good `<LOCALE>`. Keep Markdown, links
 (`[text](path)` — the path unchanged), `{placeholders}`, `\n`, numbers, units and
 formulas exactly. Keep the length close to `cur` (never more than 1.3× its length; some
-fields have schema limits).
+fields have schema limits: a `tagline` is at most 140 characters).
 
 ## Name rules (binding — `docs/guides/i18n-style-guide.md` §2)
 

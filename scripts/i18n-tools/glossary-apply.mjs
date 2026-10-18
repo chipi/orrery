@@ -145,6 +145,8 @@ const GUARD = {
   Sun: { after: /^-synchronous/ },
   'Wolf-Lundmark-Melotte': { path: /messages:galaxy_name_wlm/, locs: /^ko$/ },
   Houston: { before: /Space Center\s?$/, after: /^,\s?we/ },
+  // ELDO's Europa rocket programme, not Jupiter's moon
+  Europa: { path: /fleet\/launcher\/ariane-1\.json/ },
   // the English search terms used on Commons, listed as typed
   ISRO: { path: /sourcing\/gaps\.json:gaps\.2\.checked\.0$/ },
 };

@@ -40,3 +40,9 @@ zh titles partly traditional (中途島, 哈欽森, 堅忍, 卡門線, 科羅廖
 - Russian cosmonauts with no sr/ko forms (priority, recur in every locale): Dobrovolski, Volkov, Patsayev, Pavel Popovich, Yury Artyukhin, Sarafanov, Demin, Gubarev, Grechko, Klimuk, Sevastyanov, Lazarev, Makarov, Volynov, Zholobov, Gorbatko, Glazkov, Zudov, Rozhdestvensky, Vladimir Dzhanibekov, Viktor Savinykh; Zhai Zhigang; Gordon Fullerton (sr); Frank Drake (sr: Френк Дрејк unverified)
 - Places: Zhukovsky, Speyer, Sinsheim, Edwards AFB, Texas, Los Angeles, New York, Bahrain, Luxembourg, Udvar-Hazy, Beijing, Bay of Bengal
 - sr-Cyrl has no ORIGIN_NAMES block: Soviet/Russian built names stay Latin in sr (correct by rule — not Serbian origin)
+
+## From group 21 (ko science)
+- Looked up 2026-10-18 (one request): item3/names-g21-langlinks.json — Isaac Newton, Walter Hohmann, Johann Heinrich Lambert, Édouard Roche, James Van Allen, Christian Doppler, Edwin Hubble, Frank Drake, Donald J. Kessler, George William Hill, Kazimierz Kordylewski. Bare keys needed (Newton, Hohmann, Lambert, Roche, Van Allen, Doppler, Hubble — homonym: Hubble telescope is a built thing, guard it). Scott Kelly lookup hit a different QID (Q4219130 vs glossary Q362190) — not merged.
+- Places with no glossary form, left Latin on the ko site: Goldstone, Madrid, Canberra (DSN), Parkes, Usuda, Mauna Kea, Padua, Cologne, Tsukuba, Krasnoyarsk, Hawthorne, Star City, Hammaguir
+- Features/people: Shackleton, de Gerlache, Haworth, Faustini, Shoemaker (craters), Carrington, Sabatier, Penning, Hall (effect), Yarkovsky, Milankovitch, Epstein–Barr, Kornienko, Kononenko, Frank Rubio, Vande Hei, Mark Kelly, Jose Fernandez, Robert Forward, Yuri Milner, Brent Tully, Laniakea, Albion, Dinkinesh
+- English source (reviewers): planetary-stats says Saturn has "lower-than-Earth gravity" next to 1.07 g; active-spacecraft-survey says Europa Clipper "launches 2024" (launched Oct 2024).

@@ -431,7 +431,9 @@ function koParticles(s, word) {
     rieul = b === 8;
   if (b === -1) return s;
   return s.replace(
-    new RegExp(`${word}(를|을|는|은|가|이(?![가-힣]{2})|와|과|로|으로)`, 'g'),
+    // 이 directly followed by Hangul is the copula (왜소은하이며, 소행성대이다), not the
+    // subject particle; rewriting it to 가 gives 왜소은하가며.
+    new RegExp(`${word}(를|을|는|은|가|이(?![가-힣])|와|과|로|으로)`, 'g'),
     (m, p) => {
       const map = b
         ? {

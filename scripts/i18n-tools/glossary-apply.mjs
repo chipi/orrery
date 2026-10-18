@@ -296,7 +296,12 @@ function coordinateRu(s) {
     prev = s;
     for (const [form, [c]] of RU_FORMS) {
       s = s.replace(
-        new RegExp(`(${form})(\\s*(?:,|и|или|\\+)\\s+)([А-ЯЁ][а-яё]+(?: [А-ЯЁа-яё]+)?)`, 'g'),
+        // a noun followed by a dash opens an elliptical clause ('до Сатурна, Сатурн — до
+        // Урана'), not a list: it keeps its own case
+        new RegExp(
+          `(${form})(\\s*(?:,|и|или|\\+)\\s+)([А-ЯЁ][а-яё]+(?: [А-ЯЁа-яё]+)?)(?![А-ЯЁа-яё])(?!\\s*[—–])`,
+          'g',
+        ),
         (m, a, sep, b) => {
           const nom = [...RU_NOM].find(
             (n) => b.startsWith(n) && (b.length === n.length || /\s/.test(b[n.length])),

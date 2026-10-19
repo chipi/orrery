@@ -7,15 +7,17 @@
 # installs it into /etc/caddy/sites/orrery.caddy, `caddy adapt`-gates the merged
 # config, then `sudo -n systemctl reload caddy`.
 #
-# Domain: orrerylearn.com (apex) + www.orrerylearn.com. Caddy issues a cert covering
-# BOTH names, so BOTH must resolve to the box first — a name without DNS makes ACME
-# retry (and can burn LE rate limits). Upstream is orrery's own nginx container on the
-# reserved loopback port 8090 (ADR-114 §port map) — fully self-contained, no cross-repo
-# coupling.
+# Domain: www.orrerylearn.com only. The apex orrerylearn.com is redirected to www by the
+# Cloudflare zone itself (including /.well-known/acme-challenge/), so no apex request
+# reaches the box and Caddy could never renew an apex cert (http-01 lands on www,
+# tls-alpn-01 can't pass the proxy). Listing the apex here only made Caddy retry ACME
+# hourly. If the Cloudflare redirect is ever removed, add the apex back with a
+# `redir https://www.orrerylearn.com{uri}` block. Upstream is orrery's own nginx
+# container on the reserved loopback port 8090 (ADR-114 §port map).
 #
 # Rollback: `rm /etc/caddy/sites/orrery.caddy && sudo systemctl reload caddy` —
 # frees the vhost, nothing shared changes, the box stays up.
-orrerylearn.com www.orrerylearn.com {
+www.orrerylearn.com {
 	import hardened
 	reverse_proxy 127.0.0.1:8090
 }

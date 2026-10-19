@@ -54,6 +54,11 @@ BK="$(mktemp -d)"
 cleanup() { rm -rf "$BK"; }    # only the backup tmp; never touch $SRC or $SITES
 trap cleanup EXIT
 
+# Every tenant on the shared edge serialises install → adapt → reload on this lock, so two
+# deploys never adapt or reload a half-installed sites/ dir. Held until the script exits.
+exec 9>>/tmp/caddy-sites.lock
+flock -w 300 9 || { echo "::error::could not take /tmp/caddy-sites.lock within 300 s"; exit 1; }
+
 changed=0
 for v in "${VHOSTS[@]}"; do
   new="$SRC/${v}.caddy"

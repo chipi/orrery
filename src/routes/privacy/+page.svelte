@@ -95,6 +95,7 @@
       <li>{m.privacy_collect_outbound()}</li>
       <li>{m.privacy_collect_build()}</li>
     </ul>
+    <p>{m.privacy_collect_cloudflare()}</p>
   </article>
 
   <article class="card" aria-labelledby="privacy-never-title">
@@ -128,6 +129,16 @@
   <article class="card" aria-labelledby="privacy-where-title">
     <h2 id="privacy-where-title">{m.privacy_where_heading()}</h2>
     <p>{m.privacy_where_body()}</p>
+  </article>
+
+  <article class="card" aria-labelledby="privacy-email-title">
+    <h2 id="privacy-email-title">{m.privacy_email_heading()}</h2>
+    <p>{m.privacy_email_body()}</p>
+  </article>
+
+  <article class="card" aria-labelledby="privacy-contact-title">
+    <h2 id="privacy-contact-title">{m.privacy_contact_heading()}</h2>
+    <p><a href="mailto:info@orrerylearn.com">info@orrerylearn.com</a></p>
   </article>
 </section>
 

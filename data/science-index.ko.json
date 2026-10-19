@@ -676,7 +676,7 @@
     "section": "apsides",
     "title": "근점과 원점 — 근일점, 원일점, 근지점, 원지점",
     "intro": "모든 타원 궤도의 두 극단점: 최근접점과 최원점.",
-    "haystack": "근점과 원점 — 근일점, 원일점, 근지점, 원지점 모든 타원 궤도의 두 극단점: 최근접점과 최원점. apsis는 천체가 초점으로부터 최소 거리 또는 최대 거리에 있는 타원 궤도 위의 두 지점 중 하나입니다. 두 초점을 모두 지나며 이 두 지점을 잇는 선이 apsis선(line of apsides)입니다. 모든 케플러 궤도에는 정확히 두 개가 있습니다. 가장 가까운 지점과 가장 먼 지점입니다. apsides — perihelion, aphelion, perigee, apogee"
+    "haystack": "근점과 원점 — 근일점, 원일점, 근지점, 원지점 모든 타원 궤도의 두 극단점: 최근접점과 최원점. 장축단(apsis)은 천체가 초점으로부터 최소 거리 또는 최대 거리에 있는 타원 궤도 위의 두 지점 중 하나입니다. 두 초점을 모두 지나며 이 두 지점을 잇는 선이 apsis선(line of apsides)입니다. 모든 케플러 궤도에는 정확히 두 개가 있습니다. 가장 가까운 지점과 가장 먼 지점입니다. apsides — perihelion, aphelion, perigee, apogee"
   },
   {
     "tab": "orbits",

@@ -44,7 +44,7 @@
   } from '$lib/seo';
   import { loadLocaleAltText } from '$lib/image-alt';
   import * as m from '$lib/paraglide/messages';
-  import { initAnalytics, track, trackRouteEnter } from '$lib/analytics';
+  import { initAnalytics, startEngagementHeartbeat, track, trackRouteEnter } from '$lib/analytics';
   import { migrateLegacyLocaleCookie } from '$lib/locale-cookie-migration';
   import { afterNavigate, beforeNavigate, replaceState } from '$app/navigation';
   import { exitArScene } from '$lib/ar/launch-ar';
@@ -376,6 +376,7 @@
     // preview / CI runs are silent. See src/lib/analytics.ts for the env gate
     // + event API.
     initAnalytics();
+    startEngagementHeartbeat();
     // Internal builds (ADR-083): the first prerendered page's images carry the
     // build-default origin; rewrite them to the active target so assets follow
     // the switch too. No-op in web/release.

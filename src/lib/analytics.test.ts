@@ -176,43 +176,50 @@ describe('events fired before the umami script executes', () => {
   it('buffers instead of dropping when window.umami is not there yet', () => {
     expect((window as unknown as { umami?: unknown }).umami).toBeUndefined();
 
-    A.track('app-load', { version: '1.2.3' });
+    A.track('search-open', { surface: 'cmdk' });
 
     expect(A.__pendingEventCountForTest()).toBe(1);
   });
 
-  it('flushes the buffer, in order, when the script loads', () => {
+  it('flushes the buffer, in order, after the page has loaded (after Umami’s pageview)', async () => {
     A.initAnalytics();
     const script = document.querySelector('script[data-umami-installed]')!;
 
-    // Fired in the same tick as init — the exact app-load case.
-    A.track('app-load', { version: '1.2.3' });
-    A.trackRouteEnter('/explore');
+    // Fired in the same tick as init.
+    A.track('search-open', { surface: 'cmdk' });
+    A.track('item-click', { kind: 'mission', id: 'apollo11', route: '/missions' });
     expect(A.__pendingEventCountForTest()).toBe(2);
 
     // Now the deferred script executes and defines the global.
     const umami = { track: vi.fn() };
     (window as unknown as { umami: unknown }).umami = umami;
     script.dispatchEvent(new Event('load'));
+    // Not on the script's load event itself: Umami sends its pageview once the
+    // document is complete, and our events must come after it.
+    expect(umami.track).not.toHaveBeenCalled();
+    await new Promise((r) => setTimeout(r, 0));
 
     expect(A.__pendingEventCountForTest()).toBe(0);
-    expect(umami.track).toHaveBeenNthCalledWith(1, 'app-load', { version: '1.2.3' });
-    // from_route is omitted, not null — a cold entry is an ABSENT property.
-    expect(umami.track).toHaveBeenNthCalledWith(2, 'route-enter', { route: '/explore' });
+    expect(umami.track).toHaveBeenNthCalledWith(1, 'search-open', { surface: 'cmdk' });
+    expect(umami.track).toHaveBeenNthCalledWith(2, 'item-click', {
+      kind: 'mission',
+      id: 'apollo11',
+      route: '/missions',
+    });
   });
 
   it('goes straight through once umami is present', () => {
     const umami = { track: vi.fn() };
     (window as unknown as { umami: unknown }).umami = umami;
 
-    A.track('app-load', { version: '1.2.3' });
+    A.track('search-open', { surface: 'cmdk' });
 
     expect(A.__pendingEventCountForTest()).toBe(0);
-    expect(umami.track).toHaveBeenCalledWith('app-load', { version: '1.2.3' });
+    expect(umami.track).toHaveBeenCalledWith('search-open', { surface: 'cmdk' });
   });
 
   it('caps the buffer so a never-loading script cannot grow it without bound', () => {
-    for (let i = 0; i < 60; i++) A.track('app-load', { i });
+    for (let i = 0; i < 60; i++) A.track('search-open', { i });
     expect(A.__pendingEventCountForTest()).toBe(50);
   });
 
@@ -389,8 +396,8 @@ describe('journey milestone events', () => {
 
   it('drops the props object entirely when every value is nullish', () => {
     const umami = mockUmami();
-    A.track('app-load', { version: undefined });
-    expect(umami.track).toHaveBeenCalledWith('app-load', undefined);
+    A.track('search-open', { surface: undefined });
+    expect(umami.track).toHaveBeenCalledWith('search-open', undefined);
   });
 
   it('keeps falsy-but-real values (0, false, empty string)', () => {
@@ -506,5 +513,120 @@ describe('analytics opt-out gate (ADR-092)', () => {
     document.cookie = 'orrery_analytics_optout=; Max-Age=0; Path=/';
     A.trackMissionView('apollo11', 'list');
     expect(umami.track).toHaveBeenCalledWith('mission-view', { id: 'apollo11', source: 'list' });
+  });
+});
+
+// 2026-10-19 Umami analysis: load-time events made every instant leaver a
+// multi-event visit (bounce read ~7% against ~92% real), visits measured ~0 s,
+// and a JS-rendering crawler with an impossible UA was ~40% of sessions.
+describe('engagement-gated load events, heartbeat and bot filter', () => {
+  let umami: { track: ReturnType<typeof vi.fn> };
+  const realUA = navigator.userAgent;
+  function setUA(ua: string): void {
+    Object.defineProperty(navigator, 'userAgent', { value: ua, configurable: true });
+  }
+  beforeEach(() => {
+    A.__resetAnalyticsStateForTest();
+    enableAnalytics();
+    umami = { track: vi.fn() };
+    (window as unknown as { umami: unknown }).umami = umami;
+  });
+  afterEach(() => {
+    vi.useRealTimers();
+    setUA(realUA);
+    disableAnalytics();
+    A.__resetAnalyticsStateForTest();
+    delete (window as unknown as { umami?: unknown }).umami;
+    document.querySelectorAll('script[data-umami-installed]').forEach((s) => s.remove());
+  });
+
+  it('an instant leaver sends no custom event at all (only Umami’s pageview)', () => {
+    A.track('app-load', { version: '1.2.3' });
+    A.trackRouteEnter('/science/orbits/hill-sphere');
+    A.track('science-section-view', { tab: 'orbits', section: 'hill-sphere' }, { passive: true });
+    A.track('locale-suggest-shown', { to: 'de', from: 'en-US' });
+    expect(umami.track).not.toHaveBeenCalled();
+  });
+
+  it('the first interaction sends the held load events first, in order, then itself', () => {
+    A.track('app-load', { version: '1.2.3' });
+    A.trackRouteEnter('/missions');
+    A.trackMissionView('apollo11', 'list');
+    expect(umami.track.mock.calls.map((c) => c[0])).toEqual([
+      'app-load',
+      'route-enter',
+      'mission-view',
+    ]);
+  });
+
+  it('after engagement, load events go straight through', () => {
+    A.track('search-open', { surface: 'cmdk' });
+    A.track('sw-activated', { version: '1.2.4' });
+    expect(umami.track).toHaveBeenLastCalledWith('sw-activated', { version: '1.2.4' });
+  });
+
+  it('only the landing route-enter waits; a navigation is engagement', () => {
+    A.trackRouteEnter('/');
+    expect(umami.track).not.toHaveBeenCalled();
+    A.trackRouteEnter('/explore');
+    expect(umami.track.mock.calls.map((c) => c[0])).toEqual([
+      'route-enter',
+      'route-exit',
+      'route-enter',
+    ]);
+  });
+
+  it('the heartbeat sends engaged at 30 s and 120 s of visible time, which also releases held events', () => {
+    vi.useFakeTimers();
+    A.track('app-load', { version: '1.2.3' });
+    const stop = A.startEngagementHeartbeat();
+    vi.advanceTimersByTime(29_000);
+    expect(umami.track).not.toHaveBeenCalled();
+    vi.advanceTimersByTime(1_000);
+    expect(umami.track.mock.calls).toEqual([
+      ['app-load', { version: '1.2.3' }],
+      ['engaged', { s: 30 }],
+    ]);
+    vi.advanceTimersByTime(90_000);
+    expect(umami.track).toHaveBeenLastCalledWith('engaged', { s: 120 });
+    vi.advanceTimersByTime(600_000);
+    expect(umami.track).toHaveBeenCalledTimes(3);
+    stop();
+  });
+
+  it('hidden-tab time does not count towards the heartbeat', () => {
+    vi.useFakeTimers();
+    const vis = vi.spyOn(document, 'visibilityState', 'get').mockReturnValue('hidden');
+    const stop = A.startEngagementHeartbeat();
+    vi.advanceTimersByTime(300_000);
+    expect(umami.track).not.toHaveBeenCalled();
+    vis.mockReturnValue('visible');
+    vi.advanceTimersByTime(30_000);
+    expect(umami.track).toHaveBeenCalledWith('engaged', { s: 30 });
+    stop();
+  });
+
+  it.each([
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/605.1.15',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; +https://openai.com/searchbot',
+    'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/120.0.0.0 Safari/537.36',
+  ])('a crawler gets no tracker and no events: %s', (ua) => {
+    setUA(ua);
+    expect(A.isLikelyBot()).toBe(true);
+    A.initAnalytics();
+    expect(document.querySelector('script[data-umami-installed]')).toBeNull();
+    A.track('search-open', { surface: 'cmdk' });
+    expect(umami.track).not.toHaveBeenCalled();
+  });
+
+  it.each([
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15',
+    'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/141.0.0.0 Mobile/15E148 Safari/604.1',
+    'Mozilla/5.0 (Linux; Android 13; Cubot KingKong Power) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36',
+  ])('a real browser is not taken for a bot: %s', (ua) => {
+    setUA(ua);
+    expect(A.isLikelyBot()).toBe(false);
   });
 });

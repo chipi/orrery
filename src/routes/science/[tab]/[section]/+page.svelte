@@ -36,11 +36,12 @@
     // BEFORE the layout's afterNavigate for that same navigation, so at this
     // instant the route-enter for this page has not fired yet. sourceRoute()
     // would be off by one and report the route before the one we just left.
-    track('science-section-view', {
-      tab: section.tab,
-      section: section.id,
-      source: arrivedFromRoute(),
-    });
+    // Fires on load, so it waits for engagement (analytics.ts PASSIVE_EVENTS).
+    track(
+      'science-section-view',
+      { tab: section.tab, section: section.id, source: arrivedFromRoute() },
+      { passive: true },
+    );
   });
 
   // Read-depth (#521): do visitors READ the article (science is the #2
@@ -59,18 +60,21 @@
       document.querySelector<HTMLElement>('.science-root') ??
       (document.scrollingElement as HTMLElement | null);
     if (!scroller) return;
-    const measure = () => {
+    // The first measure runs before any scroll — what is visible on load is not
+    // engagement, so those thresholds wait for it (passive); scrolled ones count.
+    const measure = (passive = false) => {
       const pct = readDepthPct(scroller);
       for (const t of [25, 50, 75, 100]) {
         if (pct >= t)
           once(`read-depth:${sec.id}:${t}`, () =>
-            track('science-read-depth', { tab: sec.tab, section: sec.id, pct: t }),
+            track('science-read-depth', { tab: sec.tab, section: sec.id, pct: t }, { passive }),
           );
       }
     };
-    scroller.addEventListener('scroll', measure, { passive: true });
-    measure();
-    return () => scroller.removeEventListener('scroll', measure);
+    const onScroll = () => measure();
+    scroller.addEventListener('scroll', onScroll, { passive: true });
+    measure(true);
+    return () => scroller.removeEventListener('scroll', onScroll);
   });
   // The space-photography section embeds the ObservatoryShowcase strip
   // (one hero image per observatory in /fleet, deep-link into each

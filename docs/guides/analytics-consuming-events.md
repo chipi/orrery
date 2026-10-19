@@ -157,6 +157,20 @@ event in `EVENT_NAMES` with no rows is a bug report, not a usage statistic.
   `dwell_ms` and `from_route`; use pageviews for traffic.
 - **The last route of a session never emits `route-exit`** — no unload flush, so
   final-route dwell is structurally missing.
+- **Load events arrive only for engaged visits** (since the 2026-10-19 change,
+  ADR-093 amendment). `app-load`, `sw-*`, `pwa-install-available`,
+  `locale-suggest-shown`, `mission-load`, the `*-load-failed` events, the landing
+  `route-enter`, `science-section-view` and read-depth thresholds already visible
+  on load are held until the visitor interacts or reaches 30 s of visible time,
+  then sent. A visit that never engages sends only its pageview, so Umami's bounce
+  rate means "left without engaging". `engaged { s: 30 | 120 }` makes visit
+  duration measure attention. Compare windows before and after the deploy
+  separately: those counts, bounce and duration all change at that date.
+- **Crawlers are filtered in the browser**: no tracker loads for
+  `navigator.webdriver`, HeadlessChrome, user agents that name a bot, or the
+  impossible `AppleWebKit/605.1.15 … Chrome/` string that was ~40% of sessions
+  before 2026-10-19. Umami's own bot filter missed it because it looks like Mac
+  Chrome.
 - **Event names are capped at 50 chars** and event data cannot be sent without
   an event name.
 - **A null property is stored as the literal string `'null'`**, not SQL NULL

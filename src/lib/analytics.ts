@@ -205,9 +205,45 @@ export const EVENT_NAMES = [
   // Any other /data/ JSON that failed after get()'s retries (#554): once per URL per
   // session, `url` = the site-relative path. The section it fed stays empty.
   'data-load-failed',
+  // Attention heartbeat: `{ s }` = 30 or 120 seconds of VISIBLE tab time. Umami
+  // measures a visit from its first to its last event; without this, every visit
+  // in which nobody clicks measured ~0 s however long it was read.
+  'engaged',
 ] as const;
 
 export type EventName = (typeof EVENT_NAMES)[number];
+
+/** Events that fire on page load without the visitor doing anything. Sent at once,
+ *  they turned every instant leaver into a multi-event visit: Umami counted ~7%
+ *  bounce where ~92% of visits had at most one pageview (2026-10-19 analysis).
+ *  They are held until the visit shows engagement (any other event, or the 30 s
+ *  `engaged` heartbeat) and then sent in order; a visit that never engages sends
+ *  only its pageview and counts as a bounce. Call sites mark other load-time
+ *  emissions with `{ passive: true }` (first route-enter, science-section-view,
+ *  the initial read-depth measure). */
+const PASSIVE_EVENTS: ReadonlySet<EventName> = new Set<EventName>([
+  'app-load',
+  'sw-activated',
+  'sw-install-failed',
+  'sw-install-error',
+  'pwa-install-available',
+  'locale-suggest-shown',
+  'mission-load',
+  'i18n-bundle-load-failed',
+  'data-load-failed',
+]);
+
+/** JS-rendering crawlers that would otherwise count as visitors. 2026-10-19: a
+ *  "Mac Chrome" with an impossible user agent (Safari's AppleWebKit/605.1.15 next to
+ *  a Chrome version) walked /science around the clock, ~40% of all sessions. */
+// `(?<!cu)`: Cubot is a phone brand, not a crawler.
+const BOT_UA =
+  /(?<!cu)bot\b|bot\/|crawler|spider|headlesschrome|AppleWebKit\/605\.1\.15.*Chrome\//i;
+export function isLikelyBot(): boolean {
+  if (typeof navigator === 'undefined') return false;
+  if ((navigator as Navigator & { webdriver?: boolean }).webdriver) return true;
+  return BOT_UA.test(navigator.userAgent ?? '');
+}
 
 /** Analytics fires when a host + website id resolve for the current rung — a deploy env
  *  override (staging/prod) or the `vite dev` default — AND the user has not opted out
@@ -216,6 +252,7 @@ export type EventName = (typeof EVENT_NAMES)[number];
  *  `track()` is a no-op. Mirrors `sentry.ts`. */
 function analyticsEnabled(): boolean {
   if (analyticsSuppressed()) return false;
+  if (isLikelyBot()) return false;
   return !!umamiHost() && !!umamiWebsiteId();
 }
 
@@ -238,6 +275,7 @@ export const UMAMI_SCRIPT_INTEGRITY =
 export function initAnalytics(): void {
   if (typeof document === 'undefined') return;
   if (analyticsSuppressed()) return; // ADR-092 — opt-out cookie / GPC / DNT
+  if (isLikelyBot()) return;
   const host = umamiHost();
   const websiteId = umamiWebsiteId();
   if (!host || !websiteId) return; // fork-silent (non-dev build, no env) by construction
@@ -258,8 +296,16 @@ export function initAnalytics(): void {
   // Flush anything tracked between this call and the deferred script actually
   // executing. See `pendingEvents` — without this, every event fired in the
   // same tick as init is silently lost.
-  s.addEventListener('load', flushPendingEvents, { once: true });
+  // Umami sends its pageview only once `document.readyState` is "complete"; flushing
+  // on the script's own load event (earlier) put our events ahead of it, and a visit
+  // whose first event is a custom one has no pageview in Umami's reports.
+  s.addEventListener('load', () => afterDocumentComplete(flushPendingEvents), { once: true });
   document.head.appendChild(s);
+}
+
+function afterDocumentComplete(fn: () => void): void {
+  if (document.readyState === 'complete') setTimeout(fn, 0);
+  else window.addEventListener('load', () => setTimeout(fn, 0), { once: true });
 }
 
 /**
@@ -326,11 +372,34 @@ export function __pendingEventCountForTest(): number {
 /** Track a custom event. Name is constrained to the registry (typos are
  *  compile errors). Genuinely safe before the Umami script loads — the event is
  *  buffered and flushed on script load (see `pendingEvents`) — and a no-op when
- *  analytics is disabled or the visitor has opted out. */
-export function track(name: EventName, props?: Record<string, unknown>): void {
+ *  analytics is disabled or the visitor has opted out. Load-time events
+ *  (`PASSIVE_EVENTS`, or `{ passive: true }`) wait for engagement. */
+export function track(
+  name: EventName,
+  props?: Record<string, unknown>,
+  opts?: { passive?: boolean },
+): void {
   if (!analyticsEnabled()) return;
   if (typeof window === 'undefined') return;
   props = omitNullish(props);
+  if (!engaged) {
+    if (opts?.passive || PASSIVE_EVENTS.has(name)) {
+      if (heldPassive.length < PENDING_CAP) heldPassive.push({ name, props });
+      return;
+    }
+    engaged = true;
+    const held = heldPassive;
+    heldPassive = [];
+    for (const e of held) send(e.name, e.props);
+  }
+  send(name, props);
+}
+
+/** Load-time events held until the visit engages (see `PASSIVE_EVENTS`). */
+let engaged = false;
+let heldPassive: Array<{ name: EventName; props?: Record<string, unknown> }> = [];
+
+function send(name: EventName, props?: Record<string, unknown>): void {
   const u = umamiGlobal();
   if (u?.track) {
     u.track(name, props);
@@ -369,7 +438,8 @@ export function trackRouteEnter(route: string): void {
     track('route-exit', { route: lastRouteEnter.route, dwell_ms: now - lastRouteEnter.t });
     previousRoute = lastRouteEnter.route;
   }
-  track('route-enter', { route, from_route: previousRoute });
+  // The landing route-enter duplicates the pageview: it waits for engagement.
+  track('route-enter', { route, from_route: previousRoute }, { passive: !lastRouteEnter });
   lastRouteEnter = { route, t: now };
 }
 
@@ -498,6 +568,27 @@ export function __resetAnalyticsStateForTest(): void {
   lastRouteEnter = null;
   previousRoute = null;
   pendingEvents = [];
+  engaged = false;
+  heldPassive = [];
+}
+
+/** Count visible tab time and send `engaged` at 30 s and 120 s. Call once from the
+ *  root layout after `initAnalytics()`. Hidden time (another tab, minimised, phone
+ *  locked) does not count. Returns a stop function (tests, teardown). */
+export function startEngagementHeartbeat(): () => void {
+  if (typeof document === 'undefined' || !analyticsEnabled()) return () => {};
+  const marks = [30, 120];
+  let visibleS = 0;
+  const timer = setInterval(() => {
+    if (document.visibilityState !== 'visible') return;
+    visibleS += 1;
+    if (visibleS === marks[0]) {
+      marks.shift();
+      track('engaged', { s: visibleS });
+      if (marks.length === 0) clearInterval(timer);
+    }
+  }, 1000);
+  return () => clearInterval(timer);
 }
 
 /** A scale shell was reached on /explore. `level` is the product's own context

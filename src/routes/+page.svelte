@@ -10,24 +10,14 @@
   import { DEFAULT_LOCALE, localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
 
-  // The author's other sites. Their footers list Orrery; this is the link back.
-  // Names are brands (not translated); the sites are English, hence hreflang.
+  // The author's site, which lists Orrery in its footer; this is the link back.
+  // The name is a brand (not translated); the site is English, hence hreflang.
   const MORE_UTM = '?utm_source=orrery&utm_medium=referral&utm_content=landing_about';
   const MORE_SITES = [
     {
       name: 'Human Copilot',
       href: `https://www.humancopilot.eu/${MORE_UTM}`,
       line: m.landing_more_humancopilot,
-    },
-    {
-      name: 'DevWhateverOps',
-      href: `https://www.devwhateverops.com/${MORE_UTM}`,
-      line: m.landing_more_devwhateverops,
-    },
-    {
-      name: 'eval-harness',
-      href: `https://evals.humancopilot.eu/${MORE_UTM}`,
-      line: m.landing_more_evalharness,
     },
   ];
   import { audio } from '$lib/audio-state.svelte';

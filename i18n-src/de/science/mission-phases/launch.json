@@ -2,7 +2,7 @@
   "title": "Start + Aufstieg",
   "intro_sentence": "Die heftigsten zehn Minuten jeder Mission – ein gleichzeitiger Kampf gegen Schwerkraft, Atmosphäre und Raketengleichung.",
   "narrative_101": [
-    "Die meiste Gefahr der Raumfahrt liegt in den ersten acht Minuten: Die Rakete zündet, stemmt sich von der Rampe, durchstößt dichte Luft und erreicht 7,5 km/s. Geht etwas schief, bleibt kaum Zeit zur Reparatur.",
+    "Die meiste Gefahr der Raumfahrt liegt in den ersten acht Minuten. Die Rakete zündet, stemmt sich gegen ihr eigenes Gewicht von der Rampe hoch, steigt durch Luft, die dicht genug ist, sie zu zerreißen, und beschleunigt von null auf siebeneinhalb Kilometer pro Sekunde, bis das Triebwerk abschaltet. Geht beim Aufstieg etwas schief, bleibt selten Zeit, es zu beheben.",
     "Die Rechnung ist unbarmherzig. Um die Umlaufbahn zu erreichen, benötigt man etwa 9,4 km/s ∆v, aber nur etwa 7,9 km/s tragen tatsächlich zur Umlaufgeschwindigkeit bei. Der Rest geht an den „Schwerkraftverlust“ (man muss weiter Schub geben, nur um die Rakete beim Aufstieg oben zu halten) und den „Luftwiderstandsverlust“ (die Atmosphäre hält dagegen). Ingenieure verbringen Jahre damit, das Pitch-Programm zu optimieren – genau wann und wie stark geneigt wird –, um diese Verluste zu minimieren.",
     "Sobald die Rakete so hoch ist, dass die Luft nachlässt, wird es leichter. Stufen trennen sich, Verkleidungen springen ab, die zweite Stufe übernimmt für einen längeren, sanfteren Schub. Die gesamte Reise ist ein kalibriertes Abwerfen von Trockenmasse: Jedes Kilogramm leerer Tank, das man loswird, ist ein Kilogramm, das die nächste Stufe nicht beschleunigen muss. SpaceX bricht mit diesem Prinzip und birgt seine ersten Stufen; alle anderen werfen sie weg."
   ],

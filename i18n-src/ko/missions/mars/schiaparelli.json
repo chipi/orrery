@@ -11,6 +11,6 @@
     { "met": 216, "label": "TCM 3", "note": "TGO/Schiaparelli 분리 전 최종 접근 수정.", "type": "info" },
     { "met": 216.5, "label": "분리", "note": "Schiaparelli은 2016-10-16에 TGO에서 분리되었으며, 대기권 진입 3일 전입니다.", "type": "nominal" },
     { "met": 219, "label": "대기권 진입", "note": "대기권 진입 2016-10-19.", "type": "nominal" },
-    { "met": 219.01, "label": "하강 중 이상", "note": "관성 측정 장치 포화 → 낙하산 조기 배출 + 고도에서 추진기 차단 → 메리디아니 평원에서 시속 약 150 m/s로 충돌.", "type": "warning" }
+    { "met": 219.01, "label": "하강 중 이상", "note": "관성 측정 장치 포화 → 낙하산 조기 배출 + 고도에서 추진기 차단 → 메리디아니 평원에서 초속 약 150 m/s로 충돌.", "type": "warning" }
   ]
 }

@@ -6,22 +6,22 @@
   "residents": [
     {
       "id": "luna10",
-      "label": "Luna 10 — eerste maanorbiter ooit",
+      "label": "Luna 10 (1966 — eerste maanorbiter ooit)",
       "agency": "ROSCOSMOS"
     },
     {
       "id": "clementine",
-      "label": "Clementine",
+      "label": "Clementine (1994)",
       "agency": "NASA"
     },
     {
       "id": "smart-1",
-      "label": "SMART-1 — ionenaandrijvingsdemonstratie",
+      "label": "SMART-1 (2003-2006 — demonstratie van ionenaandrijving)",
       "agency": "ESA"
     },
     {
       "id": "change1",
-      "label": "Chang'e 1",
+      "label": "Chang'e 1 (2007-2009)",
       "agency": "CNSA"
     }
   ],

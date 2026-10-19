@@ -1,6 +1,6 @@
 {
   "name": "Schiaparelli EDM",
-  "mission_type": "Uncrewed Test Lander · Crashed",
+  "mission_type": "Módulo de pouso de teste não tripulado · Colidiu",
   "site_name": "Meridiani Planum",
   "fact": "Demonstrador de Entrada, Descida e Pouso do ExoMars 2016. Uma falha no software de controle fez com que a unidade de medição inercial saturasse, levando o módulo de pouso a calcular uma altitude negativa e disparando o jettison prematuro do paraquedas e da estrutura de proteção. Os propulsores funcionaram brevemente como se já estivessem no solo, depois desligaram. Ele caiu livremente ~3,7 km até a superfície. Os dados de voo informaram o redesenho do EDL do ExoMars 2028.",
   "capability": "Dados diagnósticos de EDL arduamente conquistados — uma demonstração parcial que alimentou a próxima missão ExoMars."

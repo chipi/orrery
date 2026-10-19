@@ -1,0 +1,528 @@
+{
+  "locale": "ar",
+  "segments": {
+    "UI strings — long (help text, panels)": {
+      "sampled": 25,
+      "ok": 15,
+      "minor": 9,
+      "broken": 1
+    },
+    "UI strings — short (menus, labels, buttons)": {
+      "sampled": 25,
+      "ok": 22,
+      "minor": 2,
+      "broken": 1
+    },
+    "essays (long editorial)": {
+      "sampled": 10,
+      "ok": 9,
+      "minor": 1,
+      "broken": 0
+    },
+    "fleet (launcher/capsule/engine/site descriptions)": {
+      "sampled": 25,
+      "ok": 14,
+      "minor": 6,
+      "broken": 5
+    },
+    "mission descriptions": {
+      "sampled": 25,
+      "ok": 23,
+      "minor": 1,
+      "broken": 1
+    },
+    "mission event notes": {
+      "sampled": 25,
+      "ok": 15,
+      "minor": 8,
+      "broken": 2
+    },
+    "other short entries (earth-objects, satellites, iss, orbit-regimes, …)": {
+      "sampled": 25,
+      "ok": 18,
+      "minor": 5,
+      "broken": 2
+    },
+    "planets & sites (short facts)": {
+      "sampled": 25,
+      "ok": 11,
+      "minor": 11,
+      "broken": 3
+    },
+    "programs (long editorial)": {
+      "sampled": 10,
+      "ok": 9,
+      "minor": 1,
+      "broken": 0
+    },
+    "science articles (editorial)": {
+      "sampled": 10,
+      "ok": 9,
+      "minor": 1,
+      "broken": 0
+    },
+    "universe (short entries)": {
+      "sampled": 25,
+      "ok": 20,
+      "minor": 4,
+      "broken": 1
+    }
+  },
+  "findings": [
+    {
+      "id": "UI-2",
+      "key": "messages :: lab_goal_lot_entry",
+      "grade": "MINOR",
+      "issue": "\"half again as thick\" rendered awkwardly and km/s left in Latin.",
+      "fix": "يختبئ تيتان تحت غلاف جوي من النيتروجين تبلغ كثافته عند السطح مرة ونصفًا قدر كثافة غلاف الأرض، ويمتد إلى ارتفاعات شاهقة، فقد بدأ Huygens يستشعره على ارتفاع يزيد على ألف كيلومتر. وعند اقتراب المسبار بسرعة 6 كم/ث تعرّض خلف درعه الواقي لتسارع تجاوز اثني عشر g: دخولٌ حقيقي إلى غلاف جوي، لكن على قمر."
+    },
+    {
+      "id": "UI-4",
+      "key": "messages :: lab_goal_tsw_microg",
+      "grade": "BROKEN",
+      "issue": "\"kernel\" (data file) mistranslated as nucleus with garbled syntax; comet name left in Latin.",
+      "fix": "مذنب 67P/تشوريوموف–غيراسيمنكو عالم بحجم جبل تكاد الجاذبية فيه تكون مجرد شائعة: إذ تضع ملفات البيانات (kernel) جاذبية سطحه قرب خُمس جزء من ألف من المتر في الثانية المربعة، وسرعة الإفلات منه أقل من متر واحد في الثانية. أعِد قراءة ذلك — بوسعك أن تركض فتغادر هذا المذنب. كل حدس بنيته عند الهبوط على القمر والمريخ والزهرة وتيتان يعمل الآن ضدك: الجزء الصعب ليس الوصول، بل البقاء."
+    },
+    {
+      "id": "UI-6",
+      "key": "messages :: chip_label_pre_flight_training",
+      "grade": "MINOR",
+      "issue": "\"survival\" rendered as الإنقاذ (rescue).",
+      "fix": "التدريب قبل الإطلاق — أكثر من عامين لكل مرحلة؛ أنظمة المركبة + EVA + النجاة"
+    },
+    {
+      "id": "UI-9",
+      "key": "messages :: lab_illustration_alt_reach_the_moon",
+      "grade": "MINOR",
+      "issue": "\"waiting Moon\" rendered as القمر الساهر (watchful); clause join awkward.",
+      "fix": "مسار عبر القمري ينحني من أرض مرسومة إلى القمر المنتظر، ومركبة فضائية صغيرة تركب منحنى الانتقال."
+    },
+    {
+      "id": "UI-11",
+      "key": "messages :: lab_goal_land_mercury_desc",
+      "grade": "MINOR",
+      "issue": "Literal calque \"يُقتل كل متر\" for \"killed by the engine\".",
+      "fix": "لا هواء على الإطلاق، وغطسة عنيفة نحو بئر جاذبية الشمس. ومع عدم وجود ما تكبح ضده، يجب على المحرك أن يلغي كل متر في الثانية."
+    },
+    {
+      "id": "UI-14",
+      "key": "messages :: lab_f_boosters_glossary",
+      "grade": "MINOR",
+      "issue": "Literal \"ليس شيئًا\" for \"is not a thing\"; دفعة vs دفع.",
+      "fix": "N_b = ⌈(F_req − F_core)/F_b⌉: أي دفع لا تستطيع المرحلة الأساسية توفيره، يجب أن توفره معززات ملحقة — كل منها يضيف F_b. قرّب لأعلى، فلا وجود لنصف معزز."
+    },
+    {
+      "id": "UI-16",
+      "key": "messages :: lab_goal_lss_verdict",
+      "grade": "MINOR",
+      "issue": "\"slingshots\" rendered as القذائف الجاذبية (projectiles); \"بالكاد\" repeated and escape clause awkward.",
+      "fix": "اجمعها بدلالة Δv من مدار منخفض: مرحلة قوية (~8.5 كم/ث) تصل تمامًا إلى خط ~8.7 — أكبر عمليات الإطلاق وحدها تتجاوزه بالكاد. التحليق القريب يوفّر الهامش، والأهم، السرعة الإضافية لتقوم فعلًا بجولةٍ بين الكواكب الخارجية بدل أن تتعثر بالكاد عند عتبة الإفلات. لهذا لجأ Voyager إلى مقاليع الجاذبية."
+    },
+    {
+      "id": "UI-20",
+      "key": "messages :: science_layer_moons_desc",
+      "grade": "MINOR",
+      "issue": "Galilean moons rendered as \"أقمار غاليليو\"; Iapetus left in Latin.",
+      "fix": "الأقمار الرئيسية + حلقات المدار حول كل كوكب (الأقمار الغاليلية حول المشتري، تيتان/إنسيلادوس/إيابيتوس حول زحل، القمر حول الأرض، فوبوس/ديموس حول المريخ، ترايتون حول نبتون)."
+    },
+    {
+      "id": "UI-21",
+      "key": "messages :: explore_hub_desc_localgroup",
+      "grade": "MINOR",
+      "issue": "Andromeda left in Latin (astronomical name).",
+      "fix": "خطوة أخرى للخارج — أندروميدا والمثلث والسُّحب الماجلانية وعشرات المجرات القزمة."
+    },
+    {
+      "id": "UI-24",
+      "key": "messages :: lab_goal_g7_max",
+      "grade": "MINOR",
+      "issue": "Gender agreement: الزهرة is feminine.",
+      "fix": "لماذا لا يظهر عطارد والزهرة أبدًا في منتصف الليل، بل يلازمان دائمًا الغروب أو الشروق؟ لأنهما يدوران داخل مدار الأرض: كوكب على بُعد a وحدة فلكية لا يمكن أن يبتعد عن الشمس سوى arcsin(a). لكن مداريهما إهليلجيان، فيمتد الحبل ويتقلص — تتراوح أقصى استطالة لعطارد من ~18° قرب الحضيض إلى ~28° عند الأوج، بينما تبقى الزهرة قرب 46°. أما الكواكب الخارجية فلا حبل يقيّدها؛ فهي تجول حتى التقابل. داخل مدار الأرض أو خارجه — هذا الخط وحده يقسم الكواكب المرئية بالعين المجردة إلى قسمين."
+    },
+    {
+      "id": "UI-5",
+      "key": "messages :: earth_page_title",
+      "grade": "BROKEN",
+      "issue": "Dropped \"· Orrery\" from the page title.",
+      "fix": "المدار الأرضي · Orrery"
+    },
+    {
+      "id": "UI-15",
+      "key": "messages :: lab_f_terminal_vt",
+      "grade": "MINOR",
+      "issue": "\"Terminal speed\" rendered as النهائية (final); the standard term is الحدية and the long segment used الطرفية.",
+      "fix": "السرعة الحدية"
+    },
+    {
+      "id": "UI-20",
+      "key": "messages :: lib_filter_status_active",
+      "grade": "MINOR",
+      "issue": "Status label ACTIVE rendered as the noun النشاط.",
+      "fix": "نشط"
+    },
+    {
+      "id": "essays-9",
+      "key": "essays/going-to-the-moon.json :: body.26.md",
+      "grade": "MINOR",
+      "issue": "Jezero (place name) left in Latin.",
+      "fix": "على خلاف [الهبوط عبر غلاف المريخ الجوي](/essays/seven-minutes)، لا يوفّر الهبوط على القمر أي كبح جوي على الإطلاق — فأنت تنزل بالصواريخ من البداية حتى النهاية، وتحرق الوقود عند كل ارتفاع، وتلتزم بمسار لا يمكن تصحيحه تصحيحًا ذا شأن في الثواني الأخيرة إن ظهر على السطح أدناه ما لم يكن في الحسبان. والقمر، بحسب الإطار الذي رسمه [مقال الدقائق السبع](/essays/seven-minutes)، هو أنقى صور حالة انعدام الغلاف الجوي: المسألة التي لا تعرف تباطؤًا مجانيًا، ولا درعًا حراريًا يشتري لك الوقت، ولا مرحلة مظلات. وكل ما تريد إنفاقه على حمولة العلوم، عليك أولًا أن تجد له موضعًا في ميزانية الوقود. أما [تأخّر الضوء الذي يجعل القمر في المتناول](/science/mission-phases/dsn) — أي ذلك الزمن الذي تستغرقه الرحلة ذهابًا وإيابًا والبالغ 1.3 ثانية — فهو قصير بما يكفي ليبقى البشر داخل حلقة التحكم، وهذا يعني أن مركبات الهبوط القمرية لا تحتاج بعدُ إلى الملاحة المستقلة تمامًا المعتمدة على التضاريس التي استخدمتها Perseverance في فوهة جيزيرو. هي تستفيد منها، لكنها لا تتطلبها بعدُ على وجه الإلزام. وهذا الفارق لن يصمد عند المريخ."
+    },
+    {
+      "id": "fleet-1",
+      "key": "fleet/orbiter/ulysses.json :: best_known_for",
+      "grade": "BROKEN",
+      "issue": "Garbled word order (\"وحيدة مركبة طارت\").",
+      "fix": "المركبة الوحيدة التي حلّقت فوق قطبي الشمس — مهمة مشتركة بين ESA وNASA، 1990-2009"
+    },
+    {
+      "id": "fleet-2",
+      "key": "fleet/station/salyut-1.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "\"World's first\" rendered as العالمية (global).",
+      "fix": "أول محطة فضائية في العالم"
+    },
+    {
+      "id": "fleet-9",
+      "key": "fleet/space-suit/orlan-mks.json :: description",
+      "grade": "BROKEN",
+      "issue": "\"رخول\" is a typo for rear-entry, and the airlock/pre-breathe clause is mis-attached (\"المطلوبة بواسطة\"), changing the meaning.",
+      "fix": "أحدث نسخة من عائلة Orlan — بدلة روسية للنشاط خارج المركبة (EVA) ذات دخول خلفي، طارت بشكل متواصل منذ محطة Salyut 6 في سنة 1977. يدخل رائد الفضاء من خلال فتحة مثبتة على الحقيبة الظهرية وتُقفل بحركة واحدة، مما يلغي الحاجة إلى التنفس المسبق للأكسجين في حجرة الهواء التي تتطلبها البدل الأمريكية منخفضة الضغط. ضغط التشغيل 5.8 psi (400 hPa) من الأكسجين النقي O₂. مستخدمة على القسم الروسي من محطة الفضاء الدولية. خدمت نسخ Orlan السابقة على محطات Salyut وMir."
+    },
+    {
+      "id": "fleet-10",
+      "key": "fleet/constellation/landsat.json :: description",
+      "grade": "MINOR",
+      "issue": "Multispectral resolution mistranslated as طيفية; units left in Latin; calque \"تقوم ... بـ\".",
+      "fix": "أطول سجل متواصل لتصوير الأرض في التاريخ — أُطلق Landsat 1 عام 1972 (في الأصل باسم ERTS-1)، ويستمر حتى Landsat 9 (2021). الزوج التشغيلي الحالي Landsat 8 (2013) + Landsat 9 (2021) في مدار متزامن مع الشمس على ارتفاع 705 كم، ميل مداري 98.2°. دقة مكانية 30 م متعددة الأطياف. تتولى NASA البناء والإطلاق؛ وتتولى USGS التشغيل وتوزيع البيانات. الوصول العام المجاني منذ 2008 حوّل Landsat إلى مجموعة البيانات المرجعية العالمية لتغير المناخ وإزالة الغابات والنمو الحضري."
+    },
+    {
+      "id": "fleet-13",
+      "key": "fleet/launcher/energia.json :: description",
+      "grade": "BROKEN",
+      "issue": "\"launcher\" rendered as الراجم (rocket artillery) and \"orbiter\" as مدار (orbit).",
+      "fix": "الصاروخ السوفييتي الوحيد فائق الثقل الذي طار بنجاح. مصمم لحمل المركبة المدارية Buran أو حمولات مستقلة تصل إلى 100 طن إلى LEO. رحلتان: اختبار حمولة Polyus (1987) والمركبة المدارية Buran (1988)، كلاهما نجح. أُوقف البرنامج في نهاية الحرب الباردة."
+    },
+    {
+      "id": "fleet-15",
+      "key": "fleet/launcher/pslv-xl.json :: best_known_for",
+      "grade": "BROKEN",
+      "issue": "\"heavy-strap-on\" garbled into الأرصفة الجانبية (platforms/piers).",
+      "fix": "نسخة PSLV الثقيلة ذات المعززات الجانبية التابعة لـ ISRO — أطلقت Chandrayaan-1 ومهمة المريخ المدارية"
+    },
+    {
+      "id": "fleet-16",
+      "key": "fleet/orbiter/lunar-orbiter-2.json :: description",
+      "grade": "MINOR",
+      "issue": "Photo \"release\" rendered as إطلاق (launch).",
+      "fix": "ثاني مسابير Lunar Orbiter الخمسة. انطلق في 1966-11-06 من رأس كانافيرال، ودخل المدار القمري في 1966-11-10. رسم خريطة لـ 13 موقعاً في منطقة Apollo الاستوائية. في 1966-11-24، التقطت الإطار 162 منظوراً مائلاً لفوهة كوبرنيكوس التي يبلغ قطرها 93 كم من ارتفاع 45.8 كم متجهاً نحو الشمال — منظر طبيعي يشبه الجبال الأرضية لم يُرَ من قبل على عالم آخر. أطلقت الصحف عليها \"صورة القرن\". أصبح نشر هذه الصورة نقطة تحول في تفاعل الجمهور مع الاستكشاف القمري. أرسل 422 إطاراً إجمالاً على مدى 33 يوماً من التصوير. اصطدم متعمداً في 1967-10-11 عند 4° S، 98° E (الجانب البعيد من القمر) لمنع تداخل الترددات الراديوية مع Lunar Orbiter 5."
+    },
+    {
+      "id": "fleet-17",
+      "key": "fleet/lander/phoenix.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "\"water ice\" rendered as ثلج الماء (snow).",
+      "fix": "جليد مائي مؤكد في التربة المريخية"
+    },
+    {
+      "id": "fleet-18",
+      "key": "fleet/orbiter/exomars-tgo.json :: tagline",
+      "grade": "BROKEN",
+      "issue": "\"surface relay\" rendered as إعادة توجيه السطح, which is meaningless.",
+      "fix": "تحليل الغازات النزرة + ترحيل الاتصالات من السطح (ESA/NASA)"
+    },
+    {
+      "id": "fleet-22",
+      "key": "fleet/constellation/o3b-mpower.json :: description",
+      "grade": "MINOR",
+      "issue": "Unit km left in Latin.",
+      "fix": "شبكة النطاق العريض التجارية الوحيدة العاملة في المدار الأرضي المتوسط MEO — نُشر O3b الأصلي بين 2013-2019، والجيل الثاني O3b mPOWER من 2022 فصاعدًا. أكثر من 20 قمرًا صناعيًا على ارتفاع 8,063 كم في مدار استوائي. زمن الاستجابة بين GEO و LEO، وقاعدة العملاء تركز على البنية التحتية للاتصالات والنقل البحري والمؤسسات النائية. تديرها SES (لوكسمبورغ). سُميت نسبة إلى \"الثلاثة مليارات الأخرى\" — كانت المهمة الأصلية توفير الاتصال للمناطق غير المخدومة بالنطاق العريض الأرضي."
+    },
+    {
+      "id": "fleet-25",
+      "key": "fleet/observatory/gaia.json :: tagline",
+      "grade": "MINOR",
+      "issue": "\"3D\" left in Latin and بليون used against the file's مليار.",
+      "fix": "رسم خريطة ثلاثية الأبعاد لـ 1.8 مليار نجم"
+    },
+    {
+      "id": "mission-5",
+      "key": "missions/earth/skylab-3.json :: description",
+      "grade": "MINOR",
+      "issue": "Astronaut Bean rendered as bare \"بين\", reading as the preposition.",
+      "fix": "ألان بين وغاريوت ولوسما — الطاقم الثاني الذي عاش على متن Skylab، لمدة 59 يوماً و11 ساعة. أُطلقوا في 1973-07-28 الساعة 11:11 UTC على صاروخ Saturn IB (SA-207). وبعد ساعات من الالتحام، عانت الوحدة الخدمية لمركبة CSM من تسرب في دافع التحكم بالوضعية — فجُهّزت المركبة الاحتياطية CSM-119 في رأس كانافيرال لمهمة إنقاذ محتملة، لكن الطاقم أكمل المهمة بشكل طبيعي. وقاد غاريوت 305 ساعات من الرصد الشمسي باستخدام أجهزة Apollo Telescope Mount. ونشرت ثلاثة أنشطة سير فضائي درعاً شمسياً ثنائي العمود فوق المظلة الأصلية، وأصلحت حزمة جيروسكوب معدّل الدوران، واسترجعت علب الأفلام من ATM. هبطوا في المحيط في 1973-09-25 الساعة 22:19 UTC؛ والمركبة CSM-117 معروضة في Glenn Visitor Center في كليفلاند."
+    },
+    {
+      "id": "mission-9",
+      "key": "missions/dimorphos/dart.json :: description",
+      "grade": "BROKEN",
+      "issue": "Impact rendered as التأثير (effect), plume as الدخان (smoke), and \"over 4 hours\" lost.",
+      "fix": "DART (Double Asteroid Redirection Test) كانت أول مهمة دفاع كوكبي تم تنفيذها على الإطلاق — مركبة فضائية بوزن 611 كجم أرسلت للاصطدام بكويكب يبلغ قطره 160 م بقوة كافية لتغيير مداره. كان الهدف ديمورفوس، وهو قمر صغير للكويكب ديديموس الذي يبلغ قطره 780 م. تم إطلاقها في 2021-11-24 على صاروخ Falcon 9؛ نظام الملاحة المستقل SMART Nav تولى السيطرة قبل أكثر من 4 ساعات من الاصطدام لتمييز ديمورفوس عن كويكبه الأم واستهداف الجسم الأصغر. الاصطدام في 2022-09-26 الساعة 23:14 بتوقيت UTC بسرعة ≈6.6 كم/ث. التغيير المقاس في الفترة المدارية: 33 دقيقة (4.2%)، متجاوزاً عتبة النجاح البالغة 73 ثانية بحوالي 25×. عامل تحسين نقل الزخم β ≈ 3.6 أشار إلى حمل كبير من المادة السطحية المرفوعة. قمر CubeSat LICIACube رصد عمود الحطام المتصاعد؛ لاحظت HST و JWST ذيل الحطام الناتج لعدة أسابيع. أول عرض توضيحي على أن البشر يمكنهم تحريك كويكب."
+    },
+    {
+      "id": "mission-3",
+      "key": "missions/mars/curiosity.json :: events.4.note",
+      "grade": "MINOR",
+      "issue": "\"crane\" rendered as كرافة (necktie).",
+      "fix": "الدخول إلى الغلاف الجوي، مظلة فوق صوتية، صواريخ رافعة السماء، المستكشف مُنزّل على كابلات."
+    },
+    {
+      "id": "mission-5",
+      "key": "missions/mars/mars-express.json :: events.2.note",
+      "grade": "MINOR",
+      "issue": "\"orbiter\" rendered as المدار (orbit).",
+      "fix": "المركبة الهابطة تنفصل عن المركبة المدارية للنزول المستقل."
+    },
+    {
+      "id": "mission-6",
+      "key": "missions/earth/otv-1.json :: events.1.note",
+      "grade": "BROKEN",
+      "issue": "Apogee rendered as الحضيض (perigee).",
+      "fix": "الأوج ~287 كم؛ عمليات الحمولة السرية."
+    },
+    {
+      "id": "mission-8",
+      "key": "missions/moon/apollo11.json :: events.0.note",
+      "grade": "MINOR",
+      "issue": "Date reformatted in Eastern Arabic digits and day-first order, unlike the rest.",
+      "fix": "Saturn V (AS-506) من مركز كينيدي للفضاء LC-39A في 1969-07-16 الساعة 13:32 بتوقيت UTC."
+    },
+    {
+      "id": "mission-9",
+      "key": "missions/moon/apollo10.json :: events.6.note",
+      "grade": "MINOR",
+      "issue": "km/s left in Latin.",
+      "fix": "حقن العودة إلى الأرض. SPS ∆v ~1.0 كم/ث."
+    },
+    {
+      "id": "mission-16",
+      "key": "missions/earth/soyuz-11.json :: events.0.note",
+      "grade": "MINOR",
+      "issue": "Ungrammatical \"بتوقيت العالمي المنسق\".",
+      "fix": "Soyuz 11A511 من بايكونور، 1971-06-06 04:55 بالتوقيت العالمي المنسق."
+    },
+    {
+      "id": "mission-21",
+      "key": "missions/earth/apollo7.json :: events.2.note",
+      "grade": "MINOR",
+      "issue": "Stray straight double quote before the guillemet.",
+      "fix": "«مرحباً من غرفة Apollo الجميلة عالياً فوق كل شيء.» أول بث تلفزيوني مباشر من مركبة فضائية أمريكية مأهولة بالبشر."
+    },
+    {
+      "id": "mission-22",
+      "key": "missions/moon/apollo8.json :: events.5.note",
+      "grade": "MINOR",
+      "issue": "Inconsistent rendering of Trans-Earth injection; km/s left in Latin.",
+      "fix": "حقن العودة إلى الأرض خلف القمر (1968-12-25 06:10 بتوقيت UTC). SPS ∆v ~1.07 كم/ث."
+    },
+    {
+      "id": "mission-23",
+      "key": "missions/moon/change1.json :: events.4.note",
+      "grade": "BROKEN",
+      "issue": "\"Controlled impact\" rendered as رصد محكوم (controlled observation).",
+      "fix": "اصطدام محكوم عند الإحداثيات 1.50° جنوباً، 52.36° شرقاً في 2009-03-01 — أول جسم صيني على السطح القمري."
+    },
+    {
+      "id": "mission-25",
+      "key": "missions/moon/smart-1.json :: events.4.note",
+      "grade": "MINOR",
+      "issue": "Hemisphere letters S/W left in Latin.",
+      "fix": "اصطدام مقصود في 34.4° جنوبًا، 46.2° غربًا في 2006-09-03 05:42 UTC. تم رصد وميض الاصطدام من CFHT."
+    },
+    {
+      "id": "other-4",
+      "key": "original-work.json :: models3d./images/colophon/model-launcher-ariane-5_webp.what",
+      "grade": "MINOR",
+      "issue": "Fairing garbled as \"حماية انسيابية\".",
+      "fix": "نواة مبردة بين معززين صاروخيين صلبين طويلين تحت غطاء حمولة منتفخ."
+    },
+    {
+      "id": "other-5",
+      "key": "satellites/charon.json :: description",
+      "grade": "BROKEN",
+      "issue": "Garbled opening (no subject for \"half Pluto's diameter\"), hemisphere rendered as كرة أرضية, agreement error \"أربع أقمار\".",
+      "fix": "يبلغ قطره نصف قطر بلوتو — وهي أكبر نسبة حجم قمر إلى كوكب في النظام الشمسي. كيرون وبلوتو مُقفلان بفعل المد بشكل متبادل، يدوران حول مركز كتلة مشترك على ارتفاع حوالي 980 كيلومترًا فوق سطح بلوتو — فعليًا نظام كوكب ثنائي. كشف New Horizons عن تضاريس متنوعة ومذهلة: سهل فولكان الأملس في الجنوب، ونصف كرة قديم مليئة بالفوهات في الشمال، وقبعة قطبية داكنة حمراء اللون (Mordor Macula) من الثولينات تشكلت عندما تجمعت جزيئات الميثان الهاربة من الغلاف الجوي لبلوتو على كيرون ومعالجتها بواسطة الضوء فوق البنفسجي. تدور أربعة أقمار بلوتو الأصغر (ستيكس ونيكس وكيربيروس وهيدرا) حول مركز الكتلة بلوتو-كيرون بدورانات فوضوية مدفوعة بالجاذبية المتغيرة للنظام الثنائي."
+    },
+    {
+      "id": "other-7",
+      "key": "original-work.json :: models3d./images/colophon/model-launcher-mercury-redstone_webp.what",
+      "grade": "MINOR",
+      "issue": "Transliterated \"روكيت\" instead of صاروخ.",
+      "fix": "أول مركبة إطلاق مأهولة بالبشر في أمريكا — صاروخ Redstone رفيع أحادي المحرك مزود بأربع زعانف ذيلية، وكبسولة Mercury وبرج هروب (Freedom 7)."
+    },
+    {
+      "id": "other-11",
+      "key": "orbit-regimes-explore/GIANTS.json :: firsts.1.label",
+      "grade": "MINOR",
+      "issue": "(USA) left in English.",
+      "fix": "Voyager 2 — التحليق الوحيد بأورانوس على الإطلاق (الولايات المتحدة)"
+    },
+    {
+      "id": "other-13",
+      "key": "videos.json :: vid-20d43147d750.caption",
+      "grade": "MINOR",
+      "issue": "\"star-mapping\" rendered as تخطيط (planning).",
+      "fix": "مهمة رسم خرائط النجوم Gaia من ESA وإرثها"
+    },
+    {
+      "id": "other-15",
+      "key": "rockets/h3.json :: first",
+      "grade": "MINOR",
+      "issue": "Nonstandard \"مُطلق\" for launcher; word order awkward.",
+      "fix": "صاروخ JAXA الرائد من الجيل القادم — مُصمم لـ MMX وإعادة تزويد بوابة القمر"
+    },
+    {
+      "id": "other-23",
+      "key": "iss-modules/destiny.json :: function_detail",
+      "grade": "BROKEN",
+      "issue": "Microgravity rendered as الجاذبية المعادلة; \"science windows infrastructure\" garbled.",
+      "fix": "رفوف أبحاث الجاذبية الصغرى، ونوافذ علمية مواجهة للأرض، وحجم المختبر الداخلي الرئيسي لدى NASA."
+    },
+    {
+      "id": "planets-1",
+      "key": "planets/neptune.json :: science_sections.2.why",
+      "grade": "MINOR",
+      "issue": "km and AU left in Latin.",
+      "fix": "الاختلاف المركزي اللطيف لنبتون البالغ 0.0086 يعطي مداراً دائرياً جداً بحيث يكون تأرجح الحضيض-الأوج أقل من 200 مليون كم على محور شبه رئيسي قدره 30 وحدة فلكية — تغير بنسبة 1.4%."
+    },
+    {
+      "id": "planets-2",
+      "key": "planets/uranus.json :: bio",
+      "grade": "BROKEN",
+      "issue": "\"براصاص\" is a non-word; \"تقريبًا تأكيدًا\" garbles \"almost certainly\".",
+      "fix": "مائل تقريبًا على جانبه (97.77°). كل قطب يحصل على 42 سنة ضوءًا شمسيًا متواصلًا، ثم 42 سنة ظلامًا. يُرجَّح بشدة أنه ناجم عن اصطدام ضخم قديم."
+    },
+    {
+      "id": "planets-6",
+      "key": "moon-sites/lro.json :: mission_type",
+      "grade": "MINOR",
+      "issue": "\"Orbiter\" rendered as مدار (orbit).",
+      "fix": "مركبة مدارية نشطة · 2009 – حتى الآن"
+    },
+    {
+      "id": "planets-10",
+      "key": "planets/neptune.json :: science_sections.3.why",
+      "grade": "MINOR",
+      "issue": "\"flyby\" rendered as رحلة طيران.",
+      "fix": "لا يزال Voyager 2 (تحليق عام 1989) المركبة الفضائية الوحيدة التي زارت نبتون. لا توجد حاليًا أي مهمة إلى هذا النظام ممولة أو قيد الطيران."
+    },
+    {
+      "id": "planets-11",
+      "key": "planets/jupiter.json :: science_sections.0.why",
+      "grade": "MINOR",
+      "issue": "\"Galileans\" dropped; Latin commas inside Arabic list.",
+      "fix": "يمتلك المشتري 101 قمراً مؤكداً — فالأقمار الغاليلية الأربعة (آيو وأوروبا وغانيميد وكاليستو) كل منها عالم بحد ذاته وتتبع رنيناً مداريّاً بنسبة 1:2:4."
+    },
+    {
+      "id": "planets-12",
+      "key": "planets/mars.json :: science_sections.3.why",
+      "grade": "MINOR",
+      "issue": "\"receding\" rendered as ينحسر; \"spiraling inward\" as bare adjective حلزوني.",
+      "fix": "للمريخ قمران صغيران يبدوان مأسورين — فوبوس (يدور تحت الارتفاع المتزامن، يدور حلزونيًا نحو الداخل) وديموس (يبتعد ببطء)."
+    },
+    {
+      "id": "planets-13",
+      "key": "small-bodies/bennu.json :: science_sections.0.why",
+      "grade": "MINOR",
+      "issue": "Garbled \"الالتقاء والعينة\"; AU left in Latin.",
+      "fix": "بيننو كويكب قريب من الأرض (المحور شبه الرئيسي 1.13 وحدة فلكية) — قريب بما يكفي لكي تتمكن OSIRIS-REx من الالتقاء به وأخذ عينة منه وإعادة المادة إلى الأرض في 7 سنوات."
+    },
+    {
+      "id": "planets-14",
+      "key": "planets/jupiter.json :: links.3.l",
+      "grade": "MINOR",
+      "issue": "Galilean moons rendered as \"أقمار غاليليو\".",
+      "fix": "الأقمار الغاليلية — ويكيبيديا"
+    },
+    {
+      "id": "planets-15",
+      "key": "mars-sites/maven.json :: fact",
+      "grade": "MINOR",
+      "issue": "Number/gender mismatch: الريح (singular) for solar wind.",
+      "fix": "Mars Atmosphere and Volatile EvolutioN. حدّدت المعدل الذي يفقد به المريخ غلافه الجوي إلى الفضاء — حوالي 100 غ/ث من الأكسجين وثاني أكسيد الكربون التي تقتطعها الرياح الشمسية. أظهرت أن ترقق الغلاف الجوي للمريخ كان ناجماً عن فقدان مجاله المغناطيسي العالمي منذ حوالي 4 مليارات سنة."
+    },
+    {
+      "id": "planets-16",
+      "key": "moon-sites/luna24.json :: capability",
+      "grade": "MINOR",
+      "issue": "Garbled and hard-to-parse second clause.",
+      "fix": "أثبتت جدوى إعادة العينات آليًا — وهي البنية التي تحاول مهمة إعادة عينات المريخ الآن تطبيقها على نطاق بين كوكبي."
+    },
+    {
+      "id": "planets-20",
+      "key": "moon-sites/artemis3.json :: crew.0",
+      "grade": "MINOR",
+      "issue": "TBD left in Latin; \"شخص ملوّن\" inconsistent with the other string and stilted.",
+      "fix": "سيُحدَّد لاحقًا — أول امرأة وأول شخص من ذوي البشرة الملونة على القمر"
+    },
+    {
+      "id": "planets-22",
+      "key": "mars-sites/tgo.json :: capability",
+      "grade": "MINOR",
+      "issue": "Trace gases rendered as الغازات الأثرية (archaeological), against النزرة elsewhere.",
+      "fix": "رسم خرائط الغازات النزرة في الغلاف الجوي بأعلى حساسية على أي كوكب."
+    },
+    {
+      "id": "planets-23",
+      "key": "planets/itokawa.json :: links.1.l",
+      "grade": "BROKEN",
+      "issue": "Left entirely in English.",
+      "fix": "أرشيف مهمة Hayabusa (JAXA / ISAS)"
+    },
+    {
+      "id": "planets-25",
+      "key": "small-bodies/leucus.json :: science_sections.0.why",
+      "grade": "BROKEN",
+      "issue": "\"سيقوم الحلول بـ Lucy\" is garbled and does not say the Lucy flyby will image Leucus.",
+      "fix": "ليوكوس كويكب طروادي في L4 يدور ببطء غير معتاد (دورة 445 ساعة) — وسيلتقط تحليق Lucy في أبريل 2028 صورًا لشكله الممدود الغريب عن قرب."
+    },
+    {
+      "id": "programs-8",
+      "key": "programs/great-observatories.json :: outcome.2.md",
+      "grade": "MINOR",
+      "issue": "\"exoplanets\" rendered as الكواكب الخارجية, which means outer planets.",
+      "fix": "إنّ الحصاد العلمي أوسع من أن يُلخَّص: التوسّع المتسارع للكون، وتأكيد وجود الثقوب السود فائقة الكتلة في مراكز المجرّات، وتحديد عمر الكون وتركيبه بدقة، وأولى محاولات سبر الأغلفة الجوية للكواكب خارج المجموعة الشمسية، وأعمق الصور التي التُقطت على الإطلاق للكون المبكر. وجزء كبير مما يعرفه إنسان العصر الحديث عن هيئة الكون يعود، مباشرةً أو بصورة غير مباشرة، إلى هذه التلسكوبات الأربعة وإلى التلسكوبات التي جاءت بعدها."
+    },
+    {
+      "id": "science-7",
+      "key": "science/history/sputnik-1957.json :: narrative_101.2",
+      "grade": "MINOR",
+      "issue": "Person name von Braun left in Latin.",
+      "fix": "لم تكن لدى أمريكا في عام 1957 أي مركبة إطلاق عاملة قادرة على بلوغ المدار، إذ انفجر صاروخ Vanguard على منصة الإطلاق في ديسمبر. ولم يصل Explorer 1 إلى المدار أخيرًا إلا في 31 يناير 1958، على متن صاروخ مشتق من Redstone صمّمه فيرنر فون براون. وقد أطلقت «صدمة Sputnik» وكالة NASA (1958)، وقانون التعليم للدفاع الوطني (National Defense Education Act)، وسباق الفضاء بأكمله الذي سيطبع العقد التالي."
+    },
+    {
+      "id": "universe-14",
+      "key": "universe/named-stars/alnilam.json :: bio",
+      "grade": "MINOR",
+      "issue": "Alnilam Arabic name is النظم; supergiant rendered as عظيم.",
+      "fix": "النظم (Epsilon Orionis) هو عملاق أزرق فائق يبعد أكثر من ألف سنة ضوئية، وهو النجم الأوسط والأبعد من نجوم حزام الجبار الثلاثة. يتيح له لمعانه الحقيقي الهائل أن يحافظ على مكانته في الحزام رغم تلك الهوة الفضائية."
+    },
+    {
+      "id": "universe-15",
+      "key": "universe/named-stars/barnards-star.json :: bio",
+      "grade": "BROKEN",
+      "issue": "Barnard's Star rendered as \"نجم السهم\" (wrong star name), inconsistent with \"نجم برنارد\" later in the same string.",
+      "fix": "يمتلك نجم بارنارد أكبر حركة ذاتية معروفة لأي نجم، حيث يعبر ما يعادل عرض القمر الظاهري في السماء كل 180 عاماً تقريباً — مما أكسبه لقب 'نجم برنارد الهارب'. إنه قزم أحمر قديم منخفض الكتلة."
+    },
+    {
+      "id": "universe-16",
+      "key": "universe/named-stars/castor.json :: cultural",
+      "grade": "MINOR",
+      "issue": "Dioscuri and Alpha left in Latin.",
+      "fix": "رأس التوأم المقدم هو الفارس الفاني من الديوسكوري، الأخ التوأم لرأس التوأم المؤخر في الأساطير الإغريقية والرومانية. رغم تصنيفه بـ «ألفا»، فهو عادة أخفت قليلاً من شقيقه رأس التوأم المؤخر المجاور له."
+    },
+    {
+      "id": "universe-19",
+      "key": "universe/named-stars/pollux.json :: cultural",
+      "grade": "MINOR",
+      "issue": "Dioscuri left in Latin; \"to this day\" added.",
+      "fix": "رأس التوأم المؤخر وجاره رأس التوأم المقدم هما «الديوسكوري»، الأخوان التوأم من الأساطير اليونانية والرومانية — حيث رأس التوأم المؤخر هو الابن الخالد لزيوس. لقد هدى هذا الزوج وحمى البحارة منذ العصور القديمة."
+    },
+    {
+      "id": "universe-23",
+      "key": "universe/named-stars/nunki.json :: bio",
+      "grade": "MINOR",
+      "issue": "Star name Nunki left in Latin.",
+      "fix": "نونكي (Sigma Sagittarii) هو نجم أزرق ساخن من نجوم النسق الأساسي يبعد نحو 230 سنة ضوئية، وهو ثاني ألمع نجم في برج الرامي. يشكل جزءاً من مجموعة 'إبريق الشاي'، بالقرب من المنطقة الأغنى في درب التبانة."
+    }
+  ]
+}

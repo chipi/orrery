@@ -1,0 +1,278 @@
+[
+  {
+    "rel": "messages",
+    "at": "lab_f_escverd_err_insufficient",
+    "old": "Insuficiente — incluso con la asistencia permaneces vinculado al Sol.",
+    "new": "Insuficiente — incluso con la asistencia sigues ligado al Sol."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_boosters_glossary",
+    "old": "N_b = ⌈(F_req − F_núcleo)/F_b⌉: cualquier empuje que la etapa núcleo no pueda dar, aceleradores laterales deben — cada uno añade F_b. Redondea hacia arriba, porque medio acelerador no es una cosa.",
+    "new": "N_b = ⌈(F_req − F_núcleo)/F_b⌉: todo el empuje que la etapa central no pueda dar tienen que aportarlo los propulsores laterales; cada uno añade F_b. Redondea hacia arriba, porque no existe medio propulsor."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lss_verdict",
+    "old": "Suma el Δv desde órbita baja: un motor potente (~8,5 km/s) ronda justo la línea ~8,7 — los mayores lanzamientos apenas la alcanzan solos. Un sobrevuelo da el margen y, más importante, la velocidad extra para RECORRER los planetas exteriores en lugar de apenas alcanzar escape. Por eso Voyager tomó las catapultas.",
+    "new": "Suma el Δv desde órbita baja: un motor potente (~8,5 km/s) ronda justo la línea ~8,7 — los mayores lanzamientos apenas la alcanzan solos. Un sobrevuelo da el margen y, más importante, la velocidad extra para RECORRER los planetas exteriores en lugar de apenas rebasar la velocidad de escape. Por eso Voyager tomó las catapultas."
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_moons_desc",
+    "old": "Lunas principales + anillos orbitales alrededor de cada planeta (Galilean en Júpiter, Titán/Encélado/Jápeto en Saturno, la Luna en la Tierra, Fobos/Deimos en Marte, Tritón en Neptuno).",
+    "new": "Lunas principales + anillos orbitales alrededor de cada planeta (las galileanas en Júpiter, Titán/Encélado/Jápeto en Saturno, la Luna en la Tierra, Fobos/Deimos en Marte, Tritón en Neptuno)."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lar_hook",
+    "old": "La bala de cañón de Newton: imagina disparar un cañón desde una montaña, cada vez más fuerte. Eventualmente el terreno se curva tan rápido como cae la bala, y nunca impacta. Ese 'caer para siempre' es exactamente lo que es una órbita — y es la lección que viene justo después.",
+    "new": "La bala de cañón de Newton: imagina disparar un cañón desde una montaña, cada vez más fuerte. Al final el terreno se curva tan rápido como cae la bala, y nunca impacta. Ese 'caer para siempre' es exactamente lo que es una órbita — y es la lección que viene justo después."
+  },
+  {
+    "rel": "fleet/engine/le-9.json",
+    "at": "description",
+    "old": "El LE-9 es una elección deliberada de elegancia sobre complejidad. En lugar de la disposición de turbobomba-cámara de combustión previa de la combustión por etapas, utiliza un ciclo de expansor-sangrado: el hidrógeno se calienta mediante las paredes de la cámara y la tobera, y una porción de ese gas se extrae para impulsar las turbobombas antes de ser descargado al exterior. El ciclo tiene presiones de cámara inherentemente más bajas y un diseño más simple de la sección caliente, sacrificando algo de rendimiento para reducir los modos de fallo mecánico que aquejaron a los motores japoneses anteriores. Desarrollado por Mitsubishi para el cohete H3 de JAXA, el LE-9 realizó su primer vuelo en marzo de 2023 y es el motor más grande de su tipo en servicio operacional.",
+    "new": "El LE-9 es una elección deliberada de elegancia sobre complejidad. En lugar de la disposición con turbobomba y precombustor de la combustión por etapas, utiliza un ciclo de sangrado de expansor: el hidrógeno se calienta mediante las paredes de la cámara y la tobera, y una porción de ese gas se extrae para impulsar las turbobombas antes de ser descargado al exterior. El ciclo tiene presiones de cámara inherentemente más bajas y un diseño más simple de la sección caliente, sacrificando algo de rendimiento para reducir los modos de fallo mecánico que aquejaron a los motores japoneses anteriores. Desarrollado por Mitsubishi para el cohete H3 de JAXA, el LE-9 realizó su primer vuelo en marzo de 2023 y es el motor más grande de su tipo en servicio operacional."
+  },
+  {
+    "rel": "fleet/lander/mars6.json",
+    "at": "description",
+    "old": "Parte de la ola de cuatro naves soviéticas hacia Marte de 1973 (Mars 4, 5, 6, 7) — y la única en devolver ciencia útil desde un descenso a través de la atmósfera de Marte. Lanzada el 1973-08-05 desde Baikonur en un Proton-K, llegó el 1974-03-12. El módulo de descenso se separó del bus de sobrevuelo, entró en la atmósfera marciana sobre Margaritifer Terra (23,90° S, 19,42° O), y devolvió 224 segundos de telemetría atmosférica directa — las primeras mediciones in situ de la temperatura, presión y perfil de composición de la atmósfera de Marte. Sin embargo, debido a un defecto de diseño en el sistema de datos del espectrómetro de masas, una gran cantidad de datos se corrompió y solo se recuperó parcialmente. La señal se perdió justo antes del aterrizaje, durante el disparo de cohetes de retropulsión; se desconoce si la sonda se estrelló o sobrevivió en la superficie. El bus de sobrevuelo continuó pasado Marte y actuó como estación de retransmisión.",
+    "new": "Parte de la ola de cuatro naves soviéticas hacia Marte de 1973 (Mars 4, 5, 6, 7) — y la única en devolver ciencia útil desde un descenso a través de la atmósfera de Marte. Lanzada el 1973-08-05 desde Baikonur en un Proton-K, llegó el 1974-03-12. El módulo de descenso se separó del bus de sobrevuelo, entró en la atmósfera marciana sobre Margaritifer Terra (23,90° S, 19,42° O), y devolvió 224 segundos de telemetría atmosférica directa — las primeras mediciones in situ de la temperatura, presión y perfil de composición de la atmósfera de Marte. Sin embargo, debido a un defecto de diseño en el sistema de datos del espectrómetro de masas, una gran cantidad de datos se corrompió y solo se recuperó parcialmente. La señal se perdió justo antes del aterrizaje, durante el disparo de cohetes de retropulsión; se desconoce si la sonda se estrelló o sobrevivió en la superficie. El bus de sobrevuelo siguió su camino más allá de Marte y actuó como estación de retransmisión."
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "dispatch",
+    "old": "Energia fue el cohete que redimió el N1 — el lanzador superpesado que la Unión Soviética finalmente logró hacer funcionar. Donde el N1 explotó en los cuatro intentos, Energia funcionó, levantando la carga útil Polyus en 1987 y el transbordador Buran en 1988. Crucialmente, era un lanzador por sí mismo, no un conjunto tipo transbordador: como Buran no tenía motores principales, Energia realizaba todo el trabajo de alcanzar la órbita y podría haber levantado igualmente otras cargas útiles pesadas sin ningún transbordador. Fue el cohete más potente que la Unión Soviética jamás lanzó exitosamente — y, como Buran, fue cancelado por falta de nada que lanzar.",
+    "new": "Energia fue el cohete que redimió el N1 — el lanzador superpesado que la Unión Soviética finalmente logró hacer funcionar. Donde el N1 explotó en los cuatro intentos, Energia funcionó, levantando la carga útil Polyus en 1987 y el transbordador Buran en 1988. Lo decisivo es que era un lanzador por derecho propio, no un conjunto tipo transbordador: como Buran no tenía motores principales, Energia realizaba todo el trabajo de alcanzar la órbita y podría haber levantado igualmente otras cargas útiles pesadas sin ningún transbordador. Fue el cohete más potente que la Unión Soviética lanzó con éxito — y, como Buran, fue cancelado por falta de algo que lanzar."
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "description",
+    "old": "Vehículo de Lanzamiento de Satélites Polares de cuatro etapas en su configuración extendida (XL): seis aceleradores sólidos strap-on PS0M-XL con ~50 % más propelente que el PSLV estándar. Eleva ~3,8 t a LEO / ~1,8 t a SSO / ~1,4 t a GTO y ha transportado las misiones interplanetarias más significativas de India — Chandrayaan-1 (2008) y Mangalyaan / Mars Orbiter Mission (2013) — desde la Primera Plataforma de Lanzamiento de Sriharikota. Todavía activo para despliegues de observación de la Tierra hiperespectrales + radar.",
+    "new": "Vehículo de Lanzamiento de Satélites Polares de cuatro etapas en su configuración extendida (XL): seis aceleradores sólidos laterales PS0M-XL con ~50 % más propelente que el PSLV estándar. Eleva ~3,8 t a LEO / ~1,8 t a SSO / ~1,4 t a GTO y ha transportado las misiones interplanetarias más significativas de India — Chandrayaan-1 (2008) y Mangalyaan / Mars Orbiter Mission (2013) — desde la Primera Plataforma de Lanzamiento de Sriharikota. Todavía activo para despliegues de observación de la Tierra hiperespectrales + radar."
+  },
+  {
+    "rel": "fleet/constellation/iridium-next.json",
+    "at": "best_known_for",
+    "old": "Comsat LEO polar — 66 satélites operativos +9 de repuesto, asociado GMDSS, voz/datos global",
+    "new": "Comunicaciones LEO polares — 66 satélites operativos +9 de repuesto, socio del GMDSS, voz/datos global"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "old": "El único orbitador de Marte de la ESA; la primera misión planetaria europea",
+    "new": "Primer y único orbitador de Marte de la ESA; la primera misión planetaria europea"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv.json",
+    "at": "description",
+    "old": "HTV (Kounotori) es una nave de carga robótica construida por Mitsubishi Heavy Industries en Japón. El H-II Transfer Vehicle de Japón realizó nueve misiones hacia la EEI entre 2009 y 2020, siendo HTV-9 (el vuelo final) el que se apartó en mayo de 2020.",
+    "new": "HTV (Kounotori) es una nave de carga robótica construida por Mitsubishi Heavy Industries en Japón. El H-II Transfer Vehicle de Japón realizó nueve misiones hacia la EEI entre 2009 y 2020, siendo HTV-9 (el vuelo final) el que se desacopló en mayo de 2020."
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "best_known_for",
+    "old": "Lanzador reutilizable superligero de tres núcleos",
+    "new": "Lanzador reutilizable superpesado de tres núcleos"
+  },
+  {
+    "rel": "missions/earth/skylab-4.json",
+    "at": "first",
+    "old": "Permanencia más larga en Skylab — 84 días, observó el Cometa Kohoutek, disputada «huelga de Skylab» de descanso",
+    "new": "Permanencia más larga en Skylab — 84 días, observó el cometa Kohoutek, día de descanso de la disputada «huelga de Skylab»"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "description",
+    "old": "Akatsuki —«amanecer»— fue la primera misión de Japón a Venus. Lanzado el 2010-05-20 desde Tanegashima en un H-IIA 202, junto con el demostradores de velas solares IKAROS. La inserción en órbita de Venus planeada para el 2010-12-07 falló cuando la acumulación de cristales de sal en una válvula de comprobación del oxidante sacó del eje el motor principal 152 segundos después del inicio de la maniobra. JAXA mantuvo la sonda viva en órbita solar durante cinco años, doce maniobras de corrección, hasta la siguiente ventana de encuentro con Venus. El 2015-12-07 una maniobra de 1228 segundos usando cuatro propulsores de control de actitud —nunca diseñados para inserción orbital— colocó Akatsuki en una órbita altamente elíptica de 400 × 440 000 km con inclinación de 3°. Uno de los salvamentos de misión más dramáticos en la historia de la exploración espacial. Se perdió el contacto en 2024; JAXA declaró las operaciones completadas el 2025-09-18.",
+    "new": "Akatsuki —«amanecer»— fue la primera misión de Japón a Venus. Lanzado el 2010-05-20 desde Tanegashima en un H-IIA 202, junto con el demostrador de vela solar IKAROS. La inserción en órbita de Venus planeada para el 2010-12-07 falló cuando la acumulación de cristales de sal en una válvula de comprobación del oxidante sacó del eje el motor principal 152 segundos después del inicio de la maniobra. JAXA mantuvo la sonda viva en órbita solar durante cinco años, doce maniobras de corrección, hasta la siguiente ventana de encuentro con Venus. El 2015-12-07 una maniobra de 1228 segundos usando cuatro propulsores de control de actitud —nunca diseñados para inserción orbital— colocó Akatsuki en una órbita altamente elíptica de 400 × 440 000 km con inclinación de 3°. Uno de los salvamentos de misión más dramáticos en la historia de la exploración espacial. Se perdió el contacto en 2024; JAXA declaró las operaciones completadas el 2025-09-18."
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "description",
+    "old": "El quinto alunizaje tripulado y el primero en un sitio de tierras altas no lunarejo. Los geólogos esperaban que Descartes fuera volcánico; Apollo 16 desacreditó esta teoría — todas las rocas devueltas fueron brecha (escombro fragmentado por impacto), remodelando la comprensión de las tierras altas lunares como productos de impactos catastróficos más que de vulcanismo antiguo. Young y Duke completaron tres EVAs con apoyo de LRV totalizando 20 h 14 m, recorrieron 26,7 km y devolvieron 95,7 kg de muestras (el envío de Apollo más pesado hasta esa fecha). El «Gran Prix lunar» de Young — una prueba de velocidad televisada del LRV — alcanzó un máximo de ~17 km/h. El intento de salto de 11 segundos de Duke durante un intento de récord de salto en largo lo puso en riesgo de dañar su mochila PLSS y fue cancelado. La foto familiar de Charlie Duke y la «Cámara/Espectrógrafo de UV Lejano» — el primer observatorio astronómico operado desde la superficie de otro mundo — ambos terminaron en el sitio de alunizaje. Mattingly, originalmente en Apollo 13 (reemplazado antes del lanzamiento por preocupaciones de sarampión alemán), finalmente logró volar a la Luna.",
+    "new": "El quinto alunizaje tripulado y el primero en una región de tierras altas, no de mares. Los geólogos esperaban que Descartes fuera volcánico; Apollo 16 desacreditó esta teoría — todas las rocas devueltas fueron brecha (escombro fragmentado por impacto), remodelando la comprensión de las tierras altas lunares como productos de impactos catastróficos más que de vulcanismo antiguo. Young y Duke completaron tres EVAs con apoyo de LRV totalizando 20 h 14 m, recorrieron 26,7 km y devolvieron 95,7 kg de muestras (el cargamento de Apollo más pesado hasta esa fecha). El «Gran Premio lunar» de Young — una prueba de velocidad televisada del LRV — alcanzó un máximo de ~17 km/h. El intento de salto de 11 segundos de Duke durante un intento de récord de salto en largo lo puso en riesgo de dañar su mochila PLSS y fue cancelado. La foto familiar de Charlie Duke y la «Cámara/Espectrógrafo de UV Lejano» — el primer observatorio astronómico operado desde la superficie de otro mundo — ambos terminaron en el sitio de alunizaje. Mattingly, originalmente en Apollo 13 (reemplazado antes del lanzamiento por preocupaciones de sarampión alemán), finalmente logró volar a la Luna."
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "dispatch",
+    "old": "Perseverance fue a Marte en busca de los muertos. Descendió en 2021 en el suelo del cráter Jezero —una cuenca que alberga el delta de un río que alimentó un lago hace miles de millones de años, exactamente el tipo de lugar donde la vida habría dejado huellas— es el primer rover construido específicamente para buscar signos de vida antigua, y para hacer algo que ninguna misión había hecho: sellar rocas marcianas en tubos y apartarlas para que una nave espacial futura las llevara a casa. También entregó Ingenuity, el pequeño helicóptero que realizó el primer vuelo propulsado en otro planeta. Si las muestras que está almacenando alguna vez regresan, serán los primeros fragmentos de la superficie de otro planeta traídos de vuelta a la Tierra.",
+    "new": "Perseverance fue a Marte en busca de los muertos. Aterrizó en 2021 en el suelo del cráter Jezero —una cuenca que alberga el delta de un río que alimentó un lago hace miles de millones de años, exactamente el tipo de lugar donde la vida habría dejado huellas—, y es el primer rover construido específicamente para buscar signos de vida antigua, y para hacer algo que ninguna misión había hecho: sellar rocas marcianas en tubos y apartarlas para que una nave espacial futura las llevara a casa. También entregó Ingenuity, el pequeño helicóptero que realizó el primer vuelo propulsado en otro planeta. Si las muestras que está almacenando alguna vez regresan, serán los primeros fragmentos de la superficie de otro planeta traídos de vuelta a la Tierra."
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "description",
+    "old": "El vuelo de 48 órbitas de Pável Popóvich, lanzado el 1962-08-12 a las 08:02 UTC, veinticuatro horas después de Vostok 3. Las dos cápsulas se acercaron a ≈6,5 km e intercambiaron las primeras comunicaciones de radio voz entre cosmonautas en órbita. Popóvich fue ordenado descender un día antes cuando los controladores de tierra malinterpretaron una frase codificada sobre truenos como la palabra clave de angustia para terminación temprana — la señal real era una observación rutinaria del clima. Aterrizó el 1962-08-15 a las 06:59 UTC cerca de Karaganda, siete minutos después de Vostok 3.",
+    "new": "El vuelo de 48 órbitas de Pável Popóvich, lanzado el 1962-08-12 a las 08:02 UTC, veinticuatro horas después de Vostok 3. Las dos cápsulas se acercaron a ≈6,5 km e intercambiaron las primeras comunicaciones de radio por voz entre cosmonautas en órbita. Se ordenó a Popóvich descender un día antes cuando los controladores de tierra malinterpretaron una frase codificada sobre truenos como la palabra clave de emergencia para una terminación anticipada — la señal real era una observación meteorológica rutinaria. Aterrizó el 1962-08-15 a las 06:59 UTC cerca de Karaganda, siete minutos después de Vostok 3."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.8.note",
+    "old": "Inyección translunar de retorno. SPS ∆v ~1,0 km/s.",
+    "new": "Inyección de retorno a la Tierra. SPS ∆v ~1,0 km/s."
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.note",
+    "old": "Una quemadura del propulsor de 27 minutos captura Hope en órbita marciana el 2021-02-09.",
+    "new": "Un encendido del propulsor de 27 minutos captura Hope en órbita marciana el 2021-02-09."
+  },
+  {
+    "rel": "missions/moon/luna21.json",
+    "at": "events.2.note",
+    "old": "Corrección de curso en ruta durante el trayecto.",
+    "new": "Corrección de trayectoria a mitad de camino durante el crucero."
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.9.note",
+    "old": "Inyección trans-Tierra. SPS ∆v ~1,0 km/s.",
+    "new": "Inyección de retorno a la Tierra. SPS ∆v ~1,0 km/s."
+  },
+  {
+    "rel": "missions/earth/otv-2.json",
+    "at": "events.2.note",
+    "old": "Aterrizaje autónomo en pista en la base Base de la Fuerza Aérea Vandenberg el 16 de junio de 2012.",
+    "new": "Aterrizaje autónomo en pista en la Base de la Fuerza Aérea Vandenberg el 16 de junio de 2012."
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.1.note",
+    "old": "Corte de la Stage-2 + separación de la carga útil; órbita 215 × 939 km, inclinación de 65,1°, período de 96,2 min.",
+    "new": "Corte de la segunda etapa + separación de la carga útil; órbita 215 × 939 km, inclinación de 65,1°, período de 96,2 min."
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "firsts.1.label",
+    "old": "Voyager 2 cruza la heliopausa (USA)",
+    "new": "Voyager 2 cruza la heliopausa (EE.UU.)"
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.1.note",
+    "old": "Trans-Mars Injection: 3,61 km/s. Velocidad de escape alcanzada.",
+    "new": "Inyección trans-Marte: 3,61 km/s. Velocidad de escape alcanzada."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.2.label",
+    "old": "Urano — 19.18 UA, inclinado 97°",
+    "new": "Urano — 19,18 UA, inclinado 97°"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-cruise-luna17_webp.what",
+    "old": "Autobús de etapa de descenso que transporta el rover Lunokhod (Luna 17 / 21).",
+    "new": "Bus de la etapa de descenso que transporta el rover Lunokhod (Luna 17 / 21)."
+  },
+  {
+    "rel": "iss-modules/columbus.json",
+    "at": "function_detail",
+    "old": "Ciencia de materiales, biología y fluidos con racks interiores.",
+    "new": "Bastidores de ciencia de materiales, biología y física de fluidos con cargas útiles atendidas por la tripulación y capacidad de observación de la Tierra."
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.1.why",
+    "old": "Saturno tiene unos 274 satélites confirmados —los más de cualquier planeta— con Titán lo suficientemente grande para poseer su propia atmósfera densa y Encélado expulsando activamente agua desde un océano subsuperficial.",
+    "new": "Saturno tiene unos 274 satélites confirmados —más que cualquier otro planeta— con Titán lo suficientemente grande para poseer su propia atmósfera densa y Encélado expulsando activamente agua desde un océano subsuperficial."
+  },
+  {
+    "rel": "moon-sites/clementine.json",
+    "at": "mission_type",
+    "old": "Orbiter · Ended 1994",
+    "new": "Orbitador · Finalizó en 1994"
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "mission_type",
+    "old": "Uncrewed Lander · Lost",
+    "new": "Módulo de aterrizaje no tripulado · Perdido"
+  },
+  {
+    "rel": "moon-sites/change2.json",
+    "at": "fact",
+    "old": "Comenzó como un remapeo de mayor resolución de la Luna tras Chang'e 1, pero fue reutilizado para una misión de exploración del espacio profundo extendida. Tras completar el mapeo lunar en 2011, Chang'e 2 partió hacia el punto L2 del sistema Tierra-Sol —la primera misión china de exploración del espacio profundo— y posteriormente realizó un sobrevuelo del asteroide 4179 Teutates en 2012. Aún se registra en órbita heliocéntrica.",
+    "new": "Comenzó como una nueva cartografía de mayor resolución de la Luna tras Chang'e 1, pero fue reutilizado para una misión de exploración del espacio profundo extendida. Tras completar la cartografía lunar en 2011, Chang'e 2 partió hacia el punto L2 del sistema Tierra-Sol —la primera misión china de exploración del espacio profundo— y posteriormente realizó un sobrevuelo del asteroide 4179 Toutatis en 2012. Aún se registra en órbita heliocéntrica."
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "fact",
+    "old": "Lunokhod 2 fue el segundo de dos róderes lunares soviéticos (1973). Fue conducido por un equipo terrestre de 5 personas que se turnaban en el centro de control IKI. En 4 meses recorrió ~39 km — el récord de distancia en la superficie lunar que se mantuvo durante 41 años hasta que el róver marciano Opportunity de la NASA lo superó en 2014. Llevaba retrorreflectores láser franceses que hoy en día aún se utilizan para mediciones de distancia Tierra-Luna.",
+    "new": "Lunokhod 2 fue el segundo de dos róveres lunares soviéticos (1973). Fue conducido por un equipo terrestre de 5 personas que se turnaban en el centro de control IKI. En 4 meses recorrió ~39 km — el récord de distancia en la superficie lunar que se mantuvo durante 41 años hasta que el róver marciano Opportunity de la NASA lo superó en 2014. Llevaba retrorreflectores láser franceses que hoy en día aún se utilizan para mediciones de distancia Tierra-Luna."
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "bio",
+    "old": "Identificado como cuerpo independiente en 2001 mediante observaciones de eventos mutuos. Menecio (padre de Patroclo en la tradición homérica) comparte la órbita estable L5 con Patroclo, a 60° en atraso respecto a Júpiter. La geometría del sistema binario de casi igual masa genera un baricentro situado fuera de ambos cuerpos, lo que convierte a Patroclo-Menecio en el binario de contacto más grande conocido de la población troyano.",
+    "new": "Identificado como cuerpo independiente en 2001 mediante observaciones de eventos mutuos. Menecio (padre de Patroclo en la tradición homérica) comparte la órbita estable L5 con Patroclo, a 60° en atraso respecto a Júpiter. La geometría del sistema binario de casi igual masa genera un baricentro situado fuera de ambos cuerpos, lo que convierte a Patroclo-Menecio en el binario cercano más grande conocido de la población troyana."
+  },
+  {
+    "rel": "moon-sites/apollo11.json",
+    "at": "fact",
+    "old": "Los primeros humanos en la Luna. Observado en directo por ~600 millones de personas —aproximadamente una de cada seis personas en la Tierra en ese momento. El retrorrefletor láser colocado por Armstrong y Aldrin sigue recibiendo impulsos hoy en día, midiendo la distancia Tierra-Luna con precisión milimétrica. Las huellas en el regolito sin atmósfera perdurarán sin cambios durante un millón de años.",
+    "new": "Los primeros humanos en la Luna. Observados en directo por ~600 millones de personas —aproximadamente una de cada seis personas en la Tierra en ese momento. El retrorreflector láser colocado por Armstrong y Aldrin sigue recibiendo impulsos hoy en día, midiendo la distancia Tierra-Luna con precisión milimétrica. Las huellas en el regolito sin atmósfera perdurarán sin cambios durante un millón de años."
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.4.why",
+    "old": "La Luna es inusualmente grande para su primaria — la razón (diámetro ≈ 0.27 de la Tierra) es la más alta en cualquier pareja planeta–satélite.",
+    "new": "La Luna es inusualmente grande para su primaria — la razón (diámetro ≈ 0,27 de la Tierra) es la más alta en cualquier pareja planeta–satélite."
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.0.why",
+    "old": "La excentricidad de 0,967 del Halley es la órbita de cometa de período corto del libro de texto — casi parabólica, con perihelio 0.59 UA y afelio 35 UA.",
+    "new": "La excentricidad de 0,967 del Halley es la órbita de cometa de período corto del libro de texto — casi parabólica, con perihelio 0,59 UA y afelio 35 UA."
+  },
+  {
+    "rel": "small-bodies/itokawa.json",
+    "at": "science_sections.0.why",
+    "old": "Itokawa es un asteroide Apollo cercano a la Tierra — semieje mayor 1,32 UA. La cita de Hayabusa en 2005 + retorno de muestras en 2010 fue el primer viaje redondo a un NEA.",
+    "new": "Itokawa es un asteroide Apollo cercano a la Tierra — semieje mayor 1,32 UA. La cita de Hayabusa en 2005 + retorno de muestras en 2010 fue el primer viaje de ida y vuelta a un NEA."
+  },
+  {
+    "rel": "universe/named-stars/adhara.json",
+    "at": "bio",
+    "old": "Adhara (Epsilon Canis Majoris) es una pareja azul-blanca caliente a unos 430 años luz de distancia, la segunda estrella más brillante de Canis Maior después de Sirio. Hace unos millones de años pasó mucho más cerca del Sol y fue entonces la estrella más brillante de todo el cielo terrestre.",
+    "new": "Adhara (Epsilon Canis Majoris) es una pareja azul-blanca caliente a unos 430 años luz de distancia, la segunda estrella más brillante del Can Mayor después de Sirio. Hace unos millones de años pasó mucho más cerca del Sol y fue entonces la estrella más brillante de todo el cielo terrestre."
+  },
+  {
+    "rel": "universe/named-stars/sirius.json",
+    "at": "bio",
+    "old": "Sirio (Alpha Canis Majoris) es una estrella caliente de la secuencia principal blanco-azulada con una tenue compañera enana blanca, Sirius B, el núcleo agotado de una estrella que en su día fue más masiva. Su brillo se debe a una estrella genuinamente luminosa situada inusualmente cerca de nosotros.",
+    "new": "Sirio (Alpha Canis Majoris) es una estrella caliente de la secuencia principal blanco-azulada con una tenue compañera enana blanca, Sirio B, el núcleo agotado de una estrella que en su día fue más masiva. Su brillo se debe a una estrella genuinamente luminosa situada inusualmente cerca de nosotros."
+  },
+  {
+    "rel": "universe/named-stars/rigil-kentaurus.json",
+    "at": "cultural",
+    "old": "El nombre es árabe y significa 'pie del Centauro'. Junto con la cercana Hadar forma los 'Punteros' que guían a los observadores del sur hacia la Cruz del Sur, y como la estrella similar al Sol más cercana es un objetivo perenne de estudios de viaje interestelar y de la ficción.",
+    "new": "El nombre es árabe y significa 'pie del Centauro'. Junto con la cercana Hadar forma las 'Apuntadoras' que guían a los observadores del sur hacia la Cruz del Sur, y como la estrella similar al Sol más cercana es un objetivo perenne de estudios de viaje interestelar y de la ficción."
+  },
+  {
+    "rel": "universe/named-stars/barnards-star.json",
+    "at": "bio",
+    "old": "La estrella de Barnard posee el movimiento propio más grande conocido de cualquier estrella, cruzando una anchura aparente del tamaño de la Luna a través del cielo aproximadamente cada 180 años, lo que le ha valido el apodo de «Barnard's Runaway Star». Es una antigua enana roja de baja masa.",
+    "new": "La estrella de Barnard posee el movimiento propio más grande conocido de cualquier estrella, recorriendo en el cielo una distancia aparente igual al diámetro de la Luna aproximadamente cada 180 años, lo que le ha valido el apodo de «la Estrella Fugitiva de Barnard». Es una antigua enana roja de baja masa."
+  },
+  {
+    "rel": "universe/named-stars/castor.json",
+    "at": "cultural",
+    "old": "Cástor es el jinete mortal de los Dioscuri, hermano gemelo de Pólux en la mitología griega y romana. Aunque está designado como 'Alpha', suele ser ligeramente más tenue que su hermano Pólux que está junto a él.",
+    "new": "Cástor es el jinete mortal de los Dioscuri, hermano gemelo de Pólux en la mitología griega y romana. Aunque está designado como 'Alfa', suele ser ligeramente más tenue que su hermano Pólux que está junto a él."
+  },
+  {
+    "rel": "universe/named-stars/denebola.json",
+    "at": "cultural",
+    "old": "El nombre proviene del árabe 'dhanab al-asad', 'la cola del león'. En la astrología antigua se la consideraba una estrella de mala fortuna, en contraste con la regia Regulus en el corazón del León.",
+    "new": "El nombre proviene del árabe 'dhanab al-asad', 'la cola del león'. En la astrología antigua se la consideraba una estrella de mala fortuna, en contraste con la regia Régulo en el corazón del León."
+  },
+  {
+    "rel": "universe/named-stars/procyon.json",
+    "at": "cultural",
+    "old": "El nombre griego significa 'antes del perro', porque desde muchas latitudes Procyon asciende sobre el horizonte poco antes que Sirio. Junto con Sirio y Betelgeuse forma el brillante 'Triángulo de Invierno'.",
+    "new": "El nombre griego significa 'antes del perro', porque desde muchas latitudes Proción asciende sobre el horizonte poco antes que Sirio. Junto con Sirio y Betelgeuse forma el brillante 'Triángulo de Invierno'."
+  }
+]

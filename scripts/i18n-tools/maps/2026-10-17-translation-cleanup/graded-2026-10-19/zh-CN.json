@@ -1,0 +1,381 @@
+{
+  "locale": "zh-CN",
+  "segments": {
+    "UI strings — long (help text, panels)": {
+      "sampled": 25,
+      "ok": 25,
+      "minor": 0,
+      "broken": 0
+    },
+    "UI strings — short (menus, labels, buttons)": {
+      "sampled": 25,
+      "ok": 19,
+      "minor": 6,
+      "broken": 0
+    },
+    "essays (long editorial)": {
+      "sampled": 10,
+      "ok": 8,
+      "minor": 2,
+      "broken": 0
+    },
+    "fleet (launcher/capsule/engine/site descriptions)": {
+      "sampled": 25,
+      "ok": 23,
+      "minor": 2,
+      "broken": 0
+    },
+    "mission descriptions": {
+      "sampled": 25,
+      "ok": 24,
+      "minor": 1,
+      "broken": 0
+    },
+    "mission event notes": {
+      "sampled": 25,
+      "ok": 18,
+      "minor": 6,
+      "broken": 1
+    },
+    "other short entries (earth-objects, satellites, iss, orbit-regimes, …)": {
+      "sampled": 25,
+      "ok": 17,
+      "minor": 6,
+      "broken": 2
+    },
+    "planets & sites (short facts)": {
+      "sampled": 25,
+      "ok": 14,
+      "minor": 6,
+      "broken": 5
+    },
+    "programs (long editorial)": {
+      "sampled": 10,
+      "ok": 10,
+      "minor": 0,
+      "broken": 0
+    },
+    "science articles (editorial)": {
+      "sampled": 10,
+      "ok": 3,
+      "minor": 6,
+      "broken": 1
+    },
+    "universe (short entries)": {
+      "sampled": 25,
+      "ok": 25,
+      "minor": 0,
+      "broken": 0
+    }
+  },
+  "findings": [
+    {
+      "id": "UI-1",
+      "key": "messages :: launches_banner_aria",
+      "grade": "MINOR",
+      "issue": "Awkward, elliptical rendering of 'Next featured launches'.",
+      "fix": "接下来的精选发射"
+    },
+    {
+      "id": "UI-2",
+      "key": "messages :: launches_pill_dropdown_caret_label",
+      "grade": "MINOR",
+      "issue": "'下拉' alone is incomplete; should be dropdown menu.",
+      "fix": "切换下拉菜单"
+    },
+    {
+      "id": "UI-3",
+      "key": "messages :: science_layer_hover_label",
+      "grade": "MINOR",
+      "issue": "'Hover' mistranslated as 移动 (move).",
+      "fix": "悬停信息卡"
+    },
+    {
+      "id": "UI-5",
+      "key": "messages :: tiangong_btn_spin_title",
+      "grade": "MINOR",
+      "issue": "Stray space after slash and 站台 (platform) instead of space station.",
+      "fix": "暂停/恢复空间站旋转"
+    },
+    {
+      "id": "UI-18",
+      "key": "messages :: lab_conn_ltm_slim",
+      "grade": "MINOR",
+      "issue": "Straight ASCII quotes instead of Chinese quotation marks.",
+      "fix": "SLIM——日本精准的“月球狙击手”"
+    },
+    {
+      "id": "UI-22",
+      "key": "messages :: explore_hide_controls_title",
+      "grade": "MINOR",
+      "issue": "'controls' should be 控件 (UI controls).",
+      "fix": "隐藏控件"
+    },
+    {
+      "id": "essays-8",
+      "key": "essays/the-body-in-the-dark.json :: body.23.md",
+      "grade": "MINOR",
+      "issue": "'deconditioning' rendered as 机能失调 (dysfunction) rather than physical decline.",
+      "fix": "现有的对抗措施是真实的，但并不完备。先进的阻力锻炼设备——[国际空间站](/programs/iss)上用的那种，比早期[Skylab](/programs/skylab)任务上飞过的有了实质的进步——能大幅减缓骨骼和肌肉的流失，但不能消除。营养干预、治疗骨流失的药物和睡眠管理方案，各自都有些贡献。人工重力——通过旋转航天器或其中某个舱段实现——可以应对最大的一类问题，即微重力生理，但至今没有一艘带人工重力的载人航天器被建造或飞行过，而且在质量和发射体积上的工程代价十分可观。[Skylab](/programs/skylab)计划的三批乘组——1973至1974年间分别在轨28天、59天和84天——为美国提供了第一批系统的证据，表明锻炼能有效抵消身体机能衰退，这一发现塑造了此后每一个长期飞行计划的乘组健康方案。"
+    },
+    {
+      "id": "essays-9",
+      "key": "essays/going-to-the-moon.json :: body.26.md",
+      "grade": "MINOR",
+      "issue": "Jezero left in Latin; place names take native form.",
+      "fix": "与[穿越火星大气的下降](/essays/seven-minutes)不同，月球着陆完全得不到大气制动——从头到尾都靠火箭，每个高度上都在燃烧推进剂，轨迹一旦定下，即便最后几秒发现下方地面出现意外，也无法作出有意义的修正。以[七分钟那篇文章](/essays/seven-minutes)的框架来看，月球是无大气情形中最纯粹的一种：没有免费的减速，没有可以争取时间的热防护罩，也没有降落伞阶段。你想留给科学载荷的每一份重量，都得先在燃料预算里挤出来。而让月球变得可控的[光速延迟](/science/mission-phases/dsn)——那1.3秒的往返时间——短到足以让人留在控制回路里，这意味着月球着陆器还不需要 Perseverance 在 耶泽罗陨石坑 使用的那种完全自主的地形相对导航。它们能从中受益，但还不是非有不可。这一区别到火星就不成立了。"
+    },
+    {
+      "id": "fleet-14",
+      "key": "fleet/crewed-spacecraft/discovery.json :: tagline",
+      "grade": "MINOR",
+      "issue": "'飞行最多' is elliptical; should say most of any orbiter.",
+      "fix": "OV-103 — 第三艘航天飞机。1990 年 STS-31 部署 Hubble；执行两次复飞任务。39 次飞行 — 轨道器中最多"
+    },
+    {
+      "id": "fleet-20",
+      "key": "fleet/orbiter/mars-odyssey.json :: description",
+      "grade": "MINOR",
+      "issue": "Book title left in English instead of the Chinese title.",
+      "fix": "迄今在火星运行时间最长的航天器——2001 年 10 月 24 日进入火星轨道，到 2026 年仍在运行，超过了其他所有火星任务的寿命。2001年4月7日由 Delta II 从卡纳维拉尔角发射，以亚瑟·克拉克的《2001太空漫游》命名。它搭载了 THEMIS（Thermal Emission Imaging System，100 米可见光 / 100 米红外成像，绘制了全球表面矿物分布）以及伽马射线谱仪套件 GRS + HEND + NS——Boynton 等人（2002，《科学》297）利用 HEND 中子能谱学绘制了全球近地表水冰分布，这一发现推动了此后每一次着陆器任务的选址。它还是火星表面探测器（MERs、MSL、InSight、Perseverance）的主要 UHF 中继，也是 Mars Reconnaissance Orbiter 的备份。延长任务的燃料储备预计可维持到 2026–2027 年。"
+    },
+    {
+      "id": "mission-5",
+      "key": "missions/earth/sigma-7.json :: description",
+      "grade": "MINOR",
+      "issue": "Schirra's name rendered two different ways (施艾拉 / 施路拉).",
+      "fix": "沃利·希拉的6圈轨道飞行——飞行时间是格伦和卡彭特飞行的两倍。希拉称他的飞行为“教科书式工程测试”——最少的实验负载，专注于节省消耗品，验证航天器能进行更长时间的飞行。飞行时间9小时13分钟；轨道参数161 × 283 km。溅落在太平洋中途岛东北方约445 km处——这是首次在太平洋溅落的 Mercury 飞行。Aurora 7使用了38 kg的姿态控制气体；希拉用仅32 kg的气体完成了两倍的飞行时间。Sigma 7号舱在佛罗里达州可可滩宇航员纪念天文馆和观测台展出。"
+    },
+    {
+      "id": "mission-1",
+      "key": "missions/earth/sputnik1.json :: events.0.note",
+      "grade": "MINOR",
+      "issue": "Half-width parentheses and comma in Chinese text.",
+      "fix": "Sputnik 8K71PS运载火箭于1957-10-04 19:28:34 UTC从NIIP-5一号工位（后称拜科努尔，加加林发射台）升空。"
+    },
+    {
+      "id": "mission-7",
+      "key": "missions/moon/apollo10.json :: events.6.note",
+      "grade": "BROKEN",
+      "issue": "Trans-Earth injection rendered as 地月转移注入 (trans-lunar injection) - wrong meaning.",
+      "fix": "地球返回注入。SPS ∆v ~1.0 km/s。"
+    },
+    {
+      "id": "mission-14",
+      "key": "missions/earth/gemini8.json :: events.2.note",
+      "grade": "MINOR",
+      "issue": "Half-width semicolon in Chinese text.",
+      "fix": "卡住的推进器导致组合体以约 1 转/秒翻滚；阿姆斯特朗用再入控制系统恢复。"
+    },
+    {
+      "id": "mission-16",
+      "key": "missions/saturn/cassini.json :: events.1.note",
+      "grade": "MINOR",
+      "issue": "Half-width comma in Chinese text.",
+      "fix": "四次引力辅助中的第一次，为抵达土星积蓄能量。"
+    },
+    {
+      "id": "mission-17",
+      "key": "missions/moon/apollo17.json :: events.5.note",
+      "grade": "MINOR",
+      "issue": "Straight ASCII quotes and colon instead of Chinese punctuation.",
+      "fix": "塞尔南：“我们如我们来时一样离开，上天保佑，我们终将归来。”"
+    },
+    {
+      "id": "mission-22",
+      "key": "missions/moon/chandrayaan3.json :: events.0.note",
+      "grade": "MINOR",
+      "issue": "Half-width parentheses and an odd redundant place-name gloss.",
+      "fix": "LVM3 M4（前身为GSLV Mk III）从斯里哈里科塔发射。"
+    },
+    {
+      "id": "mission-25",
+      "key": "missions/eurybates/lucy.json :: events.2.note",
+      "grade": "MINOR",
+      "issue": "Half-width parentheses in Chinese text.",
+      "fix": "2023-11-01。首次小行星掠过——约790 m主小行星带天体；发现卫星Selam（接触双星）。"
+    },
+    {
+      "id": "other-1",
+      "key": "earth-objects/tundra-molniya.json :: scale_fact",
+      "grade": "MINOR",
+      "issue": "ASCII quotes and half-width comma in Chinese text.",
+      "fix": "63.4° 倾角并非偶然——这是“临界倾角”，地球 J2 摄动会将远地点锁定在所选半球上空。"
+    },
+    {
+      "id": "other-2",
+      "key": "original-work.json :: models3d./images/colophon/model-launcher-starship_webp.what",
+      "grade": "MINOR",
+      "issue": "'stack' as 堆栈 (computing term) and 'ogive' as 圆锥形.",
+      "fix": "裸露不锈钢全可重复使用组合体——Super Heavy 上配 33 台 Raptor 发动机，Starship 上配 6 台，前后舵翼和尖拱形鼻锥。"
+    },
+    {
+      "id": "other-7",
+      "key": "site-stories/apollo12.json :: intro",
+      "grade": "MINOR",
+      "issue": "Half-width commas in Chinese text.",
+      "fix": "Apollo 12 于1969年11月19日降落在风暴洋——这是一次精确到“步行可达”的着陆，落点就在 2½ 年前着陆的无人着陆器 Surveyor 3 附近。康拉德和宾在月面停留了31小时，进行了两次舱外活动,带回34千克样本以及 Surveyor 3 的部分部件供分析。此次任务证明,载人的 Apollo 飞船能够抵达月球表面的特定目标。"
+    },
+    {
+      "id": "other-9",
+      "key": "orbit-regimes-explore/BELT.json :: firsts.1.label",
+      "grade": "MINOR",
+      "issue": "Half-width parentheses with stray space.",
+      "fix": "Dawn — 首个专用小行星轨道器（灶神星，USA）"
+    },
+    {
+      "id": "other-10",
+      "key": "orbit-regimes-moon/NRHO.json :: name",
+      "grade": "BROKEN",
+      "issue": "Name left entirely in English.",
+      "fix": "近直线晕轨道"
+    },
+    {
+      "id": "other-12",
+      "key": "orbit-regimes-explore/SCATTERED.json :: name",
+      "grade": "BROKEN",
+      "issue": "Name left entirely in English.",
+      "fix": "离散盘 + 类赛德娜天体"
+    },
+    {
+      "id": "other-13",
+      "key": "satellites/moon.json :: science_sections.1.why",
+      "grade": "MINOR",
+      "issue": "ASCII quotes around 超级月亮.",
+      "fix": "月球的0.055离心率虽小但很关键——在近地点圆盘看起来比远地点亮12%且更大（“超级月亮”）。"
+    },
+    {
+      "id": "other-20",
+      "key": "site-stories/zhurong.json :: chapters.2.images.0.caption",
+      "grade": "MINOR",
+      "issue": "Half-width comma in Chinese text.",
+      "fix": "祝融号导航相机拍摄的全景图，画面包含着陆器甲板及远处的火星地表——这是 NASA 和苏联之外的火星任务传回的首张地面视角图像。"
+    },
+    {
+      "id": "planets-1",
+      "key": "mars-sites/opportunity.json :: mission_type",
+      "grade": "BROKEN",
+      "issue": "Left entirely in English.",
+      "fix": "无人漫游车 · 任务完成"
+    },
+    {
+      "id": "planets-3",
+      "key": "mars-sites/exomars-rosalind-franklin.json :: fact",
+      "grade": "BROKEN",
+      "issue": "'radiation-damaged top metre' garbled into 放射线损伤的表层米数.",
+      "fix": "ESA首辆火星漫游车。原本是俄罗斯主导的联合任务，计划于2022年进行；在2022年乌克兰入侵事件后被取消，并改为由ESA主导、NASA提供支持的任务。重新确定目标发射时间为2028年，到达时间为2029年。配备一部2米地下钻机——这是火星漫游车迄今计划中最深的钻机，设计用于钻入受辐射损伤的最上层一米以下。"
+    },
+    {
+      "id": "planets-7",
+      "key": "moon-sites/change5.json :: capability",
+      "grade": "MINOR",
+      "issue": "Inconsistent terms 登陆器/上升飞行器 for lander/ascent vehicle.",
+      "fix": "现代机器人样本返回架构——火星样本返回着陆器/上升器/轨道器链的直接先驱。"
+    },
+    {
+      "id": "planets-8",
+      "key": "planets/patroclus.json :: bio",
+      "grade": "MINOR",
+      "issue": "Clumsy 的…的 chain and run-on object list.",
+      "fix": "1906年发现，分类为P型小行星，低反照率、红色反射特征。Lucy将于2033-03-02以8.4公里/秒的速度完成相遇，结束主任务——航天器将在一次接近中对这个双小行星系统的两颗天体进行成像，绘制表面地形、组成成分图，以及过去45亿年来将它们束缚在一起的引力舞蹈。"
+    },
+    {
+      "id": "planets-9",
+      "key": "planets/leucus.json :: links.0.l",
+      "grade": "MINOR",
+      "issue": "Leucus left in Latin although the native name 琉科斯 is used elsewhere.",
+      "fix": "11351 琉科斯 — Wikipedia"
+    },
+    {
+      "id": "planets-11",
+      "key": "small-bodies/didymos.json :: science_sections.0.why",
+      "grade": "MINOR",
+      "issue": "Half-width parentheses and commas in Chinese text.",
+      "fix": "双生星是一个双小行星近地天体（半长轴1.64 AU）。DART（NASA，2022）撞击其小伴星双卫一以测试小行星偏转物理学。"
+    },
+    {
+      "id": "planets-15",
+      "key": "moon-sites/smart-1.json :: mission_type",
+      "grade": "BROKEN",
+      "issue": "Left entirely in English.",
+      "fix": "轨道器 · 2006年结束"
+    },
+    {
+      "id": "planets-16",
+      "key": "planets/mercury.json :: science_sections.4.why",
+      "grade": "BROKEN",
+      "issue": "'late 2026' became 晚于2026年 (later than 2026) - wrong meaning.",
+      "fix": "三个任务跨越水星探测历程：Mariner 10（1974年）、MESSENGER（2011–15年）和BepiColombo（2026年底入轨）。"
+    },
+    {
+      "id": "planets-17",
+      "key": "mars-sites/perseverance.json :: fact",
+      "grade": "BROKEN",
+      "issue": "Garbled 在2024年1月前叶片受损前 reads as 'before January 2024' and is ungrammatical.",
+      "fix": "为未来火星样品返回任务设计，用于缓存有前景的岩心。截至2024年中期，已钻取并密封26多个样品。Ingenuity直升机原本计划进行为期30天的技术演示，但在2024年1月旋翼受损前共飞行72次。这是另一个世界上首次动力控制飞行。"
+    },
+    {
+      "id": "planets-19",
+      "key": "moon-sites/chandrayaan1.json :: capability",
+      "grade": "MINOR",
+      "issue": "Awkward word order for 'first direct global confirmation'.",
+      "fix": "首次在全球范围内直接确认月球表面水的存在；改变了随后每一份月球资源利用路线图。"
+    },
+    {
+      "id": "planets-25",
+      "key": "planets/leucus.json :: bio",
+      "grade": "MINOR",
+      "issue": "'木星族' is confusing (Jupiter-family comets); should be Trojan family.",
+      "fix": "1997年发现，以琉科斯（奥德修斯的战友，在特洛伊阵亡）命名。D型光谱分类——特洛伊小行星族中最暗和最红的。Lucy在2028-04-18的近距离接触将揭示其形状、表面成分，以及导致缓慢自旋的旋转状态演化。"
+    },
+    {
+      "id": "science-4",
+      "key": "science/mission-phases/interplanetary-internet.json :: body_paragraphs.1",
+      "grade": "MINOR",
+      "issue": "Term left in English without Chinese; ASCII quotes and half-width punctuation.",
+      "fix": "延迟/中断容忍网络（Delay/Disruption-Tolerant Networking，DTN）通过不同的架构解决了这个问题。不是维持端到端的连接，而是网络中的每个节点都保存一个自包含的数据“包”——一个包含路由元数据、过期时间和有效载荷的单位——并仅在合适的链路可用时才转发。如果当前没有链路开放，节点会无限期地存储数据包，然后在下一个接触窗口打开时递送。该协议已标准化：Bundle协议是IETF标准（RFC 9171）。其基础工作——延迟容错网络架构RFC 4838——由TCP/IP的原始架构师之一文顿·瑟夫与NASA/JPL合作部分奠定。"
+    },
+    {
+      "id": "science-5",
+      "key": "science/porkchop/departure-axis.json :: narrative_101.1",
+      "grade": "MINOR",
+      "issue": "Unnatural wording: 便宜成本单元行, 叶片 for lobe.",
+      "fix": "沿着低成本单元所在的行看过去（冷色调的青绿色瓣区），你可以在日历上精确读出发射窗口的时间。对火星来说大约每26个月一次。对金星每19个月一次。对木星每13个月一次。每个低成本区就是一个窗口——在这些区域之外，日历与你作对。"
+    },
+    {
+      "id": "science-6",
+      "key": "science/history/sputnik-1957.json :: narrative_101.2",
+      "grade": "BROKEN",
+      "issue": "Person name von Braun left in Latin; ASCII quotes.",
+      "fix": "1957年，美国没有能够进入轨道的火箭——Vanguard在12月于发射台上爆炸。Explorer 1最终在1958年1月31日进入轨道，搭载的是冯·布劳恩的Redstone衍生火箭。“Sputnik冲击”启动了NASA（1958年）、《国家国防教育法案》以及整个太空竞赛，这场竞赛将定义接下来的十年。"
+    },
+    {
+      "id": "science-7",
+      "key": "science/exoplanets/fifty-one-pegasi.json :: body_paragraphs.0",
+      "grade": "MINOR",
+      "issue": "Exoplanet name left in Latin (native form 飞马座51b used elsewhere).",
+      "fix": "飞马座51b是通过径向速度法发现的：一个清晰的约4.2天周期的多普勒摆动揭示了一颗质量至少为木星一半的行星，其轨道极其靠近其恒星。它是除太阳以外首颗被证实围绕主序星运行的行星。"
+    },
+    {
+      "id": "science-8",
+      "key": "science/cosmology/laniakea-and-the-great-attractor.json :: body_paragraphs.2",
+      "grade": "MINOR",
+      "issue": "Unnatural 65百万秒差距 and ASCII quotes.",
+      "fix": "这个中心是巨引源，一个位于矩尺座星系团（Abell 3627）附近的质量集中区，大约6500万秒差距远。它很难被研究，因为它位于银河系自身圆盘密集的星云和尘埃后面——“回避带”——所以我们对它的了解大多来自能够穿透遮挡物的射电和红外巡天，以及来自星系运动本身的信息。"
+    },
+    {
+      "id": "science-9",
+      "key": "science/exoplanets/fifty-one-pegasi.json :: narrative_101.0",
+      "grade": "MINOR",
+      "issue": "Star name left in Latin (native form 飞马座51).",
+      "fix": "几个世纪以来，其他太阳系纯属臆测。这一切在1995年10月结束，当时米歇尔·麦耶和迪迪埃·奎洛兹宣布在飞马座51周围发现了一颗行星，那是一颗距离50光年的普通类太阳恒星。"
+    },
+    {
+      "id": "science-10",
+      "key": "science/planets/moons-of-the-system.json :: body_paragraphs.1",
+      "grade": "MINOR",
+      "issue": "ASCII quotes around 虎纹.",
+      "fix": "土星拥有任何行星中最多的卫星——截至2026年已确认轨道的约有290颗。其中两颗尤为瞩目：土卫六，太阳系第二大卫星（仅次于木卫三），拥有比地球表面更浓厚的氮气大气；Huygens号探针于2005年在其表面着陆并传回了首批表面图像。土卫二体积小得多，其表面年轻且冰冻，南极存在呈条纹状的“虎纹”山脊，并具有活跃的冷喷火山口，向太空喷射水蒸气和有机物——Cassini飞行器穿过羽流进行了直接采样。土卫二的羽流是土星E环的来源——其冷喷火山冰物质直接供应该环。"
+    }
+  ]
+}

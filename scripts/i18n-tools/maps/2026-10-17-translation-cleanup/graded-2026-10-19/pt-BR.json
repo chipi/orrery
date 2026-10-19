@@ -1,0 +1,451 @@
+{
+  "locale": "pt-BR",
+  "segments": {
+    "UI strings — long (help text, panels)": {
+      "sampled": 25,
+      "ok": 17,
+      "minor": 7,
+      "broken": 1
+    },
+    "UI strings — short (menus, labels, buttons)": {
+      "sampled": 25,
+      "ok": 22,
+      "minor": 3,
+      "broken": 0
+    },
+    "essays (long editorial)": {
+      "sampled": 10,
+      "ok": 9,
+      "minor": 1,
+      "broken": 0
+    },
+    "fleet (launcher/capsule/engine/site descriptions)": {
+      "sampled": 25,
+      "ok": 22,
+      "minor": 2,
+      "broken": 1
+    },
+    "mission descriptions": {
+      "sampled": 25,
+      "ok": 19,
+      "minor": 5,
+      "broken": 1
+    },
+    "mission event notes": {
+      "sampled": 25,
+      "ok": 19,
+      "minor": 6,
+      "broken": 0
+    },
+    "other short entries (earth-objects, satellites, iss, orbit-regimes, …)": {
+      "sampled": 25,
+      "ok": 20,
+      "minor": 3,
+      "broken": 2
+    },
+    "planets & sites (short facts)": {
+      "sampled": 25,
+      "ok": 14,
+      "minor": 7,
+      "broken": 4
+    },
+    "programs (long editorial)": {
+      "sampled": 10,
+      "ok": 10,
+      "minor": 0,
+      "broken": 0
+    },
+    "science articles (editorial)": {
+      "sampled": 10,
+      "ok": 7,
+      "minor": 3,
+      "broken": 0
+    },
+    "universe (short entries)": {
+      "sampled": 25,
+      "ok": 17,
+      "minor": 7,
+      "broken": 1
+    }
+  },
+  "findings": [
+    {
+      "id": "UI-1",
+      "key": "messages :: lab_f_soft_land_glossary",
+      "grade": "MINOR",
+      "issue": "Formula variable v_safe was renamed and \"toque\" is an odd rendering of touchdown.",
+      "fix": "margem = v_safe − v_t: o que o trem de pouso resiste menos o que o paraquedas entrega (cartão de velocidade terminal). Positivo: pouso suave. Negativo: você precisa de foguetes de retropropulsão ou airbags — os próximos cartões."
+    },
+    {
+      "id": "UI-7",
+      "key": "messages :: why_solar_mass_body",
+      "grade": "MINOR",
+      "issue": "\"O Sol pesa ... a massa\" is awkward.",
+      "fix": "A massa fixa a gravidade, a gravidade fixa toda órbita. O Sol tem 333.000 vezes a massa da Terra e domina o sistema solar; esse único número, com as leis de Kepler, prevê onde cada planeta está a cada momento."
+    },
+    {
+      "id": "UI-11",
+      "key": "messages :: lab_goal_land_mercury_desc",
+      "grade": "MINOR",
+      "issue": "\"Sem ar absolutamente\" is unnatural.",
+      "fix": "Sem ar algum, e um mergulho feroz no poço gravitacional do Sol. Sem nada para frear, cada metro por segundo deve ser eliminado pelo motor."
+    },
+    {
+      "id": "UI-14",
+      "key": "messages :: lab_f_boosters_glossary",
+      "grade": "MINOR",
+      "issue": "Variable F_core renamed; \"aceleradores presos\" is a wrong term for strap-on boosters.",
+      "fix": "N_b = ⌈(F_req − F_core)/F_b⌉: qualquer empuxo que o estágio núcleo não conseguir fornecer, propulsores auxiliares laterais (boosters) devem — cada um adiciona F_b. Arredonde para cima, porque não existe meio booster."
+    },
+    {
+      "id": "UI-16",
+      "key": "messages :: lab_goal_lss_verdict",
+      "grade": "BROKEN",
+      "issue": "\"slingshots\" rendered as \"lançamentos\" (launches), changing the meaning.",
+      "fix": "Some em Δv da órbita baixa: um estágio poderoso (~8,5 km/s) cai bem na linha de ~8,7 — os maiores lançamentos mal a ultrapassam sozinhos. Um sobrevoo fornece a margem e, mais importante, a velocidade extra para realmente EXPLORAR os planetas externos em vez de passar arrastado pelo escape. Por isso a Voyager usou os estilingues gravitacionais."
+    },
+    {
+      "id": "UI-20",
+      "key": "messages :: science_layer_moons_desc",
+      "grade": "MINOR",
+      "issue": "Iapetus should be Jápeto, and the list separators were flattened making the grouping ambiguous.",
+      "fix": "Luas principais + anéis orbitais ao redor de cada planeta (galileanas em Júpiter, Titã/Encélado/Jápeto em Saturno, a Lua na Terra, Fobos/Deimos em Marte, Tritão em Netuno)."
+    },
+    {
+      "id": "UI-21",
+      "key": "messages :: explore_hub_desc_localgroup",
+      "grade": "MINOR",
+      "issue": "Andromeda and Triangulum should take native forms.",
+      "fix": "Um passo mais adiante — Andrômeda, Triângulo, as Nuvens de Magalhães, e dezenas de galáxias anãs."
+    },
+    {
+      "id": "UI-23",
+      "key": "messages :: lab_conn_lar_hook",
+      "grade": "MINOR",
+      "issue": "\"Eventualmente\" is a false friend and \"cai\" is repeated where the source says \"lands\".",
+      "fix": "O canhão de Newton: imagine disparar um canhão do topo de uma montanha, cada vez mais forte. Por fim, o chão se curva tão rápido quanto a bola cai, e ela nunca chega a pousar. Esse 'cair para sempre' é exatamente o que uma órbita é — e é a lição que vem logo a seguir."
+    },
+    {
+      "id": "UI-4",
+      "key": "messages :: lab_mark_burn_depart",
+      "grade": "MINOR",
+      "issue": "\"Queimada\" means wildfire; the rocket term is \"queima\".",
+      "fix": "Queima de partida"
+    },
+    {
+      "id": "UI-15",
+      "key": "messages :: lab_f_retro_dv",
+      "grade": "MINOR",
+      "issue": "Booster rendered as \"Foguete\" with a stray capital; wrong term.",
+      "fix": "Δv do propulsor"
+    },
+    {
+      "id": "UI-19",
+      "key": "messages :: lab_f_deorbit_title",
+      "grade": "MINOR",
+      "issue": "\"Queimada\" means wildfire; \"desórbita\" is not the usual term.",
+      "fix": "Queima de desorbitação"
+    },
+    {
+      "id": "essays-6",
+      "key": "essays/generational-starships.json :: body.0.md",
+      "grade": "MINOR",
+      "issue": "Alpha Centauri should be Alfa Centauri in Portuguese.",
+      "fix": "O [ensaio sobre exploração interestelar](/essays/interstellar-exploration) faz a aritmética com honestidade, e a aritmética é impiedosa. O sistema estelar mais próximo, Alfa Centauri, fica a 4,37 anos-luz. A [Voyager 1](/missions?id=voyager-1), o objeto mais rápido que a humanidade já lançou em trajetória de escape do sistema solar, deixou a Terra em 1977 e agora — após quase cinco décadas de voo — está a menos de 0,003 ano-luz. Nesse ritmo, uma nave apontada para Alfa Centauri chegaria em cerca de 75 mil anos. O [ensaio sobre propulsão](/essays/new-propulsion) cataloga as saídas: propulsores iônicos, velas solares, motores térmico-nucleares. Ajudam nas margens do sistema solar. Diante das distâncias interestelares, até o mais ambicioso deles rende talvez um fator de dez em velocidade. Dez vezes mais rápido que a Voyager ainda significa 7.500 anos. Nenhuma tecnologia que possamos apontar, nenhuma física que compreendamos, reduz essa distância ao tamanho de uma vida humana."
+    },
+    {
+      "id": "fleet-4",
+      "key": "fleet/orbiter/lunar-orbiter-4.json :: tagline",
+      "grade": "MINOR",
+      "issue": "\"far-side regions\" shortened to \"lado oculto\", dropping \"regions\".",
+      "fix": "Quarto orbitador lunar dos EUA (1967-05-08). Primeira órbita lunar polar; mapeou 99 % do lado visível a 60 m/pixel + regiões do lado oculto"
+    },
+    {
+      "id": "fleet-8",
+      "key": "fleet/engine/le-9.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "\"expansor-sangria\" is an unnatural calque of expander-bleed cycle.",
+      "fix": "O maior motor de ciclo expansor com sangria já lançado — o núcleo do H3"
+    },
+    {
+      "id": "fleet-9",
+      "key": "fleet/space-suit/orlan-mks.json :: best_known_for",
+      "grade": "BROKEN",
+      "issue": "\"rear-entry\" was dropped.",
+      "fix": "A variante mais recente da família Orlan — traje EVA russo de entrada traseira, em serviço desde o programa Salyut de 1977"
+    },
+    {
+      "id": "mission-5",
+      "key": "missions/earth/soyuz-1.json :: dispatch",
+      "grade": "MINOR",
+      "issue": "\"primeiros lugares secretos\" mistranslates \"hidden, must-succeed firsts\".",
+      "fix": "Soyuz 1 é o voo que matou um cosmonauta, e nunca deveria ter voado. A nova espaçonave Soyuz foi apressada para serviço sob pressão política com centenas de falhas conhecidas não resolvidas — engenheiros supostamente imploraram por adiamento — e em órbita começou a falhar: um painel solar não se abriu, o controle de atitude lutava contra o piloto. Vladimir Komarov a trouxe para baixo mesmo assim, e na reentrada os paraquedas se enroscaram e falharam. Ele atingiu o solo em velocidade máxima. Foi a primeira morte na história do voo espacial humano, e sua causa foi menos má sorte do que um programa que não podia admitir que sua máquina não estava pronta — a falha exata que a cultura de feitos inéditos, secretos e de êxito obrigatório vinha construindo."
+    },
+    {
+      "id": "mission-6",
+      "key": "missions/earth/vostok-2.json :: dispatch",
+      "grade": "MINOR",
+      "issue": "\"retired a fear\" and \"answer a stride\" rendered literally.",
+      "fix": "Se Gagarin provou que uma pessoa poderia alcançar a órbita, Vostok 2 provou que uma pessoa poderia viver lá. Gherman Titov — aos vinte e cinco anos, ainda a pessoa mais jovem a voar no espaço — passou um dia inteiro no alto, dezessete órbitas em vinte e cinco horas, tempo suficiente para comer, dormir e descobrir algo que ninguém havia sentido antes: enjoo espacial, a náusea de um ouvido interno sem cima ou baixo para se agarrar. Ele superou isso. O voo dissipou um medo genuíno — de que o corpo pudesse simplesmente falhar após horas de ausência de gravidade — e empurrou a fronteira de uma única volta para um dia inteiro, num ritmo que os americanos, ainda dando saltos de quinze minutos, não conseguiam acompanhar."
+    },
+    {
+      "id": "mission-7",
+      "key": "missions/moon/chandrayaan1.json :: description",
+      "grade": "MINOR",
+      "issue": "Gender and article slips: \"do NASA\", \"de ISRO\", \"ISRO perdeu\".",
+      "fix": "A primeira espaçonave interplanetária da ISRO. O orbitador entregou a Moon Impact Probe à superfície lunar – o primeiro objeto indiano em outro mundo – e transportou 11 instrumentos de 6 países. O instrumento Moon Mineralogy Mapper (M3) da NASA, hospedado no Chandrayaan-1, fez a descoberta que reescreveu os livros didáticos: as moléculas de água estão espalhadas por toda a superfície lunar, não apenas presas em crateras polares sombreadas. A missão terminou abruptamente em agosto de 2009, quando a ISRO perdeu a comunicação com a espaçonave."
+    },
+    {
+      "id": "mission-9",
+      "key": "missions/didymos/hera.json :: description",
+      "grade": "MINOR",
+      "issue": "Agency name left in English in running text.",
+      "fix": "Hera é a contribuição da Agência Espacial Europeia (ESA) ao primeiro experimento de defesa planetária da humanidade. Em 2022, a nave espacial DART da NASA colidiu deliberadamente com Dimorfos — a pequena lua do asteroide Dídimo — e encurtou de forma mensurável sua órbita. Hera, lançada em outubro de 2024 em um Falcon 9, está voando para o mesmo asteroide binário (com uma assistência gravitacional de Marte em 2025 no trajeto) para conduzir o levantamento pós-impacto detalhado que a DART não pôde fazer: o tamanho da cratera, a massa e estrutura interna de Dimorfos, e precisamente quanto momento o impacto transferiu. Juntas, DART e Hera transformam uma demonstração única em uma técnica de desvio repetível e bem caracterizada. Hera carrega dois CubeSats, Juventas e Milani, para sondagem de radar em close e mineralogia."
+    },
+    {
+      "id": "mission-17",
+      "key": "missions/earth/voskhod-2.json :: description",
+      "grade": "BROKEN",
+      "issue": "Airlock rendered as \"compartimento de ar\", missing verb in \"O traje ... inchado\", names not in pt form.",
+      "fix": "Voo de 1 dia de Pavel Beliáiev + Alexei Leonov — primeira EVA da história. Leonov passou 12 min fora de Voskhod 2 (1965-03-18 11:34 UTC), pressurizado através de uma eclusa Volga inflável que engenheiros soviéticos adicionaram porque o casco Voskhod não tinha espaço para despressurização completa. O traje de Leonov inchou no vácuo e o prendeu fora da eclusa; ele teve que ventilar a pressão do traje para reentrar, aumentando o risco de doença de descompressão. A reentrada foi igualmente dramática — o sistema automático de pouso falhou, e Beliáiev pilotou manualmente o módulo de descida para um pouso duro na neve profunda dos Urais ~390 km fora do alvo; a tripulação sobreviveu a duas noites na floresta entre lobos antes que helicópteros de resgate chegassem 1965-03-21. A atmosfera do compartimento também ficou rica em O₂ em órbita, após a escotilha de EVA não conseguir se fechar novamente, brevemente arriscando combustão espontânea."
+    },
+    {
+      "id": "mission-18",
+      "key": "missions/venus/akatsuki.json :: description",
+      "grade": "MINOR",
+      "issue": "\"queimada\" means wildfire (should be \"queima\"); check valve is \"válvula de retenção\".",
+      "fix": "Akatsuki — \"amanhecer\" — foi a primeira missão venusiana do Japão. Lançada em 2010-05-20 de Tanegashima em um H-IIA 202, emparelhada com o demonstrador de vela solar IKAROS. A inserção orbital planejada em Vênus para 2010-12-07 falhou quando cristais de sal acumulados em uma válvula de retenção de oxidante desalinharam o motor principal 152 segundos após o início da queima. A JAXA manteve a espaçonave viva em órbita solar por cinco anos, doze manobras corretivas, até a próxima janela de encontro com Vênus. Em 2015-12-07 uma queima de 1228 segundos usando quatro propulsores de controle de atitude — nunca projetados para inserção orbital — colocou Akatsuki em uma órbita altamente elíptica de 400 × 440.000 km, inclinação de 3°. Um dos salvamentos de missão mais dramáticos na história da exploração espacial. O contato foi perdido em 2024; a JAXA declarou as operações completas em 2025-09-18."
+    },
+    {
+      "id": "mission-6",
+      "key": "missions/mars/mars-pathfinder.json :: events.2.note",
+      "grade": "MINOR",
+      "issue": "Typo \"retrorfoguetes\".",
+      "fix": "Entrada atmosférica direta — sem inserção em órbita. Escudo térmico, paraquedas, retrofoguetes, depois inflação de airbags."
+    },
+    {
+      "id": "mission-9",
+      "key": "missions/moon/apollo11.json :: events.3.note",
+      "grade": "MINOR",
+      "issue": "Mare Tranquillitatis left in Latin; native form is Mar da Tranquilidade.",
+      "fix": "Lunar Module Eagle pousa no Mar da Tranquilidade 1969-07-20 20:17:40 UTC."
+    },
+    {
+      "id": "mission-10",
+      "key": "missions/moon/apollo11.json :: events.2.note",
+      "grade": "MINOR",
+      "issue": "\"Inserção da órbita\" is wrong preposition.",
+      "fix": "Inserção em órbita lunar."
+    },
+    {
+      "id": "mission-16",
+      "key": "missions/earth/otv-2.json :: events.2.note",
+      "grade": "MINOR",
+      "issue": "Duplicated word \"base Base\".",
+      "fix": "Pouso autônomo em pista na Base da Força Aérea de Vandenberg em 2012-06-16."
+    },
+    {
+      "id": "mission-23",
+      "key": "missions/moon/artemis2.json :: events.1.note",
+      "grade": "MINOR",
+      "issue": "\"Queimadura\" means injury by burn; should be \"queima\".",
+      "fix": "Queima de injeção translunar pelo ICPS – Orion se separa na trajetória cislunar."
+    },
+    {
+      "id": "mission-25",
+      "key": "missions/moon/change3.json :: events.3.note",
+      "grade": "MINOR",
+      "issue": "Mare Imbrium untranslated; \"implantado\" is wrong for a rover deployed.",
+      "fix": "Pouso suave no Mar das Chuvas em 2013-12-14. Primeiro pouso suave desde Luna 24 (1976). Rover Yutu liberado horas depois."
+    },
+    {
+      "id": "other-8",
+      "key": "original-work.json :: models3d./images/colophon/model-launcher-starship_webp.what",
+      "grade": "MINOR",
+      "issue": "\"Pilha\" is an odd rendering of \"stack\".",
+      "fix": "Conjunto totalmente reutilizável de aço inoxidável nu — 33 Raptors no Super Heavy, 6 no Starship, abas dianteiras e traseiras, e nariz ogival."
+    },
+    {
+      "id": "other-15",
+      "key": "orbit-regimes-explore/TERRESTRIAL.json :: story",
+      "grade": "MINOR",
+      "issue": "\"direção a Marte\" is awkward for \"Mars-bound\".",
+      "fix": "O sistema solar interno rochoso — 0,4 a 1,5 UA do Sol. Quatro pequenos mundos com núcleos metálicos, mantos de silicato e atmosferas finas ou ausentes. Eles se formaram dentro da linha de congelamento, onde estava quente demais para que gelos voláteis condensassem, então apenas materiais refratários (silicatos, ferro, níquel) permaneceram sólidos. Três dos quatro foram alvos de exploração tripulada (Terra, Lua, a caminho de Marte)."
+    },
+    {
+      "id": "other-16",
+      "key": "rockets/ariane-6.json :: first",
+      "grade": "BROKEN",
+      "issue": "Mostly left in English.",
+      "fix": "Sucessor europeu do Ariane 5, com estágio superior reacendível para injeção direta"
+    },
+    {
+      "id": "other-21",
+      "key": "site-stories/change3.json :: chapters.2.images.1.caption",
+      "grade": "MINOR",
+      "issue": "Mare Imbrium left in Latin.",
+      "fix": "Perfil do radar de penetração no solo do Yutu do subsolo do Mar das Chuvas — múltiplos derrames de basalto em camadas, até cerca de 330 m."
+    },
+    {
+      "id": "other-23",
+      "key": "sourcing/gaps.json :: gaps.0.checked.3",
+      "grade": "BROKEN",
+      "issue": "Garbled word \"imagensétéias\" and Cyrillic search names replaced by Latin.",
+      "fix": "ru.wikipedia — imagens dos artigos para Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран"
+    },
+    {
+      "id": "planets-1",
+      "key": "mars-sites/beagle2.json :: capability",
+      "grade": "MINOR",
+      "issue": "Lander rendered as \"sonda\"; \"ativos fracassados\" is stilted.",
+      "fix": "Primeiro módulo de pouso planetário liderado pelo Reino Unido; demonstrou que o reconhecimento orbital pode localizar equipamentos de superfície perdidos em escala métrica."
+    },
+    {
+      "id": "planets-6",
+      "key": "mars-sites/exomars-rosalind-franklin.json :: fact",
+      "grade": "BROKEN",
+      "issue": "European Portuguese forms, \"top metre\" mistranslated as \"medidor superior\", wrong articles/genders.",
+      "fix": "A primeira missão de rover da ESA a Marte. Originalmente uma missão conjunta liderada pela Rússia, planejada para 2022; cancelada após a invasão da Ucrânia em 2022 e redefinida como liderada pela ESA, com contribuições da NASA. Relançamento previsto para 2028, com chegada em 2029. Leva uma broca subterrânea de 2 metros — a mais profunda já planejada para um rover em Marte, projetada para atingir abaixo do metro superficial danificado pela radiação."
+    },
+    {
+      "id": "planets-7",
+      "key": "moon-sites/clementine.json :: mission_type",
+      "grade": "MINOR",
+      "issue": "\"Terminado\" is unnatural for a mission status.",
+      "fix": "Orbitador · Encerrado em 1994"
+    },
+    {
+      "id": "planets-8",
+      "key": "mars-sites/mars6.json :: mission_type",
+      "grade": "BROKEN",
+      "issue": "\"Uncrewed Lander\" rendered as the nonsensical \"Módulo de pouso desenroscado\".",
+      "fix": "Módulo de pouso não tripulado · Perdido"
+    },
+    {
+      "id": "planets-10",
+      "key": "moon-sites/change2.json :: capability",
+      "grade": "MINOR",
+      "issue": "\"não-NASA-não-ESA\" is awkward.",
+      "fix": "Primeira missão chinesa de espaço profundo; primeira missão fora da NASA e da ESA a L2; primeiro sobrevoo de asteroide chinês."
+    },
+    {
+      "id": "planets-12",
+      "key": "planets/jupiter.json :: fact",
+      "grade": "MINOR",
+      "issue": "Outdated spelling \"asteróides\".",
+      "fix": "A gravidade de Júpiter esculpiu o cinturão de asteroides – evitando um quinto planeta rochoso. Sem ele, Marte seria muito maior."
+    },
+    {
+      "id": "planets-15",
+      "key": "planets/itokawa.json :: links.1.l",
+      "grade": "BROKEN",
+      "issue": "Link label left untranslated in English.",
+      "fix": "Arquivo da missão Hayabusa (JAXA / ISAS)"
+    },
+    {
+      "id": "planets-17",
+      "key": "moon-sites/luna21.json :: capability",
+      "grade": "BROKEN",
+      "issue": "\"telessuperacionada\" is a non-word for teleoperated.",
+      "fix": "Mobilidade teleoperada de longa distância — provou que uma equipe remota pode dirigir um veículo não tripulado por uma superfície alienígena em tempo real (com atraso de luz)."
+    },
+    {
+      "id": "planets-19",
+      "key": "mars-sites/mro.json :: capability",
+      "grade": "MINOR",
+      "issue": "Awkward phrasing of highest-resolution and eyes-in-the-sky.",
+      "fix": "Imageamento orbital de maior resolução de qualquer planeta; os olhos no céu de todas as missões recentes à superfície de Marte."
+    },
+    {
+      "id": "planets-20",
+      "key": "moon-sites/apollo11.json :: fact",
+      "grade": "MINOR",
+      "issue": "\"retroreflector\" is not Portuguese.",
+      "fix": "Os primeiros humanos na Lua. Assistidos ao vivo por ~600 milhões de pessoas — aproximadamente uma em seis pessoas na Terra na época. O retrorrefletor a laser colocado por Armstrong e Aldrin ainda recebe pulsos hoje, medindo a distância Terra-Lua com precisão milimétrica. Pegadas no regolito sem atmosfera permanecerão inalteradas por um milhão de anos."
+    },
+    {
+      "id": "planets-25",
+      "key": "small-bodies/halley.json :: science_sections.1.why",
+      "grade": "MINOR",
+      "issue": "Decimal point instead of comma; missing article.",
+      "fix": "O enorme deslocamento periélio-afélio de Halley (35 a 0,59 UA) impulsiona os gelos superficiais a sublimarem violentamente perto do periélio, produzindo a coma e a cauda. Próximo periélio: 2061."
+    },
+    {
+      "id": "science-5",
+      "key": "science/propulsion/antimatter-propulsion.json :: body_paragraphs.0",
+      "grade": "MINOR",
+      "issue": "\"bico magnético\" is the wrong term; nozzle is \"bocal\".",
+      "fix": "O argumento energético é exato, não aproximado. Quando um próton encontra um antipróton, ambos se convertem integralmente em píons, raios gama e partículas leves — E = mc² aplicado completamente, sem resíduo químico ou nuclear. A densidade energética é aproximadamente 10 bilhões de vezes maior que a do melhor propelente químico e cerca de 1.000 vezes a da fissão ou fusão. Um motor de aniquilação matéria-antimatéria com um bocal magnético para direcionar o escape de píons carregados poderia, em teoria, alcançar valores de impulso específico da ordem de milhões de segundos e acelerar uma espaçonave para uma fração significativa da velocidade da luz."
+    },
+    {
+      "id": "science-6",
+      "key": "science/mission-phases/interplanetary-internet.json :: body_paragraphs.1",
+      "grade": "MINOR",
+      "issue": "English left in running text for the architecture name.",
+      "fix": "Delay/Disruption-Tolerant Networking (DTN) resolve o problema com uma arquitetura diferente. Em vez de manter uma conexão ponta a ponta, cada nó na rede mantém um 'bundle' de dados autossuficiente — uma unidade contendo metadados de roteamento, tempos de expiração e a carga útil — e o encaminha apenas quando um enlace adequado está disponível. O nó armazena o bundle indefinidamente se nenhum enlace estiver aberto no momento, então o entrega quando a próxima janela de contato abre. O protocolo é padronizado: o Bundle Protocol é um padrão IETF (RFC 9171). Sua base — a arquitetura de redes tolerantes a atrasos (delay-tolerant networking), RFC 4838 — foi estabelecida em parte por Vint Cerf, um dos arquitetos originais do TCP/IP, trabalhando com NASA/JPL."
+    },
+    {
+      "id": "science-7",
+      "key": "science/porkchop/departure-axis.json :: narrative_101.1",
+      "grade": "MINOR",
+      "issue": "\"teal fresco\" and \"Veja através\" are awkward/untranslated.",
+      "fix": "Observe a linha de células de baixo custo (o lóbulo verde-azulado frio) e você pode ler, no calendário, exatamente quando são as janelas de lançamento. Para Marte são aproximadamente a cada 26 meses. Para Vênus a cada 19. Para Júpiter a cada 13. Cada zona barata é uma janela — fora dessas zonas, o calendário está contra você."
+    },
+    {
+      "id": "universe-1",
+      "key": "universe/exoplanets/gj-273-c.json :: fact",
+      "grade": "MINOR",
+      "issue": "\"Luyten\" alone loses \"Luyten's Star\".",
+      "fix": "Um companheiro interno quente do mundo da zona habitável da Estrela de Luyten."
+    },
+    {
+      "id": "universe-3",
+      "key": "universe/exoplanets/alf-ari-b.json :: bio",
+      "grade": "MINOR",
+      "issue": "Alpha Arietis and Aries should be Alfa and Áries.",
+      "fix": "Hamal (Alfa Arietis), a estrela mais brilhante de Áries, ancorava o equinócio vernal dois mil anos atrás e ainda empresta seu nome ao ponto zero do céu. Um planeta com quase duas vezes a massa de Júpiter foi inferido a partir do movimento da gigante alaranjada, colocando outro mundo ao redor de uma das estrelas de referência mais antigas do zodíaco."
+    },
+    {
+      "id": "universe-5",
+      "key": "universe/named-stars/adhara.json :: bio",
+      "grade": "MINOR",
+      "issue": "Constellation left in Latin.",
+      "fix": "Adhara (Epsilon Canis Majoris) é um par azul-branco quente a cerca de 430 anos-luz de distância, a segunda estrela mais brilhante no Cão Maior depois de Sirius. Há alguns milhões de anos, ela passou muito mais perto do Sol e foi então a estrela mais brilhante em todo o céu da Terra."
+    },
+    {
+      "id": "universe-7",
+      "key": "universe/named-stars/almach.json :: cultural",
+      "grade": "MINOR",
+      "issue": "Andromeda should be Andrômeda.",
+      "fix": "O nome deriva de um termo árabe para um pequeno gato do deserto ou lince. Almach marca o pé da princesa acorrentada Andrômeda, na extremidade oposta da constelação em relação à sua cabeça em Alpheratz."
+    },
+    {
+      "id": "universe-16",
+      "key": "universe/named-stars/barnards-star.json :: bio",
+      "grade": "BROKEN",
+      "issue": "Nickname left in English in running text.",
+      "fix": "A Estrela de Barnard tem o maior movimento próprio conhecido de qualquer estrela, atravessando uma largura aparente da Lua no céu aproximadamente a cada 180 anos — o que lhe valeu o apelido \"Estrela Fugitiva de Barnard\". É uma anã vermelha antiga e de baixa massa."
+    },
+    {
+      "id": "universe-17",
+      "key": "universe/named-stars/castor.json :: cultural",
+      "grade": "MINOR",
+      "issue": "Dioscuri/Alpha should be Dióscuros/Alfa.",
+      "fix": "Castor é o cavaleiro mortal dos Dióscuros, irmão gêmeo de Pollux na mitologia grega e romana. Embora designada 'Alfa', ela é geralmente ligeiramente mais fraca que seu irmão Pollux ao seu lado."
+    },
+    {
+      "id": "universe-20",
+      "key": "universe/named-stars/pollux.json :: cultural",
+      "grade": "MINOR",
+      "issue": "Dioscuri should be Dióscuros.",
+      "fix": "Pollux e a vizinha Castor são os 'Dióscuros', os irmãos gêmeos da mitologia grega e romana — Pollux, o filho imortal de Zeus. A dupla tem guiado e protegido navegantes desde a antiguidade."
+    },
+    {
+      "id": "universe-24",
+      "key": "universe/named-stars/nunki.json :: bio",
+      "grade": "MINOR",
+      "issue": "Constellation left in Latin.",
+      "fix": "Nunki (Sigma Sagittarii) é uma estrela azul e quente da sequência principal a cerca de 230 anos-luz de distância, a segunda mais brilhante em Sagitário. Ela faz parte do asterismo do 'Bule', próximo de onde a Via Láctea é mais rica."
+    }
+  ]
+}

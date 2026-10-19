@@ -1,0 +1,512 @@
+[
+  {
+    "rel": "messages",
+    "at": "lab_f_soft_land_glossary",
+    "old": "margin = v_safe − v_t: wat de landingsgestel overleeft minus wat de parachute oplevert (eindsnelheid-kaart). Positief: grondaanraking. Negatief: je hebt retroraketten of airbags nodig — de volgende kaarten.",
+    "new": "margin = v_safe − v_t: wat het landingsgestel overleeft minus wat de parachute oplevert (eindsnelheid-kaart). Positief: grondaanraking. Negatief: je hebt retroraketten of airbags nodig — de volgende kaarten."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lot_entry",
+    "old": "Titan schuilt onder een stikstofatmosfeer anderhalf keer zo dik als die van de Aarde op het oppervlak, en hij reikt hoog — Huygens voelde hem al meer dan duizend kilometer hoger. Met 6 km/s haalde de sonde meer dan tien g achter haar hitteschild: een echte terugkeer, op een maan.",
+    "new": "Titan schuilt onder een stikstofatmosfeer anderhalf keer zo dik als die van de Aarde aan het oppervlak, en hij reikt hoog — Huygens voelde hem al meer dan duizend kilometer hoger. Met 6 km/s trok de sonde meer dan tien g achter haar hitteschild: een echte terugkeer, op een maan."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_tsw_microg",
+    "old": "Komeet 67P/Tsjoerimov-Gerassimenko is een berggrootte-wereld waar zwaartekracht een gerucht is: de kern heeft een oppervlaktetrek van ongeveer een vijfde van een duizendste meter per seconde in het kwadraat, en een ontsnappingssnelheid onder één meter per seconde. Lees dat nog eens — u kunt van deze komeet wegjoggen. Elk inzicht dat u heeft opgebouwd bij het landen op de Maan, Mars, Venus en Titan werkt nu tegen u: het moeilijke deel is niet aankomen. Het is blijven.",
+    "new": "Komeet 67P/Tsjoerimov-Gerassimenko is een wereld ter grootte van een berg waar zwaartekracht een gerucht is: de kern heeft een oppervlaktetrek van ongeveer een vijfde van een duizendste meter per seconde in het kwadraat, en een ontsnappingssnelheid onder één meter per seconde. Lees dat nog eens — je kunt van deze komeet wegjoggen. Elk inzicht dat je hebt opgebouwd bij het landen op de Maan, Mars, Venus en Titan werkt nu tegen je: het moeilijke deel is niet aankomen. Het is blijven."
+  },
+  {
+    "rel": "messages",
+    "at": "moon_layer_tip_surface",
+    "old": "Toon of verberg landers, rovers en gecrashte oppervlakte-voertuigen",
+    "new": "Toon of verberg landers, rovers en gecrashte oppervlaktevoertuigen"
+  },
+  {
+    "rel": "messages",
+    "at": "chip_label_pre_flight_training",
+    "old": "Pre-flight training — 2+ jaar per increment; voertuigsystemen + EVA + overleving",
+    "new": "Training vóór de vlucht — 2+ jaar per increment; voertuigsystemen + EVA + overleving"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_maxelong_glossary",
+    "old": "Een binnenplaneet kan slechts zover van de Zon af zingen: ε_max = arcsin(a(1+e)) — de arcsin van zijn APHELIUMAFSTAND in AE, het verste punt van zijn baan. Venus maximaliseert rond 47° (aphelium 0,73 AE), Mercurius rond 28° (aphelium 0,47 AE) — waarom beide altijd ochtend- of avondsterren zijn.",
+    "new": "Een binnenplaneet kan slechts zover van de Zon af zwaaien: ε_max = arcsin(a(1+e)) — de arcsin van zijn APHELIUMAFSTAND in AE, het verste punt van zijn baan. Venus komt tot ongeveer 47° (aphelium 0,73 AE), Mercurius tot ongeveer 28° (aphelium 0,47 AE) — waarom beide altijd ochtend- of avondsterren zijn."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_illustration_alt_reach_the_moon",
+    "old": "Een translunaarbaan die boog van geschetste Aarde naar de wachtende Maan, een klein ruimtevaartuig op de transfercurve.",
+    "new": "Een translunaire baan die boogt van een geschetste Aarde naar de wachtende Maan, met een klein ruimtevaartuig op de overgangsboog."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lss_voyager1",
+    "old": "Voyager 1 — het meest verre mensenmaaksel, nu in de interstellaire ruimte",
+    "new": "Voyager 1 — het verst verwijderde door mensen gemaakte object, nu in de interstellaire ruimte"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_boosters_glossary",
+    "old": "N_b = ⌈(F_req − F_core)/F_b⌉: welke stuwkracht de kernmotor niet kan leveren, moeten vastgebonden boosterraketten doen — elk voegt F_b toe. Rond af, want halve boosters bestaan niet.",
+    "new": "N_b = ⌈(F_req − F_core)/F_b⌉: welke stuwkracht de kerntrap niet kan leveren, moeten vastgebonden boosterraketten doen — elk voegt F_b toe. Rond af, want halve boosters bestaan niet."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lar_kourou",
+    "old": "Kourou (5°N) — Europas equatoriale ruimtehaven",
+    "new": "Kourou (5°N) — Europa's equatoriale ruimtehaven"
+  },
+  {
+    "rel": "messages",
+    "at": "chip_label_solar_power_budget",
+    "old": "Zonne-energie budget — paneel opwekking vs levensondersteuning + payload verbruik",
+    "new": "Zonne-energiebudget — opwekking door de panelen vs levensondersteuning + payloadverbruik"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_ltm_why",
+    "old": "De Maan heeft geen atmosfeer, dus een parachute helpt niet — de enige weg naar beneden is een motor afvuren en je gehele baansnelheid opheffen, tegen zwaartekracht in vechten de hele weg. Stuwkracht moet gewicht verslaan of je crasht. Dit is het zuivere geval; Mars geeft een deel van die remming aan de lucht.",
+    "new": "De Maan heeft geen atmosfeer, dus een parachute helpt niet — de enige weg naar beneden is een motor afvuren en je gehele baansnelheid opheffen, de hele weg tegen de zwaartekracht vechtend. Stuwkracht moet gewicht verslaan of je crasht. Dit is het zuivere geval; Mars laat een deel van die remming aan de lucht over."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lar_hook",
+    "old": "Newtons kanonskogel: stel je voor dat je een kanon vanaf een bergpiek afvuurt, steeds harder. Uiteindelijk kromt de grond net zo snel weg als de kogel valt, en het landt nooit. Dat 'voor altijd vallen' is precies wat een baan is — en dat is de volgende les.",
+    "new": "Newtons kanonskogel: stel je voor dat je een kanon vanaf een bergpiek afvuurt, steeds harder. Uiteindelijk kromt de grond net zo snel weg als de kogel valt, en hij landt nooit. Dat 'voor altijd vallen' is precies wat een baan is — en dat is de volgende les."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g7_max",
+    "old": "Waarom verschijnen Mercurius en Venus nooit om middernacht, altijd dicht bij zonsondergang of zonsopgang? Omdat ze BINNEN Earths baan rond de Zon cirkelen: een planeet op a AE kan slechts arcsin(a) graden van de Zon afwijken. Maar hun banen zijn ellipsen, dus het touw rekt en krimpt — Mercurius' grootste elongatie varieert van ~18° dicht bij perihelium tot ~28° bij aphelium, terwijl Venus rond 46° blijft hangen. Buitenplaneten hebben helemaal geen touw; ze zwerven helemaal tot oppositie. Binnen of buiten Earths baan — die ene lijn deelt de naked-eye planeten in twee.",
+    "new": "Waarom verschijnen Mercurius en Venus nooit om middernacht, altijd dicht bij zonsondergang of zonsopgang? Omdat ze BINNEN de baan van de Aarde rond de Zon cirkelen: een planeet op a AE kan slechts arcsin(a) graden van de Zon afwijken. Maar hun banen zijn ellipsen, dus het touw rekt en krimpt — Mercurius' grootste elongatie varieert van ~18° dicht bij perihelium tot ~28° bij aphelium, terwijl Venus rond 46° blijft hangen. Buitenplaneten hebben helemaal geen touw; ze zwerven helemaal tot oppositie. Binnen of buiten de baan van de Aarde — die ene lijn deelt de met het blote oog zichtbare planeten in twee."
+  },
+  {
+    "rel": "messages",
+    "at": "assembly_close",
+    "old": "Assemblage-afspelen sluiten",
+    "new": "Weergave van de assemblage sluiten"
+  },
+  {
+    "rel": "messages",
+    "at": "moon_view_alt_above",
+    "old": "{deg}° boven horizon",
+    "new": "{deg}° boven de horizon"
+  },
+  {
+    "rel": "messages",
+    "at": "fly_mission_flight_path",
+    "old": "VLIEGROUTE MISSIE",
+    "new": "VLUCHTROUTE VAN DE MISSIE"
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "description",
+    "old": "Gezamenlijke ESA + NASA zon- / heliosfeer-missie, gebouwd door Dornier met Amerikaanse wetenschappelijke bijdrage. Gelanceerd op 06-10-1990 vanaf STS-41 Discovery + IUS + PAM-S op een hoog-energetisch direct traject naar Jupiter — de enige manier om een sonde uit het ecliptica-vlak te slingeren zonder prohibitieve delta-V. Jupiter-flyby op 08-02-1992 boog de sonde af in een 80°-hellingsbaan om de Zon (1,3 × 5,4 AE, periode 6,2 jaar) — de eerste en nog steeds enige sonde die over de zonnepolen vloog. Drie volledige poolbanen gaven ons de 3D-structuur van het heliosferische stroomvlak, de snellere polaire / langzamere equatoriale zonnewind en het enige meerjarendekkende record. Missie eindigde in 2009.",
+    "new": "Gezamenlijke ESA + NASA zonne-/heliosfeermissie, gebouwd door Dornier met Amerikaanse wetenschappelijke bijdrage. Gelanceerd op 1990-10-06 vanaf STS-41 Discovery op een hoogenergetisch traject rechtstreeks naar Jupiter — de enige manier om een sonde zonder onhaalbaar hoge delta-v uit het eclipticavlak te slingeren. De voorbijvlucht langs Jupiter op 1992-02-08 boog de sonde af in een heliocentrische baan met 80° inclinatie (1,3 × 5,4 AE, omlooptijd 6,2 jaar) — de eerste en nog steeds enige sonde die over de polen van de Zon vloog. Drie volledige poolbanen gaven ons de 3D-structuur van het heliosferische stroomvlak, de snellere polaire / langzamere equatoriale zonnewind en het enige decennialange record van het gedrag van poolcoronagaten over een volledige zonnecyclus. Missie beëindigd in 2009."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "tagline",
+    "old": "Vierde Amerikaanse maanorbiter (1967-05-08). Eerste polaire maanbaan; 99 % van zichtbare zijde op 60 m/pixel + afgekeerde zijde",
+    "new": "Vierde Amerikaanse maanorbiter (1967-05-08). Eerste polaire maanbaan; 99 % van de voorkant op 60 m/pixel + delen van de achterkant"
+  },
+  {
+    "rel": "fleet/engine/le-9.json",
+    "at": "best_known_for",
+    "old": "De grootste expander-bleed-motor ooit gevlogen — het hart van H3",
+    "new": "De grootste expander-bleed-motor ooit gevlogen — de kerntrap van de H3"
+  },
+  {
+    "rel": "fleet/space-suit/orlan-mks.json",
+    "at": "description",
+    "old": "Nieuwste variant van de Orlan-familie — Russisch EVA-pak met achteringang dat ononderbroken vliegt sinds Salyut 6 in 1977. De kosmonaut stapt in via een luik dat op de rugzak is gemonteerd en in één beweging sluit, waardoor de onderdruk-uitademingsfase die Amerikaanse pakken met lagere druk vereisen, vervalt. Werkdruk 5,8 psi (400 hPa) zuivere O₂. Gebruikt op het Russische segment van het ISS. Eerdere Orlan-varianten dienden op de Salyut- en Mir-stations.",
+    "new": "Nieuwste variant van de Orlan-familie — Russisch EVA-pak met achteringang dat ononderbroken vliegt sinds Salyut 6 in 1977. De kosmonaut stapt in via een luik dat op de rugzak is gemonteerd en in één beweging sluit, waardoor de voorademing voor het verlaten van de sluis die Amerikaanse pakken met lagere druk vereisen, vervalt. Werkdruk 5,8 psi (400 hPa) zuivere O₂. Gebruikt op het Russische segment van het ISS. Eerdere Orlan-varianten dienden op de Salyut- en Mir-stations."
+  },
+  {
+    "rel": "fleet/lander/mars6.json",
+    "at": "description",
+    "old": "Onderdeel van de Sovjet-golving van vier ruimtevaartuigen naar Mars in 1973 (Mars 4, 5, 6, 7) — en het enige dat nuttige wetenschap terugbracht van een afdaling door Mars' atmosfeer. Gelanceerd op 1973-08-05 vanuit Bajkonoer op een Proton-K, gearriveerd op 1974-03-12. De afdalingsmodule scheidden zich af van de voorbijvlieg-bus, drong Mars' atmosfeer binnen boven Margaritifer Terra (23,90° Z, 19,42° W), en zond 224 seconden directe atmosferische telemetrie — de eerste in-situ-metingen van Mars' atmosfeertemperatuur, druk en compositieprofiel. Door een ontwerpfout in het gegevenssysteem van de massaspectrometer was echter een groot deel van de gegevens beschadigd en slechts gedeeltelijk hersteld. Het signaal ging verloren net voor landing, tijdens het afremraketvuren; of het landingsvaartuig is gecrasht of op het oppervlak is geland, is onbekend. De voorbijvlieg-bus vervolgde zijn weg langs Mars en diende als relaisstation.",
+    "new": "Onderdeel van de Sovjetgolf van vier ruimtevaartuigen naar Mars in 1973 (Mars 4, 5, 6, 7) — en het enige dat nuttige wetenschap terugbracht van een afdaling door Mars' atmosfeer. Gelanceerd op 1973-08-05 vanuit Bajkonoer op een Proton-K, gearriveerd op 1974-03-12. De afdalingsmodule scheidde zich af van de voorbijvliegende bus, drong Mars' atmosfeer binnen boven Margaritifer Terra (23,90° Z, 19,42° W), en zond 224 seconden directe atmosferische telemetrie — de eerste in-situ-metingen van Mars' atmosfeertemperatuur, druk en samenstellingsprofiel. Door een ontwerpfout in het gegevenssysteem van de massaspectrometer was echter een groot deel van de gegevens beschadigd en slechts gedeeltelijk hersteld. Het signaal ging verloren net voor landing, tijdens het afvuren van de remraketten; of het landingsvaartuig is gecrasht of op het oppervlak is geland, is onbekend. De voorbijvliegende bus vervolgde zijn weg langs Mars en diende als relaisstation."
+  },
+  {
+    "rel": "fleet/launcher/long-march-5.json",
+    "at": "best_known_for",
+    "old": "Heavy-lift backbone van het Chinese ruimteprogramma",
+    "new": "Ruggengraat van het Chinese ruimteprogramma voor zware lading"
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "tagline",
+    "old": "Sovjet super-zware; twee vluchten (Polyus 1987, Buran 1988)",
+    "new": "Sovjet-superzware draagraket; twee vluchten (Polyus 1987, Buran 1988)"
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "tagline",
+    "old": "ISRO's zware vastgebonden PSLV-variant — Chandrayaan-1 + Mars Orbiter",
+    "new": "De zware PSLV-variant van ISRO met strap-on-boosters — Chandrayaan-1 + Mars Orbiter"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-2.json",
+    "at": "description",
+    "old": "Tweede van de vijf Lunar Orbiter-ruimtevaartuigen. Gelanceerd 1966-11-06 van Cape Canaveral, maanbaan bereikt 1966-11-10. Bracht 13 locaties in kaart in de equatoriale Apollo-zone. Op 1966-11-24 legde Frame 162 een schuine opname vast van de 93 km grote Copernicus-krater van 45,8 km hoogte met blik naar het noorden — een nog nooit eerder gezien aards berglandschap op een ander hemellichaam. Kranten noemden het de 'Foto van de Eeuw'. De publicatie van de foto werd een keerpunt in de maatschappelijke betrokkenheid bij maanverkenning. Retourneerde 422 frames in totaal over 33 dagen opnamen. Opzettelijk laten neerstorten 1967-10-11 op 4° Z, 98° O (maanse achterzijde) om radiofrekwentie-interferentie met Lunar Orbiter 5 te voorkomen.",
+    "new": "Tweede van de vijf Lunar Orbiter-ruimtevaartuigen. Gelanceerd 1966-11-06 van Cape Canaveral, maanbaan bereikt 1966-11-10. Bracht 13 locaties in kaart in de equatoriale Apollo-zone. Op 1966-11-24 legde Frame 162 een schuine opname vast van de 93 km grote Copernicus-krater van 45,8 km hoogte met blik naar het noorden — een nog nooit eerder gezien aards berglandschap op een ander hemellichaam. Kranten noemden het de 'Foto van de Eeuw'. De publicatie van de foto werd een keerpunt in de maatschappelijke betrokkenheid bij maanverkenning. Leverde in totaal 422 opnamen op in 33 dagen beeldvorming. Opzettelijk laten neerstorten op 1967-10-11 bij 4° Z, 98° O (achterzijde van de Maan) om radiofrequentie-interferentie met Lunar Orbiter 5 te voorkomen."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv.json",
+    "at": "description",
+    "old": "HTV (Kounotori) is een robotische vrachtruimtevaartuig gebouwd door Mitsubishi Heavy Industries in Japan. Japans H-II Transfer Vehicle voerde negen missies uit naar het ISS van 2009 tot 2020, waarbij HTV-9 (de laatste vlucht) in mei 2020 vertrok.",
+    "new": "HTV (Kounotori) is een robotisch vrachtruimtevaartuig gebouwd door Mitsubishi Heavy Industries in Japan. Japans H-II Transfer Vehicle voerde negen missies uit naar het ISS van 2009 tot 2020, waarbij HTV-9 (de laatste vlucht) in mei 2020 vertrok."
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "description",
+    "old": "Drie Falcon 9-eersterakettrappen gebundeld, waarbij de twee zijboosters aan land terugkeren terwijl de middenraket op een droneschip buiten bereik landt. Momenteel een van de meest krachtige operationele zware draagraket, met laadvermogen dat Saturn V in mededinging stelt op een kosten-per-kg-basis ver eronder. (Medio 2026 heeft Starship steeds meer operationele capaciteit aangetoond.)",
+    "new": "Drie Falcon 9-eerste trappen aan elkaar gebonden, waarbij de twee zijboosters terugkeren om te landen terwijl de middelste kern ver stroomafwaarts op een droneschip landt. Momenteel een van de krachtigste operationele zware draagraketten, met een laadvermogen dat dat van de Saturn V benadert tegen kosten per kg die er ver onder liggen. (Medio 2026 heeft Starship steeds meer operationele capaciteit aangetoond.)"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "description",
+    "old": "Giotto was Europa's hoeksteen van de Halley-armada — een spingestabiliseerde 960 kg-sonde omwikkeld met een gelaagd Whipple-Kevlar stofschild. Gelanceerd 1985-07-02, vloog het door Halley's coma met een relatieve snelheid van 68 km/s op 1986-03-14 met dichtstbijzijnde benadering van 596 km, resulterend in de eerste close-up beelden van enig komeetkern (een onregelmatig 15 × 7,2 × 7,2 km langwerpig lichaam met geconcentreerde stofstralen). Een stofimpact ongeveer 7,6 seconden voor dichtstbijzijnde benadering destabiliseerde de spinas en schakelde de camera uit, maar de andere instrumenten bleven door de coma zenden. Na sluimering in heliocentrische baan, reactiveerde Giotto in 1990 + gebruikte aardse zwaartekrachtssteun om opnieuw gericht te worden op komeet 26P/Grigg–Skjellerup, voorbijvliegend op 200 km op 1992-07-10 — de dichtstbijzijnste komeetvoorbijvlucht ooit uitgevoerd.",
+    "new": "Giotto was Europa's hoeksteen van de Halley-armada — een spingestabiliseerde 960 kg-sonde omwikkeld met een gelaagd Whipple-Kevlar stofschild. Gelanceerd 1985-07-02, vloog het door Halley's coma met een relatieve snelheid van 68 km/s op 1986-03-14 met een kleinste afstand van 596 km, en leverde de eerste close-upbeelden van een komeetkern (een onregelmatig 15 × 7,2 × 7,2 km langwerpig lichaam met geconcentreerde stofstralen). Een stofimpact ongeveer 7,6 seconden voor de dichtste nadering destabiliseerde de spinas en schakelde de camera uit, maar de andere instrumenten bleven door de coma zenden. Na sluimering in heliocentrische baan, werd Giotto in 1990 opnieuw geactiveerd en gebruikte een zwaartekrachtsvlucht langs de Aarde om opnieuw gericht te worden op komeet 26P/Grigg–Skjellerup, voorbijvliegend op 200 km op 1992-07-10 — de dichtstbijzijnste komeetvoorbijvlucht ooit uitgevoerd."
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "first",
+    "old": "Hersteld vanuit een 5-jarige heliocentrische baan om Venus in de tweede poging te bereiken; de enige actieve Venus-orbiter in de slotfase van zijn operaties",
+    "new": "Herstelde na vijf jaar in een baan om de Zon en bereikte Venus bij een reservepoging; de enige actieve Venus-orbiter in de laatste jaren van zijn operaties"
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.4.label",
+    "old": "PRAGYAN UITGEPLAATST",
+    "new": "PRAGYAN ONTPLOOID"
+  },
+  {
+    "rel": "missions/didymos/hera.json",
+    "at": "description",
+    "old": "Hera is de bijdrage van de European Space Agency aan het eerste planetaire verdedigingsexperiment van de mensheid. In 2022 stortte NASA's DART-ruimtevaartuig opzettelijk neer op Dimorphos — de kleine maan van de asteroïde Didymos — en verkortte meetbaar zijn baan. Hera, gelanceerd in oktober 2024 op een Falcon 9, vliegt naar hetzelfde dubbele asteroïdesysteem (met een 2025 Mars-zwaartekrachtondersteuning onderweg) om het gedetailleerde post-impactonderzoek uit te voeren dat DART niet kon doen: de grootte van de krater, de massa en interne structuur van Dimorphos, en precies hoeveel momentum de inslag heeft overgedragen. Samen veranderen DART en Hera een eenmalige demonstratie in een herhaalbare, goed gekarakteriseerde afbuigtechniek. Hera draagt twee CubeSats mee, Juventas en Milani, voor radaronderzoek en mineralogie van dichtbij.",
+    "new": "Hera is de bijdrage van de European Space Agency aan het eerste planetaire verdedigingsexperiment van de mensheid. In 2022 stortte NASA's DART-ruimtevaartuig opzettelijk neer op Dimorphos — de kleine maan van de asteroïde Didymos — en verkortte meetbaar zijn baan. Hera, gelanceerd in oktober 2024 op een Falcon 9, vliegt naar hetzelfde dubbele asteroïdesysteem (met een zwaartekrachtsvlucht langs Mars in 2025 onderweg) om het gedetailleerde post-impactonderzoek uit te voeren dat DART niet kon doen: de grootte van de krater, de massa en interne structuur van Dimorphos, en precies hoeveel momentum de inslag heeft overgedragen. Samen veranderen DART en Hera een eenmalige demonstratie in een herhaalbare, goed gekarakteriseerde afbuigtechniek. Hera draagt twee CubeSats mee, Juventas en Milani, voor radaronderzoek en mineralogie van dichtbij."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "first",
+    "old": "Eerste missie naar de Jupiter Trojans; bezoekt 11 lichamen verspreid over 8 asteroïden en hun satellieten in een enkele 12-jaar-baan — een recordaantal objecten op afzonderlijke zonnebanen",
+    "new": "Eerste missie naar de Jupiter-trojanen; bezoekt 11 lichamen verspreid over 8 asteroïden en hun satellieten in een enkel traject van 12 jaar — een recordaantal objecten op afzonderlijke zonnebanen"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.2.label",
+    "old": "GRAVITY ASSIST BIJ AARDE",
+    "new": "AARDE-ZWAARTEKRACHTMANOEUVRE"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "description",
+    "old": "Schiaparelli was de demonstrator voor in- en landingsfasen die piggyback werd vervoerd op de ExoMars Trace Gas Orbiter (TGO). Genoemd naar de Italiaanse astronoom Giovanni Schiaparelli, was het voertuig ontworpen om de EDL-stack aan te tonen die ESA van plan was op te schalen voor de Rosalind Franklin rover. Schiaparelli scheidde zich op 16 oktober 2016 van TGO af en drong drie dagen later de Martiaanse atmosfeer binnen. Het dalingspatroon stortte in: een verzadigde traagheidsmeeteenheid zorgde ervoor dat de navigatiesoftware dacht dat het voertuig al op hoogte was geland — de parachute werd voortijdig afgeworpen en de remthusters stopten na slechts 3 seconden afvuren. Schiaparelli raakte het oppervlak met ~150 m/s. TGO zelf voltooide de baanopname succesvol en blijft operationeel.",
+    "new": "Schiaparelli was de demonstrator voor binnenkomst, afdaling en landing (EDL) die als meeliftlading werd meegevoerd met de ExoMars Trace Gas Orbiter (TGO). Genoemd naar de Italiaanse astronoom Giovanni Schiaparelli, was het voertuig ontworpen om de EDL-technologie aan te tonen die ESA van plan was op te schalen voor de Rosalind Franklin rover. Schiaparelli scheidde zich op 16 oktober 2016 van TGO af en drong drie dagen later de Martiaanse atmosfeer binnen. Het afdalingsprofiel liep mis: een verzadigde traagheidsmeeteenheid zorgde ervoor dat de navigatiesoftware dacht dat het voertuig al op hoogte was geland — de parachute werd voortijdig afgeworpen en de remthusters stopten na slechts 3 seconden afvuren. Schiaparelli raakte het oppervlak met ~150 m/s. TGO zelf voltooide de baanopname succesvol en blijft operationeel."
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "description",
+    "old": "Spirit (MER-A) sprong 28 keer over de bodem van Gusev-krater op 2004-01-04 en rolde tot stilstand 250 m van zijn eerste impact. Ontworpen voor een primaire missie van 90 sols, zou het 2.208 sols overleven. Reed 7,7 km over Gusevs vlakten, klom de Columbia Hills op en ontdekte hematiet-houdende rotsen die langdurig aanwezig water in het verleden signaleerden. In 2009-04 brak een wiel door een sulfaatkorst bij \"Troy\" en kwam Spirit tot stilstand in zachte grond; het team zette het om in een stationair platform. Laatste transmissie 2010-03-22; missie beëindigd verklaard 2011-05-25. Tweetallig met Opportunity, dat drie weken later aan de andere kant van Mars landde.",
+    "new": "Spirit (MER-A) sprong 28 keer over de bodem van Gusev-krater op 2004-01-04 en rolde tot stilstand 250 m van zijn eerste impact. Ontworpen voor een primaire missie van 90 sols, zou het 2.208 sols overleven. Reed 7,7 km over Gusevs vlakten, klom de Columbia Hills op en ontdekte hematiet-houdende rotsen die langdurig aanwezig water in het verleden signaleerden. In 2009-04 brak een wiel door een sulfaatkorst bij \"Troy\" en kwam Spirit tot stilstand in zachte grond; het team zette het om in een stationair platform. Laatste transmissie 2010-03-22; missie beëindigd verklaard 2011-05-25. Tweelingrover van Opportunity, dat drie weken later aan de andere kant van Mars landde."
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "dispatch",
+    "old": "Sputnik 1 deed bijna niets, en dat was precies de bedoeling. Geen camera, geen experiment dat de naam waard was — een radio, een batterij, en een gepolijste schil gekozen zodat de wereld de raket die hem droeg kon volgen. Zijn hele taak was om als eerste een baan te bereiken en gehoord te worden terwijl hij dat deed, en dat was hij eenentwintig dagen lang: een pieptoon op de korte golf waar iedereen op aarde op kon afstemmen, en die Washington niet kon uitschakelen. De machine deed er veel minder toe dan het feit ervan — bewijs, uitgezonden naar iedereen tegelijk, dat de Sovjet-Unie de Verenigde Staten naar een baan om de aarde had verslagen en een raket vloog die elke stad op de kaart kon bereiken. Hij verbrandde boven het nieuwe jaar. De race die hij startte liep helemaal door tot de maan.",
+    "new": "Sputnik 1 deed bijna niets, en dat was precies de bedoeling. Geen camera, geen experiment dat de naam waard was — een radio, een batterij, en een gepolijste schil gekozen zodat de wereld de raket die hem droeg kon volgen. Zijn hele taak was om als eerste een baan te bereiken en gehoord te worden terwijl hij dat deed, en dat was hij eenentwintig dagen lang: een pieptoon op de korte golf waar iedereen op de Aarde op kon afstemmen, en die Washington niet kon uitschakelen. De machine deed er veel minder toe dan het feit ervan — bewijs, uitgezonden naar iedereen tegelijk, dat de Sovjet-Unie de Verenigde Staten naar een baan om de Aarde had verslagen en een raket vloog die elke stad op de kaart kon bereiken. Hij verbrandde rond de jaarwisseling. De race die hij startte liep helemaal door tot de Maan."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "description",
+    "old": "De eerste bemande vlucht van het Artemis-programma, en de vonk die Orrery werd. NASA's SLS Block 1 lanceerde een Orion-ruimtevaartuig met vier astronauten — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) en CSA's Jeremy Hansen (MS) — op een hybride vrije-terugkeer-traject dat hen rond de achterzijde van de Maan zwaaide op ongeveer 9.200 km hoogte en hen terugbracht naar de Aarde zonder enige maanbaan-insertie-verbranding. Een 10-daagse missie die eindigt met een Stille Oceaan-splashdown. Kwalificeerde Orion's levensondersteunings-, navigatie- en herbetredingssystemen voor bemande vlucht voor de Artemis III-oppervlaktelanding.",
+    "new": "De eerste bemande vlucht van het Artemis-programma, en de vonk die Orrery werd. NASA's SLS Block 1 lanceerde een Orion-ruimtevaartuig met vier astronauten — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) en CSA's Jeremy Hansen (MS) — op een hybride vrije-terugkeer-traject dat hen rond de achterzijde van de Maan zwaaide op ongeveer 9.200 km hoogte en hen terugbracht naar de Aarde zonder enige motorontsteking voor maanbaaninsertie. Een missie van 10 dagen die eindigt met een landing in de Stille Oceaan. Kwalificeerde de levensondersteunings-, navigatie- en terugkeersystemen van Orion voor bemande vluchten, vooruitlopend op de Artemis III-oppervlaktelanding."
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "first",
+    "old": "Eerste Marsolandingspoging van ESA; bedoeld om EDL aan te tonen ter voorbereiding van ExoMars Rosalind Franklin",
+    "new": "Eerste poging van ESA om op het oppervlak van Mars te landen; bedoeld om binnenkomst, afdaling en landing (EDL) aan te tonen ter voorbereiding op ExoMars Rosalind Franklin"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "description",
+    "old": "Akatsuki — „dageraad\" — was Japans eerste Venusverkenning. Gelanceerd op 2010-05-20 van Tanegashima met een H-IIA 202, in combinatie met de IKAROS zonnezeil-demonstrator. De geplande Venus-baanopstelling op 2010-12-07 mislukte toen kristalafzettingen in een oxidatorcontroleventiel de hoofdmotor 152 seconden in de maneuver uit as duwde. JAXA hield de ruimtesonde vijf jaar in heliocentrische baan, met twaalf correctiemaneuvers, totdat het volgende Venus-contactvenster aanbrak. Op 2015-12-07 plaatste een 1228-secondebrand van vier attiude-controleverbindingen — oorspronkelijk niet ontworpen voor baanopstelling — Akatsuki in een sterk elliptische baan van 400 × 440.000 km met 3° inclinatie. Een van de meest spectaculaire missionaves in de ruimtevaartgeschiedenis. Het contactsignaal ging in 2024 verloren; JAXA verklaarde de operaties op 2025-09-18 voltooid.",
+    "new": "Akatsuki — “dageraad” — was Japans eerste Venusmissie. Gelanceerd op 2010-05-20 vanaf Tanegashima met een H-IIA 202, samen met de zonnezeildemonstrator IKAROS. De geplande baaninsertie rond Venus op 2010-12-07 mislukte toen zoutkristalopbouw in een terugslagklep van de oxidator de hoofdmotor 152 seconden na het begin van de motorbrand uit de as duwde. JAXA hield de sonde vijf jaar in leven in een baan om de Zon, met twaalf correctiemanoeuvres, tot het volgende Venus-ontmoetingsvenster. Op 2015-12-07 plaatste een motorbrand van 1228 seconden met vier standregelingsstuwers — nooit ontworpen voor baaninsertie — Akatsuki in een sterk elliptische baan van 400 × 440.000 km met 3° inclinatie. Een van de spectaculairste missieredingen in de geschiedenis van de ruimtevaart. Het contact ging in 2024 verloren; JAXA verklaarde de operaties op 2025-09-18 voltooid."
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "first",
+    "old": "Grootste interplanetaire ruimtevaartuig gebouwd in Europa; eerste ruimtevaartuig ooit dat een maan van een ander planet in een baan om zich heen draait (Ganymedes, 2034)",
+    "new": "Grootste interplanetaire ruimtevaartuig gebouwd in Europa; eerste ruimtevaartuig ooit dat in een baan om een maan van een andere planeet komt (Ganymedes, 2034)"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "events.2.label",
+    "old": "HUYGENS VRIJSTELLING",
+    "new": "LOSKOPPELING VAN HUYGENS"
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.0.note",
+    "old": "Voskhod 11A57 van Bajkonoer, platform 1 (Gagarin's Start) 1965-03-18 07:00 UTC.",
+    "new": "Voskhod 11A57 van Bajkonoer, platform 1 (Gagarins Start) 1965-03-18 07:00 UTC."
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "events.2.note",
+    "old": "Autonome landingsbaanlandng op Vandenberg Air Force Base 2010-12-03.",
+    "new": "Autonome landingsbaanlanding op Vandenberg Air Force Base 2010-12-03."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.3.note",
+    "old": "Liquid Apogee Motor ontsteekt na ongeveer 10 maanden inactief — ontsteekt gedurende 24 minuten om in baan vast te worden gezet.",
+    "new": "Liquid Apogee Motor ontsteekt na ongeveer 10 maanden inactief — brandt 24 minuten om in een baan te worden ingevangen."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.4.note",
+    "old": "EVA-1: Eerste Maanrover inzet + 10,3 km traversering naar Elbow Crater + rand van de Hadley-rille.",
+    "new": "EVA-1: Inzet van de eerste maanwagen (Lunar Roving Vehicle) + tocht van 10,3 km naar Elbow Crater + de rand van de Hadley-rille."
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.6.note",
+    "old": "CM landde op water in de Noord-Atlantische Oceaan op 1969-03-13 17:00 UTC na 151 banen. Gered door USS Guadalcanal.",
+    "new": "CM landde op water in de Noord-Atlantische Oceaan op 1969-03-13 17:00 UTC na 151 banen. Berging door USS Guadalcanal."
+  },
+  {
+    "rel": "missions/moon/luna21.json",
+    "at": "events.1.note",
+    "old": "Trans-lunaire injectie op het Blok-D bovenste trap.",
+    "new": "Trans-lunaire injectie op de Blok-D-boventrap."
+  },
+  {
+    "rel": "missions/earth/otv-2.json",
+    "at": "events.1.note",
+    "old": "Apogeum ~340 km; geclassificeerde nuttige lading-operaties.",
+    "new": "Apogeum ~340 km; geheime operaties met de lading."
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "events.2.note",
+    "old": "Klep opent bij modulescheiding; cabine depressuriseerd op ~168 km. Bemanning verloren.",
+    "new": "Klep opent bij modulescheiding; cabine depressuriseert op ~168 km. Bemanning verloren."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.3.note",
+    "old": "Ionenstuw-zwaartekrachtcapture in 700 km baan. 26-maanden missie, vier baanfasen.",
+    "new": "Invangen door zwaartekracht met ionenstuwing in een baan van 700 km. Missie van 26 maanden, vier baanfasen."
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "events.2.note",
+    "old": "Dichtstbijzijnde benadering van komeet 1P/Halley op 8030 km — gepaarde positiefix voor Giotto.",
+    "new": "Kleinste afstand tot komeet 1P/Halley: 8030 km — aanvullende positiebepaling voor Giotto."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.note",
+    "old": "Trans-Aarde-injectie — Starship heft af van Mars-oppervlak en brandt voor Aarde-terugkeertraject.",
+    "new": "Trans-Aarde-injectie — Starship stijgt op van het Marsoppervlak en ontsteekt de motoren voor het terugkeertraject naar de Aarde."
+  },
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "events.2.note",
+    "old": "\\\"Hallo vanuit de prachtige Apollo-ruimte hoog boven alles.\\\" Eerste live-tv-uitzending vanuit een bemand Amerikaans ruimtevaartuig.",
+    "new": "\"Hallo vanuit de prachtige Apollo-ruimte hoog boven alles.\" Eerste live-tv-uitzending vanuit een bemand Amerikaans ruimtevaartuig."
+  },
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "events.4.note",
+    "old": "Gecontroleerde inslag op 1,50° Z, 52,36° O op 2009-03-01 — Chinas eerste object op het maanoppervlak.",
+    "new": "Gecontroleerde inslag op 1,50° Z, 52,36° O op 2009-03-01 — China's eerste object op het maanoppervlak."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-moon-lunokhod_webp.what",
+    "old": "Achtwielige Sovjetse rover met een schelpvormig zonnepaneel-deksel.",
+    "new": "Achtwielige Sovjetse rover met een klapdeksel dat als zonnepaneel dient."
+  },
+  {
+    "rel": "iss-modules/beam.json",
+    "at": "function_detail",
+    "old": "Demonstratie van uitzetbare habitat voor stralingsmeting en lessen over leksjabloon-controle.",
+    "new": "Demonstratie van een uitbreidbaar habitat voor stralingsmetingen en lessen over lekcontrole."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-launcher-ariane-5_webp.what",
+    "old": "Cryogenische kern tussen twee grote vaste boosters onder een bolronde behuizing.",
+    "new": "Cryogenische kern tussen twee grote vaste boosters onder een bolle neuskap."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-launcher-mercury-redstone_webp.where",
+    "old": "Vliegen · lancering/opgang",
+    "new": "Vliegen · lancering/stijgfase"
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "first",
+    "old": "De meest betrouwbare middelzware lanceervoertuig in bedrijf — voerde Chandrayaan-1 (2008) en Mangalyaan (2013) uit",
+    "new": "Het meest betrouwbare middelzware lanceervoertuig in bedrijf — voerde Chandrayaan-1 (2008) en Mangalyaan (2013) uit"
+  },
+  {
+    "rel": "mars-sites/beagle2.json",
+    "at": "capability",
+    "old": "Eerste door het VK geleide planetaire lander; toonde aan dat orbitale verkenning gefaalde oppervlakteobjecten op meter-schaal kan lokaliseren.",
+    "new": "Eerste door het VK geleide planetaire lander; toonde aan dat orbitale verkenning verloren gegane oppervlakte-objecten op meterschaal kan lokaliseren."
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.2.why",
+    "old": "Cassini's 13-jarige baanmissie was gebaseerd op de wetten van Kepler — elke ringdoorsnijding en maanvliegby was een Kepleriaanse boog die jaren van tevoren werd ontworpen.",
+    "new": "Cassini's 13-jarige baanmissie was gebaseerd op de wetten van Kepler — elke ringpassage en maanvoorbijvlucht was een Kepleriaanse boog die jaren van tevoren werd ontworpen."
+  },
+  {
+    "rel": "mars-sites/exomars-rosalind-franklin.json",
+    "at": "fact",
+    "old": "ESA's eerste Mars-rover. Oorspronkelijk een Russisch geleide gezamenlijke missie gepland voor 2022; geannuleerd na de invasie van Oekraïne in 2022 en hergecreërd als ESA-geleid met NASA-bijdragen. Hergericht op lancering in 2028, aankomst in 2029. Heeft een ondergrondse boor van 2 meter — de diepste tot nu toe gepland voor een Mars-rover, ontworpen om onder de stralingsbeschadigde bovenste meter te reiken.",
+    "new": "ESA's eerste Mars-rover. Oorspronkelijk een Russisch geleide gezamenlijke missie gepland voor 2022; geannuleerd na de invasie van Oekraïne in 2022 en opnieuw opgezet onder leiding van ESA met bijdragen van NASA. Hergericht op lancering in 2028, aankomst in 2029. Heeft een ondergrondse boor van 2 meter — de diepste tot nu toe gepland voor een Mars-rover, ontworpen om onder de stralingsbeschadigde bovenste meter te reiken."
+  },
+  {
+    "rel": "moon-sites/clementine.json",
+    "at": "capability",
+    "old": "Eerste hint voor maanpolair waterijs — de ontdekking die elke daaropvolgende zuidpool-missie motiveerde, inclusief Artemis III.",
+    "new": "Eerste aanwijzing voor waterijs op de maanpolen — de ontdekking die elke daaropvolgende missie naar de zuidpool aanjoeg, inclusief Artemis III."
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "site_name",
+    "old": "Ongev. 23,9°S, 19,4°W (Margaritifer Sinus)",
+    "new": "Ongev. 23,9°Z, 19,4°W (Margaritifer Sinus)"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.1.why",
+    "old": "Mars's excentriciteit van 0,0935 (zes keer die van Aarde) veroorzaakt een schommeling van 20 % in zonnestralingsflux per baan — de motor achter globale stofstormen die de planeet maandenlang kunnen omhullen.",
+    "new": "De excentriciteit van Mars van 0,0935 (zes keer die van de Aarde) veroorzaakt een schommeling van 20 % in zonnestralingsflux per baan — de motor achter globale stofstormen die de planeet maandenlang kunnen omhullen."
+  },
+  {
+    "rel": "mars-sites/maven.json",
+    "at": "capability",
+    "old": "Eerste missie speciaal gericht op atmosferische ontsnapping; verklaarde hoe Mars zijn vroege atmosfeer verliest.",
+    "new": "Eerste missie speciaal gericht op atmosferische ontsnapping; verklaarde hoe Mars zijn vroege atmosfeer verloor."
+  },
+  {
+    "rel": "mars-sites/opportunity.json",
+    "at": "mission_type",
+    "old": "Uncrewed Rover · Mission Complete",
+    "new": "Onbemande rover · Missie voltooid"
+  },
+  {
+    "rel": "moon-sites/apollo12.json",
+    "at": "fact",
+    "old": "De precisielanding — Conrad zette voertuig neer binnen ~163 m van de onbemande Surveyor 3-sonde (1967). Ze haalde stukken ervan naar Aarde, wat aantoont dat ruimtevaartuigen jaren op de maan onbeschadigd blijven door straling en micrometer­ieten. Een proof-of-concept voor toekomstige ontmoetiingsmissies.",
+    "new": "De precisielanding — Conrad landde binnen ~163 m van de onbemande Surveyor 3-sonde (1967). Ze haalden stukken ervan terug naar de Aarde, wat aantoont dat ruimtevaartuigen jaren op de Maan onbeschadigd blijven door straling en micrometeorieten. Een proof-of-concept voor toekomstige rendez-vousmissies."
+  },
+  {
+    "rel": "moon-sites/artemis3.json",
+    "at": "crew.0",
+    "old": "TBD — eerste vrouw en eerste persoon van kleur op Maan",
+    "new": "TBD — eerste vrouw en eerste persoon van kleur op de Maan"
+  },
+  {
+    "rel": "mars-sites/mars2.json",
+    "at": "mission_type",
+    "old": "Onbemand lander · Gecrasht",
+    "new": "Onbemande lander · Gecrasht"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "fact",
+    "old": "Eerste asteroïdesteekproef ooit naar Aarde teruggebracht — JAXA's Hayabusa overleefde een hydrazinelek, drie defecte reactiewheels, een ionenmotorstoring en een zeven weken durende communicatiestilte om 1500 microgram Itokawa-materiaal op 2010-06-13 naar Woomera AUS te brengen.",
+    "new": "Eerste asteroïdesteekproef ooit naar de Aarde teruggebracht — JAXA's Hayabusa overleefde een hydrazinelek, drie defecte reactiewielen, een ionenmotorstoring en een zeven weken durende communicatiestilte om 1500 microgram Itokawa-materiaal op 2010-06-13 naar Woomera AUS te brengen."
+  },
+  {
+    "rel": "programs/viking.json",
+    "at": "outcome.2.md",
+    "old": "Wat Viking wel vaststelde was dat Mars kon worden bereikt, op geland en bewerkt — niet één keer maar twee keer, jarenlang. De orbiters brachten bijna de hele planeet in kaart, toonden de grote vulkanen en kloven in hun geheel, en de landers bewezen dat een robot kon overleven en functioneren op het Mars-oppervlak doorheen de seizoenen. Elke rover die sindsdien over Mars heeft gereden rust op dat bewijs.",
+    "new": "Wat Viking wel vaststelde was dat Mars kon worden bereikt, erop geland en erop gewerkt — niet één keer maar twee keer, jarenlang. De orbiters brachten bijna de hele planeet in kaart, toonden de grote vulkanen en kloven in hun geheel, en de landers bewezen dat een robot kon overleven en functioneren op het Mars-oppervlak gedurende de seizoenen. Elke rover die sindsdien over Mars heeft gereden rust op dat bewijs."
+  },
+  {
+    "rel": "programs/esa-science.json",
+    "at": "lessons.1.md",
+    "old": "De diepere les is dat focus breedte verslaat voor een middelgrote macht. ESA kan niet alles doen wat NASA doet, dus doet het een paar dingen die niemand anders heeft gedaan — op een komeet landen, de Melkweg in kaart brengen, het donkere heelal onderzoeken — en wordt het een leider door diepte in plaats van schaal. Het juiste moeilijke probleem kiezen, en het definitief oplossen, is hoe een coalitie boven zijn budget presteert.",
+    "new": "De diepere les is dat focus breedte verslaat voor een middelgrote macht. ESA kan niet alles doen wat NASA doet, dus doet het een paar dingen die niemand anders heeft gedaan — op een komeet landen, de Melkweg in kaart brengen, het donkere heelal onderzoeken — en wordt een leider door diepte in plaats van schaal. Het juiste moeilijke probleem kiezen, en het definitief oplossen, is hoe een coalitie boven zijn budget presteert."
+  },
+  {
+    "rel": "programs/starlink.json",
+    "at": "outcome.2.md",
+    "old": "Maar het resultaat heeft een tweede gezicht. Astronomen zagen hun afbeeldingen zich vullen met satellietstrepen en hun radiobanden vol raken met downlink-ruis; het pure aantal objecten verscherpte elke zorg over botsingen en orbitaal puin; en de concentratie van zoveel capaciteit in handen van één particulier bedrijf maakte regeringen ongemakkelijk die gewend waren hun eigen communicatie te controleren. Starlink loste een echt probleem op en creëerde nieuwe waar de wereld nog steeds uitwerkt hoe ze te beheren.",
+    "new": "Maar het resultaat heeft een tweede gezicht. Astronomen zagen hun afbeeldingen zich vullen met satellietstrepen en hun radiobanden vol raken met downlink-ruis; het pure aantal objecten verscherpte elke zorg over botsingen en orbitaal puin; en de concentratie van zoveel capaciteit in handen van één particulier bedrijf maakte regeringen ongemakkelijk die gewend waren hun eigen communicatie te controleren. Starlink loste een echt probleem op en creëerde nieuwe waar de wereld nog steeds uitzoekt hoe ze te beheersen."
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "outcome.0.md",
+    "old": "Het werkte, en het resette de industrie. Falcon 9 landde zijn eerste booster in december 2015, vloog er opnieuw een in 2017, en in de jaren 2020 landde en hergebruikte hij trappen zo routinematig dat een lancering zonder een terugwinning de uitzondering werd. De prijs van een kilogram naar een baan daalde scherp, de lanceercadans steeg tot een tempo dat niemand anders ook maar in de buurt kwam, en een capaciteit die alleen aan natiestaten had toebehoord — voor mensen gecertificeerde orbitale lancering — werd nu uitgevoerd door een particulier bedrijf.",
+    "new": "Het werkte, en het zette de sector op zijn kop. Falcon 9 landde zijn eerste booster in december 2015, vloog er opnieuw een in 2017, en in de jaren 2020 landde en hergebruikte hij trappen zo routinematig dat een lancering zonder een terugwinning de uitzondering werd. De prijs van een kilogram naar een baan daalde scherp, de lanceercadans steeg tot een tempo dat niemand anders ook maar in de buurt kwam, en een capaciteit die alleen aan natiestaten had toebehoord — voor mensen gecertificeerde orbitale lancering — werd nu uitgevoerd door een particulier bedrijf."
+  },
+  {
+    "rel": "universe/exoplanets/barnard-c.json",
+    "at": "fact",
+    "old": "Een van een compact gezin van sub-aardes die onlangs ontdekt zijn rond de beroemde Ster van Barnard.",
+    "new": "Een van een compacte familie van sub-aardes die onlangs ontdekt zijn rond de beroemde Ster van Barnard."
+  },
+  {
+    "rel": "universe/exoplanets/gj-273-c.json",
+    "at": "fact",
+    "old": "Een hete binnenste begeleider van Luyten's bewoonbare-zone wereld.",
+    "new": "Een hete binnenste begeleider van de wereld in de bewoonbare zone van de Ster van Luyten."
+  },
+  {
+    "rel": "universe/exoplanets/alf-ari-b.json",
+    "at": "bio",
+    "old": "Hamal (Alpha Arietis), de helderste ster van de Ram, verankerde tweeduizend jaar geleden het lente-equinox en leent nog steeds zijn naam aan het nulpunt van de hemel. Een planeet van bijna tweemaal de massa van Jupiter is afgeleid uit de beweging van de oranje reus, wat nog een wereld plaatst rond een van de oudste oriëntatiesterren van de dierenriem.",
+    "new": "Hamal (Alpha Arietis), de helderste ster van de Ram, verankerde tweeduizend jaar geleden de lente-equinox en leent nog steeds zijn naam aan het nulpunt van de hemel. Een planeet van bijna tweemaal de massa van Jupiter is afgeleid uit de beweging van de oranje reus, wat nog een wereld plaatst rond een van de oudste oriëntatiesterren van de dierenriem."
+  },
+  {
+    "rel": "universe/named-stars/adhara.json",
+    "at": "bio",
+    "old": "Adharaz (Epsilon Canis Majoris) is een heet blauw-wit paar op ongeveer 430 lichtjaar afstand, de op een na helderste ster in de Grote Hond na Sirius. Een paar miljoen jaar geleden passeerde deze ster veel dichter bij de Zon en was toen de helderste ster aan de hele aardse hemel.",
+    "new": "Adhara (Epsilon Canis Majoris) is een heet blauw-wit paar op ongeveer 430 lichtjaar afstand, de op een na helderste ster in de Grote Hond na Sirius. Een paar miljoen jaar geleden passeerde deze ster veel dichter bij de Zon en was toen de helderste ster aan de hele aardse hemel."
+  },
+  {
+    "rel": "universe/named-stars/betelgeuse.json",
+    "at": "cultural",
+    "old": "Zijn dramatische verduistering in 2019–2020 (een stofwolk, geen nakende ineenstorting) trok wereldwijde aandacht. De naam stamt af van het Arabisch, en de ster komt voor in talloze hemeloverlevering-tradities als een schouder of hand van de jager.",
+    "new": "Zijn dramatische afname in helderheid in 2019–2020 (een stofwolk, geen nakende ineenstorting) trok wereldwijde aandacht. De naam stamt af van het Arabisch, en de ster komt voor in talloze hemelmythologieën als een schouder of hand van de jager."
+  },
+  {
+    "rel": "universe/named-stars/canopus.json",
+    "at": "fact",
+    "old": "De op een na helderste ster aan de hemel — een verre baken zo standvastig dat ruimtevaartuigen er hun koers op richten.",
+    "new": "De op een na helderste ster aan de hemel — een ver baken zo standvastig dat ruimtevaartuigen er hun koers op richten."
+  },
+  {
+    "rel": "universe/named-stars/barnards-star.json",
+    "at": "bio",
+    "old": "De Ster van Barnard heeft de grootste bekende eigenbeweging van alle sterren en legt een schijnbare maanbreedte aan hemel af in ongeveer 180 jaar — wat hem de bijnaam 'Barnard's Runaway Star' opleverde. Het is een oude rode dwerg met een lage massa.",
+    "new": "De Ster van Barnard heeft de grootste bekende eigenbeweging van alle sterren en legt een schijnbare maanbreedte aan de hemel af in ongeveer 180 jaar — wat hem de bijnaam 'Weglopende ster van Barnard' opleverde. Het is een oude rode dwerg met een lage massa."
+  },
+  {
+    "rel": "universe/named-stars/kaus-australis.json",
+    "at": "cultural",
+    "old": "'Kaus' komt van het Arabisch voor 'boog', met het Latijnse 'australis' voor 'zuidelijk'. De pijl en boog van Sagittarius richten op het hart van de Melkweg, een richting dicht bezaaid met de helderste wolken van de Melkweg.",
+    "new": "'Kaus' komt van het Arabisch voor 'boog', met het Latijnse 'australis' voor 'zuidelijk'. De pijl en boog van de Boogschutter richten op het hart van de Melkweg, een richting dicht bezaaid met de helderste wolken van de Melkweg."
+  },
+  {
+    "rel": "universe/named-stars/nunki.json",
+    "at": "bio",
+    "old": "Nunki (Sigma Sagittarii) is een hete blauwe hoofdreeksster op ongeveer 230 lichtjaar afstand, de op een na helderste in Sagittarius. De ster maakt deel uit van het 'Theepot'-asterisme, nabij waar de Melkweg het rijkst is.",
+    "new": "Nunki (Sigma Sagittarii) is een hete blauwe hoofdreeksster op ongeveer 230 lichtjaar afstand, de op een na helderste in de Boogschutter. De ster maakt deel uit van het 'Theepot'-asterisme, nabij waar de Melkweg het rijkst is."
+  }
+]

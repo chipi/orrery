@@ -1,0 +1,437 @@
+{
+  "locale": "ja",
+  "segments": {
+    "UI strings — long (help text, panels)": {
+      "sampled": 25,
+      "ok": 16,
+      "minor": 4,
+      "broken": 5
+    },
+    "UI strings — short (menus, labels, buttons)": {
+      "sampled": 25,
+      "ok": 23,
+      "minor": 1,
+      "broken": 1
+    },
+    "essays (long editorial)": {
+      "sampled": 10,
+      "ok": 9,
+      "minor": 1,
+      "broken": 0
+    },
+    "fleet (launcher/capsule/engine/site descriptions)": {
+      "sampled": 25,
+      "ok": 22,
+      "minor": 2,
+      "broken": 1
+    },
+    "mission descriptions": {
+      "sampled": 25,
+      "ok": 14,
+      "minor": 8,
+      "broken": 3
+    },
+    "mission event notes": {
+      "sampled": 25,
+      "ok": 23,
+      "minor": 2,
+      "broken": 0
+    },
+    "other short entries (earth-objects, satellites, iss, orbit-regimes, …)": {
+      "sampled": 25,
+      "ok": 21,
+      "minor": 2,
+      "broken": 2
+    },
+    "planets & sites (short facts)": {
+      "sampled": 25,
+      "ok": 16,
+      "minor": 7,
+      "broken": 2
+    },
+    "programs (long editorial)": {
+      "sampled": 10,
+      "ok": 9,
+      "minor": 1,
+      "broken": 0
+    },
+    "science articles (editorial)": {
+      "sampled": 10,
+      "ok": 5,
+      "minor": 5,
+      "broken": 0
+    },
+    "universe (short entries)": {
+      "sampled": 25,
+      "ok": 20,
+      "minor": 3,
+      "broken": 2
+    }
+  },
+  "findings": [
+    {
+      "id": "UI-4",
+      "key": "messages :: lab_goal_tsw_microg",
+      "grade": "BROKEN",
+      "issue": "Comet name left in Latin instead of the native Japanese form.",
+      "fix": "67P/チュリュモフ・ゲラシメンコ彗星は山ほどの大きさの天体で、重力はほぼ無視できます：表面重力は毎秒平方メートルの五千分の一程度で、脱出速度は毎秒1メートル未満です。もう一度読んでください — この彗星からはジョギングで脱出できます。月、火星、金星、タイタンでの着陸で培った直感はここではすべて逆になります：難しいのは到着ではありません。留まることです。"
+    },
+    {
+      "id": "UI-5",
+      "key": "messages :: conics_blurb_parabola",
+      "grade": "BROKEN",
+      "issue": "Mistranslated: 完全に十分な速度を残します does not convey \"exactly enough speed to leave, never to return\".",
+      "fix": "ぎりぎりの脱出 — 離れるのにちょうど足りる速度はあっても、戻ってくるだけの速度はない。"
+    },
+    {
+      "id": "UI-6",
+      "key": "messages :: chip_label_pre_flight_training",
+      "grade": "MINOR",
+      "issue": "\"2+年\" and ASCII semicolon are awkward; \"increment\" lost.",
+      "fix": "飛行前訓練 — 長期滞在ごとに2年以上；機体システム + EVA + サバイバル"
+    },
+    {
+      "id": "UI-7",
+      "key": "messages :: why_eva_time_body",
+      "grade": "MINOR",
+      "issue": "Noun-stacked, stiff, machine-like phrasing.",
+      "fix": "船外活動（EVA）は、有人ミッションの中で最もリスクが高く、同時に最も成果の大きい部分である。宇宙服の消耗品、微小隕石にさらされる危険、CO₂除去の限界により、1回のEVAは約8時間に制限される。ミッション全体のEVA時間は、表面での科学調査がどれだけ進んだかを示す実質的な指標である。"
+    },
+    {
+      "id": "UI-14",
+      "key": "messages :: lab_f_boosters_glossary",
+      "grade": "MINOR",
+      "issue": "\"半分のブースターは物ではない\" is an awkward literal rendering.",
+      "fix": "N_b = ⌈(F_req − F_core)/F_b⌉：コアステージが提供できない推力は、ストラップオンブースターが担う — 各々 F_b を加える。切り上げる。ブースターを半分だけ付けることはできないからだ。"
+    },
+    {
+      "id": "UI-19",
+      "key": "messages :: plan_explainer_intro",
+      "grade": "BROKEN",
+      "issue": "Machine-like: launch rendered as 起動, \"Lower numbers\" as より低い番号, stray ASCII punctuation.",
+      "fix": "各セルは「日付Xに打ち上げ、日付X+TOFに到着するとしたら、燃料はどれだけ必要か？」を表しています。数値が小さいほど、安価なミッションです。"
+    },
+    {
+      "id": "UI-20",
+      "key": "messages :: science_layer_moons_desc",
+      "grade": "BROKEN",
+      "issue": "Moon name Iapetus left in Latin inside the katakana list.",
+      "fix": "各惑星の主要衛星+軌道リング（木星のガリレオ衛星、土星のタイタン/エンケラドゥス/イアペトゥス、地球の月、火星のフォボス/ダイモス、海王星のトリトン）。"
+    },
+    {
+      "id": "UI-21",
+      "key": "messages :: explore_hub_desc_localgroup",
+      "grade": "BROKEN",
+      "issue": "Andromeda and Triangulum left in Latin instead of native galaxy names.",
+      "fix": "さらに外へ一歩——アンドロメダ銀河、さんかく座銀河、マゼラン雲、そして数十の矮小銀河。"
+    },
+    {
+      "id": "UI-23",
+      "key": "messages :: lab_conn_lar_hook",
+      "grade": "MINOR",
+      "issue": "\"次のまさにレッスン\" is ungrammatical word order.",
+      "fix": "ニュートンの大砲：山頂から大砲を、どんどん強く撃つと想像してみよう。やがて地面が弾の落下と同じ速さで湾曲して離れていき、弾は決して着地しない。その『永遠に落ち続ける』こそが軌道そのものだ——そしてそれこそが次のレッスンだ。"
+    },
+    {
+      "id": "UI-3",
+      "key": "messages :: why_orbital_period_title",
+      "grade": "MINOR",
+      "issue": "Wrong term: orbital period is 軌道周期, not 軌道期間; ASCII question mark.",
+      "fix": "なぜ軌道周期？"
+    },
+    {
+      "id": "UI-10",
+      "key": "messages :: credits_relationship_adapted",
+      "grade": "BROKEN",
+      "issue": "\"Adapted\" (credit relationship) rendered as the verb 適応する (adapt to), wrong meaning.",
+      "fix": "翻案"
+    },
+    {
+      "id": "essays-2",
+      "key": "essays/new-propulsion.json :: body.17.md",
+      "grade": "MINOR",
+      "issue": "Nevada Test Site left in Latin.",
+      "fix": "第三の出口があり、1960年代には、これが最初に実現する可能性が最も高いと思われていた。高温で運転する原子炉で推進剤を加熱し——最も軽く、したがって噴出したときに最も速い水素が最良の選択である——ノズルから噴射するのだ。燃焼はない。結合エネルギーもない。熱源は核分裂であり、炉が耐えられる温度を決めるのは化学ではなく冶金である。燃料要素とノズルのスロートは、壊れる前にどこまで高温にできるのか。1959年から1969年にかけてネバダ核実験場で、NERVAと呼ばれる計画のもとで試験されたエンジンの答えは、比推力にして約825秒を達成できるほどの高温だった——最良の化学エンジンのほぼ2倍で、推力は数十キロニュートン規模、有人火星ミッションに役立つ水準である。"
+    },
+    {
+      "id": "fleet-14",
+      "key": "fleet/crewed-spacecraft/enterprise.json :: description",
+      "grade": "MINOR",
+      "issue": "Place names left in English (Edwards Air Force Base, NYC).",
+      "fix": "当初はConstitutionと呼ばれていましたが、1976年にシャトルの命名が行われた際、Star Trekファンが組織したファンレターキャンペーンによってEnterpriseに改名されました。接近着陸試験（ALT）用のプロトタイプとして建造され、1977年にエドワーズ空軍基地上空で、Shuttle Carrier Aircraftに載せた8回の係留飛行と5回の自由飛行を実施しました。1977-08-12の最初の自由飛行ではフレッド・ヘイズとゴードン・フラートンが操縦し、オービターが滑空して着陸できることを実証しました。推進装置も、実働する耐熱（TPS）タイルも備えていませんでした。Enterpriseを飛行可能な機体に改造するのは、構造用予備部品から新しいオービターを造るより負担が大きいと見積もられたため、代わりにChallengerが建造されました。現在はニューヨークのIntrepid Sea, Air & Space Museumに展示されています。"
+    },
+    {
+      "id": "fleet-16",
+      "key": "fleet/orbiter/lunar-orbiter-1.json :: description",
+      "grade": "MINOR",
+      "issue": "Clumsy first sentence and awkward \"候補となる…撮影\"; Earthrise left in English.",
+      "fix": "Luna 10の4か月後に、アメリカの宇宙機として初めて月を周回した。1966年8月10日にケープ・カナベラルからAtlas-Agena D で打ち上げられ、Lunar Orbiter 1は1966年8月14日に楕円形の月周回軌道に投入された。主要任務はApollo着陸地点の候補をサブメートル解像度で撮影することで、70 mm + 610 mm デュアルレンズカメラシステムを搭載し、軌道上でフィルムを現像（Bimat処理）して地球への電波送信用にスキャンした。月の軌道から地球の最初の写真を撮影（1966年8月23日 — Apollo 8の有名な「地球の出」の2年以上前）し、16番目の軌道中に広角で撮影。高解像度画像207枚 + 中解像度画像207枚を送信し、月表面の410万km²をマッピングした。1966年10月29日に月の裏側に意図的に衝突させ、Lunar Orbiter 2のための電波帯域をクリアした。"
+    },
+    {
+      "id": "fleet-25",
+      "key": "fleet/launcher/vostok-k.json :: description",
+      "grade": "BROKEN",
+      "issue": "Misreads \"3 of 6 first-stage failures before Gagarin\" as 3 of 6 failures; it means 3 of the first 6 launches failed.",
+      "fix": "Vostok-K（GRAU指数8K72K）はコロリョフのR-7 ICBM の有人対応派生型で、Blok-E 上段と乗員対応仕様を備えていました。3段式液体推進ロケット（LOX+ケロシン）、高さ38メートル、打ち上げ時総重量287トン。6機すべてのVostok 有人飛行（1～6号機、1961～1963年）および少数の無人先行試験機を打ち上げました。信頼性は初期のR-7の初期不具合（ガガーリン以前の6回のうち3回で第1段が故障）から、有人飛行シリーズ全体での完璧な成功へと進化しました。Vostok-Kの設計系統は今日もSoyuz-2ロケットとして続いています（2026年時点でロシア唯一の有人対応打ち上げロケット）。"
+    },
+    {
+      "id": "mission-1",
+      "key": "missions/earth/vostok-2.json :: description",
+      "grade": "MINOR",
+      "issue": "Russian place names left in Latin; \"strap\" lost in service-module separation problem.",
+      "fix": "ゲルマン・チトフによる17周回・25時間の飛行 — 宇宙へ行った2人目の人類であり、軌道で1日以上を過ごした最初の人物。1961-08-06 06:00 UTC、バイコヌールから打ち上げられた。25歳10か月のチトフは2021年(オリバー・デーメン、NS-16)まで宇宙へ送られた最年少記録を保持した。長時間の微小重力に対する人体反応を試験 — チトフは宇宙酔いの最初の症例を報告し、軌道上で約8時間眠り、初めて手持ちカメラで地球を撮影した。チトフは降下中に射出され、カプセルは1961-08-07 07:18 UTC、サラトフ州クラスヌイ・クート付近に着陸した。サービスモジュールのストラップ分離不良(Vostok 1と同じ問題)が再発した。"
+    },
+    {
+      "id": "mission-2",
+      "key": "missions/comet/rosetta.json :: description",
+      "grade": "BROKEN",
+      "issue": "Comet name left in Latin throughout running text instead of the native form.",
+      "fix": "ESA のフラッグシップ彗星ランデブー・ミッション。3回の地球スイングバイ、1回の火星スイングバイ、2回の小惑星フライバイ、および957日間の深宇宙冬眠を含む10年間の航行の後、Rosetta は2014年8月にチュリュモフ・ゲラシメンコ彗星(67P) に追いつき、2年以上にわたって周回軌道を保ちながら近日点を通過した。Philae ランダーは2014-11-12に 67P の表面に到達し——彗星への初の軟着陸——ハープーンの故障により崖の影に取り残されたものの、約64時間の科学観測を実施した。Rosetta 自体は2016-09-30に 67P の表面への制御された降下でミッションを終了した。主要な成果：彗星大気中の有機分子とグリシン；67P の初期測定されたD/H比（≈3×地球値）は木星族彗星が地球の水の源であることに異議を唱えた——この結果は2024年の再分析で測定誤差が判明した後、現在は疑問視されている；彗星からのガス放出幾何学の初の詳細地図。"
+    },
+    {
+      "id": "mission-3",
+      "key": "missions/moon/beresheet.json :: description",
+      "grade": "MINOR",
+      "issue": "Parking orbit rendered as 駐機軌道 (aircraft parking); standard is 待機軌道.",
+      "fix": "SpaceILの Beresheet（ヘブライ語で「太初に」の意）は2019年2月、Falcon 9の相乗り乗客として打ち上げられました。直接的な月遷移軌道投入ではなく、小型着陸機は数週間にわたり近地点を上昇させる軌道制御を実行し、待機軌道から月へ登るという、低予算の探査機用に開拓された燃料節約軌道を辿りました。2019年4月4日に月軌道投入に成功したあと、下降中に慣性計測装置がリセットされて主エンジンがシャットダウンしました。Beresheet は晴れの海に衝突しました。SpaceIL は数日のうちに後継機（Beresheet 2）を開発することを表明しました。"
+    },
+    {
+      "id": "mission-4",
+      "key": "missions/sun/ulysses.json :: first",
+      "grade": "MINOR",
+      "issue": "ヘリオグラフィック is an untranslated transliteration; the term is 日面緯度.",
+      "fix": "高傾斜の太陽中心軌道に投入された唯一の宇宙船；全日面緯度における太陽風の唯一の直接測定"
+    },
+    {
+      "id": "mission-8",
+      "key": "missions/moon/apollo17.json :: description",
+      "grade": "MINOR",
+      "issue": "Telegraphic, kanji-numeral list drops verbs; awkward \"梯子を登る前サーナンの最後の言葉\".",
+      "fix": "人類が別世界を訪れた最後の機会——それはもう半世紀以上前のことだ。サーナンとシュミットは月面に75時間滞在し、LRVで35.7 km走行し、110.5 kgの試料を持ち帰った。シュミットは月を歩いた唯一の訓練を受けた科学者（地質学者）で、ショーティ・クレーターの橙色の火山ガラスをはじめとする彼の発見は、月の地質学を書き換えた。最後にはしごを登る前のサーナンの言葉：『私たちは来たときと同じように去る。神の御心ならば、また戻ってくる』。Artemis IIIがその約束を果たすことになっている。"
+    },
+    {
+      "id": "mission-10",
+      "key": "missions/jupiter/pioneer-10.json :: dispatch",
+      "grade": "MINOR",
+      "issue": "Redundant \"木星に到着した探査機として木星に到達\".",
+      "fix": "Pioneer 10は、誰も測定したことのない二つの危険に最初に立ち向かった。小惑星帯を横断した探査機は存在しなかった——小惑星帯は破片が飛び交う射撃場だと考えられていた——し、木星の放射線を生き延びた探査機もなかった。放射線は電子機器にとって致命的だと信じられていたのだ。Pioneer 10は両方を成し遂げた。小惑星帯を無傷で横断し(実際のところ、小惑星帯はほとんど空っぽだった)、1973年12月に史上初めて木星に到達し、この巨大惑星の初めての接近画像を送り返した。そしてPioneer 10は、太陽系から永久に脱出する軌道に乗せられた最初の人工物となった。その価値は実証にあった——外惑星への道のりにある未知の危険を既知のものに変えることで、Voyagerが危険に立ち向かえるよう設計できるようにしたのだ。"
+    },
+    {
+      "id": "mission-11",
+      "key": "missions/earth/vostok-4.json :: first",
+      "grade": "BROKEN",
+      "issue": "双頭飛行 (two-headed flight) is wrong for \"dual flight\".",
+      "fix": "初の2機同時飛行の後半 — 2機の有人宇宙船間での初の通信"
+    },
+    {
+      "id": "mission-13",
+      "key": "missions/earth/vostok-6.json :: dispatch",
+      "grade": "BROKEN",
+      "issue": "パラシュート奏者 (parachute \"player/musician\") for parachutist; \"2十年\" is invalid.",
+      "fix": "Vostok 6 はワレンチナ・テレシコワを搭乗させ、彼女を史上初の女性宇宙飛行士とした。この記録は19年間単独で保たれ、アメリカがこれを達成するまで1983年を待たねばならなかった。彼女はパイロットではなく、繊維産業の労働者であり、またアマチュアのパラシュート降下者だった。選抜にあたっては、その象徴的意味が重視されたのだ——労働者の国ソビエトでは、宇宙の辺境でさえ誰もが開拓者になりうるという証明。動機がどうであれ、48周回の後、このマイルストーンは現実のものとなり永遠に刻まれた。同じ成果を達成できた国が現れるまで、それから20年の月日が流れることになる。"
+    },
+    {
+      "id": "mission-14",
+      "key": "missions/mars/opportunity.json :: description",
+      "grade": "MINOR",
+      "issue": "Crater names left in Latin.",
+      "fix": "Opportunity (MER-B) は惑星上の大当たりを引き当てた——エアバッグに包まれたランダーはメリディアニ平原を26回バウンドし、純粋な幸運で イーグル・クレーター（直径22 m）へ転がり込んだ。そこは駆動なしでローバーが読み取れるむき出しの岩盤に囲まれていた。初期画像はジャロサイトと「青い粒」赤鉄鉱のコンクリーションを示し、当時としては古火星上の液体水の存在を示す最強の鉱物学的証拠だった。14年138日間（5,111ソル）にわたり Opportunity は45.16 km走破——火星ローバーマラソン記録——し、エンデュランス、ビクトリア、エンデバーの各クレーターを訪れた。2018年6月の惑星全体を覆う塵嵐が太陽電池パネルへの日光を遮断し、最終通信は2018-06-10、NASA は2019-02-13にミッション終了を宣言した。"
+    },
+    {
+      "id": "mission-19",
+      "key": "missions/moon/apollo16.json :: first",
+      "grade": "MINOR",
+      "issue": "Descartes (lunar highlands) left in Latin.",
+      "fix": "月の高地で初の有人着陸 — デカルト高地；ジョン・ヤングの「月面グランプリ」"
+    },
+    {
+      "id": "mission-21",
+      "key": "missions/sun/ulysses.json :: description",
+      "grade": "MINOR",
+      "issue": "Untranslated katakana ヘリオグラフィック/ヘリオセントリック instead of 日面緯度 / 太陽周回.",
+      "fix": "ESAとNASAの共同ミッション。1990年10月6日にスペースシャトルDiscoveryのSTS-41から、IUSおよびPAM-Sの上段段階とともに打ち上げられたUlyssesは、1992年2月8日に木星の重力アシストを利用して黄道面から約80°外側に自身を偏向させました。これは地球のほぼ赤道軌道平面から太陽中心の極軌道に到達する唯一の方法です。18.5年間にわたる太陽の3つの完全な極軌道周回により、太陽風、ヘリオスフェアの磁場、およびすべての日面緯度での高エネルギー粒子を観測しました。これらの直接計測により、赤道域の遅い太陽風領域とコロナホールからの高緯度の速い太陽風ストリームの間で、太陽風の構造がいかに変化するかが明らかにされました。ミッションは2009年6月30日にスラスタ用ヒドラジンが配管内で凍結したため終了しました。装置は太陽周回の極軌道に残存しています。"
+    },
+    {
+      "id": "mission-20",
+      "key": "missions/mars/starship-demo.json :: events.0.note",
+      "grade": "MINOR",
+      "issue": "Boca Chica left in Latin.",
+      "fix": "ボカチカまたはケープ・カナベラルからの Starship — 初の超重量級惑星間ロケット打ち上げ。"
+    },
+    {
+      "id": "mission-25",
+      "key": "missions/earth/otv-6.json :: events.2.note",
+      "grade": "MINOR",
+      "issue": "Facility name left in English.",
+      "fix": "2022-11-12にKSCのシャトル着陸施設での自動滑走路着陸。"
+    },
+    {
+      "id": "other-2",
+      "key": "iss-modules/destiny.json :: function_detail",
+      "grade": "MINOR",
+      "issue": "Awkward, stiff noun strings (\"地球向き科学窓のインフラ\", \"屋内ラボ容積\").",
+      "fix": "微小重力研究ラック、地球を向いた科学用の窓の設備、そしてNASAの主要な屋内実験室スペース。"
+    },
+    {
+      "id": "other-10",
+      "key": "orbit-regimes-explore/HELIOPAUSE.json :: name",
+      "grade": "BROKEN",
+      "issue": "Left entirely in English.",
+      "fix": "ヘリオポーズ + 星間空間"
+    },
+    {
+      "id": "other-16",
+      "key": "original-work.json :: canvas2d./images/colophon/viz-porkchop_webp.what",
+      "grade": "MINOR",
+      "issue": "Non-standard ラムベルト (should be ランベルト) and unclear \"色付けされた\".",
+      "fix": "ランベルト・ソルバーの結果を色で表した、出発時刻×飛行時間のグリッド。"
+    },
+    {
+      "id": "other-24",
+      "key": "deep-sky.json :: hst-whirlpool.caption",
+      "grade": "BROKEN",
+      "issue": "紡錘状銀河 (spindle galaxy) is wrong for \"textbook spiral\"; the sentence is also ungrammatical.",
+      "fix": "M51 — 教科書的な渦巻銀河で、新たに誕生した星々によって腕がピンク色に輝いている。"
+    },
+    {
+      "id": "planets-3",
+      "key": "mars-sites/tgo.json :: fact",
+      "grade": "MINOR",
+      "issue": "Awkward wording (\"以前のすべての主張された検出\", \"説明のまま\").",
+      "fix": "ExoMars 2016ミッションの生き残り半分（Schiaparelliはランダー）。大気メタン、水蒸気、およびその他の微量ガスを兆分の1の感度で特徴付けます。メタンを0.05 ppbv以上で検出しませんでした—これまでに主張されたどの検出値よりもはるかに低い—メタンの謎を解決するのではなく深めています。Curiosityの地表レベルの検出は未解明のままです。"
+    },
+    {
+      "id": "planets-7",
+      "key": "mars-sites/maven.json :: fact",
+      "grade": "MINOR",
+      "issue": "\"約毎秒100g\" word order; 地球規模 reads as Earth-scale rather than global.",
+      "fix": "火星大気・揮発性物質進化探査機（Mars Atmosphere and Volatile EvolutioN）。火星が宇宙に失う大気の速度を定量化し、太陽風によって奪われる酸素とCO₂が毎秒約100 gであることを明らかにした。火星の大気希薄化が、約40億年前の火星全体の磁場喪失によって駆動されたことを示した。"
+    },
+    {
+      "id": "planets-15",
+      "key": "planets/arrokoth.json :: links.1.l",
+      "grade": "BROKEN",
+      "issue": "Link label left in English.",
+      "fix": "アロコスのフライバイ（NASA New Horizons）"
+    },
+    {
+      "id": "planets-16",
+      "key": "planets/neptune.json :: bio",
+      "grade": "BROKEN",
+      "issue": "肉眼で発見された is wrong (Neptune was found by telescope; the source says before direct observation).",
+      "fix": "最も風の強い惑星 — 表面付近で時速2,100 kmの風。天王星の軌道に未知の重力の影響が見られたことから、直接観測の前に数学的予測によって発見された。"
+    },
+    {
+      "id": "planets-17",
+      "key": "mars-sites/opportunity.json :: capability",
+      "grade": "MINOR",
+      "issue": "\"従うべき\" turns \"have followed\" into \"should follow\"; プレイブック is jargon.",
+      "fix": "ローバーの耐久性の基準を設定し、その後のすべてのローバーが踏襲してきた野外地質調査の手法を確立した。"
+    },
+    {
+      "id": "planets-18",
+      "key": "moon-sites/apollo14.json :: fact",
+      "grade": "MINOR",
+      "issue": "Redundant repeated name; awkward \"それでも：…スポーツ的成就\".",
+      "fix": "アラン・シェパードは、アメリカ人として宇宙に到達した初の人物（1961年）で、月でゴルフをプレーした唯一の人物となった。彼は密かにクラブヘッドとボール2個を持ち込んでいた。彼は1球が「何マイルも飛んだ」と主張していたが、LRO画像によると約37 m（40ヤード）であった。それでも、スポーツの飛距離としては史上最長である。"
+    },
+    {
+      "id": "planets-20",
+      "key": "mars-sites/mars2.json :: fact",
+      "grade": "MINOR",
+      "issue": "Hellas left in Latin.",
+      "fix": "人類が製造した物体として初めて火星表面に到達した——衝突による。ランダーのパラシュートは1971年11月27日のEDL中に機能喪失し、ヘラス盆地に高速で衝突した。軌道船コンポーネントはその後8か月間データを送信し続けた。Mars 2はソビエト連邦による1971年打上げウィンドウでアメリカを上回って火星表面に到達するという試みの始まりであった。"
+    },
+    {
+      "id": "planets-22",
+      "key": "planets/jupiter.json :: science_sections.4.why",
+      "grade": "MINOR",
+      "issue": "\"en route\" rendered as 現在進行中 (in progress).",
+      "fix": "Juno（NASA）は現在極軌道にあります。Europa Clipper（NASA）とJUICE（ESA）は木星へ向けて航行中で、ガニメデへの軌道投入は2034年です。"
+    },
+    {
+      "id": "planets-24",
+      "key": "small-bodies/orus.json :: science_sections.0.why",
+      "grade": "MINOR",
+      "issue": "Kuiper left in Latin.",
+      "fix": "オロスはC型L4トロヤ群小惑星です。Lucy探査機は2028年11月にフライバイします。その暗い炭素豊富なスペクトルは、内側の小惑星帯の小惑星よりもカイパーベルトの天体に近い特性を示しています。"
+    },
+    {
+      "id": "programs-6",
+      "key": "programs/spacex.json :: outcome.0.md",
+      "grade": "MINOR",
+      "issue": "有人定格 is a literal, unnatural rendering of \"human-rated\".",
+      "fix": "それは機能し、業界をリセットした。Falcon 9は2015年12月に最初のブースターを着陸させ、2017年に一つを再飛行させ、2020年代までには段を着陸させ再使用することが非常に日常的になり、回収のない打ち上げが例外となった。軌道への1キログラムあたりの価格は急激に下がり、打ち上げ頻度は他の誰も近づけない速度まで上昇し、国家にのみ属していた能力――有人飛行認証を受けた軌道打ち上げ――が今や民間企業によって運用されている。"
+    },
+    {
+      "id": "science-3",
+      "key": "science/propulsion/antimatter-propulsion.json :: body_paragraphs.0",
+      "grade": "MINOR",
+      "issue": "裂核 is a wrong word for nuclear fission.",
+      "fix": "エネルギー効率の議論は近似ではなく正確である。陽子が反陽子と衝突すると、中間子、ガンマ線、そしてより軽い粒子に完全に変換される。これはE = mc²を完全に適用したもので、化学的あるいは核的な残留物は何も生じない。エネルギー密度は最良の化学推進剤の約100億倍、核分裂あるいは核融合の約1,000倍である。磁気ノズルで帯電した中間子の排気を制御する物質-反物質対消滅駆動装置は、理論上、数百万秒のオーダーの比推力に達し、宇宙船を光速のかなりの割合まで加速できる可能性がある。"
+    },
+    {
+      "id": "science-4",
+      "key": "science/mission-phases/interplanetary-internet.json :: body_paragraphs.1",
+      "grade": "MINOR",
+      "issue": "原始的な設計者 means \"primitive\", not \"original\".",
+      "fix": "遅延/中断耐性ネットワーク(DTN)はこの問題を異なるアーキテクチャで解決します。エンドツーエンド接続を維持する代わりに、ネットワーク内の各ノードは自己完結型のデータ『バンドル』を保持します。バンドルはルーティングメタデータ、有効期限、ペイロードを含む単位で、適切なリンクが利用可能な場合にのみ転送されます。ノードが利用可能なリンクがない場合、バンドルを無期限に保存し、次のコンタクトウィンドウが開くと配信します。このプロトコルは標準化されています。バンドルプロトコルはIETF標準(RFC 9171)です。その基盤となる遅延耐性ネットワーキングアーキテクチャ(RFC 4838)は、TCP/IPの草創期の設計者の一人であるヴィント・サーフが、NASA/JPLと協力して構築しました。"
+    },
+    {
+      "id": "science-6",
+      "key": "science/history/sputnik-1957.json :: narrative_101.2",
+      "grade": "MINOR",
+      "issue": "Person name left in Latin.",
+      "fix": "1957年、アメリカは軌道に到達可能な実用的なロケットを保有していませんでした。Vanguardは12月に発射台で爆発し、Explorer 1はついに1958年1月31日にフォン・ブラウンのRedstone派生型によって軌道に到達しました。「スプートニク・ショック」はNASA（1958年設立）、国防教育法、およびその後の10年間を定義することになった宇宙競争全体の引き金となりました。"
+    },
+    {
+      "id": "science-7",
+      "key": "science/exoplanets/fifty-one-pegasi.json :: body_paragraphs.0",
+      "grade": "MINOR",
+      "issue": "Star/planet designation left in Latin.",
+      "fix": "ペガスス座51番星b は視線速度法によって発見された。明瞭な約4.2日周期のドップラー振動が、少なくとも木星の半分の質量を持つ惑星が恒星の危険なほど近くを周回していることを明らかにした。これは太陽以外の主系列星の周りで確認された最初の惑星だった。"
+    },
+    {
+      "id": "science-9",
+      "key": "science/exoplanets/fifty-one-pegasi.json :: narrative_101.0",
+      "grade": "MINOR",
+      "issue": "Star designation left in Latin.",
+      "fix": "何世紀もの間、他の太陽系は純粋な推測の域を出なかった。それは1995年10月に終わりを告げた。ミシェル・マイヨールとディディエ・ケローが、50光年離れた太陽に似た普通の恒星ペガスス座51番星の周りに惑星を発見したと発表したのである。"
+    },
+    {
+      "id": "universe-12",
+      "key": "universe/exoplanets/51-peg-b.json :: bio",
+      "grade": "MINOR",
+      "issue": "Star and planet names left in Latin.",
+      "fix": "ペガスス座51番星bは非公式にディミディウムと呼ばれ、1995年にミシェル・マイヨールとディディエ・ケローによって発見された — 通常の太陽型恒星を周回する最初の確認された惑星であり、この発見により彼らは2019年のノーベル物理学賞を受賞した。4日ごとに恒星をかすめるように周回する「ホット・ジュピター」であり、巨大惑星がこれほど近くに存在するとは予想していなかった天文学者たちを驚愕させ、惑星系の形成と移動に関する再考を迫った。"
+    },
+    {
+      "id": "universe-15",
+      "key": "universe/named-stars/castor.json :: cultural",
+      "grade": "BROKEN",
+      "issue": "Dioscuri and \"Alpha\" left in English inside Japanese text.",
+      "fix": "カストルはギリシャ・ローマ神話におけるディオスクロイの死すべき騎手であり、ポルックスの双子の兄弟である。「α」と命名されているが、通常は隣のポルックスよりもわずかに暗い。"
+    },
+    {
+      "id": "universe-16",
+      "key": "universe/named-stars/procyon.json :: bio",
+      "grade": "MINOR",
+      "issue": "Awkward passive \"周回されている\" and \"ただ11.5光年\".",
+      "fix": "プロキオン（こいぬ座α星）は、わずか11.5光年先にある近傍の白色準巨星で、かすかな白色矮星の伴星をもつ。その近さにより、本来の光度は控えめではあるが、空で8番目に明るい星となっている。"
+    },
+    {
+      "id": "universe-23",
+      "key": "universe/named-stars/diphda.json :: cultural",
+      "grade": "MINOR",
+      "issue": "Star name left in Latin.",
+      "fix": "この名は「第二の蛙」を意味するアラビア語の表現に由来する — 遠方のフォーマルハウトが「第一の蛙」である。もう一つの名であるデネブ・カイトスは、天の水域に棲む大海獣の尾を示している。"
+    },
+    {
+      "id": "universe-24",
+      "key": "universe/named-stars/mirfak.json :: bio",
+      "grade": "BROKEN",
+      "issue": "Perseus left in English; 疎開星団 (evacuation) is wrong for open cluster 散開星団.",
+      "fix": "ミルファク (ペルセウス座アルファ星) は、約510光年の距離にある黄白色の超巨星で、ペルセウス座で最も明るい恒星である。ペルセウス座アルファ星団の主星であり、宇宙空間を同じ運動で移動する高温の若い星々からなる散開星団を率いている。"
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+{
+  "locale": "it",
+  "segments": {
+    "UI strings — long (help text, panels)": {
+      "sampled": 25,
+      "ok": 12,
+      "minor": 13,
+      "broken": 0
+    },
+    "UI strings — short (menus, labels, buttons)": {
+      "sampled": 25,
+      "ok": 22,
+      "minor": 3,
+      "broken": 0
+    },
+    "essays (long editorial)": {
+      "sampled": 10,
+      "ok": 10,
+      "minor": 0,
+      "broken": 0
+    },
+    "fleet (launcher/capsule/engine/site descriptions)": {
+      "sampled": 25,
+      "ok": 12,
+      "minor": 10,
+      "broken": 3
+    },
+    "mission descriptions": {
+      "sampled": 25,
+      "ok": 16,
+      "minor": 7,
+      "broken": 2
+    },
+    "mission event notes": {
+      "sampled": 25,
+      "ok": 21,
+      "minor": 2,
+      "broken": 2
+    },
+    "other short entries (earth-objects, satellites, iss, orbit-regimes, …)": {
+      "sampled": 25,
+      "ok": 24,
+      "minor": 1,
+      "broken": 0
+    },
+    "planets & sites (short facts)": {
+      "sampled": 25,
+      "ok": 20,
+      "minor": 5,
+      "broken": 0
+    },
+    "programs (long editorial)": {
+      "sampled": 10,
+      "ok": 7,
+      "minor": 2,
+      "broken": 1
+    },
+    "science articles (editorial)": {
+      "sampled": 10,
+      "ok": 9,
+      "minor": 1,
+      "broken": 0
+    },
+    "universe (short entries)": {
+      "sampled": 25,
+      "ok": 20,
+      "minor": 4,
+      "broken": 1
+    }
+  },
+  "findings": [
+    {
+      "id": "UI-2",
+      "key": "messages :: lab_goal_lot_entry",
+      "grade": "MINOR",
+      "issue": "\"rientrata\" is not a noun for re-entry.",
+      "fix": "Titano si nasconde sotto un'atmosfera d'azoto una volta e mezzo più densa di quella terrestre al suolo, e si estende in alto — Huygens iniziò a sentirla oltre mille chilometri di quota. Entrando a 6 km/s la sonda subì più di una decina di g dietro lo scudo: un vero rientro atmosferico, su una luna."
+    },
+    {
+      "id": "UI-3",
+      "key": "messages :: lab_f_escverd_err_insufficient",
+      "grade": "MINOR",
+      "issue": "\"assistenza\" is the wrong term for a gravity assist.",
+      "fix": "Insufficiente — anche con l'assist gravitazionale rimani legato al Sole."
+    },
+    {
+      "id": "UI-4",
+      "key": "messages :: lab_goal_tsw_microg",
+      "grade": "MINOR",
+      "issue": "\"gravità è una leggenda\" and \"fare jogging via\" are awkward calques.",
+      "fix": "La cometa 67P/Churyumov-Gerasimenko è un mondo delle dimensioni di una montagna dove la gravità è una diceria: il nucleo esercita una forza superficiale prossima a un quinto di un millesimo di metro al secondo quadrato, e la sua velocità di fuga è inferiore a un metro al secondo. Rileggi — potresti andartene da questa cometa facendo jogging. Ogni intuizione che hai sviluppato atterrando sulla Luna, Marte, Venere e Titano ora funziona contro di te: la parte difficile non è arrivare. È restare."
+    },
+    {
+      "id": "UI-7",
+      "key": "messages :: why_solar_mass_body",
+      "grade": "MINOR",
+      "issue": "\"pesa ... volte la massa\" mixes weight and mass.",
+      "fix": "La massa fissa la gravità, la gravità fissa ogni orbita. Il Sole ha una massa 333.000 volte quella della Terra e domina il sistema solare; quel singolo numero, con le leggi di Keplero, predice dove si trova ogni pianeta in ogni momento."
+    },
+    {
+      "id": "UI-9",
+      "key": "messages :: lab_illustration_alt_reach_the_moon",
+      "grade": "MINOR",
+      "issue": "\"translunar\" is an unfinished Italian word.",
+      "fix": "Una traiettoria translunare che si incurva da una Terra disegnata verso la Luna in attesa, un minuscolo veicolo spaziale che cavalca la curva di trasferimento."
+    },
+    {
+      "id": "UI-11",
+      "key": "messages :: lab_goal_land_mercury_desc",
+      "grade": "MINOR",
+      "issue": "Literal calques (\"fiera immersione\", \"ucciso dal motore\", \"Niente aria affatto\").",
+      "fix": "Nessuna aria, e una ripida discesa nel pozzo gravitazionale del Sole. Senza nulla contro cui frenare, ogni metro al secondo deve essere annullato dal motore."
+    },
+    {
+      "id": "UI-14",
+      "key": "messages :: lab_f_boosters_glossary",
+      "grade": "MINOR",
+      "issue": "\"non è una cosa\" is a calque of \"is not a thing\".",
+      "fix": "N_b = ⌈(F_req − F_core)/F_b⌉: qualsiasi spinta lo stadio core non possa fornire, gli acceleratori ausiliari devono farlo — ognuno aggiunge F_b. Arrotonda per eccesso, perché mezzo booster non esiste."
+    },
+    {
+      "id": "UI-15",
+      "key": "messages :: lab_conn_lar_kourou",
+      "grade": "MINOR",
+      "issue": "\"cosmodromo\" is the Russian-style term; Kourou is a \"spazioporto\".",
+      "fix": "Kourou (5°N) — lo spazioporto equatoriale dell'Europa"
+    },
+    {
+      "id": "UI-16",
+      "key": "messages :: lab_goal_lss_verdict",
+      "grade": "MINOR",
+      "issue": "English \"flyby\"/\"escape\" left and \"strisciare\" mistranslates \"limping\".",
+      "fix": "Sommalo in Δv dall'orbita bassa: uno stadio potente (~8,5 km/s) si colloca proprio sulla linea ~8,7 — i più grandi lanci appena la superano da soli. Un sorvolo planetario fornisce il margine e, cosa ancora più importante, la velocità extra per VISITARE effettivamente i pianeti esterni invece di arrancare appena oltre la velocità di fuga. Per questo motivo Voyager ha utilizzato le fionde gravitazionali."
+    },
+    {
+      "id": "UI-18",
+      "key": "messages :: lab_conn_ltm_why",
+      "grade": "MINOR",
+      "issue": "Subject mismatch: \"si schianta\" should address the reader.",
+      "fix": "La Luna non ha atmosfera, quindi un paracadute non serve — l'unico modo per scendere è accendere un motore e annullare l'intera velocità orbitale, combattendo la gravità per tutto il percorso. La spinta deve superare il peso o ti schianti. Questo è il caso puro; Marte restituirà parte di quella frenata all'aria."
+    },
+    {
+      "id": "UI-20",
+      "key": "messages :: science_layer_moons_desc",
+      "grade": "MINOR",
+      "issue": "Moon names should be native: Fobos.",
+      "fix": "Lune principali + anelli orbitali attorno a ciascun pianeta (Galileiane a Giove, Titano/Encelado/Giapeto a Saturno, la Luna alla Terra, Fobos/Deimos a Marte, Tritone a Nettuno)."
+    },
+    {
+      "id": "UI-21",
+      "key": "messages :: explore_hub_desc_localgroup",
+      "grade": "MINOR",
+      "issue": "\"Triangulum\" not in native form; \"dozzine\" unidiomatic.",
+      "fix": "Un passo ancora più lontano — Andromeda, il Triangolo, le Nubi di Magellano e decine di galassie nane."
+    },
+    {
+      "id": "UI-23",
+      "key": "messages :: lab_conn_lar_hook",
+      "grade": "MINOR",
+      "issue": "Ungrammatical comparison \"così velocemente quanto\" and \"e è\".",
+      "fix": "Il cannone di Newton: immagina di sparare un cannone da una montagna, sempre più forte. Alla fine il terreno si curva lontano dalla palla con la stessa rapidità con cui cade, e non atterra mai. Questo 'cadere per sempre' è esattamente quello che è un'orbita — ed è la lezione successiva."
+    },
+    {
+      "id": "UI-6",
+      "key": "messages :: footer_links_aria",
+      "grade": "MINOR",
+      "issue": "Missing preposition.",
+      "fix": "Collegamenti a piè di pagina"
+    },
+    {
+      "id": "UI-22",
+      "key": "messages :: fly_opening_payload",
+      "grade": "MINOR",
+      "issue": "\"payload\" is \"carico utile\" in spaceflight.",
+      "fix": "CARICO UTILE"
+    },
+    {
+      "id": "UI-25",
+      "key": "messages :: lab_f_cislunar_tof",
+      "grade": "MINOR",
+      "issue": "English \"coasting\" left in label.",
+      "fix": "Tempo di volo inerziale"
+    },
+    {
+      "id": "fleet-1",
+      "key": "fleet/orbiter/ulysses.json :: description",
+      "grade": "BROKEN",
+      "issue": "Dropped \"coronal hole\", wrong term for current sheet, \"e eliosferica\".",
+      "fix": "Missione congiunta ESA + NASA di osservazione solare ed eliosferica, costruita da Dornier con contributo scientifico statunitense. Lanciata il 6 ottobre 1990 dallo STS-41 Discovery su una traiettoria ad alta energia diretta a Giove — l'unico modo per scagliare un'astronave fuori dal piano eclittico senza un delta-v proibitivo. Il sorvolo di Giove dell'8 febbraio 1992 deflesse l'astronave in un'orbita eliocentrica con inclinazione di 80° (1,3 × 5,4 UA, periodo di 6,2 anni) — il primo e ancora unico veicolo spaziale a volare sui poli del Sole. Tre orbite polari complete ci hanno fornito la struttura tridimensionale del foglio di corrente eliosferico, il vento solare più veloce ai poli e più lento all'equatore, e l'unico registro di più decenni del comportamento dei buchi coronali polari nel corso di un ciclo solare completo. La missione è terminata nel 2009."
+    },
+    {
+      "id": "fleet-5",
+      "key": "fleet/constellation/planet-labs.json :: description",
+      "grade": "MINOR",
+      "issue": "\"Imaging ... a rivisitazione\" is jargon-heavy and unnatural.",
+      "fix": "Osservazione della Terra con rivisita giornaliera da due flotte — ~150 CubeSats PlanetScope 3U (immagini globali giornaliere a risoluzione 3-5 m) e ~21 SkySats (alta risoluzione su richiesta a 50 cm). Tutti in orbita eliosincrona a ~475 km. La filosofia delle 'Doves' era 'lanciare centinaia di piccoli satelliti economici, accettare qualche guasto, ottenere immagini di ogni porzione di terra ogni giorno' — e funziona. L'archivio di immagini di Planet è consultato da ONG, governi e giornalisti."
+    },
+    {
+      "id": "fleet-8",
+      "key": "fleet/engine/le-9.json :: description",
+      "grade": "MINOR",
+      "issue": "\"combustione fasata\" should be \"a stadi\"; \"in marzo\".",
+      "fix": "L'LE-9 è una scelta deliberata di eleganza rispetto alla complessità. Anziché l'assetto turbopompa-preburner della combustione a stadi, utilizza un ciclo espansore-spurgo: l'idrogeno è riscaldato dalle pareti della camera e dell'ugello, e una porzione di quel gas viene spillata per azionare le turbopompe prima di essere scaricata all'esterno. Il ciclo ha pressioni di camera intrinsecamente più basse e un design della sezione calda più semplice, scambiando un po' di prestazioni con una riduzione dei modi di guasto meccanico che hanno afflitto i motori giapponesi precedenti. Sviluppato da Mitsubishi per il razzo H3 di JAXA, l'LE-9 ha volato per la prima volta a marzo 2023 ed è il più grande motore del suo tipo a raggiungere il servizio operativo."
+    },
+    {
+      "id": "fleet-9",
+      "key": "fleet/space-suit/orlan-mks.json :: description",
+      "grade": "MINOR",
+      "issue": "Gender agreement: \"tuta ... russo\".",
+      "fix": "Ultima variante della famiglia Orlan — tuta EVA russa con entrata posteriore che vola ininterrottamente dal Salyut 6 nel 1977. Il cosmonauta entra attraverso un portello montato sullo zaino che si chiude con un singolo movimento, eliminando la pre-respirazione in camera stagna richiesta dalle tute americane a pressione inferiore. Pressione di esercizio 5,8 psi (400 hPa) di O₂ puro. Utilizzata sul segmento russo della SSI. Varianti precedenti di Orlan hanno prestato servizio sulle stazioni Salyut e Mir."
+    },
+    {
+      "id": "fleet-11",
+      "key": "fleet/lander/mars6.json :: tagline",
+      "grade": "BROKEN",
+      "issue": "\"Lander lunare\" is wrong (Mars lander) and \"primo telemetria\" is ungrammatical.",
+      "fix": "Lander sovietico su Marte del 1973 — prima telemetria di discesa dall'atmosfera marziana (224 s, per lo più corrotta)"
+    },
+    {
+      "id": "fleet-12",
+      "key": "fleet/launcher/long-march-5.json :: best_known_for",
+      "grade": "BROKEN",
+      "issue": "English \"Backbone\" left and \"heavy-lift\" dropped.",
+      "fix": "Pilastro dei lanci pesanti del programma spaziale cinese"
+    },
+    {
+      "id": "fleet-14",
+      "key": "fleet/crewed-spacecraft/gemini.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "\"pratica\" is unnatural; \"e EVA\" should be \"ed EVA\".",
+      "fix": "Equipaggio di due persone; addestramento a rendezvous ed EVA"
+    },
+    {
+      "id": "fleet-16",
+      "key": "fleet/orbiter/lunar-orbiter-2.json :: description",
+      "grade": "MINOR",
+      "issue": "\"luna\" should be capitalized.",
+      "fix": "Secondo dei cinque veicoli spaziali Lunar Orbiter. Lanciato il 1966-11-06 da Cape Canaveral, entrato in orbita lunare il 1966-11-10. Ha mappato 13 siti nella zona equatoriale Apollo. Il 1966-11-24, il Frame 162 ha catturato una vista obliqua del cratere Copernico di 93 km da un'altitudine di 45,8 km guardando verso nord — un paesaggio montano in stile terrestre mai visto prima su un altro mondo. I giornali lo chiamarono la \"Fotografia del Secolo\". Il rilascio della foto divenne un punto di svolta nell'impegno pubblico verso l'esplorazione lunare. Ha restituito 422 fotogrammi totali nel corso di 33 giorni di riprese. Ha impattato deliberatamente il 1967-10-11 a 4° S, 98° E (lato nascosto della Luna) per prevenire interferenze di radiofrequenza con Lunar Orbiter 5."
+    },
+    {
+      "id": "fleet-17",
+      "key": "fleet/lander/phoenix.json :: description",
+      "grade": "MINOR",
+      "issue": "\"in terra marziana\" should be \"nel suolo marziano\".",
+      "fix": "Phoenix è un lander planetario costruito da Lockheed Martin negli Stati Uniti. Ghiaccio d'acqua confermato nel suolo marziano. Ritirato dopo il primo volo nel 2008."
+    },
+    {
+      "id": "fleet-19",
+      "key": "fleet/constellation/iridium-next.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "\"Comms\" is an English abbreviation.",
+      "fix": "Comunicazioni LEO polari — 66 satelliti operativi +9 di scorta, partner GMDSS, voce/dati globali"
+    },
+    {
+      "id": "fleet-20",
+      "key": "fleet/orbiter/mars-express.json :: best_known_for",
+      "grade": "MINOR",
+      "issue": "\"first\" dropped.",
+      "fix": "Il primo e unico orbiter di Marte dell'ESA; la prima missione planetaria europea"
+    },
+    {
+      "id": "fleet-21",
+      "key": "fleet/cargo-spacecraft/htv.json :: description",
+      "grade": "MINOR",
+      "issue": "\"in partenza\" is wrong tense for a past event.",
+      "fix": "HTV (Kounotori) è un veicolo di trasporto cargo robotico costruito da Mitsubishi Heavy Industries in Giappone. Il Veicolo di Trasporto H-II del Giappone ha completato nove missioni verso l'SSI dal 2009 al 2020, con HTV-9 (il volo finale) partito a maggio 2020."
+    },
+    {
+      "id": "fleet-24",
+      "key": "fleet/launcher/falcon-heavy.json :: description",
+      "grade": "MINOR",
+      "issue": "\"heavy-lift\" mistranslated as \"cargo a capacità massima\".",
+      "fix": "Tre core di primo stadio Falcon 9 assemblati insieme, con i due booster laterali che tornano a terra mentre il core centrale atterra in mare su una nave drone. Attualmente tra i lanciatori pesanti più potenti in servizio, con una capacità di carico che rivaleggia con Saturn V ma a un costo per kg considerevolmente inferiore. (A metà 2026, Starship ha dimostrato una capacità operativa sempre crescente.)"
+    },
+    {
+      "id": "mission-2",
+      "key": "missions/comet/giotto.json :: description",
+      "grade": "MINOR",
+      "issue": "Decimal point instead of comma; \"aiuto gravitazionale\" for gravity assist.",
+      "fix": "Giotto era il pilastro europeo dell'armata di Halley — una sonda stabilizzata per rotazione di 960 kg avvolta in uno scudo anti-polvere stratificato Whipple-Kevlar. Lanciata il 1985-07-02, attraversò la chioma di Halley a 68 km/s di velocità relativa il 1986-03-14 con un avvicinamento minimo di 596 km, restituendo le prime immagini ravvicinate di qualsiasi nucleo cometario (un corpo allungato irregolare di 15 × 7,2 × 7,2 km con getti di polvere concentrati). Un impatto di polvere ~7,6 secondi prima dell'avvicinamento minimo destabilizzò l'asse di rotazione e mise fuori servizio la telecamera, ma gli altri strumenti continuarono a trasmettere attraverso la chioma. Dopo essere rimasta in ibernazione in orbita eliocentrica, Giotto si riattivò nel 1990 e utilizzò un assist gravitazionale della Terra per cambiare rotta verso la cometa 26P/Grigg-Skjellerup, sorvolandola a 200 km il 1992-07-10 — il sorvolo cometario più ravvicinato mai eseguito."
+    },
+    {
+      "id": "mission-4",
+      "key": "missions/sun/ulysses.json :: description",
+      "grade": "MINOR",
+      "issue": "Agreement error \"magnetico eliosferica\", awkward \"deflettere se stessa\", \"linee\".",
+      "fix": "Missione congiunta ESA/NASA. Lanciata il 1990-10-06 dal Discovery STS-41 con gli stadi superiori IUS e PAM-S, Ulysses ha utilizzato una fionda gravitazionale di Giove il 1992-02-08 per deviare di ~80° fuori dall'eclittica — l'unico modo per raggiungere un'orbita quasi polare rispetto al Sole dal piano orbitale quasi equatoriale della Terra. Tre orbite polari complete del Sole nel corso di 18,5 anni hanno mappato il vento solare, il campo magnetico eliosferico e le particelle energetiche a tutte le latitudini eliografiche — misurazioni dirette che hanno rivelato come la struttura del vento solare varia tra le regioni equatoriali di vento lento e i flussi di vento veloce ad alta latitudine provenienti dai buchi coronali. La missione è terminata il 2009-06-30 quando l'idrazina del propellente si è congelata nelle tubazioni. L'hardware rimane in un'orbita polare eliocentrica."
+    },
+    {
+      "id": "mission-6",
+      "key": "missions/earth/voskhod-2.json :: dispatch",
+      "grade": "BROKEN",
+      "issue": "\"ammaraggio\" (water landing) is wrong for reentry; the crew landed in a forest.",
+      "fix": "La Voskhod 2 realizzò la prima passeggiata nello spazio e per poco non la trasformò nella prima morte nello spazio. Aleksej Leonov galleggiò fuori da un'eclusa gonfiabile nel vuoto, il primo essere umano mai completamente al di fuori di un veicolo spaziale — e poi la sua tuta si gonfiò tanto che non riusciva a piegarsi per rientrare. Dovette aprire una valvola e far uscire il suo stesso ossigeno, rischiando la malattia da decompressione, solo per restringersi abbastanza da entrare nel portellone. Non era finita: il rientro automatico fallì, l'equipaggio scese manualmente e atterrò centinaia di chilometri fuori rotta nella foresta siberiana gelata, dove aspettarono due notti tra i lupi prima che i soccorritori li raggiungessero con gli sci. Il pubblico vide dodici minuti trionfali; quanto vicino fosse stato il disastro rimase segreto per anni."
+    },
+    {
+      "id": "mission-7",
+      "key": "missions/moon/artemis4.json :: description",
+      "grade": "MINOR",
+      "issue": "Gender agreement, calque \"co-manifestato\", unclear HLS rendering.",
+      "fix": "Artemis IV è pianificata come la prima missione con equipaggio a visitare il Lunar Gateway, la piccola stazione spaziale della NASA in orbita quasi rettilinea ad alone (NRHO) attorno alla Luna. Debutta il più potente SLS Block 1B, il cui nuovo Exploration Upper Stage (EUS) consente a un singolo lancio di trasportare sia Orion con 4 membri dell'equipaggio che il modulo I-HAB (International Habitation) trasportato insieme — costruito da ESA e JAXA — per la consegna al Gateway. Dopo l'attracco di Orion e I-HAB alla stazione, due membri dell'equipaggio scendono al polo sud lunare a bordo di un sistema di allunaggio con equipaggio (Human Landing System) SpaceX Starship per il secondo allunaggio con equipaggio del programma, mentre gli altri si occupano del Gateway in crescita. Pianificata per ~2028; equipaggio e sito di allunaggio devono ancora essere assegnati."
+    },
+    {
+      "id": "mission-9",
+      "key": "missions/dimorphos/dart.json :: first",
+      "grade": "MINOR",
+      "issue": "Awkward \"primo caso di umani che spostano\".",
+      "fix": "Prima dimostrazione della difesa planetaria mediante impattore cinetico; la prima volta che l'umanità ha spostato un asteroide"
+    },
+    {
+      "id": "mission-14",
+      "key": "missions/mars/opportunity.json :: description",
+      "grade": "BROKEN",
+      "issue": "\"giadeite\" is jadeite, not jarosite; typo \"concrzioni\".",
+      "fix": "Opportunity (MER-B) ha colpito il jackpot planetario — il suo lander avvolto in airbag ha rimbalzato 26 volte attraverso Meridiani Planum e si è rotolato in un cratere di 22 m (Eagle) per pura fortuna, circondato da roccia affiorante che un rover poteva leggere senza muoversi. Le prime immagini mostravano concrezioni di jarosite + ematite \"blueberry\", la più forte evidenza minerale fino a quel momento di acqua liquida stabile sul Marte primitivo. Nel corso di 14 anni 138 giorni (5.111 sol) Opportunity ha attraversato 45,16 km — il record di maratona per rover marziani — visitando i crateri Endurance, Victoria e Endeavour. Una tempesta di polvere globale nel giugno 2018 ha bloccato la luce solare dai suoi pannelli solari; l'ultima trasmissione è stata il 2018-06-10, e la NASA ha dichiarato la fine della missione il 2019-02-13."
+    },
+    {
+      "id": "mission-16",
+      "key": "missions/mars/perseverance.json :: description",
+      "grade": "MINOR",
+      "issue": "\"72 missioni\" for flights.",
+      "fix": "Perseverance è la missione di superficie su Marte più ambiziosa mai realizzata. Mars Sample Return dipende da essa — il rover sta raccogliendo e conservando campioni in tubi che una futura missione recupererà e porterà sulla Terra. Ingenuity, il primo elicottero su un altro pianeta, ha compiuto 72 voli prima di ritirarsi con rotori danneggiati nel gennaio 2024 — provando che il volo controllato è possibile nell'atmosfera sottile di Marte. MOXIE, un dimostratore di ossigeno da CO2, ha prodotto il primo ossigeno prodotto localmente su un altro pianeta, una prova generale per le missioni umane su Marte."
+    },
+    {
+      "id": "mission-19",
+      "key": "missions/moon/apollo16.json :: first",
+      "grade": "MINOR",
+      "issue": "Nickname left in English.",
+      "fix": "Primo allunaggio negli altipiani lunari — Descartes; «Gran Premio lunare» di John Young"
+    },
+    {
+      "id": "mission-21",
+      "key": "missions/mars/opportunity.json :: dispatch",
+      "grade": "MINOR",
+      "issue": "\"È toccato\" and \"muri\" are unidiomatic.",
+      "fix": "Opportunity ha percorso una maratona su un altro pianeta. Gemello di Spirit, atterrato nel 2004 per una missione di novanta giorni, ha funzionato per quattordici anni e ha attraversato più di quarantacinque chilometri — la distanza maggiore che qualsiasi veicolo ha mai percorso su qualsiasi mondo. È arrivato, per fortuna, in un piccolo cratere le cui pareti esponevano esattamente la roccia alterata dall'acqua che era stato inviato a trovare, e poi ha continuato a procedere, cratere dopo cratere, leggendo l'antica storia dell'acqua su Marte chilometro dopo chilometro. Una tempesta di polvere globale ha infine zittito il rover nel 2018."
+    },
+    {
+      "id": "mission-17",
+      "key": "missions/earth/sputnik1.json :: events.1.note",
+      "grade": "MINOR",
+      "issue": "\"Stage-2\" left in English; \"carico\" lacks \"utile\".",
+      "fix": "Spegnimento del secondo stadio + separazione del carico utile; orbita 215 × 939 km, inclinazione 65,1°, periodo 96,2 min."
+    },
+    {
+      "id": "mission-21",
+      "key": "missions/mars/tianwen1.json :: events.1.note",
+      "grade": "BROKEN",
+      "issue": "\"incendio\" means a fire, not an engine burn.",
+      "fix": "L'accensione del motore inserisce la navicella spaziale in orbita attorno a Marte."
+    },
+    {
+      "id": "mission-22",
+      "key": "missions/earth/apollo7.json :: events.3.note",
+      "grade": "MINOR",
+      "issue": "Typo \"ammarrato\".",
+      "fix": "CM ammarato nell'Atlantico settentrionale il 1968-10-22 alle 11:11 UTC dopo 163 orbite / 7,4 milioni di km / 10 g 20 h. Recupero da parte di USS Essex."
+    },
+    {
+      "id": "mission-23",
+      "key": "missions/moon/artemis2.json :: events.1.note",
+      "grade": "BROKEN",
+      "issue": "\"Ustione\" means a skin burn, not an engine burn.",
+      "fix": "Accensione per l'iniezione translunare da parte dell'ICPS: Orion si separa sulla traiettoria cislunare."
+    },
+    {
+      "id": "other-19",
+      "key": "deep-sky.json :: hst-veil.caption",
+      "grade": "MINOR",
+      "issue": "\"scia\" for wisp and Cygnus Loop not in native form.",
+      "fix": "Un filamento della Nebulosa Velo (Cygnus Loop) — un'onda d'urto di supernova ancora in espansione dopo 10.000 anni."
+    },
+    {
+      "id": "planets-5",
+      "key": "mars-sites/exomars-rosalind-franklin.json :: fact",
+      "grade": "MINOR",
+      "issue": "Broken syntax and gender agreement, English \"targeting\".",
+      "fix": "Il primo rover ESA su Marte. Originariamente una missione congiunta a guida russa prevista per il 2022; annullata dopo l'invasione dell'Ucraina del 2022 e riprogettata sotto guida ESA con contributi NASA. Nuovo obiettivo: lancio nel 2028, arrivo nel 2029. Trasporta una trivella sotterranea di 2 metri, la più profonda mai pianificata per un rover su Marte, progettata per superare il primo metro di suolo danneggiato dalle radiazioni."
+    },
+    {
+      "id": "planets-14",
+      "key": "planets/itokawa.json :: bio",
+      "grade": "MINOR",
+      "issue": "English \"Near-Earth\" and \"reset\" left.",
+      "fix": "Asteroide vicino alla Terra a forma di arachide 535 × 294 × 209 m scoperto nel 1998. Il rendez-vous con la sonda Hayabusa nel 2005 ha rivelato Itokawa come un ammasso di macerie legato gravitazionalmente piuttosto che un corpo solido — una collezione di frammenti tenuti insieme dalla reciproca attrazione gravitazionale, con la distribuzione dei massi e l'assenza di crateri da impatto che indicano eventi di rinnovamento del regolite su un corpo minore geologicamente attivo."
+    },
+    {
+      "id": "planets-17",
+      "key": "planets/menoetius.json :: fact",
+      "grade": "MINOR",
+      "issue": "Elliptical \"il primo ravvicinato\".",
+      "fix": "Secondario di 104 km del sistema binario Patroclo-Menezio nello sciame troiano L5 — partner di quasi uguale massa rispetto a Patroclo, separato da 680 km. L'incontro di Lucy nel 2033-03 sarà il primo sorvolo ravvicinato di un sistema binario troiano, mappando entrambi i partner simultaneamente."
+    },
+    {
+      "id": "planets-18",
+      "key": "mars-sites/opportunity.json :: fact",
+      "grade": "MINOR",
+      "issue": "Stray backslashes before quotes; \"sta diventando buio\".",
+      "fix": "Mars Exploration Rover B — il rover maratona. 5.111 sol di operazione attiva (oltre 14 anni), 45,16 km percorsi (il massimo raggiunto da qualsiasi veicolo su un altro mondo fino a quando Curiosity ha infranto il record cumulativo). Confermata la presenza di acqua liquida passata ai crateri Endurance, Victoria ed Endeavour. Durante la tempesta di polvere finale del 2018, l'ultima telemetria del rover ha mostrato un'energia esaurita — un momento poeticamente parafrasato come \"la mia batteria è scarica e si sta facendo buio.\""
+    },
+    {
+      "id": "planets-25",
+      "key": "small-bodies/itokawa.json :: science_sections.0.why",
+      "grade": "MINOR",
+      "issue": "English \"near-Earth\"; plural subject with singular verb.",
+      "fix": "Itokawa è un asteroide Apollo vicino alla Terra — semiasse maggiore 1,32 UA. Il rendez-vous del Hayabusa nel 2005 e il ritorno del campione nel 2010 sono stati il primo viaggio di andata e ritorno verso un NEA."
+    },
+    {
+      "id": "programs-1",
+      "key": "programs/salyut.json :: outcome.2.md",
+      "grade": "MINOR",
+      "issue": "\"porti\" means harbours, not docking ports.",
+      "fix": "Poi tutto si ricompose. Salyut 6 (1977) e Salyut 7 (1982), con i loro due portelli di attracco e il rifornimento Progress, divennero le prime stazioni in cui si poteva genuinamente vivere — ospitando equipaggio dopo equipaggio in staffetta continua, stabilendo record di resistenza che superarono i sei mesi, e trasportando i primi cosmonauti ospiti \"Interkosmos\" da tutto il blocco sovietico e oltre, le prime persone nello spazio che non erano né americane né sovietiche. Salyut 7 produsse anche una delle grandi imprese dell'era: nel 1985, dopo che la stazione abbandonata rimase in silenzio, congelata e in rotazione, due cosmonauti volarono su, si agganciarono manualmente allo scafo morto e lo riportarono in vita a mano — il lavoro di riparazione più difficile mai tentato in orbita."
+    },
+    {
+      "id": "programs-6",
+      "key": "programs/spacex.json :: narrative.2.md",
+      "grade": "BROKEN",
+      "issue": "English \"Station\" left in running text.",
+      "fix": "E cambiò per chi è il volo spaziale. Rendendo il lancio un servizio che si può acquistare piuttosto che un programma che un governo deve gestire, SpaceX si trasformò in infrastruttura — la strada che Starlink percorre verso l'orbita, che la NASA percorre verso la Stazione, e che Starship è destinata a estendere fino a Marte. Falcon e Dragon sono le fondamenta su cui poggia il resto dell'azienda."
+    },
+    {
+      "id": "programs-7",
+      "key": "programs/spacex.json :: outcome.0.md",
+      "grade": "MINOR",
+      "issue": "\"atterrò\" used transitively.",
+      "fix": "Funzionò, e ridefinì l'industria. Falcon 9 fece atterrare il suo primo booster nel dicembre 2015, ne riutilizzò uno nel 2017, e negli anni 2020 faceva atterrare e riutilizzava stadi così di routine che un lancio senza recupero divenne l'eccezione. Il prezzo di un chilogrammo in orbita calò nettamente, la frequenza dei lanci salì a un ritmo che nessun altro riusciva nemmeno ad avvicinare, e una capacità che era appartenuta solo agli stati-nazione — il lancio orbitale certificato per esseri umani — era ora operata da un'azienda privata."
+    },
+    {
+      "id": "science-6",
+      "key": "science/porkchop/departure-axis.json :: narrative_101.1",
+      "grade": "MINOR",
+      "issue": "Switches to plural \"voi\" while the rest of the site uses \"tu\".",
+      "fix": "Guarda lungo la riga di celle a basso costo (il lobo turchese freddo) e puoi leggere sul calendario esattamente quando si aprono le finestre di lancio. Per Marte circa ogni 26 mesi. Per Venere ogni 19. Per Giove ogni 13. Ogni zona economica è una finestra — al di fuori di quelle zone, il calendario ti ostacola."
+    },
+    {
+      "id": "universe-3",
+      "key": "universe/named-stars/diphda.json :: fact",
+      "grade": "MINOR",
+      "issue": "\"alpha\" should be \"alfa\".",
+      "fix": "La 'seconda rana' — una gigante arancione che supera in luminosità la stella alfa della propria costellazione."
+    },
+    {
+      "id": "universe-11",
+      "key": "universe/named-stars/rigil-kentaurus.json :: cultural",
+      "grade": "MINOR",
+      "issue": "\"Pointers\" left in English.",
+      "fix": "Il nome è arabo e significa 'piede del Centauro'. Insieme alla vicina Hadar formano i 'Puntatori' che guidano gli osservatori australi verso la Croce del Sud, e come stella simile al Sole più vicina è un obiettivo perenne di studi e narrativa sul viaggio interstellare."
+    },
+    {
+      "id": "universe-15",
+      "key": "universe/named-stars/barnards-star.json :: bio",
+      "grade": "MINOR",
+      "issue": "Nickname left in English.",
+      "fix": "La Stella di Barnard possiede il moto proprio più grande conosciuto di qualsiasi stella, percorrendo nel cielo un'ampiezza apparente pari a quella della Luna in circa 180 anni — guadagnandosi il soprannome di 'Stella Fuggitiva di Barnard'. È un'antica nana rossa di piccola massa."
+    },
+    {
+      "id": "universe-16",
+      "key": "universe/named-stars/castor.json :: cultural",
+      "grade": "MINOR",
+      "issue": "\"Alpha\" should be \"Alfa\".",
+      "fix": "Castore è il cavaliere mortale dei Dioscuri, fratello gemello di Polluce nella mitologia greca e romana. Sebbene designato come 'Alfa', è di solito leggermente meno luminoso del suo fratello Polluce accanto."
+    },
+    {
+      "id": "universe-25",
+      "key": "universe/named-stars/dubhe.json :: fact",
+      "grade": "BROKEN",
+      "issue": "English \"Pointer\" and \"Dipper\" left in running text.",
+      "fix": "Una delle due stelle puntatrici che guidano lo sguardo dal Grande Carro alla Stella Polare."
+    }
+  ]
+}

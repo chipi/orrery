@@ -3,7 +3,7 @@
   "intro_sentence": "Quando você lança — percorrendo o eixo X, tipicamente um período de quatro anos amostrado diariamente.",
   "narrative_101": [
     "Leia o porkchop como um calendário. O eixo horizontal — da esquerda para a direita — é a data em que você deixa a Terra. Cada coluna de pixel é um dia de lançamento diferente. O Orrery faz amostragem com resolução de um dia durante aproximadamente quatro anos; isso é o suficiente para capturar dois ciclos sinódicos completos de Marte (o ciclo de ~26 meses se encaixa aproximadamente duas vezes em quatro anos), o que é suficiente para ver o padrão da janela de lançamento repetir.",
-    "Veja através da linha de células de baixo custo (o lóbulo teal fresco) e você pode ler, no calendário, exatamente quando as janelas de lançamento são. Para Marte são aproximadamente a cada 26 meses. Para Vênus a cada 19. Para Júpiter a cada 13. Cada zona barata é uma janela — fora dessas zonas, o calendário está contra você.",
+    "Observe a linha de células de baixo custo (o lóbulo verde-azulado frio) e você pode ler, no calendário, exatamente quando são as janelas de lançamento. Para Marte são aproximadamente a cada 26 meses. Para Vênus a cada 19. Para Júpiter a cada 13. Cada zona barata é uma janela — fora dessas zonas, o calendário está contra você.",
     "Quando você ajusta o seletor de ano de lançamento em /plan, você está deslizando o eixo X. Ano diferente, posicionamento da janela diferente, mas a física subjacente é a mesma. É por isso que o planejamento de missões é baseado em calendário: as zonas baratas não se movem só porque temos um prazo."
   ],
   "body_paragraphs": [

@@ -1,0 +1,308 @@
+[
+  {
+    "rel": "messages",
+    "at": "lab_goal_lot_entry",
+    "old": "Titan se cache sous une atmosphère d'azote une fois et demie plus épaisse que celle de la Terre au sol, et elle s'étend haut — Huygens a commencé à la ressentir à plus d'un millier de kilomètres d'altitude. Arrivant à 6 km/s, la sonde a subi plus d'une dizaine de g derrière son bouclier : une vrai rentrée, sur une lune.",
+    "new": "Titan se cache sous une atmosphère d'azote une fois et demie plus épaisse que celle de la Terre au sol, et elle s'étend haut — Huygens a commencé à la ressentir à plus d'un millier de kilomètres d'altitude. Arrivant à 6 km/s, la sonde a subi plus d'une dizaine de g derrière son bouclier : une vraie rentrée, sur une lune."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_tsw_microg",
+    "old": "La comète 67P/Tchourioumov-Guérassimenko est un monde de la taille d'une montagne où la gravité est un bruit : le noyau affiche une attraction de surface d'environ un cinquième de millième de mètre par seconde au carré, et sa vitesse de libération sous un mètre par seconde. Relisez cela — vous pourriez trotter hors de cette comète. Chaque intuition que vous avez développée en atterrissant sur la Lune, Mars, Vénus et Titan joue maintenant contre vous : le difficile n'est pas d'arriver. C'est de rester.",
+    "new": "La comète 67P/Tchourioumov-Guérassimenko est un monde de la taille d'une montagne où la gravité n'est qu'une rumeur : le noyau affiche une attraction de surface d'environ un cinquième de millième de mètre par seconde au carré, et sa vitesse de libération sous un mètre par seconde. Relisez cela — vous pourriez trotter hors de cette comète. Chaque intuition que vous avez développée en atterrissant sur la Lune, Mars, Vénus et Titan joue maintenant contre vous : le difficile n'est pas d'arriver. C'est de rester."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_illustration_alt_reach_the_moon",
+    "old": "Une trajectoire translunaire s'arquant d'une Terre dessinée vers la Lune attendante, un minuscule vaisseau chevauchant la courbe de transfert.",
+    "new": "Une trajectoire translunaire qui s'élance d'une Terre esquissée vers la Lune qui attend, un minuscule vaisseau suivant la courbe de transfert."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_land_mercury_desc",
+    "old": "Pas d'air du tout, et une plongée féroce dans le puits gravitationnel du Soleil. Sans rien pour freiner, chaque mètre par seconde doit être tué par le moteur.",
+    "new": "Pas d'air du tout, et une plongée féroce dans le puits gravitationnel du Soleil. Sans rien pour freiner, chaque mètre par seconde doit être annulé par le moteur."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_boosters_glossary",
+    "old": "N_b = ⌈(F_req − F_cœur)/F_b⌉ : toute poussée que l'étage cœur ne peut pas fournir, des boosters d'appoint la doivent — chacun ajoute F_b. Arrondir vers le haut, car un demi-booster n'existe pas.",
+    "new": "N_b = ⌈(F_req − F_core)/F_b⌉ : toute poussée que l'étage cœur ne peut pas fournir, les boosters d'appoint doivent la fournir — chacun ajoute F_b. Arrondir vers le haut, car un demi-booster n'existe pas."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lss_verdict",
+    "old": "Additionnez le Δv en orbite basse : un étage puissant (~8,5 km/s) atterrit pile sur la ligne ~8,7 — les plus grands lanceurs la franchissent à peine seuls. Un survol fournit la marge et, plus important encore, la vitesse supplémentaire pour EXPLORER les planètes externes au lieu de passer péniblement près de l'échappement. C'est pourquoi Voyager a emprunté les fronde gravitationnelles.",
+    "new": "Additionnez le Δv en orbite basse : un étage puissant (~8,5 km/s) atterrit pile sur la ligne ~8,7 — les plus grands lanceurs la franchissent à peine seuls. Un survol fournit la marge et, plus important encore, la vitesse supplémentaire pour EXPLORER les planètes externes au lieu de passer péniblement près de l'échappement. C'est pourquoi Voyager a emprunté les frondes gravitationnelles."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_ltm_why",
+    "old": "La Lune n'a pas d'atmosphère, donc un parachute ne sert à rien — le seul moyen de descendre est de tirer un moteur pour annuler toute votre vitesse orbitale, en combattant la gravité tout du long. La poussée doit surpasser le poids ou vous vous écrasez. C'est le cas pur ; Mars vous en rendra une partie grâce à l'air.",
+    "new": "La Lune n'a pas d'atmosphère, donc un parachute ne sert à rien — le seul moyen de descendre est d'allumer un moteur pour annuler toute votre vitesse orbitale, en combattant la gravité tout du long. La poussée doit surpasser le poids ou vous vous écrasez. C'est le cas pur ; Mars vous en rendra une partie grâce à l'air."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_hub_desc_localgroup",
+    "old": "Un pas de plus vers l'extérieur — Andromeda, Triangulum, les Nuages de Magellan, et des dizaines de galaxies naines.",
+    "new": "Un pas de plus vers l'extérieur — Andromède, le Triangle, les Nuages de Magellan, et des dizaines de galaxies naines."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_motion_drop",
+    "old": "Lâche une masse et la gravité fait le reste — elle accélère en tombant. Combien de temps cela prend-il, et quelle est sa vitesse en bas ?",
+    "new": "Lâchez une masse et la gravité fait le reste — elle accélère en tombant. Combien de temps cela prend-il, et quelle est sa vitesse en bas ?"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g7_max",
+    "old": "Pourquoi Mercure et Vénus n'apparaissent jamais à minuit, restant toujours collés au coucher ou au lever du Soleil ? Parce qu'ils orbitent À L'INTÉRIEUR de l'orbite terrestre : une planète à a UA ne peut s'écarter du Soleil que de arcsin(a). Mais leurs orbites sont des ellipses, la laisse s'étire et se contracte — l'élongation maximale de Mercure varie de ~18° près du périhélie à ~28° à l'aphélie, tandis que Vénus reste proche de 46°. Les planètes externes n'ont aucune laisse ; elles vont jusqu'à l'opposition. À l'intérieur ou à l'extérieur de l'orbite terrestre — cette seule ligne divise les planètes visibles à l'œil nu en deux.",
+    "new": "Pourquoi Mercure et Vénus n'apparaissent jamais à minuit, restant toujours collés au coucher ou au lever du Soleil ? Parce qu'ils orbitent À L'INTÉRIEUR de l'orbite terrestre : une planète à a UA ne peut s'écarter du Soleil que de arcsin(a). Mais leurs orbites sont des ellipses, donc la laisse s'étire et se contracte — l'élongation maximale de Mercure varie de ~18° près du périhélie à ~28° à l'aphélie, tandis que Vénus reste proche de 46°. Les planètes externes n'ont aucune laisse ; elles vont jusqu'à l'opposition. À l'intérieur ou à l'extérieur de l'orbite terrestre — cette seule ligne divise les planètes visibles à l'œil nu en deux."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_retro_dv",
+    "old": "Δv décélérateur",
+    "new": "Δv du propulseur de freinage"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lg_group_andromeda",
+    "old": "Satellite d'Andromeda",
+    "new": "Satellite d'Andromède"
+  },
+  {
+    "rel": "fleet/station/salyut-1.json",
+    "at": "description",
+    "old": "La première station spatiale mondiale, lancée en 1971, occupée pendant 23 jours par l'équipage de Soyuz 11 (Dobrovolski, Volkov, Patsaïev), tous morts en retour lorsque leur capsule dépressurisait. Salyut 1 a été dorbité plus tard cette année-là.",
+    "new": "La première station spatiale du monde, lancée en 1971, occupée pendant 23 jours par l'équipage de Soyuz 11 (Dobrovolski, Volkov, Patsaïev), tous morts au retour lorsque leur capsule s'est dépressurisée. Salyut 1 a été désorbitée plus tard cette année-là."
+  },
+  {
+    "rel": "fleet/observatory/jwst.json",
+    "at": "tagline",
+    "old": "télescope spatial infrarouge le plus grand; orbite L2",
+    "new": "Plus grand télescope spatial infrarouge ; orbite L2"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "description",
+    "old": "Quatrième des cinq vaisseaux Lunar Orbiter, et le premier à voler en orbite lunaire polaire à haute inclinaison. Lancé le 1967-05-04 depuis Cap Canaveral, entra en orbite polaire de 6111 × 2706 km le 1967-05-08. Mission redirigée de la sélection des sites Apollo (les trois premiers orbiteurs avaient déjà accompli ce travail) vers la cartographie scientifique large. Retourna 419 images couvrant 99 % de la face visible lunaire à 60 m/pixel plus la première imagerie détaillée de régions significatives de la face cachée. Ces images restent la couverture la plus haute résolution de la face visible lunaire à cette échelle jusqu'à l'ère LRO moderne. Impact en octobre 1967 à 22-30° O sur la face cachée après une panne radio.",
+    "new": "Quatrième des cinq vaisseaux Lunar Orbiter, et le premier à avoir été placé sur une orbite lunaire polaire à forte inclinaison. Lancé le 1967-05-04 depuis le cap Canaveral, il est entré sur une orbite polaire de 6111 × 2706 km le 1967-05-08. Sa mission a été réorientée de la sélection des sites Apollo (les trois premiers Orbiter avaient déjà accompli ce travail) vers une cartographie scientifique générale. Il a renvoyé 419 images couvrant 99 % de la face visible de la Lune à 60 m/pixel, ainsi que les premières images détaillées de régions importantes de la face cachée. Ces images restent la couverture de la face visible la plus haute résolution à cette échelle jusqu'à l'ère moderne de LRO. Impact en octobre 1967 à 22-30° O sur la face cachée après une panne radio."
+  },
+  {
+    "rel": "fleet/engine/le-9.json",
+    "at": "description",
+    "old": "Le LE-9 est un choix délibéré d'élégance sur la complexité. Plutôt que l'arrangement turbopompe-préchambre de la combustion étagée, il utilise un cycle de détente-purge : l'hydrogène est chauffé par les parois de la chambre et de la tuyère, et une portion de ce gaz est purgée pour entraîner les turbopompes avant d'être rejetée à l'extérieur. Le cycle présente des pressions de chambre intrinsèquement plus faibles et une conception de section chaude plus simple, échangeant certaines performances contre une réduction des modes de défaillance mécanique qui ont affecté les moteurs japonais antérieurs. Développé par Mitsubishi pour la fusée H3 de la JAXA, le LE-9 a d'abord volé en mars 2023 et est le plus grand moteur de ce type à atteindre le service opérationnel.",
+    "new": "Le LE-9 est un choix délibéré d'élégance plutôt que de complexité. Plutôt que l'arrangement turbopompe-préchambre de la combustion étagée, il utilise un cycle expander à purge : l'hydrogène est chauffé par les parois de la chambre et de la tuyère, et une portion de ce gaz est prélevée pour entraîner les turbopompes avant d'être rejetée à l'extérieur. Le cycle présente des pressions de chambre intrinsèquement plus faibles et une conception de section chaude plus simple, échangeant certaines performances contre une réduction des modes de défaillance mécanique qui ont affecté les moteurs japonais antérieurs. Développé par Mitsubishi pour la fusée H3 de la JAXA, le LE-9 a effectué son premier vol en mars 2023 et est le plus grand moteur de ce type à être entré en service opérationnel."
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "tagline",
+    "old": "Actif martien le plus longévif jamais — en orbite depuis le 24/10/2001. Cartes glace gamma + neutrons ; relais UHF de la flotte de surface",
+    "new": "Record de longévité martienne — en orbite depuis le 2001-10-24. Glace d'eau cartographiée (gamma, neutrons) ; relais UHF de surface"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv.json",
+    "at": "best_known_for",
+    "old": "véhicule de transfert H-II du Japon vers l'ISS",
+    "new": "Véhicule de transfert H-II du Japon vers l'ISS"
+  },
+  {
+    "rel": "fleet/launcher/n1.json",
+    "at": "best_known_for",
+    "old": "Fusée lunaire soviétique ; quatre lancements tous échoués",
+    "new": "Fusée lunaire soviétique ; quatre lancements, quatre échecs"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "description",
+    "old": "Trois premiers étages Falcon 9 attachés ensemble, les deux propulseurs latéraux revenant se poser tandis que l'étage central atterrit en zone éloignée sur un barge sans équipage. Actuellement parmi les fusées de levée lourde les plus puissantes en service, avec une capacité de charge utile rivale à celle de Saturn V pour un coût par kilogramme bien inférieur. (Depuis mi-2026, Starship a démontré une capacité opérationnelle de plus en plus avancée.)",
+    "new": "Trois premiers étages Falcon 9 attachés ensemble, les deux propulseurs latéraux revenant se poser tandis que l'étage central atterrit en aval sur une barge autonome. Actuellement parmi les lanceurs lourds les plus puissants en service, avec une capacité d'emport rivalisant avec celle de Saturn V pour un coût par kilogramme bien inférieur. (Depuis mi-2026, Starship a démontré une capacité opérationnelle de plus en plus avancée.)"
+  },
+  {
+    "rel": "fleet/observatory/gaia.json",
+    "at": "tagline",
+    "old": "Cartographié 1,8 milliard d'étoiles en 3D",
+    "new": "A cartographié 1,8 milliard d'étoiles en 3D"
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "description",
+    "old": "Dawn a prouvé la propulsion ionique à l’échelle planétaire : elle a fait correspondre les orbites de l’énorme Vesta, à gauche, et s’est dirigée vers la planète naine Cérès – le plus gros objet de la ceinture d’astéroïdes. Les points lumineux dans le cratère Occator sont devenus l'un des mystères emblématiques de la mission, plus tard liés aux éruptions saumâtres d'un réservoir profond. Cette entrée de catalogue utilise Cérès comme destination principale ; Vesta est couverte dans le récit ci-dessus.",
+    "new": "Dawn a prouvé la propulsion ionique à l’échelle planétaire : elle s’est placée sur la même orbite que l’imposant Vesta, puis est repartie et s’est dirigée en spirale vers la planète naine Cérès – le plus gros objet de la ceinture d’astéroïdes. Les points lumineux dans le cratère Occator sont devenus l'un des mystères emblématiques de la mission, plus tard reliés à des éruptions de saumure issues d'un réservoir profond. Cette entrée de catalogue utilise Cérès comme destination principale ; Vesta est couverte dans le récit ci-dessus."
+  },
+  {
+    "rel": "missions/earth/skylab-4.json",
+    "at": "dispatch",
+    "old": "Skylab 4 a établi un record d'endurance qui a tenu pendant des années — 84 jours en orbite — et est devenu un point de repère dans quelque chose de moins attendu : qui contrôle une mission. L'équipage de Gerald Carr est arrivé face à un calendrier impitoyable envoyé par le sol, a pris du retard, et a finalement résisté, prenant une période de repos non planifiée — la NASA et l'équipage eux-mêmes ont plus tard contesté le caractère délibéré de l'arrêt — et forçant le contrôle de mission à négocier une charge de travail que les humains pouvaient réellement soutenir. Ils ont aussi capturé les meilleures observations de l'époque de Comet Kohoutek. Le vol est mémorisé à la fois pour son record et pour avoir affirmé, pour la première fois clairement, que les personnes en orbite — pas seulement les planificateurs en bas — ont un mot à dire sur la façon dont une longue mission est conduite.",
+    "new": "Skylab 4 a établi un record d'endurance qui a tenu pendant des années — 84 jours en orbite — et est devenu un jalon dans un domaine moins attendu : qui décide de la conduite d'une mission. L'équipage de Gerald Carr est arrivé face à un emploi du temps impitoyable transmis depuis le sol, a pris du retard, et a finalement résisté, s'accordant une période de repos non prévue — la NASA et l'équipage eux-mêmes ont plus tard contesté le caractère délibéré de cet arrêt — et forçant le contrôle de mission à négocier une charge de travail que des humains pouvaient réellement soutenir. Ils ont aussi réalisé les meilleures observations de l'époque de la comète Kohoutek. Le vol reste célèbre à la fois pour son record et pour avoir affirmé, pour la première fois clairement, que les personnes en orbite — et pas seulement les planificateurs en bas — ont leur mot à dire sur la façon dont une longue mission est conduite."
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "description",
+    "old": "Le premier atterrisseur cargo Blue Moon de Blue Origin, sous contrat dans le cadre du programme Commercial Lunar Payload Services (CLPS) de NASA. Un véhicule de descente à un étage propulsé par le moteur cryogénique BE-7, conçu pour délivrer jusqu'à environ 3 tonnes de charge utile sur la surface lunaire. Lancement sur le New Glenn de Blue Origin depuis Cap Canaveral, effectue une injection trans-lunaire sur le deuxième étage de New Glenn, puis exécute l'insertion sur l'orbite lunaire et la descente motorisée. Le vol cargo Mark 1 précède le vol Mark 2 évalué par les humains, qui est engagé pour soutenir l'atterrissage lunaire avec équipage Artemis V de NASA.",
+    "new": "Le premier atterrisseur cargo Blue Moon de Blue Origin, sous contrat dans le cadre du programme Commercial Lunar Payload Services (CLPS) de la NASA. Un véhicule de descente à un étage propulsé par le moteur cryogénique BE-7, conçu pour déposer jusqu'à environ 3 tonnes de charge utile sur la surface lunaire. Lancement sur le New Glenn de Blue Origin depuis le cap Canaveral, injection trans-lunaire par le deuxième étage de New Glenn, puis insertion en orbite lunaire et descente propulsée. Le vol cargo Mark 1 précède le Mark 2 certifié pour les vols habités, qui doit soutenir l'atterrissage lunaire avec équipage d'Artemis V de la NASA."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "first",
+    "old": "Première mission Mars asiatique ; premier succès Mars à la première tentative",
+    "new": "Première mission asiatique vers Mars ; premier succès martien dès la première tentative"
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "first",
+    "old": "Le premier des jumeaux Mars Exploration Rover ; rover ayant la plus longue durée de vie jusqu'à être surpassé par Curiosity",
+    "new": "Premier des deux rovers jumeaux Mars Exploration Rover ; rover resté en service le plus longtemps jusqu'à ce que Curiosity le dépasse"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "description",
+    "old": "Akatsuki — « aube » — était la première mission vénusienne du Japon. Lancée le 2010-05-20 depuis Tanegashima sur un H-IIA 202, jumelée avec le démonstrateur de voile solaire IKAROS. L'insertion prévue en orbite vénusienne le 2010-12-07 a échoué lorsque l'accumulation de cristaux de sel dans un clapet de vérification d'oxydant a désaxé le moteur principal 152 secondes après le début de la manœuvre. La JAXA a maintenu le vaisseau vivant en orbite solaire pendant cinq ans, douze manœuvres de correction, jusqu'à la prochaine fenêtre de rencontre vénusienne. Le 2015-12-07, une manœuvre de 1228 secondes utilisant quatre propulseurs de contrôle d'attitude — jamais conçus pour une insertion orbitale — a placé Akatsuki dans une orbite fortement elliptique de 400 × 440 000 km, à 3° d'inclinaison. L'une des sauvetages de missions les plus dramatiques de l'histoire de l'astronautique. Le contact a été perdu en 2024 ; la JAXA a déclaré les opérations terminées le 2025-09-18.",
+    "new": "Akatsuki — « aube » — était la première mission vénusienne du Japon. Lancée le 2010-05-20 depuis Tanegashima sur un H-IIA 202, jumelée avec le démonstrateur de voile solaire IKAROS. L'insertion prévue en orbite vénusienne le 2010-12-07 a échoué lorsque l'accumulation de cristaux de sel dans un clapet de vérification d'oxydant a désaxé le moteur principal 152 secondes après le début de la manœuvre. La JAXA a maintenu le vaisseau vivant en orbite solaire pendant cinq ans, douze manœuvres de correction, jusqu'à la prochaine fenêtre de rencontre vénusienne. Le 2015-12-07, une manœuvre de 1228 secondes utilisant quatre propulseurs de contrôle d'attitude — jamais conçus pour une insertion orbitale — a placé Akatsuki dans une orbite fortement elliptique de 400 × 440 000 km, à 3° d'inclinaison. L'un des sauvetages de mission les plus spectaculaires de l'histoire de l'astronautique. Le contact a été perdu en 2024 ; la JAXA a déclaré les opérations terminées le 2025-09-18."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "description",
+    "old": "Lucy se dirige vers les nuages de Lagrange L4 et L5 — populations d'astéroïdes primordiaux précédant et suivant Jupiter de 60°, censés préserver de la matière du disque protoplanétaire externe. Trois assistances gravitationnelles terrestres (2022, 2024, 2030) façonnent une trajectoire unique qui visite sept astéroïdes Troyens ainsi que des cibles bonus de la ceinture principale. Premier rencontre d'astéroïde : 152830 Dinkinesh (2023-11-01, ~790 m), où l'imagerie a révélé le satellite binaire de contact Selam. Cible bonus de la ceinture principale : Donaldjohanson 2025-04. Essaim L4 : Eurybate et sa lune Queta (2027-08), Polymèle (2027-09), Leucus (2028-04), Orus (2028-11). Après EGA-3 (2030-12), l'essaim L5 traînant : le système binaire Patrocle-Ménétios (2033-03) — le plus grand système binaire troyen connu, un apothéose appropriée pour la mission dont elle porte le nom (Lucy le fossile d'hominidé ; Patrocle-Ménétios les deux personnages qui tombèrent ensemble dans l'Iliade).",
+    "new": "Lucy se dirige vers les nuages de Lagrange L4 et L5 — populations d'astéroïdes primordiaux précédant et suivant Jupiter de 60°, censés préserver de la matière du disque protoplanétaire externe. Trois assistances gravitationnelles terrestres (2022, 2024, 2030) façonnent une trajectoire unique qui visite sept astéroïdes troyens ainsi que des cibles bonus de la ceinture principale. Première rencontre d'astéroïde : 152830 Dinkinesh (2023-11-01, ~790 m), où l'imagerie a révélé le satellite binaire de contact Selam. Cible bonus de la ceinture principale : Donaldjohanson 2025-04. Essaim L4 : Eurybate et sa lune Queta (2027-08), Polymèle (2027-09), Leucus (2028-04), Orus (2028-11). Après EGA-3 (2030-12), l'essaim L5 traînant : le système binaire Patrocle-Ménétios (2033-03) — le plus grand système binaire troyen connu, une apothéose appropriée pour la mission dont elle porte le nom (Lucy le fossile d'hominidé ; Patrocle-Ménétios les deux personnages qui tombèrent ensemble dans l'Iliade)."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.6.note",
+    "old": "EVA-3 / avant ascension : Scott télévisé lâchant un marteau et une plume ensemble ; les deux frappent le régolithe simultanément, vérifiant en direct la prédiction de Galilée de 1589.",
+    "new": "EVA-3 / avant l'ascension : Scott lâche en direct à la télévision un marteau et une plume ensemble ; les deux touchent le régolithe simultanément, vérifiant en direct la prédiction de Galilée de 1589."
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.1.note",
+    "old": "Stage-2 cutoff + séparation de la charge utile ; orbite 215 × 939 km, inclinaison 65,1°, période 96,2 min.",
+    "new": "Arrêt du deuxième étage + séparation de la charge utile ; orbite 215 × 939 km, inclinaison 65,1°, période 96,2 min."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.2.note",
+    "old": "2026-05-15. Approche minimale 4 609 km — survol martien complété.",
+    "new": "2026-05-15. Approche minimale 4 609 km — survol de Mars terminé."
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.note",
+    "old": "La brûlure du moteur capture le vaisseau spatial sur l’orbite de Mars.",
+    "new": "La combustion du moteur place le vaisseau en orbite autour de Mars."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.1.note",
+    "old": "Brûlure par injection trans-lunaire par ICPS — Orion se sépare sur une trajectoire cislunaire.",
+    "new": "Allumage d'injection trans-lunaire par l'ICPS — Orion se sépare sur une trajectoire cislunaire."
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "events.2.note",
+    "old": "Océan Pacifique ~445 km NE de Midway après 6 orbites / 9 h 13 min. Premier amarrage Mercury dans le Pacifique.",
+    "new": "Océan Pacifique ~445 km NE de Midway après 6 orbites / 9 h 13 min. Première récupération Mercury dans le Pacifique."
+  },
+  {
+    "rel": "rockets/falcon-heavy.json",
+    "at": "first",
+    "old": "Première fusée de lancement lourd réutilisable en orbite",
+    "new": "Première fusée orbitale lourde réutilisable"
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "name",
+    "old": "Heliopause + Interstellar Space",
+    "new": "Héliopause + espace interstellaire"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "ui.Panorama compass rose.where",
+    "old": "Panoramas de la Lune + Mars",
+    "new": "Panoramas de la Lune et de Mars"
+  },
+  {
+    "rel": "earth-objects/lunar-prospector.json",
+    "at": "description",
+    "old": "Première mission lunaire de classe NASA Discovery, 1998-1999. Détection directe par spectromètre à neutrons de l'hydrogène aux deux pôles lunaires – preuve solide de la présence de glace d'eau dans les fonds de cratères ombragés en permanence. Délibérément impacté dans le cratère Shoemaker à la fin de la mission, en espérant que l'éjecta d'impact confirmerait l'eau ; Les observateurs terrestres n’ont rien détecté de définitif.",
+    "new": "Première mission lunaire de classe Discovery de la NASA, 1998-1999. Détection directe par spectromètre à neutrons de l'hydrogène aux deux pôles lunaires – preuve solide de la présence de glace d'eau dans les fonds de cratères en ombre permanente. Précipitée volontairement dans le cratère Shoemaker à la fin de la mission, dans l'espoir que les éjectas de l'impact confirment la présence d'eau ; les observateurs terrestres n’ont rien détecté de définitif."
+  },
+  {
+    "rel": "mars-sites/exomars-rosalind-franklin.json",
+    "at": "fact",
+    "old": "Le premier rover martien de ESA. À l’origine, il s’agissait d’une mission conjointe dirigée par la Russie et prévue pour 2022 ; annulé après l'invasion de l'Ukraine en 2022 et redéfini comme dirigé par ESA avec des contributions NASA. Reciblé pour un lancement en 2028, une arrivée en 2029. Transporte une foreuse souterraine de 2 mètres – la plus profonde jamais prévue pour un rover martien, conçue pour atteindre sous le mètre supérieur endommagé par les radiations.",
+    "new": "Premier rover martien de l'ESA. À l’origine une mission conjointe dirigée par la Russie et prévue pour 2022 ; annulée après l'invasion de l'Ukraine en 2022 et redéfinie comme mission dirigée par l'ESA avec des contributions de la NASA. Reciblée pour un lancement en 2028, une arrivée en 2029. Transporte une foreuse souterraine de 2 mètres – la plus profonde jamais prévue pour un rover martien, conçue pour atteindre sous le mètre supérieur endommagé par les radiations."
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "capability",
+    "old": "Retour d'échantillon à partir d'un site relais uniquement : combine les architectures de Chang'e 4 (communications du côté éloigné) et de Chang'e 5 (retour d'échantillon). L’ensemble complet des capacités pour Mars Sample Return à n’importe quelle latitude.",
+    "new": "Retour d'échantillon à partir d'un site relais uniquement : combine les architectures de Chang'e 4 (communications de la face cachée) et de Chang'e 5 (retour d'échantillon). L’ensemble complet des capacités pour Mars Sample Return à n’importe quelle latitude."
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "links.1.l",
+    "old": "Hayabusa mission archive (JAXA / ISAS)",
+    "new": "Archives de la mission Hayabusa (JAXA / ISAS)"
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "fact",
+    "old": "Lunokhod 2 était le second des deux rovers lunaires soviétiques (1973). Piloté par une équipe de terrain de 5 personnes se relayant par quarts au centre de contrôle de l'IKI. En 4 mois, il a parcouru ~39 km — le record de distance à la surface lunaire qui a tenu pendant 41 ans jusqu'à ce que le rover Opportunity de la NASA le dépasse sur Mars en 2014. Il transportait des rétroréflecteurs laser français qui sont toujours utilisés aujourd'hui pour la télémétrie Terre-Lune.",
+    "new": "Lunokhod 2 était le second des deux rovers lunaires soviétiques (1973). Piloté par une équipe au sol de 5 personnes se relayant par quarts au centre de contrôle de l'IKI. En 4 mois, il a parcouru ~39 km — le record de distance à la surface lunaire qui a tenu pendant 41 ans jusqu'à ce que le rover Opportunity de la NASA le dépasse sur Mars en 2014. Il transportait des rétroréflecteurs laser français qui sont toujours utilisés aujourd'hui pour la télémétrie Terre-Lune."
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "links.0.l",
+    "old": "Patroclus-Menoetius binary — Wikipedia",
+    "new": "Système binaire Patrocle-Ménétios — Wikipédia"
+  },
+  {
+    "rel": "mars-sites/opportunity.json",
+    "at": "fact",
+    "old": "Mars Exploration Rover B — le rover du marathon. 5 111 sols d'opération active (plus de 14 ans), 45,16 km parcourus (le plus par tout véhicule sur un autre monde jusqu'à ce que Curiosity batte le record cumulé). Eau liquide passée confirmée aux cratères Endurance, Victoria et Endeavour. Pendant la tempête de poussière finale de 2018, la dernière télémétrie du rover a montré une batterie épuisée — un moment poétiquement paraphrasé comme « ma batterie est faible et il fait de plus en plus sombre ».",
+    "new": "Mars Exploration Rover B — le rover marathonien. 5 111 sols d'opération active (plus de 14 ans), 45,16 km parcourus (la plus grande distance parcourue par un véhicule sur un autre monde jusqu'à ce que Curiosity batte le record cumulé). Présence passée d'eau liquide confirmée aux cratères Endurance, Victoria et Endeavour. Pendant la tempête de poussière finale de 2018, la dernière télémétrie du rover a montré une batterie épuisée — un moment poétiquement paraphrasé comme « ma batterie est faible et il fait de plus en plus sombre »."
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "tagline",
+    "old": "La plus grande chose que l'humanité ait jamais construite dans l'espace, et le lieu où tous les fils de l'ère spatiale convergent — la rivalité des anciens rivaux transformée, après quarante ans, en l'acte de coopération le plus long de l'histoire du vol spatial.",
+    "new": "La plus grande construction de l'humanité dans l'espace, et le lieu où convergent tous les fils de l'ère spatiale — la rivalité d'anciens rivaux transformée, après quarante ans, en la plus longue coopération de l'histoire du vol spatial."
+  },
+  {
+    "rel": "science/mission-phases/interplanetary-internet.json",
+    "at": "body_paragraphs.1",
+    "old": "Delay/Disruption-Tolerant Networking (DTN) résout le problème avec une architecture différente. Au lieu de maintenir une connexion de bout en bout, chaque nœud du réseau détient un 'bundle' de données autonome — une unité contenant les métadonnées de routage, les délais d'expiration et la charge utile — et le transmet uniquement quand un lien convenable est disponible. Le nœud stocke le bundle indéfiniment si aucun lien n'est actuellement ouvert, puis le livre quand la prochaine fenêtre de contact s'ouvre. Le protocole est normalisé : le Bundle Protocol est une norme IETF (RFC 9171). Ses fondations — l'architecture de réseau tolérant aux délais, RFC 4838 — ont été posées en partie par Vint Cerf, l'un des architectes originaux de TCP/IP, travaillant avec la NASA/JPL.",
+    "new": "Le réseau tolérant aux délais et aux interruptions (DTN, Delay/Disruption-Tolerant Networking) résout le problème avec une architecture différente. Au lieu de maintenir une connexion de bout en bout, chaque nœud du réseau détient un 'bundle' de données autonome — une unité contenant les métadonnées de routage, les délais d'expiration et la charge utile — et le transmet uniquement quand un lien convenable est disponible. Le nœud stocke le bundle indéfiniment si aucun lien n'est actuellement ouvert, puis le livre quand la prochaine fenêtre de contact s'ouvre. Le protocole est normalisé : le Bundle Protocol est une norme IETF (RFC 9171). Ses fondations — l'architecture de réseau tolérant aux délais, RFC 4838 — ont été posées en partie par Vint Cerf, l'un des architectes originaux de TCP/IP, travaillant avec la NASA/JPL."
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "narrative_101.1",
+    "old": "Regardez sur la ligne des cellules à bas coût (le lobe bleu-vert clair) et vous pouvez lire, sur le calendrier, exactement quand les fenêtres de lancement se produisent. Pour Mars, elles sont à peu près tous les 26 mois. Pour Vénus tous les 19. Pour Jupiter tous les 13. Chaque zone bon marché est une fenêtre — en dehors de ces zones, le calendrier vous oppose une résistance.",
+    "new": "Regardez sur la ligne des cellules à bas coût (le lobe bleu-vert clair) et vous pouvez lire, sur le calendrier, exactement quand se situent les fenêtres de lancement. Pour Mars, elles reviennent à peu près tous les 26 mois. Pour Vénus, tous les 19. Pour Jupiter, tous les 13. Chaque zone bon marché est une fenêtre — en dehors de ces zones, le calendrier vous oppose une résistance."
+  },
+  {
+    "rel": "universe/named-stars/almach.json",
+    "at": "cultural",
+    "old": "Le nom dérive d'un terme arabe désignant un petit chat du désert ou un lynx. Almach marque le pied de la princesse enchaînée Andromeda, à l'extrémité opposée de la constellation par rapport à sa tête située à Alphératz.",
+    "new": "Le nom dérive d'un terme arabe désignant un petit chat du désert ou un lynx. Almach marque le pied de la princesse enchaînée Andromède, à l'extrémité opposée de la constellation par rapport à sa tête située à Alphératz."
+  },
+  {
+    "rel": "universe/named-stars/barnards-star.json",
+    "at": "bio",
+    "old": "L'étoile de Barnard possède le plus grand mouvement propre connu de toutes les étoiles, traversant une largeur apparente de la Lune dans le ciel en environ 180 ans — ce qui lui vaut le surnom de « Barnard's Runaway Star ». C'est une naine rouge ancienne de faible masse.",
+    "new": "L'étoile de Barnard possède le plus grand mouvement propre connu de toutes les étoiles, traversant une largeur apparente de la Lune dans le ciel en environ 180 ans — ce qui lui vaut le surnom d'« Étoile fugitive de Barnard ». C'est une naine rouge ancienne de faible masse."
+  },
+  {
+    "rel": "universe/named-stars/kaus-australis.json",
+    "at": "cultural",
+    "old": "« Kaus » vient de l'arabe signifiant « arc », avec le latin « australis » pour « austral ». L'arc et la flèche du Sagittaire visent le cœur de la galaxie, une direction dense avec les nuages les plus brillants de la Voie lactée.",
+    "new": "« Kaus » vient de l'arabe signifiant « arc », avec le latin « australis » pour « austral ». L'arc et la flèche du Sagittaire visent le cœur de la galaxie, une direction riche en nuages parmi les plus brillants de la Voie lactée."
+  },
+  {
+    "rel": "universe/named-stars/mirfak.json",
+    "at": "cultural",
+    "old": "Le nom provient de l'arabe signifiant « le coude ». Dans la figure classique, Persée tient la tête de Medusa — près d'Algol, l'étoile-démon clignotante — et Mirfak marque le flanc du héros.",
+    "new": "Le nom provient de l'arabe signifiant « le coude ». Dans la figure classique, Persée tient la tête de Méduse — près d'Algol, l'étoile-démon clignotante — et Mirfak marque le flanc du héros."
+  }
+]

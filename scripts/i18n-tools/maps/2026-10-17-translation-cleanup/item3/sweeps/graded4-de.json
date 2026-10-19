@@ -1,0 +1,446 @@
+[
+  {
+    "rel": "messages",
+    "at": "lab_f_escverd_err_insufficient",
+    "old": "Nicht ausreichend – selbst mit dem Manöver bleiben Sie gravitativ an die Sonne gebunden.",
+    "new": "Nicht ausreichend – selbst mit dem Manöver bleibst du gravitativ an die Sonne gebunden."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_tsw_microg",
+    "old": "Der Komet 67P/Tschurjumow-Gerassimenko ist eine berggroße Welt, auf der Gravitation ein Gerücht ist: der Kern hat eine Oberflächengravitation knapp ein Fünftel eines Tausendstel Meter pro Sekunde Quadrat, und seine Fluchtgeschwindigkeit liegt unter einem Meter pro Sekunde. Lies das nochmal — du könntest einfach von diesem Kometen wegjogging. Jede Intuition, die du beim Landen auf dem Mond, Mars, Venus und Titan aufgebaut hast, wirkt jetzt gegen dich: die schwierige Aufgabe ist nicht anzukommen. Sie ist zu bleiben.",
+    "new": "Der Komet 67P/Tschurjumow-Gerassimenko ist eine berggroße Welt, auf der die Schwerkraft ein Gerücht ist: Der Kern hat an der Oberfläche eine Anziehung von knapp einem Fünftel eines Tausendstels Meter pro Sekundenquadrat, und seine Fluchtgeschwindigkeit liegt unter einem Meter pro Sekunde. Lies das noch einmal – du könntest einfach von diesem Kometen davonjoggen. Jede Intuition, die du beim Landen auf dem Mond, auf dem Mars, auf der Venus und auf dem Titan aufgebaut hast, wirkt jetzt gegen dich: Das Schwierige ist nicht das Ankommen. Es ist das Bleiben."
+  },
+  {
+    "rel": "messages",
+    "at": "why_solar_mass_body",
+    "old": "Masse setzt Schwerkraft, Schwerkraft setzt jede Bahn. Die Sonne wiegt 333.000-mal die Erdmasse und dominiert das Sonnensystem; diese eine Zahl sagt mit Keplers Gesetzen voraus, wo jeder Planet zu jedem Moment ist.",
+    "new": "Die Masse bestimmt die Schwerkraft, die Schwerkraft bestimmt jede Bahn. Die Sonne hat 333.000-mal die Masse der Erde und dominiert das Sonnensystem; diese eine Zahl sagt mit den Keplerschen Gesetzen voraus, wo jeder Planet zu jedem Moment steht."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_illustration_alt_reach_the_moon",
+    "old": "Eine translunare Bahn wölbt sich vom skizzierten Mond zur wartenden Erde, ein winziges Raumschiff fährt auf der Übergangskurve.",
+    "new": "Eine translunare Bahn wölbt sich von der skizzierten Erde zum wartenden Mond, ein winziges Raumschiff fährt auf der Übergangskurve."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_assume_single_stage",
+    "old": "Einstufig (ein Tankatz + Triebwerke)",
+    "new": "Einstufig (ein Tanksatz + Triebwerke)"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_boosters_glossary",
+    "old": "N_b = ⌈(F_req − F_core)/F_b⌉: welcher Schub die Kernstadium nicht liefert, müssen Zusatzbooster bereitstellen — jeder addiert F_b. Runde auf, denn einen halben Booster gibt es nicht.",
+    "new": "N_b = ⌈(F_req − F_core)/F_b⌉: Den Schub, den die Kernstufe nicht liefern kann, müssen Zusatzbooster beisteuern — jeder addiert F_b. Runde auf, denn einen halben Booster gibt es nicht."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lss_verdict",
+    "old": "Addieren Sie Δv aus niedriger Umlaufbahn: eine starke Stufe (~8,5 km/s) landet genau auf der ~8,7-Linie — die allergrößten Starts schaffen es allein knapp. Ein Vorbeiflug liefert den Spielraum und vor allem die zusätzliche Geschwindigkeit, um die äußeren Planeten wirklich zu BESUCHEN statt nur schwach vorbeizuhinken. Deshalb nahm Voyager die Schleudern.",
+    "new": "Addiere es in Δv aus niedriger Umlaufbahn: eine starke Stufe (~8,5 km/s) landet genau auf der ~8,7-Linie — die allergrößten Starts schaffen sie allein knapp. Ein Vorbeiflug liefert den Spielraum und vor allem die zusätzliche Geschwindigkeit, um die äußeren Planeten wirklich zu BEREISEN, statt nur mühsam über die Fluchtgrenze zu humpeln. Deshalb nutzte Voyager die Swing-bys."
+  },
+  {
+    "rel": "messages",
+    "at": "chip_label_solar_power_budget",
+    "old": "Solarstrombudget — Array-Erzeugung vs. Lebenserhaltung + Nutzlastverbrauch",
+    "new": "Solarstrombudget — Erzeugung der Solarmodule vs. Verbrauch von Lebenserhaltung + Nutzlast"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_ltm_why",
+    "old": "Der Mond hat keine Atmosphäre, also nützt ein Fallschirm nichts — der einzige Weg hinunter ist, ein Triebwerk zu zünden und deine ganze Orbitalgeschwindigkeit zu opfern, während du gegen die Schwerkraft ankämpfst. Der Schub muss das Gewicht übersteigen oder du zerschellst. Dies ist der reine Fall; der Mars wird dir etwas dieses Bremsens durch die Luft zurückgeben.",
+    "new": "Der Mond hat keine Atmosphäre, also nützt ein Fallschirm nichts — der einzige Weg hinunter ist, ein Triebwerk zu zünden und deine ganze Orbitalgeschwindigkeit zu opfern, während du gegen die Schwerkraft ankämpfst. Der Schub muss das Gewicht übersteigen oder du zerschellst. Dies ist der reine Fall; der Mars wird dir einen Teil dieses Bremsens durch die Luft zurückgeben."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lar_hook",
+    "old": "Newtons Kanonenkugel: stell dir vor, du feuernst eine Kanone von einem Berggipfel ab, immer stärker. Irgendwann krümmt sich der Boden so schnell weg, wie die Kugel fällt, und sie landet nie. Dieses »für immer fallen« ist genau das, was eine Umlaufbahn ist — und es ist die nächste Lektion.",
+    "new": "Newtons Kanonenkugel: stell dir vor, du feuerst eine Kanone von einem Berggipfel ab, immer stärker. Irgendwann krümmt sich der Boden so schnell weg, wie die Kugel fällt, und sie landet nie. Dieses »für immer fallen« ist genau das, was eine Umlaufbahn ist — und es ist die nächste Lektion."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g7_max",
+    "old": "Warum erscheinen Merkur und Venus niemals um Mitternacht, sondern kuscheln sich immer an Sonnenuntergang oder Sonnenaufgang? Weil sie INNERHALB der Erdbahn kreisen: Ein Planet bei a AU kann sich nur um arcsin(a) von der Sonne entfernen. Doch ihre Bahnen sind Ellipsen, daher dehnt und schrumpft die Leine — Merkurs größte Elongation schwankt von ~18° nahe dem Perihel bis ~28° im Aphel, während Venus sich bei etwa 46° hält. Äußere Planeten haben gar keine Leine; sie wandern bis zur Opposition. Innerhalb oder außerhalb der Erdbahn — diese eine Linie teilt die bloßäugigen Planeten in zwei.",
+    "new": "Warum erscheinen Merkur und Venus niemals um Mitternacht, sondern kuscheln sich immer an Sonnenuntergang oder Sonnenaufgang? Weil sie INNERHALB der Erdbahn kreisen: Ein Planet bei a AU kann sich nur um arcsin(a) von der Sonne entfernen. Doch ihre Bahnen sind Ellipsen, daher dehnt und schrumpft die Leine — Merkurs größte Elongation schwankt von ~18° nahe dem Perihel bis ~28° im Aphel, während die Venus sich bei etwa 46° hält. Äußere Planeten haben gar keine Leine; sie wandern bis zur Opposition. Innerhalb oder außerhalb der Erdbahn — diese eine Linie teilt die mit bloßem Auge sichtbaren Planeten in zwei."
+  },
+  {
+    "rel": "messages",
+    "at": "fly_phase_panel_aria",
+    "old": "Missionsphase Details",
+    "new": "Details zur Missionsphase"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_cislunar_tof",
+    "old": "Flugzeit",
+    "new": "Freiflugzeit"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.14.md",
+    "old": "In den Jahren 2008 und 2009 lieferten die Mission Chandrayaan-1 und NASAs Lunar Reconnaissance Orbiter, was einer Revolution in der Mondforschung gleichkommt: Hinweise darauf, dass die dauerhaft beschatteten Krater nahe dem Südpol [Wassereis](/science/planets/lunar-ice) enthalten. Keine Spuren – sondern beträchtliche Vorkommen, wahrscheinlich Hunderte Millionen Tonnen, über Milliarden von Jahren durch Kometeneinschläge und den Sonnenwind angehäuft und bewahrt von Temperaturen, die nie über −160 °C steigen, weil die Sonne diese Kraterböden nie erreicht. Wassereis ist im Rahmen eines Tiefraumprogramms nicht bloß etwas zum Trinken. Es ist Wasserstoff und Sauerstoff: Raketentreibstoff, Atemluft, Strahlenschutz. Der Südpol des Mondes birgt womöglich das Treibstoffdepot und die Lebenserhaltungsverbrauchsgüter für alles, was danach kommt. Genau das bedeutet der Begriff „In-situ-Ressourcennutzung“ in der Praxis, und er verändert den Grund des Aufbruchs von Grund auf. Bei Apollo ging es ums Besuchen. Beim Südpol geht es ums Bleiben.",
+    "new": "In den Jahren 2008 und 2009 lieferten die Mission Chandrayaan-1 und NASAs Lunar Reconnaissance Orbiter, was einer Revolution in der Mondforschung gleichkommt: Hinweise darauf, dass die dauerhaft beschatteten Krater nahe dem Südpol [Wassereis](/science/planets/lunar-ice) enthalten. Keine Spuren – sondern beträchtliche Vorkommen, wahrscheinlich Hunderte Millionen Tonnen, über Milliarden von Jahren durch Kometeneinschläge und den Sonnenwind angehäuft und bewahrt von Temperaturen, die nie über −160 °C steigen, weil die Sonne diese Kraterböden nie erreicht. Wassereis ist im Rahmen eines Tiefraumprogramms nicht bloß etwas zum Trinken. Es ist Wasserstoff und Sauerstoff: Raketentreibstoff, Atemluft, Strahlenschutz. Der Südpol des Mondes birgt womöglich das Treibstoffdepot und die Verbrauchsgüter für die Lebenserhaltung für alles, was danach kommt. Genau das bedeutet der Begriff „In-situ-Ressourcennutzung“ in der Praxis, und er verändert den Grund des Aufbruchs von Grund auf. Bei Apollo ging es ums Besuchen. Beim Südpol geht es ums Bleiben."
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.26.md",
+    "old": "Anders als beim [Abstieg durch eine Marsatmosphäre](/essays/seven-minutes) gibt es bei einer Mondlandung überhaupt keine atmosphärische Bremsung: Man kommt von Anfang bis Ende mit Triebwerken herein, verbrennt in jeder Höhe Treibstoff und legt sich auf eine Flugbahn fest, die sich in den letzten Sekunden nicht mehr sinnvoll korrigieren lässt, wenn unten auf der Oberfläche etwas Unerwartetes auftaucht. Der Mond ist – im Sinne des [Seven-Minutes-Essays](/essays/seven-minutes) – die reinste Form des Falls ohne Atmosphäre: das Problem ohne kostenlose Verzögerung, ohne Hitzeschild, der Zeit verschafft, ohne Fallschirmphase. Alles, was man für die wissenschaftliche Nutzlast ausgeben möchte, muss man zuerst im Treibstoffbudget unterbringen. Und die [Signallaufzeit, die den Mond beherrschbar macht](/science/mission-phases/dsn) – diese Hin- und Rücklaufzeit von 1,3 Sekunden – ist kurz genug, dass der Mensch im Regelkreis bleiben kann. Mondlander brauchen deshalb noch nicht die vollständig autonome geländerelative Navigation, die Perseverance bei Jezero einsetzte. Sie profitieren davon. Noch sind sie nicht zwingend darauf angewiesen. Diese Unterscheidung wird beim Mars nicht mehr gelten.",
+    "new": "Anders als beim [Abstieg durch eine Marsatmosphäre](/essays/seven-minutes) gibt es bei einer Mondlandung überhaupt keine atmosphärische Bremsung: Man kommt von Anfang bis Ende mit Triebwerken herein, verbrennt in jeder Höhe Treibstoff und legt sich auf eine Flugbahn fest, die sich in den letzten Sekunden nicht mehr sinnvoll korrigieren lässt, wenn unten auf der Oberfläche etwas Unerwartetes auftaucht. Der Mond ist – im Sinne des [Essays über die sieben Minuten](/essays/seven-minutes) – die reinste Form des Falls ohne Atmosphäre: das Problem ohne kostenlose Verzögerung, ohne Hitzeschild, der Zeit verschafft, ohne Fallschirmphase. Alles, was man für die wissenschaftliche Nutzlast ausgeben möchte, muss man zuerst im Treibstoffbudget unterbringen. Und die [Signallaufzeit, die den Mond beherrschbar macht](/science/mission-phases/dsn) – diese Hin- und Rücklaufzeit von 1,3 Sekunden – ist kurz genug, dass der Mensch im Regelkreis bleiben kann. Mondlander brauchen deshalb noch nicht die vollständig autonome geländerelative Navigation, die Perseverance bei Jezero einsetzte. Sie profitieren davon. Noch sind sie nicht zwingend darauf angewiesen. Diese Unterscheidung wird beim Mars nicht mehr gelten."
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "description",
+    "old": "ISROs erstes interplanetares Raumschiff. Der Orbiter brachte die Moon Impact Probe zur Mondoberfläche – das erste indische Objekt auf einer anderen Welt – und beförderte 11 Instrumente aus 6 Ländern. Das auf Chandrayaan-1 stationierte Instrument M3 von NASA machte die Entdeckung, die Lehrbücher neu schrieb: Wassermoleküle sind auf der Mondoberfläche weit verbreitet und nicht nur in polaren, schattigen Kratern eingeschlossen. Die Mission endete abrupt im August 2009, als ISRO die Kommunikation mit der Raumsonde verlor.",
+    "new": "ISROs erstes interplanetares Raumschiff. Der Orbiter brachte die Moon Impact Probe zur Mondoberfläche – das erste indische Objekt auf einer anderen Welt – und beförderte 11 Instrumente aus 6 Ländern. Das an Bord von Chandrayaan-1 mitgeführte Instrument Moon Mineralogy Mapper (M3) der NASA machte die Entdeckung, die Lehrbücher neu schrieb: Wassermoleküle sind auf der Mondoberfläche weit verbreitet und nicht nur in polaren, im Schatten liegenden Kratern eingeschlossen. Die Mission endete abrupt im August 2009, als ISRO die Kommunikation mit der Raumsonde verlor."
+  },
+  {
+    "rel": "missions/earth/skylab-4.json",
+    "at": "description",
+    "old": "Carr, Gibson und Pogue — die letzte und längste Skylab-Besatzung, 84 Tage 1 Stunde, alle Neulinge. Gestartet am 1973-11-16 um 14:01 UTC auf Saturn IB (SA-208). Umfassende Erdressourcen- und Sonnenbeobachtung, einschließlich einer vollständigen Komet-Kohoutek-Kampagne über Dezember bis Januar. Die Mission ist vor allem für das bekannt, was die NASA später eine „Skylab-Meuterei\" oder einen „Streik\" nannte — ein umstrittenes Konto eines Ruhetags-Ausfalls um Tag 42 nach unerbittlichen Forderungen der Bodenkontrolle, die jede Minute der Wachzeit verdichteten; NASA und die Besatzung haben erklärt, dass kein organisierter Streik stattgefunden hat, aber die zugrundeliegende Zeitplanüberlastung war real und führte zu dauerhaften NASA-Reformen bei der Zeitplangestaltung der Besatzung für Langdauermissionen. Wasserlandung am 1974-02-08 um 15:17 UTC — die letzte Skylab-Wasserlandung. CSM-118 wird im National Museum of the US Air Force, Dayton OH ausgestellt.",
+    "new": "Carr, Gibson und Pogue — die letzte und längste Skylab-Besatzung, 84 Tage 1 Stunde, alle Neulinge. Gestartet am 1973-11-16 um 14:01 UTC auf Saturn IB (SA-208). Umfassende Erdressourcen- und Sonnenbeobachtung, einschließlich einer vollständigen Kampagne zum Kometen Kohoutek über Dezember bis Januar. Die Mission ist vor allem für das bekannt, was die NASA später eine „Skylab-Meuterei“ oder einen „Streik“ nannte — eine umstrittene Darstellung eines Arbeitsstopps an einem Ruhetag um Tag 42, nachdem unablässige Forderungen der Bodenkontrolle jede Minute der Wachzeit verdichtet hatten; NASA und die Besatzung haben erklärt, dass kein organisierter Streik stattgefunden hat, aber die zugrunde liegende Überlastung des Zeitplans war real und führte zu dauerhaften NASA-Reformen bei der Zeitplanung für Besatzungen auf Langdauermissionen. Wasserlandung am 1974-02-08 um 15:17 UTC — die letzte Skylab-Wasserlandung. CSM-118 wird im National Museum of the US Air Force, Dayton OH ausgestellt."
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "description",
+    "old": "Juri Gagarins 108-minütiger Flug über eine einzelne Umlaufbahn – der erste bemannte Raumflug der Geschichte und der erste Mensch, der die Erde umkreiste. Gestartet am 12.04.1961 06:07 UTC von Baikonur mit einer Vostok-K-Trägerrakete (8K72K); Umlaufbahn 169 × 327 km, Inklination 65°. Das sphärische Abstiegsmodul setzte Gagarin in einer Höhe von etwa 7 km aus (ein Sachverhalt, den die UdSSR jahrelang verbarg, um eine vollständige bemannte Landung nach FAI-Regeln beanspruchen zu können). Gagarin landete per Fallschirm bei Smelovka, Oblast Saratow; die Kapsel landete separat und wird im RKK Energia Museum in Korolyov, Russland, ausgestellt. Der Flug beendete Koroljows zehn Jahre andauernde Arbeit an Raketen und Satelliten und löste das amerikanische Programm für bemannte Raumfahrt aus + Kennedys Mond-Landungszusage sechs Wochen später.",
+    "new": "Juri Gagarins 108-minütiger Flug über eine einzelne Umlaufbahn – der erste bemannte Raumflug der Geschichte und der erste Mensch, der die Erde umkreiste. Gestartet am 12.04.1961 06:07 UTC von Baikonur mit einer Vostok-K-Trägerrakete (8K72K); Umlaufbahn 169 × 327 km, Inklination 65°. Das sphärische Abstiegsmodul setzte Gagarin in einer Höhe von etwa 7 km aus (ein Sachverhalt, den die UdSSR jahrelang verbarg, um eine vollständige bemannte Landung nach FAI-Regeln beanspruchen zu können). Gagarin landete per Fallschirm bei Smelowka, Oblast Saratow; die Kapsel landete separat und wird im RKK Energia Museum in Koroljow, Russland, ausgestellt. Der Flug beendete Koroljows zehn Jahre andauernde Arbeit an Raketen und Satelliten und löste das amerikanische Programm für bemannte Raumfahrt aus + Kennedys Mond-Landungszusage sechs Wochen später."
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "description",
+    "old": "Der erste Fracht-Blue-Mond-Lander von Blue Origin, der im Rahmen des CLPS-Programms (Commercial Lunar Payload Services) von NASA in Auftrag gegeben wurde. Ein einstufiges Abstiegsfahrzeug, das vom kryogenen BE-7-Motor angetrieben wird und bis zu ca. 3 Tonnen Nutzlast auf die Mondoberfläche befördern soll. Startet auf dem New Glenn von Blue Origin von Cape Canaveral aus, führt eine translunare Injektion auf der zweiten Stufe des New Glenn durch, führt dann die Einführung in die Mondumlaufbahn und den angetriebenen Abstieg durch. Der Frachtflug Mark 1 geht dem bemannten Mark 2 voraus, der die bemannte Mondlandung Artemis V von NASA unterstützen soll.",
+    "new": "Der erste Fracht-Lander Blue Moon von Blue Origin, der im Rahmen des CLPS-Programms (Commercial Lunar Payload Services) der NASA in Auftrag gegeben wurde. Ein einstufiges Abstiegsfahrzeug mit dem kryogenen Triebwerk BE-7, das bis zu ca. 3 Tonnen Nutzlast auf die Mondoberfläche bringen soll. Startet auf der New Glenn von Blue Origin von Cape Canaveral aus, führt mit der zweiten Stufe der New Glenn die translunare Injektion durch und anschließend das Einschwenken in die Mondumlaufbahn sowie den angetriebenen Abstieg. Der Frachtflug Mark 1 geht dem bemannten Mark 2 voraus, der die bemannte Mondlandung Artemis V der NASA unterstützen soll."
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "description",
+    "old": "Apollo 1 war der geplante erste bemannte Flug des Apollo Block I CSM, ursprünglich als AS-204 bezeichnet und für den Start am 21.02.1967 von LC-34 vorgesehen. Während eines routinemäßigen 'Plugs-Out'-Tests am 27.01.1967 um 17:31 EST, bei dem die Besatzung in der mit reinem Sauerstoff druckbeaufschlagten Kabine eingeschlossen war, entzündete sich ein Blitzfeuer im unteren Ausrüstungsbereich — wahrscheinlich ein Lichtbogen einer mit Teflon isolierten Leitung durch versilbertes Kupfer, das bei der Installation beschädigt worden war. Der Kabinendruck stieg innerhalb von 15 Sekunden auf 29 psi an; die nach innen öffnende Luke ließ sich gegen das Druckgefälle nicht entriegeln. Gus Grissom, Ed White und Roger Chaffee starben innerhalb von Sekunden an Erstickung. Die Untersuchung führte zu einer kompletten Umkonstruktion von Block I zu Block II + der sichereren, einheitlichen, nach außen öffnenden Luke + nicht brennbaren Kabinenmaterialien + einer stickstoffreichen Kabinenatmosphäre vor dem Start. Die offizielle Bezeichnung Apollo 1 wurde posthum zu Ehren der Besatzung vergeben. Spätere Apollo-Missionen (CSM-101 bis CSM-114) flogen die Block II-Hardware, die aus dieser Neukonstruktion hervorging.",
+    "new": "Apollo 1 war der geplante erste bemannte Flug des Apollo Block I CSM, ursprünglich als AS-204 bezeichnet und für den Start am 21.02.1967 von LC-34 vorgesehen. Während eines routinemäßigen „Plugs-Out“-Tests am 27.01.1967 um 17:31 EST, bei dem die Besatzung in der mit reinem Sauerstoff druckbeaufschlagten Kabine eingeschlossen war, entzündete sich ein Blitzfeuer im unteren Ausrüstungsbereich — wahrscheinlich ein Lichtbogen einer mit Teflon isolierten Leitung durch versilbertes Kupfer, das bei der Installation beschädigt worden war. Der Kabinendruck stieg innerhalb von 15 Sekunden auf 29 psi an; die nach innen öffnende Luke ließ sich gegen das Druckgefälle nicht entriegeln. Gus Grissom, Ed White und Roger Chaffee starben innerhalb von Sekunden an Erstickung. Die Untersuchung führte zu einer kompletten Umkonstruktion von Block I zu Block II + der sichereren, einheitlichen, nach außen öffnenden Luke + nicht brennbaren Kabinenmaterialien + einer stickstoffreichen Kabinenatmosphäre vor dem Start. Die offizielle Bezeichnung Apollo 1 wurde posthum zu Ehren der Besatzung vergeben. Spätere Apollo-Missionen (CSM-101 bis CSM-114) flogen die Block II-Hardware, die aus dieser Neukonstruktion hervorging."
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.1.label",
+    "old": "VENUS-SCHWERKRAFTUNTERSTÜTZUNG",
+    "new": "VENUS-SWING-BY"
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "dispatch",
+    "old": "Spirit war für neunzig Tage konzipiert und funktionierte sechs Jahre lang. Eines eines Paares von golfkartgroßen Geologen, die 2004 gelandet wurden, sollte es die Felsen auslesen, um Beweise für eine feuchteren Marsvergangen­heit zu finden — und es fand sie, entdeckte Mineralien, die nur in Wasser entstehen, und an einer Stelle Kieselsäureablagerungen wie die von Heißquellen auf der Erde. Es erklomm Hügel, die niemand geplant hatte, und überstand Winter, für die es nie ausgelegt war, bis ein Rad ausfiel und es im weichen Sand stecken blieb. Es sendete von seinem Platz weiter, bis die Marskälte es endlich erreichte.",
+    "new": "Spirit war für neunzig Tage konzipiert und arbeitete sechs Jahre lang. Als einer von zwei golfwagengroßen Geologen, die 2004 landeten, sollte er die Felsen nach Hinweisen auf eine feuchtere Marsvergangenheit lesen — und er fand sie: Er entdeckte Mineralien, die nur in Wasser entstehen, und an einer Stelle Kieselsäureablagerungen wie die von Heißquellen auf der Erde. Er erklomm Hügel, die niemand für ihn vorgesehen hatte, und überstand Winter, für die er nie ausgelegt war, bis ein Rad ausfiel und er im weichen Sand stecken blieb. Er sendete von seinem Platz weiter, bis ihn die Marskälte schließlich erreichte."
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "dispatch",
+    "old": "Apollo 8 war eine Wette, die in Eile platziert wurde. Geheimdienstinformationen deuteten darauf hin, dass die Sowjets möglicherweise zuerst eine Besatzung um den Mond schicken würden, also verwarf die NASA im Sommer 1968 den Flugplan und schickte drei Männer zum Mondorbit beim erst dritten Start einer Rakete, die noch nie eine Besatzung befördert hatte. Es hätte leichtsinnig sein müssen. Stattdessen wurde es die einzige gute Nachricht des Jahres — 1968 war geprägt von Attentaten, Vietnam, brennenden Städten — und am Heiligabend hörten eine Milliarde Menschen die Genesis aus dem Mondorbit verlesen und sahen in Bill Anders' Fotografie zu, wie ihre ganze Welt zum ersten Mal über einem toten Horizont aufging. Apollo 11 wird für den Mond erinnert. Apollo 8 ist die Mission, die uns die Erde zeigte.",
+    "new": "Apollo 8 war eine Wette, die in Eile platziert wurde. Geheimdienstinformationen deuteten darauf hin, dass die Sowjets möglicherweise zuerst eine Besatzung um den Mond schicken würden, also verwarf die NASA im Sommer 1968 den Flugplan und schickte drei Männer zum Mondorbit beim erst dritten Start einer Rakete, die noch nie eine Besatzung befördert hatte. Es hätte leichtsinnig sein müssen. Stattdessen wurde es die einzige gute Nachricht des Jahres — 1968 war geprägt von Attentaten, Vietnam, brennenden Städten — und am Heiligabend hörten eine Milliarde Menschen die Genesis aus dem Mondorbit verlesen und sahen in Bill Anders' Fotografie zu, wie ihre ganze Welt zum ersten Mal über einem toten Horizont aufging. An Apollo 11 erinnert man sich wegen des Mondes. Apollo 8 ist die Mission, die uns die Erde zeigte."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "description",
+    "old": "Lucy zielt auf die L4- und L5-Lagrange-Wolken — Populationen von primären Asteroiden, die Jupiter um 60° voraus und hinterher führen und Material aus der äußeren Protoplanetarscheibe bewahrt haben sollen. Drei Schwerkraftunterstützungen durch die Erde (2022, 2024, 2030) bilden eine einzige Flugbahn, die sieben Trojaner-Asteroiden plus Bonusziele im Hauptgürtel besucht. Erster Asteroidenkontakt: 152830 Dinkinesh (2023-11-01, ~790 m), bei dem Abbildungen den Kontaktbinär-Satelliten Selam offenbarten. Bonushauptgürtel: Donaldjohanson 2025-04. L4-Schwarm: Eurybates + Mond Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). Nach EGA-3 (2030-12) der nachfolgende L5-Schwarm: Patroclus-Menoetius-Binär (2033-03) — der größte bekannte Trojaner-Binär, ein würdiger Höhepunkt für den Namensgeber der Mission (Lucy das Homininen-Fossil; Patroclus-Menoetius die beiden Charaktere, die in der Ilias zusammen fielen).",
+    "new": "Lucy greift nach den Lagrange-Wolken L4 und L5 — Populationen ursprünglicher Asteroiden, die Jupiter um 60° vorauslaufen und nachfolgen und von denen man glaubt, dass sie Material aus der äußeren protoplanetaren Scheibe bewahrt haben. Drei Erd-Swing-bys (2022, 2024, 2030) bilden eine einzige Flugbahn, die sieben Trojaner-Asteroiden plus zusätzliche Ziele im Hauptgürtel besucht. Erste Asteroidenbegegnung: (152830) Dinkinesh (2023-11-01, ~790 m), bei der Aufnahmen den Kontaktbinär-Begleiter Selam offenbarten. Zusätzliches Ziel im Hauptgürtel: Donaldjohanson 2025-04. L4-Schwarm: Eurybates + Mond Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). Nach EGA-3 (2030-12) der nachlaufende L5-Schwarm: Doppelasteroid Patroklos–Menoitios (2033-03) — der größte bekannte Trojaner-Doppelasteroid, ein passender Höhepunkt für die Namensgeberin der Mission (Lucy, das Hominiden-Fossil; Patroklos und Menoitios, die beiden Gestalten, die in der Ilias gemeinsam fielen)."
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "description",
+    "old": "Juno trat am 2016-07-05 in eine hochelliptische, 53 Tage dauernde polare Umlaufbahn um Jupiter ein, die sie von innerhalb der Strahlungsgürtel (Perijove ~4200 km über den Wolkengipfeln) bis weit über Kallisto hinaus führt. Sonnenbetrieben — ihre ~50 m² großen Mehrfach-Übergitter liefern 14 kW bei der Erde, aber nur ~500 W bei Jupiter, das erste Mal, dass Solarenergie in dieser Entfernung genutzt wurde. Bestätigte, dass Jupiter einen verdünnten felsigen Kern hat (keine scharfe Grenze), maß die Anordnung der polaren Zyklone (acht zirkumpolre Stürme um jeden Pol) und bildete Ios Vulkanismus 2023 in beispielloser Detailgenauigkeit ab. Die erweiterte Mission umfasst Vorbeiflüge an allen vier Galileischen Monden bis 2025.",
+    "new": "Juno trat am 2016-07-05 in eine hochelliptische, 53 Tage dauernde polare Umlaufbahn um Jupiter ein, die sie von innerhalb der Strahlungsgürtel (Perijove ~4200 km über den Wolkenobergrenzen) bis weit über Kallisto hinaus führt. Solarbetrieben — ihre ~50 m² großen Dreifachsolarzellen-Felder liefern 14 kW bei der Erde, aber nur ~500 W bei Jupiter, das erste Mal, dass Solarenergie in dieser Entfernung genutzt wurde. Bestätigte, dass Jupiter einen verdünnten felsigen Kern hat (keine scharfe Grenze), vermaß die Anordnung der polaren Zyklone (acht zirkumpolare Stürme um jeden Pol) und bildete Ios Vulkanismus 2023 in beispielloser Detailgenauigkeit ab. Die erweiterte Mission umfasst Vorbeiflüge an allen vier Galileischen Monden bis 2025."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.2.label",
+    "old": "MARS-GRAVITATIONSASSIST",
+    "new": "MARS-SWING-BY"
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "events.3.note",
+    "old": "Lander prallt 15 Mal über Ares Vallis ab, bevor sie zum Stillstand kommt.",
+    "new": "Lander prallt 15 Mal über Ares Vallis ab, bevor er zum Stillstand kommt."
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.1.note",
+    "old": "Erste Korrektur während des Kurses abgeschlossen; Flugbahn gesperrt.",
+    "new": "Erste Kurskorrektur abgeschlossen; Flugbahn fixiert."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.6.note",
+    "old": "EVA-3 / vor Aufstieg: Scott überträgt im Fernsehen einen Hammer + Feder, die zusammen fallen; beide treffen den Regolith gleichzeitig auf und verifizieren Galileos 1589er Vorhersage live.",
+    "new": "EVA-3 / vor dem Aufstieg: Scott überträgt im Fernsehen, wie ein Hammer und eine Feder zusammen fallen gelassen werden; beide treffen den Regolith gleichzeitig und bestätigen so Galileis Vorhersage von 1589 live."
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.9.note",
+    "old": "Translunarflug-Injektion. SPS ∆v ~1,0 km/s.",
+    "new": "Einschuss auf die Rückkehrbahn zur Erde. SPS ∆v ~1,0 km/s."
+  },
+  {
+    "rel": "missions/earth/otv-2.json",
+    "at": "events.2.note",
+    "old": "Automatische Landung auf einer Landebahn in Vandenberg Air Force Base 2012-06-16.",
+    "new": "Autonome Landung auf einer Landebahn der Vandenberg Air Force Base 2012-06-16."
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.1.note",
+    "old": "Stage-2 abgestellt + Nutzlasttrennung; Umlaufbahn 215 × 939 km, 65,1° Inklination, 96,2 min Umlaufperiode.",
+    "new": "Abschaltung der 2. Stufe + Nutzlasttrennung; Umlaufbahn 215 × 939 km, 65,1° Inklination, 96,2 min Umlaufperiode."
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "events.2.note",
+    "old": "Größte Annäherung an Komet 1P/Halley in 8030 km — gepaarte Positionsbestimmung für Giotto.",
+    "new": "Nächste Annäherung an den Kometen 1P/Halley in 8030 km — abgestimmte Positionsbestimmung für Giotto."
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.note",
+    "old": "Motorverbrennung bringt Raumschiff in die Marsumlaufbahn.",
+    "new": "Triebwerkszündung bringt die Raumsonde in die Marsumlaufbahn."
+  },
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "events.3.note",
+    "old": "CM wasserte im Nordatlantik am 22.10.1968 11:11 UTC nach 163 Umläufen / 7,4 Millionen km / 10 d 20 h ab. Bergung durch USS Essex.",
+    "new": "CM wasserte am 22.10.1968 11:11 UTC im Nordatlantik nach 163 Umläufen / 7,4 Millionen km / 10 d 20 h. Bergung durch USS Essex."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.1.note",
+    "old": "Translunare Injektionsverbrennung durch ICPS – Orion trennt sich auf einer cislunaren Flugbahn.",
+    "new": "Translunare Injektion durch die ICPS-Zündung – Orion trennt sich auf einer zislunaren Flugbahn."
+  },
+  {
+    "rel": "iss-modules/cupola.json",
+    "at": "description",
+    "old": "Sieben Fenster waren zur Erde gerichtet – die kollektiven Augen der Station für Robotikeinsätze und das Astronauten-Postkartenfoto.",
+    "new": "Sieben Fenster sind zur Erde gerichtet – die kollektiven Augen der Station für Robotikeinsätze und das Astronauten-Postkartenfoto."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-giotto_webp.what",
+    "old": "Trommelförmiger Kreisel mit Staubschild — Vorbeiflug am Halley'schen Kometen.",
+    "new": "Trommelförmige, spinstabilisierte Sonde mit Staubschild — Vorbeiflug am Halleyschen Kometen."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-launcher-space-shuttle-stack_webp.what",
+    "old": "Externer Tank, Twin-SRBs und der deltaflügelige Orbiter.",
+    "new": "Externer Tank, zwei SRBs und der Orbiter mit Deltaflügeln."
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "first",
+    "old": "China's lunar-mission workhorse — flew every Chang'e Mission von 1 through 4",
+    "new": "Chinas Arbeitspferd für Mondmissionen — startete alle Chang'e-Missionen von 1 bis 4"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-cruise-phoenix_webp.where",
+    "old": "Flug · Reise-/Anflugphase",
+    "new": "Fliegen · Reiseflug-/Anflugphase"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-cruise-beresheet_webp.where",
+    "old": "Fliegen · Kreuzfahrt/Annäherung",
+    "new": "Fliegen · Reiseflug/Annäherung"
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "current_distance_label",
+    "old": "0,94 AE · auf dem Weg zum Erde-#2-Vorbeiflug 2026-09-29 (Reiseabschnitt 2 von 5)",
+    "new": "0,94 AE · unterwegs zum zweiten Erdvorbeiflug 2026-09-29 (Reiseabschnitt 2 von 5)"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-butterfly.caption",
+    "old": "NGC 6302 — Gasflügel, die über 20.000°C erhitzt und von einem sterbenden Stern hinausgeschleudert wurden.",
+    "new": "NGC 6302 — Gasflügel, die über 20.000 °C erhitzt und von einem sterbenden Stern hinausgeschleudert wurden."
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.3.why",
+    "old": "Saturns Umlaufbahn ist sanft (Exzentrizität 0,054), aber seine mittlere Distanz von 9,6 AE bedeutet, dass sich Perihel und Aphel um 100 Millionen km unterscheiden — Cassini zeitete seine Ankunft, um die Eingangsgeschwindigkeit zu nutzen.",
+    "new": "Saturns Umlaufbahn ist sanft (Exzentrizität 0,054), aber seine mittlere Entfernung von 9,6 AE bedeutet, dass sich Perihel und Aphel um 100 Millionen km unterscheiden — Cassini legte seine Ankunft so, dass sie die Geschwindigkeit beim Einflug nutzte."
+  },
+  {
+    "rel": "mars-sites/exomars-rosalind-franklin.json",
+    "at": "fact",
+    "old": "ESAs erster Marsrover. Ursprünglich war eine gemeinsame Mission unter russischer Führung für 2022 geplant; nach der Invasion der Ukraine im Jahr 2022 abgesagt und in ESA-geführt mit NASA-Beiträgen umbenannt. Neuausrichtung für den Start im Jahr 2028 und die Ankunft im Jahr 2029. Trägt einen 2-Meter-Untergrundbohrer – den tiefsten, der bisher für einen Marsrover geplant war und der so konzipiert ist, dass er bis unter den strahlungsgeschädigten oberen Meter reicht.",
+    "new": "ESAs erster Marsrover. Ursprünglich war eine gemeinsame Mission unter russischer Führung für 2022 geplant; nach der Invasion der Ukraine im Jahr 2022 abgesagt und als ESA-geführte Mission mit NASA-Beiträgen neu aufgesetzt. Neu angesetzt für einen Start 2028 und die Ankunft 2029. Trägt einen 2-Meter-Untergrundbohrer – den tiefsten, der bisher für einen Marsrover geplant war, ausgelegt darauf, unter den strahlungsgeschädigten obersten Meter zu reichen."
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "mission_type",
+    "old": "Abgeschraubter Lander · Verloren",
+    "new": "Unbemannter Lander · Verloren"
+  },
+  {
+    "rel": "moon-sites/change3.json",
+    "at": "mission_type",
+    "old": "Ungeschraubter Lander · Rover",
+    "new": "Unbemannter Lander · Rover"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.0.why",
+    "old": "In einer mittleren Entfernung von 30,07 AE ist Neptun so weit entfernt, dass ein einfaches Lichtsignal 4 Stunden pro Richtung benötigt. Voyager 2 brauchte 12 Jahre, um ihn zu erreichen.",
+    "new": "In einer mittleren Entfernung von 30,07 AE ist Neptun so weit entfernt, dass ein einzelnes Lichtsignal 4 Stunden pro Richtung benötigt. Voyager 2 brauchte 12 Jahre, um ihn zu erreichen."
+  },
+  {
+    "rel": "moon-sites/luna24.json",
+    "at": "mission_type",
+    "old": "Uncrewed Sample Return",
+    "new": "Unbemannte Probenrückführung"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "bio",
+    "old": "Der kleinste Planet. Aufgrund seiner stark elliptischen Umlaufbahn (e=0,206) beschleunigt er in der Nähe des Perihels spürbar. Obwohl die Venus der Sonne am nächsten ist, ist sie heißer.",
+    "new": "Der kleinste Planet. Aufgrund seiner stark elliptischen Umlaufbahn (e=0,206) beschleunigt er in der Nähe des Perihels spürbar. Obwohl er der Sonne am nächsten ist, ist die Venus heißer."
+  },
+  {
+    "rel": "mars-sites/mro.json",
+    "at": "capability",
+    "old": "Hochauflösungsbilder von Planeten wie kein anderes; die Augen im All für jede aktuelle Mars-Oberflächenmission.",
+    "new": "Die höchstauflösenden Aufnahmen aus dem Orbit von allen Planeten; die Augen im All für jede aktuelle Mars-Oberflächenmission."
+  },
+  {
+    "rel": "moon-sites/apollo11.json",
+    "at": "capability",
+    "old": "Erste bemannte Mondlandung — bewies, dass bemannte Operationen auf Planetenoberflächen möglich sind. Die Kompetenzleiter für den Mars beginnt hier.",
+    "new": "Erste bemannte Mondlandung — bewies, dass bemannte Operationen auf Planetenoberflächen möglich sind. Die Fähigkeitsleiter für den Mars beginnt hier."
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.1.why",
+    "old": "Halleys enormer Perihelium-Aphelium-Unterschied (35 zu 0,59 AE) treibt die Oberflächeneise in der Nähe des Periheliums zur heftigen Sublimation und erzeugt die Koma und den Schweif. Nächstes Perihelium: 2061.",
+    "new": "Halleys enormer Perihel-Aphel-Unterschied (35 zu 0,59 AE) lässt das Oberflächeneis in der Nähe des Perihels heftig sublimieren und erzeugt die Koma und den Schweif. Nächstes Perihel: 2061."
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "tagline",
+    "old": "Das größte Menschenwerk im All, Knotenpunkt der Raumfahrt – aus vierzig Jahren Rivalität wuchs die längste Kooperation der Geschichte.",
+    "new": "Das größte Menschenwerk im All und der Ort, an dem alle Fäden des Raumfahrtzeitalters zusammenlaufen — die Rivalität der einstigen Rivalen wurde nach vierzig Jahren zur längsten Kooperation in der Geschichte der Raumfahrt."
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "narrative.2.md",
+    "old": "Und es veränderte, für wen Raumfahrt ist. Indem SpaceX Starts zu einer Dienstleistung machte, die man kaufen kann, statt zu einem Programm, das eine Regierung betreiben muss, verwandelte sich SpaceX in Infrastruktur — die Straße, die Starlink in den Orbit befördert, die die NASA zur Station befördert, und die Starship bis zum Mars ausdehnen soll. Falcon und Dragon sind das Fundament, auf dem der Rest des Unternehmens steht.",
+    "new": "Und es veränderte, für wen Raumfahrt ist. Indem SpaceX Starts zu einer Dienstleistung machte, die man kaufen kann, statt zu einem Programm, das eine Regierung betreiben muss, verwandelte sich SpaceX in Infrastruktur — die Straße, auf der Starlink in den Orbit fährt, auf der die NASA zur Station fährt und die Starship bis zum Mars verlängern soll. Falcon und Dragon sind das Fundament, auf dem der Rest des Unternehmens steht."
+  },
+  {
+    "rel": "programs/voyager.json",
+    "at": "narrative.1.md",
+    "old": "Ihr am meisten erinnerter Moment trug überhaupt keine Wissenschaft. Als Voyager 1 die Planeten hinter sich ließ, argumentierte Carl Sagan, dass sie sich umdrehen und die Erde ein letztes Mal fotografieren sollte — nicht für Daten, sondern für Perspektive. Das Bild, das sie zurückschickte, zeigte das Zuhause als blassen blauen Punkt, ein Staubkorn in einem Sonnenstrahl, und Sagans Worte darüber — dass jeder, der jemals lebte, dies auf diesem Fleck tat — wurden zu einer der meistzitierten Passagen in der Literatur des Weltraums. Eine Aufklärungssonde hatte, fast aus Versehen, das definitive Porträt menschlicher Kleinheit aufgenommen.",
+    "new": "Ihr bekanntester Moment brachte überhaupt keine Wissenschaft hervor. Als Voyager 1 die Planeten hinter sich ließ, argumentierte Carl Sagan, dass sie sich umdrehen und die Erde ein letztes Mal fotografieren sollte — nicht für Daten, sondern für Perspektive. Das Bild, das sie zurückschickte, zeigte die Heimat als blassen blauen Punkt, ein Staubkorn in einem Sonnenstrahl, und Sagans Worte darüber — dass jeder, der jemals lebte, dies auf diesem Fleck tat — wurden zu einer der meistzitierten Passagen der Raumfahrtliteratur. Eine Aufklärungssonde hatte, fast aus Versehen, das endgültige Porträt der menschlichen Kleinheit aufgenommen."
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "narrative_101.1",
+    "old": "Schauen Sie quer über die Reihe der Zellen mit niedrigen Kosten (der kühle blaugrüne Lappen) und Sie können im Kalender genau ablesen, wann die Startfenster liegen. Für Mars sind sie grob alle 26 Monate. Für Venus alle 19. Für Jupiter alle 13. Jede günstige Zone ist ein Fenster – außerhalb dieser Zonen arbeitet der Kalender gegen Sie.",
+    "new": "Schauen Sie quer über die Reihe der Zellen mit niedrigen Kosten (der kühle blaugrüne Lappen) und Sie können im Kalender genau ablesen, wann die Startfenster liegen. Für den Mars liegen sie etwa alle 26 Monate. Für die Venus alle 19. Für den Jupiter alle 13. Jede günstige Zone ist ein Fenster – außerhalb dieser Zonen arbeitet der Kalender gegen Sie."
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "body_paragraphs.2",
+    "old": "Dieser Brennpunkt ist der Große Attraktor, eine Massenkonzentration um den Norma-Galaxienhaufen (Abell 3627), etwa 65 Megaparsec entfernt. Er lässt sich schwer untersuchen, weil er hinter den dichten Sternwolken und dem Staub der Milchstraßenscheibe selbst liegt — der „Zone of Avoidance“ —, sodass vieles von unserem Wissen aus Radio- und Infrarot-Durchmusterungen stammt, die durch die Verdeckung hindurchsehen, und aus den Bewegungen der Galaxien selbst.",
+    "new": "Dieser Brennpunkt ist der Große Attraktor, eine Massenkonzentration um den Norma-Galaxienhaufen (Abell 3627), etwa 65 Megaparsec entfernt. Er lässt sich schwer untersuchen, weil er hinter den dichten Sternwolken und dem Staub der Milchstraßenscheibe selbst liegt — der „Zone der Vermeidung“ (Zone of Avoidance) —, sodass vieles von unserem Wissen aus Radio- und Infrarot-Durchmusterungen stammt, die durch die Verdeckung hindurchsehen, und aus den Bewegungen der Galaxien selbst."
+  },
+  {
+    "rel": "universe/named-stars/diphda.json",
+    "at": "fact",
+    "old": "Der ‚zweite Frosch' — ein orangefarbener Riese, der den eigenen Alpha-Stern seines Sternbilds überstrahlt.",
+    "new": "Der ‚zweite Frosch‘ — ein orangefarbener Riese, der den eigenen Alpha-Stern seines Sternbilds überstrahlt."
+  },
+  {
+    "rel": "universe/named-stars/mimosa.json",
+    "at": "fact",
+    "old": "Der zweithellste Edelstein des Kreuz des Südens, gleißend heiß und blau.",
+    "new": "Der zweithellste Edelstein des Kreuzes des Südens, gleißend heiß und blau."
+  },
+  {
+    "rel": "universe/named-stars/acrux.json",
+    "at": "fact",
+    "old": "Das hellste Juwel des Kreuz des Südens — und der südlichste Stern erster Größe.",
+    "new": "Das hellste Juwel des Kreuzes des Südens — und der südlichste Stern erster Größe."
+  },
+  {
+    "rel": "universe/named-stars/rigil-kentaurus.json",
+    "at": "cultural",
+    "old": "Der Name ist arabisch und bedeutet „Fuß des Zentauren\". Zusammen mit dem nahegelegenen Hadar bildet er die „Zeiger\", die südliche Beobachter zum Südlichen Kreuz leiten, und als der der Sonne nächste sonnenähnliche Stern ist er ein Dauerthema von Studien zur Interstellaren Raumfahrt und der Science-Fiction.",
+    "new": "Der Name ist arabisch und bedeutet „Fuß des Zentauren“. Zusammen mit dem nahegelegenen Hadar bildet er die „Zeiger“, die südliche Beobachter zum Kreuz des Südens leiten, und als der der Sonne nächste sonnenähnliche Stern ist er ein Dauerthema von Studien zur interstellaren Raumfahrt und der Science-Fiction."
+  },
+  {
+    "rel": "universe/exoplanets/51-peg-b.json",
+    "at": "bio",
+    "old": "51 Pegasi b, informell Dimidium genannt, wurde 1995 von Michel Mayor und Didier Queloz entdeckt — der erste bestätigte Planet um einen normalen sonnenähnlichen Stern, eine Entdeckung, die ihnen 2019 den Nobelpreis für Physik einbrachte. Ein ‚heißer Jupiter', der seinen Stern alle vier Tage umkreist, verblüffte die Astronomen, die niemals einen Riesenplaneten so nahe erwartet hatten, und erzwang ein Umdenken darüber, wie Planetensysteme entstehen und wandern.",
+    "new": "51 Pegasi b, informell Dimidium genannt, wurde 1995 von Michel Mayor und Didier Queloz entdeckt — der erste bestätigte Planet um einen normalen sonnenähnlichen Stern, eine Entdeckung, die ihnen 2019 den Nobelpreis für Physik einbrachte. Ein ‚heißer Jupiter‘, der seinen Stern alle vier Tage streift, verblüffte die Astronomen, die niemals einen Riesenplaneten so nahe erwartet hatten, und erzwang ein Umdenken darüber, wie Planetensysteme entstehen und wandern."
+  },
+  {
+    "rel": "universe/named-stars/barnards-star.json",
+    "at": "bio",
+    "old": "Barnards Pfeilstern besitzt die größte bekannte Eigenbewegung aller Sterne und durchquert etwa alle 180 Jahre eine scheinbare Mondbreite am Himmel — was ihm den Beinamen ‚Barnard's Runaway Star' eingebracht hat. Es handelt sich um einen uralten, massearmen Roten Zwerg.",
+    "new": "Barnards Pfeilstern besitzt die größte bekannte Eigenbewegung aller Sterne und durchquert etwa alle 180 Jahre eine scheinbare Mondbreite am Himmel — was ihm den Beinamen ‚Barnards Ausreißerstern‘ eingebracht hat. Es handelt sich um einen uralten, massearmen Roten Zwerg."
+  },
+  {
+    "rel": "universe/named-stars/castor.json",
+    "at": "cultural",
+    "old": "Castor ist der sterbliche Reiter der Dioscuri, Zwillingsbruder von Pollux in der griechischen und römischen Mythologie. Obwohl als ‚Alpha' bezeichnet, ist er gewöhnlich etwas lichtschwächer als sein Bruder Pollux neben ihm.",
+    "new": "Castor ist der sterbliche Reiter der Dioskuren, Zwillingsbruder von Pollux in der griechischen und römischen Mythologie. Obwohl als ‚Alpha‘ bezeichnet, ist er gewöhnlich etwas lichtschwächer als sein Bruder Pollux neben ihm."
+  },
+  {
+    "rel": "universe/named-stars/denebola.json",
+    "at": "cultural",
+    "old": "Der Name stammt aus dem Arabischen ‚dhanab al-asad', ‚der Schwanz des Löwen'. In der älteren Astrologie galt er als Unglücksstern, im Gegensatz zum königlichen Regulus im Herzen des Löwen.",
+    "new": "Der Name stammt aus dem Arabischen ‚dhanab al-asad‘, ‚der Schwanz des Löwen‘. In der älteren Astrologie galt er als Unglücksstern, im Gegensatz zum königlichen Regulus im Herzen des Löwen."
+  },
+  {
+    "rel": "universe/named-stars/procyon.json",
+    "at": "cultural",
+    "old": "Der griechische Name bedeutet ‚vor dem Hund', denn von vielen Breitengraden aus steigt Prokyon kurz vor Sirius über den Horizont. Mit Sirius und Beteigeuze bildet er das helle ‚Winterdreieck'.",
+    "new": "Der griechische Name bedeutet ‚vor dem Hund‘, denn von vielen Breitengraden aus steigt Prokyon kurz vor Sirius über den Horizont. Mit Sirius und Beteigeuze bildet er das helle ‚Winterdreieck‘."
+  },
+  {
+    "rel": "universe/named-stars/pollux.json",
+    "at": "cultural",
+    "old": "Pollux und der benachbarte Castor sind die ‚Dioscuri', die Zwillingsbrüder aus der griechischen und römischen Mythologie — Pollux der unsterbliche Sohn des Zeus. Das Paar hat seit der Antike Seefahrer geleitet und beschützt.",
+    "new": "Pollux und der benachbarte Castor sind die ‚Dioskuren‘, die Zwillingsbrüder aus der griechischen und römischen Mythologie — Pollux der unsterbliche Sohn des Zeus. Das Paar hat seit der Antike Seefahrer geleitet und beschützt."
+  },
+  {
+    "rel": "universe/named-stars/wezen.json",
+    "at": "fact",
+    "old": "Ein Überriese des Großen Hundes, so leuchtkräftig, dass er hell von weit jenseits der Galaxis erstrahlt.",
+    "new": "Ein Überriese des Großen Hundes, so leuchtkräftig, dass er schon aus weiter Ferne quer durch die Galaxis hell erstrahlt."
+  },
+  {
+    "rel": "universe/named-stars/kaus-australis.json",
+    "at": "cultural",
+    "old": "‚Kaus' stammt aus dem Arabischen für ‚Bogen', mit dem lateinischen ‚australis' für ‚südlich'. Der Bogen und Pfeil des Schützen zielen auf das Herz der Galaxie, eine Richtung, die dicht gefüllt ist mit den hellsten Wolken der Milchstraße.",
+    "new": "‚Kaus‘ stammt aus dem Arabischen für ‚Bogen‘, mit dem lateinischen ‚australis‘ für ‚südlich‘. Der Bogen und Pfeil des Schützen zielen auf das Herz der Galaxie, eine Richtung, die dicht gefüllt ist mit den hellsten Wolken der Milchstraße."
+  },
+  {
+    "rel": "universe/named-stars/nunki.json",
+    "at": "bio",
+    "old": "Nunki (Sigma Sagittarii) ist ein heißer blauer Hauptreihenstern etwa 230 Lichtjahre entfernt, der zweithellste im Schützen. Er bildet einen Teil des „Teapot\"-Asterismus, in der Nähe der reichsten Regionen der Milchstraße.",
+    "new": "Nunki (Sigma Sagittarii) ist ein heißer blauer Hauptreihenstern etwa 230 Lichtjahre entfernt, der zweithellste im Schützen. Er bildet einen Teil des „Teekannen“-Asterismus, in der Nähe der reichsten Regionen der Milchstraße."
+  },
+  {
+    "rel": "universe/named-stars/rasalhague.json",
+    "at": "fact",
+    "old": "Das ‚Haupt des Schlangenträgers' — die Krone des Heilers, der die Schlange hält.",
+    "new": "Das ‚Haupt des Schlangenträgers‘ — die Krone des Heilers, der die Schlange hält."
+  },
+  {
+    "rel": "universe/named-stars/mirfak.json",
+    "at": "cultural",
+    "old": "Der Name stammt aus dem Arabischen und bedeutet „der Ellbogen\". In der klassischen Figur hält Perseus das Haupt der Medusa — nahe dem blinkenden Dämonenstern Algol — und Mirfak markiert die Seite des Helden.",
+    "new": "Der Name stammt aus dem Arabischen und bedeutet „der Ellbogen“. In der klassischen Figur hält Perseus das Haupt der Medusa — nahe dem blinkenden Dämonenstern Algol — und Mirfak markiert die Seite des Helden."
+  }
+]

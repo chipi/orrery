@@ -26,10 +26,12 @@ test.describe('/privacy — disclosure page + analytics opt-out (ADR-092)', () =
     await expect(page.locator('h1')).toHaveText(/privacy/i);
     // The sections a GDPR Art. 13 page has to actually carry.
     const headings = page.locator('article.card h2');
-    await expect(headings).toHaveCount(8);
+    await expect(headings).toHaveCount(10);
     await expect(page.locator('#privacy-controls-title')).toBeVisible();
     await expect(page.locator('#privacy-logs-title')).toBeVisible();
     await expect(page.locator('#privacy-collect-title')).toBeVisible();
+    await expect(page.locator('#privacy-email-title')).toBeVisible();
+    await expect(page.locator('a[href="mailto:info@orrerylearn.com"]')).toBeVisible();
 
     // Mobile-first: no horizontal overflow at the narrow end of the range.
     const overflow = await page.evaluate(

@@ -2,7 +2,7 @@
   "name": "Magellan",
   "type": "ORBITER · VOLTOOID",
   "first": "Meest complete radarkaart van Venus — 98% van het oppervlak op ~120-m resolutie; eerste planetaire ruimtevaartuig gelanceerd vanaf de Space Shuttle",
-  "description": "Magellan maakte Venus van een karakterloze, door wolken bedekte schijf tot een in kaart gebrachte planeet. Gelanceerd vanuit het laadruim van Shuttle Atlantis op 1989-05-04 — het eerste planetaire ruimtevaartuig dat met een Shuttle meereisde — en bereikt Venus op 1990-08-10 via een lange Type-IV-baan (1,5 omwentelingen rond de zon). Over vier karteeringsycli fotografeerde de synthetische-apertuurradar 98% van het oppervlak van Venus met een resolutie van ongeveer 120 m, wat tesserahooglanden, coronae, pannenkoekkoepels en een jong, vulkanisch opnieuw opgebouwd oppervlak onthulde. De missie eindigde op 1994-10-13 met het Termination Experiment — de eerste geplande gecontroleerde atmosferische ingang van een planetair ruimtevaartuig.",
+  "description": "Magellan maakte Venus van een karakterloze, door wolken bedekte schijf tot een in kaart gebrachte planeet. Gelanceerd vanuit het laadruim van Shuttle Atlantis op 1989-05-04 — het eerste planetaire ruimtevaartuig dat met een Shuttle meereisde — en bereikte Venus op 1990-08-10 via een lange Type-IV-baan (1,5 omwentelingen rond de zon). Over vier karteringscycli fotografeerde de synthetische-apertuurradar 98% van het oppervlak van Venus met een resolutie van ongeveer 120 m, wat tesserahooglanden, coronae, pannenkoekkoepels en een jong, vulkanisch van een nieuw oppervlak voorzien terrein onthulde. De missie eindigde op 1994-10-13 met het Termination Experiment — de eerste geplande gecontroleerde atmosferische intrede van een planetair ruimtevaartuig.",
   "events": [
     {
       "met": 0,
@@ -30,7 +30,7 @@
     },
     {
       "met": 950,
-      "label": "KARTERINGS­CYCLUS 1 VOLTOOID",
+      "label": "KARTERINGSCYCLUS 1 VOLTOOID",
       "note": "Eerste volledige passage — 84% oppervlakbereik op 100-m resolutie.",
       "type": "info"
     },

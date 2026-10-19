@@ -1,12 +1,12 @@
 {
   "name": "Apollo 15",
-  "mission_type": "Crewed Lander · Rover",
+  "mission_type": "Bemannte Mondlandefähre · Rover",
   "site_name": "Hadley–Apennin",
   "crew": [
     "David Scott",
     "James Irwin"
   ],
-  "left": "Abstiegsmodul · ALSEP · LRV-Rover · Flagge · Sculpture „Fallen Astronaut\"",
-  "fact": "Erste Mission mit dem Lunar Roving Vehicle – fuhr 27,9 km. Scott hinterließ eine kleine Aluminiusfigur, „Fallen Astronaut\", und eine Plakette mit einer Liste aller Astronauten und Kosmonauten, die im Weltraumrennen starben. Es ist das einzige Kunstwerk auf dem Mond, das damals ohne öffentliche Ankündigung hinterlassen wurde.",
+  "left": "Abstiegsmodul · ALSEP · LRV-Rover · Flagge · Skulptur „Fallen Astronaut\"",
+  "fact": "Erste Mission mit dem Lunar Roving Vehicle – fuhr 27,9 km. Scott hinterließ eine kleine Aluminiumfigur, „Fallen Astronaut\", und eine Plakette mit einer Liste aller Astronauten und Kosmonauten, die im Weltraumrennen starben. Es ist das einzige Kunstwerk auf dem Mond, das damals ohne öffentliche Ankündigung hinterlassen wurde.",
   "capability": "Erste bemannte Oberflächenmobilität — erweiterte Explorationsreichweite von Hunderten Metern auf Dutzende Kilometer, das Vorbild für bemannte Marsoberflächen-Operationen."
 }

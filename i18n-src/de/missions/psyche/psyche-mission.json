@@ -1,8 +1,8 @@
 {
   "name": "Psyche",
   "type": "ORBITER · AKTIV",
-  "first": "Erste Mission zu einem metallreichen M-Klasse-Asteroiden; erste Verwendung von Hall-Effekt-Ionentriebwerken als primärer Kreuzfahrtsantrieb",
-  "description": "Psyche zielt auf den freigelegten Nickel-Eisen-Kern eines differenzierten Protoplaneten — einen 226 km großen Metallkörper, der möglicherweise das der Erde am ähnlichsten ist und zugänglich ist. Gestartet am 2023-10-13 von einer Falcon Heavy von Kennedy LC-39A. Vier SPT-140 Hall-Effekt-Ionentriebwerke treiben die Flugbahn spiralförmig nach außen; ein Mars-Gravitationsassist im Mai 2026 (nächste Annäherung 4.609 km) brachte die Energie, die der Ionentriebwerk allein nicht rechtzeitig liefern konnte. Ankunft geplant 2029-08, gefolgt von einer 26-monatigen vierphasigen Bahnabsenkung (A → B → C → D) zur Kartierung von Gravitation, Magnetismus, Topografie und Zusammensetzung des Asteroiden. Wenn die Metallkern-Hypothese richtig ist, wird Psyche anders aussehen als alles andere, das wir je besucht haben — bloße Metalloberfläche, Eisensulfid-Lagerstätten, keine der Trümmerhaufen-Chaos typischer Asteroiden.",
+  "first": "Erste Mission zu einem metallreichen M-Klasse-Asteroiden; erste Verwendung von Hall-Effekt-Ionentriebwerken als primärer Antrieb für die Reisephase",
+  "description": "Psyche zielt auf den freigelegten Nickel-Eisen-Kern eines differenzierten Protoplaneten — einen 226 km großen Metallkörper, der möglicherweise das erreichbare Gegenstück zum Erdkern darstellt. Gestartet am 2023-10-13 von einer Falcon Heavy vom Kennedy LC-39A. Vier SPT-140 Hall-Effekt-Ionentriebwerke treiben die Flugbahn spiralförmig nach außen; ein Mars-Gravitationsassist im Mai 2026 (nächste Annäherung 4.609 km) brachte die Energie, die die Ionentriebwerke allein nicht rechtzeitig liefern konnten. Ankunft geplant 2029-08, gefolgt von einer 26-monatigen vierphasigen Bahnabsenkung (A → B → C → D) zur Kartierung von Gravitation, Magnetismus, Topografie und Zusammensetzung des Asteroiden. Wenn die Metallkern-Hypothese richtig ist, wird Psyche anders aussehen als alles andere, das wir je besucht haben — bloße Metalloberfläche, Eisensulfid-Lagerstätten, nichts vom Trümmerhaufen-Chaos typischer Asteroiden.",
   "events": [
     {
       "met": 0,
@@ -12,7 +12,7 @@
     },
     {
       "met": 30,
-      "label": "IONENKREUZFAHRT BEGINNT",
+      "label": "IONENANTRIEB-REISEPHASE BEGINNT",
       "note": "Vier Hall-Effekt-Ionentriebwerke übernehmen. Kontinuierliche Niedrig-Schub-Beschleunigung über 4+ Jahre.",
       "type": "info"
     },

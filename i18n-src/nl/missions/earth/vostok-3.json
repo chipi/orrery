@@ -1,9 +1,9 @@
 {
   "name": "Vostok 3",
   "type": "BEMANDE AARDEORBITALE VLUCHT · VOLTOOID",
-  "first": "Eerste duaalvlucht-bijeenkomst — vloog binnen ~6,5 km van Vostok 4",
-  "dispatch": "Vostok 3 opende het eerste bedrijf van een stuk orbitaal theatre. Een dag nadat Andrian Nikolajev een baan bereikt had, volgde Vostok 4 hem na, en gedurende enige tijd vlogen de twee ruimtevaartuigen enkele kilometers van elkaar af — voor het eerst dat twee bemande vaartuigen samen in de ruimte waren. Voor de wereld zag het eruit als een bijeenkomst, en de Sovjet-Unie liet graag toe dat men dit geloofde. In werkelijkheid kon geen enkel vaartuig manoevreren; de nabijheid kwam voort uit het lanceren van het ene vrijwel in het pad van het ander, en de afstand nam daarna gestaag toe. Een echte eerste prestatie en tegelijk een beetje goochelen — en een voorbode van de werkelijke vaardigheid, echte bijeenkomst, die nog niemand bezat.",
-  "description": "De 64-omwenteling vlucht van Andrian Nikolajev, gelanceerd 1962-08-11 08:24 UTC. Vierentwintig uur na de lancering voegde Vostok 4 (Popovytsj) zich bij hem in een baan — de dichtste nadering bedroeg ongeveer 6,5 km, hoewel er geen werkelijke bijeenkomstmogelijkheid bestond (de twee capsules hadden geen stuurmotoren). De gelijktijdige vlucht was een propagandamiddel ter reactie op de Amerikaanse suborbitale missies en John Glenn's Friendship 7. Nikolajev landde 1962-08-15 06:52 UTC in de buurt van Karaganda, Kazachse SSR, na bijna 4 dagen in de ruimte.",
+  "first": "Eerste dubbelvlucht-rendez-vous — vloog binnen ~6,5 km van Vostok 4",
+  "dispatch": "Vostok 3 opende het eerste bedrijf van een stuk orbitaal theater. Een dag nadat Andrian Nikolajev een baan bereikt had, volgde Vostok 4 hem, en gedurende enige tijd vlogen de twee ruimtevaartuigen enkele kilometers van elkaar af — voor het eerst dat twee bemande vaartuigen samen in de ruimte waren. Voor de wereld zag het eruit als een rendez-vous, en de Sovjet-Unie liet graag toe dat men dit geloofde. In werkelijkheid kon geen enkel vaartuig manoeuvreren; de nabijheid kwam voort uit het lanceren van het ene vrijwel in het pad van het andere, en de afstand nam daarna gestaag toe. Een echte eerste prestatie en tegelijk een beetje goochelen — en een voorbode van de werkelijke vaardigheid, een echt rendez-vous, die nog niemand bezat.",
+  "description": "De vlucht van 64 omwentelingen van Andrian Nikolajev, gelanceerd 1962-08-11 08:24 UTC. Vierentwintig uur na de lancering voegde Vostok 4 (Popovytsj) zich bij hem in een baan — de dichtste nadering bedroeg ongeveer 6,5 km, hoewel er geen werkelijk rendez-vousvermogen bestond (de twee capsules hadden geen stuurmotoren). De gelijktijdige vlucht was een propagandamiddel ter reactie op de Amerikaanse suborbitale missies en John Glenns Friendship 7. Nikolajev landde 1962-08-15 06:52 UTC in de buurt van Karaganda, Kazachse SSR, na bijna 4 dagen in de ruimte.",
   "events": [
     {
       "met": 0,
@@ -13,7 +13,7 @@
     },
     {
       "met": 0.25,
-      "label": "VOSTOK 4 BIJEENKOMST",
+      "label": "VOSTOK 4 RENDEZ-VOUS",
       "note": "Vostok 4 gelanceerd 24 uur later; dichtste nadering ~6,5 km op dag 2.",
       "type": "info"
     },

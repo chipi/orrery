@@ -2,7 +2,7 @@
   "name": "Mars",
   "type": "Missionsziel",
   "fact": "Die Startfenster Erde-Mars öffnen sich alle 26 Monate – angetrieben durch Orbitalresonanz. Verpasse das Fenster und warte zwei Jahre.",
-  "bio": "Die höchste Exzentrizität der inneren Planeten (e=0,093) — Mars schwankt bei der Aphel etwa 20% weiter von der Sonne ab als beim Perihel, was zu großen saisonalen und Staubsturm-Schwankungen führt. Startfenster hingegen werden durch die ~26-monatige heliozentrische Konjunktionsperiode Erde–Mars bestimmt.",
+  "bio": "Die höchste Exzentrizität der inneren Planeten (e=0,093) — Mars ist im Aphel etwa 20 % weiter von der Sonne entfernt als im Perihel, was zu großen jahreszeitlichen Schwankungen und Staubstürmen führt. Startfenster hingegen werden durch die ~26-monatige synodische Periode Erde–Mars bestimmt.",
   "missionable": true,
   "links": [
     {
@@ -35,7 +35,7 @@
     {
       "tab": "orbits",
       "section": "eccentricity",
-      "why": "Mars' Exzentrizität von 0,0935 (sechsmal höher als die Erde) erzeugt pro Umlauf eine Schwankung des Sonnenflusses um 20 % — der Motor hinter globalen Staubstürmen, die den Planeten monatelang einhüllen können."
+      "why": "Mars' Exzentrizität von 0,0935 (sechsmal höher als die der Erde) erzeugt pro Umlauf eine Schwankung des Sonnenflusses um 20 % — der Motor hinter globalen Staubstürmen, die den Planeten monatelang einhüllen können."
     },
     {
       "tab": "transfers",

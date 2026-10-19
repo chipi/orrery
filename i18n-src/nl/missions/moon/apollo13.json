@@ -3,7 +3,7 @@
   "type": "BEMANDE VOORBIJVLUCHT · UITGEVOERD (LANDING AFGEBROKEN)",
   "first": "De missie die bijna-ramp transformeerde in NASAs meest gevierde redding",
   "dispatch": "Apollo 13 is nooit geland, en het is de missie die iedereen zich herinnert. Twee dagen onderweg scheurde een zuurstoftank zichzelf uit elkaar en veranderde een routinevlucht naar de Fra Mauro-hooglanden in vier dagen van het redden van drie mannen in een stervend ruimtevaartuig een kwart miljoen mijlen van huis. Wat hen redde was niet heldendom; het was voorbereiding en een vol kantoor van mensen die het probleem in real time aanpakten, steeds opnieuw iets verzinnend om te ademen en een weg naar huis uit wat al aan het voertuig vastgeboord was. NASA noemde het een succesvolle mislukking. Het komt dichter bij de waarheid te zeggen dat het de vlucht is die aantoonde dat het agentschap zo goed was als het zei.",
-  "description": "Apollo 13 zou de derde bemande maanlanding zijn, gericht op de Fra Mauro-hooglanden. Op 55 uur en 54 minuten in de vlucht scheurde een zuurstoftank in de Service Module, wat de elektrische systemen en levensverstrekking van de Command-Service Module onschadelijk maakte. Met landing geannuleerd schakelden de bemanning — James Lovell, Jack Swigert en Fred Haise — de CSM uit, verplaatsten zich naar de Lunar Module Aquarius als reddingsboot en gebruikten de beschuit-engine van de LM voor een Pericynthion+2-uurs-burn die hen op een snelle vrije-terugkeer-baan plaatste. Ze vlogen voorbij de Maan op 254 km hoogte op 15 april 1970 en plonsden veilig neer in de Stille Oceaan op 17 april 1970. De missie wordt vandaag bestudeerd als een model van gedisciplineerde real-time technische improvisatie.",
+  "description": "Apollo 13 zou de derde bemande maanlanding zijn, gericht op de Fra Mauro-hooglanden. Op 55 uur en 54 minuten in de vlucht scheurde een zuurstoftank in de Service Module, wat de elektrische systemen en levensondersteuning van de Command-Service Module lamlegde. Met de landing afgelast schakelde de bemanning — James Lovell, Jack Swigert en Fred Haise — de CSM uit, verplaatste zich naar de Lunar Module Aquarius als reddingsboot en gebruikte de daalmotor van de LM voor een motorbrand 2 uur na pericynthion die hen op een snelle vrije-terugkeerbaan plaatste. Ze vlogen voorbij de Maan op 254 km hoogte op 15 april 1970 en plonsden veilig neer in de Stille Oceaan op 17 april 1970. De missie wordt vandaag bestudeerd als een model van gedisciplineerde technische improvisatie in real time.",
   "events": [
     {
       "met": 0,
@@ -25,13 +25,13 @@
     },
     {
       "met": 2.33,
-      "label": "ZUURSTOFTANK #2 RUPTURE",
+      "label": "ZUURSTOFTANK #2 GESCHEURD",
       "note": "Het cryo-roerommando van de SM veroorzaakt een kortsluiting, brand en tankbreuk. ‘Houston, we've had a problem.’ Vermogen en water nemen af; LM Aquarius wordt de reddingsboot.",
       "type": "warning"
     },
     {
       "met": 2.92,
-      "label": "VRIJE-TERUGKEER-BURN",
+      "label": "VRIJE-TERUGKEERBRAND",
       "note": "31-seconde LM afdalings-engine burn keert het ruimtevaartuig terug naar een vrije-terugkeer-baan.",
       "type": "info"
     },

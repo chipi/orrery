@@ -2,7 +2,7 @@
   "name": "Luna 21 / Lunokhod 2",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
   "first": "Zweiter sowjetischer Mondrover; längste Fahrt außerhalb der Erde (~39 km) für über 40 Jahre",
-  "description": "Luna 21 brachte Lunokhod 2, den zweiten von Menschen ferngesteuerten Mondrover der Sowjetunion, im Januar 1973 zum Le Monnier-Krater am südlichen Rand des Mare Serenitatis. Der Rover wurde von einem fünfköpfigen Team aus einem Kontrollraum auf der Krim gesteuert und legte während vier Mondtage etwa 39 km zurück – eine Rekordstrecke außerhalb der Erde, die bis 2014 Bestand hatte, als NASAs Opportunity-Rover sie auf dem Mars übertraf. Lunokhod 2 lieferte 80.000 Fernsehbilder und 86 Panoramen, bevor Staubverschmutzung der Solarpanele den Betrieb beendete.",
+  "description": "Luna 21 brachte Lunokhod 2, den zweiten von Menschen ferngesteuerten Mondrover der Sowjetunion, im Januar 1973 zum Le Monnier-Krater am südlichen Rand des Mare Serenitatis. Der Rover wurde von einem fünfköpfigen Team aus einem Kontrollraum auf der Krim gesteuert und legte während vier Mondtagen etwa 39 km zurück – eine Rekordstrecke außerhalb der Erde, die bis 2014 Bestand hatte, als NASAs Opportunity-Rover sie auf dem Mars übertraf. Lunokhod 2 lieferte 80.000 Fernsehbilder und 86 Panoramen, bevor Staubverschmutzung der Solarpanele den Betrieb beendete.",
   "events": [
     { "met": 0, "label": "START", "note": "Proton-K von Baikonur, 1973-01-08.", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Trans-Lunar-Injection auf der Blok-D-Oberstufe.", "type": "nominal" },

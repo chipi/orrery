@@ -2,7 +2,7 @@
   "name": "Dimorphos",
   "type": "Asteroid · Moonlet · Kinetic-impact target",
   "fact": "Der erste Himmelskörper, dessen Umlaufbahn gezielt von Menschen verändert wurde. Die DART-Sonde der NASA traf Dimorphos mit 6,14 km/s am 2022-09-26 und verkürzte damit seine 11,9-Stunden-Umlaufbahn um Didymos um 33 Minuten (4,2 %) – damit wurde die Erfolgs­schwelle um etwa das 25-Fache übertroffen und demonstriert, dass Planetenabwehr möglich ist.",
-  "bio": "160-m-Mondlet von 65803 Didymos, entdeckt 2003. Die DART-Oberfläche erwies sich als „Schutthaufen-Fluid\" – das Raumschiff sank während der halben Sekunde Kontakt etwa 50 cm in die Oberfläche ein, und der Impulsübertragungs-Verstärkungsfaktor β ≈ 3,6 deutete auf einen erheblichen Impuls von ausgestoßenem Oberflächenmaterial hin. Der CubeSat LICIACube bildete die Wolke in Echtzeit ab; HST und JWST beobachteten den Ejektor-Schweif über Wochen hinweg.",
+  "bio": "160 m großer Mond von 65803 Didymos, entdeckt 2003. Die Oberfläche, auf die DART traf, erwies sich als „Schutthaufen-Fluid\" – das Raumschiff sank während der halben Sekunde Kontakt etwa 50 cm in die Oberfläche ein, und der Impulsübertragungs-Verstärkungsfaktor β ≈ 3,6 deutete auf einen erheblichen Impuls von ausgestoßenem Oberflächenmaterial hin. Der CubeSat LICIACube bildete die Wolke in Echtzeit ab; HST und JWST beobachteten den Auswurfschweif über Wochen hinweg.",
   "links": [
     {
       "l": "Dimorphos — Wikipedia",
@@ -10,7 +10,7 @@
       "t": "intro"
     },
     {
-      "l": "DART final results (NASA)",
+      "l": "DART-Endergebnisse (NASA)",
       "u": "https://science.nasa.gov/mission/dart/",
       "t": "core"
     },

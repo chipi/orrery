@@ -2,7 +2,7 @@
   "name": "Rosetta",
   "type": "ORBITER + LANDER · FLOWN",
   "first": "Erstes Raumschiff, das einen Kometen umkreiste — und auf einem landete (Philae, 2014-11-12)",
-  "description": "ESAs Flaggschiff-Komet-Rendezvous-Mission. Nach einer 10-jährigen Reise mit drei Erde-Assists, einem Mars-Assist, zwei Asteroiden-Vorbeflügen und 957 Tagen Tiefraum-Hibernation erreichte Rosetta im August 2014 den Kometen 67P/Churyumov-Gerasimenko und umkreiste ihn über zwei Jahre lang durch das Perihel und über die Rückseite. Der Lander Philae erreichte am 2014-11-12 die Oberfläche von 67P — die erste sanfte Landung auf einem Kometen — und lieferte ~64 Stunden Wissenschaftsdaten, nachdem ein Harpunen-Versagen ihn im Schatten einer Felswand zurückließ. Rosetta selbst beendete die Mission mit einem kontrollierten Abstieg zur Oberfläche von 67P am 2016-09-30. Wichtigste Ergebnisse: organische Moleküle und Glycin in der Koma; das anfänglich gemessene D/H-Verhältnis von 67P (≈3× terrestrisch) sprach gegen Jupiter-Familie Kometen als Quelle des Erdwassers — ein Ergebnis, das eine Re-Analyse von 2024 nach Entdeckung eines Messfehlers in Frage gestellt hat; die ersten detaillierten Karten der Komet-Ausgasung-Geometrie.",
+  "description": "ESAs Flaggschiffmission zum Kometen-Rendezvous. Nach einer 10-jährigen Reise mit drei Erd-Swing-bys, einem Mars-Swing-by, zwei Asteroiden-Vorbeflügen und 957 Tagen Tiefraum-Hibernation erreichte Rosetta im August 2014 den Kometen 67P/Churyumov-Gerasimenko und umkreiste ihn über zwei Jahre lang durch das Perihel und danach wieder hinaus. Der Lander Philae erreichte am 2014-11-12 die Oberfläche von 67P — die erste sanfte Landung auf einem Kometen — und lieferte ~64 Stunden Wissenschaftsdaten, nachdem das Versagen der Harpune ihn im Schatten einer Felswand zurückließ. Rosetta selbst beendete die Mission mit einem kontrollierten Abstieg zur Oberfläche von 67P am 2016-09-30. Wichtigste Ergebnisse: organische Moleküle und Glycin in der Koma; das anfänglich gemessene D/H-Verhältnis von 67P (≈3× terrestrisch) sprach gegen Kometen der Jupiterfamilie als Quelle des Erdwassers — ein Ergebnis, das eine Re-Analyse von 2024 nach Entdeckung eines Messfehlers in Frage gestellt hat; die ersten detaillierten Karten der Ausgasungsgeometrie eines Kometen.",
   "events": [
     {
       "met": 0,
@@ -36,7 +36,7 @@
     },
     {
       "met": 3809,
-      "label": "KOMET 67P RENDEZVOUS",
+      "label": "RENDEZVOUS MIT KOMET 67P",
       "note": "Orbit-Einsatz um den Kometen 67P/Churyumov-Gerasimenko. Philae landet am 2014-11-12.",
       "type": "nominal"
     }

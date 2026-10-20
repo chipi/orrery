@@ -42,9 +42,8 @@
  */
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
 import { createHash, timingSafeEqual } from 'node:crypto';
-import { Server } from '@modelcontextprotocol/sdk/server/index.js';
-import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
-import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
+import { Server, createMcpHandler } from '@modelcontextprotocol/server';
+import { toNodeHandler } from '@modelcontextprotocol/node';
 import { REGISTRY } from '$lib/physics/registry';
 import { stationTleBlock } from '$lib/physics/satellite/stations';
 import {
@@ -154,11 +153,11 @@ export function buildMcpServer(listLocale: Locale): Server {
     { capabilities: { tools: {} } },
   );
 
-  server.setRequestHandler(ListToolsRequestSchema, () => ({
+  server.setRequestHandler('tools/list', () => ({
     tools: toolsFor(listLocale),
   }));
 
-  server.setRequestHandler(CallToolRequestSchema, async (req) => {
+  server.setRequestHandler('tools/call', async (req) => {
     // The name is client input: label metrics with it only when it is a real tool.
     const tool = knownToolNames().has(req.params.name) ? req.params.name : 'unknown-tool';
     if (activeComputes >= MAX_CONCURRENT_COMPUTES) {
@@ -317,29 +316,34 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
     return;
   }
 
-  // Stateless mode: each request gets a fresh transport/server pair — no session
-  // state exists server-side (tools are pure), which keeps horizontal scaling and
-  // restart semantics trivial for the beta.
-  const locale = resolveLocale(url.searchParams.get('locale'));
-  const transport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined });
-  // The SDK answers a malformed or unsupported request with a 400 and reports why ONLY
-  // through onerror; unwired, the reason was lost (#590). Set before connect(), which
-  // chains its own handler onto this one.
-  transport.onerror = (error) => {
-    const traceId = currentTraceId();
-    console.warn(
-      `[mcp] request rejected by transport: ${error.message}` +
-        (traceId ? ` trace_id=${traceId}` : ''),
-    );
-  };
-  const server = buildMcpServer(locale);
-  res.on('close', () => {
-    void transport.close();
-    void server.close();
-  });
-  await server.connect(transport);
-  await transport.handleRequest(req, res);
+  await mcpNodeHandler(req, res);
 }
+
+function logRejected(error: Error): void {
+  const traceId = currentTraceId();
+  console.warn(
+    `[mcp] request rejected by transport: ${error.message}` +
+      (traceId ? ` trace_id=${traceId}` : ''),
+  );
+}
+
+// One server instance per request from this factory — no session state exists
+// server-side (tools are pure). createMcpHandler serves the 2026-07-28 revision and
+// falls back to stateless 2025-era serving, so both client generations work (#590:
+// the v1 SDK answered Claude.ai's 2026-07-28 header with 400). Rejections are reported
+// only through onerror; unwired, the reason is lost.
+const mcpNodeHandler = toNodeHandler(
+  createMcpHandler(
+    (ctx) =>
+      buildMcpServer(
+        resolveLocale(
+          ctx.requestInfo ? new URL(ctx.requestInfo.url).searchParams.get('locale') : null,
+        ),
+      ),
+    { onerror: logRejected },
+  ),
+  { onerror: logRejected },
+);
 
 export function startServer(): ReturnType<typeof createServer> {
   // Inverted S4 gate (E · pre-review F4): production must NOT carry the dev

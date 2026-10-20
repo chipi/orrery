@@ -3,7 +3,7 @@
   "specVersion": "1.5",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-10-16T16:11:02.955Z",
+    "timestamp": "2026-10-20T16:09:47.910Z",
     "tools": [
       {
         "vendor": "Orrery",
@@ -358,13 +358,46 @@
     },
     {
       "type": "library",
-      "name": "@modelcontextprotocol/sdk",
-      "version": "1.32.1",
-      "description": "Model Context Protocol implementation for TypeScript",
+      "name": "@modelcontextprotocol/node",
+      "version": "2.1.1",
+      "description": "Model Context Protocol implementation for TypeScript - Node.js middleware",
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://modelcontextprotocol.io"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/modelcontextprotocol/typescript-sdk"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@modelcontextprotocol/server",
+      "version": "2.3.1",
+      "description": "Model Context Protocol implementation for TypeScript - Server package",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -1476,7 +1509,7 @@
     {
       "type": "library",
       "name": "@hono/node-server",
-      "version": "2.1.1",
+      "version": "1.19.17",
       "description": "Node.js Adapter for Hono",
       "licenses": [
         {
@@ -2715,72 +2748,6 @@
     },
     {
       "type": "library",
-      "name": "ajv",
-      "version": "8.20.0",
-      "description": "Another JSON Schema Validator",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://ajv.js.org"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/ajv-validator/ajv"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "ajv-formats",
-      "version": "3.0.1",
-      "description": "Format validation for Ajv v7+",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/ajv-validator/ajv-formats#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/ajv-validator/ajv-formats"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "ansi-regex",
       "version": "5.0.1",
       "description": "Regular expression for matching ANSI escape codes",
@@ -3079,35 +3046,6 @@
     },
     {
       "type": "library",
-      "name": "bytes",
-      "version": "3.1.2",
-      "description": "Utility to parse a string bytes to bytes and vice-versa",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/visionmedia/bytes.js"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "camelcase",
       "version": "5.3.1",
       "description": "Convert a dash/dot/underscore/space separated string to camelCase or PascalCase: `foo-bar` → `fooBar`",
@@ -3315,35 +3253,6 @@
     },
     {
       "type": "library",
-      "name": "content-type",
-      "version": "1.0.5",
-      "description": "Create and parse HTTP Content-Type header",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/jshttp/content-type"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "convert-source-map",
       "version": "2.0.0",
       "description": "Converts a source-map from/to  different formats and allows adding/changing properties.",
@@ -3391,68 +3300,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/jshttp/cookie"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "cors",
-      "version": "2.8.6",
-      "description": "Node.js CORS middleware",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/expressjs/cors"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "cross-spawn",
-      "version": "7.0.6",
-      "description": "Cross platform child_process#spawn and child_process#spawnSync",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/moxystudio/node-cross-spawn"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/moxystudio/node-cross-spawn"
         }
       ],
       "properties": [
@@ -3872,138 +3719,6 @@
     },
     {
       "type": "library",
-      "name": "eventsource",
-      "version": "3.0.7",
-      "description": "WhatWG/W3C compliant EventSource client for Node.js and browsers",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/EventSource/eventsource#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://git@github.com/EventSource/eventsource"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "eventsource-parser",
-      "version": "3.1.1",
-      "description": "Streaming, source-agnostic EventSource/Server-Sent Events parser",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/rexxars/eventsource-parser#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/rexxars/eventsource-parser"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "express",
-      "version": "5.2.1",
-      "description": "Fast, unopinionated, minimalist web framework",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://expressjs.com/"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/expressjs/express"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "express-rate-limit",
-      "version": "8.7.0",
-      "description": "Basic IP rate-limiting middleware for Express. Use to limit repeated requests to public APIs and/or endpoints such as password reset.",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/express-rate-limit/express-rate-limit"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/express-rate-limit/express-rate-limit"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "find-up",
       "version": "5.0.0",
       "description": "Find a file or directory by walking up parent directories",
@@ -4219,35 +3934,6 @@
     },
     {
       "type": "library",
-      "name": "http-errors",
-      "version": "2.0.1",
-      "description": "Create HTTP error objects",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/jshttp/http-errors"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "https-proxy-agent",
       "version": "5.0.1",
       "description": "An HTTP(s) proxy `http.Agent` implementation for HTTPS",
@@ -4262,39 +3948,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/TooTallNate/node-https-proxy-agent"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "iconv-lite",
-      "version": "0.7.3",
-      "description": "Convert character encodings in pure javascript.",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/pillarjs/iconv-lite"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/pillarjs/iconv-lite"
         }
       ],
       "properties": [
@@ -4328,35 +3981,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/nodejs/import-in-the-middle"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "ip-address",
-      "version": "10.7.4",
-      "description": "A library for parsing IPv4 and IPv6 IP addresses in node and the browser.",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/beaugunderson/ip-address"
         }
       ],
       "properties": [
@@ -4485,39 +4109,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/mathiasbynens/jsesc"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "json-schema-typed",
-      "version": "8.0.2",
-      "description": "JSON Schema TypeScript definitions with complete inline documentation.",
-      "licenses": [
-        {
-          "license": {
-            "id": "BSD-2-Clause"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/RemyRylan/json-schema-typed/tree/main/dist/node"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/RemyRylan/json-schema-typed"
         }
       ],
       "properties": [
@@ -4992,35 +4583,6 @@
     },
     {
       "type": "library",
-      "name": "object-assign",
-      "version": "4.1.1",
-      "description": "ES2015 `Object.assign()` ponyfill",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/sindresorhus/object-assign"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "obug",
       "version": "2.1.3",
       "description": "A lightweight JavaScript debugging utility, forked from debug, featuring TypeScript and ESM support.",
@@ -5170,35 +4732,6 @@
     },
     {
       "type": "library",
-      "name": "path-key",
-      "version": "3.1.1",
-      "description": "Get the PATH environment variable key cross-platform",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/sindresorhus/path-key"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "path-scurry",
       "version": "2.0.2",
       "description": "walk paths fast and efficiently",
@@ -5242,39 +4775,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/alexeyraspopov/picocolors"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "pkce-challenge",
-      "version": "5.0.1",
-      "description": "Generate or verify a Proof Key for Code Exchange (PKCE) challenge pair",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/crouchcd/pkce-challenge#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/crouchcd/pkce-challenge"
         }
       ],
       "properties": [
@@ -5370,35 +4870,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/Rob--W/proxy-from-env"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "raw-body",
-      "version": "3.0.2",
-      "description": "Get and validate the raw body of a readable stream.",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/stream-utils/raw-body"
         }
       ],
       "properties": [
@@ -5546,35 +5017,6 @@
     },
     {
       "type": "library",
-      "name": "safer-buffer",
-      "version": "2.1.2",
-      "description": "Modern Buffer API polyfill without footguns",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/ChALkeR/safer-buffer"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "semifies",
       "version": "1.0.0",
       "description": "Slimmed down satisfies from semver",
@@ -5688,64 +5130,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/nfriedly/set-cookie-parser"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "shebang-command",
-      "version": "2.0.0",
-      "description": "Get the command from a shebang",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/kevva/shebang-command"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "shebang-regex",
-      "version": "3.0.0",
-      "description": "Regular expression for matching a shebang line",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/sindresorhus/shebang-regex"
         }
       ],
       "properties": [
@@ -6129,35 +5513,6 @@
     },
     {
       "type": "library",
-      "name": "unpipe",
-      "version": "1.0.0",
-      "description": "Unpipe a stream from all destinations",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/stream-utils/unpipe"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "update-browserslist-db",
       "version": "1.3.2",
       "description": "CLI tool to update caniuse-lite to refresh target browsers from Browserslist config",
@@ -6172,35 +5527,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/browserslist/update-db"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "vary",
-      "version": "1.1.2",
-      "description": "Manipulate the HTTP Vary header",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/jshttp/vary"
         }
       ],
       "properties": [
@@ -6633,68 +5959,6 @@
     },
     {
       "type": "library",
-      "name": "zod",
-      "version": "4.5.4",
-      "description": "TypeScript-first schema declaration and validation library with static type inference",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://zod.dev"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/colinhacks/zod"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "zod-to-json-schema",
-      "version": "3.25.2",
-      "description": "Converts Zod schemas to Json Schemas",
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/StefanTerdell/zod-to-json-schema"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "@anthropic-ai/sdk",
       "version": "0.96.0",
       "description": "The official TypeScript library for the Anthropic API",
@@ -6902,6 +6166,39 @@
         {
           "type": "vcs",
           "url": "https://github.com/opral/paraglide-js"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@modelcontextprotocol/client",
+      "version": "2.3.1",
+      "description": "Model Context Protocol implementation for TypeScript - Client package",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://modelcontextprotocol.io"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/modelcontextprotocol/typescript-sdk"
         }
       ],
       "properties": [
@@ -7166,6 +6463,72 @@
         {
           "type": "vcs",
           "url": "https://github.com/vitest-dev/vitest"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ajv",
+      "version": "8.20.0",
+      "description": "Another JSON Schema Validator",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://ajv.js.org"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/ajv-validator/ajv"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ajv-formats",
+      "version": "3.0.1",
+      "description": "Format validation for Ajv v7+",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/ajv-validator/ajv-formats#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/ajv-validator/ajv-formats"
         }
       ],
       "properties": [
@@ -11432,9 +10795,75 @@
     },
     {
       "type": "library",
+      "name": "@img/sharp-libvips-linuxmusl-x64",
+      "version": "1.3.4",
+      "description": "Prebuilt libvips and dependencies for use with sharp on Linux (musl) x64",
+      "licenses": [
+        {
+          "license": {
+            "id": "LGPL-3.0-or-later"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://sharp.pixelplumbing.com"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/lovell/sharp-libvips"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "@img/sharp-linux-x64",
       "version": "0.35.5",
       "description": "Prebuilt sharp for use with Linux (glibc) x64",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://sharp.pixelplumbing.com"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/lovell/sharp"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linuxmusl-x64",
+      "version": "0.35.5",
+      "description": "Prebuilt sharp for use with Linux (musl) x64",
       "licenses": [
         {
           "license": {
@@ -11971,6 +11400,39 @@
         }
       ],
       "externalReferences": [],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@modelcontextprotocol/core",
+      "version": "2.3.1",
+      "description": "Model Context Protocol for TypeScript — public Zod schemas (spec + OAuth/OpenID)",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://modelcontextprotocol.io"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/modelcontextprotocol/typescript-sdk"
+        }
+      ],
       "properties": [
         {
           "name": "orrery:scope",
@@ -16274,6 +15736,39 @@
     },
     {
       "type": "library",
+      "name": "cross-spawn",
+      "version": "7.0.6",
+      "description": "Cross platform child_process#spawn and child_process#spawnSync",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/moxystudio/node-cross-spawn"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/moxystudio/node-cross-spawn"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "crypto-random-string",
       "version": "4.0.0",
       "description": "Generate a cryptographically strong random string",
@@ -17896,6 +17391,72 @@
         {
           "type": "vcs",
           "url": "https://github.com/bgub/eta"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "eventsource",
+      "version": "3.0.7",
+      "description": "WhatWG/W3C compliant EventSource client for Node.js and browsers",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/EventSource/eventsource#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://git@github.com/EventSource/eventsource"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "eventsource-parser",
+      "version": "3.1.1",
+      "description": "Streaming, source-agnostic EventSource/Server-Sent Events parser",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/rexxars/eventsource-parser#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/rexxars/eventsource-parser"
         }
       ],
       "properties": [
@@ -23296,6 +22857,39 @@
     },
     {
       "type": "library",
+      "name": "pkce-challenge",
+      "version": "5.0.1",
+      "description": "Generate or verify a Proof Key for Code Exchange (PKCE) challenge pair",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/crouchcd/pkce-challenge#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/crouchcd/pkce-challenge"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "playwright",
       "version": "1.64.0",
       "description": "A high-level API to automate web browsers",
@@ -25148,6 +24742,105 @@
         {
           "type": "vcs",
           "url": "https://github.com/ljharb/side-channel"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "side-channel-list",
+      "version": "1.0.1",
+      "description": "Store information about any JS value in a side channel, using a linked list",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/ljharb/side-channel-list#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/ljharb/side-channel-list"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "side-channel-map",
+      "version": "1.0.1",
+      "description": "Store information about any JS value in a side channel, using a Map",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/ljharb/side-channel-map#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/ljharb/side-channel-map"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "side-channel-weakmap",
+      "version": "1.0.2",
+      "description": "Store information about any JS value in a side channel. Uses WeakMap if available.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/ljharb/side-channel-weakmap#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/ljharb/side-channel-weakmap"
         }
       ],
       "properties": [
@@ -29111,6 +28804,39 @@
         {
           "type": "vcs",
           "url": "https://github.com/sindresorhus/yn"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "zod",
+      "version": "4.5.4",
+      "description": "TypeScript-first schema declaration and validation library with static type inference",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://zod.dev"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/colinhacks/zod"
         }
       ],
       "properties": [

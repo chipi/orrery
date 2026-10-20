@@ -10,8 +10,7 @@ import { AddressInfo } from 'node:net';
 import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { Client } from '@modelcontextprotocol/sdk/client/index.js';
-import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
+import { Client, StreamableHTTPClientTransport } from '@modelcontextprotocol/client';
 import { TokenCore } from '../lab-api/tokens';
 
 const BEARER = 'test-bearer-s4';
@@ -182,10 +181,54 @@ describe('S4 · live MCP round-trip', () => {
       expect(res.status).toBe(400);
       const logged = warn.mock.calls.map((c) => c.join(' ')).join('\n');
       expect(logged).toContain('[mcp] request rejected by transport');
-      expect(logged).toContain('Unsupported protocol version: 2099-01-01');
+      expect(logged).toContain('protocol revision 2099-01-01');
     } finally {
       warn.mockRestore();
     }
+  });
+
+  it('serves a 2026-07-28 client — the revision v1 answered with 400 (#590)', async () => {
+    const versions: string[] = [];
+    const c = new Client(
+      { name: 'orrery-590-test', version: '0.0.0' },
+      { versionNegotiation: { mode: 'auto' } },
+    );
+    const transport = new StreamableHTTPClientTransport(new URL(`${baseUrl}/mcp`), {
+      requestInit: { headers: { authorization: `Bearer ${BEARER}` } },
+      fetch: (input, init) => {
+        const v = new Headers(init?.headers).get('mcp-protocol-version');
+        if (v) versions.push(v);
+        return fetch(input, init);
+      },
+    });
+    await c.connect(transport);
+    const { tools } = await c.listTools();
+    await c.close();
+    expect(versions).toContain('2026-07-28');
+    expect(tools.length).toBeGreaterThan(0);
+  });
+
+  it('still serves a 2025-era initialize (stateless legacy fallback)', async () => {
+    const res = await fetch(`${baseUrl}/mcp`, {
+      method: 'POST',
+      headers: {
+        authorization: `Bearer ${BEARER}`,
+        'content-type': 'application/json',
+        accept: 'application/json, text/event-stream',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'initialize',
+        params: {
+          protocolVersion: '2025-11-25',
+          capabilities: {},
+          clientInfo: { name: 'legacy', version: '0' },
+        },
+      }),
+    });
+    expect(res.status).toBe(200);
+    expect(await res.text()).toContain('"protocolVersion":"2025-11-25"');
   });
 
   it('/health answers without auth (container liveness)', async () => {

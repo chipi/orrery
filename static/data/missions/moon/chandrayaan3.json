@@ -63,8 +63,8 @@
       "source": "ISRO Chandrayaan-3 Mission Report (2023); used multi-burn Earth-orbit raising"
     },
     "cruise": {
-      "tcm_count": 6,
-      "source": "ISRO Chandrayaan-3 Mission Operations Report"
+      "tcm_count": 0,
+      "source": "ISRO mission updates, 2023-07/08: no trajectory corrections reported between TLI (1 Aug) and lunar orbit insertion (5 Aug); the lunar-bound burns are listed as events."
     },
     "arrival": {
       "v_infinity_km_s": 0.85,
@@ -95,46 +95,52 @@
         "description": "Final perigee burn after 18 days of progressive Earth-orbit raising — the same lower-cost lunar transfer ISRO has used since Chandrayaan-1."
       },
       {
-        "met_days": 18.6,
-        "type": "tcm",
-        "label": "TCM-1",
-        "description": "First post-TLI cleanup burn."
-      },
-      {
-        "met_days": 19.15,
-        "type": "tcm",
-        "label": "TCM-2",
-        "description": "Mid-cruise refinement."
-      },
-      {
-        "met_days": 19.7,
-        "type": "tcm",
-        "label": "TCM-3",
-        "description": "Mid-cruise refinement."
-      },
-      {
-        "met_days": 20.3,
-        "type": "tcm",
-        "label": "TCM-4",
-        "description": "Mid-cruise refinement."
-      },
-      {
-        "met_days": 20.65,
-        "type": "tcm",
-        "label": "TCM-5",
-        "description": "Approach-phase refinement."
-      },
-      {
-        "met_days": 20.85,
-        "type": "tcm",
-        "label": "TCM-6 — final pre-LOI",
-        "description": "Final approach targeting before lunar orbit insertion."
-      },
-      {
         "met_days": 22.2,
         "type": "arrival",
         "label": "Lunar orbit insertion",
         "description": "2023-08-05. Captured into 170 × 36,500 km lunar orbit. ISRO spent 18 days lowering perilune to 25 km for the descent."
+      },
+      {
+        "met_days": 23.35,
+        "type": "phasing",
+        "label": "Lunar orbit reduction 1",
+        "description": "2023-08-06. First lunar-bound burn after capture: the orbit drops to 170 × 4,313 km."
+      },
+      {
+        "met_days": 26.2,
+        "type": "phasing",
+        "label": "Lunar orbit reduction 2",
+        "description": "2023-08-09. Second burn lowering the orbit towards a near-circular one."
+      },
+      {
+        "met_days": 31.2,
+        "type": "phasing",
+        "label": "Lunar orbit reduction 3",
+        "description": "2023-08-14. Third reduction burn."
+      },
+      {
+        "met_days": 33.1,
+        "type": "phasing",
+        "label": "Lunar orbit reduction 4",
+        "description": "2023-08-16. Final reduction burn: a near-circular 153 × 163 km orbit."
+      },
+      {
+        "met_days": 34,
+        "type": "separation",
+        "label": "Lander module separation",
+        "description": "2023-08-17. The Vikram lander module, with the Pragyan rover inside, separates from the propulsion module."
+      },
+      {
+        "met_days": 35,
+        "type": "phasing",
+        "label": "Lander deboost 1",
+        "description": "2023-08-18. Vikram's first deboost lowers its orbit to 113 × 157 km."
+      },
+      {
+        "met_days": 36.5,
+        "type": "phasing",
+        "label": "Lander deboost 2",
+        "description": "Second deboost puts Vikram into the low descent orbit, ready for the landing attempt."
       },
       {
         "met_days": 40,
@@ -180,291 +186,291 @@
         ],
         [
           0.8485,
-          882,
+          916,
           0,
-          7709
+          7663
         ],
         [
           1.2727,
-          -4871,
+          -4820,
           0,
-          6903
+          6910
         ],
         [
           1.697,
-          -8962,
+          -8913,
           0,
-          2079
+          2136
         ],
         [
           2.1212,
-          -8792,
+          -8795,
           0,
-          -4808
+          -4705
         ],
         [
           2.5455,
-          -3661,
+          -3753,
           0,
-          -10284
+          -10186
         ],
         [
           2.9697,
-          4481,
+          4311,
           0,
-          -11018
+          -11003
         ],
         [
           3.3939,
-          11635,
+          11464,
           0,
-          -5711
+          -5837
         ],
         [
           3.8182,
-          13608,
+          13555,
           0,
-          3795
+          3540
         ],
         [
           4.2424,
-          8319,
+          8477,
           0,
-          12959
+          12686
         ],
         [
           4.6667,
-          -2632,
+          -2273,
           0,
-          16583
+          16464
         ],
         [
           5.0909,
-          -14175,
+          -13762,
           0,
-          11588
+          11767
         ],
         [
           5.5152,
-          -19950,
+          -19726,
           0,
-          -851
+          -369
         ],
         [
           5.9394,
-          -15617,
+          -15798,
           0,
-          -15165
+          -14568
         ],
         [
           6.3636,
-          -1696,
+          -2318,
           0,
-          -23634
+          -23256
         ],
         [
           6.7879,
-          15751,
+          14919,
           0,
-          -20430
+          -20583
         ],
         [
           7.2121,
-          27606,
+          27006,
           0,
-          -5182
+          -5954
         ],
         [
           7.6364,
-          26193,
+          26269,
           0,
-          15801
+          14676
         ],
         [
           8.0606,
-          9835,
+          10761,
           0,
-          31835
+          30927
         ],
         [
           8.4848,
-          -15089,
+          -13604,
           0,
-          33014
+          32944
         ],
         [
           8.9091,
-          -36213,
+          -34891,
           0,
-          15905
+          16975
         ],
         [
           9.3333,
-          -40990,
+          -40677,
           0,
-          -13330
+          -11414
         ],
         [
           9.7576,
-          -23677,
+          -24863,
           0,
-          -40579
+          -38712
         ],
         [
           10.1818,
-          10173,
+          7753,
           0,
-          -50196
+          -49508
         ],
         [
           10.6061,
-          44700,
+          42128,
           0,
-          -33471
+          -34717
         ],
         [
           11.0303,
-          60675,
+          59437,
           0,
-          5188
+          2193
         ],
         [
           11.4545,
-          45638,
+          46848,
           0,
-          48255
+          44790
         ],
         [
           11.8788,
-          2123,
+          5753,
           0,
-          72337
+          70328
         ],
         [
           12.303,
-          -50695,
+          -46131,
           0,
-          60297
+          61337
         ],
         [
           12.7273,
-          -84887,
+          -81831,
           0,
-          12246
+          16541
         ],
         [
           13.1515,
-          -77854,
+          -78504,
           0,
-          -51581
+          -45686
         ],
         [
           13.5758,
-          -25882,
+          -30837,
           0,
-          -98364
+          -93904
         ],
         [
           14,
-          50282,
+          42793,
           0,
-          -98727
+          -98691
         ],
         [
           14.4242,
-          112476,
+          106176,
           0,
-          -43809
+          -49372
         ],
         [
           14.8485,
-          123241,
+          122118,
           0,
-          45946
+          36586
         ],
         [
           15.2727,
-          66918,
+          72959,
           0,
-          126766
+          118097
         ],
         [
           15.697,
-          -37516,
+          -26003,
           0,
-          151676
+          148930
         ],
         [
           16.1212,
-          -140569,
+          -128901,
           0,
-          96207
+          102487
         ],
         [
           16.5455,
-          -184215,
+          -179143,
           0,
-          -23689
+          -9757
         ],
         [
           16.9697,
-          -132777,
+          -138907,
           0,
-          -152959
+          -137553
         ],
         [
           17.3939,
-          2888,
+          -13684,
           0,
-          -220904
+          -212604
         ],
         [
           17.8,
-          155637,
+          129996,
           0,
-          -179312
+          -186294
         ],
         [
           18.2424,
-          260566,
+          247123,
           0,
-          -26399
+          -45990
         ],
         [
-          18.6,
-          235517,
+          18.6667,
+          238801,
           0,
-          136954
+          115539
         ],
         [
-          19.15,
-          33870,
+          19.0909,
+          60906,
           0,
-          302150
+          280001
         ],
         [
-          19.7,
-          -245649,
+          19.5152,
+          -207340,
           0,
-          218108
+          229626
         ],
         [
           19.9394,
-          -348677,
+          -334250,
           0,
-          119072
+          132940
         ],
         [
-          20.3,
-          -682439,
+          20.3636,
+          -634707,
           0,
-          162707
+          156467
         ],
         [
-          20.85,
-          -374630,
+          20.7879,
+          -419568,
           0,
-          86116
+          97298
         ],
         [
           21.2121,
@@ -497,7 +503,7 @@
           86116
         ],
         [
-          23.3333,
+          23.35,
           -374630,
           0,
           86116
@@ -539,7 +545,7 @@
           86116
         ],
         [
-          26.303,
+          26.2,
           -374630,
           0,
           86116
@@ -611,7 +617,7 @@
           86116
         ],
         [
-          31.3939,
+          31.2,
           -374630,
           0,
           86116
@@ -635,7 +641,7 @@
           86116
         ],
         [
-          33.0909,
+          33.1,
           -374630,
           0,
           86116
@@ -647,7 +653,7 @@
           86116
         ],
         [
-          33.9394,
+          34,
           -374630,
           0,
           86116
@@ -659,7 +665,7 @@
           86116
         ],
         [
-          34.7879,
+          35,
           -374630,
           0,
           86116
@@ -683,7 +689,7 @@
           86116
         ],
         [
-          36.4848,
+          36.5,
           -374630,
           0,
           86116
@@ -732,9 +738,9 @@
         ],
         [
           40,
-          -376300,
+          -376214,
           0,
-          86062
+          85730
         ],
         [
           40.303,

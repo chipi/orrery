@@ -68,7 +68,10 @@ export interface LoadedMission {
   dest?: Destination;
   payload: string;
   dv_total: number;
-  dv_used: number;
+  /** Δv already spent, km/s — only where a source states it (authored scenarios). Null for
+   *  missions and /plan picks: no per-mission ledger exists, and the old 94%-of-total stand-in
+   *  showed an invented margin (and a permanent CRITICAL below 5 km/s total). */
+  dv_used: number | null;
   dep_label: string;
   arr_label: string;
   timeline: MissionTimeline;
@@ -217,7 +220,7 @@ function buildMissionMeta(
     dest: m.dest,
     payload: m.payload ?? '—',
     dv_total: dvTotalCanonical,
-    dv_used: dvTotalCanonical * 0.94,
+    dv_used: null,
     dep_label: m.departure_date ?? defaults.depLabelFallback,
     arr_label: m.arrival_date ?? defaults.arrLabelFallback,
     timeline,
@@ -557,7 +560,7 @@ export const FLYBY_OFFSET_FRACTION = 0.95;
 export type PlanSelectionType = 'LANDING' | 'FLYBY';
 
 export interface PlanApplyDefaults {
-  /** Fallback dv (km/s) — used as both dv_total + dv_used×0.94 since
+  /** Fallback dv (km/s) — used as dv_total (dv_used stays null) since
    *  the porkchop grid doesn't return per-mission delta-v. */
   dvFallback: number;
 }
@@ -627,7 +630,7 @@ export function computePlanApply(
       vehicle: '—',
       payload: '—',
       dv_total: defaults.dvFallback,
-      dv_used: defaults.dvFallback * 0.94,
+      dv_used: null,
       dep_label: `Day ${depDay}`,
       arr_label: `Day ${depDay + arrOffset}`,
       timeline,
@@ -702,7 +705,7 @@ export function computePlanApplyMoon(
       vehicle: '—',
       payload: '—',
       dv_total: defaults.dvFallback,
-      dv_used: defaults.dvFallback * 0.94,
+      dv_used: null,
       dep_label: `Day ${depDay}`,
       arr_label: `Day ${depDay + tofDays}`,
       timeline,

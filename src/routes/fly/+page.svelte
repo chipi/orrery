@@ -1429,7 +1429,9 @@
   // surface the scenario's headline numbers without re-running an
   // optimal-burn schedule. A future slice with per-burn data could
   // refine this into a live consume-as-you-go ledger.
-  let dvRemaining = $derived(Math.max(0, mission.dv_total - mission.dv_used));
+  let dvRemaining = $derived(
+    mission.dv_used == null ? null : Math.max(0, mission.dv_total - mission.dv_used),
+  );
 
   // ─── CAPCOM derivations ──────────────────────────────────────────
   // Past events (met ≤ current met), most-recent-first.
@@ -1441,10 +1443,10 @@
   );
   // Anomaly state — collapses past `warning` events into a worst-case
   // banner. CAUTION when a warning is present, NOMINAL otherwise; we
-  // promote to CRITICAL when ∆v margin drops below 0.3 km/s (the
-  // prototype's threshold).
+  // promote to CRITICAL when a real ∆v ledger leaves under 0.3 km/s (the
+  // prototype's threshold). Missions carry no ledger (dv_used null).
   let anomalyLevel = $derived<'nominal' | 'caution' | 'critical'>(
-    dvRemaining < 0.3
+    dvRemaining != null && dvRemaining < 0.3
       ? 'critical'
       : pastEvents.some((e) => e.type === 'warning')
         ? 'caution'
@@ -4202,20 +4204,25 @@
 
     <!-- Systems HUD (bottom-right) -->
     <aside class="hud hud-systems" aria-label={m.fly_panel_systems()}>
-      <div class="hud-row">
-        <span class="hud-key">{m.fly_hud_dv_used()}</span>
-        <span class="hud-val">{m.fly_hud_kms({ value: mission.dv_used.toFixed(2) })}</span>
-      </div>
-      <div class="hud-row">
-        <span class="hud-key">{m.fly_hud_dv_remaining()}</span>
-        <span class="hud-val teal">{m.fly_hud_kms({ value: dvRemaining.toFixed(2) })}</span>
-      </div>
-      <div class="dv-bar" aria-hidden="true">
-        <div
-          class="dv-fill"
-          style:width="{Math.min(100, (mission.dv_used / Math.max(0.01, mission.dv_total)) * 100)}%"
-        ></div>
-      </div>
+      {#if mission.dv_used != null && dvRemaining != null}
+        <div class="hud-row">
+          <span class="hud-key">{m.fly_hud_dv_used()}</span>
+          <span class="hud-val">{m.fly_hud_kms({ value: mission.dv_used.toFixed(2) })}</span>
+        </div>
+        <div class="hud-row">
+          <span class="hud-key">{m.fly_hud_dv_remaining()}</span>
+          <span class="hud-val teal">{m.fly_hud_kms({ value: dvRemaining.toFixed(2) })}</span>
+        </div>
+        <div class="dv-bar" aria-hidden="true">
+          <div
+            class="dv-fill"
+            style:width="{Math.min(
+              100,
+              (mission.dv_used / Math.max(0.01, mission.dv_total)) * 100,
+            )}%"
+          ></div>
+        </div>
+      {/if}
       <div class="hud-row">
         <span class="hud-key">{m.fly_hud_eta()}</span>
         <span class="hud-val">{m.fly_hud_eta_value({ day: Math.round(totalDays).toString() })}</span
@@ -4517,9 +4524,11 @@
           <div class="anomaly anomaly-{anomalyLevel}">
             <span class="anomaly-dot" aria-hidden="true"></span>
             <span class="anomaly-label">{anomalyLabel}</span>
-            <span class="anomaly-detail">
-              ∆v margin {dvRemaining.toFixed(2)} km/s
-            </span>
+            {#if dvRemaining != null}
+              <span class="anomaly-detail">
+                {m.plan_budget_margin({ value: dvRemaining.toFixed(2) })}
+              </span>
+            {/if}
           </div>
         </section>
 

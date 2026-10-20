@@ -159,7 +159,7 @@ describe('computeMissionApply', () => {
       });
       const r = computeMissionApply(m, DEFAULTS);
       expect(r.missionMeta.dv_total).toBe(7.42);
-      expect(r.missionMeta.dv_used).toBeCloseTo(7.42 * 0.94, 4);
+      expect(r.missionMeta.dv_used).toBeNull();
     });
 
     it('falls back to parseDeltaV(delta_v) when flight.totals absent', () => {
@@ -305,10 +305,10 @@ describe('computePlanApply', () => {
       );
     });
 
-    it('dv_total + dv_used use defaults.dvFallback', () => {
+    it('dv_total uses defaults.dvFallback; dv_used is unknown (null)', () => {
       const r = computePlanApply('mars', 'LANDING', 9000, 250, { dvFallback: 20 });
       expect(r.missionMeta.dv_total).toBe(20);
-      expect(r.missionMeta.dv_used).toBeCloseTo(20 * 0.94, 6);
+      expect(r.missionMeta.dv_used).toBeNull();
     });
 
     it('labels use simulated-day stamps', () => {

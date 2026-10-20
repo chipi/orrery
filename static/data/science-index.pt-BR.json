@@ -550,7 +550,7 @@
     "section": "star-trackers",
     "title": "Rastreadores de estrelas",
     "intro": "Uma pequena câmera apontou para o céu, identificando estrelas por correspondência padrão contra um catálogo a bordo — a maneira mais precisa para uma nave espacial saber para que lado ela está apontando.",
-    "haystack": "rastreadores de estrelas uma pequena câmera apontou para o céu, identificando estrelas por correspondência padrão contra um catálogo a bordo — a maneira mais precisa para uma nave espacial saber para que lado ela está apontando. uma espaçonave não pode perguntar para que lado está \"para cima\" — não há espaço para cima, e o gps não passa pelo leo. para executar uma queimadura, implantar um painel solar, ou apontar uma antena de alto ganho para a terra, a espaçonave precisa saber sua orientação no espaço inercial. o instrumento que fornece isso é o rastreador de estrelas: uma pequena câmera ccd apontou para um trecho do céu, tendo uma exposição curta, identificando as estrelas na imagem por correspondência de padrões em relação a um catálogo a bordo (geralmente o catálogo hipparcos ou tycho-2, ~104-105 estrelas). star trackers"
+    "haystack": "rastreadores de estrelas uma pequena câmera apontou para o céu, identificando estrelas por correspondência padrão contra um catálogo a bordo — a maneira mais precisa para uma nave espacial saber para que lado ela está apontando. uma espaçonave não pode perguntar ao gps qual é o \"para cima\" — não existe \"para cima\" no espaço profundo, e o gps nem alcança além da leo. para executar uma queima, desdobrar um painel solar ou apontar uma antena de alto ganho para a terra, a espaçonave precisa conhecer sua orientação no espaço inercial. o instrumento que fornece isso é o rastreador de estrelas: uma pequena câmera ccd apontada para um trecho do céu, que faz uma exposição curta e identifica as estrelas da imagem por correspondência de padrões com um catálogo de bordo (geralmente o hipparcos ou o tycho-2, ~10⁴–10⁵ estrelas). star trackers"
   },
   {
     "tab": "mission-phases",
@@ -592,14 +592,14 @@
     "section": "black-holes",
     "title": "Buracos negros",
     "intro": "Uma região do espaço-tempo onde a massa é tão comprimida que nem a luz consegue sair — e agora temos imagens das sombras de dois deles.",
-    "haystack": "buracos negros uma região do espaço-tempo onde a massa é tão comprimida que nem a luz consegue sair — e agora temos imagens das sombras de dois deles. um buraco negro se forma quando uma massa suficiente colapsa para dentro de seu raio de schwarzschild — o tamanho em que a velocidade de escape é igual à velocidade da luz. a fórmula à direita diz diretamente: para qualquer massa m, há um raio r s = 2gm/c2 dentro do qual nada escapa. o raio de schwarzschild é de 3 km. a terra tem 9 mm. compacta para esse tamanho e fizeste um. black holes"
+    "haystack": "buracos negros uma região do espaço-tempo onde a massa é tão comprimida que nem a luz consegue sair — e agora temos imagens das sombras de dois deles. um buraco negro se forma quando uma massa suficiente colapsa para dentro de seu raio de schwarzschild — o tamanho em que a velocidade de escape é igual à velocidade da luz. a fórmula à direita diz isso diretamente: para qualquer massa m, existe um raio r_s = 2gm/c² dentro do qual nada escapa. o raio de schwarzschild do sol é de 3 km; o da terra, de 9 mm. comprima qualquer um dos dois a esse tamanho e você terá feito um. black holes"
   },
   {
     "tab": "observation",
     "section": "coronagraphs",
     "title": "Coronagrafias",
     "intro": "Um disco oculto dentro do telescópio bloqueia a estrela hospedeira, de modo que o planeta ao lado dela — um bilhão de vezes mais fraco — se torna visível.",
-    "haystack": "coronagrafias um disco oculto dentro do telescópio bloqueia a estrela hospedeira, de modo que o planeta ao lado dela — um bilhão de vezes mais fraco — se torna visível. uma estrela semelhante ao sol supera seus planetas por um fator de cerca de 109 em comprimentos de onda visíveis e 106 no infravermelho. os fótons do planeta não estão desaparecidos — estão a afogar-se nas asas de difração da função de difusão de pontos da estrela. imagem direta de um exoplaneta só é possível se você pode suprimir que psf por muitas ordens de magnitude. um coronagrama faz exactamente isso. coronagraphs"
+    "haystack": "coronagrafias um disco oculto dentro do telescópio bloqueia a estrela hospedeira, de modo que o planeta ao lado dela — um bilhão de vezes mais fraco — se torna visível. uma estrela semelhante ao sol ofusca seus planetas por um fator de cerca de 10⁹ em comprimentos de onda visíveis e 10⁶ no infravermelho. os fótons do planeta não estão ausentes — estão afogados nas asas de difração da função de espalhamento de ponto (psf) da estrela. a imagem direta de um exoplaneta só é possível se for possível suprimir essa psf por muitas ordens de grandeza. um coronógrafo faz exatamente isso. coronagraphs"
   },
   {
     "tab": "observation",

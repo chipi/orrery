@@ -3798,8 +3798,9 @@
     {@const story = mission.description ?? ''}
     {@const agencyFull = mission.agency_full ?? ''}
     {@const agencyLogos = agencyToLogoEntries(mission.agency ?? agencyFull)}
-    {@const transitYears =
-      mission.transit_days != null ? (mission.transit_days / 365).toFixed(1) : null}
+    {@const transitDays = mission.transit_days
+      ? m.mp_transit_days({ count: mission.transit_days.toString() })
+      : null}
     {@const missionLink = mission.id ? `${base}/missions?id=${mission.id}` : null}
 
     <!-- Single merged opening stack — title + context + fleet all
@@ -3892,10 +3893,10 @@
                     <span class="opening-stat-val">{mission.delta_v_label}</span>
                   </span>
                 {/if}
-                {#if transitYears}
+                {#if transitDays}
                   <span class="opening-stat">
                     <span class="opening-stat-label">{m.fly_opening_transit()}</span>
-                    <span class="opening-stat-val">{transitYears} years</span>
+                    <span class="opening-stat-val">{transitDays}</span>
                   </span>
                 {/if}
               </div>

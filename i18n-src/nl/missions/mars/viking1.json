@@ -11,7 +11,7 @@
       "type": "nominal"
     },
     {
-      "met": 7,
+      "met": 30,
       "label": "TCM-1",
       "note": "Eerste baanverbetering.",
       "type": "nominal"
@@ -23,13 +23,13 @@
       "type": "nominal"
     },
     {
-      "met": 335,
+      "met": 334.87,
       "label": "LANDERSEPARATIE",
       "note": "Lander koppelt los voor afdaling naar Chryse Planitia.",
       "type": "nominal"
     },
     {
-      "met": 335.05,
+      "met": 335,
       "label": "LANDING",
       "note": "Lander landt op 1976-07-20, exact 7 jaar na Apollo 11.",
       "type": "nominal"

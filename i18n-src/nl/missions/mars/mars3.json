@@ -17,19 +17,19 @@
       "type": "nominal"
     },
     {
-      "met": 188.05,
+      "met": 188.005,
       "label": "LANDER SCHEIDING",
       "note": "Lander scheidt zich af en begint atmosferische ingang.",
       "type": "nominal"
     },
     {
-      "met": 188.1,
+      "met": 188.01,
       "label": "OPPERVLAKTECONTACT",
       "note": "Eerste zachte landing op Mars; transmissie begint.",
       "type": "nominal"
     },
     {
-      "met": 188.101,
+      "met": 188.013,
       "label": "SIGNAALVERLIES",
       "note": "Signaal verloren ~110 s na landing (transmissie duurde ~14,5 s). Oorzaak onbevestigd; stofstorm is de meest waarschijnlijke kandidaat.",
       "type": "warning"

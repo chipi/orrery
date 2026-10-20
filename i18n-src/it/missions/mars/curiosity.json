@@ -12,19 +12,19 @@
       "type": "nominal"
     },
     {
-      "met": 1,
+      "met": 0.005,
       "label": "ACCENSIONE TMI",
       "note": "L'iniezione trans-marziana (3,61 km/s ∆v) pone MSL su una traiettoria eliocentrica diretta verso Marte.",
       "type": "nominal"
     },
     {
-      "met": 16,
+      "met": 12,
       "label": "TCM-1",
       "note": "Prima correzione di mezza strada.",
       "type": "nominal"
     },
     {
-      "met": 119,
+      "met": 110,
       "label": "TCM-3",
       "note": "Correzione finale pre-EDL; la traiettoria punta all'ellisse di atterraggio del Cratere Gale.",
       "type": "nominal"

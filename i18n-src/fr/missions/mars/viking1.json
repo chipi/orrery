@@ -11,7 +11,7 @@
       "type": "nominal"
     },
     {
-      "met": 7,
+      "met": 30,
       "label": "TCM-1",
       "note": "Première correction de trajectoire.",
       "type": "nominal"
@@ -23,13 +23,13 @@
       "type": "nominal"
     },
     {
-      "met": 335,
+      "met": 334.87,
       "label": "SÉPARATION DE L'ATTERRISSEUR",
       "note": "L'atterrisseur se détache pour la descente vers Chryse Planitia.",
       "type": "nominal"
     },
     {
-      "met": 335.05,
+      "met": 335,
       "label": "CONTACT",
       "note": "L'atterrisseur se pose le 1976-07-20, exactement 7 ans après Apollo 11.",
       "type": "nominal"

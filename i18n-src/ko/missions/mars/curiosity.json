@@ -12,19 +12,19 @@
       "type": "nominal"
     },
     {
-      "met": 1,
+      "met": 0.005,
       "label": "화성 전이 연소",
       "note": "화성 전이(3.61 km/s ∆v)가 MSL을 태양중심 화성 방향 궤도로 보낸다.",
       "type": "nominal"
     },
     {
-      "met": 16,
+      "met": 12,
       "label": "TCM-1",
       "note": "첫 번째 중도 수정.",
       "type": "nominal"
     },
     {
-      "met": 119,
+      "met": 110,
       "label": "TCM-3",
       "note": "최종 EDL 전 수정; 궤도는 게일 분화구 착륙 타원을 목표로 한다.",
       "type": "nominal"

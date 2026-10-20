@@ -7,8 +7,8 @@
     { "met": 0, "label": "LAUNCH", "note": "Long March 5 from Wenchang.", "type": "nominal" },
     { "met": 5, "label": "MOI", "note": "Lunar orbit insertion.", "type": "nominal" },
     { "met": 30, "label": "TOUCHDOWN", "note": "Lander descends to Apollo Crater (far side) 2024-06-02. All comms via Queqiao-2 relay.", "type": "nominal" },
-    { "met": 32, "label": "SAMPLING", "note": "1.935 kg collected from far-side regolith.", "type": "info" },
-    { "met": 34, "label": "ASCENT", "note": "Ascent vehicle lifts off; rendezvous with orbiter.", "type": "nominal" },
+    { "met": 30.6, "label": "SAMPLING", "note": "1.935 kg collected from far-side regolith.", "type": "info" },
+    { "met": 32, "label": "ASCENT", "note": "Ascent vehicle lifts off; rendezvous with orbiter.", "type": "nominal" },
     { "met": 53, "label": "EARTH RETURN", "note": "Capsule lands in Inner Mongolia 2024-06-25 with the first far-side samples ever recovered.", "type": "info" }
   ]
 }

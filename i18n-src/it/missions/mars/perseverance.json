@@ -12,13 +12,13 @@
       "type": "nominal"
     },
     {
-      "met": 1,
+      "met": 0.005,
       "label": "ACCENSIONE TMI",
       "note": "Iniezione trans-marziana.",
       "type": "nominal"
     },
     {
-      "met": 9,
+      "met": 15,
       "label": "TCM-1",
       "note": "Primo aggiustamento di traiettoria.",
       "type": "nominal"

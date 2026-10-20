@@ -9,7 +9,7 @@
     { "met": 8, "label": "TOUCHDOWN", "note": "Lander descends to Mons Rümker (Oceanus Procellarum) 2020-12-01.", "type": "nominal" },
     { "met": 8.5, "label": "SAMPLING", "note": "1.731 kg collected via scoop and drill.", "type": "info" },
     { "met": 10, "label": "ASCENT", "note": "Ascent vehicle lifts off lunar surface.", "type": "nominal" },
-    { "met": 11, "label": "RENDEZVOUS", "note": "First robotic lunar rendezvous; sample container transferred to orbiter.", "type": "info" },
+    { "met": 13, "label": "RENDEZVOUS", "note": "First robotic lunar rendezvous; sample container transferred to orbiter.", "type": "info" },
     { "met": 23, "label": "EARTH RETURN", "note": "Sample capsule lands in Inner Mongolia 2020-12-16.", "type": "info" }
   ]
 }

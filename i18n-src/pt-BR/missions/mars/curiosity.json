@@ -12,19 +12,19 @@
       "type": "nominal"
     },
     {
-      "met": 1,
+      "met": 0.005,
       "label": "QUEIMA TMI",
       "note": "Injeção Trans-Marte (3,61 km/s ∆v) coloca MSL em uma trajetória heliocêntrica rumo a Marte.",
       "type": "nominal"
     },
     {
-      "met": 16,
+      "met": 12,
       "label": "TCM-1",
       "note": "Primeira correção de trajetória em meado do percurso.",
       "type": "nominal"
     },
     {
-      "met": 119,
+      "met": 110,
       "label": "TCM-3",
       "note": "Correção pré-EDL final; trajetória visa a elipse de pouso da Cratera Gale.",
       "type": "nominal"

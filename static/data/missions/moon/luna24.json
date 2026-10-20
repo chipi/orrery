@@ -107,26 +107,26 @@
         "dv_km_s": 0.7
       },
       {
-        "met_days": 6,
+        "met_days": 9,
         "type": "descent_start",
         "label": "Powered descent + sample collection — Mare Crisium",
         "description": "1976-08-18. Soft landing in the Sea of Crises (12.75°N, 62.20°E). Deep drill collected 170 g of regolith from 2 m depth — much deeper than Luna 16's 35 cm."
       },
       {
-        "met_days": 6.5,
+        "met_days": 10,
         "type": "ascent",
         "label": "Ascent — sample capsule liftoff",
         "description": "1976-08-19. Ascender lifted off with the sample capsule, heading back to Earth on a direct trajectory."
       },
       {
-        "met_days": 7,
+        "met_days": 10.02,
         "type": "tei",
         "label": "Trans-Earth injection",
         "description": "Direct return trajectory — no return rendezvous needed.",
         "dv_km_s": 2.7
       },
       {
-        "met_days": 9,
+        "met_days": 13,
         "type": "earth_return",
         "label": "Sample capsule landing — Western Siberia",
         "description": "1976-08-22. Capsule re-entered Earth's atmosphere, parachuted to landing in western Siberia. The 170 g sample was analysed at the Vernadsky Institute; later partially exchanged with the United States for Apollo samples. The Soviet lunar program closed with Luna 24."
@@ -164,9 +164,9 @@
         ],
         [
           0.1,
-          5011,
-          -3296,
-          2612
+          5701,
+          -1813,
+          1437
         ],
         [
           0.3636,
@@ -206,9 +206,9 @@
         ],
         [
           1.5,
-          7120,
+          7153,
           0,
-          1100
+          1170
         ],
         [
           1.6364,
@@ -326,9 +326,9 @@
         ],
         [
           5,
-          9601,
+          9606,
           0,
-          16648
+          16226
         ],
         [
           5.2727,
@@ -373,7 +373,7 @@
           38601
         ],
         [
-          6.5,
+          6.5455,
           5973,
           0,
           42443
@@ -391,7 +391,7 @@
           57511
         ],
         [
-          7,
+          7.0909,
           743,
           0,
           61802
@@ -452,9 +452,9 @@
         ],
         [
           9,
-          -184820,
-          0,
-          339164
+          -184807,
+          218,
+          339141
         ],
         [
           9.0909,
@@ -487,10 +487,10 @@
           336659
         ],
         [
-          10,
-          -183167,
-          925,
-          336131
+          10.02,
+          -183154,
+          833,
+          336107
         ],
         [
           10.1818,
@@ -583,10 +583,10 @@
           63356
         ],
         [
-          12.9091,
-          -275311,
+          13,
+          -236707,
           0,
-          24999
+          12755
         ],
         [
           13.0909,

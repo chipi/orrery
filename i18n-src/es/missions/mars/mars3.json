@@ -17,19 +17,19 @@
       "type": "nominal"
     },
     {
-      "met": 188.05,
+      "met": 188.005,
       "label": "SEPARACIÓN DEL MÓDULO",
       "note": "El módulo se separa y comienza la entrada atmosférica.",
       "type": "nominal"
     },
     {
-      "met": 188.1,
+      "met": 188.01,
       "label": "CONTACTO CON LA SUPERFICIE",
       "note": "Primer alunizaje suave en Marte; comienza la transmisión.",
       "type": "nominal"
     },
     {
-      "met": 188.101,
+      "met": 188.013,
       "label": "PÉRDIDA DE SEÑAL",
       "note": "Señal perdida ~110 s después del contacto (la transmisión duró ~14,5 s). Causa no confirmada; la tormenta de polvo es la principal sospechosa.",
       "type": "warning"

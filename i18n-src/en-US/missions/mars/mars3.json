@@ -6,8 +6,8 @@
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Proton-K with Blok-D upper stage from Baikonur.", "type": "nominal" },
     { "met": 188, "label": "ORBITER MOI", "note": "Orbiter captures into Mars orbit during global dust storm.", "type": "nominal" },
-    { "met": 188.05, "label": "LANDER SEPARATION", "note": "Lander separates and begins atmospheric entry.", "type": "nominal" },
-    { "met": 188.1, "label": "SURFACE CONTACT", "note": "First soft-landing on Mars; transmission begins.", "type": "nominal" },
-    { "met": 188.101, "label": "SIGNAL LOSS", "note": "Signal lost ~110 s after touchdown (transmission lasted ~14.5 s). Cause unconfirmed; dust storm leading suspect.", "type": "warning" }
+    { "met": 188.005, "label": "LANDER SEPARATION", "note": "Lander separates and begins atmospheric entry.", "type": "nominal" },
+    { "met": 188.01, "label": "SURFACE CONTACT", "note": "First soft-landing on Mars; transmission begins.", "type": "nominal" },
+    { "met": 188.013, "label": "SIGNAL LOSS", "note": "Signal lost ~110 s after touchdown (transmission lasted ~14.5 s). Cause unconfirmed; dust storm leading suspect.", "type": "warning" }
   ]
 }

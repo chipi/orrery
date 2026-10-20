@@ -12,19 +12,19 @@
       "type": "nominal"
     },
     {
-      "met": 1,
+      "met": 0.005,
       "label": "INJECTION TRANS-MARTIENNE",
       "note": "Injection trans-Mars (∆v de 3,61 km/s) : MSL est placé sur une trajectoire héliocentrique en direction de Mars.",
       "type": "nominal"
     },
     {
-      "met": 16,
+      "met": 12,
       "label": "TCM-1",
       "note": "Premier correctif de trajectoire mid-course.",
       "type": "nominal"
     },
     {
-      "met": 119,
+      "met": 110,
       "label": "TCM-3",
       "note": "Correction finale pré-EDL ; la trajectoire cible l'ellipse d'atterrissage du cratère Gale.",
       "type": "nominal"

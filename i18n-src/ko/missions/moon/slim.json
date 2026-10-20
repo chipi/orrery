@@ -6,7 +6,7 @@
   "events": [
     { "met": 0, "label": "발사", "note": "다네가시마에서 H-IIA 202 2023-09-06", "type": "nominal" },
     { "met": 90, "label": "탄도 이송", "note": "저에너지 탄도 포획 궤도 진행 중.", "type": "info" },
-    { "met": 130, "label": "MOI", "note": "달 궤도 삽입.", "type": "nominal" },
+    { "met": 110, "label": "MOI", "note": "달 궤도 삽입.", "type": "nominal" },
     { "met": 135, "label": "착지", "note": "시오리 분화구에 2024-01-19 15:20 UTC에 연착륙. 목표 정확도 범위 내: 중심에서 약 55 m 오차.", "type": "nominal" },
     { "met": 135.01, "label": "기울어진 착지", "note": "최종 하강 중 엔진 이상으로 착륙선이 코가 아래로 누운 상태. 태양전 패널가 처음엔 그림자.", "type": "warning" },
     { "met": 144, "label": "전력 회복", "note": "태양 각 변화로 패널 발전; 한 달 낮 동안 운용 재개.", "type": "info" }

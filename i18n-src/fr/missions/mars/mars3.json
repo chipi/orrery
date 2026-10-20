@@ -17,19 +17,19 @@
       "type": "nominal"
     },
     {
-      "met": 188.05,
+      "met": 188.005,
       "label": "SÉPARATION DE L'ATTERRISSEUR",
       "note": "L'atterrisseur se sépare et commence l'entrée atmosphérique.",
       "type": "nominal"
     },
     {
-      "met": 188.1,
+      "met": 188.01,
       "label": "CONTACT AVEC LA SURFACE",
       "note": "Premier atterrissage en douceur sur Mars ; transmission commence.",
       "type": "nominal"
     },
     {
-      "met": 188.101,
+      "met": 188.013,
       "label": "PERTE DE SIGNAL",
       "note": "Signal perdu ~110 s après l'atterrissage (transmission a duré ~14,5 s). Cause non confirmée ; tempête de poussière principal suspect.",
       "type": "warning"

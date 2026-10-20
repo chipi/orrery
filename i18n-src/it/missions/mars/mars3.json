@@ -17,19 +17,19 @@
       "type": "nominal"
     },
     {
-      "met": 188.05,
+      "met": 188.005,
       "label": "SEPARAZIONE LANDER",
       "note": "L'allunatore si separa e inizia l'ingresso atmosferico.",
       "type": "nominal"
     },
     {
-      "met": 188.1,
+      "met": 188.01,
       "label": "CONTATTO SUPERFICIE",
       "note": "Primo atterraggio morbido su Marte; trasmissione iniziata.",
       "type": "nominal"
     },
     {
-      "met": 188.101,
+      "met": 188.013,
       "label": "PERDITA SEGNALE",
       "note": "Segnale perso ~110 s dopo il contatto (trasmissione durata ~14,5 s). Causa non confermata; tempesta di polvere il sospetto principale.",
       "type": "warning"

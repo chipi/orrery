@@ -11,7 +11,7 @@
       "type": "nominal"
     },
     {
-      "met": 7,
+      "met": 30,
       "label": "TCM-1",
       "note": "初回軌道修正。",
       "type": "nominal"
@@ -23,13 +23,13 @@
       "type": "nominal"
     },
     {
-      "met": 335,
+      "met": 334.87,
       "label": "ランダー分離",
       "note": "ランダーがクリュセ平原への降下のため分離。",
       "type": "nominal"
     },
     {
-      "met": 335.05,
+      "met": 335,
       "label": "着陸",
       "note": "ランダー1976年7月20日に着陸、Apollo 11 からちょうど7年後。",
       "type": "nominal"

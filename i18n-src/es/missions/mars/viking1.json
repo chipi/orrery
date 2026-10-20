@@ -11,7 +11,7 @@
       "type": "nominal"
     },
     {
-      "met": 7,
+      "met": 30,
       "label": "TCM-1",
       "note": "Primera corrección de trayectoria.",
       "type": "nominal"
@@ -23,13 +23,13 @@
       "type": "nominal"
     },
     {
-      "met": 335,
+      "met": 334.87,
       "label": "SEPARACIÓN DEL MÓDULO DE DESCENSO",
       "note": "El módulo de descenso se separa para descender a Chryse Planitia.",
       "type": "nominal"
     },
     {
-      "met": 335.05,
+      "met": 335,
       "label": "TOMA DE CONTACTO",
       "note": "El módulo de descenso toca la superficie el 1976-07-20, exactamente 7 años después del Apollo 11.",
       "type": "nominal"

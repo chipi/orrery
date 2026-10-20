@@ -18,31 +18,31 @@
       "type": "nominal"
     },
     {
-      "met": 3,
+      "met": 3.13,
       "label": "MOI",
       "note": "进入环月轨道。",
       "type": "nominal"
     },
     {
-      "met": 4,
+      "met": 4.25,
       "label": "触地",
       "note": "登月舱Eagle在静海着陆 1969-07-20 20:17:40 UTC",
       "type": "nominal"
     },
     {
-      "met": 4.3,
+      "met": 4.56,
       "label": "第一步",
       "note": "阿姆斯特朗踏上月面；\"这是一个人的一小步\"。",
       "type": "info"
     },
     {
-      "met": 5,
+      "met": 5.18,
       "label": "上升",
       "note": "Eagle在月面停留21小时36分钟后升空。",
       "type": "nominal"
     },
     {
-      "met": 8,
+      "met": 8.13,
       "label": "溅落",
       "note": "指挥舱Columbia将宇航员送回太平洋 1969-07-24。",
       "type": "nominal"

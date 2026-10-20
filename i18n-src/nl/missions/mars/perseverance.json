@@ -12,13 +12,13 @@
       "type": "nominal"
     },
     {
-      "met": 1,
+      "met": 0.005,
       "label": "TMI-BRANDING",
       "note": "Trans-Marsjectie.",
       "type": "nominal"
     },
     {
-      "met": 9,
+      "met": 15,
       "label": "TCM-1",
       "note": "Eerste midbaan-correctie.",
       "type": "nominal"

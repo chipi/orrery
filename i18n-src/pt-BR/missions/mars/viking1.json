@@ -11,7 +11,7 @@
       "type": "nominal"
     },
     {
-      "met": 7,
+      "met": 30,
       "label": "TCM-1",
       "note": "Primeira correção de trajetória.",
       "type": "nominal"
@@ -23,13 +23,13 @@
       "type": "nominal"
     },
     {
-      "met": 335,
+      "met": 334.87,
       "label": "SEPARAÇÃO DA SONDA",
       "note": "Sonda se desacopla para descida a Chryse Planitia.",
       "type": "nominal"
     },
     {
-      "met": 335.05,
+      "met": 335,
       "label": "POUSO",
       "note": "Sonda toca o solo em 1976-07-20, exatamente 7 anos após Apollo 11.",
       "type": "nominal"

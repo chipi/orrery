@@ -17,19 +17,19 @@
       "type": "nominal"
     },
     {
-      "met": 188.05,
+      "met": 188.005,
       "label": "SEPARAÇÃO DO MÓDULO DE POUSO",
       "note": "Módulo de pouso se separa e inicia reentrada atmosférica.",
       "type": "nominal"
     },
     {
-      "met": 188.1,
+      "met": 188.01,
       "label": "CONTATO COM A SUPERFÍCIE",
       "note": "Primeiro pouso suave em Marte; transmissão iniciada.",
       "type": "nominal"
     },
     {
-      "met": 188.101,
+      "met": 188.013,
       "label": "PERDA DE SINAL",
       "note": "Sinal perdido ~110 s após o toque (transmissão durou ~14,5 s). Causa não confirmada; tempestade de poeira é a principal suspeita.",
       "type": "warning"

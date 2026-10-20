@@ -7,8 +7,8 @@
     { "met": 0, "label": "LANZAMIENTO", "note": "Long March 5 desde Wenchang.", "type": "nominal" },
     { "met": 5, "label": "ILO", "note": "Inserción en órbita lunar.", "type": "nominal" },
     { "met": 30, "label": "ATERRIZAJE", "note": "El aterrizador desciende al cráter Apollo (cara oculta) 2024-06-02. Todas las comunicaciones a través del retransmisor Queqiao-2.", "type": "nominal" },
-    { "met": 32, "label": "MUESTREO", "note": "1,935 kg recogidos del regolito de la cara oculta.", "type": "info" },
-    { "met": 34, "label": "ASCENSO", "note": "El vehículo de ascenso despega; encuentro con el orbitador.", "type": "nominal" },
+    { "met": 30.6, "label": "MUESTREO", "note": "1,935 kg recogidos del regolito de la cara oculta.", "type": "info" },
+    { "met": 32, "label": "ASCENSO", "note": "El vehículo de ascenso despega; encuentro con el orbitador.", "type": "nominal" },
     { "met": 53, "label": "RETORNO A LA TIERRA", "note": "La cápsula aterriza en Mongolia Interior 2024-06-25 con las primeras muestras de la cara oculta jamás recuperadas.", "type": "info" }
   ]
 }

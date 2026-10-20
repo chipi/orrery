@@ -18,25 +18,25 @@
       "type": "nominal"
     },
     {
-      "met": 3,
+      "met": 3.4,
       "label": "ILO",
       "note": "Inserción en órbita lunar.",
       "type": "nominal"
     },
     {
-      "met": 4,
+      "met": 4.6,
       "label": "ATERRIZAJE",
       "note": "El Módulo Lunar Challenger aterriza en el valle Taurus-Littrow 1972-12-11 19:54 UTC.",
       "type": "nominal"
     },
     {
-      "met": 4.3,
+      "met": 4.76,
       "label": "PRIMERA EVA",
       "note": "Cernan y Schmitt comienzan la primera de tres EVA lunares (total 22h 4m).",
       "type": "info"
     },
     {
-      "met": 7,
+      "met": 7.8,
       "label": "ASCENSO",
       "note": "Cernan: \"Nos vamos como vinimos, y, Dios mediante, volveremos\".",
       "type": "nominal"

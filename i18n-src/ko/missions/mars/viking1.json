@@ -11,7 +11,7 @@
       "type": "nominal"
     },
     {
-      "met": 7,
+      "met": 30,
       "label": "TCM-1",
       "note": "첫 번째 궤적 보정.",
       "type": "nominal"
@@ -23,13 +23,13 @@
       "type": "nominal"
     },
     {
-      "met": 335,
+      "met": 334.87,
       "label": "착륙선 분리",
       "note": "착륙선이 크리세 평원으로의 강하를 위해 분리.",
       "type": "nominal"
     },
     {
-      "met": 335.05,
+      "met": 335,
       "label": "착륙",
       "note": "착륙선이 1976-07-20에 착륙, 정확히 Apollo 11로부터 7년 뒤.",
       "type": "nominal"

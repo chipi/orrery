@@ -18,25 +18,25 @@
       "type": "nominal"
     },
     {
-      "met": 3,
+      "met": 3.4,
       "label": "MOI",
       "note": "进入环月轨道。",
       "type": "nominal"
     },
     {
-      "met": 4,
+      "met": 4.6,
       "label": "触地",
       "note": "登月舱Challenger在陶拉斯-利特罗谷 Valley着陆于1972-12-11 19:54 UTC。",
       "type": "nominal"
     },
     {
-      "met": 4.3,
+      "met": 4.76,
       "label": "首次出舱",
       "note": "塞尔南和施密特开始第一次月面舱外活动，共三次（总计22小时4分钟）。",
       "type": "info"
     },
     {
-      "met": 7,
+      "met": 7.8,
       "label": "上升",
       "note": "塞尔南：“我们如我们来时一样离开，上天保佑，我们终将归来。”",
       "type": "nominal"

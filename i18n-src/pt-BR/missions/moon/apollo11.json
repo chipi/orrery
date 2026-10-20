@@ -18,31 +18,31 @@
       "type": "nominal"
     },
     {
-      "met": 3,
+      "met": 3.13,
       "label": "MOI",
       "note": "Inserção em órbita lunar.",
       "type": "nominal"
     },
     {
-      "met": 4,
+      "met": 4.25,
       "label": "ATERRAGEM",
       "note": "Lunar Module Eagle pousa no Mar da Tranquilidade 1969-07-20 20:17:40 UTC.",
       "type": "nominal"
     },
     {
-      "met": 4.3,
+      "met": 4.56,
       "label": "PRIMEIRO PASSO",
       "note": "Armstrong pisa na superfície lunar; 'um pequeno passo para [um] homem'.",
       "type": "info"
     },
     {
-      "met": 5,
+      "met": 5.18,
       "label": "SUBIDA",
       "note": "Eagle decola após 21h 36m na superfície.",
       "type": "nominal"
     },
     {
-      "met": 8,
+      "met": 8.13,
       "label": "AMERISSAGEM",
       "note": "CM Columbia retorna tripulação para o Oceano Pacífico em 24/07/1969.",
       "type": "nominal"

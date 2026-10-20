@@ -6,7 +6,7 @@
   "events": [
     { "met": 0, "label": "发射", "note": "H-IIA 202 从种子岛发射，2023-09-06。", "type": "nominal" },
     { "met": 90, "label": "弹道转移", "note": "低能量弹道捕获轨道进行中。", "type": "info" },
-    { "met": 130, "label": "MOI", "note": "进入环月轨道。", "type": "nominal" },
+    { "met": 110, "label": "MOI", "note": "进入环月轨道。", "type": "nominal" },
     { "met": 135, "label": "触地", "note": "2024年1月19日15:20 UTC在希奥利撞击坑软着陆。在目标精度范围内：偏离中心约55米。", "type": "nominal" },
     { "met": 135.01, "label": "倾斜着陆", "note": "着陆器因最后下降阶段发动机异常而头部朝下停止。太阳能电池板最初处于阴影中。", "type": "warning" },
     { "met": 144, "label": "恢复供电", "note": "太阳角度变化；太阳能电池板发电；运行恢复持续一个月球日。", "type": "info" }

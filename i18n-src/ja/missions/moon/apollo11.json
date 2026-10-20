@@ -18,31 +18,31 @@
       "type": "nominal"
     },
     {
-      "met": 3,
+      "met": 3.13,
       "label": "MOI",
       "note": "月軌道投入。",
       "type": "nominal"
     },
     {
-      "met": 4,
+      "met": 4.25,
       "label": "接地",
       "note": "月着陸船 Eagle が静かの海に着陸 1969-07-20 20:17:40 UTC。",
       "type": "nominal"
     },
     {
-      "met": 4.3,
+      "met": 4.56,
       "label": "最初の一歩",
       "note": "アームストロングが月面へ。「人類にとって小さな一歩」。",
       "type": "info"
     },
     {
-      "met": 5,
+      "met": 5.18,
       "label": "上昇",
       "note": "イーグルが表面二十一時間三十六分後に離昇。",
       "type": "nominal"
     },
     {
-      "met": 8,
+      "met": 8.13,
       "label": "着水",
       "note": "CM Columbia は乗組員を太平洋に 1969-07-24 に帰還させた。",
       "type": "nominal"

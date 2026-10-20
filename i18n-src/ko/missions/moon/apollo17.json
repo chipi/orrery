@@ -18,25 +18,25 @@
       "type": "nominal"
     },
     {
-      "met": 3,
+      "met": 3.4,
       "label": "MOI",
       "note": "달 궤도 삽입.",
       "type": "nominal"
     },
     {
-      "met": 4,
+      "met": 4.6,
       "label": "착지",
       "note": "달 착륙선 Challenger가 타우루스-리트로 계곡 Valley에 착륙 1972-12-11 19:54 UTC.",
       "type": "nominal"
     },
     {
-      "met": 4.3,
+      "met": 4.76,
       "label": "첫 EVA",
       "note": "서넌과 슈미트 첫 달면 EVA 시작(총 22h 4m의 셋 중).",
       "type": "info"
     },
     {
-      "met": 7,
+      "met": 7.8,
       "label": "상승",
       "note": "서넌: '우리는 우리가 왔던 것처럼 떠납니다, 신의 뜻이라면 우리는 돌아올 것입니다.'",
       "type": "nominal"

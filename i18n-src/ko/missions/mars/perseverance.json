@@ -12,13 +12,13 @@
       "type": "nominal"
     },
     {
-      "met": 1,
+      "met": 0.005,
       "label": "TMI 번",
       "note": "화성행 궤도 투입.",
       "type": "nominal"
     },
     {
-      "met": 9,
+      "met": 15,
       "label": "TCM-1",
       "note": "첫 번째 중간 경로 수정.",
       "type": "nominal"

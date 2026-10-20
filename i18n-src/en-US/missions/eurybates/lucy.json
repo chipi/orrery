@@ -7,12 +7,12 @@
     { "met": 0, "label": "LAUNCH", "note": "Atlas V 401 from Cape Canaveral SLC-41.", "type": "nominal" },
     { "met": 365, "label": "EGA-1", "note": "First Earth gravity assist 2022-10-16.", "type": "info" },
     { "met": 746, "label": "DINKINESH", "note": "2023-11-01. First asteroid flyby — ~790 m main-belt body; satellite Selam (contact binary) discovered.", "type": "info" },
-    { "met": 1290, "label": "DONALDJOHANSON", "note": "Main-belt bonus flyby 2025-04. 4-km C-type asteroid.", "type": "info" },
-    { "met": 2127, "label": "EURYBATES + QUETA", "note": "2027-08. First Trojan encounter. 64-km C-type + 1-km moon.", "type": "info" },
-    { "met": 2280, "label": "POLYMELE", "note": "21-km P-type Trojan with unnamed satellite.", "type": "info" },
-    { "met": 2660, "label": "LEUCUS", "note": "35-km D-type Trojan, slow rotator (446 h).", "type": "info" },
-    { "met": 2820, "label": "ORUS", "note": "51-km D-type Trojan.", "type": "info" },
-    { "met": 3445, "label": "EGA-3", "note": "Final Earth assist 2030-12. Heads to L5 cloud.", "type": "info" },
+    { "met": 1282, "label": "DONALDJOHANSON", "note": "Main-belt bonus flyby 2025-04. 4-km C-type asteroid.", "type": "info" },
+    { "met": 2126.001, "label": "EURYBATES + QUETA", "note": "2027-08. First Trojan encounter. 64-km C-type + 1-km moon.", "type": "info" },
+    { "met": 2160, "label": "POLYMELE", "note": "21-km P-type Trojan with unnamed satellite.", "type": "info" },
+    { "met": 2376, "label": "LEUCUS", "note": "35-km D-type Trojan, slow rotator (446 h).", "type": "info" },
+    { "met": 2583, "label": "ORUS", "note": "51-km D-type Trojan.", "type": "info" },
+    { "met": 3345, "label": "EGA-3", "note": "Final Earth assist 2030-12. Heads to L5 cloud.", "type": "info" },
     { "met": 4170, "label": "PATROCLUS-MENOETIUS", "note": "2033-03. Mission climax: 113-km + 104-km binary Trojan.", "type": "info" }
   ]
 }

@@ -12,19 +12,19 @@
       "type": "nominal"
     },
     {
-      "met": 1,
+      "met": 0.005,
       "label": "火星遷移軌道投入燃焼",
       "note": "火星遷移軌道投入(3.61 km/s ∆v)によってMSLを太陽中心火星軌道へ送出。",
       "type": "nominal"
     },
     {
-      "met": 16,
+      "met": 12,
       "label": "TCM-1",
       "note": "最初の軌道中修正。",
       "type": "nominal"
     },
     {
-      "met": 119,
+      "met": 110,
       "label": "TCM-3",
       "note": "EDL前最終修正。軌道はゲール・クレーター着陸楕円を目標。",
       "type": "nominal"

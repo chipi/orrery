@@ -12,13 +12,13 @@
       "type": "nominal"
     },
     {
-      "met": 1,
+      "met": 0.005,
       "label": "火星遷移注入噴射",
       "note": "火星遷移注入。",
       "type": "nominal"
     },
     {
-      "met": 9,
+      "met": 15,
       "label": "TCM-1",
       "note": "最初の中途軌道修正。",
       "type": "nominal"

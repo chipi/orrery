@@ -12,19 +12,19 @@
       "type": "nominal"
     },
     {
-      "met": 1,
+      "met": 0.005,
       "label": "TMI BURN",
       "note": "Trans-Mars injection (3.61 km/s ∆v) sends MSL onto a heliocentric Mars-bound trajectory.",
       "type": "nominal"
     },
     {
-      "met": 16,
+      "met": 12,
       "label": "TCM-1",
       "note": "First mid-course correction.",
       "type": "nominal"
     },
     {
-      "met": 119,
+      "met": 110,
       "label": "TCM-3",
       "note": "Final pre-EDL correction; trajectory targets Gale Crater landing ellipse.",
       "type": "nominal"

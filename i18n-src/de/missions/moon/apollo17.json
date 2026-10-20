@@ -18,25 +18,25 @@
       "type": "nominal"
     },
     {
-      "met": 3,
+      "met": 3.4,
       "label": "MOI",
       "note": "Einfügung in die Mondumlaufbahn.",
       "type": "nominal"
     },
     {
-      "met": 4,
+      "met": 4.6,
       "label": "LANDUNG",
       "note": "Die Mondlandefähre Challenger landet am 11.12.1972 um 19:54 UTC im Taurus-Littrow-Tal.",
       "type": "nominal"
     },
     {
-      "met": 4.3,
+      "met": 4.76,
       "label": "ERSTE EVA",
       "note": "Cernan und Schmitt beginnen mit der ersten von drei Mond-EVAs (insgesamt 22 Stunden und 4 Minuten).",
       "type": "info"
     },
     {
-      "met": 7,
+      "met": 7.8,
       "label": "AUFSTIEG",
       "note": "Cernan: „Wir gehen, wie wir kamen, und so Gott will, werden wir zurückkehren.\"",
       "type": "nominal"

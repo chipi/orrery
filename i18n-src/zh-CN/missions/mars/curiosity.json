@@ -12,19 +12,19 @@
       "type": "nominal"
     },
     {
-      "met": 1,
+      "met": 0.005,
       "label": "火星转移注入",
       "note": "火星科学实验室进行火星转移注入（∆v 3.61 km/s），进入日心轨道飞向火星。",
       "type": "nominal"
     },
     {
-      "met": 16,
+      "met": 12,
       "label": "TCM-1",
       "note": "第一次中途轨迹修正。",
       "type": "nominal"
     },
     {
-      "met": 119,
+      "met": 110,
       "label": "TCM-3",
       "note": "着陆前最后的轨迹修正；轨迹瞄准盖尔撞击坑着陆椭圆区。",
       "type": "nominal"

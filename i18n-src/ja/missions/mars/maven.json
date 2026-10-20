@@ -5,7 +5,7 @@
   "description": "MAVEN — Mars Atmosphere and Volatile Evolution — は「火星の空気はどこへ行ったか？」に答える。楕円軌道は上層大気に潜り込み、太陽風がイオンと中性子を剥がしていく様子をサンプルする。結果：火星は毎秒約百グラムの大気を宇宙へ失う — 数十億年かければ失われた気候を説明できる量。宇宙機はCuriosity や Perseverance を含む表面資産の重要な中継も担う。",
   "events": [
     { "met": 0, "label": "打ち上げ", "note": "ケープ・カナベラル SLC-41からAtlas V 401。", "type": "nominal" },
-    { "met": 7, "label": "TCM-1", "note": "第一次軌道修正。", "type": "nominal" },
+    { "met": 30, "label": "TCM-1", "note": "第一次軌道修正。", "type": "nominal" },
     { "met": 308, "label": "火星周回軌道投入", "note": "三十三分間の主エンジン燃焼で MAVEN を三十五時間楕円の科学軌道へ捕捉。", "type": "nominal" },
     { "met": 350, "label": "最初の科学観測", "note": "大気サンプリングの「ディープ・ディップ」運用開始 — 近点高度約125 km。", "type": "info" }
   ]

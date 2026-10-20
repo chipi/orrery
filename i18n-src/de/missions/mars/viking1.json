@@ -11,7 +11,7 @@
       "type": "nominal"
     },
     {
-      "met": 7,
+      "met": 30,
       "label": "TCM-1",
       "note": "Erste Bahnkorrektur.",
       "type": "nominal"
@@ -23,13 +23,13 @@
       "type": "nominal"
     },
     {
-      "met": 335,
+      "met": 334.87,
       "label": "LANDERTRENNUNG",
       "note": "Lander trennt sich für den Abstieg zur Chryse Planitia.",
       "type": "nominal"
     },
     {
-      "met": 335.05,
+      "met": 335,
       "label": "LANDUNG",
       "note": "Lander setzt am 1976-07-20 auf, genau 7 Jahre nach Apollo 11.",
       "type": "nominal"

@@ -17,19 +17,19 @@
       "type": "nominal"
     },
     {
-      "met": 188.05,
+      "met": 188.005,
       "label": "LANDER-TRENNUNG",
       "note": "Lander trennt sich und beginnt den Atmosphäreneintritt.",
       "type": "nominal"
     },
     {
-      "met": 188.1,
+      "met": 188.01,
       "label": "OBERFLÄCHENBERÜHRUNG",
       "note": "Erste erfolgreiche Landung auf dem Mars; Übertragung beginnt.",
       "type": "nominal"
     },
     {
-      "met": 188.101,
+      "met": 188.013,
       "label": "SIGNALVERLUST",
       "note": "Signal ~110 s nach der Landung verloren (Übertragung dauerte ~14,5 s). Ursache unbestätigt; Staubsturm ist der Hauptverdächtige.",
       "type": "warning"

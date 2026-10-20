@@ -12,13 +12,13 @@
       "type": "nominal"
     },
     {
-      "met": 1,
+      "met": 0.005,
       "label": "ПАЉЕЊЕ TMI",
       "note": "Убацивање на путању ка Марсу.",
       "type": "nominal"
     },
     {
-      "met": 9,
+      "met": 15,
       "label": "TCM-1",
       "note": "Прва корекција путање у току лета.",
       "type": "nominal"

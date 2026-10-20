@@ -12,19 +12,19 @@
       "type": "nominal"
     },
     {
-      "met": 1,
+      "met": 0.005,
       "label": "TMI-BRANDING",
       "note": "Trans-Mars injectie (3.61 km/s ∆v) stuurt MSL op een heliocentrische Mars-gebonden baan.",
       "type": "nominal"
     },
     {
-      "met": 16,
+      "met": 12,
       "label": "TCM-1",
       "note": "Eerste baan-correctiemanoeuvre.",
       "type": "nominal"
     },
     {
-      "met": 119,
+      "met": 110,
       "label": "TCM-3",
       "note": "Laatste correctie vóór EDL; baan gericht op landingsellips van Gale-krater.",
       "type": "nominal"

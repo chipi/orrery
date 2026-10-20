@@ -12,19 +12,19 @@
       "type": "nominal"
     },
     {
-      "met": 1,
+      "met": 0.005,
       "label": "QUEMADURA TMI",
       "note": "Inyección transmarciana (∆v de 3,61 km/s): envía a MSL a una trayectoria heliocéntrica rumbo a Marte.",
       "type": "nominal"
     },
     {
-      "met": 16,
+      "met": 12,
       "label": "TCM-1",
       "note": "Primera corrección de trayectoria de medio camino.",
       "type": "nominal"
     },
     {
-      "met": 119,
+      "met": 110,
       "label": "TCM-3",
       "note": "Corrección previa a EDL final; la trayectoria apunta a la elipse de aterrizaje en el cráter Gale.",
       "type": "nominal"

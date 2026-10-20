@@ -12,19 +12,19 @@
       "type": "nominal"
     },
     {
-      "met": 1,
+      "met": 0.005,
       "label": "TMI-BURN",
       "note": "Trans-Mars-Injektion (3,61 km/s ∆v) schickt MSL auf eine heliozentrische Mars-Bahn.",
       "type": "nominal"
     },
     {
-      "met": 16,
+      "met": 12,
       "label": "TCM-1",
       "note": "Erste Mittkurskorrektur.",
       "type": "nominal"
     },
     {
-      "met": 119,
+      "met": 110,
       "label": "TCM-3",
       "note": "Letzte Vorkorrektur vor EDL; Flugbahn zielt auf Landungsellipse des Gale-Kraters.",
       "type": "nominal"

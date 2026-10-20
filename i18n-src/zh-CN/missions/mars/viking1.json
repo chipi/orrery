@@ -11,7 +11,7 @@
       "type": "nominal"
     },
     {
-      "met": 7,
+      "met": 30,
       "label": "TCM-1",
       "note": "第一次轨迹修正。",
       "type": "nominal"
@@ -23,13 +23,13 @@
       "type": "nominal"
     },
     {
-      "met": 335,
+      "met": 334.87,
       "label": "着陆器分离",
       "note": "着陆器脱离轨道器，下降至克律塞平原。",
       "type": "nominal"
     },
     {
-      "met": 335.05,
+      "met": 335,
       "label": "着陆",
       "note": "着陆器于1976-07-20着陆，恰好是Apollo 11登月7年后。",
       "type": "nominal"

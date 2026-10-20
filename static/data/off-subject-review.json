@@ -121,10 +121,6 @@
       "decision": "remove",
       "at": "2026-07-06T05:26:20.508Z"
     },
-    "/images/missions/ulysses/05.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:26:20.508Z"
-    },
     "/images/missions/apollo17/03.jpg": {
       "decision": "remove",
       "at": "2026-07-06T05:23:23.832Z"
@@ -138,10 +134,6 @@
       "at": "2026-07-06T05:23:23.832Z"
     },
     "/images/missions/hayabusa2/05.jpg": {
-      "decision": "keep",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/hayabusa2/04.jpg": {
       "decision": "keep",
       "at": "2026-07-06T05:23:23.832Z"
     },
@@ -240,10 +232,6 @@
     "/images/missions/hayabusa2/02.jpg": {
       "decision": "remove",
       "note": "duplicate",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/vega-1/05.jpg": {
-      "decision": "remove",
       "at": "2026-07-06T05:23:23.832Z"
     },
     "/images/missions/shenzhou-2/05.jpg": {
@@ -354,24 +342,12 @@
       "decision": "remove",
       "at": "2026-07-06T05:23:23.832Z"
     },
-    "/images/missions/vega-2/05.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/vega-2/04.jpg": {
-      "decision": "keep",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
     "/images/missions/vega-2/02.jpg": {
       "decision": "keep",
       "at": "2026-07-06T05:23:23.832Z"
     },
     "/images/missions/vega-1/04.jpg": {
       "decision": "keep",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/vega-1/02.jpg": {
-      "decision": "remove",
       "at": "2026-07-06T05:23:23.832Z"
     },
     "/images/missions/vega-1/01.jpg": {
@@ -470,10 +446,6 @@
       "decision": "keep",
       "at": "2026-07-06T05:25:38.023Z"
     },
-    "/images/missions/venera-13/05.jpg": {
-      "decision": "keep",
-      "at": "2026-07-06T05:25:38.023Z"
-    },
     "/images/missions/mars-express/04.jpg": {
       "decision": "keep",
       "at": "2026-07-06T05:25:38.023Z"
@@ -493,6 +465,14 @@
     "/images/missions/rosetta/01.jpg": {
       "decision": "keep",
       "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/vega-1/02.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vega-2/03.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
     }
   }
 }

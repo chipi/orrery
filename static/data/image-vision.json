@@ -2213,22 +2213,6 @@
       "scored_at": "2026-05-22T08:48:13.193Z",
       "scoring_cost_usd": 0.007263
     },
-    "/images/fleet-galleries/cygnus-standard/03.jpg": {
-      "score": 9,
-      "subject": "Northrop Grumman Cygnus cargo spacecraft with deployed UltraFlex solar arrays against black space background",
-      "category": "spacecraft",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/cygnus-standard/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T08:48:13.193Z",
-      "scoring_cost_usd": 0.007263
-    },
     "/images/fleet-galleries/dart/01.jpg": {
       "score": 2,
       "subject": "Johns Hopkins APL mission operations team members celebrating in the mission control room, embracing and reacting with joy.",
@@ -2261,22 +2245,6 @@
       "scored_at": "2026-05-22T08:48:20.048Z",
       "scoring_cost_usd": 0.007434
     },
-    "/images/fleet-galleries/dart/03.jpg": {
-      "score": 2,
-      "subject": "NASA DART mission team members celebrate at the Johns Hopkins Applied Physics Laboratory mission control room after successful spacecraft impact.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.4,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/dart/03.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-05-22T08:48:23.796Z",
-      "scoring_cost_usd": 0.007119
-    },
     "/images/fleet-galleries/dart/04.jpg": {
       "score": 2,
       "subject": "NASA DART mission team members celebrate at the Johns Hopkins Applied Physics Laboratory mission operations center following successful asteroid impact.",
@@ -2292,22 +2260,6 @@
       "fallback": false,
       "scored_at": "2026-05-22T08:48:27.058Z",
       "scoring_cost_usd": 0.007329
-    },
-    "/images/fleet-galleries/dart/05.jpg": {
-      "score": 2,
-      "subject": "NASA and Johns Hopkins APL mission control team members react with excitement during the DART spacecraft impact event at the Johns Hopkins Applied Physics Laboratory Mission Operations center.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/dart/05.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-05-22T08:48:30.705Z",
-      "scoring_cost_usd": 0.007464
     },
     "/images/fleet-galleries/emu/01.jpg": {
       "score": 2,
@@ -2820,22 +2772,6 @@
       "fallback": false,
       "scored_at": "2026-05-22T08:51:20.590Z",
       "scoring_cost_usd": 0.006441
-    },
-    "/images/fleet-galleries/hayabusa-2/04.jpg": {
-      "score": 6,
-      "subject": "Close-up view of a lunar lander footpad and shadow cast on the Moon's surface, showing rocky regolith terrain.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/hayabusa-2/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T08:51:23.834Z",
-      "scoring_cost_usd": 0.003618
     },
     "/images/fleet-galleries/hitomi/01.jpg": {
       "score": 8,
@@ -4374,22 +4310,6 @@
       "scored_at": "2026-05-22T08:59:00.987Z",
       "scoring_cost_usd": 0.007494
     },
-    "/images/fleet-galleries/mercury-capsule/04.jpg": {
-      "score": 2,
-      "subject": "An elderly man in a blue blazer standing in front of a large metal Mercury Seven sculpture outdoors.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.4
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/mercury-capsule/04.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-05-22T08:59:04.308Z",
-      "scoring_cost_usd": 0.007389
-    },
     "/images/fleet-galleries/mercury-capsule/05.jpg": {
       "score": 2,
       "subject": "Three elderly men at a NASA event, two clapping on stage while one speaks into a microphone before an audience.",
@@ -5237,22 +5157,6 @@
       "fallback": false,
       "scored_at": "2026-05-22T09:02:09.178Z",
       "scoring_cost_usd": 0.007314
-    },
-    "/images/fleet-galleries/pioneer-10/05.jpg": {
-      "score": 7,
-      "subject": "Artist's concept painting of a Pioneer spacecraft flying over Jupiter's cloud bands and Great Red Spot",
-      "category": "render",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/pioneer-10/05.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-05-22T09:02:11.758Z",
-      "scoring_cost_usd": 0.006879
     },
     "/images/fleet-galleries/pragyan/03.jpg": {
       "score": 6,
@@ -9688,23 +9592,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:07:07.342Z",
       "scoring_cost_usd": 0.009318
-    },
-    "/images/missions/lro/03.jpg": {
-      "score": 7,
-      "subject": "Artist's concept render of the Lunar Reconnaissance Orbiter spacecraft in orbit above the Moon's surface with Earth visible in the background.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:07:03.009Z",
-      "scoring_cost_usd": 0.007859999999999999
     },
     "/images/missions/lro/04.jpg": {
       "score": 7,
@@ -18903,23 +18790,6 @@
       "scored_at": "2026-07-05T21:16:25.080Z",
       "scoring_cost_usd": 0.007062000000000001
     },
-    "/images/missions/pioneer-10/05.jpg": {
-      "score": 7,
-      "subject": "Artist's rendering of a Pioneer spacecraft traveling through deep space with the Milky Way visible in the background.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.55
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:16:15.742Z",
-      "scoring_cost_usd": 0.008742
-    },
     "/images/missions/pioneer-11.jpg": {
       "score": 2,
       "subject": "Large group of people posing outdoors in front of a horizontal Atlas launch vehicle display at what appears to be a NASA or aerospace facility, circa 1970s-1980s.",
@@ -18971,23 +18841,6 @@
       "scoring_cost_usd": 0.00693
     },
     "/images/missions/pioneer-11/03.jpg": {
-      "score": 5,
-      "subject": "The Pioneer plaque showing a man and woman, pulsar map, and solar system diagram intended as a message for extraterrestrial intelligence.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.6,
-        "y": 0.4
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:16:18.986Z",
-      "scoring_cost_usd": 0.007308
-    },
-    "/images/missions/pioneer-11/04.jpg": {
       "score": 5,
       "subject": "The Pioneer plaque showing a man and woman, pulsar map, and solar system diagram intended as a message for extraterrestrial intelligence.",
       "category": "diagram",
@@ -19168,23 +19021,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:22:05.347Z",
       "scoring_cost_usd": 0.005877
-    },
-    "/images/missions/venera-13/05.jpg": {
-      "score": 3,
-      "subject": "A 1982 Soviet postage stamp depicting the Venera 13 and Venera 14 spacecraft above the Venusian surface.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "subject_match": false,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "off-subject",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:21:56.508Z",
-      "scoring_cost_usd": 0.009075
     },
     "/images/missions/voyager-1.jpg": {
       "score": 9,
@@ -25762,38 +25598,6 @@
       "scored_at": "2026-06-12T21:01:26.194Z",
       "scoring_cost_usd": 0.007758
     },
-    "/images/fleet-galleries/lc-34/04.jpg": {
-      "score": 5,
-      "subject": "Abandoned historic launch pad complex with concrete flame deflector and support structures surrounded by coastal scrub vegetation at Cape Canaveral.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.58,
-        "y": 0.52
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-12T21:01:29.559Z",
-      "scoring_cost_usd": 0.007524
-    },
-    "/images/fleet-galleries/lc-34/05.jpg": {
-      "score": 3,
-      "subject": "A blue hexagonal outdoor display kiosk featuring memorial panels for Apollo 1 astronauts Edward Higgins White II and Gus Grissom, located on a brick plaza.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:01:34.084Z",
-      "scoring_cost_usd": 0.008025
-    },
     "/images/fleet-galleries/lc-5/01.jpg": {
       "score": 6,
       "subject": "Exterior of the Launch Complex 5/6 blockhouse at Cape Canaveral, commemorating Alan Shepard's first American spaceflight on May 5, 1961, with a memorial plaque and portrait mural on the facade.",
@@ -26546,22 +26350,6 @@
       "scored_at": "2026-06-12T21:04:27.473Z",
       "scoring_cost_usd": 0.007458
     },
-    "/images/fleet-galleries/lunar-prospector/04.jpg": {
-      "score": 2,
-      "subject": "Four men in suits seated at a conference table with microphones during what appears to be a space-related press briefing.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:04:30.977Z",
-      "scoring_cost_usd": 0.007638000000000001
-    },
     "/images/fleet-galleries/lunar-prospector/05.jpg": {
       "score": 6,
       "subject": "False-color global map of Venus surface showing compositional variations, derived from Magellan radar data.",
@@ -27073,22 +26861,6 @@
       "fallback": false,
       "scored_at": "2026-06-12T21:06:48.574Z",
       "scoring_cost_usd": 0.0074010000000000005
-    },
-    "/images/fleet-galleries/pioneer-11/04.jpg": {
-      "score": 2,
-      "subject": "The Pioneer plaque showing engraved diagrams of a man and woman, pulsar map, hydrogen atom, and solar system trajectory intended as a message to extraterrestrial intelligence.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:06:52.470Z",
-      "scoring_cost_usd": 0.007821
     },
     "/images/fleet-galleries/proton-k/01.jpg": {
       "score": 9,
@@ -27602,22 +27374,6 @@
       "scored_at": "2026-06-12T21:08:36.298Z",
       "scoring_cost_usd": 0.005868
     },
-    "/images/fleet-galleries/ulysses/02.jpg": {
-      "score": 6,
-      "subject": "Artist's concept render of a gold-foil-wrapped spacecraft with a dish antenna and wire booms, with Jupiter visible in the background against a star field.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:08:40.146Z",
-      "scoring_cost_usd": 0.007155
-    },
     "/images/fleet-galleries/ulysses/03.jpg": {
       "score": 6,
       "subject": "3D render of a spacecraft with gold thermal blankets, extended antenna booms, and a cylindrical thruster module against a black background.",
@@ -27681,22 +27437,6 @@
       "fallback": false,
       "scored_at": "2026-06-12T21:08:53.778Z",
       "scoring_cost_usd": 0.007608
-    },
-    "/images/fleet-galleries/vega-1/02.jpg": {
-      "score": 7,
-      "subject": "A Soviet-era Venera-style planetary probe on display in a space museum, showing its spherical descent capsule, solar panels, and instrument bus.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.62,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-12T21:08:57.130Z",
-      "scoring_cost_usd": 0.00771
     },
     "/images/fleet-galleries/vega-1/03.jpg": {
       "score": 7,
@@ -27778,22 +27518,6 @@
       "scored_at": "2026-06-12T21:09:00.183Z",
       "scoring_cost_usd": 0.007524
     },
-    "/images/fleet-galleries/vega-2/03.jpg": {
-      "score": 3,
-      "subject": "1985 Soviet postal stamp commemorating the Vega (Venera-Halley) international space mission featuring illustrated spacecraft and Interkosmos logo",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.62,
-        "y": 0.4
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:09:13.244Z",
-      "scoring_cost_usd": 0.007647
-    },
     "/images/fleet-galleries/venera-13/01.jpg": {
       "score": 8,
       "subject": "Venera 13 panoramic surface image showing the rocky Venusian terrain with the lander's ring structure and calibration targets visible in the foreground.",
@@ -27857,22 +27581,6 @@
       "fallback": false,
       "scored_at": "2026-06-12T21:09:22.877Z",
       "scoring_cost_usd": 0.007596
-    },
-    "/images/fleet-galleries/venera-13/05.jpg": {
-      "score": 4,
-      "subject": "Color-coded topographic map of Venus surface showing landing sites of Venera 8–14 and Vega 1–2 probes, produced by NASA Ames Research Center in November 1981.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:09:26.786Z",
-      "scoring_cost_usd": 0.005697
     },
     "/images/fleet-galleries/viking1-orbiter/01.jpg": {
       "score": 9,
@@ -30932,41 +30640,7 @@
       "scored_at": "2026-07-05T21:03:53.506Z",
       "scoring_cost_usd": 0.009024
     },
-    "/images/missions/freedom-7/05.jpg": {
-      "score": 7,
-      "subject": "Black-and-white panoramic view of the Martian surface showing rocky terrain, wind-rippled regolith, and a crater rim in the background, captured by a NASA Mars rover.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.35
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-05T21:03:49.883Z",
-      "scoring_cost_usd": 0.008994
-    },
     "/images/missions/friendship-7/01.jpg": {
-      "score": 6,
-      "subject": "A Mercury-Atlas rocket with 'United States' markings on the capsule, shown at the launch pad with technicians on a gantry access arm in a black-and-white photograph.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.35,
-        "y": 0.4
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-05T21:03:57.325Z",
-      "scoring_cost_usd": 0.00918
-    },
-    "/images/missions/friendship-7/02.jpg": {
       "score": 6,
       "subject": "A Mercury-Atlas rocket with 'United States' markings on the capsule, shown at the launch pad with technicians on a gantry access arm in a black-and-white photograph.",
       "category": "launch",
@@ -31527,23 +31201,6 @@
       "scored_at": "2026-07-05T21:16:04.253Z",
       "scoring_cost_usd": 0.007875
     },
-    "/images/missions/phoenix/03.jpg": {
-      "score": 6,
-      "subject": "A trench dug in Martian soil by the Phoenix Mars Lander's robotic arm, revealing subsurface layers and possibly water ice, with lander hardware visible at lower left.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-05T21:16:01.696Z",
-      "scoring_cost_usd": 0.006482999999999999
-    },
     "/images/missions/phoenix/04.jpg": {
       "score": 4,
       "subject": "Black and white close-up image of Martian surface soil and rocky terrain with a partial view of a spacecraft component in the upper right corner.",
@@ -31851,23 +31508,6 @@
       "scoring_cost_usd": 0.008886
     },
     "/images/missions/spirit/01.jpg": {
-      "score": 6,
-      "subject": "Fish-eye view from a NASA/JPL Mars rover showing its deck hardware, airbags, and the Martian surface in the background.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-05T21:20:30.914Z",
-      "scoring_cost_usd": 0.007605
-    },
-    "/images/missions/spirit/02.jpg": {
       "score": 6,
       "subject": "Fish-eye view from a NASA/JPL Mars rover showing its deck hardware, airbags, and the Martian surface in the background.",
       "category": "surface",
@@ -32785,23 +32425,6 @@
       "scored_at": "2026-07-05T21:05:06.484Z",
       "scoring_cost_usd": 0.006281999999999999
     },
-    "/images/missions/hayabusa2/04.jpg": {
-      "score": 2,
-      "subject": "Artist's render of a generic communications satellite in orbit above Earth showing Australia and Asia",
-      "category": "render",
-      "focal_point": {
-        "x": 0.65,
-        "y": 0.55
-      },
-      "subject_match": false,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "off-subject",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:05:15.772Z",
-      "scoring_cost_usd": 0.008832
-    },
     "/images/missions/hope-probe/02.jpg": {
       "score": 6,
       "subject": "A physical engineering model or display replica of the UAE Emirates Mars Mission Hope spacecraft on exhibit, showing solar panels, high-gain antenna dish, and science instruments.",
@@ -33669,23 +33292,6 @@
       "scored_at": "2026-07-05T21:12:27.668Z",
       "scoring_cost_usd": 0.008895
     },
-    "/images/missions/mercury-atlas-9/03.jpg": {
-      "score": 7,
-      "subject": "A Mercury-Atlas rocket on the launch pad at Cape Canaveral, surrounded by red gantry structures and ground crew personnel.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-05T21:12:27.668Z",
-      "scoring_cost_usd": 0.008895
-    },
     "/images/missions/mercury-redstone-3/01.jpg": {
       "score": 8,
       "subject": "A Mercury-Redstone rocket lifts off from its launch pad at Cape Canaveral in a black-and-white photograph, with exhaust plume and launch structure visible below.",
@@ -33736,23 +33342,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:12:33.868Z",
       "scoring_cost_usd": 0.009006
-    },
-    "/images/missions/mercury-redstone-3/04.jpg": {
-      "score": 4,
-      "subject": "A suited astronaut or test subject reclines in a pressure suit testing apparatus surrounded by technicians and observers in a NASA facility.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.42,
-        "y": 0.55
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:12:44.081Z",
-      "scoring_cost_usd": 0.009066
     },
     "/images/missions/mmx/01.jpg": {
       "score": 8,
@@ -34434,23 +34023,6 @@
       "scored_at": "2026-07-05T21:21:11.547Z",
       "scoring_cost_usd": 0.009405
     },
-    "/images/missions/ulysses/02.jpg": {
-      "score": 6,
-      "subject": "Artist's concept of a gold-foil-wrapped spacecraft with a dish antenna flying near Jupiter against a star field.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:21:30.264Z",
-      "scoring_cost_usd": 0.006837
-    },
     "/images/missions/ulysses/03.jpg": {
       "score": 6,
       "subject": "Artist's concept of a gold-foil-wrapped spacecraft with a dish antenna flying near Jupiter against a star field.",
@@ -34501,23 +34073,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:21:35.680Z",
       "scoring_cost_usd": 0.004704
-    },
-    "/images/missions/vega-1/02.jpg": {
-      "score": 2,
-      "subject": "Soviet commemorative postage stamp block depicting international cooperation in studying Halley's Comet, featuring Vega spacecraft and portrait of Edmond Halley.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.5
-      },
-      "subject_match": false,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "off-subject",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:21:41.149Z",
-      "scoring_cost_usd": 0.005121
     },
     "/images/missions/vega-1/01.jpg": {
       "score": 4,
@@ -34570,23 +34125,6 @@
       "scored_at": "2026-07-05T21:21:44.034Z",
       "scoring_cost_usd": 0.005748
     },
-    "/images/missions/vega-2/03.jpg": {
-      "score": 2,
-      "subject": "Soviet commemorative postage stamp block depicting international cooperation in studying Halley's Comet, featuring Vega spacecraft and portrait of Edmond Halley.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.5
-      },
-      "subject_match": false,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "off-subject",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:21:41.149Z",
-      "scoring_cost_usd": 0.005121
-    },
     "/images/missions/vega-2/02.jpg": {
       "score": 4,
       "subject": "An illustrated mission diagram showing the Vega spacecraft trajectory, Venus atmospheric entry with balloon deployment, and Comet Halley rendezvous sequence.",
@@ -34603,23 +34141,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:21:44.034Z",
       "scoring_cost_usd": 0.005748
-    },
-    "/images/missions/vega-2/04.jpg": {
-      "score": 2,
-      "subject": "A Soviet CCCP-marked spacecraft model or lander replica on display in a museum with visitors in the background.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "subject_match": false,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "off-subject",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:21:47.123Z",
-      "scoring_cost_usd": 0.008952
     },
     "/images/missions/voskhod-1/01.jpg": {
       "score": 6,
@@ -34842,23 +34363,6 @@
       "scored_at": "2026-07-05T21:23:51.947Z",
       "scoring_cost_usd": 0.004716
     },
-    "/images/missions/vostok-5/02.jpg": {
-      "score": 4,
-      "subject": "A smiling cosmonaut in a spacesuit with helmet open, photographed in black and white.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.4
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:23:51.947Z",
-      "scoring_cost_usd": 0.004716
-    },
     "/images/missions/vostok-5/03.jpg": {
       "score": 3,
       "subject": "A bronze star plaque embedded in concrete bearing the handprint and name of Soviet cosmonaut Valery Bykovsky with Cyrillic text referencing Vostok 5 (callsign Hawk/Ястреб) dated June 14, 1963.",
@@ -34877,23 +34381,6 @@
       "scoring_cost_usd": 0.009975
     },
     "/images/missions/vostok-6/01.jpg": {
-      "score": 6,
-      "subject": "Soviet cosmonaut in full spacesuit with CCCP helmet insignia posed in front of spacecraft hatch",
-      "category": "people",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:24:04.492Z",
-      "scoring_cost_usd": 0.0046110000000000005
-    },
-    "/images/missions/vostok-6/02.jpg": {
       "score": 6,
       "subject": "Soviet cosmonaut in full spacesuit with CCCP helmet insignia posed in front of spacecraft hatch",
       "category": "people",
@@ -35685,19 +35172,6 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.009756
     },
-    "/images/missions/ulysses/05.jpg": {
-      "score": 7,
-      "subject": "ESA technicians in cleanroom suits work on the Ulysses spacecraft, covered in gold thermal insulation, during pre-launch processing.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.45
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.005418
-    },
     "/images/missions/vega-1/04.jpg": {
       "score": 7,
       "subject": "A Vega rocket lifts off at night from the ESA launch facility at Kourou, surrounded by brilliant engine exhaust and billowing smoke clouds.",
@@ -35710,19 +35184,6 @@
       "rejected_by": "off-subject",
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.00936
-    },
-    "/images/missions/vega-1/05.jpg": {
-      "score": 7,
-      "subject": "An ESA Vega rocket stands on the launch pad at night, illuminated by floodlights at the Guiana Space Centre.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.009255
     },
     "/images/missions/voyager-1/03.jpg": {
       "score": 6,
@@ -35814,6 +35275,36 @@
       "rejected_by": null,
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.007374
+    },
+    "/images/missions/vega-1/02.jpg": {
+      "score": 7,
+      "subject": "An ESA Vega rocket stands on the launch pad at night, illuminated by floodlights at the Guiana Space Centre.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-07-06T13:44:04.529Z",
+      "scoring_cost_usd": 0.009255
+    },
+    "/images/missions/vega-2/03.jpg": {
+      "score": 2,
+      "subject": "A Soviet CCCP-marked spacecraft model or lander replica on display in a museum with visitors in the background.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": false,
+      "variants": {
+        "1x1": ""
+      },
+      "rejected_by": "off-subject",
+      "fallback": false,
+      "scored_at": "2026-07-05T21:21:47.123Z",
+      "scoring_cost_usd": 0.008952
     }
   }
 }

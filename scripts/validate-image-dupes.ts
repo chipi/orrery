@@ -327,19 +327,8 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   '029bb16e', // belts/asteroid/02 + kuiper/02 (Kuiper Belt artist concept 2014)
   '8bf77658', // belts/asteroid/03 + kuiper/05 (Comet 238P-Read artist concept)
 
-  'eada8e1c', // fleet-galleries/a7l/03,04,05 (A7L spacesuit gallery)
-  '702fcc41', // fleet-galleries/aces/02,03,04,05 (ACES suit gallery)
-  '78248fa6', // fleet-galleries/cygnus-standard/02,03,05 (Cygnus fleet)
-  '0028195c', // fleet-galleries/emu/02,03,04,05 (EMU spacesuit gallery)
-  '7dacaa15', // fleet-galleries/lc-34/03,04,05 (LC-34 launch complex)
-  '5671243e', // fleet-galleries/lunar-prospector/01,04 (hero + slot)
-  'd79e07ae', // fleet-galleries/maven/01,04 (hero + slot)
   '12042c1f', // missions/dart/01,05 (hero + slot)
-  '730db1bd', // missions/freedom-7/03,05 (gallery slots)
-  '5faf9c60', // missions/friendship-7/01,02 (hero + slot)
-  'f2730ab6', // missions/mercury-atlas-9/03,05 (gallery slots)
   'de85aceb', // missions/mercury-redstone-3/01,04 (hero + slot)
-  'ff4e464c', // missions/spirit/01,02 (hero + slot)
 
   // ALLOWLIST_AUTHORIZED (2026-06-23) — fleet review session mission-
   // folder shortcuts. Marko picked 11 fleet entries to mirror from
@@ -362,7 +351,6 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   '47c16889', // hope/04 + hope-probe/04
   '4ac98e16', // magellan/01
   '50d4d1db', // akatsuki/02
-  '581c54b0', // dart/03
   '61ec6121', // beresheet/05
   '7869aa24', // voyager-1/01
   '7bc47e39', // luna-16/04 + luna16/04

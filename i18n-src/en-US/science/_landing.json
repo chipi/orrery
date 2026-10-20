@@ -59,7 +59,7 @@
       "paragraphs": [
         "Pretty much every interplanetary mission, from Voyager to Perseverance, runs the same script:",
         "[Launch](mission-phases/launch) — get out of the atmosphere and into low Earth orbit. [Trans-X Injection](mission-phases/trans-x-injection) — a single hard burn at perigee that flings you onto the transfer ellipse to the Moon (TLI), Mars (TMI), Venus (TVI), or Jupiter (TJI). [Trajectory Correction Maneuvers](mission-phases/tcm) — tiny burns during cruise to fix dispersion errors. Usually 1–3 of them. [Orbit Insertion](mission-phases/orbit-insertion) — a braking burn at the destination to bend you into a captured orbit. [EDL](mission-phases/edl) — Entry, Descent, Landing — for the lander. Six minutes of supersonic atmospheric chaos.",
-        "Lunar missions sometimes detour through a [Near-Rectilinear Halo Orbit](mission-phases/nrho) (Gateway will live in one), and crewed Apollo flights flew [free-return trajectories](transfers/free-return) — figure-8 paths that drop you back to Earth automatically if every engine on the spacecraft dies. Apollo 13 owes its life to this geometry."
+        "Lunar missions sometimes detour through a [Near-Rectilinear Halo Orbit](mission-phases/nrho) (the Gateway station, paused in 2026, was designed for one), and crewed Apollo flights flew [free-return trajectories](transfers/free-return) — figure-8 paths that drop you back to Earth automatically if every engine on the spacecraft dies. Apollo 13 owes its life to this geometry."
       ]
     },
     {

@@ -7,28 +7,33 @@
   "color": "#0B3D91",
   "year": 2028,
   "status": "PLANNED",
-  "departure_date": "2028-09-01",
-  "arrival_date": "2028-09-05",
+  "departure_date": "2028-02-01",
+  "arrival_date": "2028-02-05",
   "transit_days": 4,
-  "vehicle": "SLS Block 1B (first crewed flight, Exploration Upper Stage) + Starship HLS (lunar lander)",
-  "payload": "Orion + 4-person crew; I-HAB (International Habitation module) delivered to the Lunar Gateway",
+  "vehicle": "SLS Block 1 (last flight with the ICPS upper stage) + crewed lander (Starship HLS or Blue Moon, not yet chosen)",
+  "payload": "Orion + 4-person crew; 2 crew to the surface for about a week",
   "delta_v": "~7 km/s (round trip)",
   "data_quality": "partial",
-  "credit": "© NASA — Artemis IV. First crewed mission to the Lunar Gateway: SLS Block 1B debuts the Exploration Upper Stage (EUS), launching Orion + crew and co-manifesting the ESA/JAXA-built I-HAB (International Habitation) module for delivery to Gateway. The mission conducts the second crewed lunar landing via a Starship HLS. Planned ~2028; crew and landing site TBD.",
+  "credit": "© NASA — Artemis IV. Since NASA's 2026-02-27 architecture change, the first crewed lunar landing of the Artemis era: SLS Block 1 launches Orion with 4 crew; 2 descend to the south polar region in a commercial lander (Starship HLS or Blue Moon, chosen after Artemis III) while 2 remain in Orion. Nine candidate landing regions identified. Planned for early 2028; crew not yet named.",
   "links": [
     {
+      "l": "Artemis IV — NASA",
+      "u": "https://www.nasa.gov/mission/artemis-iv/",
+      "t": "intro"
+    },
+    {
       "l": "Artemis IV — Wikipedia",
-      "u": "https://en.wikipedia.org/wiki/Artemis_4",
+      "u": "https://en.wikipedia.org/wiki/Artemis_IV",
       "t": "intro"
     },
     {
-      "l": "Artemis program (NASA)",
-      "u": "https://www.nasa.gov/humans-in-space/artemis/",
-      "t": "intro"
+      "l": "NASA adds mission to Artemis lunar program, updates architecture (2026-02-27)",
+      "u": "https://www.nasa.gov/news-release/nasa-adds-mission-to-artemis-lunar-program-updates-architecture/",
+      "t": "deep"
     },
     {
-      "l": "Gateway — NASA's lunar space station",
-      "u": "https://www.nasa.gov/mission/gateway/",
+      "l": "Lunar south pole water ice (Science 2018)",
+      "u": "https://www.science.org/doi/10.1126/science.aap8637",
       "t": "deep"
     }
   ],
@@ -49,13 +54,714 @@
   ],
   "flight": {
     "launch": {
-      "vehicle_stage": "SLS Exploration Upper Stage (EUS)"
+      "vehicle_stage": "SLS ICPS (Interim Cryogenic Propulsion Stage)",
+      "mass_at_tli_kg": 26500,
+      "source": "NASA Artemis IV (planned; ICPS performs TLI for Orion — the last SLS flight with the ICPS). Crewed mass + service module + LAS jettisoned"
+    },
+    "cruise": {
+      "tcm_count": 2,
+      "source": "NASA Artemis architecture documents (planned-mission target; outbound TCM + NRHO insertion correction)"
     },
     "arrival": {
+      "v_infinity_km_s": 0.85,
+      "periapsis_km": 3000,
+      "inclination_deg": 90,
+      "orbit_insertion_dv_km_s": 0.45,
+      "source": "NASA Artemis IV mission plan; NRHO entry burn ~0.45 km/s vs Apollo's 0.89 km/s direct LLO insertion (NRHO is energetically favourable)",
       "entry_velocity_km_s": 0.15,
       "edl_system": "powered",
       "edl_duration_s": 100,
       "touchdown_velocity_ms": 1
+    },
+    "totals": {
+      "total_dv_km_s": 7.2,
+      "tli_or_tmi_dv_km_s": 3.05,
+      "source": "NASA Artemis architecture (planned); SLS-Orion + HLS combined ledger"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — SLS Block 1 / Orion (planned)",
+        "description": "Kennedy Space Center LC-39B, planned 2027. Artemis III — first crewed lunar landing since Apollo 17 (1972). Plans to deliver the first woman and the first person of colour to the Moon, targeting the lunar south pole at sites near Shackleton crater for direct sampling of permanently-shadowed water-ice regolith."
+      },
+      {
+        "met_days": 0.13,
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "ICPS burn sends Orion + crew on a 4-day translunar coast toward Near-Rectilinear Halo Orbit rendezvous with the SpaceX Starship HLS that pre-positioned there."
+      },
+      {
+        "met_days": 1.48,
+        "type": "tcm",
+        "label": "MCC-1",
+        "description": "First mid-course correction."
+      },
+      {
+        "met_days": 1.5,
+        "type": "tcm",
+        "label": "MCC-2",
+        "description": "Approach-phase refinement."
+      },
+      {
+        "met_days": 4,
+        "type": "loi",
+        "label": "NRHO insertion + lander rendezvous",
+        "description": "Orion captures into Near-Rectilinear Halo Orbit — an elongated lunar orbit with 3,000 km perilune + 70,000 km apolune, energetically much cheaper than Apollo's circular Low Lunar Orbit (~0.45 km/s vs Apollo's 0.89 km/s). Crew docks with the pre-positioned SpaceX Starship Human Landing System.",
+        "dv_km_s": 0.45
+      },
+      {
+        "met_days": 5,
+        "type": "descent_start",
+        "label": "Lander powered descent — lunar south pole",
+        "description": "Two crew descend in Starship HLS while two remain in Orion. Targets sites near Shackleton or Connecting Ridge, all within permanently-shadowed-region access. 6.5-day surface stay planned — far longer than Apollo's 3-day max."
+      },
+      {
+        "met_days": 7.5,
+        "type": "ascent",
+        "label": "Lander ascent + return to NRHO",
+        "description": "Starship's main Raptor engines fire from the surface, returning the lander to NRHO for crew transfer back to Orion. The HLS is designed for reuse — it stays at NRHO for refueling by subsequent tanker missions."
+      },
+      {
+        "met_days": 9.5,
+        "type": "tei",
+        "label": "Trans-Earth injection",
+        "description": "Orion departs NRHO on a return trajectory. Total NRHO + surface time is ~5.5 days.",
+        "dv_km_s": 0.45
+      },
+      {
+        "met_days": 11,
+        "type": "earth_return",
+        "label": "Splashdown — Pacific Ocean",
+        "description": "Planned 2027. Orion re-enters Earth's atmosphere at lunar return velocity (~11 km/s), executes skip-entry to bleed energy, and splashes down in the Pacific."
+      }
+    ],
+    "cislunar_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "parking_orbit": {
+        "altitude_km": 325,
+        "inclination_deg": 32.5,
+        "revs": 1.5
+      },
+      "tli": {
+        "dv_kms": 3.05,
+        "c3_km2_s2": -1.7
+      },
+      "translunar": {
+        "type": "hybrid_free_return"
+      },
+      "lunar_arrival": {
+        "type": "lor_orbit",
+        "altitude_km": 3000,
+        "inclination_deg": 90,
+        "periselene_km": 3000
+      },
+      "return": {
+        "type": "tei_lor",
+        "dv_kms": 0.45
+      },
+      "waypoints_km": [
+        [
+          0,
+          6703,
+          0,
+          0
+        ],
+        [
+          0.0001,
+          6702,
+          -8,
+          13
+        ],
+        [
+          0.13,
+          -6677,
+          -282,
+          443
+        ],
+        [
+          0.35,
+          -2565,
+          -3327,
+          5223
+        ],
+        [
+          0.4667,
+          -6834,
+          0,
+          281
+        ],
+        [
+          0.5833,
+          -7059,
+          0,
+          802
+        ],
+        [
+          0.7,
+          -7276,
+          0,
+          1363
+        ],
+        [
+          0.8167,
+          -7486,
+          0,
+          1969
+        ],
+        [
+          0.9333,
+          -7687,
+          0,
+          2626
+        ],
+        [
+          1.05,
+          -7878,
+          0,
+          3341
+        ],
+        [
+          1.1667,
+          -8055,
+          0,
+          4124
+        ],
+        [
+          1.2833,
+          -8217,
+          0,
+          4983
+        ],
+        [
+          1.4,
+          -8360,
+          0,
+          5933
+        ],
+        [
+          1.5,
+          -8464,
+          0,
+          6829
+        ],
+        [
+          1.6333,
+          -8568,
+          0,
+          8163
+        ],
+        [
+          1.75,
+          -8619,
+          0,
+          9484
+        ],
+        [
+          1.8667,
+          -8620,
+          0,
+          10979
+        ],
+        [
+          1.9833,
+          -8559,
+          0,
+          12683
+        ],
+        [
+          2.1,
+          -8414,
+          0,
+          14640
+        ],
+        [
+          2.2167,
+          -8160,
+          0,
+          16909
+        ],
+        [
+          2.3333,
+          -7761,
+          0,
+          19565
+        ],
+        [
+          2.45,
+          -7165,
+          0,
+          22710
+        ],
+        [
+          2.5667,
+          -6300,
+          0,
+          26476
+        ],
+        [
+          2.6833,
+          -5062,
+          0,
+          31048
+        ],
+        [
+          2.8,
+          -3298,
+          0,
+          36682
+        ],
+        [
+          2.9167,
+          -770,
+          0,
+          43749
+        ],
+        [
+          3.0333,
+          2875,
+          0,
+          52770
+        ],
+        [
+          3.15,
+          8200,
+          0,
+          64514
+        ],
+        [
+          3.2667,
+          16107,
+          0,
+          80121
+        ],
+        [
+          3.3833,
+          28076,
+          0,
+          101290
+        ],
+        [
+          3.5,
+          46481,
+          0,
+          130379
+        ],
+        [
+          3.6167,
+          74821,
+          0,
+          170060
+        ],
+        [
+          3.7333,
+          116982,
+          0,
+          221214
+        ],
+        [
+          3.85,
+          172468,
+          0,
+          276106
+        ],
+        [
+          4,
+          235783,
+          0,
+          309571
+        ],
+        [
+          4.0833,
+          235444,
+          2233,
+          309126
+        ],
+        [
+          4.2,
+          234011,
+          4377,
+          307244
+        ],
+        [
+          4.3167,
+          232080,
+          4533,
+          304708
+        ],
+        [
+          4.4333,
+          230526,
+          2632,
+          302668
+        ],
+        [
+          4.55,
+          230056,
+          -464,
+          302051
+        ],
+        [
+          4.6667,
+          230883,
+          -3350,
+          303137
+        ],
+        [
+          4.7833,
+          232632,
+          -4715,
+          305433
+        ],
+        [
+          4.9,
+          234508,
+          -3939,
+          307896
+        ],
+        [
+          5,
+          235565,
+          -1813,
+          309284
+        ],
+        [
+          5.1333,
+          235565,
+          1813,
+          309284
+        ],
+        [
+          5.25,
+          234266,
+          4178,
+          307579
+        ],
+        [
+          5.3667,
+          232353,
+          4646,
+          305067
+        ],
+        [
+          5.4833,
+          230694,
+          3005,
+          302889
+        ],
+        [
+          5.6,
+          230042,
+          0,
+          302033
+        ],
+        [
+          5.7167,
+          44706,
+          0,
+          293129
+        ],
+        [
+          5.8333,
+          4458,
+          0,
+          184882
+        ],
+        [
+          5.95,
+          -11842,
+          0,
+          114214
+        ],
+        [
+          6.0667,
+          -17285,
+          0,
+          73670
+        ],
+        [
+          6.1833,
+          -18564,
+          0,
+          49661
+        ],
+        [
+          6.3,
+          -18245,
+          0,
+          34614
+        ],
+        [
+          6.4167,
+          -17320,
+          0,
+          24661
+        ],
+        [
+          6.5333,
+          -16191,
+          0,
+          17747
+        ],
+        [
+          6.65,
+          -15021,
+          0,
+          12752
+        ],
+        [
+          6.7667,
+          -13879,
+          0,
+          9028
+        ],
+        [
+          6.8833,
+          -12790,
+          0,
+          6169
+        ],
+        [
+          7,
+          -11760,
+          0,
+          3925
+        ],
+        [
+          7.1167,
+          -10788,
+          0,
+          2129
+        ],
+        [
+          7.2333,
+          -9868,
+          0,
+          668
+        ],
+        [
+          7.35,
+          -8994,
+          0,
+          -537
+        ],
+        [
+          7.5,
+          -7928,
+          0,
+          -1800
+        ],
+        [
+          7.5833,
+          -7358,
+          0,
+          -2391
+        ],
+        [
+          7.7,
+          -6583,
+          0,
+          -3111
+        ],
+        [
+          7.8167,
+          -5828,
+          0,
+          -3725
+        ],
+        [
+          7.9333,
+          -5089,
+          0,
+          -4251
+        ],
+        [
+          8.05,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          8.1667,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          8.2833,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          8.4,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          8.5167,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          8.6333,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          8.75,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          8.8667,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          8.9833,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          9.1,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          9.2167,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          9.3333,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          9.5,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          9.5667,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          9.6833,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          9.8,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          9.9167,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          10.0333,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          10.15,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          10.2667,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          10.3833,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          10.5,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          10.6167,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          10.7333,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          10.85,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          11,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          11.0833,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          11.2,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          11.3167,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          11.4333,
+          -4671,
+          0,
+          -4518
+        ],
+        [
+          11.55,
+          -4671,
+          0,
+          -4518
+        ]
+      ]
     }
   }
 }

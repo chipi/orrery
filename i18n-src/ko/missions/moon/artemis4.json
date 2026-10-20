@@ -1,6 +1,15 @@
 {
-  "name": "Artemis IV",
-  "type": "유인 착륙선 · 계획됨",
-  "first": "Lunar Gateway로의 첫 유인 임무; 두 번째 유인 달 착륙",
-  "description": "Artemis IV는 달 주위 근직선 헤일로 궤도(NRHO)에 있는 NASA의 소형 우주 정거장 Lunar Gateway를 처음 방문하는 유인 임무로 계획되어 있습니다. 더 강력한 SLS Block 1B가 처음 등장하며, 새 Exploration Upper Stage(EUS) 덕분에 한 번의 발사로 승무원 4명이 탄 Orion과 ESA와 JAXA가 만든 I-HAB(International Habitation) 모듈을 함께 실어 Gateway로 보낼 수 있습니다. Orion과 I-HAB를 정거장에 도킹한 뒤, 승무원 2명은 SpaceX Starship Human Landing System을 타고 달 남극으로 내려가 이 프로그램의 두 번째 유인 착륙을 수행하고, 나머지는 점차 커지는 Gateway를 돌봅니다. 약 2028년으로 계획되어 있으며, 승무원과 착륙 지점은 아직 정해지지 않았습니다."
+  "name": "Artemis III",
+  "type": "유인 착륙선 · 계획",
+  "first": "Apollo 17(1972) 이후 최초 유인 달 착륙",
+  "description": "50여 년 만의 유인 달 착륙입니다. 구성: NASA의 SLS Block 1이 승무원 4명이 탄 Orion을 달 주위의 근직선 헤일로 궤도(NRHO)로 발사합니다. NRHO에는 SpaceX Starship Human Landing System(HLS)이 미리 배치되어 있으며, 이는 달 전이 궤도 진입 전에 저지구궤도에서 탱커로 추진제를 다시 채웁니다. Orion 승무원이 HLS로 옮겨 타고, 2명은 달 남극 지역으로 내려가 약 6.5일간 표면 활동을 하며 나머지 2명은 NRHO에 남습니다. 표면 활동이 끝나면 HLS가 NRHO로 돌아오고, 승무원은 Orion으로 옮겨 타 지구로 귀환합니다. 달에 발을 딛는 최초의 여성과 최초의 유색인종이 이 임무에서 나옵니다.",
+  "events": [
+    { "met": 0, "label": "SLS 발사", "note": "승무원 4명을 태운 Orion이 KSC LC-39B에서 이륙.", "type": "nominal" },
+    { "met": 1, "label": "TLI", "note": "달 이행 주입.", "type": "nominal" },
+    { "met": 4, "label": "NRHO 도착", "note": "Orion이 Near-Rectilinear Halo Orbit에 도착; 미리 배치된 Starship HLS와 접근.", "type": "nominal" },
+    { "met": 5, "label": "하강", "note": "승무원 2명이 HLS로 이동; 달 남극 동력 하강.", "type": "info" },
+    { "met": 12, "label": "상승", "note": "약 6.5일 표면 작업 후 HLS가 NRHO로 상승.", "type": "nominal" },
+    { "met": 14, "label": "TEI", "note": "NRHO에서 지구 이행 주입.", "type": "nominal" },
+    { "met": 18, "label": "해상 착수", "note": "Orion이 태평양에 착수.", "type": "info" }
+  ]
 }

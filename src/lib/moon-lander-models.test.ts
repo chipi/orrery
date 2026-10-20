@@ -55,7 +55,7 @@ describe('buildMoonLanderModel', () => {
         'apollo15',
         'apollo16',
         'apollo17',
-        'artemis3',
+        'artemis4',
         'luna9',
         'luna16',
         'luna17',

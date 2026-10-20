@@ -511,7 +511,7 @@
       'tianwen1',
       // Moon — one representative per distinct builder (shared stacks framed once)
       'apollo11',
-      'artemis3',
+      'artemis4',
       'luna9',
       'luna16',
       'luna17',

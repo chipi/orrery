@@ -1,6 +1,50 @@
 {
-  "name": "Artemis IV",
+  "name": "Artemis III",
   "type": "LANDER CON EQUIPAGGIO · PIANIFICATO",
-  "first": "Prima missione con equipaggio al Lunar Gateway; secondo allunaggio con equipaggio",
-  "description": "Artemis IV è pianificata come la prima missione con equipaggio a visitare il Lunar Gateway, la piccola stazione spaziale della NASA in orbita quasi rettilinea ad alone (NRHO) attorno alla Luna. Debutta il più potente SLS Block 1B, il cui nuovo Exploration Upper Stage (EUS) consente a un singolo lancio di trasportare sia Orion con 4 membri dell'equipaggio che il modulo I-HAB (International Habitation) trasportato insieme — costruito da ESA e JAXA — per la consegna al Gateway. Dopo l'attracco di Orion e I-HAB alla stazione, due membri dell'equipaggio scendono al polo sud lunare a bordo di un sistema di allunaggio con equipaggio (Human Landing System) SpaceX Starship per il secondo allunaggio con equipaggio del programma, mentre gli altri si occupano del Gateway in crescita. Pianificata per ~2028; equipaggio e sito di allunaggio devono ancora essere assegnati."
+  "first": "Primo atterraggio sulla Luna con equipaggio dall'Apollo 17 (1972)",
+  "description": "Il primo sbarco lunare con equipaggio in oltre mezzo secolo. Architettura: l'SLS Block 1 della NASA lancia Orion con 4 astronauti verso un'orbita alone rettineare quasi-diritta (NRHO) intorno alla Luna. Un'unità di atterraggio lunare (HLS) Starship della SpaceX è pre-posizionata nell'NRHO e ricaricata in orbita terrestre bassa da navi cisterna prima della sua iniezione trans-lunare. L'equipaggio di Orion si trasferisce sull'HLS; 2 astronauti scendono nella regione del polo sud lunare per circa 6,5 giorni di operazioni di superficie mentre 2 rimangono nell'NRHO. Dopo le operazioni di superficie, l'HLS si lancia di nuovo verso l'NRHO per il trasferimento a Orion e il ritorno sulla Terra. Porterà sulla Luna la prima donna e la prima persona di colore.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO SLS",
+      "note": "Orion viene lanciato dal KSC LC-39B con un equipaggio di 4 persone.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TLI",
+      "note": "Iniezione translunare.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "ARRIVANO TUTTI",
+      "note": "Orion arriva nell'orbita alo rettilineo prossimale; rendez-vous con Starship HLS pre-posizionato.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "DISCESA",
+      "note": "2 membri dell'equipaggio trasferiscono un HLS; discesa motorizzata al polo sud lunare.",
+      "type": "info"
+    },
+    {
+      "met": 12,
+      "label": "SALITA",
+      "note": "Salita HLS a NRHO dopo circa 6,5 giorni di operazioni di superficie.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "TEI",
+      "note": "Iniezione transterrestre da parte di NRHO.",
+      "type": "nominal"
+    },
+    {
+      "met": 18,
+      "label": "AMMARAGGIO",
+      "note": "Orion precipita nell'Oceano Pacifico.",
+      "type": "info"
+    }
+  ]
 }

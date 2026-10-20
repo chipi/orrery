@@ -540,7 +540,11 @@
   },
   {
     "id": "change4",
-    "videos": [{ "id": "vid-5fd25a75da64" }],
+    "videos": [
+      {
+        "id": "vid-5fd25a75da64"
+      }
+    ],
     "kind": "surface",
     "agency": "CNSA",
     "nation": "China",
@@ -795,11 +799,11 @@
     ]
   },
   {
-    "id": "artemis3",
+    "id": "artemis4",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
-    "year": 2027,
+    "year": 2028,
     "lat": -89.5,
     "lon": 0,
     "region_bounds": {
@@ -814,7 +818,7 @@
     "surface_status": "planned",
     "samples_kg": 0,
     "data_quality": "partial",
-    "credit": "© NASA — Artemis program. Planned launch NET 2027; specific landing site within the south polar region TBD. Will be the first crewed lunar landing since Apollo 17 in December 1972 — a 55-year gap.",
+    "credit": "© NASA — Artemis program. Since NASA's 2026-02-27 architecture change, Artemis IV (planned early 2028) is the first crewed lunar landing since Apollo 17 in December 1972 — a gap of more than 55 years. Specific site within the south polar region not yet chosen; nine candidate regions identified.",
     "fleet_refs": [
       {
         "id": "orion",
@@ -823,8 +827,13 @@
     ],
     "links": [
       {
-        "l": "Artemis III — Wikipedia",
-        "u": "https://en.wikipedia.org/wiki/Artemis_3",
+        "l": "Artemis IV — NASA",
+        "u": "https://www.nasa.gov/mission/artemis-iv/",
+        "t": "intro"
+      },
+      {
+        "l": "Artemis IV — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Artemis_IV",
         "t": "intro"
       },
       {

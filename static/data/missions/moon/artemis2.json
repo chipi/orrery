@@ -7,8 +7,8 @@
   "color": "#0B3D91",
   "year": 2026,
   "status": "FLOWN",
-  "departure_date": "2026-04-03",
-  "arrival_date": "2026-04-13",
+  "departure_date": "2026-04-01",
+  "arrival_date": "2026-04-10",
   "transit_days": 5,
   "vehicle": "SLS Block 1 + Orion (crewed)",
   "payload": "Orion + 4-person crew (Wiseman / Glover / Koch / Hansen)",
@@ -59,10 +59,10 @@
     },
     "arrival": {
       "v_infinity_km_s": 0.85,
-      "periapsis_km": 9200,
+      "periapsis_km": 6545,
       "inclination_deg": null,
       "orbit_insertion_dv_km_s": 0,
-      "source": "NASA Artemis II hybrid free-return profile — no lunar orbit insertion burn; closest approach ~9,200 km past lunar far side"
+      "source": "NASA Artemis II free-return flyby (2026-04-06): no lunar orbit insertion burn; closest approach ~6,545 km (4,067 mi) above the far side; maximum distance 406,771 km, the human record"
     },
     "totals": {
       "total_dv_km_s": 6.5,
@@ -73,20 +73,20 @@
       {
         "met_days": 0,
         "type": "launch",
-        "label": "Launch — SLS Block 1 / Orion (planned)",
-        "description": "Kennedy Space Center LC-39B, planned 2026. Artemis II — first crewed lunar mission since Apollo 17 (1972). Crew: Reid Wiseman (NASA, cmdr), Victor Glover (NASA), Christina Koch (NASA, first woman on a lunar mission), Jeremy Hansen (CSA, first non-American on the Moon)."
+        "label": "Launch — SLS Block 1 / Orion",
+        "description": "Kennedy Space Center LC-39B, 1 April 2026, 22:35 UTC. Artemis II — first crewed lunar mission since Apollo 17 (1972). Crew: Reid Wiseman (NASA, cmdr), Victor Glover (NASA), Christina Koch (NASA, first woman on a lunar mission), Jeremy Hansen (CSA, first non-American to fly to the Moon)."
       },
       {
         "met_days": 0.05,
         "type": "parking_orbit_exit",
         "label": "Earth-orbit checkout complete",
-        "description": "Orion + ICPS finish post-launch checkout in high Earth orbit. Crew rendezvouses with the ICPS for the manual proximity-operations demo unique to this mission."
+        "description": "Orion + ICPS finished post-launch checkout in high Earth orbit. The crew flew Orion around the spent ICPS for the manual proximity-operations demo unique to this mission."
       },
       {
         "met_days": 0.13,
         "type": "tli_or_tmi",
         "label": "Trans-lunar injection",
-        "description": "ICPS burn places Orion + crew on a 4-day hybrid free-return trajectory. The trajectory is designed so the Moon's gravity bends Orion straight back to Earth even if the engine fails — no LOI burn needed.",
+        "description": "The burn placed Orion + crew on a five-day free-return path to the Moon. The trajectory is designed so the Moon's gravity bends Orion straight back to Earth even if the engine fails — no LOI burn needed.",
         "dv_km_s": 3.05
       },
       {
@@ -96,10 +96,10 @@
         "description": "Refines the free-return trajectory toward the Moon."
       },
       {
-        "met_days": 4,
+        "met_days": 5.02,
         "type": "flyby",
         "label": "Moon — free-return flyby",
-        "description": "Closest approach ~9,200 km past the lunar far side. The crew won't enter lunar orbit — Artemis II is a translunar-flyby test mission validating Orion's life support + comms over a 10-day deep-space cruise before Artemis III lands on the surface."
+        "description": "6 April 2026: closest approach ~6,545 km (4,067 mi) above the lunar far side, and 406,771 km from Earth — farther than any humans had travelled, beating Apollo 13's 1970 record. No lunar orbit: Artemis II was a flyby test of Orion's life support and comms over a 9-day deep-space flight, ahead of the first landing, now planned for Artemis IV."
       },
       {
         "met_days": 6,
@@ -108,10 +108,10 @@
         "description": "Targets the Pacific splashdown ellipse off San Diego."
       },
       {
-        "met_days": 10,
+        "met_days": 9.06,
         "type": "earth_return",
         "label": "Splashdown — Pacific Ocean",
-        "description": "Planned 2026. Orion re-enters Earth's atmosphere at 11 km/s (lunar return velocity), executes the skip-entry maneuver to bleed energy, and splashes down in the Pacific. First crewed deep-space mission of the 21st century."
+        "description": "10 April 2026 (11 April UTC). Orion re-entered at about 11 km/s (lunar return velocity) on a shorter entry path than Artemis I's skip entry — chosen after Artemis I's heat-shield char loss — and splashed down in the Pacific off San Diego. First crewed deep-space mission of the 21st century."
       }
     ],
     "cislunar_profile": {
@@ -130,7 +130,7 @@
       },
       "lunar_arrival": {
         "type": "flyby",
-        "periselene_km": 9200
+        "periselene_km": 6545
       },
       "return": {
         "type": "none"
@@ -143,598 +143,598 @@
           0
         ],
         [
+          0.05,
+          1712,
+          -1309,
+          2054
+        ],
+        [
           0.13,
-          -3911,
-          -2776,
-          4357
+          -3968,
+          -1583,
+          2485
         ],
         [
-          0.2121,
-          -4163,
-          2508,
-          -3936
+          0.2883,
+          3013,
+          1399,
+          -2197
         ],
         [
-          0.3182,
-          5832,
-          964,
-          -1514
+          0.3844,
+          1687,
+          -1632,
+          2562
         ],
         [
-          0.4242,
-          -810,
-          -3197,
-          5018
+          0.4805,
+          -3977,
+          -1503,
+          2407
         ],
         [
-          0.5303,
-          -6785,
+          0.5765,
+          -6871,
           0,
-          91
+          236
         ],
         [
-          0.6364,
-          -6983,
+          0.6726,
+          -7051,
           0,
-          423
+          543
         ],
         [
-          0.7424,
-          -7183,
+          0.7687,
+          -7233,
           0,
-          774
+          867
         ],
         [
-          0.8485,
-          -7385,
+          0.8648,
+          -7416,
           0,
-          1149
+          1210
         ],
         [
-          0.9545,
-          -7586,
+          0.9609,
+          -7598,
           0,
-          1548
+          1574
         ],
         [
-          1.0606,
-          -7790,
+          1.057,
+          -7783,
           0,
-          1974
+          1960
         ],
         [
-          1.1667,
-          -7994,
+          1.1531,
+          -7968,
           0,
-          2430
+          2372
         ],
         [
-          1.2727,
-          -8200,
+          1.2492,
+          -8154,
           0,
-          2920
+          2811
         ],
         [
-          1.3788,
-          -8405,
+          1.3453,
+          -8340,
           0,
-          3446
+          3280
+        ],
+        [
+          1.4414,
+          -8532,
+          0,
+          3795
         ],
         [
           1.5,
-          -8620,
+          -8648,
           0,
-          4037
+          4121
         ],
         [
-          1.5909,
-          -8817,
+          1.6335,
+          -8899,
           0,
-          4624
+          4890
         ],
         [
-          1.697,
-          -9022,
+          1.7296,
+          -9085,
           0,
-          5286
+          5507
         ],
         [
-          1.803,
-          -9226,
+          1.8257,
+          -9269,
           0,
-          6004
+          6171
         ],
         [
-          1.9091,
-          -9428,
+          1.9218,
+          -9452,
           0,
-          6785
+          6887
         ],
         [
-          2.0152,
-          -9627,
+          2.0179,
+          -9632,
           0,
-          7637
+          7661
         ],
         [
-          2.1212,
-          -9820,
+          2.114,
+          -9807,
           0,
-          8571
+          8508
         ],
         [
-          2.2273,
-          -10007,
+          2.2101,
+          -9977,
           0,
-          9599
+          9433
         ],
         [
-          2.3333,
-          -10184,
+          2.3062,
+          -10139,
           0,
-          10732
+          10442
         ],
         [
-          2.4394,
-          -10350,
+          2.4023,
+          -10292,
           0,
-          11988
+          11548
         ],
         [
-          2.5455,
-          -10499,
+          2.4984,
+          -10433,
           0,
-          13383
+          12764
         ],
         [
-          2.6515,
-          -10627,
+          2.5945,
+          -10558,
           0,
-          14940
+          14102
         ],
         [
-          2.7576,
-          -10729,
+          2.6905,
+          -10665,
           0,
-          16688
+          15583
         ],
         [
-          2.8636,
-          -10793,
+          2.7866,
+          -10747,
           0,
-          18660
+          17228
         ],
         [
-          2.9697,
-          -10811,
+          2.8827,
+          -10796,
           0,
-          20894
+          19062
         ],
         [
-          3.0758,
+          2.9788,
+          -10807,
+          0,
+          21113
+        ],
+        [
+          3.0749,
           -10769,
           0,
-          23442
+          23422
         ],
         [
-          3.1818,
-          -10647,
+          3.171,
+          -10659,
           0,
-          26370
+          26072
         ],
         [
-          3.2879,
-          -10418,
+          3.2671,
+          -10463,
           0,
-          29763
+          29098
         ],
         [
-          3.3939,
-          -10050,
+          3.3632,
+          -10157,
           0,
-          33714
+          32568
         ],
         [
-          3.5,
-          -9495,
+          3.4593,
+          -9708,
           0,
-          38362
+          36577
         ],
         [
-          3.6061,
-          -8693,
+          3.5554,
+          -9076,
           0,
-          43864
+          41234
         ],
         [
-          3.7121,
-          -7557,
+          3.6515,
+          -8207,
           0,
-          50440
+          46679
         ],
         [
-          3.8182,
-          -5959,
+          3.7475,
+          -7023,
           0,
-          58394
+          53097
         ],
         [
-          3.9242,
-          -3734,
+          3.8436,
+          -5425,
           0,
-          68090
+          60722
         ],
         [
-          4,
-          -1379,
+          3.9397,
+          -3390,
           0,
-          77302
+          69436
         ],
         [
-          4.1364,
-          3699,
+          4.0358,
+          -1115,
           0,
-          94937
+          78220
         ],
         [
-          4.2424,
-          9766,
+          4.1319,
+          3486,
           0,
-          113636
+          94198
         ],
         [
-          4.3485,
-          18347,
+          4.228,
+          8941,
           0,
-          137355
+          111094
         ],
         [
-          4.4545,
-          30446,
+          4.3241,
+          16374,
           0,
-          167325
+          131901
         ],
         [
-          4.5606,
-          47231,
+          4.4202,
+          26527,
           0,
-          204435
+          157617
         ],
         [
-          4.6667,
-          69806,
+          4.5163,
+          40216,
           0,
-          248400
+          188926
         ],
         [
-          4.7727,
-          98290,
+          4.6124,
+          58249,
           0,
-          295715
+          225893
         ],
         [
-          4.8788,
-          129902,
+          4.7085,
+          81031,
           0,
-          337247
+          267046
         ],
         [
-          4.9848,
-          158017,
+          4.8045,
+          107776,
           0,
-          359278
+          308178
         ],
         [
-          5.0909,
-          161543,
+          4.9006,
+          135696,
           0,
-          360826
+          341787
         ],
         [
-          5.197,
-          161543,
+          5.02,
+          159186,
           0,
-          360826
+          359791
         ],
         [
-          5.303,
-          161543,
+          5.0928,
+          161462,
           0,
-          360826
+          360645
         ],
         [
-          5.4091,
-          161543,
+          5.1889,
+          157413,
           0,
-          360826
+          351601
         ],
         [
-          5.5152,
-          161543,
+          5.285,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          5.6212,
-          161543,
+          5.3811,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          5.7273,
-          161543,
+          5.4772,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          5.8333,
-          161543,
+          5.5733,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          5.9394,
-          161543,
+          5.6694,
+          157074,
           0,
-          360826
+          350844
+        ],
+        [
+          5.7655,
+          157074,
+          0,
+          350844
+        ],
+        [
+          5.8615,
+          157074,
+          0,
+          350844
         ],
         [
           6,
-          161543,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          6.1515,
-          161543,
+          6.0537,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          6.2576,
-          161543,
+          6.1498,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          6.3636,
-          161543,
+          6.2459,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          6.4697,
-          161543,
+          6.342,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          6.5758,
-          161543,
+          6.4381,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          6.6818,
-          161543,
+          6.5342,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          6.7879,
-          161543,
+          6.6303,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          6.8939,
-          161543,
+          6.7264,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          7,
-          161543,
+          6.8225,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          7.1061,
-          161543,
+          6.9185,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          7.2121,
-          161543,
+          7.0146,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          7.3182,
-          161543,
+          7.1107,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          7.4242,
-          161543,
+          7.2068,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          7.5303,
-          161543,
+          7.3029,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          7.6364,
-          161543,
+          7.399,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          7.7424,
-          161543,
+          7.4951,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          7.8485,
-          161543,
+          7.5912,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          7.9545,
-          161543,
+          7.6873,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          8.0606,
-          161543,
+          7.7834,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          8.1667,
-          161543,
+          7.8795,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          8.2727,
-          161543,
+          7.9755,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          8.3788,
-          161543,
+          8.0716,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          8.4848,
-          161543,
+          8.1677,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          8.5909,
-          161543,
+          8.2638,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          8.697,
-          161543,
+          8.3599,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          8.803,
-          161543,
+          8.456,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          8.9091,
-          161543,
+          8.5521,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          9.0152,
-          161543,
+          8.6482,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          9.1212,
-          161543,
+          8.7443,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          9.2273,
-          161543,
+          8.8404,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          9.3333,
-          161543,
+          8.9365,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          9.4394,
-          161543,
+          9.06,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          9.5455,
-          161543,
+          9.1286,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          9.6515,
-          161543,
+          9.2247,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          9.7576,
-          161543,
+          9.3208,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          9.8636,
-          161543,
+          9.4169,
+          157074,
           0,
-          360826
+          350844
         ],
         [
-          10,
-          161543,
+          9.513,
+          157074,
           0,
-          360826
-        ],
-        [
-          10.0758,
-          161543,
-          0,
-          360826
-        ],
-        [
-          10.1818,
-          161543,
-          0,
-          360826
-        ],
-        [
-          10.2879,
-          161543,
-          0,
-          360826
-        ],
-        [
-          10.3939,
-          161543,
-          0,
-          360826
-        ],
-        [
-          10.5,
-          161543,
-          0,
-          360826
+          350844
         ]
       ]
     }

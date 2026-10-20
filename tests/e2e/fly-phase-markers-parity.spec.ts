@@ -31,7 +31,7 @@ const MOON_MISSIONS = [
   'apollo13',
   'apollo17',
   'artemis2',
-  'artemis3',
+  'artemis4',
   'beresheet',
   'blue-moon-mk1',
   'chandrayaan1',

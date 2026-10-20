@@ -445,8 +445,8 @@ export const DESCENT_MISSION_IDS = new Set<string>([
   'chandrayaan3',
   'slim',
   'beresheet',
-  'artemis3',
   'artemis4',
+  'artemis5',
   'blue-moon-mk1',
   // Mars (13)
   'viking1',

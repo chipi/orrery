@@ -12,7 +12,7 @@
   "lat": 28.6273,
   "lon": -80.6208,
   "best_known_for": "Apollo 10 + Skylab + 53 Shuttle flights; now NASA's SLS / Artemis pad",
-  "credit": "Sister pad to 39A at NASA Kennedy Space Center. Apollo 10 + Skylab + 53 Shuttle missions through 2006. Converted to clean-pad configuration in 2007; from 2022 onward serves Artemis I and the SLS Block 1 / Block 1B for the lunar return programme. Coordinates and operational history from NASA KSC fact sheets.",
+  "credit": "Sister pad to 39A at NASA Kennedy Space Center. Apollo 10 + Skylab + 53 Shuttle missions through 2006. Converted to clean-pad configuration in 2007; from 2022 onward serves the SLS Block 1 for the lunar return programme: Artemis I (2022) and Artemis II (2026); the Block 1B upgrade was cancelled in 2026. Coordinates and operational history from NASA KSC fact sheets.",
   "links": [
     {
       "l": "Launch Complex 39B — NASA KSC",
@@ -38,6 +38,7 @@
     "apollo-soyuz",
     "artemis2",
     "artemis3",
-    "artemis4"
+    "artemis4",
+    "artemis5"
   ]
 }

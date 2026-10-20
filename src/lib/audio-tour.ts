@@ -967,7 +967,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'The south pole — where Artemis is going next.',
       duration_ms: 4000,
     },
-    { at_sec: 107, action: 'click', target: '[data-audio-stage="moon-select-artemis3"]' },
+    { at_sec: 107, action: 'click', target: '[data-audio-stage="moon-select-artemis4"]' },
     { at_sec: 115, action: 'click', target: '[data-audio-stage="panel-close"]' },
     // VTT 00:02:15.2 "Twelve people have walked on this surface." Descend
     // back into Tranquillity Base to celebrate Apollo 11, held through
@@ -1087,7 +1087,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 104, action: 'click', target: '[data-audio-stage="surface-exit-panorama"]' },
     // VTT 00:01:45 "Artemis has chosen the south pole." Show where the next
     // crewed mission lands — the far-side past → future bridge (audit gap).
-    { at_sec: 107, action: 'click', target: '[data-audio-stage="moon-select-artemis3"]' },
+    { at_sec: 107, action: 'click', target: '[data-audio-stage="moon-select-artemis4"]' },
     // VTT § 00:01:52.8 "Look at this map and pick the spot"
     {
       at_sec: 112,

@@ -1,6 +1,15 @@
 {
-  "name": "Artemis IV",
-  "type": "有人着陸船 · 計画中",
-  "first": "Lunar Gatewayへの初の有人ミッション、2回目の有人月面着陸",
-  "description": "Artemis IVは、月周回Near-Rectilinear Halo Orbit(NRHO)に位置するNASAの小型宇宙ステーション、Lunar Gatewayを訪問する初の有人ミッションとして計画されています。より強力なSLS Block 1Bがデビューし、新しいExploration Upper Stage(EUS)により、4名の乗組員を乗せたOrionと、ESAとJAXAが建造したI-HAB(International Habitation)モジュールを同時搭載して1回の打ち上げで運搬できます。OrionとI-HABをステーションにドッキングした後、2名の乗組員がSpaceX Starship Human Landing Systemに乗って月の南極に降下し、プログラム2回目の有人着陸を行い、残りの乗組員は拡張中のGatewayの世話をします。~2028年を予定、乗組員と着陸地点は未定です。"
+  "name": "Artemis III",
+  "type": "有人着陸機 · 計画",
+  "first": "Apollo 17（一九七二）以来初の有人月面着陸",
+  "description": "50年以上ぶりの有人月面着陸。アーキテクチャ：NASAの SLS Block 1 が Orion を 4 人の乗員とともに月周辺の近直線ハロー軌道（NRHO）に打ち上げる。NRHO に事前配置された SpaceX Starship Human Landing System（HLS）は、月への遷移軌道投入前に、低軌道の補給機によって補給される。Orion の乗員は HLS に移乗し、2 人の宇宙飛行士が月の南極領域に着陸して約 6.5 日間の表面活動を行う一方、2 人は NRHO に留まる。表面活動後、HLS は NRHO に戻り、Orion への移乗と地球への帰還を行う。月面に初めての女性と初めての有色人種を着陸させる。",
+  "events": [
+    { "met": 0, "label": "SLS 打ち上げ", "note": "Orion が KSC LC-39B から四人で離昇。", "type": "nominal" },
+    { "met": 1, "label": "TLI", "note": "月移行軌道投入。", "type": "nominal" },
+    { "met": 4, "label": "NRHO 到着", "note": "Orion が近直線ハロー軌道に到着。事前配置された Starship HLS とのランデブー。", "type": "nominal" },
+    { "met": 5, "label": "降下", "note": "2 人の乗員が HLS に移乗し、月の南極への動力着陸を行う。", "type": "info" },
+    { "met": 12, "label": "上昇", "note": "約 6.5 日間の表面活動後、HLS が NRHO に上昇帰還する。", "type": "nominal" },
+    { "met": 14, "label": "TEI", "note": "NRHO から地球移行軌道投入。", "type": "nominal" },
+    { "met": 18, "label": "着水", "note": "Orion が太平洋に着水。", "type": "info" }
+  ]
 }

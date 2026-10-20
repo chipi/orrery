@@ -752,7 +752,7 @@ const BUILDERS: Record<string, (color: string) => THREE.Group> = {
   apollo15: buildApolloLMExtended,
   apollo16: buildApolloLMExtended,
   apollo17: buildApolloLMExtended,
-  artemis3: buildArtemis,
+  artemis5: buildArtemis,
   // Luna programme (USSR)
   luna9: buildLuna9,
   luna16: buildLunaSampleReturn,

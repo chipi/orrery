@@ -89,7 +89,7 @@
     { audio: 'change4', site: 'change4' },
     { audio: 'change6', site: 'change6' },
     { audio: 'chandrayaan3', site: 'chandrayaan3' },
-    { audio: 'artemis3', site: 'artemis3' },
+    { audio: 'artemis4', site: 'artemis4' },
   ] as const;
 
   const MOON_CONFIG: SurfaceSceneConfig = {

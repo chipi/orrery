@@ -14,7 +14,7 @@
   "payload": "~3000 kg cargo to lunar surface (CLPS payloads)",
   "delta_v": "~6 km/s",
   "data_quality": "partial",
-  "credit": "© Blue Origin / NASA — Blue Moon Mark 1 cargo lunar lander (named Endurance), contracted under NASA's CLPS program. NET early 2027 following a New Glenn hotfire anomaly at LC-36 in May 2026. Single-stage BE-7-powered lander; refuelable architecture intended for the Mark 2 crewed variant supporting Artemis V.",
+  "credit": "© Blue Origin / NASA — Blue Moon Mark 1 cargo lunar lander (named Endurance), contracted under NASA's CLPS program. NET early 2027 following a New Glenn hotfire anomaly at LC-36 in May 2026. Single-stage BE-7-powered lander; refuelable architecture intended for the Mark 2 crewed variant, a candidate lander for Artemis IV and later landings.",
   "links": [
     {
       "l": "Blue Moon — Wikipedia",
@@ -69,7 +69,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — New Glenn (planned)",
-        "description": "Cape Canaveral LC-36, NET early 2027 (slipped from 2025 after a New Glenn hotfire anomaly in May 2026). Blue Origin's Blue Moon Mk1 cargo lander (named Endurance) — first uncrewed surface mission of Blue Origin's two-class lunar landing architecture. Mk1 carries ~3 metric tons of payload; the larger Mk2 will be the human-rated lander for Artemis V."
+        "description": "Cape Canaveral LC-36, NET early 2027 (slipped from 2025 after a New Glenn hotfire anomaly in May 2026). Blue Origin's Blue Moon Mk1 cargo lander (named Endurance) — first uncrewed surface mission of Blue Origin's two-class lunar landing architecture. Mk1 carries ~3 metric tons of payload; the larger Mk2 is the human-rated lander NASA contracted for crewed Artemis landings."
       },
       {
         "met_days": 0.2,

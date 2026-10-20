@@ -1,6 +1,15 @@
 {
   "name": "Artemis IV",
   "type": "CREWED LANDER · PLANNED",
-  "first": "First crewed mission to the Lunar Gateway; second crewed lunar landing",
-  "description": "Artemis IV is planned as the first crewed mission to visit the Lunar Gateway, NASA's small space station in Near-Rectilinear Halo Orbit (NRHO) around the Moon. It debuts the more powerful SLS Block 1B, whose new Exploration Upper Stage (EUS) lets a single launch carry both Orion with 4 crew and the co-manifested I-HAB (International Habitation) module — built by ESA and JAXA — for delivery to Gateway. After docking Orion and I-HAB to the station, two crew descend to the lunar south pole aboard a SpaceX Starship Human Landing System for the program's second crewed landing, while the others tend the growing Gateway. Planned for ~2028; crew and landing site remain to be assigned."
+  "first": "First crewed lunar landing since Apollo 17 (1972)",
+  "description": "Since NASA's February 2026 change of plan, Artemis IV is the mission that returns people to the lunar surface — the first landing since Apollo 17 in 1972, and the first ever near the south pole. SLS, on its last flight with the interim upper stage, launches Orion with four crew towards the Moon. In lunar orbit they meet a commercial lander — SpaceX's Starship or Blue Origin's Blue Moon, chosen after the Artemis III docking tests — and two astronauts descend to the south polar region for about a week of surface work, while two remain aboard Orion. The south pole is the target because its permanently shadowed craters hold water ice, which future missions may turn into drinking water, oxygen and rocket propellant. NASA has identified nine candidate landing regions. Planned for early 2028; the crew has not yet been named.",
+  "events": [
+    { "met": 0, "label": "SLS LAUNCH", "note": "Orion launches from KSC LC-39B with crew of 4.", "type": "nominal" },
+    { "met": 1, "label": "TLI", "note": "Trans-lunar injection.", "type": "nominal" },
+    { "met": 4, "label": "NRHO ARRIVAL", "note": "Orion arrives in a high lunar orbit and meets the waiting lander.", "type": "nominal" },
+    { "met": 5, "label": "DESCENT", "note": "2 crew transfer to the lander; powered descent to the lunar south pole.", "type": "info" },
+    { "met": 12, "label": "ASCENT", "note": "The lander returns to lunar orbit after about a week of surface operations.", "type": "nominal" },
+    { "met": 14, "label": "TEI", "note": "Trans-Earth injection.", "type": "nominal" },
+    { "met": 18, "label": "SPLASHDOWN", "note": "Orion splashes down in the Pacific Ocean.", "type": "info" }
+  ]
 }

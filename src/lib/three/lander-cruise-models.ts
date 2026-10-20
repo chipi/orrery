@@ -784,7 +784,7 @@ const BUILDERS: Record<string, () => THREE.Group> = {
   apollo15: buildApolloCruise,
   apollo16: buildApolloCruise,
   apollo17: buildApolloCruise,
-  artemis3: buildOrionCruise,
+  artemis5: buildOrionCruise,
   artemis4: buildOrionCruise,
   luna9: buildLunaDirectCruise,
   luna16: buildLunaSampleCruise,

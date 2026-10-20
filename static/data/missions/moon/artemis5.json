@@ -1,35 +1,30 @@
 {
-  "id": "artemis3",
+  "id": "artemis5",
   "agency": "NASA",
   "agency_full": "National Aeronautics and Space Administration",
   "sector": "gov",
   "dest": "MOON",
   "color": "#0B3D91",
-  "year": 2027,
+  "year": 2028,
   "status": "PLANNED",
-  "departure_date": "2027-09-01",
-  "arrival_date": "2027-09-05",
+  "departure_date": "2028-11-01",
+  "arrival_date": "2028-11-05",
   "transit_days": 4,
-  "vehicle": "SLS Block 1 (crew launch) + Starship HLS (lunar lander)",
-  "payload": "Orion + 4-person crew; HLS pre-positioned at NRHO",
+  "vehicle": "SLS Block 1 (upper stage to be confirmed) + crewed lander (Starship HLS or Blue Moon)",
+  "payload": "Orion + 4-person crew; second crewed landing, start of lunar base work",
   "delta_v": "~7 km/s (round trip)",
   "data_quality": "partial",
-  "credit": "© NASA — Artemis program. Architecture: SLS launches Orion to Near-Rectilinear Halo Orbit (NRHO) where it docks with a pre-positioned Starship Human Landing System; 2 crew descend to surface, 2 remain in NRHO. Specific landing site TBD; 13 candidate regions in south polar zone.",
+  "credit": "© NASA — Artemis V. Planned for late 2028 as the second crewed landing of the Artemis era and the start of work towards a lunar surface base at the south pole. SLS remains the crew launcher through Artemis V; NASA has said the configuration stays as close to Block 1 as possible.",
   "links": [
     {
-      "l": "Artemis III — Wikipedia",
-      "u": "https://en.wikipedia.org/wiki/Artemis_3",
+      "l": "Artemis V — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Artemis_V",
       "t": "intro"
     },
     {
-      "l": "Artemis program (NASA)",
-      "u": "https://www.nasa.gov/humans-in-space/artemis/",
+      "l": "NASA adds mission to Artemis lunar program, updates architecture (2026-02-27)",
+      "u": "https://www.nasa.gov/news-release/nasa-adds-mission-to-artemis-lunar-program-updates-architecture/",
       "t": "intro"
-    },
-    {
-      "l": "Lunar south pole water ice (Science 2018)",
-      "u": "https://www.science.org/doi/10.1126/science.aap8637",
-      "t": "deep"
     }
   ],
   "flight_data_quality": "sparse",
@@ -49,9 +44,9 @@
   ],
   "flight": {
     "launch": {
-      "vehicle_stage": "SLS ICPS (Interim Cryogenic Propulsion Stage)",
+      "vehicle_stage": "SLS upper stage (to be confirmed)",
       "mass_at_tli_kg": 26500,
-      "source": "NASA Artemis 3 mission profile (planned; ICPS performs TLI for Orion). Crewed mass + service module + LAS jettisoned"
+      "source": "Artemis V (planned, late 2028); upper stage not confirmed by NASA — values carried from the Artemis IV profile"
     },
     "cruise": {
       "tcm_count": 2,
@@ -62,7 +57,7 @@
       "periapsis_km": 3000,
       "inclination_deg": 90,
       "orbit_insertion_dv_km_s": 0.45,
-      "source": "NASA Artemis 3 mission plan; NRHO entry burn ~0.45 km/s vs Apollo's 0.89 km/s direct LLO insertion (NRHO is energetically favourable)",
+      "source": "NASA Artemis IV mission plan; NRHO entry burn ~0.45 km/s vs Apollo's 0.89 km/s direct LLO insertion (NRHO is energetically favourable)",
       "entry_velocity_km_s": 0.15,
       "edl_system": "powered",
       "edl_duration_s": 100,
@@ -101,20 +96,20 @@
       {
         "met_days": 4,
         "type": "loi",
-        "label": "NRHO insertion + HLS rendezvous",
+        "label": "NRHO insertion + lander rendezvous",
         "description": "Orion captures into Near-Rectilinear Halo Orbit — an elongated lunar orbit with 3,000 km perilune + 70,000 km apolune, energetically much cheaper than Apollo's circular Low Lunar Orbit (~0.45 km/s vs Apollo's 0.89 km/s). Crew docks with the pre-positioned SpaceX Starship Human Landing System.",
         "dv_km_s": 0.45
       },
       {
         "met_days": 5,
         "type": "descent_start",
-        "label": "Starship HLS powered descent — lunar south pole",
+        "label": "Lander powered descent — lunar south pole",
         "description": "Two crew descend in Starship HLS while two remain in Orion. Targets sites near Shackleton or Connecting Ridge, all within permanently-shadowed-region access. 6.5-day surface stay planned — far longer than Apollo's 3-day max."
       },
       {
         "met_days": 7.5,
         "type": "ascent",
-        "label": "Starship HLS ascent + return to NRHO",
+        "label": "Lander ascent + return to NRHO",
         "description": "Starship's main Raptor engines fire from the surface, returning the lander to NRHO for crew transfer back to Orion. The HLS is designed for reuse — it stays at NRHO for refueling by subsequent tanker missions."
       },
       {

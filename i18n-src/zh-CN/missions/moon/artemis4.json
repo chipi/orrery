@@ -1,6 +1,15 @@
 {
-  "name": "Artemis IV",
-  "type": "载人着陆器 · 计划中",
-  "first": "首次前往Lunar Gateway的载人任务；第二次载人登月",
-  "description": "Artemis IV计划作为首次造访Lunar Gateway的载人任务，Lunar Gateway是NASA位于绕月近直线晕轨道（NRHO）上的小型空间站。它首次使用推力更大的SLS Block 1B，其新的Exploration Upper Stage（EUS）使一次发射就能同时运载搭乘4名乘员的Orion和同批次发射的I-HAB（International Habitation）模块——由ESA和JAXA建造——送往Lunar Gateway。Orion和I-HAB与空间站对接之后，两名乘员将搭乘SpaceX Starship Human Landing System降落到月球南极，完成该计划的第二次载人着陆，其余乘员则留下照看逐步扩建的Lunar Gateway。计划于约2028年执行；乘员和着陆地点尚待确定。"
+  "name": "Artemis III",
+  "type": "CREWED LANDER · PLANNED",
+  "first": "自 Apollo 17（1972）以来的首次载人月球着陆",
+  "description": "半个多世纪以来的首次载人月球着陆。架构：NASA的SLS Block 1火箭把载有4名乘员的Orion发射到绕月的近直线晕轨道（NRHO）。预先停放在NRHO的是SpaceX Starship Human Landing System（HLS），它在地月转移注入前已由加油型飞行器在近地轨道补加推进剂。Orion乘员转乘HLS；2名宇航员下降到月球南极地区，进行约6.5天的月面作业，另2名留在NRHO。月面作业结束后，HLS发射返回NRHO，与Orion对接转移，并踏上返回地球之路。将把首位女性和首位有色人种送上月球。",
+  "events": [
+    { "met": 0, "label": "SLS 发射", "note": "Orion 从 KSC LC-39B 发射，搭载 4 名航天员。", "type": "nominal" },
+    { "met": 1, "label": "TLI", "note": "地月转移轨道射入。", "type": "nominal" },
+    { "met": 4, "label": "抵达 NRHO", "note": "Orion 抵达近直线晕轨道；与预先配置的 Starship 人员着陆系统（HLS）进行交会。", "type": "nominal" },
+    { "met": 5, "label": "下降", "note": "2 名航天员转移至人员着陆系统（HLS）；动力下降至月球南极。", "type": "info" },
+    { "met": 12, "label": "上升", "note": "人员着陆系统（HLS）在约 6.5 天月面操作后从月球南极上升至近直线晕轨道（NRHO）。", "type": "nominal" },
+    { "met": 14, "label": "TEI", "note": "从近直线晕轨道（NRHO）进行地球转移注入。", "type": "nominal" },
+    { "met": 18, "label": "溅落", "note": "Orion 在太平洋溅落。", "type": "info" }
+  ]
 }

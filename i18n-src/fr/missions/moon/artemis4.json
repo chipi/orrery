@@ -1,6 +1,50 @@
 {
-  "name": "Artemis IV",
-  "type": "ATTERRISSEUR HABITÉ · PLANIFIÉ",
-  "first": "Première mission habitée vers le Lunar Gateway ; deuxième alunissage habité",
-  "description": "Artemis IV est prévue comme la première mission habitée à visiter le Lunar Gateway, la petite station spatiale de la NASA en orbite halo quasi-rectiligne (NRHO) autour de la Lune. Elle inaugure le SLS Block 1B plus puissant, dont le nouvel Exploration Upper Stage (EUS) permet à un seul lancement de transporter à la fois Orion avec 4 membres d'équipage et le module I-HAB (International Habitation) co-manifesté — construit par l'ESA et la JAXA — pour livraison au Gateway. Après l'amarrage d'Orion et d'I-HAB à la station, deux membres d'équipage descendent vers le pôle sud lunaire à bord d'un SpaceX Starship Human Landing System pour le deuxième alunissage habité du programme, tandis que les autres s'occupent du Gateway en expansion. Prévue pour ~2028 ; l'équipage et le site d'alunissage restent à attribuer."
+  "name": "Artemis III",
+  "type": "ATTERRISSAGE AVEC ÉQUIPAGE · PRÉVU",
+  "first": "Premier alunissage en équipage depuis Apollo 17 (1972)",
+  "description": "Le premier alunissage habité en plus d'un demi-siècle. Architecture : le SLS Block 1 de la NASA lance Orion avec 4 astronautes vers une Near-Rectilinear Halo Orbit (NRHO) autour de la Lune. Un SpaceX Starship Human Landing System (HLS) est pré-positionné à l'NRHO, ravitaillé en orbite basse terrestre par des ravitailleurs avant son injection trans-lunaire. L'équipage d'Orion se transfère vers le HLS ; 2 astronautes descendent vers la région du pôle sud lunaire pour ~6,5 jours d'opérations de surface tandis que 2 restent à l'NRHO. Après les opérations de surface, le HLS décolle vers l'NRHO pour un transfert vers Orion et un retour sur Terre. Permettra d'alunir la première femme et la première personne de couleur sur la Lune.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT DU SLS",
+      "note": "Orion est lancé depuis le KSC LC-39B avec un équipage de 4 personnes.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TLI",
+      "note": "Injection translunaire.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "ARRIVÉE NRHO",
+      "note": "Orion arrive sur l'orbite quasi rectiligne de Halo ; rendez-vous avec le Starship HLS prépositionné.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "DESCENTE",
+      "note": "Transfert de 2 équipages vers HLS ; descente motorisée vers le pôle sud lunaire.",
+      "type": "info"
+    },
+    {
+      "met": 12,
+      "label": "ASCENSION",
+      "note": "Ascension du HLS vers NRHO après environ 6,5 jours d'opérations de surface.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "TEI",
+      "note": "Injection trans-terrestre de NRHO.",
+      "type": "nominal"
+    },
+    {
+      "met": 18,
+      "label": "AMERRISSAGE",
+      "note": "Orion s'écrase dans l'océan Pacifique.",
+      "type": "info"
+    }
+  ]
 }

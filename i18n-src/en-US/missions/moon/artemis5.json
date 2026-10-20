@@ -1,0 +1,15 @@
+{
+  "name": "Artemis V",
+  "type": "CREWED LANDER · PLANNED",
+  "first": "Second crewed landing of the Artemis era — the start of a lunar base",
+  "description": "Artemis V is planned as the second crewed landing near the lunar south pole, following Artemis IV within the same year — part of NASA's 2026 aim of at least one landing a year. It is meant to begin the shift from short visits to a lasting presence: work towards a base on the surface, which NASA chose in March 2026 over finishing the Gateway station in lunar orbit, now paused. As on Artemis IV, SLS launches Orion with four crew and a commercial lander carries two of them down. SLS is funded to fly through Artemis V; for later missions NASA has proposed commercial, reusable alternatives. Planned for late 2028; crew, lander and landing site not yet chosen.",
+  "events": [
+    { "met": 0, "label": "SLS LAUNCH", "note": "Orion launches from KSC LC-39B with crew of 4.", "type": "nominal" },
+    { "met": 1, "label": "TLI", "note": "Trans-lunar injection.", "type": "nominal" },
+    { "met": 4, "label": "NRHO ARRIVAL", "note": "Orion arrives in a high lunar orbit and meets the waiting lander.", "type": "nominal" },
+    { "met": 5, "label": "DESCENT", "note": "2 crew transfer to the lander; powered descent to the lunar south pole.", "type": "info" },
+    { "met": 12, "label": "ASCENT", "note": "The lander returns to lunar orbit after the surface stay.", "type": "nominal" },
+    { "met": 14, "label": "TEI", "note": "Trans-Earth injection.", "type": "nominal" },
+    { "met": 18, "label": "SPLASHDOWN", "note": "Orion splashes down in the Pacific Ocean.", "type": "info" }
+  ]
+}

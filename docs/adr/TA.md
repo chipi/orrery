@@ -62,7 +62,7 @@ The production app ships a set of user-facing routes (the core experience below;
 | Corpus | Count |
 | --- | --- |
 | User-facing routes (top-level) | **27** |
-| Missions | **125** |
+| Missions | **126** |
 | Fleet entries | **274** |
 | Science sections | **171** |
 | Programs | **42** |

@@ -1,6 +1,15 @@
 {
-  "name": "Artemis IV",
-  "type": "ALUNIZADOR TRIPULADO · PLANIFICADO",
-  "first": "Primera misión tripulada a la Lunar Gateway; segundo alunizaje tripulado",
-  "description": "Artemis IV está planificada como la primera misión tripulada en visitar Lunar Gateway, la pequeña estación espacial de NASA en Near-Rectilinear Halo Orbit (NRHO) alrededor de la Luna. Debuta SLS Block 1B, más potente, cuya nueva Exploration Upper Stage (EUS) permite que un solo lanzamiento transporte tanto a Orion con 4 tripulantes como el módulo I-HAB (International Habitation) co-manifestado —construido por ESA y JAXA— para su entrega a Gateway. Después de acoplar Orion e I-HAB a la estación, dos tripulantes descienden al polo sur lunar a bordo de un SpaceX Starship Human Landing System para el segundo alunizaje tripulado del programa, mientras los demás atienden la creciente Gateway. Planificado para ~2028; la tripulación y el sitio de alunizaje están por asignarse."
+  "name": "Artemis III",
+  "type": "ATERRIZADOR TRIPULADO · PLANIFICADA",
+  "first": "Primer aterrizaje lunar tripulado desde el Apollo 17 (1972)",
+  "description": "El primer aterrizaje lunar tripulado en más de medio siglo. Arquitectura: el SLS Block 1 de la NASA lanza el Orion con 4 astronautas hacia una órbita Near-Rectilinear Halo (NRHO) alrededor de la Luna. Preposicionado en la NRHO se encuentra el Sistema de Aterrizaje Lunar (HLS) Starship de SpaceX, reabastecido en órbita baja terrestre por naves cisterna antes de su inyección trans-lunar. La tripulación del Orion se transfiere al HLS; 2 astronautas descienden a la región del polo sur lunar para ~6,5 días de operaciones en superficie mientras 2 permanecen en la NRHO. Después de las operaciones en superficie, el HLS despega de regreso a la NRHO para transferirse al Orion y el retorno a la Tierra. Posará a la primera mujer y a la primera persona de color en la Luna.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO SLS", "note": "Orion despega desde KSC LC-39B con tripulación de 4.", "type": "nominal" },
+    { "met": 1, "label": "ITL", "note": "Inyección translunar.", "type": "nominal" },
+    { "met": 4, "label": "LLEGADA A NRHO", "note": "Orion llega a la órbita Near-Rectilinear Halo; encuentro de cita con el HLS Starship preposicionado.", "type": "nominal" },
+    { "met": 5, "label": "DESCENSO", "note": "2 tripulantes se transfieren al HLS; descenso propulsado al polo sur lunar.", "type": "info" },
+    { "met": 12, "label": "ASCENSO", "note": "Ascenso del HLS a NRHO tras ~6,5 días de operaciones en superficie.", "type": "nominal" },
+    { "met": 14, "label": "ITT", "note": "Inyección transterrestre desde NRHO.", "type": "nominal" },
+    { "met": 18, "label": "AMERIZAJE", "note": "Orion ameriza en el océano Pacífico.", "type": "info" }
+  ]
 }

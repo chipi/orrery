@@ -21,7 +21,7 @@ const PROFILE_FAMILY_MISSIONS = [
   'apollo13',
   'apollo17',
   'artemis2',
-  'artemis3',
+  'artemis4',
   'chandrayaan3',
   'change5',
   'lro',

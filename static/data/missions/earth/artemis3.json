@@ -1,0 +1,55 @@
+{
+  "id": "artemis3",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 2027,
+  "status": "PLANNED",
+  "departure_date": "2027-09-01",
+  "arrival_date": "2027-09-01",
+  "transit_days": 0,
+  "vehicle": "SLS Block 1 (with a non-propulsive spacer in place of the upper stage)",
+  "payload": "Orion + 4-person crew; rendezvous and docking with pathfinder Starship and Blue Moon landers in low Earth orbit",
+  "delta_v": "~9.4 km/s (to LEO)",
+  "data_quality": "partial",
+  "credit": "© NASA — Artemis III. Since NASA's 2026-02-27 architecture change, a crewed low-Earth-orbit test before the first landing: Orion rendezvous and docking with pathfinder versions of the commercial landers, docked-vehicle and spacesuit tests, about two weeks in space. Crew named 2026-06-09: Randy Bresnik, Luca Parmitano (ESA), Andre Douglas, Frank Rubio. NASA says 2027 (reports range from mid- to late 2027).",
+  "links": [
+    {
+      "l": "Artemis III — NASA",
+      "u": "https://www.nasa.gov/mission/artemis-iii/",
+      "t": "intro"
+    },
+    {
+      "l": "Artemis III — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Artemis_III",
+      "t": "intro"
+    },
+    {
+      "l": "NASA names Artemis III crew (2026-06-09)",
+      "u": "https://www.nasa.gov/news-release/nasa-marches-toward-artemis-iii-mission-in-2027-names-crew-members/",
+      "t": "deep"
+    },
+    {
+      "l": "NASA adds mission to Artemis lunar program, updates architecture (2026-02-27)",
+      "u": "https://www.nasa.gov/news-release/nasa-adds-mission-to-artemis-lunar-program-updates-architecture/",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "sls-block-1",
+      "role": "launcher"
+    },
+    {
+      "id": "orion",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39b",
+      "role": "launch-site"
+    }
+  ]
+}

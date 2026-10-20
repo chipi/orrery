@@ -20,7 +20,7 @@
  * Run: node scripts/mobile/build-offline-manifest.mjs
  */
 import { execSync } from 'node:child_process';
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, statSync } from 'node:fs';
 
 const MOBILE = 1280;
 const SERVED = 'static/images';
@@ -54,7 +54,11 @@ const FULL_ONLY_BUCKETS = new Set(['hotspots', 'posters']); // tiles / downloada
 // from the template + the already-cached hero, so the ~83 MB JPEG corpus buys
 // nothing offline except 'Share card', which needs connectivity to send anyway.
 const SKIP_BUCKETS = new Set(['_staging', 'cards']);
-const bytesOf = (f) => Number(execSync(`stat -f%z "${f}"`).toString().trim());
+// statSync, not BSD `stat -f%z`: the script must run on Linux too.
+const bytesOf = (f) => statSync(f).size;
+// `find` order differs by OS and filesystem; sort so every machine writes the same manifest.
+const listFiles = (cmd) =>
+  execSync(cmd, { maxBuffer: 1e9 }).toString().trim().split('\n').filter(Boolean).sort();
 const mb = (b) => (b / 1048576).toFixed(1);
 
 /** Served base file → mobile-rung RELATIVE url + bytes. */
@@ -85,65 +89,50 @@ function isHero(file) {
 const basic = [];
 const full = [];
 const tally = { basicBytes: 0, fullBytes: 0, thumbs: 0, audio: 0 };
+// Two sources can resolve to one served url (a thumbnail's .png and .webp both → the .webp):
+// list and count each url once per tier, or it downloads twice and inflates the byte total.
+const seen = { basic: new Set(), full: new Set() };
+/** Add url to a tier once; returns whether it was new. */
+function add(tier, url, bytes) {
+  if (seen[tier].has(url)) return false;
+  seen[tier].add(url);
+  (tier === 'basic' ? basic : full).push(url);
+  tally[`${tier}Bytes`] += bytes;
+  return true;
+}
 
 // 1 · base images (heroes → Basic + Full; gallery 02+ → Full only)
-const bases = execSync(
+const bases = listFiles(
   `find ${SERVED} -type f \\( -name '*.webp' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.png' \\) ` +
     `! -name '*-[0-9]*.webp' ! -name '*.1x1.*' ! -name '*.thumb.*' ! -name '*.4x3.*' ! -name '*.16x9.*'`,
-  { maxBuffer: 1e9 },
-)
-  .toString()
-  .trim()
-  .split('\n')
-  .filter(Boolean);
+);
 
 for (const f of bases) {
   const bucket = f.split('/')[2];
   if (SKIP_BUCKETS.has(bucket)) continue;
   const { url, bytes } = mobileRung(f);
-  full.push(url);
-  tally.fullBytes += bytes;
+  add('full', url, bytes);
   // posters: full art is Full-only (its thumb goes to Basic below). hotspots: tiles, Full.
-  if (!FULL_ONLY_BUCKETS.has(bucket) && isHero(f)) {
-    basic.push(url);
-    tally.basicBytes += bytes;
-  }
+  if (!FULL_ONLY_BUCKETS.has(bucket) && isHero(f)) add('basic', url, bytes);
 }
 
 // 2 · thumbnails: hero thumb (01/single/override + poster .thumb) → Basic; gallery → Full
-const thumbs = execSync(`find ${SERVED} -type f \\( -name '*.1x1.*' -o -name '*.thumb.*' \\)`, {
-  maxBuffer: 1e9,
-})
-  .toString()
-  .trim()
-  .split('\n')
-  .filter(Boolean);
+const thumbs = listFiles(`find ${SERVED} -type f \\( -name '*.1x1.*' -o -name '*.thumb.*' \\)`);
 
 for (const f of thumbs) {
   const bucket = f.split('/')[2];
   if (SKIP_BUCKETS.has(bucket)) continue;
   const rel = '/' + f.replace(/^static\//, '');
   const b = bytesOf(f);
-  full.push(rel);
-  tally.fullBytes += b;
+  add('full', rel, b);
   const base = f.replace(/\.(1x1|thumb)\.\w+$/i, '.webp'); // the base this thumb belongs to
   const isPosterThumb = /\.thumb\.\w+$/i.test(f);
-  if (isPosterThumb || isHero(base)) {
-    basic.push(rel);
-    tally.basicBytes += b;
-    tally.thumbs += b;
-  }
+  if ((isPosterThumb || isHero(base)) && add('basic', rel, b)) tally.thumbs += b;
 }
 
 // 3 · audio → Full only (narration + tours)
-for (const f of execSync(`find static/audio -type f`, { maxBuffer: 1e9 })
-  .toString()
-  .trim()
-  .split('\n')
-  .filter(Boolean)) {
-  full.push('/' + f.replace(/^static\//, ''));
-  tally.fullBytes += bytesOf(f);
-  tally.audio += bytesOf(f);
+for (const f of listFiles(`find static/audio -type f`)) {
+  if (add('full', '/' + f.replace(/^static\//, ''), bytesOf(f))) tally.audio += bytesOf(f);
 }
 
 writeFileSync(

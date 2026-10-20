@@ -134,6 +134,22 @@ Do not close the umbrella issue automatically; security review is a recurring mi
 - Before cutting a major release
 - After landing any of: new server adapter, new third-party script, new deploy target, new external data source, new secret class
 
+## Accepted dependency risks
+
+`npm audit` on 2026-10-20 (#591), after the `replace` → `minimatch@3.1.5` override: 2 critical,
+16 high. Every remaining critical/high finding is in build or authoring tooling, none in the
+shipped app or the API servers. Re-check each release; remove a row when its fix lands.
+
+| Package (path) | Advisories | Why accepted | Revisit when |
+|---|---|---|---|
+| `tar` 6.2.1 (`@capacitor/assets` → its bundled `@capacitor/cli@5.7.8`) | GHSA-34x7-hfp2-rc4v, GHSA-8qq5-rm4j-mr97 (path traversal / overwrite on extraction) | Dev-only icon/splash generator. That old CLI uses `tar` only in `add` / `update` / `migrate` template extraction, which `@capacitor/assets` never calls. No archive we extract comes from outside. | `@capacitor/assets` ships with `@capacitor/cli` ≥ 8.0.2 |
+| `tar` 7.5.9 (bundled inside `gdal-async`) | same | A bundled copy can't be overridden. `gdal-async` runs only in local raster-processing scripts on files we produce. | a `gdal-async` release with `tar` ≥ 7.5.21 |
+| `vite` 5.4.21 (`vitepress@1.6.4`) | path traversal in optimized-deps `.map`, `launch-editor` UNC (Windows) | The docs site builder: runs locally and in CI, never serves users. The app itself is on vite 8. | vitepress 2 stable |
+| `sharp` < 0.35 (`@capacitor/assets`, image scripts) | inherited libvips / libheif CVEs | Build-time image processing of our own masters. The fix needs sharp 0.35, which is tracked in the licence-gate issue. | sharp 0.35 adopted |
+
+Resolved since the 2026-10-16 audit: the `@sveltejs/kit` Accept-header ReDoS (GHSA-29g2-3rmr-qm68)
+no longer reports at 2.70.3, and `handlebars` no longer appears.
+
 ---
 
 *docs/ops/security-review-playbook.md — born from GH #96 review on 2026-05-29. Update each cycle with what worked / what missed.*

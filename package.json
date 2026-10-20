@@ -204,6 +204,9 @@
   "overrides": {
     "@sentry/sveltekit": {
       "brace-expansion": "5.0.12"
+    },
+    "replace": {
+      "minimatch": "3.1.5"
     }
   }
 }

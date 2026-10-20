@@ -17,9 +17,19 @@ let installed = false;
 // the missing route node — #616). Those errors describe an abandoned page, not a bug.
 let reloading = false;
 
+// Where an in-flight client navigation is going. A deploy that removed the old
+// build's chunks fails exactly that navigation; reloading the CURRENT page would
+// drop the user back where they clicked from (#588), so the guard loads the target.
+let pendingTarget: string | null = null;
+
 /** True once the guard has started a reload of this page. */
 export function isGuardReloading(): boolean {
   return reloading;
+}
+
+/** Record the target of a client navigation in flight (null once it has landed). */
+export function notePendingNavigation(url: URL | null): void {
+  pendingTarget = url ? url.href : null;
 }
 
 export function installPreloadReloadGuard(): void {
@@ -40,7 +50,9 @@ export function installPreloadReloadGuard(): void {
       /* storage unavailable */
     }
     reloading = true;
-    window.location.reload();
+    if (pendingTarget && pendingTarget !== window.location.href)
+      window.location.assign(pendingTarget);
+    else window.location.reload();
   });
 }
 
@@ -48,4 +60,5 @@ export function installPreloadReloadGuard(): void {
 export function _resetPreloadGuardForTests(): void {
   installed = false;
   reloading = false;
+  pendingTarget = null;
 }

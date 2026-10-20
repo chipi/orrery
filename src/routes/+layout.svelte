@@ -48,6 +48,7 @@
   import { migrateLegacyLocaleCookie } from '$lib/locale-cookie-migration';
   import { afterNavigate, beforeNavigate, replaceState } from '$app/navigation';
   import { exitArScene } from '$lib/ar/launch-ar';
+  import { notePendingNavigation } from '$lib/observability/preload-guard';
   import { loadLadder } from '$lib/image-srcset';
   import { markAppMounted } from '$lib/responsive-image.svelte';
 
@@ -317,6 +318,13 @@
   // ARKit session and .ar-active class persist. beforeNavigate fires on that
   // popstate; exitArScene is idempotent (a no-op when nothing is active).
   beforeNavigate(() => exitArScene());
+
+  // #588: tell the preload guard where a client navigation is going, so a chunk
+  // that a deploy removed reloads into the target, not the page being left.
+  beforeNavigate((nav) => {
+    if (!nav.willUnload && nav.to?.url) notePendingNavigation(nav.to.url);
+  });
+  afterNavigate(() => notePendingNavigation(null));
 
   // Phase 14 (#342) — route-enter / route-exit + nav-flow telemetry.
   // SvelteKit fires afterNavigate on every successful nav (initial mount

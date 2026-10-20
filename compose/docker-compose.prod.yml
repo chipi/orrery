@@ -82,6 +82,15 @@ services:
       # Live data overlay (ADR-065). Pipeline-runner writes here; nginx
       # reads on next request.
       - ./static/data:/usr/share/nginx/html/data:ro
+    # Read-only root; nginx writes only its pid, temp bodies and (unused, logs go
+    # to stdout) log dir. No cap_drop: the master starts as root and needs
+    # DAC_OVERRIDE to enter /var/lib/nginx (nginx:nginx 750). Limits from the
+    # 14-day prod peak, 51 MiB (#599).
+    read_only: true
+    tmpfs: ['/tmp', '/run/nginx', '/var/lib/nginx/tmp', '/var/log/nginx']
+    security_opt: ['no-new-privileges:true']
+    mem_limit: 192m
+    pids_limit: 256
     healthcheck:
       # busybox wget on alpine; accept any HTTP/ response line as proof
       # nginx is alive (mirrors podcast_scraper's compose pattern).
@@ -112,6 +121,11 @@ services:
     # Non-root Node on an unprivileged port: needs no Linux capabilities (#599).
     cap_drop: [ALL]
     security_opt: ['no-new-privileges:true']
+    # Writes nothing outside /tmp. Limits: 14-day prod peak 89 MiB (#599).
+    read_only: true
+    tmpfs: ['/tmp']
+    mem_limit: 384m
+    pids_limit: 256
     depends_on:
       - lab-api
     ports:
@@ -170,6 +184,12 @@ services:
     # Non-root Node on an unprivileged port: needs no Linux capabilities (#599).
     cap_drop: [ALL]
     security_opt: ['no-new-privileges:true']
+    # Writes only state.json in the lab-api-state volume and /tmp.
+    # Limits: 14-day prod peak 88 MiB (#599).
+    read_only: true
+    tmpfs: ['/tmp']
+    mem_limit: 384m
+    pids_limit: 256
     ports:
       # Host loopback 8094 (was 8093): ADR-114 allocated 8093 to lab-api, but the
       # live box has `operator-viewer-1` healthy on 127.0.0.1:8093 (co-tenant,
@@ -240,8 +260,12 @@ services:
       # at build time, not injected here. Log shipping is handled by the
       # shared node Alloy (infra repo ADR-121) — no Grafana Cloud env vars needed.
       NODE_ENV: production
-    env_file:
-      # Staged from GH `prod`-scoped secrets every deploy (#263).
-      # Path is project-directory-relative (workflow passes
-      # --project-directory .) so this resolves to /srv/orrery/.env.
-      - .env
+    # No env_file (#599): it handed the whole prod .env (OAuth secrets, LiteLLM key,
+    # DSNs) to every one-shot run. The cron pipelines (ops/refresh-prod-data.sh:
+    # scripts/fetch-station-tles.mjs, scripts/fetch-launches.ts) read no environment
+    # variables. A manual run that needs a key passes it with `-e KEY`.
+    # Still root with a writable /repo bind: running as the deploy user needs that
+    # uid on the VPS, not verified from here.
+    # Limits: 14-day prod peak 175 MiB across all runs.
+    mem_limit: 768m
+    pids_limit: 512

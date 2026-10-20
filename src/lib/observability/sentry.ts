@@ -29,6 +29,7 @@ import { Capacitor } from '@capacitor/core';
 import { env as publicEnv } from '$env/dynamic/public';
 import { dev } from '$app/environment';
 import { MOBILE_INTERNAL, targetConfig } from '../target-env';
+import { isGuardReloading } from './preload-guard';
 
 // Git branch, injected by vite.config's `define`. Tags dev events by worktree.
 declare const __DEV_WORKTREE__: string;
@@ -138,6 +139,8 @@ export function initSentry(): void {
       //      fallback notice is shown (#474/#470/#430), not a bug to report.
       //    - deploy chunk-skew — a lazily-imported chunk 404s after a deploy; the
       //      vite:preloadError guard reloads to the fresh build.
+      //    - anything thrown after the preload guard started a reload of this page (#616).
+      if (isGuardReloading()) return null;
       const exc = event.exception?.values?.[0];
       const sig = `${exc?.type ?? ''} ${exc?.value ?? ''}`;
       if (

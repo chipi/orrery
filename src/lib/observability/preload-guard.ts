@@ -11,6 +11,16 @@ const SKEW_KEY = 'orrery.skew-reload-at';
 export const SKEW_WINDOW_MS = 20000;
 
 let installed = false;
+// Once the guard has decided to reload, this page is being discarded. A prevented
+// preload error makes Vite's helper resolve the import to undefined, so code waiting
+// on it can still throw before the reload lands (SvelteKit reads `node.universal` on
+// the missing route node — #616). Those errors describe an abandoned page, not a bug.
+let reloading = false;
+
+/** True once the guard has started a reload of this page. */
+export function isGuardReloading(): boolean {
+  return reloading;
+}
 
 export function installPreloadReloadGuard(): void {
   if (typeof window === 'undefined' || installed) return;
@@ -29,6 +39,7 @@ export function installPreloadReloadGuard(): void {
     } catch {
       /* storage unavailable */
     }
+    reloading = true;
     window.location.reload();
   });
 }
@@ -36,4 +47,5 @@ export function installPreloadReloadGuard(): void {
 /** Test seam: allow re-installing in a fresh jsdom window. */
 export function _resetPreloadGuardForTests(): void {
   installed = false;
+  reloading = false;
 }

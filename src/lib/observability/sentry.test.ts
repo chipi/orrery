@@ -135,6 +135,25 @@ describe('sentry dev rung (vite dev, no deploy env)', () => {
       ).not.toBeNull();
     });
 
+    it('drops errors from a page the preload guard is reloading, keeps them otherwise (#616)', async () => {
+      // A failed route-chunk import whose preload error the guard prevents resolves to undefined;
+      // SvelteKit then reads `node.universal` → TypeError while the page is being reloaded.
+      const guard = await import('./preload-guard');
+      const universal = {
+        type: 'TypeError',
+        value: "Cannot read properties of undefined (reading 'universal')",
+      };
+      expect(run(universal)).not.toBeNull();
+      guard._resetPreloadGuardForTests();
+      vi.stubGlobal('location', { ...window.location, reload: vi.fn() });
+      guard.installPreloadReloadGuard();
+      window.dispatchEvent(new Event('vite:preloadError', { cancelable: true }));
+      initMock.mockClear();
+      expect(run(universal)).toBeNull();
+      vi.unstubAllGlobals();
+      guard._resetPreloadGuardForTests();
+    });
+
     it('keeps CSS preload failures (not skew: guard reloads, stable hash) and still drops chunk skew', () => {
       expect(
         run({

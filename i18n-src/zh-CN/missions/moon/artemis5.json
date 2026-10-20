@@ -1,0 +1,50 @@
+{
+  "name": "Artemis V",
+  "type": "CREWED LANDER · PLANNED",
+  "first": "Artemis时代的第二次载人登月——月球基地的开端",
+  "description": "Artemis V计划成为月球南极附近的第二次载人登月，在同一年内紧随Artemis IV之后——这是NASA 2026年提出的“每年至少一次着陆”目标的一部分。它旨在推动从短期造访转向长期驻留：NASA于2026年3月选择把力量投入月面基地，而不是完成月球轨道上的Gateway空间站，后者现已暂停。与Artemis IV一样，SLS发射载有四名乘组成员的Orion，由一台商业着陆器送其中两人下降。SLS已获资金支持，可飞行至Artemis V；对于之后的任务，NASA已提出商业、可重复使用的替代方案。计划于2028年末执行；乘组、着陆器和着陆地点尚未确定。",
+  "events": [
+    {
+      "met": 0,
+      "label": "SLS 发射",
+      "note": "Orion 从 KSC LC-39B 发射，搭载 4 名航天员。",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TLI",
+      "note": "地月转移轨道射入。",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "抵达 NRHO",
+      "note": "Orion 抵达高月球轨道，与等候的着陆器会合。",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "下降",
+      "note": "2 名航天员转移至着陆器；动力下降至月球南极。",
+      "type": "info"
+    },
+    {
+      "met": 12,
+      "label": "上升",
+      "note": "月面停留结束后，着陆器返回月球轨道。",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "TEI",
+      "note": "地球转移注入。",
+      "type": "nominal"
+    },
+    {
+      "met": 18,
+      "label": "溅落",
+      "note": "Orion 在太平洋溅落。",
+      "type": "info"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
-  "name": "Artemis III",
+  "name": "Artemis IV",
   "type": "LANDER MIT BESATZUNG · GEPLANT",
   "first": "Erste bemannte Mondlandung seit Apollo 17 (1972)",
-  "description": "Die erste bemannte Mondlandung seit über einem halben Jahrhundert. Architektur: NASAs SLS Block 1 startet Orion mit 4 Besatzungsmitgliedern zu einem Near-Rectilinear Halo Orbit (NRHO) um den Mond. Vorgeplatziert in der NRHO ist ein SpaceX Starship Human Landing System (HLS), das in einer niedrigen Erdumlaufbahn durch Tanker aufgefüllt wird, bevor es zur Trans-Lunar-Injektion gelangt. Die Orion-Besatzung wechselt zum HLS; 2 Astronauten steigen in der Region des Mondsüdpols ab für etwa 6,5 Tage Oberflächenoperationen, während 2 in der NRHO bleiben. Nach den Oberflächenoperationen startet das HLS zurück zur NRHO für den Transfer zu Orion und die Rückkehr zur Erde. Wird die erste Frau und die erste Person of colour auf dem Mond landen.",
+  "description": "Seit der Planänderung der NASA vom Februar 2026 ist Artemis IV die Mission, die Menschen zurück auf die Mondoberfläche bringt – die erste Landung seit Apollo 17 im Jahr 1972 und die erste überhaupt in der Nähe des Südpols. Die SLS startet bei ihrem letzten Flug mit der Übergangsoberstufe Orion mit vier Besatzungsmitgliedern zum Mond. In der Mondumlaufbahn treffen sie auf einen kommerziellen Lander – das Starship von SpaceX oder den Blue Moon von Blue Origin, ausgewählt nach den Kopplungstests von Artemis III –, und zwei Astronauten steigen in die Region des Südpols ab für etwa eine Woche Oberflächenarbeit, während zwei an Bord von Orion bleiben. Der Südpol ist das Ziel, weil seine dauerhaft beschatteten Krater Wassereis enthalten, das künftige Missionen zu Trinkwasser, Sauerstoff und Raketentreibstoff verarbeiten könnten. Die NASA hat neun mögliche Landeregionen ermittelt. Geplant für Anfang 2028; die Besatzung ist noch nicht benannt.",
   "events": [
     {
       "met": 0,
@@ -19,25 +19,25 @@
     {
       "met": 4,
       "label": "NRHO-ANKUNFT",
-      "note": "Orion erreicht die Near-Rectilinear Halo Orbit; Rendezvous mit dem vorgeplatzten Starship HLS.",
+      "note": "Orion erreicht eine hohe Mondumlaufbahn und trifft auf den wartenden Lander.",
       "type": "nominal"
     },
     {
       "met": 5,
       "label": "ABSTIEG",
-      "note": "Transfer von 2 Besatzungsmitgliedern zum HLS; Motorischer Abstieg zum Mondsüdpol.",
+      "note": "Transfer von 2 Besatzungsmitgliedern zum Lander; Motorischer Abstieg zum Mondsüdpol.",
       "type": "info"
     },
     {
       "met": 12,
       "label": "AUFSTIEG",
-      "note": "HLS-Aufstieg zum NRHO nach ca. 6,5 Tagen Oberflächenbetrieb.",
+      "note": "Der Lander kehrt nach etwa einer Woche Oberflächenbetrieb in die Mondumlaufbahn zurück.",
       "type": "nominal"
     },
     {
       "met": 14,
       "label": "TEI",
-      "note": "Trans-Earth-Injektion von NRHO.",
+      "note": "Trans-Earth-Injektion.",
       "type": "nominal"
     },
     {

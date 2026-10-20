@@ -2,7 +2,7 @@
   "name": "Artemis II",
   "type": "SURVOL EN ÉQUIPAGE · VOLÉ",
   "first": "Premier vol en équipage au-delà de l'orbite terrestre basse depuis Apollo 17 (1972) — et la mission qui a inspiré ce projet",
-  "description": "Le premier vol en équipage du programme Artemis et l'étincelle qui est devenue Orrery. Le SLS Block 1 de NASA a lancé un vaisseau spatial Orion avec quatre astronautes — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) et Jeremy Hansen (MS) de l'ASC — sur une trajectoire hybride à retour libre qui les a fait pivoter autour de la face cachée de la Lune à environ 9 200 km d'altitude et les a ramenés sur Terre sans aucune brûlure d'insertion sur l'orbite lunaire. Une mission de 10 jours se terminant par l'amerrissage du Pacifique. Systèmes de survie, de navigation et de rentrée d'Orion qualifiés pour le vol en équipage avant l'atterrissage en surface d'Artemis III.",
+  "description": "Le premier vol en équipage du programme Artemis et l'étincelle qui est devenue Orrery. Le 1er avril 2026, le SLS Block 1 de NASA a lancé un vaisseau spatial Orion avec quatre astronautes — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) et Jeremy Hansen (MS) de l'ASC — sur une trajectoire à retour libre qui les a fait pivoter autour de la face cachée de la Lune à environ 6 500 km au-dessus de la surface et les a ramenés chez eux sans aucune brûlure d'insertion sur l'orbite lunaire. À 406 771 km de la Terre, ils ont voyagé plus loin que tout humain avant eux, battant le record d'Apollo 13 en 1970. Après un vol de 9 jours, Orion a amerri dans le Pacifique au large de San Diego le 10 avril. Le vol a qualifié le soutien-vie, la navigation et le bouclier thermique d'Orion pour les missions en équipage avant le premier alunissage, désormais prévu pour Artemis IV.",
   "events": [
     {
       "met": 0,
@@ -23,9 +23,9 @@
       "type": "nominal"
     },
     {
-      "met": 4,
+      "met": 5.02,
       "label": "SURVOL LUNAIRE",
-      "note": "Approche la plus proche de l’autre côté, ~9 200 km d’altitude. Pas d'insertion d'orbite - la géométrie à retour libre ramène Orion sur Terre.",
+      "note": "Approche la plus proche de l’autre côté, ~6 500 km d’altitude, et la plus grande distance jamais parcourue par des humains : 406 771 km de la Terre. Pas d'insertion d'orbite - la géométrie à retour libre ramène Orion sur Terre.",
       "type": "info"
     },
     {
@@ -35,7 +35,7 @@
       "type": "nominal"
     },
     {
-      "met": 10,
+      "met": 9.06,
       "label": "AMERRISSAGE",
       "note": "Rentrée d'Orion et amerrissage dans l'océan Pacifique.",
       "type": "info"

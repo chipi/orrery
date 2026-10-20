@@ -1,7 +1,7 @@
 {
   "name": "Near-Rectilinear Halo Orbit",
   "short": "NRHO",
-  "story": "Niet echt een baan om de Maan — meer een langgerekte acht rond de aarde-maan L1- en L2-Lagrangepunten, die dicht bij de zuidpool van de Maan komt op perilunium (~3.000 km) en zich ver boven de noordpool uitstrekt op apolunium (~70.000 km). De geometrie heeft twee troeven: continue zichtlijn terug naar de aarde (geen communicatie-onderbreking) en zeer laag brandstofverbruik voor baanhandhaving — een paar m/s per jaar. NASA's Lunar Gateway zal, wanneer het vliegt, in NRHO verblijven. CAPSTONE vloog daar in 2022 als verkenner.",
+  "story": "Niet echt een baan om de Maan — meer een langgerekte acht rond de aarde-maan L1- en L2-Lagrangepunten, die dicht bij de zuidpool van de Maan komt op perilunium (~3.000 km) en zich ver boven de noordpool uitstrekt op apolunium (~70.000 km). De geometrie heeft twee troeven: continue zichtlijn terug naar de aarde (geen communicatie-onderbreking) en zeer laag brandstofverbruik voor baanhandhaving — een paar m/s per jaar. NASA's Lunar Gateway was ontworpen om in NRHO te verblijven; NASA heeft het in 2026 stilgelegd. CAPSTONE vloog daar in 2022 als verkenner.",
   "comparison": "Een NRHO voltooit één baan om de ~6,5 dagen — ruwweg een kwart van de baanperiode van de Maan zelf. Het ruimtevaartuig bevindt zich altijd in de buurt van het zuidpoolgebied, maar nooit direct erboven.",
   "residents": [
     {
@@ -11,7 +11,7 @@
     },
     {
       "id": "gateway",
-      "label": "Lunar Gateway — geplande bemande buitenpost",
+      "label": "Lunar Gateway — stilgelegd in 2026",
       "agency": "NASA"
     }
   ],

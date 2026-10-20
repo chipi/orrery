@@ -1,0 +1,50 @@
+{
+  "name": "Artemis V",
+  "type": "LANDER TRIPULADO · PLANEJADO",
+  "first": "Segundo pouso tripulado da era Artemis — o início de uma base lunar",
+  "description": "A Artemis V está planejada como o segundo pouso tripulado perto do polo sul lunar, na sequência da Artemis IV dentro do mesmo ano — parte da meta da NASA de 2026 de pelo menos um pouso por ano. Ela deve iniciar a passagem de visitas curtas para uma presença duradoura: o trabalho rumo a uma base na superfície, que a NASA escolheu em março de 2026 em vez de concluir a estação Gateway em órbita lunar, agora suspensa. Como na Artemis IV, o SLS lança a Orion com quatro tripulantes e um módulo de pouso comercial leva dois deles até a superfície. O SLS tem verba para voar até a Artemis V; para as missões seguintes, a NASA propôs alternativas comerciais e reutilizáveis. Previsto para o fim de 2028; tripulação, módulo de pouso e local de pouso ainda não foram escolhidos.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO SLS",
+      "note": "Orion é lançado do KSC LC-39B com tripulação de 4 pessoas.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TLI",
+      "note": "Injeção translunar.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "CHEGADA À NRHO",
+      "note": "A Orion chega a uma órbita lunar alta e encontra o módulo de pouso à espera.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "DESCIDA",
+      "note": "Transferência de 2 tripulantes para o módulo de pouso; descida motorizada ao polo sul lunar.",
+      "type": "info"
+    },
+    {
+      "met": 12,
+      "label": "SUBIDA",
+      "note": "O módulo de pouso retorna à órbita lunar após a estadia na superfície.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "TEI",
+      "note": "Injeção Trans-Terra.",
+      "type": "nominal"
+    },
+    {
+      "met": 18,
+      "label": "AMERISSAGEM",
+      "note": "Orion amerissa no Oceano Pacífico.",
+      "type": "info"
+    }
+  ]
+}

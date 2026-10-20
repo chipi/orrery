@@ -1,8 +1,8 @@
 {
-  "name": "Artemis III",
+  "name": "Artemis IV",
   "type": "LANDER TRIPULADO · PLANEJADO",
   "first": "Primeiro pouso lunar tripulado desde a Apollo 17 (1972)",
-  "description": "O primeiro pouso lunar tripulado em mais de meio século. Arquitetura: o SLS Block 1 da NASA lança o Orion com 4 astronautas para uma órbita Near-Rectilinear Halo Orbit (NRHO) ao redor da Lua. Um Starship Human Landing System (HLS) da SpaceX está pré-posicionado na NRHO, reabastecido em órbita terrestre baixa por tanques antes de sua injeção translunares. A tripulação do Orion se transfere para o HLS; 2 astronautas descem para a região do pólo sul lunar por ~6,5 dias de operações de superfície enquanto 2 permanecem na NRHO. Após as operações de superfície, o HLS lança de volta para a NRHO para transferência ao Orion e retorno à Terra. Pousará a primeira mulher e a primeira pessoa de cor na Lua.",
+  "description": "Desde a mudança de plano da NASA em fevereiro de 2026, a Artemis IV é a missão que devolve pessoas à superfície lunar — o primeiro pouso desde a Apollo 17, em 1972, e o primeiro já feito perto do polo sul. O SLS, em seu último voo com o estágio superior provisório, lança a Orion com quatro tripulantes rumo à Lua. Em órbita lunar, eles encontram um módulo de pouso comercial — a Starship da SpaceX ou o Blue Moon da Blue Origin, a ser escolhido após os testes de acoplamento da Artemis III — e dois astronautas descem à região polar sul para cerca de uma semana de trabalho na superfície, enquanto dois permanecem a bordo da Orion. O polo sul é o alvo porque suas crateras permanentemente sombreadas guardam gelo de água, que missões futuras poderão transformar em água potável, oxigênio e propelente. A NASA identificou nove regiões candidatas ao pouso. Previsto para o início de 2028; a tripulação ainda não foi nomeada.",
   "events": [
     {
       "met": 0,
@@ -19,25 +19,25 @@
     {
       "met": 4,
       "label": "CHEGADA DO NRHO",
-      "note": "Orion chega à Near-Rectilinear Halo Orbit; encontro com a Starship HLS pré-posicionada.",
+      "note": "A Orion chega a uma órbita lunar alta e encontra o módulo de pouso à espera.",
       "type": "nominal"
     },
     {
       "met": 5,
       "label": "DESCIDA",
-      "note": "Transferência de 2 tripulantes para HLS; descida motorizada ao pólo sul lunar.",
+      "note": "Transferência de 2 tripulantes para o módulo de pouso; descida motorizada ao polo sul lunar.",
       "type": "info"
     },
     {
       "met": 12,
       "label": "SUBIDA",
-      "note": "Subida HLS para NRHO após aproximadamente 6,5 dias de operações de superfície.",
+      "note": "O módulo de pouso retorna à órbita lunar após cerca de uma semana de operações de superfície.",
       "type": "nominal"
     },
     {
       "met": 14,
       "label": "TEI",
-      "note": "Injeção Trans-Terra de NRHO.",
+      "note": "Injeção Trans-Terra.",
       "type": "nominal"
     },
     {

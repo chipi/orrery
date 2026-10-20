@@ -1,7 +1,7 @@
 {
   "name": "Near-Rectilinear Halo Orbit",
   "short": "NRHO",
-  "story": "Eigentlich keine Umlaufbahn um den Mond — eher eine lange Acht um die Lagrange-Punkte L1 und L2 des Erde-Mond-Systems, die beim Perilunium nahe am lunaren Südpol vorbeiführt (~3.000 km) und beim Apolunium weit über den Nordpol hinausreicht (~70.000 km). Die Geometrie bietet zwei Vorteile: durchgehende Sichtverbindung zur Erde (keine Kommunikationsausfälle) und sehr geringer Treibstoffbedarf für die Bahnerhaltung — einige m/s pro Jahr. NASA's Lunar Gateway wird, sobald es fliegt, in einer NRHO stationiert sein. CAPSTONE flog 2022 als Wegbereiter dorthin.",
+  "story": "Eigentlich keine Umlaufbahn um den Mond — eher eine lange Acht um die Lagrange-Punkte L1 und L2 des Erde-Mond-Systems, die beim Perilunium nahe am lunaren Südpol vorbeiführt (~3.000 km) und beim Apolunium weit über den Nordpol hinausreicht (~70.000 km). Die Geometrie bietet zwei Vorteile: durchgehende Sichtverbindung zur Erde (keine Kommunikationsausfälle) und sehr geringer Treibstoffbedarf für die Bahnerhaltung — einige m/s pro Jahr. Das Lunar Gateway der NASA war dafür ausgelegt, in einer NRHO stationiert zu sein; die NASA hat es 2026 pausiert. CAPSTONE flog 2022 als Wegbereiter dorthin.",
   "comparison": "Eine NRHO vollendet eine Schleife alle ~6,5 Tage — ungefähr ein Viertel der Umlaufperiode des Mondes. Das Raumfahrzeug befindet sich immer in der Nähe der Südpol-Region, aber nie direkt darüber.",
   "residents": [
     {
@@ -11,7 +11,7 @@
     },
     {
       "id": "gateway",
-      "label": "Lunar Gateway — geplanter bemannter Außenposten",
+      "label": "Lunar Gateway — 2026 pausiert",
       "agency": "NASA"
     }
   ],

@@ -8,7 +8,7 @@
     },
     {
       "type": "prose",
-      "md": "L'autre différence concerne qui y va. Apollo était un projet national, une démonstration de la supériorité américaine sur l'Union soviétique, piloté entièrement par des astronautes américains sur du matériel américain. Artemis est délibérément international et délibérément commercial — l'Europe construit le module de service qui alimente Orion, le Japon et le Canada contribuent au Gateway lunaire, SpaceX et d'autres construisent les atterrisseurs, et les équipages comprendront des astronautes de nations partenaires. Là où Apollo était une course, Artemis est une coalition."
+      "md": "L'autre différence concerne qui y va. Apollo était un projet national, une démonstration de la supériorité américaine sur l'Union soviétique, piloté entièrement par des astronautes américains sur du matériel américain. Artemis est délibérément international et délibérément commercial — l'Europe construit le module de service qui alimente Orion, le Japon, le Canada et l'Europe se sont engagés à construire la station Gateway en orbite lunaire (en pause depuis 2026), SpaceX et Blue Origin construisent les atterrisseurs, et les équipages comprennent des astronautes de nations partenaires — le Canadien Jeremy Hansen a survolé la Lune lors d'Artemis II, et Luca Parmitano de l'ESA est nommé pour Artemis III. Là où Apollo était une course, Artemis est une coalition."
     }
   ],
   "goals": [
@@ -26,7 +26,7 @@
     },
     {
       "type": "prose",
-      "md": "L'objectif plus profond est la permanence et un tremplin. Artemis vise à construire le Gateway — une petite station en orbite lunaire — et éventuellement une infrastructure de surface, transformant la Lune d'une destination en une base. Et il est explicitement présenté comme une répétition pour Mars : l'endroit où apprendre à vivre et travailler sur un autre monde, suffisamment proche de la Terre pour que les erreurs soient survivables, avant de tenter la même chose à des mois de distance."
+      "md": "L'objectif plus profond est la permanence et un tremplin. Artemis s'était fixé de construire le Gateway — une petite station en orbite lunaire — puis une infrastructure de surface. En 2026, la NASA a mis le Gateway en pause et consacré l'effort à une base au pôle sud, transformant la Lune d'une destination en un lieu de travail. Et il est explicitement présenté comme une répétition pour Mars : l'endroit où apprendre à vivre et travailler sur un autre monde, suffisamment proche de la Terre pour que les erreurs soient survivables, avant de tenter la même chose à des mois de distance."
     },
     {
       "type": "prose",
@@ -36,7 +36,7 @@
   "outcome": [
     {
       "type": "prose",
-      "md": "Artemis est en cours mais pas encore à la surface de la Lune. Artemis I a volé en 2022 — un Orion sans équipage a bouclé autour de la Lune et est revenu, prouvant la fusée SLS et le vaisseau lors de leur premier vol. Le survol habité (Artemis II) et l'atterrissage (Artemis III) suivent, bien que les deux aient été reportés à plusieurs reprises alors que l'énorme programme multi-contractants traverse les parties les plus difficiles : le bouclier thermique, l'atterrisseur Starship, les nouvelles combinaisons spatiales, et le ravitaillement orbital dont dépend l'atterrisseur."
+      "md": "Artemis a fait voler des humains autour de la Lune mais ne s'y est pas encore posé. Artemis I a volé sans équipage en 2022, prouvant le SLS et Orion et révélant une usure inattendue du bouclier thermique d'Orion. Artemis II a emmené quatre astronautes autour de la Lune en avril 2026, plus loin de la Terre que quiconque avant eux. En février 2026, la NASA a changé le plan : Artemis III (2027) est devenue un essai en équipage en orbite terrestre, où Orion s'amarre aux atterrisseurs commerciaux, et le premier alunissage est passé à Artemis IV, prévue pour début 2028, avec Artemis V à suivre fin 2028. La NASA a aussi annulé la version plus puissante du SLS et mis en pause la station Gateway. Les parties les plus difficiles restent à venir : les atterrisseurs, les nouvelles combinaisons spatiales, et le ravitaillement orbital dont dépend le Starship."
     },
     {
       "type": "figure",
@@ -48,7 +48,7 @@
     },
     {
       "type": "prose",
-      "md": "Le programme est aussi une étude sur la manière dont le spatial à grande échelle se fait différemment aujourd'hui. Apollo était une seule agence dirigeant des contractants vers une échéance unique ; Artemis est un réseau de partenaires internationaux et de fournisseurs commerciaux, avec la NASA achetant un atterrisseur lunaire en tant que service à SpaceX plutôt que de le posséder. Cette structure répartit coûts et risques et construit une coalition durable — et cela signifie aussi que le calendrier dépend de nombreuses organisations, y compris un Starship qui doit d'abord faire ses preuves, donc le calendrier est véritablement incertain d'une manière que le sprint par force brute d'Apollo ne l'était pas."
+      "md": "Le programme est aussi une étude sur la manière dont le spatial à grande échelle se fait différemment aujourd'hui. Apollo était une seule agence dirigeant des contractants vers une échéance unique ; Artemis est un réseau de partenaires internationaux et de fournisseurs commerciaux, avec la NASA achetant des atterrisseurs lunaires en tant que service à SpaceX et à Blue Origin plutôt que de les posséder. Cette structure répartit coûts et risques et construit une coalition durable — et cela signifie aussi que le calendrier dépend de nombreuses organisations, y compris un Starship qui doit d'abord faire ses preuves, donc le calendrier est véritablement incertain d'une manière que le sprint par force brute d'Apollo ne l'était pas."
     }
   ],
   "narrative": [
@@ -72,7 +72,7 @@
     },
     {
       "type": "prose",
-      "md": "S'il réussit, l'héritage est une présence humaine permanente au-delà de l'orbite terrestre basse pour la première fois — une base au pôle sud lunaire, une station en orbite lunaire, et l'expérience opérationnelle de vivre d'un autre monde que toute mission vers Mars nécessitera. La Lune devient un endroit où les gens travaillent plutôt qu'un endroit que douze personnes ont visité autrefois."
+      "md": "S'il réussit, l'héritage est une présence humaine permanente au-delà de l'orbite terrestre basse pour la première fois — une base au pôle sud lunaire et l'expérience opérationnelle de vivre d'un autre monde que toute mission vers Mars nécessitera. La Lune devient un endroit où les gens travaillent plutôt qu'un endroit que douze personnes ont visité autrefois."
     },
     {
       "type": "prose",

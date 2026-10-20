@@ -2,7 +2,7 @@
   "name": "Artemis II",
   "type": "Vorbeiflug mit Besatzung · Geflogen",
   "first": "Erster bemannter Flug außerhalb der erdnahen Umlaufbahn seit Apollo 17 (1972) – und die Mission, die dieses Projekt inspirierte",
-  "description": "Der erste bemannte Flug des Artemis-Programms und der Funke, der zu Orrery führte. NASAs SLS Block 1 startete ein Orion-Raumschiff mit vier Astronauten – Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) und Jeremy Hansen (MS) von CSA – auf eine hybride Flugbahn mit freier Rückkehr, die sie in etwa 9.200 km Höhe um die andere Seite des Mondes schwenkte und sie ohne Zündung zum Einschwenken in die Mondumlaufbahn zur Erde zurückbrachte. Eine 10-tägige Mission, die mit einer Wasserung im Pazifik endet. Qualifizierte die Lebenserhaltungs-, Navigations- und Wiedereintrittssysteme von Orion für den bemannten Flug vor der Landung der Artemis III.",
+  "description": "Der erste bemannte Flug des Artemis-Programms und der Funke, der zu Orrery führte. Am 1. April 2026 startete NASAs SLS Block 1 ein Orion-Raumschiff mit vier Astronauten – Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) und Jeremy Hansen (MS) von CSA – auf eine Flugbahn mit freier Rückkehr, die sie in etwa 6.500 km Höhe über der Oberfläche um die andere Seite des Mondes schwenkte und sie ohne Zündung zum Einschwenken in die Mondumlaufbahn nach Hause brachte. Mit 406.771 km Entfernung von der Erde reisten sie weiter als je Menschen vor ihnen und übertrafen damit den Rekord von Apollo 13 aus dem Jahr 1970. Nach einem 9-tägigen Flug wasserte Orion am 10. April im Pazifik vor San Diego. Der Flug qualifizierte die Lebenserhaltungs-, Navigations- und Hitzeschildsysteme von Orion für bemannte Missionen vor der ersten Landung, die jetzt für Artemis IV geplant ist.",
   "events": [
     {
       "met": 0,
@@ -23,9 +23,9 @@
       "type": "nominal"
     },
     {
-      "met": 4,
+      "met": 5.02,
       "label": "Mondvorbeiflug",
-      "note": "Nächste Annäherung über die andere Seite, ca. 9.200 km Höhe. Kein Einsetzen in die Umlaufbahn – die freie Rückkehrgeometrie schleudert Orion zurück zur Erde.",
+      "note": "Nächste Annäherung über die andere Seite, ca. 6.500 km Höhe, und die weiteste Entfernung, die Menschen je zurückgelegt haben: 406.771 km von der Erde. Kein Einsetzen in die Umlaufbahn – die freie Rückkehrgeometrie schleudert Orion zurück zur Erde.",
       "type": "info"
     },
     {
@@ -35,7 +35,7 @@
       "type": "nominal"
     },
     {
-      "met": 10,
+      "met": 9.06,
       "label": "WASSERUNG",
       "note": "Orion-Wiedereintritt und Wasserung im Pazifik.",
       "type": "info"

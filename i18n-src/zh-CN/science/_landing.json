@@ -59,7 +59,7 @@
       "paragraphs": [
         "几乎每个行星际任务,从 Voyager 到 Perseverance,都运行相同的脚本:",
         "[发射](mission-phases/launch)——离开大气层进入近地轨道。[跨行星入轨](mission-phases/trans-x-injection)——在近地点进行一次强力燃烧,将你抛向月球(TLI)、火星(TMI)、金星(TVI)或木星(TJI)的转移椭圆。[轨迹修正机动](mission-phases/tcm)——巡航期间的微小燃烧,用于修正偏差误差。通常进行 1-3 次。[入轨](mission-phases/orbit-insertion)——在目的地进行制动燃烧,使你进入捕获轨道。[EDL](mission-phases/edl)——进入、下降、着陆——用于着陆器。六分钟的超音速大气混乱。",
-        "月球任务有时会绕道经过[近直线晕轨道](mission-phases/nrho)(Gateway 将驻留在其中一个),载人 Apollo 飞行采用[自由返回轨道](transfers/free-return)——8 字形路径,如果航天器上的每个发动机都失效,会自动将你送回地球。Apollo 13 的生命归功于这种几何学。"
+        "月球任务有时会绕道经过[近直线晕轨道](mission-phases/nrho)(2026 年暂停的 Gateway 空间站原设计驻留其中),载人 Apollo 飞行采用[自由返回轨道](transfers/free-return)——8 字形路径,如果航天器上的每个发动机都失效,会自动将你送回地球。Apollo 13 的生命归功于这种几何学。"
       ]
     },
     {

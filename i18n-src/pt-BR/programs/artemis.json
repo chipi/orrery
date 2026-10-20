@@ -8,7 +8,7 @@
     },
     {
       "type": "prose",
-      "md": "A outra diferença é quem vai. Apollo foi um projeto nacional, uma demonstração da superioridade americana sobre a União Soviética, operado inteiramente por astronautas americanos em equipamentos americanos. Artemis é deliberadamente internacional e deliberadamente comercial — a Europa constrói o módulo de serviço que alimenta o Orion, Japão e Canadá contribuem para o Gateway lunar, SpaceX e outras constroem os módulos de pouso, e as tripulações incluirão astronautas de nações parceiras. Onde Apollo foi uma corrida, Artemis é uma coalizão."
+      "md": "A outra diferença é quem vai. Apollo foi um projeto nacional, uma demonstração da superioridade americana sobre a União Soviética, operado inteiramente por astronautas americanos em equipamentos americanos. Artemis é deliberadamente internacional e deliberadamente comercial — a Europa constrói o módulo de serviço que alimenta o Orion, Japão, Canadá e Europa se comprometeram a construir a estação Gateway em órbita lunar (suspensa em 2026), SpaceX e Blue Origin constroem os módulos de pouso, e as tripulações incluem astronautas de nações parceiras — o canadense Jeremy Hansen voou ao redor da Lua na Artemis II, e Luca Parmitano, da ESA, foi nomeado para a Artemis III. Onde Apollo foi uma corrida, Artemis é uma coalizão."
     }
   ],
   "goals": [
@@ -26,7 +26,7 @@
     },
     {
       "type": "prose",
-      "md": "O objetivo mais profundo é permanência e um ponto de partida. Artemis visa construir o Gateway — uma pequena estação em órbita lunar — e eventualmente infraestrutura de superfície, transformando a Lua de um destino em uma base. E é explicitamente apresentado como um ensaio para Marte: o lugar para aprender como viver e trabalhar em outro mundo, perto o suficiente da Terra para que os erros sejam sobrevivíveis, antes de tentar a mesma coisa a meses de distância."
+      "md": "O objetivo mais profundo é permanência e um ponto de partida. Artemis se propôs a construir o Gateway, uma pequena estação em órbita lunar, e depois infraestrutura na superfície. Em 2026, a NASA suspendeu o Gateway e concentrou o esforço em uma base no polo sul, transformando a Lua de um destino em um lugar de trabalho. E é explicitamente apresentado como um ensaio para Marte: o lugar para aprender como viver e trabalhar em outro mundo, perto o suficiente da Terra para que os erros sejam sobrevivíveis, antes de tentar a mesma coisa a meses de distância."
     },
     {
       "type": "prose",
@@ -36,7 +36,7 @@
   "outcome": [
     {
       "type": "prose",
-      "md": "Artemis está em andamento mas ainda não na superfície da Lua. Artemis I voou em 2022 — uma Orion não tripulada fez um loop ao redor da Lua e retornou, provando o foguete SLS e a espaçonave em seu primeiro voo. O sobrevoo tripulado (Artemis II) e o pouso (Artemis III) seguem, embora ambos tenham sido adiados repetidamente enquanto o enorme programa de múltiplos contratados trabalha nas partes mais difíceis: o escudo térmico, o módulo de pouso Starship, os novos trajes espaciais e o reabastecimento orbital do qual o módulo de pouso depende."
+      "md": "Artemis levou pessoas ao redor da Lua, mas ainda não pousou. Artemis I voou sem tripulação em 2022, provando o SLS e a Orion e revelando um desgaste inesperado no escudo térmico da Orion. Artemis II levou quatro astronautas ao redor da Lua em abril de 2026, mais longe da Terra do que qualquer pessoa antes deles. Em fevereiro de 2026, a NASA mudou o plano: a Artemis III (2027) virou um teste tripulado em órbita terrestre, acoplando a Orion aos módulos de pouso comerciais, e o primeiro pouso passou para a Artemis IV, planejada para o início de 2028, com a Artemis V logo depois, no fim de 2028. A NASA também cancelou a versão mais potente do SLS e suspendeu a estação Gateway. As partes mais difíceis ainda estão por vir: os módulos de pouso, os novos trajes espaciais e o reabastecimento orbital de que a Starship depende."
     },
     {
       "type": "figure",
@@ -48,7 +48,7 @@
     },
     {
       "type": "prose",
-      "md": "O programa também é um estudo sobre como os grandes projetos espaciais são feitos de forma diferente agora. Apollo era uma única agência dirigindo contratados em direção a um prazo; Artemis é uma rede de parceiros internacionais e provedores comerciais, com a NASA comprando um módulo de pouso lunar como um serviço da SpaceX em vez de possuí-lo. Essa estrutura distribui custo e risco e constrói uma coalizão durável — e também significa que o cronograma depende de muitas organizações, incluindo uma Starship que primeiro precisa provar a si mesma, então a linha do tempo é genuinamente incerta de uma forma que a corrida de força bruta do Apollo não era."
+      "md": "O programa também é um estudo sobre como os grandes projetos espaciais são feitos de forma diferente agora. Apollo era uma única agência dirigindo contratados em direção a um prazo; Artemis é uma rede de parceiros internacionais e provedores comerciais, com a NASA comprando módulos de pouso lunares como um serviço da SpaceX e da Blue Origin em vez de possuí-los. Essa estrutura distribui custo e risco e constrói uma coalizão durável — e também significa que o cronograma depende de muitas organizações, incluindo uma Starship que primeiro precisa provar a si mesma, então a linha do tempo é genuinamente incerta de uma forma que a corrida de força bruta do Apollo não era."
     }
   ],
   "narrative": [
@@ -72,7 +72,7 @@
     },
     {
       "type": "prose",
-      "md": "Se for bem-sucedido, o legado é uma presença humana permanente além da órbita baixa da Terra pela primeira vez — uma base no polo sul lunar, uma estação em órbita lunar, e a experiência operacional de viver de outro mundo que qualquer missão a Marte exigirá. A Lua torna-se um lugar onde as pessoas trabalham em vez de um lugar que doze pessoas uma vez visitaram."
+      "md": "Se for bem-sucedido, o legado é uma presença humana permanente além da órbita baixa da Terra pela primeira vez — uma base no polo sul lunar e a experiência operacional de viver de outro mundo que qualquer missão a Marte exigirá. A Lua torna-se um lugar onde as pessoas trabalham em vez de um lugar que doze pessoas uma vez visitaram."
     },
     {
       "type": "prose",

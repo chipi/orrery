@@ -1,15 +1,15 @@
 {
-  "name": "Artemis III",
+  "name": "Artemis IV",
   "type": "CREWED LANDER · PLANNED",
   "first": "自 Apollo 17（1972）以来的首次载人月球着陆",
-  "description": "半个多世纪以来的首次载人月球着陆。架构：NASA的SLS Block 1火箭把载有4名乘员的Orion发射到绕月的近直线晕轨道（NRHO）。预先停放在NRHO的是SpaceX Starship Human Landing System（HLS），它在地月转移注入前已由加油型飞行器在近地轨道补加推进剂。Orion乘员转乘HLS；2名宇航员下降到月球南极地区，进行约6.5天的月面作业，另2名留在NRHO。月面作业结束后，HLS发射返回NRHO，与Orion对接转移，并踏上返回地球之路。将把首位女性和首位有色人种送上月球。",
+  "description": "自2026年2月NASA调整计划以来，Artemis IV成为让人重返月面的任务——这是自1972年Apollo 17以来的首次着陆，也是人类首次在南极附近着陆。SLS在最后一次使用过渡上面级的飞行中，把载有四名乘组成员的Orion发射向月球。在月球轨道上，乘组与一台商业着陆器会合——SpaceX的Starship或Blue Origin的Blue Moon，将在Artemis III对接测试之后选定——两名宇航员下降到南极地区进行约一周的月面作业，另两名留在Orion上。选择南极，是因为永久阴影坑中蕴藏水冰，未来的任务可能把它变成饮用水、氧气和火箭推进剂。NASA已确定九个候选着陆区域。计划于2028年初执行；乘组尚未公布。",
   "events": [
     { "met": 0, "label": "SLS 发射", "note": "Orion 从 KSC LC-39B 发射，搭载 4 名航天员。", "type": "nominal" },
     { "met": 1, "label": "TLI", "note": "地月转移轨道射入。", "type": "nominal" },
-    { "met": 4, "label": "抵达 NRHO", "note": "Orion 抵达近直线晕轨道；与预先配置的 Starship 人员着陆系统（HLS）进行交会。", "type": "nominal" },
-    { "met": 5, "label": "下降", "note": "2 名航天员转移至人员着陆系统（HLS）；动力下降至月球南极。", "type": "info" },
-    { "met": 12, "label": "上升", "note": "人员着陆系统（HLS）在约 6.5 天月面操作后从月球南极上升至近直线晕轨道（NRHO）。", "type": "nominal" },
-    { "met": 14, "label": "TEI", "note": "从近直线晕轨道（NRHO）进行地球转移注入。", "type": "nominal" },
+    { "met": 4, "label": "抵达 NRHO", "note": "Orion 抵达高月球轨道，与等候的着陆器会合。", "type": "nominal" },
+    { "met": 5, "label": "下降", "note": "2 名航天员转移至着陆器；动力下降至月球南极。", "type": "info" },
+    { "met": 12, "label": "上升", "note": "约一周月面作业后，着陆器返回月球轨道。", "type": "nominal" },
+    { "met": 14, "label": "TEI", "note": "地球转移注入。", "type": "nominal" },
     { "met": 18, "label": "溅落", "note": "Orion 在太平洋溅落。", "type": "info" }
   ]
 }

@@ -59,7 +59,7 @@
       "paragraphs": [
         "Pratiquement toutes les missions interplanétaires, de Voyager à Perseverance, suivent le même script :",
         "[Lancement](mission-phases/launch) — sortir de l'atmosphère et entrer en orbite terrestre basse. [Injection Trans-X](mission-phases/trans-x-injection) — une seule combustion forte au périgée qui vous propulse sur l'ellipse de transfert vers la Lune (TLI), Mars (TMI), Vénus (TVI) ou Jupiter (TJI). [Manœuvres de correction de trajectoire](mission-phases/tcm) — de minuscules combustions pendant la croisière pour corriger les erreurs de dispersion. Habituellement 1 à 3. [Insertion orbitale](mission-phases/orbit-insertion) — une combustion de freinage à la destination pour vous placer sur une orbite capturée. [EDL](mission-phases/edl) — Entrée, Descente, Atterrissage — pour l'atterrisseur. Six minutes de chaos atmosphérique supersonique.",
-        "Les missions lunaires passent parfois par une [orbite de halo quasi rectiligne](mission-phases/nrho) (Gateway y vivra), et les vols habités Apollo ont volé sur des [trajectoires de retour libre](transfers/free-return) — des chemins en forme de huit qui vous ramènent automatiquement sur Terre si tous les moteurs du vaisseau spatial meurent. Apollo 13 doit sa vie à cette géométrie."
+        "Les missions lunaires passent parfois par une [orbite de halo quasi rectiligne](mission-phases/nrho) (la station Gateway, en pause depuis 2026, était conçue pour y vivre), et les vols habités Apollo ont volé sur des [trajectoires de retour libre](transfers/free-return) — des chemins en forme de huit qui vous ramènent automatiquement sur Terre si tous les moteurs du vaisseau spatial meurent. Apollo 13 doit sa vie à cette géométrie."
       ]
     },
     {

@@ -2,7 +2,7 @@
   "name": "Blue Moon MK1",
   "type": "貨物着陸機 · 計画",
   "first": "Blue Originのブルームーン月着陸機アーキテクチャの初飛行",
-  "description": "Blue Originが開発した初の貨物用Blue Moon着陸機で、NASAの Commercial Lunar Payload Services (CLPS) プログラムのもと契約されています。単段式の下降機体で、BE-7低温エンジンを搭載し、月面への最大約3トンのペイロード輸送を目的としています。Blue Originの New Glenn ロケットでケープ・カナベラルから打ち上げられ、New Glenn第2段で月遷移軌道投入を実行し、その後月周回軌道投入と動力下降を行います。この Mark 1 貨物ミッションは、NASAの Artemis V 有人月面着陸ミッションをサポートすることが契約されている、有人対応の Mark 2 の先駆けとなります。",
+  "description": "Blue Originが開発した初の貨物用Blue Moon着陸機で、NASAの Commercial Lunar Payload Services (CLPS) プログラムのもと契約されています。単段式の下降機体で、BE-7低温エンジンを搭載し、月面への最大約3トンのペイロード輸送を目的としています。Blue Originの New Glenn ロケットでケープ・カナベラルから打ち上げられ、New Glenn第2段で月遷移軌道投入を実行し、その後月周回軌道投入と動力下降を行います。この Mark 1 貨物ミッションは、NASAが有人 Artemis 着陸のために契約した、有人対応の Mark 2 の先駆けとなります。Mark 2 は現在、Artemis IV 以降の2つの着陸機候補のうちの1つです。",
   "events": [
     { "met": 0, "label": "NEW GLENN 打ち上げ", "note": "ケープ・カナベラル LC-36 から離昇；第一段はダウンレンジ回収。", "type": "nominal" },
     { "met": 0.2, "label": "TLI", "note": "New Glenn 第二段が月移行軌道燃焼。", "type": "nominal" },

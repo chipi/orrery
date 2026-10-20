@@ -2,13 +2,13 @@
   "name": "Artemis II",
   "type": "CREWED FLYBY · FLOWN",
   "first": "自 Apollo 17（1972）以来首次载人飞行超越近地轨道——也是激发本项目灵感的任务",
-  "description": "Artemis计划的首次载人飞行，也是后来成为Orrery的那点火花。NASA的SLS Block 1火箭发射了载有四名宇航员的Orion飞船——里德·怀斯曼（CDR）、维克多·格洛弗（PLT）、克里斯蒂娜·科克（MS）和CSA的杰瑞米·汉森（MS）——送入混合自由返回轨道，在约9,200 km高度绕过月球背面，无需任何月球入轨点火便将他们送回地球。任务为期10天，以太平洋溅落告终。它在Artemis III月面着陆之前，为载人飞行验证了Orion的生命保障、导航和再入系统。",
+  "description": "Artemis计划的首次载人飞行，也是后来成为Orrery的那点火花。2026年4月1日，NASA的SLS Block 1火箭发射了载有四名宇航员的Orion飞船——里德·怀斯曼（CDR）、维克多·格洛弗（PLT）、克里斯蒂娜·科克（MS）和CSA的杰瑞米·汉森（MS）——送入自由返回轨道，在距月面约6,500 km处绕过月球背面，无需任何月球入轨点火便将他们送回地球。在距地球406,771 km处，他们飞到了比此前任何人都更远的地方，打破了1970年Apollo 13的纪录。经过9天飞行，Orion于4月10日在圣地亚哥外海的太平洋溅落。这次飞行在首次着陆之前，为载人飞行验证了Orion的生命保障、导航和隔热罩；着陆现计划由Artemis IV执行。",
   "events": [
     { "met": 0, "label": "SLS 发射", "note": "Orion 从肯尼迪航天中心 LC-39B 发射台搭载四名宇航员升空。", "type": "nominal" },
     { "met": 0.13, "label": "TLI", "note": "ICPS 进行跨月注入变轨——Orion 分离进入月球邻近轨迹。", "type": "nominal" },
     { "met": 1.5, "label": "TCM-1", "note": "首次中途修正", "type": "nominal" },
-    { "met": 4, "label": "飞掠月球", "note": "月球背面最近距离约 9,200 公里。无轨道插入——自由返回轨迹将 Orion 航天器甩回地球。", "type": "info" },
+    { "met": 5.02, "label": "飞掠月球", "note": "月球背面最近距离约 6,500 公里，也是人类飞得最远的位置：距地球 406,771 公里。无轨道插入——自由返回轨迹将 Orion 航天器甩回地球。", "type": "info" },
     { "met": 6, "label": "TCM-2", "note": "返回轨迹修正", "type": "nominal" },
-    { "met": 10, "label": "溅落", "note": "Orion 再入大气层并在太平洋溅落。", "type": "info" }
+    { "met": 9.06, "label": "溅落", "note": "Orion 再入大气层并在太平洋溅落。", "type": "info" }
   ]
 }

@@ -1,8 +1,8 @@
 {
-  "name": "Artemis III",
+  "name": "Artemis IV",
   "type": "ATTERRISSAGE AVEC ÉQUIPAGE · PRÉVU",
   "first": "Premier alunissage en équipage depuis Apollo 17 (1972)",
-  "description": "Le premier alunissage habité en plus d'un demi-siècle. Architecture : le SLS Block 1 de la NASA lance Orion avec 4 astronautes vers une Near-Rectilinear Halo Orbit (NRHO) autour de la Lune. Un SpaceX Starship Human Landing System (HLS) est pré-positionné à l'NRHO, ravitaillé en orbite basse terrestre par des ravitailleurs avant son injection trans-lunaire. L'équipage d'Orion se transfère vers le HLS ; 2 astronautes descendent vers la région du pôle sud lunaire pour ~6,5 jours d'opérations de surface tandis que 2 restent à l'NRHO. Après les opérations de surface, le HLS décolle vers l'NRHO pour un transfert vers Orion et un retour sur Terre. Permettra d'alunir la première femme et la première personne de couleur sur la Lune.",
+  "description": "Depuis le changement de plan de la NASA en février 2026, Artemis IV est la mission qui ramène des humains à la surface de la Lune — le premier alunissage depuis Apollo 17 en 1972, et le tout premier près du pôle sud. Le SLS, lors de son dernier vol avec l'étage supérieur provisoire, lance Orion avec quatre astronautes vers la Lune. En orbite lunaire, ils rejoignent un atterrisseur commercial — le Starship de SpaceX ou le Blue Moon de Blue Origin, choisi après les essais d'amarrage d'Artemis III — et deux astronautes descendent vers la région du pôle sud pour environ une semaine de travail en surface, tandis que deux restent à bord d'Orion. Le pôle sud est l'objectif parce que ses cratères en ombre permanente renferment de la glace d'eau, que de futures missions pourraient transformer en eau potable, en oxygène et en ergols. La NASA a identifié neuf régions d'alunissage candidates. Prévu pour début 2028 ; l'équipage n'a pas encore été nommé.",
   "events": [
     {
       "met": 0,
@@ -19,25 +19,25 @@
     {
       "met": 4,
       "label": "ARRIVÉE NRHO",
-      "note": "Orion arrive sur l'orbite quasi rectiligne de Halo ; rendez-vous avec le Starship HLS prépositionné.",
+      "note": "Orion arrive sur une orbite lunaire haute et rejoint l'atterrisseur qui l'attend.",
       "type": "nominal"
     },
     {
       "met": 5,
       "label": "DESCENTE",
-      "note": "Transfert de 2 équipages vers HLS ; descente motorisée vers le pôle sud lunaire.",
+      "note": "Transfert de 2 équipages vers l'atterrisseur ; descente motorisée vers le pôle sud lunaire.",
       "type": "info"
     },
     {
       "met": 12,
       "label": "ASCENSION",
-      "note": "Ascension du HLS vers NRHO après environ 6,5 jours d'opérations de surface.",
+      "note": "L'atterrisseur retourne en orbite lunaire après environ une semaine d'opérations de surface.",
       "type": "nominal"
     },
     {
       "met": 14,
       "label": "TEI",
-      "note": "Injection trans-terrestre de NRHO.",
+      "note": "Injection trans-terrestre.",
       "type": "nominal"
     },
     {

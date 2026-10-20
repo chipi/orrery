@@ -1,0 +1,50 @@
+{
+  "name": "Artemis V",
+  "type": "유인 착륙선 · 계획",
+  "first": "Artemis 시대 두 번째 유인 착륙 — 달 기지의 시작",
+  "description": "Artemis V는 달 남극 부근에서의 두 번째 유인 착륙으로 계획되어, 같은 해 안에 Artemis IV에 뒤이어 이루어진다 — 1년에 최소 한 번 착륙한다는 NASA의 2026년 목표의 일부다. 짧은 방문에서 지속적인 주둔으로 넘어가는 전환을 시작하려는 임무로, NASA는 2026년 3월 달 궤도 Gateway 정거장을 완성하는 대신(현재 보류) 표면 기지를 향한 작업을 택했다. Artemis IV와 마찬가지로 SLS가 승무원 4명이 탄 Orion을 발사하고, 상용 착륙선이 그중 2명을 내려보낸다. SLS는 Artemis V까지의 비행 예산이 확보되어 있으며, 이후 임무를 위해 NASA는 상용 재사용형 대안을 제안했다. 2028년 말로 계획되어 있으며 승무원, 착륙선, 착륙 지점은 아직 정해지지 않았다.",
+  "events": [
+    {
+      "met": 0,
+      "label": "SLS 발사",
+      "note": "승무원 4명을 태운 Orion이 KSC LC-39B에서 이륙.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TLI",
+      "note": "달 이행 주입.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "NRHO 도착",
+      "note": "Orion이 높은 달 궤도에 도착해 대기 중인 착륙선과 만난다.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "하강",
+      "note": "승무원 2명이 착륙선으로 이동; 달 남극 동력 하강.",
+      "type": "info"
+    },
+    {
+      "met": 12,
+      "label": "상승",
+      "note": "표면 체류 후 착륙선이 달 궤도로 돌아온다.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "TEI",
+      "note": "지구 이행 주입.",
+      "type": "nominal"
+    },
+    {
+      "met": 18,
+      "label": "해상 착수",
+      "note": "Orion이 태평양에 착수.",
+      "type": "info"
+    }
+  ]
+}

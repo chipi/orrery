@@ -1,11 +1,11 @@
 {
-  "name": "Artemis III",
+  "name": "Artemis IV",
   "mission_type": "Atterrisseur avec équipage (prévu)",
   "site_name": "Pôle Sud lunaire (site à déterminer)",
   "crew": [
-    "À déterminer – première femme et première personne de couleur sur la Lune"
+    "À déterminer"
   ],
   "left": "À déterminer",
-  "fact": "Le premier alunissage en équipage depuis Apollo 17 en 1972 – un écart de 55 ans. Cible le pôle sud pour ses dépôts de glace d’eau, qui pourraient permettre le ravitaillement en carburant pour les futures missions dans l’espace lointain. Fera atterrir la première femme et la première personne de couleur sur la Lune. Si cela se produit dans les délais, cela marquera le début de la présence humaine soutenue qui mènera à Mars.",
+  "fact": "Prévu comme le premier alunissage en équipage depuis Apollo 17 en 1972 – un écart de plus de 55 ans – et le tout premier près du pôle sud. La cible est la glace d’eau des cratères en ombre permanente, qui pourrait un jour fournir eau potable, oxygène et ergols. Artemis IV a reçu ce rôle en 2026, lorsque la NASA a transformé Artemis III en essai en orbite terrestre ; elle est prévue pour début 2028.",
   "capability": "Opérations humaines à la surface polaire et répétition de l'utilisation des ressources in situ - le précurseur direct des missions avec équipage sur Mars, qui dépendront de la glace d'eau polaire pour les consommables et le propulseur."
 }

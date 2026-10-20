@@ -2,7 +2,7 @@
   "name": "Blue Moon MK1",
   "type": "화물 착륙선 · 계획",
   "first": "Blue Origin의 Blue Moon 달 착륙선 체계 첫 비행",
-  "description": "NASA의 Commercial Lunar Payload Services(CLPS) 프로그램에 따라 계약된 Blue Origin의 첫 화물용 Blue Moon 착륙선입니다. BE-7 극저온 엔진을 쓰는 단일 단 하강 기체로, 달 표면에 탑재체 약 3톤을 내려놓도록 설계되었습니다. 케이프 커내버럴에서 Blue Origin의 New Glenn으로 발사되며, New Glenn 2단이 달 전이 궤도 진입을 수행한 뒤 착륙선이 달 궤도 진입과 동력 하강을 실행합니다. Mark 1 화물 비행은 유인 인증용 Mark 2에 앞서며, Mark 2는 NASA의 Artemis V 유인 달 착륙을 지원하도록 계약되어 있습니다.",
+  "description": "NASA의 Commercial Lunar Payload Services(CLPS) 프로그램에 따라 계약된 Blue Origin의 첫 화물용 Blue Moon 착륙선입니다. BE-7 극저온 엔진을 쓰는 단일 단 하강 기체로, 달 표면에 탑재체 약 3톤을 내려놓도록 설계되었습니다. 케이프 커내버럴에서 Blue Origin의 New Glenn으로 발사되며, New Glenn 2단이 달 전이 궤도 진입을 수행한 뒤 착륙선이 달 궤도 진입과 동력 하강을 실행합니다. Mark 1 화물 비행은 유인 인증용 Mark 2에 앞서며, Mark 2는 NASA가 유인 Artemis 착륙을 위해 계약했으며, 지금은 Artemis IV와 이후 임무를 위한 두 후보 착륙선 중 하나입니다.",
   "events": [
     { "met": 0, "label": "뉴 글렌 발사", "note": "케이프 커내버럴 LC-36에서 이륙; 1단은 하류 방향 회수.", "type": "nominal" },
     { "met": 0.2, "label": "TLI", "note": "New Glenn 2단이 달 이행 주입 연소.", "type": "nominal" },

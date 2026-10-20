@@ -8,7 +8,7 @@
     },
     {
       "type": "prose",
-      "md": "Der andere Unterschied betrifft die Frage, wer fliegt. Apollo war ein nationales Projekt, eine Demonstration amerikanischer Überlegenheit gegenüber der Sowjetunion, geflogen ausschließlich von amerikanischen Astronauten auf amerikanischer Hardware. Artemis ist bewusst international und bewusst kommerziell angelegt – Europa baut das Servicemodul, das Orion antreibt, Japan und Kanada tragen zum lunaren Gateway bei, SpaceX und andere bauen die Lander, und zu den Besatzungen werden Astronauten aus Partnerländern gehören. War Apollo ein Wettlauf, so ist Artemis eine Koalition."
+      "md": "Der andere Unterschied betrifft die Frage, wer fliegt. Apollo war ein nationales Projekt, eine Demonstration amerikanischer Überlegenheit gegenüber der Sowjetunion, geflogen ausschließlich von amerikanischen Astronauten auf amerikanischer Hardware. Artemis ist bewusst international und bewusst kommerziell angelegt – Europa baut das Servicemodul, das Orion antreibt, Japan, Kanada und Europa haben sich verpflichtet, die Raumstation Gateway in der Mondumlaufbahn zu bauen (2026 pausiert), SpaceX und Blue Origin bauen die Lander, und zu den Besatzungen gehören Astronauten aus Partnerländern – der Kanadier Jeremy Hansen flog mit Artemis II um den Mond, und Luca Parmitano von der ESA ist für Artemis III benannt. War Apollo ein Wettlauf, so ist Artemis eine Koalition."
     }
   ],
   "goals": [
@@ -26,7 +26,7 @@
     },
     {
       "type": "prose",
-      "md": "Das tiefere Ziel ist Dauerhaftigkeit – und ein Sprungbrett. Artemis soll das Gateway errichten, eine kleine Station im Mondorbit, und schließlich eine Infrastruktur auf der Oberfläche aufbauen, die den Mond von einem Reiseziel in eine Basis verwandelt. Und das Programm versteht sich ausdrücklich als Generalprobe für den Mars: als der Ort, an dem man lernt, auf einer anderen Welt zu leben und zu arbeiten – nah genug an der Erde, dass Fehler überlebbar sind, bevor man dasselbe in einer Entfernung von Monaten versucht."
+      "md": "Das tiefere Ziel ist Dauerhaftigkeit – und ein Sprungbrett. Artemis wollte das Gateway errichten, eine kleine Station im Mondorbit, und danach eine Infrastruktur auf der Oberfläche aufbauen. 2026 hat die NASA das Gateway pausiert und den Aufwand stattdessen in eine Basis am Südpol gesteckt, die den Mond von einem Reiseziel in einen Arbeitsort verwandelt. Und das Programm versteht sich ausdrücklich als Generalprobe für den Mars: als der Ort, an dem man lernt, auf einer anderen Welt zu leben und zu arbeiten – nah genug an der Erde, dass Fehler überlebbar sind, bevor man dasselbe in einer Entfernung von Monaten versucht."
     },
     {
       "type": "prose",
@@ -36,7 +36,7 @@
   "outcome": [
     {
       "type": "prose",
-      "md": "Artemis ist in vollem Gange, hat die Mondoberfläche aber noch nicht erreicht. Artemis I flog 2022: Eine Orion-Kapsel ohne Besatzung umrundete den Mond und kehrte zurück – und bewies auf ihrem Erstflug sowohl die SLS-Rakete als auch das Raumschiff. Der Vorbeiflug mit Besatzung (Artemis II) und die Landung (Artemis III) folgen, doch beide haben sich wiederholt verschoben, während das gewaltige Programm mit seinen vielen beteiligten Auftragnehmern die schwierigsten Hürden nimmt: den Hitzeschild, den Starship-Lander, die neuen Raumanzüge und die Betankung im Orbit, von der der Lander abhängt."
+      "md": "Artemis hat Menschen um den Mond geflogen, ist aber noch nicht gelandet. Artemis I flog 2022 ohne Besatzung und bewies die SLS und die Orion, wobei sie unerwarteten Verschleiß am Hitzeschild von Orion offenlegte. Artemis II brachte im April 2026 vier Astronauten um den Mond und entfernte sich dabei weiter von der Erde als je Menschen zuvor. Im Februar 2026 änderte die NASA den Plan: Artemis III (2027) wurde zu einem bemannten Test in der Erdumlaufbahn, bei dem Orion an den kommerziellen Landern andockt, und die erste Landung rückte auf Artemis IV, geplant für Anfang 2028; Artemis V soll Ende 2028 folgen. Die NASA strich außerdem das leistungsstärkere SLS-Upgrade und pausierte die Raumstation Gateway. Die schwierigsten Hürden liegen noch vor uns: die Lander, die neuen Raumanzüge und die Betankung im Orbit, von der die Starship abhängt."
     },
     {
       "type": "figure",
@@ -48,7 +48,7 @@
     },
     {
       "type": "prose",
-      "md": "Das Programm ist zugleich eine Studie darüber, wie anders große Raumfahrt heute betrieben wird. Apollo war eine einzelne Behörde, die Auftragnehmer auf eine einzige Frist ausrichtete; Artemis ist ein Geflecht aus internationalen Partnern und kommerziellen Anbietern, wobei die NASA einen Mondlander als Dienstleistung bei SpaceX einkauft, statt ihn zu besitzen. Diese Struktur verteilt Kosten und Risiko und schafft eine dauerhafte Koalition – und sie bedeutet auch, dass der Zeitplan von vielen Organisationen abhängt, darunter von einer Starship, die sich erst noch bewähren muss. Der Zeitrahmen ist deshalb wirklich ungewiss, anders als bei Apollos Sprint mit roher Gewalt."
+      "md": "Das Programm ist zugleich eine Studie darüber, wie anders große Raumfahrt heute betrieben wird. Apollo war eine einzelne Behörde, die Auftragnehmer auf eine einzige Frist ausrichtete; Artemis ist ein Geflecht aus internationalen Partnern und kommerziellen Anbietern, wobei die NASA Mondlander als Dienstleistung bei SpaceX und Blue Origin einkauft, statt sie zu besitzen. Diese Struktur verteilt Kosten und Risiko und schafft eine dauerhafte Koalition – und sie bedeutet auch, dass der Zeitplan von vielen Organisationen abhängt, darunter von einer Starship, die sich erst noch bewähren muss. Der Zeitrahmen ist deshalb wirklich ungewiss, anders als bei Apollos Sprint mit roher Gewalt."
     }
   ],
   "narrative": [
@@ -72,7 +72,7 @@
     },
     {
       "type": "prose",
-      "md": "Wenn es gelingt, besteht das Vermächtnis erstmals in einer dauerhaften menschlichen Präsenz jenseits des niedrigen Erdorbits – einer Basis am lunaren Südpol, einer Station im Mondorbit und der praktischen Erfahrung, auf einer anderen Welt zu leben und von ihr zu zehren, wie sie jede Marsmission benötigen wird. Der Mond wird zu einem Ort, an dem Menschen arbeiten, und nicht länger zu einem Ort, den einst zwölf Menschen besucht haben."
+      "md": "Wenn es gelingt, besteht das Vermächtnis erstmals in einer dauerhaften menschlichen Präsenz jenseits des niedrigen Erdorbits – einer Basis am lunaren Südpol und der praktischen Erfahrung, auf einer anderen Welt zu leben und von ihr zu zehren, wie sie jede Marsmission benötigen wird. Der Mond wird zu einem Ort, an dem Menschen arbeiten, und nicht länger zu einem Ort, den einst zwölf Menschen besucht haben."
     },
     {
       "type": "prose",

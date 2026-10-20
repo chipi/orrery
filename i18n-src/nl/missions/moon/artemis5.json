@@ -1,0 +1,50 @@
+{
+  "name": "Artemis V",
+  "type": "BEMANDE LANDER · GEPLAND",
+  "first": "Tweede bemande landing van het Artemis-tijdperk — het begin van een maanbasis",
+  "description": "Artemis V is gepland als de tweede bemande landing bij de zuidpool van de Maan, in hetzelfde jaar als Artemis IV — onderdeel van NASA's doel uit 2026 van minstens één landing per jaar. Het moet de overgang inluiden van korte bezoeken naar een blijvende aanwezigheid: werk aan een basis op het oppervlak, die NASA in maart 2026 verkoos boven het afbouwen van het Gateway-station in een maanbaan, dat nu is stilgelegd. Net als bij Artemis IV lanceert de SLS Orion met vier bemanningsleden en brengt een commerciële lander er twee naar beneden. De SLS is gefinancierd om tot en met Artemis V te vliegen; voor latere missies heeft NASA commerciële, herbruikbare alternatieven voorgesteld. Gepland voor eind 2028; bemanning, lander en landingsplaats zijn nog niet gekozen.",
+  "events": [
+    {
+      "met": 0,
+      "label": "SLS-LANCERING",
+      "note": "Orion lanceert vanuit KSC LC-39B met bemanning van 4.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TLI",
+      "note": "Trans-lunaire injectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "NRHO-AANKOMST",
+      "note": "Orion arriveert in een hoge maanbaan en ontmoet de wachtende lander.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "AFDALING",
+      "note": "2 bemanningsleden stappen over naar de lander; aangedreven afdaling naar de zuidpool van de Maan.",
+      "type": "info"
+    },
+    {
+      "met": 12,
+      "label": "OPSTIJGING",
+      "note": "De lander keert na het verblijf aan het oppervlak terug naar een maanbaan.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "TEI",
+      "note": "Trans-Aarde-injectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 18,
+      "label": "WATERLANDING",
+      "note": "Orion landt in de Stille Oceaan.",
+      "type": "info"
+    }
+  ]
+}

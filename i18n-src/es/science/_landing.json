@@ -59,7 +59,7 @@
       "paragraphs": [
         "Prácticamente toda misión interplanetaria, desde Voyager hasta Perseverance, sigue el mismo guion:",
         "[Lanzamiento](mission-phases/launch): sal de la atmósfera y entra en órbita terrestre baja. [Inyección Trans-X](mission-phases/trans-x-injection): un único encendido fuerte en el perigeo que te lanza a la elipse de transferencia hacia la Luna (TLI), Marte (TMI), Venus (TVI) o Júpiter (TJI). [Maniobras de corrección de trayectoria](mission-phases/tcm): pequeños encendidos durante el crucero para corregir errores de dispersión. Normalmente 1–3. [Inserción orbital](mission-phases/orbit-insertion): un encendido de frenado en el destino para meterte en una órbita de captura. [EDL](mission-phases/edl): entrada, descenso y aterrizaje, para el módulo de aterrizaje. Seis minutos de caos atmosférico supersónico.",
-        "A veces las misiones lunares hacen un desvío por una [órbita de halo casi rectilínea](mission-phases/nrho) (Gateway estará en una), y los vuelos tripulados Apollo siguieron [trayectorias de retorno libre](transfers/free-return): rutas en forma de ocho que te devuelven a la Tierra automáticamente si fallan todos los motores de la nave. Apollo 13 le debe la vida a esta geometría."
+        "A veces las misiones lunares hacen un desvío por una [órbita de halo casi rectilínea](mission-phases/nrho) (la estación Gateway, en pausa desde 2026, se diseñó para una), y los vuelos tripulados Apollo siguieron [trayectorias de retorno libre](transfers/free-return): rutas en forma de ocho que te devuelven a la Tierra automáticamente si fallan todos los motores de la nave. Apollo 13 le debe la vida a esta geometría."
       ]
     },
     {

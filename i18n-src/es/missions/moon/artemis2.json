@@ -2,13 +2,13 @@
   "name": "Artemis II",
   "type": "SOBREVUELO TRIPULADO · VOLADA",
   "first": "Primer vuelo tripulado más allá de la órbita baja terrestre desde el Apollo 17 (1972) — y la misión que inspiró este proyecto",
-  "description": "El primer vuelo tripulado del programa Artemis, y la chispa que se convirtió en Orrery. El SLS Block 1 de la NASA lanzó una nave Orion con cuatro astronautas — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) y Jeremy Hansen (MS, CSA) — a una trayectoria híbrida de retorno libre que los hizo girar alrededor de la cara oculta de la Luna a aproximadamente 9200 km de altitud y los devolvió a la Tierra sin ningún encendido de inserción en órbita lunar. Una misión de 10 días que terminó con un amerizaje en el Pacífico. Calificó los sistemas de soporte vital, navegación y reentrada de Orion para vuelos tripulados antes del aterrizaje en superficie del Artemis III.",
+  "description": "El primer vuelo tripulado del programa Artemis, y la chispa que se convirtió en Orrery. El 1 de abril de 2026, el SLS Block 1 de la NASA lanzó una nave Orion con cuatro astronautas — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) y Jeremy Hansen (MS, CSA) — a una trayectoria de retorno libre que los hizo girar alrededor de la cara oculta de la Luna a unos 6500 km sobre la superficie y los devolvió a casa sin ningún encendido de inserción en órbita lunar. A 406 771 km de la Tierra viajaron más lejos que ningún ser humano antes, superando el récord del Apollo 13 de 1970. Tras un vuelo de 9 días, Orion amerizó en el Pacífico frente a San Diego el 10 de abril. El vuelo calificó el soporte vital, la navegación y el escudo térmico de Orion para misiones tripuladas antes del primer aterrizaje, ahora previsto para Artemis IV.",
   "events": [
     { "met": 0, "label": "LANZAMIENTO SLS", "note": "Orion despega desde KSC LC-39B con cuatro tripulantes a bordo.", "type": "nominal" },
     { "met": 0.13, "label": "ITL", "note": "Encendido de inyección translunar por el ICPS — Orion se separa hacia trayectoria cislunar.", "type": "nominal" },
     { "met": 1.5, "label": "TCM-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
-    { "met": 4, "label": "SOBREVUELO LUNAR", "note": "Aproximación máxima sobre la cara oculta, ~9200 km de altitud. Sin inserción orbital — la geometría de retorno libre devuelve a Orion a la Tierra.", "type": "info" },
+    { "met": 5.02, "label": "SOBREVUELO LUNAR", "note": "Aproximación máxima sobre la cara oculta, ~6500 km de altitud, y lo más lejos que han viajado seres humanos: 406 771 km de la Tierra. Sin inserción orbital — la geometría de retorno libre devuelve a Orion a la Tierra.", "type": "info" },
     { "met": 6, "label": "TCM-2", "note": "Corrección de trayectoria de retorno.", "type": "nominal" },
-    { "met": 10, "label": "AMERIZAJE", "note": "Reentrada de Orion y amerizaje en el océano Pacífico.", "type": "info" }
+    { "met": 9.06, "label": "AMERIZAJE", "note": "Reentrada de Orion y amerizaje en el océano Pacífico.", "type": "info" }
   ]
 }

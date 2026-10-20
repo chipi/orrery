@@ -7,8 +7,8 @@
     { "met": 0, "label": "SLS LAUNCH", "note": "Orion lifts off from KSC LC-39B with four crew aboard.", "type": "nominal" },
     { "met": 0.13, "label": "TLI", "note": "Trans-lunar injection burn by ICPS — Orion separates onto cislunar trajectory.", "type": "nominal" },
     { "met": 1.5, "label": "TCM-1", "note": "First mid-course correction.", "type": "nominal" },
-    { "met": 4, "label": "LUNAR FLYBY", "note": "Closest approach over the far side, ~6,500 km altitude, and the farthest humans have travelled: 406,771 km from Earth. No orbit insertion — free-return geometry slings Orion back to Earth.", "type": "info" },
+    { "met": 5.02, "label": "LUNAR FLYBY", "note": "Closest approach over the far side, ~6,500 km altitude, and the farthest humans have travelled: 406,771 km from Earth. No orbit insertion — free-return geometry slings Orion back to Earth.", "type": "info" },
     { "met": 6, "label": "TCM-2", "note": "Return trajectory correction.", "type": "nominal" },
-    { "met": 10, "label": "SPLASHDOWN", "note": "Orion re-entry and Pacific Ocean splashdown.", "type": "info" }
+    { "met": 9.06, "label": "SPLASHDOWN", "note": "Orion re-entry and Pacific Ocean splashdown.", "type": "info" }
   ]
 }

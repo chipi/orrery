@@ -59,7 +59,7 @@
       "paragraphs": [
         "Voyager から Perseverance まで、ほとんどすべての惑星間ミッションは同じ台本を実行します：",
         "[Launch](mission-phases/launch) — 大気圏を抜けて低地球軌道へ。[Trans-X Injection](mission-phases/trans-x-injection) — 近地点での一度の強い燃焼で、月（TLI）、火星（TMI）、金星（TVI）、または木星（TJI）への遷移楕円へ投入されます。[軌道修正マヌーバ](mission-phases/tcm) — 巡航中の分散誤差を修正する小さな燃焼。通常1〜3回。[軌道投入](mission-phases/orbit-insertion) — 目的地での制動燃焼で捕獲軌道へ。[EDL](mission-phases/edl) — 突入、降下、着陸 — 着陸機用。6分間の超音速大気カオス。",
-        "月ミッションは時々[Near-Rectilinear Halo Orbit](mission-phases/nrho)を経由します（Gateway はその中に存在します）、そして有人 Apollo 飛行は[自由帰還軌道](transfers/free-return)を飛びました — 宇宙船のすべてのエンジンが死んでも自動的に地球に戻る8の字経路です。Apollo 13 はこの幾何学に命を救われました。"
+        "月ミッションは時々[Near-Rectilinear Halo Orbit](mission-phases/nrho)を経由します（2026年に一時停止された Gateway ステーションは、その軌道に置かれるよう設計されていました）、そして有人 Apollo 飛行は[自由帰還軌道](transfers/free-return)を飛びました — 宇宙船のすべてのエンジンが死んでも自動的に地球に戻る8の字経路です。Apollo 13 はこの幾何学に命を救われました。"
       ]
     },
     {

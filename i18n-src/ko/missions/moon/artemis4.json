@@ -1,15 +1,15 @@
 {
-  "name": "Artemis III",
+  "name": "Artemis IV",
   "type": "유인 착륙선 · 계획",
   "first": "Apollo 17(1972) 이후 최초 유인 달 착륙",
-  "description": "50여 년 만의 유인 달 착륙입니다. 구성: NASA의 SLS Block 1이 승무원 4명이 탄 Orion을 달 주위의 근직선 헤일로 궤도(NRHO)로 발사합니다. NRHO에는 SpaceX Starship Human Landing System(HLS)이 미리 배치되어 있으며, 이는 달 전이 궤도 진입 전에 저지구궤도에서 탱커로 추진제를 다시 채웁니다. Orion 승무원이 HLS로 옮겨 타고, 2명은 달 남극 지역으로 내려가 약 6.5일간 표면 활동을 하며 나머지 2명은 NRHO에 남습니다. 표면 활동이 끝나면 HLS가 NRHO로 돌아오고, 승무원은 Orion으로 옮겨 타 지구로 귀환합니다. 달에 발을 딛는 최초의 여성과 최초의 유색인종이 이 임무에서 나옵니다.",
+  "description": "NASA가 2026년 2월 계획을 바꾼 뒤, Artemis IV는 사람을 달 표면으로 돌려보내는 임무가 되었다 — 1972년 Apollo 17 이후 첫 착륙이자 남극 부근에서는 사상 처음이다. 임시 상단을 쓰는 마지막 비행이 될 SLS가 승무원 4명이 탄 Orion을 달로 발사한다. 달 궤도에서 승무원은 상용 착륙선 — SpaceX의 Starship 또는 Blue Origin의 Blue Moon, Artemis III 도킹 시험 이후 선정 — 과 만나고, 우주비행사 2명이 남극 지역으로 내려가 약 1주일간 표면 활동을 하며 나머지 2명은 Orion에 남는다. 남극을 목표로 삼는 이유는 영구 음영 크레이터에 물얼음이 있어, 앞으로의 임무가 이를 식수, 산소, 로켓 추진제로 바꿀 수 있기 때문이다. NASA는 착륙 후보 지역 아홉 곳을 확인했다. 2028년 초로 계획되어 있으며 승무원은 아직 발표되지 않았다.",
   "events": [
     { "met": 0, "label": "SLS 발사", "note": "승무원 4명을 태운 Orion이 KSC LC-39B에서 이륙.", "type": "nominal" },
     { "met": 1, "label": "TLI", "note": "달 이행 주입.", "type": "nominal" },
-    { "met": 4, "label": "NRHO 도착", "note": "Orion이 Near-Rectilinear Halo Orbit에 도착; 미리 배치된 Starship HLS와 접근.", "type": "nominal" },
-    { "met": 5, "label": "하강", "note": "승무원 2명이 HLS로 이동; 달 남극 동력 하강.", "type": "info" },
-    { "met": 12, "label": "상승", "note": "약 6.5일 표면 작업 후 HLS가 NRHO로 상승.", "type": "nominal" },
-    { "met": 14, "label": "TEI", "note": "NRHO에서 지구 이행 주입.", "type": "nominal" },
+    { "met": 4, "label": "NRHO 도착", "note": "Orion이 높은 달 궤도에 도착해 대기 중인 착륙선과 만난다.", "type": "nominal" },
+    { "met": 5, "label": "하강", "note": "승무원 2명이 착륙선으로 이동; 달 남극 동력 하강.", "type": "info" },
+    { "met": 12, "label": "상승", "note": "약 1주일의 표면 작업 후 착륙선이 달 궤도로 돌아온다.", "type": "nominal" },
+    { "met": 14, "label": "TEI", "note": "지구 이행 주입.", "type": "nominal" },
     { "met": 18, "label": "해상 착수", "note": "Orion이 태평양에 착수.", "type": "info" }
   ]
 }

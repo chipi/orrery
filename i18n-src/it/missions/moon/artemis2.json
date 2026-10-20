@@ -2,7 +2,7 @@
   "name": "Artemis II",
   "type": "FLYBY CON EQUIPAGGIO · VOLATO",
   "first": "Primo volo con equipaggio oltre l'orbita terrestre bassa dall'Apollo 17 (1972) - e la missione che ha ispirato questo progetto",
-  "description": "Il primo volo con equipaggio del programma Artemis e la scintilla che divenne Orrery. L'SLS Block 1 di NASA ha lanciato una navicella spaziale Orion con quattro astronauti - Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) e Jeremy Hansen (MS) di CSA - su una traiettoria ibrida di ritorno libero che li ha fatti oscillare attorno al lato nascosto della Luna a circa 9.200 km di altitudine e li ha riportati sulla Terra senza alcuna bruciatura da inserzione nell'orbita lunare. Una missione di 10 giorni che termina con lo schianto nel Pacifico. Sistemi di supporto vitale, navigazione e rientro qualificati di Orion per il volo con equipaggio prima dell'atterraggio in superficie dell'Artemis III.",
+  "description": "Il primo volo con equipaggio del programma Artemis e la scintilla che divenne Orrery. Il 1° aprile 2026 l'SLS Block 1 di NASA ha lanciato una navicella spaziale Orion con quattro astronauti - Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) e Jeremy Hansen (MS) di CSA - su una traiettoria di ritorno libero che li ha fatti oscillare attorno al lato nascosto della Luna a circa 6.500 km sopra la superficie e li ha riportati a casa senza alcuna bruciatura da inserzione nell'orbita lunare. A 406.771 km dalla Terra hanno viaggiato più lontano di qualsiasi essere umano prima di loro, battendo il record dell'Apollo 13 del 1970. Dopo un volo di 9 giorni, Orion è ammarato nel Pacifico al largo di San Diego il 10 aprile. Il volo ha qualificato supporto vitale, navigazione e scudo termico di Orion per le missioni con equipaggio in vista del primo allunaggio, ora previsto con Artemis IV.",
   "events": [
     {
       "met": 0,
@@ -23,9 +23,9 @@
       "type": "nominal"
     },
     {
-      "met": 4,
+      "met": 5.02,
       "label": "VIAGGIO LUNARE",
-      "note": "Avvicinamento più vicino dal lato opposto, ~9.200 km di altitudine. Nessun inserimento in orbita: la geometria a ritorno libero riporta Orione sulla Terra.",
+      "note": "Avvicinamento più vicino dal lato opposto, ~6.500 km di altitudine, e punto più lontano mai raggiunto da esseri umani: 406.771 km dalla Terra. Nessun inserimento in orbita: la geometria a ritorno libero riporta Orione sulla Terra.",
       "type": "info"
     },
     {
@@ -35,7 +35,7 @@
       "type": "nominal"
     },
     {
-      "met": 10,
+      "met": 9.06,
       "label": "AMMARAGGIO",
       "note": "Rientro di Orion e ammaraggio nell'Oceano Pacifico.",
       "type": "info"

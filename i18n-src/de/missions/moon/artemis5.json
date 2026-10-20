@@ -1,0 +1,50 @@
+{
+  "name": "Artemis V",
+  "type": "LANDER MIT BESATZUNG · GEPLANT",
+  "first": "Zweite bemannte Landung der Artemis-Ära – der Beginn einer Mondbasis",
+  "description": "Artemis V ist als zweite bemannte Landung in der Nähe des Mondsüdpols geplant und folgt Artemis IV noch im selben Jahr – Teil des Ziels der NASA von 2026, mindestens eine Landung pro Jahr durchzuführen. Sie soll den Übergang von kurzen Besuchen zu einer dauerhaften Präsenz einleiten: Arbeiten an einer Basis auf der Oberfläche, für die sich die NASA im März 2026 entschieden hat, statt die Raumstation Gateway in der Mondumlaufbahn fertigzustellen, die jetzt pausiert. Wie bei Artemis IV startet die SLS Orion mit vier Besatzungsmitgliedern, und ein kommerzieller Lander bringt zwei von ihnen hinunter. Die SLS ist bis einschließlich Artemis V finanziert; für spätere Missionen hat die NASA kommerzielle, wiederverwendbare Alternativen vorgeschlagen. Geplant für Ende 2028; Besatzung, Lander und Landeplatz sind noch nicht ausgewählt.",
+  "events": [
+    {
+      "met": 0,
+      "label": "SLS-EINFÜHRUNG",
+      "note": "Orion startet vom KSC LC-39B mit einer vierköpfigen Besatzung.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TLI",
+      "note": "Translunare Injektion.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "NRHO-ANKUNFT",
+      "note": "Orion erreicht eine hohe Mondumlaufbahn und trifft auf den wartenden Lander.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "ABSTIEG",
+      "note": "Transfer von 2 Besatzungsmitgliedern zum Lander; Motorischer Abstieg zum Mondsüdpol.",
+      "type": "info"
+    },
+    {
+      "met": 12,
+      "label": "AUFSTIEG",
+      "note": "Der Lander kehrt nach dem Oberflächenaufenthalt in die Mondumlaufbahn zurück.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "TEI",
+      "note": "Trans-Earth-Injektion.",
+      "type": "nominal"
+    },
+    {
+      "met": 18,
+      "label": "WASSERUNG",
+      "note": "Orion wassert im Pazifischen Ozean.",
+      "type": "info"
+    }
+  ]
+}

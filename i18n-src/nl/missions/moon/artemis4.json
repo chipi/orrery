@@ -1,8 +1,8 @@
 {
-  "name": "Artemis III",
+  "name": "Artemis IV",
   "type": "BEMANDE LANDER · GEPLAND",
   "first": "Eerste bemande maanlanding sinds Apollo 17 (1972)",
-  "description": "De eerste bemande maanlanding in meer dan een halve eeuw. Architectuur: NASA's SLS Block 1 lanceert Orion met 4 bemanningsleden naar een Near-Rectilinear Halo Orbit (NRHO) rond de Maan. Voorgepositioneerd bij NRHO is een SpaceX Starship Human Landing System (HLS), hervuld in lage Aardbaan door tankers vóór zijn trans-lunaire injectie. De Orion-bemanning verschuift naar HLS; 2 astronauten dalen af naar de zuidpool-regio van de Maan voor ~6,5 dagen oppervlakteoperaties terwijl 2 in NRHO blijven. Na oppervlakteoperaties lanceert HLS terug naar NRHO voor overdracht aan Orion en Aarde-terugkeer. Zal de eerste vrouw en eerste persoon van kleur op de Maan landen.",
+  "description": "Sinds NASA's planwijziging van februari 2026 is Artemis IV de missie die mensen terugbrengt naar het maanoppervlak — de eerste landing sinds Apollo 17 in 1972, en de eerste ooit bij de zuidpool. De SLS, op zijn laatste vlucht met de tijdelijke bovenste trap, lanceert Orion met vier bemanningsleden naar de Maan. In een baan om de Maan ontmoeten ze een commerciële lander — SpaceX' Starship of Blue Origins Blue Moon, te kiezen na de koppelingstests van Artemis III — en dalen twee astronauten af naar het zuidpoolgebied voor ongeveer een week werk aan het oppervlak, terwijl twee aan boord van Orion blijven. De zuidpool is het doel omdat de permanent beschaduwde kraters waterijs bevatten, dat toekomstige missies kunnen omzetten in drinkwater, zuurstof en raketbrandstof. NASA heeft negen kandidaat-landingsgebieden aangewezen. Gepland voor begin 2028; de bemanning is nog niet bekendgemaakt.",
   "events": [
     {
       "met": 0,
@@ -19,25 +19,25 @@
     {
       "met": 4,
       "label": "NRHO-AANKOMST",
-      "note": "Orion arriveert bij Near-Rectilinear Halo Orbit; rendezvous met voorgepositioneerde Starship HLS.",
+      "note": "Orion arriveert in een hoge maanbaan en ontmoet de wachtende lander.",
       "type": "nominal"
     },
     {
       "met": 5,
       "label": "AFDALING",
-      "note": "2 bemanningsleden verschuiven naar HLS; aangedreven afdaling naar maanzuidpool.",
+      "note": "2 bemanningsleden stappen over naar de lander; aangedreven afdaling naar de zuidpool van de Maan.",
       "type": "info"
     },
     {
       "met": 12,
       "label": "ASCENSIE",
-      "note": "HLS-ascensie naar NRHO na ~6,5 dagen oppervlakteoperaties.",
+      "note": "De lander keert na ongeveer een week oppervlakteoperaties terug naar een maanbaan.",
       "type": "nominal"
     },
     {
       "met": 14,
       "label": "TEI",
-      "note": "Trans-Aarde-injectie vanuit NRHO.",
+      "note": "Trans-Aarde-injectie.",
       "type": "nominal"
     },
     {

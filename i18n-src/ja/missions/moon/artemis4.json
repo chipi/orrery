@@ -1,15 +1,15 @@
 {
-  "name": "Artemis III",
+  "name": "Artemis IV",
   "type": "有人着陸機 · 計画",
   "first": "Apollo 17（一九七二）以来初の有人月面着陸",
-  "description": "50年以上ぶりの有人月面着陸。アーキテクチャ：NASAの SLS Block 1 が Orion を 4 人の乗員とともに月周辺の近直線ハロー軌道（NRHO）に打ち上げる。NRHO に事前配置された SpaceX Starship Human Landing System（HLS）は、月への遷移軌道投入前に、低軌道の補給機によって補給される。Orion の乗員は HLS に移乗し、2 人の宇宙飛行士が月の南極領域に着陸して約 6.5 日間の表面活動を行う一方、2 人は NRHO に留まる。表面活動後、HLS は NRHO に戻り、Orion への移乗と地球への帰還を行う。月面に初めての女性と初めての有色人種を着陸させる。",
+  "description": "2026年2月のNASAの計画変更により、Artemis IVは人類を月面へ帰還させるミッションとなった——1972年のApollo 17以来初の着陸であり、南極付近では史上初となる。暫定上段を使う最後の飛行となるSLSが、四人の乗員を乗せたOrionを月へ向けて打ち上げる。月周回軌道で乗員は民間着陸機——SpaceXのStarshipまたはBlue OriginのBlue Moon（Artemis IIIのドッキング試験の後に選定）——と合流し、二人の宇宙飛行士が南極域へ降下して約1週間の表面活動を行い、残る二人はOrionに留まる。南極が目標とされるのは、永久影のクレーターに水氷があり、将来のミッションがそれを飲料水、酸素、ロケット推進剤に変えうるからだ。NASAは9か所の着陸候補領域を特定している。2028年前半を予定しており、乗員はまだ発表されていない。",
   "events": [
     { "met": 0, "label": "SLS 打ち上げ", "note": "Orion が KSC LC-39B から四人で離昇。", "type": "nominal" },
     { "met": 1, "label": "TLI", "note": "月移行軌道投入。", "type": "nominal" },
-    { "met": 4, "label": "NRHO 到着", "note": "Orion が近直線ハロー軌道に到着。事前配置された Starship HLS とのランデブー。", "type": "nominal" },
-    { "met": 5, "label": "降下", "note": "2 人の乗員が HLS に移乗し、月の南極への動力着陸を行う。", "type": "info" },
-    { "met": 12, "label": "上昇", "note": "約 6.5 日間の表面活動後、HLS が NRHO に上昇帰還する。", "type": "nominal" },
-    { "met": 14, "label": "TEI", "note": "NRHO から地球移行軌道投入。", "type": "nominal" },
+    { "met": 4, "label": "NRHO 到着", "note": "Orion が高い月周回軌道に到着し、待機していた着陸機とランデブー。", "type": "nominal" },
+    { "met": 5, "label": "降下", "note": "2 人の乗員が着陸機に移乗し、月の南極への動力着陸を行う。", "type": "info" },
+    { "met": 12, "label": "上昇", "note": "約 1 週間の表面活動後、着陸機が月周回軌道に戻る。", "type": "nominal" },
+    { "met": 14, "label": "TEI", "note": "地球移行軌道投入。", "type": "nominal" },
     { "met": 18, "label": "着水", "note": "Orion が太平洋に着水。", "type": "info" }
   ]
 }

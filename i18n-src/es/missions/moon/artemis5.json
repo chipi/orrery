@@ -1,0 +1,50 @@
+{
+  "name": "Artemis V",
+  "type": "ATERRIZADOR TRIPULADO · PLANIFICADA",
+  "first": "Segundo aterrizaje tripulado de la era Artemis — el comienzo de una base lunar",
+  "description": "Artemis V está previsto como el segundo aterrizaje tripulado cerca del polo sur lunar, tras Artemis IV y dentro del mismo año — parte del objetivo de la NASA de 2026 de al menos un aterrizaje al año. Debe iniciar el paso de las visitas breves a una presencia duradera: el trabajo hacia una base en la superficie, que la NASA eligió en marzo de 2026 en lugar de terminar la estación Gateway en órbita lunar, ahora en pausa. Como en Artemis IV, el SLS lanza Orion con cuatro tripulantes y un módulo de aterrizaje comercial lleva a dos de ellos hasta la superficie. El SLS tiene financiación para volar hasta Artemis V; para misiones posteriores la NASA ha propuesto alternativas comerciales y reutilizables. Previsto para finales de 2028; la tripulación, el módulo de aterrizaje y el lugar de aterrizaje aún no se han elegido.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO SLS",
+      "note": "Orion despega desde KSC LC-39B con tripulación de 4.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "ITL",
+      "note": "Inyección translunar.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "LLEGADA A NRHO",
+      "note": "Orion llega a una órbita lunar alta y se encuentra con el módulo de aterrizaje que lo espera.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "DESCENSO",
+      "note": "2 tripulantes se transfieren al módulo de aterrizaje; descenso propulsado al polo sur lunar.",
+      "type": "info"
+    },
+    {
+      "met": 12,
+      "label": "ASCENSO",
+      "note": "El módulo de aterrizaje regresa a la órbita lunar tras la estancia en superficie.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "ITT",
+      "note": "Inyección transterrestre.",
+      "type": "nominal"
+    },
+    {
+      "met": 18,
+      "label": "AMERIZAJE",
+      "note": "Orion ameriza en el océano Pacífico.",
+      "type": "info"
+    }
+  ]
+}

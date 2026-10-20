@@ -1,8 +1,8 @@
 {
-  "name": "Artemis III",
+  "name": "Artemis IV",
   "type": "LANDER CON EQUIPAGGIO · PIANIFICATO",
   "first": "Primo atterraggio sulla Luna con equipaggio dall'Apollo 17 (1972)",
-  "description": "Il primo sbarco lunare con equipaggio in oltre mezzo secolo. Architettura: l'SLS Block 1 della NASA lancia Orion con 4 astronauti verso un'orbita alone rettineare quasi-diritta (NRHO) intorno alla Luna. Un'unità di atterraggio lunare (HLS) Starship della SpaceX è pre-posizionata nell'NRHO e ricaricata in orbita terrestre bassa da navi cisterna prima della sua iniezione trans-lunare. L'equipaggio di Orion si trasferisce sull'HLS; 2 astronauti scendono nella regione del polo sud lunare per circa 6,5 giorni di operazioni di superficie mentre 2 rimangono nell'NRHO. Dopo le operazioni di superficie, l'HLS si lancia di nuovo verso l'NRHO per il trasferimento a Orion e il ritorno sulla Terra. Porterà sulla Luna la prima donna e la prima persona di colore.",
+  "description": "Dopo il cambio di piano della NASA di febbraio 2026, Artemis IV è la missione che riporta gli esseri umani sulla superficie lunare: il primo allunaggio dall'Apollo 17 nel 1972 e il primo in assoluto vicino al polo sud. L'SLS, al suo ultimo volo con lo stadio superiore provvisorio, lancia Orion con quattro membri dell'equipaggio verso la Luna. In orbita lunare incontrano un lander commerciale — la Starship di SpaceX o il Blue Moon di Blue Origin, da scegliere dopo i test di aggancio di Artemis III — e due astronauti scendono nella regione del polo sud per circa una settimana di lavoro in superficie, mentre altri due restano a bordo di Orion. Il polo sud è l'obiettivo perché i suoi crateri in ombra permanente contengono ghiaccio d'acqua, che le missioni future potrebbero trasformare in acqua potabile, ossigeno e propellente. La NASA ha individuato nove regioni candidate all'allunaggio. Previsto per l'inizio del 2028; l'equipaggio non è ancora stato nominato.",
   "events": [
     {
       "met": 0,
@@ -19,25 +19,25 @@
     {
       "met": 4,
       "label": "ARRIVANO TUTTI",
-      "note": "Orion arriva nell'orbita alo rettilineo prossimale; rendez-vous con Starship HLS pre-posizionato.",
+      "note": "Orion arriva in un'orbita lunare alta e incontra il lander in attesa.",
       "type": "nominal"
     },
     {
       "met": 5,
       "label": "DISCESA",
-      "note": "2 membri dell'equipaggio trasferiscono un HLS; discesa motorizzata al polo sud lunare.",
+      "note": "2 membri dell'equipaggio passano sul lander; discesa motorizzata al polo sud lunare.",
       "type": "info"
     },
     {
       "met": 12,
       "label": "SALITA",
-      "note": "Salita HLS a NRHO dopo circa 6,5 giorni di operazioni di superficie.",
+      "note": "Il lander torna in orbita lunare dopo circa una settimana di operazioni di superficie.",
       "type": "nominal"
     },
     {
       "met": 14,
       "label": "TEI",
-      "note": "Iniezione transterrestre da parte di NRHO.",
+      "note": "Iniezione transterrestre.",
       "type": "nominal"
     },
     {

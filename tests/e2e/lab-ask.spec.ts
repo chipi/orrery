@@ -64,7 +64,31 @@ async function stubAuthRoutes(page: Page): Promise<void> {
   });
 }
 
+test.describe('/lab — ask view hidden by default', () => {
+  test('a visitor sees no ask tab and no sign-in', async ({ page }) => {
+    await page.goto('/lab', { waitUntil: 'networkidle' });
+    await expect(page.getByRole('tab', { name: /notebook/i })).toBeVisible();
+    await expect(page.getByRole('tab', { name: /ask/i })).toHaveCount(0);
+    await expect(page.locator('.ask__gate')).toHaveCount(0);
+  });
+
+  test('?ask=on shows the tab and it stays after a reload; ?ask=off hides it', async ({ page }) => {
+    await page.goto('/lab?ask=on', { waitUntil: 'networkidle' });
+    await expect(page.getByRole('tab', { name: /ask/i })).toBeVisible();
+    await page.goto('/lab', { waitUntil: 'networkidle' });
+    await expect(page.getByRole('tab', { name: /ask/i })).toBeVisible();
+    await page.goto('/lab?ask=off', { waitUntil: 'networkidle' });
+    await expect(page.getByRole('tab', { name: /ask/i })).toHaveCount(0);
+  });
+});
+
 test.describe('/lab — ask view', () => {
+  // The ask tab is the author's private test: visible only after ?ask=on (the
+  // switch persists in localStorage, so it survives the sign-in redirect).
+  test.beforeEach(async ({ page }) => {
+    await page.addInitScript(() => localStorage.setItem('orrery.ask', '1'));
+  });
+
   test('signed-out gate shows on the ask tab; nothing fetches without a click', async ({
     page,
   }) => {

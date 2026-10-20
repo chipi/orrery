@@ -20,6 +20,7 @@
   import Notebook from '$lib/lab/Notebook.svelte';
   import Canvas from '$lib/lab/Canvas.svelte';
   import Ask from '$lib/lab/ask/Ask.svelte';
+  import { askSwitch, initAskSwitch } from '$lib/lab/ask/ask-switch.svelte';
   import { createLabState } from '$lib/lab/lab-state.svelte';
   import { createAskState } from '$lib/lab/ask/ask-state.svelte';
   import type { PageData } from './$types';
@@ -47,7 +48,9 @@
   // survives view switches. Silent session resume happens once, in browser.
   const askState = createAskState();
   $effect(() => {
-    if (browser) askState.init();
+    if (!browser) return;
+    initAskSwitch();
+    askState.init();
   });
 
   // Goal switch re-seeds HERE, at the owner's level (holistic M1): the effect
@@ -133,13 +136,17 @@
           class:lab__view-btn--on={view === 'canvas'}
           onclick={() => (view = 'canvas')}>{t('lab.ui.view-canvas')}</button
         >
-        <button
-          role="tab"
-          aria-selected={view === 'ask'}
-          class="lab__view-btn"
-          class:lab__view-btn--on={view === 'ask'}
-          onclick={() => (view = 'ask')}>{t('lab.ui.view-ask')}</button
-        >
+        <!-- Ask is the author's private test (allowlist = one email): shown only after
+             ?ask=on so visitors never meet a sign-in. The allowlist is the lock. -->
+        {#if askSwitch.on}
+          <button
+            role="tab"
+            aria-selected={view === 'ask'}
+            class="lab__view-btn"
+            class:lab__view-btn--on={view === 'ask'}
+            onclick={() => (view = 'ask')}>{t('lab.ui.view-ask')}</button
+          >
+        {/if}
       </div>
     </div>
 
@@ -163,7 +170,7 @@
         {#if isTouch}
           <p class="lab__canvas-note">{t('lab.canvas.readonly-note')}</p>
         {/if}
-      {:else if view === 'ask'}
+      {:else if view === 'ask' && askSwitch.on}
         <Ask ask={askState} {t} />
       {:else}
         <Notebook {goal} equationHtml={data.equationHtml} {t} {labState} />

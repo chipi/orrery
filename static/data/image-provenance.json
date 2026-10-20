@@ -13172,27 +13172,6 @@
    "fetched_at": "2026-06-19T09:26:46.908Z"
   },
   {
-   "id": "441e2a29c98013c1",
-   "path": "/images/fleet-galleries/hayabusa/05.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — hayabusa / \"fleet hayabusa\"",
-   "author": "NASA",
-   "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=fleet+hayabusa&media_type=image&keywords=hayabusa",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
-   "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
-   ],
-   "revid": null,
-   "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.908Z"
-  },
-  {
    "id": "50ed572d38abf123",
    "path": "/images/fleet-galleries/hitomi/01.webp",
    "source_type": "wikimedia-commons",
@@ -82725,6 +82704,50 @@
    "pageid": 18560420,
    "nasa_id": null,
    "fetched_at": "2026-10-20T17:00:03.840Z"
+  },
+  {
+   "id": "7b8cc371b052d4e1",
+   "path": "/images/fleet-galleries/hayabusa/05.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Replica of Hayabusa capsule at JAXA i.jpg",
+   "author": "Mj-bird",
+   "agency": "JAXA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Replica_of_Hayabusa_capsule_at_JAXA_i.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Replica_of_Hayabusa_capsule_at_JAXA_i.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "license_rationale": "Creative Commons Attribution-Share Alike 3.0",
+   "modifications": [
+    "downloaded-via-commons-api",
+    "resized-to-4096-master",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": 12223203,
+   "nasa_id": null,
+   "fetched_at": "2026-10-20T19:00:19.109Z"
+  },
+  {
+   "id": "f8b79a0d5daf4b69",
+   "path": "/images/fleet-galleries/hayabusa/05.1x1.jpg",
+   "source_type": "wikimedia-commons",
+   "title": "File:Replica of Hayabusa capsule at JAXA i.jpg",
+   "author": "Mj-bird",
+   "agency": "JAXA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Replica_of_Hayabusa_capsule_at_JAXA_i.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Replica_of_Hayabusa_capsule_at_JAXA_i.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "license_rationale": "Creative Commons Attribution-Share Alike 3.0",
+   "modifications": [
+    "downloaded-via-commons-api",
+    "resized-to-4096-master",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": 12223203,
+   "nasa_id": null,
+   "fetched_at": "2026-10-20T19:00:19.109Z"
   }
  ]
 }

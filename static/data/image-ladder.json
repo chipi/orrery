@@ -3616,12 +3616,6 @@
     1280,
     1920
   ],
-  "/images/fleet-galleries/hayabusa/05": [
-    320,
-    876,
-    1402,
-    1600
-  ],
   "/images/fleet-galleries/hitomi/01": [
     320,
     640,
@@ -15298,5 +15292,12 @@
     320,
     640,
     957
+  ],
+  "/images/fleet-galleries/hayabusa/05": [
+    320,
+    640,
+    1280,
+    2048,
+    2497
   ]
 }

@@ -83,13 +83,13 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — SLS Block 1 / Orion (planned)",
-        "description": "Kennedy Space Center LC-39B, planned 2027. Artemis III — first crewed lunar landing since Apollo 17 (1972). Plans to deliver the first woman and the first person of colour to the Moon, targeting the lunar south pole at sites near Shackleton crater for direct sampling of permanently-shadowed water-ice regolith."
+        "description": "Kennedy Space Center LC-39B, planned for early 2028. Artemis IV is planned as the first crewed lunar landing since Apollo 17 (1972) and the first ever near the south pole. SLS Block 1 flies for the last time with the ICPS upper stage, carrying Orion and four crew."
       },
       {
         "met_days": 0.13,
         "type": "tli_or_tmi",
         "label": "Trans-lunar injection",
-        "description": "ICPS burn sends Orion + crew on a 4-day translunar coast toward Near-Rectilinear Halo Orbit rendezvous with the SpaceX Starship HLS that pre-positioned there."
+        "description": "The ICPS burn sends Orion and its crew on a 4-day coast to Near-Rectilinear Halo Orbit, where the commercial lander — Starship HLS or Blue Moon, not yet chosen — waits."
       },
       {
         "met_days": 1.48,
@@ -107,33 +107,33 @@
         "met_days": 4,
         "type": "loi",
         "label": "NRHO insertion + lander rendezvous",
-        "description": "Orion captures into Near-Rectilinear Halo Orbit — an elongated lunar orbit with 3,000 km perilune + 70,000 km apolune, energetically much cheaper than Apollo's circular Low Lunar Orbit (~0.45 km/s vs Apollo's 0.89 km/s). Crew docks with the pre-positioned SpaceX Starship Human Landing System.",
+        "description": "Orion captures into Near-Rectilinear Halo Orbit — an elongated lunar orbit with a 3,000 km perilune and a 70,000 km apolune, much cheaper to reach than Apollo's circular low lunar orbit (~0.45 km/s against Apollo's 0.89 km/s). The crew docks with the waiting lander.",
         "dv_km_s": 0.45
       },
       {
         "met_days": 5,
         "type": "descent_start",
         "label": "Lander powered descent — lunar south pole",
-        "description": "Two crew descend in Starship HLS while two remain in Orion. Targets sites near Shackleton or Connecting Ridge, all within permanently-shadowed-region access. 6.5-day surface stay planned — far longer than Apollo's 3-day max."
+        "description": "Two crew descend in the lander while two remain in Orion. The target is the south polar region, where NASA has named nine candidate landing regions. A surface stay of about a week is planned — more than twice Apollo's longest, about 3 days on Apollo 17."
       },
       {
-        "met_days": 7.5,
+        "met_days": 12,
         "type": "ascent",
         "label": "Lander ascent + return to NRHO",
-        "description": "Starship's main Raptor engines fire from the surface, returning the lander to NRHO for crew transfer back to Orion. The HLS is designed for reuse — it stays at NRHO for refueling by subsequent tanker missions."
+        "description": "The lander lifts off and carries the two surface crew back to NRHO, where they transfer to Orion."
       },
       {
-        "met_days": 9.5,
+        "met_days": 14,
         "type": "tei",
         "label": "Trans-Earth injection",
-        "description": "Orion departs NRHO on a return trajectory. Total NRHO + surface time is ~5.5 days.",
+        "description": "Orion leaves NRHO on its return trajectory, about ten days after arriving.",
         "dv_km_s": 0.45
       },
       {
-        "met_days": 11,
+        "met_days": 18,
         "type": "earth_return",
         "label": "Splashdown — Pacific Ocean",
-        "description": "Planned 2027. Orion re-enters Earth's atmosphere at lunar return velocity (~11 km/s), executes skip-entry to bleed energy, and splashes down in the Pacific."
+        "description": "Planned for early 2028. Orion re-enters Earth's atmosphere at lunar-return velocity (~11 km/s) and splashes down in the Pacific."
       }
     ],
     "cislunar_profile": {
@@ -168,106 +168,64 @@
           0
         ],
         [
-          0.0001,
-          6702,
-          -8,
-          13
-        ],
-        [
           0.13,
-          -6677,
-          -282,
-          443
+          5173,
+          -39,
+          62
         ],
         [
-          0.35,
-          -2565,
-          -3327,
-          5223
+          0.3818,
+          -3729,
+          -2420,
+          3875
         ],
         [
-          0.4667,
-          -6834,
+          0.5727,
+          -7039,
           0,
-          281
+          755
         ],
         [
-          0.5833,
-          -7059,
+          0.7636,
+          -7391,
           0,
-          802
+          1694
         ],
         [
-          0.7,
-          -7276,
+          0.9545,
+          -7722,
           0,
-          1363
+          2756
         ],
         [
-          0.8167,
-          -7486,
+          1.1455,
+          -8023,
           0,
-          1969
+          3982
         ],
         [
-          0.9333,
-          -7687,
+          1.3364,
+          -8282,
           0,
-          2626
-        ],
-        [
-          1.05,
-          -7878,
-          0,
-          3341
-        ],
-        [
-          1.1667,
-          -8055,
-          0,
-          4124
-        ],
-        [
-          1.2833,
-          -8217,
-          0,
-          4983
-        ],
-        [
-          1.4,
-          -8360,
-          0,
-          5933
+          5415
         ],
         [
           1.5,
-          -8464,
+          -8449,
           0,
-          6829
+          6701
         ],
         [
-          1.6333,
-          -8568,
+          1.7182,
+          -8605,
           0,
-          8163
+          9124
         ],
         [
-          1.75,
-          -8619,
+          1.9091,
+          -8598,
           0,
-          9484
-        ],
-        [
-          1.8667,
-          -8620,
-          0,
-          10979
-        ],
-        [
-          1.9833,
-          -8559,
-          0,
-          12683
+          11599
         ],
         [
           2.1,
@@ -276,106 +234,64 @@
           14640
         ],
         [
-          2.2167,
-          -8160,
+          2.2909,
+          -7906,
           0,
-          16909
+          18599
         ],
         [
-          2.3333,
-          -7761,
+          2.4818,
+          -6929,
           0,
-          19565
+          23737
         ],
         [
-          2.45,
-          -7165,
+          2.6727,
+          -5175,
           0,
-          22710
+          30632
         ],
         [
-          2.5667,
-          -6300,
+          2.8636,
+          -1919,
           0,
-          26476
+          40537
         ],
         [
-          2.6833,
-          -5062,
+          3.0545,
+          3843,
           0,
-          31048
+          54905
         ],
         [
-          2.8,
-          -3298,
+          3.2455,
+          14669,
           0,
-          36682
+          77283
         ],
         [
-          2.9167,
-          -770,
+          3.4364,
+          36442,
           0,
-          43749
+          114512
         ],
         [
-          3.0333,
-          2875,
+          3.6273,
+          78654,
           0,
-          52770
+          174710
         ],
         [
-          3.15,
-          8200,
+          3.8182,
+          157335,
           0,
-          64514
-        ],
-        [
-          3.2667,
-          16107,
-          0,
-          80121
-        ],
-        [
-          3.3833,
-          28076,
-          0,
-          101290
-        ],
-        [
-          3.5,
-          46481,
-          0,
-          130379
-        ],
-        [
-          3.6167,
-          74821,
-          0,
-          170060
-        ],
-        [
-          3.7333,
-          116982,
-          0,
-          221214
-        ],
-        [
-          3.85,
-          172468,
-          0,
-          276106
+          261135
         ],
         [
           4,
-          235783,
-          0,
-          309571
-        ],
-        [
-          4.0833,
-          235444,
-          2233,
-          309126
+          235686,
+          638,
+          309444
         ],
         [
           4.2,
@@ -384,106 +300,64 @@
           307244
         ],
         [
-          4.3167,
-          232080,
-          4533,
-          304708
+          4.3909,
+          231091,
+          3323,
+          303410
         ],
         [
-          4.4333,
-          230526,
-          2632,
-          302668
+          4.5818,
+          230282,
+          -1251,
+          302347
         ],
         [
-          4.55,
-          230056,
-          -464,
-          302051
-        ],
-        [
-          4.6667,
-          230883,
-          -3350,
-          303137
-        ],
-        [
-          4.7833,
-          232632,
-          -4715,
-          305433
-        ],
-        [
-          4.9,
-          234508,
-          -3939,
-          307896
+          4.7727,
+          232473,
+          -4591,
+          305224
         ],
         [
           5,
-          235565,
-          -1813,
-          309284
+          235414,
+          -2117,
+          309086
         ],
         [
-          5.1333,
-          235565,
-          1813,
-          309284
+          5.1545,
+          235329,
+          2243,
+          308974
         ],
         [
-          5.25,
-          234266,
-          4178,
-          307579
+          5.3455,
+          232701,
+          4561,
+          305524
         ],
         [
-          5.3667,
-          232353,
-          4646,
-          305067
+          5.5364,
+          230398,
+          1639,
+          302500
         ],
         [
-          5.4833,
-          230694,
-          3005,
-          302889
-        ],
-        [
-          5.6,
-          230042,
+          5.7273,
+          41047,
           0,
-          302033
+          283288
         ],
         [
-          5.7167,
-          44706,
+          5.9182,
+          -7397,
           0,
-          293129
+          133487
         ],
         [
-          5.8333,
-          4458,
+          6.1091,
+          -17750,
           0,
-          184882
-        ],
-        [
-          5.95,
-          -11842,
-          0,
-          114214
-        ],
-        [
-          6.0667,
-          -17285,
-          0,
-          73670
-        ],
-        [
-          6.1833,
-          -18564,
-          0,
-          49661
+          64939
         ],
         [
           6.3,
@@ -492,274 +366,400 @@
           34614
         ],
         [
-          6.4167,
-          -17320,
+          6.4909,
+          -16602,
           0,
-          24661
+          20261
         ],
         [
-          6.5333,
-          -16191,
+          6.6818,
+          -14710,
           0,
-          17747
+          11736
         ],
         [
-          6.65,
-          -15021,
+          6.8727,
+          -12889,
           0,
-          12752
+          6429
         ],
         [
-          6.7667,
-          -13879,
+          7.0636,
+          -11230,
           0,
-          9028
+          2945
         ],
         [
-          6.8833,
-          -12790,
+          7.2545,
+          -9709,
           0,
-          6169
+          449
         ],
         [
-          7,
-          -11760,
+          7.4455,
+          -8122,
           0,
-          3925
+          -1570
         ],
         [
-          7.1167,
-          -10788,
+          7.6364,
+          -7006,
           0,
-          2129
+          -2718
         ],
         [
-          7.2333,
-          -9868,
+          7.8273,
+          -5761,
           0,
-          668
+          -3773
         ],
         [
-          7.35,
-          -8994,
+          8.0182,
+          -4785,
           0,
-          -537
+          -4445
         ],
         [
-          7.5,
-          -7928,
+          8.2091,
+          232913,
           0,
-          -1800
-        ],
-        [
-          7.5833,
-          -7358,
-          0,
-          -2391
-        ],
-        [
-          7.7,
-          -6583,
-          0,
-          -3111
-        ],
-        [
-          7.8167,
-          -5828,
-          0,
-          -3725
-        ],
-        [
-          7.9333,
-          -5089,
-          0,
-          -4251
-        ],
-        [
-          8.05,
-          -4671,
-          0,
-          -4518
-        ],
-        [
-          8.1667,
-          -4671,
-          0,
-          -4518
-        ],
-        [
-          8.2833,
-          -4671,
-          0,
-          -4518
+          305802
         ],
         [
           8.4,
-          -4671,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          8.5167,
-          -4671,
+          8.5909,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          8.6333,
-          -4671,
+          8.7818,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          8.75,
-          -4671,
+          8.9727,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          8.8667,
-          -4671,
+          9.1636,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          8.9833,
-          -4671,
+          9.3545,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          9.1,
-          -4671,
+          9.5455,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          9.2167,
-          -4671,
+          9.7364,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          9.3333,
-          -4671,
+          9.9273,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          9.5,
-          -4671,
+          10.1182,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          9.5667,
-          -4671,
+          10.3091,
+          232913,
           0,
-          -4518
-        ],
-        [
-          9.6833,
-          -4671,
-          0,
-          -4518
-        ],
-        [
-          9.8,
-          -4671,
-          0,
-          -4518
-        ],
-        [
-          9.9167,
-          -4671,
-          0,
-          -4518
-        ],
-        [
-          10.0333,
-          -4671,
-          0,
-          -4518
-        ],
-        [
-          10.15,
-          -4671,
-          0,
-          -4518
-        ],
-        [
-          10.2667,
-          -4671,
-          0,
-          -4518
-        ],
-        [
-          10.3833,
-          -4671,
-          0,
-          -4518
+          305802
         ],
         [
           10.5,
-          -4671,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          10.6167,
-          -4671,
+          10.6909,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          10.7333,
-          -4671,
+          10.8818,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          10.85,
-          -4671,
+          11.0727,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          11,
-          -4671,
+          11.2636,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          11.0833,
-          -4671,
+          11.4545,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          11.2,
-          -4671,
+          11.6455,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          11.3167,
-          -4671,
+          11.8364,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          11.4333,
-          -4671,
+          12,
+          232913,
           0,
-          -4518
+          305802
         ],
         [
-          11.55,
-          -4671,
+          12.2182,
+          232913,
           0,
-          -4518
+          305802
+        ],
+        [
+          12.4091,
+          232913,
+          0,
+          305802
+        ],
+        [
+          12.6,
+          232913,
+          0,
+          305802
+        ],
+        [
+          12.7909,
+          232913,
+          0,
+          305802
+        ],
+        [
+          12.9818,
+          232913,
+          0,
+          305802
+        ],
+        [
+          13.1727,
+          232913,
+          0,
+          305802
+        ],
+        [
+          13.3636,
+          232913,
+          0,
+          305802
+        ],
+        [
+          13.5545,
+          232913,
+          0,
+          305802
+        ],
+        [
+          13.7455,
+          232913,
+          0,
+          305802
+        ],
+        [
+          14,
+          232913,
+          0,
+          305802
+        ],
+        [
+          14.1273,
+          232913,
+          0,
+          305802
+        ],
+        [
+          14.3182,
+          232913,
+          0,
+          305802
+        ],
+        [
+          14.5091,
+          232913,
+          0,
+          305802
+        ],
+        [
+          14.7,
+          232913,
+          0,
+          305802
+        ],
+        [
+          14.8909,
+          232913,
+          0,
+          305802
+        ],
+        [
+          15.0818,
+          232913,
+          0,
+          305802
+        ],
+        [
+          15.2727,
+          232913,
+          0,
+          305802
+        ],
+        [
+          15.4636,
+          232913,
+          0,
+          305802
+        ],
+        [
+          15.6545,
+          232913,
+          0,
+          305802
+        ],
+        [
+          15.8455,
+          232913,
+          0,
+          305802
+        ],
+        [
+          16.0364,
+          232913,
+          0,
+          305802
+        ],
+        [
+          16.2273,
+          232913,
+          0,
+          305802
+        ],
+        [
+          16.4182,
+          232913,
+          0,
+          305802
+        ],
+        [
+          16.6091,
+          232913,
+          0,
+          305802
+        ],
+        [
+          16.8,
+          232913,
+          0,
+          305802
+        ],
+        [
+          16.9909,
+          232913,
+          0,
+          305802
+        ],
+        [
+          17.1818,
+          232913,
+          0,
+          305802
+        ],
+        [
+          17.3727,
+          232913,
+          0,
+          305802
+        ],
+        [
+          17.5636,
+          232913,
+          0,
+          305802
+        ],
+        [
+          17.7545,
+          232913,
+          0,
+          305802
+        ],
+        [
+          18,
+          232913,
+          0,
+          305802
+        ],
+        [
+          18.1364,
+          232913,
+          0,
+          305802
+        ],
+        [
+          18.3273,
+          232913,
+          0,
+          305802
+        ],
+        [
+          18.5182,
+          232913,
+          0,
+          305802
+        ],
+        [
+          18.7091,
+          232913,
+          0,
+          305802
+        ],
+        [
+          18.9,
+          232913,
+          0,
+          305802
         ]
       ]
     }

@@ -49,7 +49,7 @@ const MOON_SNAPSHOTS: CislunarSnapshot[] = [
   { slug: 'apollo13', dest: 'moon', firstMet: 0, lastMetMin: 6.1, lastMetMax: 6.3, count: 100 },
   { slug: 'apollo17', dest: 'moon', firstMet: 0, lastMetMin: 13.1, lastMetMax: 13.3, count: 100 },
   { slug: 'artemis2', dest: 'moon', firstMet: 0, lastMetMin: 9.4, lastMetMax: 9.6, count: 100 },
-  { slug: 'artemis4', dest: 'moon', firstMet: 0, lastMetMin: 11.4, lastMetMax: 11.6, count: 100 },
+  { slug: 'artemis4', dest: 'moon', firstMet: 0, lastMetMin: 18.8, lastMetMax: 19.0, count: 100 },
   { slug: 'beresheet', dest: 'moon', firstMet: 0, lastMetMin: 50.3, lastMetMax: 50.5, count: 100 },
   {
     slug: 'blue-moon-mk1',

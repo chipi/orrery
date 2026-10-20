@@ -118,6 +118,9 @@ exclusion toggle. Keep event names in sync between #521 and the funnels/goals ab
 - [x] UTM URLs generated (share them).
 - [x] Report recipes documented (operator/pickup-agent to click, ~2 min; or API w/ token).
 - [x] Code blind-spots filed as #521.
-- [ ] Operator: run the exclusion flag on your devices.
-- [ ] Operator: create the funnel + retention + goals reports (or grant an API token and
-      a follow-up can script them).
+- [ ] Operator: switch analytics off on each device you test with — the toggle on
+      `/privacy` (sets the `orrery_analytics_optout` cookie; works on phones and PWA
+      installs, no devtools needed), or the `umami.disabled` one-liner above.
+- [x] Reports exist (checked via the API 2026-10-20): funnels "Planner engagement",
+      "Flight progression", "Exploration to learning"; goals "Mission flight completed",
+      "Curator Tour completed". Retention is a built-in Umami view, not a stored report.

@@ -1,5 +1,8 @@
 {
   "name": "BepiColombo",
+  "vehicle": "Ariane 5 ECA",
+  "payload": "Conjunto de lanzamiento de 4100 kg: MTM (Mercury Transfer Module, ESA — 4 propulsores iónicos, paneles solares) + MPO (Mercury Planetary Orbiter, ESA, 1230 kg, 11 instrumentos) + MIO (Mercury Magnetospheric Orbiter, JAXA, 285 kg, 5 instrumentos) + parasol MOSIF. Los dos orbitadores científicos se separan tras la llegada a Mercurio.",
+  "delta_v": "~7,2 km/s (crucero iónico + 9 asistencias gravitatorias + MOI)",
   "type": "ORBITADOR · ACTIVO",
   "first": "Primera misión conjunta Europa + Japón a un planeta; segunda nave espacial en orbitar Mercurio (después de Messenger)",
   "description": "Misión conjunta ESA / JAXA a Mercurio, lanzada el 2018-10-20 — nombrada en honor del matemático italiano Giuseppe (Bepi) Colombo, quien diseñó la trayectoria de múltiples sobrevuelos de Mariner 10. El crucero de 8 años utiliza 9 asistencias gravitatorias (Tierra 2020, Venus 2020, Venus 2021, seguidas de seis sobrevuelos de Mercurio 2021–2025) más un empuje iónico-eléctrico continuo del Módulo de Transferencia a Mercurio para reducir el enorme gradiente gravitatorio solar entre las órbitas de la Tierra y Mercurio. Inserción en órbita de Mercurio 2026-11-21; las operaciones científicas comienzan a principios de 2027 tras la eyección del MTM y la separación de los dos orbitadores — el MPO de la ESA (superficie y composición planetaria) y el Mio de la JAXA (magnetosfera). También se planean pruebas de relatividad general mediante seguimiento de rango de radiociencia a través del intenso entorno de gravedad solar de Mercurio.",

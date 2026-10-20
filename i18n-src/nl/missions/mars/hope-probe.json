@@ -1,5 +1,8 @@
 {
   "name": "Hope-sonde",
+  "vehicle": "H-IIA 202 (vanaf Tanegashima)",
+  "payload": "1500 kg",
+  "delta_v": "~3,5 km/s",
   "type": "ORBITER · ACTIEF",
   "first": "Eerste interplanetaire missie van Arabische staten",
   "description": "De Emirates Mars Mission — Al Amal, 'Hope' — werd in 2014 opgezet ter gelegenheid van het 50-jarig jubileum van de VAE-federatie in 2021. Het MBRSC-team werkte samen met de Universiteit van Colorado, Arizona State en UC Berkeley om de ruimtesonde te ontwerpen en te integreren, maar bouwde deze zelf. De wetenschappelijke baan (periode van 55 uur, ~20.000 km × 43.000 km) bestrijkt alle lengtegraden en tijden van de dag, waardoor weerpatronen worden vastgelegd die geen andere Marsorbiter kan onderscheiden. De missie slaagde bij de eerste poging, waardoor de VAE het vijfde agentschap op Mars werd.",

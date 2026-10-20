@@ -1,5 +1,8 @@
 {
   "name": "Artemis III",
+  "vehicle": "SLS Block 1 (con un espaciador no propulsor en lugar de la etapa superior)",
+  "payload": "Orion + tripulación de 4 personas; encuentro y acoplamiento con los Starship de prueba y los módulos de aterrizaje Blue Moon en órbita terrestre baja",
+  "delta_v": "~9,4 km/s (hasta LEO)",
   "type": "VUELO DE PRUEBA TRIPULADO · PLANIFICADA",
   "first": "Primera prueba tripulada de los módulos de aterrizaje comerciales — Orion se acopla a ellos en órbita terrestre",
   "description": "Artemis III ya no aterriza en la Luna. En febrero de 2026 la NASA cambió el plan: antes de arriesgar un aterrizaje, una tripulación volará en Orion en órbita terrestre baja y ensayará el paso nuevo más difícil — el encuentro y el acoplamiento con los módulos de aterrizaje comerciales que más adelante llevarán astronautas a la superficie. El SLS lanza Orion con cuatro tripulantes, con un espaciador en lugar de la etapa superior, ya que no hace falta ningún impulso hacia la Luna. En órbita, Orion se encuentra con versiones de prueba del módulo de aterrizaje Starship de SpaceX y del Blue Moon de Blue Origin, se acopla a ellos, y la tripulación prueba el soporte vital, las comunicaciones y la propulsión de los vehículos unidos, junto con los nuevos trajes espaciales AxEMU. El vuelo dura unas dos semanas. Hace el papel que hizo el Apollo 9 en 1969, cuando el módulo lunar se voló y se acopló en órbita terrestre antes de que nadie lo llevara a la Luna. Tripulación, anunciada en junio de 2026: Randy Bresnik (comandante), Luca Parmitano, de la ESA (piloto), Andre Douglas y Frank Rubio. La NASA prevé el vuelo para 2027."

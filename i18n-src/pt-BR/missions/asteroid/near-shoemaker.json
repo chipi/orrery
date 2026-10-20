@@ -1,5 +1,8 @@
 {
   "name": "NEAR Shoemaker",
+  "vehicle": "Delta II 7925-8",
+  "payload": "805 kg no lançamento (487 kg a seco) — espectrômetro de raios X/gama, espectrógrafo de infravermelho próximo, câmera multiespectral, telêmetro a laser (LIDAR), magnetômetro. Primeira espaçonave a orbitar e pousar em um asteroide.",
+  "delta_v": "~1 km/s (manobras totais da missão)",
   "type": "ORBITADOR + MÓDULO DE POUSO · VOADO",
   "first": "Primeira nave espacial em órbita de um asteroide (433 Eros, 2000) e primeiro pouso suave em qualquer corpo pequeno (12-02-2001)",
   "dispatch": "NEAR Shoemaker foi a Eros porque ninguém realmente sabia como um asteroide se parecia de perto. Chegou para encontrar um mundo repleto de crateras, alongado em forma de sela pela sua rotação lenta, coberto com regolito fino que não tinha para onde ir em microgravidade quase zero. Durante um ano, mapeou cada crista e pedra da órbita, depois em fevereiro de 2001 os controladores tentaram sua sorte: abaixaram a órbita da nave cinco vezes em duas semanas, desaceleraram-na até passo de caminhada e a pousaram na superfície. Sobreviveu. Por mais dezesseis dias transmitiu de Eros — o primeiro emissário da Terra a descansar em um corpo pequeno.",

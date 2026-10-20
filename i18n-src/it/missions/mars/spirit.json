@@ -1,5 +1,8 @@
 {
   "name": "Spirit",
+  "vehicle": "Delta II 7925",
+  "payload": "1063 kg (stadio di crociera + EDL + rover); 174 kg di massa in superficie",
+  "delta_v": "~5,5 km/s",
   "type": "ROVER · FLOWN",
   "first": "Il primo dei due rover Mars Exploration Rover; il rover più longevo fino al sorpasso da parte di Curiosity",
   "dispatch": "Spirit è stato costruito per novanta giorni ed ha operato per sei anni. Uno di una coppia di geologi grandi come un golf cart, atterrato nel 2004, è stato inviato a leggere le rocce in cerca di prove di un Marte più umido in passato — e le ha trovate, scoprendo minerali che si formano solo in acqua e, in un luogo, depositi di silice simili a quelli lasciati dalle sorgenti termali sulla Terra. Ha scalato colline che nessuno aveva pianificato di raggiungere e ha sopravvissuto a inverni per i quali non era stato progettato, fino a quando una ruota si è danneggiata e si è impantanato nella sabbia soffice. Ha continuato a trasmettere dal luogo in cui era bloccato fino a quando il freddo marziano non l'ha definitivamente fermato.",

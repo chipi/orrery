@@ -1,5 +1,8 @@
 {
   "name": "Luna 21 / Lunokhod 2",
+  "vehicle": "Proton-K / D",
+  "payload": "发射质量 5700 kg；Lunokhod 2 月球车 836 kg（行驶 39 km——2014 年前的巡视器最长行驶距离纪录）",
+  "delta_v": "~3 km/s",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
   "first": "苏联第二辆月球车；超过40年来最长的地外行驶距离（约39公里）",
   "description": "Luna 21 于1973年1月将苏联第二辆有人遥控的月球车 Lunokhod 2 送到澄海南缘的勒莫尼耶环形山。这辆月球车由克里米亚控制室中的5人团队驾驶，在四个月球日内行驶了约39公里——这一地外行驶距离纪录保持了40多年，直到2014年 NASA 的 Opportunity 火星车在火星上将其超越。Lunokhod 2 传回了8万帧电视图像和86幅全景图，最终因太阳能电池阵被灰尘污染而停止工作。",

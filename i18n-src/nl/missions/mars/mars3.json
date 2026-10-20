@@ -1,5 +1,8 @@
 {
   "name": "Mars 3",
+  "vehicle": "Proton-K / D",
+  "payload": "4650 kg (orbiter + lander samen)",
+  "delta_v": "~5,5 km/s",
   "type": "ORBITER · LANDER · FLOWN",
   "first": "Eerste ruimtevaartuig met zachte landing op Mars",
   "description": "De ambitieuze dubbelmissie van de Sovjet-Unie naar Mars in 1971 — Mars 2 en Mars 3 werden met een interval van 9 dagen gelanceerd. De lander van Mars 2 stortte neer; de lander van Mars 3 haalde de eerste zachte landing op Mars maar verloor het signaal ~110 seconden na landing — de werkelijke transmissie duurde slechts ~14,5 seconden — waarschijnlijk door de wereldwijde stofstorm die op dat moment woedde. De orbiter werkte 8 maanden lang en leverde tientallen afbeeldingen en atmosferische metingen op. Ondanks de korte oppervlaktemissie toonde Mars 3 aan dat het afdaal- en landingsprobleem op Mars oplosbaar was.",

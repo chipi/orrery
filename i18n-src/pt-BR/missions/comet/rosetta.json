@@ -1,5 +1,8 @@
 {
   "name": "Rosetta",
+  "vehicle": "Ariane 5G+",
+  "payload": "Orbitador (~2900 kg a seco, 11 instrumentos) + módulo de descida Philae (~100 kg, 10 instrumentos). Escudo térmico, duas assistências gravitacionais da Terra + uma de Marte, 957 dias de hibernação no espaço profundo 2011–2014.",
+  "delta_v": "~2,3 km/s (encontro + operações no cometa)",
   "type": "SONDA ORBITAL + MÓDULO DE POUSO · CONCLUÍDA",
   "first": "Primeira espaçonave a orbitar um cometa — e a pousar em um (Philae, 2014-11-12)",
   "description": "Missão de rendezvous com cometa da ESA. Após uma jornada de 10 anos que incluiu três assistências gravitacionais da Terra, uma assistência de Marte, dois sobrevoos de asteroides e 957 dias de hibernação em espaço profundo, Rosetta alcançou o cometa 67P/Churyumov–Gerasimenko em agosto de 2014 e o orbitou por mais de dois anos, passando pelo periélio e saindo pelo outro lado. O módulo de pouso Philae chegou à superfície de 67P em 2014-11-12 — o primeiro pouso suave em um cometa — e retornou aproximadamente 64 horas de ciência após falha de um arpéu deixá-lo na sombra de um penhasco. O próprio Rosetta encerrou a missão com uma descida controlada à superfície de 67P em 2016-09-30. Resultados principais: moléculas orgânicas e glicina na coma; a razão D/H inicialmente medida de 67P (≈3× terrestre) argumentava contra cometas da família de Júpiter como fonte da água terrestre — um resultado que uma reanálise de 2024 colocou em questão após encontrar um erro de medição; os primeiros mapas detalhados da geometria de desgaseificação do cometa.",

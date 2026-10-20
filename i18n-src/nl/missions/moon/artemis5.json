@@ -1,5 +1,8 @@
 {
   "name": "Artemis V",
+  "vehicle": "SLS Block 1 (bovenste trap nog te bevestigen) + bemande lander (Starship HLS of Blue Moon)",
+  "payload": "Orion + bemanning van 4 personen; tweede bemande maanlanding, start van de werkzaamheden aan de maanbasis",
+  "delta_v": "~7 km/s (heen en terug)",
   "type": "BEMANDE LANDER · GEPLAND",
   "first": "Tweede bemande landing van het Artemis-tijdperk — het begin van een maanbasis",
   "description": "Artemis V is gepland als de tweede bemande landing bij de zuidpool van de Maan, in hetzelfde jaar als Artemis IV — onderdeel van NASA's doel uit 2026 van minstens één landing per jaar. Het moet de overgang inluiden van korte bezoeken naar een blijvende aanwezigheid: werk aan een basis op het oppervlak, die NASA in maart 2026 verkoos boven het afbouwen van het Gateway-station in een maanbaan, dat nu is stilgelegd. Net als bij Artemis IV lanceert de SLS Orion met vier bemanningsleden en brengt een commerciële lander er twee naar beneden. De SLS is gefinancierd om tot en met Artemis V te vliegen; voor latere missies heeft NASA commerciële, herbruikbare alternatieven voorgesteld. Gepland voor eind 2028; bemanning, lander en landingsplaats zijn nog niet gekozen.",

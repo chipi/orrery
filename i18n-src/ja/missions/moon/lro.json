@@ -1,5 +1,8 @@
 {
   "name": "Lunar Reconnaissance Orbiter",
+  "vehicle": "Atlas V 401",
+  "payload": "打上げ質量1916 kg",
+  "delta_v": "~4 km/s",
   "type": "軌道機 · 活動中",
   "first": "これまでで最高分解能の月面地図",
   "description": "二〇〇九年から平均月高度五十キロメートルで月を周回。LRO 狭角カメラは五十センチ／ピクセル — Apollo 下降段、ローバー轍、宇宙飛行士の足跡まで見える。Lunokhod 1 は暗くなってから三十九年後に発見した。Artemis の二百か所以上の候補着陸地を特定。現代の月計画を動かす南極の水氷堆積を LRO の計器が定量した。斥候が現代月時代の基礎となった。",

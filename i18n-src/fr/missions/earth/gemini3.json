@@ -1,5 +1,8 @@
 {
   "name": "Gemini 3 / GT-3",
+  "vehicle": "Titan II GLV (GT-3)",
+  "payload": "Gemini 3 « Molly Brown » ; Gus Grissom & John Young",
+  "delta_v": "~7,8 km/s (LEO)",
   "type": "HABITÉ ORBITE TERRESTRE · RÉALISÉ",
   "first": "Premier Gemini habité ; première manœuvre orbitale par un équipage",
   "dispatch": "Gemini 3 était le rodage — le premier vol du nouveau vaisseau biplace, et la première fois qu'un équipage américain modifiait sa propre orbite au lieu de simplement suivre celle que la fusée lui avait donnée. Gus Grissom le commandait, quatre ans après que sa capsule Mercury ait coulé lors de l'amerrissage, et il nomma celle-ci « Molly Brown » d'après l'héroïne insubmersible — un trait d'humour noir que le bureau des affaires publiques de la NASA n'apprécia guère. Le vol lui-même fut court et délibérément modeste, trois orbites pour prouver que la machine volait comme prévu. Mais ce petit acte de nudger l'orbite avec les propulseurs embarqués fut le premier pas de tout ce que Gemini existait pour faire.",

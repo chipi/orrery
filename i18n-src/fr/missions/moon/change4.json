@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 4 / Yutu-2",
+  "vehicle": "Long March 3B",
+  "payload": "3780 kg de masse au lancement ; rover Yutu-2 de 140 kg",
+  "delta_v": "~3 km/s",
   "type": "ALUNISSEUR CÔTÉ LOINTAIN · ROVER · OPÉRATIONNEL",
   "first": "Premier alunissage en douceur sur le côté lointain de la Lune",
   "description": "Le côté lointain de la Lune n'a pas de ligne de visée radio directe avec la Terre. Pour alunir un engin spatial là-bas, la Chine a d'abord lancé le satellite relais Queqiao vers une orbite de halo autour du point de Lagrange Terre-Lune L2 — un point de vantage qui voit à la fois le côté lointain et la Terre simultanément. Avec cette infrastructure en place, Chang'e 4 est devenu le premier engin spatial à alunir en douceur sur le côté lointain. Le rover Yutu-2 fonctionne depuis janvier 2019 et a parcouru ~1,6 km en 2024, ce qui en fait le rover lunaire ayant la plus longue durée de fonctionnement dans l'histoire.",

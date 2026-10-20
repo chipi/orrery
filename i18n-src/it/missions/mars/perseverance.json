@@ -1,5 +1,8 @@
 {
   "name": "Perseverance",
+  "vehicle": "Atlas V 541",
+  "payload": "3839 kg di massa al lancio (rover da 1025 kg; elicottero Ingenuity da 1,8 kg)",
+  "delta_v": "~6,1 km/s",
   "type": "ROVER · ATTIVO",
   "first": "Primo elicottero su un altro pianeta (Ingenuity); primo campionamento conservato per Mars Sample Return",
   "dispatch": "Perseverance è andato su Marte alla ricerca dei morti. Atterrato nel 2021 sul fondo del Cratere Jezero — un bacino che ospita il delta di un fiume che alimentava un lago miliardi di anni fa, esattamente il tipo di luogo dove la vita avrebbe lasciato tracce — è il primo rover costruito specificamente per cercare segni di vita antica, e per fare qualcosa che nessuna missione aveva mai fatto: sigillare rocce marziane in tubi e metterle da parte per una futura astronave che le porti a casa. Ha anche portato Ingenuity, il piccolo elicottero che ha realizzato il primo volo con motore su un altro pianeta. Se i campioni che sta conservando verranno mai restituiti, saranno i primi pezzi della superficie di un altro pianeta riportati sulla Terra.",

@@ -1,5 +1,8 @@
 {
   "name": "Mars Pathfinder",
+  "vehicle": "Delta II 7925",
+  "payload": "890 kg (módulo de pouso + estágio de cruzeiro no lançamento)",
+  "delta_v": "~5,2 km/s",
   "type": "LANDER · ROVER · VENCIDA",
   "first": "Primeiras rodas em Marte; demonstrou pouso com airbag",
   "dispatch": "Mars Pathfinder foi a prova de NASA de que pousar em Marte não precisava custar uma fortuna. Em vez do hover com retrorfoguetes que os Vikings usavam, caiu na atmosfera protegido por um escudo térmico, abriu um paraquedas, inflou um casulo de airbags e saltou dúzias de vezes pela superfície antes de rolar até parar e abrir como uma flor. De lá saiu Sojourner — um rover do tamanho de um micro-ondas, as primeiras rodas a rodar em outro planeta. A ciência era modesta; o ponto era o método. O pouso com airbag e a abordagem mais rápida-barata-melhor que ele provou tornaram-se o modelo para os rovers muito mais ambiciosos — Spirit, Opportunity, Curiosity — que vieram depois.",

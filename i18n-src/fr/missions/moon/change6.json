@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 6",
+  "vehicle": "Long March 5",
+  "payload": "8200 kg de masse au lancement ; 1,935 kg d'échantillon rapporté",
+  "delta_v": "~5 km/s",
   "type": "RETOUR D'ÉCHANTILLON DU CÔTÉ LOIN · VOLÉ",
   "first": "Retour du premier échantillon de la face cachée de la Lune",
   "description": "Combine les architectures de Chang'e 4 (communications côté éloigné) et de Chang'e 5 (retour d'échantillon). Le satellite relais Queqiao-2 a été lancé en premier (mars 2024) pour soutenir la mission. Chang'e 6 a ensuite collecté 1,935 kg du cratère Apollo sur la face cachée – un matériau de composition très différente de tout échantillon lunaire précédemment renvoyé. Les deux hémisphères de la Lune sont radicalement différents (la face cachée a une croûte plus épaisse, moins de mare) ; ces échantillons pourraient enfin expliquer pourquoi.",

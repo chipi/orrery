@@ -1,5 +1,8 @@
 {
   "name": "Skylab 3",
+  "vehicle": "Saturn IB (SA-207)",
+  "payload": "19979 kg de masa de lanzamiento; CSM-117 + tripulación de 3 personas",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Skylab 3 llevó la cuestión de la resistencia humana y casi duplicó la respuesta. Donde la primera tripulación había permanecido 28 días, la tripulación de Alan Bean permaneció 59 — empujando el cuerpo humano más lejos en la ingravidez de larga duración de lo que nadie había llegado, y regresando más sanos de lo que los pesimistas habían temido. Registraron una enorme cantidad de observaciones solares desde el Apollo Telescope Mount y superaron un susto cuando fugas en los propulsores de su transbordador Apollo plantearon brevemente la posibilidad de un vuelo de rescate. Skylab 3 es donde las estancias largas en el espacio empezaron a parecer no solo viables sino rutinarias — el trabajo de base silencioso para cada misión de meses en estaciones desde entonces.",
   "type": "TRIPULACIÓN DE ESTACIÓN · VOLADA",
   "first": "Segunda tripulación de Skylab — 59 días, desplegó el parasol de doble mástil para sustituir al original",

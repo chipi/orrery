@@ -1,5 +1,8 @@
 {
   "name": "Soyuz 11",
+  "vehicle": "Soyuz (11A511)",
+  "payload": "Soyuz 7K-OKS; Dobrowolski, Wolkow, Pazajew",
+  "delta_v": "~7,8 km/s (LEO)",
   "type": "BEMANNTE RAUMSTATION · VERLOREN",
   "first": "Erste Besatzung auf einer Raumstation (Salyut 1); alle 3 starben beim Wiedereintritt durch Dekompression",
   "dispatch": "Soyuz 11 erreichte etwas Außergewöhnliches und verlor dann seine Besatzung in den letzten Minuten des Fluges. Georgi Dobrowolski, Wladislaw Wolkow und Wiktor Pazajew wurden die ersten Menschen, die an einer Raumstation lebten, und verbrachten zweiundzwanzig Tage an Bord von Salyut 1 — dann öffnete sich beim Wiedereintritt ein Ventil in dem Augenblick, als die Module sich trennten, und ließ die Kabinenluft in den Weltraum entweichen. Sie trugen keine Raumanzüge; es war kein Platz für Anzüge gewesen, als die Sitze für drei Personen eingebaut wurden. Innerhalb von Sekunden, am Rande des Weltalls, waren alle drei tot. Die Kapsel landete von selbst, genau am Ziel; das Bergungsteam öffnete sie und fand die Besatzung noch in ihren Sitzen angeschnallt. Sie bleiben die einzigen Menschen, die im Weltraum gestorben sind — und der Preis führte zu einer Regel, die seitdem gilt: Besatzungen tragen Raumanzüge beim Start und Wiedereintritt, immer.",

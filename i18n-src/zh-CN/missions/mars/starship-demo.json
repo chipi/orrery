@@ -1,5 +1,8 @@
 {
   "name": "Starship Demo",
+  "vehicle": "Starship（Super Heavy + Starship 上面级，一次性使用）",
+  "payload": "~100000 kg（采用在轨加注方案的目标值）",
+  "delta_v": "~13 km/s",
   "type": "UNCREWED MARS DEMO · PLANNED",
   "first": "首个尝试火星登陆的完全可重复使用运载系统",
   "description": "Starship火星架构的无人验证：由Super Heavy发射，在近地轨道由加油型Starship补充推进剂，然后让加满推进剂的Starship进行火星转移注入，并动力下降到火星表面。SpaceX公布的目标是2026–2027年的发射窗口；但从工程现实看（Starship仍在攻克轨道飞行的可靠性，在轨加注也尚未得到验证），2028年或更晚的可能性更大。如果成功，它将颠覆火星载荷的经济学——从每次着陆数千 kg提高到一百吨。",

@@ -1,5 +1,8 @@
 {
   "name": "Luna 24",
+  "vehicle": "Proton-K / D",
+  "payload": "4800 kg de masse au lancement ; atterrisseur de 1900 kg ; 0,170 kg d'échantillon rapporté",
+  "delta_v": "~3,5 km/s",
   "type": "RETOUR D'ÉCHANTILLONS · EFFECTUÉE",
   "first": "Dernière mission lunaire soviétique ; dernier alunissage habité zéro pendant 37 ans",
   "description": "La dernière mission lunaire de l'Union soviétique et le dernier alunissage sans équipage jusqu'à Chang'e 3 de la Chine en 2013 — un intervalle de 37 ans. Le carottage a extrait du régolithe d'une profondeur de 2 m et a ramené 170 g sur Terre. Une analyse soviétique de 1978 a signalé ~0,1 % d'eau en masse dans la carotte — un résultat non confirmé et toujours débattu — préfigurant les détections confirmées ultérieures d'eau lunaire. Luna 24 a également marqué la fin du programme lunaire soviétique ; les ressources ont été orientées vers Mars et Vénus.",

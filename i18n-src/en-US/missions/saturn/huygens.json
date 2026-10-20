@@ -1,5 +1,8 @@
 {
   "name": "Huygens",
+  "vehicle": "Titan IVB / Centaur (Cassini carrier)",
+  "payload": "318 kg ESA entry probe — aeroshell, 3 parachutes, 6 science packages (HASI, GCMS, DISR, ACP, SSP, DWE). Designed to survive 2.5-hour atmospheric descent through Titan's nitrogen–methane atmosphere to the surface.",
+  "delta_v": "~6 km/s (entry deceleration from 6 km/s hypersonic to surface)",
   "type": "ATMOSPHERIC PROBE + LANDER · FLOWN",
   "first": "First and only soft landing in the outer solar system — parachuted through Titan's atmosphere on 2005-01-14",
   "dispatch": "Huygens was sent not to orbit but to fall. Strapped to Cassini for seven years, it detached on Christmas Day 2004 and coasted alone toward Titan for twenty days. When it hit Titan's atmosphere at six kilometres per second, a heat shield bought the time it needed; then three parachute stages slowed it for two and a half hours through an orange haze no instrument had ever crossed. It photographed river valleys, measured wind speeds, smelled the atmosphere — and touched down on a floodplain of rounded water-ice pebbles. It was the first landing ever made in the outer solar system, and no spacecraft has landed there since.",

@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 6",
+  "vehicle": "Long March 5",
+  "payload": "8200 kg de masa de lanzamiento; 1,935 kg de muestra devuelta",
+  "delta_v": "~5 km/s",
   "type": "RETORNO DE MUESTRAS DE LA CARA OCULTA · VOLADA",
   "first": "Primer retorno de muestras de la cara oculta de la Luna",
   "description": "Combina las arquitecturas de Chang'e 4 (comunicaciones con la cara oculta) y Chang'e 5 (retorno de muestras). El satélite retransmisor Queqiao-2 se lanzó primero (marzo de 2024) para apoyar la misión. Chang'e 6 luego recogió 1,935 kg del cráter Apollo en la cara oculta — material con composición muy diferente a cualquier muestra lunar devuelta anteriormente. Los dos hemisferios de la Luna son radicalmente distintos (la cara oculta tiene una corteza más gruesa, menos mares); estas muestras pueden por fin explicar por qué.",

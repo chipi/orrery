@@ -1,5 +1,8 @@
 {
   "name": "Sputnik 1",
+  "vehicle": "Sputnik 8K71PS (Ableger der R-7 Semyorka)",
+  "payload": "83,6 kg schwere polierte Aluminium-Magnesium-Kugel, Ø 58 cm; zwei Sender (20,005 MHz + 40,002 MHz), drei Silber-Zink-Batterien (60 W), keine Instrumente außer Thermometer + Drucksensor",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "ERDORBIT-SATELLIT · GEFLOGEN",
   "first": "Erster künstlicher Satellit im Erdorbit — Beginn des Weltraumzeitalters",
   "dispatch": "Sputnik 1 tat fast nichts, und genau das war der Punkt. Keine Kamera, kein Experiment, das den Namen verdient hätte — ein Funkgerät, eine Batterie und eine polierte Hülle, ausgewählt, damit die Welt die Rakete beobachten konnte, die ihn trug. Seine ganze Aufgabe bestand darin, als Erster die Umlaufbahn zu erreichen und sich dabei hörbar zu machen, und einundzwanzig Tage lang tat er genau das: ein Piepsen auf Kurzwelle, das jeder auf der Erde empfangen konnte und das Washington nicht abschalten konnte. Die Maschine zählte weit weniger als die Tatsache ihrer Existenz — der Beweis, an alle gleichzeitig gesendet, dass die Sowjetunion die Vereinigten Staaten ins All geschlagen hatte und eine Rakete flog, die jede Stadt auf der Landkarte erreichen konnte. Er verglühte über dem neuen Jahr. Das Rennen, das er startete, führte bis zum Mond.",

@@ -1,5 +1,8 @@
 {
   "name": "Apollo 12",
+  "vehicle": "Saturn V (AS-507)",
+  "payload": "46782 kg lancés (CSM Yankee Clipper (CSM-108) + LM Intrepid (LM-6))",
+  "delta_v": "~6 km/s (aller-retour)",
   "type": "ATTERRISSEUR HABITÉ · FLOWN",
   "first": "Deuxième alunissage habité — atterrissage de précision à 163 m de Surveyor 3",
   "dispatch": "Si Apollo 11 a prouvé qu'on pouvait atteindre la Lune, Apollo 12 a prouvé qu'on pouvait atteindre un endroit précis dessus. Trente-six secondes après le décollage, la foudre a frappé la fusée et mis hors ligne les instruments du vaisseau spatial ; un contrôleur de vingt-quatre ans nommé John Aaron a sorti de sa mémoire une solution obscure — « SCE to AUX » — et le vol a continué. Puis Conrad et Bean ont posé leur Lunar Module sur l'océan des Tempêtes à quelques centaines de pieds d'une sonde qui était restée là depuis deux ans, se sont approchés, et en ont rapporté des morceaux. Cette précision était le vrai résultat : la Lune avait cessé d'être une destination et était devenue une adresse.",

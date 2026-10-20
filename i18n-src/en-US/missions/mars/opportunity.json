@@ -1,5 +1,8 @@
 {
   "name": "Opportunity",
+  "vehicle": "Delta II 7925H Heavy",
+  "payload": "1063 kg (cruise stage + EDL + rover); 174 kg surface mass",
+  "delta_v": "~5.5 km/s",
   "type": "ROVER · FLOWN",
   "first": "Longest-driving Mars rover (45.16 km); 14-year surface lifetime against a 90-sol design",
   "dispatch": "Opportunity drove a marathon across another planet. Spirit’s twin, landed in 2004 for a ninety-day mission, it worked for fourteen years and crossed more than forty-five kilometres — the longest distance any vehicle has travelled on any world. It came down, by luck, in a small crater whose walls exposed exactly the water-laid rock it was sent to find, and then it just kept going, crater to crater, reading the ancient water story of Mars mile after mile. A planet-wide dust storm finally silenced it in 2018.",

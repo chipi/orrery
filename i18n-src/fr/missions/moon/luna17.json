@@ -1,5 +1,8 @@
 {
   "name": "Luna 17 / Lunokhod 1",
+  "vehicle": "Proton-K / D",
+  "payload": "5660 kg de masse au lancement ; rover Lunokhod 1 de 322 kg",
+  "delta_v": "~3 km/s",
   "type": "ROVER · VOLÉ",
   "first": "Premier rover téléopéré à opérer sur un autre monde",
   "description": "Les premières roues sur la Lune — pilotées depuis une salle de contrôle en Crimée. Lunokhod 1 était une cuve pressurisée de 322 kg montée sur huit roues motrices indépendantes, contrôlée en temps réel par une équipe de cinq personnes malgré le décalage de 2,5 secondes dû à la vitesse de la lumière. Il a parcouru 10,5 km en 11 jours lunaires (322 jours terrestres), photographié plus de 20 000 scènes et fonctionné bien au-delà de sa durée de vie nominale de 90 jours. Tombé dans l'oubli dans les années 1970, il a été retrouvé en 2010 lorsque le Lunar Reconnaissance Orbiter de la NASA l'a repéré à l'endroit où il s'était arrêté.",

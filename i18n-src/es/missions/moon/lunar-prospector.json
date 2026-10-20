@@ -1,5 +1,8 @@
 {
   "name": "Lunar Prospector",
+  "vehicle": "Athena II",
+  "payload": "296 kg en seco; llevaba 5 instrumentos científicos",
+  "delta_v": "~4 km/s (TLI + LOI)",
   "type": "ORBITADOR ROBÓTICO · COMPLETADA",
   "first": "Detección de hidrógeno mediante espectrómetro de neutrones en ambos polos lunares",
   "description": "La tercera misión de la clase NASA Discovery y el primer orbitador lunar dedicado gestionado por NASA en la era posterior a Apollo. Lanzado el 1998-01-07 en un Athena II desde Cabo Cañaveral, Lunar Prospector entró en una órbita lunar polar circular de 100 km el 1998-01-11. La nave giratoria de 296 kg llevaba cinco instrumentos: un espectrómetro de rayos gamma para la composición cortical global, un espectrómetro de neutrones para la detección de hidrógeno / hielo de agua en los polos, un espectrómetro de partículas alfa para gas radón (detección indirecta de vulcanismo), un magnetómetro + reflectómetro de electrones para el magnetismo cortical, y un experimento de gravedad Doppler. El análisis del equipo de Boynton de los datos de neutrones (Feldman et al., Science 281 + 284) encontró déficits agudos de flujo de neutrones sobre ambos polos lunares — consistentes con aproximadamente 2 × 10⁹ toneladas de material rico en hidrógeno (probablemente hielo de agua) en cráteres polares permanentemente sombreados. La misión terminó el 1999-07-31 con un impacto deliberado cerca del cráter Shackleton con la esperanza de liberar una pluma de vapor de agua detectable; ninguna fue observada. El hallazgo de hidrógeno se mantuvo hasta que LCROSS y Chandrayaan-1 / M3 (2009) proporcionaron confirmación independiente.",

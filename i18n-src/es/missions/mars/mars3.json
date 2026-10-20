@@ -1,5 +1,8 @@
 {
   "name": "Mars 3",
+  "vehicle": "Proton-K / D",
+  "payload": "4650 kg (orbitador + módulo de aterrizaje combinados)",
+  "delta_v": "~5,5 km/s",
   "type": "ORBITADOR · MÓDULO DE ATERRIZAJE · OPERADA",
   "first": "Primera nave espacial en alunizar suavemente en Marte",
   "description": "La audaz doble misión de la Unión Soviética a Marte en 1971 — Mars 2 y Mars 3 lanzadas con 9 días de diferencia. El módulo de aterrizaje de Mars 2 se estrelló; el módulo de aterrizaje de Mars 3 consiguió el primer alunizaje suave en Marte pero dejó de transmitir ~110 segundos después del impacto — la transmisión real duró solo ~14,5 segundos — posiblemente debido a la tormenta de polvo global que azotaba en ese momento. El orbitador operó durante 8 meses, devolviendo decenas de imágenes y mediciones atmosféricas. A pesar de la breve misión en la superficie, Mars 3 demostró que el problema del descenso y el aterrizaje en Marte era resoluble.",

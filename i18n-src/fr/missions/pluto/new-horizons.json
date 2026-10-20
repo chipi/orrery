@@ -1,5 +1,8 @@
 {
   "name": "New Horizons",
+  "vehicle": "Atlas V 551",
+  "payload": "Sonde de survol New Horizons ; alimentation par RTG",
+  "delta_v": "~16 km/s (approximatif)",
   "type": "SURVOL · VOLÉ",
   "first": "Premier survol de Pluton et de ses lunes ; les images les plus nettes d'un monde de la ceinture de Kuiper",
   "dispatch": "New Horizons n'avait qu'une seule chance et l'a saisie. Pas de mise en orbite, pas de moyen de ralentir — neuf ans et demi de voyage, le lancement le plus rapide de l'histoire, le tout convergeant vers quelques heures à Pluton, exécuté par une machine si lointaine que chaque commande mettait des heures à arriver. Elle a réussi le survol le 14 juillet 2015 et a bouleversé l'idée d'un monde mort : Pluton s'est révélée avoir des montagnes de glace d'eau, un vaste glacier en forme de cœur d'azote gelé encore lentement en mouvement, et une surface jeune et active que personne ne pensait qu'un corps aussi petit et froid pouvait conserver. Puis elle a poursuivi sa route vers Arrokoth, un milliard de kilomètres au-delà de Pluton — le monde le plus lointain jamais vu de près — et elle continue encore.",

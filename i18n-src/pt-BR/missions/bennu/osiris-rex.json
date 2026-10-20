@@ -1,5 +1,8 @@
 {
   "name": "OSIRIS-REx",
+  "vehicle": "Atlas V 411",
+  "payload": "2110 kg de massa de lançamento (1075 kg a seco)",
+  "delta_v": "~1,4 km/s",
   "type": "RETORNO DE AMOSTRA · REALIZADO",
   "first": "Maior amostra de asteroide já retornada (121,6 g de Bennu, entregue na Terra em 2023-09-24)",
   "description": "OSIRIS-REx realizou uma das operações de proximidade com asteroide mais precisas jamais tentadas. Lançado em 2016-09-08 de Cabo Canaveral em um Atlas V 411, utilizou uma assistência gravitacional terrestre em 2017 para rotacionar seu plano orbital até a inclinação de 6° de Bennu, e realizou o encontro com o asteroide carbonáceo próximo à Terra 2018-12-03, com 492 m de diâmetro. Após manutenção de estação a ~19 km, posteriormente entrou em uma órbita recorde de ~1,4 km — a órbita de espaçonave mais próxima jamais alcançada ao redor de qualquer corpo celeste. Passou dois anos mapeando a superfície repleta de boulders de Bennu e descobrindo ejeções ativas de partículas. Em 2020-10-20, o braço amostrador Touch-and-Go desceu até o sítio Nightingale, disparou gás N₂ na superfície e capturou uma pluma — penetrando 50 cm em uma superfície de \"fluido de pilha de entulho\". A Cápsula de Retorno de Amostra entregou 121,6 g de material de Bennu em Utah em 2023-09-24. A espaçonave em si foi imediatamente redesignada OSIRIS-APEX, em rota para um encontro com Apófis em 2029.",

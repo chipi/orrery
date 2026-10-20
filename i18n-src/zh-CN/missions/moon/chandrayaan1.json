@@ -1,5 +1,8 @@
 {
   "name": "Chandrayaan-1",
+  "vehicle": "PSLV-XL (C11)",
+  "payload": "发射质量 1380 kg；35 kg Moon Impact Probe",
+  "delta_v": "~3 km/s",
   "type": "ORBITER · FLOWN",
   "first": "印度首次月球任务；确认月球上广泛存在水",
   "description": "ISRO首个行星际航天器。该轨道器把Moon Impact Probe送上月球表面——印度在另一个天体上的第一件物体——并搭载了来自6个国家的11台仪器。搭载在Chandrayaan-1上的NASA Moon Mineralogy Mapper（M3）仪器做出了改写教科书的发现：水分子广泛分布于月球表面，而不仅仅是被封存在极区的永久阴影撞击坑里。任务在2009年8月突然终结，当时ISRO与航天器失去了联系。",

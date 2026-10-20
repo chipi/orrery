@@ -1,5 +1,8 @@
 {
   "name": "Curiosity",
+  "vehicle": "Atlas V 541",
+  "payload": "3839 kg lanceermassa (rover van 899 kg op het oppervlak)",
+  "delta_v": "~6,1 km/s",
   "type": "ROVER · ACTIEF",
   "first": "Eerste kernenergetische Marsrover; eerste sky-crane landing",
   "dispatch": "Curiosity is een kernenergetisch laboratorium ter grootte van een kleine auto, en het neerbrengen was het moeilijkste deel. Te zwaar voor airbags, werd het in 2012 op Mars neergelaten door een raketaangedreven sky crane in een sequentie die zo riskant was dat de planners het 'zeven minuten van angst' noemden — en het werkte bij de eerste poging. Sindsdien heeft het zich een weg geboord over Gale-krater en beantwoord het de vraag waarvoor het was gestuurd: de krater bevatte ooit een meer, met scheikunde die iets levends zou hebben kunnen gebruiken. Mars was bewoonbaar geweest. Curiosity rijdt nog steeds en klimt een berg van gelaagde steen op die als een geschiedenisboek van de planeet zelf leest.",

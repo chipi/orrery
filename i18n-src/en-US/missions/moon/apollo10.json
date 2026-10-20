@@ -1,5 +1,8 @@
 {
   "name": "Apollo 10",
+  "vehicle": "Saturn V (AS-505)",
+  "payload": "42775 kg launched (CSM Charlie Brown (CSM-106) + LM Snoopy (LM-4))",
+  "delta_v": "~6 km/s (round trip)",
   "type": "CREWED ORBITER · FLOWN",
   "first": "Full lunar-landing dress rehearsal — LM descended to ~15.6 km altitude",
   "dispatch": "Apollo 10 flew the entire landing — right up to the last fifteen kilometres — and then, by design, turned around. Stafford and Cernan took the Lunar Module down to within a stone's throw of the surface at Tranquility, ran every step of the descent, and climbed back to orbit without touching down. NASA even left the ascent tanks half-empty, so that however tempting it got, going for it was never an option. It is the least-celebrated flight of the program and one of the most disciplined: a full-speed rehearsal by two men who flew a quarter-million miles knowing the landing belonged to someone else.",

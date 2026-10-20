@@ -1,5 +1,8 @@
 {
   "name": "X-37B OTV-7 (USA-358, USSF-52)",
+  "vehicle": "Falcon Heavy",
+  "payload": "USA-358 / USSF-52; X-37B Orbital Test Vehicle (~5000 kg). Ladingen grotendeels geheim.",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "ONBEMAND SPACEPLANE · VOLTOOID",
   "first": "USA-358 / USSF-52 — 434 dagen in baan, Vandenberg Space Force Base",
   "description": "Zevende X-37B-vlucht — eerste naar een sterk elliptische baan (HEO) en eerste gelanceerd op Falcon Heavy. Gelanceerd op 2023-12-29 01:07 UTC vanaf KSC LC-39A; beide zijboosters werden teruggewonnen op LZ-1 / LZ-2, de centrale kern werd opgeofferd voor de energie van de HEO-inbrenging. Het HEO-traject voerde de OTV in het apogeum ongeveer naar de hoogte van de GEO-gordel. Voerde een gecontroleerde de-orbitsequentie uit in de stijl van aeroremmen (USSF gaf een openbare update over het manoeuvre, een bewuste stap naar meer openheid ten opzichte van eerdere geheime vluchten). Geland op Vandenberg Space Force Base 2025-03-07 09:22 UTC.",

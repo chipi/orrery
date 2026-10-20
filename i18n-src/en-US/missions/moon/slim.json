@@ -1,5 +1,8 @@
 {
   "name": "SLIM",
+  "vehicle": "H-IIA 202",
+  "payload": "730 kg launch mass; 200 kg lander; 2 micro-rovers (LEV-1, LEV-2)",
+  "delta_v": "~3 km/s",
   "type": "PRECISION LANDER · ACTIVE",
   "first": "First precision landing within 100 m of target on another world",
   "description": "Until SLIM, lunar landings had a kilometre-scale targeting accuracy. JAXA's Smart Lander demonstrated 100 m accuracy — the precision required for crewed missions to dock with pre-positioned cargo, for sample-return ascent vehicles to find their orbital partners, and for any future architecture that depends on landing at specific scientifically valuable sites. SLIM also pioneered low-energy ballistic transfer to the Moon, taking 135 days to arrive but using less propellant than direct trajectories. A demonstration of the patience interplanetary missions can afford when timeline isn't the binding constraint.",

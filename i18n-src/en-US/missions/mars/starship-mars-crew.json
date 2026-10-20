@@ -1,5 +1,8 @@
 {
   "name": "Starship Mars Crew",
+  "vehicle": "Starship (Super Heavy + Starship + on-orbit refilling tanker fleet)",
+  "payload": "Crew of ~10 + ISRU equipment + return propellant production hardware",
+  "delta_v": "~21 km/s (round trip with Mars surface refuelling)",
   "type": "CREWED SAMPLE RETURN · CONCEPT",
   "first": "First proposed crewed return mission to Mars (SpaceX architecture)",
   "description": "SpaceX's long-term crewed Mars architecture as outlined in Elon Musk's 2016, 2017, and 2024 IAC presentations. A Starship lifts off from Earth fully fuelled in low-Earth orbit via a fleet of refilling tanker flights, performs trans-Mars injection, and lands a crew of roughly 10 with cargo and ISRU equipment on the Martian surface. Return-leg propellant (methane + liquid oxygen) is manufactured on Mars from atmospheric CO₂ and subsurface water ice via the Sabatier process, enabling the same Starship to lift off again, perform trans-Earth injection, and return the crew. Round-trip duration depends on the launch window and surface stay; the illustrative timeline shown here is ~2.5 years door-to-door (213 days outbound, ~500-day surface stay, return on the next favourable window). The architecture is conceptual — date and parameters subject to substantial revision pending Starship maturation and ISRU validation.",

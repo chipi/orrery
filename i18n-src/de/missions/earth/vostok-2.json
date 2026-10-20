@@ -1,5 +1,8 @@
 {
   "name": "Vostok 2",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4731 kg Startmasse; einzelner Kosmonaut",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Wenn Gagarin bewies, dass ein Mensch den Orbit erreichen konnte, bewies Vostok 2, dass ein Mensch dort leben konnte. German Titow — mit fünfundzwanzig noch immer die jüngste Person, die jemals ins All flog — verbrachte einen vollen Tag in der Höhe, siebzehn Umkreisungen über fünfundzwanzig Stunden, lang genug, um zu essen, zu schlafen und etwas zu entdecken, das noch niemand zuvor gefühlt hatte: Raumkrankheit, die Übelkeit eines Innenohrs ohne oben oder unten, an dem es sich festhalten könnte. Er arbeitete sich hindurch. Der Flug beseitigte eine echte Befürchtung — dass der Körper nach Stunden der Schwerelosigkeit einfach versagen könnte — und verschob die Grenze von einer einzelnen Runde auf einen vollen Tag, in einem Tempo, das die Amerikaner mit ihren fünfzehnminütigen Sprüngen nicht beantworten konnten.",
   "type": "BEMANNTER ERDORBIT · GEFLOGEN",
   "first": "Erster Tag im All — 17 Umläufe in 25 Stunden",

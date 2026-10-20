@@ -1,5 +1,8 @@
 {
   "name": "Luna 10",
+  "vehicle": "Molniya-M (Oberstufe Block-L)",
+  "payload": "~1582 kg Startmasse; 248 kg eigentliche Orbiter-Sektion",
+  "delta_v": "~3,7 km/s (TLI + LOI)",
   "type": "ROBOTISCHE SONDE · DURCHGEFÜHRT",
   "first": "Erstes Raumfahrzeug, das den Mond umkreist (und einen anderen Himmelskörper als die Erde)",
   "description": "Luna 10 startete am 1966-03-31 von Baikonur und wurde das erste Raumfahrzeug, das den Mond umkreiste — und der erste künstliche Satellit eines anderen Himmelskörpers als der Erde —, als es am 1966-04-03 in eine Mondumlaufbahn von 350 × 1017 km bei 71,9° Inklination eintrat. Zweieinhalb Jahre, bevor Apollo 8 den Mond mit Menschen an Bord erreichte. An Bord waren ein Magnetometer, ein Gammastrahlenspektrometer, ein Infrarot-Radiometer, Mikrometeoriten-Detektoren, Plasmasensoren und ein Funkexperiment zur Vermessung des Mondgravitationsfeldes. Die Gammastrahlen-Daten waren die erste zusammensetzungsabhängige Fernerkundung des Mondes und deuteten auf eine basaltähnliche Zusammensetzung der Maria hin. Berühmt wurde die Übertragung der Internationale während des 23. Kongresses der Sowjetischen Kommunistischen Partei am 1966-04-04 — eher ein propagandistischer Effekt als Wissenschaft. Betrieb 56 Tage / 460 Umlaufbahnen, bevor die NiCd-Batterien am 1966-05-30 aufgebraucht waren; verbleibt in der Mondumlaufbahn.",

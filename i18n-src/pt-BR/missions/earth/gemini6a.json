@@ -1,5 +1,8 @@
 {
   "name": "Gemini 6A / GT-6A",
+  "vehicle": "Titan II GLV (GT-6A)",
+  "payload": "Gemini 6A; Wally Schirra e Tom Stafford",
+  "delta_v": "~7,8 km/s (LEO)",
   "type": "TRIPULADA ÓRBITA TERRESTRE · REALIZADA",
   "first": "Primeiro encontro espacial tripulado",
   "dispatch": "Rendezvous — duas espaçonaves se encontrando e unindo em órbita — era a habilidade sem a qual a Apollo não poderia funcionar, e a Gemini 6A é onde isso foi feito pela primeira vez. Quase não voou: seu alvo original explodiu a caminho da órbita e, então, já presos para o lançamento reagendado, os motores do Titan acenderam e abruptamente morreram na plataforma — um momento em que as regras diziam ejetar, e Wally Schirra, não sentindo movimento, friamente escolheu não fazê-lo. Três dias depois ela voou e fez a coisa que nunca havia sido feita: alcançou a Gemini 7 e manteve estação a trinta centímetros de distância, as tripulações próximas o suficiente para ler os rostos uma da outra. Pareceu fácil e foi tudo menos isso — a mecânica orbital de alcançar outra espaçonave é profundamente contraintuitiva — e decifrá-la foi o momento em que o rendezvous em órbita lunar, e todo o plano Apollo, se tornou real.",

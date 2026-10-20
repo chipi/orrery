@@ -1,5 +1,8 @@
 {
   "name": "Polaris Dawn",
+  "vehicle": "Falcon 9 Block 5 (B1083.4) + Crew Dragon C207 (Resilience)",
+  "payload": "~12500 kg LEO; 4 crew, first commercial EVA suits",
+  "delta_v": "~10.5 km/s (1408 km initial apogee, then 730 km circular)",
   "type": "CREWED FREE-FLYER · FLOWN",
   "first": "First commercial spacewalk; highest Earth orbit by humans since Apollo 17 (1408 km)",
   "description": "Jared Isaacman (commander), Scott 'Kidd' Poteet (pilot), Sarah Gillis and Anna Menon (SpaceX engineers / mission specialists). Launched 2024-09-10 09:23 UTC from LC-39A on Falcon 9 B1083, atop Crew Dragon Resilience (C207, third flight). Day 1 raised apogee to 1408 km — the highest orbit ever flown by humans excluding Apollo lunar missions; the apogee then lowered to 730 km circular for the EVA. Day 3 saw the first commercial EVA: Isaacman and Gillis stepped through the open hatch in new SpaceX EVA suits (no airlock — full cabin vacuum exposure for all 4 crew), each spending ~8 minutes in vacuum testing mobility. Tested Starlink laser inter-satellite links from orbit. Splashed down off Florida 2024-09-15 07:36 UTC.",

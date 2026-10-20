@@ -1,5 +1,8 @@
 {
   "name": "JUICE",
+  "vehicle": "Ariane 5 ECA",
+  "payload": "6000 kg betankt (2900 kg Trockenmasse) — die größte interplanetare Raumsonde, die Europa je gebaut hat. 10 Instrumente: JANUS (sichtbar), MAJIS (IR), UVS, SWI (Submillimeter), GALA (Laserhöhenmesser), RIME (Radar-Sounder, NASA), J-MAG (Magnetfeld), PEP (Teilchen), RPWI (Plasmawellen), 3GM (Radiowissenschaft). 85 m² große Solarmodule, ausgelegt für den Betrieb bei ~5,5 AE.",
+  "delta_v": "~3,0 km/s (Swing-by-Sequenz + Jupiter-Orbiteinschwung + Ganymed-Orbiteinschwung)",
   "type": "ORBITER · AKTIV",
   "first": "Größtes interplanetares Raumschiff, das in Europa gebaut wurde; erstes Raumschiff überhaupt, das einen Mond eines anderen Planeten umkreist (Ganymed, 2034)",
   "description": "JUpiter ICy moons Explorer – ESAs L-Klasse-Flaggschiff, gestartet 2023-04-14. Die achtjährige Reisephase nutzt eine der komplexesten Swing-by-Sequenzen, die je durchgeführt wurden: ein erstmaliger Swing-by an Mond und Erde am 2024-08-19, Venus am 2025-08-31, dann zwei weitere Erdvorbeiflüge 2026 und 2029. Die Einschwenkung in die Jupiterumlaufbahn ist für 2031-07-21 vorgesehen. Nach 35 Nahvorbeiflügen an Europa, Ganymed und Kallisto über 3,5 Jahre wird JUICE am 2034-12-31 in eine dedizierte Ganymed-Umlaufbahn manövrieren – das erste Raumfahrzeug, das jemals den Mond eines anderen Planeten umkreist. Die Mission endet 2035 mit dem Aufschlag auf Ganymed. Primärwissenschaft: Existenz und Eigenschaften von unterirdischen Ozeanen auf den eisigen Galileischen Monden, Zusammensetzung der Eiskruste und Gezeitenheizung sowie die Struktur der Jupiter-Magnetosphäre.",

@@ -1,5 +1,8 @@
 {
   "name": "Vostok 6",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4713 kg launch mass; single cosmonaut",
+  "delta_v": "~9.4 km/s (LEO)",
   "type": "CREWED EARTH-ORBIT · FLOWN",
   "first": "First woman in space — Valentina Tereshkova, 48 orbits",
   "dispatch": "Vostok 6 carried Valentina Tereshkova, and made her the first woman in space — a fact that stood alone for nineteen years and went unmatched by the United States until 1983. She was not a pilot but a textile worker and amateur parachutist, chosen in part for exactly that symbolism: proof, the Soviet program said, that in the workers' state even the frontier of space was open to anyone. Whatever the motive, forty-eight orbits later the milestone was real and permanent, and it would be two decades before any other nation could say it had done the same.",

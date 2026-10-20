@@ -1,5 +1,8 @@
 {
   "name": "NEAR Shoemaker",
+  "vehicle": "Delta II 7925-8",
+  "payload": "805 kg au lancement (487 kg à sec) — spectromètre X/gamma, spectrographe proche infrarouge, caméra multispectrale, télémètre laser (LIDAR), magnétomètre. Premier engin spatial à avoir orbité autour d'un astéroïde et à s'y être posé.",
+  "delta_v": "~1 km/s (total des manœuvres de la mission)",
   "type": "ORBITEUR + MODULE D'ATTERRISSAGE · VOLÉ",
   "first": "Premier vaisseau spatial à orbiter un astéroïde (433 Éros, 2000) et premier atterrissage en douceur sur n'importe quel petit corps (12-02-2001)",
   "dispatch": "NEAR Shoemaker est allé à Éros parce que personne ne savait vraiment à quoi ressemblait un astéroïde de près. Il arriva pour trouver un monde constellé de cratères, étiré en forme de selle par sa propre rotation lente, recouvert d'un fin régolithe qui n'avait nulle part où aller en microgravité quasi nulle. Pendant un an, il a cartographié chaque crête et rocher depuis l'orbite, puis en février 2001, les contrôleurs ont tenté leur chance : ils ont abaissé l'orbite du vaisseau cinq fois en deux semaines, l'ont ralenti à allure de marche, et l'ont posé à la surface. Il a survécu. Pendant seize jours de plus, il a transmis depuis Éros — le premier émissaire de la Terre à se reposer sur un petit corps.",

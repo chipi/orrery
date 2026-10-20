@@ -1,5 +1,8 @@
 {
   "name": "Schiaparelli EDM",
+  "vehicle": "Proton-M / Briz-M",
+  "payload": "577 kg (EDM lander part of ExoMars 2016 mission with Trace Gas Orbiter)",
+  "delta_v": "~5.5 km/s",
   "type": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
   "first": "ESA's first Mars surface attempt; intended to demonstrate EDL ahead of ExoMars Rosalind Franklin",
   "description": "Schiaparelli was the entry-descent-landing demonstrator carried piggyback on the ExoMars Trace Gas Orbiter (TGO). Named for the Italian astronomer Giovanni Schiaparelli, the craft was built to prove the EDL stack ESA intended to scale up for the Rosalind Franklin rover. Schiaparelli separated from TGO on 16 October 2016 and entered the Martian atmosphere three days later. The descent profile collapsed: a saturated inertial measurement unit caused the navigation software to think the craft had already landed at altitude — the parachute jettisoned early and the braking thrusters cut off after firing for only 3 seconds. Schiaparelli struck the surface at ~150 m/s. TGO itself completed orbit insertion successfully and continues operating.",

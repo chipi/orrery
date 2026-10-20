@@ -1,5 +1,8 @@
 {
   "name": "Viking 1",
+  "vehicle": "Titan IIIE-Centaur",
+  "payload": "3527 kg (orbiteur + atterrisseur)",
+  "delta_v": "~4,5 km/s",
   "type": "ORBITEUR · ATTERRISSEUR · RÉALISÉE",
   "first": "Premier atterrissage martien entièrement réussi ; première science de surface longue durée",
   "description": "La mission qui nous a donné notre premier regard soutenu sur la surface martienne. L'atterrisseur Viking 1 a fonctionné pendant 6 ans 4 mois à Chryse Planitia — en exécutant des expériences biologiques conçues pour détecter la vie (résultats ambigus ; une expérience a produit un signal positif toujours débattu des décennies plus tard), mesurant la météo, retournant des images panoramiques et analysant la composition du sol. Les orbiteurs Viking ensemble ont cartographié 97 % de Mars à une résolution ~300 m et ont contribué à reconnaître les sites d'atterrissage pour des missions encore décennies loin.",

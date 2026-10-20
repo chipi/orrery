@@ -1,5 +1,8 @@
 {
   "name": "Luna 24",
+  "vehicle": "Proton-K / D",
+  "payload": "4800 kg launch mass; 1900 kg lander; 0.170 kg sample returned",
+  "delta_v": "~3.5 km/s",
   "type": "SAMPLE RETURN · FLOWN",
   "first": "Last Soviet lunar mission; last uncrewed lunar landing for 37 years",
   "description": "The Soviet Union's final lunar mission and the last uncrewed lunar landing until China's Chang'e 3 in 2013 — a gap of 37 years. The drilled core extracted regolith from 2 m depth and returned 170 g to Earth. A 1978 Soviet analysis reported ~0.1% water by mass in the core — an unconfirmed, still-debated result — foreshadowing later confirmed detections of lunar water. Luna 24 also marked the closure of the Soviet lunar programme; resources shifted to Mars and Venus.",

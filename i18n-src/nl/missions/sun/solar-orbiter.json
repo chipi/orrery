@@ -1,5 +1,8 @@
 {
   "name": "Solar Orbiter",
+  "vehicle": "Atlas V 411",
+  "payload": "1800 kg (incl. 209 kg instrumenten + hitteschild)",
+  "delta_v": "~3,5 km/s",
   "type": "SOLAR-ORBITER · ACTIVE",
   "first": "Eerste missie ontworpen om de poolgebieden van de zon in detail te fotograferen; vormt een aanvulling op de in-corona metingen van Parker Solar Probe met remote sensing op hoge breedtegraden",
   "description": "Door ESA geleide missie met een NASA-lancering en bijdrage van één instrument. Waar Parker Solar Probe dichterbij komt dan wie dan ook ooit is geweest, gaat Solar Orbiter hoger — door middel van herhaalde Venus-zwaartekrachtassisties gedurende een decennium om uit de ecliptica te klimmen naar ~33° heliografische inclinatie. Vanaf dat uitkijkpunt fotografeert zijn instrumentenpakket (PHI, EUI, SPICE, STIX, METIS, SoloHI + vier in-situ pakketten) de magnetische velden van de poolgebieden van de zon, volgt zonnewindversnelling in real-time, en verbindt remote en in-situ metingen gelijktijdig. Eerste perihelium 2020-06-15 op 0,51 AE. Dichtste perihelium tot op heden 2022-10-12 op 0,29 AE (binnen het perihelium van Mercurius).",

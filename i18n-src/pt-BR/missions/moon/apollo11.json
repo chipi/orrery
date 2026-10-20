@@ -1,5 +1,8 @@
 {
   "name": "Apollo 11",
+  "vehicle": "Saturn V (AS-506)",
+  "payload": "46782 kg lançados (CSM Columbia + LM Eagle)",
+  "delta_v": "~6 km/s (ida e volta)",
   "dispatch": "Apollo 11 foi o voo para o qual todo o programa foi construído — aquele que tinha que funcionar. Por oito anos e US$ 25 bilhões, tudo o que a NASA fez se resumiu, no final, a colocar duas pessoas neste pedaço específico de poeira cinza e tirá-las de lá com vida. Quando Armstrong anunciou \"a Águia pousou\", a corrida da Guerra Fria que começou com uma esfera apitando sobre as cidades americanas estava efetivamente terminada. O que é fácil esquecer agora é quão pequena era a margem: a tripulação desceu com segundos de combustível restantes, passando por um campo de pedregulhos que os mapas não mostravam, pilotando um computador de navegação que disparava alarmes o tempo todo. Funcionou mesmo assim — e por uma noite, um quinto da espécie assistiu à mesma coisa ao mesmo tempo.",
   "type": "LANDER TRIPULADO · VOADO",
   "first": "Primeiros humanos em outro corpo celeste",

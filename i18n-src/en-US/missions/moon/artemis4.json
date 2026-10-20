@@ -1,5 +1,8 @@
 {
   "name": "Artemis IV",
+  "vehicle": "SLS Block 1 (last flight with the ICPS upper stage) + crewed lander (Starship HLS or Blue Moon, not yet chosen)",
+  "payload": "Orion + 4-person crew; 2 crew to the surface for about a week",
+  "delta_v": "~7 km/s (round trip)",
   "type": "CREWED LANDER · PLANNED",
   "first": "First crewed lunar landing since Apollo 17 (1972)",
   "description": "Since NASA's February 2026 change of plan, Artemis IV is the mission that returns people to the lunar surface — the first landing since Apollo 17 in 1972, and the first ever near the south pole. SLS, on its last flight with the interim upper stage, launches Orion with four crew towards the Moon. In lunar orbit they meet a commercial lander — SpaceX's Starship or Blue Origin's Blue Moon, chosen after the Artemis III docking tests — and two astronauts descend to the south polar region for about a week of surface work, while two remain aboard Orion. The south pole is the target because its permanently shadowed craters hold water ice, which future missions may turn into drinking water, oxygen and rocket propellant. NASA has identified nine candidate landing regions. Planned for early 2028; the crew has not yet been named.",

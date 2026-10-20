@@ -1,5 +1,8 @@
 {
   "name": "NEAR Shoemaker",
+  "vehicle": "Delta II 7925-8",
+  "payload": "805 kg beim Start (487 kg Trockenmasse) — Röntgen-/Gammastrahlen-Spektrometer, Nahinfrarot-Spektrograph, Multispektralkamera, Laser-Entfernungsmesser (LIDAR), Magnetometer. Erstes Raumfahrzeug, das einen Asteroiden umkreiste und auf ihm landete.",
+  "delta_v": "~1 km/s (Summe aller Missionsmanöver)",
   "type": "ORBITER + LANDER · GEFLOGEN",
   "first": "Erstes Raumschiff im Orbit um einen Asteroiden (433 Eros, 2000) und erste sanfte Landung auf einem kleinen Himmelskörper (12.02.2001)",
   "dispatch": "NEAR Shoemaker flog zu Eros, weil niemand wirklich wusste, wie ein Asteroid aus der Nähe aussieht. Dort fand es eine Welt voller Krater vor, durch die eigene langsame Rotation zu einer Sattelform gedehnt und bedeckt mit feinem Regolith, das in der Mikrogravitation nirgendwo hingehen konnte. Ein Jahr lang kartierte es jeden Rücken und Felsblock aus der Umlaufbahn, dann im Februar 2001 gingen die Flugleiter ein hohes Risiko ein: Sie senkten die Umlaufbahn des Raumschiffs fünfmal in zwei Wochen ab, verlangsamten es auf Schrittgeschwindigkeit und setzten es auf der Oberfläche ab. Es überlebte. Sechzehn weitere Tage lang sendete es von Eros — der erste Bote der Erde, der sich auf einem kleinen Himmelskörper zur Ruhe setzte.",

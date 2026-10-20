@@ -1,5 +1,8 @@
 {
   "name": "Apollo 10",
+  "vehicle": "Saturn V (AS-505)",
+  "payload": "42775 kg lanzados (CSM Charlie Brown (CSM-106) + LM Snoopy (LM-4))",
+  "delta_v": "~6 km/s (ida y vuelta)",
   "dispatch": "Apollo 10 voló todo el alunizaje — hasta los últimos quince kilómetros — y luego, según lo previsto, dio la vuelta. Stafford y Cernan llevaron el Lunar Module hasta prácticamente rozar la superficie en Tranquility, ejecutaron cada paso del descenso y regresaron a órbita sin posarse. La NASA incluso dejó los tanques de ascenso medio vacíos, de modo que por muy tentador que resultara, intentarlo nunca fue una opción. Es el vuelo menos celebrado del programa y uno de los más disciplinados: un ensayo a velocidad real de dos hombres que volaron un cuarto de millón de millas sabiendo que el alunizaje le pertenecía a otro.",
   "type": "TRIPULADO ÓRBITA LUNAR · VOLÓ",
   "first": "Ensayo general completo del alunizaje — el LM descendió a ~15,6 km de altitud",

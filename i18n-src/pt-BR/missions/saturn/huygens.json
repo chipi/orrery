@@ -1,5 +1,8 @@
 {
   "name": "Huygens",
+  "vehicle": "Titan IVB / Centaur (lançador da Cassini)",
+  "payload": "Sonda de entrada da ESA de 318 kg — aeroshell, 3 paraquedas, 6 pacotes científicos (HASI, GCMS, DISR, ACP, SSP, DWE). Projetada para sobreviver a uma descida atmosférica de 2,5 horas pela atmosfera de nitrogênio e metano de Titã até a superfície.",
+  "delta_v": "~6 km/s (desaceleração de entrada de 6 km/s hipersônicos até a superfície)",
   "type": "SONDA ATMOSFÉRICA + MÓDULO DE POUSO · VOADO",
   "first": "Primeiro e único pouso suave no sistema solar externo — desceu de paraquedas pela atmosfera de Titã em 14-01-2005",
   "dispatch": "Huygens não foi enviado para orbitar, mas para cair. Preso à Cassini por sete anos, se desprendeu no Natal de 2004 e navegou sozinho em direção a Titã por vinte dias. Quando atingiu a atmosfera de Titã a seis quilômetros por segundo, um escudo térmico comprou o tempo necessário; então três estágios de paraquedas desaceleraram-no por duas horas e meia através de uma névoa laranja que nenhum instrumento tinha atravessado. Fotografou vales fluviais, mediu velocidades de vento, cheirou a atmosfera — e pousou em uma planície de seixos de gelo aquoso arredondados. Foi o primeiro pouso jamais realizado no sistema solar externo, e nenhuma nave pousou lá desde então.",

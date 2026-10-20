@@ -1,5 +1,8 @@
 {
   "name": "X-37B OTV-7（USA-358、USSF-52）",
+  "vehicle": "Falcon Heavy",
+  "payload": "USA-358 / USSF-52；X-37B Orbital Test Vehicle（~5000 kg）。有效载荷大多保密。",
+  "delta_v": "~9.4 km/s（近地轨道）",
   "type": "无人航天飞机 · 已飞行",
   "first": "USA-358 / USSF-52 — 在轨434天，范登堡太空军基地",
   "description": "第七次 X-37B 飞行——首次进入大椭圆轨道（HEO），也是首次由 Falcon Heavy 发射。2023年12月29日01:07 UTC 从 KSC LC-39A 发射；两枚侧助推器分别在 LZ-1 / LZ-2 回收，芯级一次性使用，以获得进入 HEO 所需的能量。HEO 轨迹使 OTV 在远地点达到约地球静止轨道带的高度。执行了受控的气动减速式离轨程序（USSF 就这次机动发布了公开更新，与此前保密的任务相比，这是有意为之的透明化）。2025年3月7日09:22 UTC 在范登堡太空军基地着陆。",

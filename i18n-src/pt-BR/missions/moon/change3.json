@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 3",
+  "vehicle": "Long March 3B / E",
+  "payload": "3780 kg de massa de lançamento; 1200 kg de módulo de pouso; rover Yutu de 140 kg",
+  "delta_v": "~3,8 km/s",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
   "first": "Primeiro pouso suave chinês na Lua; implantou Yutu, o primeiro rover lunar da China",
   "description": "Chang'e 3 foi o terceiro módulo de pouso do programa Chang'e da CNSA e o primeiro pouso suave bem-sucedido na Lua desde a Luna 24 soviética em 1976 — um intervalo de 37 anos. O Long March 3B foi lançado em uma trajetória direta à Lua em dezembro de 2013, com uma única correção de trajetória no meio do percurso antes da inserção em órbita lunar. O módulo de pouso tocou o solo em Mare Imbrium em 14 de dezembro e implantou o rover Yutu (Jade Rabbit), que operou por 31 meses apesar de uma falha de mobilidade que encerrou seu deslocamento no dia lunar 2. O módulo de pouso da Chang'e 3 continuou realizando imageamento por anos após isso.",

@@ -1,5 +1,8 @@
 {
   "name": "Cassini-Huygens",
+  "vehicle": "Titan IVB / Centaur",
+  "payload": "Orbiter di Saturno (~5712 kg a secco) + sonda di discesa Huygens (~318 kg, costruita dall'ESA, atterrata su Titano il 2005-01-14)",
+  "delta_v": "~2 km/s (inserimento in orbita attorno a Saturno)",
   "type": "Orbiter + Lander · Effettuata",
   "first": "13 anni in orbita attorno a Saturno — Huygens è atterrata su Titano il 14-01-2005 (primo atterraggio morbido nel sistema solare esterno)",
   "dispatch": "Cassini fece ciò che nessun veicolo spaziale aveva fatto presso alcun pianeta gigante: si fermò. Per tredici anni visse presso Saturno, e le scoperte che contarono di più vennero dal restare — i geyser di Encelado, catturati perché l'orbiter volò abbastanza vicino, abbastanza spesso, da vedere una minuscola luna che espelleva il suo oceano nascosto nello spazio. Sganciò la sonda europea Huygens su Titano, l'unico atterraggio mai effettuato nel sistema solare esterno, e mappò un mondo di fiumi e laghi di metano. Alla fine, senza carburante, fu pilotata deliberatamente contro Saturno così da non poter mai cadere sulle lune oceaniche che aveva trovato e contaminarle — una missione che si chiuse proteggendo i luoghi che aveva scoperto.",

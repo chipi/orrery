@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 5",
+  "vehicle": "Long March 5",
+  "payload": "8200 kg Startmasse; 1,731 kg Probe zurückgebracht",
+  "delta_v": "~5 km/s",
   "type": "PROBENRÜCKGABE · GEFLOGEN",
   "first": "Erste Mondprobenrückgabe seit 44 Jahren (seit Luna 24, 1976)",
   "description": "Chang'e 5 war die erste Probenrückführung vom Mond seit Luna 24 der Sowjetunion im Jahr 1976 – eine Lücke von 44 Jahren. Die Architektur: Orbiter + Lander + Aufstiegsfahrzeug + Probenrückgabekapsel, alles in einem Start. Der Lander landete auf Mons Rümker, bohrte und schöpfte 1,731 kg Regolith, hob ab, traf sich mit dem Orbiter und koppelte an ihn an (das erste Roboter-Rendezvous auf dem Mond), und die Kapsel kehrte zur Erde zurück. Die Proben stammen aus einer Region, die nur 2 Milliarden Jahre alt ist – viel jünger als jede Apollo- oder Luna-Probe, und schreiben Modelle des Mondvulkanismus neu.",

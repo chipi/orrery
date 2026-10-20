@@ -1,5 +1,8 @@
 {
   "name": "X-37B OTV-7 (USA-358, USSF-52)",
+  "vehicle": "Falcon Heavy",
+  "payload": "USA-358 / USSF-52 ; X-37B Orbital Test Vehicle (~5000 kg). Charges utiles en grande partie classifiées.",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "AVION SPATIAL SANS ÉQUIPAGE · EXÉCUTÉ",
   "first": "USA-358 / USSF-52 — 434 jours en orbite, Vandenberg Space Force Base",
   "description": "Septième vol du X-37B — premier vers une orbite hautement elliptique (HEO) et premier lancé sur Falcon Heavy. Lancé le 2023-12-29 à 01:07 UTC depuis KSC LC-39A ; les deux propulseurs latéraux ont été récupérés à LZ-1 / LZ-2, le noyau central dépensé pour l'insertion HEO. La trajectoire HEO a porté l'OTV à environ l'altitude de la ceinture GEO à l'apogée. A effectué une séquence de désorbitation contrôlée de style freinage aérodynamique (l'USSF a publié une mise à jour publique sur la manœuvre, un départ délibéré de la transparence par rapport aux vols classifiés antérieurs). Atterri à Vandenberg Space Force Base le 2025-03-07 à 09:22 UTC.",

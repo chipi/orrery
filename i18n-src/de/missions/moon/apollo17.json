@@ -1,5 +1,8 @@
 {
   "name": "Apollo 17",
+  "vehicle": "Saturn V (AS-512)",
+  "payload": "48609 kg Startmasse (CSM America + LM Challenger)",
+  "delta_v": "~6 km/s (Hin- und Rückflug)",
   "dispatch": "Apollo 17 war das Ende, obwohl fast niemand, der im Dezember 1972 zuschaute, daran glaubte, dass es so sein würde. Es war auch, verspätet, der Flug, der einen echten Wissenschaftler zum Mond brachte – den Geologen Harrison Schmitt, dessen Blick das orange Vulkanglas im Shorty-Krater entdeckte, das umschrieb, woraus der Mond besteht. Cernan und Schmitt blieben drei Tage, fuhren zweiundzwanzig Meilen, und dann stieg Cernan als bislang Letzter die Leiter hinauf und sagte, dass sie gingen „wie wir kamen, und so Gott will, werden wir zurückkehren.\" Mehr als ein halbes Jahrhundert später ist niemand dorthin zurückgekehrt – und jedes ernsthafte Argument für eine Rückkehr beginnt immer noch mit der Tatsache, dass wir es einmal konnten.",
   "type": "LANDER MIT BESATZUNG · ROVER · GEFLOGEN",
   "first": "Letzte bemannte Mission zum Mond (und die einzige Apollo-Mission mit einem ausgebildeten Geologen)",

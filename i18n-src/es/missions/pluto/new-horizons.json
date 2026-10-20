@@ -1,5 +1,8 @@
 {
   "name": "New Horizons",
+  "vehicle": "Atlas V 551",
+  "payload": "Nave de sobrevuelo New Horizons; energía por RTG",
+  "delta_v": "~16 km/s (aprox.)",
   "type": "SOBREVUEL · COMPLETADO",
   "first": "Primer sobrevuelo de Plutón y sus lunas; imágenes más nítidas de un mundo del cinturón de Kuiper",
   "dispatch": "New Horizons tuvo exactamente una oportunidad y la aprovechó. No había órbita ni forma de reducir la velocidad — nueve años y medio de viaje, el lanzamiento más rápido de la historia, todo convergiendo en unas pocas horas en Plutón, ejecutado por una máquina tan lejos que cada comando tardaba horas en llegar. Clavó el sobrevuelo el 14 de julio de 2015 y derribó la expectativa de un mundo muerto: Plutón resultó tener montañas de hielo de agua, un vasto glaciar en forma de corazón de nitrógeno congelado aún agitándose lentamente, y una superficie joven y activa que nadie pensó que un cuerpo tan pequeño y frío pudiera mantener. Luego voló hacia Arrokoth, mil millones de kilómetros más allá de Plutón — el mundo más distante jamás visto de cerca — y sigue en marcha.",

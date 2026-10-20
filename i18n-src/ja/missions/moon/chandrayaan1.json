@@ -1,5 +1,8 @@
 {
   "name": "Chandrayaan-1",
+  "vehicle": "PSLV-XL (C11)",
+  "payload": "打上げ質量1380 kg；Moon Impact Probe 35 kg",
+  "delta_v": "~3 km/s",
   "type": "軌道機 · 飛行済み",
   "first": "インド初の月ミッション；月面に広く水があることを確認",
   "description": "ISROの最初の惑星間宇宙探査機。軌道船は月 Impact Probeを月面に送り届けました。これは別の世界に到達したインドの最初の物体です。また、6カ国から提供された11個の機器を搭載していました。Chandrayaan-1に搭載されたNASAのMoon Mineralogy Mapper（M3）は、教科書を書き直す発見をしました。水分子は月面全体に広く存在し、極地の暗い影のクレーターだけに閉じ込められているのではなかったのです。ミッションは2009年8月、ISROが宇宙探査機との通信を失ったときに突然終了しました。",

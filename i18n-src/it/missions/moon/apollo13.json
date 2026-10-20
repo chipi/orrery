@@ -1,5 +1,8 @@
 {
   "name": "Apollo 13",
+  "vehicle": "Saturn V (AS-508)",
+  "payload": "44069 kg lanciati (CSM Odyssey + LM Aquarius)",
+  "delta_v": "~6 km/s (andata e ritorno, allunaggio abortito)",
   "type": "VOLO CON SORVOLO EQUIPAGGIO · COMPLETATO (ALLUNAGGIO ANNULLATO)",
   "first": "La missione che trasformò un quasi-disastro nel salvataggio più celebre della NASA",
   "dispatch": "Apollo 13 non ha mai allunato, eppure è la missione che tutti ricordano. Due giorni dopo il lancio, un serbatoio di ossigeno si squarciò e trasformò un volo di routine verso gli altopiani di Fra Mauro in un problema di quattro giorni per mantenere in vita tre uomini in un'astronave morente a trecentomila chilometri da casa. A salvarli non fu l'eroismo, ma la preparazione e una stanza piena di persone che risolvevano il problema in tempo reale, improvvisando un modo per respirare e un modo per tornare a casa con quello che era già bullonato al veicolo. La NASA lo chiamò un successo mancato. È più accurato dire che è il volo che ha provato che l'agenzia era all'altezza di quello che asseriva.",

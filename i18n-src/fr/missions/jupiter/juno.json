@@ -1,5 +1,8 @@
 {
   "name": "Juno",
+  "vehicle": "Atlas V 551",
+  "payload": "Orbiteur polaire de Jupiter ; premier engin spatial à énergie solaire à fonctionner au-delà de la ceinture d'astéroïdes (panneaux solaires triple jonction de ~50 m² fournissant ~14 kW à la Terre et ~500 W à Jupiter)",
+  "delta_v": "~3,7 km/s (insertion en orbite de Jupiter)",
   "type": "Orbiteur · Active",
   "first": "Premier orbiteur polaire de Jupiter ; première utilisation de l'énergie solaire au-delà de la ceinture d'astéroïdes",
   "description": "Juno est entrée en orbite de Jupiter le 05-07-2016 sur une trajectoire polaire très elliptique de 53 jours, qui la conduit depuis l'intérieur des ceintures de radiations (périjove ~4 200 km au-dessus des sommets des nuages) jusqu'au-delà de Callisto. Alimentée à l'énergie solaire — ses panneaux triple-jonction d'environ 50 m² fournissent 14 kW à la Terre mais seulement ~500 W à Jupiter, première utilisation de l'énergie solaire à cette distance. A confirmé que Jupiter possède un noyau rocheux dilué (pas de frontière nette), a mesuré la disposition des cyclones polaires (huit tempêtes circumpolaires autour de chaque pôle) et a imagé en 2023 le volcanisme d'Io avec un niveau de détail sans précédent. La mission étendue prévoit des survols des quatre lunes galiléennes jusqu'en 2025.",

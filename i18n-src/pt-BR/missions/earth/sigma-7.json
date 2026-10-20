@@ -1,5 +1,8 @@
 {
   "name": "Sigma 7 / MA-8",
+  "vehicle": "Atlas LV-3B (MA-8)",
+  "payload": "Cápsula Mercury nº 16 (1962 kg); Wally Schirra",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "VOO TRIPULADO ÓRBITA TERRESTRE · REALIZADO",
   "first": "Primeiro voo Mercury impecável — 6 órbitas; duração dobrada em relação a Glenn / Carpenter",
   "dispatch": "Após dois voos que terminaram em sustos, o Sigma 7 foi aquele que foi propositalmente chato — e esse foi o feito. Wally Schirra o chamou de teste de engenharia impecável e o voou como tal: experimentos mínimos, conservação cuidadosa de cada quilograma de combustível e cada ampere de energia, seis órbitas gastas provando que a espaçonave podia ser operada com disciplina em vez de dominada pela força. Ele pousou na água quase em cima do navio de recuperação. Em um programa que havia improvisado sob pressão, o Sigma 7 mostrou que os americanos aprenderam a voar a coisa com calma — o pré-requisito para as missões muito mais longas que viriam.",

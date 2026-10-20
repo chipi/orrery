@@ -1,5 +1,8 @@
 {
   "name": "Giotto",
+  "vehicle": "Ariane 1",
+  "payload": "960 kg schwere, spinstabilisierte, trommelförmige Sonde mit einem mehrschichtigen Whipple-Kevlar-Staubschild (der hintere Bumper hielt die wissenschaftlichen Instrumente während des Staubsturms mit 68 km/s Relativgeschwindigkeit in der Koma des Halleyschen Kometen funktionsfähig). 10 Instrumente — Halley Multicolour Camera, Massenspektrometer, Staubeinschlagdetektoren, Magnetometer, Plasmainstrumente.",
+  "delta_v": "~1,5 km/s (Abfangen des Halleyschen Kometen)",
   "type": "VORBEIFLUG · AUSGEFÜHRT",
   "first": "ESAs erste Tiefraummission; nächster Kometenflug, der je versucht wurde (Halley, 596 km, 1986); erste Nahaufnahmen eines Kometenkerns",
   "description": "Giotto war Europas Säule der Halley-Armada — eine spinstabilisierte 960-kg-Sonde mit mehrschichtigem Whipple-Kevlar-Staubschild. Nach dem Start am 1985-07-02 flog sie mit einer Relativgeschwindigkeit von 68 km/s durch Halleys Koma am 1986-03-14 mit größter Annäherung 596 km und lieferte die ersten Nahaufnahmen eines Kometenkerns (ein unregelmäßiger, 15 × 7,2 × 7,2 km großer länglicher Körper mit konzentrierten Staubstrahlen). Ein Staubeinschlag etwa 7,6 Sekunden vor größter Annäherung destabilisierte die Spinachse und deaktivierte die Kamera, aber die anderen Instrumente setzten ihre Übertragung durch die Koma fort. Nach einer Hibernation in heliozentrischem Orbit wurde Giotto 1990 reaktiviert und nutzte einen Erd-Swing-by, um sich zum Kometen 26P/Grigg-Skjellerup neu auszurichten. Sie flog am 1992-07-10 in 200 km Entfernung vorbei — dem nächsten Kometen-Vorbeiflug aller Zeiten.",

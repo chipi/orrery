@@ -1,5 +1,8 @@
 {
   "name": "Apollo 14",
+  "vehicle": "Saturn V (AS-509)",
+  "payload": "46305 kg gelanceerd (CSM Kitty Hawk (CSM-110) + LM Antares (LM-8))",
+  "delta_v": "~6 km/s (heen en terug)",
   "dispatch": "Apollo 14 moest bewijzen dat het programma nog steeds kon landen. Het vloog negen maanden nadat Apollo 13 haar bemanning bijna had gedood, nam het doel over dat Apollo 13 nooit bereikte, en bracht Alan Shepard een decennium nadat hij de eerste Amerikaan werd die de planeet verliet terug de ruimte in — in de tussentijd jarenlang aan de grond gehouden door een binnenooraandoening, en nu, op zevenenveertigjarige leeftijd, de oudste persoon die op de Maan liep. Hij en Mitchell kwamen ongeveer dertig meter tekort bij de rand van de Cone-krater, niet in staat om in het verwarrende terrein te bepalen hoe dichtbij ze werkelijk waren gekomen. Toen zwaaide Shepard in de laatste minuten op het oppervlak met een geïmproviseerde ijzer 6 naar twee golfballen — een stunt, en ook een stil signaal dat de crisis achter hen lag en Apollo weer vloog.",
   "type": "BEMANDE LANDER · GEVLOGEN",
   "first": "Derde maanlanding — Apollo 13's verloren doel bereikt; Shepard's golfschoten",

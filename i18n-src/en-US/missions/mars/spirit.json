@@ -1,5 +1,8 @@
 {
   "name": "Spirit",
+  "vehicle": "Delta II 7925",
+  "payload": "1063 kg (cruise stage + EDL + rover); 174 kg surface mass",
+  "delta_v": "~5.5 km/s",
   "type": "ROVER · FLOWN",
   "first": "First of the Mars Exploration Rover twins; longest-lived rover until passed by Curiosity",
   "dispatch": "Spirit was built for ninety days and worked for six years. One of a pair of golf-cart-sized geologists landed in 2004, it was sent to read the rocks for evidence of a wetter Martian past — and it found it, uncovering minerals that only form in water and, in one place, silica deposits like those left by hot springs on Earth. It climbed hills no one had planned for it to reach and survived winters it was never designed to see, until a wheel failed and it bogged down in soft sand. It kept transmitting from where it was stuck until the Martian cold finally took it.",

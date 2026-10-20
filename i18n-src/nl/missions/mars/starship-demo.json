@@ -1,5 +1,8 @@
 {
   "name": "Starship Demo",
+  "vehicle": "Starship (Super Heavy + Starship-bovenste trap, niet hergebruikt)",
+  "payload": "~100000 kg (doel met architectuur voor bijtanken in een baan)",
+  "delta_v": "~13 km/s",
   "type": "ONBEMANDE MARS-DEMO · GEPLAND",
   "first": "Eerste volledig herbruikbare lanceersysteem dat een Mars-landing probeert",
   "description": "Een onbemande demonstratie van de Starship Mars-architectuur: lancering op Super Heavy, hervullen in LEO vanuit een tankvariant, dan trans-Mars-injectie van een volledig getankte Starship en aangedreven afdaling naar het Marsoppervlak. SpaceX's vermelde doel is een lanceervenster van 2026-2027; engineering-realiteit (Starship werkt nog aan orbitale vluchtbetrouwbaarheid en hervullen in baan is nog niet gedemonstreerd) maakt 2028 of later waarschijnlijker. Als het slaagt, keert het de Mars-laadeconomie om — van duizenden kg naar honderd ton per landing.",

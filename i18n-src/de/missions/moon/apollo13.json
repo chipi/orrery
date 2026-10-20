@@ -1,5 +1,8 @@
 {
   "name": "Apollo 13",
+  "vehicle": "Saturn V (AS-508)",
+  "payload": "44069 kg Startmasse (CSM Odyssey + LM Aquarius)",
+  "delta_v": "~6 km/s (Hin- und Rückflug, abgebrochene Landung)",
   "type": "CREWED FLYBY · FLOWN (LANDING ABORTED)",
   "first": "Die Mission, die eine Beinahe-Katastrophe in NASAs gefeiertste Rettung verwandelte",
   "dispatch": "Apollo 13 landete nie, und es ist die Mission, die jeder in Erinnerung behält. Zwei Tage nach dem Start riss sich ein Sauerstofftank selbst auseinander und verwandelte einen Routineflug zu den Fra-Mauro-Hochländern in ein viertägiges Problem, drei Männer am Leben zu halten in einem sterbenden Raumschiff eine Viertelmillion Meilen von zu Hause entfernt. Was sie rettete, waren keine Heldentaten; es war Vorbereitung und ein Zimmer voller Menschen, die in Echtzeit an dem Problem arbeiteten und aus dem, was bereits am Fahrzeug befestigt war, eine Möglichkeit zum Atmen und einen Weg nach Hause improvisierten. Die NASA nannte es einen erfolgreichen Fehlschlag. Der Wahrheit näher kommt, dass es der Flug war, der bewies, dass die Behörde so gut war, wie sie behauptet hatte.",

@@ -1,5 +1,8 @@
 {
   "name": "Spirit",
+  "vehicle": "Delta II 7925",
+  "payload": "1063 kg (vluchtfase + EDL + rover); 174 kg oppervlaktemassa",
+  "delta_v": "~5,5 km/s",
   "type": "ROVER · GELANCEERD",
   "first": "Eerste van de Mars Exploration Rover-tweeling; langstlevende rover totdat Curiosity het record brak",
   "dispatch": "Spirit was gebouwd voor negentig dagen en werkte zes jaar. Een van een paar geologen ter grootte van een golfkarretje die in 2004 landden, werd gestuurd om de rotsen af te zoeken naar aanwijzingen van een natter Marsverleden — en vond ze, ontdekte mineralen die alleen in water ontstaan en, op één plaats, silicaafzettingen zoals die achtergelaten door hete bronnen op Aarde. Het klom heuvels op die niemand had gepland dat het zou bereiken en overleefde winters waarvoor het nooit was ontworpen, totdat een wiel bezweek en het wegzakte in zacht zand. Het bleef signalen verzenden vanaf de plek waar het vastzat, totdat de Martiaanse kou het uiteindelijk meenam.",

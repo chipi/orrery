@@ -1,5 +1,8 @@
 {
   "name": "Apollo 16",
+  "vehicle": "Saturn V (AS-511)",
+  "payload": "48599 kg gelanceerd (CSM Casper (CSM-113) + LM Orion (LM-11))",
+  "delta_v": "~6 km/s (heen en terug)",
   "dispatch": "Apollo 16 ging naar de maanhoogvlakten om oude vulkanen te bemonsteren en ontdekte dat die er nooit waren geweest. Geologen waren ervan overtuigd dat de bleke, grillige Descartes-regio vulkanisch was; elke steen die Young en Duke meebrachten was breccia — puin dat door inslagen was samengesmolten. Ongelijk hebben was de opbrengst: de heldere hoogvlakten van de Maan bleken een archief te zijn van een jong zonnestelsel onder meedogenloos bombardement, geen uitbarstingen. Het is een helder voorbeeld van hoe verkenning zijn waarde daadwerkelijk bewijst — je gaat om te bevestigen wat je denkt al te weten, en de plek vertelt je iets beters.",
   "type": "BEMANDE LANDER · GEVLOGEN",
   "first": "Eerste maanlanding in de maanhooglanden — Descartes; John Youngs \"Grand Prix op de Maan\"",

@@ -1,5 +1,8 @@
 {
   "name": "Luna 16",
+  "vehicle": "Proton-K / D",
+  "payload": "5727 kg di massa al lancio; lander da 1880 kg; 0,101 kg di regolite lunare riportato",
+  "delta_v": "~3,5 km/s",
   "type": "ROBOTIC SAMPLE RETURN · FLOWN",
   "first": "Primo ritorno robotico di campioni lunari; primi campioni lunari non americani",
   "description": "Luna 16 fu il primo ritorno robotico riuscito di campioni dell'Unione Sovietica e il primo ritorno lunare non equipaggio di qualsiasi tipo. Dopo che Apollo 11 riportò a terra 22 kg di campioni con equipaggio nel 1969, Luna 16 ritornò 101 grammi di regolite da Mare Fecunditatis un anno dopo — una frazione del carico utile dell'Apollo, ma una prova di concetto profonda per l'architettura alternativa. La missione utilizzò un vettore Proton-K e un profilo di ritorno diretto: discesa sulla superficie, perforazione del nucleo, lancio dello stadio di ascesa, capsula di ritorno balistico verso il Kazakhstan. La tecnica fu riutilizzata per Luna 20 e Luna 24, e decenni dopo da Chang'e 5 e Chang'e 6.",

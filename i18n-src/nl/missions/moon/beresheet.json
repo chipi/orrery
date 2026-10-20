@@ -1,5 +1,8 @@
 {
   "name": "Beresheet",
+  "vehicle": "Falcon 9 Block 5 (gedeelde lancering met Nusantara Satu)",
+  "payload": "585 kg lanceermassa; eerste particuliere ruimtevaartuig in een baan om de Maan; verloren tijdens de aangedreven afdaling op ~150 m boven het oppervlak",
+  "delta_v": "~6 km/s (sterk elliptische fasebanen, geen directe TLI)",
   "type": "PRIVATE LANDER · CRASHED",
   "first": "Eerste privégefinancierde missie naar de Maan; eerste Israëlische maanmissie",
   "description": "SpaceIL's Beresheet (Hebreeuws: 'In het begin') lanceerde als passagier op een gezamenlijke vlucht op een Falcon 9 in februari 2019. In plaats van een directe trans-maaninjectie voerde de kleine lander weken van faseringsmanoeuvres uit die het perigeum verhoogden om vanaf een parkeerbaan naar de Maan te klimmen — een brandstofbesparende baan die voor goedkope missies werd gepioneerd. Na succesvolle maanbaaninsertie op 4 april 2019 veroorzaakte een reset van een traagheidsmeeteenheid tijdens de afdaling dat de hoofdmotor uitviel. Beresheet stortte neer in Mare Serenitatis. SpaceIL verbond zich binnen enkele dagen aan een opvolger (Beresheet 2).",

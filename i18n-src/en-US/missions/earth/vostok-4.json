@@ -1,5 +1,8 @@
 {
   "name": "Vostok 4",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4728 kg launch mass; single cosmonaut",
+  "delta_v": "~9.4 km/s (LEO)",
   "type": "CREWED EARTH-ORBIT · FLOWN",
   "first": "Second half of first dual flight — first communications between two crewed spacecraft",
   "dispatch": "Vostok 4 was the answer to Vostok 3 — the second ship in the first dual flight, and the moment two humans in two separate spacecraft first spoke to each other in orbit. Pavel Popovich launched a day after Nikolayev and closed to within about six and a half kilometres, near enough to trade radio voice directly, ship to ship, rather than through the ground. Like its partner it couldn't maneuver to hold the distance, so the two drifted apart. But the image of two cosmonauts circling the Earth in formation, talking to each other, was exactly the kind of first the program was built to manufacture.",

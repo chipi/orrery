@@ -1,5 +1,8 @@
 {
   "name": "Luna 16",
+  "vehicle": "Proton-K / D",
+  "payload": "5727 kg launch mass; 1880 kg lander; 0.101 kg lunar regolith returned",
+  "delta_v": "~3.5 km/s",
   "type": "ROBOTIC SAMPLE RETURN · FLOWN",
   "first": "First robotic lunar sample return; first non-American lunar samples",
   "description": "Luna 16 was the Soviet Union's first successful robotic sample-return mission and the first non-crewed lunar return of any kind. After Apollo 11 brought home 22 kg of crewed samples in 1969, Luna 16 returned 101 grams of regolith from Mare Fecunditatis a year later — a fraction of Apollo's payload, but a profound proof-of-concept for the alternative architecture. The mission used a Proton-K booster and a direct return profile: descent to the surface, drill core, ascent stage launch, ballistic return capsule to Kazakhstan. The technique was reused for Luna 20 and Luna 24, and decades later by Chang'e 5 and Chang'e 6.",

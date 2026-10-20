@@ -1,5 +1,8 @@
 {
   "name": "NEAR Shoemaker",
+  "vehicle": "Delta II 7925-8",
+  "payload": "805 kg bij lancering (487 kg droog) — röntgen-/gammastralenspectrometer, nabij-infraroodspectrograaf, multispectrale camera, laserafstandsmeter (LIDAR), magnetometer. Eerste ruimtevaartuig dat om een asteroïde draaide en erop landde.",
+  "delta_v": "~1 km/s (totale missiemanoeuvres)",
   "type": "OMLOOPBAAN + LANDINGSMODULE · GEVLOGEN",
   "first": "Eerste ruimtevaartuig dat om een asteroïde draaide (433 Eros, 2000) en eerste zachte landing op een klein lichaam (12-02-2001)",
   "dispatch": "NEAR Shoemaker ging naar Eros omdat niemand echt wist hoe een asteroïde van dichtbij eruitzag. Het trof een wereld vol kraters aan, door de eigen trage rotatie uitgerekt tot een zadelvorm en bedekt met fijn regoliet dat in de bijna afwezige zwaartekracht nergens heen kon. Een jaar lang bracht het vanuit een baan elke rug en rotsblok in kaart; in februari 2001 zetten de controllers alles op alles: ze verlaagden de baan van het ruimtevaartuig vijf keer in twee weken, remden het af tot wandeltempo en zetten het op het oppervlak neer. Het overleefde. Nog zestien dagen zond het uit vanaf Eros — de eerste gezant van de Aarde die op een klein lichaam tot rust kwam.",

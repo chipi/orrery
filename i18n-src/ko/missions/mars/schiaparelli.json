@@ -1,5 +1,8 @@
 {
   "name": "Schiaparelli EDM",
+  "vehicle": "Proton-M / Briz-M",
+  "payload": "577 kg(Trace Gas Orbiter와 함께하는 ExoMars 2016 임무의 EDM 착륙선 부분)",
+  "delta_v": "~5.5 km/s",
   "type": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
   "first": "ESA의 첫 번째 화성 표면 착륙 시도이며, ExoMars Rosalind Franklin을 앞두고 EDL을 입증하기 위해 설계됨",
   "description": "Schiaparelli는 ExoMars Trace Gas Orbiter(TGO)에 얹혀 간 진입·하강·착륙 시연선이었습니다. 이탈리아 천문학자 조반니 스키아파렐리의 이름을 땄으며, ESA가 Rosalind Franklin 로버에 쓰려고 규모를 키울 계획이던 EDL 체계를 입증하기 위해 만들어졌습니다. Schiaparelli는 2016년 10월 16일 TGO에서 분리되어 사흘 뒤 화성 대기에 진입했습니다. 하강 과정이 무너졌습니다. 포화된 관성 측정 장치 때문에 항법 소프트웨어가 아직 높은 고도에서 이미 착륙했다고 판단했고, 낙하산이 일찍 분리되었으며 제동 추력기는 단 3초만 분사한 뒤 꺼졌습니다. Schiaparelli는 약 150 m/s로 표면에 충돌했습니다. TGO 자체는 궤도 진입에 성공해 지금도 운용 중입니다.",

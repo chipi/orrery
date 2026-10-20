@@ -1,5 +1,8 @@
 {
   "name": "Galileo",
+  "vehicle": "Space Shuttle Atlantis + IUS",
+  "payload": "Sonda Galileo e sonda di ingresso atmosferico; ~2,5 t di massa a secco",
+  "delta_v": "~14 km/s (circa)",
   "type": "ORBITER · FLOWN",
   "first": "Primo veicolo spaziale in orbita attorno a Giove; sonda atmosferica nelle nubi di Giove",
   "dispatch": "Galileo avrebbe dovuto essere paralizzato ancora prima di arrivare. La sua antenna principale rimase semiaperta durante il viaggio verso Giove, riducendo drasticamente la velocità di trasmissione dei dati — eppure la missione ebbe comunque successo, perché gli ingegneri riscrissero il software dal nostro pianeta per far passare la scienza attraverso una minuscola antenna di riserva. Divenne il primo veicolo spaziale a entrare in orbita attorno a Giove, lanciò una sonda nelle nubi del gigantesco pianeta e trascorse otto anni esplorando i satelliti. La sua scoperta più importante emerse lentamente da questa perseveranza: il modo in cui il campo magnetico di Giove si avvolgeva intorno a Europa poteva essere spiegato solo dalla presenza di un oceano salato sotto il ghiaccio — la prova più convincente fino a quel momento che una luna di Giove potrebbe contenere acqua liquida e vita. Alla fine fu mandata deliberatamente a disintegrarsi in Giove, così da non potere mai cadere su Europa e contaminarla.",

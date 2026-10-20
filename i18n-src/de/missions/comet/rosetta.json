@@ -1,5 +1,8 @@
 {
   "name": "Rosetta",
+  "vehicle": "Ariane 5G+",
+  "payload": "Orbiter (~2900 kg Trockenmasse, 11 Instrumente) + Landeeinheit Philae (~100 kg, 10 Instrumente). Hitzeschild, zwei Erd- + ein Mars-Swing-by, 957 Tage Winterschlaf im tiefen Weltraum 2011–2014.",
+  "delta_v": "~2,3 km/s (Rendezvous + Kometenoperationen)",
   "type": "ORBITER + LANDER · FLOWN",
   "first": "Erstes Raumschiff, das einen Kometen umkreiste — und auf einem landete (Philae, 2014-11-12)",
   "description": "ESAs Flaggschiffmission zum Kometen-Rendezvous. Nach einer 10-jährigen Reise mit drei Erd-Swing-bys, einem Mars-Swing-by, zwei Asteroiden-Vorbeflügen und 957 Tagen Tiefraum-Hibernation erreichte Rosetta im August 2014 den Kometen 67P/Churyumov-Gerasimenko und umkreiste ihn über zwei Jahre lang durch das Perihel und danach wieder hinaus. Der Lander Philae erreichte am 2014-11-12 die Oberfläche von 67P — die erste sanfte Landung auf einem Kometen — und lieferte ~64 Stunden Wissenschaftsdaten, nachdem das Versagen der Harpune ihn im Schatten einer Felswand zurückließ. Rosetta selbst beendete die Mission mit einem kontrollierten Abstieg zur Oberfläche von 67P am 2016-09-30. Wichtigste Ergebnisse: organische Moleküle und Glycin in der Koma; das anfänglich gemessene D/H-Verhältnis von 67P (≈3× terrestrisch) sprach gegen Kometen der Jupiterfamilie als Quelle des Erdwassers — ein Ergebnis, das eine Re-Analyse von 2024 nach Entdeckung eines Messfehlers in Frage gestellt hat; die ersten detaillierten Karten der Ausgasungsgeometrie eines Kometen.",

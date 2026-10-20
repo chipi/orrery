@@ -1,5 +1,8 @@
 {
   "name": "MESSENGER",
+  "vehicle": "Delta II 7925H-9.5",
+  "payload": "Orbitador de Mercúrio; protegido por um para-sol (face frontal 370 °C, face traseira -45 °C); sete instrumentos, incluindo imageamento, espectrômetros, magnetômetro, altímetro a laser",
+  "delta_v": "~2,3 km/s (inserção em órbita de Mercúrio)",
   "type": "ORBITADOR · REALIZADO",
   "first": "Primeira sonda a orbitar Mercúrio; primeiro mapa completo da superfície do planeta mais interno",
   "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) utilizou seis assistências gravitacionais ao longo de sete anos — Terra, Vênus duas vezes, Mercúrio três vezes — para reduzir a velocidade e entrar em órbita de Mercúrio em 2011-03-18. Protegida por um escudo solar com um lado a 370 °C e o outro a -45 °C. As descobertas incluíram gelo de água em crateras polares permanentemente sombreadas, características geológicas \"depressões\" anteriormente desconhecidas, e confirmação de que o núcleo de ferro de Mercúrio ocupa ~85 % do raio do planeta (a maior razão núcleo-raio de qualquer planeta do sistema solar). A missão terminou com um impacto controlado na superfície de Mercúrio em 2015-04-30 após o combustível se esgotar.",

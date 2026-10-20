@@ -1,5 +1,8 @@
 {
   "name": "Skylab 4",
+  "vehicle": "Saturn IB (SA-208)",
+  "payload": "20847 kg launch mass; CSM-118 + 3-person crew",
+  "delta_v": "~9.4 km/s (LEO)",
   "dispatch": "Skylab 4 set an endurance record that stood for years — 84 days aloft — and became a landmark in something less expected: who gets to run a mission. Gerald Carr's crew arrived to a punishing schedule radioed up from the ground, fell behind, and eventually pushed back, taking an unscheduled rest period — NASA and the crew themselves later disputed how deliberate the stand-down was — and forcing mission control to negotiate a workload humans could actually sustain. They also captured the era's best observations of Comet Kohoutek. The flight is remembered both for its record and for asserting, for the first time clearly, that the people in orbit — not only the planners below — have a say in how a long mission is flown.",
   "type": "CREWED STATION CREW · FLOWN",
   "first": "Longest Skylab stay — 84 days, observed Comet Kohoutek, disputed \"Skylab strike\" rest day",

@@ -1,5 +1,8 @@
 {
   "name": "Venera 13",
+  "vehicle": "Proton-K / D-1",
+  "payload": "~4500 kg combinados: barramento de sobrevoo + cápsula de descida de titânio de 1645 kg (câmeras, espectrômetro de fluorescência de raios X para composição do solo, sismômetro, braço de coleta de solo com broca de câmara hermética). Projetada para um dos ambientes de descida mais hostis já tentados.",
+  "delta_v": "~1,5 km/s (chegada a Vênus)",
   "type": "ATERRISSADOR · CONCLUÍDA",
   "first": "Maior sobrevivência em superfície de qualquer missão a Vênus (127 min); primeiras imagens panorâmicas em cores e primeiro áudio da superfície de outro planeta",
   "description": "Auge do programa soviético Venera. A Venera 13 foi lançada em 30 de outubro de 1981 e pousou em 1º de março de 1982, a 7,5°S 303°L, nas terras altas de Phoebe Regio. Condições na superfície no momento do pouso: 457 °C, 89 bar, névoa de ácido sulfúrico. O módulo de pouso sobreviveu 127 minutos — quase uma hora além da meta de projeto —, devolvendo os primeiros panoramas em cores da superfície de outro planeta, gravando áudio com um microfone de vento e usando a broca e o espectrômetro de fluorescência de raios X de bordo para determinar que o basalto do local era de composição leucítica alcalina fracamente diferenciada. A nave gêmea Venera 14 realizou operações idênticas em outro local cinco dias depois. A série Venera (1967–1983) continua sendo o único programa bem-sucedido de superfície em Vênus até hoje.",

@@ -1,5 +1,8 @@
 {
   "name": "OSIRIS-REx",
+  "vehicle": "Atlas V 411",
+  "payload": "2110 kg lanceermassa (1075 kg droog)",
+  "delta_v": "~1,4 km/s",
   "type": "STEEKPROEFRETOUR · GEVLOGEN",
   "first": "Grootste asteroïdemonster ooit teruggebracht (121,6 g van Bennu, op 2023-09-24 op Aarde afgeleverd)",
   "description": "OSIRIS-REx voerde een van de meest veeleisende operaties in de nabijheid van een asteroïde uit die ooit zijn geprobeerd. De sonde werd gelanceerd op 2016-09-08 vanaf Cape Canaveral met een Atlas V 411, gebruikte in 2017 een zwaartekrachtsteun van de Aarde om zijn baanvlak te draaien naar Bennu's baanhelling van 6°, en ontmoette de 492 m grote koolstofrijke aardscheerder op 2018-12-03. Na stationhouden op ~19 km kwam hij later in een recordbaan van ~1,4 km — de kleinste baan die een ruimtevaartuig ooit rond een hemellichaam heeft gehad. Twee jaar lang bracht hij Bennu's met rotsblokken bezaaide oppervlak in kaart en ontdekte hij actieve deeltjesuitstoot. Op 2020-10-20 daalde de monsterarm van Touch-and-Go af naar de locatie Nightingale, blies N₂-gas in het oppervlak en greep een pluim — en zakte daarbij 50 cm weg in een oppervlak dat zich gedroeg als een 'vloeistof van losse brokstukken'. De Sample Return Capsule leverde op 2023-09-24 121,6 g Bennu-materiaal af in Utah. Het ruimtevaartuig zelf werd direct omgedoopt tot OSIRIS-APEX, op weg naar een ontmoeting met Apophis in 2029.",

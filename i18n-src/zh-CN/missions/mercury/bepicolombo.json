@@ -1,5 +1,8 @@
 {
   "name": "BepiColombo",
+  "vehicle": "Ariane 5 ECA",
+  "payload": "发射时组合体 4100 kg：MTM（Mercury Transfer Module，ESA——4 台离子推力器、太阳能电池阵）+ MPO（Mercury Planetary Orbiter，ESA，1230 kg，11 台仪器）+ MIO（Mercury Magnetospheric Orbiter，JAXA，285 kg，5 台仪器）+ MOSIF 遮阳罩。抵达水星后两台科学轨道器分离。",
+  "delta_v": "~7.2 km/s（离子巡航 + 9 次引力辅助 + 水星轨道入轨）",
   "type": "轨道器 · 活跃",
   "first": "欧洲与日本首次联合行星任务；第二个绕水星运行的航天器（继Messenger之后）",
   "description": "ESA与JAXA联合的水星任务，2018-10-20发射——以意大利数学家朱塞佩·可伦坡（昵称“贝皮”）命名，他设计了Mariner 10的多次飞掠轨道。8年的巡航使用9次引力辅助（2020年地球、2020年金星、2021年金星，随后是2021–2025年的六次水星飞掠），再加上Mercury Transfer Module持续的离子电推进，消减地球轨道与水星轨道之间巨大的太阳引力势差。水星入轨在2026-11-21；MTM抛离、两个轨道器分离后，科学观测于2027年初开始——ESA的MPO（行星表面与成分）和JAXA的Mio（磁层）。还计划通过无线电科学测距跟踪，在水星附近强烈的太阳引力环境中检验广义相对论。",

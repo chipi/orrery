@@ -1,5 +1,8 @@
 {
   "name": "Apollo 17",
+  "vehicle": "Saturn V (AS-512)",
+  "payload": "48609 kg lançados (CSM America + LM Challenger)",
+  "delta_v": "~6 km/s (ida e volta)",
   "dispatch": "Apollo 17 foi o fim, embora quase ninguém assistindo em dezembro de 1972 acreditasse que seria. Foi também, tardiamente, o voo que colocou um cientista de verdade na Lua — o geólogo Harrison Schmitt, cujo olhar captou o vidro vulcânico alaranjado na Cratera Shorty que reescreveu do que a Lua é feita. Cernan e Schmitt ficaram três dias, dirigiram vinte e duas milhas, e então Cernan subiu a escada pela última vez que alguém subiu, dizendo que partiam \"como chegamos, e se Deus quiser, retornaremos\". Mais de meio século depois ninguém retornou — e todo argumento sério para voltar ainda começa com o fato de que um dia nós conseguimos.",
   "type": "LANDER TRIPULADO · ROVER · VOADO",
   "first": "Última missão tripulada à Lua (e a única Apollo com um geólogo treinado)",

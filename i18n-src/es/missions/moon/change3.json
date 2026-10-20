@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 3",
+  "vehicle": "Long March 3B / E",
+  "payload": "3780 kg de masa de lanzamiento; 1200 kg de módulo de aterrizaje; rover Yutu de 140 kg",
+  "delta_v": "~3,8 km/s",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
   "first": "Primer alunizaje suave chino en la Luna; desplegó Yutu, el primer róver lunar de China",
   "description": "Chang'e 3 fue el tercer módulo de descenso del programa Chang'e de la CNSA y el primer alunizaje suave exitoso en la Luna desde el Luna 24 soviético en 1976, un hiato de 37 años. El Long March 3B se lanzó en trayectoria directa a la Luna en diciembre de 2013, con una única corrección de trayectoria media antes de la inserción en órbita lunar. El módulo de descenso tocó tierra en Mare Imbrium el 14 de diciembre y desplegó el róver Yutu (Jade Rabbit), que operó durante 31 meses a pesar de un fallo de movilidad que terminó su conducción el día lunar 2. El módulo de descenso de Chang'e 3 continuó capturando imágenes durante años después.",

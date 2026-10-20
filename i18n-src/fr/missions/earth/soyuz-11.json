@@ -1,5 +1,8 @@
 {
   "name": "Soyuz 11",
+  "vehicle": "Soyuz (11A511)",
+  "payload": "Soyuz 7K-OKS ; Dobrovolski, Volkov, Patsaïev",
+  "delta_v": "~7,8 km/s (LEO)",
   "type": "STATION HABITÉE · PERDUE",
   "first": "Premier équipage d'une station spatiale (Salyut 1) ; les 3 cosmonautes sont morts par décompression lors de la rentrée",
   "dispatch": "Soyuz 11 a accompli quelque chose d'extraordinaire avant de perdre son équipage dans les dernières minutes du vol. Gueorgui Dobrovolski, Vladislav Volkov et Viktor Patsaïev ont été les premiers humains à vivre à bord d'une station spatiale, passant vingt-deux jours à bord de Salyut 1 — puis, lors de la rentrée, une soupape s'est brutalement ouverte au moment précis de la séparation des modules, laissant l'air de leur cabine s'échapper dans l'espace. Ils ne portaient pas de combinaisons pressurisées ; il n'y avait pas eu de place pour des combinaisons quand les sièges avaient été aménagés pour trois personnes. En quelques secondes, en bordure de l'espace, les trois hommes étaient morts. La capsule s'est posée seule, parfaitement sur sa cible ; l'équipe de récupération l'a ouverte pour trouver l'équipage toujours attaché à ses sièges. Ils restent les seuls êtres humains à être morts dans l'espace — et ce prix a établi une règle qui tient depuis : les équipages portent des combinaisons pressurisées lors du lancement et de la rentrée, toujours.",

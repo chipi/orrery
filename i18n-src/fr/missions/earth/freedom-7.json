@@ -1,5 +1,8 @@
 {
   "name": "Freedom 7 / MR-3",
+  "vehicle": "Mercury-Redstone 3 (MR-3)",
+  "payload": "Capsule Mercury n° 7 « Freedom 7 » (1832 kg) ; Alan Shepard",
+  "delta_v": "~2,3 km/s (suborbital)",
   "dispatch": "Freedom 7 marque le début du vol spatial habité américain. Trois semaines après que Gagarine avait déjà effectué une orbite autour de la Terre, le vol d'Alan Shepard était plus court, plus bas et plus lent — quinze minutes, tout droit vers le haut et tout droit vers le bas, sans même atteindre l'orbite — et le pays a célébré quand même, parce que pour la première fois un Américain avait quitté la planète. Ce qui le distinguait du vol de Gagarine, c'était l'homme : Shepard a piloté manuellement l'attitude de sa capsule dans l'espace, alors que Gagarine avait voyagé dans une capsule entièrement automatisée, et pour un programme construit autour de pilotes d'essai cette différence était capitale. Vingt jours plus tard, son succès a donné à Kennedy le courage de se présenter devant le Congrès et de parier la nation sur la Lune. Un petit vol qui a lancé quelque chose de très grand.",
   "type": "HABITÉ SUBORBITAL · VOLÉ",
   "first": "Premier Américain dans l'espace",

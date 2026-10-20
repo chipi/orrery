@@ -1,5 +1,8 @@
 {
   "name": "Luna 21 / Lunokhod 2",
+  "vehicle": "Proton-K / D",
+  "payload": "打上げ質量5700 kg；Lunokhod 2ローバー836 kg（39 kmを走行——2014年まで最長のローバー走行距離）",
+  "delta_v": "~3 km/s",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
   "first": "2番目のソビエト月面ローバー;40年以上にわたり最長の地外走行距離(~39 km)を記録",
   "description": "Luna 21はLunokhod 2(ソビエト連邦の2番目の有人操縦月面ローバー)をSerenitatis海の南端にあるLe Monnier孔径に1973年1月に配達した。このローバーはクリミアの管制室から5人のチームにより操縦され、4つの月昼にわたり約39 km走行した。これは2014年にNASAのOpportunityローバーが火星でこの記録を上回るまで、40年以上にわたり最長の地外走行距離となっていた。Lunokhod 2は太陽電池パネルへの塵の付着により運用が終了する前に、80,000フレームのテレビ映像と86枚のパノラマ画像を返送した。",

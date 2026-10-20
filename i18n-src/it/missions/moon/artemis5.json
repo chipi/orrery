@@ -1,5 +1,8 @@
 {
   "name": "Artemis V",
+  "vehicle": "SLS Block 1 (stadio superiore da confermare) + lander con equipaggio (Starship HLS o Blue Moon)",
+  "payload": "Orion + equipaggio di 4 persone; secondo allunaggio con equipaggio, inizio dei lavori per la base lunare",
+  "delta_v": "~7 km/s (andata e ritorno)",
   "type": "LANDER CON EQUIPAGGIO · PIANIFICATO",
   "first": "Secondo allunaggio con equipaggio dell'era Artemis: l'inizio di una base lunare",
   "description": "Artemis V è previsto come secondo allunaggio con equipaggio vicino al polo sud lunare, nello stesso anno di Artemis IV — parte dell'obiettivo della NASA del 2026 di almeno un allunaggio all'anno. Dovrebbe avviare il passaggio dalle visite brevi a una presenza duratura: il lavoro verso una base in superficie, che a marzo 2026 la NASA ha scelto al posto del completamento della stazione Gateway in orbita lunare, ora sospesa. Come su Artemis IV, l'SLS lancia Orion con quattro membri dell'equipaggio e un lander commerciale ne porta due in superficie. L'SLS ha i fondi per volare fino ad Artemis V; per le missioni successive la NASA ha proposto alternative commerciali e riutilizzabili. Previsto per la fine del 2028; equipaggio, lander e sito di allunaggio non sono ancora stati scelti.",

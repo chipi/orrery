@@ -1,5 +1,8 @@
 {
   "name": "Soyuz 11",
+  "vehicle": "Soyuz (11A511)",
+  "payload": "Soyuz 7K-OKS; Dobrovolsky, Volkov, Patsayev",
+  "delta_v": "~7.8 km/s (LEO)",
   "type": "CREWED STATION · LOST",
   "first": "First crew to a space station (Salyut 1); all 3 died of decompression on reentry",
   "dispatch": "Soyuz 11 achieved something extraordinary and then lost its crew in the last minutes of the flight. Georgy Dobrovolsky, Vladislav Volkov, and Viktor Patsayev became the first people to live aboard a space station, spending twenty-two days aboard Salyut 1 — and then, during reentry, a valve jolted open at the instant the modules separated and let their cabin air hiss out into space. They wore no pressure suits; there had been no room for suits when the couches were fitted for three. Within seconds, at the edge of space, all three were dead. The capsule landed itself, perfectly on target; the recovery team opened it to find the crew still strapped in their seats. They remain the only human beings to have died in space — and the price bought a rule that has held ever since: crews wear pressure suits through launch and reentry, always.",

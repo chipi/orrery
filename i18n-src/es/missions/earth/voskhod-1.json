@@ -1,5 +1,8 @@
 {
   "name": "Voskhod 1",
+  "vehicle": "Voskhod (11A57)",
+  "payload": "5320 kg de masa de lanzamiento; tres cosmonautas (sin trajes espaciales ni asientos eyectables)",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Voskhod 1 fue el primer vuelo en llevar a más de una persona al espacio, y lo logró por sustracción. No había espacio en el Vostok de un asiento para una tripulación de tres personas, así que los ingenieros quitaron cosas: los asientos eyectables que habían salvado a todos los cosmonautas anteriores y, como incluso entonces era demasiado estrecho, los trajes presurizados. Komarov, Feoktístov y Yegorov volaron durante un día en mangas de camisa, sin forma de escapar de una emergencia de lanzamiento o reentrada y sin protección si la cabina perdía aire. Nada salió mal, así que pareció un triunfo. En realidad fue una apuesta: que los atajos tomados para conseguir un primer puesto no serían los que importaban, y resultó que ganó.",
   "type": "ÓRBITA TERRESTRE TRIPULADA · VOLADA",
   "first": "Primer vuelo espacial con varios tripulantes — tres cosmonautas en una cápsula derivada de Vostok",

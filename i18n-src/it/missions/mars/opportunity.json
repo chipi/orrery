@@ -1,5 +1,8 @@
 {
   "name": "Opportunity",
+  "vehicle": "Delta II 7925H Heavy",
+  "payload": "1063 kg (stadio di crociera + EDL + rover); 174 kg di massa in superficie",
+  "delta_v": "~5,5 km/s",
   "type": "ROVER · FLOWN",
   "first": "Rover marziano con la più lunga percorrenza (45,16 km); 14 anni di attività sulla superficie contro una missione progettata per 90 sol",
   "dispatch": "Opportunity ha percorso una maratona su un altro pianeta. Gemello di Spirit, atterrato nel 2004 per una missione di novanta giorni, ha funzionato per quattordici anni e ha attraversato più di quarantacinque chilometri — la distanza maggiore che qualsiasi veicolo ha mai percorso su qualsiasi mondo. È arrivato, per fortuna, in un piccolo cratere le cui pareti esponevano esattamente la roccia alterata dall'acqua che era stato inviato a trovare, e poi ha continuato a procedere, cratere dopo cratere, leggendo l'antica storia dell'acqua su Marte chilometro dopo chilometro. Una tempesta di polvere globale ha infine zittito il rover nel 2018.",

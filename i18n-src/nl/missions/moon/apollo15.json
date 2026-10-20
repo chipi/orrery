@@ -1,5 +1,8 @@
 {
   "name": "Apollo 15",
+  "vehicle": "Saturn V (AS-510)",
+  "payload": "48599 kg gelanceerd (CSM Endeavour (CSM-112) + LM Falcon (LM-10))",
+  "delta_v": "~6 km/s (heen en terug)",
   "type": "BEMAND MAANLANDINGSVAARTUIG · UITGEVOERD",
   "first": "Eerste J-missie — langer verblijf, eerste Lunar Roving Vehicle (maanwagen), \"Genesis Rock\"",
   "dispatch": "Bij Apollo 15 was de race al lang voorbij, en de wetenschap nam het stuur over — letterlijk. Dit was de eerste vlucht met de Lunar Rover, die een wandelradius van twee mijl veranderde in een echte veldexpeditie van achttien mijl, en hij landde niet op een veilige vlakke vlakte maar in een vallei tussen een bergketen en een bochtige canyon. Scott en Irwin keerden huiswaarts met de \"Genesis Rock\", een vier miljard jaar oud scherfje van de oorspronkelijke korst van de Maan dat bevestigde hoe deze was ontstaan. Apollo was gestopt met de Maan bezoeken en was begonnen deze te bestuderen — en het werd er steeds beter in totdat het werd geannuleerd.",

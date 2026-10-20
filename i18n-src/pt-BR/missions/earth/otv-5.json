@@ -1,5 +1,8 @@
 {
   "name": "X-37B OTV-5 (USA-277)",
+  "vehicle": "Falcon 9 Block 4",
+  "payload": "USA-277; Veículo de Teste Orbital X-37B (~5000 kg). Cargas úteis em grande parte confidenciais.",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "AVIÃO ESPACIAL NÃO TRIPULADO · VOADO",
   "first": "USA-277 — 780 dias em órbita, Shuttle Landing Facility do KSC",
   "description": "Quinto voo do X-37B, primeiro lançamento em Falcon 9 em vez de Atlas V — e o único voo X-37B em um Falcon 9 Block 4. Lançado em 2017-09-07 às 14:00 UTC do KSC LC-39A (o propulsor recuperado a jusante na LZ-1); pousou no KSC SLF em 2019-10-27 às 07:51 UTC. 780 dias em órbita. Primeiro voo do X-37B em uma órbita de maior inclinação (54,5°) — amplia o padrão de sobrevoo rastreado publicamente.",

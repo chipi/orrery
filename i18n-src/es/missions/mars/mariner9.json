@@ -1,5 +1,8 @@
 {
   "name": "Mariner 9",
+  "vehicle": "Atlas SLV-3C Centaur",
+  "payload": "974 kg (incl. 449 kg de propelente)",
+  "delta_v": "~1,6 km/s",
   "type": "ORBITADOR · COMPLETADA",
   "first": "Primera nave espacial en orbitar otro planeta",
   "description": "Mariner 9 hizo posible cada orbitador que la siguió. Tras un encendido de inyección en órbita de 15 minutos que la colocó en órbita marciana el 1971-11-14, el planeta bajo resultaba irreconocible — una tormenta de polvo global había ocultado todo excepto las cuatro cimas del volcán Tharsis. El JPL esperó pacientemente. A lo largo de enero de 1972 el polvo se asentó y Mariner 9 devolvió 7329 imágenes cubriendo ~85% de la superficie marciana, revelando Olympus Mons (el volcán más grande del sistema solar), Valles Marineris (el sistema de cañones que lleva su nombre), canales fluviales secos que sugieren una era antigua con líquidos, y los primeros planos de Fobos y Deimos. La misión finalizó el 1972-10-27 cuando se agotó el gas de control de actitud; la nave sigue en órbita, decayendo lentamente.",

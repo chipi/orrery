@@ -1,5 +1,8 @@
 {
   "name": "Venera 13",
+  "vehicle": "Proton-K / D-1",
+  "payload": "~4500 kg au total : bus de survol + capsule de descente en titane de 1645 kg (caméras, spectromètre à fluorescence X pour la composition du sol, sismomètre, bras de prélèvement du sol avec foreuse à chambre hermétique). Conçue pour l'un des environnements de descente les plus hostiles jamais tentés.",
+  "delta_v": "~1,5 km/s (arrivée à Vénus)",
   "type": "ATTERRISSEUR · TERMINÉE",
   "first": "Plus longue survie en surface de toute mission vers Vénus (127 min) ; premières panoramiques couleur et premier audio depuis la surface d'une autre planète",
   "description": "Apogée du programme soviétique Venera. Venera 13 a été lancée le 1981-10-30 et s'est posée le 1982-03-01 à 7,5°S 303°E dans les hautes terres de Phoebe Regio. Conditions de surface à l'atterrissage : 457 °C, 89 bars, brume d'acide sulfurique. L'atterrisseur a survécu 127 minutes — dépassant son objectif de conception de près d'une heure — a retourné les premières panoramiques couleur de la surface d'une autre planète, a enregistré l'audio d'un microphone à vent et a utilisé sa foreuse et son spectromètre de fluorescence X embarqué pour déterminer que le basalte du site était une composition leucitique alcaline faiblement différenciée. Son jumeau Venera 14 a réalisé des opérations identiques sur un autre site cinq jours plus tard. La série Venera (1967–1983) reste à ce jour le seul programme de surface réussi sur Vénus.",

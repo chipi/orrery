@@ -1,5 +1,8 @@
 {
   "name": "Dawn",
+  "vehicle": "Delta II 7925H",
+  "payload": "Orbiter a propulsione ionica; camera di inquadratura, VIR, GRaND, ecc.",
+  "delta_v": "~11 km/s (circa)",
   "type": "ORBITER · VOLATO",
   "first": "Prima missione in orbita attorno a due corpi extraterrestri: Vesta, poi Cerere",
   "description": "Dawn ha dimostrato la propulsione ionica su scala planetaria: si è portata sulla stessa orbita della massiccia Vesta, poi è ripartita ed è scesa a spirale sul pianeta nano Cerere, l’oggetto più grande nella fascia degli asteroidi. I punti luminosi nel cratere Occator divennero uno dei misteri iconici della missione, in seguito legati alle eruzioni di salamoia provenienti da un serbatoio profondo. Questa voce di catalogo utilizza Cerere come destinazione principale; Vesta è trattata nella narrazione sopra.",

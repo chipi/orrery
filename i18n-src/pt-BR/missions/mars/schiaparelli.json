@@ -1,5 +1,8 @@
 {
   "name": "Schiaparelli EDM",
+  "vehicle": "Proton-M / Briz-M",
+  "payload": "577 kg (módulo de pouso EDM da missão ExoMars 2016 com o Trace Gas Orbiter)",
+  "delta_v": "~5,5 km/s",
   "type": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
   "first": "Primeira tentativa da ESA de pousar em Marte; tinha por objetivo demonstrar o EDL antes do ExoMars Rosalind Franklin",
   "description": "Schiaparelli foi o demonstrador de entrada, descida e pouso transportado junto ao ExoMars Trace Gas Orbiter (TGO). Batizado com o nome do astrônomo italiano Giovanni Schiaparelli, a sonda foi construída para comprovar o conjunto EDL que a ESA pretendia ampliar para o rover Rosalind Franklin. Schiaparelli se separou do TGO em 16 de outubro de 2016 e entrou na atmosfera marciana três dias depois. O perfil de descida colapsou: uma unidade de medição inercial saturada levou o software de navegação a concluir que a sonda já havia pousado em altitude — o paraquedas foi ejetado prematuramente e os propulsores de frenagem desligaram após apenas 3 segundos de disparo. Schiaparelli atingiu a superfície a ~150 m/s. O próprio TGO completou com sucesso a inserção em órbita e continua operacional.",

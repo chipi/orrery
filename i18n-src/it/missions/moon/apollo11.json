@@ -1,5 +1,8 @@
 {
   "name": "Apollo 11",
+  "vehicle": "Saturn V (AS-506)",
+  "payload": "46782 kg lanciati (CSM Columbia + LM Eagle)",
+  "delta_v": "~6 km/s (andata e ritorno)",
   "dispatch": "Apollo 11 fu la missione che l'intero programma era stato concepito per realizzare — quella che doveva funzionare. Per otto anni e 25 miliardi di dollari, tutto ciò che la NASA fece si ridusse, alla fine, a portare due persone su questo particolare lembo di polvere grigia e riportarle indietro vive. Quando Armstrong annunciò \"Eagle has landed,\" la corsa della Guerra Fredda iniziata con una sfera che emetteva segnali acustici sopra le città americane era di fatto conclusa. Ciò che è facile dimenticare oggi è quanto fosse ridotto il margine: l'equipaggio atterrò con pochi secondi di carburante residuo, superando un campo di massi che le mappe non avevano rilevato, a bordo di un computer di guida che lanciava allarmi per tutto il tragitto. Funzionò comunque — e per una notte, un quinto della specie osservò la stessa cosa nello stesso momento.",
   "type": "LANDER CON EQUIPAGGIO · VOLATO",
   "first": "I primi esseri umani su un altro corpo celeste",

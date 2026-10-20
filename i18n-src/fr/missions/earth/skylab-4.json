@@ -1,5 +1,8 @@
 {
   "name": "Skylab 4",
+  "vehicle": "Saturn IB (SA-208)",
+  "payload": "20847 kg de masse au lancement ; CSM-118 + équipage de 3 personnes",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "ÉQUIPAGE DE STATION HABITÉ · VOLÉ",
   "first": "Plus long séjour sur Skylab — 84 jours, observations de Comet Kohoutek, jour de repos contesté « grève Skylab »",
   "description": "Carr, Gibson et Pogue — l'équipage final et le plus long de Skylab, 84 jours 1 heure, tous débutants. Lancé 1973-11-16 14:01 UTC sur Saturn IB (SA-208). Observations complètes des ressources terrestres et du Soleil, incluant une campagne complète sur Comet Kohoutek en décembre–janvier. La mission est surtout mémorisée pour ce que la NASA a plus tard appelé une « mutinerie Skylab » ou « grève » — un compte rendu contesté d'un jour de repos en arrêt autour du jour 42 après des demandes relentless des contrôleurs de sol qui comprimaient chaque minute de temps d'éveil ; la NASA et l'équipage ont affirmé qu'aucune grève organisée n'avait eu lieu, mais la surcharge de calendrier sous-jacente était réelle et a conduit à des réformes permanentes de la NASA concernant la planification des emplois du temps des équipages pour les missions longue durée. Amerrissage 1974-02-08 15:17 UTC — le dernier amerrissage de Skylab. Le CSM-118 est exposé au National Museum of the US Air Force, Dayton OH.",

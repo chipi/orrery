@@ -1,5 +1,8 @@
 {
   "name": "Aurora 7 / MA-7",
+  "vehicle": "Atlas LV-3B (MA-7)",
+  "payload": "Capsule Mercury n° 18 (1956 kg) ; Scott Carpenter",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Aurora 7 devait être une répétition et devint une frayeur. Scott Carpenter vola le même profil de trois orbites que Glenn, mais distrait par des expériences et un système de contrôle défaillant, il épuisa son carburant d'attitude et déclencha ses rétrofusées avec quelques secondes de retard et légèrement hors d'alignement — suffisamment pour le transporter à quelque 400 kilomètres au-delà de sa cible d'amerrissage. Pendant une heure longue et silencieuse, personne ne savait s'il était vivant, jusqu'à ce qu'un avion de recherche le repère flottant dans un radeau de sauvetage. C'est un rappel clair que dans une machine sans presque aucune marge, les petites erreurs se multiplient rapidement — et que s'en remettre est une compétence en soi.",
   "type": "HABITÉ ORBITE TERRESTRE · VOLÉ",
   "first": "Reproduit le profil 3 orbites de Glenn ; dépassement du point d'amerrissage de 400 km",

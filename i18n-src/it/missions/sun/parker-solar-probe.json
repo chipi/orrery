@@ -1,5 +1,8 @@
 {
   "name": "Parker Solar Probe",
+  "vehicle": "Delta IV Heavy + terzo stadio Star 48BV",
+  "payload": "685 kg (incl. sistema di protezione termica in carbonio-carbonio da 11,43 cm che sopporta 1377 °C al perielio)",
+  "delta_v": "~16 km/s (incl. 7 fionde gravitazionali di Venere)",
   "type": "SONDA SOLARE · ATTIVA",
   "first": "Veicolo spaziale più vicino al Sole mai costruito (6,1 M km, 9,86 R☉); primo veicolo spaziale a entrare nella corona solare (2021-04-28); oggetto fatto dall'uomo più veloce (~191 km/s)",
   "description": "Parker Solar Probe ha eseguito il lancio a più alta energia mai realizzato per una missione scientifica — C3 di 154 km²/s², richiedendo uno stadio solido Star 48BV personalizzato sopra un Delta IV Heavy soltanto per sfuggire alla Terra in una traiettoria di caduta verso il Sole. Sette fionde gravitazionali di Venere nel corso di sei anni hanno progressivamente abbassato il perielio da 0,16 UA (P1, 2018-11-05) a 0,046 UA (P22, 2024-12-24 — 9,86 raggi solari, 6,1 milioni di km dalla superficie). Al P8 il 2021-04-28 Parker è scesa al di sotto della superficie critica di Alfvén — il primo veicolo spaziale mai entrato nella corona solare. Al P22 ha raggiunto ~191 km/s, diventando l'oggetto fatto dall'uomo più veloce mai costruito. Lo scudo termico in carbonio-carbonio di 11,43 cm ha sostenuto 1.377 °C mentre il corpo del veicolo spaziale 1 metro dietro di esso è rimasto a temperatura ambiente.",

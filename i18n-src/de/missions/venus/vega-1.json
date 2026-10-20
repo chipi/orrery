@@ -1,5 +1,8 @@
 {
   "name": "Vega 1",
+  "vehicle": "Proton-K / D-1",
+  "payload": "4920 kg schwerer Vorbeiflug-Bus + ~1500 kg Abstiegsmodul (Lander vom Typ Venera + erster Aerostat mit Heliumballon). Die Zwillingsraumsonden Vega 1 / Vega 2 starteten im Abstand von 6 Tagen auf derselben Route: erst Venus, dann Halley.",
+  "delta_v": "~3,6 km/s (Abflug + Neuausrichtung auf das Abfangen des Halleyschen Kometen)",
   "type": "VORBEIFLUG + LANDER + BALLON · BEENDET",
   "first": "Erstmals ein Ballon-Aerostat in der Atmosphäre eines anderen Planeten eingesetzt (Venus, 1985); erstes Raumschiff, das wissenschaftliche Instrumente zu zwei verschiedenen Zielen im Sonnensystem brachte",
   "description": "Sowjetisch-ESA-Flaggschiff der Halley-Armada. Vega 1 startete am 1984-12-15 mit einem Lander der Venera-Baureihe plus einem innovativen, von ESA/CNES gebauten Heliumballon, der in der Wolkendecke der Venus in 54 km Höhe 46,5 Stunden lang trieb und Wind- und Temperaturdaten über ein globales 20-Stationen-Funknetz übertrug. Nach dem Aussetzen seines Abstiegsmoduls nutzte der Bus die Gravitationshilfe der Venus, um zum Kometen 1P/Halley umzuleiten und erreichte am 1986-03-06 die geringste Annäherung von 8890 km – die erste Begegnung mit einem Kometenkern und die Positionsbestimmung, die Giotto der ESA nutzte, um eine Woche später seinen eigenen viel näheren Halley-Vorbeiflug durchzuführen.",

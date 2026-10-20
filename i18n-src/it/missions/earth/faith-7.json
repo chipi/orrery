@@ -1,5 +1,8 @@
 {
   "name": "Faith 7 / MA-9",
+  "vehicle": "Atlas LV-3B (MA-9)",
+  "payload": "Capsula Mercury n. 20 (1376 kg a secco); Gordon Cooper",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Faith 7 chiuse Mercury, e lo fece nel modo più difficile. Gordon Cooper volò ventidue orbite nell'arco di un giorno e mezzo — più a lungo di tutti i precedenti voli Mercury messi insieme — e poi, nelle ore finali, il suo sistema di controllo automatico si guastò. Così pilotò il rientro manualmente, allineando la capsula rispetto all'orizzonte e alle stelle e accendendo i retrorazzi su un conto alla voce, e la fece scendere più vicino alla nave di qualsiasi volo precedente. Fu l'ultima volta che un americano volò nello spazio da solo, e una degna ultima parola per un programma costruito da piloti collaudatori: quando l'automazione cedette, il pilota la riportò a casa.",
   "type": "EQUIPAGGIO ORBITA TERRESTRE · VOLATO",
   "first": "Ultimo volo spaziale americano in solitaria; 22 orbite / 34 ore",

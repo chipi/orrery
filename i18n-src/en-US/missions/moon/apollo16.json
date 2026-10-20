@@ -1,5 +1,8 @@
 {
   "name": "Apollo 16",
+  "vehicle": "Saturn V (AS-511)",
+  "payload": "48599 kg launched (CSM Casper (CSM-113) + LM Orion (LM-11))",
+  "delta_v": "~6 km/s (round trip)",
   "type": "CREWED LANDER · FLOWN",
   "first": "First Moon landing in the lunar highlands — Descartes; John Young's \"lunar Grand Prix\"",
   "dispatch": "Apollo 16 went to the lunar highlands to sample ancient volcanoes and found there had never been any. Geologists were sure the pale, rugged Descartes region was volcanic; every rock Young and Duke brought back was breccia — rubble welded together by impacts. Being wrong was the payoff: the Moon's bright highlands turned out to be a record of a young solar system under relentless bombardment, not eruption. It is a clean example of how exploration actually earns its keep — you go to confirm what you already think you know, and the place tells you something better.",

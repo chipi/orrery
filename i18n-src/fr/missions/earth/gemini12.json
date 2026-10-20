@@ -1,5 +1,8 @@
 {
   "name": "Gemini 12 / GT-12",
+  "vehicle": "Titan II GLV (GT-12)",
+  "payload": "Gemini 12 ; Jim Lovell & Buzz Aldrin",
+  "delta_v": "~7,8 km/s (LEO)",
   "type": "HABITÉ ORBITE TERRESTRE · EFFECTUÉ",
   "first": "EVA résolue — sorties d'Aldrin ; dernier Gemini",
   "dispatch": "Au moment du dernier Gemini, un problème demeurait non résolu : les sorties extravéhiculaires ne fonctionnaient pas. Les vols entre Ed White et Gemini 12 avaient transformé les EVA en une série d'échecs épuisants — les astronautes luttant pour chaque mouvement, en surchauffe, manquant de temps. Buzz Aldrin a résolu le problème, et la solution était la préparation : il a répété l'ensemble sous l'eau jusqu'à ce que cela devienne routine, et le vaisseau a été équipé de poignées, de cale-pieds et d'attaches pour qu'il ait quelque chose contre quoi travailler. Au cours de plus de cinq heures à l'extérieur, il a effectué des tâches ordinaires calmement et est revenu sans épuisement — preuve que les EVA pouvaient être rendues fiables. C'était le dernier point de la liste Gemini, et avec lui le programme s'est achevé, ayant appris à la NASA tout ce que la Lune exigerait.",

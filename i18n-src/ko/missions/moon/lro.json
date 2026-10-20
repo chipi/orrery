@@ -1,5 +1,8 @@
 {
   "name": "Lunar Reconnaissance Orbiter",
+  "vehicle": "Atlas V 401",
+  "payload": "발사 질량 1916 kg",
+  "delta_v": "~4 km/s",
   "type": "궤도선 · 활동 중",
   "first": "지금까지 최고 해상도 달 지도",
   "description": "2009년부터 평균 고도 50 km로 달 궤도를 도는 LRO의 협각 카메라는 50 cm/픽셀 해상도로 Apollo 하강단, 로버 바퀴 자국, 레골리스에 아직 남은 우주비행사 발자국까지 알아볼 수 있다. Lunokhod 1이 교신을 멈춘 지 39년 만에 LRO가 이를 찾아냈다. Artemis 후보 착륙지 200곳 넘게 찾아냈고, 모든 현대 달 프로그램을 움직이는 남극 물얼음 퇴적층도 LRO 장비가 정량화했다. 정찰 임무가 현대 달 시대의 토대가 되었다.",

@@ -1,5 +1,8 @@
 {
   "name": "Faith 7 / MA-9",
+  "vehicle": "Atlas LV-3B (MA-9)",
+  "payload": "Mercury-Kapsel Nr. 20 (1376 kg Trockenmasse); Gordon Cooper",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Faith 7 schloss Mercury ab, und zwar auf die harte Tour. Gordon Cooper flog zweiundzwanzig Orbits über anderthalb Tage — länger als alle vorherigen Mercury-Flüge zusammen — und dann, in den letzten Stunden, fiel sein automatisches Kontrollsystem aus. Also flog er den Wiedereintritt von Hand, richtete die Kapsel am Horizont und den Sternen aus und zündete seine Retros auf Zuruf, und setzte sie näher am Schiff auf als jeder Flug zuvor. Es war das letzte Mal, dass ein Amerikaner allein im Weltraum flog, und ein passendes letztes Wort für ein Programm, das von Testpiloten aufgebaut wurde: als die Automation ausfiel, brachte der Pilot es nach Hause.",
   "type": "BEMANNT ERDORBIT · GEFLOGEN",
   "first": "Letzter amerikanischer Solo-Raumflug; 22 Orbits / 34 Stunden",

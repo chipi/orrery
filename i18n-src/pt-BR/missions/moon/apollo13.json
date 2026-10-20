@@ -1,5 +1,8 @@
 {
   "name": "Apollo 13",
+  "vehicle": "Saturn V (AS-508)",
+  "payload": "44069 kg lançados (CSM Odyssey + LM Aquarius)",
+  "delta_v": "~6 km/s (ida e volta, pouso abortado)",
   "type": "VOO TRIPULADO EM SOBREVOO · REALIZADO (POUSO ABORTADO)",
   "first": "A missão que transformou um quase-desastre no resgate mais célebre da NASA",
   "dispatch": "Apollo 13 nunca pousou, e é a missão que todos lembram. Dois dias após o lançamento, um tanque de oxigênio se desintegrou e transformou um voo de rotina para as terras altas de Fra Mauro em um problema de quatro dias: manter três homens vivos em uma nave agonizante a um quarto de milhão de milhas de casa. O que os salvou não foi heroísmo; foi preparação e uma sala cheia de pessoas trabalhando o problema em tempo real, improvisando uma forma de respirar e um caminho de volta usando apenas o que já estava preso ao veículo. A NASA chamou de um fracasso bem-sucedido. Seria mais preciso dizer que foi o voo que provou que a agência era tão competente quanto afirmava ser.",

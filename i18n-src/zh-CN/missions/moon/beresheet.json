@@ -1,5 +1,8 @@
 {
   "name": "Beresheet",
+  "vehicle": "Falcon 9 Block 5（与 Nusantara Satu 拼车发射）",
+  "payload": "发射质量 585 kg；首个到达环月轨道的私营探测器；在距月面约 150 m 的动力下降阶段失联",
+  "delta_v": "~6 km/s（大椭圆调相轨道，而非直接地月转移入轨）",
   "type": "PRIVATE LANDER · CRASHED",
   "first": "首个抵达月球的私人出资任务；以色列首次月球任务",
   "description": "SpaceIL的Beresheet（希伯来语意为“起初”）于2019年2月作为Falcon 9的拼车乘客发射。这台小型着陆器没有采用直接的地月转移注入，而是用数周时间做抬高近地点的相位点火，从停泊轨道一步步爬向月球——这是为低预算任务开创的省燃料轨道。2019年4月4日成功入月球轨道之后，下降过程中一次惯性测量单元重置导致主发动机关机。Beresheet坠毁在澄海。SpaceIL在几天之内就承诺研制后继者（Beresheet 2）。",

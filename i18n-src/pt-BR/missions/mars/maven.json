@@ -1,5 +1,8 @@
 {
   "name": "MAVEN",
+  "vehicle": "Atlas V 401",
+  "payload": "2454 kg",
+  "delta_v": "~3,5 km/s",
   "type": "ÓRBITA · ATIVO",
   "first": "Primeira missão dedicada a estudar como Marte perdeu sua atmosfera",
   "description": "MAVEN — Mars Atmosphere and Volatile Evolution — responde à pergunta \"para onde foi o ar de Marte?\" Sua órbita elíptica penetra na atmosfera superior, amostrando íons e neutros enquanto o vento solar os arranca. Descobertas: Marte perde cerca de 100 g de atmosfera por segundo para o espaço — ao longo de bilhões de anos, isso é suficiente para explicar o clima perdido. A espaçonave também funciona como um retransmissor crítico para os recursos de superfície, incluindo Curiosity e Perseverance.",

@@ -1,5 +1,8 @@
 {
   "name": "Curiosity",
+  "vehicle": "Atlas V 541",
+  "payload": "3839 kg de masa de lanzamiento (rover de 899 kg en la superficie)",
+  "delta_v": "~6,1 km/s",
   "type": "ROVER · ACTIVO",
   "first": "Primer róver marciano con energía nuclear; primer aterrizaje con grúa celeste",
   "dispatch": "Curiosity es un laboratorio con energía nuclear del tamaño de un coche pequeño, y lo difícil fue bajarlo. Demasiado pesado para bolsas de aire, fue descendido a Marte en 2012 por una grúa celeste impulsada por cohetes en una secuencia tan arriesgada que sus planificadores la llamaron siete minutos de terror — y funcionó a la primera. Desde entonces ha perforado su camino a través del cráter Gale y respondió la pregunta para la que fue enviado: el cráter albergó alguna vez un lago, con la química que algo viviente podría haber utilizado. Marte había sido habitable. Curiosity sigue funcionando, escalando una montaña de roca estratificada que se lee como el propio libro de historia del planeta.",

@@ -1,5 +1,8 @@
 {
   "name": "Skylab 3",
+  "vehicle": "Saturn IB (SA-207)",
+  "payload": "19979 kg de masse au lancement ; CSM-117 + équipage de 3 personnes",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Skylab 3 a repris la question de l'endurance et a presque doublé la réponse. Là où le premier équipage était resté 28 jours, l'équipage d'Alan Bean est resté 59 — poussant le corps humain plus loin dans l'apesanteur de longue durée que quiconque ne l'avait fait, et revenant en meilleure santé que ne le craignaient les pessimistes. Ils ont accumulé une énorme moisson d'observations solaires depuis l'Apollo Telescope Mount et ont surmonté une alerte lorsque des fuites de propulseurs sur leur navette Apollo ont brièvement soulevé la perspective d'un vol de sauvetage. Skylab 3 marque le moment où les longs séjours dans l'espace ont commencé à paraître non seulement viables mais routiniers — le travail de fond discret pour chaque mission de plusieurs mois en station depuis.",
   "type": "ÉQUIPAGE DE STATION HABITÉE · VOLÉ",
   "first": "Deuxième équipage Skylab — 59 jours, déploya un bouclier solaire à double mât en remplacement du parasol",

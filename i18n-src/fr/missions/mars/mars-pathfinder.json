@@ -1,5 +1,8 @@
 {
   "name": "Mars Pathfinder",
+  "vehicle": "Delta II 7925",
+  "payload": "890 kg (atterrisseur + étage de croisière au lancement)",
+  "delta_v": "~5,2 km/s",
   "type": "ATTERRISSEUR · ROVER · LANCÉ",
   "first": "Premières roues sur Mars ; démonstration d'atterrissage par airbags",
   "dispatch": "Mars Pathfinder a été la preuve, pour la NASA, que l'atterrissage sur Mars ne devait pas coûter une fortune. Plutôt que d'utiliser les rétrofusées stationnaires des Vikings, il est entré dans l'atmosphère protégé par un bouclier thermique, a déployé un parachute, gonflé un coussin d'airbags, et a rebondi des dizaines de fois sur la surface avant de s'immobiliser et de s'ouvrir comme une fleur. Sojourner en est sorti — un rover de la taille d'un micro-ondes, les premières roues à tourner sur une autre planète. La science était modeste ; l'important était la méthode. L'atterrissage par airbags et l'approche plus rapide, moins chère et meilleure qu'il a prouvée sont devenus le modèle des rovers bien plus ambitieux — Spirit, Opportunity, Curiosity — qui ont suivi.",

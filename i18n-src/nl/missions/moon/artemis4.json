@@ -1,5 +1,8 @@
 {
   "name": "Artemis IV",
+  "vehicle": "SLS Block 1 (laatste vlucht met de ICPS-bovenste trap) + bemande lander (Starship HLS of Blue Moon, nog niet gekozen)",
+  "payload": "Orion + bemanning van 4 personen; 2 bemanningsleden naar het oppervlak voor ongeveer een week",
+  "delta_v": "~7 km/s (heen en terug)",
   "type": "BEMANDE LANDER · GEPLAND",
   "first": "Eerste bemande maanlanding sinds Apollo 17 (1972)",
   "description": "Sinds NASA's planwijziging van februari 2026 is Artemis IV de missie die mensen terugbrengt naar het maanoppervlak — de eerste landing sinds Apollo 17 in 1972, en de eerste ooit bij de zuidpool. De SLS, op zijn laatste vlucht met de tijdelijke bovenste trap, lanceert Orion met vier bemanningsleden naar de Maan. In een baan om de Maan ontmoeten ze een commerciële lander — SpaceX' Starship of Blue Origins Blue Moon, te kiezen na de koppelingstests van Artemis III — en dalen twee astronauten af naar het zuidpoolgebied voor ongeveer een week werk aan het oppervlak, terwijl twee aan boord van Orion blijven. De zuidpool is het doel omdat de permanent beschaduwde kraters waterijs bevatten, dat toekomstige missies kunnen omzetten in drinkwater, zuurstof en raketbrandstof. NASA heeft negen kandidaat-landingsgebieden aangewezen. Gepland voor begin 2028; de bemanning is nog niet bekendgemaakt.",

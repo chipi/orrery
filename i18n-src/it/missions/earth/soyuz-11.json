@@ -1,5 +1,8 @@
 {
   "name": "Soyuz 11",
+  "vehicle": "Soyuz (11A511)",
+  "payload": "Soyuz 7K-OKS; Dobrovol'skij, Volkov, Pacaev",
+  "delta_v": "~7,8 km/s (LEO)",
   "type": "EQUIPAGGIO STAZIONE · PERDITA",
   "first": "Primo equipaggio di una stazione spaziale (Salyut 1); tutti e 3 morti per depressurizzazione durante il rientro",
   "dispatch": "Soyuz 11 ha realizzato qualcosa di straordinario e poi ha perso il suo equipaggio negli ultimi minuti del volo. Georgij Dobrovol'skij, Vladislav Volkov e Viktor Pacaev sono diventati le prime persone a vivere a bordo di una stazione spaziale, trascorrendo ventidué giorni su Salyut 1 — e poi, durante il rientro, una valvola si è spalancata all'istante della separazione dei moduli, lasciando l'aria della loro cabina sfuggire nello spazio. Non indossavano tute di pressione; non c'era stato spazio per le tute quando i sedili erano stati allestiti per tre persone. In pochi secondi, al bordo dello spazio, tutti e tre erano morti. La capsula si è ammarata da sola, perfettamente sulla traiettoria; il team di recupero l'ha aperta trovando l'equipaggio ancora allacciato ai sedili. Rimangono gli unici esseri umani a essere morti nello spazio — e il prezzo ha istituito una regola che ha resistito da allora: gli equipaggi indossano tute di pressione durante il lancio e il rientro, sempre.",

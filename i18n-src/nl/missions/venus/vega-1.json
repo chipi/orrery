@@ -1,5 +1,8 @@
 {
   "name": "Vega 1",
+  "vehicle": "Proton-K / D-1",
+  "payload": "Voorbijvlucht-bus van 4920 kg + afdalingsmodule van ~1500 kg (lander van het Venera-type + eerste heliumballon-aerostaat). Tweelingruimtevaartuigen Vega 1 / Vega 2, 6 dagen na elkaar gelanceerd voor hetzelfde traject langs Venus en dan Halley.",
+  "delta_v": "~3,6 km/s (vertrek + herrichting voor onderschepping van Halley)",
   "type": "SCHEERVLUCHT + LANDER + BALLON · VOLTOOID",
   "first": "Eerste ballon (aerostaat) ooit ingezet in de atmosfeer van een andere planeet (Venus, 1985); eerste ruimtevaartuig dat wetenschap naar twee verschillende doelen in het zonnestelsel heeft gebracht",
   "description": "Sovjet–ESA-vlaggenschip van de Halley-armada. Vega 1 lanceerde op 1984-12-15 met een lander uit de Venera-lijn plus een nieuwe, door ESA/CNES gebouwde heliumballon die 46,5 uur lang in het wolkendek van Venus op 54 km hoogte dreef en via een wereldwijd radionetwerk van 20 stations wind- en temperatuurgegevens uitzond. Na het afwerpen van zijn afdalingsmodule gebruikte de bus een zwaartekrachtassist bij Venus om naar komeet 1P/Halley te zwaaien en bereikte op 1986-03-06 een dichtste nadering van 8890 km — de eerste ontmoeting met een kometenkern, en de positiebepaling die Giotto van ESA gebruikte om een week later zijn eigen, veel dichtere voorbijvlucht langs Halley te navigeren.",

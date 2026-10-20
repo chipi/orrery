@@ -1,5 +1,8 @@
 {
   "name": "Rosetta",
+  "vehicle": "Ariane 5G+",
+  "payload": "Orbiteur (~2900 kg à sec, 11 instruments) + atterrisseur de descente Philae (~100 kg, 10 instruments). Bouclier thermique, deux assistances gravitationnelles de la Terre + une de Mars, 957 jours d'hibernation dans l'espace lointain en 2011–2014.",
+  "delta_v": "~2,3 km/s (rendez-vous + opérations cométaires)",
   "type": "ORBITEUR + ATTERRISSEUR · RÉALISÉE",
   "first": "Premier engin spatial à orbiter autour d'une comète — et à s'y poser (Philae, 2014-11-12)",
   "description": "Mission phare de l'ESA de rendez-vous cométaire. Après une croisière de 10 ans intégrant trois assistance gravitationnelles terrestres, une assistance martienne, deux survols d'astéroïdes et 957 jours d'hibernation en espace lointain, Rosetta a rejoint la comète 67P/Churyumov–Gerasimenko en août 2014 et l'a orbitée pendant plus de deux ans à travers le périhélie et au-delà. L'atterrisseur Philae a atteint la surface de 67P le 2014-11-12 — premier atterrissage en douceur sur une comète — et a renvoyé ~64 heures de données scientifiques après qu'une défaillance du harpon l'ait laissé dans l'ombre d'une falaise. Rosetta elle-même a terminé la mission par une descente contrôlée vers la surface de 67P le 2016-09-30. Résultats clés : molécules organiques et glycine dans la chevelure ; le rapport D/H initialement mesuré de 67P (≈3× terrestre) contredisait l'hypothèse que les comètes de la famille de Jupiter seraient à l'origine de l'eau terrestre — un résultat qu'une réanalyse de 2024 remet en question après la découverte d'une erreur de mesure ; les premières cartes détaillées de la géométrie du dégazage cométaire.",

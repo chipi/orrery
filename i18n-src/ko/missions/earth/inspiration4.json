@@ -1,5 +1,8 @@
 {
   "name": "Inspiration4",
+  "vehicle": "Falcon 9 Block 5 (B1062.3) + Crew Dragon C207 (Resilience)",
+  "payload": "저궤도 투입 질량 ~12000 kg; 승무원 4명, 직업 우주비행사 없음",
+  "delta_v": "~9.4 km/s (저궤도; 585 km 원궤도)",
   "type": "유인 자유비행선 · 비행 완료",
   "first": "최초 전원 민간인 궤도 비행; St. Jude Children's Research Hospital에 2억 4,300만 달러 모금",
   "description": "재러드 아이작먼, Sian Proctor, Hayley Arceneaux, Chris Sembroski — 전문 정부 우주비행사가 한 명도 없이 구성된 최초의 궤도 비행 승무원. 2021-09-15 00:02 UTC LC-39A에서 Falcon 9 B1062(세 번째 비행)에 Crew Dragon Resilience(C207, 앞서 Crew-1에서 비행)를 얹어 발사했다. 고도 585 km의 원형 궤도, 경사각 51.6°에 도달했다 — Hubble 서비스 임무 이후 가장 높은 유인 궤도다. 어떤 정거장과도 도킹하지 않았고, 도킹 어댑터를 대신한 최초의 탑재 큐폴라와 함께 사흘간 자유 비행했다. 2021-09-18 23:06 UTC 플로리다 해안 앞바다에 착수했다. 이 임무는 St. Jude Children's Research Hospital을 위해 2억 4,300만 달러 넘게 모금했다 — Arceneaux는 St. Jude의 전 환자이자 궤도에 오른 최초의 암 생존자다.",

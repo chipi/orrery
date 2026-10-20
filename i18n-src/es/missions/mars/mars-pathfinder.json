@@ -1,5 +1,8 @@
 {
   "name": "Mars Pathfinder",
+  "vehicle": "Delta II 7925",
+  "payload": "890 kg (módulo de aterrizaje + etapa de crucero al lanzamiento)",
+  "delta_v": "~5,2 km/s",
   "type": "MÓDULO DE ATERRIZAJE · RÓVER · CUMPLIDO",
   "first": "Primeras ruedas en Marte; demostró el aterrizaje con bolsas de aire",
   "dispatch": "Mars Pathfinder fue la prueba de NASA de que aterrizar en Marte no tenía que costar una fortuna. En lugar del hover con retrocohetes que usaron los Vikings, entró en la atmósfera protegido por un escudo térmico, abrió un paracaídas, infló un capullo de bolsas de aire, y rebotó docenas de veces sobre la superficie antes de rodar a un alto y abrirse como una flor. De él salió Sojourner — un róver del tamaño de un microondas, la primera rueda que giró en otro planeta. La ciencia fue modesta; el punto era el método. El aterrizaje con bolsas de aire y el enfoque más rápido, más barato y mejor que demostró se convirtieron en el modelo para los róveres mucho más ambiciosos — Spirit, Opportunity, Curiosity — que vinieron después.",

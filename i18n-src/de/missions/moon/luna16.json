@@ -1,5 +1,8 @@
 {
   "name": "Luna 16",
+  "vehicle": "Proton-K / D",
+  "payload": "5727 kg Startmasse; 1880 kg Lander; 0,101 kg Mondregolith zurückgebracht",
+  "delta_v": "~3,5 km/s",
   "type": "ROBOTIC SAMPLE RETURN · FLOWN",
   "first": "Erste robotische Rückführung von Mondproben; erste außeramerikanische Mondproben",
   "description": "Luna 16 war die erste erfolgreiche robotische Probenrückführungsmission der Sowjetunion und die erste unbemannte Rückkehr vom Mond überhaupt. Nachdem Apollo 11 1969 22 kg bemannte Proben zur Erde brachte, kehrte Luna 16 ein Jahr später 101 Gramm Regolith aus Mare Fecunditatis zurück – nur ein Bruchteil von Apollos Nutzlast, aber ein grundlegender Beweis des Konzepts für die alternative Architektur. Die Mission verwendete eine Proton-K-Trägerrakete und ein direktes Rückführungsprofil: Abstieg zur Oberfläche, Kernbohrung, Aufstieg des Aufstiegsstadiums, ballistische Rückkehrkapsel nach Kasachstan. Die Technik wurde für Luna 20 und Luna 24 sowie Jahrzehnte später von Chang'e 5 und Chang'e 6 wiederverwendet.",

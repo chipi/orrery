@@ -1,5 +1,8 @@
 {
   "name": "Mars Express",
+  "vehicle": "Soyuz-FG / Fregat",
+  "payload": "1183 kg（轨道器 1123 kg + Beagle 2 着陆器 60 kg）",
+  "delta_v": "~4.5 km/s",
   "type": "ORBITER · ACTIVE",
   "first": "欧洲首次行星际探测任务；运行时间最长的非NASA火星轨道器",
   "description": "ESA首次前往地球以外行星的任务。该轨道器取得了最长的火星大气连续观测记录，绘制了水冰沉积、甲烷羽流以及这颗行星三维天气的分布图。它搭载的英国制造的着陆器Beagle 2抵达了火星表面，但太阳能电池板始终没有完全展开——2004年被宣告失联，2015年被NASA的Mars Reconnaissance Orbiter发现其完好无损。该轨道器已进入运行的第三个十年。",

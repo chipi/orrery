@@ -1,5 +1,8 @@
 {
   "name": "Giotto",
+  "vehicle": "Ariane 1",
+  "payload": "Spingestabiliseerde trommelvormige sonde van 960 kg met een gelaagd Whipple-Kevlar-stofschild (de achterbumper hield de wetenschappelijke instrumenten in bedrijf tijdens de stofstorm met 68 km/s relatieve snelheid in de coma van Halley). 10 instrumenten — Halley Multicolour Camera, massaspectrometers, stofinslagdetectoren, magnetometer, plasma-instrumenten.",
+  "delta_v": "~1,5 km/s (onderschepping van Halley)",
   "type": "VOORBIJVLUCHT · VOLTOOID",
   "first": "ESA's eerste deep-space missie; dichtstbijzijnde kometvoorbijvlucht ooit ondernomen (Halley, 596 km, 1986); eerste close-up beeldvorming van een komeetkern",
   "description": "Giotto was Europa's hoeksteen van de Halley-armada — een spingestabiliseerde 960 kg-sonde omwikkeld met een gelaagd Whipple-Kevlar stofschild. Gelanceerd 1985-07-02, vloog het door Halley's coma met een relatieve snelheid van 68 km/s op 1986-03-14 met een kleinste afstand van 596 km, en leverde de eerste close-upbeelden van een komeetkern (een onregelmatig 15 × 7,2 × 7,2 km langwerpig lichaam met geconcentreerde stofstralen). Een stofimpact ongeveer 7,6 seconden voor de dichtste nadering destabiliseerde de spinas en schakelde de camera uit, maar de andere instrumenten bleven door de coma zenden. Na sluimering in heliocentrische baan, werd Giotto in 1990 opnieuw geactiveerd en gebruikte een zwaartekrachtsvlucht langs de Aarde om opnieuw gericht te worden op komeet 26P/Grigg–Skjellerup, voorbijvliegend op 200 km op 1992-07-10 — de dichtstbijzijnste komeetvoorbijvlucht ooit uitgevoerd.",

@@ -1,5 +1,8 @@
 {
   "name": "Hayabusa",
+  "vehicle": "M-V-5",
+  "payload": "510 kg (incl. 60 kg of xenon for four μ10 ion thrusters)",
+  "delta_v": "~4.0 km/s",
   "type": "SAMPLE-RETURN · FLOWN",
   "first": "First asteroid sample ever returned to Earth (~1,500 grains of Itokawa dust, sub-milligram total)",
   "description": "JAXA's Hayabusa (Japanese for 'falcon') flew the most heroic mission-save in spaceflight history. Launched 2003-05-09 on an M-V-5 with four μ10 ion thrusters — the most powerful ion-propulsion subsystem flown to that point. Arrived at 25143 Itokawa 2005-09-12 — a 540×270×210-m rubble-pile near-Earth asteroid. Two touchdowns (2005-11-20 + 25), both with sample-collection projectile failures, though regolith was kicked into the collection horn anyway. Then a hydrazine leak crippled attitude control, two of its three reaction wheels failed, communications lost for seven weeks, the Earth-return window slipped by three years. Engineers assembled a single working ion engine from the surviving halves of two damaged engines and nursed Hayabusa back to Earth. Sample capsule recovered at Woomera AUS 2010-06-13 returned ~1,500 grains of Itokawa dust (sub-milligram total) — confirming the asteroid's S-type composition and rubble-pile structure, and proving that asteroid sample return was possible.",

@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 4 / Yutu-2",
+  "vehicle": "Long March 3B",
+  "payload": "3780 kg lanceermassa; Yutu-2-rover van 140 kg",
+  "delta_v": "~3 km/s",
   "type": "MAANLANDER AAN VERWIJDERDE ZIJDE · ROVER · ACTIEF",
   "first": "Eerste zachte landing aan de achterzijde van de maan",
   "description": "De achterzijde van de maan heeft geen rechtstreekse radioverbinding met de Aarde. Om daar een ruimtevaartuig te laten landen, lanceerde China eerst de relaissatelliet Queqiao naar een halobaan rond het Aarde-Maan-Lagrangepunt L2 — een positie die tegelijkertijd zicht heeft op de achterzijde en de Aarde. Met die infrastructuur op zijn plek werd Chang'e 4 het eerste ruimtevaartuig dat zacht landde aan de achterzijde. De Yutu-2-rover is sinds januari 2019 in werking en heeft tot 2024 ongeveer 1,6 km afgelegd, waardoor het de langst werkende maanrover in de geschiedenis is.",

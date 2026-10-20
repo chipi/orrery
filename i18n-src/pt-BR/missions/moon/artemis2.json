@@ -1,5 +1,8 @@
 {
   "name": "Artemis II",
+  "vehicle": "SLS Block 1 + Orion (tripulado)",
+  "payload": "Orion + tripulação de 4 pessoas (Wiseman / Glover / Koch / Hansen)",
+  "delta_v": "~6,5 km/s (ida e volta)",
   "type": "CREWED FLYBY · REALIZADA",
   "first": "Primeiro voo tripulado além da órbita baixa da Terra desde a Apollo 17 (1972) — e a missão que inspirou esse projeto",
   "description": "O primeiro vôo tripulado do programa Artemis e a faísca que se tornou o Orrery. Em 1º de abril de 2026, o SLS Block 1 da NASA lançou uma espaçonave Orion com quatro astronautas — Reid Wiseman (CDR), Victor Glover (PLT), Christina Hammock-Koch (MS) e Jeremy Hansen (MS), da CSA — em uma trajetória de retorno livre que os fez contornar o lado oculto da Lua a cerca de 6.500 km acima da superfície e os trouxe de volta para casa sem qualquer queima de inserção na órbita lunar. A 406.771 km da Terra, viajaram mais longe do que quaisquer humanos antes deles, superando o recorde da Apollo 13, de 1970. Após um voo de 9 dias, a Orion amerissou no Pacífico, ao largo de San Diego, em 10 de abril. O voo qualificou o suporte de vida, a navegação e o escudo térmico da Orion para missões tripuladas antes do primeiro pouso, agora planejado para a Artemis IV.",

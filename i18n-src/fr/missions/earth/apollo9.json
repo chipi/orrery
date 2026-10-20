@@ -1,5 +1,8 @@
 {
   "name": "Apollo 9",
+  "vehicle": "Saturn V (AS-504)",
+  "payload": "42400 kg lancés (CSM Gumdrop (CSM-104) + LM Spider (LM-3))",
+  "delta_v": "~9,5 km/s (jusqu'en LEO)",
   "type": "MISSION SPATIALE HABITÉE · RÉALISÉE",
   "first": "Premier vol habité du Module Lunaire — tests de séparation et rendez-vous en orbite terrestre",
   "description": "Le premier vol habité du Module Lunaire. En orbite terrestre, McDivitt et Schweickart se sont séparés du LM Spider du CSM Gumdrop, se sont éloignés jusqu'à 183 km sur six heures, puis se sont rendez-vous et redéverrouillés — chaque étape de la procédure de rendez-vous lunaire a été testée sans l'option de ramener l'équipage à la maison dans le CSM en cas de problème. Schweickart a effectué une EVA de 38 minutes sur le porche du LM, démontrant la combinaison spatiale Apollo EVA et la conception du sac à dos PLSS que les équipages marchant sur la Lune utiliseraient. Scott a effectué une EVA en position debout depuis l'écoutille du CSM. Avec le matériel LM et les procédures de rendez-vous vérifiés, la NASA était prête à envoyer Apollo 10 sur la Lune deux mois plus tard.",

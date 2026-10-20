@@ -1,5 +1,8 @@
 {
   "name": "Apollo 12",
+  "vehicle": "Saturn V (AS-507)",
+  "payload": "发射质量 46782 kg（CSM Yankee Clipper (CSM-108) + LM Intrepid (LM-6)）",
+  "delta_v": "~6 km/s（往返）",
   "type": "载人着陆器 · 已飞行",
   "first": "第二次载人登月——在距Surveyor 3仅163 m处精确着陆",
   "description": "第二次载人登月任务。Saturn V 火箭在上升过程中两次遭雷击（T+36 秒和 T+52 秒）——宾通过 EECOM 约翰·阿伦著名的“SCE to AUX”指令恢复了航天器，随后乘组在月球轨道上重新校准了惯性测量单元。康拉德和宾在风暴洋实现了精确着陆，降落点距 Surveyor 3（该探测器于 1967 年 4 月软着陆）仅 163 米，随后他们步行至 Surveyor 3，取下了它的相机并采集了它的表面样本——这些部件被带回地球，用于分析长期暴露在月表的影响。他们部署了 ALSEP（完整的 Apollo 月面实验包——这是第一套 ALSEP，而 Apollo 11 部署的是更简单的 EASEP），该设备传输数据长达 8 年。任务带回了 34 千克样本，包括暗色月海玄武岩。",

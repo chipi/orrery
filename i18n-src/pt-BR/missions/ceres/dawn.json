@@ -1,5 +1,8 @@
 {
   "name": "Dawn",
+  "vehicle": "Delta II 7925H",
+  "payload": "Orbitador de propulsão iônica; câmera de imageamento, VIR, GRaND etc.",
+  "delta_v": "~11 km/s (aprox.)",
   "type": "ORBITER · VOADO",
   "first": "Primeira missão orbitando dois corpos extraterrestres – Vesta, depois Ceres",
   "description": "Dawn provou a propulsão iônica em escala planetária: combinou as órbitas com a massiva Vesta, partiu, e desceu em espiral até o planeta anão Ceres - o maior objeto no cinturão de asteróides. Os pontos brilhantes na cratera Occator tornaram-se um dos mistérios icônicos da missão, mais tarde ligados a erupções salgadas de um reservatório profundo. Esta entrada de catálogo usa Ceres como destino principal; Vesta é abordada na narrativa acima.",

@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 5",
+  "vehicle": "Long March 5",
+  "payload": "8200 kg launch mass; 1.731 kg sample returned",
+  "delta_v": "~5 km/s",
   "type": "SAMPLE RETURN · FLOWN",
   "first": "First lunar sample return in 44 years (since Luna 24, 1976)",
   "description": "Chang'e 5 was the first sample return from the Moon since the Soviet Union's Luna 24 in 1976 — a 44-year gap. The architecture: orbiter + lander + ascent vehicle + sample-return capsule, all in one launch. The lander touched down at Mons Rümker, drilled and scooped 1.731 kg of regolith, lifted off, rendezvoused and docked with the orbiter (the first robotic lunar rendezvous), and the capsule returned to Earth. The samples are from a region only 2 billion years old — much younger than any Apollo or Luna sample, rewriting models of lunar volcanism.",

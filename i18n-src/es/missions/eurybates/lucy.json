@@ -1,5 +1,8 @@
 {
   "name": "Lucy",
+  "vehicle": "Atlas V 401",
+  "payload": "1550 kg (incl. 1003 kg de hidracina — Lucy lleva mucho más propelente que masa en seco)",
+  "delta_v": "~6 km/s (con 3 asistencias gravitatorias terrestres)",
   "type": "SOBREVUELO MÚLTIPLE · ACTIVA",
   "first": "Primera misión a los Troyanos de Júpiter; visita 11 cuerpos en 8 asteroides y sus satélites en una única trayectoria de 12 años — un récord de objetos en órbitas solares separadas",
   "description": "Lucy se dirige hacia las nubes de Lagrange L4 y L5 — poblaciones de asteroides primordiales que se sitúan 60° por delante y por detrás de Júpiter, que se cree preservan material del disco protoplanetario exterior. Tres asistencias gravitatorias de la Tierra (2022, 2024, 2030) moldean una única trayectoria que visita siete asteroides troyanos además de objetivos adicionales en el cinturón principal. Primer encuentro con asteroide: 152830 Dinkinesh (2023-11-01, ~790 m), en el que las imágenes revelaron que su satélite Selam es un binario de contacto. Objetivo adicional en el cinturón principal: Donaldjohanson 2025-04. Grupo L4: Euríbates + satélite Queta (2027-08), Polimele (2027-09), Leuco (2028-04), Oro (2028-11). Tras EGA-3 (2030-12), el grupo L5, que sigue a Júpiter: el binario Patroclo-Menecio (2033-03) — el binario troyano más grande conocido, un clímax apropiado para el homónimo de la misión (Lucy el fósil homínido; Patroclo-Menecio los dos personajes que cayeron juntos en la Ilíada).",

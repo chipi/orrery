@@ -1,5 +1,8 @@
 {
   "name": "Gemini 7 / GT-7",
+  "vehicle": "Titan II GLV (GT-7)",
+  "payload": "Gemini 7; Frank Borman & Jim Lovell",
+  "delta_v": "~7,8 km/s (LEO)",
   "type": "BEMANNT ERDORBIT · GEFLOGEN",
   "first": "14-tägiger Ausdauerflug; Rendezvous-Ziel für Gemini 6A",
   "dispatch": "Gemini 7 beantwortete die am wenigsten glamouröse, aber grundlegendste Frage: Konnte eine Besatzung so lange überleben wie eine Reise zum Mond und zurück? Frank Borman und Jim Lovell verbrachten vierzehn Tage eingeschlossen in einer Kabine von der Größe des Vordersitzes eines Kleinwagens — kein Platz zum Stehen, Strecken oder um einander zu entkommen — um zu beweisen, dass der menschliche Körper und Geist das aushalten konnten. Es war langweilig und körperlich elend, und es funktionierte: Sie kamen gesund zurück und beseitigten die Befürchtung, dass langer Raumflug unmöglich sein könnte. Nebenbei dienten sie als Ziel für das Rendezvous von Gemini 6A, sodass der einzelne Flug stillschweigend zwei Voraussetzungen für Apollo gleichzeitig bewies — dass Menschen die Distanz überstehen konnten und dass sich zwei Raumschiffe treffen konnten.",

@@ -1,5 +1,8 @@
 {
   "name": "New Horizons",
+  "vehicle": "Atlas V 551",
+  "payload": "New Horizons flyby spacecraft; RTG power",
+  "delta_v": "~16 km/s (approx)",
   "type": "FLYBY · FLOWN",
   "first": "First flyby of Pluto and its moons; sharpest images of a Kuiper belt world",
   "dispatch": "New Horizons had exactly one chance and took it. There was no orbit and no way to slow down — nine and a half years of travel, the fastest launch in history, all converging on a few hours at Pluto, executed by a machine so far away that each command took hours to arrive. It nailed the flyby on 14 July 2015 and overturned the expectation of a dead world: Pluto turned out to have mountains of water ice, a vast heart-shaped glacier of frozen nitrogen still slowly churning, and a young, active surface no one thought a body that small and cold could keep. Then it flew on to Arrokoth, a billion kilometres past Pluto — the most distant world ever seen up close — and it is still going.",

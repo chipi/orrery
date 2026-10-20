@@ -1,5 +1,8 @@
 {
   "name": "Huygens",
+  "vehicle": "Titan IVB / Centaur (Cassini-draagraket)",
+  "payload": "ESA-ingangssonde van 318 kg — aeroshell, 3 parachutes, 6 wetenschappelijke pakketten (HASI, GCMS, DISR, ACP, SSP, DWE). Ontworpen om een atmosferische afdaling van 2,5 uur door de stikstof-methaanatmosfeer van Titan tot aan het oppervlak te overleven.",
+  "delta_v": "~6 km/s (afremming bij binnenkomst van 6 km/s hypersonisch tot het oppervlak)",
   "type": "ATMOSFEERSONDE + LANDINGSMODULE · GEVLOGEN",
   "first": "Eerste en enige zachte landing in het buitenste zonnestelsel — per parachute door Titans atmosfeer op 14-01-2005",
   "dispatch": "Huygens werd niet gestuurd om te draaien, maar om te vallen. Zeven jaar lang aan Cassini vastgemaakt, scheidde het zich af op eerste kerstdag 2004 en gleed twintig dagen lang alleen naar Titan. Toen het Titans atmosfeer raakte met zes kilometer per seconde, kocht een hitteschild de benodigde tijd; daarna vertraagden drie valschermstadia het gedurende twee en een half uur door een oranje waas die nog nooit door een instrument was doorstoten. Het fotografeerde rivierdalen, mat windsnelheden, rook de atmosfeer — en landde op een vlakte van afgeronde water-ijskeien. Het was de eerste landing ooit in het buitenste zonnestelsel, en geen ruimtevaartuig is sindsdien daar geland.",

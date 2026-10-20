@@ -1,5 +1,8 @@
 {
   "name": "Gemini 3 / GT-3",
+  "vehicle": "Titan II GLV (GT-3)",
+  "payload": "Gemini 3 'Molly Brown'; Gus Grissom y John Young",
+  "delta_v": "~7,8 km/s (LEO)",
   "type": "TRIPULADA ÓRBITA TERRESTRE · VOLADA",
   "first": "Primer Gemini tripulado; primera maniobra orbital por una tripulación",
   "dispatch": "Gemini 3 fue la prueba inicial — el primer vuelo de la nueva nave espacial de dos plazas, y la primera vez que una tripulación estadounidense cambió su propia órbita en lugar de limitarse a mantener la que el cohete les había dado. Gus Grissom la comandó, cuatro años después de que su cápsula Mercury se hundiera en el amerizaje, y nombró a esta \"Molly Brown\" en honor a la heroína insumergible — una pieza de humor negro que la oficina de relaciones públicas de la NASA no apreció. El vuelo en sí fue corto y deliberadamente modesto, tres órbitas para demostrar que la máquina volaba según lo diseñado. Pero ese pequeño acto de ajustar la órbita con propulsores a bordo fue el primer paso de todo aquello para lo que Gemini existía.",

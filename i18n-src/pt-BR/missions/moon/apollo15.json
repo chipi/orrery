@@ -1,5 +1,8 @@
 {
   "name": "Apollo 15",
+  "vehicle": "Saturn V (AS-510)",
+  "payload": "48599 kg lançados (CSM Endeavour (CSM-112) + LM Falcon (LM-10))",
+  "delta_v": "~6 km/s (ida e volta)",
   "type": "MÓDULO LUNAR TRIPULADO · REALIZADO",
   "first": "Primeira J-mission — permanência estendida, primeiro Lunar Roving Vehicle, \"Genesis Rock\"",
   "dispatch": "Quando chegou o Apollo 15, a corrida havia terminado há muito tempo — e a ciência assumiu o comando, literalmente. Este foi o primeiro voo a transportar o Lunar Rover, que transformou um raio de caminhada de três quilômetros num verdadeiro trajeto de expedição de vinte e oito quilômetros, e pousou não numa planície segura e plana, mas num vale entre uma cordilheira e um canyon sinuoso. Scott e Irwin retornaram com a \"Genesis Rock\", um fragmento de 4 bilhões de anos da crosta lunar original que confirmou como ela se havia formado. O Apollo havia deixado de visitar a Lua e começado a estudá-la — e continuou ficando cada vez melhor nisso até ser cancelado.",

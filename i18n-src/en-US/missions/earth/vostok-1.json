@@ -1,5 +1,8 @@
 {
   "name": "Vostok 1",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4725 kg launch mass; spherical descent module + service module",
+  "delta_v": "~9.4 km/s (LEO)",
   "type": "CREWED EARTH-ORBIT · FLOWN",
   "first": "First human in space; first crewed orbital flight",
   "dispatch": "Vostok 1 is where the space age begins with a person in it. For 108 minutes on 12 April 1961, Yuri Gagarin — a 27-year-old fighter pilot — became the first human being to leave the planet and orbit it, and the world woke to find the Soviet Union had done the thing everyone assumed America would do first. He had almost no control of the spacecraft; the flight was run from the ground, and he was as much passenger as pilot, sealed in a sphere built to bring him home whether he was conscious or not. It didn't matter. A human had circled the Earth and returned, and nothing about how people saw their place in the universe was quite the same afterward.",

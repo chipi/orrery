@@ -1,5 +1,8 @@
 {
   "name": "Apollo 16",
+  "vehicle": "Saturn V (AS-511)",
+  "payload": "48599 kg lancés (CSM Casper (CSM-113) + LM Orion (LM-11))",
+  "delta_v": "~6 km/s (aller-retour)",
   "dispatch": "Apollo 16 s'est rendu dans les hautes terres lunaires pour échantillonner d'anciens volcans et a découvert qu'il n'y en avait jamais eu. Les géologues étaient certains que la région pâle et accidentée de Descartes était volcanique ; chaque roche rapportée par Young et Duke était une brèche — des débris soudés par des impacts. Se tromper fut la récompense : les hautes terres brillantes de la Lune se sont révélées être un registre d'un jeune système solaire sous bombardement incessant, et non sous éruption. C'est un exemple clair de la façon dont l'exploration justifie réellement son coût — on part pour confirmer ce qu'on croit déjà savoir, et le lieu nous révèle quelque chose de meilleur.",
   "type": "ATTERRISSEUR HABITÉ · VOLÉ",
   "first": "Premier alunissage dans les hautes terres lunaires — Descartes ; « Lunar Grand Prix » de John Young",

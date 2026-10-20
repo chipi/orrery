@@ -1,5 +1,8 @@
 {
   "name": "Mariner 10",
+  "vehicle": "Atlas SLV-3D Centaur (AC-34)",
+  "payload": "503 kg — Fernsehkameras, IR- + UV-Spektrometer, Magnetometer, Teleskop für geladene Teilchen",
+  "delta_v": "~13,7 km/s (Bahn mit Venus-Swing-by)",
   "type": "PLANETEN-VORBEIFLUG · GEFLOGEN",
   "first": "Erster Merkur-Vorbeiflug; erster Doppelplaneten-Vorbeiflug; erste Mission mit Swing-by",
   "description": "Erste Raumsonde, die den Merkur besuchte, erste, die an zwei Planeten vorbeiflog, und erste, die einen Swing-by zur Zielerreichung nutzte. Gestartet am 1973-11-03 um 05:45 UTC von Cape Canaveral LC-36B auf einer Atlas SLV-3D Centaur AC-34. Mariner 10 zog am 1974-02-05 (5768 km kürzeste Annäherung, erste UV-Aufnahmen der Wolkenbänder der Venus) an der Venus vorbei und nutzte die Begegnung, um ihr Perihel in den Bahnbereich des Merkur zu senken — die erste absichtliche Swing-by-Bahn der Raumfahrtgeschichte. Führte drei Merkur-Vorbeiflüge durch: 1974-03-29 (703 km), 1974-09-21 (48069 km) und 1975-03-16 (327 km). Bildete etwa 45 % der Merkuroberfläche ab — die einzigen aufgelösten Bilder, die bis MESSENGER (2008-2015) verfügbar waren. Entdeckte das intrinsische Magnetfeld des Merkur und seine dünne Natrium-Helium-Exosphäre. Das Temperaturmanagement der Solarpaneele war ein offenes missionsingenieurtechnisches Problem: Projektwissenschaftler kippten die Paneele und rollten die Raumsonde, um sie unter 115 °C zu halten. Mission endete am 1975-03-24, als der Stickstoff-Lageregelungstreibstoff aufgebraucht war; die Sonde befindet sich vermutlich in einer heliozentrischen Umlaufbahn und passiert den Merkur regelmäßig.",

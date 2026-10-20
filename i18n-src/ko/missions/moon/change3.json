@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 3",
+  "vehicle": "Long March 3B / E",
+  "payload": "발사 질량 3780 kg; 착륙선 1200 kg; Yutu 로버 140 kg",
+  "delta_v": "~3.8 km/s",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
   "first": "중국 최초의 달 연착륙; 중국 최초의 달 로버 Yutu를 배치",
   "description": "Chang'e 3은 CNSA Chang'e 계획의 세 번째 착륙선이자, 1976년 소련의 Luna 24 이후 달에서 처음 성공한 연착륙이었습니다 — 37년 만입니다. Long March 3B는 2013년 12월 달로 곧장 가는 궤적으로 발사되었고, 달 궤도 진입 전에 중간 궤도 수정을 한 번만 했습니다. 착륙선은 12월 14일 비의 바다에 내려앉아 Yutu(옥토끼) 로버를 내보냈고, 이 로버는 두 번째 달 낮에 이동 장치 고장으로 주행이 끝났음에도 31개월 동안 작동했습니다. Chang'e 3 착륙선은 그 뒤로도 수년간 촬영을 이어 갔습니다.",

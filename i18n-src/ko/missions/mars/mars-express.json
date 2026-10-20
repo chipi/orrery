@@ -1,5 +1,8 @@
 {
   "name": "Mars Express",
+  "vehicle": "Soyuz-FG / Fregat",
+  "payload": "1183 kg(궤도선 1123 kg + Beagle 2 착륙선 60 kg)",
+  "delta_v": "~4.5 km/s",
   "type": "궤도선 · 활동 중",
   "first": "유럽의 첫 행성간 임무; NASA가 아닌 화성 궤도선 중 최장 운용",
   "description": "ESA가 지구 외의 행성으로 보낸 첫 임무입니다. 이 궤도선은 화성 대기에 대한 가장 긴 연속 기록을 만들어 냈고, 물얼음 퇴적층과 메탄 기둥, 행성의 3차원 날씨를 관측했습니다. 함께 싣고 간 영국제 착륙선 Beagle 2는 표면에 닿았지만 태양전지판을 끝내 완전히 펼치지 못했고, 2004년에 실종으로 선언되었다가 2015년 NASA의 Mars Reconnaissance Orbiter가 온전한 모습을 찾아냈습니다. 궤도선은 운용 세 번째 십 년째에 들어섰습니다.",

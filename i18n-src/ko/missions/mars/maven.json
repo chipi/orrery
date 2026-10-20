@@ -1,5 +1,8 @@
 {
   "name": "MAVEN",
+  "vehicle": "Atlas V 401",
+  "payload": "2454 kg",
+  "delta_v": "~3.5 km/s",
   "type": "궤도선 · 활동 중",
   "first": "화성이 대기를 어떻게 잃었는지 연구하는 데 전념한 최초의 임무",
   "description": "MAVEN — Mars Atmosphere and Volatile Evolution — 은 '화성의 공기는 어디로 갔을까?'라는 질문에 답합니다. 타원 궤도가 상층 대기까지 내려가, 태양풍이 이온과 중성 입자를 벗겨 내는 동안 이를 채취합니다. 발견: 화성은 초당 약 100 g의 대기를 우주로 잃고 있으며, 수십억 년이면 사라진 기후를 설명하기에 충분한 양입니다. 이 탐사선은 Curiosity와 Perseverance를 비롯한 표면 탐사 장비를 위한 핵심 중계기 역할도 합니다.",

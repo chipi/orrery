@@ -1,5 +1,8 @@
 {
   "name": "Galileo",
+  "vehicle": "Space Shuttle Atlantis + IUS",
+  "payload": "Sonda Galileo y sonda de entrada atmosférica; ~2,5 t de masa en seco",
+  "delta_v": "~14 km/s (aprox.)",
   "type": "ORBITADOR · VOLADO",
   "first": "Primera sonda en orbitar Júpiter; sonda atmosférica enviada a las nubes de Júpiter",
   "dispatch": "Galileo debería haber quedado inutilizada antes incluso de llegar. Su antena principal se quedó atascada a medio abrir camino a Júpiter, reduciendo su velocidad de transmisión a un hilo — pero la misión tuvo éxito de todas formas, porque los ingenieros reescribieron su software desde la Tierra para canalizarla ciencia a través de una pequeña antena de respaldo. Se convirtió en la primera sonda en orbitar Júpiter, lanzó una sonda a las nubes del gigante gaseoso, y pasó ocho años recorriendo las lunas. Su mayor descubrimiento surgió lentamente de esa perseverancia: la forma en que el campo magnético de Júpiter se envolvía alrededor de Europa solo podía explicarse por un océano salado bajo el hielo — el caso más sólido hasta entonces de que una luna de Júpiter podría contener agua líquida, y vida. Al final fue enviada deliberadamente a Júpiter, para que nunca pudiera caer sobre Europa y contaminarla.",

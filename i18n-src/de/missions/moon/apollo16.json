@@ -1,5 +1,8 @@
 {
   "name": "Apollo 16",
+  "vehicle": "Saturn V (AS-511)",
+  "payload": "48599 kg Startmasse (CSM Casper (CSM-113) + LM Orion (LM-11))",
+  "delta_v": "~6 km/s (Hin- und Rückflug)",
   "dispatch": "Apollo 16 flog zum lunaren Hochland, um alte Vulkane zu beproben, und stellte fest, dass es dort nie welche gegeben hatte. Geologen waren sich sicher, dass die blasse, zerklüftete Descartes-Region vulkanisch war; jedes Gestein, das Young und Duke zurückbrachten, war Brekzie — Geröll, das durch Einschläge zusammengeschweißt wurde. Falsch zu liegen war der Gewinn: Das helle Hochland des Mondes erwies sich als Aufzeichnung eines jungen Sonnensystems unter unerbittlichem Bombardement, nicht unter Eruptionen. Es ist ein klares Beispiel dafür, wie Exploration sich tatsächlich bewährt — man geht hin, um zu bestätigen, was man bereits zu wissen glaubt, und der Ort erzählt einem etwas Besseres.",
   "type": "BEMANNTER LANDER · GEFLOGEN",
   "first": "Erste Mondlandung im Mondhochland — Descartes; John Youngs \"Lunar Grand Prix\"",

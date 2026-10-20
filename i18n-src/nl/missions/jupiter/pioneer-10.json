@@ -1,5 +1,8 @@
 {
   "name": "Pioneer 10",
+  "vehicle": "Atlas SLV-3C Centaur D-1A / TE-364-4",
+  "payload": "Voorbijvlucht-ruimtevaartuig voor het buitenste zonnestelsel; eerste met SNAP-19-RTG's; 25 W bij lancering (afnemend tot ~65 W bruikbaar vermogen; signaal verloren in 2003)",
+  "delta_v": "~14,4 km/s (heliocentrisch na Jupiter)",
   "type": "Scheervlucht · Voltooid",
   "first": "Eerste ruimtevaartuig door de planetoïdengordel en eerste Jupiter-passage (04-12-1973)",
   "dispatch": "Pioneer 10 ging als eerste, twee gevaren tegemoet die niemand had gemeten. Geen enkel ruimtevaartuig had de asteroïdengordel doorkruist — verondersteld een schietbaan van puin te zijn — of Jupiters straling overleefd, waarvan werd aangenomen dat die dodelijk was voor elektronica. Pioneer 10 deed beide: het doorkruiste de gordel ongedeerd (de gordel, zo bleek, is grotendeels leeg), bereikte Jupiter in december 1973 als het eerste ruimtevaartuig ooit dat dit deed, en leverde de eerste close-upbeelden van de reuzenplaneet. Daarna werd het het eerste door mensen gemaakte object dat voor goed op weg werd gestuurd uit het zonnestelsel. De waarde ervan was bewijs — het veranderde de onbekende gevaren op de weg naar de buitenplaneten in bekende, zodat de Voyagers gebouwd konden worden om ze het hoofd te bieden.",

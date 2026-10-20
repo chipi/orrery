@@ -1,5 +1,8 @@
 {
   "name": "Magellan",
+  "vehicle": "Space Shuttle Atlantis (STS-30) + Inertial Upper Stage",
+  "payload": "3460 kg (incl. 2414 kg propellant)",
+  "delta_v": "~3.7 km/s",
   "type": "ORBITER · FLOWN",
   "first": "Most complete radar map of Venus — 98% of the surface at ~120-m resolution; first planetary spacecraft launched from the Space Shuttle",
   "description": "Magellan turned Venus from a featureless cloud-veiled disc into a mapped planet. Launched from Shuttle Atlantis's payload bay 1989-05-04 — the first planetary spacecraft to ride a Shuttle — and arrived at Venus 1990-08-10 via a long Type-IV trajectory (1.5 solar revolutions). Over four mapping cycles the synthetic-aperture radar imaged 98% of Venus's surface at ~120-m resolution, revealing tessera highlands, coronae, pancake domes, and a young, volcanically-resurfaced surface. Mission ended 1994-10-13 in the Termination Experiment — the first planned controlled atmospheric entry of a planetary spacecraft.",

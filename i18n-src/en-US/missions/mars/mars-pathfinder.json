@@ -1,5 +1,8 @@
 {
   "name": "Mars Pathfinder",
+  "vehicle": "Delta II 7925",
+  "payload": "890 kg (lander + cruise stage at launch)",
+  "delta_v": "~5.2 km/s",
   "type": "LANDER · ROVER · FLOWN",
   "first": "First wheels on Mars; demonstrated airbag landing",
   "dispatch": "Mars Pathfinder was NASA’s proof that landing on Mars did not have to cost a fortune. Instead of the retrorocket hover the Vikings used, it hit the atmosphere behind a heat shield, popped a parachute, inflated a cocoon of airbags, and bounced dozens of times across the surface before rolling to a stop and opening like a flower. Out drove Sojourner — a rover the size of a microwave, the first wheels ever to turn on another planet. The science was modest; the point was the method. The airbag landing and the faster-cheaper-better approach it proved became the template for the far more ambitious rovers — Spirit, Opportunity, Curiosity — that followed.",

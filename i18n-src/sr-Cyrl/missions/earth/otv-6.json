@@ -1,5 +1,8 @@
 {
   "name": "X-37B OTV-6 (USA-299, USSF-7)",
+  "vehicle": "Atlas V 501 (AV-081)",
+  "payload": "USA-299 / USSF-7; X-37B Orbital Test Vehicle (~5000 kg). Корисни терет углавном поверљив.",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "НЕМАНСКИ СВЕМИРСКИ АВИОН · ЛЕТЕО",
   "first": "USA-299 / USSF-7 — 908 дана у орбити, слетање на писту Shuttle Landing Facility у KSC",
   "description": "Шести лет X-37B — први под новом организационом ознаком USSF; рекордних 908 дана у орбити (~2,5 године). Лансиран 2020-05-17 у 13:14 UTC са CCAFS SLC-41 ракетом Atlas V 501 AV-081; слетео на KSC SLF 2022-11-12 у 10:22 UTC. Носио је PRAM лабораторије Naval Research Laboratory (Photovoltaic RF Antenna Module — експеримент претварања соларне енергије снаге 1 W у микроталасни сноп) и избацивач сателита FalconSAT-8 лабораторије AFRL.",

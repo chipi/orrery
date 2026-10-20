@@ -1,5 +1,8 @@
 {
   "name": "X-37B OTV-2 (USA-226)",
+  "vehicle": "Atlas V 501 (AV-026)",
+  "payload": "USA-226; Veículo de Teste Orbital X-37B (~5000 kg). Cargas úteis em grande parte confidenciais.",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "AVIÃO ESPACIAL NÃO TRIPULADO · VOADO",
   "first": "USA-226 — 469 dias em órbita, Base da Força Aérea de Vandenberg",
   "description": "Segundo voo do X-37B, segundo dos dois veículos do programa. Lançado em 2011-03-05 às 22:46 UTC de CCAFS SLC-41 em um Atlas V 501 AV-026; pousou na Base da Força Aérea de Vandenberg em 2012-06-16 às 12:48 UTC. 469 dias em órbita — na época, o mais longo voo espacial orbital autônomo dos EUA, superado por todos os voos OTV subsequentes. Cargas úteis classificadas.",

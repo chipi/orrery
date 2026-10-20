@@ -1,5 +1,8 @@
 {
   "name": "Vega 2",
+  "vehicle": "Proton-K / D-1",
+  "payload": "Gemella identica della Vega 1: bus di sorvolo da 4920 kg + lander di Venere da ~1500 kg + aerostato a elio. Lanciata 6 giorni dopo la Vega 1 per ridondanza + una soluzione di flotta accoppiata per Halley.",
+  "delta_v": "~3,6 km/s (partenza + reindirizzamento per l'intercettazione di Halley)",
   "type": "SORVOLO + LANDER + PALLONE · COMPLETATO",
   "first": "Primo analisi chimico di suolo tipo altopiano venusiano (Aphrodite Terra, 1985); incontro con Halley accoppiato con Vega 1 ha fornito la soluzione di targeting per Giotto",
   "description": "Gemello di Vega 1, lanciato 6 giorni dopo (1984-12-21) per ridondanza + una soluzione di flotta accoppiata per Halley. Il modulo di discesa di Vega 2 si è posato il 1985-06-15 in Rusalka Planitia, sul fianco settentrionale di Aphrodite Terra, e ha utilizzato la spettrometria XRF per individuare materiale anortosita-norite-troctolite — il primo analisi chimico della crosta venusiana di tipo altopiano (la composizione assomiglia agli altopiani lunari, anche se il sito di atterraggio stesso è una pianura). Il suo pallone ha funzionato in modo identico a quello di Vega 1, alla deriva nell'emisfero opposto a ~240 km/h. Il bus ha sorvolato la cometa 1P/Halley a 8030 km il 1986-03-09. Insieme i due bus Vega hanno restituito le prime immagini ravvicinate del nucleo cometario e hanno affinato la determinazione della posizione che ha permesso a Giotto di tentare un sorvolo a 596 km cinque giorni dopo.",

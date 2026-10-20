@@ -1,5 +1,8 @@
 {
   "name": "Gemini 8 / GT-8",
+  "vehicle": "Titan II GLV (GT-8)",
+  "payload": "Gemini 8; Neil Armstrong e David Scott",
+  "delta_v": "~7,8 km/s (LEO)",
   "type": "TRIPULADA ÓRBITA TERRESTRE · REALIZADA",
   "first": "Primeiro acoplamento de duas espaçonaves; retorno de emergência",
   "dispatch": "A Gemini 8 realizou o primeiro acoplamento de duas espaçonaves em órbita — e quase matou sua tripulação. Minutos depois que Neil Armstrong encaixou sua Gemini em uma junção travada com um alvo Agena, o par conectado começou a girar, cada vez mais rápido, até estar rolando aproximadamente uma vez por segundo e a visão dos astronautas começando a escurecer em direção ao desmaio. Armstrong desacoplou — o que só piorou, já que a falha estava em sua própria espaçonave — então desligou os propulsores principais e parou a rotação com o sistema de controle de reentrada, uma decisão que salvou suas vidas mas, pelas regras, forçou um retorno de emergência imediato. Foi o momento mais perigoso do programa, e foi o primeiro voo espacial de Armstrong. O diagnóstico calmo e rápido sob uma situação crítica é exatamente o temperamento que a NASA lembraria ao escolher quem pousaria na Lua.",

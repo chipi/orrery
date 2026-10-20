@@ -1,5 +1,8 @@
 {
   "name": "Chandrayaan-3",
+  "vehicle": "LVM3 M4 (in precedenza GSLV Mk III)",
+  "payload": "3900 kg di massa al lancio; 1726 kg di lander + rover",
+  "delta_v": "~3,5 km/s",
   "type": "LANDER · ROVER · FLOWN",
   "first": "Primo allunaggio morbido vicino al polo sud lunare",
   "description": "Dopo la perdita del lander Vikram di Chandrayaan-2 nel 2019, la terza missione lunare dell'ISRO è stata deliberatamente conservativa — focalizzata sul lander anziché trasportare un orbiter. Vikram si è posato a 69,4° S di latitudine, il punto più vicino a un polo lunare mai raggiunto da un veicolo spaziale. Il rover Pragyan ha rilevato lo zolfo sulla superficie lunare per la prima volta e ha effettuato misurazioni termiche in situ. L'India è diventata la quarta nazione a effettuare un allunaggio morbido sulla Luna, atterrando più vicino a un polo lunare di qualsiasi altro veicolo spaziale precedente — una regione dove in futuro potrebbe diventare possibile l'estrazione di ghiaccio d'acqua.",

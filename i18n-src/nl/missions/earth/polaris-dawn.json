@@ -1,5 +1,8 @@
 {
   "name": "Polaris Dawn",
+  "vehicle": "Falcon 9 Block 5 (B1083.4) + Crew Dragon C207 (Resilience)",
+  "payload": "~12500 kg naar LEO; 4 bemanningsleden, eerste commerciële EVA-pakken",
+  "delta_v": "~10,5 km/s (aanvankelijke apogeum van 1408 km, daarna cirkelbaan van 730 km)",
   "type": "BEMANDE FREE-FLYER · GEVLOGEN",
   "first": "Eerste commerciële ruimtewandeling; hoogste aardbaan met mensen sinds Apollo 17 (1408 km)",
   "description": "Jared Isaacman (commandant), Scott 'Kidd' Poteet (piloot), Sarah Gillis en Anna Menon (SpaceX-ingenieurs / missiespecialisten). Gelanceerd op 2024-09-10 om 09:23 UTC vanaf LC-39A op Falcon 9 B1083, boven op Crew Dragon Resilience (C207, derde vlucht). Op dag 1 werd het apogeum verhoogd tot 1408 km — de hoogste baan ooit door mensen gevlogen buiten de Apollo-maanmissies; het apogeum werd vervolgens verlaagd tot een circulaire 730 km baan voor de EVA. Op dag 3 vond de eerste commerciële EVA plaats: Isaacman en Gillis stapten in nieuwe SpaceX-EVA-pakken door het geopende luik (geen luchtsluis — volledige cabine-blootstelling aan vacuüm voor alle 4 bemanningsleden), elk circa 8 minuten in vacuüm doorbrengend om mobiliteit te testen. Starlink-laserverbindingen tussen satellieten werden vanuit een baan om de Aarde getest. Plonsten op 2024-09-15 om 07:36 UTC neer voor de kust van Florida.",

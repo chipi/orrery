@@ -1,5 +1,8 @@
 {
   "name": "Soyuz 1",
+  "vehicle": "Soyuz (11A511)",
+  "payload": "Soyuz 7K-OK No.4; Vladimir Komarov",
+  "delta_v": "~7.8 km/s (LEO)",
   "type": "CREWED EARTH-ORBIT · LOST",
   "first": "First Soyuz flight — parachute failure killed Vladimir Komarov (first in-flight spaceflight death)",
   "dispatch": "Soyuz 1 is the flight that killed a cosmonaut, and it should never have flown. The new Soyuz spacecraft was rushed into service under political pressure with hundreds of known unresolved faults — engineers reportedly pleaded to delay — and in orbit it began to fail: a solar panel wouldn't deploy, the attitude control fought the pilot. Vladimir Komarov flew it down anyway, and on reentry the parachutes tangled and failed. He hit the ground at full speed. It was the first death in the history of human spaceflight, and its cause was less bad luck than a program that couldn't afford to admit its machine wasn't ready — the exact failure the culture of hidden, must-succeed firsts had been building toward.",

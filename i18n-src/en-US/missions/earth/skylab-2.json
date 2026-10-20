@@ -1,5 +1,8 @@
 {
   "name": "Skylab 2",
+  "vehicle": "Saturn IB (SA-206)",
+  "payload": "20121 kg launch mass; CSM-116 + 3-person crew",
+  "delta_v": "~9.4 km/s (LEO)",
   "dispatch": "Skylab 2 is the mission that saved America's first space station and, in doing so, proved that astronauts are repair crews as much as explorers. Skylab had reached orbit crippled — its sun shield ripped off during launch, one solar panel gone, the other jammed shut, the interior overheating toward uninhabitable. Pete Conrad's crew flew up to a station that might have been a write-off, deployed a parasol sunshade through a small airlock to cool it, and then freed the stuck panel in a dangerous, improvised spacewalk that restored its power. It was the first time a crew had rescued a failing spacecraft in orbit, and it rewrote the assumption that space hardware was disposable.",
   "type": "CREWED STATION CREW · FLOWN",
   "first": "First crewed Skylab visit — repaired the damaged workshop and saved the programme",

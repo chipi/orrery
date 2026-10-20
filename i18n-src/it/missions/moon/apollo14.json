@@ -1,5 +1,8 @@
 {
   "name": "Apollo 14",
+  "vehicle": "Saturn V (AS-509)",
+  "payload": "46305 kg lanciati (CSM Kitty Hawk (CSM-110) + LM Antares (LM-8))",
+  "delta_v": "~6 km/s (andata e ritorno)",
   "dispatch": "Apollo 14 doveva dimostrare che il programma poteva ancora allunare. Volò nove mesi dopo che Apollo 13 aveva quasi ucciso il suo equipaggio, subentrò all'obiettivo che Apollo 13 non aveva mai raggiunto e riportò Alan Shepard nello spazio un decennio dopo che era diventato il primo americano a lasciare il pianeta — tenuto a terra nel frattempo per anni a causa di un disturbo dell'orecchio interno, e ora, a quarantasette anni, la persona più anziana a camminare sulla Luna. Lui e Mitchell arrivarono a circa trenta metri dal bordo del cratere Cone, incapaci di capire nel terreno confuso quanto si fossero effettivamente avvicinati. Poi, negli ultimi minuti sulla superficie, Shepard colpì con un ferro sei improvvisato due palline da golf — una trovata pubblicitaria, e anche un segnale discreto che la crisi era alle spalle e Apollo volava di nuovo.",
   "type": "LANDER EQUIPAGGIATO · VOLATO",
   "first": "Terzo allunaggio — raggiunto l'obiettivo perso di Apollo 13; tiri di golf di Shepard",

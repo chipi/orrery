@@ -1,5 +1,8 @@
 {
   "name": "Vostok 1",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4725 kg de masse au lancement ; module de descente sphérique + module de service",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Vostok 1 est le moment où l'ère spatiale commence avec un être humain à bord. Pendant 108 minutes le 12 avril 1961, Youri Gagarine — un pilote de chasse de 27 ans — est devenu le premier être humain à quitter la planète et à en faire le tour, et le monde s'est réveillé en découvrant que l'Union soviétique avait accompli ce que tout le monde pensait que l'Amérique ferait en premier. Il n'avait presque aucun contrôle du vaisseau spatial ; le vol était dirigé depuis le sol, et il était autant passager que pilote, enfermé dans une sphère conçue pour le ramener à la maison qu'il soit conscient ou non. Peu importait. Un être humain avait fait le tour de la Terre et était revenu, et plus rien dans la façon dont les gens voyaient leur place dans l'univers ne fut tout à fait pareil après.",
   "type": "ORBITE TERRESTRE HABITÉE · VOLÉ",
   "first": "Premier humain dans l'espace ; premier vol orbital habité",

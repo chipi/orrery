@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 6",
+  "vehicle": "Long March 5",
+  "payload": "8200 kg di massa al lancio; 1,935 kg di campione riportato",
+  "delta_v": "~5 km/s",
   "type": "RITORNO DEL CAMPIONE DAL LATO LONTANO · VOLATO",
   "first": "Primo campione di ritorno dal lato nascosto della Luna",
   "description": "Combina le architetture di Chang'e 4 (comunicazioni far-side) e Chang'e 5 (ritorno del campione). Il satellite relè Queqiao-2 è stato lanciato per primo (marzo 2024) per supportare la missione. Chang'e 6 ha poi raccolto 1.935 kg dal cratere Apollo sul lato opposto: materiale con una composizione molto diversa da qualsiasi campione lunare precedentemente restituito. I due emisferi della Luna sono radicalmente diversi (il lato nascosto ha una crosta più spessa, meno mare); questi campioni potrebbero finalmente spiegare il perché.",

@@ -1,5 +1,8 @@
 {
   "name": "Lunar Reconnaissance Orbiter",
+  "vehicle": "Atlas V 401",
+  "payload": "发射质量 1916 kg",
+  "delta_v": "~4 km/s",
   "type": "ORBITER · ACTIVE",
   "first": "有史以来分辨率最高的月球地图",
   "description": "LRO自2009年起环绕月球运行，平均轨道高度为50 km，窄角相机的成像分辨率为50 cm/像素——高到足以看清仍保存在月壤中的Apollo下降级、月球车辙和宇航员的足迹。它在Lunokhod 1停止工作三十九年之后找到了这辆月球车。它为Artemis确定了200多个候选着陆点。推动当今每一项月球计划的月球南极水冰沉积，是由LRO的仪器量化测定的。这场侦察任务成了现代月球时代的基石。",

@@ -1,5 +1,8 @@
 {
   "name": "Dawn",
+  "vehicle": "Delta II 7925H",
+  "payload": "Ionengetriebener Orbiter; Framing Camera, VIR, GRaND usw.",
+  "delta_v": "~11 km/s (ungefähr)",
   "type": "ORBITER · GEFLOGEN",
   "first": "Erste Mission, die zwei außerirdische Körper umkreiste – Vesta, dann Ceres",
   "description": "Dawn bewies den Ionenantrieb im planetaren Maßstab: Es glich seine Bahn der der massereichen Vesta an, verließ sie wieder und schraubte sich spiralförmig zum Zwergplaneten Ceres hinab – das größte Objekt im Asteroidengürtel. Helle Flecken im Occator-Krater wurden zu einem der ikonischen Geheimnisse der Mission und wurden später mit Ausbrüchen salzhaltiger Sole aus einem tiefen Reservoir in Verbindung gebracht. Dieser Katalogeintrag verwendet Ceres als primäres Ziel; Vesta wird in der obigen Erzählung behandelt.",

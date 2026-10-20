@@ -1,5 +1,8 @@
 {
   "name": "Apollo 1 (AS-204)",
+  "vehicle": "Saturn IB (AS-204) — nunca lançado",
+  "payload": "Apollo CSM-012 (Block I) — queimado na plataforma",
+  "delta_v": "0 km/s (missão cancelada antes do voo)",
   "type": "ÓRBITA TERRESTRE TRIPULADA · CANCELADO",
   "first": "Incêndio fatal na plataforma em 27/01/1967 matou Grissom + White + Chaffee",
   "description": "Apollo 1 foi o primeiro voo tripulado planejado do CSM Apollo Block I, originalmente designado AS-204 e programado para lançar em 21/02/1967 do LC-34. Durante um teste de rotina 'plugs-out' em 27/01/1967 às 17:31 EST, com a tripulação selada dentro da cabine pressurizada de oxigênio puro, um incêndio repentino se acendeu na baia de equipamentos inferior — provavelmente um arco elétrico em um fio isolado com Teflon através de cobre prateado que foi danificado durante a instalação. A pressão da cabine subiu para 29 psi em 15 segundos; a escotilha de abertura interna não pôde ser desselada contra o diferencial de pressão. Gus Grissom, Ed White e Roger Chaffee morreram por asfixia em segundos. A investigação levou a uma redesenho completo Block I → Block II + a escotilha unificada mais segura abrindo para fora + materiais de cabine não inflamáveis + atmosfera de cabine rica em nitrogênio antes do lançamento. A designação oficial de Apollo 1 foi atribuída postumamente para honrar a tripulação. As missões Apollo subsequentes (CSM-101 até CSM-114) voaram o hardware Block II que esse redesenho produziu.",

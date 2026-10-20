@@ -1,5 +1,8 @@
 {
   "name": "MESSENGER",
+  "vehicle": "Delta II 7925H-9.5",
+  "payload": "Mercurius-orbiter; beschermd door een zonnescherm (voorzijde 370 °C, achterzijde -45 °C); zeven instrumenten, waaronder beeldvorming, spectrometers, magnetometer, laserhoogtemeter",
+  "delta_v": "~2,3 km/s (Mercurius-baaninsertie)",
   "type": "ORBITER · VOLTOOID",
   "first": "Eerste ruimtevaartuig dat Mercurius in een baan omcirkelde; eerste volledige oppervlaktekaart van de binnenste planeet",
   "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) gebruikte zes zwaartekrachtassists gedurende zeven jaar — Aarde, Venus twee keer, Mercurius drie keer — om af te remmen en in een baan rond Mercurius te komen op 2011-03-18. Beschermd met een zonnescherm waarbij één zijde op 370 °C en de andere op -45 °C. Ontdekkingen omvatten waterijs in permanent in schaduw liggende polaire kraters, tot dan toe onbekende \"hollows\" geologische kenmerken, en bevestiging dat Mercurius' ijzeren kern ongeveer 85 % van de straal van de planeet inneemt (de grootste kern-tot-straal verhouding van enige planeet in het zonnestelsel). De missie eindigde met een gecontroleerde inslag op Mercurius' oppervlak op 2015-04-30 nadat de brandstof op was.",

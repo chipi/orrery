@@ -1,5 +1,8 @@
 {
   "name": "Vostok 1",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4725 kg de massa de lançamento; módulo de descida esférico + módulo de serviço",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Vostok 1 é onde a era espacial começa com uma pessoa dentro dela. Durante 108 minutos em 12 de abril de 1961, Iuri Gagarin — um piloto de caça de 27 anos — tornou-se o primeiro ser humano a deixar o planeta e orbitá-lo, e o mundo acordou para descobrir que a União Soviética havia feito aquilo que todos assumiam que a América faria primeiro. Ele tinha quase nenhum controle da espaçonave; o voo foi conduzido do solo, e ele era tanto passageiro quanto piloto, selado em uma esfera construída para trazê-lo de volta estivesse ele consciente ou não. Não importava. Um humano havia circundado a Terra e retornado, e nada sobre como as pessoas viam seu lugar no universo foi exatamente o mesmo depois disso.",
   "type": "ÓRBITA TERRESTRE TRIPULADA · VOOU",
   "first": "Primeiro humano no espaço; primeiro voo orbital tripulado",

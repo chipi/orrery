@@ -1,5 +1,8 @@
 {
   "name": "Vostok 4",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4728 kg di massa al lancio; un solo cosmonauta",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "VEICOLO SPAZIALE ABITATO IN ORBITA TERRESTRE · COMPLETATO",
   "first": "Secondo di primo volo gemellato — prime comunicazioni tra due veicoli spaziali abitati",
   "dispatch": "Vostok 4 fu la risposta a Vostok 3 — il secondo veicolo nel primo volo gemellato, e il momento in cui due umani in due veicoli spaziali separati parlarono per la prima volta l'uno con l'altro in orbita. Pavel Popovič lanciò un giorno dopo Nikolaev e si avvicinò a circa sei chilometri e mezzo di distanza, abbastanza vicino da comunicare direttamente via radio vocale, da veicolo a veicolo, piuttosto che attraverso il controllo terrestre. Come il suo partner non poteva manovrare per mantenere la distanza, quindi i due si allontanarono gradualmente. Ma l'immagine di due cosmonauti che orbitavano attorno alla Terra in formazione, parlando tra loro, era esattamente il tipo di primato che il programma era costruito per realizzare.",

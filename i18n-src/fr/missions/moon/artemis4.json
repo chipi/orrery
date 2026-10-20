@@ -1,5 +1,8 @@
 {
   "name": "Artemis IV",
+  "vehicle": "SLS Block 1 (dernier vol avec l'étage supérieur ICPS) + atterrisseur habité (Starship HLS ou Blue Moon, pas encore choisi)",
+  "payload": "Orion + équipage de 4 personnes ; 2 membres d'équipage à la surface pendant environ une semaine",
+  "delta_v": "~7 km/s (aller-retour)",
   "type": "ATTERRISSAGE AVEC ÉQUIPAGE · PRÉVU",
   "first": "Premier alunissage en équipage depuis Apollo 17 (1972)",
   "description": "Depuis le changement de plan de la NASA en février 2026, Artemis IV est la mission qui ramène des humains à la surface de la Lune — le premier alunissage depuis Apollo 17 en 1972, et le tout premier près du pôle sud. Le SLS, lors de son dernier vol avec l'étage supérieur provisoire, lance Orion avec quatre astronautes vers la Lune. En orbite lunaire, ils rejoignent un atterrisseur commercial — le Starship de SpaceX ou le Blue Moon de Blue Origin, choisi après les essais d'amarrage d'Artemis III — et deux astronautes descendent vers la région du pôle sud pour environ une semaine de travail en surface, tandis que deux restent à bord d'Orion. Le pôle sud est l'objectif parce que ses cratères en ombre permanente renferment de la glace d'eau, que de futures missions pourraient transformer en eau potable, en oxygène et en ergols. La NASA a identifié neuf régions d'alunissage candidates. Prévu pour début 2028 ; l'équipage n'a pas encore été nommé.",

@@ -1,5 +1,8 @@
 {
   "name": "Apollo 17",
+  "vehicle": "Saturn V (AS-512)",
+  "payload": "48609 kg launched (CSM America + LM Challenger)",
+  "delta_v": "~6 km/s (round trip)",
   "type": "CREWED LANDER · ROVER · FLOWN",
   "first": "Last crewed mission to the Moon (and the only Apollo with a trained geologist)",
   "dispatch": "Apollo 17 was the end, though almost no one watching in December 1972 believed it would be. It was also, belatedly, the flight that put a real scientist on the Moon — the geologist Harrison Schmitt, whose eye caught the orange volcanic glass at Shorty Crater that rewrote what the Moon is made of. Cernan and Schmitt stayed three days, drove twenty-two miles, and then Cernan climbed the ladder for the last time anyone has, saying they left \"as we came, and God willing, we shall return.\" More than half a century later no one has — and every serious argument for going back still begins with the fact that we once could.",

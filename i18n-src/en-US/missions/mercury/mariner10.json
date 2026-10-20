@@ -1,5 +1,8 @@
 {
   "name": "Mariner 10",
+  "vehicle": "Atlas SLV-3D Centaur (AC-34)",
+  "payload": "503 kg — TV cameras, IR + UV spectrometers, magnetometer, charged-particle telescope",
+  "delta_v": "~13.7 km/s (Venus gravity-assist trajectory)",
   "type": "PLANETARY FLYBY · FLOWN",
   "first": "First Mercury flyby; first dual-planet flyby; first gravity-assist mission",
   "description": "First spacecraft to visit Mercury, first to fly past two planets, and first to use a gravity assist to reach its destination. Launched 1973-11-03 05:45 UTC from Cape Canaveral LC-36B on Atlas SLV-3D Centaur AC-34. Mariner 10 swung past Venus on 1974-02-05 (5768 km closest approach, first UV cloud-belt imaging of Venus) using the encounter to drop its perihelion into Mercury's orbital realm — the first deliberate gravity-assist trajectory in space history. Made three Mercury flybys: 1974-03-29 (703 km), 1974-09-21 (48069 km), and 1975-03-16 (327 km). Imaged ~45% of Mercury's surface — the only resolved imagery available until MESSENGER (2008-2015). Discovered Mercury's intrinsic magnetic field and thin sodium-helium exosphere. Solar-array temperature management was an open mission engineering problem: project scientists tilted the panels and rolled the spacecraft to keep them under 115°C. Mission ended 1975-03-24 when attitude-control nitrogen propellant was depleted; spacecraft is presumed to be in heliocentric orbit, periodically passing Mercury.",

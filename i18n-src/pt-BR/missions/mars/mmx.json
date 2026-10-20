@@ -1,5 +1,8 @@
 {
   "name": "MMX",
+  "vehicle": "H3-24L",
+  "payload": "~4000 kg (planejado)",
+  "delta_v": "~5 km/s",
   "type": "RETORNO DA AMOSTRA DE FOBOS · PLANEJADO",
   "first": "Primeira amostra retornada de uma lua marciana",
   "description": "Martian Moons eXploration é o plano de JAXA para pousar em Fobos, coletar cerca de 10 g de regolito e trazê-lo para casa. As amostras podem resolver uma questão há muito debatida: Fobos e Deimos são asteróides capturados ou fragmentos de um impacto antigo no próprio Marte? A missão também inclui um rover germano-francês para mobilidade de superfície em Fobos – um modelo de operações totalmente diferente de tudo o que as missões Hayabusa fizeram em Itokawa ou Ryugu. O lançamento foi planejado para 2024, mas caiu para 2026 devido a atrasos no veículo de lançamento H3 do JAXA.",

@@ -1,5 +1,8 @@
 {
   "name": "Giotto",
+  "vehicle": "Ariane 1",
+  "payload": "Sonda a forma di tamburo da 960 kg, stabilizzata per rotazione, con uno scudo antipolvere Whipple-Kevlar a più strati (il paraurti posteriore ha mantenuto attivi gli strumenti scientifici durante la tempesta di polvere a 68 km/s di velocità relativa nella chioma di Halley). 10 strumenti — Halley Multicolour Camera, spettrometri di massa, rivelatori di impatti di polvere, magnetometro, strumenti per il plasma.",
+  "delta_v": "~1,5 km/s (intercettazione di Halley)",
   "type": "SORVOLO · COMPLETATO",
   "first": "Prima missione nello spazio profondo dell'ESA; sorvolo cometario più ravvicinato mai tentato (Halley, 596 km, 1986); prime immagini ravvicinate di un nucleo cometario",
   "description": "Giotto era il pilastro europeo dell'armata di Halley — una sonda stabilizzata per rotazione di 960 kg avvolta in uno scudo anti-polvere stratificato Whipple-Kevlar. Lanciata il 1985-07-02, attraversò la chioma di Halley a 68 km/s di velocità relativa il 1986-03-14 con un avvicinamento minimo di 596 km, restituendo le prime immagini ravvicinate di qualsiasi nucleo cometario (un corpo allungato irregolare di 15 × 7,2 × 7,2 km con getti di polvere concentrati). Un impatto di polvere ~7,6 secondi prima dell'avvicinamento minimo destabilizzò l'asse di rotazione e mise fuori servizio la telecamera, ma gli altri strumenti continuarono a trasmettere attraverso la chioma. Dopo essere rimasta in ibernazione in orbita eliocentrica, Giotto si riattivò nel 1990 e utilizzò un assist gravitazionale della Terra per cambiare rotta verso la cometa 26P/Grigg-Skjellerup, sorvolandola a 200 km il 1992-07-10 — il sorvolo cometario più ravvicinato mai eseguito.",

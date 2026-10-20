@@ -1,5 +1,8 @@
 {
   "name": "Ulysses",
+  "vehicle": "STS-41 Discovery + IUS + PAM-S",
+  "payload": "366 kg estabilizada por rotación, 9 instrumentos (magnetómetro, viento solar, partículas energéticas, ondas de radio + plasma, polvo, rayos cósmicos, detector de ráfagas de rayos gamma, composición del viento solar, ráfagas de rayos X + gamma). Alimentada por un único GPHS-RTG.",
+  "delta_v": "~15,4 km/s (la asistencia gravitatoria de Júpiter hizo el trabajo pesado)",
   "type": "ORBITADOR POLAR SOLAR · FINALIZADA",
   "first": "Única nave que jamás haya entrado en una órbita heliocéntrica de alta inclinación; únicas mediciones directas del viento solar en todas las latitudes heliográficas",
   "description": "Misión conjunta ESA / NASA. Lanzado 1990-10-06 desde STS-41 Discovery + IUS + PAM-S etapas superiores, Ulysses utilizó una asistencia gravitatoria de Júpiter el 1992-02-08 para desviarse ~80° fuera de la eclíptica — la única forma de alcanzar una órbita casi polar relativa al Sol desde el plano orbital casi ecuatorial de la Tierra. Tres órbitas polares completas del Sol durante 18,5 años permitieron cartografiar el viento solar, el campo magnético heliosférico y las partículas energéticas en todas las latitudes heliográficas — mediciones directas que revelaron cómo la estructura del viento solar varía entre las regiones ecuatoriales de viento lento y los flujos de viento rápido de altas latitudes procedentes de agujeros coronales. Misión terminada 2009-06-30 cuando la hidracina del propulsor se congeló en las tuberías. El hardware permanece en órbita polar heliocéntrica.",

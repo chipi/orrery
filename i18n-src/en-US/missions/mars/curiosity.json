@@ -1,5 +1,8 @@
 {
   "name": "Curiosity",
+  "vehicle": "Atlas V 541",
+  "payload": "3839 kg launch mass (899 kg rover on surface)",
+  "delta_v": "~6.1 km/s",
   "type": "ROVER · ACTIVE",
   "first": "First nuclear-powered Mars rover; first sky-crane landing",
   "dispatch": "Curiosity is a nuclear-powered laboratory the size of a small car, and getting it down was the hard part. Too heavy for airbags, it was lowered onto Mars in 2012 by a rocket-powered sky crane in a sequence so risky its planners called it seven minutes of terror — and it worked on the first try. Since then it has drilled its way across Gale Crater and answered the question it was sent to ask: the crater once held a lake, with the chemistry a living thing could have used. Mars had been habitable. Curiosity is still driving, climbing a mountain of layered rock that reads like the planet’s own history book.",

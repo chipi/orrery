@@ -1,5 +1,8 @@
 {
   "name": "BepiColombo",
+  "vehicle": "Ariane 5 ECA",
+  "payload": "Conjunto de lançamento de 4100 kg: MTM (Mercury Transfer Module, ESA — 4 propulsores iônicos, painéis solares) + MPO (Mercury Planetary Orbiter, ESA, 1230 kg, 11 instrumentos) + MIO (Mercury Magnetospheric Orbiter, JAXA, 285 kg, 5 instrumentos) + escudo solar MOSIF. Os dois orbitadores científicos se separam após a chegada a Mercúrio.",
+  "delta_v": "~7,2 km/s (cruzeiro iônico + 9 assistências gravitacionais + MOI)",
   "type": "ORBITADOR · ATIVO",
   "first": "Primeira missão conjunta Europa + Japão para um planeta; segunda espaçonave a orbitar Mercúrio (após Messenger)",
   "description": "Missão conjunta ESA/JAXA para Mercúrio, lançada em 2018-10-20 — nomeada em homenagem ao matemático italiano Giuseppe (Bepi) Colombo, que projetou a trajetória de múltiplos sobrevoos da Mariner 10. O cruzeiro de 8 anos utiliza 9 assistências gravitacionais (Terra 2020, Vênus 2020, Vênus 2021, seguidas por seis sobrevoos de Mercúrio 2021–2025) mais empuxo contínuo de propulsão iônica-elétrica do Módulo de Transferência para Mercúrio para dissipar o enorme gradiente de gravidade solar entre as órbitas da Terra e de Mercúrio. Inserção em órbita de Mercúrio em 2026-11-21; operações científicas começam no início de 2027 após a ejeção do MTM e separação dos dois orbitadores — o MPO da ESA (superfície planetária + composição) e o Mio da JAXA (magnetosfera). Também estão planejados testes da relatividade geral via rastreamento por rádio-ciência através do forte ambiente de gravidade solar de Mercúrio.",

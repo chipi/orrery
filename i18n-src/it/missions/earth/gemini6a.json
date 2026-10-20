@@ -1,5 +1,8 @@
 {
   "name": "Gemini 6A / GT-6A",
+  "vehicle": "Titan II GLV (GT-6A)",
+  "payload": "Gemini 6A; Wally Schirra e Tom Stafford",
+  "delta_v": "~7,8 km/s (LEO)",
   "type": "EQUIPAGGIATA ORBITA TERRESTRE · VOLATA",
   "first": "Primo rendezvous spaziale con equipaggio",
   "dispatch": "Il rendezvous — l'incontro e l'avvicinamento di due veicoli spaziali in orbita — era la capacità senza cui Apollo non poteva farcela, e Gemini 6A è dove è stato fatto per la prima volta. Quasi non volò: il suo obiettivo originale esplose durante la salita in orbita, e poi, legati ai sedili per il lancio riprogrammato, i motori del Titan si accesero e si spensero bruscamente sulla rampa — un momento in cui le regole dicevano di espellere, e Wally Schirra, non sentendo movimento, scelse con freddezza di non farlo. Tre giorni dopo volò e fece la cosa che non era mai stata fatta: raggiunse Gemini 7 e mantenne la posizione a un piede di distanza, gli equipaggi abbastanza vicini da leggere i volti l'uno dell'altro. Sembrava facile ma non lo era affatto — la meccanica orbitale per raggiungere un altro veicolo è profondamente controintuitiva — e risolverla fu il momento in cui il rendezvous in orbita lunare, e l'intero piano Apollo, divenne reale.",

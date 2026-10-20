@@ -1,5 +1,8 @@
 {
   "name": "Galileo",
+  "vehicle": "Space Shuttle Atlantis + IUS",
+  "payload": "Sonde Galileo et sonde d'entrée atmosphérique ; ~2,5 t de masse à sec",
+  "delta_v": "~14 km/s (approximatif)",
   "type": "ORBITEUR · FLOWN",
   "first": "Premier engin spatial en orbite autour de Jupiter ; sonde atmosphérique dans les nuages de Jupiter",
   "dispatch": "Galileo aurait dû être paralysé avant même d'arriver. Son antenne principale est restée coincée à demi ouverte en route vers Jupiter, réduisant son débit de données à un filet — et la mission a réussi malgré tout, parce que les ingénieurs ont réécrit son logiciel depuis la Terre pour faire passer la science par une minuscule antenne de secours. Il est devenu le premier engin spatial à se mettre en orbite autour de Jupiter, a largué une sonde dans les nuages de la planète géante, et a passé huit ans à explorer ses lunes. Sa plus grande découverte est née lentement de cette persévérance : la façon dont le champ magnétique de Jupiter s'enroulait autour d'Europe ne pouvait s'expliquer que par un océan salé sous la glace — l'indice le plus solide à ce jour qu'une lune de Jupiter pourrait contenir de l'eau liquide, et de la vie. À la fin, il a été précipité volontairement dans Jupiter, afin qu'il ne puisse jamais tomber sur Europe et la contaminer.",

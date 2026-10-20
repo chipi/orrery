@@ -1,5 +1,8 @@
 {
   "name": "Faith 7 / MA-9",
+  "vehicle": "Atlas LV-3B (MA-9)",
+  "payload": "Mercury-capsule nr. 20 (1376 kg droog); Gordon Cooper",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Faith 7 sloot Mercury af, en deed dat op de harde manier. Gordon Cooper vloog tweeëntwintig banen over anderhalve dag — langer dan alle voorgaande Mercury-vluchten samen — en toen, in de laatste uren, viel zijn automatische besturingssysteem uit. Dus vloog hij de terugkeer handmatig, richtte de capsule op de horizon en de sterren en vuurde zijn retro's af op een gesproken telling, en zette hem dichter bij het schip neer dan welke vlucht ook daarvoor. Het was de laatste keer dat een Amerikaan alleen in de ruimte vloog, en een passend slotwoord voor een programma gebouwd door testpiloten: toen de automatisering het begaf, bracht de piloot hem thuis.",
   "type": "BEMAND AARDBAAN · GEVLOGEN",
   "first": "Laatste Amerikaanse solo-bemande ruimtevlucht; 22 banen / 34 uur",

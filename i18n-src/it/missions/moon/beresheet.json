@@ -1,5 +1,8 @@
 {
   "name": "Beresheet",
+  "vehicle": "Falcon 9 Block 5 (lancio condiviso con Nusantara Satu)",
+  "payload": "585 kg di massa al lancio; prima sonda privata a raggiungere l'orbita lunare; persa durante la discesa propulsa a ~150 m dalla superficie",
+  "delta_v": "~6 km/s (orbite di fasatura molto ellittiche, non TLI diretta)",
   "type": "PRIVATE LANDER · CRASHED",
   "first": "Prima missione finanziata con fondi privati a raggiungere la Luna; prima missione lunare israeliana",
   "description": "Beresheet di SpaceIL (ebraico: \"In principio\") fu lanciato come passeggero condiviso su un Falcon 9 nel febbraio 2019. Anziché un'iniezione trans-lunare diretta, il piccolo lander eseguì settimane di manovre di innalzamento del perigeo per salire da un'orbita di parcheggio fino alla Luna — una traiettoria che permette il risparmio di carburante, sviluppata per le missioni a basso costo. Dopo l'immissione in orbita lunare riuscita il 4 aprile 2019, un reset dell'unità di misura inerziale durante la discesa causò lo spegnimento del motore principale. Beresheet si schiantò in Mare Serenitatis. SpaceIL si impegnò a realizzare un successore (Beresheet 2) nel giro di pochi giorni.",

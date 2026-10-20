@@ -1,5 +1,8 @@
 {
   "name": "Blue Moon MK1",
+  "vehicle": "New Glenn (1st stage reusable + 2nd stage expendable)",
+  "payload": "~3000 kg cargo to lunar surface (CLPS payloads)",
+  "delta_v": "~6 km/s",
   "type": "CARGO LANDER · PLANNED",
   "first": "First flight of Blue Origin's Blue Moon lunar lander architecture",
   "description": "Blue Origin's first cargo Blue Moon lander, contracted under NASA's Commercial Lunar Payload Services (CLPS) program. A single-stage descent vehicle powered by the BE-7 cryogenic engine, designed to deliver up to ~3 tonnes of payload to the lunar surface. Launches on Blue Origin's New Glenn from Cape Canaveral, performs trans-lunar injection on the New Glenn second stage, then executes lunar orbit insertion and powered descent. The Mark 1 cargo flight precedes the human-rated Mark 2, which NASA contracted for crewed Artemis landings — now one of the two candidate landers for Artemis IV and later missions.",

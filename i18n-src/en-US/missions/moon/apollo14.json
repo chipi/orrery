@@ -1,5 +1,8 @@
 {
   "name": "Apollo 14",
+  "vehicle": "Saturn V (AS-509)",
+  "payload": "46305 kg launched (CSM Kitty Hawk (CSM-110) + LM Antares (LM-8))",
+  "delta_v": "~6 km/s (round trip)",
   "type": "CREWED LANDER · FLOWN",
   "first": "Third lunar landing — Apollo 13's lost target reached; Shepard's golf shots",
   "dispatch": "Apollo 14 had to prove the program could still land. It flew nine months after Apollo 13 nearly killed its crew, took over the target Apollo 13 never reached, and put Alan Shepard back in space a decade after he became the first American to leave the planet — grounded in between for years by an inner-ear disorder, and now, at forty-seven, the oldest person to walk on the Moon. He and Mitchell came up about thirty metres short of Cone Crater's rim, unable to tell in the confusing terrain how close they had actually gotten. Then, in the last minutes on the surface, Shepard swung a makeshift six-iron at two golf balls — a stunt, and also a quiet signal that the crisis was behind them and Apollo was flying again.",

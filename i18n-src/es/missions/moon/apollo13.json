@@ -1,5 +1,8 @@
 {
   "name": "Apollo 13",
+  "vehicle": "Saturn V (AS-508)",
+  "payload": "44069 kg lanzados (CSM Odyssey + LM Aquarius)",
+  "delta_v": "~6 km/s (ida y vuelta, alunizaje abortado)",
   "type": "VUELO TRIPULADO LUNAR · REALIZADO (ATERRIZAJE ABORTADO)",
   "first": "La misión que convirtió un desastre casi seguro en el rescate más celebrado de la NASA",
   "dispatch": "Apollo 13 nunca aterrizó, y es la misión que todos recuerdan. Dos días después del despegue, un tanque de oxígeno se desgarró y transformó un vuelo de rutina hacia las tierras altas de Fra Mauro en un problema de cuatro días: mantener vivos a tres hombres en una nave agonizante a un cuarto de millón de millas de casa. Lo que los salvó no fue el heroísmo, sino la preparación y una sala llena de personas resolviendo el problema en tiempo real, improvisando una manera de respirar y una ruta a casa con lo que ya estaba atornillado al vehículo. La NASA lo llamó un fracaso exitoso. Es más cercano a la verdad decir que es el vuelo que demostró que la agencia era tan competente como afirmaba serlo.",

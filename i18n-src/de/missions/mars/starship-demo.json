@@ -1,5 +1,8 @@
 {
   "name": "Starship Demo",
+  "vehicle": "Starship (Super Heavy + Starship-Oberstufe, verbraucht)",
+  "payload": "~100000 kg (Zielwert mit Betankung im Orbit)",
+  "delta_v": "~13 km/s",
   "type": "UNCREWED MARS DEMO · GEPLANT",
   "first": "Erstes vollständig wiederverwendbares Startsystem für den Versuch einer Marslandung",
   "description": "Eine unbemannte Demonstration der Starship-Architektur für Mars: Start auf Super Heavy, Betankung in LEO von einer Tankervariante, dann Transmars-Injektion eines vollgetankten Starship und angetriebener Abstieg zur Marsoberfläche. Das erklärte Ziel von SpaceX ist ein Startfenster 2026–2027; technische Realität (Starship arbeitet noch an der Zuverlässigkeit von Orbitalflügen und die Betankung im Orbit wurde noch nicht demonstriert) macht 2028 oder später wahrscheinlicher. Falls erfolgreich, würde es die Nutzlast-Wirtschaft für Mars invertieren – von Tausenden Kilogramm zu hundert Tonnen pro Landung.",

@@ -1,5 +1,8 @@
 {
   "name": "Artemis V",
+  "vehicle": "SLS Block 1 (Oberstufe noch zu bestätigen) + bemannte Landefähre (Starship HLS oder Blue Moon)",
+  "payload": "Orion + vierköpfige Besatzung; zweite bemannte Landung, Beginn der Arbeiten an der Mondbasis",
+  "delta_v": "~7 km/s (Hin- und Rückflug)",
   "type": "LANDER MIT BESATZUNG · GEPLANT",
   "first": "Zweite bemannte Landung der Artemis-Ära – der Beginn einer Mondbasis",
   "description": "Artemis V ist als zweite bemannte Landung in der Nähe des Mondsüdpols geplant und folgt Artemis IV noch im selben Jahr – Teil des Ziels der NASA von 2026, mindestens eine Landung pro Jahr durchzuführen. Sie soll den Übergang von kurzen Besuchen zu einer dauerhaften Präsenz einleiten: Arbeiten an einer Basis auf der Oberfläche, für die sich die NASA im März 2026 entschieden hat, statt die Raumstation Gateway in der Mondumlaufbahn fertigzustellen, die jetzt pausiert. Wie bei Artemis IV startet die SLS Orion mit vier Besatzungsmitgliedern, und ein kommerzieller Lander bringt zwei von ihnen hinunter. Die SLS ist bis einschließlich Artemis V finanziert; für spätere Missionen hat die NASA kommerzielle, wiederverwendbare Alternativen vorgeschlagen. Geplant für Ende 2028; Besatzung, Lander und Landeplatz sind noch nicht ausgewählt.",

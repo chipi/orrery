@@ -1,5 +1,8 @@
 {
   "name": "Mars 3",
+  "vehicle": "Proton-K / D",
+  "payload": "4650 kg (orbiter + lander combined)",
+  "delta_v": "~5.5 km/s",
   "type": "ORBITER · LANDER · FLOWN",
   "first": "First spacecraft to soft-land on Mars",
   "description": "The Soviet Union's audacious double-mission to Mars in 1971 — Mars 2 and Mars 3 launched 9 days apart. Mars 2's lander crashed; Mars 3's lander achieved the first soft-landing on Mars but went silent ~110 seconds after touchdown — the actual transmission lasted only ~14.5 seconds — possibly due to the global dust storm raging at the time. The orbiter operated for 8 months, returning dozens of images and atmospheric measurements. Despite the brief surface mission, Mars 3 demonstrated that the descent and landing problem on Mars was solvable.",

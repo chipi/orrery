@@ -1,5 +1,8 @@
 {
   "name": "Artemis V",
+  "vehicle": "SLS Block 1 (upper stage to be confirmed) + crewed lander (Starship HLS or Blue Moon)",
+  "payload": "Orion + 4-person crew; second crewed landing, start of lunar base work",
+  "delta_v": "~7 km/s (round trip)",
   "type": "CREWED LANDER · PLANNED",
   "first": "Second crewed landing of the Artemis era — the start of a lunar base",
   "description": "Artemis V is planned as the second crewed landing near the lunar south pole, following Artemis IV within the same year — part of NASA's 2026 aim of at least one landing a year. It is meant to begin the shift from short visits to a lasting presence: work towards a base on the surface, which NASA chose in March 2026 over finishing the Gateway station in lunar orbit, now paused. As on Artemis IV, SLS launches Orion with four crew and a commercial lander carries two of them down. SLS is funded to fly through Artemis V; for later missions NASA has proposed commercial, reusable alternatives. Planned for late 2028; crew, lander and landing site not yet chosen.",

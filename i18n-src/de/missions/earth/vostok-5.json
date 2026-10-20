@@ -1,5 +1,8 @@
 {
   "name": "Vostok 5",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4720 kg Startmasse; einzelner Kosmonaut",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Vostok 5 stellte einen Rekord auf, der bis heute Bestand hat. Waleri Bykowski flog fast fünf Tage lang allein im Orbit — einundachtzig Erdumrundungen — was auch sechs Jahrzehnte später noch immer der längste Solo-Raumflug ist, den je jemand unternommen hat. Es war vor allem ein Belastungstest, der einen einzelnen Kosmonauten und ein kleines Raumfahrzeug weit über den Tag hinaustrieb, den Titow geschafft hatte, um zu sehen, ob ein Mensch einfach weitermachen konnte. Er konnte. Und Bykowski war nicht einmal die Schlagzeile seiner eigenen Mission: zwei Tage nach Beginn seines Fluges startete Vostok 6 mit der ersten Frau im Weltraum an Bord, und die Aufmerksamkeit der Welt richtete sich auf sie.",
   "type": "BEMANNTER ERDORBIT · GEFLOGEN",
   "first": "Längster Solo-Erdorbitalflug — 4 Tage 23 Stunden, 81 Umläufe",

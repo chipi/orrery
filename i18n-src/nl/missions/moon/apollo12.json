@@ -1,5 +1,8 @@
 {
   "name": "Apollo 12",
+  "vehicle": "Saturn V (AS-507)",
+  "payload": "46782 kg gelanceerd (CSM Yankee Clipper (CSM-108) + LM Intrepid (LM-6))",
+  "delta_v": "~6 km/s (heen en terug)",
   "type": "BEMANDE LANDER · GEVLOGEN",
   "first": "Tweede bemande maanlanding — precieze landing 163 m van Surveyor 3",
   "description": "De tweede bemande maanlanding. Saturn V werd tijdens de opstijging twee keer door bliksem getroffen (T+36 s en T+52 s) — Bean herstelde het ruimtevaartuig via de beroemde \"SCE to AUX\"-oproep van EECOM John Aaron, waarna de bemanning de traagheidsmeeteenheid opnieuw uitlijnde in maanbaan. Conrad en Bean voerden een puntprecieze landing uit op de Oceaan der Stormen binnen 163 m van Surveyor 3 (die in april 1967 zacht was geland), liepen vervolgens naar Surveyor 3 en verwijderden de camera + een monster van het oppervlak — stukken die naar de aarde kwamen voor analyse van langdurige blootstelling aan het maanoppervlak. Ze plaatsten ALSEP (het volledige Apollo Lunar Surface Experiments Package — het eerste ALSEP, vergeleken met Apollo 11's eenvoudigere EASEP) dat 8 jaar lang gegevens uitzond. De missie bracht 34 kg aan monsters terug, waaronder donkere mare-basalten.",

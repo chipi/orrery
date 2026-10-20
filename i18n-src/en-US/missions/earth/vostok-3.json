@@ -1,5 +1,8 @@
 {
   "name": "Vostok 3",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4722 kg launch mass; single cosmonaut",
+  "delta_v": "~9.4 km/s (LEO)",
   "type": "CREWED EARTH-ORBIT · FLOWN",
   "first": "First dual-flight rendezvous — flew within ~6.5 km of Vostok 4",
   "dispatch": "Vostok 3 opened the first act of a piece of orbital theatre. A day after Andriyan Nikolayev reached orbit, Vostok 4 followed him up, and for a while the two spacecraft flew within a few kilometres of each other — the first time two crewed craft had ever been in space together. To the world it looked like a rendezvous, and the Soviets were glad to let it. In truth neither ship could maneuver; the closeness came from launching one almost into the other's path, and the gap widened steadily after. A genuine first and a bit of a magic trick at once — and a hint at the real skill, true rendezvous, that no one yet had.",

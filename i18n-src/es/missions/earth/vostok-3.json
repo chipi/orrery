@@ -1,5 +1,8 @@
 {
   "name": "Vostok 3",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4722 kg de masa de lanzamiento; un solo cosmonauta",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "NAVE TRIPULADA ÓRBITA TERRESTRE · REALIZADO",
   "first": "Primer encuentro de vuelo dual — voló a ~6,5 km de Vostok 4",
   "dispatch": "Vostok 3 abrió el primer acto de una obra de teatro orbital. Un día después de que Andrián Nikoláyev alcanzase la órbita, Vostok 4 lo siguió, y durante un tiempo ambas naves volaron a pocos kilómetros la una de la otra — la primera vez que dos naves tripuladas estaban simultáneamente en el espacio. Para el mundo parecía un encuentro de proximidad, y los soviéticos estaban encantados de permitirlo. En realidad ninguna de las dos naves podía maniobrar; la proximidad resultó de lanzar una casi en la trayectoria de la otra, y la distancia se incrementó constantemente después. Un primer logro genuino y también un truco de magia — e indicio de la verdadera destreza, un encuentro real, que aún nadie había dominado.",

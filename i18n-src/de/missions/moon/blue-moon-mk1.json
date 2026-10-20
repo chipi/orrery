@@ -1,5 +1,8 @@
 {
   "name": "Blue Moon MK1",
+  "vehicle": "New Glenn (wiederverwendbare erste Stufe + Einweg-Oberstufe)",
+  "payload": "~3000 kg Fracht zur Mondoberfläche (CLPS-Nutzlasten)",
+  "delta_v": "~6 km/s",
   "type": "CARGO LANDER · GEPLANT",
   "first": "Erster Flug der Blue Moon-Mondlander-Architektur von Blue Origin",
   "description": "Der erste Fracht-Lander Blue Moon von Blue Origin, der im Rahmen des CLPS-Programms (Commercial Lunar Payload Services) der NASA in Auftrag gegeben wurde. Ein einstufiges Abstiegsfahrzeug mit dem kryogenen Triebwerk BE-7, das bis zu ca. 3 Tonnen Nutzlast auf die Mondoberfläche bringen soll. Startet auf der New Glenn von Blue Origin von Cape Canaveral aus, führt mit der zweiten Stufe der New Glenn die translunare Injektion durch und anschließend das Einschwenken in die Mondumlaufbahn sowie den angetriebenen Abstieg. Der Frachtflug Mark 1 geht dem bemannten Mark 2 voraus, den die NASA für bemannte Artemis-Landungen beauftragt hat – jetzt einer der beiden Kandidaten für den Lander von Artemis IV und späteren Missionen.",

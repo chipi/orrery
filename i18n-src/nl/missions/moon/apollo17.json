@@ -1,5 +1,8 @@
 {
   "name": "Apollo 17",
+  "vehicle": "Saturn V (AS-512)",
+  "payload": "48609 kg gelanceerd (CSM America + LM Challenger)",
+  "delta_v": "~6 km/s (heen en terug)",
   "dispatch": "Apollo 17 was het einde, hoewel bijna niemand die in december 1972 toekeek geloofde dat het zo zou zijn. Het was ook, met vertraging, de vlucht die een echte wetenschapper op de Maan bracht — de geoloog Harrison Schmitt, wiens oog het oranje vulkanische glas bij de Shorty-krater opving dat herschreef waaruit de Maan bestaat. Cernan en Schmitt bleven drie dagen, reden tweeëntwintig mijl, en toen beklom Cernan de ladder voor de laatste keer dat iemand dat heeft gedaan, zeggend dat ze vertrokken \"zoals we kwamen, en zo God het wil, zullen we terugkeren.\" Meer dan een halve eeuw later heeft niemand dat gedaan — en elk serieus argument om terug te gaan begint nog steeds met het feit dat we het ooit konden.",
   "type": "BEMANDE LANDER · ROVER · GEVLOGEN",
   "first": "Laatste bemande missie naar de Maan (en de enige Apollo met een getrainde geoloog)",

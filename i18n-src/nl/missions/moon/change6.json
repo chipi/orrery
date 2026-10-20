@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 6",
+  "vehicle": "Long March 5",
+  "payload": "8200 kg lanceermassa; 1,935 kg monster teruggebracht",
+  "delta_v": "~5 km/s",
   "type": "ACHTERZIJDE-MONSTERTERUGKEER · GEVLOGEN",
   "first": "Eerste monsterterugkeer van de maanachterzijde",
   "description": "Combineert de architecturen van Chang'e 4 (achterzijde-communicatie) en Chang'e 5 (monsterterugkeer). De Queqiao-2-relais-satelliet werd eerst gelanceerd (maart 2024) om de missie te ondersteunen. Chang'e 6 verzamelde vervolgens 1,935 kg uit Apollo-krater op de achterzijde — materiaal met een zeer andere samenstelling dan enig eerder teruggebracht maanmonster. De twee halfronden van de Maan zijn radicaal verschillend (de achterzijde heeft dikkere korst, minder mare); deze monsters kunnen eindelijk verklaren waarom.",

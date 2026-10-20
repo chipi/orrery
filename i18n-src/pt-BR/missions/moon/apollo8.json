@@ -1,5 +1,8 @@
 {
   "name": "Apollo 8",
+  "vehicle": "Saturn V (AS-503)",
+  "payload": "28833 kg lançados (CSM da Apollo 8 (CSM-103), sem LM)",
+  "delta_v": "~6 km/s (ida e volta)",
   "dispatch": "Apollo 8 foi uma aposta feita às pressas. A inteligência sugeria que os soviéticos poderiam enviar uma tripulação em órbita ao redor da Lua primeiro, então no verão de 1968 a NASA rasgou o plano de voo e enviou três homens à órbita lunar em apenas o terceiro lançamento de um foguete que nunca havia transportado uma tripulação. Deveria ter sido imprudente. Em vez disso, tornou-se a única boa notícia do ano — 1968 havia sido assassinatos, Vietnã, cidades em chamas — e na véspera de Natal um bilhão de pessoas ouviram o Gênesis lido da órbita lunar e, na fotografia de Bill Anders, viram seu mundo inteiro nascer sobre um horizonte morto pela primeira vez. Apollo 11 é lembrada pela Lua. Apollo 8 é a que nos mostrou a Terra.",
   "type": "TRIPULADO ÓRBITA LUNAR · VOOU",
   "first": "Primeiros humanos a deixar a órbita terrestre baixa + orbitar a Lua",

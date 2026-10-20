@@ -1,5 +1,8 @@
 {
   "name": "Apollo 10",
+  "vehicle": "Saturn V (AS-505)",
+  "payload": "42775 kg Startmasse (CSM Charlie Brown (CSM-106) + LM Snoopy (LM-4))",
+  "delta_v": "~6 km/s (Hin- und Rückflug)",
   "dispatch": "Apollo 10 flog die gesamte Landung — bis auf die letzten fünfzehn Kilometer — und drehte dann planmäßig um. Stafford und Cernan brachten die Mondlandefähre bis auf einen Steinwurf an die Oberfläche im Mare Tranquillitatis heran, führten jeden Schritt des Abstiegs aus und stiegen zurück in den Orbit, ohne aufzusetzen. NASA ließ die Aufstiegstanks sogar halbvoll, sodass es, wie verlockend es auch wurde, niemals eine Option war, es zu versuchen. Es ist der am wenigsten gefeierte Flug des Programms und einer der diszipliniertesten: eine Probe mit voller Geschwindigkeit von zwei Männern, die eine Viertelmillion Meilen flogen in dem Wissen, dass die Landung jemand anderem gehörte.",
   "type": "BEMANNTE MONDUMLAUFBAHN · GEFLOGEN",
   "first": "Vollständige Generalprobe der Mondlandung — LM stieg auf ~15,6 km Höhe ab",

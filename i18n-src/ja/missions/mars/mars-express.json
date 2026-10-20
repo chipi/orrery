@@ -1,5 +1,8 @@
 {
   "name": "Mars Express",
+  "vehicle": "Soyuz-FG / Fregat",
+  "payload": "1183 kg（オービター1123 kg＋Beagle 2ランダー60 kg）",
+  "delta_v": "~4.5 km/s",
   "type": "軌道機 · 活動中",
   "first": "欧州初の惑星間ミッション；NASA 以外で最長寿命の火星軌道機",
   "description": "ESA初の地球以外の惑星へのミッション。周回機は火星大気の最長の連続記録を残し、水氷の堆積、メタンのプルーム、惑星の三次元的な気象をマッピングしてきた。搭載した英国製ランダーのBeagle 2は表面に到達したが太陽電池パネルを完全には展開できず、2004年に喪失が宣言され、2015年にNASAのMars Reconnaissance Orbiterによって無傷で発見された。周回機は運用30年目に入っている。",

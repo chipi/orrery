@@ -1,5 +1,8 @@
 {
   "name": "Pioneer 11",
+  "vehicle": "Atlas SLV-3D Centaur D-1A / TE-364-4",
+  "payload": "Sonde de survol du système solaire externe ; RTG SNAP-19 (~165 W au lancement) ; jumelle de Pioneer 10",
+  "delta_v": "~15 km/s (cumulé, assistances de Jupiter + Saturne)",
   "type": "SURVOL · LANCÉ",
   "first": "Premier engin spatial à survoler Saturne (1979-09-01) ; a démontré l'assistance gravitationnelle qui a propulsé Voyager 2",
   "dispatch": "Pioneer 11 était le deuxième éclaireur, et il est allé plus loin que son jumeau. Après son propre passage près de Jupiter, il a utilisé la gravité de la planète pour traverser le système solaire et atteindre Saturne en 1979 — le premier engin spatial à le faire — en traversant délibérément le plan des anneaux pour vérifier si la région était sûre. Il a trouvé l'écart que les Voyager franchiraient un an plus tard. Beaucoup de ce qui a rendu le Grand Tour possible était ceci : une petite sonde bon marché envoyée en avant pour prendre les risques et cartographier les dangers, afin que les navires amiraux derrière elle puissent voler avec confiance plutôt qu'avec crainte.",

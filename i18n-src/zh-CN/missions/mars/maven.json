@@ -1,5 +1,8 @@
 {
   "name": "MAVEN",
+  "vehicle": "Atlas V 401",
+  "payload": "2454 kg",
+  "delta_v": "~3.5 km/s",
   "type": "ORBITER · ACTIVE",
   "first": "首个致力于研究火星如何失去大气的任务",
   "description": "MAVEN（火星大气与挥发物演化探测器）回答了一个问题：“火星的空气去了哪里？”它的椭圆轨道会下探到高层大气，在太阳风将离子和中性粒子剥离的过程中对它们采样。研究发现：火星每秒向太空流失约100 g大气——历经数十亿年，足以解释消失的气候。该航天器还是地表探测器的关键中继，其中包括Curiosity和Perseverance。",

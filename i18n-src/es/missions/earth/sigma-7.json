@@ -1,5 +1,8 @@
 {
   "name": "Sigma 7 / MA-8",
+  "vehicle": "Atlas LV-3B (MA-8)",
+  "payload": "Cápsula Mercury n.º 16 (1962 kg); Wally Schirra",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "VUELO TRIPULADO EN ÓRBITA TERRESTRE · REALIZADO",
   "first": "Primer vuelo Mercury de manual — 6 órbitas; el doble de la duración de Glenn / Carpenter",
   "dispatch": "Después de dos vuelos que terminaron en sustos, Sigma 7 fue el que fue aburrido a propósito — y ese fue el logro. Wally Schirra lo llamó una prueba de ingeniería de manual y lo voló como tal: experimentos mínimos, conservación cuidadosa de cada kilogramo de combustible y cada amperio de energía, seis órbitas dedicadas a demostrar que la nave espacial podía ser operada con disciplina en lugar de ser dominada por la fuerza. Se posó casi justo encima del portaaviones de recuperación. En un programa que había estado improvisando bajo presión, Sigma 7 mostró que los estadounidenses habían aprendido a volar la cosa con calma — el requisito previo para las misiones mucho más largas que vendrían después.",

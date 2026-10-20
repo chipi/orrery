@@ -1,5 +1,8 @@
 {
   "name": "Luna 17 / Lunokhod 1",
+  "vehicle": "Proton-K / D",
+  "payload": "5660 kg lanceermassa; Lunokhod 1-rover van 322 kg",
+  "delta_v": "~3 km/s",
   "type": "ROVER · GEVLOGEN",
   "first": "Eerste op afstand bediende rover die op een andere wereld werkte",
   "description": "De eerste wielen op de Maan — bestuurd vanuit een controlekamer op de Krim. Lunokhod 1 was een 322 kg zware, onder druk gebrachte ton gemonteerd op acht onafhankelijk aangedreven wielen, in real time bestuurd door een vijfpersoonsteam over de 2,5-seconden lichtsnelheidsvertraging. Hij reed 10,5 km in 11 lunaire dagen (322 Aardse dagen), fotografeerde 20.000+ scènes en werkte ver voorbij zijn ontwerplevensduur van 90 dagen. Verloren in de jaren 1970, opnieuw gelokaliseerd in 2010 toen NASA's Lunar Reconnaissance Orbiter hem zag zitten waar hij was gestopt.",

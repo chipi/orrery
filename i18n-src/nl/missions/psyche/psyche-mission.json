@@ -1,5 +1,8 @@
 {
   "name": "Psyche",
+  "vehicle": "Falcon Heavy",
+  "payload": "2747 kg lanceermassa (1648 kg droog; 1085 kg xenon-drijfgas)",
+  "delta_v": "~6,6 km/s",
   "type": "ORBITER · ACTIEF",
   "first": "Eerste missie naar een metaalrijke asteroïde van klasse M; eerste gebruik van Hall-effect-ionenmotoren als primaire voortstuwing tijdens de cruisefase",
   "description": "Psyche vliegt naar de blootliggende nikkel-ijzerkern van een gedifferentieerde protoplaneet — een metalen lichaam van 226 km dat mogelijk het beste bereikbare analoog is van de kern van onze eigen Aarde. Gelanceerd op 2023-10-13 op een Falcon Heavy vanaf Kennedy LC-39A. Vier SPT-140 Hall-effect-ionenmotoren laten het traject naar buiten spiralen; een zwaartekrachtassist bij Mars in mei 2026 (dichtste nadering 4.609 km) leverde de energie die ionenstuwing alleen niet op tijd kon opbrengen. Aankomst gepland in 2029-08, gevolgd door een afdaling van 26 maanden in vier baanfasen (A → B → C → D) waarin de zwaartekracht, het magnetisme, de topografie en de samenstelling van de asteroïde in kaart worden gebracht. Als de hypothese van de metaalkern klopt, ziet Psyche er anders uit dan alles wat we eerder bezochten — kaal metalen oppervlak, ijzersulfideafzettingen, niets van de puinhoopchaos van gewone asteroïden.",

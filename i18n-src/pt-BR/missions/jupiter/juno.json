@@ -1,5 +1,8 @@
 {
   "name": "Juno",
+  "vehicle": "Atlas V 551",
+  "payload": "Orbitador polar de Júpiter; primeira espaçonave movida a energia solar a operar além do cinturão de asteroides (painéis solares de tripla junção de ~50 m² que fornecem ~14 kW na Terra, ~500 W em Júpiter)",
+  "delta_v": "~3,7 km/s (inserção em órbita de Júpiter)",
   "type": "Orbitador · Ativa",
   "first": "Primeira orbitadora polar de Júpiter; primeira utilização de energia solar além do cinturão de asteroides",
   "description": "Juno entrou na órbita de Júpiter em 2016-07-05 seguindo uma trajetória polar altamente elíptica de 53 dias que a leva de dentro dos cinturões de radiação (perijove ~4200 km acima do topo das nuvens) até além de Calisto. Alimentada por energia solar — seus arranjos de junção tripla com ~50 m² entregam 14 kW na Terra, mas apenas ~500 W em Júpiter, a primeira vez que energia solar é utilizada a essa distância. Confirmou que Júpiter possui um núcleo rochoso diluído (sem uma fronteira bem definida), mediu a disposição do ciclone polar (oito tempestades circunpolares ao redor de cada pólo) e capturou imagens do vulcanismo de Io com detalhes sem precedentes em 2023. A missão estendida inclui aproximações de todas as quatro luas galileanas até 2025.",

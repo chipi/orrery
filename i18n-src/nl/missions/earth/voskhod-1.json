@@ -1,5 +1,8 @@
 {
   "name": "Voskhod 1",
+  "vehicle": "Voskhod (11A57)",
+  "payload": "5320 kg lanceermassa; drie kosmonauten (geen ruimtepakken, geen schietstoelen)",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Voskhod 1 was de eerste vlucht met meer dan één persoon aan boord, en het lukte door weg te laten. Er was geen ruimte in de eenpersoons Vostok voor een driekoppige bemanning, dus haalden de ingenieurs dingen eruit — de schietstoelen die elke vorige kosmonaut hadden gered, en, omdat het zelfs toen nog te krap was, de drukpakken. Komarov, Feoktistov en Jegorov vlogen een dag in hemdsmouwen, zonder ontsnappingsmogelijkheid bij een noodgeval tijdens de lancering of terugkeer en zonder bescherming als de cabine lucht zou verliezen. Er ging niets mis, dus het leek een triomf. Het was in werkelijkheid een gok — dat de bezuinigingen om als eerste te scoren niet de zaken zouden raken die ertoe deden — en die gok werd toevallig gewonnen.",
   "type": "BEMANDE AARDOMLOOPBAAN · GEVLOGEN",
   "first": "Eerste ruimtevlucht met meerdere bemanningsleden — drie kosmonauten in een van Vostok afgeleide capsule",

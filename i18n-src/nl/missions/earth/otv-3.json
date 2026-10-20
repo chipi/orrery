@@ -1,5 +1,8 @@
 {
   "name": "X-37B OTV-3 (USA-240)",
+  "vehicle": "Atlas V 501 (AV-034)",
+  "payload": "USA-240; X-37B Orbital Test Vehicle (~5000 kg). Ladingen grotendeels geheim.",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "ONBEMAND SPACEPLANE · VOLTOOID",
   "first": "USA-240 — 675 dagen in baan, Vandenberg Air Force Base",
   "description": "Derde X-37B-vlucht, hergebruik van het OTV-1-vliegtuig. Gelanceerd 2012-12-11 18:03 UTC vanaf CCAFS SLC-41 op Atlas V 501 AV-034; geland bij Vandenberg Air Force Base 2014-10-17 16:24 UTC. 675 dagen in baan.",

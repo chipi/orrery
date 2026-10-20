@@ -1,5 +1,8 @@
 {
   "name": "Apollo 8",
+  "vehicle": "Saturn V (AS-503)",
+  "payload": "28833 kg gelanceerd (Apollo 8-CSM (CSM-103), geen LM)",
+  "delta_v": "~6 km/s (heen en terug)",
   "dispatch": "Apollo 8 was een gok die in haast werd gewaagd. Inlichtingen suggereerden dat de Sovjets misschien als eerste een bemanning rond de maan zouden sturen, dus in de zomer van 1968 gooide NASA het vluchtplan overboord en stuurde drie mannen naar de maanbaan met slechts de derde lancering van een raket die nog nooit een bemanning had gedragen. Het had roekeloos moeten zijn. In plaats daarvan werd het het enige goede nieuws van het jaar — 1968 was een jaar van moordaanslagen, Vietnam, brandende steden — en op kerstavond hoorde een miljard mensen Genesis voorgelezen vanuit de maanbaan en zagen ze, op Bill Anders' foto, voor het eerst hun hele wereld opkomen boven een dode horizon. Apollo 11 wordt herinnerd om de maan. Apollo 8 is degene die ons de aarde toonde.",
   "type": "BEMAND MAANBAAN · GEVLOGEN",
   "first": "Eerste mensen die de lage aardbaan verlaten + de Maan omcirkelen",

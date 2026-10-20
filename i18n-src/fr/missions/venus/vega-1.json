@@ -1,5 +1,8 @@
 {
   "name": "Vega 1",
+  "vehicle": "Proton-K / D-1",
+  "payload": "Bus de survol de 4920 kg + module de descente d'environ 1500 kg (atterrisseur de type Venera + premier aérostat à ballon d'hélium). Les sondes jumelles Vega 1 / Vega 2 ont été lancées à 6 jours d'intervalle pour le même itinéraire : Vénus, puis Halley.",
+  "delta_v": "~3,6 km/s (départ + réorientation vers l'interception de la comète de Halley)",
   "type": "SURVOL + ATTERRISSEUR + BALLON · TERMINÉE",
   "first": "Premier aérostat-ballon jamais déployé dans l'atmosphère d'une autre planète (Vénus, 1985) ; premier engin spatial à avoir transporté la science vers deux cibles distinctes du système solaire",
   "description": "Navire amiral soviéto-européen de l'armada de Halley. Vega 1 lancé le 1984-12-15 avec un atterrisseur de la lignée Venera ainsi qu'un ballon hélium de premier type, construit par l'ESA et le CNES, qui dériva dans la couche nuageuse de Vénus à 54 km d'altitude pendant 46,5 heures en transmettant des données de vent et de température via un réseau radio mondial de 20 stations. Après avoir largué son module de descente, l'engin utilisa l'assistance gravitationnelle de Vénus pour se rediriger vers la comète 1P/Halley, réalisant une distance minimale de 8890 km le 1986-03-06 — la première rencontre avec un noyau cométaire, et la détermination de position que l'ESA utilisa avec Giotto pour naviguer son propre survol de Halley beaucoup plus rapproché une semaine plus tard.",

@@ -1,5 +1,8 @@
 {
   "name": "Venera 13",
+  "vehicle": "Proton-K / D-1",
+  "payload": "~4500 kg insgesamt: Vorbeiflug-Bus + 1645 kg schwere Abstiegskapsel aus Titan (Kameras, Röntgenfluoreszenz-Spektrometer für die Bodenzusammensetzung, Seismometer, Bodenprobenarm mit Bohrer und hermetischer Kammer). Ausgelegt für eine der feindlichsten Landeumgebungen, die je angegangen wurden.",
+  "delta_v": "~1,5 km/s (Ankunft an der Venus)",
   "type": "LANDER · BEENDET",
   "first": "Längstes Überleben auf der Oberfläche aller Venus-Missionen (127 min); erste Farbpanoramen + erste Audiodaten von der Oberfläche eines anderen Planeten",
   "description": "Höhepunkt des sowjetischen Venera-Programms. Venera 13 startete am 1981-10-30 und landete am 1982-03-01 bei 7,5°S 303°E im Hochland Phoebe Regio. Oberflächenbedingungen bei der Landung: 457 °C, 89 bar, Schwefelsäure-Dunst. Der Lander überlebte 127 Minuten — fast eine Stunde über sein Auslegungsziel hinaus —, lieferte die ersten Farbpanoramen von der Oberfläche eines anderen Planeten, zeichnete mit einem Windmikrofon Töne auf und stellte mit seinem Bohrer und dem bordeigenen Röntgenfluoreszenzspektrometer fest, dass der Basalt am Landeplatz eine schwach differenzierte leucit-alkalische Zusammensetzung hatte. Das Schwesterraumschiff Venera 14 führte fünf Tage später an einem anderen Standort identische Operationen durch. Die Venera-Serie (1967–1983) ist bis heute das einzige erfolgreiche Oberflächenprogramm auf der Venus.",

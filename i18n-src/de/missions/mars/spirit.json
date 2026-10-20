@@ -1,5 +1,8 @@
 {
   "name": "Spirit",
+  "vehicle": "Delta II 7925",
+  "payload": "1063 kg (Reisestufe + EDL + Rover); 174 kg Masse auf der Oberfläche",
+  "delta_v": "~5,5 km/s",
   "type": "ROVER · GEFLOGEN",
   "first": "Das erste der Mars Exploration Rover Zwillinge; längstlebender Rover bis zur Überholung durch Curiosity",
   "dispatch": "Spirit war für neunzig Tage konzipiert und arbeitete sechs Jahre lang. Als einer von zwei golfwagengroßen Geologen, die 2004 landeten, sollte er die Felsen nach Hinweisen auf eine feuchtere Marsvergangenheit lesen — und er fand sie: Er entdeckte Mineralien, die nur in Wasser entstehen, und an einer Stelle Kieselsäureablagerungen wie die von Heißquellen auf der Erde. Er erklomm Hügel, die niemand für ihn vorgesehen hatte, und überstand Winter, für die er nie ausgelegt war, bis ein Rad ausfiel und er im weichen Sand stecken blieb. Er sendete von seinem Platz weiter, bis ihn die Marskälte schließlich erreichte.",

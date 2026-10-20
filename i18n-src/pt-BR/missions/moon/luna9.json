@@ -1,5 +1,8 @@
 {
   "name": "Luna 9",
+  "vehicle": "Molniya-M",
+  "payload": "1583 kg de massa de lançamento; cápsula de pouso de 99 kg",
+  "delta_v": "~3 km/s",
   "type": "SONDA NÃO TRIPULADA · OPERACIONAL",
   "first": "Primeiro pouso suave na Lua; primeiras fotografias da superfície lunar",
   "description": "Após 11 fracassos soviéticos e 5 missões Ranger americanas projetadas apenas para se chocar, a Luna 9 se tornou a primeira sonda a pousar suavemente em outro mundo. Nove imagens — incluindo cinco panoramas — foram retornadas em três sessões ao longo de três dias e encerraram um longo debate científico: a superfície da Lua era sólida, não um mar de poeira profundo o suficiente para engolir uma sonda. A missão durou 3 dias antes do esgotamento da bateria. Nos meses seguintes, todas as missões posteriores em direção à Lua adotaram o pouso suave como padrão.",

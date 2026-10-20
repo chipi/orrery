@@ -1,5 +1,8 @@
 {
   "name": "Mars Express",
+  "vehicle": "Soyuz-FG / Fregat",
+  "payload": "1183 kg (orbiteur de 1123 kg + atterrisseur Beagle 2 de 60 kg)",
+  "delta_v": "~4,5 km/s",
   "type": "ORBITEUR · ACTIF",
   "first": "La première mission interplanétaire de l'Europe ; L'orbiteur martien non NASA le plus ancien",
   "description": "Première mission de ESA sur une planète autre que la Terre. L'orbiteur a produit le plus long enregistrement continu de l'atmosphère de Mars, cartographiant les dépôts de glace d'eau, les panaches de méthane et les conditions météorologiques tridimensionnelles de la planète. Beagle 2, l'atterrisseur de construction britannique qu'il transportait, a atteint la surface mais n'a jamais déployé complètement ses panneaux solaires – déclaré perdu en 2004, retrouvé intact par le Mars Reconnaissance Orbiter de NASA en 2015. L'orbiteur en est à sa troisième décennie d'exploitation.",

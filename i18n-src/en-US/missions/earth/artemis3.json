@@ -1,5 +1,8 @@
 {
   "name": "Artemis III",
+  "vehicle": "SLS Block 1 (with a non-propulsive spacer in place of the upper stage)",
+  "payload": "Orion + 4-person crew; rendezvous and docking with pathfinder Starship and Blue Moon landers in low Earth orbit",
+  "delta_v": "~9.4 km/s (to LEO)",
   "type": "CREWED TEST FLIGHT · PLANNED",
   "first": "First crewed test of the commercial lunar landers — Orion docks with them in Earth orbit",
   "description": "Artemis III no longer lands on the Moon. In February 2026 NASA changed the plan: before risking a landing, a crew will fly Orion in low Earth orbit and rehearse the hardest new step — rendezvous and docking with the commercial landers that will later carry astronauts to the surface. SLS launches Orion with four crew, flying with a spacer in place of its upper stage, since no push towards the Moon is needed. In orbit, Orion meets pathfinder versions of SpaceX's Starship lander and Blue Origin's Blue Moon, docks, and the crew test the joined vehicles' life support, communications and propulsion, along with the new AxEMU spacesuits. The flight lasts about two weeks. It plays the part Apollo 9 played in 1969, when the lunar module was flown and docked in Earth orbit before anyone took it to the Moon. Crew, named in June 2026: Randy Bresnik (commander), Luca Parmitano of ESA (pilot), Andre Douglas and Frank Rubio. NASA plans the flight for 2027."

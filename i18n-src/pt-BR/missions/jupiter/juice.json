@@ -1,5 +1,8 @@
 {
   "name": "JUICE",
+  "vehicle": "Ariane 5 ECA",
+  "payload": "6000 kg com propelente (2900 kg a seco) — a maior espaçonave interplanetária já construída pela Europa. 10 instrumentos: JANUS (visível), MAJIS (IV), UVS, SWI (sub-mm), GALA (altímetro a laser), RIME (sondador de radar, NASA), J-MAG (magnetômetro), PEP (partículas), RPWI (ondas de plasma), 3GM (ciência de rádio). Painéis solares de 85 m² dimensionados para operar a ~5,5 UA.",
+  "delta_v": "~3,0 km/s (sequência de assistências gravitacionais + inserção em órbita de Júpiter + inserção em órbita de Ganimedes)",
   "type": "ORBITADOR · ATIVO",
   "first": "Maior sonda interplanetária construída na Europa; primeira sonda a orbitar uma lua de outro planeta (Ganimedes, 2034)",
   "description": "JUpiter ICy moons Explorer — nave-insígnia classe L da ESA, lançada em 14-04-2023. A jornada de 8 anos utiliza uma das sequências de assistência gravitacional mais complexas já realizadas: uma assistência gravitacional Lunar-Terrestre inédita em 19-08-2024, Vênus em 31-08-2025, seguida de dois sobrevoos terrestres adicionais em 2026 e 2029. A inserção em órbita de Júpiter está prevista para 21-07-2031. Após 35 aproximações próximas a Europa, Ganimedes e Calisto ao longo de 3,5 anos, JUICE executará uma manobra para entrar em órbita dedicada de Ganimedes em 31-12-2034 — o primeiro veículo espacial a orbitar uma lua de outro planeta. A missão termina em 2035 com impacto em Ganimedes. Ciência primária: existência e propriedades dos oceanos subsuperficiais em toda as luas galileanas geladas, composição da camada de gelo e aquecimento de maré, além da estrutura da magnetosfera joviana.",

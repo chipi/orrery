@@ -1,5 +1,8 @@
 {
   "name": "Schiaparelli EDM",
+  "vehicle": "Proton-M / Briz-M",
+  "payload": "577 kg (atterrisseur EDM de la mission ExoMars 2016, avec le Trace Gas Orbiter)",
+  "delta_v": "~5,5 km/s",
   "type": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
   "first": "Première tentative d'ESA d'atterrir sur Mars ; destinée à démontrer l'EDL avant ExoMars Rosalind Franklin",
   "description": "Schiaparelli était le démonstrateur d'entrée-descente-atterrissage transporté en passager sur l'ExoMars Trace Gas Orbiter (TGO). Nommé d'après l'astronome italien Giovanni Schiaparelli, l'engin était conçu pour valider la pile EDL qu'ESA envisageait de développer pour le rover Rosalind Franklin. Schiaparelli s'est séparé du TGO le 16 octobre 2016 et a pénétré l'atmosphère martienne trois jours plus tard. Le profil de descente s'est effondré : une centrale inertielle saturée a fait croire au logiciel de navigation que l'engin avait déjà atterri en altitude — le parachute a été largué prématurément et les rétrofusées de freinage se sont arrêtées après seulement 3 secondes de fonctionnement. Schiaparelli a percuté la surface à ~150 m/s. Le TGO lui-même a complété son insertion orbitale avec succès et continue de fonctionner.",

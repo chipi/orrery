@@ -1,5 +1,8 @@
 {
   "name": "Apollo-Soyuz-testproject (ASTP)",
+  "vehicle": "Saturn IB (AS-210) + Soyuz-U",
+  "payload": "Apollo CSM-111 (de laatste Apollo CSM ooit) + Soyuz 19 (aangepaste 7K-TM); 14,4 t Apollo + 6,8 t Soyuz",
+  "delta_v": "~9,4 km/s (LEO, elk)",
   "type": "BEMAND AARDBAAN · VOLTOOID",
   "first": "Eerste internationale samenwerking in de bemande ruimtevaart; eerste koppeling tussen de VS en de USSR",
   "dispatch": "Apollo-Soyuz is waar de ruimtewedloop eindigt — niet bij een finishlijn, maar met een handdruk. In juli 1975 ontmoetten een Amerikaanse Apollo en een Sovjet-Soyuz, de rivaliserende ruimtevaartuigen van de rivaliserende supermachten, elkaar in een baan om de aarde en koppelden aan elkaar, en Tom Stafford en Aleksej Leonov schudden elkaar de hand door het open luik tussen hen. Daarvoor waren een gezamenlijk gebouwde koppelingsadapter nodig, twee bemanningen die elkaars taal leerden, en een dooi in de Koude Oorlog die diep genoeg was om de felste concurrenten van die tijd onder de ogen van de hele wereld te laten samenwerken. Niets eraan was strikt noodzakelijk; dat was juist het punt. Na achttien jaar racen om als eerste te zijn, kozen de twee programma's voor één vlucht simpelweg om elkaar te ontmoeten — en legden daarmee de basis voor de internationale samenwerking die op een dag het ruimtestation zou bouwen.",

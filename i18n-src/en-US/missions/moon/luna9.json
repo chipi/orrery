@@ -1,5 +1,8 @@
 {
   "name": "Luna 9",
+  "vehicle": "Molniya-M",
+  "payload": "1583 kg launch mass; 99 kg lander capsule",
+  "delta_v": "~3 km/s",
   "type": "UNCREWED LANDER · FLOWN",
   "first": "First soft-landing on the Moon; first photographs from the lunar surface",
   "description": "After 11 Soviet failures and 5 American Ranger missions designed only to crash, Luna 9 became the first spacecraft to soft-land on another world. Nine images — including five panoramas — returned across three sessions over three days settled a long-running scientific debate: the Moon's surface was solid, not a sea of dust deep enough to swallow a lander. The mission lasted 3 days before battery depletion. Within months, every Moon-bound mission afterwards used soft-landing as the baseline.",

@@ -1,5 +1,8 @@
 {
   "name": "Luna 21 / Lunokhod 2",
+  "vehicle": "Proton-K / D",
+  "payload": "5700 kg de masse au lancement ; rover Lunokhod 2 de 836 kg (a parcouru 39 km — plus longue distance d'un rover jusqu'en 2014)",
+  "delta_v": "~3 km/s",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
   "first": "Deuxième rover lunaire soviétique ; parcours le plus long hors du monde (~39 km) pendant plus de 40 ans",
   "description": "Luna 21 a livré Lunokhod 2, le deuxième rover lunaire contrôlé par équipage de l'Union soviétique, au cratère Le Monnier sur le bord méridional de Mer de la Sérénité en janvier 1973. Le rover a été piloté depuis une salle de contrôle en Crimée par une équipe de cinq personnes et a parcouru environ 39 km au cours de quatre jours lunaires — un record de distance hors du monde qui s'est maintenu jusqu'à ce que le rover Opportunity de la NASA le dépasse sur Mars en 2014. Lunokhod 2 a renvoyé 80 000 images télévisées et 86 panoramas avant que la contamination de poussière de ses panneaux solaires n'interrompe les opérations.",

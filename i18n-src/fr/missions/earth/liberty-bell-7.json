@@ -1,5 +1,8 @@
 {
   "name": "Liberty Bell 7 / MR-4",
+  "vehicle": "Mercury-Redstone 4 (MR-4)",
+  "payload": "Capsule Mercury n° 11 (1832 kg) ; Gus Grissom",
+  "delta_v": "~2,3 km/s (suborbital)",
   "type": "VOL SUBORBITALE HABITÉ · RÉALISÉ",
   "first": "Deuxième vol suborbital américain ; une défaillance de l'écoutille a fait perdre la capsule (récupérée en 1999)",
   "dispatch": "Liberty Bell 7 a volé sans faille et est mémorisée pour les trente secondes après qu'elle cesse de voler. Le saut suborbitale de Gus Grissom a répété celui de Shepard — preuve que le premier vol n'avait pas été un coup de chance — mais sur l'eau, l'écoutille explosive nouvelle s'est déclenchée d'elle-même, la capsule a inondé, et elle a coulé au fond de l'Atlantique tandis que Grissom a failli se noyer dans sa combinaison qui se remplissait. Qu'il ait appuyé sur le détente ou qu'elle se soit déclenchée d'elle-même a été débattu tout le reste de sa vie et n'a jamais été résolu. La véritable leçon du vol était plus discrète et plus utile : la partie la plus dangereuse d'un vol spatial n'est pas toujours le vol spatial lui-même.",

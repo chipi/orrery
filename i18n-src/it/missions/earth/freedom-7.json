@@ -1,5 +1,8 @@
 {
   "name": "Freedom 7 / MR-3",
+  "vehicle": "Mercury-Redstone 3 (MR-3)",
+  "payload": "Capsula Mercury n. 7 'Freedom 7' (1832 kg); Alan Shepard",
+  "delta_v": "~2,3 km/s (suborbitale)",
   "dispatch": "Freedom 7 è il punto di partenza del volo spaziale umano americano. Tre settimane dopo che Gagarin aveva già orbitato attorno alla Terra, il volo di Alan Shepard fu più breve, più basso e più lento — quindici minuti, dritto verso l'alto e dritto verso il basso, senza mai raggiungere l'orbita — e il paese festeggiò comunque, perché per la prima volta un americano aveva lasciato il pianeta. Ciò che lo distingueva dal volo di Gagarin era l'uomo: Shepard pilotò manualmente l'assetto della sua capsula nello spazio, mentre Gagarin ne aveva utilizzata una completamente automatizzata, e per un programma costruito attorno a piloti collaudatori quella differenza era tutto. Venti giorni dopo, il suo successo diede a Kennedy il coraggio di presentarsi davanti al Congresso e scommettere la nazione sulla Luna. Un piccolo volo che diede inizio a qualcosa di molto grande.",
   "type": "EQUIPAGGIO SUBORBITALE · VOLATO",
   "first": "Primo americano nello spazio",

@@ -1,5 +1,8 @@
 {
   "name": "MMX",
+  "vehicle": "H3-24L",
+  "payload": "~4000 kg (gepland)",
+  "delta_v": "~5 km/s",
   "type": "PHOBOS-MONSTERTERUGKEER · GEPLAND",
   "first": "Eerste monsterterugkeer van een Mars-maan",
   "description": "Martian Moons eXploration is JAXA's plan om op Phobos te landen, ~10 g regoliet te scheppen en mee terug te brengen. De monsters kunnen een lang besproken vraag beantwoorden: zijn Phobos en Deimos gevangen planetoïden of fragmenten van een oude inslag op Mars zelf? De missie omvat ook een Duits-Franse rover voor Phobos-oppervlaktemobiliteit — een geheel ander operationeel model dan wat de Hayabusa-missies bij Itokawa of Ryugu deden. Lancering was gepland voor 2024 maar verschoof naar 2026 vanwege vertragingen in JAXA's H3-draagraket.",

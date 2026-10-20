@@ -1,5 +1,8 @@
 {
   "name": "Gemini 6A / GT-6A",
+  "vehicle": "Titan II GLV (GT-6A)",
+  "payload": "Gemini 6A; Wally Schirra & Tom Stafford",
+  "delta_v": "~7,8 km/s (LEO)",
   "type": "BEMANNT ERDORBIT · GEFLOGEN",
   "first": "Erstes bemanntes Weltraum-Rendezvous",
   "dispatch": "Rendezvous — zwei Raumschiffe finden und vereinen sich im Orbit — war die Fähigkeit, ohne die Apollo nicht auskommen konnte, und Gemini 6A ist der Ort, an dem es zum ersten Mal gelang. Es hätte beinahe nicht stattgefunden: Das ursprüngliche Ziel explodierte auf dem Weg in den Orbit, und dann, angeschnallt für den verschobenen Start, zündeten die Triebwerke der Titan und erloschen abrupt auf der Rampe — ein Moment, in dem die Regeln besagten auszulösen, und Wally Schirra, der keine Bewegung spürte, entschied sich kühl dagegen. Drei Tage später flog es und tat das, was nie zuvor getan worden war: holte Gemini 7 ein und hielt Station einen Fuß entfernt, die Besatzungen nahe genug, um die Gesichter des jeweils anderen zu lesen. Es sah einfach aus und war alles andere als das — die Orbitalmechanik, ein anderes Fahrzeug einzuholen, ist zutiefst kontraintuitiv — und es zu knacken war der Moment, in dem das Mond-Orbit-Rendezvous und der gesamte Apollo-Plan Wirklichkeit wurden.",

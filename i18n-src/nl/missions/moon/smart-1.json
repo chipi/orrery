@@ -1,5 +1,8 @@
 {
   "name": "SMART-1",
+  "vehicle": "Ariane 5 (gedeelde lading)",
+  "payload": "367 kg lanceermassa; zonne-elektrische Hall-effect-ionenthruster van 1,2 kW",
+  "delta_v": "~3,9 km/s (cumulatieve ionenaandrijving over 13 maanden)",
   "type": "ROBOTOÏSCHE ORBITER · UITGEVOERD",
   "first": "Eerste Europese ruimtevaartuig dat de Maan bereikt; eerste missie die de Maan onder ionenaandrijving bereikt",
   "description": "ESA's eerste maanmissie en het eerste Europese ruimtevaartuig dat de Maan bereikt. SMART = Small Missions for Advanced Research in Technology — en de sleuteltechnologie was een Hall-effect zonne-elektrische ionenstuwer (PPS-1350-G), destijds de grootste ooit gevlogen stuwer van dit type. Gelanceerd 2003-09-27 als een gedeelde lading op een Ariane 5 vanaf Kourou, het 367 kg zware ruimtevaartuig gebruikte zijn 1,2 kW xenonionenstuwer gedurende 13 maanden om zijn aardbaan langzaam te verhogen, uiteindelijk door de maanzwaartekracht ingevangen op 2004-11-15 — een 13 maanden durende lage-stuwkracht spiraal in plaats van de enkele dagen durende chemische overdracht van elke vorige maanmissie. Operationeel gedurende 16 maanden in een polaire maanbaan waarbij AMIE-camerabeelden, de eerste röntgenfluorescentie-elementenkaarten van de Maan (D-CIXS) en infrarode mineralenspectroscopie (SIR) werden opgeleverd. Opzettelijk neergestort in Lacus Excellentiae (34,4° Z, 46,2° W) op 2006-09-03 05:42 UTC — de inslagflits werd live waargenomen vanaf de Canada-France-Hawaii Telescope.",

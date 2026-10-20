@@ -1,5 +1,8 @@
 {
   "name": "Pioneer 10",
+  "vehicle": "Atlas SLV-3C Centaur D-1A / TE-364-4",
+  "payload": "Espaçonave de sobrevoo do sistema solar externo; primeira a usar RTGs SNAP-19; 25 W no lançamento (decaindo para ~65 W de potência utilizável; sinal perdido em 2003)",
+  "delta_v": "~14,4 km/s (heliocêntrica após Júpiter)",
   "type": "Sobrevoo · Realizado",
   "first": "Primeira nave a atravessar o cinturão de asteroides e a sobrevoar Júpiter (04-12-1973)",
   "dispatch": "O Pioneer 10 foi primeiro, adentrando dois perigos que ninguém havia medido. Nenhuma espaçonave tinha cruzado o cinturão de asteroides — considerado uma galeria de tiro de detritos — ou sobrevivido à radiação de Júpiter, tida como letal para componentes eletrônicos. O Pioneer 10 fez as duas coisas: cruzou o cinturão ileso (o cinturão, descobriu-se, é majoritariamente vazio), chegou a Júpiter em dezembro de 1973 como a primeira espaçonave a fazê-lo, e retornou as primeiras imagens próximas do planeta gigante. Então se tornou o primeiro objeto feito pelo homem direcionado para fora do sistema solar de vez. Seu valor foi a prova — ele transformou os perigos desconhecidos no caminho para os planetas exteriores em perigos conhecidos, para que as Voyagers pudessem ser construídas para enfrentá-los.",

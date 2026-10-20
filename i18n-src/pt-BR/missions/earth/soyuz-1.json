@@ -1,5 +1,8 @@
 {
   "name": "Soyuz 1",
+  "vehicle": "Soyuz (11A511)",
+  "payload": "Soyuz 7K-OK nº 4; Vladimir Komarov",
+  "delta_v": "~7,8 km/s (LEO)",
   "type": "TRIPULADA ÓRBITA TERRESTRE · PERDIDA",
   "first": "Primeiro voo Soyuz — falha do paraquedas matou Vladimir Komarov (primeira morte em voo espacial)",
   "dispatch": "Soyuz 1 é o voo que matou um cosmonauta, e nunca deveria ter voado. A nova espaçonave Soyuz foi apressada para serviço sob pressão política com centenas de falhas conhecidas não resolvidas — engenheiros supostamente imploraram por adiamento — e em órbita começou a falhar: um painel solar não se abriu, o controle de atitude lutava contra o piloto. Vladimir Komarov a trouxe para baixo mesmo assim, e na reentrada os paraquedas se enroscaram e falharam. Ele atingiu o solo em velocidade máxima. Foi a primeira morte na história do voo espacial humano, e sua causa foi menos má sorte do que um programa que não podia admitir que sua máquina não estava pronta — a falha exata que a cultura de feitos inéditos, secretos e de êxito obrigatório vinha construindo.",

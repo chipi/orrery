@@ -1,5 +1,8 @@
 {
   "name": "Phoenix",
+  "vehicle": "Delta II 7925-9.5",
+  "payload": "670 kg de massa de lançamento (350 kg de massa pousada)",
+  "delta_v": "~5,7 km/s",
   "type": "LANDER · FLOWN",
   "first": "Primeira confirmação de gelo de água no regolito ártico marciano; primeiro pouso propulsivo suave em Marte desde a Viking 2",
   "description": "A Phoenix foi recuperada do cancelado programa Mars Surveyor 2001 — hardware de voo armazenado por seis anos, remontado e redirecionado para as planícies do polo norte marciano. O nome foi escolhido literalmente. Pousou em 25/05/2008 em 68.22°N, 234.25°E em Vastitas Borealis, mais ao norte do que qualquer missão de superfície anterior. Em poucos dias o braço robótico raspou através do solo superficial e expôs gelo branco brilhante que visivelmente sublimou na câmera ao longo de quatro sols — confirmação direta de gelo de água subsuperficial no ártico marciano. Detectou percloratos no regolito e observou neve caindo de nuvens. A missão terminou em 02/11/2008 quando a energia solar caiu abaixo do limite operacional no início do inverno marciano; nunca se esperou que o módulo de pouso sobrevivesse à noite polar.",

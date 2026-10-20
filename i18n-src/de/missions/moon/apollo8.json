@@ -1,5 +1,8 @@
 {
   "name": "Apollo 8",
+  "vehicle": "Saturn V (AS-503)",
+  "payload": "28833 kg Startmasse (CSM von Apollo 8, CSM-103, ohne LM)",
+  "delta_v": "~6 km/s (Hin- und Rückflug)",
   "dispatch": "Apollo 8 war eine Wette, die in Eile platziert wurde. Geheimdienstinformationen deuteten darauf hin, dass die Sowjets möglicherweise zuerst eine Besatzung um den Mond schicken würden, also verwarf die NASA im Sommer 1968 den Flugplan und schickte drei Männer zum Mondorbit beim erst dritten Start einer Rakete, die noch nie eine Besatzung befördert hatte. Es hätte leichtsinnig sein müssen. Stattdessen wurde es die einzige gute Nachricht des Jahres — 1968 war geprägt von Attentaten, Vietnam, brennenden Städten — und am Heiligabend hörten eine Milliarde Menschen die Genesis aus dem Mondorbit verlesen und sahen in Bill Anders' Fotografie zu, wie ihre ganze Welt zum ersten Mal über einem toten Horizont aufging. An Apollo 11 erinnert man sich wegen des Mondes. Apollo 8 ist die Mission, die uns die Erde zeigte.",
   "type": "BEMANNTE MONDUMLAUFBAHN · GEFLOGEN",
   "first": "Erste Menschen verlassen die niedrige Erdumlaufbahn + umkreisen den Mond",

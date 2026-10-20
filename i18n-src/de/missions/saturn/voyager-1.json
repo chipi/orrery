@@ -1,5 +1,8 @@
 {
   "name": "Voyager 1",
+  "vehicle": "Titan IIIE / Centaur",
+  "payload": "Planeten-Vorbeiflug-Raumsonde; drei RTG-Module mit zusammen ~470 W beim Start (heute abgefallen auf ~250 W)",
+  "delta_v": "~17 km/s (kumuliert, Jupiter- + Saturn-Swing-bys)",
   "type": "VORBEIFLUG · ABGESCHLOSSEN",
   "first": "Das entfernteste von Menschen geschaffene Objekt — derzeit ~170 AE von der Sonne im interstellaren Raum entfernt",
   "dispatch": "Voyager 1 ist das am weitesten entfernte Objekt, das die Menschheit je erschaffen hat, und es kam fast durch einen Zufall der Geometrie dorthin. Ein enger Vorbeiflug an Saturns Riesenmond Titan — gewählt wegen der Wissenschaft — bog seine Flugbahn nach oben und aus der Ebene der Planeten heraus und richtete sie auf den Rand des Sonnensystems aus, wo sie seitdem hinaufsteigt. Unterwegs entdeckte sie aktive Vulkane auf Io — die ersten Vulkane außerhalb der Erde — und 1990 wandte sie sich um, um den Pale Blue Dot zu fotografieren. 2012 wurde sie die erste Maschine, die in den interstellaren Raum eintrat. Sie sendet immer noch, mit schwächer werdendem Kernstrom, aus mehr als dem Hundertfachen der Entfernung zwischen Erde und Sonne.",

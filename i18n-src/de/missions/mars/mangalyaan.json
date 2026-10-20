@@ -1,5 +1,8 @@
 {
   "name": "Mangalyaan",
+  "vehicle": "PSLV-XL (C25)",
+  "payload": "1337 kg",
+  "delta_v": "~3,5 km/s",
   "type": "ORBITER · FLOWN",
   "first": "Erste asiatische Marsmission; erster Marserfolg beim ersten Versuch",
   "description": "ISROs Mars Orbiter Mission kostete 74 Millionen Dollar — weniger als das Budget des Films Gravity (100 Millionen Dollar) und ein Bruchteil von NASAs MAVEN (671 Millionen Dollar), das zwei Tage früher ankam. In 18 Monaten als Technologie-Demonstrator entwickelt, erreichte Mangalyaan jedes Ziel: Trans-Mars-Injektion, Tiefraum-Navigation, Marsorbiteintritt und 8 Jahre wissenschaftliche Ausbeute. Indien wurde die vierte Weltraumagentur am Mars und die erste, die beim ersten Versuch Erfolg hatte.",

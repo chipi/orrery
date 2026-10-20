@@ -1,5 +1,8 @@
 {
   "name": "Mars Pathfinder",
+  "vehicle": "Delta II 7925",
+  "payload": "890 kg (lander + stadio di crociera al lancio)",
+  "delta_v": "~5,2 km/s",
   "type": "LANDER · ROVER · FLOWN",
   "first": "Prime ruote su Marte; ha dimostrato l'atterraggio con airbag",
   "dispatch": "Mars Pathfinder fu la dimostrazione della NASA che atterrare su Marte non doveva costare una fortuna. Invece del volo stazionario con retrorazzi usato dai Viking, entrò nell'atmosfera protetto da uno scudo termico, aprì un paracadute, gonfiò un bozzolo di airbag e rimbalzò decine di volte sulla superficie prima di fermarsi e aprirsi come un fiore. Ne uscì Sojourner — un rover grande quanto un forno a microonde, le prime ruote a girare su un altro pianeta. La scienza fu modesta; il punto era il metodo. L'atterraggio con airbag e l'approccio «più veloce, più economico, migliore» che dimostrò divennero il modello per i rover molto più ambiziosi — Spirit, Opportunity, Curiosity — che seguirono.",

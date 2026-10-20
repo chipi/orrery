@@ -1,5 +1,8 @@
 {
   "name": "Artemis V",
+  "vehicle": "SLS Block 1（上面级待定）+ 载人着陆器（Starship HLS 或 Blue Moon）",
+  "payload": "Orion + 4 人乘组；第二次载人登月，月球基地建设工作的开端",
+  "delta_v": "~7 km/s（往返）",
   "type": "CREWED LANDER · PLANNED",
   "first": "Artemis时代的第二次载人登月——月球基地的开端",
   "description": "Artemis V计划成为月球南极附近的第二次载人登月，在同一年内紧随Artemis IV之后——这是NASA 2026年提出的“每年至少一次着陆”目标的一部分。它旨在推动从短期造访转向长期驻留：NASA于2026年3月选择把力量投入月面基地，而不是完成月球轨道上的Gateway空间站，后者现已暂停。与Artemis IV一样，SLS发射载有四名乘组成员的Orion，由一台商业着陆器送其中两人下降。SLS已获资金支持，可飞行至Artemis V；对于之后的任务，NASA已提出商业、可重复使用的替代方案。计划于2028年末执行；乘组、着陆器和着陆地点尚未确定。",

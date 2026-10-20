@@ -1,5 +1,8 @@
 {
   "name": "Voskhod 2",
+  "vehicle": "Voskhod (11A57)",
+  "payload": "5682 kg de massa de lançamento; cápsula Voskhod + câmara de despressurização inflável Volga",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "VOO ESPACIAL TRIPULADO · REALIZADO",
   "first": "Primeira atividade extraveicular (Leonov, 12 min, 1965-03-18)",
   "dispatch": "Voskhod 2 realizou o primeiro spacewalk e quase o transformou no primeiro morte no espaço. Aleksei Leonov flutuou para fora de um compartimento de ar inflável para o vácuo, o primeiro ser humano completamente fora de uma nave — e então seu traje inchado ficou tão rígido que ele não conseguia se dobrar para voltar. Ele teve que abrir uma válvula e deixar seu próprio ar escapar, correndo o risco de embolia, apenas para encolher o suficiente para passar pela escotilha. Não acabou aí: o repouso automático falhou, a tripulação desceu manualmente, e pousaram centenas de quilômetros fora do curso na floresta gelada siberiana, onde esperaram por duas noites entre lobos antes que os resgatadores os alcançassem de esqui. O público viu doze minutos triunfantes; o quão perto chegou permaneceu secreto por anos.",

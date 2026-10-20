@@ -1,5 +1,8 @@
 {
   "name": "Artemis II",
+  "vehicle": "SLS Block 1 + Orion (avec équipage)",
+  "payload": "Orion + équipage de 4 personnes (Wiseman / Glover / Koch / Hansen)",
+  "delta_v": "~6,5 km/s (aller-retour)",
   "type": "SURVOL EN ÉQUIPAGE · VOLÉ",
   "first": "Premier vol en équipage au-delà de l'orbite terrestre basse depuis Apollo 17 (1972) — et la mission qui a inspiré ce projet",
   "description": "Le premier vol en équipage du programme Artemis et l'étincelle qui est devenue Orrery. Le 1er avril 2026, le SLS Block 1 de NASA a lancé un vaisseau spatial Orion avec quatre astronautes — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) et Jeremy Hansen (MS) de l'ASC — sur une trajectoire à retour libre qui les a fait pivoter autour de la face cachée de la Lune à environ 6 500 km au-dessus de la surface et les a ramenés chez eux sans aucune brûlure d'insertion sur l'orbite lunaire. À 406 771 km de la Terre, ils ont voyagé plus loin que tout humain avant eux, battant le record d'Apollo 13 en 1970. Après un vol de 9 jours, Orion a amerri dans le Pacifique au large de San Diego le 10 avril. Le vol a qualifié le soutien-vie, la navigation et le bouclier thermique d'Orion pour les missions en équipage avant le premier alunissage, désormais prévu pour Artemis IV.",

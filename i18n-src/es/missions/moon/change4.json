@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 4 / Yutu-2",
+  "vehicle": "Long March 3B",
+  "payload": "3780 kg de masa de lanzamiento; rover Yutu-2 de 140 kg",
+  "delta_v": "~3 km/s",
   "type": "MÓDULO DE ATERRIZAJE EN LA CARA OCULTA · RÓVER · ACTIVO",
   "first": "Primer aterrizaje suave en la cara oculta lunar",
   "description": "La cara oculta lunar no tiene línea de visión de radio directa a la Tierra. Para aterrizar una nave allí, China lanzó primero el satélite de retransmisión Queqiao a una órbita halo alrededor del punto de Lagrange Tierra-Luna L2 — un punto de observación que ve simultáneamente la cara oculta y la Tierra. Con esa infraestructura en su lugar, Chang'e 4 se convirtió en la primera nave en aterrizar suavemente en la cara oculta. El róver Yutu-2 ha estado operando desde enero de 2019 y ha recorrido ~1,6 km a partir de 2024, lo que lo convierte en el róver lunar con más tiempo de operación en la historia.",

@@ -1,5 +1,8 @@
 {
   "name": "Parker Solar Probe",
+  "vehicle": "Delta IV Heavy + tercera etapa Star 48BV",
+  "payload": "685 kg (incl. Sistema de Protección Térmica de carbono-carbono de 11,43 cm que soporta 1377 °C en el perihelio)",
+  "delta_v": "~16 km/s (incl. 7 asistencias gravitatorias de Venus)",
   "type": "SONDA SOLAR · ACTIVA",
   "first": "Nave más cercana al Sol jamás lanzada (6,1 M km, 9,86 R☉); primera nave en entrar en la corona solar (2021-04-28); objeto hecho por humanos más rápido (~191 km/s)",
   "description": "Parker Solar Probe realizó el lanzamiento de mayor energía jamás ejecutado en una misión científica — C3 de 154 km²/s², requiriendo una etapa sólida Star 48BV personalizada sobre un Delta IV Heavy solo para escapar de la Tierra hacia una trayectoria de caída solar. Siete asistencias gravitatorias de Venus durante seis años redujeron progresivamente el perihelio de 0,16 UA (P1, 2018-11-05) a 0,046 UA (P22, 2024-12-24 — 9,86 radios solares, 6,1 millones de km de la superficie). En P8 el 2021-04-28, Parker se sumergió por debajo de la superficie crítica de Alfvén — la primera nave en entrar en la corona del Sol. En P22 alcanzó ~191 km/s, convirtiéndose en el objeto hecho por humanos más rápido jamás registrado. El escudo térmico de carbono-carbono de 11,43 cm sostuvo 1377 °C mientras que el autobús espacial 1 metro detrás permanecía a temperatura ambiente.",

@@ -1,5 +1,8 @@
 {
   "name": "Lunar Reconnaissance Orbiter",
+  "vehicle": "Atlas V 401",
+  "payload": "1916 kg Startmasse",
+  "delta_v": "~4 km/s",
   "type": "ORBITER · AKTIV",
   "first": "Mondkarten mit der höchsten Auflösung, die jemals erstellt wurden",
   "description": "LRO umkreist den Mond seit 2009 in einer mittleren Mondhöhe von 50 km. Die Bilder der Schmalwinkelkamera von LRO sind mit 50 cm/Pixel hoch genug, um Apollo-Abstiegsstufen, Rover-Spuren und Fußwege der Astronauten zu sehen, die noch im Regolith erhalten sind. Es fand Lunokhod 1 neununddreißig Jahre, nachdem der Rover verstummt war. Es wurden mehr als 200 mögliche Landeplätze für Artemis identifiziert. Die Wassereisablagerungen am Südpol des Mondes, die jedes moderne Mondprogramm vorantreiben, wurden mit LRO-Instrumenten quantifiziert. Eine Erkundungsmission, die den Grundstein für das moderne Mondzeitalter legte.",

@@ -1,5 +1,8 @@
 {
   "name": "Vostok 5",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4720 kg de masse au lancement ; un seul cosmonaute",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Vostok 5 a établi un record qui tient toujours. Valeri Bykovski a volé près de cinq jours seul en orbite — quatre-vingt-un tours de la planète — ce qui reste, six décennies plus tard, le vol spatial en solitaire le plus long jamais réalisé. C'était avant tout un test d'endurance, poussant un seul cosmonaute et un petit vaisseau spatial bien au-delà de la journée que Titov avait réussi, pour voir si une personne pouvait tout simplement tenir le coup. Il le pouvait. Et Bykovski n'était même pas la manchette de sa propre mission : deux jours après le début de son vol, Vostok 6 a décollé transportant la première femme dans l'espace, et l'attention du monde l'a suivie.",
   "type": "ORBITE TERRESTRE HABITÉE · VOLÉ",
   "first": "Plus long vol orbital terrestre en solo — 4 jours 23 heures, 81 orbites",

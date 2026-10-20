@@ -1,5 +1,8 @@
 {
   "name": "Apollo 13",
+  "vehicle": "Saturn V (AS-508)",
+  "payload": "44069 kg lancés (CSM Odyssey + LM Aquarius)",
+  "delta_v": "~6 km/s (aller-retour, alunissage abandonné)",
   "type": "VOL HABITÉ AUTOUR DE LA LUNE · EFFECTUÉ (ALUNISSAGE AVORTÉ)",
   "first": "La mission qui a transformé un quasi-désastre en sauvetage le plus célèbre de la NASA",
   "dispatch": "Apollo 13 n'a jamais aluni, et c'est la mission dont tout le monde se souvient. Deux jours après le départ, un réservoir d'oxygène s'est désintégré et a transformé un vol de routine vers les hautes terres de Fra Mauro en quatre jours de lutte pour maintenir trois hommes en vie dans un vaisseau en perdition à un quart de million de kilomètres de la maison. Ce qui les a sauvés n'était pas l'héroïsme ; c'était la préparation et une salle pleine de gens résolvant le problème en temps réel, improvisaient une façon de respirer et une façon de rentrer à partir de ce qui était déjà boulonné au véhicule. La NASA a appelé cela un « succès avec échec ». Il est plus juste de dire que c'est le vol qui a prouvé que l'agence était aussi bonne qu'elle le prétendait.",

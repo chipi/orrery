@@ -1,5 +1,8 @@
 {
   "name": "Viking 1",
+  "vehicle": "Titan IIIE-Centaur",
+  "payload": "3527 kg (orbiter + lander)",
+  "delta_v": "~4,5 km/s",
   "type": "ORBITER · LANDER · FLOWN",
   "first": "Primo allunaggio marziano pienamente riuscito; prime scienze di superficie a lunga durata",
   "description": "La missione che ci ha dato il nostro primo sguardo sostenuto alla superficie marziana. Il lander Viking 1 ha operato per 6 anni 4 mesi a Chryse Planitia — conducendo esperimenti biologici progettati per rilevare la vita (risultati ambigui; un esperimento ha prodotto un segnale positivo ancora dibattuto decenni dopo), misurando il meteo, restituendo immagini panoramiche e analizzando la composizione del suolo. Gli orbiter Viking insieme hanno mappato il 97% di Marte a risoluzione ~300 m e hanno aiutato a individuare i siti di allunaggio per missioni ancora decenni lontane.",

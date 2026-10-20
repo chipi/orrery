@@ -1,5 +1,8 @@
 {
   "name": "Vega 2",
+  "vehicle": "Proton-K / D-1",
+  "payload": "Jumelle identique de Vega 1 : bus de survol de 4920 kg + atterrisseur vénusien d'environ 1500 kg + aérostat à hélium. Lancée 6 jours après Vega 1 pour la redondance et pour former, avec elle, une paire dans la flottille d'étude de Halley.",
+  "delta_v": "~3,6 km/s (départ + réorientation vers l'interception de la comète de Halley)",
   "type": "SURVOL + MODULE DE DESCENTE + BALLON · RÉALISÉ",
   "first": "Première analyse chimique du sol de type highland vénusien (Aphrodite Terra, 1985) ; rencontre avec Halley en tandem avec Vega 1 qui a alimenté la solution de ciblage de Giotto",
   "description": "Jumeau de Vega 1, lancé 6 jours plus tard (1984-12-21) pour la redondance et une solution d'armada en tandem pour Halley. Le module de descente de Vega 2 s'est posé le 1985-06-15 dans Rusalka Planitia, sur le flanc nord de Aphrodite Terra, et a utilisé la spectrométrie XRF pour découvrir une composition anorthosite-norite-troctolite — la première analyse chimique de croûte vénusienne de type highland (la composition ressemble aux highlands lunaires, bien que le site d'atterrissage lui-même soit une plaine). Son ballon a fonctionné de façon identique à celui de Vega 1, dérivant dans l'hémisphère opposé à ~240 km/h. L'autobus a survolé la comète 1P/Halley à 8030 km le 1986-03-09. Ensemble, les deux autobus Vega ont retourné les premières images rapprochées du noyau cométaire et ont affiné la détermination de position qui a permis à Giotto de tenter un survol à 596 km cinq jours plus tard.",

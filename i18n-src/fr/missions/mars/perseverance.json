@@ -1,5 +1,8 @@
 {
   "name": "Perseverance",
+  "vehicle": "Atlas V 541",
+  "payload": "3839 kg de masse au lancement (rover de 1025 kg ; hélicoptère Ingenuity de 1,8 kg)",
+  "delta_v": "~6,1 km/s",
   "type": "ROVER · ACTIF",
   "first": "Premier hélicoptère sur une autre planète (Ingenuity) ; premier stockage d'échantillons pour la mission Mars Sample Return",
   "dispatch": "Perseverance est allé sur Mars à la recherche de vies disparues. Arrivé en 2021 au fond du cratère Jezero — un bassin contenant le delta d'une rivière qui alimentait un lac il y a des milliards d'années, exactement le genre d'endroit où la vie aurait laissé des traces — c'est le premier rover conçu spécifiquement pour chercher des signes de vie ancienne, et pour faire quelque chose qu'aucune mission n'avait fait auparavant : sceller des roches martiennes dans des tubes et les mettre de côté pour qu'un futur engin spatial les ramène à la maison. Il a également livré Ingenuity, le petit hélicoptère qui a effectué le premier vol motorisé sur une autre planète. Si les échantillons qu'il met en cache sont jamais ramenés, ce seront les premiers morceaux de surface d'une autre planète apportés sur Terre.",

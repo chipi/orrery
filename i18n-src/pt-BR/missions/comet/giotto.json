@@ -1,5 +1,8 @@
 {
   "name": "Giotto",
+  "vehicle": "Ariane 1",
+  "payload": "Sonda de 960 kg em forma de tambor, estabilizada por rotação, com um escudo antipoeira Whipple-Kevlar em camadas (o para-choque traseiro manteve os instrumentos científicos ativos durante a tempestade de poeira a 68 km/s de velocidade relativa na coma do Halley). 10 instrumentos — Halley Multicolour Camera, espectrômetros de massa, detectores de impacto de poeira, magnetômetro, instrumentos de plasma.",
+  "delta_v": "~1,5 km/s (interceptação do Halley)",
   "type": "SOBREVOO · EXECUTADO",
   "first": "Primeira missão de espaço profundo da ESA; sobrevoo de cometa mais próximo já realizado (Halley, 596 km, 1986); primeiras imagens em close-up de um núcleo cometário",
   "description": "Giotto foi o pilar europeu da armada Halley — uma sonda de 960 kg estabilizada por rotação envolvida em um escudo de proteção contra poeira laminado Whipple-Kevlar. Lançada em 1985-07-02, ela voou através da coma de Halley a uma velocidade relativa de 68 km/s em 1986-03-14 com aproximação mínima de 596 km, retornando as primeiras imagens em close-up de qualquer núcleo cometário (um corpo alongado irregular de 15 × 7,2 × 7,2 km com jatos de poeira concentrados). Um impacto de poeira ~7,6 segundos antes da aproximação mínima desestabilizou o eixo de rotação e desativou a câmera, mas os outros instrumentos continuaram transmitindo através da coma. Após hibernar em órbita heliocêntrica, Giotto foi reativada em 1990 e usou assistência gravitacional da Terra para se redirecionar ao cometa 26P/Grigg-Skjellerup, voando por ele a 200 km em 1992-07-10 — o sobrevoo cometário mais próximo jamais realizado.",

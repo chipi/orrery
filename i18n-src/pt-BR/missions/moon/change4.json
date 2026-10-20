@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 4 / Yutu-2",
+  "vehicle": "Long March 3B",
+  "payload": "3780 kg de massa de lançamento; rover Yutu-2 de 140 kg",
+  "delta_v": "~3 km/s",
   "type": "MÓDULO DE POUSO NO LADO OPOSTO · ROVER · ATIVO",
   "first": "Primeiro pouso suave no lado oposto da Lua",
   "description": "O lado oposto da Lua não tem linha de visão direta para a Terra. Para pousar uma nave espacial lá, a China primeiro lançou o satélite retransmissor Queqiao para uma órbita halo em torno do ponto de Lagrange Terra-Lua L2 — uma posição privilegiada que vê simultaneamente o lado oposto e a Terra. Com essa infraestrutura em funcionamento, Chang'e 4 se tornou a primeira nave espacial a fazer um pouso suave no lado oposto. O rover Yutu-2 está operando desde janeiro de 2019 e percorreu ~1,6 km até 2024, tornando-o o rover lunar de operação mais prolongada da história.",

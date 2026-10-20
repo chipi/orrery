@@ -1,5 +1,8 @@
 {
   "name": "Pioneer 11",
+  "vehicle": "Atlas SLV-3D Centaur D-1A / TE-364-4",
+  "payload": "Vorbeiflug-Raumsonde für das äußere Sonnensystem; SNAP-19-RTGs (~165 W beim Start); Zwilling von Pioneer 10",
+  "delta_v": "~15 km/s (kumuliert, Jupiter- + Saturn-Swing-bys)",
   "type": "VORBEIFLUG · DURCHGEFÜHRT",
   "first": "Erstes Raumschiff, das an Saturn vorbeigeflogen ist (1979-09-01); demonstrierte das Swing-by-Manöver, das Voyager 2 weiter brachte",
   "dispatch": "Pioneer 11 war der zweite Kundschafter, und er flog weiter als sein Zwilling. Nach seinem eigenen Vorbeiflug an Jupiter nutzte er die Schwerkraft des Planeten, um das Sonnensystem zu durchqueren und 1979 den Saturn zu erreichen — das erste Raumschiff überhaupt, das dies tat — und flog absichtlich durch die Ringebene, um zu prüfen, ob die Region sicher war. Es fand die Lücke, die die Voyagers ein Jahr später durchfliegen würden. Vieles, das die Grand Tour möglich machte, war dies: eine kleine, preisgünstige Sonde, die vorausgeschickt wurde, um die Risiken einzugehen und die Gefahren zu kartografieren, damit die Flaggschiffe dahinter mit Zuversicht statt mit Furcht fliegen konnten.",

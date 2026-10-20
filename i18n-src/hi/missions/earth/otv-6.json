@@ -1,5 +1,8 @@
 {
   "name": "X-37B OTV-6 (USA-299, USSF-7)",
+  "vehicle": "Atlas V 501 (AV-081)",
+  "payload": "USA-299 / USSF-7; X-37B Orbital Test Vehicle (~5000 kg)। पेलोड ज़्यादातर गोपनीय।",
+  "delta_v": "~9.4 km/s (LEO)",
   "type": "मानवरहित अंतरिक्ष विमान · संचालित",
   "first": "USA-299 / USSF-7 — कक्षा में 908 दिन, KSC शटल लैंडिंग सुविधा",
   "description": "छठी X-37B उड़ान — नए USSF संगठनात्मक पदनाम के तहत पहली; कक्षा में रिकॉर्ड 908 दिन (~2.5 साल)। 2020-05-17 13:14 UTC को CCAFS SLC-41 से Atlas V 501 AV-081 पर प्रक्षेपित; 2022-11-12 10:22 UTC को KSC SLF पर उतरा। इस पर Naval Research Laboratory का PRAM (Photovoltaic RF Antenna Module — 1 W सौर ऊर्जा को माइक्रोवेव किरण में बदलने का प्रयोग) और FalconSAT-8 को छोड़ने वाला AFRL का उपकरण था।",

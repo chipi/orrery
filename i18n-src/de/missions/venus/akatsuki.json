@@ -1,5 +1,8 @@
 {
   "name": "Akatsuki",
+  "vehicle": "H-IIA 202",
+  "payload": "517 kg (einschl. 196 kg Treibstoff)",
+  "delta_v": "~1,2 km/s",
   "type": "ORBITER · DURCHGEFÜHRT",
   "first": "Aus einem 5-jährigen Sonnenorbit-Wartezustand befreit, um bei einem Ausweichversuch eine Venusumlaufbahn zu erreichen; der einzige aktive Venusorbiter in seinen letzten Betriebsjahren",
   "description": "Akatsuki — »Morgenröte« — war Japans erste Venussonde. Gestartet 2010-05-20 von Tanegashima auf einer H-IIA 202, zusammen mit dem Sonnensegel-Demonstrator IKAROS. Das geplante Einschwenkmanöver in die Venusumlaufbahn 2010-12-07 scheiterte, als sich Salzkristalle in einem Oxidationsmittel-Rückschlagventil bildeten und das Haupttriebwerk 152 Sekunden nach Brennbeginn aus der Ausrichtung warfen. JAXA hielt die Sonde fünf Jahre lang im Sonnenorbit am Leben, führte zwölf Korrekturmanöver durch, bis zum nächsten Venusbegegnungsfenster. Am 2015-12-07 platzierte ein 1228-Sekunden-Brennvorgang mit vier Lageregelungstriebwerken — ursprünglich nicht für Orbitaleinschwenkung vorgesehen — Akatsuki in eine stark elliptische 400 × 440.000 km, 3°-Neigung-Umlaufbahn. Eine der dramatischsten Missionsrettungen in der Raumfahrtgeschichte. Der Kontakt ging 2024 verloren; JAXA erklärte den Betrieb am 2025-09-18 für beendet.",

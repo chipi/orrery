@@ -1,5 +1,8 @@
 {
   "name": "Mars Pathfinder",
+  "vehicle": "Delta II 7925",
+  "payload": "890 kg (Lander + Reisestufe beim Start)",
+  "delta_v": "~5,2 km/s",
   "type": "LANDER · ROVER · GEFLOGEN",
   "first": "Erste Räder auf dem Mars; demonstrierte Airbag-Landung",
   "dispatch": "Mars Pathfinder war der Beweis der NASA, dass eine Landung auf dem Mars nicht ein Vermögen kosten musste. Statt des Bremsraketen-Schwebeflugs der Vikings trat die Sonde mit Wärmeschutzschild in die Atmosphäre ein, entfaltete einen Fallschirm, blies einen Airbag-Kokon auf und prallte dutzende Male über die Oberfläche ab, bevor sie zum Stillstand kam und sich wie eine Blume öffnete. Heraus rollte Sojourner — ein Rover so groß wie eine Mikrowelle, die ersten Räder, die sich je auf einem anderen Planeten drehten. Die Wissenschaft war bescheiden; der Punkt war die Methode. Die Airbag-Landung und der schneller-billiger-besser-Ansatz, den sie bewies, wurden zur Vorlage für die ehrgeizigeren Rover — Spirit, Opportunity, Curiosity — die folgten.",

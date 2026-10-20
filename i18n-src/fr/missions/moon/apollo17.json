@@ -1,5 +1,8 @@
 {
   "name": "Apollo 17",
+  "vehicle": "Saturn V (AS-512)",
+  "payload": "48609 kg lancés (CSM America + LM Challenger)",
+  "delta_v": "~6 km/s (aller-retour)",
   "dispatch": "Apollo 17 fut la fin, bien que presque personne parmi ceux qui regardaient en décembre 1972 ne croyait que ce serait le cas. Ce fut aussi, tardivement, le vol qui plaça un véritable scientifique sur la Lune — le géologue Harrison Schmitt, dont l'œil repéra le verre volcanique orange au cratère Shorty qui réécrivit de quoi la Lune est faite. Cernan et Schmitt restèrent trois jours, parcoururent trente-cinq kilomètres, puis Cernan grimpa l'échelle pour la dernière fois où quelqu'un l'a fait, déclarant qu'ils partaient « comme nous sommes venus, et si Dieu le veut, nous reviendrons ». Plus d'un demi-siècle plus tard, personne ne l'a fait — et tout argument sérieux pour y retourner commence encore par le fait que nous avons pu le faire autrefois.",
   "type": "ATTERRISSAGE EN ÉQUIPAGE · ROVER · VOLÉ",
   "first": "Dernière mission en équipage sur la Lune (et la seule Apollo avec un géologue qualifié)",

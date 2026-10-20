@@ -1,5 +1,8 @@
 {
   "name": "Dawn",
+  "vehicle": "Delta II 7925H",
+  "payload": "Orbiteur à propulsion ionique ; caméra de cadrage, VIR, GRaND, etc.",
+  "delta_v": "~11 km/s (approximatif)",
   "type": "ORBITEUR · VOLÉ",
   "first": "Première mission en orbite autour de deux corps extraterrestres – Vesta, puis Cérès",
   "description": "Dawn a prouvé la propulsion ionique à l’échelle planétaire : elle s’est placée sur la même orbite que l’imposant Vesta, puis est repartie et s’est dirigée en spirale vers la planète naine Cérès – le plus gros objet de la ceinture d’astéroïdes. Les points lumineux dans le cratère Occator sont devenus l'un des mystères emblématiques de la mission, plus tard reliés à des éruptions de saumure issues d'un réservoir profond. Cette entrée de catalogue utilise Cérès comme destination principale ; Vesta est couverte dans le récit ci-dessus.",

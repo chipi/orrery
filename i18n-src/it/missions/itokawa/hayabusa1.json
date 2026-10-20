@@ -1,5 +1,8 @@
 {
   "name": "Hayabusa",
+  "vehicle": "M-V-5",
+  "payload": "510 kg (incl. 60 kg di xeno per quattro propulsori a ioni μ10)",
+  "delta_v": "~4,0 km/s",
   "type": "SAMPLE-RETURN · FLOWN",
   "first": "Primo campione da asteroide mai riportato sulla Terra (~1.500 grani di polvere di Itokawa, totale sub-milligrammo)",
   "description": "La Hayabusa della JAXA (che in giapponese significa 'falco') ha condotto la più eroica missione di salvataggio della storia dei voli spaziali. Lanciata il 2003-05-09 su un M-V-5 con quattro propulsori ionici μ10 — il sottosistema di propulsione ionica più potente mai volato fino a quel momento. Arrivò a 25143 Itokawa il 2005-09-12 — un asteroide near-Earth di forma irregolare di 540×270×210 m. Due allunaggi (2005-11-20 e 25), entrambi con guasti ai proiettili di raccolta campioni, ma il suolo fu comunque proiettato nel corno di raccolta. Poi una perdita di idrazina ha paralizzato il controllo d'assetto, due delle tre ruote di reazione si sono guastate, le comunicazioni si sono perse per sette settimane, la finestra di rientro dalla Terra si è spostata di tre anni. Gli ingegneri hanno assemblato un singolo motore ionico funzionante dalle metà superstiti di due motori danneggiati e hanno riportato Hayabusa sulla Terra. La capsula di campioni recuperata a Woomera AUS il 2010-06-13 conteneva ~1.500 grani di polvere di Itokawa (totale sub-milligrammo) — confermando la composizione di tipo S dell'asteroide e la struttura di mucchio di macerie, e provando che il recupero di campioni da asteroidi era possibile.",

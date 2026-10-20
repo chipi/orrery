@@ -1,5 +1,8 @@
 {
   "name": "Viking 1",
+  "vehicle": "Titan IIIE-Centaur",
+  "payload": "3527 kg (orbitador + módulo de aterrizaje)",
+  "delta_v": "~4,5 km/s",
   "type": "ORBITADOR · MÓDULO DE DESCENSO · COMPLETADA",
   "first": "Primer aterrizaje en Marte completamente exitoso; primera ciencia de superficie de larga duración",
   "description": "La misión que nos ofreció nuestro primer análisis sostenido de la superficie marciana. El módulo de descenso de Viking 1 operó durante 6 años 4 meses en Chryse Planitia —ejecutando experimentos biológicos diseñados para detectar vida (resultados ambiguos; un experimento produjo una señal positiva todavía debatida décadas después), midiendo condiciones meteorológicas, retornando imágenes panorámicas y analizando la composición del suelo. Los orbitadores de Viking en conjunto cartografiaron el 97% de Marte con una resolución de ~300 m y ayudaron a prospeccionar lugares de aterrizaje para misiones aún décadas en el futuro.",

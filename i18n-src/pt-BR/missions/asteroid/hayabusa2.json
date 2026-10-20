@@ -1,5 +1,8 @@
 {
   "name": "Hayabusa2",
+  "vehicle": "H-IIA 202",
+  "payload": "609 kg a seco, propulsão elétrica iônica (4 propulsores μ10) + bipropelente químico + HGA de 1,6 m. Carga útil a bordo — Small Carry-on Impactor (SCI, carga moldada de 2,5 kg), módulo de pouso MASCOT (10 kg, DLR/CNES), 3 rovers MINERVA-II (~1 kg cada), cápsula de retorno de amostras (16 kg, reentrada com paraquedas).",
+  "delta_v": "~2 km/s (acumulado do motor iônico)",
   "type": "RETORNO DE AMOSTRA + SONDAS · ATIVA (missão estendida)",
   "first": "Segundo retorno de amostra de asteroide (Ryugu, 2020); primeiro crater de impacto artificial em um asteroide; primeiro material subsuperficial de asteroide retornado à Terra",
   "description": "Missão de acompanhamento da JAXA à Hayabusa original. Lançada em 2014-12-03, Hayabusa2 chegou ao asteroide carbonáceo próximo à Terra (162173) Ryugu em 2018-06-27 após um cruzeiro de 3,5 anos com propulsão iônica de baixo empuxo + assistência gravitacional terrestre. Operações de superfície 2018–2019: duas coletas de amostra por toque-e-vai envolvendo um experimento Small Carry-on Impactor (2019-04-05) que escavou um crater de 14 m para a segunda amostra. Três sondas MINERVA-II retornaram as primeiras imagens de superfície de um asteroide; o módulo de pouso MASCOT da DLR/CNES operou por 17 horas. A cápsula de retorno de amostra reingressou sobre Woomera em 2020-12-05 (UTC; recuperada em 2020-12-06 hora local/JST) e entregou 5,4 g de material prístino de Ryugu — a primeira amostra de asteroide com estratigrafia subsuperficial. Missão estendida: sobrevoo de 98943 Torifune (2001 CC21) em 2026-07; encontro de órbita com (1998 KY26) de rotação rápida previsto para 2031-07.",

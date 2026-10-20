@@ -1,5 +1,8 @@
 {
   "name": "Gemini 8 / GT-8",
+  "vehicle": "Titan II GLV (GT-8)",
+  "payload": "Gemini 8; Neil Armstrong & David Scott",
+  "delta_v": "~7.8 km/s (LEO)",
   "type": "CREWED EARTH-ORBIT · FLOWN",
   "first": "First docking of two spacecraft; emergency return",
   "dispatch": "Gemini 8 made the first docking of two spacecraft in orbit — and then nearly killed its crew. Minutes after Neil Armstrong eased his Gemini into a locked joint with an Agena target, the linked pair began to roll, faster and faster, until it was tumbling roughly once a second and the astronauts' vision was starting to gray toward blackout. Armstrong undocked — which only made it worse, since the fault was in his own spacecraft — then shut down the main thrusters and stopped the spin with the reentry-control system, a decision that saved their lives but, by the rules, forced an immediate emergency return. It was the program's most dangerous moment, and it was Armstrong's first spaceflight. The calm, fast diagnosis under a failing situation is exactly the temperament NASA would remember when it chose who would land on the Moon.",

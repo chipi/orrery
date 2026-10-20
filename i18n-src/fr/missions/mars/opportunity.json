@@ -1,5 +1,8 @@
 {
   "name": "Opportunity",
+  "vehicle": "Delta II 7925H Heavy",
+  "payload": "1063 kg (étage de croisière + EDL + rover) ; masse de 174 kg à la surface",
+  "delta_v": "~5,5 km/s",
   "type": "ROVER · FLOWN",
   "first": "Rover martien ayant parcouru la plus grande distance (45,16 km) ; 14 ans de vie en surface contre une conception pour 90 sols",
   "dispatch": "Opportunity a parcouru un marathon sur une autre planète. Jumeau de Spirit, descendu sur Mars en 2004 pour une mission de quatre-vingt-dix jours, il a fonctionné pendant quatorze ans et traversé plus de quarante-cinq kilomètres — la plus grande distance jamais parcourue par un véhicule sur n'importe quel monde. Il est tombé, par chance, dans un petit cratère dont les parois exposaient exactement la roche altérée par l'eau qu'il était venu chercher, et puis il a continué, de cratère en cratère, déchiffrant l'histoire ancienne de l'eau sur Mars kilomètre après kilomètre. Une tempête de poussière planétaire l'a finalement silencié en 2018.",

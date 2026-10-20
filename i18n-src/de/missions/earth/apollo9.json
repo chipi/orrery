@@ -1,5 +1,8 @@
 {
   "name": "Apollo 9",
+  "vehicle": "Saturn V (AS-504)",
+  "payload": "42400 kg Startmasse (CSM Gumdrop (CSM-104) + LM Spider (LM-3))",
+  "delta_v": "~9,5 km/s (bis LEO)",
   "type": "BEMANNTE ERDORBITMISSION · DURCHGEFÜHRT",
   "first": "Erster bemannter Flug des Lunar Module — Erdorbit-Trennung und Rendezvous-Tests",
   "description": "Der erste bemannte Flug des Lunar Module. Im Erdorbit trennten sich McDivitt und Schweickart mit dem Lunar Module Spider vom CSM Gumdrop ab, flogen über sechs Stunden bis zu 183 km weit weg und führten dann Rendezvous und Rückdocking durch — jeder Schritt des Mond-Rendezvous-Verfahrens wurde getestet, ohne dass es die Möglichkeit gab, die Besatzung mit dem CSM nach Hause zu bringen, falls etwas schiefging. Schweickart führte eine 38-minütige EVA auf der Lunar Module-Veranda durch und demonstrierte das Apollo-EVA-Raumanzug- und PLSS-Rucksack-Design, das die Mondwanderer verwenden würden. Scott führte eine Steh-EVA von der CSM-Luke durch. Mit verifizierter Lunar Module-Hardware und Rendezvous-Verfahren gab NASA Apollo 10 zwei Monate später grünes Licht für den Flug zum Mond.",

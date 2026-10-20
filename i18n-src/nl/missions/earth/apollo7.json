@@ -1,5 +1,8 @@
 {
   "name": "Apollo 7",
+  "vehicle": "Saturn IB (AS-205)",
+  "payload": "14781 kg gelanceerd (Apollo 7-CSM (CSM-101), geen LM)",
+  "delta_v": "~9,5 km/s (naar LEO)",
   "type": "BEMAND AARDBAAN · GEVLOGEN",
   "first": "Eerste bemande Apollo-vlucht — aardbaan-CSM-test",
   "description": "De eerste bemande Apollo-vlucht, 21 maanden na de brand bij Apollo 1 (1967-01-27) die Grissom, White en Chaffee op de lanceerplaats het leven kostte. Apollo 7 testte de herontworpen Block II Command and Service Module in een baan om de aarde — levensondersteuning, stroomvoorziening, voortstuwing (SPS vuurde acht keer), thermische regeling, en de allereerste live tv-uitzending ooit vanuit een bemand Amerikaans ruimtevaartuig. Schirra (verkouden + de hele vlucht prikkelbaar) gaf Houston tegenspraak over een vraag over de helm bij terugkeer, wat bijdroeg aan het besluit van Mission Control dat geen van de drie bemanningsleden ooit nog zou vliegen. De vlucht van 10 dagen en 20 uur baande de weg voor de gok van Apollo 8 met een maanbaan twee maanden later.",

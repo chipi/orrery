@@ -1,5 +1,8 @@
 {
   "name": "Mariner 4",
+  "vehicle": "Atlas LV-3 Agena-D",
+  "payload": "261 kg",
+  "delta_v": "~3,6 km/s",
   "type": "FLYBY · EFFETTUATA",
   "first": "La prima sonda spaziale a raggiungere Marte e a restituire immagini ravvicinate di un altro pianeta",
   "description": "La missione che ha posto fine al sogno di un Marte abitabile. Le 22 immagini sgranate del Mariner 4, scattate durante un avvicinamento ravvicinato di 25 minuti a 9.846 km di altitudine, hanno mostrato una superficie craterizzata che somigliava alla Luna: senza canali, senza vegetazione, senza vita evidente. L'atmosfera era 100 volte più rarefatta del previsto. La scoperta ha rimodellato Marte nell'immaginario pubblico da sorella Terra a mondo morto. Il monitoraggio della sonda ha prodotto anche la prima misurazione della struttura del vento solare tra i pianeti.",

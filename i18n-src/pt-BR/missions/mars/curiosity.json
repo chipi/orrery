@@ -1,5 +1,8 @@
 {
   "name": "Curiosity",
+  "vehicle": "Atlas V 541",
+  "payload": "3839 kg de massa de lançamento (rover de 899 kg na superfície)",
+  "delta_v": "~6,1 km/s",
   "type": "ROVER · ATIVO",
   "first": "Primeiro rover de Marte alimentado por energia nuclear; primeiro pouso com sky crane",
   "dispatch": "Curiosity é um laboratório movido a energia nuclear do tamanho de um carro pequeno, e a parte difícil foi conseguir colocá-lo em Marte. Muito pesado para airbags, foi descido em Marte em 2012 por um sky crane movido a foguete em uma sequência tão arriscada que seus planejadores chamaram de sete minutos de terror — e funcionou na primeira tentativa. Desde então, ele perfurou seu caminho através da Cratera Gale e respondeu a pergunta para a qual foi enviado: a cratera já abrigou um lago, com a química que uma coisa viva poderia ter utilizado. Marte tinha sido habitável. Curiosity ainda está em movimento, escalando uma montanha de rocha em camadas que se lê como o próprio livro de história do planeta.",

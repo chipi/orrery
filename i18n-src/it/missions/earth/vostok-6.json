@@ -1,5 +1,8 @@
 {
   "name": "Vostok 6",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4713 kg di massa al lancio; un solo cosmonauta",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "NAVICELLA ABITATA ORBITA-TERRESTRE · COMPLETATA",
   "first": "Prima donna nello spazio — Valentina Tereškova, 48 orbite",
   "dispatch": "La Vostok 6 trasportava Valentina Tereškova e la rendeva la prima donna nello spazio — un primato che rimase solitario per diciannove anni e non fu eguagliato dagli Stati Uniti fino al 1983. Non era una pilota ma un'operaia tessile e paracadutista dilettante, scelta in parte proprio per questo simbolismo: prova, diceva il programma sovietico, che nello Stato dei lavoratori persino la frontiera dello spazio era aperta a chiunque. Comunque fossero le motivazioni, quarantotto orbite dopo il risultato era reale e permanente, e sarebbero passati due decenni prima che qualsiasi altra nazione potesse vantarsi di aver fatto lo stesso.",

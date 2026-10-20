@@ -1,5 +1,8 @@
 {
   "name": "Chandrayaan-3",
+  "vehicle": "LVM3 M4 (ehemals GSLV Mk III)",
+  "payload": "3900 kg Startmasse; 1726 kg Lander+Rover",
+  "delta_v": "~3,5 km/s",
   "type": "LANDER · ROVER · FLOWN",
   "first": "Erste Weichlandung in der Nähe des lunaren Südpols",
   "description": "Nach dem Verlust von Chandrayaan-2s Vikram-Lander im Jahr 2019 war ISROs dritte Mondmission bewusst konservativ angelegt – konzentriert auf den Lander statt einen Orbiter mitzuführen. Vikram setzte in 69,4° S Breite auf, näher an einem Mondpol als jedes andere Raumfahrzeug zuvor. Der Pragyan-Rover wies Schwefel auf der Mondoberfläche zum ersten Mal nach und führte In-situ-Wärmemessungen durch. Indien wurde die vierte Nation, die auf dem Mond eine Weichlandung durchführte, und landete näher an einem Mondpol als jedes Raumfahrzeug davor – eine Region, in der in Zukunft der Abbau von Wassereis möglich werden könnte.",

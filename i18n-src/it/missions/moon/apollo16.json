@@ -1,5 +1,8 @@
 {
   "name": "Apollo 16",
+  "vehicle": "Saturn V (AS-511)",
+  "payload": "48599 kg lanciati (CSM Casper (CSM-113) + LM Orion (LM-11))",
+  "delta_v": "~6 km/s (andata e ritorno)",
   "dispatch": "Apollo 16 andò sugli altopiani lunari per campionare antichi vulcani e scoprì che non ce n'erano mai stati. I geologi erano certi che la regione pallida e accidentata di Descartes fosse vulcanica; ogni roccia che Young e Duke riportarono era breccia — detriti saldati insieme dagli impatti. Avere torto fu il guadagno: gli altopiani luminosi della Luna si rivelarono essere una testimonianza di un giovane sistema solare sotto bombardamento incessante, non di eruzioni. È un esempio lampante di come l'esplorazione giustifichi effettivamente il suo valore — si va per confermare ciò che si pensa già di sapere, e il luogo ti rivela qualcosa di meglio.",
   "type": "LANDER EQUIPAGGIATO · VOLATO",
   "first": "Primo allunaggio negli altipiani lunari — Descartes; «Gran Premio lunare» di John Young",

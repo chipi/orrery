@@ -1,5 +1,8 @@
 {
   "name": "Hera",
+  "vehicle": "Falcon 9 Block 5",
+  "payload": "Hera 轨道器 + Juventas 和 Milani 立方星",
+  "delta_v": "~1.1 km/s（深空机动；火星引力辅助）",
   "type": "小行星探测 · 活跃",
   "first": "ESA 对 DART 任务的后续——探测被偏转的双生星小行星",
   "description": "Hera是欧洲航天局对人类首次行星防御实验的贡献。2022年，NASA的DART航天器故意撞击了小行星双生星的小月球双卫一，并可测量地缩短了其轨道。Hera于2024年10月在Falcon 9上发射，正在飞向同一颗双小行星（途中进行2025年火星重力辅助），以进行DART无法完成的详细撞击后调查：陨石坑的大小、双卫一的质量和内部结构，以及撞击转移了多少动量。DART和Hera一起，将一次性演示变成可重复、特征明确的偏转技术。Hera携带两颗CubeSats立方体卫星Juventas和Milani，用于近距离雷达探测和矿物学研究。"

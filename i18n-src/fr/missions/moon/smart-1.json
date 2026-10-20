@@ -1,5 +1,8 @@
 {
   "name": "SMART-1",
+  "vehicle": "Ariane 5 (charge utile partagée)",
+  "payload": "367 kg de masse au lancement ; propulseur ionique à effet Hall solaire-électrique de 1,2 kW",
+  "delta_v": "~3,9 km/s (cumul de la propulsion ionique sur 13 mois)",
   "type": "ORBITEUR ROBOTISÉ · FLOWN",
   "first": "Premier engin spatial européen à atteindre la Lune ; première mission à atteindre la Lune sous propulsion ionique",
   "description": "La première mission lunaire de l'ESA et le premier engin spatial européen à atteindre la Lune. SMART = Small Missions for Advanced Research in Technology — et la technologie clé était un moteur électrosolaire à effet Hall (PPS-1350-G), le plus grand propulseur ionique jamais lancé à cette époque. Lancé le 2003-09-27 en tant que charge utile partagée sur une Ariane 5 depuis Kourou, l'engin spatial de 367 kg a utilisé son moteur ionique au xénon de 1,2 kW pendant 13 mois pour progressivement rehausser son orbite terrestre, finalement capturé par la gravité lunaire le 2004-11-15 — une spirale à faible poussée de 13 mois plutôt que le transfert chimique de quelques jours de toute mission lunaire antérieure. Exploité pendant 16 mois en orbite polaire lunaire retournant des images caméra AMIE, les premières cartes élémentaires par fluorescence X du rayonnement (D-CIXS), et la spectroscopie minérale infrarouge (SIR). Impacté délibérément dans Lacus Excellentiae (34,4° S, 46,2° W) le 2006-09-03 05:42 UTC — l'éclair d'impact a été observé en direct par le Canada-France-Hawaii Telescope.",

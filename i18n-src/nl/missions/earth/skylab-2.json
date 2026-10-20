@@ -1,5 +1,8 @@
 {
   "name": "Skylab 2",
+  "vehicle": "Saturn IB (SA-206)",
+  "payload": "20121 kg lanceermassa; CSM-116 + bemanning van 3 personen",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Skylab 2 is de missie die Amerika's eerste ruimtestation redde en daarmee bewees dat astronauten evenzeer reparatieteams zijn als ontdekkingsreizigers. Skylab had de baan bereikt in verminkte staat — zijn zonneschild tijdens de lancering afgescheurd, één zonnepaneel verdwenen, het andere vastgeklemd, het interieur oververhit tot onbewoonbaar. Pete Conrads bemanning vloog naar een station dat afgeschreven had kunnen worden, plaatste een parasol-zonwering door een kleine luchtsluis om het af te koelen, en maakte vervolgens het vastgeklemde paneel vrij tijdens een gevaarlijke, geïmproviseerde ruimtewandeling die de stroomvoorziening herstelde. Het was de eerste keer dat een bemanning een falend ruimtevaartuig in de baan redde, en het herschreef de veronderstelling dat ruimteapparatuur wegwerpbaar was.",
   "type": "BEMANDE STATIONSBEMANNING · GEVLOGEN",
   "first": "Eerste bemande Skylab-bezoek — repareerde de beschadigde werkplaats en redde het programma",

@@ -1,5 +1,8 @@
 {
   "name": "Cassini-Huygens",
+  "vehicle": "Titan IVB / Centaur",
+  "payload": "Saturnus-orbiter (~5712 kg droog) + Huygens-afdalingssonde (~318 kg, gebouwd door ESA, landde op Titan op 2005-01-14)",
+  "delta_v": "~2 km/s (Saturnus-baaninsertie)",
   "type": "Orbiter + Lander · Voltooid",
   "first": "13 jaar in baan om Saturnus — Huygens landde op 14-01-2005 op Titan (eerste zachte landing in het buitenste zonnestelsel)",
   "dispatch": "Cassini deed wat geen enkel ruimtevaartuig bij welke reuzenplaneet dan ook had gedaan: het stopte. Dertien jaar lang verbleef het bij Saturnus, en de ontdekkingen die het meest ertoe deden kwamen voort uit dat blijven — de geisers van Enceladus, waargenomen doordat de orbiter dichtbij genoeg, vaak genoeg vloog om een kleine maan zijn verborgen oceaan de ruimte in te zien spuiten. Het zette Europa's Huygens-sonde af op Titan, de enige landing ooit in het buitenste zonnestelsel, en bracht een wereld van methaanrivieren en -meren in kaart. Aan het eind, zonder brandstof, werd het opzettelijk Saturnus in gevlogen zodat het nooit op de oceaanmanen die het had gevonden zou kunnen vallen en die verontreinigen — een missie die eindigde met het beschermen van de plaatsen die ze ontdekte.",

@@ -1,5 +1,8 @@
 {
   "name": "MMX",
+  "vehicle": "H3-24L",
+  "payload": "~4000 kg（计划值）",
+  "delta_v": "~5 km/s",
   "type": "PHOBOS SAMPLE RETURN · PLANNED",
   "first": "首次从火星卫星返回样本",
   "description": "Martian Moons eXploration是JAXA的计划：在火卫一着陆，铲取约10 g风化层，并带回家。这些样本也许能解开一个争论已久的问题：火卫一和火卫二是被捕获的小行星，还是火星自身一次远古撞击的碎片？该任务还包括一辆德法联合研制的火卫一表面巡视车——这与Hayabusa系列任务在糸川和龙宫上采用的任何运行模式都截然不同。发射原定于2024年，但因JAXA的H3运载火箭延误而推迟到2026年。",

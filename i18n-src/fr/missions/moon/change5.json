@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 5",
+  "vehicle": "Long March 5",
+  "payload": "8200 kg de masse au lancement ; 1,731 kg d'échantillon rapporté",
+  "delta_v": "~5 km/s",
   "type": "RETOUR D'ÉCHANTILLON · VOLÉ",
   "first": "Premier retour d'échantillon lunaire en 44 ans (depuis Luna 24, 1976)",
   "description": "Chang'e 5 a été le premier retour d'échantillon de la Lune depuis Luna 24 de l'Union soviétique en 1976, soit un écart de 44 ans. L'architecture : orbiteur + atterrisseur + véhicule d'ascension + capsule de retour d'échantillons, le tout en un seul lancement. L'atterrisseur a atterri à Mons Rümker, a foré et récupéré 1,731 kg de régolithe, a décollé, s'est rendu et s'est amarré à l'orbiteur (le premier rendez-vous lunaire robotisé), et la capsule est revenue sur Terre. Les échantillons proviennent d’une région vieille de seulement 2 milliards d’années – beaucoup plus jeune que n’importe quel échantillon d’Apollo ou de Luna, réécrivant les modèles du volcanisme lunaire.",

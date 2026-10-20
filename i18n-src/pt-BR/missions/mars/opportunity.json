@@ -1,5 +1,8 @@
 {
   "name": "Opportunity",
+  "vehicle": "Delta II 7925H Heavy",
+  "payload": "1063 kg (estágio de cruzeiro + EDL + rover); 174 kg de massa na superfície",
+  "delta_v": "~5,5 km/s",
   "type": "ROVER · VOADO",
   "first": "Rover de Marte com maior distância percorrida (45,16 km); 14 anos de vida na superfície contra um projeto para 90 sols",
   "dispatch": "Opportunity percorreu uma maratona através de outro planeta. Gêmeo de Spirit, pousou em 2004 para uma missão de noventa dias e funcionou por catorze anos, cruzando mais de quarenta e cinco quilômetros — a maior distância que qualquer veículo já percorreu em qualquer mundo. Por sorte, pousou em uma pequena cratera cujas paredes expostas continham precisamente a rocha formada pela água que foi enviado para encontrar, e depois simplesmente continuou avançando, cratera após cratera, lendo a antiga história da água em Marte quilômetro após quilômetro. Uma tempestade de poeira em escala planetária finalmente o silenciou em 2018.",

@@ -1,5 +1,8 @@
 {
   "name": "Gemini 3 / GT-3",
+  "vehicle": "Titan II GLV (GT-3)",
+  "payload": "Gemini 3 'Molly Brown'; Gus Grissom & John Young",
+  "delta_v": "~7.8 km/s (LEO)",
   "type": "CREWED EARTH-ORBIT · FLOWN",
   "first": "First crewed Gemini; first orbital maneuver by a crew",
   "dispatch": "Gemini 3 was the shakedown — the first flight of the new two-seat spacecraft, and the first time an American crew changed their own orbit rather than just riding the one the rocket gave them. Gus Grissom commanded it, four years after his Mercury capsule sank on splashdown, and named this one \"Molly Brown\" after the unsinkable heroine — a piece of gallows humor NASA's public-affairs office did not love. The flight itself was short and deliberately modest, three orbits to prove the machine flew as designed. But that small act of nudging the orbit with onboard thrusters was the first step of everything Gemini existed to do.",

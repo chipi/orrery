@@ -1,5 +1,8 @@
 {
   "name": "Schiaparelli EDM",
+  "vehicle": "Proton-M / Briz-M",
+  "payload": "577 kg (EDM-lander van de ExoMars 2016-missie met de Trace Gas Orbiter)",
+  "delta_v": "~5,5 km/s",
   "type": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
   "first": "Eerste poging van ESA om op het oppervlak van Mars te landen; bedoeld om binnenkomst, afdaling en landing (EDL) aan te tonen ter voorbereiding op ExoMars Rosalind Franklin",
   "description": "Schiaparelli was de demonstrator voor binnenkomst, afdaling en landing (EDL) die als meeliftlading werd meegevoerd met de ExoMars Trace Gas Orbiter (TGO). Genoemd naar de Italiaanse astronoom Giovanni Schiaparelli, was het voertuig ontworpen om de EDL-technologie aan te tonen die ESA van plan was op te schalen voor de Rosalind Franklin rover. Schiaparelli scheidde zich op 16 oktober 2016 van TGO af en drong drie dagen later de Martiaanse atmosfeer binnen. Het afdalingsprofiel liep mis: een verzadigde traagheidsmeeteenheid zorgde ervoor dat de navigatiesoftware dacht dat het voertuig al op hoogte was geland — de parachute werd voortijdig afgeworpen en de remthusters stopten na slechts 3 seconden afvuren. Schiaparelli raakte het oppervlak met ~150 m/s. TGO zelf voltooide de baanopname succesvol en blijft operationeel.",

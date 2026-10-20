@@ -1,5 +1,8 @@
 {
   "name": "Voyager 2",
+  "vehicle": "Titan IIIE / Centaur",
+  "payload": "Espaçonave de sobrevoo planetário; energia elétrica por RTG",
+  "delta_v": "~18 km/s (aprox.)",
   "type": "VOAR · VOAR",
   "first": "Única espaçonave a visitar Urano e Netuno; Grand Tour dos quatro planetas gigantes",
   "dispatch": "A Voyager 2 realizou o tour que talvez nunca mais seja realizado. Lançada dezesseis dias antes de sua gêmea em um arco mais lento e longo, é a única espaçonave a visitar Urano e Netuno — dois mundos que permanecem, décadas depois, conhecidos por nós quase inteiramente pelas poucas horas que ela passou passando velozmente por cada um deles. Ela encontrou um planeta tombado de lado, os ventos mais rápidos do sistema solar e uma lua congelada lançando gêiseres no espaço, e então ela também cruzou para o espaço interestelar, em 2018. Cada plano sério de retornar aos gigantes de gelo ainda se baseia no que esta única espaçonave viu em seu caminho de saída.",

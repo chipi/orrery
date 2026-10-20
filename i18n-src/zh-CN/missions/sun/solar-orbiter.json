@@ -1,5 +1,8 @@
 {
   "name": "Solar Orbiter",
+  "vehicle": "Atlas V 411",
+  "payload": "1800 kg（含 209 kg 仪器和隔热罩）",
+  "delta_v": "~3.5 km/s",
   "type": "SOLAR ORBITER · ACTIVE",
   "first": "首个专门设计用于详细成像太阳极区的任务；通过高纬度遥感观测补充 Parker Solar Probe 的日冕内测量",
   "description": "ESA 主导的任务，由 NASA 提供发射和一项仪器贡献。Parker Solar Probe 飞得比任何探测器都更接近太阳，而 Solar Orbiter 则飞得更高——在十年时间里通过反复的金星引力助推脱离黄道面，爬升至约 33° 日心纬度。从该有利位置，其仪器套件（PHI、EUI、SPICE、STIX、METIS、SoloHI + 四个原位探测仪器包）可对太阳极区磁场成像，实时追踪太阳风加速过程，并同时关联遥感和就地测量数据。首次近日点于 2020-06-15，距离 0.51 AU。迄今最近的近日点为 2022-10-12，距离 0.29 AU（位于水星近日点内侧）。",

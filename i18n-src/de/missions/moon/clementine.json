@@ -1,5 +1,8 @@
 {
   "name": "Clementine",
+  "vehicle": "Titan II G",
+  "payload": "424 kg Trockenmasse; 1690 kg Startmasse mit Treibstoff",
+  "delta_v": "~3,5 km/s",
   "type": "ORBITER · GEFLOGEN",
   "first": "Gemeinsame NASA-DoD-Mondmission; Erste Hinweise auf Wassereis an den Mondpolen",
   "description": "Clementine wurde in erster Linie als Technologiedemonstrator der Strategic Defense Initiative konzipiert und verbrachte zehn Wochen in der Mondumlaufbahn, um die erste systematische globale topografische und multispektrale Karte des Mondes zurückzugeben. Bistatische Radarmessungen am Südpol des Mondes lieferten die ersten verlockenden Hinweise auf Wassereis – bestätigte Jahre später von Lunar Prospector und Chandrayaan-1. Die Folgemission zum Vorbeiflug am Asteroiden Geographos scheiterte, als eine Fehlfunktion des Triebwerks den Treibstoff des Raumfahrzeugs erschöpfte.",

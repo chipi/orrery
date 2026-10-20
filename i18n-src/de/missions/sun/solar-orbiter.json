@@ -1,5 +1,8 @@
 {
   "name": "Solar Orbiter",
+  "vehicle": "Atlas V 411",
+  "payload": "1800 kg (einschl. 209 kg Instrumente + Hitzeschild)",
+  "delta_v": "~3,5 km/s",
   "type": "SOLAR-ORBITER · ACTIVE",
   "first": "Erste Mission, die für detaillierte Aufnahmen der Polarregionen der Sonne konzipiert wurde; ergänzt die Messungen der Parker Solar Probe in der Korona durch Fernerkundung aus hohen Breitengraden",
   "description": "Von der ESA geleitete Mission mit NASA-Start und einem Instrumentenbeitrag. Während die Parker Solar Probe näher herankommt als je zuvor, fliegt Solar Orbiter höher — mit wiederholten Venus-Swing-by-Manövern über ein Jahrzehnt, um aus der Ekliptik auf ~33° heliografische Inklination zu steigen. Von diesem Aussichtspunkt aus bildet die Instrumentenausstattung (PHI, EUI, SPICE, STIX, METIS, SoloHI + vier In-situ-Pakete) die polaren Magnetfelder der Sonne ab, verfolgt die Beschleunigung des Sonnenwinds in Echtzeit und verknüpft Fern- und In-situ-Messungen simultan. Erstes Perihel am 15.06.2020 bei 0,51 AE. Bisher engste Perihelpassage am 12.10.2022 bei 0,29 AE (innerhalb des Perihels des Merkur).",

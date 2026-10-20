@@ -1,5 +1,8 @@
 {
   "name": "X-37B OTV-4 (USA-261, AFSPC-5)",
+  "vehicle": "Atlas V 501 (AV-054)",
+  "payload": "USA-261 / AFSPC-5; X-37B Orbital Test Vehicle (~5000 kg). Ladingen grotendeels geheim.",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "ONBEMAND RUIMTEVLIEGTUIG · GEVLOGEN",
   "first": "USA-261 / AFSPC-5 — 718 dagen in een baan, Shuttle Landing Facility van KSC",
   "description": "Vierde X-37B-vlucht. Gelanceerd op 2015-05-20 15:05 UTC van CCAFS SLC-41 met Atlas V 501 AV-054; eerste OTV-landing op het Kennedy Space Center Shuttle Landing Facility (dezelfde 4,6 km lange baan die eerder door de Space Shuttle-orbiter werd gebruikt) op 2017-05-07 11:47 UTC. Vervoerde het AFRL Hall-effect-thruster-experiment (XR-5A, ionische voortstuwing) en een NASA Materials Exposure Test bed.",

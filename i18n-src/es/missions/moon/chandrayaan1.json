@@ -1,5 +1,8 @@
 {
   "name": "Chandrayaan-1",
+  "vehicle": "PSLV-XL (C11)",
+  "payload": "1380 kg de masa de lanzamiento; Moon Impact Probe de 35 kg",
+  "delta_v": "~3 km/s",
   "type": "ORBITADOR · VOLADA",
   "first": "Primera misión lunar de India; confirmó agua extendida en la Luna",
   "description": "La primera nave interplanetaria de la ISRO. El orbitador entregó el Moon Impact Probe a la superficie — el primer objeto indio en otro mundo — y llevó 11 instrumentos de 6 países. El instrumento Moon Mineralogy Mapper (M3) de la NASA, alojado en Chandrayaan-1, hizo el descubrimiento que reescribió los libros de texto: las moléculas de agua están extendidas por toda la superficie lunar, no solo encerradas en cráteres polares en sombra. La misión terminó abruptamente en agosto de 2009 cuando la ISRO perdió la comunicación con la nave.",

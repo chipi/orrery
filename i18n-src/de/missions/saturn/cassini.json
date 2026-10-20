@@ -1,5 +1,8 @@
 {
   "name": "Cassini-Huygens",
+  "vehicle": "Titan IVB / Centaur",
+  "payload": "Saturn-Orbiter (~5712 kg Trockenmasse) + Abstiegssonde Huygens (~318 kg, von der ESA gebaut, am 14.01.2005 auf dem Titan gelandet)",
+  "delta_v": "~2 km/s (Saturn-Orbiteinschwung)",
   "type": "Orbiter + Lander · Geflogen",
   "first": "13 Jahre im Orbit um Saturn — Huygens landete am 14.01.2005 auf Titan (erste sanfte Landung im äußeren Sonnensystem)",
   "dispatch": "Cassini tat etwas, das kein Raumschiff zuvor bei einem Riesenplaneten getan hatte: es hielt an. Dreizehn Jahre lang lebte es beim Saturn, und die Entdeckungen, die am meisten zählten, kamen aus dem Bleiben — die Geysire von Enceladus, eingefangen, weil die Sonde nah genug, oft genug vorbeiflog, um einen winzigen Mond zu sehen, der seinen verborgenen Ozean ins All hinausstößt. Es setzte Europas Huygens-Sonde auf Titan ab, die einzige Landung, die jemals im äußeren Sonnensystem durchgeführt wurde, und kartierte eine Welt aus Methanflüssen und -seen. Am Ende, ohne Treibstoff, wurde es absichtlich in den Saturn hineingesteuert, damit es niemals auf die Ozeanmonde fallen und sie kontaminieren könnte, die es gefunden hatte — eine Mission, die damit endete, die Orte zu schützen, die sie entdeckt hatte.",

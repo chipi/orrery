@@ -1,5 +1,8 @@
 {
   "name": "Skylab 3",
+  "vehicle": "Saturn IB (SA-207)",
+  "payload": "19979 kg di massa al lancio; CSM-117 + equipaggio di 3 persone",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Skylab 3 affrontò la questione della resistenza e quasi raddoppiò la risposta. Dove il primo equipaggio era rimasto 28 giorni, l'equipaggio di Alan Bean rimase 59 — spingendo il corpo umano più avanti nell'assenza di gravità di lunga durata di quanto chiunque fosse mai andato, e tornando più in salute di quanto i pessimisti avessero temuto. Registrarono un'enorme mole di osservazioni solari dall'Apollo Telescope Mount e superarono un momento critico quando perdite nei propulsori della loro navetta Apollo sollevarono brevemente la prospettiva di un volo di soccorso. Skylab 3 è dove i soggiorni prolungati nello spazio cominciarono a sembrare non solo sopravvivibili ma di routine — il lavoro preparatorio silenzioso per ogni turno di mesi in stazione da allora.",
   "type": "EQUIPAGGIO DI STAZIONE · VOLATA",
   "first": "Secondo equipaggio Skylab — 59 giorni, dispiegò uno scudo solare a doppia asta in sostituzione del parasole",

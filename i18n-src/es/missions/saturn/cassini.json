@@ -1,5 +1,8 @@
 {
   "name": "Cassini-Huygens",
+  "vehicle": "Titan IVB / Centaur",
+  "payload": "Orbitador de Saturno (~5712 kg en seco) + sonda de descenso Huygens (~318 kg, construida por la ESA, aterrizó en Titán el 2005-01-14)",
+  "delta_v": "~2 km/s (inserción en órbita de Saturno)",
   "type": "Orbitador + Aterrizador · Realizada",
   "first": "13 años en órbita de Saturno — Huygens aterrizó en Titán el 14-01-2005 (primer aterrizaje suave en el sistema solar exterior)",
   "dispatch": "Cassini hizo lo que ninguna nave espacial había hecho en ningún planeta gigante: se detuvo. Durante trece años vivió en Saturno, y los descubrimientos que más importaron vinieron de quedarse — los géiseres de Encélado, captados porque el orbitador voló lo suficientemente cerca, con suficiente frecuencia, para ver una luna diminuta expulsando su océano oculto al espacio. Desplegó la sonda Huygens de Europa sobre Titán, el único aterrizaje jamás realizado en el sistema solar exterior, y cartografió un mundo de ríos y lagos de metano. Al final, sin combustible, fue dirigida deliberadamente hacia Saturno para que nunca pudiera caer sobre las lunas oceánicas que había encontrado y contaminarlas — una misión que cerró protegiendo los lugares que descubrió.",

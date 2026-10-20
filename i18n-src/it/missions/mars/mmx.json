@@ -1,5 +1,8 @@
 {
   "name": "MMX",
+  "vehicle": "H3-24L",
+  "payload": "~4000 kg (previsto)",
+  "delta_v": "~5 km/s",
   "type": "RESTITUZIONE CAMPIONE PHOBOS · PREVISTA",
   "first": "Primo campione ritornato da una luna marziana",
   "description": "Martian Moons eXploration è il piano di JAXA per atterrare su Phobos, raccogliere circa 10 g di regolite e portarla a casa. I campioni potrebbero risolvere una questione a lungo dibattuta: Phobos e Deimos sono asteroidi catturati o frammenti di un antico impatto su Marte stesso? La missione include anche un rover franco-tedesco per la mobilità di superficie Phobos, un modello operativo completamente diverso da qualsiasi cosa le missioni Hayabusa abbiano fatto a Itokawa o Ryugu. Il lancio era previsto per il 2024, ma è slittato al 2026 a causa di ritardi nel veicolo di lancio H3 di JAXA.",

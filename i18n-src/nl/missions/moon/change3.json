@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 3",
+  "vehicle": "Long March 3B / E",
+  "payload": "3780 kg lanceermassa; 1200 kg lander; Yutu-rover van 140 kg",
+  "delta_v": "~3,8 km/s",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
   "first": "Eerste Chinese zachte landing op de maan; plaatste Yutu, Chinas eerste maanrover",
   "description": "Chang'e 3 was de derde lander in het Chang'e-programma van CNSA en de eerste geslaagde zachte landing op de maan sinds de Sovjet-Luna 24 in 1976 — een hiaat van 37 jaar. De Long March 3B lanceerde in december 2013 op een directe maantrajectorie, met slechts één koerscorrectie voorafgaand aan de maanbaaninvoering. De lander kwam neer in Mare Imbrium op 14 december en plaatste de Yutu (Jade Rabbit) rover, die 31 maanden operationeel bleef ondanks een mobiliteitsdefect dat zijn voortbeweging op de tweede lunaire dag beëindigde. De lander van Chang'e 3 bleef jarenlang daarna beelden maken.",

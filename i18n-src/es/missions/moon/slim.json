@@ -1,5 +1,8 @@
 {
   "name": "SLIM",
+  "vehicle": "H-IIA 202",
+  "payload": "730 kg de masa de lanzamiento; módulo de aterrizaje de 200 kg; 2 microrovers (LEV-1, LEV-2)",
+  "delta_v": "~3 km/s",
   "type": "ATERRIZADOR DE PRECISIÓN · ACTIVA",
   "first": "Primer aterrizaje de precisión a menos de 100 m del objetivo en otro mundo",
   "description": "Hasta SLIM, los aterrizajes lunares tenían una precisión de objetivo del orden del kilómetro. El Smart Lander de la JAXA demostró una precisión de 100 m — la requerida para que misiones tripuladas se acoplen con cargas pre-posicionadas, para que vehículos de ascenso de retorno de muestras encuentren a sus compañeros orbitales, y para cualquier arquitectura futura que dependa de aterrizar en sitios específicos científicamente valiosos. SLIM también fue pionero en la transferencia balística de baja energía a la Luna, tardando 135 días en llegar pero usando menos propelente que las trayectorias directas. Una demostración de la paciencia que las misiones interplanetarias pueden permitirse cuando el cronograma no es la restricción dominante.",

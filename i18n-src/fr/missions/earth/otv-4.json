@@ -1,5 +1,8 @@
 {
   "name": "X-37B OTV-4 (USA-261, AFSPC-5)",
+  "vehicle": "Atlas V 501 (AV-054)",
+  "payload": "USA-261 / AFSPC-5 ; X-37B Orbital Test Vehicle (~5000 kg). Charges utiles en grande partie classifiées.",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "AVION SPATIAL SANS ÉQUIPAGE · VOLÉ",
   "first": "USA-261 / AFSPC-5 — 718 jours en orbite, Shuttle Landing Facility du KSC",
   "description": "Quatrième vol du X-37B. Lancé le 2015-05-20 à 15:05 UTC depuis CCAFS SLC-41 sur un Atlas V 501 AV-054 ; premier atterrissage d'un OTV à la Shuttle Landing Facility du Centre spatial Kennedy (la même piste de 4,6 km autrefois utilisée par les orbiteurs du Space Shuttle) le 2017-05-07 à 11:47 UTC. Transportait l'expérience de propulseur à effet Hall de l'AFRL (XR-5A, propulsion ionique) et un banc d'essai d'exposition de matériaux de la NASA.",

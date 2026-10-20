@@ -1,5 +1,8 @@
 {
   "name": "Aurora 7 / MA-7",
+  "vehicle": "Atlas LV-3B (MA-7)",
+  "payload": "Cápsula Mercury nº 18 (1956 kg); Scott Carpenter",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Aurora 7 deveria ser uma repetição e se tornou um susto. Scott Carpenter voou o mesmo perfil de três órbitas que Glenn, mas distraído por experimentos e um sistema de controle defeituoso, ele esgotou seu combustível de atitude e disparou seus retrofoguetes alguns segundos atrasado e ligeiramente fora de linha — o suficiente para levá-lo cerca de 400 quilômetros além de seu alvo de pouso. Por uma longa e silenciosa hora ninguém sabia se ele estava vivo, até que um avião de busca o avistou flutuando em um bote salva-vidas. É um lembrete claro de que em uma máquina com quase nenhuma margem, pequenos erros se acumulam rapidamente — e que se recuperar deles é uma habilidade por si só.",
   "type": "TRIPULADO ÓRBITA TERRESTRE · VOADO",
   "first": "Repetiu o perfil de 3 órbitas de Glenn; ultrapassou o alvo de pouso em 400 km",

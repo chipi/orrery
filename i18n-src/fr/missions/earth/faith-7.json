@@ -1,5 +1,8 @@
 {
   "name": "Faith 7 / MA-9",
+  "vehicle": "Atlas LV-3B (MA-9)",
+  "payload": "Capsule Mercury n° 20 (1376 kg à sec) ; Gordon Cooper",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Faith 7 a clôturé Mercury, et l'a fait à la dure. Gordon Cooper a effectué vingt-deux orbites sur une journée et demie — plus longtemps que tous les vols Mercury précédents combinés — et puis, dans les dernières heures, son système de contrôle automatique est tombé en panne. Alors il a piloté la rentrée à la main, alignant la capsule sur l'horizon et les étoiles et déclenchant ses rétrofusées sur un décompte oral, et l'a posée plus près du navire que n'importe quel vol précédent. C'était la dernière fois qu'un Américain volait seul dans l'espace, et une conclusion appropriée pour un programme construit par des pilotes d'essai : quand l'automatisation a lâché, le pilote l'a ramené à la maison.",
   "type": "HABITÉ ORBITE TERRESTRE · VOLÉ",
   "first": "Dernier vol spatial habité américain en solo ; 22 orbites / 34 heures",

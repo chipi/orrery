@@ -1,5 +1,8 @@
 {
   "name": "Apollo 16",
+  "vehicle": "Saturn V (AS-511)",
+  "payload": "48599 kg lanzados (CSM Casper (CSM-113) + LM Orion (LM-11))",
+  "delta_v": "~6 km/s (ida y vuelta)",
   "dispatch": "Apollo 16 fue a las tierras altas lunares para muestrear antiguos volcanes y descubrió que nunca había habido ninguno. Los geólogos estaban seguros de que la pálida y accidentada región de Descartes era volcánica; cada roca que Young y Duke trajeron de vuelta era brecha — escombros soldados entre sí por impactos. Estar equivocados fue la recompensa: las brillantes tierras altas de la Luna resultaron ser un registro de un joven sistema solar bajo bombardeo incesante, no erupción. Es un ejemplo claro de cómo la exploración realmente justifica su valor — vas a confirmar lo que ya crees saber, y el lugar te dice algo mejor.",
   "type": "ATERRIZADOR TRIPULADO · VOLÓ",
   "first": "Primer alunizaje en las tierras altas lunares — Descartes; \"Lunar Grand Prix\" de John Young",

@@ -1,5 +1,8 @@
 {
   "name": "Mangalyaan",
+  "vehicle": "PSLV-XL (C25)",
+  "payload": "1337 kg",
+  "delta_v": "~3,5 km/s",
   "type": "ORBITADOR · REALIZADO",
   "first": "Primeira missão asiática para Marte; primeiro sucesso em Marte na primeira tentativa",
   "description": "A Missão Orbitadora de Marte da ISRO custou $74 milhões — menos do que o orçamento do filme Gravidade ($100M) e uma fração da MAVEN da NASA ($671M) que chegou dois dias antes. Construída em 18 meses como um demonstrador tecnológico, a Mangalyaan obteve sucesso em todos os objetivos: injeção trans-Marte, navegação no espaço profundo, inserção em órbita de Marte e 8 anos de retorno científico. A Índia se tornou a quarta agência espacial em Marte e a primeira a obter sucesso na primeira tentativa.",

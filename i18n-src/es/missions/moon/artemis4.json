@@ -1,5 +1,8 @@
 {
   "name": "Artemis IV",
+  "vehicle": "SLS Block 1 (último vuelo con la etapa superior ICPS) + módulo de aterrizaje tripulado (Starship HLS o Blue Moon, aún sin elegir)",
+  "payload": "Orion + tripulación de 4 personas; 2 tripulantes a la superficie durante aproximadamente una semana",
+  "delta_v": "~7 km/s (ida y vuelta)",
   "type": "ATERRIZADOR TRIPULADO · PLANIFICADA",
   "first": "Primer aterrizaje lunar tripulado desde el Apollo 17 (1972)",
   "description": "Desde el cambio de plan de la NASA de febrero de 2026, Artemis IV es la misión que devuelve a personas a la superficie lunar: el primer aterrizaje desde el Apollo 17 en 1972 y el primero cerca del polo sur. El SLS, en su último vuelo con la etapa superior provisional, lanza Orion con cuatro tripulantes hacia la Luna. En órbita lunar se encuentran con un módulo de aterrizaje comercial — la Starship de SpaceX o el Blue Moon de Blue Origin, que se elegirá tras las pruebas de acoplamiento de Artemis III — y dos astronautas descienden a la región polar sur para cerca de una semana de trabajo en superficie, mientras otros dos permanecen a bordo de Orion. El polo sur es el objetivo porque sus cráteres permanentemente sombreados contienen hielo de agua, que futuras misiones podrían convertir en agua potable, oxígeno y propelente. La NASA ha identificado nueve regiones candidatas de aterrizaje. Previsto para principios de 2028; la tripulación aún no ha sido nombrada.",

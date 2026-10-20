@@ -1,5 +1,8 @@
 {
   "name": "Luna 24",
+  "vehicle": "Proton-K / D",
+  "payload": "4800 kg de massa de lançamento; módulo de pouso de 1900 kg; 0,170 kg de amostra retornada",
+  "delta_v": "~3,5 km/s",
   "type": "AMOSTRA DE RETORNO · REALIZADO",
   "first": "Última missão lunar soviética; último pouso lunar não-tripulado por 37 anos",
   "description": "A missão lunar final da União Soviética e o último pouso lunar não-tripulado até a missão Chang'e 3 chinesa em 2013 — um intervalo de 37 anos. O núcleo perfurado extraiu regolito de 2 m de profundidade e retornou 170 g à Terra. Uma análise soviética de 1978 relatou ~0,1% de água em massa no núcleo — um resultado não-confirmado, ainda debatido — presságio das detecções posteriores confirmadas de água lunar. Luna 24 também marcou o encerramento do programa lunar soviético; recursos foram deslocados para Marte e Vênus.",

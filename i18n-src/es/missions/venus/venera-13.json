@@ -1,5 +1,8 @@
 {
   "name": "Venera 13",
+  "vehicle": "Proton-K / D-1",
+  "payload": "~4500 kg en conjunto: bus de sobrevuelo + cápsula de descenso de titanio de 1645 kg (cámaras, espectrómetro de fluorescencia de rayos X para la composición del suelo, sismómetro, brazo de toma de muestras con taladro de cámara hermética). Diseñada para uno de los entornos de descenso más hostiles jamás intentados.",
+  "delta_v": "~1,5 km/s (llegada a Venus)",
   "type": "ATERRIZADOR · FINALIZADA",
   "first": "Mayor supervivencia en superficie de cualquier misión a Venus (127 min); primeras panorámicas a color y primer audio de la superficie de otro planeta",
   "description": "Cumbre del programa Venera soviético. Venera 13 se lanzó el 1981-10-30 y aterrizó el 1982-03-01 en 7,5°S 303°E en las tierras altas de Phoebe Regio. Condiciones superficiales al aterrizar: 457 °C, 89 bar, neblina de ácido sulfúrico. El aterrizador sobrevivió 127 minutos — casi una hora más que su meta de diseño — devolviendo las primeras panorámicas a color de la superficie de otro planeta, grabando audio con micrófono de viento y usando su taladro y su espectrómetro de fluorescencia de rayos X de a bordo para determinar que el basalto del lugar era una composición alcalina leucítica débilmente diferenciada. Su nave gemela Venera 14 realizó operaciones idénticas en otro lugar cinco días después. La serie Venera (1967–1983) sigue siendo hasta hoy el único programa de superficie exitoso en Venus.",

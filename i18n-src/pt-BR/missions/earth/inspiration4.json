@@ -1,5 +1,8 @@
 {
   "name": "Inspiration4",
+  "vehicle": "Falcon 9 Block 5 (B1062.3) + Crew Dragon C207 (Resilience)",
+  "payload": "~12000 kg em LEO; 4 tripulantes, nenhum astronauta profissional",
+  "delta_v": "~9,4 km/s (LEO; órbita circular de 585 km)",
   "type": "VEÍCULO LIVRE TRIPULADO · VOADO",
   "first": "Primeiro voo espacial orbital totalmente civil; arrecadou US$ 243 M para o St. Jude Children's Research Hospital",
   "description": "Jared Isaacman, Sian Proctor, Hayley Arceneaux e Chris Sembroski — o primeiro voo orbital tripulado inteiramente por pessoas que não eram astronautas governamentais profissionais. Lançados em 2021-09-15 às 00:02 UTC do LC-39A no Falcon 9 B1062 (terceiro voo), a bordo da Crew Dragon Resilience (C207, já voada na Crew-1). Atingiram uma órbita circular de 585 km com 51,6° de inclinação — a maior órbita tripulada desde as missões de manutenção do Hubble. Sem atracagem com qualquer estação; três dias de voo livre, incluindo a primeira cúpula a bordo (substituindo o adaptador de atracagem). Amerissaram na costa da Flórida em 2021-09-18 às 23:06 UTC. A missão arrecadou mais de US$ 243 M para o St. Jude Children's Research Hospital — Arceneaux é ex-paciente do St. Jude e a primeira sobrevivente de câncer em órbita.",

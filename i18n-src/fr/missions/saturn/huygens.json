@@ -1,5 +1,8 @@
 {
   "name": "Huygens",
+  "vehicle": "Titan IVB / Centaur (lanceur de Cassini)",
+  "payload": "Sonde d'entrée de l'ESA de 318 kg — bouclier aérodynamique, 3 parachutes, 6 ensembles scientifiques (HASI, GCMS, DISR, ACP, SSP, DWE). Conçue pour survivre à une descente de 2,5 heures à travers l'atmosphère d'azote et de méthane de Titan jusqu'à la surface.",
+  "delta_v": "~6 km/s (décélération d'entrée, de 6 km/s en régime hypersonique jusqu'à la surface)",
   "type": "SONDE ATMOSPHÉRIQUE + MODULE D'ATTERRISSAGE · VOLÉ",
   "first": "Premier et unique atterrissage en douceur du système solaire externe — parachuté à travers l'atmosphère de Titan le 14-01-2005",
   "dispatch": "Huygens n'a pas été envoyé pour orbiter mais pour tomber. Attaché à Cassini pendant sept ans, il s'est détaché le jour de Noël 2004 et a navigué seul vers Titan pendant vingt jours. Quand il a frappé l'atmosphère de Titan à six kilomètres par seconde, un bouclier thermique lui a acheté le temps dont il avait besoin ; puis trois étages de parachutes l'ont ralenti pendant deux heures et demie à travers une brume orangée qu'aucun instrument n'avait jamais traversée. Il a photographié les vallées fluviales, mesuré les vitesses du vent, senti l'atmosphère — et atterri sur une plaine de galets de glace d'eau arrondis. C'était le premier atterrissage jamais effectué dans le système solaire externe, et aucun engin spatial n'y a atterri depuis.",

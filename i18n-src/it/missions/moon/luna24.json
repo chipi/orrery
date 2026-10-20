@@ -1,5 +1,8 @@
 {
   "name": "Luna 24",
+  "vehicle": "Proton-K / D",
+  "payload": "4800 kg di massa al lancio; lander da 1900 kg; 0,170 kg di campione riportato",
+  "delta_v": "~3,5 km/s",
   "type": "RITORNO DI CAMPIONI · MISSIONE COMPIUTA",
   "first": "Ultima missione lunare sovietica; ultimo allunaggio senza equipaggio per 37 anni",
   "description": "L'ultima missione lunare dell'Unione Sovietica e l'ultimo allunaggio senza equipaggio fino al Chang'e 3 della Cina nel 2013 — un intervallo di 37 anni. Il carotaggio estratto ha prelevato regolite da una profondità di 2 m e ha riportato 170 g sulla Terra. Un'analisi sovietica del 1978 ha segnalato ~0,1% di acqua in massa nel campione — un risultato non confermato e ancora dibattuto — anticipando le successive rilevazioni confermate di acqua lunare. Luna 24 ha anche segnato la chiusura del programma lunare sovietico; le risorse si sono spostate verso Marte e Venere.",

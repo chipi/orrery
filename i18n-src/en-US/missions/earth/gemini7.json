@@ -1,5 +1,8 @@
 {
   "name": "Gemini 7 / GT-7",
+  "vehicle": "Titan II GLV (GT-7)",
+  "payload": "Gemini 7; Frank Borman & Jim Lovell",
+  "delta_v": "~7.8 km/s (LEO)",
   "type": "CREWED EARTH-ORBIT · FLOWN",
   "first": "14-day endurance flight; rendezvous target for Gemini 6A",
   "dispatch": "Gemini 7 answered the least glamorous but most fundamental question: could a crew survive as long as a trip to the Moon and back? Frank Borman and Jim Lovell spent fourteen days sealed in a cabin the size of the front seat of a small car — no room to stand, stretch, or escape each other — to prove the human body and mind could take it. It was tedious and physically miserable, and it worked: they came back healthy, retiring the fear that long spaceflight might be impossible. Along the way they doubled as the target for Gemini 6A's rendezvous, so the single flight quietly proved two of Apollo's prerequisites at once — that people could last the distance, and that two ships could meet.",

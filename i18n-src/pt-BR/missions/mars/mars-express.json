@@ -1,5 +1,8 @@
 {
   "name": "Mars Express",
+  "vehicle": "Soyuz-FG / Fregat",
+  "payload": "1183 kg (1123 kg de orbitador + 60 kg do módulo de pouso Beagle 2)",
+  "delta_v": "~4,5 km/s",
   "type": "ÓRBITA · ATIVO",
   "first": "A primeira missão interplanetária da Europa; Orbitador de Marte não-NASA de maior duração",
   "description": "A primeira missão de ESA a um planeta diferente da Terra. A espaçonave produziu o registro contínuo mais longo da atmosfera de Marte, mapeando depósitos de gelo de água, plumas de metano e o clima tridimensional do planeta. O Beagle 2, o módulo de pouso construído na Grã-Bretanha que transportava, chegou à superfície, mas nunca implantou totalmente os painéis solares – declarado perdido em 2004, encontrado intacto pelo Mars Reconnaissance Orbiter do NASA em 2015. O orbitador está em sua terceira década de operação.",

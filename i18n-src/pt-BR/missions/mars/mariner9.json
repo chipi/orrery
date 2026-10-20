@@ -1,5 +1,8 @@
 {
   "name": "Mariner 9",
+  "vehicle": "Atlas SLV-3C Centaur",
+  "payload": "974 kg (incl. 449 kg de propelente)",
+  "delta_v": "~1,6 km/s",
   "type": "ORBITADOR · OPERADO",
   "first": "Primeira espaçonave a orbitar outro planeta",
   "description": "A Mariner 9 tornou possíveis todos os orbitadores que vieram depois. Depois que uma queima de inserção em órbita de Marte (MOI) de 15 minutos a colocou em órbita em 1971-11-14, o planeta lá embaixo estava irreconhecível — uma tempestade global de poeira havia escondido tudo, exceto os cumes dos quatro vulcões de Tharsis. O JPL esperou. Ao longo de janeiro de 1972 a poeira assentou e a Mariner 9 enviou 7.329 imagens cobrindo ~85% da superfície marciana, revelando o Monte Olimpo (o maior vulcão do sistema solar), Valles Marineris (o sistema de cânions que leva seu nome), canais de rios secos que sugerem uma antiga era líquida e os primeiros closes de Fobos e Deimos. A missão terminou em 1972-10-27, quando o gás de controle de atitude acabou; a espaçonave continua em órbita, decaindo lentamente.",

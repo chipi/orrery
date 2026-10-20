@@ -11,6 +11,21 @@
     "type": { "type": "string", "minLength": 1 },
     "first": { "type": "string", "minLength": 1 },
     "description": { "type": "string", "minLength": 1 },
+    "vehicle": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Localized launch vehicle / stack line (the base record's `vehicle`), shown on the /fly opening card and the mission panel."
+    },
+    "payload": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Localized payload line (the base record's `payload`)."
+    },
+    "delta_v": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Localized Δv line (the base record's `delta_v`)."
+    },
     "dispatch": {
       "type": "string",
       "minLength": 1,

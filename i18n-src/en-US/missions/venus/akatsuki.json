@@ -1,5 +1,8 @@
 {
   "name": "Akatsuki",
+  "vehicle": "H-IIA 202",
+  "payload": "517 kg (incl. 196 kg propellant)",
+  "delta_v": "~1.2 km/s",
   "type": "ORBITER · FLOWN",
   "first": "Recovered from a 5-year solar-orbit hold to achieve Venus orbit on a backup attempt; the only Venus orbiter active in its final years of operation",
   "description": "Akatsuki — \"dawn\" — was Japan's first Venus mission. Launched 2010-05-20 from Tanegashima on an H-IIA 202, paired with the IKAROS solar-sail demonstrator. The planned Venus orbit insertion 2010-12-07 failed when salt crystal buildup in an oxidiser check valve threw the main engine off-axis 152 seconds into the burn. JAXA kept the spacecraft alive in solar orbit for five years, twelve correction maneuvers, until the next Venus encounter window. On 2015-12-07 a 1228-second burn using four attitude-control thrusters — never designed for orbital insertion — placed Akatsuki into a highly elliptical 400 × 440,000 km, 3°-inclination orbit. One of the most dramatic mission-saves in spaceflight history. Contact was lost in 2024; JAXA declared operations complete on 2025-09-18.",

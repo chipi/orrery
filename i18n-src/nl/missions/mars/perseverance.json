@@ -1,5 +1,8 @@
 {
   "name": "Perseverance",
+  "vehicle": "Atlas V 541",
+  "payload": "3839 kg lanceermassa (rover van 1025 kg; Ingenuity-helikopter van 1,8 kg)",
+  "delta_v": "~6,1 km/s",
   "type": "ROVER · ACTIEF",
   "first": "Eerste helikopter op een andere planeet (Ingenuity); eerste monstercaching voor Mars Sample Return",
   "dispatch": "Perseverance ging naar Mars om naar de doden te zoeken. Geland in 2021 op de bodem van Jezero-krater — een bekken met de delta van een rivier die miljarden jaren geleden een meer voedde, precies het soort plek waar leven sporen zou hebben achtergelaten — het is de eerste rover speciaal gebouwd om naar tekenen van oud leven te zoeken, en om iets te doen wat geen missie eerder had gedaan: Martiaans gesteente in buizen sluiten en opzij zetten voor een toekomstig ruimtevaartuig om mee naar huis te nemen. Het bracht ook Ingenuity mee, de kleine helikopter die de eerste gemotoriseerde vlucht op een andere planeet maakte. Als de monsters die het opslaat ooit terugkomen, zullen het de eerste stukken van het oppervlak van een andere planeet zijn die naar de Aarde zijn gebracht.",

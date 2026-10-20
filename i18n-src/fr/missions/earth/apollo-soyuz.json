@@ -1,5 +1,8 @@
 {
   "name": "Projet test Apollo-Soyuz (ASTP)",
+  "vehicle": "Saturn IB (AS-210) + Soyuz-U",
+  "payload": "Apollo CSM-111 (tout dernier CSM Apollo) + Soyuz 19 (7K-TM modifié) ; 14,4 t Apollo + 6,8 t Soyuz",
+  "delta_v": "~9,4 km/s (LEO, pour chacun)",
   "type": "VOL HABITÉ EN ORBITE TERRESTRE · RÉALISÉ",
   "first": "Première coopération spatiale humaine internationale ; premier rendez-vous + arrimage US-URSS",
   "dispatch": "Apollo-Soyuz est l'endroit où la course spatiale s'achève — non pas sur une ligne d'arrivée, mais par une poignée de main. En juillet 1975, une capsule Apollo américaine et une Soyuz soviétique, les engins rivaux des superpuissances rivales, se sont rencontrés et arrimés en orbite, et Tom Stafford et Alexeï Leonov se sont serré la main à travers le sas ouvert qui les séparait. Il a fallu un adaptateur d'arrimage construit conjointement, deux équipages apprenant la langue l'un de l'autre, et un dégel de la Guerre froide assez profond pour permettre aux plus féroces concurrents de l'époque de coopérer à la vue du monde entier. Rien ne l'y obligeait vraiment ; c'était justement le point. Après dix-huit ans de course pour être le premier, les deux programmes ont choisi, pour un vol seulement, simplement de se rencontrer — et ont établi le modèle de la coopération internationale qui un jour construirait la Station spatiale.",

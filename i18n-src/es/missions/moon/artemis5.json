@@ -1,5 +1,8 @@
 {
   "name": "Artemis V",
+  "vehicle": "SLS Block 1 (etapa superior por confirmar) + módulo de aterrizaje tripulado (Starship HLS o Blue Moon)",
+  "payload": "Orion + tripulación de 4 personas; segundo alunizaje tripulado, inicio de los trabajos de la base lunar",
+  "delta_v": "~7 km/s (ida y vuelta)",
   "type": "ATERRIZADOR TRIPULADO · PLANIFICADA",
   "first": "Segundo aterrizaje tripulado de la era Artemis — el comienzo de una base lunar",
   "description": "Artemis V está previsto como el segundo aterrizaje tripulado cerca del polo sur lunar, tras Artemis IV y dentro del mismo año — parte del objetivo de la NASA de 2026 de al menos un aterrizaje al año. Debe iniciar el paso de las visitas breves a una presencia duradera: el trabajo hacia una base en la superficie, que la NASA eligió en marzo de 2026 en lugar de terminar la estación Gateway en órbita lunar, ahora en pausa. Como en Artemis IV, el SLS lanza Orion con cuatro tripulantes y un módulo de aterrizaje comercial lleva a dos de ellos hasta la superficie. El SLS tiene financiación para volar hasta Artemis V; para misiones posteriores la NASA ha propuesto alternativas comerciales y reutilizables. Previsto para finales de 2028; la tripulación, el módulo de aterrizaje y el lugar de aterrizaje aún no se han elegido.",

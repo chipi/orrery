@@ -1,5 +1,8 @@
 {
   "name": "Apollo 7",
+  "vehicle": "Saturn IB (AS-205)",
+  "payload": "14781 kg lançados (CSM da Apollo 7 (CSM-101), sem LM)",
+  "delta_v": "~9,5 km/s (até a LEO)",
   "type": "TRIPULADO ÓRBITA TERRESTRE · VOOU",
   "first": "Primeiro voo Apollo tripulado — teste do CSM em órbita terrestre",
   "description": "O primeiro voo tripulado da Apollo, 21 meses após o incêndio da Apollo 1 (1967-01-27) ter matado Grissom, White e Chaffee na plataforma. Apollo 7 verificou o redesenhado Módulo de Comando e Serviço Block II em órbita terrestre — suporte de vida, energia, propulsão (o SPS foi acionado oito vezes), controle térmico, e a primeira transmissão de TV ao vivo de uma espaçonave tripulada dos EUA do mundo. Schirra (resfriado + irritável durante todo o tempo) anulou Houston sobre uma questão de capacete de reentrada, contribuindo para a decisão do Mission Control de que nenhum dos três tripulantes voaria novamente. O voo de 10 dias e 20 horas abriu caminho para a aposta de órbita lunar da Apollo 8 dois meses depois.",

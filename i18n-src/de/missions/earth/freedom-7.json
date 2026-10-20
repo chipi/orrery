@@ -1,5 +1,8 @@
 {
   "name": "Freedom 7 / MR-3",
+  "vehicle": "Mercury-Redstone 3 (MR-3)",
+  "payload": "Mercury-Kapsel Nr. 7 „Freedom 7“ (1832 kg); Alan Shepard",
+  "delta_v": "~2,3 km/s (suborbital)",
   "dispatch": "Freedom 7 ist der Beginn der bemannten amerikanischen Raumfahrt. Drei Wochen nachdem Gagarin bereits die Erde umkreist hatte, war Alan Shepards Flug kürzer, niedriger und langsamer — fünfzehn Minuten, geradeaus hoch und geradeaus wieder runter, ohne jemals einen Orbit zu erreichen — und das Land feierte trotzdem, denn zum ersten Mal hatte ein Amerikaner den Planeten verlassen. Was ihn von Gagarins Flug unterschied, war der Mann: Shepard steuerte die Lage seiner Kapsel im Weltraum von Hand, während Gagarin in einer vollautomatischen geflogen war, und für ein Programm, das auf Testpiloten aufbaute, war dieser Unterschied alles. Zwanzig Tage später gab sein Erfolg Kennedy den Mut, vor den Kongress zu treten und die Nation auf den Mond zu setzen. Ein kleiner Flug, der etwas sehr Großes in Gang setzte.",
   "type": "BEMANNT SUBORBITAL · GEFLOGEN",
   "first": "Erster Amerikaner im Weltraum",

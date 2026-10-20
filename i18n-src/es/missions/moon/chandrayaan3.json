@@ -1,5 +1,8 @@
 {
   "name": "Chandrayaan-3",
+  "vehicle": "LVM3 M4 (antes GSLV Mk III)",
+  "payload": "3900 kg de masa de lanzamiento; 1726 kg de módulo de aterrizaje + rover",
+  "delta_v": "~3,5 km/s",
   "type": "MÓDULO DE DESCENSO · RÓVER · COMPLETADA",
   "first": "Primer alunizaje suave cerca del polo lunar sur",
   "description": "Tras la pérdida del módulo de descenso Vikram de Chandrayaan-2 en 2019, la tercera misión lunar de la ISRO fue deliberadamente conservadora, enfocándose en el módulo de descenso en lugar de llevar un orbitador. Vikram se posó a 69,4° S de latitud, lo más cerca que cualquier nave ha llegado a un polo lunar. El róver Pragyan detectó azufre en la superficie lunar por primera vez e hizo mediciones térmicas in situ. India se convirtió en la cuarta nación en alunizar suavemente en la Luna, posándose más cerca de un polo lunar que cualquier nave anterior — una región donde en el futuro la minería de hielo de agua podría ser posible.",

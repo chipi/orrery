@@ -1,5 +1,8 @@
 {
   "name": "Aurora 7 / MA-7",
+  "vehicle": "Atlas LV-3B (MA-7)",
+  "payload": "Mercury-capsule nr. 18 (1956 kg); Scott Carpenter",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Aurora 7 was bedoeld als een herhaling en werd een schrikmoment. Scott Carpenter vloog hetzelfde profiel van drie omwentelingen als Glenn, maar afgeleid door experimenten en een weerbarstig besturingssysteem verbruikte hij zijn stuurbrandstof en vuurde hij zijn retro's een paar seconden te laat en licht uit lijn af — genoeg om hem zo'n 400 kilometer voorbij zijn landingsdoel te voeren. Een lang, stil uur wist niemand of hij nog leefde, totdat een zoektoestel hem dobberend in een reddingsvlot zag. Het is een nuchtere herinnering dat in een machine met bijna geen marge kleine fouten zich snel opstapelen — en dat het herstellen daarvan een vaardigheid op zich is.",
   "type": "BEMAND AARDBAAN · GEVLOGEN",
   "first": "Herhaalde Glenns 3-baan-profiel; schoot landingsdoel 400 km voorbij",

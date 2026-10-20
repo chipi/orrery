@@ -1,5 +1,8 @@
 {
   "name": "DART",
+  "vehicle": "Falcon 9 Block 5",
+  "payload": "611 kg (dont ~60 kg de xénon pour le démonstrateur de propulseur ionique NEXT-C + ~50 kg d'hydrazine)",
+  "delta_v": "~3,7 km/s (croisière de la mission ; ~6,6 km/s de vitesse d'impact)",
   "type": "IMPACTEUR CINÉTIQUE · FLOWN",
   "first": "Première démonstration d'une défense planétaire par impacteur cinétique ; première fois que l'humanité a dévié un astéroïde",
   "description": "DART (Double Asteroid Redirection Test) était la première mission de défense planétaire jamais lancée — un engin spatial de 611 kg envoyé heurter un astéroïde de 160 m suffisamment fort pour modifier son orbite. La cible était Dimorphos, un satellite de l'astéroïde Didymos de 780 m. Lancé le 2021-11-24 sur une Falcon 9 ; le système de navigation autonome SMART Nav a pris le contrôle 4 heures avant l'impact pour distinguer Dimorphos de son corps parent et viser le plus petit corps. Impact le 2022-09-26 à 23:14 UTC à ≈ 6,6 km/s. Changement mesuré de la période orbitale : 33 minutes (4,2 %), dépassant le seuil de réussite de 73 secondes de ≈ 25×. Le facteur d'amélioration du transfert de quantité de mouvement β ≈ 3,6 indiquait une contribution significative des matériaux de surface éjectés. Le CubeSat LICIACube a observé le panache ; le HST et le JWST ont imagé la queue d'éjecta résultante pendant plusieurs semaines. Première démonstration que l'humanité peut dévier un astéroïde.",

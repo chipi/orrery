@@ -1,5 +1,8 @@
 {
   "name": "X-37B OTV-6 (USA-299, USSF-7)",
+  "vehicle": "Atlas V 501 (AV-081)",
+  "payload": "USA-299 / USSF-7; Veículo de Teste Orbital X-37B (~5000 kg). Cargas úteis em grande parte confidenciais.",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "AERONAVE ESPACIAL NÃO TRIPULADA · REALIZADA",
   "first": "USA-299 / USSF-7 — 908 dias em órbita, KSC Shuttle Landing Facility",
   "description": "Sexto voo X-37B — primeiro sob a nova designação organizacional USSF; voo recorde de 908 dias em órbita (~2,5 anos). Lançado em 2020-05-17 13:14 UTC do CCAFS SLC-41 no Atlas V 501 AV-081; pousou no KSC SLF em 2022-11-12 10:22 UTC. Transportava o PRAM (Photovoltaic RF Antenna Module — experimento de transmissão de energia solar por micro-ondas de 1 W) do Naval Research Laboratory e um despachador FalconSAT-8 do AFRL.",

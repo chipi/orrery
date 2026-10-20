@@ -1,5 +1,8 @@
 {
   "name": "Voskhod 1",
+  "vehicle": "Voskhod (11A57)",
+  "payload": "5320 kg launch mass; three cosmonauts (no spacesuits, no ejection seats)",
+  "delta_v": "~9.4 km/s (LEO)",
   "type": "CREWED EARTH-ORBIT · FLOWN",
   "first": "First multi-crew spaceflight — three cosmonauts in a Vostok-derived capsule",
   "dispatch": "Voskhod 1 was the first flight to carry more than one person into space, and it managed it by subtraction. There was no room in the one-seat Vostok for a three-person crew, so the engineers took things out — the ejection seats that had saved every previous cosmonaut, and, because even then it was too tight, the pressure suits. Komarov, Feoktistov, and Yegorov flew for a day in shirtsleeves, with no way to escape a launch or reentry emergency and no protection if the cabin lost air. Nothing went wrong, so it looked like a triumph. It was really a bet — that the corners cut to score a first wouldn't be the ones that mattered — and it happened to win.",

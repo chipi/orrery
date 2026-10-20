@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 3",
+  "vehicle": "Long March 3B / E",
+  "payload": "3780 kg di massa al lancio; 1200 kg di lander; rover Yutu da 140 kg",
+  "delta_v": "~3,8 km/s",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
   "first": "Primo allunaggio controllato cinese sulla Luna; ha dispiegato Yutu, il primo rover lunare cinese",
   "description": "Chang'e 3 è stato il terzo lander del programma Chang'e dell'CNSA e il primo allunaggio controllato riuscito sulla Luna dal Soviet Luna 24 nel 1976 — un intervallo di 37 anni. Il Long March 3B è stato lanciato su una traiettoria lunare diretta nel dicembre 2013, con una sola correzione di rotta intermedia prima dell'inserimento in orbita lunare. Il lander si è posato nel Mare Imbrium il 14 dicembre e ha dispiegato il rover Yutu (Jade Rabbit), che ha operato per 31 mesi nonostante un guasto di mobilità ne abbia terminato il movimento nel giorno lunare 2. Il lander di Chang'e 3 ha continuato a effettuare riprese per anni dopo.",

@@ -1,5 +1,8 @@
 {
   "name": "Apollo 7",
+  "vehicle": "Saturn IB (AS-205)",
+  "payload": "14781 kg lancés (CSM d'Apollo 7 (CSM-101), sans LM)",
+  "delta_v": "~9,5 km/s (jusqu'en LEO)",
   "type": "HABITÉ ORBITE TERRESTRE · VOLÉ",
   "first": "Premier vol Apollo habité — essai du CSM en orbite terrestre",
   "description": "Le premier vol Apollo habité, 21 mois après l'incendie d'Apollo 1 (1967-01-27) qui a tué Grissom, White et Chaffee sur le pas de tir. Apollo 7 a validé le module de commande et de service Block II redessiné en orbite terrestre — support vital, électricité, propulsion (le système SPS a fonctionné huit fois), contrôle thermique, et la première émission télévisée en direct du monde depuis un vaisseau spatial américain habité. Schirra (rhume + irritable tout au long de la mission) s'est opposé à Houston sur une question de casque de rentrée atmosphérique, ce qui a contribué à la décision de Mission Control que les trois membres d'équipage ne voleraient plus jamais. Le vol de 10 jours et 20 heures a ouvert la voie au pari d'orbite lunaire d'Apollo 8 deux mois plus tard.",

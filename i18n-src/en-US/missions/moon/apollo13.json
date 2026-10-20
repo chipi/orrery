@@ -1,5 +1,8 @@
 {
   "name": "Apollo 13",
+  "vehicle": "Saturn V (AS-508)",
+  "payload": "44069 kg launched (CSM Odyssey + LM Aquarius)",
+  "delta_v": "~6 km/s (round trip, aborted landing)",
   "type": "CREWED FLYBY · FLOWN (LANDING ABORTED)",
   "first": "The mission that turned a near-disaster into NASA's most celebrated rescue",
   "dispatch": "Apollo 13 never landed, and it is the mission everyone remembers. Two days out, an oxygen tank tore itself apart and turned a routine flight to the Fra Mauro highlands into a four-day problem of keeping three men alive in a dying spacecraft a quarter-million miles from home. What saved them was not heroics; it was preparation and a roomful of people working the problem in real time, improvising a way to breathe and a way home out of whatever was already bolted to the vehicle. NASA called it a successful failure. It is closer to the truth to say it is the flight that proved the agency was as good as it claimed to be.",

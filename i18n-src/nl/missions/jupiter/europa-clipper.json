@@ -1,5 +1,8 @@
 {
   "name": "Europa Clipper",
+  "vehicle": "Falcon Heavy",
+  "payload": "6065 kg (grootste ruimtevaartuig voor planetaire missies ooit gelanceerd; zonnepanelen van 100 m² voor energie in het buitenste zonnestelsel)",
+  "delta_v": "~3,5 km/s (met zwaartekrachtsteunen van Mars + Aarde)",
   "type": "ORBITER + MULTI-FLYBY · ACTIEF",
   "first": "Eerste missie gewijd aan het karakteriseren van de bewoonbaarheid van een ijzige maan; grootste planetaire missie-ruimtevaartuig ooit gelanceerd (6065 kg, 100-m² zonnepanelen)",
   "description": "Europa Clipper gaat naar Jupiter om Europa te bestuderen — een 3.121-km ijzige maan waarvan wordt aangenomen dat deze een wereldwijd vloeibaar-waterocean onder een 15-25 km dikke ijslaag herbergt, de meest toegankelijke potentieel-bewoonbare omgeving in het zonnestelsel. Gelanceerd 2024-10-14 op een Falcon Heavy bij C3 41,7. Een Mars-zwaartekrachtmanoeuvre in maart 2025 boog de baan richting Aarde; een Aarde-zwaartekrachtmanoeuvre 2026-12 geeft de laatste duw naar buiten; aankomst Jupiter 2030-04-11 voor baaninsluiting. De baanronde voert 49 nauwe Europa-voorbijvluchten uit over vier jaar — passerend binnen 25 km van Europa's oppervlak bij de nauwste passages, ontworpen om de hele maan in kaart te brengen en tegelijkertijd de stralingsdosis van het ruimtevaartuig in Jupiters brute stralingsgordels te beperken. Instrumenten: REASON ijsdoordringende radar, MASPEX massaspectrometer (bemonstert pluimmateriaal indien aanwezig), E-THEMIS thermische beeldvormer (vindt actieve geysers), magnetometer + plasmainstrumenten bevestigen oceaandiepte uit geïnduceerde magnetische respons.",

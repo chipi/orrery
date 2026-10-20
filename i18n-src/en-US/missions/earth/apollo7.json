@@ -1,5 +1,8 @@
 {
   "name": "Apollo 7",
+  "vehicle": "Saturn IB (AS-205)",
+  "payload": "14781 kg launched (Apollo 7 CSM (CSM-101), no LM)",
+  "delta_v": "~9.5 km/s (to LEO)",
   "type": "CREWED EARTH-ORBIT · FLOWN",
   "first": "First crewed Apollo flight — Earth-orbit CSM shakedown",
   "description": "The first crewed Apollo flight, 21 months after the Apollo 1 fire (1967-01-27) killed Grissom, White and Chaffee on the pad. Apollo 7 verified the redesigned Block II Command and Service Module in Earth orbit — life support, power, propulsion (SPS fired eight times), thermal control, and the world's first live TV broadcast from a crewed US spacecraft. Schirra (head cold + irritable throughout) overruled Houston on a re-entry helmet question, contributing to Mission Control's decision that none of the three crewmembers would fly again. The 10 day 20 hour flight cleared the way for Apollo 8's lunar-orbit gamble two months later.",

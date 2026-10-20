@@ -1,5 +1,8 @@
 {
   "name": "Mariner 9",
+  "vehicle": "Atlas SLV-3C Centaur",
+  "payload": "974 kg (einschl. 449 kg Treibstoff)",
+  "delta_v": "~1,6 km/s",
   "type": "ORBITER · GEFLOGEN",
   "first": "Erstes Raumschiff, das einen anderen Planeten umkreist",
   "description": "Mariner 9 machte jeden Orbiter möglich, der danach folgte. Nach einem 15-minütigen MOI-Bremsmanöver in die Marsumlaufbahn am 1971-11-14 war der Planet darunter unkenntlich — ein globaler Staubsturm hatte alles verborgen, außer den vier Gipfeln der Tharsis-Vulkane. JPL wartete ab. Im Laufe des Januar 1972 legte sich der Staub und Mariner 9 sendete 7.329 Bilder zurück, die ~85% der Marsoberfläche abdeckten und Olympus Mons (den größten Vulkan des Sonnensystems), Valles Marineris (das Canyonsystem, das seinen Namen trägt), ausgetrocknete Flusskanäle, die auf eine antike flüssige Ära hindeuten, und die ersten Nahaufnahmen von Phobos und Deimos offenbarten. Die Mission endete am 1972-10-27, als das Lagekontrollgas aufgebraucht war; das Raumschiff bleibt in der Umlaufbahn und zerfällt langsam.",

@@ -1,5 +1,8 @@
 {
   "name": "Pioneer 10",
+  "vehicle": "Atlas SLV-3C Centaur D-1A / TE-364-4",
+  "payload": "Vorbeiflug-Raumsonde für das äußere Sonnensystem; erste mit SNAP-19-RTGs; 25 W beim Start (abfallend auf ~65 W nutzbare Leistung; Signalverlust 2003)",
+  "delta_v": "~14,4 km/s (heliozentrisch, nach Jupiter)",
   "type": "Vorbeiflug · Geflogen",
   "first": "Erste Raumsonde durch den Asteroidengürtel und erster Vorbeiflug am Jupiter (04.12.1973)",
   "dispatch": "Pioneer 10 flog zuerst — in zwei Gefahren, die niemand vermessen hatte. Kein Raumfahrzeug hatte den Asteroidengürtel durchquert — von dem man annahm, er sei eine Schießbude aus Trümmern — oder Jupiters Strahlung überlebt, die man für tödlich für Elektronik hielt. Pioneer 10 schaffte beides: Es durchquerte den Gürtel unbeschädigt (der Gürtel, wie sich herausstellte, ist größtenteils leer), erreichte Jupiter im Dezember 1973 als erstes Raumfahrzeug überhaupt und lieferte die ersten Nahaufnahmen des Riesenplaneten. Dann wurde es das erste von Menschen geschaffene Objekt, das endgültig aus dem Sonnensystem hinaus gelenkt wurde. Sein Wert war der Beweis — es verwandelte die unbekannten Gefahren auf dem Weg zu den äußeren Planeten in bekannte, sodass die Voyagers gebaut werden konnten, um sich ihnen zu stellen.",

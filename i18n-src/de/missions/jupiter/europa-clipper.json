@@ -1,5 +1,8 @@
 {
   "name": "Europa Clipper",
+  "vehicle": "Falcon Heavy",
+  "payload": "6065 kg (größte Planetenmission-Raumsonde, die je gestartet wurde; 100-m²-Solarmodule für die Energieversorgung im äußeren Sonnensystem)",
+  "delta_v": "~3,5 km/s (mit Mars- und Erd-Swing-bys)",
   "type": "ORBITER + MEHRFACH-VORBEIFLUG · AKTIV",
   "first": "Erste Mission zur Charakterisierung der Bewohnbarkeit eines Eismonds; größtes je gestartetes Planetenmissions-Raumfahrzeug (6065 kg, 100-m²-Solarmodule)",
   "description": "Europa Clipper fliegt zum Jupiter, um Europa zu untersuchen — einen 3121 km großen Eismond, der vermutlich unter einer 15–25 km dicken Eiskruste einen globalen Ozean aus flüssigem Wasser beherbergt, die am leichtesten zugängliche potenziell bewohnbare Umgebung im Sonnensystem. Gestartet 2024-10-14 an einer Falcon Heavy mit C3 41,7. Ein Mars-Swing-by im März 2025 lenkte die Flugbahn zur Erde; ein Erd-Swing-by 2026-12 liefert den letzten Schub nach außen; kommt 2030-04-11 bei Jupiter an zur Orbitaleinfügung. Die Orbitalrundfahrt führt 49 enge Europa-Vorbeiflüge über vier Jahre durch — mit Abständen von nur 25 km über Europas Oberfläche bei den engsten Passagen, entworfen, um den gesamten Mond abzubilden und gleichzeitig die Strahlungsdosis des Raumfahrzeugs in Jupiters brutalen Strahlungsgürteln zu begrenzen. Instrumente: REASON Eis-Durchdringungsradar, MASPEX Massenspektrometer (untersucht Fahnenmaterial, falls vorhanden), E-THEMIS Wärmekamera (findet aktive Geysire), Magnetometer + Plasmainstrumente bestätigen Ozeantiefe durch induzierte magnetische Reaktion.",

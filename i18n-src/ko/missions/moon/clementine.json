@@ -1,5 +1,8 @@
 {
   "name": "Clementine",
+  "vehicle": "Titan II G",
+  "payload": "건조 질량 424 kg; 추진제 포함 발사 질량 1690 kg",
+  "delta_v": "~3.5 km/s",
   "type": "궤도선 · 비행 완료",
   "first": "NASA·국방부 공동 달 임무; 달 극지 물얼음의 첫 단서",
   "description": "전략방위구상(Strategic Defense Initiative) 기술 시연용으로 주로 설계된 Clementine은 달 궤도에서 10주를 보내며 달의 첫 체계적인 전 지구 지형도와 다중분광 지도를 보내왔습니다. 달 남극에서 한 바이스태틱 레이더 측정은 물얼음에 대한 최초의 솔깃한 단서를 내놓았고, 이는 수년 뒤 Lunar Prospector와 Chandrayaan-1이 확인했습니다. 소행성 Geographos 근접 통과를 목표로 한 후속 임무는 추진기 오작동으로 추진제가 바닥나면서 실패했습니다.",

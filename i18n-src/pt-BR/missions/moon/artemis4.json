@@ -1,5 +1,8 @@
 {
   "name": "Artemis IV",
+  "vehicle": "SLS Block 1 (último voo com o estágio superior ICPS) + módulo de pouso tripulado (Starship HLS ou Blue Moon, ainda não escolhido)",
+  "payload": "Orion + tripulação de 4 pessoas; 2 tripulantes na superfície por cerca de uma semana",
+  "delta_v": "~7 km/s (ida e volta)",
   "type": "LANDER TRIPULADO · PLANEJADO",
   "first": "Primeiro pouso lunar tripulado desde a Apollo 17 (1972)",
   "description": "Desde a mudança de plano da NASA em fevereiro de 2026, a Artemis IV é a missão que devolve pessoas à superfície lunar — o primeiro pouso desde a Apollo 17, em 1972, e o primeiro já feito perto do polo sul. O SLS, em seu último voo com o estágio superior provisório, lança a Orion com quatro tripulantes rumo à Lua. Em órbita lunar, eles encontram um módulo de pouso comercial — a Starship da SpaceX ou o Blue Moon da Blue Origin, a ser escolhido após os testes de acoplamento da Artemis III — e dois astronautas descem à região polar sul para cerca de uma semana de trabalho na superfície, enquanto dois permanecem a bordo da Orion. O polo sul é o alvo porque suas crateras permanentemente sombreadas guardam gelo de água, que missões futuras poderão transformar em água potável, oxigênio e propelente. A NASA identificou nove regiões candidatas ao pouso. Previsto para o início de 2028; a tripulação ainda não foi nomeada.",

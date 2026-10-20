@@ -1,5 +1,8 @@
 {
   "name": "SMART-1",
+  "vehicle": "Ariane 5 (carga compartilhada)",
+  "payload": "367 kg de massa de lançamento; propulsor iônico de efeito Hall solar-elétrico de 1,2 kW",
+  "delta_v": "~3,9 km/s (propulsão iônica acumulada ao longo de 13 meses)",
   "type": "ORBITADOR ROBÓTICO · CONCLUÍDO",
   "first": "Primeira sonda espacial europeia a atingir a Lua; primeira missão a alcançar a Lua sob propulsão iônica",
   "description": "Primeira missão lunar da ESA e a primeira sonda espacial europeia a atingir a Lua. SMART = Small Missions for Advanced Research in Technology (Pequenas Missões para Pesquisa Avançada em Tecnologia) — e a tecnologia-chave era um propulsor eletrostático solar de efeito Hall (PPS-1350-G), na época o maior propulsor deste tipo já lançado. Lançada em 2003-09-27 como carga útil compartilhada em um Ariane 5 de Kourou, a sonda de 367 kg usou seu motor iônico de xenônio de 1,2 kW durante 13 meses para aumentar lentamente sua órbita terrestre, sendo eventualmente capturada pela gravidade lunar em 2004-11-15 — uma espiral de baixo empuxo de 13 meses em vez da transferência química de dias de todas as missões lunares anteriores. Operou por 16 meses em órbita polar lunar retornando imagens da câmera AMIE, os primeiros mapas elementares de fluorescência de raios-X da Lua (D-CIXS) e espectroscopia mineral no infravermelho (SIR). Impactou deliberadamente Lacus Excellentiae (34,4° S, 46,2° W) em 2006-09-03 05:42 UTC — o clarão de impacto foi observado ao vivo pelo Canada-France-Hawaii Telescope.",

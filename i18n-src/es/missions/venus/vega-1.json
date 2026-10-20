@@ -1,5 +1,8 @@
 {
   "name": "Vega 1",
+  "vehicle": "Proton-K / D-1",
+  "payload": "Bus de sobrevuelo de 4920 kg + módulo de descenso de ~1500 kg (módulo de aterrizaje tipo Venera + primer aerostato de globo de helio). Naves gemelas Vega 1 / Vega 2 lanzadas con 6 días de diferencia para el mismo itinerario Venus y luego Halley.",
+  "delta_v": "~3,6 km/s (salida + reorientación para interceptar el Halley)",
   "type": "SOBREVUELO + ATERRIZADOR + GLOBO · FINALIZADA",
   "first": "Primer globo aerostático desplegado jamás en la atmósfera de otro planeta (Venus, 1985); primera nave espacial en llevar instrumentos científicos a dos objetivos distintos del sistema solar",
   "description": "Buque insignia soviético-ESA de la armada Halley. Vega 1 se lanzó el 1984-12-15 con un módulo de descenso de linaje Venera más un globo de helio de ESA/CNES innovador que derivó en la cubierta de nubes de Venus a 54 km de altitud durante 46,5 horas, transmitiendo datos de viento y temperatura a través de una red radiofónica global de 20 estaciones. Tras soltar su módulo de descenso, el bus utilizó la asistencia gravitatoria de Venus para redirigirse hacia el cometa 1P/Halley, logrando una distancia mínima de 8890 km el 1986-03-06 —el primer encuentro con un núcleo cometario, y la determinación de posición que el Giotto de ESA utilizó para navegar su propio sobrevuelo de Halley mucho más cercano una semana después.",

@@ -1,5 +1,8 @@
 {
   "name": "Apollo 12",
+  "vehicle": "Saturn V (AS-507)",
+  "payload": "46782 kg lanciati (CSM Yankee Clipper (CSM-108) + LM Intrepid (LM-6))",
+  "delta_v": "~6 km/s (andata e ritorno)",
   "type": "LANDER CON EQUIPAGGIO · COMPLETATO",
   "first": "Secondo allunaggio con equipaggio — atterraggio di precisione a 163 m da Surveyor 3",
   "dispatch": "Se Apollo 11 ha provato che si poteva raggiungere la Luna, Apollo 12 ha provato che si poteva raggiungere un punto particolare su di essa. Trentasei secondi dopo il lancio, un fulmine colpì il razzo e mise offline gli strumenti dell'astronave; un controllore di ventiquattro anni di nome John Aaron tirò fuori dalla memoria una correzione oscura — «SCE to AUX» — e il volo continuò. Poi Conrad e Bean posarono il loro Lunar Module sull'oceano delle Tempeste a poche centinaia di piedi da una sonda che stava lì da due anni, si avvicinarono a piedi, e ne riportarono a casa dei pezzi. Quella precisione era il vero risultato: la Luna aveva smesso di essere una destinazione ed era diventata un indirizzo.",

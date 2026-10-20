@@ -1,5 +1,8 @@
 {
   "name": "Vega 2",
+  "vehicle": "Proton-K / D-1",
+  "payload": "Identischer Zwilling von Vega 1: 4920 kg schwerer Vorbeiflug-Bus + ~1500 kg Venus-Lander + Heliumaerostat. 6 Tage nach Vega 1 gestartet — zur Redundanz und als Teil einer gepaarten Halley-Flotte.",
+  "delta_v": "~3,6 km/s (Abflug + Neuausrichtung auf das Abfangen des Halleyschen Kometen)",
   "type": "VORBEIFLUG + LANDER + BALLON · DURCHGEFÜHRT",
   "first": "Erste chemische Analyse von Venusgestein der Hochland-Art (Aphrodite Terra, 1985); gepaarte Halley-Begegnung mit Vega 1 lieferte Giottos Zielbestimmung",
   "description": "Zwilling von Vega 1, 6 Tage später (1984-12-21) für Redundanz + gepaarte Halley-Armada-Lösung gestartet. Das Abstiegsmodul von Vega 2 landete 1985-06-15 in der Rusalka Planitia an der nördlichen Flanke der Aphrodite Terra und nutzte XRF-Spektrometrie, um Anorthosit-Norit-Troctolith-Material zu finden — die erste chemische Analyse der Hochland-Kruste der Venus (die Zusammensetzung ähnelt Mondhochlanden, obwohl der Landeplatz selbst eine Ebene ist). Sein Ballon funktionierte identisch wie der von Vega 1 und trieb in der entgegengesetzten Hemisphäre bei ~240 km/h. Der Bus flog am Kometen 1P/Halley in 8030 km Entfernung am 1986-03-09 vorbei. Zusammen lieferten die beiden Vega-Busse die ersten Nahaufnahmen des Kometenkerns und präzisierten die Positionsbestimmung, die es Giotto ermöglichte, fünf Tage später einen Vorbeiflug in 596 km Entfernung zu versuchen.",

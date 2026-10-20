@@ -1,5 +1,8 @@
 {
   "name": "Hayabusa",
+  "vehicle": "M-V-5",
+  "payload": "510 kg (dont 60 kg de xénon pour quatre propulseurs ioniques μ10)",
+  "delta_v": "~4,0 km/s",
   "type": "RETOUR D'ÉCHANTILLONS · RÉALISÉE",
   "first": "Premier échantillon d'astéroïde jamais ramené sur Terre (~1 500 grains de poussière d'Itokawa, masse inférieure au milligramme)",
   "description": "La Hayabusa (« faucon » en japonais) de la JAXA a exécuté la mission de sauvetage la plus héroïque de l'histoire du vol spatial. Lancée le 2003-05-09 sur un M-V-5 équipée de quatre propulseurs ioniques μ10 — le sous-système de propulsion ionique le plus puissant jamais lancé à cette époque. Arrivée à 25143 Itokawa le 2005-09-12 — un astéroïde géocroiseur en forme de tas de gravats de 540×270×210 m. Deux poses de contact (2005-11-20 et 25), toutes deux avec défaillances du système de collecte par projectile, bien que du régolithe ait été projeté dans le bras collecteur malgré tout. Puis une fuite d'hydrazine paralysa le contrôle d'attitude, deux de ses trois roues de réaction tombèrent en panne, les communications furent perdues pendant sept semaines, et la fenêtre de retour vers la Terre se décala de trois ans. Les ingénieurs assemblèrent un propulseur ionique fonctionnant à partir des moitiés survivantes de deux moteurs endommagés et ramenèrent Hayabusa sur Terre. La capsule d'échantillons récupérée à Woomera AUS le 2010-06-13 contenait ~1 500 grains de poussière d'Itokawa (masse inférieure au milligramme) — confirmant la composition de type S de l'astéroïde et sa structure de tas de gravats, et prouvant que le retour d'échantillons d'astéroïdes était possible.",

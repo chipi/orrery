@@ -1,5 +1,8 @@
 {
   "name": "Huygens",
+  "vehicle": "Titan IVB / Centaur (portador de Cassini)",
+  "payload": "Sonda de entrada de la ESA de 318 kg — carenado aerodinámico, 3 paracaídas, 6 paquetes científicos (HASI, GCMS, DISR, ACP, SSP, DWE). Diseñada para sobrevivir a un descenso atmosférico de 2,5 horas a través de la atmósfera de nitrógeno y metano de Titán hasta la superficie.",
+  "delta_v": "~6 km/s (desaceleración de entrada de 6 km/s hipersónicos hasta la superficie)",
   "type": "SONDA ATMOSFÉRICA + MÓDULO DE ATERRIZAJE · VOLADO",
   "first": "Primer y único aterrizaje suave en el sistema solar exterior — bajó en paracaídas por la atmósfera de Titán el 14-01-2005",
   "dispatch": "Huygens no fue enviada para orbitar, sino para caer. Atada a Cassini durante siete años, se desprendió en Navidad de 2004 y navegó sola hacia Titán durante veinte días. Cuando golpeó la atmósfera de Titán a seis kilómetros por segundo, un escudo térmico le compró el tiempo que necesitaba; luego tres etapas de paracaídas la ralentizaron durante dos horas y media a través de una neblina naranja que ningún instrumento había cruzado antes. Fotografió valles fluviales, midió velocidades del viento, analizó la atmósfera — y aterrizó en una llanura de guijarros de hielo de agua redondeados. Fue el primer aterrizaje realizado en el sistema solar exterior, y ninguna nave ha aterrizando allí desde entonces.",

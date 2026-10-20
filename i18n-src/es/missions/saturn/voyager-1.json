@@ -1,5 +1,8 @@
 {
   "name": "Voyager 1",
+  "vehicle": "Titan IIIE / Centaur",
+  "payload": "Nave de sobrevuelo planetario; tres módulos RTG que suman ~470 W al lanzamiento (decayendo hasta ~250 W hoy)",
+  "delta_v": "~17 km/s (acumulado, asistencias de Júpiter + Saturno)",
   "type": "SOBREVUELO · EJECUTADA",
   "first": "Objeto más lejano creado por la humanidad — actualmente a ~170 UA del Sol en el espacio interestelar",
   "dispatch": "Voyager 1 es lo más lejano que la humanidad ha creado jamás, y llegó allá casi por accidente de geometría. Un paso cercano por Titán, la luna gigante de Saturno —elegido por la ciencia—, dobló su trayectoria hacia arriba y fuera del plano de los planetas y la dirigió hacia el borde del sistema solar, y no ha dejado de ascender desde entonces. En el camino descubrió volcanes activos en Ío, los primeros jamás vistos fuera de la Tierra, y en 1990 se giró para capturar el Pale Blue Dot. En 2012 se convirtió en la primera máquina en cruzar hacia el espacio interestelar. Sigue transmitiendo, con una potencia nuclear decreciente, desde más de cien veces la distancia de la Tierra al Sol.",

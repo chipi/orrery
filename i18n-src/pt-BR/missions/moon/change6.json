@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 6",
+  "vehicle": "Long March 5",
+  "payload": "8200 kg de massa de lançamento; 1,935 kg de amostra retornada",
+  "delta_v": "~5 km/s",
   "type": "RETORNO DE AMOSTRA DO LADO DISTANTE · VOADO",
   "first": "Primeira amostra retornada do outro lado lunar",
   "description": "Combina as arquiteturas de Chang'e 4 (comunicações distantes) e Chang'e 5 (retorno de amostra). O satélite retransmissor Queqiao-2 foi lançado primeiro (março de 2024) para apoiar a missão. Chang'e 6 coletou então 1.935 kg da cratera Apollo, no lado oposto - material com composição muito diferente de qualquer amostra lunar retornada anteriormente. Os dois hemisférios da Lua são radicalmente diferentes (o outro lado tem uma crosta mais espessa e menos mares); essas amostras podem finalmente explicar o porquê.",

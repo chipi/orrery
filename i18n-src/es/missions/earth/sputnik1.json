@@ -1,5 +1,8 @@
 {
   "name": "Sputnik 1",
+  "vehicle": "Sputnik 8K71PS (derivado del R-7 Semyorka)",
+  "payload": "Esfera pulida de aluminio-magnesio de 83,6 kg, Ø 58 cm; dos transmisores (20,005 MHz + 40,002 MHz), tres baterías de plata-zinc (60 W), sin más instrumentos que un termómetro + un sensor de presión",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "SATÉLITE EN ÓRBITA TERRESTRE · VOLADO",
   "first": "Primer satélite artificial en orbitar la Tierra — inicio de la Era Espacial",
   "dispatch": "Sputnik 1 casi no hacía nada, y ese era el punto. Sin cámara, sin experimento digno de ese nombre — una radio, una batería y una carcasa pulida elegida para que el mundo pudiera ver el cohete que lo transportaba. Su único trabajo era llegar primero a órbita y hacerse oír en el intento, y durante veintiún días lo fue: un pitido en onda corta que cualquiera en la Tierra podía sintonizar, y que Washington no podía apagar. La máquina importaba mucho menos que el hecho en sí — prueba, transmitida a todo el mundo de una vez, de que la Unión Soviética había vencido a los Estados Unidos en llegar a órbita y volaba un cohete que podía alcanzar cualquier ciudad en el mapa. Se quemó sobre el año nuevo. La carrera que inició llegó hasta la Luna.",

@@ -1,5 +1,8 @@
 {
   "name": "Gemini 6A / GT-6A",
+  "vehicle": "Titan II GLV (GT-6A)",
+  "payload": "Gemini 6A ; Wally Schirra & Tom Stafford",
+  "delta_v": "~7,8 km/s (LEO)",
   "type": "HABITÉ ORBITE TERRESTRE · RÉALISÉ",
   "first": "Premier rendez-vous spatial habité",
   "dispatch": "Le rendez-vous — deux engins spatiaux se trouvant et se rejoignant en orbite — était la compétence dont Apollo ne pouvait se passer, et Gemini 6A est la mission où elle fut accomplie pour la première fois. Le vol a failli ne pas avoir lieu : sa cible initiale a explosé en route vers l'orbite, puis, sanglés pour le lancement reprogrammé, les moteurs du Titan se sont allumés et brusquement éteints sur l'aire — un moment où les règles disaient de s'éjecter, et Wally Schirra, ne ressentant aucun mouvement, choisit calmement de ne pas le faire. Trois jours plus tard, la mission décolla et accomplit ce qui n'avait jamais été fait : rattraper Gemini 7 et maintenir une station à trente centimètres de distance, les équipages assez proches pour lire les expressions de leurs visages. Cela semblait facile mais ne l'était absolument pas — la mécanique orbitale pour rattraper un autre engin est profondément contre-intuitive — et la résoudre fut le moment où le rendez-vous en orbite lunaire, et tout le plan Apollo, devinrent réels.",

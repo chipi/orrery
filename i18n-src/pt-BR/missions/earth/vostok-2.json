@@ -1,5 +1,8 @@
 {
   "name": "Vostok 2",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4731 kg de massa de lançamento; um único cosmonauta",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Se Gagarin provou que uma pessoa poderia alcançar a órbita, Vostok 2 provou que uma pessoa poderia viver lá. Gherman Titov — aos vinte e cinco anos, ainda a pessoa mais jovem a voar no espaço — passou um dia inteiro no alto, dezessete órbitas em vinte e cinco horas, tempo suficiente para comer, dormir e descobrir algo que ninguém havia sentido antes: enjoo espacial, a náusea de um ouvido interno sem cima ou baixo para se agarrar. Ele superou isso. O voo dissipou um medo genuíno — de que o corpo pudesse simplesmente falhar após horas de ausência de gravidade — e empurrou a fronteira de uma única volta para um dia inteiro, num ritmo que os americanos, ainda dando saltos de quinze minutos, não conseguiam acompanhar.",
   "type": "ÓRBITA TERRESTRE TRIPULADA · VOADA",
   "first": "Primeiro dia no espaço — 17 órbitas em 25 horas",

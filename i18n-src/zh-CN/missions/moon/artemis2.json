@@ -1,5 +1,8 @@
 {
   "name": "Artemis II",
+  "vehicle": "SLS Block 1 + Orion（载人）",
+  "payload": "Orion + 4 人乘组（怀斯曼 / 格洛弗 / 科克 / 汉森）",
+  "delta_v": "~6.5 km/s（往返）",
   "type": "CREWED FLYBY · FLOWN",
   "first": "自 Apollo 17（1972）以来首次载人飞行超越近地轨道——也是激发本项目灵感的任务",
   "description": "Artemis计划的首次载人飞行，也是后来成为Orrery的那点火花。2026年4月1日，NASA的SLS Block 1火箭发射了载有四名宇航员的Orion飞船——里德·怀斯曼（CDR）、维克多·格洛弗（PLT）、克里斯蒂娜·科克（MS）和CSA的杰瑞米·汉森（MS）——送入自由返回轨道，在距月面约6,500 km处绕过月球背面，无需任何月球入轨点火便将他们送回地球。在距地球406,771 km处，他们飞到了比此前任何人都更远的地方，打破了1970年Apollo 13的纪录。经过9天飞行，Orion于4月10日在圣地亚哥外海的太平洋溅落。这次飞行在首次着陆之前，为载人飞行验证了Orion的生命保障、导航和隔热罩；着陆现计划由Artemis IV执行。",

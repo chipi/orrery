@@ -1,5 +1,8 @@
 {
   "name": "JUICE",
+  "vehicle": "Ariane 5 ECA",
+  "payload": "6000 kg a pieno carico (2900 kg a secco) — la sonda interplanetaria più grande mai costruita dall'Europa. 10 strumenti: JANUS (visibile), MAJIS (IR), UVS, SWI (sub-mm), GALA (altimetro laser), RIME (radar sounder, NASA), J-MAG (magnetometro), PEP (particelle), RPWI (onde di plasma), 3GM (radioscienza). Pannelli solari da 85 m² dimensionati per operare a ~5,5 UA.",
+  "delta_v": "~3,0 km/s (sequenza di fionde gravitazionali + inserimento in orbita attorno a Giove + inserimento in orbita attorno a Ganimede)",
   "type": "ORBITER · ATTIVO",
   "first": "Il più grande veicolo spaziale interplanetario costruito in Europa; primo veicolo spaziale mai messo in orbita attorno a una luna di un altro pianeta (Ganimede, 2034)",
   "description": "JUICE — ammiraglia di classe L dell'ESA, lanciata il 2023-04-14. La crociera di 8 anni utilizza una delle sequenze di fionda gravitazionale più complesse mai realizzate: una fionda gravitazionale Luna-Terra il 2024-08-19, Venere 2025-08-31, seguito da due ulteriori passaggi ravvicinati della Terra nel 2026 e nel 2029. L'inserimento in orbita gioviana è previsto per il 2031-07-21. Dopo 35 sorvoli ravvicinati di Europa, Ganimede e Callisto nel corso di 3,5 anni, JUICE eseguirà una manovra verso un'orbita dedicata intorno a Ganimede il 2034-12-31 — il primo veicolo spaziale mai messo in orbita attorno a una luna di un altro pianeta. La missione termina nel 2035 con l'impatto su Ganimede. Scienza primaria: esistenza e proprietà degli oceani subsuperficiali attraverso le lune galileiane ghiacciate, composizione della calotta di ghiaccio e riscaldamento mareale, e struttura della magnetosfera gioviana.",

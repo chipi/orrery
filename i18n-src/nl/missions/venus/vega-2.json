@@ -1,5 +1,8 @@
 {
   "name": "Vega 2",
+  "vehicle": "Proton-K / D-1",
+  "payload": "Identieke tweeling van Vega 1: voorbijvlucht-bus van 4920 kg + Venus-lander van ~1500 kg + heliumaerostaat. 6 dagen na Vega 1 gelanceerd voor redundantie + een gekoppelde Halley-vlootoplossing.",
+  "delta_v": "~3,6 km/s (vertrek + herrichting voor onderschepping van Halley)",
   "type": "VOORBIJVLUCHT + LANDER + BALLON · UITGEVOERD",
   "first": "Eerste chemische analyse van Venusiaanse bodem van het hooglandtype (Aphrodite Terra, 1985); gepaarde Halley-ontmoeting met Vega 1 voedde de richtoplossing van Giotto",
   "description": "Tweelingvaartuig van Vega 1, gelanceerd 6 dagen later (1984-12-21) voor redundantie + een gepaarde Halley-vloot-oplossing. Vega 2's afdalingsmodule landde op 1985-06-15 in Rusalka Planitia, op de noordelijke flank van Aphrodite Terra, en gebruikte XRF-spectrometrie om anortosiet-noriet-troctoliet-materiaal te vinden — de eerste chemische analyse van hooglanden-type Venusiaanse korst (de samenstelling lijkt op maanhooglanden, hoewel de landingsplaats zelf een vlakte is). Zijn ballon presteerde identiek aan die van Vega 1 en dreef op het andere halfrond met ~240 km/u. De bus vloog op 1986-03-09 op 8030 km afstand voorbij komeet 1P/Halley. Samen leverden de twee Vega-bussen de eerste close-up beelden van komeetkernen en verfijnde de positiefix die Giotto in staat stelde een voorbijvlucht op 596 km vijf dagen later uit te voeren.",

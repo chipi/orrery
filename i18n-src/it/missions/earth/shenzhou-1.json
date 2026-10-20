@@ -1,5 +1,8 @@
 {
   "name": "Shenzhou 1",
+  "vehicle": "Long March 2F",
+  "payload": "7600 kg di massa al lancio; prototipo Shenzhou senza equipaggio con sistemi simulati",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "NAVETTA CON EQUIPAGGIO · SENZA EQUIPAGGIO · VOLATO",
   "first": "Il primo test orbitale Shenzhou della Cina — ha aperto il sentiero verso il volo spaziale con equipaggio della RPC",
   "description": "Primo volo del programma di navetta con equipaggio Shenzhou. Lanciato il 1999-11-19 alle 22:30 UTC da Jiuquan nel volo inaugurale del Long March 2F (CZ-2F) certificato per equipaggio umano. La capsula ha completato 14 orbite a 195 × 315 km, inclinazione di 42,6°, e ha effettuato il rientro con recupero nella steppa della Mongolia Interna il 1999-11-20 alle 19:41 UTC. Trasportava hardware fittizio per il supporto vitale, pacchetti telemetrici e una bandiera cinese, oltre a semi per il ritorno di un carico scientifico di genetica in microgravità. Ha segnato l'impegno della Cina a seguire l'URSS/USA verso il volo spaziale con equipaggio indipendente; ha condotto direttamente allo Shenzhou 5 (2003) con Yang Liwei.",

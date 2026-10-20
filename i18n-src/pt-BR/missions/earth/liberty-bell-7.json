@@ -1,5 +1,8 @@
 {
   "name": "Liberty Bell 7 / MR-4",
+  "vehicle": "Mercury-Redstone 4 (MR-4)",
+  "payload": "Cápsula Mercury nº 11 (1832 kg); Gus Grissom",
+  "delta_v": "~2,3 km/s (suborbital)",
   "type": "VOO SUBORBITAL TRIPULADO · REALIZADO",
   "first": "Segundo voo suborbital americano; falha na escotilha perdeu a cápsula (recuperada em 1999)",
   "dispatch": "Liberty Bell 7 voou impecavelmente e é lembrada pelos trinta segundos depois que parou de voar. O salto suborbital de Gus Grissom repetiu o de Shepard — prova de que o primeiro voo não havia sido um acaso — mas na água a nova escotilha explosiva disparou por conta própria, a cápsula encheu de água e afundou no fundo do Atlântico enquanto Grissom quase se afogava em seu traje encharcado. Se ele tinha batido no gatilho ou se havia disparado sozinho foi debatido pelo resto de sua vida e nunca foi resolvido. A verdadeira lição do voo era mais discreta e mais útil: a parte mais perigosa de um voo espacial nem sempre é o voo espacial.",

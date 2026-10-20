@@ -1,5 +1,8 @@
 {
   "name": "Starship Demo",
+  "vehicle": "Starship (Super Heavy + etapa superior Starship, desechada)",
+  "payload": "~100000 kg (objetivo con arquitectura de reabastecimiento en órbita)",
+  "delta_v": "~13 km/s",
   "type": "DEMO MARCIANA NO TRIPULADA · PLANIFICADA",
   "first": "Primer sistema de lanzamiento totalmente reutilizable que intenta aterrizar en Marte",
   "description": "Una demostración no tripulada de la arquitectura Starship a Marte: lanzamiento sobre Super Heavy, repostaje en LEO desde una variante cisterna, luego inyección transmarciana de una Starship totalmente cargada y descenso propulsado a la superficie marciana. El objetivo declarado de SpaceX es la ventana de lanzamiento de 2026-2027; la realidad de la ingeniería (Starship aún resolviendo la fiabilidad de vuelo orbital y el repostaje en órbita aún no demostrado) hace más probable 2028 o más tarde. Si tiene éxito, invierte la economía de carga útil a Marte — de miles de kg a cien toneladas por aterrizaje.",

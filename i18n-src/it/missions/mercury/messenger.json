@@ -1,5 +1,8 @@
 {
   "name": "MESSENGER",
+  "vehicle": "Delta II 7925H-9.5",
+  "payload": "Orbiter di Mercurio; protetto da uno schermo solare (lato frontale 370 °C, lato posteriore -45 °C); sette strumenti tra cui camera, spettrometri, magnetometro, altimetro laser",
+  "delta_v": "~2,3 km/s (inserimento in orbita attorno a Mercurio)",
   "type": "ORBITALE · COMPLETATO",
   "first": "Primo veicolo spaziale a orbitare Mercurio; prima mappa completa della superficie del pianeta più interno",
   "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) utilizzò sei fionde gravitazionali distribuite su sette anni — Terra, Venere due volte, Mercurio tre volte — per rallentare e inserirsi nell'orbita di Mercurio il 2011-03-18. Protetto da uno scudo termico con un lato a 370 °C e l'altro a -45 °C. Le scoperte includevano ghiaccio d'acqua in crateri polari permanentemente in ombra, precedentemente sconosciute caratteristiche geologiche \"cavità\", e la conferma che il nucleo di ferro di Mercurio occupa circa il 85 % del raggio del pianeta (il rapporto nucleo-raggio più grande di qualsiasi pianeta del sistema solare). La missione terminò con un impatto controllato sulla superficie di Mercurio il 2015-04-30 dopo l'esaurimento del carburante.",

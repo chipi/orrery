@@ -1,5 +1,8 @@
 {
   "name": "Freedom 7 / MR-3",
+  "vehicle": "Mercury-Redstone 3 (MR-3)",
+  "payload": "Mercury capsule #7 'Freedom 7' (1832 kg); Alan Shepard",
+  "delta_v": "~2.3 km/s (suborbital)",
   "type": "CREWED SUBORBITAL · FLOWN",
   "first": "First American in space",
   "dispatch": "Freedom 7 is where American human spaceflight begins. Three weeks after Gagarin had already orbited the Earth, Alan Shepard's flight was shorter, lower, and slower — fifteen minutes, straight up and straight back down, never even reaching orbit — and the country celebrated anyway, because for the first time an American had left the planet. What set it apart from Gagarin's flight was the man: Shepard hand-flew his capsule's attitude in space, where Gagarin had ridden a fully automated one, and to a program built around test pilots that difference was everything. Twenty days later, its success gave Kennedy the nerve to stand before Congress and bet the nation on the Moon. A small flight that started something very large.",

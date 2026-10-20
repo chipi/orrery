@@ -1,5 +1,8 @@
 {
   "name": "Chandrayaan-3",
+  "vehicle": "LVM3 M4 (anciennement GSLV Mk III)",
+  "payload": "3900 kg de masse au lancement ; 1726 kg pour l'atterrisseur et le rover",
+  "delta_v": "~3,5 km/s",
   "type": "ATTERRISSEUR · ROVER · RÉALISÉ",
   "first": "Premier alunissage en douceur près du pôle sud lunaire",
   "description": "Suite à la perte de l'atterrisseur Vikram de Chandrayaan-2 en 2019, la troisième mission lunaire de l'ISRO a été délibérément prudente — centrée sur l'atterrisseur plutôt que de transporter un orbiteur. Vikram s'est posé à 69,4° S de latitude, le plus proche qu'un engin spatial n'ait jamais approché un pôle lunaire. Le rover Pragyan a détecté du soufre à la surface lunaire pour la première fois et a effectué des mesures thermiques in-situ. L'Inde est devenue la quatrième nation à alunir en douceur sur la Lune, s'approchant d'un pôle lunaire plus près qu'aucun engin spatial avant elle — une région où l'exploitation minière de glace d'eau pourrait devenir possible à l'avenir.",

@@ -1,5 +1,8 @@
 {
   "name": "Vostok 2",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4731 kg de masse au lancement ; un seul cosmonaute",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Si Gagarine a prouvé qu'une personne pouvait atteindre l'orbite, Vostok 2 a prouvé qu'une personne pouvait y vivre. Guerman Titov — à vingt-cinq ans, toujours la plus jeune personne à avoir jamais volé dans l'espace — a passé une journée entière en altitude, dix-sept orbites sur vingt-cinq heures, assez longtemps pour manger, dormir et découvrir quelque chose que personne n'avait jamais ressenti auparavant : le mal de l'espace, la nausée d'une oreille interne sans haut ni bas à quoi se raccrocher. Il a surmonté l'épreuve. Le vol a mis fin à une crainte bien réelle — que le corps puisse tout simplement défaillir après des heures d'apesanteur — et a repoussé la limite d'un simple tour à une journée complète, à une allure à laquelle les Américains, qui effectuaient encore des sauts de quinze minutes, ne pouvaient répondre.",
   "type": "ORBITE TERRESTRE HABITÉE · VOLÉ",
   "first": "Première journée dans l'espace — 17 orbites en 25 heures",

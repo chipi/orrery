@@ -1,5 +1,8 @@
 {
   "name": "Mars 3",
+  "vehicle": "Proton-K / D",
+  "payload": "4650 kg (Orbiter + Lander zusammen)",
+  "delta_v": "~5,5 km/s",
   "type": "ORBITER · LANDER · FLOWN",
   "first": "Erstes Raumfahrzeug mit erfolgreicher Landung auf dem Mars",
   "description": "Die ehrgeizige Doppelmission der Sowjetunion zum Mars im Jahr 1971 — Mars 2 und Mars 3 wurden 9 Tage auseinander gestartet. Der Lander von Mars 2 stürzte ab; der Lander von Mars 3 erreichte die erste erfolgreiche Landung auf dem Mars, verstummte aber ~110 Sekunden nach der Landung — die tatsächliche Übertragung dauerte nur ~14,5 Sekunden — möglicherweise aufgrund des zu dieser Zeit wütenden globalen Staubsturms. Der Orbiter operierte 8 Monate lang und lieferte Dutzende von Bildern und Atmosphärenmessungen. Trotz der kurzen Oberflächenmission zeigte Mars 3, dass das Abstiegs- und Landeproblem auf dem Mars lösbar war.",

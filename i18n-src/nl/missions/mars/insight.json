@@ -1,5 +1,8 @@
 {
   "name": "InSight",
+  "vehicle": "Atlas V 401",
+  "payload": "Lander van 694 kg",
+  "delta_v": "~5,5 km/s",
   "type": "LANDER · GEVLOGEN",
   "first": "Eerste seismometer op Mars; eerste interplanetaire lancering vanaf de westkust van de VS",
   "description": "InSight gaf Mars zijn eerste stethoscoop. Zijn seismometer, ingezet door een robotarm op het regoliet, registreerde meer dan 1.300 marsbevingen — waaronder een magnitude 5 in 2022, de grootste ooit gedetecteerd op een andere planeet. De gegevens onthulden de inwendige structuur van Mars: een gesmolten kern met een straal van 1.800 km, een dikke korst en verrassende mantellagen. Het 'mol'-warmtestroomexperiment faalde toen het regoliet te samenhangend bleek voor zijn zelf-hamerend ontwerp. De missie eindigde toen stofophoping op zonnepanelen het vermogen onder de operationele drempel reduceerde.",

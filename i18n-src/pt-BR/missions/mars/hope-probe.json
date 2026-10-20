@@ -1,5 +1,8 @@
 {
   "name": "Sonda Hope",
+  "vehicle": "H-IIA 202 (de Tanegashima)",
+  "payload": "1500 kg",
+  "delta_v": "~3,5 km/s",
   "type": "ORBITADOR · ATIVO",
   "first": "Primeira missão interplanetária árabe",
   "description": "A Emirates Mars Mission — Al Amal, 'Esperança' — foi concebida em 2014 para marcar o 50º aniversário da federação dos EAU em 2021. A equipe do MBRSC colaborou com a Universidade do Colorado, Arizona State e UC Berkeley para projetar e integrar a espaçonave, mas a construiu por conta própria. A órbita científica (período de 55 horas, ~20.000 km × 43.000 km) cobre todas as longitudes e horários do dia, capturando padrões climáticos que nenhum outro orbitador de Marte consegue resolver. A missão foi bem-sucedida na primeira tentativa, fazendo dos EAU a quinta agência em Marte.",

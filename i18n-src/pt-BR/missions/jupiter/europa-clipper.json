@@ -1,5 +1,8 @@
 {
   "name": "Europa Clipper",
+  "vehicle": "Falcon Heavy",
+  "payload": "6065 kg (a maior espaçonave de missão planetária já lançada; painéis solares de 100 m² para energia no sistema solar externo)",
+  "delta_v": "~3,5 km/s (com assistências gravitacionais de Marte + Terra)",
   "type": "ORBITADOR + SOBREVOO MÚLTIPLO · ATIVO",
   "first": "Primeira missão dedicada a caracterizar a habitabilidade de uma lua gelada; maior nave de missão planetária já lançada (6065 kg, arranjos solares de 100 m²)",
   "description": "Europa Clipper vai a Júpiter para estudar Europa — uma lua gelada de 3.121 km acreditada abrigar um oceano global de água líquida sob uma crosta de gelo de 15–25 km, o ambiente potencialmente habitável mais acessível do sistema solar. Lançada em 2024-10-14 em um Falcon Heavy com C3 de 41,7. Uma assistência gravitacional de Marte em março de 2025 curvou a trajetória em direção à Terra; uma assistência gravitacional terrestre em 2026-12 fornece o empurrão final para fora; chega a Júpiter em 2030-04-11 para inserção em órbita. O tour orbital executa 49 sobrevoos próximos a Europa ao longo de quatro anos — passando dentro de 25 km da superfície de Europa nos passes mais próximos, projetado para mapear toda a lua enquanto limita a dose de radiação da nave nos brutais cinturões de radiação de Júpiter. Instrumentos: radar REASON de penetração de gelo, espectrômetro de massa MASPEX (amostra material da pluma se houver), imageador térmico E-THEMIS (encontra gêiseres ativos), magnetômetro e instrumentos de plasma confirmam profundidade do oceano pela resposta magnética induzida.",

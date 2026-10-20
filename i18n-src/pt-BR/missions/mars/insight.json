@@ -1,5 +1,8 @@
 {
   "name": "InSight",
+  "vehicle": "Atlas V 401",
+  "payload": "Módulo de pouso de 694 kg",
+  "delta_v": "~5,5 km/s",
   "type": "LANDER · VOADO",
   "first": "Primeiro sismógrafo em Marte; primeiro lançamento interplanetário da Costa Oeste dos EUA",
   "description": "A InSight deu a Marte seu primeiro estetoscópio. Seu sismômetro, implantado por um braço robótico no regolito, registrou mais de 1.300 terremotos em Marte – incluindo um terremoto de magnitude 5 em 2022, o maior já detectado em outro planeta. Os dados revelaram a estrutura interior de Marte: um núcleo derretido com um raio de 1.800 km, uma crosta espessa e surpreendentes camadas de manto. O experimento de fluxo de calor da toupeira falhou quando o regolito se mostrou coeso demais para seu projeto auto-martelante. A missão terminou quando o acúmulo de poeira nos painéis solares reduziu a potência abaixo do limite operacional.",

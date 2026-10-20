@@ -1,5 +1,8 @@
 {
   "name": "Vostok 5",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4720 kg di massa al lancio; un solo cosmonauta",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Vostok 5 stabilì un record che resiste ancora oggi. Valerij Bykovskij volò quasi cinque giorni da solo in orbita — ottantuno giri del pianeta — che rimane, a sei decenni di distanza, il volo spaziale in solitaria più lungo mai effettuato. Fu soprattutto un test di resistenza, spingendo un singolo cosmonauta e una piccola navicella spaziale ben oltre il giorno raggiunto da Titov, per verificare se una persona potesse semplicemente continuare. Poteva. E Bykovskij non fu nemmeno il protagonista della propria missione: due giorni dopo l'inizio del suo volo, Vostok 6 decollò portando la prima donna nello spazio, e l'attenzione del mondo andò con lei.",
   "type": "ORBITA TERRESTRE CON EQUIPAGGIO · VOLATA",
   "first": "Volo orbitale terrestre in solitaria più lungo — 4 giorni e 23 ore, 81 orbite",

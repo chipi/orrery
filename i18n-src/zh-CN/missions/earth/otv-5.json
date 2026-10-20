@@ -1,5 +1,8 @@
 {
   "name": "X-37B OTV-5（USA-277）",
+  "vehicle": "Falcon 9 Block 4",
+  "payload": "USA-277；X-37B Orbital Test Vehicle（~5000 kg）。有效载荷大多保密。",
+  "delta_v": "~9.4 km/s（近地轨道）",
   "type": "无人航天飞机 · 已飞行",
   "first": "USA-277 — 在轨780天，KSC航天飞机着陆设施",
   "description": "X-37B第五次飞行，首次由 Falcon 9 而非 Atlas V 发射——也是唯一一次使用 Block 4 型 Falcon 9 的 X-37B 飞行。2017-09-07 14:00 UTC 从 KSC LC-39A 发射（助推器在下游的 LZ-1 回收）；2019-10-27 07:51 UTC 在 KSC SLF 着陆。在轨780天。这是 X-37B 首次进入更高倾角轨道（54.5°）——扩大了可公开追踪的飞越范围。",

@@ -1,5 +1,8 @@
 {
   "name": "Apollo-Soyuz Test Project (ASTP)",
+  "vehicle": "Saturn IB (AS-210) + Soyuz-U",
+  "payload": "Apollo CSM-111 (last Apollo CSM ever) + Soyuz 19 (modified 7K-TM); 14.4 t Apollo + 6.8 t Soyuz",
+  "delta_v": "~9.4 km/s (LEO each)",
   "type": "CREWED EARTH-ORBIT · FLOWN",
   "first": "First international human spaceflight cooperation; first US-USSR rendezvous + docking",
   "dispatch": "Apollo-Soyuz is where the space race ends — not at a finish line, but with a handshake. In July 1975 an American Apollo and a Soviet Soyuz, the rival spacecraft of the rival superpowers, met and docked in orbit, and Tom Stafford and Alexei Leonov shook hands through the open hatch between them. It took a jointly-built docking adapter, two crews learning each other's language, and a thaw in the Cold War deep enough to let the era's fiercest competitors cooperate in full view of the world. Nothing about it was strictly necessary; that was the point. After eighteen years of racing to be first, the two programs chose, for one flight, simply to meet — and set the template for the international cooperation that would one day build the Space Station.",

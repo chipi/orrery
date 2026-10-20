@@ -1,5 +1,8 @@
 {
   "name": "Huygens",
+  "vehicle": "Titan IVB / Centaur (vettore di Cassini)",
+  "payload": "Sonda di ingresso dell'ESA da 318 kg — scudo aerodinamico, 3 paracadute, 6 pacchetti scientifici (HASI, GCMS, DISR, ACP, SSP, DWE). Progettata per sopravvivere a una discesa atmosferica di 2,5 ore attraverso l'atmosfera di azoto e metano di Titano fino alla superficie.",
+  "delta_v": "~6 km/s (decelerazione di ingresso da 6 km/s ipersonici fino alla superficie)",
   "type": "SONDA ATMOSFERICA + LANDER · VOLATO",
   "first": "Primo e unico allunaggio dolce nel sistema solare esterno — sceso con il paracadute attraverso l'atmosfera di Titano il 14-01-2005",
   "dispatch": "Huygens non è stato inviato per orbitare ma per cadere. Legato a Cassini per sette anni, si è staccato il giorno di Natale 2004 e ha navigato da solo verso Titano per venti giorni. Quando ha colpito l'atmosfera di Titano a sei chilometri al secondo, uno scudo termico gli ha comprato il tempo di cui aveva bisogno; quindi tre stadi di paracadute lo hanno rallentato per due ore e mezzo attraverso una foschia arancione che nessuno strumento aveva mai attraversato. Ha fotografato le valli fluviali, misurato le velocità del vento, odorato l'atmosfera — ed è atterrato su una pianura di ciottoli di ghiaccio d'acqua arrotondati. È stato il primo atterraggio mai effettuato nel sistema solare esterno, e da allora nessun veicolo spaziale vi è atterrato.",

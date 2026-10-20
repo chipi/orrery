@@ -1,5 +1,8 @@
 {
   "name": "Artemis III",
+  "vehicle": "SLS Block 1（以无推进功能的间隔段取代上面级）",
+  "payload": "Orion + 4 人乘组；在近地轨道与先导型 Starship 和 Blue Moon 着陆器交会对接",
+  "delta_v": "~9.4 km/s（至近地轨道）",
   "type": "CREWED TEST FLIGHT · PLANNED",
   "first": "商业登月着陆器的首次载人测试——Orion在近地轨道与它们对接",
   "description": "Artemis III 不再登陆月球。2026 年 2 月，NASA 改变了计划：在冒险着陆之前，乘组将驾驶 Orion 在近地轨道飞行，演练最困难的新环节——与日后把航天员送上月面的商业着陆器进行交会对接。由于无需推向月球，SLS 发射载有四名乘组成员的 Orion 时，上面级的位置换成了一个过渡适配段（spacer）。在轨道上，Orion 与 SpaceX 的 Starship 着陆器和 Blue Origin 的 Blue Moon 的先导版本会合并对接，乘组测试对接后组合体的生命保障、通信和推进系统，以及新的 AxEMU 航天服。飞行约持续两周。它扮演的角色，与 1969 年 Apollo 9 相同：在把登月舱带往月球之前，先在近地轨道飞行并对接。乘组于 2026 年 6 月公布：兰迪·布雷斯尼克（指令长）、ESA 的卢卡·帕尔米塔诺（驾驶员）、安德烈·道格拉斯和弗兰克·鲁比奥。NASA 计划在 2027 年执行这次飞行。"

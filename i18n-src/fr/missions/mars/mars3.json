@@ -1,5 +1,8 @@
 {
   "name": "Mars 3",
+  "vehicle": "Proton-K / D",
+  "payload": "4650 kg (orbiteur + atterrisseur réunis)",
+  "delta_v": "~5,5 km/s",
   "type": "ORBITEUR · ATTERRISSEUR · VOLÉ",
   "first": "Premier engin spatial à se poser en douceur sur Mars",
   "description": "La double mission audacieuse de l'Union soviétique vers Mars en 1971 — Mars 2 et Mars 3 lancés à 9 jours d'intervalle. L'atterrisseur de Mars 2 s'est écrasé ; l'atterrisseur de Mars 3 a réalisé le premier alunissage en douceur sur Mars mais s'est tu ~110 secondes après l'atterrissage — la transmission réelle n'a duré que ~14,5 secondes — probablement en raison de la tempête de poussière mondiale qui faisait rage à l'époque. L'orbiteur a fonctionné pendant 8 mois, renvoyant des dizaines d'images et des mesures atmosphériques. Malgré la brève mission de surface, Mars 3 a démontré que le problème de la descente et de l'atterrissage sur Mars était résoluble.",

@@ -1,5 +1,8 @@
 {
   "name": "Curiosity",
+  "vehicle": "Atlas V 541",
+  "payload": "3839 kg de masse au lancement (rover de 899 kg à la surface)",
+  "delta_v": "~6,1 km/s",
   "type": "ROVER · ACTIF",
   "first": "Premier rover martien alimenté par énergie nucléaire ; premier atterrissage par grue volante",
   "dispatch": "Curiosity est un laboratoire alimenté par énergie nucléaire de la taille d'une petite voiture, et le difficile était de le poser au sol. Trop lourd pour les airbags, il a été abaissé sur Mars en 2012 par une grue volante propulsée par fusée selon une séquence si risquée que ses concepteurs l'ont appelée sept minutes de terreur — et cela a fonctionné du premier coup. Depuis, il a creusé son chemin à travers cratère Gale et répondu à la question pour laquelle il avait été envoyé : le cratère contenait autrefois un lac, avec la chimie qu'une forme de vie aurait pu utiliser. Mars avait été habitable. Curiosity roule toujours, escaladant une montagne de roches en strates qui se lit comme le propre livre d'histoire de la planète.",

@@ -1,5 +1,8 @@
 {
   "name": "X-37B OTV-6（USA-299、USSF-7）",
+  "vehicle": "Atlas V 501 (AV-081)",
+  "payload": "USA-299 / USSF-7；X-37B Orbital Test Vehicle（~5000 kg）。有效载荷大多保密。",
+  "delta_v": "~9.4 km/s（近地轨道）",
   "type": "无人航天飞机 · 已飞行",
   "first": "USA-299 / USSF-7 — 在轨908天，肯尼迪航天中心航天飞机着陆设施",
   "description": "第六次X-37B飞行——首次采用新的USSF组织命名；创纪录的908天在轨时间（约2.5年）。2020年5月17日13:14 UTC从CCAFS SLC-41发射，搭乘Atlas V 501 AV-081火箭；于2022年11月12日10:22 UTC在KSC SLF着陆。搭载美国海军研究实验室PRAM（光伏射频天线模块——1瓦太阳能转微波波束实验）和空军研究实验室FalconSAT-8部署器。",

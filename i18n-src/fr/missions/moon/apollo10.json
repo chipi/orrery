@@ -1,5 +1,8 @@
 {
   "name": "Apollo 10",
+  "vehicle": "Saturn V (AS-505)",
+  "payload": "42775 kg lancés (CSM Charlie Brown (CSM-106) + LM Snoopy (LM-4))",
+  "delta_v": "~6 km/s (aller-retour)",
   "dispatch": "Apollo 10 a effectué l'intégralité de l'atterrissage — jusqu'aux quinze derniers kilomètres — puis, comme prévu, a fait demi-tour. Stafford et Cernan ont descendu le Module Lunaire jusqu'à une portée de pierre de la surface à Tranquility, ont exécuté chaque étape de la descente, et sont remontés en orbite sans se poser. NASA a même laissé les réservoirs de remontée à moitié vides, de sorte que même si la tentation était grande, tenter le coup n'a jamais été une option. C'est le vol le moins célébré du programme et l'un des plus disciplinés : une répétition à pleine vitesse par deux hommes qui ont parcouru un quart de million de miles en sachant que l'atterrissage appartenait à quelqu'un d'autre.",
   "type": "HABITÉ ORBITE LUNAIRE · VOLÉ",
   "first": "Répétition générale complète de l'alunissage — le LM descendit à ~15,6 km d'altitude",

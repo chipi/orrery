@@ -1,5 +1,8 @@
 {
   "name": "Voyager 1",
+  "vehicle": "Titan IIIE / Centaur",
+  "payload": "Planetair voorbijvlucht-ruimtevaartuig; drie RTG-modules met samen ~470 W bij lancering (afnemend tot ~250 W nu)",
+  "delta_v": "~17 km/s (cumulatief, zwaartekrachtsteunen van Jupiter + Saturnus)",
   "type": "VOORBIJVLUCHT · VOLTOOID",
   "first": "Het verste door mensen gemaakte object — momenteel ongeveer 170 AE van de Zon in interstellaire ruimte",
   "dispatch": "Voyager 1 is het verste wat de mensheid ooit heeft gemaakt, en het is daar bijna per ongeluk gekomen door geometrie. Een dichte passage langs Saturnus' reuzenmaan Titan — gekozen voor de wetenschap — boog zijn baan omhoog en uit het vlak van de planeten en richtte hem op de rand van het zonnestelsel, en hij is sindsdien blijven klimmen. Onderweg ontdekte het actieve vulkanen op Io, voor het eerst ooit buiten de Aarde waargenomen, en in 1990 draaide het zich om om de Pale Blue Dot vast te leggen. In 2012 werd het het eerste apparaat dat de interstellaire ruimte in ging. Het zendt nog steeds uit, op vervagende kernenergie, vanuit meer dan honderd keer de afstand van de Aarde tot de Zon.",

@@ -1,5 +1,8 @@
 {
   "name": "Curiosity",
+  "vehicle": "Atlas V 541",
+  "payload": "3839 kg Startmasse (899 kg Rover auf der Oberfläche)",
+  "delta_v": "~6,1 km/s",
   "type": "ROVER · AKTIV",
   "first": "Erster kernkraftbetriebener Mars-Rover; erste Sky-Crane-Landung",
   "dispatch": "Curiosity ist ein kernkraftbetriebenes Laboratorium in der Größe eines Kleinwagens, und es auf dem Mars zu landen war die schwierigste Aufgabe. Zu schwer für Airbags, wurde es 2012 von einem raketenbetriebenen Sky Crane in einer Sequenz auf den Mars herabgelassen, die so riskant war, dass ihre Planer sie „sieben Minuten des Terrors\" nannten — und es funktionierte beim ersten Versuch. Seitdem hat es sich über den Gale-Krater gebohrt und die Frage beantwortet, für die es entsandt wurde: Der Krater beherbergte einst einen See mit einer Chemie, die ein lebender Organismus hätte nutzen können. Der Mars war bewohnbar. Curiosity fährt immer noch und erklimmt einen Berg aus geschichtetem Stein, der wie das eigene Geschichtsbuch des Planeten zu lesen ist.",

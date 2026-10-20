@@ -1,5 +1,8 @@
 {
   "name": "Galileo",
+  "vehicle": "Space Shuttle Atlantis + IUS",
+  "payload": "Raumsonde Galileo und atmosphärische Eintrittssonde; ~2,5 t Trockenmasse",
+  "delta_v": "~14 km/s (ungefähr)",
   "type": "ORBITER · GESTARTET",
   "first": "Erstes Raumfahrzeug, das Jupiter umkreiste; Atmosphärensonde in die Jupiterwolken",
   "dispatch": "Galileo hätte schon vor der Ankunft bei Jupiter lahmgelegt sein müssen. Auf dem Weg zum Jupiter blieb seine Hauptantenne halb offen stecken, wodurch ihre Datenrate auf ein Minimum sank — und dennoch war die Mission erfolgreich, weil Ingenieure die Software von der Erde aus so anpassten, dass die wissenschaftlichen Daten durch eine winzige Ersatzantenne übertragen werden konnten. Sie wurde das erste Raumfahrzeug, das Jupiter umkreiste, ließ eine Sonde in die Atmosphäre des Riesenplaneten hinab und verbrachte acht Jahre damit, die Monde zu erforschen. Ihre größte Entdeckung ergab sich langsam aus dieser Ausdauer: Die Art und Weise, wie das Magnetfeld Jupiters sich um Europa wickelte, konnte nur durch einen salzigen Ozean unter dem Eis erklärt werden — der stärkste Hinweis bisher, dass ein Mond Jupiters flüssiges Wasser und möglicherweise Leben beherbergen könnte. Am Ende wurde das Raumfahrzeug absichtlich in Jupiter gesteuert, damit es niemals auf Europa aufschlagen und es kontaminieren könnte.",

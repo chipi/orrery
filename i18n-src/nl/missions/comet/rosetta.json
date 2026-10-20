@@ -1,5 +1,8 @@
 {
   "name": "Rosetta",
+  "vehicle": "Ariane 5G+",
+  "payload": "Orbiter (~2900 kg droog, 11 instrumenten) + Philae-afdalingslander (~100 kg, 10 instrumenten). Hitteschild, twee aardse + één Mars-zwaartekrachtsteun, 957 dagen winterslaap in de diepe ruimte 2011–2014.",
+  "delta_v": "~2,3 km/s (rendez-vous + kometenoperaties)",
   "type": "ORBITER + LANDER · VOLTOOID",
   "first": "Eerste ruimtevaartuig om een komeet te omcirkelen — en om erop te landen (Philae, 2014-11-12)",
   "description": "De vlaggenschipmissie van ESA voor een komeetontmoeting. Na een tocht van tien jaar met drie aardsteunen, één Marssteun, twee scheervluchten langs asteroïden en 957 dagen winterslaap in de diepe ruimte haalde Rosetta in augustus 2014 komeet 67P/Churyumov–Gerasimenko in en draaide er ruim twee jaar omheen, door het perihelium heen en erachter weer uit. De Philae-lander bereikte het oppervlak van 67P op 2014-11-12 — de eerste zachte landing op een komeet — en leverde ~64 uur aan wetenschappelijke gegevens, nadat een mislukte harpoen hem in de schaduw van een klif had achtergelaten. Rosetta zelf beëindigde de missie met een gecontroleerde afdaling naar het oppervlak van 67P op 2016-09-30. Belangrijkste resultaten: organische moleculen en glycine in de coma; de aanvankelijk gemeten D/H-verhouding van 67P (≈3× de aardse) pleitte tegen kometen uit de Jupiterfamilie als bron van het water op Aarde — een resultaat dat een heranalyse uit 2024 sindsdien in twijfel heeft getrokken na ontdekking van een meetfout; de eerste gedetailleerde kaarten van de geometrie van de gasuitstoot van een komeet.",

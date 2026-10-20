@@ -1,5 +1,8 @@
 {
   "name": "Apollo 12",
+  "vehicle": "Saturn V (AS-507)",
+  "payload": "46782 kg launched (CSM Yankee Clipper (CSM-108) + LM Intrepid (LM-6))",
+  "delta_v": "~6 km/s (round trip)",
   "type": "CREWED LANDER · FLOWN",
   "first": "Second crewed Moon landing — pinpoint touchdown 163 m from Surveyor 3",
   "dispatch": "If Apollo 11 proved you could reach the Moon, Apollo 12 proved you could reach a particular spot on it. Thirty-six seconds after launch, lightning struck the rocket and knocked the spacecraft's instruments offline; a twenty-four-year-old controller named John Aaron pulled an obscure fix — \"SCE to AUX\" — from memory, and the flight went on. Then Conrad and Bean set their Lunar Module down on the Ocean of Storms a few hundred feet from a probe that had been sitting there for two years, walked over, and brought pieces of it home. That precision was the real result: the Moon had stopped being a destination and become an address.",

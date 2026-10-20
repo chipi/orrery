@@ -1,5 +1,8 @@
 {
   "name": "Mars Express",
+  "vehicle": "Soyuz-FG / Fregat",
+  "payload": "1183 kg (1123 kg Orbiter + 60 kg Lander Beagle 2)",
+  "delta_v": "~4,5 km/s",
   "type": "ORBITER · AKTIV",
   "first": "Europas erste interplanetare Mission; am längsten laufender nicht-NASA Mars-Orbiter",
   "description": "ESAs erste Mission zu einem anderen Planeten als der Erde. Der Orbiter hat die längste kontinuierliche Aufzeichnung der Marsatmosphäre erstellt und Wassereisablagerungen, Methanfahnen und das dreidimensionale Wetter des Planeten kartiert. Beagle 2, der in Großbritannien gebaute Lander, der an Bord war, erreichte die Oberfläche, entfaltete die Solarmodule jedoch nie vollständig – 2004 wurde es für verschollen erklärt und 2015 vom Mars Reconnaissance Orbiter von NASA intakt aufgefunden. Der Orbiter befindet sich im dritten Jahrzehnt seines Betriebs.",

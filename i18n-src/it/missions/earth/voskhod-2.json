@@ -1,5 +1,8 @@
 {
   "name": "Voskhod 2",
+  "vehicle": "Voskhod (11A57)",
+  "payload": "5682 kg di massa al lancio; capsula Voskhod + camera di compensazione gonfiabile Volga",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "VEICOLO ORBITALE CON EQUIPAGGIO · COMPLETATO",
   "first": "Prima attività extraveicolare (Leonov, 12 min, 1965-03-18)",
   "dispatch": "La Voskhod 2 realizzò la prima passeggiata nello spazio e per poco non la trasformò nella prima morte nello spazio. Aleksej Leonov galleggiò fuori da un'eclusa gonfiabile nel vuoto, il primo essere umano mai completamente al di fuori di un veicolo spaziale — e poi la sua tuta si gonfiò tanto che non riusciva a piegarsi per rientrare. Dovette aprire una valvola e far uscire il suo stesso ossigeno, rischiando la malattia da decompressione, solo per restringersi abbastanza da entrare nel portellone. Non era finita: il rientro automatico fallì, l'equipaggio scese manualmente e atterrò centinaia di chilometri fuori rotta nella foresta siberiana gelata, dove aspettarono due notti tra i lupi prima che i soccorritori li raggiungessero con gli sci. Il pubblico vide dodici minuti trionfali; quanto vicino fosse stato il disastro rimase segreto per anni.",

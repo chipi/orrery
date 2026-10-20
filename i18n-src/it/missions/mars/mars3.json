@@ -1,5 +1,8 @@
 {
   "name": "Mars 3",
+  "vehicle": "Proton-K / D",
+  "payload": "4650 kg (orbiter + lander combinati)",
+  "delta_v": "~5,5 km/s",
   "type": "ORBITER · LANDER · FLOWN",
   "first": "Primo veicolo spaziale a effettuare un atterraggio morbido su Marte",
   "description": "La doppia missione audace dell'Unione Sovietica verso Marte nel 1971 — Mars 2 e Mars 3 lanciate a 9 giorni di distanza. L'allunatore di Mars 2 si schiantò; l'allunatore di Mars 3 realizzò il primo atterraggio morbido su Marte ma rimase silenzioso per ~110 secondi dopo il contatto — la trasmissione vera e propria durò solo ~14,5 secondi — probabilmente a causa della tempesta di polvere globale che imperversava in quel momento. L'orbiter operò per 8 mesi, restituendo decine di immagini e misurazioni atmosferiche. Nonostante la breve missione di superficie, Mars 3 dimostrò che il problema della discesa e dell'atterraggio su Marte era risolvibile.",

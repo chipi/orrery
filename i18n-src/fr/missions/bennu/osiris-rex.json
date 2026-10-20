@@ -1,5 +1,8 @@
 {
   "name": "OSIRIS-REx",
+  "vehicle": "Atlas V 411",
+  "payload": "2110 kg de masse au lancement (1075 kg à sec)",
+  "delta_v": "~1,4 km/s",
   "type": "RETOUR D'ÉCHANTILLON · LANCÉ",
   "first": "Plus grand échantillon d'astéroïde jamais rapporté (121,6 g de Bénou, livré à la Terre 2023-09-24)",
   "description": "OSIRIS-REx a réalisé l'une des opérations les plus précises jamais tentées à proximité d'un astéroïde. Lancé 2016-09-08 depuis Cap Canaveral sur un Atlas V 411, il a utilisé un survol gravitationnel terrestre en 2017 pour faire pivoter son plan orbital sur l'inclinaison de 6° de Bénou, et s'est rendez-vous avec l'astéroïde carbonacé proche de la Terre de 492 m 2018-12-03. Après un stationnement à ~19 km, il a ensuite atteint une orbite record de ~1,4 km — l'orbite de vaisseau spatial la plus proche jamais effectuée autour de n'importe quel corps céleste. Il a passé deux ans à cartographier la surface jonchée de rochers de Bénou et à découvrir des éjections de particules actives. 2020-10-20 le bras préleveur Touch-and-Go est descendu sur le site Nightingale, a tiré du gaz N₂ à la surface et a attrapé un panache — s'enfonçant de 50 cm dans une surface de « fluide de tas de décombres ». La capsule de retour d'échantillon a livré 121,6 g de matériau de Bénou à l'Utah 2023-09-24. Le vaisseau spatial lui-même a été immédiatement rebaptisé OSIRIS-APEX, en route vers un rendez-vous avec Apophis en 2029.",

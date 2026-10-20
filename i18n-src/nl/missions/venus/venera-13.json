@@ -1,5 +1,8 @@
 {
   "name": "Venera 13",
+  "vehicle": "Proton-K / D-1",
+  "payload": "~4500 kg samen: voorbijvlucht-bus + titanium afdalingscapsule van 1645 kg (camera's, röntgenfluorescentiespectrometer voor bodemsamenstelling, seismometer, bodemmonsterarm met hermetische-kluisboor). Ontworpen voor een van de meest vijandige afdalingsomgevingen ooit beproefd.",
+  "delta_v": "~1,5 km/s (aankomst bij Venus)",
   "type": "LANDER · VOLTOOID",
   "first": "Langste oppervlakteoverleving van enige Venusmissie (127 min); eerste kleurenpanorama's en eerste audio van het oppervlak van een andere planeet",
   "description": "Hoogtepunt van het Sovjet-Venera-programma. Venera 13 werd gelanceerd op 1981-10-30 en landde op 1982-03-01 op 7,5°Z 303°O in de hooglanden van Phoebe Regio. Omstandigheden bij landing: 457 °C, 89 bar, zwavelzuurnevel. De lander overleefde 127 minuten — bijna een uur langer dan gepland — en leverde de eerste kleurenpanorama's van het oppervlak van een andere planeet, nam met een windmicrofoon geluid op en stelde met zijn boor en röntgenfluorescentiespectrometer vast dat het basalt van de landingsplaats een zwak gedifferentieerde leuciet-alkalische samenstelling had. Tweelingsonde Venera 14 voerde vijf dagen later dezelfde operaties uit op een andere plek. De Venera-serie (1967–1983) is nog altijd het enige geslaagde oppervlakteprogramma op Venus.",

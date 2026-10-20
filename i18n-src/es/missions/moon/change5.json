@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 5",
+  "vehicle": "Long March 5",
+  "payload": "8200 kg de masa de lanzamiento; 1,731 kg de muestra devuelta",
+  "delta_v": "~5 km/s",
   "type": "RETORNO DE MUESTRAS · VOLADA",
   "first": "Primer retorno de muestras lunares en 44 años (desde Luna 24, 1976)",
   "description": "Chang'e 5 fue el primer retorno de muestras de la Luna desde el Luna 24 de la Unión Soviética en 1976 — un hueco de 44 años. La arquitectura: orbitador + aterrizador + vehículo de ascenso + cápsula de retorno de muestras, todo en un solo lanzamiento. El aterrizador tomó tierra en Mons Rümker, perforó y recogió 1,731 kg de regolito, despegó, se encontró y se acopló con el orbitador (el primer encuentro lunar robótico) y la cápsula regresó a la Tierra. Las muestras son de una región de solo 2000 millones de años — mucho más jóvenes que cualquier muestra Apollo o Luna, reescribiendo los modelos de vulcanismo lunar.",

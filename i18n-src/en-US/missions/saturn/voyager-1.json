@@ -1,5 +1,8 @@
 {
   "name": "Voyager 1",
+  "vehicle": "Titan IIIE / Centaur",
+  "payload": "Planetary flyby spacecraft; three RTG modules totalling ~470 W at launch (decaying to ~250 W today)",
+  "delta_v": "~17 km/s (cumulative, Jupiter + Saturn assists)",
   "type": "FLYBY · FLOWN",
   "first": "Most distant human-made object — currently ~170 AU from the Sun in interstellar space",
   "dispatch": "Voyager 1 is the farthest thing humanity has ever made, and it got there almost by an accident of geometry. A close pass by Saturn’s giant moon Titan — chosen for the science — bent its path up and out of the plane of the planets and aimed it at the edge of the solar system, and it has been climbing ever since. Along the way it found active volcanoes on Io, the first ever seen off Earth, and in 1990 it turned back to take the Pale Blue Dot. In 2012 it became the first machine to cross into interstellar space. It is still transmitting, on fading nuclear power, from more than a hundred times the Earth’s distance from the Sun.",

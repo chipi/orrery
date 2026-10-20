@@ -1,5 +1,8 @@
 {
   "name": "X-37B OTV-4 (USA-261, AFSPC-5)",
+  "vehicle": "Atlas V 501 (AV-054)",
+  "payload": "USA-261 / AFSPC-5; X-37B Orbital Test Vehicle(~5000 kg). 탑재체 대부분이 기밀.",
+  "delta_v": "~9.4 km/s (저궤도)",
   "type": "무인 우주비행기 · 비행 완료",
   "first": "USA-261 / AFSPC-5 — 궤도상 718일, KSC 셔틀 착륙시설",
   "description": "네 번째 X-37B 비행입니다. 2015-05-20 15:05 UTC CCAFS SLC-41에서 Atlas V 501 AV-054로 발사되었고, 2017-05-07 11:47 UTC에 케네디 우주 센터 셔틀 착륙시설(Space Shuttle 궤도선이 쓰던 바로 그 4.6 km 활주로)에 OTV로는 처음 착륙했습니다. AFRL의 홀 효과 추력기 실험(XR-5A, 이온 추진)과 NASA Materials Exposure Test bed를 탑재했습니다.",

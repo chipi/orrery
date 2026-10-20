@@ -1,5 +1,8 @@
 {
   "name": "Vostok 4",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4728 kg de masse au lancement ; un seul cosmonaute",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "VOL SPATIAL HABITÉ · EFFECTUÉ",
   "first": "Deuxième moitié du premier vol double — première communication entre deux engins spatiaux habités",
   "dispatch": "Vostok 4 était la réponse à Vostok 3 — le deuxième engin du premier vol double, et le moment où deux humains dans deux engins spatiaux distincts se sont parlé pour la première fois en orbite. Pavel Popovitch a décollé un jour après Nikolaïev et s'est rapproché à environ six kilomètres et demi, assez près pour établir une communication radio directe, d'engin à engin, plutôt que par l'intermédiaire du sol. Comme son partenaire, il ne pouvait pas se manœuvrer pour maintenir la distance, si bien que les deux engins se sont écartés. Mais l'image de deux cosmonautes tournant autour de la Terre en formation, se parlant mutuellement, était exactement le type de première que le programme était conçu pour créer.",

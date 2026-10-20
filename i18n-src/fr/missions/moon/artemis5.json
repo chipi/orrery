@@ -1,5 +1,8 @@
 {
   "name": "Artemis V",
+  "vehicle": "SLS Block 1 (étage supérieur à confirmer) + atterrisseur habité (Starship HLS ou Blue Moon)",
+  "payload": "Orion + équipage de 4 personnes ; deuxième alunissage habité, début des travaux sur la base lunaire",
+  "delta_v": "~7 km/s (aller-retour)",
   "type": "ATTERRISSAGE AVEC ÉQUIPAGE · PRÉVU",
   "first": "Deuxième alunissage habité de l'ère Artemis — le début d'une base lunaire",
   "description": "Artemis V est prévue comme le deuxième alunissage habité près du pôle sud lunaire, après Artemis IV la même année — dans le cadre de l'objectif fixé par la NASA en 2026 d'au moins un alunissage par an. Elle doit amorcer le passage de courtes visites à une présence durable : des travaux vers une base en surface, que la NASA a choisie en mars 2026 plutôt que d'achever la station Gateway en orbite lunaire, désormais en pause. Comme pour Artemis IV, le SLS lance Orion avec quatre astronautes et un atterrisseur commercial en emmène deux vers la surface. Le SLS est financé jusqu'à Artemis V ; pour les missions suivantes, la NASA a proposé des alternatives commerciales et réutilisables. Prévu pour fin 2028 ; équipage, atterrisseur et site d'alunissage pas encore choisis.",

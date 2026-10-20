@@ -1,5 +1,8 @@
 {
   "name": "Luna 9",
+  "vehicle": "Molniya-M",
+  "payload": "1583 kg de masa de lanzamiento; cápsula de aterrizaje de 99 kg",
+  "delta_v": "~3 km/s",
   "type": "SONDA SIN TRIPULACIÓN · EN VUELO",
   "first": "Primer alunizaje suave de la Luna; primeras fotografías desde la superficie lunar",
   "description": "Tras 11 fracasos soviéticos y 5 misiones Ranger estadounidenses diseñadas únicamente para impactar, Luna 9 se convirtió en la primera nave espacial en realizar un alunizaje suave en otro mundo. Nueve imágenes —incluyendo cinco panorámicas— devueltas en tres sesiones de transmisión a lo largo de tres días zanjaron un largo debate científico: la superficie de la Luna era sólida, no un mar de polvo lo suficientemente profundo para tragarse una sonda. La misión duró 3 días hasta el agotamiento de la batería. En cuestión de meses, todas las misiones lunares posteriores adoptaron el alunizaje suave como estándar.",

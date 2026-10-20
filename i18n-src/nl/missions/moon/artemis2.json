@@ -1,5 +1,8 @@
 {
   "name": "Artemis II",
+  "vehicle": "SLS Block 1 + Orion (bemand)",
+  "payload": "Orion + bemanning van 4 personen (Wiseman / Glover / Koch / Hansen)",
+  "delta_v": "~6,5 km/s (heen en terug)",
   "type": "BEMAND FLYBY · GEVLOGEN",
   "first": "Eerste bemande vlucht voorbij de lage Aardbaan sinds Apollo 17 (1972) — en de missie die dit project inspireerde",
   "description": "De eerste bemande vlucht van het Artemis-programma, en de vonk die Orrery werd. Op 1 april 2026 lanceerde NASA's SLS Block 1 een Orion-ruimtevaartuig met vier astronauten — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) en CSA's Jeremy Hansen (MS) — op een vrije-terugkeer-traject dat hen rond de achterzijde van de Maan zwaaide op ongeveer 6.500 km boven het oppervlak en hen thuisbracht zonder enige motorontsteking voor maanbaaninsertie. Op 406.771 km van de Aarde reisden zij verder dan ooit mensen vóór hen, waarmee ze het record van Apollo 13 uit 1970 braken. Na een vlucht van 9 dagen landde Orion op 10 april in de Stille Oceaan voor de kust van San Diego. De vlucht kwalificeerde de levensondersteuning, navigatie en het hitteschild van Orion voor bemande missies, vooruitlopend op de eerste landing, nu gepland voor Artemis IV.",

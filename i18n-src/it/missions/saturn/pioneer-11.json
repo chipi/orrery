@@ -1,5 +1,8 @@
 {
   "name": "Pioneer 11",
+  "vehicle": "Atlas SLV-3D Centaur D-1A / TE-364-4",
+  "payload": "Sonda di sorvolo del sistema solare esterno; RTG SNAP-19 (~165 W al lancio); gemella del Pioneer 10",
+  "delta_v": "~15 km/s (cumulativo, fionde di Giove + Saturno)",
   "type": "SORVOLO · COMPLETATO",
   "first": "Primo veicolo spaziale a sorvolare Saturno (1979-09-01); ha dimostrato la manovra gravitazionale che ha mandato avanti Voyager 2",
   "dispatch": "Pioneer 11 era la seconda sonda esplorativa, e andò più lontano dei suoi gemelli. Dopo il suo passaggio da Giove ha usato la gravità del pianeta per attraversare il sistema solare e raggiungere Saturno nel 1979 — il primo veicolo spaziale a farlo — sorvolando deliberatamente il piano degli anelli per verificare se la regione fosse sicura. Ha trovato il varco che i Voyager avrebbero attraversato un anno dopo. Gran parte di ciò che ha reso possibile il Grand Tour era questo: una piccola e economica sonda inviata in avanguardia per correre i rischi e tracciare i pericoli, affinché le navi ammiraglia dietro di essa potessero volare con fiducia piuttosto che con paura.",

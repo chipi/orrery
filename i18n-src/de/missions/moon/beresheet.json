@@ -1,5 +1,8 @@
 {
   "name": "Beresheet",
+  "vehicle": "Falcon 9 Block 5 (Mitflug mit Nusantara Satu)",
+  "payload": "585 kg Startmasse; erstes privates Raumfahrzeug in einer Mondumlaufbahn; beim angetriebenen Abstieg ~150 m über der Oberfläche verloren",
+  "delta_v": "~6 km/s (stark elliptische Phasierungsbahnen, kein direktes TLI)",
   "type": "PRIVATE LANDER · CRASHED",
   "first": "Erste privat finanzierte Mission zum Mond; erste israelische Mondmission",
   "description": "Beresheet von SpaceIL (Hebräisch: „Am Anfang\") startete im Februar 2019 als Mitfluggast auf einer Falcon 9. Anstelle einer direkten trans-lunaren Bahneinschießung führte der kleine Lander mehrere Wochen lang Perigäums-Erhöhungsmanöver durch, um aus einer Wartebahn bis zum Mond zu klettern – eine treibstoffsparende Flugbahn, die für kostengünstige Missionen entwickelt wurde. Nach erfolgreicher Mondumlaufbahneinschießung am 4. April 2019 führte ein Reset der Trägheitsmesseinheit während des Abstiegs zum Abschalten des Haupttriebwerks. Beresheet stürzte in Mare Serenitatis ab. SpaceIL kündigte bereits Tage später einen Nachfolger an (Beresheet 2).",

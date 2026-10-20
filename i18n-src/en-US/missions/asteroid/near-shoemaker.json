@@ -1,5 +1,8 @@
 {
   "name": "NEAR Shoemaker",
+  "vehicle": "Delta II 7925-8",
+  "payload": "805 kg at launch (487 kg dry) — X-ray/gamma-ray spectrometer, near-infrared spectrograph, multispectral camera, laser rangefinder (LIDAR), magnetometer. First spacecraft to orbit and land on an asteroid.",
+  "delta_v": "~1 km/s (total mission manoeuvres)",
   "type": "ORBITER + LANDER · FLOWN",
   "first": "First spacecraft to orbit an asteroid (433 Eros, 2000) and first soft landing on any small body (2001-02-12)",
   "dispatch": "NEAR Shoemaker went to Eros because nobody knew what an asteroid really looked like up close. It arrived to find a world pocked with craters, stretched into a saddle shape by its own slow rotation, covered in fine regolith that had nowhere to go in near-zero gravity. For a year it mapped every ridge and boulder from orbit, then in February 2001 the controllers pressed their luck: they lowered the spacecraft's orbit five times in two weeks, slowed it to walking pace, and set it down on the surface. It survived. For sixteen more days it transmitted from Eros — the first emissary from Earth to rest on a small body.",

@@ -1,5 +1,8 @@
 {
   "name": "Vostok 1",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4725 kg lanceermassa; bolvormige afdalingsmodule + servicemodule",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Vostok 1 is waar het ruimtetijdperk begint met een mens erin. Gedurende 108 minuten op 12 april 1961 werd Joeri Gagarin — een 27-jarige gevechtspiloot — de eerste mens die de planeet verliet en eromheen cirkelde, en de wereld ontwaakte met de ontdekking dat de Sovjet-Unie had gedaan wat iedereen aannam dat Amerika als eerste zou doen. Hij had bijna geen controle over het ruimtevaartuig; de vlucht werd vanaf de grond bestuurd, en hij was evenzeer passagier als piloot, afgesloten in een bol die gebouwd was om hem thuis te brengen ongeacht of hij bij bewustzijn was of niet. Het deed er niet toe. Een mens had de Aarde omcirkeld en was teruggekeerd, en niets over hoe mensen hun plaats in het universum zagen was daarna nog helemaal hetzelfde.",
   "type": "BEMANDE AARDBAAN · GEVLOGEN",
   "first": "Eerste mens in de ruimte; eerste bemande orbitale vlucht",

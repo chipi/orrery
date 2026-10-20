@@ -1,5 +1,8 @@
 {
   "name": "Sputnik 1",
+  "vehicle": "Sputnik 8K71PS (dérivée de la R-7 Semyorka)",
+  "payload": "Sphère polie en aluminium-magnésium de 83,6 kg, Ø 58 cm ; deux émetteurs (20,005 MHz + 40,002 MHz), trois batteries argent-zinc (60 W), aucun instrument hormis un thermomètre + un capteur de pression",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "SATELLITE EN ORBITE TERRESTRE · VOLÉ",
   "first": "Premier satellite artificiel à orbiter autour de la Terre — début de l'ère spatiale",
   "dispatch": "Sputnik 1 ne faisait presque rien, et c'était là tout l'intérêt. Pas de caméra, pas d'expérience digne de ce nom — une radio, une batterie, et une coque polie choisie pour que le monde puisse observer la fusée qui la transportait. Sa seule mission était d'atteindre l'orbite en premier et de se faire entendre en le faisant, et pendant vingt-et-un jours ce fut le cas : un bip sur les ondes courtes que n'importe qui sur Terre pouvait capter, et que Washington ne pouvait pas éteindre. La machine importait bien moins que le fait lui-même — la preuve, diffusée à tous simultanément, que l'Union soviétique avait devancé les États-Unis en orbite et disposait d'une fusée capable d'atteindre n'importe quelle ville sur la carte. Il se désintégra au-dessus du nouvel an. La course qu'il déclencha alla jusqu'à la Lune.",

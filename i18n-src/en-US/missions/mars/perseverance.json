@@ -1,5 +1,8 @@
 {
   "name": "Perseverance",
+  "vehicle": "Atlas V 541",
+  "payload": "3839 kg launch mass (1025 kg rover; 1.8 kg Ingenuity helicopter)",
+  "delta_v": "~6.1 km/s",
   "type": "ROVER · ACTIVE",
   "first": "First helicopter on another planet (Ingenuity); first sample caching for Mars Sample Return",
   "dispatch": "Perseverance went to Mars to look for the dead. Landed in 2021 on the floor of Jezero Crater — a basin holding the delta of a river that fed a lake billions of years ago, exactly the kind of place life would have left traces — it is the first rover built specifically to search for signs of ancient life, and to do something no mission had done: seal Martian rock into tubes and set them aside for a future spacecraft to carry home. It also delivered Ingenuity, the small helicopter that made the first powered flight on another planet. If the samples it is caching are ever returned, they will be the first pieces of another planet’s surface brought back to Earth.",

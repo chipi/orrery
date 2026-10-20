@@ -1,5 +1,8 @@
 {
   "name": "Skylab 2",
+  "vehicle": "Saturn IB (SA-206)",
+  "payload": "20121 kg de masa de lanzamiento; CSM-116 + tripulación de 3 personas",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Skylab 2 es la misión que salvó la primera estación espacial de Estados Unidos y, al hacerlo, demostró que los astronautas son equipos de reparación tanto como exploradores. Skylab había alcanzado la órbita dañada — su escudo solar arrancado durante el lanzamiento, un panel solar perdido, el otro bloqueado, el interior sobrecalentándose hacia lo inhabitable. La tripulación de Pete Conrad voló hacia una estación que podría haber sido una pérdida total, desplegó un parasol protector a través de una pequeña esclusa de aire para enfriarla, y luego liberó el panel atascado en una peligrosa caminata espacial improvisada que restauró su energía. Fue la primera vez que una tripulación rescató una nave espacial en fallo en órbita, y reescribió la suposición de que el hardware espacial era desechable.",
   "type": "TRIPULACIÓN DE ESTACIÓN · VOLADA",
   "first": "Primera visita tripulada a Skylab — reparó el taller dañado y salvó el programa",

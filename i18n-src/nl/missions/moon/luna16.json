@@ -1,5 +1,8 @@
 {
   "name": "Luna 16",
+  "vehicle": "Proton-K / D",
+  "payload": "5727 kg lanceermassa; lander van 1880 kg; 0,101 kg maanregoliet teruggebracht",
+  "delta_v": "~3,5 km/s",
   "type": "ROBOTIC SAMPLE RETURN · FLOWN",
   "first": "Eerste automatische terugkeer van maanmonsters; eerste niet-Amerikaanse maanmonsters",
   "description": "Luna 16 was de eerste succesvolle automatische terugkeer van maanmonsters van de Sovjet-Unie en de eerste onbemande terugkeer van de maan van welke aard ook. Nadat Apollo 11 in 1969 22 kg bemande monsters naar huis bracht, keerde Luna 16 een jaar later 101 gram regoliet van Mare Fecunditatis terug — een fractie van Apollo's lading, maar een diepgaand bewijs van concept voor de alternatieve architectuur. De missie gebruikte een Proton-K-booster en een directe terugkeerroute: afdaling naar het oppervlak, boorkern, lancering van de opstijgtrap, ballistische terugkeercapsule naar Kazachstan. De techniek werd hergebruikt voor Luna 20 en Luna 24, en decennia later door Chang'e 5 en Chang'e 6.",

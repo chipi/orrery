@@ -1,5 +1,8 @@
 {
   "name": "Blue Moon MK1",
+  "vehicle": "New Glenn（第一级可复用 + 第二级一次性使用）",
+  "payload": "运往月面的货物~3000 kg（CLPS 载荷）",
+  "delta_v": "~6 km/s",
   "type": "CARGO LANDER · PLANNED",
   "first": "Blue Origin的Blue Moon月球着陆器架构的首次飞行",
   "description": "Blue Origin首个货运型Blue Moon着陆器，依据NASA的商业月球有效载荷服务（CLPS）计划签约。这是一台由BE-7低温发动机驱动的单级下降飞行器，设计向月面运送最多约3吨有效载荷。由Blue Origin的New Glenn从卡纳维拉尔角发射，在New Glenn第二级上完成地月转移注入，随后进行月球入轨和动力下降。Mark 1货运飞行先于载人级的Mark 2，NASA已为载人Artemis登月任务与它签约——它现在是Artemis IV及后续任务的两个候选着陆器之一。",

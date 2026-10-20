@@ -1,5 +1,8 @@
 {
   "name": "Vostok 4",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4728 kg de massa de lançamento; um único cosmonauta",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "VÔO TRIPULADO EM ÓRBITA TERRESTRE · REALIZADO",
   "first": "Segunda metade do primeiro vôo duplo — primeiras comunicações entre duas espaçonaves tripuladas",
   "dispatch": "Vostok 4 foi a resposta a Vostok 3 — a segunda nave do primeiro vôo duplo, e o momento em que dois humanos em duas espaçonaves separadas falaram um com o outro em órbita pela primeira vez. Pavel Popovitch lançou um dia após Nikolayev e se aproximou a cerca de seis e meio quilômetros — perto o suficiente para estabelecer contato via rádio direto, nave a nave, em vez de através da Terra. Como sua parceira, não conseguiu manobrar para manter a distância, então as duas se afastaram gradualmente. Mas a imagem de dois cosmonautas circulando a Terra em formação, conversando um com o outro, era exatamente o tipo de \"primeira vez\" que o programa foi construído para produzir.",

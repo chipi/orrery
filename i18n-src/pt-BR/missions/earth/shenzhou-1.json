@@ -1,5 +1,8 @@
 {
   "name": "Shenzhou 1",
+  "vehicle": "Long March 2F",
+  "payload": "7600 kg de massa de lançamento; protótipo Shenzhou não tripulado com sistemas simulados",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "TESTE COM TRIPULAÇÃO NOMINAL · NÃO TRIPULADO · REALIZADO",
   "first": "Primeiro teste orbital Shenzhou da China — abriu o caminho para voos espaciais tripulados da RPC",
   "description": "Primeiro voo do programa de naves espaciais tripuladas Shenzhou. Lançado em 1999-11-19 22:30 UTC de Jiuquan no voo inaugural do Long March 2F (CZ-2F) certificado para humanos. A cápsula completou 14 órbitas a 195 × 315 km, inclinação de 42,6°, e reentrou com recuperação na estepe da Mongólia Interior em 1999-11-20 19:41 UTC. Transportava equipamentos de suporte de vida em maquete, pacotes de telemetria e uma bandeira chinesa, além de sementes para retorno de carga em pesquisa de genética em microgravidade. Marcou o compromisso da China em seguir a URSS e os EUA em voos espaciais tripulados independentes; levou diretamente ao Shenzhou 5 (2003) com Yang Liwei.",

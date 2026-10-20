@@ -1,5 +1,8 @@
 {
   "name": "MMX",
+  "vehicle": "H3-24L",
+  "payload": "~4000 kg (prévu)",
+  "delta_v": "~5 km/s",
   "type": "RETOUR D'ÉCHANTILLON PHOBOS · PRÉVU",
   "first": "Retour du premier échantillon d'une lune martienne",
   "description": "L'exploration des lunes martiennes est le plan de JAXA pour atterrir sur Phobos, récupérer environ 10 g de régolithe et le ramener à la maison. Les échantillons pourraient résoudre une question longtemps débattue : Phobos et Déimos sont-ils des astéroïdes capturés ou des fragments d'un ancien impact sur Mars lui-même ? La mission comprend également un rover franco-allemand pour la mobilité de surface de Phobos – un modèle opérationnel totalement différent de tout ce que les missions Hayabusa ont réalisé à Itokawa ou Ryugu. Le lancement était prévu pour 2024 mais a été reporté à 2026 en raison de retards dans le lanceur H3 de JAXA.",

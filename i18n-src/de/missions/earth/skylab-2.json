@@ -1,5 +1,8 @@
 {
   "name": "Skylab 2",
+  "vehicle": "Saturn IB (SA-206)",
+  "payload": "20121 kg Startmasse; CSM-116 + dreiköpfige Besatzung",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Skylab 2 ist die Mission, die Amerikas erste Raumstation rettete und dabei bewies, dass Astronauten ebenso sehr Reparaturtrupps wie Entdecker sind. Skylab hatte die Umlaufbahn beschädigt erreicht — sein Sonnenschild war beim Start abgerissen, ein Solarpanel war verloren, das andere klemmte, und das Innere überhitzte sich bis zur Unbewohnbarkeit. Pete Conrads Crew flog zu einer Station hinauf, die hätte abgeschrieben werden können, entfaltete einen Sonnenschirm-Schutzschild durch eine kleine Luftschleuse, um sie zu kühlen, und befreite dann das festsitzende Panel bei einem gefährlichen, improvisierten Weltraumspaziergang, der ihre Stromversorgung wiederherstellte. Es war das erste Mal, dass eine Crew ein versagendes Raumfahrzeug in der Umlaufbahn gerettet hatte, und es schrieb die Annahme neu, dass Weltraumhardware Wegwerfware sei.",
   "type": "BEMANNTE STATIONSBESATZUNG · GEFLOGEN",
   "first": "Erste bemannte Skylab-Mission — reparierte die beschädigte Werkstatt und rettete das Programm",

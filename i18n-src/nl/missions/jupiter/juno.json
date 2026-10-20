@@ -1,5 +1,8 @@
 {
   "name": "Juno",
+  "vehicle": "Atlas V 551",
+  "payload": "Poolbaan-orbiter om Jupiter; eerste zonne-energievaartuig dat voorbij de planetoïdengordel werkt (zonnepanelen met drievoudige junctie van ~50 m² die ~14 kW leveren bij de Aarde, ~500 W bij Jupiter)",
+  "delta_v": "~3,7 km/s (Jupiter-baaninsertie)",
   "type": "Orbiter · Actief",
   "first": "Eerste polaire orbiter van Jupiter; voor het eerst zonne-energie voorbij de planetoïdengordel",
   "description": "Juno trad op 05-07-2016 in een sterk elliptische polaire baan van 53 dagen rond Jupiter, die haar van binnen de stralingsgordels (perijove ~4.200 km boven de wolkentoppen) tot voorbij Callisto voert. Op zonne-energie — haar zonnepanelen met drievoudige junctiecellen van ~50 m² leveren bij de Aarde 14 kW maar bij Jupiter slechts ~500 W, de eerste keer dat zonne-energie op die afstand gebruikt wordt. Bevestigde dat Jupiter een verdunde rotsachtige kern heeft (geen scherpe grens), bracht de polaire-cyclonenstructuur in kaart (acht circumpolaire stormen rond elke pool) en bracht in 2023 het vulkanisme van Io met ongekende details in beeld. Uitgebreide missie met scheervluchten van alle vier de Galileïsche manen tot 2025.",

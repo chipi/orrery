@@ -1,5 +1,8 @@
 {
   "name": "Pioneer 11",
+  "vehicle": "Atlas SLV-3D Centaur D-1A / TE-364-4",
+  "payload": "Nave de sobrevuelo del sistema exterior; RTG SNAP-19 (~165 W al lanzamiento); gemela del Pioneer 10",
+  "delta_v": "~15 km/s (acumulado, asistencias de Júpiter + Saturno)",
   "type": "SOBREVUELO · COMPLETADA",
   "first": "Primera nave en sobrevolar Saturno (1979-09-01); demostró la asistencia gravitatoria que envió al Voyager 2 hacia adelante",
   "dispatch": "Pioneer 11 fue la segunda sonda exploradora, y llegó más lejos que su gemela. Tras su propio paso por Júpiter utilizó la gravedad del planeta para cruzar el sistema solar y alcanzar Saturno en 1979 —la primera nave espacial en hacerlo— atravesando deliberadamente el plano de los anillos para comprobar si la región era segura. Encontró la brecha que los Voyager atravesarían un año después. Gran parte de lo que hizo posible el Grand Tour fue esto: una sonda pequeña y económica enviada como avanzadilla para asumir los riesgos y mapear los peligros, de modo que los buques insignia que venían detrás pudieran volar con confianza en lugar de temor.",

@@ -1,5 +1,8 @@
 {
   "name": "Vostok 5",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4720 kg launch mass; single cosmonaut",
+  "delta_v": "~9.4 km/s (LEO)",
   "type": "CREWED EARTH-ORBIT · FLOWN",
   "first": "Longest solo Earth-orbital flight — 4 days 23 hours, 81 orbits",
   "dispatch": "Vostok 5 set a record that still stands. Valery Bykovsky flew nearly five days alone in orbit — eighty-one laps of the planet — which remains, six decades on, the longest solo spaceflight anyone has ever made. It was an endurance test above all, pushing a single cosmonaut and a small spacecraft far past the day Titov managed, to see whether a person could simply keep going. He could. And Bykovsky wasn't even the headline of his own mission: two days into his flight, Vostok 6 went up carrying the first woman in space, and the world's attention went with her.",

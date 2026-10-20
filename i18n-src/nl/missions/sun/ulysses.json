@@ -1,5 +1,8 @@
 {
   "name": "Ulysses",
+  "vehicle": "STS-41 Discovery + IUS + PAM-S",
+  "payload": "366 kg spingestabiliseerd, 9 instrumenten (magnetometer, zonnewind, energetische deeltjes, radio- + plasmagolven, stof, kosmische straling, gammaflitsdetector, samenstelling van de zonnewind, röntgen- + gammaflitsen). Gevoed door één GPHS-RTG.",
+  "delta_v": "~15,4 km/s (de zwaartekrachtsteun van Jupiter deed het zware werk)",
   "type": "ZONNE-POLAIRE ORBITER · VOLTOOID",
   "first": "Enig ruimtevaartuig ooit in een hoog-inclinatie heliocentrische baan; enige directe metingen van de zonnewind op alle heliografische breedten",
   "description": "Gezamenlijke ESA- / NASA-missie. Gelanceerd op 1990-10-06 vanaf STS-41 Discovery + IUS + PAM-S bovenstadia; Ulysses maakte op 1992-02-08 gebruik van een zwaartekrachtassist van Jupiter om zichzelf ~80° uit de ecliptica te buigen — de enige manier om vanuit het bijna equatoriale baanvlak van de Aarde een bijna polaire baan ten opzichte van de Zon te bereiken. Drie volledige polaire banen rond de Zon over 18,5 jaar karteerden de zonnewind, het heliosferische magneetveld en energetische deeltjes op alle heliografische breedten — directe metingen die onthulden hoe de structuur van de zonnewind varieert tussen equatoriale gebieden met trage wind en snelle windstromen op hoge breedten uit coronale gaten. Missie beëindigd op 2009-06-30 toen het hydrazine van de thruster in de leidingen bevroor. Hardware blijft in een heliocentrische polaire baan.",

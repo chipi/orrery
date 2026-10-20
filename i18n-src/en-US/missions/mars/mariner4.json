@@ -1,5 +1,8 @@
 {
   "name": "Mariner 4",
+  "vehicle": "Atlas LV-3 Agena-D",
+  "payload": "261 kg",
+  "delta_v": "~3.6 km/s",
   "type": "FLYBY · FLOWN",
   "first": "First spacecraft to reach Mars and return close-up images of another planet",
   "description": "The mission that ended dreams of a habitable Mars. Mariner 4's 22 grainy images, taken during a 25-minute closest approach at 9,846 km altitude, showed a cratered surface resembling the Moon — no canals, no vegetation, no obvious life. The atmosphere was 100× thinner than expected. The discovery reshaped Mars in the public imagination from sister-Earth to dead world. Tracking the spacecraft also produced the first measurement of the solar wind's structure between planets.",

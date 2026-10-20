@@ -1,5 +1,8 @@
 {
   "name": "X-37B OTV-3 (USA-240)",
+  "vehicle": "Atlas V 501 (AV-034)",
+  "payload": "USA-240; Veículo de Teste Orbital X-37B (~5000 kg). Cargas úteis em grande parte confidenciais.",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "SPACEPLANE NÃO-TRIPULADO · MISSÃO CUMPRIDA",
   "first": "USA-240 — 675 dias em órbita, Base da Força Aérea de Vandenberg",
   "description": "Terceiro voo do X-37B, reutilizando o veículo de voo OTV-1. Lançado em 2012-12-11 18:03 UTC a partir de CCAFS SLC-41 no Atlas V 501 AV-034; pousou na Base da Força Aérea de Vandenberg em 2014-10-17 16:24 UTC. 675 dias em órbita.",

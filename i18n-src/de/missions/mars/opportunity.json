@@ -1,5 +1,8 @@
 {
   "name": "Opportunity",
+  "vehicle": "Delta II 7925H Heavy",
+  "payload": "1063 kg (Reisestufe + EDL + Rover); 174 kg Masse auf der Oberfläche",
+  "delta_v": "~5,5 km/s",
   "type": "ROVER · GEFLOGEN",
   "first": "Langstrecken-Marsrover (45,16 km); 14 Jahre Oberflächenlebensdauer gegenüber einer 90-Sol-Auslegung",
   "dispatch": "Opportunity fuhr einen Marathon über einen anderen Planeten. Der Zwilling von Spirit, 2004 für eine neunzigtägige Mission gelandet, arbeitete vierzehn Jahre lang und legte mehr als fünfundvierzig Kilometer zurück — die längste Strecke, die ein Fahrzeug auf irgendeinem Himmelskörper zurückgelegt hat. Sie kam glücklicherweise in einem kleinen Krater an, dessen Wände genau das wassergelagerte Gestein zeigten, das sie finden sollte, und dann machte sie einfach weiter, Krater um Krater, und las die alte Wassergeschichte des Mars Kilometer für Kilometer. Ein planetenweit wütender Staubsturm brachte sie schließlich 2018 zum Schweigen.",

@@ -1,5 +1,8 @@
 {
   "name": "Cassini-Huygens",
+  "vehicle": "Titan IVB / Centaur",
+  "payload": "Saturn orbiter (~5712 kg dry) + Huygens descent probe (~318 kg, ESA-built, landed on Titan 2005-01-14)",
+  "delta_v": "~2 km/s (Saturn orbit insertion)",
   "type": "ORBITER + LANDER · FLOWN",
   "first": "13 years in orbit around Saturn — Huygens landed on Titan 2005-01-14 (first outer-solar-system soft landing)",
   "dispatch": "Cassini did what no spacecraft had done at any giant planet: it stopped. For thirteen years it lived at Saturn, and the discoveries that mattered most came from staying — the geysers of Enceladus, caught because the orbiter flew close enough, often enough, to see a tiny moon venting its hidden ocean into space. It dropped Europe’s Huygens probe onto Titan, the only landing ever made in the outer solar system, and charted a world of methane rivers and lakes. At the end, out of fuel, it was flown deliberately into Saturn so it could never fall onto the ocean moons it had found and contaminate them — a mission that closed by protecting the places it discovered.",

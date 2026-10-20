@@ -1,5 +1,8 @@
 {
   "name": "Shenzhou 1",
+  "vehicle": "Long March 2F",
+  "payload": "7600 kg de masse au lancement ; prototype Shenzhou sans équipage avec des systèmes factices",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "TEST ÉQUIPÉ · NON-HABITÉ · VOLÉ",
   "first": "Premier essai orbital Shenzhou — a ouvert la voie au vol spatial habité de la RPC",
   "description": "Premier vol du programme de vaisseau spatial habité Shenzhou. Lancé le 1999-11-19 à 22:30 UTC depuis Jiuquan lors du vol inaugural de la fusée Long March 2F (CZ-2F) certifiée pour les vols habités. La capsule a complété 14 orbites à 195 × 315 km, inclinaison 42,6°, et a effectué une rentrée atmosphérique avec récupération sur la steppe de Mongolie-Intérieure le 1999-11-20 à 19:41 UTC. Emportait un système de soutien vital factice, des ensembles de télémétrie et un drapeau chinois, ainsi que des graines pour un retour de cargaison de génétique en microgravité. A marqué l'engagement de la Chine à suivre l'URSS / les États-Unis vers des vols spatiaux habités indépendants ; a conduit directement à Shenzhou 5 (2003) avec Yang Liwei.",

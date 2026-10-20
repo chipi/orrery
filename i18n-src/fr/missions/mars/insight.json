@@ -1,5 +1,8 @@
 {
   "name": "InSight",
+  "vehicle": "Atlas V 401",
+  "payload": "atterrisseur de 694 kg",
+  "delta_v": "~5,5 km/s",
   "type": "ATTERRISSEUR · VOLÉ",
   "first": "Premier sismomètre sur Mars ; premier lancement interplanétaire depuis la côte ouest des États-Unis",
   "description": "InSight a offert à Mars son premier stéthoscope. Son sismomètre, déployé par un bras robotique sur le régolithe, a enregistré plus de 1 300 tremblements de terre, dont une magnitude de 5 en 2022, le plus important jamais détecté sur une autre planète. Les données ont révélé la structure intérieure de Mars : un noyau fondu d'un rayon de 1 800 km, une croûte épaisse et une surprenante stratification du manteau. L'expérience sur le flux de chaleur des taupes a échoué lorsque le régolithe s'est révélé trop cohérent pour sa conception auto-martelante. La mission s'est terminée lorsque l'accumulation de poussière sur les panneaux solaires a réduit la puissance en dessous du seuil opérationnel.",

@@ -1,5 +1,8 @@
 {
   "name": "Vostok 1",
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4725 kg Startmasse; kugelförmige Landekapsel + Servicemodul",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Vostok 1 ist der Beginn des Raumfahrtzeitalters mit einem Menschen an Bord. Für 108 Minuten am 12. April 1961 wurde Juri Gagarin — ein 27-jähriger Kampfpilot — der erste Mensch, der den Planeten verließ und ihn umkreiste, und die Welt erwachte mit der Erkenntnis, dass die Sowjetunion das getan hatte, von dem alle annahmen, Amerika würde es zuerst tun. Er hatte fast keine Kontrolle über das Raumschiff; der Flug wurde vom Boden aus gesteuert, und er war ebenso sehr Passagier wie Pilot, eingeschlossen in einer Kugel, die gebaut wurde, um ihn nach Hause zu bringen, ob er bei Bewusstsein war oder nicht. Es spielte keine Rolle. Ein Mensch hatte die Erde umrundet und war zurückgekehrt, und nichts daran, wie die Menschen ihren Platz im Universum sahen, war danach mehr ganz dasselbe.",
   "type": "BEMANNTER ERDORBIT · GEFLOGEN",
   "first": "Erster Mensch im All; erster bemannter Orbitalflug",

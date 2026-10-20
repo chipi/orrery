@@ -1,5 +1,8 @@
 {
   "name": "Chandrayaan-1",
+  "vehicle": "PSLV-XL (C11)",
+  "payload": "1380 kg lanceermassa; Moon Impact Probe van 35 kg",
+  "delta_v": "~3 km/s",
   "type": "ORBITER · GEVLOGEN",
   "first": "India's eerste maanmissie; bevestigde wijdverspreid water op de Maan",
   "description": "ISRO's eerste interplanetaire ruimtevaartuig. De orbiter leverde de Moon Impact Probe aan het maanoppervlak — het eerste Indiase object op een andere wereld — en droeg 11 instrumenten van 6 landen. NASA's Moon Mineralogy Mapper (M3)-instrument, gehost op Chandrayaan-1, deed de ontdekking die de leerboeken herschreef: watermoleculen zijn wijdverspreid over het maanoppervlak, niet alleen opgesloten in polair geschaduwde kraters. De missie eindigde abrupt in augustus 2009 toen ISRO de communicatie met het ruimtevaartuig verloor.",

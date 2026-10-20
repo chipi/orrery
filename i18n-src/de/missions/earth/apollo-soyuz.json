@@ -1,5 +1,8 @@
 {
   "name": "Apollo-Soyuz-Test-Projekt (ASTP)",
+  "vehicle": "Saturn IB (AS-210) + Soyuz-U",
+  "payload": "Apollo CSM-111 (das letzte Apollo-CSM überhaupt) + Soyuz 19 (modifiziertes 7K-TM); 14,4 t Apollo + 6,8 t Soyuz",
+  "delta_v": "~9,4 km/s (jeweils LEO)",
   "type": "BESATZTES ERDUMLAUFBAHN-FLUGZEUG · GEFLOGEN",
   "first": "Erste internationale Zusammenarbeit im bemannten Raumflug; erstes Rendezvous und Docking zwischen den USA und der UdSSR",
   "dispatch": "Apollo-Soyuz ist der Ort, wo das Raumrennen endet — nicht an einer Ziellinie, sondern mit einem Händedruck. Im Juli 1975 trafen sich Apollo und Soyuz, die rivalisierenden Raumfahrzeuge der rivalisierenden Supermächte, im Orbit und dockten an. Tom Stafford und Alexei Leonow schüttelten sich durch die offene Luke zwischen ihnen die Hand. Es brauchte einen gemeinsam gebauten Kopplungsadapter, zwei Besatzungen, die die Sprache der jeweils anderen lernten, und eine Entspannung im Kalten Krieg, die tiefgreifend genug war, um den heftigsten Wettbewerbern der Ära eine Zusammenarbeit in voller Öffentlichkeit zu ermöglichen. Nichts davon war streng notwendig; darin lag der Sinn. Nach achtzehn Jahren des Wettlaufs um den ersten Platz entschieden sich die beiden Programme bei einem Flug einfach zu begegnen — und schufen die Vorlage für die internationale Zusammenarbeit, die eines Tages die Raumstation bauen würde.",

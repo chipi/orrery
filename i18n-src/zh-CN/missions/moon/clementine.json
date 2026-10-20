@@ -1,5 +1,8 @@
 {
   "name": "Clementine",
+  "vehicle": "Titan II G",
+  "payload": "干质量 424 kg；含推进剂的发射质量 1690 kg",
+  "delta_v": "~3.5 km/s",
   "type": "ORBITER · FLOWN",
   "first": "NASA与美国国防部联合的月球任务；首次发现月球极区存在水冰的迹象",
   "description": "Clementine主要作为战略防御倡议的技术验证器而设计，在月球轨道上运行10周，首次传回系统的全球月球地形图和多光谱图。在月球南极进行的双站雷达测量，首次给出了水冰的诱人迹象——数年后得到Lunar Prospector和Chandrayaan-1的证实。其后续任务本要飞掠小行星地理星，却因一台推力器故障耗尽了航天器的推进剂而告失败。",

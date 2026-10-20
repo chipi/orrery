@@ -1,5 +1,8 @@
 {
   "name": "Solar Orbiter",
+  "vehicle": "Atlas V 411",
+  "payload": "1800 kg (incl. 209 kg of instruments + heat shield)",
+  "delta_v": "~3.5 km/s",
   "type": "SOLAR-ORBITER · ACTIVE",
   "first": "First mission designed to image the Sun's polar regions in detail; complements Parker Solar Probe's in-corona measurements with high-latitude remote sensing",
   "description": "ESA-led mission with a NASA launch and one instrument contribution. Where Parker Solar Probe goes closer than anyone has ever been, Solar Orbiter goes higher — using repeated Venus gravity assists over a decade to climb out of the ecliptic toward ~33° heliographic inclination. From that vantage point its instrument suite (PHI, EUI, SPICE, STIX, METIS, SoloHI + four in-situ packages) images the Sun's polar magnetic fields, traces solar-wind acceleration in real time, and links remote and in-situ measurements simultaneously. First perihelion 2020-06-15 at 0.51 AU. Closest perihelion to date 2022-10-12 at 0.29 AU (inside Mercury's perihelion).",

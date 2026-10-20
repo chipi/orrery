@@ -1,5 +1,8 @@
 {
   "name": "Apollo 9",
+  "vehicle": "Saturn V (AS-504)",
+  "payload": "42400 kg gelanceerd (CSM Gumdrop (CSM-104) + LM Spider (LM-3))",
+  "delta_v": "~9,5 km/s (naar LEO)",
   "type": "BEMANDE AARDBAAN · UITGEVOERD",
   "first": "Eerste bemande vlucht van de LM — test van LM-scheiding en rendezvous in aardbaan",
   "description": "De eerste bemande vlucht van de Lunar Module. In aardbaan ontkoppelden McDivitt en Schweickart de LM Spider van CSM Gumdrop, vlogen tot 183 km weg in zes uur, en voerden vervolgens rendezvous en opnieuw aankoppen uit — elke stap van de maanrendezvous-procedure werd getest zonder de mogelijkheid om de bemanning naar huis te brengen in de CSM als iets mis zou gaan. Schweickart voerde een 38 minuten durende EVA uit op de LM-veranda, waarbij hij het Apollo EVA-pak en PLSS-rugzakontwerp demonstreerde dat de maanwandelaars zouden gebruiken. Scott voerde een stand-up EVA uit vanuit de CSM-luik. Met de LM-hardware en rendezvous-procedures geverifieerd, was NASA klaar om Apollo 10 twee maanden later naar de maan te sturen.",

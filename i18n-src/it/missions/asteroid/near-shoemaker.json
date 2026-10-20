@@ -1,5 +1,8 @@
 {
   "name": "NEAR Shoemaker",
+  "vehicle": "Delta II 7925-8",
+  "payload": "805 kg al lancio (487 kg a secco) — spettrometro a raggi X/gamma, spettrografo nel vicino infrarosso, camera multispettrale, telemetro laser (LIDAR), magnetometro. Prima sonda a entrare in orbita e ad atterrare su un asteroide.",
+  "delta_v": "~1 km/s (manovre totali della missione)",
   "type": "ORBITALE + LANDER · VOLATO",
   "first": "Primo veicolo spaziale ad orbitare un asteroide (433 Eros, 2000) e primo allunaggio dolce su qualsiasi corpo piccolo (12-02-2001)",
   "dispatch": "NEAR Shoemaker è andato a Eros perché nessuno sapeva davvero come fosse un asteroide da vicino. Arrivò per trovare un mondo disseminato di crateri, allungato in forma di sella dalla sua lenta rotazione, coperto di regolite fine che non aveva dove andare in microgravità quasi zero. Per un anno lo ha cartografato ogni cresta e roccia dall'orbita, quindi nel febbraio 2001 i controllori hanno tentato la sorte: hanno abbassato l'orbita del veicolo cinque volte in due settimane, l'hanno rallentato a velocità di marcia e l'hanno posato sulla superficie. È sopravvissuto. Per sedici giorni ancora ha trasmesso da Eros — il primo emissario della Terra a riposare su un corpo piccolo.",

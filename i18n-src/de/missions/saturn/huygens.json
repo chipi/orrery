@@ -1,5 +1,8 @@
 {
   "name": "Huygens",
+  "vehicle": "Titan IVB / Centaur (Cassini-Träger)",
+  "payload": "318 kg schwere ESA-Eintrittssonde — Hitzeschild-Kapsel, 3 Fallschirme, 6 Wissenschaftspakete (HASI, GCMS, DISR, ACP, SSP, DWE). Ausgelegt, den 2,5-stündigen Abstieg durch die Stickstoff-Methan-Atmosphäre des Titan bis zur Oberfläche zu überstehen.",
+  "delta_v": "~6 km/s (Eintrittsabbremsung von 6 km/s (Hyperschall) bis zur Oberfläche)",
   "type": "ATMOSPHÄRENSONDE + LANDER · GEFLOGEN",
   "first": "Erste und einzige sanfte Landung im äußeren Sonnensystem — per Fallschirm durch Titans Atmosphäre am 14.01.2005",
   "dispatch": "Huygens wurde nicht geschickt, um zu kreisen, sondern um zu fallen. Sieben Jahre lang an Cassini gebunden, trennte es sich am Weihnachtstag 2004 ab und segelte allein zwanzig Tage lang zu Titan hin. Als es Titans Atmosphäre mit sechs Kilometer pro Sekunde durchbrach, erkaufte ein Wärmeschild die kostbare Zeit; dann verlangsamten drei Fallschirmstadien das Raumschiff über zwei Stunden und dreißig Minuten durch einen orangenen Dunst, den nie ein Instrument zuvor durchquert hatte. Es fotografierte Flusstäler, maß Windgeschwindigkeiten, analysierte die Atmosphäre — und setzte sich auf einer Ebene aus abgerundeten Wasser-Eis-Kieseln ab. Es war die erste Landung, die je im äußeren Sonnensystem durchgeführt wurde, und kein Raumschiff ist seitdem dort gelandet.",

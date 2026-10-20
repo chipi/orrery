@@ -1,5 +1,8 @@
 {
   "name": "Gemini 8 / GT-8",
+  "vehicle": "Titan II GLV (GT-8)",
+  "payload": "Gemini 8; Neil Armstrong & David Scott",
+  "delta_v": "~7,8 km/s (LEO)",
   "type": "BEMANNT ERDORBIT · GEFLOGEN",
   "first": "Erstes Andocken zweier Raumfahrzeuge; Notrückkehr",
   "dispatch": "Gemini 8 führte das erste Andocken zweier Raumfahrzeuge im Orbit durch — und hätte seine Besatzung dabei fast getötet. Minuten nachdem Neil Armstrong seine Gemini-Kapsel in eine verriegelte Verbindung mit einem Agena-Ziel gebracht hatte, begann das verbundene Paar zu rollen, immer schneller, bis es sich etwa einmal pro Sekunde überschlug und die Sicht der Astronauten zu vergrauen begann, kurz vor dem Blackout. Armstrong dockte ab — was die Lage nur verschlimmerte, da der Fehler in seinem eigenen Raumfahrzeug lag — schaltete dann die Haupttriebwerke ab und stoppte die Rotation mit dem Wiedereintritts-Steuersystem, eine Entscheidung, die ihr Leben rettete, aber gemäß den Regeln eine sofortige Notrückkehr erzwang. Es war der gefährlichste Moment des Programms, und es war Armstrongs erster Raumflug. Die ruhige, schnelle Diagnose in einer sich verschlechternden Situation war genau das Temperament, an das sich die NASA erinnerte, als sie entschied, wer auf dem Mond landen würde.",

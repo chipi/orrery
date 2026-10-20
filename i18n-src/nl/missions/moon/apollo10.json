@@ -1,5 +1,8 @@
 {
   "name": "Apollo 10",
+  "vehicle": "Saturn V (AS-505)",
+  "payload": "42775 kg gelanceerd (CSM Charlie Brown (CSM-106) + LM Snoopy (LM-4))",
+  "delta_v": "~6 km/s (heen en terug)",
   "dispatch": "Apollo 10 vloog de volledige landing — tot op de laatste vijftien kilometer — en keerde toen, zoals bedoeld, om. Stafford en Cernan namen de Lunar Module mee naar beneden tot op een steenworp afstand van het oppervlak bij Tranquility, doorliepen elke stap van de afdaling, en klommen terug naar een baan om de maan zonder te landen. NASA liet zelfs de stijgtanks halfleeg, zodat doorzetten, hoe verleidelijk het ook werd, nooit een optie was. Het is de minst gevierde vlucht van het programma en een van de meest gedisciplineerde: een repetitie op volle snelheid door twee mannen die vierhonderdduizend kilometer vlogen in de wetenschap dat de landing aan iemand anders toebehoorde.",
   "type": "BEMAND MAANBAAN · GEVLOGEN",
   "first": "Volledige maanlandings-generale repetitie — LM daalde tot ~15,6 km hoogte",

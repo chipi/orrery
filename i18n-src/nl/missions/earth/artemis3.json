@@ -1,5 +1,8 @@
 {
   "name": "Artemis III",
+  "vehicle": "SLS Block 1 (met een niet-aangedreven afstandsstuk in plaats van de bovenste trap)",
+  "payload": "Orion + bemanning van 4 personen; rendez-vous en koppeling met de Starship-pathfinder en Blue Moon-landers in een lage baan om de aarde",
+  "delta_v": "~9,4 km/s (naar LEO)",
   "type": "BEMANDE TESTVLUCHT · GEPLAND",
   "first": "Eerste bemande test van de commerciële maanlanders — Orion koppelt er in een baan om de Aarde aan vast",
   "description": "Artemis III landt niet meer op de Maan. In februari 2026 veranderde NASA het plan: voordat een landing wordt gewaagd, vliegt een bemanning met Orion in een lage baan om de Aarde en oefent de moeilijkste nieuwe stap — rendez-vous en koppeling met de commerciële landers die later astronauten naar het oppervlak zullen brengen. De SLS lanceert Orion met vier bemanningsleden, met een afstandsstuk in plaats van de bovenste trap, omdat er geen duw naar de Maan nodig is. In de baan ontmoet Orion testversies van SpaceX' Starship-lander en Blue Origins Blue Moon, koppelt eraan vast, en test de bemanning de levensondersteuning, communicatie en voortstuwing van de gekoppelde voertuigen, samen met de nieuwe AxEMU-ruimtepakken. De vlucht duurt ongeveer twee weken. Ze speelt de rol die Apollo 9 in 1969 speelde, toen de maanmodule in een baan om de Aarde werd gevlogen en gekoppeld voordat iemand hem naar de Maan bracht. Bemanning, bekendgemaakt in juni 2026: Randy Bresnik (commandant), Luca Parmitano van ESA (piloot), Andre Douglas en Frank Rubio. NASA plant de vlucht voor 2027."

@@ -1,5 +1,8 @@
 {
   "name": "MAVEN",
+  "vehicle": "Atlas V 401",
+  "payload": "2454 kg",
+  "delta_v": "~3.5 km/s",
   "type": "軌道機 · 活動中",
   "first": "火星が大気をどう失ったかを研究する初の専任ミッション",
   "description": "MAVEN — Mars Atmosphere and Volatile Evolution — は「火星の空気はどこへ行ったか？」に答える。楕円軌道は上層大気に潜り込み、太陽風がイオンと中性子を剥がしていく様子をサンプルする。結果：火星は毎秒約百グラムの大気を宇宙へ失う — 数十億年かければ失われた気候を説明できる量。宇宙機はCuriosity や Perseverance を含む表面資産の重要な中継も担う。",

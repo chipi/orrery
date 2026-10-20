@@ -1,5 +1,8 @@
 {
   "name": "Apollo 11",
+  "vehicle": "Saturn V (AS-506)",
+  "payload": "46782 kg gelanceerd (CSM Columbia + LM Eagle)",
+  "delta_v": "~6 km/s (heen en terug)",
   "dispatch": "Apollo 11 was de vlucht waarvoor het hele programma was gebouwd — de vlucht die moest slagen. Na acht jaar en $25 miljard kwam alles wat NASA deed uiteindelijk neer op het krijgen van twee mensen op dit specifieke stuk grijze stof en het levend terugbrengen. Toen Armstrong riep \"Eagle has landed,\" was de Koude Oorlog-race die begon met een piepende bol boven Amerikaanse steden feitelijk voorbij. Wat nu gemakkelijk vergeten wordt, is hoe klein de marge was: de bemanning kwam neer met seconden aan brandstof over, voorbij een veld met rotsblokken dat de kaarten niet hadden getoond, op een geleidingscomputer die de hele weg alarmmeldingen gaf. Het werkte toch — en voor één nacht keek een vijfde van de soort naar hetzelfde op hetzelfde moment.",
   "type": "BEMANDE LANDER · GEVLOGEN",
   "first": "Eerste mensen op een ander hemellichaam",

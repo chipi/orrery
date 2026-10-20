@@ -1,5 +1,8 @@
 {
   "name": "Voskhod 1",
+  "vehicle": "Voskhod (11A57)",
+  "payload": "5320 kg Startmasse; drei Kosmonauten (keine Raumanzüge, keine Schleudersitze)",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Voskhod 1 war der erste Flug, der mehr als eine Person ins All beförderte, und das gelang durch Weglassen. In der einsitzigen Vostok war kein Platz für eine dreiköpfige Besatzung, also entfernten die Ingenieure Dinge — die Schleudersitze, die jeden bisherigen Kosmonauten gerettet hatten, und, weil es selbst dann zu eng war, die Druckanzüge. Komarow, Feoktistow und Jegorow flogen einen Tag lang in Hemdsärmeln, ohne Möglichkeit, einem Start- oder Wiedereintrittsnotfall zu entkommen, und ohne Schutz, falls die Kabine Luft verlieren sollte. Nichts ging schief, also wirkte es wie ein Triumph. Es war wirklich eine Wette — dass die Abkürzungen, die man nahm, um eine Premiere zu erzielen, nicht die entscheidenden sein würden — und sie ging zufällig auf.",
   "type": "BEMANNTER ERDORBIT · GEFLOGEN",
   "first": "Erster Raumflug mit Mehrpersonenbesatzung – drei Kosmonauten in einer von Vostok abgeleiteten Kapsel",

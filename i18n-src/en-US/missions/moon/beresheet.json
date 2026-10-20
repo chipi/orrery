@@ -1,5 +1,8 @@
 {
   "name": "Beresheet",
+  "vehicle": "Falcon 9 Block 5 (rideshare with Nusantara Satu)",
+  "payload": "585 kg launch mass; first private spacecraft to reach lunar orbit; lost during powered descent ~150 m above the surface",
+  "delta_v": "~6 km/s (highly elliptical phasing orbits, not direct TLI)",
   "type": "PRIVATE LANDER · CRASHED",
   "first": "First privately-funded mission to reach the Moon; first Israeli lunar mission",
   "description": "SpaceIL's Beresheet (Hebrew: 'In the beginning') launched as a shared-ride passenger on a Falcon 9 in February 2019. Instead of a direct trans-lunar injection, the small lander performed weeks of perigee-raising phasing burns to climb from a parking orbit out to the Moon — a fuel-saving trajectory pioneered for low-budget missions. After successful lunar orbit insertion on 4 April 2019, an inertial measurement unit reset during descent caused the main engine to shut down. Beresheet crashed in Mare Serenitatis. SpaceIL committed to a successor (Beresheet 2) within days.",

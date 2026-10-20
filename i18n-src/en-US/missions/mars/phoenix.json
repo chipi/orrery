@@ -1,5 +1,8 @@
 {
   "name": "Phoenix",
+  "vehicle": "Delta II 7925-9.5",
+  "payload": "670 kg launch mass (350 kg landed mass)",
+  "delta_v": "~5.7 km/s",
   "type": "LANDER · FLOWN",
   "first": "First confirmation of water ice in the Martian arctic regolith; first soft propulsive Mars landing since Viking 2",
   "description": "Phoenix was salvaged from the cancelled Mars Surveyor 2001 program — flight hardware in storage for six years, reassembled and retargeted to the Martian north polar plains. The name was chosen literally. Landed 2008-05-25 at 68.22°N, 234.25°E on Vastitas Borealis, further north than any prior surface mission. Within days the robotic arm scraped through topsoil and exposed bright white ice that visibly sublimated on camera over four sols — direct confirmation of subsurface water ice in the Martian arctic. Detected perchlorates in the regolith and observed snow falling from clouds. Mission ended 2008-11-02 as solar power fell below operational threshold at the onset of Mars winter; the lander was never expected to survive the polar night.",

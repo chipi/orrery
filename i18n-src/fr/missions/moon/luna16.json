@@ -1,5 +1,8 @@
 {
   "name": "Luna 16",
+  "vehicle": "Proton-K / D",
+  "payload": "5727 kg de masse au lancement ; atterrisseur de 1880 kg ; 0,101 kg de régolithe lunaire rapporté",
+  "delta_v": "~3,5 km/s",
   "type": "ROBOTIC SAMPLE RETURN · FLOWN",
   "first": "Premier retour d'échantillons lunaires par un engin automatique ; premiers échantillons lunaires non-américains",
   "description": "Luna 16 était la première mission de retour d'échantillons par engin automatique réussie de l'Union soviétique et le premier retour lunaire non-habité de quelque nature qu'il soit. Après qu'Apollo 11 ait ramené 22 kg d'échantillons prélevés en équipage en 1969, Luna 16 a rapporté 101 grammes de régolithe provenant de Mare Fecunditatis un an plus tard — une fraction de la charge utile d'Apollo, mais une preuve de concept profonde pour l'architecture alternative. La mission a utilisé un lanceur Proton-K et un profil de retour direct : descente à la surface, forage carotté, lancement du module de remontée, capsule de retour balistique vers le Kazakhstan. La technique a été réutilisée pour Luna 20 et Luna 24, et décennies plus tard par Chang'e 5 et Chang'e 6.",

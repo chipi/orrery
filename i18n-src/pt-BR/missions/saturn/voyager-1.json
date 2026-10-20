@@ -1,5 +1,8 @@
 {
   "name": "Voyager 1",
+  "vehicle": "Titan IIIE / Centaur",
+  "payload": "Espaçonave de sobrevoo planetário; três módulos RTG totalizando ~470 W no lançamento (decaindo para ~250 W hoje)",
+  "delta_v": "~17 km/s (acumulado, assistências de Júpiter + Saturno)",
   "type": "SOBREVOO · REALIZADO",
   "first": "Objeto mais distante criado pela humanidade — atualmente a ~170 UA do Sol no espaço interestelar",
   "dispatch": "Voyager 1 é a coisa mais distante que a humanidade já criou, e chegou lá quase por um acaso de geometria. Um encontro próximo com a gigantesca lua Titã de Saturno — escolhida pela ciência — desviou seu caminho para cima e para fora do plano dos planetas e a apontou para a beira do sistema solar, e ela tem estado subindo desde então. Pelo caminho, encontrou vulcões ativos em Io, os primeiros já vistos fora da Terra, e em 1990 se virou para fotografar a Pale Blue Dot. Em 2012, tornou-se a primeira máquina a cruzar para o espaço interestelar. Ainda está transmitindo, alimentada por energia nuclear que se desvanece, de mais de cem vezes a distância da Terra ao Sol.",

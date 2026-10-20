@@ -1,5 +1,8 @@
 {
   "name": "Voskhod 2",
+  "vehicle": "Voskhod (11A57)",
+  "payload": "5682 kg de masse au lancement ; capsule Voskhod + sas gonflable Volga",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "VOL HABITÉ EN ORBITE TERRESTRE · RÉALISÉ",
   "first": "Première activité extravéhiculaire (Leonov, 12 min, 1965-03-18)",
   "dispatch": "Voskhod 2 a réalisé la première sortie dans l'espace et a failli en faire le premier décès dans le vide. Alexeï Leonov s'est échappé par un sas gonflable dans le vide — le premier humain jamais entièrement sorti d'un vaisseau spatial — et son scaphandre s'est gonflé si raide qu'il ne pouvait pas se plier pour rentrer. Il a dû ouvrir une soupape et purger son propre air, risquant l'accident de décompression, juste pour rétrécir assez et pouvoir passer par l'écoutille. Ce n'était pas fini : la rentrée automatique a échoué, l'équipage a piloté manuellement la descente, et ils ont atterri à des centaines de kilomètres du point d'impact prévu dans la forêt sibérienne gelée, où ils ont attendu deux nuits parmi les loups avant que les sauveteurs ne les atteignent en skis. Le public a vu douze minutes triomphantes ; à quel point cela s'était approché du drame a resté secret pendant des années.",

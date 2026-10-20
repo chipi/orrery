@@ -1,5 +1,8 @@
 {
   "name": "Shenzhou 1",
+  "vehicle": "Long March 2F",
+  "payload": "7600 kg lanceermassa; onbemand Shenzhou-prototype met nagebootste systemen",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "BEMANDE TEST · ONBEMAND · GEVLOGEN",
   "first": "Chinas eerste Shenzhou-orbitaltest — opende het pad naar bemande ruimtevaartuigen van de VRC",
   "description": "Eerste vlucht van het Shenzhou-programma voor bemande ruimtevaartuigen. Gelanceerd op 1999-11-19 22:30 UTC vanuit Jiuquan met de eerste vlucht van de voor mensen geschikte Long March 2F (CZ-2F). De capsule voltooide 14 banen van 195 × 315 km, 42,6° inclinatie, en keerde terug naar de aarde voor berging op de steppe van Binnen-Mongolië op 1999-11-20 19:41 UTC. Aan boord waren nagebouwde levensondersteuningssystemen, telemetriepakketten en een Chinese vlag, plus zaden voor een retourlading met microzwaartekrachtgenetica. Markeerde Chinas vastberadenheid om de USSR en de VS te volgen naar zelfstandige bemande ruimtevaart; leidde rechtstreeks naar Shenzhou 5 (2003) met Yang Liwei.",

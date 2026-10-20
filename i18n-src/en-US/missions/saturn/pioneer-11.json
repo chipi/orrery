@@ -1,5 +1,8 @@
 {
   "name": "Pioneer 11",
+  "vehicle": "Atlas SLV-3D Centaur D-1A / TE-364-4",
+  "payload": "Outer-system flyby spacecraft; SNAP-19 RTGs (~165 W at launch); twin of Pioneer 10",
+  "delta_v": "~15 km/s (cumulative, Jupiter + Saturn assists)",
   "type": "FLYBY · FLOWN",
   "first": "First spacecraft to fly past Saturn (1979-09-01); demonstrated the gravity-assist that sent Voyager 2 onward",
   "dispatch": "Pioneer 11 was the second scout, and it went further than its twin. After its own pass by Jupiter it used the planet’s gravity to cross the solar system and reach Saturn in 1979 — the first spacecraft ever to do so — deliberately flying through the ring plane to test whether the region was safe. It found the gap the Voyagers would thread a year later. Much of what made the Grand Tour possible was this: a small, cheap probe sent ahead to take the risks and map the hazards, so the flagships behind it could fly with confidence instead of fear.",

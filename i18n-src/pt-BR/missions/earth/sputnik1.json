@@ -1,5 +1,8 @@
 {
   "name": "Sputnik 1",
+  "vehicle": "Sputnik 8K71PS (derivado do R-7 Semyorka)",
+  "payload": "Esfera polida de alumínio-magnésio de 83,6 kg, Ø 58 cm; dois transmissores (20,005 MHz + 40,002 MHz), três baterias de prata-zinco (60 W), sem instrumentos além de um termômetro + um sensor de pressão",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "SATÉLITE EM ÓRBITA TERRESTRE · VOADO",
   "first": "Primeiro satélite artificial a orbitar a Terra — início da Era Espacial",
   "dispatch": "O Sputnik 1 quase não fazia nada, e esse era o ponto. Nenhuma câmera, nenhum experimento digno do nome — um rádio, uma bateria e uma cápsula polida escolhida para que o mundo pudesse observar o foguete que a carregava. Seu único trabalho era alcançar a órbita primeiro e ser ouvido fazendo isso, e por vinte e um dias foi: um bipe na onda curta que qualquer pessoa na Terra podia sintonizar, e que Washington não podia desligar. A máquina importava muito menos do que o fato dela — prova, transmitida a todos ao mesmo tempo, de que a União Soviética tinha vencido os Estados Unidos na corrida à órbita e voava um foguete capaz de alcançar qualquer cidade no mapa. Queimou-se na reentrada durante o ano-novo. A corrida que iniciou foi até a Lua.",

@@ -1,5 +1,8 @@
 {
   "name": "MAVEN",
+  "vehicle": "Atlas V 401",
+  "payload": "2454 kg",
+  "delta_v": "~3,5 km/s",
   "type": "ORBITER · AKTIV",
   "first": "Erste Mission zur Untersuchung, wie der Mars seine Atmosphäre verlor",
   "description": "MAVEN – Mars Atmosphere and Volatile Evolution – beantwortet die Frage „Wo ist die Marsluft geblieben?“ Seine elliptische Umlaufbahn taucht in die obere Atmosphäre ein und nimmt Ionen und Neutralstoffe auf, während der Sonnenwind sie abstreift. Ergebnisse: Der Mars verliert etwa 100 g Atmosphäre pro Sekunde an den Weltraum – über Milliarden von Jahren reicht das aus, um das fehlende Klima zu erklären. Das Raumschiff dient auch als wichtiges Relais für Missionen an der Oberfläche, einschließlich Curiosity und Perseverance.",

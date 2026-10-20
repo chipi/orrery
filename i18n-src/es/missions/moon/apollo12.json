@@ -1,5 +1,8 @@
 {
   "name": "Apollo 12",
+  "vehicle": "Saturn V (AS-507)",
+  "payload": "46782 kg lanzados (CSM Yankee Clipper (CSM-108) + LM Intrepid (LM-6))",
+  "delta_v": "~6 km/s (ida y vuelta)",
   "type": "MÓDULO LUNAR TRIPULADO · REALIZADO",
   "first": "Segundo alunizaje tripulado — posicionamiento de precisión a 163 m del Surveyor 3",
   "dispatch": "Si Apollo 11 probó que podías llegar a la Luna, Apollo 12 probó que podías llegar a un lugar particular en ella. Treinta y seis segundos después del lanzamiento, un rayo golpeó el cohete e interrumpió los instrumentos de la nave; un controlador de veinticuatro años llamado John Aaron extrajo de la memoria una solución poco conocida —«SCE to AUX»—, y el vuelo continuó. Luego Conrad y Bean posaron su Módulo Lunar en el océano de las Tormentas a unos cientos de pies de una sonda que había estado allí durante dos años, caminaron hasta ella y trajeron partes de la misma a casa. Esa precisión fue el verdadero resultado: la Luna había dejado de ser un destino y se había convertido en una dirección.",

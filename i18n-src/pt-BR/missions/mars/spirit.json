@@ -1,5 +1,8 @@
 {
   "name": "Spirit",
+  "vehicle": "Delta II 7925",
+  "payload": "1063 kg (estágio de cruzeiro + EDL + rover); 174 kg de massa na superfície",
+  "delta_v": "~5,5 km/s",
   "type": "ROVER · EXECUTADO",
   "first": "Primeiro dos gêmeos Mars Exploration Rover; rover de maior longevidade até ser superado pelo Curiosity",
   "dispatch": "Spirit foi construído para noventa dias e funcionou por seis anos. Um de um par de veículos do tamanho de um carrinho de golfe pousado em 2004, foi enviado para ler as rochas em busca de evidências de um Marte mais úmido no passado — e encontrou, descobrindo minerais que só se formam em água e, em um lugar, depósitos de sílica semelhantes aos deixados por fontes termais na Terra. Escalou colinas que ninguém havia planejado que alcançasse e sobreviveu a invernos para os quais nunca foi projetado, até que uma roda falhou e ficou atolado em areia mole. Continuou transmitindo de onde estava preso até o frio marciano finalmente levá-lo.",

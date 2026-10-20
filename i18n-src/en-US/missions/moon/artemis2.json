@@ -1,5 +1,8 @@
 {
   "name": "Artemis II",
+  "vehicle": "SLS Block 1 + Orion (crewed)",
+  "payload": "Orion + 4-person crew (Wiseman / Glover / Koch / Hansen)",
+  "delta_v": "~6.5 km/s (round trip)",
   "type": "CREWED FLYBY · FLOWN",
   "first": "First crewed flight beyond low-Earth orbit since Apollo 17 (1972) — and the mission that inspired this project",
   "description": "The Artemis program's first crewed flight, and the spark that became Orrery. On 1 April 2026 NASA's SLS Block 1 launched an Orion spacecraft with four astronauts — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS), and CSA's Jeremy Hansen (MS) — onto a free-return trajectory that swung them around the Moon's far side about 6,500 km above the surface and brought them home without any lunar-orbit insertion burn. At 406,771 km from Earth they travelled farther than any humans before them, beating Apollo 13's 1970 record. After a 9-day flight Orion splashed down in the Pacific off San Diego on 10 April. The flight qualified Orion's life support, navigation and heat shield for crewed missions ahead of the first landing, now planned for Artemis IV.",

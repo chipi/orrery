@@ -1,5 +1,8 @@
 {
   "name": "Luna 17 / Lunokhod 1",
+  "vehicle": "Proton-K / D",
+  "payload": "발사 질량 5660 kg; Lunokhod 1 로버 322 kg",
+  "delta_v": "~3 km/s",
   "type": "로버 · 비행 완료",
   "first": "다른 세계에서 조작된 최초 로버",
   "description": "달 위의 첫 바퀴 — 크림반도 통제실에서 광속 지연 2.5초를 두고 조종했다. Lunokhod 1은 322 kg의 가압 용기에 여덟 개의 독립 구동 바퀴를 달았고, 다섯 명의 팀이 실시간으로 조종했다. 11개 달 낮(지구 322일) 동안 10.5 km를 주행하고 2만 장이 넘는 장면을 촬영했으며, 설계 수명 90일을 훨씬 넘겨 가동되었다. 1970년대에 행방을 알 수 없게 되었다가, 2010년 NASA의 Lunar Reconnaissance Orbiter가 멈춰 선 그 자리에서 다시 찾아냈다.",

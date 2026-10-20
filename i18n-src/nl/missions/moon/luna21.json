@@ -1,5 +1,8 @@
 {
   "name": "Luna 21 / Lunokhod 2",
+  "vehicle": "Proton-K / D",
+  "payload": "5700 kg lanceermassa; Lunokhod 2-rover van 836 kg (legde 39 km af — langste roverafstand tot 2014)",
+  "delta_v": "~3 km/s",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
   "first": "Tweede Sovjetmaanrover; langste rit op een hemellichaam (~39 km) gedurende meer dan 40 jaar",
   "description": "Luna 21 bracht Lunokhod 2, de tweede vanaf de Aarde bestuurde maanrover van de Sovjet-Unie, naar de krater Le Monnier aan de zuidrand van Mare Serenitatis in januari 1973. De rover werd vanuit een controleruimte op de Krim bestuurd door een team van vijf personen en legde ongeveer 39 km af over vier lunaire dagen — een recordafstand op een hemellichaam die standhield tot NASA's Opportunity-rover dit in 2014 op Mars overwon. Lunokhod 2 stuurde 80.000 televisiebeelden en 86 panorama's terug voordat stofverontreiniging van zijn zonnepanelen de operaties beëindigde.",

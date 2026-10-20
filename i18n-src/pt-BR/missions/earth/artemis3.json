@@ -1,5 +1,8 @@
 {
   "name": "Artemis III",
+  "vehicle": "SLS Block 1 (com um espaçador não propulsivo no lugar do estágio superior)",
+  "payload": "Orion + tripulação de 4 pessoas; encontro e acoplamento com a Starship pathfinder e os módulos de pouso Blue Moon em órbita terrestre baixa",
+  "delta_v": "~9,4 km/s (até a LEO)",
   "type": "VOO DE TESTE TRIPULADO · PLANEJADO",
   "first": "Primeiro teste tripulado dos módulos de pouso lunares comerciais — a Orion acopla a eles em órbita terrestre",
   "description": "A Artemis III não pousa mais na Lua. Em fevereiro de 2026, a NASA mudou o plano: antes de arriscar um pouso, uma tripulação vai voar com a Orion em órbita terrestre baixa e ensaiar a etapa nova mais difícil — o encontro e o acoplamento com os módulos de pouso comerciais que mais tarde levarão astronautas à superfície. O SLS lança a Orion com quatro tripulantes, voando com um espaçador no lugar do estágio superior, já que não é preciso nenhum impulso em direção à Lua. Em órbita, a Orion encontra versões de teste do módulo de pouso Starship, da SpaceX, e do Blue Moon, da Blue Origin, acopla a elas, e a tripulação testa o suporte de vida, as comunicações e a propulsão dos veículos acoplados, junto com os novos trajes espaciais AxEMU. O voo dura cerca de duas semanas. Ele faz o papel que a Apollo 9 fez em 1969, quando o módulo lunar foi voado e acoplado em órbita terrestre antes que alguém o levasse à Lua. Tripulação, anunciada em junho de 2026: Randy Bresnik (comandante), Luca Parmitano, da ESA (piloto), Andre Douglas e Frank Rubio. A NASA planeja o voo para 2027."

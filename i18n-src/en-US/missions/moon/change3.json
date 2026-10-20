@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 3",
+  "vehicle": "Long March 3B / E",
+  "payload": "3780 kg launch mass; 1200 kg lander; 140 kg Yutu rover",
+  "delta_v": "~3.8 km/s",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
   "first": "First Chinese soft landing on the Moon; deployed Yutu, China's first lunar rover",
   "description": "Chang'e 3 was the third lander in CNSA's Chang'e programme and the first successful soft landing on the Moon since the Soviet Luna 24 in 1976 — a 37-year gap. The Long March 3B launched on a direct lunar trajectory in December 2013, with a single mid-course correction before lunar orbit insertion. The lander touched down in Mare Imbrium on 14 December and deployed the Yutu (Jade Rabbit) rover, which operated for 31 months despite a mobility failure ending its drive on lunar day 2. Chang'e 3's lander continued imaging for years afterward.",

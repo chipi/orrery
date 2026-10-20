@@ -1,5 +1,8 @@
 {
   "name": "Sputnik 1",
+  "vehicle": "Sputnik 8K71PS (R-7 Semyorka derivative)",
+  "payload": "83.6 kg polished aluminium-magnesium sphere, Ø 58 cm; two transmitters (20.005 MHz + 40.002 MHz), three silver-zinc batteries (60 W), no instruments beyond a thermometer + pressure sensor",
+  "delta_v": "~9.4 km/s (LEO)",
   "type": "EARTH-ORBIT SATELLITE · FLOWN",
   "first": "First artificial satellite to orbit Earth — start of the Space Age",
   "dispatch": "Sputnik 1 did almost nothing, and that was the point. No camera, no experiment worth the name — a radio, a battery, and a polished shell chosen so the world could watch the rocket that carried it. Its whole job was to reach orbit first and be heard doing it, and for twenty-one days it was: a beep on the shortwave that anyone on Earth could tune in, and that Washington could not switch off. The machine mattered far less than the fact of it — proof, broadcast to everyone at once, that the Soviet Union had beaten the United States to orbit and flew a rocket that could reach any city on the map. It burned up over the new year. The race it started ran all the way to the Moon.",

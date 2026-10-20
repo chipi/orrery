@@ -1,5 +1,8 @@
 {
   "name": "Apollo 9",
+  "vehicle": "Saturn V (AS-504)",
+  "payload": "42400 kg lançados (CSM Gumdrop (CSM-104) + LM Spider (LM-3))",
+  "delta_v": "~9,5 km/s (até a LEO)",
   "type": "VOO TRIPULADO EM ÓRBITA TERRESTRE · REALIZADO",
   "first": "Primeiro voo tripulado do LM — testes de separação e rendezvous do LM em órbita terrestre",
   "description": "O primeiro voo tripulado do Módulo Lunar. Em órbita da Terra, McDivitt e Schweickart desacoplaram o LM Spider da CSM Gumdrop, voaram até 183 km de distância ao longo de seis horas, depois fizeram rendezvous e re-acoplamento — cada etapa do procedimento de rendezvous lunar foi testada sem a opção de trazer a tripulação de volta na CSM se algo desse errado. Schweickart realizou uma EVA de 38 minutos na varanda do LM, demonstrando o traje espacial Apollo EVA + design da mochila PLSS que as tripulações do Moonwalking utilizariam. Scott realizou uma EVA de pé pela escotilha da CSM. Com o hardware do LM e os procedimentos de rendezvous verificados, a NASA estava autorizada a enviar Apollo 10 para a Lua dois meses depois.",

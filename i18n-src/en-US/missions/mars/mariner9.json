@@ -1,5 +1,8 @@
 {
   "name": "Mariner 9",
+  "vehicle": "Atlas SLV-3C Centaur",
+  "payload": "974 kg (incl. 449 kg propellant)",
+  "delta_v": "~1.6 km/s",
   "type": "ORBITER · FLOWN",
   "first": "First spacecraft to orbit another planet",
   "description": "Mariner 9 made every orbiter that followed possible. After a 15-minute MOI burn placed it into Mars orbit on 1971-11-14, the planet below was unrecognisable — a global dust storm had hidden everything except the four Tharsis volcano summits. JPL waited it out. Through January 1972 the dust settled and Mariner 9 returned 7,329 images covering ~85% of the Martian surface, revealing Olympus Mons (the largest volcano in the solar system), Valles Marineris (the canyon system that bears its name), dried river channels suggesting an ancient liquid era, and the first close-ups of Phobos and Deimos. The mission ended 1972-10-27 when attitude-control gas ran out; the spacecraft remains in orbit, slowly decaying.",

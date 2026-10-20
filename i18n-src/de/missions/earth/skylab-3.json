@@ -1,5 +1,8 @@
 {
   "name": "Skylab 3",
+  "vehicle": "Saturn IB (SA-207)",
+  "payload": "19979 kg Startmasse; CSM-117 + dreiköpfige Besatzung",
+  "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Skylab 3 stellte die Frage der Ausdauer und verdoppelte die Antwort nahezu. Während die erste Besatzung 28 Tage geblieben war, blieb Alan Beans Besatzung 59 Tage — und trieb den menschlichen Körper weiter in die Langzeit-Schwerelosigkeit hinein als je zuvor, wobei sie gesünder zurückkehrten, als die Pessimisten befürchtet hatten. Sie verzeichneten eine enorme Menge an Sonnenbeobachtungen vom Apollo Telescope Mount und überstanden einen Schrecken, als Lecks an den Triebwerken ihrer Apollo-Fähre kurzzeitig die Aussicht auf einen Rettungsflug aufkommen ließen. Skylab 3 markiert den Punkt, an dem lange Aufenthalte im Weltraum nicht nur überlebbar, sondern zur Routine wurden — die stille Grundlagenarbeit für jeden monatelangen Stationsaufenthalt seither.",
   "type": "BEMANNTE STATIONSBESATZUNG · GEFLOGEN",
   "first": "Zweite Skylab-Besatzung — 59 Tage, entfaltete einen Doppelmast-Sonnenschild als Ersatz für den Parasol",

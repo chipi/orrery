@@ -1,5 +1,8 @@
 {
   "name": "Luna 9",
+  "vehicle": "Molniya-M",
+  "payload": "1583 kg Startmasse; 99 kg Landekapsel",
+  "delta_v": "~3 km/s",
   "type": "UNBEMANNTES LANDER-MODUL · GEFLOGEN",
   "first": "Erste Weichlandung auf dem Mond; erste Fotografien von der Mondoberfläche",
   "description": "Nach 11 sowjetischen Fehlschlägen und 5 amerikanischen Ranger-Missionen, die nur zum Absturz bestimmt waren, gelang es Luna 9, als erstes Raumfahrzeug eine Weichlandung auf einem anderen Himmelskörper durchzuführen. Neun Bilder — darunter fünf Panoramen — übertragen in drei Sitzungen über drei Tage hinweg klärten eine lang anhaltende wissenschaftliche Debatte: Die Mondoberfläche war fest, kein Staubmeer, das ein Lander-Modul hätte versinken lassen können. Die Mission dauerte 3 Tage bis zur Batterieerschöpfung. Innerhalb weniger Monate nutzte jede darauffolgende Mond-Mission die Weichlandung als Standard-Verfahren.",

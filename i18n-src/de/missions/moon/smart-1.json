@@ -1,5 +1,8 @@
 {
   "name": "SMART-1",
+  "vehicle": "Ariane 5 (geteilte Nutzlast)",
+  "payload": "367 kg Startmasse; 1,2 kW solarelektrisches Hall-Effekt-Ionentriebwerk",
+  "delta_v": "~3,9 km/s (kumulierter Ionenantrieb über 13 Monate)",
   "type": "ROBOTISCHER ORBITER · ABGEFLOGEN",
   "first": "Erstes europäisches Raumschiff, das den Mond erreichte; erste Mission, die den Mond unter Ionenantrieb erreichte",
   "description": "ESAs erste Mondmission und das erste europäische Raumfahrzeug, das den Mond erreichte. SMART = Small Missions for Advanced Research in Technology — und die Schlüsseltechnologie war ein solarelektrisches Hall-Effekt-Ionentriebwerk (PPS-1350-G), damals das größte je geflogene Triebwerk dieser Art. Gestartet am 2003-09-27 als Mitnutzlast auf einer Ariane 5 von Kourou, nutzte das 367 kg schwere Raumfahrzeug seinen 1,2-kW-Xenon-Ionenantrieb über 13 Monate, um seine Erdumlaufbahn langsam anzuheben, bis es am 2004-11-15 von der Mondgravitation eingefangen wurde — eine 13-monatige Spirale mit geringem Schub statt der tagelangen chemischen Transfers aller früheren Mondmissionen. Es arbeitete 16 Monate in einer polaren Mondumlaufbahn und lieferte Bilder der AMIE-Kamera, die ersten Röntgenfluoreszenz-Karten der Elementverteilung auf dem Mond (D-CIXS) und infrarote Mineralspektroskopie (SIR). Schlug absichtlich bei Lacus Excellentiae (34,4° S, 46,2° W) am 2006-09-03 um 05:42 UTC auf — der Einschlagsblitz wurde live am Canada-France-Hawaii Telescope beobachtet.",

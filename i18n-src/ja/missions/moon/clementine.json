@@ -1,5 +1,8 @@
 {
   "name": "Clementine",
+  "vehicle": "Titan II G",
+  "payload": "乾燥質量424 kg；推進剤込みの打上げ質量1690 kg",
+  "delta_v": "~3.5 km/s",
   "type": "軌道機 · 飛行済み",
   "first": "NASA／米国防総省の共同月ミッション；月の極に水氷の最初の手がかり",
   "description": "戦略防衛構想（Strategic Defense Initiative）の技術実証機として設計されたClementineは、月周回軌道に10週間滞在し、月の初めての体系的な全球地形図とマルチスペクトル画像を取得しました。月の南極での二静式レーダー測定により、水氷の最初の興味深い兆候が得られました。これは数年後にLunar ProspectorとChandrayaan-1によって確認されました。小惑星ジオグラフォスへのフライバイミッションはスラスタの故障により宇宙機の推進剤が枯渇し、失敗に終わりました。",

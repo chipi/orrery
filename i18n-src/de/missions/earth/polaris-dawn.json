@@ -1,5 +1,8 @@
 {
   "name": "Polaris Dawn",
+  "vehicle": "Falcon 9 Block 5 (B1083,4) + Crew Dragon C207 (Resilience)",
+  "payload": "~12500 kg im LEO; 4 Besatzungsmitglieder, erste kommerzielle EVA-Anzüge",
+  "delta_v": "~10,5 km/s (1408 km anfängliches Apogäum, dann 730 km kreisförmig)",
   "type": "BEMANNTER FREIFLIEGER · GEFLOGEN",
   "first": "Erster kommerzieller Weltraumausstieg; höchster Erdorbit von Menschen seit Apollo 17 (1408 km)",
   "description": "Jared Isaacman (Kommandant), Scott „Kidd“ Poteet (Pilot), Sarah Gillis und Anna Menon (SpaceX-Ingenieurinnen / Missionsspezialistinnen). Gestartet am 2024-09-10 um 09:23 UTC vom LC-39A auf Falcon 9 B1083 mit Crew Dragon Resilience (C207, dritter Flug). Am Tag 1 wurde das Apogäum auf 1408 km angehoben — der höchste je von Menschen geflogene Orbit außerhalb der Apollo-Mondmissionen; danach wurde das Apogäum für die EVA auf einen kreisförmigen 730-km-Orbit abgesenkt. Tag 3 brachte den ersten kommerziellen Außenbordeinsatz: Isaacman und Gillis stiegen in neuen SpaceX-EVA-Anzügen durch die offene Luke aus (keine Schleuse — alle vier Besatzungsmitglieder waren dem vollen Kabinenvakuum ausgesetzt) und verbrachten jeweils ca. 8 Minuten im Vakuum mit Mobilitätstests. Getestet wurden auch Starlink-Laserverbindungen zwischen Satelliten aus dem Orbit. Wasserung vor Florida am 2024-09-15 um 07:36 UTC.",

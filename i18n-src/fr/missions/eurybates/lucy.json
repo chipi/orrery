@@ -1,5 +1,8 @@
 {
   "name": "Lucy",
+  "vehicle": "Atlas V 401",
+  "payload": "1550 kg (dont 1003 kg d'hydrazine — Lucy emporte bien plus d'ergols que sa masse à sec)",
+  "delta_v": "~6 km/s (avec 3 assistances gravitationnelles terrestres)",
   "type": "SURVOL MULTIPLE · ACTIF",
   "first": "Première mission vers les Troyens de Jupiter ; visite 11 corps répartis sur 8 astéroïdes et leurs satellites sur une seule trajectoire de 12 ans — un nombre record d'objets en orbites solaires distinctes",
   "description": "Lucy se dirige vers les nuages de Lagrange L4 et L5 — populations d'astéroïdes primordiaux précédant et suivant Jupiter de 60°, censés préserver de la matière du disque protoplanétaire externe. Trois assistances gravitationnelles terrestres (2022, 2024, 2030) façonnent une trajectoire unique qui visite sept astéroïdes troyens ainsi que des cibles bonus de la ceinture principale. Première rencontre d'astéroïde : 152830 Dinkinesh (2023-11-01, ~790 m), où l'imagerie a révélé le satellite binaire de contact Selam. Cible bonus de la ceinture principale : Donaldjohanson 2025-04. Essaim L4 : Eurybate et sa lune Queta (2027-08), Polymèle (2027-09), Leucus (2028-04), Orus (2028-11). Après EGA-3 (2030-12), l'essaim L5 traînant : le système binaire Patrocle-Ménétios (2033-03) — le plus grand système binaire troyen connu, une apothéose appropriée pour la mission dont elle porte le nom (Lucy le fossile d'hominidé ; Patrocle-Ménétios les deux personnages qui tombèrent ensemble dans l'Iliade).",

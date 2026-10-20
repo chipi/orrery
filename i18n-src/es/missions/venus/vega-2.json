@@ -1,5 +1,8 @@
 {
   "name": "Vega 2",
+  "vehicle": "Proton-K / D-1",
+  "payload": "Gemela idéntica de la Vega 1: bus de sobrevuelo de 4920 kg + módulo de aterrizaje de Venus de ~1500 kg + aerostato de helio. Lanzada 6 días después de la Vega 1 por redundancia + una solución de armada pareada para el Halley.",
+  "delta_v": "~3,6 km/s (salida + reorientación para interceptar el Halley)",
   "type": "SOBREVUELO + MÓDULO DE DESCENSO + GLOBO · REALIZADA",
   "first": "Primer análisis químico de suelo de tipo tierras altas venusianas (Aphrodite Terra, 1985); encuentro con Halley emparejado con Vega 1 alimentó la solución de targeting de Giotto",
   "description": "Gemela de Vega 1, lanzada 6 días después (1984-12-21) por redundancia y una solución de armada de Halley emparejada. El módulo de descenso de Vega 2 aterrizó el 1985-06-15 en Rusalka Planitia, en el flanco septentrional de Aphrodite Terra, e utilizó espectrometría XRF para encontrar material anortosítico-norítrico-troctolítico — el primer análisis químico de la corteza venusiana de tipo tierras altas (la composición se asemeja a las tierras altas lunares, aunque el sitio de aterrizaje en sí es una llanura). Su globo se comportó de forma idéntica al de Vega 1, derivando en el hemisferio opuesto a ~240 km/h. El autobús pasó a través del cometa 1P/Halley a 8030 km el 1986-03-09. Juntos, los dos autobuses de Vega devolvieron las primeras imágenes de cerca del núcleo cometario y refinaron la corrección de posición que permitió a Giotto intentar un sobrevuelo de 596 km cinco días después.",

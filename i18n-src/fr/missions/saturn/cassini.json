@@ -1,5 +1,8 @@
 {
   "name": "Cassini-Huygens",
+  "vehicle": "Titan IVB / Centaur",
+  "payload": "Orbiteur de Saturne (~5712 kg à sec) + sonde de descente Huygens (~318 kg, construite par l'ESA, posée sur Titan le 14 janvier 2005)",
+  "delta_v": "~2 km/s (insertion en orbite de Saturne)",
   "type": "Orbiteur + Atterrisseur · VOLÉ",
   "first": "13 ans en orbite autour de Saturne — Huygens s'est posée sur Titan le 14-01-2005 (premier atterrissage en douceur dans le système solaire externe)",
   "dispatch": "Cassini a fait ce qu'aucun vaisseau spatial n'avait fait auprès d'aucune planète géante : il s'est arrêté. Pendant treize ans il a vécu à Saturne, et les découvertes qui ont le plus compté sont venues du fait de rester — les geysers d'Encelade, saisis parce que l'orbiteur a volé assez près, assez souvent, pour voir une minuscule lune expulser son océan caché dans l'espace. Il a largué la sonde européenne Huygens sur Titan, le seul atterrissage jamais réalisé dans le système solaire externe, et a cartographié un monde de rivières et de lacs de méthane. À la fin, à court de carburant, il a été dirigé délibérément dans Saturne pour ne jamais pouvoir tomber sur les lunes-océans qu'il avait découvertes et les contaminer — une mission qui s'est achevée en protégeant les lieux qu'elle avait découverts.",

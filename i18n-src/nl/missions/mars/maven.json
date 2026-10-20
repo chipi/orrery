@@ -1,5 +1,8 @@
 {
   "name": "MAVEN",
+  "vehicle": "Atlas V 401",
+  "payload": "2454 kg",
+  "delta_v": "~3,5 km/s",
   "type": "ORBITER · ACTIEF",
   "first": "Eerste missie gewijd aan het bestuderen van hoe Mars zijn atmosfeer verloor",
   "description": "MAVEN — Mars Atmosphere and Volatile Evolution — beantwoordt de vraag 'waar is de lucht van Mars heen gegaan?' Zijn elliptische baan duikt in de bovenste atmosfeer en bemonstert ionen en neutralen terwijl de zonnewind ze wegstript. Bevindingen: Mars verliest ongeveer 100 g atmosfeer per seconde aan de ruimte — over miljarden jaren is dat genoeg om het ontbrekende klimaat te verklaren. Het ruimtevaartuig dient ook als cruciaal relais voor de voertuigen op het oppervlak, waaronder Curiosity en Perseverance.",

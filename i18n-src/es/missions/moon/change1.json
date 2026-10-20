@@ -1,5 +1,8 @@
 {
   "name": "Chang'e 1",
+  "vehicle": "Long March 3A",
+  "payload": "2350 kg de masa de lanzamiento; 130 kg de carga útil científica",
+  "delta_v": "~3,8 km/s (TLI + LOI)",
   "type": "ORBITADOR ROBÓTICO · COMPLETADO",
   "first": "La primera misión lunar de China y la primera nave espacial china en alcanzar la Luna",
   "description": "La primera fase del Programa de Exploración Lunar de China (CLEP) y la primera misión de la CNSA más allá de la Tierra. Lanzado el 2007-10-24 desde el Centro de Lanzamiento de Satélites de Xichang en un Long March 3A, Chang'e 1 (nombrado según la diosa lunar de la mitología china) entró en una órbita polar lunar circular de 200 km el 2007-11-07. Llevaba 8 instrumentos — una cámara estéreo CCD, un altímetro láser, un espectrógrafo de imagen, espectrómetros de rayos gamma y rayos X, un radiómetro de microondas, un detector de viento solar y un detector de partículas de alta energía. Produjo el primer mapa topográfico lunar global completo de China a una resolución de 120-200 m y mapas de abundancia de elementos Th, K, U, O, Si, Mg, Al, Ca, Ti, Fe. La misión terminó deliberadamente el 2009-03-01 con un impacto controlado en 1,50° S, 52,36° E en Mare Fecunditatis — el primer objeto de China en la superficie lunar, allanando el camino para Chang'e 3 (aterrizaje en superficie 2013) y Chang'e 5 (retorno de muestras 2020). Operado durante 16 meses — 4 meses más allá de lo nominal.",

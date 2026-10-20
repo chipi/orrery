@@ -1,5 +1,8 @@
 {
   "name": "Voskhod 2",
+  "vehicle": "Voskhod (11A57)",
+  "payload": "5682 kg de masa de lanzamiento; cápsula Voskhod + esclusa inflable Volga",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "NAVE TRIPULADA EN ÓRBITA TERRESTRE · REALIZADO",
   "first": "Primera actividad extravehicular (Leónov, 12 min, 1965-03-18)",
   "dispatch": "Voskhod 2 logró el primer paseo espacial y casi lo convierte en la primera muerte en el espacio. Alekséi Leónov flotó fuera de una esclusa de aire inflable hacia el vacío, el primer ser humano totalmente fuera de una nave — y entonces su traje se infló tanto que no podía doblarse para volver a entrar. Tuvo que abrir una válvula y despresurizarse él mismo, arriesgándose a la enfermedad descompresiva, solo para encogerse lo suficiente para caber por la escotilla. No terminó ahí: el reingreso automático falló, la tripulación descendió a mano, y aterrizaron cientos de kilómetros fuera de curso en el bosque siberiano congelado, donde esperaron dos noches entre lobos antes de que los rescatistas los alcanzaran esquiando. El público vio doce minutos triunfales; cuán cerca estuvo de la catástrofe se mantuvo en secreto durante años.",

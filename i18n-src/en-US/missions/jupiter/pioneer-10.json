@@ -1,5 +1,8 @@
 {
   "name": "Pioneer 10",
+  "vehicle": "Atlas SLV-3C Centaur D-1A / TE-364-4",
+  "payload": "Outer-system flyby spacecraft; first to use SNAP-19 RTGs; 25 W at launch (decaying to ~65 W of usable power; signal lost 2003)",
+  "delta_v": "~14.4 km/s (post-Jupiter heliocentric)",
   "type": "FLYBY · FLOWN",
   "first": "First spacecraft through the asteroid belt and the first to fly past Jupiter (1973-12-04)",
   "dispatch": "Pioneer 10 went first, into two dangers nobody had measured. No spacecraft had crossed the asteroid belt — thought to be a shooting gallery of debris — or survived Jupiter’s radiation, believed lethal to electronics. Pioneer 10 did both: it crossed the belt unharmed (the belt, it turned out, is mostly empty), reached Jupiter in December 1973 as the first spacecraft ever to do so, and returned the first close images of the giant planet. Then it became the first human-made object aimed out of the solar system for good. Its value was proof — it turned the unknown hazards on the road to the outer planets into known ones, so the Voyagers could be built to face them.",

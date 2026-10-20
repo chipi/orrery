@@ -1,5 +1,8 @@
 {
   "name": "Polaris Dawn",
+  "vehicle": "Falcon 9 Block 5 (B1083.4) + Crew Dragon C207 (Resilience)",
+  "payload": "~12500 kg a LEO; 4 tripulantes, primeros trajes comerciales para EVA",
+  "delta_v": "~10,5 km/s (apogeo inicial de 1408 km, luego órbita circular de 730 km)",
   "type": "VEHÍCULO LIBRE TRIPULADO · VOLADO",
   "first": "Primera caminata espacial comercial; órbita terrestre humana más alta desde Apollo 17 (1408 km)",
   "description": "Jared Isaacman (comandante), Scott 'Kidd' Poteet (piloto), Sarah Gillis y Anna Menon (ingenieras de SpaceX / especialistas de misión). Lanzados el 2024-09-10 a las 09:23 UTC desde LC-39A en el Falcon 9 B1083, a bordo del Crew Dragon Resilience (C207, tercer vuelo). El día 1 elevaron el apogeo a 1408 km — la órbita humana más alta nunca volada fuera de las misiones lunares Apollo; el apogeo se redujo después a una órbita circular de 730 km para la EVA. El día 3 se realizó la primera EVA comercial: Isaacman y Gillis salieron por la escotilla abierta con los nuevos trajes de EVA de SpaceX (sin esclusa — toda la cabina expuesta al vacío para los 4 tripulantes), pasando cada uno ~8 minutos en el vacío probando la movilidad. Se probaron también los enlaces láser entre satélites Starlink desde la órbita. Amerizaron frente a Florida el 2024-09-15 a las 07:36 UTC.",

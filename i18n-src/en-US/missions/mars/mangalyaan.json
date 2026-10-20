@@ -1,5 +1,8 @@
 {
   "name": "Mangalyaan",
+  "vehicle": "PSLV-XL (C25)",
+  "payload": "1337 kg",
+  "delta_v": "~3.5 km/s",
   "type": "ORBITER · FLOWN",
   "first": "First Asian Mars mission; first Mars success on first attempt",
   "description": "ISRO's Mars Orbiter Mission cost $74 million — less than the budget of the film Gravity ($100M), and a fraction of NASA's MAVEN ($671M) which arrived two days earlier. Built in 18 months as a technology demonstrator, Mangalyaan succeeded at every objective: trans-Mars injection, deep-space navigation, Mars orbit insertion, and 8 years of science return. India became the fourth space agency at Mars and the first to succeed on its first try.",

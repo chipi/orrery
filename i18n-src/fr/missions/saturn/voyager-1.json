@@ -1,5 +1,8 @@
 {
   "name": "Voyager 1",
+  "vehicle": "Titan IIIE / Centaur",
+  "payload": "Sonde de survol planétaire ; trois modules RTG totalisant ~470 W au lancement (déclinant à ~250 W aujourd'hui)",
+  "delta_v": "~17 km/s (cumulé, assistances de Jupiter + Saturne)",
   "type": "SURVOL · RÉALISÉE",
   "first": "L'objet le plus lointain créé par l'humanité — actuellement à ~170 UA du Soleil dans l'espace interstellaire",
   "dispatch": "Voyager 1 est l'objet le plus lointain jamais créé par l'humanité, et il y est arrivé presque par un accident de géométrie. Un passage rapproché de Titan, la géante lune de Saturne — choisie pour la science — a courbé sa trajectoire vers le haut et hors du plan des planètes et l'a pointé vers le bord du système solaire, et il n'a cessé de s'en éloigner depuis. En chemin, il a découvert des volcans actifs sur Io, les premiers jamais observés en dehors de la Terre, et en 1990 il s'est retourné pour photographier le Pale Blue Dot. En 2012, il est devenu la première machine à pénétrer dans l'espace interstellaire. Il émet toujours, alimenté par une énergie nucléaire déclinante, à plus de cent fois la distance de la Terre au Soleil.",

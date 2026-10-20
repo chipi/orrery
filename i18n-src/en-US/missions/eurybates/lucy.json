@@ -1,5 +1,8 @@
 {
   "name": "Lucy",
+  "vehicle": "Atlas V 401",
+  "payload": "1550 kg (incl. 1003 kg of hydrazine — Lucy carries more propellant than dry mass, by a wide margin)",
+  "delta_v": "~6 km/s (with 3 Earth gravity assists)",
   "type": "MULTI-FLYBY · ACTIVE",
   "first": "First mission to the Jupiter Trojans; visits 11 bodies across 8 asteroids and their satellites in a single 12-year trajectory — a record number of objects on separate solar orbits",
   "description": "Lucy reaches for the L4 and L5 Lagrange clouds — populations of primordial asteroids leading and trailing Jupiter by 60°, believed to preserve material from the outer protoplanetary disc. Three Earth gravity assists (2022, 2024, 2030) shape a single trajectory that visits seven Trojan asteroids plus bonus main-belt targets. First asteroid encounter: 152830 Dinkinesh (2023-11-01, ~790 m), at which imaging revealed the contact-binary satellite Selam. Bonus main-belt: Donaldjohanson 2025-04. L4 swarm: Eurybates + moon Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). After EGA-3 (2030-12), the trailing L5 swarm: Patroclus-Menoetius binary (2033-03) — the largest Trojan binary known, a fitting climax for the mission's namesake (Lucy the hominid fossil; Patroclus-Menoetius the two characters that fell together in the Iliad).",

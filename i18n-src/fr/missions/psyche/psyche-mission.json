@@ -1,5 +1,8 @@
 {
   "name": "Psyche",
+  "vehicle": "Falcon Heavy",
+  "payload": "2747 kg de masse au lancement (1648 kg à sec ; 1085 kg d'ergol xénon)",
+  "delta_v": "~6,6 km/s",
   "type": "ORBITEUR · ACTIF",
   "first": "Première mission vers un astéroïde métallique de classe M; premier emploi de propulseurs ioniques à effet Hall comme propulsion de croisière principale",
   "description": "Psyche vise le noyau nickel-fer exposé d'une proto-planète différenciée — un corps métallique de 226 km qui pourrait être l'analogue le plus proche du noyau terrestre accessible. Lancé le 2023-10-13 sur une Falcon Heavy depuis Kennedy LC-39A. Quatre propulseurs ioniques à effet Hall SPT-140 spiralent la trajectoire vers l'extérieur; une assistance gravitationnelle martienne en mai 2026 (approche minimale 4 609 km) a fourni l'énergie que la poussée ionique seule ne pouvait pas fournir à temps. Arrivée prévue en 2029-08, suivie d'une descente en quatre phases orbitales de 26 mois (A → B → C → D) cartographiant la gravité, le magnétisme, la topographie et la composition de l'astéroïde. Si l'hypothèse du noyau métallique est correcte, Psyche semblera comme rien d'autre que nous ayons visité — surface métallique nue, dépôts de sulfure de fer, sans le chaos des débris typique des astéroïdes.",

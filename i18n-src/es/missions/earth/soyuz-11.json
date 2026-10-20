@@ -1,5 +1,8 @@
 {
   "name": "Soyuz 11",
+  "vehicle": "Soyuz (11A511)",
+  "payload": "Soyuz 7K-OKS; Dobrovolski, Vólkov, Patsáyev",
+  "delta_v": "~7,8 km/s (LEO)",
   "type": "TRIPULACIÓN · PERDIDA",
   "first": "Primer equipo en una estación espacial (Salyut 1); los 3 murieron por descompresión durante el reingreso",
   "dispatch": "Soyuz 11 logró algo extraordinario y luego perdió su tripulación en los últimos minutos del vuelo. Georgi Dobrovolski, Vladislav Vólkov y Víktor Patsáyev se convirtieron en las primeras personas en vivir a bordo de una estación espacial, pasando veintidós días en Salyut 1 — y luego, durante el reingreso, una válvula se abrió bruscamente en el instante de la separación de módulos, dejando que el aire de la cabina se escapara silbando hacia el espacio. No llevaban trajes de presión; no había espacio para trajes cuando los asientos estaban configurados para tres personas. En cuestión de segundos, al borde del espacio, los tres estaban muertos. La cápsula se posó sola, perfectamente en el objetivo; el equipo de recuperación la abrió y encontró a la tripulación aún atada a sus asientos. Siguen siendo los únicos seres humanos que han muerto en el espacio — y el precio compró una norma que se ha mantenido desde entonces: las tripulaciones llevan trajes de presión durante el despegue y el reingreso, siempre.",

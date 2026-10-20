@@ -1,5 +1,8 @@
 {
   "name": "Polaris Dawn",
+  "vehicle": "Falcon 9 Block 5 (B1083.4) + Crew Dragon C207 (Resilience)",
+  "payload": "저궤도 투입 질량 ~12500 kg; 승무원 4명, 최초의 민간 선외활동복",
+  "delta_v": "~10.5 km/s (초기 원지점 1408 km, 이후 730 km 원궤도)",
   "type": "유인 자유비행선 · 비행 완료",
   "first": "최초의 민간 상업 우주유영; Apollo 17 이후 인류가 오른 가장 높은 지구 궤도(1408 km)",
   "description": "재러드 아이작먼(지휘관), Scott 'Kidd' Poteet(조종사), Sarah Gillis와 Anna Menon(SpaceX 엔지니어 / 임무 전문가). 2024-09-10 09:23 UTC LC-39A에서 Falcon 9 B1083에 Crew Dragon Resilience(C207, 세 번째 비행)를 얹어 발사. 1일차에 원지점을 1408 km로 높였는데 — Apollo 달 임무를 제외하면 인류가 비행한 가장 높은 궤도였고, 이후 EVA를 위해 원지점을 낮춰 730 km 원형 궤도로 옮겼다. 3일차에 최초의 상업 EVA가 이루어졌다: 아이작먼과 Gillis가 새 SpaceX EVA 우주복을 입고 열린 해치로 나갔으며(에어락 없음 — 승무원 4명 모두 선실 전체의 진공에 노출), 각자 약 8분간 진공에서 기동성을 시험했다. 궤도에서 Starlink 레이저 위성 간 링크를 시험했다. 2024-09-15 07:36 UTC 플로리다 앞바다에 착수.",

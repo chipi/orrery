@@ -1,5 +1,8 @@
 {
   "name": "JUICE",
+  "vehicle": "Ariane 5 ECA",
+  "payload": "6000 kg en charge (2900 kg à sec) — le plus grand engin spatial interplanétaire jamais construit par l'Europe. 10 instruments : JANUS (visible), MAJIS (IR), UVS, SWI (submillimétrique), GALA (altimètre laser), RIME (sondeur radar, NASA), J-MAG (magnétomètre), PEP (particules), RPWI (ondes de plasma), 3GM (science radio). Panneaux solaires de 85 m² dimensionnés pour un fonctionnement à ~5,5 ua.",
+  "delta_v": "~3,0 km/s (séquence d'assistances gravitationnelles + insertion en orbite de Jupiter + insertion en orbite de Ganymède)",
   "type": "ORBITEUR · ACTIF",
   "first": "Plus grand engin spatial interplanétaire construit en Europe ; premier engin spatial à orbiter un satellite d'une autre planète (Ganymède, 2034)",
   "description": "JUpiter ICy moons Explorer — vaisseau amiral de classe L de l'ESA, lancé le 2023-04-14. La croisière de 8 ans utilise l'une des séquences d'assistance gravitationnelle les plus complexes jamais réalisées : une première mondiale d'assistance gravitationnelle Lune-Terre le 2024-08-19, Vénus le 2025-08-31, puis deux autres passages terrestres en 2026 et 2029. L'insertion en orbite de Jupiter est prévue pour le 2031-07-21. Après 35 survols rapprochés d'Europe, Ganymède et Callisto sur 3,5 ans, JUICE manœuvrera en orbite dédiée de Ganymède le 2034-12-31 — le premier vaisseau spatial jamais à orbiter autour d'une lune d'une autre planète. La mission se termine en 2035 par impact sur Ganymède. Sciences primaires : existence et propriétés des océans souterrains à travers les lunes galiléennes glacées, composition de la coque de glace et chauffage des marées, et structure de la magnétosphère jovienne.",

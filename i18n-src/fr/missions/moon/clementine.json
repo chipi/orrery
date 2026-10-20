@@ -1,5 +1,8 @@
 {
   "name": "Clementine",
+  "vehicle": "Titan II G",
+  "payload": "424 kg de masse à sec ; 1690 kg de masse au lancement avec les ergols",
+  "delta_v": "~3,5 km/s",
   "type": "ORBITEUR · VOLÉ",
   "first": "Mission lunaire conjointe NASA-DoD ; premiers indices de glace d'eau aux pôles lunaires",
   "description": "Conçu principalement comme un démonstrateur technologique de l'Initiative de Défense Stratégique, Clementine a passé 10 semaines en orbite lunaire et a renvoyé la première carte topographique et multispectrale mondiale systématique de la Lune. Les mesures radar bistatiques au pôle sud lunaire ont produit les premiers indices alléchants de glace d'eau – confirmés des années plus tard par Lunar Prospector et Chandrayaan-1. La mission de suivi visant à survoler l'astéroïde Géographos a échoué lorsqu'un dysfonctionnement du propulseur a épuisé le propulseur du vaisseau spatial.",

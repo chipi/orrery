@@ -1,5 +1,8 @@
 {
   "name": "Sputnik 1",
+  "vehicle": "Sputnik 8K71PS (afgeleide van de R-7 Semyorka)",
+  "payload": "Gepolijste aluminium-magnesiumbol van 83,6 kg, Ø 58 cm; twee zenders (20,005 MHz + 40,002 MHz), drie zilver-zinkbatterijen (60 W), geen instrumenten behalve een thermometer + een druksensor",
+  "delta_v": "~9,4 km/s (LEO)",
   "type": "AARDBAANSATELLIET · GEVLOGEN",
   "first": "Eerste kunstmatige satelliet in een baan om de aarde — begin van het ruimtetijdperk",
   "dispatch": "Sputnik 1 deed bijna niets, en dat was precies de bedoeling. Geen camera, geen experiment dat de naam waard was — een radio, een batterij, en een gepolijste schil gekozen zodat de wereld de raket die hem droeg kon volgen. Zijn hele taak was om als eerste een baan te bereiken en gehoord te worden terwijl hij dat deed, en dat was hij eenentwintig dagen lang: een pieptoon op de korte golf waar iedereen op de Aarde op kon afstemmen, en die Washington niet kon uitschakelen. De machine deed er veel minder toe dan het feit ervan — bewijs, uitgezonden naar iedereen tegelijk, dat de Sovjet-Unie de Verenigde Staten naar een baan om de Aarde had verslagen en een raket vloog die elke stad op de kaart kon bereiken. Hij verbrandde rond de jaarwisseling. De race die hij startte liep helemaal door tot de Maan.",

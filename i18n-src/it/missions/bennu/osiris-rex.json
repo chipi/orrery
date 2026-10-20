@@ -1,5 +1,8 @@
 {
   "name": "OSIRIS-REx",
+  "vehicle": "Atlas V 411",
+  "payload": "2110 kg di massa al lancio (1075 kg a secco)",
+  "delta_v": "~1,4 km/s",
   "type": "MISSIONE DI RITORNO DI CAMPIONI · COMPLETATA",
   "first": "Più grande campione di asteroide mai riportato sulla Terra (121,6 g da Bennu, consegnato il 2023-09-24)",
   "description": "OSIRIS-REx ha condotto una delle operazioni di prossimità asteroidale più delicate mai tentate. Lanciato il 2016-09-08 da Cape Canaveral su un Atlas V 411, ha utilizzato una fionda gravitazionale terrestre nel 2017 per ruotare il suo piano orbitale verso l'inclinazione di 6° di Bennu, e ha raggiunto l'asteroide carbonaceo near-Earth 2018-12-03 di 492 m. Dopo il mantenimento della posizione a ~19 km, in seguito ha stabilito un'orbita record di ~1,4 km — l'orbita di un veicolo spaziale più vicina mai raggiunta attorno a qualsiasi corpo celeste. Ha trascorso due anni mappando la superficie rocciosa e disseminata di massi di Bennu e scoprendo ejection di particelle attive. Il 2020-10-20 il braccio campionatore Touch-and-Go è sceso al sito Nightingale, ha sparato gas N₂ sulla superficie e ha catturato un plume — sprofondandosi di 50 cm in una superficie di 'rubble-pile fluid'. La Sample Return Capsule ha consegnato 121,6 g di materiale da Bennu in Utah il 2023-09-24. Il veicolo spaziale stesso è stato immediatamente ridisignato OSIRIS-APEX, in rotta verso un rendezvous con Apophis nel 2029.",

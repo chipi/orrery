@@ -1,5 +1,8 @@
 {
   "name": "Apollo 14",
+  "vehicle": "Saturn V (AS-509)",
+  "payload": "46305 kg Startmasse (CSM Kitty Hawk (CSM-110) + LM Antares (LM-8))",
+  "delta_v": "~6 km/s (Hin- und Rückflug)",
   "dispatch": "Apollo 14 musste beweisen, dass das Programm noch landen konnte. Die Mission flog neun Monate nachdem Apollo 13 seine Besatzung beinahe getötet hatte, übernahm das Ziel, das Apollo 13 nie erreicht hatte, und brachte Alan Shepard ein Jahrzehnt nachdem er der erste Amerikaner wurde, der den Planeten verließ, zurück ins All — dazwischen jahrelang am Boden gehalten durch eine Innenohrerkrankung und nun, mit siebenundvierzig, die älteste Person, die auf dem Mond lief. Er und Mitchell kamen etwa dreißig Meter vor dem Rand des Cone-Kraters zum Stehen, unfähig im verwirrenden Gelände zu erkennen, wie nah sie tatsächlich herangekommen waren. Dann, in den letzten Minuten auf der Oberfläche, schwang Shepard ein behelfsmäßiges Eisen 6 nach zwei Golfbällen — ein Stunt, und auch ein stilles Signal, dass die Krise hinter ihnen lag und Apollo wieder flog.",
   "type": "BEMANNTER LANDER · GEFLOGEN",
   "first": "Dritte Mondlandung — Apollo 13s verlorenes Ziel erreicht; Shepards Golfschläge",

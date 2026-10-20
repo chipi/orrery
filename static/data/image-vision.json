@@ -32071,57 +32071,6 @@
       "scored_at": "2026-07-06T07:04:20.104Z",
       "scoring_cost_usd": 0.007482000000000001
     },
-    "/images/missions/artemis3/01.jpg": {
-      "score": 6,
-      "subject": "Axiom Space AxEMU spacesuit prototype displayed on a mannequin against a dark studio background.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "subject_match": false,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "off-subject",
-      "fallback": false,
-      "scored_at": "2026-07-05T20:58:48.372Z",
-      "scoring_cost_usd": 0.008546999999999999
-    },
-    "/images/missions/artemis3/02.jpg": {
-      "score": 6,
-      "subject": "Axiom Space AxEMU spacesuit prototype displayed on a mannequin against a dark studio background, shown from a three-quarter rear angle.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": false,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "off-subject",
-      "fallback": false,
-      "scored_at": "2026-07-05T20:58:51.427Z",
-      "scoring_cost_usd": 0.008681999999999999
-    },
-    "/images/missions/artemis3/03.jpg": {
-      "score": 4,
-      "subject": "Axiom Space AxEMU spacesuit displayed on a mannequin against a dark background, showing the white suit with red accents, US flag patch, and reflective helmet visor.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.35
-      },
-      "subject_match": false,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "off-subject",
-      "fallback": false,
-      "scored_at": "2026-07-05T20:58:55.176Z",
-      "scoring_cost_usd": 0.008127
-    },
     "/images/missions/apollo-1/03.jpg": {
       "score": 6,
       "subject": "Official NASA crew portrait of the three Apollo 1 astronauts Ed White, Gus Grissom, and Roger Chaffee in blue flight suits seated at a table with a Command Module scale model.",
@@ -32291,57 +32240,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T20:57:18.260Z",
       "scoring_cost_usd": 0.008945999999999999
-    },
-    "/images/missions/artemis2/03.jpg": {
-      "score": 6,
-      "subject": "A large spacecraft module or crew vehicle underside viewed from below during assembly in a processing facility, showing wiring harnesses and structural components.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-05T20:58:25.252Z",
-      "scoring_cost_usd": 0.006678
-    },
-    "/images/missions/artemis2/01.jpg": {
-      "score": 7,
-      "subject": "Earth's curved limb and cloud-covered surface photographed from low Earth orbit against the black void of space.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.35
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-05T20:58:28.045Z",
-      "scoring_cost_usd": 0.008796
-    },
-    "/images/missions/artemis2/02.jpg": {
-      "score": 7,
-      "subject": "A crescent Earth viewed from deep space, illuminated against a black background with swirling cloud patterns visible on the sunlit limb.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.65,
-        "y": 0.42
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-05T20:58:35.830Z",
-      "scoring_cost_usd": 0.008754
     },
     "/images/missions/aurora-7/03.jpg": {
       "score": 6,
@@ -35253,32 +35151,6 @@
       "rejected_by": null,
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.009474
-    },
-    "/images/missions/artemis2/04.jpg": {
-      "score": 8,
-      "subject": "NASA Space Launch System (SLS) rocket with Orion spacecraft and Artemis mission branding on the mobile launcher at Kennedy Space Center.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.58,
-        "y": 0.4
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.008991
-    },
-    "/images/missions/artemis3/04.jpg": {
-      "score": 8,
-      "subject": "A dramatic oblique view of the Moon's heavily cratered southern polar region illuminated by raking sunlight against the blackness of space.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.35
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.00888
     },
     "/images/missions/artemis3/05.jpg": {
       "score": 8,

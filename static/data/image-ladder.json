@@ -9382,44 +9382,65 @@
   "/images/missions/artemis2/01": [
     320,
     640,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/artemis2/02": [
     320,
-    1280,
-    1920
+    640,
+    853,
+    1366,
+    2048
   ],
   "/images/missions/artemis2/03": [
     320,
+    640,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/missions/artemis2/04": [
     320,
+    640,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/missions/artemis2/05": [
     320,
+    640,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/missions/artemis3/01": [
     320,
     640,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/artemis3/02": [
     320,
-    853
+    640,
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/artemis3/03": [
     320,
-    853
+    640,
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/artemis3/04": [
     320,
-    1280
+    640,
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/artemis3/05": [
     320,
@@ -9435,26 +9456,31 @@
   ],
   "/images/missions/artemis4/02": [
     320,
+    640,
     1280,
     2048,
-    3036
+    3072
   ],
   "/images/missions/artemis4/03": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/missions/artemis4/04": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/missions/artemis4/05": [
     320,
+    640,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/missions/aurora-7/01": [
     320,
@@ -15174,5 +15200,47 @@
     320,
     640,
     800
+  ],
+  "/images/missions/artemis2/06": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/artemis5/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/artemis5/02": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/artemis5/03": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/artemis5/04": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/artemis5/05": [
+    320,
+    640,
+    1073,
+    1718,
+    2576
   ]
 }

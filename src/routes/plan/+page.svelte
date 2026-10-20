@@ -35,6 +35,7 @@
     isLoading,
   } from '$lib/types/remote-data';
   import { dataLoadFailed } from '$lib/data/core';
+  import { createBitmapSlot } from '$lib/plan/bitmap-slot';
 
   // v0.8 (#312 / ADR-076 / RFC-026): /plan ships the full twelve-destination
   // set. Every destination now has a committed porkchop grid at
@@ -537,7 +538,8 @@
   let planRunTrigger: 'initial' | 'destination-change' = 'initial';
 
   // ─── Heatmap rendering ───────────────────────────────────────────
-  let heatBitmap: ImageBitmap | null = null;
+  // Swaps only once the new bitmap exists — a redraw mid-rebuild never sees a closed one (#564).
+  const heatBitmap = createBitmapSlot<ImageBitmap>();
 
   async function buildHeatmapBitmap() {
     if (!grid) return;
@@ -554,8 +556,7 @@
         img.data[idx + 3] = 255;
       }
     }
-    if (heatBitmap) heatBitmap.close();
-    heatBitmap = await createImageBitmap(img);
+    await heatBitmap.replace(() => createImageBitmap(img));
   }
 
   function drawPlot() {
@@ -575,10 +576,10 @@
     const PH = cssH - MT - MB;
     if (PW <= 0 || PH <= 0) return;
 
-    if (heatBitmap) {
+    if (heatBitmap.current) {
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = 'high';
-      ctx.drawImage(heatBitmap, ML, MT, PW, PH);
+      ctx.drawImage(heatBitmap.current, ML, MT, PW, PH);
     }
 
     ctx.strokeStyle = 'rgba(255,255,255,0.2)';
@@ -1002,7 +1003,7 @@
   });
 
   onDestroy(() => {
-    if (heatBitmap) heatBitmap.close();
+    heatBitmap.dispose();
   });
 </script>
 

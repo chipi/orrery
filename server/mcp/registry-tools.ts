@@ -19,15 +19,17 @@
  */
 import type { FieldSpec, FormulaDef, FormulaResult, Registry } from '$lib/physics/spec';
 
-/** JSON-Schema property for one input field (draft-07 subset the MCP SDK accepts). */
-interface SchemaProperty {
+/** JSON-Schema property for one input field (draft-07 subset the MCP SDK accepts).
+ *  A type alias, not an interface: the SDK types `properties` as JSON values, and only
+ *  an alias gets the implicit index signature that assignment needs. */
+type SchemaProperty = {
   type: 'number' | 'string';
   description?: string;
   enum?: string[];
   minimum?: number;
   maximum?: number;
   default?: number | string;
-}
+};
 
 export interface DerivedTool {
   /** Tool id = FormulaDef id (e.g. `interplanetary-transfer`, `porkchop`). */

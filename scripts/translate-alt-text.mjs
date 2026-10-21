@@ -359,7 +359,7 @@ else if (mode === 'apply') {
           .map((k) => [k, src[k]]),
       ),
       null,
-      0,
+      2,
     ) + '\n',
   );
   console.log(

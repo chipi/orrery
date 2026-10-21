@@ -33,6 +33,7 @@
     isSuccess,
   } from '$lib/types/remote-data';
   import { dataLoadFailed } from '$lib/data/core';
+  import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
 
   // EpochTimelineStrip URL allowlist — same shape as /fleet's epochValid.
   // The strip writes `?epoch=<id>`; this validates round-trips so a junk
@@ -706,6 +707,8 @@
                 <span
                   class="agency-badge"
                   style:background-color={mission.color}
+                  style:color={readableTextOn(mission.color)}
+                  style:text-shadow={readableTextOn(mission.color) === DARK_TEXT ? 'none' : null}
                   title={agencyFullName(mission.agency) ?? mission.agency}
                 >
                   {#if logoFor(mission.agency)}

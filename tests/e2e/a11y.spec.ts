@@ -21,10 +21,9 @@ import { expect, test } from '@playwright/test';
  *   - `/library`   outbound link bill (the disclosure surface; ADR-051)
  */
 
-/* v0.7.0 raised the floor: axe-core scans now run on 11 routes (was 5)
- * and the assertion is `0 critical violations` (was: scan completed).
- * Color-contrast `serious` violations are still surfaced as warnings
- * but do not break CI — most are intentional editorial dim-text. */
+/* v0.7.0 raised the floor to `0 critical violations` on 11 routes; 1.0 raises it
+ * to `0 critical or serious` (2026-10-21: the last serious ones, contrast on
+ * landing headings, accent links and agency badges, were fixed). */
 const GATED_ROUTES = [
   { path: '/', label: 'landing' },
   { path: '/missions', label: 'mission catalog' },
@@ -39,9 +38,9 @@ const GATED_ROUTES = [
   { path: '/tiangong', label: 'Tiangong (modules)' },
 ];
 
-test.describe('a11y gate (ADR-025 v0.7.0 — 0 critical violations)', () => {
+test.describe('a11y gate (ADR-025 — 0 critical or serious violations)', () => {
   for (const { path, label } of GATED_ROUTES) {
-    test(`${label} (${path}) — 0 critical axe violations`, async ({ page }) => {
+    test(`${label} (${path}) — 0 critical or serious axe violations`, async ({ page }) => {
       // /library carries 678 outbound-link rows; axe scans every rule
       // against every node, so the per-test 30 s playwright budget
       // isn't enough on cold CI Ubuntu runners (35–43 s on the last
@@ -51,6 +50,11 @@ test.describe('a11y gate (ADR-025 v0.7.0 — 0 critical violations)', () => {
         test.setTimeout(90_000);
       }
       await page.goto(path, { waitUntil: 'networkidle' });
+      // content-visibility:auto blocks (/library, /credits) are skipped by the
+      // renderer until scrolled near, and axe then reads their text against
+      // made-up backgrounds: 46 false contrast failures on mobile /library. The
+      // property only defers rendering, so making it visible changes no colour.
+      await page.addStyleTag({ content: '* { content-visibility: visible !important; }' });
 
       // Skip rules that don't apply to a single-page-app shell scanned in
       // isolation: `region` requires every block of content under a
@@ -81,14 +85,12 @@ test.describe('a11y gate (ADR-025 v0.7.0 — 0 critical violations)', () => {
         console.log(`\n  ✓ ${path} — 0 a11y violations`);
       }
 
-      // CI gate (v0.7.0): fail on any `critical`-impact violation.
-      // `serious` (color-contrast on dim editorial text) intentionally
-      // does NOT fail — surfaced as warning only. Raise the floor in
-      // v0.7.1 if the serious list stabilises.
-      const criticals = results.violations.filter((v) => v.impact === 'critical');
+      const blocking = results.violations.filter(
+        (v) => v.impact === 'critical' || v.impact === 'serious',
+      );
       expect(
-        criticals,
-        `${path} has ${criticals.length} critical a11y violation(s) — see console output above.`,
+        blocking,
+        `${path} has ${blocking.length} critical/serious a11y violation(s) — see console output above.`,
       ).toHaveLength(0);
     });
   }

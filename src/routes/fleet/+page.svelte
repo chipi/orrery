@@ -34,6 +34,7 @@
     isSuccess,
   } from '$lib/types/remote-data';
   import { dataLoadFailed } from '$lib/data/core';
+  import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
 
   // ─── State ───────────────────────────────────────────────────────
   // RemoteData<E,T> per #330 C.2. `entries` is the success-branch
@@ -624,7 +625,13 @@
               </figure>
               <div class="card-body">
                 <header class="card-head">
-                  <span class="agency-badge" style:background-color={accent} title={cardFullName}>
+                  <span
+                    class="agency-badge"
+                    style:background-color={accent}
+                    style:color={readableTextOn(accent)}
+                    style:text-shadow={readableTextOn(accent) === DARK_TEXT ? 'none' : null}
+                    title={cardFullName}
+                  >
                     {#if cardLogo}
                       <img
                         src={cardLogo}

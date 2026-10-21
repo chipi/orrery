@@ -314,7 +314,7 @@
 }
 .link-tier.tier-core h3,
 .tier-core h3 {
-  color: #4466ff;
+  color: var(--color-accent-text, #5070ff);
 }
 .link-tier.tier-deep h3,
 .tier-deep h3 {

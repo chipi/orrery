@@ -238,7 +238,7 @@
   background: rgba(255, 153, 102, 0.08);
 }
 .entity-card-grid .card-quality.quality-unknown {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.55); /* 0.4 was 3.8:1 on a card, under AA 4.5 */
   border-color: rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.02);
 }

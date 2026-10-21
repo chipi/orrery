@@ -61,7 +61,7 @@
 
 <style>
   a {
-    color: var(--color-accent, #4466ff);
+    color: var(--color-accent-text, #5070ff);
     text-decoration: underline;
     text-underline-offset: 3px;
   }

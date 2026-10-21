@@ -1656,7 +1656,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 2px;
-    color: #4466ff;
+    color: var(--color-accent-text, #5070ff);
     font-weight: 700;
   }
   .explainer[open] > .explainer-intro,

@@ -22,7 +22,7 @@ body {
 }
 
 a {
-  color: var(--color-accent);
+  color: var(--color-accent-text, #5070ff);
 }
 
 /* Native <select> option lists render in the OS picker, which on Android

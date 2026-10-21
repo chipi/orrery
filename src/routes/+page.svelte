@@ -1413,7 +1413,7 @@
     font-family: var(--font-display);
     font-size: 13px;
     letter-spacing: 3px;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.5); /* 0.45 was 4.45:1, under AA 4.5 */
     margin: 0;
     padding-bottom: 6px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);

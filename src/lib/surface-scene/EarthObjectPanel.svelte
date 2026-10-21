@@ -52,6 +52,7 @@
   import RegimeChip from '$lib/components/RegimeChip.svelte';
   import { regimeById } from '$lib/physics/util/orbit-regime-match';
   import { dataLoadFailed } from '$lib/data/core';
+  import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
 
   interface Props {
     selected: EarthObject | null;
@@ -187,7 +188,12 @@
   {#if selected}
     <div class="head">
       <div class="agency-row">
-        <span class="agency-badge" style:background-color={selected.color}>
+        <span
+          class="agency-badge"
+          style:background-color={selected.color}
+          style:color={readableTextOn(selected.color)}
+          style:text-shadow={readableTextOn(selected.color) === DARK_TEXT ? 'none' : null}
+        >
           {selected.agencies.join(' · ')}
         </span>
         {#if matchedRegime && onRegimeOpen}
@@ -543,7 +549,7 @@
     background: rgba(255, 255, 255, 0.03);
   }
   .status-planned {
-    color: #4466ff;
+    color: var(--color-accent-text, #5070ff);
     border-color: rgba(68, 102, 255, 0.4);
     background: rgba(68, 102, 255, 0.08);
   }

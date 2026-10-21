@@ -109,7 +109,7 @@
     margin: 0;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
-    color: #4466ff;
+    color: var(--color-accent-text, #5070ff);
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;

@@ -8,6 +8,7 @@
    * any nation/extra prefix before passing it in.
    */
   import { agencyColor } from '$lib/agencies';
+  import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
   import type { Snippet } from 'svelte';
 
   interface Props {
@@ -24,7 +25,12 @@
 
 <div class="agency-row">
   {#if agency}
-    <span class="agency-badge" style:background-color={bg}>{agency}</span>
+    <span
+      class="agency-badge"
+      style:background-color={bg}
+      style:color={readableTextOn(bg)}
+      style:text-shadow={readableTextOn(bg) === DARK_TEXT ? 'none' : null}>{agency}</span
+    >
   {/if}
   {@render children?.()}
 </div>

@@ -5,6 +5,7 @@
   import { getImageAlt } from '$lib/image-alt';
   import { getLocale } from '$lib/paraglide/runtime';
   import { dataLoadFailed } from '$lib/data/core';
+  import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
 
   // Localized titles for the canonical chapter ids — the story JSON
   // files use a fixed vocabulary of chapter.id values (hardware /
@@ -108,7 +109,13 @@
                 loading="lazy"
                 decoding="async"
               />
-              <span class="agency-badge" style="background: {meta.accent}">{meta.label}</span>
+              <span
+                class="agency-badge"
+                style:background={meta.accent}
+                style:color={readableTextOn(meta.accent)}
+                style:text-shadow={readableTextOn(meta.accent) === DARK_TEXT ? 'none' : null}
+                >{meta.label}</span
+              >
             </button>
             <figcaption class="caption">
               {img.caption}

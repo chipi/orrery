@@ -5788,7 +5788,7 @@
     border-color: rgba(255, 255, 255, 0.2);
   }
   .phase-outbound {
-    color: #4466ff;
+    color: var(--color-accent-text, #5070ff);
     border-color: rgba(68, 102, 255, 0.5);
   }
   .phase-return {

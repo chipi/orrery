@@ -2338,6 +2338,17 @@ let altTextFailed = 0;
       if (bad.length > 10) console.log(`  ✗ … and ${bad.length - 10} more`);
       altTextFailed = bad.length;
     }
+    // A cut-off description ("…and a…") reads badly to a screen reader and is copied
+    // into every locale; 833 had built up by 2026-10-20 from a length-capped generator.
+    const cut = Object.entries(alt).filter(([, v]) => /(…|\.\.\.)\s*$/.test(v));
+    if (cut.length === 0) {
+      console.log(`  ✓ image alt text: none cut off mid-sentence`);
+    } else {
+      for (const [k, v] of cut.slice(0, 10))
+        console.log(`  ✗ alt text cut off mid-sentence: ${k} → "…${v.slice(-60)}"`);
+      if (cut.length > 10) console.log(`  ✗ … and ${cut.length - 10} more`);
+      altTextFailed += cut.length;
+    }
   }
 }
 

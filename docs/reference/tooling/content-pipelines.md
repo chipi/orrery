@@ -14,6 +14,7 @@ per section. Day-to-day rules live in [AGENTS.md §"i18n rules"](../../../AGENTS
 |------|---------|------|
 | Compile messages | `npm run i18n:compile` | Prereq of dev/build/check/typecheck/test (auto-chained) |
 | Translate overlays | `scripts/wave23/` toolchain | New base-data → 14-locale overlays (per-wave) |
+| Translate alt texts | `node scripts/translate-alt-text.mjs plan … apply` | English alt texts changed (Batch API) |
 | Translate audio (stub) | `npm run audio:translate` | Deferred to v0.8 (issue #152) — exits 2 |
 | Generate audio | `npm run audio:generate -- --episode <id>` | Render one episode's mp3/vtt/txt |
 | Full audio rebuild (stub) | `npm run audio:build` | Deferred to v0.8 — exits 2 |
@@ -72,6 +73,24 @@ Layer 1: every declared ID must have an en-US overlay on disk, or preflight/pre-
 panoramas, satellites, science sections, …) were **one-shot per-wave** scripts and are now archived
 in [`scripts/_archive/i18n/`](../../../scripts/_archive/i18n/) (~35 files). The durable pattern is
 wave23 + the ADR-069 overlay-completeness gate; don't write a new per-surface translate script.
+
+### `scripts/translate-alt-text.mjs` — image alt texts, Message Batches API
+
+**Command** — `set -a; source .env; set +a` then
+`node scripts/translate-alt-text.mjs plan|pilot|submit|status|fetch|check|redo|apply`
+(`--model=`, `--locales=`, `--all`; working files in the gitignored `.cache/alt-text-translate/`).
+**What** — Translates `static/data/image-alt-text/en-US.json` into the 13 locales through the
+Batch API (half the live price). `plan` picks every missing key plus every key whose English
+changed since it was translated: `apply` records a hash of the source English per key in
+`scripts/i18n-tools/maps/alt-text-sources.json`. Requests carry the shared rules
+(`systemAddendum`), the glossary forms and a per-chunk "keep these names in Latin" list;
+`check` runs `problems()` on every answer; `redo` resends only the failures with their
+reasons; `apply` writes clean translations, falls back to English for stale ones without a
+clean translation, and drops keys no longer in en-US.
+**When** — After the English alt texts change (alt-text rewrites, new images).
+**Gotchas** — Run `pilot` on a few locales first: Haiku 5.5 kept built-thing names in local
+script ~40% of the time in ja/ar/hi until the keep-names list was added (2026-10-21).
+**State** — first run 2026-10-21: Haiku 5.5 for all 13 locales, 53k alt texts, ~$1.10.
 
 ---
 

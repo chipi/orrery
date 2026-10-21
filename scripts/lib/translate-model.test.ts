@@ -61,7 +61,7 @@ describe('translationModel', () => {
       'zh-CN',
     ])
       expect(translationModel(loc)).toBe(DEFAULT_TRANSLATION_MODEL);
-    expect(DEFAULT_TRANSLATION_MODEL).toBe('claude-haiku-4-5');
+    expect(DEFAULT_TRANSLATION_MODEL).toBe('claude-haiku-5-5');
   });
 
   it('is the latest Sonnet for sr-Cyrl, and never Opus', () => {
@@ -137,6 +137,12 @@ describe('every translation script', () => {
       const creates = (src.match(/messages\.create\(/g) || []).length;
       const locales = (src.match(/_locale:/g) || []).length;
       expect(locales, `${f}: ${creates} create() calls, ${locales} _locale`).toBe(creates);
+      // Batch API requests can't go through translationClient: they must carry the
+      // shared rules themselves and be checked with problems() before they are applied.
+      if (src.includes('batches.create(')) {
+        expect(src, f).toContain('systemAddendum(');
+        expect(src, f).toContain('problems(');
+      }
     }
   });
 });

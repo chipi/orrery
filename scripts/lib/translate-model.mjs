@@ -12,7 +12,7 @@ import { problems, stringsIn, systemAddendum } from './translate-quality.mjs';
 
 export { NAME_POLICY } from './translate-quality.mjs';
 
-export const DEFAULT_TRANSLATION_MODEL = 'claude-haiku-4-5'; // latest Haiku
+export const DEFAULT_TRANSLATION_MODEL = 'claude-haiku-5-5'; // latest Haiku (5.5 since 2026-10)
 export const PROBLEM_LOCALE_MODEL = 'claude-sonnet-5-5'; // latest Sonnet
 
 export const SONNET_LOCALES = new Map([

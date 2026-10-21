@@ -1477,6 +1477,8 @@
   "exhibit_qr_caption": "스캔하여 휴대폰에서 탐색하기",
   "ar_enter": "AR로 보기",
   "ar_enter_aria": "이 장면을 증강 현실로 보기",
+  "sky_enter": "하늘",
+  "sky_enter_aria": "휴대폰을 하늘로 향해 태양, 달, 행성을 찾아보세요",
   "ar_ios_fallback": "AR 기능은 Orrery iOS 앱이 필요합니다 — App Store에서 다운로드하세요",
   "ar_camera_permission_rationale": "행성을 공간에 배치하려면 Orrery가 카메라에 접근해야 합니다. 어떤 것도 녹화되거나 업로드되지 않습니다.",
   "gallery_h1": "갤러리",

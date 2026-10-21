@@ -1477,6 +1477,8 @@
   "exhibit_qr_caption": "Escanea para explorar en tu móvil",
   "ar_enter": "Ver en RA",
   "ar_enter_aria": "Ver esta escena en realidad aumentada",
+  "sky_enter": "CIELO",
+  "sky_enter_aria": "Apunta tu teléfono hacia el cielo para encontrar el Sol, la Luna y los planetas",
   "ar_ios_fallback": "La RA requiere la aplicación Orrery para iOS — consíguela en el App Store",
   "ar_camera_permission_rationale": "Para colocar los planetas en tu habitación, Orrery necesita la cámara. No se graba ni se sube nada.",
   "gallery_h1": "GALERÍA",

@@ -11,6 +11,8 @@
   "ar_camera_permission_rationale": "To place the planets in your room, Orrery needs the camera. Nothing is recorded or uploaded.",
   "ar_enter": "View in AR",
   "ar_enter_aria": "View this scene in augmented reality",
+  "sky_enter": "SKY",
+  "sky_enter_aria": "Point your phone at the sky to find the Sun, Moon and planets",
   "ar_ios_fallback": "AR needs the Orrery iOS app — get it on the App Store",
   "ar_exit": "Exit AR",
   "ar_hint_place_explore": "Point at a surface and tap to place the Solar System",

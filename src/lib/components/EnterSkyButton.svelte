@@ -14,6 +14,7 @@
     skyAvailability,
     type ArAvailability,
   } from '$lib/ar';
+  import * as m from '$lib/paraglide/messages';
 
   let { onEnter }: { onEnter?: () => void } = $props();
 
@@ -24,13 +25,8 @@
 </script>
 
 {#if state === 'enabled'}
-  <button
-    type="button"
-    class="enter-sky"
-    aria-label="Point your phone at the sky to find the Sun, Moon and planets"
-    onclick={onEnter}
-  >
-    SKY
+  <button type="button" class="enter-sky" aria-label={m.sky_enter_aria()} onclick={onEnter}>
+    {m.sky_enter()}
   </button>
 {/if}
 

@@ -1477,6 +1477,8 @@
   "exhibit_qr_caption": "Escaneie para explorar no seu celular",
   "ar_enter": "Ver em RA",
   "ar_enter_aria": "Ver esta cena em realidade aumentada",
+  "sky_enter": "CÉU",
+  "sky_enter_aria": "Aponte seu telefone para o céu para encontrar o Sol, a Lua e os planetas",
   "ar_ios_fallback": "RA requer o app Orrery iOS — baixe na App Store",
   "ar_camera_permission_rationale": "Para posicionar os planetas no seu ambiente, o Orrery precisa da câmera. Nada é gravado ou enviado.",
   "gallery_h1": "GALERIA",

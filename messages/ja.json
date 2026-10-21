@@ -1477,6 +1477,8 @@
   "exhibit_qr_caption": "スキャンしてスマホで探索",
   "ar_enter": "ARで見る",
   "ar_enter_aria": "このシーンを拡張現実で表示",
+  "sky_enter": "空",
+  "sky_enter_aria": "スマートフォンを空に向けて、太陽、月、惑星を見つけましょう",
   "ar_ios_fallback": "ARにはOrrery iOSアプリが必要です — App Storeで入手",
   "ar_camera_permission_rationale": "部屋に惑星を配置するには、Orreryにカメラへのアクセスが必要です。何も記録またはアップロードされません。",
   "gallery_h1": "ギャラリー",

@@ -260,12 +260,18 @@ services:
       # at build time, not injected here. Log shipping is handled by the
       # shared node Alloy (infra repo ADR-121) — no Grafana Cloud env vars needed.
       NODE_ENV: production
+      # npx needs a writable HOME; a uid with no passwd entry gets HOME=/.
+      HOME: /tmp
     # No env_file (#599): it handed the whole prod .env (OAuth secrets, LiteLLM key,
     # DSNs) to every one-shot run. The cron pipelines (ops/refresh-prod-data.sh:
     # scripts/fetch-station-tles.mjs, scripts/fetch-launches.ts) read no environment
     # variables. A manual run that needs a key passes it with `-e KEY`.
-    # Still root with a writable /repo bind: running as the deploy user needs that
-    # uid on the VPS, not verified from here.
+    # Runs as the deploy user, not root (#599): ops/deploy_stack.sh writes that user's
+    # uid/gid to .env and hands it the files earlier root runs created. Root (0:0) is
+    # only the fallback when those lines are absent. Checked against the real image as
+    # uid 1234 with HOME=/tmp: the TLE fetch passes, /repo/static/data and
+    # /repo/.launches-cache are writable.
+    user: '${ORRERY_RUNNER_UID:-0}:${ORRERY_RUNNER_GID:-0}'
     # Limits: 14-day prod peak 175 MiB across all runs.
     mem_limit: 768m
     pids_limit: 512

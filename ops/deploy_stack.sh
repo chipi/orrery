@@ -16,6 +16,21 @@ COMPOSE=(docker compose -f compose/docker-compose.prod.yml --project-directory .
 
 touch data-refresh.log
 
+# ── pipeline-runner runs as deploy@, not root (#599). Record deploy@'s uid/gid in
+#    .env (compose reads ORRERY_RUNNER_UID/GID; absent → root), then hand deploy@
+#    the files earlier root runs created in the data overlay and the fetch cache.
+#    deploy@ has no CAP_CHOWN, so the chown goes through docker, as for lab-api below.
+RUN_UID="$(id -u)"
+RUN_GID="$(id -g)"
+grep -vE '^ORRERY_RUNNER_(UID|GID)=' .env > .env.tmp || true
+printf '%s=%s\n' ORRERY_RUNNER_UID "$RUN_UID" ORRERY_RUNNER_GID "$RUN_GID" >> .env.tmp
+chmod --reference=.env .env.tmp # .env holds secrets: keep its mode
+mv .env.tmp .env
+mkdir -p .launches-cache
+docker run --rm -v /srv/orrery/static/data:/d -v /srv/orrery/.launches-cache:/c alpine:3.20 \
+  chown -R "${RUN_UID}:${RUN_GID}" /d /c ||
+  echo "::warning::chown of static/data + .launches-cache failed — the non-root pipeline-runner may not be able to write them"
+
 # ── Warm caches + (re)build the web image.
 "${COMPOSE[@]}" --profile manual pull pipeline-runner
 "${COMPOSE[@]}" build web

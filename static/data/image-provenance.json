@@ -53573,27 +53573,6 @@
    "fetched_at": "2026-06-19T09:26:46.854Z"
   },
   {
-   "id": "cbb267971669cd94",
-   "path": "/images/missions/luna16/01.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — missions/luna16",
-   "author": "Roscosmos",
-   "agency": "Roscosmos",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-Russia",
-   "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-   "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
-   "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
-   ],
-   "revid": null,
-   "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.962Z"
-  },
-  {
    "id": "72ed17c543269061",
    "path": "/images/missions/luna16/02.webp",
    "source_type": "wikimedia-commons",
@@ -53602,27 +53581,6 @@
    "agency": "Roscosmos",
    "source_url": "https://commons.wikimedia.org/wiki/File%3ALuna%2016%20landing%20on%20moon.jpg",
    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Luna%2016%20landing%20on%20moon.jpg",
-   "license_short": "PD-Russia",
-   "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-   "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
-   "modifications": [
-    "downloaded-via-commons-search",
-    "reencoded-jpeg"
-   ],
-   "revid": null,
-   "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.854Z"
-  },
-  {
-   "id": "0d52a430014e61bf",
-   "path": "/images/missions/luna16/03.webp",
-   "source_type": "wikimedia-commons",
-   "title": "File:Luna 16.jpg",
-   "author": "Roscosmos",
-   "agency": "Roscosmos",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3ALuna%2016.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Luna%2016.jpg",
    "license_short": "PD-Russia",
    "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
    "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
@@ -84316,6 +84274,94 @@
    "pageid": 73875990,
    "nasa_id": null,
    "fetched_at": "2026-10-21T07:33:35.687Z"
+  },
+  {
+   "id": "f0d89b039fed742f",
+   "path": "/images/missions/luna16/01.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Luna 16.jpg",
+   "author": "Bembmv",
+   "agency": "Roscosmos",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Luna_16.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Luna_16.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "license_rationale": "Creative Commons Attribution-Share Alike 3.0",
+   "modifications": [
+    "downloaded-via-commons-api",
+    "resized-to-4096-master",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": 28971991,
+   "nasa_id": null,
+   "fetched_at": "2026-10-21T07:37:36.112Z"
+  },
+  {
+   "id": "d5131bc68ab2fabe",
+   "path": "/images/missions/luna16/01.1x1.jpg",
+   "source_type": "wikimedia-commons",
+   "title": "File:Luna 16.jpg",
+   "author": "Bembmv",
+   "agency": "Roscosmos",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Luna_16.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Luna_16.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "license_rationale": "Creative Commons Attribution-Share Alike 3.0",
+   "modifications": [
+    "downloaded-via-commons-api",
+    "resized-to-4096-master",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": 28971991,
+   "nasa_id": null,
+   "fetched_at": "2026-10-21T07:37:36.112Z"
+  },
+  {
+   "id": "61561d30238ab21b",
+   "path": "/images/missions/luna16/03.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Luna 16 descent stage.png",
+   "author": "NASA/GSFC/Arizona State University",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Luna_16_descent_stage.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Luna_16_descent_stage.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-api",
+    "resized-to-4096-master",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": 12068817,
+   "nasa_id": null,
+   "fetched_at": "2026-10-21T07:37:36.112Z"
+  },
+  {
+   "id": "d3c96935d9efbf17",
+   "path": "/images/missions/luna16/03.1x1.jpg",
+   "source_type": "wikimedia-commons",
+   "title": "File:Luna 16 descent stage.png",
+   "author": "NASA/GSFC/Arizona State University",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Luna_16_descent_stage.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Luna_16_descent_stage.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-api",
+    "resized-to-4096-master",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": 12068817,
+   "nasa_id": null,
+   "fetched_at": "2026-10-21T07:37:36.112Z"
   }
  ]
 }

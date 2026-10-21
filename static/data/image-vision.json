@@ -31709,40 +31709,6 @@
       "scored_at": "2026-07-05T21:07:23.992Z",
       "scoring_cost_usd": 0.008889
     },
-    "/images/missions/luna16/03.jpg": {
-      "score": 6,
-      "subject": "Artist rendering of a gold-colored lunar lander descending toward a rocky, cratered lunar surface with dramatic shadow cast below.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.72,
-        "y": 0.35
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:07:41.340Z",
-      "scoring_cost_usd": 0.008922
-    },
-    "/images/missions/luna16/01.jpg": {
-      "score": 7,
-      "subject": "A museum display model of a Soviet Luna-series spacecraft lander with spindly legs, spherical tanks, and antenna arrays, set against a painted planetary surface backdrop.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-05T21:07:44.671Z",
-      "scoring_cost_usd": 0.008945999999999999
-    },
     "/images/missions/luna16/02.jpg": {
       "score": 7,
       "subject": "A Soviet Luna spacecraft lander mock-up on display at a Russian space museum, with a Lunokhod rover visible in the background.",

@@ -1,18 +1,18 @@
 {
   "id": "plesetsk-41-1",
   "category": "launch-site",
-  "name": "Plesetsk LC-41/1",
+  "name": "Plesetsk Cosmodrome",
   "agency": "Roscosmos",
   "country": "Russia",
-  "manufacturer": "Soviet/Russian Strategic Rocket Forces",
+  "manufacturer": "Soviet Ministry of Defence",
   "first_flight": "1966-03-17",
-  "status": "RETIRED",
+  "status": "ACTIVE",
   "era": "1957-1969",
   "epoch": "space-race",
   "lat": 62.93,
   "lon": 40.45,
-  "best_known_for": "R-7-family pad (Vostok-2 / Soyuz-class) — 308 launches, 1966-1981",
-  "credit": "Fleet launch-site entry added during the cross-correlation analysis (#306 follow-up). LC-41/1 (Lesobaza/SK-1) operated R-7-derived rockets (Vostok-2, Soyuz, Molniya variants) from 1966 to 1981, with ~308 orbital launches. First orbital launch was Kosmos 112 (March 17, 1966). Disassembled post-1981.",
+  "best_known_for": "Russia's northern military cosmodrome — over 1,500 launches by 1997, more than any other site",
+  "credit": "Fleet launch-site entry for the whole Plesetsk Cosmodrome (until 2026-10-21 it covered only pad 41/1; the id is kept for its URLs). Founded in 1957 as an R-7 ICBM base; first orbital launch Kosmos 112 on 17 March 1966 from Site 41/1; more than 1,500 launches by 1997. Pads: 41/1, 16/2 and 43 (R-7 family), 132 and 133 (Kosmos-3M, Rokot), 32 (Tsyklon-3), 35 (Angara, since 2014). Site 43 has its own entry. Sources: Wikipedia, Plesetsk Cosmodrome; Russian Space Web.",
   "links": [
     {
       "l": "Plesetsk Cosmodrome — Wikipedia",

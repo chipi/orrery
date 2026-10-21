@@ -1,10 +1,6 @@
 {
   "version": "1.0",
   "decisions": {
-    "/images/missions/apollo17/04.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:26:20.508Z"
-    },
     "/images/missions/change6/05.jpg": {
       "decision": "remove",
       "at": "2026-07-06T05:26:20.508Z"
@@ -33,10 +29,6 @@
       "decision": "remove",
       "at": "2026-07-06T05:26:20.508Z"
     },
-    "/images/missions/apollo17/03.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
     "/images/missions/hayabusa2/01.jpg": {
       "decision": "keep",
       "at": "2026-07-06T05:23:23.832Z"
@@ -46,10 +38,6 @@
       "at": "2026-07-06T05:23:23.832Z"
     },
     "/images/missions/hope-probe/05.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/luna16/01.jpg": {
       "decision": "remove",
       "at": "2026-07-06T05:23:23.832Z"
     },
@@ -86,14 +74,6 @@
       "at": "2026-07-06T05:23:23.832Z"
     },
     "/images/missions/skylab-4/01.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/mariner4/04.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/mariner4/03.jpg": {
       "decision": "remove",
       "at": "2026-07-06T05:23:23.832Z"
     },
@@ -142,10 +122,6 @@
       "decision": "remove",
       "at": "2026-07-06T05:23:23.832Z"
     },
-    "/images/missions/apollo17/05.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
     "/images/missions/voyager-1/05.jpg": {
       "decision": "remove",
       "at": "2026-07-06T05:23:23.832Z"
@@ -175,10 +151,6 @@
       "at": "2026-07-06T05:23:23.832Z"
     },
     "/images/missions/vostok-5/04.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/vostok-5/05.jpg": {
       "decision": "remove",
       "at": "2026-07-06T05:23:23.832Z"
     },

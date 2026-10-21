@@ -127,7 +127,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -290,7 +290,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-u",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -333,7 +333,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1990-02-04-chang-zheng-dfh-2a": {
       "id": "1990-02-04-chang-zheng-dfh-2a",
@@ -388,7 +389,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -583,7 +584,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -626,7 +627,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1990-02-28-space-shuttle-ov-104-leo-deploy": {
       "id": "1990-02-28-space-shuttle-ov-104-leo-deploy",
@@ -779,7 +781,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -1007,7 +1009,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -1236,7 +1238,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -1302,7 +1304,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -1368,7 +1370,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -1434,7 +1436,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-u",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -1793,7 +1795,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-u",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -1935,7 +1937,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1990-07-03-soyuz-u-kobal-t-no-531": {
       "id": "1990-07-03-soyuz-u-kobal-t-no-531",
@@ -1957,7 +1960,7 @@
       "image_credit": "Electrical issue?",
       "orrery_launcher_ref": "soyuz-u",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -2188,7 +2191,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T1",
       "tier_reason": "first-flight-vehicle",
       "editorial_note": null,
@@ -2263,7 +2266,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1990-08-01-soyuz-u2-soyuz-7k-stm-no-61a": {
       "id": "1990-08-01-soyuz-u2-soyuz-7k-stm-no-61a",
@@ -2350,7 +2354,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -2393,7 +2397,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1990-08-09-proton-k-dm-2-ekran-m-no-14l": {
       "id": "1990-08-09-proton-k-dm-2-ekran-m-no-14l",
@@ -2676,7 +2681,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -2807,7 +2812,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -2840,7 +2845,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -2949,7 +2954,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1990-10-01-soyuz-u2-orlets": {
       "id": "1990-10-01-soyuz-u2-orlets",
@@ -3166,7 +3172,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-u",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -3394,7 +3400,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -3568,7 +3574,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1990-12-01-atlas-e-dmsp-block-5d-2-s-10": {
       "id": "1990-12-01-atlas-e-dmsp-block-5d-2-s-10",
@@ -3786,7 +3793,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -3894,7 +3901,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1990-12-26-soyuz-u-pvb-oblik": {
       "id": "1990-12-26-soyuz-u-pvb-oblik",
@@ -3916,7 +3924,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -4080,7 +4088,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -4145,7 +4153,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -4178,7 +4186,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -4211,7 +4219,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-u",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -4244,7 +4252,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -4376,7 +4384,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -4474,7 +4482,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -4572,7 +4580,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -4638,7 +4646,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -4704,7 +4712,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-u",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -4901,7 +4909,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -4976,7 +4984,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1991-04-28-space-shuttle-ov-103-research-ff": {
       "id": "1991-04-28-space-shuttle-ov-103-research-ff",
@@ -5073,7 +5082,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1991-05-18-soyuz-u2-soyuz-7k-stm-no-62": {
       "id": "1991-05-18-soyuz-u2-soyuz-7k-stm-no-62",
@@ -5269,7 +5279,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1991-06-05-space-shuttle-ov-102-spacelab": {
       "id": "1991-06-05-space-shuttle-ov-102-spacelab",
@@ -5324,7 +5335,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -5367,7 +5378,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1991-06-18-molniya-8k78m-molniya-1t-no-74": {
       "id": "1991-06-18-molniya-8k78m-molniya-1t-no-74",
@@ -5422,7 +5434,7 @@
       "image_credit": "Details unknown",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -5858,7 +5870,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1991-08-20-soyuz-u2-progress-7k-tgm-no-210": {
       "id": "1991-08-20-soyuz-u2-progress-7k-tgm-no-210",
@@ -5946,7 +5959,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -6282,7 +6295,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1991-10-02-soyuz-u2-soyuz-7k-stm-no-63": {
       "id": "1991-10-02-soyuz-u2-soyuz-7k-stm-no-63",
@@ -6403,7 +6417,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -6578,7 +6592,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1991-11-20-soyuz-u-kobal-t": {
       "id": "1991-11-20-soyuz-u-kobal-t",
@@ -6698,7 +6713,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -6871,7 +6886,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1991-12-19-proton-k-dm-2-gran-no-39l": {
       "id": "1991-12-19-proton-k-dm-2-gran-no-39l",
@@ -7185,7 +7201,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -7316,7 +7332,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -7447,7 +7463,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -7577,7 +7593,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -7871,7 +7887,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-u",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -7904,7 +7920,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -8100,7 +8116,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -8305,7 +8321,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1992-07-14-proton-k-dm-2-gorizont-no-37l": {
       "id": "1992-07-14-proton-k-dm-2-gorizont-no-37l",
@@ -8653,7 +8670,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -8752,7 +8769,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-u",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -8979,7 +8996,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-u",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -9185,7 +9202,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1992-10-21-molniya-8k78m-pvb-oko": {
       "id": "1992-10-21-molniya-8k78m-pvb-oko",
@@ -9207,7 +9225,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -9339,7 +9357,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -9404,7 +9422,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": "plesetsk-41-1",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -9576,7 +9594,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1992-11-25-molniya-8k78m-pvb-oko": {
       "id": "1992-11-25-molniya-8k78m-pvb-oko",
@@ -9969,7 +9988,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1992-12-25-zenit-2-tselina-2": {
       "id": "1992-12-25-zenit-2-tselina-2",
@@ -10033,7 +10053,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1992-12-29-soyuz-u-pvb-bion-no-10": {
       "id": "1992-12-29-soyuz-u-pvb-bion-no-10",
@@ -10098,7 +10119,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1993-01-13-molniya-8k78m-molniya-1t-no-78": {
       "id": "1993-01-13-molniya-8k78m-molniya-1t-no-78",
@@ -10262,7 +10284,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1993-02-03-delta-7925-navstar-gps-svn-22": {
       "id": "1993-02-03-delta-7925-navstar-gps-svn-22",
@@ -10326,7 +10349,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1993-02-09-pegasus-orbcomm-oxp": {
       "id": "1993-02-09-pegasus-orbcomm-oxp",
@@ -10745,7 +10769,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1993-04-02-soyuz-u-kobal-t": {
       "id": "1993-04-02-soyuz-u-kobal-t",
@@ -10777,7 +10802,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1993-04-06-molniya-8k78m-oko": {
       "id": "1993-04-06-molniya-8k78m-oko",
@@ -10875,7 +10901,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1993-04-21-molniya-8k78m-molniya-3-no-57": {
       "id": "1993-04-21-molniya-8k78m-molniya-3-no-57",
@@ -11070,7 +11097,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1993-05-12-ariane-42l-astra-1c": {
       "id": "1993-05-12-ariane-42l-astra-1c",
@@ -11167,7 +11195,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1993-05-22-soyuz-u2-progress-7k-tgm-no-218": {
       "id": "1993-05-22-soyuz-u2-progress-7k-tgm-no-218",
@@ -11297,7 +11326,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1993-06-21-space-shuttle-ov-105-research-rendez": {
       "id": "1993-06-21-space-shuttle-ov-105-research-rendez",
@@ -11362,7 +11392,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1993-06-25-ariane-42p-galaxy-ivh": {
       "id": "1993-06-25-ariane-42p-galaxy-ivh",
@@ -11427,7 +11458,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1993-06-25-scout-g-1-radcal": {
       "id": "1993-06-25-scout-g-1-radcal",
@@ -11817,7 +11849,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1993-08-10-soyuz-u-progress-7k-tgm-no-219": {
       "id": "1993-08-10-soyuz-u-progress-7k-tgm-no-219",
@@ -11915,7 +11948,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1993-08-30-delta-7925-navstar-gps-svn-35": {
       "id": "1993-08-30-delta-7925-navstar-gps-svn-35",
@@ -11979,7 +12013,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1993-09-03-atlas-i-ufo-f2": {
       "id": "1993-09-03-atlas-i-ufo-f2",
@@ -12434,7 +12469,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1993-10-26-delta-7925-navstar-gps-svn-34": {
       "id": "1993-10-26-delta-7925-navstar-gps-svn-34",
@@ -12530,7 +12566,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1993-11-05-soyuz-u-neman": {
       "id": "1993-11-05-soyuz-u-neman",
@@ -12953,7 +12990,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1994-01-25-titan-ii-dspse": {
       "id": "1994-01-25-titan-ii-dspse",
@@ -13213,7 +13251,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1994-02-18-proton-k-dm-2-gran-no-40l": {
       "id": "1994-02-18-proton-k-dm-2-gran-no-40l",
@@ -13309,7 +13348,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1994-03-04-space-shuttle-ov-102-research": {
       "id": "1994-03-04-space-shuttle-ov-102-research",
@@ -13633,7 +13673,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1994-04-28-soyuz-u-neman": {
       "id": "1994-04-28-soyuz-u-neman",
@@ -13892,7 +13933,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1994-06-07-soyuz-u-pvb-oblik-priroda": {
       "id": "1994-06-07-soyuz-u-pvb-oblik-priroda",
@@ -13924,7 +13966,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1994-06-14-soyuz-u-pvb-foton-no-9": {
       "id": "1994-06-14-soyuz-u-pvb-foton-no-9",
@@ -14249,7 +14292,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1994-07-20-soyuz-u-pvb-kobal-t": {
       "id": "1994-07-20-soyuz-u-pvb-kobal-t",
@@ -14380,7 +14424,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1994-08-03-pegasus-apex": {
       "id": "1994-08-03-pegasus-apex",
@@ -14476,7 +14521,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1994-08-10-ariane-44lp-brasilsat-b1": {
       "id": "1994-08-10-ariane-44lp-brasilsat-b1",
@@ -14933,7 +14979,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1994-09-30-space-shuttle-ov-105-spacelab": {
       "id": "1994-09-30-space-shuttle-ov-105-spacelab",
@@ -15096,7 +15143,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1994-10-13-proton-k-dm-2m-ekspress-no-11l": {
       "id": "1994-10-13-proton-k-dm-2m-ekspress-no-11l",
@@ -15486,7 +15534,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1994-11-29-atlas-iia-orion-1": {
       "id": "1994-11-29-atlas-iia-orion-1",
@@ -15681,7 +15730,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1994-12-22-titan-402a-ius-dsp-17": {
       "id": "1994-12-22-titan-402a-ius-dsp-17",
@@ -15736,7 +15786,6 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
       "tier": "T1",
       "tier_reason": "first-flight-vehicle",
       "editorial_note": null,
@@ -15779,7 +15828,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1994-12-28-proton-k-dm-2-gran-no-43l": {
       "id": "1994-12-28-proton-k-dm-2-gran-no-43l",
@@ -15972,7 +16022,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1995-01-25-chang-zheng-apstar-2": {
       "id": "1995-01-25-chang-zheng-apstar-2",
@@ -16201,7 +16252,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1995-03-07-proton-k-dm-2-uragan-no-65l": {
       "id": "1995-03-07-proton-k-dm-2-uragan-no-65l",
@@ -16331,7 +16383,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1995-03-22-atlas-iias-intelsat-705": {
       "id": "1995-03-22-atlas-iias-intelsat-705",
@@ -16817,7 +16870,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1995-05-31-atlas-ii-uhf-f-o-f5-ehf": {
       "id": "1995-05-31-atlas-ii-uhf-f-o-f5-ehf",
@@ -17044,7 +17098,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1995-07-07-ariane-40-helios-1a": {
       "id": "1995-07-07-ariane-40-helios-1a",
@@ -17534,7 +17589,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1995-09-03-soyuz-u2-soyuz-7k-stm-no-71": {
       "id": "1995-09-03-soyuz-u2-soyuz-7k-stm-no-71",
@@ -17731,7 +17787,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1995-10-08-soyuz-u-progress-7k-tgm-no-229": {
       "id": "1995-10-08-soyuz-u-progress-7k-tgm-no-229",
@@ -18611,7 +18668,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1996-01-25-proton-k-dm-2-gorizont-no-43l": {
       "id": "1996-01-25-proton-k-dm-2-gorizont-no-43l",
@@ -18806,7 +18864,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1996-02-19-proton-k-dm-2-gran-no-44l": {
       "id": "1996-02-19-proton-k-dm-2-gran-no-44l",
@@ -19326,7 +19385,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1996-04-24-titan-401a-centaur-mercury-2": {
       "id": "1996-04-24-titan-401a-centaur-mercury-2",
@@ -19784,7 +19844,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1996-07-02-pegasus-xl-toms-ep": {
       "id": "1996-07-02-pegasus-xl-toms-ep",
@@ -20305,7 +20366,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1996-09-06-proton-k-dm-2-inmarsat-iii-f-2": {
       "id": "1996-09-06-proton-k-dm-2-inmarsat-iii-f-2",
@@ -20921,7 +20983,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1996-12-20-titan-404a-improved-crystal-2106": {
       "id": "1996-12-20-titan-404a-improved-crystal-2106",
@@ -21215,7 +21278,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1997-02-17-atlas-iias-jcsat-4": {
       "id": "1997-02-17-atlas-iias-jcsat-4",
@@ -21507,7 +21571,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1997-04-16-ariane-44lp-thaicom-3": {
       "id": "1997-04-16-ariane-44lp-thaicom-3",
@@ -21572,7 +21637,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1997-04-21-pegasus-xl-minisat-01": {
       "id": "1997-04-21-pegasus-xl-minisat-01",
@@ -22740,7 +22806,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1997-09-23-ariane-42l-intelsat-803": {
       "id": "1997-09-23-ariane-42l-intelsat-803",
@@ -23684,7 +23751,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1997-12-20-soyuz-u-progress-7k-tgm-no-236": {
       "id": "1997-12-20-soyuz-u-progress-7k-tgm-no-236",
@@ -24784,7 +24852,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1998-05-07-proton-k-dm-2m-echostar-4": {
       "id": "1998-05-07-proton-k-dm-2m-echostar-4",
@@ -25076,7 +25145,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1998-06-18-atlas-iias-intelsat-805": {
       "id": "1998-06-18-atlas-iias-intelsat-805",
@@ -26372,7 +26442,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1998-12-11-delta-7425-9-5-mco": {
       "id": "1998-12-11-delta-7425-9-5-mco",
@@ -26501,7 +26572,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1998-12-30-proton-k-dm-2-uragan-no-86l": {
       "id": "1998-12-30-proton-k-dm-2-uragan-no-86l",
@@ -27204,7 +27276,6 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
       "tier": "T1",
       "tier_reason": "first-flight-vehicle",
       "editorial_note": null,
@@ -28056,7 +28127,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "1999-09-04-ariane-42p-koreasat-3": {
       "id": "1999-09-04-ariane-42p-koreasat-3",
@@ -29062,7 +29134,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     }
   }
 }

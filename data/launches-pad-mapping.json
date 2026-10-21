@@ -185,11 +185,21 @@
         "LC41/1",
         "LC41",
         "Site 41/1",
-        "41/1"
+        "41/1",
+        "LC16/2",
+        "LC132/1",
+        "LC132/2",
+        "LC133/1",
+        "LC133/3",
+        "LC32/1",
+        "LC32/2",
+        "LC35/1"
       ],
       "pad_location_includes": [
         "plesetsk",
-        "niip-53"
+        "niip-53",
+        "gik-1",
+        "gniipv"
       ]
     },
     "kourou-ela-2": {
@@ -248,7 +258,9 @@
         "LC9",
         "LC-9",
         "Launch Complex 9",
-        "Pad 9"
+        "Pad 9",
+        "LC9A",
+        "LC-9A"
       ],
       "pad_location_includes": [
         "taiyuan",

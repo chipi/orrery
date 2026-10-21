@@ -1,0 +1,11 @@
+# Cloudflare AI Crawl Control serves its managed block above this file (search allowed,
+# AI agents allowed, AI training disallowed, Content-Signal + per-crawler blocks).
+# This file only adds what that block lacks.
+
+# AI training crawlers not in Cloudflare's managed list
+User-agent: cohere-training-data-crawler
+User-agent: ImagesiftBot
+User-agent: Timpibot
+Disallow: /
+
+Sitemap: https://www.orrerylearn.com/sitemap.xml

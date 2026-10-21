@@ -39,18 +39,24 @@
       "linked_id": "artemis2",
       "ref": "mission",
       "year": 2026,
-      "note": "the first crew — four astronauts, including the first non-American to fly to the Moon, on a lunar flyby"
+      "note": "the first crew — four astronauts, including the first non-American to fly to the Moon; their April 2026 flyby took humans farther from Earth than ever before"
     },
     {
       "linked_id": "artemis3",
       "ref": "mission",
       "year": 2027,
-      "note": "the return to the surface — the first crewed lunar landing since 1972, and the first ever near the south pole, using a Starship lander"
+      "note": "a crewed test in Earth orbit — Orion docks with the commercial landers before anyone rides them to the Moon, as Apollo 9 did in 1969"
     },
     {
       "linked_id": "artemis4",
       "ref": "mission",
-      "note": "the first mission to the Gateway — the small international station being assembled in lunar orbit",
+      "note": "the return to the surface — the first crewed lunar landing since 1972, and the first ever near the south pole",
+      "year": 2028
+    },
+    {
+      "linked_id": "artemis5",
+      "ref": "mission",
+      "note": "the second landing, planned for late 2028 — the start of work towards a base at the south pole",
       "year": 2028
     }
   ],

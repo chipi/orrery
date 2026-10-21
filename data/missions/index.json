@@ -462,7 +462,7 @@
   {
     "id": "artemis3",
     "agency": "NASA",
-    "dest": "MOON",
+    "dest": "EARTH",
     "status": "PLANNED",
     "year": 2027,
     "sector": "gov",
@@ -471,6 +471,16 @@
   },
   {
     "id": "artemis4",
+    "agency": "NASA",
+    "dest": "MOON",
+    "status": "PLANNED",
+    "year": 2028,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "artemis5",
     "agency": "NASA",
     "dest": "MOON",
     "status": "PLANNED",

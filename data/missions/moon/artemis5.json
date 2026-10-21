@@ -1,0 +1,757 @@
+{
+  "id": "artemis5",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 2028,
+  "status": "PLANNED",
+  "departure_date": "2028-11-01",
+  "arrival_date": "2028-11-05",
+  "transit_days": 4,
+  "vehicle": "SLS Block 1 (upper stage to be confirmed) + crewed lander (Starship HLS or Blue Moon)",
+  "payload": "Orion + 4-person crew; second crewed landing, start of lunar base work",
+  "delta_v": "~7 km/s (round trip)",
+  "data_quality": "partial",
+  "credit": "© NASA — Artemis V. Planned for late 2028 as the second crewed landing of the Artemis era and the start of work towards a lunar surface base at the south pole. SLS remains the crew launcher through Artemis V; NASA has said the configuration stays as close to Block 1 as possible.",
+  "links": [
+    {
+      "l": "Artemis V — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Artemis_V",
+      "t": "intro"
+    },
+    {
+      "l": "NASA adds mission to Artemis lunar program, updates architecture (2026-02-27)",
+      "u": "https://www.nasa.gov/news-release/nasa-adds-mission-to-artemis-lunar-program-updates-architecture/",
+      "t": "intro"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "sls-block-1",
+      "role": "launcher"
+    },
+    {
+      "id": "orion",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39b",
+      "role": "launch-site"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "SLS upper stage (to be confirmed)",
+      "mass_at_tli_kg": 26500,
+      "source": "Artemis V (planned, late 2028); upper stage not confirmed by NASA — values carried from the Artemis IV profile"
+    },
+    "cruise": {
+      "tcm_count": 2,
+      "source": "NASA Artemis architecture documents (planned-mission target; outbound TCM + NRHO insertion correction)"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.85,
+      "periapsis_km": 3000,
+      "inclination_deg": 90,
+      "orbit_insertion_dv_km_s": 0.45,
+      "source": "NASA Artemis IV mission plan; NRHO entry burn ~0.45 km/s vs Apollo's 0.89 km/s direct LLO insertion (NRHO is energetically favourable)",
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 100,
+      "touchdown_velocity_ms": 1
+    },
+    "totals": {
+      "total_dv_km_s": 7.2,
+      "tli_or_tmi_dv_km_s": 3.05,
+      "source": "NASA Artemis architecture (planned); SLS-Orion + HLS combined ledger"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — SLS Block 1 / Orion (planned)",
+        "description": "Kennedy Space Center LC-39B, planned for late 2028. Artemis V is planned as the second crewed landing of the Artemis era, the start of work towards a base near the lunar south pole. SLS Block 1 launches Orion with four crew; the upper stage is still to be confirmed."
+      },
+      {
+        "met_days": 0.13,
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "The upper-stage burn sends Orion and its crew on a 4-day coast to Near-Rectilinear Halo Orbit, where the commercial lander waits."
+      },
+      {
+        "met_days": 1.48,
+        "type": "tcm",
+        "label": "MCC-1",
+        "description": "First mid-course correction."
+      },
+      {
+        "met_days": 1.5,
+        "type": "tcm",
+        "label": "MCC-2",
+        "description": "Approach-phase refinement."
+      },
+      {
+        "met_days": 4,
+        "type": "loi",
+        "label": "NRHO insertion + lander rendezvous",
+        "description": "Orion captures into Near-Rectilinear Halo Orbit — an elongated lunar orbit with a 3,000 km perilune and a 70,000 km apolune, much cheaper to reach than Apollo's circular low lunar orbit (~0.45 km/s against Apollo's 0.89 km/s). The crew docks with the waiting lander.",
+        "dv_km_s": 0.45
+      },
+      {
+        "met_days": 5,
+        "type": "descent_start",
+        "label": "Lander powered descent — lunar south pole",
+        "description": "Two crew descend in the lander while two remain in Orion. Crew, lander and landing site are not yet chosen; the aim is to begin longer stays and the groundwork for a surface base."
+      },
+      {
+        "met_days": 12,
+        "type": "ascent",
+        "label": "Lander ascent + return to NRHO",
+        "description": "The lander lifts off after the surface stay and carries the two surface crew back to NRHO, where they transfer to Orion."
+      },
+      {
+        "met_days": 14,
+        "type": "tei",
+        "label": "Trans-Earth injection",
+        "description": "Orion leaves NRHO on its return trajectory, about ten days after arriving.",
+        "dv_km_s": 0.45
+      },
+      {
+        "met_days": 18,
+        "type": "earth_return",
+        "label": "Splashdown — Pacific Ocean",
+        "description": "Planned for late 2028. Orion re-enters Earth's atmosphere at lunar-return velocity (~11 km/s) and splashes down in the Pacific."
+      }
+    ],
+    "cislunar_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "parking_orbit": {
+        "altitude_km": 325,
+        "inclination_deg": 32.5,
+        "revs": 1.5
+      },
+      "tli": {
+        "dv_kms": 3.05,
+        "c3_km2_s2": -1.7
+      },
+      "translunar": {
+        "type": "hybrid_free_return"
+      },
+      "lunar_arrival": {
+        "type": "lor_orbit",
+        "altitude_km": 3000,
+        "inclination_deg": 90,
+        "periselene_km": 3000
+      },
+      "return": {
+        "type": "tei_lor",
+        "dv_kms": 0.45
+      },
+      "waypoints_km": [
+        [
+          0,
+          6703,
+          0,
+          0
+        ],
+        [
+          0.13,
+          5173,
+          -39,
+          62
+        ],
+        [
+          0.3818,
+          -3729,
+          -2420,
+          3875
+        ],
+        [
+          0.5727,
+          -7039,
+          0,
+          755
+        ],
+        [
+          0.7636,
+          -7391,
+          0,
+          1694
+        ],
+        [
+          0.9545,
+          -7722,
+          0,
+          2756
+        ],
+        [
+          1.1455,
+          -8023,
+          0,
+          3982
+        ],
+        [
+          1.3364,
+          -8282,
+          0,
+          5415
+        ],
+        [
+          1.5,
+          -8449,
+          0,
+          6701
+        ],
+        [
+          1.7182,
+          -8605,
+          0,
+          9124
+        ],
+        [
+          1.9091,
+          -8598,
+          0,
+          11599
+        ],
+        [
+          2.1,
+          -8414,
+          0,
+          14640
+        ],
+        [
+          2.2909,
+          -7906,
+          0,
+          18599
+        ],
+        [
+          2.4818,
+          -6929,
+          0,
+          23737
+        ],
+        [
+          2.6727,
+          -5175,
+          0,
+          30632
+        ],
+        [
+          2.8636,
+          -1919,
+          0,
+          40537
+        ],
+        [
+          3.0545,
+          3843,
+          0,
+          54905
+        ],
+        [
+          3.2455,
+          14669,
+          0,
+          77283
+        ],
+        [
+          3.4364,
+          36442,
+          0,
+          114512
+        ],
+        [
+          3.6273,
+          78654,
+          0,
+          174710
+        ],
+        [
+          3.8182,
+          157335,
+          0,
+          261135
+        ],
+        [
+          4,
+          235686,
+          638,
+          309444
+        ],
+        [
+          4.2,
+          234011,
+          4377,
+          307244
+        ],
+        [
+          4.3909,
+          231091,
+          3323,
+          303410
+        ],
+        [
+          4.5818,
+          230282,
+          -1251,
+          302347
+        ],
+        [
+          4.7727,
+          232473,
+          -4591,
+          305224
+        ],
+        [
+          5,
+          235414,
+          -2117,
+          309086
+        ],
+        [
+          5.1545,
+          235329,
+          2243,
+          308974
+        ],
+        [
+          5.3455,
+          232701,
+          4561,
+          305524
+        ],
+        [
+          5.5364,
+          230398,
+          1639,
+          302500
+        ],
+        [
+          5.7273,
+          41047,
+          0,
+          283288
+        ],
+        [
+          5.9182,
+          -7397,
+          0,
+          133487
+        ],
+        [
+          6.1091,
+          -17750,
+          0,
+          64939
+        ],
+        [
+          6.3,
+          -18245,
+          0,
+          34614
+        ],
+        [
+          6.4909,
+          -16602,
+          0,
+          20261
+        ],
+        [
+          6.6818,
+          -14710,
+          0,
+          11736
+        ],
+        [
+          6.8727,
+          -12889,
+          0,
+          6429
+        ],
+        [
+          7.0636,
+          -11230,
+          0,
+          2945
+        ],
+        [
+          7.2545,
+          -9709,
+          0,
+          449
+        ],
+        [
+          7.4455,
+          -8122,
+          0,
+          -1570
+        ],
+        [
+          7.6364,
+          -7006,
+          0,
+          -2718
+        ],
+        [
+          7.8273,
+          -5761,
+          0,
+          -3773
+        ],
+        [
+          8.0182,
+          -4785,
+          0,
+          -4445
+        ],
+        [
+          8.2091,
+          232913,
+          0,
+          305802
+        ],
+        [
+          8.4,
+          232913,
+          0,
+          305802
+        ],
+        [
+          8.5909,
+          232913,
+          0,
+          305802
+        ],
+        [
+          8.7818,
+          232913,
+          0,
+          305802
+        ],
+        [
+          8.9727,
+          232913,
+          0,
+          305802
+        ],
+        [
+          9.1636,
+          232913,
+          0,
+          305802
+        ],
+        [
+          9.3545,
+          232913,
+          0,
+          305802
+        ],
+        [
+          9.5455,
+          232913,
+          0,
+          305802
+        ],
+        [
+          9.7364,
+          232913,
+          0,
+          305802
+        ],
+        [
+          9.9273,
+          232913,
+          0,
+          305802
+        ],
+        [
+          10.1182,
+          232913,
+          0,
+          305802
+        ],
+        [
+          10.3091,
+          232913,
+          0,
+          305802
+        ],
+        [
+          10.5,
+          232913,
+          0,
+          305802
+        ],
+        [
+          10.6909,
+          232913,
+          0,
+          305802
+        ],
+        [
+          10.8818,
+          232913,
+          0,
+          305802
+        ],
+        [
+          11.0727,
+          232913,
+          0,
+          305802
+        ],
+        [
+          11.2636,
+          232913,
+          0,
+          305802
+        ],
+        [
+          11.4545,
+          232913,
+          0,
+          305802
+        ],
+        [
+          11.6455,
+          232913,
+          0,
+          305802
+        ],
+        [
+          11.8364,
+          232913,
+          0,
+          305802
+        ],
+        [
+          12,
+          232913,
+          0,
+          305802
+        ],
+        [
+          12.2182,
+          232913,
+          0,
+          305802
+        ],
+        [
+          12.4091,
+          232913,
+          0,
+          305802
+        ],
+        [
+          12.6,
+          232913,
+          0,
+          305802
+        ],
+        [
+          12.7909,
+          232913,
+          0,
+          305802
+        ],
+        [
+          12.9818,
+          232913,
+          0,
+          305802
+        ],
+        [
+          13.1727,
+          232913,
+          0,
+          305802
+        ],
+        [
+          13.3636,
+          232913,
+          0,
+          305802
+        ],
+        [
+          13.5545,
+          232913,
+          0,
+          305802
+        ],
+        [
+          13.7455,
+          232913,
+          0,
+          305802
+        ],
+        [
+          14,
+          232913,
+          0,
+          305802
+        ],
+        [
+          14.1273,
+          232913,
+          0,
+          305802
+        ],
+        [
+          14.3182,
+          232913,
+          0,
+          305802
+        ],
+        [
+          14.5091,
+          232913,
+          0,
+          305802
+        ],
+        [
+          14.7,
+          232913,
+          0,
+          305802
+        ],
+        [
+          14.8909,
+          232913,
+          0,
+          305802
+        ],
+        [
+          15.0818,
+          232913,
+          0,
+          305802
+        ],
+        [
+          15.2727,
+          232913,
+          0,
+          305802
+        ],
+        [
+          15.4636,
+          232913,
+          0,
+          305802
+        ],
+        [
+          15.6545,
+          232913,
+          0,
+          305802
+        ],
+        [
+          15.8455,
+          232913,
+          0,
+          305802
+        ],
+        [
+          16.0364,
+          232913,
+          0,
+          305802
+        ],
+        [
+          16.2273,
+          232913,
+          0,
+          305802
+        ],
+        [
+          16.4182,
+          232913,
+          0,
+          305802
+        ],
+        [
+          16.6091,
+          232913,
+          0,
+          305802
+        ],
+        [
+          16.8,
+          232913,
+          0,
+          305802
+        ],
+        [
+          16.9909,
+          232913,
+          0,
+          305802
+        ],
+        [
+          17.1818,
+          232913,
+          0,
+          305802
+        ],
+        [
+          17.3727,
+          232913,
+          0,
+          305802
+        ],
+        [
+          17.5636,
+          232913,
+          0,
+          305802
+        ],
+        [
+          17.7545,
+          232913,
+          0,
+          305802
+        ],
+        [
+          18,
+          232913,
+          0,
+          305802
+        ],
+        [
+          18.1364,
+          232913,
+          0,
+          305802
+        ],
+        [
+          18.3273,
+          232913,
+          0,
+          305802
+        ],
+        [
+          18.5182,
+          232913,
+          0,
+          305802
+        ],
+        [
+          18.7091,
+          232913,
+          0,
+          305802
+        ],
+        [
+          18.9,
+          232913,
+          0,
+          305802
+        ]
+      ]
+    }
+  }
+}

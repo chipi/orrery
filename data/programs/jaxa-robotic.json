@@ -13,7 +13,7 @@
     { "linked_id": "slim", "ref": "fleet", "role": "Moon lander", "year": 2023 },
     { "name": "Kaguya / SELENE", "year": 2007, "note": "the largest lunar mission since Apollo — a Moon orbiter that mapped the surface in unprecedented detail and shot the first high-definition video of Earth rising over the lunar limb" },
     { "linked_id": "akatsuki", "ref": "mission", "year": 2015, "note": "after its orbit-insertion engine failed at Venus in 2010, the probe looped the Sun for five years and, on a second attempt, used its tiny attitude thrusters to slip into orbit — a mission saved from certain loss" },
-    { "linked_id": "slim", "ref": "mission", "year": 2024, "note": "the 'Moon Sniper' lands within 100 metres of its target — pinpoint precision no one had achieved — then survives a tipped-over touchdown to return science on solar power" }
+    { "linked_id": "slim", "ref": "mission", "year": 2024, "note": "the 'Moon Sniper' landed about 55 metres from its target — pinpoint precision no one had achieved — then survives a tipped-over touchdown to return science on solar power" }
   ],
   "related_programs": ["hayabusa"],
   "see_also": [

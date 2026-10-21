@@ -11,7 +11,7 @@
   "arrival_date": "2026-12-28",
   "transit_days": 812,
   "vehicle": "Falcon 9 Block 5",
-  "payload": "Hera orbiter + Juventas & Milani CubeSats",
+  "payload": "Hera orbiter + Juventas & Milani cubesats",
   "delta_v": "~1.1 km/s (deep-space maneuvers; Mars gravity assist)",
   "data_quality": "partial",
   "credit": "© ESA — Hera. ESA's half of the international Asteroid Impact & Deflection Assessment (AIDA): a detailed post-impact survey of the Didymos binary asteroid, measuring the crater and momentum transfer left by NASA's DART kinetic impactor (2022). Launched on a Falcon 9 (2024-10-07) with a 2025 Mars gravity assist; arrives at Didymos late 2026. Carries the Juventas + Milani CubeSats.",

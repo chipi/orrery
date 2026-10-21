@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { cacheGaps } from './validate-image-phash-dupes';
+import { cacheGaps } from './phash-cache';
 
 const cache = { phashes: { '/images/a/01.jpg': 'aa', '/images/a/02.jpg': 'bb' } };
 

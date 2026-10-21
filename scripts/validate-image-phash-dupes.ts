@@ -20,6 +20,7 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { hammingDistance } from './lib/phash.ts';
+import { cacheGaps } from './lib/phash-cache.ts';
 import { ALLOWLIST as BYTE_ALLOWLIST } from './validate-image-dupes.ts';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -457,16 +458,6 @@ function* baseMasters(dir: string): Iterable<string> {
   }
 }
 
-/** The scan only sees images that have a cached hash: a master with no entry is
- *  silently skipped — that is how 440 images went unchecked until 2026-10-21.
- *  Scripts that replace an image drop its entry, so a changed image shows up here
- *  as missing. (Freshness by mtime is not used: a checkout re-stamps every file.) */
-export function cacheGaps(cache: Cache, masterUrls: Iterable<string>): string[] {
-  const missing: string[] = [];
-  for (const url of masterUrls) if (!(url in cache.phashes)) missing.push(url);
-  return missing;
-}
-
 /** Compute SHA-256 8-char prefix of a base-jpg file, used to cross-
  *  reference the sibling byte-dupe allowlist. We resolve url paths
  *  ("/images/missions/apollo11/01.jpg") to on-disk paths under
@@ -590,5 +581,4 @@ function main(): void {
   process.exit(1);
 }
 
-// Run only when invoked as a script, so tests can import cacheGaps.
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main();
+main();

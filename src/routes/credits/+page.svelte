@@ -945,10 +945,12 @@
     margin-top: 32px;
     padding-top: 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    /* No content-visibility:auto here (it was W4, GH #274): skipped blocks
-     * counted as 600 px, so a Sources link landed tens of thousands of px
-     * short, and lazy images in a block reached by a jump never loaded.
-     * Measured without it on a Pixel 5 profile: +0.1 s layout per visit. */
+    /* W4 (GH #274) — per-source blocks can carry many photos + texts;
+     * content-visibility lets the browser skip layout + paint for
+     * off-screen source groups while preserving DOM presence for the
+     * #src-<id> anchor TOC + axe scans. */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
   }
   .src-head {
     display: flex;

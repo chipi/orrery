@@ -100,14 +100,26 @@ test.describe('mobile stream-heavy contract', () => {
     });
     await page.goto('/credits');
     await page.waitForLoadState('networkidle');
-    await page.mouse.wheel(0, 20000);
-    await page.waitForTimeout(1500);
+    // Scroll to an actual credit thumb, not a fixed distance: where the first one
+    // sits depends on the credits data (a 20 000 px wheel stopped finding one when
+    // the 2026-10-21 credit fixes moved it). Re-aimed on each poll, because its
+    // source block is a content-visibility placeholder until it is first rendered.
+    await expect
+      .poll(
+        async () => {
+          await page.evaluate(() =>
+            document
+              .querySelector('img[src*="/credit-thumbs/"]')
+              ?.scrollIntoView({ block: 'center' }),
+          );
+          return cdn.length;
+        },
+        { timeout: 15_000, message: 'some credit thumbnails should load from the CDN' },
+      )
+      .toBeGreaterThan(0);
     expect(local, `local credit-thumb requests:\n${local.join('\n')}`).toEqual([]);
-    expect(cdn.length, 'some credit thumbnails should load from the CDN').toBeGreaterThan(0);
   });
 
-  // content-visibility:auto on the source blocks (removed 2026-10-21) made a
-  // Sources link land short and left the lazy images it reached unrequested.
   test('a /credits Sources link lands on its block and the images there load', async ({ page }) => {
     await page.route(`${CDN}/**`, (route) =>
       route.fulfill({ status: 200, contentType: 'image/webp', body: Buffer.from([]) }),
@@ -119,23 +131,32 @@ test.describe('mobile stream-heavy contract', () => {
     await page.evaluate(() =>
       document.querySelector<HTMLAnchorElement>('a[href="#src-nasa"]')?.click(),
     );
-    const block = page.locator('#src-nasa');
     await expect
-      .poll(async () => Math.abs((await block.boundingBox())?.y ?? 9e9), { timeout: 10_000 })
+      .poll(async () => Math.abs((await page.locator('#src-nasa').boundingBox())?.y ?? 9e9), {
+        timeout: 10_000,
+      })
       .toBeLessThan(200);
-    await expect
-      .poll(
+    // Visibility from an IntersectionObserver, not getBoundingClientRect: inside a
+    // content-visibility-skipped block the latter reports positions nobody sees.
+    const visible = () =>
+      page.evaluate(
         () =>
-          page.evaluate(
-            () =>
-              [...document.querySelectorAll('img')].filter((i) => {
-                const r = i.getBoundingClientRect();
-                return r.bottom > 0 && r.top < innerHeight && r.width > 0 && !i.currentSrc;
-              }).length,
-          ),
-        { timeout: 10_000, message: 'images in view after the jump that were never requested' },
-      )
-      .toBe(0);
+          new Promise<{ visible: number; unrequested: number }>((resolve) => {
+            const io = new IntersectionObserver((entries) => {
+              io.disconnect();
+              const seen = entries.filter((e) => e.isIntersecting).map((e) => e.target);
+              resolve({
+                visible: seen.length,
+                unrequested: seen.filter((i) => !(i as HTMLImageElement).currentSrc).length,
+              });
+            });
+            document.querySelectorAll('img').forEach((i) => io.observe(i));
+          }),
+      );
+    await expect
+      .poll(visible, { timeout: 10_000, message: 'images in view after the jump' })
+      .toMatchObject({ unrequested: 0 });
+    expect((await visible()).visible).toBeGreaterThan(0);
   });
 
   test('a /science diagram carries no srcset, so no pruned rung can be chosen', async ({

@@ -2131,42 +2131,42 @@
   {
    "id": "e902496e951f139e",
    "path": "/images/earth-objects/glonass/05.1x1.jpg",
-   "source_type": "direct-other",
-   "title": "Curated panel image — glonass slot 9",
-   "author": "Roscosmos",
+   "source_type": "wikimedia-commons",
+   "title": "File:Glonass K Navigation Spacecraft model at Cebit 2011 Satellite, general view from the right (modified).jpg",
+   "author": "MKonair",
    "agency": "Roscosmos",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-Russia",
-   "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-   "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Glonass_K_Navigation_Spacecraft_model_at_Cebit_2011_Satellite,_general_view_from_the_right_(modified).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Glonass_K_Navigation_Spacecraft_model_at_Cebit_2011_Satellite%2C_general_view_from_the_right_%28modified%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "license_rationale": "Freely licensed via Wikimedia Commons; attribution required.",
    "modifications": [
-    "curated-no-upstream-record"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 175232019,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.911Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "df713c236a0d4bdb",
    "path": "/images/earth-objects/glonass/05.webp",
-   "source_type": "direct-other",
-   "title": "Curated panel image — glonass slot 10",
-   "author": "Roscosmos",
+   "source_type": "wikimedia-commons",
+   "title": "File:Glonass K Navigation Spacecraft model at Cebit 2011 Satellite, general view from the right (modified).jpg",
+   "author": "MKonair",
    "agency": "Roscosmos",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-Russia",
-   "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-   "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Glonass_K_Navigation_Spacecraft_model_at_Cebit_2011_Satellite,_general_view_from_the_right_(modified).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Glonass_K_Navigation_Spacecraft_model_at_Cebit_2011_Satellite%2C_general_view_from_the_right_%28modified%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "license_rationale": "Freely licensed via Wikimedia Commons; attribution required.",
    "modifications": [
-    "curated-no-upstream-record"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 175232019,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.911Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "6cc5c3afffec6273",
@@ -2297,44 +2297,42 @@
   {
    "id": "f1630fbec06b4e71",
    "path": "/images/earth-objects/gps/02.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — gps / \"gps satellite navstar\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:GPS satellite constellation.jpg",
+   "author": "NOAA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=gps+satellite+navstar&media_type=image&keywords=gps",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:GPS_satellite_constellation.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/GPS_satellite_constellation.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "PD-USGov",
+   "license_url": "https://www.usa.gov/government-works",
+   "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 1898166,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.911Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "75d0106afcc07a48",
    "path": "/images/earth-objects/gps/02.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — gps / \"gps satellite navstar\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:GPS satellite constellation.jpg",
+   "author": "NOAA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=gps+satellite+navstar&media_type=image&keywords=gps",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:GPS_satellite_constellation.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/GPS_satellite_constellation.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "PD-USGov",
+   "license_url": "https://www.usa.gov/government-works",
+   "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 1898166,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.911Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "783b183cfc71bbee",
@@ -2381,86 +2379,82 @@
   {
    "id": "e953c3cb2d1ab68d",
    "path": "/images/earth-objects/gps/04.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — gps / \"gps satellite navstar\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:GPS-IIR (cropped).jpg",
+   "author": "US Government",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=gps+satellite+navstar&media_type=image&keywords=gps",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:GPS-IIR_(cropped).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/GPS-IIR_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "PD-USGov",
+   "license_url": "https://www.usa.gov/government-works",
+   "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 157041756,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.911Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "40d904521e5dcee3",
    "path": "/images/earth-objects/gps/04.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — gps / \"gps satellite navstar\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:GPS-IIR (cropped).jpg",
+   "author": "US Government",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=gps+satellite+navstar&media_type=image&keywords=gps",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:GPS-IIR_(cropped).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/GPS-IIR_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "PD-USGov",
+   "license_url": "https://www.usa.gov/government-works",
+   "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 157041756,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.911Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "1858c0f173d86ca2",
    "path": "/images/earth-objects/gps/05.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — gps / \"gps satellite navstar\"",
+   "source_type": "wikimedia-commons",
+   "title": "File:GPS Satellite NASA art-iif.jpg",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=gps+satellite+navstar&media_type=image&keywords=gps",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:GPS_Satellite_NASA_art-iif.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/GPS_Satellite_NASA_art-iif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 564265,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.911Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "8be2f0dba5c54a32",
    "path": "/images/earth-objects/gps/05.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — gps / \"gps satellite navstar\"",
+   "source_type": "wikimedia-commons",
+   "title": "File:GPS Satellite NASA art-iif.jpg",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=gps+satellite+navstar&media_type=image&keywords=gps",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:GPS_Satellite_NASA_art-iif.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/GPS_Satellite_NASA_art-iif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 564265,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.911Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "aa2b817024a0f822",
@@ -4089,44 +4083,42 @@
   {
    "id": "400a662b6a4644a6",
    "path": "/images/earth-objects/tiangong/05.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — tiangong / \"tiangong space station china\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Tiangong 2 - Shenzhou 11 paper model.png",
+   "author": "Godai",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=tiangong+space+station+china&media_type=image&keywords=tiangong",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Tiangong_2_-_Shenzhou_11_paper_model.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Tiangong_2_-_Shenzhou_11_paper_model.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "license_rationale": "Reuse with attribution; derivatives under same license.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 52409594,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.911Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "b08d18c6327e1ef8",
    "path": "/images/earth-objects/tiangong/05.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — tiangong / \"tiangong space station china\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Tiangong 2 - Shenzhou 11 paper model.png",
+   "author": "Godai",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=tiangong+space+station+china&media_type=image&keywords=tiangong",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Tiangong_2_-_Shenzhou_11_paper_model.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Tiangong_2_-_Shenzhou_11_paper_model.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "license_rationale": "Reuse with attribution; derivatives under same license.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 52409594,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.911Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "b8039af60e945f20",
@@ -4460,65 +4452,62 @@
   {
    "id": "9d481c4c4a1ba45c",
    "path": "/images/fleet-galleries/a7lb/02.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/a7lb",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Buzz Aldrin by Neil Armstrong.jpg",
+   "author": "Neil Armstrong",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Buzz_Aldrin_by_Neil_Armstrong.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Buzz_Aldrin_by_Neil_Armstrong.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 78023536,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "6c65ea7724f0c54b",
    "path": "/images/fleet-galleries/a7lb/03.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/a7lb",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Replica of Apollo-Skylab spacesuit (A7L) on display at NMST.jpg",
+   "author": "Tausheef Hassan Auntu",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Replica_of_Apollo-Skylab_spacesuit_(A7L)_on_display_at_NMST.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Replica_of_Apollo-Skylab_spacesuit_%28A7L%29_on_display_at_NMST.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "license_rationale": "Reuse with attribution; derivatives under same license.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 177170626,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "2803bc60bb50041d",
    "path": "/images/fleet-galleries/a7lb/04.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/a7lb",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Buzz Aldrin Apollo Spacesuit.jpg",
+   "author": "NASA /Neil Armstrong",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Buzz_Aldrin_Apollo_Spacesuit.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Buzz_Aldrin_Apollo_Spacesuit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 10215035,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "79ecdec10c8e0c71",
@@ -7746,23 +7735,22 @@
   {
    "id": "4b7eebf653071b6b",
    "path": "/images/fleet-galleries/chandrayaan1/02.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/chandrayaan1",
-   "author": "ISRO",
+   "source_type": "wikimedia-commons",
+   "title": "File:PSLV-C11 launch2.jpg",
+   "author": "Indian Space Research Organisation",
    "agency": "ISRO",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-self",
-   "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
-   "license_rationale": "Author has released the work into the public domain via PD dedication.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:PSLV-C11_launch2.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/05/PSLV-C11_launch2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "GODL-India",
+   "license_url": "https://data.gov.in/sites/default/files/Gazette_Notification_OGDL.pdf",
+   "license_rationale": "India Government Open Data License — free reuse with attribution; ISRO/Department of Space release imagery under it (the only license under which Chandrayaan-3 imagery is published). Accepted on Wikimedia Commons.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 66939524,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "e865f8246353a370",
@@ -8500,65 +8488,62 @@
   {
    "id": "e30782718a985483",
    "path": "/images/fleet-galleries/crew-dragon-iva/03.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/crew-dragon-iva",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:SpaceX Dragon v2 (Crew) interior (16763231836).jpg",
+   "author": "SpaceX",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX_Dragon_v2_(Crew)_interior_(16763231836).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/SpaceX_Dragon_v2_%28Crew%29_interior_%2816763231836%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "license_rationale": "No rights reserved.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 39139551,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "50ea1fb9c86d4877",
    "path": "/images/fleet-galleries/crew-dragon-iva/04.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/crew-dragon-iva",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:SpaceX Crew-5 members aboard the Dragon Endurance crew ship.jpg",
+   "author": "Robert Hines",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX_Crew-5_members_aboard_the_Dragon_Endurance_crew_ship.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/SpaceX_Crew-5_members_aboard_the_Dragon_Endurance_crew_ship.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 124092096,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "a8a7230238ba1ad3",
    "path": "/images/fleet-galleries/crew-dragon-iva/05.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/crew-dragon-iva",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:SpaceX Crew-5 Mission Specialist Koichi Wakata.jpg",
+   "author": "Robert Hines",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX_Crew-5_Mission_Specialist_Koichi_Wakata.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/SpaceX_Crew-5_Mission_Specialist_Koichi_Wakata.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 124092181,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "0bc20bd8380ba174",
@@ -9911,23 +9896,22 @@
   {
    "id": "f38f0c734a8a6a69",
    "path": "/images/fleet-galleries/exomars-tgo/02.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/exomars-tgo",
-   "author": "ESA",
+   "source_type": "wikimedia-commons",
+   "title": "File:ExoMars Trace Gas Orbiter.jpg",
+   "author": "Unknown author Unknown author",
    "agency": "ESA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "CC-BY-SA-3.0-IGO",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-   "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:ExoMars_Trace_Gas_Orbiter.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/ExoMars_Trace_Gas_Orbiter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 46000396,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "532c17856cc72c60",
@@ -10661,23 +10645,22 @@
   {
    "id": "8e33d453ec7c2cc9",
    "path": "/images/fleet-galleries/galileo-gnss/04.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/galileo-gnss",
-   "author": "ESA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Galileo in smartphones ESA385423.jpg",
+   "author": "European Space Agency",
    "agency": "ESA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Galileo_in_smartphones_ESA385423.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Galileo_in_smartphones_ESA385423.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "CC-BY-SA-3.0-IGO",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
    "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 63448397,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "a89136bd664fa362",
@@ -11079,65 +11062,62 @@
   {
    "id": "b16442f41898d626",
    "path": "/images/fleet-galleries/goes-noaa/03.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/goes-noaa",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:GOES East image of Hurricane Sandy (2268-627).jpg",
+   "author": "NOAA",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:GOES_East_image_of_Hurricane_Sandy_(2268-627).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/GOES_East_image_of_Hurricane_Sandy_%282268-627%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "PD-USGov",
+   "license_url": "https://www.usa.gov/government-works",
+   "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 149319578,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "bd5b29e7369d289d",
    "path": "/images/fleet-galleries/goes-noaa/04.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/goes-noaa",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:GOES-16 Imagery at the NOAA Booth (32526557971).jpg",
+   "author": "NOAASatellites",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:GOES-16_Imagery_at_the_NOAA_Booth_(32526557971).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/03/GOES-16_Imagery_at_the_NOAA_Booth_%2832526557971%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "PD-USGov",
+   "license_url": "https://www.usa.gov/government-works",
+   "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 145652632,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "1fae0a1e8329650f",
    "path": "/images/fleet-galleries/goes-noaa/05.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/goes-noaa",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:GOES-16 Imagery at the NOAA Booth (32526557551).jpg",
+   "author": "NOAASatellites",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:GOES-16_Imagery_at_the_NOAA_Booth_(32526557551).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/GOES-16_Imagery_at_the_NOAA_Booth_%2832526557551%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "PD-USGov",
+   "license_url": "https://www.usa.gov/government-works",
+   "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 145652606,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "3a993f110dcb6a22",
@@ -11163,86 +11143,82 @@
   {
    "id": "73dbd9503f59b454",
    "path": "/images/fleet-galleries/gps-gnss/02.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/gps-gnss",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:GNSS antenna.jpg",
+   "author": "Karlbrix",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:GNSS_antenna.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/GNSS_antenna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "license_rationale": "Reuse with attribution; derivatives under same license.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 114786687,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "20f3eacc5c458895",
    "path": "/images/fleet-galleries/gps-gnss/03.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/gps-gnss",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:COVEC CHC i80 GNSS setup for Tambul-Mendi road profile.jpg",
+   "author": "Kamaini.wane",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:COVEC_CHC_i80_GNSS_setup_for_Tambul-Mendi_road_profile.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/COVEC_CHC_i80_GNSS_setup_for_Tambul-Mendi_road_profile.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "license_rationale": "Reuse with attribution; derivatives under same license.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 98350590,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "4a33646e1cea61b2",
    "path": "/images/fleet-galleries/gps-gnss/04.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/gps-gnss",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:GPS meting landmeters.JPG",
+   "author": "JoeNomi 1961",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:GPS_meting_landmeters.JPG",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/GPS_meting_landmeters.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "license_rationale": "Creative Commons Attribution-Share Alike 3.0",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 18765948,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "81556550d89cc1fd",
    "path": "/images/fleet-galleries/gps-gnss/05.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/gps-gnss",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:GPS točka - državna izmjera.jpg",
+   "author": "Mnalis",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:GPS_to%C4%8Dka_-_dr%C5%BEavna_izmjera.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/GPS_to%C4%8Dka_-_dr%C5%BEavna_izmjera.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "license_rationale": "Reuse with attribution; derivatives under same license.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 136645075,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "136cc39600d24ff6",
@@ -11688,23 +11664,22 @@
   {
    "id": "0c38b4905bb2d5b2",
    "path": "/images/fleet-galleries/hayabusa-2/05.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/hayabusa-2",
-   "author": "JAXA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Estrack support to Hayabusa-2 (16746424104).jpg",
+   "author": "ESA_events",
    "agency": "JAXA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "CC-BY-4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "license_rationale": "Reuse with attribution.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Estrack_support_to_Hayabusa-2_(16746424104).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Estrack_support_to_Hayabusa-2_%2816746424104%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "license_rationale": "Freely licensed via Wikimedia Commons; attribution required.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 135211626,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "395ae12fdcb38968",
@@ -11751,23 +11726,22 @@
   {
    "id": "b1b72dff1ab267ac",
    "path": "/images/fleet-galleries/hayabusa/04.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — hayabusa / \"fleet hayabusa\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Hayabusa Re-Entery.jpg",
+   "author": "NASA/Ed Schilling",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=fleet+hayabusa&media_type=image&keywords=hayabusa",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Hayabusa_Re-Entery.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Hayabusa_Re-Entery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 10701465,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.908Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "50ed572d38abf123",
@@ -12668,23 +12642,22 @@
   {
    "id": "a3beadda5e9d831c",
    "path": "/images/fleet-galleries/iridium-next/03.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/iridium-next",
-   "author": "Multi-agency",
+   "source_type": "wikimedia-commons",
+   "title": "File:Iridium Next 21-30 mission (36984625383).jpg",
+   "author": "SpaceX",
    "agency": "Multi-agency",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-Old",
-   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
-   "license_rationale": "Copyright term expired worldwide.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Iridium_Next_21-30_mission_(36984625383).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Iridium_Next_21-30_mission_%2836984625383%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "license_rationale": "No rights reserved.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 64114873,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.960Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "982194c59148f85a",
@@ -12940,23 +12913,22 @@
   {
    "id": "a06c080b038ce602",
    "path": "/images/fleet-galleries/jiuquan-slc-43/05.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/jiuquan-slc-43",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Jiuquan Satellite Launch Center with sign.jpg",
+   "author": "Sparktour",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Jiuquan_Satellite_Launch_Center_with_sign.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Jiuquan_Satellite_Launch_Center_with_sign.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "license_rationale": "Reuse with attribution; derivatives under same license.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 71554573,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.960Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "3b94511fa2b764fe",
@@ -13978,44 +13950,42 @@
   {
    "id": "c289331ac8fff050",
    "path": "/images/fleet-galleries/landsat/04.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/landsat",
+   "source_type": "wikimedia-commons",
+   "title": "File:The spectral band placement for each sensor of Landsat.jpg",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:The_spectral_band_placement_for_each_sensor_of_Landsat.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/02/The_spectral_band_placement_for_each_sensor_of_Landsat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 115973761,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.960Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "3748f84d450e3147",
    "path": "/images/fleet-galleries/landsat/05.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/landsat",
+   "source_type": "wikimedia-commons",
+   "title": "File:L8and9-to-LandsatNext-BandComparison.png",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:L8and9-to-LandsatNext-BandComparison.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/L8and9-to-LandsatNext-BandComparison.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 115973762,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.960Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "78936d1f04766243",
@@ -17493,23 +17463,22 @@
   {
    "id": "1c16f3e1f6507bac",
    "path": "/images/fleet-galleries/mars6/01.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/mars6",
-   "author": "Roscosmos",
+   "source_type": "wikimedia-commons",
+   "title": "File:Mars 6.jpg",
+   "author": "Nasa",
    "agency": "Roscosmos",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-Russia",
-   "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-   "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Mars_6.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Mars_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 120253200,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.960Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "75c9c9aeee820fde",
@@ -17535,23 +17504,22 @@
   {
    "id": "7421e26d3731bd3b",
    "path": "/images/fleet-galleries/mars6/03.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/mars6",
-   "author": "Roscosmos",
+   "source_type": "wikimedia-commons",
+   "title": "File:Descent of Phoenix with a crater in the background taken by Mars Reconnaissance Orbiter.jpg",
+   "author": "NASA/Jet Propulsion Lab-Caltech/University of Arizona",
    "agency": "Roscosmos",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-Russia",
-   "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-   "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Descent_of_Phoenix_with_a_crater_in_the_background_taken_by_Mars_Reconnaissance_Orbiter.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Descent_of_Phoenix_with_a_crater_in_the_background_taken_by_Mars_Reconnaissance_Orbiter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 5567270,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.960Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "bddb55f927d10cf5",
@@ -17577,23 +17545,22 @@
   {
    "id": "97a4dede7e495128",
    "path": "/images/fleet-galleries/mars6/05.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/mars6",
-   "author": "Roscosmos",
+   "source_type": "wikimedia-commons",
+   "title": "File:Mars - Dunes 6.jpg",
+   "author": "Mariagat Włodek Głażewski",
    "agency": "Roscosmos",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-Russia",
-   "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-   "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Mars_-_Dunes_6.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Mars_-_Dunes_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "license_rationale": "Reuse with attribution; derivatives under same license.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 82730539,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.960Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "e729a02a7b9a289e",
@@ -17640,23 +17607,22 @@
   {
    "id": "a66e676b4f150985",
    "path": "/images/fleet-galleries/maven/03.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/maven",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Mars-MAVEN-Orbiter-20140921.jpg",
+   "author": "NASA/Goddard Space Flight Center",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Mars-MAVEN-Orbiter-20140921.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Mars-MAVEN-Orbiter-20140921.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 35557485,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.960Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "2df88cdf4c75ed84",
@@ -19054,23 +19020,22 @@
   {
    "id": "c639f165ffb17601",
    "path": "/images/fleet-galleries/orlan-mks/04.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/orlan-mks",
-   "author": "Roscosmos",
+   "source_type": "wikimedia-commons",
+   "title": "File:Installation of US add-on hardware on Orlan-MKS No 5 (iss065e317984).jpg",
+   "author": "NASA Johnson Space Center / VIV",
    "agency": "Roscosmos",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-Russia",
-   "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-   "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Installation_of_US_add-on_hardware_on_Orlan-MKS_No_5_(iss065e317984).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Installation_of_US_add-on_hardware_on_Orlan-MKS_No_5_%28iss065e317984%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 136680362,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.960Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "81032e3917d3906b",
@@ -19241,23 +19206,22 @@
   {
    "id": "c44845c315916ec8",
    "path": "/images/fleet-galleries/parker-solar-probe/04.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — parker-solar-probe / \"fleet parker-solar-probe\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Parker Solar Probe coronal stream wispr-big 1-st flyby.jpg",
+   "author": "NASA/NRL/Parker Solar Probe",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=fleet+parker-solar-probe&media_type=image&keywords=parker-solar-probe",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Parker_Solar_Probe_coronal_stream_wispr-big_1-st_flyby.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Parker_Solar_Probe_coronal_stream_wispr-big_1-st_flyby.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 75084035,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.907Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "903ea46af36de4f2",
@@ -19883,23 +19847,22 @@
   {
    "id": "00d34d3de47ac496",
    "path": "/images/fleet-galleries/plesetsk-41-1/03.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/plesetsk-41-1",
-   "author": "Roscosmos",
+   "source_type": "wikimedia-commons",
+   "title": "File:Вывоз и установка ракеты космического назначения «Ангара-1.2ПП» на стартовом комплексе космодрома Плесецк 15.jpg",
+   "author": "Андрея Моргунова (Andrei Morgunov)",
    "agency": "Roscosmos",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-Russia",
-   "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-   "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:%D0%92%D1%8B%D0%B2%D0%BE%D0%B7_%D0%B8_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D1%80%D0%B0%D0%BA%D0%B5%D1%82%D1%8B_%D0%BA%D0%BE%D1%81%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F_%C2%AB%D0%90%D0%BD%D0%B3%D0%B0%D1%80%D0%B0-1.2%D0%9F%D0%9F%C2%BB_%D0%BD%D0%B0_%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%BE%D0%B2%D0%BE%D0%BC_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%B5_%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D0%B4%D1%80%D0%BE%D0%BC%D0%B0_%D0%9F%D0%BB%D0%B5%D1%81%D0%B5%D1%86%D0%BA_15.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/%D0%92%D1%8B%D0%B2%D0%BE%D0%B7_%D0%B8_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D1%80%D0%B0%D0%BA%D0%B5%D1%82%D1%8B_%D0%BA%D0%BE%D1%81%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F_%C2%AB%D0%90%D0%BD%D0%B3%D0%B0%D1%80%D0%B0-1.2%D0%9F%D0%9F%C2%BB_%D0%BD%D0%B0_%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%BE%D0%B2%D0%BE%D0%BC_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%B5_%D0%BA%D0%BE%D1%81%D0%BC%D0%BE%D0%B4%D1%80%D0%BE%D0%BC%D0%B0_%D0%9F%D0%BB%D0%B5%D1%81%D0%B5%D1%86%D0%BA_15.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "license_rationale": "Reuse with attribution.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 51500077,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.960Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "2edf6aceea030ad4",
@@ -20155,23 +20118,22 @@
   {
    "id": "cc1799266d982d04",
    "path": "/images/fleet-galleries/progress-7k-tg/03.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/progress-7k-tg",
-   "author": "Roscosmos",
+   "source_type": "wikimedia-commons",
+   "title": "File:Gateway to space 2016, Budapest, models of Soyuz spacecraft, Kvant 1, Mir core, the Progress resupply spacecraft.jpg",
+   "author": "Christo",
    "agency": "Roscosmos",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-Russia",
-   "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-   "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Gateway_to_space_2016,_Budapest,_models_of_Soyuz_spacecraft,_Kvant_1,_Mir_core,_the_Progress_resupply_spacecraft.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Gateway_to_space_2016%2C_Budapest%2C_models_of_Soyuz_spacecraft%2C_Kvant_1%2C_Mir_core%2C_the_Progress_resupply_spacecraft.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "license_rationale": "Reuse with attribution; derivatives under same license.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 50379423,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.960Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "af81b7918835df76",
@@ -22533,23 +22495,22 @@
   {
    "id": "0ebccbba3b713e9a",
    "path": "/images/fleet-galleries/sentinel-copernicus/05.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/sentinel-copernicus",
-   "author": "ESA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Sentinel 2-IMG 5873-white (crop).jpg",
+   "author": "Rama",
    "agency": "ESA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "CC-BY-SA-3.0-IGO",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-   "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Sentinel_2-IMG_5873-white_(crop).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Sentinel_2-IMG_5873-white_%28crop%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0/fr/deed.en",
+   "license_rationale": "Freely licensed via Wikimedia Commons; attribution required.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 41020894,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.960Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "809127dec5db30d2",
@@ -24896,65 +24857,62 @@
   {
    "id": "a98e253751c1edf2",
    "path": "/images/fleet-galleries/starliner-suit/03.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/starliner-suit",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:NASA Boeing CFT Astronaut Suit-Up (KSC-20240605-PH-KLS01 0249).jpg",
+   "author": "NASA Kennedy Space Center / NASA/Kim Shiflett",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:NASA_Boeing_CFT_Astronaut_Suit-Up_(KSC-20240605-PH-KLS01_0249).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/NASA_Boeing_CFT_Astronaut_Suit-Up_%28KSC-20240605-PH-KLS01_0249%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 149112470,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.961Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "774b6c9f7c2dfd8c",
    "path": "/images/fleet-galleries/starliner-suit/04.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/starliner-suit",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:NASA Boeing CFT Astronaut Suit-Up (KSC-20240605-PH-KLS01 0244).jpg",
+   "author": "NASA Kennedy Space Center / NASA/Kim Shiflett",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:NASA_Boeing_CFT_Astronaut_Suit-Up_(KSC-20240605-PH-KLS01_0244).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/NASA_Boeing_CFT_Astronaut_Suit-Up_%28KSC-20240605-PH-KLS01_0244%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 149112475,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.961Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "4581ac6521e128e3",
    "path": "/images/fleet-galleries/starliner-suit/05.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/starliner-suit",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:NASA Boeing CFT Astronaut Suit-Up (KSC-20240605-PH-KLS01 0287).jpg",
+   "author": "NASA Kennedy Space Center / NASA/Kim Shiflett",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:NASA_Boeing_CFT_Astronaut_Suit-Up_(KSC-20240605-PH-KLS01_0287).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/NASA_Boeing_CFT_Astronaut_Suit-Up_%28KSC-20240605-PH-KLS01_0287%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 149112469,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.961Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "4f0db7416c56d87e",
@@ -25565,23 +25523,22 @@
   {
    "id": "60bd6fbcd6cc8b5f",
    "path": "/images/fleet-galleries/tanegashima-yoshinobu/03.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/tanegashima-yoshinobu",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:JAXA TNSC Yoshinobu LP1.jpg",
+   "author": "Naritama (NARITA Masahiro)",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:JAXA_TNSC_Yoshinobu_LP1.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/JAXA_TNSC_Yoshinobu_LP1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "license_rationale": "Creative Commons Attribution-Share Alike 3.0",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 10647730,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.961Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "cd77534d6c0f692b",
@@ -27081,23 +27038,22 @@
   {
    "id": "5fba0b9db78c93b6",
    "path": "/images/fleet-galleries/viking1-orbiter/05.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/viking1-orbiter",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Phobos-viking1.jpg",
+   "author": "Composited by: NASA / Dr. Edwin V. Bell, II (NSSDC/Raytheon ITSS) Original images: NASA / Viking 1 Orbiter",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Phobos-viking1.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Phobos-viking1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 86110,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.961Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "787b8f7ade8efb99",
@@ -27144,23 +27100,22 @@
   {
    "id": "55d88f36dc7339e8",
    "path": "/images/fleet-galleries/viking2-lander/03.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/viking2-lander",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Ice on Mars Utopia Planitia (PIA00571).jpg",
+   "author": "NASA/JPL",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Ice_on_Mars_Utopia_Planitia_(PIA00571).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Ice_on_Mars_Utopia_Planitia_%28PIA00571%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 4015880,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.961Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "3aa539075c317e35",
@@ -38992,43 +38947,41 @@
    "id": "456799d0f9eb6589",
    "path": "/images/iss-modules/zarya/02.1x1.jpg",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — zarya / \"ISS zarya module\"",
+   "title": "International Space Station (ISS)",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=ISS+zarya+module&media_type=image&keywords=zarya",
+   "source_url": "https://images.nasa.gov/details/0202495",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.866Z"
+   "nasa_id": "0202495",
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "5fcb9aa455eb0ebe",
    "path": "/images/iss-modules/zarya/02.webp",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — zarya / \"ISS zarya module\"",
+   "title": "International Space Station (ISS)",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=ISS+zarya+module&media_type=image&keywords=zarya",
+   "source_url": "https://images.nasa.gov/details/0202495",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.866Z"
+   "nasa_id": "0202495",
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "62d7c67ec33c8060",
@@ -41463,46 +41416,42 @@
   {
    "id": "79a0f062c71a51eb",
    "path": "/images/mars-sites/mars3/05.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — mars3 / \"mars 3 soviet lander\"",
-   "author": "Roscosmos",
+   "source_type": "wikimedia-commons",
+   "title": "File:Mars3 lander vsm.jpg",
+   "author": "NASA",
    "agency": "Roscosmos",
-   "source_url": "https://images.nasa.gov/search?q=mars+3+soviet+lander&media_type=image&keywords=mars3",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Mars3_lander_vsm.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Mars3_lander_vsm.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg",
-    "copied-from-mission-gallery"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 14634254,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.918Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "36ee1144e19cad18",
    "path": "/images/mars-sites/mars3/05.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — mars3 / \"mars 3 soviet lander\"",
-   "author": "Roscosmos",
+   "source_type": "wikimedia-commons",
+   "title": "File:Mars3 lander vsm.jpg",
+   "author": "NASA",
    "agency": "Roscosmos",
-   "source_url": "https://images.nasa.gov/search?q=mars+3+soviet+lander&media_type=image&keywords=mars3",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Mars3_lander_vsm.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Mars3_lander_vsm.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg",
-    "copied-from-mission-gallery"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 14634254,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.918Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "c422a773cd6deb4d",
@@ -41595,46 +41544,42 @@
   {
    "id": "aa29981798ae7527",
    "path": "/images/mars-sites/mars6/03.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — mars6 / \"mars 6 soviet mars probe\"",
-   "author": "Roscosmos",
+   "source_type": "wikimedia-commons",
+   "title": "File:MarsLanderMola16.png",
+   "author": "Zamonin",
    "agency": "Roscosmos",
-   "source_url": "https://images.nasa.gov/search?q=mars+6+soviet+mars+probe&media_type=image&keywords=mars6",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:MarsLanderMola16.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/MarsLanderMola16.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "license_rationale": "Reuse with attribution; derivatives under same license.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg",
-    "copied-from-mission-gallery"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 91072269,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.919Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "726d14a5256a8ce3",
    "path": "/images/mars-sites/mars6/03.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — mars6 / \"mars 6 soviet mars probe\"",
-   "author": "Roscosmos",
+   "source_type": "wikimedia-commons",
+   "title": "File:MarsLanderMola16.png",
+   "author": "Zamonin",
    "agency": "Roscosmos",
-   "source_url": "https://images.nasa.gov/search?q=mars+6+soviet+mars+probe&media_type=image&keywords=mars6",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:MarsLanderMola16.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/MarsLanderMola16.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "license_rationale": "Reuse with attribution; derivatives under same license.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg",
-    "copied-from-mission-gallery"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 91072269,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.919Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "a60cbf18ec439920",
@@ -42707,86 +42652,82 @@
   {
    "id": "0507976db21bf6b1",
    "path": "/images/mars-sites/schiaparelli/02.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:Schiaparelli Mars lander artist impression.jpg",
-   "author": "ESA",
-   "agency": "ESA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3ASchiaparelli%20Mars%20lander%20artist%20impression.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Schiaparelli%20Mars%20lander%20artist%20impression.jpg",
-   "license_short": "CC-BY-SA-3.0-IGO",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-   "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+   "source_type": "nasa-images-api",
+   "title": "Schiaparelli Impact Site on Mars, in Color",
+   "author": "NASA",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA21132",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.921Z"
+   "nasa_id": "PIA21132",
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "b3bc8fdf7ad4eda7",
    "path": "/images/mars-sites/schiaparelli/02.webp",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — schiaparelli / \"schiaparelli mars lander exomars\"",
+   "title": "Schiaparelli Impact Site on Mars, in Color",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=schiaparelli+mars+lander+exomars&media_type=image&keywords=schiaparelli",
+   "source_url": "https://images.nasa.gov/details/PIA21132",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.921Z"
+   "nasa_id": "PIA21132",
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "abb11ecd1ed325ee",
    "path": "/images/mars-sites/schiaparelli/03.1x1.jpg",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — schiaparelli / \"schiaparelli mars lander exomars\"",
+   "title": "Closer Look at Schiaparelli Impact Site on Mars",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=schiaparelli+mars+lander+exomars&media_type=image&keywords=schiaparelli",
+   "source_url": "https://images.nasa.gov/details/PIA21131",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.921Z"
+   "nasa_id": "PIA21131",
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "719193f9b5f6f85e",
    "path": "/images/mars-sites/schiaparelli/03.webp",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — schiaparelli / \"schiaparelli mars lander exomars\"",
+   "title": "Closer Look at Schiaparelli Impact Site on Mars",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=schiaparelli+mars+lander+exomars&media_type=image&keywords=schiaparelli",
+   "source_url": "https://images.nasa.gov/details/PIA21131",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.921Z"
+   "nasa_id": "PIA21131",
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "3e5b124477e1363b",
@@ -44601,43 +44542,41 @@
    "id": "599f69aef0e85403",
    "path": "/images/missions/apollo11/03.1x1.jpg",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — apollo11 / \"apollo 11 lunar surface\"",
+   "title": "View Apollo 11 Lunar Module as it rested on lunar surface",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=apollo+11+lunar+surface&media_type=image&keywords=apollo11",
+   "source_url": "https://images.nasa.gov/details/as11-40-5927",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.829Z"
+   "nasa_id": "as11-40-5927",
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "7af87a4fbb6447d8",
    "path": "/images/missions/apollo11/03.webp",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — apollo11 / \"apollo 11 lunar surface\"",
+   "title": "View Apollo 11 Lunar Module as it rested on lunar surface",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=apollo+11+lunar+surface&media_type=image&keywords=apollo11",
+   "source_url": "https://images.nasa.gov/details/as11-40-5927",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.829Z"
+   "nasa_id": "as11-40-5927",
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "c9eb3ac73b6143cf",
@@ -49030,43 +48969,41 @@
    "id": "675aa1095958d0e7",
    "path": "/images/missions/galileo/04.1x1.jpg",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — galileo / \"galileo spacecraft jupiter\"",
+   "title": "Galileo Over Io Artist Concept",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=galileo+spacecraft+jupiter&media_type=image&keywords=galileo",
+   "source_url": "https://images.nasa.gov/details/PIA18176",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.847Z"
+   "nasa_id": "PIA18176",
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "2ed755109e982936",
    "path": "/images/missions/galileo/04.webp",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — galileo / \"galileo spacecraft jupiter\"",
+   "title": "Galileo Over Io Artist Concept",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=galileo+spacecraft+jupiter&media_type=image&keywords=galileo",
+   "source_url": "https://images.nasa.gov/details/PIA18176",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.847Z"
+   "nasa_id": "PIA18176",
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "0dcc64e56768c3c5",
@@ -58312,44 +58249,42 @@
   {
    "id": "3fce58a7121edf18",
    "path": "/images/missions/starship-mars-crew/05.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — starship-mars-crew / \"spacex starship super heavy stack\"",
-   "author": "SpaceX",
+   "source_type": "wikimedia-commons",
+   "title": "File:SpaceX Starship and Mars.jpg",
+   "author": "CactiStaccingCrane",
    "agency": "SpaceX",
-   "source_url": "https://images.nasa.gov/search?q=spacex+starship+super+heavy+stack&media_type=image&keywords=starship-mars-crew",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX_Starship_and_Mars.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/SpaceX_Starship_and_Mars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "license_rationale": "Reuse with attribution; derivatives under same license.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 117363316,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.839Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "ade06741ad9b00f5",
    "path": "/images/missions/starship-mars-crew/05.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — starship-mars-crew / \"spacex starship super heavy stack\"",
-   "author": "SpaceX",
+   "source_type": "wikimedia-commons",
+   "title": "File:SpaceX Starship and Mars.jpg",
+   "author": "CactiStaccingCrane",
    "agency": "SpaceX",
-   "source_url": "https://images.nasa.gov/search?q=spacex+starship+super+heavy+stack&media_type=image&keywords=starship-mars-crew",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX_Starship_and_Mars.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/SpaceX_Starship_and_Mars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "license_rationale": "Reuse with attribution; derivatives under same license.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 117363316,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.839Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "5831513f9b402eb1",
@@ -61451,44 +61386,42 @@
   {
    "id": "52ed18764fac1b62",
    "path": "/images/missions/voyager-2/02.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:Triton_moon_mosaic_Voyager_2_(large).jpg",
-   "author": "NASA",
-   "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3ATriton_moon_mosaic_Voyager_2_(large).jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Triton_moon_mosaic_Voyager_2_(large).jpg",
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
-   "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
-   ],
-   "revid": null,
-   "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.847Z"
-  },
-  {
-   "id": "b69857fd8fa67d30",
-   "path": "/images/missions/voyager-2/02.webp",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — voyager-2 / \"voyager 2 neptune flyby\"",
+   "title": "Triton High Resolution View of Northern Hemisphere",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=voyager+2+neptune+flyby&media_type=image&keywords=voyager-2",
+   "source_url": "https://images.nasa.gov/details/PIA00061",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.847Z"
+   "nasa_id": "PIA00061",
+   "fetched_at": "2026-10-21T10:43:46.503Z"
+  },
+  {
+   "id": "b69857fd8fa67d30",
+   "path": "/images/missions/voyager-2/02.webp",
+   "source_type": "nasa-images-api",
+   "title": "Triton High Resolution View of Northern Hemisphere",
+   "author": "NASA",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA00061",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA00061",
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "0564c7786cfcc9f1",
@@ -62157,44 +62090,42 @@
   {
    "id": "66e5c860c0ab7967",
    "path": "/images/moon-sites/change3/05.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — change3 / \"chang-e 3 yutu rover lunar\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Artist view of Chang'e 7 lunar mission on the Moon.png",
+   "author": "中国新闻社",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=chang-e+3+yutu+rover+lunar&media_type=image&keywords=change3",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Artist_view_of_Chang%27e_7_lunar_mission_on_the_Moon.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Artist_view_of_Chang%27e_7_lunar_mission_on_the_Moon.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0",
+   "license_rationale": "Freely licensed via Wikimedia Commons; attribution required.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 188679355,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.915Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "4b756478d06db42e",
    "path": "/images/moon-sites/change3/05.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — change3 / \"chang-e 3 yutu rover lunar\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Artist view of Chang'e 7 lunar mission on the Moon.png",
+   "author": "中国新闻社",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=chang-e+3+yutu+rover+lunar&media_type=image&keywords=change3",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Artist_view_of_Chang%27e_7_lunar_mission_on_the_Moon.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Artist_view_of_Chang%27e_7_lunar_mission_on_the_Moon.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0",
+   "license_rationale": "Freely licensed via Wikimedia Commons; attribution required.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 188679355,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.915Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "feea08b8dc55467e",
@@ -62558,44 +62489,42 @@
   {
    "id": "b517130cf1829246",
    "path": "/images/planets/earth/03.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — earth / \"earth from space apollo\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Blue Marble Eastern Hemisphere.jpg",
+   "author": "NASA images by Reto Stöckli, based on data from NASA and NOAA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=earth+from+space+apollo&media_type=image&keywords=earth",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Blue_Marble_Eastern_Hemisphere.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Blue_Marble_Eastern_Hemisphere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 24990770,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "267db35629ebec1b",
    "path": "/images/planets/earth/03.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — earth / \"earth from space apollo\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Blue Marble Eastern Hemisphere.jpg",
+   "author": "NASA images by Reto Stöckli, based on data from NASA and NOAA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=earth+from+space+apollo&media_type=image&keywords=earth",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Blue_Marble_Eastern_Hemisphere.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Blue_Marble_Eastern_Hemisphere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 24990770,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "180dcedff06c0f80",
@@ -62764,44 +62693,42 @@
   {
    "id": "b83e4fa0edad2f41",
    "path": "/images/planets/jupiter/03.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — jupiter / \"jupiter great red spot juno\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Jupiter, image taken by NASA's Hubble Space Telescope, June 2019 - Edited.jpg",
+   "author": "NASA, ESA, and A. Simon (NASA Goddard), edited by PlanetUser",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=jupiter+great+red+spot+juno&media_type=image&keywords=jupiter",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Jupiter,_image_taken_by_NASA%27s_Hubble_Space_Telescope,_June_2019_-_Edited.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Jupiter%2C_image_taken_by_NASA%27s_Hubble_Space_Telescope%2C_June_2019_-_Edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 81259729,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "e12d3abcf686fd49",
    "path": "/images/planets/jupiter/03.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — jupiter / \"jupiter great red spot juno\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Jupiter, image taken by NASA's Hubble Space Telescope, June 2019 - Edited.jpg",
+   "author": "NASA, ESA, and A. Simon (NASA Goddard), edited by PlanetUser",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=jupiter+great+red+spot+juno&media_type=image&keywords=jupiter",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Jupiter,_image_taken_by_NASA%27s_Hubble_Space_Telescope,_June_2019_-_Edited.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Jupiter%2C_image_taken_by_NASA%27s_Hubble_Space_Telescope%2C_June_2019_-_Edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 81259729,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "c0c97d0f63c6b51b",
@@ -62972,44 +62899,42 @@
   {
    "id": "d643ecff888d50e7",
    "path": "/images/planets/mars/03.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — mars / \"mars planet rover\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Mars from Hubble (Dec. 13, 1990).jpg",
+   "author": "NASA/ESA/STScl",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=mars+planet+rover&media_type=image&keywords=mars",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Mars_from_Hubble_(Dec._13,_1990).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Mars_from_Hubble_%28Dec._13%2C_1990%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 38356744,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "3e67841dd02a4c6d",
    "path": "/images/planets/mars/03.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — mars / \"mars planet rover\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Mars from Hubble (Dec. 13, 1990).jpg",
+   "author": "NASA/ESA/STScl",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=mars+planet+rover&media_type=image&keywords=mars",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Mars_from_Hubble_(Dec._13,_1990).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Mars_from_Hubble_%28Dec._13%2C_1990%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 38356744,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "5f11f810a5b199f8",
@@ -63098,44 +63023,42 @@
   {
    "id": "b1f2cff2d4933759",
    "path": "/images/planets/mercury/01.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — mercury / \"mercury planet messenger\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Mercury in color - Prockter07 centered.jpg",
+   "author": "NASA / Johns Hopkins University Applied Physics Laboratory / Carnegie Institution of Washington . Edited version of Image:Mercury in color - Prockter07.jpg by Papa Lima Whiskey .",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=mercury+planet+messenger&media_type=image&keywords=mercury",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Mercury_in_color_-_Prockter07_centered.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Mercury_in_color_-_Prockter07_centered.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 4163406,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "18b0f98bce80076c",
    "path": "/images/planets/mercury/01.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — mercury / \"mercury planet messenger\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Mercury in color - Prockter07 centered.jpg",
+   "author": "NASA / Johns Hopkins University Applied Physics Laboratory / Carnegie Institution of Washington . Edited version of Image:Mercury in color - Prockter07.jpg by Papa Lima Whiskey .",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=mercury+planet+messenger&media_type=image&keywords=mercury",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Mercury_in_color_-_Prockter07_centered.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Mercury_in_color_-_Prockter07_centered.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 4163406,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "847eec228eb2c83f",
@@ -63222,44 +63145,42 @@
   {
    "id": "9ed17eb2918b7250",
    "path": "/images/planets/mercury/04.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — mercury / \"mercury planet messenger\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Gravity Anomalies on Mercury.jpg",
+   "author": "NASA/Goddard Space Flight Center Science Visualization Studio/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=mercury+planet+messenger&media_type=image&keywords=mercury",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Gravity_Anomalies_on_Mercury.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Gravity_Anomalies_on_Mercury.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 45418948,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "fec5196e8a659ccf",
    "path": "/images/planets/mercury/04.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — mercury / \"mercury planet messenger\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Gravity Anomalies on Mercury.jpg",
+   "author": "NASA/Goddard Space Flight Center Science Visualization Studio/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=mercury+planet+messenger&media_type=image&keywords=mercury",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Gravity_Anomalies_on_Mercury.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Gravity_Anomalies_on_Mercury.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 45418948,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "5b427b3be082ca5c",
@@ -63306,44 +63227,42 @@
   {
    "id": "9e0d1c14266ea925",
    "path": "/images/planets/neptune/01.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — neptune / \"neptune voyager 2\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Neptune enhanced colour.jpg",
+   "author": "NASA/JPL Uploaded by nagualdesign",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=neptune+voyager+2&media_type=image&keywords=neptune",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Neptune_enhanced_colour.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Neptune_enhanced_colour.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 64223257,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "b0a4e8313dee6de5",
    "path": "/images/planets/neptune/01.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — neptune / \"neptune voyager 2\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Neptune enhanced colour.jpg",
+   "author": "NASA/JPL Uploaded by nagualdesign",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=neptune+voyager+2&media_type=image&keywords=neptune",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Neptune_enhanced_colour.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Neptune_enhanced_colour.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 64223257,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "cb3070e35ff86039",
@@ -63432,44 +63351,42 @@
   {
    "id": "35af6973072a1d7e",
    "path": "/images/planets/neptune/05.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — neptune / \"neptune voyager 2\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Neptune clouds.jpg",
+   "author": "NASA / Jet Propulsion Lab",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=neptune+voyager+2&media_type=image&keywords=neptune",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Neptune_clouds.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Neptune_clouds.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 640798,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "b77c52842b15a9f9",
    "path": "/images/planets/neptune/05.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — neptune / \"neptune voyager 2\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Neptune clouds.jpg",
+   "author": "NASA / Jet Propulsion Lab",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=neptune+voyager+2&media_type=image&keywords=neptune",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Neptune_clouds.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Neptune_clouds.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 640798,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "76c74d41f907365a",
@@ -63619,44 +63536,42 @@
   {
    "id": "3366aed92110f342",
    "path": "/images/planets/saturn/04.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — saturn / \"saturn rings cassini\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Saturn's Rings in Ultraviolet Light.png",
+   "author": "NASA.",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=saturn+rings+cassini&media_type=image&keywords=saturn",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Saturn%27s_Rings_in_Ultraviolet_Light.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Saturn%27s_Rings_in_Ultraviolet_Light.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 15599416,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "63a676a10835e785",
    "path": "/images/planets/saturn/04.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — saturn / \"saturn rings cassini\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Saturn's Rings in Ultraviolet Light.png",
+   "author": "NASA.",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=saturn+rings+cassini&media_type=image&keywords=saturn",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Saturn%27s_Rings_in_Ultraviolet_Light.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Saturn%27s_Rings_in_Ultraviolet_Light.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 15599416,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "d31897f19987bc94",
@@ -63702,43 +63617,41 @@
    "id": "e3f56a97d2ebae73",
    "path": "/images/planets/uranus/01.1x1.jpg",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — uranus / \"uranus voyager\"",
+   "title": "Uranus as seen by NASA Voyager 2",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=uranus+voyager&media_type=image&keywords=uranus",
+   "source_url": "https://images.nasa.gov/details/PIA18182",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "nasa_id": "PIA18182",
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "2f9229eaaa8d9474",
    "path": "/images/planets/uranus/01.webp",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — uranus / \"uranus voyager\"",
+   "title": "Uranus as seen by NASA Voyager 2",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=uranus+voyager&media_type=image&keywords=uranus",
+   "source_url": "https://images.nasa.gov/details/PIA18182",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.925Z"
+   "nasa_id": "PIA18182",
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "cd334dbbbb2bc4f8",
@@ -64942,23 +64855,22 @@
   {
    "id": "191240c40f50bd32",
    "path": "/images/satellites/charon/01.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — satellites/charon",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Charon in True Color - High-Res.png",
+   "author": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute/Alex Parker",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Charon_in_True_Color_-_High-Res.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Charon_in_True_Color_-_High-Res.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 71081812,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.963Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "7be4fe208a6030bd",
@@ -65024,23 +64936,22 @@
   {
    "id": "d2434a13cf354d91",
    "path": "/images/satellites/ganymede/01.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — satellites/ganymede",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Ganymede g1 true-edit.jpg",
+   "author": "NASA/JPL",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Ganymede_g1_true-edit.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Ganymede_g1_true-edit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 45798191,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.963Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "5f32c9d9a4fb5063",
@@ -65127,44 +65038,42 @@
   {
    "id": "d889ee258884721a",
    "path": "/images/satellites/phobos/01.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — satellites/phobos",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Phobos edit 2.jpg",
+   "author": "NASA/JPL-Caltech/University of Arizona",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Phobos_edit_2.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Phobos_edit_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 5208928,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.963Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "6dec6049f8dfce12",
    "path": "/images/satellites/titan/01.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — satellites/titan",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Titan globe.jpg",
+   "author": "NASA/JPL/Space Science Institute",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Titan_globe.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Titan_globe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "curated-no-upstream-record",
-    "walker-fallback"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 43808,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.963Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "f5ecdf59dd80fe44",
@@ -66722,86 +66631,82 @@
   {
    "id": "792b4b233a0bdb6d",
    "path": "/images/small-bodies/67p/02.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — 67p / \"rosetta spacecraft comet 67p\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Rosetta view of comet 67P-Churyumov–Gerasimenko (eso2001c).jpg",
+   "author": "ESA/Rosetta/NAVCAM, . CC BY-SA 3.0 IGO",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=rosetta+spacecraft+comet+67p&media_type=image&keywords=67p",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Rosetta_view_of_comet_67P-Churyumov%E2%80%93Gerasimenko_(eso2001c).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Rosetta_view_of_comet_67P-Churyumov%E2%80%93Gerasimenko_%28eso2001c%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "license_rationale": "Reuse with attribution.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 170285717,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.926Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "a24f5610e82c895f",
    "path": "/images/small-bodies/67p/02.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — 67p / \"rosetta spacecraft comet 67p\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Rosetta view of comet 67P-Churyumov–Gerasimenko (eso2001c).jpg",
+   "author": "ESA/Rosetta/NAVCAM, . CC BY-SA 3.0 IGO",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=rosetta+spacecraft+comet+67p&media_type=image&keywords=67p",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Rosetta_view_of_comet_67P-Churyumov%E2%80%93Gerasimenko_(eso2001c).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Rosetta_view_of_comet_67P-Churyumov%E2%80%93Gerasimenko_%28eso2001c%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "license_rationale": "Reuse with attribution.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 170285717,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.926Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "334a168c24a37841",
    "path": "/images/small-bodies/67p/03.1x1.jpg",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — 67p / \"rosetta spacecraft comet 67p\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:67P Churyumov-Gerasimenko - Rosetta (23188650144).png",
+   "author": "Justin Cowart",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=rosetta+spacecraft+comet+67p&media_type=image&keywords=67p",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:67P_Churyumov-Gerasimenko_-_Rosetta_(23188650144).png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/67P_Churyumov-Gerasimenko_-_Rosetta_%2823188650144%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "license_rationale": "Reuse with attribution.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 71790822,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.926Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "42af0c3d19f67609",
    "path": "/images/small-bodies/67p/03.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — 67p / \"rosetta spacecraft comet 67p\"",
-   "author": "NASA",
+   "source_type": "wikimedia-commons",
+   "title": "File:67P Churyumov-Gerasimenko - Rosetta (23188650144).png",
+   "author": "Justin Cowart",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=rosetta+spacecraft+comet+67p&media_type=image&keywords=67p",
-   "image_url": null,
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:67P_Churyumov-Gerasimenko_-_Rosetta_(23188650144).png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/67P_Churyumov-Gerasimenko_-_Rosetta_%2823188650144%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "license_rationale": "Reuse with attribution.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 71790822,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.926Z"
+   "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
    "id": "06334811bd8ec0f3",

@@ -1657,15 +1657,15 @@
   },
   {
     "id": "plesetsk-41-1",
-    "name": "Plesetsk LC-41/1",
+    "name": "Plesetsk Cosmodrome",
     "category": "launch-site",
     "agency": "Roscosmos",
     "country": "Russia",
     "era": "1957-1969",
     "epoch": "space-race",
-    "status": "RETIRED",
-    "first_flight": "1967-03-21",
-    "tagline": "Tsiklon-3 / Kosmos-3M workhorse — 310+ launches across the Soviet/Russian era"
+    "status": "ACTIVE",
+    "first_flight": "1966-03-17",
+    "tagline": "Russia's northern military cosmodrome — more launches than any other site"
   },
   {
     "id": "plesetsk-43",

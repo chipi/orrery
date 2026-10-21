@@ -8,6 +8,7 @@ import { problems } from '../lib/translate-quality.mjs';
 
 const [loc, flag] = process.argv.slice(2);
 const P = JSON.parse(fs.readFileSync('scripts/i18n-tools/native-terms.json', 'utf8')).place;
+const F = JSON.parse(fs.readFileSync('scripts/i18n-tools/native-terms.json', 'utf8')).facility;
 const L = ['ru', 'ja', 'zh-CN', 'ko', 'hi', 'ar', 'sr-Cyrl', 'de', 'fr', 'es', 'it', 'nl', 'pt-BR'];
 const by = (arr) => arr[L.indexOf(loc)];
 const p = (k) => P[k][loc];
@@ -37,7 +38,8 @@ const NAMES = {
   'baikonur-200': () => site('Baikonur', '200'),
   'baikonur-31-6': () => site('Baikonur', '31/6'),
   'plesetsk-43': () => site('Plesetsk', '43'),
-  'plesetsk-41-1': () => (loc === 'ru' ? 'Плесецк, площадка 41/1' : pad('Plesetsk', 'LC-41/1')),
+  // The whole cosmodrome since 2026-10-21 (the id predates that and is kept for its URLs).
+  'plesetsk-41-1': () => cap(F['Plesetsk Cosmodrome'][loc]),
   'cape-canaveral-slc-40': () => pad('Cape Canaveral', 'SLC-40'),
   'cape-canaveral-slc-41': () => pad('Cape Canaveral', 'SLC-41'),
   'kourou-ela-2': () => pad('Kourou', 'ELA-2'),

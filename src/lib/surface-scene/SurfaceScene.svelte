@@ -174,7 +174,7 @@
     teardownPanoramaSkybox,
     type SkyboxHandle,
   } from '$lib/hotspot-tier3-skybox';
-  import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
+  import { loadImageVisionManifest, getImageEntry, hotspotTileTexture } from '$lib/image-vision';
   import { streamedUrl } from '$lib/asset-url';
   import { buildLabel } from '$lib/three-label';
   import type { SurfaceSite, Traverse } from '$types/surface-site';
@@ -2885,19 +2885,14 @@
             const tier2Source = site.hotspot_tier2_source;
             const tier2RegionalSource = site.hotspot_tier2_regional_source;
             // Tier 2 builder is wired only when the site declares a
-            // tier2 source path. Texture URL is resolved against the
-            // image-vision.json manifest (lazy 1:1 variant lookup);
-            // if the manifest doesn't have an entry yet, fall back
-            // to the raw 2048² JPEG at the sidecar's hotspot_tier2_source
-            // path — soft-fail keeps Tier 2 visible during development
-            // (same pattern as /mars).
+            // tier2 source path. The texture is the tile's 512 px 1:1
+            // variant (hotspotTileTexture: the vision manifest's, else the
+            // tile's .1x1.jpg sibling), never the full-size source (#482).
             const annotations = site.hotspot_annotations;
             const tier2Builder =
               maxTier >= 2 && tier2Source
                 ? () => {
-                    const entry = getImageEntry(tier2Source);
-                    const textureUrl =
-                      (entry ? pickVariant(entry, 'thumbnail', false) : undefined) ?? tier2Source;
+                    const textureUrl = hotspotTileTexture(tier2Source, getImageEntry(tier2Source));
                     // Same resolution chain for the regional layer
                     // (Chang'e 2 mosaic or LROC WAC placeholder when
                     // wired; undefined today on /moon — patch builder
@@ -2917,10 +2912,10 @@
                     // non-traverse site, and the polyline overlays it.
                     const siteTrav = traverses[site.id];
                     if (tier2RegionalSource && (!siteTrav || !siteTrav.route_patches?.length)) {
-                      const rEntry = getImageEntry(tier2RegionalSource);
-                      regionalTextureUrl =
-                        (rEntry ? pickVariant(rEntry, 'thumbnail', false) : undefined) ??
-                        tier2RegionalSource;
+                      regionalTextureUrl = hotspotTileTexture(
+                        tier2RegionalSource,
+                        getImageEntry(tier2RegionalSource),
+                      );
                     }
                     return buildHotspotSurfacePatch({
                       textureUrl,

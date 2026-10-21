@@ -127,6 +127,17 @@ export function pickVariant(
 }
 
 /**
+ * The 512 px texture for a surface hotspot tile (tier-2 detail or regional).
+ * Uses the vision manifest's 1x1 variant when the tile has an entry, otherwise
+ * the tile's `.1x1.jpg` sibling — every referenced tile has one (tested in
+ * hotspot-tiles.test.ts). Without this, 64 tiles with no vision entry loaded
+ * their full 1600-3072 px source on a deep zoom, phones included (#482).
+ */
+export function hotspotTileTexture(src: string, entry: ImageVisionEntry | undefined): string {
+  return pickVariant(entry, 'thumbnail') ?? src.replace(/\.(jpe?g|png|webp)$/i, '.1x1.jpg');
+}
+
+/**
  * Compute the CSS `object-position` value for a surface that uses
  * `object-fit: cover` with the source image (no pre-crop variant).
  * The vision focal-point becomes the centre of attention.

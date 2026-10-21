@@ -25,7 +25,7 @@
   import type { SurfaceSite, Traverse } from '$types/surface-site';
   import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
   import { statusTone } from '$lib/surface-scene/status-tone';
-  import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
+  import { loadImageVisionManifest, getImageEntry, hotspotTileTexture } from '$lib/image-vision';
   import { streamedUrl } from '$lib/asset-url';
 
   interface Props {
@@ -80,8 +80,7 @@
 
     const tier2Source = selected.hotspot_tier2_source;
     if (tier2Source) {
-      const entry = getImageEntry(tier2Source);
-      const url = (entry ? pickVariant(entry, 'thumbnail', false) : undefined) ?? tier2Source;
+      const url = hotspotTileTexture(tier2Source, getImageEntry(tier2Source));
       const img = new Image();
       img.onload = () => {
         detailImage = img;
@@ -95,8 +94,7 @@
 
     const regionalSource = selected.hotspot_tier2_regional_source;
     if (regionalSource) {
-      const rEntry = getImageEntry(regionalSource);
-      const rUrl = (rEntry ? pickVariant(rEntry, 'thumbnail', false) : undefined) ?? regionalSource;
+      const rUrl = hotspotTileTexture(regionalSource, getImageEntry(regionalSource));
       const rImg = new Image();
       rImg.onload = () => {
         regionalImage = rImg;

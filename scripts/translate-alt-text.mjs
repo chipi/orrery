@@ -101,10 +101,14 @@ const GLOSS = Object.entries(
 function chunks() {
   const p = readJson(W('plan.json'));
   if (!p) throw new Error('run plan first');
+  // --keys=<json array file>: only these keys (e.g. English fixed mid-run, re-translate them).
+  const only = opt('keys', '') ? new Set(readJson(opt('keys'))) : null;
   const out = [];
-  for (const [l, keys] of Object.entries(p.locales))
+  for (const [l, all] of Object.entries(p.locales)) {
+    const keys = only ? all.filter((k) => only.has(k)) : all;
     for (let i = 0; i * CHUNK < keys.length; i++)
       out.push({ id: `${l}__${i}`, locale: l, keys: keys.slice(i * CHUNK, (i + 1) * CHUNK) });
+  }
   return out;
 }
 
@@ -146,10 +150,14 @@ function request(locale, keys, redo, live = false) {
         items.map((it, i) => ({ ...it, rejected: redo[i].out, problems: redo[i].problems })),
       )}`
     : JSON.stringify(items);
+  const model = MODEL || translationModel(locale);
+  // Sonnet/Opus 5.x reject thinking "disabled" (use "between_tools") and a forced
+  // tool_choice (probed 2026-10-21); the system prompt already says "only the tool".
+  const v5 = /^claude-(sonnet|opus)-5/.test(model);
   return {
-    model: MODEL || translationModel(locale),
+    model,
     max_tokens: 16000,
-    thinking: { type: 'disabled' },
+    thinking: { type: v5 ? 'between_tools' : 'disabled' },
     system: live ? system : [{ type: 'text', text: system, cache_control: { type: 'ephemeral' } }],
     tools: [
       {
@@ -171,7 +179,7 @@ function request(locale, keys, redo, live = false) {
         },
       },
     ],
-    tool_choice: { type: 'tool', name: 'submit' },
+    tool_choice: v5 ? { type: 'auto' } : { type: 'tool', name: 'submit' },
     messages: [{ role: 'user', content: user }],
   };
 }

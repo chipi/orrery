@@ -96,8 +96,8 @@ describe('name guard (NAME_POLICY)', () => {
     );
   });
   it('counts a designation as kept when the longer name holding it is rendered natively', () => {
-    expect(problems('ru', 'Plesetsk LC-41/1', 'Плесецк, площадка 41/1')).toEqual([]);
-    expect(problems('ru', 'Plesetsk LC-41/1', 'Плесецк')).toEqual(
+    expect(problems('ru', 'Sokol KV-2', 'Сокол КВ-2')).toEqual([]);
+    expect(problems('ru', 'Sokol KV-2', 'Сокол')).toEqual(
       expect.arrayContaining([expect.stringMatching(/names changed or missing/)]),
     );
   });

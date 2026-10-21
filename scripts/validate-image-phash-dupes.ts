@@ -417,6 +417,13 @@ const INLINE_ALLOWLIST: ReadonlySet<string> = new Set<string>([
   //   both heroes — Marko approved each separately knowing it's the
   //   same image. Editorial-share, not a bug.
   '9e7ee1021cf71819|9e7ee1021cf71819', // missions/freedom-7 / missions/mercury-redstone-3
+
+  // 2026-10-21 — distinct pictures that score d=14 within one card. Each pair
+  // was compared side by side (the full cache recompute that day was the first
+  // time the gate saw them):
+  '4d9649bd62629d43|4d9c6937926295c9', // schiaparelli 03/04: grey vs colour HiRISE views of the crash site
+  '41859d7961bd0357|c3851c71468d07f7', // vega-1 01/03 + vega-2 01/02: two different Soviet Vega stamps
+  'a60cb33c53f4cd03|b43c72fc52f0a903', // charon 03/04: New Horizons colour view vs a grey hemisphere
 ]);
 
 interface BaselineFile {

@@ -16,7 +16,7 @@
  * worth flagging.
  */
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { hammingDistance } from './lib/phash.ts';
@@ -447,6 +447,26 @@ interface Cache {
   phashes: Record<string, string>;
 }
 
+/** Base masters the cache must cover — the same walk as compute-phash.ts. */
+function* baseMasters(dir: string): Iterable<string> {
+  for (const ent of readdirSync(dir, { withFileTypes: true })) {
+    const full = join(dir, ent.name);
+    if (ent.isDirectory()) yield* baseMasters(full);
+    else if (ent.isFile() && ent.name.endsWith('.jpg') && !/\.(1x1|4x3|16x9)\./.test(ent.name))
+      yield full;
+  }
+}
+
+/** The scan only sees images that have a cached hash: a master with no entry is
+ *  silently skipped — that is how 440 images went unchecked until 2026-10-21.
+ *  Scripts that replace an image drop its entry, so a changed image shows up here
+ *  as missing. (Freshness by mtime is not used: a checkout re-stamps every file.) */
+export function cacheGaps(cache: Cache, masterUrls: Iterable<string>): string[] {
+  const missing: string[] = [];
+  for (const url of masterUrls) if (!(url in cache.phashes)) missing.push(url);
+  return missing;
+}
+
 /** Compute SHA-256 8-char prefix of a base-jpg file, used to cross-
  *  reference the sibling byte-dupe allowlist. We resolve url paths
  *  ("/images/missions/apollo11/01.jpg") to on-disk paths under
@@ -484,6 +504,18 @@ function main(): void {
       '⏭ masters/ not smudged (git-LFS fetchexclude) — dedup is a local check; skipping.',
     );
     return;
+  }
+  const missing = cacheGaps(
+    cache,
+    [...baseMasters(IMAGES_DIR)].map((f) => '/images' + f.slice(IMAGES_DIR.length)),
+  );
+  if (missing.length) {
+    console.error(
+      `✗ image-phashes.json has no hash for ${missing.length} master(s) ` +
+        `(e.g. ${missing.slice(0, 3).join(', ')}), so this scan would skip them.\n` +
+        `  Run: npx tsx scripts/compute-phash.ts — then re-run this check.`,
+    );
+    process.exit(1);
   }
   console.log(`pHash near-dupe scan — ${n} images, threshold=${THRESHOLD}…`);
 
@@ -558,4 +590,5 @@ function main(): void {
   process.exit(1);
 }
 
-main();
+// Run only when invoked as a script, so tests can import cacheGaps.
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main();

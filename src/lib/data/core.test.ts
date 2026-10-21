@@ -160,6 +160,19 @@ describe('core get() — plain data load (#554)', () => {
     await get('orbit-regimes.json', fn);
     expect(urls.length).toBe(1);
   });
+
+  // #595: a corrupt body must surface as an ordinary error naming the file, which
+  // dataLoadFailed rethrows (not a load failure) so it reaches Sentry.
+  it('rejects a corrupt body with a SyntaxError naming the file, and does not retry', async () => {
+    const { fn, urls } = makeFetch([
+      () => Promise.resolve(new Response('zz not json', { status: 200 })),
+    ]);
+    const err = await get('credit-thumbs.json', fn).catch((e) => e);
+    expect(err).toBeInstanceOf(SyntaxError);
+    expect((err as Error).message).toMatch(/^Invalid JSON in \S*credit-thumbs\.json: /);
+    expect(urls.length).toBe(1);
+    expect(() => dataLoadFailed(err)).toThrow(err as Error);
+  });
 });
 
 describe('dataLoadFailed (#554)', () => {

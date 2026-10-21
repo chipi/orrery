@@ -108,6 +108,22 @@ function reportI18nBundleFailure(locale: string, status?: number): void {
     .catch(() => {});
 }
 
+/**
+ * Parse a fetched JSON body, naming the file on failure. Not `res.json()`: in
+ * Chromium a rejection from `.json()` on a fetched Response reaches the console as
+ * "Uncaught (in promise)" but never fires `unhandledrejection`, so a corrupt data
+ * file was invisible to Sentry (#595, 2026-10-21). A JSON.parse failure rejects
+ * normally and is reported with this frame.
+ */
+export async function readJson<T>(res: Response, url: string): Promise<T> {
+  const text = await res.text();
+  try {
+    return JSON.parse(text) as T;
+  } catch (err) {
+    throw new SyntaxError(`Invalid JSON in ${url}: ${(err as Error).message}`, { cause: err });
+  }
+}
+
 export async function get<T>(path: string, fetchFn: FetchLike = fetch): Promise<T> {
   // i18n overlays resolve from the per-locale bundle. A genuine miss (key
   // absent from a bundle that DID load) throws so callers en-US fallback
@@ -167,7 +183,7 @@ async function fetchJsonWithRetry<T>(url: string, fetchFn: FetchLike): Promise<T
       lastErr = new Error(`Failed to fetch ${url}: ${(err as Error).message}`);
       continue;
     }
-    if (res.ok) return (await res.json()) as T;
+    if (res.ok) return readJson<T>(res, url);
     lastErr = new Error(`Failed to fetch ${url}: HTTP ${res.status}`);
     if (res.status < 500) break;
   }

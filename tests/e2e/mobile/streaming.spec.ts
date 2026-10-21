@@ -106,6 +106,38 @@ test.describe('mobile stream-heavy contract', () => {
     expect(cdn.length, 'some credit thumbnails should load from the CDN').toBeGreaterThan(0);
   });
 
+  // content-visibility:auto on the source blocks (removed 2026-10-21) made a
+  // Sources link land short and left the lazy images it reached unrequested.
+  test('a /credits Sources link lands on its block and the images there load', async ({ page }) => {
+    await page.route(`${CDN}/**`, (route) =>
+      route.fulfill({ status: 200, contentType: 'image/webp', body: Buffer.from([]) }),
+    );
+    await page.goto('/credits');
+    await page.waitForLoadState('networkidle');
+    // DOM click: a Playwright tap waits for a stable layout, which a page of
+    // ~2 800 loading images never has.
+    await page.evaluate(() =>
+      document.querySelector<HTMLAnchorElement>('a[href="#src-nasa"]')?.click(),
+    );
+    const block = page.locator('#src-nasa');
+    await expect
+      .poll(async () => Math.abs((await block.boundingBox())?.y ?? 9e9), { timeout: 10_000 })
+      .toBeLessThan(200);
+    await expect
+      .poll(
+        () =>
+          page.evaluate(
+            () =>
+              [...document.querySelectorAll('img')].filter((i) => {
+                const r = i.getBoundingClientRect();
+                return r.bottom > 0 && r.top < innerHeight && r.width > 0 && !i.currentSrc;
+              }).length,
+          ),
+        { timeout: 10_000, message: 'images in view after the jump that were never requested' },
+      )
+      .toBe(0);
+  });
+
   test('a /science diagram carries no srcset, so no pruned rung can be chosen', async ({
     page,
   }) => {

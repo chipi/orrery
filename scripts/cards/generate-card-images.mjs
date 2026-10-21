@@ -42,9 +42,10 @@ const SHARED_SOURCES = ['src/lib/cards/CollectibleCard.svelte'];
 
 const KIND_VERSION = {
   // v3/v2: footer slug orrery.day -> www.orrerylearn.com (2026-09-12 —
-  // orrery.day was never ours); v2: figure-decode ready-gate
-  mission: 3,
-  fleet: 3,
+  // orrery.day was never ours); v2: figure-decode ready-gate; v4: wait for
+  // the card's own lazy figure <img> to paint (shenzhou/jwst/ariane-6 raced)
+  mission: 4,
+  fleet: 4,
   'moon-site': 2,
   'mars-site': 2,
   planet: 2,
@@ -196,6 +197,24 @@ async function main() {
         const card = await pg.waitForSelector('.card[data-credit-resolved="true"]', {
           timeout: 10_000,
         });
+        // The stage's ready-gate decodes a detached Image(); the card's own
+        // figure is loading="lazy" decoding="async" and can still be unpainted
+        // at screenshot time. Wait for every <img> in the card to load (or
+        // fail, which collapses the figure) and decode.
+        await card.evaluate((el) =>
+          Promise.all(
+            [...el.querySelectorAll('img')].map(async (img) => {
+              img.loading = 'eager';
+              if (!img.complete)
+                await new Promise((r) => {
+                  img.addEventListener('load', r, { once: true });
+                  img.addEventListener('error', r, { once: true });
+                });
+              if (img.naturalWidth) await img.decode().catch(() => {});
+            }),
+          ),
+        );
+        await pg.evaluate(() => new Promise((r) => requestAnimationFrame(() => r())));
         // JPEG q90: ~190-250K vs ~560K avg for PNG (~83MB vs ~190MB across
         // the 407-card corpus); text stays crisp at deviceScaleFactor 3.
         const out = `${OUT_ROOT}/${key}.jpg`;

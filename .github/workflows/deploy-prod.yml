@@ -114,27 +114,13 @@ jobs:
           fetch-depth: 1
 
       - name: Resolve target image tag
-        # `pipeline-runner` lives in the `manual` compose profile — it
-        # does NOT start with `docker compose up`. The deploy-time
-        # `compose pull` warms the cache; cron later invokes the
-        # container on demand to fetch external data.
-        #
-        # We don't need SHA-pinning at deploy time for that workflow
-        # — `:main` always points at the most recent published image
-        # from docker-e2e's publish-platforms job, and a stale image
-        # is fine because nothing reads from it until cron fires.
-        # `override_image_sha` stays as the explicit escape hatch for
-        # rollback or for re-running an earlier batch with a known
-        # script set; otherwise we default to `:main`.
-        #
-        # Earlier history: a walk-back resolver iterated up to 50
-        # commits trying to find one whose `sha-<short>` tag existed
-        # in GHCR. That existed to paper over a self-imposed
-        # constraint ("the tag must match HEAD's SHA") that nothing
-        # downstream actually required. Dropped 2026-06-16 once we
-        # checked what `pipeline-runner`'s deploy-time job was —
-        # `profile: manual`, i.e. nothing — and realised the pin had
-        # never been load-bearing.
+        # One tag drives the mcp, lab-api AND pipeline-runner images (written to .env
+        # below). It is the deployed commit's `sha-<7>` (#599): `:main` meant a deploy of
+        # commit X ran whatever backend image happened to be newest, possibly from a later
+        # commit or one whose e2e failed. ci.yml (mcp/lab-api, after green unit) and
+        # docker-e2e.yml (pipeline-runner, after green e2e) publish `sha-<7>` on every main
+        # push; the next step refuses the deploy when any of the three is missing.
+        # `override_image_sha` deploys an earlier commit's images (rollback).
         id: sha
         if: steps.preflight.outputs.skip != 'true'
         # Dispatch input via env, never interpolated into the script (#600); it also
@@ -147,10 +133,11 @@ jobs:
             echo "::error::override_image_sha must be 7-40 lowercase hex chars"
             exit 1
           fi
+          # Published tags carry 7 hex chars; a longer override is cut to match.
           if [ -n "$OVERRIDE" ]; then
-            TAG="sha-$OVERRIDE"
+            TAG="sha-${OVERRIDE:0:7}"
           else
-            TAG="main"
+            TAG="sha-${GITHUB_SHA:0:7}"
           fi
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           # `short` output preserved for the Sentry release labelling
@@ -161,6 +148,29 @@ jobs:
           # `git rev-parse --short` varies its length with the clone.
           echo "short=$(git rev-parse HEAD | cut -c1-8)" >> "$GITHUB_OUTPUT"
           echo "::notice::Deploying with ORRERY_PIPELINE_IMAGE_TAG=$TAG"
+
+      - name: Refuse a tag GHCR does not have
+        # Fail here, before anything touches the box, rather than at `compose pull`
+        # halfway through the deploy. The packages are public: an anonymous pull token
+        # is enough to read a manifest.
+        if: steps.preflight.outputs.skip != 'true'
+        env:
+          TAG: ${{ steps.sha.outputs.tag }}
+        run: |
+          set -euo pipefail
+          missing=""
+          for img in orrery-mcp orrery-lab-api orrery-pipeline-runner; do
+            tok=$(curl -fsS "https://ghcr.io/token?scope=repository:chipi/${img}:pull" | sed -E 's/.*"token":"([^"]+)".*/\1/')
+            code=$(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: Bearer ${tok}" \
+              -H 'Accept: application/vnd.oci.image.index.v1+json,application/vnd.docker.distribution.manifest.v2+json,application/vnd.docker.distribution.manifest.list.v2+json' \
+              "https://ghcr.io/v2/chipi/${img}/manifests/${TAG}")
+            echo "${img}:${TAG} -> HTTP ${code}"
+            [ "$code" = "200" ] || missing="$missing ${img}:${TAG}"
+          done
+          if [ -n "$missing" ]; then
+            echo "::error::not on GHCR:${missing} — CI has not published this commit's images (ci.yml image jobs, docker-e2e publish). Deploy a commit whose images exist, or pass override_image_sha."
+            exit 1
+          fi
 
       - name: Setup Node 22 (build static bundle for deploy)
         if: steps.preflight.outputs.skip != 'true'

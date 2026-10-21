@@ -24,6 +24,22 @@ export interface PadMappingFile {
   >;
 }
 
+/** `needle` occurs in `hay` as a whole token: not glued to a letter or digit on
+ *  either side. Plain substring matching took Plesetsk's "NIIP-53" for Baikonur's
+ *  "niip-5" and pad "LC132/2" for "LC1", crediting 566 Plesetsk launches to
+ *  Gagarin's Start. Both arguments are lower-case. */
+function hasToken(hay: string, needle: string): boolean {
+  let from = 0;
+  for (;;) {
+    const i = hay.indexOf(needle, from);
+    if (i < 0) return false;
+    const before = hay[i - 1];
+    const after = hay[i + needle.length];
+    if (!(before && /[a-z0-9]/.test(before)) && !(after && /[a-z0-9]/.test(after))) return true;
+    from = i + 1;
+  }
+}
+
 export function resolveLaunchSiteRef(
   padName: string | null | undefined,
   padLocation: string | null | undefined,
@@ -51,9 +67,9 @@ export function resolveLaunchSiteRef(
     for (const [siteId, rule] of Object.entries(mapping.sites)) {
       const locs = rule.pad_location_includes ?? [];
       const names = rule.pad_name ?? [];
-      const locHit = locs.some((l) => padLocLc.includes(l.toLowerCase()));
+      const locHit = locs.some((l) => hasToken(padLocLc, l.toLowerCase()));
       if (!locHit) continue;
-      const nameHit = names.some((n) => padNameLc.includes(n.toLowerCase()));
+      const nameHit = names.some((n) => hasToken(padNameLc, n.toLowerCase()));
       if (nameHit) return siteId;
     }
   }

@@ -420,7 +420,6 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -496,7 +495,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2010-04-22-atlas-v-x-37b-no-1": {
       "id": "2010-04-22-atlas-v-x-37b-no-1",
@@ -594,7 +594,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2010-04-28-soyuz-u-pvb-progress-7k-tgm-no-405": {
       "id": "2010-04-28-soyuz-u-pvb-progress-7k-tgm-no-405",
@@ -789,7 +790,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2010-06-02-chang-zheng-di-si-ke-beidou-daohang": {
       "id": "2010-06-02-chang-zheng-di-si-ke-beidou-daohang",
@@ -1040,7 +1042,6 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -1411,7 +1412,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2010-09-10-soyuz-u-pvb-progress-7k-tgm-no-407": {
       "id": "2010-09-10-soyuz-u-pvb-progress-7k-tgm-no-407",
@@ -1604,7 +1606,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2010-10-01-chang-zheng-chang-e-erhao-weixing": {
       "id": "2010-10-01-chang-zheng-chang-e-erhao-weixing",
@@ -2519,7 +2522,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2011-02-06-minotaur-i-usa-225": {
       "id": "2011-02-06-minotaur-i-usa-225",
@@ -3304,7 +3308,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2011-06-30-minotaur-i-ors-1": {
       "id": "2011-06-30-minotaur-i-ors-1",
@@ -5882,7 +5887,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2012-05-17-h-iia-202-gcom-w1": {
       "id": "2012-05-17-h-iia-202-gcom-w1",
@@ -6434,7 +6440,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2012-08-01-soyuz-u-pvb-progress-7k-tgm-no-416": {
       "id": "2012-08-01-soyuz-u-pvb-progress-7k-tgm-no-416",
@@ -7576,7 +7583,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2013-01-27-h-iia-202-igs-radar-4": {
       "id": "2013-01-27-h-iia-202-igs-radar-4",
@@ -8612,7 +8620,6 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -9173,7 +9180,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2013-09-14-epsilon-unknown-mission": {
       "id": "2013-09-14-epsilon-unknown-mission",
@@ -9792,7 +9800,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2013-11-25-chang-zheng-sw5": {
       "id": "2013-11-25-chang-zheng-sw5",
@@ -10118,7 +10127,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2013-12-26-proton-m-briz-m-ekspress-am-5": {
       "id": "2013-12-26-proton-m-briz-m-ekspress-am-5",
@@ -11095,7 +11105,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2014-05-24-h-iia-202-alos-2": {
       "id": "2014-05-24-h-iia-202-alos-2",
@@ -11354,7 +11365,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2014-07-08-soyuz-2-1b-soyuz-rideshare-3": {
       "id": "2014-07-08-soyuz-2-1b-soyuz-rideshare-3",
@@ -12938,7 +12950,6 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -12981,7 +12992,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2014-12-25-soyuz-2-1b-lotos-s2-no-802": {
       "id": "2014-12-25-soyuz-2-1b-lotos-s2-no-802",
@@ -13830,7 +13842,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2015-04-14-falcon-9-dragon-c108": {
       "id": "2015-04-14-falcon-9-dragon-c108",
@@ -14878,7 +14891,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2015-09-25-chang-zheng-tw-1": {
       "id": "2015-09-25-chang-zheng-tw-1",
@@ -16350,7 +16364,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2016-02-17-h-iia-202-astro-h": {
       "id": "2016-02-17-h-iia-202-astro-h",
@@ -17103,7 +17118,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2016-06-09-proton-m-briz-m-intelsat-is-31-dla-2": {
       "id": "2016-06-09-proton-m-briz-m-intelsat-is-31-dla-2",
@@ -20989,7 +21005,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2017-10-14-soyuz-2-1a-progress-7k-tgm-no-437": {
       "id": "2017-10-14-soyuz-2-1a-progress-7k-tgm-no-437",
@@ -23013,7 +23030,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2018-04-26-chang-zheng-ovs-2-ohs-1a-b-c-d": {
       "id": "2018-04-26-chang-zheng-ovs-2-ohs-1a-b-c-d",
@@ -24975,7 +24993,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2018-12-03-soyuz-fg-soyuz-11f732a48-no-741": {
       "id": "2018-12-03-soyuz-fg-soyuz-11f732a48-no-741",
@@ -27525,7 +27544,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2019-08-30-kuaizhou-1a-unknown-mission": {
       "id": "2019-08-30-kuaizhou-1a-unknown-mission",
@@ -28803,7 +28823,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-41-1"
     },
     "2019-12-27-chang-zheng-sj-20": {
       "id": "2019-12-27-chang-zheng-sj-20",

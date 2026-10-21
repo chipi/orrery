@@ -27,6 +27,28 @@ const localizedRoots = expandLocalizedRoots(collectCanonicalRoutes());
 const config = {
   preprocess: vitePreprocess(),
   kit: {
+    // Hash-mode CSP (#601): each prerendered page gets a <meta> CSP listing the
+    // sha256 of its own hydration script, so an injected inline script does not
+    // run even though the nginx header keeps 'unsafe-inline' (that header is
+    // shared by every page and cannot carry per-page hashes; browsers enforce
+    // both policies). 'unsafe-hashes' + one hash admits only the event-replay
+    // handler Svelte puts on <img> (onload/onerror="this.__e=event"). The other
+    // listed hash is app.html's viewport script (a header policy governs it too;
+    // csp-hashes.test.ts fails when either string changes).
+    csp: {
+      mode: 'hash',
+      directives: {
+        'script-src': [
+          'self',
+          'unsafe-hashes',
+          'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=',
+          'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=',
+          // Every Umami tracker host the app can load (analytics.ts, target-env.ts).
+          'https://analytics.orrerylearn.com',
+          'https://umami.tail6d0ed4.ts.net',
+        ],
+      },
+    },
     adapter: adapter({
       pages: 'build',
       assets: 'build',

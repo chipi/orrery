@@ -711,7 +711,9 @@ server {
   add_header X-Frame-Options "SAMEORIGIN" always;
   add_header X-Content-Type-Options "nosniff" always;
   add_header Referrer-Policy "strict-origin-when-cross-origin" always;
-  add_header Content-Security-Policy "default-src 'self'; script-src 'self' https://cloud.umami.is; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://*.sentry.io https://cloud.umami.is; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'" always;
+  # Content-Security-Policy: the full header lives in ops/docker/nginx.conf
+  # (not copied here, so it can't drift); inline scripts are additionally
+  # pinned per page by SvelteKit's hash-mode <meta> CSP (svelte.config.js, #601).
 }
 ```
 

@@ -1,11 +1,15 @@
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import config from '../../svelte.config.js';
 
 // svelte.config.js lists two fixed inline-script hashes in its CSP (#601). If
 // either source string changes, the browser blocks that script with no build
 // error, so pin both to their sources here.
+// Imported by a non-literal path so svelte.config.js stays out of the typecheck.
+const configPath = '../../svelte.config.js';
+const { default: config } = (await import(/* @vite-ignore */ configPath)) as {
+  default: { kit?: { csp?: { directives?: Record<string, string[]> } } };
+};
 const sha = (s: string) => `sha256-${createHash('sha256').update(s).digest('base64')}`;
 const scriptSrc: string[] = config.kit?.csp?.directives?.['script-src'] ?? [];
 

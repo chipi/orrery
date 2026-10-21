@@ -43,6 +43,7 @@
     ogLocaleAlternates,
   } from '$lib/seo';
   import { loadLocaleAltText } from '$lib/image-alt';
+  import { localeBundleOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import { initAnalytics, startEngagementHeartbeat, track, trackRouteEnter } from '$lib/analytics';
   import { migrateLegacyLocaleCookie } from '$lib/locale-cookie-migration';
@@ -137,8 +138,10 @@
     if (!browser) return;
     syncDocumentLocaleAttributes(activeLocale);
     // Load the locale's image alt-text overlay so panels opened afterwards
-    // render localized alt-text (falls back to en-US; #257).
-    void loadLocaleAltText(activeLocale, base);
+    // render localized alt-text (falls back to en-US; #257). From the locale
+    // bundle origin: the mobile app streams non-default locale data from the CDN
+    // (prune-streamed-assets.mjs drops it from the bundle), the web serves it locally.
+    void loadLocaleAltText(activeLocale, localeBundleOrigin(activeLocale));
   });
 
   // PRD-016 M15 / RFC-019 §7.7 (S11) — ?audio={episode-id} deep-link.

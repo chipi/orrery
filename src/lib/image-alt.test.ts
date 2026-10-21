@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { getImageAlt, registerLocaleAltText, loadedLocales, loadLocaleAltText } from './image-alt';
 
 describe('getImageAlt — locale-aware alt-text accessor', () => {
@@ -38,5 +38,21 @@ describe('getImageAlt — locale-aware alt-text accessor', () => {
     // short-circuits without a fetch, so it resolves and adds nothing.
     await expect(loadLocaleAltText('en-US')).resolves.toBeUndefined();
     expect(loadedLocales()).toContain('en-US');
+  });
+
+  // The mobile app streams non-default locale data from the CDN: +layout passes
+  // localeBundleOrigin(locale) as the base, and the loader must fetch under it.
+  it('loadLocaleAltText fetches the locale file under the origin it is given', async () => {
+    const fetchSpy = vi.fn(async () => new Response(JSON.stringify({ '/images/x.jpg': 'Bild' })));
+    vi.stubGlobal('fetch', fetchSpy);
+    try {
+      await loadLocaleAltText('de', 'https://cdn.example/orrery');
+      expect(fetchSpy).toHaveBeenCalledWith(
+        'https://cdn.example/orrery/data/image-alt-text/de.json',
+      );
+      expect(getImageAlt('/images/x.jpg', 'de')).toBe('Bild');
+    } finally {
+      vi.unstubAllGlobals();
+    }
   });
 });

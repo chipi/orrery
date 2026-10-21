@@ -19,6 +19,7 @@
  *   - build/diagrams/**\/*-<w>.webp   diagram width rungs; on-device srcsetFor
  *                                    skips /diagrams and uses the base file
  *   - build/data/i18n/<non-en>.json  13 non-default collapsed locale bundles
+ *   - build/data/image-alt-text/<non-en>.json  13 alt-text overlays, streamed the same way
  *   - build/data/i18n/<locale>/      raw per-topic overlay trees — build-time
  *                                    source only; runtime loads the collapsed
  *                                    <locale>.json (src/lib/data.ts), never the
@@ -168,6 +169,16 @@ async function targets() {
         if (entry.name !== `${DEFAULT_LOCALE}.json`) list.push(full);
       }
     }
+  }
+
+  // Non-default image alt-text overlays (~1 MB each since every alt text is translated,
+  // 2026-10-21): streamed like the locale bundles (+layout loads them from
+  // localeBundleOrigin). en-US is imported into the JS bundle and never fetched.
+  const alt = path.join(BUILD, 'data', 'image-alt-text');
+  if (existsSync(alt)) {
+    for (const name of await readdir(alt))
+      if (name.endsWith('.json') && name !== `${DEFAULT_LOCALE}.json`)
+        list.push(path.join(alt, name));
   }
 
   // Non-default-locale prerendered HTML: the /<locale>/ tree + the /<locale>.html

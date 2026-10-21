@@ -63,6 +63,7 @@ test.describe('mobile stream-heavy contract', () => {
     // Streamed off-device (ADR-078) — must NOT be in the local bundle.
     expect((await request.get('/images/app-landing-hero.webp')).status()).toBe(404);
     expect((await request.get('/data/i18n/de.json')).status()).toBe(404); // non-default locale
+    expect((await request.get('/data/image-alt-text/de.json')).status()).toBe(404); // streamed alt text
     // 4K LOD textures pruned + gated off (ADR-079 D3).
     expect((await request.get('/textures/4k_moon.jpg')).status()).toBe(404);
     expect((await request.get('/textures/4k_sun.jpg')).status()).toBe(404);

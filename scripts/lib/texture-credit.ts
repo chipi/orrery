@@ -28,7 +28,13 @@ const SSS_TEXTURES = new Set(TEXTURES);
 // available with attribution; original source data NASA PDS public
 // domain. Used for /explore natural-satellite textures where Solar
 // System Scope doesn't publish a map (#287 Slice B + parts of D).
-const BJJ_TEXTURES = new Set(['4k_io.jpg', '2k_europa.jpg', '2k_ganymede.jpg', '2k_callisto.jpg']);
+const BJJ_TEXTURES = new Set([
+  '4k_io.jpg',
+  '2k_io.jpg',
+  '2k_europa.jpg',
+  '2k_ganymede.jpg',
+  '2k_callisto.jpg',
+]);
 const BJJ_URL = 'https://bjj.mmedia.is/data/planetary_maps.html';
 
 // Wikimedia Commons — NASA mission imagery (public domain by US
@@ -39,9 +45,19 @@ const WIKIMEDIA_TEXTURES: Record<string, { mission: string; commons_title: strin
     mission: 'NASA / JPL-Caltech / University of Arizona / Cassini ISS',
     commons_title: 'PIA22770-SaturnMoon-Titan-Surface-20181206.jpg',
   },
+  // The 2k files below are downscaled from the 4k map of the same name.
+  '2k_titan.jpg': {
+    mission: 'NASA / JPL-Caltech / University of Arizona / Cassini ISS',
+    commons_title: 'PIA22770-SaturnMoon-Titan-Surface-20181206.jpg',
+  },
+  // A clean colour mosaic; the earlier PIA11145 map carried a title and a lat/long frame.
   '4k_enceladus.jpg': {
     mission: 'NASA / JPL-Caltech / SSI / Cassini ISS',
-    commons_title: 'Map of Enceladus December 2008 PIA11145.jpg',
+    commons_title: 'Color map of Enceladus PIA18435 (modified).jpg',
+  },
+  '2k_enceladus.jpg': {
+    mission: 'NASA / JPL-Caltech / SSI / Cassini ISS',
+    commons_title: 'Color map of Enceladus PIA18435 (modified).jpg',
   },
   // HiRISE PSP_007769_9010 (2008-03-23), per the Commons file page — not Mars Express.
   '2k_phobos.jpg': {
@@ -52,13 +68,19 @@ const WIKIMEDIA_TEXTURES: Record<string, { mission: string; commons_title: strin
     mission: 'NASA / JPL-Caltech / Viking 1 orbiter',
     commons_title: 'Deimos-viking1.jpg',
   },
+  // The global surface mosaic; the earlier DEM grid carried an elevation legend and labels.
   '2k_charon.jpg': {
     mission: 'NASA / JHUAPL / SwRI / New Horizons LORRI',
-    commons_title: 'Charon Basemap DEM Grid.jpg',
+    commons_title: 'Cpmap cyl PS717 HR 180.jpg',
   },
+  // A cylindrical colour map; the earlier file was a photo of Pluto's disk, not a map.
   '4k_pluto.jpg': {
-    mission: 'NASA / JHUAPL / SwRI / New Horizons LORRI',
-    commons_title: 'NH-Pluto-GlobalMosaic-TrueColor-20150714-Released20150724.jpg',
+    mission: 'NASA / JHUAPL / SwRI / New Horizons Ralph MVIC',
+    commons_title: 'Pluto color mapmosaic.jpg',
+  },
+  '2k_pluto.jpg': {
+    mission: 'NASA / JHUAPL / SwRI / New Horizons Ralph MVIC',
+    commons_title: 'Pluto color mapmosaic.jpg',
   },
 };
 

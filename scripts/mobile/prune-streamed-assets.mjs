@@ -56,9 +56,13 @@ const DEFAULT_LOCALE = baseLocale;
 // 4K planet/surface textures whose 2K sibling ships on-device. The 4K LOD
 // upgrade is gated off under __MOBILE__ at every load site (explore, fly, iss,
 // tiangong, SurfaceScene — ADR-079 D3), so these are never requested on mobile.
-// The four base-4K bodies with NO 2K sibling (io, titan, enceladus, pluto) are
-// NOT listed here — they're downscaled in place by downscale-base-textures.mjs.
+// io, titan, enceladus and pluto got 2K siblings in #596 (they used to be base-4K
+// and were shrunk in place), so they are pruned like the rest.
 const PRUNED_4K_TEXTURES = [
+  'textures/4k_io.jpg',
+  'textures/4k_titan.jpg',
+  'textures/4k_enceladus.jpg',
+  'textures/4k_pluto.jpg',
   'textures/4k_earth_daymap.jpg',
   'textures/4k_moon.jpg',
   'textures/4k_mars.jpg',

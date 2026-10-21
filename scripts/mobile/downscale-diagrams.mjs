@@ -9,7 +9,7 @@
  * PLACE in build/ (same filename — no code/manifest/provenance change) to a
  * 1000 px, tighter-WebP mobile rung. The browser build is untouched.
  *
- * Mirrors downscale-base-textures.mjs: runs AFTER prune-streamed-assets.mjs in
+ * Runs AFTER prune-streamed-assets.mjs in
  * `build:mobile`, before the size-budget check. NO-OP unless MOBILE=1.
  */
 import sharp from 'sharp';

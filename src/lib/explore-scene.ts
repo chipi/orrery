@@ -174,7 +174,7 @@ export const PLANETS: PlanetVisual[] = [
       {
         id: 'io',
         name: 'Io',
-        texture: '4k_io.jpg',
+        texture: '2k_io.jpg',
         sizeUnits: 1.3,
         orbitUnits: 24,
         periodDays: 1.769,
@@ -227,7 +227,7 @@ export const PLANETS: PlanetVisual[] = [
       {
         id: 'titan',
         name: 'Titan',
-        texture: '4k_titan.jpg',
+        texture: '2k_titan.jpg',
         sizeUnits: 1.7,
         orbitUnits: 36,
         periodDays: 15.945,
@@ -236,7 +236,7 @@ export const PLANETS: PlanetVisual[] = [
       {
         id: 'enceladus',
         name: 'Enceladus',
-        texture: '4k_enceladus.jpg',
+        texture: '2k_enceladus.jpg',
         sizeUnits: 0.8,
         orbitUnits: 22,
         periodDays: 1.37,
@@ -348,7 +348,7 @@ export const PLANETS: PlanetVisual[] = [
     inc: 17.16,
     axialTiltDeg: 122.53,
     rotationHours: -153.3,
-    texture: '4k_pluto.jpg',
+    texture: '2k_pluto.jpg',
     texture4k: '4k_pluto.jpg',
     satellites: [
       {

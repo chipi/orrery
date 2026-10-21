@@ -70,7 +70,8 @@ test.describe('mobile stream-heavy contract', () => {
     // Kept on-device so the app is fully usable offline from install.
     expect((await request.get('/data/i18n/en-US.json')).status()).toBe(200); // default locale
     expect((await request.get('/textures/2k_moon.jpg')).status()).toBe(200); // 2K sibling
-    expect((await request.get('/textures/4k_io.jpg')).status()).toBe(200); // base-4K, downscaled
+    expect((await request.get('/textures/4k_io.jpg')).status()).toBe(404); // 4K pruned (#596)
+    expect((await request.get('/textures/2k_io.jpg')).status()).toBe(200); // its 2K base
   });
 
   // #482 added /credit-thumbs and /diagrams width rungs; the mobile bundle

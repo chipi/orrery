@@ -26157,22 +26157,6 @@
       "scored_at": "2026-06-12T21:07:12.874Z",
       "scoring_cost_usd": 0.007686
     },
-    "/images/fleet-galleries/salyut-2/02.jpg": {
-      "score": 2,
-      "subject": "Black and white line-drawing diagram of a space station or spacecraft module with solar panels",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:07:16.142Z",
-      "scoring_cost_usd": 0.007596
-    },
     "/images/fleet-galleries/salyut-3/01.jpg": {
       "score": 2,
       "subject": "Black-and-white line drawing diagram of a Soviet/Russian spacecraft (likely Soyuz or Salyut station) with solar panels and antenna array.",
@@ -26188,22 +26172,6 @@
       "fallback": false,
       "scored_at": "2026-06-12T21:07:19.964Z",
       "scoring_cost_usd": 0.007626
-    },
-    "/images/fleet-galleries/salyut-3/02.jpg": {
-      "score": 2,
-      "subject": "Black and white line art diagram of a satellite or space station with solar panels against a black background.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:07:22.881Z",
-      "scoring_cost_usd": 0.007536
     },
     "/images/fleet-galleries/salyut-3/03.jpg": {
       "score": 2,
@@ -26253,22 +26221,6 @@
       "scored_at": "2026-06-12T21:07:16.142Z",
       "scoring_cost_usd": 0.007596
     },
-    "/images/fleet-galleries/salyut-4/01.jpg": {
-      "score": 2,
-      "subject": "Black and white line drawing or diagram depicting various spacecraft and satellite components on a dark background.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:07:33.389Z",
-      "scoring_cost_usd": 0.007521
-    },
     "/images/fleet-galleries/salyut-4/02.jpg": {
       "score": 2,
       "subject": "Line-drawing diagram of a Soviet space station (likely Salyut or Mir) with an approaching Soyuz spacecraft.",
@@ -26284,22 +26236,6 @@
       "fallback": false,
       "scored_at": "2026-06-12T21:07:36.541Z",
       "scoring_cost_usd": 0.007506
-    },
-    "/images/fleet-galleries/salyut-4/03.jpg": {
-      "score": 2,
-      "subject": "Black and white line drawing diagram of a space station with solar panels and an approaching Soyuz spacecraft.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:07:40.133Z",
-      "scoring_cost_usd": 0.007611
     },
     "/images/fleet-galleries/salyut-4/04.jpg": {
       "score": 2,

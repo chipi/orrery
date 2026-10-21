@@ -71,7 +71,7 @@ export function createFlySceneHost(deps: FlySceneHostDeps) {
       saturn: `${base}/textures/2k_saturn.jpg`,
       uranus: `${base}/textures/2k_uranus.jpg`,
       neptune: `${base}/textures/2k_neptune.jpg`,
-      pluto: `${base}/textures/4k_pluto.jpg`,
+      pluto: `${base}/textures/2k_pluto.jpg`,
       // No Ceres texture in the catalogue today — falls back to the
       // DEST_STYLE colour. Add `2k_ceres.jpg` to the texture pack to
       // light it up automatically.

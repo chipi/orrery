@@ -132,9 +132,14 @@ export function pickVariant(
  * the tile's `.1x1.jpg` sibling — every referenced tile has one (tested in
  * hotspot-tiles.test.ts). Without this, 64 tiles with no vision entry loaded
  * their full 1600-3072 px source on a deep zoom, phones included (#482).
+ * Rover traverse patches (`…/traverse/km-NN.jpg`, at most 1024 px) have no
+ * sibling and load as they are.
  */
 export function hotspotTileTexture(src: string, entry: ImageVisionEntry | undefined): string {
-  return pickVariant(entry, 'thumbnail') ?? src.replace(/\.(jpe?g|png|webp)$/i, '.1x1.jpg');
+  const variant = pickVariant(entry, 'thumbnail');
+  if (variant) return variant;
+  if (src.includes('/traverse/')) return src;
+  return src.replace(/\.(jpe?g|png|webp)$/i, '.1x1.jpg');
 }
 
 /**

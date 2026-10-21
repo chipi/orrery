@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { hotspotTileTexture } from './image-vision';
 
@@ -22,6 +22,21 @@ describe('surface hotspot tiles (#482)', () => {
     const sources = tier2Sources();
     expect(sources.length).toBeGreaterThan(100);
     const missing = sources.filter((s) => !existsSync('static' + hotspotTileTexture(s, undefined)));
+    expect(missing).toEqual([]);
+  });
+
+  // The flat-patch view also opens rover traverse stops (route-patches.json). They
+  // have no .1x1 sibling; before they were handled, every stop 404'd (2026-10-21).
+  it('every rover traverse patch resolves to a file that exists', () => {
+    const dir = 'static/data/mars-traverses';
+    const paths = new Set<string>();
+    for (const f of readdirSync(dir).filter((n) => n.endsWith('.route-patches.json')))
+      for (const m of readFileSync(`${dir}/${f}`, 'utf8').matchAll(/"(\/images\/[^"]+\.jpg)"/g))
+        paths.add(m[1]);
+    expect(paths.size).toBeGreaterThan(100);
+    const missing = [...paths].filter(
+      (s) => !existsSync('static' + hotspotTileTexture(s, undefined)),
+    );
     expect(missing).toEqual([]);
   });
 

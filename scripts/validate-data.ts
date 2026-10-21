@@ -79,17 +79,10 @@ function overlayFileLocaleGaps(rel: string): string[] {
 // silent, so the exemption stays visible. Remove a prefix once its subtree is
 // translated to re-enable the zero-gap enforcement for it.
 //
-// Empty: the /programs editorial layer and its new flagship missions (Gemini,
-// Soyuz 1/11) are now fully translated to all 14 locales, so the English-first
-// phase is over and full zero-gap coverage is enforced everywhere again.
-// /explore v2 overlays (named stars, exoplanets, …) are fully translated across
-// all 14 locales; only the English-first Long View essays remain exempt.
-const I18N_ENGLISH_FIRST_PREFIXES: string[] = [
-  // The Long View essays are authored English-first — we lock the format + voice
-  // across the batch before spending the 14-locale translation. Exempt them from
-  // the all-locale overlay gate until translated (then remove this entry).
-  'essays/',
-];
+// Empty: every subtree is translated in all locales, so full zero-gap coverage is
+// enforced everywhere. The last exemption, the Long View essays, was removed on
+// 2026-10-21 once all 13 essays were checked complete in every locale (#608).
+const I18N_ENGLISH_FIRST_PREFIXES: string[] = [];
 
 function allLocaleOverlayGaps(): string[] {
   const gaps: string[] = [];

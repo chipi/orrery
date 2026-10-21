@@ -37,12 +37,19 @@
  * taking the pruned build to 72.9 MB — 0.1 MB under the old cap. Operator
  * raised to 75; ~2.1 MB headroom. Still far under the iOS 200 MB
  * cellular-OTA cap; a structural re-leak (a ~20 MB texture bucket) still trips.
+ *
+ * 2026-10-21 re-baseline 75 → 77 MB (a data floor, not a leak): the v1.0 image
+ * pass — corrected credits for ~130 photos, ~1,400 rewritten alt texts, the
+ * translated Artemis II–V galleries and the Artemis IV/V flight data — added
+ * 0.37 MB to static/data and took the pruned build to 75.4 MB (data 32.7 ·
+ * textures 14.4 · _app 10.4 · science 6.5 · diagrams 4.7). Operator chose the
+ * re-baseline over cutting credits or alt text from the offline bundle.
  */
 import { statSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
 
 const BUILD = path.resolve(process.cwd(), 'build');
-const BUDGET_MB = 75;
+const BUDGET_MB = 77;
 
 if (process.env.MOBILE !== '1') {
   console.log('[size-budget] MOBILE != 1 — skipping (browser build is not budgeted).');

@@ -59,7 +59,7 @@ static server.
 ### The size budget (regression gate)
 
 `build:mobile` ends with `scripts/mobile/check-mobile-size-budget.mjs`: if the
-pruned `build/` exceeds **75 MB** the build fails and prints the largest
+pruned `build/` exceeds **77 MB** the build fails and prints the largest
 buckets. This is what stops a leak — a re-added locale HTML tree, the
 images/audio buckets, or the 4K textures slipping past their gate — from
 silently re-bloating the OTA download. The pruned bundle is ~73 MB today; the

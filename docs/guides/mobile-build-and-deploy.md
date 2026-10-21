@@ -42,7 +42,7 @@ npm run open:ios       # npx cap open ios
 npm run open:android
 ```
 
-- **`build:mobile`** is a 6-step chain (each `MOBILE=1`, since env doesn't cross `&&`): `build` → `prune-streamed-assets.mjs` (strips `build/images`, `build/audio`, `build/credit-thumbs`, the `/diagrams` width rungs, `sitemap.xml`, the `/c/*` card stubs, the 13 non-default locale HTML trees + bundles + raw i18n, dead `.br/.gz`, and the 4K LOD textures) → `downscale-base-textures.mjs` (io/titan/enceladus/pluto in place) → `downscale-diagrams.mjs` → `stamp-splash-version.mjs` → `check-mobile-size-budget.mjs` (fails over 75 MB). Takes a ~1.8 GB naive build down to **~71 MB** (2026-10-17).
+- **`build:mobile`** is a 6-step chain (each `MOBILE=1`, since env doesn't cross `&&`): `build` → `prune-streamed-assets.mjs` (strips `build/images`, `build/audio`, `build/credit-thumbs`, the `/diagrams` width rungs, `sitemap.xml`, the `/c/*` card stubs, the 13 non-default locale HTML trees + bundles + raw i18n, dead `.br/.gz`, and the 4K LOD textures) → `downscale-base-textures.mjs` (io/titan/enceladus/pluto in place) → `downscale-diagrams.mjs` → `stamp-splash-version.mjs` → `check-mobile-size-budget.mjs` (fails over 77 MB). Takes a ~1.8 GB naive build down to **~71 MB** (2026-10-17).
 - **Simulator UDIDs:** `xcrun simctl list devices available | grep iPhone`. Boot one: `xcrun simctl boot <udid>`.
 - **Screenshot (headless):** `xcrun simctl io <udid> screenshot /tmp/x.png` (iOS) · `adb exec-out screencap -p > /tmp/x.png` (Android).
 

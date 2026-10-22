@@ -1,0 +1,18 @@
+{
+  "name": "Kennedy Space Center Visitor Complex",
+  "city": "Merritt Island, Florida",
+  "description": "Het bezoekerscentrum van het lanceerterrein van NASA in Florida, naast de lanceerplatformen waarvandaan Apollo, de Space Shuttle en de raketten van nu vertrokken.",
+  "items": {
+    "apollo-csm-block-ii": "Commandomodule Kitty Hawk, gevlogen tijdens Apollo 14 (1971)",
+    "apollo-lm": "Maanlander LM-9, gebouwd om te vliegen en nooit gevlogen",
+    "atlantis": "Space Shuttle Atlantis, gevlogen tijdens 33 missies",
+    "space-shuttle-orbiter": "Space Shuttle Atlantis, gevlogen tijdens 33 missies",
+    "gemini": "Gemini IX-A-capsule, gevlogen (1966)",
+    "mercury-capsule": "Sigma 7, gevlogen door Wally Schirra (1962)",
+    "orion": "Orion-bemanningsmodule, gevlogen tijdens Exploration Flight Test 1 (2014)",
+    "saturn-v": "Een complete Saturn V van echte, nooit gevlogen trappen, in het Apollo/Saturn V Center",
+    "saturn-ib": "Saturn IB SA-209, de nooit gevlogen reddingsraket voor Skylab en reserveraket voor Apollo-Soyuz",
+    "delta-ii": "De laatste Delta II, gebouwd uit overgebleven vluchthardware, in de Rocket Garden",
+    "falcon-heavy": "Booster B1023, gevlogen als eerste trap van een Falcon 9 en als zijbooster bij de eerste Falcon Heavy (2018)"
+  }
+}

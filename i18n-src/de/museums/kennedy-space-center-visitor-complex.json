@@ -1,0 +1,18 @@
+{
+  "name": "Kennedy Space Center Visitor Complex",
+  "city": "Merritt Island, Florida",
+  "description": "Das Besucherzentrum des Startgeländes der NASA in Florida, neben den Rampen, von denen Apollo, das Space Shuttle und die heutigen Raketen starteten.",
+  "items": {
+    "apollo-csm-block-ii": "Kommandomodul Kitty Hawk, geflogen bei Apollo 14 (1971)",
+    "apollo-lm": "Mondlandefähre LM-9, für den Flug gebaut und nie geflogen",
+    "atlantis": "Space Shuttle Atlantis, auf 33 Missionen geflogen",
+    "space-shuttle-orbiter": "Space Shuttle Atlantis, auf 33 Missionen geflogen",
+    "gemini": "Gemini-IX-A-Kapsel, geflogen (1966)",
+    "mercury-capsule": "Sigma 7, geflogen von Wally Schirra (1962)",
+    "orion": "Orion-Besatzungsmodul, geflogen beim Exploration Flight Test 1 (2014)",
+    "saturn-v": "Eine vollständige Saturn V aus echten, ungeflogenen Stufen, im Apollo/Saturn V Center",
+    "saturn-ib": "Saturn IB SA-209, die nie geflogene Rettungsrakete für Skylab und Ersatzrakete für Apollo-Sojus",
+    "delta-ii": "Die letzte Delta II, aus übrig gebliebener Flughardware gebaut, im Rocket Garden",
+    "falcon-heavy": "Booster B1023, geflogen als erste Stufe einer Falcon 9 und als seitlicher Booster beim ersten Falcon Heavy (2018)"
+  }
+}

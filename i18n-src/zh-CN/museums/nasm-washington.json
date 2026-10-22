@@ -1,0 +1,17 @@
+{
+  "name": "美国国家航空航天博物馆",
+  "city": "华盛顿",
+  "description": "史密森学会的国家航空与航天博物馆，位于国家广场。",
+  "items": {
+    "apollo-csm-block-ii": "指令舱Columbia，曾执行Apollo 11任务（1969年）",
+    "apollo-lm": "登月舱 LM-2，为飞行而制造，从未飞行",
+    "gemini": "Gemini IV 返回舱，曾执行美国首次太空行走任务（1965年）",
+    "mercury-capsule": "Friendship 7，由约翰·格伦驾驶，执行美国首次轨道飞行（1962年）",
+    "/science/history/apollo-11-1969": "指令舱Columbia，曾执行Apollo 11任务",
+    "merlin-1d": "一台曾执行飞行的 Merlin 1D 发动机，由SpaceX于2022年捐赠",
+    "sojourner": "Marie Curie，Sojourner 火星车的飞行备份",
+    "tundra-sirius": "Sirius FM-4，一颗可随时发射但从未发射的卫星",
+    "planet-labs": "一颗早期的 Dove 卫星，由Planet Labs捐赠的飞行单元",
+    "skylab": "Skylab备份轨道工作舱，可以走进去参观"
+  }
+}

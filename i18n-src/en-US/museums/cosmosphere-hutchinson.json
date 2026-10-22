@@ -1,0 +1,13 @@
+{
+  "name": "Cosmosphere",
+  "city": "Hutchinson, Kansas",
+  "description": "A Kansas space museum known for restoring flown American and Soviet spacecraft.",
+  "items": {
+    "apollo-csm-block-ii": "Command module Odyssey, flown on Apollo 13 (1970)",
+    "gemini": "Gemini X capsule, flown (1966)",
+    "mercury-capsule": "Liberty Bell 7, flown by Gus Grissom (1961) and raised from the Atlantic in 1999",
+    "vostok": "A flown Vostok capsule",
+    "/science/history/sputnik-1957": "A flight-ready backup of Sputnik 1",
+    "merlin-1d": "A flown Merlin engine from the Koreasat 5A launch (2017)"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Space Center Houston",
+  "city": "Houston",
+  "description": "Het bezoekerscentrum van het Johnson Space Center van NASA, thuisbasis van de missiecontrole en het astronautenkorps.",
+  "items": {
+    "apollo-csm-block-ii": "Commandomodule America, gevlogen tijdens Apollo 17 (1972)",
+    "gemini": "Gemini V-capsule, gevlogen (1965)",
+    "mercury-capsule": "Faith 7, gevlogen door Gordon Cooper (1963)",
+    "saturn-v": "Een complete Saturn V van nooit gevlogen vluchttrappen, in het Rocket Park"
+  }
+}

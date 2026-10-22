@@ -1,0 +1,18 @@
+{
+  "name": "केनेडी स्पेस सेंटर विज़िटर कॉम्प्लेक्स",
+  "city": "मेरिट आइलैंड, फ़्लोरिडा",
+  "description": "NASA के फ़्लोरिडा प्रक्षेपण-स्थल का आगंतुक केंद्र, उन प्रक्षेपण-स्थलों के पास जहाँ से Apollo, Space Shuttle और आज के रॉकेट रवाना हुए।",
+  "items": {
+    "apollo-csm-block-ii": "कमांड मॉड्यूल Kitty Hawk, जिसने Apollo 14 पर उड़ान भरी (1971)",
+    "apollo-lm": "चंद्र मॉड्यूल LM-9, जो उड़ान के लिए बना था और कभी उड़ा नहीं",
+    "atlantis": "Space Shuttle Atlantis, जिसने 33 मिशनों पर उड़ान भरी",
+    "space-shuttle-orbiter": "Space Shuttle Atlantis, जिसने 33 मिशनों पर उड़ान भरी",
+    "gemini": "Gemini IX-A कैप्सूल, उड़ान भर चुका (1966)",
+    "mercury-capsule": "Sigma 7, जिसे वैली शिर्रा ने उड़ाया (1962)",
+    "orion": "Orion क्रू मॉड्यूल, जिसने Exploration Flight Test 1 पर उड़ान भरी (2014)",
+    "saturn-v": "असली, बिना उड़े चरणों से बना एक पूरा Saturn V, Apollo/Saturn V सेंटर में",
+    "saturn-ib": "Saturn IB SA-209, Skylab बचाव और Apollo–Soyuz का वह बैकअप रॉकेट जो कभी उड़ा नहीं",
+    "delta-ii": "आख़िरी Delta II, जो बचे हुए उड़ान-उपकरणों से बना, रॉकेट गार्डन में",
+    "falcon-heavy": "बूस्टर B1023, जिसने Falcon 9 के पहले चरण के रूप में और पहले Falcon Heavy (2018) के साइड बूस्टर के रूप में उड़ान भरी"
+  }
+}

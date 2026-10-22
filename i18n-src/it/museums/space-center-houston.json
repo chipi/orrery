@@ -1,0 +1,11 @@
+{
+  "name": "Space Center Houston",
+  "city": "Houston",
+  "description": "Il centro visitatori del Johnson Space Center della NASA, sede del controllo missione e del corpo degli astronauti.",
+  "items": {
+    "apollo-csm-block-ii": "Modulo di comando America, che ha volato con l'Apollo 17 (1972)",
+    "gemini": "Capsula Gemini V, che ha volato (1965)",
+    "mercury-capsule": "Faith 7, con cui volò Gordon Cooper (1963)",
+    "saturn-v": "Un Saturn V completo di stadi di volo mai volati, nel Rocket Park"
+  }
+}

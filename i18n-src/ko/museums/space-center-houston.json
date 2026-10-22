@@ -1,0 +1,11 @@
+{
+  "name": "Space Center Houston",
+  "city": "휴스턴",
+  "description": "미션 컨트롤과 우주비행사단이 있는 NASA 존슨 우주센터의 방문자 센터.",
+  "items": {
+    "apollo-csm-block-ii": "사령선 America, Apollo 17에서 비행했다 (1972년)",
+    "gemini": "Gemini V 캡슐, 실제로 비행했다 (1965년)",
+    "mercury-capsule": "Faith 7, 고든 쿠퍼가 비행했다 (1963년)",
+    "saturn-v": "비행한 적 없는 비행용 단들로 이루어진 완전한 Saturn V, 로켓 파크에 있다"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "California Science Center",
+  "city": "로스앤젤레스",
+  "description": "로스앤젤레스 엑스포지션 파크에 있는 과학박물관. Space Shuttle Endeavour의 상설 전시관인 Samuel Oschin Air and Space Center가 2026년 11월 13일 이곳에 문을 연다.",
+  "items": {
+    "apollo-csm-block-ii": "사령선 CM-111, Apollo–Soyuz Test Project에서 비행했다 (1975년)",
+    "endeavour": "Space Shuttle Endeavour. 실제 외부 연료 탱크와 고체 로켓 부스터 2기를 갖추고 발사 자세로 똑바로 세워져 있다",
+    "space-shuttle-orbiter": "Space Shuttle Endeavour. 실제 외부 연료 탱크와 고체 로켓 부스터 2기를 갖추고 발사 자세로 똑바로 세워져 있다",
+    "gemini": "Gemini XI 캡슐, 실제로 비행했다 (1966년)",
+    "cargo-dragon-v1": "CRS-6, CRS-13, CRS-18로 ISS까지 비행한 Dragon 화물 캡슐"
+  }
+}

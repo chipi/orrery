@@ -14,6 +14,8 @@
   import { assetUrl } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import ObservatoryShowcase from '$lib/components/ObservatoryShowcase.svelte';
+  import MuseumsForObject from '$lib/components/MuseumsForObject.svelte';
+  import { page } from '$app/state';
   import { track, arrivedFromRoute, trackScienceToApp, once } from '$lib/analytics';
   import { readDepthPct } from '$lib/read-depth';
   import type { PageData } from './$types';
@@ -185,6 +187,8 @@
       </ul>
     </section>
   {/if}
+
+  <MuseumsForObject objectRef="/science/{page.params.tab}/{section.id}" />
 
   {#if section.links.length > 0}
     <section class="learn-more">

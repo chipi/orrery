@@ -1,0 +1,17 @@
+{
+  "name": "국립항공우주박물관",
+  "city": "워싱턴",
+  "description": "내셔널 몰에 있는 스미소니언의 국립 항공우주박물관.",
+  "items": {
+    "apollo-csm-block-ii": "사령선 Columbia, Apollo 11에서 비행했다 (1969년)",
+    "apollo-lm": "달 착륙선 LM-2, 비행용으로 제작되었으나 한 번도 비행하지 않았다",
+    "gemini": "Gemini IV 캡슐, 미국 최초의 우주 유영 임무에서 비행했다 (1965년)",
+    "mercury-capsule": "Friendship 7, 존 글렌이 미국 최초의 궤도 비행에서 비행했다 (1962년)",
+    "/science/history/apollo-11-1969": "사령선 Columbia, Apollo 11에서 비행했다",
+    "merlin-1d": "2022년 SpaceX가 기증한, 실제로 비행한 Merlin 1D 엔진",
+    "sojourner": "Marie Curie, Sojourner 탐사차의 비행용 예비기",
+    "tundra-sirius": "Sirius FM-4, 발사 준비를 마쳤으나 발사되지 않은 위성",
+    "planet-labs": "초기 Dove 위성, Planet Labs가 기증한 비행용 기체",
+    "skylab": "안으로 걸어 들어갈 수 있는 Skylab의 예비 궤도 작업실"
+  }
+}

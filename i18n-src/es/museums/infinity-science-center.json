@@ -1,0 +1,9 @@
+{
+  "name": "INFINITY Science Center",
+  "city": "Pearlington, Misisipi",
+  "description": "El centro de visitantes oficial del Centro Espacial Stennis de la NASA, en Misisipi, donde se prueban motores de cohete.",
+  "items": {
+    "apollo-csm-block-i": "Módulo de mando CM-017, que voló en el Apollo 4, sin tripulación (1967)",
+    "saturn-v": "S-IC-15, una primera etapa del Saturno V que nunca voló"
+  }
+}

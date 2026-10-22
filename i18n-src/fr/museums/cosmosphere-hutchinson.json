@@ -1,0 +1,13 @@
+{
+  "name": "Cosmosphere",
+  "city": "Hutchinson, Kansas",
+  "description": "Un musée de l'espace du Kansas connu pour la restauration d'engins spatiaux américains et soviétiques qui ont volé.",
+  "items": {
+    "apollo-csm-block-ii": "Module de commande Odyssey, ayant volé lors d'Apollo 13 (1970)",
+    "gemini": "Capsule Gemini X, ayant volé (1966)",
+    "mercury-capsule": "Liberty Bell 7, pilotée par Gus Grissom (1961) et remontée de l'Atlantique en 1999",
+    "vostok": "Une capsule Vostok ayant volé",
+    "/science/history/sputnik-1957": "Un exemplaire de secours de Sputnik 1, prêt à voler",
+    "merlin-1d": "Un moteur Merlin ayant volé lors du lancement de Koreasat 5A (2017)"
+  }
+}

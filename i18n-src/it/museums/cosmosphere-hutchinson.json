@@ -1,0 +1,13 @@
+{
+  "name": "Cosmosphere",
+  "city": "Hutchinson, Kansas",
+  "description": "Un museo spaziale del Kansas noto per il restauro di veicoli spaziali americani e sovietici che hanno volato.",
+  "items": {
+    "apollo-csm-block-ii": "Modulo di comando Odyssey, che ha volato con Apollo 13 (1970)",
+    "gemini": "Capsula Gemini X, che ha volato (1966)",
+    "mercury-capsule": "Liberty Bell 7, con cui volò Gus Grissom (1961), recuperata dall'Atlantico nel 1999",
+    "vostok": "Una capsula Vostok che ha volato",
+    "/science/history/sputnik-1957": "Un esemplare di riserva dello Sputnik 1, pronto al volo",
+    "merlin-1d": "Un motore Merlin che ha volato nel lancio del Koreasat 5A (2017)"
+  }
+}

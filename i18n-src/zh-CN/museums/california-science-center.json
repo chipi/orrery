@@ -1,0 +1,12 @@
+{
+  "name": "加州科学中心",
+  "city": "洛杉矶",
+  "description": "位于洛杉矶博览会公园的科学博物馆。Space Shuttle Endeavour的永久展馆Samuel Oschin Air and Space Center将于2026年11月13日在此开放。",
+  "items": {
+    "apollo-csm-block-ii": "指令舱 CM-111，曾执行Apollo–Soyuz Test Project（1975年）",
+    "endeavour": "Space Shuttle Endeavour，以发射姿态竖立，配有真实的外储箱和两枚固体火箭助推器",
+    "space-shuttle-orbiter": "Space Shuttle Endeavour，以发射姿态竖立，配有真实的外储箱和两枚固体火箭助推器",
+    "gemini": "Gemini XI 返回舱，曾执行飞行（1966年）",
+    "cargo-dragon-v1": "一艘 Dragon 货运飞船，曾在 CRS-6、CRS-13 和 CRS-18 任务中飞往国际空间站"
+  }
+}

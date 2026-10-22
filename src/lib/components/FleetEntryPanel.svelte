@@ -31,6 +31,7 @@
   import { MissionOrbitIcon } from '$lib/components/icons';
   import * as m from '$lib/paraglide/messages';
   import MediaPlayer from './MediaPlayer.svelte';
+  import MuseumsForObject from './MuseumsForObject.svelte';
   import VideoThumb from './VideoThumb.svelte';
   import { getVideosForEntity, type VideoProvenanceEntry } from '$lib/video-provenance';
   import {
@@ -459,6 +460,8 @@
             Open {entry.name} Explorer →
           </a>
         {/if}
+
+        <MuseumsForObject objectRef={entry.id} />
 
         <!-- Fleet -> Mission back-link CTA. Mirrors the Vehicle +
              Payload CTAs on /missions panel so the cross-page

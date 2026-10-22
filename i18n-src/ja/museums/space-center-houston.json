@@ -1,0 +1,11 @@
+{
+  "name": "スペースセンター・ヒューストン",
+  "city": "ヒューストン",
+  "description": "管制センターと宇宙飛行士団を擁する、NASA ジョンソン宇宙センターのビジターセンター。",
+  "items": {
+    "apollo-csm-block-ii": "司令船 America。Apollo 17 で飛行した（1972年）",
+    "gemini": "Gemini V のカプセル。実際に飛行した機体（1965年）",
+    "mercury-capsule": "Faith 7。ゴードン・クーパーが飛行させた（1963年）",
+    "saturn-v": "未飛行の飛行用の各段でできた完全な Saturn V。ロケット・パークに展示されている"
+  }
+}

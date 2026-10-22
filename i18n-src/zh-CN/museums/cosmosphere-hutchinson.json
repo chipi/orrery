@@ -1,0 +1,13 @@
+{
+  "name": "Cosmosphere",
+  "city": "哈钦森，堪萨斯州",
+  "description": "堪萨斯州的太空博物馆，以修复曾执行飞行的美国和苏联航天器闻名。",
+  "items": {
+    "apollo-csm-block-ii": "指令舱Odyssey，曾执行Apollo 13任务（1970年）",
+    "gemini": "Gemini X 返回舱，曾执行飞行（1966年）",
+    "mercury-capsule": "Liberty Bell 7，由格斯·格里森驾驶飞行（1961年），1999年从大西洋中打捞出水",
+    "vostok": "一艘曾执行飞行的Vostok返回舱",
+    "/science/history/sputnik-1957": "一颗可随时飞行的Sputnik 1备份星",
+    "merlin-1d": "一台曾执行飞行的 Merlin 发动机，来自 Koreasat 5A 发射任务（2017年）"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Nationaal Lucht- en Ruimtemuseum",
+  "city": "Washington D.C.",
+  "description": "Het nationale museum van de Smithsonian voor luchtvaart en ruimtevaart, aan de National Mall.",
+  "items": {
+    "apollo-csm-block-ii": "Commandomodule Columbia, gevlogen tijdens Apollo 11 (1969)",
+    "apollo-lm": "Maanlander LM-2, gebouwd om te vliegen en nooit gevlogen",
+    "gemini": "Gemini IV-capsule, gevlogen tijdens de eerste Amerikaanse missie met een ruimtewandeling (1965)",
+    "mercury-capsule": "Friendship 7, gevlogen door John Glenn tijdens de eerste Amerikaanse orbitale vlucht (1962)",
+    "/science/history/apollo-11-1969": "Commandomodule Columbia, gevlogen tijdens Apollo 11",
+    "merlin-1d": "Een gevlogen Merlin 1D-motor, in 2022 geschonken door SpaceX",
+    "sojourner": "Marie Curie, het reserve-exemplaar van de Sojourner-rover",
+    "tundra-sirius": "Sirius FM-4, een vluchtklare satelliet die nooit is gelanceerd",
+    "planet-labs": "Een vroege Dove-satelliet, een vluchtexemplaar geschonken door Planet Labs",
+    "skylab": "Het reserve-ruimtelaboratorium Skylab, waar je doorheen kunt lopen"
+  }
+}

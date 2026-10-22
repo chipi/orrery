@@ -1,0 +1,17 @@
+{
+  "name": "National Air and Space Museum",
+  "city": "Washington",
+  "description": "The Smithsonian's national museum of flight and spaceflight, on the National Mall.",
+  "items": {
+    "apollo-csm-block-ii": "Command module Columbia, flown on Apollo 11 (1969)",
+    "apollo-lm": "Lunar module LM-2, built for flight and never flown",
+    "gemini": "Gemini IV capsule, flown on the first American spacewalk mission (1965)",
+    "mercury-capsule": "Friendship 7, flown by John Glenn on the first American orbital flight (1962)",
+    "/science/history/apollo-11-1969": "Command module Columbia, flown on Apollo 11",
+    "merlin-1d": "A flown Merlin 1D engine, donated by SpaceX in 2022",
+    "sojourner": "Marie Curie, the flight spare of the Sojourner rover",
+    "tundra-sirius": "Sirius FM-4, a flight-ready satellite that was never launched",
+    "planet-labs": "An early Dove satellite, a flight unit donated by Planet Labs",
+    "skylab": "The backup Skylab orbital workshop, which you can walk through"
+  }
+}

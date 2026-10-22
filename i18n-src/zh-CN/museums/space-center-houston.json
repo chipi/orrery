@@ -1,0 +1,11 @@
+{
+  "name": "Space Center Houston",
+  "city": "休斯敦",
+  "description": "NASA约翰逊航天中心的游客中心，任务控制中心和宇航员队伍的所在地。",
+  "items": {
+    "apollo-csm-block-ii": "指令舱America，曾执行Apollo 17任务（1972年）",
+    "gemini": "Gemini V 返回舱，曾执行飞行（1965年）",
+    "mercury-capsule": "Faith 7，由戈登·库珀驾驶飞行（1963年）",
+    "saturn-v": "一枚完整的Saturn V，由未曾飞行的飞行级组成，陈列于火箭公园"
+  }
+}

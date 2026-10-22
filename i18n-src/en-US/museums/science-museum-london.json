@@ -1,0 +1,9 @@
+{
+  "name": "Science Museum",
+  "city": "London",
+  "description": "Britain's national museum of science and technology, in South Kensington.",
+  "items": {
+    "apollo-csm-block-ii": "Command module Charlie Brown, flown on Apollo 10 (1969)",
+    "soyuz-tma": "Soyuz TMA-19M descent module, flown by Tim Peake (2015–2016)"
+  }
+}

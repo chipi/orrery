@@ -1,0 +1,13 @@
+{
+  "name": "Cosmosphere",
+  "city": "Hutchinson, Kansas",
+  "description": "Um museu espacial do Kansas conhecido por restaurar espaçonaves americanas e soviéticas que voaram.",
+  "items": {
+    "apollo-csm-block-ii": "Módulo de comando Odyssey, que voou na Apollo 13 (1970)",
+    "gemini": "Cápsula Gemini X, que voou (1966)",
+    "mercury-capsule": "Liberty Bell 7, pilotada por Gus Grissom (1961) e resgatada do Atlântico em 1999",
+    "vostok": "Uma cápsula Vostok que voou",
+    "/science/history/sputnik-1957": "Uma reserva do Sputnik 1, pronta para o voo",
+    "merlin-1d": "Um motor Merlin que voou no lançamento do Koreasat 5A (2017)"
+  }
+}

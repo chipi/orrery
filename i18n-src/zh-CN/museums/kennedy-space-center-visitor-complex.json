@@ -1,0 +1,18 @@
+{
+  "name": "Kennedy Space Center Visitor Complex",
+  "city": "梅里特岛，佛罗里达州",
+  "description": "NASA佛罗里达发射场的游客中心，毗邻发射过Apollo、Space Shuttle和当今火箭的发射台。",
+  "items": {
+    "apollo-csm-block-ii": "指令舱Kitty Hawk，曾执行Apollo 14任务（1971年）",
+    "apollo-lm": "登月舱 LM-9，为飞行而制造，从未飞行",
+    "atlantis": "Space Shuttle Atlantis，执行过33次任务",
+    "space-shuttle-orbiter": "Space Shuttle Atlantis，执行过33次任务",
+    "gemini": "Gemini IX-A 返回舱，曾执行飞行（1966年）",
+    "mercury-capsule": "Sigma 7，由沃利·席拉驾驶飞行（1962年）",
+    "orion": "Orion乘员舱，曾执行探索飞行试验1号（2014年）",
+    "saturn-v": "一枚完整的Saturn V，由真实的、未曾飞行的各级组成，陈列于Apollo/Saturn V Center",
+    "saturn-ib": "Saturn IB SA-209，从未飞行的Skylab救援和Apollo－Soyuz 备份火箭",
+    "delta-ii": "最后一枚 Delta II，由剩余的飞行硬件组装而成，陈列于火箭花园",
+    "falcon-heavy": "助推器 B1023，曾作为 Falcon 9 第一级飞行，并作为首次 Falcon Heavy 的侧助推器飞行（2018年）"
+  }
+}

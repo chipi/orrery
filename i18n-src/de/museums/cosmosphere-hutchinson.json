@@ -1,0 +1,13 @@
+{
+  "name": "Kansas Cosmosphere and Space Center",
+  "city": "Hutchinson, Kansas",
+  "description": "Ein Raumfahrtmuseum in Kansas, bekannt für die Restaurierung geflogener amerikanischer und sowjetischer Raumfahrzeuge.",
+  "items": {
+    "apollo-csm-block-ii": "Kommandomodul Odyssey, geflogen bei Apollo 13 (1970)",
+    "gemini": "Gemini-X-Kapsel, geflogen (1966)",
+    "mercury-capsule": "Liberty Bell 7, geflogen von Gus Grissom (1961) und 1999 aus dem Atlantik geborgen",
+    "vostok": "Eine geflogene Vostok-Kapsel",
+    "/science/history/sputnik-1957": "Ein flugbereiter Ersatz von Sputnik 1",
+    "merlin-1d": "Ein geflogenes Merlin-Triebwerk vom Start von Koreasat 5A (2017)"
+  }
+}

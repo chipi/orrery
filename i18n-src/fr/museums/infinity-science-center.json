@@ -1,0 +1,9 @@
+{
+  "name": "INFINITY Science Center",
+  "city": "Pearlington, Mississippi",
+  "description": "Le centre d'accueil officiel du Stennis Space Center de la NASA, dans le Mississippi, où l'on teste des moteurs de fusée.",
+  "items": {
+    "apollo-csm-block-i": "Module de commande CM-017, ayant volé lors d'Apollo 4, sans équipage (1967)",
+    "saturn-v": "S-IC-15, un premier étage de Saturn V qui n'a jamais volé"
+  }
+}

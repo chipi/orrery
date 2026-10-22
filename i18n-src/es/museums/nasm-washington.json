@@ -1,0 +1,17 @@
+{
+  "name": "Museo Nacional del Aire y el Espacio de Estados Unidos",
+  "city": "Washington D. C.",
+  "description": "El museo nacional del vuelo y de los vuelos espaciales del Smithsonian, en el National Mall.",
+  "items": {
+    "apollo-csm-block-ii": "Módulo de mando Columbia, que voló en el Apollo 11 (1969)",
+    "apollo-lm": "Módulo lunar LM-2, construido para volar y nunca lanzado",
+    "gemini": "Cápsula Gemini IV, que voló en la primera misión estadounidense con paseo espacial (1965)",
+    "mercury-capsule": "Friendship 7, que voló con John Glenn en el primer vuelo orbital estadounidense (1962)",
+    "/science/history/apollo-11-1969": "Módulo de mando Columbia, que voló en el Apollo 11",
+    "merlin-1d": "Un motor Merlin 1D que voló, donado por SpaceX en 2022",
+    "sojourner": "Marie Curie, la unidad de repuesto de vuelo del rover Sojourner",
+    "tundra-sirius": "Sirius FM-4, un satélite listo para el vuelo que nunca fue lanzado",
+    "planet-labs": "Uno de los primeros satélites Dove, una unidad de vuelo donada por Planet Labs",
+    "skylab": "El taller orbital de reserva del Skylab, por el que se puede caminar"
+  }
+}

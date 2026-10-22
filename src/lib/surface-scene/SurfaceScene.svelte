@@ -177,6 +177,9 @@
   import { loadImageVisionManifest, getImageEntry, hotspotTileTexture } from '$lib/image-vision';
   import { streamedUrl } from '$lib/asset-url';
   import { buildLabel } from '$lib/three-label';
+  import { buildMuseumPins, type MuseumPin } from '$lib/surface-scene/museum-layer';
+  import MuseumPanel from '$lib/surface-scene/MuseumPanel.svelte';
+  import type { Museum } from '$types/museum';
   import type { SurfaceSite, Traverse } from '$types/surface-site';
   import Panel from '$lib/components/Panel.svelte';
   import SiteStoryPanel from '$lib/components/SiteStoryPanel.svelte';
@@ -252,6 +255,10 @@
      *  references nothing on screen). `true` = orbits in view (ruler
      *  meaningful), `false` = zoomed below them (hide). */
     onOrbitsInViewChange?: (inView: boolean) => void;
+    /** Museums where real hardware is on display (PRD-027). When given,
+     *  the globe gets museum pins, a MUSEUMS chip, the museum card and the
+     *  ?museum=<id> deep link. /earth only. */
+    loadMuseums?: (locale: string) => Promise<Museum[]>;
   }
   let {
     config,
@@ -259,6 +266,7 @@
     loadSites,
     loadGallery,
     loadTraverses,
+    loadMuseums,
     initialView,
     onSatelliteSelect,
     onSiteSelect,
@@ -463,6 +471,12 @@
   // surface site instead (mutual selection — site OR sat, not both).
   let earthObjectsCache: import('$types/earth-object').EarthObject[] = [];
   let selectedSat = $state<import('$types/earth-object').EarthObject | null>(null);
+  // Museums (PRD-027): pins + card, a third selection kind beside the
+  // surface site and the satellite (selecting one clears the others).
+  let museumsCache: Museum[] = [];
+  let museumPins: MuseumPin[] = [];
+  let selectedMuseum = $state<Museum | null>(null);
+  let layerMuseums = $state(true);
 
   // ─── Object index (searchable orbit/land list) ───────────────────
   // `indexEarthObjects` is a reactive mirror of the non-reactive
@@ -1022,6 +1036,7 @@
       if (o) {
         selectedSat = o;
         selected = null;
+        selectedMuseum = null;
         autoSpin = false;
         faceCameraAtObject?.(o);
         trackItemClick('marker', id, page.url.pathname);
@@ -1031,6 +1046,7 @@
     if (s) {
       selected = s;
       selectedSat = null;
+      selectedMuseum = null;
       panelOpen = true;
       // #380 — leave route-view when switching sites; the new selection's
       // fly-in below takes over the camera.
@@ -1055,6 +1071,18 @@
       }
     }
   }
+  /** Open a museum's card (PRD-027); `face` flies the camera to it. */
+  function selectMuseum(id: string, options: { face?: boolean } = {}) {
+    const mu = museumsCache.find((x) => x.id === id);
+    if (!mu) return;
+    selectedMuseum = mu;
+    selected = null;
+    selectedSat = null;
+    panelOpen = false;
+    autoSpin = false;
+    trackItemClick('marker', `museum:${id}`, page.url.pathname);
+    if (options.face) faceLatLonImpl?.(mu.lat, mu.lon, 40);
+  }
   function toggleView() {
     view = view === '3d' ? '2d' : '3d';
   }
@@ -1067,6 +1095,7 @@
   let openSurfaceCard = $derived.by(() => {
     if (panelOpen && selected) return { param: 'site' as const, id: selected.id };
     if (selectedSat) return { param: 'object' as const, id: selectedSat.id };
+    if (selectedMuseum) return { param: 'museum' as const, id: selectedMuseum.id };
     return null;
   });
   let everOpenedSurfaceCard = false;
@@ -1077,14 +1106,18 @@
       const url = new URL(page.url);
       const wantSite = card?.param === 'site' ? card.id : null;
       const wantObj = card?.param === 'object' ? card.id : null;
+      const wantMuseum = card?.param === 'museum' ? card.id : null;
       const changed =
         (url.searchParams.get('site') ?? null) !== wantSite ||
-        (url.searchParams.get('object') ?? null) !== wantObj;
+        (url.searchParams.get('object') ?? null) !== wantObj ||
+        (url.searchParams.get('museum') ?? null) !== wantMuseum;
       if (changed && (card || everOpenedSurfaceCard)) {
         if (wantSite) url.searchParams.set('site', wantSite);
         else url.searchParams.delete('site');
         if (wantObj) url.searchParams.set('object', wantObj);
         else url.searchParams.delete('object');
+        if (wantMuseum) url.searchParams.set('museum', wantMuseum);
+        else url.searchParams.delete('museum');
         replaceState(url, page.state);
       }
       if (everOpenedSurfaceCard) setCurrentCard(card ? url : null);
@@ -1426,6 +1459,29 @@
     // wiring. Slice 5 will add panel polymorphism for satellite
     // clicks; Slice 6 will surface chip-row visibility toggles.
     const earthLayerHandles: Array<{ dispose: () => void }> = [];
+
+    // PRD-027 — museum pins, parented to the planet so they turn with it.
+    // ?museum=<id> (the object pages' "On the map" link) opens that card.
+    if (loadMuseums) {
+      loadMuseums(localeFromPage(page))
+        .then((list) => {
+          museumsCache = list;
+          const layer = buildMuseumPins(list, planetMesh, planetRadius);
+          museumPins = layer.pins;
+          earthLayerHandles.push({
+            dispose: () => {
+              layer.dispose();
+              museumPins = [];
+              museumsCache = [];
+            },
+          });
+          const museumParam = page.url.searchParams.get('museum');
+          if (museumParam) selectMuseum(museumParam, { face: true });
+        })
+        .catch(() => {
+          // Museums are an extra layer; the globe works without them.
+        });
+    }
     if (config.earthOrbitalLayers) {
       const eol = config.earthOrbitalLayers;
       if (eol.karmanLineShell) {
@@ -3416,6 +3472,21 @@
       return hit ? (hit.object.userData.id as string) : null;
     }
 
+    // PRD-027 — museum pins (gold), tagged userData.museumId.
+    function pickMuseumAt(clientX: number, clientY: number): string | null {
+      if (!layerMuseums || museumPins.length === 0) return null;
+      const rect = el3d.getBoundingClientRect();
+      const ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
+      const ndcY = -((clientY - rect.top) / rect.height) * 2 + 1;
+      ray.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+      const hits = ray.intersectObjects(
+        museumPins.map((p) => p.group),
+        true,
+      );
+      const hit = hits.find((h) => typeof h.object.userData.museumId === 'string');
+      return hit ? (hit.object.userData.museumId as string) : null;
+    }
+
     function tryPick3d(clientX: number, clientY: number) {
       // Panorama mode: raycast annotation sprites first (PRD-022 / ADR-074
       // Phase 2E). Hit → open annotation card; miss → fall through.
@@ -3441,10 +3512,17 @@
           cue('select');
           selectedSat = o;
           selected = null;
+          selectedMuseum = null;
           // CORE-2 — clicking an orbital object zooms + centres it.
           faceCameraAtObject?.(o);
           return;
         }
+      }
+      const museumId = pickMuseumAt(clientX, clientY);
+      if (museumId) {
+        cue('select');
+        selectMuseum(museumId, { face: true });
+        return;
       }
       const id = pickSiteAt(clientX, clientY);
       if (id) {
@@ -4287,6 +4365,11 @@
 
         // Apply layer visibility every frame so chip toggles take effect
         // immediately (cheap — small static arrays).
+        const selMuseumId = selectedMuseum?.id ?? null;
+        for (const p of museumPins) {
+          p.group.visible = layerMuseums;
+          p.halo.visible = p.id === selMuseumId;
+        }
         const selId = selected?.id ?? null;
         for (const mk of markers) {
           // Nation filter (#363) — hide markers whose nation is toggled off.
@@ -4562,6 +4645,7 @@
             if (h.tier0Group) h.tier0Group.scale.setScalar(zoomScale);
             if (h.tier1Group) h.tier1Group.scale.setScalar(zoomScale);
           }
+          for (const p of museumPins) p.body.scale.setScalar(zoomScale);
 
           // Site labels — shrink with zoomScale but floored at 0.65 so
           // they stay readable. Hide entirely when promoted to Tier 2+
@@ -4599,6 +4683,19 @@
           // labels, and I asked only one from the site that is
           // selected"). Tier-2 hard hide still applies to every label
           // (those are physically inside the rectangle anyway).
+          // Museum pin labels (PRD-027) follow the same zoom band fade.
+          for (const p of museumPins) {
+            p.labelGroup.visible = layerMuseums && labelFade >= 0.01;
+            if (!p.labelGroup.visible) continue;
+            p.labelGroup.scale.setScalar(Math.max(0.65, zoomScale));
+            p.labelGroup.traverse((obj) => {
+              if (obj instanceof THREE.Sprite) {
+                const mat = obj.material as THREE.SpriteMaterial;
+                mat.opacity = labelFade;
+                mat.transparent = true;
+              }
+            });
+          }
           const selectedSiteId = selected?.id;
           for (const mk of markers) {
             if (!mk.labelGroup) continue;
@@ -5510,6 +5607,21 @@
             // regime bands, now removed (#363) — so the chip is hidden there.
             visible: config.earthOrbitalLayers == null,
           },
+          // MUSEUMS (PRD-027) — /earth only, when the route passes loadMuseums.
+          ...(loadMuseums != null
+            ? [
+                {
+                  testid: 'layer-museums',
+                  label: m.museum_layer_chip(),
+                  title: m.museum_layer_tip(),
+                  active: () => layerMuseums,
+                  toggle: () => {
+                    layerMuseums = !layerMuseums;
+                    if (!layerMuseums) selectedMuseum = null;
+                  },
+                },
+              ]
+            : []),
           // TRAVERSES chip shows only when this body has vendored
           // rover paths (Mars today; Moon EVA / Lunokhod future).
           ...(loadTraverses != null
@@ -6534,6 +6646,13 @@ sample      ${debugInfo.projectedPxSample}`}
       missionIds={earthMissionIds}
       {regimes}
       {onRegimeOpen}
+    />
+  {/if}
+  {#if loadMuseums}
+    <MuseumPanel
+      museum={selectedMuseum}
+      open={selectedMuseum != null}
+      onClose={() => (selectedMuseum = null)}
     />
   {/if}
 </div>

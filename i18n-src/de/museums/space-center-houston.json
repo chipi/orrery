@@ -1,0 +1,11 @@
+{
+  "name": "Space Center Houston",
+  "city": "Houston",
+  "description": "Das Besucherzentrum des Johnson Space Center der NASA, Sitz des Missionskontrollzentrums und des Astronautenkorps.",
+  "items": {
+    "apollo-csm-block-ii": "Kommandomodul America, geflogen bei Apollo 17 (1972)",
+    "gemini": "Gemini-V-Kapsel, geflogen (1965)",
+    "mercury-capsule": "Faith 7, geflogen von Gordon Cooper (1963)",
+    "saturn-v": "Eine vollständige Saturn V aus ungeflogenen Flugstufen, im Rocket Park"
+  }
+}

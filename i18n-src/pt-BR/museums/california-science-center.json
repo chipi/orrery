@@ -1,0 +1,12 @@
+{
+  "name": "California Science Center",
+  "city": "Los Angeles",
+  "description": "Um museu de ciências no Exposition Park, em Los Angeles. O lar permanente do Space Shuttle Endeavour, o Samuel Oschin Air and Space Center, abre ali em 13 de novembro de 2026.",
+  "items": {
+    "apollo-csm-block-ii": "Módulo de comando CM-111, que voou no Projeto de Teste Apollo-Soyuz (1975)",
+    "endeavour": "Space Shuttle Endeavour, em pé na posição de lançamento, com um tanque externo real e dois propulsores de combustível sólido",
+    "space-shuttle-orbiter": "Space Shuttle Endeavour, em pé na posição de lançamento, com um tanque externo real e dois propulsores de combustível sólido",
+    "gemini": "Cápsula Gemini XI, que voou (1966)",
+    "cargo-dragon-v1": "Uma cápsula de carga Dragon que voou até a ISS nas missões CRS-6, CRS-13 e CRS-18"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Kennedy Space Center Visitor Complex",
+  "city": "メリット島、フロリダ州",
+  "description": "NASA のフロリダにある発射場のビジターセンター。Apollo、Space Shuttle、現在のロケットを打ち上げた発射台のそばにある。",
+  "items": {
+    "apollo-csm-block-ii": "司令船 Kitty Hawk。Apollo 14 で飛行した（1971年）",
+    "apollo-lm": "月着陸船 LM-9。飛行用に製造されたが、一度も飛行しなかった",
+    "atlantis": "Space Shuttle・Atlantis。33回のミッションで飛行した",
+    "space-shuttle-orbiter": "Space Shuttle・Atlantis。33回のミッションで飛行した",
+    "gemini": "Gemini IX-A のカプセル。実際に飛行した機体（1966年）",
+    "mercury-capsule": "Sigma 7。ウォーリー・シラーが飛行させた（1962年）",
+    "orion": "Orion の乗員モジュール。Exploration Flight Test 1 で飛行した（2014年）",
+    "saturn-v": "本物の未飛行の各段でできた完全な Saturn V。Apollo/Saturn V Center に展示されている",
+    "saturn-ib": "Saturn IB SA-209。一度も飛行しなかった、Skylab 救援および Apollo–Soyuz 用の予備ロケット",
+    "delta-ii": "余った飛行用ハードウェアから造られた最後の Delta II。ロケット・ガーデンに展示されている",
+    "falcon-heavy": "ブースター B1023。Falcon 9 の第1段として、また最初の Falcon Heavy（2018年）のサイドブースターとして飛行した"
+  }
+}

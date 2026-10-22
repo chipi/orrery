@@ -1,0 +1,13 @@
+{
+  "name": "Cosmosphere",
+  "city": "허친슨, 캔자스주",
+  "description": "실제로 비행한 미국과 소련의 우주선을 복원하는 것으로 유명한 캔자스주의 우주박물관.",
+  "items": {
+    "apollo-csm-block-ii": "사령선 Odyssey, Apollo 13에서 비행했다 (1970년)",
+    "gemini": "Gemini X 캡슐, 실제로 비행했다 (1966년)",
+    "mercury-capsule": "Liberty Bell 7, 거스 그리섬이 비행했으며 (1961년) 1999년 대서양에서 인양되었다",
+    "vostok": "실제로 비행한 Vostok 캡슐",
+    "/science/history/sputnik-1957": "비행 준비를 마친 Sputnik 1의 예비기",
+    "merlin-1d": "Koreasat 5A 발사 (2017년)에서 비행한 Merlin 엔진"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Complexo de Visitantes do Centro Espacial Kennedy",
+  "city": "Merritt Island, Flórida",
+  "description": "O centro de visitantes da base de lançamento da NASA na Flórida, ao lado das plataformas de onde partiram a Apollo, o Space Shuttle e os foguetes de hoje.",
+  "items": {
+    "apollo-csm-block-ii": "Módulo de comando Kitty Hawk, que voou na Apollo 14 (1971)",
+    "apollo-lm": "Módulo lunar LM-9, construído para voar e nunca lançado",
+    "atlantis": "Space Shuttle Atlantis, que voou em 33 missões",
+    "space-shuttle-orbiter": "Space Shuttle Atlantis, que voou em 33 missões",
+    "gemini": "Cápsula Gemini IX-A, que voou (1966)",
+    "mercury-capsule": "Sigma 7, pilotada por Wally Schirra (1962)",
+    "orion": "Módulo de tripulação Orion, que voou no Exploration Flight Test 1 (2014)",
+    "saturn-v": "Um Saturn V completo, com estágios reais que nunca voaram, no Apollo/Saturn V Center",
+    "saturn-ib": "Saturn IB SA-209, o foguete de resgate do Skylab e reserva da Apollo-Soyuz que nunca voou",
+    "delta-ii": "O último Delta II, construído com material de voo remanescente, no Rocket Garden",
+    "falcon-heavy": "Propulsor B1023, que voou como primeiro estágio de um Falcon 9 e como propulsor lateral do primeiro Falcon Heavy (2018)"
+  }
+}

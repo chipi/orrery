@@ -1,0 +1,13 @@
+{
+  "name": "Cosmosphere",
+  "city": "Hutchinson, Kansas",
+  "description": "Een ruimtevaartmuseum in Kansas, bekend om de restauratie van gevlogen Amerikaanse en Sovjet-ruimtevaartuigen.",
+  "items": {
+    "apollo-csm-block-ii": "Commandomodule Odyssey, gevlogen tijdens Apollo 13 (1970)",
+    "gemini": "Gemini X-capsule, gevlogen (1966)",
+    "mercury-capsule": "Liberty Bell 7, gevlogen door Gus Grissom (1961) en in 1999 uit de Atlantische Oceaan gehaald",
+    "vostok": "Een gevlogen Vostok-capsule",
+    "/science/history/sputnik-1957": "Een vluchtklare reserve van Sputnik 1",
+    "merlin-1d": "Een gevlogen Merlin-motor van de lancering van Koreasat 5A (2017)"
+  }
+}

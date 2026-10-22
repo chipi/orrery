@@ -214,6 +214,8 @@ const validateSourceLogos = ajv.compile(sourceLogosSchema);
 const validateTextSources = ajv.compile(textSourcesSchema);
 const validateDataSources = ajv.compile(dataSourcesSchema);
 const validateCultureDoors = ajv.compile(loadSchema('culture-door.schema.json'));
+const validateMuseums = ajv.compile(loadSchema('museum.schema.json'));
+const validateMuseumOverlay = ajv.compile(loadSchema('museum-overlay.schema.json'));
 const validateDeepSkyObjects = ajv.compile(loadSchema('deep-sky-object.schema.json'));
 const validateMilkyWay = ajv.compile(loadSchema('milky-way.schema.json'));
 const validateBlackHoles = ajv.compile(loadSchema('black-hole.schema.json'));
@@ -465,6 +467,7 @@ validateFile(join(DATA_ROOT, 'venus-sites.json'), validateSurfaceSites);
 validateFile(join(DATA_ROOT, 'sun.json'), validateSun);
 validateFile(join(DATA_ROOT, 'iss-modules.json'), validateIssModules);
 validateFile(join(DATA_ROOT, 'culture-doors.json'), validateCultureDoors);
+validateFile(join(DATA_ROOT, 'museums.json'), validateMuseums);
 validateFile(join(DATA_ROOT, 'universe', 'deep-sky-objects.json'), validateDeepSkyObjects);
 // /explore v2 Slice 4 — every deep-sky photoKey must resolve to a real curated
 // gallery entry (the sky↔gallery join is load-bearing for the immersion panel).
@@ -947,6 +950,62 @@ for (const err of siteDrift) {
   }
 }
 
+// PRD-027 — museums. Every holding points at a real fleet entry or
+// /science/history page, appears once per museum, and every locale that
+// has an overlay for a museum carries a line for each of its holdings
+// (en-US must exist for every museum).
+{
+  const museumsPath = join(DATA_ROOT, 'museums.json');
+  if (existsSync(museumsPath)) {
+    const museums = readJson(museumsPath) as Array<{
+      id: string;
+      holds: Array<{ ref: string }>;
+    }>;
+    const fleetIds = new Set(
+      (readJson(FLEET_INDEX_PATH) as Array<{ id: string }>).map((f) => f.id),
+    );
+    const seenMuseums = new Set<string>();
+    const problems: string[] = [];
+    for (const mu of museums) {
+      if (seenMuseums.has(mu.id)) problems.push(`duplicate museum id '${mu.id}'`);
+      seenMuseums.add(mu.id);
+      const refs = new Set<string>();
+      for (const h of mu.holds) {
+        if (refs.has(h.ref)) problems.push(`${mu.id}: holding '${h.ref}' listed twice`);
+        refs.add(h.ref);
+        const resolves = h.ref.startsWith('/science/history/')
+          ? existsSync(join(DATA_ROOT, `${h.ref.slice(1)}.json`))
+          : fleetIds.has(h.ref);
+        if (!resolves)
+          problems.push(`${mu.id}: holding '${h.ref}' is not a fleet entry or history page`);
+      }
+      for (const locale of existsSync(I18N_SRC) ? readdirSync(I18N_SRC) : []) {
+        const ov = join(I18N_SRC, locale, 'museums', `${mu.id}.json`);
+        if (!existsSync(ov)) {
+          if (locale === 'en-US')
+            problems.push(
+              `${mu.id}: missing en-US overlay at i18n-src/en-US/museums/${mu.id}.json`,
+            );
+          continue;
+        }
+        const items = (readJson(ov) as { items?: Record<string, string> }).items ?? {};
+        for (const r of refs)
+          if (!items[r]) problems.push(`${locale}/museums/${mu.id}.json: no item line for '${r}'`);
+        for (const k of Object.keys(items))
+          if (!refs.has(k))
+            problems.push(`${locale}/museums/${mu.id}.json: item line '${k}' is not a holding`);
+      }
+    }
+    if (problems.length > 0) {
+      failed += problems.length;
+      console.error('\n  ✗ museums.json (PRD-027)');
+      for (const p of problems) console.error(`      ${p}`);
+    } else {
+      passed++;
+    }
+  }
+}
+
 // 3. Locale overlays
 const i18nDir = I18N_SRC;
 if (existsSync(i18nDir)) {
@@ -964,6 +1023,10 @@ if (existsSync(i18nDir)) {
     // Earth-object overlays
     for (const file of listJson(join(i18nDir, locale, 'earth-objects'))) {
       validateFile(file, validateEarthObjectOverlay);
+    }
+    // Museum overlays (PRD-027)
+    for (const file of listJson(join(i18nDir, locale, 'museums'))) {
+      validateFile(file, validateMuseumOverlay);
     }
     // Moon-site + Mars-site overlays — both bodies share the surface-site overlay schema.
     for (const file of listJson(join(i18nDir, locale, 'moon-sites'))) {

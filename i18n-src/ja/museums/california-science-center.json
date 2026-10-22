@@ -1,0 +1,12 @@
+{
+  "name": "California Science Center",
+  "city": "ロサンゼルス",
+  "description": "ロサンゼルスのエクスポジション・パークにある科学博物館。Space Shuttle・Endeavour の常設展示館 Samuel Oschin Air and Space Center が、2026年11月13日にここで開館する。",
+  "items": {
+    "apollo-csm-block-ii": "司令船 CM-111。Apollo–Soyuz Test Project で飛行した（1975年）",
+    "endeavour": "Space Shuttle・Endeavour。本物の外部燃料タンクと2基の固体ロケットブースターを備え、打ち上げ時の姿勢で直立している",
+    "space-shuttle-orbiter": "Space Shuttle・Endeavour。本物の外部燃料タンクと2基の固体ロケットブースターを備え、打ち上げ時の姿勢で直立している",
+    "gemini": "Gemini XI のカプセル。実際に飛行した機体（1966年）",
+    "cargo-dragon-v1": "CRS-6、CRS-13、CRS-18でISSへ飛行した Dragon 貨物カプセル"
+  }
+}

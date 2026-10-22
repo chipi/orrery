@@ -1,0 +1,18 @@
+{
+  "name": "Kennedy Space Center Visitor Complex",
+  "city": "메리트섬, 플로리다주",
+  "description": "NASA 플로리다 발사장의 방문자 센터로, Apollo, Space Shuttle, 오늘날의 로켓을 발사한 발사대 옆에 있다.",
+  "items": {
+    "apollo-csm-block-ii": "사령선 Kitty Hawk, Apollo 14에서 비행했다 (1971년)",
+    "apollo-lm": "달 착륙선 LM-9, 비행용으로 제작되었으나 한 번도 비행하지 않았다",
+    "atlantis": "Space Shuttle Atlantis, 33차례 임무에서 비행했다",
+    "space-shuttle-orbiter": "Space Shuttle Atlantis, 33차례 임무에서 비행했다",
+    "gemini": "Gemini IX-A 캡슐, 실제로 비행했다 (1966년)",
+    "mercury-capsule": "Sigma 7, 월리 시라가 비행했다 (1962년)",
+    "orion": "Orion 승무원 모듈, Exploration Flight Test 1에서 비행했다 (2014년)",
+    "saturn-v": "비행한 적 없는 실제 단들로 이루어진 완전한 Saturn V, Apollo/Saturn V Center에 있다",
+    "saturn-ib": "Saturn IB SA-209, 한 번도 비행하지 않은 Skylab 구조용 및 Apollo–Soyuz 예비 로켓",
+    "delta-ii": "남은 비행용 하드웨어로 제작된 마지막 Delta II, 로켓 가든에 있다",
+    "falcon-heavy": "부스터 B1023, Falcon 9 1단으로 비행했고 첫 Falcon Heavy (2018년)의 측면 부스터로도 비행했다"
+  }
+}

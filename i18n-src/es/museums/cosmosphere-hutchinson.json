@@ -1,0 +1,13 @@
+{
+  "name": "Kansas Cosmosphere and Space Center",
+  "city": "Hutchinson, Kansas",
+  "description": "Un museo espacial de Kansas conocido por restaurar naves estadounidenses y soviéticas que volaron.",
+  "items": {
+    "apollo-csm-block-ii": "Módulo de mando Odyssey, que voló en el Apollo 13 (1970)",
+    "gemini": "Cápsula Gemini X, que voló (1966)",
+    "mercury-capsule": "Liberty Bell 7, que voló con Gus Grissom (1961) y fue rescatada del Atlántico en 1999",
+    "vostok": "Una cápsula Vostok que voló",
+    "/science/history/sputnik-1957": "Una copia de reserva del Sputnik 1, lista para el vuelo",
+    "merlin-1d": "Un motor Merlin que voló en el lanzamiento del Koreasat 5A (2017)"
+  }
+}

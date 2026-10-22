@@ -1,0 +1,17 @@
+{
+  "name": "National Air and Space Museum",
+  "city": "Washington, D.C.",
+  "description": "Das nationale Museum der Smithsonian Institution für Luft- und Raumfahrt, an der National Mall.",
+  "items": {
+    "apollo-csm-block-ii": "Kommandomodul Columbia, geflogen bei Apollo 11 (1969)",
+    "apollo-lm": "Mondlandefähre LM-2, für den Flug gebaut und nie geflogen",
+    "gemini": "Gemini-IV-Kapsel, geflogen bei der ersten amerikanischen Weltraumspaziergang-Mission (1965)",
+    "mercury-capsule": "Friendship 7, geflogen von John Glenn beim ersten amerikanischen Orbitalflug (1962)",
+    "/science/history/apollo-11-1969": "Kommandomodul Columbia, geflogen bei Apollo 11",
+    "merlin-1d": "Ein geflogenes Merlin 1D-Triebwerk, 2022 von SpaceX gestiftet",
+    "sojourner": "Marie Curie, das Ersatzexemplar des Rovers Sojourner",
+    "tundra-sirius": "Sirius FM-4, ein flugbereiter Satellit, der nie gestartet wurde",
+    "planet-labs": "Ein früher Dove-Satellit, eine von Planet Labs gestiftete Flugeinheit",
+    "skylab": "Die Ersatz-Orbitalwerkstatt von Skylab, die man begehen kann"
+  }
+}

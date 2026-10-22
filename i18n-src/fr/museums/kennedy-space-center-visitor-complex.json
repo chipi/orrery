@@ -1,0 +1,18 @@
+{
+  "name": "Kennedy Space Center Visitor Complex",
+  "city": "Merritt Island, Floride",
+  "description": "Le centre d'accueil du site de lancement de la NASA en Floride, à côté des pas de tir d'où sont parties Apollo, le Space Shuttle et les fusées d'aujourd'hui.",
+  "items": {
+    "apollo-csm-block-ii": "Module de commande Kitty Hawk, ayant volé lors d'Apollo 14 (1971)",
+    "apollo-lm": "Module lunaire LM-9, construit pour voler et jamais lancé",
+    "atlantis": "Space Shuttle Atlantis, qui a volé lors de 33 missions",
+    "space-shuttle-orbiter": "Space Shuttle Atlantis, qui a volé lors de 33 missions",
+    "gemini": "Capsule Gemini IX-A, ayant volé (1966)",
+    "mercury-capsule": "Sigma 7, pilotée par Wally Schirra (1962)",
+    "orion": "Module d'équipage Orion, ayant volé lors de l'Exploration Flight Test 1 (2014)",
+    "saturn-v": "Une Saturn V complète composée d'étages réels qui n'ont jamais volé, à l'Apollo/Saturn V Center",
+    "saturn-ib": "Saturn IB SA-209, la fusée de secours de Skylab et de réserve d'Apollo-Soyuz, qui n'a jamais volé",
+    "delta-ii": "La dernière Delta II, assemblée à partir de matériel de vol restant, dans le Rocket Garden",
+    "falcon-heavy": "Propulseur B1023, ayant volé comme premier étage d'une Falcon 9 et comme propulseur latéral du premier Falcon Heavy (2018)"
+  }
+}

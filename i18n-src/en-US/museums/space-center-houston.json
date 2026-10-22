@@ -1,0 +1,11 @@
+{
+  "name": "Space Center Houston",
+  "city": "Houston",
+  "description": "The visitor centre of NASA's Johnson Space Center, home of Mission Control and the astronaut corps.",
+  "items": {
+    "apollo-csm-block-ii": "Command module America, flown on Apollo 17 (1972)",
+    "gemini": "Gemini V capsule, flown (1965)",
+    "mercury-capsule": "Faith 7, flown by Gordon Cooper (1963)",
+    "saturn-v": "A complete Saturn V of unflown flight stages, in Rocket Park"
+  }
+}

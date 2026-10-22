@@ -1,0 +1,17 @@
+{
+  "name": "国立航空宇宙博物館",
+  "city": "ワシントン",
+  "description": "ナショナル・モールにある、スミソニアン協会の国立航空宇宙博物館。",
+  "items": {
+    "apollo-csm-block-ii": "司令船 Columbia。Apollo 11 で飛行した（1969年）",
+    "apollo-lm": "月着陸船 LM-2。飛行用に製造されたが、一度も飛行しなかった",
+    "gemini": "Gemini IV のカプセル。アメリカ初の宇宙遊泳を行ったミッションで飛行した（1965年）",
+    "mercury-capsule": "Friendship 7。ジョン・グレンがアメリカ初の周回飛行で飛行させた（1962年）",
+    "/science/history/apollo-11-1969": "司令船 Columbia。Apollo 11 で飛行した",
+    "merlin-1d": "2022年に SpaceX が寄贈した、飛行した Merlin 1D エンジン",
+    "sojourner": "Marie Curie。Sojourner 探査車の飛行予備機",
+    "tundra-sirius": "Sirius FM-4。打ち上げ可能な状態だったが、打ち上げられなかった衛星",
+    "planet-labs": "初期の Dove 衛星。Planet Labs が寄贈した飛行用機体",
+    "skylab": "内部を歩いて見学できる、Skylab の予備の軌道ワークショップ"
+  }
+}

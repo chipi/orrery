@@ -1,0 +1,9 @@
+{
+  "name": "INFINITY Science Center",
+  "city": "Pearlington, Mississippi",
+  "description": "The official visitor centre of NASA's Stennis Space Center in Mississippi, where rocket engines are tested.",
+  "items": {
+    "apollo-csm-block-i": "Command module CM-017, flown on the uncrewed Apollo 4 (1967)",
+    "saturn-v": "S-IC-15, an unflown Saturn V first stage"
+  }
+}

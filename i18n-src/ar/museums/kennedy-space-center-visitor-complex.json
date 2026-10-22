@@ -1,0 +1,18 @@
+{
+  "name": "مجمع زوار مركز كينيدي الفضائي",
+  "city": "جزيرة ميريت، فلوريدا",
+  "description": "مركز زوار موقع NASA للإطلاق في فلوريدا، بجوار المنصات التي أطلقت Apollo وSpace Shuttle وصواريخ اليوم.",
+  "items": {
+    "apollo-csm-block-ii": "وحدة القيادة Kitty Hawk، التي حلّقت في Apollo 14 (1971)",
+    "apollo-lm": "وحدة الهبوط القمرية LM-9، بُنيت للطيران ولم تحلّق قط",
+    "atlantis": "Space Shuttle Atlantis، الذي حلّق في 33 مهمة",
+    "space-shuttle-orbiter": "Space Shuttle Atlantis، الذي حلّق في 33 مهمة",
+    "gemini": "كبسولة Gemini IX-A، سبق أن حلّقت (1966)",
+    "mercury-capsule": "Sigma 7، التي حلّق بها والي شيرا (1962)",
+    "orion": "وحدة طاقم Orion، التي حلّقت في رحلة الاختبار Exploration Flight Test 1 (2014)",
+    "saturn-v": "صاروخ Saturn V كامل من مراحل حقيقية لم تحلّق، في مركز Apollo/Saturn V",
+    "saturn-ib": "Saturn IB SA-209، الصاروخ الذي لم يحلّق، وكان مخصصاً لإنقاذ Skylab ونسخة احتياطية لمهمة Apollo–Soyuz",
+    "delta-ii": "آخر صاروخ Delta II، بُني من معدات طيران فائضة، في حديقة الصواريخ",
+    "falcon-heavy": "المعزِّز B1023، الذي حلّق مرحلةً أولى لصاروخ Falcon 9 ثم معزِّزاً جانبياً في أول Falcon Heavy (2018)"
+  }
+}

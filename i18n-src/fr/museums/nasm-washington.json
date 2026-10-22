@@ -1,0 +1,17 @@
+{
+  "name": "National Air and Space Museum",
+  "city": "Washington",
+  "description": "Le musée national du vol et de l'astronautique de la Smithsonian, sur le National Mall.",
+  "items": {
+    "apollo-csm-block-ii": "Module de commande Columbia, ayant volé lors d'Apollo 11 (1969)",
+    "apollo-lm": "Module lunaire LM-2, construit pour voler et jamais lancé",
+    "gemini": "Capsule Gemini IV, ayant volé lors de la première mission américaine avec sortie dans l'espace (1965)",
+    "mercury-capsule": "Friendship 7, pilotée par John Glenn lors du premier vol orbital américain (1962)",
+    "/science/history/apollo-11-1969": "Module de commande Columbia, ayant volé lors d'Apollo 11",
+    "merlin-1d": "Un moteur Merlin 1D ayant volé, offert par SpaceX en 2022",
+    "sojourner": "Marie Curie, l'exemplaire de rechange en configuration de vol du rover Sojourner",
+    "tundra-sirius": "Sirius FM-4, un satellite prêt à voler qui n'a jamais été lancé",
+    "planet-labs": "Un des premiers satellites Dove, un modèle de vol offert par Planet Labs",
+    "skylab": "L'atelier orbital Skylab de réserve, que l'on peut parcourir"
+  }
+}

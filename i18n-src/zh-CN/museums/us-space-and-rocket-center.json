@@ -3,6 +3,8 @@
   "city": "亨茨维尔，阿拉巴马州",
   "description": "NASA马歇尔太空飞行中心位于亨茨维尔的游客中心，Saturn V在此研制；也是Space Camp的所在地。",
   "items": {
-    "apollo-csm-block-ii": "指令舱Casper，曾执行Apollo 16任务（1972年）"
+    "apollo-csm-block-ii": "指令舱Casper，曾执行Apollo 16任务（1972年）",
+    "space-shuttle-orbiter": "Pathfinder，用于地面搬运和适配检查的全尺寸试验轨道器",
+    "saturn-v": "SA-500D，Saturn V动力学试验箭"
   }
 }

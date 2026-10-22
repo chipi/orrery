@@ -3,6 +3,8 @@
   "city": "ハンツビル、アラバマ州",
   "description": "Saturn V が開発された、ハンツビルにある NASA マーシャル宇宙飛行センターのビジターセンター。スペースキャンプの本拠地。",
   "items": {
-    "apollo-csm-block-ii": "司令船 Casper。Apollo 16 で飛行した（1972年）"
+    "apollo-csm-block-ii": "司令船 Casper。Apollo 16 で飛行した（1972年）",
+    "space-shuttle-orbiter": "Pathfinder。地上での取り扱いと適合確認に使われた実物大の試験用オービター",
+    "saturn-v": "SA-500D。Saturn V の動的試験機"
   }
 }

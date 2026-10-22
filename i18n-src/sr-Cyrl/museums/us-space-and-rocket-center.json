@@ -1,8 +1,10 @@
 {
-  "name": "U.S. Space & Rocket Center",
+  "name": "Свемирски и ракетни центар САД",
   "city": "Хантсвил, Алабама",
   "description": "Центар за посетиоце NASA Свемирског центра Маршал у Хантсвилу, где је развијен Saturn V; дом Space Camp.",
   "items": {
-    "apollo-csm-block-ii": "Командни модул Casper, који је летео на Apollo 16 (1972)"
+    "apollo-csm-block-ii": "Командни модул Casper, који је летео на Apollo 16 (1972)",
+    "space-shuttle-orbiter": "Pathfinder, испитни орбитер пуне величине за земаљско руковање и проверу уклапања",
+    "saturn-v": "SA-500D, динамичко испитно возило Saturn V"
   }
 }

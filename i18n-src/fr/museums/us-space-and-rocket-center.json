@@ -3,6 +3,8 @@
   "city": "Huntsville, Alabama",
   "description": "Le centre d'accueil du Marshall Space Flight Center de la NASA à Huntsville, où la Saturn V a été mise au point ; siège du Space Camp.",
   "items": {
-    "apollo-csm-block-ii": "Module de commande Casper, ayant volé lors d'Apollo 16 (1972)"
+    "apollo-csm-block-ii": "Module de commande Casper, ayant volé lors d'Apollo 16 (1972)",
+    "space-shuttle-orbiter": "Pathfinder, un orbiteur d'essai grandeur nature utilisé pour la manutention au sol et les vérifications d'ajustement",
+    "saturn-v": "SA-500D, le véhicule d'essais dynamiques de Saturn V"
   }
 }

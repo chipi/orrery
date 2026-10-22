@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "museum.schema.json",
   "title": "Museums",
-  "description": "Museums where real Orrery hardware (flown, or a real flight backup) is on public display. PRD-027. Text per locale lives in i18n-src/{locale}/museums/{id}.json.",
+  "description": "Museums where real Orrery hardware is on public display: flown, a flight backup, a test article, a flown part or an unflown sister unit (never a replica or model). PRD-027. Text per locale lives in i18n-src/{locale}/museums/{id}.json.",
   "type": "array",
   "minItems": 1,
   "items": {
@@ -24,7 +24,7 @@
           "required": ["ref", "kind", "evidence", "checked"],
           "properties": {
             "ref": { "type": "string", "pattern": "^([a-z0-9][a-z0-9-]*[a-z0-9]|/science/history/[a-z0-9-]+)$" },
-            "kind": { "type": "string", "enum": ["flown", "backup"] },
+            "kind": { "type": "string", "enum": ["flown", "backup", "test-article", "flown-part", "sister-unit"] },
             "evidence": { "type": "string", "pattern": "^https://" },
             "checked": { "type": "string", "format": "date" },
             "from": { "type": "string", "format": "date" }

@@ -1,9 +1,10 @@
 {
-  "name": "The Museum of Flight",
+  "name": "Музеј летења",
   "city": "Сијетл",
   "description": "Један од највећих музеја ваздухопловства и свемира на свету, на аеродрому Боинг филд у Сијетлу.",
   "items": {
     "viking-1": "Viking Lander Flight Capsule 3, слетник Viking изграђен за лет који никада није летео",
-    "viking2-lander": "Viking Lander Flight Capsule 3, слетник Viking изграђен за лет који никада није летео"
+    "viking2-lander": "Viking Lander Flight Capsule 3, слетник Viking изграђен за лет који никада није летео",
+    "apollo-csm-block-i": "Командни модул CM-007, земаљски испитни примерак Block I"
   }
 }

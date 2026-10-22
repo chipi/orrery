@@ -3,6 +3,8 @@
   "city": "Huntsville, Alabama",
   "description": "El centro de visitantes del Centro de Vuelos Espaciales Marshall de la NASA en Huntsville, donde se desarrolló el Saturno V; sede del Space Camp.",
   "items": {
-    "apollo-csm-block-ii": "Módulo de mando Casper, que voló en el Apollo 16 (1972)"
+    "apollo-csm-block-ii": "Módulo de mando Casper, que voló en el Apollo 16 (1972)",
+    "space-shuttle-orbiter": "Pathfinder, un orbitador de pruebas de tamaño real usado para manipulación en tierra y comprobaciones de ajuste",
+    "saturn-v": "SA-500D, el vehículo de pruebas dinámicas del Saturn V"
   }
 }

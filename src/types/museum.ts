@@ -4,11 +4,12 @@
  * i18n-src/{locale}/museums/{id}.json, merged at fetch time.
  */
 
-/** A real object on display: the flown article or a real flight backup. */
+/** A real object on display (PRD-027 §2): flown, a flight backup, a
+ *  test article, a flown part, or an unflown sister unit; never a replica. */
 export interface MuseumHolding {
   /** Fleet entry id, or a `/science/history/<slug>` page path. */
   ref: string;
-  kind: 'flown' | 'backup';
+  kind: 'flown' | 'backup' | 'test-article' | 'flown-part' | 'sister-unit';
   /** A page showing the object is on display there. */
   evidence: string;
   /** Date the evidence was read (YYYY-MM-DD). */

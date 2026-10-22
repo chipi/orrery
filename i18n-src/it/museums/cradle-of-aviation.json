@@ -3,6 +3,7 @@
   "city": "Garden City, New York",
   "description": "Un museo dell'aviazione e dello spazio a Long Island, dove la Grumman costruì i moduli lunari Apollo.",
   "items": {
-    "apollo-lm": "Modulo lunare LM-13, costruito per una missione cancellata e mai volato"
+    "apollo-lm": "Modulo lunare LM-13, costruito per una missione cancellata e mai volato",
+    "apollo-csm-block-i": "Modulo di comando CM-002, un esemplare di prova che volò nel test senza equipaggio del sistema di fuga A-004 (1966)"
   }
 }

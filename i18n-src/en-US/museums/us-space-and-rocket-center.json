@@ -3,6 +3,8 @@
   "city": "Huntsville, Alabama",
   "description": "The visitor centre of NASA's Marshall Space Flight Center in Huntsville, where the Saturn V was developed; home of Space Camp.",
   "items": {
-    "apollo-csm-block-ii": "Command module Casper, flown on Apollo 16 (1972)"
+    "apollo-csm-block-ii": "Command module Casper, flown on Apollo 16 (1972)",
+    "space-shuttle-orbiter": "Pathfinder, a full-size test orbiter used for ground handling and fit checks",
+    "saturn-v": "SA-500D, the Saturn V dynamic test vehicle"
   }
 }

@@ -3,6 +3,8 @@
   "city": "헌츠빌, 앨라배마주",
   "description": "Saturn V가 개발된 헌츠빌의 NASA 마셜 우주비행센터 방문자 센터로, 스페이스 캠프가 열리는 곳이다.",
   "items": {
-    "apollo-csm-block-ii": "사령선 Casper, Apollo 16에서 비행했다 (1972년)"
+    "apollo-csm-block-ii": "사령선 Casper, Apollo 16에서 비행했다 (1972년)",
+    "space-shuttle-orbiter": "Pathfinder, 지상 취급과 적합성 확인에 사용된 실물 크기의 시험용 궤도선",
+    "saturn-v": "SA-500D, Saturn V 동적 시험기"
   }
 }

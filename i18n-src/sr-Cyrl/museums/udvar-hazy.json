@@ -1,9 +1,11 @@
 {
-  "name": "Steven F. Udvar-Hazy Center",
+  "name": "Центар Стивен Ф. Удвар-Хази",
   "city": "Шантили, Вирџинија",
   "description": "Друга локација Националног музеја авијације и астронаутике, пар огромних хангара поред аеродрома Далас у Вашингтону, изграђених за највеће авионе и свемирске летелице.",
   "items": {
     "discovery": "Space Shuttle Discovery, који је летео у 39 мисија",
-    "space-shuttle-orbiter": "Space Shuttle Discovery, који је летео у 39 мисија"
+    "space-shuttle-orbiter": "Space Shuttle Discovery, који је летео у 39 мисија",
+    "h-1": "Мотор Rocketdyne H-1",
+    "lr87": "Мотор XLR-87 пројектила Titan I"
   }
 }

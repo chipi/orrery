@@ -10,3 +10,5 @@ Rules (the site's house rules):
 - No added quotes, no English left untranslated in descriptions/items except the kept names, no markdown.
 
 After writing, run `node docs/wip/2026-10-22-museum-research/tools/check-overlays.mjs <locales>` and fix every problem it lists.
+
+**Script rule (validate-data `check-i18n-defects`):** a locale's text may not be in another non-Latin script. "Keep the museum's own name" means Latin only; a Cyrillic, Chinese or other non-Latin original is translated or transliterated into the target locale's script (ar/hi/ja/ko/zh-CN), using the glossary's forms for people and places (`scripts/i18n-tools/native-terms.json`). Acronyms the checker keeps verbatim (JAXA, NASA, ESA, ISS) stay in Latin in every locale, sr-Cyrl included.

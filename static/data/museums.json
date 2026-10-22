@@ -30,6 +30,36 @@
     ]
   },
   {
+    "id": "aviation-museum-plovdiv-krumovo",
+    "country": "BG",
+    "lat": 42.0682,
+    "lon": 24.842,
+    "website": "https://airmuseum-bg.com",
+    "holds": [
+      {
+        "ref": "soyuz-7k-ok",
+        "kind": "flown",
+        "evidence": "https://airmuseum-bg.com/kolektsii/kosmonavtika/",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "baikonur-cosmodrome-museum",
+    "country": "KZ",
+    "lat": 45.9108,
+    "lon": 63.3167,
+    "website": "https://museum-baikonur.ru/",
+    "holds": [
+      {
+        "ref": "buran",
+        "kind": "test-article",
+        "evidence": "https://commons.wikimedia.org/wiki/File:Космодром_Байконур,_ОК-МЛ1_на_площадке_2.jpg",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
     "id": "bledsoe-miller-steam-center-waco",
     "country": "US",
     "lat": 31.5622,
@@ -157,6 +187,24 @@
         "kind": "flown",
         "evidence": "https://cosmo.org/gallery-guide/",
         "checked": "2026-10-22"
+      },
+      {
+        "ref": "apollo-lm",
+        "kind": "test-article",
+        "evidence": "https://en.wikipedia.org/wiki/Apollo_Lunar_Module",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "voskhod",
+        "kind": "test-article",
+        "evidence": "https://cosmo.org/gallery-guide/",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "f-1",
+        "kind": "flown-part",
+        "evidence": "https://cosmo.org/gallery-guide/",
+        "checked": "2026-10-22"
       }
     ]
   },
@@ -170,6 +218,12 @@
       {
         "ref": "apollo-lm",
         "kind": "backup",
+        "evidence": "https://www.cradleofaviation.org",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "apollo-csm-block-i",
+        "kind": "test-article",
         "evidence": "https://www.cradleofaviation.org",
         "checked": "2026-10-22"
       }
@@ -191,6 +245,21 @@
     ]
   },
   {
+    "id": "esperance-museum",
+    "country": "AU",
+    "lat": -33.8586,
+    "lon": 121.8945,
+    "website": "https://www.esperancemuseum.com.au/",
+    "holds": [
+      {
+        "ref": "skylab",
+        "kind": "flown-part",
+        "evidence": "https://www.esperancemuseum.com.au/",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
     "id": "fernbank-science-center",
     "country": "US",
     "lat": 33.7787,
@@ -201,6 +270,21 @@
         "ref": "apollo-csm-block-i",
         "kind": "flown",
         "evidence": "https://en.wikipedia.org/wiki/Fernbank_Science_Center",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "franklin-institute",
+    "country": "US",
+    "lat": 39.9582,
+    "lon": -75.1731,
+    "website": "https://www.fi.edu",
+    "holds": [
+      {
+        "ref": "apollo-lm",
+        "kind": "test-article",
+        "evidence": "https://american-spacecraft.org/lunar-modules",
         "checked": "2026-10-22"
       }
     ]
@@ -222,6 +306,27 @@
         "ref": "saturn-v",
         "kind": "backup",
         "evidence": "https://visitinfinity.com/galleries-exhibits/",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "intrepid-museum",
+    "country": "US",
+    "lat": 40.7646,
+    "lon": -73.9996,
+    "website": "https://www.intrepidmuseum.org",
+    "holds": [
+      {
+        "ref": "enterprise",
+        "kind": "test-article",
+        "evidence": "https://intrepidmuseum.org/space-shuttle-pavilion",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "space-shuttle-orbiter",
+        "kind": "test-article",
+        "evidence": "https://intrepidmuseum.org/space-shuttle-pavilion",
         "checked": "2026-10-22"
       }
     ]
@@ -317,6 +422,36 @@
     ]
   },
   {
+    "id": "korolev-museum-zhytomyr",
+    "country": "UA",
+    "lat": 50.253,
+    "lon": 28.6776,
+    "website": "https://cosmosmuseum.info",
+    "holds": [
+      {
+        "ref": "soyuz-7k-ok",
+        "kind": "flown",
+        "evidence": "https://commons.wikimedia.org/wiki/File:Spuskaemiy_modul_soyuza_27_4.jpg",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "mao-zedong-memorial-museum-shaoshan",
+    "country": "CN",
+    "lat": 27.9084,
+    "lon": 112.4865,
+    "website": "https://www.ssmzd.com/",
+    "holds": [
+      {
+        "ref": "shenzhou",
+        "kind": "flown",
+        "evidence": "https://zh.wikipedia.org/wiki/神舟十号",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
     "id": "musee-air-espace-le-bourget",
     "country": "FR",
     "lat": 48.9471,
@@ -348,6 +483,12 @@
         "ref": "viking2-lander",
         "kind": "backup",
         "evidence": "https://www.museumofflight.org/exhibits-and-events/spacecraft/viking-lander-flight-capsule-3",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "apollo-csm-block-i",
+        "kind": "test-article",
+        "evidence": "https://american-spacecraft.org/apollo",
         "checked": "2026-10-22"
       }
     ]
@@ -439,6 +580,27 @@
         "kind": "backup",
         "evidence": "https://airandspace.si.edu/collection-objects/orbital-workshop-skylab-backup-flight-unit/nasm_A19761033000",
         "checked": "2026-10-22"
+      },
+      {
+        "ref": "lrv-apollo",
+        "kind": "test-article",
+        "evidence": "https://airandspace.si.edu/es/collection-objects/lunar-roving-vehicle-qualification-test-unit/nasm_A19760746000",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "national-military-museum-bucharest",
+    "country": "RO",
+    "lat": 44.4414,
+    "lon": 26.0765,
+    "website": "https://muzeulmilitar.ro",
+    "holds": [
+      {
+        "ref": "soyuz-7k-ok",
+        "kind": "flown",
+        "evidence": "https://www.historia.ro/sectiune/general/articol/povestea-capsula-navei-soiuz-40-sau-garsoniera-lui-prunariu-foto",
+        "checked": "2026-10-22"
       }
     ]
   },
@@ -523,6 +685,18 @@
         "kind": "backup",
         "evidence": "https://en.wikipedia.org/wiki/Saturn_V",
         "checked": "2026-10-22"
+      },
+      {
+        "ref": "apollo-lm",
+        "kind": "test-article",
+        "evidence": "https://en.wikipedia.org/wiki/Space_Center_Houston",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "lrv-apollo",
+        "kind": "test-article",
+        "evidence": "https://en.wikipedia.org/wiki/Space_Center_Houston",
+        "checked": "2026-10-22"
       }
     ]
   },
@@ -583,6 +757,27 @@
         "kind": "flown",
         "evidence": "https://www.technik-museum.de/de/entdecken/ausstellungen/raumfahrtausstellung-apollo-and-beyond/",
         "checked": "2026-10-22"
+      },
+      {
+        "ref": "buran-ok-gli",
+        "kind": "test-article",
+        "evidence": "https://en.wikipedia.org/wiki/OK-GLI",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "tsiolkovsky-museum-kaluga",
+    "country": "RU",
+    "lat": 54.5169,
+    "lon": 36.2308,
+    "website": "https://gmik.ru",
+    "holds": [
+      {
+        "ref": "mars-3",
+        "kind": "test-article",
+        "evidence": "https://ru.wikipedia.org/wiki/Марс-3",
+        "checked": "2026-10-22"
       }
     ]
   },
@@ -604,6 +799,18 @@
         "kind": "flown",
         "evidence": "https://airandspace.si.edu/visit/udvar-hazy-center",
         "checked": "2026-10-22"
+      },
+      {
+        "ref": "h-1",
+        "kind": "test-article",
+        "evidence": "https://airandspace.si.edu/collection-objects/rocket-engine-liquid-fuel-h-1/nasm_A19680012000",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "lr87",
+        "kind": "test-article",
+        "evidence": "https://airandspace.si.edu/collection-objects/rocket-engine-liquid-fuel-xlr-87-titan-1-missile/nasm_A19721009000",
+        "checked": "2026-10-22"
       }
     ]
   },
@@ -618,6 +825,18 @@
         "ref": "apollo-csm-block-ii",
         "kind": "flown",
         "evidence": "https://www.rocketcenter.com",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "space-shuttle-orbiter",
+        "kind": "test-article",
+        "evidence": "https://www.rocketcenter.com",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "saturn-v",
+        "kind": "test-article",
+        "evidence": "https://en.wikipedia.org/wiki/Saturn_V",
         "checked": "2026-10-22"
       }
     ]

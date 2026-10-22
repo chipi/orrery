@@ -1,0 +1,390 @@
+{
+ "museums": {
+  "rkk-energia-museum-korolev": {
+   "name": "RKK Energia Space Technology Museum",
+   "city": "Korolev",
+   "country": "RU",
+   "website": "https://www.energia.ru"
+  },
+  "tsiolkovsky-museum-kaluga": {
+   "name": "Tsiolkovsky State Museum of the History of Cosmonautics",
+   "city": "Kaluga",
+   "country": "RU",
+   "website": "https://gmik.ru"
+  },
+  "memorial-museum-of-cosmonautics-moscow": {
+   "name": "Memorial Museum of Cosmonautics",
+   "city": "Moscow",
+   "country": "RU",
+   "website": "https://www.kosmo-museum.ru"
+  },
+  "vdnkh-cosmonautics-aviation-center-moscow": {
+   "name": "Cosmonautics and Aviation Center (Pavilion 34 Kosmos), VDNKh",
+   "city": "Moscow",
+   "country": "RU",
+   "website": "https://vdnh.ru"
+  },
+  "vdnkh-moscow": {
+   "name": "VDNKh (Industry Square, outdoor display)",
+   "city": "Moscow",
+   "country": "RU",
+   "website": "https://vdnh.ru"
+  },
+  "gagarin-cosmonaut-training-center-museum": {
+   "name": "Museum of Cosmonautics of the Gagarin Cosmonaut Training Center",
+   "city": "Star City",
+   "country": "RU",
+   "website": "https://www.gctc.ru"
+  },
+  "samara-regional-museum-alabin": {
+   "name": "Alabin Samara Regional History and Local Lore Museum",
+   "city": "Samara",
+   "country": "RU",
+   "website": "https://www.samarmuseum.ru"
+  },
+  "arkhipo-osipovka-cosmonautics-museum": {
+   "name": "Museum of Cosmonautics and Aviation, Arkhipo-Osipovka",
+   "city": "Arkhipo-Osipovka",
+   "country": "RU",
+   "website": ""
+  },
+  "baikonur-cosmodrome-museum": {
+   "name": "Baikonur Cosmodrome Museum (Gagarin museum)",
+   "city": "Baikonur",
+   "country": "KZ",
+   "website": ""
+  },
+  "sirius-science-center-sochi": {
+   "name": "Sirius Science Center (outdoor Buran)",
+   "city": "Sochi",
+   "country": "RU",
+   "website": "https://sirius.online"
+  },
+  "korolev-museum-of-cosmonautics-zhytomyr": {
+   "name": "S. P. Korolyov Museum of Cosmonautics",
+   "city": "Zhytomyr",
+   "country": "UA",
+   "website": ""
+  }
+ },
+ "rows": [
+  {
+   "ref": "vostok",
+   "museum": "rkk-energia-museum-korolev",
+   "item": "Restored Vostok-1 descent module (Gagarin)",
+   "kind": "flown",
+   "evidence": "https://ru.wikipedia.org/wiki/Музей_космической_техники",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); ru.wikipedia says 'восстановленная капсула Восток-1'; museum is visit-by-appointment; energia.ru refused connection"
+  },
+  {
+   "ref": "vostok",
+   "museum": "rkk-energia-museum-korolev",
+   "item": "Vostok-6 descent module (Tereshkova)",
+   "kind": "flown",
+   "evidence": "https://ru.wikipedia.org/wiki/Музей_космической_техники",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); listed in ru.wikipedia museum article"
+  },
+  {
+   "ref": "vostok",
+   "museum": "tsiolkovsky-museum-kaluga",
+   "item": "Vostok-5 descent module (Bykovsky, 1963), displayed since 1968",
+   "kind": "flown",
+   "evidence": "https://ru.wikipedia.org/wiki/Восток-5",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); quote: 'С 1968 года спускаемый аппарат корабля «Восток-5» экспонируется в музее истории космонавтики в Калуге'; Commons has Category:Vostok 5 reentry capsule in the Tsiolkovsky State Museum"
+  },
+  {
+   "ref": "vostok",
+   "museum": "vdnkh-cosmonautics-aviation-center-moscow",
+   "item": "'Подлинный спускаемый аппарат космического корабля «Восток»' (unit not identified)",
+   "kind": "flown",
+   "evidence": "https://ru.wikipedia.org/wiki/Павильон_№_34_«Космос»_на_ВДНХ",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); which Vostok capsule not stated; Commons category 'Vostok 1 at the Cosmos Pavilion' exists without description"
+  },
+  {
+   "ref": "r-7-vostok",
+   "museum": "tsiolkovsky-museum-kaluga",
+   "item": "Vostok launch vehicle duplicate of Gagarin's Vostok-1 rocket, outdoors on museum grounds",
+   "kind": "backup",
+   "evidence": "https://ru.wikipedia.org/wiki/Восток_(ракета-носитель)",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); ru.wikipedia calls it a duplicate copy and explicitly 'не макет'; also ru article Государственный_музей_истории_космонавтики says 'подлинный экземпляр ракетно-космического комплекса «Восток»' since 21 June 1973, the reserve vehicle for Gagarin's flight"
+  },
+  {
+   "ref": "vostok-k",
+   "museum": "tsiolkovsky-museum-kaluga",
+   "item": "Vostok launch vehicle duplicate of Gagarin's Vostok-1 rocket (Vostok 8K72K), outdoors",
+   "kind": "backup",
+   "evidence": "https://ru.wikipedia.org/wiki/Восток_(ракета-носитель)",
+   "status": "uncertain",
+   "notes": "same unit as r-7-vostok row; evidence is wikipedia/commons only (museum site did not name the unit); "
+  },
+  {
+   "ref": "soyuz-t",
+   "museum": "rkk-energia-museum-korolev",
+   "item": "Soyuz-19 descent module (Apollo-Soyuz, 1975)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Apollo–Soyuz",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); quote: 'The descent module of Soyuz 19 is on display at the RKK Energiya museum in Korolyov'; it is a 7K-TM, not a T-series ship, family match is loose"
+  },
+  {
+   "ref": "soyuz-t",
+   "museum": "tsiolkovsky-museum-kaluga",
+   "item": "Soyuz-34 descent module (1979)",
+   "kind": "flown",
+   "evidence": "https://ru.wikipedia.org/wiki/Союз-34",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); ru.wikipedia caption 'Спускаемый аппарат космического корабля Союз-34 в экспозиции музея ... Циолковского'; Commons Category:Soyuz 34 reentry capsule in the Tsiolkovsky State Museum; Soyuz 34 is a 7K-T, loose family match"
+  },
+  {
+   "ref": "soyuz-t",
+   "museum": "tsiolkovsky-museum-kaluga",
+   "item": "Soyuz-22 descent module (1976)",
+   "kind": "flown",
+   "evidence": "https://ru.wikipedia.org/wiki/Музей_и_дом-усадьба_К._Э._Циолковского",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); quote: 'В центре зала расположен уникальный экспонат — спускаемый аппарат космического корабля «Союз-22»'; Soyuz 22 is a 7K-MF6 variant, loose family match"
+  },
+  {
+   "ref": "soyuz-t",
+   "museum": "memorial-museum-of-cosmonautics-moscow",
+   "item": "Soyuz-37 descent module (1980)",
+   "kind": "flown",
+   "evidence": "https://ru.wikipedia.org/wiki/Мемориальный_музей_космонавтики",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); ru.wikipedia lists it among 'подлинные' exhibits; Commons Category 'Soyuz 37 at the Memorial Museum of Cosmonautics'; Soyuz 37 is a 7K-T, loose family match"
+  },
+  {
+   "ref": "soyuz-tm",
+   "museum": "memorial-museum-of-cosmonautics-moscow",
+   "item": "Soyuz TM-7 descent module",
+   "kind": "flown",
+   "evidence": "https://commons.wikimedia.org/wiki/File:Союз_ТМ-7.jpg",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); file captioned 'Спускаемый аппарат космического корабля «Союз ТМ-7»', photo 2015-10-01; Commons does not say original vs replica"
+  },
+  {
+   "ref": "soyuz-t",
+   "museum": "arkhipo-osipovka-cosmonautics-museum",
+   "item": "Soyuz-30 descent module (1978)",
+   "kind": "flown",
+   "evidence": "https://ru.wikipedia.org/wiki/Союз-30",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); quote: 'Спускаемый аппарат экспонируется в Музее космонавтики в Архипо-Осиповке'; en.wikipedia Museum of Polish Military Technology also lists a 'Soyuz 30 descent module' in Warsaw, so the location is contested; 7K-T, loose family match"
+  },
+  {
+   "ref": "soyuz-t",
+   "museum": "korolev-museum-of-cosmonautics-zhytomyr",
+   "item": "Soyuz 27 descent module (1978)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Soyuz_27",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); en.wikipedia: 'displayed at the Sergei Pavlovich Korolyov Museum of Cosmonautics in Zhytomyr, Ukraine'; museum is in a war-affected country, current status unchecked; 7K-T, loose family match"
+  },
+  {
+   "ref": "soyuz-7k-ok",
+   "museum": "gagarin-cosmonaut-training-center-museum",
+   "item": "Soyuz-4 descent module",
+   "kind": "flown",
+   "evidence": "https://ru.wikipedia.org/wiki/Музей_космонавтики_Центра_подготовки_космонавтов_им._Ю._А._Гагарина",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); ru.wikipedia lists 'спускаемый аппарат космического корабля «Союз-4»'; the Soyuz-4 article does not give a location; Star City museum has restricted access"
+  },
+  {
+   "ref": "buran",
+   "museum": "baikonur-cosmodrome-museum",
+   "item": "OK-ML1 / BTS-001 full-size ground-test orbiter, outdoors by the museum entrance",
+   "kind": "test-article",
+   "evidence": "https://en.wikipedia.org/wiki/Buran_programme",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); en.wikipedia says BTS-001 at Baikonur since 2007; ru.wikipedia (БТС-001 ОК-МЛ-1) says the same article moved Gorky Park -> VDNKh in 2014 and calls it 'полноразмерный испытательный макет'; sources conflict on location and on model vs test article"
+  },
+  {
+   "ref": "buran",
+   "museum": "vdnkh-moscow",
+   "item": "Buran ground-test orbiter (OK-ML1 per ru.wikipedia), outdoors on Industry Square, since 2014",
+   "kind": "test-article",
+   "evidence": "https://ru.wikipedia.org/wiki/БТС-001_ОК-МЛ-1",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); ru.wikipedia calls it 'полноразмерный испытательный макет'; en.wikipedia assigns OK-TVA (0.15) to VDNKh and BTS-001 to Baikonur; may be a model rather than a test article"
+  },
+  {
+   "ref": "buran",
+   "museum": "sirius-science-center-sochi",
+   "item": "OK-KS (BTS-003) full-scale ground-test orbiter, outdoors since June 2017",
+   "kind": "test-article",
+   "evidence": "https://en.wikipedia.org/wiki/Buran_programme",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); BTS-003 page on ru.wikipedia 404; not read there"
+  },
+  {
+   "ref": "rd-107-108",
+   "museum": "samara-regional-museum-alabin",
+   "item": "RD-117 engine (Soyuz variant of RD-107)",
+   "kind": "sister-unit",
+   "evidence": "https://ru.wikipedia.org/wiki/РД-107",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); quote 'РД-117 в Самарском областном музее'; RD-117 is a variant, not RD-107/108 itself; whether on current display unverified"
+  }
+ ],
+ "museums_checked": [
+  {
+   "id": "rkk-energia-museum-korolev",
+   "name": "RKK Energia Space Technology Museum",
+   "city": "Korolev",
+   "country": "RU",
+   "result": "rows added 8; site energia.ru refused connection, evidence via Wikipedia only"
+  },
+  {
+   "id": "tsiolkovsky-museum-kaluga",
+   "name": "Tsiolkovsky State Museum of the History of Cosmonautics",
+   "city": "Kaluga",
+   "country": "RU",
+   "result": "rows added 5; gmik.ru pages gave no exhibit list; Commons shows Luna 9/10/16, Venera 9, Zond 3 and Lunokhod 2 categories but the Lunokhod 2 and Mars 3 are replicas and the others are unspecified, so not recorded"
+  },
+  {
+   "id": "memorial-museum-of-cosmonautics-moscow",
+   "name": "Memorial Museum of Cosmonautics",
+   "city": "Moscow",
+   "country": "RU",
+   "result": "rows added 2; Mars-3, Venera-4, Luna, Lunokhod-1, Vostok, Sputnik shown are replicas/models per Commons and museum site, skipped (ru.wikipedia calls Mars-3/Venera-4 originals: contradiction not recorded as rows)"
+  },
+  {
+   "id": "vdnkh-cosmonautics-aviation-center-moscow",
+   "name": "Pavilion 34 Kosmos VDNKh",
+   "city": "Moscow",
+   "country": "RU",
+   "result": "rows added 1; Kristall module and Apollo-Soyuz are mock-ups"
+  },
+  {
+   "id": "vdnkh-moscow",
+   "name": "VDNKh outdoor",
+   "city": "Moscow",
+   "country": "RU",
+   "result": "rows added 1"
+  },
+  {
+   "id": "gagarin-cosmonaut-training-center-museum",
+   "name": "GCTC museum",
+   "city": "Star City",
+   "country": "RU",
+   "result": "rows added 1"
+  },
+  {
+   "id": "samara-cosmic-museum",
+   "name": "Samara Kosmicheskaya",
+   "city": "Samara",
+   "country": "RU",
+   "result": "no new Orrery rows (Soyuz rocket already known; Yantar/Resurs descent modules and Lonchakov suit not matched to an Orrery object)"
+  },
+  {
+   "id": "samara-aviation-cosmonautics-museum",
+   "name": "Korolev Museum of Aviation and Cosmonautics (SSAU)",
+   "city": "Samara",
+   "country": "RU",
+   "result": "no Orrery match: NK-33 engine, Yantar/Photon parts, Romanenko suit unspecified"
+  },
+  {
+   "id": "museum-space-missile-technology-spb",
+   "name": "Glushko Museum of Space and Rocket Technology",
+   "city": "St Petersburg",
+   "country": "RU",
+   "result": "no new rows (RD-107 known); Komet capsule not an Orrery object; Vostok/Soyuz are mock-ups"
+  },
+  {
+   "id": "samara-regional-museum-alabin",
+   "name": "Alabin Samara Regional Museum",
+   "city": "Samara",
+   "country": "RU",
+   "result": "rows added 1"
+  },
+  {
+   "id": "arkhipo-osipovka-cosmonautics-museum",
+   "name": "Arkhipo-Osipovka museum",
+   "city": "Arkhipo-Osipovka",
+   "country": "RU",
+   "result": "rows added 1"
+  },
+  {
+   "id": "baikonur-cosmodrome-museum",
+   "name": "Baikonur museum",
+   "city": "Baikonur",
+   "country": "KZ",
+   "result": "rows added 1; also an unidentified 'older Soyuz descent capsule' not recorded"
+  },
+  {
+   "id": "sirius-science-center-sochi",
+   "name": "Sirius Science Center",
+   "city": "Sochi",
+   "country": "RU",
+   "result": "rows added 1"
+  },
+  {
+   "id": "korolev-museum-of-cosmonautics-zhytomyr",
+   "name": "Korolev Museum Zhytomyr",
+   "city": "Zhytomyr",
+   "country": "UA",
+   "result": "rows added 1"
+  },
+  {
+   "id": "central-house-aviation-cosmonautics-moscow",
+   "name": "Central House of Aviation and Cosmonautics (DOSAAF)",
+   "city": "Moscow",
+   "country": "RU",
+   "result": "no rows: Vostok descent module listed but original vs copy not stated; museum described as models-based"
+  },
+  {
+   "id": "rostov-museum-of-cosmonautics",
+   "name": "Rostov Museum of Cosmonautics",
+   "city": "Rostov-on-Don",
+   "country": "RU",
+   "result": "no real Orrery hardware; closed 2020, demolition from 2024; its Soyuz TMA-10 is a simulator"
+  },
+  {
+   "id": "south-ural-rocket-space-training-center",
+   "name": "YuUrGU rocket and space education center",
+   "city": "Chelyabinsk",
+   "country": "RU",
+   "result": "no real Orrery hardware identified (engines unnamed)"
+  },
+  {
+   "id": "izhevsk-gagarin-museum",
+   "name": "Gagarin Aviation and Cosmonautics Museum",
+   "city": "Izhevsk",
+   "country": "RU",
+   "result": "no real Orrery hardware"
+  },
+  {
+   "id": "central-air-force-museum-monino",
+   "name": "Central Air Force Museum",
+   "city": "Monino",
+   "country": "RU",
+   "result": "no real Orrery hardware (no space exhibits in article)"
+  },
+  {
+   "id": "polytechnic-museum-moscow",
+   "name": "Polytechnic Museum",
+   "city": "Moscow",
+   "country": "RU",
+   "result": "could not read site; Wikipedia gave no space inventory"
+  },
+  {
+   "id": "lavochkin-museum-khimki",
+   "name": "Lavochkin museum",
+   "city": "Khimki",
+   "country": "RU",
+   "result": "could not read site; ru.wikipedia article title not found (404); only pass 1 Lunokhod 3 known"
+  },
+  {
+   "id": "reshetnev-iss-zheleznogorsk",
+   "name": "Reshetnev ISS",
+   "city": "Zheleznogorsk",
+   "country": "RU",
+   "result": "could not read site; no museum found"
+  }
+ ]
+}

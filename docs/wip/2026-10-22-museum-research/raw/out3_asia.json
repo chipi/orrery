@@ -1,0 +1,29 @@
+{
+ "museums": {
+  "nehru-planetarium-delhi": {"name":"Nehru Planetarium (Teen Murti, Nehru Memorial Museum & Library campus)","city":"New Delhi","country":"IN","website":"https://nehruplanetarium.org/"},
+  "baikonur-cosmodrome-museum": {"name":"Baikonur Cosmodrome Museum (city House of Culture; related site-2 museum)","city":"Baikonur","country":"KZ","website":"https://commons.wikimedia.org/wiki/Category:Museum_of_Baikonur_Cosmodrome_History"}
+ },
+ "rows": [
+  {"ref":"soyuz-t","museum":"nehru-planetarium-delhi","item":"Soyuz T-10 descent module (return craft of the Soyuz T-11 Indo-Soviet crew incl. Rakesh Sharma), shown with Sharma's space suit","kind":"flown","evidence":"https://commons.wikimedia.org/wiki/File:Soyuz-T-10_Landing_Pod.jpg","status":"uncertain","notes":"Evidence is a Commons photo taken 22 Jul 2012 (category 'Soyuz T-10 at Nehru Planetarium'), the Wikipedia article Soyuz T-10, and an undated school-trip article https://theindianschool.in/school-news/sky-walk-a-trip-to-the-nehru-planetarium ('A major attraction was the Soyuz T-10 which carried Indias first cosmonaut'). The planetarium's own site (nehruplanetarium.org) does not mention it, so current display is not confirmed."},
+  {"ref":"buran","museum":"baikonur-cosmodrome-museum","item":"Piece of window glass from Buran OK-1K1 (the flown orbiter, destroyed in the 2002 hangar collapse)","kind":"flown-part","evidence":"https://commons.wikimedia.org/wiki/File:Байконур,_обломок_стекла_из_Бурана_в_музее.jpg","status":"confirmed","notes":"Commons photo dated 13 Apr 2026 by Nikolai Bulykin; description names OK-1K1 and the Baikonur Cosmodrome museum in the city House of Culture. Single photo source; no museum web page found."}
+ ],
+ "museums_checked": [
+  {"id":"nehru-planetarium-delhi","name":"Nehru Planetarium","city":"New Delhi","country":"IN","result":"rows added 1"},
+  {"id":"baikonur-cosmodrome-museum","name":"Baikonur Cosmodrome Museum / site-2 museum","city":"Baikonur","country":"KZ","result":"rows added 1. Not recorded: full-scale OK-ML1 beside the site-2 museum (ru Wikipedia calls it a dimensional/weight fit-check mock-up, 'макет'; en Wikipedia calls it an airframe/shake test article - contradictory, skipped); a Sokol KV-2 suit (Commons photo 2026-04-13, real or replica and whose suit not stated); an 'older version Soyuz descent capsule' (version not identified); Soyuz launch-vehicle fragments (not a unit)"},
+  {"id":"vssc-space-museum-thiruvananthapuram","name":"VSSC / ISRO Space Museum","city":"Thiruvananthapuram","country":"IN","result":"could not read site (vssc.gov.in DNS failure; Wikipedia gives no inventory). SRE-1 recovered capsule is reported there but SRE is not an Orrery object"},
+  {"id":"visvesvaraya-industrial-technological-museum","name":"Visvesvaraya Industrial & Technological Museum","city":"Bengaluru","country":"IN","result":"no real Orrery hardware found (official page lists a Space Technology Gallery without inventory; Commons shows 'Indian space rocket models' only)"},
+  {"id":"nehru-science-centre-mumbai","name":"Nehru Science Centre","city":"Mumbai","country":"IN","result":"could not read site (DNS failure; Wikipedia names no space hardware)"},
+  {"id":"birla-industrial-technological-museum-kolkata","name":"Birla Industrial & Technological Museum","city":"Kolkata","country":"IN","result":"could not read site (Wikipedia page not found)"},
+  {"id":"satish-dhawan-space-centre","name":"Satish Dhawan Space Centre (Sriharikota)","city":"Sriharikota","country":"IN","result":"no real Orrery hardware found (only a launch view gallery documented)"},
+  {"id":"bangalore-space-expo-2018","name":"Bangalore Space Expo 2018 (CARE crew module)","city":"Bengaluru","country":"IN","result":"no permanent display found, temporary expo only"},
+  {"id":"madatech-haifa","name":"Madatech National Museum of Science, Technology and Space","city":"Haifa","country":"IL","result":"no real Orrery hardware found (Beresheet only as a full-size model at Habima Square)"},
+  {"id":"mbrsc-museum-of-the-future-dubai","name":"Mohammed bin Rashid Space Centre / Museum of the Future","city":"Dubai","country":"AE","result":"no real Orrery hardware found (Hope prototype shown only at Dubai Airshow 2017)"},
+  {"id":"pakistan-air-force-museum-karachi","name":"Pakistan Air Force Museum","city":"Karachi","country":"PK","result":"no real Orrery hardware found (aviation only)"},
+  {"id":"rahmi-m-koc-museum","name":"Rahmi M. Koc Museum","city":"Istanbul","country":"TR","result":"no real Orrery hardware found"},
+  {"id":"ankara-aviation-museum","name":"Ankara Aviation Museum","city":"Ankara","country":"TR","result":"no real Orrery hardware found"},
+  {"id":"science-centre-singapore","name":"Science Centre Singapore","city":"Singapore","country":"SG","result":"no real Orrery hardware found (page lists none)"},
+  {"id":"yangon-space-museum","name":"Yangon Space Museum","city":"Yangon","country":"MM","result":"no real Orrery hardware found (models)"},
+  {"id":"national-planetarium-kuala-lumpur","name":"National Planetarium (Planetarium Negara)","city":"Kuala Lumpur","country":"MY","result":"could not read site"}
+ ],
+ "notes": "WebFetch only (WebSearch not used). Wikipedia/Commons full-text search returned little for Asian museums, so coverage beyond India, Kazakhstan, Israel and UAE is thin; Thailand, Indonesia, Iran, Saudi Arabia, Vietnam, Uzbekistan, Mongolia had no museum surfaced and were not verified absent. 'No real Orrery hardware found' is not 'verified absent'. Countries with rows: IN, KZ."
+}

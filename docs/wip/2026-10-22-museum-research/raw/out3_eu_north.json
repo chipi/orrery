@@ -1,0 +1,41 @@
+{
+  "museums": {
+    "technik-museum-speyer": {"name": "Technik Museum Speyer", "city": "Speyer", "country": "DE", "website": "https://www.technik-museum.de"},
+    "militaerhistorisches-museum-dresden": {"name": "Militaerhistorisches Museum der Bundeswehr", "city": "Dresden", "country": "DE", "website": "https://dresden.mhmbw.de"},
+    "science-museum-london": {"name": "Science Museum", "city": "London", "country": "GB", "website": "https://www.sciencemuseum.org.uk"},
+    "national-museum-of-scotland-edinburgh": {"name": "National Museum of Scotland", "city": "Edinburgh", "country": "GB", "website": "https://www.nms.ac.uk"}
+  },
+  "rows": [
+    {"ref": "soyuz-tm", "museum": "technik-museum-speyer", "item": "Soyuz TM-19 descent module (Merbold return, 1995)", "kind": "flown", "evidence": "https://www.technik-museum.de/de/entdecken/ausstellungen/raumfahrtausstellung-apollo-and-beyond/", "status": "confirmed", "notes": "Museum page lists 'die Landekapsel der Sojus-Mission TM-19' as an original; en.wikipedia Soyuz TM-19 says Energia gave it to Speyer in 2010, permanent display."},
+    {"ref": "soyuz-t", "museum": "militaerhistorisches-museum-dresden", "item": "Soyuz 29 descent module (used by Sigmund Jaehn to return from Salyut 6, 1978)", "kind": "flown", "evidence": "https://de.wikipedia.org/wiki/Sojus_29", "status": "uncertain", "notes": "Only Wikipedia (de: Sojus 29 and the museum article) says it has been in the Libeskind wing since 2011; museum site fetched but gave no object page. Soyuz 29 is a 7K-T ferry, Orrery has no 7K-T entry; soyuz-t is the nearest ref, mapping is the operator's call."},
+    {"ref": "j-2", "museum": "science-museum-london", "item": "J-2 rocket engine (Rockwell, 1966, object 1977-402)", "kind": "backup", "evidence": "https://collection.sciencemuseumgroup.org.uk/objects/co40347/j2-rocket-engine-saturn-v-rocket-second-and-third-stage", "status": "uncertain", "notes": "Collection record says authentic J-2, 'On Display' in the Space Gallery, but gives no serial and does not say whether it flew; kind is a guess (flown / unflown / test unknown). Museum asks visitors to confirm it is on show."},
+    {"ref": "/science/history/goddard-liquid-rocket-1926", "museum": "science-museum-london", "item": "Goddard rocket engine (1929), lent by NASM", "kind": "sister-unit", "evidence": "https://collection.sciencemuseumgroup.org.uk/objects/co40009/goddard-rocket-engine", "status": "uncertain", "notes": "1929 engine, not the 1926 rocket; record does not say if flown. Search listing says Energy Hall, object page gives no display status."},
+    {"ref": "gemini", "museum": "national-museum-of-scotland-edinburgh", "item": "Gemini Paraglider TTV-2 boilerplate capsule", "kind": "test-article", "evidence": "https://commons.wikimedia.org/wiki/Category:Gemini_TTV-2_Paraglider_capsule", "status": "uncertain", "notes": "Wikipedia (Project Gemini) lists TTV-2 at Museum of Scotland; Commons category is filed as a Gemini boilerplate in the National Museum of Scotland but is also cross-filed under National Space Centre Leicester. NMS site returned 403, so current display not confirmed."},
+    {"ref": "sokol-kv-2", "museum": "technik-museum-speyer", "item": "Sokol-KV-2 suit (unidentified unit)", "kind": "sister-unit", "evidence": "https://commons.wikimedia.org/wiki/File:2012-10-23_Sokol-KV-2_space_suit_anagoria.JPG", "status": "uncertain", "notes": "Commons photo (2012) only; museum page says 'numerous spacesuits' without naming this one. Not known whether flown."}
+  ],
+  "museums_checked": [
+    {"id": "technik-museum-speyer", "name": "Technik Museum Speyer", "city": "Speyer", "country": "DE", "result": "rows added 2 (Soyuz TM-19; Sokol uncertain). Not recorded: Vostok 1, Apollo LM, LRV, Columbus (replicas/models), Zvezda module and BOR-5 (museum page does not say real vs ground article), Ariane EPS stage and Orlan-DM suit (Commons only, no status). Buran OK-GLI already in known rows."},
+    {"id": "militaerhistorisches-museum-dresden", "name": "Militaerhistorisches Museum der Bundeswehr", "city": "Dresden", "country": "DE", "result": "rows added 1"},
+    {"id": "science-museum-london", "name": "Science Museum", "city": "London", "country": "GB", "result": "rows added 2 (Apollo 10 CM, Soyuz TMA-19M, Sokol suits already in known rows; Beagle 2 and Sputnik items are replicas/models; Hubble/Ariane/shuttle items are parts without display status)"},
+    {"id": "national-museum-of-scotland-edinburgh", "name": "National Museum of Scotland", "city": "Edinburgh", "country": "GB", "result": "rows added 1 (site 403, Commons/Wikipedia only)"},
+    {"id": "national-space-centre-leicester", "name": "National Space Centre", "city": "Leicester", "country": "GB", "result": "no new Orrery rows: its Soyuz is catalogued on Commons as a mock-up, Mercury/Mock Sputnik are replicas; Thor Able and Blue Streak are not Orrery objects; Peake suit already known"},
+    {"id": "deutsches-museum-munich", "name": "Deutsches Museum", "city": "Munich", "country": "DE", "result": "no new Orrery rows found (Commons lists LRV, Mariner 2, Astro-SPAS, Helios parts; official site page 404; Vulcain engine exhibit mentioned by dewiki but museum not confirmed; Flade Sokol already known)"},
+    {"id": "deutsche-raumfahrtausstellung-morgenroethe", "name": "Deutsche Raumfahrtausstellung", "city": "Morgenroethe-Rautenkranz", "country": "DE", "result": "no real Orrery hardware confirmed (Mir exhibit is a training module per Commons; rocket/shuttle models; museum site says 'originale Exponate' without itemising)"},
+    {"id": "hermann-oberth-raumfahrt-museum-feucht", "name": "Hermann-Oberth-Raumfahrt-Museum", "city": "Feucht", "country": "DE", "result": "no real Orrery hardware (Messerschmid D1 suit, small rockets not in Orrery)"},
+    {"id": "deutsches-technikmuseum-berlin", "name": "Deutsches Technikmuseum", "city": "Berlin", "country": "DE", "result": "no real Orrery hardware found (German rocket history focus)"},
+    {"id": "raumfahrtmuseum-mittweida", "name": "Raumfahrtmuseum Mittweida", "city": "Mittweida", "country": "DE", "result": "could not read site"},
+    {"id": "technisches-museum-wien", "name": "Technisches Museum Wien", "city": "Vienna", "country": "AT", "result": "no real Orrery hardware found (Wikipedia lists no space items)"},
+    {"id": "danmarks-tekniske-museum", "name": "Danmarks Tekniske Museum", "city": "Helsingoer", "country": "DK", "result": "no new rows (Soyuz TMA-18M already known; site not readable)"},
+    {"id": "tekniska-museet-stockholm", "name": "Tekniska museet", "city": "Stockholm", "country": "SE", "result": "no real Orrery hardware found"},
+    {"id": "norsk-teknisk-museum", "name": "Norsk Teknisk Museum", "city": "Oslo", "country": "NO", "result": "no real Orrery hardware found"},
+    {"id": "esrange-kiruna", "name": "Esrange Space Center", "city": "Kiruna", "country": "SE", "result": "no real Orrery hardware found (no museum)"},
+    {"id": "andoya-space", "name": "Andoya Space", "city": "Andenes", "country": "NO", "result": "no real Orrery hardware found"},
+    {"id": "heureka-vantaa", "name": "Heureka", "city": "Vantaa", "country": "FI", "result": "could not read site"},
+    {"id": "ireland-none", "name": "Ireland (no space museum identified)", "city": "-", "country": "IE", "result": "no real Orrery hardware found; not exhaustively searched"}
+  ],
+  "notes_outside_region": [
+    "Soyuz 30 descent module: Muzeum Polskiej Techniki Wojskowej, Warsaw (dewiki search snippet)",
+    "Commons 'Soyuz spacecraft in museums' also lists Soyuz 28 Prague, Soyuz 33 Plovdiv, Soyuz 35 Budapest, Soyuz 40 Romania, Soyuz TMA-03M Space Expo Noordwijk, Soyuz T-6 Musee de l'Air, Soyuz T-10 Nehru Planetarium, Soyuz 16 St Petersburg",
+    "Soyuz TMA-13 module shown at Landesgartenschau Hemer 2010 and Soyuz TM-14 module in the Science Museum Cosmonauts exhibition 2016 were temporary displays; current homes not found"
+  ]
+}

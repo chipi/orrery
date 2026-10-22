@@ -1,0 +1,25 @@
+{
+  "museums": {
+    "esperance-museum": { "name": "Esperance Museum", "city": "Esperance, Western Australia", "country": "AU", "website": "https://www.esperancemuseum.com.au/" },
+    "canada-aviation-and-space-museum": { "name": "Canada Aviation and Space Museum (Ingenium)", "city": "Ottawa", "country": "CA", "website": "https://ingeniumcanada.org/aviation-space" }
+  },
+  "rows": [
+    { "ref": "skylab", "museum": "esperance-museum", "item": "Pieces of Skylab that fell on the Esperance region on 11 July 1979 (re-entry debris)", "kind": "flown-part", "evidence": "https://www.esperancemuseum.com.au/", "status": "confirmed", "notes": "Museum site: 'We, at the Esperance Museum, have collected several pieces of the Skylab strewn across the area.' Specific pieces not itemised on the page; museum has a dedicated Skylab section." },
+    { "ref": "endeavour", "museum": "canada-aviation-and-space-museum", "item": "Canadarm 201 (Space Shuttle Endeavour's Canadian-built robotic arm)", "kind": "flown-part", "evidence": "https://en.wikipedia.org/wiki/Canada_Aviation_and_Space_Museum", "status": "uncertain", "notes": "Only Wikipedia (Canada Aviation and Space Museum and Canadarm articles) read; says Endeavour's Canadarm unveiled there 2 May 2013 and is on permanent display. Ingenium's own pages returned HTTP 403, so current display unconfirmed. Wikipedia does not map arm serial 201 to Endeavour." }
+  ],
+  "museums_checked": [
+    { "id": "esperance-museum", "name": "Esperance Museum", "city": "Esperance", "country": "AU", "result": "rows added 1" },
+    { "id": "canada-aviation-and-space-museum", "name": "Canada Aviation and Space Museum", "city": "Ottawa", "country": "CA", "result": "rows added 1" },
+    { "id": "cosmodome-laval", "name": "Cosmodome", "city": "Laval", "country": "CA", "result": "no real Orrery hardware (an 'authentic Apollo mission spacesuit' is mentioned by fr.wikipedia and the English exhibition page but the unit/mission is not named and the museum's current permanent-exhibition page lists only a lunar rock; Ariane 4 and Endeavour are replicas)" },
+    { "id": "hr-macmillan-space-centre-vancouver", "name": "H.R. MacMillan Space Centre", "city": "Vancouver", "country": "CA", "result": "no real Orrery hardware" },
+    { "id": "memorial-aeroespacial-brasileiro", "name": "Memorial Aeroespacial Brasileiro", "city": "Sao Jose dos Campos", "country": "BR", "result": "no real Orrery hardware (models and replicas of Brazilian VLS/Sonda only)" },
+    { "id": "museu-aeroespacial-rio", "name": "Museu Aeroespacial (MUSAL)", "city": "Rio de Janeiro", "country": "BR", "result": "no real Orrery hardware (Wikipedia does not say space items are real)" },
+    { "id": "museo-nacional-aeronautico-y-del-espacio-chile", "name": "Museo Nacional Aeronautico y del Espacio", "city": "Santiago", "country": "CL", "result": "no real Orrery hardware (Wikipedia mentions a space room, no named artefacts)" },
+    { "id": "musee-de-l-espace-kourou", "name": "Musee de l'Espace (CSG)", "city": "Kourou", "country": "GF", "result": "no real Orrery hardware confirmed (Commons shows an 'old Vulcain engine', 2004 photo, variant and flown status unstated, not clearly Vulcain 2; Ariane 5 is a model)" },
+    { "id": "powerhouse-sydney", "name": "Powerhouse Museum", "city": "Sydney", "country": "AU", "result": "could not read site (collection search 404; Wikipedia mentions a NASA space suit and a model shuttle cockpit, nothing matchable)" },
+    { "id": "canberra-deep-space-complex", "name": "Canberra Deep Space Communication Complex / Space Centre", "city": "Canberra", "country": "AU", "result": "could not read site" },
+    { "id": "questacon", "name": "Questacon", "city": "Canberra", "country": "AU", "result": "could not read site (timeout)" },
+    { "id": "scitech-perth", "name": "Scitech", "city": "Perth", "country": "AU", "result": "no real Orrery hardware on display found (Wikipedia: a composite motor case 'likely' from a PSLV third stage, found July 2023, is housed there; site shows no display, so not recorded)" },
+    { "id": "woomera-heritage-centre", "name": "Woomera Heritage Centre", "city": "Woomera", "country": "AU", "result": "could not read site" }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "museums": {
+    "musee-air-espace-le-bourget": {"name": "Musée de l'Air et de l'Espace", "city": "Le Bourget", "country": "FR", "website": "https://www.museeairespace.fr"},
+    "space-expo-noordwijk": {"name": "Space Expo (ESTEC visitor centre)", "city": "Noordwijk", "country": "NL", "website": "https://www.space-expo.nl"},
+    "cite-de-l-espace-toulouse": {"name": "Cité de l'espace", "city": "Toulouse", "country": "FR", "website": "https://www.cite-espace.com"},
+    "guiana-space-museum-kourou": {"name": "Musée de l'Espace (Centre spatial guyanais)", "city": "Kourou", "country": "GF", "website": "https://www.cnes-csg.fr"}
+  },
+  "rows": [
+    {"ref": "soyuz-t", "museum": "musee-air-espace-le-bourget", "item": "Soyuz T-6 descent module (Jean-Loup Chretien, Salyut 7, June-July 1982)", "kind": "flown", "evidence": "https://www.museeairespace.fr/aller-plus-haut/collections/capsule-soyouz-t-6/", "status": "confirmed", "notes": "Museum collection page names the capsule and gives location as the Hall de l'Espace. Page did not state a display date."},
+    {"ref": "soyuz-tma", "museum": "space-expo-noordwijk", "item": "Soyuz TMA-03M descent module (Andre Kuipers, Dec 2011-Jul 2012)", "kind": "flown", "evidence": "https://www.space-expo.nl/en/", "status": "confirmed", "notes": "Museum home page: 'take a look inside Andre Kuipers' original Soyuz capsule'. Wikipedia (Soyuz TMA-03M) says permanent display since 19 Sep 2016. Orrery entry 'Soyuz TMA' used as family match (TMA-03M is a TMA-M variant)."},
+    {"ref": "sokol-kv-2", "museum": "space-expo-noordwijk", "item": "Sokol suit worn by Andre Kuipers on Soyuz TMA-03M", "kind": "flown", "evidence": "https://en.wikipedia.org/wiki/Soyuz_TMA-03M", "status": "uncertain", "notes": "Only Wikipedia says the suit is displayed alongside the capsule; museum pages I could read do not mention it. Suit model (KV-2) assumed from era, not verified."},
+    {"ref": "viking", "museum": "space-expo-noordwijk", "item": "Ariane 1 engine block with four Viking 2 engines ('original engine part of Ariane I')", "kind": "sister-unit", "evidence": "https://nl.wikipedia.org/wiki/Space_Expo", "status": "uncertain", "notes": "nl.wikipedia lists 'Motorblok van de Ariane I met vier Viking 2-motoren'; a Commons file caption says 'original engine part'. Whether it flew or is a test/spare unit is not stated. Commons also has a separate 'Viking rocket engine for Ariane 5' photo. Museum's own page not found."},
+    {"ref": "vulcain-2", "museum": "guiana-space-museum-kourou", "item": "'Old Vulcain engine' on display at the CSG museum", "kind": "sister-unit", "evidence": "https://commons.wikimedia.org/wiki/File:Vieux_moteur_Vulcain_au_musée_du_Centre_Spatial_Guyanais.jpg", "status": "uncertain", "notes": "Only a 2004 photo caption. Vulcain 1 vs 2, flown vs test unit, and current display not verified."},
+    {"ref": "sokol-kv-2", "museum": "cite-de-l-espace-toulouse", "item": "Sokol suit of Claudie Andre-Deshays (Haigneré)", "kind": "flown", "evidence": "https://commons.wikimedia.org/wiki/Category:Claudie_André-Deshays'_SOKOL_space_suit_at_Cité_de_l'Espace", "status": "uncertain", "notes": "Commons category title only; not confirmed that it is her flown suit, nor the suit model. Cité site unreachable (ECONNREFUSED)."},
+    {"ref": "mir", "museum": "cite-de-l-espace-toulouse", "item": "Mir engineering model with its original equipment", "kind": "test-article", "evidence": "https://fr.wikipedia.org/wiki/Cité_de_l'espace", "status": "uncertain", "notes": "fr.wikipedia: 'modèle d'ingénierie de la station spatiale Mir'. Commons labels it 'Model of Mir'. Real ground engineering model vs mock-up not established."}
+  ],
+  "museums_checked": [
+    {"id": "musee-air-espace-le-bourget", "name": "Musée de l'Air et de l'Espace", "city": "Le Bourget", "country": "FR", "result": "rows added 1 (Soyuz T-6). Ariane 1 and Ariane 5 there are scale-1 maquettes (skipped); Diamant-A, Veronique, V2 engine not Orrery objects; Russian spacesuits unnamed, not recorded"},
+    {"id": "space-expo-noordwijk", "name": "Space Expo", "city": "Noordwijk", "country": "NL", "result": "rows added 3"},
+    {"id": "cite-de-l-espace-toulouse", "name": "Cité de l'espace", "city": "Toulouse", "country": "FR", "result": "rows added 2 (uncertain). Soyuz, Ariane 5, XMM-Newton, Apollo LM, Curiosity, Orion are replicas/mock-ups per Commons/wiki (skipped). Official site could not be read"},
+    {"id": "guiana-space-museum-kourou", "name": "Musée de l'Espace (CSG)", "city": "Kourou", "country": "GF", "result": "rows added 1 (uncertain). Ariane 5 there is a full-size model (skipped). Pass 1 already has an XMM-Newton row for this museum."},
+    {"id": "euro-space-center-transinne", "name": "Euro Space Center", "city": "Transinne", "country": "BE", "result": "no real Orrery hardware (Shuttle mock-up, Soyuz/Columbus/Ariane/Mir/Apollo replicas per Wikipedia and Commons)"},
+    {"id": "verkehrshaus-luzern", "name": "Verkehrshaus der Schweiz", "city": "Luzern", "country": "CH", "result": "no real Orrery hardware (EURECA, moon rock and Rosetta instrument duplicates are not Orrery objects; Mars rovers are models)"},
+    {"id": "museo-scienza-milano", "name": "Museo Nazionale della Scienza e della Tecnologia", "city": "Milano", "country": "IT", "result": "no real Orrery hardware (Apollo 17 sample; Vega 1:1 model)"},
+    {"id": "musee-arts-et-metiers-paris", "name": "Musée des Arts et Métiers", "city": "Paris", "country": "FR", "result": "no real Orrery hardware (Vulcain item CnAM 40959 labelled 'maquette du moteur Vulcain')"},
+    {"id": "aeroscopia-toulouse", "name": "Aeroscopia", "city": "Blagnac", "country": "FR", "result": "no space hardware found in Commons categories"},
+    {"id": "muncyt-alcobendas", "name": "MUNCYT", "city": "Alcobendas", "country": "ES", "result": "no space hardware found in Commons categories"},
+    {"id": "luxembourg-portugal-spain-italy-other", "name": "Luxembourg, Portugal, rest of Spain and Italy", "city": "", "country": "", "result": "not covered: Wikipedia/Commons searches returned nothing usable; no museum identified"}
+  ],
+  "none": []
+}

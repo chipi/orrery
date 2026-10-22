@@ -1,0 +1,37 @@
+{
+ "museums": {
+  "korolev-museum-zhytomyr": {"name": "S. P. Korolev Museum of Cosmonautics (National Museum of Cosmonautics)", "city": "Zhytomyr", "country": "UA", "website": "https://cosmosmuseum.info"},
+  "letecke-muzeum-kbely": {"name": "Letecké muzeum Kbely (Prague Aviation Museum)", "city": "Prague", "country": "CZ", "website": "https://www.vhu.cz"},
+  "aviation-museum-plovdiv-krumovo": {"name": "Aviation Museum Plovdiv (Krumovo)", "city": "Krumovo, Plovdiv", "country": "BG", "website": "https://airmuseum-bg.com"},
+  "national-military-museum-bucharest": {"name": "National Military Museum King Ferdinand I", "city": "Bucharest", "country": "RO", "website": "https://muzeulmilitar.ro"},
+  "museum-polish-military-technology-warsaw": {"name": "Muzeum Polskiej Techniki Wojskowej (Fort IX Czerniaków, branch of the Polish Army Museum)", "city": "Warsaw", "country": "PL", "website": "https://www.muzeumptw.pl"},
+  "baikonur-cosmodrome-museum": {"name": "Museum of Baikonur Cosmodrome History", "city": "Baikonur", "country": "KZ", "website": ""}
+ },
+ "rows": [
+  {"ref": "soyuz-7k-ok", "museum": "korolev-museum-zhytomyr", "item": "Descent module of Soyuz 27 (Soyuz 7K-T, flew to Salyut 6, 1978)", "kind": "flown", "evidence": "https://commons.wikimedia.org/wiki/File:Spuskaemiy_modul_soyuza_27_4.jpg", "status": "confirmed", "notes": "Type is 7K-T, which has no Orrery entry; mapped to nearest Soyuz crewed entry, operator to remap. Commons caption 'Спускаємий модуль Союза 27 (справжній)' = genuine; ru and en Wikipedia museum articles also say the flown Soyuz-27 descent module is displayed. Museum site cosmosmuseum.info did not give an exhibit page. Museum's Vostok and Vega descent apparatus items not clearly real, not recorded."},
+  {"ref": "soyuz-7k-ok", "museum": "letecke-muzeum-kbely", "item": "Return capsule of Soyuz 28 (Remek/Gubarev, 1978) plus Remek's spacesuit", "kind": "flown", "evidence": "https://cs.wikipedia.org/wiki/Letecké_muzeum_Kbely", "status": "uncertain", "notes": "Soyuz 7K-T; mapped to nearest Orrery Soyuz entry. Wikipedia (cs, en) and Commons category 'Soyuz 28 at the Prague Aviation Museum' only; vhu.cz pages fetched do not mention it. Suit not matched to an Orrery suit."},
+  {"ref": "soyuz-7k-ok", "museum": "aviation-museum-plovdiv-krumovo", "item": "Original descent module of Soyuz 33 (Rukavishnikov/Ivanov, 1979), with Ivanov's suit and parachute", "kind": "flown", "evidence": "https://airmuseum-bg.com/kolektsii/kosmonavtika/", "status": "confirmed", "notes": "Soyuz 7K-T; mapped to nearest Orrery Soyuz entry. Museum's own cosmonautics collection page calls it the original descent module."},
+  {"ref": "soyuz-7k-ok", "museum": "national-military-museum-bucharest", "item": "Command/descent module of Soyuz 40 (Popov/Prunariu, May 1981)", "kind": "flown", "evidence": "https://www.historia.ro/sectiune/general/articol/povestea-capsula-navei-soiuz-40-sau-garsoniera-lui-prunariu-foto", "status": "confirmed", "notes": "Soyuz 7K-T; mapped to nearest Orrery Soyuz entry. Article says original, transferred to museum 12 Feb 1982, visitors can see it; museum's own page not found (article is third party)."},
+  {"ref": "soyuz-7k-ok", "museum": "museum-polish-military-technology-warsaw", "item": "Descent capsule of Soyuz 30 (Klimuk/Hermaszewski, 1978), with Hermaszewski's suits", "kind": "flown", "evidence": "https://pl.wikipedia.org/wiki/Sojuz_30", "status": "uncertain", "notes": "Soyuz 7K-T; mapped to nearest Orrery Soyuz entry. Wikipedia and Commons photos (2013/2014) only; pl Wikipedia says Fort IX Czerniaków branch, another Wikipedia article says the main Polish Army Museum building. Current location not confirmed on a museum page."},
+  {"ref": "/science/history/sputnik-1957", "museum": "baikonur-cosmodrome-museum", "item": "Sputnik pre-flight test unit hung from ceiling", "kind": "test-article", "evidence": "https://commons.wikimedia.org/wiki/File:SputnikTestModel.jpg", "status": "uncertain", "notes": "Commons caption only ('pre-flight test unit'); other sources call it a test model, so real versus mock-up unresolved."},
+  {"ref": "buran", "museum": "baikonur-cosmodrome-museum", "item": "Piece of window glass of OK-1K1 (Buran, flew 1988; orbiter destroyed 2002)", "kind": "flown-part", "evidence": "https://commons.wikimedia.org/w/api.php?action=query&list=categorymembers&cmtitle=Category:Museum_of_Baikonur_Cosmodrome_History", "status": "uncertain", "notes": "Commons file 'обломок стекла из Бурана в музее.jpg' only; no museum page."}
+ ],
+ "museums_checked": [
+  {"id": "korolev-museum-zhytomyr", "name": "Korolev Museum of Cosmonautics", "city": "Zhytomyr", "country": "UA", "result": "rows added 1"},
+  {"id": "baikonur-cosmodrome-museum", "name": "Museum of Baikonur Cosmodrome History", "city": "Baikonur", "country": "KZ", "result": "rows added 2 (both uncertain); Sokol KV-2 suit and an unidentified Soyuz descent module also shown but not recorded (flown status / unit unknown)"},
+  {"id": "letecke-muzeum-kbely", "name": "Letecké muzeum Kbely", "city": "Prague", "country": "CZ", "result": "rows added 1"},
+  {"id": "aviation-museum-plovdiv-krumovo", "name": "Aviation Museum Plovdiv", "city": "Plovdiv", "country": "BG", "result": "rows added 1"},
+  {"id": "national-military-museum-bucharest", "name": "National Military Museum", "city": "Bucharest", "country": "RO", "result": "rows added 1"},
+  {"id": "museum-polish-military-technology-warsaw", "name": "Muzeum Polskiej Techniki Wojskowej", "city": "Warsaw", "country": "PL", "result": "rows added 1"},
+  {"id": "pereyaslav-museum-of-cosmos", "name": "Museum of Cosmos (Pereyaslav)", "city": "Pereyaslav", "country": "UA", "result": "no real Orrery hardware (claimed Gagarin descent module unverified; Soyuz-23/Soyuz-14 suits do not match an Orrery object; Lunokhod-1, Venera-7 are maket)"},
+  {"id": "poltava-aviation-space-museum", "name": "Poltava Museum of Aviation and Cosmonautics", "city": "Poltava", "country": "UA", "result": "no real Orrery hardware (suit type unidentified, Sputnik is a reproduction)"},
+  {"id": "kyiv-museum-of-cosmonautics", "name": "Museum of Cosmonautics, Kyiv Planetarium", "city": "Kyiv", "country": "UA", "result": "no real Orrery hardware (Vostok, Zenit, Mir are maket)"},
+  {"id": "tomashivka-cosmonautics-museum", "name": "Museum of Cosmonautics, Tomashivka", "city": "Tomashivka", "country": "UA", "result": "no real Orrery hardware (Soyuz, Sputnik are models)"},
+  {"id": "kremenchuk-aviation-cosmonautics-museum", "name": "Aviation and Cosmonautics Museum", "city": "Kremenchuk", "country": "UA", "result": "no real Orrery hardware found"},
+  {"id": "national-technical-museum-prague", "name": "National Technical Museum", "city": "Prague", "country": "CZ", "result": "no real Orrery hardware found"},
+  {"id": "museum-hungarian-aviation-szolnok", "name": "Museum of Hungarian Aviation", "city": "Szolnok", "country": "HU", "result": "no real Orrery hardware found"},
+  {"id": "polish-aviation-museum-krakow", "name": "Muzeum Lotnictwa Polskiego", "city": "Krakow", "country": "PL", "result": "no real Orrery hardware found"},
+  {"id": "technisches-museum-wien", "name": "Technisches Museum Wien", "city": "Vienna", "country": "AT", "result": "no real Orrery hardware found"},
+  {"id": "baikonur-ok-ml1-site2", "name": "OK-ML1 beside Baikonur museum", "city": "Baikonur", "country": "KZ", "result": "no real Orrery hardware (full-scale technological mock-up of Buran, skipped)"}
+ ]
+}

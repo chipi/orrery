@@ -1,0 +1,233 @@
+<title>Museum Hardware Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: a review ledger — summary and open questions on top, filters, then rows grouped by country or object, each with a yes/no decision. */
+  :root {
+    --bg: #f5f6f8; --surface: #ffffff; --ink: #1c2330; --muted: #5d6676; --line: #dde1e8;
+    --accent: #2c5a8c; --accent-soft: #e3ecf6;
+    --yes: #1f7a4d; --yes-soft: #def2e7; --no: #a33a2c; --no-soft: #f8e1dd;
+    --k-flown: #1f7a4d; --k-backup: #2c5a8c; --k-test: #9a6a10; --k-part: #17777a; --k-sister: #6b4c9a;
+    --warn: #9a6a10;
+    --display: "Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+    --body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #12161d; --surface: #1a2029; --ink: #e6e9ef; --muted: #9aa3b2; --line: #2b3340;
+    --accent: #7fb0e6; --accent-soft: #1d2b3c;
+    --yes: #6fd09d; --yes-soft: #17301f; --no: #f0907f; --no-soft: #3a1d18;
+    --k-flown: #6fd09d; --k-backup: #7fb0e6; --k-test: #e2b65a; --k-part: #63c7c9; --k-sister: #b9a0e6; --warn: #e2b65a;
+    color-scheme: dark } }
+  :root[data-theme="dark"] {
+    --bg: #12161d; --surface: #1a2029; --ink: #e6e9ef; --muted: #9aa3b2; --line: #2b3340;
+    --accent: #7fb0e6; --accent-soft: #1d2b3c;
+    --yes: #6fd09d; --yes-soft: #17301f; --no: #f0907f; --no-soft: #3a1d18;
+    --k-flown: #6fd09d; --k-backup: #7fb0e6; --k-test: #e2b65a; --k-part: #63c7c9; --k-sister: #b9a0e6; --warn: #e2b65a;
+    color-scheme: dark }
+  body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); }
+  .wrap { max-width: 1100px; margin: 0 auto; padding-inline: 16px; padding-block: 24px 64px; display: grid; gap: 24px; }
+  h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: .01em; }
+  h2 { font-size: 1.25rem; font-weight: 600; }
+  .lede { color: var(--muted); max-width: 68ch; margin: 6px 0 0; }
+  .stats { display: flex; flex-wrap: wrap; gap: 8px 20px; font-family: var(--mono); font-size: .82rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .stats b { color: var(--ink); font-weight: 500; }
+  .questions { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; display: grid; gap: 10px; }
+  .questions ol { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; max-width: 80ch; }
+  .questions li::marker { font-family: var(--mono); color: var(--muted); }
+  .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 2; background: var(--bg); padding-block: 10px; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .seg button, .chip-f { font: 600 .8rem var(--body); background: var(--surface); color: var(--muted); border: 0; padding: 6px 10px; cursor: pointer; }
+  .seg button + button { border-left: 1px solid var(--line); }
+  .seg button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); }
+  .chip-f { border: 1px solid var(--line); border-radius: 999px; }
+  .chip-f[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+  input[type="search"] { font: .9rem var(--body); padding: 6px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); min-width: 0; flex: 1 1 180px; max-width: 280px; }
+  button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .status-line { font-size: .82rem; color: var(--muted); }
+  .group { display: grid; gap: 8px; }
+  .group h3 { font-size: 1.05rem; font-weight: 600; display: flex; gap: 10px; align-items: baseline; padding-top: 8px; }
+  .group h3 small { font: .78rem var(--mono); color: var(--muted); font-weight: 400; }
+  .row { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; }
+  .row[data-d="yes"] { border-color: var(--yes); background: linear-gradient(var(--yes-soft), var(--yes-soft)) left / 4px 100% no-repeat, var(--surface); }
+  .row[data-d="no"] { opacity: .62; }
+  .main { min-width: 0; display: grid; gap: 4px; }
+  .title { font-weight: 600; }
+  .title .obj { color: var(--accent); }
+  .where { color: var(--muted); font-size: .9rem; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-size: .8rem; }
+  .pill { font: 500 .72rem var(--mono); text-transform: uppercase; letter-spacing: .04em; padding: 2px 7px; border-radius: 4px; border: 1px solid currentColor; }
+  .k-flown { color: var(--k-flown); } .k-backup { color: var(--k-backup); } .k-test-article { color: var(--k-test); }
+  .k-flown-part { color: var(--k-part); } .k-sister-unit { color: var(--k-sister); }
+  .st-uncertain { color: var(--warn); border-style: dashed; } .st-confirmed { color: var(--muted); } .st-opens { color: var(--accent); }
+  .meta a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; overflow-wrap: anywhere; }
+  .notes { font-size: .85rem; color: var(--muted); max-width: 90ch; overflow-wrap: anywhere; }
+  .decide { display: flex; gap: 6px; align-items: start; }
+  .decide button { font: 600 .82rem var(--body); padding: 6px 12px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; min-width: 52px; }
+  .decide button.y[aria-pressed="true"] { background: var(--yes); border-color: var(--yes); color: var(--surface); }
+  .decide button.n[aria-pressed="true"] { background: var(--no); border-color: var(--no); color: var(--surface); }
+  .decide button:disabled { cursor: default; opacity: .5; }
+  @media (max-width: 560px) { .row { grid-template-columns: minmax(0, 1fr); } .decide { justify-content: flex-start; } }
+  details.coverage { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; }
+  details.coverage summary { cursor: pointer; font-family: var(--display); font-weight: 600; font-size: 1.1rem; }
+  .cov-table { overflow-x: auto; margin-top: 10px; }
+  table { border-collapse: collapse; font-size: .85rem; width: 100%; }
+  th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font: 600 .75rem var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  .empty { color: var(--muted); padding: 24px 0; }
+  @media (prefers-reduced-motion: no-preference) { .row { transition: opacity .15s, border-color .15s; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Museum hardware review</h1>
+    <p class="lede">Real Orrery objects on display in museums, from three research passes (2026-10-22). Tick <b>Yes</b> for every row that should get a “See it in a museum” button. Replicas and models were left out. Rows marked <i>uncertain</i> rest on weaker evidence (usually Wikipedia or a photo, because the museum’s own site could not be read).</p>
+  </header>
+  <div class="stats" id="stats"></div>
+
+  <section class="questions" aria-labelledby="q-h">
+    <h2 id="q-h">Decide these first</h2>
+    <ol>
+      <li><b>Test articles</b> (engineering, qualification and ground-test units that never flew): do they get a button? They are real hardware, not models.</li>
+      <li><b>Flown parts</b> (a recovered piece, e.g. Skylab debris, the Surveyor 3 camera, F-1 engine parts): button on the object’s page?</li>
+      <li><b>Sister units</b> (another unit of the same type that never flew and was not that mission’s backup, e.g. Lunokhod 3 for Lunokhod 1): button?</li>
+      <li><b>Soyuz 7K-T capsules</b> (Soyuz 12–40, flown by many guest cosmonauts) have no Orrery entry; agents mapped them to either “Soyuz T” or “Soyuz 7K-OK”. Map to one of those, add a 7K-T entry, or leave them out?</li>
+      <li><b>Conflicting sources</b>: Mars-3 and Venera-4 at the Moscow and Kaluga museums are originals per Russian Wikipedia and replicas per Commons; they are not in the table. The full-size Buran OK-ML1 is a test article in one source and a mock-up in another.</li>
+    </ol>
+  </section>
+
+  <div class="bar" role="toolbar" aria-label="Filters">
+    <div class="seg" role="group" aria-label="Group by">
+      <button type="button" id="g-country" aria-pressed="true">By country</button>
+      <button type="button" id="g-object" aria-pressed="false">By object</button>
+    </div>
+    <div class="seg" role="group" aria-label="Show">
+      <button type="button" id="s-all" aria-pressed="true">All</button>
+      <button type="button" id="s-open" aria-pressed="false">Undecided</button>
+      <button type="button" id="s-yes" aria-pressed="false">Yes</button>
+      <button type="button" id="s-no" aria-pressed="false">No</button>
+    </div>
+    <div id="kinds" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+    <input type="search" id="q" placeholder="Search object, museum, city" aria-label="Search">
+    <span class="status-line" id="saveState">Connecting to saved decisions…</span>
+  </div>
+
+  <main id="list"></main>
+
+  <details class="coverage" id="coverage">
+    <summary>Museums checked with nothing real found or not readable</summary>
+    <p class="lede">Pass 3 started from each region’s museums. These were checked and gave no row, either because they show only models or because their site could not be read. A museum here may still hold something real.</p>
+    <div class="cov-table"><table><thead><tr><th>Country</th><th>Museum</th><th>City</th><th>Result</th></tr></thead><tbody id="covBody"></tbody></table></div>
+  </details>
+</div>
+
+<script type="application/json" id="data">__DATA__</script>
+<script>
+(() => {
+  const DATA = JSON.parse(document.getElementById('data').textContent);
+  const ROWS = DATA.rows;
+  const KINDS = [['flown','Flown'],['backup','Backup'],['flown-part','Flown part'],['test-article','Test article'],['sister-unit','Sister unit']];
+  const COUNTRY = { US:'United States', RU:'Russia', CN:'China', JP:'Japan', IN:'India', GB:'United Kingdom', DE:'Germany', FR:'France', NL:'Netherlands', DK:'Denmark', GF:'French Guiana', UA:'Ukraine', KZ:'Kazakhstan', CZ:'Czechia', BG:'Bulgaria', RO:'Romania', PL:'Poland', AU:'Australia', CA:'Canada', AT:'Austria', SE:'Sweden', NO:'Norway', FI:'Finland', IE:'Ireland', KR:'South Korea', IL:'Israel', AE:'United Arab Emirates', PK:'Pakistan', TR:'Turkey', SG:'Singapore', MM:'Myanmar', MY:'Malaysia', HU:'Hungary', BR:'Brazil', CL:'Chile', BE:'Belgium', CH:'Switzerland', ES:'Spain', IT:'Italy', HK:'Hong Kong', TW:'Taiwan' };
+  const cname = (c) => COUNTRY[c] || c;
+  const decisions = new Map();
+  const st = { group: 'country', show: 'all', kinds: new Set(KINDS.map(k => k[0])), q: '' };
+  let db = null, canWrite = true;
+  const $ = (id) => document.getElementById(id);
+  const el = (tag, props = {}, ...kids) => { const n = document.createElement(tag); Object.assign(n, props); for (const k of kids) if (k != null) n.append(k); return n; };
+
+  const kindBox = $('kinds');
+  for (const [k, label] of KINDS) {
+    const b = el('button', { type: 'button', className: 'chip-f', textContent: label });
+    b.setAttribute('aria-pressed', 'true');
+    b.addEventListener('click', () => { st.kinds.has(k) ? st.kinds.delete(k) : st.kinds.add(k); b.setAttribute('aria-pressed', String(st.kinds.has(k))); render(); });
+    kindBox.append(b);
+  }
+  const seg = (ids, key) => ids.forEach(([id, val]) => $(id).addEventListener('click', () => { st[key] = val; ids.forEach(([i, v]) => $(i).setAttribute('aria-pressed', String(v === val))); render(); }));
+  seg([['g-country','country'],['g-object','object']], 'group');
+  seg([['s-all','all'],['s-open','open'],['s-yes','yes'],['s-no','no']], 'show');
+  $('q').addEventListener('input', (e) => { st.q = e.target.value.trim().toLowerCase(); render(); });
+
+  function stats() {
+    const objs = new Set(ROWS.map(r => r.ref)), mus = new Set(ROWS.map(r => r.museum)), cs = new Set(ROWS.map(r => r.country));
+    let y = 0, n = 0; for (const r of ROWS) { const d = decisions.get(r.id); if (d === 'yes') y++; else if (d === 'no') n++; }
+    const conf = ROWS.filter(r => r.status === 'confirmed').length;
+    $('stats').replaceChildren(...[[ROWS.length,'rows'],[objs.size,'objects'],[mus.size,'museums'],[cs.size,'countries'],[conf,'confirmed'],[ROWS.length - conf,'uncertain'],[y,'yes'],[n,'no'],[ROWS.length - y - n,'undecided']]
+      .map(([v, l]) => el('span', {}, el('b', { textContent: String(v) }), ' ' + l)));
+  }
+
+  async function decide(id, val) {
+    const prev = decisions.get(id);
+    const next = prev === val ? null : val;
+    if (next) decisions.set(id, next); else decisions.delete(id);
+    render();
+    if (!db || !canWrite) return;
+    try {
+      const ref = db.collection('decisions').doc(id);
+      if (next) await ref.set({ d: next, at: new Date().toISOString() }); else await ref.delete();
+      $('saveState').textContent = 'Saved';
+    } catch (e) {
+      if (prev) decisions.set(id, prev); else decisions.delete(id);
+      if (e && e.code === 'invalid_argument') { canWrite = false; $('saveState').textContent = 'You can view decisions but not change them'; }
+      else $('saveState').textContent = 'Could not save that decision; try again';
+      render();
+    }
+  }
+
+  function rowEl(r) {
+    const d = decisions.get(r.id) || '';
+    const item = el('div', { className: 'row' });
+    item.dataset.d = d;
+    const title = el('div', { className: 'title' }, el('span', { className: 'obj', textContent: r.object }), ' · ' + r.item);
+    const where = el('div', { className: 'where', textContent: `${r.museum}${r.city ? ', ' + r.city : ''} · ${cname(r.country)}` });
+    const meta = el('div', { className: 'meta' },
+      el('span', { className: `pill k-${r.kind}`, textContent: (KINDS.find(k => k[0] === r.kind) || [r.kind, r.kind])[1] }),
+      el('span', { className: `pill st-${r.status}`, textContent: r.status }));
+    if (r.evidence) meta.append(el('a', { href: r.evidence, target: '_blank', rel: 'noopener noreferrer', textContent: 'Evidence' }));
+    if (r.website) meta.append(el('a', { href: r.website, target: '_blank', rel: 'noopener noreferrer', textContent: 'Museum site' }));
+    const main = el('div', { className: 'main' }, title, where, meta);
+    if (r.notes) main.append(el('div', { className: 'notes', textContent: r.notes }));
+    const yes = el('button', { type: 'button', className: 'y', textContent: 'Yes', disabled: !canWrite });
+    const no = el('button', { type: 'button', className: 'n', textContent: 'No', disabled: !canWrite });
+    yes.setAttribute('aria-pressed', String(d === 'yes')); no.setAttribute('aria-pressed', String(d === 'no'));
+    yes.setAttribute('aria-label', `Yes: ${r.object} at ${r.museum}`); no.setAttribute('aria-label', `No: ${r.object} at ${r.museum}`);
+    yes.addEventListener('click', () => decide(r.id, 'yes')); no.addEventListener('click', () => decide(r.id, 'no'));
+    item.append(main, el('div', { className: 'decide' }, yes, no));
+    return item;
+  }
+
+  function render() {
+    stats();
+    const q = st.q;
+    const vis = ROWS.filter(r => st.kinds.has(r.kind)
+      && (st.show === 'all' || (st.show === 'open' ? !decisions.has(r.id) : decisions.get(r.id) === st.show))
+      && (!q || `${r.object} ${r.item} ${r.museum} ${r.city} ${cname(r.country)}`.toLowerCase().includes(q)));
+    const groups = new Map();
+    for (const r of vis) { const k = st.group === 'country' ? cname(r.country) : r.object; (groups.get(k) || groups.set(k, []).get(k)).push(r); }
+    const keys = [...groups.keys()].sort((a, b) => st.group === 'country' ? (a === 'United States') - (b === 'United States') || a.localeCompare(b) : a.localeCompare(b));
+    const list = $('list');
+    if (!vis.length) { list.replaceChildren(el('p', { className: 'empty', textContent: 'No rows match these filters.' })); return; }
+    list.replaceChildren(...keys.map(k => {
+      const rs = groups.get(k).sort((a, b) => (st.group === 'country' ? a.museum.localeCompare(b.museum) : a.country.localeCompare(b.country)) || a.item.localeCompare(b.item));
+      return el('section', { className: 'group' }, el('h3', {}, k, el('small', { textContent: `${rs.length} row${rs.length === 1 ? '' : 's'}` })), ...rs.map(rowEl));
+    }));
+  }
+
+  const cov = [...DATA.checked].filter(c => !/^rows? added [1-9]/i.test(c.result)).sort((a, b) => cname(a.country).localeCompare(cname(b.country)) || a.name.localeCompare(b.name));
+  $('covBody').replaceChildren(...cov.map(c => el('tr', {}, el('td', { textContent: cname(c.country) }), el('td', { textContent: c.name }), el('td', { textContent: c.city }), el('td', { textContent: c.result }))));
+  $('coverage').querySelector('summary').textContent = `Museums checked with nothing real found or not readable (${cov.length})`;
+
+  render();
+
+  (async () => {
+    try { db = window.claude && window.claude.use ? await window.claude.use('db') : null; } catch { db = null; }
+    if (!db) { canWrite = false; $('saveState').textContent = 'Decisions cannot be saved in this view'; render(); return; }
+    db.collection('decisions').onSnapshot((snap) => {
+      decisions.clear();
+      for (const doc of snap.docs) { const v = doc.data() && doc.data().d; if (v === 'yes' || v === 'no') decisions.set(doc.id, v); }
+      $('saveState').textContent = 'Decisions are saved as you click';
+      render();
+    }, () => { $('saveState').textContent = 'Could not load saved decisions'; });
+  })();
+})();
+</script>

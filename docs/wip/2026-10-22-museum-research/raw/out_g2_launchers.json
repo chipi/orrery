@@ -1,0 +1,29 @@
+{
+  "museums": {
+    "kennedy-space-center-visitor-complex": {"name": "Kennedy Space Center Visitor Complex", "city": "Merritt Island, FL", "country": "US", "website": "https://www.kennedyspacecenter.com"},
+    "space-center-houston": {"name": "Space Center Houston", "city": "Houston, TX", "country": "US", "website": "https://spacecenter.org"},
+    "us-space-and-rocket-center": {"name": "U.S. Space & Rocket Center", "city": "Huntsville, AL", "country": "US", "website": "https://www.rocketcenter.com"},
+    "infinity-science-center": {"name": "INFINITY Science Center", "city": "Pearlington, MS", "country": "US", "website": "https://visitinfinity.com"},
+    "cape-canaveral-space-force-museum": {"name": "Cape Canaveral Space Force Museum", "city": "Cape Canaveral, FL", "country": "US", "website": "https://ccspacemuseum.org"},
+    "national-museum-usaf-dayton": {"name": "National Museum of the U.S. Air Force", "city": "Dayton, OH", "country": "US", "website": "https://www.nationalmuseum.af.mil"},
+    "samara-cosmic-museum": {"name": "Museum and Exhibition Center 'Samara Cosmic'", "city": "Samara", "country": "RU", "website": "https://www.visitmuseums.ru/en/museum-aa2d5cd8-13f2-4f2c-979d-2bf9eaa98031.html"}
+  },
+  "rows": [
+    {"ref": "saturn-v", "museum": "kennedy-space-center-visitor-complex", "item": "Saturn V: test first stage S-IC-T plus S-II and S-IVB stages of SA-514 (Apollo/Saturn V Center)", "kind": "backup", "evidence": "https://en.wikipedia.org/wiki/Saturn_V", "status": "confirmed", "notes": "Unflown SA-514 upper stages (backup/unflown flight articles) with S-IC-T test first stage. Wikipedia source; museum page not read."},
+    {"ref": "saturn-v", "museum": "space-center-houston", "item": "Saturn V: unflown flight stages S-IC-14 (SA-514), S-II-15 (SA-515), S-IVB-513", "kind": "backup", "evidence": "https://en.wikipedia.org/wiki/Saturn_V", "status": "confirmed", "notes": "Outdoor/Saturn V Complex at JSC. Stage designations from Wikipedia and apollomaniacs.com; museum page not read."},
+    {"ref": "saturn-v", "museum": "us-space-and-rocket-center", "item": "SA-500D dynamic test vehicle (S-IC-D, S-II-F/D, S-IVB-D)", "kind": "test-article", "evidence": "https://en.wikipedia.org/wiki/SA-500D", "status": "confirmed", "notes": "Displayed indoors in the Davidson Center since 2007."},
+    {"ref": "saturn-v", "museum": "infinity-science-center", "item": "S-IC-15 first stage (SA-515, unflown)", "kind": "backup", "evidence": "https://en.wikipedia.org/wiki/Saturn_V", "status": "uncertain", "notes": "Wikipedia says moved to INFINITY for preservation; public display not confirmed."},
+    {"ref": "saturn-ib", "museum": "kennedy-space-center-visitor-complex", "item": "Saturn IB SA-209 (Skylab rescue / ASTP backup vehicle, never flown)", "kind": "backup", "evidence": "https://www.collectspace.com/news/news-070218a-saturn-ib-rocket-restoration.html", "status": "confirmed", "notes": "Restoration finished and returned to Rocket Garden display (space.com). The SA-211 stage display at the Ardmore Alabama welcome center was retired Jan 2023."},
+    {"ref": "delta-ii", "museum": "kennedy-space-center-visitor-complex", "item": "Final unflown Delta II built from leftover flight hardware (Rocket Garden)", "kind": "backup", "evidence": "https://www.collectspace.com/news/news-032321a-delta2-rocket-garden-nasa-display.html", "status": "confirmed", "notes": "Side boosters and main engine are replicas; rest is genuine unflown program hardware."},
+    {"ref": "falcon-heavy", "museum": "kennedy-space-center-visitor-complex", "item": "Booster B1023 (flew Thaicom 8, then Falcon Heavy demo side core), Gateway building", "kind": "flown", "evidence": "https://spaceexplored.com/guides/b1023", "status": "confirmed", "notes": "Side booster of the Feb 2018 Falcon Heavy debut."},
+    {"ref": "titan-ii-glv", "museum": "cape-canaveral-space-force-museum", "item": "Gemini 5 Titan II GLV first stage segment (s/n 62-12560), Hangar C", "kind": "flown", "evidence": "https://ccspacemuseum.org/artifacts/gemini-v-booster-segment/", "status": "confirmed", "notes": "Hangar is on a military base; public access can be limited."},
+    {"ref": "atlas-lv-3b", "museum": "national-museum-usaf-dayton", "item": "Restored Convair Atlas D (LV-3B / SM-65D) missile painted as Mercury-Atlas 9, with mock-up Mercury capsule", "kind": "backup", "evidence": "https://www.collectspace.com/news/news-043024a-mercury-altas-9-rocket-cooper-air-force-museum.html", "status": "uncertain", "notes": "Authentic Atlas D missile, serial and flown status not stated; it is a missile airframe, not a Mercury-Atlas flight article. Kind is a best guess."},
+    {"ref": "soyuz", "museum": "samara-cosmic-museum", "item": "R-7 11A511 (Soyuz) built 1984, used as Plesetsk crew-training rocket, mounted on museum building", "kind": "test-article", "evidence": "https://en.wikipedia.org/wiki/Soyuz_carrier_rocket_monument", "status": "uncertain", "notes": "Real production-built vehicle used as a training unit, equipment removed; museum page says not an actual flight rocket. Operator decides whether it counts."}
+  ],
+  "none": [
+    "antares", "ariane-1", "ariane-5", "ariane-6", "atlas-slv-3d", "atlas-v", "energia", "falcon-9", "h-iia", "h3",
+    "long-march-2f", "long-march-3b", "long-march-5", "long-march-7", "lvm3", "mercury-redstone", "n1", "new-glenn",
+    "proton-k", "proton-m", "pslv-xl", "r-7-vostok", "sls-block-1", "soyuz-2", "soyuz-fg", "soyuz-u",
+    "space-shuttle-stack", "starship", "voskhod-11a57", "vostok-k", "vulcan"
+  ]
+}

@@ -1,0 +1,412 @@
+{
+ "museums": {
+  "nasm-washington": {
+   "name": "National Air and Space Museum",
+   "city": "Washington",
+   "country": "US",
+   "website": "https://airandspace.si.edu"
+  },
+  "udvar-hazy": {
+   "name": "Steven F. Udvar-Hazy Center (NASM)",
+   "city": "Chantilly",
+   "country": "US",
+   "website": "https://airandspace.si.edu/visit/udvar-hazy-center"
+  },
+  "cosmosphere-hutchinson": {
+   "name": "Cosmosphere",
+   "city": "Hutchinson",
+   "country": "US",
+   "website": "https://cosmo.org"
+  },
+  "museum-of-flight-seattle": {
+   "name": "The Museum of Flight",
+   "city": "Seattle",
+   "country": "US",
+   "website": "https://www.museumofflight.org"
+  },
+  "us-space-and-rocket-center": {
+   "name": "U.S. Space & Rocket Center",
+   "city": "Huntsville",
+   "country": "US",
+   "website": "https://www.rocketcenter.com"
+  },
+  "michigan-space-and-science-center": {
+   "name": "Michigan Space and Science Center",
+   "city": "Jackson",
+   "country": "US",
+   "website": "https://www.michiganspacecenter.org"
+  },
+  "tulsa-air-and-space-museum": {
+   "name": "Tulsa Air and Space Museum",
+   "city": "Tulsa",
+   "country": "US",
+   "website": "https://www.tulsaairandspacemuseum.org"
+  },
+  "space-center-houston": {
+   "name": "Space Center Houston",
+   "city": "Houston",
+   "country": "US",
+   "website": "https://spacecenter.org"
+  },
+  "kennedy-space-center-visitor-complex": {
+   "name": "Kennedy Space Center Visitor Complex",
+   "city": "Merritt Island",
+   "country": "US",
+   "website": "https://www.kennedyspacecenter.com"
+  },
+  "nmusaf-dayton": {
+   "name": "National Museum of the U.S. Air Force",
+   "city": "Dayton",
+   "country": "US",
+   "website": "https://www.nationalmuseum.af.mil"
+  },
+  "san-diego-air-and-space-museum": {
+   "name": "San Diego Air & Space Museum",
+   "city": "San Diego",
+   "country": "US",
+   "website": "https://sandiegoairandspace.org"
+  },
+  "science-museum-london": {
+   "name": "Science Museum",
+   "city": "London",
+   "country": "GB",
+   "website": "https://www.sciencemuseum.org.uk"
+  },
+  "mayborn-museum-waco": {
+   "name": "Mayborn Museum Complex (Baylor)",
+   "city": "Waco",
+   "country": "US",
+   "website": "https://www.baylor.edu/mayborn"
+  },
+  "museum-space-missile-technology-spb": {
+   "name": "Museum of Space and Missile Technology (Ioannovsky Ravelin)",
+   "city": "Saint Petersburg",
+   "country": "RU",
+   "website": "https://www.spbmuseum.ru"
+  },
+  "msi-chicago": {
+   "name": "Griffin Museum of Science and Industry",
+   "city": "Chicago",
+   "country": "US",
+   "website": "https://www.msichicago.org"
+  },
+  "california-science-center": {
+   "name": "California Science Center",
+   "city": "Los Angeles",
+   "country": "US",
+   "website": "https://californiasciencecenter.org"
+  },
+  "bledsoe-miller-steam-center-waco": {
+   "name": "Bledsoe-Miller STEAM Center",
+   "city": "Waco",
+   "country": "US",
+   "website": "https://www.waco-texas.com"
+  }
+ },
+ "rows": [
+  {
+   "ref": "f-1",
+   "museum": "nasm-washington",
+   "item": "Rocketdyne F-1 full-size test engine (1963)",
+   "kind": "test-article",
+   "evidence": "https://howthingsfly.si.edu/node/389",
+   "status": "uncertain",
+   "notes": "Page names old 'Apollo to the Moon' gallery; east wing under renovation, now 'Destination Moon' per secondary source. Test status from search snippet."
+  },
+  {
+   "ref": "f-1",
+   "museum": "cosmosphere-hutchinson",
+   "item": "Apollo F-1 engine(s), recovered flown hardware, Moonshot Gallery",
+   "kind": "flown",
+   "evidence": "https://cosmo.org/gallery-guide/",
+   "status": "confirmed",
+   "notes": "Gallery guide labels FLOWN."
+  },
+  {
+   "ref": "f-1",
+   "museum": "museum-of-flight-seattle",
+   "item": "Apollo 11 F-1 components recovered by Bezos expedition",
+   "kind": "flown",
+   "evidence": "https://www.geekwire.com/2017/apollo-moon-engines-museum-flight/",
+   "status": "uncertain",
+   "notes": "From search results only (page 403 on fetch). Partial engine from recovered parts."
+  },
+  {
+   "ref": "f-1",
+   "museum": "us-space-and-rocket-center",
+   "item": "F-1 engine",
+   "kind": "test-article",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "status": "uncertain",
+   "notes": "Listed as displayed; flight status not stated."
+  },
+  {
+   "ref": "f-1",
+   "museum": "michigan-space-and-science-center",
+   "item": "F-1 engine",
+   "kind": "test-article",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "status": "uncertain",
+   "notes": "Listed as displayed; flight status not stated. Note NASM also has other F-1s (more exist)."
+  },
+  {
+   "ref": "h-1",
+   "museum": "udvar-hazy",
+   "item": "Rocketdyne H-1 engine (donated 1968)",
+   "kind": "test-article",
+   "evidence": "https://airandspace.si.edu/collection-objects/rocket-engine-liquid-fuel-h-1/nasm_A19680012000",
+   "status": "confirmed",
+   "notes": "Kind not stated by museum."
+  },
+  {
+   "ref": "h-1",
+   "museum": "tulsa-air-and-space-museum",
+   "item": "Saturn IB H-1 engine",
+   "kind": "test-article",
+   "evidence": "https://newson6.com/story/666a2f540badad5e606b88d1/tulsa-air-and-space-museum-to-display-new-rocket-engines",
+   "status": "uncertain",
+   "notes": "Curator: genuine NASA hardware; flown/test not stated; install in progress June 2024."
+  },
+  {
+   "ref": "h-1",
+   "museum": "cosmosphere-hutchinson",
+   "item": "H-1 engine, Legacy Gallery",
+   "kind": "test-article",
+   "evidence": "https://cosmo.org/gallery-guide/",
+   "status": "uncertain",
+   "notes": "Labelled GENUINE; flown status not stated."
+  },
+  {
+   "ref": "h-1",
+   "museum": "us-space-and-rocket-center",
+   "item": "H-1 engine",
+   "kind": "test-article",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "status": "uncertain",
+   "notes": "More exist (Neil Armstrong museum, Evergreen, UND)."
+  },
+  {
+   "ref": "j-2",
+   "museum": "tulsa-air-and-space-museum",
+   "item": "Saturn IB J-2 engine",
+   "kind": "test-article",
+   "evidence": "https://newson6.com/story/666a2f540badad5e606b88d1/tulsa-air-and-space-museum-to-display-new-rocket-engines",
+   "status": "uncertain",
+   "notes": "Genuine NASA hardware; flown/test not stated."
+  },
+  {
+   "ref": "j-2",
+   "museum": "us-space-and-rocket-center",
+   "item": "J-2 engine",
+   "kind": "test-article",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "status": "uncertain",
+   "notes": ""
+  },
+  {
+   "ref": "j-2",
+   "museum": "michigan-space-and-science-center",
+   "item": "J-2 engine",
+   "kind": "test-article",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "status": "uncertain",
+   "notes": ""
+  },
+  {
+   "ref": "rs-25",
+   "museum": "udvar-hazy",
+   "item": "Space Shuttle Main Engine",
+   "kind": "test-article",
+   "evidence": "https://howthingsfly.si.edu/node/390",
+   "status": "uncertain",
+   "notes": "Page says on display at Udvar-Hazy; whether flown not stated by source."
+  },
+  {
+   "ref": "rs-25",
+   "museum": "kennedy-space-center-visitor-complex",
+   "item": "Space Shuttle Main Engine",
+   "kind": "test-article",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "status": "uncertain",
+   "notes": "Flight status not stated; also Space Center Houston, USSRC, Stennis reported (more exist)."
+  },
+  {
+   "ref": "rs-25",
+   "museum": "us-space-and-rocket-center",
+   "item": "Space Shuttle Main Engine",
+   "kind": "test-article",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "status": "uncertain",
+   "notes": ""
+  },
+  {
+   "ref": "lr87",
+   "museum": "udvar-hazy",
+   "item": "XLR-87 engine (Titan I), donated by USAF 1972",
+   "kind": "test-article",
+   "evidence": "https://airandspace.si.edu/collection-objects/rocket-engine-liquid-fuel-xlr-87-titan-1-missile/nasm_A19721009000",
+   "status": "confirmed",
+   "notes": "On display in Rockets & Missiles. Kind not stated."
+  },
+  {
+   "ref": "lr87",
+   "museum": "nmusaf-dayton",
+   "item": "Aerojet LR87 engine",
+   "kind": "test-article",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "status": "uncertain",
+   "notes": ""
+  },
+  {
+   "ref": "rocketdyne-a7",
+   "museum": "cosmosphere-hutchinson",
+   "item": "Redstone engine (Rocket Gallery)",
+   "kind": "test-article",
+   "evidence": "https://cosmo.org/gallery-guide/",
+   "status": "uncertain",
+   "notes": "Labelled GENUINE; A-7 variant and flight status not stated. NASM A-7s are in storage."
+  },
+  {
+   "ref": "rl10",
+   "museum": "san-diego-air-and-space-museum",
+   "item": "RL10 engine (donor Hal Hahn)",
+   "kind": "test-article",
+   "evidence": "https://sandiegoairandspace.org/collection/item/aerojet-rocketdyne-rl10-engine",
+   "status": "uncertain",
+   "notes": "Real/flown status not stated on page."
+  },
+  {
+   "ref": "rl10",
+   "museum": "science-museum-london",
+   "item": "RL10A-4",
+   "kind": "test-article",
+   "evidence": "https://en.wikipedia.org/wiki/RL10",
+   "status": "uncertain",
+   "notes": "Search snippet only; not verified on museum page."
+  },
+  {
+   "ref": "rl10",
+   "museum": "us-space-and-rocket-center",
+   "item": "RL-10",
+   "kind": "test-article",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "status": "uncertain",
+   "notes": ""
+  },
+  {
+   "ref": "rl10",
+   "museum": "msi-chicago",
+   "item": "RL-10",
+   "kind": "test-article",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "status": "uncertain",
+   "notes": "More exist (KSC Gateway, Cox Science Center, Discovery Cube)."
+  },
+  {
+   "ref": "merlin-1d",
+   "museum": "nasm-washington",
+   "item": "Merlin 1D, flew Iridium-6, SAOCOM 1A, PSN VI (donated 2022)",
+   "kind": "flown",
+   "evidence": "https://airandspace.si.edu/collection-objects/rocket-engine-liquid-fuel-merlin-1d/nasm_A20220606000",
+   "status": "confirmed",
+   "notes": "On display in Futures In Space."
+  },
+  {
+   "ref": "merlin-1d",
+   "museum": "cosmosphere-hutchinson",
+   "item": "Merlin engine, Koreasat-5A (2017)",
+   "kind": "flown",
+   "evidence": "https://cosmo.org/gallery-guide/",
+   "status": "confirmed",
+   "notes": "Rocket Gallery; labelled FLOWN."
+  },
+  {
+   "ref": "merlin-1d",
+   "museum": "mayborn-museum-waco",
+   "item": "Merlin engine from McGregor, on display since 2020",
+   "kind": "test-article",
+   "evidence": "https://www.collectspace.com/news/news-092523a-spacex-artifacts-smithsonian-air-space-museum.html",
+   "status": "uncertain",
+   "notes": "Search snippet only; flown status unknown."
+  },
+  {
+   "ref": "rd-107-108",
+   "museum": "cosmosphere-hutchinson",
+   "item": "RD-107 engine, Missile Row",
+   "kind": "test-article",
+   "evidence": "https://cosmo.org/gallery-guide/",
+   "status": "uncertain",
+   "notes": "Labelled GENUINE; flown status not stated."
+  },
+  {
+   "ref": "rd-107-108",
+   "museum": "museum-space-missile-technology-spb",
+   "item": "RD-107 engine",
+   "kind": "test-article",
+   "evidence": "https://en.wikipedia.org/wiki/RD-107",
+   "status": "uncertain",
+   "notes": "Search snippet only."
+  },
+  {
+   "ref": "cargo-dragon-v1",
+   "museum": "kennedy-space-center-visitor-complex",
+   "item": "Dragon C102 (COTS Demo 2, first to berth at ISS), Gateway",
+   "kind": "flown",
+   "evidence": "https://wereportspace.com/2022/06/11/kennedy-space-center-visitor-complex-previews-new-gateway-exhibit",
+   "status": "uncertain",
+   "notes": "From search results only; not opened."
+  },
+  {
+   "ref": "cargo-dragon-v1",
+   "museum": "msi-chicago",
+   "item": "Dragon C113 (CRS-12, CRS-17)",
+   "kind": "flown",
+   "evidence": "https://space.com/spacex-dragon-griffin-museum-science-industry-chicago",
+   "status": "uncertain",
+   "notes": "Search results only; fetch truncated."
+  },
+  {
+   "ref": "cargo-dragon-v1",
+   "museum": "california-science-center",
+   "item": "Dragon, 8th production v1 (CRS-6, CRS-13, CRS-18)",
+   "kind": "flown",
+   "evidence": "https://www.collectspace.com/news/news-062424a-spacex-dragon-california-science-center-exhibit.html",
+   "status": "confirmed",
+   "notes": "Work in Progress gallery; to move to Samuel Oschin Air and Space Center."
+  },
+  {
+   "ref": "cargo-dragon-v1",
+   "museum": "bledsoe-miller-steam-center-waco",
+   "item": "Dragon C112 (3 ISS flights, 2017-2020)",
+   "kind": "flown",
+   "evidence": "https://www.kwtx.com/2026/01/16/wacos-new-steam-center-opens-with-historic-spacex-dragon-spacecraft",
+   "status": "confirmed",
+   "notes": "Opened Jan 2026; article confirms flown Dragon donated by SpaceX; C112 serial from search results."
+  }
+ ],
+ "none": [
+  "ce-20",
+  "hm7b",
+  "le-5b",
+  "le-7a",
+  "le-9",
+  "raptor",
+  "rd-180",
+  "rd-253",
+  "vikas",
+  "viking",
+  "vulcain-2",
+  "yf-100",
+  "yf-77",
+  "atv",
+  "cargo-dragon-2",
+  "cygnus-enhanced",
+  "cygnus-standard",
+  "htv-x",
+  "htv",
+  "progress-7k-tg",
+  "progress-m",
+  "progress-ms",
+  "tianzhou"
+ ]
+}

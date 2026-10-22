@@ -1,0 +1,30 @@
+{
+ "museums": {
+  "jaxa-kakuda-space-center": {"name":"JAXA Kakuda Space Center, Space Development Exhibition Room","city":"Kakuda","country":"JP","website":"https://fanfun.jaxa.jp/visit/kakuda/"},
+  "gifu-kakamigahara-air-space-museum": {"name":"Gifu-Kakamigahara Air and Space Museum (Sora Haku)","city":"Kakamigahara","country":"JP","website":"https://sorahaku.net/"},
+  "nagoya-city-science-museum": {"name":"Nagoya City Science Museum","city":"Nagoya","country":"JP","website":"https://www.ncsm.city.nagoya.jp/"}
+ },
+ "rows": [
+  {"ref":"le-7a","museum":"gifu-kakamigahara-air-space-museum","item":"LE-7 rocket engine (listed as 実機 / actual hardware; the predecessor of LE-7A, not a 7A)","kind":"sister-unit","evidence":"https://sorahaku.net/exhibition/permanent/space/s1/","status":"uncertain","notes":"Museum page S1 lists 'LE-7 エンジン 実機' and 'H-II ロケット フェアリング 実機'. It is an LE-7, not an LE-7A; recorded under the LE-7A family only. The H-II fairing does not match an Orrery object (H-IIA)."},
+  {"ref":"le-7a","museum":"jaxa-kakuda-space-center","item":"LE-7 engine recovered from the sea after H-II F8 (1999), in the Space Development Exhibition Room; large LE-5 and LE-7 engines outdoors","kind":"flown-part","evidence":"https://fanfun.jaxa.jp/visit/kakuda/index.html","status":"uncertain","notes":"JAXA page confirms real engines (LE-5, LE-7) on display but does not say which units. The H-II F8 LE-7 is attested only by Commons (File:H-IIRocket_F8_LE-7engine.jpg, taken 2012, Kakuda exhibition room) and ja.wikipedia. LE-7, not LE-7A."},
+  {"ref":"le-5b","museum":"jaxa-kakuda-space-center","item":"Large LE-5 liquid rocket engine displayed outdoors (variant not stated)","kind":"sister-unit","evidence":"https://fanfun.jaxa.jp/visit/kakuda/index.html","status":"uncertain","notes":"JAXA says 'LE-5, LE-7' outdoors; the LE-5 variant (5/5A/5B) is not stated, so uncertain."},
+  {"ref":"h-iia","museum":"nagoya-city-science-museum","item":"H-IIB development/structural test vehicle (outdoor, since Nov 2011): real first-stage engine section, LH2 tank, central body, interstage and fairing; other parts replicas","kind":"test-article","evidence":"https://ja.wikipedia.org/wiki/H-IIBロケット","status":"uncertain","notes":"Evidence is Wikipedia only (museum site returned 503 twice). It is the H-IIB variant, which shares the H-IIA technology base. Real vs replica split quoted from Wikipedia, not verified at the museum."},
+  {"ref":"le-7a","museum":"nagoya-city-science-museum","item":"LE-7A engines in the H-IIB structural test vehicle (per Wikipedia)","kind":"test-article","evidence":"https://ja.wikipedia.org/wiki/H-IIBロケット","status":"uncertain","notes":"Wikipedia-only; not verified at the museum. The ja.wikipedia LE-7 page also has a 2006 caption of an LE-7 at this museum (outdated)."}
+ ],
+ "museums_checked": [
+  {"id":"jaxa-tsukuba-space-center","name":"JAXA Tsukuba Space Center (Space Dome)","city":"Tsukuba","country":"JP","result":"no real Orrery hardware (HTV and Kibo are full-scale display models; the H-II test vehicle with real LE-7 is not an Orrery object; ja.wikipedia only)"},
+  {"id":"jaxa-kakuda-space-center","name":"JAXA Kakuda Space Center","city":"Kakuda","country":"JP","result":"rows added 2"},
+  {"id":"jaxa-sagamihara","name":"JAXA/ISAS Sagamihara Campus exhibition","city":"Sagamihara","country":"JP","result":"no new rows (page lists only models; Hayabusa2 capsule is a pass 1 row)"},
+  {"id":"jaxa-tanegashima-space-science-technology-museum","name":"Tanegashima Space Science and Technology Museum","city":"Minamitane","country":"JP","result":"could not read site (JAXA page gives no inventory; Kibo is a full-scale model)"},
+  {"id":"jaxa-uchinoura","name":"JAXA Uchinoura Space Center exhibition","city":"Kimotsuki","country":"JP","result":"no real Orrery hardware (Ohsumi launch console and models only)"},
+  {"id":"gifu-kakamigahara-air-space-museum","name":"Gifu-Kakamigahara Air and Space Museum","city":"Kakamigahara","country":"JP","result":"rows added 1 (S2, S4, S5 zones are all models: H3, H-IIB, Hayabusa2, SLIM, Kibo)"},
+  {"id":"nagoya-city-science-museum","name":"Nagoya City Science Museum","city":"Nagoya","country":"JP","result":"rows added 2"},
+  {"id":"national-museum-of-nature-and-science-tokyo","name":"National Museum of Nature and Science","city":"Tokyo","country":"JP","result":"no new rows (Hayabusa full-scale object is a restoration model; real Hayabusa capsule is a pass 1 row)"},
+  {"id":"miraikan-tokyo","name":"Miraikan","city":"Tokyo","country":"JP","result":"no real Orrery hardware (Hayabusa2 capsule only in a temporary Dec 2021 exhibit)"},
+  {"id":"osaka-science-museum","name":"Osaka Science Museum","city":"Osaka","country":"JP","result":"no real Orrery hardware (SLS model only)"},
+  {"id":"aichi-museum-of-flight-boon","name":"Aichi Museum of Flight (Koukuukan boon)","city":"Toyoyama","country":"JP","result":"no real Orrery hardware (H-IIA material samples only)"},
+  {"id":"misawa-aviation-science-museum","name":"Misawa Aviation and Science Museum","city":"Misawa","country":"JP","result":"no real Orrery hardware"},
+  {"id":"gwacheon-national-science-museum","name":"National Science Museum Gwacheon","city":"Gwacheon","country":"KR","result":"could not read site (home page returned no exhibit text)"},
+  {"id":"naro-space-center-museum","name":"Naro Space Center space science museum (KARI)","city":"Goheung","country":"KR","result":"could not read site (kari.re.kr returned HTTP 500; no Korean objects in the Orrery list)"}
+ ]
+}

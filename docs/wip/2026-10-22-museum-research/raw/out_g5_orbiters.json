@@ -1,0 +1,26 @@
+{
+  "museums": {
+    "national-museum-of-nature-and-science-tokyo": {"name": "National Museum of Nature and Science", "city": "Tokyo", "country": "JP", "website": "https://www.kahaku.go.jp/english/"},
+    "jaxa-sagamihara-communication-hall": {"name": "JAXA Sagamihara Campus - Space Science and Exploration Communication Hall", "city": "Sagamihara", "country": "JP", "website": "https://www.isas.jaxa.jp/en/"},
+    "nasm-washington": {"name": "National Air and Space Museum", "city": "Washington, DC", "country": "US", "website": "https://airandspace.si.edu/"},
+    "udvar-hazy": {"name": "Steven F. Udvar-Hazy Center (National Air and Space Museum)", "city": "Chantilly", "country": "US", "website": "https://airandspace.si.edu/visit/udvar-hazy-center"}
+  },
+  "rows": [
+    {"ref": "hayabusa", "museum": "national-museum-of-nature-and-science-tokyo", "item": "Actual Hayabusa re-entry capsule (returned Itokawa samples 13 June 2010)", "kind": "flown", "evidence": "https://www.kahaku.go.jp/english/tenji/topics/", "status": "confirmed", "notes": "Permanent exhibit since 11 July 2023, Global Gallery 2F, Japan's Space Development. Only the capsule flew back; the orbiter itself burned up. Sagamihara City Museum showed the capsule in 2010/2021 (temporary, not confirmed current)."},
+    {"ref": "hayabusa-2", "museum": "jaxa-sagamihara-communication-hall", "item": "Actual Hayabusa2 re-entry capsule (returned Ryugu samples Dec 2020)", "kind": "flown", "evidence": "https://www.isas.jaxa.jp/gallery/feature/isas/isas_20230609.html", "status": "confirmed", "notes": "Exhibited since June 2023 in the Communication Hall of Space Science and Exploration; a secondary search summary called it permanent but the fetched ISAS page only says the display began June 2023. Only the capsule, not the orbiter, is on display."},
+    {"ref": "pioneer-10", "museum": "nasm-washington", "item": "Pioneer H flight spare hung in Boeing Milestones of Flight Hall as stand-in for Pioneer 10", "kind": "backup", "evidence": "https://en.wikipedia.org/wiki/Pioneer_H", "status": "uncertain", "notes": "Wikipedia (quoting Van Allen) says it is a flight-worthy spare built from Pioneer F/G spares, but the NASM collection page (A19770451000) calls it a TRW-built prototype/replica. Conflicting; operator to decide."},
+    {"ref": "pioneer-11", "museum": "nasm-washington", "item": "Pioneer H flight spare hung in Boeing Milestones of Flight Hall (stands in for Pioneer 10/11)", "kind": "backup", "evidence": "https://en.wikipedia.org/wiki/Pioneer_H", "status": "uncertain", "notes": "Same unit as for pioneer-10; same conflict between Wikipedia (real spare) and NASM catalogue (prototype/replica)."},
+    {"ref": "vega-1", "museum": "udvar-hazy", "item": "Vega Solar System Probe Bus and Landing Apparatus engineering model", "kind": "test-article", "evidence": "https://airandspace.si.edu/events/chasing-halleys-comet-vega-spacecraft", "status": "uncertain", "notes": "NASM page says the Vega engineering model is on display at Udvar-Hazy; catalogue calls it an engineering model refurbished for display in 1992 (NASM-2005-29880). Not clear whether it is flight-standard hardware or a display model. Applies to the Vega class (also vega-2)."},
+    {"ref": "vega-2", "museum": "udvar-hazy", "item": "Vega Solar System Probe Bus and Landing Apparatus engineering model", "kind": "test-article", "evidence": "https://airandspace.si.edu/events/chasing-halleys-comet-vega-spacecraft", "status": "uncertain", "notes": "Same unit as for vega-1; see notes there."},
+    {"ref": "clementine", "museum": "udvar-hazy", "item": "Clementine engineering model (donated by NRL, 2003)", "kind": "test-article", "evidence": "https://www.nrl.navy.mil/Media/News/Article/2632245/nrl-donates-clementine-spacecraft-to-national-air-and-space-museum/", "status": "uncertain", "notes": "Evidence page returned HTTP 403 to me; claim rests on search-result summaries (SpaceNews and NRL) that the engineering model was transferred to NASM and is on view at Udvar-Hazy awaiting conservation. Not verified by reading the page."}
+  ],
+  "none": [
+    "akatsuki", "bepicolombo", "cassini", "chandrayaan1", "change-2", "change1", "dart", "dawn",
+    "europa-clipper", "exomars-tgo", "galileo", "giotto", "hope", "juice", "juno", "lro", "lucy",
+    "luna10", "lunar-orbiter-1", "lunar-orbiter-2", "lunar-orbiter-3", "lunar-orbiter-4", "lunar-orbiter-5",
+    "lunar-prospector", "magellan", "mangalyaan", "mariner-4", "mariner-9", "mars-express", "mars-odyssey",
+    "mars2-orbiter", "mars3-orbiter", "maven", "messenger", "mro", "osiris-rex", "parker-solar-probe",
+    "phobos-2", "psyche-spacecraft", "rosetta", "smart-1", "solar-orbiter", "tianwen-1", "ulysses",
+    "viking1-orbiter", "voyager-1", "voyager-2"
+  ]
+}

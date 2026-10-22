@@ -1,0 +1,437 @@
+{
+ "museums": {
+  "strategic-air-space-museum": {
+   "name": "Strategic Air Command & Aerospace Museum",
+   "city": "Ashland",
+   "country": "US",
+   "website": "https://sacmuseum.org"
+  },
+  "us-space-and-rocket-center": {
+   "name": "U.S. Space & Rocket Center",
+   "city": "Huntsville",
+   "country": "US",
+   "website": "https://rocketcenter.com"
+  },
+  "frontiers-of-flight-dallas": {
+   "name": "Frontiers of Flight Museum",
+   "city": "Dallas",
+   "country": "US",
+   "website": "https://flightmuseum.com"
+  },
+  "san-diego-air-and-space-museum": {
+   "name": "San Diego Air & Space Museum",
+   "city": "San Diego",
+   "country": "US",
+   "website": "https://sandiegoairandspace.org"
+  },
+  "virginia-air-and-space-science-center": {
+   "name": "Virginia Air & Space Science Center",
+   "city": "Hampton",
+   "country": "US",
+   "website": "https://www.vasc.org"
+  },
+  "national-museum-usaf-dayton": {
+   "name": "National Museum of the United States Air Force",
+   "city": "Dayton",
+   "country": "US",
+   "website": "https://www.nationalmuseum.af.mil"
+  },
+  "national-naval-aviation-museum": {
+   "name": "National Naval Aviation Museum",
+   "city": "Pensacola",
+   "country": "US",
+   "website": "https://www.navalaviationmuseum.org"
+  },
+  "great-lakes-science-center": {
+   "name": "Great Lakes Science Center (NASA Glenn Visitor Center)",
+   "city": "Cleveland",
+   "country": "US",
+   "website": "https://www.greatscience.com"
+  },
+  "oklahoma-history-center": {
+   "name": "Oklahoma History Center",
+   "city": "Oklahoma City",
+   "country": "US",
+   "website": "https://www.okhistory.org"
+  },
+  "kennedy-space-center-visitor-complex": {
+   "name": "Kennedy Space Center Visitor Complex",
+   "city": "Merritt Island",
+   "country": "US",
+   "website": "https://www.kennedyspacecenter.com"
+  },
+  "intrepid-museum": {
+   "name": "Intrepid Sea, Air & Space Museum",
+   "city": "New York",
+   "country": "US",
+   "website": "https://www.intrepidmuseum.org"
+  },
+  "grissom-memorial-spring-mill": {
+   "name": "Virgil I. Grissom Memorial, Spring Mill State Park",
+   "city": "Mitchell",
+   "country": "US",
+   "website": "https://www.in.gov/dnr/state-parks/"
+  },
+  "nasm-washington": {
+   "name": "National Air and Space Museum",
+   "city": "Washington",
+   "country": "US",
+   "website": "https://airandspace.si.edu"
+  },
+  "cape-canaveral-space-force-museum": {
+   "name": "Cape Canaveral Space Force Museum",
+   "city": "Cape Canaveral",
+   "country": "US",
+   "website": "https://www.spaceforcemuseum.org"
+  },
+  "space-center-houston": {
+   "name": "Space Center Houston",
+   "city": "Houston",
+   "country": "US",
+   "website": "https://spacecenter.org"
+  },
+  "evergreen-aviation-space-museum": {
+   "name": "Evergreen Aviation & Space Museum",
+   "city": "McMinnville",
+   "country": "US",
+   "website": "https://evergreenmuseums.org"
+  },
+  "stafford-air-and-space-museum": {
+   "name": "Stafford Air & Space Museum",
+   "city": "Weatherford",
+   "country": "US",
+   "website": "https://staffordmuseum.com"
+  }
+ },
+ "rows": [
+  {
+   "ref": "apollo-csm-block-i",
+   "museum": "us-space-and-rocket-center",
+   "item": "CM-010 (Block I thermal test article)",
+   "kind": "test-article",
+   "evidence": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); listed in CSM production table as thermal test, Huntsville."
+  },
+  {
+   "ref": "apollo-csm-block-ii",
+   "museum": "frontiers-of-flight-dallas",
+   "item": "Command module CSM-101 (Apollo 7)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Frontiers_of_Flight_Museum",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); 'Exhibits include the Apollo 7 Command Module'; museum homepage fetched but does not itemise it."
+  },
+  {
+   "ref": "apollo-csm-block-ii",
+   "museum": "san-diego-air-and-space-museum",
+   "item": "Command module Gumdrop (Apollo 9, CSM-104)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Apollo_9",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); formerly Michigan Space and Science Center (closed 2004); museum site fetched but no item page."
+  },
+  {
+   "ref": "apollo-csm-block-ii",
+   "museum": "virginia-air-and-space-science-center",
+   "item": "Command module Yankee Clipper (Apollo 12, CSM-108)",
+   "kind": "flown",
+   "evidence": "https://www.vasc.org/exhibits",
+   "status": "confirmed",
+   "notes": "Museum page: 'including the Apollo 12 Command Module Yankee Clipper, Mercury and Gemini capsules, and the Orion Pad Abort-Test Vehicle'. Fetched summary; the Mercury/Gemini capsules there are not identified so not recorded."
+  },
+  {
+   "ref": "apollo-csm-block-ii",
+   "museum": "national-museum-usaf-dayton",
+   "item": "Command module Endeavour (Apollo 15, CSM-112)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Apollo_15",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); museum fact-sheet URLs returned 403. Wikipedia Apollo 15 and NMUSAF articles both say Space Gallery."
+  },
+  {
+   "ref": "apollo-csm-block-ii",
+   "museum": "national-naval-aviation-museum",
+   "item": "Command module Skylab 2 (CSM-116)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Skylab_2",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); museum site returned 403/no readable page."
+  },
+  {
+   "ref": "apollo-csm-block-ii",
+   "museum": "great-lakes-science-center",
+   "item": "Command module Skylab 3 (CSM-117)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Great_Lakes_Science_Center",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); in NASA Glenn Visitor Center; museum site timed out."
+  },
+  {
+   "ref": "apollo-csm-block-ii",
+   "museum": "oklahoma-history-center",
+   "item": "Command module Skylab 4 (CSM-118)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Oklahoma_History_Center",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); 'As of September 2020' per Skylab 4 article; museum home page fetched, no mention."
+  },
+  {
+   "ref": "apollo-csm-block-ii",
+   "museum": "kennedy-space-center-visitor-complex",
+   "item": "CSM-119 Skylab Rescue command module, never flown",
+   "kind": "backup",
+   "evidence": "https://en.wikipedia.org/wiki/Kennedy_Space_Center_Visitor_Complex",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); Apollo/Saturn V Center; KSC page URL guess returned 404."
+  },
+  {
+   "ref": "orion",
+   "museum": "virginia-air-and-space-science-center",
+   "item": "Orion Pad Abort-1 (PA-1) test vehicle",
+   "kind": "test-article",
+   "evidence": "https://www.vasc.org/exhibits",
+   "status": "confirmed",
+   "notes": "Museum page names 'the Orion Pad Abort-Test Vehicle'. Real unit vs structural replica not stated on page; confirm before use."
+  },
+  {
+   "ref": "soyuz-tma",
+   "museum": "intrepid-museum",
+   "item": "Soyuz TMA-6 descent module",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Intrepid_Sea,_Air_%26_Space_Museum",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); museum space page URL 404."
+  },
+  {
+   "ref": "gemini",
+   "museum": "grissom-memorial-spring-mill",
+   "item": "Gemini 3 'Molly Brown'",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Gemini_3",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); DNR page connection refused."
+  },
+  {
+   "ref": "gemini",
+   "museum": "nasm-washington",
+   "item": "Gemini VII spacecraft",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Gemini_7",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); "
+  },
+  {
+   "ref": "gemini",
+   "museum": "cape-canaveral-space-force-museum",
+   "item": "Gemini SC-2 (Gemini 2, reflown suborbital)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Project_Gemini",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); on loan from Smithsonian per Cape Canaveral Space Force Museum article; museum site DNS failed."
+  },
+  {
+   "ref": "mercury-capsule",
+   "museum": "nasm-washington",
+   "item": "Freedom 7 (MR-3)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Freedom_7",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); article text says NASM, moved 2021 to Udvar-Hazy but also 'Washington, D.C.': exact building unresolved."
+  },
+  {
+   "ref": "falcon-9",
+   "museum": "space-center-houston",
+   "item": "Falcon 9 Full Thrust booster B1035",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Space_Center_Houston",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); 'displayed near Independence Plaza since March 2020'."
+  },
+  {
+   "ref": "f-1",
+   "museum": "stafford-air-and-space-museum",
+   "item": "F-1 engine",
+   "kind": "flown-part",
+   "evidence": "https://en.wikipedia.org/wiki/Stafford_Air_%26_Space_Museum",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); engine provenance/flight status not stated; may be test/non-flown. Pass 1 treats other F-1 engines the same way."
+  },
+  {
+   "ref": "j-2",
+   "museum": "stafford-air-and-space-museum",
+   "item": "J-2 engine",
+   "kind": "flown-part",
+   "evidence": "https://en.wikipedia.org/wiki/Stafford_Air_%26_Space_Museum",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); provenance not stated."
+  },
+  {
+   "ref": "a7l",
+   "museum": "stafford-air-and-space-museum",
+   "item": "Tom Stafford's Apollo 10 suit",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Stafford_Air_%26_Space_Museum",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); suit variant (A7L) inferred from Apollo 10 era; not verified."
+  },
+  {
+   "ref": "titan-ii-glv",
+   "museum": "evergreen-aviation-space-museum",
+   "item": "Martin Titan II SLV (Space Launch Vehicle)",
+   "kind": "sister-unit",
+   "evidence": "https://en.wikipedia.org/wiki/Evergreen_Aviation_%26_Space_Museum",
+   "status": "uncertain",
+   "notes": "Evidence is Wikipedia only (museum site not readable via fetch: 403/404/DNS); SLV is the Titan II derivative, not a Gemini GLV; museum site SSL error."
+  }
+ ],
+ "museums_checked": [
+  {
+   "id": "strategic-air-space-museum",
+   "name": "Strategic Air Command & Aerospace Museum",
+   "city": "Ashland",
+   "country": "US",
+   "result": "no new Orrery rows (CM-009 already in pass 1); site not read"
+  },
+  {
+   "id": "frontiers-of-flight-dallas",
+   "name": "Frontiers of Flight Museum",
+   "city": "Dallas",
+   "country": "US",
+   "result": "rows added 1"
+  },
+  {
+   "id": "san-diego-air-and-space-museum",
+   "name": "San Diego Air & Space Museum",
+   "city": "San Diego",
+   "country": "US",
+   "result": "rows added 1"
+  },
+  {
+   "id": "virginia-air-and-space-science-center",
+   "name": "Virginia Air & Space Science Center",
+   "city": "Hampton",
+   "country": "US",
+   "result": "rows added 2"
+  },
+  {
+   "id": "national-museum-usaf-dayton",
+   "name": "National Museum of the USAF",
+   "city": "Dayton",
+   "country": "US",
+   "result": "rows added 1"
+  },
+  {
+   "id": "national-naval-aviation-museum",
+   "name": "National Naval Aviation Museum",
+   "city": "Pensacola",
+   "country": "US",
+   "result": "rows added 1"
+  },
+  {
+   "id": "great-lakes-science-center",
+   "name": "Great Lakes Science Center",
+   "city": "Cleveland",
+   "country": "US",
+   "result": "rows added 1"
+  },
+  {
+   "id": "oklahoma-history-center",
+   "name": "Oklahoma History Center",
+   "city": "Oklahoma City",
+   "country": "US",
+   "result": "rows added 1"
+  },
+  {
+   "id": "intrepid-museum",
+   "name": "Intrepid Museum",
+   "city": "New York",
+   "country": "US",
+   "result": "rows added 1"
+  },
+  {
+   "id": "grissom-memorial-spring-mill",
+   "name": "Grissom Memorial",
+   "city": "Mitchell",
+   "country": "US",
+   "result": "rows added 1"
+  },
+  {
+   "id": "cape-canaveral-space-force-museum",
+   "name": "Cape Canaveral Space Force Museum",
+   "city": "Cape Canaveral",
+   "country": "US",
+   "result": "rows added 1"
+  },
+  {
+   "id": "space-center-houston",
+   "name": "Space Center Houston",
+   "city": "Houston",
+   "country": "US",
+   "result": "rows added 1"
+  },
+  {
+   "id": "evergreen-aviation-space-museum",
+   "name": "Evergreen Aviation & Space Museum",
+   "city": "McMinnville",
+   "country": "US",
+   "result": "rows added 1"
+  },
+  {
+   "id": "stafford-air-and-space-museum",
+   "name": "Stafford Air & Space Museum",
+   "city": "Weatherford",
+   "country": "US",
+   "result": "rows added 3"
+  },
+  {
+   "id": "us-space-and-rocket-center",
+   "name": "U.S. Space & Rocket Center",
+   "city": "Huntsville",
+   "country": "US",
+   "result": "rows added 1 (CM-010)"
+  },
+  {
+   "id": "kennedy-space-center-visitor-complex",
+   "name": "Kennedy Space Center Visitor Complex",
+   "city": "Merritt Island",
+   "country": "US",
+   "result": "rows added 1 (CSM-119)"
+  },
+  {
+   "id": "pima-air-space-museum",
+   "name": "Pima Air & Space Museum",
+   "city": "Tucson",
+   "country": "US",
+   "result": "no real Orrery hardware (Wikipedia: GNS trainer, SRB mock-up only)"
+  },
+  {
+   "id": "museum-of-flight-seattle",
+   "name": "Museum of Flight",
+   "city": "Seattle",
+   "country": "US",
+   "result": "no new rows (Full Fuselage Trainer not flight hardware)"
+  },
+  {
+   "id": "adler-planetarium",
+   "name": "Adler Planetarium",
+   "city": "Chicago",
+   "country": "US",
+   "result": "could not read site (Gemini XII already in pass 1)"
+  },
+  {
+   "id": "air-zoo-kalamazoo",
+   "name": "Air Zoo",
+   "city": "Portage",
+   "country": "US",
+   "result": "no real Orrery hardware (Gemini boilerplate only)"
+  },
+  {
+   "id": "cosmosphere-hutchinson",
+   "name": "Cosmosphere",
+   "city": "Hutchinson",
+   "country": "US",
+   "result": "could not read site beyond homepage; already covered in pass 1"
+  }
+ ]
+}

@@ -1,0 +1,779 @@
+{
+ "museums": {
+  "nasm-washington": {
+   "name": "National Air and Space Museum",
+   "city": "Washington, DC",
+   "country": "US",
+   "website": "https://airandspace.si.edu"
+  },
+  "udvar-hazy": {
+   "name": "Steven F. Udvar-Hazy Center (NASM)",
+   "city": "Chantilly",
+   "country": "US",
+   "website": "https://airandspace.si.edu"
+  },
+  "kennedy-space-center-visitor-complex": {
+   "name": "Kennedy Space Center Visitor Complex",
+   "city": "Merritt Island",
+   "country": "US",
+   "website": "https://www.kennedyspacecenter.com"
+  },
+  "california-science-center": {
+   "name": "California Science Center",
+   "city": "Los Angeles",
+   "country": "US",
+   "website": "https://californiasciencecenter.org"
+  },
+  "intrepid-museum": {
+   "name": "Intrepid Sea, Air & Space Museum",
+   "city": "New York",
+   "country": "US",
+   "website": "https://intrepidmuseum.org"
+  },
+  "us-space-and-rocket-center": {
+   "name": "U.S. Space & Rocket Center",
+   "city": "Huntsville",
+   "country": "US",
+   "website": "https://www.rocketcenter.com"
+  },
+  "space-center-houston": {
+   "name": "Space Center Houston",
+   "city": "Houston",
+   "country": "US",
+   "website": "https://spacecenter.org"
+  },
+  "science-museum-london": {
+   "name": "Science Museum",
+   "city": "London",
+   "country": "GB",
+   "website": "https://www.sciencemuseum.org.uk"
+  },
+  "national-space-centre-leicester": {
+   "name": "National Space Centre",
+   "city": "Leicester",
+   "country": "GB",
+   "website": "https://spacecentre.co.uk"
+  },
+  "danmarks-tekniske-museum": {
+   "name": "Danmarks Tekniske Museum",
+   "city": "Helsingor",
+   "country": "DK",
+   "website": "https://www.tekniskmuseum.dk"
+  },
+  "technik-museum-speyer": {
+   "name": "Technik Museum Speyer",
+   "city": "Speyer",
+   "country": "DE",
+   "website": "https://speyer.technik-museum.de"
+  },
+  "deutsches-museum-munich": {
+   "name": "Deutsches Museum",
+   "city": "Munich",
+   "country": "DE",
+   "website": "https://www.deutsches-museum.de"
+  },
+  "cosmosphere-hutchinson": {
+   "name": "Cosmosphere",
+   "city": "Hutchinson",
+   "country": "US",
+   "website": "https://cosmo.org"
+  },
+  "cradle-of-aviation": {
+   "name": "Cradle of Aviation Museum",
+   "city": "Garden City",
+   "country": "US",
+   "website": "https://www.cradleofaviation.org"
+  },
+  "strategic-air-space-museum": {
+   "name": "Strategic Air Command & Aerospace Museum",
+   "city": "Ashland",
+   "country": "US",
+   "website": "https://sacmuseum.org"
+  },
+  "uss-hornet-museum": {
+   "name": "USS Hornet Sea, Air & Space Museum",
+   "city": "Alameda",
+   "country": "US",
+   "website": "https://uss-hornet.org"
+  },
+  "infinity-science-center": {
+   "name": "Infinity Science Center",
+   "city": "Pearlington",
+   "country": "US",
+   "website": "https://visitinfinity.com"
+  },
+  "fernbank-science-center": {
+   "name": "Fernbank Science Center",
+   "city": "Atlanta",
+   "country": "US",
+   "website": "https://fernbank.edu"
+  },
+  "museum-of-flight-seattle": {
+   "name": "The Museum of Flight",
+   "city": "Seattle",
+   "country": "US",
+   "website": "https://www.museumofflight.org"
+  },
+  "museum-of-science-and-industry-chicago": {
+   "name": "Museum of Science and Industry",
+   "city": "Chicago",
+   "country": "US",
+   "website": "https://www.msichicago.org"
+  },
+  "adler-planetarium": {
+   "name": "Adler Planetarium",
+   "city": "Chicago",
+   "country": "US",
+   "website": "https://www.adlerplanetarium.org"
+  },
+  "armstrong-air-and-space-museum": {
+   "name": "Armstrong Air & Space Museum",
+   "city": "Wapakoneta",
+   "country": "US",
+   "website": "https://armstrongmuseum.org"
+  },
+  "stafford-air-and-space-museum": {
+   "name": "Stafford Air & Space Museum",
+   "city": "Weatherford",
+   "country": "US",
+   "website": "https://staffordmuseum.com"
+  },
+  "franklin-institute": {
+   "name": "The Franklin Institute",
+   "city": "Philadelphia",
+   "country": "US",
+   "website": "https://www.fi.edu"
+  },
+  "new-mexico-museum-of-space-history": {
+   "name": "New Mexico Museum of Space History",
+   "city": "Alamogordo",
+   "country": "US",
+   "website": "https://www.nmspacemuseum.org"
+  },
+  "houston-museum-of-natural-science": {
+   "name": "Houston Museum of Natural Science",
+   "city": "Houston",
+   "country": "US",
+   "website": "https://www.hmns.org"
+  },
+  "new-york-hall-of-science": {
+   "name": "New York Hall of Science",
+   "city": "Queens",
+   "country": "US",
+   "website": "https://nysci.org"
+  },
+  "mao-zedong-memorial-museum-shaoshan": {
+   "name": "Mao Zedong Memorial Museum (Shaoshan)",
+   "city": "Shaoshan",
+   "country": "CN",
+   "website": ""
+  },
+  "rkk-energia-museum-korolev": {
+   "name": "RKK Energia Museum",
+   "city": "Korolev",
+   "country": "RU",
+   "website": "https://www.energia.ru"
+  },
+  "tsiolkovsky-museum-kaluga": {
+   "name": "Tsiolkovsky State Museum of the History of Cosmonautics",
+   "city": "Kaluga",
+   "country": "RU",
+   "website": "https://gmik.ru"
+  }
+ },
+ "rows": [
+  {
+   "ref": "apollo-csm-block-i",
+   "museum": "cradle-of-aviation",
+   "item": "CM-002 (A-004 pad abort test)",
+   "kind": "test-article",
+   "evidence": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module",
+   "status": "uncertain",
+   "notes": "Wikipedia says flown on A-004, american-spacecraft.org says test article; listed at Cradle. Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "apollo-csm-block-i",
+   "museum": "museum-of-flight-seattle",
+   "item": "CM-007 (Block I test article)",
+   "kind": "test-article",
+   "evidence": "https://american-spacecraft.org/apollo",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "apollo-csm-block-i",
+   "museum": "strategic-air-space-museum",
+   "item": "CM-009 (AS-201)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "apollo-csm-block-i",
+   "museum": "uss-hornet-museum",
+   "item": "CM-011 (AS-202)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "apollo-csm-block-i",
+   "museum": "infinity-science-center",
+   "item": "CM-017 (Apollo 4)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. Stennis/Pearlington MS."
+  },
+  {
+   "ref": "apollo-csm-block-i",
+   "museum": "fernbank-science-center",
+   "item": "CM-020 (Apollo 6)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "apollo-csm-block-ii",
+   "museum": "nasm-washington",
+   "item": "Command module Columbia (Apollo 11, CM-107)",
+   "kind": "flown",
+   "evidence": "https://airandspace.si.edu/collection-objects/command-module-apollo-11/nasm_A19700102000",
+   "status": "confirmed",
+   "notes": "Museum page: on display in Destination Moon. More exist (12+)."
+  },
+  {
+   "ref": "apollo-csm-block-ii",
+   "museum": "science-museum-london",
+   "item": "Command module Apollo 10 (CM-106)",
+   "kind": "flown",
+   "evidence": "https://www.museumsassociation.org/museums-journal/news/2025/09/science-museum-launches-space-gallery/",
+   "status": "confirmed",
+   "notes": "Displayed in new Space gallery (2025), on loan from NASM. Known from search-result summary, page not opened."
+  },
+  {
+   "ref": "apollo-csm-block-ii",
+   "museum": "cosmosphere-hutchinson",
+   "item": "Command module Odyssey (Apollo 13, CM-109)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Cosmosphere",
+   "status": "confirmed",
+   "notes": ""
+  },
+  {
+   "ref": "apollo-csm-block-ii",
+   "museum": "kennedy-space-center-visitor-complex",
+   "item": "CM-110 (Apollo 14)",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/apollo",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "apollo-csm-block-ii",
+   "museum": "california-science-center",
+   "item": "CM-111 (Apollo-Soyuz)",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/apollo",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "apollo-csm-block-ii",
+   "museum": "us-space-and-rocket-center",
+   "item": "CM-113 (Apollo 16)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "apollo-csm-block-ii",
+   "museum": "space-center-houston",
+   "item": "CM-114 (Apollo 17)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Space_Center_Houston",
+   "status": "confirmed",
+   "notes": ""
+  },
+  {
+   "ref": "apollo-csm-block-ii",
+   "museum": "museum-of-science-and-industry-chicago",
+   "item": "CM-103 (Apollo 8)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. More exist (12+): Apollo 7, 9, 12, 15, Skylab modules etc."
+  },
+  {
+   "ref": "apollo-lm",
+   "museum": "nasm-washington",
+   "item": "LM-2 (unflown, ground-test vehicle)",
+   "kind": "backup",
+   "evidence": "https://american-spacecraft.org/lunar-modules",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. Built for flight, used for ground tests. More exist (11+)."
+  },
+  {
+   "ref": "apollo-lm",
+   "museum": "kennedy-space-center-visitor-complex",
+   "item": "LM-9 (unflown, intended Apollo 15)",
+   "kind": "backup",
+   "evidence": "https://en.wikipedia.org/wiki/Apollo_Lunar_Module",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "apollo-lm",
+   "museum": "cradle-of-aviation",
+   "item": "LM-13 (unflown, Apollo 18 cancelled)",
+   "kind": "backup",
+   "evidence": "https://american-spacecraft.org/lunar-modules",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "apollo-lm",
+   "museum": "cradle-of-aviation",
+   "item": "LTA-1 test article",
+   "kind": "test-article",
+   "evidence": "https://en.wikipedia.org/wiki/Apollo_Lunar_Module",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "apollo-lm",
+   "museum": "cosmosphere-hutchinson",
+   "item": "LTA-3A test article",
+   "kind": "test-article",
+   "evidence": "https://en.wikipedia.org/wiki/Apollo_Lunar_Module",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "apollo-lm",
+   "museum": "franklin-institute",
+   "item": "LTA-3DR test article",
+   "kind": "test-article",
+   "evidence": "https://american-spacecraft.org/lunar-modules",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "apollo-lm",
+   "museum": "new-mexico-museum-of-space-history",
+   "item": "LTA-5D test article",
+   "kind": "test-article",
+   "evidence": "https://american-spacecraft.org/lunar-modules",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "apollo-lm",
+   "museum": "space-center-houston",
+   "item": "LTA-8A test article",
+   "kind": "test-article",
+   "evidence": "https://en.wikipedia.org/wiki/Space_Center_Houston",
+   "status": "confirmed",
+   "notes": ""
+  },
+  {
+   "ref": "atlantis",
+   "museum": "kennedy-space-center-visitor-complex",
+   "item": "Space Shuttle Atlantis (OV-104)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
+   "status": "confirmed",
+   "notes": "On display since 2013 at KSCVC."
+  },
+  {
+   "ref": "discovery",
+   "museum": "udvar-hazy",
+   "item": "Space Shuttle Discovery (OV-103)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Space_Shuttle_orbiter",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "endeavour",
+   "museum": "california-science-center",
+   "item": "Space Shuttle Endeavour (OV-105)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Space_Shuttle_orbiter",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "enterprise",
+   "museum": "intrepid-museum",
+   "item": "Space Shuttle Enterprise (OV-101)",
+   "kind": "test-article",
+   "evidence": "https://en.wikipedia.org/wiki/Space_Shuttle_Enterprise",
+   "status": "confirmed",
+   "notes": "Atmospheric test orbiter, never flown in space."
+  },
+  {
+   "ref": "space-shuttle-orbiter",
+   "museum": "udvar-hazy",
+   "item": "Discovery (OV-103)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Space_Shuttle_orbiter",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "space-shuttle-orbiter",
+   "museum": "kennedy-space-center-visitor-complex",
+   "item": "Atlantis (OV-104)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
+   "status": "confirmed",
+   "notes": ""
+  },
+  {
+   "ref": "space-shuttle-orbiter",
+   "museum": "california-science-center",
+   "item": "Endeavour (OV-105)",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Space_Shuttle_orbiter",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "space-shuttle-orbiter",
+   "museum": "intrepid-museum",
+   "item": "Enterprise (OV-101)",
+   "kind": "test-article",
+   "evidence": "https://en.wikipedia.org/wiki/Space_Shuttle_Enterprise",
+   "status": "confirmed",
+   "notes": ""
+  },
+  {
+   "ref": "space-shuttle-orbiter",
+   "museum": "us-space-and-rocket-center",
+   "item": "Pathfinder (OV-098) and MPTA-098",
+   "kind": "test-article",
+   "evidence": "https://en.wikipedia.org/wiki/Space_Shuttle_orbiter",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. Structural/handling test article."
+  },
+  {
+   "ref": "buran-ok-gli",
+   "museum": "technik-museum-speyer",
+   "item": "OK-GLI atmospheric test vehicle",
+   "kind": "test-article",
+   "evidence": "https://en.wikipedia.org/wiki/Buran_(spacecraft)",
+   "status": "confirmed",
+   "notes": "Wikipedia: walk-in exhibit since 2008; the BTS-002 identity is not stated on the page I read."
+  },
+  {
+   "ref": "gemini",
+   "museum": "nasm-washington",
+   "item": "Gemini IV capsule",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/gemini",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. More exist (3+): Gemini 3 Grissom Memorial Mitchell IN, Gemini 2 Cape Canaveral, Gemini VII."
+  },
+  {
+   "ref": "gemini",
+   "museum": "space-center-houston",
+   "item": "Gemini V capsule",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/gemini",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "gemini",
+   "museum": "kennedy-space-center-visitor-complex",
+   "item": "Gemini IX-A capsule",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/gemini",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "gemini",
+   "museum": "cosmosphere-hutchinson",
+   "item": "Gemini X capsule",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/gemini",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "gemini",
+   "museum": "california-science-center",
+   "item": "Gemini XI capsule",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/gemini",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "gemini",
+   "museum": "adler-planetarium",
+   "item": "Gemini XII capsule",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/gemini",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "gemini",
+   "museum": "armstrong-air-and-space-museum",
+   "item": "Gemini VIII capsule",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/gemini",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "gemini",
+   "museum": "stafford-air-and-space-museum",
+   "item": "Gemini VI-A capsule",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/gemini",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "mercury-capsule",
+   "museum": "nasm-washington",
+   "item": "Friendship 7 (MA-6, capsule 13)",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/mercury",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. More exist (9+) incl. unflown capsules and Freedom 7."
+  },
+  {
+   "ref": "mercury-capsule",
+   "museum": "cosmosphere-hutchinson",
+   "item": "Liberty Bell 7 (MR-4, capsule 11)",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/mercury",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "mercury-capsule",
+   "museum": "museum-of-science-and-industry-chicago",
+   "item": "Aurora 7 (MA-7, capsule 18)",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/mercury",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "mercury-capsule",
+   "museum": "kennedy-space-center-visitor-complex",
+   "item": "Sigma 7 (MA-8, capsule 16)",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/mercury",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "mercury-capsule",
+   "museum": "space-center-houston",
+   "item": "Faith 7 (MA-9, capsule 20)",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/mercury",
+   "status": "confirmed",
+   "notes": "Catalogue/Wikipedia listing, museum page not opened. "
+  },
+  {
+   "ref": "mercury-capsule",
+   "museum": "california-science-center",
+   "item": "Capsule 5 (MR-2, chimp Ham)",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/mercury",
+   "status": "uncertain",
+   "notes": "Single catalogue source."
+  },
+  {
+   "ref": "mercury-capsule",
+   "museum": "houston-museum-of-natural-science",
+   "item": "Capsule 6 (MA-2)",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/mercury",
+   "status": "uncertain",
+   "notes": "Single catalogue source."
+  },
+  {
+   "ref": "mercury-capsule",
+   "museum": "new-york-hall-of-science",
+   "item": "Capsule 1 (beach abort test)",
+   "kind": "flown",
+   "evidence": "https://american-spacecraft.org/mercury",
+   "status": "uncertain",
+   "notes": "Single catalogue source."
+  },
+  {
+   "ref": "orion",
+   "museum": "kennedy-space-center-visitor-complex",
+   "item": "Orion EFT-1 crew module",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Orion_(spacecraft)",
+   "status": "confirmed",
+   "notes": "Wikipedia: on display at KSCVC."
+  },
+  {
+   "ref": "shenzhou",
+   "museum": "mao-zedong-memorial-museum-shaoshan",
+   "item": "Shenzhou 10 return capsule",
+   "kind": "flown",
+   "evidence": "https://zh.wikipedia.org/wiki/神舟十号",
+   "status": "confirmed",
+   "notes": "Long-term loan to Shaoshan since 2020-12-20."
+  },
+  {
+   "ref": "soyuz-tma",
+   "museum": "science-museum-london",
+   "item": "Soyuz TMA-19M descent module (Tim Peake)",
+   "kind": "flown",
+   "evidence": "https://www.sciencemuseum.org.uk/node/9605",
+   "status": "confirmed",
+   "notes": "TMA-M variant; permanent display since 2019, now in new Space gallery."
+  },
+  {
+   "ref": "soyuz-tma",
+   "museum": "danmarks-tekniske-museum",
+   "item": "Soyuz TMA-18M descent module (Mogensen)",
+   "kind": "flown",
+   "evidence": "https://www.collectspace.com/news/news-051118a-soyuz-danish-museum-mogensen.html",
+   "status": "confirmed",
+   "notes": "TMA-M variant; debuted 2018."
+  },
+  {
+   "ref": "vostok",
+   "museum": "cosmosphere-hutchinson",
+   "item": "Vostok capsule",
+   "kind": "backup",
+   "evidence": "https://en.wikipedia.org/wiki/Cosmosphere",
+   "status": "uncertain",
+   "notes": "Source only says 'Vostok space capsule'; museum says items are flown, flight-ready backup, engineering model or replica; type unconfirmed."
+  },
+  {
+   "ref": "voskhod",
+   "museum": "cosmosphere-hutchinson",
+   "item": "Voskhod 2 capsule",
+   "kind": "backup",
+   "evidence": "https://en.wikipedia.org/wiki/Cosmosphere",
+   "status": "uncertain",
+   "notes": "Source only says 'Voskhod 2 capsule'; real/replica status unconfirmed."
+  },
+  {
+   "ref": "sokol-kv-2",
+   "museum": "national-space-centre-leicester",
+   "item": "Tim Peake's Sokol KV-2 suit (Soyuz TMA-19M)",
+   "kind": "flown",
+   "evidence": "https://blog.sciencemuseum.org.uk/see-tim-peakes-spacesuit-at-the-national-space-centre/",
+   "status": "confirmed",
+   "notes": "2018 announcement of long-term display from summer 2019; current status not re-checked."
+  },
+  {
+   "ref": "sokol-kv-2",
+   "museum": "science-museum-london",
+   "item": "Helen Sharman's Sokol KV-2 suit (Soyuz TM-12)",
+   "kind": "flown",
+   "evidence": "https://collection.sciencemuseumgroup.org.uk/objects/co8030220",
+   "status": "uncertain",
+   "notes": "Collection page: in Space Gallery but 'contact us to make sure it is on display'."
+  },
+  {
+   "ref": "sokol-kv-2",
+   "museum": "deutsches-museum-munich",
+   "item": "Klaus-Dietrich Flade's Sokol KV-2 suit (Mir 1992)",
+   "kind": "flown",
+   "evidence": "https://digital.deutsches-museum.de/en/digital-catalogue/collection-object/1994-612/",
+   "status": "uncertain",
+   "notes": "Flown per catalogue; display status not stated."
+  },
+  {
+   "ref": "a7l",
+   "museum": "space-center-houston",
+   "item": "Pete Conrad's Apollo 12 moonwalk suit",
+   "kind": "flown",
+   "evidence": "https://en.wikipedia.org/wiki/Space_Center_Houston",
+   "status": "confirmed",
+   "notes": ""
+  },
+  {
+   "ref": "/science/history/apollo-11-1969",
+   "museum": "nasm-washington",
+   "item": "Command module Columbia (Apollo 11)",
+   "kind": "flown",
+   "evidence": "https://airandspace.si.edu/collection-objects/command-module-apollo-11/nasm_A19700102000",
+   "status": "confirmed",
+   "notes": "CM only; other Apollo 11 artefacts not checked."
+  },
+  {
+   "ref": "/science/history/sputnik-1957",
+   "museum": "cosmosphere-hutchinson",
+   "item": "Sputnik 1 flight-ready backup",
+   "kind": "backup",
+   "evidence": "https://en.wikipedia.org/wiki/Sputnik_1",
+   "status": "confirmed",
+   "notes": ""
+  },
+  {
+   "ref": "/science/history/sputnik-1957",
+   "museum": "rkk-energia-museum-korolev",
+   "item": "Sputnik 1 backup",
+   "kind": "backup",
+   "evidence": "https://en.wikipedia.org/wiki/Sputnik_1",
+   "status": "uncertain",
+   "notes": "Displayed by appointment only."
+  },
+  {
+   "ref": "/science/history/sputnik-1957",
+   "museum": "museum-of-flight-seattle",
+   "item": "Sputnik 1 engineering model",
+   "kind": "test-article",
+   "evidence": "https://en.wikipedia.org/wiki/Sputnik_1",
+   "status": "uncertain",
+   "notes": "Display status not confirmed."
+  },
+  {
+   "ref": "/science/history/tsiolkovsky-equation-1903",
+   "museum": "tsiolkovsky-museum-kaluga",
+   "item": "Tsiolkovsky's house and personal materials",
+   "kind": "test-article",
+   "evidence": "https://en.wikipedia.org/wiki/Tsiolkovsky_State_Museum_of_the_History_of_Cosmonautics",
+   "status": "uncertain",
+   "notes": "Not a flight object; source mentions only his former residence and a rocket model, not specific instruments."
+  }
+ ],
+ "none": [
+  "buran",
+  "challenger",
+  "columbia",
+  "crew-dragon",
+  "gaganyaan",
+  "new-shepard",
+  "soyuz-7k-ok",
+  "soyuz-ms",
+  "soyuz-t",
+  "soyuz-tm",
+  "starliner",
+  "x37b",
+  "a7lb",
+  "aces",
+  "axemu",
+  "crew-dragon-iva",
+  "emu",
+  "feitian",
+  "krechet-94",
+  "orlan-mks",
+  "shenzhou-iva",
+  "sokol-m",
+  "starliner-suit",
+  "/science/history/goddard-liquid-rocket-1926"
+ ]
+}

@@ -41,6 +41,16 @@ describe('resolveLaunchSiteRef', () => {
     expect(resolveLaunchSiteRef('LC133/3', 'NIIP-5', mapping)).toBeNull();
   });
 
+  it('an exact pad name at another site is not this site (LC1 at Naro is not Baikonur 1/5)', () => {
+    // Pad codes repeat between cosmodromes; the GCAT feed credited Naro, Sohae
+    // and Hainan launches from their own "LC1" to Gagarin's Start.
+    expect(resolveLaunchSiteRef('LC1', 'NARO', mapping)).toBeNull();
+    expect(resolveLaunchSiteRef('LC1', 'SOHAE', mapping)).toBeNull();
+    expect(resolveLaunchSiteRef('LC1', 'GIK-5', mapping)).toBe('baikonur-1-5');
+    // No location given: the name alone still decides.
+    expect(resolveLaunchSiteRef('LC1', '', mapping)).toBe('baikonur-1-5');
+  });
+
   it('returns null without a pad name', () => {
     expect(resolveLaunchSiteRef(null, 'Baikonur', mapping)).toBeNull();
   });

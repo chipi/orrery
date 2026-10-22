@@ -51,9 +51,15 @@ export function resolveLaunchSiteRef(
   // First pass: exact pad_name match (case-insensitive). This is the
   // strongest signal — the LL2 / GCAT feeds use canonical pad codes
   // (LC40, SLC4E, ELA-3, 1/5, etc.) that map 1-to-1 to fleet sites.
+  // Pad codes repeat between cosmodromes ("LC1" is Baikonur 1/5, but also
+  // Naro, Sohae and Hainan), so when the launch has a location and the site
+  // lists its location anchors, the name match must sit at one of them.
   if (padNameLc) {
     for (const [siteId, rule] of Object.entries(mapping.sites)) {
       const names = rule.pad_name ?? [];
+      const locs = rule.pad_location_includes ?? [];
+      if (padLocLc && locs.length && !locs.some((l) => hasToken(padLocLc, l.toLowerCase())))
+        continue;
       for (const n of names) {
         if (n.toLowerCase() === padNameLc) return siteId;
       }

@@ -693,7 +693,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2010-05-21-ariane-5eca-astra-3b": {
       "id": "2010-05-21-ariane-5eca-astra-3b",
@@ -912,7 +913,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -1478,7 +1479,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2010-09-21-atlas-v-topaz-1": {
       "id": "2010-09-21-atlas-v-topaz-1",
@@ -4091,7 +4093,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2011-09-24-zenit-3sl-atlantic-bird-7": {
       "id": "2011-09-24-zenit-3sl-atlantic-bird-7",
@@ -4904,7 +4907,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2011-12-17-soyuz-st-a-elisa-1": {
       "id": "2011-12-17-soyuz-st-a-elisa-1",
@@ -5548,7 +5552,7 @@
       "image_credit": "Details uncertain",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T1",
       "tier_reason": "first-flight-vehicle",
       "editorial_note": null,
@@ -5920,7 +5924,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2012-05-17-proton-m-briz-m-nimiq-6": {
       "id": "2012-05-17-proton-m-briz-m-nimiq-6",
@@ -7442,7 +7447,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -7616,7 +7621,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2013-01-30-naro-1-stsat-2c": {
       "id": "2013-01-30-naro-1-stsat-2c",
@@ -7638,7 +7644,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -10486,7 +10492,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2014-03-15-proton-m-briz-m-ekspress-at1-exp-at2": {
       "id": "2014-03-15-proton-m-briz-m-ekspress-at1-exp-at2",
@@ -11138,7 +11145,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2014-05-26-zenit-3sl-eutelsat-3b": {
       "id": "2014-05-26-zenit-3sl-eutelsat-3b",
@@ -12148,7 +12156,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2014-10-15-pslv-xl-irnss-1c": {
       "id": "2014-10-15-pslv-xl-irnss-1c",
@@ -12702,7 +12711,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2014-12-05-delta-4h-orion-eft-1": {
       "id": "2014-12-05-delta-4h-orion-eft-1",
@@ -13288,7 +13298,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2015-02-01-proton-m-briz-m-inmarsat-5f2": {
       "id": "2015-02-01-proton-m-briz-m-inmarsat-5f2",
@@ -13679,7 +13690,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2015-03-27-soyuz-fg-soyuz-11f732a47-no-716": {
       "id": "2015-03-27-soyuz-fg-soyuz-11f732a47-no-716",
@@ -15513,7 +15525,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2015-11-26-chang-zheng-yg-29": {
       "id": "2015-11-26-chang-zheng-yg-29",
@@ -16289,7 +16302,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -16397,7 +16410,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2016-03-04-falcon-9-ses-9": {
       "id": "2016-03-04-falcon-9-ses-9",
@@ -16846,7 +16860,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -18163,7 +18177,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2016-11-03-chang-zheng-sj-17": {
       "id": "2016-11-03-chang-zheng-sj-17",
@@ -19009,7 +19024,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2017-01-28-soyuz-st-b-hispasat-36w-1": {
       "id": "2017-01-28-soyuz-st-b-hispasat-36w-1",
@@ -19334,7 +19350,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2017-03-19-delta-4m-5-4-wideband-global-satcom-9": {
       "id": "2017-03-19-delta-4m-5-4-wideband-global-satcom-9",
@@ -19794,7 +19811,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2017-06-01-ariane-5eca-viasat-2-eutelsat-172b": {
       "id": "2017-06-01-ariane-5eca-viasat-2-eutelsat-172b",
@@ -20482,7 +20500,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2017-08-24-falcon-9-formosat-5": {
       "id": "2017-08-24-falcon-9-formosat-5",
@@ -20940,7 +20959,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2017-10-11-falcon-9-ses-11-echostar-105": {
       "id": "2017-10-11-falcon-9-ses-11-echostar-105",
@@ -21386,7 +21406,7 @@
       "image_credit": "Software error, aimed down",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -21626,7 +21646,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2017-12-23-falcon-9-iridium-next-sv31-40": {
       "id": "2017-12-23-falcon-9-iridium-next-sv31-40",
@@ -22202,7 +22223,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -22441,7 +22462,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2018-03-01-atlas-v-goes-s": {
       "id": "2018-03-01-atlas-v-goes-s",
@@ -23455,7 +23477,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2018-06-16-soyuz-2-1b-uragan-m-no-756": {
       "id": "2018-06-16-soyuz-2-1b-uragan-m-no-756",
@@ -24567,7 +24590,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2018-11-01-chang-zheng-beidou-3-g1q": {
       "id": "2018-11-01-chang-zheng-beidou-3-g1q",
@@ -25440,7 +25464,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -26849,7 +26873,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,

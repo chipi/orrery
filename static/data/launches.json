@@ -1195,7 +1195,7 @@
       "webcast_live": false,
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "xichang-lc-2",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -5378,7 +5378,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "2026-12-31-prime-maiden-flight": {
       "id": "2026-12-31-prime-maiden-flight",
@@ -6684,7 +6685,7 @@
       "webcast_live": false,
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "xichang-lc-3",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -10341,7 +10342,7 @@
       "webcast_live": false,
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "xichang-lc-2",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,

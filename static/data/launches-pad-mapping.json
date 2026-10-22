@@ -36,7 +36,8 @@
         "Pad 39A"
       ],
       "pad_location_includes": [
-        "Kennedy"
+        "Kennedy",
+        "KSC"
       ]
     },
     "lc-39b": {
@@ -47,7 +48,8 @@
         "Pad 39B"
       ],
       "pad_location_includes": [
-        "Kennedy"
+        "Kennedy",
+        "KSC"
       ]
     },
     "vandenberg-slc-4e": {
@@ -58,7 +60,10 @@
         "SLC-4 East"
       ],
       "pad_location_includes": [
-        "Vandenberg"
+        "Vandenberg",
+        "VSFBS",
+        "VSFB",
+        "VS"
       ]
     },
     "kourou-ela-3": {
@@ -69,7 +74,8 @@
       ],
       "pad_location_includes": [
         "Kourou",
-        "French Guiana"
+        "French Guiana",
+        "CSG"
       ]
     },
     "kourou-ela-4": {
@@ -80,7 +86,8 @@
       ],
       "pad_location_includes": [
         "Kourou",
-        "French Guiana"
+        "French Guiana",
+        "CSG"
       ]
     },
     "baikonur-1-5": {
@@ -121,7 +128,9 @@
       ],
       "pad_location_includes": [
         "Plesetsk",
-        "niip-53"
+        "niip-53",
+        "GIK-1",
+        "GNIIPV"
       ]
     },
     "jiuquan-slc-43": {
@@ -132,7 +141,8 @@
         "Site 43/95A"
       ],
       "pad_location_includes": [
-        "Jiuquan"
+        "Jiuquan",
+        "JQ"
       ]
     },
     "wenchang-lc-101": {
@@ -142,7 +152,8 @@
         "Launch Complex 101"
       ],
       "pad_location_includes": [
-        "Wenchang"
+        "Wenchang",
+        "WEN"
       ]
     },
     "sriharikota-slp": {
@@ -154,7 +165,8 @@
       ],
       "pad_location_includes": [
         "Sriharikota",
-        "Satish Dhawan"
+        "Satish Dhawan",
+        "SHAR"
       ]
     },
     "tanegashima-yoshinobu": {
@@ -162,10 +174,12 @@
         "Yoshinobu",
         "LP-1",
         "LP-2",
-        "Yoshinobu Launch Complex"
+        "Yoshinobu Launch Complex",
+        "Y"
       ],
       "pad_location_includes": [
-        "Tanegashima"
+        "Tanegashima",
+        "TNSC"
       ]
     },
     "starbase-orbital-a": {
@@ -219,9 +233,7 @@
         "LC200/39",
         "LC200/40",
         "Site 200/39",
-        "Site 200/40",
-        "PU1S",
-        "PU2"
+        "Site 200/40"
       ],
       "pad_location_includes": [
         "baikonur",
@@ -265,6 +277,55 @@
       "pad_location_includes": [
         "taiyuan",
         "tysc"
+      ]
+    },
+    "cape-canaveral-lc-36b": {
+      "pad_name": [
+        "LC36B",
+        "LC-36B",
+        "Launch Complex 36B",
+        "SLC-36"
+      ],
+      "pad_location_includes": [
+        "Cape Canaveral",
+        "cc",
+        "CCSFS"
+      ]
+    },
+    "lc-14": {
+      "pad_name": [
+        "LC14",
+        "LC-14",
+        "Launch Complex 14"
+      ],
+      "pad_location_includes": [
+        "Cape Canaveral",
+        "cc",
+        "CCSFS"
+      ]
+    },
+    "lc-34": {
+      "pad_name": [
+        "LC34",
+        "LC-34",
+        "Launch Complex 34"
+      ],
+      "pad_location_includes": [
+        "Cape Canaveral",
+        "cc",
+        "CCSFS"
+      ]
+    },
+    "lc-5": {
+      "pad_name": [
+        "LC5",
+        "LC-5",
+        "Launch Complex 5"
+      ],
+      "pad_location_includes": [
+        "Cape Canaveral",
+        "cc",
+        "CCSFS"
       ]
     }
   }

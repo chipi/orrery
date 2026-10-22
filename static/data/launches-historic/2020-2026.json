@@ -329,7 +329,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2020-02-09-simorgh-unknown-mission": {
       "id": "2020-02-09-simorgh-unknown-mission",
@@ -1773,7 +1774,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2020-07-20-falcon-9-anasis-2": {
       "id": "2020-07-20-falcon-9-anasis-2",
@@ -3219,7 +3221,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2020-12-02-soyuz-st-a-falconeye-2": {
       "id": "2020-12-02-soyuz-st-a-falconeye-2",
@@ -3634,7 +3637,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T4",
       "tier_reason": "routine-constellation",
       "editorial_note": null,
@@ -4619,7 +4622,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T4",
       "tier_reason": "routine-constellation",
       "editorial_note": null,
@@ -4820,7 +4823,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T4",
       "tier_reason": "routine-constellation",
       "editorial_note": null,
@@ -5311,7 +5314,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T4",
       "tier_reason": "routine-constellation",
       "editorial_note": null,
@@ -5839,7 +5842,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T4",
       "tier_reason": "routine-constellation",
       "editorial_note": null,
@@ -6842,7 +6845,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "jiuquan-slc-43"
     },
     "2021-09-27-chang-zheng-shiyan-10": {
       "id": "2021-09-27-chang-zheng-shiyan-10",
@@ -6962,7 +6966,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T4",
       "tier_reason": "routine-constellation",
       "editorial_note": null,
@@ -7093,7 +7097,7 @@
       "image_credit": "LOX pressure low",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "xichang-lc-2",
+      "orrery_launch_site_ref": null,
       "tier": "T1",
       "tier_reason": "first-flight-vehicle",
       "editorial_note": null,
@@ -7202,7 +7206,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2021-10-27-kuaizhou-1a-jilin-1-gf02": {
       "id": "2021-10-27-kuaizhou-1a-jilin-1-gf02",
@@ -8285,7 +8290,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2021-12-23-chang-zheng-shiyan-12-01-02": {
       "id": "2021-12-23-chang-zheng-shiyan-12-01-02",
@@ -10779,7 +10785,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "xichang-lc-2",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -11579,7 +11585,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-43"
     },
     "2022-08-04-chang-zheng-guomang": {
       "id": "2022-08-04-chang-zheng-guomang",
@@ -13241,7 +13248,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -15028,7 +15035,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2023-01-26-falcon-9-starlink-group-5-2": {
       "id": "2023-01-26-falcon-9-starlink-group-5-2",
@@ -16244,7 +16252,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-43"
     },
     "2023-03-29-falcon-9-starlink-group-5-10": {
       "id": "2023-03-29-falcon-9-starlink-group-5-10",
@@ -17158,7 +17167,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "xichang-lc-2",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -17223,7 +17232,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -17354,7 +17363,7 @@
       "image_credit": "S2 startup problem",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "xichang-lc-2",
+      "orrery_launch_site_ref": null,
       "tier": "T1",
       "tier_reason": "first-flight-vehicle",
       "editorial_note": null,
@@ -17816,7 +17825,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -18739,7 +18748,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -19376,7 +19385,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2023-09-09-falcon-9-starlink-group-6-14": {
       "id": "2023-09-09-falcon-9-starlink-group-6-14",
@@ -20782,7 +20792,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "xichang-lc-2",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -22170,7 +22180,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2024-01-14-falcon-9-starlink-group-7-10": {
       "id": "2024-01-14-falcon-9-starlink-group-7-10",
@@ -23085,7 +23096,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -23384,7 +23395,7 @@
       "image_credit": "St1 burn rate low",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T1",
       "tier_reason": "first-flight-vehicle",
       "editorial_note": null,
@@ -27735,7 +27746,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2024-09-27-chang-zheng-shi-jian-19": {
       "id": "2024-09-27-chang-zheng-shi-jian-19",
@@ -28547,7 +28559,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -29372,7 +29384,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -29471,7 +29483,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "xichang-lc-2",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -30063,7 +30075,7 @@
       "image_credit": "St1 sep issue",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -32000,7 +32012,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T4",
       "tier_reason": "routine-constellation",
       "editorial_note": null,
@@ -35170,7 +35182,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "tanegashima-yoshinobu"
     },
     "2025-06-28-falcon-9-starlink-group-15-7": {
       "id": "2025-06-28-falcon-9-starlink-group-15-7",
@@ -35623,7 +35636,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -35853,7 +35866,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -36053,7 +36066,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "xichang-lc-2",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -36711,7 +36724,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -39042,7 +39055,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "xichang-lc-2",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -39599,7 +39612,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "xichang-lc-2",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -39959,7 +39972,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -40288,7 +40301,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "xichang-lc-2",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -40852,7 +40865,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-43"
     },
     "2025-12-25-chang-zheng-whdw-17": {
       "id": "2025-12-25-chang-zheng-whdw-17",
@@ -40874,7 +40888,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -40940,7 +40954,7 @@
       "image_credit": "Some deploys to wrong orbit",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-200",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -41269,7 +41283,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -41499,7 +41513,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "xichang-lc-2",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -41837,7 +41851,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "plesetsk-43"
     },
     "2026-02-07-falcon-9-starlink-group-17-33": {
       "id": "2026-02-07-falcon-9-starlink-group-17-33",
@@ -42454,7 +42469,7 @@
       "image_credit": "St1 sep issue",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -42617,7 +42632,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -43535,7 +43550,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T4",
       "tier_reason": "routine-constellation",
       "editorial_note": null,
@@ -44625,7 +44640,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T4",
       "tier_reason": "routine-constellation",
       "editorial_note": null,
@@ -45245,7 +45260,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T4",
       "tier_reason": "routine-constellation",
       "editorial_note": null,
@@ -45605,7 +45620,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "xichang-lc-2",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -46227,7 +46242,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "baikonur-1-5",
+      "orrery_launch_site_ref": null,
       "tier": "T4",
       "tier_reason": "routine-constellation",
       "editorial_note": null,
@@ -46326,7 +46341,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": "xichang-lc-2",
+      "orrery_launch_site_ref": null,
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,

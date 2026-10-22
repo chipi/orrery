@@ -71,6 +71,8 @@ export function buildMuseumModel(color: string): THREE.Group {
   const door = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.3, 0.02), darkMat());
   door.position.set(0, 0.25, 0.18);
   g.add(door);
+  // About a launchpad's footprint, so a museum next to a pad (KSC) doesn't hide it.
+  g.scale.setScalar(0.6);
   return g;
 }
 
@@ -130,10 +132,16 @@ function buildDomeObservatory(color: string): THREE.Group {
   );
   dome.position.y = 0.46;
   g.add(dome);
-  const slit = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.44, 0.44), darkMat());
-  slit.position.set(0, 0.72, 0.1);
-  slit.rotation.x = -0.6;
+  // The open slit: one dark strip over the crown of the dome, read from above
+  // as a single line (a box through the dome showed as two bars).
+  const slit = new THREE.Mesh(
+    new THREE.SphereGeometry(0.425, 28, 14, -0.06, 0.12, 0, Math.PI / 2),
+    darkMat(),
+  );
+  slit.rotation.y = Math.PI / 2;
+  slit.position.y = 0.46;
   g.add(slit);
+  g.scale.setScalar(0.8);
   return g;
 }
 

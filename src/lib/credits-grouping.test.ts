@@ -88,6 +88,8 @@ describe('pathToRouteKey', () => {
   it('routes panel images to their host route', () => {
     expect(pathToRouteKey('/images/iss-modules/zarya/01.jpg')).toBe('iss');
     expect(pathToRouteKey('/images/earth-objects/iss/01.jpg')).toBe('earth');
+    expect(pathToRouteKey('/images/museums/udvar-hazy/01.webp')).toBe('earth');
+    expect(pathToRouteKey('/images/observatories/parkes/01.webp')).toBe('earth');
     expect(pathToRouteKey('/images/moon-sites/apollo11/01.jpg')).toBe('moon');
     expect(pathToRouteKey('/images/mars-sites/curiosity/01.jpg')).toBe('mars');
   });

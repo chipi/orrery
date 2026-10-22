@@ -1,0 +1,155 @@
+[
+ {
+  "id": "lamost",
+  "type": "observatory",
+  "kind": "optical",
+  "name": "LAMOST (Guo Shoujing Telescope) at Xinglong Observatory",
+  "place": "Xinglong Station, Hebei Province",
+  "country": "CN",
+  "website": "https://www.lamost.org/"
+ },
+ {
+  "id": "lmt",
+  "type": "observatory",
+  "kind": "radio",
+  "name": "Large Millimeter Telescope Alfonso Serrano (LMT)",
+  "place": "Sierra Negra, Puebla",
+  "country": "MX",
+  "website": "https://www.inaoep.mx/"
+ },
+ {
+  "id": "lofar",
+  "type": "observatory",
+  "kind": "radio",
+  "name": "LOFAR (Low-Frequency Array), core at Exloo",
+  "place": "near Exloo, Drenthe",
+  "country": "NL",
+  "website": "https://www.astron.nl/telescopes/lofar/"
+ },
+ {
+  "id": "madrid-dsn",
+  "type": "observatory",
+  "kind": "deep-space",
+  "name": "Madrid Deep Space Communications Complex",
+  "place": "Robledo de Chavela, near Madrid",
+  "country": "ES",
+  "website": "https://www.mdscc.nasa.gov/"
+ },
+ {
+  "id": "mauna-kea",
+  "type": "observatory",
+  "kind": "optical",
+  "name": "Maunakea Observatories",
+  "place": "Maunakea summit, Hawaiʻi Island, Hawaii",
+  "country": "US",
+  "website": "https://maunakeaobservatories.org/"
+ },
+ {
+  "id": "meerkat",
+  "type": "observatory",
+  "kind": "radio",
+  "name": "MeerKAT",
+  "place": "Meerkat National Park, Karoo, Northern Cape",
+  "country": "ZA",
+  "website": "https://www.sarao.ac.za/"
+ },
+ {
+  "id": "mount-wilson",
+  "type": "observatory",
+  "kind": "optical",
+  "name": "Mount Wilson Observatory",
+  "place": "Mount Wilson, San Gabriel Mountains, California",
+  "country": "US",
+  "website": "https://www.mtwilson.edu/"
+ },
+ {
+  "id": "nobeyama",
+  "type": "observatory",
+  "kind": "radio",
+  "name": "Nobeyama 45 m radio telescope",
+  "place": "Nobeyama Radio Observatory, near Minamimaki, Nagano",
+  "country": "JP",
+  "website": "https://www.nro.nao.ac.jp/en/"
+ },
+ {
+  "id": "palomar",
+  "type": "observatory",
+  "kind": "optical",
+  "name": "Palomar Observatory",
+  "place": "Palomar Mountain, San Diego County, California",
+  "country": "US",
+  "website": "https://sites.astro.caltech.edu/palomar/"
+ },
+ {
+  "id": "paranal",
+  "type": "observatory",
+  "kind": "optical",
+  "name": "Paranal Observatory and the Very Large Telescope",
+  "place": "Cerro Paranal, Atacama Desert, Antofagasta Region",
+  "country": "CL",
+  "website": "https://www.eso.org/public/teles-instr/paranal-observatory/"
+ },
+ {
+  "id": "parkes",
+  "type": "observatory",
+  "kind": "radio",
+  "name": "Parkes radio telescope \"Murriyang\"",
+  "place": "Parkes Observatory, near Parkes, New South Wales",
+  "country": "AU",
+  "website": "https://www.csiro.au/en/about/facilities-collections/atnf"
+ },
+ {
+  "id": "ratan-600",
+  "type": "observatory",
+  "kind": "radio",
+  "name": "RATAN-600",
+  "place": "Zelenchukskaya, Karachay-Cherkess Republic",
+  "country": "RU",
+  "website": "https://www.sao.ru/ratan/"
+ },
+ {
+  "id": "rubin",
+  "type": "observatory",
+  "kind": "optical",
+  "name": "Vera C. Rubin Observatory",
+  "place": "Cerro Pachón, Coquimbo Region",
+  "country": "CL",
+  "website": "https://rubinobservatory.org/"
+ },
+ {
+  "id": "salt",
+  "type": "observatory",
+  "kind": "optical",
+  "name": "Southern African Large Telescope",
+  "place": "Sutherland, Northern Cape",
+  "country": "ZA",
+  "website": "https://www.salt.ac.za/"
+ },
+ {
+  "id": "ska-low",
+  "type": "observatory",
+  "kind": "radio",
+  "name": "SKA-Low",
+  "place": "Murchison Radio-astronomy Observatory (Inyarrimanha Ilgari Bundara), Western Australia",
+  "country": "AU",
+  "website": "https://www.skao.int/"
+ },
+ {
+  "id": "ska-mid",
+  "type": "observatory",
+  "kind": "radio",
+  "name": "SKA-Mid",
+  "place": "Meerkat National Park, Karoo, Northern Cape",
+  "country": "ZA",
+  "website": "https://www.skao.int/"
+ },
+ {
+  "id": "vla",
+  "type": "observatory",
+  "kind": "radio",
+  "name": "Karl G. Jansky Very Large Array",
+  "place": "Plains of San Agustin, near Socorro, New Mexico",
+  "country": "US",
+  "website": "https://science.nrao.edu/facilities/vla/"
+ }
+]

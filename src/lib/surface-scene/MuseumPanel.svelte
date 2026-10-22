@@ -7,6 +7,7 @@
   import { base } from '$app/paths';
   import { page } from '$app/state';
   import Panel from '$lib/components/Panel.svelte';
+  import PlaceHero from '$lib/components/PlaceHero.svelte';
   import { getFleet, getFleetIndex, getScienceSection, holdingNotYetOpen } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
@@ -71,6 +72,7 @@
 <Panel {open} title={museum?.name ?? ''} {onClose}>
   {#if museum}
     <div class="museum" data-testid="museum-panel" data-museum-id={museum.id}>
+      <PlaceHero src="/images/museums/{museum.id}/01.webp" {locale} />
       <h1 class="name">{museum.name}</h1>
       <p class="city">{museum.city}</p>
       <p class="description">{museum.description}</p>

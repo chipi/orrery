@@ -7,6 +7,7 @@
   import { base } from '$app/paths';
   import { page } from '$app/state';
   import Panel from '$lib/components/Panel.svelte';
+  import PlaceHero from '$lib/components/PlaceHero.svelte';
   import { getScienceSection } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
@@ -62,6 +63,7 @@
 <Panel {open} title={observatory?.name ?? ''} {onClose}>
   {#if observatory}
     <div class="obs" data-testid="observatory-panel" data-observatory-id={observatory.id}>
+      <PlaceHero src="/images/observatories/{observatory.id}/01.webp" {locale} />
       <div class="tags">
         <span class="tag kind">{KIND[observatory.kind]()}</span>
         <span class="tag status status-{observatory.status}">{STATUS[observatory.status]()}</span>

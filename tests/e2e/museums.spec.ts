@@ -29,6 +29,9 @@ test.describe('museums', () => {
     await expect(panel).toBeVisible({ timeout: 20_000 });
     await expect(panel).toHaveAttribute('data-museum-id', 'nasm-washington');
     expect(await panel.getByTestId('museum-panel-object').count()).toBeGreaterThanOrEqual(1);
+    const hero = panel.getByTestId('place-hero').locator('img');
+    await expect(hero).toHaveAttribute('src', /\/images\/museums\/nasm-washington\/01\.webp$/);
+    await expect(hero).toHaveAttribute('alt', /.+/);
   });
 
   test('a history page shows the museum block', async ({ page }) => {
@@ -60,6 +63,18 @@ test.describe('observatories', () => {
     await expect(panel).toHaveAttribute('data-observatory-id', 'vla');
     expect(await panel.getByTestId('observatory-article').count()).toBeGreaterThanOrEqual(1);
     await expect(panel.getByTestId('observatory-website')).toHaveAttribute('target', '_blank');
+    await expect(panel.getByTestId('place-hero').locator('img')).toHaveAttribute(
+      'src',
+      /\/images\/observatories\/vla\/01\.webp$/,
+    );
+  });
+
+  test('a place with no photo shows no hero', async ({ page }) => {
+    await page.goto('/earth?observatory=lmt');
+    const panel = page.getByTestId('observatory-panel');
+    await expect(panel).toBeVisible({ timeout: 20_000 });
+    await page.waitForLoadState('networkidle');
+    await expect(panel.getByTestId('place-hero')).toHaveCount(0);
   });
 
   test('an article lists its observatories and links to their cards', async ({ page }) => {

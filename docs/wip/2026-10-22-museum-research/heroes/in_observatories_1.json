@@ -1,0 +1,155 @@
+[
+ {
+  "id": "allen-telescope-array",
+  "type": "observatory",
+  "kind": "seti",
+  "name": "Allen Telescope Array",
+  "place": "Hat Creek Radio Observatory, Shasta County, California",
+  "country": "US",
+  "website": "https://www.seti.org/ata"
+ },
+ {
+  "id": "alma",
+  "type": "observatory",
+  "kind": "radio",
+  "name": "Atacama Large Millimeter/submillimeter Array (ALMA)",
+  "place": "Chajnantor plateau, Atacama Desert, Antofagasta Region",
+  "country": "CL",
+  "website": "https://www.almaobservatory.org/en/home/"
+ },
+ {
+  "id": "arecibo",
+  "type": "observatory",
+  "kind": "radio",
+  "name": "Arecibo Observatory",
+  "place": "Barrio Esperanza, Arecibo, Puerto Rico",
+  "country": "PR",
+  "website": "https://www.naic.edu/"
+ },
+ {
+  "id": "big-ear",
+  "type": "observatory",
+  "kind": "seti",
+  "name": "Big Ear radio telescope (Ohio State University Radio Observatory)",
+  "place": "Delaware, Ohio",
+  "country": "US",
+  "website": "https://www.bigear.org/"
+ },
+ {
+  "id": "bta-6",
+  "type": "observatory",
+  "kind": "optical",
+  "name": "BTA-6 at the Special Astrophysical Observatory",
+  "place": "Nizhny Arkhyz, Zelenchuksky District, Karachay-Cherkessia",
+  "country": "RU",
+  "website": "https://www.sao.ru/"
+ },
+ {
+  "id": "canberra-dsn",
+  "type": "observatory",
+  "kind": "deep-space",
+  "name": "Canberra Deep Space Communication Complex",
+  "place": "Tidbinbilla, Australian Capital Territory",
+  "country": "AU",
+  "website": "https://www.cdscc.nasa.gov/"
+ },
+ {
+  "id": "devasthal",
+  "type": "observatory",
+  "kind": "optical",
+  "name": "Devasthal Observatory",
+  "place": "Devasthal, Nainital district, Uttarakhand",
+  "country": "IN",
+  "website": "https://www.aries.res.in/facilities/astronomical-telescopes/360cm-telescope"
+ },
+ {
+  "id": "effelsberg",
+  "type": "observatory",
+  "kind": "radio",
+  "name": "Effelsberg 100-m Radio Telescope",
+  "place": "Effelsberg, Bad Münstereifel, Eifel (Ahr Hills), North Rhine-Westphalia",
+  "country": "DE",
+  "website": "https://www.mpifr-bonn.mpg.de/effelsberg"
+ },
+ {
+  "id": "elt",
+  "type": "observatory",
+  "kind": "optical",
+  "name": "Extremely Large Telescope",
+  "place": "Cerro Armazones, Atacama Desert",
+  "country": "CL",
+  "website": "https://elt.eso.org/"
+ },
+ {
+  "id": "fast",
+  "type": "observatory",
+  "kind": "radio",
+  "name": "FAST (Five-hundred-meter Aperture Spherical Telescope)",
+  "place": "Dawodang depression, Pingtang County, Guizhou",
+  "country": "CN",
+  "website": "https://fast.bao.ac.cn/"
+ },
+ {
+  "id": "gmrt",
+  "type": "observatory",
+  "kind": "radio",
+  "name": "Giant Metrewave Radio Telescope (GMRT)",
+  "place": "Narayangaon, near Pune, Maharashtra",
+  "country": "IN",
+  "website": "https://www.gmrt.ncra.tifr.res.in/"
+ },
+ {
+  "id": "goldstone",
+  "type": "observatory",
+  "kind": "deep-space",
+  "name": "Goldstone Deep Space Communications Complex",
+  "place": "Fort Irwin, Mojave Desert, California",
+  "country": "US",
+  "website": "https://www.nasa.gov/communicating-with-missions/dsn/"
+ },
+ {
+  "id": "green-bank",
+  "type": "observatory",
+  "kind": "radio",
+  "name": "Green Bank Telescope",
+  "place": "Green Bank, West Virginia",
+  "country": "US",
+  "website": "https://greenbankobservatory.org/"
+ },
+ {
+  "id": "haute-provence",
+  "type": "observatory",
+  "kind": "optical",
+  "name": "Observatoire de Haute-Provence",
+  "place": "Saint-Michel-l'Observatoire, Alpes-de-Haute-Provence",
+  "country": "FR",
+  "website": "https://ohp.osupytheas.fr/"
+ },
+ {
+  "id": "jodrell-bank",
+  "type": "observatory",
+  "kind": "radio",
+  "name": "Lovell Telescope, Jodrell Bank Observatory",
+  "place": "Jodrell Bank, Cheshire",
+  "country": "GB",
+  "website": "https://www.jodrellbank.net/"
+ },
+ {
+  "id": "la-palma",
+  "type": "observatory",
+  "kind": "optical",
+  "name": "Roque de los Muchachos Observatory",
+  "place": "Roque de los Muchachos, La Palma, Canary Islands",
+  "country": "ES",
+  "website": "https://www.iac.es/en/observatories/roque-de-los-muchachos-observatory"
+ },
+ {
+  "id": "la-silla",
+  "type": "observatory",
+  "kind": "optical",
+  "name": "La Silla Observatory",
+  "place": "La Silla, Coquimbo Region (Atacama Desert edge)",
+  "country": "CL",
+  "website": "https://www.eso.org/public/teles-instr/lasilla/"
+ }
+]

@@ -1,0 +1,154 @@
+[
+ {
+  "id": "mao-zedong-memorial-museum-shaoshan",
+  "type": "museum",
+  "name": "Shaoshan Mao Zedong Memorial Museum",
+  "place": "Shaoshan, Hunan",
+  "country": "CN",
+  "website": "https://www.ssmzd.com/"
+ },
+ {
+  "id": "musee-air-espace-le-bourget",
+  "type": "museum",
+  "name": "Musée de l'Air et de l'Espace",
+  "place": "Le Bourget",
+  "country": "FR",
+  "website": "https://www.museeairespace.fr"
+ },
+ {
+  "id": "museum-of-flight-seattle",
+  "type": "museum",
+  "name": "The Museum of Flight",
+  "place": "Seattle",
+  "country": "US",
+  "website": "https://www.museumofflight.org"
+ },
+ {
+  "id": "museum-of-science-and-industry-chicago",
+  "type": "museum",
+  "name": "Griffin Museum of Science and Industry",
+  "place": "Chicago",
+  "country": "US",
+  "website": "https://www.griffinmsi.org"
+ },
+ {
+  "id": "nasm-washington",
+  "type": "museum",
+  "name": "National Air and Space Museum",
+  "place": "Washington",
+  "country": "US",
+  "website": "https://airandspace.si.edu"
+ },
+ {
+  "id": "national-military-museum-bucharest",
+  "type": "museum",
+  "name": "National Military Museum",
+  "place": "Bucharest",
+  "country": "RO",
+  "website": "https://muzeulmilitar.ro"
+ },
+ {
+  "id": "national-museum-of-nature-and-science-tokyo",
+  "type": "museum",
+  "name": "National Museum of Nature and Science",
+  "place": "Tokyo",
+  "country": "JP",
+  "website": "https://www.kahaku.go.jp/english/"
+ },
+ {
+  "id": "national-space-centre-leicester",
+  "type": "museum",
+  "name": "National Space Centre",
+  "place": "Leicester",
+  "country": "GB",
+  "website": "https://spacecentre.co.uk"
+ },
+ {
+  "id": "science-museum-london",
+  "type": "museum",
+  "name": "Science Museum",
+  "place": "London",
+  "country": "GB",
+  "website": "https://www.sciencemuseum.org.uk"
+ },
+ {
+  "id": "space-center-houston",
+  "type": "museum",
+  "name": "Space Center Houston",
+  "place": "Houston",
+  "country": "US",
+  "website": "https://spacecenter.org"
+ },
+ {
+  "id": "space-expo-noordwijk",
+  "type": "museum",
+  "name": "Space Expo",
+  "place": "Noordwijk",
+  "country": "NL",
+  "website": "https://www.space-expo.nl"
+ },
+ {
+  "id": "stafford-air-and-space-museum",
+  "type": "museum",
+  "name": "Stafford Air & Space Museum",
+  "place": "Weatherford, Oklahoma",
+  "country": "US",
+  "website": "https://staffordmuseum.com"
+ },
+ {
+  "id": "strategic-air-space-museum",
+  "type": "museum",
+  "name": "Strategic Air Command & Aerospace Museum",
+  "place": "Ashland, Nebraska",
+  "country": "US",
+  "website": "https://sacmuseum.org"
+ },
+ {
+  "id": "technik-museum-speyer",
+  "type": "museum",
+  "name": "Technik Museum Speyer",
+  "place": "Speyer",
+  "country": "DE",
+  "website": "https://www.technik-museum.de"
+ },
+ {
+  "id": "tsiolkovsky-museum-kaluga",
+  "type": "museum",
+  "name": "Tsiolkovsky State Museum of the History of Cosmonautics",
+  "place": "Kaluga",
+  "country": "RU",
+  "website": "https://gmik.ru"
+ },
+ {
+  "id": "udvar-hazy",
+  "type": "museum",
+  "name": "Steven F. Udvar-Hazy Center",
+  "place": "Chantilly, Virginia",
+  "country": "US",
+  "website": "https://airandspace.si.edu/visit/udvar-hazy-center"
+ },
+ {
+  "id": "us-space-and-rocket-center",
+  "type": "museum",
+  "name": "U.S. Space & Rocket Center",
+  "place": "Huntsville, Alabama",
+  "country": "US",
+  "website": "https://rocketcenter.com"
+ },
+ {
+  "id": "uss-hornet-museum",
+  "type": "museum",
+  "name": "USS Hornet Sea, Air & Space Museum",
+  "place": "Alameda, California",
+  "country": "US",
+  "website": "https://uss-hornet.org"
+ },
+ {
+  "id": "virginia-air-and-space-science-center",
+  "type": "museum",
+  "name": "Virginia Air & Space Science Center",
+  "place": "Hampton, Virginia",
+  "country": "US",
+  "website": "https://www.vasc.org"
+ }
+]

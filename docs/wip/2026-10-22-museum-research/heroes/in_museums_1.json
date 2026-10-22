@@ -1,0 +1,154 @@
+[
+ {
+  "id": "adler-planetarium",
+  "type": "museum",
+  "name": "Adler Planetarium",
+  "place": "Chicago",
+  "country": "US",
+  "website": "https://www.adlerplanetarium.org"
+ },
+ {
+  "id": "armstrong-air-and-space-museum",
+  "type": "museum",
+  "name": "Armstrong Air & Space Museum",
+  "place": "Wapakoneta, Ohio",
+  "country": "US",
+  "website": "https://armstrongmuseum.org"
+ },
+ {
+  "id": "aviation-museum-plovdiv-krumovo",
+  "type": "museum",
+  "name": "Aviation Museum Plovdiv",
+  "place": "Krumovo, Plovdiv",
+  "country": "BG",
+  "website": "https://airmuseum-bg.com"
+ },
+ {
+  "id": "baikonur-cosmodrome-museum",
+  "type": "museum",
+  "name": "Baikonur Cosmodrome History Museum",
+  "place": "Baikonur",
+  "country": "KZ",
+  "website": "https://museum-baikonur.ru/"
+ },
+ {
+  "id": "bledsoe-miller-steam-center-waco",
+  "type": "museum",
+  "name": "Bledsoe-Miller STEAM Center",
+  "place": "Waco, Texas",
+  "country": "US",
+  "website": "https://www.waco-texas.com"
+ },
+ {
+  "id": "california-science-center",
+  "type": "museum",
+  "name": "California Science Center",
+  "place": "Los Angeles",
+  "country": "US",
+  "website": "https://californiasciencecenter.org"
+ },
+ {
+  "id": "cape-canaveral-space-force-museum",
+  "type": "museum",
+  "name": "Cape Canaveral Space Force Museum",
+  "place": "Cape Canaveral, Florida",
+  "country": "US",
+  "website": "https://www.spaceforcemuseum.org"
+ },
+ {
+  "id": "china-science-and-technology-museum",
+  "type": "museum",
+  "name": "China Science and Technology Museum",
+  "place": "Beijing",
+  "country": "CN",
+  "website": "https://www.cstm.org.cn/"
+ },
+ {
+  "id": "cosmosphere-hutchinson",
+  "type": "museum",
+  "name": "Cosmosphere",
+  "place": "Hutchinson, Kansas",
+  "country": "US",
+  "website": "https://cosmo.org"
+ },
+ {
+  "id": "cradle-of-aviation",
+  "type": "museum",
+  "name": "Cradle of Aviation Museum",
+  "place": "Garden City, New York",
+  "country": "US",
+  "website": "https://www.cradleofaviation.org"
+ },
+ {
+  "id": "danmarks-tekniske-museum",
+  "type": "museum",
+  "name": "Danmarks Tekniske Museum",
+  "place": "Helsingør",
+  "country": "DK",
+  "website": "https://www.tekniskmuseum.dk"
+ },
+ {
+  "id": "esperance-museum",
+  "type": "museum",
+  "name": "Esperance Museum",
+  "place": "Esperance, Western Australia",
+  "country": "AU",
+  "website": "https://www.esperancemuseum.com.au/"
+ },
+ {
+  "id": "fernbank-science-center",
+  "type": "museum",
+  "name": "Fernbank Science Center",
+  "place": "Atlanta",
+  "country": "US",
+  "website": "https://fernbank.edu"
+ },
+ {
+  "id": "franklin-institute",
+  "type": "museum",
+  "name": "The Franklin Institute",
+  "place": "Philadelphia",
+  "country": "US",
+  "website": "https://www.fi.edu"
+ },
+ {
+  "id": "infinity-science-center",
+  "type": "museum",
+  "name": "INFINITY Science Center",
+  "place": "Pearlington, Mississippi",
+  "country": "US",
+  "website": "https://visitinfinity.com"
+ },
+ {
+  "id": "intrepid-museum",
+  "type": "museum",
+  "name": "Intrepid Museum",
+  "place": "New York",
+  "country": "US",
+  "website": "https://www.intrepidmuseum.org"
+ },
+ {
+  "id": "jaxa-sagamihara-communication-hall",
+  "type": "museum",
+  "name": "JAXA Sagamihara Space Science Exhibition Hall",
+  "place": "Sagamihara",
+  "country": "JP",
+  "website": "https://www.isas.jaxa.jp/en/"
+ },
+ {
+  "id": "kennedy-space-center-visitor-complex",
+  "type": "museum",
+  "name": "Kennedy Space Center Visitor Complex",
+  "place": "Merritt Island, Florida",
+  "country": "US",
+  "website": "https://www.kennedyspacecenter.com"
+ },
+ {
+  "id": "korolev-museum-zhytomyr",
+  "type": "museum",
+  "name": "S. P. Korolev Museum of Cosmonautics",
+  "place": "Zhytomyr",
+  "country": "UA",
+  "website": "https://cosmosmuseum.info"
+ }
+]

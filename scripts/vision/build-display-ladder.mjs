@@ -16,6 +16,10 @@
  *
  * Requires masters smudged: `git lfs pull -I 'masters/**'`. Idempotent — skips
  * a rung that already exists unless --force.
+ *
+ * `--only museums,observatories` builds just those top-level masters/ folders
+ * and merges their entries into the existing manifest, so adding a few images
+ * doesn't need the full walk (or every master smudged).
  */
 import { readdir, mkdir, writeFile, access } from 'node:fs/promises';
 import { readFileSync } from 'node:fs';
@@ -33,14 +37,19 @@ const EXCLUDE_TOP = new Set(['hotspots', 'posters']);
 const IS_THUMB = /\.(1x1|4x3|16x9)\./;
 const IS_IMG = /\.(jpe?g|png|webp)$/i;
 const FORCE = process.argv.includes('--force');
+// `--only museums,observatories`: build just these top-level folders and merge
+// their entries into the existing manifest (no full masters/ walk needed).
+const onlyArg = process.argv.find((a, i) => process.argv[i - 1] === '--only');
+const ONLY = onlyArg ? new Set(onlyArg.split(',')) : null;
 
 async function* walk(dir, top = '') {
   for (const e of await readdir(dir, { withFileTypes: true })) {
     const full = path.join(dir, e.name);
     if (e.isDirectory()) {
       if (!top && EXCLUDE_TOP.has(e.name)) continue;
+      if (!top && ONLY && !ONLY.has(e.name)) continue;
       yield* walk(full, top || e.name);
-    } else if (IS_IMG.test(e.name) && !IS_THUMB.test(e.name)) {
+    } else if (IS_IMG.test(e.name) && !IS_THUMB.test(e.name) && (top || !ONLY)) {
       yield full;
     }
   }
@@ -77,7 +86,12 @@ const first = readFileSync;
 const MAX_TOP = RUNGS[RUNGS.length - 1]; // 3072 — never serve above the TV rung
 // Manifest: `/images/<stem>` → sorted list of actual rung WIDTHS (px). Files are
 // named by actual width, so the srcset descriptor is exact + never 404s.
-const manifest = {};
+const manifest = ONLY ? JSON.parse(readFileSync(MANIFEST_PATH, 'utf8')) : {};
+if (ONLY) {
+  for (const k of Object.keys(manifest)) {
+    if (ONLY.has(k.split('/')[2])) delete manifest[k];
+  }
+}
 
 for await (const master of walk(MASTERS)) {
   const rel = path.relative(MASTERS, master); // e.g. missions/curiosity/01.jpg

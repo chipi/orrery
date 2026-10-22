@@ -326,6 +326,8 @@ export function textSourceId(t: TextSourceEntry): string {
  *                                              (hero = slot 01)
  *   /images/iss-modules/<id>/<nn>.jpg        → /iss panel
  *   /images/earth-objects/<id>/<nn>.jpg      → /earth panel
+ *   /images/museums/<id>/01.webp             → /earth museum card hero
+ *   /images/observatories/<id>/01.webp       → /earth observatory card hero
  *   /images/moon-sites/<id>/<nn>.jpg         → /moon panel
  *   /images/mars-sites/<id>/<nn>.jpg         → /mars panel
  *   /images/planets/<id>/<nn>.jpg            → /explore planet panel
@@ -339,6 +341,8 @@ export function pathToRouteKey(p: string): string {
   if (p.startsWith('/images/missions/')) return 'missions';
   if (p.startsWith('/images/iss-modules/')) return 'iss';
   if (p.startsWith('/images/earth-objects/')) return 'earth';
+  if (p.startsWith('/images/museums/')) return 'earth';
+  if (p.startsWith('/images/observatories/')) return 'earth';
   if (p.startsWith('/images/moon-sites/')) return 'moon';
   if (p.startsWith('/images/mars-sites/')) return 'mars';
   if (p.startsWith('/images/planets/')) return 'explore';

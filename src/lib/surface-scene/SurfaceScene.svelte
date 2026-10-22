@@ -7322,6 +7322,14 @@ sample      ${debugInfo.projectedPxSample}`}
     }
   }
 
+  /* Narrow window with a mouse: the 400 px detail panel reaches the chip
+     column, so the chips sit under the panel instead of on top of the card. */
+  @media (hover: hover) and (pointer: fine) and (max-width: 600px) {
+    .hud-controls {
+      z-index: 25;
+    }
+  }
+
   /* Mobile-only top-left cluster: view toggle + Reset View.
      Mirrors the /explore hud-top-mobile pattern; z-index 45 sits
      above the mobile drawer (z-index 40). */

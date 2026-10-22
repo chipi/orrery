@@ -70,7 +70,7 @@ test.describe('observatories', () => {
   });
 
   test('a place with no photo shows no hero', async ({ page }) => {
-    await page.goto('/earth?observatory=lmt');
+    await page.goto('/earth?observatory=big-ear');
     const panel = page.getByTestId('observatory-panel');
     await expect(panel).toBeVisible({ timeout: 20_000 });
     await page.waitForLoadState('networkidle');

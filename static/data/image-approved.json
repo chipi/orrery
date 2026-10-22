@@ -2,7 +2,7 @@
   "version": 1,
   "generated_by": "audit-image-usage.ts --write-approved",
   "note": "Sticky allowlist — source of truth for /credits + provenance, independent of vision scores. RFC-029 decision 4. Re-derive after fetches land; the list only grows (used images are never auto-dropped).",
-  "count": 5700,
+  "count": 5702,
   "approved": [
     "/images/anatomy/akatsuki.webp",
     "/images/anatomy/antares.webp",
@@ -5130,6 +5130,8 @@
     "/images/observatories/jodrell-bank/01.webp",
     "/images/observatories/la-palma/01.webp",
     "/images/observatories/la-silla/01.webp",
+    "/images/observatories/lamost/01.webp",
+    "/images/observatories/lmt/01.webp",
     "/images/observatories/lofar/01.webp",
     "/images/observatories/madrid-dsn/01.webp",
     "/images/observatories/mauna-kea/01.webp",

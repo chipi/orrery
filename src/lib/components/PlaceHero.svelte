@@ -51,5 +51,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Domes, dishes and roofs sit high in the frame; a crop a little above
+       centre keeps them whole (a portrait photo would lose the dish). */
+    object-position: 50% 30%;
   }
 </style>

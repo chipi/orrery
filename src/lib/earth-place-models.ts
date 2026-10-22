@@ -41,8 +41,9 @@ function accentMat(color: string): THREE.MeshStandardMaterial {
   });
 }
 
-/** Museum: a classical hall — steps, a row of columns, entablature and
- *  pediment — with an accent band along the frieze. */
+/** Museum: a classical hall (steps, a row of columns, entablature) under a
+ *  gabled roof in the layer colour; from above, the view the globe mostly
+ *  gives, it reads as a gold-roofed building. */
 export function buildMuseumModel(color: string): THREE.Group {
   const g = new THREE.Group();
   const steps = new THREE.Mesh(new THREE.BoxGeometry(1.2, 0.1, 0.8), stoneMat());
@@ -62,11 +63,17 @@ export function buildMuseumModel(color: string): THREE.Group {
   const band = new THREE.Mesh(new THREE.BoxGeometry(1.12, 0.03, 0.74), accentMat(color));
   band.position.y = 0.66;
   g.add(band);
-  // Pediment: a low triangular prism along the façade.
-  const pediment = new THREE.Mesh(new THREE.CylinderGeometry(0.62, 0.62, 0.72, 3, 1), stoneMat());
-  pediment.rotation.set(Math.PI / 2, 0, Math.PI / 2);
-  pediment.scale.set(1, 1, 0.42);
-  pediment.position.y = 0.88;
+  // Gabled roof: a low triangular prism, pediment at the façade.
+  const gable = new THREE.Shape();
+  gable.moveTo(-0.6, 0);
+  gable.lineTo(0.6, 0);
+  gable.lineTo(0, 0.32);
+  gable.closePath();
+  const pediment = new THREE.Mesh(
+    new THREE.ExtrudeGeometry(gable, { depth: 0.72, bevelEnabled: false }),
+    accentMat(color),
+  );
+  pediment.position.set(0, 0.75, -0.36);
   g.add(pediment);
   const door = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.3, 0.02), darkMat());
   door.position.set(0, 0.25, 0.18);

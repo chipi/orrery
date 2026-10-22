@@ -8,7 +8,7 @@
  */
 import * as THREE from 'three';
 import { latLonToUnitSphere } from '$lib/moon-projection';
-import { placeOnSphereTangent } from '$lib/three/place-on-sphere';
+import { northTangent, placeOnSphereTangent } from '$lib/three/place-on-sphere';
 import { buildLabel } from '$lib/three-label';
 import { buildMuseumModel } from '$lib/earth-place-models';
 
@@ -62,6 +62,7 @@ export function buildMuseumPins(
     color: MUSEUM_PIN_COLOR,
     pickKey: 'museumId',
     modelFor: () => buildMuseumModel(MUSEUM_PIN_COLOR),
+    faceTilt: 1.05,
   });
 }
 
@@ -69,7 +70,14 @@ export function buildPlacePins(
   places: PlacePinInput[],
   parent: THREE.Object3D,
   planetRadius: number,
-  opts: { color: string; pickKey: string; modelFor: (item: PlacePinInput) => THREE.Group },
+  opts: {
+    color: string;
+    pickKey: string;
+    modelFor: (item: PlacePinInput) => THREE.Group;
+    /** Turn the model's front to face south and lean it back by this many
+     *  radians, so a globe seen from above shows the façade, not the roof. */
+    faceTilt?: number;
+  },
 ): { pins: MuseumPin[]; dispose: () => void } {
   const pins: MuseumPin[] = [];
   const offsets = labelOffsets(places);
@@ -77,9 +85,18 @@ export function buildPlacePins(
   for (const place of places) {
     const group = new THREE.Group();
     const body = new THREE.Group();
-    body.add(opts.modelFor(place));
+    const model = opts.modelFor(place);
+    if (opts.faceTilt) model.rotation.x = -opts.faceTilt;
+    body.add(model);
     group.add(body);
-    placeOnSphereTangent(group, latLonToUnitSphere(place.lat, place.lon), planetRadius);
+    const unit = latLonToUnitSphere(place.lat, place.lon);
+    placeOnSphereTangent(group, unit, planetRadius);
+    if (opts.faceTilt) {
+      const up = new THREE.Vector3(unit.x, unit.y, unit.z);
+      const south = northTangent(place.lat, place.lon).negate();
+      const right = new THREE.Vector3().crossVectors(up, south);
+      group.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(right, up, south));
+    }
 
     const label = buildLabel({
       text: place.name,

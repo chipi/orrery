@@ -86343,6 +86343,48 @@
    "pageid": null,
    "nasa_id": null,
    "fetched_at": "2026-10-22T18:32:25.742Z"
+  },
+  {
+   "id": "8953364ff1bf7cf9",
+   "path": "/images/observatories/lamost/01.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:LAMOST telescope org.jpg",
+   "author": "Paul Hilscher",
+   "agency": "Wikimedia Commons",
+   "source_url": "https://commons.wikimedia.org/wiki/File:LAMOST_telescope_org.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/LAMOST_telescope_org.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "license_rationale": "Reuse with attribution; derivatives under same license.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-10-22T19:20:37.843Z"
+  },
+  {
+   "id": "25c58298b32c3acc",
+   "path": "/images/observatories/lmt/01.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:GTM imagen.JPG",
+   "author": "Luyten",
+   "agency": "Wikimedia Commons",
+   "source_url": "https://commons.wikimedia.org/wiki/File:GTM_imagen.JPG",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/GTM_imagen.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license_short": "CC-BY-SA-3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "license_rationale": "Reuse with attribution; derivatives under same license.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-10-22T19:22:14.795Z"
   }
  ]
 }
